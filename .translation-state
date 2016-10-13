@@ -1,5 +1,5 @@
 {
-  "LastProcessedCommit": "9257ba19a20c9a5b0805ef5a1b7c9aa2a370e161",
+  "LastProcessedCommit": "d3394d72af531789e98e7bbf3513f60c46abc961",
   "LastTranslatedCommit": null,
   "Items": {
     "ce8c2aaf093e32b7207834ebb5e98ee12c37cd20": {
@@ -39838,6 +39838,41 @@
       "HandoffFilePath": "ol-handoff\\Microsoft\\SCCMDocs-pr.pt-br\\live\\TOC.118d3cecc9cdbadabc1a7a188c77128f8658667a.pt-br.xlf",
       "HandoffFileCommit": "ff76a385d77cd64a96bff442eab277b320412b3a",
       "HandoffDateTime": "2016-10-13T21:14:07.2584574Z",
+      "HandoffPriority": "",
+      "HandoffException": null,
+      "HandoffFailureTimes": 0,
+      "TargetFileCommit": null,
+      "TargetFilePath": null,
+      "HandbackFilePath": null,
+      "HandbackFileCommit": null,
+      "HandbackDateTime": "0001-01-01T00:00:00",
+      "HandbackException": null,
+      "HandbackFailureTimes": 0,
+      "UpdatedDateTime": "0001-01-01T00:00:00",
+      "ArchiveFilePath": null,
+      "ArchiveFileCommit": null,
+      "ArchiveFileDateTime": "0001-01-01T00:00:00",
+      "ArchiveException": null,
+      "BilingualFilePath": null,
+      "BilingualFileCommit": null,
+      "BilingualDateTime": "0001-01-01T00:00:00",
+      "BilingualException": null
+    },
+    "9007f9905711f1bea5d978ad2d100bc279a5f15f": {
+      "FileHash": "9007f9905711f1bea5d978ad2d100bc279a5f15f",
+      "SourceFileCommit": "2328dd3c40763867e485c1a4d4d7e7aa24ae49b5",
+      "SourceFilePath": "sccm\\mdm\\TOC.md",
+      "HandoffReason": 1,
+      "DependencyFrom": null,
+      "TokenReference": null,
+      "FilePathList": [
+        "sccm\\mdm\\TOC.md"
+      ],
+      "HasMetadata": false,
+      "TranslationType": 1,
+      "HandoffFilePath": "ol-handoff\\Microsoft\\SCCMDocs-pr.pt-br\\live\\TOC.118d3cecc9cdbadabc1a7a188c77128f8658667a.pt-br.xlf",
+      "HandoffFileCommit": "eabcf170e3f8f896b19b32210771b5ccd8d7b064",
+      "HandoffDateTime": "2016-10-13T23:16:06.3385358Z",
       "HandoffPriority": "",
       "HandoffException": null,
       "HandoffFailureTimes": 0,
