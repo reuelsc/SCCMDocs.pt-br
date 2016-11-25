@@ -42,7 +42,7 @@ O Gerenciamento de Dispositivo Móvel Local do System Center Configuration Manag
 > [!TIP]  
 >  É recomendável configurar a assinatura do Intune para o Gerenciamento de Dispositivo Móvel Local antes de instalar as funções do sistema de sites necessárias para minimizar o tempo exigido para as funções do sistema de sites recentemente instaladas para se tornarem funcionais.  
 
-##  <a name="a-namebkmksignupa-sign-up-for-microsoft-intune"></a><a name="bkmk_signup"></a> Inscrever-se no Microsoft Intune  
+##  <a name="a-namebkmksignupa-sign-up-for-microsoft-intune"></a><a name="bkmk_signup"></a> Inscreva-se no Microsoft Intune  
  O Intune é para o Gerenciamento de Dispositivo Móvel Local funcionar. Basta [inscrever-se](http://www.microsoft.com/en-us/server-cloud/products/microsoft-intune/) para obter uma avaliação ou assinatura paga e ir para a próxima etapa para adicionar a assinatura ao Configuration Manager.  
 
 ##  <a name="a-namebkmkaddsuba-add-the-intune-subscription-to-configuration-manager"></a><a name="bkmk_addSub"></a> Adicionar a assinatura do Intune no Configuration Manager  
@@ -55,7 +55,7 @@ O Gerenciamento de Dispositivo Móvel Local do System Center Configuration Manag
 > -   A configuração de código do site especificada no assistente é ignorada para o Gerenciamento de Dispositivo Móvel Local. O código do site usado é aquele que você especifica no perfil de registro que concede aos usuários permissão para registrar dispositivos.  
 > -   Não habilite a autenticação multifatores. Não há suporte no Gerenciamento de Dispositivo Móvel Local.  
 
-##  <a name="a-namebkmkconfigurea-configure-the-intune-subscription-for-on-premises-mobile-device-management"></a><a name="bkmk_configure"></a> Configure a assinatura do Intune para o Gerenciamento de Dispositivo Móvel Local  
+##  <a name="a-namebkmkconfigurea-configure-the-intune-subscription-for-on-premises-mobile-device-management"></a><a name="bkmk_configure"></a> Configure a assinatura do Intune para gerenciamento de dispositivo móvel local  
 
 1.  No console do Configuration Manager, clique com o botão direito do mouse em **Assinatura do Microsoft Intune** e clique em **Propriedades**.  
 

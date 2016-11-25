@@ -223,7 +223,7 @@ Identifique e siga as práticas recomendadas para a sua versão do SQL Server. N
 
 -   Se você instalar o SQL Server usando uma conta de usuário de domínio, verifique se a conta de computador do servidor do site está configurada para um SPN (Nome da Entidade de Serviço), que é publicado em Serviços de Domínio Active Directory . Sem o SPN, a autenticação Kerberos e a instalação do Configuration Manager falharão.  
 
-##  <a name="a-namebkmksecurityiisa-security-best-practices-for-site-systems-that-run-iis"></a><a name="BKMK_Security_IIS"></a> Práticas recomendadas de segurança para os sistemas de sites que executam IIS  
+##  <a name="a-namebkmksecurityiisa-security-best-practices-for-site-systems-that-run-iis"></a><a name="BKMK_Security_IIS"></a> Práticas recomendadas de segurança para os sistemas de site que executam IIS  
 Várias funções do sistema de sites no Configuration Manager requerem o IIS. Proteger o IIS permite que o Configuration Manager funcione corretamente e reduz o risco de ataques à segurança. Quando for viável, minimize o número de servidores que requerem IIS. Por exemplo, execute apenas o número de pontos de gerenciamento que você precisa para dar suporte à sua base de clientes, levando em consideração a alta disponibilidade e o isolamento da rede para o gerenciamento de clientes baseado na Internet.  
 
  Use as práticas recomendadas de segurança a seguir para proteger os sistemas de site que executam IIS.  

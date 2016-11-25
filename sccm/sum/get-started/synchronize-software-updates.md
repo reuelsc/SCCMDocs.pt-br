@@ -21,7 +21,7 @@ ms.openlocfilehash: a720a38962aee33f0d6a7c9ca447dd98d7e0c24e
 
 ---
 
-#  <a name="a-namebkmksumsynca-synchronize-software-updates"></a><a name="BKMK_SUMSync"></a> Sincronizar atualizações de software
+#  <a name="a-namebkmksumsynca-synchronize-software-updates"></a><a name="BKMK_SUMSync"></a> sincronizar atualizações de software
 
 *Aplica-se a: System Center Configuration Manager (Branch Atual)*
 

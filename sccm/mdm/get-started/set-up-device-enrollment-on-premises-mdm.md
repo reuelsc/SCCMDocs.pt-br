@@ -35,7 +35,7 @@ Permitir que os usuários registrem seus próprios dispositivos no Gerenciamento
 
 -   [Armazenar o certificado raiz em dispositivos que serão registrados](#bkmk_storeCert)  
 
-##  <a name="a-namebkmkcreateprofa-create-an-enrollment-profile-that-allows-users-to-enroll-modern-devices"></a><a name="bkmk_createProf"></a> Criar um perfil de registro que permite que os usuários registrem os dispositivos modernos  
+##  <a name="a-namebkmkcreateprofa-create-an-enrollment-profile-that-allows-users-to-enroll-modern-devices"></a><a name="bkmk_createProf"></a> Crie um perfil de registro que permite que os usuários registrem os dispositivos modernos  
  Para enviar as configurações necessárias por push para permitir que os usuários registrem os dispositivos modernos, você pode adicionar um novo perfil de registro para as configurações padrão, que é aplicado em todos os usuários descobertos no site do Configuration Manager.  
 
 1.  No console do Configuration Manager, clique em **Administração** > **Visão Geral** > **Configurações do Cliente**, abra **Configurações do Cliente Padrão** e selecione **Registro**.  

@@ -179,7 +179,7 @@ Antes de criar, modificar e executar relatórios no console do System Center Con
 
 -   **Administradores de Relatório do ConfigMgr**: os usuários que recebem essa função de segurança podem executar todas as tarefas relacionadas a relatórios no Configuration Manager.  
 
-##  <a name="a-namebkmkverifyreportingservicespointinstallationa-verify-the-reporting-services-point-installation"></a><a name="BKMK_VerifyReportingServicesPointInstallation"></a> Verificar a instalação do ponto do Reporting Services  
+##  <a name="a-namebkmkverifyreportingservicespointinstallationa-verify-the-reporting-services-point-installation"></a><a name="BKMK_VerifyReportingServicesPointInstallation"></a> Verifique a instalação do ponto do Reporting Services  
  Após adicionar a função do site do ponto do Reporting Services, você poderá verificar a instalação observando mensagens de status e entradas de arquivo de log específicos. Use o procedimento a seguir para verificar se a instalação do ponto do Reporting Services foi bem-sucedida.  
 
 > [!WARNING]  
@@ -243,7 +243,7 @@ Antes de criar, modificar e executar relatórios no console do System Center Con
 
     5.  Clique em **Concluir** para fechar o assistente e concluir a configuração do certificado no computador.  
 
-##  <a name="a-namebkmkmodifyreportingservicespointa-modify-reporting-services-point-settings"></a><a name="BKMK_ModifyReportingServicesPoint"></a> Modificar configurações do ponto do Reporting Services  
+##  <a name="a-namebkmkmodifyreportingservicespointa-modify-reporting-services-point-settings"></a><a name="BKMK_ModifyReportingServicesPoint"></a> Modificar as configurações de ponto do Reporting Services  
  Após a instalação do ponto do Reporting Services, você pode modificar as configurações de conexão do banco de dados do site e de autenticação nas propriedades do ponto do Reporting Services. Use o procedimento a seguir para modificar as configurações do ponto do Reporting Services.  
 
 #### <a name="to-modify-reporting-services-point-settings"></a>Para modificar as configurações do ponto do Reporting Services  
