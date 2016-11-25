@@ -37,7 +37,7 @@ Este tópico fornece as etapas no System Center Configuration Manager para atual
 
  Use as etapas a seguir para implantar sistemas operacionais na rede usando uma sequência de tarefas.  
 
-##  <a name="a-namebkmkplana-plan"></a><a name="BKMK_Plan"></a> Planejar  
+##  <a name="a-namebkmkplana-plan"></a><a name="BKMK_Plan"></a> Planoo  
 
 -   **Examine as limitações da sequência de tarefas para atualizar um sistema operacional**  
 
@@ -53,7 +53,7 @@ Este tópico fornece as etapas no System Center Configuration Manager para atual
 
         -   Implementar uma alteração fundamental no computador, incluindo o particionamento de disco, uma alteração de uma arquitetura do x86 para x64, a implementação da UEFI ou a modificação do idioma do sistema operacional base.  
 
-        -   Tenha requisitos personalizados, incluindo o uso de uma imagem de base personalizada, com criptografia de disco de <sup>terceiros</sup> ou exija operações offline do WinPE.  
+        -   Tenha requisitos personalizados, incluindo o uso de uma imagem de base personalizada, com criptografia de disco de terceiros ou solicite operações offline do WinPE.<sup></sup>  
 
 -   **Planejar e implementar requisitos de infraestrutura**  
 

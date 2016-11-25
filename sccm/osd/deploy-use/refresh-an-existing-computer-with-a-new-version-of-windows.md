@@ -29,7 +29,7 @@ Este tópico fornece as etapas gerais no System Center Configuration Manager par
 
  Use as seções a seguir para atualizar um computador existente com uma nova versão do Windows.  
 
-##  <a name="a-namebkmkplana-plan"></a><a name="BKMK_Plan"></a> Planejar  
+##  <a name="a-namebkmkplana-plan"></a><a name="BKMK_Plan"></a> Planoo  
 
 -   **Planejar e implementar requisitos de infraestrutura**  
 

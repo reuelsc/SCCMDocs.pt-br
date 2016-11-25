@@ -154,7 +154,7 @@ Como o sistema de status mantém configurações separadas para cada site, você
 
 4.  Clique em **OK**.  
 
-###  <a name="a-namebkmkmonitorsystemstatusa-monitor-the-status-system-of-configuration-manager"></a><a name="BKMK_MonitorSystemStatus"></a> Monitorar o sistema de status do Configuration Manager  
+###  <a name="a-namebkmkmonitorsystemstatusa-monitor-the-status-system-of-configuration-manager"></a><a name="BKMK_MonitorSystemStatus"></a> Monitorar o sistema de status do Gerenciador de Configurações  
  O**status do sistema** no Configuration Manager fornece uma visão geral das operações gerais de sites e de servidor do site de sua hierarquia. Ele pode revelar problemas operacionais de componentes ou servidores do sistema de sites, e você pode usar o status do sistema para analisar detalhes específicos de diferentes operações do Configuration Manager. Você monitora o status do sistema no nó **Status do Sistema** do espaço de trabalho **Monitoramento** no console do Configuration Manager.  
 
  A maioria dos componentes e funções do sistema de sites do Configuration Manager gera mensagens de status. Os detalhes das mensagens de status são registrados em cada log operacional de componentes, mas também enviados ao banco de dados do site onde estão resumidos e apresentados em um pacote cumulativo de atualizações geral de cada componente ou da integridade do sistema de site. Esses pacotes cumulativos de atualizações de mensagens de status fornecem detalhes sobre informações de operações normais e os detalhes de avisos e erros. Você pode configurar os limites em que os avisos e erros são acionados e ajustar o sistema para garantir que as informações de pacote cumulativo de atualizações ignorem os problemas conhecidos que não são relevantes para você enquanto chama a atenção para problemas reais em servidores e operações de componentes que você talvez precise investigar.  
@@ -204,7 +204,7 @@ Como o sistema de status mantém configurações separadas para cada site, você
 |Configurar assinaturas de email para alertas|Consulte a seção [Management tasks for alerts](#BKMK_Manage) neste tópico.|  
 |Monitorar alertas|Consulte a seção [Monitorar alertas](#BKMK_MonitorAlerts)|  
 
-###  <a name="a-namebkmkmanagea-management-tasks-for-alerts"></a><a name="BKMK_Manage"></a> Tarefas de gerenciamento para alertas  
+###  <a name="a-namebkmkmanagea-management-tasks-for-alerts"></a><a name="BKMK_Manage"></a> Management tasks for alerts  
 
 ##### <a name="to-manage-general-alerts"></a>Para gerenciar alertas gerais  
 
