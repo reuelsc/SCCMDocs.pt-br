@@ -82,7 +82,7 @@ Para obter um exemplo que mostra como você pode implantar atualizações de sof
 
 7.  O Gerenciador de Sincronização do WSUS envia uma solicitação por vez ao WSUS em execução em outros pontos de atualização de software do site. Os servidores WSUS dos outros pontos de atualização de software são configurados para serem réplicas do WSUS em execução no ponto de atualização de software padrão do site.  
 
-##  <a name="a-namebkmksumcompliancea-software-updates-compliance-assessment"></a><a name="BKMK_SUMCompliance"></a> Avaliação de conformidade das atualizações de software  
+##  <a name="a-namebkmksumcompliancea-software-updates-compliance-assessment"></a><a name="BKMK_SUMCompliance"></a> Software updates compliance assessment  
  Antes de você implantar atualizações de software em computadores cliente no Configuration Manager, inicie a verificação da conformidade das atualizações de software nos computadores cliente. Para cada atualização de software, uma mensagem de estado é criada contendo o estado de conformidade da atualização. As mensagens de estado são enviadas em massa para o ponto de gerenciamento e depois para o servidor do site, onde o estado de conformidade é inserido no banco de dados do site. O estado de conformidade das atualizações de software é exibido no console do Configuration Manager. Você pode implantar e instalar atualizações de software nos computadores que precisam dessas atualizações. As seções a seguir fornecem informações sobre os estados de conformidade e descreve o processo da verificação da conformidade das atualizações de software.  
 
 ### <a name="software-updates-compliance-states"></a>Estados de conformidade das atualizações de software  

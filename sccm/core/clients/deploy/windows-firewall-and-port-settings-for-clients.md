@@ -30,7 +30,7 @@ Os computadores cliente no System Center Configuration Manager que executam o Fi
 
  Use as seções a seguir para identificar esses recursos de gerenciamento e para obter mais informações sobre como configurar o Firewall do Windows para essas exceções.  
 
-##  <a name="a-namebkmkmodifyingwindowsfirewalla-modifying-the-ports-and-programs-permitted-by-windows-firewall"></a><a name="BKMK_ModifyingWindowsFirewall"></a> Modificando as portas e programas permitidos pelo Firewall do Windows  
+##  <a name="a-namebkmkmodifyingwindowsfirewalla-modifying-the-ports-and-programs-permitted-by-windows-firewall"></a><a name="BKMK_ModifyingWindowsFirewall"></a> Modificando as portas e os programas permitidos pelo Firewall do Windows  
  Use o procedimento a seguir para modificar as portas e os programas no Firewall do Windows para o cliente do Configuration Manager.  
 
 #### <a name="to-modify-the-ports-and-programs-permitted-by-windows-firewall"></a>Para modificar as portas e os programas permitidos pelo Firewall do Windows  

@@ -54,7 +54,7 @@ Há suporte para as seguintes instâncias:
 
  O local do SQL Server deve ser no computador do servidor do site  
 
-##  <a name="a-namebkmksqlversionsa-supported-versions-of-sql-server"></a><a name="bkmk_SQLVersions"></a> Versões do Microsoft SQL Server com suporte  
+##  <a name="a-namebkmksqlversionsa-supported-versions-of-sql-server"></a><a name="bkmk_SQLVersions"></a> Versões compatíveis do Microsoft SQL Server  
  Em uma hierarquia com vários sites, diferentes sites podem usar diferentes versões do SQL Server para hospedar o banco de dados do site, desde que a versão do SQL Server usadas tenha suporte do Configuration Manager.  
 
  As versões do SQL Server a seguir têm suporte com o System Center Configuration Manager versão 1511 e posterior.  
@@ -152,7 +152,7 @@ Você pode usar essa versão do SQL Server sem uma versão de atualização cumu
 
 -   Site secundário  
 
-##  <a name="a-namebkmksqlconfiga-required-configurations-for-sql-server"></a><a name="bkmk_SQLConfig"></a> Configurações obrigatórias para o SQL Server  
+##  <a name="a-namebkmksqlconfiga-required-configurations-for-sql-server"></a><a name="bkmk_SQLConfig"></a> Configurações necessárias para o SQL Server  
  Os itens a seguir são necessários para todas as instalações do SQL Server usadas para um banco de dados de site, (incluindo o SQL Server Express). Quando o Configuration Manager instala o SQL Server Express como parte da instalação do site secundário, essas configurações são feitas automaticamente para você.  
 
  **Versão da arquitetura do SQL Server:**  
