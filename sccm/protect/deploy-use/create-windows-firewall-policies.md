@@ -62,7 +62,7 @@ As políticas de firewall para o Endpoint Protection no System Center 2012 Confi
 
 7.  Verifique se a nova política de Firewall do Windows é exibida na lista **Políticas de Firewall do Windows** .  
 
-##  <a name="a-namebkmkassigna-to-deploy-a-windows-firewall-policy"></a><a name="BKMK_Assign"></a> Para implantar uma política do Firewall do Windows  
+##  <a name="a-namebkmkassigna-to-deploy-a-windows-firewall-policy"></a><a name="BKMK_Assign"></a> Para implantar uma política de Firewall do Windows  
 
 1.  No console do Configuration Manager, clique em **Ativos e Conformidade**.  
 

@@ -17,8 +17,8 @@ author: Brenduns
 ms.author: brenduns
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: 1134bb2f04152288e72d40b1b1083f415cb4e900
-ms.openlocfilehash: be7638f006b0eac9e58add7e3926532ba7921e8e
+ms.sourcegitcommit: fc40912a3da034ac0e3f84c72593aa4a9df8d057
+ms.openlocfilehash: c558148104b6338e4038bf690491c88e76dfdcaf
 
 
 ---
@@ -60,7 +60,7 @@ Os seguintes são os recursos de gerenciamento primário do System Center Config
 
  É possível usar o Configuration Manager para gerenciar dispositivos iOS, Android (incluindo Samsung KNOX), Windows Phone e dispositivos com Windows usando o serviço do Microsoft Intune pela Internet.
 
- Apesar de você usar o serviço do Intune, as tarefas de gerenciamento são concluídas usando a função do sistema de sites do ponto de conexão do serviço disponível por meio do console do Configuration Manager. Consulte [Hybrid mobile device management (MDM) with System Center Configuration Manager and Microsoft Intune (MDM (Gerenciamento de dispositivo móvel) híbrido com o System Center Configuration Manager e Microsoft Intune)](../../../mdm/plan-design/hybrid-mobile-device-management.md).  
+ Apesar de você usar o serviço do Intune, as tarefas de gerenciamento são concluídas usando a função do sistema de sites do ponto de conexão do serviço disponível por meio do console do Configuration Manager. Consulte [Hybrid mobile device management (MDM) with System Center Configuration Manager and Microsoft Intune (MDM (Gerenciamento de dispositivo móvel) híbrido com o System Center Configuration Manager e Microsoft Intune)](../../../mdm/understand/hybrid-mobile-device-management.md).  
 
  **Gerenciamento de dispositivo móvel local**  
 

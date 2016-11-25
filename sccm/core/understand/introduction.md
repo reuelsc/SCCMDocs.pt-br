@@ -86,7 +86,7 @@ O Configuration Manager também usa:
 
  Para obter mais informações, veja [Instalar consoles do System Center Configuration Manager](../../core/servers/deploy/install/install-consoles.md).
 
-##  <a name="a-namebkmkapplicationcataloga-the-application-catalog-software-center-and-the-company-portal"></a><a name="BKMK_ApplicationCatalog"></a> O Catálogo de Aplicativos, o Centro de Software e o Portal da Empresa  
+##  <a name="a-namebkmkapplicationcataloga-the-application-catalog-software-center-and-the-company-portal"></a><a name="BKMK_ApplicationCatalog"></a> Catálogo de aplicativos, Central de software e Portal da empresa  
  O **Catálogo de Aplicativos** é um site em que usuários podem procurar e solicitar software para seus PCs baseados no Windows. Para usar o catálogo de aplicativos, é necessário instalar o ponto de serviços Web do catálogo de aplicativos e o ponto de sites da Web do catálogo de aplicativos para o site.  
 
  O**Centro de Software** é um aplicativo que é instalado quando o cliente do Configuration Manager é instalado em computadores baseados no Windows. Os usuários executam esse aplicativo para solicitar softwares e gerenciar os software implantados neles usando o Configuration Manager. O Centro de Software permite que os usuários façam o seguinte:  
@@ -114,7 +114,7 @@ O Configuration Manager também usa:
 
  Em todos os cenários, Anibal é o administrador principal do Configuration Manager.  
 
-###  <a name="a-namebkmkscenarioempowera-example-scenario-empower-users-by-ensuring-access-to-applications-from-any-device"></a><a name="BKMK_ScenarioEmpower"></a> Cenário de exemplo: capacitar os usuários garantindo o acesso a aplicativos usando qualquer dispositivo  
+###  <a name="a-namebkmkscenarioempowera-example-scenario-empower-users-by-ensuring-access-to-applications-from-any-device"></a><a name="BKMK_ScenarioEmpower"></a> Cenário de exemplo: capacitar os usuários ao garantir acesso a aplicativos de qualquer dispositivo  
  A Trey Research deseja proporcionar o acesso de funcionários a aplicativos que eles necessitam e com a maior eficiência possível. Anibal mapeia esses requisitos da empresa para os seguintes cenários:  
 
 |Requisito|Estado atual de gerenciamento de clientes|Estado futuro de gerenciamento de clientes|  
@@ -142,7 +142,7 @@ O Configuration Manager também usa:
 
  Essas etapas de configuração e esses resultados permitem que a Trey Research dê poderes a seus funcionários com êxito, garantindo o acesso a aplicativos de qualquer dispositivo.  
 
-###  <a name="a-namebkmkscenariounifya-example-scenario-unify-compliance-management-for-devices"></a><a name="BKMK_ScenarioUnify"></a> Cenário de exemplo: unificar o gerenciamento de conformidade dos dispositivos  
+###  <a name="a-namebkmkscenariounifya-example-scenario-unify-compliance-management-for-devices"></a><a name="BKMK_ScenarioUnify"></a> Cenário de exemplo: unificar o gerenciamento de conformidade de dispositivos  
  A Trey Research quer uma solução de gerenciamento de clientes unificada que garante que os computadores executem software antivírus que seja atualizado automaticamente. Ou seja:  
 
 -   O Firewall do Windows está habilitado  

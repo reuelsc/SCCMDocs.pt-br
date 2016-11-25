@@ -73,7 +73,7 @@ O Asset Intelligence no System Center Configuration Manager permite inventariar 
 
  Os requisitos de hardware predefinido armazenados no catálogo do Asset Intelligence são somente leitura e não podem ser excluídos.  Usuários administrativos podem adicionar, modificar ou excluir os requisitos de hardware definidos pelo usuário para títulos de software que não são armazenados no catálogo do Asset Intelligence.  
 
-##  <a name="a-namebkmkinventoriedsoftwaretitlesa-inventoried-software-titles"></a><a name="BKMK_InventoriedSoftwareTitles"></a> Títulos de software inventariado  
+##  <a name="a-namebkmkinventoriedsoftwaretitlesa-inventoried-software-titles"></a><a name="BKMK_InventoriedSoftwareTitles"></a> Títulos de software inventariados  
  Você pode exibir informações de título de software inventariado no espaço de trabalho **Ativos e Conformidade** do nó **Software Inventariado** , no nó **Asset Intelligence** . O Agente Cliente de Inventário de Hardware coleta as informações de software inventariado dos clientes do Configuration Manager com base em títulos de software armazenados no catálogo do Asset Intelligence.  
 
 > [!WARNING]  

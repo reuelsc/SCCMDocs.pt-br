@@ -30,7 +30,7 @@ Veja a seguir as perguntas frequentes sobre dados de diagnóstico e de uso do Sy
 ###  <a name="a-namebkmkoffa-how-do-i-turn-off-telemetry"></a><a name="bkmk_off"></a> Como desativo a telemetria?  
  O branch atual do Configuration Manager precisa ser atualizado regularmente para dar suporte a novas versões do Windows 10 e Microsoft Intune. A Microsoft exige, pelo menos, o nível Básico de dados de diagnóstico e de uso para manter o produto atualizado, aprimorar a experiência de atualização, bem como a qualidade e segurança do produto.  
 
-###  <a name="a-namebkmkretentiona-what-is-the-data-retention-period"></a><a name="bkmk_retention"></a> Qual é o período de retenção dos dados?  
+###  <a name="a-namebkmkretentiona-what-is-the-data-retention-period"></a><a name="bkmk_retention"></a> Qual é o período de retenção de dados?  
  Dados de diagnóstico e de uso são mantidos por um ano.  
 
 ###  <a name="a-namebkmkupdatea-is-diagnostics-and-usage-data-sent-when-installing-or-updating-the-product"></a><a name="bkmk_update"></a> Os dados de diagnóstico e de uso são enviados na instalação ou atualização do produto?  
@@ -46,10 +46,10 @@ Veja a seguir as perguntas frequentes sobre dados de diagnóstico e de uso do Sy
  - [Dados de diagnóstico para 1606](/sccm/core/plan-design/diagnostics/levels-of-diagnostic-usage-data-collection-1606)
 
 
-###  <a name="a-namebkmktablesa-can-you-see-data-in-custom-tables"></a><a name="bkmk_tables"></a> É possível ver os dados em tabelas personalizadas?  
+###  <a name="a-namebkmktablesa-can-you-see-data-in-custom-tables"></a><a name="bkmk_tables"></a> Você pode ver dados em tabelas personalizadas?  
  Não. Os dados de diagnóstico e de uso são coletados por meio de procedimentos armazenados do SQL em tabelas de produtos padrão no banco de dados (todas elas têm o prefixo **TEL_**). Como parte da consulta de detecção do esquema SQL, todos os nomes de tabela apresentam hash para comparação com os padrões conhecidos. Isso pode determinar que tabelas personalizadas existam no banco de dados (que o esquema de banco de dados seja estendido do padrão) mas não os dados contidos nessas tabelas.  
 
-###  <a name="a-namebkmkdatabasesa-can-you-see-names-of-other-databases-or-data-in-other-databases"></a><a name="bkmk_databases"></a> É possível ver nomes de outros bancos de dados ou dados em outros bancos de dados?  
+###  <a name="a-namebkmkdatabasesa-can-you-see-names-of-other-databases-or-data-in-other-databases"></a><a name="bkmk_databases"></a> Você pode ver nomes de outros bancos de dados ou dados em outros bancos de dados?  
  Não. Os procedimentos armazenados para coletar dados são limitados ao banco de dados do site.  
 
 ## <a name="see-also"></a>Consulte também  
