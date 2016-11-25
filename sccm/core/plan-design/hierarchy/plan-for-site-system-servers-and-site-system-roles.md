@@ -28,14 +28,14 @@ ms.openlocfilehash: 5f8d051a92cd74938f1a5235b37f02ebe0ff542c
 Cada site do System Center Configuration Manager que você instala inclui um servidor do site, que é um **servidor do sistema de sites**. O site também pode incluir servidores adicionais do sistema de sites em computadores que são remotos do servidor do site.   Servidores de sistemas de sites (o servidor do site ou um servidor do sistema de sites remoto) dão suporte a **funções de sistema de sites**.
 
 
-##  <a name="a-namebkmksiteserversa-site-system-servers"></a><a name="bkmk_siteservers"></a> Servidores do sistema de sites  
+##  <a name="a-namebkmksiteserversa-site-system-servers"></a><a name="bkmk_siteservers"></a> Servidores de sistema de sites  
  Quando você instala uma função do sistema de sites em um computador, esse computador torna-se um servidor do sistema de sites. Em cada site, você instala um ou mais servidores adicionais do sistema de sites. Também é possível optar por não instalar servidores adicionais do sistema de sites e executar todas as funções do sistema de sites diretamente no computador do servidor do site.  Cada servidor do sistema de sites permite uma ou mais funções do sistema de sites, além de ajudar a expandir os recursos e a capacidade de uma site compartilhando a carga do processamento da CPU que as funções do sistema de sites coloca em um servidor.  
 
  Ao considerar a adição de um servidor do sistema de sites, garanta que o servidor atenda aos pré-requisitos para o uso pretendido e que ele esteja em um local de rede que tenha largura de banda suficiente para se comunicar com os pontos de extremidade esperados, incluindo o servidor do site, os recursos do domínio, o local baseado na nuvem, os servidores do sistema de sites e os clientes).  
 
  Se você configurar o servidor do sistema de sites com um proxy para ser usado pelas funções de sistema de sites, confira [Funções do sistema de sites que podem usar um servidor proxy](#bkmk_proxy)  
 
-##  <a name="a-namebkmkplanrolesa-site-system-roles"></a><a name="bkmk_planroles"></a> Funções do sistema de sites  
+##  <a name="a-namebkmkplanrolesa-site-system-roles"></a><a name="bkmk_planroles"></a> Site system roles  
  As funções do sistema de sites são instaladas em um computador para fornecer recursos adicionais ao site. Os exemplos incluem:  
 
 -   Pontos de gerenciamento adicionais para que o site possa dar suporte a mais dispositivos, até chegar à capacidade com suporte pelos sites  

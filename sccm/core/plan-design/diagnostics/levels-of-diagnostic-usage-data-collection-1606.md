@@ -109,7 +109,7 @@ Alterações de versões anteriores são indicadas com ***[Novo]*** ou ***[Atual
 - ***[Novo]*** Versão do SQL, nível do Service Pack, edição, ID de agrupamento, conjunto de caracteres
 
 
-##  <a name="a-namebkmklevel2a-level-2---enhanced"></a><a name="bkmk_level2"></a> Nível 2 – Avançado
+##  <a name="a-namebkmklevel2a-level-2---enhanced"></a><a name="bkmk_level2"></a> Nível 2 - Avançado
 O nível Avançado é o padrão após a instalação. Esse nível inclui dados coletados no nível Básico, bem como dados específicos do recurso (frequência e duração de uso), configurações do cliente do Configuration Manager (nome do componente, seu estado e algumas configurações como intervalos de sondagem), bem como informações básicas sobre atualizações de software.
 
 Esse nível é recomendado porque fornece à Microsoft o mínimo de dados necessários para fazer aperfeiçoamentos úteis em versões futuras de produtos e serviços. Esse nível não coleta nomes de objeto (sites, usuários, computadores ou objetos), detalhes de objetos relacionados à segurança ou vulnerabilidades, como contagens de sistemas que exigem atualizações de software.
@@ -372,7 +372,7 @@ A partir da versão 1606 do System Center Configuration Manager, este nível inc
 
 
 
-##  <a name="a-namebkmklevel3a-level-3---full"></a><a name="bkmk_level3"></a> Nível 3 – Completo
+##  <a name="a-namebkmklevel3a-level-3---full"></a><a name="bkmk_level3"></a> Nível 3 - Completo
 O nível Completo inclui todos os dados em Básico e Avançado. Também inclui informações adicionais sobre o Endpoint Protection, o percentual de conformidade da atualização e as informações de atualização de software.  Esse nível também pode incluir informações de diagnóstico avançadas, como arquivos do sistema e instantâneos da memória que podem incluir informações pessoais que existiam na memória ou nos arquivos de log no momento da captura.
 
 A partir da versão 1606 do System Center Configuration Manager, este nível inclui o seguinte:

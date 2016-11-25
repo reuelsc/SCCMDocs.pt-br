@@ -83,7 +83,7 @@ Você pode usar as sequências da tarefas do System Center Configuration Manager
         > [!NOTE]  
         >  Os dados de estado do usuário aos quais os links físicos se referem permanecem no computador depois que a sequência de tarefas remove o sistema operacional antigo. Esses são os dados usados para restaurar o estado do usuário quando o novo sistema operacional é implantado.  
 
-##  <a name="a-namebkmkstatemigrationpointa-configure-a-state-migration-point"></a><a name="BKMK_StateMigrationPoint"></a> Configurar um ponto de migração de estado  
+##  <a name="a-namebkmkstatemigrationpointa-configure-a-state-migration-point"></a><a name="BKMK_StateMigrationPoint"></a> Configure a state migration point  
  O ponto de migração de estado armazena dados de estado do usuário, que são capturados em um computador e restaurados em outro. No entanto, ao capturar as configurações de usuário para uma implantação de sistema operacional no mesmo computador, como em uma implantação em que você atualiza o sistema operacional no computador de destino, é possível armazenar os dados no mesmo computador usando links físicos ou em um ponto de migração de estado. Em certas implantações de computador, quando você cria o armazenamento de estado, o Configuration Manager automaticamente cria uma associação entre o armazenamento de estado e o computador de destino. É possível usar os seguintes métodos para configurar um ponto de migração de estado para armazenar os dados de estado do usuário:  
 
 -   Use o **Assistente para Criar Servidor do Sistema de Site** para criar um novo servidor do sistema de site para o ponto de migração de estado.  
@@ -104,7 +104,7 @@ Você pode usar as sequências da tarefas do System Center Configuration Manager
 
  Para obter mais informações sobre o ponto de migração de estado e as etapas para configurá-lo, consulte [Ponto de migração de estado](prepare-site-system-roles-for-operating-system-deployments.md#BKMK_StateMigrationPoints).  
 
-##  <a name="a-namebkmkcomputerassociationa-create-a-computer-association"></a><a name="BKMK_ComputerAssociation"></a> Criar uma associação de computador  
+##  <a name="a-namebkmkcomputerassociationa-create-a-computer-association"></a><a name="BKMK_ComputerAssociation"></a> Create a computer association  
  Crie uma associação de computador para definir uma relação entre um computador de origem e um computador de destino ao instalar um sistema operacional em um novo hardware e desejar capturar e restaurar as configurações de dados do usuário. O computador de origem é um computador existente que o Configuration Manager gerencia. Quando você implanta o novo sistema operacional no computador de destino, o computador de origem contém o estado do usuário que é migrado para o computador de destino.  
 
 > [!NOTE]  

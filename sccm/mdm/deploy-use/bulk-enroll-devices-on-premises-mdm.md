@@ -103,7 +103,7 @@ As seguintes tarefas explicam como registrar computadores e dispositivos em mass
 
 8.  Confirme as configurações do perfil de registro e clique em **Avançar**. Clique em **Fechar** para sair do assistente.  
 
-##  <a name="a-namebkmkcreateppkga-create-an-enrollment-package-ppkg-file"></a><a name="bkmk_createPpkg"></a> Criar um arquivo ppkg (pacote de registro)  
+##  <a name="a-namebkmkcreateppkga-create-an-enrollment-package-ppkg-file"></a><a name="bkmk_createPpkg"></a> Criar um arquivo (ppkg) de pacote de registro  
  O pacote de registro é o arquivo usado para registrar dispositivos em massa para o Gerenciamento de Dispositivo Móvel Local.  Este arquivo deve ser criado com o Configuration Manager. É possível criar tipos semelhantes de pacotes com o Windows ICD (Designer de Configuração e Imagens), mas apenas os pacotes criados no Configuration Manager podem ser usados para registrar dispositivos para o Gerenciamento de Dispositivo Móvel local do início ao fim. Os pacotes criados com o Windows ICD podem fornecer somente o nome UPN necessário para o registro, mas não executam o processo de registro real.  
 
  O processo para criar o pacote de registro requer o Windows ADK (Kit de Avaliação e Implantação do Windows) para o Windows 10.  No servidor que executa o console do Configuration Manager, certifique-se de ter a versão 1511 do Windows ADK instalada. Para mais informações, consulte a seção [Baixar kits e ferramentas para o Windows 10](https://msdn.microsoft.com/windows/hardware/dn913721.aspx)do ADK  

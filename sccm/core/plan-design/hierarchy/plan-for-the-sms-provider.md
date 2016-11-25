@@ -135,7 +135,7 @@ Para exibir os locais de cada Provedor de SMS instalado em um local, consulte a 
 
 -   O objeto que um usuário administrativo cria é armazenado no banco de dados usando o idioma utilizado para se criar esse objeto. Esses objetos são exibidos no console do Configuration Manager no mesmo idioma. Eles não podem ser convertidos pelo Provedor de SMS e não possuem várias opções de idioma.  
 
-##  <a name="a-namebkmkmultismsprova-use-multiple-sms-providers"></a><a name="BKMK_MultiSMSProv"></a> Usar vários Provedores de SMS  
+##  <a name="a-namebkmkmultismsprova-use-multiple-sms-providers"></a><a name="BKMK_MultiSMSProv"></a> Use vários Provedores de SMS  
  Após a instalação de um site, você pode instalar Provedores de SMS adicionais nele. Para instalar Provedores de SMS adicionais, execute a Instalação do Configuration Manager no servidor do site. Considere a instalação de Provedores de SMS adicionais quando qualquer uma das seguintes situações for verdadeira:  
 
 -   você terá um grande número de usuários administrativos que, ao mesmo tempo, executam um console do Configuration Manager e se conectam a um site.  

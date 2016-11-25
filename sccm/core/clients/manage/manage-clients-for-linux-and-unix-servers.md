@@ -28,7 +28,7 @@ ms.openlocfilehash: d10b6876058d19d3a9a750a59267913d15793574
 
 Ao gerenciar servidores Linux e UNIX com o System Center Configuration Manager, você pode configurar coleções, janelas de manutenção e configurações do cliente para ajudar a gerenciar os servidores. Além disso, embora o cliente do Configuration Manager para Linux e UNIX não tenha uma interface do usuário, você pode forçar o cliente a pesquisar manualmente a política do cliente.
 
-##  <a name="a-namebkmkcollectionsforlnua-collections-of-linux-and-unix-servers"></a><a name="BKMK_CollectionsforLnU"></a> Coleções de servidores Linux e UNIX  
+##  <a name="a-namebkmkcollectionsforlnua-collections-of-linux-and-unix-servers"></a><a name="BKMK_CollectionsforLnU"></a> Collections of Linux and UNIX servers  
  Você usa coleções para gerenciar grupos de servidores Linux e UNIX da mesma maneira que usa coleções para gerenciar outros tipos de clientes. As coleções podem ser coleções de associação direta ou coleções baseadas em consulta que identificam os sistemas operacionais cliente, as configurações de hardware ou outros detalhes sobre o cliente que são armazenados no banco de dados do site. Por exemplo, você pode usar coleções que incluem servidores Linux e UNIX para gerenciar o seguinte:  
 
 -   Configurações do cliente  
@@ -47,12 +47,12 @@ Ao gerenciar servidores Linux e UNIX com o System Center Configuration Manager, 
 
  Ao compilar uma coleção personalizada para servidores Linux e UNIX, inclua consultas de regra de associação que incluem o atributo Caption para o atributo Operating System. Para obter informações sobre a criação de coleções, consulte [Como criar coleções no System Center Configuration Manager](../../../core/clients/manage/collections/create-collections.md).  
 
-##  <a name="a-namebkmkmaintenancewindowsforlnua-maintenance-windows-for-linux-and-unix-servers"></a><a name="BKMK_MaintenanceWindowsforLnU"></a> Janelas de manutenção para servidores Linux e UNIX  
+##  <a name="a-namebkmkmaintenancewindowsforlnua-maintenance-windows-for-linux-and-unix-servers"></a><a name="BKMK_MaintenanceWindowsforLnU"></a> Maintenance windows for Linux and UNIX servers  
  O cliente do Configuration Manager para servidores Linux e UNIX dá suporte ao uso de janelas de manutenção. Esse suporte não foi alterado desde o suporte para clientes baseados em Windows.  
 
  Para obter mais informações sobre como usar janelas de manutenção, consulte [Como usar janelas de manutenção no System Center Configuration Manager](../../../core/clients/manage/collections/use-maintenance-windows.md).  
 
-##  <a name="a-namebkmkclientsettingsforlnua-client-settings-for-linux-and-unix-servers"></a><a name="BKMK_ClientSettingsforLnU"></a> Configurações de cliente para servidores Linux e UNIX  
+##  <a name="a-namebkmkclientsettingsforlnua-client-settings-for-linux-and-unix-servers"></a><a name="BKMK_ClientSettingsforLnU"></a> Client settings for Linux and UNIX servers  
  Você pode definir configurações do cliente que se aplicam a servidores Linux e UNIX da mesma forma que você define configurações para outros clientes.  
 
  Por padrão, as **Configurações Padrão do Agente Cliente** se aplicam a servidores Linux e UNIX. Você também pode criar configurações personalizadas do cliente e implantá-las em coleções que contêm sistemas operacionais clientes específicos ou uma combinação de sistemas operacionais cliente.  
@@ -63,7 +63,7 @@ Ao gerenciar servidores Linux e UNIX com o System Center Configuration Manager, 
 
  Para obter informações sobre configurações de cliente, consulte [Como definir as configurações do cliente no System Center Configuration Manager](../../../core/clients/deploy/configure-client-settings.md).  
 
-##  <a name="a-namebkmkpolicyforlnua-computer-policy-for-linux-and-unix-servers"></a><a name="BKMK_PolicyforLnU"></a> Política de computador para servidores Linux e UNIX  
+##  <a name="a-namebkmkpolicyforlnua-computer-policy-for-linux-and-unix-servers"></a><a name="BKMK_PolicyforLnU"></a> Computer policy for Linux and UNIX servers  
  O cliente do Configuration Manager para servidores Linux e UNIX sonda periodicamente seu site em relação à política de computador para saber mais sobre as configurações solicitadas e para verificar se há implantações.  
 
  Você também pode forçar o cliente em um servidor Linux ou UNIX a sondar imediatamente a política do computador. Para sondar imediatamente, use as credenciais de **raiz** no servidor para executar o seguinte comando: **/opt/microsoft/configmgr/bin/ccmexec -rs policy**  
@@ -73,7 +73,7 @@ Ao gerenciar servidores Linux e UNIX com o System Center Configuration Manager, 
 > [!NOTE]  
 >  O cliente do Configuration Manager para Linux e UNIX nunca solicita nem processa a política de usuário.  
 
-##  <a name="a-namebkmkmanagelinuxcertsa-how-to-manage-certificates-on-the-client-for-linux-and-unix"></a><a name="BKMK_ManageLinuxCerts"></a> Como gerenciar certificados no cliente para Linux e UNIX  
+##  <a name="a-namebkmkmanagelinuxcertsa-how-to-manage-certificates-on-the-client-for-linux-and-unix"></a><a name="BKMK_ManageLinuxCerts"></a> How to manage certificates on the client for Linux and UNIX  
  Depois de instalar o cliente para Linux e UNIX, você pode usar a ferramenta **certutil** para atualizar o cliente com um novo certificado PKI e importar uma nova CRL (lista de Certificados Revogados). Quando você instala o cliente para Linux e UNIX, essa ferramenta é colocada no seguinte local: **/opt/microsoft/configmgr/bin/certutil**  
 
  Para gerenciar certificados, em cada cliente execute certutil com uma das seguintes opções:  

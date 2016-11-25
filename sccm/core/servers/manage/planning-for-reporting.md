@@ -33,7 +33,7 @@ Os relatórios no System Center Configuration Manager fornecem um conjunto de fe
 > [!NOTE]  
 >  Para obter mais informações sobre o planejamento de sistemas de sites no Configuration Manager, consulte [Add site system roles (Adicionar funções do sistema de sites)](../deploy/configure/add-site-system-roles.md).  
 
-###  <a name="a-namebkmksupportedsiteserversa-supported-site-system-servers"></a><a name="BKMK_SupportedSiteServers"></a> Servidores de sistema de sites com suporte  
+###  <a name="a-namebkmksupportedsiteserversa-supported-site-system-servers"></a><a name="BKMK_SupportedSiteServers"></a> Servidores de sistema de site com suporte  
  Você pode instalar o ponto do Reporting Services em um site de administração central, em sites primários, em diversos sistemas de site em um site e em outros sites na hierarquia. Não há suporte para o ponto do Reporting Services em sites secundários. O primeiro ponto do Reporting Services em um site é configurado como o servidor de relatório padrão. É possível adicionar mais pontos do Reporting Services em um site, mas o servidor de relatório padrão em cada site é usado ativamente para relatórios do Configuration Manager. É possível instalar o ponto do Reporting Services no servidor de site ou em um sistema de site remoto. No entanto, como uma prática recomendada por motivos de desempenho, use o Reporting Services em um servidor de sistema de site remoto.  
 
 ###  <a name="a-namebkmkdatareplicationa-data-replication-considerations"></a><a name="BKMK_DataReplication"></a> Considerações sobre a replicação de dados  

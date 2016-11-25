@@ -107,7 +107,7 @@ Esses certificados de AC raiz importados e o certificado de AC raiz de cada pont
 
 Independentemente da configuração do site, você também pode precisar importar um certificado de CA raiz ao registrar dispositivos móveis ou computadores Mac e ao provisionar computadores Intel AMT para redes sem fio.  
 
-###  <a name="a-namebkmkplanningforclientcertificateselectiona-planning-for-pki-client-certificate-selection"></a><a name="BKMK_PlanningForClientCertificateSelection"></a> Planejando a seleção de certificados de cliente PKI  
+###  <a name="a-namebkmkplanningforclientcertificateselectiona-planning-for-pki-client-certificate-selection"></a><a name="BKMK_PlanningForClientCertificateSelection"></a> Planning for PKI client certificate selection  
  Se os sistemas de sites do IIS usarem certificados de cliente PKI para autenticação via HTTP ou para autenticação do cliente e criptografia via HTTPS, planeje como os clientes Windows selecionarão o certificado a ser usado para o Configuration Manager.  
 
 > [!NOTE]  
@@ -181,7 +181,7 @@ Para ajudar a identificar um certificado PKI único de cliente, você também po
 
 Para obter informações sobre como definir as configurações para certificados de cliente, consulte a seção [Definir configurações para certificados PKI de clientes](../../../core/plan-design/security/configure-security.md#BKMK_ConfigureClientPKI) no tópico [Configurar a segurança no System Center Configuration Manager](../../../core/plan-design/security/configure-security.md).  
 
-###  <a name="a-namebkmkplanningforpkitransitiona-planning-a-transition-strategy-for-pki-certificates-and-internet-based-client-management"></a><a name="BKMK_PlanningForPKITransition"></a> Planejando uma estratégia de transição para certificados PKI e gerenciamento de clientes baseado na Internet  
+###  <a name="a-namebkmkplanningforpkitransitiona-planning-a-transition-strategy-for-pki-certificates-and-internet-based-client-management"></a><a name="BKMK_PlanningForPKITransition"></a> Planejando uma estratégia de transição para certificados PKI e gerenciamento de clientes baseados na Internet  
 As opções de configuração flexíveis do Configuration Manager permitem que você faça a transição gradual dos clientes e do site para usar certificados PKI e ajudar a proteger os pontos de extremidade do cliente. Certificados PKI fornecem maior segurança e permitem que os clientes sejam gerenciados quando estão na Internet.  
 
 Devido ao grande número de escolhas e opções de configuração no Configuration Manager, não há uma maneira única de fazer a transição de um site de forma que todos os clientes usem conexões HTTPS. No entanto, você pode seguir estas etapas como orientação:  
@@ -301,7 +301,7 @@ Use os seguintes procedimentos para pré-provisionar e verificar a chave de raiz
 
 9. Na caixa de diálogo **Editor de objeto de TrustedRootKey=@**, na seção **Propriedades**, role para baixo até **TrustedRootKey CIM_STRING**. A cadeia de caracteres na coluna da direita é a chave de raiz confiável. Verifique se ela corresponde ao valor **SMSPublicRootKey** no arquivo *&lt;Diretório do Configuration Manager\>***\bin\mobileclient.tcf**.  
 
-##  <a name="a-namebkmkplanningforsigningencryptiona-planning-for-signing-and-encryption"></a><a name="BKMK_PlanningForSigningEncryption"></a> Planejando a assinatura e a criptografia  
+##  <a name="a-namebkmkplanningforsigningencryptiona-planning-for-signing-and-encryption"></a><a name="BKMK_PlanningForSigningEncryption"></a> Planejando para assinatura e criptografia  
  Quando você usa certificados PKI para todas as comunicações do cliente, não precisa planejar assinatura e criptografia para ajudar a proteger o cliente nas comunicação de dados. No entanto, se você configurar qualquer sistema de site que execute IIS para permitir conexões de cliente HTTP, deverá decidir como ajudar a proteger a comunicação do cliente com o site.  
 
  Para ajudar a proteger os dados que os clientes enviam aos pontos de gerenciamento, é possível requerer que eles sejam assinados. Além disso, você pode requerer que todos os dados assinados de clientes que usam HTTP utilizem o algoritmo SHA-256. Embora esta seja uma configuração mais segura, não habilite esta opção, a menos que todos os clientes deem suporte ao SHA-256. Muitos sistemas operacionais dão suporte nativo ao SHA-256, mas os sistemas operacionais mais antigos podem exigir uma atualização ou hotfix. Por exemplo, computadores que executam Windows Server 2003 SP2 devem instalar um hotfix que é referido no [KB artigo 938397](http://go.microsoft.com/fwlink/p/?LinkId=226666).  

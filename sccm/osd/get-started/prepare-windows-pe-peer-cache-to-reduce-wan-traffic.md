@@ -35,7 +35,7 @@ Ao implantar um novo sistema operacional no System Center Configuration Manager,
 
 Use as seções a seguir para gerenciar o Cache Par.
 
-##  <a name="a-namebkmkpeercacheobjectsa-objects-stored-on-a-peer-cache-source"></a><a name="BKMK_PeerCacheObjects"></a> Objetos armazenados em uma fonte de Cache Par  
+##  <a name="a-namebkmkpeercacheobjectsa-objects-stored-on-a-peer-cache-source"></a><a name="BKMK_PeerCacheObjects"></a> Objetos armazenados em uma fonte de cache par  
  Uma sequência de tarefas configuradas para usar o Cache par do Windows PE pode obter os seguintes objetos de conteúdo durante a execução no Windows PE:  
 
 -   Imagem do sistema operacional  
@@ -52,17 +52,17 @@ Use as seções a seguir para gerenciar o Cache Par.
 
 -   Atualizações de software  
 
-##  <a name="a-namebkmkpeercacheworka-how-does-windows-pe-peer-cache-work"></a><a name="BKMK_PeerCacheWork"></a> Como funciona o Cache Par no Windows PE?  
+##  <a name="a-namebkmkpeercacheworka-how-does-windows-pe-peer-cache-work"></a><a name="BKMK_PeerCacheWork"></a> Como funciona o cache par no Windows PE?  
  Considere um cenário com uma filial que não tem um ponto de distribuição, mas que tem vários clientes habilitados para usar o Cache par do Windows PE. Você implanta a sequência de tarefas configurada para usar cache par para vários clientes que estão configurados para ser parte da fonte de cache par. O primeiro cliente a executar a sequência de tarefas transmite uma solicitação para uma associação com o conteúdo. Ele não encontra uma, então obtém o conteúdo do ponto de distribuição na WAN. O cliente instala a nova imagem e armazena o conteúdo em seu cache do cliente do Configuration Manager para que possa funcionar como uma fonte de cache par para outros clientes. Quando o próximo cliente executa a sequência de tarefas, ele transmite uma solicitação na sub-rede para uma fonte de cache de sistemas pares, e esse primeiro cliente responde e disponibiliza o conteúdo armazenado em cache.  
 
-##  <a name="a-namebkmkpeercachedeterminea-determine-what-clients-will-be-part-of-the-windows-pe-peer-cache-source"></a><a name="BKMK_PeerCacheDetermine"></a> Determinar quais clientes farão parte da fonte de Cache Par do Windows PE  
+##  <a name="a-namebkmkpeercachedeterminea-determine-what-clients-will-be-part-of-the-windows-pe-peer-cache-source"></a><a name="BKMK_PeerCacheDetermine"></a> Determinar quais clientes serão parte da fonte de Cache par do Windows PE  
  Para ajudar você a determinar quais computadores serão selecionados como uma fonte de Cache par do Windows PE, há várias coisas que você deve considerar:  
 
 -   A fonte de Cache par do Windows PE deve ser um computador desktop que está sempre ligado e disponível para clientes de cache par.  
 
 -   O Cache par do Windows PE tem um tamanho de cache de cliente suficiente para armazenar as imagens.  
 
-##  <a name="a-namebkmkpeercacherequirementsa-requirements-for-a-client-to-use-a-windows-pe-peer-cache-source"></a><a name="BKMK_PeerCacheRequirements"></a> Requisitos para um cliente usar uma fonte de Cache Par do Windows PE  
+##  <a name="a-namebkmkpeercacherequirementsa-requirements-for-a-client-to-use-a-windows-pe-peer-cache-source"></a><a name="BKMK_PeerCacheRequirements"></a> Requisitos para um cliente usar uma fonte de Cache par do Windows PE  
  Para os clientes usarem uma fonte de Cache par do Windows PE, eles devem atender aos seguintes requisitos:  
 
 -   O cliente do Configuration Manager deve estar habilitado para se comunicar entre as seguintes portas em sua rede:  
@@ -78,7 +78,7 @@ Use as seções a seguir para gerenciar o Cache Par.
 
 -   As opções de implantação para a implantação de sequência de tarefas devem ser configuradas como Baixar conteúdo localmente quando necessário por sequência de tarefas.  
 
-##  <a name="a-namebkmkpeercacheconfigurea-configure-windows-pe-peer-cache"></a><a name="BKMK_PeerCacheConfigure"></a> Configurar o Cache Par do Windows PE  
+##  <a name="a-namebkmkpeercacheconfigurea-configure-windows-pe-peer-cache"></a><a name="BKMK_PeerCacheConfigure"></a> Configurar o Cache par do Windows PE  
  Você pode usar os métodos a seguir para provisionar um cliente com o conteúdo de cache par para que ele possa servir como uma fonte de cache par:  
 
 -   Um cliente de cache de sistemas pares que não possa encontrar uma fonte de cache de sistemas pares com o conteúdo a baixará de um ponto de distribuição.  Se o cliente recebe configurações do cliente que permitem que o cache de sistemas pares e a sequência de tarefas são configuradas para preservar o conteúdo em cache, o cliente torna-se uma fonte de cache de sistemas pares.  
@@ -112,7 +112,7 @@ Use as seções a seguir para gerenciar o Cache Par.
 
  Depois que um dispositivo for configurado com este objeto de configurações, o dispositivo estará configurado para agir como uma fonte de cache de sistemas pares. Estas configurações devem ser implantadas em clientes potenciais de cache de sistemas pares para configurar as portas e os protocolos necessários.  
 
-###  <a name="a-namebkmkpeercacheconfiguretsa-configure-a-task-sequence-for-windows-pe-peer-cache"></a><a name="BKMK_PeerCacheConfigureTS"></a> Configurar uma sequência de tarefas para o Cache Par do Windows PE  
+###  <a name="a-namebkmkpeercacheconfiguretsa-configure-a-task-sequence-for-windows-pe-peer-cache"></a><a name="BKMK_PeerCacheConfigureTS"></a> Configurar uma sequência de tarefas para o Cache par do Windows PE  
  Ao configurar a sequência de tarefas, use as seguintes variáveis de sequência de tarefas como Variáveis da Coleção na coleção em que a sequência de tarefas será implantada:  
 
 -   **SMSTSPeerDownload**  
@@ -135,7 +135,7 @@ Use as seções a seguir para gerenciar o Cache Par.
 
  Para obter mais informações, consulte [Variáveis internas da sequência de tarefas](../understand/task-sequence-built-in-variables.md).  
 
-###  <a name="a-namebkmkpeercachevalidatea-validate-the-success-of-using-windows-pe-peer-cache"></a><a name="BKMK_PeerCacheValidate"></a> Validar o sucesso do uso de Cache Par do Windows PE  
+###  <a name="a-namebkmkpeercachevalidatea-validate-the-success-of-using-windows-pe-peer-cache"></a><a name="BKMK_PeerCacheValidate"></a> Validar o sucesso do uso de Cache par do Windows PE  
  Depois de usar o Cache par do Windows PE para implantar e instalar uma sequência de tarefas, é possível confirmar se o cache par foi usado com êxito no processo ao exibir o **smsts.log** no cliente que executou a sequência de tarefas.  
 
  No log, encontre uma entrada semelhante à seguinte, em que <*SourceServerName*> identifica o computador por meio do qual o cliente obteve o conteúdo. Este computador deve ser uma fonte de cache de sistemas pares e não um servidor de ponto de distribuição. Outros detalhes podem variar de acordo com seu ambiente e configurações locais.  

@@ -28,7 +28,7 @@ ms.openlocfilehash: 226e283b5d9a04d2a9e0f3ce6894a82a3683d972
 
 Um pacote de atualização no System Center Configuration Manager contém os arquivos de origem da Instalação do Windows que são usados para atualizar um sistema operacional existente em um computador. Use as seções a seguir para gerenciar pacotes de atualização do sistema operacional no Configuration Manager.
 
-##  <a name="a-namebkmkaddosupgradepkgsa-add-operating-system-upgrade-packages-to-configuration-manager"></a><a name="BKMK_AddOSUpgradePkgs"></a> Adicionar pacotes de atualização do sistema operacional ao Configuration Manager  
+##  <a name="a-namebkmkaddosupgradepkgsa-add-operating-system-upgrade-packages-to-configuration-manager"></a><a name="BKMK_AddOSUpgradePkgs"></a> Adicionar pacotes de atualização do sistema operacional no Gerenciador de Configurações  
  Antes de usar um pacote de atualização do sistema operacional, você deve adicionar o pacote a um site do Configuration Manager. Use o procedimento a seguir para adicionar um pacote de atualização do sistema operacional a um site.  
 
 #### <a name="to-add-an-operating-system-upgrade-package"></a>Para adicionar um pacote de atualização do sistema operacional  

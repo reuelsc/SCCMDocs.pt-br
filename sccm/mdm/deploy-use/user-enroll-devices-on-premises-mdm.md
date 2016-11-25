@@ -45,7 +45,7 @@ As seguintes tarefas explicam como registrar e verificar o registro de computado
 
 -   [Verificar registro do dispositivo](#bkmk_verify)  
 
-##  <a name="a-namebkmkenrolldeska-enroll-a-windows-10-computer"></a><a name="bkmk_enrollDesk"></a> Registrar um computador Windows 10  
+##  <a name="a-namebkmkenrolldeska-enroll-a-windows-10-computer"></a><a name="bkmk_enrollDesk"></a> Registrar um computador com Windows 10  
 
 1.  Em um computador com Windows 10, vá para **Configurações**.  
 

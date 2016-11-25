@@ -28,7 +28,7 @@ ms.openlocfilehash: 04ada4c90a5763a454c859eb7af9ac6ac84ceb3a
 
 Use as informações a seguir para aprender a monitorar e planejar o gerenciamento de energia no System Center Configuration Manager.  
 
-##  <a name="a-namebkmkhowtousereportsa-how-to-use-reports-for-power-management"></a><a name="BKMK_How_to_use_reports"></a> Como usar relatórios de gerenciamento de energia  
+##  <a name="a-namebkmkhowtousereportsa-how-to-use-reports-for-power-management"></a><a name="BKMK_How_to_use_reports"></a> Como usar relatórios para o gerenciamento de energia  
  O gerenciamento de energia no Configuration Manager inclui vários relatórios que ajudam a analisar o consumo de energia e as configurações de energia de computadores em sua organização. Os relatórios também podem ser usados para ajudá-lo a resolver problemas.  
 
  Para poder usar os relatórios de gerenciamento de energia, você precisará configurar relatórios para sua hierarquia. Para obter mais informações sobre os relatórios do Configuration Manager, consulte [Relatórios no System Center Configuration Manager](../../../../core/servers/manage/reporting.md).  
@@ -80,7 +80,7 @@ Use as informações a seguir para aprender a monitorar e planejar o gerenciamen
 |-----------------|-------------|  
 |**Detalhes da atividade do computador**|Clique no link **Clique para obter informações detalhadas** para ver uma lista de computadores ativos, inativos e que não forneceram relatórios na data especificada.<br /><br /> Para obter mais informações, consulte [Computer Activity Details Report](#BKMK_Activity_Details) neste tópico.|  
 
-###  <a name="a-namebkmkcompactivitybycomputera-computer-activity-by-computer-report"></a><a name="BKMK_Comp_Activity_by_computer"></a> Relatório Atividade de computador por computador  
+###  <a name="a-namebkmkcompactivitybycomputera-computer-activity-by-computer-report"></a><a name="BKMK_Comp_Activity_by_computer"></a> Atividades do computador por relatório de computador  
  O relatório **Atividade do computador por computador** exibe um gráfico que mostra a seguinte atividade de um computador especificado em determinada data:  
 
 -   **Computador ligado** – O computador foi ligado.  
@@ -114,7 +114,7 @@ Use as informações a seguir para aprender a monitorar e planejar o gerenciamen
 |-----------------|-------------|  
 |**Detalhes do Computador**|Clique no link **Clique para obter informações detalhadas** para ver os recursos de energia, as configurações de energia e os planos de energia aplicados para o computador selecionado.|  
 
-###  <a name="a-namebkmkactivitydetailsa-computer-activity-details-report"></a><a name="BKMK_Activity_Details"></a> Relatório Detalhes da atividade do computador  
+###  <a name="a-namebkmkactivitydetailsa-computer-activity-details-report"></a><a name="BKMK_Activity_Details"></a> Computer Activity Details report  
  O relatório **Detalhes da atividade do computador** exibe uma lista de computadores ativos ou inativos com seus recursos de suspensão e ativação. Esse relatório é chamado pelo [Computer Activity Report](#BKMK_Activity) e não foi projetado para ser executado diretamente pelo administrador do site.  
 
  Use os parâmetros a seguir para configurar este relatório.  
@@ -161,7 +161,7 @@ Use as informações a seguir para aprender a monitorar e planejar o gerenciamen
 #### <a name="report-links"></a>Links de relatório  
  Este relatório não contém links para outros relatórios de gerenciamento de energia.  
 
-###  <a name="a-namebkmknotreportinga-computer-not-reporting-details-report"></a><a name="BKMK_Not_Reporting"></a> Relatório O computador não está relatando detalhes  
+###  <a name="a-namebkmknotreportinga-computer-not-reporting-details-report"></a><a name="BKMK_Not_Reporting"></a> Relatório Computadores que não relataram detalhes  
  O relatório **Computadores que não relataram detalhes** exibe uma lista de computadores em uma coleção especificada que não têm atividade de energia em uma data e hora especificadas. Esse relatório é chamado pelo **Computer Activity Report** e não foi projetado para ser executado diretamente pelo administrador do site.  
 
 > [!NOTE]  
@@ -479,7 +479,7 @@ Use as informações a seguir para aprender a monitorar e planejar o gerenciamen
 #### <a name="report-links"></a>Links de relatório  
  Este relatório não contém links para outros relatórios de gerenciamento de energia.  
 
-###  <a name="a-namebkmkinsomniacomputerdetailsa-insomnia-computer-details-report"></a><a name="BKMK_Insomnia_Computer_Details"></a> Relatório Detalhes do computador com insônia  
+###  <a name="a-namebkmkinsomniacomputerdetailsa-insomnia-computer-details-report"></a><a name="BKMK_Insomnia_Computer_Details"></a> Relatório Detalhes de computadores com insônia  
  O relatório **Detalhes de computadores com insônia** exibe uma lista de computadores que não entraram no modo de suspensão ou hibernação por um motivo específico em um período de tempo especificado. Esse relatório é chamado pelo **Relatório de Insônia** e não foi projetado para ser executado diretamente pelo administrador do site.  
 
  O **Relatório de Insônia** exibe computadores como **Sem capacidade de suspensão** quando eles não são capazes de entrar no modo de suspensão e foram ligados durante todo o intervalo do relatório especificado. O relatório exibe computadores como **Sem capacidade de hibernar** quando não são capazes de hibernar e foram ligados durante todo o intervalo do relatório especificado.  
@@ -508,7 +508,7 @@ Use as informações a seguir para aprender a monitorar e planejar o gerenciamen
 |-----------------|-------------|  
 |**Detalhes do Computador**|Clique no link **Clique para obter informações detalhadas** para ver os recursos de energia, as configurações de energia e os planos de energia aplicados para o computador selecionado.<br /><br /> Para obter mais informações, consulte [Computer Details Report](#BKMK_Computer_Details) neste tópico.|  
 
-###  <a name="a-namebkmkinsomniaa-insomnia-report"></a><a name="BKMK_Insomnia"></a> Relatório de Insônia  
+###  <a name="a-namebkmkinsomniaa-insomnia-report"></a><a name="BKMK_Insomnia"></a> Insomnia report  
  O **Relatório de Insônia** exibe uma lista das causas comuns que impediram os computadores de entrarem no modo de suspensão ou hibernação e o número de computadores que foram afetados por cada causa em um período de tempo especificado. Há várias causas que podem impedir que um computador entre no modo de suspensão ou hibernação, como um processo em execução no computador, uma sessão aberta da Área de Trabalho Remota ou o fato de o computador não ter a capacidade de entrar no modo de suspensão ou hibernação. Nesse relatório, você pode abrir o relatório **Detalhes de computadores com insônia** , que exibe uma lista de computadores afetados por motivos individuais de computadores que não entraram em suspensão ou hibernação.  
 
  O relatório de Insônia de energia exibe computadores como **Sem capacidade de suspensão** quando eles não são capazes de entrar no modo de suspensão e foram ligados durante todo o intervalo do relatório especificado. O relatório exibe computadores como **Sem capacidade de hibernar** quando não são capazes de hibernar e foram ligados durante todo o intervalo do relatório especificado.  
@@ -598,7 +598,7 @@ Use as informações a seguir para aprender a monitorar e planejar o gerenciamen
 |-----------------|-------------|  
 |**Detalhes de configurações de energia**|Clique no número de computadores na coluna **Computadores** para ver uma lista de todos os computadores que usam as configurações de energia nessa linha.<br /><br /> Para obter mais informações, consulte [Power Settings Details Report](#BKMK_Settings_Details) neste tópico.|  
 
-###  <a name="a-namebkmksettingsdetailsa-power-settings-details-report"></a><a name="BKMK_Settings_Details"></a> Relatório Detalhes de configurações de energia  
+###  <a name="a-namebkmksettingsdetailsa-power-settings-details-report"></a><a name="BKMK_Settings_Details"></a> Power Settings Details report  
  O relatório **Detalhes de configurações de energia** exibe mais informações sobre os computadores selecionados no relatório **Configurações de energia** . Esse relatório é chamado pelo relatório **Configurações de energia** e não foi projetado para ser executado diretamente pelo administrador do site.  
 
 #### <a name="required-report-parameters"></a>Parâmetros de relatório necessários  

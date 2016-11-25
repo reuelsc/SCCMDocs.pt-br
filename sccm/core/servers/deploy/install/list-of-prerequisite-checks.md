@@ -626,7 +626,7 @@ As seções a seguir detalham as verificações de pré-requisitos disponíveis.
     -   Site de administração central    
     -   Site primário  
 
-##  <a name="a-namebkmkrequirementsa-prerequisite-checks-for-system-requirements"></a><a name="BKMK_Requirements"></a> Verificações de pré-requisitos dos requisitos de sistema  
+##  <a name="a-namebkmkrequirementsa-prerequisite-checks-for-system-requirements"></a><a name="BKMK_Requirements"></a> Verificações de pré-requisitos de requisitos do sistema  
  Veja a seguir as verificações de pré-requisitos que o Verificador de Pré-requisitos executa para requisitos de sistema.  
 
 **Verificação do Nível Funcional do Domínio do Active Directory** – verifica se o nível funcional do domínio do Active Directory é, no mínimo, o Windows Server 2008 R2.  

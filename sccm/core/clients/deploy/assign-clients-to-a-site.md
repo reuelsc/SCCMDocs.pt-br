@@ -44,7 +44,7 @@ Após um cliente do System Center Configuration Manager ser instalado, ele deve 
 
  Se o cliente não for atribuído a um site, o software cliente permanecerá instalado, mas não será gerenciado. Um cliente é considerado não gerenciado quando é instalado, mas não atribuído a um site, ou é atribuído a um site, mas não pode se comunicar com um ponto de gerenciamento.  
 
-##  <a name="a-namebkmkmanualassignmenta-using-manual-site-assignment-for-computers"></a><a name="BKMK_ManualAssignment"></a> Usando a atribuição manual de site para computadores  
+##  <a name="a-namebkmkmanualassignmenta-using-manual-site-assignment-for-computers"></a><a name="BKMK_ManualAssignment"></a> Usando atribuição manual de site para computadores  
  Você pode atribuir manualmente os computadores cliente a um site usando os dois métodos a seguir:  
 
 -   Use uma propriedade de instalação de cliente que especifica o código do site.  
@@ -54,7 +54,7 @@ Após um cliente do System Center Configuration Manager ser instalado, ele deve 
 > [!NOTE]  
 >  Se você atribuir manualmente um computador cliente a um código do site do Configuration Manager que não existe, a atribuição do site falhará. O cliente permanece instalado, mas não é gerenciado, até que seja atribuído a um site válido do Configuration Manager.  
 
-##  <a name="a-namebkmkautomaticassignmenta-using-automatic-site-assignment-for-computers"></a><a name="BKMK_AutomaticAssignment"></a> Usando a atribuição automática de site para computadores  
+##  <a name="a-namebkmkautomaticassignmenta-using-automatic-site-assignment-for-computers"></a><a name="BKMK_AutomaticAssignment"></a> Usando atribuição manual de site para computadores  
  A atribuição automática do site pode ocorrer durante a implementação do cliente, ou quando você clica em **Localizar Site** na guia **Avançado** nas **Propriedades do Configuration Manager** no Painel de Controle. O cliente do Configuration Manager compara seu próprio local de rede com os limites configurados na hierarquia do Configuration Manager. Quando o local de rede do cliente está dentro de um grupo de limites habilitado para atribuição de site, ou a hierarquia está configurada para um local de fallback, o cliente é automaticamente atribuído a esse site sem que você tenha que especificar um código de site.  
 
  Você pode configurar limites usando um ou mais destes procedimentos:  
@@ -86,7 +86,7 @@ Após um cliente do System Center Configuration Manager ser instalado, ele deve 
 
 -   Seu local de rede não está em um dos grupos de limites configurados na hierarquia do Configuration Manager e não existe site de fallback para a hierarquia.  
 
-##  <a name="a-namebkmksitecompatibilitya-completing-site-assignment-by-checking-site-compatibility"></a><a name="BKMK_SiteCompatibility"></a> Concluindo a atribuição de site pela verificação da compatibilidade do site  
+##  <a name="a-namebkmksitecompatibilitya-completing-site-assignment-by-checking-site-compatibility"></a><a name="BKMK_SiteCompatibility"></a> Concluindo a atribuição do site pela verificação da compatibilidade do site  
  Depois que um cliente encontra seu site atribuído, a versão e o sistema operacional do cliente são verificados para garantir que um site do Configuration Manager possa gerenciá-lo. Por exemplo, o Configuration Manager não pode gerenciar clientes do Configuration Manager 2007, clientes do System Center 2012 Configuration Manager ou clientes que executam o Windows 2000.  
 
  Ao passo que uma atribuição de site falha caso você atribua um cliente que executa o Windows 2000 a um site do Configuration Manager, quando você atribui um cliente do Configuration Manager 2007 ou um cliente do System Center 2012 Configuration Manager a um site do Configuration Manager (branch atual), a atribuição de site será bem-sucedida para permitir a atualização automática do cliente. No entanto, até que os clientes de geração mais antiga sejam atualizados para um cliente do Configuration Manager (branch atual), o Configuration Manager não poderá gerenciar esse cliente usando configurações, aplicativos ou atualizações de software do cliente.  

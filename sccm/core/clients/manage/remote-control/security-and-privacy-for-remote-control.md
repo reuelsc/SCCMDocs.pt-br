@@ -54,7 +54,7 @@ Este tópico contém as informações de segurança e privacidade de controle re
 
      As mensagens de auditoria não serão enviadas se você copiar os arquivos binários para o controle remoto em vez de instalar o console do Configuration Manager e depois executar o controle remoto no prompt de comando.  
 
-##  <a name="a-namebkmkprivacyhardwareinventorya-privacy-information-for-remote-control"></a><a name="BKMK_Privacy_HardwareInventory"></a> Informações de privacidade para o controle remoto  
+##  <a name="a-namebkmkprivacyhardwareinventorya-privacy-information-for-remote-control"></a><a name="BKMK_Privacy_HardwareInventory"></a> Informações sobre privacidade para o controle remoto  
  O controle remoto permite exibir sessões ativas nos computadores cliente do Configuration Manager e potencialmente exibir quaisquer informações armazenadas nesses computadores. Por padrão, o controle remoto não está habilitado.  
 
  Embora você possa configurar o controle remoto para fornecer um aviso destacado e obter o consentimento de um usuário antes do início de uma sessão de controle remoto, ele também pode monitorar os usuários sem a permissão ou o conhecimento deles. Você pode configurar o nível de acesso Somente Exibição para que nada possa ser alterado no controle remoto, ou Controle Total. A conta do administrador que está estabelecendo a conexão é exibida na sessão de controle remoto, para ajudar os usuários a identificar quem está se conectando ao computador deles.  
