@@ -28,7 +28,7 @@ ms.openlocfilehash: 1abd28aa4ce4f946f6328f8f7924b5f5a81e640c
 O System Center Configuration Manager usa a **replicação baseada em arquivo** e **replicação de banco de dados** para transferir diferentes tipos de informações entre sites.  Os seguintes assuntos deste tópico podem ajudá-lo a entender como o Configuration Manager move dados entre sites e como é possível gerenciar a transferência deles em sua rede.  
 
 
-##  <a name="a-namebkmkfileroutea-file-based-replication"></a><a name="bkmk_fileroute"></a> Replicação baseada em arquivo  
+##  <a name="a-namebkmkfileroutea-file-based-replication"></a><a name="bkmk_fileroute"></a> File-based replication  
  O Configuration Manager usa a replicação baseada em arquivo para transferir dados baseados em arquivo entre sites em sua hierarquia. Esses dados incluem conteúdo tais como aplicativos e pacotes que você deseja implantar em pontos de distribuição em sites filho e os registros de dados de descoberta não processados que são transferidos para sites pai onde são processados.  
 
  A comunicação baseada em arquivo entre sites usa o protocolo **SMB** por meio da porta **TCP/IP 445**. É possível especificar as configurações que incluem a limitação da largura de banda e o modo de pulso para controlar a quantidade de dados transferidos pela rede, e agendamentos para controlar quando enviar os dados pela rede.  
@@ -72,7 +72,7 @@ Para gerenciar uma rota de replicação de arquivo, no espaço de trabalho **Adm
 
 Para gerenciar o remetente de um site, expanda o nó **Configuração do Site** no espaço de trabalho **Administração** , selecione o nó **Sites** e clique em **Propriedades** para o site que você quer gerenciar. Clique na guia **Remetente** para alterar a configuração do remetente.  
 
-##  <a name="a-namebkmkdbrepa-database-replication"></a><a name="bkmk_dbrep"></a> Replicação de banco de dados  
+##  <a name="a-namebkmkdbrepa-database-replication"></a><a name="bkmk_dbrep"></a> Database replication  
 A replicação de banco de dados do Configuration Manager usa o SQL Server para transferir dados e mesclar as alterações feitas em um banco de dados do site com as informações armazenadas no banco de dados em outros sites na hierarquia.  
 
 -   Isso permite que todos os sites compartilhem as mesmas informações  
@@ -113,7 +113,7 @@ O Configuration Manager classifica os dados replicados por replicação do banco
 
 As seções a seguir detalham as configurações que você pode fazer para gerenciar a replicação de banco de dados  
 
-###  <a name="a-namebkmkdblinksa-database-replication-links"></a><a name="bkmk_Dblinks"></a> Links de replicação de banco de dados  
+###  <a name="a-namebkmkdblinksa-database-replication-links"></a><a name="bkmk_Dblinks"></a> links de replicação de banco de dados  
 Quando você instala um novo site em uma hierarquia, o Configuration Manager cria um link de replicação de banco de dados entre os dois sites. É criado um link único para conectar o novo site ao site pai.  
 
 Cada link de replicação de banco de dados dá suporte a configurações para ajudar a controlar a transferência de dados pelo link de replicação. Cada link de replicação oferece suporte a configurações separadas. Os controles de links de replicação de banco de dados incluem o seguinte:  
@@ -137,7 +137,7 @@ Para obter informações sobre como configurar os links de replicação, consult
 
 Use as informações nas seções a seguir para planejar links de replicação de banco de dados.  
 
-###  <a name="a-namebkmkdistviewsa-distributed-views"></a><a name="bkmk_distviews"></a> Exibições distribuídas  
+###  <a name="a-namebkmkdistviewsa-distributed-views"></a><a name="bkmk_distviews"></a> exibições distribuídas  
 Exibições distribuídas habilitam solicitações feitas em um site de administração central para dados de site selecionados, para acessar esses dados diretamente do banco de dados em um site primário filho. Esse acesso direto substitui a necessidade de replicar os dados do site por meio do site primário para o site de administração central. Como cada link de replicação é independente de outros links de replicação, você pode habilitar exibições distribuídas apenas nos links de replicação que escolher. Não há suporte para exibições distribuídas entre um site primário e um secundário.  
 
 Exibições distribuídas podem fornecer os seguintes benefícios:  
@@ -199,7 +199,7 @@ Periodicamente, cada site resume dados de tráfego de rede que atravessam links 
 
 Por padrão, o resumo ocorre a cada 15 minutos. Você pode modificar a frequência de resumo do tráfego de rede editando o **Intervalo de Resumo** nas propriedades do vínculo de replicação de banco de dados. A frequência do resumo afeta as informações exibidas nos relatórios sobre a replicação de banco de dados. É possível modificar esse intervalo de 5 a 60 minutos. Quando você aumenta a frequência do resumo, aumenta a carga de processamento no SQL Server em cada site no vínculo de replicação.  
 
-###  <a name="a-namebkmkdbrepthresholdsa-database-replication-thresholds"></a><a name="BKMK_DBRepThresholds"></a> Limites de replicação de banco de dados  
+###  <a name="a-namebkmkdbrepthresholdsa-database-replication-thresholds"></a><a name="BKMK_DBRepThresholds"></a> limites de replicação de banco de dados  
 Limites de replicação de banco de dados definem quando o status de um vínculo de replicação de banco de dados é informado degradado ou com falha. Por padrão, um link é definido degradado quando algum grupo de replicação falha ao concluir a replicação por um período de 12 tentativas consecutivas, e definido com falha quando algum grupo de replicação não consegue replicar após 24 tentativas consecutivas.  
 
 É possível especificar valores personalizados para ajuste quando o Configuration Manager informa que um link de replicação está degradado ou com falha. O ajuste de quando o Configuration Manager relata cada status dos seus vínculos de replicação de banco de dados pode ajudar a monitorar com precisão a integridade da replicação de banco de dados por meio dos vínculos de replicação de banco de dados.  

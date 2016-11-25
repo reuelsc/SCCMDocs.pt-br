@@ -32,7 +32,7 @@ Os sites primários do System Center Configuration Manager podem usar uma répli
 -   Isso pode ajudar a reduzir os requisitos de processamento da CPU no servidor de banco de dados do site ao descarregar tarefas de processamento frequentes relacionadas aos clientes.  Um exemplo das tarefas de processamento frequentes para clientes inclui sites em que há um grande número de clientes que fazem solicitações frequentes para a política do cliente  
 
 
-##  <a name="a-namebkmkpreparea-prepare-to-use-database-replicas"></a><a name="bkmk_Prepare"></a> Preparação para usar réplicas de banco de dados  
+##  <a name="a-namebkmkpreparea-prepare-to-use-database-replicas"></a><a name="bkmk_Prepare"></a> Prepare-se para usar réplicas de banco de dados  
 **Sobre réplicas de banco de dados para pontos de gerenciamento:**  
 
 -   Réplicas são uma cópia parcial do banco de dados do site que é replicada para uma instância separada do SQL Server:  
@@ -100,7 +100,7 @@ Para usar configurar uma réplica de banco de dados, as etapas a seguir são nec
 
 -   [Etapa 5 – configurar o SQL Server Service Broker para o servidor de réplica de banco de dados](#BKMK_DBreplica_SSB)  
 
-###  <a name="a-namebkmkdbreplicaconfigsitedba-step-1---configure-the-site-database-server-to-publish-the-database-replica"></a><a name="BKMK_DBReplica_ConfigSiteDB"></a> Etapa 1 – Configurar o servidor de banco de dados do site para publicar a réplica de banco de dados  
+###  <a name="a-namebkmkdbreplicaconfigsitedba-step-1---configure-the-site-database-server-to-publish-the-database-replica"></a><a name="BKMK_DBReplica_ConfigSiteDB"></a> Etapa 1 – configurar o servidor de banco de dados do site para publicar a réplica de banco de dados  
  Use o procedimento a seguir como um exemplo de como configurar o servidor de banco de dados do site em um computador Windows Server 2008 R2 para publicar a réplica de banco de dados. Se você tiver uma versão diferente de sistema operacional, consulte a documentação do sistema operacional e ajuste as etapas neste procedimento conforme necessário.  
 
 ##### <a name="to-configure-the-site-database-server"></a>Para configurar o servidor de banco de dados do site  
@@ -132,7 +132,7 @@ Para usar configurar uma réplica de banco de dados, as etapas a seguir são nec
 
 Quando o procedimento armazenado for concluído, o servidor de banco de dados do site estará configurado para publicar a réplica de banco de dados.  
 
-###  <a name="a-namebkmkdbreplicaconfigsrva-step-2---configuring-the-database-replica-server"></a><a name="BKMK_DBReplica_ConfigSrv"></a> Etapa 2 – Configurando o servidor de réplica de banco de dados  
+###  <a name="a-namebkmkdbreplicaconfigsrva-step-2---configuring-the-database-replica-server"></a><a name="BKMK_DBReplica_ConfigSrv"></a> Etapa 2 – configurando o servidor de réplica de banco de dados  
 O servidor de réplica de banco de dados é um computador que executa o SQL Server e que hospeda uma réplica do banco de dados do site para pontos de gerenciamento a serem usados. Em um agendamento fixo, o servidor de réplica de banco de dados sincroniza sua cópia do banco de dados com a réplica de banco de dados que é publicado pelo servidor de banco de dados do site.  
 
 O servidor de réplica de banco de dados deve atender os mesmos requisitos do servidor de banco de dados do site. No entanto, o servidor de réplica de banco de dados pode executar uma edição ou versão diferente de SQL Server do que a usada pelo servidor de banco de dados do site. Para obter informações sobre as versões do SQL Server com suporte, consulte o tópico [Suporte para versões do SQL Server para o System Center Configuration Manager](../../../../core/plan-design/configs/support-for-sql-server-versions.md).  
@@ -213,7 +213,7 @@ Use o procedimento a seguir como um exemplo de como configurar o servidor de ré
 
  Agora a réplica de banco de dados está pronta para usar um ponto de gerenciamento.  
 
-###  <a name="a-namebkmkdbreplicaconfigmpa-step-3---configure-management-points-to-use-the-database-replica"></a><a name="BKMK_DBReplica_ConfigMP"></a> Etapa 3 – Configurar os pontos de gerenciamento para usar a réplica de banco de dados  
+###  <a name="a-namebkmkdbreplicaconfigmpa-step-3---configure-management-points-to-use-the-database-replica"></a><a name="BKMK_DBReplica_ConfigMP"></a> Etapa 3 – configurar os pontos de gerenciamento para usar a réplica de banco de dados  
  Você pode configurar um ponto de gerenciamento em um site primário para usar uma réplica de banco de dados quando você instalar a função do ponto de gerenciamento ou pode reconfigurar um ponto de gerenciamento existente para usar uma réplica de banco de dados.  
 
  Use as informações a seguir para configurar um ponto de gerenciamento para usar uma réplica de banco de dados:  
@@ -232,7 +232,7 @@ Além de configurar o ponto de gerenciamento para usar o servidor de réplica de
 
 3.  Defina a **Autenticação do Windows** como **Habilitada**e feche o **Gerenciador do IIS (Serviços de Informações da Internet)**.  
 
-###  <a name="a-namebkmkdbreplicacerta-step-4--configure-a-self-signed-certificate-for-the-database-replica-server"></a><a name="BKMK_DBReplica_Cert"></a> Etapa 4 – Configurar um certificado autoassinado para o servidor de réplica de banco de dados  
+###  <a name="a-namebkmkdbreplicacerta-step-4--configure-a-self-signed-certificate-for-the-database-replica-server"></a><a name="BKMK_DBReplica_Cert"></a> Etapa 4 – configurar um certificado autoassinado para o servidor de réplica de banco de dados  
  Você deve criar um certificado autoassinado no servidor de réplica de banco de dados e disponibilizar esse certificado para cada ponto de gerenciamento que usará esse servidor.  
 
  O certificado está disponível automaticamente para um ponto de gerenciamento instalado no servidor de réplica de banco de dados. No entanto, para disponibilizar esse certificado para pontos de gerenciamento remoto, você deve exportá-lo e adicioná-lo ao repositório de certificados de pessoas confiáveis no ponto de gerenciamento remoto.  
@@ -413,7 +413,7 @@ Além de configurar o ponto de gerenciamento para usar o servidor de réplica de
 
     5.  Clique em **Concluir** para fechar o assistente e concluir a configuração do certificado no ponto de gerenciamento.  
 
-###  <a name="a-namebkmkdbreplicassba-step-5---configure-the-sql-server-service-broker-for-the-database-replica-server"></a><a name="BKMK_DBreplica_SSB"></a> Etapa 5 – Configurar o SQL Server Service Broker para o servidor de réplica de banco de dados  
+###  <a name="a-namebkmkdbreplicassba-step-5---configure-the-sql-server-service-broker-for-the-database-replica-server"></a><a name="BKMK_DBreplica_SSB"></a> Etapa 5 – configurar o SQL Server Service Broker para o servidor de réplica de banco de dados  
 Para dar suporte à notificação do cliente com uma réplica de banco de dados para um ponto de gerenciamento, você deve configurar a comunicação entre o servidor de banco de dados do site e o servidor de réplica de banco de dados no SQL Server Service Broker. Para tanto, é necessário configurar cada banco de dados com informações sobre o outro banco de dados e trocar os certificados entre os dois bancos de dados, para comunicação segura.  
 
 > [!NOTE]  
@@ -489,7 +489,7 @@ Para dar suporte à notificação do cliente com uma réplica de banco de dados 
 
 5.  Após a exclusão da publicação, da assinatura e do banco de dados de réplica e a desabilitação da publicação no servidor de banco de dados do site, a réplica de banco de dados estará desinstalada.  
 
-###  <a name="a-namebkmkdbreplicaopsuninstalla-uninstall-a-site-server-that-publishes-a-database-replica"></a><a name="BKMK_DBReplicaOps_Uninstall"></a> Desinstalar um servidor do site que publica uma réplica de banco de dados  
+###  <a name="a-namebkmkdbreplicaopsuninstalla-uninstall-a-site-server-that-publishes-a-database-replica"></a><a name="BKMK_DBReplicaOps_Uninstall"></a> Desinstalar um servidor do site que publique uma réplica de banco de dados  
  Antes de desinstalar um site que publique uma réplica de banco de dados, siga as etapas abaixo para limpar a publicação e eventuais assinaturas.  
 
 1.  Use o **SQL Server Management Studio** para excluir, do banco de dados do servidor do site, a publicação da réplica de banco de dados.  
@@ -498,7 +498,7 @@ Para dar suporte à notificação do cliente com uma réplica de banco de dados 
 
 3.  Desinstale o site.  
 
-###  <a name="a-namebkmkdbreplicaopsmovea-move-a-site-server-database-that-publishes-a-database-replica"></a><a name="BKMK_DBReplicaOps_Move"></a> Mover um banco de dados do servidor do site que publica uma réplica de banco de dados  
+###  <a name="a-namebkmkdbreplicaopsmovea-move-a-site-server-database-that-publishes-a-database-replica"></a><a name="BKMK_DBReplicaOps_Move"></a> Mover um banco de dados de servidor de site que publique uma réplica de banco de dados  
  Ao mover o banco de dados do site para um novo computador, siga estas etapas:  
 
 1.  Use o **SQL Server Management Studio** para excluir, do banco de dados do servidor do site, a publicação da réplica de banco de dados.  
