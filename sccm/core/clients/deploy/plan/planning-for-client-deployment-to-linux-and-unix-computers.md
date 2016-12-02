@@ -248,7 +248,7 @@ Você pode instalar o cliente do System Center Configuration Manager em computad
 
  Para obter informações sobre portas de solicitação e de comunicação do cliente, consulte  [Configure the Client for Linux and UNIX to Locate Management Points](../../../../core/clients/deploy/deploy-clients-to-unix-and-linux-servers.md#BKMK_ConfigClientMP).  
 
-##  <a name="a-namebkmkplanningforcommunicationsforlnua-planning-for-communication-across-forest-trusts-for-linux-and-unix-servers"></a><a name="BKMK_PlanningforCommunicationsforLnU"></a> Planejando a comunicação entre florestas com relações de confiança para servidores Linux e UNIX  
+##  <a name="a-namebkmkplanningforcommunicationsforlnua-planning-for-communication-across-forest-trusts-for-linux-and-unix-servers"></a><a name="BKMK_PlanningforCommunicationsforLnU"></a> Planejamento da comunicação entre florestas com relações de confiança para servidores Linux e UNIX  
  Os servidores Linux e UNIX que você gerenciada com o Configuration Manager funcionam como clientes de grupo de trabalho e requerem configurações semelhantes às de clientes baseados no Windows que estão em um grupo de trabalho. Para obter informações sobre comunicações de computadores que estão em grupos de trabalho, consulte a seção [Comunicações entre florestas do Active Directory](../../../../core/plan-design/hierarchy/communications-between-endpoints.md#Plan_Com_X-Forest) no tópico [Comunicação entre pontos de extremidade no System Center Configuration Manager](../../../../core/plan-design/hierarchy/communications-between-endpoints.md) tópico.  
 
 ###  <a name="a-namebkmkservicelocationforlnua-service-location-by-the-client-for-linux-and-unix"></a><a name="BKMK_ServiceLocationforLnU"></a> Local do serviço pelo cliente para Linux e UNIX  
@@ -276,7 +276,7 @@ Você pode instalar o cliente do System Center Configuration Manager em computad
 
  O cliente do Configuration Manager para Linux e UNIX dá suporte a um único certificado PKI e não dá suporte a vários certificados. Portanto, os critérios de seleção de certificado que você configurar para um site do Configuration Manager não se aplicam.  
 
-###  <a name="a-namebkmkconfigcertsforlnua-configuring-certificates-for-linux-and-unix-servers"></a><a name="BKMK_ConfigCertsforLnU"></a> Configurando certificados para servidores Linux e UNIX  
+###  <a name="a-namebkmkconfigcertsforlnua-configuring-certificates-for-linux-and-unix-servers"></a><a name="BKMK_ConfigCertsforLnU"></a> Configuração de certificados para servidores Linux e UNIX  
  Para configurar um cliente do Configuration Manager para servidores Linux e UNIX para usar comunicações HTTPS, você deve configurar o cliente para usar um certificado PKI no momento em que você instalar o cliente. Não é possível provisionar um certificado antes da instalação do software cliente.  
 
  Quando você instala um cliente que usa um certificado PKI, use o parâmetro de linha de comando **- /usepkicert** para especificar o local e o nome de um arquivo PKCS #12 que contém o certificado PKI. Além disso, você deve usar o parâmetro de linha de comando **- certpw** para especificar a senha do certificado.  

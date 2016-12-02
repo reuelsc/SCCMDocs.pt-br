@@ -52,7 +52,7 @@ Para computadores conectados via WUfB, o Configuration Manager não poderá rela
 
 5.  Os computadores gerenciados via WUfB exibirão **Desconhecido** no status de conformidade e não serão contados como parte do percentual de conformidade geral.  
 
-##  <a name="a-namebkmkoffice365proplusa-managing-office-365-proplus-client-update-through-system-center-configuration-manager"></a><a name="BKMK_Office365ProPlus"></a> Gerenciando a atualização do cliente do Office 365 ProPlus por meio do System Center Configuration Manager  
+##  <a name="a-namebkmkoffice365proplusa-managing-office-365-proplus-client-update-through-system-center-configuration-manager"></a><a name="BKMK_Office365ProPlus"></a> Gerenciamento da atualização do cliente do Office 365 ProPlus por meio do System Center Configuration Manager  
  Agora, o Configuration Manager tem a capacidade de gerenciar atualizações de clientes de desktop do Office 365 usando o fluxo de trabalho do Gerenciamento de Atualizações de Software do Configuration Manager.    
 Quando a Microsoft publica uma nova atualização de clientes de desktop do Office 365 para WSUS (Windows Server Updates Services), o Configuration Manager poderá sincronizar a atualização com seu catálogo se a atualização do Office 365 estiver configurada como parte da sincronização do catálogo.  O servidor do site do Configuration Manager baixará as atualizações de clientes do Office 365 e distribuirá o pacote para pontos de distribuição do Configuration Manager.  Em seguida, o cliente do Configuration Manager informará os clientes de desktop do Office 365 sobre onde é possível obter as atualizações e quando iniciar o processo de instalação de atualização.  
 
@@ -147,7 +147,7 @@ Para instalar um site que usa um grupo de disponibilidade do SQL Server:
 
 3.  Depois de fornecer essas informações, conclua a instalação com o processo e as configurações normais.  
 
-##  <a name="a-namebkmkclusterserverupdatesa-service-a-server-cluster"></a><a name="BKMK_ClusterServerUpdates"></a> Atenda a um cluster de servidores  
+##  <a name="a-namebkmkclusterserverupdatesa-service-a-server-cluster"></a><a name="BKMK_ClusterServerUpdates"></a> Atender a um cluster de servidores  
 Agora você pode criar uma coleção que contém os servidores em um cluster e definir as configurações de cluster a serem usadas ao implantar atualizações no cluster. É possível controlar o percentual de servidores que estão online em um determinado momento, bem como configurar scripts pré e pós-implantação do PowerShell para executar ações personalizadas.  
 
 **Problemas conhecidos desta versão:**  

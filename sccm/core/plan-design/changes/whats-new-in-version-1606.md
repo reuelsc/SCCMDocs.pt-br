@@ -35,7 +35,7 @@ A atualização 1606 do System Center Configuration Manager é uma atualização
 
 
 
-## <a name="a-nameupdatesandservicingaupdates-and-servicing"></a><a name="updatesandservicing"></a>Atualizações e manutenção
+## <a name="a-nameupdatesandservicingaupdates-and-servicing"></a><a name="updatesandservicing"></a> Atualizações e serviços
 
 ### <a name="changes-for-the-updates-and-servicing-node"></a>Alterações no nó Atualizações e Manutenção
 Estas são as alterações para Atualizações e Manutenção no console do Configuration Manager:
@@ -84,7 +84,7 @@ Após a atualização 1606 ser instalada, quando você instalar uma nova atualiz
 ## <a name="a-nameaccessibilitya-accessibility"></a><a name="accessibility"></a> Acessibilidade
 A partir da versão 1606, para navegar entre os diferentes nós de um espaço de trabalho, você pode inserir a primeira letra do nome do nó. Cada tecla pressionada move o cursor para o próximo nó que começa com a letra dessa tecla e, ao usar um leitor de tela, o leitor lê o nome do nó. Para mais informações sobre opções de acessibilidade, confira [Accessibility features in System Center Configuration Manager](../../../core/understand/accessibility-features.md) (Recursos de acessibilidade no System Center Configuration Manager).
 
-## <a name="a-nameadministrationaadministration"></a><a name="administration"></a>Administração
+## <a name="a-nameadministrationaadministration"></a><a name="administration"></a> Administração
 Estas são as alterações para a Administração no console do Configuration Manager:
 ### <a name="oms-connector"></a>Conector do OMS
 

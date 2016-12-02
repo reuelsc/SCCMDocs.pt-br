@@ -71,7 +71,7 @@ As implantações de sistema operacional iniciadas pelo PXE no System Center Con
 
      Não é necessário reiniciar o servidor após você alterar esse registro.  
 
-##  <a name="a-namebkmkramdisktftparamdisk-tftp-block-size-and-window-size"></a><a name="BKMK_RamDiskTFTP"></a>Tamanho do bloco e da janela do RamDisk TFTP  
+##  <a name="a-namebkmkramdisktftparamdisk-tftp-block-size-and-window-size"></a><a name="BKMK_RamDiskTFTP"></a> Tamanho do bloco e da janela do RamDisk TFTP  
 É possível personalizar o tamanho do bloco e da janela do RamDisk TFTP, e partir do Configuration Manager versão 1606, o tamanho da janela para pontos de distribuição habilitados pelo PXE. Se você tiver personalizado sua rede, isso poderá fazer com que o download da imagem de inicialização falhe com um erro de tempo limite devido ao tamanho muito grande do bloco ou da janela. A personalização do tamanho do bloco e da janela do RamDisk TFTP permite otimizar o tráfego TFTP ao usar o PXE para atender aos seus requisitos de rede específicos. Você precisará testar as configurações personalizadas no ambiente para determinar o que é mais eficiente. Para obter mais informações, consulte [Personalizar o tamanho do bloco e da janela do RamDisk TFTP nos pontos de distribuição habilitados para PXE](../get-started/prepare-site-system-roles-for-operating-system-deployments.md#BKMK_RamDiskTFTP).
 
 ## <a name="configure-deployment-settings"></a>Definir configurações de implantação  

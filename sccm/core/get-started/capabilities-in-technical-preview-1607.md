@@ -29,7 +29,7 @@ Este artigo apresenta os recursos disponíveis no Technical Preview do System Ce
 
 **Veja a seguir os novos recursos que você pode experimentar nesta versão.**  
 
-## <a name="a-namedmpeditionaimprovements-to-the-windows-10-edition-upgrade-policy"></a><a name="dmp_edition"></a>Melhorias na Política de Atualização de Edição do Windows 10
+## <a name="a-namedmpeditionaimprovements-to-the-windows-10-edition-upgrade-policy"></a><a name="dmp_edition"></a>Melhorias na Política de atualização de edição do Windows 10
 
 Nesta versão, as seguintes melhorias foram feitas nesta política:
 

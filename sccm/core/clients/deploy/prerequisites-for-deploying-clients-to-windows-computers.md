@@ -43,7 +43,7 @@ A implantação de clientes do Configuration Manager em seu ambiente tem as segu
 |||  
 |-|-|  
 |Windows Installer versão 3.1.4000.2435|Necessário para oferecer suporte ao uso dos arquivos de atualização (. msp) do Windows Installer para pacotes e atualizações de software.|  
-|[KB2552033](http://go.microsoft.com/fwlink/p/?LinkId=240048)|Instale esse hotfix nos servidores do site que executam o Windows Server 2008 R2 quando a instalação do cliente por push for habilitada.|  
+|[KB2552033](http://go.microsoft.com/fwlink/p/?LinkId=240048)|Instale esse hotfix nos servidores do site que executam o Windows Server 2008 R2 quando a instalação do cliente por push for habilitada.|  
 |Serviço de Transferência Inteligente em Segundo Plano (BITS) da Microsoft versão 2.5|Necessário para permitir transferências de dados limitadas entre o computador cliente e os sistemas de sites do Configuration Manager. O BITS não é baixado automaticamente durante a instalação do cliente. Quando o BITS é instalado em computadores, normalmente é necessário reinicializar para concluir a instalação.<br /><br /> A maioria dos sistemas operacionais inclui o BITS, mas se eles não o incluem (por exemplo, Windows Server 2003 R2 SP2), é necessário instalar o BITS antes de instalar o cliente do Configuration Manager.|  
 |Agendador de Tarefas Microsoft|Habilite esse serviço no cliente para que a instalação do cliente seja concluída.|  
 

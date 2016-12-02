@@ -60,7 +60,7 @@ ms.openlocfilehash: 7d1f55786a42650395fcb66ee4917434feecb630
  executa instalações autônomas. É necessário ter um arquivo de inicialização da Instalação ao usar a opção **/SCRIPT**. Para obter mais informações sobre como executar a Instalação autônoma, consulte a seção [Instalar sites usando uma linha de comando](../../../../core/servers/deploy/install/use-a-command-line-to-install-sites.md).  
 
  **/SDKINST &lt;*FQDN*>**  
- Instala o Provedor de SMS no computador especificado. É necessário fornecer o FQDN para o computador do Provedor de SMS. Para obter mais informações sobre o Provedor de SMS, consulte [Planejar o Provedor de SMS para o System Center Configuration Manager](../../../../core/plan-design/hierarchy/plan-for-the-sms-provider.md).  
+ Instala o Provedor de SMS no computador especificado. É necessário fornecer o FQDN para o computador do Provedor de SMS. Para obter mais informações sobre o Provedor de SMS, consulte [Planejar o Provedor de SMS para o System Center Configuration Manager](../../../../core/plan-design/hierarchy/plan-for-the-sms-provider.md).  
 
  **/SDKDEINST &lt;*FQDN*>**  
  Desinstala o Provedor de SMS do computador especificado. É necessário fornecer o FQDN para o computador do Provedor de SMS.  
@@ -323,7 +323,7 @@ ms.openlocfilehash: 7d1f55786a42650395fcb66ee4917434feecb630
 
     -   **Valores:** &lt;*SSBPortNumber*>  
 
-    -   **Detalhes:** especifica a porta do SQL SSB (Server Service Broker) a ser usada pelo SQL Server. Normalmente, o SSB está configurado para usar a porta TCP 4022, mas há suporte para outras portas.  
+    -   **Detalhes:** especifica a porta do SQL SSB (Server Service Broker) a ser usada pelo SQL Server. Normalmente, o SSB está configurado para usar a porta TCP 4022, mas há suporte para outras portas.  
 
 -   **Nome da chave:** SQLDataFilePath  
 
@@ -620,7 +620,7 @@ Use os detalhes a seguir para instalar um site de administração central usando
 
     -   **Valores:** &lt;*SSBPortNumber*>  
 
-    -   **Detalhes:** especifica a porta do SQL SSB (Server Service Broker) a ser usada pelo SQL Server. Normalmente, o SSB está configurado para usar a porta TCP 4022, mas há suporte para outras portas.  
+    -   **Detalhes:** especifica a porta do SQL SSB (Server Service Broker) a ser usada pelo SQL Server. Normalmente, o SSB está configurado para usar a porta TCP 4022, mas há suporte para outras portas.  
 
 -   **Nome da chave:** SQLDataFilePath  
 
@@ -837,7 +837,7 @@ Use os detalhes a seguir para instalar um site de administração central usando
 
     -   **Detalhes:** especifica o FQDN para o servidor que hospedará o Provedor de SMS. Você deve especificar o servidor que hospedou o Provedor de SMS antes da falha.  
 
-         Você pode configurar outros Provedores de SMS para o site após a instalação inicial. Para obter mais informações sobre o Provedor de SMS, consulte [Planejar o Provedor de SMS para o System Center Configuration Manager](../../../../core/plan-design/hierarchy/plan-for-the-sms-provider.md).  
+         Você pode configurar outros Provedores de SMS para o site após a instalação inicial. Para obter mais informações sobre o Provedor de SMS, consulte [Planejar o Provedor de SMS para o System Center Configuration Manager](../../../../core/plan-design/hierarchy/plan-for-the-sms-provider.md).  
 
 -   **Nome da chave:** PrerequisiteComp  
 
@@ -912,7 +912,7 @@ Use os detalhes a seguir para instalar um site de administração central usando
 
     -   **Valores:** &lt;*SSBPortNumber*>  
 
-    -   **Detalhes:** especifica a porta do SQL SSB (Server Service Broker) a ser usada pelo SQL Server. Normalmente, o SSB está configurado para usar a porta TCP 4022. Você deve especificar a mesma porta do SSB que foi usada antes da falha.  
+    -   **Detalhes:** especifica a porta do SQL SSB (Server Service Broker) a ser usada pelo SQL Server. Normalmente, o SSB está configurado para usar a porta TCP 4022. Você deve especificar a mesma porta do SSB que foi usada antes da falha.  
 
 -   **Nome da chave:** SQLDataFilePath  
 
@@ -1089,7 +1089,7 @@ Use os detalhes a seguir para instalar um site de administração central usando
 
     -   **Valores:** &lt;*FQDN do Provedor de SMS*>  
 
-    -   **Detalhes:** especifica o FQDN para o servidor que hospedará o Provedor de SMS. Você deve especificar o servidor que hospedou o Provedor de SMS antes da falha. Você pode configurar outros Provedores de SMS para o site após a instalação inicial. Para obter mais informações sobre o Provedor de SMS, consulte [Planejar o Provedor de SMS para o System Center Configuration Manager](../../../../core/plan-design/hierarchy/plan-for-the-sms-provider.md).  
+    -   **Detalhes:** especifica o FQDN para o servidor que hospedará o Provedor de SMS. Você deve especificar o servidor que hospedou o Provedor de SMS antes da falha. Você pode configurar outros Provedores de SMS para o site após a instalação inicial. Para obter mais informações sobre o Provedor de SMS, consulte [Planejar o Provedor de SMS para o System Center Configuration Manager](../../../../core/plan-design/hierarchy/plan-for-the-sms-provider.md).  
 
 -   **Nome da chave:** PrerequisiteComp  
 
@@ -1164,7 +1164,7 @@ Use os detalhes a seguir para instalar um site de administração central usando
 
     -   **Valores:** &lt;*SSBPortNumber*>  
 
-    -   **Detalhes:** especifica a porta do SQL SSB (Server Service Broker) a ser usada pelo SQL Server. Normalmente, o SSB está configurado para usar a porta TCP 4022. Você deve especificar a mesma porta do SSB que foi usada antes da falha.  
+    -   **Detalhes:** especifica a porta do SQL SSB (Server Service Broker) a ser usada pelo SQL Server. Normalmente, o SSB está configurado para usar a porta TCP 4022. Você deve especificar a mesma porta do SSB que foi usada antes da falha.  
 
 -   **Nome da chave:** SQLDataFilePath  
 

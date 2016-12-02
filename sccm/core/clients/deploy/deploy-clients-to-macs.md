@@ -56,7 +56,7 @@ A instalação e o gerenciamento de clientes para computadores Mac no System Cen
 
 -   [Use a certificate request and installation method that is independent from Configuration Manager](#BKMK_ManualCertifcateInstallation)  
 
-##  <a name="a-nameinstallstepsa-steps-to-install-and-configure-the-client-for-macs"></a><a name="InstallSteps"></a> Etapas para instalar e configurar o cliente para Mac  
+##  <a name="a-nameinstallstepsa-steps-to-install-and-configure-the-client-for-macs"></a><a name="InstallSteps"></a> Etapas para instalar e configurar o cliente para Macs  
 
 > [!IMPORTANT]  
 >  Antes de executar estas etapas, verifique se seu computador Mac atende aos pré-requisitos. Para obter mais informações, consulte [Sistemas operacionais com suporte para Mac](../../plan-design/configs/supported-operating-systems-for-clients-and-devices.md#mac-computers).  
@@ -222,7 +222,7 @@ A instalação e o gerenciamento de clientes para computadores Mac no System Cen
 
 5.  Selecione a seção **Registro** e defina as seguintes configurações de usuário:  
 
-    1.  **Permitir que os usuários registrem dispositivos móveis e computadores Mac: Sim**  
+    1.  **Permitir que os usuários registrem dispositivos móveis e computadores Mac: Sim**  
 
     2.  **Perfil de registro:** clique em **Definir Perfil**.  
 
@@ -357,7 +357,7 @@ A instalação e o gerenciamento de clientes para computadores Mac no System Cen
 >   
 >  As informações coletadas por CmDiagnostics são adicionadas a um arquivo zip que é salvo na área de trabalho do computador e que tem o nome cmdiag-*<nome do host\>***-***<data e hora\>*.zip.  
 
-####  <a name="a-namebkmkenrollr2a-to-enroll-the-client-by-using-the-mac-computer-enrollment-wizard"></a><a name="BKMK_EnrollR2"></a> Para registrar o cliente usando o Assistente de Registro de Computador Mac  
+####  <a name="a-namebkmkenrollr2a-to-enroll-the-client-by-using-the-mac-computer-enrollment-wizard"></a><a name="BKMK_EnrollR2"></a> To enroll the client by using the Mac Computer Enrollment Wizard  
 
 1.  Depois que você conclui a instalação do cliente, o Assistente de Registro de Computador é aberto. Clique em **Próximo** para continuar depois da página de boas-vindas.  
 
@@ -383,7 +383,7 @@ A instalação e o gerenciamento de clientes para computadores Mac no System Cen
 
 3.  Clique em **Próximo** para continuar e, em seguida, conclua o assistente.  
 
-##  <a name="a-nameuninstallmacclienta-uninstalling-the-mac-client"></a><a name="uninstallMacClient"></a> Desinstalando o cliente Mac  
+##  <a name="a-nameuninstallmacclienta-uninstalling-the-mac-client"></a><a name="uninstallMacClient"></a> Uninstalling the Mac client  
  Se você deseja desinstalar o cliente Mac, use o script CMUninstall fornecido com os arquivos do cliente Mac baixados da Web. Use o procedimento a seguir para ajudá-lo a desinstalar o cliente do Configuration Manager de computadores Mac.  
 
 #### <a name="to-uninstall-the-mac-client"></a>Para desinstalar o cliente Mac  
@@ -399,14 +399,14 @@ A instalação e o gerenciamento de clientes para computadores Mac no System Cen
 
 3.  Se necessário, remova manualmente o certificado de autenticação de cliente que o Configuration Manager estava usando ou revogue-o. CMUnistall não remove nem revoga esse certificado.  
 
-##  <a name="a-namebkmkrenewa-renewing-the-mac-client-certificate"></a><a name="BKMK_Renew"></a> Renovando o certificado do cliente Mac  
+##  <a name="a-namebkmkrenewa-renewing-the-mac-client-certificate"></a><a name="BKMK_Renew"></a> Renewing the Mac client certificate  
  Use um dos seguintes métodos para renovar o certificado de cliente Mac:  
 
 -   [Renewing the Mac client certificate by using the Renew Certificate Wizard](#BKMK_UI)  
 
 -   [Renewing the Mac client certificate manually](#BKMK_Man)  
 
-###  <a name="a-namebkmkuia-renewing-the-mac-client-certificate-by-using-the-renew-certificate-wizard"></a><a name="BKMK_UI"></a> Renovando o certificado do cliente Mac usando o Assistente de Renovação de Certificado  
+###  <a name="a-namebkmkuia-renewing-the-mac-client-certificate-by-using-the-renew-certificate-wizard"></a><a name="BKMK_UI"></a> Renewing the Mac client certificate by using the Renew Certificate Wizard  
  Use o procedimento a seguir para configurar e usar o Assistente de Renovação de Certificado no Configuration Manager.  
 
 ##### <a name="to-renew-the-mac-client-certificate-by-using-the-renew-certificate-wizard"></a>Para renovar o certificado do cliente Mac usando o Assistente de renovação de certificado  
@@ -447,7 +447,7 @@ A instalação e o gerenciamento de clientes para computadores Mac no System Cen
     > [!NOTE]  
     >  Se o assistente não abrir, ou se você o fechar acidentalmente, clique em **Renovar** na página de preferências do **Configuration Manager** para abri-lo.  
 
-###  <a name="a-namebkmkmana-renewing-the-mac-client-certificate-manually"></a><a name="BKMK_Man"></a> Renovando o certificado do cliente Mac manualmente  
+###  <a name="a-namebkmkmana-renewing-the-mac-client-certificate-manually"></a><a name="BKMK_Man"></a> Renewing the Mac client certificate manually  
  Um período de validade típico para o certificado do cliente Mac é de 1 ano. O Configuration Manager não renova automaticamente o certificado do usuário solicitado durante o registro, por isso você precisa usar o procedimento a seguir para renovar o certificado manualmente.  
 
 > [!IMPORTANT]  
@@ -543,7 +543,7 @@ A instalação e o gerenciamento de clientes para computadores Mac no System Cen
 
 17. Reinicie o computador Mac.  
 
-##  <a name="a-namebkmkmanualcertifcateinstallationa-use-a-certificate-request-and-installation-method-that-is-independent-from-configuration-manager"></a><a name="BKMK_ManualCertifcateInstallation"></a> Usar um método de solicitação e instalação do certificado que é independente do Configuration Manager  
+##  <a name="a-namebkmkmanualcertifcateinstallationa-use-a-certificate-request-and-installation-method-that-is-independent-from-configuration-manager"></a><a name="BKMK_ManualCertifcateInstallation"></a> Use a certificate request and installation method that is independent from Configuration Manager  
  Quando você não usa o registro do Configuration Manager e, em vez disso, solicita e instala o certificado do cliente independentemente do Configuration Manager, as etapas de configuração são um pouco diferentes:  
 
 1.  Execute as etapas 1, 2, 4, 6 (opcional) e 8.  

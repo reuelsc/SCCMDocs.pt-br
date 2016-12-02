@@ -96,7 +96,7 @@ Depois de instalar todos esses componentes, existem outras etapas necessárias p
 
 As próximas etapas necessárias para habilitar clientes do Configuration Manager a consultar o Active Directory Domain Services a fim de localizar os recursos do site são listadas nos próximos procedimentos.  
 
-###  <a name="a-namebkmkcreatesysmgmtlaba-create-the-system-management-container"></a><a name="BKMK_CreateSysMgmtLab"></a> Criar o contêiner de System Management  
+###  <a name="a-namebkmkcreatesysmgmtlaba-create-the-system-management-container"></a><a name="BKMK_CreateSysMgmtLab"></a> Criar o contêiner do System Management  
  O Configuration Manager não criará automaticamente o contêiner necessário do System Management no Active Directory Domain Services quando o esquema é estendido. Portanto, você vai criá-lo para o laboratório. Essa etapa exigirá a [instalação do Editor ADSI.](https://technet.microsoft.com/en-us/library/cc773354\(WS.10\).aspx#BKMK_InstallingADSIEdit)  
 
  Verifique se você está conectado com uma conta que tem a permissão **Criar Todos os Objetos Filho** no Contêiner **Sistema** dos Serviços de Domínio do Active Directory.  
@@ -113,7 +113,7 @@ As próximas etapas necessárias para habilitar clientes do Configuration Manage
 
 5.  Clique em **Concluir** para concluir o procedimento.  
 
-###  <a name="a-namebkmksetsecpermlaba-set-security-permissions-for-the-system-management-container"></a><a name="BKMK_SetSecPermLab"></a> Definir permissões de segurança para o contêiner de System Management  
+###  <a name="a-namebkmksetsecpermlaba-set-security-permissions-for-the-system-management-container"></a><a name="BKMK_SetSecPermLab"></a> Definir permissões de segurança para o contêiner do Gerenciamento do Sistema  
  Conceda à conta de computador do servidor do site as permissões necessárias para publicar informações do site no contêiner. Você usará o Editor ADSI para essa tarefa também.  
 
 > [!IMPORTANT]  

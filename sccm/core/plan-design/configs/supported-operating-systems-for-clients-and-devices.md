@@ -35,12 +35,12 @@ ms.openlocfilehash: 862291f52d5a1bb34fb5483806972fcf70f158a8
 
 -   Não há suporte para a instalação ou execução do cliente do Configuration Manager para Linux ou UNIX, ou o cliente para Mac, em computadores com uma conta diferente da raiz. Isso pode impedir o funcionamento correto dos serviços essenciais.  
 
-##  <a name="a-namebkmkwinclientosa-windows-computers"></a><a name="bkmk_WinClientos"></a> Computadores Windows  
+##  <a name="a-namebkmkwinclientosa-windows-computers"></a><a name="bkmk_WinClientos"></a> Computadores com Windows  
  É possível gerenciar computadores Windows com o cliente do Configuration Manager, incluído com o Configuration Manager. Para mais informações, confira [How to deploy clients to Windows computers in System Center Configuration Manager](../../../core/clients/deploy/deploy-clients-to-windows-computers.md) (Como implantar clientes em computadores Windows no System Center Configuration Manager).  
 
 **Sistemas operacionais com suporte:**  
 
--  **Windows Server 2016** – Standard, Datacenter <sup>1</sup>
+-  **Windows Server 2016** – Standard, Datacenter.<sup>1</sup>
   - Há suporte para o Windows Server 2016 a partir da versão 1606 do Configuration Manager com o pacote cumulativo de atualizações do hotfix de KB3186654 (ou a versão de linha de base do 1606 lançada em outubro de 2016).  
 
 
@@ -48,7 +48,7 @@ ms.openlocfilehash: 862291f52d5a1bb34fb5483806972fcf70f158a8
 
 -   **Windows Storage Server 2012 R2** (x64)    
 
--   **Windows Server 2012** (x64) – Standard, Datacenter <sup>1</sup>    
+-   **Windows Server 2012** (x64) – Standard, Datacenter.<sup>1</sup>    
 
 -   **Windows Storage Server 2012** (x64)    
 
@@ -79,7 +79,7 @@ ms.openlocfilehash: 862291f52d5a1bb34fb5483806972fcf70f158a8
 
  <sup>1</sup> Há suporte para versões do Datacenter, mas sem certificação para o Configuration Manager. O suporte de hotfix não é oferecido para problemas específicos do Windows Server Datacenter Edition.  
 
- <sup>2</sup> Para dar suporte à instalação do cliente por push, o computador que executa esta versão do sistema operacional deve executar o serviço de função do Servidor de Arquivos para a função de servidor dos Serviços de Arquivo e Armazenamento. Para saber mais sobre como instalar recursos do Windows em um computador Server Core, confira [Instalar funções e recursos de servidor em um servidor Server Core](http://go.microsoft.com/fwlink/p/?LinkId=299359) na biblioteca do TechNet do Windows Server 2012.  
+ <sup>2</sup> Para dar suporte à instalação do cliente por push, o computador que executa esta versão do sistema operacional deve executar o serviço de função do Servidor de Arquivos para a função de servidor dos Serviços de Arquivo e Armazenamento. Para saber mais sobre como instalar recursos do Windows em um computador Server Core, confira [Instalar funções e recursos de servidor em um servidor Server Core](http://go.microsoft.com/fwlink/p/?LinkId=299359) na biblioteca do TechNet do Windows Server 2012.  
 
  <sup>3</sup> O uso deste sistema operacional exige a versão 1602 ou posterior.  
 

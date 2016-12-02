@@ -64,7 +64,7 @@ As empresas que compram dispositivos iOS para serem usados pelos funcionários p
 2.  **Adicionar dispositivos iOS para registro com o Assistente de Configuração**   
     No console do Configuration Manager, no espaço de trabalho **Ativos e Conformidade**, expanda a **Visão Geral**, expanda **Todos os Dispositivos Pertencentes à Empresa**, expanda **iOS** e clique em **Informações do dispositivo**. e clique em **Adicionar dispositivos**. Você pode adicionar dispositivos de duas maneiras:  
 
-    - É possível **Carregar um arquivo CSV contendo números de série** – crie uma lista de valores separados por vírgula (.csv) de duas colunas, sem cabeçalho, com limite de 5000 dispositivos ou 5 MB por arquivo csv. Para cada linha, a primeira célula é o número de série do dispositivo, a segunda célula são detalhes do dispositivo (opcionais).
+    - É possível **Carregar um arquivo CSV contendo números de série** – crie uma lista de valores separados por vírgula (.csv) de duas colunas, sem cabeçalho, com limite de 5000 dispositivos ou 5 MB por arquivo csv. Para cada linha, a primeira célula é o número de série do dispositivo, a segunda célula são detalhes do dispositivo (opcionais).
 
   Quando visualizado em um editor de texto, esse arquivo .csv aparece como:  
 

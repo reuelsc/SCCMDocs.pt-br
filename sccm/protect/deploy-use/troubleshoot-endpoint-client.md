@@ -244,7 +244,7 @@ Se você tiver problemas com o Windows Defender ou Endpoint Protection, entre em
 
 -   Feche todos os aplicativos e reinicie o computador.  
 
-### <a name="step-2-make-sure-the-windows-defender-orbr-endpoint-protection-service-is-set-to-automatic-and-is-started"></a>Etapa 2: Verifique se o serviço do â€œWindows Defender” ou<br />      "Endpoint Protectionâ€ está definido como automático e se ele foi iniciado  
+### <a name="step-2-make-sure-the-windows-defender-orbr-endpoint-protection-service-is-set-to-automatic-and-is-started"></a>Etapa 2: Verifique se o serviço do â€œWindows Defender” ou<br />      "O serviço Endpoint Protectionâ€ está definido como automático e foi iniciado  
 
 1.  Clique em **Iniciar** , procure por **services.msc**e pressione **Enter**.  
 

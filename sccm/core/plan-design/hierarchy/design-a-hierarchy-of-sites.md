@@ -17,8 +17,8 @@ author: Brenduns
 ms.author: brenduns
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: 1134bb2f04152288e72d40b1b1083f415cb4e900
-ms.openlocfilehash: d22f29ad5c5d193e387bd172899902cc1604c8a0
+ms.sourcegitcommit: 783fb4d61aab83ad64b9cec332e90d6c9de59f47
+ms.openlocfilehash: b1ed3011356a794b7b0913a1c8f189230d8957b2
 
 
 ---
@@ -27,6 +27,9 @@ ms.openlocfilehash: d22f29ad5c5d193e387bd172899902cc1604c8a0
 *Aplica-se a: System Center Configuration Manager (Branch Atual)*
 
 Antes de instalar o primeiro site de uma nova hierarquia do System Center Configuration Manager, você precisa compreender as topologias disponíveis para o Configuration Manager, os tipos de sites disponíveis e suas relações entre si e o escopo do gerenciamento fornecido por cada site. Em seguida, após considerar as opções de gerenciamento de conteúdo que podem reduzir o número de sites que precisa instalar, você pode planejar uma topologia que atenda de maneira eficaz suas necessidades de negócios atuais e, posteriormente, possa ser expandida para gerenciar o crescimento futuro.  
+
+> [!NOTE]
+> Ao planejar uma nova instalação do Configuration Manager, esteja atento às [notas de versão]( /sccm/core/servers/deploy/install/release-notes) que detalham problemas atuais nas versões ativas. As notas de versão se aplicam a todas as ramificações do Configuration Manager.  No entanto, ao usar a [Ramificação do Technical Preview]( /sccm/core/get-started/technical-preview), você encontrará problemas específicos apenas a essa ramificação na documentação de cada versão do Technical Preview.  
 
 ##  <a name="a-namebkmktopologya-hierarchy-topology"></a><a name="bkmk_topology"></a> Topologia de hierarquia  
  Intervalo de topologias de hierarquia de um único site primário autônomo para um grupo de sites primários e secundários conectados com um site de administração central no site de nível superior (camada superior) da hierarquia.    
@@ -115,11 +118,11 @@ O driver de chave do tipo e contagem de sites que você usa em uma hierarquia é
 
 -   Você não precisa de um ponto local de conectividade para um usuário administrativo  
 
--   Você precisa gerenciar a transferência de conteúdo de implantação para sites inferiores na hierarquia  
+-   Você deve gerenciar a transferência de conteúdo de implantação para sites inferiores na hierarquia  
 
--   Você precisará gerenciar informações do cliente que são enviadas para sites mais altos na hierarquia  
+-   Você deve gerenciar informações do cliente que são enviadas para sites mais altos na hierarquia  
 
- Se não desejar instalar um site secundário e tiver clientes em locais remotos, considere usar o Windows BranchCache ou instalar pontos de distribuição que está habilitado para controle da largura de banda e agendamento. Você pode usar essas opções de gerenciamento de conteúdo com ou sem sites secundários, e eles podem ajudá-lo a reduzir o número de sites e servidores que você precisa instalar. Para obter informações sobre opções de gerenciamento de conteúdo no Configuration Manager, consulte [Determinar quando usar as opções de gerenciamento de conteúdo](#BKMK_ChooseSecondaryorDP).  
+ Se não desejar instalar um site secundário e tiver clientes em locais remotos, considere usar o Windows BranchCache ou instalar pontos de distribuição que está habilitado para controle da largura de banda e agendamento. Você pode usar essas opções de gerenciamento de conteúdo com ou sem sites secundários, e eles podem ajudá-lo a reduzir o número de sites e servidores que você deve instalar. Para obter informações sobre opções de gerenciamento de conteúdo no Configuration Manager, consulte [Determinar quando usar as opções de gerenciamento de conteúdo](#BKMK_ChooseSecondaryorDP).  
 
 
 **As informações a seguir podem ajudar você a decidir quando instalar um site secundário:**  

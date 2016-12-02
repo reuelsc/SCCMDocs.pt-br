@@ -58,7 +58,7 @@ ms.openlocfilehash: 62a3b720abbc93460a782928e6cbdcb5d6f215aa
 ## <a name="wsus-settings"></a>Configurações do WSUS  
  É necessário definir as configurações do WSUS em diferentes páginas do **Assistente para Criar Servidor do Sistema de Sites** ou do **Assistente para Adicionar Funções do Sistema de Sites** dependendo da versão do Configuration Manager que você usa e, em alguns casos, somente nas propriedades do ponto de atualização de software, também conhecidas como Propriedades do Componente de Ponto de Atualização de Software. Use as informações das seções a seguir para configurar o WSUS.  
 
-### <a name="a-namebkmkwsusportawsus-port-settings"></a><a name="BKMK_wsusport"></a>Configurações de porta do WSUS  
+### <a name="a-namebkmkwsusportawsus-port-settings"></a><a name="BKMK_wsusport"></a> Configurações de porta do WSUS  
  Você deve configurar os parâmetros da porta do WSUS na página Ponto de Atualização de Software do assistente ou nas propriedades do ponto de atualização de software. Use o procedimento a seguir para determinar as configurações de porta usadas pelo WSUS.  
 
 #### <a name="to-determine-the-port-settings-used-in-iis"></a>Para determinar as configurações de porta usadas no IIS  

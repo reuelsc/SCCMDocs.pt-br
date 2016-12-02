@@ -35,7 +35,7 @@ A implantação de sistema operacional no System Center 2012 Configuration Manag
 
  Os recursos a seguir do Windows ADK devem ser instalados no servidor do site de nível superior da hierarquia, no servidor de cada site primário da hierarquia e no servidor de sistema do site do Provedor de SMS:  
 
--   USMT (Ferramenta de Migração do Usuário)<sup>1</sup>  
+-   USMT (Ferramenta de Migração do Usuário) <sup>1</sup>  
 
 -   Windows Deployment Tools  
 
@@ -211,7 +211,7 @@ Você precisa instalar os seguintes hotfixes do WSUS 4.0:
 ##  <a name="a-namebkmksupportedosa-supported-operating-systems"></a><a name="BKMK_SupportedOS"></a> Sistemas operacionais com suporte  
  Todos os sistemas operacionais Windows listados como sistemas operacionais cliente com suporte em [Sistemas operacionais com suporte para clientes e dispositivos](../../core/plan-design/configs/supported-operating-systems-for-clients-and-devices.md) têm suporte para implantações de sistema operacional.  
 
-##  <a name="a-namebkmksupporteddiskconfiga-supported-disk-configurations"></a><a name="BKMK_SupportedDiskConfig"></a> Configurações de disco com suporte  
+##  <a name="a-namebkmksupporteddiskconfiga-supported-disk-configurations"></a><a name="BKMK_SupportedDiskConfig"></a> Configurações de disco compatíveis  
  As combinações de configurações de disco rígido nos computadores de referência e destino que têm suporte para a implantação de sistema operacional do Configuration Manager são mostradas na tabela a seguir.  
 
 |Configuração de disco rígido do computador de referência|Configuração de disco rígido do computador de destino|  

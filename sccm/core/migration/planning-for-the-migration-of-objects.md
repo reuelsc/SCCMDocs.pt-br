@@ -152,14 +152,14 @@ Ao migrar de uma hierarquia de origem do System Center 2012 Configuration Manage
 
 É possível importar Pacotes de configuração do Configuration Manager 2007. O processo de importação converte automaticamente o Pacote de configuração para ser compatível com o System Center Configuration Manager.  
 
-##  <a name="a-nameplanmigrateboundariesa-planning-to-migrate-boundaries"></a><a name="Plan_migrate_Boundaries"></a> Planejando a migração de limites  
+##  <a name="a-nameplanmigrateboundariesa-planning-to-migrate-boundaries"></a><a name="Plan_migrate_Boundaries"></a> Planejamento da migração de limites  
  É possível migrar os limites entre hierarquias. Quando você migra limites do Configuration Manager 2007, cada limite do site de origem é migrado ao mesmo tempo e é adicionado a um novo grupo de limites que é criado na hierarquia de destino. Quando você migra limites de uma hierarquia do System Center 2012 Configuration Manager ou do System Center Configuration Manager, cada limite selecionado é adicionado a um novo grupo de limites na hierarquia de destino.  
 
  Cada grupo de limites criado automaticamente está habilitado para localização de conteúdo, mas não para atribuição de site. Isso impede que os limites sejam sobrepostos para a atribuição de site entre as hierarquias de origem e de destino. Quando você migra de ou para um site de origem do Configuration Manager 2007, isso ajuda a impedir que novos clientes do Configuration Manager 2007 instalados sejam atribuídos incorretamente à hierarquia de destino. Por padrão, os clientes do System Center Configuration Manager não são atribuídos automaticamente a sites do Configuration Manager 2007.  
 
  Durante a migração, se você compartilhar um ponto de distribuição com a hierarquia de destino, todos os limites associados a essa distribuição serão automaticamente migrados para a hierarquia de destino. Na hierarquia de destino, a migração cria um novo grupo de limites somente leitura para cada ponto de distribuição compartilhado. Se você alterar os limites do ponto de distribuição na hierarquia de destino, o grupo de limites da hierarquia de destino será atualizado com essas alterações durante o ciclo seguinte de coleta de dados.  
 
-##  <a name="a-nameplanmigratereportsa-planning-to-migrate-reports"></a><a name="Plan_Migrate_reports"></a> Planejando a migração de relatórios  
+##  <a name="a-nameplanmigratereportsa-planning-to-migrate-reports"></a><a name="Plan_Migrate_reports"></a> Planejamento da migração de relatórios  
 O Configuration Manager não dá suporte à migração de relatórios. Em vez disso, use o Construtor de Relatórios do SQL Server Reporting Services para exportar os relatórios da hierarquia de origem e, depois, importá-los na hierarquia de destino.  
 
 > [!NOTE]  
@@ -167,7 +167,7 @@ O Configuration Manager não dá suporte à migração de relatórios. Em vez di
 
 Para obter mais informações sobre relatórios, consulte [Relatórios no System Center Configuration Manager](../../core/servers/manage/reporting.md).  
 
-##  <a name="a-nameplanmigrateorgfoldersa-planning-to-migrate-organizational-and-search-folders"></a><a name="Plan_Migrate_Org_Folders"></a> Planejando a migração de pastas organizacionais e de pesquisa  
+##  <a name="a-nameplanmigrateorgfoldersa-planning-to-migrate-organizational-and-search-folders"></a><a name="Plan_Migrate_Org_Folders"></a> Planejamento da migração de pastas organizacionais e de pesquisa  
  Você pode migrar pastas organizacionais e de pesquisa de uma hierarquia de origem com suporte para uma hierarquia de destino. Além disso, de uma hierarquia de origem do System Center 2012 Configuration Manager ou do System Center Configuration Manager, é possível migrar os critérios de uma pesquisa salva para uma hierarquia de destino.  
 
  Por padrão, o processo de migração mantém suas estruturas de pasta de pesquisa e pasta administrativa para os objetos e as coleções quando você realiza a migração. No entanto, no Assistente para Criar Trabalho de Migração, na página **Configurações** , você pode configurar um trabalho de migração para que não migre a estrutura organizacional de objetos ao desmarcar a caixa de seleção dessa opção. As estruturas organizacionais das coleções são sempre mantidas.  
@@ -176,13 +176,13 @@ Para obter mais informações sobre relatórios, consulte [Relatórios no System
 
  Quando migra uma pesquisa salva de uma hierarquia de origem do System Center 2012 Configuration Manager ou do System Center Configuration Manager, você migra os critérios da pesquisa, e não as informações sobre os resultados da pesquisa. A migração de uma pesquisa salva não é aplicável de um site de origem do Configuration Manager 2007.  
 
-##  <a name="a-nameplanmigrateaia-planning-to-migrate-asset-intelligence-customizations"></a><a name="Plan_Migrate_AI"></a> Planejando a migração de personalizações do Asset Intelligence  
+##  <a name="a-nameplanmigrateaia-planning-to-migrate-asset-intelligence-customizations"></a><a name="Plan_Migrate_AI"></a> Planejamento da migração de personalizações do Asset Intelligence  
  Você pode migrar personalizações do Asset Intelligence de uma hierarquia de origem com suporte para uma hierarquia de destino. Não há alterações significativas na estrutura das personalizações do Asset Intelligence entre o Configuration Manager 2007 e o System Center Configuration Manager.  
 
 > [!NOTE]  
 >  O System Center Configuration Manager não dá suporte à migração de objetos do Asset Intelligence de um site do Configuration Manager 2007 que estiver usando o Asset Intelligence Service 2.0 (AIS 2.0).  
 
-##  <a name="a-nameplanmigrateswmrulesa-planning-to-migrate-software-metering-rules-customizations"></a><a name="Plan_Migrate_SWM_Rules"></a> Planejando a migração de personalizações de regras de medição de software  
+##  <a name="a-nameplanmigrateswmrulesa-planning-to-migrate-software-metering-rules-customizations"></a><a name="Plan_Migrate_SWM_Rules"></a> Planejamento da migração de personalizações de regras de medição de software  
  Não há alterações significativas na medição de software entre o Configuration Manager 2007 e o System Center Configuration Manager. Você pode migrar suas regras de medição de software de uma hierarquia de origem com suporte para uma hierarquia de destino.  
 
  Por padrão, as regras de medição de software que você migra para uma hierarquia de destino não são associadas a um site específico da hierarquia de destino e, em vez disso, são aplicadas a todos os clientes da hierarquia. Para aplicar uma regra de medição de software a clientes em um site específico, você deve editar a regra de medição depois que ela é migrada.  

@@ -43,8 +43,8 @@ Use as informações a seguir para ajudá-lo a atualizar sua infraestrutura que 
     >  Para obter informações sobre esta etapa crítica, confira a seção Funcionalidade nova e alterada em [Visão geral do Windows Server Update Services](https://technet.microsoft.com/library/hh852345.aspx) na documentação do Windows Server.  
 
 Para atualizar um servidor, use os procedimentos de atualização fornecidos pelo sistema operacional para o qual você está atualizando.  Veja o seguinte:
-  -  [Opções de atualização para o Windows Server 2012 R2](https://technet.microsoft.com/library/dn303416.aspx) na documentação do Windows Server.  
-  - [Opções de atualização e conversão para o Windows Server 2016](https://technet.microsoft.com/windows-server-docs/get-started/supported-upgrade-paths) na documentação do Windows Server.
+  -  [Opções de atualização para o Windows Server 2012 R2](https://technet.microsoft.com/library/dn303416.aspx) na documentação do Windows Server.  
+  - [Opções de atualização e conversão para o Windows Server 2016](https://technet.microsoft.com/windows-server-docs/get-started/supported-upgrade-paths) na documentação do Windows Server.
 
 ### <a name="upgrade-windows-server-2012-r2-to-2016"></a>Atualizar o Windows Server 2012 R2 para o 2016  
 Este cenário de atualização do sistema operacional tem as seguintes condições:
@@ -85,7 +85,7 @@ Após atualizar o servidor do site ou um servidor que hospeda uma instância de 
   -   Habilitação remota
 5. Salve as permissões para restaurar o acesso do console do Configuration Manager.
 
-### <a name="windows-server-2012-to-windows-server-2012-r2"></a>Windows Server 2012 para Windows Server 2012 R2
+### <a name="windows-server-2012-to-windows-server-2012-r2"></a>Windows Server 2012 para Windows Server 2012 R2
 
 **Antes da atualização:**
 -  Diferente dos outros cenários com suporte, este cenário não requer considerações adicionais antes da atualização.
@@ -139,8 +139,8 @@ Este cenário de atualização do sistema operacional tem as seguintes condiçõ
 ### <a name="unsupported-upgrade-scenarios"></a>Cenários de atualização sem suporte
 Os seguintes cenários de atualização do Windows Server são consultados com frequência, mas não têm suporte do Configuration Manager:  
 
--   Windows Server 2008 para Windows Server 2012 ou posterior  
--   Windows Server 2008 R2 para Windows Server 2012
+-   Windows Server 2008 para Windows Server 2012 ou posterior  
+-   Windows Server 2008 R2 para Windows Server 2012
 
 
 

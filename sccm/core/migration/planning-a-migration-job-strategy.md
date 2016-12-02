@@ -255,7 +255,7 @@ Use trabalhos de migração para configurar os dados específicos que você dese
 ### <a name="specify-conflict-resolution-for-migrated-data"></a>Especificar a resolução de conflitos de dados migrados  
  Por padrão, os trabalhos de migração não podem substituir dados no banco de dados de destino, a menos que você configure o trabalho de migração para ignorar ou substituir dados que foram migrados anteriormente para o banco de dados de destino.  
 
-##  <a name="a-nameaboutcollectionmigration-a-planning-for-collection-migration-jobs"></a><a name="About_Collection_Migration "></a> Planejando os trabalhos de migração da coleção  
+##  <a name="a-nameaboutcollectionmigration-a-planning-for-collection-migration-jobs"></a><a name="About_Collection_Migration "></a> Planejamento dos trabalhos de migração da coleção  
  Os trabalhos de migração de coleção estão disponíveis apenas quando você migra dados de uma hierarquia de origem executada em uma versão do Configuration Manager 2007 com suporte. Você deve especificar uma ou mais coleções a serem migradas quando realiza a migração por coleção. Para cada coleção especificada, o trabalho de migração seleciona automaticamente todos os objetos relacionados para migração. Por exemplo, se você selecionar uma coleção específica de usuários, os membros da coleção serão identificados e você poderá migrar as implantações associadas a esta coleção. Como opção, você pode selecionar outros objetos de implantação a serem migrados, que estão associados a esses membros. Todos esses itens selecionados são adicionados à lista de objetos que podem ser migrados.  
 
  Quando você migra uma coleção, o System Center Configuration Manager também migra as configurações da coleção, inclusive janelas de manutenção e variáveis da coleção. Porém, ele não pode migrar as configurações da coleção para o provisionamento do cliente AMT.  
@@ -305,12 +305,12 @@ Use trabalhos de migração para configurar os dados específicos que você dese
 
  Para habilitar um programa após a migração, desmarque a opção **Desabilitar este programa nos computadores em que é anunciado** na guia **Avançado** das propriedades do programa.  
 
-##  <a name="a-nameaboutobjectmigrationa-planning-for-object-migration-jobs"></a><a name="About_Object_Migration"></a> Planejando trabalhos de migração de objeto  
+##  <a name="a-nameaboutobjectmigrationa-planning-for-object-migration-jobs"></a><a name="About_Object_Migration"></a> Planejamento dos trabalhos de migração de objetos  
  Ao contrário da migração de coleção, você deve selecionar cada objeto e instância do objeto que deseja migrar. Você pode selecionar os objetos individuais, como anúncios de uma hierarquia do Configuration Manager 2007 ou uma publicação de uma hierarquia do System Center 2012 Configuration Manager ou do System Center Configuration Manager, para adicionar à lista de objetos a serem migrados para um trabalho de migração específico. Todos os objetos que não forem adicionados à lista de migração não serão migrados para o site de destino pelo trabalho de migração de objeto.  
 
  Os trabalhos de migração baseada em objeto não têm configurações adicionais a serem planejadas além das aplicáveis a todos os trabalhos de migração.  
 
-##  <a name="a-nameaboutobjectmigrationsa-planning-for-previously-migrated-object-migration-jobs"></a><a name="About_Object_Migrations"></a> Planejando trabalhos de migração de objeto migrado anteriormente  
+##  <a name="a-nameaboutobjectmigrationsa-planning-for-previously-migrated-object-migration-jobs"></a><a name="About_Object_Migrations"></a> Planejamento de trabalhos de migração de objetos migrados anteriormente  
  Quando um objeto que você já migrou para a hierarquia de destino é atualizado na hierarquia de origem, você pode migrá-lo novamente usando o tipo de trabalho **Objetos modificados após a migração** . Por exemplo, quando os arquivos de origem são renomeados ou atualizados para um pacote na hierarquia de origem, a versão do pacote é incrementada na hierarquia de origem. Depois que isso ocorre, o pacote pode ser identificado para migração por este tipo de trabalho.  
 
  Este tipo de trabalho é semelhante ao tipo de migração de objeto; porém, quando você seleciona os objetos a serem migrados, apenas os objetos atualizados após a migração por um trabalho de migração anterior poderão ser selecionados.  

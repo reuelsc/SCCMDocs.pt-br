@@ -417,7 +417,7 @@ O cliente do Configuration Manager para computadores Mac registra informações 
 ##  <a name="a-namebkmkfunctionlogsa-log-files-for-configuration-manager-functionality"></a><a name="BKMK_FunctionLogs"></a> Arquivos de log da funcionalidade do Configuration Manager  
  As seções a seguir listam os arquivos de log relacionados às diferentes funções no Configuration Manager.  
 
-###  <a name="a-namebkmkappmanageloga-application-management"></a><a name="BKMK_AppManageLog"></a> Gerenciamento de aplicativo  
+###  <a name="a-namebkmkappmanageloga-application-management"></a><a name="BKMK_AppManageLog"></a> Gerenciamento de aplicativos  
  A tabela a seguir lista os arquivos de log que contêm informações relacionadas ao gerenciamento de aplicativos.  
 
 |Nome do log|Descrição|Computador com o arquivo de log|  
@@ -491,7 +491,7 @@ O cliente do Configuration Manager para computadores Mac registra informações 
     > [!NOTE]  
     >  Este arquivo está localizado na pasta do perfil da conta de Serviço de Registro de Dispositivo de Rede, por exemplo, C:\Users\SCEPSvc. Para obter mais informações sobre como habilitar registro para o Serviço de Registro de Dispositivo de Rede, consulte a seção [Habilitar Registro](http://go.microsoft.com/fwlink/?LinkId=320576) no NDES (Serviço de Registro de Dispositivo de Rede) no artigo AD CS (Serviços de Certificados do Active Directory) no wiki da TechNet.  
 
-###  <a name="a-namebkmkbgba-client-notification"></a><a name="BKMK_BGB"></a> Notificação de cliente  
+###  <a name="a-namebkmkbgba-client-notification"></a><a name="BKMK_BGB"></a> Notificação de Cliente  
  A tabela a seguir lista os arquivos de log que contêm as informações relacionadas à notificação de cliente.  
 
 |Nome do log|Descrição|Computador com o arquivo de log|  
@@ -615,7 +615,7 @@ A tabela a seguir lista os arquivos de log que contêm informações relacionada
 |--------------|-----------------|----------------------------|  
 |easdisc.log|Registra as atividades e o status do conector do Exchange Server.|Servidor do site|  
 
-####  <a name="a-namebkmkmdlegloga-mobile-device-legacy"></a><a name="BKMK_MDLegLog"></a> Herdado de dispositivo móvel  
+####  <a name="a-namebkmkmdlegloga-mobile-device-legacy"></a><a name="BKMK_MDLegLog"></a> Herança do dispositivo móvel  
  A tabela a seguir lista os logs que contêm informações relacionadas ao cliente herdado de dispositivos móveis.  
 
 |Nome do log|Descrição|Computador com o arquivo de log|  

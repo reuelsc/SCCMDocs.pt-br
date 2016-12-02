@@ -61,7 +61,7 @@ Há suporte para instalar e operar várias hierarquias independentes do System C
 
  Para impedir que clientes sejam atribuídos acidentalmente a um site incorreto quando duas hierarquias tiverem limites sobrepostos, configure os parâmetros de instalação do cliente do Configuration Manager para atribuir clientes a um site específico.  
 
-##  <a name="a-namebkmkmixeda-configuration-manager-limitations-in-a-mixed-version-hierarchy"></a><a name="bkmk_mixed"></a> Limitações do Configuration Manager em uma hierarquia com versões mistas  
+##  <a name="a-namebkmkmixeda-configuration-manager-limitations-in-a-mixed-version-hierarchy"></a><a name="bkmk_mixed"></a> Limitações do Configuration Manager em uma hierarquia de versão mista  
  Quando você está no processo de atualizar um site do System Center Configuration Manager, algumas vezes sites diferentes estão em versões diferentes.  Por exemplo, você pode atualizar um site de administração central para uma nova versão, mas devido a janelas de manutenção do site, um ou mais sites primários podem não ser atualizados até que uma data e hora posterior.  
 
  Quando sites diferentes em uma única hierarquia usam versões diferentes, parte da funcionalidade fica indisponível. Isso pode afetar a forma de gerenciar os objetos do Configuration Manager no console do Configuration Manager e quais funcionalidades estarão disponíveis para os clientes. Normalmente, as funcionalidades da versão do mais recente do Configuration Manager não são acessíveis em sites ou para clientes que executam uma versão de service pack inferior.  

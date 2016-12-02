@@ -94,7 +94,7 @@ Este artigo apresenta os recursos disponíveis no Technical Preview do System Ce
 ##  <a name="a-namebkmkpfwa-improvements-to-microsoft-passport-for-work-management"></a><a name="BKMK_PFW"></a> Melhorias no gerenciamento do Microsoft Passport for Work  
  Agora, é possível implantar políticas do Passport for Work em dispositivos Windows 10 ingressados no domínio e gerenciados pelo cliente do Configuration Manager.  
 
-##  <a name="a-namebkmkswitchsupa-option-for-clients-to-switch-to-a-new-software-update-point"></a><a name="bkmk_switchsup"></a> Opção para clientes mudarem para um novo ponto de atualização de software  
+##  <a name="a-namebkmkswitchsupa-option-for-clients-to-switch-to-a-new-software-update-point"></a><a name="bkmk_switchsup"></a> Opção para clientes alternarem para um novo ponto de atualização de software  
  No Technical Preview 1604, você pode habilitar a opção para clientes do Configuration Manager mudarem para um novo ponto de atualização de software quando houver problemas com o ponto de atualização de software ativo. Para essa opção, você deve ter vários pontos de atualização de software disponíveis em um site primário. Habilite essa opção em uma coleção de dispositivos e, uma vez habilitada, os clientes na coleção procurarão por outro ponto de atualização de software na próxima verificação, quando o cliente não conseguir se conectar com êxito ao ponto de atualização de software ativo. Dependendo de suas definições de configuração do WSUS (classificações de atualização, produtos etc.), mudar para um novo ponto de atualização de software gerará tráfego de rede adicional. Portanto, você deve usar essa opção apenas quando for necessário.  
 
 #### <a name="to-enable-the-option-to-switch-software-update-points"></a>Para habilitar a opção de alternar pontos de atualização de software  
@@ -106,7 +106,7 @@ Este artigo apresenta os recursos disponíveis no Technical Preview do System Ce
 > [!NOTE]  
 >  Essa opção só está disponível em sites que possuem vários pontos de atualização de software.  
 
-##  <a name="a-namebkmkpeercachea-client-settings-to-manage-client-cache-settings-and-client-peer-cache"></a><a name="bkmk_peercache"></a> Configurações de cliente para gerenciar as Configurações de Cache do Cliente e o Cache Par do cliente  
+##  <a name="a-namebkmkpeercachea-client-settings-to-manage-client-cache-settings-and-client-peer-cache"></a><a name="bkmk_peercache"></a> Definições do cliente para gerenciar Configurações de Cache do Cliente e Cache de Mesmo Nível do cliente  
  A versão de visualização 1604 introduz duas novas configurações de cliente de dispositivo que afetam o uso de um cache do cliente. Ambas podem ser usadas individualmente, mas são configuradas na mesma folha de propriedades para configurações do cliente e se combinam para ajudar você a gerenciar a implantação de conteúdo em seus clientes em locais remotos.  
 
 -   A primeira é o **Cache Par do cliente**, uma solução interna do Configuration Manager para clientes compartilharem conteúdo com outros clientes diretamente do cache local. Para clientes do Cache de Mesmo Nível compartilharem conteúdo, eles devem ser membros do mesmo grupo de limites. O Cache Par não substitui o uso de outras soluções como o BranchCache, mas trabalha lado a lado para fornecer a você mais opções para estender as soluções tradicionais de implantação de conteúdo, como os pontos de distribuição.  

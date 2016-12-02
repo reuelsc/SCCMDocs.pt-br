@@ -231,7 +231,7 @@ As etapas de sequência de tarefas a seguir podem ser adicionadas à sequência 
 
 -   **Letra de unidade lógica armazenada em uma variável** – Especifique a variável de sequência de tarefas que contém a letra da unidade atribuída à partição pelo Windows PE. Essa variável normalmente seria definida na seção avançada da caixa de propriedades **Propriedades da partição** para a ação da sequência de tarefa **Formatar e particionar o disco** .  
 
-##  <a name="a-namebkmkapplywindowssettingsa-apply-windows-settings"></a><a name="BKMK_ApplyWindowsSettings"></a> Aplicar Configurações do Windows  
+##  <a name="a-namebkmkapplywindowssettingsa-apply-windows-settings"></a><a name="BKMK_ApplyWindowsSettings"></a> Aplicar as Configurações do Windows  
  Use a etapa da sequência de tarefas **Aplicar configurações do Windows** para definir as configurações do Windows no computador de destino. Os valores especificados são armazenados no formato de arquivo de resposta apropriado para uso pela instalação do Windows quando a etapa da sequência de tarefas **Instalação do Windows e ConfigMgr** é executada.  
 
  Essa etapa de sequência de tarefas é executada somente no Windows PE. Ela não é executada em um sistema operacional padrão. Para obter mais informações sobre as variáveis de sequência de tarefas para esta ação, veja [Apply Windows Settings Task Sequence Action Variables](task-sequence-action-variables.md#BKMK_ApplyWindowsSettings).  
@@ -336,7 +336,7 @@ Essa etapa de sequência de tarefas é executada somente no Windows PE. Ela não
 > [!IMPORTANT]  
 >  Essa opção não se aplica aos sistemas operacionais onde a política de assinatura de driver não pode ser configurada.  
 
-##  <a name="a-namebkmkcapturenetworksettingsa-capture-network-settings"></a><a name="BKMK_CaptureNetworkSettings"></a> Capturar Configurações da Rede  
+##  <a name="a-namebkmkcapturenetworksettingsa-capture-network-settings"></a><a name="BKMK_CaptureNetworkSettings"></a> Capturar configurações da rede  
  Use a etapa da sequência de tarefas **Capturar as configurações de rede** para capturar as configurações de rede da Microsoft no computador que executa a sequência de tarefas. As configurações são salvas em variáveis de sequência de tarefas que substituirão as configurações padrão definidas na etapa da sequência de tarefas **Aplicar configurações de rede** .  
 
  Essa etapa só é executada em um sistema operacional padrão. Ela não é executada no Windows PE. Para obter mais informações sobre as variáveis de sequência de tarefas para esta ação, veja [Capture Network Settings Task Sequence Action Variables](task-sequence-action-variables.md#BKMK_CaptureNetworkSettings).  
@@ -364,7 +364,7 @@ Essa etapa de sequência de tarefas é executada somente no Windows PE. Ela não
  **Migrar configuração do adaptador de rede**  
  Captura a configuração do adaptador de rede do computador de destino. As informações capturadas incluem as configurações de rede global, o número de adaptadores e as configurações de rede associadas a cada adaptador. Essas configurações incluem as configurações associadas com DNS, WINS, IP e filtros de porta.  
 
-##  <a name="a-namebkmkcaptureoperatingsystemimagea-capture-operating-system-image"></a><a name="BKMK_CaptureOperatingSystemImage"></a> Capturar Imagem do Sistema Operacional  
+##  <a name="a-namebkmkcaptureoperatingsystemimagea-capture-operating-system-image"></a><a name="BKMK_CaptureOperatingSystemImage"></a> Capturar imagem do sistema operacional  
  Use a etapa da sequência de tarefas **Capturar imagem do sistema operacional** para capturar imagens de um ou mais computadores de referência e armazená-las em um arquivo WIM no compartilhamento de rede especificado. O Assistente de Adição do Pacote de Imagem de Sistema Operacional poderá ser usado para importar este arquivo .WIM para o Configuration Manager para que ele possa ser usado para implantações de sistema operacional baseadas em imagem.  
 
  Cada volume (unidade) no computador de referência é capturado como uma imagem separada dentro do arquivo. wim. Se o computador de referência tiver vários volumes, o arquivo WIM resultante conterá uma imagem separada para cada volume. Apenas volumes formatados como NTFS ou FAT32 são capturados. Volumes com outros formatos e USB são ignorados.  
@@ -610,7 +610,7 @@ Essa etapa de sequência de tarefas é executada somente no Windows PE. Ela não
  **Unidade específica**  
  Desabilita o BitLocker em uma unidade específica. Use a lista suspensa para especificar a unidade em que o BitLocker será desabilitado.  
 
-##  <a name="a-namebkmkdownloadpackagecontenta-download-package-content"></a><a name="BKMK_DownloadPackageContent"></a> Baixar Conteúdo do Pacote  
+##  <a name="a-namebkmkdownloadpackagecontenta-download-package-content"></a><a name="BKMK_DownloadPackageContent"></a> Baixar o conteúdo do pacote  
  Use a etapa da sequência de tarefas **Baixar Conteúdo do Pacote** para baixar qualquer um dos seguintes tipos de pacote:  
 
 -   Imagens do sistema operacional  
@@ -1062,7 +1062,7 @@ A nova variável de sequência de tarefas, SMSTSSoftwareUpdateScanTimeout, foi i
 
  *Domínio\conta*  
 
-##  <a name="a-namebkmkprepareconfigmgrclientforcapturea-prepare-configmgr-client-for-capture"></a><a name="BKMK_PrepareConfigMgrClientforCapture"></a> Preparar o Cliente do ConfigMgr para Captura  
+##  <a name="a-namebkmkprepareconfigmgrclientforcapturea-prepare-configmgr-client-for-capture"></a><a name="BKMK_PrepareConfigMgrClientforCapture"></a> Preparar ConfigMgr Client for Capture  
  Use a etapa **Preparar o Cliente do ConfigMgr para Captura** para obter o cliente do Configuration Manager no computador de referência e prepará-lo para captura como parte do processo de geração de imagens, executando as seguintes tarefas:  
 
 -   Remove a seção de propriedades de configuração de cliente do arquivo smscfg.ini no diretório do Windows. Essas propriedades incluem informações específicas do cliente incluindo o GUID do Configuration Manager e outros identificadores de cliente.  
@@ -1096,7 +1096,7 @@ A nova variável de sequência de tarefas, SMSTSSoftwareUpdateScanTimeout, foi i
  **Descrição**  
  Informações mais detalhadas sobre a ação realizada nesta etapa.  
 
-##  <a name="a-namebkmkpreparewindowsforcapturea-prepare-windows-for-capture"></a><a name="BKMK_PrepareWindowsforCapture"></a> Preparar o Windows para Captura  
+##  <a name="a-namebkmkpreparewindowsforcapturea-prepare-windows-for-capture"></a><a name="BKMK_PrepareWindowsforCapture"></a> Preparar Windows para Captura  
  Use a etapa da sequência de tarefas **Preparar o Windows para captura** para especificar as opções do Sysprep a usar ao capturar uma imagem do sistema operacional no computador de referência. Esta ação de sequência de tarefas executa o Sysprep e reinicia o computador na imagem de inicialização do Windows PE especificado para a sequência de tarefas. O computador de referência não deve estar associado a um domínio para essa ação ser concluída com êxito.  
 
  Essa etapa só é executada em um sistema operacional padrão. Ela não é executada no Windows PE. Para obter informações sobre variáveis de sequência de tarefas para esta ação da sequência de tarefas, veja [Prepare Windows for Capture Task Sequence Action Variables](task-sequence-action-variables.md#BKMK_PrepareWindowsCapture).  
@@ -1623,7 +1623,7 @@ A nova variável de sequência de tarefas, SMSTSSoftwareUpdateScanTimeout, foi i
 
  Você pode especificar as opções de linha de comando usadas durante a instalação do cliente. Por exemplo, você pode inserir **/skipprereq: silverlight.exe** para informar o CCMSetup.exe para não instalar o pré-requisito do Microsoft Silverlight. Para mais informações sobre as opções de linha de comando disponíveis para o CCMSetup.exe, confira [About client installation properties](../../core/clients/deploy/about-client-installation-properties.md) (Sobre as propriedades da instalação do cliente).  
 
-##  <a name="a-namebkmkupgradeosa-upgrade-operating-system"></a><a name="BKMK_UpgradeOS"></a> Atualizar Sistema Operacional  
+##  <a name="a-namebkmkupgradeosa-upgrade-operating-system"></a><a name="BKMK_UpgradeOS"></a> Atualizar o sistema operacional  
  Use a etapa da sequência de tarefas **Atualizar Sistema Operacional** para atualizar um sistema operacional existente do Windows 7, Windows 8, Windows 8.1 ou Windows 10 para um Windows 10.  
 
  Essa etapa só é executada em um sistema operacional padrão. Ela não é executada no Windows PE.  

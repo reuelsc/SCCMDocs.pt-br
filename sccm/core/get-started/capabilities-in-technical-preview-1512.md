@@ -43,7 +43,7 @@ O console também exibe as principais configurações de atestado de integridade
 
 Para visualizar a exibição do atestado de integridade do dispositivo no console do Configuration Manager, acesse o espaço de trabalho **Monitoramento**, clique no nó **Segurança** e clique em **Atestado de Integridade**.  
 
-##  <a name="a-namebkmkviewtermsa-in-console-monitoring-for-terms-and-conditions"></a><a name="bkmk_viewterms"></a> Monitoramento no console para os termos e condições  
+##  <a name="a-namebkmkviewtermsa-in-console-monitoring-for-terms-and-conditions"></a><a name="bkmk_viewterms"></a> Monitoramento no console dos termos e condições  
 A partir do Technical Preview 1512, ao integrar o Configuration Manager ao Microsoft Intune, você poderá usar o console do Configuration Manager para ver quais usuários aceitaram os termos e condições configurados pelo departamento de TI, e quais não aceitaram.  
 
 **Para exibir informações de resumo:**  

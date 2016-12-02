@@ -66,7 +66,7 @@ Os números com suporte neste artigo são baseados no uso de hardware recomendad
 
     -   Cada instância desta função do sistema de sites dá suporte ao número máximo de clientes com suporte pela hierarquia.  
 
-## <a name="a-namebkmkrolesa-site-system-roles"></a><a name="bkmk_roles"></a> Funções do sistema de sites    
+## <a name="a-namebkmkrolesa-site-system-roles"></a><a name="bkmk_roles"></a> Site system roles    
 
 **Ponto de serviços Web do Catálogo de Aplicativos:**  
 

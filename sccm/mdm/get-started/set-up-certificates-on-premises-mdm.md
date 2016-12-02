@@ -49,7 +49,7 @@ O Gerenciamento de Dispositivo Móvel Local do System Center Configuration Manag
 
 -   [Exportar o certificado com a mesma raiz do certificado do servidor Web](#bkmk_exportCert)  
 
-##  <a name="a-namebkmkconfigcaa-configure-the-certification-authority-ca-for-crl-publishing"></a><a name="bkmk_configCa"></a> Configurar a AC para publicação de lista de CRL  
+##  <a name="a-namebkmkconfigcaa-configure-the-certification-authority-ca-for-crl-publishing"></a><a name="bkmk_configCa"></a> Configurar a AC (autoridade de certificação) para publicação de CRL  
  Por padrão, a autoridade de certificação usa CRLs (listas de certificados revogados) baseadas em LDAP que permite conexões para dispositivos ingressados no domínio. Você deve adicionar listas de certificados revogados baseadas em HTTP à autoridade de certificação para possibilitar que dispositivos não ingressados no domínio sejam confiáveis com certificados emitidos da autoridade de certificação. Esses certificados são necessários para comunicações SSL entre os servidores que hospedam as funções de sistema de sites do Configuration Manager e os dispositivos registrados no Gerenciamento de Dispositivo Móvel Local.  
 
  Siga as etapas abaixo a fim de configurar a autoridade de certificação para publicar automaticamente as informações da lista de certificados revogados para emissão de certificados que permitam conexões confiáveis de dispositivos ingressados e não ingressados no domínio:  

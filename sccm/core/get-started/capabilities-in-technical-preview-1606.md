@@ -59,7 +59,7 @@ Quando você associa uma coleção a uma categoria de dispositivos, todos os dis
 2.  Selecione um dispositivo na lista **Dispositivos** e, na guia **Início**, no grupo **Dispositivo**, clique em **Alterar Categoria**.
 3.  Na caixa de diálogo **Editar Categoria de Dispositivo**, selecione a categoria a ser aplicada a esse dispositivo e clique em **OK**.
 
-## <a name="a-namedmpgracea-enforcement-grace-period-for-required-application-and-software-update-deployments"></a><a name="dmp_grace"></a> Período de carência para a imposição de implantações de atualizações de software e aplicativos obrigatórias
+## <a name="a-namedmpgracea-enforcement-grace-period-for-required-application-and-software-update-deployments"></a><a name="dmp_grace"></a> Período de cortesia para imposição de implantações de atualizações de software e aplicativos obrigatórios
 
 Em alguns casos, talvez você queira conceder aos usuários mais tempo instalar as atualizações de software ou as implantações de aplicativo obrigatórias além dos prazos configurados. Isso normalmente pode ser necessário quando um computador ficou desligado por um período estendido e precisa reinstalar uma grande quantidade de implantações de atualização ou aplicativo.
 Por exemplo, se um usuário final acabou de voltar de férias, eles terá que aguardar um longo período enquanto as implantações de aplicativo atrasadas são instaladas.
@@ -76,7 +76,7 @@ Todas as implantações que têm essa caixa de seleção marcada e que são dest
 Se você configurar um período de carência para a imposição e marcar a caixa de seleção, quando o prazo da instalação do aplicativo for atingido, ele será instalado na primeira janela fora do horário comercial que o usuário configurou até esse período de carência. No entanto, o usuário ainda poderá abrir o Centro de Software e instalar o aplicativo a qualquer momento que desejar. Depois que o período de carência expirar, a imposição retorna ao comportamento normal para implantações atrasadas.
 Opções semelhantes foram adicionadas ao assistente de implantação de atualizações de software, ao assistente de regras de implantação automática e páginas de propriedades.
 
-##  <a name="a-namedmpdevgausing-configuration-manager-as-a-managed-installer-with-device-guard"></a><a name="dmp_devg"></a>Uso do Configuration Manager como um instalador gerenciado com o Device Guard
+##  <a name="a-namedmpdevgausing-configuration-manager-as-a-managed-installer-with-device-guard"></a><a name="dmp_devg"></a> Uso do Configuration Manager como um instalador gerenciado com o Device Guard
 
 O Device Guard é um recurso do Windows 10 que usa recursos de hardware e software para controlar rigorosamente o que pode ser executado no dispositivo.
 
@@ -101,7 +101,7 @@ Leitura adicional:
 - [Conformidade e certificação do Device Guard](https://technet.microsoft.com/itpro/windows/keep-secure/device-guard-certification-and-compliance)
 - [Guia de implantação do Device Guard](https://technet.microsoft.com/itpro/windows/keep-secure/device-guard-deployment-guide)
 
- ##  <a name="a-namedmponprema-multiple-device-management-points-for-on-premises-mobile-device-management"></a><a name="dmp_onprem"></a> Vários pontos de gerenciamento de dispositivos para o gerenciamento de dispositivo móvel local  
+ ##  <a name="a-namedmponprema-multiple-device-management-points-for-on-premises-mobile-device-management"></a><a name="dmp_onprem"></a> Múltiplos pontos de gerenciamento para Gerenciamento de Dispositivo Móvel Local  
  Com o Technical Preview 1606, o MDM (Gerenciamento de Dispositivo Móvel) local dá suporte a um nova funcionalidade na Atualização de Aniversário do Windows 10 que configura automaticamente um dispositivo registrado para ter mais de um ponto de gerenciamento de dispositivos disponível para uso. Essa funcionalidade permite que o dispositivo realize o fallback para outro ponto de gerenciamento de dispositivos quando o que ele usa normalmente não estiver disponível. Essa funcionalidade funciona apenas para computadores com a Atualização de Aniversário do Windows 10 instalada.  
 
 ### <a name="try-it-out"></a>Experimente!  
@@ -217,7 +217,7 @@ Depois que o serviço e as funções forem completamente configurados, os client
 
 Depois que os clientes tiverem as novas informações de local do Serviço de Proxy de Nuvem, tente verificar o status dos clientes que não estão mais na rede privada interna, mas têm acesso à Internet. Você também pode monitorar o tráfego no Serviço de Proxy de Nuvem acessando **Administração > Serviços de Nuvem > Serviço de Proxy de Nuvem**, selecionando serviço no painel de lista e exibindo as informações de tráfego no painel de detalhes.   
 
-## <a name="a-namemanageo365amanage-the-office-365-client-agent-in-configuration-manager"></a><a name="manage_o365"></a>Gerenciar o agente cliente do Office 365 no Configuration Manager  
+## <a name="a-namemanageo365amanage-the-office-365-client-agent-in-configuration-manager"></a><a name="manage_o365"></a>Gerenciamento do agente cliente do Office 365 no Configuration Manager  
 
 A partir do Technical Preview 1606, você pode usar uma configuração de agente cliente do Configuration Manager em vez da política de grupo para habilitar os clientes do Office 365 para receber atualizações do Configuration Manager. Depois de definir essa configuração e implantar as atualizações do Office 365, o agente cliente do Configuration Manager se comunica com o agente cliente do Office 365 para baixar atualizações do Office 365 de um ponto de distribuição e instalá-las. O Configuration Manager também faz o inventário da configuração do agente cliente.
 

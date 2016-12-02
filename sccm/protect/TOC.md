@@ -6,8 +6,7 @@
 
 # [Planejamento e design](plan-design/prerequisites-for-certificate-profiles.md)
 ## [Pré-requisitos para perfis de certificado](plan-design/prerequisites-for-certificate-profiles.md)
-### [Infraestrutura de certificado para SCEP](plan-design/prerequisites-for-certificate-profiles.md)
-### [Infraestrutura de certificado para .PFX](plan-design/prerequisites-for-certificate-profiles.md)
+### [Infraestrutura de certificado](plan-design/certificate-infrastructure.md)
 ### [Permissões de modelo de certificado para perfis de certificado](plan-design/planning-for-certificate-template-permissions.md)
 ### [Segurança e privacidade de perfis de certificado](plan-design/security-and-privacy-for-certificate-profiles.md)
 

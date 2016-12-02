@@ -25,7 +25,7 @@ ms.openlocfilehash: 8bb71e477bb9a265b3485bd3ef8232f6e9933a37
 
 Cada método de descoberta do System Center Configuration Manager pode encontrar diferentes dispositivos na sua rede ou dispositivos e usuários do Active Directory. Para usar um método de descoberta de maneira eficiente, você deve compreender suas configurações disponíveis e limitações.  
 
-##  <a name="a-namebkmkaboutforesta-active-directory-forest-discovery"></a><a name="bkmk_aboutForest"></a> Descoberta de florestas do Active Directory  
+##  <a name="a-namebkmkaboutforesta-active-directory-forest-discovery"></a><a name="bkmk_aboutForest"></a> Descoberta de Florestas do Active Directory  
  **Configurável:** sim  
 
  **Habilitado por padrão:** não  
@@ -158,7 +158,7 @@ As ações da descoberta de sistemas do Active Directory são registradas no arq
 
 Para obter mais informações sobre como configurar esse método de descoberta, confira [Configure discovery methods for System Center Configuration Manager](../../../../core/servers/deploy/configure/configure-discovery-methods.md) (Configurar os métodos de descoberta para o System Center Configuration Manager).  
 
-##  <a name="a-namebkmkaboutusera-active-directory-user-discovery"></a><a name="bkmk_aboutUser"></a> Descoberta de usuários do Active Directory  
+##  <a name="a-namebkmkaboutusera-active-directory-user-discovery"></a><a name="bkmk_aboutUser"></a> Descoberta de Usuário do Active Directory  
 **Configurável:** sim  
 
 **Habilitado por padrão:** não  
@@ -224,7 +224,7 @@ As ações de descoberta de pulsação são registradas nos seguintes locais:
 
 Para obter mais informações sobre como configurar esse método de descoberta, confira [Configure discovery methods for System Center Configuration Manager](../../../../core/servers/deploy/configure/configure-discovery-methods.md) (Configurar os métodos de descoberta para o System Center Configuration Manager).  
 
-##  <a name="a-namebkmkaboutnetworka-network-discovery"></a><a name="bkmk_aboutNetwork"></a> Descoberta de rede  
+##  <a name="a-namebkmkaboutnetworka-network-discovery"></a><a name="bkmk_aboutNetwork"></a> Descoberta de Rede  
 **Configurável:** sim  
 
 **Habilitado por padrão:** não  
@@ -329,7 +329,7 @@ Especifique cada dispositivo SNMP que você deseja que a descoberta de rede cons
 
 -   Você deve configurar a descoberta de rede para usar o nome da comunidade do dispositivo, caso contrário o dispositivo rejeita a consulta baseada em SNMP.  
 
-###  <a name="a-namebkmklimitnetdisca-limiting-network-discovery"></a><a name="BKMK_LimitNetDisc"></a> Limitando a descoberta de rede  
+###  <a name="a-namebkmklimitnetdisca-limiting-network-discovery"></a><a name="BKMK_LimitNetDisc"></a> Limitação da descoberta de rede  
 Quando a descoberta de rede consulta um dispositivos SNMP na borda da sua rede, ela pode identificar informações sobre sub-redes e dispositivos SNMP que estão fora da rede imediata. Use as informações a seguir para limitar a descoberta de rede configurando os dispositivos SNMP com os quais a descoberta pode se comunicar e especificando os segmentos de rede a serem consultados.  
 
 **Sub-redes:**  
@@ -367,14 +367,14 @@ O seguinte diagrama mostra o que a Descoberta de Rede somente de topologia encon
 
  Executar uma Descoberta de Rede somente de topologia no Servidor 1 com um salto de roteador descobre o seguinte:  
 
--   Roteador 1 e sub-rede 10.1.10.0 (encontrados sem saltos).  
+-   Roteador 1 e sub-rede 10.1.10.0 (encontrados sem saltos).  
 
--   Sub-redes 10.1.20.0 e 10.1.30.0, sub-rede A e Roteador 2 (encontrados no primeiro salto).  
+-   Sub-redes 10.1.20.0 e 10.1.30.0, sub-rede A e Roteador 2 (encontrados no primeiro salto).  
 
 > [!WARNING]  
 >  Cada aumento do número de saltos de roteador pode aumentar significativamente o número de recursos que podem ser descobertos e aumentar a largura de banda da rede que a Descoberta de Rede usa.  
 
-##  <a name="a-namebkmkaboutservera-server-discovery"></a><a name="bkmk_aboutServer"></a> Descoberta de servidor  
+##  <a name="a-namebkmkaboutservera-server-discovery"></a><a name="bkmk_aboutServer"></a> Descoberta de Servidor  
 **Configurável:** não  
 
 Além dos métodos de descoberta configuráveis pelo usuário, o Configuration Manager usa um processo chamado **descoberta de servidor** (SMS_WINNT_SERVER_DISCOVERY_AGENT). Esse método de descoberta cria registros de recurso para computadores que são sistemas de site, como um computador configurado com um ponto de gerenciamento.  
@@ -459,7 +459,7 @@ Para usar essa opção:
 
 -   Os computadores devem ser configurados para atualizar o atributo **lastLogonTimeStamp** no Active Directory Domain Services.  
 
--   O nível funcional de domínio do Active Directory deve ser definido para o Windows Server 2003 ou posterior.  
+-   O nível funcional de domínio do Active Directory deve ser definido para o Windows Server 2003 ou posterior.  
 
 Ao configurar o tempo após o último logon que você deseja usar para essa configuração, considere o intervalo de replicação entre controladores de domínio.  
 

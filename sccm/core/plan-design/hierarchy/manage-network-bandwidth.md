@@ -35,7 +35,7 @@ ms.openlocfilehash: 92a08908f284abb02ce8000122b0839c474616d7
 
 Para obter mais informações sobre como definir configurações de agendamento e limitação para um ponto de distribuição remoto, consulte [Instalar e configurar pontos de distribuição para o System Center Configuration Manager](/sccm/core/servers/deploy/configure/install-and-configure-distribution-points).  
 
-##  <a name="a-namebkmkprestagingcontentaprestaged-content"></a><a name="BKMK_PrestagingContent"></a>Usar conteúdo pré-teste  
+##  <a name="a-namebkmkprestagingcontentaprestaged-content"></a><a name="BKMK_PrestagingContent"></a>Conteúdo pré-teste  
  Você pode pré-testar conteúdo para adicionar os arquivos de conteúdo à biblioteca de conteúdo em um servidor do site ou ponto de distribuição antes de distribuir o conteúdo  
 
 -   Uma vez que os arquivos de conteúdo já estão na biblioteca de conteúdo, eles não são transferidos pela rede ao distribuir o conteúdo  
@@ -56,7 +56,7 @@ Opcionalmente, você pode configurar o ponto de distribuição como **pré-testa
 
 -   Sempre usar o processo de distribuição de conteúdo padrão para o conteúdo no pacote  
 
-###  <a name="a-namebkmkdeterminetoprestagecontentadetermine-whether-to-prestage-content"></a><a name="BKMK_DetermineToPrestageContent"></a>Determinar se deseja pré-configurar o conteúdo  
+###  <a name="a-namebkmkdeterminetoprestagecontentadetermine-whether-to-prestage-content"></a><a name="BKMK_DetermineToPrestageContent"></a>Determinar se deseja pré-testar o conteúdo  
  Considere a pré-configuração do conteúdo para aplicativos e pacotes nos seguintes cenários:  
 
 -   **Largura de banda de rede limitada do servidor do site ao ponto de distribuição**: quando o agendamento e a limitação não satisfazem suas preocupações sobre distribuição de conteúdo pela rede para um ponto de distribuição remoto, considere pré-configurar o conteúdo no ponto de distribuição. Cada ponto de distribuição tem a configuração **Habilitar este ponto de distribuição para conteúdo pré-configurado** que você pode definir nas propriedades do ponto de distribuição. Quando você habilita essa opção, o ponto de distribuição é identificado como um ponto de distribuição pré-configurado, e você pode escolher como gerenciar o conteúdo por pacote.  

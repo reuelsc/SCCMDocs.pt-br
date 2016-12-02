@@ -135,7 +135,7 @@ Depois de instalar o pacote de atualização em um servidor do site, você poder
 
  Quando você instala uma atualização em um servidor do site, o processo de instalação da atualização gerencia ações adicionais necessárias para aplicar a atualização, como atualizar funções do sistema de site. A exceção é o banco de dados do site. A seção a seguir contém informações sobre como atualizar o banco de dados do site.  
 
-####  <a name="a-namebkmkdatabasea-update-a-site-database"></a><a name="bkmk_database"></a> Atualizar o banco de dados do site  
+####  <a name="a-namebkmkdatabasea-update-a-site-database"></a><a name="bkmk_database"></a> Atualizar um banco de dados do site  
  Para atualizar o banco de dados do site, o processo de instalação executa um arquivo chamado **update.sql** no banco de dados do site. Você pode configurar o processo de atualização para atualizar automaticamente o banco de dados do site ou você pode atualizar manualmente esse banco de dados mais tarde.  
 
  **Atualização automática do banco de dados do site**  
@@ -200,7 +200,7 @@ Se o computador que você atualizar executar o cliente do Configuration Manager:
 
 Por exemplo, você pode usar a seguinte linha de comando para atualizar um console do Configuration Manager. Esta linha de comando executa MSIEXEC no computador e faz referência ao arquivo .msp extraído pelo pacote de atualização no servidor do site: **msiexec.exe /p \\\\&lt;ServerName\>\SMS_&lt;SiteCode\>\Hotfix\\&lt;KB Number\>\AdminConsole\\&lt;Platform\>\\&lt;msp\> /L\*v &lt;logfile\>REINSTALLMODE=mous REINSTALL=ALL**  
 
-##  <a name="a-namebkmkdeploya-deploy-updates-for-configuration-manager"></a><a name="BKMK_Deploy"></a> Implantar atualizações do Configuration Manager  
+##  <a name="a-namebkmkdeploya-deploy-updates-for-configuration-manager"></a><a name="BKMK_Deploy"></a> Implantar atualizações para o Configuration Manager  
  Depois de instalar o pacote de atualização em um servidor do site, você poderá usar um dos três métodos a seguir para implantar atualizações em computadores adicionais.  
 
 ###  <a name="a-namebkmkdeployscupa-use-updates-publisher-2011-to-install-updates"></a><a name="BKMK_DeploySCUP"></a> Usar o Updates Publisher 2011 para instalar atualizações  

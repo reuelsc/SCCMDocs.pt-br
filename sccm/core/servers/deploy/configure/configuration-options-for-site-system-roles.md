@@ -26,7 +26,7 @@ ms.openlocfilehash: a3c370dedc23e2eda38bd942b1d5bed91bdc3876
 
 A maioria das opções de configuração de funções do sistema de sites do System Center Configuration Manager é autoexplicativa ou é explicada nas caixas de diálogo ou no assistente quando você as configura.  As seções a seguir contêm detalhes para funções do sistema de sites que têm configurações que precisam de informações adicionais.  
 
-##  <a name="a-namebkmkapplicationcatalogwebsitea-application-catalog-website-point"></a><a name="BKMK_ApplicationCatalog_Website"></a> Ponto de sites da Web do catálogo de aplicativos  
+##  <a name="a-namebkmkapplicationcatalogwebsitea-application-catalog-website-point"></a><a name="BKMK_ApplicationCatalog_Website"></a> Ponto de sites da Web do Catálogo de Aplicativos  
  Para obter informações sobre como configurar o ponto de sites da Web do catálogo de aplicativos para o Catálogo de Aplicativos, consulte [Planejar e configurar o gerenciamento de aplicativos no System Center Configuration Manager](../../../../apps/plan-design/plan-for-and-configure-application-management.md).  
 
  **Conexões de clientes**  
@@ -45,7 +45,7 @@ A maioria das opções de configuração de funções do sistema de sites do Sys
 
  Digite o nome que os usuários veem no Catálogo de Aplicativos. Essas informações de identidade visual ajudam os usuários a identificar este site da Web como uma fonte confiável.  
 
-##  <a name="a-namebkmkapplicationcatalogwebservicea-application-catalog-web-service-point"></a><a name="BKMK_ApplicationCatalog_WebService"></a> Ponto de serviços Web do catálogo de aplicativos  
+##  <a name="a-namebkmkapplicationcatalogwebservicea-application-catalog-web-service-point"></a><a name="BKMK_ApplicationCatalog_WebService"></a> Ponto de serviços Web do Catálogo de Aplicativos  
  Para obter informações sobre como configurar o ponto de serviço Web do catálogo de aplicativos para o Catálogo de Aplicativos, consulte [Planejar e configurar o gerenciamento de aplicativos no System Center Configuration Manager](../../../../apps/plan-design/plan-for-and-configure-application-management.md).  
 
  **HTTPS**  
