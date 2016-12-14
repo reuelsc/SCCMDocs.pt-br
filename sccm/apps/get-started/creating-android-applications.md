@@ -1,5 +1,5 @@
 ---
-title: Criar aplicativos Android | System Center Configuration Manager
+title: Criar aplicativos Android | Microsoft Docs
 description: "Consulte quais considerações você deverá levar em conta ao criar e implantar aplicativos para dispositivos Android."
 ms.custom: na
 ms.date: 10/06/2016
@@ -16,19 +16,19 @@ author: robstackmsft
 ms.author: robstack
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: 1134bb2f04152288e72d40b1b1083f415cb4e900
-ms.openlocfilehash: b600217338e2f0fb3b077036c59aaea13f76c0d6
+ms.sourcegitcommit: 6a28028faa5ecd7c3d3d4c055481c10467189b38
+ms.openlocfilehash: 5819613172d7ddf88133e802507e8e92c149a885
 
 ---
 # <a name="create-android-applications-with-system-center-configuration-manager"></a>Criar aplicativos Android com o System Center Configuration Manager
 
 *Aplica-se a: System Center Configuration Manager (Branch Atual)*
 
-Além dos outros requisitos e procedimentos do System Center Configuration Manager para criar um aplicativo, você também precisa levar em conta as considerações a seguir ao criar e implantar aplicativos para dispositivos Android.  
+Lembre-se das seguintes considerações ao criar e implantar aplicativos para dispositivos Android.  
 
 ## <a name="general-considerations"></a>Considerações gerais
 
-O Configuration Manager dá suporte à implantação dos seguintes tipos de aplicativo para Android:
+O Configuration Manager dá suporte à implantação dos seguintes tipos de aplicativos para Android:
 
 |Tipo de dispositivo|Arquivos com suporte|
 |-|-|
@@ -38,10 +38,10 @@ Há suporte para as seguintes ações de implantação:
 
 |Tipo de dispositivo|Ações com suporte|
 |-|-|
-|Android|**Disponível**, **Necessário** (contudo, o usuário deve concordar com a instalação), **Desinstalar** (novamente, o usuário deve concordar).|
+|Android|**Disponível**, **Necessário**. O usuário deve concordar com a instalação e com a desinstalação.
 
 
 
-<!--HONumber=Nov16_HO1-->
+<!--HONumber=Dec16_HO1-->
 
 

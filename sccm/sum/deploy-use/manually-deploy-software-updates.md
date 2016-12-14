@@ -1,12 +1,12 @@
 ---
 
-title: "Implantar atualizações de software manualmente | Configuration Manager"
+title: "Implantar manualmente atualizações de software | Microsoft Docs"
 description: "Para implantar atualizações manualmente, selecione atualizações no console do Configuration Manager e implante-as manualmente ou adicione atualizações a um grupo de atualização e implante o grupo."
 keywords: 
 author: dougeby
 ms.author: dougeby
 manager: angrobe
-ms.date: 10/06/2016
+ms.date: 12/07/2016
 ms.topic: article
 ms.prod: configuration-manager
 ms.service: 
@@ -14,8 +14,8 @@ ms.technology:
 - configmgr-sum
 ms.assetid: 57184274-5fea-4d79-a2b4-22e08ed26daf
 translationtype: Human Translation
-ms.sourcegitcommit: 1134bb2f04152288e72d40b1b1083f415cb4e900
-ms.openlocfilehash: be845d9f6ad2f92a0235cdb7410654e229448e1b
+ms.sourcegitcommit: 78524abd4c45f0b7402d6f1e85afc60bb72ab0ee
+ms.openlocfilehash: d736715f1f2c92b4c91f156ecb8abe3513811a34
 
 
 ---
@@ -228,29 +228,31 @@ ms.openlocfilehash: be845d9f6ad2f92a0235cdb7410654e229448e1b
         > [!NOTE]  
         >  O prazo real de instalação é o horário específico que você configura mais um período de tempo aleatório de até 2 horas. Isso reduz o impacto potencial de todos os computadores cliente na coleção de destino que está instalando as atualizações de software na implantação ao mesmo tempo.  
         >   
-        >  É possível configurar a definição do cliente **Agente de Computador** , **Desativar data limite aleatória** para desabilitar o atraso de aleatoriedade das atualizações de software necessárias. Para obter mais informações, consulte [Computer Agent](../../core/clients/deploy/about-client-settings.md#a-namebkmkcomputeragentdevicesettingsa-computer-agent).  
+        >  É possível configurar a definição do cliente **Agente de Computador** , **Desativar data limite aleatória** para desabilitar o atraso de aleatoriedade das atualizações de software necessárias. Para obter mais informações, consulte [Computer Agent](../../core/clients/deploy/about-client-settings.md#computer-agent).  
 
 8.  Na página Experiência do Usuário, defina as seguintes configurações:  
 
     -   **Notificações ao usuário**: especifique se quer exibir notificações das atualizações de software no Centro de Software no computador cliente no **Tempo disponível do software** configurado e se deseja exibir as notificações ao usuário nos computadores cliente. Quando o **Tipo de implantação** está definido como **Disponível** na página Configurações de implantação, não é possível selecionar **Ocultar no Centro de Software e todas as notificações**.  
 
-    -   **Comportamento do prazo**: especifique o comportamento que deve ocorrer quando o prazo for alcançado para a implantação de atualização do software. Especifique se deseja instalar as atualizações de software na implantação. Especifique também se o sistema deve ser reiniciado após a instalação da atualização de software, independentemente de uma janela de manutenção configurada. Para obter mais informações sobre janelas de manutenção, consulte [Como usar janelas de manutenção](../../core/clients/manage/collections/use-maintenance-windows.md).  
+    -   **Comportamento do prazo**: *somente disponível quando o **Tipo de implantação** *está definido como **Obrigatório** *na página Configurações de Implantação.*   
+    Especifique o comportamento que deve ocorrer quando o prazo é alcançado para a implantação da atualização de software. Especifique se deseja instalar as atualizações de software na implantação. Especifique também se o sistema deve ser reiniciado após a instalação da atualização de software, independentemente de uma janela de manutenção configurada. Para obter mais informações sobre janelas de manutenção, consulte [Como usar janelas de manutenção](../../core/clients/manage/collections/use-maintenance-windows.md).  
 
-    -   **Comportamento de reinicialização do dispositivo**: especifique se uma reinicialização do sistema em servidores e estações de trabalho deve ser suprimida depois que as atualizações de software são instaladas e uma reinicialização do sistema é necessária para concluir a instalação.  
+    -   **Comportamento de reinício de dispositivo**: *somente disponível quando o **Tipo de implantação** *está definido como **Obrigatório** *na página Configurações de Implantação.*    
+    Especifique se uma reinicialização do sistema em servidores e estações de trabalho deve ser suprimida depois que as atualizações de software são instaladas e uma reinicialização do sistema é necessária para concluir a instalação.  
 
         > [!IMPORTANT]  
-        >  A supressão das reinicializações do sistema pode ser útil em ambientes de servidor ou para casos em que você não quer que os computadores que estão instalando as atualizações de software reiniciem por padrão. No entanto, isso pode deixar os computadores em um estado inseguro, ao passo que permitir uma reinicialização forçada ajuda a garantir a conclusão imediata da instalação da atualização de software. .  
+        >  A supressão das reinicializações do sistema pode ser útil em ambientes de servidor ou para casos em que você não quer que os computadores que estão instalando as atualizações de software reiniciem por padrão. No entanto, isso pode deixar os computadores em um estado inseguro, ao passo que permitir uma reinicialização forçada ajuda a garantir a conclusão imediata da instalação da atualização de software.
 
     -   **Manuseio de filtro de gravação para dispositivos Windows Embedded**: ao implantar atualizações de software em dispositivos Windows Embedded com filtro de gravação habilitado, é possível especificar que a atualização de software seja instalada na sobreposição temporária e que as alterações sejam confirmadas mais tarde, na data limite da instalação ou durante uma janela de manutenção. Ao confirmar as alterações na data limite da instalação ou durante uma janela de manutenção, é necessário reinicializar. Dessa forma, as alterações permanecem no dispositivo.  
 
         > [!NOTE]  
         >  Ao implantar uma atualização de software em um dispositivo Windows Embedded, verifique se o dispositivo é membro de uma coleção com uma janela de manutenção configurada.  
 
-     Você só pode definir as configurações **Comportamento do prazo** e **Comportamento de reinício de dispositivo** quando o **Tipo de implantação:** está definido como **Obrigatório** na página Configurações de Implantação.  
+    - **Comportamento de reavaliação da implantação de atualizações de software na reinicialização**: começando com a versão 1606 do Configuration Manager, é possível selecionar este ajuste para configurar as implantações de atualização de software para que os clientes executem uma verificação de conformidade de atualizações de software imediatamente após um cliente instalar atualizações de software e reiniciar. Isso permite que os clientes verifiquem atualizações de software adicionais que se tornam aplicáveis depois que eles são reiniciados e as instalem (e se tornem compatíveis) durante a mesma janela de manutenção.
 
 9. Na página Alertas, configure como o Configuration Manager e o System Center Operations Manager gerarão alertas para essa implantação. Você só pode configurar alertas quando o **Tipo de implantação** está definido como **Obrigatório** na página Configurações de Implantação.  
 
-    > [!WARNING]  
+    > [!NOTE]  
     >  Você pode verificar os alertas de atualizações de software recentes no nó **Atualizações de Software** no espaço de trabalho **Biblioteca de Software** .  
 
 10. Na página Configurações de Download, defina as seguintes configurações:  
@@ -316,6 +318,6 @@ ms.openlocfilehash: be845d9f6ad2f92a0235cdb7410654e229448e1b
 
 
 
-<!--HONumber=Nov16_HO1-->
+<!--HONumber=Dec16_HO2-->
 
 

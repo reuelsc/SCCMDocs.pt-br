@@ -1,8 +1,8 @@
 ---
-title: Gerenciar imagens do sistema operacional | Configuration Manager
+title: Gerenciar imagens do sistema operacional | Microsoft Docs
 description: "No Configuration Manager, saiba mais sobre os métodos que você pode usar para gerenciar imagens do sistema operacional que são armazenadas em arquivos do Windows Imaging (WIM)."
 ms.custom: na
-ms.date: 10/06/2016
+ms.date: 12/06/2016
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
@@ -17,8 +17,8 @@ author: Dougeby
 ms.author: dougeby
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: 1134bb2f04152288e72d40b1b1083f415cb4e900
-ms.openlocfilehash: 3c0801afa6a967faabf186f70685b701ba2a95d8
+ms.sourcegitcommit: 03722ff4f480cd26842e395fe1f7ec8359e2b33e
+ms.openlocfilehash: 6953c3834ca303b949f22436010a87b3da9688dc
 
 
 ---
@@ -85,7 +85,7 @@ Para as etapas de criação de uma imagem personalizada do sistema operacional, 
  Imagens do sistema operacional são distribuídas para os pontos de distribuição da mesma forma que outros conteúdos são distribuídos. Na maioria dos casos, você deve distribuir a imagem do sistema operacional para pelo menos um ponto de distribuição antes de implantar o sistema operacional. Para as etapas para distribuir uma imagem do sistema operacional, consulte [Distribute content](../../core/servers/deploy/configure/deploy-and-manage-content.md#a-namebkmkdistributea-distribute-content).  
 
 ##  <a name="a-namebkmkosimagesapplyupdatesa-apply-software-updates-to-an-operating-system-image"></a><a name="BKMK_OSImagesApplyUpdates"></a> Aplicar atualizações de software a uma imagem do sistema operacional  
- Periodicamente, são lançadas novas atualizações de software que se aplicam ao sistema operacional em sua imagem de sistema operacional. É claro que, antes de aplicar as atualizações de software a uma imagem, você deve ter a infraestrutura de atualizações de software em funcionamento e ter sincronizado com êxito as atualizações de software. Para mais informações, consulte [Implantar atualizações de software](../../sum/deploy-use/deploy-software-updates.md).  
+ Periodicamente, são lançadas novas atualizações de software que se aplicam ao sistema operacional em sua imagem de sistema operacional. Antes de aplicar as atualizações de software a uma imagem, sua infraestrutura de atualizações de software deve estar em funcionamento, você deve ter sincronizado com êxito as atualizações de software e deve ter baixado as atualizações de software para a biblioteca de conteúdo no servidor do site. Para mais informações, consulte [Implantar atualizações de software](../../sum/deploy-use/deploy-software-updates.md).  
 
  Você pode aplicar as atualizações de software a uma imagem em um agendamento especificado. No agendamento que você especificar, o Configuration Manager aplica as atualizações de software que você selecionar na imagem do sistema operacional e, opcionalmente, distribui a imagem atualizada para os pontos de distribuição. As informações sobre a imagem do sistema operacional são armazenadas no banco de dados do site, incluindo as atualizações de software que foram aplicadas no momento da importação. As atualizações de software que foram aplicadas à imagem desde que ela foi inicialmente adicionada também são armazenadas no banco de dados do site. Ao iniciar o assistente para aplicar as atualizações de software à imagem do sistema operacional, o assistente recupera uma lista de atualizações de software aplicáveis que ainda não foram aplicadas à imagem para que você a selecione. O Configuration Manager copia as atualizações de software da biblioteca de conteúdo no servidor do site e aplica as atualizações de software à imagem do sistema operacional.  
 
@@ -142,6 +142,6 @@ Para as etapas de criação de uma imagem personalizada do sistema operacional, 
 
 
 
-<!--HONumber=Nov16_HO1-->
+<!--HONumber=Dec16_HO2-->
 
 

@@ -1,5 +1,5 @@
 ---
-title: "Planejar funções do sistema de sites | System Center Configuration Manager"
+title: "Planejar as funções do sistema de site | Microsoft Docs"
 description: "Considere os servidores e as funções do sistema de sites enquanto você planeja sua hierarquia do System Center Configuration Manager."
 ms.custom: na
 ms.date: 10/06/2016
@@ -16,8 +16,8 @@ author: Brenduns
 ms.author: brenduns
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: 1134bb2f04152288e72d40b1b1083f415cb4e900
-ms.openlocfilehash: 5f8d051a92cd74938f1a5235b37f02ebe0ff542c
+ms.sourcegitcommit: 2b00cfcec0959716d69a1605018f33d30287fee9
+ms.openlocfilehash: a2e57aac01fff3c28b4acfcf58bcd786bd3e62c4
 
 
 ---
@@ -72,6 +72,8 @@ Após a instalação de um site, você pode mover o local de algumas funções d
 -   **Ponto de registro de certificado** – uma função do sistema de sites que se comunica com um servidor que executa o Serviço de Registro de Dispositivo de Rede para gerenciar solicitações de certificado de dispositivos que usam o protocolo SCEP (Serviço de Registro de Dispositivo de Rede).  Essa função tem suporte apenas em sites primários e no site de administração central.   Embora um ponto de registro de certificado único possa fornecer funcionalidade a uma hierarquia inteira, para ajudar no balanceamento de carga das solicitações de certificado, você pode instalar várias instâncias dessa função em um site e em vários sites na mesma hierarquia. Quando houver várias instâncias em uma hierarquia, os clientes serão atribuídos aleatoriamente a um dos pontos de registro de certificado.  
 
      Cada ponto de registro de certificado requer acesso a uma instância separada de um Serviço de Registro de Dispositivo de Rede. Você não pode configurar dois ou mais pontos de registro de certificado para usar o mesmo Serviço de Registro de Dispositivo de Rede. Além disso, o ponto de registro de certificado não deve ser instalado no mesmo servidor que executa o Serviço de Registro de Dispositivo de Rede.  
+
+- **Ponto de conector de gateway de gerenciamento de nuvem** – uma função de sistema de site para se comunicar com o [gateway de gerenciamento de nuvem](/sccm/core/clients/manage/setup-cloud-management-gateway). 
 
 -   **Ponto de distribuição** – uma função do sistema de site que contém arquivos de origem para serem baixados por clientes, como conteúdo de aplicativos, pacotes de software, atualizações de software, imagens de sistemas operacionais e imagens de inicialização. Por padrão, essa função é instalada no computador do servidor do site de novos sites primários e secundários quando o site é instalado, mas não tem suporte em um site de administração central.  Você pode instalar múltiplas instâncias dessa função em um site com suporte, e em vários sites na mesma hierarquia.  Para obter mais informações, consulte [Conceitos fundamentais para o gerenciamento de conteúdo no System Center Configuration Manager](../../../core/plan-design/hierarchy/fundamental-concepts-for-content-management.md) e [Gerenciar conteúdo e infraestrutura de conteúdo do System Center Configuration Manager](../../../core/servers/deploy/configure/manage-content-and-content-infrastructure.md).  
 
@@ -150,6 +152,6 @@ Veja a seguir as funções do sistema de sites que podem usar um servidor proxy:
 
 
 
-<!--HONumber=Nov16_HO1-->
+<!--HONumber=Dec16_HO1-->
 
 

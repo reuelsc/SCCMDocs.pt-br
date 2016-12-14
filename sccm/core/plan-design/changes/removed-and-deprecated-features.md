@@ -1,8 +1,8 @@
 ---
-title: Recursos preteridos | System Center Configuration Manager
+title: Recursos preteridos | Microsoft Docs
 description: "Saiba mais sobre os recursos, produtos e sistemas operacionais aos quais o System Center Configuration Manager não dá mais suporte."
 ms.custom: na
-ms.date: 10/06/2016
+ms.date: 12/05/2016
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
@@ -17,8 +17,8 @@ author: Brenduns
 ms.author: brenduns
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: 1134bb2f04152288e72d40b1b1083f415cb4e900
-ms.openlocfilehash: 0f1e1070fd5b56b1abf22159e9f95b3b4bd8a8c6
+ms.sourcegitcommit: c899b4beaa2aae4eb609291dca0e23f3c266627a
+ms.openlocfilehash: 294166af3d5c6062e3508249c767779876b23931
 
 
 ---
@@ -30,27 +30,39 @@ Este tópico descreve os recursos, produtos e sistemas operacionais que foram re
 
  Essas informações estão sujeitas a alterações em versões futuras e podem não incluir cada recurso preterido, produto ou sistema operacional.  
 
-## <a name="deprecated-features-products-and-operating-systems"></a>Sistemas operacionais, produtos e recursos preteridos  
- Sistemas operacionais e produtos da Microsoft que são listados como preteridos estão em suporte estendido ou atingiram o fim da vida útil. Sistemas operacionais e produtos da Microsoft que são listados como preteridos ainda são testados com as versões atuais do Configuration Manager até que elas estejam fora do ciclo de vida do suporte da Microsoft.  Para obter mais informações, consulte o site [Ciclo de Vida do Suporte da Microsoft](https://support.microsoft.com/lifecycle) .  
+## <a name="how-to-use-this-information"></a>Como usar essas informações  
+Quando um recurso ou sistema operacional é listado em primeiro como preterido, o suporte para usá-lo com o Configuration Manager está programado para ser removido em uma versão futura do Configuration Manager. Essas informações são fornecidas para ajudá-lo no planejamento de alternativas para usar esse recurso ou sistema operacional.  Quando a primeira versão do Configuration Manager na qual o suporte foi removido for lançada, os detalhes deste tópico serão atualizados para indicar essa versão específica.  
 
- **Recursos preteridos:**  
+Quando o suporte é removido de um recurso ou sistema operacional, o sistema operacional ou o recurso permanece com suporte quando você usa uma versão anterior do Configuration Manager, enquanto essa versão do Configuration Manager permanecer no suporte. No entanto, quando você usa uma versão do Configuration Manager lançada após a data ou versão indicada, essa versão do Configuration Manager não dá suporte.
+
+**Por exemplo:** se um recurso foi agendado para ter seu suporte removido com a primeira atualização liberada após setembro de 2016, significa que o suporte para esse recurso não seria mais incluído na atualização 1610, lançada em outubro de 2016.
+-  Com a atualização 1610, o recurso não teria mais suporte.
+-  Este conteúdo será atualizado para indicar que o suporte foi removido com a versão 1610.
+No entanto, se continuar a usar uma versão anterior que ofereça suporte ao recurso, como a versão 1602 ou 1606, você poderá usar esse recurso até que a versão que você usa fique sem suporte.
+
+Para obter mais informações, consulte:
+ - O site do [Ciclo de vida de suporte da Microsoft](https://support.microsoft.com/lifecycle)
+ - [Suporte para versões atuais de branch do Configuration Manager](/sccm/core/servers/manage/current-branch-versions-supported)
+
+**Recursos preteridos:**  
 
 
 |**Recurso**|**Substituição anunciada pela primeira vez**|**Suporte removido**|  
 |-|-|-|  
-|NAP (Proteção de Acesso à Rede) ‑ Encontrada no System Center 2012 Configuration Manager|10/7/2015|√|  
-|Gerenciamento Fora de Banda ‑ Conforme encontrado no System Center 2012 Configuration Manager|16/10/2015|√|  
+|NAP (Proteção de Acesso à Rede) ‑ Encontrada no System Center 2012 Configuration Manager|10/7/2015|Versão 1511|  
+|Gerenciamento Fora de Banda ‑ Conforme encontrado no System Center 2012 Configuration Manager|16/10/2015|Versão 1511|
+|Sequências de tarefas: <br /> – Converter Disco em Dinâmico <br /> – Instalar Ferramentas de Implantação |11/18/2016|O suporte para essas sequências de tarefas termina com a primeira atualização liberada após 1º de junho de 2017|  
 
  **Sistemas operacionais de servidor preteridos:**  
 
- |**Sistemas operacionais**|**Substituição anunciada pela primeira vez**|**Suporte removido**|  
+ |**Sistemas operacionais**|**Substituição anunciada pela primeira vez**|**Suporte removido** |  
 |-|-|-|  
-|Windows Server 2008|10/7/2015|O suporte termina com a primeira atualização liberada após 31/12/2016 (Veja a observação 1)|  
-|Windows Server 2008 R2|10/7/2015|O suporte termina com a primeira atualização liberada após 31/12/2016 (Veja a observação 2)|  
+|Windows Server 2008|10/7/2015|O suporte termina com a primeira atualização liberada após 31/12/2016 *Veja a observação 1*|  
+|Windows Server 2008 R2|10/7/2015|O suporte termina com a primeira atualização liberada após 31/12/2016 *Veja a observação 2*|  
 
--   Observação 1: após o término do suporte, esse sistema operacional não dará mais suporte a servidores do site ou à maioria das funções do sistema de sites. No entanto, ele permanecerá com suporte para a função do sistema de sites do ponto de distribuição (incluindo ponto de distribuição de recepção) até que a desaprovação desse suporte seja anunciada ou o período de suporte estendido deste sistema operacional expire.  
+-   *Observação 1*: após o término do suporte, esse sistema operacional não terá mais suporte a servidores do site ou à maioria das funções do sistema de sites. No entanto, ele permanecerá com suporte para a função do sistema de sites do ponto de distribuição (incluindo ponto de distribuição de recepção) até que a desaprovação desse suporte seja anunciada ou o período de suporte estendido deste sistema operacional expire.  
 
--   Observação 2: após o término do suporte, esse sistema operacional não dará mais suporte a servidores do site ou à maioria das funções do sistema de sites. No entanto, ele permanecerá com suporte para a função de sistema de sites de ponto de migração de estado e ponto de distribuição (incluindo pontos de distribuição de recepção, e para PXE e multi-cast) até que esse suporte seja preterido ou o período de suporte estendido deste sistema operacional expire.  A partir da versão 1602, você pode atualizar in-loco o sistema operacional de um servidor do site do Windows Server 2008 R2 para o Windows Server 2012 R2.  
+-   *Observação 2*: após o término do suporte, esse sistema operacional não terá mais suporte a servidores do site ou à maioria das funções do sistema de sites. No entanto, ele permanecerá com suporte para a função de sistema de sites de ponto de migração de estado e ponto de distribuição (incluindo pontos de distribuição de recepção, e para PXE e multi-cast) até que esse suporte seja preterido ou o período de suporte estendido deste sistema operacional expire.  A partir da versão 1602, você pode atualizar in-loco o sistema operacional de um servidor do site do Windows Server 2008 R2 para o Windows Server 2012 R2.  
 
      Para obter mais informações sobre a atualização in-loco do sistema de operacional de servidores de site, consulte a seção [Atualização in-loco do sistema operacional dos servidores do site que executam o Windows Server 2008 R2](../../../core/plan-design/changes/whats-new-in-version-1602.md#bkmk_UpgradeOS) em [O que mudou no System Center Configuration Manager](../../../core/plan-design/changes/what-has-changed-from-configuration-manager-2012.md).
 
@@ -62,22 +74,22 @@ Este tópico descreve os recursos, produtos e sistemas operacionais que foram re
 
 |**Sistemas operacionais**|**Substituição anunciada pela primeira vez**|**Suporte removido**|  
 |-|-|-|  
-|Windows XP|10/7/2015|√|  
+|Windows XP|10/7/2015|Versão 1511|  
 |Windows XP Embedded|10/7/2015|O suporte termina com a primeira atualização liberada após 31/12/2016|  
-|Windows Server 2003|10/7/2015|√|  
-|Windows Server 2003 R2|10/7/2015|√|  
-|Windows Vista|10/7/2015|√|  
-|Mac OS X 10.6 a 10.8|10/7/2015|√|  
-|Windows Mobile 6.0 a 6.5|10/7/2015|√|  
-|Nokia Symbian Belle|10/7/2015|√|  
-|Windows CE 5.0 a 6.0|10/7/2015|√|  
+|Windows Server 2003|10/7/2015|Versão 1511|  
+|Windows Server 2003 R2|10/7/2015|Versão 1511|  
+|Windows Vista|10/7/2015|Versão 1511|  
+|Mac OS X 10.6 a 10.8|10/7/2015|Versão 1511|  
+|Windows Mobile 6.0 a 6.5|10/7/2015|Versão 1511|  
+|Nokia Symbian Belle|10/7/2015|Versão 1511|  
+|Windows CE 5.0 a 6.0|10/7/2015|Versão 1511|  
 
 
  **Suporte preterido para versões do SQL Server como um banco de dados do site:**  
 
 |**Versões do SQL Server**|**Substituição anunciada pela primeira vez**|**Suporte removido**|   
 |-|-|-|  
-|SQL Server 2008|10/7/2015|√|  
+|SQL Server 2008|10/7/2015|Versão 1511|  
 |SQL Server 2008 R2|10/7/2015|O suporte termina com a primeira atualização liberada após 31/12/2016|  
 
 ## <a name="features-removed-in-system-center-configuration-manager"></a>Recursos removidos do System Center Configuration Manager  
@@ -99,6 +111,6 @@ Este tópico descreve os recursos, produtos e sistemas operacionais que foram re
 
 
 
-<!--HONumber=Nov16_HO1-->
+<!--HONumber=Dec16_HO1-->
 
 

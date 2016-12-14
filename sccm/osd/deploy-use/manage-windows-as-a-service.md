@@ -1,8 +1,8 @@
 ---
-title: "Gerenciar o Windows como um serviço | Configuration Manager"
+title: "Gerenciar o Windows como um serviço | Microsoft Docs"
 description: "Os recursos do System Center Configuration Manager ajudam você a ver o estado do Windows como serviço em seu ambiente, para que você possa mantê-lo atualizado."
 ms.custom: na
-ms.date: 10/06/2016
+ms.date: 12/07/2016
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
@@ -16,8 +16,8 @@ author: Dougeby
 ms.author: dougeby
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: 1134bb2f04152288e72d40b1b1083f415cb4e900
-ms.openlocfilehash: 0ed06bb30d1277afa71d1eb2d045ea0ebc87912a
+ms.sourcegitcommit: 3f44505c977b511223a083a960f871371c0ff133
+ms.openlocfilehash: 1885968006ef5be1f507e94e0d33918174b1af12
 
 
 ---
@@ -134,14 +134,15 @@ Os planos de manutenção usam apenas a classificação de atualizações de sof
 
     -   **Especificar o estado de preparação do Windows ao qual este plano de serviço deve ser aplicado**: selecione um dos seguintes:  
 
-        -   **Pronto para Liberação (Branch Atual)**:  
+        -   **Pronto para Liberação (Branch Atual)**: no modelo de serviço CB, as atualizações de recursos estão disponíveis assim que são lançadas pela Microsoft.
 
-        -   **Pronto para Negócios (Branch Atual para Negócios)**:  
+        -   **Pronto para Negócios (Branch Atual para Negócios)**: o branch de manutenção CBB é normalmente usado para a implantação ampla. Os clientes do Windows 10 no branch de manutenção do CBB recebem a mesma compilação do Windows 10 que aqueles no branch de manutenção do CB, mas em um momento posterior.
 
-    -   **Por quantos dias você gostaria de aguardar após a publicação pela Microsoft de uma nova atualização antes de implantá-la em seu ambiente**:  
+    -   **Por quantos dias você gostaria de aguardar após a publicação pela Microsoft de uma nova atualização antes de implantá-la em seu ambiente**: o Configuration Manager avalia se inclui uma atualização na implantação, caso a data atual seja posterior à data de lançamento, somada ao número de dias que você definir para essa configuração.
 
     -   Em uma versão anterior à 1602 do Configuration Manager, clique em **Visualizar** para exibir as atualizações do Windows 10 associadas ao estado de preparação.  
 
+    Para obter mais informações, consulte [Branches de manutenção](https://technet.microsoft.com/itpro/windows/manage/waas-overview#servicing-branches).
 7.  A partir da versão 1602 do Configuration Manager, na página Atualizações, configure os critérios de pesquisa para filtrar as atualizações que serão adicionadas ao plano de serviço. Somente as atualizações que atendem aos critérios especificados serão adicionadas à implantação associada.  
 
      Clique em **Visualizar** para exibir as atualizações que atendem aos critérios especificados.  
@@ -168,7 +169,7 @@ Os planos de manutenção usam apenas a classificação de atualizações de sof
         > [!NOTE]  
         >  O prazo real da instalação é o prazo exibido, mais um período de tempo aleatório de até 2 horas. Isso reduz o impacto potencial de todos os computadores cliente na coleção de destino que está instalando as atualizações na implantação ao mesmo tempo.  
         >   
-        >  É possível definir a configuração do cliente **Agente de Computador** , **Desativar data limite aleatória** , para desabilitar o atraso de aleatoriedade da instalação das atualizações necessárias. Para obter mais informações, consulte [Computer Agent](../../core/clients/deploy/about-client-settings.md#BKMK_ComputerAgentDeviceSettings).  
+        >  É possível definir a configuração do cliente **Agente de Computador** , **Desativar data limite aleatória** , para desabilitar o atraso de aleatoriedade da instalação das atualizações necessárias. Para obter mais informações, consulte [Computer Agent](../../core/clients/deploy/about-client-settings.md#computer-agent).  
 
 9. Na página Experiência do Usuário, defina as seguintes configurações:  
 
@@ -220,7 +221,12 @@ Os planos de manutenção usam apenas a classificação de atualizações de sof
  Depois de concluir o assistente, o plano de serviço será executado. Isso adicionará as atualizações que atendem aos critérios especificados a um grupo de atualização de software, baixará as atualizações na biblioteca de conteúdo no servidor do site, distribuirá as atualizações aos pontos de distribuição configurados e implantará o grupo de atualizações de software nos clientes da coleção de destino.  
 
 ##  <a name="a-namebkmkmodifyservicingplana-modify-a-servicing-plan"></a><a name="BKMK_ModifyServicingPlan"></a> Modificar um plano de serviço  
- Depois de criar um plano de serviço básico no painel de serviço do Windows 10 ou precisar alterar as configurações de um plano de serviço existente, é possível ir para as propriedades do plano de serviço. Use o procedimento a seguir para modificar as propriedades de um plano de serviço.  
+Depois de criar um plano de serviço básico no painel de serviço do Windows 10 ou precisar alterar as configurações de um plano de serviço existente, é possível ir para as propriedades do plano de serviço.
+
+> [!NOTE]
+> Você pode definir configurações nas propriedades do plano de manutenção que não estão disponíveis no assistente ao criar o plano de manutenção. O assistente usa as configurações padrão para as configurações do seguintes itens: baixar as configurações, configurações de implantação e alertas.  
+
+Use o procedimento a seguir para modificar as propriedades de um plano de serviço.  
 
 #### <a name="to-modify-the-properties-of-a-servicing-plan"></a>Para modificar as propriedades de um plano de serviço  
 
@@ -228,10 +234,34 @@ Os planos de manutenção usam apenas a classificação de atualizações de sof
 
 2.  No espaço de trabalho Biblioteca de Software, expanda **Serviço do Windows 10**, clique em **Planos de Serviço**e selecione o plano de serviço que deseja modificar.  
 
-3.  Na guia **Início** , clique em **Propriedades** para abrir as propriedades do plano de serviço selecionado.  
+3.  Na guia **Início** , clique em **Propriedades** para abrir as propriedades do plano de serviço selecionado.
+
+    As seguintes configurações estão disponíveis nas propriedades de plano de manutenção, que não foram configuradas no assistente:
+
+    - Configurações de implantação na guia Configurações de implantação, defina as seguintes configurações:  
+
+        -   **Tipo de implantação**: especifique o tipo de implantação para a implantação de atualização do software. Selecione **Necessário** para criar uma implantação de atualização de software obrigatória na qual as atualizações de software são instaladas automaticamente em clientes antes do prazo de uma instalação configurada. Selecione **Disponível** para criar uma implantação de atualização de software opcional que esteja disponível para que os usuários instalem do Centro de Software.  
+
+            > [!IMPORTANT]  
+            >  Depois de criar a implantação de atualização de software, você não poderá alterar o tipo de implantação.  
+
+            > [!NOTE]  
+            >  Um grupo de atualização de software implantado como **Obrigatório** será baixado em segundo plano e atenderá às configurações do BITS, se configurado.  
+            > No entanto, os grupos de atualização de software implantados como **Disponíveis** serão baixados em primeiro plano e ignorarão as configurações de BITS.  
+
+        -   **Usar Wake-on-LAN para ativar clientes para implantações obrigatórias**: especifique se o Wake on LAN deve ser habilitado no prazo para enviar pacotes de ativação para os computadores que exigem uma ou mais atualizações de software na implantação. Todos os computadores que estão no modo de suspensão no momento da instalação serão ativados para que a instalação da atualização de software seja iniciada. Clientes que estão no modo de suspensão e que não necessitam de atualizações de software na implantação não são iniciados. Por padrão, essa configuração não está habilitada e está disponível somente quando **Tipo de implantação** está definido como **Necessário**.  
+
+            > [!WARNING]  
+            >  Para usar essa opção, os computadores e as redes devem ser configurados para Wake on LAN.  
+
+        -   **Nível de detalhe**: especifique o nível de detalhe para as mensagens de estado que são relatadas pelos computadores cliente.  
+
+    - Configurações de download
+
+    - Alertas
 
 
 
-<!--HONumber=Nov16_HO1-->
+<!--HONumber=Dec16_HO2-->
 
 

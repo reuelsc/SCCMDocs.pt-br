@@ -1,5 +1,5 @@
 ---
-title: Criar aplicativos do Windows | System Center Configuration Manager
+title: Criar aplicativos do Windows | Microsoft Docs
 description: "Consulte quais considerações você deverá levar em conta ao criar e implantar aplicativos para dispositivos Windows."
 ms.custom: na
 ms.date: 10/06/2016
@@ -16,8 +16,8 @@ author: robstackmsft
 ms.author: robstack
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: 1134bb2f04152288e72d40b1b1083f415cb4e900
-ms.openlocfilehash: f776e624c7fff5f52b573e5066a6e7d20396ce91
+ms.sourcegitcommit: 557888d1f1f899e3198c430bbe5ccdd44178f824
+ms.openlocfilehash: 9c80cc42f9ce6775067a89a9f5a63c1bf4a0c7ca
 
 ---
 # <a name="create-windows-applications-with-system-center-configuration-manager"></a>Criar aplicativos do Windows com o System Center Configuration Manager
@@ -27,9 +27,9 @@ ms.openlocfilehash: f776e624c7fff5f52b573e5066a6e7d20396ce91
 Além dos outros requisitos e procedimentos do System Center Configuration Manager para criar um aplicativo, você também precisa levar em conta as considerações a seguir ao criar e implantar aplicativos para dispositivos Windows.  
 
 ## <a name="general-considerations"></a>Considerações gerais  
- O Configuration Manager dá suporte à implantação dos seguintes tipos de aplicativo:  
+ O Configuration Manager dá suporte à implantação dos seguintes tipos arquivo de aplicativo:  
 
-|Tipo de dispositivo|Arquivos com suporte|  
+|Tipo de dispositivo|Tipos de arquivos com suporte|  
 |-----------------|---------------------|  
 |Windows RT e Windows RT 8.1|*.appx, \*.appxbundle|  
 |Windows 8.1 e posterior registrados como um dispositivo móvel|*.appx, \*.appxbundle|  
@@ -38,13 +38,13 @@ Além dos outros requisitos e procedimentos do System Center Configuration Manag
 
 |Tipo de dispositivo|Ações com suporte|  
 |-----------------|-----------------------|  
-|Windows 8.1 e posterior|Disponível, Necessário. Desinstalar|  
-|Windows RT|Disponível, Necessário, Desinstalar|  
+|Windows 8.1 e posterior|disponível, necessário, desinstalar|  
+|Windows RT|disponível, necessário, desinstalar|  
 
 ## <a name="support-for-universal-windows-platform-uwp-apps"></a>Suporte para aplicativos da UWP (Plataforma Universal do Windows)  
- Dispositivos Windows 10 não exigem uma chave de sideload para instalar aplicativos de linha de negócios. No entanto, a chave do Registro **HKEY_LOCAL_MACHINE\Software\Policies\Microsoft\Windows\Appx\AllowAllTrustedApps** deve ter um valor de 1 para habilitar o sideload.  
+ Dispositivos Windows 10 não exigem uma chave de sideload para instalar aplicativos de linha de negócios. No entanto, para habilitar o sideload, a chave do Registro **HKEY_LOCAL_MACHINE\Software\Policies\Microsoft\Windows\Appx\AllowAllTrustedApps** deve ter um valor de 1.  
 
- Se essa chave do Registro não estiver configurada, o Configuration Manager definirá automaticamente esse valor como **1** na primeira vez que um aplicativo for implantado no dispositivo. Se você definiu o valor como **0**, o Configuration Manager não poderá alterar o valor automaticamente, e a implantação de aplicativos de linha de negócios falhará.  
+ Se essa chave do Registro não estiver configurada, o Configuration Manager define automaticamente esse valor como **1** na primeira vez que um aplicativo for implantado no dispositivo. Se você definiu o valor como **0**, o Configuration Manager não poderá alterar o valor automaticamente e a implantação de aplicativos de linha de negócios falhará.  
 
  Os aplicativos de linha de negócios da Plataforma Universal do Windows devem ser assinados com um certificado de assinatura de código confiável em cada dispositivo no qual o aplicativo será implantado. Você pode usar certificados de uma infra-estrutura de PKI interna ou um certificado de um certificado de raiz pública de terceiros instalado no dispositivo.  
 
@@ -59,16 +59,16 @@ Além dos outros requisitos e procedimentos do System Center Configuration Manag
 
 -   O código do produto do arquivo e a versão do produto são usados para a detecção de aplicativo.  
 
--   O comportamento de reinicialização padrão do aplicativo será usado. O Configuration Manager não controla isto.  
+-   O comportamento de reinicialização padrão do aplicativo é usado. O Configuration Manager não controla isto.  
 
--   Serão instalados pacotes do MSI por usuário para um único usuário.  
+-   São instalados pacotes do MSI por usuário para um único usuário.  
 
--   Serão instalados pacotes do MSI por computador para todos os usuários no dispositivo.  
+-   São instalados pacotes do MSI por computador para todos os usuários no dispositivo.  
 
 -   Há suporte para atualizações de aplicativos quando o código do produto MSI de cada versão é o mesmo.  
 
 
 
-<!--HONumber=Nov16_HO1-->
+<!--HONumber=Dec16_HO1-->
 
 
