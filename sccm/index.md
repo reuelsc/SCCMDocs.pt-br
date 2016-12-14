@@ -6,7 +6,7 @@ layout: HubPage
 author: mtillman
 ms.author: mtillman
 manager: angrobe
-ms.date: 10/06/2016
+ms.date: 11/18/2016
 ms.topic: hubpage
 ms.prod: configuration-manager
 ms.technology:
@@ -15,8 +15,8 @@ ms.suite: ems
 ms.assetid: a89ecd55-fe24-4f40-86c4-8a91dd683a1c
 toc_rel: /sccm/toc.json
 translationtype: Human Translation
-ms.sourcegitcommit: 06506ef41638c2c518b02b3b13ab3453fe5de5af
-ms.openlocfilehash: 2ed99aa90915903056ee43074e0d19a1e018b9a4
+ms.sourcegitcommit: a10fb140adfc1109a49760d601b5fca3d93d4b39
+ms.openlocfilehash: 690b516b6be4380b566649adacfafcc8f920373c
 
 ---
 # <a name="system-center-configuration-manager-documentation"></a>Documentação do System Center Configuration Manager
@@ -35,7 +35,7 @@ ms.openlocfilehash: 2ed99aa90915903056ee43074e0d19a1e018b9a4
         <ul class="column column-half">
           <li><a href="/sccm/core/understand/introduction">Introdução ao Configuration Manager</a></li>
           <li><a href="/sccm/core/get-started/evaluate-with-lab-environment">Avaliar o System Center Configuration Manager compilando seu próprio ambiente de laboratório</a></li>
-          <li><a href="/sccm/core/plan-design/changes/whats-new-in-version-1606">Novidades da versão 1606 do System Center Configuration Manager</a></li>
+          <li><a href="/sccm/core/plan-design/changes/whats-new-in-version-1610">Novidades da versão 1610 do System Center Configuration Manager</a></li>
         </ul>
         <ul class="column column-half">
           <li><a href="/sccm/core/plan-design/changes/features-and-capabilities">Recursos e funcionalidades do System Center Configuration Manager</a></li>
@@ -288,6 +288,43 @@ ms.openlocfilehash: 2ed99aa90915903056ee43074e0d19a1e018b9a4
               </ul>
             </section>
           </li>
+
+
+<li class="journey-step">
+            <header class="journey-step-header row">
+              <a href="/sccm/develop/core/misc/system-center-configuration-manager-sdk">
+                <div class="title column-third">
+                  <span class="step-number">8</span>
+                  <p>Automação e desenvolvimento do Configuration Manager</p>
+                </div>
+                <p class="description column-two-thirds">Saiba como automatizar e estender o Configuration Manager.</p>
+              </a>
+            </header>
+            <section class="journey-step-elements content">
+              <ul class="row">
+                <li class="column-third">
+                  <a href="/sccm/develop/core/understand/configuration-manager-programming-fundamentals">
+                    <h3>Conceitos básicos de programação do Configuration Manager</h3>
+                    <p>Saiba mais sobre as técnicas de programação básicas que ajudarão a programar o Configuration Manager de forma eficiente.</p>
+                  </a>
+                </li>
+                <li class="column-third">
+                  <a href="/sccm/develop/reference/configuration-manager-reference">
+                    <h3>Referência do Configuration Manager</h3>
+                    <p>Fornece informações detalhadas sobre a biblioteca gerenciada do Provedor de SMS, o esquema de classe do Configuration Manager, a linguagem WQL estendida, os valores nomeados e qualificadores e as bibliotecas de console do Configuration Manager.</p>
+                  </a>
+                </li>
+                <li class="column-third">
+                  <a href="https://docs.microsoft.com/powershell/sccm/configurationmanager/vlatest/configurationmanager">
+                    <h3>Cmdlets do Configuration Manager</h3>
+                    <p>Fornece os arquivos de ajuda online para os cmdlets do Configuration Manager, que incluem informações detalhadas sobre cada cmdlet e exemplos que demonstram como usá-los.</p>
+                  </a>
+                </li>
+              </ul>
+            </section>
+          </li>
+
+
       </section>
     </div>
     <div class="section-border">
@@ -317,6 +354,6 @@ ms.openlocfilehash: 2ed99aa90915903056ee43074e0d19a1e018b9a4
 
 
 
-<!--HONumber=Nov16_HO1-->
+<!--HONumber=Dec16_HO2-->
 
 
