@@ -391,7 +391,7 @@ ms.openlocfilehash: 0f24fd912b3e65dc0c0074ef1c8f76cc128a716c
 
 -   A instância usada para o SQL Server Reporting Services pode ser a mesma instância usada para o banco de dados do site.  
 
--   Além disso, a instância que você usa pode ser compartilhada com outros produtos do System Center, contanto que os outros produtos do System Center não tenham restrições para compartilhar a instância do SQL Server.  
+-   Além disso, a instância que você usa pode ser compartilhada com outros produtos do System Center, contanto que os outros produtos do System Center não tenham restrições para compartilhar a instância do SQL Server.  
 
 ###  <a name="a-namebkmkscppreqa-service-connection-point"></a><a name="bkmk_SCPpreq"></a> Ponto de conexão de serviço  
 **Funções e recursos do Windows Server:**  
@@ -433,7 +433,7 @@ Agora, o Windows Server 2008 e o Windows Server 2008 R2 estão em suporte estend
 
 **O seguinte se aplica a todos os requisitos de ativação do WCF (Windows Communication Foundation):**  
 
--   Você pode configurar a ativação do WCF como parte do recurso do Windows, .NET Framework, no servidor do sistema de sites. Por exemplo, no Windows Server 2008 R2, execute o **Assistente para Adicionar Recursos** para instalar recursos adicionais no servidor. Na página **Selecionar Recursos**, expanda **Recursos do NET Framework 3.5.1**, expanda **Ativação do WCF** e marque a caixa de seleção de **Ativação HTTP** e **Ativação não HTTP** para habilitar essas opções.  
+-   Você pode configurar a ativação do WCF como parte do recurso do Windows, .NET Framework, no servidor do sistema de sites. Por exemplo, no Windows Server 2008 R2, execute o **Assistente para Adicionar Recursos** para instalar recursos adicionais no servidor. Na página **Selecionar Recursos**, expanda **Recursos do NET Framework 3.5.1**, expanda **Ativação do WCF** e marque a caixa de seleção de **Ativação HTTP** e **Ativação não HTTP** para habilitar essas opções.  
 
 ###  <a name="a-namebkmk2008sspreqa-site-server---central-administration-site-and-primary-site"></a><a name="bkmk_2008sspreq"></a> Servidor do site – site primário e site de administração central  
 **.NET Framework:**  
@@ -743,7 +743,7 @@ Ao usar uma configuração personalizada do IIS, é possível remover opções q
 
 -   A instância usada para o SQL Server Reporting Services pode ser a mesma instância usada para o banco de dados do site.  
 
--   Além disso, a instância que você usa pode ser compartilhada com outros produtos do System Center, contanto que os outros produtos do System Center não tenham restrições para compartilhar a instância do SQL Server.  
+-   Além disso, a instância que você usa pode ser compartilhada com outros produtos do System Center, contanto que os outros produtos do System Center não tenham restrições para compartilhar a instância do SQL Server.  
 
 ###  <a name="a-namebkmk2008scppreqa-service-connection-point"></a><a name="bkmk_2008SCPpreq"></a> Ponto de conexão de serviço  
 **.NET Framework:**  

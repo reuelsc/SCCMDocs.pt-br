@@ -367,9 +367,9 @@ O seguinte diagrama mostra o que a Descoberta de Rede somente de topologia encon
 
  Executar uma Descoberta de Rede somente de topologia no Servidor 1 com um salto de roteador descobre o seguinte:  
 
--   Roteador 1 e sub-rede 10.1.10.0 (encontrados sem saltos).  
+-   Roteador 1 e sub-rede 10.1.10.0 (encontrados sem saltos).  
 
--   Sub-redes 10.1.20.0 e 10.1.30.0, sub-rede A e Roteador 2 (encontrados no primeiro salto).  
+-   Sub-redes 10.1.20.0 e 10.1.30.0, sub-rede A e Roteador 2 (encontrados no primeiro salto).  
 
 > [!WARNING]  
 >  Cada aumento do número de saltos de roteador pode aumentar significativamente o número de recursos que podem ser descobertos e aumentar a largura de banda da rede que a Descoberta de Rede usa.  
@@ -459,7 +459,7 @@ Para usar essa opção:
 
 -   Os computadores devem ser configurados para atualizar o atributo **lastLogonTimeStamp** no Active Directory Domain Services.  
 
--   O nível funcional de domínio do Active Directory deve ser definido para o Windows Server 2003 ou posterior.  
+-   O nível funcional de domínio do Active Directory deve ser definido para o Windows Server 2003 ou posterior.  
 
 Ao configurar o tempo após o último logon que você deseja usar para essa configuração, considere o intervalo de replicação entre controladores de domínio.  
 

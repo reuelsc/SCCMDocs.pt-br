@@ -123,7 +123,7 @@ Você pode usar a ferramenta de Manutenção de Hierarquia para exportar as chav
 
 3.  A opção /keyforchild coloca a chave pública do site pai no arquivo **&lt;código do site\>.CT5** localizado na raiz da unidade do sistema.  
 
-4.  Mova o arquivo **&lt;código do site\>.CT5** para o diretório **&lt;diretório de instalação\>\inboxes\hman.box** do site filho.  
+4.  Mova o arquivo **&lt;código do site\>.CT5** para o diretório **&lt;diretório de instalação\>\inboxes\hman.box** do site filho.  
 
 
 

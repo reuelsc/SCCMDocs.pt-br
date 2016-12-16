@@ -222,7 +222,7 @@ A instalação e o gerenciamento de clientes para computadores Mac no System Cen
 
 5.  Selecione a seção **Registro** e defina as seguintes configurações de usuário:  
 
-    1.  **Permitir que os usuários registrem dispositivos móveis e computadores Mac: Sim**  
+    1.  **Permitir que os usuários registrem dispositivos móveis e computadores Mac: Sim**  
 
     2.  **Perfil de registro:** clique em **Definir Perfil**.  
 
