@@ -79,7 +79,7 @@ ms.openlocfilehash: 862291f52d5a1bb34fb5483806972fcf70f158a8
 
  <sup>1</sup> Há suporte para versões do Datacenter, mas sem certificação para o Configuration Manager. O suporte de hotfix não é oferecido para problemas específicos do Windows Server Datacenter Edition.  
 
- <sup>2</sup> Para dar suporte à instalação do cliente por push, o computador que executa esta versão do sistema operacional deve executar o serviço de função do Servidor de Arquivos para a função de servidor dos Serviços de Arquivo e Armazenamento. Para saber mais sobre como instalar recursos do Windows em um computador Server Core, confira [Instalar funções e recursos de servidor em um servidor Server Core](http://go.microsoft.com/fwlink/p/?LinkId=299359) na biblioteca do TechNet do Windows Server 2012.  
+ <sup>2</sup> Para dar suporte à instalação do cliente por push, o computador que executa esta versão do sistema operacional deve executar o serviço de função do Servidor de Arquivos para a função de servidor dos Serviços de Arquivo e Armazenamento. Para saber mais sobre como instalar recursos do Windows em um computador Server Core, confira [Instalar funções e recursos de servidor em um servidor Server Core](http://go.microsoft.com/fwlink/p/?LinkId=299359) na biblioteca do TechNet do Windows Server 2012.  
 
  <sup>3</sup> O uso deste sistema operacional exige a versão 1602 ou posterior.  
 
