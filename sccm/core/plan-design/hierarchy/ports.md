@@ -70,7 +70,7 @@ O Configuration Manager não permite que você configure as portas para os segui
 
 -   Console do Configuration Manager para a Internet  
 
--   Conexões com serviços de nuvem, como o Microsoft Intune e pontos de distribuição baseados em nuvem  
+-   Conexões com serviços de nuvem, como o Microsoft Intune e pontos de distribuição baseados em nuvem  
 
 ##  <a name="a-namebkmkcommunicationportsa-ports-used-by-configuration-manager-clients-and-site-systems"></a><a name="BKMK_CommunicationPorts"></a> Portas usadas por sistemas de site e clientes do Gerenciador de Configurações  
 As seções a seguir detalham as portas usadas para comunicação no Configuration Manager. As setas no título da seção, entre os computadores, representam a direção da comunicação:  

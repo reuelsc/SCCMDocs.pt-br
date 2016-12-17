@@ -140,7 +140,7 @@ Quando um cliente do System Center Configuration Manager for instalado e atribu�
 
          Quando uma solicitação de apagamento é enviada, há geralmente um atraso até que o dispositivo móvel receba o comando de apagamento:  
 
-        -   Se o dispositivo móvel for registrado pelo Configuration Manager ou pelo Microsoft Intune, o cliente receberá o comando de apagamento na próxima vez em que baixar a política do cliente.  
+        -   Se o dispositivo móvel for registrado pelo Configuration Manager ou pelo Microsoft Intune, o cliente receberá o comando de apagamento na próxima vez em que baixar a política do cliente.  
 
         -   Se o dispositivo móvel for gerenciado pelo conector do Exchange Server, ele receberá o comando de apagamento na próxima vez que fizer a sincronização com o Exchange.  
 
@@ -434,7 +434,7 @@ A partir da versão 1606, você pode ajustar o tamanho da pasta de cache do clie
 
     -   Navegue até o arquivo usando o Windows Explorer e clique duas vezes no arquivo de script.  
 
-    -   Abra um prompt de comando e digite: **cscript &lt;caminho\nomearquivo.vbs>**.  
+    -   Abra um prompt de comando e digite: **cscript &lt;caminho\nomearquivo.vbs>**.  
 
 5.  Clique em **OK** na caixa de diálogo **Windows Script Host** .  
 

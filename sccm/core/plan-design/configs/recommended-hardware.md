@@ -44,7 +44,7 @@ Para obter um melhor desempenho, use as configurações de RAID 10 para todas as
 
 ###  <a name="a-namebkmkscalesiteservera-site-servers"></a><a name="bkmk_ScaleSiteServer"></a> Servidores do site  
 
-|Site primário autônomo|Núcleos da CPU|Memória (GB)|% de alocação de memória para o SQL Server|  
+|Site primário autônomo|Núcleos da CPU|Memória (GB)|% de alocação de memória para o SQL Server|  
 |-------------------------------|---------------|---------------|----------------------------------------|  
 |Servidor do site primário autônomo com a função de site do banco de dados no mesmo servidor<sup>1</sup>|16|96|80|  
 |Servidor de site primário autônomo com um banco de dados do site remoto|8|16|-|  
@@ -117,7 +117,7 @@ Para obter um melhor desempenho, use as configurações de RAID 10 para todas as
 
 -   **Processador e memória**: consulte os requisitos de processador e RAM para o sistema operacional de computadores.  
 
--   **Espaço em disco:** 500 MB de espaço em disco disponível, com 5 GB recomendados para o cache do cliente do Configuration Manager. Menos espaço em disco será necessário se você usar as configurações personalizadas para instalar o cliente do Configuration Manager:  
+-   **Espaço em disco:** 500 MB de espaço em disco disponível, com 5 GB recomendados para o cache do cliente do Configuration Manager. Menos espaço em disco será necessário se você usar as configurações personalizadas para instalar o cliente do Configuration Manager:  
 
     -   Use a propriedade de linha de comando /skipprereq do CCMSetup para evitar a instalação de arquivos não solicitados pelo cliente. Por exemplo, **CCMSetup.exe /skipprereq:silverlight.exe** se o cliente não usará o catálogo de aplicativos.  
 
@@ -142,7 +142,7 @@ Para obter um melhor desempenho, use as configurações de RAID 10 para todas as
 |Requisito|Detalhes|  
 |-----------------|-------------|  
 |Processador e memória|Consulte os requisitos de RAM e processador para o sistema operacional do computador.|  
-|Espaço em disco|500 MB de espaço em disco disponível, com 5 GB recomendados para o cache do cliente do Configuration Manager.|  
+|Espaço em disco|500 MB de espaço em disco disponível, com 5 GB recomendados para o cache do cliente do Configuration Manager.|  
 |Conectividade de rede|Os computadores cliente do Configuration Manager devem ter conectividade de rede com os sistemas de sites do Configuration Manager para habilitar o gerenciamento.|  
 
 ##  <a name="a-namebkmkscaleconsolea-configuration-manager-console"></a><a name="bkmk_ScaleConsole"></a> Console do Configuration Manager  
