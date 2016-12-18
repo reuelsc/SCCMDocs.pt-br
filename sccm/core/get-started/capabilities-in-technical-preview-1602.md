@@ -49,15 +49,15 @@ Este artigo apresenta os recursos disponíveis no Technical Preview do System Ce
  Uma nova opção, **Política de Sincronização**, foi adicionada à página **Opções** > **Manutenção do Computador** do Centro de Software, o que faz com que o computador atualize sua política de computador e de usuário do Configuration Manager.  
 
 ##  <a name="a-namebkmkwin10servicinga-improvements-to-windows-10-servicing"></a><a name="BKMK_Win10Servicing"></a> Melhorias no Serviço do Windows 10  
- Na Technical Preview 1602, adicionamos as seguintes melhorias ao Serviço do Windows 10:  
+ Na Technical Preview 1602, adicionamos as seguintes melhorias ao Serviço do Windows 10:  
 
 -   Novas opções de filtro para Planos de Serviço.  Agora é possível filtrar por **Idioma**, **Obrigatório** e **Título**. Somente as atualizações que atendem aos critérios especificados serão adicionadas à implantação associada.  
 
--   Ao selecionar a classificação **Atualizações** para a sincronização das atualizações de software, é exibida uma caixa de diálogo de aviso para informá-lo que o [hotfix 3095113](https://support.microsoft.com/kb/3095113) do WSUS é necessário para sincronizar com êxito as atualizações de software e para que o Serviço do Windows 10 funcione corretamente.  No diálogo, é possível ir para o artigo da base de dados de conhecimento do hotfix.  
+-   Ao selecionar a classificação **Atualizações** para a sincronização das atualizações de software, é exibida uma caixa de diálogo de aviso para informá-lo que o [hotfix 3095113](https://support.microsoft.com/kb/3095113) do WSUS é necessário para sincronizar com êxito as atualizações de software e para que o Serviço do Windows 10 funcione corretamente.  No diálogo, é possível ir para o artigo da base de dados de conhecimento do hotfix.  
 
 -   As atualizações do Windows 10 disponíveis agora são exibidas apenas no nó **Manutenção do Windows 10** \ **Todas as Atualizações do Windows 10** do console do Configuration Manager. Essas atualizações não são mais exibidas no nó **Atualizações de Software** \ **Todas as Atualizações de Software**.  
 
--   Os usuários finais que iniciam um pacote de Atualização do Windows 10 veem um diálogo que informará que estão atualizando seus sistemas operacionais.  
+-   Os usuários finais que iniciam um pacote de Atualização do Windows 10 veem um diálogo que informará que estão atualizando seus sistemas operacionais.  
 
 
 

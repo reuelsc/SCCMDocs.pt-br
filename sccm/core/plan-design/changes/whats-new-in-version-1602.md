@@ -46,7 +46,7 @@ A atualização 1602 do System Center Configuration Manager é uma atualização
 >   
 >  Para obter informações sobre esta etapa crítica, confira a seção Funcionalidade nova e alterada em [Visão geral do Windows Server Update Services](https://technet.microsoft.com/library/hh852345.aspx) na documentação do Windows Server.  
 
- Para atualizar um servidor, use os procedimentos de atualização do Windows Server 2012 R2. Não é necessário executar uma restauração do servidor do site do Configuration Manager após a atualização.  Para obter os procedimentos de atualização, consulte [Opções de atualização para o Windows Server 2012 R2](https://technet.microsoft.com/library/dn303416.aspx) na documentação do Windows Server.  
+ Para atualizar um servidor, use os procedimentos de atualização do Windows Server 2012 R2. Não é necessário executar uma restauração do servidor do site do Configuration Manager após a atualização.  Para obter os procedimentos de atualização, consulte [Opções de atualização para o Windows Server 2012 R2](https://technet.microsoft.com/library/dn303416.aspx) na documentação do Windows Server.  
 
 ###  <a name="a-namebkmkaoaga-sql-server-alwayson-availability-groups"></a><a name="bkmk_AOAG"></a> Grupos de disponibilidade AlwaysOn do SQL Server  
  Use grupos de disponibilidade AlwaysOn do SQL Server para hospedar o banco de dados do site em sites primários e o site de administração central como uma solução de alta disponibilidade e de recuperação de desastres.  
@@ -66,7 +66,7 @@ A atualização 1602 do System Center Configuration Manager é uma atualização
 
 -   Um plano de manutenção é considerado uma implantação de alto risco, e a janela **Selecionar Coleção** exibe apenas as coleções personalizadas que atendem às definições de verificação da implantação que são configuradas nas propriedades do site. Para obter mais informações, consulte [Settings to manage high-risk deployments for System Center Configuration Manager](../../../protect/understand/settings-to-manage-high-risk-deployments.md).  
 
--   Os usuários finais que iniciam um pacote de Atualização do Windows 10 veem um diálogo que informará que estão atualizando seus sistemas operacionais.  
+-   Os usuários finais que iniciam um pacote de Atualização do Windows 10 veem um diálogo que informará que estão atualizando seus sistemas operacionais.  
 
 ## <a name="application-management"></a>Gerenciamento de aplicativos  
 

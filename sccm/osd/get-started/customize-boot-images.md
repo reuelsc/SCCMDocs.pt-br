@@ -46,7 +46,7 @@ Cada versão do Configuration Manager dá suporte a uma versão específica do W
 
      Por exemplo, quando você tiver o Configuration Manager, será possível personalizar as imagens de inicialização do Windows ADK para Windows 10 (baseado no Windows PE 10) no console do Configuration Manager. No entanto, embora haja suporte para imagens de inicialização baseadas no Windows PE 5, você deverá personalizá-las em outro computador e usar a versão do DISM instalada com o Windows ADK para Windows 8. Em seguida, é possível adicionar a imagem de inicialização ao console do Configuration Manager.  
 
- Os procedimentos deste tópico demonstram como adicionar os componentes opcionais exigidos pelo Configuration Manager à imagem de inicialização usando os seguintes pacotes do Windows PE:  
+ Os procedimentos deste tópico demonstram como adicionar os componentes opcionais exigidos pelo Configuration Manager à imagem de inicialização usando os seguintes pacotes do Windows PE:  
 
 -   **WinPE-WMI**: Adiciona o suporte para a WMI (Instrumentação de Gerenciamento do Windows).  
 
@@ -83,7 +83,7 @@ Cada versão do Configuration Manager dá suporte a uma versão específica do W
     > [!NOTE]
     >  Para obter mais informações sobre o DISM, consulte o tópico [DISM - Referência técnica do Gerenciamento e Manutenção de Imagens de Implantação](http://technet.microsoft.com/library/hh824821.aspx) na biblioteca de documentação técnica do TechNet do Windows 8.1 e do Windows 8.
 
-5.  Após montar a imagem de inicialização, use o DISM para adicionar componentes opcionais a ela. No Windows PE 5, os componentes opcionais de 64 bits estão localizados em <*Caminho instalação*>\Kits do Windows\8.1\Kit de Avaliação e Implantação\Ambiente de Pré-Instalação do Windows\amd64\WinPE_OCs.  
+5.  Após montar a imagem de inicialização, use o DISM para adicionar componentes opcionais a ela. No Windows PE 5, os componentes opcionais de 64 bits estão localizados em <*Caminho instalação*>\Kits do Windows\8.1\Kit de Avaliação e Implantação\Ambiente de Pré-Instalação do Windows\amd64\WinPE_OCs.  
 
     > [!NOTE]
     >  Esse procedimento usa o seguinte local para os componentes opcionais: C:\Arquivos de Programas (x86)\Kits do Windows\8.1\Kit de Avaliação e Implantação\Ambiente de Pré-instalação do Windows\amd64\WinPE_OCs. O caminho usado poderá ser diferente dependendo da versão e das opções de instalação selecionadas para o Windows ADK.  
@@ -205,7 +205,7 @@ Cada versão do Configuration Manager dá suporte a uma versão específica do W
     > [!NOTE]
     >  Para obter mais informações sobre o DISM, consulte o tópico [Referência técnica do Gerenciamento e Manutenção de Imagens de Implantação](http://technet.microsoft.com/library/dd744256\(v=ws.10\).aspx) na biblioteca de documentação do TechNet do Windows 7.  
 
-5.  Após montar a imagem de inicialização, use o DISM para adicionar componentes opcionais a ela. No Windows PE 3.1, por exemplo, os componentes opcionais estão localizados em <*Caminho de instalação*>\Windows AIK\Tools\PETools\amd64\WinPE_FPs\\.  
+5.  Após montar a imagem de inicialização, use o DISM para adicionar componentes opcionais a ela. No Windows PE 3.1, por exemplo, os componentes opcionais estão localizados em <*Caminho de instalação*>\Windows AIK\Tools\PETools\amd64\WinPE_FPs\\.  
 
     > [!NOTE]
     >  Esse procedimento usa o seguinte local para os componentes opcionais: C:\Arquivos de Programas\Windows AIK\Tools\PETools\amd64\WinPE_FPs. O caminho que você usará poderá ser diferente dependendo da versão e das opções de instalação selecionadas para o Windows AIK.  
