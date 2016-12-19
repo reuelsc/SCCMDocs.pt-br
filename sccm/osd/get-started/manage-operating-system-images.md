@@ -142,6 +142,6 @@ Para as etapas de criação de uma imagem personalizada do sistema operacional, 
 
 
 
-<!--HONumber=Dec16_HO2-->
+<!--HONumber=Dec16_HO3-->
 
 

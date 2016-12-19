@@ -90,6 +90,6 @@ Você precisa de um ponto de conector de gateway de gerenciamento de nuvem se es
  
 
 
-<!--HONumber=Dec16_HO1-->
+<!--HONumber=Dec16_HO3-->
 
 
