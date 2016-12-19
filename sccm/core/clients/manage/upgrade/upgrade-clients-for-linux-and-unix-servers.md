@@ -64,6 +64,6 @@ Você pode atualizar a versão do cliente para Linux e UNIX em um computador par
 
 
 
-<!--HONumber=Nov16_HO4-->
+<!--HONumber=Dec16_HO3-->
 
 

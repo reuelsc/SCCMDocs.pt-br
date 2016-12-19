@@ -1,8 +1,8 @@
 ---
-title: "Novidades no MDM híbrido | Microsoft Intune | System Center Configuration Manager"
+title: "Novidades na híbrida MDM | Microsoft Docs"
 description: "Saiba mais sobre os novos recursos de gerenciamento de dispositivo móvel disponíveis para implantações híbridas com o Intune e o System Center Configuration Manager."
 ms.custom: na
-ms.date: 10/25/2016
+ms.date: 11/18/2016
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
@@ -16,8 +16,8 @@ author: Mtillman
 ms.author: mtillman
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: f13b38fcc4e7c55f05dbf6a7d8f516643939ba92
-ms.openlocfilehash: 3525fba1b75196bddebc89e49f40cbfd3c75d9d0
+ms.sourcegitcommit: 776c606f8e9ebfd7348d9d3a8f1e038d47bdf7a1
+ms.openlocfilehash: 891638f920a5bf807b17c7f55b9153be45fc3b93
 
 ---
 # <a name="whats-new-in-hybrid-mobile-device-management-with-system-center-configuration-manager-and-microsoft-intune"></a>Novidades no gerenciamento de dispositivo móvel híbrido com o System Center Configuration Manager e o Microsoft Intune
@@ -30,9 +30,95 @@ Este artigo fornece detalhes sobre os novos recursos de MDM (gerenciamento de di
 
  Cada seção deste artigo lista recursos híbridos em três categorias diferentes. Use as diretrizes a seguir para determinar a compatibilidade dos recursos em cada categoria com versões diferentes do Configuration Manager:  
 
-|Categorias do recurso|
-|-|  
-|**Novo no Microsoft Intune** – em geral, todos os recursos listados nessa categoria devem funcionar com todas as versões do Configuration Manager, incluindo versões do System Center 2012 R2 Configuration Manager, uma vez que esses recursos exigem apenas o serviço Intune e não exigem funcionalidades adicionais no Configuration Manager.<br /><br /> **Novo no Configuration Manager Technical Preview** – todos os recursos listados nessa categoria funcionam apenas com a versão de Technical Preview especificada. Para testar esses recursos, você deve instalar a versão de Technical Preview especificada na descrição do recurso. Para mais informações, confira [Technical Preview do System Center Configuration Manager](../../core/get-started/technical-preview.md).<br /><br /> **Novo no Configuration Manager (Branch Atual)** – todos os recursos listados nessa categoria funcionam apenas com a versão especificada do Configuration Manager (Branch Atual), como a versão 1511 ou 1602. Se estiver usando uma versão mais antiga do Configuration Manager para sua implantação híbrida, atualize para a versão do Configuration Manager (Branch Atual) especificada na descrição do recurso. Para mais informações, confira [Atualização para o System Center Configuration Manager](../../core/servers/deploy/install/upgrade-to-configuration-manager.md).|  
+|Categorias do recurso|Descrição|
+|-|-|
+|**Novo no Microsoft Intune** | Em geral, todos os recursos listados nessa categoria devem funcionar com todas as versões do Configuration Manager, incluindo versões do System Center 2012 R2 Configuration Manager, uma vez que esses recursos exigem apenas o serviço Intune e não exigem funcionalidades adicionais no Configuration Manager.|
+|**Novo no Configuration Manager Technical Preview**| Todos os recursos listados nessa categoria funcionam apenas com a versão de Technical Preview especificada. Para testar esses recursos, você deve instalar a versão de Technical Preview especificada na descrição do recurso. Para mais informações, confira [Technical Preview do System Center Configuration Manager](../../core/get-started/technical-preview.md).|
+|**Novo no Configuration Manager (Branch Atual)**| Todos os recursos listados nessa categoria funcionam apenas com a versão especificada do Configuration Manager (Branch Atual), como a versão 1511 ou 1602. Se estiver usando uma versão mais antiga do Configuration Manager para sua implantação híbrida, atualize para a versão do Configuration Manager (Branch Atual) especificada na descrição do recurso. Para mais informações, confira [Atualização para o System Center Configuration Manager](../../core/servers/deploy/install/upgrade-to-configuration-manager.md).|
+
+## <a name="new-hybrid-features-in-december-2016"></a>Novos recursos híbridos em dezembro de 2016
+
+### <a name="new-in-microsoft-intune"></a>Novo no Microsoft Intune
+
+Os recursos do Intune a seguir introduzidos em dezembro de 2016 funcionam em implantações híbridas:
+
+- **A MFA (Autenticação Multifator) no registro está migrando para o portal do Azure**
+
+  Anteriormente, você tinha que ir para o console do Intune ou para o console do Configuration Manager para definir o MFA para inscrições do Intune. Com esse recurso atualizado, você faz logon no [Portal do Microsoft Azure] (https://manage.windowsazure.com) usando suas credenciais do Intune e configura as definições MFA por meio do Azure AD. Para obter mais informações, consulte [Autenticação multifator para Microsoft Intune] (https://aka.ms/mfa_ad).
+
+- **Aplicativo de Portal da empresa para Android já disponível na China**
+
+  O aplicativo de Portal da empresa para Android agora está disponível na China. Devido à ausência do Google Play Store na China, os dispositivos Android devem obter aplicativos de marketplaces de aplicativos chinês. O aplicativo de Portal da empresa para Android está disponível para download nos seguintes repositórios:
+
+  - [Baidu](https://go.microsoft.com/fwlink/?linkid=836946)
+  - [Huawei](https://go.microsoft.com/fwlink/?linkid=836948)
+  - [Tencent](https://go.microsoft.com/fwlink/?linkid=836949)
+  - [Wandoujia](https://go.microsoft.com/fwlink/?linkid=836950)
+  - [Xiaomi](https://go.microsoft.com/fwlink/?linkid=836947)
+
+  O aplicativo de Portal da Empresa para Android usa o Google Play Services para se comunicar com o serviço Microsoft Intune. Como o Google Play Services ainda não está disponível na China, executar qualquer uma das seguintes tarefas pode levar até 8 horas para ser concluída.
+
+  | Console de Administração do Configuration Manager | Aplicativo Portal da Empresa do Intune para Android | Site do Portal da empresa do Intune |
+  |----|----|----|      
+  | Desativar/apagar (remover todos os dados)   | Remover um dispositivo remoto | Remover dispositivo (local e remoto) |
+  | Desativar/apagar (remover dados da empresa)   | Redefinir o dispositivo | Redefinir o dispositivo|
+  | Implantações de aplicativo novo ou atualizado | Instalar aplicativos de linha de negócios disponíveis | Redefinição de senha de dispositivo|
+  | Bloqueio remoto | | |
+  | Redefinição de senha | | |        
+
+
+## <a name="new-hybrid-features-in-november-2016"></a>Novos recursos híbridos em novembro de 2016
+
+### <a name="new-in-microsoft-intune"></a>Novo no Microsoft Intune
+
+Os recursos do Intune a seguir introduzidos em novembro de 2016 funcionam em implantações híbridas:
+
+- **Novo Portal da empresa do Microsoft Intune disponível para dispositivos Windows 10**
+
+  A Microsoft lançou um novo [Aplicativo de Portal da empresa para dispositivos Windows 10](https://www.microsoft.com/store/apps/9wzdncrfj3pz). Esse aplicativo, que aproveita o novo formato Universal do Windows 10, fornece uma experiência de usuário atualizada que é idêntica em todos os dispositivos Windows 10 e de forma semelhante em PCs e dispositivos móveis, permitindo ao mesmo tempo a mesma funcionalidade fornecida por aplicativos anteriores do Portal da empresa.
+
+  O novo aplicativo aproveita os recursos de plataforma como logon único (SSO) e autenticação baseada em certificado em dispositivos Windows 10. O aplicativo está disponível como uma atualização para as instalações existentes do Portal da empresa do Windows 8.1 e Portal de empresa do Windows Phone 8.1 da Windows Store. Para obter mais detalhes, acesse o [Blog da equipe de suporte do Intune](http://aka.ms/intunecp_universalapp).
+
+  O novo aplicativo de Portal da Empresa também exibe quaisquer aplicativos Windows Store para Empresas marcados como **Disponível** no console do Configuration Manager.
+
+
+### <a name="new-in-configuration-manager-current-branch"></a>Novo no Configuration Manager (Branch Atual)
+
+Os seguintes recursos que estavam anteriormente disponíveis nas versões do Configuration Manager Technical Preview agora estão disponíveis em implantações híbridas com o Intune e a versão 1610 do Configuration Manager (branch atual).
+
+* [Configurações adicionais e experiência aprimorada para itens de configuração](/sccm/core/plan-design/changes/whats-new-in-version-1610?branch=sccm-1610-release#new-compliance-settings-for-configuration-items)
+* [Configurações adicionais para perfis de DEP](#new-in-configuration-manager-technical-preview-1609)
+* [Aplicativos pagos na Windows Store para Empresas](/sccm/apps/deploy-use/manage-apps-from-the-windows-store-for-business)
+* [Tipos de conexão nativa para perfis de VPN do Windows 10](#new-in-configuration-manager-technical-preview-1609)
+* [Gráficos de conformidade do Intune](/sccm/protect/deploy-use/create-compliance-policy#monitor-the-compliance-policy)
+* [Solicitação da sincronização de política do console](/sccm/mdm/deploy-use/sync-intune-device)
+* [Definições de configuração do Windows Defender](/sccm/compliance/deploy-use/create-configuration-items-for-windows-8.1-and-windows-10-devices-managed-without-the-client#windows-defender)
+
+Os seguintes recursos híbridos adicionais também estão incluídos na versão 1610 do Configuration Manager (Branch Atual):
+
+- **Aumento do número de dispositivos registrados**
+
+  Agora você pode habilitar os usuários para registrarem até 15 dispositivos. O limite anterior era cinco dispositivos por usuário.
+
+
+- **Suporte de segurança adicional**
+
+  Além de Administrador Completo, as seguintes funções de segurança internas agora têm acesso completo aos itens no nó Todos os dispositivos de propriedade corporativa, incluindo Dispositivos Pré-Declarados, perfis de registro do iOS e perfis de registro do Windows:
+
+    - Gerenciador de Ativos
+    - Gerenciador de acesso aos recursos da empresa
+
+  O acesso somente leitura para essas áreas do console do Configuration Manager ainda é concedido à função de Analista somente leitura.
+
+- **Acesso VPN de disparo automático de aplicativos da Proteção de Informações do Windows**
+
+  Você pode adicionar um domínio primário de Proteção de Informações do Windows aos perfis de VPN do Windows 10, que faz com que todos os aplicativos associados disparem uma conexão VPN automaticamente quando são executados no dispositivo. Essa opção só está disponível ao escolher um tipo de conexão nativo.
+
+- **Acesso condicional para perfis VPN do Windows 10**
+
+    Agora é possível exigir que dispositivos Windows 10, registrados no Azure Active Directory, sejam compatíveis para terem acesso VPN por meio de perfis de VPN do Windows 10 criados no console do Configuration Manager. Isso é possível por meio da nova caixa de seleção **Habilitar o acesso condicional para esta conexão VPN** na página Método de autenticação no Assistente para Criar Perfil VPN e as propriedades de perfil VPN para perfis de VPN do Windows 10. Essa opção só está disponível ao escolher um tipo de conexão nativo.
+
+    Também será possível especificar um certificado diferente para autenticação de logon único se você habilitar o acesso condicional para o perfil.
 
 ## <a name="new-hybrid-features-in-october-2016"></a>Novos recursos híbridos em outubro de 2016
 
@@ -48,9 +134,9 @@ Os recursos do Intune a seguir introduzidos em outubro de 2016 funcionam em impl
 
   Você pode habilitar seus aplicativos para usar políticas de MAM (gerenciamento de aplicativo móvel) usando a Ferramenta de Disposição do Aplicativo do Intune.
 
-- **Compatibilidade do Samsung Android KNOX com o Intune**
+- **Compatibilidade do Samsung Android KNOX Standard com o Intune**
 
-  Alguns modelos de telefone Samsung Galaxy Ace não podem ser gerenciados pelo Intune como dispositivos Samsung KNOX. Quando você registrar esses dispositivos com o Intune, eles serão gerenciados como dispositivos Android padrão.
+  Alguns modelos de telefone Samsung Galaxy Ace não podem ser gerenciados pelo Intune, como os dispositivos Samsung KNOX padrão. Quando você registrar esses dispositivos com o Intune, eles serão gerenciados como dispositivos Android padrão.
 
   Os números de modelo afetados são:
 
@@ -143,14 +229,14 @@ Os recursos do Intune a seguir introduzidos em agosto de 2016 funcionam em impla
 
   O Google está removendo a capacidade dos administradores de TI e usuários finais redefinirem remotamente a senha de dispositivos Android 7.0. Anteriormente, os administradores de TI poderiam redefinir remotamente a senha de um usuário e os usuários finais poderiam redefinir suas senhas pelo site do Portal da Empresa.
 
-- **Política de aplicativos permitidos e bloqueados para dispositivos Samsung KNOX**
+- **Política de aplicativos permitidos e bloqueados para dispositivos Samsung KNOX Standard**
 
-  Agora você pode configurar uma política personalizada para dispositivos Samsung KNOX que permite que você crie um dos itens a seguir:
+  Agora você pode configurar uma política personalizada para dispositivos Standard Samsung KNOX que permite que você crie um dos itens a seguir:
 
   - Uma lista de aplicativos que são impedidos de serem executados no dispositivo. Mesmo se instalado, um aplicativo definido na lista bloqueada não poderá ser ativado no dispositivo.
   - Uma lista de aplicativos que os usuários do dispositivo podem instalar da Google Play Store. Nenhum outro aplicativo pode ser instalado por meio da Store.
 
-  Essas configurações podem ser usadas apenas por dispositivos que executam o Samsung KNOX. Para detalhes, confira [Usar políticas personalizadas para permitir e bloquear aplicativos para dispositivos Samsung KNOX](/intune/deploy-use/custom-policy-to-allow-and-block-samsung-knox-apps).
+  Essas configurações podem ser usadas apenas por dispositivos que executam o Samsung KNOX Standard. Para detalhes, confira [Usar políticas personalizadas para permitir e bloquear aplicativos para dispositivos Samsung KNOX Standard](/intune/deploy-use/custom-policy-to-allow-and-block-samsung-knox-apps).
 
 - **Link de comentários do Portal da Empresa para a Microsoft**
 
@@ -237,6 +323,6 @@ Para obter informações sobre a nova funcionalidade, consulte a documentação 
 
 
 
-<!--HONumber=Nov16_HO1-->
+<!--HONumber=Dec16_HO3-->
 
 

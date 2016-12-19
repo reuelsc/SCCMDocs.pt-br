@@ -1,8 +1,8 @@
 ---
-title: "Gerenciar pacotes de atualização do sistema operacional | Configuration Manager"
+title: "Gerenciar pacotes de atualização de sistema operacional | Microsoft Docs"
 description: "Saiba como gerenciar pacotes de atualização do sistema operacional com o System Center Configuration Manager."
 ms.custom: na
-ms.date: 10/06/2016
+ms.date: 12/06/2016
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
@@ -17,8 +17,8 @@ author: Dougeby
 ms.author: dougeby
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: 1134bb2f04152288e72d40b1b1083f415cb4e900
-ms.openlocfilehash: 226e283b5d9a04d2a9e0f3ce6894a82a3683d972
+ms.sourcegitcommit: 3f44505c977b511223a083a960f871371c0ff133
+ms.openlocfilehash: 5fef04f26b12bced073332fd1f7b4e7c7bd7d398
 
 
 ---
@@ -63,7 +63,7 @@ Um pacote de atualização no System Center Configuration Manager contém os arq
  Imagens do sistema operacional são distribuídas para os pontos de distribuição da mesma forma que outros conteúdos são distribuídos. Na maioria dos casos, você deve distribuir a imagem do sistema operacional para pelo menos um ponto de distribuição antes de implantar o sistema operacional. Para as etapas para distribuir uma imagem do sistema operacional, consulte [Distribute content](../../core/servers/deploy/configure/deploy-and-manage-content.md#a-namebkmkdistributea-distribute-content).  
 
 ##  <a name="a-namebkmkosupgradepkgapplyupdatesa-apply-software-updates-to-an-operating-system-upgrade-package"></a><a name="BKMK_OSUpgradePkgApplyUpdates"></a> Aplicar atualizações de software a um pacote de atualização do sistema operacional  
- A partir do Configuration Manager versão 1602, você pode aplicar novas atualizações de software à imagem do sistema operacional em seu pacote de atualização do sistema operacional. É claro que, antes de aplicar as atualizações de software a um pacote de atualização, sua infraestrutura de atualizações de software deve estar em funcionamento e ter sincronizado com êxito as atualizações de software. Para mais informações, consulte [Implantar atualizações de software](../../sum/deploy-use/deploy-software-updates.md).  
+ A partir do Configuration Manager versão 1602, você pode aplicar novas atualizações de software à imagem do sistema operacional em seu pacote de atualização do sistema operacional. Antes de aplicar as atualizações de software a um pacote de atualização, sua infraestrutura de atualizações de software deve estar em funcionamento, você deve ter sincronizado com êxito as atualizações de software e deve ter baixado as atualizações de software para a biblioteca de conteúdo no servidor do site. Para mais informações, consulte [Implantar atualizações de software](../../sum/deploy-use/deploy-software-updates.md).  
 
  Você pode aplicar as atualizações de software a um pacote de atualização em um agendamento especificado. No cronograma que você especificar, o Configuration Manager aplica as atualizações de software que você selecionar no pacote de atualização do sistema operacional e, opcionalmente, distribui o pacote de atualização atualizado para os pontos de distribuição. As informações sobre o pacote de atualização do sistema operacional são armazenadas no banco de dados do site, incluindo as atualizações de software que foram aplicadas no momento da importação. As atualizações de software que foram aplicadas ao pacote de atualização desde que ela foi inicialmente adicionada também são armazenadas no banco de dados do site. Ao iniciar o assistente para aplicar as atualizações de software ao pacote de atualização do sistema operacional, o assistente recupera uma lista de atualizações de software aplicáveis que ainda não foram aplicadas ao pacote de atualização para que você a selecione. O Configuration Manager copia as atualizações de software da biblioteca de conteúdo no servidor do site e aplica as atualizações de software ao pacote de atualização do sistema operacional.  
 
@@ -95,6 +95,6 @@ Um pacote de atualização no System Center Configuration Manager contém os arq
 
 
 
-<!--HONumber=Nov16_HO1-->
+<!--HONumber=Dec16_HO3-->
 
 

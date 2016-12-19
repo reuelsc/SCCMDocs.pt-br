@@ -1,14 +1,13 @@
-# [Entender e explorar](understand/software-updates-introduction.md)
-
+# Entender e explorar
 ## [Introdução às atualizações de software](understand/software-updates-introduction.md)
 ## [Ícones usados para as atualizações de software](understand/software-updates-icons.md)
 
-# [Planejamento e design](plan-design/plan-for-software-updates.md)
+# Planejamento e design
 ## [Planejar atualizações de software](plan-design/plan-for-software-updates.md)
 ## [Pré-requisitos para atualizações de software](plan-design/prerequisites-for-software-updates.md)
 ## [Segurança e privacidade das atualizações de software](plan-design/security-and-privacy-for-software-updates.md)
 
-# [Introdução](get-started/prepare-for-software-updates-management.md)
+# Introdução
 ## [Preparar-se para o gerenciamento de atualização de software](get-started/prepare-for-software-updates-management.md)
 ## [Instalar um ponto de atualização de software](get-started/install-a-software-update-point.md)
 ## [Sincronizar atualizações de software](get-started/synchronize-software-updates.md)
@@ -17,7 +16,7 @@
 ## [Gerenciar configurações de atualizações de software](get-started/manage-settings-for-software-updates.md)
 ## [Remover um ponto de atualização de software](get-started/remove-a-software-update-point.md)
 
-# [Implantar e usar](deploy-use/deploy-software-updates.md)
+# Implantar e usar
 ## [Baixar atualizações de software](deploy-use/download-software-updates.md)
 
 ## [Adicionar atualizações de software a um grupo de atualização](deploy-use/add-software-updates-to-an-update-group.md)
@@ -33,6 +32,6 @@
 ## [Cenário de exemplo para implantar atualizações de segurança](deploy-use/example-scenario-deploy-monitor-monthly-security-updates.md)
 
 
-<!--HONumber=Nov16_HO1-->
+<!--HONumber=Dec16_HO3-->
 
 

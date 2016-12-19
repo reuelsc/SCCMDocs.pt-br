@@ -1,5 +1,5 @@
 ---
-title: "Proteção Avançada contra Ameaças do Windows Defender | System Center Configuration Manager"
+title: "Proteção Avançada contra Ameaças do Windows Defender | Microsoft Docs"
 description: "Saiba como gerenciar e monitorar a Proteção Avançada contra Ameaças do Windows Defender, um novo serviço que ajuda as empresas a responder a ataques avançados."
 ms.custom: na
 ms.date: 10/06/2016
@@ -16,8 +16,8 @@ author: NathBarn
 ms.author: nathbarn
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: f777295958e9cbc729e3759d354521c96ae3e8ac
-ms.openlocfilehash: a4ad2d93ecd994fff00dab33084a734252cac651
+ms.sourcegitcommit: 299fada2b6587ace44e635c4f26cc7a482d44843
+ms.openlocfilehash: 880ea4fcb0730f0e9adbc9f142262f241f5df9dc
 
 ---
 # <a name="windows-defender-advanced-threat-protection"></a>Proteção Avançada contra Ameaças do Windows Defender
@@ -38,9 +38,9 @@ O Windows Defender ATP é um serviço da [Central de Segurança do Windows](http
 
  1.  Faça logon no [serviço online da ATP do Windows Defender](https://securitycenter.windows.com/)   
 
- 2.  Clique no item de menu **Integração de Cliente**.  
+ 2.  Clique no item de menu **Gerenciamento de pontos de extremidade**.  
 
- 3.  Selecione **System Center Configuration Manager** e clique em **Baixar pacote**.  
+ 3.  Selecione **System Center Configuration Manager (branch atual) versão 1606** e clique em **Baixar pacote**.  
 
  4.  Baixe o arquivo compactado (.zip) e extraia o conteúdo.
 
@@ -86,7 +86,34 @@ O Windows Defender ATP é um serviço da [Central de Segurança do Windows](http
         -   **Não integrado** ‑ A política foi aplicada, mas o agente não informou sua integração  
 
 
+## <a name="how-to-create-and-deploy-an-offboarding-configuration-file"></a>Como criar e implantar um arquivo de configuração de remoção  
 
-<!--HONumber=Nov16_HO1-->
+1.  Faça logon no [serviço online da ATP do Windows Defender](https://securitycenter.windows.com/)   
+
+2.  Clique no item de menu **Gerenciamento de pontos de extremidade**.  
+
+3.  Selecione **System Center Configuration Manager (branch atual) versão 1606** e clique em **Remoção de ponto de extremidade**.  
+
+4.  Baixe o arquivo compactado (.zip) e extraia o conteúdo. Os arquivos de remoção são válidos por 30 dias.
+
+5.  No console do Configuration Manager, navegue para **Ativos e Conformidade** > **Visão Geral** > **Endpoint Protection** > **Políticas do Windows Defender ATP** e clique em **Criar uma política do Windows Defender ATP**. O Assistente de Política da ATP do Windows Defender é aberto.  
+
+6.  Digite o **Nome** e a **Descrição** para a política da ATP do Windows Defender e selecione **Remoção**. Clique em **Avançar**.  
+
+7.  **Procure** o arquivo de Configuração fornecido pelo locatário do serviço de nuvem da ATP do Windows Defender da sua organização. Clique em **Avançar**.  
+
+8.  Examine o resumo e conclua o assistente.  
+
+9.  Agora você pode implantar a política da ATP do Windows Defender em computadores cliente gerenciados clicando em **Implantar**.  
+
+> [!IMPORTANT]
+> Os arquivos de configuração do Windows Defender ATP contém informações confidenciais que devem ser mantidas seguras.
+
+[Proteção Avançada contra Ameaças do Windows Defender](https://technet.microsoft.com/itpro/windows/keep-secure/windows-defender-advanced-threat-protection)
+[Solucionar problemas de integração da Proteção Avançada contra Ameaças do Windows Defender](https://technet.microsoft.com/itpro/windows/keep-secure/troubleshoot-onboarding-windows-defender-advanced-threat-protection)
+
+
+
+<!--HONumber=Dec16_HO3-->
 
 

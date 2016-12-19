@@ -1,11 +1,11 @@
 ---
-title: "Realizar serviços em um grupo de servidores | Configuration Manager"
+title: "Realização de serviços em um grupo de servidores | Microsoft Docs"
 description: "O console do System Center Configuration Manager fornece alertas e status para monitorar atualizações e a conformidade."
 keywords: 
 author: dougeby
 ms.author: dougeby
 manager: angrobe
-ms.date: 10/06/2016
+ms.date: 12/07/2016
 ms.topic: article
 ms.prod: configuration-manager
 ms.service: 
@@ -13,8 +13,8 @@ ms.technology:
 - configmgr-sum
 ms.assetid: 304a83ea-0f72-437d-9688-2e6e0c7526dd
 translationtype: Human Translation
-ms.sourcegitcommit: 1134bb2f04152288e72d40b1b1083f415cb4e900
-ms.openlocfilehash: da7a5f1d075eb1fcd7c56b713401bb0f985fa487
+ms.sourcegitcommit: 78524abd4c45f0b7402d6f1e85afc60bb72ab0ee
+ms.openlocfilehash: b89cec7cebb5342da32ec8e11a049edad12f1231
 
 
 ---
@@ -47,8 +47,11 @@ As configurações do grupo do servidores são definidas nas propriedades de uma
 
 5.  Especifique se deseja usar um script de pré-implantação (drenagem de nó) ou pós-implantação (retomada de nó).  
 
+    > [!WARNING]
+    > Scripts personalizados não são assinados pela Microsoft. É sua responsabilidade manter a integridade desses scripts.
+
     > [!TIP]  
-    >Veja abaixo exemplos que você pode usar em testes de scripts de pré-implantação e pós-implantação que gravam a hora atual em um arquivo de texto:  
+    > Veja abaixo exemplos que você pode usar em testes de scripts de pré-implantação e pós-implantação que gravam a hora atual em um arquivo de texto:  
     >   
     >  **Pré-implantação**  
     >   
@@ -85,6 +88,6 @@ Quando um computador falha ao liberar um bloqueio de implantação, você pode l
 
 
 
-<!--HONumber=Nov16_HO1-->
+<!--HONumber=Dec16_HO3-->
 
 

@@ -1,8 +1,8 @@
 ---
-title: Use o PXE para implantar o Windows pela rede | Configuration Manager
+title: Usar PXE para implantar o Windows na rede | Microsoft Docs
 description: "Use implantações de sistema operacional iniciadas pelo PXE para atualizar o sistema operacional de um computador ou para instalar uma nova versão do Windows em um novo computador."
 ms.custom: na
-ms.date: 10/06/2016
+ms.date: 12/07/2016
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
@@ -17,8 +17,8 @@ author: Dougeby
 ms.author: dougeby
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: 1134bb2f04152288e72d40b1b1083f415cb4e900
-ms.openlocfilehash: 4bb62f7479fafac6b57d42cd048fd5bcec29b0e9
+ms.sourcegitcommit: 3f44505c977b511223a083a960f871371c0ff133
+ms.openlocfilehash: b22cdbd42693078caa47f41182ce73ea881c3515
 
 
 ---
@@ -98,6 +98,8 @@ As implantações de sistema operacional iniciadas pelo PXE no System Center Con
 ##  <a name="how-is-the-boot-image-selected-for-clients-booting-with-pxe"></a>Como a imagem de inicialização é selecionada para clientes sendo inicializados com o PXE?
 Quando um cliente é inicializado com o PXE, o Configuration Manager fornece ao cliente uma imagem de inicialização para usar. A partir do Configuration Manager versão 1606, o Configuration Manager usará uma imagem de inicialização com uma correspondência de arquitetura exata, se houver uma disponível. Se uma imagem de inicialização com a arquitetura exata não estiver disponível, o Configuration Manager usará uma imagem de inicialização com uma arquitetura compatível. A lista a seguir fornece detalhes sobre como uma imagem de inicialização é selecionada para clientes sendo inicializados com o PXE.
 1. O Configuration Manager examina o banco de dados do site para o registro do sistema que coincide com o endereço MAC ou o SMBIOS do cliente que está tentando inicializar.
+    > [!NOTE]
+    > Se um computador atribuído a um site inicializar para PXE para um site diferente, as políticas não estarão visíveis para o computador. Por exemplo, se um cliente já está atribuído a um site A, o ponto de gerenciamento e ponto de distribuição no site B não poderão acessar as políticas do site A e o cliente não fará a inicialização PXE com êxito.
 2. O Configuration Manager procura sequências de tarefas implantadas no registro do sistema encontradas na etapa 1.
 3. Na lista de sequências de tarefas encontrada na etapa 2, o Configuration Manager procura uma imagem de inicialização que corresponde à arquitetura do cliente que está tentando inicializar. Se uma imagem de inicialização é encontrada com a mesma arquitetura, ela é usada.
 
@@ -105,6 +107,6 @@ Quando um cliente é inicializado com o PXE, o Configuration Manager fornece ao 
 
 
 
-<!--HONumber=Nov16_HO1-->
+<!--HONumber=Dec16_HO3-->
 
 

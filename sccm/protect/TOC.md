@@ -1,12 +1,11 @@
-# [Entender e explorar](understand\protect-data-and-site-infrastructure.md)
+# Entender e explorar
 ## [Visão geral](understand\protect-data-and-site-infrastructure.md)
 ## [Backup e recuperação](understand/backup-and-recovery.md)
 ## [Opções de alta disponibilidade](understand/high-availability-options.md)
 ## [Gerenciar implantações de alto risco](understand/settings-to-manage-high-risk-deployments.md)
 
-# [Planejamento e design](plan-design/prerequisites-for-certificate-profiles.md)
+# Planejamento e design
 ## [Pré-requisitos para perfis de certificado](plan-design/prerequisites-for-certificate-profiles.md)
-### [Infraestrutura de certificado](plan-design/certificate-infrastructure.md)
 ### [Permissões de modelo de certificado para perfis de certificado](plan-design/planning-for-certificate-template-permissions.md)
 ### [Segurança e privacidade de perfis de certificado](plan-design/security-and-privacy-for-certificate-profiles.md)
 
@@ -22,12 +21,12 @@
 
 ## [Segurança e privacidade de perfis de certificado](plan-design/security-and-privacy-for-certificate-profiles.md)
 
-# [Implantar e usar](deploy-use/vpn-profiles.md)
+# Implantar e usar
 ## [Perfis de VPN](deploy-use/vpn-profiles.md)
 ### [Criar perfis de VPN](deploy-use/create-vpn-profiles.md)
 ### [Localizar um nome da família de pacotes (PFN) para VPN por aplicativo](deploy-use/find-a-pfn-for-per-app-vpn.md)
 
-## [Perfis de Wi-Fi](deploy-use/introduction-to-wifi-profiles.md)
+## [Perfis de Wi-Fi](deploy-use/create-wifi-profiles.md)
 ### [Criar perfis de Wi-Fi](deploy-use/create-wifi-profiles.md)
 
 ## [Perfis de certificado](deploy-use/introduction-to-certificate-profiles.md)
@@ -69,17 +68,23 @@
 ### [Gerenciar o acesso do Skype for Business Online](deploy-use/manage-skype-for-business-online-access.md)
 ### [Gerenciar o acesso ao Dynamics CRM Online](deploy-use/manage-dynamics-crm-online-access.md)
 ### [Gerenciar o acesso do computador aos serviços do O365](deploy-use/manage-access-to-o365-services-for-pcs-managed-by-sccm.md)
+## [Gerenciar o acesso com base em risco de aplicativos, de rede e de dispositivo](deploy-use/manage-access-based-on-device-network-app-risk.md)
+### [Configurar a proteção contra ameaças Lookout](deploy-use/set-up-your-subscription-with-lookout.md)
+### [Habilitar o Lookout no Intune](deploy-use/enable-lookout-connection-in-intune.md)
+### [Implantar o Lookout para aplicativos de trabalho](deploy-use/configure-and-deploy-lookout-for-work-apps.md)
+### [Habilitar a política de proteção de ameaça do dispositivo](deploy-use/enable-device-threat-protection-rule-compliance-policy.md)
+### [Solucionar problemas de integração do Lookout](deploy-use/troubleshoot-lookout-integration.md)
 
 ## [Configurações do Windows Hello para Empresas](deploy-use/windows-hello-for-business-settings.md)
 
 ## [Configurações de termos e condições](../mdm/deploy-use/terms-and-conditions.md)
 
-## [Proteção do monitor](deploy-use/monitor-wifi-email-vpn-profiles.md)
+## Proteção do monitor
 ### [Monitorar perfis de Wi-Fi, email e VPN](deploy-use/monitor-wifi-email-vpn-profiles.md)
 ### [Monitorar perfis de certificado](deploy-use/monitor-certificate-profiles.md)
 ### [Monitorar o Endpoint Protection](deploy-use/monitor-endpoint-protection.md)
 
 
-<!--HONumber=Nov16_HO1-->
+<!--HONumber=Dec16_HO3-->
 
 
