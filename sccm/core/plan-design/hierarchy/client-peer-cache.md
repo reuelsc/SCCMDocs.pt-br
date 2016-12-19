@@ -65,6 +65,6 @@ Em cada computador habilitado para o cache de pares, se o Firewall do Windows es
 
 
 
-<!--HONumber=Dec16_HO1-->
+<!--HONumber=Dec16_HO3-->
 
 

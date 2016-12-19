@@ -1,11 +1,11 @@
 ---
-title: "Implantar atualizações de software automaticamente | Configuration Manager"
+title: "Implantar atualizações de software automaticamente | Microsoft Docs"
 description: "Implante automaticamente as atualizações de software adicionando novas atualizações a um grupo de atualização associado a uma implantação ativa ou usando ADRs."
 keywords: 
 author: dougeby
 ms.author: dougeby
 manager: angrobe
-ms.date: 10/06/2016
+ms.date: 12/07/2016
 ms.topic: article
 ms.prod: configuration-manager
 ms.service: 
@@ -13,8 +13,8 @@ ms.technology:
 - configmgr-sum
 ms.assetid: b27682de-adf8-4edd-9572-54886af8f7fb
 translationtype: Human Translation
-ms.sourcegitcommit: 1134bb2f04152288e72d40b1b1083f415cb4e900
-ms.openlocfilehash: 133f29aa3f515054b23ba70f1a1dfd3eedaa56c8
+ms.sourcegitcommit: 78524abd4c45f0b7402d6f1e85afc60bb72ab0ee
+ms.openlocfilehash: 34b0819957ffcc3711ee354a5b821d78fa7445cb
 
 ---
 
@@ -94,7 +94,7 @@ Use o procedimento a seguir para adicionar atualizações de software a um grupo
 
     -   **Configuração dos termos da licença**: especifique se deseja implantar automaticamente atualizações de software com os termos de licença associados. Algumas atualizações de software incluem termos de licença, como um service pack. Quando você implanta atualizações de software automaticamente, os termos da licença não são exibidos e não há uma opção para aceitá-los. Você pode optar por implantar automaticamente todas as atualizações de software, independentemente dos termos de licença associados ou apenas implantar atualizações de software que não têm termos de licença associados.  
 
-        > [!WARNING]  
+        > [!NOTE]  
         >  Para revisar os termos da licença de uma atualização de software, você pode selecionar a atualização no nó **Todas as Atualizações de Software** do espaço de trabalho **Biblioteca de Softwares** e depois, na guia **Início** , no grupo **Atualizar** , clique em **Revisar Licença**.  
         >   
         >  Para encontrar atualizações de software com os termos de licença associados, você pode adicionar a coluna **Termos da Licença** ao painel de resultados no nó **Todas as Atualizações de Software** e, em seguida, clique no cabeçalho da coluna para classificar as atualizações de software, com os termos da licença.  
@@ -103,6 +103,9 @@ Use o procedimento a seguir para adicionar atualizações de software a um grupo
 
     > [!IMPORTANT]  
     >  O limite para atualizações de software na ADR é de 1.000. Para garantir que os critérios que você especificar nesta página recuperem menos de 1.000 atualizações de software, considere definir os mesmos critérios no nó **Todas as Atualizações de Software** no espaço de trabalho **Biblioteca de Software** .  
+
+    > [!NOTE]
+    > A partir do Configuration Manager versão 1610, você pode filtrar o tamanho do conteúdo para atualizações de software em regras de implantação automática. Por exemplo, você pode definir o filtro **Tamanho do Conteúdo (KB)** como **< 2048** para baixar apenas atualizações de software menores que 2 MB. Usar esse filtro impede que atualizações de software grandes sejam baixadas automaticamente, para dar melhor suporte à manutenção simplificada de nível inferior do Windows quando a largura de banda de rede é limitada. Para obter detalhes, consulte [Configuration Manager and Simplified Windows Servicing on Down Level Operating Systems](https://blogs.technet.microsoft.com/enterprisemobility/2016/10/07/configuration-manager-and-simplified-windows-servicing-on-down-level-operating-systems/) (Configuration Manager e Serviço do Windows simplificado em sistemas operacionais de nível inferior).
 
 6.  Na página Agendamento de Avaliação, especifique se deseja habilitar a ADR para ser executada em um agendamento. Quando habilitada, clique em **Personalizar** para definir o agendamento recorrente.  
 
@@ -137,7 +140,7 @@ Use o procedimento a seguir para adicionar atualizações de software a um grupo
         > [!NOTE]  
         >  O prazo real da instalação é o prazo exibido, mais um período de tempo aleatório de até 2 horas. Isso reduz o impacto potencial de todos os computadores cliente na coleção de destino que está instalando as atualizações de software na implantação ao mesmo tempo.  
         >   
-        >  É possível configurar a definição do cliente **Agente de Computador** , **Desativar data limite aleatória** para desabilitar o atraso de aleatoriedade das atualizações de software necessárias. Para obter mais informações, consulte [Computer Agent](../../core/clients/deploy/about-client-settings.md#a-namebkmkcomputeragentdevicesettingsa-computer-agent).  
+        >  É possível configurar a definição do cliente **Agente de Computador** , **Desativar data limite aleatória** para desabilitar o atraso de aleatoriedade das atualizações de software necessárias. Para obter mais informações, consulte [Computer Agent](../../core/clients/deploy/about-client-settings.md#computer-agent).  
 
 8. Na página Experiência do Usuário, defina as seguintes configurações:  
 
@@ -155,9 +158,11 @@ Use o procedimento a seguir para adicionar atualizações de software a um grupo
         > [!NOTE]  
         >  Ao implantar uma atualização de software em um dispositivo Windows Embedded, verifique se o dispositivo é membro de uma coleção com uma janela de manutenção configurada.  
 
+    - **Comportamento de reavaliação da implantação de atualizações de software na reinicialização**: começando com a versão 1606 do Configuration Manager, é possível selecionar este ajuste para configurar as implantações de atualização de software para que os clientes executem uma verificação de conformidade de atualizações de software imediatamente após um cliente instalar atualizações de software e reiniciar. Isso permite que os clientes verifiquem atualizações de software adicionais que se tornam aplicáveis depois que eles são reiniciados e as instalem (e se tornem compatíveis) durante a mesma janela de manutenção.
+
 9. Na página Alertas, configure como o Configuration Manager e o System Center Operations Manager gerarão alertas para essa implantação.  
 
-    > [!WARNING]  
+    > [!NOTE]  
     >  Você pode verificar os alertas de atualizações de software recentes no nó **Atualizações de Software** no espaço de trabalho **Biblioteca de Software** .  
 
 10. Na página Configurações de Download, defina as seguintes configurações:  
@@ -209,7 +214,7 @@ Use o procedimento a seguir para adicionar atualizações de software a um grupo
 
 15. Na página Resumo, verifique as configurações. Para salvar as configurações em um modelo de implementação, clique em **Salvar como Modelo**, digite um nome e selecione as configurações que você quer incluir no modelo e clique **Salvar**. Para alterar uma configuração, clique na página do assistente associado e altere a configuração.  
 
-    > [!WARNING]  
+    > [!NOTE]  
     >  O nome do modelo pode consistir em caracteres ASCII alfanuméricos, bem como em **\\** (barra invertida) ou **‘** (aspa simples).  
 
 16. Clique em **Avançar** para criar a ADR.  
@@ -269,7 +274,7 @@ Use o procedimento a seguir para adicionar atualizações de software a um grupo
         > [!NOTE]  
         >  O prazo real da instalação é o prazo exibido, mais um período de tempo aleatório de até 2 horas. Isso reduz o impacto potencial de todos os computadores cliente na coleção de destino que está instalando as atualizações de software na implantação ao mesmo tempo.  
         >   
-        >  É possível configurar a definição do cliente **Agente de Computador** , **Desativar data limite aleatória** para desabilitar o atraso de aleatoriedade das atualizações de software necessárias. Para obter mais informações, consulte [Computer Agent](../../core/clients/deploy/about-client-settings.md#a-namebkmkcomputeragentdevicesettingsa-computer-agent).  
+        >  É possível configurar a definição do cliente **Agente de Computador** , **Desativar data limite aleatória** para desabilitar o atraso de aleatoriedade das atualizações de software necessárias. Para obter mais informações, consulte [Computer Agent](../../core/clients/deploy/about-client-settings.md#computer-agent).  
 
 6.  Na página Experiência do Usuário, defina as seguintes configurações:  
 
@@ -314,6 +319,6 @@ Para obter mais informações sobre o processo de implantação, veja [Software 
 
 
 
-<!--HONumber=Nov16_HO1-->
+<!--HONumber=Dec16_HO3-->
 
 
