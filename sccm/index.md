@@ -336,7 +336,7 @@ ms.openlocfilehash: 690b516b6be4380b566649adacfafcc8f920373c
           <li><a href="https://configurationmanager.uservoice.com/forums/300492-ideas/category/112371-documentation" target="_blank">Fornecer comentários sobre a documentação</a></li>
           </ul>
           <ul class="column-half">
-          <li><a href="https://technet.microsoft.com/en-us/library/gg682129.aspx" target="_blank">Documentação do System Center 2012 Configuration Manager</a></li>
+          <li><a href="https://technet.microsoft.com/library/gg682129.aspx" target="_blank">Documentação do System Center 2012 Configuration Manager</a></li>
           <li><a href="https://social.technet.microsoft.com/Forums/en-US/home?forum=ConfigMgrCBGeneral%2CConfigMgrDeployment%2CConfigMgrMDM%2CConfigMgrMigration%2CConfigMgrCompliance%2CConfigMgrAppManagement%2CConfigMgrPowerShell%2CConfigMgrCBOSD&filter=alltypes&sort=lastpostdesc" target="_blank">Fóruns sobre o Configuration Manager no TechNet</a></li>
           <li><a href="https://www.microsoft.com/en-us/cloud-platform/system-center-configuration-manager" target="_blank">Página do produto do Configuration Manager</a></li>
           </ul>
