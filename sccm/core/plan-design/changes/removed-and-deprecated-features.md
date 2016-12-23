@@ -17,8 +17,8 @@ author: Brenduns
 ms.author: brenduns
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: c899b4beaa2aae4eb609291dca0e23f3c266627a
-ms.openlocfilehash: 294166af3d5c6062e3508249c767779876b23931
+ms.sourcegitcommit: ffebee1e85008611a9841dc849bea735d15a88c6
+ms.openlocfilehash: 888b6de9fd2b70e8b4f58e32cca7cf5e615d1dca
 
 
 ---
@@ -51,7 +51,8 @@ Para obter mais informações, consulte:
 |-|-|-|  
 |NAP (Proteção de Acesso à Rede) ‑ Encontrada no System Center 2012 Configuration Manager|10/7/2015|Versão 1511|  
 |Gerenciamento Fora de Banda ‑ Conforme encontrado no System Center 2012 Configuration Manager|16/10/2015|Versão 1511|
-|Sequências de tarefas: <br /> – Converter Disco em Dinâmico <br /> – Instalar Ferramentas de Implantação |11/18/2016|O suporte para essas sequências de tarefas termina com a primeira atualização liberada após 1º de junho de 2017|  
+|Sequências de tarefas: <br /> – Converter Disco em Dinâmico <br /> – Instalar Ferramentas de Implantação |11/18/2016|O suporte para essas sequências de tarefas termina com a primeira atualização liberada após 1º de junho de 2017|
+|O novo Software Center tem uma aparência nova e moderna, e os aplicativos que antes só eram exibidos no Catálogo de Aplicativos dependente do Silverlight (aplicativos disponíveis para o usuário) agora aparecem no Software Center sob a guia **Aplicativos**. O Catálogo de Aplicativos ainda pode ser acessado usando o link sob a guia **Status da Instalação** do Centro de Software.<br><br>Nos próximos meses, removeremos a versão anterior do Software Center e ela não estará mais disponível para uso.<br><br>É possível configurar clientes para usar o novo Centro de Software habilitando a configuração do cliente **Agente de Computador** > **Usar o novo Centro de Software**.<br><br>Para saber mais sobre o Software Center, consulte [Planejar e configurar o gerenciamento de aplicativos no System Center Configuration Manager](https://docs.microsoft.com/sccm/apps/plan-design/plan-for-and-configure-application-management).|13/12/2016|A ser anunciado| 
 
  **Sistemas operacionais de servidor preteridos:**  
 
@@ -111,6 +112,6 @@ Para obter mais informações, consulte:
 
 
 
-<!--HONumber=Dec16_HO1-->
+<!--HONumber=Dec16_HO3-->
 
 

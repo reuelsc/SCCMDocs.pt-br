@@ -2,7 +2,7 @@
 title: Planejar e configurar o gerenciamento de aplicativos | Microsoft Docs
 description: "Implemente e configure as dependências necessárias para implantar aplicativos no System Center Configuration Manager."
 ms.custom: na
-ms.date: 12/06/2016
+ms.date: 12/13/2016
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
@@ -16,8 +16,8 @@ author: robstackmsft
 ms.author: robstack
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: f1aaaf1c4fba8613b82d2c7a344a4dab572449a6
-ms.openlocfilehash: e9179a16d6fef73c7e50c3cf1dbfdc41623d1d15
+ms.sourcegitcommit: 7634d5326265d7947a01e5b83374f65911e33aeb
+ms.openlocfilehash: 3ab905192c091cb5ad013c8e0c8590597fb0422a
 
 
 ---
@@ -65,7 +65,11 @@ Use as informações descritas neste artigo como auxílio para implantar as depe
  Qualquer que seja a versão que você optar por usar, o Centro de Software é instalado automaticamente durante a instalação do cliente do Configuration Manager em computadores com Windows.  
 
     > [!TIP]  
-    >  A versão do Centro de Software vista pelos usuários baseia-se nas configurações do cliente do Configuration Manager. Isso fornece a flexibilidade para controlar a versão que é usada com base nas configurações personalizadas do cliente que são implantadas em uma coleção.  
+    >  A versão do Centro de Software vista pelos usuários baseia-se nas configurações do cliente do Configuration Manager. Isso fornece a flexibilidade para controlar a versão que é usada com base nas configurações personalizadas do cliente que são implantadas em uma coleção. 
+
+    > [!IMPORTANT]
+    > Nos próximos meses, removeremos a versão anterior do Software Center e ela não estará mais disponível para uso.
+    > É possível configurar clientes para usar o novo Centro de Software habilitando a configuração do cliente **Agente de Computador** > **Usar o novo Centro de Software**. 
 
 ## <a name="steps-to-install-and-configure-the-application-catalog-and-software-center"></a>Etapas para instalar e configurar o Catálogo de Aplicativos e o Centro de Software  
 
@@ -130,7 +134,7 @@ Use as informações descritas neste artigo como auxílio para implantar as depe
     Para obter mais informações, pesquise os arquivos de log **awebsvcMSI.log** e **portlwebMSI.log**.  
 
 ###  <a name="step-4-configure-the-client-settings-for-the-application-catalog-and-software-center"></a>Etapa 4: definir as configurações do cliente para o Catálogo de Aplicativos e o Centro de Software  
- Esse procedimento define as configurações do cliente padrão para o catálogo de aplicativos e o Centro de Software que se aplicam a todos os dispositivos na hierarquia. Se você deseja que essas configurações se apliquem a somente alguns dispositivos, é possível criar uma configuração personalizada do cliente e implantá-la em uma coleção que tem os dispositivos que receberão configurações específicas. Para obter mais informações sobre como criar uma configuração de dispositivo personalizada, consulte a seção [Como criar e implantar configurações personalizadas de cliente](../../core/clients/deploy/configure-client-settings.md#BKMK_CustomClientSettings) no artigo [Como configurar configurações de cliente no System Center Configuration Manager](../../core/clients/deploy/configure-client-settings.md).  
+ Esse procedimento define as configurações do cliente padrão para o catálogo de aplicativos e o Centro de Software que se aplicam a todos os dispositivos na hierarquia. Se você deseja que essas configurações se apliquem a somente alguns dispositivos, é possível criar uma configuração personalizada do cliente e implantá-la em uma coleção que tem os dispositivos que receberão configurações específicas. Para obter mais informações sobre como criar uma configuração de dispositivo personalizada, consulte a seção [Como criar e implantar configurações personalizadas de cliente](../../core/clients/deploy/configure-client-settings.md#create-and-deploy-custom-client-settings) no artigo [Como configurar configurações de cliente no System Center Configuration Manager](../../core/clients/deploy/configure-client-settings.md).  
 
 1.  No console do Configuration Manager, escolha **Administração** > **Configurações do Cliente** > **Configurações do Cliente Padrão**.  
 
@@ -224,6 +228,6 @@ A identidade visual personalizada do Centro de Software é aplicada de acordo co
 
 
 
-<!--HONumber=Dec16_HO1-->
+<!--HONumber=Dec16_HO3-->
 
 

@@ -1,8 +1,8 @@
 ---
-title: "Criar itens de configuração para dispositivos iOS e Mac OS X gerenciados sem o cliente do System Center Configuration Manager | System Center Configuration Manager"
+title: "Criar itens de configuração para dispositivos iOS e Mac OS X gerenciados sem o cliente do System Center Configuration Manager |Microsoft Docs"
 description: "Use o item de configuração do iOS e Mac OS X do System Center Configuration Manager para gerenciar as configurações de dispositivos iOS e Mac OS X."
 ms.custom: na
-ms.date: 10/06/2016
+ms.date: 12/14/2016
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
@@ -17,8 +17,8 @@ author: robstackmsft
 ms.author: robstack
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: 1134bb2f04152288e72d40b1b1083f415cb4e900
-ms.openlocfilehash: 34fb20b0d793d4b508d4cfc3b45c76a407ff4299
+ms.sourcegitcommit: d023df79e0bcb7d5583224802976a5059c4ee753
+ms.openlocfilehash: ea4024aaa07d40781663725127d64388055c6501
 
 
 ---
@@ -80,8 +80,11 @@ Use o item de configuração **iOS e Mac OS X** do System Center Configuration M
 |**Comprimento mínimo da senha (caracteres)**|O comprimento mínimo da senha.|  
 |**Validade da senha em dias**|O número de dias antes que uma senha precise ser alterada.|  
 |**Número de senhas lembradas**|Impede a reutilização de senhas usadas anteriormente.|  
-|**Número de tentativas de logon com falha antes de o dispositivo ser apagado**|Apaga o dispositivo se houver falha neste número de tentativas de logon.<br>(somente iOS)|  
-|**Complexidade da senha**|Escolha se é possível especificar um PIN como “1234” ou se é necessário fornecer uma senha forte.|  
+|**Número de tentativas de logon com falha antes de o dispositivo ser apagado**|Apaga o dispositivo se houver falha neste número de tentativas de logon.<br>(somente iOS)| 
+|**Tempo ocioso antes que o dispositivo móvel seja bloqueado**|Especifica o número de minutos de inatividade antes de o dispositivo ser bloqueado automaticamente.|
+|**Complexidade da senha**|Escolha se é possível especificar um PIN como “1234” ou se é necessário fornecer uma senha forte.|
+|**Permitir senha simples**|Especifica que senhas simples, como '0000' e '1234', podem ser usadas.|
+|**Impressão digital de desbloqueio**|Permite o uso de uma impressão digital para desbloquear o dispositivo.|
 
 ###  <a name="device"></a>Dispositivo  
  Essas configurações se aplicam a dispositivos iOS e Mac OS X.  
@@ -112,7 +115,7 @@ Use o item de configuração **iOS e Mac OS X** do System Center Configuration M
 
 |Nome da configuração|Detalhes|  
 |------------------|-------------|  
-|**Navegador padrão**|O usuário pode alterar o navegador de Internet padrão.|  
+|**Permitir navegador da Web**|O usuário pode usar o navegador da Web padrão do dispositivo.|  
 |**Preenchimento automático**|O usuário pode alterar as configurações de preenchimento automático no navegador.|  
 |**Script ativo**|O navegador pode executar scripts, como scripts do ActiveX.|  
 |**Bloqueador de pop-up**|Habilita ou desabilita o bloqueador de pop-ups do navegador.|  
@@ -168,8 +171,7 @@ Use o item de configuração **iOS e Mac OS X** do System Center Configuration M
 |**Permitir Bloqueio de Ativação (somente modo supervisionado)**|Use esta configuração para habilitar o Bloqueio de Ativação do iOS nos dispositivos iOS **supervisionados** que você gerencia. Para obter mais informações sobre o Bloqueio de Ativação, consulte [Gerenciar o Bloqueio de Ativação do iOS](../../mdm/deploy-use/manage-ios-activation-lock.md).
 |**Centro de controle na tela de bloqueio**|Controla se o aplicativo do centro de controle pode ser acessado quando o dispositivo estiver bloqueado.|  
 |**Exibição de notificação na tela de bloqueio**|Controla se as notificações podem ser exibidas quando o dispositivo estiver bloqueado.|  
-|**Exibição atual da tela de bloqueio**|Controla se a exibição Atual pode ser vista quando o dispositivo estiver bloqueado.|  
-|**Impressão digital de desbloqueio**|Permita o uso do sensor de impressão digital para desbloquear o dispositivo.|  
+|**Exibição atual da tela de bloqueio**|Controla se a exibição Atual pode ser vista quando o dispositivo estiver bloqueado.|   
 
 ###  <a name="data-protection"></a>Proteção de dados  
  Estas configurações se aplicam apenas a dispositivos iOS.  
@@ -247,7 +249,7 @@ Use o item de configuração **iOS e Mac OS X** do System Center Configuration M
 
     -   **Importar** – importa uma lista dos aplicativos que você especificou em um arquivo de valores separados por vírgulas. Use o formato, nome do aplicativo, fornecedor e ID de lote de aplicativo encontrados no arquivo.  
 
-2.  Quando tiver terminado, clique em **Avançar**.  
+2.  Quando tiver terminado, clique em **Avançar**. Os itens de configuração que contêm as configurações de aplicativo compatíveis e não compatíveis devem ser implantados em coleções de usuários.
 
  Você pode usar um dos seguintes relatórios para monitorar aplicativos compatíveis e não compatíveis:  
 
@@ -368,6 +370,6 @@ Use o item de configuração **iOS e Mac OS X** do System Center Configuration M
 
 
 
-<!--HONumber=Nov16_HO1-->
+<!--HONumber=Dec16_HO3-->
 
 
