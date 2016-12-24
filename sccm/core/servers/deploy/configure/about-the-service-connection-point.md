@@ -1,5 +1,5 @@
 ---
-title: "Ponto de conexão de serviço | System Center Configuration Manager"
+title: "Ponto de conexão de serviço | Microsoft Docs"
 description: "Saiba mais sobre essa função do sistema de sites do Configuration Manager, bem como entenda e planeje seus diversos usos."
 ms.custom: na
 ms.date: 10/06/2016
@@ -17,8 +17,8 @@ author: Brenduns
 ms.author: brenduns
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: 1134bb2f04152288e72d40b1b1083f415cb4e900
-ms.openlocfilehash: e30c3d4bbf42e008a3f570c843b2f63251bce158
+ms.sourcegitcommit: 8195abd403d94a96d193289ea6e6bf8880d06078
+ms.openlocfilehash: aaa9a80a8429ab315a25862a78d6eb8733fd2e89
 
 
 ---
@@ -28,7 +28,7 @@ ms.openlocfilehash: e30c3d4bbf42e008a3f570c843b2f63251bce158
 
 O ponto de conexão de serviço do System Center Configuration Manager é uma função do sistema de sites que atende a várias funções importantes para a hierarquia. Antes de configurar o ponto de conexão de serviço, entenda e planeje os usos que podem afetar como você configurará essa função de sistema de sites:  
 
--   **Gerenciar dispositivos móveis com o Microsoft Intune** – Esta função substitui o conector do Windows Intune usado por versões anteriores do Configuration Manager e pode ser configurada com os detalhes da sua assinatura do Intune. Consulte [Hybrid mobile device management (MDM) with System Center Configuration Manager and Microsoft Intune](../../../../mdm/plan-design/hybrid-mobile-device-management.md) (MDM [gerenciamento de dispositivo móvel] híbrido com o System Center Configuration Manager e o Microsoft Intune)  
+-   **Gerenciar dispositivos móveis com o Microsoft Intune** – Esta função substitui o conector do Windows Intune usado por versões anteriores do Configuration Manager e pode ser configurada com os detalhes da sua assinatura do Intune. Consulte [Hybrid mobile device management (MDM) with System Center Configuration Manager and Microsoft Intune](../../../../mdm/understand/hybrid-mobile-device-management.md) (MDM [gerenciamento de dispositivo móvel] híbrido com o System Center Configuration Manager e o Microsoft Intune)  
 
 -   **Gerenciar dispositivos móveis com o MDM local** – Esta função dá suporte a dispositivos locais gerenciados que não se conectam à Internet. Consulte [Gerenciar dispositivos móveis com a infraestrutura local no System Center Configuration Manager](../../../../mdm/understand/manage-mobile-devices-with-on-premises-infrastructure.md)  
 
@@ -74,9 +74,11 @@ Para usar o Configuration Manager Service Manager, no console, navegue para **Mo
 
 **Quando a função é instalada em um computador remoto do servidor do site:**  
 
+-   A conta de computador do servidor do site deve ser um administrador local no computador que hospeda uma conexão de serviço remoto
+
 -   Você deve configurar o servidor do sistema de sites que hospeda a função com uma Conta de instalação do sistema de sites  
 
--   A conta de instalação do sistema de sites é usada pelo gerenciador de distribuição no servidor de sites para transferir atualizações do ponto de conexão de serviço.  
+-   A conta de instalação do sistema de sites é usada pelo gerenciador de distribuição no servidor de sites para transferir atualizações do ponto de conexão de serviço
 
 ##  <a name="a-namebkmkurlsa-internet-access-requirements"></a><a name="bkmk_urls"></a> Requisitos de acesso à Internet  
 Para habilitar a operação, o computador que hospeda o ponto de conexão de serviço e quaisquer firewalls entre o computador e a Internet deve passar as comunicações pela **porta TCP 443** nos seguintes locais da Internet. O ponto de conexão de serviço também dá suporte ao uso de um proxy da Web (com ou sem autenticação) para acessar esses locais.  
@@ -108,8 +110,13 @@ Para habilitar a operação, o computador que hospeda o ponto de conexão de ser
 
 -   https://go.microsoft.com/fwlink/?LinkID=619849  
 
+## <a name="install-the-service-connection-point"></a>Instalar o ponto de conexão de serviço
+Quando você executa **Instalação** para instalar o site de nível superior de uma hierarquia, você tem a opção de instalar o ponto de conexão de serviço.
+
+Após a execução da configuração, ou se você estiver reinstalando a função de sistema de site, use o assistente **Adicionar Funções do Sistema de Site**, ou o assistente **Criar Servidor do Sistema de Site** para instalar o sistema de site em um servidor no site de nível superior da hierarquia (o site de administração central ou um site primário autônomo).  Ambos os assistentes estão localizados na guia **Início** no console em **Administração** > **Configuração do Site** > **Funções de Sistema de Servidores e Site**.
 
 
-<!--HONumber=Nov16_HO1-->
+
+<!--HONumber=Dec16_HO3-->
 
 

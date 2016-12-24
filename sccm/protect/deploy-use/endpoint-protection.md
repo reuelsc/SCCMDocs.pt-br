@@ -1,8 +1,8 @@
 ---
-title: Endpoint Protection | System Center Configuration Manager
+title: Endpoint Protection | Microsoft Docs
 description: "Saiba como gerenciar políticas antimalware e a segurança do Firewall do Windows para computadores cliente na sua hierarquia do Configuration Manager."
 ms.custom: na
-ms.date: 10/06/2016
+ms.date: 12/9/2016
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
@@ -16,8 +16,8 @@ author: NathBarn
 ms.author: nathbarn
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: f777295958e9cbc729e3759d354521c96ae3e8ac
-ms.openlocfilehash: 30ac6f2ec03a4c0d50de700f9ce77f9e50eaf1e0
+ms.sourcegitcommit: 9fcbc0bb9c8ccd4265381ca4db7a363c8ae3b54a
+ms.openlocfilehash: 59313bd6f76433782a79ab3ee9d6240f767fbd76
 
 
 ---
@@ -59,7 +59,7 @@ Computadores Windows 10 não exigem nenhum cliente adicional para o gerenciament
 
 
 ## <a name="managing-malware-with-endpoint-protection"></a>Gerenciando malware com o Endpoint Protection  
- O Endpoint Protection no Configuration Manager permite que você crie políticas antimalware que contêm configurações para o cliente do Endpoint Protection. Você pode implantar essas políticas antimalware nos computadores cliente e monitorá-los no nó **Status do Endpoint Protection** no espaço de trabalho **Monitoramento** ou usando relatórios do Configuration Manager.  
+ O Endpoint Protection no Configuration Manager permite que você crie políticas antimalware que contêm configurações para o cliente do Endpoint Protection. Você pode implantar essas políticas antimalware nos computadores cliente e monitorá-los no nó **Status do Endpoint Protection** em **Segurança** no espaço de trabalho **Monitoramento** ou usando relatórios do Configuration Manager.  
 
  Informações adicionais:  
 
@@ -112,6 +112,6 @@ Começando com a versão 1606 do Configuration Manager (ramificação atual), o 
 
 
 
-<!--HONumber=Nov16_HO1-->
+<!--HONumber=Dec16_HO3-->
 
 

@@ -1,8 +1,8 @@
 ---
-title: Monitorar o Endpoint Protection | System Center Configuration Manager
+title: Monitorar o Endpoint Protection | Microsoft Docs
 description: Saiba como monitorar o Endpoint Protection na sua hierarquia do System Center Configuration Manager.
 ms.custom: na
-ms.date: 10/06/2016
+ms.date: 12/9/2016
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
@@ -16,8 +16,8 @@ author: NathBarn
 ms.author: nathbarn
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: 1134bb2f04152288e72d40b1b1083f415cb4e900
-ms.openlocfilehash: fb5b247ae3fc031cd0beea21b03a45affe3add68
+ms.sourcegitcommit: 9fcbc0bb9c8ccd4265381ca4db7a363c8ae3b54a
+ms.openlocfilehash: 590d95f82a30167dcc0d5191feaa39ecab2b3136
 
 
 ---
@@ -25,13 +25,13 @@ ms.openlocfilehash: fb5b247ae3fc031cd0beea21b03a45affe3add68
 
 *Aplica-se a: System Center Configuration Manager (Branch Atual)*
 
-Você pode monitorar o Endpoint Protection na sua hierarquia do Microsoft System Center 2012 Configuration Manager usando o nó **Status do Endpoint Protection** no espaço de trabalho **Monitoramento**, o nó **Endpoint Protection** no espaço de trabalho **Ativos e Conformidade** e usando relatórios.  
+Você pode monitorar o Endpoint Protection na sua hierarquia do Microsoft System Center Configuration Manager usando o nó **Status do Endpoint Protection** em **Segurança** no espaço de trabalho **Monitoramento**, no nó **Endpoint Protection** no espaço de trabalho **Ativos e Conformidade** e usando relatórios.  
 
 ##  <a name="a-namebkmk1a-how-to-monitor-endpoint-protection-by-using-the-endpoint-protection-status-node"></a><a name="BKMK_1"></a> Como monitorar o Endpoint Protection usando o Nó de Status do Endpoint Protection  
 
 1.  No console do Configuration Manager, clique em **Monitoramento**.  
 
-2.  No espaço de trabalho **Monitoramento**, clique em **Status do Endpoint Protection**.  
+2.  No espaço de trabalho **Monitoramento**, expanda **Segurança** e clique em **Status do Endpoint Protection**.  
 
 3.  No **coleção** lista, selecione a coleção para a qual você deseja exibir informações de status.  
 
@@ -84,6 +84,6 @@ Você pode monitorar o Endpoint Protection na sua hierarquia do Microsoft System
 
 
 
-<!--HONumber=Nov16_HO1-->
+<!--HONumber=Dec16_HO3-->
 
 

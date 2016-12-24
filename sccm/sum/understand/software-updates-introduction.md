@@ -1,6 +1,6 @@
 ---
 
-title: "Introdução às atualizações de software | Configuration Manager"
+title: "Introdução às atualizações de software | Microsoft Docs"
 description: "Tenha noções básicas sobre atualizações de software no System Center Configuration Manager."
 keywords: 
 author: dougeby
@@ -14,8 +14,8 @@ ms.technology:
 - configmgr-sum
 ms.assetid: e9778b13-c8a3-40eb-8655-34ac8ce9cdaa
 translationtype: Human Translation
-ms.sourcegitcommit: 1134bb2f04152288e72d40b1b1083f415cb4e900
-ms.openlocfilehash: e41f91b9f796cb6a1a8eb2a500c7f615e07d60ac
+ms.sourcegitcommit: d8cace9edd58e8fa438dbb43e54e57cd0dc55d2b
+ms.openlocfilehash: 2904b904bbaf155f016f55fbd36af80308a42d76
 
 
 
@@ -29,10 +29,10 @@ As atualizações de software no System Center Configuration Manager fornecem um
 Para obter um exemplo que mostra como você pode implantar atualizações de software em seu ambiente, consulte [Cenário de exemplo para implantar atualizações de software de segurança](../deploy-use/example-scenario-deploy-monitor-monthly-security-updates.md).  
 
 ##  <a name="a-namebkmksynchronizationa-software-updates-synchronization"></a><a name="BKMK_Synchronization"></a> Sincronização das atualizações de software  
- A sincronização de atualizações de software no Configuration Manager usa o Microsoft Update para recuperar metadados de atualizações de software. O site de nível superior (site de administração central ou site primário autônomo) sincroniza com o Microsoft Update em um horário agendado ou quando você inicia a sincronização manualmente no console do Configuration Manager. Quando o Configuration Manager terminar a sincronização das atualizações de software no site de nível superior, a sincronização das atualizações de software se iniciará nos sites filho, se existirem. Quando sincronização termina em cada site primário ou secundário, uma política de site é criada para fornecer aos computadores cliente o local dos pontos de atualização de software.  
+ A sincronização de atualizações de software no Configuration Manager se conecta ao Microsoft Update para recuperar metadados de atualizações de software. O site de nível superior (site de administração central ou site primário autônomo) sincroniza com o Microsoft Update em um horário agendado ou quando você inicia a sincronização manualmente no console do Configuration Manager. Quando o Configuration Manager terminar a sincronização das atualizações de software no site de nível superior, a sincronização das atualizações de software se iniciará nos sites filho, se existirem. Quando sincronização termina em cada site primário ou secundário, uma política de site é criada para fornecer aos computadores cliente o local dos pontos de atualização de software.  
 
 > [!NOTE]  
->  As atualizações de software são habilitadas por padrão nas configurações do cliente. No entanto, se você não definir a configuração do cliente **Habilitar as atualizações de software em clientes** para **Não** para desabilitar as atualizações de software em um coleção ou nas configurações padrão, o local dos pontos de atualização de software não será enviado aos clientes associados. Para obter detalhes, veja [Configurações do cliente para atualizações de software](../../core/clients/deploy/about-client-settings.md#BKMK_SoftwareUpdatesDeviceSetting).  
+>  As atualizações de software são habilitadas por padrão nas configurações do cliente. No entanto, se você não definir a configuração do cliente **Habilitar as atualizações de software em clientes** para **Não** para desabilitar as atualizações de software em um coleção ou nas configurações padrão, o local dos pontos de atualização de software não será enviado aos clientes associados. Para obter detalhes, veja [Configurações do cliente para atualizações de software](../../core/clients/deploy/about-client-settings.md#software-updates).  
 
  Depois que o cliente recebe a política, ele inicia uma verificação da conformidade das atualizações de software e grava as informações no WMI (Windows Management Instrumentation). Em seguida, as informações de conformidade são enviadas ao ponto de gerenciamento que, por sua vez, envia as informações ao servidor do site. Para obter mais informações sobre avaliação de conformidade, consulte a seção [Software updates compliance assessment](#BKMK_SUMCompliance) neste tópico.  
 
@@ -132,11 +132,11 @@ Para obter um exemplo que mostra como você pode implantar atualizações de sof
 
  Incluindo o agendamento da verificação, a verificação de conformidade das atualizações de software pode ter início das seguintes maneiras:  
 
--   **Agendamento de verificação das atualizações de software**: a verificação de conformidade das atualizações de software começa no agendamento de verificação definido nas configurações do Agente Cliente de Atualizações de Software. Para obter mais informações sobre como definir as configurações do cliente de Atualizações de Software, veja [Configurações do cliente de Atualizações de Software](../../core/clients/deploy/about-client-settings.md#BKMK_SoftwareUpdatesDeviceSetting).  
+-   **Agendamento de verificação das atualizações de software**: a verificação de conformidade das atualizações de software começa no agendamento de verificação definido nas configurações do Agente Cliente de Atualizações de Software. Para obter mais informações sobre como definir as configurações do cliente de Atualizações de Software, veja [Configurações do cliente de Atualizações de Software](../../core/clients/deploy/about-client-settings.md#software-updates).  
 
 -   **Ação Propriedades do Configuration Manager**: o usuário pode iniciar a ação **Ciclo de Verificação de Atualizações de Software** ou **Ciclo de Avaliação de Implantação de Atualizações de Software** na guia **Ação** na caixa de diálogo **Propriedades do Configuration Manager** no computador cliente.  
 
--   **Agendamento de reavaliação da implantação**: a avaliação da implantação e a verificação de conformidade das atualizações de software começam no agendamento de reavaliação da implantação definido nas configurações do Agente Cliente de Atualizações de Software. Para obter mais informações sobre as configurações do cliente de Atualizações de Software, veja [Configurações do cliente de Atualizações de Software](../../core/clients/deploy/about-client-settings.md#BKMK_SoftwareUpdatesDeviceSetting).  
+-   **Agendamento de reavaliação da implantação**: a avaliação da implantação e a verificação de conformidade das atualizações de software começam no agendamento de reavaliação da implantação definido nas configurações do Agente Cliente de Atualizações de Software. Para obter mais informações sobre as configurações do cliente de Atualizações de Software, veja [Configurações do cliente de Atualizações de Software](../../core/clients/deploy/about-client-settings.md#software-updates).  
 
 -   **Antes de baixar arquivos de atualização**: quando um computador cliente recebe uma política de atribuição de uma nova implantação necessária, o Agente Cliente de Atualizações de Software baixa os arquivos de atualização no cache local do cliente. Para baixar os arquivos de atualização de software, o agente cliente inicia uma varredura para verificar se a atualização de software ainda é necessária.  
 
@@ -285,6 +285,6 @@ Para obter um exemplo que mostra como você pode implantar atualizações de sof
 
 
 
-<!--HONumber=Nov16_HO1-->
+<!--HONumber=Dec16_HO3-->
 
 

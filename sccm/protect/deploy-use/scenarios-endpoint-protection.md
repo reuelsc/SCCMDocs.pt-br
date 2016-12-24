@@ -1,8 +1,8 @@
 ---
-title: "Cenário: Endpoint Protection protege computadores contra malware | System Center Configuration Manager"
+title: "Cenário: Endpoint Protection protege computadores contra malware | Microsoft Docs"
 description: Aprenda a implementar o Endpoint Protection no Configuration Manager para proteger computadores contra ataques de malware.
 ms.custom: na
-ms.date: 10/06/2016
+ms.date: 12/9/2016
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
@@ -15,8 +15,8 @@ author: NathBarn
 ms.author: nathbarn
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: 1134bb2f04152288e72d40b1b1083f415cb4e900
-ms.openlocfilehash: d4506bbbe3533d6d9c2353f99658352ad1671a2f
+ms.sourcegitcommit: 9fcbc0bb9c8ccd4265381ca4db7a363c8ae3b54a
+ms.openlocfilehash: 2cdc57b766b18a6fdf21ec8748172c12b11b08db
 
 
 ---
@@ -72,12 +72,12 @@ Este tópico fornece um cenário de exemplo de como você pode implementar o End
 |João usa o assistente Criar Política de Firewall do Windows para criar uma política, definindo as seguintes configurações para o perfil de domínio:<br /><br /> 1) **Habilitar o Firewall do Windows**: **Sim**<br /><br /> 2)<br />                    **Notificar o usuário quando o Firewall do Windows bloquear um novo programa**: **Sim**|Consulte [Como criar e implantar políticas do Firewall do Windows para o Endpoint Protection no System Center Configuration Manager](../../protect/deploy-use/create-windows-firewall-policies.md)|  
 |João implanta a nova política de firewall na coleção **Todos os computadores protegidos pelo Endpoint Protection** que criou anteriormente.|Consulte "Para implantar uma política de Firewall do Windows" em [Como criar e implantar políticas do Firewall do Windows para o Endpoint Protection no System Center Configuration Manager](create-windows-firewall-policies.md)|  
 |João usa as tarefas de gerenciamento disponíveis para o Endpoint Protection para gerenciar políticas antimalware e do Firewall do Windows, executar varreduras sob demanda dos computadores quando necessário, forçar os computadores a baixarem as definições mais recentes e especificar uma ação adicional a ser tomada quando malware for detectado.|Consulte [Como gerenciar políticas antimalware e configurações de firewall para o Endpoint Protection no System Center Configuration Manager](endpoint-antimalware-firewall.md)|  
-|João usa os seguintes métodos para monitorar o status do Endpoint Protection e as ações tomadas pelo Endpoint Protection:<br /><br /> 1) Usar o nó **Status do System Center 2012 Endpoint Protection** no espaço de trabalho **Monitoramento**.<br /><br /> 2) Usar o nó o **Endpoint Protection** no espaço de trabalho **Ativos e Conformidade**.<br /><br /> 3) Usar os relatórios internos do Configuration Manager.|Consulte [Como monitorar o Endpoint Protection no System Center Configuration Manager](monitor-endpoint-protection.md)|  
+|João usa os seguintes métodos para monitorar o status do Endpoint Protection e as ações tomadas pelo Endpoint Protection:<br /><br /> 1) Usando o nó **Status do Endpoint Protection** em **Segurança** no espaço de trabalho **Monitoramento**.<br /><br /> 2) Usar o nó o **Endpoint Protection** no espaço de trabalho **Ativos e Conformidade**.<br /><br /> 3) Usar os relatórios internos do Configuration Manager.|Consulte [Como monitorar o Endpoint Protection no System Center Configuration Manager](monitor-endpoint-protection.md)|  
 
  João relata uma implementação bem-sucedida do Endpoint Protection ao seu gerente e confirma que os computadores do Banco Woodgrove estão protegidos contra malware, de acordo com os requisitos de negócios que ele recebeu.
 
 
 
-<!--HONumber=Nov16_HO1-->
+<!--HONumber=Dec16_HO3-->
 
 

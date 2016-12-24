@@ -2,7 +2,7 @@
 title: Crie perfis Wi-Fi | Microsoft Docs
 description: "Saiba como usar perfis de Wi-Fi no System Center Configuration Manager para implantar as configurações de rede sem fio para usuários em sua organização."
 ms.custom: na
-ms.date: 12/04/2016
+ms.date: 12/11/2016
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
@@ -17,8 +17,8 @@ author: Nbigman
 ms.author: nbigman
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: e433fc450a2d033c24bc37333dd59fdec41dcdb6
-ms.openlocfilehash: c629d1bf8d17573cdbde783b4ec3264bed3f4b1e
+ms.sourcegitcommit: 22a74f3b12fe4f4559b682a8fcb287863a7686af
+ms.openlocfilehash: 1262cb7d524fdce21f778e2179275bd177e9330f
 
 
 ---
@@ -47,7 +47,7 @@ Use perfis de Wi-Fi no System Center Configuration Manager para implantar as con
 
 -   Dispositivos IPad que executam o iOS 5, iOS 6, iOS 7 e iOS 8  
 
--   Dispositivos Android que executam a versão 4  
+-   Dispositivos Android que executam a versão 4 ou posterior
 
 > [!IMPORTANT]  
 >  Para implantar perfis em dispositivos Android, iOS, Windows Phone e em dispositivos registrados Windows 8.1 ou posteriores, esses dispositivos devem ser registrados no Microsoft Intune. Para obter informações sobre como registrar seus dispositivos, consulte [Registrar dispositivos para gerenciamento no Intune](https://docs.microsoft.com/intune/deploy-use/enroll-devices-in-microsoft-intune).  
@@ -136,6 +136,6 @@ Use perfis de Wi-Fi no System Center Configuration Manager para implantar as con
 
 
 
-<!--HONumber=Dec16_HO1-->
+<!--HONumber=Dec16_HO3-->
 
 
