@@ -2,7 +2,7 @@
 title: Configurar o controle remoto | Microsoft Docs
 description: Configure o controle remoto no System Center Configuration Manager.
 ms.custom: na
-ms.date: 12/12/2016
+ms.date: 12/26/2016
 ms.prod: configuration-manager
 ms.reviewer: dudeso
 ms.suite: na
@@ -17,8 +17,8 @@ author: nbigman
 ms.author: nbigman
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: 809c7938968b4a6efce6ef37fe7b7baf2c9dd3e7
-ms.openlocfilehash: 6741c6aa11a8a7c868bff36916afe4d066b9924d
+ms.sourcegitcommit: 9206b82eca02877c30eebf146d42bcca7290eb42
+ms.openlocfilehash: 20c28a625adb69f239b9c0e7673e57dd39e8d561
 
 
 ---
@@ -55,6 +55,21 @@ Para ativar a tradução do teclado, em **Controle Remoto do Configuration Manag
 > Chaves especiais, como ~!#@$%, não serão convertidas corretamente.
 
 
-<!--HONumber=Dec16_HO3-->
+## <a name="keyboard-shortcuts-for-the-remote-control-viewer"></a>Atalhos de teclado do visualizador de controle remoto
+
+|Atalho de teclado|Descrição|  
+|-----------------------|-----------------|  
+|Alt+Page Up|Alterna entre programas em execução da esquerda para a direita.|  
+|Alt+Page Down|Alterna entre programas em execução da direita para a esquerda.|  
+|Alt+Insert|Percorre os programas em execução na ordem em que foram abertos.|  
+|Alt+Home|Exibe o menu **Iniciar** .|  
+|Ctrl+Alt+End|Exibe a caixa de diálogo de Segurança do Windows (Ctrl+Alt+Del).|  
+|Alt+Delete|Exibe o menu do Windows.|  
+|Ctrl+Alt+sinal de subtração (no teclado numérico)|Copia a janela ativa do computador local na Área de transferência do computador remoto.|  
+|Ctrl+Alt+sinal de mais (no teclado numérico)|Copia toda a área da janela do computador local na Área de transferência do computador remoto.|  
+
+
+
+<!--HONumber=Dec16_HO5-->
 
 
