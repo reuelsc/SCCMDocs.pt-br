@@ -2,7 +2,7 @@
 title: "Gerenciar o Windows como um serviço | Microsoft Docs"
 description: "Os recursos do System Center Configuration Manager ajudam você a ver o estado do Windows como serviço em seu ambiente, para que você possa mantê-lo atualizado."
 ms.custom: na
-ms.date: 12/07/2016
+ms.date: 12/21/2016
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
@@ -16,8 +16,8 @@ author: Dougeby
 ms.author: dougeby
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: 3f44505c977b511223a083a960f871371c0ff133
-ms.openlocfilehash: 1885968006ef5be1f507e94e0d33918174b1af12
+ms.sourcegitcommit: 66cd6d099acdd9db2bc913a69993aaf5e17237fe
+ms.openlocfilehash: 79e13074db18a617c7e3fceedaa143dbece90a3d
 
 
 ---
@@ -238,30 +238,45 @@ Use o procedimento a seguir para modificar as propriedades de um plano de servi�
 
     As seguintes configurações estão disponíveis nas propriedades de plano de manutenção, que não foram configuradas no assistente:
 
-    - Configurações de implantação na guia Configurações de implantação, defina as seguintes configurações:  
+    **Configurações de Implantação**: na guia Configurações de Implantação, defina as seguintes configurações:  
 
-        -   **Tipo de implantação**: especifique o tipo de implantação para a implantação de atualização do software. Selecione **Necessário** para criar uma implantação de atualização de software obrigatória na qual as atualizações de software são instaladas automaticamente em clientes antes do prazo de uma instalação configurada. Selecione **Disponível** para criar uma implantação de atualização de software opcional que esteja disponível para que os usuários instalem do Centro de Software.  
+    -   **Tipo de implantação**: especifique o tipo de implantação para a implantação de atualização do software. Selecione **Necessário** para criar uma implantação de atualização de software obrigatória na qual as atualizações de software são instaladas automaticamente em clientes antes do prazo de uma instalação configurada. Selecione **Disponível** para criar uma implantação de atualização de software opcional que esteja disponível para que os usuários instalem do Centro de Software.  
 
-            > [!IMPORTANT]  
-            >  Depois de criar a implantação de atualização de software, você não poderá alterar o tipo de implantação.  
+        > [!IMPORTANT]  
+        >  Depois de criar a implantação de atualização de software, você não poderá alterar o tipo de implantação.  
 
-            > [!NOTE]  
-            >  Um grupo de atualização de software implantado como **Obrigatório** será baixado em segundo plano e atenderá às configurações do BITS, se configurado.  
-            > No entanto, os grupos de atualização de software implantados como **Disponíveis** serão baixados em primeiro plano e ignorarão as configurações de BITS.  
+        > [!NOTE]  
+        >  Um grupo de atualização de software implantado como **Obrigatório** será baixado em segundo plano e atenderá às configurações do BITS, se configurado.  
+        > No entanto, os grupos de atualização de software implantados como **Disponíveis** serão baixados em primeiro plano e ignorarão as configurações de BITS.  
 
-        -   **Usar Wake-on-LAN para ativar clientes para implantações obrigatórias**: especifique se o Wake on LAN deve ser habilitado no prazo para enviar pacotes de ativação para os computadores que exigem uma ou mais atualizações de software na implantação. Todos os computadores que estão no modo de suspensão no momento da instalação serão ativados para que a instalação da atualização de software seja iniciada. Clientes que estão no modo de suspensão e que não necessitam de atualizações de software na implantação não são iniciados. Por padrão, essa configuração não está habilitada e está disponível somente quando **Tipo de implantação** está definido como **Necessário**.  
+    -   **Usar Wake-on-LAN para ativar clientes para implantações obrigatórias**: especifique se o Wake on LAN deve ser habilitado no prazo para enviar pacotes de ativação para os computadores que exigem uma ou mais atualizações de software na implantação. Todos os computadores que estão no modo de suspensão no momento da instalação serão ativados para que a instalação da atualização de software seja iniciada. Clientes que estão no modo de suspensão e que não necessitam de atualizações de software na implantação não são iniciados. Por padrão, essa configuração não está habilitada e está disponível somente quando **Tipo de implantação** está definido como **Necessário**.  
 
-            > [!WARNING]  
-            >  Para usar essa opção, os computadores e as redes devem ser configurados para Wake on LAN.  
+        > [!WARNING]  
+        >  Para usar essa opção, os computadores e as redes devem ser configurados para Wake on LAN.  
 
-        -   **Nível de detalhe**: especifique o nível de detalhe para as mensagens de estado que são relatadas pelos computadores cliente.  
+    -   **Nível de detalhe**: especifique o nível de detalhe para as mensagens de estado que são relatadas pelos computadores cliente.  
 
-    - Configurações de download
+   **Configurações de Download**: na guia Configurações de Download, defina as seguintes configurações:  
 
-    - Alertas
+    -   Especifique se o cliente irá baixar e instalar as atualizações de software quando estiver conectado a uma rede lenta ou usando um local de conteúdos de fallback.  
+
+    -   Especifique se o cliente deve baixar e instalar as atualizações de software por meio de um ponto de distribuição de fallback quando o conteúdo das atualizações de software não está disponível ou de um ponto de distribuição preferencial.  
+
+    -   **Permitir que os clientes compartilhem conteúdo com outros clientes na mesma sub-rede**: especifique se deseja habilitar o uso do BranchCache para downloads de conteúdo. Para obter mais informações sobre o BranchCache, consulte [Fundamental concepts for content management (Conceitos fundamentais para o gerenciamento de conteúdo)](../../core/plan-design/hierarchy/fundamental-concepts-for-content-management.md#branchcache).  
+
+    -   Especifique se os clientes deverão baixar as atualizações de software do Microsoft Update se elas não estiverem disponíveis nos pontos de distribuição.
+    > [!IMPORTANT]
+    > Não use essa configuração para atualizações de serviço do Windows 10. O Configuration Manager (pelo menos até a versão 1610) não baixará as atualizações de serviço do Windows 10 do Microsoft Update.
+
+    -   Especifique se os clientes têm permissão para baixar após o prazo de uma instalação quando usam conexão de Internet limitada. Provedores de Internet ocasionalmente cobram por quantidade de dados que você envia e recebe quando está em uma conexão de Internet limitada.   
+
+    **Alertas**: na guia Alertas, configure como o Configuration Manager e o System Center Operations Manager gerarão alertas para essa implantação. Você só pode configurar alertas quando o **Tipo de implantação** está definido como **Obrigatório** na página Configurações de Implantação.  
+
+    > [!NOTE]  
+    >  Você pode verificar os alertas de atualizações de software recentes no nó **Atualizações de Software** no espaço de trabalho **Biblioteca de Software** .  
 
 
 
-<!--HONumber=Dec16_HO3-->
+<!--HONumber=Dec16_HO4-->
 
 

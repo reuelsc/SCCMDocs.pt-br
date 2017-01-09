@@ -2,7 +2,7 @@
 title: "Introdução de coleções | Microsoft Docs"
 description: "Veja uma introdução às coleções para usar coleções no System Center Configuration Manager."
 ms.custom: na
-ms.date: 12/05/2016
+ms.date: 01/03/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
@@ -16,8 +16,8 @@ author: nbigman
 ms.author: nbigman
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: 08a509cacb711ed6d1ae188d5512a026a12417f2
-ms.openlocfilehash: 8a228a55c198df08701f28123696e35cc73fd98c
+ms.sourcegitcommit: 05c27c7aa36e0b4236867766dab36125c31467b3
+ms.openlocfilehash: fd4c6fd85d12592b3d4f57a48cf6da6c7a668615
 
 
 ---
@@ -25,13 +25,13 @@ ms.openlocfilehash: 8a228a55c198df08701f28123696e35cc73fd98c
 
 *Aplica-se a: System Center Configuration Manager (Branch Atual)*
 
-As coleções no System Center Configuration Manager (também conhecido como o ConfigMgr e SCCM) ajudam a organizar recursos em unidades gerenciáveis. Você pode criar coleções para atender às suas necessidades de gerenciamento de cliente e executar operações em vários recursos ao mesmo tempo. 
+As coleções ajudam você o a organizar recursos em unidades gerenciáveis. Você pode criar coleções para atender às suas necessidades de gerenciamento de cliente e executar operações em vários recursos ao mesmo tempo. 
 
-A maioria das tarefas de gerenciamento depende do uso de uma ou mais coleções. Embora você possa usar a coleção interna de Todos os sistemas, o uso dessa coleção para tarefas de gerenciamento não é uma prática recomendada. Crie suas próprias coleções personalizadas para identificar mais especificamente os dispositivos ou usuários de uma tarefa.  
+A maioria das tarefas de gerenciamento depende do uso de uma ou mais coleções. Embora você possa usar a coleção interna de Todos os sistemas, o uso dessa coleção para tarefas de gerenciamento não é uma prática recomendada. Crie coleções personalizadas para identificar mais especificamente os dispositivos ou os usuários para uma tarefa.  
 
  As coleções internas e personalizadas são exibidas nos nós **Coleções de Usuários** e **Coleções de Dispositivos**, no espaço de trabalho **Ativos e Conformidade**, no console do Configuration Manager.  
 
- As coleções que você exibiu recentemente aparecem no nó **Usuários** e no nó **Dispositivos** , no espaço de trabalho **Ativos e Conformidade** , no console do Configuration Manager.  
+ As coleções que você exibiu recentemente aparecem no nó **Usuários** e no nó **Dispositivos**, no espaço de trabalho **Ativos e Conformidade**.  
 
 Aqui estão alguns exemplos do uso de coleção:  
 
@@ -67,6 +67,6 @@ Aqui estão alguns exemplos do uso de coleção:
 
 
 
-<!--HONumber=Dec16_HO3-->
+<!--HONumber=Jan17_HO1-->
 
 

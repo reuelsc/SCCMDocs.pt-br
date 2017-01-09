@@ -17,8 +17,8 @@ author: Brenduns
 ms.author: brenduns
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: 8195abd403d94a96d193289ea6e6bf8880d06078
-ms.openlocfilehash: aaa9a80a8429ab315a25862a78d6eb8733fd2e89
+ms.sourcegitcommit: 4a8d98addcd463eb82d8b7100b44254a10d21992
+ms.openlocfilehash: b5f7ad01f7a32d69d0c75b3c80a053f3c020c036
 
 
 ---
@@ -40,7 +40,9 @@ O ponto de conexão de serviço do System Center Configuration Manager é uma fu
 
     -   Identificar atualizações para o Gerenciador de Configurações que se aplicam à versão do Gerenciador de Configurações que você usa  
 
-     Consulte [Usage data levels and settings](../../../../core/servers/deploy/install/setup-reference.md#bkmk_usage).  
+  Para obter informações sobre os dados coletados em cada nível e como alterar o nível de coleção após a instalação da função, consulte [Dados de diagnóstico e de uso](/sccm/core/plan-design/diagnostics/diagnostics-and-usage-data) e siga o link da versão do Configuration Manager que você usa.  
+
+    Para obter mais informações, consulte [Configurações e níveis de dados de uso](../../../../core/servers/deploy/install/setup-reference.md#bkmk_usage).  
 
 -   **Baixar as atualizações que se aplicam à sua infraestrutura do Configuration Manager** – Somente atualizações relevantes para sua infraestrutura ficam disponíveis, com base nos dados de uso carregados.  
 
@@ -117,6 +119,6 @@ Após a execução da configuração, ou se você estiver reinstalando a funçã
 
 
 
-<!--HONumber=Dec16_HO3-->
+<!--HONumber=Dec16_HO5-->
 
 

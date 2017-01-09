@@ -2,7 +2,7 @@
 title: "Introdução ao gerenciamento de aplicativos | Microsoft Docs"
 description: "Descubra as informações básicas de que você precisará para gerenciar e implantar aplicativos do System Center Configuration Manager."
 ms.custom: na
-ms.date: 10/06/2016
+ms.date: 12/23/2016
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
@@ -18,8 +18,8 @@ manager: angrobe
 experimental: true
 experiment_id: rob-table-161101
 translationtype: Human Translation
-ms.sourcegitcommit: aa985dcb947803f7bc6d770f80a89a2fe6750681
-ms.openlocfilehash: 4be1fdaeeba2859389ea87b49b8e5891a28d052c
+ms.sourcegitcommit: 5aef08865b232ff2dacec6906098bebf4e42e6b1
+ms.openlocfilehash: 699adb5fac0c625c321db011af6989cc4c0778ec
 
 
 ---
@@ -56,12 +56,12 @@ Neste tópico, você aprenderá as noções básicas que você precisa saber ant
  O Configuration Manager permite que você implante os seguintes tipos de aplicativos:  
 
 - Windows Installer (arquivo *.msi)
-- Pacote do aplicativo do Windows (*.appx, \*.appxbundle)
+- Pacote do aplicativo do Windows (*.appx, *.appxbundle)
 - Pacote de aplicativo Windows (na Windows Store)
 - Microsoft Application Virtualization 4
 - Microsoft Application Virtualization 5
 - Gabinete do Windows Mobile
-- Mac OS X  
+- macOS  
 
 
 Além disso, quando você gerencia dispositivos por meio do gerenciamento de dispositivo local do Microsoft Intune ou do Configuration Manager, é possível gerenciar mais estes tipos de aplicativos:
@@ -113,6 +113,6 @@ Além disso, quando você gerencia dispositivos por meio do gerenciamento de dis
 
 
 
-<!--HONumber=Dec16_HO3-->
+<!--HONumber=Dec16_HO5-->
 
 
