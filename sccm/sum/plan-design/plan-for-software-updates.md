@@ -6,7 +6,7 @@ keywords:
 author: dougeby
 ms.author: dougeby
 manager: angrobe
-ms.date: 12/07/2016
+ms.date: 01/04/2017
 ms.topic: article
 ms.prod: configuration-manager
 ms.service: 
@@ -14,8 +14,8 @@ ms.technology:
 - configmgr-sum
 ms.assetid: d071b0ec-e070-40a9-b7d4-564b92a5465f
 translationtype: Human Translation
-ms.sourcegitcommit: b1c68b233097ef3a744dd25b3fb919660f0b2244
-ms.openlocfilehash: 16415fb54a2cf91747990c94ffea0076effe525b
+ms.sourcegitcommit: 46c8004afee4b18d5c7a2fcc5dac0f7d0d1f823c
+ms.openlocfilehash: 8a5efdce88127c71547c4f5ef85660a2983aa577
 
 
 ---
@@ -82,7 +82,7 @@ Antes de usar atualizações de software em um ambiente de produção do System 
 
 2.  O cliente tenta novamente por no mínimo quatro vezes em intervalos de 30 minutos. Após a quarta falha, e depois de aguardar mais dois minutos, o cliente passará para o próximo ponto de atualização de software na lista de pontos de atualização de software.  
 
-3.  Após uma verificação bem-sucedida, o cliente continuará a se conectar ao ponto de atualização de software.  
+3.  O cliente passa pelo mesmo processo no novo ponto de atualização de software. Após uma verificação bem-sucedida, o cliente continuará a se conectar ao novo ponto de atualização de software.
 
  A lista a seguir fornece informações adicionais que você pode considerar para repetição do ponto de atualização de software e mudança de cenários:  
 
@@ -91,6 +91,13 @@ Antes de usar atualizações de software em um ambiente de produção do System 
 -   Se o gerenciamento de clientes baseado na Internet estiver habilitado e existirem vários pontos de atualização de software configurados para aceitar comunicação de clientes na Internet, o processo de mudança acompanhará o processo de repetição padrão descrito no cenário anterior.  
 
 -   Se o processo de verificação foi iniciado, mas o cliente estava desligado antes da conclusão da verificação, ele não é considerado uma falha de verificação e não conta como uma das quatro repetições.  
+
+Quando o Configuration Manager receber qualquer um dos seguintes códigos de erro do Windows Update Agent, o cliente tentará novamente estabelecer a conexão:  
+
+2149842970, 2147954429, 2149859352, 2149859362, 2149859338, 2149859344, 2147954430, 2147747475, 2149842974, 2149859342, 2149859372, 2149859341, 2149904388, 2149859371, 2149859367, 2149859366, 2149859364, 2149859363, 2149859361, 2149859360, 2149859359, 2149859358, 2149859357, 2149859356, 2149859354, 2149859353, 2149859350, 2149859349, 2149859340, 2149859339, 2149859332, 2149859333, 2149859334, 2149859337, 2149859336, 2149859335
+
+Para pesquisar o significado de um código de erro, você deve converter o código de erro decimal em hexadecimal e pesquisar o valor hexadecimal em um site como o [Wiki Windows Update Agent – Error Codes](https://social.technet.microsoft.com/wiki/contents/articles/15260.windows-update-agent-error-codes.aspx) (Windows Update Agent – Códigos de Erro).
+
 
 ###  <a name="a-namebkmkmanuallyswitchsupsamanually-switch-clients-to-a-new-software-update-point"></a><a name="BKMK_ManuallySwitchSUPs"></a>Mudar manualmente clientes para um novo ponto de atualização de software
 A partir da versão 1606 do Configuration Manager, você pode habilitar a opção para clientes do Configuration Manager mudarem para um novo ponto de atualização de software quando houver problemas com o ponto de atualização de software ativo. Essa opção resulta em alterações somente quando um cliente recebe vários pontos de atualização de software de um ponto de gerenciamento.  
@@ -308,6 +315,6 @@ Quando planejar atualizações de software, consulte [Preparar-se para o gerenci
 
 
 
-<!--HONumber=Dec16_HO3-->
+<!--HONumber=Jan17_HO1-->
 
 
