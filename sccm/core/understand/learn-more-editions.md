@@ -1,5 +1,5 @@
 ---
-title: Saiba mais sobre licenciamento e branches | System Center Configuration Manager
+title: Saiba mais sobre licenciamento e branches | Microsoft Docs
 description: "Use este tópico para saber mais sobre os requisitos de licenciamento das opções de instalação disponíveis com a versão de outubro de 2016 do System Center Configuration Manager, que incluem a versão de 1606 do Branch Atual, o LTSB (Branch de Manutenção em Longo Prazo) e a instalação de avaliação do Branch Atual."
 ms.custom: na
 ms.date: 10/12/2016
@@ -17,8 +17,8 @@ author: Brenduns
 ms.author: brenduns
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: 473d4f9a39898ff5a664013f91ab95e58cd6d161
-ms.openlocfilehash: 726c10fc536f9612bdf46090ef653388a5cfc969
+ms.sourcegitcommit: 10b1010ccbf3889c58c55b87e70b354559243c90
+ms.openlocfilehash: d51a602de9e0cf85d80c74c034613002682e52ea
 
 ---
 
@@ -116,6 +116,6 @@ Use os links a seguir para saber mais sobre os detalhes do licenciamento de prod
 
 
 
-<!--HONumber=Nov16_HO1-->
+<!--HONumber=Dec16_HO3-->
 
 

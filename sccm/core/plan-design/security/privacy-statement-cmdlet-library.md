@@ -1,5 +1,5 @@
 ---
-title: "Política de privacidade do System Center Configuration Manager – Biblioteca de Cmdlets do Configuration Manager"
+title: "Política de privacidade do System Center Configuration Manager – Biblioteca de cmdlets do Configuration Manager | Microsoft Docs"
 description: "Saiba mais sobre como a Microsoft coleta e usa dados relacionados à biblioteca de cmdlets do System Center Configuration Manager."
 ms.custom: na
 ms.date: 10/06/2016
@@ -17,8 +17,8 @@ author: Brenduns
 ms.author: brenduns
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: 1134bb2f04152288e72d40b1b1083f415cb4e900
-ms.openlocfilehash: 88d11aaed4a0e6575cb859f5dfc3ac425bd2bf38
+ms.sourcegitcommit: 767d0594eb871462df038997ea3b7e29615e05f7
+ms.openlocfilehash: 10d8e8948d66a6b9b74e16a02cfbfc4ced66596c
 
 
 ---
@@ -49,31 +49,10 @@ esse recurso de dados de uso é habilitado por padrão. A Biblioteca de Cmdlets 
 
  Alterações nas configurações de Dados de Uso são específicas do computador em que foram feitas.  
 
- Para obter mais informações sobre como configurar os Dados de Uso (coleção), veja a [documentação da Biblioteca de Cmdlets do System Center Configuration Manager](https://technet.microsoft.com/en-us/library/dn958404.aspx).  
-
-## <a name="update-check"></a>Verificação de atualização  
- **O que esse recurso faz:**   
-a Biblioteca de Cmdlets do System Center Configuration Manager verifica automaticamente as atualizações da biblioteca em uma base diária e notifica você para baixar a biblioteca atualizada.  
-
- **Informações coletadas, processadas ou transmitidas:**   
-a verificação de atualização da Biblioteca de Cmdlets baixa um pequeno arquivo de texto do Centro de Download da Microsoft para fazer uma verificação de versão.   Esse arquivo não é armazenado localmente.  A Biblioteca de Cmdlets não atualiza automaticamente o software.  
-
- **Uso das informações:**   
-usamos essas informações para melhorar a qualidade, a segurança e a integridade dos produtos e serviços que oferecemos.  
-
- **Opção/controle:**   
-a verificação de atualização é habilitada por padrão.  A Biblioteca de Cmdlets do System Center Configuration Manager inclui estes cmdlets para controlar a funcionalidade de notificação de atualização:  
-
--   O`Get-CMCmdletUpdateCheck` obtém a configuração do recurso de atualização e indica se a política de usuário está sendo substituída pela política do sistema.  
-
--   O`Send-CMCmdletUpdateCheck` permite que você execute uma verificação de atualização não programada. Uma verificação não agendada não considera as configurações de política.  
-
--   O`Set-CMCmdletUpdateCheck` define as configurações de verificação de atualização em uma base por usuário ou por sistema. Você deve estar executando como administrador para definir as configurações do sistema.  
-
- Você pode encontrar mais informações sobre como configurar a verificação de atualização na [documentação da Biblioteca de Cmdlets do System Center Configuration Manager](https://technet.microsoft.com/en-us/library/dn958404.aspx).  
+ Para obter mais informações sobre como configurar os Dados de Uso (coleção), veja a [documentação da Biblioteca de Cmdlets do System Center Configuration Manager](https://technet.microsoft.com/en-us/library/dn958404.aspx).   
 
 
 
-<!--HONumber=Nov16_HO1-->
+<!--HONumber=Dec16_HO3-->
 
 

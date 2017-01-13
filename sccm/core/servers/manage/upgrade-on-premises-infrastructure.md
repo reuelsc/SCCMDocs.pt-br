@@ -1,5 +1,5 @@
 ---
-title: Atualizar a infraestrutura local | System Center Configuration Manager
+title: Atualizar infraestrutura local | Microsoft Docs
 description: Saiba como atualizar a infraestrutura, como o SQL Server e o sistema operacional do site dos sistemas de sites.
 ms.custom: na
 ms.date: 10/28/2016
@@ -17,8 +17,8 @@ author: Brenduns
 ms.author: brenduns
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: c8115fba0722fc902e60ce201d8a9914036c1245
-ms.openlocfilehash: 1239bf81991bb233a9640606bb47f598a70d5e50
+ms.sourcegitcommit: 8b4c80aa092369ec251757d82a1b4bb2863aa96a
+ms.openlocfilehash: f3742dcb930444bab7eb02374fd77ebd0e455734
 
 
 ---
@@ -78,7 +78,7 @@ Após atualizar o servidor do site ou um servidor que hospeda uma instância de 
 3. Expanda a árvore abaixo da Raiz, selecione o nó **SMS** e clique em **Segurança**.  Verifique se o grupo **Administradores de SMS** tem as seguintes permissões:
   -     Habilitar conta
   -     Habilitação remota
-4. Em seguida, na guia **Segurança**, abaixo do nó SMS, selecione o nó **site_<sitecode>** e clique em **Segurança**. Verifique se o grupo **Administradores de SMS** tem as seguintes permissões:
+4. Em seguida, na guia **Segurança**, abaixo do nó SMS, selecione o nó **site_&lt;sitecode>** e clique em **Segurança**. Verifique se o grupo **Administradores de SMS** tem as seguintes permissões:
   -   Executar métodos
   -   Gravação do provedor
   -   Habilitar conta
@@ -176,6 +176,19 @@ Ao atualizar a versão do SQL Server que hospeda o banco de dados do site, é ne
  2. Atualize os sites secundários antes de atualizar o site primário pai de um site secundário.
  3. Atualize os sites primários pai por último. Isso inclui os sites primários filho que relatam para um site de administração central e os sites primários autônomos que são o site de nível superior de uma hierarquia.
 
+**Nível de estimativa de cardinalidade do SQL Server e o banco de dados do site:**   
+Quando um banco de dados do site for atualizado de uma versão anterior do SQL Server, o banco de dados manterá seu nível de CE (Estimativa de Cardinalidade) do SQL existente se ele estiver no mínimo permitido para a instância do SQL Server. Atualizar o SQL Server com um banco de dados em um nível de compatibilidade menor do que o nível permitido automaticamente define o banco de dados para o nível de compatibilidade mais baixo permitido pelo SQL.
+
+A tabela a seguir identifica os níveis de compatibilidade recomendados para bancos de dados do site do Configuration Manager:
+
+|Versão do SQL Server | Níveis de compatibilidade com suporte |Nível recomendado|
+|----------------|--------------------|--------|
+| SQL Server 2016| 130, 120, 110, 100 | 130|
+| SQL Server 2014| 120, 110, 100      | 110|
+
+Para identificar o nível de compatibilidade CE do SQL Server em uso para seu banco de dados do site, execute a seguinte consulta SQL no servidor de banco de dados do site: **SELECT name, compatibility_level FROM sys.databases**
+
+ Para obter mais informações sobre níveis de compatibilidade CE do SQL e como configurá-los, consulte [Nível de compatibilidade de ALTER DATABASE (Transact-SQL)](https://msdn.microsoft.com/library/bb510680.aspx).
 
 
 **Para obter mais informações sobre o SQL Server, consulte a documentação sobre o SQL Server no TechNet:**  
@@ -196,6 +209,6 @@ Ao atualizar a versão do SQL Server que hospeda o banco de dados do site, é ne
 
 
 
-<!--HONumber=Nov16_HO1-->
+<!--HONumber=Dec16_HO3-->
 
 

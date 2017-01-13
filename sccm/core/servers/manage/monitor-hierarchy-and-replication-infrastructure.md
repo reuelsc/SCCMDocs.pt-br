@@ -1,5 +1,5 @@
 ---
-title: "Monitorar replicação | System Center Configuration Manager"
+title: "Monitorar a replicação | Microsoft Docs"
 description: "Saiba como monitorar a infraestrutura e as operações no Configuration Manager quando o espaço de trabalho Monitoramento no console."
 ms.custom: na
 ms.date: 10/06/2016
@@ -17,8 +17,8 @@ author: Brenduns
 ms.author: brenduns
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: f777295958e9cbc729e3759d354521c96ae3e8ac
-ms.openlocfilehash: 92ded1197d1dcdd6e5f3a8917718e6232b18bce4
+ms.sourcegitcommit: 10b1010ccbf3889c58c55b87e70b354559243c90
+ms.openlocfilehash: 132803a1aa9aad5c5462686bd656688418e47d07
 
 
 ---
@@ -55,7 +55,7 @@ Para minimizar o risco de falha em um site, se as tarefas de monitoramento revel
 
 
 
-##  <a name="a-namebkmkmonintormgmttasksa-monitor-common-management-tasks-for-configuration-manager"></a><a name="BKMK_MonintorMgmtTasks"></a> Monitorar tarefas comuns de gerenciamento do Configuration Manager  
+##  <a name="a-namebkmkmonintormgmttasksa-monitor--common-management-tasks-for-configuration-manager"></a><a name="BKMK_MonintorMgmtTasks"></a> Monitorar tarefas comuns de gerenciamento do Configuration Manager  
  O Configuration Manager fornece monitoramento interno de dentro do console do Configuration Manager. Você pode monitorar muitas tarefas incluindo as relacionadas a atualizações de software, gerenciamento de energia e implantação do conteúdo em toda a hierarquia.  
 
  Use as informações a seguir para ajudar você a monitorar as tarefas comuns do Configuration Manager:  
@@ -245,6 +245,6 @@ As ações de correção e investigação com e sem êxito são registradas em l
 
 
 
-<!--HONumber=Nov16_HO1-->
+<!--HONumber=Dec16_HO3-->
 
 

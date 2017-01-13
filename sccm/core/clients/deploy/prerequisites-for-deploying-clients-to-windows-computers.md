@@ -1,5 +1,5 @@
 ---
-title: "Pré-requisitos para a implantação do cliente Windows | System Center Configuration Manager"
+title: "Pré-requisitos de implantação do cliente Windows | Microsoft Docs"
 description: "Conheça os pré-requisitos para a implantação de clientes em computadores Windows no System Center Configuration Manager."
 ms.custom: na
 ms.date: 10/06/2016
@@ -13,12 +13,12 @@ ms.topic: get-started-article
 ms.assetid: 1a2a9b48-a95b-4643-b00c-b3079584ae2e
 caps.latest.revision: 16
 caps.handback.revision: 0
-author: Mtillman
-ms.author: mtillman
+author: nbigman
+ms.author: nbigman
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: 1134bb2f04152288e72d40b1b1083f415cb4e900
-ms.openlocfilehash: 03ae6de34742ed0030e42c13639ef853d6b2bedc
+ms.sourcegitcommit: 55c953f312a9fb31e7276dde2fdd59f8183b4e4d
+ms.openlocfilehash: cbcffea0fe2b4c8a05d3a835ff1193b528e55762
 
 
 ---
@@ -58,7 +58,7 @@ A implantação de clientes do Configuration Manager em seu ambiente tem as segu
 |Microsoft Core XML Services (MSXML) versão 6.20.5002 ou posterior|Necessário para oferecer suporte ao processamento de documentos XML no Windows.|  
 |Compactação Diferencial Remota da Microsoft (RDC)|Necessário para otimizar a transmissão de dados pela rede.|  
 |Microsoft Visual C++ 2013 Redistribuível versão 12.0.21005.1|Necessário para oferecer suporte às operações do cliente. Quando esta atualização é instalada em computadores cliente, pode ser necessário reinicializar para concluir a instalação.|  
-|Microsoft Visual C++ 2005 Redistribuível versão 8.0.50727.42|Necessário para oferecer suporte a operações do Microsoft SQL Server Compact.|  
+|Microsoft Visual C++ 2005 Redistribuível versão 8.0.50727.42|Para a versão 1606 e anteriores, necessário para dar suporte a operações do Microsoft SQL Server Compact.|  
 |APIs do Windows Imaging 6.0.6001.18000|Necessário para permitir que o Configuration Manager gerencie arquivos de imagem (.wim) do Windows.|  
 |Microsoft Policy Platform 1.2.3514.0|Necessário para permitir que clientes avaliem as configurações de conformidade.|  
 |Microsoft Silverlight 5.1.41212.0 (a partir do Configuration Manager versão 1602)|Necessário para oferecer suporte à experiência do usuário de site da Web do catálogo de aplicativos.|  
@@ -238,6 +238,6 @@ A implantação de clientes do Configuration Manager em seu ambiente tem as segu
 
 
 
-<!--HONumber=Nov16_HO1-->
+<!--HONumber=Dec16_HO3-->
 
 

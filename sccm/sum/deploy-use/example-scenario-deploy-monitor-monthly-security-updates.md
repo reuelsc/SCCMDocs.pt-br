@@ -1,6 +1,6 @@
 ---
 
-title: "Cenário de exemplo para implantar e monitorar as atualizações de software de segurança | Configuration Manager"
+title: "Cenário de exemplo para implantar e monitorar as atualizações de software de segurança | Microsoft Docs"
 description: "Use este cenário de exemplo de como usar atualizações de software no Configuration Manager para implantar e monitorar as atualizações de software de segurança que a Microsoft lança mensalmente."
 keywords: 
 author: dougeby
@@ -14,8 +14,8 @@ ms.technology:
 ms.service: 
 ms.assetid: c32f757a-02da-43f2-b055-5cfd097d8c43
 translationtype: Human Translation
-ms.sourcegitcommit: 1134bb2f04152288e72d40b1b1083f415cb4e900
-ms.openlocfilehash: cd03ddda0a39704a5715f7ed8d620daaefb57653
+ms.sourcegitcommit: e6cf8c799b5be2f7dbb6fadadddf702ec974ae45
+ms.openlocfilehash: 0e6e2b3a9455bb6eda437eb1325aaaadb3d83420
 
 
 
@@ -96,6 +96,6 @@ João concluiu com êxito sua implantação mensal de atualizações de software
 
 
 
-<!--HONumber=Nov16_HO1-->
+<!--HONumber=Dec16_HO3-->
 
 

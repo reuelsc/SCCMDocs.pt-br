@@ -1,5 +1,5 @@
 ---
-title: "Configurar o gerenciamento de dispositivo híbrido do Android com o System Center Configuration Manager e o Microsoft Intune"
+title: "Configurar o gerenciamento de dispositivo híbrido do Android com o System Center Configuration Manager e o Microsoft Intune | Microsoft Docs"
 description: "Preparar para gerenciar dispositivos móveis Android com o Configuration Manager e o Intune."
 ms.custom: na
 ms.date: 10/06/2016
@@ -13,12 +13,12 @@ ms.topic: get-started-article
 ms.assetid: c517fe34-0130-465b-a020-bdb555878778
 caps.latest.revision: 9
 caps.handback.revision: 0
-author: NathBarn
-ms.author: nathbarn
+author: mtillman
+ms.author: mtillman
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: 1134bb2f04152288e72d40b1b1083f415cb4e900
-ms.openlocfilehash: fa189e812a2e3104cb337ccf40c693621745ee53
+ms.sourcegitcommit: 55c953f312a9fb31e7276dde2fdd59f8183b4e4d
+ms.openlocfilehash: ab892174643e7565ad9a74abc4f83f2f152669bd
 
 
 ---
@@ -26,7 +26,7 @@ ms.openlocfilehash: fa189e812a2e3104cb337ccf40c693621745ee53
 
 *Aplica-se a: System Center Configuration Manager (Branch Atual)*
 
-Para o System Center Configuration Manager, os usuários podem baixar o aplicativo Android do portal da empresa no Google Play, que permite que eles registrem dispositivos Android (incluindo Samsung KNOX). Com o aplicativo do Android do portal da empresa, você pode gerenciar as configurações de conformidade, apagar ou excluir dispositivos Android, implantar aplicativos e coletar inventários de software e hardware. Se o aplicativo do Android do portal da empresa não estiver instalado nos dispositivos Android, você não terá todos os recursos de gerenciamento, como inventário e configurações de conformidade, mas ainda poderá implantar aplicativos nos dispositivos Android.  
+Para o System Center Configuration Manager, os usuários podem baixar o aplicativo Android do portal da empresa no Google Play, que permite que eles registrem dispositivos Android (incluindo Samsung KNOX Standard). Com o aplicativo do Android do portal da empresa, você pode gerenciar as configurações de conformidade, apagar ou excluir dispositivos Android, implantar aplicativos e coletar inventários de software e hardware. Se o aplicativo do Android do portal da empresa não estiver instalado nos dispositivos Android, você não terá todos os recursos de gerenciamento, como inventário e configurações de conformidade, mas ainda poderá implantar aplicativos nos dispositivos Android.  
 
 ## <a name="prepare-to-manage-android-mobile-devices-with-configuration-manager-and-intune"></a>Preparar para gerenciar dispositivos móveis Android com o Configuration Manager e o Intune  
  As etapas a seguir permitem ao Configuration Manager gerenciar dispositivos Android.  
@@ -45,6 +45,6 @@ Para o System Center Configuration Manager, os usuários podem baixar o aplicati
 
 
 
-<!--HONumber=Nov16_HO1-->
+<!--HONumber=Dec16_HO3-->
 
 

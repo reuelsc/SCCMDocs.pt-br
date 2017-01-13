@@ -1,5 +1,5 @@
 ---
-title: Implantar clientes do Windows| System Center Configuration Manager
+title: Implantar clientes Windows | Microsoft Docs
 description: Saiba como implantar clientes em computadores Windows no System Center Configuration Manager.
 ms.custom: na
 ms.date: 10/06/2016
@@ -13,12 +13,12 @@ ms.topic: get-started-article
 ms.assetid: 341f0d0b-f907-44cf-9e10-e1b41fc15f82
 caps.latest.revision: 13
 caps.handback.revision: 0
-author: Mtillman
-ms.author: mtillman
+author: nbigman
+ms.author: nbigman
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: 1134bb2f04152288e72d40b1b1083f415cb4e900
-ms.openlocfilehash: 5a52386c6327ded3c5a400c7a046a6a12af96bae
+ms.sourcegitcommit: 55c953f312a9fb31e7276dde2fdd59f8183b4e4d
+ms.openlocfilehash: daf9ebae82eb5933e211a08d61f0c82a261d4aa7
 
 
 ---
@@ -31,7 +31,7 @@ Você pode usar métodos diferentes de implantação do cliente para instalar o 
  Antes de instalar os clientes do Configuration Manager, verifique se todos os pré-requisitos estão em vigor e se você concluiu todas as configurações de implantação necessárias. Para mais informações, confira [Pré-requisitos para a implantação de clientes em computadores com Windows no System Center Configuration Manager](../../../core/clients/deploy/prerequisites-for-deploying-clients-to-windows-computers.md).  
 
 
-##  <a name="a-namebkmkclientpusha-how-to-install-configuration-manager-clients-by-using-client-push"></a><a name="BKMK_ClientPush"></a> Como instalar clientes do Configuration Manager usando push de cliente  
+##  <a name="a-namebkmkclientpusha-how-to-install-clients-with-client-push"></a><a name="BKMK_ClientPush"></a> Como instalar clientes com push de cliente  
 
  Use a instalação do cliente por push para instalar o software cliente do Configuration Manager em computadores que o Configuration Manager descobriu. Você pode configurar a instalação do cliente por push para um site, e a instalação será executada automaticamente nos computadores descobertos nos limites configurados do site quando esses limites forem configurados como um grupo de limites. Ou, você pode iniciar uma instalação do cliente por push executando o Assistente de Instalação do Cliente por Push para uma coleção ou um recurso específico em uma coleção.  
 
@@ -44,7 +44,7 @@ Você pode usar métodos diferentes de implantação do cliente para instalar o 
 > [!IMPORTANT]  
 >  Para que o push de cliente tenha êxito, verifique se todos os pré-requisitos estão em vigor. Eles estão listados na seção "Dependências do método de instalação" em [Pré-requisitos para a implantação de clientes em computadores com Windows no System Center Configuration Manager](../../../core/clients/deploy/prerequisites-for-deploying-clients-to-windows-computers.md).  
 
-#### <a name="to-configure-the-site-to-automatically-use-client-push-for-discovered-computers"></a>Para configurar o site para usar automaticamente o push do cliente para computadores descobertos  
+### <a name="to-configure-the-site-to-automatically-use-client-push-for-discovered-computers"></a>Para configurar o site para usar automaticamente o push do cliente para computadores descobertos
 
 1.  No console do Configuration Manager, clique em **Administração**.  
 
@@ -87,7 +87,7 @@ Você pode usar métodos diferentes de implantação do cliente para instalar o 
     > [!NOTE]  
     >  Se você habilitar a instalação do cliente por push em um site secundário, verifique se a propriedade SMSSITECODE está definida como o nome do site do Configuration Manager de seu site primário pai. Se o esquema do Active Directory estiver estendido para o Configuration Manager, você também poderá definir como AUTO para localizar automaticamente a atribuição do site correto.  
 
-#### <a name="to-use-the-client-push-installation-wizard"></a>Para usar o Assistente de Instalação do Cliente por Push  
+### <a name="to-use-the-client-push-installation-wizard"></a>Para usar o Assistente de Instalação do Cliente por Push
 
 1.  No console do Configuration Manager, clique em **Administração**.  
 
@@ -132,7 +132,7 @@ Você pode usar métodos diferentes de implantação do cliente para instalar o 
 > [!NOTE]  
 >  Você pode usar o assistente para instalar clientes mesmo se o site não está configurado para push do cliente.  
 
-##  <a name="a-namebkmkclientsupa-how-to-install-configuration-manager-clients-by-using-software-update-based-installation"></a><a name="BKMK_ClientSUP"></a> Como instalar clientes do Configuration Manager usando a instalação baseada em atualização de software  
+##  <a name="a-namebkmkclientsupa-how-to-install-clients-with-software-update-based-installation"></a><a name="BKMK_ClientSUP"></a> Como instalar clientes com a instalação baseada em atualização de software  
  A instalação do cliente baseada em atualização de software publica o cliente do Configuration Manager em um ponto de atualização de software como uma atualização de software adicional. Esse método de instalação do cliente pode ser usado para instalar o cliente Configuration Manager em computadores que ainda não têm o cliente instalado ou para atualizar os clientes existentes do Configuration Manager.  
 
  Se um computador tiver o cliente do Configuration Manager instalado, o Configuration Manager fornecerá ao cliente o nome do servidor do ponto de atualização de software e a porta de onde obter atualizações de software. Essa informação está incluída na política do cliente.  
@@ -151,7 +151,7 @@ Você pode usar métodos diferentes de implantação do cliente para instalar o 
 > [!NOTE]  
 >  Se os computadores estiverem em um estado de reinicialização pendente após uma instalação anterior do software, uma instalação de cliente de atualização com base em software pode causar a reinicialização do computador.  
 
-#### <a name="to-configure-a-group-policy-object-in-active-directory-domain-services-to-specify-the-software-update-point-for-client-installation-and-software-updates"></a>Para configurar um Objeto de Política de Grupo nos Serviços de Domínio Active Directory para especificar o ponto de atualização de software para instalação do cliente e atualizações de software  
+Para configurar um Objeto de Política de Grupo no Active Directory Domain Services para especificar o ponto de atualização de software para instalação do cliente e atualizações de software:  
 
 1.  Use o Console de Gerenciamento de Política de Grupo para abrir um Objeto de Política de Grupo novo ou existente.  
 
@@ -174,7 +174,7 @@ Você pode usar métodos diferentes de implantação do cliente para instalar o 
 
 6.  Atribua o Objeto de Política de Grupo aos computadores nos quais você deseja instalar o cliente do Configuration Manager e receber atualizações de software.  
 
-#### <a name="to-publish-the-configuration-manager-client-to-the-software-update-point"></a>Para publicar o cliente do Configuration Manager no ponto de atualização de software  
+### <a name="to-publish-the-configuration-manager-client-to-the-software-update-point"></a>Para publicar o cliente do Configuration Manager no ponto de atualização de software  
 
 1.  No console do Configuration Manager, clique em **Administração**.  
 
@@ -196,7 +196,7 @@ Você pode usar métodos diferentes de implantação do cliente para instalar o 
 > [!NOTE]  
 >  A atualização de software para o cliente do Configuration Manager não é atualizada automaticamente quando existe uma nova versão. Se você atualizar o site, o que inclui uma nova versão do cliente, deverá repetir este procedimento e clicar em **Sim** para ir para a etapa 6.  
 
-##  <a name="a-namebkmkclientgpa-how-to-install-configuration-manager-clients-by-using-group-policy"></a><a name="BKMK_ClientGP"></a> Como instalar clientes do Configuration Manager usando a Política de Grupo  
+##  <a name="a-namebkmkclientgpa-how-to-install-clients-with-group-policy"></a><a name="BKMK_ClientGP"></a> Como instalar clientes com política de grupo  
  Você pode usar a Política de Grupo no Active Directory Domain Services para publicar ou atribuir o cliente do Configuration Manager para instalação em computadores na empresa. Quando você atribui o cliente do Configuration Manager a computadores usando a Política de Grupo, o cliente é instalado quando o computador é iniciado pela primeira vez. Quando você publica o cliente do Configuration Manager para usuários usando a Política de Grupo, o cliente é exibido em **Adicionar ou Remover Programas** do Painel de Controle do computador para que o usuário o instale.  
 
  Use o pacote do Windows Installer (CCMSetup.msi) para instalações baseadas na Política de Grupo. Esse arquivo é encontrado na pasta **&lt;diretório de instalação do ConfigMgr\>\bin\i386** no servidor do site do Configuration Manager. Você não pode adicionar propriedades a esse arquivo para modificar o comportamento de instalação:  
@@ -210,7 +210,7 @@ Você pode usar métodos diferentes de implantação do cliente para instalar o 
 
  Para obter informações sobre como usar a Política de Grupo nos Serviços de Domínio Active Directory para instalar o software, consulte a documentação do Windows Server.  
 
-##  <a name="a-namebkmkmanuala-how-to-install-configuration-manager-clients-manually"></a><a name="BKMK_Manual"></a> Como instalar manualmente os clientes do Configuration Manager  
+##  <a name="a-namebkmkmanuala-how-to-install-clients-manually"></a><a name="BKMK_Manual"></a> Como instalar clientes manualmente  
  Você pode instalar manualmente o software cliente do Configuration Manager em computadores na empresa usando o programa CCMSetup.exe. Esse programa e seus arquivos de suporte podem ser encontrados na pasta **Cliente** da pasta de instalação do Configuration Manager no servidor do site e nos pontos de gerenciamento no seu site. Esta pasta é compartilhada na rede como  
 
  \\\\*&lt;Nome do servidor do site\>*\SMS_*&lt;Código do site\>*\Client\  
@@ -244,7 +244,7 @@ CCMSetup.exe /mp:SMSMP01 /logon SMSSITECODE=AUTO FSP=SMSFP01
 
  Para ver detalhes sobre todas as propriedades de CCMSetup.exe, consulte [Sobre as propriedades de instalação do cliente no System Center Configuration Manager](../../../core/clients/deploy/about-client-installation-properties.md)  
 
-### <a name="examples-for-installing-configuration-manager-clients-manually"></a>Exemplos para instalação dos clientes do Configuration Manager manualmente  
+### <a name="examples"></a>Exemplos
  Estes exemplos são para clientes do Active Directory na intranet e usam os seguintes valores para representar aspectos diferentes do site:  
 
  **MPSERVER** = servidor que hospeda o ponto de gerenciamento   
@@ -274,14 +274,14 @@ CCMSetup.exe /MP:mpserver.contoso.com /UsePKICert SMSSITECODE=ABC CCMHOSTNAME=se
 > [!NOTE]  
 >  Este exemplo substitui a configuração automática que o Active Directory Domain Services pode fornecer e não exige que o local de rede do cliente esteja incluído em um grupo de limites configurado para atribuição do cliente. Em vez disso, a instalação especifica o site, um ponto de gerenciamento da intranet e um ponto de gerenciamento baseado na Internet, um ponto de status de fallback que aceita conexões da Internet e usa um certificado PKI do cliente (se disponível) com o período de validade mais longo.  
 
-##  <a name="a-namebkmkclientlogonscripta-how-to-install-configuration-manager-clients-by-using-logon-scripts"></a><a name="BKMK_ClientLogonScript"></a> Como instalar clientes do Configuration Manager usando scripts de logon  
+##  <a name="a-namebkmkclientlogonscripta-how-to-install-clients-with-logon-scripts"></a><a name="BKMK_ClientLogonScript"></a> Como instalar clientes com scripts de logon  
  O Configuration Manager dá suporte a scripts de logon para instalar o software cliente do Configuration Manager. Você pode usar o arquivo de programa **CCMSetup.exe** em um script de logon para disparar a instalação do cliente.  
 
  A instalação de script de logon usa os mesmos métodos da instalação manual do cliente. Você pode especificar a propriedade de instalação **/logon** para CCMSsetup.exe, que evita que o cliente seja instalado se alguma versão do cliente já existir no computador. Isso impede que a reinstalação do cliente ocorra toda vez que o script de logon é executado.  
 
  Se não for especificada nenhuma fonte de instalação que esteja usando a propriedade **/Source** e nenhum ponto de gerenciamento do qual obter a instalação for especificado usando a propriedade **/MP**, CCMSetup.exe poderá localizar o ponto de gerenciamento pesquisando os Serviços de Domínio do Active Directory se o esquema tiver sido estendido para o Configuration Manager e o site estiver publicado no Active Directory Domain Services. Como alternativa, o cliente pode usar DNS ou WINS para localizar um ponto de gerenciamento.  
 
-##  <a name="a-namebkmkclientappa-how-to-install-configuration-manager-clients-by-using-a-package-and-program"></a><a name="BKMK_ClientApp"></a> Como instalar clientes do Configuration Manager usando um pacote e um programa  
+##  <a name="a-namebkmkclientappa-how-to-install-clients-with-a-package-and-program"></a><a name="BKMK_ClientApp"></a> Como instalar clientes com um pacote e programa  
  Você pode usar o Configuration Manager para criar e implantar um pacote e um programa que atualiza o software cliente para computadores selecionados na hierarquia. Um arquivo de definição de pacote é fornecido com o Configuration Manager que preenche as propriedades do pacote com valores geralmente usados. Você pode personalizar o comportamento da instalação do cliente especificando propriedades de linha de comando adicionais.  
 
 > [!NOTE]  
@@ -291,7 +291,7 @@ CCMSetup.exe /MP:mpserver.contoso.com /UsePKICert SMSSITECODE=ABC CCMHOSTNAME=se
 
  Use o procedimento a seguir para criar um pacote e um programa do Configuration Manager que você possa implantar nos computadores cliente do Configuration Manager para atualizar o software cliente.  
 
-#### <a name="to-create-a-package-and-program-for-the-client-software"></a>Para criar um pacote e um programa para o software do cliente  
+Para criar um pacote e um programa para o software do cliente  
 
 1.  No console do Configuration Manager, clique em **Biblioteca de Software**.  
 
@@ -314,7 +314,26 @@ CCMSetup.exe /MP:mpserver.contoso.com /UsePKICert SMSSITECODE=ABC CCMHOSTNAME=se
 
 9. Distribua o pacote para todos os pontos de distribuição em que você deseja hospedar o pacote de atualização do cliente. Em seguida, você pode implantar o pacote nas coleções do computador que contêm clientes do Configuration Manager que você deseja atualizar.  
 
-##  <a name="a-namebkmkclientimagea-how-to-install-configuration-manager-clients-by-using-computer-imaging"></a><a name="BKMK_ClientImage"></a> Como instalar clientes do Configuration Manager usando imagens de computador  
+## <a name="how-to-install-clients-to-mdm-managed-windows-devices-with-intune"></a>Como instalar clientes em dispositivos Windows gerenciados pelo MDM com o Intune
+
+Você pode implantar os arquivos de instalação do cliente do Configuration Manager para computadores que são registrados com o Microsoft Intune. Para fazer isso, você usa o Intune Software Publisher para a criação do aplicativo do Windows Installer (\*.msi) que contém o arquivo de instalação de cliente **ccmsetup.msi**. Em seguida, você implanta o aplicativo em dispositivos registrados, que instala o software cliente.
+
+Para garantir que o dispositivo permaneça em um estado gerenciado depois da instalação do software cliente, o dispositivo deverá estar na rede corporativa e dentro de um limite de site do Configuration Manager. 
+
+> [!NOTE]
+> Depois que o software cliente for instalado, o dispositivo terá o registro no Intune cancelado.
+
+### <a name="to-install-clients-with-intune"></a>Para instalar clientes com o Intune:
+
+1. No Intune, [crie um aplicativo](/intune/deploy-use/add-apps-for-mobile-devices-in-microsoft-intune) que contém o arquivo de instalação de cliente do Configuration Manager **ccmsetup.msi**.
+
+2. No Intune Software Publisher, use os seguintes parâmetros de linha de comando:
+
+  **CCMSETUPCMD="/MP:&lt;FQDN do ponto de gerenciamento> SMSMP=&lt;FQDN do ponto de gerenciamento> SMSSITECODE=&lt;Código do site> DNSSUFFIX=&lt;Sufixo DNS do ponto de gerenciamento>"**
+
+3. [Implante o aplicativo](/intune/deploy-use/deploy-apps-in-microsoft-intune) nos computadores Windows registrados.
+
+##  <a name="a-namebkmkclientimagea-how-to-install-clients-with-a-computer-image"></a><a name="BKMK_ClientImage"></a> Como instalar clientes com uma imagem do computador  
  Você pode pré-instalar o software cliente do Configuration Manager em um computador com a imagem mestra que será usado para criar computadores em sua empresa. Para instalar o cliente em um computador mestre, não especifique um código do site para o cliente. Quando os computadores gerarem a imagem por meio dessa imagem mestra, eles terão o cliente do Configuration Manager e deverão concluir a atribuição de site quando a instalação terminar.  
 
 > [!IMPORTANT]  
@@ -324,7 +343,7 @@ CCMSetup.exe /MP:mpserver.contoso.com /UsePKICert SMSSITECODE=ABC CCMHOSTNAME=se
 
  Se os clientes não conseguirem consultar os Serviços de Domínio do Active Directory para localizar um ponto de gerenciamento, eles usarão a chave de raiz confiável para determinar pontos de gerenciamento confiáveis. Se todos os clientes com imagens forem implantados na mesma hierarquia co computador mestre, deixe a chave de raiz confiável no lugar. Se os clientes forem implantados em hierarquia diferentes, remova a chave de raiz confiável e, como prática recomendada, provisione esses clientes com a nova chave de raiz confiável. Para obter mais informações, consulte  [Planning for the Trusted Root Key](../../../core/plan-design/security/plan-for-security.md#BKMK_PlanningForRTK).  
 
-#### <a name="to-prepare-the-client-computer-for-imaging"></a>Para preparar o computador cliente para geração de imagens  
+### <a name="to-prepare-the-client-computer-for-imaging"></a>Para preparar o computador cliente para geração de imagens  
 
 1.  Instale manualmente o software cliente do Configuration Manager no computador com a imagem mestra. Para obter mais informações, consulte [Como instalar manualmente os clientes do Configuration Manager](#BKMK_Manual).  
 
@@ -341,7 +360,7 @@ CCMSetup.exe /MP:mpserver.contoso.com /UsePKICert SMSSITECODE=ABC CCMHOSTNAME=se
 
 6.  Implante a imagem nos computadores de destino.  
 
-##  <a name="a-namebkmkclientworkgroupa-how-to-install-configuration-manager-clients-on-workgroup-computers"></a><a name="BKMK_ClientWorkgroup"></a> Como instalar clientes do Configuration Manager em computadores do grupo de trabalho  
+##  <a name="a-namebkmkclientworkgroupa-how-to-install-clients-on-workgroup-computers"></a><a name="BKMK_ClientWorkgroup"></a> Como instalar clientes em computadores do grupo de trabalho  
  O Configuration Manager dá suporte à instalação do cliente para computadores do grupos de trabalho. Instale o cliente em computadores do grupo de trabalho usando o método especificado em [Como instalar manualmente os clientes do Configuration Manager](#BKMK_Manual).  
 
  Os pré-requisitos a seguir devem ser cumpridos para instalar o cliente do Configuration Manager em computadores do grupo de trabalho:  
@@ -366,7 +385,7 @@ CCMSetup.exe /MP:mpserver.contoso.com /UsePKICert SMSSITECODE=ABC CCMHOSTNAME=se
 
 -   Um cliente de grupo de trabalho não pode ser configurado como um ponto de distribuição. O Configuration Manager exige que os computadores do ponto de distribuição sejam membros de um domínio.  
 
-#### <a name="to-install-the-client-on-workgroup-computers"></a>Para instalar o cliente em computadores do grupo de trabalho  
+### <a name="to-install-the-client-on-workgroup-computers"></a>Para instalar o cliente em computadores do grupo de trabalho  
 
 1.  Verifique se os computadores nos quais você deseja instalar o cliente atendem aos pré-requisitos acima.  
 
@@ -382,7 +401,7 @@ CCMSetup.exe /MP:mpserver.contoso.com /UsePKICert SMSSITECODE=ABC CCMHOSTNAME=se
     > [!NOTE]  
     >  Este exemplo requer que o cliente esteja em um local de rede configurado em um grupo de limite para que a atribuição automática do site tenha êxito. O comando inclui um ponto de status de fallback no servidor FSPSERVER, para ajudar a controlar a implantação do cliente e identificar quaisquer problemas de comunicação do cliente.  
 
-##  <a name="a-namebkmkclientinterneta-how-to-install-configuration-manager-clients-for-internet-based-client-management"></a><a name="BKMK_ClientInternet"></a> Como instalar clientes do Configuration Manager para gerenciamento de clientes baseados na Internet  
+##  <a name="a-namebkmkclientinterneta-how-to-install-clients-for-internet-based-client-management"></a><a name="BKMK_ClientInternet"></a> Como instalar clientes para o gerenciamento de clientes baseados na Internet  
  Quando o site do Configuration Manager dá suporte ao gerenciamento de clientes baseado na Internet para clientes que às vezes estão na intranet e às vezes estão na Internet, você tem duas opções ao instalar clientes na intranet:  
 
 -   Você pode incluir a propriedade de Client.msi de CCMHOSTNAME=*&lt;FQDN da Internet do ponto de gerenciamento baseado na Internet\>* ao instalar o cliente, por exemplo, usando a instalação manual ou por push do cliente. Ao usar esse método, você também deve atribuir diretamente o cliente ao site e não pode usar a atribuição automática do site. A seção [Como instalar manualmente os clientes do Configuration Manager](#BKMK_Manual) neste tópico fornece um exemplo desse método de configuração.  
@@ -400,7 +419,7 @@ CCMSetup.exe /MP:mpserver.contoso.com /UsePKICert SMSSITECODE=ABC CCMHOSTNAME=se
 
  Como os clientes gerenciados pela Internet precisam se comunicar com sistemas do site baseado na Internet, verifique se esses clientes também têm certificados PKI instalados antes de você instalá-los. Você deve instalar esses certificados independentemente do Configuration Manager. Para obter mais informações sobre os requisitos de certificado, consulte [Requisitos de certificado PKI para o System Center Configuration Manager](../../../core/plan-design/network/pki-certificate-requirements.md).  
 
-#### <a name="to-install-clients-on-the-internet-by-specifying-ccmsetup-command-line-properties"></a>Para instalar clientes na Internet especificando propriedades da linha de comando CCMSetup  
+### <a name="to-install-clients-on-the-internet-by-specifying-ccmsetup-command-line-properties"></a>Para instalar clientes na Internet especificando propriedades da linha de comando CCMSetup  
 
 1.  Siga as instruções na seção [Como instalar manualmente os clientes do Configuration Manager](#BKMK_Manual) e sempre inclua o seguinte:  
 
@@ -430,10 +449,10 @@ CCMSetup.exe /MP:mpserver.contoso.com /UsePKICert SMSSITECODE=ABC CCMHOSTNAME=se
     > [!NOTE]  
     >  Este exemplo instala os arquivos de origem do cliente de uma pasta na unidade D com configurações para usar um certificado PKI do cliente e selecionar o certificado com o período de validade mais longo para gerenciamento de clientes apenas da Internet, atribui o cliente para usar o ponto de gerenciamento baseado na Internet chamado SERVER1 e o ponto de status de fallback no domínio contoso.com, e atribui o cliente ao site ABC.  
 
-###  <a name="a-namebkmkconfigureibcmmpa-how-to-configure-clients-for-internet-based-client-management-after-client-installation"></a><a name="BKMK_ConfigureIBCM_MP"></a> Como configurar clientes para gerenciamento de clientes baseados na Internet após a instalação do cliente  
+###  <a name="a-namebkmkconfigureibcmmpato-configure-clients-for-internet-based-client-management-after-client-installation"></a><a name="BKMK_ConfigureIBCM_MP"></a>Para configurar clientes para o gerenciamento de clientes baseados na Internet após a instalação do cliente  
  Para atribuir o ponto de gerenciamento baseado na Internet após a instalação do cliente, use um dos procedimentos a seguir. O primeiro procedimento requer configuração manual; portanto, é apropriado para poucos clientes. Já o segundo procedimento é mais apropriado se você tiver muitos clientes para configurar.  
 
-##### <a name="to-configure-clients-for-internet-based-client-management-after-client-installation-by-assigning-the-internet-based-management-point-in-configuration-manager-properties"></a>Para configurar clientes para gerenciamento de clientes baseado na Internet após a instalação do cliente atribuindo o ponto de gerenciamento baseado na Internet nas Propriedades do Configuration Manager  
+#### <a name="to-configure-clients-for-internet-based-client-management-after-client-installation-by-assigning-the-internet-based-management-point-in-configuration-manager-properties"></a>Para configurar clientes para gerenciamento de clientes baseado na Internet após a instalação do cliente atribuindo o ponto de gerenciamento baseado na Internet nas Propriedades do Configuration Manager  
 
 1.  Navegue até **Configuration Manager** no Painel de Controle do computador cliente e clique duas vezes para abrir suas propriedades.  
 
@@ -446,7 +465,7 @@ CCMSetup.exe /MP:mpserver.contoso.com /UsePKICert SMSSITECODE=ABC CCMHOSTNAME=se
 
 4.  Clique em **OK**.  
 
-##### <a name="to-configure-clients-for-internet-based-client-management-after-client-installation-by-using-a-script"></a>Para configurar clientes para gerenciamento de clientes baseados na Internet após a instalação do cliente usando um script  
+#### <a name="to-configure-clients-for-internet-based-client-management-after-client-installation-by-using-a-script"></a>Para configurar clientes para gerenciamento de clientes baseados na Internet após a instalação do cliente usando um script  
 
 1.  Abra um editor de texto, como o Bloco de Notas.  
 
@@ -500,7 +519,7 @@ CCMSetup.exe /MP:mpserver.contoso.com /UsePKICert SMSSITECODE=ABC CCMHOSTNAME=se
 
  Um modelo administrativo da política de grupo chamado ConfigMgrInstallation.adm é fornecido na mídia de instalação do Configuration Manager, que pode ser usado para provisionar computadores cliente com propriedades da instalação. Use o procedimento a seguir para configurar e atribuir esse modelo a computadores em sua organização.  
 
-#### <a name="to-configure-and-assign-client-installation-properties-by-using-a-group-policy-object"></a>Para configurar e atribuir propriedades de instalação do cliente usando um objeto da política de grupo  
+### <a name="to-configure-and-assign-client-installation-properties-by-using-a-group-policy-object"></a>Para configurar e atribuir propriedades de instalação do cliente usando um objeto da política de grupo  
 
 1.  Importar o modelo administrativo ConfigMgrInstallation.adm em um Objeto de Política de Grupo novo ou existente, usando um editor como Editor de Objeto de Política de Grupo do Windows.  
 
@@ -519,6 +538,6 @@ CCMSetup.exe /MP:mpserver.contoso.com /UsePKICert SMSSITECODE=ABC CCMHOSTNAME=se
 
 
 
-<!--HONumber=Nov16_HO1-->
+<!--HONumber=Dec16_HO3-->
 
 

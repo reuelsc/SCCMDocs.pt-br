@@ -1,5 +1,5 @@
 ---
-title: "Preparar o cache par do Windows PE para reduzir o tráfego da WAN | Configuration Manager"
+title: "Preparar o cache de pares do Windows PE para reduzir o tráfego da WAN | Microsoft Docs"
 description: "O Cache Par do Windows PE funciona no Windows PE para obter o conteúdo de um par local e minimizar o tráfego da WAN quando não há nenhum ponto de distribuição local."
 ms.custom: na
 ms.date: 10/06/2016
@@ -16,8 +16,8 @@ author: Dougeby
 ms.author: dougeby
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: 1134bb2f04152288e72d40b1b1083f415cb4e900
-ms.openlocfilehash: dc21868f99e17070b25c8b490e86477227a96c8e
+ms.sourcegitcommit: 74341fb60bf9ccbc8822e390bd34f9eda58b4bda
+ms.openlocfilehash: 814c6133a30b1116d05aaeafddb0dfb7fe2a390e
 
 
 ---
@@ -52,17 +52,17 @@ Use as seções a seguir para gerenciar o Cache Par.
 
 -   Atualizações de software  
 
-##  <a name="a-namebkmkpeercacheworka-how-does-windows-pe-peer-cache-work"></a><a name="BKMK_PeerCacheWork"></a> Como funciona o cache par no Windows PE?  
+##  <a name="a-namebkmkpeercacheworka-how-does--windows-pe-peer-cache-work"></a><a name="BKMK_PeerCacheWork"></a> Como funciona o cache par no Windows PE?  
  Considere um cenário com uma filial que não tem um ponto de distribuição, mas que tem vários clientes habilitados para usar o Cache par do Windows PE. Você implanta a sequência de tarefas configurada para usar cache par para vários clientes que estão configurados para ser parte da fonte de cache par. O primeiro cliente a executar a sequência de tarefas transmite uma solicitação para uma associação com o conteúdo. Ele não encontra uma, então obtém o conteúdo do ponto de distribuição na WAN. O cliente instala a nova imagem e armazena o conteúdo em seu cache do cliente do Configuration Manager para que possa funcionar como uma fonte de cache par para outros clientes. Quando o próximo cliente executa a sequência de tarefas, ele transmite uma solicitação na sub-rede para uma fonte de cache de sistemas pares, e esse primeiro cliente responde e disponibiliza o conteúdo armazenado em cache.  
 
-##  <a name="a-namebkmkpeercachedeterminea-determine-what-clients-will-be-part-of-the-windows-pe-peer-cache-source"></a><a name="BKMK_PeerCacheDetermine"></a> Determinar quais clientes serão parte da fonte de Cache par do Windows PE  
+##  <a name="a-namebkmkpeercachedeterminea-determine-what--clients-will-be-part-of-the-windows-pe-peer-cache-source"></a><a name="BKMK_PeerCacheDetermine"></a> Determinar quais clientes serão parte da fonte de Cache par do Windows PE  
  Para ajudar você a determinar quais computadores serão selecionados como uma fonte de Cache par do Windows PE, há várias coisas que você deve considerar:  
 
 -   A fonte de Cache par do Windows PE deve ser um computador desktop que está sempre ligado e disponível para clientes de cache par.  
 
 -   O Cache par do Windows PE tem um tamanho de cache de cliente suficiente para armazenar as imagens.  
 
-##  <a name="a-namebkmkpeercacherequirementsa-requirements-for-a-client-to-use-a-windows-pe-peer-cache-source"></a><a name="BKMK_PeerCacheRequirements"></a> Requisitos para um cliente usar uma fonte de Cache par do Windows PE  
+##  <a name="a-namebkmkpeercacherequirementsa-requirements-for-a-client-to-use-a--windows-pe-peer-cache-source"></a><a name="BKMK_PeerCacheRequirements"></a> Requisitos para um cliente usar uma fonte de Cache par do Windows PE  
  Para os clientes usarem uma fonte de Cache par do Windows PE, eles devem atender aos seguintes requisitos:  
 
 -   O cliente do Configuration Manager deve estar habilitado para se comunicar entre as seguintes portas em sua rede:  
@@ -144,6 +144,6 @@ Use as seções a seguir para gerenciar o Cache Par.
 
 
 
-<!--HONumber=Nov16_HO1-->
+<!--HONumber=Dec16_HO3-->
 
 

@@ -1,5 +1,5 @@
 ---
-title: "Introdução aos perfis de email | System Center Configuration Manager"
+title: "Introdução aos perfis de email | Microsoft Docs"
 description: "Saiba como usar perfis de email para permite que os usuários acessem email corporativo em seus dispositivos com uma configuração mínima."
 ms.custom: na
 ms.date: 10/06/2016
@@ -17,8 +17,8 @@ author: Nbigman
 ms.author: nbigman
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: 1134bb2f04152288e72d40b1b1083f415cb4e900
-ms.openlocfilehash: 83066e1f0e3c6536649e9b74ca13562c9d817619
+ms.sourcegitcommit: bff083fe279cd6b36a58305a5f16051ea241151e
+ms.openlocfilehash: b936a0914f8811f755cbb6983fefc063fbc4f97c
 
 
 ---
@@ -41,7 +41,7 @@ Os perfis de email funcionam com o Microsoft Intune para permitir que você prov
 -   Dispositivos IPad que executam o iOS 5, iOS 6, iOS 7 e iOS 8  
 
 > [!IMPORTANT]  
->  Para implantar perfis em dispositivos iOS, Android, Samsung KNOX, Windows Phone e Windows 8.1 ou 10, esses dispositivos devem ser registrados no Intune. Para obter informações sobre como registrar seus dispositivos, veja [Gerenciar dispositivos móveis com o Microsoft Intune](https://technet.microsoft.com/en-us/library/dn646962.aspx).  
+>  Para implantar perfis em dispositivos iOS, Android Samsung KNOX Standard, Windows Phone e Windows 8.1 ou Windows 10, esses dispositivos devem ser registrados no Intune. Para obter informações sobre como registrar seus dispositivos, veja [Gerenciar dispositivos móveis com o Microsoft Intune](https://technet.microsoft.com/en-us/library/dn646962.aspx).  
 
  Além de configurar uma conta de email no dispositivo, você também pode configurar as configurações de sincronização de contatos, calendários e tarefas.  
 
@@ -49,6 +49,6 @@ Os perfis de email funcionam com o Microsoft Intune para permitir que você prov
 
 
 
-<!--HONumber=Nov16_HO1-->
+<!--HONumber=Dec16_HO3-->
 
 

@@ -1,5 +1,5 @@
 ---
-title: "Documentação online | System Center Configuration Manager"
+title: "Documentação online | Microsoft Docs"
 ms.custom: na
 ms.date: 10/06/2016
 ms.reviewer: na
@@ -8,25 +8,24 @@ ms.tgt_pltfrm: na
 ms.topic: article
 ms.prod: configuration-manager
 ms.service: 
-ms.technology: configmgr-other
+ms.technology:
+- configmgr-other
 ms.assetid: 6d665cef-fc67-4686-bcb3-0572c0a3760c
 caps.latest.revision: 5
 author: Brenduns
 ms.author: brenduns
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: 1134bb2f04152288e72d40b1b1083f415cb4e900
-ms.openlocfilehash: ff3d67b8d8e038ecd87dac90e65b4c1ab7cb15bc
+ms.sourcegitcommit: 1a4a9da88caba55d9e340c7fb1f31f4e3b957f3e
+ms.openlocfilehash: 73bb5d4236469746102fd4893c53f20aaee122d5
 
 
 ---
 # <a name="online-documentation-for-system-center-configuration-manager"></a>Documentação online do System Center Configuration Manager
 
-*Aplica-se a: System Center Configuration Manager (ramificação atual)*
 
 Bem-vindo à biblioteca de documentação do System Center Configuration Manager.  
-
- Localize a biblioteca de documentação para a versão do produto que você usa:  
+Localize a biblioteca de documentação para a versão do produto que você usa:  
 
 ## <a name="system-center-configuration-manager-current-branch"></a>System Center Configuration Manager (ramificação atual)  
 **Documentação online:** você pode exibir a documentação online para a ramificação atual do System Center Configuration Manager no TechNet:  
@@ -49,19 +48,14 @@ Bem-vindo à biblioteca de documentação do System Center Configuration Manager
 
 -   [Monitoramento e manutenção do System Center Configuration Manager](https://technet.microsoft.com/library/mt612855.aspx)  
 
--   [Referência técnica do System Center Configuration Manager](https://technet.microsoft.com/library/mt634283.aspx)  
-
 -   [Security and privacy for System Center Configuration Manager](https://technet.microsoft.com/library/mt622694.aspx)  
 
-**Notas de versão:** as notas de versão contêm informações que não estão disponíveis na documentação do produto e podem ser necessárias para instalar e usar o System Center Configuration Manager com êxito:  
+**Notas de versão:** as notas de versão contêm informações que não estão disponíveis na documentação do produto e que podem ser necessárias para instalar e usar o System Center Configuration Manager com êxito. Consulte [Notas de versão do System Center Configuration Manager](https://technet.microsoft.com/library/mt592024.aspx)  
 
--   [Release notes for System Center Configuration Manager](https://technet.microsoft.com/library/mt592024.aspx)  
+**Encontre ajuda:** consulte [Encontrar ajuda para usar o System Center Configuration Manager](https://technet.microsoft.com/library/mt628521.aspx):  
 
-**Acessibilidade:** consulte as seções a seguir nas seções do tópico online [Find help for using System Center Configuration Manager](https://technet.microsoft.com/library/mt628521.aspx):  
+**Acessibilidade:** consulte [Recursos de acessibilidade do console do Configuration Manager](https://technet.microsoft.com/library/mt628521.aspx)  
 
--   [Accessibility features for the Configuration Manager console](https://technet.microsoft.com/library/mt628521.aspx#bkmk_aconsole)  
-
--   [Accessibility features for Configuration Manager Help](https://technet.microsoft.com/library/mt628521.aspx#bkmk_ahelp)  
 
 ## <a name="system-center-configuration-manager-technical-preview"></a>System Center Configuration Manager Technical Preview  
 **Documentação online:** você pode exibir a documentação online nos seguintes guias no TechNet:  
@@ -111,6 +105,6 @@ você pode exibir a documentação online nos seguintes guias no TechNet:
 
 
 
-<!--HONumber=Nov16_HO1-->
+<!--HONumber=Dec16_HO3-->
 
 

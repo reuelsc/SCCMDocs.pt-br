@@ -1,5 +1,5 @@
 ---
-title: "Migrar conteúdo | System Center Configuration Manager"
+title: "Migrar o conteúdo | Microsoft Docs"
 description: "Use pontos de distribuição para gerenciar o conteúdo ao migrar dados para uma hierarquia de destino do System Center Configuration Manager."
 ms.custom: na
 ms.date: 10/06/2016
@@ -17,8 +17,8 @@ author: Brenduns
 ms.author: brenduns
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: 1134bb2f04152288e72d40b1b1083f415cb4e900
-ms.openlocfilehash: aa88f18247b49995bff4a4a6f5fd1e1ed70ca214
+ms.sourcegitcommit: 1a4a9da88caba55d9e340c7fb1f31f4e3b957f3e
+ms.openlocfilehash: c96fa0995b5de87f50e1146b338058f26daeb624
 
 
 ---
@@ -188,8 +188,23 @@ Para identificar os pontos de distribuição qualificados para reatribuição no
 
  Para reatribuir o ponto de distribuição, a hierarquia de destino usa a Conta de Acesso do Site de Origem configurada para coletar dados do Provedor de SMS do site de origem. Para obter informações sobre as permissões necessárias e pré-requisitos adicionais, confira [Prerequisites for migration in System Center Configuration Manager](../../core/migration/prerequisites-for-migration.md) (Pré-requisitos para migração no System Center Configuration Manager).  
 
+## <a name="migrate-multiple-shared-distribution-points-at-the-same-time"></a>Migrar vários pontos de distribuição compartilhados ao mesmo tempo
+Começando da versão 1610, você pode usar a opção para **Transferir Ponto de Distribuição** para ter o processo do Configuration Manager em paralelo à reatribuição de até 50 pontos de distribuição compartilhados ao mesmo tempo. Isso inclui pontos de distribuição compartilhados de sites de origem com suporte que executam:  
+- Configuration Manager 2007
+- System Center 2012 Configuration Manager
+- System Center 2012 R2 Configuration Manager
+- Site do Branch Atual do System Center Configuration Manager
+
+Quando você transfere os pontos de distribuição, cada ponto de distribuição deve estar qualificado para ser atualizado ou transferido. O nome da ação e do processo envolvidos, atualizar ou transferir, depende de qual versão do Configuration Manager o site de origem executa. No entanto, atualizado ou reatribuído, os resultados finais são os mesmos: o ponto de distribuição é atribuído a um de seus sites do Branch Atual com seu conteúdo no local.
+
+Antes da versão 1610, o Configuration Manager podia processar apenas um ponto de distribuição por vez. Agora, você pode transferir quantos pontos de distribuição desejar com as seguintes ressalvas:  
+- Embora você não possa selecionar vários pontos de distribuição para serem reatribuídos, quando tiver colocado mais de um em fila, o Configuration Manager os processará em paralelo em vez de esperar completar um antes de iniciar o próximo.  
+- Por padrão, são processados até 50 pontos de distribuição em paralelo de uma vez. Após a conclusão da reatribuição do primeiro ponto de distribuição, o Configuration Manager começará a processar o 51º e assim por diante.  
+- Quando você usa o SDK do Configuration Manager, pode modificar a propriedade **SharedDPImportThreadLimit** para ajustar o número de pontos de distribuição reatribuídos que o Configuration Manager pode processar em paralelo.
+
+
 ##  <a name="a-nameaboutmigratingcontenta-content-ownership-when-migrating-content"></a><a name="About_Migrating_Content"></a> Propriedade do conteúdo durante a migração de conteúdo  
- Ao migrar conteúdo para implantações, você deverá atribuir o objeto do conteúdo a um site na hierarquia de destino. Esse site, então, torna-se o proprietário desse conteúdo na hierarquia de destino. Embora o site de nível superior da hierarquia de destino seja o site que realmente migra os metadados de conteúdo, é o site atribuído que acessa os arquivos originais de conteúdo na rede.  
+ Ao migrar conteúdo para implantações, você deverá atribuir o objeto do conteúdo a um site na hierarquia de destino. Esse site, então, torna-se o proprietário desse conteúdo na hierarquia de destino. Embora o site de nível superior da hierarquia de destino seja o site que migra os metadados de conteúdo, é o site atribuído que acessa os arquivos de origem originais de conteúdo na rede.  
 
  Para minimizar a largura de banda de rede usada quando você migra conteúdo, considere transferir a propriedade do conteúdo para um site na hierarquia de destino que está fechada na rede para o local de conteúdo na hierarquia de origem. Como as informações de conteúdo na hierarquia de destino são compartilhadas globalmente, elas estarão disponíveis em todos os sites.  
 
@@ -197,6 +212,6 @@ Para identificar os pontos de distribuição qualificados para reatribuição no
 
 
 
-<!--HONumber=Nov16_HO1-->
+<!--HONumber=Dec16_HO3-->
 
 

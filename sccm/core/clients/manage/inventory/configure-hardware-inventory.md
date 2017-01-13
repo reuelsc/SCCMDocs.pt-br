@@ -1,5 +1,5 @@
 ---
-title: "Configurar o inventário de hardware | System Center Configuration Manager"
+title: "Configurar o inventário de hardware | Microsoft Docs"
 description: "Configure o inventário de hardware para todos os clientes ou para uma coleção no System Center Configuration Manager."
 ms.custom: na
 ms.date: 10/06/2016
@@ -17,8 +17,8 @@ author: nbigman
 ms.author: nbigman
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: 1134bb2f04152288e72d40b1b1083f415cb4e900
-ms.openlocfilehash: 41bf42228e41785a05359c08e8dfedae48d50e30
+ms.sourcegitcommit: 1a4a9da88caba55d9e340c7fb1f31f4e3b957f3e
+ms.openlocfilehash: f39714e53e1b38c162e2c0418356d223432fdd87
 
 
 ---
@@ -51,7 +51,7 @@ Use as etapas a seguir para configurar o inventário de hardware do System Cente
 
     -   **Agendamento de inventário de hardware** – Especifique o intervalo no qual os clientes coletam o inventário de hardware. Use o valor padrão de **7 dias** ou clique em **Agendamento** para configurar um intervalo personalizado.  
 
-7.  Defina outras configurações do cliente necessárias. Para obter uma lista de configurações do cliente de inventário de hardware que podem ser definidas, consulte a seção [Inventário de Hardware](../../../../core/clients/deploy/about-client-settings.md#BKMK_HardwareInventoryDeviceSettings) no tópico [Sobre as configurações de cliente no System Center Configuration Manager](../../../../core/clients/deploy/about-client-settings.md).  
+7.  Defina outras configurações do cliente necessárias. Para obter uma lista de configurações do cliente de inventário de hardware que podem ser definidas, consulte a seção [Inventário de Hardware](../../../../core/clients/deploy/about-client-settings.md#hardware-inventory) no tópico [Sobre as configurações de cliente no System Center Configuration Manager](../../../../core/clients/deploy/about-client-settings.md).  
 
 8.  Clique em **OK** para fechar a caixa de diálogo **Configurações Padrão** .  
 
@@ -59,6 +59,6 @@ Use as etapas a seguir para configurar o inventário de hardware do System Cente
 
 
 
-<!--HONumber=Nov16_HO1-->
+<!--HONumber=Dec16_HO3-->
 
 

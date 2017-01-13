@@ -1,5 +1,5 @@
 ---
-title: "Atualizar o Branch de Manutenção em Longo Prazo para o Branch Atual | System Center Configuration Manager"
+title: "Atualizar o Branch de Manutenção em Longo Prazo para o Branch Atual | Microsoft Docs"
 description: "Saiba como converter um site do Branch de Manutenção em Longo Prazo em um site do Branch Atual."
 ms.custom: na
 ms.date: 10/12/2016
@@ -16,15 +16,15 @@ author: Brenduns
 ms.author: brenduns
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: 835469e78e83bb54c43e530303d27b0918c531e6
-ms.openlocfilehash: efccff6e2a0b1708d4124648da4e173d41663bd1
+ms.sourcegitcommit: 10b1010ccbf3889c58c55b87e70b354559243c90
+ms.openlocfilehash: 37fa8da8b4acc3f22c9c435206eedde58d2754f0
 
 ---
 
 
 # <a name="upgrade-the-long-term-servicing-branch-to-the-current-branch"></a>Atualizar o Branch de Manutenção em Longo Prazo para o Branch Atual
 
-*Aplica-se a: System Center Configuration Manager (Branch de Manutenção em Longo Prazo)* 
+*Aplica-se a: System Center Configuration Manager (Branch de Manutenção em Longo Prazo)*
 
 Use este tópico para saber como atualizar (converter) um site e uma hierarquia que executa o LTSB (Branch de Manutenção em Longo Prazo) do Configuration Manager para o Branch Atual.
 
@@ -56,6 +56,6 @@ Quando concluído, seu site é convertido no Branch Atual, e os recursos anterio
 
 
 
-<!--HONumber=Nov16_HO1-->
+<!--HONumber=Dec16_HO3-->
 
 

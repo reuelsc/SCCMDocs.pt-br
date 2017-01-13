@@ -1,5 +1,5 @@
 ---
-title: Alertas e o sistema de status | System Center Configuration Manager
+title: Alertas e o sistema de status | Microsoft Docs
 description: "Configure alertas e use o sistema de status para ficar informado quanto ao estado da sua implantação do Configuration Manager."
 ms.custom: na
 ms.date: 10/06/2016
@@ -16,8 +16,8 @@ author: Brenduns
 ms.author: brenduns
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: 1134bb2f04152288e72d40b1b1083f415cb4e900
-ms.openlocfilehash: dda2e3af6ae14a949af5c70f300f8c7c6772e1a8
+ms.sourcegitcommit: 10b1010ccbf3889c58c55b87e70b354559243c90
+ms.openlocfilehash: ed692bdea055775890535d2666f09ba5f5c7c4e1
 
 
 ---
@@ -313,6 +313,6 @@ Como o sistema de status mantém configurações separadas para cada site, você
 
 
 
-<!--HONumber=Nov16_HO1-->
+<!--HONumber=Dec16_HO3-->
 
 

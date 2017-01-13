@@ -1,5 +1,5 @@
 ---
-title: Novidades no 1606 | System Center Configuration Manager
+title: Novidades no 1606 | Microsoft Docs
 description: "Veja os detalhes das alterações e os novos recursos introduzidos na versão 1606 do System Center Configuration Manager."
 ms.custom: na
 ms.date: 10/09/2016
@@ -16,8 +16,8 @@ author: Brenduns
 ms.author: brenduns
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: 0fbce476b8a9b91a88354fb4abfadfd2526ca5e8
-ms.openlocfilehash: 8de28e112a2d7faf1d8aca9b7214498e9a65f919
+ms.sourcegitcommit: f6e34e39d267f3bba26d6aa6a912eb4ba4aa3ab2
+ms.openlocfilehash: 16d10bdf1ddd810800e776c33f3f059899b7f92b
 
 ---
 # <a name="what39s-new-in-version-1606-of-system-center-configuration-manager"></a>Novidades da versão 1606 do System Center Configuration Manager
@@ -164,11 +164,11 @@ Para obter detalhes, confira [Prepare site system roles for operating system dep
 ## <a name="compliance-settings"></a>Configurações de conformidade
 
 ### <a name="smart-lock-setting-for-android-devices"></a>Configuração do SmartLock para dispositivos Android
-Uma nova configuração, **Permitir Smart Lock e outros agentes de confiança**, foi adicionada ao item de configuração do Android e Samsung KNOX.
+Uma nova configuração, **Permitir Smart Lock e outros agentes de confiança**, foi adicionada ao item de configuração do Android e Samsung KNOX Standard.
 
 Essa configuração permite controlar o recurso Smart Lock em dispositivos Android compatíveis. Essa capacidade do telefone, às vezes conhecida como agentes de confiança, permite desabilitar ou ignorar a senha da tela de bloqueio do dispositivo se o dispositivo estiver em um local confiável, como quando ele está conectado a um dispositivo Bluetooth específico, ou quando ele está perto de uma marca NFC. Você pode usar essa configuração para impedir que usuários finais configurem o Smart Lock.
 
-Para obter detalhes, consulte [Como criar itens de configuração para dispositivos Android e Samsung KNOX gerenciados sem o cliente do System Center Configuration Manager](../../../compliance/deploy-use/create-configuration-items-for-android-and-samsung-knox-devices-managed-without-the-client.md).
+Para obter detalhes, consulte [Como criar itens de configuração para dispositivos Android e Samsung KNOX Standard gerenciados sem o cliente do System Center Configuration Manager](../../../compliance/deploy-use/create-configuration-items-for-android-and-samsung-knox-devices-managed-without-the-client.md).
 
 ## <a name="device-configuration-and-protection"></a>Configuração e proteção do dispositivo
 
@@ -218,13 +218,13 @@ Para detalhes, confira [Pré-declarar dispositivos com número de série do iOS 
 
 Agora você pode habilitar o monitoramento de serviços de Atestado de Integridade para computadores com Windows 10 usando apenas a infraestrutura local para que computadores sem acesso à Internet possam relatar o DHA (Atestado de Integridade do Dispositivo).
 
-Para obter detalhes, consulte [Atestado de integridade do System Center Configuration Manager](../../../core/servers/manage/health-attestation.md#How-to-enable-Health-Attestation-service-communication-on-Configuration-Manager-client-computers).  
+Para obter detalhes, consulte [Atestado de integridade do System Center Configuration Manager](../../../core/servers/manage/health-attestation.md#how-to-enable-health-attestation-service-communication-on-configuration-manager-client-computers).  
 
 ## <a name="remote-control"></a>Controle remoto
 Conceda os seus usuários finais a oportunidade de aceitar ou negar transferências de arquivo antes de transferir conteúdo da área de transferência compartilhada em uma seção de controle remoto. Os usuários finais precisarão apenas conceder a permissão uma vez por sessão e o visualizador não terá a capacidade de conceder a si mesmo a permissão para prosseguir com a transferência de arquivos. Você pode encontrar essa nova configuração no espaço de trabalho **Administração**, em seguida, navegar para **Configurações do Cliente**, em seguida abrir o painel **Ferramentas Remotas** em **Configurações Padrão**.
 
 
 
-<!--HONumber=Nov16_HO1-->
+<!--HONumber=Dec16_HO3-->
 
 

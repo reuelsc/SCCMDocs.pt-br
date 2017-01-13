@@ -1,5 +1,5 @@
 ---
-title: "Implantar linhas de base de configuração | System Center Configuration Manager"
+title: "Implantar linhas de base de configuração | Microsoft Docs"
 description: "Implante linhas de base de configuração para definir implantações da linha de base de configuração e para adicionar ou remover linhas de base de configuração de implantações."
 ms.custom: na
 ms.date: 10/06/2016
@@ -17,8 +17,8 @@ author: robstackmsft
 ms.author: robstack
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: 1134bb2f04152288e72d40b1b1083f415cb4e900
-ms.openlocfilehash: 47aad22bc88d3a466767e4d131122fbee38e3fd7
+ms.sourcegitcommit: f9e939d871e95a3248d8e5d96cb73063a81fd5cf
+ms.openlocfilehash: 9c9e6b7780c7c10c20a60dbbbf506e916031eb88
 
 
 ---
@@ -60,6 +60,6 @@ Use a caixa de diálogo **Implantar Linhas de Base de Configuração** para defi
 
 
 
-<!--HONumber=Nov16_HO1-->
+<!--HONumber=Dec16_HO3-->
 
 

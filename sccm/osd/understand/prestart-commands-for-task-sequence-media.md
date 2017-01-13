@@ -1,5 +1,5 @@
 ---
-title: "Comandos prestart para mídia de sequência de tarefas | Configuration Manager"
+title: "Comandos prestart para mídia de sequência de tarefas | Microsoft Docs"
 description: "Crie um script para usar o comando prestart, distribuir o conteúdo associado a esse comando e configurar o comando prestart na mídia."
 ms.custom: na
 ms.date: 10/06/2016
@@ -17,8 +17,8 @@ author: Dougeby
 ms.author: dougeby
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: 1134bb2f04152288e72d40b1b1083f415cb4e900
-ms.openlocfilehash: 40787837e17c31f788c6c20a764460aa9dba2769
+ms.sourcegitcommit: 74341fb60bf9ccbc8822e390bd34f9eda58b4bda
+ms.openlocfilehash: 1c396534425179c6828d48acc578295167c566be
 
 
 ---
@@ -81,6 +81,6 @@ env("MyCustomVariable") = "varname"
 
 
 
-<!--HONumber=Nov16_HO1-->
+<!--HONumber=Dec16_HO3-->
 
 

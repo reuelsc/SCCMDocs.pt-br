@@ -1,5 +1,5 @@
 ---
-title: "Monitorar implantações de sistemas operacionais | Configuration Manager"
+title: "Monitorar implantações de sistema operacional | Microsoft Docs"
 description: "Para ajudar a monitorar objetos de implantação do sistema operacional, o console do Configuration Manager fornece alertas, relatórios e vários indicadores de status."
 ms.custom: na
 ms.date: 10/06/2016
@@ -17,8 +17,8 @@ author: Dougeby
 ms.author: dougeby
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: 1134bb2f04152288e72d40b1b1083f415cb4e900
-ms.openlocfilehash: 893e5fe2acee0ffedb7759be85fb2f911f631611
+ms.sourcegitcommit: 74341fb60bf9ccbc8822e390bd34f9eda58b4bda
+ms.openlocfilehash: 154c0a286e6b9ccedc7545eb010967ac00d35407
 
 
 ---
@@ -98,6 +98,6 @@ O console do Configuration Manager fornece as seguintes maneiras para ajudar a m
 
 
 
-<!--HONumber=Nov16_HO1-->
+<!--HONumber=Dec16_HO3-->
 
 

@@ -1,5 +1,5 @@
 ---
-title: Gerenciar acesso a email | System Center Configuration Manager
+title: Gerenciar o acesso ao email | Microsoft Docs
 description: Saiba como usar o acesso condicional do System Center Configuration Manager para gerenciar o acesso ao email do Exchange.
 ms.custom: na
 ms.date: 10/04/2016
@@ -12,12 +12,12 @@ ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 4544088a-4752-4e3a-aa0a-049f10d8f178
 caps.latest.revision: 24
-author: karthikaraman
-ms.author: karaman
+author: andredm7
+ms.author: andredm
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: 5c6cf3c1697b49708aa5192b67b08b700da7dc72
-ms.openlocfilehash: c1797910f2b7ceda451c2ccb23f66a4b2bd4b6ff
+ms.sourcegitcommit: c13c6268fa76ade7feb0981f9c4a6e325e393aca
+ms.openlocfilehash: 0bbe25598f38f9cf3c15375748fee09c43dfb928
 
 
 ---
@@ -37,7 +37,7 @@ Você pode gerenciar o acesso a:
 
 Você pode controlar o acesso ao Exchange Online e Exchange Local do cliente de email internos nas seguintes plataformas:  
 
--   Android 4.0 e posterior, Samsung Knox Standard 4.0 e posterior  
+-   Android 4.0 e posterior, Samsung KNOX Standard 4.0 e posterior  
 
 -   iOS 7.1 e posterior  
 
@@ -91,7 +91,7 @@ Navegadores sem suporte serão bloqueados. Não há suporte para aplicativos do 
 
  Você pode bloquear o acesso ao email do Exchange a partir do cliente de email Exchange ActiveSync interno aos dispositivos das seguintes plataformas:  
 
--   Android 4.0 e posterior, Samsung Knox Standard 4.0 e posterior  
+-   Android 4.0 e posterior, Samsung KNOX Standard 4.0 e posterior  
 
 -   iOS 7.1 e posterior  
 
@@ -363,6 +363,6 @@ Navegadores sem suporte serão bloqueados. Não há suporte para aplicativos do 
 
 
 
-<!--HONumber=Nov16_HO1-->
+<!--HONumber=Dec16_HO3-->
 
 

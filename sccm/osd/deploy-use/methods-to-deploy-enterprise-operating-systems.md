@@ -1,5 +1,5 @@
 ---
-title: "Métodos para implantar sistemas operacionais corporativos | Configuration Manager"
+title: "Métodos para implantar sistemas operacionais corporativos | Microsoft Docs"
 description: "Saiba mais sobre os métodos que você pode usar para implantar sistemas operacionais corporativos no seu ambiente do System Center Configuration Manager."
 ms.custom: na
 ms.date: 10/06/2016
@@ -16,8 +16,8 @@ author: Dougeby
 ms.author: dougeby
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: 1134bb2f04152288e72d40b1b1083f415cb4e900
-ms.openlocfilehash: 40f6f414ff0a2687f250f101acbae775a777bf8a
+ms.sourcegitcommit: 74341fb60bf9ccbc8822e390bd34f9eda58b4bda
+ms.openlocfilehash: 6cec9275009ac19ad65a03792c1bc4d0c528ea4c
 
 
 ---
@@ -25,7 +25,7 @@ ms.openlocfilehash: 40f6f414ff0a2687f250f101acbae775a777bf8a
 
 *Aplica-se a: System Center Configuration Manager (Branch Atual)*
 
-Existem diferentes métodos que você pode usar para implantar um sistema operacional no seu ambiente do System Center Configuration Manager. 
+Existem diferentes métodos que você pode usar para implantar um sistema operacional no seu ambiente do System Center Configuration Manager.
 
 -   [Usar PXE para implantar o Windows na rede](use-pxe-to-deploy-windows-over-the-network.md)  
 
@@ -43,6 +43,6 @@ Existem diferentes métodos que você pode usar para implantar um sistema operac
 
 
 
-<!--HONumber=Nov16_HO1-->
+<!--HONumber=Dec16_HO3-->
 
 

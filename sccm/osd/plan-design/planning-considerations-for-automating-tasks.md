@@ -1,5 +1,5 @@
 ---
-title: "Considerações de planejamento para automatizar tarefas | Configuration Manager"
+title: "Considerações sobre o planejamento para automatizar tarefas | Microsoft Docs"
 description: Planeje antes de automatizar tarefas no System Center Configuration Manager.
 ms.custom: na
 ms.date: 10/06/2016
@@ -17,8 +17,8 @@ author: Dougeby
 ms.author: dougeby
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: 1134bb2f04152288e72d40b1b1083f415cb4e900
-ms.openlocfilehash: a439d847adb129a341b33be8e1a1674c72184e77
+ms.sourcegitcommit: 74341fb60bf9ccbc8822e390bd34f9eda58b4bda
+ms.openlocfilehash: 830f715b688cc9929a179da94eba9c81de8db11a
 
 
 ---
@@ -183,7 +183,7 @@ ms.openlocfilehash: a439d847adb129a341b33be8e1a1674c72184e77
 > [!TIP]  
 >  A sequência de tarefas grava a ID do pacote e a linha de comando prestart, incluindo o valor das variáveis de sequência de tarefas, no arquivo de log CreateTSMedia.log, no computador que executa o console do Configuration Manager. Você poderá analisar esse arquivo de log para verificar o valor das variáveis de sequência de tarefas.  
 
-##  <a name="a-namebkmktscreatea-create-a-task-sequence"></a><a name="BKMK_TSCreate"></a> Criar uma sequência de tarefas  
+##  <a name="a-namebkmktscreatea-create-a--task-sequence"></a><a name="BKMK_TSCreate"></a> Criar uma sequência de tarefas  
  Você pode criar sequências de tarefas usando o Assistente para Criar Sequência de Tarefas. O assistente pode criar sequências de tarefas internas que executam tarefas específicas ou sequências de tarefas personalizadas que podem realizar muitas tarefas diferentes.  
 
  Por exemplo, você pode criar sequências de tarefas que criam e capturam uma imagem do sistema operacional de um computador de referência, instalar uma imagem de um sistema operacional existente em um computador de destino ou criar uma sequência de tarefas personalizada que executa uma tarefa personalizada. Você pode usar sequências de tarefas personalizadas para realizar implantações de sistemas operacionais especializados.  
@@ -326,6 +326,6 @@ ms.openlocfilehash: a439d847adb129a341b33be8e1a1674c72184e77
 
 
 
-<!--HONumber=Nov16_HO1-->
+<!--HONumber=Dec16_HO3-->
 
 

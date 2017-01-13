@@ -1,5 +1,5 @@
 ---
-title: "Fluxograma — Replicação de atualização | System Center Configuration Manager"
+title: "Fluxograma — atualizar replicação | Microsoft Docs"
 description: "Consulte o processo pelo qual uma atualização no console selecionado para instalar é replicada para outros sites."
 ms.custom: na
 ms.date: 10/06/2016
@@ -16,8 +16,8 @@ author: Brenduns
 ms.author: brenduns
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: 1134bb2f04152288e72d40b1b1083f415cb4e900
-ms.openlocfilehash: 754a336335116e915a86e9e94393642e87d91f8a
+ms.sourcegitcommit: 10b1010ccbf3889c58c55b87e70b354559243c90
+ms.openlocfilehash: cefde9fa6894e39715257f0453ccfe160a55919e
 
 ---
 # <a name="flowchart---update-replication-for-system-center-configuration-manager"></a>Fluxograma — Replicação de atualização para o System Center Configuration Manager
@@ -30,6 +30,6 @@ Esses fluxos de dados exibem o processo pelo qual uma atualização no console s
 
 
 
-<!--HONumber=Nov16_HO1-->
+<!--HONumber=Dec16_HO3-->
 
 

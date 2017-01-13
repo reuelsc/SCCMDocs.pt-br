@@ -1,5 +1,5 @@
 ---
-title: "Planejando permissões de modelo de certificado | System Center Configuration Manager"
+title: "Planejando permissões de modelo de certificado | Microsoft Docs"
 description: "Saiba mais sobre o planejamento das permissões que você precisa para configurar os modelos de certificado que o System Center Configuration Manager usa."
 ms.custom: na
 ms.date: 10/06/2016
@@ -17,8 +17,8 @@ author: Nbigman
 ms.author: nbigman
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: 1134bb2f04152288e72d40b1b1083f415cb4e900
-ms.openlocfilehash: 38f4176d40bffd20b9e3076213957765dfb0c7f3
+ms.sourcegitcommit: 238ef5814c0c1b832c28d63c9f3879e21a6c439b
+ms.openlocfilehash: 3c3725678561c32fce316ed1209ac8fe73a0eed1
 
 
 ---
@@ -36,7 +36,7 @@ As informações a seguir podem ajudar a planejar como configurar permissões pa
 
 -   Leitura para a conta que executa o console do System Center Configuration Manager  
 
- Para obter mais informações sobre essas permissões de segurança, consulte [Etapa 1: Instalar e configurar o Serviço de Registro de Dispositivo de Rede e Dependências](../deploy-use/certificate-infrastructure.md#BKMK_Step1).  
+ Para obter mais informações sobre essas permissões de segurança, consulte [Etapa 1: Instalar e configurar o Serviço de Registro de Dispositivo de Rede e Dependências](../deploy-use/certificate-infrastructure.md#step-1-install-and-configure-the-network-device-enrollment-service-and-dependencies).  
 
  Quando você utiliza essa configuração padrão, os usuários e os dispositivos não podem solicitar diretamente certificados dos modelos de certificado, e todas as solicitações devem ser iniciadas pelo Serviço de Registro de Dispositivo de Rede. Essa é uma restrição importante, pois esses modelos de certificado devem ser configurados com **Fornecer na solicitação** para a Entidade do certificado, o que significa que existe um risco de representação se um usuário não autorizado ou um dispositivo comprometido solicitar um certificado. Na configuração padrão, o Serviço de Registro de Dispositivo de Rede deve iniciar essa solicitação. No entanto, esse risco de representação permanece se o serviço que executa o Serviço de Registro de Dispositivo de Rede está comprometido. Para evitar esse risco, siga todas as práticas recomendadas de segurança para o Serviço de Registro de Dispositivo de Rede e o computador que executa esse serviço de função.  
 
@@ -65,6 +65,6 @@ As informações a seguir podem ajudar a planejar como configurar permissões pa
 
 
 
-<!--HONumber=Nov16_HO1-->
+<!--HONumber=Dec16_HO3-->
 
 

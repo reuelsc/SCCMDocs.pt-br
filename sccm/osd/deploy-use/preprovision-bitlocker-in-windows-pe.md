@@ -1,5 +1,5 @@
 ---
-title: "Pré-provisionar o BitLocker no Windows PE | Configuration Manager"
+title: "Pré-provisionar o BitLocker no Windows PE | Microsoft Docs"
 description: "A tarefa de Pré-provisionar o BitLocker no Configuration Manager habilita o BitLocker no Ambiente de Pré-Instalação do Windows antes da implantação de sistema operacional."
 ms.custom: na
 ms.date: 10/06/2016
@@ -17,8 +17,8 @@ author: Dougeby
 ms.author: dougeby
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: 1134bb2f04152288e72d40b1b1083f415cb4e900
-ms.openlocfilehash: f047e4a7c9325e0f8662b4f567529fd439c76b0c
+ms.sourcegitcommit: 74341fb60bf9ccbc8822e390bd34f9eda58b4bda
+ms.openlocfilehash: baca498dbc5b8e168852aa3c18ee23a9c483e69c
 
 
 ---
@@ -63,6 +63,6 @@ A etapa da sequência de tarefas **Pré-provisionar o BitLocker** do System Cent
 
 
 
-<!--HONumber=Nov16_HO1-->
+<!--HONumber=Dec16_HO3-->
 
 

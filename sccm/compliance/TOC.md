@@ -1,10 +1,10 @@
-# [Entender e explorar](understand/ensure-device-compliance.md)
+# Entender e explorar
 ## [Garantir a conformidade do dispositivo](understand/ensure-device-compliance.md)
 
-# [Introdução](get-started/get-started-with-compliance-settings.md)
+# Introdução
 ## [Introdução às configurações de conformidade](get-started/get-started-with-compliance-settings.md)
 
-# [Planejamento e design](plan-design/plan-for-and-configure-compliance-settings.md)
+# Planejamento e design
 ## [Planejar e definir as configurações de conformidade](plan-design/plan-for-and-configure-compliance-settings.md)
 ## [Tarefas comuns para gerenciar a conformidade](plan-design/common-tasks-for-managing-compliance.md)
 ### [Dispositivos com o cliente do Configuration Manager](plan-design/common-tasks-for-managing-compliance-on-devices-with-the-client.md)
@@ -12,7 +12,7 @@
 ### [Criar e implantar linhas de base de configuração](plan-design/common-tasks-for-creating-and-deploying-configuration-baselines.md)
 ## [Segurança e privacidade](plan-design/security-and-privacy-for-compliance-settings.md)
 
-# [Implantar e usar](deploy-use/create-configuration-items.md)
+# Implantar e usar
 
 ## [Criar itens de configuração](deploy-use/create-configuration-items.md)
 ### [Dispositivos gerenciados com o cliente do Configuration Manager](deploy-use/configuration-items-for-devices-managed-with-the-client.md)
@@ -23,13 +23,13 @@
 #### [Windows 8.1 e Windows 10](deploy-use/create-configuration-items-for-windows-8.1-and-windows-10-devices-managed-without-the-client.md)
 #### [Windows Phone](deploy-use/create-configuration-items-for-windows-phone-devices-managed-without-the-client.md)
 #### [iOS e Mac OS X](deploy-use/create-configuration-items-for-ios-and-mac-os-x-devices-managed-without-the-client.md)
-#### [Android e Samsung KNOX](deploy-use/create-configuration-items-for-android-and-samsung-knox-devices-managed-without-the-client.md)
-### [Criar itens de configuração filho](deploy-use/create-child-configuration-items.md)
+#### [Android e Samsung KNOX Standard](deploy-use/create-configuration-items-for-android-and-samsung-knox-devices-managed-without-the-client.md)
+## [Criar itens de configuração filho](deploy-use/create-child-configuration-items.md)
 
 ## [Criar linhas de base de configuração](deploy-use/create-configuration-baselines.md)
 ## [Implantar linhas de base de configuração](deploy-use/deploy-configuration-baselines.md)
 
-## [Gerenciar dados de configuração](deploy-use/management-tasks-for-configuration-data.md)
+## Gerenciar dados de configuração
 ### [Gerenciar dados de configuração](deploy-use/management-tasks-for-configuration-data.md)
 ### [Importar dados de configuração](deploy-use/import-configuration-data.md)
 
@@ -39,7 +39,6 @@
 ## [Monitorar as configurações de conformidade](deploy-use/monitor-compliance-settings.md)
 
 
-
-<!--HONumber=Nov16_HO1-->
+<!--HONumber=Dec16_HO3-->
 
 

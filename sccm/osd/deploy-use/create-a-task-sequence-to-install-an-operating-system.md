@@ -1,5 +1,5 @@
 ---
-title: "Criar uma sequência de tarefas para instalar um sistema operacional | Configuration Manager"
+title: "Criar uma sequência de tarefas para instalar um sistema operacional | Microsoft Docs"
 description: "Use sequências de tarefas no System Center Configuration Manager para instalar automaticamente uma imagem do sistema operacional e outros tipos de conteúdo em um computador de destino."
 ms.custom: na
 ms.date: 10/06/2016
@@ -16,8 +16,8 @@ author: Dougeby
 ms.author: dougeby
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: 1134bb2f04152288e72d40b1b1083f415cb4e900
-ms.openlocfilehash: 5c2823ddfc873864b7617d730e14742b7451ef0f
+ms.sourcegitcommit: 74341fb60bf9ccbc8822e390bd34f9eda58b4bda
+ms.openlocfilehash: 41aa6cf69a746f0ab67d804f1ee0c70db05d65ee
 
 
 ---
@@ -159,6 +159,6 @@ Use sequências de tarefas no System Center Configuration Manager para instalar 
 
 
 
-<!--HONumber=Nov16_HO1-->
+<!--HONumber=Dec16_HO3-->
 
 

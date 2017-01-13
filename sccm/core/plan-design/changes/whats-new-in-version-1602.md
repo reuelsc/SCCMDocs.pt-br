@@ -1,5 +1,5 @@
 ---
-title: Novidades no 1602 | System Center Configuration Manager
+title: Novidades no 1602 | Microsoft Docs
 description: "Veja os detalhes das alterações e os novos recursos introduzidos na versão 1602 do System Center Configuration Manager."
 ms.custom: na
 ms.date: 10/06/2016
@@ -16,8 +16,8 @@ author: Brenduns
 ms.author: brenduns
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: f777295958e9cbc729e3759d354521c96ae3e8ac
-ms.openlocfilehash: 0803a13bb58f0d02803c34e6a3cb20f5e6ba60b7
+ms.sourcegitcommit: 6ed317d45d90758832d4157985dd95d5e253c6fc
+ms.openlocfilehash: 4d7b93c95730edde3af254e813c72df279c7285d
 
 ---
 # <a name="what39s-new-in-version-1602-of-system-center-configuration-manager"></a>Novidades da versão 1602 do System Center Configuration Manager
@@ -114,10 +114,10 @@ Você encontrará esses aplicativos no nó **Aplicativos** do console do Configu
 
  Para obter detalhes, consulte [Como criar itens de configuração para dispositivos Windows 8.1 e Windows 10 gerenciados sem o cliente do System Center Configuration Manager](../../../compliance/deploy-use/create-configuration-items-for-windows-8.1-and-windows-10-devices-managed-without-the-client.md).  
 
-### <a name="kiosk-mode-settings-for-android-samsung-knox-devices"></a>Configurações do modo de quiosque para dispositivos Android Samsung KNOX  
- O modo de quiosque permite bloquear um dispositivo para permitir que somente alguns recursos funcionem. Por exemplo, você pode permitir que um dispositivo execute apenas um aplicativo gerenciado que você especificar ou pode desabilitar os botões de volume em um dispositivo. Essas configurações podem ser usadas para um modelo de demonstração de um dispositivo ou um dispositivo que é dedicado a apenas uma função, como um dispositivo de ponto de venda. No Configuration Manager, agora é possível especificar as configurações do modo de quiosque para dispositivos Samsung KNOX.  
+### <a name="kiosk-mode-settings-for-android-samsung-knox-standard-devices"></a>Configurações do modo de quiosque para dispositivos Android Samsung KNOX Standard  
+ O modo de quiosque permite bloquear um dispositivo para permitir que somente alguns recursos funcionem. Por exemplo, você pode permitir que um dispositivo execute apenas um aplicativo gerenciado que você especificar ou pode desabilitar os botões de volume em um dispositivo. Essas configurações podem ser usadas para um modelo de demonstração de um dispositivo ou um dispositivo que é dedicado a apenas uma função, como um dispositivo de ponto de venda. No Configuration Manager, agora é possível especificar as configurações do modo de quiosque para dispositivos Samsung KNOX Standard.  
 
- Para obter detalhes, consulte [Como criar itens de configuração para dispositivos Android e Samsung KNOX gerenciados sem o cliente do System Center Configuration Manager](../../../compliance/deploy-use/create-configuration-items-for-android-and-samsung-knox-devices-managed-without-the-client.md).  
+ Para obter detalhes, consulte [Como criar itens de configuração para dispositivos Android e Samsung KNOX Standard gerenciados sem o cliente do System Center Configuration Manager](../../../compliance/deploy-use/create-configuration-items-for-android-and-samsung-knox-devices-managed-without-the-client.md).  
 
 ## <a name="conditional-access"></a>Acesso condicional  
 
@@ -225,6 +225,6 @@ O Configuration Manager pode solicitar o status do Bloqueio de Ativação de dis
 
 
 
-<!--HONumber=Nov16_HO1-->
+<!--HONumber=Dec16_HO3-->
 
 

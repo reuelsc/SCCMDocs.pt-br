@@ -1,5 +1,5 @@
 ---
-title: "Operações e manutenção de consultas | System Center Configuration Manager"
+title: "Operações e manutenção de consultas | Microsoft Docs"
 description: "Veja uma lista de tópicos sobre consultas no System Center Configuration Manager. O foco é a operação e a manutenção."
 ms.custom: na
 ms.date: 10/06/2016
@@ -17,8 +17,8 @@ author: robstackmsft
 ms.author: robstack
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: 1134bb2f04152288e72d40b1b1083f415cb4e900
-ms.openlocfilehash: 3720aec5b831585e6399de129f1f138218766ebf
+ms.sourcegitcommit: 10b1010ccbf3889c58c55b87e70b354559243c90
+ms.openlocfilehash: 82648626882ddd23db0e40cfb18621a5953a1786
 
 
 ---
@@ -39,6 +39,6 @@ Use os tópicos a seguir nesta seção para obter informações sobre operaçõe
 
 
 
-<!--HONumber=Nov16_HO1-->
+<!--HONumber=Dec16_HO3-->
 
 

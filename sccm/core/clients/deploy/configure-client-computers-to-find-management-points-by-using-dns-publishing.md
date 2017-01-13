@@ -1,5 +1,5 @@
 ---
-title: "Configurar clientes para localizar pontos de gerenciamento usando a publicação do DNS | System Center Configuration Manager"
+title: "Configurar clientes para localizar pontos de gerenciamento com a publicação do DNS | Microsoft Docs"
 description: "Defina computadores cliente para localizar pontos de gerenciamento usando a publicação do DNS no System Center Configuration Manager."
 ms.custom: na
 ms.date: 10/06/2016
@@ -12,12 +12,12 @@ ms.tgt_pltfrm: na
 ms.topic: get-started-article
 ms.assetid: 03cec407-0f9f-454f-a360-b005af738d29
 caps.latest.revision: 6
-author: Mtillman
-ms.author: mtillman
+author: nbigman
+ms.author: nbigman
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: 1134bb2f04152288e72d40b1b1083f415cb4e900
-ms.openlocfilehash: c6470a39519bc25357ba5d9721afe9c39a28c348
+ms.sourcegitcommit: 55c953f312a9fb31e7276dde2fdd59f8183b4e4d
+ms.openlocfilehash: 9eadb91a575323b4c36af14962f370046ea513ce
 
 
 ---
@@ -60,6 +60,6 @@ Clientes no System Center Configuration Manager devem localizar um ponto de gere
 
 
 
-<!--HONumber=Nov16_HO1-->
+<!--HONumber=Dec16_HO3-->
 
 

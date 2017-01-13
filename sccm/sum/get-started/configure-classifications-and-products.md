@@ -1,6 +1,6 @@
 ---
 
-title: "Configurar classificações e produtos para sincronizar | System Center Configuration Manager"
+title: "Configurar classificações e produtos para sincronizar | Microsoft Docs"
 description: "Siga estas etapas para configurar classificações e produtos para sincronizar no console do Configuration Manager."
 keywords: 
 author: dougeby
@@ -14,8 +14,8 @@ ms.technology:
 - configmgr-sum
 ms.assetid: 5ddde4e6-d553-4182-b752-6bc8b4a26745
 translationtype: Human Translation
-ms.sourcegitcommit: 1134bb2f04152288e72d40b1b1083f415cb4e900
-ms.openlocfilehash: 46cf461c92348e1a90533518355f2b5982ae5770
+ms.sourcegitcommit: e6cf8c799b5be2f7dbb6fadadddf702ec974ae45
+ms.openlocfilehash: 6add66e625c790b65edf64216c2262a5d082f820
 
 
 
@@ -71,6 +71,6 @@ Inicie a sincronização de atualizações de software para recuperar atualizaç
 
 
 
-<!--HONumber=Nov16_HO1-->
+<!--HONumber=Dec16_HO3-->
 
 

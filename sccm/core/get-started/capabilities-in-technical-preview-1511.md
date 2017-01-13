@@ -1,5 +1,5 @@
 ---
-title: Funcionalidades no Technical Preview 1511 do System Center Configuration Manager
+title: Funcionalidades do Technical Preview 1511 do System Center Configuration Manager | Microsoft Docs
 description: "Saiba mais sobre os recursos disponíveis no Technical Preview do System Center Configuration Manager, versão 1511."
 ms.custom: na
 ms.date: 10/06/2016
@@ -16,8 +16,8 @@ author: Brenduns
 ms.author: brenduns
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: 1134bb2f04152288e72d40b1b1083f415cb4e900
-ms.openlocfilehash: 4616ba44485e4c528297441f1cf99e25add2dcf3
+ms.sourcegitcommit: 3bf44f850722afdb8dfe5922c8ceff11c9b56d08
+ms.openlocfilehash: 8ef43a2f10a7ef1cbb101f6737c606c72ccdce4f
 
 ---
 # <a name="capabilities-in-technical-preview-1511-for-system-center-configuration-manager"></a>Funcionalidades no Technical Preview 1511 do System Center Configuration Manager
@@ -147,7 +147,7 @@ Para instalar um site que usa um grupo de disponibilidade do SQL Server:
 
 3.  Depois de fornecer essas informações, conclua a instalação com o processo e as configurações normais.  
 
-##  <a name="a-namebkmkclusterserverupdatesa-service-a-server-cluster"></a><a name="BKMK_ClusterServerUpdates"></a> Atender a um cluster de servidores  
+##  <a name="a-namebkmkclusterserverupdatesa-service-a--server-cluster"></a><a name="BKMK_ClusterServerUpdates"></a> Atender a um cluster de servidores  
 Agora você pode criar uma coleção que contém os servidores em um cluster e definir as configurações de cluster a serem usadas ao implantar atualizações no cluster. É possível controlar o percentual de servidores que estão online em um determinado momento, bem como configurar scripts pré e pós-implantação do PowerShell para executar ações personalizadas.  
 
 **Problemas conhecidos desta versão:**  
@@ -208,6 +208,6 @@ Tente concluir a seguinte tarefa e depois use as informações de comentários p
 
 
 
-<!--HONumber=Nov16_HO1-->
+<!--HONumber=Dec16_HO3-->
 
 

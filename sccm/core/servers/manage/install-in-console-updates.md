@@ -1,5 +1,5 @@
 ---
-title: "Atualizações no console | System Center Configuration Manager"
+title: "Atualizações no console | Microsoft Docs"
 description: "O System Center Configuration Manager sincroniza com a nuvem da Microsoft para obter atualizações que você pode instalar no console."
 ms.custom: na
 ms.date: 10/06/2016
@@ -16,8 +16,8 @@ author: Brenduns
 ms.author: brenduns
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: f777295958e9cbc729e3759d354521c96ae3e8ac
-ms.openlocfilehash: b9721737b4181d8f5e41224c3e2c32ae41647554
+ms.sourcegitcommit: 238ef5814c0c1b832c28d63c9f3879e21a6c439b
+ms.openlocfilehash: 1b7063d45c6dc9b42e5002f684043a8e846416a2
 
 
 ---
@@ -51,11 +51,11 @@ Antes de configurar o ponto de conexão de serviço, entenda e planeje seus usos
 
 -   O ponto de conexão de serviço é usado para carregar informações de uso sobre seu site. Essas informações ajudam o serviço de nuvem da Microsoft a identificar as atualizações disponíveis para a versão atual de sua infraestrutura. Para obter mais informações, consulte [Dados de diagnóstico e de uso para o System Center Configuration Manager](../../../core/plan-design/diagnostics/diagnostics-and-usage-data.md)  
 
--   O ponto de conexão de serviço é usado para gerenciar dispositivos com o Microsoft Intune e que usam o gerenciamento de dispositivo móvel local do Configuration Manager. Para obter mais informações, consulte [Hybrid mobile device management (MDM) with System Center Configuration Manager and Microsoft Intune](../../../mdm/plan-design/hybrid-mobile-device-management.md) (MDM [gerenciamento de dispositivo móvel] híbrido com o System Center Configuration Manager e o Microsoft Intune).  
+-   O ponto de conexão de serviço é usado para gerenciar dispositivos com o Microsoft Intune e que usam o gerenciamento de dispositivo móvel local do Configuration Manager. Para obter mais informações, consulte [Hybrid mobile device management (MDM) with System Center Configuration Manager and Microsoft Intune](../../../mdm/understand/hybrid-mobile-device-management.md) (MDM [gerenciamento de dispositivo móvel] híbrido com o System Center Configuration Manager e o Microsoft Intune).  
 
 Para entender melhor o que acontece quando as atualizações são baixadas, consulte:  
 
--   [Fluxograma — Baixar atualizações do System Center Configuration Manager](../../../core/servers/manage/download-updates-flowchart.md).  
+-   [Fluxograma — Baixar atualizações do System Center Configuration Manager](../../../core/servers/manage/download-updates-flowchart.md)
 
 -   [Fluxograma — Replicação de atualização para o System Center Configuration Manager](../../../core/servers/manage/update-replication-flowchart.md)  
 
@@ -69,7 +69,7 @@ Por padrão, os **Pacotes de atualização** (SMS_CM_Updatepackages) faz parte d
     - Um usuário com essa função de segurança e acesso ao escopo de segurança **Padrão** pode exibir atualizações, instalar atualizações, habilitar recursos durante a instalação e exibir recursos após uma atualização ter sido instalada, mas não habilitar os recursos após a atualização ter sido instalada anteriormente.
 
 - **Analista somente leitura** com permissão para **Ler** :
-  -  Um usuário com essa função de segurança e acesso ao escopo **Padrão** pode exibir atualizações, mas não instalá-las, e pode exibir recursos após uma atualização ter sido instalada, mas não pode habilitá-los.
+  -  Um usuário com essa função de segurança e acesso ao escopo **Padrão** pode exibir atualizações, mas não as instalar, além de poder exibir recursos após uma atualização ter sido instalada, mas não as habilitar. Atualização para 1606 de 1511
 
 **Resumo das permissões necessárias para atualizações e manutenção:**   
   - Use uma conta a que tenha sido atribuída uma função de segurança que inclua a classe **Atualizar pacotes** com permissões para **Modificar** e **Ler** .
@@ -100,13 +100,14 @@ Antes de instalar uma nova atualização de dentro do console do Configuration M
 
 - Atualizar para a 1606 da 1511 ou da 1602: consulte [Lista de verificação para instalar a atualização 1606](../../../core/servers/manage/checklist-for-installing-update-1606.md)  
 
+- Atualizar para a 1610 da 1511, 1602 ou da 1606: consulte [Lista de verificação para instalar a atualização 1610](../../../core/servers/manage/checklist-for-installing-update-1610.md)  
 
 ###  <a name="a-namebkmkstep2a-step-2-test-the-database-upgrade-before-installing-an-update"></a><a name="bkmk_step2"></a> Etapa 2: Testar a atualização do banco de dados antes de instalar uma atualização  
 Antes de instalar uma nova atualização em sua hierarquia, como a atualização para a versão 1602, você deve testar a atualização de seu banco de dados do site. O nome da opção de linha de comando usada para testar a instalação de uma atualização para um backup de seu banco de dados do site é **testdbupgrade**.  
 
 Diferente das versões anteriores do Configuration Manager, se a instalação de uma atualização falhar, não será necessário executar uma recuperação de site. Em vez disso, você poderá Repetir a instalação da atualização. Portanto, embora o teste de atualização do banco de dados seja menos fundamental do que em versões anteriores do produto, ainda é uma etapa recomendada.  
 
-##### <a name="to-run-testdbupgrade-before-installing-an-update"></a>Para executar o testdbupgrade antes de instalar uma atualização  
+#### <a name="to-run-testdbupgrade-before-installing-an-update"></a>Para executar o testdbupgrade antes de instalar uma atualização  
 
 1.  Obtenha um conjunto de arquivos de origem da pasta **CD.Latest** de um site que executa a versão para a qual você planeja atualizar. Isso pode exigir, primeiro, a instalação de um site em um ambiente de laboratório ou teste que executa essa versão do System Center Configuration Manager.  
 
@@ -136,13 +137,13 @@ Diferente das versões anteriores do Configuration Manager, se a instalação de
 ###  <a name="a-namebkmkstep3a-step-3-run-the-prerequisite-checker-before-installing-an-update"></a><a name="bkmk_step3"></a> Etapa 3: Executar o verificador de pré-requisitos antes de instalar uma atualização  
 Antes de instalar uma atualização, considere a execução da verificação de pré-requisitos para essa atualização. Se você executar o pré-requisito antes de instalar uma atualização:  
 
--   Os arquivos de atualização serão replicados em outros sites antes de realmente instalar a atualização  
+-   Os arquivos de atualização serão replicados em outros sites antes de instalar a atualização  
 
 -   A verificação de pré-requisitos será executada automaticamente outra vez quando você optar por instalar a atualização  
 
 Posteriormente, quando você instalar uma atualização, terá a opção de configurá-la para ignorar os avisos de verificação de pré-requisitos.  
 
-##### <a name="to-run-the-prerequisite-checker-before-installing-an-update"></a>Para executar o verificador de pré-requisitos antes de instalar uma atualização  
+#### <a name="to-run-the-prerequisite-checker-before-installing-an-update"></a>Para executar o verificador de pré-requisitos antes de instalar uma atualização  
 
 1.  Abra o console do Configuration Manager, vá até **Administração** > **Serviços de Nuvem** > **Atualizações e Manutenção**.  
 
@@ -208,12 +209,13 @@ Use o seguinte para monitorar o progresso:
 -   No console do Configuration Manager, vá até o nó **Monitoramento** > **Visão Geral** > **Status de Serviço e Atualizações**. Esse nó mostra o status de instalação somente do pacote de atualização que está sendo instalado.  
 
     A partir da versão 1606, a instalação do pacote de atualização é dividida nas seguintes fases para facilitar o monitoramento. Para cada fase, agora há detalhes adicionais, incluindo qual arquivo de log exibir para obter mais informações:  
-    -   **Baixar** (isso se aplica somente ao site de nível superior em que a função do sistema de sites do ponto de conexão de serviço está instalado)
+    -   **Baixar** (essa fase se aplica somente ao site de nível superior em que a função do sistema de sites do ponto de conexão de serviço está instalada)
     -   **Replicação**
-    - **Verificação de pré-requisitos**
-    - **Instalação**
+    -   **Verificação de pré-requisitos**
+    -   **Instalação**
+    -   **Pós-instalação** (essa fase está disponível desde a versão 1610)
 
--   Você pode exibir o arquivo **CMUpdate.log** em **&lt;ConfigMgr_Installation_Directory>\Logs\\**  
+-   Você pode exibir o arquivo **CMUpdate.log** em **&lt;ConfigMgr_Installation_Directory>\Logs**  
 
 **4. Quando a instalação da atualização é concluída**  
 Após a conclusão da instalação da primeira atualização de site:  
@@ -344,8 +346,11 @@ Se você tiver dado consentimento em um site primário autônomo e, depois, expa
 
  |Recurso                    |Adicionado como pré-lançamento |Adicionado como recurso completo |  
 |----------------------------|---------------------|------------------------|
+| Cache de Pares para distribuição de conteúdo para clientes |  [Versão 1610](/sccm/core/plan-design/hierarchy/client-peer-cache) |![Ainda não](media/83c5d168-8faf-4e8e-920b-528e3c43ffd4.gif)|
+| Gateway de gerenciamento de nuvem |  [Versão 1610](/sccm/core/clients/manage/plan-cloud-management-gateway) |![Ainda não](media/83c5d168-8faf-4e8e-920b-528e3c43ffd4.gif)|
+| Painel Fontes de Dados do Cliente |  [Versão 1610](/sccm/core/servers/deploy/configure/monitor-content-you-have-distributed#client-data-sources-dashboard) |![Ainda não](media/83c5d168-8faf-4e8e-920b-528e3c43ffd4.gif)|
 | Conector do OMS (Microsoft Operations Management Suite)  | [Versão 1606](../../../core/clients/manage/sync-data-microsoft-operations-management-suite.md) |![Ainda não](media/83c5d168-8faf-4e8e-920b-528e3c43ffd4.gif)|
-| Realização de serviços em uma coleção com reconhecimento de cluster (realização de serviços em um grupo de servidores)| [Versão 1602](../../../core/get-started/capabilities-in-technical-preview-1605.md#bkmk_servergroups)|![Ainda não](media/83c5d168-8faf-4e8e-920b-528e3c43ffd4.gif)|
+| Realização de serviços em uma coleção com reconhecimento de cluster (realização de serviços em um grupo de servidores)| [Versão 1602](../../../core/get-started/capabilities-in-technical-preview-1605.md#BKMK_ServerGroups)|![Ainda não](media/83c5d168-8faf-4e8e-920b-528e3c43ffd4.gif)|
 |Acesso condicional para PCs gerenciados pelo System Center Configuration Manager | [Versão 1602](../../../protect/deploy-use/manage-access-to-o365-services-for-pcs-managed-by-sccm.md)     |![Ainda não](media/83c5d168-8faf-4e8e-920b-528e3c43ffd4.gif)                        |
 
 
@@ -369,10 +374,10 @@ Em um servidor do site, você pode configurar períodos de serviço para control
 
 -   Sua conta não tem as permissões corretas de administração baseada em funções para exibir as atualizações no console do Configuration Manager.
 
-    Consulte [Permissões para gerenciar atualizações](../../../core/servers/manage/install-in-console-updates.md#Permissions-to-view-and-manage-updates-and-features) neste tópico para obter informações sobre permissões necessárias para exibir as atualizações e habilitar recursos do console.
+    Consulte [Permissões para gerenciar atualizações](../../../core/servers/manage/install-in-console-updates.md#permissions-to-view-and-manage-updates-and-features) neste tópico para obter informações sobre permissões necessárias para exibir as atualizações e habilitar recursos do console.
 
 
 
-<!--HONumber=Nov16_HO1-->
+<!--HONumber=Dec16_HO3-->
 
 

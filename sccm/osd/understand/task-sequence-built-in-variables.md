@@ -1,5 +1,5 @@
 ---
-title: "Variáveis internas da sequência de tarefas | Configuration Manager"
+title: "Variáveis internas de sequência de tarefas | Microsoft Docs"
 description: "As variáveis internas da sequência de tarefas fornecem informações sobre o ambiente no qual a sequência de tarefas é executada e estão disponíveis durante toda a sequência de tarefas."
 ms.custom: na
 ms.date: 10/06/2016
@@ -17,8 +17,8 @@ author: Dougeby
 ms.author: dougeby
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: 1134bb2f04152288e72d40b1b1083f415cb4e900
-ms.openlocfilehash: 4b1014bc9a5c17dd571e69e7f5bfdae060a3eb55
+ms.sourcegitcommit: c9fb0fa46058c773eec6ac23999357d35d9f970f
+ms.openlocfilehash: a75adebfe2bbec8f6fe5206561530a720c0bfbf1
 
 
 ---
@@ -27,7 +27,7 @@ ms.openlocfilehash: 4b1014bc9a5c17dd571e69e7f5bfdae060a3eb55
 *Aplica-se a: System Center Configuration Manager (Branch Atual)*
 
 
- As variáveis internas da sequência de tarefas são fornecidas pelo System Center Configuration Manager. Variáveis internas fornecem informações sobre o ambiente em que a sequência de tarefas está executando e seus valores estão disponíveis em toda a sequência de tarefas. Normalmente, as variáveis internas são inicializadas antes de as etapas serem executadas na sequência de tarefas. Por exemplo, a variável interna **_SMSTSLogPath** é uma variável de ambiente que especifica o caminho que os componentes do Configuration Manager usam para gravar arquivos de log enquanto a sequência de tarefas é executada; qualquer etapa de sequência de tarefas pode acessar essa variável de ambiente. No entanto, algumas variáveis, como _SMSTSCurrentActionName, são avaliadas antes de cada etapa. Os valores das variáveis internas são geralmente somente leitura. Os valores são lidos apenas para variáveis internas com um nome que começa com um sublinhado.  
+ As variáveis internas da sequência de tarefas são fornecidas pelo System Center Configuration Manager. Variáveis internas fornecem informações sobre o ambiente em que a sequência de tarefas está executando e seus valores estão disponíveis em toda a sequência de tarefas. Normalmente, as variáveis internas são inicializadas antes de as etapas serem executadas na sequência de tarefas. Por exemplo, a variável interna **_SMSTSLogPath** é uma variável de ambiente que especifica o caminho que os componentes do Configuration Manager usam para gravar arquivos de log enquanto a sequência de tarefas é executada; qualquer etapa de sequência de tarefas pode acessar essa variável de ambiente. No entanto, algumas variáveis, como &#95;SMSTSCurrentActionName, são avaliadas antes de cada etapa. Os valores das variáveis internas são geralmente somente leitura. Os valores são lidos apenas para variáveis internas com um nome que começa com um sublinhado.  
 
 ## <a name="task-sequence-built-in-variable-list"></a>Lista de variáveis internas de sequência tarefa  
  A lista a seguir descreve as variáveis internas disponíveis no Configuration Manager:  
@@ -67,9 +67,11 @@ ms.openlocfilehash: 4b1014bc9a5c17dd571e69e7f5bfdae060a3eb55
 |_SMSTSUseSSL|Especifica se a sequência de tarefas usa SSL para se comunicar com o ponto de gerenciamento do Configuration Manager. Se seu site estiver em execução no modo nativo, o valor é definido como **true**.|  
 |_SMSTSWTG|Especifica se o computador está executando como um dispositivo Windows To Go.|  
 |OSDPreserveDriveLetter|A partir do Configuration Manager versão 1606, essa variável de sequência de tarefas foi preterida. Durante uma implantação de sistema operacional, por padrão, a Instalação do Windows determina a melhor letra da unidade a ser usada (geralmente, C:). <br /><br />Em versões anteriores, a variável OSDPreverveDriveLetter determina se a sequência de tarefas usa ou não a letra da unidade capturada no arquivo WIM da imagem do sistema operacional ao aplicar essa imagem em um computador de destino. É possível definir o valor desta variável como **False** para usar o local especificado para a configuração **Destino** na etapa da sequência de tarefas **Aplicar Sistema Operacional** . Para obter mais informações, consulte [Apply Operating System Image](task-sequence-steps.md#BKMK_ApplyOperatingSystemImage).|  
+|OSDSetupAdditionalUpgradeOptions|Começando do Configuration Manager versão 1602, é possível usar essa variável para especificar opções adicionais para a atualização da Instalação do Windows.
 |SMSTSAssignmentsDownloadInterval|Use esta variável para especificar o número de segundos para aguardar antes que o cliente tente baixar a política desde a última tentativa (que não retornou nenhuma política). Por padrão, o cliente aguardará **0** segundos antes de tentar novamente.<br /><br /> Você pode definir essa variável usando um comando prestart da mídia ou PXE.|  
 |SMSTSAssignmentsDownloadRetry|Use esta variável para especificar o número de vezes que um cliente tentará baixar a política depois que nenhuma política foi encontrada na primeira tentativa. Por padrão, o cliente tentará novamente **0** vezes.<br /><br /> Você pode definir essa variável usando um comando prestart da mídia ou PXE.|  
 |SMSTSAssignUsersMode|Especifica como uma sequência de tarefas associa os usuários ao computador de destino. Defina a variável para um dos seguintes valores:<br /><br /> -   Automático: a sequência de tarefas cria uma relação entre os usuários especificados e o computador de destino quando implanta o sistema operacional no computador de destino.<br />-   Pendente: a sequência de tarefas cria uma relação entre o usuário especificado e o computador de destino, mas espera a aprovação do usuário administrativo antes que a relação seja definida.<br />-   Desabilitado: a sequência de tarefas não associa os usuários ao computador de destino quando implanta o sistema operacional.|  
+|SMSTSDownloadAbortCode|Essa variável contém o valor do código “anular” para a ferramenta de download de programa externo (especificado na variável SMSTSDownloadProgram). Se o programa retornar um código de erro igual ao valor da variável SMSTSDownloadAbortCode, o download do conteúdo falhará e nenhum outro método de download será tentado.
 |SMSTSDownloadProgram|Use essa variável para especificar um Provedor de Conteúdo Alternativo, um programa de download usado para baixar conteúdo em vez do programa de download padrão do Configuration Manager, para a sequência de tarefas. Como parte do processo de download do conteúdo, a sequência de tarefas verifica a variável para um programa de download especificado. Se especificado, a sequência de tarefas executa o programa para realizar o download.|  
 |SMSTSDownloadRetryCount|Use essa variável para especificar o número de vezes que o Configuration Manager tenta baixar conteúdo de um ponto de distribuição. Por padrão, o cliente tentará novamente **2** vezes.|  
 |SMSTSDownloadRetryDelay|Use essa variável para especificar o número de segundos que o Configuration Manager aguarda antes de tentar baixar conteúdo novamente de um ponto de distribuição. Por padrão, o cliente aguardará **15** segundos antes de tentar novamente.|  
@@ -80,7 +82,7 @@ ms.openlocfilehash: 4b1014bc9a5c17dd571e69e7f5bfdae060a3eb55
 |SMSTSMPListRequestTimeout|Use essa variável para especificar quantos milissegundos uma sequência de tarefas espera antes de tentar instalar novamente uma atualização de software ou aplicativo após uma falha ao recuperar a lista de ponto de gerenciamento dos serviços de localização. Por padrão, a sequência de tarefas espera 60.000 milissegundos (60 segundos) antes de tentar novamente a etapa e repetições até três vezes. Essa variável é aplicável somente às etapas da sequência de tarefas Instalar Aplicativo e Instalar Atualizações de Software.|  
 |SMSTSMPListRequestTimeoutEnabled|Use essa variável para permitir que solicitações MPList repetidas atualizem o cliente se este não estiver na intranet. <br />Por padrão, essa variável é definida como True. Quando os clientes estão na Internet, você pode definir essa variável como False para evitar atrasos desnecessários. Essa variável é aplicável somente às etapas da sequência de tarefas Instalar Aplicativo e Instalar Atualizações de Software.|  
 |SMSTSPeerDownload|Use essa variável para habilitar o cliente a usar o Cache de sistemas pares do Windows PE.<br /><br /> Exemplo:<br /><br /> SMSTSPeerDownload = **TRUE** habilita essa funcionalidade.|  
-|SMSTSPeerRequestPort|Use essa variável para o cache de sistemas pares do Windows PE para especificar uma porta de rede personalizada a ser usada para a difusão inicial quando as portas padrão configuradas nas Configurações do Cliente (8003 e 8004) não forem usadas.|  
+|SMSTSPeerRequestPort|Use essa variável para o cache de pares do Windows PE para especificar uma porta de rede personalizada a ser usada para a difusão inicial quando as portas padrão configuradas nas Configurações do Cliente (8004) não forem usadas.|  
 |SMSTSPersistContent|Use essa variável para manter temporariamente o conteúdo no cache da sequência de tarefas.|  
 |SMSTSPostAction|Especifica um comando que é executado após a sequência de tarefas. Por exemplo, você pode usar essa variável para especificar um script que permite filtros de gravação em dispositivos inseridos depois que o a sequência de tarefas implanta um sistema operacional no dispositivo.|  
 |SMSTSPreferredAdvertID|Força uma implantação direcionada específica no computador de destino a ser executada. Isso pode ser definido por meio de um comando pré-início da mídia ou PXE. Se essa variável for definida, a sequência de tarefas substitui todas as implantações necessárias.|  
@@ -95,6 +97,6 @@ ms.openlocfilehash: 4b1014bc9a5c17dd571e69e7f5bfdae060a3eb55
 
 
 
-<!--HONumber=Nov16_HO1-->
+<!--HONumber=Dec16_HO3-->
 
 

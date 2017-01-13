@@ -1,5 +1,5 @@
 ---
-title: "Categorizar dispositivos em coleções automaticamente | System Center Configuration Manager"
+title: "Categorizar automaticamente dispositivos em coleções | Microsoft Docs"
 description: "Categorize os dispositivos em coleções com o System Center Configuration Manager."
 ms.custom: na
 ms.date: 10/06/2016
@@ -16,8 +16,8 @@ author: robstackmsft
 ms.author: robstack
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: 1134bb2f04152288e72d40b1b1083f415cb4e900
-ms.openlocfilehash: 6e1e8c1da1209be03d4a1377dcc0c9ce9478a216
+ms.sourcegitcommit: fc392e4440e84614f92218e9c7a09ec1c2c64f53
+ms.openlocfilehash: d5ef7260bcc2ab9cc56d8fed530a406aa1045c5a
 
 ---
 # <a name="automatically-categorize-devices-into-collections-with-system-center-configuration-manager"></a>Categorizar dispositivos em coleções automaticamente com o System Center Configuration Manager
@@ -64,6 +64,6 @@ Se você atribuir um dispositivo a uma categoria e depois excluir a categoria, o
 
 
 
-<!--HONumber=Nov16_HO1-->
+<!--HONumber=Dec16_HO3-->
 
 

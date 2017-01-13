@@ -1,5 +1,5 @@
 ---
-title: "Criar uma imagem de um OEM na fábrica ou em um repositório local | Configuration Manager"
+title: "Criar uma imagem de um OEM na fábrica ou em um repositório local | Microsoft Docs"
 description: "Use implantações de mídia de pré-teste para reduzir o tráfego de rede ao implantar um sistema operacional em um computador que não está totalmente provisionado."
 ms.custom: na
 ms.date: 10/06/2016
@@ -16,8 +16,8 @@ author: Dougeby
 ms.author: dougeby
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: 1134bb2f04152288e72d40b1b1083f415cb4e900
-ms.openlocfilehash: d604577fdb9af7c7789840ea6281c371e35c46b0
+ms.sourcegitcommit: 74341fb60bf9ccbc8822e390bd34f9eda58b4bda
+ms.openlocfilehash: 07aba04fb1b845e389a5f75b115d536136c1569c
 
 
 ---
@@ -58,6 +58,6 @@ Esse método de implantação pode reduzir o tráfego de rede, pois a imagem de 
 
 
 
-<!--HONumber=Nov16_HO1-->
+<!--HONumber=Dec16_HO3-->
 
 

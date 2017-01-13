@@ -1,5 +1,5 @@
 ---
-title: "Extensões de esquema | System Center Configuration Manager"
+title: "Extensões de esquema | Microsoft Docs"
 description: Estender o esquema do Active Directory para o System Center Configuration Manager.
 ms.custom: na
 ms.date: 10/06/2016
@@ -18,8 +18,8 @@ ms.author: brenduns
 manager: angrobe
 robots: noindex
 translationtype: Human Translation
-ms.sourcegitcommit: 1134bb2f04152288e72d40b1b1083f415cb4e900
-ms.openlocfilehash: f8c8533da62d215ed22f5235eefa687d5df41394
+ms.sourcegitcommit: 6ed317d45d90758832d4157985dd95d5e253c6fc
+ms.openlocfilehash: f230b6cbe97b72fee4f5d2e45260e6217ef2cec0
 
 
 ---
@@ -150,6 +150,6 @@ Você pode verificar se a lista anterior é atual exibindo o arquivo **ConfigMgr
 
 
 
-<!--HONumber=Nov16_HO1-->
+<!--HONumber=Dec16_HO3-->
 
 

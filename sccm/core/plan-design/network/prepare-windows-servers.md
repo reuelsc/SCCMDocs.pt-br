@@ -1,5 +1,5 @@
 ---
-title: Preparar Servidores Windows | System Center Configuration Manager
+title: Preparar Servidores Windows | Microsoft Docs
 description: "Verifique se um computador atende aos pré-requisitos para uso como um servidor do site ou um servidor de sistema de sites para o System Center Configuration Manager."
 ms.custom: na
 ms.date: 10/06/2016
@@ -17,8 +17,8 @@ author: Brenduns
 ms.author: brenduns
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: f0a1cc32285fcb792c3f4cdec616668474708404
-ms.openlocfilehash: acf8a401f1ce67a4d8c905c0126c031b97484271
+ms.sourcegitcommit: 6ed317d45d90758832d4157985dd95d5e253c6fc
+ms.openlocfilehash: bd89f97f4252ddea2d1bf7ab329417477c77868d
 
 
 ---
@@ -42,11 +42,8 @@ As informações neste artigo fornecem uma visão geral dos tipos de configuraç
 -   **.NET Framework**: incluindo  
 
     -   ASP.NET  
-
     -   Ativação HTTP  
-
     -   Ativação não HTTP  
-
     -   Serviços do WCF  
 
     Diferentes versões do .NET Framework são exigidas por diferentes funções do sistema de sites.  
@@ -68,61 +65,37 @@ As informações neste artigo fornecem uma visão geral dos tipos de configuraç
  -   **Serviço de Registro de Dispositivo de Rede** (em Serviços de Certificados do Active Directory): essa função do Windows é um pré-requisito para usar os Perfis de Certificado no Configuration Manager.  
 
  -   **Servidor Web (IIS)**: incluindo:  
-
     -   Recursos HTTP Comuns >  
-
         -   Redirecionamento de HTTP  
-
     -   Desenvolvimento de Aplicativos >  
-
         -   Extensibilidade .NET  
-
         -   ASP.NET  
-
         -   Extensões ISAPI  
-
         -   Filtros ISAPI  
-
     -   Ferramentas de Gerenciamento >  
-
         -   Compatibilidade de gerenciamento do IIS 6  
-
         -   Compatibilidade de Metabase do IIS 6  
-
         -   Compatibilidade de WMI do IIS 6  
-
     -   Segurança >  
-
         -   Filtragem de Solicitações  
-
         -   Autenticação do Windows  
 
  As seguintes funções de sistema de sites usam uma ou mais das configurações do IIS listadas:  
-
     -   Ponto de serviços Web do Catálogo de Aplicativos  
-
     -   Ponto de sites da Web do catálogo de aplicativos  
-
     -   Ponto de distribuição  
-
     -   Ponto de registro  
-
     -   Ponto proxy do registro  
-
     -   Ponto de status de fallback  
-
     -   Ponto de gerenciamento  
-
     -   Ponto de atualização de software  
-
-    -   Ponto de migração de estado  
+    -   Ponto de migração de estado     
 
     A versão mínima do IIS necessária é a versão fornecida com o sistema operacional do servidor do site.  
 
     Além dessas configurações do IIS, você talvez precise configurar [Filtragem de Solicitações do IIS para pontos de distribuição](#BKMK_IISFiltering).  
 
 -   **Serviços de Implantação do Windows**: essa função é usada com a Implantação de Sistema Operacional.  
-
 -   **Windows Server Update Services**: essa função é necessária quando você implanta atualizações de software.  
 
 ##  <a name="a-namebkmkiisfilteringa-iis-request-filtering-for-distribution-points"></a><a name="BKMK_IISFiltering"></a> Filtragem de Solicitações do IIS para pontos de distribuição  
@@ -133,11 +106,8 @@ As informações neste artigo fornecem uma visão geral dos tipos de configuraç
  Além disso, as seguintes extensões de nome de arquivo são usadas pelo Configuration Manager para pacotes e aplicativos. verifique se suas configurações da Filtragem de Solicitações não bloqueiem estas extensões de arquivo:  
 
 -   .PCK  
-
 -   .PKG  
-
 -   .STA  
-
 -   .TAR  
 
 Por exemplo, você pode ter arquivos de origem para uma implantação de software que inclui uma pasta chamada **bin**ou que contém um arquivo com a extensão de nome de arquivo **.mdb** .  
@@ -164,15 +134,15 @@ Por exemplo, você pode ter arquivos de origem para uma implantação de softwar
  - HEAD
  - PROPFIND
 
-**Pontos de distribuição:** pontos de distribuição requerem os seguintes verbos HTTP permitidos:
+**Pontos de distribuição:** pontos de distribuição requerem os seguintes verbos HTTP como permitidos:
  - GET
  - HEAD
- - PROFIND
+ - PROPFIND
 
 Para obter informações sobre como configurar a filtragem de solicitações, consulte [Configurar filtragem de solicitações no IIS](https://technet.microsoft.com/library/hh831621.aspx#Verbs) no TechNet ou a documentação semelhante que se aplica à versão do Windows Server que hospeda o ponto de gerenciamento.
 
 
 
-<!--HONumber=Nov16_HO1-->
+<!--HONumber=Dec16_HO3-->
 
 

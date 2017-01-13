@@ -1,5 +1,5 @@
 ---
-title: "Política de privacidade do System Center Configuration Manager – Biblioteca de Cmdlets do Configuration Manager"
+title: "Política de privacidade do System Center Configuration Manager – Informações adicionais | Microsoft Docs"
 description: "Saiba como a Microsoft coleta e usa dados de uma implantação do System Center Configuration Manager."
 ms.custom: na
 ms.date: 10/06/2016
@@ -36,8 +36,8 @@ translation.priority.ht:
 - zh-cn
 - zh-tw
 translationtype: Human Translation
-ms.sourcegitcommit: 1134bb2f04152288e72d40b1b1083f415cb4e900
-ms.openlocfilehash: bcac4e2b6f8377a27417cb2519814ad9e74ee542
+ms.sourcegitcommit: 6ed317d45d90758832d4157985dd95d5e253c6fc
+ms.openlocfilehash: 613b7dbf81de84129e113468d554d8430cbc3182
 
 ---
 # <a name="additional-information-about-privacy-for-system-center-configuration-manager"></a>Informações adicionais sobre privacidade no System Center Configuration Manager
@@ -97,7 +97,7 @@ O Microsoft Cloud Protection Service não coleta informações pessoais intencio
 
 Detalhes adicionais relacionados aos dados coletados podem ser encontrados na documentação do produto em [http://go.microsoft.com/fwlink/?LinkId=823547](http://go.microsoft.com/fwlink/?LinkId=823547).
 
-## <a name="site-hierarchy-geographical-view-with-bing-maps"></a>Hierarquia do Site – Exibição Geográfica com Bing Maps
+## <a name="site-hierarchy--geographical-view-with-bing-maps"></a>Hierarquia do Site – Exibição Geográfica com Bing Maps
 A Hierarquia do Site – exibição geográfica permite exibir a topologia do servidor físico do Configuration Manager usando mapas fornecidos pelo Microsoft Bing Mapas. Para habilitar esse recurso, as informações de local fornecidas são enviadas do seu servidor ao serviço Web Bing Maps.
 
 A Microsoft usa as informações para operar e aprimorar o Microsoft Bing Maps e outros sites e serviços da Microsoft. Para obter mais informações, consulte a Política de Privacidade da Microsoft em http://go.microsoft.com/fwlink/?LinkId=823548.
@@ -114,6 +114,6 @@ Esse recurso não está configurado por padrão. Os administradores controlam qu
 
 
 
-<!--HONumber=Nov16_HO1-->
+<!--HONumber=Dec16_HO3-->
 
 

@@ -1,5 +1,5 @@
 ---
-title: "Referência da instalação | System Center Configuration Manager"
+title: "Referência da instalação | Microsoft Docs"
 description: "Examine essa referência para ajudar você a se preparar para instalar um site ou hierarquia do Configuration Manager."
 ms.custom: na
 ms.date: 10/06/2016
@@ -16,8 +16,8 @@ author: Brenduns
 ms.author: brenduns
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: 1134bb2f04152288e72d40b1b1083f415cb4e900
-ms.openlocfilehash: 06bab7e01fee2c0b030a2879fa67fd455bf668fe
+ms.sourcegitcommit: 10b1010ccbf3889c58c55b87e70b354559243c90
+ms.openlocfilehash: a1f13fcde27baf7d0245682292134f08c4f9f8e6
 
 
 ---
@@ -99,6 +99,6 @@ Para obter mais informações, incluindo a divulgação dos detalhes coletados p
 
 
 
-<!--HONumber=Nov16_HO1-->
+<!--HONumber=Dec16_HO3-->
 
 

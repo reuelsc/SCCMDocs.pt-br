@@ -1,5 +1,5 @@
 ---
-title: "Segurança e privacidade de consultas | System Center Configuration Manager"
+title: "Segurança e privacidade para consultas | Microsoft Docs"
 description: "Entenda as práticas recomendadas de segurança e privacidade quando você consulta informações do banco de dados do site."
 ms.custom: na
 ms.date: 10/06/2016
@@ -17,8 +17,8 @@ author: robstackmsft
 ms.author: robstack
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: 1134bb2f04152288e72d40b1b1083f415cb4e900
-ms.openlocfilehash: e9ac8ce92a2ff5ebcbad852b6bfb291bb99236d4
+ms.sourcegitcommit: 10b1010ccbf3889c58c55b87e70b354559243c90
+ms.openlocfilehash: 09f7bdaa29a01fb2a38aa223db56b5bce3bc5205
 
 
 ---
@@ -42,6 +42,6 @@ As consultas no System Center Configuration Manager permitem recuperar informaç
 
 
 
-<!--HONumber=Nov16_HO1-->
+<!--HONumber=Dec16_HO3-->
 
 

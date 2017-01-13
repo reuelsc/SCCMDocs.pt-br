@@ -1,5 +1,5 @@
 ---
-title: Hybrid mobile device management (MDM) with System Center Configuration Manager and Microsoft Intune
+title: "MDM (Gerenciamento de Dispositivo Móvel) híbrido com o System Center Configuration Manager e o Microsoft Intune | Microsoft Docs"
 description: "Saiba mais sobre o MDM (gerenciamento de dispositivo móvel) híbrido com o System Center Configuration Manager e o Microsoft Intune."
 ms.custom: na
 ms.date: 10/06/2016
@@ -13,12 +13,12 @@ ms.topic: get-started-article
 ms.assetid: bb95154b-f63e-4491-896e-41d732c802f8
 caps.latest.revision: 34
 caps.handback.revision: 0
-author: NathBarn
-ms.author: nathbarn
+author: mtillman
+ms.author: mtillman
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: 22e673122f0f664d1240c11451b7e6db78481b26
-ms.openlocfilehash: 83832465e93997a2893e024c565ee00f471036d1
+ms.sourcegitcommit: 238ef5814c0c1b832c28d63c9f3879e21a6c439b
+ms.openlocfilehash: caedfa2f89daf9ebad72602161dd618f0d18b4ab
 
 ---
 # <a name="hybrid-mobile-device-management-mdm-with-system-center-configuration-manager-and-microsoft-intune"></a>Hybrid mobile device management (MDM) with System Center Configuration Manager and Microsoft Intune
@@ -66,7 +66,7 @@ Para colocar dispositivos no gerenciamento híbrido, esses dispositivos devem es
 
 | **Método** |  **Apagar** |  **Afinidade**    |   **Bloqueio** | **Detalhes**|
 |:---:|:---:|:---:|:---:|:---:|:---:|
-|**[BYOD](#byod)** | Não|    Sim |   Não | [mais](../deploy-use/setup-hybrid-mdm.md#set-up-device-management)|
+|**[BYOD](#byod)** | Não|    Sim |   Não | [mais](../deploy-use/setup-hybrid-mdm.md#windows-enrollment-setup)|
 |**[DEM](#dem)**|   Não |Não |Não  |[mais](../deploy-use/enroll-devices-with-device-enrollment-manager.md)|
 
 Para ver uma série de perguntas que ajudarão você a encontrar o método certo, consulte [Escolher como registrar dispositivos](/intune/get-started/choose-how-to-enroll-devices1).
@@ -117,6 +117,6 @@ O MDM híbrido do Configuration Manager pode gerenciar as seguintes plataformas 
 
 
 
-<!--HONumber=Nov16_HO1-->
+<!--HONumber=Dec16_HO3-->
 
 

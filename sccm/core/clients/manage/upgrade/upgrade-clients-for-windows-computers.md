@@ -1,8 +1,8 @@
 ---
-title: Atualizar clientes | Windows | System Center Configuration Manager
+title: 'Atualizar clientes | Microsoft Docs | Windows '
 description: Atualizar clientes em computadores Windows no System Center Configuration Manager.
 ms.custom: na
-ms.date: 10/06/2016
+ms.date: 11/18/2016
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
@@ -13,12 +13,12 @@ ms.topic: article
 ms.assetid: 6143fd47-48ec-4bca-b53b-5b9b9f067bc3
 caps.latest.revision: 11
 caps.handback.revision: 0
-author: Mtillman
-ms.author: mtillman
+author: nbigman
+ms.author: nbigman
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: 1134bb2f04152288e72d40b1b1083f415cb4e900
-ms.openlocfilehash: 2b1600e6f04095506f18f4c2cd0988a320fbb951
+ms.sourcegitcommit: 828e2ac9a3f9bcea1571d24145a1021fdf1091f3
+ms.openlocfilehash: 8a3028a562aa657ea39a0f5ff763311db6def00a
 
 
 ---
@@ -36,10 +36,16 @@ ms.openlocfilehash: 2b1600e6f04095506f18f4c2cd0988a320fbb951
 
 -   Instalação da atualização  
 
- Se estiver interessado em atualizar o cliente usando métodos de instalação do cliente, saiba mais sobre como usar esses métodos em [Como implantar clientes em computadores Windows no System Center Configuration Manager](../../../../core/clients/deploy/deploy-clients-to-windows-computers.md)  
+ Se estiver interessado em atualizar o cliente usando métodos de instalação do cliente, saiba mais sobre como usar esses métodos em [Como implantar clientes em computadores Windows no System Center Configuration Manager](../../../../core/clients/deploy/deploy-clients-to-windows-computers.md).
+
+ Começando na versão 1610, você pode excluir os clientes da atualização ao especificar um grupo de exclusão. Para obter mais informações, consulte [Como clientes de atualização para computadores Windows](exclude-clients-windows.md).  
+
 
 > [!TIP]  
->  Se você estiver atualizando a infraestrutura do servidor de uma versão anterior do Configuration Manager \(como o Configuration Manager 2007 ou o System Center 2012 Configuration Manager\), será recomendável que conclua as atualizações do servidor, incluindo a instalação de todas as atualizações da ramificação atual, antes de atualizar os clientes do Configuration Manager.   A atualização mais recente da ramificação atual contém a última versão do cliente, de modo que é melhor fazer atualizações do cliente depois que você tiver instalado todas as atualizações do Configuration Manager que deseja usar.  
+>  Se você estiver atualizando a infraestrutura do servidor de uma versão anterior do Configuration Manager \(como o Configuration Manager 2007 ou o System Center 2012 Configuration Manager\), será recomendável que conclua as atualizações do servidor, incluindo a instalação de todas as atualizações da ramificação atual, antes de atualizar os clientes do Configuration Manager.   A atualização mais recente da ramificação atual contém a última versão do cliente, de modo que é melhor fazer atualizações do cliente depois que você tiver instalado todas as atualizações do Configuration Manager que deseja usar.
+
+> [!NOTE]
+> Se planeja transferir o site para os clientes durante a atualização, você pode especificar o novo site usando a propriedade SMSSITECODE client.msi. Se usar AUTO para o SMSSITECODE, você deverá especificar também SITEREASSIGN=TRUE para permitir a transferência automática de site durante a atualização. Para obter mais informações, consulte [SMSSITECODE](../../deploy/about-client-installation-properties.md#smssitecode).
 
 ## <a name="use-automatic-client-upgrade"></a>Usar a atualização automática do cliente  
  Também é possível configurar o Configuration Manager para atualizar automaticamente o software cliente para a versão mais recente do cliente do Configuration Manager quando o Configuration Manager identificar que um cliente atribuído à hierarquia do Configuration Manager é inferior à versão usada na hierarquia. Este cenário inclui a atualização do cliente para a versão mais recente quando ele tenta atribuir a um site do Configuration Manager.  
@@ -62,11 +68,11 @@ ms.openlocfilehash: 2b1600e6f04095506f18f4c2cd0988a320fbb951
 > [!NOTE]  
 >  O Configuration Manager não envia automaticamente o pacote de atualização do cliente para os pontos de distribuição baseado em nuvem do Configuration Manager.  
 
- As atualizações automáticas do cliente são úteis quando você quer atualizar um pequeno número de computadores cliente que podem ter sido perdidos pelo principal método de instalação do cliente. Por exemplo, você completou uma atualização inicial do cliente, mas alguns estavam offline durante a implantação da atualização. Você usa esse método para atualizar o cliente nesses computadores da próxima vez em que estiverem ativos.  
+ É recomendável habilitar atualizações automáticas do cliente em sua hierarquia. Isso manterá seus clientes atualizados com sobrecarga administrativa mínima.  
 
  Use o procedimento a seguir para configurar a atualização automática do cliente. A atualização automática do cliente deve ser configurada em um site de administração central e essa configuração aplica-se a todos os clientes na hierarquia.  
 
-#### <a name="to-configure-automatic-client-upgrades"></a>Para configurar atualizações automáticas do cliente  
+### <a name="to-configure-automatic-client-upgrades"></a>Para configurar atualizações automáticas do cliente  
 
 1.  No console do Configuration Manager, clique em **Administração**.  
 
@@ -87,12 +93,14 @@ ms.openlocfilehash: 2b1600e6f04095506f18f4c2cd0988a320fbb951
     >     
     > Devido a esse comportamento, computadores que são rotineiramente desligados ao final do dia de trabalho poderão demorar mais do que o esperado para atualizar se o tempo de atualização agendado aleatoriamente não estiver dentro do horário normal de trabalho.
 
+7. Começando da versão 1610, se quiser excluir clientes da atualização, clique em **Excluir clientes especificados da atualização** e especifique a coleção a ser excluída.
+
 8.  Se desejar que o pacote de instalação do cliente seja copiado nos pontos de distribuição que foram habilitados para o conteúdo pré-configurado, clique em **Distribuir automaticamente o pacote de instalação do cliente para pontos de distribuição que são habilitados para o conteúdo pré-configurado**.  
 
 9. Clique em **OK** para salvar as configurações e fechar a caixa de diálogo **Propriedades das Configurações da Hierarquia** . Os clientes recebem essas configurações no próximo download da política.  
 
 
 
-<!--HONumber=Nov16_HO1-->
+<!--HONumber=Dec16_HO3-->
 
 

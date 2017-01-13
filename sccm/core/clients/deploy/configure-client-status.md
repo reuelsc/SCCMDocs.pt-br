@@ -1,5 +1,5 @@
 ---
-title: Como configurar o status do cliente | System Center Configuration Manager
+title: Configurar o status do cliente | Microsoft Docs
 description: "Selecione as configurações do status do cliente no System Center Configuration Manager."
 ms.custom: na
 ms.date: 10/06/2016
@@ -13,12 +13,12 @@ ms.topic: get-started-article
 ms.assetid: a2275ba2-c83d-43e7-90ed-418963a707fe
 caps.latest.revision: 6
 caps.handback.revision: 0
-author: Mtillman
-ms.author: mtillman
+author: nbigman
+ms.author: nbigman
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: 1134bb2f04152288e72d40b1b1083f415cb4e900
-ms.openlocfilehash: 98d78ff0ef641baeef1323243f8f389fa5e95057
+ms.sourcegitcommit: 55c953f312a9fb31e7276dde2fdd59f8183b4e4d
+ms.openlocfilehash: 22cc286baa72d3e356a07b91ee0a1be646fa8a9e
 
 
 ---
@@ -115,6 +115,6 @@ Para monitorar o status do cliente do System Center Configuration Manager e corr
 
 
 
-<!--HONumber=Nov16_HO1-->
+<!--HONumber=Dec16_HO3-->
 
 

@@ -1,8 +1,8 @@
 ---
-title: "Etapas de sequência de tarefas | Configuration Manager"
+title: "Etapas da sequência de tarefas | Microsoft Docs"
 description: "Saiba mais sobre as etapas de sequência de tarefas que você pode adicionar a uma sequência de tarefas do Configuration Manager."
 ms.custom: na
-ms.date: 10/06/2016
+ms.date: 12/07/2016
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
@@ -17,8 +17,8 @@ author: Dougeby
 ms.author: dougeby
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: 2a45cfb3e00d8078fbf45bdc8a2668b7dd0a62c6
-ms.openlocfilehash: 538cb9795586115ad8b52b44fb82b50a0abdbaa2
+ms.sourcegitcommit: 3f44505c977b511223a083a960f871371c0ff133
+ms.openlocfilehash: 6e324eb97c0e803d382371ace541a4b9f96e6ba3
 
 
 ---
@@ -153,7 +153,7 @@ As etapas de sequência de tarefas a seguir podem ser adicionadas à sequência 
 
  A etapa **Aplicar imagem do sistema operacional** executa as seguintes ações quando uma imagem do sistema operacional é usada.  
 
-1.  Exclui todo o conteúdo no volume de destino, exceto os arquivos na pasta especificada pela variável de sequência de tarefas _SMSTSUserStatePath.  
+1.  Exclui todo o conteúdo no volume de destino, exceto os arquivos na pasta especificada pela variável de sequência de tarefas &#95;SMSTSUserStatePath.  
 
 2.  Extrai o conteúdo do arquivo .wim especificado para a partição de destino especificado.  
 
@@ -169,7 +169,7 @@ As etapas de sequência de tarefas a seguir podem ser adicionadas à sequência 
 
  A etapa **Aplicar imagem do sistema operacional** executa as seguintes ações quando um pacote de instalação do sistema operacional é usado.  
 
-1.  Exclui todo o conteúdo no volume de destino, exceto os arquivos na pasta especificada pela variável de sequência de tarefas _SMSTSUserStatePath.  
+1.  Exclui todo o conteúdo no volume de destino, exceto os arquivos na pasta especificada pela variável de sequência de tarefas &#95;SMSTSUserStatePath.  
 
 2.  Prepara o arquivo de resposta:  
 
@@ -627,7 +627,7 @@ Essa etapa de sequência de tarefas é executada somente no Windows PE. Ela não
 
 -   Para baixar um pacote de drivers aplicáveis dinamicamente, use duas etapas **Baixar Conteúdo do Pacote** com condições para detectar o tipo de hardware apropriado para cada pacote de drivers. Configure cada etapa **Baixar Conteúdo do Pacote** para usar a mesma variável e use a variável para o valor **Conteúdo de Teste** na seção de drivers da etapa **Atualizar Sistema Operacional** .  
 
- Esta etapa só é executada em um sistema operacional padrão. Ela não é executada no Windows PE.  
+Esta etapa é executada em um sistema operacional padrão ou no Windows PE. No entanto, a opção para salvar o pacote no cache do cliente do Configuration Manager não tem suporte no WinPE.
 
 ### <a name="details"></a>Detalhes  
  Na guia **Propriedades** desta etapa, você pode definir as configurações descritas nesta seção.  
@@ -1062,8 +1062,12 @@ A nova variável de sequência de tarefas, SMSTSSoftwareUpdateScanTimeout, foi i
 
  *Domínio\conta*  
 
-##  <a name="a-namebkmkprepareconfigmgrclientforcapturea-prepare-configmgr-client-for-capture"></a><a name="BKMK_PrepareConfigMgrClientforCapture"></a> Preparar ConfigMgr Client for Capture  
- Use a etapa **Preparar o Cliente do ConfigMgr para Captura** para obter o cliente do Configuration Manager no computador de referência e prepará-lo para captura como parte do processo de geração de imagens, executando as seguintes tarefas:  
+## <a name="a-namebkmkprepareconfigmgrclientforcapturea-prepare-configmgr-client-for-capture"></a><a name="BKMK_PrepareConfigMgrClientforCapture"></a> Preparar ConfigMgr Client for Capture  
+Use a etapa **Preparar o Cliente do ConfigMgr para Captura** para remover o cliente do Configuration Manager ou configurar o cliente no computador de referência e prepará-lo para captura como parte do processo de geração de imagens.
+
+Com início no Configuration Manager versão 1610, a etapa Preparar o Cliente do ConfigMgr agora removerá completamente o cliente do Configuration Manager, em vez de apenas remover informações importantes. Quando a sequência de tarefas implantar a imagem capturada do sistema operacional, ela instalará um novo cliente do Configuration Manager sempre.  
+
+Antes do Configuration Manager versão 1610, esta etapa executa as seguintes tarefas:  
 
 -   Remove a seção de propriedades de configuração de cliente do arquivo smscfg.ini no diretório do Windows. Essas propriedades incluem informações específicas do cliente incluindo o GUID do Configuration Manager e outros identificadores de cliente.  
 
@@ -1458,19 +1462,19 @@ A nova variável de sequência de tarefas, SMSTSSoftwareUpdateScanTimeout, foi i
 
  A sequência de tarefas define automaticamente as seguintes variáveis de sequência de tarefas somente leitura:  
 
--   _SMSTSMake  
+ -   &#95;SMSTSMake  
 
--   _SMSTSModel  
+ -   &#95;SMSTSModel  
 
--   _SMSTSMacAddresses  
+ -   &#95;SMSTSMacAddresses  
 
--   _SMSTSIPAddresses  
+ -   &#95;SMSTSIPAddresses  
 
--   _SMSTSSerialNumber  
+ -   &#95;SMSTSSerialNumber  
 
--   _SMSTSAssetTag  
+ -   &#95;SMSTSAssetTag  
 
--   _SMSTSUUID  
+ -   &#95;SMSTSUUID  
 
  Esta etapa pode ser executada em um sistema operacional padrão ou no Windows PE. Para mais informações sobre variáveis de sequência de tarefas, confira [Task sequence action variables](task-sequence-action-variables.md) (Variáveis de ação de sequência de tarefas).  
 
@@ -1485,32 +1489,34 @@ A nova variável de sequência de tarefas, SMSTSSoftwareUpdateScanTimeout, foi i
 
 -   Especificar condições que devem ser atendidas para a etapa a ser executada.  
 
- **Nome**  
+**Nome**  
  Um nome curto do definido pelo usuário para essa etapa de sequência de tarefas.  
 
- **Descrição**  
+**Descrição**  
  Informações mais detalhadas sobre a ação realizada nesta etapa.  
 
- **Regras e variáveis dinâmicas**  
+**Regras e variáveis dinâmicas**  
  Para definir uma variável dinâmica para usar na sequência de tarefas, você pode adicionar uma regra e especificar um valor para cada variável especificada para a regra, ou então adicionar uma ou mais variáveis para definir sem adicionar uma regra. Quando você adiciona uma regra, poderá escolher entre as seguintes categorias de regra:  
 
--   **Computador**: use esta categoria de regra para avaliar valores para a marcação de Ativo, UUID, número de série ou endereço MAC. Você pode definir vários valores, e se qualquer valor for verdadeiro, então a regra será avaliada como verdadeira. Por exemplo, a regra a seguir retornará verdadeiro se o número de série for 5892087 independentemente de o endereço MAC ser igual a 26-78-13-5A-A4-22.  
+ -   **Computador**: use esta categoria de regra para avaliar valores para a marcação de Ativo, UUID, número de série ou endereço MAC. Você pode definir vários valores, e se qualquer valor for verdadeiro, então a regra será avaliada como verdadeira. Por exemplo, a regra a seguir retornará verdadeiro se o número de série for 5892087 independentemente de o endereço MAC ser igual a 26-78-13-5A-A4-22.  
 
      `IF Serial Number = 5892087 OR MAC address = 26-78-13-5A-A4-22 THEN`  
 
 -   **Local**: use esta categoria de regra para avaliar valores para o gateway padrão.  
 
--   **Marca e modelo**: use esta categoria de regra para avaliar valores para a marca e o modelo de um computador. A marca e o modelo devem ambas serem avaliadas como verdadeiro para a regra a ser avaliada como verdadeiro.  
+-   **Marca e modelo**: use esta categoria de regra para avaliar valores para a marca e o modelo de um computador. A marca e o modelo devem ambas serem avaliadas como verdadeiro para a regra a ser avaliada como verdadeiro.   
+
+    Começando no Configuration Manager versão 1610, você pode especificar um asterisco (*****) e um ponto de interrogação (**?**) como caracteres curinga, em que ***** corresponde a vários caracteres e **?** corresponde a um único caractere. Por exemplo, a cadeia de caracteres "DELL*900?" corresponderá a DELL-ABC-9001 e DELL9009.
 
 -   **Variável de Sequência de Tarefas**: use esta categoria de regra para adicionar uma variável de sequência de tarefas, uma condição e um valor a ser avaliado. A regra avalia como verdadeiro quando o valor definido para a variável atende a condição especificada.  
 
- Você pode especificar uma ou mais variáveis que serão definidas para uma regra que é avaliada como verdadeiro ou definir variáveis sem usar uma regra. Você pode selecionar entre as variáveis existentes ou criar uma variável personalizada.  
+Você pode especificar uma ou mais variáveis que serão definidas para uma regra que é avaliada como verdadeiro ou definir variáveis sem usar uma regra. Você pode selecionar entre as variáveis existentes ou criar uma variável personalizada.  
 
--   **Variáveis de sequência de tarefas existentes**: use essa configuração para selecionar uma ou mais variáveis em uma lista de variáveis de sequência de tarefas existentes. Variáveis de matriz não estão disponíveis para selecionar.  
+ -   **Variáveis de sequência de tarefas existentes**: use essa configuração para selecionar uma ou mais variáveis em uma lista de variáveis de sequência de tarefas existentes. Variáveis de matriz não estão disponíveis para selecionar.  
 
--   **Variáveis personalizadas da sequência de tarefas**: use essa configuração para definir uma variável personalizada da sequência de tarefas. Você também pode especificar uma variável de sequência de tarefas existente. Isso é útil para especificar uma matriz de variáveis existente, como OSDAdapter, pois matrizes de variáveis não estão na lista de variáveis de sequência de tarefas existente.  
+ -   **Variáveis personalizadas da sequência de tarefas**: use essa configuração para definir uma variável personalizada da sequência de tarefas. Você também pode especificar uma variável de sequência de tarefas existente. Isso é útil para especificar uma matriz de variáveis existente, como OSDAdapter, pois matrizes de variáveis não estão na lista de variáveis de sequência de tarefas existente.  
 
- Depois de selecionar as variáveis de uma regra, você deve fornecer um valor para cada variável. A variável é definida como o valor especificado quando a regra for avaliada como verdadeiro. Para cada variável, você pode selecionar o **Valor secreto** para ocultar o valor da variável. Por padrão, algumas variáveis existentes ocultam valores, como a variável de sequência de tarefas OSDCaptureAccountPassword.  
+Depois de selecionar as variáveis de uma regra, você deve fornecer um valor para cada variável. A variável é definida como o valor especificado quando a regra for avaliada como verdadeiro. Para cada variável, você pode selecionar o **Valor secreto** para ocultar o valor da variável. Por padrão, algumas variáveis existentes ocultam valores, como a variável de sequência de tarefas OSDCaptureAccountPassword.  
 
 > [!IMPORTANT]  
 >  Quando você importa uma sequência de tarefas com a etapa Definir variáveis dinâmicas, o **Valor secreto** é selecionado para o valor da variável, sendo o valor removido ao importar a sequência de tarefas. Como resultado, você deve reinserir o valor da variável dinâmica novamente depois de importar a sequência de tarefas.  
@@ -1690,6 +1696,6 @@ A nova variável de sequência de tarefas, SMSTSSoftwareUpdateScanTimeout, foi i
 
 
 
-<!--HONumber=Nov16_HO1-->
+<!--HONumber=Dec16_HO3-->
 
 

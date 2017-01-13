@@ -1,17 +1,17 @@
-# [Entender](understand/introduction-to-operating-system-deployment.md)
+# Entender e explorar
 ## [Introdução à implantação de sistema operacional](understand/introduction-to-operating-system-deployment.md)
 ## [Etapas da sequência de tarefas](understand/task-sequence-steps.md)
 ## [Variáveis de ação da sequência de tarefas](understand/task-sequence-action-variables.md)
 ## [Variáveis internas de sequência de tarefas](understand/task-sequence-built-in-variables.md)
 ## [Comandos prestart para mídia de sequência de tarefas](understand/prestart-commands-for-task-sequence-media.md)
 
-# [Planejamento e design](plan-design/infrastructure-requirements-for-operating-system-deployment.md)
+# Planejamento e design
 ## [Requisitos de infraestrutura para implantação de sistema operacional](plan-design/infrastructure-requirements-for-operating-system-deployment.md)
 ## [Considerações sobre o planejamento para automatizar tarefas](plan-design/planning-considerations-for-automating-tasks.md)
 ## [Segurança e privacidade para implantação de sistema operacional](plan-design/security-and-privacy-for-operating-system-deployment.md)
 ## [Planejando a interoperabilidade da implantação de sistema operacional](plan-design/planning-for-operating-system-deployment-interoperability.md)
 
-# [Introdução](get-started/prepare-site-system-roles-for-operating-system-deployments.md)
+# Introdução
 ## [Preparar as funções do sistema de sites para implantações de sistema operacional](get-started/prepare-site-system-roles-for-operating-system-deployments.md)
 ## [Preparar para implantação de sistema operacional](get-started/prepare-for-operating-system-deployment.md)
 ### [Gerenciar imagens de inicialização](get-started/manage-boot-images.md)
@@ -28,7 +28,7 @@
 
 ## [Preparar o cache par do Windows PE para reduzir o tráfego da WAN](get-started/prepare-windows-pe-peer-cache-to-reduce-wan-traffic.md)
 
-# [Implantar e usar](deploy-use/scenarios-to-deploy-enterprise-operating-systems.md)
+# Implantar e usar
 ## [Cenários para implantar sistemas operacionais corporativos](deploy-use/scenarios-to-deploy-enterprise-operating-systems.md)
 ### [Atualizar o Windows para a versão mais recente](deploy-use/upgrade-windows-to-the-latest-version.md)
 ### [Atualizar um computador existente com uma nova versão do Windows](deploy-use/refresh-an-existing-computer-with-a-new-version-of-windows.md)
@@ -54,8 +54,10 @@
 ### [Criar uma sequência de tarefas para capturar e restaurar o estado do usuário](deploy-use/create-a-task-sequence-to-capture-and-restore-user-state.md)
 ### [Usar uma sequência de tarefas para gerenciar discos rígidos virtuais](deploy-use/use-a-task-sequence-to-manage-virtual-hard-disks.md)
 
-## [Criar uma sequência de tarefas personalizada](deploy-use/create-a-custom-task-sequence.md)
+## [Cenários de sequência de tarefas personalizadas](deploy-use/custom-task-sequence-scenarios.md)
+### [Criar uma sequência de tarefas personalizada](deploy-use/create-a-custom-task-sequence.md)
 ### [Criar uma sequência de tarefas para implantações que não são de sistema operacional](deploy-use/create-a-task-sequence-for-non-operating-system-deployments.md)
+### [Etapas de sequência de tarefas para gerenciar o BIOS para a conversão de UEFI](deploy-use/task-sequence-steps-to-manage-bios-to-uefi-conversion.md)
 
 ## [Criar mídia de sequência de tarefas](deploy-use/create-task-sequence-media.md)
 ### [Criar mídia autônoma](deploy-use/create-stand-alone-media.md)
@@ -64,6 +66,6 @@
 ### [Criar mídia de captura](deploy-use/create-capture-media.md)
 
 
-<!--HONumber=Nov16_HO1-->
+<!--HONumber=Dec16_HO3-->
 
 

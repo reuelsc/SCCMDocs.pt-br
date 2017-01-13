@@ -1,5 +1,5 @@
 ---
-title: Funcionalidades no Technical Preview 1601 do System Center Configuration Manager
+title: Funcionalidades do Technical Preview 1601 do System Center Configuration Manager | Microsoft Docs
 description: "Saiba mais sobre os recursos disponíveis no Technical Preview do System Center Configuration Manager, versão 1601."
 ms.custom: na
 ms.date: 10/06/2016
@@ -16,8 +16,8 @@ author: Brenduns
 ms.author: brenduns
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: 1134bb2f04152288e72d40b1b1083f415cb4e900
-ms.openlocfilehash: be158c1d893a1c1aae19c6cf2fd3a678a59d4f9e
+ms.sourcegitcommit: 3bf44f850722afdb8dfe5922c8ceff11c9b56d08
+ms.openlocfilehash: 7321645f17a143afe2fd848f45511a374de78c4b
 
 ---
 # <a name="capabilities-in-technical-preview-1601-for-system-center-configuration-manager"></a>Funcionalidades no Technical Preview 1601 do System Center Configuration Manager
@@ -211,8 +211,8 @@ Um cliente estará online se estiver conectado a uma função de sistema de site
 
  Para mais informações, consulte [Como criar itens de configuração para dispositivos Windows 8.1 e Windows 10 gerenciados sem o cliente do System Center Configuration Manager](../../compliance/deploy-use/create-configuration-items-for-windows-8.1-and-windows-10-devices-managed-without-the-client.md).  
 
-### <a name="android---kiosk-mode-for-samsung-knoxbr-hybrid"></a>Android – modo de quiosque para Samsung KNOX<br />Híbrido  
- O modo de quiosque permite bloquear um dispositivo para permitir que apenas alguns recursos funcionem. Por exemplo, você pode permitir que um dispositivo execute apenas um aplicativo gerenciado que você especificar ou pode desabilitar os botões de volume em um dispositivo. Essas configurações podem ser usadas para um modelo de demonstração de um dispositivo ou um dispositivo que é dedicado a apenas uma função, como um dispositivo de ponto de venda. Essas configurações não estão disponíveis para dispositivos Samsung KNOX no item de configuração **Windows 8.1 e Windows 10** (as configurações só se aplicam a dispositivos Windows 10).  
+### <a name="android---kiosk-mode-for-samsung-knox-standardbr-hybrid"></a>Android – Modo de quiosque para Samsung KNOX Standard<br />Híbrido  
+ O modo de quiosque permite bloquear um dispositivo para permitir que apenas alguns recursos funcionem. Por exemplo, você pode permitir que um dispositivo execute apenas um aplicativo gerenciado que você especificar ou pode desabilitar os botões de volume em um dispositivo. Essas configurações podem ser usadas para um modelo de demonstração de um dispositivo ou um dispositivo que é dedicado a apenas uma função, como um dispositivo de ponto de venda. Essas configurações não estão disponíveis para dispositivos Samsung KNOX Standard no item de configuração **Windows 8.1 e Windows 10** (as configurações só se aplicam a dispositivos Windows 10).  
 
  Para ver as novas configurações, escolha **Modo de Quiosque – Samsung KNOX** no item de configuração da página **Configurações do Dispositivo** do assistente **Criar Item de Configuração**.  
 
@@ -220,6 +220,6 @@ Um cliente estará online se estiver conectado a uma função de sistema de site
 
 
 
-<!--HONumber=Nov16_HO1-->
+<!--HONumber=Dec16_HO3-->
 
 

@@ -1,5 +1,5 @@
 ---
-title: "Definições de malware do Endpoint Protection do compartilhamento de rede | System Center Configuration Manager"
+title: "Definições de malware do Endpoint Protection do compartilhamento de rede | Microsoft Docs"
 description: "Aprenda como baixar manualmente as atualizações de definições mais recentes da Microsoft e configurar os clientes para baixar essas definições."
 ms.custom: na
 ms.date: 10/06/2016
@@ -16,8 +16,8 @@ author: NathBarn
 ms.author: nathbarn
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: 1134bb2f04152288e72d40b1b1083f415cb4e900
-ms.openlocfilehash: e4ff39f89a71ddbf9cadfcfa80f0c5c019611a35
+ms.sourcegitcommit: bff083fe279cd6b36a58305a5f16051ea241151e
+ms.openlocfilehash: 6b1780c4ea4304d950188fbb6201d810e940c4fc
 
 
 ---
@@ -60,6 +60,6 @@ ms.openlocfilehash: e4ff39f89a71ddbf9cadfcfa80f0c5c019611a35
 
 
 
-<!--HONumber=Nov16_HO1-->
+<!--HONumber=Dec16_HO3-->
 
 

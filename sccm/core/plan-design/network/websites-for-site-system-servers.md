@@ -1,5 +1,5 @@
 ---
-title: Sites para sistema de sites | System Center Configuration Manager
+title: Sites da Web para sistemas de sites | Microsoft Docs
 description: "Saiba mais sobre os sites padrão e personalizado para servidores do sistema de sites no System Center Configuration Manager."
 ms.custom: na
 ms.date: 10/06/2016
@@ -17,8 +17,8 @@ author: Brenduns
 ms.author: brenduns
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: 1134bb2f04152288e72d40b1b1083f415cb4e900
-ms.openlocfilehash: 3f463aa804cb928b29fc26d9af8dede7f65222df
+ms.sourcegitcommit: 6ed317d45d90758832d4157985dd95d5e253c6fc
+ms.openlocfilehash: 005c9f33367f173993d9626f10a72dd5b0141fbc
 
 
 ---
@@ -135,6 +135,6 @@ Uma vez que as etapas para criar um site personalizado variam para versões dife
 
 
 
-<!--HONumber=Nov16_HO1-->
+<!--HONumber=Dec16_HO3-->
 
 

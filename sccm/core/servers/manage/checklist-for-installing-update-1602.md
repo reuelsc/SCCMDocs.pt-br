@@ -1,5 +1,5 @@
 ---
-title: "Lista de verificação para 1602 | System Center Configuration Manager"
+title: "Lista de verificação para a 1602 | Microsoft Docs"
 description: "Saiba mais sobre as ações a serem executadas antes de atualizar do System Center Configuration Manager versão 1511 para a 1602."
 ms.custom: na
 ms.date: 10/06/2016
@@ -16,8 +16,8 @@ author: Brenduns
 ms.author: brenduns
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: 1134bb2f04152288e72d40b1b1083f415cb4e900
-ms.openlocfilehash: 75f5ddfdc84185ee27bf60416e54d37295928156
+ms.sourcegitcommit: 10b1010ccbf3889c58c55b87e70b354559243c90
+ms.openlocfilehash: 78f8e9474afe208c5d91d27e8d2a202f4ed6154e
 
 
 ---
@@ -135,6 +135,6 @@ Para obter mais informações, confira **Etapa 3: Executar o verificador de pré
 
 
 
-<!--HONumber=Nov16_HO1-->
+<!--HONumber=Dec16_HO3-->
 
 

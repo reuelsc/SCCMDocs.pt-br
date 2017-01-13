@@ -1,5 +1,5 @@
 ---
-title: "Dados de diagnóstico e de uso | System Center Configuration Manager"
+title: "Dados de uso e diagnóstico | Microsoft Docs"
 description: "Saiba mais sobre os dados de diagnóstico e de uso que o System Center Configuration Manager coleta sobre si mesmo."
 ms.custom: na
 ms.date: 10/06/2016
@@ -17,8 +17,8 @@ author: Brenduns
 ms.author: brenduns
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: 1134bb2f04152288e72d40b1b1083f415cb4e900
-ms.openlocfilehash: 996efaeb89926b04d2f071cf600dcf45bd2edc89
+ms.sourcegitcommit: 3d113c55726efe674b79ef5ecb26aac8c893cba2
+ms.openlocfilehash: ac3395c82cb570960bf2c3b98cd06e282e64b1a5
 
 
 ---
@@ -43,7 +43,7 @@ O System Center Configuration Manager coleta dados de diagnóstico e de uso sobr
     - [Dados de diagnóstico para 1511](/sccm/core/plan-design/diagnostics/levels-of-diagnostic-usage-data-collection-1511)
     - [Dados de diagnóstico para 1602](/sccm/core/plan-design/diagnostics/levels-of-diagnostic-usage-data-collection-1602)
     - [Dados de diagnóstico para 1606](/sccm/core/plan-design/diagnostics/levels-of-diagnostic-usage-data-collection-1606)  
-    
+    - [Dados de diagnóstico para 1610](/sccm/core/plan-design/diagnostics/levels-of-diagnostic-usage-data-collection-1610)  
 
 -   [Como os dados de diagnóstico e de uso são coletados pelo System Center Configuration Manager](../../../core/plan-design/diagnostics/how-diagnostics-and-usage-data-is-collected.md)  
 
@@ -58,6 +58,6 @@ O System Center Configuration Manager coleta dados de diagnóstico e de uso sobr
 
 
 
-<!--HONumber=Nov16_HO1-->
+<!--HONumber=Dec16_HO3-->
 
 

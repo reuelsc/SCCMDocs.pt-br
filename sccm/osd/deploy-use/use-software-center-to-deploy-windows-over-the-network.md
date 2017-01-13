@@ -1,5 +1,5 @@
 ---
-title: Usar o Centro de Software para implantar o Windows pela rede | Configuration Manager
+title: Usar o Centro de Software para implantar o Windows pela rede | Microsoft Docs
 description: "Você pode implantar um sistema operacional no Centro de Software para atualizar um computador existente com uma nova versão do Windows ou para atualizar o Windows para a versão mais recente."
 ms.custom: na
 ms.date: 10/06/2016
@@ -16,8 +16,8 @@ author: Dougeby
 ms.author: dougeby
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: 1134bb2f04152288e72d40b1b1083f415cb4e900
-ms.openlocfilehash: 189fdac38760b75eb3795348f6af4ef7e83c3f20
+ms.sourcegitcommit: 74341fb60bf9ccbc8822e390bd34f9eda58b4bda
+ms.openlocfilehash: 4c3ec20396da37d36f908af527f445a7a736e0ac
 
 
 ---
@@ -45,6 +45,6 @@ A sequência de tarefas para instalar um sistema operacional no System Center Co
 
 
 
-<!--HONumber=Nov16_HO1-->
+<!--HONumber=Dec16_HO3-->
 
 

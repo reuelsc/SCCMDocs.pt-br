@@ -1,8 +1,8 @@
 ---
-title: "Gerenciar o acesso aos serviços O365 para computadores gerenciados | System Center Configuration Manager"
+title: "Gerenciar o acesso aos serviços do O365 para computadores gerenciados | Microsoft Docs"
 description: Saiba como configurar o acesso condicional para computadores gerenciados pelo System Center Configuration Manager.
 ms.custom: na
-ms.date: 10/06/2016
+ms.date: 11/18/2016
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
@@ -12,12 +12,12 @@ ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: ccdb424a-b603-4ccc-af36-558924248022
 caps.latest.revision: 15
-author: karthikaraman
-ms.author: karaman
+author: andredm7
+ms.author: andredm
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: 5c6cf3c1697b49708aa5192b67b08b700da7dc72
-ms.openlocfilehash: c475c560971ab73e8be7671164a010a91bd3f229
+ms.sourcegitcommit: c13c6268fa76ade7feb0981f9c4a6e325e393aca
+ms.openlocfilehash: da5fcd65d7af8d73aa23f4a7d96cd8fc6e48f9dc
 
 
 ---
@@ -30,7 +30,7 @@ ms.openlocfilehash: c475c560971ab73e8be7671164a010a91bd3f229
  A partir da versão 1602 do Configuration Manager, é possível configurar o acesso condicional para computadores gerenciados pelo System Center Configuration Manager.  
 
 > [!IMPORTANT]  
->  Esse é um recurso de pré-lançamento disponível nas atualizações 1602 e 1606. Os recursos de pré-lançamento foram incluídos no produto para testes iniciais em um ambiente de produção, mas não devem ser considerados prontos para produção. Para obter mais informações, consulte [Usar recursos de pré-lançamento de atualizações](../../core/servers/manage/install-in-console-updates.md#bkmk_prerelease).
+>  Esse é um recurso de pré-lançamento disponível nas atualizações 1602, 1606 e 1610. Os recursos de pré-lançamento foram incluídos no produto para testes iniciais em um ambiente de produção, mas não devem ser considerados prontos para produção. Para obter mais informações, consulte [Usar recursos de pré-lançamento de atualizações](../../core/servers/manage/install-in-console-updates.md#bkmk_prerelease).
 > - Depois de instalar a atualização 1602, o tipo de recurso é exibido como liberado apesar de ser pré-lançamento.
 > - Se você atualiza da 1602 para a 1606, o tipo de recurso é exibido como liberado apesar de continuar sendo pré-lançamento.
 > - Se você atualiza da versão 1511 diretamente para a 1606, o tipo de recurso é exibido como pré-lançamento.
@@ -96,16 +96,16 @@ ms.openlocfilehash: c475c560971ab73e8be7671164a010a91bd3f229
 
  Grupos de usuário de segurança do Active Directory Esses grupos de usuário devem ser sincronizados com o Azure Active Directory. Você também pode configurar esses grupos no Centro de administração do Office 365 ou no Portal de conta do Intune.  
 
- Você pode especificar dois tipos de grupo em cada política:  
+ É possível especificar dois tipos de grupo em cada política. :  
 
--   **Grupos de destino** – Grupos de usuários aos quais a política é aplicada  
+-   **Grupos de destino** – grupos de usuários aos quais a política é aplicada. O mesmo grupo deve ser usado para as políticas de conformidade e de acesso condicional.  
 
 -   **Grupos isentos** – Grupos de usuários isentos da política (opcional)  
     Se um usuário estiver nas duas, ele ficará isento da política.  
 
      Somente os grupos que são afetados pela política de acesso condicional são avaliados.  
 
-### <a name="step-3-create-a-conditional-access-policy-for-exchange-online-and-sharepoint-online"></a>Etapa 3.  Criar uma política de acesso condicional para o Exchange Online e o SharePoint Online.  
+### <a name="step-3--create-a-conditional-access-policy-for-exchange-online-and-sharepoint-online"></a>Etapa 3.  Criar uma política de acesso condicional para o Exchange Online e o SharePoint Online.  
 
 1.  No console do Configuration Manager, clique em **Ativos e Conformidade**.  
 
@@ -126,7 +126,7 @@ ms.openlocfilehash: c475c560971ab73e8be7671164a010a91bd3f229
 6.  Em **Grupos de Destino**, clique em **Modificar** para selecionar os grupos de segurança do Active Directory do Azure aos quais a política será aplicada.  
 
     > [!NOTE]  
-    >  Os grupos de usuários aos quais as políticas de acesso condicional são aplicadas também devem ter a política de conformidade aplicada.  
+    >  O mesmo grupo de usuários de segurança deve ser usado para implantar a política de conformidade e o Grupo de Destino para a política de acesso condicional.  
 
      Opcionalmente, em **Grupos isentos**, clique em **Modificar** para selecionar os grupos de segurança do Active Directory do Azure que são isentos dessa política.  
 
@@ -148,6 +148,6 @@ ms.openlocfilehash: c475c560971ab73e8be7671164a010a91bd3f229
 
 
 
-<!--HONumber=Nov16_HO1-->
+<!--HONumber=Dec16_HO3-->
 
 

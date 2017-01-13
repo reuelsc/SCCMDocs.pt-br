@@ -1,5 +1,5 @@
 ---
-title: "Dados de diagnóstico para 1511 | System Center Configuration Manager"
+title: "Dados de diagnóstico para 1511 | Microsoft Docs"
 description: "Saiba mais sobre os níveis de dados de diagnóstico e de uso que o System Center Configuration Manager versão 1511 coleta."
 ms.custom: na
 ms.date: 10/06/2016
@@ -34,8 +34,8 @@ translation.priority.ht:
 - zh-cn
 - zh-tw
 translationtype: Human Translation
-ms.sourcegitcommit: 1134bb2f04152288e72d40b1b1083f415cb4e900
-ms.openlocfilehash: 3488efcd6638b538f05fae52dfd8918423a32b58
+ms.sourcegitcommit: 1a4a9da88caba55d9e340c7fb1f31f4e3b957f3e
+ms.openlocfilehash: fa3c2f9c9bdc1f095b450babd675db4a160992d9
 
 ---
 # <a name="levels-of-diagnostic-usage-data-collection-for-version-1511-of-system-center-configuration-manager"></a>Níveis da coleta de dados de diagnóstico e de uso da versão 1511 do System Center Configuration Manager
@@ -48,7 +48,10 @@ O System Center Configuration Manager versão 1511 coleta três níveis de dados
 >  O Configuration Manager não coleta códigos do site ou nomes de sites, endereços IP, nomes de usuário ou computador, endereços físicos ou de email nos níveis Básico ou Avançado. Qualquer coleta dessas informações no nível Completo não é proposital (potencialmente incluídas nas informações de diagnóstico avançadas, como arquivos de log ou instantâneos de memória) e elas não serão usadas pela Microsoft para identificá-lo ou contatá-lo nem para fins de publicidade.  
 
 ##  <a name="a-namebkmkchangea-how-to-change-the-level"></a><a name="bkmk_change"></a> Como alterar o nível  
- Os administradores com um escopo administrativo baseado em funções que inclui as permissões **Modificar** na classe de objeto **Site** podem alterar o nível dos dados coletados nas configurações Dados de Diagnóstico e de Uso no console do Configuration Manager.  
+ Os administradores com um escopo administrativo baseado em funções que inclui as permissões **Modificar** na classe de objeto **Site** podem alterar o nível dos dados coletados nas configurações Dados de Diagnóstico e de Uso no console do Configuration Manager.
+
+ Para fazer isso, no console, acesse a guia Backstage (a guia superior esquerda com a seta suspensa), selecione **Dados de Uso** e o nível de dados que você deseja usar.  
+
 
 ##  <a name="a-namebkmklevel1a-level-1---basic"></a><a name="bkmk_level1"></a> Nível 1 — Básico  
  O nível Básico inclui dados sobre sua hierarquia e é necessário para ajudar a aperfeiçoar sua experiência de instalação ou de atualização, bem como para ajudar a determinar quais atualizações do Configuration Manager são aplicáveis à sua hierarquia.  
@@ -278,6 +281,6 @@ A partir da versão 1511 do System Center Configuration Manager, este nível inc
 
 
 
-<!--HONumber=Nov16_HO1-->
+<!--HONumber=Dec16_HO3-->
 
 

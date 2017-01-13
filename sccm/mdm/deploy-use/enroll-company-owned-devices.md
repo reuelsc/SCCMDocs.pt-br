@@ -1,5 +1,5 @@
 ---
-title: "Registrar dispositivos da empresa para implantações híbridas com o Configuration Manager"
+title: "Registrar dispositivos de propriedade da empresa para implantações híbridas com o Configuration Manager | Microsoft Docs"
 description: "Conheça os diferentes métodos para registrar dispositivos da empresa para implantações híbridas com o Configuration Manager."
 ms.custom: na
 ms.date: 10/06/2016
@@ -12,12 +12,12 @@ ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: e2754ce6-1460-4ddd-9050-2cc87e7964f4
 caps.latest.revision: 13
-author: NathBarn
-ms.author: nathbarn
+author: mtillman
+ms.author: mtillman
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: 1134bb2f04152288e72d40b1b1083f415cb4e900
-ms.openlocfilehash: 91f1d0d775236fe4cb6675b1017161520a281df5
+ms.sourcegitcommit: 55c953f312a9fb31e7276dde2fdd59f8183b4e4d
+ms.openlocfilehash: 490b89f8174667d232a2ca3729d36ead8fc4d46c
 
 
 ---
@@ -47,10 +47,10 @@ COD (dispositivos de propriedade da empresa ou da organização) podem ser inclu
 Você pode identificar os dispositivos corporativos importando seus números IMEI (identidade internacional de equipamento móvel) ou números de série do iOS. Você pode carregar um arquivo .csv (valores separados por vírgula) que contém os números IMEI do dispositivo ou inserir manualmente as informações sobre o dispositivo.  Consulte [Pré-declarar dispositivos com números de ID de hardware](../../mdm/deploy-use/predeclare-devices-with-hardware-id.md).
 
 ## <a name="see-also"></a>Consulte também  
- [MDM (gerenciamento de dispositivo móvel) híbrido com o System Center Configuration Manager e o Microsoft Intune](../../mdm/plan-design/hybrid-mobile-device-management.md)
+ [MDM (gerenciamento de dispositivo móvel) híbrido com o System Center Configuration Manager e o Microsoft Intune](https://docs.microsoft.com/sccm/mdm/understand/hybrid-mobile-device-management)
 
 
 
-<!--HONumber=Nov16_HO1-->
+<!--HONumber=Dec16_HO3-->
 
 

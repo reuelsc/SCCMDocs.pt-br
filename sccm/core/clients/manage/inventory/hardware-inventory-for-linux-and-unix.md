@@ -1,5 +1,5 @@
 ---
-title: "Inventário de hardware | Linux UNIX | System Center Configuration Manager"
+title: "Inventário de hardware | Microsoft Docs | Linux UNIX "
 description: "Saiba como usar o inventário de hardware para Linux e UNIX no System Center Configuration Manager."
 ms.custom: na
 ms.date: 10/06/2016
@@ -16,8 +16,8 @@ author: nbigman
 ms.author: nbigman
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: 1134bb2f04152288e72d40b1b1083f415cb4e900
-ms.openlocfilehash: d0db2afd9a16daf4069a746a8dda59895048ca53
+ms.sourcegitcommit: fc392e4440e84614f92218e9c7a09ec1c2c64f53
+ms.openlocfilehash: cb1ac4f33b9ef291050a3406291b8cc1f112b586
 
 
 ---
@@ -127,6 +127,6 @@ O cliente do System Center Configuration Manager para Linux e UNIX dá suporte a
 
 
 
-<!--HONumber=Nov16_HO1-->
+<!--HONumber=Dec16_HO3-->
 
 

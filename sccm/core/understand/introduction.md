@@ -1,5 +1,5 @@
 ---
-title: "Introdução | System Center Configuration Manager"
+title: "Introdução | Microsoft Docs"
 description: "Veja informações básicas em uma introdução ao System Center Configuration Manager."
 ms.custom: na
 ms.date: 10/06/2016
@@ -16,8 +16,8 @@ author: Brenduns
 ms.author: brenduns
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: 1134bb2f04152288e72d40b1b1083f415cb4e900
-ms.openlocfilehash: 46aa1fdf49dcdacb9d5e53963a0f799e5f0a1754
+ms.sourcegitcommit: b0b2f72d4b1eae3aa5b860a210ac3a4259e17069
+ms.openlocfilehash: 3bbbb6a00883a5e489696387fad9224fdc2082ba
 
 
 ---
@@ -27,7 +27,7 @@ ms.openlocfilehash: 46aa1fdf49dcdacb9d5e53963a0f799e5f0a1754
 
 Membro do pacote de soluções de gerenciamento do Microsoft System Center, o System Center Configuration Manager pode ajudá-lo a gerenciar dispositivos e usuários localmente e na nuvem.  
 
-**O Configuration Manager pode ajudar a:**   
+**O Configuration Manager pode ajudar você a:**   
 -   Aumentar a eficiência e a produtividade de TI, reduzindo as tarefas manuais e permitindo que você se concentre em projetos de alto valor  
 -   Maximizar os investimentos em hardware e software  
 -   Capacitar a produtividade do usuário final ao fornecer o software certo no momento certo  
@@ -222,6 +222,6 @@ O Configuration Manager também usa:
 
 
 
-<!--HONumber=Nov16_HO1-->
+<!--HONumber=Dec16_HO3-->
 
 

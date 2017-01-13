@@ -1,8 +1,8 @@
 ---
-title: "Atualizar dispositivos do Windows para a nova versão | System Center Configuration Manager"
+title: "Atualizar dispositivos do Windows para uma versão nova | Microsoft Docs"
 description: "Atualize dispositivos que executam o Windows 10 Desktop, o Windows 10 Mobile ou Windows 10 Holographic para uma edição mais recente automaticamente."
 ms.custom: na
-ms.date: 10/06/2016
+ms.date: 11/18/2016
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
@@ -17,8 +17,8 @@ author: robstackmsft
 ms.author: robstack
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: 1134bb2f04152288e72d40b1b1083f415cb4e900
-ms.openlocfilehash: 7ee088f6da266742e7836499a7f0e072bf446a62
+ms.sourcegitcommit: 1a4a9da88caba55d9e340c7fb1f31f4e3b957f3e
+ms.openlocfilehash: f14dfb77be7b53e74d53e0c1fc7e7f1731952d40
 
 
 ---
@@ -35,12 +35,13 @@ A **Política de Atualização de Edição** do System Center Configuration Mana
 - Windows 10 Holographic
 
 Há suporte para os seguintes caminhos de atualização:
+
 - Do Windows 10 Pro para Windows 10 Enterprise
 - Do Windows 10 Home para Windows 10 Education
 - Do Windows 10 Mobile para Windows 10 Mobile Enterprise
 - Do Windows 10 Holographic Pro para Windows 10 Holographic Enterprise
 
-Os dispositivos devem estar registrados no Microsoft Intune. Esse recurso não é atualmente compatível com computadores que executam o software cliente do Configuration Manager, ou que são gerenciados pelo MDM local.
+Os dispositivos devem ser registrados no Microsoft Intune ou executar o software cliente do Configuration Manager. Essa política não é compatível no momento com PCs gerenciados por MDM local.
 
 ## <a name="before-you-start"></a>Antes de começar  
  Antes de começar a atualizar os dispositivos para a versão mais recente, será necessário o seguinte:  
@@ -78,7 +79,7 @@ Os dispositivos devem estar registrados no Microsoft Intune. Esse recurso não �
 
 6.  Conclua o assistente.  
 
- A nova política é exibida no nó **Atualização de Edição do Windows 10** do espaço de trabalho **Ativos e Conformidade** .  
+A nova política é exibida no nó **Atualização de Edição do Windows 10** do espaço de trabalho **Ativos e Conformidade** .  
 
 ## <a name="deploy-the-edition-upgrade-policy"></a>Implantar a política de atualização de edição  
 
@@ -86,14 +87,14 @@ Os dispositivos devem estar registrados no Microsoft Intune. Esse recurso não �
 
 3.  Selecione a política de atualização de edição do Windows 10 que deseja implantar e, na guia **Início** , no grupo **Implantação** , clique em **Implantar**.  
 
-4.  Na caixa de diálogo **Implantar a Atualização de Edição do Windows 10** , escolha a coleção de usuário ou do dispositivo para o qual você deseja implantar a política e o agendamento pelo qual a política será avaliada e, em seguida, clique em **OK**.  
+4.  Na caixa de diálogo **Implantar a Atualização do Windows 10 Edition**, escolha a coleção a qual você deseja implantar a política e o agendamento pelo qual a política será avaliada e, em seguida, clique em **OK**. Para PCs gerenciados com o cliente do Configuration Manager, você deve implantar a política para uma coleção de dispositivos. Para computadores que são registrados com o Intune, você pode implantar a política a um usuário ou uma coleção de dispositivos. 
 
- Você pode monitorar a implantação que acabou de ser criada no nó **Implantações** do espaço de trabalho **Monitoramento** .  
+Você pode monitorar a implantação que acabou de ser criada no nó **Implantações** do espaço de trabalho **Monitoramento** .  
 
- Quando a política atinge um computador Windows definido como destino, ele será reiniciado dentro de duas horas para aplicar a atualização. Certifique-se de informar os usuários nos quais você implanta a política ou agende a política para ser executada fora do horário de trabalho dos usuários.
+ Quando a política atinge um computador Windows definido como destino e é avaliada, ela será reiniciada dentro de duas horas para aplicar a atualização. Certifique-se de informar os usuários nos quais você implanta a política ou agende a política para ser executada fora do horário de trabalho dos usuários.
 
 
 
-<!--HONumber=Nov16_HO1-->
+<!--HONumber=Dec16_HO3-->
 
 

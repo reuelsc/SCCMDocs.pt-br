@@ -1,5 +1,5 @@
 ---
-title: Tamanho e escala | System Center Configuration Manager
+title: Tamanho e escala | Microsoft Docs
 description: "Identifique o número de funções de sites e do sistema de sites que você precisará para dar suporte aos dispositivos em seu ambiente do System Center Configuration Manager."
 ms.custom: na
 ms.date: 10/06/2016
@@ -16,8 +16,8 @@ author: Brenduns
 ms.author: brenduns
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: 1134bb2f04152288e72d40b1b1083f415cb4e900
-ms.openlocfilehash: aeeb902fad7444534cafa7f9cb984ce8764471b0
+ms.sourcegitcommit: 6ed317d45d90758832d4157985dd95d5e253c6fc
+ms.openlocfilehash: 453d934d693d58e98cf800988dff702400daaf95
 
 ---
 # <a name="size-and-scale-numbers-for-system-center-configuration-manager"></a>Números de tamanho e escala para o System Center Configuration Manager
@@ -190,6 +190,6 @@ Cada gerenciamento pode dar suporte a seguinte quantidade de dispositivos:
 
 
 
-<!--HONumber=Nov16_HO1-->
+<!--HONumber=Dec16_HO3-->
 
 

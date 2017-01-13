@@ -1,5 +1,5 @@
 ---
-title: "Gerenciar estado de usuário| Configuration Manager"
+title: "Gerenciar o estado do usuário | Microsoft Docs"
 description: "O System Center Configuration Manager usa a Ferramenta de Migração do Usuário para capturar e restaurar os dados de estado do usuário em cenários de implantação de sistema operacional."
 ms.custom: na
 ms.date: 10/06/2016
@@ -17,8 +17,8 @@ author: Dougeby
 ms.author: dougeby
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: 1134bb2f04152288e72d40b1b1083f415cb4e900
-ms.openlocfilehash: 9269c9a9730409253016126a875755edc617a558
+ms.sourcegitcommit: 74341fb60bf9ccbc8822e390bd34f9eda58b4bda
+ms.openlocfilehash: 65ebfd385a27ebda8d5057f503c01b8b33628a72
 
 
 ---
@@ -133,6 +133,6 @@ Você pode usar as sequências da tarefas do System Center Configuration Manager
 
 
 
-<!--HONumber=Nov16_HO1-->
+<!--HONumber=Dec16_HO3-->
 
 

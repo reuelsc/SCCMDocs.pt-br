@@ -1,5 +1,5 @@
 ---
-title: "Use a mídia inicializável para implantar o Windows na rede | Configuration Manager"
+title: "Usar mídia inicializável para implantar o Windows na rede | Microsoft Docs"
 description: "Use implantações de mídia inicializável no System Center Configuration Manager para implantar o sistema operacional quando o computador de destino iniciar."
 ms.custom: na
 ms.date: 10/06/2016
@@ -16,8 +16,8 @@ author: Dougeby
 ms.author: dougeby
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: 1134bb2f04152288e72d40b1b1083f415cb4e900
-ms.openlocfilehash: f5bdba0f609f51b988dbfdc0b0c8b204405f834a
+ms.sourcegitcommit: 74341fb60bf9ccbc8822e390bd34f9eda58b4bda
+ms.openlocfilehash: beb730efbe4d9bae7c4c97f4e587c8919bd79049
 
 
 ---
@@ -49,11 +49,11 @@ Implantações de mídia inicializável no System Center Configuration Manager p
 ## <a name="create-the-bootable-media"></a>Criar uma mídia inicializável  
  Você pode especificar se a mídia inicializável é uma unidade flash USB ou um conjunto de CD/DVD. O computador que inicia a mídia deve dar suporte para a opção que você escolher como uma unidade inicializável. Para obter mais informações, consulte [Criar mídia inicializável](create-bootable-media.md).  
 
-##  <a name="a-namebkmkdeploya-install-the-operating-system-from-bootable-media"></a><a name="BKMK_Deploy"></a> Instalar o sistema operacional por meio de uma mídia inicializável  
+##  <a name="a-namebkmkdeploya-install-the-operating-system-from--bootable-media"></a><a name="BKMK_Deploy"></a> Instalar o sistema operacional por meio de uma mídia inicializável  
  Insira a mídia inicializável em uma unidade inicializável no computador e ligue-a para instalar o sistema operacional.  
 
 
 
-<!--HONumber=Nov16_HO1-->
+<!--HONumber=Dec16_HO3-->
 
 

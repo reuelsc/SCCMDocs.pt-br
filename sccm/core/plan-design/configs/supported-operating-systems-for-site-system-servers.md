@@ -1,5 +1,5 @@
 ---
-title: Servidores de sistema de sites com suporte | System Center Configuration Manager
+title: Servidores de sistema de sites com suporte | Microsoft Docs
 description: "Saiba quais versões do Windows você pode usar para hospedar um site ou função de sistema de sites do System Center Configuration Manager."
 ms.custom: na
 ms.date: 10/06/2016
@@ -16,12 +16,12 @@ author: Brenduns
 ms.author: brenduns
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: 1134bb2f04152288e72d40b1b1083f415cb4e900
-ms.openlocfilehash: 00d5d8d9ce90b2da79485250d25f943ca1c4547b
+ms.sourcegitcommit: d23b98b362fb016c53974f851c48fa7200d2b2e3
+ms.openlocfilehash: b7c24dee94bca4ce69e0ba8f33129a0b21819d13
 
 
 ---
-# <a name="supported-operating-systems-for-system-center-configuration-manager-site-system-servers"></a>Sistemas operacionais com suporte para servidores de sistema de sites do System Center Configuration Manager
+# <a name="supported-operating-systems-for-system-center-configuration-manager--site-system-servers"></a>Sistemas operacionais com suporte para servidores de sistema de sites do System Center Configuration Manager
 
 *Aplica-se a: System Center Configuration Manager (Branch Atual)*
 
@@ -36,7 +36,7 @@ Use as informações neste tópico com as informações nos seguintes artigos:
 
 
 
-## <a name="windows-server-2016---standard-datacenter"></a>Windows Server 2016 ‑ Standard, Datacenter
+## <a name="windows-server-2016-----standard-datacenter"></a>Windows Server 2016 ‑ Standard, Datacenter
 Há suporte para o Windows Server 2016 a partir da versão 1606 do Configuration Manager com o pacote cumulativo de atualizações do hotfix de KB3186654 (ou a versão de linha de base do 1606 lançada em outubro de 2016).
 
 **Servidores do site:**  
@@ -68,6 +68,8 @@ Há suporte para o Windows Server 2016 a partir da versão 1606 do Configuration
 -   Ponto proxy do registro  
 
 -   Ponto de status de fallback  
+
+-   Ponto de gerenciamento
 
 -   Ponto do Reporting Services  
 
@@ -114,6 +116,8 @@ Há suporte para o Windows Server 2016 a partir da versão 1606 do Configuration
 
 -   Ponto de status de fallback  
 
+-   Ponto de gerenciamento
+
 -   Ponto do Reporting Services  
 
 -   Ponto de conexão de serviço  
@@ -159,6 +163,8 @@ Há suporte para o Windows Server 2016 a partir da versão 1606 do Configuration
 
 -   Ponto de status de fallback  
 
+-   Ponto de gerenciamento
+
 -   Ponto do Reporting Services  
 
 -   Ponto de conexão de serviço  
@@ -173,8 +179,8 @@ Há suporte para o Windows Server 2016 a partir da versão 1606 do Configuration
 
 -   Ponto de migração de estado  
 
-## <a name="windows-server-2008-r2-with-sp1-x64---standard-enterprise-datacenter"></a>Windows Server 2008 R2 com SP1 (x64) – Standard, Enterprise, Datacenter  
- Agora, o Windows Server 2008 R2 está em suporte estendido e não mais em suporte maintstream, conforme detalhado pelo  [Ciclo de Vida do Suporte da Microsoft](https://support.microsoft.com/lifecycle). Para obter mais informações sobre o suporte futuro para esses sistemas operacionais como servidores de sistema de sites com o Configuration Manager, consulte [Recursos removidos e preteridos do System Center Configuration Manager](../../../core/plan-design/changes/removed-and-deprecated-features.md).  
+## <a name="windows-server-2008-r2-with-sp1-x64-----standard-enterprise-datacenter"></a>Windows Server 2008 R2 com SP1 (x64) – Standard, Enterprise, Datacenter  
+ Agora o Windows Server 2008 R2 está com suporte estendido e não mais com suporte base, conforme detalhado pelo [Ciclo de Vida do Suporte da Microsoft](https://support.microsoft.com/lifecycle). Para obter mais informações sobre o suporte futuro para esses sistemas operacionais como servidores de sistema de sites com o Configuration Manager, consulte [Recursos removidos e preteridos do System Center Configuration Manager](../../../core/plan-design/changes/removed-and-deprecated-features.md).  
 
 **Servidores do site:**  
 
@@ -206,6 +212,8 @@ Há suporte para o Windows Server 2016 a partir da versão 1606 do Configuration
 
 -   Ponto de status de fallback  
 
+-   Ponto de gerenciamento
+
 -   Ponto do Reporting Services  
 
 -   Ponto de conexão de serviço  
@@ -221,7 +229,7 @@ Há suporte para o Windows Server 2016 a partir da versão 1606 do Configuration
 -   Ponto de migração de estado  
 
 ## <a name="windows-server-2008-with-sp2-x86-x64---standard-enterprise-datacenter"></a>Windows Server 2008 com SP2 (x86, x64) ‑ Standard, Enterprise e Datacenter  
- Agora, o Windows Server 2008 está em suporte estendido e não mais em suporte maintstream, conforme detalhado pelo  [Ciclo de Vida do Suporte da Microsoft](https://support.microsoft.com/lifecycle). Para obter mais informações sobre o suporte futuro para esses sistemas operacionais como servidores de sistema de sites com o Configuration Manager, consulte [Recursos removidos e preteridos do System Center Configuration Manager](../../../core/plan-design/changes/removed-and-deprecated-features.md).  
+ Agora o Windows Server 2008 está com suporte estendido e não mais com suporte base, conforme detalhado pelo [Ciclo de Vida do Suporte da Microsoft](https://support.microsoft.com/lifecycle). Para obter mais informações sobre o suporte futuro para esses sistemas operacionais como servidores de sistema de sites com o Configuration Manager, consulte [Recursos removidos e preteridos do System Center Configuration Manager](../../../core/plan-design/changes/removed-and-deprecated-features.md).  
 
 **Servidores do site:**  
 
@@ -256,6 +264,8 @@ Há suporte para o Windows Server 2016 a partir da versão 1606 do Configuration
 -   Ponto proxy do registro  
 
 -   Ponto de status de fallback  
+
+-   Ponto de gerenciamento
 
 -   Ponto do Reporting Services  
 
@@ -331,6 +341,6 @@ Há suporte para o Windows Server 2016 a partir da versão 1606 do Configuration
 
 
 
-<!--HONumber=Nov16_HO1-->
+<!--HONumber=Dec16_HO3-->
 
 

@@ -1,5 +1,5 @@
 ---
-title: "Serviços e comandos de componentes de cliente UNIX/Linux | System Center Configuration Manager"
+title: "Serviços e comandos de componentes de cliente UNIX/Linux | Microsoft Docs"
 description: "Saiba mais sobre os serviços e comandos de componentes em clientes Linux e UNIX no System Center Configuration Manager."
 ms.custom: na
 ms.date: 10/06/2016
@@ -12,12 +12,12 @@ ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: e5a8c79f-5791-49c5-8055-086d742e5559
 caps.latest.revision: 6
-author: Mtillman
-ms.author: mtillman
+author: nbigman
+ms.author: nbigman
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: 1134bb2f04152288e72d40b1b1083f415cb4e900
-ms.openlocfilehash: 92ce5cadc1303fea9dbf828d22fa80e837583e32
+ms.sourcegitcommit: 55c953f312a9fb31e7276dde2fdd59f8183b4e4d
+ms.openlocfilehash: 4a10d3a59aa6417857abc163dd5416f167049f65
 
 
 ---
@@ -46,6 +46,6 @@ ms.openlocfilehash: 92ce5cadc1303fea9dbf828d22fa80e837583e32
 
 
 
-<!--HONumber=Nov16_HO1-->
+<!--HONumber=Dec16_HO3-->
 
 

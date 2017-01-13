@@ -1,5 +1,5 @@
 ---
-title: Preparar-se para instalar sites | System Center Configuration Manager
+title: Preparar para instalar sites | Microsoft Docs
 description: "Leia esses detalhes para economizar tempo durante a instalação de vários sites e evitar erros."
 ms.custom: na
 ms.date: 10/06/2016
@@ -16,8 +16,8 @@ author: Brenduns
 ms.author: brenduns
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: 1134bb2f04152288e72d40b1b1083f415cb4e900
-ms.openlocfilehash: 6f240f1da4561c05bee974b78f43bfcdba591df6
+ms.sourcegitcommit: 10b1010ccbf3889c58c55b87e70b354559243c90
+ms.openlocfilehash: 0534d1eb587cb01f35d811d72ddfe6ceb07e5b7c
 
 ---
 # <a name="prepare-to-install-system-center-configuration-manager-sites"></a>Preparar para instalar sites do System Center Configuration Manager
@@ -73,7 +73,7 @@ Use o console do Configuration Manager para instalar um site secundário como um
 
 
 
-## <a name="a-namebkmktasksa-common-tasks-to-complete-before-starting-an-install"></a><a name="bkmk_tasks"></a> Tarefas comuns para concluir antes de iniciar uma instalação
+## <a name="a-namebkmktasksa--common-tasks-to-complete-before-starting-an-install"></a><a name="bkmk_tasks"></a> Tarefas comuns para concluir antes de iniciar uma instalação
 -   Entender a topologia da hierarquia que você usará para a implantação    
      (confira [Design a hierarchy of sites for System Center Configuration Manager](../../../../core/plan-design/hierarchy/design-a-hierarchy-of-sites.md) (Criar uma hierarquia dos sites para o System Center Configuration Manager))  
 
@@ -90,7 +90,7 @@ Use o console do Configuration Manager para instalar um site secundário como um
 
 
 
-## <a name="a-namebkmksitecodesa-about-site-names-and-site-codes"></a><a name="bkmk_sitecodes"></a> Sobre nomes de site e códigos de site
+## <a name="a-namebkmksitecodesa--about-site-names-and-site-codes"></a><a name="bkmk_sitecodes"></a> Sobre nomes de site e códigos de site
 Códigos e nomes de site são usados para identificar e gerenciar os sites em uma hierarquia do Configuration Manager. No console do Configuration Manager, o código e o nome do site são exibidos no formato &lt;código do site\> - &lt;nome do site\>. Todo código do site que você utiliza na hierarquia deve ser exclusivo. Se o esquema do Active Directory for estendido para o Configuration Manager e os sites estiverem publicando dados, os códigos do site usados dentro de uma floresta do Active Directory deverão ser exclusivos, mesmo se forem usados em uma hierarquia do Configuration Manager diferente, ou se forem usados em instalações anteriores do Configuration Manager. Certifique-se de planejar seus códigos e nomes de site antes de implantar a hierarquia.
 
 ### <a name="specify-a-site-code-and-site-name"></a>Especificar um código do site e um nome de site
@@ -126,7 +126,7 @@ Antes de instalar sites, compreenda as seguintes limitações que se aplicam par
     -   O Configuration Manager não dá suporte para a movimentação de um site primário filho para fora de uma hierarquia para criar um site primário autônomo ou para anexá-lo a uma hierarquia diferente. Em vez disso, desinstale o site primário filho e, em seguida, reinstale-o como um novo site primário autônomo ou filho do site de administração central de uma hierarquia diferente.  
 
 
-## <a name="a-namebkmkoptionalstepsa-optional-steps-to-run-before-starting-setup"></a><a name="bkmk_optionalsteps"></a> Etapas opcionais para executar antes de iniciar a instalação
+## <a name="a-namebkmkoptionalstepsa--optional-steps-to-run-before-starting-setup"></a><a name="bkmk_optionalsteps"></a> Etapas opcionais para executar antes de iniciar a instalação
 **Você pode executar manualmente o [Downloader de Instalação](../../../../core/servers/deploy/install/setup-downloader.md)** para baixar os arquivos de instalação atualizados para o Configuration Manager.
 
 Quando o computador no qual você executará a instalação não estiver conectado à Internet ou se você pretende instalar vários servidores do site, considere usar o Downloader de Instalação para baixar as atualizações necessárias para os arquivos de instalação:
@@ -148,6 +148,6 @@ Quando o computador no qual você executará a instalação não estiver conecta
 
 
 
-<!--HONumber=Nov16_HO1-->
+<!--HONumber=Dec16_HO3-->
 
 

@@ -1,5 +1,5 @@
 ---
-title: "Pré-requisitos para atualizações de software | Configuration Manager"
+title: "Pré-requisitos para atualizações de software | Microsoft Docs"
 description: "Saiba mais sobre os pré-requisitos para atualizações de software no System Center Configuration Manager."
 keywords: 
 author: dougeby
@@ -13,8 +13,8 @@ ms.technology:
 - configmgr-sum
 ms.assetid: fdf05118-162a-411e-b72e-386b9dc9a5e1
 translationtype: Human Translation
-ms.sourcegitcommit: 1134bb2f04152288e72d40b1b1083f415cb4e900
-ms.openlocfilehash: fe56129c09b8936ba59181add86acb239111fea7
+ms.sourcegitcommit: 238ef5814c0c1b832c28d63c9f3879e21a6c439b
+ms.openlocfilehash: 179f076f228daa5adf612275a822cd379b0ce1e3
 
 
 ---
@@ -78,7 +78,7 @@ Este tópico lista os pré-requisitos para atualizações de software no System 
 
 -   [Configurações do cliente para atualizações de software](../get-started/manage-settings-for-software-updates.md#a-namebkmkclientsettingsa-client-settings-for-software-updates).  
 
--   Tópico [Configurações do cliente para atualizações de software](../../core/clients/deploy/about-client-settings.md#a-namebkmksoftwareupdatesdevicesettinga-software-updates).  
+-   Tópico [Configurações do cliente para atualizações de software](../../core/clients/deploy/about-client-settings.md#software-updates).  
 
 ### <a name="reporting-services-point"></a>Ponto do Reporting Services  
  A função do sistema de site do ponto do Reporting Services pode exibir relatórios de atualizações de software. Essa função é opcional, mas recomendada. Para obter mais informações sobre como criar um ponto do Reporting Services, consulte [Configurando relatórios](../../core/servers/manage/configuring-reporting.md).  
@@ -114,6 +114,6 @@ Este tópico lista os pré-requisitos para atualizações de software no System 
 
 
 
-<!--HONumber=Nov16_HO1-->
+<!--HONumber=Dec16_HO3-->
 
 

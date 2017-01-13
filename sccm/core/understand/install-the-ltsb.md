@@ -1,5 +1,5 @@
 ---
-title: "Instalar um site usando a mídia de linha de base da 1606 | System Center Configuration Manager"
+title: "Instalar um site usando a mídia de linha de base 1606 | Microsoft Docs"
 description: "Saiba como usar a mídia de linha de base da 1606 para instalar ou atualizar sites para o System Center Configuration Manager."
 ms.custom: na
 ms.date: 10/12/2016
@@ -16,8 +16,8 @@ author: Brenduns
 ms.author: brenduns
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: 5e97fbcdc21022e98b4cbdb198273dfe544a561f
-ms.openlocfilehash: 3df46a00f2208ffa687c8c99ce610266e206eef0
+ms.sourcegitcommit: 10b1010ccbf3889c58c55b87e70b354559243c90
+ms.openlocfilehash: a80095fb3b227653126a028ab4ab8f4e2dbd612b
 
 
 ---
@@ -83,7 +83,7 @@ Por exemplo, para instalar uma edição do Branch Atual, você usaria:
   **Nome da chave: SABranchOptions**
    -    **SSActive = 1**
    - **CurrentBranch = 1**
- 
+
 
 > [!IMPORTANT]  
 > O **SABranchOptions** funciona apenas com a Instalação da mídia de linha de base. Ele não se aplica quando você executa a Instalação da pasta CD.Latest de um site instalado anteriormente usando a mídia de linha de base da versão 1606.
@@ -148,6 +148,6 @@ Use a Instalação do Configuration Manager da pasta CD.Latest do backup do seu 
 
 
 
-<!--HONumber=Nov16_HO1-->
+<!--HONumber=Dec16_HO3-->
 
 

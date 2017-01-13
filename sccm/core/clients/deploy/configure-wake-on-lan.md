@@ -1,5 +1,5 @@
 ---
-title: Configurar Wake on LAN | System Center Configuration Manager
+title: Configurar o Wake On LAN | Microsoft Docs
 description: "Selecione as configurações de Wake On LAN no System Center Configuration Manager."
 ms.custom: na
 ms.date: 10/06/2016
@@ -12,12 +12,12 @@ ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: b475a0c8-85d6-4cc4-b11f-32c0cc98239e
 caps.latest.revision: 7
-author: Mtillman
-ms.author: mtillman
+author: nbigman
+ms.author: nbigman
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: 1134bb2f04152288e72d40b1b1083f415cb4e900
-ms.openlocfilehash: b8274f9da1ec82aebf43115236f2409995a0052b
+ms.sourcegitcommit: 55c953f312a9fb31e7276dde2fdd59f8183b4e4d
+ms.openlocfilehash: 09f8bc7ee04ff64934030f825a791bc043341963
 
 ---
 # <a name="how-to-configure-wake-on-lan-in-system-center-configuration-manager"></a>Como configurar Wake on LAN no System Center Configuration Manager
@@ -47,7 +47,7 @@ Um computador que recebe as configurações de cliente do proxy de ativação pr
 1. No console do Configuration Manager, vá até **Administração > Configurações do Cliente**.
 2. Clique em **Configurações Padrão do Cliente** e em **Propriedades**.
 3. Selecione **Gerenciamento de Energia** e escolha **Sim** para **Habilitar proxy de ativação**.
-4. Examine e, se necessário, defina as outras configurações de proxy de ativação. Para obter mais informações sobre estas configurações, consulte [Configurações de gerenciamento de energia](../../../core/clients/deploy/about-client-settings.md#BKMK_PowMgmtDeviceSettings).
+4. Examine e, se necessário, defina as outras configurações de proxy de ativação. Para obter mais informações sobre estas configurações, consulte [Configurações de gerenciamento de energia](../../../core/clients/deploy/about-client-settings.md#power-management).
 5. Clique em **OK** para fechar a caixa de diálogo e em **OK** novamente para fechar a caixa de diálogo Configurações do Cliente Padrão.
 
 Você pode usar os seguintes relatórios do Wake On LAN para monitorar a instalação e a configuração do proxy de ativação:
@@ -60,6 +60,6 @@ Você pode usar os seguintes relatórios do Wake On LAN para monitorar a instala
 
 
 
-<!--HONumber=Nov16_HO1-->
+<!--HONumber=Dec16_HO3-->
 
 

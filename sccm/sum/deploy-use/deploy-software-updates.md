@@ -1,5 +1,5 @@
 ---
-title: "Implantar atualizações de software | Configuration Manager"
+title: "Implantar atualizações de software | Microsoft Docs"
 description: "Escolha as atualizações de software no console do Configuration Manager para iniciar manualmente o processo de implantação ou implantar atualizações automaticamente."
 keywords: 
 author: dougeby
@@ -13,8 +13,8 @@ ms.technology:
 - configmgr-sum
 ms.assetid: 04536d51-3bf7-45e5-b4af-36ceed10583d
 translationtype: Human Translation
-ms.sourcegitcommit: 1134bb2f04152288e72d40b1b1083f415cb4e900
-ms.openlocfilehash: b9e922c526750a04b3b7b7b24106fcb8900e73fa
+ms.sourcegitcommit: e6cf8c799b5be2f7dbb6fadadddf702ec974ae45
+ms.openlocfilehash: 70a0ad1da03a7ca88df206fec683ab1df2b531e1
 
 ---
 
@@ -77,6 +77,6 @@ The Configuration Manager client downloads the content for required software upd
 
 
 
-<!--HONumber=Nov16_HO1-->
+<!--HONumber=Dec16_HO3-->
 
 

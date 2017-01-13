@@ -1,5 +1,5 @@
 ---
-title: Funcionalidades no Technical Preview 1603 do System Center Configuration Manager
+title: Funcionalidades do Technical Preview 1603 do System Center Configuration Manager | Microsoft Docs
 description: "Saiba mais sobre os recursos disponíveis no Technical Preview do System Center Configuration Manager, versão 1603."
 ms.custom: na
 ms.date: 10/06/2016
@@ -16,8 +16,8 @@ author: Brenduns
 ms.author: brenduns
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: 39a9cde3bd955c84f301d25258b413fecaa4393b
-ms.openlocfilehash: ab9f71700ff80414f7cb8e79f54fba3262f810ff
+ms.sourcegitcommit: 3bf44f850722afdb8dfe5922c8ceff11c9b56d08
+ms.openlocfilehash: 58304fd4d9e205249da873536c25a77a5d6f8fb3
 
 ---
 # <a name="capabilities-in-technical-preview-1603-for-system-center-configuration-manager"></a>Funcionalidades no Technical Preview 1603 do System Center Configuration Manager
@@ -94,6 +94,6 @@ Você precisará testar as configurações personalizadas no ambiente para deter
 
 
 
-<!--HONumber=Nov16_HO1-->
+<!--HONumber=Dec16_HO3-->
 
 

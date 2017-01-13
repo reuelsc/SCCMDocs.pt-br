@@ -1,5 +1,5 @@
 ---
-title: "Protege seus dados com apagamento, bloqueio ou redefinição de senha remotos usando o System Center Configuration Manager"
+title: "Proteja seus dados com apagamento, bloqueio ou redefinição de senha remotos usando o System Center Configuration Manager | Microsoft Docs"
 description: "Proteja os dados do dispositivo com apagamento completo, apagamento seletivo, bloqueio remoto ou redefinição de senha usando o System Center Configuration Manager."
 ms.custom: na
 ms.date: 10/06/2016
@@ -13,12 +13,12 @@ ms.topic: article
 ms.assetid: 770da7bd-02dd-474a-9604-93ff1ea0c1e4
 caps.latest.revision: 18
 caps.handback.revision: 0
-author: NathBarn
-ms.author: nathbarn
+author: mtillman
+ms.author: mtillman
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: 1134bb2f04152288e72d40b1b1083f415cb4e900
-ms.openlocfilehash: 49a2220616bb6c6734643885bf969245e4c67c77
+ms.sourcegitcommit: 828e2ac9a3f9bcea1571d24145a1021fdf1091f3
+ms.openlocfilehash: d3dd55b496a124c478f1cf2880a096e2fbdd9145
 
 ---
 # <a name="protect-data-with-remote-wipe-lock-or-passcode-reset-using-system-center-configuration-manager"></a>Protege seus dados com apagamento, bloqueio ou redefinição de senha remotos usando o System Center Configuration Manager
@@ -65,9 +65,9 @@ O Configuration Manager fornece recursos de apagamento seletivo, apagamento comp
 |Agente de gerenciamento|O perfil de gerenciamento é removido.|  
 |Perfis de email|Para perfis de email provisionados pelo Intune, a conta de email e o email são removidos.|  
 
- **Android e Android Samsung KNOX**  
+ **Android e Android Samsung KNOX Standard**  
 
-|Conteúdo removido ao desativar um dispositivo|Android|Samsung KNOX|  
+|Conteúdo removido ao desativar um dispositivo|Android|Samsung KNOX Standard|  
 |--------------------------------------------|-------------|------------------|  
 |Aplicativos da empresa e dados associados instalados usando o Configuration Manager e o Intune.|Aplicativos e dados permanecem instalados.|Aplicativos são desinstalados.|  
 |Perfis VPN e Wi-Fi|Removidos.|Removidos.|  
@@ -243,10 +243,10 @@ O Configuration Manager fornece recursos de apagamento seletivo, apagamento comp
 
 ## <a name="see-also"></a>Consulte também  
  [Apagamento Seletivo do Windows para Gerenciamento de Dados do Dispositivo](http://technet.microsoft.com/library/dn486874.aspx)   
- [MDM (gerenciamento de dispositivo móvel) híbrido com o System Center Configuration Manager e o Microsoft Intune](../../mdm/plan-design/hybrid-mobile-device-management.md)
+ [MDM (gerenciamento de dispositivo móvel) híbrido com o System Center Configuration Manager e o Microsoft Intune](../../mdm/understand/hybrid-mobile-device-management.md)
 
 
 
-<!--HONumber=Nov16_HO1-->
+<!--HONumber=Dec16_HO3-->
 
 

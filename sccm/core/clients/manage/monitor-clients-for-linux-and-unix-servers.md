@@ -1,8 +1,8 @@
 ---
-title: Monitorar clientes | Linux UNIX | System Center Configuration Manager
+title: 'Monitorar clientes | System Center Configuration Manager | Linux UNIX '
 description: Monitore clientes em servidores Linux e UNIX no System Center Configuration Manager.
 ms.custom: na
-ms.date: 10/06/2016
+ms.date: 11/23/2016
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
@@ -12,12 +12,12 @@ ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: d827cf91-b18f-4ee7-b538-24ba6f003ab9
 caps.latest.revision: 6
-author: Mtillman
-ms.author: mtillman
+author: nbigman
+ms.author: nbigman
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: 1134bb2f04152288e72d40b1b1083f415cb4e900
-ms.openlocfilehash: 707cb13bcb62848eb42ca824137a645dfd2f9d82
+ms.sourcegitcommit: 620c1caf50b4859afc8f32490ab7945df810aefd
+ms.openlocfilehash: b2b7c88784eed6fbee6ac1f6348d7d6991df1fbb
 
 
 ---
@@ -35,11 +35,10 @@ Você pode exibir informações de servidores Linux e UNIX no console do System 
 
 -   Detalhes sobre inventário no Gerenciador de Recursos  
 
- As seções a seguir fornecem informações sobre como usar o Gerenciador de Recursos e os relatórios para exibir detalhes sobre os servidores Linux e UNIX.  
+ As seções a seguir descrevem como obter esses detalhes do gerenciador de recursos, bem como relatórios.  
 
-##  <a name="a-namebkmkuseresourceexpforlnua-how-to-use-resource-explorer-to-view-inventory-for-linux-and-unix-servers"></a><a name="BKMK_UseResourceExpforLnU"></a> Como usar o Gerenciador de Recursos para exibir o inventário para servidores Linux e UNIX  
- Você pode exibir os detalhes sobre hardware e software instalado em servidores Linux e UNIX usando o Gerenciador de Recursos.  
-
+##  <a name="a-namebkmkuseresourceexpforlnua-use-resource-explorer-to-view-inventory-for-linux-and-unix-servers"></a><a name="BKMK_UseResourceExpforLnU"></a> Usar o gerenciador de recursos para exibir o inventário de servidores Linux e UNIX  
+ 
  Após um cliente do Configuration Manager enviar o inventário de hardware para o site do Configuration Manager, você pode usar o Gerenciador de Recursos para exibir essas informações. O cliente do Configuration Manager para Linux e UNIX não adiciona novas classes ou exibições de inventário ao Gerenciador de Recursos. Os dados de inventário Linux e UNIX mapeiam para classes WMI existentes. Você pode exibir os detalhes sobre inventário de seus servidores Linux e UNIX nas classificações de baseadas em Windows usando o Gerenciador de Recursos.  
 
  Por exemplo, você pode coletar a lista de todos os programas nativos instalados encontrados nos servidores Linux e UNIX. Entre os exemplos de programas nativos instalados estão o **.rpms** no Linux ou o **.pkgs** no Solaris. Após o inventário ser enviado por um cliente Linux ou UNIX, você pode exibir a lista de todos os programas nativos Linux ou UNIX instalados no Gerenciador de Recursos no console do Configuration Manager.  
@@ -57,6 +56,6 @@ Você pode exibir informações de servidores Linux e UNIX no console do System 
 
 
 
-<!--HONumber=Nov16_HO1-->
+<!--HONumber=Dec16_HO3-->
 
 

@@ -1,5 +1,5 @@
 ---
-title: Criar aplicativos de computador Mac | System Center Configuration Manager
+title: Criar aplicativos de computador Mac | Microsoft Docs
 description: "Veja quais considerações você deverá levar em conta ao criar e implantar aplicativos para computadores Mac."
 ms.custom: na
 ms.date: 10/06/2016
@@ -16,8 +16,8 @@ author: robstackmsft
 ms.author: robstack
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: 1134bb2f04152288e72d40b1b1083f415cb4e900
-ms.openlocfilehash: 98b36c58506bcb82fe82f842b8c3ed9dbd2a75d1
+ms.sourcegitcommit: 8dcf9f310a4ea8e2f43f2fe79e5e3cfa2c8aeb61
+ms.openlocfilehash: c2feffad39a20519fd86ca9348b0855a51e05aa9
 
 
 ---
@@ -32,7 +32,7 @@ Além dos outros requisitos e procedimentos do System Center Configuration Manag
 
 ## <a name="general-considerations"></a>Considerações gerais  
  É possível usar o System Center Configuration Manager para implantar aplicativos em computadores Mac que executam o cliente Mac do Configuration Manager. As etapas para implantar o software em computadores Mac são semelhantes às etapas usadas para implantar o software em computadores Windows. No entanto, antes de criar e implantar aplicativos para computadores Mac gerenciados pelo Configuration Manager, considere o seguinte:  
-  
+
 -   Antes de implantar pacotes de aplicativos Mac em computadores Mac, será necessário usar a ferramenta **CMAppUtil** em um computador Mac para converter esses aplicativos em um formato que possa ser lido pelo Configuration Manager.  
 
 -   O Configuration Manager não dá suporte a implantação de aplicativos Mac em usuários; essas implantações devem ser em dispositivos. Da mesma forma, para implantações de aplicativos Mac, o Configuration Manager não dá suporte à opção **Pré-implantar software no dispositivo primário do usuário** na página **Configurações de Implantação** do Assistente de Implantação de Software.  
@@ -71,9 +71,9 @@ Além dos outros requisitos e procedimentos do System Center Configuration Manag
 -   Pacote do Mac OS X Installer (.pkg)  
 
 -   Aplicativo do Mac OS X (.app)  
-  
+
 Depois que ele coleta informações do aplicativo, a **CMAppUtil** cria um arquivo com a extensão **.cmmac**. Este arquivo contém os arquivos de instalação para o software do Mac e informações sobre métodos de detecção que podem ser usados para avaliar se o aplicativo já está instalado. O**CMAppUtil** também pode processar arquivos do **.dmg** que contêm vários aplicativos Mac e criar diferentes tipos de implantação para cada aplicativo.  
-  
+
 1.  Copie o pacote e instalação do software do Mac para a pasta no computador Mac onde você extraiu o conteúdo do arquivo **macclient.dmg** que foi baixado do Centro de Download da Microsoft.  
 
 2.  No mesmo computador Mac, abra uma janela do terminal e navegue até a paste onde você extraiu o conteúdo do arquivo **macclient.dmg** .  
@@ -106,9 +106,9 @@ Depois que ele coleta informações do aplicativo, a **CMAppUtil** cria um arqui
 ###  <a name="create-a-configuration-manager-application-that-contains-the-mac-software"></a>Criar um aplicativo do Configuration Manager que contém o software do Mac  
 
 Use o procedimento a seguir para ajudar a criar um aplicativo para computadores Mac gerenciados pelo Configuration Manager.  
-  
+
 1.  No console do Configuration Manager, clique em **Biblioteca de Software** > **Gerenciamento de Aplicativos** > **Aplicativos**.  
-  
+
 3.  Na guia **Início** , no grupo **Criar** , clique em **Criar Aplicativo**.  
 
 4.  Na página **Geral** do Assistente para Criar Aplicativo, selecione **Detectar automaticamente informações sobre este aplicativo em arquivos de instalação**.  
@@ -141,9 +141,9 @@ Use o procedimento a seguir para ajudar a criar um aplicativo para computadores 
 
 > [!NOTE]  
 >  Se você importou automaticamente informações sobre o aplicativo no Assistente para Criar Aplicativo, um tipo de implantação para o aplicativo pode já ter sido criado.  
-  
+
 1.  No console do Configuration Manager, clique em **Biblioteca de Software** > **Gerenciamento de Aplicativos** > **Aplicativos**.  
-  
+
 3.  Selecione um aplicativo e, na guia **Início** , no grupo **Aplicativo** , clique em **Criar Tipo de Implantação** para criar um novo tipo de implantação para esse aplicativo.  
 
     > [!NOTE]  
@@ -207,9 +207,9 @@ Use o procedimento a seguir para ajudar a criar um aplicativo para computadores 
 
 > [!NOTE]  
 >  Você pode criar uma coleção que contenha somente computadores Mac. Para isso, crie uma coleção que usa uma regra de consulta e use o exemplo de consulta WQL no tópico [Como criar consultas](../../core/servers/manage/create-queries.md).  
-  
+
  Para obter informações, confira [Deploy applications](../../apps/deploy-use/deploy-applications.md) (Implantar aplicativos).  
-  
+
 ###  <a name="step-5-monitor-the-deployment-of-the-mac-application"></a>Etapa 5: Monitorar a implantação do aplicativo Mac  
  Você pode usar o mesmo processo para monitorar implantações de aplicativo em computadores Mac que você usaria para implantações de aplicativo em computadores Windows.  
 
@@ -217,6 +217,6 @@ Use o procedimento a seguir para ajudar a criar um aplicativo para computadores 
 
 
 
-<!--HONumber=Nov16_HO1-->
+<!--HONumber=Dec16_HO3-->
 
 

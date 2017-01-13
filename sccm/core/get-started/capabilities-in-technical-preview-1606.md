@@ -1,5 +1,5 @@
 ---
-title: Funcionalidades no Technical Preview 1606 do System Center Configuration Manager
+title: Funcionalidades do Technical Preview 1606 do System Center Configuration Manager | Microsoft Docs
 description: "Saiba mais sobre os recursos disponíveis no Technical Preview do System Center Configuration Manager, versão 1606."
 ms.custom: na
 ms.date: 10/06/2016
@@ -16,8 +16,8 @@ author: Brenduns
 ms.author: brenduns
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: 1134bb2f04152288e72d40b1b1083f415cb4e900
-ms.openlocfilehash: d1410b853e8f6b3bcb4d2cbfca735ba26c5c4d52
+ms.sourcegitcommit: 3bf44f850722afdb8dfe5922c8ceff11c9b56d08
+ms.openlocfilehash: 6bc3087768d8455a6ca6beb77a3afc8f313eb831
 
 ---
 # <a name="capabilities-in-technical-preview-1606-for-system-center-configuration-manager"></a>Funcionalidades no Technical Preview 1606 do System Center Configuration Manager
@@ -261,6 +261,6 @@ Com o Technical Preview 1606, foram introduzidas várias ações que se aplicam 
 
 
 
-<!--HONumber=Nov16_HO1-->
+<!--HONumber=Dec16_HO3-->
 
 

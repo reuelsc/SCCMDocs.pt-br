@@ -1,8 +1,8 @@
 ---
-title: "Criar e implantar uma política de conformidade do dispositivo | System Center Configuration Manager"
+title: "Criar e implantar uma política de conformidade de dispositivo | Microsoft Docs"
 description: "Saiba como criar e implantar políticas de conformidade do dispositivo no System Center Configuration Manager."
 ms.custom: na
-ms.date: 10/06/2016
+ms.date: 11/15/2016
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
@@ -12,13 +12,13 @@ ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 0cba232e-319f-4ae6-9ffa-4cd76c8bcb29
 caps.latest.revision: 
-author: karthikaraman
-ms.author: karaman
+author: andredm7
+ms.author: andredm
 manager: angrobe
 robots: noindex
 translationtype: Human Translation
-ms.sourcegitcommit: 5c6cf3c1697b49708aa5192b67b08b700da7dc72
-ms.openlocfilehash: bb91f4a711699790bb01f48d32183cf1215b1952
+ms.sourcegitcommit: c13c6268fa76ade7feb0981f9c4a6e325e393aca
+ms.openlocfilehash: 4cc7148be602367b579d63535a4938919bacf829
 
 ---
 
@@ -79,7 +79,7 @@ ms.openlocfilehash: bb91f4a711699790bb01f48d32183cf1215b1952
 
 ## <a name="monitor-the-compliance-policy"></a>Monitorar a política de conformidade
 
-#### <a name="to-view-compliance-results-in-the-configuration-manager-console"></a>Para exibir resultados de conformidade no console do Configuration Manager
+### <a name="to-view-compliance-results-in-the-configuration-manager-console"></a>Para exibir resultados de conformidade no console do Configuration Manager
 
 1.  No console do Configuration Manager, clique em **Monitoramento**.
 
@@ -98,6 +98,14 @@ ms.openlocfilehash: bb91f4a711699790bb01f48d32183cf1215b1952
     -   **Não Compatível**: exibe uma lista de todas as regras não compatíveis na política com base no número de ativos afetados. É possível clicar em uma regra para criar um nó temporário no nó **Usuários** ou **Dispositivos** do espaço de trabalho **Ativos e Conformidade** , que contém todos os usuários ou dispositivos que não são compatíveis com esta regra. Ao selecionar um usuário ou dispositivo, o painel **Detalhes do Ativo** exibe os usuários ou os dispositivos afetados pelo problema selecionado. Clique duas vezes em um usuário ou dispositivo na lista para exibir informações adicionais sobre o problema.
 
     -   **Desconhecido**: exibe uma lista de todos os usuários e dispositivos que não relataram a conformidade para a implantação da política selecionada junto com o status atual do cliente dos dispositivos.
+
+### <a name="to-view-intune-compliance-policies-charts"></a>Para exibir gráficos de políticas de conformidade do Intune
+1. Começando da versão 1610 do Configuration Manager, no console do Configuration Manager, você pode clicar em **Monitoramento**.
+2. No espaço de trabalho **Monitoramento**, acesse **Visão Geral** > **Configurações de Conformidade** >  **Políticas de Conformidade**.
+3. Os gráficos a seguir são exibidos:
+    - **Conformidade geral do dispositivo**: exibir a conformidade geral dos dispositivos para todas as políticas de conformidade.
+    - **Principais motivos de não conformidade**: exibe as principais políticas com as quais os dispositivos são incompatíveis.
+4. Clique em uma seção de um dos gráficos para fazer uma busca detalhada até uma lista de dispositivos nessa categoria.
 
 ### <a name="to-view-a-health-attestation-report"></a>Para exibir um Relatório de Atestado de Integridade
 
@@ -214,10 +222,8 @@ ms.openlocfilehash: bb91f4a711699790bb01f48d32183cf1215b1952
   **Com suporte em:**
   * Windows 10 e Windows 10 Mobile
 
-  
 
 
-
-<!--HONumber=Nov16_HO1-->
+<!--HONumber=Dec16_HO3-->
 
 

@@ -1,5 +1,5 @@
 ---
-title: "Fundamentos de administração baseada em funções | System Center Configuration Manager"
+title: "Conceitos básicos de administração baseada em funções | Microsoft Docs"
 description: "Use a administração baseada em funções para controlar o acesso administrativo ao Configuration Manager e aos objetos gerenciados."
 ms.custom: na
 ms.date: 10/06/2016
@@ -16,8 +16,8 @@ author: Brenduns
 ms.author: brenduns
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: 1134bb2f04152288e72d40b1b1083f415cb4e900
-ms.openlocfilehash: 3e70794144caa5a1993cc65089b1076476fc6106
+ms.sourcegitcommit: 6cf3ac76ea3fb9c9b093ed4927255102930bbe26
+ms.openlocfilehash: 5bdfe43c86d5b700c50b4d55d2f3bbb15bb504e9
 
 
 ---
@@ -78,7 +78,7 @@ Ao projetar e implementar a segurança administrativa para o Configuration Manag
 > [!TIP]  
 >  Você pode exibir a lista de funções de segurança internas e funções de segurança personalizadas que você cria, incluindo suas descrições, no console do Configuration Manager. Para isso, no espaço de trabalho **Administração** , expanda **Segurança**e selecione **Funções de Segurança**.  
 
- Cada função de segurança tem as permissões específicas para diferentes tipos de objeto. Por exemplo, a função de segurança **Administrador de Aplicativos** tem as seguintes permissões para aplicativos: **Aprovar**, **Criar**, **Excluir**, **Modificar**, **Modificar Pastas**, **Mover Objetos**, **Ler/Implantar**, **Definir Escopo de Segurança**. Você não pode alterar as permissões das funções de segurança internas, mas pode copiar a função, fazer alterações e então salvar essas alterações como uma nova função de segurança personalizada. Também é possível importar funções de segurança que você exportou de outra hierarquia (por exemplo, de uma rede de teste). Reveja as funções de segurança e suas permissões para determinar se usará as funções de segurança internas ou precisará criar suas próprias funções de segurança personalizadas.  
+ Cada função de segurança tem as permissões específicas para diferentes tipos de objeto. Por exemplo, a função de segurança **MMM de Aplicativos** tem as seguintes permissões para aplicativos: **Aprovar**, **Criar**, **Excluir**, **Modificar**, **Modificar Pastas**, **Mover Objetos**, **Ler/Implantar** e **Definir Escopo de Segurança**. Você não pode alterar as permissões das funções de segurança internas, mas pode copiar a função, fazer alterações e então salvar essas alterações como uma nova função de segurança personalizada. Também é possível importar funções de segurança que você exportou de outra hierarquia (por exemplo, de uma rede de teste). Reveja as funções de segurança e suas permissões para determinar se usará as funções de segurança internas ou precisará criar suas próprias funções de segurança personalizadas.  
 
  **Use as etapas a seguir para ajudá-lo a planejar as funções de seguranças:**  
 
@@ -212,6 +212,6 @@ Para obter informações sobre como configurar escopos de segurança para admini
 
 
 
-<!--HONumber=Nov16_HO1-->
+<!--HONumber=Dec16_HO3-->
 
 

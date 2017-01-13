@@ -1,8 +1,8 @@
 ---
-title: "Criar mídia inicializável | System Center Configuration Manager"
+title: "Criar uma mídia inicializável | Microsoft Docs"
 description: "Mídias inicializáveis no Configuration Manager facilitam a instalação de uma nova versão do Windows ou substituir um computador e transferir as configurações."
 ms.custom: na
-ms.date: 10/06/2016
+ms.date: 12/06/2016
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
@@ -17,8 +17,8 @@ author: Dougeby
 ms.author: dougeby
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: 1134bb2f04152288e72d40b1b1083f415cb4e900
-ms.openlocfilehash: 6a3b72ecdee38f6955b601248300e49c1ffdee5d
+ms.sourcegitcommit: 03722ff4f480cd26842e395fe1f7ec8359e2b33e
+ms.openlocfilehash: a7bdad82dc55b4c0fe7d892ef34cc6aa0dfbf476
 
 
 ---
@@ -151,6 +151,6 @@ Mídias inicializáveis no Configuration Manager contém a imagem de inicializa�
 
 
 
-<!--HONumber=Nov16_HO1-->
+<!--HONumber=Dec16_HO3-->
 
 

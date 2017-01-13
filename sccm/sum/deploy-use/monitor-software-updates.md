@@ -1,12 +1,12 @@
 ---
 
-title: "Monitorar atualizações de software | Configuration Manager"
+title: "Monitorar atualizações de software | Microsoft Docs"
 description: "O console do System Center Configuration Manager fornece alertas e status para monitorar atualizações e a conformidade."
 keywords: 
 author: dougeby
 ms.author: dougeby
 manager: angrobe
-ms.date: 10/06/2016
+ms.date: 11/10/2016
 ms.topic: article
 ms.prod: configuration-manager
 ms.service: 
@@ -14,8 +14,8 @@ ms.technology:
 - configmgr-sum
 ms.assetid: 9afd7b0f-5c8e-48bc-9a65-1f7d74103688
 translationtype: Human Translation
-ms.sourcegitcommit: 1134bb2f04152288e72d40b1b1083f415cb4e900
-ms.openlocfilehash: fe41807cebf87f4e6bab47e41db0ffe7cc83c5d1
+ms.sourcegitcommit: 1a4a9da88caba55d9e340c7fb1f31f4e3b957f3e
+ms.openlocfilehash: 956ef263a1c178b5ab5926705859f4b2d0ae5bc7
 
 ---
 # <a name="monitor-software-updates-in-system-center-configuration-manager"></a>Monitorar atualizações de software no System Center Configuration Manager
@@ -23,6 +23,9 @@ ms.openlocfilehash: fe41807cebf87f4e6bab47e41db0ffe7cc83c5d1
 *Aplica-se a: System Center Configuration Manager (Branch Atual)*
 
 O System Center Configuration Manager fornece muitas maneiras de ajudar a monitorar objetos de atualizações de software, processos e informações de conformidade. Use as seções a seguir para monitorar atualizações de software.
+
+## <a name="software-updates-dashboard"></a>Painel de atualizações de software
+Começando do Configuration Manager versão 1610, é possível usar o Painel de Atualizações de Software para exibir o status atual de conformidade dos dispositivos em sua organização e analisar rapidamente os dados para ver quais dispositivos estão em risco. Para exibir o painel, navegue até **Monitoramento** > **Visão Geral** > **Segurança** > **Painel de Atualizações de Software**.   
 
 ##  <a name="a-namebkmksualertsa-alerts-for-software-updates"></a><a name="BKMK_SUAlerts"></a> Alertas de atualizações de software  
  Você pode definir alertas para atualizações de software para notificar os usuários administrativos quando os níveis de conformidade para implantações de atualização de software estão abaixo da porcentagem configurada. Você pode configurar alertas para implantações de atualização de software nos seguintes locais:  
@@ -98,6 +101,6 @@ Depois de definir as configurações de alerta, se ocorrerem as condições espe
 
 
 
-<!--HONumber=Nov16_HO1-->
+<!--HONumber=Dec16_HO3-->
 
 

@@ -1,5 +1,5 @@
 ---
-title: Perguntas frequentes sobre o cliente do Endpoint Protection | System Center Configuration Manager
+title: Perguntas frequentes sobre o cliente do Endpoint Protection | Microsoft Docs
 description: Obtenha respostas para as perguntas frequentes sobre o Windows Defender e o Endpoint Protection.
 ms.custom: na
 ms.date: 10/06/2016
@@ -16,8 +16,8 @@ author: NathBarn
 ms.author: nathbarn
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: 1134bb2f04152288e72d40b1b1083f415cb4e900
-ms.openlocfilehash: d19e3bd20645bbde6f6f10b86b517a159cedc99c
+ms.sourcegitcommit: bff083fe279cd6b36a58305a5f16051ea241151e
+ms.openlocfilehash: f0352e59390ade7212a64cf0de883bbb1ca28bab
 
 
 ---
@@ -232,7 +232,7 @@ Para remover todos os itens indesejados ou potencialmente prejudiciais que o Win
 |Verificar todos os downloads|Essa opção monitora arquivos e programas baixados, inclusive arquivos baixados automaticamente por meio do Windows Internet Explorer e Microsoft Outlook® Express, como controles ActiveX® e programas de instalação de software. Esses arquivos podem ser baixados, instalados ou executados pelo próprio navegador. Softwares mal-intencionados, incluindo vírus, spywares e outros softwares potencialmente indesejados, podem ser incluídos nesses arquivos e instalados sem seu conhecimento.<br /><br /> Usando a opção de proteção em tempo real, o Windows Defender monitora o tempo todo o computador e verifica os arquivos ou programas mal-intencionados que você possa ter baixado. Esse recurso de monitoramento significa que o Windows Defender não precisa tornar mais lenta sua experiência de navegação ou email, exigindo uma verificação de arquivos ou programas que você queira baixar.|  
 |Monitorar atividade de arquivos e programas no computador|Essa opção monitora quando os arquivos e programas começam a ser executados no computador e o alerta sobre quaisquer ações executadas por eles ou neles. Isso é importante, pois o software mal-intencionado pode usar as vulnerabilidades nos programas que você instalou para executar software mal-intencionado ou indesejado sem seu conhecimento. Por exemplo, spyware pode ser executado em segundo plano quando você inicia um programa que usa com frequência. O Windows Defender monitora os programas e o alerta quando detecta atividade suspeita.|  
 |Habilitar o comportamento de monitoramento|Essa opção monitora coleções de padrões de comportamento suspeitos que não podem ser detectados por métodos de detecção de antivírus tradicionais.|  
-|Ativar o sistema de inspeção de rede|Esta opção ajuda a proteger o computador contra explorações que 'não duram um dia inteiro' de vulnerabilidades conhecidas, diminuindo a janela de tempo entre o momento em que uma vulnerabilidade é descoberta e a aplicação de uma atualização.|  
+|Ativar o sistema de inspeção de rede|Esta opção ajuda a proteger o computador contra explorações de "dia zero" de vulnerabilidades conhecidas, diminuindo a janela de tempo entre o momento em que uma vulnerabilidade é descoberta e a aplicação de uma atualização.|  
 
 ### <a name="to-turn-off-real-time-protection"></a>Para desligar a proteção em tempo real  
 
@@ -279,6 +279,6 @@ Para remover todos os itens indesejados ou potencialmente prejudiciais que o Win
 
 
 
-<!--HONumber=Nov16_HO1-->
+<!--HONumber=Dec16_HO3-->
 
 

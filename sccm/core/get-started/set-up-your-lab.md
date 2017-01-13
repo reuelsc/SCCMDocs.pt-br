@@ -1,5 +1,5 @@
 ---
-title: "Configurar seu laboratório do System Center Configuration Manager"
+title: "Configurar seu laboratório do System Center Configuration Manager | Microsoft Docs"
 description: "Configure um laboratório para avaliar o Configuration Manager com a simulação de atividades reais."
 ms.custom: na
 ms.date: 10/06/2016
@@ -17,8 +17,8 @@ author: brenduns
 ms.author: brenduns
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: 1134bb2f04152288e72d40b1b1083f415cb4e900
-ms.openlocfilehash: ea084f30a1a6ec731e97cec46448d0ffbfca42e0
+ms.sourcegitcommit: 3bf44f850722afdb8dfe5922c8ceff11c9b56d08
+ms.openlocfilehash: 36e5307449bd843156307598ccdde717b4b59be3
 
 
 ---
@@ -29,7 +29,7 @@ ms.openlocfilehash: ea084f30a1a6ec731e97cec46448d0ffbfca42e0
 Ao seguir as orientações descritas neste tópico, você poderá configurar um laboratório para avaliar o Configuration Manager com atividades reais simuladas.  
 
 ##  <a name="a-namebkmklabcorea-core-components"></a><a name="BKMK_LabCore"></a> Principais componentes  
- Configurar seu ambiente para o System Center Configuration Manager requer alguns componentes principais para dar suporte à instalação do Configuration Manager.  
+ Configurar seu ambiente para o System Center Configuration Manager requer alguns componentes principais para dar suporte à instalação do Configuration Manager.    
 
 -   **O ambiente de laboratório usa o Windows Server 2012 R2**, em que vamos instalar o System Center Configuration Manager.  
 
@@ -401,6 +401,6 @@ Cada site do Configuration Manager publica suas próprias informações específ
 
 
 
-<!--HONumber=Nov16_HO1-->
+<!--HONumber=Dec16_HO3-->
 
 

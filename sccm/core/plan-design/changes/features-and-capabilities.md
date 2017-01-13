@@ -1,5 +1,5 @@
 ---
-title: Recursos e funcionalidades | System Center Configuration Manager
+title: Recursos e funcionalidades | Microsoft Docs
 description: "Saiba mais sobre os recursos de gerenciamento primário do System Center Configuration Manager."
 ms.custom: na
 ms.date: 10/06/2016
@@ -17,8 +17,8 @@ author: Brenduns
 ms.author: brenduns
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: fc40912a3da034ac0e3f84c72593aa4a9df8d057
-ms.openlocfilehash: c558148104b6338e4038bf690491c88e76dfdcaf
+ms.sourcegitcommit: 6ed317d45d90758832d4157985dd95d5e253c6fc
+ms.openlocfilehash: 851029368d97312ef2766505f933eac72d6950e5
 
 
 ---
@@ -58,7 +58,7 @@ Os seguintes são os recursos de gerenciamento primário do System Center Config
 
 **Gerenciamento de dispositivo móvel com o Microsoft Intune**  
 
- É possível usar o Configuration Manager para gerenciar dispositivos iOS, Android (incluindo Samsung KNOX), Windows Phone e dispositivos com Windows usando o serviço do Microsoft Intune pela Internet.
+ É possível usar o Configuration Manager para gerenciar dispositivos iOS, Android (incluindo Samsung KNOX Standard), Windows Phone e Windows usando o serviço do Microsoft Intune pela Internet.
 
  Apesar de você usar o serviço do Intune, as tarefas de gerenciamento são concluídas usando a função do sistema de sites do ponto de conexão do serviço disponível por meio do console do Configuration Manager. Consulte [Hybrid mobile device management (MDM) with System Center Configuration Manager and Microsoft Intune (MDM (Gerenciamento de dispositivo móvel) híbrido com o System Center Configuration Manager e Microsoft Intune)](../../../mdm/understand/hybrid-mobile-device-management.md).  
 
@@ -104,6 +104,6 @@ Os seguintes são os recursos de gerenciamento primário do System Center Config
 
 
 
-<!--HONumber=Nov16_HO1-->
+<!--HONumber=Dec16_HO3-->
 
 

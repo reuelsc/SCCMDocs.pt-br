@@ -1,5 +1,5 @@
 ---
-title: Configurar alertas do Endpoint Protection | System Center Configuration Manager
+title: Configurar alertas do Endpoint Protection | Microsoft Docs
 description: Saiba como configurar alertas do Endpoint Protection no Microsoft System Center 2012 Configuration Manager.
 ms.custom: na
 ms.date: 10/06/2016
@@ -16,8 +16,8 @@ author: NathBarn
 ms.author: nathbarn
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: 1134bb2f04152288e72d40b1b1083f415cb4e900
-ms.openlocfilehash: 38abfd1823972f8fea9966d74ae7c00a48baeb8b
+ms.sourcegitcommit: bff083fe279cd6b36a58305a5f16051ea241151e
+ms.openlocfilehash: 7ade196766d036f5dbca2b39efad380c7895847c
 
 
 ---
@@ -98,6 +98,6 @@ ms.openlocfilehash: 38abfd1823972f8fea9966d74ae7c00a48baeb8b
 
 
 
-<!--HONumber=Nov16_HO1-->
+<!--HONumber=Dec16_HO3-->
 
 

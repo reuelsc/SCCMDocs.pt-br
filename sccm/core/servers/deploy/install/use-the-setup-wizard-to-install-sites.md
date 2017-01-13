@@ -1,5 +1,5 @@
 ---
-title: "Assistente de Instalação | System Center Configuration Manager"
+title: "Assistente de instalação | Microsoft Docs"
 ms.custom: na
 ms.date: 10/06/2016
 ms.prod: configuration-manager
@@ -15,8 +15,8 @@ author: Brenduns
 ms.author: brenduns
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: ffcdf4285d5f182e8d625200989f65c748bc2067
-ms.openlocfilehash: 9552ac1b77acfce6a398ec6e74f1be3686ee15a4
+ms.sourcegitcommit: 10b1010ccbf3889c58c55b87e70b354559243c90
+ms.openlocfilehash: 28ce074469469b6a7c1c456da051b5f8dea43dbb
 
 ---
 # <a name="use-the-setup-wizard-to-install-system-center-configuration-manager-sites"></a>Use o Assistente de Instalação para instalar sites do System Center Configuration Manager
@@ -28,7 +28,7 @@ Para instalar um novo site do System Center Configuration Manager usando uma int
 
 Para instalar um site secundário, você precisa instalar o site de dentro do console do Configuration Manager.  Sites secundários não dão suporte a uma instalação de linha de comando com scripts.
 
-## <a name="a-namebkmkprimarya-install-a-central-administration-site-or-primary-site"></a><a name="bkmk_primary"></a> Instalar um site de administração central ou site primário
+## <a name="a-namebkmkprimarya--install-a-central-administration-site-or-primary-site"></a><a name="bkmk_primary"></a> Instalar um site de administração central ou site primário
 Use o procedimento a seguir para instalar um site de administração central, um site primário ou para atualizar um site de avaliação para um site do Configuration Manager totalmente licenciado.   
 
 Antes de iniciar a instalação do site, familiarize-se com os detalhes fornecidos nos seguintes artigos:
@@ -37,7 +37,7 @@ Antes de iniciar a instalação do site, familiarize-se com os detalhes fornecid
 
 Se você estiver instalando um site de administração central como parte de um cenário de expansão de site, examine a seção [Expandir um site primário autônomo](../../../../core/servers/deploy/install/use-the-setup-wizard-to-install-sites.md#bkmk_expand) neste tópico antes de usar o procedimento a seguir.
 
-### <a name="a-namebkmkinstallpria-to-install-a-primary-or-central-administration-site"></a><a name="bkmk_installpri"></a> Para instalar um site de administração central ou primário
+### <a name="a-namebkmkinstallpria---to-install-a-primary-or-central-administration-site"></a><a name="bkmk_installpri"></a> Para instalar um site de administração central ou primário
 
 1.  No computador no qual deseja instalar o site, execute **&lt;InstallationMedia\>\SMSSETUP\BIN\X64\Setup.exe** para iniciar o **Assistente de Instalação do System Center Configuration Manager**.  
 
@@ -389,6 +389,6 @@ Para expandir um site primário autônomo, use o procedimento *[Para instalar um
 
 
 
-<!--HONumber=Nov16_HO1-->
+<!--HONumber=Dec16_HO3-->
 
 

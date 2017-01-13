@@ -1,5 +1,5 @@
 ---
-title: "Variáveis de ação de sequência de tarefas | Configuration Manager"
+title: "Variáveis de ação de sequência de tarefas | Microsoft Docs"
 description: "Use variáveis de ação de sequência, como variáveis de configuração de rede, para definir configurações para uma única etapa em uma sequência de tarefas do Configuration Manager."
 ms.custom: na
 ms.date: 10/06/2016
@@ -17,8 +17,8 @@ author: Dougeby
 ms.author: dougeby
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: 1134bb2f04152288e72d40b1b1083f415cb4e900
-ms.openlocfilehash: cd0e74bff29110f5483c7132ba989d9933e7e223
+ms.sourcegitcommit: 74341fb60bf9ccbc8822e390bd34f9eda58b4bda
+ms.openlocfilehash: 6049ec2369e0a97b21ce6523ba8448335385ab9a
 
 
 ---
@@ -349,6 +349,6 @@ Variáveis de ação de sequência de tarefas especificam configurações que s�
 
 
 
-<!--HONumber=Nov16_HO1-->
+<!--HONumber=Dec16_HO3-->
 
 

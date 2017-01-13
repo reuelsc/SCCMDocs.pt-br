@@ -1,5 +1,5 @@
 ---
-title: "Atualizar o Windows para a versão mais recente | Configuration Manager"
+title: "Atualizar o Windows para a versão mais recente | Microsoft Docs"
 description: "Saiba como usar mídia autônoma ou o Centro de Software no Configuration Manager para atualizar um sistema operacional do Windows 7 ou posterior para Windows 10."
 ms.custom: na
 ms.date: 10/06/2016
@@ -16,8 +16,8 @@ author: Dougeby
 ms.author: dougeby
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: 1134bb2f04152288e72d40b1b1083f415cb4e900
-ms.openlocfilehash: b44258255345c2e5488846736ddc1df48a147616
+ms.sourcegitcommit: 74341fb60bf9ccbc8822e390bd34f9eda58b4bda
+ms.openlocfilehash: 147841212dbb85dd9d4ee7c8a79ca7869584fd99
 
 
 ---
@@ -88,6 +88,6 @@ Este tópico fornece as etapas no System Center Configuration Manager para atual
 
 
 
-<!--HONumber=Nov16_HO1-->
+<!--HONumber=Dec16_HO3-->
 
 

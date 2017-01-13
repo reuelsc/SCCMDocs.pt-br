@@ -1,5 +1,5 @@
 ---
-title: "Usar a mídia autônoma para implantar o Windows sem usar a rede | Configuration Manager"
+title: "Usar a mídia independente para implantar o Windows sem uso da rede | Microsoft Docs"
 description: "Use a mídia autônoma no Configuration Manager para implantar sistemas operacionais em que a largura de banda é limitada ou como uma opção para atualizar, instalar ou atualizar computadores."
 ms.custom: na
 ms.date: 10/06/2016
@@ -16,8 +16,8 @@ author: Dougeby
 ms.author: dougeby
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: 1134bb2f04152288e72d40b1b1083f415cb4e900
-ms.openlocfilehash: f09359b2c565f259ddd0dab01812bafcaecff60a
+ms.sourcegitcommit: 74341fb60bf9ccbc8822e390bd34f9eda58b4bda
+ms.openlocfilehash: 30ae794381c6894e11b21a8167d0af60463c5279
 
 
 ---
@@ -82,6 +82,6 @@ A mídia autônoma no System Center Configuration Manager contém tudo o que é 
 
 
 
-<!--HONumber=Nov16_HO1-->
+<!--HONumber=Dec16_HO3-->
 
 

@@ -1,5 +1,5 @@
 ---
-title: Monitorar perfis de email, Wi-Fi e VPN | System Center Configuration Manager
+title: Monitorar perfis de email, Wi-Fi e VPN | Microsoft Docs
 description: Saiba como monitorar o status de conformidade de perfis de email, Wi-Fi e VPN no System Center Configuration Manager.
 ms.custom: na
 ms.date: 10/06/2016
@@ -16,8 +16,8 @@ author: Nbigman
 ms.author: nbigman
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: 1134bb2f04152288e72d40b1b1083f415cb4e900
-ms.openlocfilehash: 9ae359deaacb88804379622fa96e5fdb0e03b6bf
+ms.sourcegitcommit: bff083fe279cd6b36a58305a5f16051ea241151e
+ms.openlocfilehash: 73d941633d270cf9628f8be14e1e56f3c78624b6
 
 
 ---
@@ -70,6 +70,6 @@ Depois de implantar perfis de email, Wi-Fi ou VPN do System Center Configuration
 
 
 
-<!--HONumber=Nov16_HO1-->
+<!--HONumber=Dec16_HO3-->
 
 

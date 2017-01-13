@@ -1,5 +1,5 @@
 ---
-title: "Preparar implantação de sistema operacional | Configuration Manager"
+title: "Preparar para implantação de sistema operacional | Microsoft Docs"
 description: "Leia estes artigos para saber mais sobre o que você deve fazer no Configuration Manager para se preparar para implantações de sistema operacional."
 ms.custom: na
 ms.date: 10/06/2016
@@ -16,8 +16,8 @@ author: Dougeby
 ms.author: dougeby
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: 1134bb2f04152288e72d40b1b1083f415cb4e900
-ms.openlocfilehash: 7717b01f73f0403e24d8d192c09a5038a5733981
+ms.sourcegitcommit: 74341fb60bf9ccbc8822e390bd34f9eda58b4bda
+ms.openlocfilehash: dcc35f39b6ece8b466fc3770c6b9f304180eb42a
 
 
 ---
@@ -43,6 +43,6 @@ Há várias coisas que você deve fazer no Configuration Manager antes de poder 
 
 
 
-<!--HONumber=Nov16_HO1-->
+<!--HONumber=Dec16_HO3-->
 
 

@@ -1,5 +1,5 @@
 ---
-title: "Inventário de software | System Center Configuration Manager"
+title: "Inventário de software | Microsoft Docs"
 description: "Veja uma introdução ao inventário de software no System Center Configuration Manager."
 ms.custom: na
 ms.date: 10/06/2016
@@ -17,8 +17,8 @@ author: nbigman
 ms.author: nbigman
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: 1134bb2f04152288e72d40b1b1083f415cb4e900
-ms.openlocfilehash: 8d664616e222119f7821a70a7c8f9cdbfca38538
+ms.sourcegitcommit: a468ce93e9536fe3f6bf0fc191ff9764dd1c3343
+ms.openlocfilehash: 401ba6e37d740310d49ab9e96112ce576d7130e4
 
 
 ---
@@ -34,7 +34,7 @@ Use o inventário de software no System Center Configuration Manager para coleta
 
 -   Crie consultas que retornam dispositivos que se baseiam em arquivos especificados que são encontrados nos dispositivos. Para mais informações, consulte [Referência técnica de consultas no System Center Configuration Manager](../../../../core/servers/manage/queries-technical-reference.md).  
 
--   Crie coleções baseadas em consulta que se baseiam em arquivos especificados que são encontrados nos dispositivos. Associações de coleção baseada em consulta são atualizadas automaticamente em um agendamento. Você pode usar coleções para diversas tarefas como implantação de software. Para mais informações, consulte [Referência técnica de coleções no System Center Configuration Manager](../../../../core/clients/manage/collections/collections-technical-reference.md).  
+-   Crie coleções baseadas em consulta que se baseiam em arquivos especificados que são encontrados nos dispositivos. Associações de coleção baseada em consulta são atualizadas automaticamente em um agendamento. Você pode usar coleções para diversas tarefas como implantação de software. Para obter mais informações, consulte [Introdução às coleções no System Center Configuration Manager](../../../../core/clients/manage/collections/introduction-to-collections.md).  
 
 -   Execute os relatórios que exibem detalhes específicos sobre os arquivos nos dispositivos em sua organização. Para obter mais informações, consulte [Relatórios no System Center Configuration Manager](../../../../core/servers/manage/reporting.md).  
 
@@ -54,6 +54,7 @@ Use o inventário de software no System Center Configuration Manager para coleta
 
 |Plataforma|Para dispositivos pessoais|Para dispositivos corporativos|  
 |--------------|---------------------------------|--------------------------------|  
+|Windows 10 (sem o cliente do Configuration Manager)|Somente aplicativos gerenciados|Somente aplicativos gerenciados| 
 |Windows 8.1 (sem o cliente do Configuration Manager)|Somente aplicativos gerenciados|Somente aplicativos gerenciados|  
 |Windows Phone 8|Somente aplicativos gerenciados|Somente aplicativos gerenciados|  
 |Windows RT|Somente aplicativos gerenciados|Somente aplicativos gerenciados|  
@@ -62,6 +63,6 @@ Use o inventário de software no System Center Configuration Manager para coleta
 
 
 
-<!--HONumber=Nov16_HO1-->
+<!--HONumber=Dec16_HO3-->
 
 

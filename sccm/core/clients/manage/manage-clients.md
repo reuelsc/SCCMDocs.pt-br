@@ -1,8 +1,8 @@
 ---
-title: Gerenciar clientes | System Center Configuration Manager
+title: Gerenciar clientes | Microsoft Docs
 description: Saiba como gerenciar clientes no System Center Configuration Manager.
 ms.custom: na
-ms.date: 10/06/2016
+ms.date: 11/18/2016
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
@@ -12,12 +12,12 @@ ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 3986a992-c175-4b6f-922e-fc561e3d7cb7
 caps.latest.revision: 17
-author: Mtillman
-ms.author: mtillman
+author: nbigman
+ms.author: nbigman
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: f777295958e9cbc729e3759d354521c96ae3e8ac
-ms.openlocfilehash: 67a814330123a1615a0663872bf4af64e5b81a84
+ms.sourcegitcommit: 238ef5814c0c1b832c28d63c9f3879e21a6c439b
+ms.openlocfilehash: dfdb5a95b672d3858d094750625cb5f6ef50700d
 
 
 ---
@@ -160,7 +160,7 @@ Quando um cliente do System Center Configuration Manager for instalado e atribu�
 
         Para ver o valor da propriedade na lista de dispositivos, talvez você precise adicionar a coluna para o modo de exibição clicando com o botão direito do mouse em qualquer título de coluna e escolhendo **Proprietário do Dispositivo**.
 
-         Para obter mais informações, consulte [Hybrid mobile device management (MDM) with System Center Configuration Manager and Microsoft Intune](../../../mdm/plan-design/hybrid-mobile-device-management.md) (MDM [gerenciamento de dispositivo móvel] híbrido com o System Center Configuration Manager e o Microsoft Intune).  
+         Para obter mais informações, consulte [Hybrid mobile device management (MDM) with System Center Configuration Manager and Microsoft Intune](../../../mdm/understand/hybrid-mobile-device-management.md) (MDM [gerenciamento de dispositivo móvel] híbrido com o System Center Configuration Manager e o Microsoft Intune).  
 
 ##  <a name="a-namebkmkmanagingclientsdevicecollectionsnodea-manage-clients-from-the-device-collections-node"></a><a name="BKMK_ManagingClients_DeviceCollectionsNode"></a> Gerenciar clientes no nó Coleções de Dispositivos  
  Use o procedimento e a tabela a seguir para gerenciar dispositivos de uma coleção no nó **Coleções de Dispositivos** , no espaço de trabalho **Ativos e Conformidade** .  
@@ -239,7 +239,7 @@ Execute o comando CCMSetup.exe por meio do local de origem da instalação e esp
     -   SMSCACHESIZE  
 
         > [!NOTE]
-        > Para a versão 1606, use as configurações de tamanho de cache disponíveis em **Configurações do Cliente** no console do Configuration Manager em vez de SMSCACHESIZE. Para obter mais informações, consulte [Configurações do Cache do Cliente](../../../core/clients/deploy/about-client-settings.md#Client-Cache-Settings).
+        > Para a versão 1606, use as configurações de tamanho de cache disponíveis em **Configurações do Cliente** no console do Configuration Manager em vez de SMSCACHESIZE. Para obter mais informações, consulte [Configurações do Cache do Cliente](../../../core/clients/deploy/about-client-settings.md#client-cache-settings).
 
 Para obter mais informações sobre como usar essas propriedades de linha de comando para CCMSetup.exe, consulte [Sobre as propriedades de instalação do cliente no System Center Configuration Manager](../../../core/clients/deploy/about-client-installation-properties.md).  
 
@@ -264,7 +264,7 @@ Para obter mais informações sobre como usar essas propriedades de linha de com
     -   SMSCACHESIZE  
 
         > [!NOTE]
-        > Para a versão 1606, use as configurações de tamanho de cache disponíveis em **Configurações do Cliente** no console do Configuration Manager em vez de SMSCACHESIZE. Para obter mais informações, consulte [Configurações do Cache do Cliente](../../../core/clients/deploy/about-client-settings.md#Client-Cache-Settings).
+        > Para a versão 1606, use as configurações de tamanho de cache disponíveis em **Configurações do Cliente** no console do Configuration Manager em vez de SMSCACHESIZE. Para obter mais informações, consulte [Configurações do Cache do Cliente](../../../core/clients/deploy/about-client-settings.md#client-cache-settings).
 
        Para obter mais informações sobre como usar essas propriedades de linha de comando para CCMSetup.exe, consulte [Sobre as propriedades de instalação do cliente no System Center Configuration Manager](../../../core/clients/deploy/about-client-installation-properties.md).  
 
@@ -323,6 +323,7 @@ A partir da versão 1606, você pode ajustar o tamanho da pasta de cache do clie
 
  Quando o Configuration Manager pode solucionar um conflito usando a autenticação do Windows da conta de computador, ou um certificado PKI de origem confiável, o conflito será solucionado automaticamente para você. No entanto, quando o Configuration Manager não pode resolver o conflito, ele usa uma configuração de hierarquia que mescla automaticamente os registros quando detecta IDs de hardware duplicadas (a configuração padrão) ou permite que você decida quando mesclar, bloquear ou criar novos registros de clientes. Se você decidir gerenciar manualmente registros duplicados, será necessário solucionar manualmente os registros conflitantes usando o console do Configuration Manager.  
 
+
 #### <a name="to-change-the-hierarchy-setting-for-managing-conflicting-records"></a>Para alterar a configuração de hierarquia para gerenciar registros conflitantes  
 
 1.  No console do Configuration Manager, clique em **Administração**.  
@@ -351,6 +352,18 @@ A partir da versão 1606, você pode ajustar o tamanho da pasta de cache do clie
     -   **Novo** para criar um novo registro para o registro conflitante de cliente.  
 
     -   **Bloquear** para criar um novo registro para o registro conflitante de cliente, mas o marca como bloqueado.  
+
+## <a name="manage-duplicate-hardware-identifiers"></a>Gerenciar identificadores de hardware duplicados
+Começando do Configuration Manager versão 1610, é possível fornecer uma lista de IDs de hardware que será ignorada pelo Configuration Manager, para fins de registro de cliente e de inicialização PXE. Há dois problemas comuns que esse procedimento ajuda a resolver.
+
+1. Muitos novos dispositivos, como o Surface Pro 3, não incluem uma porta Ethernet integrada. Um adaptador USB para Ethernet é geralmente usado para estabelecer uma conexão com fio para a implantação do sistema operacional. No entanto, eles costumam ser adaptadores compartilhados devido ao custo e à usabilidade geral. Como o endereço MAC do adaptador é usado para identificar o dispositivo, reutilizar o adaptador se torna problemático sem ações de administrador adicionais entre cada implantação. Agora no Configuration Manager, versão de branch atual 1610, você pode excluir o endereço MAC desse adaptador para que ele possa ser facilmente reutilizado nesse cenário.
+2. Embora o esperado é que a ID do SMBIOS seja um identificador de hardware exclusivo, alguns dispositivos de hardware de especialidade são criados com IDs duplicadas. Embora não seja tão comum quanto o cenário do adaptador USB para Ethernet acima, a lista de IDs de hardware pode ser usada para tratar desse problema também.
+
+#### <a name="to-add-hardware-identifiers-for-configuration-manager-to-ignore"></a>Para adicionar identificadores de hardware a serem ignorados pelo Configuration Manager  
+1. No console do Configuration Manager, vá para **Administração** > **Visão Geral** > **Configuração de Site** > **Sites**.
+2. Na guia **Início** , no grupo **Sites** , clique em **Configurações da Hierarquia**.
+3. Vá para a guia **Aprovação de Cliente e Registros de Conflitos**.
+4. Clique em **Adicionar** na seção **	Identificadores de hardware duplicados** para adicionar novos identificadores de hardware.
 
 ##  <a name="a-namebkmkpolicyretrievala-initiate-policy-retrieval-for-a-configuration-manager-client"></a><a name="BKMK_PolicyRetrieval"></a> Iniciar a recuperação de política para um cliente do Configuration Manager  
  Um cliente do Windows Configuration Manager baixa sua política de cliente segundo um cronograma que você define como uma configuração do cliente. No entanto, pode haver situações em que você quer iniciar a recuperação da política ad hoc do cliente, por exemplo, em um cenário de solução de problemas ou em testes.  
@@ -440,6 +453,6 @@ A partir da versão 1606, você pode ajustar o tamanho da pasta de cache do clie
 
 
 
-<!--HONumber=Nov16_HO1-->
+<!--HONumber=Dec16_HO3-->
 
 

@@ -1,5 +1,5 @@
 ---
-title: Acesso condicional | System Center Configuration Manager
+title: Acesso condicional | Microsoft Docs
 description: "Saiba como usar o acesso condicional no System Center Configuration Manager para proteger emails e outros serviços."
 ms.custom: na
 ms.date: 10/06/2016
@@ -12,12 +12,12 @@ ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 76d86613-b87f-4fe5-9236-a573e00b613a
 caps.latest.revision: 26
-author: karthikaraman
-ms.author: karaman
+author: andredm7
+ms.author: andredm
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: 5c6cf3c1697b49708aa5192b67b08b700da7dc72
-ms.openlocfilehash: 2dad04cb429ac854b5455c2af051f6f7caaadd66
+ms.sourcegitcommit: c13c6268fa76ade7feb0981f9c4a6e325e393aca
+ms.openlocfilehash: d33a515ad2bf0a7fb8680447f2bf83544f2eb30f
 
 
 ---
@@ -81,7 +81,7 @@ O Acesso condicional ao Exchange Online dá suporte a dispositivos que executam:
 -   Windows 7.0 ou Windows 8.1 (quando ingressado no domínio)
 -   Windows Phone 8.1 e posterior
 -   iOS 7.1 e posterior
--   Android 4.0 e posterior, Samsung Knox Standard 4.0 e posterior
+-   Android 4.0 e posterior, Samsung KNOX Standard 4.0 e posterior
 
  **Além disso**:
 -   Os dispositivos devem ser ingressados no local de trabalho, que registra o dispositivo com o AAD DRS (Serviço de registro de dispositivo do Active Directory do Azure).<br />     
@@ -133,7 +133,7 @@ O acesso condicional ao Exchange no Local dá suporte a:
 O Acesso condicional ao SharePoint Online dá suporte a dispositivos que executam:
  -   iOS 7.1 e posterior
  -   Android 4.0 e posterior
- -   Samsung Knox Standard 4.0 ou posterior
+ -   Samsung KNOX Standard 4.0 ou posterior
 
 **Além disso,** você deve habilitar a autenticação moderna para o Skype for Business Online. Preencha este [formulário do Connect](https://connect.microsoft.com/office/Survey/NominationSurvey.aspx?SurveyID=17299&ProgramID=8715) para ser registrado no programa de autenticação moderna.
 
@@ -145,7 +145,7 @@ O Acesso condicional ao SharePoint Online dá suporte a dispositivos que executa
  -   Windows 7.0 ou Windows 8.1 (quando ingressado no domínio)
  -   Windows Phone 8.1 e posterior
  -   iOS 7.1 e posterior
- -   Android 4.0 e posterior, Samsung Knox Standard 4.0 e posterior
+ -   Android 4.0 e posterior, Samsung KNOX Standard 4.0 e posterior
 
  **Além disso**:
  -   Os dispositivos devem ser ingressados no local de trabalho, que registra o dispositivo com o AAD DRS (Serviço de registro de dispositivo do Active Directory do Azure).
@@ -184,6 +184,6 @@ O Acesso condicional ao SharePoint Online dá suporte a dispositivos que executa
 
 
 
-<!--HONumber=Nov16_HO1-->
+<!--HONumber=Dec16_HO3-->
 
 

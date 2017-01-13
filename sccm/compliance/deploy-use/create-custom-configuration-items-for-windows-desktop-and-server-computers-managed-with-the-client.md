@@ -1,8 +1,8 @@
 ---
-title: "Criar itens de configuração personalizados para computadores desktop e de servidor com Windows gerenciados com o cliente do System Center Configuration Manager | System Center Configuration Manager"
+title: "Criar itens de configuração personalizados para computadores desktop e de servidor com Windows gerenciados com o cliente do System Center Configuration Manager | Microsoft Docs"
 description: "Gerencie configurações para computadores e servidores Windows com um item personalizado de configuração de Desktops e Servidores Windows."
 ms.custom: na
-ms.date: 10/06/2016
+ms.date: 11/18/2016
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
@@ -17,8 +17,8 @@ author: robstackmsft
 ms.author: robstack
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: 1134bb2f04152288e72d40b1b1083f415cb4e900
-ms.openlocfilehash: bf3d46377d4027832e59e5ce50af90a0770919ea
+ms.sourcegitcommit: 1a4a9da88caba55d9e340c7fb1f31f4e3b957f3e
+ms.openlocfilehash: f5509d1ffb88bc128f7be6c74e6b65dc33605c9e
 
 
 ---
@@ -359,6 +359,6 @@ Na página **Plataformas com Suporte** do **Assistente para Criar Item de Config
 
 
 
-<!--HONumber=Nov16_HO1-->
+<!--HONumber=Dec16_HO3-->
 
 

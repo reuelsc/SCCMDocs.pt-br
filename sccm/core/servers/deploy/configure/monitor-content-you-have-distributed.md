@@ -1,5 +1,5 @@
 ---
-title: "Monitorar conteúdo | System Center Configuration Manager"
+title: "Monitorar o conteúdo | Microsoft Docs"
 description: "Entenda como monitorar o conteúdo distribuído usando o console do Configuration Manager."
 ms.custom: na
 ms.date: 10/06/2016
@@ -16,8 +16,8 @@ author: Brenduns
 ms.author: brenduns
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: 1134bb2f04152288e72d40b1b1083f415cb4e900
-ms.openlocfilehash: 402c06ed92bbfe509206d3e7800e41e90c5d3a38
+ms.sourcegitcommit: 1a4a9da88caba55d9e340c7fb1f31f4e3b957f3e
+ms.openlocfilehash: 9a5d2c3a3c6bdca05b5b00fa4d746c437a56ef89
 
 ---
 # <a name="monitor-content-you-have-distributed-with-system-center-configuration-manager"></a>Monitorar o conteúdo que você distribuiu com o System Center Configuration Manager
@@ -27,13 +27,9 @@ ms.openlocfilehash: 402c06ed92bbfe509206d3e7800e41e90c5d3a38
 Use o console do System Center Configuration Manager para monitorar o conteúdo distribuído, incluindo:  
 
 -   O status de todos os tipos de pacotes em relação aos pontos de distribuição associados  
-
 -   O status de validação de conteúdo para o conteúdo de um pacote  
-
 -   O status do conteúdo atribuído a um grupo de pontos de distribuição específico  
-
 -   O estado do conteúdo atribuído a um ponto de distribuição  
-
 -   O status de recursos opcionais de cada ponto de distribuição (validação de conteúdo, PXE e multicast).  
 
 > [!NOTE]  
@@ -43,37 +39,27 @@ Use o console do System Center Configuration Manager para monitorar o conteúdo 
  O nó **Status do Conteúdo** no espaço de trabalho **Monitoramento** fornece informações sobre os pacotes de conteúdo. No console do Configuration Manager, você pode examinar informações como:  
 
 -   O nome do pacote  
-
 -   Tipo  
-
 -   Para quantos pontos de distribuição um pacote foi enviado  
-
 -   A taxa de conformidade  
-
 -   Quando o pacote foi criado  
-
 -   ID do Pacote  
-
 -   Versão de origem  
 
 Você também encontrará informações detalhadas de status para qualquer pacote, bem como o status de distribuição para o pacote, incluindo:  
 
 -   Número de falhas  
-
 -   distribuições pendentes  
-
 -   O número de instalações  
 
 Você também pode gerenciar as distribuições que continuam em andamento para um ponto de distribuição ou que falharam em distribuir com sucesso o conteúdo para um ponto de distribuição:  
 
 -   A opção aplicável para cancelar ou redistribuir o conteúdo estará disponível ao exibir a mensagem de status de implantação de um trabalho de distribuição a um ponto de distribuição no painel **Detalhes de Ativo** ou na guia **Em andamento** ou na **Erro** do nó **Status de Conteúdo** .  
-
 -   Adicionalmente, os detalhes do trabalho exibem a porcentagem do trabalho que já foi concluída ao exibir os detalhes de um trabalho na guia **Em andamento** e o número de novas tentativas que restam para o trabalho, assim como quanto tempo antes de acontecer uma nova tentativa, ao exibir os detalhes do trabalho disponível na guia **Erro** .  
 
 Ao cancelar uma implantação que ainda não foi concluída, o trabalho de distribuição para transferir tal conteúdo é interrompido:  
 
 -   O status da implantação é atualizado para indicar que a distribuição falhou e foi cancelada por uma ação do usuário.  
-
 -   Esse novo status aparece na guia **Erro** .  
 
 > [!TIP]  
@@ -124,23 +110,16 @@ Use os procedimentos a seguir para exibir o status do conteúdo e gerenciar as d
 O nó **Status do Grupo de Pontos de Distribuição** no espaço de trabalho **Monitoramento** fornece informações sobre grupos de pontos de distribuição. Você pode examinar informações como:  
 
 -   O nome do grupo de ponto de distribuição  
-
 -   Descrição  
-
 -   Quantos pontos de distribuição são membros do grupo de pontos de distribuição  
-
 -   Quantos pacotes foram atribuídos ao grupo  
-
 -   Status do grupo de pontos de distribuição  
-
 -   Taxa de conformidade  
 
 Você também pode exibir informações detalhadas para o seguinte:  
 
 -   Erros para o grupo de pontos de distribuição,  
-
 -   Quantas distribuições estão em andamento  
-
 -   Quantas foram sido distribuídas com sucesso  
 
 #### <a name="to-monitor-distribution-point-group-status"></a>Para monitorar o status do grupo de pontos de distribuição  
@@ -171,8 +150,18 @@ Use o procedimento a seguir para exibir o status de configuração de pontos de 
 
 4.  No painel de resultados, clique na guia **Detalhes** . As informações de status para o ponto de distribuição são exibidas.  
 
+## <a name="client-data-sources-dashboard"></a>Painel Fontes de Dados do Cliente
+Começando da versão 1610, é possível usar o painel **Fontes de Dados do Cliente** para ajudar a entender o uso do [Cache de Pares](/sccm/core/plan-design/hierarchy/client-peer-cache) em seu ambiente. Esse painel só estará visível no console depois que os clientes baixarem o conteúdo usando o Cache de Pares e relatarem as informações de volta para o site. Com o intervalo do relatório, isso poderá levar até 24 horas.
+
+> [!TIP]  
+> Com a versão 1610, o cache de pares e o painel de fontes de dados do cliente são recursos de pré-lançamento. Para habilitá-los, confira [Usar recursos de pré-lançamento de atualizações](/sccm/core/servers/manage/install-in-console-updates#bkmk_prerelease).
+
+No console, acesse **Monitoramento** > **Status do Cliente** > **Fontes de Dados do Cliente**. Aqui você pode escolher um período de tempo para aplicar ao painel. Em seguida, na exibição, escolha o grupo de limites ou o pacote do qual quer ver informações. Ao exibir as informações, você pode passar o mouse sobre a superfície para ver mais detalhes sobre conteúdo ou as origens da política.  
+
+Também é possível usar um novo relatório, **Fontes de Dados do Cliente — Resumo**, para exibir um resumo das fontes de dados do cliente de cada grupo de limites.
 
 
-<!--HONumber=Nov16_HO1-->
+
+<!--HONumber=Dec16_HO3-->
 
 

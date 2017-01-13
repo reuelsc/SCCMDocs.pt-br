@@ -1,5 +1,5 @@
 ---
-title: "Monitorar o status de implantação do cliente | System Center Configuration Manager"
+title: "Monitorar o status de implantação do cliente | Microsoft Docs"
 description: "Monitore o status de implantação do cliente no System Center Configuration Manager."
 ms.custom: na
 ms.date: 10/06/2016
@@ -13,12 +13,12 @@ ms.topic: get-started-article
 ms.assetid: 20a573b3-53cb-4ed5-bae1-7542f533ed20
 caps.latest.revision: 11
 caps.handback.revision: 0
-author: Mtillman
-ms.author: mtillman
+author: nbigman
+ms.author: nbigman
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: 1134bb2f04152288e72d40b1b1083f415cb4e900
-ms.openlocfilehash: 495c95b6add90619881291a551f394511d9eb36d
+ms.sourcegitcommit: 55c953f312a9fb31e7276dde2fdd59f8183b4e4d
+ms.openlocfilehash: 3bc82535955d937e5620ef2963ccc29bfd0124e3
 
 
 ---
@@ -32,8 +32,6 @@ Implantar clientes no seu site leva tempo e algumas instalações não são bem-
 >  A melhor e mais confiável maneira de monitorar a implantação do cliente é com o console do Configuration Manager (conforme descrito neste artigo). A seção **Status do Cliente** do espaço de trabalho **Monitoramento** no console fornece o status da implantação do cliente de modo preciso e em tempo real. Você pode monitorar implantações do cliente com outras ferramentas, como o Gerenciador de Servidores no Windows Server ou o System Center Operations Manager, mas pode receber alarmes da atividade normal de instalação do cliente. Devido ao modo que o programa de instalação do cliente (CCMSetup.exe) é executado em vários ambientes, essas outras ferramentas podem gerar falsos alarmes e avisos que não refletem precisamente o estado das implantações do cliente.  
 
  No espaço de trabalho **Monitoramento** do console, é possível monitorar os status a seguir de implantações do cliente, que ocorrem em uma coleção que você especifica:  
-
--   Não iniciada   
 
 -   Compatível  
 
@@ -60,7 +58,7 @@ Implantar clientes no seu site leva tempo e algumas instalações não são bem-
  Para saber mais sobre implantações do cliente em pré-produção, consulte [Como testar atualizações do cliente em uma coleção de pré-produção no System Center Configuration Manager](../../../core/clients/manage/upgrade/test-client-upgrades.md).
 
  > [!NOTE]
- > O status da implantação em computadores que hospedam funções de sistema de sites em uma coleção de pré-produção pode ser relatado como **Não Iniciado** mesmo que o cliente tenha sido implantado com êxito. Quando você promove o cliente para produção, o status da implantação é relatado corretamente.   
+ > O status da implantação em computadores que hospedam funções de sistema de sites em uma coleção de pré-produção pode ser relatado como **Não compatível** mesmo que o cliente tenha sido implantado com êxito. Quando você promove o cliente para produção, o status da implantação é relatado corretamente.   
 
  Para monitorar o status de clientes implantados, confira [Como monitorar clientes no System Center Configuration Manager](../../../core/clients/manage/monitor-clients.md)  
 
@@ -68,6 +66,6 @@ Implantar clientes no seu site leva tempo e algumas instalações não são bem-
 
 
 
-<!--HONumber=Nov16_HO1-->
+<!--HONumber=Dec16_HO3-->
 
 

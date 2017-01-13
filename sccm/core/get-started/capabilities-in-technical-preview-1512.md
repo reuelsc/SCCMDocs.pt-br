@@ -1,5 +1,5 @@
 ---
-title: Funcionalidades no Technical Preview 1512 do System Center Configuration Manager
+title: Funcionalidades do Technical Preview 1512 do System Center Configuration Manager | Microsoft Docs
 description: "Saiba mais sobre os recursos disponíveis no Technical Preview do System Center Configuration Manager, versão 1512."
 ms.custom: na
 ms.date: 10/06/2016
@@ -16,8 +16,8 @@ author: Brenduns
 ms.author: brenduns
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: 1134bb2f04152288e72d40b1b1083f415cb4e900
-ms.openlocfilehash: 1d97e7646adbb02a03b33b5efc56c1658364956e
+ms.sourcegitcommit: 3bf44f850722afdb8dfe5922c8ceff11c9b56d08
+ms.openlocfilehash: ea6cb27fc229854ba7c1c39bb735ed9b9a88bb61
 
 ---
 # <a name="capabilities-in-technical-preview-1512-for-system-center-configuration-manager"></a>Funcionalidades no Technical Preview 1512 do System Center Configuration Manager
@@ -93,6 +93,6 @@ Antes de usar as políticas do Endpoint Protection, você deve instalar e gerenc
 
 
 
-<!--HONumber=Nov16_HO1-->
+<!--HONumber=Dec16_HO3-->
 
 

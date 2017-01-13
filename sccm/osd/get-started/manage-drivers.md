@@ -1,5 +1,5 @@
 ---
-title: Gerenciar drivers | Configuration Manager
+title: Gerenciar drivers | Microsoft Docs
 description: "Use o catálogo de drivers do Configuration Manager para importar drivers de dispositivo, drivers de grupo em pacotes e distribuir esses pacotes aos pontos de distribuição."
 ms.custom: na
 ms.date: 10/06/2016
@@ -17,8 +17,8 @@ author: Dougeby
 ms.author: dougeby
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: 1134bb2f04152288e72d40b1b1083f415cb4e900
-ms.openlocfilehash: 82cddeb0f2f5210f8bf246b0c757e15815f78669
+ms.sourcegitcommit: 74341fb60bf9ccbc8822e390bd34f9eda58b4bda
+ms.openlocfilehash: 361a18b7da8249fc6cccc333f39313a52dd8ab88
 
 
 ---
@@ -198,7 +198,7 @@ O System Center Configuration Manager fornece um catálogo de drivers que pode s
 
  Use o procedimento a seguir para adicionar ou remover drivers de dispositivo em uma imagem de inicialização.  
 
-#### <a name="to-modify-the-device-drivers-associated-with-a-boot-image"></a>Para modificar drivers de dispositivo associados a uma imagem de inicialização  
+#### <a name="to-modify-the--device-drivers-associated-with-a-boot-image"></a>Para modificar drivers de dispositivo associados a uma imagem de inicialização  
 
 1.  No console do Configuration Manager, clique em **Biblioteca de Software**.  
 
@@ -278,6 +278,6 @@ O System Center Configuration Manager fornece um catálogo de drivers que pode s
 
 
 
-<!--HONumber=Nov16_HO1-->
+<!--HONumber=Dec16_HO3-->
 
 

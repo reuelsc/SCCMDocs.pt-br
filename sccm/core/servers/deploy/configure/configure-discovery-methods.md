@@ -1,5 +1,5 @@
 ---
-title: Configurar a descoberta | System Center Configuration Manager
+title: Configurar a descoberta | Microsoft Docs
 description: "Configure métodos de descoberta para serem executados em um site do Configuration Manager para encontrar recursos que você pode gerenciar usando sua infraestrutura de rede e o Active Directory."
 ms.custom: na
 ms.date: 10/06/2016
@@ -16,8 +16,8 @@ author: Brenduns
 ms.author: brenduns
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: 1134bb2f04152288e72d40b1b1083f415cb4e900
-ms.openlocfilehash: 668da9706bb46e6338e81ed75be5d78ab32561c3
+ms.sourcegitcommit: 10b1010ccbf3889c58c55b87e70b354559243c90
+ms.openlocfilehash: 2fcc392ba700f871349200166fac715b73788c16
 
 ---
 # <a name="configure-discovery-methods-for-system-center-configuration-manager"></a>Configurar métodos de descoberta para o System Center Configuration Manager
@@ -448,6 +448,6 @@ Como a Descoberta de Rede não cria mensagens para alertar quando a descoberta e
 
 
 
-<!--HONumber=Nov16_HO1-->
+<!--HONumber=Dec16_HO3-->
 
 

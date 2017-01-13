@@ -1,5 +1,5 @@
 ---
-title: "Usar serviços de nuvem | System Center Configuration Manager"
+title: "Usar os serviços de nuvem | Microsoft Docs"
 description: Provisione recursos de nuvem para o System Center Configuration Manager complementar sua infraestrutura local.
 ms.custom: na
 ms.date: 10/06/2016
@@ -17,8 +17,8 @@ author: Brenduns
 ms.author: brenduns
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: 72e01c23ab597ad5a446492c3dc371aa50b9d949
-ms.openlocfilehash: 9440123f6f13e19723657e7b4d5627f3a349a3b4
+ms.sourcegitcommit: 10b1010ccbf3889c58c55b87e70b354559243c90
+ms.openlocfilehash: 539ad555b85b7517507c21718dab0b79fdf4dfb8
 
 
 ---
@@ -106,6 +106,6 @@ Essas funcionalidades adicionais não exigem que você tenha uma assinatura do A
 
 
 
-<!--HONumber=Nov16_HO1-->
+<!--HONumber=Dec16_HO3-->
 
 

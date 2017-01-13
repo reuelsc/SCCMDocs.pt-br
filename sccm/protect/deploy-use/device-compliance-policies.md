@@ -1,5 +1,5 @@
 ---
-title: "Políticas de conformidade do dispositivo | System Center Configuration Manager"
+title: "Políticas de conformidade de dispositivo | Microsoft Docs"
 description: "Saiba como gerenciar as políticas de conformidade no System Center Configuration Manager para tornar aos dispositivos compatíveis políticas de acesso condicional."
 ms.custom: na
 ms.date: 10/06/2016
@@ -12,13 +12,13 @@ ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 353ec99a-9982-4dab-ae21-d7fb595b3c50
 caps.latest.revision: 22
-author: karthikaraman
-ms.author: karaman
+author: andredm7
+ms.author: andredm
 manager: angrobe
 robots: noindex
 translationtype: Human Translation
-ms.sourcegitcommit: 5c6cf3c1697b49708aa5192b67b08b700da7dc72
-ms.openlocfilehash: d461f95f875632860238d503d7acd7ab8c320d58
+ms.sourcegitcommit: c13c6268fa76ade7feb0981f9c4a6e325e393aca
+ms.openlocfilehash: fd5830fef3759def7806dbbe1802872df19ca939
 
 ---
 # <a name="device-compliance-policies-in-system-center-configuration-manager"></a>Políticas de conformidade de dispositivo no System Center Configuration Manager
@@ -72,6 +72,6 @@ As **políticas de conformidade** no System Center Configuration Manager definem
 
 
 
-<!--HONumber=Nov16_HO1-->
+<!--HONumber=Dec16_HO3-->
 
 

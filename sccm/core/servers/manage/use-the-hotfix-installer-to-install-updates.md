@@ -1,5 +1,5 @@
 ---
-title: Instalador de Hotfix | System Center Configuration Manager
+title: Instalador de hotfix | Microsoft Docs
 description: "Saiba quando e como instalar atualizações usando o Instalador de Hotfix para o Configuration Manager."
 ms.custom: na
 ms.date: 10/06/2016
@@ -16,8 +16,8 @@ author: Brenduns
 ms.author: brenduns
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: 1134bb2f04152288e72d40b1b1083f415cb4e900
-ms.openlocfilehash: 03940a499416ce4231bda5feb8a2e323abdff578
+ms.sourcegitcommit: 10b1010ccbf3889c58c55b87e70b354559243c90
+ms.openlocfilehash: 8ffc7383e895909e6e6c4b8a7875fd5f0df2220e
 
 
 ---
@@ -269,6 +269,6 @@ Por exemplo, você pode usar a seguinte linha de comando para atualizar um conso
 
 
 
-<!--HONumber=Nov16_HO1-->
+<!--HONumber=Dec16_HO3-->
 
 

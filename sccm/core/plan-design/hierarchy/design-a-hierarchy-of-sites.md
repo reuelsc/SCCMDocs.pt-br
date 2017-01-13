@@ -1,5 +1,5 @@
 ---
-title: Criar uma hierarquia | System Center Configuration Manager
+title: Criar uma hierarquia | Microsoft Docs
 description: "Compreenda as topologias disponíveis e as opções de gerenciamento para o System Center Configuration Manager para poder planejar a hierarquia do site."
 ms.custom: na
 ms.date: 10/06/2016
@@ -17,8 +17,8 @@ author: Brenduns
 ms.author: brenduns
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: 783fb4d61aab83ad64b9cec332e90d6c9de59f47
-ms.openlocfilehash: b1ed3011356a794b7b0913a1c8f189230d8957b2
+ms.sourcegitcommit: 238ef5814c0c1b832c28d63c9f3879e21a6c439b
+ms.openlocfilehash: 000acfec2cd61cc2d69e1bbd555b10fc22a40318
 
 
 ---
@@ -173,7 +173,7 @@ O driver de chave do tipo e contagem de sites que você usa em uma hierarquia é
 
 -   [Planejar a segurança no System Center Configuration Manager](../../../core/plan-design/security/plan-for-security.md)  
 
--   [Managing network bandwidth](../../../core/plan-design/hierarchy/fundamental-concepts-for-content-management.md#bkmk_bandwidth) ao implantar conteúdo em um site  
+-   [Managing network bandwidth](../../../core/plan-design/hierarchy/manage-network-bandwidth.md) ao implantar conteúdo em um site  
 
 
 **Considere as configurações que estendem sites e hierarquias:**  
@@ -188,6 +188,6 @@ O driver de chave do tipo e contagem de sites que você usa em uma hierarquia é
 
 
 
-<!--HONumber=Nov16_HO1-->
+<!--HONumber=Dec16_HO3-->
 
 

@@ -1,5 +1,5 @@
 ---
-title: "Afinidade de usuário para dispositivos híbridos gerenciados no Configuration Manager"
+title: "Afinidade de usuário para dispositivos híbridos gerenciados no Configuration Manager | Microsoft Docs"
 description: "Configurar afinidade de usuário para dispositivos gerenciados no Configuration Manager."
 ms.custom: na
 ms.date: 10/06/2016
@@ -12,12 +12,12 @@ ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: b5d520a7-e9e5-40ee-91f9-f2684214beb6
 caps.latest.revision: 6
-author: NathBarn
-ms.author: nathbarn
+author: mtillman
+ms.author: mtillman
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: 1134bb2f04152288e72d40b1b1083f415cb4e900
-ms.openlocfilehash: 789374b48d27ffaaec5ca02a910ca6e1899b3d3c
+ms.sourcegitcommit: 55c953f312a9fb31e7276dde2fdd59f8183b4e4d
+ms.openlocfilehash: 74dcc0f4e680893db804956615248b7e1230d2b5
 
 ---
 # <a name="user-affinity-for-hybrid-managed-devices-in-configuration-manager"></a>Afinidade de usuário para dispositivos híbridos gerenciados no Configuration Manager
@@ -52,10 +52,10 @@ Ao configurar perfis para dispositivos corporativos, o administrador pode especi
 8.  O registro está concluído. Agora você pode usar este dispositivo com o conjunto completo de recursos.  
 
 ##  <a name="a-namebkmknouaa-managed-devices-without-user-affinity"></a><a name="BKMK_noUA"></a> Dispositivos gerenciados sem afinidade de usuário  
- Dispositivos configurados com **no user affinity** não têm suporte no Portal da Empresa e não devem instalar o aplicativo. O Portal da Empresa se destina a usuários com credenciais corporativas e que precisam de acesso aos recursos corporativos personalizados (por exemplo, email). O dispositivo registrado sem **afinidade do usuário** não deve ter uma entrada de usuário dedicada. Quiosque, ponto de venda (PDV) ou dispositivos de utilitário compartilhados são casos de uso comuns de dispositivos registrados sem afinidade de usuário. Se a afinidade de usuário for necessária, certifique-se de que o perfil de registro do dispositivo tenha a opção **Afinidade de Usuário** selecionada antes de registrar o dispositivo. Para alterar o status de afinidade em um dispositivo, você deve desativar e registrar novamente o dispositivo.
+ Dispositivos configurados com **no user affinity** não têm suporte no Portal da Empresa e não devem instalar o aplicativo. O Portal da Empresa se destina a usuários com credenciais corporativas e que precisam de acesso aos recursos corporativos personalizados (por exemplo, email). O dispositivo registrado sem **afinidade do usuário** não deve ter uma entrada de usuário dedicada. Quiosque, ponto de venda (PDV) ou dispositivos de utilitário compartilhados são casos de uso comuns de dispositivos registrados sem afinidade de usuário. Se a afinidade de usuário for necessária, certifique-se de que o perfil de registro do dispositivo tenha a opção **Afinidade de Usuário** selecionada antes de registrar o dispositivo. Para alterar o status de afinidade em um dispositivo, você deverá desativar e registrar novamente o dispositivo.
 
 
 
-<!--HONumber=Nov16_HO1-->
+<!--HONumber=Dec16_HO3-->
 
 

@@ -1,5 +1,5 @@
 ---
-title: Criar perfis de email do Exchange ActiveSync | System Center Configuration Manager
+title: Criar perfis de email do Exchange ActiveSync | Microsoft Docs
 description: Saiba como criar e configurar perfis de email no System Center Configuration Manager que funcionam com o Microsoft Intune.
 ms.custom: na
 ms.date: 10/06/2016
@@ -17,8 +17,8 @@ author: Nbigman
 ms.author: nbigman
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: 1134bb2f04152288e72d40b1b1083f415cb4e900
-ms.openlocfilehash: 613ed15742322e2eb90eec3c9f493e3b1755d93a
+ms.sourcegitcommit: bff083fe279cd6b36a58305a5f16051ea241151e
+ms.openlocfilehash: 3ff5d53464c61e0dc1836d032bcb3815bae05d1f
 
 
 ---
@@ -42,7 +42,7 @@ Os perfis de email funcionam com o Microsoft Intune para permitir que você prov
 -   Dispositivos IPad que executam o iOS 5, iOS 6, iOS 7 e iOS 8  
 
 > [!IMPORTANT]  
->  Para implantar perfis em dispositivos iOS, Android, Samsung KNOX, Windows Phone e Windows 8.1 ou 10, esses dispositivos devem ser registrados no Intune. Para obter informações sobre como registrar seus dispositivos, veja [Gerenciar dispositivos móveis com o Microsoft Intune](https://technet.microsoft.com/en-us/library/dn646962.aspx).  
+>  Para implantar perfis em dispositivos iOS, Android Samsung KNOX Standard, Windows Phone e Windows 8.1 ou Windows 10, esses dispositivos devem ser registrados no Intune. Para obter informações sobre como registrar seus dispositivos, veja [Gerenciar dispositivos móveis com o Microsoft Intune](https://technet.microsoft.com/en-us/library/dn646962.aspx).  
 
  Além de configurar uma conta de email no dispositivo, você também pode configurar as configurações de sincronização de contatos, calendários e tarefas.  
 
@@ -57,7 +57,7 @@ Iniciar o Assistente de Criação de Perfil de Email do Exchange ActiveSync
 
 2.  No espaço de trabalho **Ativos e Conformidade** , expanda **Configurações de Conformidade**, expanda **Acesso aos Recursos da Empresa**e clique em **Perfis de email**.  
 
-3.  Na guia **Início** , no grupo **Criar** , clique em **Criar perfil do Exchange ActiveSync**. 
+3.  Na guia **Início** , no grupo **Criar** , clique em **Criar perfil do Exchange ActiveSync**.
 
 4.  Siga as instruções no assistente   
 
@@ -173,7 +173,7 @@ Iniciar o Assistente de Criação de Perfil de Email do Exchange ActiveSync
         -   **Tarefas**  
 
 ###  <a name="specify-supported-platforms-for-the-exchange-activesync-email-profile"></a>Especificar as plataformas com suporte para o perfil de email do Exchange ActiveSync.  
- 
+
 1.  Na página **Plataformas com Suporte** do Assistente de criação de perfil de email do Exchange ActiveSync, selecione os sistemas operacionais nos quais o perfil de email será instalado ou clique em **Selecionar todos** para instalar o perfil de email em todos os sistemas operacionais disponíveis.  
 
 2.  Conclua o assistente.
@@ -182,6 +182,6 @@ Para obter informações sobre como implantar perfis de email do Exchange Active
 
 
 
-<!--HONumber=Nov16_HO1-->
+<!--HONumber=Dec16_HO3-->
 
 

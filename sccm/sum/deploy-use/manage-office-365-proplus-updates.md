@@ -1,12 +1,11 @@
 ---
-
-title: "Gerenciar atualizações do Office 365 ProPlus | Configuration Manager"
+title: "Gerenciar atualizações do Office 365 ProPlus | Microsoft Docs"
 description: "O Configuration Manager sincroniza a atualização de clientes do Office 365 do catálogo do WSUS para o servidor do site para disponibilizar as atualizações para implantar em clientes."
 keywords: 
 author: dougeby
 ms.author: dougeby
 manager: angrobe
-ms.date: 10/06/2016
+ms.date: 11/10/2016
 ms.topic: article
 ms.prod: configuration-manager
 ms.service: 
@@ -14,9 +13,8 @@ ms.technology:
 - configmgr-sum
 ms.assetid: eac542eb-9aa1-4c63-b493-f80128e4e99b
 translationtype: Human Translation
-ms.sourcegitcommit: 1134bb2f04152288e72d40b1b1083f415cb4e900
-ms.openlocfilehash: 58a551425591332264592713fa3cc4e04d9939aa
-
+ms.sourcegitcommit: 5415bfa0ac4af14891a9445cdeab6a4509fffc38
+ms.openlocfilehash: 630ccdf7b7f45a88586c9ab530c164985267bec9
 
 ---
 
@@ -25,6 +23,32 @@ ms.openlocfilehash: 58a551425591332264592713fa3cc4e04d9939aa
 *Aplica-se a: System Center Configuration Manager (Branch Atual)*
 
 A partir do Configuration Manager versão 1602, ele tem a capacidade de gerenciar atualizações de clientes do Office 365 usando o fluxo de trabalho do gerenciamento de atualizações de software. Quando a Microsoft publica uma nova atualização de cliente do Office 365 na Rede de Distribuição de Conteúdo do Office (CDN), a Microsoft também publica um pacote de atualização para o Windows Server Update Services (WSUS). Após o Configuration Manager sincronizar a atualização de clientes do Office 365 do catálogo do WSUS para o servidor do site, a atualização ficará disponível para implantar em clientes.
+
+## <a name="office-365-client-management-dashboard"></a>Painel de gerenciamento de clientes do Office 365  
+Começando do Configuration Manager versão 1610, o painel Gerenciamento de Clientes do Office 365 está disponível no console do Configuration Manager. Para exibir o painel, acesse **Biblioteca de Software** > **Visão Geral** > **Gerenciamento de Cliente do Office 365**.
+
+<!--- >[!NOTE]
+>In the **What's New** workspace in the Configuration Manager console, the new dashboard is incorrectly named **Office 365 Servicing dashboard**. --->
+
+O painel exibe gráficos para o seguinte:
+
+- Número de clientes do Office 365
+- Versões do cliente do Office 365
+- Idiomas do cliente do Office 365
+- Canais do cliente do Office 365     
+Para mais informações, confira [Visão geral dos canais de atualização do Office 365 ProPlus](https://technet.microsoft.com/library/mt455210.aspx).
+<!--- - Automatic deployment rules with Office 365 apps (have Office 365 Client selected in the set of available products). --->
+
+<!---You can take the following actions on the dashboard:
+- --->
+
+Na parte superior do painel, use a configuração suspensa **Coleção** para filtrar os dados do painel por membros de uma coleção específica.
+
+<!---
+ On the upper-right side of the dashboard, click **Office 365 Installer** to start the Office 365 Client Installation Wizard to deploy Office 365 apps to clients. For details, see [Deploy Office 365 apps to clients](#deploy-office-365-apps-to-clients).
+- On the middle-right side of the dashboard, click **Create an ADR** to open the Automatic Deployment Rule Wizard to create a new automatic deployment rule (ADR). To create an ADR for Office 365 apps, select **Office 365 Client** when you choose the product. For more information, see [Automatically deploy software updates](/sccm/sum/deploy-use/automatically-deploy-software-updates).
+- On the lower-right side of the dashboard, click **Create Client Agent Settings** to open Client Agent settings. For more information, see [About client settings](/sccm/core/clients/deploy/about-client-settings).
+--->
 
 #### <a name="to-deploy-office-365-updates-with-configuration-manager"></a>Para implantar atualizações do Office 365 com o Configuration Manager
 Use as etapas a seguir para implantar atualizações do Office 365 com o Configuration Manager:
@@ -45,8 +69,11 @@ Use as etapas a seguir para implantar atualizações do Office 365 com o Configu
 
 4. [Implante as atualizações do Office 365](deploy-software-updates.md) nos clientes.  
 
+<!--- ## Next steps
+Use the Office 365 Client Management dashboard in Configuration Manager to review Office 365 client information and deploy Office 365 apps. For details, see [Manage Office 365 apps](manage-office-365-apps.md). --->
 
 
-<!--HONumber=Nov16_HO1-->
+
+<!--HONumber=Dec16_HO3-->
 
 

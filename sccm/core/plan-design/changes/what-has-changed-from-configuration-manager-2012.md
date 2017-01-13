@@ -1,5 +1,5 @@
 ---
-title: "Mudanças do Configuration Manager 2012 | System Center Configuration Manager "
+title: "Alterações do Configuration Manager 2012 | Microsoft Docs "
 description: "Identifique as mudanças e os novos recursos do System Center Configuration Manager com relação ao System Center 2012 Configuration Manager."
 ms.custom: na
 ms.date: 10/06/2016
@@ -16,8 +16,8 @@ author: Brenduns
 ms.author: brenduns
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: 1134bb2f04152288e72d40b1b1083f415cb4e900
-ms.openlocfilehash: 0f3b68fb17920b0abacc1428c8763ec8c06e6b22
+ms.sourcegitcommit: 828e2ac9a3f9bcea1571d24145a1021fdf1091f3
+ms.openlocfilehash: 3ede76bd60372dcef2b1b3230577ee3c3f1e2dcd
 
 
 ---
@@ -140,7 +140,7 @@ A remoção do AMT integrado para o System Center Configuration Manager inclui:
 
     -   Dispositivos iOS e Mac OS X gerenciados sem o cliente do Configuration Manager  
 
-    -   Dispositivos Android e Samsung KNOX gerenciados sem o cliente do Configuration Manager  
+    -   Dispositivos Android e Samsung KNOX Standard gerenciados sem o cliente do Configuration Manager  
 
      Consulte [Como criar itens de configuração no System Center Configuration Manager](../../../compliance/deploy-use/create-configuration-items.md).  
 
@@ -158,7 +158,7 @@ A remoção do AMT integrado para o System Center Configuration Manager inclui:
 
 -   Adicionada uma função do gerenciador de registro de dispositivo para ajudar a gerenciar um grande número de dispositivos  
 
-Para obter mais informações sobre recursos de gerenciamento de dispositivos móveis com o Configuration Manager e o Intune, consulte [MDM (gerenciamento de dispositivo móvel) híbrido com o System Center Configuration Manager e o Microsoft Intune](../../../mdm/plan-design/hybrid-mobile-device-management.md).  
+Para obter mais informações sobre recursos de gerenciamento de dispositivos móveis com o Configuration Manager e o Intune, consulte [MDM (gerenciamento de dispositivo móvel) híbrido com o System Center Configuration Manager e o Microsoft Intune](../../../mdm/understand/hybrid-mobile-device-management.md).  
 
 ## <a name="on-premises-mobile-device-management"></a>Gerenciamento de dispositivo móvel local  
  Com o System Center Configuration Manager, agora você pode gerenciar dispositivos móveis usando a infraestrutura local do Configuration Manager. Todo o gerenciamento de dispositivo e todos os dados de gerenciamento são processados localmente e não fazem parte do Microsoft Intune ou de outros serviços de nuvem. Esse tipo de gerenciamento de dispositivo não exige software cliente, uma vez que os recursos usados pelo Configuration Manager para gerenciar os dispositivos são internos aos sistemas operacionais dos dispositivos.  
@@ -167,6 +167,6 @@ Para obter mais informações sobre recursos de gerenciamento de dispositivos m�
 
 
 
-<!--HONumber=Nov16_HO1-->
+<!--HONumber=Dec16_HO3-->
 
 

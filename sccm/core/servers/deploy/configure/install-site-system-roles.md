@@ -1,5 +1,5 @@
 ---
-title: "Instalar funções do sistema de sites | System Center Configuration Manager"
+title: "Instalar funções do sistema de sites | Microsoft Docs"
 description: "Os assistentes ajudam a adicionar funções do sistema de sites a um servidor do sistema de sites novo ou existente no site."
 ms.custom: na
 ms.date: 10/06/2016
@@ -16,8 +16,8 @@ author: Brenduns
 ms.author: brenduns
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: 1134bb2f04152288e72d40b1b1083f415cb4e900
-ms.openlocfilehash: 780ef516ddc641d53e1d2d4a5f559795cfd22cbb
+ms.sourcegitcommit: 10b1010ccbf3889c58c55b87e70b354559243c90
+ms.openlocfilehash: 9c930db61139fd089554591f4ca0aa2271fb2289
 
 ---
 # <a name="install-site-system-roles-for-system-center-configuration-manager"></a>Instalar funções do sistema de sites ao System Center Configuration Manager
@@ -84,6 +84,6 @@ Antes de instalar a função do sistema de sites, o Configuration Manager verifi
 
 
 
-<!--HONumber=Nov16_HO1-->
+<!--HONumber=Dec16_HO3-->
 
 

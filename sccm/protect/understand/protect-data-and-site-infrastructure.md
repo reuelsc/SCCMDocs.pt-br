@@ -1,8 +1,8 @@
 ---
-title: Proteger a infraestrutura de dados e do site | System Center Configuration Manager
+title: Proteger a infraestrutura de dados e do site | Microsoft Docs
 description: "Saiba como proteger os recursos da sua organização contra a exposição e ataque mal-intencionado com o System Center Configuration Manager."
 ms.custom: na
-ms.date: 10/06/2016
+ms.date: 11/27/2016
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
@@ -16,8 +16,8 @@ author: Nbigman
 ms.author: nbigman
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: 1134bb2f04152288e72d40b1b1083f415cb4e900
-ms.openlocfilehash: 366a3626e2ab4894bbb515176890d508761b6561
+ms.sourcegitcommit: 593fbd0587d54490246f48ae54f666bac6b7830d
+ms.openlocfilehash: c80750358d64cf87f8a3ce3a4c4f4030a9dfd742
 
 
 ---
@@ -26,7 +26,7 @@ ms.openlocfilehash: 366a3626e2ab4894bbb515176890d508761b6561
 *Aplica-se a: System Center Configuration Manager (Branch Atual)*
 
 
-Você deseja que seus usuários consigam acessar com segurança os recursos de sua organização, para que sua infraestrutura e seus dados sejam protegidos contra exposição ou ataque mal-intencionado. As informações contidas nesses tópicos descrevem como habilitar o acesso e como ajudar a proteger os recursos de sua organização.  
+Você deseja que seus usuários consigam acessar com segurança os recursos de sua organização, para que sua infraestrutura e seus dados sejam protegidos contra exposição ou ataque mal-intencionado. As informações contidas nesses tópicos descrevem como usar o System Center Configuration Manager (também conhecido como ConfigMgr ou SCCM) para habilitar o acesso e como ajudar a proteger os recursos de sua organização.  
 
 -   É possível minimizar os esforços dos usuários para se conectar aos recursos corporativos habilitando a conectividade VPN com o uso dos perfis de VPN. Saiba mais em [Perfis de VPN no System Center Configuration Manager](../deploy-use/vpn-profiles.md).  
 
@@ -44,6 +44,6 @@ Você deseja que seus usuários consigam acessar com segurança os recursos de s
 
 
 
-<!--HONumber=Nov16_HO1-->
+<!--HONumber=Dec16_HO3-->
 
 

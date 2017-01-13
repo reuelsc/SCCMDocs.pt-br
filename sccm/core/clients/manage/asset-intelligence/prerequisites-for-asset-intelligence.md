@@ -1,5 +1,5 @@
 ---
-title: "Pré-requisitos do Asset Intelligence | System Center Configuration Manager"
+title: "Pré-requisitos do Asset Intelligence | Microsoft Docs"
 description: "Conheça os pré-requisitos do Asset Intelligence no System Center Configuration Manager."
 ms.custom: na
 ms.date: 10/06/2016
@@ -17,8 +17,8 @@ author: nbigman
 ms.author: nbigman
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: 1134bb2f04152288e72d40b1b1083f415cb4e900
-ms.openlocfilehash: 12f7ea7223237f57fb2d90f0f7b66381e8f09a1f
+ms.sourcegitcommit: fc392e4440e84614f92218e9c7a09ec1c2c64f53
+ms.openlocfilehash: 156d6679817b81ca27fbd2b8836431396e1e6b23
 
 
 ---
@@ -51,6 +51,6 @@ O Asset Intelligence no System Center Configuration Manager tem dependências ex
 
 
 
-<!--HONumber=Nov16_HO1-->
+<!--HONumber=Dec16_HO3-->
 
 

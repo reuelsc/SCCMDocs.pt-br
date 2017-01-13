@@ -1,5 +1,5 @@
 ---
-title: "Lista de relatórios | System Center Configuration Manager"
+title: "Lista de relatórios | Microsoft Docs"
 description: "Veja uma lista de relatórios que são fornecidos com o Configuration Manager. Os relatórios aparecem em várias categorias."
 ms.custom: na
 ms.date: 10/06/2016
@@ -17,8 +17,8 @@ author: Dougeby
 ms.author: dougeby
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: 1134bb2f04152288e72d40b1b1083f415cb4e900
-ms.openlocfilehash: ef0e136376f4229e531880ad46fc8ce636eb0d8b
+ms.sourcegitcommit: 10b1010ccbf3889c58c55b87e70b354559243c90
+ms.openlocfilehash: 1480c38a6a3afef76b2e8759eaafd47d28f978f4
 
 
 ---
@@ -793,6 +793,6 @@ Vários relatórios internos são fornecidos com o System Center Configuration M
 
 
 
-<!--HONumber=Nov16_HO1-->
+<!--HONumber=Dec16_HO3-->
 
 

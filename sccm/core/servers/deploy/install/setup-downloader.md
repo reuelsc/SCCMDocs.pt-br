@@ -1,5 +1,5 @@
 ---
-title: "Downloader de Instalação | System Center Configuration Manager"
+title: "Downloader de instalação | Microsoft Docs"
 description: "Leia sobre esse aplicativo autônomo projetado para garantir que a instalação do site use as versões atuais dos principais arquivos de instalação."
 ms.custom: na
 ms.date: 10/06/2016
@@ -16,8 +16,8 @@ author: Brenduns
 ms.author: brenduns
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: 1134bb2f04152288e72d40b1b1083f415cb4e900
-ms.openlocfilehash: 574e4d450126d2c4411292b6dd52e18049d296f6
+ms.sourcegitcommit: 10b1010ccbf3889c58c55b87e70b354559243c90
+ms.openlocfilehash: cbe6ebfa80ff8253ec7ed5ad71852fb5cd7e7d91
 
 ---
 # <a name="setup-downloader-for-system-center-configuration-manager"></a>Downloader de Instalação para System Center Configuration Manager
@@ -98,6 +98,6 @@ Há duas opções para executar o Downloader de Instalação:
 
 
 
-<!--HONumber=Nov16_HO1-->
+<!--HONumber=Dec16_HO3-->
 
 

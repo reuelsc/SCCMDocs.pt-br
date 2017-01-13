@@ -1,5 +1,5 @@
 ---
-title: Suporte internacional | System Center Configuration Manager
+title: Suporte internacional | Microsoft Docs
 description: "Configure o System Center Configuration Manager para atender a requisitos internacionais específicos."
 ms.custom: na
 ms.date: 10/06/2016
@@ -17,8 +17,8 @@ author: Brenduns
 ms.author: brenduns
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: 1134bb2f04152288e72d40b1b1083f415cb4e900
-ms.openlocfilehash: 592ae2b8fbf55fa59afe909071a81b6bd3159ef7
+ms.sourcegitcommit: 6ed317d45d90758832d4157985dd95d5e253c6fc
+ms.openlocfilehash: 37e45e604e89d3ce280bb2bff47d4a55b6cdfaf8
 
 
 ---
@@ -46,6 +46,6 @@ As seções a seguir fornecem detalhes técnicos para ajudá-lo a configurar o S
 
 
 
-<!--HONumber=Nov16_HO1-->
+<!--HONumber=Dec16_HO3-->
 
 

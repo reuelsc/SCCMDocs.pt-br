@@ -1,8 +1,8 @@
 ---
-title: "Métodos de instalação do cliente | System Center Configuration Manager"
+title: "Métodos de instalação do cliente | Microsoft Docs"
 description: "Conheça os métodos de instalação do cliente para o System Center Configuration Manager."
 ms.custom: na
-ms.date: 10/06/2016
+ms.date: 11/23/2016
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
@@ -13,12 +13,12 @@ ms.topic: get-started-article
 ms.assetid: 51b5964b-374d-4abc-8619-414a9fffad2d
 caps.latest.revision: 9
 caps.handback.revision: 0
-author: Mtillman
-ms.author: mtillman
+author: nbigman
+ms.author: nbigman
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: 1134bb2f04152288e72d40b1b1083f415cb4e900
-ms.openlocfilehash: 169e7871bc1fbc83964ecb17e277d64ce4fd472c
+ms.sourcegitcommit: 593fbd0587d54490246f48ae54f666bac6b7830d
+ms.openlocfilehash: a7d5a04cf34c49246f768f9a4757c5da3b4db31a
 
 
 ---
@@ -26,9 +26,7 @@ ms.openlocfilehash: 169e7871bc1fbc83964ecb17e277d64ce4fd472c
 
 *Aplica-se a: System Center Configuration Manager (Branch Atual)*
 
-É possível usar métodos diferentes para instalar o software cliente do System Center Configuration Manager em dispositivos Windows, servidores UNIX/Linux e computadores Mac da sua empresa. Você pode usar uma ou qualquer combinação desses métodos que satisfaça às suas necessidades.  
-
- As seções a seguir descrevem as vantagens e desvantagens de cada método de instalação de cliente para ajudar a determinar qual é o melhor para sua organização.  
+Você pode usar diferentes métodos para instalar o software cliente do Configuration Manager (também conhecido como ConfigMgr ou SCCM). Você pode usar um método ou uma combinação desses métodos. Neste tópico, você pode ler sobre cada método para saber qual funcionará melhor na sua organização.  
 
 ## <a name="client-push-installation"></a>Instalação do cliente por push  
 
@@ -150,6 +148,6 @@ ms.openlocfilehash: 169e7871bc1fbc83964ecb17e277d64ce4fd472c
 
 
 
-<!--HONumber=Nov16_HO1-->
+<!--HONumber=Dec16_HO3-->
 
 

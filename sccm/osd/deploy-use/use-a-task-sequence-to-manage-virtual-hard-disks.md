@@ -1,5 +1,5 @@
 ---
-title: "Use uma sequência de tarefas para gerenciar discos rígidos virtuais | Configuration Manager"
+title: "Usar uma sequência de tarefas para gerenciar discos rígidos virtuais | Microsoft Docs"
 description: "Crie e modifique um VHD, adicione aplicativos e atualizações de software e publique o VHD e no System Center VMM (Virtual Machine Manager) do Configuration Manager."
 ms.custom: na
 ms.date: 10/06/2016
@@ -16,8 +16,8 @@ author: Dougeby
 ms.author: dougeby
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: 1134bb2f04152288e72d40b1b1083f415cb4e900
-ms.openlocfilehash: e0ba309d8efc34cccce6acc4c59f0c4d218a617a
+ms.sourcegitcommit: 74341fb60bf9ccbc8822e390bd34f9eda58b4bda
+ms.openlocfilehash: f77af4b8fcb193ed44511c0e5eea7290f55dbbf8
 
 
 ---
@@ -331,6 +331,6 @@ No System Center Configuration Manager, é possível gerenciar VHDs (discos ríg
 
 
 
-<!--HONumber=Nov16_HO1-->
+<!--HONumber=Dec16_HO3-->
 
 

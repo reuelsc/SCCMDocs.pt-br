@@ -1,5 +1,5 @@
 ---
-title: "Configurações com suporte para o LTSB | System Center Configuration Manager"
+title: "Configurações com suporte para o LTSB | Microsoft Docs"
 description: "Entenda quais sistemas operacionais e produtos dependentes funcionam com o Branch de Manutenção em Longo Prazo do System Center Configuration Manager."
 ms.custom: na
 ms.date: 10/12/2016
@@ -16,8 +16,8 @@ author: Brenduns
 ms.author: brenduns
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: 275d94b0596f04d2339ffb7aa315b4afdd237678
-ms.openlocfilehash: 25dbdd401d0f6e955e5dcc704a0c756c74c64773
+ms.sourcegitcommit: 10b1010ccbf3889c58c55b87e70b354559243c90
+ms.openlocfilehash: 573115e54d734d492ca776a040bad804a792ada6
 
 
 ---
@@ -333,6 +333,6 @@ As informações nos tópicos sobre o Branch Atual a seguir se aplicam ao LTSB:
 
 
 
-<!--HONumber=Nov16_HO1-->
+<!--HONumber=Dec16_HO3-->
 
 

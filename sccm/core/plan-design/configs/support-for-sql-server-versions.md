@@ -1,8 +1,8 @@
 ---
-title: Suporte para SQL Server | System Center Configuration Manager
+title: Suporte para SQL Server | Microsoft Docs
 description: "Obtenha os requisitos de configuração e versão do SQL Server para hospedar um banco de dados de site do System Center Configuration Manager."
 ms.custom: na
-ms.date: 10/06/2016
+ms.date: 11/29/2016
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
@@ -16,8 +16,8 @@ author: Brenduns
 ms.author: brenduns
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: 1134bb2f04152288e72d40b1b1083f415cb4e900
-ms.openlocfilehash: b17720021f797d404a89933939427696dfafd7dc
+ms.sourcegitcommit: 814feb4e833230285b4092a8feb6f11a75f2e4f6
+ms.openlocfilehash: ecf790893a5604250810310cfdb09c4cff7d97b6
 
 
 ---
@@ -29,7 +29,6 @@ Cada site do System Center Configuration Manager exige uma configuração e vers
 
 ##  <a name="a-namebkmkinstancesa-sql-server-instances-and-locations"></a><a name="bkmk_Instances"></a> Instâncias e locais do SQL Server  
  **Site de administração central e sites primários:**  
-
 O banco de dados do site deve usar uma instalação completa do SQL Server.  
 
  O local do SQL Server pode estar em:  
@@ -49,22 +48,26 @@ Há suporte para as seguintes instâncias:
 
 
  **Sites secundários:**  
+ O banco de dados do site pode usar a instância padrão de uma instalação completa do SQL Server ou SQL Server Express.  
 
- O banco de dados do site pode usar a instância padrão de uma instalação completa do SQL Server ou SQL Server Express  
-
- O local do SQL Server deve ser no computador do servidor do site  
+ O local do SQL Server deve ser no computador do servidor do site.  
 
 ##  <a name="a-namebkmksqlversionsa-supported-versions-of-sql-server"></a><a name="bkmk_SQLVersions"></a> Versões compatíveis do Microsoft SQL Server  
  Em uma hierarquia com vários sites, diferentes sites podem usar diferentes versões do SQL Server para hospedar o banco de dados do site, desde que a versão do SQL Server usadas tenha suporte do Configuration Manager.  
 
- As versões do SQL Server a seguir têm suporte com o System Center Configuration Manager versão 1511 e posterior.  
+ A mesmo que especificado o contrário, as versões do SQL Server a seguir têm suporte no System Center Configuration Manager versão 1511 e posterior.  
 
 > [!IMPORTANT]  
 >  Usar o SQL Server Standard para o banco de dados no site de administração central limita o número total de clientes para o qual a hierarquia pode dar suporte. Consulte [Números de tamanho e escala](../../../core/plan-design/configs/size-and-scale-numbers.md).
 
-### <a name="sql-server-2016---standard-enterprise"></a>SQL Server 2016 – Standard, Enterprise  
+### <a name="sql-server-2016-sp1---standard-enterprise"></a>SQL Server 2016 SP1 – Standard, Enterprise  
+Você pode usar essa versão do SQL Server sem uma versão de atualização cumulativa mínima para o seguinte:  
 
-Com suporte para uso na versão 1606.   
+-   Site de administração central  
+-   Site primário  
+-   Site secundário  
+
+### <a name="sql-server-2016---standard-enterprise"></a>SQL Server 2016 – Standard, Enterprise  
 Você pode usar essa versão do SQL Server sem uma versão de atualização cumulativa mínima para o seguinte:  
 
 -   Site de administração central  
@@ -73,8 +76,6 @@ Você pode usar essa versão do SQL Server sem uma versão de atualização cumu
 
 
 ### <a name="sql-server-2014-sp2---standard-enterprise"></a>SQL Server 2014 SP2 – Standard, Enterprise  
-
-Com suporte na versão 1511 e posterior.  
 Você pode usar essa versão do SQL Server sem uma versão de atualização cumulativa mínima para o seguinte:  
 
 -   Site de administração central  
@@ -84,8 +85,6 @@ Você pode usar essa versão do SQL Server sem uma versão de atualização cumu
 
 
 ### <a name="sql-server-2014-sp1---standard-enterprise"></a>SQL Server 2014 SP1 – Standard, Enterprise  
-
-Com suporte na versão 1511 e posterior.  
  Você pode usar essa versão do SQL Server sem uma versão de atualização cumulativa mínima para o seguinte:  
 
 -   Site de administração central  
@@ -94,8 +93,6 @@ Com suporte na versão 1511 e posterior.
 
 
 ### <a name="sql-server-2012-sp3---standard-enterprise"></a>SQL Server 2012 SP3 – Standard, Enterprise  
-
-Com suporte na versão 1511 e posterior.  
  Você pode usar essa versão do SQL Server sem uma versão de atualização cumulativa mínima para o seguinte:  
 
 -   Site de administração central  
@@ -103,9 +100,7 @@ Com suporte na versão 1511 e posterior.
 -   Site secundário  
 
 
-### <a name="sql-server-2012-sp2---standard-enterprise"></a>SQL Server 2012 SP2 – Standard, Enterprise  
-
-Com suporte na versão 1511 e posterior.  
+### <a name="sql-server-2012-sp2---standard-enterprise"></a>SQL Server 2012 SP2 – Standard, Enterprise   
  Você pode usar essa versão do SQL Server sem uma versão de atualização cumulativa mínima para o seguinte:  
 
 -   Site de administração central  
@@ -113,41 +108,41 @@ Com suporte na versão 1511 e posterior.
 -   Site secundário  
 
 
-### <a name="sql-server-2008-r2-sp3---standard-enterprise-datacenter"></a>SQL Server 2008 R2 SP3 – Standard, Enterprise, Datacenter  
-
-Com suporte na versão 1511 e posterior.    
+### <a name="sql-server-2008-r2-sp3---standard-enterprise-datacenter"></a>SQL Server 2008 R2 SP3 – Standard, Enterprise, Datacenter     
 Você pode usar essa versão do SQL Server sem uma versão de atualização cumulativa mínima para o seguinte:  
 
 -   Site de administração central  
 -   Site primário  
 -   Site secundário  
 
-### <a name="sql-server-2016-express"></a>SQL Server 2016 Express
-Com suporte para uso na versão 1606.  
+
+
+### <a name="sql-server-2016-express-sp1"></a>SQL Server 2016 Express SP1  
 Você pode usar essa versão do SQL Server sem uma versão de atualização cumulativa mínima para o seguinte:
 -   Site secundário
 
-### <a name="sql-server-2014-express-sp2"></a>SQL Server 2014 Express SP2  
-Com suporte para uso na versão 1511 e posterior.  
+### <a name="sql-server-2016-express"></a>SQL Server 2016 Express
+Você pode usar essa versão do SQL Server sem uma versão de atualização cumulativa mínima para o seguinte:
+-   Site secundário
+
+
+### <a name="sql-server-2014-express-sp2"></a>SQL Server 2014 Express SP2   
 Você pode usar essa versão do SQL Server sem uma versão de atualização cumulativa mínima para o seguinte:  
 
 -   Site secundário  
 
 
-### <a name="sql-server-2014-express-sp1"></a>SQL Server 2014 Express SP1  
- Com suporte para uso na versão 1511 e posterior.   
+### <a name="sql-server-2014-express-sp1"></a>SQL Server 2014 Express SP1   
  Você pode usar essa versão do SQL Server sem uma versão de atualização cumulativa mínima para o seguinte:  
 
 -   Site secundário  
 
 ### <a name="sql-server-2012-express-sp3"></a>SQL Server 2012 Express SP3  
-Com suporte para uso na versão 1511 e posterior.   
 Você pode usar essa versão do SQL Server sem uma versão de atualização cumulativa mínima para o seguinte:  
 
 -   Site secundário  
 
-### <a name="sql-server-2012-express-sp2"></a>SQL Server 2012 Express SP2  
- Com suporte para uso na versão 1511 e posterior.  
+### <a name="sql-server-2012-express-sp2"></a>SQL Server 2012 Express SP2   
  Você pode usar essa versão do SQL Server sem uma versão de atualização cumulativa mínima para o seguinte:  
 
 -   Site secundário  
@@ -187,13 +182,11 @@ Você pode usar essa versão do SQL Server sem uma versão de atualização cumu
     -   Site primário: mínimo de 8 gigabytes (GB)  
     -   Site secundário: mínimo de 4 gigabytes (GB)  
 
- **Gatilhos aninhados de SQL:**  
-
- A opção[Gatilhos aninhados de SQL](http://go.microsoft.com/fwlink/?LinkId=528802) deve estar habilitada.  
+**Gatilhos aninhados de SQL:**  
+A opção [Gatilhos aninhados de SQL](http://go.microsoft.com/fwlink/?LinkId=528802) deve estar habilitada.  
 
  **Integração de CLR do SQL Server**  
-
-  O banco de dados do site exige que o CLR (common language runtime) do SQL Server seja habilitado. Isso é habilitado automaticamente quando o Configuration Manager é instalado. Para saber mais sobre o CLR, confira [Introdução à integração do SQL Server CLR](https://msdn.microsoft.com/library/ms254498\(v=vs.110\).aspx)  
+  O banco de dados do site exige que o CLR (common language runtime) do SQL Server seja habilitado. Isso é habilitado automaticamente quando o Configuration Manager é instalado. Para saber mais sobre o CLR, confira [Introdução à integração do SQL Server CLR](https://msdn.microsoft.com/library/ms254498\(v=vs.110\).aspx).  
 
 ##  <a name="a-namebkmkoptionala-optional-configurations-for-sql-server"></a><a name="bkmk_optional"></a> Configurações opcionais para o SQL Server  
  As configurações a seguir são opcionais para cada banco de dados que usa uma instalação completa do SQL Server.  
@@ -220,6 +213,10 @@ Para obter informações sobre como alterar a conta usada pelo Serviço do SQL, 
 **SQL Server Reporting Services:**  
 Necessário para instalar um ponto do Reporting Services que permita executar relatórios.  
 
+> [!IMPORTANT]  
+> Após a atualização do SQL Server de uma versão anterior, você poderá ver o seguinte erro: *Construtor de Relatórios não existe*.    
+> Para resolver esse problema, reinstale a função do sistema de sites do ponto do Reporting Services.
+
 **Portas do SQL Server:**  
 Para a comunicação com o mecanismo de banco de dados do SQL Server e para a replicação entre sites, é possível usar as configurações de porta padrão do SQL Server ou especificar portas personalizadas:  
 
@@ -242,6 +239,6 @@ Para obter um exemplo de como configurar o SQL Server para usar uma porta espec�
 
 
 
-<!--HONumber=Nov16_HO1-->
+<!--HONumber=Dec16_HO3-->
 
 

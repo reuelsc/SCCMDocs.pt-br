@@ -1,5 +1,5 @@
 ---
-title: "Notas de Versão | System Center Configuration Manager"
+title: "Notas de versão | Microsoft Docs"
 description: "Consulte essas notas para problemas urgentes que ainda não foram corrigidos no produto ou abordados em um artigo da Base de Dados de Conhecimento Microsoft."
 ms.custom: na
 ms.date: 10/06/2016
@@ -17,8 +17,8 @@ author: Brenduns
 ms.author: brenduns
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: f777295958e9cbc729e3759d354521c96ae3e8ac
-ms.openlocfilehash: 0b6c49f3c5e817f1dbd40b40c78d89c4a018e0f1
+ms.sourcegitcommit: ea723a6694feb2c9584b35498aa9c3519383f08d
+ms.openlocfilehash: a9dc046a54c15d9d299664cd1f2a149383f53489
 
 
 ---
@@ -35,16 +35,31 @@ Com o System Center Configuration Manager, as notas de versão do produto são l
 
 ## <a name="setup-and-upgrade"></a>Instalar e atualizar  
 
+### <a name="when-installing-a-long-term-service-branch-site-using-version-1606-a-current-branch-site-is-installed"></a>Ao instalar um site de Branch de Manutenção em Longo Prazo usando a versão 1606, um site do Branch Atual é instalado
+Quando você usar a mídia de linha de base da versão 1606 da versão de outubro de 2016 para instalar o site LTSB (Branch de Manutenção de Longo Prazo), a Instalação instala um site do Branch Atual em vez disso. Isso ocorre porque a opção de instalar um ponto de conexão de serviço com a instalação do site não está selecionada.
+
+ - Embora um ponto de conexão de serviço não seja necessário, ele deve ser selecionado para instalar durante a Instalação para instalar um site LTSB.
+
+Após a conclusão da instalação, você pode desinstalar o ponto de conexão de serviço.  No entanto, você deve ter um ponto de conexão de serviço no modo offline ou online para enviar dados de telemetria e obter atualizações de segurança para os sites do Branch Atual e LTSB.
+
+Se seu site foi instalado como um site do Branch Atual, mas você queria instalar o LTSB, você pode desinstalar o site e reinstalá-lo. Como alternativa, você pode entrar em contato com a [Ajuda e Suporte da Microsoft](http://go.microsoft.com/fwlink/?LinkId=243064) para obter assistência.  
+
+Para confirmar qual branch foi instalado, no console em **Administração** > **Configuração do Site** > **Sites**, abra **Configurações de Hierarquia**. A opção de converter o site em um site do Branch Atual está disponível apenas quando o site executa o LTSB.  
+
+**Solução alternativa:**  não há.   
 
 
-### <a name="the-sql-server-backup-model-in-use-by-configuration-manager-can-change-from-full-to-simple"></a>O modelo de backup do SQL Server em uso pelo Configuration Manager pode ser alterado de completo para simples  
+
+
+
+### <a name="the--sql-server-backup-model-in-use-by-configuration-manager-can-change-from-full-to-simple"></a>O modelo de backup do SQL Server em uso pelo Configuration Manager pode ser alterado de completo para simples  
  Quando você atualiza para System Center Configuration Manager versão 1511, o modelo de backup do SQL Server em uso pelo Configuration Manager pode mudar de completo para simples.  
 
 -   Se você usar uma tarefa de backup personalizada do SQL Server com o modelo de backup completo (em vez da tarefa interna de backup para o Configuration Manager), a atualização poderá alterar o modelo de backup de completo para simples.  
 
 **Solução alternativa**: após atualizar para a versão 1511, examine a configuração do SQL Server e restaure-o como completo, se necessário.  
 
-### <a name="when-you-add-a-service-window-to-a-new-site-server-service-windows-that-were-configured-for-another-site-server-are-deleted"></a>Ao adicionar um período de serviço a um novo servidor do site, os períodos de serviço que foram configurados para outro servidor do site são excluídos  
+### <a name="when-you-add-a-service-window-to-a-new-site-server-service-windows-that-were---configured-for-another-site-server-are-deleted"></a>Ao adicionar um período de serviço a um novo servidor do site, os períodos de serviço que foram configurados para outro servidor do site são excluídos  
  Ao usar períodos de serviço com o System Center Configuration Manager versão 1511, só é possível configurar períodos de serviço para um único servidor do site em uma hierarquia. Depois de configurar períodos de serviço em um servidor, ao configurar um período de serviço em um segundo servidor do site, os períodos de serviço no primeiro servidor do site são silenciosamente excluídos, sem a exibição de nenhum aviso ou erro.  
 
 **Solução alternativa**: instale o hotfix do [artigo da Base de Dados de Conhecimento 3142341 da Microsoft](http://support.microsoft.com/kb/3142341). Esse problema também pode ser resolvido quando você instala a atualização 1602 no System Center Configuration Manager.  
@@ -120,6 +135,32 @@ Ao executar a instalação de uma pasta CD.Latest criada para a versão 1606 e u
 **Solução alternativa:**  use um dos seguintes:
  - Durante a instalação, opte por baixar os arquivos redist mais recentes da Microsoft para usar em vez dos incluídos na pasta CD.Latest.
  - Exclua manualmente a pasta *cd.latest\redist\languagepack\zhh* e execute a instalação novamente.
+
+### <a name="service-connection-tool-throws-an-exception-when-sql-server-is-remote-or-when-shared-memory-is-disabled"></a>A ferramenta de conexão do serviço gera uma exceção quando o SQL Server é remoto ou quando a Memória Compartilhada está desabilitada
+Começando da versão 1606, a ferramenta de conexão de serviço gera uma exceção quando uma das seguintes opções é verdadeira:  
+ -  O banco de dados do site é remoto do computador que hospeda o ponto de conexão de serviço e usa uma porta não padrão (uma porta diferente de 1433)
+ -  O banco de dados do site está no mesmo servidor que o ponto de conexão de serviço, mas o protocolo SQL **Memória Compartilhada** está desabilitado
+
+A exceção é semelhante à seguinte:
+ - *Exceção sem tratamento: System.Data.SqlClient.SqlException: Erro de rede ou específico à instância ao estabelecer conexão com o SQL Server. O servidor não foi encontrado ou não estava acessível. Verifique se o nome da instância está correto e se o SQL Server está configurado para permitir conexões remotas. (provedor: Provedor de Pipes Nomeados, erro: 40 – Não foi possível abrir uma conexão com o SQL Server) –*
+
+**Solução alternativa**: durante o uso da ferramenta, você deve modificar o Registro do servidor que hospeda o ponto de conexão de serviço para incluir informações sobre a porta do SQL Server:
+
+   1.   Antes de usar a ferramenta, edite a seguinte chave do Registro e adicione o número da porta que está sendo usado como o nome do SQL Server:
+    - Chave: HKLM\Microsoft\SMS\COMPONENTS\SMS_DMP_UPLOADER\
+      - Valor: &lt;Nome do SQL Server>
+    - Adicionar: **,&lt;PORTA>**
+
+    Por exemplo, para adicionar a porta *15001* a um servidor denominado *testserver.test.net*, a chave resultante seria: ***HKLM\Software\Microsoft\SMS\COMPONENTS\SMS_DMP_UPLOADER\testserver.test.net,15001***
+
+   2.   Depois de adicionar a porta ao Registro, a ferramenta deve funcionar normalmente.  
+
+   3.   Depois que o uso da ferramenta for concluído, para as etapas **-connect** e **-import**, altere a chave do Registro de volta para o valor original.  
+
+
+
+
+
 
 ## <a name="backup-and-recovery"></a>Backup e descoberta
 ### <a name="pre-production-client-is-not-available-after-a-site-restore"></a>O cliente de pré\-produção não está disponível após uma restauração de site
@@ -250,6 +291,6 @@ Esse problema afeta o acesso condicional do System Center Configuration Manager 
 
 
 
-<!--HONumber=Nov16_HO1-->
+<!--HONumber=Dec16_HO3-->
 
 

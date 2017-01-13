@@ -1,5 +1,5 @@
 ---
-title: Personalizar imagens do sistema operacional | Configuration Manager
+title: Personalizar imagens do sistema operacional | Microsoft Docs
 description: "Use sequências de tarefas de captura e montagem, a configuração manual ou uma combinação de ambos para personalizar uma imagem do sistema operacional."
 ms.custom: na
 ms.date: 10/06/2016
@@ -17,8 +17,8 @@ author: Dougeby
 ms.author: dougeby
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: 1134bb2f04152288e72d40b1b1083f415cb4e900
-ms.openlocfilehash: e7e0ecf394297799c2a3d0c14e719182b403e1e8
+ms.sourcegitcommit: 74341fb60bf9ccbc8822e390bd34f9eda58b4bda
+ms.openlocfilehash: c183fbde6de29ccd7c78ae066d305f0e99e37bda
 
 
 ---
@@ -28,7 +28,7 @@ ms.openlocfilehash: e7e0ecf394297799c2a3d0c14e719182b403e1e8
 
 As imagens do sistema operacional no System Center Configuration Manager são arquivos WIM e representam uma coleção compactada de arquivos e pastas de referência necessários para instalar e configurar com êxito um sistema operacional em um computador. Uma imagem personalizada do sistema operacional é compilada e capturada de um computador de referência configurado com todos os arquivos do sistema operacional, os arquivos de suporte, as atualizações de software, as ferramentas e os outros aplicativos de software. A proporção de configuração manual do computador de referência fica a seu critério. É possível automatizar completamente a configuração do computador de referência usando uma sequência de tarefas de criação e captura, configurar manualmente certos aspectos do computador de referência e depois automatizar o restante usando sequências de tarefas, ou ainda configurar manualmente o computador de referência sem usar sequências de tarefas. Use as seções a seguir para personalizar um sistema operacional.
 
-##  <a name="a-namebkmkpreparereferencecomputera-prepare-for-the-reference-computer"></a><a name="BKMK_PrepareReferenceComputer"></a> Preparar o computador de referência  
+##  <a name="a-namebkmkpreparereferencecomputera-prepare-for-the--reference-computer"></a><a name="BKMK_PrepareReferenceComputer"></a> Preparar o computador de referência  
  Há várias coisas a ser consideradas antes de capturar uma imagem do sistema operacional de um computador de referência.  
 
 ###  <a name="a-namebkmkrefcomputerdecidea-decide-between-an-automated-or-manual-configuration"></a><a name="BKMK_RefComputerDecide"></a> Decidir entre uma configuração manual ou automatizada  
@@ -140,6 +140,6 @@ As imagens do sistema operacional no System Center Configuration Manager são ar
 
 
 
-<!--HONumber=Nov16_HO1-->
+<!--HONumber=Dec16_HO3-->
 
 

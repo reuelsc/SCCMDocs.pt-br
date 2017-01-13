@@ -1,8 +1,8 @@
 ---
-title: "Como criar itens de configuração para dispositivos Mac OS X gerenciados com o cliente do System Center Configuration Manager | System Center Configuration Manager"
+title: "Como criar itens de configuração para dispositivos Mac OS X gerenciados com o cliente do System Center Configuration Manager | Microsoft Docs"
 description: "Use o item de configuração do Mac OS X do System Center Configuration Manager para gerenciar as configurações de dispositivos Mac OS X."
 ms.custom: na
-ms.date: 10/06/2016
+ms.date: 11/18/2016
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
@@ -17,8 +17,8 @@ author: robstackmsft
 ms.author: robstack
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: 1134bb2f04152288e72d40b1b1083f415cb4e900
-ms.openlocfilehash: 4e5eb84fcbde7797a68a713b30ef809ed26d0210
+ms.sourcegitcommit: 1a4a9da88caba55d9e340c7fb1f31f4e3b957f3e
+ms.openlocfilehash: f3d08d7f8efb592383e1099850665a2e9f3b2b5f
 
 
 ---
@@ -173,6 +173,6 @@ Se quiser adicionar esse item de configuração a uma linha de base de configura
 
 
 
-<!--HONumber=Nov16_HO1-->
+<!--HONumber=Dec16_HO3-->
 
 

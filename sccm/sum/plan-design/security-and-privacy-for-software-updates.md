@@ -1,6 +1,6 @@
 ---
 
-title: "Segurança e privacidade para atualizações de software | Configuration Manager"
+title: "Segurança e privacidade das atualizações de software | Microsoft Docs"
 description: "Siga essas práticas recomendadas de segurança para atualizações de software e saiba mais sobre como o Configuration Manager lida com informações de privacidade."
 keywords: 
 author: dougeby
@@ -14,8 +14,8 @@ ms.technology:
 - configmgr-sum
 ms.assetid: 41d6d5d8-ba84-4efb-b105-4d1eed239824
 translationtype: Human Translation
-ms.sourcegitcommit: 1134bb2f04152288e72d40b1b1083f415cb4e900
-ms.openlocfilehash: d1eb920dfed3be06837c2cd4635b61e3964cf0e5
+ms.sourcegitcommit: e6cf8c799b5be2f7dbb6fadadddf702ec974ae45
+ms.openlocfilehash: 4b4f045138abc14b6e93b3b990c5f3a8b4f2f952
 
 
 
@@ -75,6 +75,6 @@ Este tópico contém as informações de segurança e privacidade do atualizaç�
 
 
 
-<!--HONumber=Nov16_HO1-->
+<!--HONumber=Dec16_HO3-->
 
 

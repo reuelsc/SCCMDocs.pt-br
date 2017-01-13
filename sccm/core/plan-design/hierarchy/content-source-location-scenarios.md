@@ -1,5 +1,5 @@
 ---
-title: "Local de origem de conteúdo | System Center Configuration Manager"
+title: "Localização de fonte de conteúdo | Microsoft Docs"
 description: "Saiba mais sobre as configurações do System Center Configuration Manager que permitem que os clientes localizem conteúdo em uma rede lenta."
 ms.custom: na
 ms.date: 10/06/2016
@@ -16,15 +16,22 @@ author: Brenduns
 ms.author: brenduns
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: 1134bb2f04152288e72d40b1b1083f415cb4e900
-ms.openlocfilehash: 667010fedb37770d4105fc30f098a231292969fd
+ms.sourcegitcommit: 1a4a9da88caba55d9e340c7fb1f31f4e3b957f3e
+ms.openlocfilehash: b0f54daecfc3e958d3196f3f0b08606725d86c39
 
 ---
 # <a name="content-source-location-scenarios-in-system-center-configuration-manager"></a>Cenários de local de origem de conteúdo no System Center Configuration Manager
 
 *Aplica-se a: System Center Configuration Manager (Branch Atual)*
 
-O System Center Configuration Manager dá suporte a várias configurações que se combinam para definir como e onde os clientes encontram conteúdo quando estiverem em uma rede lenta. As combinações possíveis afetam o uso de clientes do local do conteúdo e a possibilidade de usar um local de fallback com êxito quando uma fonte preferencial de conteúdo não está disponível.  
+Nas versões anteriores à 1610, o System Center Configuration Manager dá suporte a várias configurações que se combinam para definir como e onde os clientes devem encontrar conteúdo quando estão em uma rede lenta. As combinações possíveis afetam o local do conteúdo que os clientes usam e se eles podem usar um local de fallback com êxito quando uma origem preferencial do conteúdo não está disponível.  
+
+> [!IMPORTANT]  
+> **Se seus sites executam a versão 1511, 1602 ou 1606**, as informações neste tópico aplicam-se à sua infraestrutura. Consulte também [Grupos de limites para as versões 1511, 1602 e 1606](/sccm/core/servers/deploy/configure/boundary-groups-for-1511-1602-and-1606) para obter informações específicas para grupos de limites com essas versões do Configuration Manager.
+>
+> **Se seus sites executam a versão 1610 ou posterior**, use as informações nos [Grupos de limites](/sccm/core/servers/deploy/configure/define-site-boundaries-and-boundary-groups#boundary-groups) para entender como os clientes localizam pontos de distribuição com conteúdo disponível.
+
+
 
 
 
@@ -249,6 +256,6 @@ O System Center Configuration Manager dá suporte a várias configurações que 
 
 
 
-<!--HONumber=Nov16_HO1-->
+<!--HONumber=Dec16_HO3-->
 
 

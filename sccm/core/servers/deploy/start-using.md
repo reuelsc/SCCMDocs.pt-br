@@ -1,5 +1,5 @@
 ---
-title: "Começar a usar o System Center Configuration Manager | System Center Configuration Manager"
+title: Comece a usar o System Center Configuration Manager | Microsoft Docs
 ms.custom: na
 ms.date: 10/06/2016
 ms.prod: configuration-manager
@@ -16,8 +16,8 @@ author: Brenduns
 ms.author: brenduns
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: 1134bb2f04152288e72d40b1b1083f415cb4e900
-ms.openlocfilehash: 8daab879af938b6d131a08c07560f51164a64b17
+ms.sourcegitcommit: 10b1010ccbf3889c58c55b87e70b354559243c90
+ms.openlocfilehash: 1786209f1a1b0d1caab9e31414bfccb690c8e659
 
 
 ---
@@ -39,6 +39,6 @@ Depois que você planejar sua topologia e hierarquia do site do System Center Co
 
 
 
-<!--HONumber=Nov16_HO1-->
+<!--HONumber=Dec16_HO3-->
 
 

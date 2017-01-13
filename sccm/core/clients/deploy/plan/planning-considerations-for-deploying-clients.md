@@ -1,5 +1,5 @@
 ---
-title: "Planejamento de implantação de cliente | System Center Configuration Manager"
+title: "Planejamento da implantação do cliente | Microsoft Docs"
 description: "Planeje a implantação de clientes e prepare a infraestrutura no System Center Configuration Manager."
 ms.custom: na
 ms.date: 10/06/2016
@@ -12,12 +12,12 @@ ms.tgt_pltfrm: na
 ms.topic: get-started-article
 ms.assetid: 518f9882-ce71-48c3-9f47-cd968cfb658d
 caps.latest.revision: 3
-author: Mtillman
-ms.author: mtillman
+author: nbigman
+ms.author: nbigman
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: 1134bb2f04152288e72d40b1b1083f415cb4e900
-ms.openlocfilehash: 62420ebebabc7bcc615fb209d1154b134e85ade0
+ms.sourcegitcommit: 55c953f312a9fb31e7276dde2fdd59f8183b4e4d
+ms.openlocfilehash: 6fce443843fcf542a852937217e3a73c7ee0a98b
 
 
 ---
@@ -45,6 +45,6 @@ Antes de instalar clientes em computadores, servidores e outros dispositivos no 
 
 
 
-<!--HONumber=Nov16_HO1-->
+<!--HONumber=Dec16_HO3-->
 
 

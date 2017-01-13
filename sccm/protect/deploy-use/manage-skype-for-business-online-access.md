@@ -1,5 +1,5 @@
 ---
-title: Gerenciar o acesso ao Skype for Business Online | System Center Configuration Manager
+title: Gerenciar o acesso do Skype for Business Online | Microsoft Docs
 description: "Saiba como usar a política de acesso condicional para gerenciar o acesso ao Skype for Business Online."
 ms.custom: na
 ms.date: 10/06/2016
@@ -12,12 +12,12 @@ ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: e3ad36c2-51d4-4467-8bdc-fde18485583e
 caps.latest.revision: 6
-author: karthikaraman
-ms.author: karaman
+author: andredm7
+ms.author: andredm
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: 5c6cf3c1697b49708aa5192b67b08b700da7dc72
-ms.openlocfilehash: a8d0655909c85eb53c2d1eb513586f9733236359
+ms.sourcegitcommit: c13c6268fa76ade7feb0981f9c4a6e325e393aca
+ms.openlocfilehash: 7178f82c6cbe49f9d5f98ede9979bff83b16be36
 
 
 ---
@@ -114,6 +114,6 @@ Se uma condição não for atendida, o usuário receberá uma das seguintes mens
 
 
 
-<!--HONumber=Nov16_HO1-->
+<!--HONumber=Dec16_HO3-->
 
 

@@ -1,5 +1,5 @@
 ---
-title: "Pré-requisitos para sites | System Center Configuration Manager"
+title: "Pré-requisitos de sites | Microsoft Docs"
 description: "Saiba mais sobre os diferentes pré-requisitos necessários para instalar os diferentes tipos de sites do System Center Configuration Manager."
 ms.custom: na
 ms.date: 10/06/2016
@@ -16,8 +16,8 @@ author: Brenduns
 ms.author: brenduns
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: 1134bb2f04152288e72d40b1b1083f415cb4e900
-ms.openlocfilehash: bf3b1e4d87a972f530590bf94e38a5ec66c4fc9a
+ms.sourcegitcommit: 10b1010ccbf3889c58c55b87e70b354559243c90
+ms.openlocfilehash: d39c8acca79c97c3979020c284616038b897d7cf
 
 ---
 # <a name="prerequisites-for-installing-system-center-configuration-manager-sites"></a>Pré-requisitos para instalar sites do System Center Configuration Manager
@@ -127,6 +127,6 @@ A seguir encontram-se os pré-requisitos para instalar sites secundários:
 
 
 
-<!--HONumber=Nov16_HO1-->
+<!--HONumber=Dec16_HO3-->
 
 

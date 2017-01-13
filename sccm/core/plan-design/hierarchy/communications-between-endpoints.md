@@ -1,5 +1,5 @@
 ---
-title: "Comunicação entre pontos de extremidade | System Center Configuration Manager"
+title: "Comunicação entre pontos de extremidade| Microsoft Docs"
 description: Saiba mais sobre como os componentes e sistemas de sites do System Center Configuration Manager se comunicam em uma rede.
 ms.custom: na
 ms.date: 10/06/2016
@@ -16,8 +16,8 @@ author: Brenduns
 ms.author: brenduns
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: 1134bb2f04152288e72d40b1b1083f415cb4e900
-ms.openlocfilehash: bf485456b4d8f0bffe956006b2a8b3dd8c17a5db
+ms.sourcegitcommit: 238ef5814c0c1b832c28d63c9f3879e21a6c439b
+ms.openlocfilehash: 7ab79fb69188fa5fe6b89b070829ec0f918137b9
 
 
 ---
@@ -148,7 +148,7 @@ O Configuration Manager também dá suporte a computadores de domínio que não 
 
     -   [Gerenciar registros conflitantes de clientes do Configuration Manager](../../../core/clients/manage/manage-clients.md#BKMK_ConflictingRecords)  
 
-    -   [Conta de acesso à rede](../../../core/plan-design/hierarchy/fundamental-concepts-for-content-management.md#bkmk_NAA)  
+    -   [Conta de acesso à rede](../../../core/plan-design/hierarchy/fundamental-concepts-for-content-management.md#accounts-used-for-content-management)  
 
     -   [Como instalar clientes do Configuration Manager em computadores do grupo de trabalho](../../../core/clients/deploy/deploy-clients-to-windows-computers.md#BKMK_ClientWorkgroup)  
 
@@ -261,6 +261,6 @@ Para compatibilidade com esse cenário, verifique se a resolução de nomes func
 
 
 
-<!--HONumber=Nov16_HO1-->
+<!--HONumber=Dec16_HO3-->
 
 

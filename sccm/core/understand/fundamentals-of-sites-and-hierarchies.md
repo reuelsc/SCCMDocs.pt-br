@@ -1,8 +1,8 @@
 ---
-title: "Conceitos básicos de sites e hierarquias | System Center Configuration Manager"
+title: "Conceitos básico de sites e hierarquias | Microsoft Docs"
 description: "Obtenha as informações de conceitos básicos sobre os sites e hierarquias do System Center Configuration Manager."
 ms.custom: na
-ms.date: 10/06/2016
+ms.date: 12/08/2016
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
@@ -16,8 +16,8 @@ author: Brenduns
 ms.author: brenduns
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: 1134bb2f04152288e72d40b1b1083f415cb4e900
-ms.openlocfilehash: 07e10ead8d4b147a4a96b1e5189597e1ac4d4f52
+ms.sourcegitcommit: 1b64b5f6e208b85a5ec2ef02bab34afee451c484
+ms.openlocfilehash: cda27b9478e915bca99f5784ec6bcbedc989e841
 
 
 ---
@@ -69,6 +69,6 @@ Quando você instala o System Center Configuration Manager pela primeira vez, o 
 
 
 
-<!--HONumber=Nov16_HO1-->
+<!--HONumber=Dec16_HO3-->
 
 

@@ -1,5 +1,5 @@
 ---
-title: "Estender o inventário de hardware | System Center Configuration Manager"
+title: "Estender inventário de hardware | Microsoft Docs"
 description: "Saiba como estender o inventário de hardware no System Center Configuration Manager."
 ms.custom: na
 ms.date: 10/06/2016
@@ -17,8 +17,8 @@ author: nbigman
 ms.author: nbigman
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: f777295958e9cbc729e3759d354521c96ae3e8ac
-ms.openlocfilehash: 4a42e266c4152145a4a1c291804ff98934671692
+ms.sourcegitcommit: fc392e4440e84614f92218e9c7a09ec1c2c64f53
+ms.openlocfilehash: cf325aec385f570b297f753f37c2c39abe93154f
 
 
 ---
@@ -163,7 +163,7 @@ O inventário de hardware do System Center Configuration Manager lê as informa�
 8.  Na caixa de diálogo **Exportar** , especifique o arquivo MOF (Managed Object Format) para o qual deseja exportar as classes e clique em **Salvar**.  
 
 ## <a name="how-to-use-management-information-files-mif-files-to-extend-hardware-inventory"></a>Como usar arquivos MIF (Arquivos de Informações de Gerenciamento) para estender o inventário de hardware  
- Use arquivos MIF (Management Information Format) para estender as informações de inventário de hardware coletadas de clientes pelo Configuration Manager. Durante o inventário de hardware, as informações armazenadas em arquivos MIF são adicionadas ao relatório de inventário de cliente e armazenadas no banco de dados do site, onde você pode usar os dados da mesma maneira que você use dados de inventário de cliente padrão. Há dois tipos de arquivos MIF, NOIDMIF e IDMIF. 
+ Use arquivos MIF (Management Information Format) para estender as informações de inventário de hardware coletadas de clientes pelo Configuration Manager. Durante o inventário de hardware, as informações armazenadas em arquivos MIF são adicionadas ao relatório de inventário de cliente e armazenadas no banco de dados do site, onde você pode usar os dados da mesma maneira que você use dados de inventário de cliente padrão. Há dois tipos de arquivos MIF, NOIDMIF e IDMIF.
 
 > [!IMPORTANT]  
 >  Antes de adicionar informações de arquivos MIF ao banco de dados do Configuration Manager, você deve criar ou importar informações de classe para eles. Para obter mais informações, veja as seções [Para adicionar uma nova classe de inventário](#BKMK_Add) e [Para importar classes de inventário de hardware](#BKMK_Import) neste tópico.  
@@ -181,11 +181,11 @@ O inventário de hardware do System Center Configuration Manager lê as informa�
 
  Depois de criar um arquivo IDMIF, armazená-la na pasta *% Windir %***\System32\CCM\Inventory\Idmifs** pasta nos computadores cliente. O Configuration Manager coleta informações desse arquivo durante o próximo ciclo de inventário de hardware agendado. Você deve declarar novas classes para informações contidas no arquivo adicionando ou importá-los.  
 
-> [!NOTE] 
+> [!NOTE]
 > Os arquivos MIF podem conter grandes quantidades de dados e a coleta desses dados pode prejudicar o desempenho de seu site. Habilite a coleta de MIF somente quando necessário e configure a opção **Tamanho máximo de arquivo MIF personalizado (KB)** nas configurações de inventário de hardware. Para mais informações, consulte [Introdução ao inventário de hardware no System Center Configuration Manager](introduction-to-hardware-inventory.md).
 
 
 
-<!--HONumber=Nov16_HO1-->
+<!--HONumber=Dec16_HO3-->
 
 

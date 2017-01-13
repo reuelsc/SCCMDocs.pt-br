@@ -1,5 +1,5 @@
 ---
-title: "Introdução à implantação do sistema operacional | Configuration Manager"
+title: "Introdução à implantação de sistema operacional | Microsoft Docs"
 description: Entenda os conceitos antes de implantar sistemas operacionais no ambiente do seu Configuration Manager.
 ms.custom: na
 ms.date: 10/06/2016
@@ -16,8 +16,8 @@ author: Dougeby
 ms.author: dougeby
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: 1134bb2f04152288e72d40b1b1083f415cb4e900
-ms.openlocfilehash: ece68bd30e31595226f154fd1148b0ee55feceaf
+ms.sourcegitcommit: 55a9f1caedcfa810e9a97e43626e4cf5fdbcfa0d
+ms.openlocfilehash: 2baa6b7dbd66ab41bc9b67e8f43c313be233153c
 
 
 ---
@@ -25,7 +25,7 @@ ms.openlocfilehash: ece68bd30e31595226f154fd1148b0ee55feceaf
 
 *Aplica-se a: System Center Configuration Manager (Branch Atual)*
 
-É possível usar o Configuration Manager para implantar sistemas operacionais de inúmeras maneiras diferentes. Use as informações desta seção para entender como implantar sistemas operacionais e automatizar tarefas.
+É possível usar o Configuration Manager para implantar sistemas operacionais de inúmeras maneiras diferentes. Use as informações desta seção para entender como implantar sistemas operacionais e automatizar tarefas. 
 
 ##  <a name="a-namebkmkosdeploymentprocessa-the-operating-system-deployment-process"></a><a name="BKMK_OSDeploymentProcess"></a> O processo de implantação de sistema operacional  
  O Configuration Manager fornece diversos métodos que podem ser usados para implantar um sistema operacional. Existem várias ações que devem ser tomadas, independentemente do método de implantação utilizado:  
@@ -81,7 +81,7 @@ ms.openlocfilehash: ece68bd30e31595226f154fd1148b0ee55feceaf
 ##  <a name="a-namebkmkbootimagesa-boot-images"></a><a name="BKMK_BootImages"></a> Imagens de inicialização  
  Uma imagem de inicialização no Configuration Manager é uma imagem do WinPE (Windows PE) usada durante uma implantação de sistema operacional. Imagens de inicialização são usadas para iniciar um computador no WinPE, que é um sistema operacional mínimo com componentes e serviços limitados que preparam o computador de destino para a instalação do Windows. O Configuration Manager fornece duas imagens de inicialização: uma para dar suporte a plataformas x86 e outra para dar suporte a plataformas x64. Elas são consideradas imagens de inicialização padrão. Imagens de inicialização criadas e adicionadas ao Configuration Manager são consideradas imagens personalizadas. Imagens de inicialização padrão podem ser substituídas automaticamente com a atualização do Configuration Manager. Para obter mais informações sobre imagens de inicialização, consulte [Gerenciar imagens de inicialização](../get-started/manage-boot-images.md).  
 
-##  <a name="a-namebkmkosimagesa-operating-system-images"></a><a name="BKMK_OSImages"></a> Imagens do sistema operacional  
+##  <a name="a-namebkmkosimagesa-operating--system-images"></a><a name="BKMK_OSImages"></a> Imagens do sistema operacional  
  As imagens do sistema operacional no Configuration Manager são armazenadas em arquivos de formato WIM (Windows Imaging) e representam uma coleção compactada de arquivos e pastas de referência necessários para instalar e configurar com êxito um sistema operacional em um computador. Para todos os cenários de implantação de sistema operacional, você deve selecionar uma imagem do sistema operacional. É possível usar a imagem do sistema operacional padrão ou compilar a imagem do sistema operacional de um computador de referência configurado. Para obter mais informações, consulte [Gerenciar imagens do sistema operacional](../get-started/manage-operating-system-images.md).  
 
 ##  <a name="a-namebkmkosupgradepackagesa-operating-system-upgrade-packages"></a><a name="BKMK_OSUpgradePackages"></a> Pacotes de atualização de sistema operacional  
@@ -135,6 +135,6 @@ ms.openlocfilehash: ece68bd30e31595226f154fd1148b0ee55feceaf
 
 
 
-<!--HONumber=Nov16_HO1-->
+<!--HONumber=Dec16_HO3-->
 
 

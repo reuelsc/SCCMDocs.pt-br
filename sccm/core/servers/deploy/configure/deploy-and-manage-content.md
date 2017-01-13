@@ -1,5 +1,5 @@
 ---
-title: "Implantar conteúdo | System Center Configuration Manager"
+title: "Implantar conteúdo | Microsoft Docs"
 description: "Depois de instalar os pontos de distribuição para o System Center Configuration Manager, eis como você pode começar a implantar o conteúdo para eles."
 ms.custom: na
 ms.date: 10/06/2016
@@ -16,8 +16,8 @@ author: Brenduns
 ms.author: brenduns
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: 1134bb2f04152288e72d40b1b1083f415cb4e900
-ms.openlocfilehash: c6bf461a762b8aa51678a17cb7b294c803d05f37
+ms.sourcegitcommit: 1a4a9da88caba55d9e340c7fb1f31f4e3b957f3e
+ms.openlocfilehash: 36b08285ef78d0acb9ba9c44abe2d57e311d44b3
 
 ---
 # <a name="deploy-and-manage-content-for-system-center-configuration-manager"></a>Implantar e gerenciar o conteúdo para o System Center Configuration Manager
@@ -307,43 +307,19 @@ Use as seções a seguir para pré-configurar o conteúdo.
 
 ##  <a name="a-namebkmkmanagea-manage-the-content-you-have-distributed"></a><a name="bkmk_manage"></a> Gerenciar o conteúdo que você distribuiu  
  Você tem as seguintes opções para gerenciar o conteúdo:  
+ - [Atualizar conteúdo](#update-content)
+ - [Redistribuir o conteúdo](#redistribute-content)
+ - [Remover conteúdo](#remove-content)
+ - [Validar o conteúdo](#validate-content)
 
-**Atualizar conteúdo:** quando o local do arquivo de origem para uma implantação é atualizado adicionando novos arquivos ou substitui arquivos existentes pode uma versão mais nova, é possível atualizar os arquivos de conteúdo em pontos de distribuição usando a ação **Atualizar Pontos de Distribuição** ou **Atualizar Conteúdo**:  
-
+### <a name="update-content"></a>Atualizar conteúdo
+Quando o local do arquivo de origem para uma implantação é atualizado adicionando novos arquivos ou substitui arquivos existentes pode uma versão mais nova, é possível atualizar os arquivos de conteúdo em pontos de distribuição usando a ação **Atualizar Pontos de Distribuição** ou **Atualizar Conteúdo**:  
 -   Os arquivos de conteúdo são copiados do caminho do arquivo de origem para a biblioteca de conteúdo no site que tem a fonte de conteúdo do pacote  
-
 -   A versão do pacote é incrementada  
-
 -   Cada instância da biblioteca de conteúdo em servidores do site e no ponto de distribuição é atualizada apenas com os arquivos alterados  
 
 > [!WARNING]  
 >  A versão do pacote de aplicativos é sempre 1. Ao atualizar o conteúdo para um tipo de implantação de aplicativo, o Configuration Manager cria uma nova ID de conteúdo para o tipo de implantação e o pacote faz referência à nova ID de conteúdo.  
-
-**Redistribuir conteúdo:** você pode redistribuir um pacote para copiar todos os arquivos de conteúdo do pacote para pontos de distribuição ou grupos de pontos de distribuição e, assim, substituir os arquivos existentes.  
-
- Use essa operação para reparar arquivos de conteúdo do pacote ou reenviar o conteúdo quando a distribuição inicial falha. Você pode redistribuir um pacote de:  
-
--   Propriedades do pacote  
-
--   Propriedades do ponto de distribuição  
-
--   Propriedades do grupo de pontos de distribuição.  
-
-**Remover conteúdo:** quando você não precisa mais de conteúdo em seus pontos de distribuição, pode remover os arquivos de conteúdo do ponto de distribuição.  
-
--   Propriedades do pacote  
-
--   Propriedades do ponto de distribuição  
-
--   Propriedades do grupo de pontos de distribuição.  
-
- Porém, quando o conteúdo é associado a outro pacote que foi distribuído para o mesmo ponto de distribuição, não é possível remover o conteúdo. Você pode remover o conteúdo de:  
-
-**Validar conteúdo:** o processo de validação de conteúdo verifica a integridade dos arquivos de conteúdo nos pontos de distribuição. É possível habilitar a validação de conteúdo em um agendamento ou então iniciar manualmente a validação de conteúdo a partir das propriedades dos pontos de distribuição e pacotes.  
-
- Quando o processo de validação de conteúdo começa, o Configuration Manager verifica os arquivos de conteúdo em pontos de distribuição e, se o hash do arquivo não é esperado para os arquivos no ponto de distribuição, o Configuration Manager cria uma mensagem de status que você pode examinar no espaço de trabalho **Monitoramento**.  
-
- Para mais informações sobre como configurar o agendamento de validação de conteúdo, confira [Distribution point configurations](../../../../core/servers/deploy/configure/install-and-configure-distribution-points.md#bkmk_configs) (Configurações do ponto de distribuição) no tópico [Install and configure distribution points for System Center Configuration Manager](../../../../core/servers/deploy/configure/install-and-configure-distribution-points.md) (Instalar e configurar pontos de distribuição para o System Center Configuration Manager).  
 
 #### <a name="to-update-content-on-distribution-points"></a>Para atualizar conteúdo em pontos de distribuição  
 
@@ -372,6 +348,16 @@ Use as seções a seguir para pré-configurar o conteúdo.
 
     > [!NOTE]  
     >  Quando você atualiza o conteúdo de imagens de inicialização, o Assistente para Gerenciar Pontos de Distribuição é aberto. Revise as informações na página **Resumo** e conclua o assistente para atualizar o conteúdo.  
+
+### <a name="redistribute-content"></a>Redistribuir o conteúdo
+Você pode redistribuir um pacote para copiar todos os arquivos de conteúdo do pacote para pontos de distribuição ou grupos de pontos de distribuição e, assim, substituir os arquivos existentes.  
+
+ Use essa operação para reparar arquivos de conteúdo do pacote ou reenviar o conteúdo quando a distribuição inicial falha. Você pode redistribuir um pacote de:  
+
+-   Propriedades do pacote  
+-   Propriedades do ponto de distribuição  
+-   Propriedades do grupo de pontos de distribuição.  
+
 
 #### <a name="to-redistribute-content-from-package-properties"></a>Para redistribuir o conteúdo nas propriedades do pacote  
 
@@ -420,6 +406,23 @@ Use as seções a seguir para pré-configurar o conteúdo.
     > [!IMPORTANT]  
     >  O conteúdo do pacote é redistribuído para todos os pontos de distribuição do grupo.  
 
+
+#### <a name="use-the-sdk-to-force-replication-of-content"></a>Usar o SDK para forçar a replicação de conteúdo
+Você pode usar o método de classe do WMI (Instrumentação de Gerenciamento do Windows) **RetryContentReplication** do SDK do Configuration Manager para forçar o Gerenciador de Distribuição a copiar conteúdo do local de origem para a biblioteca de conteúdo.  
+
+Somente use esse método para forçar a replicação quando precisar redistribuir o conteúdo após haver problemas com a replicação de conteúdo normal (normalmente confirmada pelo uso do nó Monitoramento do console).   
+
+Para obter mais informações sobre essa opção de SDK, consulte [RetryContentReplication Method in Class SMS_CM_UpdatePackages](https://msdn.microsoft.com/library/mt762092(CMSDK.16).aspx) (Método RetryContentReplication na classe SMS_CM_UpdatePackages) no MSDN.Microsoft.com.
+
+### <a name="remove-content"></a>Remover conteúdo
+Quando você não precisa mais de conteúdo em seus pontos de distribuição, pode remover os arquivos de conteúdo desses pontos.  
+
+-   Propriedades do pacote  
+-   Propriedades do ponto de distribuição  
+-   Propriedades do grupo de pontos de distribuição.  
+
+Porém, quando o conteúdo é associado a outro pacote que foi distribuído para o mesmo ponto de distribuição, não é possível remover o conteúdo.  
+
 #### <a name="to-remove-package-content-files-from-distribution-points"></a>Para remover arquivos de conteúdo de pacote de pontos de distribuição  
 
 1.  No console do Configuration Manager, clique em **Biblioteca de Software**.  
@@ -464,6 +467,15 @@ Use as seções a seguir para pré-configurar o conteúdo.
 
 4.  Clique na guia **Conteúdo** , selecione o conteúdo a ser removido, clique em **Remover**, e depois clique em **OK**.  
 
+
+### <a name="validate-content"></a>Validar o conteúdo
+O processo de validação de conteúdo verifica a integridade dos arquivos de conteúdo nos pontos de distribuição. É possível habilitar a validação de conteúdo em um agendamento ou então iniciar manualmente a validação de conteúdo a partir das propriedades dos pontos de distribuição e pacotes.  
+
+ Quando o processo de validação de conteúdo começa, o Configuration Manager verifica os arquivos de conteúdo em pontos de distribuição e, se o hash do arquivo não é esperado para os arquivos no ponto de distribuição, o Configuration Manager cria uma mensagem de status que você pode examinar no espaço de trabalho **Monitoramento**.  
+
+ Para mais informações sobre como configurar o agendamento de validação de conteúdo, confira [Distribution point configurations](../../../../core/servers/deploy/configure/install-and-configure-distribution-points.md#bkmk_configs) (Configurações do ponto de distribuição) no tópico [Install and configure distribution points for System Center Configuration Manager](../../../../core/servers/deploy/configure/install-and-configure-distribution-points.md) (Instalar e configurar pontos de distribuição para o System Center Configuration Manager).  
+
+
 #### <a name="to-initiate-content-validation-for-all-content-on-a-distribution-point"></a>Para iniciar a validação de conteúdo de todo o conteúdo em um ponto de distribuição  
 
 1.  No console do Configuration Manager, clique em **Administração**.  
@@ -504,6 +516,6 @@ Use as seções a seguir para pré-configurar o conteúdo.
 
 
 
-<!--HONumber=Nov16_HO1-->
+<!--HONumber=Dec16_HO3-->
 
 

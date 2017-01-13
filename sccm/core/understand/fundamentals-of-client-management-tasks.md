@@ -1,5 +1,5 @@
 ---
-title: "Conceitos básicos do gerenciamento de cliente| System Center Configuration Manager"
+title: "Conceitos básicos do gerenciamento de clientes | Microsoft Docs"
 description: "Conheça as tarefas que você pode executar para gerenciar clientes do System Center Configuration Manager."
 ms.custom: na
 ms.date: 10/06/2016
@@ -16,8 +16,8 @@ author: Brenduns
 ms.author: brenduns
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: 1134bb2f04152288e72d40b1b1083f415cb4e900
-ms.openlocfilehash: b746c051eee42bcea5c01ced359f568c5aae5fd8
+ms.sourcegitcommit: 10b1010ccbf3889c58c55b87e70b354559243c90
+ms.openlocfilehash: 9648fc831e21f8a5ee6e12cfe7754933ba9f6239
 
 
 ---
@@ -66,6 +66,6 @@ Para monitorar essas operações quase em tempo real, use o console do Configura
 
 
 
-<!--HONumber=Nov16_HO1-->
+<!--HONumber=Dec16_HO3-->
 
 

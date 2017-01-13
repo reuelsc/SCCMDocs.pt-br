@@ -1,5 +1,5 @@
 ---
-title: Funcionalidades no Technical Preview 1605 do System Center Configuration Manager
+title: Funcionalidades do Technical Preview 1605 do System Center Configuration Manager | Microsoft Docs
 description: "Saiba mais sobre os recursos disponíveis no Technical Preview do System Center Configuration Manager, versão 1605."
 ms.custom: na
 ms.date: 10/06/2016
@@ -17,8 +17,8 @@ ms.author: brenduns
 manager: angrobe
 robots: noindex,nofollow
 translationtype: Human Translation
-ms.sourcegitcommit: f777295958e9cbc729e3759d354521c96ae3e8ac
-ms.openlocfilehash: 0137d6e2c69480d6de88fbf8fa3450d1699007e5
+ms.sourcegitcommit: 3bf44f850722afdb8dfe5922c8ceff11c9b56d08
+ms.openlocfilehash: 06741d03e208c6f5c8093130780dcdc8f0fcfbf7
 
 ---
 # <a name="capabilities-in-technical-preview-1605-for-system-center-configuration-manager"></a>Funcionalidades no Technical Preview 1605 do System Center Configuration Manager
@@ -273,7 +273,7 @@ Nesse technical preview, se o Portal da Empresa estiver aberto por mais de 15 mi
 
 -   A guia **Aplicativos** foi dividida em três guias separadas para **Atualizações**, **Sistemas operacionais** (que anteriormente eram encontradas na lista **Filtros**) e **Aplicativos**.  
 
-##  <a name="a-namebkmkservergroupsa-service-a-server-group"></a><a name="BKMK_ServerGroups"></a> Manutenção de um grupo de servidores  
+##  <a name="a-namebkmkservergroupsa-service-a--server-group"></a><a name="BKMK_ServerGroups"></a> Manutenção de um grupo de servidores  
  O Technical Preview do System Center Configuration Manager, versão 1511, incluía a habilidade de criar uma coleção em que todos os dispositivos na coleção compõem um grupo de servidores. Em seguida, você pode definir as configurações do grupo de servidores a serem usadas ao implantar as atualizações de software no grupo de servidores, controlar o percentual de computadores atualizados a qualquer momento e configurar scripts do PowerShell de pré-implantação e pós-implantação para executar ações personalizadas.  
 
  O Technical Preview do System Center Configuration Manager, versão 1605, adiciona a capacidade de atualizar os computadores em um grupo de servidores em uma ordem especificada que você define, adiciona o monitoramento aprimorado para exibir o status dos computadores no grupo de servidores e fornece a capacidade de limpar os bloqueios de implantação que é útil quando os clientes falharam em instalar as atualizações de software e estão impedindo que outros clientes instalem suas atualizações de software.  
@@ -472,6 +472,6 @@ Nesse technical preview, se o Portal da Empresa estiver aberto por mais de 15 mi
 
 
 
-<!--HONumber=Nov16_HO1-->
+<!--HONumber=Dec16_HO3-->
 
 

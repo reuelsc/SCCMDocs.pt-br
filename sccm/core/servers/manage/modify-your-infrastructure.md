@@ -1,5 +1,5 @@
 ---
-title: Modificar a infraestrutura | System Center Configuration Manager
+title: Modificar a infraestrutura | Microsoft Docs
 description: "Saiba como fazer alterações ou executar ações que afetam a infraestrutura do Configuration Manager que você implantou."
 ms.custom: na
 ms.date: 10/06/2016
@@ -17,8 +17,8 @@ author: Brenduns
 ms.author: brenduns
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: 1134bb2f04152288e72d40b1b1083f415cb4e900
-ms.openlocfilehash: fc58e77841baedd45649d676e98c736fa91e5bf2
+ms.sourcegitcommit: 1a4a9da88caba55d9e340c7fb1f31f4e3b957f3e
+ms.openlocfilehash: fa9881e06abd410438fe5985151309c45f337802
 
 
 ---
@@ -172,6 +172,8 @@ Por exemplo, considere um cenário em que você instala o console do Configurati
 -   **Configurar o acesso:** ao mover o banco de dados do site para um novo computador, adicione a conta de computador do servidor do site ao grupo **Local de Administradores** no computador que executa o SQL Server. Se usar um cluster do SQL Server para o banco de dados do site, você deverá adicionar a conta de computador ao grupo **Local de administradores** de cada computador do nó de cluster do Windows Server.  
 
 -   **Habilitar a integração CLR (Common Language Runtime):**  quando você move o banco de dados para uma nova instância do SQL Server, ou para um novo computador SQL Server, é necessário habilitar a integração CLR (Common Language Runtime). Para habilitar o CLR, use o **SQL Server Management Studio** para se conectar à instância do SQL Server que hospeda o banco de dados do site e execute o seguinte procedimento armazenado como uma consulta: **sp_configure ‘clr enabled’,1; reconfigure**.  
+-  **Verificar se o novo SQL Server tem acesso ao local de backup:** ao usar um UNC para armazenar o backup do banco de dados do site, depois de mover o banco de dados para um novo servidor, incluindo uma movimentação para um Grupo de Disponibilidade AlwaysOn do SQL Server ou um cluster do SQL Server, garanta que a conta de computador do novo SQL Server tem permissões de **gravação** no local do UNC.  
+
 
 > [!IMPORTANT]  
 >  Antes de mover um banco de dados que possui uma ou mais réplicas de banco de dados para pontos de gerenciamento, primeiro remova as réplicas do banco de dados. Depois de concluir a movimentação do banco de dados, você poderá reconfigurar suas réplicas. Para obter mais informações, consulte [Database replicas for management points for System Center Configuration Manager](../../../core/servers/deploy/configure/database-replicas-for-management-points.md).  
@@ -369,6 +371,6 @@ Para obter informações sobre os idiomas de cliente e servidor que têm suporte
 
 
 
-<!--HONumber=Nov16_HO1-->
+<!--HONumber=Dec16_HO3-->
 
 

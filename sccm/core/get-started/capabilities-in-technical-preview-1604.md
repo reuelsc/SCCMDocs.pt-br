@@ -1,5 +1,5 @@
 ---
-title: Funcionalidades no Technical Preview 1604 do System Center Configuration Manager
+title: Funcionalidades do Technical Preview 1604 do System Center Configuration Manager | Microsoft Docs
 description: "Saiba mais sobre os recursos disponíveis no Technical Preview do System Center Configuration Manager, versão 1604."
 ms.custom: na
 ms.date: 10/06/2016
@@ -16,8 +16,8 @@ author: Brenduns
 ms.author: brenduns
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: 1134bb2f04152288e72d40b1b1083f415cb4e900
-ms.openlocfilehash: 512bbb1c8f2b4811be7770bda5fa2236a2dc7e06
+ms.sourcegitcommit: 3bf44f850722afdb8dfe5922c8ceff11c9b56d08
+ms.openlocfilehash: 7358e310ad672a1a0ba4cbcb6b008506aaaa5d2b
 
 ---
 # <a name="capabilities-in-technical-preview-1604-for-system-center-configuration-manager"></a>Funcionalidades no Technical Preview 1604 do System Center Configuration Manager
@@ -172,6 +172,6 @@ Para testar, configure o Serviço de Atesto de Integridade local usando as confi
 
 
 
-<!--HONumber=Nov16_HO1-->
+<!--HONumber=Dec16_HO3-->
 
 

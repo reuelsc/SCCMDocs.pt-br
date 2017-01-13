@@ -1,5 +1,5 @@
 ---
-title: Implantar o Windows to Go com o System Center Configuration Manager
+title: Implantar o Windows To Go com o System Center Configuration Manager | Microsoft Docs
 description: "Saiba como provisionar o Windows To Go no System Center Configuration Manager para criar um espaço de trabalho do Windows To Go que é inicializado de uma unidade externa."
 ms.custom: na
 ms.date: 10/06/2016
@@ -17,8 +17,8 @@ author: Dougeby
 ms.author: dougeby
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: 1134bb2f04152288e72d40b1b1083f415cb4e900
-ms.openlocfilehash: 104355185c5bbb4c15f3b9cc80cf8fa0e529cf6d
+ms.sourcegitcommit: 1a4a9da88caba55d9e340c7fb1f31f4e3b957f3e
+ms.openlocfilehash: a8b1a42c43438553cfbb62328bed933378bb344c
 
 
 ---
@@ -450,7 +450,9 @@ Este tópico fornece as etapas para provisionar o Windows To Go no System Center
 
     -   **Quando não houver nenhum ponto de distribuição local disponível, use um ponto de distribuição remoto**: especifique se os clientes podem usar pontos de distribuição que estão em redes lentas ou não confiáveis para baixar o conteúdo exigido pela sequência de tarefas.  
 
-    -   **Permitir que os clientes usem um local de origem de fallback para o conteúdo**: especificar a permissão para que clientes façam o fallback e usem o ponto de distribuição não preferencial como o local de origem para conteúdo, quando este não estiver disponível em um ponto de distribuição preferencial.  
+    -   **Permitir que os clientes usem um local de origem de fallback para o conteúdo**:
+        - *Nas versões anteriores à 1610*, você pode marcar a caixa de seleção Permitir local de origem de fallback para conteúdo para permitir que clientes fora desses grupos de limites façam fallback e usem o ponto de distribuição como um local de origem para conteúdo quando nenhum outro ponto de distribuição estiver disponível.
+        - *Começando da versão 1610*, não é mais possível configurar a opção **Permitir local de origem de fallback para conteúdo**.  Em vez disso, você configura as relações entre grupos de limite que determinam quando um cliente pode iniciar a pesquisa de uma localização de fonte de conteúdo válida em grupos de limite adicionais. 
 
 11. Conclua o assistente.  
 
@@ -468,6 +470,6 @@ Este tópico fornece as etapas para provisionar o Windows To Go no System Center
 
 
 
-<!--HONumber=Nov16_HO1-->
+<!--HONumber=Dec16_HO3-->
 
 

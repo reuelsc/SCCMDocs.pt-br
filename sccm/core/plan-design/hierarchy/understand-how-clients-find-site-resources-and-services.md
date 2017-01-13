@@ -1,5 +1,5 @@
 ---
-title: Encontrar recursos do site | System Center Configuration Manager
+title: Encontre recursos de site | Microsoft Docs
 description: "Entenda como e quando os clientes do System Center Configuration Manager usam o local do serviço para encontrar recursos do site."
 ms.custom: na
 ms.date: 10/06/2016
@@ -16,8 +16,8 @@ author: Brenduns
 ms.author: brenduns
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: 5d718d0f9b8c6121f3124a8ade7507c61b7313f2
-ms.openlocfilehash: cad4ebd3f8fa275d7d2cad9b2b87c32b971c580d
+ms.sourcegitcommit: 1a4a9da88caba55d9e340c7fb1f31f4e3b957f3e
+ms.openlocfilehash: b006896091901fab7b141f99f4c95eb22ea61b82
 
 
 ---
@@ -176,7 +176,6 @@ Para publicar pontos de gerenciamento no DNS, as seguintes condições devem ser
 **Quando os seus servidores DNS dão suporte a atualizações automáticas**, é possível configurar o Configuration Manager para publicar automaticamente pontos de gerenciamento na intranet no DNS ou é possível publicar manualmente esses registros no DNS. Quando pontos de gerenciamento são publicados no DNS, seus números de portas e FQDNs da intranet são publicados no registro de localização de serviço (SRV). Você pode configurar a publicação de DNS em um site nos sites de propriedades do componente do ponto de gerenciamento. Para obter mais informações, consulte [Site components for System Center Configuration Manager (Componentes do site para o System Center Configuration Manager)](../../../core/servers/deploy/configure/site-components.md).  
 
 **Quando a Zona DNS é definida como "Somente seguro" para Atualizações Dinâmicas**, somente o primeiro ponto de gerenciamento para publicação no DNS pode fazer isso com êxito com as permissões padrão.
-- Você pode adicionar cada servidor que hospeda o ponto de gerenciamento ao grupo DnsAdmins a fim de garantir que esses pontos de gerenciamento tenha permissões para modificar seus registros.  
 - Se apenas um ponto de gerenciamento puder publicar e modificar com êxito seu registro DNS, contanto que o servidor desse ponto de gerenciamento permaneça íntegro, os clientes poderão obter a lista completa de MP desse ponto de gerenciamento e, em seguida, localizar o ponto de gerenciamento preferencial.
 
 
@@ -251,6 +250,6 @@ Se você não quiser que os clientes encontrem um ponto de gerenciamento HTTP em
 
 
 
-<!--HONumber=Nov16_HO1-->
+<!--HONumber=Dec16_HO3-->
 
 

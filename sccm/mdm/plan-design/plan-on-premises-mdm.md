@@ -1,5 +1,5 @@
 ---
-title: Planejar MDM local | System Center Configuration Manager
+title: Planejar o MDM local | Microsoft Docs
 description: "Planeje o Gerenciamento de Dispositivo Móvel local para gerenciar dispositivos móveis no System Center Configuration Manager."
 ms.custom: na
 ms.date: 10/06/2016
@@ -17,8 +17,8 @@ author: Mtillman
 ms.author: mtillman
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: 1134bb2f04152288e72d40b1b1083f415cb4e900
-ms.openlocfilehash: 6bc3bf68d098fec7b6ac976d8e7ee7a7d71fab6a
+ms.sourcegitcommit: 0d6479bcc134103e6005159a8ea295a5f359a436
+ms.openlocfilehash: cc5b04dc41b13993fca35f202437b71e96bc9cdd
 
 
 ---
@@ -40,7 +40,7 @@ Considere os seguintes requisitos antes de preparar a infraestrutura do Configur
 > -   Windows 10 Mobile  
 > -   Windows 10 Mobile Enterprise   
 
-##  <a name="a-namebkmkintunea-use-of-the-microsoft-intune-subscription"></a><a name="bkmk_intune"></a> Uso da assinatura do Microsoft Intune  
+##  <a name="a-namebkmkintunea-use-of-the--microsoft-intune-subscription"></a><a name="bkmk_intune"></a> Uso da assinatura do Microsoft Intune  
  Para começar a usar o Gerenciamento de dispositivo móvel local, você precisará de uma assinatura do Microsoft Intune. A assinatura apenas é necessária para acompanhar o licenciamento dos dispositivos e não é usada para gerenciar ou armazenar informações de gerenciamento dos dispositivos. Todo o gerenciamento é manipulado na empresa de sua organização usando a infraestrutura do Configuration Manager local.  
 
 > [!IMPORTANT]  
@@ -122,6 +122,6 @@ Considere os seguintes requisitos antes de preparar a infraestrutura do Configur
 
 
 
-<!--HONumber=Nov16_HO1-->
+<!--HONumber=Dec16_HO3-->
 
 

@@ -1,5 +1,5 @@
 ---
-title: Registrar dispositivos com o gerenciador de registro de dispositivo no Configuration Manager
+title: Registrar dispositivos no gerenciador de registro de dispositivo com o Configuration Manager | Microsoft Docs
 description: Registrar dispositivos de propriedade da empresa com a conta de gerente de registro de dispositivo com o System Center Configuration Manager.
 ms.custom: na
 ms.date: 10/06/2016
@@ -12,12 +12,12 @@ ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 2905f26e-7859-497d-b995-5ff48261efa2
 caps.latest.revision: 8
-author: NathBarn
-ms.author: nathbarn
+author: mtillman
+ms.author: mtillman
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: 1134bb2f04152288e72d40b1b1083f415cb4e900
-ms.openlocfilehash: 287815a534c1fba8af8f5d212c6321bda93fc44f
+ms.sourcegitcommit: 55c953f312a9fb31e7276dde2fdd59f8183b4e4d
+ms.openlocfilehash: ed60b23f7e7a194676cd7b055da9bc3517af8026
 
 
 ---
@@ -92,6 +92,6 @@ Um restaurante quer tablets de ponto de venda para sua equipe e faz o pedido de 
 
 
 
-<!--HONumber=Nov16_HO1-->
+<!--HONumber=Dec16_HO3-->
 
 

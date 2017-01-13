@@ -1,5 +1,5 @@
 ---
-title: Ajuda do Cliente do Endpoint Protection | System Center Configuration Manager
+title: Ajuda do cliente do Endpoint Protection | Microsoft Docs
 description: "Saiba mais sobre recursos e aprimoramentos no Endpoint Protection que ajudam a proteger seu computador contra ameaças."
 ms.custom: na
 ms.date: 10/06/2016
@@ -16,8 +16,8 @@ author: NathBarn
 ms.author: nathbarn
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: 1134bb2f04152288e72d40b1b1083f415cb4e900
-ms.openlocfilehash: 3b3f16904de68a226db8cacc62bd6acf8dedd8c9
+ms.sourcegitcommit: bff083fe279cd6b36a58305a5f16051ea241151e
+ms.openlocfilehash: 870aa9766c995a5c8858b9a8c9a5537cd5f82840
 
 
 ---
@@ -52,6 +52,6 @@ Essa versão do Endpoint Protection inclui os seguintes recursos para ajudar a p
 
 
 
-<!--HONumber=Nov16_HO1-->
+<!--HONumber=Dec16_HO3-->
 
 

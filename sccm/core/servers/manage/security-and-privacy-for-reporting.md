@@ -1,5 +1,5 @@
 ---
-title: "Segurança e privacidade nos relatórios | Configuration Manager"
+title: "Segurança e privacidade de relatórios | Microsoft Docs"
 description: "Entenda as práticas recomendadas de segurança e privacidade quando você usar a funcionalidade de relatórios no Configuration Manager."
 ms.custom: na
 ms.date: 10/06/2016
@@ -17,8 +17,8 @@ author: Dougeby
 ms.author: dougeby
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: 1134bb2f04152288e72d40b1b1083f415cb4e900
-ms.openlocfilehash: 9e8ce5abf2c00a1aa2c89360bdc0244428c6834b
+ms.sourcegitcommit: 10b1010ccbf3889c58c55b87e70b354559243c90
+ms.openlocfilehash: 50ef8b761533bfdd5e8d23abc7791beb4c7d0b11
 
 
 ---
@@ -34,6 +34,6 @@ Este tópico contém as práticas recomendadas de segurança e informações de 
 
 
 
-<!--HONumber=Nov16_HO1-->
+<!--HONumber=Dec16_HO3-->
 
 

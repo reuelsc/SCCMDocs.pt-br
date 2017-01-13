@@ -1,5 +1,5 @@
 ---
-title: Implantar perfis Wi-Fi, VPN, de email e de certificado | System Center Configuration Manager
+title: Implantar perfis de Wi-Fi, VPN, email e certificado | Microsoft Docs
 description: Saiba como implantar perfis Wi-Fi, VPN, de email e de certificado no System Center Configuration Manager.
 ms.custom: na
 ms.date: 10/06/2016
@@ -16,8 +16,8 @@ author: Nbigman
 ms.author: nbigman
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: 1134bb2f04152288e72d40b1b1083f415cb4e900
-ms.openlocfilehash: 7e13c52c135850b1f449cf91bc81425208d16551
+ms.sourcegitcommit: c2e3aef41e9a890d136039f85777ab07284e5c27
+ms.openlocfilehash: 70372d5df13034b48f3e43b766776442f1be5823
 
 ---
 # <a name="deploy-profiles-in-system-center-configuration-manager"></a>Implantar perfis no System Center Configuration Manager
@@ -40,10 +40,10 @@ Os perfis deverão ser implantados em uma ou mais coleções para poderem ser us
 > -   [Como criar perfis de certificado no System Center Configuration Manager](create-certificate-profiles.md)    
 
 > [!IMPORTANT]  
->  Quando uma implantação de perfil Wi-Fi é removida, o perfil de Wi-Fi não é removido dos dispositivos clientes. Se quiser remover o perfil dos dispositivos, você deverá removê-lo manualmente.
+>  Quando uma implantação do perfil VPN é removida, ele não é removido dos dispositivos cliente. Se quiser remover o perfil dos dispositivos, você deverá removê-lo manualmente.
 >   
 
-## <a name="deploying-profiles"></a>Implantando perfis  
+## <a name="deploying--profiles"></a>Implantando perfis  
 
 
 1.  No console do System Center Configuration Manager, escolha **Ativos e Conformidade**.  
@@ -75,6 +75,6 @@ Os perfis deverão ser implantados em uma ou mais coleções para poderem ser us
 
 
 
-<!--HONumber=Nov16_HO1-->
+<!--HONumber=Dec16_HO3-->
 
 

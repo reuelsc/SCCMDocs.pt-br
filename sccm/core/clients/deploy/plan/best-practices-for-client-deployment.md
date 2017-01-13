@@ -1,5 +1,5 @@
 ---
-title: "Práticas recomendadas para a implantação de cliente | System Center Configuration Manager"
+title: "Práticas recomendadas de implantação de cliente | Microsoft Docs"
 description: "Conheça as práticas recomendadas para a implantação de cliente no System Center Configuration Manager."
 ms.custom: na
 ms.date: 10/06/2016
@@ -12,12 +12,12 @@ ms.tgt_pltfrm: na
 ms.topic: get-started-article
 ms.assetid: a933d69c-5feb-4b2b-84e8-56b3b64d5947
 caps.latest.revision: 11
-author: Mtillman
-ms.author: mtillman
+author: nbigman
+ms.author: nbigman
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: 1134bb2f04152288e72d40b1b1083f415cb4e900
-ms.openlocfilehash: 22a34dce45e655dca1ddcb3dfe1bb0105c4026c1
+ms.sourcegitcommit: 55c953f312a9fb31e7276dde2fdd59f8183b4e4d
+ms.openlocfilehash: 49b2520a82614bedc7bcc077604e0b89885119c2
 
 
 ---
@@ -85,6 +85,6 @@ Use as seguintes informações de práticas recomendadas para ajudar a implantar
 
 
 
-<!--HONumber=Nov16_HO1-->
+<!--HONumber=Dec16_HO3-->
 
 

@@ -1,5 +1,5 @@
 ---
-title: "Pré-requisitos para migração | System Center Configuration Manager"
+title: "Pré-requisitos de migração | Microsoft Docs"
 description: "Entenda as versões compatíveis do Configuration Manager, os idiomas com suporte do site de origem e as configurações necessárias para migração."
 ms.custom: na
 ms.date: 10/06/2016
@@ -17,8 +17,8 @@ author: Brenduns
 ms.author: brenduns
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: 1134bb2f04152288e72d40b1b1083f415cb4e900
-ms.openlocfilehash: 1b310aeee487087e79c2d0fd6469f8f63b932045
+ms.sourcegitcommit: 6cbb790df47c9a87514b0233e2d0c12dd6f23ee9
+ms.openlocfilehash: 70e2531076abedc1381b6e3bccf15b5afe27b465
 
 
 ---
@@ -113,13 +113,6 @@ Veja a seguir as configurações necessárias para o uso da migração e de suas
 
      Além disso, para compartilhar um ponto de distribuição de um site de origem do System Center 2012 Configuration Manager ou do System Center Configuration Manager, a **Conta de Site de Origem** (que acessa o Provedor de SMS para o servidor do site de origem) deve ter permissões **Modificar** para o objeto **Site** no site de origem. Você pode conceder essa permissão para a conta usando a administração baseada em funções. Para obter informações sobre como usar a administração baseada em funções, consulte [Fundamentals of role-based administration for System Center Configuration Manager](../../core/understand/fundamentals-of-role-based-administration.md).  
 
--   **Compartilhar pontos de distribuição:**  
-
-     Para compartilhar com êxito pontos de distribuição do site de origem, pelo menos um site primário ou o site de administração central na hierarquia de destino deve usar os mesmos números de porta para as solicitações do cliente que os do site de origem. Para obter informações sobre portas de solicitação de cliente, consulte [Como configurar portas de comunicação do cliente no System Center Configuration Manager](../../core/clients/deploy/configure-client-communication-ports.md)  
-
-     Para todo site de origem, são compartilhados somente os pontos de distribuição instalados nos servidores do sistema de site configurados com um FQDN.  
-
-     Além disso, para compartilhar um ponto de distribuição de um site de origem do System Center 2012 Configuration Manager ou do System Center Configuration Manager, a **Conta de Site de Origem** (que acessa o Provedor de SMS para o servidor do site de origem) deve ter permissões **Modificar** para o objeto **Site** no site de origem. Você pode conceder essa permissão para a conta usando a administração baseada em funções. Para obter informações sobre como usar a administração baseada em funções, consulte [Fundamentals of role-based administration for System Center Configuration Manager](../../core/understand/fundamentals-of-role-based-administration.md).  
 
 -   **Atualizar ou reatribuir pontos de distribuição:**  
 
@@ -133,6 +126,6 @@ Veja a seguir as configurações necessárias para o uso da migração e de suas
 
 
 
-<!--HONumber=Nov16_HO1-->
+<!--HONumber=Dec16_HO3-->
 
 

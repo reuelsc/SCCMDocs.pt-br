@@ -1,5 +1,5 @@
 ---
-title: "Substituir um computador existente e transferir configurações | System Center Configuration Manager"
+title: "Substituir um computador existente e transferir configurações | Microsoft Docs"
 description: "No Configuration Manager, escolha os métodos de implantação, como mídia inicializável, multicast ou Centro de Software, para substituir um computador existente por um novo."
 ms.custom: na
 ms.date: 10/06/2016
@@ -16,8 +16,8 @@ author: Dougeby
 ms.author: dougeby
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: 1134bb2f04152288e72d40b1b1083f415cb4e900
-ms.openlocfilehash: 82a2ebb830b872f8e6368be75b6d9beb1955ec27
+ms.sourcegitcommit: 74341fb60bf9ccbc8822e390bd34f9eda58b4bda
+ms.openlocfilehash: 243433980e1720fd468d52a4a61f2c3a8e3659b5
 
 
 ---
@@ -86,6 +86,6 @@ Este tópico fornece as etapas gerais no System Center Configuration Manager par
 
 
 
-<!--HONumber=Nov16_HO1-->
+<!--HONumber=Dec16_HO3-->
 
 

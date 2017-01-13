@@ -1,5 +1,5 @@
 ---
-title: A pasta CD.Latest | System Center Configuration Manager
+title: A pasta CD.Latest | Microsoft Docs
 description: "Saiba mais sobre o novo processo de atualização que fornece atualizações para o produto de dentro do console do Configuration Manager."
 ms.custom: na
 ms.date: 10/06/2016
@@ -16,8 +16,8 @@ author: Brenduns
 ms.author: brenduns
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: 1134bb2f04152288e72d40b1b1083f415cb4e900
-ms.openlocfilehash: fc63227aa4345fb58e7efc15abd55071fb33e5d5
+ms.sourcegitcommit: 10b1010ccbf3889c58c55b87e70b354559243c90
+ms.openlocfilehash: dcf56f6b82f89e81d636ea920f36133e245cbb1e
 
 
 ---
@@ -28,6 +28,8 @@ ms.openlocfilehash: fc63227aa4345fb58e7efc15abd55071fb33e5d5
 O System Center Configuration Manager introduz um novo processo de atualização que fornece atualizações para o produto de dentro do console do Configuration Manager. Para dar suporte a esse novo método de atualização do Configuration Manager, foi criada uma nova pasta com o nome **CD.Latest** que contém uma cópia dos arquivos de instalação do Configuration Manager para a versão atualizada do seu site.  
 
 A partir da atualização 1606, a pasta CD.Latest mais recente contém uma pasta chamada **Redist** que contém os arquivos redistribuíveis que a instalação baixa e usa. Esses arquivos são comparados à versão dos arquivos do Configuration Manager encontrados nessa pasta CD.Latest. Ao executar a Instalação de uma pasta CD.Latest, você deve usar os arquivos que correspondem à versão da Instalação. Para fazer isso, você pode instruir a Instalação a baixar arquivos novos e atuais da Microsoft ou instruir a Instalação a usar os arquivos na pasta Redist incluída na pasta CD.Latest.
+
+No entanto, a mídia de linha de base, como a versão de linha de base 1606 lançada em outubro de 2016, não inclui uma pasta Redist. A pasta Redist não será criada até que você instalar uma atualização no console. Nesse ínterim, use a pasta Redist que você usou durante a instalação de sites da mídia de linha de base.  
 
 > [!TIP]
 > Se ainda não tiver instalado a versão 1606, certifique-se de que os arquivos de redistribuição usados sejam atuais. Se não tiver baixado arquivos de redistribuição recentemente, planeje para permitir que a Instalação os baixe da Microsoft.   
@@ -61,6 +63,6 @@ Os arquivos de origem da pasta CD.Latest têm suporte para o seguinte:
 
 
 
-<!--HONumber=Nov16_HO1-->
+<!--HONumber=Dec16_HO3-->
 
 

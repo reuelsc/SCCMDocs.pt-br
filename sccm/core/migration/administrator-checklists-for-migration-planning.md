@@ -1,5 +1,5 @@
 ---
-title: "Listas de verificação de migração | System Center Configuration Manager"
+title: "Listas de verificação de migração | Microsoft Docs"
 description: "Use as listas de verificação do administrador para ajudá-lo a planejar uma estratégia de migração para o System Center Configuration Manager."
 ms.custom: na
 ms.date: 10/06/2016
@@ -17,8 +17,8 @@ author: Brenduns
 ms.author: brenduns
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: 1134bb2f04152288e72d40b1b1083f415cb4e900
-ms.openlocfilehash: f3912de04aa3e6196137a7034753013c35180d64
+ms.sourcegitcommit: 238ef5814c0c1b832c28d63c9f3879e21a6c439b
+ms.openlocfilehash: 285d1111502ec25b3b75a64d834b65b6898128e8
 
 
 ---
@@ -147,7 +147,7 @@ Use a seguinte lista de verificação para migrar dados da hierarquia de origem 
 
     Por exemplo, quando migrar o conteúdo, independentemente do trabalho de migração utilizado, atribua um site na hierarquia de destino para gerenciamento próprio desse conteúdo. O site atribuído acessará o local do arquivo fonte original para o conteúdo e é responsável por distribuir esse conteúdo aos pontos de distribuição na hierarquia de destino.  
 
-    Para obter mais informações, consulte a seção [Create and Edit Migration Jobs for System Center Configuration Manager](../../core/migration/operations-for-migration.md#create_edit_migration_jobs) no tópico [Operations for migrating to System Center Configuration Manager](../../core/migration/operations-for-migration.md) .  
+    Para obter mais informações, consulte a seção [Create and Edit Migration Jobs for System Center Configuration Manager](../../core/migration/operations-for-migration.md#Create_Edit_migration_Jobs) no tópico [Operations for migrating to System Center Configuration Manager](../../core/migration/operations-for-migration.md) .  
 
 -   **Migre clientes para a hierarquia de destino:**  
 
@@ -167,7 +167,7 @@ Use a seguinte lista de verificação para migrar dados da hierarquia de origem 
 
     É possível também atualizar um ponto de distribuição do Configuration Manager 2007 que está colocalizado em um servidor do site secundário. Isso remove o site secundário e resulta em apenas um ponto de distribuição na hierarquia de destino.  
 
-    Para obter informações sobre pontos de distribuição compartilhados, consulte a seção [Share Distribution Points Between Source and Destination Hierarchies](../../core/migration/planning-a-content-deployment-migration-strategy.md#about_shared_dps_in_migrations) no tópico [Planning a content deployment migration strategy in System Center Configuration Manager](../../core/migration/planning-a-content-deployment-migration-strategy.md) .  
+    Para obter informações sobre pontos de distribuição compartilhados, consulte a seção [Share Distribution Points Between Source and Destination Hierarchies](../../core/migration/planning-a-content-deployment-migration-strategy.md#About_Shared_DPs_in_Migration) no tópico [Planning a content deployment migration strategy in System Center Configuration Manager](../../core/migration/planning-a-content-deployment-migration-strategy.md) .  
 
 -   **Concluir migração:**  
 
@@ -175,6 +175,6 @@ Use a seguinte lista de verificação para migrar dados da hierarquia de origem 
 
 
 
-<!--HONumber=Nov16_HO1-->
+<!--HONumber=Dec16_HO3-->
 
 

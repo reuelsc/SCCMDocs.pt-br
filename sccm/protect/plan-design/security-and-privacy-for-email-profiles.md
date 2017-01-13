@@ -1,5 +1,5 @@
 ---
-title: "Privacidade e segurança do perfil de email | System Center Configuration Manager"
+title: "Segurança e privacidade do perfil de email | Microsoft Docs"
 description: "Saiba mais sobre as práticas recomendadas de segurança para gerenciar perfis de email para dispositivos no System Center Configuration Manager."
 ms.custom: na
 ms.date: 10/06/2016
@@ -17,8 +17,8 @@ author: Nbigman
 ms.author: nbigman
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: 1134bb2f04152288e72d40b1b1083f415cb4e900
-ms.openlocfilehash: 0f6a383681b8b63eec2a6e218911d7c418219ff4
+ms.sourcegitcommit: bff083fe279cd6b36a58305a5f16051ea241151e
+ms.openlocfilehash: d4977a592d9d49a93b974c129d2729d626ed9280
 
 
 ---
@@ -42,6 +42,6 @@ Este tópico contém as informações de segurança e privacidade para perfis de
 
 
 
-<!--HONumber=Nov16_HO1-->
+<!--HONumber=Dec16_HO3-->
 
 

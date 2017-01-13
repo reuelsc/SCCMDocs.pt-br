@@ -1,5 +1,5 @@
 ---
-title: "Configurar o inventário de software| System Center Configuration Manager"
+title: "Configurar o inventário de software | Microsoft Docs"
 description: "Configure o inventário de software e uma pasta de exclusão de inventário no System Center Configuration Manager."
 ms.custom: na
 ms.date: 10/06/2016
@@ -17,8 +17,8 @@ author: nbigman
 ms.author: nbigman
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: 1134bb2f04152288e72d40b1b1083f415cb4e900
-ms.openlocfilehash: 5f30eb754832fcc259caf853dc33ccfcb82cf8bc
+ms.sourcegitcommit: fc392e4440e84614f92218e9c7a09ec1c2c64f53
+ms.openlocfilehash: 7ba943bee7faf417099cde0388649e4907525738
 
 
 ---
@@ -41,6 +41,6 @@ ms.openlocfilehash: 5f30eb754832fcc259caf853dc33ccfcb82cf8bc
 
 
 
-<!--HONumber=Nov16_HO1-->
+<!--HONumber=Dec16_HO3-->
 
 

@@ -1,8 +1,8 @@
 ---
-title: Requisitos de certificado PKI | System Center Configuration Manager
+title: Requisitos de certificado PKI | Microsoft Docs
 description: "Encontre requisitos de certificados PKI de que você pode precisar para o System Center Configuration Manager."
 ms.custom: na
-ms.date: 10/06/2016
+ms.date: 12/07/2016
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
@@ -16,8 +16,8 @@ author: Nbigman
 ms.author: nbigman
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: 1134bb2f04152288e72d40b1b1083f415cb4e900
-ms.openlocfilehash: fbc85f65e4ad952d40161e6f6282bb6c0796662b
+ms.sourcegitcommit: db0642e95bbd7e704d2052aa1e0f5c27cd7bf568
+ms.openlocfilehash: 00c3c355fc43eff18b86112b0b9272cbcdf38e85
 
 
 ---
@@ -32,7 +32,7 @@ Os certificados PKI (infraestrutura de chave pública) que podem ser necessário
 -   Para o Windows Server 2008: [Serviços de Certificados do Active Directory no Windows Server 2008](http://go.microsoft.com/fwlink/p/?LinkId=115018)  
 
 > [!IMPORTANT]  
->  A partir de 1 de janeiro de 2017, o Windows não confiará mais em certificados assinados com SHA-1.  É recomendável que você emita novos certificados de autenticação de cliente e servidor assinados com SHA-2.  
+>  A partir de 1 de janeiro de 2017, o Windows não confiará mais em certificados assinados com SHA-1.  É recomendável que você emita novos certificados de autenticação de cliente e servidor assinados com SHA-2 (que inclui o SHA-256).  
 >   
 >  Para obter mais detalhes sobre essa alteração e possíveis atualizações até os prazos, siga esta postagem de blog: [Imposição do Windows quanto assinatura de código Authenticode e carimbo de data/hora](http://social.technet.microsoft.com/wiki/contents/articles/32288.windows-enforcement-of-authenticode-code-signing-and-timestamping.aspx)  
 
@@ -86,6 +86,6 @@ Os certificados PKI (infraestrutura de chave pública) que podem ser necessário
 
 
 
-<!--HONumber=Nov16_HO1-->
+<!--HONumber=Dec16_HO3-->
 
 

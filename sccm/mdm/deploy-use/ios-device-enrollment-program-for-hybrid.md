@@ -1,5 +1,5 @@
 ---
-title: "Registro no DEP (Programa de Registro de Dispositivos) do iOS para implantações híbridas com o Configuration Manager"
+title: "Registro no DEP (Programa de registro de dispositivos) do iOS para implantações híbridas com o Configuration Manager | Microsoft Docs"
 description: "Habilite o registro no DEP (Programa de Registro de Dispositivos) do iOS para implantações híbridas no Configuration Manager com o Intune."
 ms.custom: na
 ms.date: 10/06/2016
@@ -12,12 +12,12 @@ ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 78d44adc-9b1c-4bc6-b72d-e93873916ea6
 caps.latest.revision: 9
-author: NathBarn
-ms.author: nathbarn
+author: mtillman
+ms.author: mtillman
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: 1134bb2f04152288e72d40b1b1083f415cb4e900
-ms.openlocfilehash: 730b0e6b0ad9eb0ee3bf58c9419920c3a28a27d1
+ms.sourcegitcommit: 55c953f312a9fb31e7276dde2fdd59f8183b4e4d
+ms.openlocfilehash: 0421589d928a88eee6f4629726fbd0171aba7436
 
 ---
 # <a name="ios-device-enrollment-program-dep-enrollment-for-hybrid-deployments-with-configuration-manager"></a>Registro no DEP (Programa de Registro de Dispositivos) do iOS para implantações híbridas com o Configuration Manager
@@ -91,22 +91,18 @@ As empresas podem adquirir dispositivos iOS por meio do programa de registro de 
 
             -   **Desabilitar** – Permite que o perfil de gerenciamento seja removido do menu **Configurações**  
 
-            -   Habilitar – (requer o **Modo de Preparação** = **Supervisionado**) Desabilita as configurações do iOS que podem permitir a remoção do perfil de gerenciamento  
+            -   **Habilitar** – (requer o **Modo de Preparação** = **Supervisionado**) Desabilita as configurações do iOS que poderiam permitir a remoção do perfil de gerenciamento  
 
     3.  Na página **Assistente de Configuração** , defina as configurações que personalizam o Assistente de Configuração do iOS que é iniciado quando o dispositivo é ligado pela primeira vez e clique em **Avançar**. Essas configurações incluem:  
-
         -   **Senha** – Solicitar senha durante a ativação. Sempre exija uma senha, a menos que o dispositivo esteja protegido ou tenha o acesso controlado de alguma outra maneira (ou seja, o modo de quiosque que restringe o dispositivo a um aplicativo).  
-
         -   **Serviços de Localização** – Se habilitado, o Assistente de Instalação solicitará o serviço durante a ativação  
-
         -   **Restaurar** – Se habilitado, o Assistente de Instalação solicitará o backup do iCloud durante a ativação  
-
         -   **ID da Apple** – Uma ID da Apple é exigida para baixar aplicativos na App Store do iOS, incluindo aqueles instalados pelo Intune. Se habilitado, o iOS solicitará aos usuários uma ID da Apple quando o Intune tentar instalar um aplicativo sem uma ID.  
-
         -   **Termos e Condições** – Se habilitado, o Assistente de Instalação solicitará que os usuários aceitem os termos e as condições da Apple durante a ativação  
-
+        -   **ID de Toque** – Se habilitada, o Assistente de Configuração solicitará o serviço durante a ativação
+        -   **Apple Pay** – Se habilitado, o Assistente de Configuração solicitará o serviço durante a ativação
+        -   **Zoom** – Se habilitado, o Assistente de Configuração solicitará o serviço durante a ativação
         -   **Siri** – Se habilitado, o Assistente de Instalação solicitará o serviço durante a ativação  
-
         -   **Enviar dados de diagnóstico para a Apple** – Se habilitado, o Assistente de Instalação solicitará o serviço durante a ativação  
 
     4.  Na página **Gerenciamento Adicional**, especifique se uma conexão USB pode ser usada para configurações de gerenciamento adicional. Ao selecionar **Exigir certificado**, você deve importar um certificado de gerenciamento do Apple Configurator a ser usado para este perfil.  Defina como **Não permitir** para impedir a sincronização de arquivos com iTunes ou gerenciamento por meio do Apple Configurator. A Microsoft recomenda definir **Não permitir**, exportar configurações adicionais do Apple Configurator e implantar como um perfil de configuração do iOS Personalizado, em vez de usar essa configuração para permitir a implantação manual com ou sem um certificado.  
@@ -128,6 +124,6 @@ As empresas podem adquirir dispositivos iOS por meio do programa de registro de 
 
 
 
-<!--HONumber=Nov16_HO1-->
+<!--HONumber=Dec16_HO3-->
 
 

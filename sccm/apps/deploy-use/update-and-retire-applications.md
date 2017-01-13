@@ -1,5 +1,5 @@
 ---
-title: Atualizar e desativar aplicativos | System Center Configuration Manager
+title: Atualizar e desativar aplicativos | Microsoft Docs
 description: Revise, substitua ou desinstale aplicativos implantados usando o System Center Configuration Manager.
 ms.custom: na
 ms.date: 10/06/2016
@@ -16,8 +16,8 @@ author: robstackmsft
 ms.author: robstack
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: 1134bb2f04152288e72d40b1b1083f415cb4e900
-ms.openlocfilehash: 5eafaca3317f22b0e0b434d9161785cc90c701b7
+ms.sourcegitcommit: c9fb0fa46058c773eec6ac23999357d35d9f970f
+ms.openlocfilehash: 805e04c447747b4d12350b692880dbc005bd7168
 
 
 ---
@@ -26,23 +26,22 @@ ms.openlocfilehash: 5eafaca3317f22b0e0b434d9161785cc90c701b7
 *Aplica-se a: System Center Configuration Manager (Branch Atual)*
 
 
-Eventualmente, você provavelmente desejará fazer alterações em um aplicativo, desinstalá-lo ou substituir um aplicativo já implantado por um novo aplicativo. O System Center Configuration Manager inclui esses recursos para ajudá-lo:  
-  
--   **Revisar aplicativos** – Quando você faz alterações em um tipo de aplicativo ou implantação, o Configuration Manager mantém um histórico dessas alterações. Você pode reverter o aplicativo para uma revisão anterior a qualquer momento. Além disso, você pode exibir suas propriedades, restaurar uma revisão anterior de um aplicativo ou excluir uma revisão antiga.  
+Você provavelmente desejará fazer alterações em um aplicativo, desinstalá-lo ou substituir um aplicativo já implantado por um novo aplicativo. O System Center Configuration Manager oferece esses recursos para ajudá-lo a atualizar e desativar os aplicativos:  
 
-     Para mais informações, consulte [Revisões de aplicativos](/sccm/apps/deploy-use/revise-and-supersede-applications#application-revisions).  
+-   **Revisar aplicativos**. Quando você faz alterações em um tipo de aplicativo ou implantação, o Configuration Manager mantém um histórico dessas alterações. Você pode reverter o aplicativo para uma revisão anterior a qualquer momento. Além disso, você pode exibir suas propriedades, restaurar uma revisão anterior de um aplicativo ou excluir uma revisão antiga.  
 
--   **Supersede applications** - Permite que você pode atualize ou substitua os aplicativos existentes usando uma relação de substituição. Ao substituir um aplicativo, é possível especificar um novo tipo de implantação para substituir o tipo de implantação do aplicativo substituído e também configurar para atualizar ou desinstalar o aplicativo substituído antes do aplicativo substituto ser instalado.  
+  Para mais informações, consulte [Revisões de aplicativos](revise-and-supersede-applications.md#application-revisions).  
 
-     Para mais informações, consulte [Substituição de aplicativos](/sccm/apps/deploy-use/revise-and-supersede-applications#application-supersedence).  
+-   **Substituir aplicativos**. Você pode atualizar ou substituir os aplicativos existentes usando uma relação de substituição. Quando você substitui um aplicativo, é possível especificar um novo tipo de implantação para substituir o tipo de implantação do aplicativo substituído. Além disso, também é possível decidir se atualiza ou desinstala o aplicativo substituído antes que o aplicativo substituto seja instalado.  
 
--   **Desinstalar aplicativos** ‑ O Configuration Manager simplifica a desinstalação de aplicativos. Ela pode ser realizada silenciosamente, sem qualquer intervenção do usuário final.  
-  
-Para mais informações, consulte [Desinstalar aplicativos](../../apps/deploy-use/uninstall-applications.md).  
-   
+  Para mais informações, consulte [Substituição de aplicativos](revise-and-supersede-applications.md#application-supersedence).  
 
+-   **Desinstalar aplicativos**. O Configuration Manager simplifica a desinstalação de aplicativos. Ela pode ser realizada silenciosamente, sem qualquer intervenção do usuário do dispositivo ou do aplicativo.  
+
+  Para mais informações, consulte [Desinstalar aplicativos](uninstall-applications.md).  
 
 
-<!--HONumber=Nov16_HO1-->
+
+<!--HONumber=Dec16_HO3-->
 
 

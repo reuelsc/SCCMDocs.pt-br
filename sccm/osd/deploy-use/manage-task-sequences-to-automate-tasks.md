@@ -1,5 +1,5 @@
 ---
-title: "Gerenciar sequências de tarefas para automatizar tarefas | Configuration Manager"
+title: "Gerenciar sequências de tarefas para automatizar tarefas | Microsoft Docs"
 description: "É possível criar, editar, implantar, importar e exportar as sequências de tarefas para gerenciá-las em seu ambiente do System Center Configuration Manager."
 ms.custom: na
 ms.date: 10/06/2016
@@ -16,8 +16,8 @@ author: Dougeby
 ms.author: dougeby
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: 1134bb2f04152288e72d40b1b1083f415cb4e900
-ms.openlocfilehash: 04e4e8193d427289a3b84a14efe18511bf5c9731
+ms.sourcegitcommit: d04d28bbd5116a841c0872cf3f9ca18783dddc78
+ms.openlocfilehash: 417b31fa1feb6d0f674f14ef9e5c7cebd7013916
 
 
 ---
@@ -237,6 +237,8 @@ Use as sequências de tarefas para automatizar etapas no seu ambiente do System 
 
 -   Senhas que são armazenadas na sequência de tarefas não são exportadas. Se você exportar e importar uma sequência de tarefas que contenha senhas, deverá editar a sequência de tarefas importada e especificar alguma senha novamente. Certifique-se de especificar senhas para as ações [Ingressar no Domínio ou Grupo de Trabalho](../understand/task-sequence-steps.md#BKMK_JoinDomainorWorkgroup), [Conectar à Pasta de Rede](../understand/task-sequence-steps.md#BKMK_ConnectToNetworkFolder) e [Executar Linha de Comando](../understand/task-sequence-steps.md#BKMK_RunCommandLine).  
 
+- Ao exportar uma sequência de tarefas com a etapa **Definir Variáveis Dinâmicas**, nenhum valor é exportado para as variáveis definidas com a configuração **Valor secreto**. É necessário inserir os valores novamente para essas variáveis depois de importar a sequência de tarefas.
+
 -   Como prática recomendada, quando você tem vários sites primários, importe as sequências de tarefas no site de administração central.  
 
  Use os procedimentos a seguir para exportar e importar uma sequência de tarefas.  
@@ -367,6 +369,6 @@ Use as sequências de tarefas para automatizar etapas no seu ambiente do System 
 
 
 
-<!--HONumber=Nov16_HO1-->
+<!--HONumber=Dec16_HO3-->
 
 

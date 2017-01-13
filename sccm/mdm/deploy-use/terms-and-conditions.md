@@ -1,5 +1,5 @@
 ---
-title: Terms and Conditions in System Center Configuration Manager
+title: "Termos e condições no System Center Configuration Manager | Microsoft Docs"
 description: "Implante os termos e condições nos grupos de usuários no System Center Configuration Manager."
 ms.custom: na
 ms.date: 10/06/2016
@@ -12,12 +12,12 @@ ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 4d3f9e6b-4d71-4fc4-9b91-47f1bfbd8c70
 caps.latest.revision: 9
-author: NathBarn
-ms.author: nathbarn
+author: mtillman
+ms.author: mtillman
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: 1134bb2f04152288e72d40b1b1083f415cb4e900
-ms.openlocfilehash: a7b99bed3186ab8ff817ef5f420d7a55d60b1c14
+ms.sourcegitcommit: 55c953f312a9fb31e7276dde2fdd59f8183b4e4d
+ms.openlocfilehash: 2f8b14bef14d82584fd2bf6cdd05018bdd463ce4
 
 
 ---
@@ -89,7 +89,7 @@ Você pode implantar os termos e condições do System Center Configuration Mana
 
      Na tela Status da Implantação, você pode escolher as guias de status para exibir os usuários com esse status. Você pode clicar em **Executar Resumo** para atualizar os dados em toda a hierarquia. Clique em **Atualizar** para atualizar dados no console  
 
-## <a name="to-view-a-terms-and-conditions-report"></a>Para exibir um relatório de termos e condições  
+## <a name="to-view--a-terms-and-conditions-report"></a>Para exibir um relatório de termos e condições  
 
 1.  No console do Configuration Manager, acesse **Monitoramento** > **Visão Geral** > **Relatórios** > **Relatório**.  
 
@@ -122,6 +122,6 @@ Você pode implantar os termos e condições do System Center Configuration Mana
 
 
 
-<!--HONumber=Nov16_HO1-->
+<!--HONumber=Dec16_HO3-->
 
 

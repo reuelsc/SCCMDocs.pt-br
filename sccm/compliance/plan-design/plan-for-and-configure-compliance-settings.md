@@ -1,5 +1,5 @@
 ---
-title: "Planejar e definir as configurações de conformidade | System Center Configuration Manager"
+title: "Planejar e definir as configurações de conformidade | Microsoft Docs"
 description: "Saiba mais sobre os pré-requisitos e as tarefas de configuração para trabalhar com configurações de conformidade no System Center Configuration Manager."
 ms.custom: na
 ms.date: 10/06/2016
@@ -16,8 +16,8 @@ author: robstackmsft
 ms.author: robstack
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: 1134bb2f04152288e72d40b1b1083f415cb4e900
-ms.openlocfilehash: 43bbbacfcd0e873974c517f1cb870ebc4d5e003d
+ms.sourcegitcommit: f9e939d871e95a3248d8e5d96cb73063a81fd5cf
+ms.openlocfilehash: d26ac3de58d2f0ef447725e63fc2d8adda6ea06c
 
 
 ---
@@ -55,6 +55,6 @@ Os computadores cliente são definidos com essas configurações na próxima vez
 
 
 
-<!--HONumber=Nov16_HO1-->
+<!--HONumber=Dec16_HO3-->
 
 

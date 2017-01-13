@@ -1,5 +1,5 @@
 ---
-title: 'Gerenciamento de cliente de VDI (Virtual Desktop Infrastructure) | System Center Configuration Manager '
+title: 'Gerenciamento de cliente da VDI (Virtual Desktop Infrastructure) | Microsoft Docs '
 description: Gerenciar clientes do System Center Configuration Manager em uma VDI (Virtual Desktop Infrastructure).
 ms.custom: na
 ms.date: 10/06/2016
@@ -13,16 +13,16 @@ ms.topic: get-started-article
 ms.assetid: abd45393-d84e-4583-bc80-74bbb3709577
 caps.latest.revision: 7
 caps.handback.revision: 0
-author: Mtillman
-ms.author: mtillman
+author: nbigman
+ms.author: nbigman
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: 1134bb2f04152288e72d40b1b1083f415cb4e900
-ms.openlocfilehash: 2f9014a592de07ae8f36d23ce939fc1de776cd76
+ms.sourcegitcommit: 55c953f312a9fb31e7276dde2fdd59f8183b4e4d
+ms.openlocfilehash: 58251f6a4eebac4cba9f3d51f8d0aaad068c3ab8
 
 
 ---
-# <a name="considerations-for-managing-system-center-configuration-manager-clients-in-a-virtual-desktop-infrastructure-vdi"></a>Considerações para gerenciar clientes do System Center Configuration Manager em uma VDI (Virtual Desktop Infrastructure)
+# <a name="considerations-for-managing-system-center-configuration-manager-clients--in-a-virtual-desktop-infrastructure-vdi"></a>Considerações para gerenciar clientes do System Center Configuration Manager em uma VDI (Virtual Desktop Infrastructure)
 
 *Aplica-se a: System Center Configuration Manager (Branch Atual)*
 
@@ -51,6 +51,6 @@ O System Center Configuration Manager dá suporte à instalação de cliente do 
 
 
 
-<!--HONumber=Nov16_HO1-->
+<!--HONumber=Dec16_HO3-->
 
 

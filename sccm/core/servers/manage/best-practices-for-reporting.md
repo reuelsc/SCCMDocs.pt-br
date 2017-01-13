@@ -1,5 +1,5 @@
 ---
-title: "Práticas recomendadas de relatórios | System Center Configuration Manager"
+title: "Práticas recomendadas de relatórios | Microsoft Docs"
 description: "Leia algumas dicas úteis sobre como usar a funcionalidade de relatórios do System Center Configuration Manager."
 ms.custom: na
 ms.date: 10/06/2016
@@ -17,8 +17,8 @@ author: Dougeby
 ms.author: dougeby
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: 1134bb2f04152288e72d40b1b1083f415cb4e900
-ms.openlocfilehash: fae72b0455b53923aaf93b5b53afb562bedc2eca
+ms.sourcegitcommit: 10b1010ccbf3889c58c55b87e70b354559243c90
+ms.openlocfilehash: 759258999f3eaa810803a6a7f856f00fe7771a9e
 
 
 ---
@@ -42,6 +42,6 @@ Use as práticas recomendadas a seguir para relatórios no System Center Configu
 
 
 
-<!--HONumber=Nov16_HO1-->
+<!--HONumber=Dec16_HO3-->
 
 

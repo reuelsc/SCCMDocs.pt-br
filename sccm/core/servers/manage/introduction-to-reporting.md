@@ -1,5 +1,5 @@
 ---
-title: "Introdução aos relatórios | Configuration Manager"
+title: "Introdução aos relatórios | Microsoft Docs"
 description: "Saiba mais sobre o conjunto de ferramentas e recursos disponível para gerenciar relatórios no Configuration Manager."
 ms.custom: na
 ms.date: 10/06/2016
@@ -16,8 +16,8 @@ author: Dougeby
 ms.author: dougeby
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: 1134bb2f04152288e72d40b1b1083f415cb4e900
-ms.openlocfilehash: cbafee2c7de38739271a087501143ac75f9e0d52
+ms.sourcegitcommit: 10b1010ccbf3889c58c55b87e70b354559243c90
+ms.openlocfilehash: 5846ca3c91626491b03b36dd17b454bb9382a8dc
 
 
 ---
@@ -114,6 +114,6 @@ Os relatórios no System Center Configuration Manager fornece um conjunto de fer
 
 
 
-<!--HONumber=Nov16_HO1-->
+<!--HONumber=Dec16_HO3-->
 
 

@@ -1,5 +1,5 @@
 ---
-title: "Dados de diagnóstico para 1602 | System Center Configuration Manager"
+title: "Dados de diagnóstico para 1602 | Microsoft Docs"
 description: "Saiba mais sobre os níveis de dados de diagnóstico e de uso que o System Center Configuration Manager versão 1602 coleta."
 ms.custom: na
 ms.date: 10/06/2016
@@ -34,8 +34,8 @@ translation.priority.ht:
 - zh-cn
 - zh-tw
 translationtype: Human Translation
-ms.sourcegitcommit: 1134bb2f04152288e72d40b1b1083f415cb4e900
-ms.openlocfilehash: b38de0ef8886b34ffe091fbfcb185fc42ba66064
+ms.sourcegitcommit: 1a4a9da88caba55d9e340c7fb1f31f4e3b957f3e
+ms.openlocfilehash: 0f1be7aec8b15c4c61a325f2afb2caa2332cd31a
 
 ---
 # <a name="levels-of-diagnostic-usage-data-collection-for-version-1602-of-system-center-configuration-manager"></a>Níveis da coleta de dados de diagnóstico e de uso da versão 1602 do System Center Configuration Manager
@@ -51,6 +51,9 @@ Alterações de versões anteriores são indicadas com ***[Novo]*** ou ***[Atual
 
 ##  <a name="a-namebkmkchangea-how-to-change-the-level"></a><a name="bkmk_change"></a> Como alterar o nível
  Os administradores com um escopo administrativo baseado em funções que inclui as permissões **Modificar** na classe de objeto **Site** podem alterar o nível dos dados coletados nas configurações Dados de Diagnóstico e de Uso no console do Configuration Manager.
+
+
+  Para fazer isso, no console, acesse a guia Backstage (a guia superior esquerda com a seta suspensa), selecione **Dados de Uso** e o nível de dados que você deseja usar.  
 
 ##  <a name="a-namebkmklevel1a-level-1---basic"></a><a name="bkmk_level1"></a> Nível 1 — Básico
  O nível Básico inclui dados sobre sua hierarquia e é necessário para ajudar a aperfeiçoar sua experiência de instalação ou de atualização, bem como para ajudar a determinar quais atualizações do Configuration Manager são aplicáveis à sua hierarquia.
@@ -313,6 +316,6 @@ A partir da versão 1602 do System Center Configuration Manager, este nível inc
 
 
 
-<!--HONumber=Nov16_HO1-->
+<!--HONumber=Dec16_HO3-->
 
 

@@ -1,5 +1,5 @@
 ---
-title: "Ferramenta de Conexão de Serviço | System Center Configuration Manager"
+title: "Ferramenta de conexão de serviço | Microsoft Docs"
 description: "Saiba mais sobre esta ferramenta que permite que você se conecte ao serviço de nuvem do Configuration Manager para carregar manualmente as informações de uso."
 ms.custom: na
 ms.date: 10/06/2016
@@ -16,8 +16,8 @@ author: Brenduns
 ms.author: brenduns
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: 1134bb2f04152288e72d40b1b1083f415cb4e900
-ms.openlocfilehash: 5fab3a4834f30d48c5c000a7c95c7006eb8e4785
+ms.sourcegitcommit: b4642186e42745640f088b7046e70019616935ea
+ms.openlocfilehash: 9a5cd5ce3ce6868b44768d3cbe7b7c594f44d42c
 
 
 ---
@@ -29,7 +29,10 @@ Use a **ferramenta de conexão de serviço** quando seus servidores do sistema d
 
  A ferramenta permite que você se conecte ao serviço de nuvem do Configuration Manager para carregar manualmente as informações de uso da sua hierarquia e baixar atualizações. Carregar dados de uso é necessário para permitir que o serviço de nuvem forneça as atualizações corretas para sua implantação.  
 
- **Pré-requisitos para usar a ferramenta de conexão de serviço:**  
+## <a name="prerequisites-for-using-the-service-connection-tool"></a>Pré-requisitos para usar a ferramenta de conexão de serviço
+A seguir estão os pré-requisitos e problemas conhecidos.
+
+**Pré-requisitos:**
 
 -   Você tem um ponto de conexão de serviço instalado e ele está definido como **Offline, conexão sob demanda**.  
 
@@ -50,26 +53,6 @@ Use a **ferramenta de conexão de serviço** quando seus servidores do sistema d
 
 
 -   Você precisará de uma unidade USB com espaço livre suficiente para armazenar os arquivos e as atualizações ou outro método para transferir arquivos entre o computador do ponto de conexão de serviço e o computador que tem acesso à Internet. (Este cenário pressupõe que seu site e os computadores gerenciados não têm conexão direta com a Internet).  
-
-**Há três etapas principais para usar a ferramenta de conexão de serviço:**  
-
-1.  **Preparação**: nessa etapa, você coloca seus dados de uso em um arquivo .cab e o armazena em uma unidade USB (ou em algum local de transferência alternativo que você especificar).  
-
-2.  **Conexão**: nessa etapa, você executa a ferramenta em um computador remoto que se conecta à Internet para carregar dados e baixar atualizações.  
-
-3.  **Importação**: nessa etapa, você importa atualizações do Configuration Manager para seu site de modo que seja possível exibir e instalar as atualizações do Configuration Manager.  
-
-A partir da versão 1606, ao se conectar à Microsoft, você pode carregar vários arquivos .cab ao mesmo tempo (cada um de uma hierarquia diferente) e especificar um servidor proxy e um usuário para o servidor proxy.   
-
-**Para carregar vários arquivos .cab:**
- -  Coloque cada arquivo .cab que exportar de hierarquias separadas na mesma pasta. O nome de cada arquivo deve ser exclusivo e você pode renomeá-los manualmente se necessário.
- -  Depois, quando executar o comando para carregar dados para a Microsoft, especifique a pasta que contém os arquivos .cab. (Antes da atualização 1606, você só podia carregar dados de uma hierarquia por vez e a ferramenta exigia que você especificasse o nome do arquivo .cab na pasta.)
- -  Posteriormente, quando você executar a tarefa de importação no ponto de conexão de serviço de uma hierarquia, a ferramenta importará automaticamente somente os dados daquela hierarquia.  
-
-**Para especificar um servidor proxy:**  
-Você pode usar os seguintes parâmetros opcionais para especificar um servidor proxy (mais informações sobre como usar esses parâmetros estão disponíveis na seção Parâmetros de linha de comando neste tópico):
-  - **-proxyserveruri [FQDN_do_servidor_proxy]**  Use este parâmetro para especificar o servidor proxy a ser usado para esta conexão.
-  -  **-proxyusername [nome de usuário]**  Use este parâmetro quando precisar especificar um usuário para o servidor proxy.
 
 
 
@@ -98,7 +81,30 @@ Quando você executa o comando a seguir, a ferramenta prepara um arquivo .cab qu
 
 Você também precisará copiar a pasta ServiceConnectionTool com todo seu conteúdo para a unidade USB ou, de alguma forma, disponibilizá-lo no computador que usará para as etapas 3 e 4.  
 
-#### <a name="to-use-the-service-connection-tool"></a>Para usar a ferramenta de conexão de serviço  
+### <a name="overview"></a>Visão geral
+**Há três etapas principais para usar a ferramenta de conexão de serviço:**  
+
+1.  **Preparação**: nessa etapa, você coloca seus dados de uso em um arquivo .cab e o armazena em uma unidade USB (ou em algum local de transferência alternativo que você especificar).  
+
+2.  **Conexão**: nessa etapa, você executa a ferramenta em um computador remoto que se conecta à Internet para carregar dados e baixar atualizações.  
+
+3.  **Importação**: nessa etapa, você importa atualizações do Configuration Manager para seu site de modo que seja possível exibir e instalar as atualizações do Configuration Manager.  
+
+A partir da versão 1606, ao se conectar à Microsoft, você pode carregar vários arquivos .cab ao mesmo tempo (cada um de uma hierarquia diferente) e especificar um servidor proxy e um usuário para o servidor proxy.   
+
+**Para carregar vários arquivos .cab:**
+ -  Coloque cada arquivo .cab que exportar de hierarquias separadas na mesma pasta. O nome de cada arquivo deve ser exclusivo e você pode renomeá-los manualmente se necessário.
+ -  Depois, quando executar o comando para carregar dados para a Microsoft, especifique a pasta que contém os arquivos .cab. (Antes da atualização 1606, você só podia carregar dados de uma hierarquia por vez e a ferramenta exigia que você especificasse o nome do arquivo .cab na pasta.)
+ -  Posteriormente, quando você executar a tarefa de importação no ponto de conexão de serviço de uma hierarquia, a ferramenta importará automaticamente somente os dados daquela hierarquia.  
+
+**Para especificar um servidor proxy:**  
+Você pode usar os seguintes parâmetros opcionais para especificar um servidor proxy (mais informações sobre como usar esses parâmetros estão disponíveis na seção Parâmetros de linha de comando neste tópico):
+  - **-proxyserveruri [FQDN_do_servidor_proxy]**  Use este parâmetro para especificar o servidor proxy a ser usado para esta conexão.
+  -  **-proxyusername [nome de usuário]**  Use este parâmetro quando precisar especificar um usuário para o servidor proxy.
+
+
+
+### <a name="to-use-the-service-connection-tool"></a>Para usar a ferramenta de conexão de serviço  
 
 1.  No computador que hospeda o ponto de conexão de serviço:  
 
@@ -156,6 +162,6 @@ Você também precisará copiar a pasta ServiceConnectionTool com todo seu conte
 
 
 
-<!--HONumber=Nov16_HO1-->
+<!--HONumber=Dec16_HO3-->
 
 

@@ -1,5 +1,5 @@
 ---
-title: "Verificador de pré-requisitos | System Center Configuration Manager"
+title: "Verificador de pré-requisitos | Microsoft Docs"
 description: "Saiba como usar o verificador de pré-requisitos para identificar e corrigir problemas que impediriam a instalação real de uma função do sistema de sites ou de um site."
 ms.custom: na
 ms.date: 10/06/2016
@@ -16,8 +16,8 @@ author: Brenduns
 ms.author: brenduns
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: 1134bb2f04152288e72d40b1b1083f415cb4e900
-ms.openlocfilehash: 4c2322ed0805b5f087409ec487ebec9d7c4f10d5
+ms.sourcegitcommit: 10b1010ccbf3889c58c55b87e70b354559243c90
+ms.openlocfilehash: f30d7a451f47a3ab1efe6f7ac9c3e0151b8cda96
 
 ---
 # <a name="prerequisite-checker-for-system-center-configuration-manager"></a>Verificador de pré-requisitos para System Center Configuration Manager
@@ -91,7 +91,7 @@ Para obter mais informações sobre as verificações de pré-requisitos que o v
 
 2.  Digite  **prereqchk.exe /LOCAL** para iniciar o Verificador de Pré-requisitos e executar todas as verificações de pré-requisitos no servidor.  
 
-## <a name="run-prerequisite-checker-from-a-command-prompt-for-specified-options"></a>Executar o verificador de pré-requisitos em um prompt de comando para as opções especificadas  
+## <a name="run-prerequisite-checker-from-a-command-prompt--for-specified-options"></a>Executar o verificador de pré-requisitos em um prompt de comando para as opções especificadas  
 
 1.  Abra uma janela de Prompt de Comando e altere os diretórios para um dos seguintes locais:  
 
@@ -216,6 +216,6 @@ Para obter mais informações sobre as verificações de pré-requisitos que o v
 
 
 
-<!--HONumber=Nov16_HO1-->
+<!--HONumber=Dec16_HO3-->
 
 

@@ -1,8 +1,8 @@
 ---
-title: Perfis de VPN System Center Configuration Manager | System Center Configuration Manager
+title: Perfis VPN no System Center Configuration Manager | Microsoft Docs
 description: "Saiba como usar perfis de VPN no System Center Configuration Manager para implantar as configurações de VPN para usuários em sua organização."
 ms.custom: na
-ms.date: 10/10/2016
+ms.date: 11/27/2016
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
@@ -17,8 +17,8 @@ author: Nbigman
 ms.author: nbigman
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: 0fbce476b8a9b91a88354fb4abfadfd2526ca5e8
-ms.openlocfilehash: dda572392884c54b63af09a9fae79c1e73eb3d95
+ms.sourcegitcommit: 593fbd0587d54490246f48ae54f666bac6b7830d
+ms.openlocfilehash: 0ff83aed4d5e19806a8c69f4b45e39a6156dee7e
 
 
 ---
@@ -27,7 +27,7 @@ ms.openlocfilehash: dda572392884c54b63af09a9fae79c1e73eb3d95
 *Aplica-se a: System Center Configuration Manager (Branch Atual)*
 
 
-Use perfis de VPN no System Center Configuration Manager para implantar as configurações de VPN para usuários em sua organização. Ao implantar essas configurações, você minimiza o esforço do usuário final necessário para conectar-se aos recursos na rede da empresa.  
+Use os perfis de VPN no System Center Configuration Manager (também conhecido como ConfigMgr ou SCCM) para implantar as configurações de VPN para usuários em sua organização. Ao implantar essas configurações, você minimiza o esforço do usuário final necessário para conectar-se aos recursos na rede da empresa.  
 
  Por exemplo, você deseja provisionar todos os dispositivos que executam o sistema operacional iOS com as configurações necessárias para se conectar ao compartilhamento de arquivos na rede corporativa. Você pode criar um perfil VPN que contém as configurações necessárias para conectar-se à rede corporativa e implantar esse perfil a todos os usuários que possuem dispositivos que executam o iOS na sua hierarquia. Os usuários de dispositivos iOS veem a conexão VPN na lista de redes disponíveis e podem se conectar a essa rede com o mínimo de esforço.  
 
@@ -76,6 +76,6 @@ Use perfis de VPN no System Center Configuration Manager para implantar as confi
 
 
 
-<!--HONumber=Nov16_HO1-->
+<!--HONumber=Dec16_HO3-->
 
 

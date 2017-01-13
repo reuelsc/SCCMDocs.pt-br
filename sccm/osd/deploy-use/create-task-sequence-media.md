@@ -1,5 +1,5 @@
 ---
-title: "Criar mídia de sequência de tarefas com o System Center Configuration Manager"
+title: "Criar mídia de sequência de tarefas com o System Center Configuration Manager | Microsoft Docs"
 description: "Crie mídia de sequência de tarefas, como um CD, para implantar um sistema operacional em um computador de destino em seu ambiente do Configuration Manager."
 ms.custom: na
 ms.date: 10/06/2016
@@ -17,8 +17,8 @@ author: Dougeby
 ms.author: dougeby
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: 1134bb2f04152288e72d40b1b1083f415cb4e900
-ms.openlocfilehash: f00defcdb56e37476ac24d8ce25d1dc5fb2f3260
+ms.sourcegitcommit: 74341fb60bf9ccbc8822e390bd34f9eda58b4bda
+ms.openlocfilehash: bd5448d70c2d465347de840cb197d4c33075c90a
 
 
 ---
@@ -72,6 +72,6 @@ Você pode usar mídia para capturar uma imagem de sistema operacional de um com
 
 
 
-<!--HONumber=Nov16_HO1-->
+<!--HONumber=Dec16_HO3-->
 
 

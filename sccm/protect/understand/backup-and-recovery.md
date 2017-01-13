@@ -1,5 +1,5 @@
 ---
-title: "Backup e recuperação | System Center Configuration Manager"
+title: "Backup e recuperação | Microsoft Docs"
 description: Saiba como fazer o backup e recuperar seus sites em caso de falha ou perda de dados no System Center Configuration Manager.
 ms.custom: na
 ms.date: 10/06/2016
@@ -16,8 +16,8 @@ author: Brenduns
 ms.author: brenduns
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: 1134bb2f04152288e72d40b1b1083f415cb4e900
-ms.openlocfilehash: d02dc47b2a9010d035ceecbbc6bf3d544f4dc1f4
+ms.sourcegitcommit: 828e2ac9a3f9bcea1571d24145a1021fdf1091f3
+ms.openlocfilehash: ce73be3a9fa3876c587bbd7b7cb05acd36c2687e
 
 
 ---
@@ -114,9 +114,9 @@ Use as seções a seguir para ajudá-lo a criar sua estratégia de backup do Con
     -   **Unidades locais no servidor do site e no SQL Server**: especifica que os arquivos de backup do site são armazenados no caminho especificado na unidade local do servidor do site e que os arquivos de backup do banco de dados do site são armazenados no caminho especificado na unidade local do servidor de banco de dados do site. É necessário criar as pastas locais para poder executar a tarefa de backup. A conta de computador do servidor do site deve ter permissões de **Gravação** NTFS para a pasta criada no servidor do site. A conta de computador do SQL Server deve ter permissões de **Gravação** NTFS para a pasta criada no servidor de banco de dados do site. Essa opção está disponível somente quando o banco de dados do site não está instalado no servidor do site.  
 
     > [!NOTE]  
-    >    - A opção de navegar até o destino do backup está disponível somente quando o caminho UNC do destino do backup é especificado.
+    >   - A opção de navegar até o destino do backup está disponível somente quando o caminho UNC do destino do backup é especificado.
 
-    >- O nome da pasta ou do compartilhamento usado como destino do backup não oferece suporte ao uso de caracteres Unicode.  
+    > - O nome da pasta ou do compartilhamento usado como destino do backup não oferece suporte ao uso de caracteres Unicode.  
 
 
 6.  Configure um agendamento para a tarefa de backup do site. Como prática recomendada, considere agendar a execução do backup para fora do horário de trabalho ativo. Se houver uma hierarquia, considere agendar a execução para no mínimo duas vezes por semana para garantir a máximo retenção de dados em caso de falha do site.  
@@ -190,7 +190,7 @@ Use as seções a seguir para ajudá-lo a criar sua estratégia de backup do Con
  Certifique-se de incluir a biblioteca de conteúdo e os diretórios de origem do pacote em seu backup de sistema de arquivos para o servidor do site.  
 
 #### <a name="back-up-custom-software-updates"></a>Fazer backup de atualizações de software personalizadas  
-     System Center Updates Publisher 2011 is a stand-alone tool that lets you publish custom software updates to Windows Server Update Services (WSUS), synchronize the software updates to Configuration Manager, assess software updates compliance, and deploy the custom software updates to clients. Updates Publisher uses a local database for its software update repository. When you use Updates Publisher to manage custom software updates, determine whether you have to include the Updates Publisher database in your backup plan. For more information about Updates Publisher, see [System Center Updates Publisher 2011](http://go.microsoft.com/fwlink/p/?LinkId=228726) in the System Center TechCenter Library.  
+ O System Center Updates Publisher 2011 é uma ferramenta autônoma que permite que você publique atualizações de software personalizadas no WSUS (Windows Server Update Services), sincronize-as com o Configuration Manager, avalie a conformidade das atualizações de software e implante-as nos clientes. O Updates Publisher usa um banco de dados local para seu repositório de atualização de software. Quando você usa o Updates Publisher para gerenciar atualizações de software personalizadas, determine se será necessário incluir o banco de dados do Updates Publisher em seu plano de backup. Para obter mais informações sobre o Updates Publisher, consulte [System Center Updates Publisher 2011](http://go.microsoft.com/fwlink/p/?LinkId=228726) na biblioteca do System Center TechCenter.  
 
  Use o procedimento a seguir para fazer backup do banco de dados do Updates Publisher.  
 
@@ -206,7 +206,7 @@ Use as seções a seguir para ajudá-lo a criar sua estratégia de backup do Con
 ### <a name="user-state-migration-data"></a>Dados de migração de estado do usuário  
  Você pode usar as sequências da tarefas do Configuration Manager para capturar e restaurar dados de estado do usuário em cenários de implantação do sistema operacional no qual você deseja manter o estado do usuário do sistema operacional atual. As pastas que armazenam os dados do estado do usuário são listadas nas propriedades do ponto de migração de estado. Esses dados de migração de estado do usuário não ganham backup como parte da tarefa de manutenção de backup do servidor do site. Como parte do plano de backup, você deve fazer backup manualmente das pastas especificadas para armazenar os dados de migração do estado do usuário.   
 
-##### <a name="to-determine-the-folders-used-to-store-user-state-migration-data"></a>Para determinar as pastas usadas para armazenar dados de migração de estado do usuário  
+#### <a name="to-determine-the-folders-used-to-store-user-state-migration-data"></a>Para determinar as pastas usadas para armazenar dados de migração de estado do usuário  
 
 1.  No console do Configuration Manager, clique em **Administração**.  
 
@@ -384,7 +384,7 @@ Use as seções a seguir para ajudá-lo a criar sua estratégia de backup do Con
 
     -   **Detalhes:** recupera um site de administração central  
 
- **RecoveryOptions**  
+**RecoveryOptions**  
 
 -   **Nome da chave:** ServerRecoveryOptions  
 
@@ -454,7 +454,7 @@ Use as seções a seguir para ajudá-lo a criar sua estratégia de backup do Con
 
     -   **Detalhes:** especifica o caminho para o conjunto de backup do banco de dados do site. A chave **BackupLocation** é necessária quando o valor **1** ou **4** é configurado para a chave **ServerRecoveryOptions** , e o valor **10** é configurado para a chave **DatabaseRecoveryOptions** .  
 
- **Opções**  
+**Opções**  
 
 -   **Nome da chave:** ProductID  
 
@@ -549,7 +549,7 @@ Use as seções a seguir para ajudá-lo a criar sua estratégia de backup do Con
 
     -   **Detalhes:** especifica se deve ingressar no Programa de Aperfeiçoamento da Experiência do Usuário.  
 
- **SQLConfigOptions**  
+**SQLConfigOptions**  
 
 -   **Nome da chave:** SQLServerName  
 
@@ -597,7 +597,7 @@ Use as seções a seguir para ajudá-lo a criar sua estratégia de backup do Con
 
     -   **Detalhes:** recupera um site primário  
 
- **RecoveryOptions**  
+**RecoveryOptions**  
 
 -   **Nome da chave:** ServerRecoveryOptions  
 
@@ -653,7 +653,7 @@ Use as seções a seguir para ajudá-lo a criar sua estratégia de backup do Con
 
     -   **Detalhes:** especifica o caminho para o conjunto de backup do banco de dados do site. A chave **BackupLocation** é necessária quando o valor **1** ou **4** é configurado para a chave **ServerRecoveryOptions** , e o valor **10** é configurado para a chave **DatabaseRecoveryOptions** .  
 
- **Opções**  
+**Opções**  
 
 -   **Nome da chave:** ProductID  
 
@@ -748,7 +748,7 @@ Use as seções a seguir para ajudá-lo a criar sua estratégia de backup do Con
 
     -   **Detalhes:** especifica se deve ingressar no Programa de Aperfeiçoamento da Experiência do Usuário.  
 
- **SQLConfigOptions**  
+**SQLConfigOptions**  
 
 -   **Nome da chave:** SQLServerName  
 
@@ -783,7 +783,7 @@ Use as seções a seguir para ajudá-lo a criar sua estratégia de backup do Con
 
     -   **Detalhes:** especifica a porta do SQL Server Service Broker (SSB) usada pelo SQL Server. Normalmente, o SSB está configurado para usar a porta TCP 4022, mas há suporte para outras portas. Você deve especificar a mesma porta do SSB que foi usada antes da falha.  
 
- **ExpansionOption de hierarquia**  
+**ExpansionOption de hierarquia**  
 
 -   **Nome da chave:** CCARSiteServer  
 
@@ -839,7 +839,7 @@ Use as seções a seguir para ajudá-lo a criar sua estratégia de backup do Con
  Recuperado o servidor do site, é necessário digitar novamente as chaves de sideload do Windows especificadas para o site porque elas são redefinidas durante a recuperação do site. Ao digitar novamente as chaves de sideload, a contagem na coluna **Ativações usadas** para as chaves de sideload do Windows é redefinida no console do Configuration Manager. Por exemplo, digamos que antes da falha do site a contagem de **Total de ativações** estava definida como **100** e de **Ativações usadas** como **90** para o número de chaves usadas pelos dispositivos. Recuperado o site, a coluna **Total de ativações** continua a exibir **100**, mas a coluna **Ativações usadas** exibe incorretamente **0**. No entanto, quando 10 novos dispositivos usarem uma chave de sideload, não haverá mais chaves de sideload disponíveis e o dispositivo seguinte irá falhar ao usar uma chave de sideload.  
 
 #### <a name="recreate-the-microsoft-intune-subscription"></a>Recriar a Assinatura do Microsoft Intune  
- Se você recuperar um servidor do site do Configuration Manager depois que o computador do servidor do site for restaurado ao estado anterior, a assinatura do Microsoft Intune não será restaurada. É necessário recriar a assinatura depois de recuperar o site. Para obter mais informações, consulte [Configuring the Microsoft Intune subscription](../../mdm/plan-design/hybrid-mobile-device-management.md#bkmk_witsub).  
+ Se você recuperar um servidor do site do Configuration Manager depois que o computador do servidor do site for restaurado ao estado anterior, a assinatura do Microsoft Intune não será restaurada. É necessário recriar a assinatura depois de recuperar o site. Para obter mais informações, consulte [Configuring the Microsoft Intune subscription](../../mdm/deploy-use/setup-hybrid-mdm.md#step-3-configure-intune-subscription).  
 
 #### <a name="configure-ssl-for-site-system-roles-that-use-iis"></a>Configurar o SSL para funções do sistema de site que usam IIS  
  Ao recuperar sistemas de site que executam o IIS e que foram configurados para HTTPS antes da falha, você precisa reconfigurar o IIS para usar o certificado do servidor Web.  
@@ -913,6 +913,6 @@ Use as seções a seguir para ajudá-lo a criar sua estratégia de backup do Con
 
 
 
-<!--HONumber=Nov16_HO1-->
+<!--HONumber=Dec16_HO3-->
 
 

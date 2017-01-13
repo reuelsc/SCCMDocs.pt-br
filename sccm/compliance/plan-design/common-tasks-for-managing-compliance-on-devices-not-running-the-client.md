@@ -1,5 +1,5 @@
 ---
-title: "Tarefas comuns para gerenciar a conformidade em dispositivos que não executam o cliente do System Center Configuration Manager | System Center Configuration Manager"
+title: "Tarefas comuns para gerenciar a conformidade em dispositivos que não executam o cliente System Center Configuration Manager | Microsoft Docs"
 description: "Saiba mais sobre as configurações de conformidade do System Center Configuration Manager trabalhando em alguns cenários comuns."
 ms.custom: na
 ms.date: 10/06/2016
@@ -16,8 +16,8 @@ author: robstackmsft
 ms.author: robstack
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: 1134bb2f04152288e72d40b1b1083f415cb4e900
-ms.openlocfilehash: f69250fbe51ea8902a0446a613d66be390ea7434
+ms.sourcegitcommit: f9e939d871e95a3248d8e5d96cb73063a81fd5cf
+ms.openlocfilehash: e24ef149e2a2648c9a7acaedfaa8f0b5bb173ab3
 
 
 ---
@@ -101,7 +101,7 @@ Esses cenários oferecem uma introdução ao uso das configurações de conformi
 
  Agora você pode usar as informações do tópico [Tarefas comuns para criar e implantar linhas de base de configuração com o System Center Configuration Manager](../../compliance/plan-design/common-tasks-for-creating-and-deploying-configuration-baselines.md) para ajudar a implantar nos dispositivos a configuração que você criou.  
 
-## <a name="scenarios-for-android-and-samsung-knox-devices-managed-without-the-configuration-manager-client"></a>Cenários para dispositivos Android e Samsung KNOX gerenciados sem o cliente do Configuration Manager  
+## <a name="scenarios-for-android-and-samsung-knox-standard-devices-managed-without-the-configuration-manager-client"></a>Cenários para dispositivos Android e Samsung KNOX Standard gerenciados sem o cliente Configuration Manager  
 
 ### <a name="scenario-require-a-password-on-all-android-5-devices"></a>Cenário: exigir uma senha em todos os dispositivos Android 5  
  Nesse cenário, você criará um item de configuração apenas para dispositivos Android 5 que exige que os usuários configurem uma senha de, pelo menos, 6 caracteres em seus dispositivos. Além disso, se um usuário inserir uma senha incorreta cinco vezes, o dispositivo será apagado.  
@@ -126,7 +126,6 @@ Esses cenários oferecem uma introdução ao uso das configurações de conformi
 
 
 
-
-<!--HONumber=Nov16_HO1-->
+<!--HONumber=Dec16_HO3-->
 
 

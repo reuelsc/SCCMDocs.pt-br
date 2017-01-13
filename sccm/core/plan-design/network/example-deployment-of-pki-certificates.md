@@ -1,5 +1,5 @@
 ---
-title: "Implantação de certificados PKI | System Center Configuration Manager"
+title: "Certificados PKI de implantação | Microsoft Docs"
 description: "Siga um exemplo passo a passo para conhecer o processo de criação e implantação de certificados PKI que usam o System Center Configuration Manager."
 ms.custom: na
 ms.date: 10/06/2016
@@ -16,8 +16,8 @@ author: Nbigman
 ms.author: nbigman
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: 1134bb2f04152288e72d40b1b1083f415cb4e900
-ms.openlocfilehash: 49dfa303453b26a64c1495a1259674e0d8a6bde2
+ms.sourcegitcommit: 6ed317d45d90758832d4157985dd95d5e253c6fc
+ms.openlocfilehash: 2db82f0572df9519b3119d4dca4f4626ae09d936
 
 
 ---
@@ -785,6 +785,6 @@ Este exemplo de implantação passo a passo, que usa uma AC (autoridade de certi
 
 
 
-<!--HONumber=Nov16_HO1-->
+<!--HONumber=Dec16_HO3-->
 
 

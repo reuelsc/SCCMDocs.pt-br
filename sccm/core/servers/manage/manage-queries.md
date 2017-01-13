@@ -1,5 +1,5 @@
 ---
-title: Gerenciar consultas | System Center Configuration Manager
+title: Gerenciar consultas | Microsoft Docs
 description: "Saiba como gerenciar suas consultas. Inclui uma tabela de referência detalhada."
 ms.custom: na
 ms.date: 10/06/2016
@@ -17,8 +17,8 @@ author: robstackmsft
 ms.author: robstack
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: 1134bb2f04152288e72d40b1b1083f415cb4e900
-ms.openlocfilehash: c3c9bce02a177e755bb259634a7feab381a41466
+ms.sourcegitcommit: 10b1010ccbf3889c58c55b87e70b354559243c90
+ms.openlocfilehash: 738dcf0b52f18b38b732bf8ca5d7a87369b1c468
 
 
 ---
@@ -47,6 +47,6 @@ Use as informações neste tópico para ajudar a gerenciar consultas no System C
 
 
 
-<!--HONumber=Nov16_HO1-->
+<!--HONumber=Dec16_HO3-->
 
 

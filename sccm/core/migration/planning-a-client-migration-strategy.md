@@ -1,5 +1,5 @@
 ---
-title: "Planejar a migração de cliente | System Center Configuration Manager"
+title: "Planejar a migração do cliente | Microsoft Docs"
 description: Saiba mais sobre as tarefas que migram clientes de uma hierarquia de origem para uma hierarquia de destino do System Center Configuration Manager.
 ms.custom: na
 ms.date: 10/06/2016
@@ -16,8 +16,8 @@ author: Brenduns
 ms.author: brenduns
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: 1134bb2f04152288e72d40b1b1083f415cb4e900
-ms.openlocfilehash: 6044f9b8116687fca80deeea87abd4652f773db0
+ms.sourcegitcommit: 238ef5814c0c1b832c28d63c9f3879e21a6c439b
+ms.openlocfilehash: 11da338af9d7dd4d6f9c5fc1c6c62e277139f852
 
 
 ---
@@ -43,7 +43,7 @@ Para migrar clientes da hierarquia de origem para uma hierarquia de destino do S
 -   **Uma hierarquia de origem do System Center 2012 Configuration Manager ou posterior:** ao migrar clientes entre hierarquias que são da mesma versão do produto, o software cliente não é alterado nem atualizado. Em vez disso, o cliente é reatribuído da hierarquia de origem para um local na hierarquia de destino.  
 
     > [!NOTE]  
-    >  Quando não há suporte para a versão do produto de uma hierarquia para migração para sua hierarquia de destino, atualize todos os sites e clientes na hierarquia de origem para uma versão compatível do produto. Depois de atualizar a hierarquia de origem para uma versão do produto com suporte, você poderá migrar entre as hierarquias. Para mais informações, consulte a seção [Versões do Configuration Manager com suporte para migração](../../core/migration/prerequisites-for-migration.md#BKMK_supportedmigrationversions) no tópico [Pré-requisitos para a migração no System Center Configuration Manager](../../core/migration/prerequisites-for-migration.md).  
+    >  Quando não há suporte para a versão do produto de uma hierarquia para migração para sua hierarquia de destino, atualize todos os sites e clientes na hierarquia de origem para uma versão compatível do produto. Depois de atualizar a hierarquia de origem para uma versão do produto com suporte, você poderá migrar entre as hierarquias. Para mais informações, consulte a seção [Versões do Configuration Manager com suporte para migração](../../core/migration/prerequisites-for-migration.md#BKMK_SupportedMigrationVersions) no tópico [Pré-requisitos para a migração no System Center Configuration Manager](../../core/migration/prerequisites-for-migration.md).  
 
 Use as seguintes informações para ajudá-lo a planejar a migração do cliente:  
 
@@ -98,13 +98,13 @@ Quando um cliente migra, as informações armazenadas no Registro do cliente do 
 
 Além disso, talvez seja necessário você reinstalar alguns aplicativos.  
 
-##  <a name="a-nameplanningforinventorydatamigrationa-plan-for-inventory-and-compliance-data-during-migration"></a><a name="Planning_for_Inventory_data_migration"></a> Planejar os dados de inventário e de conformidade durante a migração  
+##  <a name="a-nameplanningforinventorydatamigrationa-plan-for--inventory-and-compliance-data-during-migration"></a><a name="Planning_for_Inventory_data_migration"></a> Planejar os dados de inventário e de conformidade durante a migração  
 Os dados de inventário e de conformidade do cliente não são salvos quando você migra um cliente para a hierarquia de destino. Em vez disso, essa informação é recriada na hierarquia de destino quando o cliente envia primeiro informação a seu site atribuído. Para ajudar a reduzir os requisitos de largura de banda da rede e o processamento do servidor resultantes, é recomendável migrar um número pequeno de clientes por fase, em vez de um número grande de clientes de uma vez.  
 
  Além disso, você não pode migrar de uma hierarquia de origem as personalizações de inventário de hardware. É necessário introduzi-las na hierarquia de destino independentemente da migração. Para obter informações sobre como estender o inventário de hardware personalizado, consulte [Como configurar o inventário de hardware no System Center Configuration Manager](../../core/clients/manage/inventory/configure-hardware-inventory.md).  
 
 
 
-<!--HONumber=Nov16_HO1-->
+<!--HONumber=Dec16_HO3-->
 
 

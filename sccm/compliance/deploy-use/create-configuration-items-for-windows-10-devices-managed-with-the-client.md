@@ -1,8 +1,8 @@
 ---
-title: "Como criar itens de configuração para dispositivos Windows 10 gerenciados com o cliente do System Center Configuration Manager | System Center Configuration Manager"
+title: "Como criar itens de configuração para dispositivos Windows 10 gerenciados com o cliente do System Center Configuration Manager | Microsoft Docs"
 description: "Use o item de configuração do System Center Configuration Manager no Windows 10 para gerenciar configurações para computadores Windows 10 que são gerenciados pelo cliente do Configuration Manager."
 ms.custom: na
-ms.date: 10/06/2016
+ms.date: 11/18/2016
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
@@ -17,8 +17,8 @@ author: robstackmsft
 ms.author: robstack
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: 1134bb2f04152288e72d40b1b1083f415cb4e900
-ms.openlocfilehash: d5248e7262f758c2de2a1deaf42282d4e77e3e0c
+ms.sourcegitcommit: 1a4a9da88caba55d9e340c7fb1f31f4e3b957f3e
+ms.openlocfilehash: 2b24570aa2e9d9aa45584842011dcd49c6e5e8cc
 
 
 ---
@@ -125,7 +125,7 @@ Use o item de configuração do System Center Configuration Manager no **Windows
 |**Proteção contra vírus**|Exige que o software antivírus seja instalado e configurado.|  
 |**As assinaturas de proteção contra vírus estão atualizadas**|Exige que os arquivos de assinatura do software antivírus no dispositivo sejam atualizados.|  
 
-### <a name="windows-information-protection-formerly-enterprise-data-protection"></a>Proteção de Informações do Windows (anteriormente conhecida como Proteção de Dados Empresariais)
+### <a name="windows-information-protection"></a>Proteção de Informações do Windows
 
 Com o aumento do uso de dispositivos de funcionário dentro da empresa, aumenta também o risco de vazamentos acidentais de dados por meio de aplicativos e serviços, como email, mídia social e nuvem pública, que estão fora do controle da empresa. Por exemplo, quando um funcionário envia as imagens mais recentes de engenharia da sua conta de email pessoal, copia e cola informações do produto em um tweet ou salva um relatório de vendas em andamento no armazenamento de nuvem pública.
 
@@ -137,6 +137,6 @@ Para obter informações sobre como configurar a Proteção de Informações do 
 
 
 
-<!--HONumber=Nov16_HO1-->
+<!--HONumber=Dec16_HO3-->
 
 

@@ -1,8 +1,8 @@
 ---
-title: Monitorar clientes | System Center Configuration Manager
+title: Monitorar clientes | Microsoft Docs
 description: Saiba como monitorar e gerenciar clientes no System Center Configuration Manager.
 ms.custom: na
-ms.date: 10/06/2016
+ms.date: 11/27/2016
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
@@ -12,12 +12,12 @@ ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 110b65b3-2202-466f-bb5d-e5ee282506fc
 caps.latest.revision: 5
-author: Mtillman
-ms.author: mtillman
+author: nbigman
+ms.author: nbigman
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: 1134bb2f04152288e72d40b1b1083f415cb4e900
-ms.openlocfilehash: ea3358696496e761463b5da45e275dfc7f1ebd1d
+ms.sourcegitcommit: 593fbd0587d54490246f48ae54f666bac6b7830d
+ms.openlocfilehash: dbdc74cc2f94553745eb50aeadf6d33a54064c6b
 
 
 ---
@@ -25,7 +25,7 @@ ms.openlocfilehash: ea3358696496e761463b5da45e275dfc7f1ebd1d
 
 *Aplica-se a: System Center Configuration Manager (Branch Atual)*
 
-O System Center Configuration Manager fornece várias maneiras de monitorar e gerenciar o software cliente após sua implantação nos computadores e dispositivos de sua organização.  É possível monitorar os clientes para verificar seu status e, em alguns casos, o Configuration Manager pode executar a correção automática (ou correções) com base no problema detectado. O console do Configuration Manager também fornece maneiras para gerenciar clientes para dispositivos individuais ou coleções de dispositivos.  
+O System Center Configuration Manager (também conhecido como ConfigMgr ou SCCM) fornece várias maneiras de monitorar e gerenciar o software cliente após sua implantação nos computadores e dispositivos de sua organização.  É possível monitorar os clientes para verificar seu status e, em alguns casos, o Configuration Manager pode executar a correção automática (ou correções) com base no problema detectado. O console do Configuration Manager também fornece maneiras para gerenciar clientes para dispositivos individuais ou coleções de dispositivos.  
 
  Com as informações contidas nos seguintes tópicos a seguir, saiba como monitorar e gerenciar clientes, bem como obter detalhes adicionais para o monitoramento e gerenciamento de clientes para servidores Linux e UNIX:  
 
@@ -39,6 +39,6 @@ O System Center Configuration Manager fornece várias maneiras de monitorar e ge
 
 
 
-<!--HONumber=Nov16_HO1-->
+<!--HONumber=Dec16_HO3-->
 
 

@@ -1,5 +1,5 @@
 ---
-title: Gerenciar o acesso ao SharePoint Online | System Center Configuration Manager
+title: Gerenciar o acesso do SharePoint Online | Microsoft Docs
 description: "Saiba como usar a política de acesso condicional do SharePoint Online no System Center Configuration Manager para gerenciar o acesso ao OneDrive."
 ms.custom: na
 ms.date: 10/06/2016
@@ -13,12 +13,12 @@ ms.topic: article
 ms.assetid: c1b3fb75-f3ab-4886-9421-d81da7ef589d
 caps.latest.revision: 11
 caps.handback.revision: 0
-author: karthikaraman
-ms.author: karaman
+author: andredm7
+ms.author: andredm
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: 5c6cf3c1697b49708aa5192b67b08b700da7dc72
-ms.openlocfilehash: 84fdd9c1141c7bee5e331eacb136d9dc21837c0f
+ms.sourcegitcommit: c13c6268fa76ade7feb0981f9c4a6e325e393aca
+ms.openlocfilehash: 73fd4e26a16184cfb7f1535aa2e70911884ffdcc
 
 
 ---
@@ -164,7 +164,7 @@ Os aplicativos de área de trabalho do Office podem acessar o SharePoint Online 
 
 4.  Em **Acesso do navegador** para o SharePoint Online e o OneDrive for Business, você pode optar por permitir o acesso somente ao Exchange Online por meio dos navegadores com suporte: Safari (iOS) e Chrome (Android). O acesso de outros navegadores será bloqueado.  As mesmas restrições de plataforma selecionadas para Acesso do aplicativo para o OneDrive também se aplicarão aqui.
 
-    Em dispositivos **Android** , os usuários devem habilitar o acesso do navegador.  Para fazer isso, o usuário final deve habilitar a opção 'Habilitar o Acesso do Navegador' no dispositivo registrado da seguinte maneira:
+    Em dispositivos **Android** , os usuários devem habilitar o acesso do navegador.  Para fazer isso, o usuário final deve habilitar a opção “Habilitar o Acesso do Navegador” no dispositivo registrado da seguinte maneira:
     1.  Inicie o **aplicativo do Portal da Empresa**.
     2.  Vá para a página **Configurações** por meio dos três pontos (â€¦) ou do botão de menu do hardware.
     3.  Pressione o botão **Habilitar o Acesso do Navegador** .
@@ -204,6 +204,6 @@ Os aplicativos de área de trabalho do Office podem acessar o SharePoint Online 
 
 
 
-<!--HONumber=Nov16_HO1-->
+<!--HONumber=Dec16_HO3-->
 
 

@@ -1,5 +1,5 @@
 ---
-title: Configurando o gerenciamento de energia | System Center Configuration Manager
+title: Configurando o gerenciamento de energia | Microsoft Docs
 description: Configure o gerenciamento de energia no System Center Configuration Manager.
 ms.custom: na
 ms.date: 10/06/2016
@@ -17,8 +17,8 @@ author: robstackmsft
 ms.author: robstack
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: 1134bb2f04152288e72d40b1b1083f415cb4e900
-ms.openlocfilehash: ca1277ba0c2be68a393da930769151e25e997210
+ms.sourcegitcommit: 1a4a9da88caba55d9e340c7fb1f31f4e3b957f3e
+ms.openlocfilehash: e111ac2545dd9e0b96a50c10246bb75d286a737a
 
 
 ---
@@ -47,7 +47,7 @@ Para poder usar o gerenciamento de energia no System Center Configuration Manage
 
     -   **Permitir o gerenciamento de energia de dispositivos** – Na lista suspensa, selecione **True** para habilitar o gerenciamento de energia.  
 
-7.  Defina as configurações do cliente necessárias. Para obter uma lista de configurações do cliente de gerenciamento de energia que podem ser definidas, veja a seção [Gerenciamento de Energia](../../../../core/clients/deploy/about-client-settings.md#BKMK_PowMgmtDeviceSettings) no tópico [Sobre as configurações de cliente no System Center Configuration Manager](../../../../core/clients/deploy/about-client-settings.md).  
+7.  Defina as configurações do cliente necessárias. Para obter uma lista de configurações do cliente de gerenciamento de energia que podem ser definidas, veja a seção [Gerenciamento de Energia](../../../../core/clients/deploy/about-client-settings.md#power-management) no tópico [Sobre as configurações de cliente no System Center Configuration Manager](../../../../core/clients/deploy/about-client-settings.md).  
 
 8.  Clique em **OK** para fechar a caixa de diálogo **Configurações do Cliente Padrão** .  
 
@@ -88,6 +88,6 @@ Para poder usar o gerenciamento de energia no System Center Configuration Manage
 
 
 
-<!--HONumber=Nov16_HO1-->
+<!--HONumber=Dec16_HO3-->
 
 

@@ -1,5 +1,5 @@
 ---
-title: "Lista de verificação para 1606 | System Center Configuration Manager"
+title: "Lista de verificação para a 1606 | Microsoft Docs"
 description: "Saiba mais sobre as ações a serem executadas antes de atualizar do System Center Configuration Manager versão 1511 ou 1602 para a 1606."
 ms.custom: na
 ms.date: 10/06/2016
@@ -16,8 +16,8 @@ author: Brenduns
 ms.author: brenduns
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: 1134bb2f04152288e72d40b1b1083f415cb4e900
-ms.openlocfilehash: c22947072a857ce6217a30c2af03f050562d8bda
+ms.sourcegitcommit: 10b1010ccbf3889c58c55b87e70b354559243c90
+ms.openlocfilehash: ba087244ad52087f32acbe413b1e56c7478e4db6
 
 ---
 # <a name="checklist-for-installing-update-1606-for-system-center-configuration-manager"></a>Lista de verificação para instalar a atualização 1606 do System Center Configuration Manager
@@ -143,6 +143,6 @@ Para obter mais informações, confira **Etapa 3: Executar o verificador de pré
 
 
 
-<!--HONumber=Nov16_HO1-->
+<!--HONumber=Dec16_HO3-->
 
 

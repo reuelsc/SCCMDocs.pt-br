@@ -1,5 +1,5 @@
 ---
-title: "Selecionar métodos de descoberta | System Center Configuration Manager"
+title: "Selecionar métodos de descoberta | Microsoft Docs"
 description: "Examine as considerações sobre quais métodos usar e em quais sites executá-los."
 ms.custom: na
 ms.date: 10/06/2016
@@ -16,8 +16,8 @@ author: Brenduns
 ms.author: brenduns
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: 1134bb2f04152288e72d40b1b1083f415cb4e900
-ms.openlocfilehash: 7fa86796a9acd5e6baedd12f005bec58181f081b
+ms.sourcegitcommit: 10b1010ccbf3889c58c55b87e70b354559243c90
+ms.openlocfilehash: 54beff9bc8624d67efda7393db6334ebc96937d7
 
 ---
 # <a name="select-discovery-methods-to-use-for-system-center-configuration-manager"></a>Selecione os métodos de descoberta para usar com o System Center Configuration Manager
@@ -125,6 +125,6 @@ Existem dois métodos que podem ser usados para descobrir a infraestrutura de re
 
 
 
-<!--HONumber=Nov16_HO1-->
+<!--HONumber=Dec16_HO3-->
 
 

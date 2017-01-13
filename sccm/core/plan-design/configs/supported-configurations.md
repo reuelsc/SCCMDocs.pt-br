@@ -1,5 +1,5 @@
 ---
-title: "Configurações com suporte | System Center Configuration Manager"
+title: "Configurações com suporte | Microsoft Docs"
 description: "Identifique as principais configurações e requisitos para que você possa planejar, implantar e manter uma implantação funcional do System Center Configuration Manager."
 ms.custom: na
 ms.date: 10/06/2016
@@ -17,8 +17,8 @@ author: Brenduns
 ms.author: brenduns
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: 1134bb2f04152288e72d40b1b1083f415cb4e900
-ms.openlocfilehash: 170bd941bd123b998dd5d6235359aee97adc06bd
+ms.sourcegitcommit: 6ed317d45d90758832d4157985dd95d5e253c6fc
+ms.openlocfilehash: 041ad6cb585028ecd64bd03feb44250fea0286b0
 
 
 ---
@@ -73,6 +73,6 @@ Informações para ajudá-lo a usar as tecnologias de máquina virtual com supor
 
 
 
-<!--HONumber=Nov16_HO1-->
+<!--HONumber=Dec16_HO3-->
 
 

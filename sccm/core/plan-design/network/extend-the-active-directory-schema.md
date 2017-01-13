@@ -1,5 +1,5 @@
 ---
-title: Esquema do Active Directory | System Center Configuration Manager
+title: "Publicação e o esquema do Active Directory | Microsoft Docs"
 description: Estenda o esquema do Active Directory para o System Center Configuration Manager para simplificar o processo de implantar e configurar clientes.
 ms.custom: na
 ms.date: 10/06/2016
@@ -17,12 +17,12 @@ author: Brenduns
 ms.author: brenduns
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: 1134bb2f04152288e72d40b1b1083f415cb4e900
-ms.openlocfilehash: d4cdaa646265b2d05ec93aeaefaf3a6e7a2c269f
+ms.sourcegitcommit: 2083a2ca7a199771f26981cdbe04e4e2ef6e8958
+ms.openlocfilehash: 3bd18e2de76d886b275c80d0dce3b824f2598008
 
 
 ---
-# <a name="extend-the-active-directory-schema-for-system-center-configuration-manager"></a>Estender o esquema do Active Directory para o System Center Configuration Manager
+# <a name="prepare-active-directory-for-site-publishing"></a>Preparar o Active Directory para publicação de sites
 
 *Aplica-se a: System Center Configuration Manager (Branch Atual)*
 
@@ -70,7 +70,7 @@ Estender o esquema para o Configuration Manager exige que você:
 
 3.  Você pode verificar se a extensão do esquema foi bem-sucedida analisando um arquivo de log criado pela linha de comando usada na etapa anterior.  
 
-## <a name="step-2-create-the-system-management-container-and-grant-sites-permissions-to-the-container"></a>Etapa 2.  Criar contêiner do System Management e conceder permissões de sites para o contêiner  
+## <a name="step-2--create-the-system-management-container-and-grant-sites-permissions-to-the-container"></a>Etapa 2.  Criar contêiner do System Management e conceder permissões de sites para o contêiner  
  Depois de estender o esquema, você deve criar um contêiner denominado **Gerenciamento do Sistema** nos AD DS (Active Directory Domain Services):  
 
 -   Crie esse contêiner uma vez em cada domínio que tenha um site primário ou secundário que publicará dados no Active Directory  
@@ -114,6 +114,6 @@ Estender o esquema para o Configuration Manager exige que você:
 
 
 
-<!--HONumber=Nov16_HO1-->
+<!--HONumber=Dec16_HO3-->
 
 

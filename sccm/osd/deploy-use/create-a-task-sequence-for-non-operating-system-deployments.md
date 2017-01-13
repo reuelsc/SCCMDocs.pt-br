@@ -1,5 +1,5 @@
 ---
-title: "Criar uma sequência de tarefas para implantações que não sejam de sistema de operacional | Configuration Manager"
+title: "Criar uma sequência de tarefas para implantações que não são de sistema operacional | Microsoft Docs"
 description: "Crie sequências de tarefas que não estão relacionadas à implantação de sistemas operacionais, como distribuição de software, atualização de drivers, edição de estados do usuário, etc."
 ms.custom: na
 ms.date: 10/06/2016
@@ -16,8 +16,8 @@ author: Dougeby
 ms.author: dougeby
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: 1134bb2f04152288e72d40b1b1083f415cb4e900
-ms.openlocfilehash: bc8ef5912f753031191a677d58d5e88f62b8d36a
+ms.sourcegitcommit: 74341fb60bf9ccbc8822e390bd34f9eda58b4bda
+ms.openlocfilehash: ec146270ef39d48673ae6f3ca405b3f0bd7e8afa
 
 
 ---
@@ -58,6 +58,6 @@ As sequências de tarefas no System Center Configuration Manager são usadas par
 
 
 
-<!--HONumber=Nov16_HO1-->
+<!--HONumber=Dec16_HO3-->
 
 

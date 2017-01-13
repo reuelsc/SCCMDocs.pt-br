@@ -1,5 +1,5 @@
 ---
-title: "Avaliar o System Center Configuration Manager compilando seu próprio ambiente de laboratório"
+title: "Avaliar o System Center Configuration Manager compilando seu próprio ambiente de laboratório | Microsoft Docs"
 description: "Crie um ambiente de laboratório para avaliar o System Center Configuration Manager para uso em sua organização."
 ms.custom: na
 ms.date: 10/06/2016
@@ -17,8 +17,8 @@ author: brenduns
 ms.author: brenduns
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: 1134bb2f04152288e72d40b1b1083f415cb4e900
-ms.openlocfilehash: 363e6a929b72e027d5fff7584905fb552dc695b0
+ms.sourcegitcommit: 238ef5814c0c1b832c28d63c9f3879e21a6c439b
+ms.openlocfilehash: e72acbe0a2f5592b5bdf9a3612db62bfb066fadf
 
 
 ---
@@ -64,12 +64,12 @@ Saiba como criar um ambiente de laboratório para avaliar o System Center Config
 
 -   Aprenda a importância de funções de segurança em [Conceitos básicos da administração baseada em funções para o System Center Configuration Manager](../../core/understand/fundamentals-of-role-based-administration.md)  
 
--   Conhecer esses [Conceitos de gerenciamento de conteúdo](../../core/plan-design/hierarchy/fundamental-concepts-for-content-management.md#bkmk_Concepts) pode fornecer conceitos específicos relacionados ao gerenciamento de conteúdo  
+-   Conhecer esses [Conceitos de gerenciamento de conteúdo](../../core/plan-design/hierarchy/fundamental-concepts-for-content-management.md) pode fornecer conceitos específicos relacionados ao gerenciamento de conteúdo  
 
 -   [Entenda como os clientes encontram serviços e recursos do site para o System Center Configuration Manager](../../core/plan-design/hierarchy/understand-how-clients-find-site-resources-and-services.md) para dar suporte às operações diárias com êxito durante toda a sua implantação  
 
 
 
-<!--HONumber=Nov16_HO1-->
+<!--HONumber=Dec16_HO3-->
 
 
