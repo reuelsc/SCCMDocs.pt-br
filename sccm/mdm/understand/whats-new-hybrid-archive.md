@@ -16,8 +16,8 @@ ms.author: mtillman
 manager: angrobe
 ROBOTS: NOINDEX, NOFOLLOW
 translationtype: Human Translation
-ms.sourcegitcommit: 238ef5814c0c1b832c28d63c9f3879e21a6c439b
-ms.openlocfilehash: 086b350005e9665e8b91c11e664563f9687aca27
+ms.sourcegitcommit: 8f092ed5745c925f624f00efa9274895f0df7260
+ms.openlocfilehash: 1c469f89ee06ba8da80673db83e80e5c33618146
 
 ---
 # <a name="past-hybrid-features-with-system-center-configuration-manager-and-microsoft-intune"></a>Recursos híbridos anteriores com o System Center Configuration Manager e Microsoft Intune
@@ -87,7 +87,7 @@ Os novos recursos a seguir introduzidos em junho de 2016 estão disponíveis par
 
 - **Categorizar automaticamente dispositivos em coleções**
 
-  Você pode criar categorias de dispositivos, que podem ser usadas para colocar automaticamente os dispositivos em coleções de dispositivos ao usar o Configuration Manager com o Intune. Os usuários devem, então, escolher uma categoria de dispositivo ao registrar um dispositivo no Intune. Além disso, você pode alterar a categoria de um dispositivo do console do Configuration Manager. Para mais informações, confira [Categorizar automaticamente dispositivos em coleções](/sccm/core/get-started/capabilities-in-technical-preview-1606.md#dmp_category) em [Funcionalidades no Technical Preview 1606 do System Center Configuration Manager](/sccm/core/get-started/capabilities-in-technical-preview-1606.md).
+  Você pode criar categorias de dispositivos, que podem ser usadas para colocar automaticamente os dispositivos em coleções de dispositivos ao usar o Configuration Manager com o Intune. Os usuários devem, então, escolher uma categoria de dispositivo ao registrar um dispositivo no Intune. Além disso, você pode alterar a categoria de um dispositivo do console do Configuration Manager. Para mais informações, confira [Categorizar automaticamente dispositivos em coleções](/sccm/core/get-started/capabilities-in-technical-preview-1606#dmp_category) em [Funcionalidades no Technical Preview 1606 do System Center Configuration Manager](/sccm/core/get-started/capabilities-in-technical-preview-1606).
 
   > [!IMPORTANT]
   > Essa funcionalidade funciona com a versão de junho de 2016 do Microsoft Intune. Verifique se você atualizou para essa versão antes de experimentar esses procedimentos.
@@ -293,6 +293,6 @@ Não foi realizada a introdução de nenhum recurso híbrido novo em junho de 20
 
 
 
-<!--HONumber=Dec16_HO3-->
+<!--HONumber=Jan17_HO1-->
 
 
