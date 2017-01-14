@@ -1,13 +1,13 @@
 ---
-title: "Implantar os clientes Mac | Microsoft Docs"
-description: "Saiba como implantar clientes em computadores Mac no System Center Configuration Manager."
+title: Implantar os clientes Mac | Microsoft Docs
+description: Saiba como implantar clientes em computadores Mac no System Center Configuration Manager.
 ms.custom: na
 ms.date: 11/30/2016
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
 ms.technology:
-  - configmgr-client
+- configmgr-client
 ms.tgt_pltfrm: na
 ms.topic: get-started-article
 ms.assetid: e46ad501-5d73-44ac-92de-0de14ef72b83
@@ -15,6 +15,10 @@ caps.latest.revision: 12
 author: nbigman
 ms.author: nbigman
 manager: angrobe
+translationtype: Human Translation
+ms.sourcegitcommit: 66071227fd10a43f7cd4e64508494d485392ffcd
+ms.openlocfilehash: 6cbddd623767522a0026e0736b1f647fddbecfb6
+
 
 ---
 # <a name="how-to-deploy-clients-to-macs-in-system-center-configuration-manager"></a>How to deploy clients to Macs in System Center Configuration Manager
@@ -604,6 +608,7 @@ e. [Baixar os arquivos de origem do cliente para Mac](#download-the-client-sourc
      Por exemplo: **sudo defaults write com.microsoft.ccmclient SerialNumber -data "17D4391A00000003DB"**  
 
 17. Reinicie o Mac.  
+
 
 
 <!--HONumber=Dec16_HO3-->
