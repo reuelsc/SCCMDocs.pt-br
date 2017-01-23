@@ -2,7 +2,7 @@
 title: "Segurança e privacidade de perfis de Wi-Fi e VPN | Microsoft Docs"
 description: "Saiba mais sobre as práticas recomendadas de segurança para gerenciar perfis de Wi-Fi e VPN para dispositivos no System Center Configuration Manager."
 ms.custom: na
-ms.date: 10/19/2016
+ms.date: 12/28/2016
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
@@ -17,8 +17,8 @@ author: Nbigman
 ms.author: nbigman
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: bff083fe279cd6b36a58305a5f16051ea241151e
-ms.openlocfilehash: fb168e3af33648e06c2c6be77ddd7d0c1f65d95d
+ms.sourcegitcommit: 8a5dc7361da34f3e6b926acd35c72c0c0767ce70
+ms.openlocfilehash: 6d1d0a393a2ce614ae5f819475bd47b05e699b45
 
 
 ---
@@ -26,15 +26,12 @@ ms.openlocfilehash: fb168e3af33648e06c2c6be77ddd7d0c1f65d95d
 
 *Aplica-se a: System Center Configuration Manager (Branch Atual)*
 
-
-Este tópico contém as informações de segurança e privacidade para perfis de Wi-Fi e VPN no System Center Configuration Manager.  
-
-##  <a name="a-namebkmksecurityremoteconnectionsa-security-best-practices-for-wi-fi--and-vpn-profiles"></a><a name="BKMK_Security_RemoteConnections"></a> Práticas recomendadas de segurança para perfis de Wi-Fi e VPN  
+##  <a name="security-best-practices-for-wi-fi--and-vpn-profiles"></a>Práticas recomendadas de segurança para perfis de Wi-Fi e VPN  
  Use as seguintes práticas recomendadas de segurança ao gerenciar perfis de Wi-Fi e VPN para dispositivos.  
 
 |Prática recomendada de segurança|Mais informações|  
 |----------------------------|----------------------|  
-|Sempre que possível, escolha as opções mais seguras para as quais sua infraestrutura de Wi-Fi e VPN e sistemas operacionais cliente podem dar suporte.|Os perfis de Wi-Fi e VPN fornecem um método conveniente para distribuir e gerenciar de maneira centralizada as configurações de Wi-Fi e VPN que já têm suporte dos dispositivos. O System Center Configuration Manager não adiciona a funcionalidade de Wi-Fi ou VPN.<br /><br /> Identifique, implemente e siga as práticas recomendadas de segurança que foram sugeridas para os dispositivos e a infraestrutura.|  
+|Sempre que possível, escolha as opções mais seguras para as quais sua infraestrutura de Wi-Fi e VPN e sistemas operacionais cliente podem dar suporte.|Os perfis de Wi-Fi e VPN fornecem um método conveniente para distribuir e gerenciar de maneira centralizada as configurações de Wi-Fi e VPN que já têm suporte dos dispositivos. O Configuration Manager não adiciona a funcionalidade de Wi-Fi ou VPN.<br /><br /> Identifique, implemente e siga as práticas recomendadas de segurança que foram sugeridas para os dispositivos e a infraestrutura.|  
 
 ## <a name="privacy-information-for-wi-fi-profiles"></a>Informações de privacidade para perfis Wi-Fi  
  Você pode usar perfis Wi-Fi e VPN para configurar os dispositivos cliente que se conectam a servidores Wi-Fi e VPN e avaliar se esses dispositivos são compatíveis depois que os perfis forem aplicados. O ponto de gerenciamento envia informações de conformidade ao servidor do site, e essas informações são armazenadas no banco de dados do site. As informações são criptografadas quando os dispositivos as enviam para o ponto de gerenciamento, mas não são armazenadas em formato criptografado no banco de dados do site. O banco de dados mantém as informações até que a tarefa de manutenção de site **Excluir Dados Antigos de Gerenciamento da Configuração** as exclua. O intervalo de exclusão padrão é de 90 dias, mas você pode alterá-lo. As informações de conformidade não são enviadas à Microsoft.  
@@ -45,6 +42,6 @@ Este tópico contém as informações de segurança e privacidade para perfis de
 
 
 
-<!--HONumber=Dec16_HO3-->
+<!--HONumber=Dec16_HO5-->
 
 

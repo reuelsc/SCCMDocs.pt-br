@@ -17,8 +17,8 @@ author: Nbigman
 ms.author: nbigman
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: bff083fe279cd6b36a58305a5f16051ea241151e
-ms.openlocfilehash: 34e1f57798a9745303dd6d03a8b4362c01c5efbb
+ms.sourcegitcommit: 8a5dc7361da34f3e6b926acd35c72c0c0767ce70
+ms.openlocfilehash: 74a0a4274965891869caf838550cd9465b46fd51
 
 
 ---
@@ -27,46 +27,30 @@ ms.openlocfilehash: 34e1f57798a9745303dd6d03a8b4362c01c5efbb
 *Aplica-se a: System Center Configuration Manager (Branch Atual)*
 
 
-Após implantar perfis de certificado do System Center Configuration Manager para os usuários na sua hierarquia, você poderá usar os seguintes procedimentos para monitorar o status de conformidade do perfil:  
+##  <a name="view-compliance-results-in-the-configuration-manager-console"></a>Exibir Resultados de conformidade no Console do Configuration Manager  
 
--   [Como exibir resultados de conformidade no console do Configuration Manager](#BKMK_console)  
+Para monitorar a conformidade de certificado SCEP, não use o console, em vez disso, use [relatórios](#view-compliance-results-by-using-reports). 
 
--   [Como exibir resultados de conformidade por meio de relatórios](#BKMK_Reports)  
+1.  No console do Configuration Manager, escolha **Monitoramento**>  **Implantações**.  
 
-##  <a name="a-namebkmkconsolea-how-to-view-compliance-results-in-the-configuration-manager-console"></a><a name="BKMK_console"></a> Como exibir resultados de conformidade no console do Configuration Manager  
- Use este procedimento para exibir detalhes sobre a conformidade dos perfis de certificado implantados no console do System Center Configuration Manager.  
+3.  Selecione a implantação do perfil de certificado de interesse.  
 
-> [!NOTE]  
->  Para monitorar a conformidade de certificado SCEP, não use o console do Configuration Manager; em vez disso, use os relatórios conforme descrito em [How to View Compliance Results by Using Reports](#BKMK_Reports). Especificamente, use os relatórios do certificado localizados no nó de relatório **Acesso a Recursos da Empresa**:  
->   
->  -   Histórico de emissão de certificado  
-> -   Lista de ativos com certificados perto do vencimento  
-> -   Lista de ativos por status de emissão de certificado  
-
-#### <a name="to-view-compliance-results-in-the-configuration-manager-console"></a>Para exibir resultados de conformidade no console do Configuration Manager  
-
-1.  No console do System Center Configuration Manager, clique em **Monitoramento**.  
-
-2.  No espaço de trabalho **Monitoramento** , clique em **Implantações**.  
-
-3.  Na lista **Implantações** , selecione a implantação de perfil de certificado para a qual deseja examinar as informações de conformidade.  
-
-4.  Você pode examinar as informações de resumo sobre a conformidade do perfil de certificado na página principal. Para exibir informações mais detalhadas, selecione o perfil de certificado e, na guia **Início** , no grupo **Implantação** , clique em **Exibir Status** para abrir a página **Status da Implantação** .  
+4.  Examine o resumo das informações de conformidade do certificado na página principal. Para informações mais detalhadas, selecione o perfil de certificado e, em seguida, na guia **Início**, no grupo **Implantação**, escolha **Exibir Status** para abrir a página **Status da Implantação**.  
 
      A página **Status da Implantação** contém as seguintes guias:  
 
-    -   **Compatível**: exibe a conformidade do perfil de certificado com base no número de ativos afetados. Você pode clicar duas vezes em uma regra para criar um nó temporário no nó **Usuários** do espaço de trabalho **Ativos e Conformidade** . Esse nó contém todos os usuários que são compatíveis com o perfil de certificado. O painel **Detalhes do Ativo** também exibe os usuários que são compatíveis com esse perfil. Clique duas vezes em um usuário na lista para exibir informações adicionais.  
+    -   **Compatível**: exibe a conformidade do perfil de certificado com base no número de ativos afetados. Você pode clicar duas vezes em uma regra para criar um nó temporário no nó **Usuários** do espaço de trabalho **Ativos e Conformidade** . Esse nó contém todos os usuários que são compatíveis com o perfil de certificado. O painel **Detalhes do Ativo** também exibe os usuários que são compatíveis com esse perfil. Clique duas vezes em um usuário na lista para obter mais informações.  
 
         > [!IMPORTANT]  
         >  O perfil de certificado não será avaliado se não for aplicável a um dispositivo cliente. No entanto, ele é retornado como compatível.  
 
-    -   **Erro**: exibe uma lista de todos os erros da implantação do perfil de certificado selecionado com base no número de ativos afetados. Você pode clicar duas vezes em uma regra para criar um nó temporário no nó **Usuários** do espaço de trabalho **Ativos e Conformidade** . Esse nó contém todos os usuários que geraram erros com esse perfil. Quando você seleciona um usuário, o painel **Detalhes do Ativo** exibe os usuários afetados pelo problema selecionado. Clique duas vezes em um usuário na lista para exibir informações adicionais sobre o problema.  
+    -   **Erro**: exibe uma lista de todos os erros da implantação do perfil de certificado selecionado com base no número de ativos afetados. Você pode clicar duas vezes em uma regra para criar um nó temporário no nó **Usuários** do espaço de trabalho **Ativos e Conformidade** . Esse nó contém todos os usuários que geraram erros com esse perfil. Quando você seleciona um usuário, o painel **Detalhes do Ativo** exibe os usuários afetados pelo problema selecionado. Clique duas vezes para exibir um usuário da lista para obter mais informações.  
 
     -   **Não Compatível**: exibe uma lista de todas as regras não compatíveis no perfil de certificado com base no número de ativos afetados. Você pode clicar duas vezes em uma regra para criar um nó temporário no nó **Usuários** do espaço de trabalho **Ativos e Conformidade** . Esse nó contém todos os usuários que não são compatíveis com esse perfil. Quando você seleciona um usuário, o painel **Detalhes do Ativo** exibe os usuários afetados pelo problema selecionado. Clique duas vezes em um usuário na lista para exibir mais informações sobre o problema.  
 
     -   **Desconhecido**: exibe uma lista de todos os usuários que não relataram a conformidade para a implantação do perfil de certificado selecionado, junto com o status atual do cliente dos dispositivos.  
 
-5.  Na página **Status da Implantação** , você pode examinar informações detalhadas sobre a conformidade do perfil de certificado implantado. Um nó temporário é criado no nó **Implantações** , que ajuda você a localizar essas informações novamente com rapidez.  
+5.  Na página **Status da Implantação**, examine informações detalhadas sobre a conformidade do perfil de certificado implantado. Um nó temporário é criado no nó **Implantações** , que ajuda você a localizar essas informações novamente com rapidez.  
 
      O status de registro do certificado é exibido como um número. Use a tabela a seguir para entender o que significa cada número:  
 
@@ -80,17 +64,25 @@ Após implantar perfis de certificado do System Center Configuration Manager par
     |0x00000040|As informações de status foram ignoradas. Isso pode ocorrer se uma autoridade de certificação HYPERLINK "http://msdn.microsoft.com/en-us/windows/ms721572" \l "_security_certification_authority_gly" não for válida ou não tiver sido selecionada para o monitoramento.|  
     |0x00000100|O registro foi negado.|  
 
-##  <a name="a-namebkmkreportsa-how-to-view-compliance-results-by-using-reports"></a><a name="BKMK_Reports"></a> Como exibir resultados de conformidade por meio de relatórios
+##  <a name="view-compliance-results-by-using-reports"></a>Exibir resultados de conformidade por meio de relatórios
 
  As configurações de conformidade do System Center Configuration Manager incluem relatórios internos que podem ser usados para monitorar informações sobre perfis de certificado. Esses relatórios têm a categoria de relatório de **Gerenciamento de Conformidade e Configurações**.  
 
 > [!IMPORTANT]  
 >  Você deve usar um caractere curinga (%) ao utilizar os parâmetros **Filtro de dispositivo** e **Filtro de usuário** nos relatórios de configurações de conformidade.  
 
+Para monitorar a conformidade de certificado SCEP, use os relatórios de certificado localizados no nó de relatório **Acesso a Recursos da Empresa**:  
+
+ -   Histórico de emissão de certificado  
+ -   Lista de ativos com certificados perto do vencimento  
+ -   Lista de ativos por status de emissão de certificado  
+
+
+
  Para obter mais informações sobre como configurar relatórios no System Center Configuration Manager, consulte [Relatórios no System Center Configuration Manager](../../core/servers/manage/reporting.md).  
 
 
 
-<!--HONumber=Dec16_HO3-->
+<!--HONumber=Dec16_HO5-->
 
 

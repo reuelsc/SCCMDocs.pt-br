@@ -2,7 +2,7 @@
 title: Controle remoto | Microsoft Docs
 description: "Obtenha uma introdução ao controle remoto no System Center Configuration Manager."
 ms.custom: na
-ms.date: 10/06/2016
+ms.date: 12/26/2016
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
@@ -17,8 +17,8 @@ author: nbigman
 ms.author: nbigman
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: fc392e4440e84614f92218e9c7a09ec1c2c64f53
-ms.openlocfilehash: 00c9e6bff02d534af2be975e0d5d41bcf0e7cb1c
+ms.sourcegitcommit: 9206b82eca02877c30eebf146d42bcca7290eb42
+ms.openlocfilehash: 47bfeec5bd5d9b843e9064560d0cd0b14bd7d6a1
 
 
 ---
@@ -26,9 +26,9 @@ ms.openlocfilehash: 00c9e6bff02d534af2be975e0d5d41bcf0e7cb1c
 
 *Aplica-se a: System Center Configuration Manager (Branch Atual)*
 
-Use o controle remoto no System Center Configuration Manager para administrar remotamente, fornecer assistência ou exibir qualquer computador cliente na hierarquia. Você pode usar o controle remoto para resolver problemas de configuração de hardware e software em computadores cliente e para dar suporte técnico quando o acesso ao computador do usuário for necessário. O Configuration Manager dá suporte ao controle remoto de computadores de grupo de trabalho e computadores que ingressaram em um domínio do Active Directory.  
+Use o controle remoto para administrar remotamente, fornecer assistência ou exibir qualquer computador cliente na hierarquia. Você pode usar o controle remoto para resolver problemas de configuração de hardware e software em computadores cliente e para dar suporte. O Configuration Manager dá suporte ao controle remoto de computadores de grupo de trabalho e computadores ingressados em domínio.  
 
- Além disso, o Configuration Manager permite definir as configurações do cliente para executar a Área de Trabalho Remota e a Assistência Remota do Windows no console do Configuration Manager.  
+O Configuration Manager também permite definir as configurações do cliente para executar a Área de Trabalho Remota e a Assistência Remota do Windows no console do Configuration Manager.  
 
 > [!NOTE]  
 >  Não é possível estabelecer uma sessão de Assistência Remota no console do Configuration Manager para um computador cliente nos seguintes cenários:  
@@ -40,6 +40,6 @@ Use o controle remoto no System Center Configuration Manager para administrar re
 
 
 
-<!--HONumber=Dec16_HO3-->
+<!--HONumber=Dec16_HO5-->
 
 

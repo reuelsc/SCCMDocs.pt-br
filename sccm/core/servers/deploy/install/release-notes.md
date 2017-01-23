@@ -17,8 +17,8 @@ author: Brenduns
 ms.author: brenduns
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: ea723a6694feb2c9584b35498aa9c3519383f08d
-ms.openlocfilehash: a9dc046a54c15d9d299664cd1f2a149383f53489
+ms.sourcegitcommit: c6358d65609605bfef3ac533f4caa0df1cfce0c5
+ms.openlocfilehash: 73208c8e9ec15e96a6caaf20b74c1f94d92a8975
 
 
 ---
@@ -247,6 +247,12 @@ Por padrão, o assistente para Criar Planos de Manutenção atualmente é execut
 **Solução alternativa**:    
 depois de criar um plano de manutenção, abra as propriedades do plano de manutenção, vá para a guia **Agendamento de Avaliação**, escolha **Executar a regra em um agendamento**, clique em **Personalizar** e crie um agendamento personalizado. Por exemplo, o plano de manutenção pode ser agendado para ser executado a cada 60 dias.  
 
+### <a name="when-a-high-risk-deployment-dialog-is-visible-to-a-user-subsequent-high-risk-dialogs-with-a-sooner-deadline-are-not-displayed"></a>Quando uma caixa de diálogo de implantação de alto risco está visível para um usuário, as caixas de diálogo de alto risco subsequentes com uma data limite anterior não são exibidas
+Depois de criar e implantar uma implantação de tarefas de alto risco para usuários, uma caixa de diálogo de alto risco é exibida ao usuário. Se o usuário não fechar a caixa de diálogo, você criará e implantará outra implantação de alto risco com uma data limite antes que a primeira, o usuário não receberá uma caixa de diálogo atualizada até que ele feche a caixa de diálogo original. As implantações ainda serão executadas nas datas limite configuradas.
+
+**Solução alternativa**:  
+O usuário deve fechar a caixa de diálogo para a primeira implantação de alto risco para ver a caixa de diálogo para a próxima implantação de alto risco.
+
 ## <a name="mobile-device-management"></a>Gerenciamento de dispositivos móveis  
 
 ### <a name="cannot-create-an-enrollment-profile-on-a-primary-site"></a>Não é possível criar um perfil de registro em um site primário  
@@ -291,6 +297,6 @@ Esse problema afeta o acesso condicional do System Center Configuration Manager 
 
 
 
-<!--HONumber=Dec16_HO3-->
+<!--HONumber=Dec16_HO5-->
 
 

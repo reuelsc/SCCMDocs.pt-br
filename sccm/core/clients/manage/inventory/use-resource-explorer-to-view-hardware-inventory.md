@@ -2,7 +2,7 @@
 title: "Exibir inventário de hardware| Microsoft Docs | Gerenciador de Recursos"
 description: "Usar o Gerenciador de Recursos para exibir o inventário de hardware no System Center Configuration Manager."
 ms.custom: na
-ms.date: 10/06/2016
+ms.date: 01/03/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
@@ -16,8 +16,8 @@ author: nbigman
 ms.author: nbigman
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: fc392e4440e84614f92218e9c7a09ec1c2c64f53
-ms.openlocfilehash: 2cd138b3bbb437d84f0ff7c2aeef869518bd817d
+ms.sourcegitcommit: 05c27c7aa36e0b4236867766dab36125c31467b3
+ms.openlocfilehash: 6265ee70b70a715862b1651d2f3760bef096ee8a
 
 
 ---
@@ -30,11 +30,11 @@ Use o Gerenciador de Recursos no System Center Configuration Manager para exibir
 > [!NOTE]  
 >  Gerenciador de recursos não exibirá nenhum inventário dados até que um ciclo de inventário de hardware tenha executado no cliente que você estão se conectando.  
 
- O Gerenciador de Recursos no Configuration Manager contém as seguintes seções relacionadas ao inventário de hardware:  
+ O Gerenciador de Recursos contém as seguintes seções relacionadas ao inventário de hardware:  
 
--   **Hardware** ‑ Contém o inventário de hardware mais recente coletado especificado do dispositivo cliente do Configuration Manager. Você pode examinar o item de estoque **Status de estação de trabalho** para descobrir a hora e data em que o dispositivo executado pela última vez um inventário de hardware.  
+-   **Hardware** – contém o inventário de hardware mais recente coletado do dispositivo cliente especificado.  **Status da Estação de Trabalho** contém a hora e data em que o dispositivo executou um inventário de hardware pela última vez.  
 
--   **Histórico de hardware** – Contém um histórico de inventariado itens que foram alterados desde o último inventário de hardware foi executado. Cada item da lista contém um nó **Atual** e um ou mais nós de *<data\>*. Você pode comparar as informações do nó atual para um de nós do históricos para descobrir os itens que foram alterados no inventário de hardware de computadores cliente.  
+-   **Histórico de Hardware** – contém um histórico de itens inventariados que foram alterados desde a execução do último inventário de hardware. Cada item contém um nó **Atual** e um ou mais nós de *<data\>*. É possível comparar as informações do nó atual com um dos nós históricos para descobrir itens que foram alterados.  
 
     > [!NOTE]  
     >  O Configuration Manager retém o histórico de inventário de hardware para o número de dias que você especificar na tarefa de manutenção do site **Excluir históricos de inventários antigos**  
@@ -44,18 +44,15 @@ Use o Gerenciador de Recursos no System Center Configuration Manager para exibir
 
 ### <a name="how-to-run-resource-explorer-from-the-configuration-manager-console"></a>Como executar o Gerenciador de Recursos no console do Configuration Manager  
 
-1.  No console do Configuration Manager, clique em **Ativos e Conformidade**.  
+1.  No console do Configuration Manager, escolha **Ativos e Conformidade** > **Dispositivos** ou abra uma coleção que exibe os dispositivos.  
 
-2.  No espaço de trabalho **Ativos e Conformidade** , clique em **Dispositivos** ou abra qualquer coleção que exiba dispositivos.  
+3.  Escolha o computador que contém o inventário que você deseja exibir e, em seguida, na guia **Início** > grupo **Dispositivos**, escolha **Iniciar** >  **Gerenciador de Recursos**.   
 
-3.  Clique no computador que contém o inventário que você deseja exibir e, na guia **Início** , no grupo **Dispositivos** , clique em **Iniciar** e em **Gerenciador de Recursos**. O **Resource Explorer** janela será aberta.  
-
-4.  Você pode clicar com o botão direito do mouse em qualquer item no painel direito da janela do **Gerenciador de Recursos** e clicar em **Propriedades** para abrir a caixa de diálogo *Propriedades\>***do <nome do item**, que pode ajudar você a exibir as informações de inventário coletadas em um formato mais legível.  
-
-5.  Quando tiver terminado, feche a janela **Gerenciador de Recursos** .  
+4.  Clique com o botão direito do mouse em qualquer item do painel direito da janela **Gerenciador de Recursos** e escolha **Propriedades** para abrir a caixa de diálogo *Propriedades do <nome do item\>***** para exibir as informações de inventário coletadas em um formato mais legível.  
 
 
 
-<!--HONumber=Dec16_HO3-->
+
+<!--HONumber=Jan17_HO1-->
 
 

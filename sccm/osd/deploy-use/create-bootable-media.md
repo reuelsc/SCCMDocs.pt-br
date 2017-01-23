@@ -2,7 +2,7 @@
 title: "Criar uma mídia inicializável | Microsoft Docs"
 description: "Mídias inicializáveis no Configuration Manager facilitam a instalação de uma nova versão do Windows ou substituir um computador e transferir as configurações."
 ms.custom: na
-ms.date: 12/06/2016
+ms.date: 12/21/2016
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
@@ -17,8 +17,8 @@ author: Dougeby
 ms.author: dougeby
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: 03722ff4f480cd26842e395fe1f7ec8359e2b33e
-ms.openlocfilehash: a7bdad82dc55b4c0fe7d892ef34cc6aa0dfbf476
+ms.sourcegitcommit: 66cd6d099acdd9db2bc913a69993aaf5e17237fe
+ms.openlocfilehash: 0a4c2b41f899f6e243e7eb825082514114226a8f
 
 
 ---
@@ -47,7 +47,7 @@ Mídias inicializáveis no Configuration Manager contém a imagem de inicializa�
 
  Use o procedimento a seguir para criar mídia inicializável.  
 
-#### <a name="to-create-bootable-media"></a>Para criar mídia inicializável  
+### <a name="to-create-bootable-media"></a>Para criar mídia inicializável  
 
 1.  No console do Configuration Manager, clique em **Biblioteca de Software**.  
 
@@ -146,11 +146,18 @@ Mídias inicializáveis no Configuration Manager contém a imagem de inicializa�
 
 10. Conclua o assistente.  
 
+## <a name="create-bootable-media-on-a-usb-drive-from-a-network-share"></a>Criar uma mídia inicializável em uma unidade USB de um compartilhamento de rede
+As informações nesta seção ajudam a criar mídia inicializável em uma unidade flash USB quando a unidade flash não está conectada ao computador que executa o console do Configuration Manager. Para criar a mídia inicializável na unidade USB, você pode criar uma mídia de inicialização de sequência de tarefas, montar o ISO e transferir os arquivos do ISO para a unidade USB.
+
+1. [Criar a mídia de inicialização de sequência de tarefas](#to-create-task-boobable-media). Na página **Tipo de mídia**, selecione **Conjunto de CD/DVD**. O assistente grava os arquivos de saída no local que você especificar. Por exemplo: **\\\nomedoservidor\pasta\arquivodesaida.iso**.  
+2. Preparar a unidade USB removível. A unidade deve estar formatada, vazia e inicializável.
+3. Monte o ISO do local de compartilhamento e transfira os arquivos do ISO para a unidade USB.
+
 ## <a name="next-steps"></a>Próximas etapas  
 [Use a mídia inicializável para implantar o Windows na rede](use-bootable-media-to-deploy-windows-over-the-network.md)  
 
 
 
-<!--HONumber=Dec16_HO3-->
+<!--HONumber=Dec16_HO4-->
 
 

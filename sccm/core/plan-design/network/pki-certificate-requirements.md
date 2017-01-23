@@ -16,8 +16,8 @@ author: Nbigman
 ms.author: nbigman
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: db0642e95bbd7e704d2052aa1e0f5c27cd7bf568
-ms.openlocfilehash: 00c3c355fc43eff18b86112b0b9272cbcdf38e85
+ms.sourcegitcommit: eff38aafbbbbb077ca63474cde738ee8ec57307a
+ms.openlocfilehash: 186a9f1a58c2c4d123c14a8774999dbc19e77dac
 
 
 ---
@@ -32,7 +32,7 @@ Os certificados PKI (infraestrutura de chave pública) que podem ser necessário
 -   Para o Windows Server 2008: [Serviços de Certificados do Active Directory no Windows Server 2008](http://go.microsoft.com/fwlink/p/?LinkId=115018)  
 
 > [!IMPORTANT]  
->  A partir de 1 de janeiro de 2017, o Windows não confiará mais em certificados assinados com SHA-1.  É recomendável que você emita novos certificados de autenticação de cliente e servidor assinados com SHA-2 (que inclui o SHA-256).  
+>  A partir de 1 de janeiro de 2017, o Windows não confiará mais em determinados certificados assinados com SHA-1.  É recomendável que você emita novos certificados de autenticação de cliente e servidor assinados com SHA-2 (que inclui o SHA-256).  
 >   
 >  Para obter mais detalhes sobre essa alteração e possíveis atualizações até os prazos, siga esta postagem de blog: [Imposição do Windows quanto assinatura de código Authenticode e carimbo de data/hora](http://social.technet.microsoft.com/wiki/contents/articles/32288.windows-enforcement-of-authenticode-code-signing-and-timestamping.aspx)  
 

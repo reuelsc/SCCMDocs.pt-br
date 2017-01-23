@@ -2,7 +2,7 @@
 title: "Monitorar o conteúdo | Microsoft Docs"
 description: "Entenda como monitorar o conteúdo distribuído usando o console do Configuration Manager."
 ms.custom: na
-ms.date: 10/06/2016
+ms.date: 1/4/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
@@ -16,8 +16,8 @@ author: Brenduns
 ms.author: brenduns
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: 1a4a9da88caba55d9e340c7fb1f31f4e3b957f3e
-ms.openlocfilehash: 9a5d2c3a3c6bdca05b5b00fa4d746c437a56ef89
+ms.sourcegitcommit: 4d34a272a93100426cccd2308c5b3b0b0ae94a60
+ms.openlocfilehash: 60f30fd6477f1ee8755e50ceb9cc17d43ef8ea68
 
 ---
 # <a name="monitor-content-you-have-distributed-with-system-center-configuration-manager"></a>Monitorar o conteúdo que você distribuiu com o System Center Configuration Manager
@@ -156,12 +156,21 @@ Começando da versão 1610, é possível usar o painel **Fontes de Dados do Clie
 > [!TIP]  
 > Com a versão 1610, o cache de pares e o painel de fontes de dados do cliente são recursos de pré-lançamento. Para habilitá-los, confira [Usar recursos de pré-lançamento de atualizações](/sccm/core/servers/manage/install-in-console-updates#bkmk_prerelease).
 
-No console, acesse **Monitoramento** > **Status do Cliente** > **Fontes de Dados do Cliente**. Aqui você pode escolher um período de tempo para aplicar ao painel. Em seguida, na exibição, escolha o grupo de limites ou o pacote do qual quer ver informações. Ao exibir as informações, você pode passar o mouse sobre a superfície para ver mais detalhes sobre conteúdo ou as origens da política.  
+No console, acesse **Monitoramento** > **Status do Cliente** > **Fontes de Dados do Cliente**. Aqui você pode escolher um período de tempo para aplicar ao painel. Em seguida, na exibição, escolha o grupo de limites ou o pacote do qual quer ver informações. Ao exibir as informações, você pode passar o mouse sobre a superfície para ver mais detalhes sobre conteúdo ou as origens da política.
+
+Detalhes:  
+- **Fontes de Conteúdo de Cliente**: exibe a origem da qual os clientes obtiveram conteúdos.
+- **Pontos de distribuição**: exibe o número de pontos de distribuição que fazem parte do Grupo de Limites selecionado.
+- **Clientes que usaram um ponto de distribuição**: com base no número de clientes que está no Grupo de Limites selecionado, mostra quantos usaram um ponto de distribuição para obter conteúdo.
+- **Fontes de Cache de Pares**: mostra quantas fontes de cache de pares reportaram histórico de downloads para o Grupo de Limites selecionado.
+- **Clientes que usaram um par**: com base no número de clientes que está no Grupo de Limites selecionado, mostra quantos usaram uma fonte de cache de pares para obter conteúdo.
+
+
 
 Também é possível usar um novo relatório, **Fontes de Dados do Cliente — Resumo**, para exibir um resumo das fontes de dados do cliente de cada grupo de limites.
 
 
 
-<!--HONumber=Dec16_HO3-->
+<!--HONumber=Jan17_HO1-->
 
 

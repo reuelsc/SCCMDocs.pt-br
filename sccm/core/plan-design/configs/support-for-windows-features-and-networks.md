@@ -2,7 +2,7 @@
 title: Suporte para recursos do Windows | Microsoft Docs
 description: "Saiba a quais recursos de rede e do Windows o System Center Configuration Manager dá suporte."
 ms.custom: na
-ms.date: 10/06/2016
+ms.date: 1/3/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
@@ -17,8 +17,8 @@ author: Brenduns
 ms.author: brenduns
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: 6ed317d45d90758832d4157985dd95d5e253c6fc
-ms.openlocfilehash: 29e4f8a70b56b772a54ee858a392533780ccbaf9
+ms.sourcegitcommit: 086efdd180ba3de12f84cabfa6c2abca1fe57537
+ms.openlocfilehash: 3315098f271a5b365914772943094c33f63f25c4
 
 
 ---
@@ -30,27 +30,29 @@ Este tópico identifica o suporte do System Center Configuration Manager para re
 
 
 ##  <a name="a-namebkmkbranchcachea-branchcache"></a><a name="bkmk_branchcache"></a> BranchCache  
-O Windows BranchCache é integrado no Configuration Manager. É possível definir as configurações do BranchCache em um tipo de implantação de aplicativos, na implantação de um pacote e de sequência de tarefas.  
+O Windows BranchCache é integrado ao Configuration Manager. É possível definir as configurações do BranchCache em um tipo de implantação de aplicativos, na implantação de um pacote e de sequência de tarefas.  
 
-Quando todos os requisitos do BranchCache forem atendidos, esse recurso habilita clientes em locais remotos para obter conteúdo de clientes locais que têm um cache atual do conteúdo.  
+Quando todos os requisitos do BranchCache são atendidos, esse recurso permite que os clientes em locais remotos obtenham o conteúdo de clientes locais que têm um cache atual do conteúdo.  
 
-Por exemplo, quando o primeiro computador cliente habilitado para BranchCache solicitar conteúdo de um ponto de distribuição configurado como um servidor do BranchCache, o computador cliente baixará e armazenará o conteúdo em cache. Depois, esse conteúdo é disponibilizado para clientes na mesma sub-rede que solicita esse mesmo conteúdo, e os clientes também armazenam o conteúdo em cache. Dessa maneira, os clientes sucessivos na mesma sub-rede não precisam baixar o conteúdo do ponto de distribuição, e o conteúdo é distribuído entre vários clientes para transferências futuras.  
+Por exemplo, quando o primeiro computador cliente habilitado para BranchCache solicitar conteúdo de um ponto de distribuição configurado como um servidor do BranchCache, o computador cliente baixará e armazenará o conteúdo em cache. Esse conteúdo é então disponibilizado para os clientes na mesma sub-rede que o solicitou.
+
+Esses clientes também armazenam o conteúdo em cache. Dessa maneira, os clientes sucessivos na mesma sub-rede não precisam baixar o conteúdo do ponto de distribuição, e o conteúdo é distribuído entre vários clientes para transferências futuras.  
 
 **Para dar suporte ao BranchCache com o Configuration Manager:**  
 
 -   Adicione o recurso **Windows BranchCache** ao servidor do sistema de sites configurado como um ponto de distribuição.  
 
-    -   Os pontos de distribuição nos servidores configurados para dar suporte ao BranchCache não exigem nenhuma configuração adicional  
+    -   Os pontos de distribuição nos servidores configurados para dar suporte ao BranchCache não exigem nenhuma configuração adicional.  
 
-    -   Não é possível adicionar o Windows BranchCache a um ponto de distribuição baseado em nuvem, mas os pontos de distribuição baseados em nuvem dão suporte para o download de conteúdo por clientes configurados para o Windows BranchCache  
+    -   Não é possível adicionar o Windows BranchCache a um ponto de distribuição baseado em nuvem, mas os pontos de distribuição baseados em nuvem dão suporte para o download de conteúdo em clientes configurados para o Windows BranchCache.  
 
 **Para permitir que os clientes usem o BranchCache:**  
 
--   Os clientes que dão suporte ao BranchCache devem ser configurados para o modo distribuído do BranchCache  
+-   Os clientes que dão suporte ao BranchCache devem ser configurados para o modo distribuído do BranchCache.  
 
--   A configuração do sistema operacional para as configurações do cliente BITS deve estar habilitada para dar suporte ao BranchCache  
+-   A configuração do sistema operacional para as configurações do cliente BITS deve estar habilitada para dar suporte ao BranchCache.  
 
-**Há suporte para os seguintes sistemas operacionais cliente com o Windows BranchCache:**  
+**O Configuration Manager dá suporte aos seguintes sistemas operacionais cliente com o Windows BranchCache:**  
 
 |Sistema operacional|Detalhes do suporte|  
 |----------------------|---------------------|  
@@ -58,7 +60,7 @@ Por exemplo, quando o primeiro computador cliente habilitado para BranchCache so
 |Windows 8|Com suporte por padrão|  
 |Windows 8.1|Com suporte por padrão|  
 |Windows 10|Com suporte por padrão|  
-|Windows Server 2008 com SP2|**Requer BITS 4.0** – é possível instalar a versão 4.0 do BITS em clientes do Configuration Manager usando atualizações de software ou distribuição de software. Para obter mais informações sobre a versão do BITS 4.0, consulte [Windows Management Framework](http://go.microsoft.com/fwlink/p/?LinkId=181979).<br /><br /> Nesse sistema operacional, não há suporte para a funcionalidade de cliente do BranchCache para distribuição de software executada da rede ou para transferências de arquivos SMB. Além disso, esse sistema operacional não pode usar a funcionalidade do BranchCache com pontos de distribuição baseados em nuvem.|  
+|Windows Server 2008 com SP2|**Exige o BITS 4.0**: é possível instalar a versão BITS 4.0 em clientes do Configuration Manager usando as atualizações de software ou a distribuição de software. Para obter mais informações sobre a versão do BITS 4.0, consulte [Windows Management Framework](http://go.microsoft.com/fwlink/p/?LinkId=181979).<br /><br /> Nesse sistema operacional, não há suporte para a funcionalidade de cliente do BranchCache para distribuição de software executada da rede ou para transferências de arquivos SMB. Além disso, esse sistema operacional não pode usar a funcionalidade do BranchCache com pontos de distribuição baseados em nuvem.|  
 |Windows Server 2008 R2|Com suporte por padrão|  
 |Windows Server 2012|Com suporte por padrão|  
 |Windows Server 2012 R2|Com suporte por padrão|  
@@ -71,7 +73,7 @@ O Configuration Manager dá suporte a clientes em grupos de trabalho.
 -   O Configuration Manager dá suporte à movimentação de um cliente de um grupo de trabalho para um domínio ou de um domínio para um grupo de trabalho. Para obter mais informações, consulte [How to Install Configuration Manager Clients on Workgroup Computers (Como instalar clientes do Configuration Manager em computadores do grupo de trabalho)](../../../core/clients/deploy/deploy-clients-to-windows-computers.md#BKMK_ClientWorkgroup) no tópico [Como implantar clientes em computadores Windows no System Center Configuration Manager](../../../core/clients/deploy/deploy-clients-to-windows-computers.md).  
 
 > [!NOTE]  
->  Embora haja suporte para clientes em grupos de trabalho, todos os sistemas de sites devem ser membros de um Domínio do Active Directory com suporte  
+>  Embora haja suporte para clientes em grupos de trabalho, todos os sistemas de sites devem ser membros de um Domínio do Active Directory com suporte.  
 
 
 ##  <a name="a-namebkmmkdatadedupa-data-deduplication"></a><a name="bkmmk_datadedup"></a> Eliminação de duplicação de dados  
@@ -82,20 +84,20 @@ O Configuration Manager dá suporte ao uso da eliminação de duplicação de da
 -   Windows Server 2012 R2  
 
 > [!IMPORTANT]  
->  O volume que hospeda os arquivos de origem do pacote não pode ser marcado para a eliminação de duplicação de dados. Isso ocorre, porque a eliminação de duplicação de dados usa os pontos de nova análise e o Configuration Manager não dá suporte ao uso de um local de origem do conteúdo com arquivos armazenados nos pontos de nova análise.  
+>  O volume que hospeda os arquivos de origem do pacote não pode ser marcado para a eliminação de duplicação de dados. Isso ocorre porque a eliminação de duplicação de dados usa os pontos de nova análise e o Configuration Manager não dá suporte ao uso de um local de origem do conteúdo com arquivos armazenados em pontos de nova análise.  
 
 Para obter mais informações, consulte [Configuration Manager Distribution Points and Windows Server 2012 Data Deduplication (Pontos de distribuição do Configuration Manager e eliminação de duplicação de dados do Windows Server 2012)](http://blogs.technet.com/b/configmgrteam/archive/2014/02/18/configuration-manager-distribution-points-and-windows-server-2012-data-deduplication.aspx) no blog da equipe do Configuration Manager e [Visão geral de eliminação de duplicação de dados](http://technet.microsoft.com/library/hh831602.aspx) na biblioteca do TechNet do Windows Server.  
 
 ##  <a name="a-namebkmkdaa-directaccess"></a><a name="bkmk_DA"></a> DirectAccess  
 O Configuration Manager dá suporte ao recurso DirectAccess no Windows Server 2008 R2 para a comunicação entre clientes e servidores do sistema de sites.  
 
--   Quando todos os requisitos do DirectAccess são atendidos com este recurso, os clientes do Configuration Manager na Internet podem se comunicar com seu site atribuído como se estivessem na intranet.  
+-   Quando todos os requisitos do DirectAccess são atendidos, o DirectAccess permite que os clientes do Configuration Manager na Internet se comuniquem com seu site atribuído como se estivessem na intranet.  
 
 -   Para as ações iniciadas pelo servidor, como o controle remoto e a instalação por push do cliente, o computador de inicialização (como o servidor do site) deve executar o IPv6, e deve haver suporte para esse protocolo em todos os dispositivos de rede intermediários.  
 
 O Configuration Manager não dá suporte aos seguintes com o DirectAccess:  
 
--   Implantação de sistemas operacionais  
+-   A implantação de sistemas operacionais  
 
 -   Comunicação entre sites do Configuration Manager  
 
@@ -120,7 +122,9 @@ O Configuration Manager não dá suporte aos seguintes com o DirectAccess:
  Não há suporte para a NAT (Conversão de Endereços de Rede) no Configuration Manager, a menos que o site dê suporte aos clientes na Internet e o cliente detectar que ele está conectado à Internet. Para obter mais informações sobre gerenciamento de clientes baseado na Internet, consulte [Plan for managing Internet-based clients in System Center Configuration Manager (Planejar o gerenciamento de clientes baseado na Internet no System Center Configuration Manager)](../../../core/clients/deploy/plan/plan-for-managing-internet-based-clients.md).  
 
 ##  <a name="a-namebkmkstoragea-specialized-storage-technology"></a><a name="bkmk_storage"></a> Tecnologia de armazenamento especializado  
- O Configuration Manager funciona com qualquer hardware certificado na Lista de Compatibilidade de Hardware do Windows para a versão do sistema operacional na qual o componente do Configuration Manager está instalado. As funções do servidor do site exigem sistemas de arquivos NTFS para que as permissões de diretório e arquivo possam ser definidas. Como o Configuration Manager presume que tem propriedade total de uma unidade lógica, os sistemas de sites executados em computadores separados não podem compartilhar uma partição lógica em qualquer tecnologia de armazenamento. No entanto, cada computador pode usar uma partição lógica separada na mesma partição física de um dispositivo de armazenamento compartilhado.  
+ O Configuration Manager funciona com qualquer hardware certificado na Lista de Compatibilidade de Hardware do Windows para a versão do sistema operacional na qual o componente do Configuration Manager está instalado.
+
+As funções do servidor do site exigem sistemas de arquivos NTFS para que as permissões de diretório e arquivo possam ser definidas. Como o Configuration Manager presume que tem propriedade total de uma unidade lógica, os sistemas de sites executados em computadores separados não podem compartilhar uma partição lógica em qualquer tecnologia de armazenamento. No entanto, cada computador pode usar uma partição lógica separada na mesma partição física de um dispositivo de armazenamento compartilhado.  
 
  **Considerações de suporte:**  
 
@@ -130,10 +134,10 @@ O Configuration Manager não dá suporte aos seguintes com o DirectAccess:
 
      Além disso, não há suporte para o cache de um cliente do Configuration Manager em um volume habilitado para o SIS.  
 
--   **Unidade de disco removível**: O Configuration Manager não dá suporte à instalação do sistema de sites ou dos clientes do Configuration Manager em uma unidade de disco removível.  
+-   **Unidade de disco removível**: o Configuration Manager não dá suporte à instalação do sistema de sites ou dos clientes do Configuration Manager em uma unidade de disco removível.  
 
 
 
-<!--HONumber=Dec16_HO3-->
+<!--HONumber=Jan17_HO1-->
 
 

@@ -17,8 +17,8 @@ author: Brenduns
 ms.author: brenduns
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: 6ed317d45d90758832d4157985dd95d5e253c6fc
-ms.openlocfilehash: 041ad6cb585028ecd64bd03feb44250fea0286b0
+ms.sourcegitcommit: 6b8601a195e81e011c49ae8662ae224f36c82c0d
+ms.openlocfilehash: aad46e9ab893b9bb3e32d35c17b9678b3a265c99
 
 
 ---
@@ -26,53 +26,55 @@ ms.openlocfilehash: 041ad6cb585028ecd64bd03feb44250fea0286b0
 
 *Aplica-se a: System Center Configuration Manager (Branch Atual)*
 
-Como uma solução local, o System Center Configuration Manager usa servidores, clientes, configurações de rede e outros produtos como o Microsoft Intune, o SQL Server e o Azure.
+Como uma solução local, o System Center Configuration Manager usa seus servidores, clientes, configurações de rede e outros produtos como Microsoft Intune, SQL Server e Azure.
 
-As informações deste e dos tópicos a seguir são essenciais para identificar as principais configurações e requisitos ou limitações para planejar, implantar e manter uma implantação funcional do Configuration Manager.  Essas informações são específicas para a infraestrutura dos sites, hierarquia e dispositivos gerenciados do Configuration Manager. Quando um recurso ou uma funcionalidade do Configuration Manager ou requer configurações mais específicas, essas informações serão incluídas com a documentação específica do recurso e complementarão esses detalhes de configuração com suporte mais gerais.  
+As informações descritas neste e nos tópicos a seguir são essenciais para ajudá-lo a identificar as principais configurações, os requisitos e as limitações, para que você possa planejar, implantar e manter uma implantação funcional do Configuration Manager.  Essas informações são específicas à infraestrutura dos sites, das hierarquia e dos dispositivos gerenciados do Configuration Manager.
 
- Há suporte para os produtos e tecnologias detalhados nos tópicos a seguir no Configuration Manager. No entanto, sua inclusão neste conteúdo não expressa uma extensão do suporte para qualquer produto além do ciclo de vida de suporte individual desses produtos. Os produtos além de seu ciclo de vida de suporte não têm suporte para uso com o Configuration Manager. Para obter mais informações sobre os Ciclos de vida de suporte da Microsoft, visite o site [Ciclo de Vida do Suporte da Microsoft](http://go.microsoft.com/fwlink/p/?LinkId=208270) .  
+Quando um recurso ou uma funcionalidade do Configuration Manager exige configurações mais específicas, essas informações são incluídas na documentação específica ao recurso e são complementares aos detalhes de configuração mais gerais.  
+
+ No Configuration Manager, há suporte para os produtos e as tecnologias descritos nos tópicos a seguir. No entanto, sua inclusão neste conteúdo não implica uma extensão de suporte para um produto além do ciclo de vida de suporte individual desse produto. Os produtos além de seu ciclo de vida de suporte não têm suporte para uso com o Configuration Manager. Para obter mais informações sobre os Ciclos de vida de suporte da Microsoft, visite o site [Ciclo de Vida do Suporte da Microsoft](http://go.microsoft.com/fwlink/p/?LinkId=208270) .  
 
 > [!NOTE]  
 >  Para obter informações sobre a política de ciclo de vida de suporte da Microsoft, acesse o site de perguntas frequentes sobre a Política de Ciclo de Vida do Suporte da Microsoft em [Microsoft Support Lifecycle Policy FAQ (Perguntas frequentes sobre a Política de Ciclo de Vida do Suporte da Microsoft)](http://go.microsoft.com/fwlink/p/?LinkId=31976).  
 
- Além disso, os produtos e versões do produto que não estão listados nos tópicos a seguir não têm suporte com o System Center Configuration Manager, a menos que eles tenham sido apresentados no [Enterprise Mobility and Security Blog (Blog do Enterprise Mobility and Security)](https://blogs.technet.microsoft.com/enterprisemobility/).  Às vezes, o conteúdo desse blog antecipará uma atualização para este corpo da documentação.
+ Além disso, os produtos e versões do produto que não estão listados nos tópicos a seguir não têm suporte com o System Center Configuration Manager, a menos que eles tenham sido apresentados no [Enterprise Mobility and Security Blog (Blog do Enterprise Mobility and Security)](https://blogs.technet.microsoft.com/enterprisemobility/).  Às vezes, o conteúdo desse blog precede uma atualização neste corpo da documentação.
 
 
 -  [Números de tamanho e escala](../../../core/plan-design/configs/size-and-scale-numbers.md)  
-Detalhes sobre quantos sites, funções do sistema de sites por site e os clientes ou dispositivos têm suporte em diferentes designs de hierarquia do Configuration Manager.
+Saiba mais sobre quantos sites, funções do sistema de sites por site e clientes ou dispositivos têm suporte em diferentes designs de hierarquia do Configuration Manager.
 
 -  [Pré-requisitos de sites e do sistema de sites](../../../core/plan-design/configs/site-and-site-system-prerequisites.md)  
-Configurações necessárias em um servidor Windows para dar suporte a diferentes tipos de site e de funções do sistema de sites.
+Saiba mais sobre as configurações necessárias em um Windows Server para dar suporte a diferentes tipos de site e funções do sistema de sites.
 
 -  [Sistemas operacionais com suporte para servidores de sistema de sites](../../../core/plan-design/configs/supported-operating-systems-for-site-system-servers.md)  
-Saiba quais sistemas operacionais é possível usar como um servidor do site ou servidor de sistema de sites.
+Saiba quais sistemas operacionais podem ser usados como um servidor do site ou servidor do sistema de sites.
 
 -  [Sistemas operacionais com suporte para clientes e dispositivos](../../../core/plan-design/configs/supported-operating-systems-for-clients-and-devices.md)  
-Saiba quais sistemas operacionais é possível gerenciar com o Configuration Manager, incluindo Windows, Linux e UNIX, Mac, sistemas operacionais incorporados e dispositivos móveis.
+Saiba quais sistemas operacionais podem ser gerenciados com o Configuration Manager, incluindo Windows, Windows Embedded, Linux e UNIX, Mac e dispositivos móveis.
 
 -  [Sistemas operacionais com suporte para o console](../../../core/plan-design/configs/supported-operating-systems-consoles.md)  
 Saiba quais sistemas operacionais podem hospedar o console do Configuration Manager para fornecer um ponto de acesso para gerenciar sua implantação.  
 
 -  [Suporte para versões do SQL Server](../../../core/plan-design/configs/support-for-sql-server-versions.md)  
-Lista as versões do SQL Server que podem hospedar o banco de dados do site e o banco de dados de relatório, bem como configurações obrigatórias e configurações opcionais que você pode escolher usar.
+Saiba quais versões do SQL Server podem hospedar o banco de dados do site e o banco de dados de relatório, bem como as configurações obrigatórias e opcionais que podem ser usadas.
 
 -  [Opções de alta disponibilidade](../../../protect/understand/high-availability-options.md)  
 Conheça as opções que você pode implementar ao criar seu ambiente para ajudar a manter um alto nível de serviço disponível para sua implantação do Configuration Manager.
 
 -  [Hardware recomendado](../../../core/plan-design/configs/recommended-hardware.md)  
-Diretrizes que podem ajudar a identificam o hardware e as configurações certas para hospedar seus sites e principais serviços do Configuration Manager.
+Saiba mais sobre as diretrizes que podem ajudá-lo a identificar o hardware e as configurações certas para hospedar seus sites e principais serviços do Configuration Manager.
 
 -  [Suporte para domínios do Active Directory](../../../core/plan-design/configs/support-for-active-directory-domains.md)  
-Conheça as configurações de domínio do Active Directory com suporte que o Configuration Manager exige e às quais ele dá suporte.
+Saiba mais sobre as configurações de domínio do Active Directory com suporte que o Configuration Manager exige e às quais ele dá suporte.
 
 -  [Suporte para redes e recursos do Windows](../../../core/plan-design/configs/support-for-windows-features-and-networks.md)  
-O Configuration Manager dá suporte a várias tecnologias do Windows como eliminação de duplicação de dados e o BranchCache. Conheça as tecnologias com suporte e as limitações de uso com o Configuration Manager.
+Saiba mais sobre as tecnologias do Windows com suporte (como BranchCache e eliminação de duplicação de dados) e as limitações de seu uso com o Configuration Manager.
 
 -  [Suporte para ambientes de virtualização](../../../core/plan-design/configs/support-for-virtualization-environments.md)  
-Informações para ajudá-lo a usar as tecnologias de máquina virtual com suporte.
+Saiba mais sobre como usar as tecnologias de máquina virtual com suporte.
 
 
 
-<!--HONumber=Dec16_HO3-->
+<!--HONumber=Jan17_HO1-->
 
 

@@ -2,7 +2,7 @@
 title: "Dados de uso e diagnóstico | Microsoft Docs"
 description: "Saiba mais sobre os dados de diagnóstico e de uso que o System Center Configuration Manager coleta sobre si mesmo."
 ms.custom: na
-ms.date: 10/06/2016
+ms.date: 12/29/2016
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
@@ -17,8 +17,8 @@ author: Brenduns
 ms.author: brenduns
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: 3d113c55726efe674b79ef5ecb26aac8c893cba2
-ms.openlocfilehash: ac3395c82cb570960bf2c3b98cd06e282e64b1a5
+ms.sourcegitcommit: 24a233516058e645df2a43623855665b97b041b0
+ms.openlocfilehash: 54ec4886eaad6999cdf3ffff7411942859f1a5b2
 
 
 ---
@@ -31,11 +31,11 @@ O System Center Configuration Manager coleta dados de diagnóstico e de uso sobr
  Os dados de diagnóstico e de uso são habilitados para cada hierarquia do System Center Configuration Manager. Eles consistem em consultas do SQL Server que são executadas semanalmente em cada site primário e no site de administração central. Quando a hierarquia usa um site de administração central, os dados dos sites primários são replicados nesse site. No site de nível superior da hierarquia, o ponto de conexão de serviço envia essas informações quando verifica se há atualizações. Se o ponto de conexão de serviço estiver no modo offline, as informações serão transferidas por meio da ferramenta de conexão de serviço.  
 
 > [!NOTE]  
->  O Configuration Manager apenas coleta dados do banco de dados do SQL Server dos sites e não coleta dados diretamente de clientes ou de servidores do site.  
+>  O Configuration Manager coleta dados apenas do banco de dados SQL Server do site e não coleta dados diretamente de clientes ou de servidores do site.  
 
- Para obter mais informações, veja [Política de Privacidade do System Center Configuration Manager](http://go.microsoft.com/fwlink/?LinkID=626527).  
+ Para obter mais informações, veja a [Política de Privacidade do System Center Configuration Manager](http://go.microsoft.com/fwlink/?LinkID=626527).  
 
- Saiba mais sobre os dados de diagnóstico e de uso do System Center Configuration Manager nos seguintes tópicos:  
+ Saiba mais sobre os dados de diagnóstico e de uso do System Center Configuration Manager nos seguintes artigos:  
 
 -   [Como os dados de diagnóstico e de uso são usados no System Center Configuration Manager](../../../core/plan-design/diagnostics/how-diagnostics-and-usage-data-is-used.md)  
 
@@ -58,6 +58,6 @@ O System Center Configuration Manager coleta dados de diagnóstico e de uso sobr
 
 
 
-<!--HONumber=Dec16_HO3-->
+<!--HONumber=Dec16_HO5-->
 
 

@@ -2,7 +2,7 @@
 title: "Como criar itens de configuração para dispositivos Mac OS X gerenciados com o cliente do System Center Configuration Manager | Microsoft Docs"
 description: "Use o item de configuração do Mac OS X do System Center Configuration Manager para gerenciar as configurações de dispositivos Mac OS X."
 ms.custom: na
-ms.date: 11/18/2016
+ms.date: 12/27/2016
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
@@ -17,8 +17,8 @@ author: robstackmsft
 ms.author: robstack
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: 1a4a9da88caba55d9e340c7fb1f31f4e3b957f3e
-ms.openlocfilehash: f3d08d7f8efb592383e1099850665a2e9f3b2b5f
+ms.sourcegitcommit: 8bbc0d0132fa4276ade8914d5ac3945ef1d12a4b
+ms.openlocfilehash: be7a9464ef4ac6042a46652a325583a355f23846
 
 
 ---
@@ -54,7 +54,11 @@ Use o item de configuração do **Mac OS X (personalizado)** do System Center Co
 
              Por exemplo, se você quiser editar as configurações do navegador Safari, você pode usar **com.apple.Safari.plist**.  
 
-        -   **Chave** – especifique o nome da chave que você deseja avaliar a conformidade em computadores Mac. Use a seguinte sintaxe: */<dicionário\>/<nomechave\>*.  
+        -   **Chave** – especifique o nome da chave que você deseja avaliar a conformidade em computadores Mac. Use a seguinte sintaxe: 
+        
+            ```
+            */<dictionary\>/<keyname\>*.  
+            ```     
 
             > [!IMPORTANT]  
             >  O nome de chave diferencia maiúsculas de minúsculas e não será avaliado se for diferente do nome de chave no computador Mac. Além disso, você não pode editar o nome da chave depois que você o especificou. Se você precisar editar o nome da chave, exclua e recrie a configuração.  
@@ -173,6 +177,6 @@ Se quiser adicionar esse item de configuração a uma linha de base de configura
 
 
 
-<!--HONumber=Dec16_HO3-->
+<!--HONumber=Dec16_HO5-->
 
 

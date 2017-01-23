@@ -2,7 +2,7 @@
 title: "Pré-requisitos do site | Microsoft Docs"
 description: Saiba como configurar um computador Windows com um servidor de sistema de sites do System Center Configuration Manager.
 ms.custom: na
-ms.date: 10/06/2016
+ms.date: 12/30/2016
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
@@ -16,8 +16,8 @@ author: Brenduns
 ms.author: brenduns
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: 6ed317d45d90758832d4157985dd95d5e253c6fc
-ms.openlocfilehash: c3dd761a739b7b55dafefce7fbcd24439b7b292b
+ms.sourcegitcommit: e2330f116920f381ed10d186e17fdfb301d8a30a
+ms.openlocfilehash: 8bce8feffe4f09778d84145198d7e3c186de6ffe
 
 ---
 # <a name="site-and-site-system-prerequisites-for-system-center-configuration-manager"></a>Pré-requisitos de site e do sistema de sites para o System Center Configuration Manager
@@ -25,37 +25,37 @@ ms.openlocfilehash: c3dd761a739b7b55dafefce7fbcd24439b7b292b
 *Aplica-se a: System Center Configuration Manager (Branch Atual)*
 
 
- Computadores com Windows exigem configurações específicas para dar suporte ao uso como um servidor do sistema de sites do System Center Configuration Manager.  
+ Computadores baseados em Windows exigem configurações específicas para dar suporte ao uso como servidores do sistema de sites do System Center Configuration Manager.  
 
 
- Para alguns produtos, como o WSUS (Windows Server Update Services) para o ponto de atualização de software, você precisará consultar essa documentação de produtos para identificar os pré-requisitos adicionais e as limitações de uso do produto. Somente as configurações que se aplicam diretamente para uso com o Configuration Manager estão incluídas aqui.   
+ Para alguns produtos, como o WSUS (Windows Server Update Services) para o ponto de atualização de software, você precisa consultar essa documentação de produtos para identificar os pré-requisitos adicionais e as limitações de uso do produto. Somente as configurações que se aplicam diretamente ao uso com o Configuration Manager estão incluídas aqui.   
 
 > [!NOTE]  
->  Em 12 de janeiro de 2016 expira o suporte para .NET 4.0, 4.5 e 4.5.1. Para obter mais informações, consulte [Perguntas frequentes sobre a política do ciclo de vida de suporte do Microsoft .NET Framework](https://support.microsoft.com/gp/framework_faq?WT.mc_id=azurebg_email_Trans_943_NET452_Update) em support.microsoft.com.  
+>  Em janeiro de 2016, o suporte expirou para o .NET Framework 4.0, 4.5 e 4.5.1. Para obter mais informações, consulte [Perguntas frequentes sobre a política do ciclo de vida de suporte do Microsoft .NET Framework](https://support.microsoft.com/gp/framework_faq?WT.mc_id=azurebg_email_Trans_943_NET452_Update) em support.microsoft.com.  
 
-## <a name="a-namebkmkgeneralprerewqa-general-site-server-requierments-and-limitations"></a><a name="bkmk_generalprerewq"></a> Requisitos e limitações gerais do servidor do site:
+## <a name="a-namebkmkgeneralprerewqa-general-site-server-requirements-and-limitations"></a><a name="bkmk_generalprerewq"></a> Requisitos e limitações gerais do servidor do site
 **O seguinte se aplica a todos os servidores do sistema de sites:**
 
--   Cada servidor do sistema de sites deve usar um sistema operacional de 64 bits. A única exceção é a função do sistema de sites do ponto de distribuição, que pode ser instalada em sistemas operacionais de 32 bits.  
+-   Cada servidor do sistema de sites deve usar um sistema operacional de 64 bits. A única exceção é a função do sistema de sites do ponto de distribuição, que pode ser instalada em alguns sistemas operacionais de 32 bits.  
 
--   Não há suporte para os sistemas de sites em instalações do Server Core de qualquer sistema operacional. Uma exceção a isso são as instalações do Server Core que têm suporte para a função do sistema de sites do ponto de distribuição, sem o suporte a multicast ou PXE.  
+-   Não há suporte para os sistemas de sites em instalações do Server Core de qualquer sistema operacional. Uma exceção a isso é que as instalações do Server Core têm suporte para a função do sistema de sites do ponto de distribuição, sem o suporte a multicast ou PXE.  
 
--   Depois que um servidor de sistema de sites é instalado, não há suporte para a alteração:  
+-   Depois que um servidor de sistema de sites é instalado, não há suporte para alterar:  
 
-    -   O nome de domínio do domínio em que o computador do sistema de sites está localizado (também chamado de uma **renomeação de domínio**)  
+    -   O nome de domínio do domínio em que o computador do sistema de sites está localizado (também chamado de uma **renomeação de domínio**).  
 
-    -   A associação de domínio do computador  
+    -   A associação de domínio do computador.  
 
-    -   O nome do computador  
+    -   O nome do computador.  
 
   Se precisar alterar qualquer uma dessas, primeiro remova a função do sistema de sites do computador e reinstale a função após a conclusão da alteração. Se isso afetar o computador do servidor do site, será necessário desinstalar o site e reinstalá-lo depois que a alteração for concluída.  
 
 -   Não há suporte para as funções do sistema de sites em uma instância de um cluster do Windows Server. A única exceção é o servidor de banco de dados do site.  
 
--   Não há suporte para alterar as configurações de tipo de inicialização ou de Fazer logon como de qualquer serviço do Configuration Manager. Isso pode impedir o funcionamento correto dos serviços essenciais.  
+-   Não há suporte para alterar as configurações de tipo de inicialização ou de “Fazer logon como” de qualquer serviço do Configuration Manager. Se você fizer isso, poderá impedir que serviços essenciais funcionem corretamente.  
 
 ##  <a name="a-namebkmk2012prereqa-prerequisites-for-windows-server-2012-and-later-operating-systems"></a><a name="bkmk_2012Prereq"></a> Pré-requisitos para o Windows Server 2012 e sistemas operacionais posteriores  
-###  <a name="a-namebkmk2012sspreqa-site-server---central-administration-site-and-primary-site"></a><a name="bkmk_2012sspreq"></a> Servidor do site – site primário e site de administração central  
+###  <a name="a-namebkmk2012sspreqa-site-server-central-administration-site-and-primary-site"></a><a name="bkmk_2012sspreq"></a> Servidor do site: site primário e site de administração central  
   **Funções e recursos do Windows Server:**  
 
 -   .NET Framework 3.5 SP1 (ou posterior)  
@@ -66,19 +66,19 @@ ms.openlocfilehash: c3dd761a739b7b55dafefce7fbcd24439b7b292b
 
 **Windows ADK:**  
 
--   Antes de instalar ou atualizar um site de administração central ou site primário, você deve instalar a versão do Windows ADK exigida pela versão do Configuration Manager que você está instalando ou atualizando.  
+-   Antes de instalar ou atualizar um site de administração central ou site primário, você deve instalar a versão do ADK (Kit de Avaliação e Implantação) do Windows exigida pela versão do Configuration Manager que você está instalando ou atualizando.  
 
-    -   A versão 1511 do Configuration Manager exige a versão para Win10 RTM (10.0.10240) do Windows ADK  
+    -   A versão 1511 do Configuration Manager exige a versão para Windows 10 RTM (10.0.10240) do Windows ADK.  
 
 -   Para saber mais sobre essa exigência, confira Implantação do sistema operacional.  
 
 **Pacotes Redistribuíveis do Visual C++:**  
 
--   O Configuration Manager instala os Pacotes Redistribuíveis do Microsoft Visual C++ 2013 em cada computador que instala um servidor do site.  
+-   O Configuration Manager instala o Pacote Redistribuível do Microsoft Visual C++ 2013 em cada computador que instala um servidor do site.  
 
 -   Os sites de administração central e os sites primários exigem as versões x86 e x64 do arquivo dos Pacotes Redistribuíveis aplicáveis.  
 
-###  <a name="a-namebkmk2012secpreqa-site-server--secondary-site"></a><a name="bkmk_2012secpreq"></a> Servidor do site – site secundário  
+###  <a name="a-namebkmk2012secpreqa-site-server-secondary-site"></a><a name="bkmk_2012secpreq"></a> Servidor do site: site secundário  
 **Funções e recursos do Windows Server:**  
 
 -   .NET Framework 3.5 SP1 (ou posterior)  
@@ -89,7 +89,7 @@ ms.openlocfilehash: c3dd761a739b7b55dafefce7fbcd24439b7b292b
 
 **Pacotes Redistribuíveis do Visual C++:**  
 
--   O Configuration Manager instala os Pacotes Redistribuíveis do Microsoft Visual C++ 2013 em cada computador que instala um servidor do site.  
+-   O Configuration Manager instala o Pacote Redistribuível do Microsoft Visual C++ 2013 em cada computador que instala um servidor do site.  
 
 -   Os sites secundários exigem somente a versão x64.  
 
@@ -102,9 +102,9 @@ ms.openlocfilehash: c3dd761a739b7b55dafefce7fbcd24439b7b292b
 ###  <a name="a-namebkmk2012dbpreqa-database-server"></a><a name="bkmk_2012dbpreq"></a> Servidor de banco de dados  
 **Serviço Registro Remoto:**  
 
--   Durante a instalação do site do Configuration Manager, o serviço de Registro remoto deve ser habilitado no computador que hospedará o banco de dados do site.  
+-   Durante a instalação do site do Configuration Manager, você deve habilitar o serviço Registro remoto no computador que hospedará o banco de dados do site.  
 
- **SQL Server**  
+**SQL Server:**  
 
 -   Antes de instalar um site de administração central ou site primário, você deve instalar uma versão com suporte do SQL Server a fim de hospedar o banco de dados do site.  
 
@@ -117,7 +117,7 @@ ms.openlocfilehash: c3dd761a739b7b55dafefce7fbcd24439b7b292b
 
 -   O computador no qual você instala uma instância do Provedor de SMS deve ter a versão exigida do Windows ADK exigida pela versão do Configuration Manager que você está instalando ou atualizando.  
 
-    -   A versão 1511 do Configuration Manager exige a versão para Win10 RTM (10.0.10240) do Windows ADK  
+    -   A versão 1511 do Configuration Manager exige a versão para Windows 10 RTM (10.0.10240) do Windows ADK.  
 
 -   Para saber mais sobre essa exigência, confira Implantação do sistema operacional.  
 
@@ -126,7 +126,7 @@ ms.openlocfilehash: c3dd761a739b7b55dafefce7fbcd24439b7b292b
 
 -   .NET Framework 3.5 SP1 (ou posterior)  
 
--   .NET Framework 4.5.2  
+-   .NET Framework 4.5.2:  
 
     -   ASP.NET 4.5  
 
@@ -161,9 +161,9 @@ ms.openlocfilehash: c3dd761a739b7b55dafefce7fbcd24439b7b292b
 
 -   .NET Framework 3.5 SP1 (ou posterior)  
 
--   .NET Framework 4.5.2  
+-   .NET Framework 4.5.2:  
 
-    -   ASP.NET 4.5  
+    -   ASP.NET 4.5:  
 
         -   Ativação HTTP (e opções selecionadas automaticamente)  
 
@@ -201,7 +201,7 @@ ms.openlocfilehash: c3dd761a739b7b55dafefce7fbcd24439b7b292b
 ###  <a name="a-namebkmk2012crppreqa-certificate-registration-point"></a><a name="bkmk_2012crppreq"></a> Ponto de registro de certificado  
 **Funções e recursos do Windows Server:**  
 
--   .NET Framework 4.5.2  
+-   .NET Framework 4.5.2:  
 
     -   Ativação HTTP  
 
@@ -246,9 +246,9 @@ ms.openlocfilehash: c3dd761a739b7b55dafefce7fbcd24439b7b292b
 
 **Pacotes Redistribuíveis do Visual C++:**  
 
--   O Configuration Manager instala os Pacotes Redistribuíveis do Microsoft Visual C++ 2013 em cada computador que hospeda um ponto de distribuição.  
+-   O Configuration Manager instala o Pacote Redistribuível do Microsoft Visual C++ 2013 em cada computador que hospeda um ponto de distribuição.  
 
--   A versão instalada depende da plataforma dos computadores (x86 ou x64).  
+-   A versão instalada depende da plataforma do computador (x86 ou x64).  
 
 **Microsoft Azure:**  
 
@@ -256,13 +256,13 @@ ms.openlocfilehash: c3dd761a739b7b55dafefce7fbcd24439b7b292b
 
 **Para dar suporte a PXE ou multicast:**  
 
--   Instalar e configurar a função do Windows WDS (Serviços de Implantação do Windows)  
+-   Instale e configure a função de WDS (Serviços de Implantação do Windows) do Windows Server.  
 
     > [!NOTE]  
-    >  O WDS é instalado e configurado automaticamente quando você configura um ponto de distribuição, a fim de dar suporte a PXE ou Multicast em um servidor que executa o Windows Server 2012 ou posterior.  
+    >  O WDS é instalado e configurado automaticamente quando você configura um ponto de distribuição, a fim de dar suporte a PXE ou multicast em um servidor que executa o Windows Server 2012 ou posterior.  
 
 > [!NOTE]  
->  A função do sistema de sites do ponto de distribuição não exige o BITS (Serviço de Transferência Inteligente em Segundo Plano). Quando o BITS estiver configurado no computador do ponto de distribuição, o BITS no computador do ponto de distribuição não será usado para facilitar o download de conteúdo por clientes que usam o BITS.  
+> A função do sistema de sites do ponto de distribuição não exige o BITS (Serviço de Transferência Inteligente em Segundo Plano). Quando o BITS estiver configurado no computador do ponto de distribuição, o BITS no computador do ponto de distribuição não será usado para facilitar o download de conteúdo por clientes que usam o BITS.  
 
 ###  <a name="a-namebkmk2012epppreqa-endpoint-protection-point"></a><a name="bkmk_2012EPPpreq"></a> Ponto do Endpoint Protection  
 **Funções e recursos do Windows Server:**  
@@ -274,7 +274,7 @@ ms.openlocfilehash: c3dd761a739b7b55dafefce7fbcd24439b7b292b
 
 -   .NET Framework 3.5 (ou posterior)  
 
--   .NET Framework 4.5.2  
+-   .NET Framework 4.5.2:  
 
      Quando essa função do sistema de sites é instalada, o Configuration Manager instala automaticamente o .NET Framework 4.5.2. Esta instalação pode colocar o servidor em um estado de reinicialização pendente. Quando uma reinicialização fica pendente para o .NET Framework, os aplicativos .NET podem falhar até que o servidor seja reinicializado e a instalação seja concluída.  
 
@@ -351,7 +351,7 @@ ms.openlocfilehash: c3dd761a739b7b55dafefce7fbcd24439b7b292b
 -   Quando esta função do sistema de sites estiver colocalizada com outra função do sistema de sites que tenha este mesmo requisito, esse requisito de memória do computador não será aumentado, mas permanecerá em, no mínimo, 5%.  
 
 ###  <a name="a-namebkmk2012fsppreqa-fallback-status-point"></a><a name="bkmk_2012FSPpreq"></a> Ponto de status de fallback  
-**Requer a configuração padrão do IIS com as seguintes adições:**  
+A configuração padrão do IIS é necessária com as seguintes adições:  
 
 -   Compatibilidade do Gerenciamento do IIS 6:  
 
@@ -391,7 +391,7 @@ ms.openlocfilehash: c3dd761a739b7b55dafefce7fbcd24439b7b292b
 
 -   A instância usada para o SQL Server Reporting Services pode ser a mesma instância usada para o banco de dados do site.  
 
--   Além disso, a instância que você usa pode ser compartilhada com outros produtos do System Center, contanto que os outros produtos do System Center não tenham restrições para compartilhar a instância do SQL Server.  
+-   Além disso, a instância que você usar pode ser compartilhada com outros produtos do System Center, contanto que os outros produtos do System Center não tenham restrições para compartilhar a instância do SQL Server.  
 
 ###  <a name="a-namebkmkscppreqa-service-connection-point"></a><a name="bkmk_SCPpreq"></a> Ponto de conexão de serviço  
 **Funções e recursos do Windows Server:**  
@@ -402,9 +402,9 @@ ms.openlocfilehash: c3dd761a739b7b55dafefce7fbcd24439b7b292b
 
 **Pacotes Redistribuíveis do Visual C++:**  
 
--   O Configuration Manager instala os Pacotes Redistribuíveis do Microsoft Visual C++ 2013 em cada computador que hospeda um ponto de distribuição.  
+-   O Configuration Manager instala o Pacote Redistribuível do Microsoft Visual C++ 2013 em cada computador que hospeda um ponto de distribuição.  
 
--   A função do sistema de sites exige a versão para x64.  
+-   A função do sistema de sites exige a versão x64.  
 
 ###  <a name="a-namebkmk2012suppreqa-software-update-point"></a><a name="bkmk_2012SUPpreq"></a> Ponto de atualização de software  
 **Funções e recursos do Windows Server:**  
@@ -413,32 +413,32 @@ ms.openlocfilehash: c3dd761a739b7b55dafefce7fbcd24439b7b292b
 
 -   .NET Framework 4.5.2  
 
-**Exige a configuração padrão do IIS.**  
+A configuração padrão do IIS é necessária.
 
 **Windows Server Update Services:**  
 
--   Você deve instalar a função de servidor do Windows, Windows Server Update Services, em um computador antes de instalar um ponto de atualização de software  
+-   Você deve instalar a função do Windows Server, Windows Server Update Services, em um computador antes de instalar um ponto de atualização de software.  
 
--   Para obter mais informações, consulte [Planejar atualizações de software no System Center Configuration Manager](../../../sum/plan-design/plan-for-software-updates.md)  
+-   Para obter mais informações, consulte [Planejar atualizações de software no System Center Configuration Manager](../../../sum/plan-design/plan-for-software-updates.md).  
 
 ### <a name="state-migration-point"></a>Ponto de migração de estado  
-**Exige a configuração padrão do IIS.**  
+A configuração padrão do IIS é necessária.  
 
 ##  <a name="a-namebkmk2008a-prerequisites-for-windows-server-2008-r2-and-windows-server-2008"></a><a name="bkmk_2008"></a> Pré-requisitos para o Windows Server 2008 R2 e Windows Server 2008  
-Agora, o Windows Server 2008 e o Windows Server 2008 R2 estão em suporte estendido, e não mais em suporte maintstream, conforme detalhado pelo [Ciclo de Vida do Suporte da Microsoft](https://support.microsoft.com/lifecycle). Para obter mais informações sobre o suporte futuro para esses sistemas operacionais como servidores de sistema de sites com o Configuration Manager, consulte [Recursos removidos e preteridos do System Center Configuration Manager](../../../core/plan-design/changes/removed-and-deprecated-features.md).  
+Agora, o Windows Server 2008 e o Windows Server 2008 R2 estão em suporte estendido e não mais em suporte maintstream, conforme detalhado pelo [Ciclo de Vida do Suporte da Microsoft](https://support.microsoft.com/lifecycle). Para obter mais informações sobre o suporte futuro para esses sistemas operacionais como servidores do sistema de sites com o Configuration Manager, consulte [Recursos removidos e preteridos do System Center Configuration Manager](../../../core/plan-design/changes/removed-and-deprecated-features.md).  
 
-**O seguinte se aplica a todos os requisitos de estrutura do .NET:**  
+**O seguinte se aplica a todos os requisitos do .NET Framework:**  
 
--   Instale a versão completa do Microsoft.NET Framework antes de instalar as funções do sistema de sites. Por exemplo, confira o [Microsoft .NET Framework 4 (Instalador autônomo)](http://go.microsoft.com/fwlink/p/?LinkId=193048). O Microsoft .NET Framework 4 Client Profile é insuficiente para este requisito.  
+-   Instale a versão completa do .NET Framework antes de instalar as funções do sistema de sites. Por exemplo, confira o [Microsoft .NET Framework 4 (Instalador autônomo)](http://go.microsoft.com/fwlink/p/?LinkId=193048). O .NET Framework 4 Client Profile é insuficiente para esse requisito.  
 
 **O seguinte se aplica a todos os requisitos de ativação do WCF (Windows Communication Foundation):**  
 
--   Você pode configurar a ativação do WCF como parte do recurso do Windows, .NET Framework, no servidor do sistema de sites. Por exemplo, no Windows Server 2008 R2, execute o **Assistente para Adicionar Recursos** para instalar recursos adicionais no servidor. Na página **Selecionar Recursos**, expanda **Recursos do NET Framework 3.5.1**, expanda **Ativação do WCF** e marque a caixa de seleção de **Ativação HTTP** e **Ativação não HTTP** para habilitar essas opções.  
+-   Você pode configurar a ativação do WCF como parte do recurso do Windows, .NET Framework, no servidor do sistema de sites. Por exemplo, no Windows Server 2008 R2, execute o **Assistente para Adicionar Recursos** para instalar recursos adicionais no servidor. Na página **Selecionar Recursos**, expanda **Recursos do NET Framework 3.5.1**, expanda **Ativação do WCF** e marque as caixas de seleção de **Ativação HTTP** e **Ativação não HTTP** para habilitar essas opções.  
 
-###  <a name="a-namebkmk2008sspreqa-site-server---central-administration-site-and-primary-site"></a><a name="bkmk_2008sspreq"></a> Servidor do site – site primário e site de administração central  
+###  <a name="a-namebkmk2008sspreqa-site-server-central-administration-site-and-primary-site"></a><a name="bkmk_2008sspreq"></a> Servidor do site: site primário e site de administração central  
 **.NET Framework:**  
 
--   3.5 SP1 (ou posterior)  
+-   .NET Framework 3.5 SP1 (ou posterior)  
 
 -   .NET Framework 4.5.2  
 
@@ -450,26 +450,26 @@ Agora, o Windows Server 2008 e o Windows Server 2008 R2 estão em suporte estend
 
 -   Antes de instalar ou atualizar um site de administração central ou site primário, você deve instalar a versão do Windows ADK exigida pela versão do Configuration Manager que você está instalando ou atualizando.  
 
-    -   A versão 1511 do Configuration Manager exige a versão para Win10 RTM (10.0.10240) do Windows ADK  
+    -   A versão 1511 do Configuration Manager exige a versão para Windows 10 RTM (10.0.10240) do Windows ADK.  
 
 -   Para saber mais sobre essa exigência, confira Implantação do sistema operacional.  
 
 **Pacotes Redistribuíveis do Visual C++:**  
 
--   O Configuration Manager instala os Pacotes Redistribuíveis do Microsoft Visual C++ 2013 em cada computador que instala um servidor do site.  
+-   O Configuration Manager instala o Pacote Redistribuível do Microsoft Visual C++ 2013 em cada computador que instala um servidor do site.  
 
 -   Os sites de administração central e os sites primários exigem as versões x86 e x64 do arquivo dos Pacotes Redistribuíveis aplicáveis.  
 
-###  <a name="a-namebkmk2008secpreqa-site-server--secondary-site"></a><a name="bkmk_2008secpreq"></a> Servidor do site – site secundário  
+###  <a name="a-namebkmk2008secpreqa-site-server-secondary-site"></a><a name="bkmk_2008secpreq"></a> Servidor do site: site secundário  
 **.NET Framework:**  
 
--   3.5 SP1 (ou posterior)  
+-   .NET Framework 3.5 SP1 (ou posterior)  
 
 -   .NET Framework 4.5.2  
 
 **Pacotes Redistribuíveis do Visual C++:**  
 
--   O Configuration Manager instala os Pacotes Redistribuíveis do Microsoft Visual C++ 2013 em cada computador que instala um servidor do site.  
+-   O Configuration Manager instala o Pacote Redistribuível do Microsoft Visual C++ 2013 em cada computador que instala um servidor do site.  
 
 -   Os sites secundários exigem somente a versão x64.  
 
@@ -482,9 +482,9 @@ Agora, o Windows Server 2008 e o Windows Server 2008 R2 estão em suporte estend
 ###  <a name="a-namebkmk2008dbpreqa-database-server"></a><a name="bkmk_2008dbpreq"></a> Servidor de banco de dados  
 **Serviço Registro Remoto:**  
 
--   Durante a instalação do site do Configuration Manager, o serviço de Registro remoto deve ser habilitado no computador que hospedará o banco de dados do site.  
+-   Durante a instalação do site do Configuration Manager, você deve habilitar o serviço Registro remoto no computador que hospedará o banco de dados do site.  
 
-**SQL Server**  
+**SQL Server:**  
 
 -   Antes de instalar um site de administração central ou site primário, você deve instalar uma versão com suporte do SQL Server a fim de hospedar o banco de dados do site.  
 
@@ -497,7 +497,7 @@ Agora, o Windows Server 2008 e o Windows Server 2008 R2 estão em suporte estend
 
 -   O computador no qual você instala uma instância do Provedor de SMS deve ter a versão exigida do Windows ADK exigida pela versão do Configuration Manager que você está instalando ou atualizando.  
 
-    -   A versão 1511 do Configuration Manager exige a versão para Win10 RTM (10.0.10240) do Windows ADK  
+    -   A versão 1511 do Configuration Manager exige a versão para Windows 10 RTM (10.0.10240) do Windows ADK.  
 
 -   Para saber mais sobre essa exigência, confira Implantação do sistema operacional.  
 
@@ -506,7 +506,9 @@ Agora, o Windows Server 2008 e o Windows Server 2008 R2 estão em suporte estend
 
 -   .NET Framework 4.5.2  
 
-**Configuração do IIS:** exige a configuração padrão do IIS com as seguintes adições:  
+**Configuração do IIS:**
+
+A configuração padrão do IIS é necessária com as seguintes adições:  
 
 -   Recursos HTTP comuns:  
 
@@ -516,7 +518,7 @@ Agora, o Windows Server 2008 e o Windows Server 2008 R2 estão em suporte estend
 
 -   Desenvolvimento de aplicativos:  
 
-    -   ASP.NET (e opções selecionadas automaticamente)\  
+    -   ASP.NET (e opções selecionadas automaticamente)  
 
          Em alguns cenários, como quando o IIS é instalado ou reconfigurado após a instalação do .NET Framework versão 4.5.2, você deve habilitar explicitamente o ASP.NET versão 4.5. Por exemplo, em um computador 64 bits que executa o .NET Framework versão 4.0.30319, execute o seguinte comando: **%windir%\Microsoft.NET\Framework64\v4.0.30319\aspnet_regiis.exe -i -enable**  
 
@@ -531,7 +533,7 @@ Agora, o Windows Server 2008 e o Windows Server 2008 R2 estão em suporte estend
 ###  <a name="a-namebkmk2008acwsitepreqa-application-catalog-web-service-point"></a><a name="bkmk_2008ACwsitepreq"></a> Ponto de serviços Web do Catálogo de Aplicativos  
 **.NET Framework:**  
 
--   3.5 SP1 (ou posterior)  
+-   .NET Framework 3.5 SP1 (ou posterior)  
 
 -   .NET Framework 4.5.2  
 
@@ -541,7 +543,9 @@ Agora, o Windows Server 2008 e o Windows Server 2008 R2 estão em suporte estend
 
 -   Ativação não HTTP  
 
-**Configuração do IIS:** exige a configuração padrão do IIS com as seguintes adições:  
+**Configuração do IIS:**
+
+A configuração padrão do IIS é necessária com as seguintes adições:  
 
 -   Desenvolvimento de aplicativos:  
 
@@ -571,7 +575,9 @@ Agora, o Windows Server 2008 e o Windows Server 2008 R2 estão em suporte estend
 
 -   Ativação HTTP  
 
-**Configuração do IIS:** exige a configuração padrão do IIS com as seguintes adições:  
+**Configuração do IIS:**
+
+A configuração padrão do IIS é necessária com as seguintes adições:  
 
 -   Compatibilidade do Gerenciamento do IIS 6:  
 
@@ -580,7 +586,9 @@ Agora, o Windows Server 2008 e o Windows Server 2008 R2 estão em suporte estend
     -   Compatibilidade de WMI do IIS 6  
 
 ###  <a name="a-namebkmk2008dppreqa-distribution-point"></a><a name="bkmk_2008dppreq"></a> Ponto de distribuição  
-**Configuração do IIS:** é possível usar a configuração padrão do IIS ou uma configuração personalizada.  Para usar uma configuração personalizada do IIS, você deve habilitar as seguintes opções para o IIS:  
+**Configuração do IIS:**
+
+É possível usar a configuração padrão do IIS ou uma configuração personalizada. Para usar uma configuração personalizada do IIS, você deve habilitar as seguintes opções para o IIS:  
 
 -   Desenvolvimento de aplicativos:  
 
@@ -610,23 +618,23 @@ Ao usar uma configuração personalizada do IIS, é possível remover opções q
 
 **Pacotes Redistribuíveis do Visual C++:**  
 
--   O Configuration Manager instala os Pacotes Redistribuíveis do Microsoft Visual C++ 2013 em cada computador que hospeda um ponto de distribuição.  
+-   O Configuration Manager instala o Pacote Redistribuível do Microsoft Visual C++ 2013 em cada computador que hospeda um ponto de distribuição.  
 
--   A versão instalada depende da plataforma dos computadores (x86 ou x64).  
+-   A versão instalada depende da plataforma do computador (x86 ou x64).  
 
 **Microsoft Azure:**  
 
--   Você pode usar um serviço de nuvem no Microsoft Azure para hospedar um ponto de distribuição.  
+-   Você pode usar um serviço de nuvem no Azure para hospedar um ponto de distribuição.  
 
 **Para dar suporte a PXE ou multicast:**  
 
--   Instalar e configurar a função do Windows WDS (Serviços de Implantação do Windows)  
+-   Instale e configure a função de WDS (Serviços de Implantação do Windows) do Windows Server.  
 
     > [!NOTE]  
-    >  O WDS é instalado e configurado automaticamente quando você configura um ponto de distribuição, a fim de dar suporte a PXE ou Multicast em um servidor que executa o Windows Server 2012 ou posterior.  
+    >  O WDS é instalado e configurado automaticamente quando você configura um ponto de distribuição, a fim de dar suporte a PXE ou multicast em um servidor que executa o Windows Server 2012 ou posterior.  
 
 > [!NOTE]  
->  A função do sistema de sites do ponto de distribuição não exige o BITS (Serviço de Transferência Inteligente em Segundo Plano). Quando o BITS estiver configurado no computador do ponto de distribuição, o BITS no computador do ponto de distribuição não será usado para facilitar o download de conteúdo por clientes que usam o BITS.  
+> A função do sistema de sites do ponto de distribuição não exige o BITS (Serviço de Transferência Inteligente em Segundo Plano). Quando o BITS estiver configurado no computador do ponto de distribuição, o BITS no computador do ponto de distribuição não será usado para facilitar o download de conteúdo por clientes que usam o BITS.  
 
 
 ###  <a name="a-namebkmk2008epppreqa-endpoint-protection-point"></a><a name="bkmk_2008EPPpreq"></a> Ponto do Endpoint Protection  
@@ -637,9 +645,9 @@ Ao usar uma configuração personalizada do IIS, é possível remover opções q
 ###  <a name="a-namebkmk2008enrollpreqa-enrollment-point"></a><a name="bkmk_2008Enrollpreq"></a> Ponto de registro  
 **.NET Framework:**  
 
--   4.5.2  
+-   .NET Framework 4.5.2  
 
-     Quando essa função do sistema de sites é instalada, se o servidor ainda não tiver uma versão com suporte do .NET Framework instalada, o Configuration Manager instalará automaticamente o .NET Framework 4.5.2. Esta instalação pode colocar o servidor em um estado de reinicialização pendente. Quando uma reinicialização fica pendente para o .NET Framework, os aplicativos .NET podem falhar até que o servidor seja reinicializado e a instalação seja concluída.  
+     Quando essa função do sistema de sites for instalada, se o servidor ainda não tiver uma versão com suporte do .NET Framework instalada, o Configuration Manager instalará automaticamente o .NET Framework 4.5.2. Esta instalação pode colocar o servidor em um estado de reinicialização pendente. Quando uma reinicialização fica pendente para o .NET Framework, os aplicativos .NET podem falhar até que o servidor seja reinicializado e a instalação seja concluída.  
 
 **Ativação do WCF (Windows Communication Foundation):**  
 
@@ -647,7 +655,9 @@ Ao usar uma configuração personalizada do IIS, é possível remover opções q
 
 -   Ativação não HTTP  
 
-**Configuração do IIS:** exige a configuração padrão do IIS com as seguintes adições:  
+**Configuração do IIS:**
+
+A configuração padrão do IIS é necessária com as seguintes adições:  
 
 -   Desenvolvimento de aplicativos:  
 
@@ -664,9 +674,9 @@ Ao usar uma configuração personalizada do IIS, é possível remover opções q
 ###  <a name="a-namebkmk2008enrollproxpreqa-enrollment-proxy-point"></a><a name="bkmk_2008EnrollProxpreq"></a> Ponto proxy do registro  
 **.NET Framework:**  
 
--   4.5.2  
+-   .NET Framework 4.5.2  
 
-     Quando essa função do sistema de sites é instalada, se o servidor ainda não tiver uma versão com suporte do .NET Framework instalada, o Configuration Manager instalará automaticamente o .NET Framework 4.5.2. Esta instalação pode colocar o servidor em um estado de reinicialização pendente. Quando uma reinicialização fica pendente para o .NET Framework, os aplicativos .NET podem falhar até que o servidor seja reinicializado e a instalação seja concluída.  
+     Quando essa função do sistema de sites for instalada, se o servidor ainda não tiver uma versão com suporte do .NET Framework instalada, o Configuration Manager instalará automaticamente o .NET Framework 4.5.2. Esta instalação pode colocar o servidor em um estado de reinicialização pendente. Quando uma reinicialização fica pendente para o .NET Framework, os aplicativos .NET podem falhar até que o servidor seja reinicializado e a instalação seja concluída.  
 
 **Ativação do WCF (Windows Communication Foundation):**  
 
@@ -674,7 +684,9 @@ Ao usar uma configuração personalizada do IIS, é possível remover opções q
 
 -   Ativação não HTTP  
 
-**Configuração do IIS:** exige a configuração padrão do IIS com as seguintes adições:  
+**Configuração do IIS:**
+
+A configuração padrão do IIS é necessária com as seguintes adições:  
 
 -   Desenvolvimento de aplicativos:  
 
@@ -689,7 +701,9 @@ Ao usar uma configuração personalizada do IIS, é possível remover opções q
 -   Quando esta função do sistema de sites estiver colocalizada com outra função do sistema de sites que tenha este mesmo requisito, esse requisito de memória do computador não será aumentado, mas permanecerá em, no mínimo, 5%.  
 
 ###  <a name="a-namebkmk2008fsppreqa-fallback-status-point"></a><a name="bkmk_2008FSPpreq"></a> Ponto de status de fallback  
-**Configuração do IIS:** exige a configuração padrão do IIS com as seguintes adições:  
+**Configuração do IIS:**
+
+A configuração padrão do IIS é necessária com as seguintes adições:  
 
 -   Compatibilidade do Gerenciamento do IIS 6:  
 
@@ -698,9 +712,13 @@ Ao usar uma configuração personalizada do IIS, é possível remover opções q
 ###  <a name="a-namebkmk2008mppreqa-management-point"></a><a name="bkmk_2008MPpreq"></a> Ponto de gerenciamento  
 **.NET Framework:**  
 
--   4.5.2  
+-   .NET Framework 4.5.2  
 
-**Configuração do IIS:** é possível usar a configuração padrão do IIS ou uma configuração personalizada. Cada ponto de gerenciamento habilitado para dar suporte a dispositivos móveis exige uma configuração do IIS adicional para o ASP.NET (e suas opções selecionadas automaticamente). Em alguns cenários, como quando o IIS é instalado ou reconfigurado após a instalação do .NET Framework versão 4.5.2, você deve habilitar explicitamente o ASP.NET versão 4.5. Por exemplo, em um computador 64 bits que executa o .NET Framework versão 4.0.30319, execute o seguinte comando: **%windir%\Microsoft.NET\Framework64\v4.0.30319\aspnet_regiis.exe -i -enable**  
+**Configuração do IIS:**
+
+É possível usar a configuração padrão do IIS ou uma configuração personalizada. Cada ponto de gerenciamento habilitado para dar suporte a dispositivos móveis exige uma configuração do IIS adicional para o ASP.NET (e suas opções selecionadas automaticamente).
+
+Em alguns cenários, como quando o IIS é instalado ou reconfigurado após a instalação do .NET Framework versão 4.5.2, você deve habilitar explicitamente o ASP.NET versão 4.5. Por exemplo, em um computador 64 bits que executa o .NET Framework versão 4.0.30319, execute o seguinte comando: **%windir%\Microsoft.NET\Framework64\v4.0.30319\aspnet_regiis.exe -i -enable**  
 
 
 Para usar uma configuração personalizada do IIS, você deve habilitar as seguintes opções para o IIS:  
@@ -735,7 +753,7 @@ Ao usar uma configuração personalizada do IIS, é possível remover opções q
 ###  <a name="a-namebkmk2008rspointa-reporting-services-point"></a><a name="bkmk_2008RSpoint"></a> Ponto do Reporting Services  
 **.NET Framework:**  
 
--   4.5.2  
+-   .NET Framework 4.5.2  
 
 **SQL Server Reporting Services:**  
 
@@ -743,41 +761,45 @@ Ao usar uma configuração personalizada do IIS, é possível remover opções q
 
 -   A instância usada para o SQL Server Reporting Services pode ser a mesma instância usada para o banco de dados do site.  
 
--   Além disso, a instância que você usa pode ser compartilhada com outros produtos do System Center, contanto que os outros produtos do System Center não tenham restrições para compartilhar a instância do SQL Server.  
+-   Além disso, a instância que você usar pode ser compartilhada com outros produtos do System Center, contanto que os outros produtos do System Center não tenham restrições para compartilhar a instância do SQL Server.  
 
 ###  <a name="a-namebkmk2008scppreqa-service-connection-point"></a><a name="bkmk_2008SCPpreq"></a> Ponto de conexão de serviço  
 **.NET Framework:**  
 
--   4.5.2  
+-   .NET Framework 4.5.2  
 
-     Quando essa função do sistema de sites é instalada, se o servidor ainda não tiver uma versão com suporte do .NET Framework instalada, o Configuration Manager instalará automaticamente o .NET Framework 4.5.2. Esta instalação pode colocar o servidor em um estado de reinicialização pendente. Quando uma reinicialização fica pendente para o .NET Framework, os aplicativos .NET podem falhar até que o servidor seja reinicializado e a instalação seja concluída.  
+     Quando essa função do sistema de sites for instalada, se o servidor ainda não tiver uma versão com suporte do .NET Framework instalada, o Configuration Manager instalará automaticamente o .NET Framework 4.5.2. Esta instalação pode colocar o servidor em um estado de reinicialização pendente. Quando uma reinicialização fica pendente para o .NET Framework, os aplicativos .NET podem falhar até que o servidor seja reinicializado e a instalação seja concluída.  
 
 **Pacotes Redistribuíveis do Visual C++:**  
 
--   O Configuration Manager instala os Pacotes Redistribuíveis do Microsoft Visual C++ 2013 em cada computador que hospeda um ponto de distribuição.  
+-   O Configuration Manager instala o Pacote Redistribuível do Microsoft Visual C++ 2013 em cada computador que hospeda um ponto de distribuição.  
 
--   A função do sistema de sites exige a versão para x64.  
+-   A função do sistema de sites exige a versão x64.  
 
 ###  <a name="a-namebkmk2008suppreqa-software-update-point"></a><a name="bkmk_2008SUPpreq"></a> Ponto de atualização de software  
 **.NET Framework:**  
 
--   3.5 SP1 (ou posterior)  
+-   .NET Framework 3.5 SP1 (ou posterior)  
 
 -   .NET Framework 4.5.2  
 
-**Configuração do IIS:** exige a configuração padrão do IIS.  
+**Configuração do IIS:**
+
+A configuração padrão do IIS é necessária.  
 
 **Windows Server Update Services:**  
 
--   Você deve instalar a função de servidor do Windows, Windows Server Update Services, em um computador antes de instalar um ponto de atualização de software  
+-   Você deve instalar a função do Windows Server, Windows Server Update Services, em um computador antes de instalar um ponto de atualização de software.  
 
--   Para mais informações, consulte [Planejar atualizações de software no System Center Configuration Manager](../../../sum/plan-design/plan-for-software-updates.md)
+-   Para obter mais informações, consulte [Planejar atualizações de software no System Center Configuration Manager](../../../sum/plan-design/plan-for-software-updates.md).
 
 ###  <a name="a-namebkmk2008smppreqa-state-migration-point"></a><a name="bkmk_2008SMPpreq"></a> Ponto de migração de estado  
-**Configuração do IIS:** exige a configuração padrão do IIS.  
+**Configuração do IIS:**
+
+A configuração padrão do IIS é necessária.  
 
 
 
-<!--HONumber=Dec16_HO3-->
+<!--HONumber=Dec16_HO5-->
 
 

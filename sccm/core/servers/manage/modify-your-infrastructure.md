@@ -17,8 +17,8 @@ author: Brenduns
 ms.author: brenduns
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: 1a4a9da88caba55d9e340c7fb1f31f4e3b957f3e
-ms.openlocfilehash: fa9881e06abd410438fe5985151309c45f337802
+ms.sourcegitcommit: 52d2e088b8db3c2e9a0af640ca3db72b9fd7af60
+ms.openlocfilehash: a5228c4984347be4b115bfa5563791fa2fb7319c
 
 
 ---
@@ -289,7 +289,7 @@ A conta que você usa para executar uma redefinição de site deve ter as seguin
     -   **Site primário**: a conta que você usa para executar uma redefinição desse site deve ser de administrador local no servidor do site primário e deve ter privilégios equivalentes à função de segurança de administração baseada em função de **Administrador Completo** . Se o site primário estiver em uma hierarquia com um site de administração central, essa conta também deverá ser de administrador local no servidor do site de administração central.  
 
 **Limitações de uma redefinição de site**
-  - A partir da versão 1602, você não pode usar um redefinição de site para alterar os pacotes de idiomas do cliente ou do servidor instalados nos sites, desde que a hierarquia esteja configurada para dar suporte para [testar atualizações do cliente em uma coleção de pré-produção](/sccm/core/clients/manage/upgrade/test-client-upgrades).
+  - A partir da versão 1602, você não pode usar uma redefinição de site para alterar os pacotes de idiomas do Cliente ou do Servidor instalados nos sites enquanto a hierarquia estiver configurada para dar suporte para [testar atualizações do cliente em uma coleção de pré-produção](/sccm/core/clients/manage/upgrade/test-client-upgrades).
 
 #### <a name="to-perform-a-site-reset"></a>Para executar uma redefinição de site  
 
@@ -371,6 +371,6 @@ Para obter informações sobre os idiomas de cliente e servidor que têm suporte
 
 
 
-<!--HONumber=Dec16_HO3-->
+<!--HONumber=Jan17_HO1-->
 
 

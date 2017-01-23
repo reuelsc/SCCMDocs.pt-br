@@ -2,7 +2,7 @@
 title: "Backup e recuperação | Microsoft Docs"
 description: Saiba como fazer o backup e recuperar seus sites em caso de falha ou perda de dados no System Center Configuration Manager.
 ms.custom: na
-ms.date: 10/06/2016
+ms.date: 1/3/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
@@ -16,8 +16,8 @@ author: Brenduns
 ms.author: brenduns
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: 828e2ac9a3f9bcea1571d24145a1021fdf1091f3
-ms.openlocfilehash: ce73be3a9fa3876c587bbd7b7cb05acd36c2687e
+ms.sourcegitcommit: d68a6d6799bc898308f20a1f2af27b938a60dca2
+ms.openlocfilehash: 44be4075fb070d128524aa3304a3769a37b6fb40
 
 
 ---
@@ -839,7 +839,7 @@ Use as seções a seguir para ajudá-lo a criar sua estratégia de backup do Con
  Recuperado o servidor do site, é necessário digitar novamente as chaves de sideload do Windows especificadas para o site porque elas são redefinidas durante a recuperação do site. Ao digitar novamente as chaves de sideload, a contagem na coluna **Ativações usadas** para as chaves de sideload do Windows é redefinida no console do Configuration Manager. Por exemplo, digamos que antes da falha do site a contagem de **Total de ativações** estava definida como **100** e de **Ativações usadas** como **90** para o número de chaves usadas pelos dispositivos. Recuperado o site, a coluna **Total de ativações** continua a exibir **100**, mas a coluna **Ativações usadas** exibe incorretamente **0**. No entanto, quando 10 novos dispositivos usarem uma chave de sideload, não haverá mais chaves de sideload disponíveis e o dispositivo seguinte irá falhar ao usar uma chave de sideload.  
 
 #### <a name="recreate-the-microsoft-intune-subscription"></a>Recriar a Assinatura do Microsoft Intune  
- Se você recuperar um servidor do site do Configuration Manager depois que o computador do servidor do site for restaurado ao estado anterior, a assinatura do Microsoft Intune não será restaurada. É necessário recriar a assinatura depois de recuperar o site. Para obter mais informações, consulte [Configuring the Microsoft Intune subscription](../../mdm/deploy-use/setup-hybrid-mdm.md#step-3-configure-intune-subscription).  
+ Se você recuperar um servidor do site do Configuration Manager depois que o computador do servidor do site for restaurado ao estado anterior, a assinatura do Microsoft Intune não será restaurada. É necessário reconectar a assinatura depois de recuperar o site.  Não crie uma nova solicitação de APN. Em vez disso, carregue o arquivo .pem atual válido carregado na última vez em que o gerenciamento do iOS foi configurado ou renovado. Para obter mais informações, consulte [Configuring the Microsoft Intune subscription](../../mdm/deploy-use/setup-hybrid-mdm.md#step-3-configure-intune-subscription).  
 
 #### <a name="configure-ssl-for-site-system-roles-that-use-iis"></a>Configurar o SSL para funções do sistema de site que usam IIS  
  Ao recuperar sistemas de site que executam o IIS e que foram configurados para HTTPS antes da falha, você precisa reconfigurar o IIS para usar o certificado do servidor Web.  
@@ -913,6 +913,6 @@ Use as seções a seguir para ajudá-lo a criar sua estratégia de backup do Con
 
 
 
-<!--HONumber=Dec16_HO3-->
+<!--HONumber=Jan17_HO1-->
 
 

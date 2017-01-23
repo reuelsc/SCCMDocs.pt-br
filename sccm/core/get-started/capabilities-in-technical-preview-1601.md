@@ -16,8 +16,8 @@ author: Brenduns
 ms.author: brenduns
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: 3bf44f850722afdb8dfe5922c8ceff11c9b56d08
-ms.openlocfilehash: 7321645f17a143afe2fd848f45511a374de78c4b
+ms.sourcegitcommit: 52d2e088b8db3c2e9a0af640ca3db72b9fd7af60
+ms.openlocfilehash: b250456c92f77bf76a56b32fedafa934096abe2e
 
 ---
 # <a name="capabilities-in-technical-preview-1601-for-system-center-configuration-manager"></a>Funcionalidades no Technical Preview 1601 do System Center Configuration Manager
@@ -30,7 +30,7 @@ Este artigo apresenta os recursos disponíveis no Technical Preview do System Ce
 
 -   quando você gerencia **Opções de Atualização do Cliente** para promover um cliente de pré-produção para produção, o texto da caixa de seleção exibe uma versão de cliente zero (0) em vez do número real de build do cliente. A versão correta do cliente de pré-produção é mostrada na superfície acima dessa opção e é a versão do cliente que é promovida para a produção quando você seleciona essa opção.  
 
--   Ao atualizar para a Technical Preview 1601 e escolher testar o cliente do Configuration Manager em uma coleção de pré-produção, o pacote do cliente para a coleção não será atualizado. Esse problema é apenas na Technical Preview 1601.  
+-   Ao atualizar para o Technical Preview 1601 e escolher testar o cliente do Configuration Manager em uma coleção de pré-produção, o pacote do cliente para a coleção não será atualizado. Esse problema é apenas na Technical Preview 1601.  
 
      Para contornar esse problema, siga uma destas etapas:  
 
@@ -220,6 +220,6 @@ Um cliente estará online se estiver conectado a uma função de sistema de site
 
 
 
-<!--HONumber=Dec16_HO3-->
+<!--HONumber=Jan17_HO1-->
 
 

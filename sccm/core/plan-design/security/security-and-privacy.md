@@ -2,7 +2,7 @@
 title: "Segurança e privacidade do System Center Configuration Manager | Microsoft Docs"
 description: "Encontre recursos sobre segurança e privacidade para o System Center Configuration Manager."
 ms.custom: na
-ms.date: 10/06/2016
+ms.date: 1/3/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
@@ -16,8 +16,8 @@ author: Brenduns
 ms.author: brenduns
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: 6ed317d45d90758832d4157985dd95d5e253c6fc
-ms.openlocfilehash: a0cc96d1bde1ab895a4560d89dbc162f34a8443b
+ms.sourcegitcommit: b470aee50669bcded176d55d8b1496768d1f3cde
+ms.openlocfilehash: de9df79c7adc24b415fd1be6e45a42aec7e16f9a
 
 
 ---
@@ -25,11 +25,11 @@ ms.openlocfilehash: a0cc96d1bde1ab895a4560d89dbc162f34a8443b
 
 *Aplica-se a: System Center Configuration Manager (Branch Atual)*
 
-Este tópico inclui recursos sobre segurança e privacidade para o System Center Configuration Manager.  
+Este artigo inclui recursos sobre segurança e privacidade para o System Center Configuration Manager.  
 
- Antes de continuar, entenda as [Noções básicas do System Center Configuration Manager](../../../core/understand/fundamentals.md). Se você já tiver instalado o System Center Configuration Manager, identifique as decisões de design para sua implementação. Você pode achar o conteúdo sobre implantação e planejamento do Configuration Manager útil.  
+ Antes de continuar, certifique-se de aprender os [Aspectos fundamentais do System Center Configuration Manager](../../../core/understand/fundamentals.md). Se você já instalou o System Center Configuration Manager, identifique as decisões de design para sua implementação. Você pode achar o conteúdo sobre implantação e planejamento do Configuration Manager útil.  
 
- Para informações sobre recursos relacionados à segurança no produto, consulte os tópicos a seguir:  
+ Para informações sobre recursos relacionados à segurança no produto, consulte os artigos a seguir:  
 
 -   [Segurança e privacidade para a implantação de sistema operacional no System Center Configuration Manager](../../../osd/plan-design/security-and-privacy-for-operating-system-deployment.md)  
 
@@ -59,7 +59,7 @@ Este tópico inclui recursos sobre segurança e privacidade para o System Center
 
 
 
- **Tópicos sobre privacidade e segurança:**  
+ **Artigos sobre privacidade e segurança:**  
 
 -   [Planejar a segurança no System Center Configuration Manager](../../../core/plan-design/security/plan-for-security.md)  
 
@@ -76,6 +76,6 @@ Este tópico inclui recursos sobre segurança e privacidade para o System Center
 
 
 
-<!--HONumber=Dec16_HO3-->
+<!--HONumber=Jan17_HO1-->
 
 

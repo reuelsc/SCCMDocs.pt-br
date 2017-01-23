@@ -16,8 +16,8 @@ author: Brenduns
 ms.author: brenduns
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: 10b1010ccbf3889c58c55b87e70b354559243c90
-ms.openlocfilehash: 856ee34621816155d4ad95ed7240cf585e322486
+ms.sourcegitcommit: 4a8d98addcd463eb82d8b7100b44254a10d21992
+ms.openlocfilehash: 7d252fbbdc23ff676b87643408caf977f5636b67
 
 
 ---
@@ -28,7 +28,9 @@ ms.openlocfilehash: 856ee34621816155d4ad95ed7240cf585e322486
 Veja a seguir as perguntas frequentes sobre dados de diagnóstico e de uso do System Center Configuration Manager:  
 
 ###  <a name="a-namebkmkoffa-how-do-i-turn-off-telemetry"></a><a name="bkmk_off"></a> Como desativo a telemetria?  
- O branch atual do Configuration Manager precisa ser atualizado regularmente para dar suporte a novas versões do Windows 10 e Microsoft Intune. A Microsoft exige, pelo menos, o nível Básico de dados de diagnóstico e de uso para manter o produto atualizado, aprimorar a experiência de atualização, bem como a qualidade e segurança do produto.  
+Não há suporte para desativar a telemetria. No entanto, você pode escolher o nível de dados de telemetria coletados e usar um ponto de conexão de serviço em modo offline para ajudar a gerenciar quando os dados de telemetria são enviados.
+
+O branch atual do Configuration Manager precisa ser atualizado regularmente para dar suporte a novas versões do Windows 10 e Microsoft Intune. A Microsoft exige, pelo menos, o nível Básico de dados de diagnóstico e de uso para manter o produto atualizado, aprimorar a experiência de atualização, bem como a qualidade e segurança do produto.
 
 ###  <a name="a-namebkmkretentiona-what-is-the-data-retention-period"></a><a name="bkmk_retention"></a> Qual é o período de retenção de dados?  
  Dados de diagnóstico e de uso são mantidos por um ano.  
@@ -44,6 +46,7 @@ Veja a seguir as perguntas frequentes sobre dados de diagnóstico e de uso do Sy
  - [Dados de diagnóstico para 1511](/sccm/core/plan-design/diagnostics/levels-of-diagnostic-usage-data-collection-1511)
  - [Dados de diagnóstico para 1602](/sccm/core/plan-design/diagnostics/levels-of-diagnostic-usage-data-collection-1602)
  - [Dados de diagnóstico para 1606](/sccm/core/plan-design/diagnostics/levels-of-diagnostic-usage-data-collection-1606)
+ - [Dados de diagnóstico para 1610](/sccm/core/plan-design/diagnostics/levels-of-diagnostic-usage-data-collection-1610)
 
 
 ###  <a name="a-namebkmktablesa-can-you-see-data-in-custom-tables"></a><a name="bkmk_tables"></a> Você pode ver dados em tabelas personalizadas?  
@@ -57,6 +60,6 @@ Veja a seguir as perguntas frequentes sobre dados de diagnóstico e de uso do Sy
 
 
 
-<!--HONumber=Dec16_HO3-->
+<!--HONumber=Dec16_HO5-->
 
 

@@ -2,7 +2,7 @@
 title: 'Atualizar clientes | Microsoft Docs | Windows '
 description: Atualizar clientes em computadores Windows no System Center Configuration Manager.
 ms.custom: na
-ms.date: 11/18/2016
+ms.date: 01/01/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
@@ -17,8 +17,8 @@ author: nbigman
 ms.author: nbigman
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: 828e2ac9a3f9bcea1571d24145a1021fdf1091f3
-ms.openlocfilehash: 8a3028a562aa657ea39a0f5ff763311db6def00a
+ms.sourcegitcommit: 52d2e088b8db3c2e9a0af640ca3db72b9fd7af60
+ms.openlocfilehash: a35724a5b839b47904c46361709f248e432eff1e
 
 
 ---
@@ -80,7 +80,7 @@ ms.openlocfilehash: 8a3028a562aa657ea39a0f5ff763311db6def00a
 
 3.  Na guia **Início** , no grupo **Sites** , clique em **Configurações da Hierarquia**.  
 
-4.  Na guia **Atualização do Cliente** da caixa de diálogo **Propriedades das Configurações da Hierarquia** , examine a versão e a data do cliente de produção e verifique se essa é a versão que você deseja usar para atualizar computadores com Windows.  Se essa não for a versão do cliente que você esperava ver, talvez seja necessário promover o cliente de pré-produção para produção. Para mais informações, consulte [Como testar atualizações do cliente em uma coleção de pré-produção no System Center Configuration Manager](../../../../core/clients/manage/upgrade/test-client-upgrades.md).  
+4.  Na guia **Atualização do Cliente** da caixa de diálogo **Propriedades das Configurações da Hierarquia** , examine a versão e a data do cliente de produção e verifique se essa é a versão que você deseja usar para atualizar computadores com Windows.  Se essa não for a versão do cliente que você esperava ver, talvez seja necessário promover o cliente de pré-produção para produção. Para obter mais informações, consulte [Como testar atualizações do cliente em uma coleção de pré-produção no System Center Configuration Manager](../../../../core/clients/manage/upgrade/test-client-upgrades.md).  
 
 5.  Clique em **Atualizar todos os clientes na hierarquia usando o cliente de produção** e clique em **OK** na caixa de diálogo de confirmação.  
 
@@ -101,6 +101,6 @@ ms.openlocfilehash: 8a3028a562aa657ea39a0f5ff763311db6def00a
 
 
 
-<!--HONumber=Dec16_HO3-->
+<!--HONumber=Jan17_HO1-->
 
 

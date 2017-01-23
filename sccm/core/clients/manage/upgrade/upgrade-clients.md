@@ -2,7 +2,7 @@
 title: Atualizar clientes | Microsoft Docs
 description: "Obter informações sobre como atualizar clientes no System Center Configuration Manager."
 ms.custom: na
-ms.date: 10/06/2016
+ms.date: 01/01/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
@@ -16,8 +16,8 @@ author: nbigman
 ms.author: nbigman
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: 55c953f312a9fb31e7276dde2fdd59f8183b4e4d
-ms.openlocfilehash: c9794b9770e6fa5665af547d6b36559f85ade691
+ms.sourcegitcommit: 52d2e088b8db3c2e9a0af640ca3db72b9fd7af60
+ms.openlocfilehash: f369bccb1da6d428fb321455272190e1a0439ec3
 
 
 ---
@@ -25,10 +25,10 @@ ms.openlocfilehash: c9794b9770e6fa5665af547d6b36559f85ade691
 
 *Aplica-se a: System Center Configuration Manager (Branch Atual)*
 
-É possível usar métodos diferentes para atualizar o software cliente do System Center Configuration Manager em computadores Windows, servidores UNIX/Linux e computadores Mac da sua empresa. As seções a seguir descrevem as vantagens e desvantagens de cada método de atualização de cliente para ajudar determinar qual deles é o melhor para sua organização.  
+É possível usar métodos diferentes para atualizar o software cliente do System Center Configuration Manager em computadores Windows, servidores UNIX e Linux e computadores Mac. Estas são as vantagens e desvantagens de cada método.  
 
 > [!TIP]  
->  Se você estiver atualizando a infraestrutura do servidor de uma versão anterior do Configuration Manager \(como o Configuration Manager 2007 ou o System Center 2012 Configuration Manager\), será recomendável que conclua as atualizações do servidor, incluindo a instalação de todas as atualizações da ramificação atual, antes de atualizar os clientes do Configuration Manager.   A atualização mais recente da ramificação atual contém a última versão do cliente, de modo que é melhor fazer atualizações do cliente depois que você tiver instalado todas as atualizações do Configuration Manager que deseja usar.  
+>  Se você estiver atualizando a infraestrutura do servidor de uma versão anterior do Configuration Manager \(como o Configuration Manager 2007 ou o System Center 2012 Configuration Manager\), será recomendável que conclua as atualizações do servidor, incluindo a instalação de todas as atualizações da ramificação atual, antes de atualizar os clientes do Configuration Manager. Dessa forma, você também terá a versão mais recente do software cliente.  
 
 ## <a name="group-policy-installation"></a>Instalação de Política de Grupo  
  **Plataforma de cliente com suporte:** Windows  
@@ -45,11 +45,10 @@ ms.openlocfilehash: c9794b9770e6fa5665af547d6b36559f85ade691
 
  **Desvantagens**  
 
--   Poderá causar alto tráfego de rede se um grande número de clientes estiver sendo atualizado.  
+-   Poderá causar alto tráfego de rede se vários clientes estiverem sendo atualizados.  
 
--   Se o esquema do Active Directory não for estendido para o Configuration Manager, use as configurações de Política de Grupo para adicionar propriedades de instalação de cliente aos computadores em seu site.  
+-   Se o esquema do Active Directory não for estendido para o Configuration Manager, será necessário usar as [configurações de Política de Grupo](../../../../core/clients/deploy/deploy-clients-to-windows-computers.md#BKMK_ClientGP) para adicionar as propriedades de instalação do cliente aos computadores do site.  
 
- Para obter mais informações, consulte [How to Install Configuration Manager Clients by Using Group Policy](../../../../core/clients/deploy/deploy-clients-to-windows-computers.md#BKMK_ClientGP) (Como instalar clientes do Configuration Manager usando a política de grupo).  
 
 ## <a name="logon-script-installation"></a>Instalação de script de logon  
  **Plataforma de cliente com suporte:** Windows  
@@ -64,9 +63,9 @@ ms.openlocfilehash: c9794b9770e6fa5665af547d6b36559f85ade691
 
  **Desvantagens**  
 
--   Poderá causar um alto tráfego de rede se um grande número de clientes estiver sendo atualizado em um curto período de tempo.  
+-   Poderá causar alto tráfego de rede se vários clientes estiverem sendo atualizados em um curto período.  
 
--   Poderá demorar muito para ser atualizado em todos os computadores cliente se os usuários não fizerem logon na rede com frequência.  
+-   Poderá levar muito tempo para atualizar todos os computadores cliente se os usuários não fizerem logon na rede com frequência.  
 
  Para obter mais informações, consulte [How to Install Configuration Manager Clients by Using Logon Scripts](../../../../core/clients/deploy/deploy-clients-to-windows-computers.md#BKMK_ClientLogonScript) (Como instalar clientes do Configuration Manager usando scripts de logon).  
 
@@ -97,7 +96,7 @@ ms.openlocfilehash: c9794b9770e6fa5665af547d6b36559f85ade691
  **Plataforma de cliente com suporte:** Windows  
 
 > [!NOTE]  
->  Não é possível atualizar clientes do Configuration Manager 2007 usando esse método. Nesse cenário, você pode implantar o cliente do Configuration Manager como um pacote do site do Configuration Manager 2007 ou usar a atualização de cliente automática que cria e implanta automaticamente o pacote que contém a versão mais recente do cliente.  
+>  Não é possível atualizar clientes do Configuration Manager 2007 com esse método. Nesse cenário, você pode implantar o cliente do Configuration Manager como um pacote do site do Configuration Manager 2007 ou usar a atualização de cliente automática que cria e implanta automaticamente o pacote que contém a versão mais recente do cliente.  
 
  **Vantagens**  
 
@@ -105,7 +104,7 @@ ms.openlocfilehash: c9794b9770e6fa5665af547d6b36559f85ade691
 
  **Desvantagens**  
 
--   Pode causar elevado tráfego na rede ao distribuir o cliente para coleções grandes.  
+-   Poderá causar alto tráfego na rede se o cliente for distribuído para coleções grandes.  
 
 -   Pode ser usada somente para atualizar o software cliente em computadores que foram descobertos e registrados no site.  
 
@@ -114,7 +113,7 @@ ms.openlocfilehash: c9794b9770e6fa5665af547d6b36559f85ade691
 ## <a name="automatic-client-upgrade"></a>Atualização automática de cliente  
 
 > [!NOTE]  
->  Pode ser usado para atualizar clientes do Configuration Manager 2007 para clientes do System Center Configuration Manager. Um cliente do Configuration Manager 2007 pode atribuir um site do Configuration Manager, mas não pode realizar nenhuma ação além da atualização automática de cliente.  
+>  Pode ser usado para atualizar clientes do Configuration Manager 2007 para clientes do System Center Configuration Manager. Um cliente do Configuration Manager 2007 pode ser atribuído a um site do Configuration Manager, mas não pode realizar nenhuma ação além da atualização automática do cliente.  
 
  **Plataforma de cliente com suporte:** Windows  
 
@@ -122,7 +121,7 @@ ms.openlocfilehash: c9794b9770e6fa5665af547d6b36559f85ade691
 
 -   Pode ser usada para manter automaticamente clientes em seu site na versão mais recente.  
 
--   Requer administração mínima pelo usuário administrativo.  
+-   Exige administração mínima.  
 
  **Desvantagens**  
 
@@ -143,7 +142,7 @@ ms.openlocfilehash: c9794b9770e6fa5665af547d6b36559f85ade691
 
 -   Pode ser usado para testar novas versões de cliente em uma coleção de pré-produção menor.  
 
--   Quando o teste é concluído, os clientes de pré-produção são promovidos para a produção e atualizados automaticamente em todo o site do Configuration Manager.  
+-   Quando o teste é concluído, os clientes em pré-produção são promovidos para produção e atualizados automaticamente em todo o site do Configuration Manager.  
 
  **Desvantagens**  
 
@@ -153,6 +152,6 @@ ms.openlocfilehash: c9794b9770e6fa5665af547d6b36559f85ade691
 
 
 
-<!--HONumber=Dec16_HO3-->
+<!--HONumber=Jan17_HO1-->
 
 

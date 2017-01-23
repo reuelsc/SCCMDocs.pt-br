@@ -16,8 +16,8 @@ author: Brenduns
 ms.author: brenduns
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: 10b1010ccbf3889c58c55b87e70b354559243c90
-ms.openlocfilehash: a80095fb3b227653126a028ab4ab8f4e2dbd612b
+ms.sourcegitcommit: 0c084e9f630a96c7b22c3dbdd72e18ad4a86926d
+ms.openlocfilehash: 9631b5622fec19e0248eb919bc8bd876152f66d7
 
 
 ---
@@ -27,9 +27,9 @@ ms.openlocfilehash: a80095fb3b227653126a028ab4ab8f4e2dbd612b
 
 Use este tópico para saber mais sobre como executar a Instalação do Configuration Manager quando você usar mídia de linha de base da versão 1606 do Microsoft System Center 2016 ou do System Center Configuration Manager (Branch Atual e Branch de Manutenção em Longo Prazo da 1606). Você pode usar essa mídia para instalar um novo site ou para atualizar do System Center 2012 Configuration Manager com Service Pack 2 ou System Center 2012 R2 Configuration Manager com Service Pack 1. Durante a instalação, você pode optar por instalar o Branch Atual ou o LTSB (Branch de Manutenção em Longo Prazo).
 
-Quando você usa a mídia de linha de base da versão 1606, o site instalado (ou atualizado para) é:
-- **Um site do Branch Atual** que é equivalente a um site que foi instalado pela primeira vez usando a mídia de linha de base da 1511 e então atualizado para a versão 1606 e com o pacote cumulativo de atualizações do hotfix da 1606 – KB3186654.
--   **Um site do LTSB** que é equivalente ao site do Branch Atual que executa a versão 1606 com o pacote cumulativo de atualizações do hotfix da 1606 – KB3186654 (a mídia de linha de base já inclui o pacote cumulativo de atualizações do hotfix).  No entanto, o LTSB não dá suporte a todos os recursos ou funcionalidades disponíveis com a Branch Atual, conforme detalhado em [Introdução ao Branch de Manutenção em Longo Prazo do System Center Configuration Manager](introduction-to-the-ltsb.md).
+Quando você usa a mídia de linha de base da versão 1606, o site que você instala ou para o qual atualiza é:
+- Um *site do Branch Atual* que é equivalente a um site que foi instalado pela primeira vez usando a mídia de linha de base da 1511 e então atualizado para a versão 1606 e com o pacote cumulativo de atualizações do hotfix da 1606 – KB3186654.
+-   Um *site do LTSB* que é equivalente ao site do Branch Atual que executa a versão 1606 com o pacote cumulativo de atualizações do hotfix da 1606 – KB3186654. A mídia de linha de base já inclui o pacote cumulativo de atualizações do hotfix.  Mas o LTSB não dá suporte a todos os recursos ou funcionalidades disponíveis com o Branch Atual, conforme detalhado em [Introdução ao Branch de Manutenção em Longo Prazo do System Center Configuration Manager](introduction-to-the-ltsb.md).
 
 Se você não estiver familiarizado com os diferentes branches do System Center Configuration Manager, confira [Qual branch do Configuration Manager devo usar](which-branch-should-i-use.md).
 
@@ -40,18 +40,18 @@ A mídia de linha de base da 1606 apresenta as seguintes alterações na Instala
 ### <a name="branch-and-edition"></a>Branch e edição
 Quando você executar a Instalação, será apresentada uma página de licenciamento na qual é possível pode selecionar o branch do Configuration Manager que você deseja instalar. Você pode escolher o Branch Atual ou o LTSB como uma instalação licenciada ou pode escolher a Edição de Avaliação do Branch Atual como uma instalação não licenciada.
 
-Para mais informações, confira [Licensing and branches for System Center Configuration Manager](learn-more-editions.md) (Licenciamento e branches para o System Center Configuration Manager).
+Para mais informações, consulte [Licenciamento e branches do System Center Configuration Manager](learn-more-editions.md).
 
 ### <a name="software-assurance-expiration"></a>Término do Software Assurance
-Durante a Instalação, você tem a opção de inserir a **Software Assurance expiration date (Data de término do Software Assurance)**. Esse é um valor opcional que você pode especificar como um lembrete conveniente.
+Durante a Instalação, você tem a opção de inserir o valor da **Data de validade do Software Assurance**. Esse é um valor opcional que você pode especificar como um lembrete conveniente.
 
 > [!NOTE]
-> A Microsoft não valida a data de validade inserida e não usará essa data para validação da licença.  No entanto, você pode usá-la como um lembrete da data de vencimento. Isso é útil porque o Configuration Manager periodicamente verifica se há novas atualizações de software oferecidas online e o status de licença do Software Assurance deve estar atualizado para estar qualificado para usar essas atualizações adicionais.    
+> A Microsoft não valida a data de validade inserida e não usará essa data para validação da licença.  No entanto, você pode usá-la como um lembrete da data de vencimento. Isso é útil porque o Configuration Manager verifica periodicamente se há novas atualizações de software oferecidas online. O status de licença do Software Assurance deve estar atualizado para que você esteja qualificado para usar essas atualizações adicionais.    
 
-- Você pode especificar o valor na página **Chave do Produto (Product Key)** do Assistente de Instalação ao executar a Instalação da mídia de linha de base da versão 1606 do System Center Configuration Manager
-- Você também pode especificar essa data na guia **Licenciamento** das **Propriedades de Configurações de Hierarquia** no console do Configuration Manager
+- Você pode especificar o valor da data na página **Chave do Produto (Product Key)** do Assistente de Instalação ao executar a Instalação da mídia de linha de base da versão 1606 do System Center Configuration Manager.
+- Você também pode especificar essa data selecionando **Propriedades de Configurações de Hierarquia** > **Licenciamento** no console do Configuration Manager.
 
-Para mais informações, confira *Software Assurance agreements* (Contratos do Software Assurance) em [Licensing and branches for System Center Configuration Manager](learn-more-editions.md) (Licenciamento e branches para o System Center Configuration Manager).
+Para obter mais informações, confira "Contratos do Software Assurance" em [Licenciamento e branches para o System Center Configuration Manager](learn-more-editions.md).
 
 
 ### <a name="additional-pre-upgrade-configurations"></a>Configurações adicionais de pré-atualização
@@ -64,18 +64,18 @@ Desinstalar as funções do sistema de sites que não têm suporte pelo LTSB:
 Para mais informações, confira [Atualização para o System Center Configuration Manager](/sccm/core/servers/deploy/install/upgrade-to-configuration-manager).
 
 
-### <a name="new-scripted-install-options"></a>Novas opções de instalação com scripts
+### <a name="new-scripted-installation-options"></a>Novas opções de instalação com scripts
 A mídia de linha de base da versão 1606 dá suporte a uma nova chave de arquivo de script autônomo para instalações com scripts de um novo site de nível superior. Isso se aplica à instalação de um novo site primário autônomo ou à adição de um site de administração central como parte de um cenário de expansão do site.
 
-Ao usar um script autônomo para instalar um branch licenciado, você deve adicionar a seção a seguir, os nomes de chave e os valores à seção Options do script (não é necessário usar esses valores para criar scripts da instalação de uma Edição de Avaliação do Branch Atual):  
+Ao usar um script autônomo para instalar uma ramificação licenciada, é necessário adicionar a seção, os nomes de chave e valores a seguir na seção de Opções do seu script. Você não precisa usar esses valores para instalar com script a Edição de avaliação do Branch Atual:  
 
  **SABranchOptions**
 -   **Nome da chave: SSActive**
-  - Valores: 0 ou 1  
+  - Valores: 0 ou 1.  
   - Detalhes: 0 instala uma Edição de Avaliação não licenciada do Branch Atual e 1 instala uma edição licenciada.   
 
 - **CurrentBranch**
-  - Valores: 0 ou 1  
+  - Valores: 0 ou 1.  
   - Detalhes: 0 instala o Branch de Manutenção em Longo Prazo e 1 instala o Branch Atual.  
 
 Por exemplo, para instalar uma edição do Branch Atual, você usaria:
@@ -97,57 +97,59 @@ Para mais informações, confira [Use a command line to install System Center Co
 Ao usar a mídia de linha de base da 1606 para instalar um novo site de qualquer um dos branches, use os procedimentos de planejamento, preparo e instalação de site documentados no tópico [Installing System Center Configuration Manager sites](/sccm/core/servers/deploy/install/installing-sites) (Instalando sites do System Center Configuration Manager) com a adição das seguintes considerações para a Instalação:
 
 - Durante a Instalação, você deve escolher o branch do Configuration Manager que deseja instalar e pode especificar os detalhes do contrato do Software Assurance.
--   Novas opções de instalação com scripts
+-   Nova instalação com scripts. Para obter mais informações, consulte "Novas opções de instalação com scripts" anteriormente neste artigo.
 
 ## <a name="expand-a-stand-alone-primary-site"></a>Expandir um site primário autônomo
 Você pode expandir um site primário autônomo que executa o LTSB.  O processo não é diferente daquele usado para um site de Branch Atual com uma limitação:
 
-- Ao instalar o novo site de administração central, você deve usar a Instalação da mídia de origem original usada para instalar o site LTSB. (Não há suporte para executar a Instalação da pasta CD.Latest para esse cenário).
+- Ao instalar o novo site de administração central, você deve usar a Instalação da mídia de origem original usada para instalar o site LTSB. Não há suporte para executar a Instalação da pasta CD.Latest para esse cenário.
 
-Para mais informações, confira *Expandir um site primário autônomo* em [Instalar um site usando o Assistente de Instalação](/sccm/core/servers/deploy/install/use-the-setup-wizard-to-install-sites).
+Para obter mais informações sobre a expansão de um site, confira "Expandir um site primário autônomo" em [Instalar um site usando o Assistente de Instalação](/sccm/core/servers/deploy/install/use-the-setup-wizard-to-install-sites).
 
 ## <a name="upgrade-from-system-center-2012-configuration-manager"></a>Atualizar do System Center 2012 Configuration Manager
 Ao atualizar do System Center 2012 Configuration Manager, use o planejamento, preparo e procedimentos de site conforme documentado no tópico [Atualização para o System Center Configuration Manager](/sccm/core/servers/deploy/install/upgrade-to-configuration-manager), mas com as seguintes alterações:
 
 **Atualização para o Branch Atual:**
-- Durante a Instalação, você deve escolher o Branch Atual e pode especificar detalhes para o acordo do Software Assurance
--   Novas opções de instalação com scripts
+- Durante a Instalação, você deve escolher o Branch Atual e pode especificar detalhes para o contrato do Software Assurance.
+-   Nova instalação com scripts. Para obter mais informações, consulte "Novas opções de instalação com scripts" anteriormente neste artigo.
 
 **Atualização para o LTSB:**  
-- Etapas adicionais para seguir na lista de verificação de pré-atualização
-- Durante a Instalação, você deve escolher o LTSB e pode especificar detalhes para o acordo do Software Assurance
-- Você pode atualizar apenas um site que executa o System Center 2012 Configuration Manager com Service Pack 2 ou o System Center 2012 R2 Configuration Manager com Service Pack 1
+- Etapas adicionais para seguir na lista de verificação de pré-atualização.
+- Durante a Instalação, você deve escolher o LTSB e pode especificar detalhes para o contrato do Software Assurance.
+- Você pode atualizar apenas um site que executa o System Center 2012 Configuration Manager com Service Pack 2 ou o System Center 2012 R2 Configuration Manager com Service Pack 1.
 
 ### <a name="in-place-upgrade-paths-for-the-1606-baseline-media"></a>Caminhos de atualização in-loco para a mídia de linha de base da 1606
 Você pode usar a mídia de linha de base da 1606 para atualizar o seguinte para uma edição licenciada do System Center Configuration Manager:
-- System Center 2012 Configuration Manager com Service Pack 2
-- System Center 2012 R2 Configuration Manager com Service Pack 1
+- System Center 2012 Configuration Manager com Service Pack 2.
+- System Center 2012 R2 Configuration Manager com Service Pack 1.
 
 Você também pode usar essa mídia para atualizar uma Edição de Avaliação do Branch Atual não licenciada para uma versão totalmente licenciada do Branch Atual.
 
 Esta mídia não dá suporte à atualização de:
-- Outras versões do System Center 2012 Configuration Manager
-- Configuration Manager 2007 ou anterior
-- Uma instalação de versão Release Candidate do System Center Configuration Manager
+- Outras versões do System Center 2012 Configuration Manager.
+- Configuration Manager 2007 ou anterior.
+- Uma instalação de versão Release Candidate do System Center Configuration Manager.
 
 ## <a name="about-the-cdlatest-folder-and-the-ltsb"></a>Sobre a pasta CD.Latest e o LTSB
-A seguir estão as limitações para o uso da mídia que o Configuration Manager cria na pasta CD.Latest no servidor do site. Elas se aplicam a sites que executam o LTSB: a mídia na pasta CD.Latest tem suporte para:
-- Recuperação de site
-- Manutenção do site
-- Instalação de sites primários filho adicionais
+A seguir estão as limitações para o uso da mídia que o Configuration Manager cria na pasta CD.Latest no servidor do site. Esses limites se aplicam a sites que executam o LTSB:
+
+A mídia na pasta CD.Latest tem suporte para:
+- Recuperação de site.
+- Manutenção do site.
+- Instalação de sites primários filho adicionais.
 
 A mídia na pasta CD.Latest não tem suporte para:  
 - Instalação de um site de administração central como parte de um cenário de expansão do site.
 
-Para mais informações, confira [a pasta CD.Latest](/sccm/core/servers/manage/the-cd.latest-folder)
+Para obter mais informações, veja [a pasta CD.Latest](/sccm/core/servers/manage/the-cd.latest-folder).
 
 ## <a name="backup-recovery-and-site-maintenance-for-the-ltsb"></a>Backup, recuperação e manutenção do site para o LTSB
-Para fazer backup, recuperar ou executar a manutenção do site em um site que executa o LTSB, use as diretrizes e os procedimentos de [Backup and recovery for System Center Configuration Manager](/sccm/protect/understand/backup-and-recovery) (Backup e recuperação para o System Center Configuration Manager).  
+Para fazer backup, recuperar ou executar a manutenção do site em um site que executa o LTSB, use as diretrizes e os procedimentos de [Backup e recuperação para o System Center Configuration Manager](/sccm/protect/understand/backup-and-recovery).  
 
 Use a Instalação do Configuration Manager da pasta CD.Latest do backup do seu site do LTSB.
 
 
 
-<!--HONumber=Dec16_HO3-->
+<!--HONumber=Jan17_HO1-->
 
 

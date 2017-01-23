@@ -2,7 +2,7 @@
 title: "Contas para acessar o conteúdo | Microsoft Docs"
 description: "Saiba mais sobre as contas em que os clientes acessam conteúdo do System Center Configuration Manager."
 ms.custom: na
-ms.date: 10/06/2016
+ms.date: 1/4/2017
 ms.reviewer: na
 ms.suite: na
 ms.prod: configuration-manager
@@ -16,8 +16,8 @@ author: Brenduns
 ms.author: brenduns
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: 6ed317d45d90758832d4157985dd95d5e253c6fc
-ms.openlocfilehash: 4bf8dbd007f2ff122d1447ffcb2a963579034033
+ms.sourcegitcommit: 4d34a272a93100426cccd2308c5b3b0b0ae94a60
+ms.openlocfilehash: ee83aa6fdbd1a82384a4684055ed72620a3f474e
 
 ---
 # <a name="manage-accounts-to-access-content-in-system-center-configuration-manager"></a>Gerenciar contas para acessar conteúdo | System Center Configuration Manager
@@ -30,7 +30,7 @@ Antes de implantar o conteúdo no System Center Configuration Manager, reserve u
 
      Essa conta também é usada pelos pontos de distribuição de recepção para obter o conteúdo de um ponto de distribuição de origem em uma floresta remota  
 
--   **Conta de acesso ao pacote** – Por padrão, o Configuration Manager concede acesso ao conteúdo em um ponto de distribuição a usuários e administradores de contas de acesso genérico. No entanto, você pode configurar permissões adicionais para restringir o acesso.  
+-   **Conta de acesso ao pacote** – por padrão, o Configuration Manager concede acesso ao conteúdo em um ponto de distribuição às contas internas chamadas de **Usuários** e **Administradores**. Você pode configurar permissões adicionais para restringir o acesso.  
 
 -   **Conta de conexão multicast** – usada para implantações de sistema operacional.  
 
@@ -120,6 +120,6 @@ Se você criar essa conta, crie-a com direitos limitados, a conta local no compu
 
 
 
-<!--HONumber=Dec16_HO3-->
+<!--HONumber=Jan17_HO1-->
 
 

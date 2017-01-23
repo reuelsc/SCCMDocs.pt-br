@@ -2,7 +2,7 @@
 title: "Exibir dados de diagnóstico | Microsoft Docs"
 description: "Veja os dados de uso e de diagnóstico para confirmar se sua hierarquia do System Center Configuration Manager não contém nenhuma informação confidencial."
 ms.custom: na
-ms.date: 10/06/2016
+ms.date: 12/29/2016
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
@@ -16,8 +16,8 @@ author: Brenduns
 ms.author: brenduns
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: 6ed317d45d90758832d4157985dd95d5e253c6fc
-ms.openlocfilehash: 5b5d6b6c176de8acbc1161f6820aa1cc3e9fca49
+ms.sourcegitcommit: 688e05aae0e0b15b54835f8d64a98487f4d7b64d
+ms.openlocfilehash: fcd7ac43f7b2d2c92d6aadd7c490f198ac99e5e6
 
 
 ---
@@ -25,27 +25,27 @@ ms.openlocfilehash: 5b5d6b6c176de8acbc1161f6820aa1cc3e9fca49
 
 *Aplica-se a: System Center Configuration Manager (Branch Atual)*
 
-Você pode exibir dados de uso e de diagnóstico da hierarquia do System Center Configuration Manager para verificar se nenhuma informação confidencial ou identificável foi incluída. Os dados de telemetria são resumidos e armazenados na tabela **TEL_TelemetryResults** do banco de dados do site e são formatados para ser úteis e eficientes de forma programática. Embora as opções a seguir forneçam uma exibição dos dados exatos enviados à Microsoft, elas não se destinam a ser usadas para outras finalidades, como análise de dados.  
+Você pode exibir dados de uso e de diagnóstico da hierarquia do System Center Configuration Manager para verificar se nenhuma informação confidencial ou identificável foi incluída. Os dados de telemetria são resumidos e armazenados na tabela **TEL_TelemetryResults** do banco de dados do site e são formatados para ser úteis e eficientes de forma programática. Embora as opções a seguir forneçam uma exibição dos dados exatos enviados à Microsoft, elas não se destinam a serem usadas para outras finalidades, como análise de dados.  
 
-O seguinte comando SQL pode ser usado para exibir o conteúdo desta tabela e mostra os dados exatos que são enviados (você também pode exportar esses dados para um arquivo de texto):  
+Use o comando SQL a seguir para exibir o conteúdo desta tabela e mostrar os dados exatos que são enviados. (Também é possível exportar esses dados para um arquivo de texto):  
 
 -   **SELECT \* FROM TEL_TelemetryResults**  
 
 > [!NOTE]  
->  Antes de instalar a versão 1602, a tabela que armazena os dados de telemetria é a **TelemetryResults**.  
+>  Antes de instalar a versão 1602, a tabela que armazena os dados telemétricos é **TelemetryResults**.  
 
-Quando o ponto de conexão de serviço está no modo offline, você pode usar a ferramenta de conexão de serviço para exportar os dados de uso e de diagnóstico atuais para um arquivo CSV (valores separados por vírgula). Execute a ferramenta de conexão de serviço no ponto de conexão de serviço com o parâmetro **-Export**.  
+Quando o ponto de conexão de serviço está no modo offline, é possível usar a ferramenta de conexão de serviço para exportar os dados atuais de diagnóstico e de uso para um arquivo CSV (valores separados por vírgula). Execute a ferramenta de conexão de serviço no ponto de conexão de serviço usando o parâmetro **-Export**.  
 
 ##  <a name="a-namebkmkhashesa-one-way-hashes"></a><a name="bkmk_hashes"></a> Hashes unidirecionais  
-Alguns dos dados que consistem em cadeias de caracteres alfanuméricos aleatórios. O Configuration Manager usa hashes unidirecionais que usam o algoritmo SHA-256 para garantir que não coletamos dados potencialmente confidenciais e, ao mesmo tempo, os deixa em um estado em que ainda podem ser usados para fins de correlação e comparação. Por exemplo, em vez de coletar os nomes de tabelas no banco de dados do site, um hash unidirecional é capturado para cada nome de tabela. Isso garante que quaisquer nomes de tabela personalizados criados por você ou por complementos de produtos de terceiros não sejam visíveis. Em seguida, podemos executar o mesmo hash unidirecional dos nomes de tabela SQL que são fornecidos por padrão no produto e fazer uma comparação para determinar o desvio de seu esquema de banco de dados em relação ao padrão do produto. Isso é usado para aperfeiçoar as atualizações que exigem alterações no esquema SQL.  
+Alguns dados consistem em cadeias de caracteres alfanuméricos aleatórios. O Configuration Manager usa o algoritmo SHA-256, que usa hashes unidirecionais, para garantir que não coletamos dados potencialmente confidenciais. O algoritmo mantém os dados em um estado no qual eles ainda podem ser usados para fins de correlação e comparação. Por exemplo, em vez de coletar os nomes de tabelas no banco de dados do site, um hash unidirecional é capturado para cada nome de tabela. Isso garante que os nomes de tabela personalizados criados ou os complementos de produtos de outros usuários não estão visíveis. Em seguida, podemos executar o mesmo hash unidirecional dos nomes de tabela SQL fornecidos por padrão no produto e comparar os resultados das duas consultas para determinar o desvio de seu esquema de banco de dados em relação ao padrão do produto. Isso é usado para aperfeiçoar as atualizações que exigem alterações no esquema SQL.  
 
-Ao exibir os dados brutos, um valor com hash comum aparecerá em cada linha de dados. Essa é a ID da hierarquia. Esse valor com hash é usado para garantir que os dados sejam correlacionados com a mesma hierarquia sem identificar o cliente ou a origem.  
+Ao exibir os dados brutos, um valor com hash comum aparecerá em cada linha de dados. Essa é a ID da hierarquia. Esse valor com hash é usado para garantir que os dados são correlacionados com a mesma hierarquia sem identificar o cliente nem a origem.  
 
 #### <a name="to-see-how-the-one-way-hash-works"></a>Para ver como funciona o hash unidirecional  
 
-1.  Obtenha a ID da hierarquia executando a seguinte instrução SQL no SQL Management Studio no banco de dados do Configuration Manager: **select [dbo].[fnGetHierarchyID](\)**  
+1.  Obtenha a ID da hierarquia executando a seguinte instrução SQL do SQL Management Studio no banco de dados do Configuration Manager: **select [dbo].[fnGetHierarchyID](\)**  
 
-2.  Em seguida, use o script do Windows PowerShell a seguir para executar o hash unidirecional do GUID obtido do banco de dados. Você pode comparar isso com a ID da hierarquia nos dados brutos para ver como podemos ocultar esses dados.  
+2.  Use o script do Windows PowerShell a seguir para executar o hash unidirecional do GUID obtido do banco de dados. Você pode comparar isso com a ID da hierarquia nos dados brutos para ver como podemos ocultar esses dados.  
 
     ```  
     Param( [Parameter(Mandatory=$True)] [string]$value )  
@@ -69,6 +69,6 @@ Ao exibir os dados brutos, um valor com hash comum aparecerá em cada linha de d
 
 
 
-<!--HONumber=Dec16_HO3-->
+<!--HONumber=Dec16_HO5-->
 
 

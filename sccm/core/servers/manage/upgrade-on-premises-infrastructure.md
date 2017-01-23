@@ -17,8 +17,8 @@ author: Brenduns
 ms.author: brenduns
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: 8b4c80aa092369ec251757d82a1b4bb2863aa96a
-ms.openlocfilehash: f3742dcb930444bab7eb02374fd77ebd0e455734
+ms.sourcegitcommit: 4a8d98addcd463eb82d8b7100b44254a10d21992
+ms.openlocfilehash: b79346968edf88443f8e30691aa4baec7b81699f
 
 
 ---
@@ -26,7 +26,11 @@ ms.openlocfilehash: f3742dcb930444bab7eb02374fd77ebd0e455734
 
 *Aplica-se a: System Center Configuration Manager (Branch Atual)*
 
-Use as informações a seguir para ajudá-lo a atualizar sua infraestrutura que executa o System Center Configuration Manager.  
+Use as informações descritas neste tópico para ajudá-lo a atualizar a infraestrutura de servidor que executa o System Center Configuration Manager.  
+
+ - Se desejar atualizar de uma versão anterior do Configuration Manager para o System Center Configuration Manager, consulte [Atualização para o System Center Configuration Manager](/sccm/core/servers/deploy/install/upgrade-to-configuration-manager).
+
+- Se desejar atualizar a infraestrutura do System Center Configuration Manager para uma nova versão, consulte [Atualizações para o System Center Configuration Manager](/sccm/core/servers/manage/updates).
 
 ##  <a name="a-namebkmksupconfigupgradesitesrva-upgrade-site-operating-system-of-site-systems"></a><a name="BKMK_SupConfigUpgradeSiteSrv"></a> Atualizar sistema operacional do site dos sistemas de sites  
  O Configuration Manager dá suporte à atualização in-loco do sistema operacional dos servidores que hospedam um servidor do site e dos servidores remotos que hospedam qualquer função do sistema de site, nas seguintes situações:  
@@ -209,6 +213,6 @@ Para identificar o nível de compatibilidade CE do SQL Server em uso para seu ba
 
 
 
-<!--HONumber=Dec16_HO3-->
+<!--HONumber=Dec16_HO5-->
 
 

@@ -17,8 +17,8 @@ author: nbigman
 ms.author: nbigman
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: 55c953f312a9fb31e7276dde2fdd59f8183b4e4d
-ms.openlocfilehash: 3bc82535955d937e5620ef2963ccc29bfd0124e3
+ms.sourcegitcommit: 52d2e088b8db3c2e9a0af640ca3db72b9fd7af60
+ms.openlocfilehash: 0ca218e4276699dd9029308e1d8ac524563da7c5
 
 
 ---
@@ -55,7 +55,7 @@ Implantar clientes no seu site leva tempo e algumas instalações não são bem-
 
 -   Se você quiser alterar o escopo do relatório, clique em **Procurar...** e escolha outra coleção.  
 
- Para saber mais sobre implantações do cliente em pré-produção, consulte [Como testar atualizações do cliente em uma coleção de pré-produção no System Center Configuration Manager](../../../core/clients/manage/upgrade/test-client-upgrades.md).
+ Para saber mais sobre implantações de cliente em pré-produção, consulte [Como testar atualizações de cliente em uma coleção de pré-produção no System Center Configuration Manager](../../../core/clients/manage/upgrade/test-client-upgrades.md).
 
  > [!NOTE]
  > O status da implantação em computadores que hospedam funções de sistema de sites em uma coleção de pré-produção pode ser relatado como **Não compatível** mesmo que o cliente tenha sido implantado com êxito. Quando você promove o cliente para produção, o status da implantação é relatado corretamente.   
@@ -66,6 +66,6 @@ Implantar clientes no seu site leva tempo e algumas instalações não são bem-
 
 
 
-<!--HONumber=Dec16_HO3-->
+<!--HONumber=Jan17_HO1-->
 
 

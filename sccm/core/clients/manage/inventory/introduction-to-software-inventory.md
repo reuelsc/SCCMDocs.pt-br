@@ -2,7 +2,7 @@
 title: "Inventário de software | Microsoft Docs"
 description: "Veja uma introdução ao inventário de software no System Center Configuration Manager."
 ms.custom: na
-ms.date: 10/06/2016
+ms.date: 12/26/2016
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
@@ -17,8 +17,8 @@ author: nbigman
 ms.author: nbigman
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: a468ce93e9536fe3f6bf0fc191ff9764dd1c3343
-ms.openlocfilehash: 401ba6e37d740310d49ab9e96112ce576d7130e4
+ms.sourcegitcommit: 9206b82eca02877c30eebf146d42bcca7290eb42
+ms.openlocfilehash: c9956dd4ef94a1b109d761e44e42f512c42eb8d2
 
 
 ---
@@ -26,31 +26,31 @@ ms.openlocfilehash: 401ba6e37d740310d49ab9e96112ce576d7130e4
 
 *Aplica-se a: System Center Configuration Manager (Branch Atual)*
 
-Use o inventário de software no System Center Configuration Manager para coletar informações sobre arquivos contidos em dispositivos clientes em sua organização. Além disso, o inventário de software pode coletar arquivos de dispositivos cliente e armazená-los no servidor do site. O inventário de software é coletado quando a configuração **Habilitar inventário de software em clientes** está habilitada nas configurações do cliente.  
+Use o inventário de software para coletar informações sobre arquivos em dispositivos cliente. O inventário de software também pode coletar arquivos de dispositivos cliente e armazená-los no servidor do site. O inventário de software é coletado quando você escolhe a configuração **Habilitar inventário de software em clientes** nas configurações do cliente, em que também é possível agendar a operação.  
 
- Depois que o inventário de software é habilitado e os clientes executam um ciclo de inventário de software, o cliente envia as informações de inventário para um ponto de gerenciamento no site do cliente. Em seguida, o ponto de gerenciamento encaminha as informações de inventário para o servidor do site do Configuration Manager, que armazena as informações de inventário no banco de dados do site. O inventário de software é executado em clientes de acordo com o agendamento que você especificar nas configurações do cliente.  
+Depois que o inventário de software é habilitado e os clientes executam um ciclo de inventário de software, o cliente envia as informações para um ponto de gerenciamento no site do cliente. Em seguida, o ponto de gerenciamento encaminha as informações de inventário para o servidor do site do Configuration Manager, que armazena as informações no banco de dados do site.   
 
- Você pode usar vários métodos para exibir os dados de inventário de software coletados pelo Configuration Manager. Eles incluem o seguinte:  
+ Aqui estão algumas maneiras para exibir os dados de inventário de software:  
 
--   Crie consultas que retornam dispositivos que se baseiam em arquivos especificados que são encontrados nos dispositivos. Para mais informações, consulte [Referência técnica de consultas no System Center Configuration Manager](../../../../core/servers/manage/queries-technical-reference.md).  
+-   [Criar consultas](../../../../core/servers/manage/queries-technical-reference.md) que retornam dispositivos com arquivos especificados.   
 
--   Crie coleções baseadas em consulta que se baseiam em arquivos especificados que são encontrados nos dispositivos. Associações de coleção baseada em consulta são atualizadas automaticamente em um agendamento. Você pode usar coleções para diversas tarefas como implantação de software. Para obter mais informações, consulte [Introdução às coleções no System Center Configuration Manager](../../../../core/clients/manage/collections/introduction-to-collections.md).  
+-   Criar [coleções com base em consulta](../../../../core/clients/manage/collections/introduction-to-collections.md) que incluem dispositivos com arquivos especificados.   
 
--   Execute os relatórios que exibem detalhes específicos sobre os arquivos nos dispositivos em sua organização. Para obter mais informações, consulte [Relatórios no System Center Configuration Manager](../../../../core/servers/manage/reporting.md).  
+-   [Executar relatórios](../../../../core/servers/manage/reporting.md) que fornecem detalhes sobre arquivos nos dispositivos. 
 
--   Use o Gerenciador de Recursos para examinar informações detalhadas sobre os arquivos que foram inventariados e coletados dos dispositivos cliente. Para mais informações, consulte [Como usar o Gerenciador de Recursos para exibir o inventário de software no System Center Configuration Manager](../../../../core/clients/manage/inventory/use-resource-explorer-to-view-software-inventory.md).  
+-   Use o [Gerenciador de Recursos](../../../../core/clients/manage/inventory/use-resource-explorer-to-view-software-inventory.md) para examinar informações detalhadas sobre os arquivos que foram inventariados e coletados dos dispositivos cliente.   
 
- Quando o inventário de software é executado em um dispositivo cliente, o primeiro relatório de inventário retornado é sempre um inventário completo. Os relatórios de inventário posteriores contêm apenas informações de inventário delta. O servidor do site processa informações de inventário delta na ordem em que elas são recebidas. Se as informações de inventário delta de um cliente estiverem ausentes, o servidor do site rejeitará as informações de inventário delta adicionais e instruirá o cliente a executar um ciclo de inventário completo.  
+ Quando o inventário de software é executado em um dispositivo cliente, o primeiro relatório é um inventário completo. Os relatórios posteriores contêm apenas informações de delta de inventário. O servidor do site processa as informações de delta na ordem em que são recebidas. Se as informações de delta de um cliente estiverem ausentes, o servidor do site rejeitará as informações de delta adicionais e instruirá o cliente a executar um inventário completo.  
 
- O Configuration Manager dá suporte limitado a computadores de inicialização dupla. O Configuration Manager pode descobrir computadores com inicialização dupla, mas só retorna informações de inventário do sistema operacional que estava ativo no momento do inventário.  
+ O Configuration Manager pode descobrir computadores com inicialização dupla, mas só retorna informações de inventário do sistema operacional que estava ativo no momento do inventário.  
 
 ## <a name="software-inventory-for-mobile-devices-enrolled-with-microsoft-intune"></a>Inventário de software para dispositivos móveis registrados no Microsoft Intune  
- É possível coletar o inventário em aplicativos instalados nos dispositivos móveis. Os aplicativos inventariados dependerão se o dispositivo é de propriedade corporativa ou pessoal. Para dispositivos pessoais, somente aplicativos inventariados são aplicativos que são gerenciados pelo Microsoft Intune.  
+ É possível coletar o inventário de aplicativos instalados nos dispositivos móveis. Os aplicativos inventariados dependerão se o dispositivo é de propriedade corporativa ou pessoal. Para dispositivos pessoais, somente aplicativos inventariados são aplicativos que são gerenciados pelo Microsoft Intune.  
 
 > [!NOTE]  
->  O inventário de aplicativos instalados em dispositivos móveis é coletado como parte do processo de inventário de hardware no Configuration Manager. Para mais informações, consulte [Como configurar o inventário de hardware para dispositivos móveis registrados pelo Microsoft Intune e pelo System Center Configuration Manager](../../../../core/clients/manage/inventory/mobile-device-hardware-inventory-hybrid.md).  
+>  O inventário de aplicativos instalados em dispositivos móveis é coletado como parte do processo de [inventário de hardware](../../../../core/clients/manage/inventory/mobile-device-hardware-inventory-hybrid.md).  
 
- A tabela a seguir lista quais aplicativos são inventariados para dispositivos pessoais ou corporativos.  
+ Aqui estão os aplicativos inventariados para dispositivos pessoais ou corporativos.  
 
 |Plataforma|Para dispositivos pessoais|Para dispositivos corporativos|  
 |--------------|---------------------------------|--------------------------------|  
@@ -63,6 +63,8 @@ Use o inventário de software no System Center Configuration Manager para coleta
 
 
 
-<!--HONumber=Dec16_HO3-->
+
+
+<!--HONumber=Dec16_HO5-->
 
 

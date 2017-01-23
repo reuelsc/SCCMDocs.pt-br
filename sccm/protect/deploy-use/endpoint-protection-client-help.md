@@ -2,7 +2,7 @@
 title: Ajuda do cliente do Endpoint Protection | Microsoft Docs
 description: "Saiba mais sobre recursos e aprimoramentos no Endpoint Protection que ajudam a proteger seu computador contra ameaças."
 ms.custom: na
-ms.date: 10/06/2016
+ms.date: 01/03/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
@@ -16,8 +16,8 @@ author: NathBarn
 ms.author: nathbarn
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: bff083fe279cd6b36a58305a5f16051ea241151e
-ms.openlocfilehash: 870aa9766c995a5c8858b9a8c9a5537cd5f82840
+ms.sourcegitcommit: 1432568286605d29683416885d7aa522c649016e
+ms.openlocfilehash: ef2d8b540856b395575b99de79fa463de5d133ac
 
 
 ---
@@ -26,15 +26,17 @@ ms.openlocfilehash: 870aa9766c995a5c8858b9a8c9a5537cd5f82840
 *Aplica-se a: System Center Configuration Manager (Branch Atual)*
 
 
-Essa versão do Endpoint Protection inclui os seguintes recursos para ajudar a proteger seu computador contra ameaças:  
+Essa versão do Windows Defender ou do Endpoint Protection inclui os seguintes recursos para ajudar a proteger seu computador contra ameaças:  
 
 -   **Integração do Firewall do Windows.** A configuração do Endpoint Protection permite ligar ou desligar o Firewall do Windows.  
 
 -   **Sistema de Inspeção da Rede.** Este recurso aprimora a proteção em tempo real ao inspecionar o tráfego de rede para ajudar a bloquear de forma pró-ativa a exploração de vulnerabilidades conhecidas de rede.  
 
--   **Mecanismo de proteção.** O mecanismo atualizado oferece recursos de detecção e limpeza aprimorados com melhor desempenho.  
+-   **Mecanismo de proteção.** A proteção em tempo real localiza e interrompe a instalação ou execução de malware em seu computador. O mecanismo atualizado oferece recursos de detecção e limpeza aprimorados com melhor desempenho.  
 
- Esses recursos são descritos mais detalhadamente nas seções a seguir.  
+O Windows Defender é fornecido como parte do sistema operacional Windows 10.  Em versões anteriores do Windows, o administrador pode fornecer o Windows Defender ou o Endpoint Protection usando software de gerenciamento.
+
+Para ajuda de solução de problemas, consulte [Solução de problemas do cliente Windows Defender ou Endpoint Protection](troubleshoot-endpoint-client.md). Para obter uma lista dos novos recursos, consulte [Novidades no cliente Windows Defender](https://support.microsoft.com/help/29276/windows-10-whats-new-in-windows-defender).
 
 ## <a name="windows-firewall-integration"></a>Integração do Firewall do Windows  
  O Firewall do Windows pode ajudar a impedir que invasores ou softwares maliciosos tenham acesso ao seu computador pela Internet ou por uma rede. Agora, quando você instala o Endpoint Protection, o assistente de instalação verifica se o Firewall do Windows está ativado. Se você tiver desativado o Firewall do Windows intencionalmente, poderá desmarcar uma caixa de seleção para evitar ativá-lo. É possível alterar as configurações do Firewall do Windows a qualquer momento, via Sistema e Segurança no Painel de Controle.  
@@ -43,7 +45,18 @@ Essa versão do Endpoint Protection inclui os seguintes recursos para ajudar a p
  Os invasores cada vez mais realizam ataques com base em redes e se aproveitam das vulnerabilidades expostas antes que os fornecedores de software possam desenvolver e distribuir atualizações de segurança. Os estudos de vulnerabilidades mostram que pode levar um mês ou mais do momento do início de um ataque antes que uma atualização de segurança apropriada seja desenvolvida, testada e lançada. Essa falha na proteção deixa muitos computadores vulneráveis a ataques e explorações por um período significativo. O Sistema de Inspeção de Rede trabalha com proteção em tempo real para protegê-lo melhor de ataques com base em redes. Para isso, ele reduz o tempo entre descobertas de vulnerabilidades e implantação de atualizações de semanas para apenas algumas horas.  
 
 ## <a name="award-winning-protection-engine"></a>Mecanismo de proteção premiado  
- Subjacente ao Endpoint Protection está o premiado mecanismo de proteção, atualizado regularmente. O mecanismo conta com o suporte de uma equipe de pesquisadores antimalware do Centro de Proteção contra Malware da Microsoft, fornecendo respostas às ameaças de malware mais recentes, 24 horas por dia.  
+ Nos bastidores do Windows Defender ou do Endpoint Protection está o premiado mecanismo de proteção, atualizado regularmente. O mecanismo conta com o suporte de uma equipe de pesquisadores antimalware do Centro de Proteção contra Malware da Microsoft, fornecendo respostas às ameaças de malware mais recentes, 24 horas por dia.  
+
+## <a name="windows-defender-settings"></a>Configurações do Windows Defender
+As configurações do Windows Defender habilitam configurações que ajudam a proteger seu computador contra software mal-intencionado. O administrador pode gerenciar algumas configurações do Windows Defender pra você. Você pode gerenciar outras usando as configurações do Windows Defender. Recomendamos que você habilite as configurações do Windows Defender para ajudar a proteger seu computador e seus dados.
+
+Para exibir as configurações do Windows Defender, pesquise `Windows Defender` em seu computador. Abra o **Windows Defender** e selecione **Configurações**. As configurações do Windows Defender incluem:
+- **Proteção em tempo real** – localiza e interrompe a instalação ou execução de malware em seu computador.
+- **Proteção baseada em nuvem** – o Windows Defender envia informações à Microsoft sobre possíveis ameaças de segurança.
+- **Envio automático de amostra** – permite que o Windows Defender envie amostras de arquivos suspeitos para a Microsoft para ajudar a melhorar a detecção de malware.
+- **Exclusões** – é possível excluir determinados arquivos, pastas, extensões de arquivos ou processos da verificação do Windows Defender.
+- **Notificação aprimorada** – habilita notificações que informam sobre a integridade do seu computador. Mesmo **Desligado**, você receberá notificações críticas.
+- **Windows Defender Offline** – é possível executar o Windows Defender Offline para ajudar a localizar e remover software mal-intencionado. Essa verificação reiniciará o seu computador e levará cerca de 15 minutos.
 
 ### <a name="see-also"></a>Consulte também  
  [Perguntas frequentes sobre o cliente do Endpoint Protection](endpoint-protection-client-faq.md)   
@@ -52,6 +65,6 @@ Essa versão do Endpoint Protection inclui os seguintes recursos para ajudar a p
 
 
 
-<!--HONumber=Dec16_HO3-->
+<!--HONumber=Jan17_HO1-->
 
 

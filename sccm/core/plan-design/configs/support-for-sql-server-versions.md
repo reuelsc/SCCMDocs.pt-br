@@ -1,8 +1,8 @@
 ---
-title: Suporte para SQL Server | Microsoft Docs
+title: "Versões do SQL Server com suporte | Microsoft Docs"
 description: "Obtenha os requisitos de configuração e versão do SQL Server para hospedar um banco de dados de site do System Center Configuration Manager."
 ms.custom: na
-ms.date: 11/29/2016
+ms.date: 1/3/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
@@ -16,12 +16,12 @@ author: Brenduns
 ms.author: brenduns
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: 814feb4e833230285b4092a8feb6f11a75f2e4f6
-ms.openlocfilehash: ecf790893a5604250810310cfdb09c4cff7d97b6
+ms.sourcegitcommit: 25aa013896ca118f0689b71e5cddcb8baf049c66
+ms.openlocfilehash: 9bf4c1d9ee12da6801470165d33df50b2d08a810
 
 
 ---
-# <a name="support-for-sql-server-versions-for-system-center-configuration-manager"></a>Suporte para versões do SQL Server para o System Center Configuration Manager
+# <a name="supported-sql-server-versions-for-system-center-configuration-manager"></a>Versões do SQL Server com suporte no System Center Configuration Manager
 
 *Aplica-se a: System Center Configuration Manager (Branch Atual)*
 
@@ -31,124 +31,124 @@ Cada site do System Center Configuration Manager exige uma configuração e vers
  **Site de administração central e sites primários:**  
 O banco de dados do site deve usar uma instalação completa do SQL Server.  
 
- O local do SQL Server pode estar em:  
+ O SQL Server pode estar localizado:  
 
--   o computador do servidor do site  
--   Um computador remoto do servidor do site  
+-   No computador do servidor do site.  
+-   Em um computador remoto do servidor do site.  
 
 Há suporte para as seguintes instâncias:  
 
--   Instância padrão ou nomeada do SQL Server  
--   Configurações com várias instâncias  
--   Cluster do SQL Server – Consulte [Usar um cluster do SQL Server para hospedar o banco de dados do site](../../../core/servers/deploy/configure/use-a-sql-server-cluster-for-the-site-database.md)
--   Grupo de disponibilidade AlwaysOn do SQL Server - esta opção exige o Configuration Manager versão 1602 ou posterior. Para obter detalhes, confira [SQL Server AlwaysOn for a highly available site database for System Center Configuration Manager](../../../core/servers/deploy/configure/sql-server-alwayson-for-a-highly-available-site-database.md) (AlwaysOn do SQL Server para um banco de dados de site altamente disponível para o System Center Configuration Manager)  
+-   A instância padrão ou nomeada do SQL Server.  
+-   Configurações com várias instâncias.  
+-   Um cluster do SQL Server. Consulte [Usar um cluster do SQL Server para o banco de dados do site do System Center Configuration Manager](../../../core/servers/deploy/configure/use-a-sql-server-cluster-for-the-site-database.md).
+-   Um grupo de disponibilidade AlwaysOn do SQL Server. Essa opção exige o Configuration Manager versão 1602 ou posterior. Para obter detalhes, consulte [AlwaysOn do SQL Server para um banco de dados do site altamente disponível do System Center Configuration Manager](../../../core/servers/deploy/configure/sql-server-alwayson-for-a-highly-available-site-database.md).
 
 > [!NOTE]  
->  Não há suporte para o cluster do SQL Server em uma configuração de cluster NLB (Balanceamento de Carga de Rede). Além disso, não há suporte para a tecnologia de espelhamento de banco de dados do SQL Server e para a replicação ponto a ponto. Há suporte para a replicação transacional padrão do SQL Server apenas para replicar objetos para os pontos de gerenciamento que são configurados para usar [réplicas de banco de dados](https://technet.microsoft.com/library/mt608546.aspx).  
+>  Não há suporte para um cluster do SQL Server em uma configuração de cluster de NLB (Balanceamento de Carga de Rede). Além disso, não há suporte para a replicação ponto a ponto nem para a tecnologia de espelhamento de banco de dados do SQL Server. Há suporte para a replicação transacional padrão do SQL Server apenas para replicar objetos para os pontos de gerenciamento que são configurados para usar [réplicas de banco de dados](https://technet.microsoft.com/library/mt608546.aspx).  
 
 
  **Sites secundários:**  
  O banco de dados do site pode usar a instância padrão de uma instalação completa do SQL Server ou SQL Server Express.  
 
- O local do SQL Server deve ser no computador do servidor do site.  
+ O SQL Server deve estar localizado no computador do servidor do site.  
 
 ##  <a name="a-namebkmksqlversionsa-supported-versions-of-sql-server"></a><a name="bkmk_SQLVersions"></a> Versões compatíveis do Microsoft SQL Server  
- Em uma hierarquia com vários sites, diferentes sites podem usar diferentes versões do SQL Server para hospedar o banco de dados do site, desde que a versão do SQL Server usadas tenha suporte do Configuration Manager.  
+ Em uma hierarquia com vários sites, diferentes sites podem usar diferentes versões do SQL Server para hospedar o banco de dados do site, desde que o Configuration Manager dê suporte às versões do SQL Server utilizadas.  
 
  A mesmo que especificado o contrário, as versões do SQL Server a seguir têm suporte no System Center Configuration Manager versão 1511 e posterior.  
 
 > [!IMPORTANT]  
->  Usar o SQL Server Standard para o banco de dados no site de administração central limita o número total de clientes para o qual a hierarquia pode dar suporte. Consulte [Números de tamanho e escala](../../../core/plan-design/configs/size-and-scale-numbers.md).
+>  Ao usar o SQL Server Standard para o banco de dados no site de administração central, você limita o número total de clientes para o qual a hierarquia pode dar suporte. Consulte [Números de tamanho e escala](../../../core/plan-design/configs/size-and-scale-numbers.md).
 
-### <a name="sql-server-2016-sp1---standard-enterprise"></a>SQL Server 2016 SP1 – Standard, Enterprise  
+### <a name="sql-server-2016-sp1-standard-enterprise"></a>SQL Server 2016 SP1: Standard, Enterprise  
 Você pode usar essa versão do SQL Server sem uma versão de atualização cumulativa mínima para o seguinte:  
 
--   Site de administração central  
--   Site primário  
--   Site secundário  
+-   Um site de administração central  
+-   Um site primário  
+-   Um site secundário  
 
-### <a name="sql-server-2016---standard-enterprise"></a>SQL Server 2016 – Standard, Enterprise  
+### <a name="sql-server-2016-standard-enterprise"></a>SQL Server 2016: Standard, Enterprise  
 Você pode usar essa versão do SQL Server sem uma versão de atualização cumulativa mínima para o seguinte:  
 
--   Site de administração central  
--   Site primário  
--   Site secundário  
+-   Um site de administração central  
+-   Um site primário  
+-   Um site secundário  
 
 
-### <a name="sql-server-2014-sp2---standard-enterprise"></a>SQL Server 2014 SP2 – Standard, Enterprise  
+### <a name="sql-server-2014-sp2-standard-enterprise"></a>SQL Server 2014 SP2: Standard, Enterprise  
 Você pode usar essa versão do SQL Server sem uma versão de atualização cumulativa mínima para o seguinte:  
 
--   Site de administração central  
--   Site primário  
--   Site secundário  
+-   Um site de administração central  
+-   Um site primário  
+-   Um site secundário
 
 
 
-### <a name="sql-server-2014-sp1---standard-enterprise"></a>SQL Server 2014 SP1 – Standard, Enterprise  
+### <a name="sql-server-2014-sp1-standard-enterprise"></a>SQL Server 2014 SP1: Standard, Enterprise  
  Você pode usar essa versão do SQL Server sem uma versão de atualização cumulativa mínima para o seguinte:  
 
--   Site de administração central  
--   Site primário  
--   Site secundário  
+-   Um site de administração central  
+-   Um site primário  
+-   Um site secundário
 
 
-### <a name="sql-server-2012-sp3---standard-enterprise"></a>SQL Server 2012 SP3 – Standard, Enterprise  
+### <a name="sql-server-2012-sp3-standard-enterprise"></a>SQL Server 2012 SP3: Standard, Enterprise  
  Você pode usar essa versão do SQL Server sem uma versão de atualização cumulativa mínima para o seguinte:  
 
--   Site de administração central  
--   Site primário  
--   Site secundário  
+-   Um site de administração central  
+-   Um site primário  
+-   Um site secundário  
 
 
-### <a name="sql-server-2012-sp2---standard-enterprise"></a>SQL Server 2012 SP2 – Standard, Enterprise   
+### <a name="sql-server-2012-sp2-standard-enterprise"></a>SQL Server 2012 SP2: Standard, Enterprise   
  Você pode usar essa versão do SQL Server sem uma versão de atualização cumulativa mínima para o seguinte:  
 
--   Site de administração central  
--   Site primário  
--   Site secundário  
+-   Um site de administração central  
+-   Um site primário  
+-   Um site secundário  
 
 
-### <a name="sql-server-2008-r2-sp3---standard-enterprise-datacenter"></a>SQL Server 2008 R2 SP3 – Standard, Enterprise, Datacenter     
+### <a name="sql-server-2008-r2-sp3-standard-enterprise-datacenter"></a>SQL Server 2008 R2 SP3: Standard, Enterprise, Datacenter     
 Você pode usar essa versão do SQL Server sem uma versão de atualização cumulativa mínima para o seguinte:  
 
--   Site de administração central  
--   Site primário  
--   Site secundário  
+-   Um site de administração central  
+-   Um site primário
+-   Um site secundário
 
 
 
 ### <a name="sql-server-2016-express-sp1"></a>SQL Server 2016 Express SP1  
 Você pode usar essa versão do SQL Server sem uma versão de atualização cumulativa mínima para o seguinte:
--   Site secundário
+-   Um site secundário
 
 ### <a name="sql-server-2016-express"></a>SQL Server 2016 Express
 Você pode usar essa versão do SQL Server sem uma versão de atualização cumulativa mínima para o seguinte:
--   Site secundário
+-   Um site secundário
 
 
 ### <a name="sql-server-2014-express-sp2"></a>SQL Server 2014 Express SP2   
 Você pode usar essa versão do SQL Server sem uma versão de atualização cumulativa mínima para o seguinte:  
 
--   Site secundário  
+-   Um site secundário  
 
 
 ### <a name="sql-server-2014-express-sp1"></a>SQL Server 2014 Express SP1   
  Você pode usar essa versão do SQL Server sem uma versão de atualização cumulativa mínima para o seguinte:  
 
--   Site secundário  
+-   Um site secundário  
 
 ### <a name="sql-server-2012-express-sp3"></a>SQL Server 2012 Express SP3  
 Você pode usar essa versão do SQL Server sem uma versão de atualização cumulativa mínima para o seguinte:  
 
--   Site secundário  
+-   Um site secundário  
 
 ### <a name="sql-server-2012-express-sp2"></a>SQL Server 2012 Express SP2   
  Você pode usar essa versão do SQL Server sem uma versão de atualização cumulativa mínima para o seguinte:  
 
--   Site secundário  
+-   Um site secundário  
 
 ##  <a name="a-namebkmksqlconfiga-required-configurations-for-sql-server"></a><a name="bkmk_SQLConfig"></a> Configurações necessárias para o SQL Server  
- Os itens a seguir são necessários para todas as instalações do SQL Server usadas para um banco de dados de site, (incluindo o SQL Server Express). Quando o Configuration Manager instala o SQL Server Express como parte da instalação do site secundário, essas configurações são feitas automaticamente para você.  
+ Os itens a seguir são necessários para todas as instalações do SQL Server usadas para um banco de dados do site (incluindo o SQL Server Express). Quando o Configuration Manager instala o SQL Server Express como parte de uma instalação de site secundário, essas configurações são criadas automaticamente para você.  
 
  **Versão da arquitetura do SQL Server:**  
  O Configuration Manager requer uma versão de 64 bits do SQL Server para hospedar o banco de dados do site.  
@@ -161,7 +161,7 @@ Você pode usar essa versão do SQL Server sem uma versão de atualização cumu
  **Recursos do SQL Server:**  
  Somente o recurso **Serviços de Mecanismo de Banco de Dados** é necessário para cada servidor do site.  
 
- A replicação de banco de dados do Configuration Manager não exige o recurso de **replicação do SQL Server**. No entanto, essa configuração do SQL Server será necessária se você for usar [Réplicas de banco de dados para pontos de gerenciamento para o System Center Configuration Manager](../../../core/servers/deploy/configure/database-replicas-for-management-points.md).  
+ A replicação de banco de dados do Configuration Manager não exige o recurso **replicação do SQL Server**. No entanto, essa configuração do SQL Server será necessária se você usar [réplicas de banco de dados para pontos de gerenciamento do System Center Configuration Manager](../../../core/servers/deploy/configure/database-replicas-for-management-points.md).  
 
  **Autenticação do Windows:**  
  O Configuration Manager exige que a **Autenticação do Windows** valide as conexões com o banco de dados.  
@@ -170,17 +170,17 @@ Você pode usar essa versão do SQL Server sem uma versão de atualização cumu
  Você deve usar uma instância dedicada do SQL Server para cada site. Isso pode ser uma **instância nomeada** ou uma **instância padrão**.  
 
  **Memória do SQL Server:**  
- Reserve a memória para o SQL Server usando o SQL Server Management Studio e definindo a configuração de **Memória mínima do servidor** em **Opções de Memória do Servidor**. Para obter mais informações sobre como definir uma quantidade fixa de memória, veja [Como: definir uma quantidade fixa de memória (SQL Server Management Studio)](http://go.microsoft.com/fwlink/p/?LinkId=233759).  
+ Reserve memória para o SQL Server usando o SQL Server Management Studio e definindo a configuração **Memória mínima do servidor** em **Opções de Memória do Servidor**. Para obter mais informações sobre como definir uma quantidade fixa de memória, veja [Como: definir uma quantidade fixa de memória (SQL Server Management Studio)](http://go.microsoft.com/fwlink/p/?LinkId=233759).  
 
--   **Servidor de banco de dados instalado no mesmo computador que o servidor do site:** - limite a memória do SQL Server para 50% a 80% da memória do sistema endereçável disponível.  
+-   **Para um servidor de banco de dados instalado no mesmo computador que o servidor do site:** limite a memória do SQL Server a 50% a 80% da memória do sistema endereçável disponível.  
 
--   **Servidor de banco de dados localizado (remoto do servidor do site):** – limite a memória do SQL Server a 80% a 90% da memória de sistema endereçável disponível.  
+-   **Para um servidor de banco de dados dedicado (remoto do servidor do site):** limite a memória do SQL Server a 80% a 90% da memória do sistema endereçável disponível.  
 
--   **Reserva de memória para o pool de buffers de cada instância do SQL Server em uso:**  
+-   **Para a reserva de memória para o pool de buffers de cada instância do SQL Server em uso:**  
 
-    -   Site de administração central: mínimo de 8 gigabytes (GB)  
-    -   Site primário: mínimo de 8 gigabytes (GB)  
-    -   Site secundário: mínimo de 4 gigabytes (GB)  
+    -   Para um site de administração central: defina um mínimo de 8 GB (gigabytes).  
+    -   Para um site primário: defina um mínimo de 8 GB (gigabytes).  
+    -   Para um site secundário: defina um mínimo de 4 GB (gigabytes).  
 
 **Gatilhos aninhados de SQL:**  
 A opção [Gatilhos aninhados de SQL](http://go.microsoft.com/fwlink/?LinkId=528802) deve estar habilitada.  
@@ -194,41 +194,41 @@ A opção [Gatilhos aninhados de SQL](http://go.microsoft.com/fwlink/?LinkId=528
  **Serviço SQL Server:**  
  Você pode configurar o serviço do SQL Server para execução usando:  
 
--   Conta do**usuário de domínio local** :  
+-   A conta de **usuário local do domínio**:  
 
-    -   Essa é uma prática recomendada e pode exigir que você registre manualmente o SPN (nome da entidade de serviço) para a conta.  
+    -   Essa é uma prática recomendada e pode exigir o registro manual do SPN (nome da entidade de serviço) da conta.  
 
--   Conta do**sistema local** do computador que executa o SQL Server:  
+-   A conta **sistema local** do computador que executa o SQL Server:  
 
     -   Use a conta do sistema local para simplificar o processo de configuração.  
     -   Ao usar a conta do sistema local, o Configuration Manager registra automaticamente o SPN para o serviço SQL Server.  
     -   Lembre-se de que usar a conta do sistema local para o serviço SQL Server não é uma melhor prática do SQL Server.  
 
-Quando o SQL Server não usar a conta de sistema local do computador para executar serviços do SQL Server, você deve configurar o SPN (nome da entidade de serviço) da conta que executa os serviços SQL Server nos Serviços de Domínio do Active Directory. (Quando a conta do sistema for usada, o SPN será registrado automaticamente para você.)
+Quando o computador que executa o SQL Server não usa a conta sistema local para executar o serviço SQL Server, é necessário configurar o SPN da conta que executa o serviço SQL Server no Active Directory Domain Services. (Quando a conta do sistema for usada, o SPN será registrado automaticamente para você.)
 
-Para obter informações sobre SPNs para o banco de dados do site, consulte  [Manage the SPN for the site database server](../../../core/servers/manage/modify-your-infrastructure.md#bkmk_SPN) no tópico [Modify your System Center Configuration Manager infrastructure](../../../core/servers/manage/modify-your-infrastructure.md) .  
+Para obter informações sobre SPNs para o banco de dados do site, consulte [Gerenciar o SPN para o servidor de banco de dados do site](../../../core/servers/manage/modify-your-infrastructure.md#bkmk_SPN) no tópico [Modificar a infraestrutura do System Center Configuration Manager](../../../core/servers/manage/modify-your-infrastructure.md).  
 
-Para obter informações sobre como alterar a conta usada pelo Serviço do SQL, veja [Como: alterar a conta de inicialização do serviço do SQL Server (SQL Server Configuration Manager)](http://go.microsoft.com/fwlink/p/?LinkId=237661).  
+Para obter informações sobre como alterar a conta usada pelo serviço SQL Server, consulte [Como alterar a conta de inicialização do serviço do SQL Server (SQL Server Configuration Manager)](http://go.microsoft.com/fwlink/p/?LinkId=237661).  
 
 **SQL Server Reporting Services:**  
-Necessário para instalar um ponto do Reporting Services que permita executar relatórios.  
+O SQL Server Reporting Services é necessário para a instalação de um ponto do Reporting Services que permite a execução de relatórios.  
 
 > [!IMPORTANT]  
 > Após a atualização do SQL Server de uma versão anterior, você poderá ver o seguinte erro: *Construtor de Relatórios não existe*.    
-> Para resolver esse problema, reinstale a função do sistema de sites do ponto do Reporting Services.
+> Para resolver esse erro, é necessário reinstalar a função do sistema de sites do ponto do Reporting Services.
 
 **Portas do SQL Server:**  
 Para a comunicação com o mecanismo de banco de dados do SQL Server e para a replicação entre sites, é possível usar as configurações de porta padrão do SQL Server ou especificar portas personalizadas:  
 
--   A**comunicação entre sites** usa o SQL Server Service Broker que, por padrão, usa a porta TCP 4022.  
--   A **comunicação entre sites** entre o mecanismo de banco de dados do SQL Server e várias funções do sistema de sites do Configuration Manager usa a porta TCP 1433 por padrão. As seguintes funções do sistema de site se comunicam diretamente com o banco de dados do SQL Server:  
+-   A **comunicação entre sites** usa o SQL Server Service Broker, que usa a porta TCP 4022 por padrão.  
+-   A **comunicação intrassite** entre o mecanismo de banco de dados do SQL Server e as várias funções do sistema de sites do Configuration Manager usa a porta TCP 1433 por padrão. As seguintes funções do sistema de site se comunicam diretamente com o banco de dados do SQL Server:  
 
     -   Ponto de gerenciamento  
     -   Computador do Provedor de SMS  
     -   Ponto do Reporting Services  
     -   Servidor do site  
 
-Quando um SQL Server hospeda um bancos de dados de mais de um site, cada banco de dados deve usar uma instância separada do SQL Server, e cada instância deve ser configurada para usar um conjunto de portas exclusivo.  
+Quando um computador que executa o SQL Server hospeda um banco de dados de mais de um site, cada banco de dados deve usar uma instância separada do SQL Server. Além disso, cada instância deve ser configurada para usar um conjunto exclusivo de portas.  
 
 > [!WARNING]  
 >  O Configuration Manager não dá suporte a portas dinâmicas. Como as instâncias nomeadas do SQL Server por padrão usam as portas dinâmicas para fazer conexões com o mecanismo de banco de dados, ao usar uma instância nomeada, configure manualmente a porta estática que deseja usar para a comunicação entre sites.  
@@ -239,6 +239,6 @@ Para obter um exemplo de como configurar o SQL Server para usar uma porta espec�
 
 
 
-<!--HONumber=Dec16_HO3-->
+<!--HONumber=Jan17_HO1-->
 
 

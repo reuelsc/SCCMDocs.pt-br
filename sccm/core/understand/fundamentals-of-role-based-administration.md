@@ -2,7 +2,7 @@
 title: "Conceitos básicos de administração baseada em funções | Microsoft Docs"
 description: "Use a administração baseada em funções para controlar o acesso administrativo ao Configuration Manager e aos objetos gerenciados."
 ms.custom: na
-ms.date: 10/06/2016
+ms.date: 1/3/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
@@ -16,8 +16,8 @@ author: Brenduns
 ms.author: brenduns
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: 6cf3ac76ea3fb9c9b093ed4927255102930bbe26
-ms.openlocfilehash: 5bdfe43c86d5b700c50b4d55d2f3bbb15bb504e9
+ms.sourcegitcommit: 8e0090bd671e2c566447579974a38474c2f898ea
+ms.openlocfilehash: 1ca51e256ea2f406f393e4b0d3634ea0f6f637bc
 
 
 ---
@@ -25,33 +25,33 @@ ms.openlocfilehash: 5bdfe43c86d5b700c50b4d55d2f3bbb15bb504e9
 
 *Aplica-se a: System Center Configuration Manager (Branch Atual)*
 
-Com o System Center Configuration Manager, você usa administração baseada em funções para proteger o acesso para administrar o Configuration Manager e para os objetos que você gerencia, como coleções, implantações e sites.   Depois de entender os conceitos apresentados neste tópico, você poderá [Configurar administração baseada em funções para o System Center Configuration Manager](../../core/servers/deploy/configure/configure-role-based-administration.md).  
+Com o System Center Configuration Manager, você usa administração baseada em funções para proteger o acesso necessário para administrar o Configuration Manager. Você também protege o acesso aos objetos que você gerencia, como coleções, implantações e sites. Depois de entender os conceitos apresentados neste tópico, você poderá [Configurar administração baseada em funções para o System Center Configuration Manager](../../core/servers/deploy/configure/configure-role-based-administration.md).  
 
- O modelo de administração baseada em funções define e gerencia configurações de acesso de segurança de toda a hierarquia para todos os sites e as configurações do sites usando o seguinte:  
+ O modelo de administração baseada em funções define e gerencia configurações de acesso de segurança de toda a hierarquia para todos os sites e configurações de sites usando o seguinte:  
 
--   **Funções de segurança** – que são atribuídas a usuários administrativos para fornecer a esses usuários (ou grupos de usuários) permissões para objetos diferentes do Configuration Manager, como permissões para criar ou alterar as configurações do cliente.  
+-   *Funções de segurança* são atribuídas a usuários administrativos para fornecer a esses usuários (ou grupos de usuários) permissões para objetos diferentes do Configuration Manager. Por exemplo, permissões para criar ou alterar as configurações de cliente.  
 
--   **Escopos de segurança** – que agrupam instâncias específicas de objetos pelas quais um usuário administrativo é responsável por gerenciar, como um aplicativo que instala o Microsoft Office 2010.  
+-   *Escopos de segurança* são usados para agrupar instâncias específicas de objetos pelas quais um usuário administrativo é responsável por gerenciar, como um aplicativo que instala o Microsoft Office 2010.  
 
--   **Coleções** – que são como especificar grupos de recursos de usuários e de dispositivos que o usuário administrativo pode gerenciar.  
+-   *Coleções* são usadas para especificar grupos de recursos de usuários e de dispositivos que o usuário administrativo pode gerenciar.  
 
- A combinação de funções de segurança, escopos de segurança e coleções permitem segregar as atribuições administrativas que atendem aos requisitos da sua organização e, em conjunto, definem o escopo administrativo de um usuário (o que o usuário pode exibir e gerenciar na implantação do Configuration Manager).  
+ Com a combinação de funções de segurança, escopos de segurança e coleções, você segrega as atribuições administrativas que atendem aos requisitos da sua organização. Usadas em conjunto, elas definem o escopo administrativo de um usuário, que é o que esse usuário poderá exibir e gerenciar na sua implantação do Configuration Manager.  
 
-**A administração baseada em funções fornece os seguintes benefícios:**  
+## <a name="benefits-of-role-based-administration"></a>Benefícios da administração baseada em funções  
 
--   Os sites não são usados como limites administrativos  
+-   Os sites não são usados como limites administrativos.  
 
--   Você cria usuários administrativos para uma hierarquia e somente precisa atribuir segurança a eles uma vez  
+-   Você cria usuários administrativos para uma hierarquia e somente precisa atribuir segurança a eles uma vez.  
 
--   Todas as atribuições de segurança são replicadas e estão disponíveis em toda a hierarquia  
+-   Todas as atribuições de segurança são replicadas e estão disponíveis em toda a hierarquia.  
 
--   Há funções de segurança internas para atribuir as tarefas administrativas típicas e você pode criar suas próprias funções de segurança personalizadas para dar suporte às seus requisitos comerciais específicos  
+-   Há funções de segurança internas que são usadas para atribuir as tarefas administrativas típicas. Criar suas próprias funções de segurança personalizadas para oferecer suporte às necessidades específicas do seu negócio.  
 
--   Os usuários administrativos veem apenas os objetos que eles têm permissões para gerenciar  
+-   Os usuários administrativos veem apenas os objetos que eles têm permissões para gerenciar.  
 
 -   Você pode auditar ações de segurança administrativa.  
 
-Ao projetar e implementar a segurança administrativa para o Configuration Manager, use o seguinte para criar um **escopo administrativo** para um usuário administrativo:  
+Ao projetar e implementar a segurança administrativa para o Configuration Manager, use o seguinte para criar um *escopo administrativo* para um usuário administrativo:  
 
 -   [Funções de segurança](#bkmk_Planroles)  
 
@@ -59,7 +59,8 @@ Ao projetar e implementar a segurança administrativa para o Configuration Manag
 
 -   [Escopos de segurança](#bkmk_PlanScope)  
 
- O escopo administrativo controla os objetos que um usuário administrativo pode exibir no console do Configuration Manager e as permissões que ele tem nesses objetos. Configurações de administração baseadas em funções replicam em cada site na hierarquia como dados globais e, em seguida, são aplicadas a todas as conexões administrativas.  
+
+ O escopo administrativo controla os objetos que um usuário administrativo exibe no console do Configuration Manager e controla as permissões que um usuário tem nesses objetos. Configurações de administração baseadas em funções replicam em cada site na hierarquia como dados globais e, em seguida, são aplicadas a todas as conexões administrativas.  
 
 > [!IMPORTANT]  
 >  Atrasos de replicação entre sites podem impedir que um site receba alterações para a administração baseada em funções. Para obter informações sobre como monitorar a replicação de banco de dados entre sites, consulte o tópico [Transferências de dados entre sites no System Center Configuration Manager](../../core/servers/manage/data-transfers-between-sites.md).  
@@ -69,18 +70,20 @@ Ao projetar e implementar a segurança administrativa para o Configuration Manag
 
  O Configuration Manager tem diversas funções de segurança internas para suporte de agrupamentos típicos de tarefas administrativas, e é possível criar suas próprias funções de segurança personalizadas para oferecer suporte a seus requisitos específicos de negócios. Exemplos de funções de segurança interna:  
 
--   **Administrador Completo**: essa função de segurança concede todas as permissões no Configuration Manager.  
+-   *Administrador Completo* concede todas as permissões no Configuration Manager.  
 
--   **Analista de Ativo**: essa função de segurança permite que usuários administrativos exibam dados coletados usando o Asset Intelligence, inventário de software, inventário de hardware e medição de software. Usuários administrativos podem criar regras de medição e categorias de Asset Intelligence, famílias e rótulos.  
+-   *Analista de Ativo* concede permissão aos usuários administrativos para exibir dados que são coletados usando o Asset Intelligence, o inventário de software, o inventário de hardware e a medição de software. Usuários administrativos podem criar regras de medição e categorias de Asset Intelligence, famílias e rótulos.  
 
--   **Gerenciador de Atualização de Software**: essa função de segurança concede permissões para definir e implantar atualizações de software. Usuários administrativos que estão associados a essa função podem criar coleções, grupos de atualização de software, implantações, modelos e habilitar atualizações de software para NAP (Proteção de Acesso à Rede).  
+-   *Gerenciador de Atualização de Software* concede permissões para definir e implantar atualizações de software. Usuários administrativos que estão associados a essa função podem criar coleções, grupos de atualização de software, implantações e modelos, além de configurar atualizações de software para a NAP (Proteção de Acesso à Rede).  
 
 > [!TIP]  
->  Você pode exibir a lista de funções de segurança internas e funções de segurança personalizadas que você cria, incluindo suas descrições, no console do Configuration Manager. Para isso, no espaço de trabalho **Administração** , expanda **Segurança**e selecione **Funções de Segurança**.  
+>  Você pode exibir a lista de funções de segurança internas e funções de segurança personalizadas que você cria, incluindo suas descrições, no console do Configuration Manager. Para exibir as funções, no espaço de trabalho **Administração**, expanda **Segurança** e, em seguida, selecione **Funções de Segurança**.  
 
- Cada função de segurança tem as permissões específicas para diferentes tipos de objeto. Por exemplo, a função de segurança **MMM de Aplicativos** tem as seguintes permissões para aplicativos: **Aprovar**, **Criar**, **Excluir**, **Modificar**, **Modificar Pastas**, **Mover Objetos**, **Ler/Implantar** e **Definir Escopo de Segurança**. Você não pode alterar as permissões das funções de segurança internas, mas pode copiar a função, fazer alterações e então salvar essas alterações como uma nova função de segurança personalizada. Também é possível importar funções de segurança que você exportou de outra hierarquia (por exemplo, de uma rede de teste). Reveja as funções de segurança e suas permissões para determinar se usará as funções de segurança internas ou precisará criar suas próprias funções de segurança personalizadas.  
+ Cada função de segurança tem as permissões específicas para diferentes tipos de objeto. Por exemplo, a função de segurança *MMM de Aplicativo* tem as seguintes permissões para aplicativos: Aprovar, Criar, Excluir, Modificar, Modificar Pastas, Mover Objetos, Ler/Implantar e Definir Escopo de Segurança.
 
- **Use as etapas a seguir para ajudá-lo a planejar as funções de seguranças:**  
+ Você não pode alterar as permissões das funções de segurança internas, mas pode copiar a função, fazer alterações e então salvar essas alterações como uma nova função de segurança personalizada. Também é possível importar funções de segurança que você exportou de outra hierarquia, por exemplo, de uma rede de teste. Examine as funções de segurança e suas permissões para determinar se você usará as funções de segurança internas ou precisará criar suas próprias funções de segurança personalizadas.  
+
+ ### <a name="to-help-you-plan-for-security-roles"></a>Para ajudá-lo a planejar as funções de segurança  
 
 1.  Identificar as tarefas que os usuários administrativos executam no Configuration Manager. Essas tarefas podem estar relacionadas a um ou mais grupos de tarefas de gerenciamento, como implantação de aplicativos e pacotes, implantação de sistemas operacionais e configurações para conformidade, configuração de sites e segurança, auditoria, controle de computadores remotamente e coleta de dados de inventário.  
 
@@ -110,11 +113,11 @@ Para obter informações sobre como criar e configurar funções de segurança p
 Para obter informações sobre como configurar coleções para administração baseada em funções, consulte [Configurar coleções para gerenciar a segurança](../../core/servers/deploy/configure/configure-role-based-administration.md#BKMK_ConfigColl) no tópico [Configurar administração baseada em funções para o System Center Configuration Manager](../../core/servers/deploy/configure/configure-role-based-administration.md).  
 
 ##  <a name="a-namebkmkplanscopea-security-scopes"></a><a name="bkmk_PlanScope"></a> Escopos de segurança  
- Use escopos de segurança para fornecer aos usuários administrativos acesso a objetos protegidos. Escopos de segurança são um conjunto denominado objetos protegidos que são atribuídos a usuários administradores como um grupo. Todos os objetos protegíveis devem ser atribuídos a um ou mais escopos de segurança. O Configuration Manager tem dois escopos de segurança internos:  
+ Use escopos de segurança para fornecer aos usuários administrativos acesso a objetos protegidos. Um escopo de segurança é um conjunto nomeado de objetos protegíveis que são atribuídos a usuários administradores como um grupo. Todos os objetos protegíveis devem ser atribuídos a um ou mais escopos de segurança. O Configuration Manager tem dois escopos de segurança internos:  
 
--   **Todos**: esse escopo de segurança interno concede acesso a todos os escopos. Você não pode atribuir objetos a este escopo de segurança.  
+-   O escopo de segurança interno *Todos* concede acesso a todos os escopos. Você não pode atribuir objetos a este escopo de segurança.  
 
--   **Padrão**: esse escopo de segurança interno é usado para todos os objetos, por padrão. Ao instalar primeiro o Configuration Manager, todos os objetos são atribuídos a esse escopo de segurança.  
+-   O escopo de segurança interno *Padrão* é usado para todos os objetos, por padrão. Ao instalar primeiro o Configuration Manager, todos os objetos são atribuídos a esse escopo de segurança.  
 
 Se deseja restringir os objetos que os usuários administrativos podem ver e gerenciar, você deve criar e usar seus próprios escopos de segurança personalizados. Escopos de segurança não oferecem suporte a uma estrutura hierárquica e não podem ser aninhados. Escopos de segurança podem conter um ou mais tipos de objeto, que incluem o seguinte:  
 
@@ -158,7 +161,7 @@ Se deseja restringir os objetos que os usuários administrativos podem ver e ger
 
 -   Pacotes e itens de configuração de dispositivo do Windows CE  
 
-Há também alguns objetos que não podem ser incluídos em escopos de segurança porque eles são usados somente pelas funções de segurança. O acesso administrativo a estas funções não pode ser limitado a um subconjunto dos objetos disponíveis. Por exemplo, você pode ter um usuário administrativo que cria grupos de limites que são usados para um site específico. Como esse objeto de limite não suporta escopos de segurança, não é possível atribuir a esse usuário um escopo de segurança que forneça acesso somente aos limites que podem ser associados a esse site. Como o objeto de limite não pode estar associado a um escopo de segurança, quando você atribui uma função de segurança que inclui acesso a objetos de limite a um usuário, este pode acessar cada limite na hierarquia.  
+Há também alguns objetos que não podem ser incluídos em escopos de segurança porque eles são usados somente pelas funções de segurança. O acesso administrativo a esses objetos não pode ser limitado a um subconjunto dos objetos disponíveis. Por exemplo, você pode ter um usuário administrativo que cria grupos de limites que são usados para um site específico. Como esse objeto de limite não suporta escopos de segurança, não é possível atribuir a esse usuário um escopo de segurança que forneça acesso somente aos limites que podem ser associados a esse site. Como o objeto de limite não pode estar associado a um escopo de segurança, quando você atribui uma função de segurança que inclui acesso a objetos de limite a um usuário, este pode acessar cada limite na hierarquia.  
 
 Objetos que não são limitados por escopos de segurança incluem o seguinte:  
 
@@ -168,7 +171,7 @@ Objetos que não são limitados por escopos de segurança incluem o seguinte:
 
 -   Alertas  
 
--   Políticas antimalware  
+-   Políticas de antimalware  
 
 -   Limites  
 
@@ -206,12 +209,12 @@ Crie escopos de segurança quando precisar limitar o acesso ao separar instânci
 
 -   Você possui um grupo de usuários administrativos que devem ser capazes de ver aplicativos de produção e não aplicativos de teste. Crie um escopo de segurança para aplicativos de produção e outro para os aplicativos de teste.  
 
--   Diferentes usuários administrativos necessitam de acesso distinto para algumas instâncias de um tipo de objeto. Por exemplo, um grupo de usuários administrativos requer permissão de **Leitura** para grupos de atualização de software específicos, e outro grupo de usuários administrativos requer permissões de **Modificar** e **Excluir** para outros grupos de atualização de software. Crie escopos de segurança diferentes para esses grupos de atualização de software.  
+-   Diferentes usuários administrativos necessitam de acesso distinto para algumas instâncias de um tipo de objeto. Por exemplo, um grupo de usuários administrativos requer permissão de Leitura para grupos de atualização de software específicos e outro grupo de usuários administrativos requer permissões de Modificar e Excluir para outros grupos de atualização de software. Crie escopos de segurança diferentes para esses grupos de atualização de software.  
 
 Para obter informações sobre como configurar escopos de segurança para administração baseada em funções, consulte [Configurar escopos de segurança para um objeto](../../core/servers/deploy/configure/configure-role-based-administration.md#BKMK_ConfigSecScope) no tópico [Configurar administração baseada em funções para o System Center Configuration Manager](../../core/servers/deploy/configure/configure-role-based-administration.md).  
 
 
 
-<!--HONumber=Dec16_HO3-->
+<!--HONumber=Jan17_HO1-->
 
 

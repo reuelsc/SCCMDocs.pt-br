@@ -2,7 +2,7 @@
 title: "Exibir inventário de software| Microsoft Docs | Gerenciador de Recursos"
 description: "Usar o Gerenciador de Recursos para exibir o inventário de software no System Center Configuration Manager."
 ms.custom: na
-ms.date: 10/06/2016
+ms.date: 12/26/2016
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
@@ -17,8 +17,8 @@ author: nbigman
 ms.author: nbigman
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: fc392e4440e84614f92218e9c7a09ec1c2c64f53
-ms.openlocfilehash: a15c593bed4fe7ecce22990bbdcecc8dc2ed2962
+ms.sourcegitcommit: 9206b82eca02877c30eebf146d42bcca7290eb42
+ms.openlocfilehash: 6189726bbcade8229e0b2e929ebedeefdbf266a4
 
 
 ---
@@ -29,37 +29,33 @@ ms.openlocfilehash: a15c593bed4fe7ecce22990bbdcecc8dc2ed2962
 Use o Gerenciador de Recursos no System Center Configuration Manager para exibir informações sobre o inventário de software que foi coletado dos computadores em sua hierarquia.  
 
 > [!NOTE]  
->  O Gerenciador de Recursos não exibirá dados de inventário até que um ciclo de inventário de software seja executado no cliente ao qual você está se conectando.  
+>  O Gerenciador de Recursos não exibirá dados de inventário até um ciclo de inventário de software tiver sido executado no cliente.  
 
- O Gerenciador de Recursos no Configuration Manager contém as seguintes seções relacionadas ao inventário de software:  
+ O Gerenciador de Recursos fornece as seguintes informações de inventário de software:  
 
--   **Software** – A seção de software do Gerenciador de Recursos contém quatro seções:  
+-   **Software**:  
 
-    -   **Arquivos Coletados** – Exibe informações sobre os arquivos que foram coletados durante o inventário de software.  
+    -   **Arquivos Coletados** –arquivos que foram coletados durante o inventário de software.  
 
-    -   **Detalhes do Arquivo** – exibe informações sobre os arquivos que foram inventariados durante o inventário de software, mas que não estão associados a um fabricante ou produto específico.  
+    -   **Detalhes do Arquivo** – arquivos que foram inventariados durante o inventário de software, mas que não estão associados a um fabricante nem a um produto específico.  
 
-    -   **Última Verificação de Software** – Exibe a data e hora do último inventário de software e a coleta de arquivos que foi executada no computador cliente.  
+    -   **Última Verificação de Software** – data e hora do último inventário de software e da última coleta de arquivos no computador cliente.  
 
-    -   **Detalhes do Produto** – Exibe informações sobre os produtos de software que foram inventariados pelo inventário de software, agrupados por fabricante.  
+    -   **Detalhes do Produto** – produtos de software que foram inventariados pelo inventário de software, agrupados por fabricante.  
 
 ## <a name="to-run-resource-explorer-from-the-configuration-manager-console"></a>Para executar o Gerenciador de Recursos no console do Configuration Manager  
- Use o procedimento a seguir para executar o Gerenciador de Recursos no Configuration Manager.  
 
-#### <a name="to-run-resource-explorer-from-the-configuration-manager-console"></a>Para executar o Gerenciador de Recursos no console do Configuration Manager  
+1.  No console do Configuration Manager, escolha **Ativos e Conformidade**
 
-1.  No console do Configuration Manager, clique em **Ativos e Conformidade**.  
+2.  No espaço de trabalho **Ativos e Conformidade**, escolha **Dispositivos** ou abra uma coleção que exibe os dispositivos.  
 
-2.  No espaço de trabalho **Ativos e Conformidade** , clique em **Dispositivos** ou abra qualquer coleção que exiba dispositivos.  
+3.  Escolha o computador que contém o inventário que você deseja exibir e, em seguida, na guia **Início** > grupo **Dispositivos**, escolha **Iniciar** > **Gerenciador de Recursos**.
 
-3.  Clique no computador que contém o inventário que você deseja exibir e, na guia **Início** , no grupo **Dispositivos** , clique em **Iniciar** e em **Gerenciador de Recursos**. A janela **Gerenciador de Recursos** será aberta.  
-
-4.  Você pode clicar com o botão direito do mouse em qualquer item no painel direito da janela do Gerenciador de Recursos e clicar em **Propriedades** para abrir a caixa de diálogo *Propriedades\>***do <nome do item**, que pode ajudar você a exibir as informações de inventário coletadas em um formato mais legível.  
-
-5.  Quando tiver terminado, feche a janela **Gerenciador de Recursos** .  
+4.  É possível clicar com o botão direito do mouse em qualquer item do painel direito da janela do Gerenciador de Recursos e escolher **Propriedades** para exibir as informações de inventário coletadas em um formato mais legível.  
+ 
 
 
 
-<!--HONumber=Dec16_HO3-->
+<!--HONumber=Dec16_HO5-->
 
 

@@ -2,7 +2,7 @@
 title: "Etapas da sequência de tarefas | Microsoft Docs"
 description: "Saiba mais sobre as etapas de sequência de tarefas que você pode adicionar a uma sequência de tarefas do Configuration Manager."
 ms.custom: na
-ms.date: 12/07/2016
+ms.date: 01/04/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
@@ -17,8 +17,8 @@ author: Dougeby
 ms.author: dougeby
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: 3f44505c977b511223a083a960f871371c0ff133
-ms.openlocfilehash: 6e324eb97c0e803d382371ace541a4b9f96e6ba3
+ms.sourcegitcommit: 46c8004afee4b18d5c7a2fcc5dac0f7d0d1f823c
+ms.openlocfilehash: 2898afdea131f4114bc645cb11a2c6ffacb42417
 
 
 ---
@@ -1377,7 +1377,7 @@ Antes do Configuration Manager versão 1610, esta etapa executa as seguintes tar
  Quando você especificar arquivos ou programas na linha de comando que ainda não estão presentes no computador de destino, selecione essa opção para especificar o pacote do Configuration Manager que contém os arquivos apropriados. Este pacote não exige um programa. Esta opção não é necessária se os arquivos especificados existirem no computador de destino.  
 
  **Tempo limite**  
- Especifica um valor que representa quanto tempo o Configuration Manager permitirá para execução da linha de comando. Esse valor pode ser de 10 minutos a 999 minutos. O valor padrão é 15 minutos.  
+ Especifica um valor que representa quanto tempo o Configuration Manager permitirá para execução da linha de comando. Esse valor pode ser de 1 a 999 minutos. O valor padrão é 15 minutos.  
 
  Essa opção é desabilitada por padrão.  
 
@@ -1696,6 +1696,6 @@ Depois de selecionar as variáveis de uma regra, você deve fornecer um valor pa
 
 
 
-<!--HONumber=Dec16_HO3-->
+<!--HONumber=Jan17_HO1-->
 
 

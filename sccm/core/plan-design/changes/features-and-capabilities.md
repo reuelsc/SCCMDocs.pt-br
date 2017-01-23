@@ -2,7 +2,7 @@
 title: Recursos e funcionalidades | Microsoft Docs
 description: "Saiba mais sobre os recursos de gerenciamento primário do System Center Configuration Manager."
 ms.custom: na
-ms.date: 10/06/2016
+ms.date: 12/29/2016
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
@@ -17,8 +17,8 @@ author: Brenduns
 ms.author: brenduns
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: 6ed317d45d90758832d4157985dd95d5e253c6fc
-ms.openlocfilehash: 851029368d97312ef2766505f933eac72d6950e5
+ms.sourcegitcommit: 53b27dcb5c8bb670556fe4cee9e990619a9a63e9
+ms.openlocfilehash: 4691f43dccdf73936107f4635321897b9779bead
 
 
 ---
@@ -36,11 +36,11 @@ Os seguintes são os recursos de gerenciamento primário do System Center Config
 
  **Acesso de recursos da empresa**  
 
- Fornece um conjunto de ferramentas e recursos que permitem que você conceda acesso a usuários da sua organização a dados e aplicativos de locais remotos. Essas ferramentas incluem perfis de Wi-Fi, perfis de VPN, perfis de Certificado e acesso condicional para o Exchange e SharePoint online. Consulte [Proteger a infraestrutura de dados e do site com o System Center Configuration Manager](../../../protect/understand/protect-data-and-site-infrastructure.md) e [Gerenciar o acesso a serviços no System Center Configuration Manager](../../../protect/deploy-use/manage-access-to-services.md).  
+ Fornece um conjunto de ferramentas e recursos que permitem que você conceda acesso a usuários da sua organização a dados e aplicativos de locais remotos. Essas ferramentas incluem perfis de Wi-Fi, perfis de VPN, perfis de certificado e acesso condicional ao Exchange e SharePoint online. Consulte [Proteger a infraestrutura de dados e do site com o System Center Configuration Manager](../../../protect/understand/protect-data-and-site-infrastructure.md) e [Gerenciar o acesso a serviços no System Center Configuration Manager](../../../protect/deploy-use/manage-access-to-services.md).  
 
  **Configurações de conformidade**  
 
- Fornece um conjunto de ferramentas e recursos que podem ajudar a avaliar, acompanhar e corrigir a conformidade de configuração de dispositivos de clientes na empresa.  Além disso, é possível usar as configurações de conformidade para definir uma variedade de recursos e configurações de segurança nos dispositivos gerenciados. Consulte [Ensure device compliance with System Center Configuration Manager (Garantir a conformidade do dispositivo com o System Center Configuration Manager)](../../../compliance/understand/ensure-device-compliance.md).  
+ Fornece um conjunto de ferramentas e recursos que podem ajudar a avaliar, acompanhar e corrigir a conformidade de configuração de dispositivos de clientes na empresa. Além disso, é possível usar as configurações de conformidade para definir uma variedade de recursos e configurações de segurança nos dispositivos gerenciados. Consulte [Ensure device compliance with System Center Configuration Manager (Garantir a conformidade do dispositivo com o System Center Configuration Manager)](../../../compliance/understand/ensure-device-compliance.md).  
 
  **Endpoint Protection**  
 
@@ -64,11 +64,11 @@ Os seguintes são os recursos de gerenciamento primário do System Center Config
 
  **Gerenciamento de dispositivo móvel local**  
 
- Registra e gerencia PCs e dispositivos móveis usando a funcionalidade de gerenciamento e infraestrutura local do Configuration Manager incorporada às plataformas de dispositivo (em vez de se basear em um cliente do Configuration Manager instalado separadamente). Atualmente, dá suporte ao gerenciamento de dispositivos Windows 10 Enterprise e Windows 10 Mobile.  Consulte [Gerenciar dispositivos móveis com a infraestrutura local no System Center Configuration Manager](../../../mdm/understand/manage-mobile-devices-with-on-premises-infrastructure.md).  
+ Registra e gerencia computadores e dispositivos móveis usando a funcionalidade de gerenciamento e infraestrutura local do Configuration Manager incorporada às plataformas de dispositivo (em vez de se basear em um cliente do Configuration Manager instalado separadamente). Atualmente, dá suporte ao gerenciamento de dispositivos Windows 10 Enterprise e Windows 10 Mobile. Consulte [Gerenciar dispositivos móveis com a infraestrutura local no System Center Configuration Manager](../../../mdm/understand/manage-mobile-devices-with-on-premises-infrastructure.md).  
 
  **Implantação do sistema operacional**  
 
- Fornece uma ferramenta para criar imagens do sistema operacional. É possível usar essas imagens para implantá-las em computadores gerenciados pelo Configuration Manager e em computadores não gerenciados, usando a inicialização PXE ou mídias inicializáveis como um conjunto de CD, DVD ou unidades flash USB. Consulte [Introdução à implantação de sistema operacional no System Center Configuration Manager](../../../osd/understand/introduction-to-operating-system-deployment.md).  
+ Fornece uma ferramenta para criar imagens do sistema operacional. Você pode usar essas imagens para implantar os sistemas operacionais em computadores, usando a inicialização PXE ou mídias inicializáveis como um conjunto de CD, DVD ou unidades flash USB. Observe que isso se aplica a computadores que são gerenciados pelo Configuration Manager, bem como a computadores não gerenciados. Consulte [Introdução à implantação de sistema operacional no System Center Configuration Manager](../../../osd/understand/introduction-to-operating-system-deployment.md).  
 
  **Gerenciamento de energia**  
 
@@ -76,15 +76,15 @@ Os seguintes são os recursos de gerenciamento primário do System Center Config
 
  **Consultas**  
 
- Fornece uma ferramenta para recuperar informações sobre recursos na hierarquia e informações sobre dados de inventário e mensagens de status. É possível usar essas informações para relatórios ou para definir coleções de dispositivos ou usuários para a implantação de software e definições de configuração. Consulte [Introdução a consultas no System Center Configuration Manager](../../../core/servers/manage/introduction-to-queries.md).  
+ Fornece uma ferramenta para recuperar informações sobre recursos na hierarquia e informações sobre dados de inventário e mensagens de status. É possível usar essas informações para relatórios ou para definir coleções de dispositivos ou de usuários para implantação de software e definições de configuração. Consulte [Introdução a consultas no System Center Configuration Manager](../../../core/servers/manage/introduction-to-queries.md).  
 
  **Perfis de conexão remota**  
 
- Fornece um conjunto de ferramentas para ajudar você a criar, implantar e monitorar configurações de conexão remota em dispositivos na sua organização. Ao implantar essas configurações, você minimiza o esforço necessário para que o usuário final se conecte ao seu computador na rede corporativa. Consulte [Trabalhando com perfis de conexão remota no System Center Configuration Manager](/sccm/compliance/deploy-use/create-remote-connection-profiles).  
+ Fornece um conjunto de ferramentas e recursos para ajudá-lo a criar, implantar e monitorar configurações de conexão remota em dispositivos na sua organização. Ao implantar essas configurações, você minimiza o esforço exigido dos usuários para se conectar aos computadores na rede corporativa. Consulte [Trabalhando com perfis de conexão remota no System Center Configuration Manager](/sccm/compliance/deploy-use/create-remote-connection-profiles).  
 
  **Itens de configuração de perfis e dados do usuário**  
 
- Os itens de configuração de perfis e dados do usuário no Configuration Manager contêm configurações que podem gerenciar o redirecionamento de pasta, arquivos offline e perfis móveis em computadores que executam o Windows 8 e posterior para usuários em sua hierarquia. Consulte [Trabalhando com itens de configuração de perfis e dados de usuário no System Center Configuration Manager](/sccm/compliance/deploy-use/create-user-data-and-profiles-configuration-items).  
+ Os itens de configuração de perfis e dados do usuário no Configuration Manager contêm definições que podem gerenciar o redirecionamento de pasta, arquivos offline e perfis móveis em computadores que executam o Windows 8 e posterior para usuários em sua hierarquia. Consulte [Trabalhando com itens de configuração de perfis e dados de usuário no System Center Configuration Manager](/sccm/compliance/deploy-use/create-user-data-and-profiles-configuration-items).  
 
  **Controle remoto**  
 
@@ -104,6 +104,6 @@ Os seguintes são os recursos de gerenciamento primário do System Center Config
 
 
 
-<!--HONumber=Dec16_HO3-->
+<!--HONumber=Dec16_HO5-->
 
 

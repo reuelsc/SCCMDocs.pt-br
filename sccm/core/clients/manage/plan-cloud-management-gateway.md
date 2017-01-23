@@ -1,7 +1,7 @@
 ---
 title: Planejar o gateway de gerenciamento de nuvem | Microsoft Docs
 description: 
-ms.date: 11/22/2016
+ms.date: 12/19/2016
 ms.prod: configuration-manager
 ms.technology:
 - configmgr-client
@@ -10,8 +10,8 @@ author: nbigman
 ms.author: nbigman
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: 1f8fbd8a16548ab2c34f5d3dac2b439f3908cea9
-ms.openlocfilehash: e6befef692518a5622250af1c71d517b435f9058
+ms.sourcegitcommit: 1df2d8bcd73633ac1d37cc3ef31343be9c5bc95d
+ms.openlocfilehash: 6e2895565e868eb80a8f4f4b46b8a28eb4961e28
 
 ---
 
@@ -19,11 +19,11 @@ ms.openlocfilehash: e6befef692518a5622250af1c71d517b435f9058
 
 *Aplica-se a: System Center Configuration Manager (Branch Atual)*
 
-Começando da versão 1610, o gateway de gerenciamento de nuvem fornece uma maneira simples de gerenciar clientes do Configuration Manager na Internet. O serviço de gateway de gerenciamento de nuvem, que é implantado no Microsoft Azure e requer uma assinatura do Azure, conecta-se à sua infraestrutura do Configuration Manager local usando uma nova função chamada de ponto de conexão do gateway de gerenciamento de nuvem. Após ser completamente implantado e configurado, os clientes poderão acessar funções do sistema de sites do Configuration Manager locais independentemente de se eles estão conectados à rede privada interna ou na Internet.
+Começando da versão 1610, o gateway de gerenciamento de nuvem fornece uma maneira simples de gerenciar clientes do Configuration Manager na Internet. O serviço de gateway de gerenciamento de nuvem é implantado no Microsoft Azure e requer uma assinatura do Azure. Ele se conecta à sua infraestrutura local do Configuration Manager usando uma nova função chamada ponto de conexão do gateway de gerenciamento de nuvem. Após ser implantado e configurado, os clientes poderão acessar funções locais do sistema de sites do Configuration Manager independentemente se eles estão na rede privada interna ou na Internet.
 
 Use o console do Configuration Manager para implantar o serviço no Azure, adicione a função de ponto de conexão do gateway de gerenciamento de nuvem e configure as funções do sistema de sites para permitir o tráfego do gateway de gerenciamento de nuvem. No momento, o gateway de gerenciamento de nuvem dá suporte apenas às funções de ponto de gerenciamento e de ponto de atualização de software.
 
-Os certificados de cliente e os certificados SSL são necessários para autenticar computadores e criptografar comunicações entre diferentes camadas do serviço. Normalmente, os computadores cliente recebem um certificado do cliente por meio da aplicação de política de grupo. Para criptografar o tráfego entre clientes e o servidor do sistema de sites hospedando as funções, você precisa criar um certificado SSL personalizado por meio da AC. Além desses dois tipos de certificados, você também precisa configurar um certificado de gerenciamento no Azure que permita que o Configuration Manager implante o serviço de gateway de gerenciamento de nuvem.
+Os certificados de cliente e os certificados SSL são necessários para autenticar computadores e criptografar comunicações entre diferentes camadas do serviço. Normalmente, os computadores cliente recebem um certificado do cliente por meio da aplicação de política de grupo. Para criptografar o tráfego entre clientes e o servidor do sistema de sites hospedando as funções, você precisa criar um certificado SSL personalizado por meio da AC. Você também precisa configurar um certificado de gerenciamento no Azure que permita que o Configuration Manager implante o serviço de gateway de gerenciamento de nuvem.
 
 ## <a name="requirements-for-cloud-management-gateway"></a>Requisitos para o gateway de gerenciamento de nuvem
 
@@ -35,36 +35,25 @@ Os certificados de cliente e os certificados SSL são necessários para autentic
 
 -   Certificado de gerenciamento do Azure – usado para autenticar o Configuration Manager com o Azure.
 
-## <a name="limitations-of-cloud-management-gateway"></a>Limitações do gateway de gerenciamento de nuvem
+## <a name="specifications-for-cloud-management-gateway"></a>Especificações para o gateway de gerenciamento de nuvem
 
--   O gateway de gerenciamento de nuvem dá suporte apenas às funções de ponto de gerenciamento e de ponto de atualização de software.
-
+- Cada instância do gateway de gerenciamento de nuvem oferece suporte a 4.000 clientes.
+- É recomendável que você crie pelo menos duas instâncias do gateway de gerenciamento de nuvem para aumentar a disponibilidade.
+- O gateway de gerenciamento de nuvem dá suporte apenas às funções de ponto de gerenciamento e de ponto de atualização de software.
 -   No momento, os seguintes recursos não têm suporte no Configuration Manager para o gateway de gerenciamento de nuvem:
 
     -   Implantação e atualização do cliente usando o push do cliente
-
     -   Atribuição automática de site
-
     -   Políticas de usuário
-
     -   Catálogo de aplicativos (incluindo solicitações de aprovação de software)
-
     -   OSD (implantação de sistema operacional) completa
-
     -   Console do Configuration Manager
-
     -   Ferramentas remotas
-
     -   Site de relatórios
-
     -   Wake on LAN
-
     -   Clientes Mac, Linux e UNIX
-
     -   Azure Resource Manager
-
     -   Cache de pares
-
     -   Gerenciamento de dispositivo móvel local
 
 ## <a name="cost-of-cloud-management-gateway"></a>Custo do gateway de gerenciamento de nuvem

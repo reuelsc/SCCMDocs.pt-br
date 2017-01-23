@@ -17,8 +17,8 @@ author: nbigman
 ms.author: nbigman
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: 21eeba4d35f19930f26ed820295d6f142adae1ac
-ms.openlocfilehash: 6c63d63c5b5a7fc1406027dd9380ea799c1aa318
+ms.sourcegitcommit: d7265aec46474ba7fc317ddb5e20b91b7b134585
+ms.openlocfilehash: 36f6eb3fe48e904adf4d04450906fada9b477246
 
 ---
 # <a name="about-client-settings-in-system-center-configuration-manager"></a>Sobre as configurações do cliente no System Center Configuration Manager
@@ -328,7 +328,11 @@ Muitas das configurações do cliente são autoexplicativas. Outras são descrit
     -   Arquivos NOIDMIF devem estar na pasta Windows\System32\CCM\Inventory\Noidmif.  
 
     > [!NOTE]  
-    >  Essa definição só está disponível nas configurações do cliente padrão.  
+    >  Essa definição só está disponível nas configurações do cliente padrão. 
+
+-   **Atraso aleatório máximo**
+
+    A coleta de informações de hardware é executada de forma aleatória em até duas horas para que a operação não ocorra simultaneamente em todos os clientes. É possível definir o atraso máximo para restringir o tempo durante o qual a operação é executada.      
 
 ##  <a name="metered-internet-connections"></a>Planos de Internet Limitados  
  Você pode gerenciar o modo como os computadores cliente com Windows 8 se comunicam com sites do Configuration Manager quando usam conexões de Internet limitadas. Provedores de Internet ocasionalmente cobram por quantidade de dados que você envia e recebe quando está em uma conexão de Internet limitada.  
@@ -640,6 +644,6 @@ Muitas das configurações do cliente são autoexplicativas. Outras são descrit
 
 
 
-<!--HONumber=Dec16_HO3-->
+<!--HONumber=Dec16_HO5-->
 
 
