@@ -2,7 +2,7 @@
 title: "Atualizações | Microsoft Docs"
 description: "Saiba mais sobre um método de serviço no console chamado **Atualizações e Manutenção** que facilita a localização e a instalação das atualizações recomendadas."
 ms.custom: na
-ms.date: 10/06/2016
+ms.date: 1/11/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
@@ -17,8 +17,8 @@ author: Brenduns
 ms.author: brenduns
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: 6e964f015d5f007311f46f51126b31e181abd0ec
-ms.openlocfilehash: e7b19b6e1f4720c0bdc69ef7f78366fd5d3414d0
+ms.sourcegitcommit: 5314bcb434b5b540f80cdfe32002df7b8fed6195
+ms.openlocfilehash: 52d5ad7a348e0489f43ac6cb46af930499ef6cf2
 
 
 ---
@@ -26,7 +26,11 @@ ms.openlocfilehash: e7b19b6e1f4720c0bdc69ef7f78366fd5d3414d0
 
 *Aplica-se a: System Center Configuration Manager (Branch Atual)*
 
-O System Center Configuration Manager usa um método de serviço no console chamado **Atualizações e serviço** que facilita a localização e a instalação das atualizações recomendadas para a infraestrutura do Configuration Manager. Esse método de serviço no console é complementado por atualizações fora da banda, como hotfixes, destinadas a clientes que precisam resolver problemas possivelmente específicos de seus ambientes.  
+O System Center Configuration Manager usa um método de serviço no console chamado **Atualizações e Manutenção** que facilita a localização e a instalação das atualizações recomendadas para a infraestrutura do Configuration Manager. Esse método de serviço no console é complementado por atualizações fora da banda, como hotfixes, destinadas a clientes que precisam resolver problemas possivelmente específicos de seus ambientes.  
+
+> [!TIP]
+> Ao gerenciar a infraestrutura do site e da hierarquia do System Center Configuration Manager, os termos *upgrade*, *atualização* e *instalação* são usados para descrever três conceitos separados. Para saber como cada termo é usado, consulte [About upgrade, update, and install](/sccm/core/understand/upgrade-update-install) (Sobre upgrade, atualização e instalação).
+
 
  **Os tópicos a seguir podem ajudá-lo a entender como encontrar e instalar os diferentes tipos de atualizações para o System Center Configuration Manager:**  
 
@@ -38,17 +42,18 @@ O System Center Configuration Manager usa um método de serviço no console cham
 
 -   [Usar o Instalador de Hotfix para instalar atualizações do System Center Configuration Manager](../../../core/servers/manage/use-the-hotfix-installer-to-install-updates.md)  
 
-> [!TIP]  
-> Se você usa o branch do Technical Preview, consulte [Technical Preview do System Center Configuration Manager](/sccm/core/get-started/technical-preview) para obter informações adicionais específicas do branch.
+
+Se você usa o branch do Technical Preview, consulte [Technical Preview do System Center Configuration Manager](/sccm/core/get-started/technical-preview) para obter informações adicionais específicas do branch.
+
 
 ##  <a name="a-namebkmkbaselinesa-baseline-and-update-versions"></a><a name="bkmk_Baselines"></a> Versões de linha de base e atualização  
- A versão inicial da ramificação atual do System Center Configuration Manager é a versão 1511. Essa é uma versão de linha de base:  
+ A versão inicial do branch atual do System Center Configuration Manager era a versão 1511, que é a versão de linha de base. Mais recentemente versão 1606 foi lançada como uma linha de base:  
 
 -   Use a versão de linha de base mais recente ao instalar um novo site em uma nova hierarquia.  
 
 -   Você deve usar uma versão de linha de base para atualizar o System Center 2012 Configuration Manager.  
 
--   Novas versões de linha de base são lançadas periodicamente. Ao usar uma versão de linha de base mais recente para instalar uma nova hierarquia, você evita a instalação da linha de base original do 1511 seguida por uma atualização da infraestrutura.  
+-   Versões de linha de base adicionais serão lançadas periodicamente. Quando você usa a versão de linha de base mais recente para instalar uma nova hierarquia, evita a instalação de uma versão desatualizada do Configuration Manager, seguida por uma atualização de sua infraestrutura para atualizá-la.  
 
 Depois de instalar uma versão de linha de base, versões adicionais do Configuration Manager estarão disponíveis como atualizações no console. As atualizações no console atualizam a infraestrutura para a versão mais recente do Configuration Manager.  
 
@@ -115,7 +120,7 @@ Ao instalar uma atualização no console:
 
 -   Ele executa automaticamente uma verificação de pré-requisitos. Você também pode executar essa verificação antes de iniciar a instalação.  
 
--   Ele instala no site de administração central (se houver) e nos sites primários automaticamente. É possível controlar quando cada servidor do site primário tem permissão para atualizar sua infraestrutura usando o [Service Windows for site servers](../../../core/servers/manage/install-in-console-updates.md#bkmk_ServiceWindow).  
+-   Ele instala no site de administração central (se houver) e nos sites primários automaticamente. É possível controlar quando cada servidor do site primário tem permissão para atualizar sua infraestrutura usando [Service windows for site servers](../../../core/servers/manage/service-windows.md) (Períodos de serviço para servidores do site).  
 
 -   Depois que um servidor do site é atualizado, todas as funções do sistema de site afetadas (incluindo as instâncias do Provedor de SMS) são atualizadas automaticamente. Os consoles do Configuration Manager também solicitam que o usuário do console atualize o console depois que o site instala a atualização.  
 
@@ -143,6 +148,6 @@ Instale essas correções manualmente, usando um destes dois métodos:
 
 
 
-<!--HONumber=Dec16_HO3-->
+<!--HONumber=Jan17_HO2-->
 
 

@@ -2,7 +2,7 @@
 title: "Atualização para o System Center Configuration Manager | Microsoft Docs"
 description: "Conheça as etapas para executar uma atualização in-loco com êxito de um site e hierarquia que executa o System Center 2012 Configuration Manager."
 ms.custom: na
-ms.date: 12/16/2016
+ms.date: 1/11/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
@@ -16,8 +16,8 @@ author: Brenduns
 ms.author: brenduns
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: 6cf3ac76ea3fb9c9b093ed4927255102930bbe26
-ms.openlocfilehash: d4e6a4c128ae077d2a3cb2883d80b6bf71b7f458
+ms.sourcegitcommit: 0d0735c170820259ac8bb6706aac7cc5569a1628
+ms.openlocfilehash: 27d18a7c5b13f488cafb36ace2e437fe6a50c598
 
 
 ---
@@ -29,6 +29,8 @@ Você pode executar uma atualização in-loco para atualizar para o System Cente
 
  Antes de atualizar do System Center 2012 Configuration Manager, você deve preparar sites, o que exige que você remova configurações específicas que podem impedir uma atualização bem-sucedida, e então seguir a sequência de atualização quando houver mais de um único site envolvido.  
 
+ > [!TIP]
+ > Ao gerenciar a infraestrutura do site e da hierarquia do System Center Configuration Manager, os termos *upgrade*, *atualização* e *instalação* são usados para descrever três conceitos separados. Para saber como cada termo é usado, consulte [About upgrade, update, and install](/sccm/core/understand/upgrade-update-install) (Sobre upgrade, atualização e instalação).
 
 ##  <a name="a-namebkmkpatha-in-place-upgrade-paths"></a><a name="bkmk_path"></a> Caminhos de atualização in-loco  
 **Atualizar para a versão 1606**  
@@ -386,6 +388,6 @@ Após atualizar um site para um novo service pack, talvez seja necessário concl
 
 
 
-<!--HONumber=Dec16_HO3-->
+<!--HONumber=Jan17_HO2-->
 
 

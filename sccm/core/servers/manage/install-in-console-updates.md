@@ -2,7 +2,7 @@
 title: "Atualizações no console | Microsoft Docs"
 description: "O System Center Configuration Manager sincroniza com a nuvem da Microsoft para obter atualizações que você pode instalar no console."
 ms.custom: na
-ms.date: 10/06/2016
+ms.date: 1/11/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
@@ -16,8 +16,8 @@ author: Brenduns
 ms.author: brenduns
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: 238ef5814c0c1b832c28d63c9f3879e21a6c439b
-ms.openlocfilehash: 1b7063d45c6dc9b42e5002f684043a8e846416a2
+ms.sourcegitcommit: 0d0735c170820259ac8bb6706aac7cc5569a1628
+ms.openlocfilehash: 00d9738a271ba47abcbf3c4b427a05910a0c2355
 
 
 ---
@@ -69,7 +69,7 @@ Por padrão, os **Pacotes de atualização** (SMS_CM_Updatepackages) faz parte d
     - Um usuário com essa função de segurança e acesso ao escopo de segurança **Padrão** pode exibir atualizações, instalar atualizações, habilitar recursos durante a instalação e exibir recursos após uma atualização ter sido instalada, mas não habilitar os recursos após a atualização ter sido instalada anteriormente.
 
 - **Analista somente leitura** com permissão para **Ler** :
-  -  Um usuário com essa função de segurança e acesso ao escopo **Padrão** pode exibir atualizações, mas não as instalar, além de poder exibir recursos após uma atualização ter sido instalada, mas não as habilitar. Atualização para 1606 de 1511
+  -  Um usuário com essa função de segurança e acesso ao escopo **Padrão** pode exibir atualizações, mas não instalá-las, e pode exibir recursos após uma atualização ter sido instalada, mas não pode habilitá-los.
 
 **Resumo das permissões necessárias para atualizações e manutenção:**   
   - Use uma conta a que tenha sido atribuída uma função de segurança que inclua a classe **Atualizar pacotes** com permissões para **Modificar** e **Ler** .
@@ -162,7 +162,7 @@ Posteriormente, quando você instalar uma atualização, terá a opção de conf
 
  Recomendamos que você planeje a instalação da atualização fora do horário comercial normal de cada site, quando o processo de instalação da atualização e suas ações de reinstalação dos componentes do site e das funções do sistema de sites terão um efeito mínimo sobre as operações de seu negócio.  
 
--   Os sites primários filho iniciam automaticamente a atualização após a conclusão da instalação da atualização no site de administração central. Este é o processo padrão e recomendado. É possível usar os [Períodos de Serviço dos servidores de site](#bkmk_ServiceWindow) para controlar quando um site primário instala atualizações.  
+-   Os sites primários filho iniciam automaticamente a atualização após a conclusão da instalação da atualização no site de administração central. Este é o processo padrão e recomendado. É possível usar os [Service windows for site servers](/sccm/core/servers/manage/service-windows) (Períodos de serviço para servidores do site). para controlar quando um site primário instala atualizações.  
 
 -   É necessário atualizar manualmente os sites secundários de dentro do console do Configuration Manager após a conclusão da atualização do site pai primário. Não há suporte para atualização automática de servidores do site secundário.  
 
@@ -355,16 +355,6 @@ Se você tiver dado consentimento em um site primário autônomo e, depois, expa
 
 
 
-
-##  <a name="a-namebkmkservicewindowa-service-windows-for-site-servers"></a><a name="bkmk_ServiceWindow"></a> Janelas de manutenção para servidores de site  
-Em um servidor do site, você pode configurar períodos de serviço para controlar quando atualizações de infraestrutura do Configuration Manager podem ser aplicadas ao servidor do site.  Cada servidor do site dá suporte a vários períodos, com o período permitido para instalação de atualizações de infraestrutura determinado por uma combinação de todos os períodos configurados para esse servidor do site específico.  
-
-**Para configurar um período de serviço:**  
-
-1.  No console do Configuration Manager, abra **Administração** > **Configuração de Site** > **Sites** e selecione o servidor do site para o qual deseja configurar um período de serviço.  
-
-2.  Em seguida, edite as **Propriedades** dos servidores do site e selecione a guia **Período de Serviço** , na qual você pode definir um ou mais períodos de serviço para o servidor do site.  
-
 ##  <a name="a-namebkmkfaqa-why-dont-i-see-certain-updates-in-my-console"></a><a name="bkmk_faq"></a> Por que eu não vejo determinadas atualizações em meu console?  
  Se você não conseguir encontrar uma atualização específica, ou quaisquer atualizações em seu console, após uma sincronização bem-sucedida com o serviço de nuvem da Microsoft, o motivo pode ser o seguinte:  
 
@@ -378,6 +368,6 @@ Em um servidor do site, você pode configurar períodos de serviço para control
 
 
 
-<!--HONumber=Dec16_HO3-->
+<!--HONumber=Jan17_HO2-->
 
 

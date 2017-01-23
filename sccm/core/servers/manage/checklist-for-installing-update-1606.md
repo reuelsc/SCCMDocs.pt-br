@@ -2,7 +2,7 @@
 title: "Lista de verificação para a 1606 | Microsoft Docs"
 description: "Saiba mais sobre as ações a serem executadas antes de atualizar do System Center Configuration Manager versão 1511 ou 1602 para a 1606."
 ms.custom: na
-ms.date: 10/06/2016
+ms.date: 1/11/2017
 ms.reviewer: na
 ms.suite: na
 ms.prod: configuration-manager
@@ -16,8 +16,8 @@ author: Brenduns
 ms.author: brenduns
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: 10b1010ccbf3889c58c55b87e70b354559243c90
-ms.openlocfilehash: ba087244ad52087f32acbe413b1e56c7478e4db6
+ms.sourcegitcommit: 0d0735c170820259ac8bb6706aac7cc5569a1628
+ms.openlocfilehash: ca0916791ccfba921866ebed7da0e2dc365f933b
 
 ---
 # <a name="checklist-for-installing-update-1606-for-system-center-configuration-manager"></a>Lista de verificação para instalar a atualização 1606 do System Center Configuration Manager
@@ -34,7 +34,7 @@ Para obter informações sobre versões da linha de base, consulte [Versões de 
 
 Como *atualização*, a versão 1606 pode ser instalada somente no site de nível superior da sua hierarquia. Isso significa que você inicia a instalação no site de administração central, se tiver um, ou no site primário autônomo.  
 
--   Os sites primários filho instalam a atualização automaticamente depois que a instalação da atualização estiver concluída no site de administração central. É possível usar as janelas de serviço para controlar quando o site instala atualizações. Antes da versão 1606, as janelas de serviço eram chamadas de janelas de manutenção. Para obter mais informações, consulte [Períodos de Serviço para servidores do site](../../../core/servers/manage/install-in-console-updates.md#bkmk_ServiceWindow).  
+-   Os sites primários filho instalam a atualização automaticamente depois que a instalação da atualização estiver concluída no site de administração central. É possível usar as janelas de serviço para controlar quando o site instala atualizações. Antes da versão 1606, as janelas de serviço eram chamadas de janelas de manutenção. Para obter mais informações, consulte [Service windows for site servers](/sccm/core/servers/manage/service-windows) (Períodos de serviço para servidores do site).  
 
 -   Você deve atualizar sites secundários manualmente de dentro do console do Configuration Manager depois que a instalação da atualização estiver concluída no site pai primário. Não há suporte para atualização automática de servidores do site secundário.  
 
@@ -124,13 +124,13 @@ O Configuration Manager não dá suporte ao backup de sites secundários nem ao 
 Não há suporte para executar um teste da atualização do banco de dados no banco de dados do site de produção. Fazer isso atualiza o banco de dados do site e pode deixar seu site inoperável. Para obter mais informações, consulte a seção [Testar a atualização de banco de dados do site](../../../core/servers/deploy/install/upgrade-to-configuration-manager.md#bkmk_test) em [Atualizar para o System Center Configuration Manager](../../../core/servers/deploy/install/upgrade-to-configuration-manager.md).  
 
  **Planeje o piloto do cliente:** quando você instala uma atualização que atualiza o cliente, é possível testar essa nova atualização do cliente na pré-produção antes que ela seja implantada e atualize todos os seus clientes ativos.   
- Para aproveitar essa opção, antes de começar a instalação da atualização, você deve configurar o site para permitir atualizações automáticas para pré-produção. Para obter mais informações, consulte [Atualizar clientes no System Center Configuration Manager](../../../core/clients/manage/upgrade/upgrade-clients.md) e   
+ Para aproveitar essa opção, antes de começar a instalação da atualização, você deve configurar o site para dar suporte às atualizações automáticas para pré-produção. Para obter mais informações, consulte [Atualizar clientes no System Center Configuration Manager](../../../core/clients/manage/upgrade/upgrade-clients.md) e   
 [Como testar atualizações do cliente em uma coleção de pré-produção no System Center Configuration Manager](../../../core/clients/manage/upgrade/test-client-upgrades.md)  
 
  **Planejar para usar janelas de serviço**  
  **para controlar quando os servidores do site instalam as atualizações:** é possível usar janelas de serviço para definir um período que se aplique a um servidor do site primário durante o qual as atualizações desse site podem ser instaladas.   
 Isso pode ajudar a controlar quando os sites em sua hierarquia instalam a atualização.
-Antes da versão 1606, as janelas de serviço eram chamadas de janelas de manutenção. Para obter mais informações, consulte [Períodos de Serviço para servidores do site](../../../core/servers/manage/install-in-console-updates.md#bkmk_ServiceWindow).  
+Antes da versão 1606, as janelas de serviço eram chamadas de janelas de manutenção. Para obter mais informações, consulte [Service windows for site servers](/sccm/core/servers/manage/service-windows) (Períodos de serviço para servidores do site).  
 
  **Execute o Verificador de Pré-requisitos de Instalação:** antes de instalar a atualização 1606, você pode executar o Verificador de Pré-requisitos independentemente da instalação de atualização. Quando você instala a atualização no site, o Verificador de Pré-requisitos é executado novamente.  
 Para obter mais informações, confira **Etapa 3: Executar o verificador de pré-requisitos antes de instalar uma atualização** no tópico [Atualizações para o System Center Configuration Manager](../../../core/servers/manage/install-in-console-updates.md).  
@@ -143,6 +143,6 @@ Para obter mais informações, confira **Etapa 3: Executar o verificador de pré
 
 
 
-<!--HONumber=Dec16_HO3-->
+<!--HONumber=Jan17_HO2-->
 
 

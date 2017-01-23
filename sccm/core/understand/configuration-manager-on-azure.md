@@ -2,7 +2,7 @@
 title: Configuration Manager no Azure | Microsoft Docs
 description: "Informações sobre o uso do Configuration Manager em um ambiente do Azure."
 ms.custom: na
-ms.date: 10/21/2016
+ms.date: 01/04/2017
 ms.reviewer: na
 ms.suite: na
 ms.tgt_pltfrm: na
@@ -16,8 +16,8 @@ author: Brenduns
 ms.author: brenduns
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: 10b1010ccbf3889c58c55b87e70b354559243c90
-ms.openlocfilehash: 5866c1d9ad88e49b69fa0c863b1ef8748a8c8111
+ms.sourcegitcommit: 6638d6e17d0eaeef731cce45e8cf5c827d6e0dfe
+ms.openlocfilehash: 4d953eedc7d5cceb8767dab8850cacb1e007194d
 
 ---
 # <a name="configuration-manager-on-azure---frequently-asked-questions"></a>Configuration Manager no Azure – Perguntas frequentes
@@ -139,9 +139,11 @@ A abordagem de gerenciamento de conteúdo é muito semelhante à dos servidores 
 
 
 ### <a name="while-i-am-ok-with-the-limitations-of-cloud-based-distribution-points-i-dont-want-to-put-my-management-point-into-a-dmz-even-though-that-is-needed-to-support-my-internet-based-clients-do-i-have-any-other-options"></a>Embora eu esteja OK com as limitações dos pontos de distribuição baseados em nuvem, não quero colocar meu ponto de gerenciamento em um DMZ, mesmo que isso seja necessário para dar suporte aos meus clientes baseados na Internet. Tenho alguma outra opção?
-Em breve você terá. Com a versão 1606 do Configuration Manager Technical Preview, introduzimos o [Serviço de Proxy de Nuvem](/sccm/core/get-started/capabilities-in-technical-preview-1606#a-namecloudproxyacloud-proxy-service-for-managing-clients-on-the-internet). O Serviço de Proxy de Nuvem fornece uma maneira simples de gerenciar clientes do Configuration Manager na Internet. O serviço, que é implantado no Microsoft Azure e requer uma assinatura do Azure, conecta-se à sua infraestrutura do Configuration Manager local usando uma nova função chamada de ponto do conector de proxy de nuvem. Depois de implantado e configurado, os clientes podem acessar funções do sistema de sites do Configuration Manager locais independentemente de se eles estão conectados à rede privada interna ou na Internet.
+Sim. Com o Configuration Manager versão 1610, apresentamos o [Gateway de gerenciamento de nuvem](/sccm/core/clients/manage/manage-clients-internet#cloud-management-gateway) como um recurso de pré-lançamento. (Esse recurso apareceu pela primeira vez na Technical Preview versão 1606 como o [Serviço de Proxy de Nuvem](/sccm/core/get-started/capabilities-in-technical-preview-1606#a-namecloudproxyacloud-proxy-service-for-managing-clients-on-the-internet).) 
 
-Você pode começar a testar o Proxy de Serviço na Nuvem em seu ambiente de teste e nos fornecer comentários para melhorá-lo.
+O **Gateway de Gerenciamento de Nuvem** fornece uma maneira simples de gerenciar clientes do Configuration Manager na Internet. O serviço, que é implantado no Microsoft Azure e requer uma assinatura do Azure, conecta-se à sua infraestrutura do Configuration Manager local usando uma nova função chamada ponto de conexão do gateway de gerenciamento de nuvem. Depois de implantado e configurado, os clientes podem acessar funções do sistema de sites do Configuration Manager locais independentemente de se eles estão conectados à rede privada interna ou na Internet.
+
+Você pode começar a usar o gateway de gerenciamento de nuvem em seu ambiente e nos fornecer comentários para melhorá-lo. Para obter mais informações sobre os recursos de pré-lançamento, consulte [Usar recursos de pré-lançamento de atualizações](/sccm/core/servers/manage/install-in-console-updates#a-namebkmkprereleasea-use-pre-release-features-from-updates).
 
 ### <a name="i-also-heard-that-you-have-another-new-feature-called-peer-cache-in-the-technical-preview-version-1604-is-that-different-than-branchcache-which-one-should-i-choose"></a>Também ouvi que você tem outro novo recurso chamado Cache de Sistema Par na versão 1604 de Technical Preview. Isso é diferente do BranchCache? Qual devo escolher?
 Sim, totalmente diferente. O [Cache de Sistema Par](/sccm/core/get-started/capabilities-in-technical-preview-1604#bkmk_peercache) é uma tecnologia do Configuration Manager totalmente nativa, em que o BranchCache é um recurso do Windows. Ambos podem ser úteis para você. O BranchCache usa uma difusão para localizar o conteúdo necessário, enquanto o Cache de Sistema Par usa configurações de grupo de limite e fluxo de trabalho de distribuição regulares do Configuration Manager.
@@ -180,6 +182,6 @@ Difícil dizer, uma vez que cada ambiente é diferente. O melhor a se fazer é d
 
 
 
-<!--HONumber=Dec16_HO3-->
+<!--HONumber=Jan17_HO1-->
 
 

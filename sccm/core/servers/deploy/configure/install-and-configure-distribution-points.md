@@ -2,7 +2,7 @@
 title: "Gerenciar pontos de distribuição | Microsoft Docs"
 description: "Hospede o conteúdo (arquivos e software) que você implantar para usuários e dispositivos usando pontos de distribuição. Veja como instalar e configurá-los."
 ms.custom: na
-ms.date: 10/06/2016
+ms.date: 1/9/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
@@ -16,8 +16,8 @@ author: Brenduns
 ms.author: brenduns
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: 1a4a9da88caba55d9e340c7fb1f31f4e3b957f3e
-ms.openlocfilehash: 8684bf1231ff9d663717b4c9874dac98d50e3647
+ms.sourcegitcommit: cae118d2f28eea3bc47e344ca6f2ba8192f031c2
+ms.openlocfilehash: 160c3c94c822bc78e2d61b7a51d130b47f4c204e
 
 ---
 # <a name="install-and-configure-distribution-points-for-system-center-configuration-manager"></a>Instalar e configurar pontos de distribuição para o System Center Configuration Manager
@@ -175,6 +175,8 @@ As seções a seguir descrevem as configurações que podem ser selecionadas ao 
 
     > [!NOTE]  
     >  Essa opção só está disponível ao instalar um novo ponto de distribuição  
+
+- **Habilitar e configurar o BranchCache para esse ponto de distribuição:** selecione esta configuração permitir que o Configuration Manager configure o Windows BranchCache no servidor do ponto de distribuição.  Para obter mais informações sobre como usar o Windows BranchCache com o System Center Configuration Manager, consulte [BranchCache](/sccm/core/plan-design/configs/support-for-windows-features-and-networks#a-namebkmkbranchcachea-branchcache) em *Suporte para recursos do Windows e redes no System Center Configuration Manager*.
 
 -   **Configurar como os dispositivos de cliente se comunicam com o ponto de distribuição:** há vantagens e desvantagens no uso de HTTP e HTTPS. Para obter mais informações, consulte *Melhores práticas de segurança para gerenciamento de conteúdo* em [Conceitos fundamentais para o gerenciamento de conteúdo no System Center Configuration Manager](../../../../core/plan-design/hierarchy/fundamental-concepts-for-content-management.md).  
 
@@ -379,6 +381,6 @@ Especifique se você deve configurar os limites de taxa para controlar a largura
 
 
 
-<!--HONumber=Dec16_HO3-->
+<!--HONumber=Jan17_HO2-->
 
 

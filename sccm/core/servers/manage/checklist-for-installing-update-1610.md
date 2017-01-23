@@ -2,7 +2,7 @@
 title: "Lista de verificação para 1610 | System Center Configuration Manager"
 description: "Conheça as ações a serem executadas antes de atualizar para o System Center Configuration Manager versão 1610."
 ms.custom: na
-ms.date: 11/18/2016
+ms.date: 1/7/2017
 ms.reviewer: na
 ms.suite: na
 ms.prod: configuration-manager
@@ -16,15 +16,15 @@ author: Brenduns
 ms.author: brenduns
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: 0c7d32a80559a4aa684ea1533cd36d0ef977fbfc
-ms.openlocfilehash: 25bffa256cbe70fb590eccb641c94f572f618ef3
+ms.sourcegitcommit: 0d0735c170820259ac8bb6706aac7cc5569a1628
+ms.openlocfilehash: 3ad5ca180759769bc22300eb406df4f606bfbd13
 
 ---
 # <a name="checklist-for-installing-update-1610-for-system-center-configuration-manager"></a>Lista de verificação para instalar a atualização 1610 do System Center Configuration Manager
 
 *Aplica-se a: System Center Configuration Manager (Branch Atual)*
 
-Ao usar o Branch Atual do System Center Configuration Manager, você pode instalar a atualização no console da versão 1610 para atualizar sua hierarquia da versão 1606. Se sua hierarquia executa a versão 1511, 1602 ou 1606, você pode atualizar para a versão 1610. 
+Ao usar o Branch Atual do System Center Configuration Manager, você pode instalar a atualização no console da versão 1610 para atualizar sua hierarquia da versão 1606. Se sua hierarquia executa a versão 1511, 1602 ou 1606, você pode atualizar para a versão 1610.
 
 Para obter a atualização da versão 1610, você deve usar uma função do sistema de sites do ponto de conexão de serviço no site de nível superior da hierarquia. Isso pode ser no modo online ou offline. Depois que a hierarquia baixar o pacote de atualização da Microsoft, você o encontrará no console em **Administração &gt; Visão Geral &gt; Serviços de Nuvem &gt; Atualizações e Manutenção**.
 
@@ -45,7 +45,7 @@ Para obter informações sobre as versões do Branch Atual, consulte [Versões d
 **Sites:**  
 A atualização 1610 apenas pode ser instalada no site de nível superior da hierarquia. Isso significa que você inicia a instalação no site de administração central, se tiver um, ou no site primário autônomo. Depois que a atualização for instalada no site da camada superior, os sites filhos terão o seguinte comportamento de atualização:
 
--   Os sites primários filho instalam a atualização automaticamente depois que a instalação da atualização estiver concluída no site de administração central. Você pode usar períodos de serviço para controlar quando um site instala atualizações. Antes da versão 1606, as janelas de serviço eram chamadas de janelas de manutenção. Para obter mais informações, consulte [Períodos de Serviço para servidores do site](https://docs.microsoft.com/en-us/sccm/core/servers/manage/install-in-console-updates#bkmk_ServiceWindow).
+-   Os sites primários filho instalam a atualização automaticamente depois que a instalação da atualização estiver concluída no site de administração central. Você pode usar períodos de serviço para controlar quando um site instala atualizações. Antes da versão 1606, as janelas de serviço eram chamadas de janelas de manutenção. Para obter mais informações, consulte [Service windows for site servers](/sccm/core/servers/manage/service-windows) (Períodos de serviço para servidores do site).
 
 -   Você deve atualizar sites secundários manualmente de dentro do console do Configuration Manager depois que a instalação da atualização estiver concluída no site pai primário. Não há suporte para atualização automática de servidores do site secundário.
 
@@ -136,14 +136,14 @@ Não há suporte para executar um teste da atualização do banco de dados no ba
 **Planeje o cliente piloto:**   
 Ao instalar uma atualização que atualiza o cliente, você pode testar essa nova atualização do cliente em pré-produção antes que ela seja implantada e atualize todos os clientes ativos.
 
-Para aproveitar essa opção, antes de começar a instalação da atualização, você deve configurar o site para permitir atualizações automáticas para pré-produção.
+Para aproveitar essa opção, antes de começar a instalação da atualização, você deve configurar o site para dar suporte às atualizações automáticas para pré-produção.
 
 Para obter mais informações, consulte [Atualizar clientes no System Center Configuration Manager](/sccm/core/clients/manage/upgrade/upgrade-clients) e [Como testar atualizações do cliente em uma coleção de pré-produção no System Center Configuration Manager](/sccm/core/clients/manage/upgrade/test-client-upgrades).
 
 **Planeje usar períodos de serviço para controlar quando os servidores do site instalam atualizações:**   
 Você pode usar períodos de serviço para definir um período que se aplique a um servidor do site primário durante o qual as atualizações desse site possam ser instaladas.
 
-Isso pode ajudar a controlar quando os sites em sua hierarquia instalam a atualização. Antes da versão 1606, as janelas de serviço eram chamadas de janelas de manutenção. Para obter mais informações, consulte [Períodos de Serviço para servidores do site](/sccm/core/servers/manage/install-in-console-updates#bkmk_servicewindow).
+Isso pode ajudar a controlar quando os sites em sua hierarquia instalam a atualização. Antes da versão 1606, as janelas de serviço eram chamadas de janelas de manutenção. Para obter mais informações, consulte [Service windows for site servers](/sccm/core/servers/manage/service-windows) (Períodos de serviço para servidores do site).
 
 **Execute o Verificador de Pré-requisitos de Instalação:**   
 Quando a atualização está listada no console como **Disponível,** você pode executar o Verificador de Pré-requisitos independentemente antes de instalar a atualização. (Quando você instalar a atualização no site, o Verificador de Pré-requisitos será executado novamente.)
@@ -162,6 +162,6 @@ Recomendamos que você planeje a instalação da atualização fora do horário 
 
 
 
-<!--HONumber=Dec16_HO3-->
+<!--HONumber=Jan17_HO2-->
 
 
