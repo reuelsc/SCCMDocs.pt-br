@@ -99,7 +99,7 @@ Após a instalação de um site, você pode mover o local de algumas funções d
 
 -   **Ponto do Reporting Services** – uma função do sistema de sites que se integra ao SQL Server Reporting Services para criar e gerenciar relatórios do Configuration Manager. Essa função tem suporte em sites primários e no site de administração central, e você pode instalar várias instâncias dela em um site compatível. Para obter mais informações, consulte [Planejamento para emissão de relatórios no System Center Configuration Manager](../../../core/servers/manage/planning-for-reporting.md).  
 
--   **Ponto de conexão de serviço** – uma função do sistema de sites que você usa para gerenciar dispositivos móveis com o Microsoft Intune e o MDM local. Essa função também carrega dados de uso do seu site e é necessária para fazer atualizações do Configuration Manager disponíveis no console do Configuration Manager. Uma hierarquia dá suporte a apenas uma única instância dessa função, e esta deve estar no site de camada superior da hierarquia (um site de administração central ou o site primário autônomo). Se expandir um site primário autônomo para uma hierarquia maior, você deve desinstalar essa função do site primário e, em seguida, pode instalá-lo no site de administração central. Para obter mais informações, consulte [About the service connection point in System Center Configuration Manager](../../../core/servers/deploy/configure/about-the-service-connection-point.md).  
+-   **Ponto de conexão de serviço** – uma função do sistema de sites que você usa para gerenciar dispositivos móveis com o Microsoft Intune e o MDM local. Essa função também carrega dados de uso do seu site e é necessária para fazer atualizações do Configuration Manager disponíveis no console do Configuration Manager. Uma hierarquia dá suporte a apenas uma única instância dessa função, e esta deve estar no site de camada superior da hierarquia (um site de administração central ou o site primário autônomo). Se expandir um site primário autônomo para uma hierarquia maior, você deve desinstalar essa função do site primário e, em seguida, pode instalá-lo no site de administração central. Para obter mais informações, consulte [Sobre o ponto de conexão de serviço no System Center Configuration Manager](../../../core/servers/deploy/configure/about-the-service-connection-point.md).  
 
 -   **Ponto de atualização de software** – Uma função do sistema de sites que se integra ao WSUS (Windows Server Update Services) para fornecer atualizações de software a clientes do Configuration Manager. Essa função tem suporte em todos os sites:  
 
@@ -152,6 +152,6 @@ Veja a seguir as funções do sistema de sites que podem usar um servidor proxy:
 
 
 
-<!--HONumber=Jan17_HO2-->
+<!--HONumber=Jan17_HO4-->
 
 

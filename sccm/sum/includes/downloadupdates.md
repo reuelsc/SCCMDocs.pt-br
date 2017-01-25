@@ -81,6 +81,6 @@
 9. Na página **Conclusão**, verifique se as atualizações de software foram baixadas com êxito e clique em **Fechar**.  
 
 
-<!--HONumber=Dec16_HO3-->
+<!--HONumber=Jan17_HO4-->
 
 
