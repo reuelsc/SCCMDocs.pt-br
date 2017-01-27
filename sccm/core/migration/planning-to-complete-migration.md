@@ -1,8 +1,8 @@
 ---
 title: "Concluir a migração | Microsoft Docs"
-description: "Saiba como concluir a migração para uma hierarquia de destino do System Center Configuration Manager depois de uma hierarquia de origem não contiver dados."
+description: "Saiba como concluir a migração para uma hierarquia de destino do System Center Configuration Manager depois que uma hierarquia de origem não contiver dados."
 ms.custom: na
-ms.date: 10/06/2016
+ms.date: 1/12/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
@@ -17,16 +17,16 @@ author: Brenduns
 ms.author: brenduns
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: 5e3d3f4194b06442e34c10988a20fe9ca40ac5d7
-ms.openlocfilehash: 0595ab87222aca543ae67a33c2b9fab780c6160f
+ms.sourcegitcommit: 0f4a10ba7bbe397f05d724141b562b6cd8b78ea8
+ms.openlocfilehash: eb1d2e320df02b26423ed4341d5bd1568b9444ad
 
 
 ---
-# <a name="planning-to-complete-migration-in-system-center-configuration-manager"></a>Planejamento da conclusão da migração no System Center Configuration Manager
+# <a name="plan-to-complete-migration-in-system-center-configuration-manager"></a>Planejamento da conclusão da migração no System Center Configuration Manager
 
 *Aplica-se a: System Center Configuration Manager (Branch Atual)*
 
-Com o System Center Configuration Manager, quando a hierarquia de origem já não contiver mais dados que você queira migrar para a hierarquia de destino, você poderá concluir o processo de migração. A conclusão da migração inclui as seguintes etapas gerais:  
+Com o System Center Configuration Manager, é possível concluir o processo de migração quando a hierarquia de origem já não contiver mais dados que você queira migrar para a hierarquia de destino. A conclusão da migração inclui as seguintes etapas gerais:  
 
 -   Verificar se os dados necessários foram migrados. Antes de concluir a migração de uma hierarquia de origem, verifique se todos os recursos de que você necessita foram migrados com êxito da hierarquia de origem para a hierarquia de destino. Isso pode incluir dados e clientes.  
 
@@ -49,19 +49,19 @@ Use as seguintes seções para ajudá-lo a planejar a conclusão da migração d
 
 -   Na hierarquia de destino, distribua o conteúdo a pelo menos um ponto de distribuição.  
 
--   Antes de interromper a coleta de dados de um site de origem, atualize ou reatribua pontos de distribuição compartilhados que tenham o conteúdo necessário. Para obter informações sobre a atualização ou reatribuição dos pontos de distribuição compartilhados, consulte as seções que se aplicam no tópico [Planejando uma estratégia de migração de implantação de conteúdo no System Center Configuration Manager](../../core/migration/planning-a-content-deployment-migration-strategy.md).  
+-   Antes de interromper a coleta de dados de um site de origem, atualize ou reatribua pontos de distribuição compartilhados que tenham o conteúdo necessário. Para obter informações sobre a atualização ou reatribuição dos pontos de distribuição compartilhados, consulte as seções que se aplicam em [Planejando uma estratégia de migração de implantação de conteúdo no System Center Configuration Manager](../../core/migration/planning-a-content-deployment-migration-strategy.md).  
 
 Depois de parar a coleta de dados de cada site de origem na hierarquia de origem, você poderá limpar os dados de migração. Até você limpar os dados de migração, cada tarefa de migração executada ou programada para ser executada permanecerá acessível no console do Configuration Manager.  
 
 Para mais informações sobre sites de origem e coleta de dados, consulte [Planejando uma estratégia de hierarquia de origem no System Center Configuration Manager](../../core/migration/planning-a-source-hierarchy-strategy.md).  
 
 ##  <a name="a-nameplantocleanupa-plan-to-clean-up-migration-data"></a><a name="Plan_to_clean_up"></a> Planejar a limpeza dos dados de migração  
- A última etapa para se concluir a migração é limpar os dados de migração. É possível usar o comando **Limpar Dados de Migração** depois de interromper a coleta de dados de cada site de origem na hierarquia de origem. Essa ação opcional remove dados sobre a hierarquia de origem atual do banco de dados da hierarquia de destino.  
+ A última etapa necessária para concluir a migração é limpar os dados de migração. É possível usar o comando **Limpar Dados de Migração** depois de interromper a coleta de dados de cada site de origem na hierarquia de origem. Essa ação opcional remove dados sobre a hierarquia de origem atual do banco de dados da hierarquia de destino.  
 
- Quando você limpa dados de migração, a maior parte dos dados é removida do banco de dados da hierarquia de destino. No entanto, detalhes sobre os objetos migrados são mantidos. Com esses detalhes, você pode usar o espaço de trabalho **Migração** para reconfigurar a hierarquia de origem que contém os dados que foram migrados para retomar a migração  daquela hierarquia de origem ou rever objetos ou a propriedade do site dos objetos migrados anteriormente.  
+ Quando você limpa dados de migração, a maior parte dos dados é removida do banco de dados da hierarquia de destino. No entanto, detalhes sobre os objetos migrados são mantidos. Com esses detalhes, você pode usar o espaço de trabalho **Migração** para reconfigurar a hierarquia de origem que contém os dados que foram migrados para retomar a migração daquela hierarquia de origem ou examinar objetos ou a propriedade do site dos objetos migrados anteriormente.  
 
 
 
-<!--HONumber=Dec16_HO3-->
+<!--HONumber=Jan17_HO2-->
 
 

@@ -2,7 +2,7 @@
 title: Endpoint Protection | Microsoft Docs
 description: "Saiba como gerenciar políticas antimalware e a segurança do Firewall do Windows para computadores cliente na sua hierarquia do Configuration Manager."
 ms.custom: na
-ms.date: 12/9/2016
+ms.date: 01/17/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
@@ -16,8 +16,8 @@ author: NathBarn
 ms.author: nathbarn
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: 9fcbc0bb9c8ccd4265381ca4db7a363c8ae3b54a
-ms.openlocfilehash: 59313bd6f76433782a79ab3ee9d6240f767fbd76
+ms.sourcegitcommit: f66288f1c2e0566d5de8686a005624dd81557563
+ms.openlocfilehash: addb315afe3775722a58a16b00d41cbe32a5009c
 
 
 ---
@@ -108,10 +108,20 @@ Começando com a versão 1606 do Configuration Manager (ramificação atual), o 
 
  Esses produtos não podem ser gerenciados no console do Gerenciador de Configurações. No entanto, um pacote de gerenciamento do System Center Operations Manager é fornecido com os arquivos de instalação, o que permite que você gerencie o cliente para Linux usando o Operations Manager.  
 
+### <a name="how-to-get-the-endpoint-protection-client-for-mac-computers-and-linux-servers"></a>Como obter o cliente do Endpoint Protection para computadores Mac e servidores Linux
+
+Use as etapas a seguir para baixar o arquivo de imagem que contém o software cliente do Endpoint Protection e a documentação para computadores Mac e servidores Linux.
+1. Faça logon no [Centro de Serviços de Licenciamento por Volume da Microsoft](https://www.microsoft.com/licensing/servicecenter/default.aspx).
+2. Selecione a guia **Downloads e Chaves** na parte superior do site.
+3. Aplique filtro no produto **System Center Endpoint Protection (branch atual)**.
+4. Clique no link **Download**
+5. Clique em **Continue**. Você verá vários arquivos, incluindo um denominado: **System Center Endpoint Protection (branch atual – versão 1606) para o sistema operacional Linux e o sistema operacional Macintosh Multilanguage 32/64 bits 1507 MB ISO**.
+6. Clique no ícone de seta para baixar o arquivo. O nome do arquivo é **SW_DVD5_Sys_Ctr_Endpnt_Prtctn_1606_MultiLang_EptProt_Lin_Mac_MLF_X21-30777.ISO**.
+
  Para obter mais informações sobre como instalar e gerenciar clientes do Endpoint Protection em computadores Linux e Mac, use a documentação que acompanha esses produtos, que está localizado na pasta **Documentação** .
 
 
 
-<!--HONumber=Dec16_HO3-->
+<!--HONumber=Jan17_HO3-->
 
 
