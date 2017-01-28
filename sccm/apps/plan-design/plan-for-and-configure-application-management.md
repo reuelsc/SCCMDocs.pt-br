@@ -2,7 +2,7 @@
 title: Planejar e configurar o gerenciamento de aplicativos | Microsoft Docs
 description: "Implemente e configure as dependências necessárias para implantar aplicativos no System Center Configuration Manager."
 ms.custom: na
-ms.date: 12/13/2016
+ms.date: 01/17/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
@@ -16,8 +16,8 @@ author: robstackmsft
 ms.author: robstack
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: 7634d5326265d7947a01e5b83374f65911e33aeb
-ms.openlocfilehash: 3ab905192c091cb5ad013c8e0c8590597fb0422a
+ms.sourcegitcommit: d2a12edcc6bc7413558e25b694b69133c2496019
+ms.openlocfilehash: 0a38ea116e589425048f6c46378df46ecc0d375b
 
 
 ---
@@ -33,7 +33,7 @@ Use as informações descritas neste artigo como auxílio para implantar as depe
 |------------------|----------------------|  
 |O IIS (Serviços de Informações da Internet) é necessário nos servidores do sistema de sites que executam o ponto de sites da Web e o ponto de serviço Web do catálogo de aplicativos, o ponto de gerenciamento e o ponto de distribuição.|Para saber mais sobre este requisito, veja [Configurações com suporte](../../core/plan-design/configs/supported-configurations.md).|  
 |Dispositivos móveis registrados pelo Configuration Manager|Quando você assinar o código de aplicativos para implantá-los nos dispositivos móveis, não use um certificado que tenha sido gerado usando um modelo de Versão 3 (**Windows Server 2008, Enterprise Edition**). Esse modelo de certificado cria um certificado não compatível com aplicativos do Configuration Manager para dispositivos móveis.<br /><br /> Se você usa os Serviços de Certificados do Active Directory para assinar o código de aplicativos para aplicativos de dispositivo móvel, não use um modelo de certificado de Versão 3.|  
-|Clientes deverão ser configurados para fazer auditoria de eventos de entrada, se você quiser criar automaticamente afinidades de dispositivo de usuário.|O Configuration Manager lê as duas configurações a seguir da política de segurança local em computadores cliente para determinar afinidades de dispositivo de usuário automático:<br /><br /><ul><li> **Eventos de logon de conta de auditoria**</li><li>**Eventos de logon de auditoria**</li></ul> Para criar automaticamente relacionamentos entre usuários e dispositivos, verifique se essas duas configurações estão habilitadas em computadores cliente. Você pode usar a política de grupo do Windows para definir essas configurações.|  
+|Clientes deverão ser configurados para fazer auditoria de eventos de entrada, se você quiser criar automaticamente afinidades de dispositivo de usuário.|O cliente do Configuration Manager lê os eventos de logon do tipo **sucesso** do log de eventos de segurança de PCs para determinar afinidades de dispositivo de usuário automático.  Esses eventos são habilitados pelas duas políticas de auditoria seguintes: "<br>**Eventos de logon de conta de auditoria**<br>**Eventos de logon de auditoria**<br>Para criar automaticamente relacionamentos entre usuários e dispositivos, verifique se essas duas configurações estão habilitadas em computadores cliente. Você pode usar a política de grupo do Windows para definir essas configurações.|  
 
 ## <a name="configuration-manager-dependencies"></a>Dependências do Configuration Manager   
 
@@ -79,7 +79,7 @@ Use as informações descritas neste artigo como auxílio para implantar as depe
 |Etapas|Detalhes|Mais informações|  
 |-----------|-------------|----------------------|  
 |**Etapa 1:** Se for usar conexões HTTPS, verifique se você primeiro implantou um certificado do servidor Web nos servidores do sistema de sites.|Implante um certificado do servidor Web nos servidores do sistema de site que executarão o ponto de sites da Web do catálogo de aplicativos e ponto de serviços Web do catálogo de aplicativos.<br /><br /> Além disso, se você desejar que clientes usem o Catálogo de Aplicativos pela Internet, implante um certificado do servidor Web em ao menos um servidor do sistema de site do ponto de gerenciamento e configure-o para conexões de clientes pela Internet.|Para saber mais sobre requisitos de certificado, consulte [Requisitos de certificado PKI](../../core/plan-design/network/pki-certificate-requirements.md).|  
-|**Etapa 2:** Se usar um certificado PKI de cliente para conexões a pontos de gerenciamento, implante um certificado de autenticação de cliente nos computadores cliente.|Apesar dos clientes não precisarem usar um certificado PKI de cliente para conectarem-se ao catálogo de aplicativos, eles precisam conectarem-se ao ponto de gerenciamento para poderem usar o catálogo de aplicativos. Você deve implantar um certificado de autenticação de cliente em computadores cliente nos seguintes cenários:<br /><br /><ul><li>Todos os pontos de gerenciamento na intranet aceitam apenas conexões de clientes HTTPS.</li><li>Os clientes se conectarão ao catálogo de aplicativos pela Internet.</li></ul>|Para saber mais sobre requisitos de certificado, consulte [Requisitos de certificado PKI](../../core/plan-design/network/pki-certificate-requirements.md).|  
+|**Etapa 2:** Se usar um certificado PKI de cliente para conexões a pontos de gerenciamento, implante um certificado de autenticação de cliente nos computadores cliente.|Apesar de os clientes não usarem um certificado PKI de cliente para se conectarem ao Catálogo de Aplicativos, eles precisam se conectar ao ponto de gerenciamento para poderem usar o Catálogo de Aplicativos. Você deve implantar um certificado de autenticação de cliente em computadores cliente nos seguintes cenários:<br /><br /><ul><li>Todos os pontos de gerenciamento na intranet aceitam apenas conexões de clientes HTTPS.</li><li>Os clientes se conectarão ao catálogo de aplicativos pela Internet.</li></ul>|Para saber mais sobre requisitos de certificado, consulte [Requisitos de certificado PKI](../../core/plan-design/network/pki-certificate-requirements.md).|  
 |**Etapa 3:** Instale e configure o ponto de serviços Web do catálogo de aplicativos e o site do catálogo de aplicativos.|Você deve instalar as duas funções do sistema de site no mesmo site. Não é necessário instalá-las no mesmo servidor do sistema de site ou na mesma floresta do Active Directory. No entanto, o ponto de serviço Web do catálogo de aplicativos deve estar na mesma floresta que o banco de dados do site.|Para saber mais sobre o posicionamento de funções do sistema de sites, consulte [Planejamento para servidores de sistema de sites e funções de sistema de sites](../../core/plan-design/hierarchy/plan-for-site-system-servers-and-site-system-roles.md).<br /><br /> Para configurar o ponto de serviço Web e o ponto de sites da Web do Catálogo de Aplicativos, veja **Etapa 3: Instalar e configurar as funções do sistema de sites do Catálogo de Aplicativos**.|  
 |**Etapa 4:** Definir as configurações do cliente para o Catálogo de Aplicativos e o Centro de Software.|Defina as configurações do cliente padrão se você desejar que todos os usuários tenham a mesma configuração. Caso contrário, defina as configurações do cliente personalizadas para coleções específicas.|Para saber mais sobre configurações do cliente, consulte [Sobre as configurações do cliente](../../core/clients/deploy/about-client-settings.md).<br /><br /> Para saber mais sobre como definir estas configurações do cliente, veja **Etapa 4: Definir as configurações do cliente para o Catálogo de Aplicativos e o Centro de Software**.|  
 |**Etapa 5:** Verificar se o Catálogo de Aplicativos está funcionando.|Você pode usar o Catálogo de Aplicativos diretamente de um navegador ou do Centro de Software.|Veja **Etapa 5: Verificar se o Catálogo de Aplicativos está funcionando**.|  
@@ -228,6 +228,6 @@ A identidade visual personalizada do Centro de Software é aplicada de acordo co
 
 
 
-<!--HONumber=Dec16_HO3-->
+<!--HONumber=Jan17_HO3-->
 
 

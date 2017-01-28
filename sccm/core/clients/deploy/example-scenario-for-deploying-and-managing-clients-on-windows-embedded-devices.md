@@ -2,7 +2,7 @@
 title: "Cenário de exemplo – implantar clientes Windows Embedded | Microsoft Docs"
 description: "Veja um cenário de exemplo para implantar e gerenciar clientes do System Center Configuration Manager em dispositivos Windows Embedded."
 ms.custom: na
-ms.date: 10/06/2016
+ms.date: 01/12/2016
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
@@ -16,8 +16,8 @@ author: nbigman
 ms.author: nbigman
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: 55c953f312a9fb31e7276dde2fdd59f8183b4e4d
-ms.openlocfilehash: 7b5cd35b22b610902628142d9cc52b8f3d54069d
+ms.sourcegitcommit: a650ad8e7b1f9468dd04165a3e43a89387b5d696
+ms.openlocfilehash: b07af49e2fecf6cc41258c87794ca7952206bb8a
 
 
 ---
@@ -25,11 +25,11 @@ ms.openlocfilehash: 7b5cd35b22b610902628142d9cc52b8f3d54069d
 
 *Aplica-se a: System Center Configuration Manager (Branch Atual)*
 
-Este cenário demonstra como é possível gerenciar dispositivos Windows Embedded com filtro de gravação habilitado usando o System Center Configuration Manager. Se os dispositivos inseridos não derem suporte a filtros de gravação, eles se comportarão como clientes do Configuration Manager padrão e você não precisará seguir as etapas neste cenário necessárias para gerenciar filtros de gravação.  
+Este cenário demonstra como é possível gerenciar dispositivos Windows Embedded com filtro de gravação habilitado com o Configuration Manager. Se os dispositivos incorporados não derem suporte a filtros de gravação, eles se comportarão como clientes do Configuration Manager padrão e esses procedimentos não serão aplicáveis.  
 
- A Coho Vineyard & Winery está abrindo um centro de visitantes e está interessada em quiosques que executam o Windows Embedded para fazer apresentações interativas. A construção do novo centro do visitante não fica tão perto do departamento de TI, por isso é importante que os quiosques possam ser gerenciados remotamente. Além de instalar o software que executa as apresentações interativas, esses dispositivos devem executar software atualizado de proteção antimalware para cumprir as políticas de segurança da empresa. Para verificar se as apresentações interativas estão sempre disponíveis para visitantes, os quiosques devem ser executados 7 dias por semana, sem nenhum tempo de inatividade enquanto o centro do visitante estiver aberto.  
+A Coho Vineyard & Winery está abrindo um centro de visitantes e precisa de quiosques que executam o Windows Embedded para fazer apresentações interativas. A construção do novo centro do visitante não fica tão perto do departamento de TI, então os quiosques devem ser gerenciados remotamente. Além do software que executa as apresentações, esses dispositivos devem executar o software atualizado de proteção antimalware para cumprir as políticas de segurança da empresa. Os quiosques devem ser executados 7 dias por semana, sem tempo de inatividade enquanto o centro do visitante estiver aberto.  
 
- A Coho Vineyard & Winery já executa o Configuration Manager para gerenciar dispositivos em sua rede. O Configuration Manager está configurado para executar o Endpoint Protection e instalar atualizações de software e aplicativos. No entanto, como a equipe de TI nunca havia gerenciado dispositivos Windows Embedded antes, Jane, administradora do Configuration Manager, executa um piloto para gerenciar dois quiosques no lobby da recepção da empresa. Se o piloto tiver êxito no gerenciamento remoto desses dispositivos, o pedido de compra para os quiosques do centro do visitante poderá ser aprovado.  
+ A Coho já executa o Configuration Manager para gerenciar dispositivos em sua rede. O Configuration Manager está configurado para executar o Endpoint Protection e instalar atualizações de software e aplicativos. No entanto, como a equipe de TI não havia gerenciado dispositivos Windows Embedded antes, Jane, administradora do Configuration Manager, executa um piloto para gerenciar dois quiosques no lobby de recepção.   
 
  Para gerenciar esses dispositivos Windows Embedded com filtro de gravação habilitado, Jane executa as seguintes etapas para instalar o cliente do Configuration Manager, proteger o cliente usando o Endpoint Protection e instalar o software de apresentação interativa.  
 
@@ -70,7 +70,7 @@ Este cenário demonstra como é possível gerenciar dispositivos Windows Embedde
 
      Jane sabe que sempre leva um tempo para que os clientes instalem e enviem o status de volta ao site. Então, ela aguarda antes de confirma que os clientes foram instalados com êxito, atribuídos ao site e mostrados como clientes na coleção que ela criou para dispositivos Windows Embedded.  
 
-     Como confirmação adicional, nos dispositivos Windows Embedded, ela verifica as propriedades do Configuration Manager no Painel de Controle e compara-as com computadores Windows padrão gerenciados pelo site. Por exemplo, na guia **Componentes** , o **Agente de inventário de hardware** exibe **Habilitado**, e na guia **Ações** , há 11 ações disponíveis, que incluem **Ciclo de avaliação de implantação de aplicativo** e **Ciclo de coleta de dados de descoberta**.  
+     Como confirmação adicional, ela verifica as propriedades do Configuration Manager no Painel de Controle nos dispositivos e compara-as com computadores Windows padrão gerenciados pelo site. Por exemplo, na guia **Componentes** , o **Agente de inventário de hardware** exibe **Habilitado**, e na guia **Ações** , há 11 ações disponíveis, que incluem **Ciclo de avaliação de implantação de aplicativo** e **Ciclo de coleta de dados de descoberta**.  
 
      Confiante de que os clientes foram instalados com êxito, atribuídos e que recebem a política do cliente do ponto de gerenciamento, Jane habilita manualmente os filtros de gravação seguindo as instruções do OEM.  
 
@@ -182,6 +182,6 @@ Este cenário demonstra como é possível gerenciar dispositivos Windows Embedde
 
 
 
-<!--HONumber=Dec16_HO3-->
+<!--HONumber=Jan17_HO3-->
 
 

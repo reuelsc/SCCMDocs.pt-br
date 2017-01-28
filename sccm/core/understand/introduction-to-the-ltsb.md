@@ -2,7 +2,7 @@
 title: "Introdução ao Branch de Manutenção em Longo Prazo | Microsoft Docs"
 description: "Saiba mais sobre o Branch de Manutenção em Longo Prazo do System Center Configuration Manager."
 ms.custom: na
-ms.date: 10/12/2016
+ms.date: 1/7/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
@@ -16,8 +16,8 @@ author: Brenduns
 ms.author: brenduns
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: 10b1010ccbf3889c58c55b87e70b354559243c90
-ms.openlocfilehash: c681068768eda992b570a10b5f1b25c6ff1e1e79
+ms.sourcegitcommit: a86546eb513a2ef6f95013178b141fb1833ea8ab
+ms.openlocfilehash: fa4d7dd2e1edbbc0b136ebfc27560f20ab63c12e
 
 
 ---
@@ -53,15 +53,15 @@ Para obter informações sobre como instalar um site do LTSB, confira [Instalaç
 ## <a name="features-that-are-not-available-in-the-ltsb-of-configuration-manager"></a>Recursos que não estão disponíveis no LTSB do Configuration Manager
 Em comparação com o Branch Atual, o LTSB tem as seguintes limitações de suporte:
 
-- Não recebe atualizações para novos recursos.
+- Não recebe atualizações para novos recursos
 - Não dá suporte à adição de uma Assinatura do Microsoft Intune, o que impede o uso do:
-  - Intune em uma configuração de MDM híbrida
+  - Intune em uma configuração de MDM (Gerenciamento de Dispositivo Móvel) híbrido
   - MDM local
 -   Não dá suporte ao uso do Painel de Serviço do Windows 10, Planos de Serviço e não dá suporte ao CB (Branch Atual) e ao CBB (Branch Atual para Negócios) do Windows 10
 - Não dá suporte a versões futuras do Windows 10 LTSB e do Windows Server
--   Não há suporte para o Asset Intelligence
--   Não há suporte para pontos de distribuição baseados em nuvem
--   O Suporte para o Exchange Online não tem suporte como um Exchange Connector
+-   Não dá suporte ao Asset Intelligence
+-   Não dá suporte aos pontos de distribuição baseados em nuvem
+-   Não dá suporte ao Suporte para o Exchange Online como um Exchange Connector
 -   Não dá suporte a nenhum recurso de pré-lançamento
 
 
@@ -72,25 +72,25 @@ Além disso, os novos sistemas operacionais que são adicionados como com suport
 ## <a name="documentation-for-the-ltsb"></a>Documentação para o LTSB
 Como o LTSB é baseado no Current Branch versão 1606, a documentação usada para o LTSB é a [documentação online que se aplica ao Branch Atual](https://docs.microsoft.com/sccm/), com as advertências e limitações que são específicas para o LTSB conforme identificado nos tópicos a seguir:  
 
--   [Introdução ao Branch de Manutenção em Longo Prazo](introduction-to-the-ltsb.md) – (esse tópico)
+-   [Introdução ao Branch de Manutenção em Longo Prazo](introduction-to-the-ltsb.md): (esse tópico).
 
--   [Qual branch do Configuration Manager devo usar](which-branch-should-i-use.md) – informações sobre os diferentes branches do System Center Configuration Manager, para que você possa se certificar de instalar o melhor branch para suas necessidades.
+-   [Qual branch do Configuration Manager devo usar](which-branch-should-i-use.md): informações sobre os diferentes branches do System Center Configuration Manager para que você possa se certificar de instalar o melhor branch para suas necessidades.
 
--   [Instalar o Branch de Manutenção em Longo Prazo](install-the-ltsb.md) – como instalar um novo site do LTSB ou atualizar um site do System Center 2012 Configuration Manager para o LTSB.
+-   [Instalar o Branch de Manutenção em Longo Prazo](install-the-ltsb.md): como instalar um novo site do LTSB ou atualizar um site do System Center 2012 Configuration Manager para o LTSB.
 
--   [Upgrade the Long-Term Servicing Branch to the Current Branch](convert-to-current-branch.md) (Atualizar o Branch de Manutenção em Longo Prazo para o Branch Atual) – como converter sua instalação do LTSB para uma instalação do Branch Atual.
+-   [Atualizar o Branch de Manutenção em Longo Prazo para o Branch Atual](convert-to-current-branch.md): como converter sua instalação do LTSB para uma instalação do Branch Atual.
 
--   [Licensing and branches for System Center Configuration Manager](learn-more-editions.md) (Licenciamento e branches do System Center Configuration Manager) – informações sobre o Software Assurance e o requisito de licença relacionados para o System Center Configuration Manager.
--   [Configurações com suporte para o Branch de Manutenção em Longo Prazo](supported-configurations-for-ltsb.md) – as versões e os requisitos de sistema operacional e produtos dependentes como o SQL Server que você pode usar com o LTSB.
+-   [Licenciamento e branches do System Center Configuration Manager](learn-more-editions.md): informações sobre o Software Assurance e o requisito de licença relacionados para o System Center Configuration Manager.
+-   [Configurações com suporte para o Branch de Manutenção em Longo Prazo](supported-configurations-for-ltsb.md): as versões e os requisitos de sistema operacional e produtos dependentes como o SQL Server que você pode usar com o LTSB.
 
 
 Para ajudá-lo a distinguir a qual branch a documentação específica se aplica, use o seguinte guia:  
 -   Tópicos com um cabeçalho de *Aplica-se a: Branch Atual* se aplicam ao Branch Atual e ao Branch de Manutenção em Longo Prazo (embora partes do tópico possam se aplicar apenas a uma versão mais nova do Branch Atual).
 
--   Para identificar partes de um tópico que não se aplicam ao LTSB, os recursos e alterações que foram introduzidos após a versão 1606 do Branch Atual são identificados com um texto como “A partir da versão 1610”. Como eles foram introduzidos após a versão 1606 do Branch Atual, eles não estão disponíveis com o LTSB.
+-   Para identificar partes de um tópico que não se aplicam ao LTSB, os recursos e as alterações que foram introduzidos após a versão 1606 do Branch Atual são identificados com um texto como *A partir da versão 1610*. Como eles foram introduzidos após a versão 1606 do Branch Atual, eles não estão disponíveis com o LTSB.
 
 ### <a name="similarities-between-the-current-branch-and-the-ltsb"></a>Semelhanças entre o Branch Atual e o LTSB
-Como o LTSB é baseado na versão 1606 do Branch Atual (com algumas exceções, como a integração do Intune e os recursos relacionados à nuvem), a maioria das tarefas de planejamento, implantação, configuração e gerenciamento dos dois branches é idêntica.
+Como o LTSB é baseado na versão 1606 do Branch Atual (com algumas exceções, como a integração do Intune e os recursos relacionados à nuvem), a maioria das tarefas de implantação de planejamento, configuração e gerenciamento dos dois branches é idêntica.
 
 Por exemplo, o LTSB dá suporte ao mesmo número de sites, tipos de site, clientes e infraestrutura geral que o Branch Atual. Portanto, você pode usar as diretrizes encontradas nos tópicos sobre design e planejamento de hierarquia e site para o Branch Atual. Da mesma forma, para recursos com suporte pelos dois branches, como Atualizações de Software ou Implantação de Sistema Operacional, use as diretrizes encontradas nas seções da documentação do Branch Atual com as advertências sobre não ter acesso às alterações introduzidas após a versão 1606 do Branch Atual.
 
@@ -98,26 +98,26 @@ Por exemplo, o LTSB dá suporte ao mesmo número de sites, tipos de site, client
 ## <a name="how-to-identify-your-branch-and-version"></a>Como identificar seu branch e sua versão
 Ao exibir as informações da versão de um site do Configuration Manager, também confirma o branch.
 
-Para verificar a versão do site, no console, vá para **Sobre o System Center Configuration Manager** no canto superior esquerdo do console em que a **Versão do site** é exibida como **5.0.8412.1000**.
+Para verificar a versão do site, no console, acesse **Sobre o System Center Configuration Manager** no canto superior esquerdo do console em que a **Versão do site** é exibida como **5.0.8412.1000**.
 
-Para confirmar o branch do seu site (como LTSB ou Branch Atual), no console, vá para **Administração** > **Configuração do Site** > **Sites** e abra **Configurações da Hierarquia**.  Se houver uma opção para converter para o Branch Atual e ela estiver ativa, o site executará a versão LTSB. Quando o site executa o Branch Atual, essa opção fica esmaecida.
+Para confirmar o branch do seu site (como LTSB ou Branch Atual), no console, acesse **Administração** > **Configuração do Site** > **Sites** e abra **Configurações da Hierarquia**.  Se houver uma opção para converter para o Branch Atual e ela estiver ativa, o site executará a versão LTSB. Quando o site executa o Branch Atual, essa opção fica esmaecida.
 
-Para obter informações sobre as diferentes versões do Configuration Manager, confira **Baseline and update versions** (Versões de linha de base e atualização) no tópico [Updates for System Center Configuration Manager](/sccm/core/servers/manage/updates) (Atualizações para o System Center Configuration Manager).
+Para obter informações sobre as diferentes versões do Configuration Manager, consulte “Versões de linha de base e atualização” no tópico [Atualizações para o Configuration Manager](/sccm/core/servers/manage/updates).
 
 ## <a name="exceptions-for-using-the-ltsb"></a>Exceções para o uso do LTSB
 ### <a name="updates-and-servicing-of-the-ltsb"></a>Atualizações e manutenção do LTSB
 Somente as atualizações de segurança críticas são disponibilizadas como atualizações no console no LTSB.
 
-No entanto, as informações sobre as atualizações regulares para as versões subsequentes do Branch Atual estão visíveis nesse console. Como elas não ficam disponíveis para o LTSB, essas atualizações não são baixáveis e não podem ser instaladas.
+As informações sobre as atualizações regulares para as versões subsequentes do Branch Atual estão visíveis nesse console, mas não estão disponíveis no LTSB. Elas não são baixadas e não podem ser instaladas.
 
-Para dar suporte às atualizações no console para as correções de segurança críticas, um site do LTSB requer o uso do [ponto de conexão de serviço](/sccm/core/servers/deploy/configure/about-the-service-connection-point). Você pode configurar essa função de sistema de sites no modo offline ou online, como é feito para o Branch Atual. O LTSB coleta e envia os mesmos dados de telemetria e uso que o Branch Atual.
+Para dar suporte às atualizações no console para as correções de segurança críticas, um site do LTSB requer o uso do [ponto de conexão de serviço](/sccm/core/servers/deploy/configure/about-the-service-connection-point). É possível configurar essa função de sistema de sites no modo offline ou online, como é feito para o Branch Atual. O LTSB coleta e envia os mesmos dados de telemetria e uso que o Branch Atual.
 
 O LTSB dá suporte ao uso da ferramenta de Registro de Atualização e Instalador de Hotfix, como documentado para o Branch Atual.
 
 Para obter informações gerais sobre atualizações e manutenção, confira [Updates for System Center Configuration Manager](/sccm/core/servers/manage/updates) (Atualizações para o System Center Configuration Manager).
 
 ### <a name="changes-for-site-expansion-and-the-cdlatest-folder"></a>Alterações para a expansão de site e para a pasta CD.Latest
-Quando você executa o LTSB e está expandindo um site primário autônomo instalando um novo site de administração central, deve usar a Instalação e os arquivos de origem da mídia de linha de base da versão 1606.  (Para o Branch Atual, você executa a Instalação e usa os arquivos de origem da pasta CD.Latest.)
+Quando você executa o LTSB e está expandindo um site primário autônomo instalando um novo site de administração central, deve usar a Instalação e os arquivos de origem da mídia de linha de base da versão 1606.  Para o Branch Atual, você executa a Instalação e usa os arquivos de origem da pasta CD.Latest.
 
 Embora você não execute a Instalação para a expansão do site da pasta CD.Latest, você continua a usar a pasta CD.Latest para a recuperação de site e para instalar um novo site primário filho quando seu primeiro site do LTSB era um site de administração central.
 
@@ -126,6 +126,6 @@ Para mais informações sobre a pasta CD.Latest, confira [The CD.Latest folder](
 
 
 
-<!--HONumber=Dec16_HO3-->
+<!--HONumber=Jan17_HO2-->
 
 
