@@ -2,7 +2,7 @@
 title: "Novidades na híbrida MDM | Microsoft Docs"
 description: "Saiba mais sobre os novos recursos de gerenciamento de dispositivo móvel disponíveis para implantações híbridas com o Intune e o System Center Configuration Manager."
 ms.custom: na
-ms.date: 11/18/2016
+ms.date: 01/12/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
@@ -16,8 +16,8 @@ author: Mtillman
 ms.author: mtillman
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: 776c606f8e9ebfd7348d9d3a8f1e038d47bdf7a1
-ms.openlocfilehash: 891638f920a5bf807b17c7f55b9153be45fc3b93
+ms.sourcegitcommit: 07578e3aaa93a06a2fa90e72de2b7c71ce2a14b9
+ms.openlocfilehash: f405514402d7140e26bff6da5e8c2759a80b8a7f
 
 ---
 # <a name="whats-new-in-hybrid-mobile-device-management-with-system-center-configuration-manager-and-microsoft-intune"></a>Novidades no gerenciamento de dispositivo móvel híbrido com o System Center Configuration Manager e o Microsoft Intune
@@ -35,6 +35,27 @@ Este artigo fornece detalhes sobre os novos recursos de MDM (gerenciamento de di
 |**Novo no Microsoft Intune** | Em geral, todos os recursos listados nessa categoria devem funcionar com todas as versões do Configuration Manager, incluindo versões do System Center 2012 R2 Configuration Manager, uma vez que esses recursos exigem apenas o serviço Intune e não exigem funcionalidades adicionais no Configuration Manager.|
 |**Novo no Configuration Manager Technical Preview**| Todos os recursos listados nessa categoria funcionam apenas com a versão de Technical Preview especificada. Para testar esses recursos, você deve instalar a versão de Technical Preview especificada na descrição do recurso. Para mais informações, confira [Technical Preview do System Center Configuration Manager](../../core/get-started/technical-preview.md).|
 |**Novo no Configuration Manager (Branch Atual)**| Todos os recursos listados nessa categoria funcionam apenas com a versão especificada do Configuration Manager (Branch Atual), como a versão 1511 ou 1602. Se estiver usando uma versão mais antiga do Configuration Manager para sua implantação híbrida, atualize para a versão do Configuration Manager (Branch Atual) especificada na descrição do recurso. Para mais informações, confira [Atualização para o System Center Configuration Manager](../../core/servers/deploy/install/upgrade-to-configuration-manager.md).|
+
+## <a name="new-hybrid-features-in-january-2017"></a>Novos recursos híbridos em janeiro de 2017
+
+### <a name="new-in-microsoft-intune"></a>Novo no Microsoft Intune
+
+Os recursos do Intune a seguir introduzidos em janeiro de 2017 funcionam em implantações híbridas:
+
+- **Suporte do Android 7.1.1**
+
+  O Intune agora dá suporte total e gerencia o Android 7.1.1.
+
+- **Resolver o problema em que dispositivos iOS estão inativos ou o console do administrador não pode se comunicar com eles**
+
+  Quando os dispositivos dos usuários perdem contato com o Intune, você pode fornecer novas etapas de solução de problemas para ajudá-los a recuperar o acesso aos recursos da empresa. Veja [Dispositivos estão inativos ou o console do administrador não pode se comunicar com eles](/intune/troubleshoot/troubleshoot-device-enrollment-in-intune#devices-are-inactive-or-the-admin-console-cannot-communicate-with-them).
+
+### <a name="new-in-configuration-manager-technical-preview-1701"></a>Novo no Configuration Manager Technical Preview 1701
+
+- **Android and iOS versions are no longer targetable in creation wizards for hybrid MDM (As versões do Android e iOS não precisam mais ser indicadas nos assistentes de criação do MDM híbrido)**
+
+  A partir do Technical Preview 1701 para MDM (gerenciamento de dispositivo móvel) híbrido, você não precisa mais indicar versões específicas do Android e do iOS ao criar novas políticas e perfis de dispositivos gerenciados pelo Intune. Com essa alteração, as implantações híbridas podem fornecer suporte com mais rapidez para novas versões do Android e do iOS sem precisar de uma nova versão ou extensão do Configuration Manager. Para obter mais informações, consulte [Android and iOS versions are no longer targetable in creation wizards for hybrid MDM (As versões do Android e iOS não precisam mais ser indicadas nos assistentes de criação do MDM híbrido)](/sccm/core/get-started/capabilities-in-technical-preview-1701#android-and-ios-versions-are-no-longer-targetable-in-creation-wizards-for-hybrid-mdm).
+
 
 ## <a name="new-hybrid-features-in-december-2016"></a>Novos recursos híbridos em dezembro de 2016
 
@@ -86,10 +107,10 @@ Os recursos do Intune a seguir introduzidos em novembro de 2016 funcionam em imp
 
 Os seguintes recursos que estavam anteriormente disponíveis nas versões do Configuration Manager Technical Preview agora estão disponíveis em implantações híbridas com o Intune e a versão 1610 do Configuration Manager (branch atual).
 
-* [Configurações adicionais e experiência aprimorada para itens de configuração](/sccm/core/plan-design/changes/whats-new-in-version-1610?branch=sccm-1610-release#new-compliance-settings-for-configuration-items)
-* [Configurações adicionais para perfis de DEP](#new-in-configuration-manager-technical-preview-1609)
+* [Configurações adicionais e experiência aprimorada para itens de configuração](/sccm/core/plan-design/changes/whats-new-in-version-1610#new-compliance-settings-for-configuration-items)
+* [Configurações adicionais para perfis de DEP](whats-new-hybrid-archive.md#new-in-configuration-manager-technical-preview-1609)
 * [Aplicativos pagos na Windows Store para Empresas](/sccm/apps/deploy-use/manage-apps-from-the-windows-store-for-business)
-* [Tipos de conexão nativa para perfis de VPN do Windows 10](#new-in-configuration-manager-technical-preview-1609)
+* [Tipos de conexão nativa para perfis de VPN do Windows 10](whats-new-hybrid-archive.md#new-in-configuration-manager-technical-preview-1609)
 * [Gráficos de conformidade do Intune](/sccm/protect/deploy-use/create-compliance-policy#monitor-the-compliance-policy)
 * [Solicitação da sincronização de política do console](/sccm/mdm/deploy-use/sync-intune-device)
 * [Definições de configuração do Windows Defender](/sccm/compliance/deploy-use/create-configuration-items-for-windows-8.1-and-windows-10-devices-managed-without-the-client#windows-defender)
@@ -120,209 +141,35 @@ Os seguintes recursos híbridos adicionais também estão incluídos na versão 
 
     Também será possível especificar um certificado diferente para autenticação de logon único se você habilitar o acesso condicional para o perfil.
 
-## <a name="new-hybrid-features-in-october-2016"></a>Novos recursos híbridos em outubro de 2016
-
-### <a name="new-in-microsoft-intune"></a>Novo no Microsoft Intune
-
-Os recursos do Intune a seguir introduzidos em outubro de 2016 funcionam em implantações híbridas.
-
-- **Acesso condicional para o gerenciamento de aplicativo móvel**
-
-  Você pode restringir o acesso ao Exchange Online para que o acesso venha apenas de aplicativos que dão suporte às políticas de gerenciamento de aplicativo móvel do Intune, como o Outlook. [Esse novo recurso](/intune/deploy-use/allow-policy-managed-apps-access-to-o365) é completamente compatível com as políticas de MAM (gerenciamento de aplicativo móvel) do Intune, uma vez que você pode bloquear o acesso a clientes de email internos ou outros aplicativos que não foram configurados com as políticas de MAM do Intune. Isso garante que os usuários estão acessando os dados da sua organização com aplicativos que podem ser protegidos usando o MAM do Intune. Você pode começar no gerenciamento de aplicativo móvel do Intune por meio do Portal do Azure. Procure a nova seção de Acesso Condicional na folha “Configurações”.
-
--   **Ferramenta de Disposição do Aplicativo do Intune para Android**
-
-  Você pode habilitar seus aplicativos para usar políticas de MAM (gerenciamento de aplicativo móvel) usando a Ferramenta de Disposição do Aplicativo do Intune.
-
-- **Compatibilidade do Samsung Android KNOX Standard com o Intune**
-
-  Alguns modelos de telefone Samsung Galaxy Ace não podem ser gerenciados pelo Intune, como os dispositivos Samsung KNOX padrão. Quando você registrar esses dispositivos com o Intune, eles serão gerenciados como dispositivos Android padrão.
-
-  Os números de modelo afetados são:
-
-  - SM-G313HU
-  - SM-G313HY
-  - SM-G313M
-  - SM-G313MY
-  - SM-G313U
-
-  Você e seus usuários finais não precisa executar nenhuma ação adicional. Para mais informações, visite o site da Samsung KNOX.
-
-### <a name="new-in-configuration-manager-technical-preview-1610"></a>Novo no Configuration Manager Technical Preview 1610
-
-Os novos recursos híbridos a seguir foram introduzidos em outubro de 2016 para o Configuration Manager Technical Preview 1610.
-
-- **Solicitar uma sincronização de política do console de administração**
-
-  Você pode solicitar uma sincronização de política em um dispositivo móvel registrado no console do Configuration Manager, em vez de precisar solicitar a sincronização no aplicativo do Portal da Empresa no próprio dispositivo. Esta é uma nova ação chamada **Send Sync Request (Enviar Solicitação de Sincronização)** no menu Ações do Dispositivo Remoto, que aparece na faixa de opções quando um dispositivo móvel é selecionado no nó Dispositivos.
-
-- **Definições de configuração do Windows Defender**
-
-  Agora você pode definir as configurações de cliente do Windows Defender em computadores Windows 10 registrados no Intune usando itens de configuração no console do Configuration Manager. Há um novo grupo de configurações chamado **Windows Defender** no Assistente de Item de Configuração. Observe que isso tem suporte apenas no Windows 10 versão 1511 e acima.
-
-
-### <a name="new-in-configuration-manager-current-branch"></a>Novo no Configuration Manager (Branch Atual)
-
-Não foi realizada a introdução de nenhum recurso híbrido novo em agosto de 2016 para o Configuration Manager (Branch Atual).
-
-## <a name="new-hybrid-features-in-september-2016"></a>Novos recursos híbridos em setembro de 2016
-
-### <a name="new-in-microsoft-intune"></a>Novo no Microsoft Intune
-
-Os recursos do Intune a seguir introduzidos em setembro de 2016 funcionam em implantações híbridas.
-
-- **Adição de "Notificações" no Portal da Empresa para Android**
-
-  Um novo ícone de Notificações foi adicionado ao Portal da Empresa para Android na home page. Tocar o ícone acessa a página Notificações, que mostra aos usuários finais todos os itens que requerem atenção no aplicativo do Portal da Empresa, como a falta de conformidade do dispositivo, a atualização de registro e a ativação do registro. O aplicativo do Portal da Empresa para iOS já tem essa experiência de notificações. Ter a nova página Notificações significa que os usuários não verão a página Configuração do Acesso da Empresa sempre que iniciarem ou retomarem o Portal da Empresa, contanto que o dispositivo já esteja registrado. Se você criar suas próprias diretrizes do usuário final, atualize sua documentação para refletir essas alterações. Encontre capturas de tela atualizadas [aqui](https://aka.ms/androidcpupdate).
-
-- **Alterações no suporte para o aplicativo do Portal da Empresa para iOS**
-
-  Todos os usuários do aplicativo do Portal da Empresa do Microsoft Intune para iOS agora devem usar sua versão mais recente. Os novos usuários podem baixar apenas a versão mais recente e os usuários atuais devem atualizá-lo para ela. A versão mais recente requer o iOS 8.0 ou posterior, portanto, dispositivos executando versões do iOS anteriores não podem usar o Portal da Empresa ou se registrar até atualizarem seu dispositivo para o iOS 8.0 ou posterior e, então, atualizar o aplicativo do Portal da Empresa para a versão mais recente. Os dispositivos registrados que executam versões inferiores ao iOS 8.0 continuarão a ser gerenciados e listados no Console do Administrador do Intune.
-
-- **Botão de comentários adicionado ao aplicativo do Portal da Empresa para Windows Phone 8.1.**
-
-  O aplicativo do Portal da Empresa para Windows Phone 8.1 permite que os usuários finais enviem comentários sobre o aplicativo usando um novo botão “enviar comentários”. Para localizar o botão, os usuários tocam no menu de “três pontos” na parte inferior direita da tela do aplicativo do Portal da Empresa e tocam em **enviar comentários**. Os comentários anônimos coletados ajudarão a Microsoft a aprimorar a experiência do aplicativo do Portal da Empresa para os usuários.
-
-### <a name="new-in-configuration-manager-technical-preview-1609"></a>Novo no Configuration Manager Technical Preview 1609
-
-Os novos recursos híbridos a seguir foram introduzidos em setembro de 2016 para o Configuration Manager Technical Preview 1609.
-
-- **Configurações adicionais e experiência aprimorada para configurações do Item de Configuração**
-
-  Foram adicionadas novas configurações para Windows, iOS e Android e apenas as configurações que se aplicam às plataformas selecionadas na página Plataformas com Suporte são exibidas no assistente. Para mais informações, confira [Novas configurações de conformidade para itens de configuração na TP 1609](/sccm/core/get-started/capabilities-in-technical-preview-1609#new-compliance-settings-for-configuration-items).
-
-- **Configurações adicionais para perfis de DEP**
-
-  Zoom, TouchID e ApplePay foram adicionados como definições configuráveis em perfis de DEP para dispositivos iOS.
-
-- **Aplicativos pagos na Windows Store para Empresas**
-
-  Agora você pode adicionar aplicativos pagos e gratuitos à Windows Store para Empresas e implantá-los para os usuários em sua organização. Para mais informações, confira [Aprimoramentos para a Windows Store para Empresas na TP 1609](/sccm/core/get-started/capabilities-in-technical-preview-1609#enhancements-to-windows-store-for-business-integration-with-configuration-manager).
-
-- **Tipos de conexão nativa para perfis de VPN do Windows 10**
-
-  Agora você pode criar perfis de VPN do Windows 10 para MDM com os tipos de conexão Microsoft Automatic, IKEv2 e PPTP no console do Configuration Manager sem usar o OMA-URI.
-
-- **Gráficos de conformidade do Intune**
-
-  Você pode obter uma exibição rápida da conformidade geral do dispositivo e os principais motivos de não conformidade usando novos gráficos no espaço de trabalho Monitoramento. Para mais informações, confira [Gráficos de conformidade do Intune na TP 1609](/sccm/core/get-started/capabilities-in-technical-preview-1609#intune-compliance-charts).
-
-### <a name="new-in-configuration-manager-current-branch"></a>Novo no Configuration Manager (Branch Atual)
-
-O novo recurso a seguir introduzido em setembro de 2016 está disponível para implantações híbridas com o Microsoft Intune e a versão 1606 do Configuration Manager (Branch Atual).
-
-- **Suporte para iOS 10**
-
-  Se você tiver perfis ou itens de configuração direcionados a todas as plataformas iOS, eles também serão enviados por push para o iOS 10. Também lançamos uma atualização para a versão 1606 do Configuration Manager que permite que você direcione perfis e itens de configuração para plataformas iOS individuais, incluindo o iOS 10. Você pode instalar a atualização com o console de administração do Configuration Manager em **Administração > Visão Geral > Serviços de Nuvem > Atualizações e Manutenção**. Você pode encontrar mais informações sobre a atualização em [http://support.microsoft.com/kb/3192616](http://support.microsoft.com/kb/3192616).
-
-## <a name="new-hybrid-features-in-august-2016"></a>Novos recursos híbridos em agosto de 2016
-
-### <a name="new-in-microsoft-intune"></a>Novo no Microsoft Intune
-
-Os recursos do Intune a seguir introduzidos em agosto de 2016 funcionam em implantações híbridas.
-
-- **Suporte para Android 7 no aplicativo do Portal da Empresa**
-
-  O aplicativo do Portal da Empresa do Intune para Android dá suporte inicial para o próximo sistema operacional Android 7.0 para dispositivos móveis.
-
-- **Remoção pelo Google da funcionalidade de redefinição de senha remota em dispositivos Android 7.0**
-
-  O Google está removendo a capacidade dos administradores de TI e usuários finais redefinirem remotamente a senha de dispositivos Android 7.0. Anteriormente, os administradores de TI poderiam redefinir remotamente a senha de um usuário e os usuários finais poderiam redefinir suas senhas pelo site do Portal da Empresa.
-
-- **Política de aplicativos permitidos e bloqueados para dispositivos Samsung KNOX Standard**
-
-  Agora você pode configurar uma política personalizada para dispositivos Standard Samsung KNOX que permite que você crie um dos itens a seguir:
-
-  - Uma lista de aplicativos que são impedidos de serem executados no dispositivo. Mesmo se instalado, um aplicativo definido na lista bloqueada não poderá ser ativado no dispositivo.
-  - Uma lista de aplicativos que os usuários do dispositivo podem instalar da Google Play Store. Nenhum outro aplicativo pode ser instalado por meio da Store.
-
-  Essas configurações podem ser usadas apenas por dispositivos que executam o Samsung KNOX Standard. Para detalhes, confira [Usar políticas personalizadas para permitir e bloquear aplicativos para dispositivos Samsung KNOX Standard](/intune/deploy-use/custom-policy-to-allow-and-block-samsung-knox-apps).
-
-- **Link de comentários do Portal da Empresa para a Microsoft**
-
-   O site do Portal da Empresa permite que os usuários finais toquem em um novo link “Comentário”, na parte inferior da página, para enviar comentários para a Microsoft sobre sua experiência com o site. Os comentários anônimos coletados ajudarão a Microsoft a aprimorar a experiência do site do Portal da Empresa para os usuários.
-
-- **Versão mínima do Managed Browser para iOS atualizada para 8.0**
-
-  O aplicativo Microsoft Intune Managed Browser para iOS foi atualizado para dar suporte a dispositivos executando o iOS 8.0 ou posterior. Embora os dispositivos iOS 7.1 ainda possam usar o aplicativo Managed Browser existente, incentive seus usuários a atualizarem para o iOS 8.0 ou posterior para acessar e aproveitar totalmente os novos recursos do Managed Browser.
-
-### <a name="new-in-configuration-manager-technical-preview"></a>Novo no Configuration Manager Technical Preview
-
-Não foi realizada a introdução de nenhum recurso híbrido novo em agosto de 2016 para o Configuration Manager Technical Preview.
-
-### <a name="new-in-configuration-manager-current-branch"></a>Novo no Configuration Manager (Branch Atual)
-
-Não foi realizada a introdução de nenhum recurso híbrido novo em agosto de 2016 para o Configuration Manager (Branch Atual).
-
-## <a name="new-hybrid-features-in-july-2016"></a>Novos recursos híbridos em julho de 2016
-
-### <a name="new-in-microsoft-intune"></a>Novo no Microsoft Intune
-
-Os recursos do Intune a seguir introduzidos em julho de 2016 funcionam em implantações híbridas.
-
-- **SDK do Xamarin para aplicativos do Intune está disponível**
-
-  O componente Xamarin do SDK de aplicativos do Intune permite que você habilite os recursos de gerenciamento de aplicativo móvel do Intune em seus aplicativos móveis para iOS e Android criados com o Xamarin. Você pode encontrar o componente na [Loja do Xamarin](https://components.xamarin.com/view/Microsoft.Intune.MAM) ou na [página do Github do Microsoft Intune](https://github.com/msintuneappsdk).
-
-- **Experiência do usuário final melhorada ao registrar dispositivos Windows**
-
-  Ao usar o acesso condicional, as etapas de registro para Windows 8.1, Windows 10 Desktop e Windows 10 Mobile foram esclarecidas no site do Portal da Empresa. Agora os usuários verão etapas de **Registro do dispositivo** e **Ingresso no Local de Trabalho** separadas, facilitando a visualização do status de seu dispositivo e a conclusão do processo caso enfrentem uma falha de WPJ (Ingresso no Local de Trabalho). As etapas separadas também devem simplificar o processo de solução de problemas para os administradores de TI. Anteriormente, quando os usuários finais tentavam realizar o registro e todas as etapas de registro eram bem sucedidas, exceto o WPJ, o dispositivo não aparecia na lista de dispositivos para os usuários o identificarem, causando confusão para os usuários.
-
- - **Apagamento completo agora disponível para dispositivos Windows 10**
-
-    Os laptops e computadores com Windows 10 registrados como dispositivos móveis podem ser apagados para redefinir o dispositivo para suas configurações de fábrica. Para mais informações, confira [How to protect your devices with remote wipe](/sccm/mdm/deploy-use/wipe-lock-reset) (Como proteger seus dispositivos com o apagamento remoto).
-
-- **Alterações nas contas dos Gerenciadores de Registro de Dispositivo no aplicativo do Portal da Empresa para iOS**
-
-  Para melhorar o desempenho e a escala, o Intune não exibe mais todos os dispositivos de DEM (Gerenciadores de Registro de Dispositivo) no painel Meus Dispositivos do aplicativo do Portal da Empresa para iOS. Somente o dispositivo local executando o aplicativo será exibido e somente se ele estiver registrado por meio do aplicativo do Portal da Empresa.
-
-  O usuário DEM pode realizar ações no dispositivo local, mas o gerenciamento remoto de outros dispositivos registrados pode ser executado apenas no console de administração do Intune. Além disso, o Intune está preterindo o uso de contas de DEM com o Programa de Registro de Dispositivo da Apple ou com a ferramenta Apple Configurator. Esses dois métodos de registro já dão suporte ao registro sem usuário para dispositivos iOS compartilhados.
-
-  Use contas de DEM somente quando o registro sem usuário para dispositivos compartilhados estiver indisponível. Para mais informações, confira [Enroll corporate-owned devices with the Device Enrollment Manager in Microsoft Intune](../deploy-use/enroll-devices-with-device-enrollment-manager.md) (Registrar dispositivos corporativos com o Gerenciador de Registro de Dispositivos no Microsoft Intune).
-
-- **Alterações no aplicativo do Portal da Empresa para Android**
-
-  Se os usuários finais do Android virem uma mensagem de erro dizendo que o dispositivo não tem um certificado necessário, eles poderão tocar no botão “Como resolver isso” para encontrar as etapas para instalar o certificado ausente. Se os usuários concluírem as etapas, mas virem uma mensagem de erro de “certificado ausente” adicional, será solicitado que eles entrem em contato com o administrador de TI e forneçam esse link, que contém as etapas que os administradores de TI podem usar para corrigir o problema do certificado.
-
-- **Restringir instalações de aplicativos de sideload para dispositivos Android registrados**
-
-  Os dispositivos Android não podem mais instalar aplicativos por meio do site do Portal da Empresa a menos que os dispositivos tenham sido registrados pelo aplicativo do Portal da Empresa do Intune para Android.
-
-
-### <a name="new-in-configuration-manager-technical-preview"></a>Novo no Configuration Manager Technical Preview
-
-Não foi realizada a introdução de nenhum recurso híbrido novo em julho de 2016 para o Configuration Manager Technical Preview.
-
-### <a name="new-in-configuration-manager-current-branch"></a>Novo no Configuration Manager (Branch Atual)
-
-Os seguintes recursos que estavam anteriormente disponíveis nas versões do Configuration Manager Technical Preview agora estão disponíveis em implantações híbridas com o Intune e a versão 1606 do Configuration Manager.
-
-* Localizar, gerenciar e distribuir aplicativos da Windows Store para Empresas para dispositivos Windows 10 por meio do console do Configuration Manager ([1604](whats-new-hybrid-archive.md#new-in-1604-technical-preview))
-*   Configuração do SmartLock para dispositivos Android ([1604](whats-new-hybrid-archive.md#new-in-1604-technical-preview))
-*   VPN acionado por aplicativo para dispositivos Windows 10 ([1605](whats-new-hybrid-archive.md#new-in-1605-technical-preview))
-*   Nova experiência para ações de dispositivo remoto ([1605](whats-new-hybrid-archive.md#new-in-1605-technical-preview))
-*   Aplicativos da Windows Store para Empresas ([1605](whats-new-hybrid-archive.md#new-in-1605-technical-preview))
-*   Melhorias gerais para aplicativos adquiridos por volume ([1605](whats-new-hybrid-archive.md#new-in-1605-technical-preview))
-*   WIP (Proteção de Informações do Windows) ([1605](whats-new-hybrid-archive.md#new-in-1605-technical-preview))
-*   Pré-declarar dispositivos corporativos com número de série do iOS ou IMEI ([1605](whats-new-hybrid-archive.md#new-in-1605-technical-preview))
-*   Categorizar automaticamente dispositivos em coleções ([1606](whats-new-hybrid-archive.md#new-in-1606-technical-preview))
-
-Para obter informações sobre a nova funcionalidade, consulte a documentação da versão de Technical Preview especificada.
 
 ## <a name="notices"></a>Avisos
 
-- **25 de outubro de 2016: upload do Portal da Empresa do Windows Phone 8 preterido**
+### <a name="system-center-2012-configuration-sp1-and-system-center-2012-r2-configuration-manager-rtm-support-for-hybrid-mobile-device-management-ending-on-april-10-2017"></a>System Center 2012 Configuration SP1 e System Center 2012 R2 Configuration Manager (RTM): o suporte para o gerenciamento de dispositivo móvel híbrido terma em 10 de abril de 2017
 
-  A capacidade de carregar um aplicativo do Portal da Empresa assinado foi removida do console do Configuration Manager, uma vez que o suporte do Intune está sendo preterido para Windows 8, Windows Phone 8 e Windows RT e o suporte para o Portal da Empresa para Windows Phone 8 será encerrado em novembro.  Os dispositivos Windows 8, Windows Phone 8 e Windows RT já registrados continuarão a ter suporte, mas o registro de dispositivos adicionais com essas plataformas não terá suporte.
+*11 de janeiro de 2017*
+
+O suporte para o System Center 2012 Configuration Manager SP1 e o System Center 2012 R2 Configuration Manager RTM terminou em 12 julho de 2016. Consequentemente, o suporte a essas versões em conexão com o serviço Microsoft Intune para MDM híbrido termina em 10 de abril de 2017. Após essa data, o MDM híbrido deixará de funcionar com essas versões. Os dispositivos gerenciados se tornarão essencialmente não gerenciados, pois o Intune Connector não se conectará mais ao serviço do Intune. Os dados do Configuration Manager (como aplicativos e políticas) não fluirão até o Intune, e os dados de dispositivo gerenciados não fluirão para o Configuration Manager até que uma atualização ocorra.
+
+Se você estiver executando uma implantação híbrida com o Configuration Manager 2012 SP1 ou R2 RTM, recomendamos que antes de 10 de abril de 2017 você atualize para o Configuration Manager (ramificação atual) ou para o service pack mais recente com suporte do Configuration Manager 2012 (R2 SP1 ou SP2) para evitar a interrupção do serviço.
+
+Recursos adicionais:
+-   [Atualizar para o System Center Configuration Manager (ramificação atual)](/sccm/core/servers/deploy/install/upgrade-to-configuration-manager)
+-   [Planejar a atualização para o System Center 2012 R2 Configuration Manager SP1](https://technet.microsoft.com/library/jj822981.aspx#BKMK_PlanningR2SP1Upgrade)
+-   [Planejar a atualização para o System Center 2012 Configuration Manager SP2](https://technet.microsoft.com/library/jj822981.aspx#BKMK_PlanningSP2Upgrade)
+
+### <a name="windows-phone-8-company-portal-upload-deprecated"></a>Upload do Portal da Empresa do Windows Phone 8 preterido
+*25 de outubro de 2016*
+
+A capacidade de carregar um aplicativo do Portal da Empresa assinado foi removida do console do Configuration Manager, uma vez que o suporte do Intune está sendo preterido para Windows 8, Windows Phone 8 e Windows RT e o suporte para o Portal da Empresa para Windows Phone 8 será encerrado em novembro.  Os dispositivos Windows 8, Windows Phone 8 e Windows RT já registrados continuarão a ter suporte, mas o registro de dispositivos adicionais com essas plataformas não terá suporte.
 
 
-### <a name="see-also"></a>Consulte também
+## <a name="see-also"></a>Consulte também
 
 - [Recursos do MDM híbrido anteriores](whats-new-hybrid-archive.md)
 - [Novidades do MDM no System Center 2012 Configuration Manager](https://technet.microsoft.com/library/mt445560.aspx)
 
 
 
-<!--HONumber=Dec16_HO3-->
+<!--HONumber=Jan17_HO4-->
 
 
