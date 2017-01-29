@@ -16,12 +16,12 @@ author: NathBarn
 ms.author: nathbarn
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: f66288f1c2e0566d5de8686a005624dd81557563
-ms.openlocfilehash: addb315afe3775722a58a16b00d41cbe32a5009c
+ms.sourcegitcommit: 0fa837c68eb073d2ceaf48c938137a94141a102e
+ms.openlocfilehash: dd08e9ae6827e5f59eaf3414adbcc8667bc75140
 
 
 ---
-# <a name="endpoint-protection-in-system-center-configuration-manager"></a>Endpoint Protection no System Center Configuration Manager
+# <a name="endpoint-protection"></a>Endpoint Protection
 
 *Aplica-se a: System Center Configuration Manager (Branch Atual)*
 
@@ -122,6 +122,6 @@ Use as etapas a seguir para baixar o arquivo de imagem que contém o software cl
 
 
 
-<!--HONumber=Jan17_HO3-->
+<!--HONumber=Jan17_HO4-->
 
 
