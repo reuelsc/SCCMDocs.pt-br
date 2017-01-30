@@ -16,48 +16,50 @@ author: Brenduns
 ms.author: brenduns
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: d68a6d6799bc898308f20a1f2af27b938a60dca2
-ms.openlocfilehash: 44be4075fb070d128524aa3304a3769a37b6fb40
-
+ms.sourcegitcommit: 8d638d7e8f203ff2501a09918ab3424706d1261f
+ms.openlocfilehash: 17a87fee7d22bd2bcfd074670339e66a64972863
 
 ---
-# <a name="backup-and-recovery-for-system-center-configuration-manager"></a>Backup e recuperação para o System Center Configuration Manager
+
+# <a name="backup-and-recovery"></a>Backup e descoberta 
 
 *Aplica-se a: System Center Configuration Manager (Branch Atual)*
 
 Prepare abordagens de backup e recuperação para evitar perda de dados. Para sites do Configuration Manager uma abordagem de backup e recuperação pode ajudar a recuperar sites e hierarquias mais rapidamente e com o mínimo de perda de dados. As seções neste tópico podem ajudá-lo a fazer o backup de seus sites e recuperar um site em caso de falha ou perda de dados.  
 
--   [Fazer backup de um site do Configuration Manager](#BKMK_SiteBackup)  
 
-    -   [Tarefa de manutenção de backup](#BKMK_BackupMaintenanceTask)  
 
-    -   [Usando o Data Protection Manager para fazer backup do banco de dados do site](#BKMK_DPMBackup)  
+- [Fazer backup de um site do Configuration Manager](#BKMK_SiteBackup)   
 
-    -   [Arquivando o instantâneo de backup](#BKMK_ArchivingBackupSnapshot)  
+  - [Tarefa de manutenção de backup](#BKMK_BackupMaintenanceTask)   
 
-    -   [Usando o arquivo AfterBackup.bat](#BKMK_UsingAfterBackup)  
+  - [Usando o Data Protection Manager para fazer backup do banco de dados do site](#BKMK_DPMBackup)   
 
-    -   [Tarefas de backup complementares](#BKMK_SupplementalBackup)  
+  -  [Arquivando o instantâneo de backup](#BKMK_ArchivingBackupSnapshot)   
 
--   [Recuperar um site do Configuration Manager](#BKMK_RecoverSite)  
+  -  [Usando o arquivo AfterBackup.bat](#BKMK_UsingAfterBackup)   
 
-    -   [Determinar as opções de recuperação](#BKMK_DetermineRecoveryOptions)  
+  -  [Tarefas de backup complementares](#BKMK_SupplementalBackup)   
 
-        -   [Opções de recuperação do servidor do site](#BKMK_SiteServerRecoveryOptions)  
+-  [Recuperar um site do Configuration Manager](#BKMK_RecoverSite)   
 
-        -   [Opções de recuperação do banco de dados do site](#BKMK_SiteDatabaseRecoveryOption)  
+  -   [Determinar as opções de recuperação](#BKMK_DetermineRecoveryOptions)   
 
-        -   [Período de retenção do controle de alterações do SQL Server](#bkmk_SQLretention)  
+         -   [Opções de recuperação do servidor do site](#BKMK_SiteServerRecoveryOptions)   
 
-        -   [Processo para reinicializar o site ou dados globais](#bkmk_reinit)  
+         -   [Opções de recuperação do banco de dados do site](#BKMK_SiteDatabaseRecoveryOption)   
 
-        -   [Cenários de recuperação de banco de dados do site](#BKMK_SiteDBRecoveryScenarios)  
+         -   [Período de retenção do controle de alterações do SQL Server](#bkmk_SQLretention)   
 
-    -   [Chaves de arquivo de script de recuperação autônoma do site](#BKMK_UnattendedSiteRecoveryKeys)  
+         -   [Processo para reinicializar o site ou dados globais](#bkmk_reinit)   
 
-    -   [Tarefas de pós-recuperação](#BKMK_PostRecovery)  
+         -   [Cenários de recuperação de banco de dados do site](#BKMK_SiteDBRecoveryScenarios)  
 
-    -   [Recuperar um site secundário](#BKMK_RecoverSecondarySite)  
+  -   [Chaves de arquivo de script de recuperação autônoma do site](#BKMK_UnattendedSiteRecoveryKeys)  
+
+  -   [Tarefas de pós-recuperação](#BKMK_PostRecovery)  
+
+  -   [Recuperar um site secundário](#BKMK_RecoverSecondarySite)  
 
 -   [Serviço SMS Writer](#BKMK_SMSWriterService)  
 
@@ -214,16 +216,16 @@ Use as seções a seguir para ajudá-lo a criar sua estratégia de backup do Con
 
 3.  Selecione o sistema de sites que hospeda a função de migração de estado e escolha **Ponto de migração de estado** em **Funções do Sistema de Sites**.  
 
-4.  Na guia **Função do Site** , no grupo **Propriedades** , clique em **Propriedades**.  
 
+4.  Na guia **Função do Site** , no grupo **Propriedades** , clique em **Propriedades**.  
 5.  As pastas que armazenam os dados de migração de estado do usuário estão listadas na seção **Detalhes da Pasta** na guia **Geral** .  
 
-##  <a name="a-namebkmkrecoversitea-recover-a-configuration-manager-site"></a><a name="BKMK_RecoverSite"></a> Recuperar um site do Configuration Manager  
+
  Uma recuperação de site do Configuration Manager é necessária sempre que um site do Configuration Manager falha ou ocorre perda de dados no banco de dados do site. Reparação e nova sincronização de dados são as tarefas principais de uma recuperação de site para evitar a interrupção das operações.  
 
 > [!IMPORTANT]  
 >  Ao recuperar o banco de dados para um site:  
->   
+
 >  -   É necessário usar a mesma versão e edição do SQL Server. Por exemplo, não há suporte para restaurar um banco de dados executado no SQL Server 2012 para o SQL Server 2014. Da mesma forma, não há suporte para restaurar um banco de dados do site executado em uma Standard Edition do SQL Server 2014 para uma Enterprise Edition do SQL Server 2014.  
 > -   O SQL Server não deve ser definido como **modo de usuário único**.  
 > -   Certifique-se de que os arquivos .MDF e .LDF são válidos. Ao recuperar um site, não há verificação para o estado dos arquivos que estão sendo restaurados.  
@@ -233,7 +235,7 @@ Use as seções a seguir para ajudá-lo a criar sua estratégia de backup do Con
 
 > [!IMPORTANT]  
 >  Se você executar a instalação do Configuration Manager por meio do menu **Iniciar** no servidor do site, a opção **Recuperar um site** não estará disponível.  
->   
+
 >  Se você tiver instalado atualizações de dentro do console do Configuration Manager antes de fazer o backup, não poderá reinstalar com êxito o site usando a instalação por meio da mídia de instalação ou o caminho de instalação do Configuration Manager.  
 
 > [!NOTE]  
@@ -243,7 +245,6 @@ Use as seções a seguir para ajudá-lo a criar sua estratégia de backup do Con
  Há duas áreas principais que você deve considerar para a recuperação do servidor do site primário e site de administração central do Configuration Manager, o servidor do site e o banco de dados do site. Use as seguintes seções para ajudar a determinar as opções que você deve escolher para o seu cenário de recuperação.  
 
 > [!NOTE]  
->  Quando uma recuperação de site anterior falhou ou quando você está tentando recuperar um site que não foi completamente desinstalado, deve selecionar **Desinstalar um site do Configuration Manager** na Instalação, antes da opção de recuperar o site. Se o site com falha tiver sites filho e você precisar desinstalá-lo, deverá excluir manualmente o banco de dados do site no site com falha antes de selecionar a opção **Desinstalar um site do Configuration Manager** ou o processo de desinstalação falhará.  
 
 ####  <a name="a-namebkmksiteserverrecoveryoptionsa-site-server-recovery-options"></a><a name="BKMK_SiteServerRecoveryOptions"></a> Opções de recuperação do servidor do site  
  Você deve iniciar a Instalação de uma cópia da pasta CD.Latest criada fora da pasta de instalação do Configuration Manager. Em seguida, selecione a opção **Recuperar um site** . Quando você executa a instalação, tem as seguintes opções de recuperação para o servidor do site que falhou:  
@@ -275,7 +276,11 @@ Use as seções a seguir para ajudá-lo a criar sua estratégia de backup do Con
 -   **Ignorar recuperação do banco de dados**: use essa opção quando não ocorrer perda de dados no servidor de banco de dados do site do Configuration Manager. Essa opção é válida somente quando o banco de dados do site está em um computador diferente do servidor do site que está sendo recuperado.  
 
 ####  <a name="a-namebkmksqlretentiona-sql-server-change-tracking-retention-period"></a><a name="bkmk_SQLretention"></a> Período de retenção do controle de alterações do SQL Server  
- O controle de alterações é habilitado para o banco de dados do site no SQL Server. O controle de alterações permite que o Configuration Manager consulte informações sobre as alterações feitas nas tabelas do banco de dados após determinado período anterior. O período de retenção especifica por quanto tempo as informações do controle de alterações são mantidas. Por padrão, o banco de dados do site é configurado para ter um período de retenção de 5 dias. Ao recuperar um banco de dados do site, o processo de recuperação procede de maneira diferente quando o backup está dentro ou está fora do período de retenção. Por exemplo, se o servidor de banco de dados do site falhar e o último backup tiver 7 dias, ele estará fora do período de retenção.  
+ O controle de alterações é habilitado para o banco de dados do site no SQL Server. O controle de alterações permite que o Configuration Manager consulte informações sobre as alterações feitas nas tabelas do banco de dados após determinado período anterior. O período de retenção especifica por quanto tempo as informações do controle de alterações são mantidas. Por padrão, o banco de dados do site é configurado para ter um período de retenção de 5 dias. Ao recuperar um banco de dados do site, o processo de recuperação procede de maneira diferente quando o backup está dentro ou está fora do período de retenção. Por exemplo, se o servidor de banco de dados do site falhar e o último backup tiver 7 dias, ele estará fora do período de retenção.
+
+ Para obter mais informações sobre elementos internos de controle de alterações do SQL Server, consulte os seguintes blogs da equipe do SQL Server: [Limpeza do Controle de Alterações – parte 1](https://blogs.msdn.microsoft.com/sql_server_team/change-tracking-cleanup-part-1) e [Limpeza do Controle de Alterações – parte 2](https://blogs.msdn.microsoft.com/sql_server_team/change-tracking-cleanup-part-2).
+
+
 
 ####  <a name="a-namebkmkreinita-process-to-reinitialize-site-or-global-data"></a><a name="bkmk_reinit"></a> Processo para reinicializar o site ou dados globais  
  O processo para reinicializar o site ou dados globais substitui dados existentes no banco de dados do site por dados de outro banco de dados do site. Por exemplo, quando o site ABC reinicializa os dados do site XYZ, ocorrem as seguintes etapas:  
@@ -913,6 +918,6 @@ Use as seções a seguir para ajudá-lo a criar sua estratégia de backup do Con
 
 
 
-<!--HONumber=Jan17_HO1-->
+<!--HONumber=Jan17_HO4-->
 
 
