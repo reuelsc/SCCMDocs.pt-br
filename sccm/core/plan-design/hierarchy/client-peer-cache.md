@@ -2,7 +2,7 @@
 title: Cache de pares do cliente | System Center Configuration Manager
 description: "Use cache de pares para locais de fonte de conteúdo do cliente durante a implantação de conteúdo com o System Center Configuration Manager."
 ms.custom: na
-ms.date: 1/3/2017
+ms.date: 1/9/2017
 ms.reviewer: na
 ms.suite: na
 ms.prod: configuration-manager
@@ -16,8 +16,8 @@ author: Brenduns
 ms.author: brenduns
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: e2a72fd9fb9ae5e64b7eb92e1d2106162fc7ea5d
-ms.openlocfilehash: 599ba03a1934b9feb030f27c827625c2c9471d8e
+ms.sourcegitcommit: f3e8cb3a7a4c1de9b8e9866ed192a8a0a7aec106
+ms.openlocfilehash: 86129a7fd5bfac676b5f03336cf97d07747b48d1
 
 ---
 # <a name="peer-cache-for-configuration-manager-clients"></a>Cache de pares para clientes do Configuration Manager
@@ -48,6 +48,8 @@ Para ajudar você a entender o uso do cache de pares, exiba o painel Fontes de D
 
 
 ## <a name="requirements-and-considerations-for-peer-cache"></a>Requisitos e considerações do Cache de Pares
+- O Cache de Pares tem suporte em qualquer sistema operacional Windows com suporte como cliente do Configuration Manager. Não há suporte para sistemas operacionais não Windows para o Cache de Pares.
+
 - Você deve configurar seu site com uma **Conta de Acesso à Rede** que tenha **Controle Total** da pasta de cache em cada cliente. Por padrão, a pasta é ***%windir%\ccmcache***.
 
 - Os clientes só podem transferir conteúdo de clientes de cache de pares que estão em seu grupo de limites atual.
@@ -67,6 +69,6 @@ Em cada computador habilitado para o Cache de Pares, se o Firewall do Windows es
 
 
 
-<!--HONumber=Jan17_HO1-->
+<!--HONumber=Jan17_HO2-->
 
 
