@@ -3,7 +3,7 @@
 title: Configurar o Endpoint Protection | Microsoft Docs
 description: "Saiba como selecionar e configurar os métodos com o Endpoint Protection no System Center Configuration Manager para manter as definições antimalware atualizadas nos computadores cliente."
 ms.custom: na
-ms.date: 10/06/2016
+ms.date: 01/31/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
