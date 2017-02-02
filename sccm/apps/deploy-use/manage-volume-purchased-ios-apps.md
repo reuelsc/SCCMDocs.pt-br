@@ -22,7 +22,7 @@ ms.openlocfilehash: cd9edf61d151ac8334ace0bf668fa4c919d8c75b
 
 
 ---
-# <a name="manage-volume-purchased-ios-apps-with-system-center-configuration-manager"></a>Manage volume-purchased iOS apps with System Center Configuration Manager
+# <a name="manage-volume-purchased-ios-apps-with-system-center-configuration-manager"></a>Gerenciar aplicativos iOS adquiridos por volume com o System Center Configuration Manager
 
 *Aplica-se a: System Center Configuration Manager (Branch Atual)*
 
