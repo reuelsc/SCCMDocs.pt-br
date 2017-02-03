@@ -2,7 +2,7 @@
 title: "Ponto de conexão de serviço | Microsoft Docs"
 description: "Saiba mais sobre essa função do sistema de sites do Configuration Manager, bem como entenda e planeje seus diversos usos."
 ms.custom: na
-ms.date: 10/06/2016
+ms.date: 1/6/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
@@ -17,8 +17,8 @@ author: Brenduns
 ms.author: brenduns
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: 4a8d98addcd463eb82d8b7100b44254a10d21992
-ms.openlocfilehash: b5f7ad01f7a32d69d0c75b3c80a053f3c020c036
+ms.sourcegitcommit: 4409d32593e3ab22482b08335005bd2a278a7e35
+ms.openlocfilehash: 36f33e0ce898ccdd5fa25aa59b8cf032805769b9
 
 
 ---
@@ -83,7 +83,7 @@ Para usar o Configuration Manager Service Manager, no console, navegue para **Mo
 -   A conta de instalação do sistema de sites é usada pelo gerenciador de distribuição no servidor de sites para transferir atualizações do ponto de conexão de serviço
 
 ##  <a name="a-namebkmkurlsa-internet-access-requirements"></a><a name="bkmk_urls"></a> Requisitos de acesso à Internet  
-Para habilitar a operação, o computador que hospeda o ponto de conexão de serviço e quaisquer firewalls entre o computador e a Internet deve passar as comunicações pela **porta TCP 443** nos seguintes locais da Internet. O ponto de conexão de serviço também dá suporte ao uso de um proxy da Web (com ou sem autenticação) para acessar esses locais.  
+Para habilitar a operação, o computador que hospeda o ponto de conexão de serviço e quaisquer firewalls entre o computador e a Internet deve passar as comunicações pela **porta TCP 443** e **porta TCP 443** nos seguintes locais da Internet. O ponto de conexão de serviço também dá suporte ao uso de um proxy da Web (com ou sem autenticação) para acessar esses locais.  
 
 **Atualizações e manutenção**  
 
@@ -96,6 +96,8 @@ Para habilitar a operação, o computador que hospeda o ponto de conexão de ser
 -   blob.core.windows.net  
 
 -   download.microsoft.com  
+
+-   download.windowsupdate.com
 
 -   sccmconnected-a01.cloudapp.net  
 
@@ -119,6 +121,6 @@ Após a execução da configuração, ou se você estiver reinstalando a funçã
 
 
 
-<!--HONumber=Dec16_HO5-->
+<!--HONumber=Jan17_HO1-->
 
 

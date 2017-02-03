@@ -2,7 +2,7 @@
 title: Recursos preteridos | Microsoft Docs
 description: "Saiba mais sobre os recursos, produtos e sistemas operacionais aos quais o System Center Configuration Manager não dá mais suporte."
 ms.custom: na
-ms.date: 12/29/2016
+ms.date: 1/5/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
@@ -17,8 +17,8 @@ author: Brenduns
 ms.author: brenduns
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: 16781e281676c8c1092108d16beaf7e0b16d45a7
-ms.openlocfilehash: e788a3c54e3620db92f1cc3e8246e5469189a802
+ms.sourcegitcommit: f912bb82b8d753f01b15f96eec5099c3f92abe75
+ms.openlocfilehash: 18b411b05dd6fc9b572e1d3d201876172bb40d07
 
 
 ---
@@ -52,6 +52,7 @@ Para obter mais informações, consulte:
 |Gerenciamento Fora de Banda ‑ Conforme encontrado no System Center 2012 Configuration Manager|16 de outubro de 2015|Versão 1511|
 |Sequências de tarefas: <br /> – Converter Disco em Dinâmico <br /> – Instalar Ferramentas de Implantação |18 de novembro de 2016|O suporte para essas sequências de tarefas termina com a primeira atualização liberada após 1º de junho de 2017.|
 |O Centro de Software tem uma aparência nova e moderna. Os aplicativos que apareciam somente no Catálogo de Aplicativos dependente do Silverlight (aplicativos disponíveis para o usuário) agora aparecem no Centro de Software, na guia **Aplicativos**. O Catálogo de Aplicativos ainda pode ser acessado usando o link na guia **Status da Instalação** do Centro de Software.<br><br>Nos próximos meses, a versão anterior do Centro de Software não estará mais disponível.<br><br>Você pode configurar clientes para usar o novo Centro de Software habilitando a configuração do cliente **Agente de Computador** > **Usar o novo Centro de Software**.<br><br>Para saber mais sobre o Software Center, consulte [Planejar e configurar o gerenciamento de aplicativos no System Center Configuration Manager](https://docs.microsoft.com/sccm/apps/plan-design/plan-for-and-configure-application-management).|13 de dezembro de 2016|A ser anunciado|
+|Gerenciamento de VHDs (discos de rígidos virtuais) com o Configuration Manager. </br></br>Isso inclui a remoção de opções para criar um novo VHD ou gerenciar um VHD usando uma sequência de tarefas, e a remoção do nó de discos rígidos virtuais no console do Configuration Manager. </br></br>Após a remoção desse suporte, os VHDs existentes não serão excluídos, mas deixarão de ser acessíveis de um console do Configuration Manager.  |6 de janeiro de 2017 |O suporte para VHDs termina com a primeira atualização liberada após 1º de junho de 2017.|
 
 
 Detalhes adicionais dos recursos removidos na versão 1511 da liberação do System Center Configuration Manager:
@@ -111,7 +112,6 @@ Detalhes adicionais dos recursos removidos na versão 1511 da liberação do Sys
 
 
 
-
-<!--HONumber=Dec16_HO5-->
+<!--HONumber=Jan17_HO1-->
 
 
