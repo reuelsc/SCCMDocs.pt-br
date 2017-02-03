@@ -1,5 +1,5 @@
 ---
-title: "MDM (Gerenciamento de Dispositivo Móvel) híbrido com o System Center Configuration Manager e o Microsoft Intune | Microsoft Docs"
+title: "MDM (Gerenciamento de Dispositivo Móvel) híbrido – Configuration Manager e Microsoft Intune | Microsoft Docs"
 description: "Saiba mais sobre o MDM (gerenciamento de dispositivo móvel) híbrido com o System Center Configuration Manager e o Microsoft Intune."
 ms.custom: na
 ms.date: 10/06/2016
@@ -17,11 +17,11 @@ author: mtillman
 ms.author: mtillman
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: 238ef5814c0c1b832c28d63c9f3879e21a6c439b
-ms.openlocfilehash: caedfa2f89daf9ebad72602161dd618f0d18b4ab
+ms.sourcegitcommit: 991eff171dce95590a7f050e0d3b07f98c0224b3
+ms.openlocfilehash: ceeccab158cd23267ccd05cfbff82ef772f97fbc
 
 ---
-# <a name="hybrid-mobile-device-management-mdm-with-system-center-configuration-manager-and-microsoft-intune"></a>Hybrid mobile device management (MDM) with System Center Configuration Manager and Microsoft Intune
+# <a name="hybrid-mobile-device-management-mdm-with-system-center-configuration-manager-and-microsoft-intune"></a>MDM (gerenciamento de dispositivo móvel) híbrido com o System Center Configuration Manager e o Microsoft Intune
 
 *Aplica-se a: System Center Configuration Manager (Branch Atual)*
 
@@ -117,6 +117,6 @@ O MDM híbrido do Configuration Manager pode gerenciar as seguintes plataformas 
 
 
 
-<!--HONumber=Dec16_HO3-->
+<!--HONumber=Jan17_HO4-->
 
 
