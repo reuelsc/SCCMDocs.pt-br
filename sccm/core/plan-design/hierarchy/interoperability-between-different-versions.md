@@ -2,7 +2,7 @@
 title: "Interoperabilidade entre versões do Configuration Manager | Microsoft Docs"
 description: "Saiba como evitar conflitos entre várias hierarquias do System Center Configuration Manager na mesma rede."
 ms.custom: na
-ms.date: 10/06/2016
+ms.date: 1/30/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
@@ -16,8 +16,8 @@ author: Brenduns
 ms.author: brenduns
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: 6ed317d45d90758832d4157985dd95d5e253c6fc
-ms.openlocfilehash: 32182f06a90d768c40e29ed8a8e89cb45114bd15
+ms.sourcegitcommit: f9886d9d83cd23ddd294d5af5eed3ec00946a4f4
+ms.openlocfilehash: 8a4c52f6adb18c7e170ea87764cc38c3bbfbf9ca
 
 
 ---
@@ -81,10 +81,10 @@ Há suporte para instalar e operar várias hierarquias independentes do System C
 |Ambiente de interoperabilidade|Mais informações|  
 |----------------------------------|----------------------|  
 |Um ambiente com o System Center 2012 Configuration Manager e o System Center Configuration Manager|Para gerenciar um site do Configuration Manager, o console e o site ao qual ele se conecta devem executar a mesma versão do Configuration Manager. Por exemplo, você não pode usar um console do System Center 2012 Configuration Manager para gerenciar um site do System Center Configuration Manager, ou vice-versa.<br /><br /> Não há suporte para instalar o console do System Center 2012 Configuration Manager e o console do System Center Configuration Manager no mesmo computador.|  
-|Um ambiente com várias versões do System Center Configuration Manager|O System Center Configuration Manager não dá suporte à instalação de mais de um console único do Configuration Manager em um computador. Para usar vários consoles específicos de diferentes versões do System Center Configuration Manager, você precisa instalar os diferentes consoles em computadores separados.<br /><br /> Durante o processo de atualização dos sites em uma hierarquia, você pode conectar um console a um site que executa uma versão mais recente e exibir informações sobre outros sites nessa hierarquia. No entanto, essa configuração não é recomendada porque é possível que as diferenças entre a versão do console e a versão do site do Configuration Manager resultem em problemas de dados e alguns recursos que estão disponíveis na versão mais recente do produto não estarão disponíveis no console.|  
+|Um ambiente com várias versões do System Center Configuration Manager|O System Center Configuration Manager não dá suporte à instalação de mais de um console único do Configuration Manager em um computador. Para usar vários consoles específicos de diferentes versões do System Center Configuration Manager, você precisa instalar os diferentes consoles em computadores separados.<br /><br /> Durante o processo de atualização dos sites em uma hierarquia, você pode conectar um console a um site que executa uma versão mais recente e exibir informações sobre outros sites nessa hierarquia. No entanto, essa configuração não é recomendada porque é possível que as diferenças entre a versão do console e a versão do site do Configuration Manager resultem em problemas de dados e alguns recursos que estão disponíveis na versão mais recente do produto não estarão disponíveis no console. <br /><br>Não há suporte para o gerenciamento de um site usando um console com uma versão que não coincide com a versão do site. Isso pode causar perda de dados, além de colocar seu site em risco. Por exemplo, não há suporte para o uso de um console da versão 1610 para gerenciar um site que executa a versão 1606. |
 
 
 
-<!--HONumber=Dec16_HO3-->
+<!--HONumber=Jan17_HO5-->
 
 

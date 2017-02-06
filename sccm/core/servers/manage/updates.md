@@ -17,8 +17,8 @@ author: Brenduns
 ms.author: brenduns
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: 5314bcb434b5b540f80cdfe32002df7b8fed6195
-ms.openlocfilehash: 52d5ad7a348e0489f43ac6cb46af930499ef6cf2
+ms.sourcegitcommit: 816c6bd33e42b70bbafed0dea7624bc5a5421544
+ms.openlocfilehash: 55d4f1805937405c4101f5b814875818d2aa72c0
 
 
 ---
@@ -73,13 +73,13 @@ Algumas atualizações do Configuration Manager estão disponíveis como uma ver
 
 As seguintes versões do Configuration Manager estão disponíveis como uma linha de base e/ou uma atualização:  
 
-|Versão|Data de disponibilidade|Linha de base|Atualização no console|  
-|-------------|-----------------------|--------------|------------------------|  
-|**1511**<br /><br /> 5.00.8325.1000|8/12/2015|Sim|Não|  
-|**1602**<br /><br /> 5.00.8355.1000|11/3/2016|Não|Sim|
-|**1606**<br /><br /> 5.00.8412.1000|7/22/2016|Não|Sim|
-|**1606** com o pacote cumulativo de atualizações do hotfix 1606 (KB3186654) </br></br>5.00.8412.1307 *(Observação 1)* |12/10/2016|Sim|Não|
-|**1610**<br /><br /> 5.00.8458.1000|11/18/2016|Não|Sim|
+|Versão|Data de disponibilidade|[Data de término do suporte](/sccm/core/servers/manage/current-branch-versions-supported) |Linha de base|Atualização no console|  
+|-------------|-----------|------------|--------------|------------------------|  
+| 1511 <br /><br /> 5.00.8325.1000|8/12/2015| 12/8/2016|Sim|Não|  
+|[1602](/sccm/core/plan-design/changes/whats-new-in-version-1602)<br /><br /> 5.00.8355.1000|11/3/2016| 3/11/2017|Não|Sim|
+|[1606](/sccm/core/plan-design/changes/whats-new-in-version-1606)<br /><br /> 5.00.8412.1000|7/22/2016| 7/22/2017|Não|Sim|
+|[1606](/sccm/core/plan-design/changes/whats-new-in-version-1606) com o pacote cumulativo de atualizações do hotfix 1606 (KB3186654) </br></br>5.00.8412.1307 *(Observação 1)* |12/10/2016| 7/22/2017|Sim|Não|
+|[1610](/sccm/core/plan-design/changes/whats-new-in-version-1610)<br /><br /> 5.00.8458.1000|11/18/2016| 11/18/2017|Não|Sim|
 *(Observação 1)* Esta mídia de linha de base 1606 está disponível como parte do Microsoft System Center 2016 ou do System Center Configuration Manager (Branch Atual e Branch de Manutenção em Longo Prazo 1606).
 
 Para verificar a versão do site do Configuration Manager, no console vá para **Sobre o System Center Configuration Manager** no canto superior esquerdo do console onde é exibida a versão do novo site e do console.  
@@ -148,6 +148,6 @@ Instale essas correções manualmente, usando um destes dois métodos:
 
 
 
-<!--HONumber=Jan17_HO2-->
+<!--HONumber=Feb17_HO1-->
 
 

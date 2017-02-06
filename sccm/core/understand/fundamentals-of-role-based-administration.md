@@ -16,8 +16,8 @@ author: Brenduns
 ms.author: brenduns
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: 8e0090bd671e2c566447579974a38474c2f898ea
-ms.openlocfilehash: 1ca51e256ea2f406f393e4b0d3634ea0f6f637bc
+ms.sourcegitcommit: a8cb3c9850b183eec156c37a181c04088b71805e
+ms.openlocfilehash: 40837306816639ff8cea8930fec75b05edc5164a
 
 
 ---
@@ -72,9 +72,9 @@ Ao projetar e implementar a segurança administrativa para o Configuration Manag
 
 -   *Administrador Completo* concede todas as permissões no Configuration Manager.  
 
--   *Analista de Ativo* concede permissão aos usuários administrativos para exibir dados que são coletados usando o Asset Intelligence, o inventário de software, o inventário de hardware e a medição de software. Usuários administrativos podem criar regras de medição e categorias de Asset Intelligence, famílias e rótulos.  
+-   O *Gerenciador de Ativos* concede permissões para gerenciar o Ponto de sincronização do Asset Intelligence, as classes de relatórios do Asset Intelligence, o inventário de software, o inventário de hardware e as regras de medição.  
 
--   *Gerenciador de Atualização de Software* concede permissões para definir e implantar atualizações de software. Usuários administrativos que estão associados a essa função podem criar coleções, grupos de atualização de software, implantações e modelos, além de configurar atualizações de software para a NAP (Proteção de Acesso à Rede).  
+-   *Gerenciador de Atualização de Software* concede permissões para definir e implantar atualizações de software. Usuários administrativos associados a essa função podem criar coleções, grupos de atualização de software, implantações e modelos.  
 
 > [!TIP]  
 >  Você pode exibir a lista de funções de segurança internas e funções de segurança personalizadas que você cria, incluindo suas descrições, no console do Configuration Manager. Para exibir as funções, no espaço de trabalho **Administração**, expanda **Segurança** e, em seguida, selecione **Funções de Segurança**.  
@@ -215,6 +215,6 @@ Para obter informações sobre como configurar escopos de segurança para admini
 
 
 
-<!--HONumber=Jan17_HO1-->
+<!--HONumber=Jan17_HO5-->
 
 

@@ -2,7 +2,7 @@
 title: Configuration Manager no Azure | Microsoft Docs
 description: "Informações sobre o uso do Configuration Manager em um ambiente do Azure."
 ms.custom: na
-ms.date: 01/04/2017
+ms.date: 01/30/2017
 ms.reviewer: na
 ms.suite: na
 ms.tgt_pltfrm: na
@@ -16,8 +16,8 @@ author: Brenduns
 ms.author: brenduns
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: 6638d6e17d0eaeef731cce45e8cf5c827d6e0dfe
-ms.openlocfilehash: 4d953eedc7d5cceb8767dab8850cacb1e007194d
+ms.sourcegitcommit: 264e009952db34a6f4929ecb70dc6857117ce4fe
+ms.openlocfilehash: e8798adc0e479417c682450d181611284c148e6d
 
 ---
 # <a name="configuration-manager-on-azure---frequently-asked-questions"></a>Configuration Manager no Azure – Perguntas frequentes
@@ -102,18 +102,18 @@ As tabelas a seguir listam as contagens de disco iniciais sugeridas para utiliza
 
 | Clientes de desktop    |Tamanho de VM recomendado|Discos recomendados|
 |--------------------|-------------------|-----------------|
-|**Até 25 mil**       |   DS4_V2          |2xP30            |
-|**25 mil a 50 mil**      |   DS13_V2         |2xP30            |
-|**50 mil a 100 mil**     |   DS14_V2         |3xP30            |
+|**Até 25 mil**       |   DS4_V2          |2xP30 (distribuído)  |
+|**25 mil a 50 mil**      |   DS13_V2         |2xP30 (distribuído)  |
+|**50 mil a 100 mil**     |   DS14_V2         |3xP30 (distribuído)  |
 
 
 **Banco de dados de site remoto** – site de administração central ou primário com o banco de dados do site em um servidor remoto:
 
 | Clientes de desktop    |Tamanho de VM recomendado|Discos recomendados |
 |--------------------|-------------------|------------------|
-|**Até 25 mil**       | Servidor do site: F4S </br>Servidor de banco de dados: DS12_V2 | Servidor do site: 1xP30 </br>Servidor de banco de dados: 2xP30 |
-|**25 mil a 50 mil**      | Servidor do site: F4S </br>Servidor de banco de dados: DS13_V2 | Servidor do site: 1xP30 </br>Servidor de banco de dados: 2xP30 |
-|**50 mil a 100 mil**     | Servidor do site: F8S </br>Servidor de banco de dados: DS14_V2 | Servidor do site: 2xP30 </br>Servidor de banco de dados: 3xP30 |
+|**Até 25 mil**       | Servidor do site: F4S </br>Servidor de banco de dados: DS12_V2 | Servidor do site: 1xP30 </br>Servidor de banco de dados: 2xP30 (distribuído)  |
+|**25 mil a 50 mil**      | Servidor do site: F4S </br>Servidor de banco de dados: DS13_V2 | Servidor do site: 1xP30 </br>Servidor de banco de dados: 2xP30 (distribuído)   |
+|**50 mil a 100 mil**     | Servidor do site: F8S </br>Servidor de banco de dados: DS14_V2 | Servidor de site: 2xP30 (distribuído)   </br>Servidor de banco de dados: 3xP30 (distribuído)   |
 
 Veja a seguir um exemplo de configuração para clientes de 50 a 100 mil em discos DS14_V2 com 3xP30 em um volume distribuído com volumes lógicos separados para os arquivos de instalação e de banco de dados do Configuration Manager:  ![VM)disks](media/vm_disks.png)  
 
@@ -139,7 +139,7 @@ A abordagem de gerenciamento de conteúdo é muito semelhante à dos servidores 
 
 
 ### <a name="while-i-am-ok-with-the-limitations-of-cloud-based-distribution-points-i-dont-want-to-put-my-management-point-into-a-dmz-even-though-that-is-needed-to-support-my-internet-based-clients-do-i-have-any-other-options"></a>Embora eu esteja OK com as limitações dos pontos de distribuição baseados em nuvem, não quero colocar meu ponto de gerenciamento em um DMZ, mesmo que isso seja necessário para dar suporte aos meus clientes baseados na Internet. Tenho alguma outra opção?
-Sim. Com o Configuration Manager versão 1610, apresentamos o [Gateway de gerenciamento de nuvem](/sccm/core/clients/manage/manage-clients-internet#cloud-management-gateway) como um recurso de pré-lançamento. (Esse recurso apareceu pela primeira vez na Technical Preview versão 1606 como o [Serviço de Proxy de Nuvem](/sccm/core/get-started/capabilities-in-technical-preview-1606#a-namecloudproxyacloud-proxy-service-for-managing-clients-on-the-internet).) 
+Sim. Com o Configuration Manager versão 1610, apresentamos o [Gateway de gerenciamento de nuvem](/sccm/core/clients/manage/manage-clients-internet#cloud-management-gateway) como um recurso de pré-lançamento. (Esse recurso apareceu pela primeira vez na Technical Preview versão 1606 como o [Serviço de Proxy de Nuvem](/sccm/core/get-started/capabilities-in-technical-preview-1606#a-namecloudproxyacloud-proxy-service-for-managing-clients-on-the-internet).)
 
 O **Gateway de Gerenciamento de Nuvem** fornece uma maneira simples de gerenciar clientes do Configuration Manager na Internet. O serviço, que é implantado no Microsoft Azure e requer uma assinatura do Azure, conecta-se à sua infraestrutura do Configuration Manager local usando uma nova função chamada ponto de conexão do gateway de gerenciamento de nuvem. Depois de implantado e configurado, os clientes podem acessar funções do sistema de sites do Configuration Manager locais independentemente de se eles estão conectados à rede privada interna ou na Internet.
 
@@ -182,6 +182,6 @@ Difícil dizer, uma vez que cada ambiente é diferente. O melhor a se fazer é d
 
 
 
-<!--HONumber=Jan17_HO1-->
+<!--HONumber=Jan17_HO5-->
 
 
