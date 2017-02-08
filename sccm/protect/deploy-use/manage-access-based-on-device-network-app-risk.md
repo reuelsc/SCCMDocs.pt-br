@@ -12,8 +12,8 @@ ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 4c0e6824-2dfe-4700-b817-d5631e0eb872
 caps.latest.revision: 
-author: nathbarn
-ms.author: nathbarn
+author: andredm7
+ms.author: andredm
 manager: angrobe
 translationtype: Human Translation
 ms.sourcegitcommit: c13c6268fa76ade7feb0981f9c4a6e325e393aca
@@ -93,11 +93,11 @@ Detecte ameaças à sua rede, como ataques “man-in-the-middle”, e previna a 
 
 ## <a name="next-steps"></a>Próximas etapas
 Estas são as principais etapas que devem ser seguidas para implementar essa solução:
-1.  [Configurar sua assinatura do Lookout Mobile Threat Protection](set-up-your-subscription-with-lookout.md)
-2.  [Habilitar a conexão do Lookout MTP no Intune](enable-lookout-connection-in-intune.md)
+1.    [Configurar sua assinatura do Lookout Mobile Threat Protection](set-up-your-subscription-with-lookout.md)
+2.    [Habilitar a conexão do Lookout MTP no Intune](enable-lookout-connection-in-intune.md)
 3.  [Configurar e implantar o aplicativo Lookout for Work](configure-and-deploy-lookout-for-work-apps.md)
-4.  [Configurar a política de conformidade](enable-device-threat-protection-rule-compliance-policy.md)
-5.  [Solucionar problemas de integração do Lookout](troubleshoot-lookout-integration.md)
+4.    [Configurar a política de conformidade](enable-device-threat-protection-rule-compliance-policy.md)
+5.    [Solucionar problemas de integração do Lookout](troubleshoot-lookout-integration.md)
 
 
 
