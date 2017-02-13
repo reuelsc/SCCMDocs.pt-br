@@ -16,8 +16,8 @@ author: mtillman
 ms.author: mtillman
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: 55c953f312a9fb31e7276dde2fdd59f8183b4e4d
-ms.openlocfilehash: 808327495c66f4e6ad86ab144455014171a453b2
+ms.sourcegitcommit: d242c9ae0ca6e3a3f3bee3a93176b9ab802319ae
+ms.openlocfilehash: a75cba2a6bb280c29f300c8ef2d3fbfbc7a558d2
 
 
 ---
@@ -75,6 +75,8 @@ O registro automático permite que os usuários registrem computadores com Windo
 ### <a name="create-dns-alias-for-device-enrollment"></a>Criar o alias DNS para registro de dispositivo  
  Um alias DNS (tipo de registro CNAME) facilita o registro dos dispositivos para os usuários ao popular automaticamente o nome do servidor durante o registro do dispositivo. Para criar um alias DNS (tipo de registro CNAME), você precisa configurar um CNAME nos registros DNS da sua empresa que redirecione as solicitações enviadas a uma URL no domínio da empresa para os servidores de serviço de nuvem da Microsoft.  Por exemplo, se o domínio da sua empresa for contoso.com, você deverá criar um CNAME no DNS que redirecione EnterpriseEnrollment.contoso.com para EnterpriseEnrollment-s.manage.microsoft.com.  
 
+ Embora a criação de entradas de DNS de CNAME seja opcional, os registros CNAME facilitam o registro para os usuários. Se não for possível encontrar nenhum registro CNAME do registro, os usuários deverão inserir manualmente o nome do servidor MDM: [https://enrollment.manage.microsoft.com](https://enrollment.manage.microsoft.com).
+
 |Tipo|Nome do host|Aponta para|  
 |----------|---------------|---------------|  
 |CNAME|EnterpriseEnrollment.company_domain.com|EnterpriseEnrollment-s.manage.microsoft.com|  
@@ -118,6 +120,6 @@ O registro automático permite que os usuários registrem computadores com Windo
 
 
 
-<!--HONumber=Dec16_HO3-->
+<!--HONumber=Jan17_HO4-->
 
 
