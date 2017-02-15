@@ -2,7 +2,7 @@
 title: "Definições de malware do Endpoint Protection do compartilhamento de rede | Microsoft Docs"
 description: "Saiba como habilitar o download de definições de malware do Endpoint Protection do Microsoft Updates para o Configuration Manager."
 ms.custom: na
-ms.date: 10/06/2016
+ms.date: 02/14/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na

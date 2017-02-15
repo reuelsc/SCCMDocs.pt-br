@@ -2,7 +2,7 @@
 title: Configurar o cliente do Endpoint Protection | Microsoft Docs
 description: "Saiba como definir configurações personalizadas do cliente para o Endpoint Protection que podem ser implantadas em coleções do computador em sua hierarquia."
 ms.custom: na
-ms.date: 01/31/2017
+ms.date: 02/14/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
