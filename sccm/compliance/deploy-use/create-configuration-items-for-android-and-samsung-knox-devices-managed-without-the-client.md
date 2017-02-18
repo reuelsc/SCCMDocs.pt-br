@@ -1,5 +1,5 @@
 ---
-title: "Criar itens de configuração para dispositivos Android e Samsung KNOX Standard gerenciados sem o cliente do System Center Configuration Manager | Microsoft Docs"
+title: "Criar itens de configuração para Android e Samsung KNOX Standard – Configuration Manager | Microsoft Docs"
 description: "Use o item de configuração do Android e Samsung KNOX Standard no System Center Configuration Manager para gerenciar as configurações dos dispositivos."
 ms.custom: na
 ms.date: 12/14/2016
@@ -17,8 +17,8 @@ author: robstackmsft
 ms.author: robstack
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: d023df79e0bcb7d5583224802976a5059c4ee753
-ms.openlocfilehash: c699c9c807f864fe161255522a8d694ab71d1a4e
+ms.sourcegitcommit: 35e48666f4d1a2363304650f960531fd0630a291
+ms.openlocfilehash: 12f5db5839fe66fb07d7055af45f8020abd43e24
 
 
 ---
@@ -109,7 +109,7 @@ Use o item de configuração **Android e Samsung KNOX** do System Center Configu
 
 ### <a name="browser"></a>Navegador
 |Configuração|Detalhes|  
-|-------------|-------------| 
+|-------------|-------------|
 |**Permitir navegador da Web**|Especifica se o navegador da Web padrão do dispositivo pode ser usado.|
 |**Preenchimento automático**|Permite o uso da função de preenchimento automático do navegador da Web.|
 |**Script ativo**|Permite que o navegador da Web do dispositivo use o script ativo.|
@@ -135,9 +135,9 @@ Use o item de configuração **Android e Samsung KNOX** do System Center Configu
 |**Câmera**|Permite o uso da câmera do dispositivo.<br /><br /> Aplica-se a dispositivos Android e Samsung KNOX Standard.|  
 |**Comunicação a curta distância (NFC)**|Permite operações que usam comunicação de curta distância, se o dispositivo oferecer suporte.|
 |**YouTube**|Permite o uso do aplicativo YouTube no dispositivo.<br /><br /> Aplica-se somente a dispositivos Samsung KNOX Standard.|  
-|**Desligar**|Permite que o dispositivo seja desligado.<br /><br /> Aplica-se somente a dispositivos Samsung KNOX Standard.| 
+|**Desligar**|Permite que o dispositivo seja desligado.<br /><br /> Aplica-se somente a dispositivos Samsung KNOX Standard.|
 
-### <a name="roaming"></a>Roaming 
+### <a name="roaming"></a>Roaming
 |Configuração|Detalhes|  
 |-------------|-------------|
 |**Roaming de voz**|Permite o roaming de voz quando o dispositivo estiver em uma rede de celular.|
@@ -199,6 +199,6 @@ Na página **Definir Configurações de Modo de Quiosque para Dispositivos Samsu
 
 
 
-<!--HONumber=Dec16_HO3-->
+<!--HONumber=Jan17_HO4-->
 
 

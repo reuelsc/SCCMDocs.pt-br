@@ -1,8 +1,8 @@
 ---
-title: "Instalar uma nova versão do Windows em um novo computador (sem sistema operacional) com o System Center Configuration Manager | Microsoft Docs"
-description: "Siga estas etapas no System Center Configuration Manager para instalar um sistema operacional em um novo computador usando o PXE, OEM ou mídia autônoma."
+title: "Instalar o Windows em um novo computador – Configuration Manager | Microsoft Docs"
+description: "Use o Configuration Manager para instalar um sistema operacional em um novo computador (sem sistema operacional) usando PXE, OEM ou mídia autônoma."
 ms.custom: na
-ms.date: 12/06/2016
+ms.date: 01/23/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
@@ -16,8 +16,8 @@ author: Dougeby
 ms.author: dougeby
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: 06ade037c580d64503e6b8b5c3bf31004ab0650b
-ms.openlocfilehash: 93b3d99e7391feefc3d706f15f0fe8f8df3b75ac
+ms.sourcegitcommit: 89158debdf4c345a325feeb608db2215a88ed81b
+ms.openlocfilehash: 584dad7d8b05a2da9f7a66b73028ae99ff1a594f
 
 
 ---
@@ -27,7 +27,7 @@ ms.openlocfilehash: 93b3d99e7391feefc3d706f15f0fe8f8df3b75ac
 
 Este tópico fornece as etapas gerais no System Center Configuration Manager para instalar um sistema operacional em um novo computador. Para este cenário, é possível escolher entre vários métodos de implantação diferentes, como PXE, OEM ou mídia autônoma. Se não tiver certeza de que esse é o cenário de implantação de sistema operacional certo para você, consulte [Cenários para implantar sistemas operacionais corporativos](scenarios-to-deploy-enterprise-operating-systems.md).  
 
- Use as seções a seguir para atualizar um computador existente com uma nova versão do Windows.  
+Use as seções a seguir para atualizar um computador existente com uma nova versão do Windows.  
 
 ##  <a name="a-namebkmkplana-plan"></a><a name="BKMK_Plan"></a> Planoo  
 
@@ -81,6 +81,6 @@ Este tópico fornece as etapas gerais no System Center Configuration Manager par
 
 
 
-<!--HONumber=Dec16_HO3-->
+<!--HONumber=Jan17_HO4-->
 
 

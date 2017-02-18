@@ -1,6 +1,6 @@
 ---
-title: Implantar o aplicativo Lookout for Work | System Center Configuration Manager
-description: Configure e implante aplicativos Lookout for Work.
+title: Configurar e implantar aplicativos Lookout for Work | Microsoft Docs
+description: "Instruções sobre como configurar e implantar o aplicativo Lookout for Work em dispositivos Android e iOS."
 ms.custom: na
 ms.date: 11/18/2016
 ms.prod: configuration-manager
@@ -12,16 +12,16 @@ ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: dfdbfee6-4b9b-4d53-816a-62bbc3a43b6e
 caps.latest.revision: 
-author: nathbarn
-ms.author: nathbarn
+author: andredm7
+ms.author: andredm
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: c13c6268fa76ade7feb0981f9c4a6e325e393aca
-ms.openlocfilehash: 947393796043dcc3916a5f8e09898bb8a7cd347d
+ms.sourcegitcommit: 0fa837c68eb073d2ceaf48c938137a94141a102e
+ms.openlocfilehash: 5e7d67855dc7929b19ec1ae32457aa11700be56e
 
 
 ---
-# <a name="configure-and-deploy-lookout-for-work-apps"></a>Configurar e implantar aplicativos Lookout for Work
+# <a name="deploy-lookout-for-work-apps"></a>Implantar os aplicativos Lookout for Work
 
 *Aplica-se a: System Center Configuration Manager (Branch Atual)*
 
@@ -92,6 +92,6 @@ Quando o usuário abre o Lookout for Work no dispositivo, é solicitado que ele 
 
 
 
-<!--HONumber=Dec16_HO3-->
+<!--HONumber=Jan17_HO4-->
 
 

@@ -1,5 +1,5 @@
 ---
-title: 'Atualizar clientes | Microsoft Docs | Macs '
+title: "Atualizar clientes do macOS – Configuration Manager | Microsoft Docs"
 description: Atualize clientes em computadores Mac no System Center Configuration Manager.
 ms.custom: na
 ms.date: 10/06/2016
@@ -16,8 +16,8 @@ author: nbigman
 ms.author: nbigman
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: 55c953f312a9fb31e7276dde2fdd59f8183b4e4d
-ms.openlocfilehash: 03cb801d6de867d3e96b478701783de4f1b09036
+ms.sourcegitcommit: 3743c80b0c2b5142f3a537ba3855ffd14794d42b
+ms.openlocfilehash: 6bdc5cca01bf5a79a6177d7cf1de96b8ff2c2305
 
 
 ---
@@ -105,6 +105,6 @@ Siga as etapas de alto nível descritas abaixo para atualizar o cliente para com
 
 
 
-<!--HONumber=Dec16_HO3-->
+<!--HONumber=Jan17_HO4-->
 
 

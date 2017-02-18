@@ -1,5 +1,5 @@
 ---
-title: "Registrar dispositivos de propriedade da empresa para implantações híbridas com o Configuration Manager | Microsoft Docs"
+title: "Registrar dispositivos da empresa – Configuration Manager | Microsoft Docs"
 description: "Conheça os diferentes métodos para registrar dispositivos da empresa para implantações híbridas com o Configuration Manager."
 ms.custom: na
 ms.date: 10/06/2016
@@ -16,8 +16,8 @@ author: mtillman
 ms.author: mtillman
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: 55c953f312a9fb31e7276dde2fdd59f8183b4e4d
-ms.openlocfilehash: 490b89f8174667d232a2ca3729d36ead8fc4d46c
+ms.sourcegitcommit: 991eff171dce95590a7f050e0d3b07f98c0224b3
+ms.openlocfilehash: b797bf2c180478f6a9ee5a7228e8eb94194285ff
 
 
 ---
@@ -51,6 +51,6 @@ Você pode identificar os dispositivos corporativos importando seus números IME
 
 
 
-<!--HONumber=Dec16_HO3-->
+<!--HONumber=Jan17_HO4-->
 
 

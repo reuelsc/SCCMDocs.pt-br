@@ -1,8 +1,8 @@
 ---
-title: Funcionalidades do Technical Preview 1605 do System Center Configuration Manager | Microsoft Docs
+title: Funcionalidades no Technical Preview 1605 do Configuration Manager
 description: "Saiba mais sobre os recursos disponíveis no Technical Preview do System Center Configuration Manager, versão 1605."
 ms.custom: na
-ms.date: 10/06/2016
+ms.date: 01/23/2017
 ms.prod: configuration-manager
 ms.technology:
 - configmgr-other
@@ -17,8 +17,8 @@ ms.author: brenduns
 manager: angrobe
 robots: noindex,nofollow
 translationtype: Human Translation
-ms.sourcegitcommit: 3bf44f850722afdb8dfe5922c8ceff11c9b56d08
-ms.openlocfilehash: 06741d03e208c6f5c8093130780dcdc8f0fcfbf7
+ms.sourcegitcommit: 5d08d1f9ccd995d544c3c21c4af52ede73343077
+ms.openlocfilehash: 3af395b84dd6878af9b846b438049e55baf9472e
 
 ---
 # <a name="capabilities-in-technical-preview-1605-for-system-center-configuration-manager"></a>Funcionalidades no Technical Preview 1605 do System Center Configuration Manager
@@ -472,6 +472,6 @@ Nesse technical preview, se o Portal da Empresa estiver aberto por mais de 15 mi
 
 
 
-<!--HONumber=Dec16_HO3-->
+<!--HONumber=Jan17_HO4-->
 
 

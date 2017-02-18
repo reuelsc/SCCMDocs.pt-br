@@ -1,11 +1,11 @@
 ---
-title: "Baixar atualizações de software | Microsoft Docs"
-description: "Use o Assistente para Baixar Atualizações de Software a fim de baixar atualizações de software do espaço de trabalho da Biblioteca de Software."
+title: "Baixar atualizações de software – Configuration Manager | Microsoft Docs"
+description: "Use o assistente para baixar atualizações de software e distribuí-las aos pontos de distribuição para estarem prontas para implantação nos clientes."
 keywords: 
 author: dougeby
 ms.author: dougeby
 manager: angrobe
-ms.date: 10/06/2016
+ms.date: 01/23/2017
 ms.topic: article
 ms.prod: configuration-manager
 ms.service: 
@@ -13,8 +13,8 @@ ms.technology:
 - configmgr-sum
 ms.assetid: de78e8d3-043f-4cd3-97e0-4dfb824fd3fb
 translationtype: Human Translation
-ms.sourcegitcommit: e6cf8c799b5be2f7dbb6fadadddf702ec974ae45
-ms.openlocfilehash: 181a6cdf0f8a697f9e44ba7f94950c3ed2dce395
+ms.sourcegitcommit: 4e44e2b8f6baf020c3b7742bafd607082ffacaa4
+ms.openlocfilehash: f38f72f9f547b82c92789f02975cbd0193b79b2d
 
 
 
@@ -120,6 +120,6 @@ Use o procedimento a seguir para baixar atualizações de software usando o Assi
 
 
 
-<!--HONumber=Dec16_HO3-->
+<!--HONumber=Jan17_HO4-->
 
 

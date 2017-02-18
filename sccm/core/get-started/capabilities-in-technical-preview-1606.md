@@ -1,8 +1,8 @@
 ---
-title: Funcionalidades do Technical Preview 1606 do System Center Configuration Manager | Microsoft Docs
+title: Funcionalidades no Technical Preview 1606 do Configuration Manager
 description: "Saiba mais sobre os recursos disponíveis no Technical Preview do System Center Configuration Manager, versão 1606."
 ms.custom: na
-ms.date: 10/06/2016
+ms.date: 01/23/2017
 ms.prod: configuration-manager
 ms.technology:
 - configmgr-other
@@ -16,8 +16,8 @@ author: Brenduns
 ms.author: brenduns
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: 3bf44f850722afdb8dfe5922c8ceff11c9b56d08
-ms.openlocfilehash: 6bc3087768d8455a6ca6beb77a3afc8f313eb831
+ms.sourcegitcommit: 5d08d1f9ccd995d544c3c21c4af52ede73343077
+ms.openlocfilehash: a84d3ab55066d26c3199ea374d8beb472d66f43f
 
 ---
 # <a name="capabilities-in-technical-preview-1606-for-system-center-configuration-manager"></a>Funcionalidades no Technical Preview 1606 do System Center Configuration Manager
@@ -225,10 +225,16 @@ Para mais informações, confira [Manage Office 365 ProPlus updates](https://tec
 
 ### <a name="set-the-configuration-manager-client-setting-to-manage-the-office-365-client-agent"></a>Defina uma configuração de cliente do Configuration Manager para gerenciar o agente cliente do Office 365
 1.  No console do Configuration Manager, escolha **Administração** > **Visão Geral** > **Configurações do Cliente**.
-1. Abra as configurações do dispositivo apropriado para habilitar o agente cliente. Para obter mais informações sobre configurações do cliente padrão e personalizadas, consulte [Como definir as configurações do cliente no System Center Configuration Manager](../../core/clients/deploy/configure-client-settings.md).
-2. Clique em **Atualizações de Software** e selecione **Sim** para a configuração **Habilitar o gerenciamento do Agente Cliente do Office 365**.
+2. Abra as configurações do dispositivo apropriado para habilitar o agente cliente. Para obter mais informações sobre configurações do cliente padrão e personalizadas, consulte [Como definir as configurações do cliente no System Center Configuration Manager](../../core/clients/deploy/configure-client-settings.md).
+3. Clique em **Atualizações de Software** e selecione **Sim** para a configuração **Habilitar o gerenciamento do Agente Cliente do Office 365**.  
+
+
 ## <a name="a-nameosdpreservedriveletterathe-osdpreservedriveletter-task-sequence-variable-has-been-deprecated"></a><a name="osdpreservedriveletter"></a>A variável de sequência de tarefas OSDPreserveDriveLetter foi preterida
-A variável OSDPreserveDriveLetter determina se a sequência de tarefas usa ou não a letra da unidade capturada no arquivo WIM da imagem do sistema operacional ao aplicar essa imagem a um computador de destino. Essa variável de sequência de tarefas foi preterida no Technical Preview 1606. Durante uma implantação de sistema operacional, por padrão, a Instalação do Windows agora determina a melhor letra da unidade a ser usada (geralmente, C:). Se desejar especificar o uso de uma unidade diferente, mude o local na etapa da sequência de tarefas Aplicar Sistema Operacional. Vá para a configuração **Selecione o local onde deseja aplicar este sistema operacional**, selecione **Letra da unidade lógica específica** e escolha a unidade que deseja usar. Deve haver uma unidade atribuída com a letra escolhida no computador de destino.
+A variável OSDPreserveDriveLetter determina se a sequência de tarefas usa ou não a letra da unidade capturada no arquivo WIM da imagem do sistema operacional ao aplicar essa imagem a um computador de destino.
+- Essa variável de sequência de tarefas foi preterida no Technical Preview 1606.
+
+Durante uma implantação de sistema operacional, por padrão, a Instalação do Windows agora determina a melhor letra da unidade a ser usada (geralmente, C:). Se desejar especificar o uso de uma unidade diferente, mude o local na etapa da sequência de tarefas Aplicar Sistema Operacional. Vá para a configuração **Selecione o local onde deseja aplicar este sistema operacional**, selecione **Letra da unidade lógica específica** e escolha a unidade que deseja usar. Deve haver uma unidade atribuída com a letra escolhida no computador de destino. 
+
 ## <a name="a-nameupdatesandservicingachanges-for-the-updates-and-servicing-node"></a><a name="updatesandservicing"></a>Alterações no nó Atualizações e Manutenção
 Com o Technical Preview 1606, foram introduzidas várias ações que se aplicam às Atualizações e Manutenção no console do Configuration Manager:
 - **Alteração de nome de nó:**
@@ -261,6 +267,6 @@ Com o Technical Preview 1606, foram introduzidas várias ações que se aplicam 
 
 
 
-<!--HONumber=Dec16_HO3-->
+<!--HONumber=Jan17_HO4-->
 
 

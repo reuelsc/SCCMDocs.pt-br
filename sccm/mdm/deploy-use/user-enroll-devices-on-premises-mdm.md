@@ -1,5 +1,5 @@
 ---
-title: "Como os usuários registram dispositivos com o Gerenciamento de Dispositivo Móvel Local no System Center Configuration Manager | Microsoft Docs"
+title: "Como os usuários registram dispositivos com o MDM local – Configuration Manager | Microsoft Docs"
 description: "Entenda como os usuários registram dispositivos com o Gerenciamento de Dispositivo Móvel local no System Center Configuration Manager."
 ms.custom: na
 ms.date: 10/06/2016
@@ -17,8 +17,8 @@ author: Mtillman
 ms.author: mtillman
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: 0d6479bcc134103e6005159a8ea295a5f359a436
-ms.openlocfilehash: 6fdf9d0b01805b341838b3dc7f0368a4f70e1d08
+ms.sourcegitcommit: 991eff171dce95590a7f050e0d3b07f98c0224b3
+ms.openlocfilehash: 43a30709473939829d82d822503537d448159a1c
 
 
 ---
@@ -83,6 +83,6 @@ As seguintes tarefas explicam como registrar e verificar o registro de computado
 
 
 
-<!--HONumber=Dec16_HO3-->
+<!--HONumber=Jan17_HO4-->
 
 

@@ -1,5 +1,5 @@
 ---
-title: "Como criar itens de configuração para dispositivos Mac OS X gerenciados com o cliente do System Center Configuration Manager | Microsoft Docs"
+title: "Criar itens de configuração para os Macs gerenciados pelo cliente – Configuration Manager | Microsoft Docs"
 description: "Use o item de configuração do Mac OS X do System Center Configuration Manager para gerenciar as configurações de dispositivos Mac OS X."
 ms.custom: na
 ms.date: 12/27/2016
@@ -17,8 +17,8 @@ author: robstackmsft
 ms.author: robstack
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: 8bbc0d0132fa4276ade8914d5ac3945ef1d12a4b
-ms.openlocfilehash: be7a9464ef4ac6042a46652a325583a355f23846
+ms.sourcegitcommit: 35e48666f4d1a2363304650f960531fd0630a291
+ms.openlocfilehash: 60d147986425e7a3048d57b5b7412feab12efafd
 
 
 ---
@@ -54,8 +54,8 @@ Use o item de configuração do **Mac OS X (personalizado)** do System Center Co
 
              Por exemplo, se você quiser editar as configurações do navegador Safari, você pode usar **com.apple.Safari.plist**.  
 
-        -   **Chave** – especifique o nome da chave que você deseja avaliar a conformidade em computadores Mac. Use a seguinte sintaxe: 
-        
+        -   **Chave** – especifique o nome da chave que você deseja avaliar a conformidade em computadores Mac. Use a seguinte sintaxe:
+
             ```
             */<dictionary\>/<keyname\>*.  
             ```     
@@ -177,6 +177,6 @@ Se quiser adicionar esse item de configuração a uma linha de base de configura
 
 
 
-<!--HONumber=Dec16_HO5-->
+<!--HONumber=Jan17_HO4-->
 
 

@@ -1,5 +1,5 @@
 ---
-title: "Tarefas comuns para gerenciar a conformidade em dispositivos que não executam o cliente System Center Configuration Manager | Microsoft Docs"
+title: "Tarefas comuns de gerenciamento de conformidade para dispositivos sem cliente – Configuration Manager | Microsoft Docs"
 description: "Saiba mais sobre as configurações de conformidade do System Center Configuration Manager trabalhando em alguns cenários comuns."
 ms.custom: na
 ms.date: 10/06/2016
@@ -16,8 +16,8 @@ author: robstackmsft
 ms.author: robstack
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: f9e939d871e95a3248d8e5d96cb73063a81fd5cf
-ms.openlocfilehash: e24ef149e2a2648c9a7acaedfaa8f0b5bb173ab3
+ms.sourcegitcommit: 991eff171dce95590a7f050e0d3b07f98c0224b3
+ms.openlocfilehash: c206c1ff2258e0e7f0c42fe5f6a6327e850261c4
 
 
 ---
@@ -126,6 +126,6 @@ Esses cenários oferecem uma introdução ao uso das configurações de conformi
 
 
 
-<!--HONumber=Dec16_HO3-->
+<!--HONumber=Jan17_HO4-->
 
 

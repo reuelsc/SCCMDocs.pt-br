@@ -1,5 +1,5 @@
 ---
-title: "Escolher uma solução de gerenciamento de dispositivo para o System Center Configuration Manager | Microsoft Docs"
+title: "Escolher uma solução de gerenciamento de dispositivo – Configuration Manager | Microsoft Docs"
 description: "Saiba mais sobre as soluções oferecidas pelo System Center Configuration Manager para gerenciar computadores, servidores e dispositivos."
 ms.custom: na
 ms.date: 12/08/2016
@@ -17,8 +17,8 @@ author: nbigman
 ms.author: nbigman
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: d56b2a8090dd798bceda63e29df6c6ff4a4afe4e
-ms.openlocfilehash: 792d9b03904193c1c302c2f8373448a44887ed9c
+ms.sourcegitcommit: 06cafc8f7934cde738a87ac1a1da585a9d4e2a99
+ms.openlocfilehash: 534a15279bff96d93ffb6564eeac2835f57f5645
 
 
 ---
@@ -89,13 +89,13 @@ Use essas soluções de gerenciamento de dispositivo sozinhas ou combinadas umas
 |Implantação de software|Sim|Sim|Sim||  
 |Monitor com ponto de status de fallback|Sim||||  
 |Conexões para pontos de gerenciamento|Sim||Sim||  
-|Conexões para pontos de distribuição|Sim|Sim|Sim||  
+|Conexões para pontos de distribuição|Sim||Sim||  
 |Bloqueio do Configuration Manager|Sim|Sim|Sim||  
 |Quarentena e bloqueio do Exchange Server (e Configuration Manager)||||Sim|  
 |Apagamento remoto| |Sim|Sim|Sim|  
 
 
 
-<!--HONumber=Jan17_HO1-->
+<!--HONumber=Feb17_HO2-->
 
 

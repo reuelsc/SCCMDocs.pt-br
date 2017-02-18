@@ -1,8 +1,8 @@
 ---
-title: Funcionalidades do Technical Preview 1608 do System Center Configuration Manager | Microsoft Docs
+title: Funcionalidades no Technical Preview 1608 do Configuration Manager
 description: "Saiba mais sobre os recursos disponíveis no Technical Preview do System Center Configuration Manager, versão 1608."
 ms.custom: na
-ms.date: 10/06/2016
+ms.date: 01/23/2017
 ms.prod: configuration-manager
 ms.technology:
 - configmgr-other
@@ -16,8 +16,8 @@ author: Brenduns
 ms.author: brenduns
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: 3bf44f850722afdb8dfe5922c8ceff11c9b56d08
-ms.openlocfilehash: c41409e957f43aee3be994ab3e702232c7dfe6ea
+ms.sourcegitcommit: 5d08d1f9ccd995d544c3c21c4af52ede73343077
+ms.openlocfilehash: c22e29da8036d69db917205f28a19a69281a64db
 
 ---
 # <a name="capabilities-in-technical-preview-1608-for-system-center-configuration-manager"></a>Funcionalidades no Technical Preview 1608 do System Center Configuration Manager
@@ -65,6 +65,6 @@ Esse comportamento poderá ser desativado pelo visualizador se eles preferirem d
 
 
 
-<!--HONumber=Dec16_HO3-->
+<!--HONumber=Jan17_HO4-->
 
 

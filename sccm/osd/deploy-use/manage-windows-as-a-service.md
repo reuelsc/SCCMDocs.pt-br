@@ -1,8 +1,8 @@
 ---
-title: "Gerenciar o Windows como um serviço | Microsoft Docs"
-description: "Os recursos do System Center Configuration Manager ajudam você a ver o estado do Windows como serviço em seu ambiente, para que você possa mantê-lo atualizado."
+title: "Gerenciar o Windows como serviço – Configuration Manager | Microsoft Docs"
+description: "Exibir o estado do Windows como serviço usando o Configuration Manager, criar planos de manutenção para formar anéis de implantação e exibir alertas quando os clientes do Windows 10 estiverem próximos do fim do suporte."
 ms.custom: na
-ms.date: 12/21/2016
+ms.date: 01/23/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
@@ -16,8 +16,8 @@ author: Dougeby
 ms.author: dougeby
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: 66cd6d099acdd9db2bc913a69993aaf5e17237fe
-ms.openlocfilehash: 79e13074db18a617c7e3fceedaa143dbece90a3d
+ms.sourcegitcommit: 89158debdf4c345a325feeb608db2215a88ed81b
+ms.openlocfilehash: b3859bc01c37dab04275028585e892f927606025
 
 
 ---
@@ -26,7 +26,7 @@ ms.openlocfilehash: 79e13074db18a617c7e3fceedaa143dbece90a3d
 *Aplica-se a: System Center Configuration Manager (Branch Atual)*
 
 
- No System Center Configuration Manager, é possível ver o estado do Windows como serviço em seu ambiente, criar planos de serviço para formar anéis de implantação e garantir que os sistemas com o branch atual do Windows 10 permanecem atualizados quando novos builds forem lançados. Além disso, é possível ver alertas quando os clientes do Windows 10 estiverem próximos do fim do suporte para o build do CB (Branch Atual) ou do CBB (Branch Atual para Negócios).  
+ No System Center Configuration Manager, é possível exibir o estado do Windows como serviço em seu ambiente, criar planos de serviço para formar anéis de implantação e garantir que os sistemas com o branch atual do Windows 10 permaneçam atualizados quando novos builds forem lançados. Além disso, é possível exibir alertas quando os clientes do Windows 10 estiverem próximos do fim do suporte para o build do CB (Branch Atual) ou do CBB (Branch Atual para Negócios).  
 
  Para obter mais informações sobre opções de serviço do Windows 10, veja  [Opções para atualizações de serviço do Windows 10](https://technet.microsoft.com/library/mt598226\(v=vs.85\).aspx).  
 
@@ -277,6 +277,6 @@ Use o procedimento a seguir para modificar as propriedades de um plano de servi�
 
 
 
-<!--HONumber=Dec16_HO4-->
+<!--HONumber=Jan17_HO4-->
 
 

@@ -1,5 +1,5 @@
 ---
-title: 'Monitorar clientes | System Center Configuration Manager | Linux UNIX '
+title: "Monitorar clientes Linux/UNIX – Configuration Manager | Microsoft Docs"
 description: Monitore clientes em servidores Linux e UNIX no System Center Configuration Manager.
 ms.custom: na
 ms.date: 11/23/2016
@@ -16,8 +16,8 @@ author: nbigman
 ms.author: nbigman
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: 620c1caf50b4859afc8f32490ab7945df810aefd
-ms.openlocfilehash: b2b7c88784eed6fbee6ac1f6348d7d6991df1fbb
+ms.sourcegitcommit: 3743c80b0c2b5142f3a537ba3855ffd14794d42b
+ms.openlocfilehash: e9965373db17a752c8ae7fddb5f91fa1df912d49
 
 
 ---
@@ -38,7 +38,7 @@ Você pode exibir informações de servidores Linux e UNIX no console do System 
  As seções a seguir descrevem como obter esses detalhes do gerenciador de recursos, bem como relatórios.  
 
 ##  <a name="a-namebkmkuseresourceexpforlnua-use-resource-explorer-to-view-inventory-for-linux-and-unix-servers"></a><a name="BKMK_UseResourceExpforLnU"></a> Usar o gerenciador de recursos para exibir o inventário de servidores Linux e UNIX  
- 
+
  Após um cliente do Configuration Manager enviar o inventário de hardware para o site do Configuration Manager, você pode usar o Gerenciador de Recursos para exibir essas informações. O cliente do Configuration Manager para Linux e UNIX não adiciona novas classes ou exibições de inventário ao Gerenciador de Recursos. Os dados de inventário Linux e UNIX mapeiam para classes WMI existentes. Você pode exibir os detalhes sobre inventário de seus servidores Linux e UNIX nas classificações de baseadas em Windows usando o Gerenciador de Recursos.  
 
  Por exemplo, você pode coletar a lista de todos os programas nativos instalados encontrados nos servidores Linux e UNIX. Entre os exemplos de programas nativos instalados estão o **.rpms** no Linux ou o **.pkgs** no Solaris. Após o inventário ser enviado por um cliente Linux ou UNIX, você pode exibir a lista de todos os programas nativos Linux ou UNIX instalados no Gerenciador de Recursos no console do Configuration Manager.  
@@ -56,6 +56,6 @@ Você pode exibir informações de servidores Linux e UNIX no console do System 
 
 
 
-<!--HONumber=Dec16_HO3-->
+<!--HONumber=Jan17_HO4-->
 
 

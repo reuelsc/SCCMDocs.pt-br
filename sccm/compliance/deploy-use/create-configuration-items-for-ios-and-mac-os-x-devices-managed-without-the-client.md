@@ -1,5 +1,5 @@
 ---
-title: "Criar itens de configuração para dispositivos iOS e Mac OS X gerenciados sem o cliente do System Center Configuration Manager |Microsoft Docs"
+title: "Criar itens de configuração para iOS e Macs sem cliente – Configuration Manager | Microsoft Docs"
 description: "Use o item de configuração do iOS e Mac OS X do System Center Configuration Manager para gerenciar as configurações de dispositivos iOS e Mac OS X."
 ms.custom: na
 ms.date: 12/14/2016
@@ -17,8 +17,8 @@ author: robstackmsft
 ms.author: robstack
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: d023df79e0bcb7d5583224802976a5059c4ee753
-ms.openlocfilehash: ea4024aaa07d40781663725127d64388055c6501
+ms.sourcegitcommit: 35e48666f4d1a2363304650f960531fd0630a291
+ms.openlocfilehash: 0614753a68e98675ccae99b792b03481f4ca7ab1
 
 
 ---
@@ -80,7 +80,7 @@ Use o item de configuração **iOS e Mac OS X** do System Center Configuration M
 |**Comprimento mínimo da senha (caracteres)**|O comprimento mínimo da senha.|  
 |**Validade da senha em dias**|O número de dias antes que uma senha precise ser alterada.|  
 |**Número de senhas lembradas**|Impede a reutilização de senhas usadas anteriormente.|  
-|**Número de tentativas de logon com falha antes de o dispositivo ser apagado**|Apaga o dispositivo se houver falha neste número de tentativas de logon.<br>(somente iOS)| 
+|**Número de tentativas de logon com falha antes de o dispositivo ser apagado**|Apaga o dispositivo se houver falha neste número de tentativas de logon.<br>(somente iOS)|
 |**Tempo ocioso antes que o dispositivo móvel seja bloqueado**|Especifica o número de minutos de inatividade antes de o dispositivo ser bloqueado automaticamente.|
 |**Complexidade da senha**|Escolha se é possível especificar um PIN como “1234” ou se é necessário fornecer uma senha forte.|
 |**Permitir senha simples**|Especifica que senhas simples, como '0000' e '1234', podem ser usadas.|
@@ -370,6 +370,6 @@ Use o item de configuração **iOS e Mac OS X** do System Center Configuration M
 
 
 
-<!--HONumber=Dec16_HO3-->
+<!--HONumber=Jan17_HO4-->
 
 

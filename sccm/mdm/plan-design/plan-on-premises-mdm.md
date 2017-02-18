@@ -17,8 +17,8 @@ author: Mtillman
 ms.author: mtillman
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: 0d6479bcc134103e6005159a8ea295a5f359a436
-ms.openlocfilehash: cc5b04dc41b13993fca35f202437b71e96bc9cdd
+ms.sourcegitcommit: cec595d473ca2459e43a7fa1c70b7668a8a48986
+ms.openlocfilehash: d529a058968cf99dce77997844b33ff5dc7c0004
 
 
 ---
@@ -43,8 +43,8 @@ Considere os seguintes requisitos antes de preparar a infraestrutura do Configur
 ##  <a name="a-namebkmkintunea-use-of-the--microsoft-intune-subscription"></a><a name="bkmk_intune"></a> Uso da assinatura do Microsoft Intune  
  Para começar a usar o Gerenciamento de dispositivo móvel local, você precisará de uma assinatura do Microsoft Intune. A assinatura apenas é necessária para acompanhar o licenciamento dos dispositivos e não é usada para gerenciar ou armazenar informações de gerenciamento dos dispositivos. Todo o gerenciamento é manipulado na empresa de sua organização usando a infraestrutura do Configuration Manager local.  
 
-> [!IMPORTANT]  
->  O Configuration Manager não dá suporte ao uso do Microsoft Intune e à infraestrutura do Configuration Manager local como autoridades de gerenciamento ao mesmo tempo. Portanto, quando você configura a assinatura do Intune para gerenciamento local, você desabilita efetivamente o gerenciamento do Intune.  
+ > [!NOTE]  
+ > Com início na versão 1610, o Configuration Manager dá suporte ao gerenciamento de dispositivos móveis usando o Microsoft Intune e a infraestrutura local do Configuration Manager ao mesmo tempo.   
 
  Se o site tiver dispositivos com conectividade com a Internet, o serviço do Intune poderá ser usado para notificar os dispositivos para verificar se há atualizações de política no ponto de gerenciamento de dispositivos. Esse uso do Intune é destinado estritamente à notificação somente de dispositivos conectados à Internet. Dispositivos sem conexão à Internet (e que não podem ser contatados pelo Intune) dependem do intervalo de sondagem configurado para fazer check-in nas funções do sistema de sites para executar funções de gerenciamento.  
 
@@ -122,6 +122,6 @@ Considere os seguintes requisitos antes de preparar a infraestrutura do Configur
 
 
 
-<!--HONumber=Dec16_HO3-->
+<!--HONumber=Jan17_HO3-->
 
 

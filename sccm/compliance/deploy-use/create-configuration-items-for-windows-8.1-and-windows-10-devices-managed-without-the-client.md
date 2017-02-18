@@ -1,5 +1,5 @@
 ---
-title: "Criar itens de configuração para dispositivos Windows 8.1 e Windows 10 gerenciados sem o cliente do System Center Configuration Manager | Microsoft Docs"
+title: "Criar itens de configuração para Windows 10 – sem cliente – Configuration Manager | Microsoft Docs"
 description: "Use o item de configuração do Windows 10 do System Center Configuration Manager para gerenciar as configurações de computadores Windows 10."
 ms.custom: na
 ms.date: 12/08/2016
@@ -17,8 +17,8 @@ author: robstackmsft
 ms.author: robstack
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: 8f6e6fd1d2a9a6352c9191ea7e2a1f9c6f6e2199
-ms.openlocfilehash: 7efde8dda724d71775313290b13a6aad2f9a7d6c
+ms.sourcegitcommit: 35e48666f4d1a2363304650f960531fd0630a291
+ms.openlocfilehash: 4c34ace72905b286c3582f09993bd897a87cce45
 
 
 ---
@@ -74,7 +74,7 @@ Use o item de configuração do **Windows 8.1 e Windows 10** do System Center Co
 ##  <a name="windows-81-and-windows-10-configuration-item-settings-reference"></a>Referência de configurações do item de configuração do Windows 8.1 e Windows 10  
 
 ### <a name="password"></a>Senha  
- 
+
 |Configuração|Detalhes|  
 |-------------|-------------|  
 |**Exigir configurações de senha em dispositivos**|Requer uma senha nos dispositivos com suporte.|  
@@ -100,8 +100,8 @@ Use o item de configuração do **Windows 8.1 e Windows 10** do System Center Co
 |**Bluetooth**|Permita o uso da funcionalidade Bluetooth dos dispositivos.|  
 |**Modo detectável do Bluetooth**|Permitir que o dispositivo seja descoberto por outros dispositivos Bluetooth.<br>(somente Windows 10)|  
 |**Anúncios do Bluetooth**|Permita o uso de anúncio de Bluetooth.<br> (somente Windows 10)|  
-|**Gravação de voz**|Permitir o uso dos recursos de gravação de voz do dispositivo.<br>(somente Windows 10)| 
-|**Cortana**|Habilite ou desabilite o assistente de voz Cortana.| 
+|**Gravação de voz**|Permitir o uso dos recursos de gravação de voz do dispositivo.<br>(somente Windows 10)|
+|**Cortana**|Habilite ou desabilite o assistente de voz Cortana.|
 
 ### <a name="email-management"></a>Gerenciamento de email  
 
@@ -153,7 +153,7 @@ Use o item de configuração do **Windows 8.1 e Windows 10** do System Center Co
 |**Ir para um site da intranet por uma entrada de palavra única**|Habilita ou desabilita a configuração que permite que o Internet Explorer acesse automaticamente um site de Intranet se um nome de site válido for inserido sem um HTTP precedente:|  
 |**Opção de menu do Modo Empresarial**|Permita que os usuários ativem e desativem o modo Empresarial no menu **Ferramentas** do Internet Explorer.|  
 |**Local do relatório de registro em log (URL)**|Especifique uma URL em que os sites visitados serão registrados quando o modo Empresarial estiver ativo.|  
-|**Local da lista do site do modo Empresarial (URL)**|Especifique o local da lista de sites que usarão o modo Empresarial quando ele estiver ativo.| 
+|**Local da lista do site do modo Empresarial (URL)**|Especifique o local da lista de sites que usarão o modo Empresarial quando ele estiver ativo.|
 
 ### <a name="microsoft-edge"></a>Microsoft Edge  
  Essas configurações são destinadas a dispositivos que executam o Windows 10 e posteriores.  
@@ -175,7 +175,7 @@ Use o item de configuração do **Windows 8.1 e Windows 10** do System Center Co
  Essas configurações são destinadas a dispositivos que executam a Atualização de novembro do Windows 10 (1511) e posteriores.  
 
 |Nome da configuração|Detalhes|  
-|------------------|-------------| 
+|------------------|-------------|
 |**Permitir monitoramento em tempo real**|Habilita a verificação em tempo real de malware, spyware e outros softwares indesejados.|
 |**Permitir o monitoramento de comportamento**|Permite que o Defender verifique se há certos padrões conhecidos de atividade suspeita nos dispositivos.|
 |**Habilitar o Sistema de Inspeção de Rede**|O NIS (Sistema de Inspeção de Rede) ajuda a proteger dispositivos contra explorações baseadas em rede usando as assinaturas de vulnerabilidades conhecidas do Microsoft Endpoint Protection Center para ajudar a detectar e bloquear tráfego mal-intencionado.|
@@ -201,7 +201,7 @@ Use o item de configuração do **Windows 8.1 e Windows 10** do System Center Co
 |**Exclusões de extensão de arquivo**|Adicione uma ou mais extensões de arquivo, como jpg ou txt, à lista de exclusões. Quaisquer arquivos com essas extensões não serão incluídos em verificações em tempo real ou programadas.|
 |**Exclusões de processo**|Adicione um ou mais processos do tipo .exe, .com ou .scr à lista de exclusões. Esses processos não serão incluídos em verificações em tempo real ou programadas.|
 
- 
+
 
 ###  <a name="cloud"></a>Nuvem  
 
@@ -244,9 +244,9 @@ Use o item de configuração do **Windows 8.1 e Windows 10** do System Center Co
 |**Gerenciamento de dispositivos durante roaming**|Permite que o dispositivo seja gerenciado pelo Configuration Manager durante o roaming.<br>(somente Windows 10)|  
 |**Download de software durante roaming**|Permite o download de aplicativos e software durante o roaming.<br>(somente Windows 10)|  
 |**Download de emails durante roaming**|Permite downloads de email durante o roaming.<br>(somente Windows 10)|  
-|**Roaming de dados**|Permita o roaming entre redes durante o acesso de dados.| 
+|**Roaming de dados**|Permita o roaming entre redes durante o acesso de dados.|
 |**VPN por celular**|Controla se o dispositivo pode acessar conexões VPN quando conectados a uma rede de celular.<br>(somente Windows 10)|
-|**Roaming de VPN no celular**|Controla se o dispositivo pode acessar conexões VPN ao usar roaming em uma rede de celular.<br>(somente Windows 10)| 
+|**Roaming de VPN no celular**|Controla se o dispositivo pode acessar conexões VPN ao usar roaming em uma rede de celular.<br>(somente Windows 10)|
 
 ###  <a name="encryption"></a>Criptografia  
 
@@ -287,7 +287,7 @@ Use o item de configuração do **Windows 8.1 e Windows 10** do System Center Co
 |**Configurações do servidor proxy**|Especifique, conforme necessário, as configurações de **Servidor** e **Porta** para **HTTP**, **WAP** e **Soquetes**.|  
 |**Habilitar acesso à rede 802.1X**|Selecione esta opção se desejar proteger a conexão com a especificação de um tipo de EAP.|  
 |**Tipo de EAP**|Escolha o tipo de EAP a ser usado do:<br>- **PEAP**<br>- **Cartão inteligente ou certificado**|  
- 
+
 
 ### <a name="certificates"></a>Certificados  
  Permite importar certificados a serem instalados em dispositivos móveis.  
@@ -356,11 +356,11 @@ Use o item de configuração do **Windows 8.1 e Windows 10** do System Center Co
 |------------------|-------------|  
 |**Permitir que a tela seja ativada automaticamente quando sensores detectarem alguém na sala**|Permite que o dispositivo seja ativado automaticamente quando o sensor detectar a alguém na sala.|  
 |**PIN exigido para projeção sem fio**|Especifica se você deve inserir um PIN antes de poder usar os recursos de projeção sem fio do dispositivo.|  
-|**Janela de Manutenção**|Configura a o intervalo em que atualizações podem ocorrer no dispositivo. Você pode configurar a hora de início do intervalo e sua duração (de 1 a 5 horas).| 
+|**Janela de Manutenção**|Configura a o intervalo em que atualizações podem ocorrer no dispositivo. Você pode configurar a hora de início do intervalo e sua duração (de 1 a 5 horas).|
 |**Azure Operational Insights**|O Azure Operational Insights, parte do pacote Microsoft Operations Manager coleta, armazena e analisa os dados de arquivo de log de dispositivos do Windows 10 Team.<br>Para conectar-se ao Azure Operational Insights, especifique uma **ID de Espaço de Trabalho** e uma **Chave de Espaço de Trabalho**.|
 |**Projeção sem fio Miracast**|Habilite esta opção se você quiser permitir que o dispositivo Windows 10 Team use dispositivos habilitados para Miracast para o projeto.<br>Se você habilitar essa opção, em **Escolher canal Miracast**, selecione o canal do Miracast usado para o conteúdo do projeto.|
 |**Informações sobre a reunião exibidas na tela de boas-vindas**|Se você habilitar essa opção, escolha as informações que serão exibidas no bloco **Reuniões** da tela de Boas-Vindas. Você pode:<br>- **Mostrar somente organizador e hora**<br>- **Mostrar organizador, hora e entidade (a entidade é oculta para reuniões particulares)**|
-|**URL da imagem de tela de fundo da tela de bloqueio**|Habilite essa configuração para exibir um plano de fundo personalizado na tela **Boas-Vindas** dos dispositivos com Windows 10 Team a partir da URL especificada.<br>A imagem deve estar no formato PNG, e a URL deve começar com **https://**.| 
+|**URL da imagem de tela de fundo da tela de bloqueio**|Habilite essa configuração para exibir um plano de fundo personalizado na tela **Boas-Vindas** dos dispositivos com Windows 10 Team a partir da URL especificada.<br>A imagem deve estar no formato PNG, e a URL deve começar com **https://**.|
 
 ### <a name="windows-information-protection"></a>Windows Information Protection
  Essas configurações são destinadas apenas a dispositivos que executam o Windows 10.
@@ -393,7 +393,6 @@ Para obter informações sobre como configurar a Proteção de Informações do 
 
 
 
-
-<!--HONumber=Dec16_HO3-->
+<!--HONumber=Jan17_HO4-->
 
 

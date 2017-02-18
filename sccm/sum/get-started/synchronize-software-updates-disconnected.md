@@ -1,12 +1,12 @@
 ---
 
-title: "Sincronizar atualizações de software de um ponto de atualização de software desconectado | Microsoft Docs"
-description: "Siga estes procedimentos para verificar se a sincronização de atualizações de software foi bem-sucedida no servidor de exportação, exportar atualizações e importar metadados de atualizações."
+title: "Sincronizar atualizações sem conexão de Internet – Configuration Manager | Microsoft Docs"
+description: "Execute a sincronização de atualizações de software no ponto de atualização de software superior que está desconectado da Internet."
 keywords: 
 author: dougeby
 ms.author: dougeby
 manager: angrobe
-ms.date: 10/06/2016
+ms.date: 01/23/2017
 ms.topic: article
 ms.prod: configuration-manager
 ms.service: 
@@ -14,8 +14,8 @@ ms.technology:
 - configmgr-sum
 ms.assetid: 1a997c30-8e71-4be5-89ee-41efb2c8d199
 translationtype: Human Translation
-ms.sourcegitcommit: e6cf8c799b5be2f7dbb6fadadddf702ec974ae45
-ms.openlocfilehash: 73a54ddb896bfa7fb770e02d188a262230762c7f
+ms.sourcegitcommit: 89158debdf4c345a325feeb608db2215a88ed81b
+ms.openlocfilehash: fd9c1e9418ff1956c6ef98753e23a293440179be
 
 
 
@@ -111,6 +111,6 @@ Depois de sincronizar as atualizações de software com os critérios de que voc
 
 
 
-<!--HONumber=Dec16_HO3-->
+<!--HONumber=Jan17_HO4-->
 
 

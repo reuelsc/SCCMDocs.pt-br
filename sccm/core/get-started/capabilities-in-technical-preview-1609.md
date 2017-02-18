@@ -1,8 +1,8 @@
 ---
-title: Funcionalidades do Technical Preview 1609 do System Center Configuration Manager | Microsoft Docs
+title: Funcionalidades no Technical Preview 1609 do Configuration Manager
 description: "Saiba mais sobre os recursos disponíveis no Technical Preview do System Center Configuration Manager, versão 1609."
 ms.custom: na
-ms.date: 10/06/2016
+ms.date: 01/23/2017
 ms.reviewer: na
 ms.suite: na
 ms.tgt_pltfrm: na
@@ -16,8 +16,8 @@ author: Brenduns
 ms.author: brenduns
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: 3bf44f850722afdb8dfe5922c8ceff11c9b56d08
-ms.openlocfilehash: 4ab022eda3367c79dbe698b6dab7017cb25b5e3a
+ms.sourcegitcommit: 5d08d1f9ccd995d544c3c21c4af52ede73343077
+ms.openlocfilehash: 89a41c8a3137d0e54011ddf9a1d9b4894ecb7df8
 
 ---
 # <a name="capabilities-in-technical-preview-1609-for-system-center-configuration-manager"></a>Funcionalidades no Technical Preview 1609 do System Center Configuration Manager
@@ -457,6 +457,6 @@ Conclua as seções a seguir na ordem:
 
 
 
-<!--HONumber=Dec16_HO3-->
+<!--HONumber=Jan17_HO4-->
 
 
