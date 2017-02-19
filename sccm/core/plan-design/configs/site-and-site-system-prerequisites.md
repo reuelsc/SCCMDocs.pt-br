@@ -2,7 +2,7 @@
 title: "Pré-requisitos do site | Microsoft Docs"
 description: Saiba como configurar um computador Windows com um servidor de sistema de sites do System Center Configuration Manager.
 ms.custom: na
-ms.date: 12/30/2016
+ms.date: 1/17/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
@@ -16,8 +16,8 @@ author: Brenduns
 ms.author: brenduns
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: e2330f116920f381ed10d186e17fdfb301d8a30a
-ms.openlocfilehash: 8bce8feffe4f09778d84145198d7e3c186de6ffe
+ms.sourcegitcommit: 42549b98dd7f418cc3f4543198aaeb90ea8a3efd
+ms.openlocfilehash: 0b1d2d619d6cdaf36cc22ef461ea1505b5cacc41
 
 ---
 # <a name="site-and-site-system-prerequisites-for-system-center-configuration-manager"></a>Pré-requisitos de site e do sistema de sites para o System Center Configuration Manager
@@ -70,7 +70,7 @@ ms.openlocfilehash: 8bce8feffe4f09778d84145198d7e3c186de6ffe
 
     -   A versão 1511 do Configuration Manager exige a versão para Windows 10 RTM (10.0.10240) do Windows ADK.  
 
--   Para saber mais sobre essa exigência, confira Implantação do sistema operacional.  
+-   Para mais informações sobre esse requisito, consulte [Requisitos de infraestrutura para implantação do sistema operacional](/sccm/osd/plan-design/infrastructure-requirements-for-operating-system-deployment).  
 
 **Pacotes Redistribuíveis do Visual C++:**  
 
@@ -119,7 +119,7 @@ ms.openlocfilehash: 8bce8feffe4f09778d84145198d7e3c186de6ffe
 
     -   A versão 1511 do Configuration Manager exige a versão para Windows 10 RTM (10.0.10240) do Windows ADK.  
 
--   Para saber mais sobre essa exigência, confira Implantação do sistema operacional.  
+-   Para mais informações sobre esse requisito, consulte [Requisitos de infraestrutura para implantação do sistema operacional](/sccm/osd/plan-design/infrastructure-requirements-for-operating-system-deployment).  
 
 ###  <a name="a-namebkmk2012acwspreqa-application-catalog-website-point"></a><a name="bkmk_2012acwspreq"></a> Ponto de sites da Web do Catálogo de Aplicativos  
 **Funções e recursos do Windows Server:**  
@@ -452,7 +452,7 @@ Agora, o Windows Server 2008 e o Windows Server 2008 R2 estão em suporte estend
 
     -   A versão 1511 do Configuration Manager exige a versão para Windows 10 RTM (10.0.10240) do Windows ADK.  
 
--   Para saber mais sobre essa exigência, confira Implantação do sistema operacional.  
+-   Para mais informações sobre esse requisito, consulte [Requisitos de infraestrutura para implantação do sistema operacional](/sccm/osd/plan-design/infrastructure-requirements-for-operating-system-deployment).  
 
 **Pacotes Redistribuíveis do Visual C++:**  
 
@@ -499,7 +499,7 @@ Agora, o Windows Server 2008 e o Windows Server 2008 R2 estão em suporte estend
 
     -   A versão 1511 do Configuration Manager exige a versão para Windows 10 RTM (10.0.10240) do Windows ADK.  
 
--   Para saber mais sobre essa exigência, confira Implantação do sistema operacional.  
+-   Para mais informações sobre esse requisito, consulte [Requisitos de infraestrutura para implantação do sistema operacional](/sccm/osd/plan-design/infrastructure-requirements-for-operating-system-deployment).  
 
 ###  <a name="a-namebkmk2008acwspreqa-application-catalog-website-point"></a><a name="bkmk_2008acwspreq"></a> Ponto de sites da Web do Catálogo de Aplicativos  
 **.NET Framework:**  
@@ -800,6 +800,6 @@ A configuração padrão do IIS é necessária.
 
 
 
-<!--HONumber=Dec16_HO5-->
+<!--HONumber=Jan17_HO3-->
 
 
