@@ -17,10 +17,10 @@
 ### [Atualizar o Branch de Manutenção em Longo Prazo para o Branch Atual](understand/convert-to-current-branch.md)
 ##  [Usar serviços de nuvem](understand/use-cloud-services.md)
 ### [Configuration Manager no Azure](understand/configuration-manager-on-azure.md)
+##  [Perguntas frequentes sobre produtos e licenciamento](understand/product-and-licensing-faq.md)
 ##  [Perguntas frequentes sobre dados de diagnóstico e de uso](understand/frequently-asked-questions-about-diagnostics-and-usage-data.md)
 
 #    [Planejamento e design](plan-design/get-ready.md)
-
 ##   Mudanças no produto
 ###  [Recursos e funcionalidades](plan-design/changes/features-and-capabilities.md)
 ###  [O que mudou com relação ao Configuration Manager 2012](plan-design/changes/what-has-changed-from-configuration-manager-2012.md)
@@ -89,6 +89,7 @@
 ###  [Configurar seu laboratório](get-started/set-up-your-lab.md)
 
 ##   [Technical Preview](get-started/technical-preview.md)
+###  [Recursos do 1701](get-started/capabilities-in-technical-preview-1701.md)
 ###  [Recursos do 1612](get-started/capabilities-in-technical-preview-1612.md)
 ###  [Recursos do 1611](get-started/capabilities-in-technical-preview-1611.md)
 ###  [Recursos do 1610](get-started/capabilities-in-technical-preview-1610.md)
@@ -258,7 +259,6 @@
 ###  [Como estender o inventário de hardware](clients/manage/inventory/extend-hardware-inventory.md)
 ###  [Como configurar o inventário de hardware](clients/manage/inventory/configure-hardware-inventory.md)
 ###  [Como configurar o inventário de hardware para dispositivos móveis em uma implantação híbrida](clients/manage/inventory/mobile-device-hardware-inventory-hybrid.md)
-<!--- ###  [Operations and maintenance for hardware inventory](clients/manage/inventory/hardware-inventory.md) --->
 ###  [Como usar o Gerenciador de Recursos para exibir o inventário de hardware](clients/manage/inventory/use-resource-explorer-to-view-hardware-inventory.md)
 ###  [Inventário de hardware para Linux e UNIX](clients/manage/inventory/hardware-inventory-for-linux-and-unix.md)
 ###  [Segurança e privacidade do inventário de hardware](clients/manage/inventory/security-and-privacy-for-hardware-inventory.md)
@@ -305,6 +305,6 @@
 ###  [Upgrade Analytics](clients/manage/upgrade/upgrade-analytics.md)
 
 
-<!--HONumber=Jan17_HO2-->
+<!--HONumber=Feb17_HO3-->
 
 
