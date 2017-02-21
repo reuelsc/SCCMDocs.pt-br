@@ -16,8 +16,8 @@ author: Brenduns
 ms.author: brenduns
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: 10b1010ccbf3889c58c55b87e70b354559243c90
-ms.openlocfilehash: 3de4d4138c377c1a231947ece956ed6748dacd1f
+ms.sourcegitcommit: 5e5155aa8c03b7e0c200d083024c8fa386f97aa7
+ms.openlocfilehash: cfac2c03c1b71b40c68d8acd5fbd96c5e98caaa9
 
 ---
 # <a name="custom-locations-for-system-center-configuration-manager-site-database-files"></a>Locais personalizados para os arquivos do banco de dados do site do System Center Configuration Manager
@@ -31,20 +31,20 @@ ms.openlocfilehash: 3de4d4138c377c1a231947ece956ed6748dacd1f
 
  **Durante a instalação** de um novo site primário ou site de administração central, você pode:  
 
--   Especifique locais de arquivo não padrão para o banco de dados do site: a instalação do Configuration Manager cria o banco de dados do site usando esses locais.  
+-   **Especificar locais de arquivo não padrão para o banco de dados do site**: a instalação do Configuration Manager cria o banco de dados do site usando esses locais.  
 
--   Especificar o uso de um banco de dados do SQL Server criado previamente que usa locais de arquivo personalizados: a instalação do Configuration Manager usa esse banco de dados criado previamente e seus locais de arquivos pré-configurados.  
+-   **Especificar o uso de um banco de dados do SQL Server criado previamente que usa locais de arquivo personalizados**: a instalação do Configuration Manager usa esse banco de dados criado previamente e seus locais de arquivos pré-configurados.  
 
-**Após a instalação** , você pode alterar o local dos arquivos de banco de dados do site. Isso exige que você pare o site e edite o local do arquivo no SQL Server:  
+**Após a instalação** você pode alterar o local dos arquivos de banco de dados do site. Isso exige que você pare o site e edite o local do arquivo no SQL Server:  
 
 -   No servidor do site do Configuration Manager pare o serviço **SMS_Executive**.  
 
--   Siga a documentação para a versão do SQL Server que você usa para orientá-lo sobre como mover um banco de dados do usuário. Por exemplo, se você usa o SQL Server 2014, consulte [Mover bancos de dados de usuário](https://technet.microsoft.com/library/ms345483\(v=sql.120\).aspx) no TechNet.  
+-   Siga a documentação para a versão do SQL Server que você usa para orientá-lo sobre como mover um banco de dados de usuário. Por exemplo, se você usa o SQL Server 2014, consulte [Mover bancos de dados de usuário](https://technet.microsoft.com/library/ms345483\(v=sql.120\).aspx) no TechNet.  
 
--   Depois de completar a movimentação de arquivos de banco de dados, reinicie o serviço SMS_Executive no servidor do site do Configuration Manager.  
+-   Depois de completar a movimentação de arquivos de banco de dados, reinicie o serviço **SMS_Executive** no servidor de sites do Configuration Manager.  
 
 
 
-<!--HONumber=Dec16_HO3-->
+<!--HONumber=Feb17_HO2-->
 
 

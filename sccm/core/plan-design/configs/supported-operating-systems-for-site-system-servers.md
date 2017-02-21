@@ -2,7 +2,7 @@
 title: Servidores de sistema de sites com suporte | Microsoft Docs
 description: "Saiba quais versões do Windows você pode usar para hospedar um site ou função de sistema de sites do System Center Configuration Manager."
 ms.custom: na
-ms.date: 1/3/2017
+ms.date: 2/1/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
@@ -16,8 +16,8 @@ author: Brenduns
 ms.author: brenduns
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: bebbeebba76ab5cf0c517fcb00b7b6a516a08e3e
-ms.openlocfilehash: 12fe730d924979eec2ef55ea80a1fa90b7b47464
+ms.sourcegitcommit: 4688b4b12a7afa5fcfdc0e42f984271d98f10316
+ms.openlocfilehash: bb017e575e0318b73cc5ea4e27fd33b1e9c2a02a
 
 
 ---
@@ -37,7 +37,7 @@ Use as informações neste tópico com as informações nos seguintes artigos:
 
 
 ## <a name="windows-server-2016-standard-and-datacenter"></a>Windows Server 2016: Standard e Datacenter
-Há suporte para o Windows Server 2016 a partir do Configuration Manager versão 1606, com o pacote cumulativo de atualizações do hotfix do KB3186654 (ou a versão de linha de base do 1606, liberada em outubro de 2016).
+A partir da versão 1606, com o pacote cumulativo de atualizações do hotfix do KB3186654 (ou a versão de linha de base do 1606, liberada em outubro de 2016), este sistema operacional é compatível com o seguinte:
 
 **Servidores do site:**  
 
@@ -325,12 +325,12 @@ Há suporte para o Windows Server 2016 a partir do Configuration Manager versão
 
     -   Os pontos de distribuição dão suporte a várias configurações diferentes que têm diferentes requisitos. Em alguns casos, essas configurações dão suporte à instalação não apenas em servidores, mas em sistemas operacionais cliente. Para obter mais informações sobre as opções disponíveis para pontos de distribuição, consulte [Manage content and content infrastructure for System Center Configuration Manager](../../../core/servers/deploy/configure/manage-content-and-content-infrastructure.md) (Gerenciar o conteúdo e a infraestrutura de conteúdo do System Center Configuration Manager).  
 
-## <a name="the-server-core-installation-of-windows-server-2012"></a>A instalação Server Core do Windows Server 2012  
- Além dos sistemas operacionais anteriores listados, há suporte para a instalação Server Core do Windows Server 2012 para uso como um ponto de distribuição com as seguintes limitações:  
 
--   Há suporte apenas para a versão de 64 bits.  
+## <a name="the-server-core-installation-of-windows-server-2016"></a>A instalação Server Core do Windows Server 2016
+A partir da versão 1606, com o pacote cumulativo de atualizações do hotfix do KB3186654 (ou a versão de linha de base do 1606, liberada em outubro de 2016), este sistema operacional é compatível para uso como ponto de distribuição com as seguintes limitações:  
+  -   Há suporte apenas para a versão de x64 bits.
+  -   Os pontos de distribuição nesse sistema operacional não dão suporte a PXE nem a Multicast.  
 
--   Os pontos de distribuição nesse sistema operacional não dão suporte a PXE nem a Multicast.
 
 ## <a name="the-server-core-installation-of-windows-server-2012-r2"></a>A instalação Server Core do Windows Server 2012 R2  
  Além dos sistemas operacionais anteriores listados, há suporte para a instalação Server Core do Windows Server 2012 R2 para uso como um ponto de distribuição com as seguintes limitações:  
@@ -339,8 +339,15 @@ Há suporte para o Windows Server 2016 a partir do Configuration Manager versão
 
 -   Os pontos de distribuição nesse sistema operacional não dão suporte a PXE nem a Multicast.  
 
+## <a name="the-server-core-installation-of-windows-server-2012"></a>A instalação Server Core do Windows Server 2012  
+ Além dos sistemas operacionais anteriores listados, há suporte para a instalação Server Core do Windows Server 2012 para uso como um ponto de distribuição com as seguintes limitações:  
+
+-   Há suporte apenas para a versão de 64 bits.  
+
+-   Os pontos de distribuição nesse sistema operacional não dão suporte a PXE nem a Multicast.
 
 
-<!--HONumber=Jan17_HO1-->
+
+<!--HONumber=Feb17_HO1-->
 
 

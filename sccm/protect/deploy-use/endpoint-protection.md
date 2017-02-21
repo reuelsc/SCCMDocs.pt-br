@@ -2,7 +2,7 @@
 title: Endpoint Protection | Microsoft Docs
 description: "Saiba como gerenciar políticas antimalware e a segurança do Firewall do Windows para computadores cliente na sua hierarquia do Configuration Manager."
 ms.custom: na
-ms.date: 01/17/2017
+ms.date: 02/6/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
@@ -16,8 +16,8 @@ author: NathBarn
 ms.author: nathbarn
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: 0fa837c68eb073d2ceaf48c938137a94141a102e
-ms.openlocfilehash: dd08e9ae6827e5f59eaf3414adbcc8667bc75140
+ms.sourcegitcommit: 4688b4b12a7afa5fcfdc0e42f984271d98f10316
+ms.openlocfilehash: 90e6d82e7fd1ff0ad4f1d616cc23201769fe26e2
 
 
 ---
@@ -38,7 +38,7 @@ O Endpoint Protection no System Center Configuration Manager permite gerenciar p
 
 -   Envie notificações por email, use o monitoramento no console e exiba relatórios para manter usuários administrativos informados quando for detectado malware nos computadores cliente  
 
-Computadores Windows 10 não exigem nenhum cliente adicional para o gerenciamento do Endpoint Protection. No Windows 8.1 e em computadores mais antigos, o Endpoint Protection instala seu próprio cliente além do cliente do Configuration Manager. Endpoint Protection pode gerenciar. O cliente do Endpoint Protection tem os seguintes recursos:  
+A partir do Windows 10 e do Windows Server 2016, os computadores não exigem nenhum cliente adicional para o gerenciamento do Endpoint Protection. No Windows 8.1 e em computadores mais antigos, o Endpoint Protection instala seu próprio cliente além do cliente do Configuration Manager. O cliente do Endpoint Protection tem os seguintes recursos:  
 
 -   Detecção e correção de malware e spyware  
 
@@ -122,6 +122,6 @@ Use as etapas a seguir para baixar o arquivo de imagem que contém o software cl
 
 
 
-<!--HONumber=Jan17_HO4-->
+<!--HONumber=Feb17_HO1-->
 
 

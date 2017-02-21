@@ -2,7 +2,7 @@
 title: "Atualizações no console | Microsoft Docs"
 description: "O System Center Configuration Manager sincroniza com a nuvem da Microsoft para obter atualizações que você pode instalar no console."
 ms.custom: na
-ms.date: 1/11/2017
+ms.date: 2/1/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
@@ -16,8 +16,8 @@ author: Brenduns
 ms.author: brenduns
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: 0d0735c170820259ac8bb6706aac7cc5569a1628
-ms.openlocfilehash: 00d9738a271ba47abcbf3c4b427a05910a0c2355
+ms.sourcegitcommit: 2f90f3204b3c31caaed1359e11451285b21eef50
+ms.openlocfilehash: b3a58503ea4d49825e93ea3a2e9bfedf975145e6
 
 
 ---
@@ -354,8 +354,9 @@ Se você tiver dado consentimento em um site primário autônomo e, depois, expa
 |Acesso condicional para PCs gerenciados pelo System Center Configuration Manager | [Versão 1602](../../../protect/deploy-use/manage-access-to-o365-services-for-pcs-managed-by-sccm.md)     |![Ainda não](media/83c5d168-8faf-4e8e-920b-528e3c43ffd4.gif)                        |
 
 
+## <a name="known-issues"></a>Problemas conhecidos
 
-##  <a name="a-namebkmkfaqa-why-dont-i-see-certain-updates-in-my-console"></a><a name="bkmk_faq"></a> Por que eu não vejo determinadas atualizações em meu console?  
+###  <a name="a-namebkmkfaqa-why-dont-i-see-certain-updates-in-my-console"></a><a name="bkmk_faq"></a> Por que eu não vejo determinadas atualizações em meu console?  
  Se você não conseguir encontrar uma atualização específica, ou quaisquer atualizações em seu console, após uma sincronização bem-sucedida com o serviço de nuvem da Microsoft, o motivo pode ser o seguinte:  
 
 -   A atualização exige uma configuração que sua infraestrutura não usa, ou a versão atual de seu produto não atende a um pré-requisito para receber a atualização.  
@@ -366,8 +367,21 @@ Se você tiver dado consentimento em um site primário autônomo e, depois, expa
 
     Consulte [Permissões para gerenciar atualizações](../../../core/servers/manage/install-in-console-updates.md#permissions-to-view-and-manage-updates-and-features) neste tópico para obter informações sobre permissões necessárias para exibir as atualizações e habilitar recursos do console.
 
+### <a name="why-do-i-see-two-updates-for-version-1610"></a>Por que vejo duas atualizações para a versão 1610?
+Ao exibir atualizações no console, você poderá ver duas atualizações para instalar a versão 1610. Essas atualizações têm datas diferentes. Isso acontece quando uma das seguintes opções for verdadeira:   
+-   Você instalou uma versão anterior (como 1606) após a versão 1610 ter ficado disponível
+
+-   Sua hierarquia executa a versão 1511 ou 1602 e não foi possível baixar a versão 1606
+
+Há duas versões de atualização 1610, porque esta atualização foi lançada novamente após algumas pequenas alterações a alguns binários do arquivo. Essas alterações não afetam a funcionalidade do Configuration Manager ou a atualização.
+
+Quando as atualizações ficarem disponíveis no seu console, recomendamos que você instale a atualização com a data mais recente. No entanto, como as duas atualizações fornecem os mesmos recursos, se você já instalou um deles não precisa fazer mais nada.
+-   Se você instalou a atualização mais antiga, não precisa instalar a atualização mais recente. Entretanto, se instalar a atualização mais recente depois de ter instalado a primeira atualização, os binários em questão serão atualizados, mas nenhuma alteração adicional ocorrerá e nenhuma ação adicional de sua parte é necessária.
+
+-   Se você instalou a atualização mais recente e, em seguida, instalou a atualização mais antiga, nenhuma ação adicional é necessária. Isso ocorre porque os binários mais recentes que você já instalado não serão substituídos pelos binários da atualização original.
 
 
-<!--HONumber=Jan17_HO2-->
+
+<!--HONumber=Feb17_HO1-->
 
 

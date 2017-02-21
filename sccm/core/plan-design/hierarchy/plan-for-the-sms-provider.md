@@ -2,7 +2,7 @@
 title: Planejar o provedor de SMS | Microsoft Docs
 description: "Saiba mais sobre como o Provedor de SMS ajuda você a gerenciar o System Center Configuration Manager."
 ms.custom: na
-ms.date: 10/06/2016
+ms.date: 2/7/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
@@ -16,8 +16,8 @@ author: Brenduns
 ms.author: brenduns
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: 6ed317d45d90758832d4157985dd95d5e253c6fc
-ms.openlocfilehash: 9b766575739246e05d5affbfeade3c31de95ef98
+ms.sourcegitcommit: 11ac851696ce52642412ca29e4873679d50cf398
+ms.openlocfilehash: 547dc39d5659c7c2e6f1ca670caddc127dbf22c4
 
 
 ---
@@ -25,20 +25,19 @@ ms.openlocfilehash: 9b766575739246e05d5affbfeade3c31de95ef98
 
 *Aplica-se a: System Center Configuration Manager (Branch Atual)*
 
-Para gerenciar o System Center Configuration Manager, você usar um console do Configuration Manager que se conecta a uma instância do **Provedor de SMS**. Por padrão, um provedor de SMS é instalado em um site de administração central ou site primário, quando o site é instalado.  
+Para gerenciar o System Center Configuration Manager, você usa um console do Configuration Manager que se conecta a uma instância do **Provedor de SMS**. Por padrão, um provedor de SMS é instalado no servidor de sites ao instalar em um site de administração central ou site primário. 
 
 
 ##  <a name="a-namebkmkplansmsprova-about-the-sms-provider"></a><a name="BKMK_PlanSMSProv"></a> Sobre o provedor de SMS  
  O Provedor de SMS é um provedor de WMI (Instrumentação de Gerenciamento do Windows) que atribui acesso de **leitura** e **gravação** ao banco de dados do Configuration Manager em um site:  
 
--   O grupo **Administradores de SMS**  fornece acesso ao provedor de SMS. O Configuration Manager cria automaticamente este grupo de segurança no servidor do site e em cada computador do Provedor de SMS.  
-
--   Cada site de administração central e cada site primário exigem, pelo menos, um provedor de SMS.  Você pode instalar provedores adicionais conforme necessário.  
+-   Cada site de administração central e cada site primário exigem, pelo menos, um provedor de SMS. Você pode instalar provedores adicionais conforme necessário.  
+-   O grupo **Administradores de SMS** fornece acesso ao provedor de SMS. O Configuration Manager cria automaticamente este grupo de segurança no servidor de sites e em cada computador em que for instalada uma instância do Provedor de SMS.  
 
 -   Sites secundários não dão suporte para o Provedor de SMS.  
 
 
-Cada console do Configuration Manager, o Gerenciador de Recursos, as ferramentas e os scripts personalizados usam um Provedor de SMS para que os usuários administrativos do Configuration Manager possam acessar as informações armazenadas no banco de dados. O Provedor de SMS não interage com os clientes do Configuration Manager. Quando um console do Configuration Manager se conecta a um site, o console do Configuration Manager solicita que o WMI no servidor do site localize uma instância do Provedor de SMS para ele usar.  
+Usuários administrativos do Configuration Manager usam um provedor de SMS para acessar as informações armazenadas no banco de dados. Para fazer isso, os administradores podem usar o console do Configuration Manager, o Gerenciador de Recursos, ferramentas e scripts personalizados. O Provedor de SMS não interage com os clientes do Configuration Manager. Quando um console do Configuration Manager se conecta a um site, o console do Configuration Manager solicita que o WMI no servidor do site localize uma instância do Provedor de SMS para ele usar.  
 
  O Provedor de SMS ajuda a reforçar a segurança do Configuration Manager. Retorna apenas informações que o usuário administrativo que está executando o console do Configuration Manager tem autorização para exibir.  
 
@@ -47,11 +46,11 @@ Cada console do Configuration Manager, o Gerenciador de Recursos, as ferramentas
 
  Para obter mais informações sobre como gerenciar o provedor de SMS, veja [Manage the SMS Provider](../../../core/servers/manage/modify-your-infrastructure.md#BKMK_ManageSMSprovider) em [Modify your System Center Configuration Manager infrastructure](../../../core/servers/manage/modify-your-infrastructure.md).  
 
- **Pré-requisitos para instalar o provedor de SMS:**  
+## <a name="prerequisites-to-install-the-sms-provider"></a>Pré-requisitos para instalar o provedor de SMS  
 
  Para dar suporte ao provedor de SMS:  
 
--   o computador deve estar em um domínio que tenha uma relação de confiança bidirecional com o servidor do site e com os sistemas de site do banco de dados do site.  
+-   o computador deve estar em um domínio que tenha uma relação de confiança bidirecional com o servidor de sites e com os sistemas de site do banco de dados do site.  
 
 -   o computador não pode ter uma função do sistema de um site diferente.  
 
@@ -62,7 +61,7 @@ Cada console do Configuration Manager, o Gerenciador de Recursos, as ferramentas
 -   O computador deve ter pelo menos 650 MB de espaço livre em disco para dar suporte aos componentes do Windows ADK (Kit de Implantação Automatizada do Windows) instalados com o Provedor de SMS. Para obter mais informações sobre o Windows ADK e o provedor de SMS, veja [Requisitos de implantação do sistema operacional para o Provedor de SMS](#BKMK_WAIKforSMSProv) neste tópico.  
 
 ##  <a name="a-namebkmklocationa-sms-provider-locations"></a><a name="bkmk_location"></a> Locais do Provedor de SMS  
- Quando você instala um site, o primeiro provedor de SMS para o site é instalado automaticamente. Você pode especificar qualquer um dos seguintes locais com suporte para o Provedor de SMS:  
+ Ao instalar um site, o primeiro provedor de SMS para o site é instalado automaticamente. Você pode especificar qualquer um dos seguintes locais com suporte para o Provedor de SMS:  
 
 -   o computador do servidor do site  
 
@@ -71,7 +70,7 @@ Cada console do Configuration Manager, o Gerenciador de Recursos, as ferramentas
 -   um computador de classe de servidor que não tenha Provedor de SMS ou função de sistema de um site diferente  
 
 
-Para exibir os locais de cada Provedor de SMS instalado em um local, consulte a guia **Geral** da caixa de diálogo **Propriedades** do site.  
+Para exibir os locais de cada Provedor de SMS instalado em um local, veja a guia **Geral** da caixa de diálogo **Propriedades** do site.  
 
  Cada Provedor de SMS oferece suporte a conexões simultâneas de várias solicitações. As únicas limitações a essas conexões são o número de conexões de servidores disponíveis no computador do Provedor de SMS e os recursos disponíveis no computador do Provedor de SMS para atendimento às solicitações de conexão.  
 
@@ -79,8 +78,7 @@ Para exibir os locais de cada Provedor de SMS instalado em um local, consulte a 
 
  Use o seguinte para identificar as vantagens e desvantagens de instalar um Provedor de SMS em cada local com suporte:  
 
-
-**Servidor do site do Configuration Manager**  
+ **Servidor do site do Configuration Manager**  
 
 -   **Vantagens:**  
 
@@ -105,7 +103,7 @@ Para exibir os locais de cada Provedor de SMS instalado em um local, consulte a 
 
     -   O Provedor de SMS usa recursos de sistema e de rede que poderiam ser dedicados a operações de banco de dados do site.  
 
-    -   Esse local não é uma opção quando o banco de dados do site está hospedado em uma instância clusterizada do SQL Server.  
+    -   Não é possível usar esse local quando o banco de dados do site está hospedado em uma instância clusterizada do SQL Server.  
 
 
 **Computador diferente do servidor do site ou computador do banco de dados do site**  
@@ -118,7 +116,7 @@ Para exibir os locais de cada Provedor de SMS instalado em um local, consulte a 
 
 -   **Desvantagens:**  
 
-    -   O desempenho do Provedor de SMS pode ser reduzido em razão do tráfego de rede adicional necessário para a coordenação com o servidor do site e com o computador do banco de dados do site.  
+    -   O desempenho do Provedor de SMS pode ser reduzido em razão do tráfego de rede adicional necessário para a coordenação com o servidor de sites e com o computador do banco de dados do site.  
 
     -   Esse servidor deve estar sempre acessível ao computador do banco de dados do site e a todos os computadores com o console do Configuration Manager instalado.  
 
@@ -127,7 +125,9 @@ Para exibir os locais de cada Provedor de SMS instalado em um local, consulte a 
 ##  <a name="a-namebkmksmsprovlanguagesa-about-sms-provider-languages"></a><a name="BKMK_SMSProvLanguages"></a> Sobre idiomas do Provedor de SMS  
  O Provedor de SMS funciona independentemente do idioma de exibição do computador onde ele está instalado.  
 
- Quando um usuário administrativo ou um processo do Configuration Manager solicita dados usando o Provedor de SMS, o Provedor de SMS tenta retornar os dados em um formato que corresponda ao idioma do sistema operacional do computador solicitante. O Provedor de SMS não converte as informações de um idioma para outro. Em vez disso, quando os dados são retornados para exibição no console do Configuration Manager, o idioma de exibição dos dados depende da origem do objeto e do tipo de armazenamento.  
+ Quando um usuário administrativo ou um processo do Configuration Manager solicita dados usando o Provedor de SMS, o Provedor de SMS tenta retornar os dados em um formato que corresponda ao idioma do sistema operacional do computador solicitante.
+
+A maneira que ele tenta corresponder o idioma é um pouco indireta. O Provedor de SMS não converte as informações de um idioma para outro. Em vez disso, quando os dados são retornados para exibição no console do Configuration Manager, o idioma de exibição dos dados depende da origem do objeto e do tipo de armazenamento.  
 
  Quando os dados de um objeto são armazenados no banco de dados, os idiomas disponíveis dependem do seguinte:  
 
@@ -145,12 +145,12 @@ Para exibir os locais de cada Provedor de SMS instalado em um local, consulte a 
 -   você quer garantir alta disponibilidade para o Provedor de SMS.  
 
 
-Quando vários Provedores de SMS estão instalados em um local e uma solicitação de conexão é feita, o local, de forma não determinística, atribui cada nova solicitação de conexão ao uso de um Provedor de SMS instalado. Não é possível especificar o local do Provedor de SMS a ser usado em uma sessão de conexão específica.  
+Quando vários Provedores de SMS estão instalados em um site e uma solicitação de conexão é feita, o site, de forma não determinística, atribui a cada nova solicitação de conexão o uso de um Provedor de SMS instalado. Não é possível especificar o local do Provedor de SMS a ser usado em uma sessão de conexão específica.  
 
 > [!NOTE]  
->  Considere as vantagens e as desvantagens de cada local de Provedor de SMS e equilibre essas considerações com as informações que você não pode controlar, como quais Provedores de SMS serão usados para cada nova conexão.  
+>  Considere as vantagens e desvantagens de cada local de provedor de SMS. Equilibre essas considerações com as informações que você não pode controlar, que são os provedores de SMS usados para cada nova conexão.  
 
-Por exemplo, quando você conecta um console do Configuration Manager pela primeira vez a um site, a conexão solicita ao WMI no servidor do site para identificar, de forma não determinística, uma instância do Provedor de SMS que o console usará. Essa instância específica do Provedor de SMS continua em uso pelo console do Configuration Manager até que a sessão do console do Configuration Manager termine. Se a sessão terminar devido ao computador do Provedor de SMS ficar indisponível na rede, quando você se conectar novamente ao console do Configuration Manager o site atribuirá, de forma não determinística, um computador do Provedor de SMS à nova sessão de conexão. É possível ser atribuído ao mesmo computador do Provedor de SMS que não está disponível. Se isso ocorrer, tente reconectar o console do Configuration Manager até que seja atribuído um computador disponível do Provedor de SMS.  
+Por exemplo, quando você conecta um console do Configuration Manager pela primeira vez a um site, a conexão solicita ao WMI no servidor de sites para identificar uma instância do Provedor de SMS que o console usará. Essa instância específica do Provedor de SMS continua em uso pelo console do Configuration Manager até que a sessão do console do Configuration Manager termine. Se a sessão terminar devido ao computador do Provedor de SMS ficar indisponível na rede, quando você se conectar novamente ao console do Configuration Manager o site simplesmente atribuirá uma instância do Provedor de SMS à nova sessão de conexão. É possível ser atribuído ao mesmo computador do Provedor de SMS que não está disponível. Se isso ocorrer, tente reconectar o console do Configuration Manager até que seja atribuído um computador disponível do Provedor de SMS.  
 
 ##  <a name="a-namebkmkaboutsmsadminsa-about-the-sms-admins-group"></a><a name="BKMK_AboutSMSAdmins"></a> Sobre o grupo de administradores de SMS  
  Use o grupo de administradores de SMS para fornecer acesso de usuário administrativo ao Provedor de SMS. O grupo é criado automaticamente no servidor do site quando o site é instalado, bem como em cada computador que instala um Provedor de SMS. Informações adicionais sobre o grupo de administradores de SMS:  
@@ -166,7 +166,7 @@ Para que um usuário possa fazer uma conexão bem-sucedida a um Provedor de SMS,
 
 Depois que o usuário faz uma conexão bem-sucedida com o Provedor de SMS, a administração baseada em funções determina quais recursos do Configuration Manager o usuário poderá acessar ou gerenciar.  
 
-É possível exibir e configurar os direitos e as permissões do grupo de Administradores de SMS usando o snap-in do MMC do Controle WMI. Por padrão, a opção **Todos** tem as permissões **Executar Métodos**, **Gravação do Provedor**e **Habilitar Conta** . Quando um usuário se conecta ao Provedor de SMS, é concedido a ele acesso aos dados do banco de dados do site com base em seus direitos de segurança administrativa baseados em função definidos no console do Configuration Manager. **Habilitar conta** e **Habilitação remota** é concedido explicitamente ao grupo de administradores de SMS no namespace **Root\SMS** .  
+É possível exibir e configurar os direitos e as permissões do grupo de Administradores de SMS usando o snap-in do MMC do Controle WMI. Por padrão, a opção **Todos** tem as permissões **Executar Métodos**, **Gravação do Provedor**e **Habilitar Conta** . Quando um usuário se conecta ao Provedor de SMS, é concedido a ele acesso aos dados do banco de dados do site com base em seus direitos de segurança administrativa baseados em função definidos no console do Configuration Manager. O grupo de administradores de SMS recebe explicitamente as permissões **Habilitar conta** e **Habilitação remota** no namespace **Root\SMS**.  
 
 > [!NOTE]  
 >  Cada usuário administrativo que usa um console remoto do Configuration Manager requer permissões DCOM de ativação remota no computador do servidor do site e no computador Provedor de SMS. Embora você possa conceder esses direitos a qualquer usuário ou grupo, como prática recomendada, atribua-os ao grupo de administradores de SMS para simplificar a administração. Para obter mais informações, consulte a seção [Configure DCOM permissions for remote Configuration Manager consoles](../../../core/servers/manage/modify-your-infrastructure.md#BKMK_ConfigDCOMforRemoteConsole) no tópico [Modify your System Center Configuration Manager infrastructure](../../../core/servers/manage/modify-your-infrastructure.md) .  
@@ -178,29 +178,31 @@ A estrutura do Provedor de SMS é definida pelo esquema WMI. Namespaces do esque
 |espaço de nome|Descrição|  
 |---------------|-----------------|  
 |Root\SMS\site_*&lt;código do site\>*|O Provedor de SMS, que é muito utilizado pelo console do Configuration Manager, Gerenciador de Recursos, ferramentas do Configuration Manager e scripts.|  
-|Root\SMS\SMS_ProviderLocation|Fornece a localização dos computadores do Provedor de SMS para um site.|  
-|Root\cimv2|Local de inventário para obter informações de namespace do WMI durante o inventário de hardware e software.|  
+|Root\SMS\SMS_ProviderLocation|A localização dos computadores do Provedor de SMS para um site.|  
+|Root\cimv2|O local de inventário para obter informações de namespace do WMI durante o inventário de hardware e software.|  
 |Root\CCM|Dados do cliente e políticas de configuração do cliente do Configuration Manager.|  
-|root\CIMv2\SMS|Localização de classes de relatório de inventário que são coletadas pelo agente do cliente de inventário. Essas configurações são compiladas pelos clientes durante a avaliação de políticas do computador e são baseadas nas definições de configuração do cliente para o computador.|  
+|root\CIMv2\SMS|A localização de classes de relatório de inventário que são coletadas pelo agente do cliente de inventário. Essas configurações são compiladas pelos clientes durante a avaliação de políticas do computador e são baseadas nas definições de configuração do cliente para o computador.|  
 
 ##  <a name="a-namebkmkwaikforsmsprova-operating-system-deployment-requirements-for-the-sms-provider"></a><a name="BKMK_WAIKforSMSProv"></a> Requisitos de implantação do sistema operacional para o Provedor de SMS  
-O Provedor de SMS requer que a seguinte dependência externa seja instalada no computador que o executa para permitir a utilização das funções de tarefas de implantação do sistema operacional, usando o console do Configuration Manager:  
+O computador no qual você instala uma instância do Provedor de SMS deve ter a versão obrigatória do Windows ADK exigida pela versão do Configuration Manager que você está usando.  
 
--   Kit de Avaliação e Implantação do Windows 8.1  
+ -   Por exemplo, a versão 1511 do Configuration Manager exige a versão Windows 10 RTM (10.0.10240) do Windows ADK.  
 
- Ao gerenciar implantações do sistema operacional, o Windows ADK permite que o Provedor de SMS conclua diversas tarefas, inclusive:  
+ -   Para mais informações sobre esse requisito, consulte [Requisitos de infraestrutura para implantação do sistema operacional](/sccm/osd/plan-design/infrastructure-requirements-for-operating-system-deployment).  
 
--   Exibir detalhes do arquivo WIM  
+Ao gerenciar implantações do sistema operacional, o Windows ADK permite que o Provedor de SMS conclua diversas tarefas, inclusive:  
 
--   Adicionar arquivos de driver a imagens de inicialização existentes  
+-   Exibir detalhes do arquivo WIM.  
 
--   Criar arquivos .ISO de inicialização  
+-   Adicionar arquivos de driver a imagens de inicialização existentes.  
+
+-   Criar arquivos .ISO de inicialização.  
 
 
 A instalação do Windows ADK pode exigir até 650 MB de espaço livre em disco em cada computador que instalar o Provedor de SMS. A alta demanda de espaço em disco é necessária para que o Configuration Manager instale imagens de inicialização do Windows PE.  
 
 
 
-<!--HONumber=Dec16_HO3-->
+<!--HONumber=Feb17_HO2-->
 
 

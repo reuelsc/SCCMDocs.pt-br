@@ -2,10 +2,10 @@
 title: "Atualizar análise | System Center Configuration Manager"
 description: "Integrar o Upgrade Analytics ao Configuration Manager. Acessar dados de compatibilidade de atualização no seu console de administração. Dispositivos de destino para atualização ou correção."
 keywords: 
-author: nbigman
-ms.author: nbigman
+author: brenduns
+ms.author: brenduns
 manager: angerobe
-ms.date: 11/23/2016
+ms.date: 12/3/2017
 ms.topic: article
 ms.prod: configuration-manager
 ms.service: 
@@ -13,8 +13,8 @@ ms.technology:
 - configmgr-client
 ms.assetid: 68407ab8-c205-44ed-9deb-ff5714451624
 translationtype: Human Translation
-ms.sourcegitcommit: bf28164fc2594d2557db5626a6f52c32ad99a1fe
-ms.openlocfilehash: fa90fa0da348e7cca186ff8066c7a9fa98c57cf5
+ms.sourcegitcommit: 831d8a66c827d246069c7415cdce7a7c4bb95b33
+ms.openlocfilehash: 07747b86bad0d1ce6302521093fc3c4433c59325
 
 
 ---
@@ -73,13 +73,13 @@ O script de implantação do Upgrade Analytics faz o seguinte:
 - Define as chaves de ID comercial + CommercialDataOptIn + RequestAllAppraiserVersions.  
 - Verifica se computadores de usuário podem enviar dados à Microsoft.  
 - Verifica se o computador tem uma reinicialização pendente.   
-- Verifica se a versão mais recente do pacote 10.0.x de KB está instalada (requer 10.0.14348 ou versões posteriores).  
+- Verifica se a versão mais recente do pacote 10.0.x da KB está instalada (requer 10.0.14913 ou versões posteriores).  
 - Se habilitado, ativará o modo detalhado para solução de problemas.  
 - Inicia a coleta de dados de telemetria que a Microsoft precisa para avaliar a preparação para a atualização da sua organização.  
 - Se habilitado, exibirá o progresso do script em uma janela cmd, fornecendo visibilidade de problemas (sucesso ou falha para cada etapa) e/ou gravará no arquivo de log.  
-  
+
 ### <a name="to-run-the-upgrade-analytics-deployment-script"></a>Para executar o script de implantação do Upgrade Analytics:  
-  
+
 1. Baixe o [script de implantação do Upgrade Analytics](https://go.microsoft.com/fwlink/?LinkID=822966&clcid=0x409) e extraia UpgradeAnalytics.zip. Os arquivos na pasta **Diagnóstico** só serão necessários se você planejar executar o script no modo de solução de problemas.  
 2. Edite esses parâmetros em RunConfig.bat:  
 - Local de armazenamento para informações de log. Exemplo: % SystemDrive%\UADiagnostics. Você pode armazenar informações de log em um compartilhamento de arquivo remoto ou em um diretório local. Se o script for impedido de criar o arquivo de log para o caminho especificado, ele criará os arquivos de log na unidade com o diretório do Windows.  
@@ -90,12 +90,12 @@ O script de implantação do Upgrade Analytics faz o seguinte:
     - logMode = log 2 somente para arquivo  
     - Para solucionar o problema, defina **isVerboseLogging** como **$true** para gerar informações de log que podem ajudar a diagnosticar problemas. Por padrão, **isVerboseLogging** é definido como **$false**. Certifique-se de que a pasta Diagnóstico está instalada no mesmo diretório que o script para usar esse modo.  
     - Notifique os usuários se eles precisarem reinicializar seus computadores. Por padrão, isso é definido como desativado.  
-  
+
 3. Após terminar de editar os parâmetros em RunConfig.bat, execute o script como um administrador.  
-  
-  
+
+
 ## <a name="view-microsoft-upgrade-analytics-properties-in-configuration-manager"></a>Exibir propriedades do Microsoft Upgrade Analytics no Configuration Manager  
-  
+
 1.  No console do Configuration Manager, navegue até **Serviços de Nuvem** e, em seguida, escolha **Conector OMS** para abrir a página **Propriedades de Conexão do OMS**.  
 
 2.  Nessa página, há duas guias:
@@ -113,6 +113,6 @@ Após a integração do Upgrade Analytics ao Configuration Manager, você poder�
 
 
 
-<!--HONumber=Dec16_HO3-->
+<!--HONumber=Feb17_HO2-->
 
 

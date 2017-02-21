@@ -2,7 +2,7 @@
 title: "Publicação e o esquema do Active Directory | Microsoft Docs"
 description: Estenda o esquema do Active Directory para o System Center Configuration Manager para simplificar o processo de implantar e configurar clientes.
 ms.custom: na
-ms.date: 10/06/2016
+ms.date: 2/6/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
@@ -17,8 +17,8 @@ author: Brenduns
 ms.author: brenduns
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: 2083a2ca7a199771f26981cdbe04e4e2ef6e8958
-ms.openlocfilehash: 3bd18e2de76d886b275c80d0dce3b824f2598008
+ms.sourcegitcommit: 88649111ea3a38c027efb4952211546afd0bf27e
+ms.openlocfilehash: 58beef440db8e019a06ce7c4c8eaabc8e85ce954
 
 
 ---
@@ -28,7 +28,7 @@ ms.openlocfilehash: 3bd18e2de76d886b275c80d0dce3b824f2598008
 
 Ao estender o esquema do Active Directory para o System Center Configuration Manager, você introduz novas estruturas para o Active Directory usadas pelos sites do Configuration Manager para publicar informações chave em um local seguro onde os clientes podem acessá-las facilmente.  
 
- É recomendável usar o Configuration Manager com um esquema do Active Directory estendido ao gerenciar clientes locais. Um esquema estendido pode simplificar o processo de implantar e configurar clientes, e possibilita que os clientes eficientemente localizem recursos, como servidores e serviços adicionais fornecidos pelas várias funções do sistema de sites do Configuration Manager.  
+É recomendável usar o Configuration Manager com um esquema do Active Directory estendido ao gerenciar clientes locais. Um esquema estendido pode simplificar o processo de implantação e configuração de clientes. Um esquema estendido também permite que os clientes localizem com eficiência recursos como servidores de conteúdo e serviços adicionais, que fornecem diferentes funções do sistema de sites do Configuration Manager.  
 
 -   Se você não estiver familiarizado com qual esquema estendido fornece uma implantação do Configuration Manager, leia [Extensões de esquema para o System Center Configuration Manager](../../../core/plan-design/network/schema-extensions.md) para ajudá-lo a tomar essa decisão.  
 
@@ -36,14 +36,14 @@ Ao estender o esquema do Active Directory para o System Center Configuration Man
 
 -   Se o esquema do Active Directory tiver sido estendido para o Configuration Manager 2007 ou o System Center 2012 Configuration Manager, você não precisará fazer mais nada. As extensões de esquema permanecerão inalteradas e já estarão em vigor.  
 
-Estender o esquema é uma ação única para qualquer floresta. Estender e então usar o esquema do Active Directory estendido envolve o seguinte:  
+Estender o esquema é uma ação única para qualquer floresta. Para estender e, em seguida, usar o esquema estendido do Active Directory, siga estas etapas:  
 
 ## <a name="step-1-extend-the-schema"></a>Etapa 1. Estender o esquema  
-Estender o esquema para o Configuration Manager exige que você:  
+Para estender o esquema do Configuration Manager:  
 
--   Use uma conta que seja membro do grupo de segurança Administradores de Esquema  
+-   Use uma conta que seja membro do grupo de segurança Administradores de Esquema.  
 
--   Esteja conectado ao controlador de domínio do mestre de esquema  
+-   Esteja conectado ao controlador de domínio mestre do esquema.  
 
 -   Execute a ferramenta **Extadsch.exe** ou use o utilitário de linha de comando LDIFDE com o arquivo **ConfigMgr_ad_schema.ldf** . A ferramenta e o arquivo estão na pasta **SMSSETUP\BIN\X64** na mídia de instalação do Configuration Manager.  
 
@@ -54,28 +54,28 @@ Estender o esquema para o Configuration Manager exige que você:
     > [!TIP]  
     >  Execute essa ferramenta em uma linha de comando para exibir comentários enquanto ela é executada.  
 
-2.  Verifique se a extensão do esquema foi realizada com sucesso analisando o extadsch.log localizado na raiz da unidade do sistema.  
+2.  Verifique se a extensão do esquema foi realizada com sucesso analisando extadsch.log na raiz da unidade do sistema.  
 
 #### <a name="option-b-use-the-ldif-file"></a>A opção B: usar o arquivo LDIF  
 
-1.  Edite o arquivo **ConfigMgr_ad_schema.ldf** para definir o domínio raiz do Active Directory você deseja estender:  
+1.  Edite o arquivo **ConfigMgr_ad_schema.ldf** para definir o domínio raiz do Active Directory que deseja estender:  
 
-    -   Todas as instâncias do texto **DC=x** no arquivo devem ser substituídas pelo nome completo do domínio que será estendido  
+    -   Substitua todas as instâncias do texto **DC=x** no arquivo pelo nome completo do domínio a estender.  
 
     -   Por exemplo, se o nome completo do domínio a ser estendido for widgets.microsoft.com, altere todas as instâncias de DC=x no arquivo para **DC=widgets, DC=microsoft, DC=com**.  
 
-2.  Use o utilitário de linha de comando LDIFDE para importar o conteúdo do arquivo **ConfigMgr_ad_schema.ldf** para os Serviços de Domínio do Active Directory:  
+2.  Use o utilitário de linha de comando LDIFDE para importar o conteúdo do arquivo **ConfigMgr_ad_schema.ldf** para o Active Directory Domain Services:  
 
-    -   Por exemplo, a seguinte linha de comando importará as extensões do esquema para o Active Directory Domain Services, ativará o registro em log detalhado e criará um arquivo de log durante o processo de importação: **ldifde -i -f ConfigMgr_ad_schema.ldf -v -j &lt;local para armazenar o arquivo de log\>**  
+    -   Por exemplo, a seguinte linha de comando importará as extensões do esquema para o Active Directory Domain Services, ativará o registro em log detalhado e criará um arquivo de log durante o processo de importação: **ldifde -i -f ConfigMgr_ad_schema.ldf -v -j &lt;local para armazenar o arquivo de log\>**.  
 
-3.  Você pode verificar se a extensão do esquema foi bem-sucedida analisando um arquivo de log criado pela linha de comando usada na etapa anterior.  
+3.  Para verificar se a extensão do esquema foi bem-sucedida, analise um arquivo de log criado pela linha de comando na etapa anterior.  
 
 ## <a name="step-2--create-the-system-management-container-and-grant-sites-permissions-to-the-container"></a>Etapa 2.  Criar contêiner do System Management e conceder permissões de sites para o contêiner  
- Depois de estender o esquema, você deve criar um contêiner denominado **Gerenciamento do Sistema** nos AD DS (Active Directory Domain Services):  
+ Depois de estender o esquema, você deve criar um repositório denominado **System Management** nos AD DS (Active Directory Domain Services):  
 
--   Crie esse contêiner uma vez em cada domínio que tenha um site primário ou secundário que publicará dados no Active Directory  
+-   Crie esse contêiner uma vez em cada domínio que tenha um site primário ou secundário que publicará dados no Active Directory.  
 
--   Para cada contêiner, conceda permissões para a conta de computador de cada servidor de site primário e secundário que publicará dados nesse domínio. Cada conta deve ter **Controle Total** sobre o contêiner, com a permissão avançada **Aplicar em** igual a **Este objeto e todos os descendentes**  
+-   Para cada contêiner, conceda permissões para a conta de computador de cada servidor de site primário e secundário que publicará dados nesse domínio. Cada conta deve ter **Controle Total** sobre o contêiner, com a permissão avançada **Aplicar em** igual a **Este objeto e todos os descendentes**.  
 
 #### <a name="to-add-the-container"></a>Para adicionar o contêiner  
 
@@ -87,33 +87,32 @@ Estender o esquema para o Configuration Manager exige que você:
 
     -   Expanda o &lt;nome de domínio totalmente qualificado do computador\> do **Domínio**, expanda o &lt;nome diferenciado\>, clique com o botão direito do mouse em **CN=System**, clique em **Novo** e em **Objeto**.  
 
-    -   Na caixa de diálogo **Criar Objeto** , selecione **Contêiner**e clique em **Próximo**.  
+    -   Na caixa de diálogo **Criar Objeto**, selecione **Contêiner** e clique em **Avançar**.  
 
-    -   Na caixa **Valor** , digite **System Management**e clique em **Próximo**.  
+    -   Na caixa **Valor**, digite **System Management** e clique em **Avançar**.  
 
 4.  Atribuir permissões:  
 
     > [!NOTE]  
     >  se preferir, você pode usar outras ferramentas, como a ferramenta administrativa Computadores e Usuários do Active Directory (dsa.msc) para adicionar permissões ao contêiner.  
 
-    -   Clique com o botão direito do mouse em **CN=System Management**e clique em **Propriedades**.  
+    -   Clique com o botão direito do mouse em **CN=System Management** e clique em **Propriedades**.  
 
-    -   Selecione a guia **Segurança**, clique em **Adicionar** e adicione a conta de computador do servidor do site com  
-        **Controle Total** .  
+    -   Selecione a guia **Segurança**, clique em **Adicionar** e, em seguida, adicione a conta de computador do servidor de sites com permissão **Controle Total**.  
 
-    -   Clique em **Avançado**, selecione a conta de computador do servidor de site e clique em **Editar**.  
+    -   Clique em **Avançado**, selecione a conta de computador do servidor de sites e clique em **Editar**.  
 
-    -   Na lista **Aplicar em** , selecione **Este objeto e todos os descendentes**.  
+    -   Na lista **Aplicar em**, selecione **Este objeto e todos os descendentes**.  
 
 5.  Clique em **OK** para fechar o console e salvar a configuração.  
 
-## <a name="step-3-configure-sites-to-publish-to-active-directory-domain-services"></a>Etapa 3. Configurar sites para publicar em Serviços de Domínio do Active Directory  
- Depois que o contêiner estiver configurado, as permissões tiverem sido concedidas e você tiver instalado um site primário do Configuration Manager, será possível configurar esse site para publicar dados no Active Directory.  
+## <a name="step-3-set-up-sites-to-publish-to-active-directory-domain-services"></a>Etapa 3. Configurar sites para publicarem no Active Directory Domain Services  
+ Depois que o repositório estiver configurado, as permissões tiverem sido concedidas e você tiver instalado um site primário do Configuration Manager, é possível configurar esse site para publicar dados no Active Directory.  
 
- Para obter informações sobre a publicação, consulte [Publish site data for System Center Configuration Manager](../../../core/servers/deploy/configure/publish-site-data.md).  
+ Para saber mais sobre a publicação, veja [Publicar dados do site para o System Center Configuration Manager](../../../core/servers/deploy/configure/publish-site-data.md).  
 
 
 
-<!--HONumber=Dec16_HO3-->
+<!--HONumber=Feb17_HO1-->
 
 

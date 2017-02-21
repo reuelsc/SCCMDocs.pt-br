@@ -2,7 +2,7 @@
 title: "Atualizar instalações de avaliação | Microsoft Docs"
 description: "Saiba como atualizar uma instalação de avaliação para uma instalação completa do System Center Configuration Manager."
 ms.custom: na
-ms.date: 10/06/2016
+ms.date: 2/7/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
@@ -16,54 +16,45 @@ author: Brenduns
 ms.author: brenduns
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: 10b1010ccbf3889c58c55b87e70b354559243c90
-ms.openlocfilehash: 66dc01b7d1eeed5ad8262c60164460b669301aaf
+ms.sourcegitcommit: d1bf0fdc3e735eb31492476fd46f008620150c0b
+ms.openlocfilehash: 8f951805c2fc25059965c15c94934c0f8546735c
 
 ---
-# <a name="upgrade-an-evaluation-install-of-system-center-configuration-manager-to-a-full-install"></a>Atualizar uma instalação de avaliação do System Center Configuration Manager para uma instalação Completa
+# <a name="upgrade-an-evaluation-installation-of-system-center-configuration-manager-to-a-full-installation"></a>Atualizar uma instalação de avaliação para uma instalação completa do System Center Configuration Manager
 
 *Aplica-se a: System Center Configuration Manager (Branch Atual)*
 
-
-
- Se você tiver instalado o System Center Configuration Manager como uma versão de avaliação, após 180 dias, o console do Configuration Manager se tornará somente leitura até você ativar o produto na página **Manutenção do Site** na Configuração. A qualquer momento antes ou depois do período de 180 dias, você tem a opção de atualizar para uma instalação de avaliação para uma instalação completa.  
+Se você tiver instalado o System Center Configuration Manager como uma versão de avaliação, após 180 dias o console do Configuration Manager se tornará somente leitura até você ativar o produto na página **Manutenção do site** em Configurações. A qualquer momento antes ou depois do período de 180 dias, você tem a opção de atualizar para uma instalação de avaliação para uma instalação completa.  
 
 > [!NOTE]  
->  Quando você conecta um console do Configuration Manager a uma instalação de avaliação do Configuration Manager, a barra de título do console mostra o número de dias que restam antes de expirar a instalação de avaliação. O número de dias não é atualizado automaticamente; é atualizado somente quando você faz uma nova conexão a um site.  
+>  Ao conectar um console do Configuration Manager a uma instalação de avaliação do Configuration Manager, a barra de título do console mostra o número de dias que restam antes de expirar a instalação de avaliação. O número de dias não é atualizado automaticamente; é atualizado somente quando você faz uma nova conexão a um site.  
 
- **Você pode atualizar os seguintes sites que executam uma instalação de avaliação:**  
+ Você pode atualizar os seguintes sites que executam uma instalação de avaliação:  
 
 -   Site de administração central  
-
 -   Site primário  
 
 Como os sites secundários não são tratados como instalações de avaliação, você não precisa modificar um site secundário depois que seu site pai primário é atualizado para uma instalação completa.  
 
-**Pré-requisitos para atualizar uma edição de avaliação para uma edição completa:**  
+Pré-requisitos para atualizar de uma versão de avaliação para uma versão licenciada:  
 
--   Você deve ter um produto válido a ser usado durante a atualização  
+-   Você deve ter um produto válido a ser usado durante a atualização.  
+-   Sua conta deve ter permissões de **administrador** para o computador no qual o site está instalado.  
 
--   Sua conta deve ter permissões de **administrador** para o computador no qual o site está instalado  
+### <a name="to-upgrade-an-evaluation-version-of-configuration-manager-to-a-licensed-version"></a>Para atualizar uma versão de avaliação do Configuration Manager para uma versão licenciada  
 
-### <a name="to-upgrade-an-evaluation-edition-of-configuration-manager-to-a-licensed-edition"></a>Para atualizar uma edição de avaliação do Configuration Manager para uma edição licenciada  
-
-1.  No servidor do site, localize e execute **SETUP.exe** (instalação do Configuration Manager) na pasta de instalação do Configuration Manager (**%path%\BIN\X64**).  Você deve executar a cópia da instalação que está localizada no servidor do site na pasta do Configuration Manager, uma vez que não há opções de manutenção do site disponíveis quando você executa a instalação da mídia de instalação.  
-
-2.  Na página **Antes de Começar** , clique em **Avançar**.  
-
-3.  Na página **Guia de Introdução** , selecione **Realizar a manutenção do site ou redefinir o site**e clique em **Próximo**.  
-
-4.  Na página **Manutenção do Site** , selecione **Atualizar a edição de avaliação para uma edição licenciada**, insira uma chave do produto (Product Key) válida e clique em **Avançar**.  
-
-5.  Na página **Termos de Licença para Software Microsoft** , leia e aceite os termos de licença e clique em **Próximo**.  
-
-6.  Na página **Configuração** , clique em **Fechar** para concluir o assistente.  
+1.  No servidor de sites, localize **Setup.exe** (instalação do Configuration Manager) na pasta de instalação do Configuration Manager (**%caminho%\BIN\X64**). Você deve executar a cópia da instalação que está localizada no servidor do site na pasta do Configuration Manager, uma vez que não há opções de manutenção do site disponíveis quando você executa a instalação da mídia de instalação.  
+2.  Na página **Antes de Começar** escolha **Avançar**.  
+3.  Na página **Guia de introdução**, selecione **Realizar a manutenção do site ou redefinir o site** e clique em **Avançar**.  
+4.  Na página **Manutenção do site**, selecione **Atualizar a edição de avaliação para uma edição licenciada**, insira uma chave do produto válida e clique em **Avançar**.  
+5.  Na página **Termos de Licença de Software Microsoft**, leia e aceite os termos de licença e clique em **Avançar**.  
+6.  Na página **Configuração**, clique em **Fechar** para concluir o assistente.  
 
     > [!NOTE]  
-    >  Uma barra de título dos consoles do Configuration Manager que permanecem conectados ao site que você atualiza pode indicar que o site ainda é uma versão de avaliação até que você reconecte o console ao site.  
+    >  A barra de título do console do Configuration Manager que permanece conectado ao site que está sendo atualizado pode indicar que o site ainda é uma versão de avaliação até que você reconecte o console ao site.  
 
 
 
-<!--HONumber=Dec16_HO3-->
+<!--HONumber=Feb17_HO2-->
 
 

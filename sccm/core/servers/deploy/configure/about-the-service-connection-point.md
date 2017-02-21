@@ -2,7 +2,7 @@
 title: "Ponto de conexão de serviço | Microsoft Docs"
 description: "Saiba mais sobre essa função do sistema de sites do Configuration Manager, bem como entenda e planeje seus diversos usos."
 ms.custom: na
-ms.date: 1/6/2017
+ms.date: 2/7/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
@@ -17,8 +17,8 @@ author: Brenduns
 ms.author: brenduns
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: 4409d32593e3ab22482b08335005bd2a278a7e35
-ms.openlocfilehash: 36f33e0ce898ccdd5fa25aa59b8cf032805769b9
+ms.sourcegitcommit: d3e6f011527f05b35e411af52d723f459aad66ca
+ms.openlocfilehash: 99b218f23ff8ad0fbac9dbdc28c46829e6800f85
 
 
 ---
@@ -28,59 +28,59 @@ ms.openlocfilehash: 36f33e0ce898ccdd5fa25aa59b8cf032805769b9
 
 O ponto de conexão de serviço do System Center Configuration Manager é uma função do sistema de sites que atende a várias funções importantes para a hierarquia. Antes de configurar o ponto de conexão de serviço, entenda e planeje os usos que podem afetar como você configurará essa função de sistema de sites:  
 
--   **Gerenciar dispositivos móveis com o Microsoft Intune** – Esta função substitui o conector do Windows Intune usado por versões anteriores do Configuration Manager e pode ser configurada com os detalhes da sua assinatura do Intune. Consulte [Hybrid mobile device management (MDM) with System Center Configuration Manager and Microsoft Intune](../../../../mdm/understand/hybrid-mobile-device-management.md) (MDM [gerenciamento de dispositivo móvel] híbrido com o System Center Configuration Manager e o Microsoft Intune)  
+-   **Gerencie dispositivos móveis com o Microsoft Intune**: esta função substitui o conector do Windows Intune usado por versões anteriores do Configuration Manager e pode ser configurada com os detalhes da sua assinatura do Intune. Consulte [Hybrid mobile device management (MDM) with System Center Configuration Manager and Microsoft Intune (MDM (Gerenciamento de dispositivo móvel) híbrido com o System Center Configuration Manager e Microsoft Intune)](../../../../mdm/understand/hybrid-mobile-device-management.md).  
 
--   **Gerenciar dispositivos móveis com o MDM local** – Esta função dá suporte a dispositivos locais gerenciados que não se conectam à Internet. Consulte [Gerenciar dispositivos móveis com a infraestrutura local no System Center Configuration Manager](../../../../mdm/understand/manage-mobile-devices-with-on-premises-infrastructure.md)  
+-   **Gerenciar dispositivos móveis com o MDM local**: esta função dá suporte a dispositivos locais gerenciados que não se conectam à Internet. Consulte [Gerenciar dispositivos móveis com a infraestrutura local no System Center Configuration Manager](../../../../mdm/understand/manage-mobile-devices-with-on-premises-infrastructure.md).  
 
--   **Carregar dados de uso da sua infraestrutura do Configuration Manager** – você pode controlar a quantidade ou o nível dos detalhes que carrega. Os dados carregados nos ajuda a:  
+-   **Carregar dados de uso da sua infraestrutura do Configuration Manager**: você pode controlar a quantidade ou o nível dos detalhes que carrega. Os dados carregados nos ajuda a:  
 
     -   Identificar e solucionar problemas proativamente  
 
     -   Melhorar nossos produtos e serviços  
 
-    -   Identificar atualizações para o Gerenciador de Configurações que se aplicam à versão do Gerenciador de Configurações que você usa  
+    -   Identificar atualizações para o Configuration Manager que se aplicam à versão do Configuration Manager usada  
 
-  Para obter informações sobre os dados coletados em cada nível e como alterar o nível de coleção após a instalação da função, consulte [Dados de diagnóstico e de uso](/sccm/core/plan-design/diagnostics/diagnostics-and-usage-data) e siga o link da versão do Configuration Manager que você usa.  
+  Para saber mais sobre os dados coletados em cada nível e como alterar o nível de coleta após a instalação da função, veja [Dados de diagnóstico e de uso](/sccm/core/plan-design/diagnostics/diagnostics-and-usage-data) e siga o link da versão do Configuration Manager que você usa.  
 
     Para obter mais informações, consulte [Configurações e níveis de dados de uso](../../../../core/servers/deploy/install/setup-reference.md#bkmk_usage).  
 
--   **Baixar as atualizações que se aplicam à sua infraestrutura do Configuration Manager** – Somente atualizações relevantes para sua infraestrutura ficam disponíveis, com base nos dados de uso carregados.  
+-   **Baixar as atualizações que se aplicam à sua infraestrutura do Configuration Manager**: somente atualizações relevantes para sua infraestrutura ficam disponíveis, com base nos dados de uso carregados.  
 
  **Cada hierarquia dá suporte a uma única instância dessa função:**  
 
--   As funções do sistema de sites só podem ser instaladas no site de nível superior da hierarquia (um site de administração central ou site primário autônomo).  
+    -   A função do sistema de sites só pode ser instalada no site de nível superior da hierarquia (um site de administração central ou site primário autônomo).  
 
--   Se expandir um site primário autônomo para uma hierarquia maior, você deve desinstalar essa função do site primário e, em seguida, pode instalá-lo no site de administração central.  
+    -   Se expandir um site primário autônomo para uma hierarquia maior, você deve desinstalar essa função do site primário e, em seguida, pode instalá-lo no site de administração central.  
 
 ##  <a name="a-namebkmkmodesa-modes-of-operation"></a><a name="bkmk_modes"></a> Modos de operação  
  O ponto de conexão de serviço oferece suporte a dois modos de operação:  
 
--   No **modo online**, o ponto de conexão de serviço verifica atualizações automaticamente, a cada 24 horas, e baixa novas atualizações disponíveis para sua atual infraestrutura e versão do produto, disponibilizando-as no console do Configuration Manager  
+-   No **modo online**, o ponto de conexão de serviço verifica atualizações automaticamente, a cada 24 horas, e baixa novas atualizações disponíveis para sua infraestrutura e versão do produto atuais, disponibilizando-as no console do Configuration Manager.  
 
--   No **modo offline**, o ponto de conexão de serviço não se conecta ao serviço de nuvem da Microsoft e você deve [Usar a Ferramenta de Conexão de Serviço para o System Center Configuration Manager](../../../../core/servers/manage/use-the-service-connection-tool.md) manualmente para importar as atualizações disponíveis  
+-   No **modo offline**, o ponto de conexão de serviço não se conecta ao serviço de nuvem da Microsoft e você deve [Usar a ferramenta de conexão de serviço do System Center Configuration Manager](../../../../core/servers/manage/use-the-service-connection-tool.md) manualmente para importar as atualizações disponíveis.  
 
-Quando você alterar o modo entre online ou offline depois de ter instalado o ponto de conexão de serviço, será preciso reiniciar o thread SMS_DMP_DOWNLOADER do serviço SMS_Executive do Configuration Manager antes que essa alteração entre em vigor.  Para fazer isso, use o Configuration Manager Service Manager para reiniciar apenas o thread SMS_DMP_DOWNLOADER do serviço SMS_Executive.  Também é possível reiniciar o serviço SMS_Executive do Configuration Manager (que reinicia a maioria dos componentes do site) ou aguardar até que uma tarefa agendada, como um backup do site, interrompa e posteriormente reinicie o SMS_Executive para você.  
+Quando você alterar o modo entre online ou offline depois de ter instalado o ponto de conexão de serviço, será preciso reiniciar o thread SMS_DMP_DOWNLOADER do serviço SMS_Executive do Configuration Manager antes que essa alteração entre em vigor. Para fazer isso, use o Configuration Manager Service Manager para reiniciar apenas o thread SMS_DMP_DOWNLOADER do serviço SMS_Executive. Também é possível reiniciar o serviço SMS_Executive do Configuration Manager (que reinicia a maioria dos componentes do site) ou aguardar até que uma tarefa agendada, como um backup do site, interrompa e posteriormente reinicie o SMS_Executive para você.  
 
-Para usar o Configuration Manager Service Manager, no console, navegue para **Monitoramento** > **Status do Sistema** > **Status do Componente**, clique em **Iniciar** e escolha **Configuration Manager Service Manager**.  No Service Manager:  
+Para usar o Configuration Manager Service Manager, no console, navegue para **Monitoramento** > **Status do Sistema** > **Status do Componente**, clique em **Iniciar** e escolha **Configuration Manager Service Manager**. No Service Manager:  
 
--   No painel de navegação, expanda o site e **Componentes** e escolha o componente que você deseja reiniciar.  
+-   No painel de navegação, expanda o site e **Componentes**, depois escolha o componente que você deseja reiniciar.  
 
 -   No painel de detalhes, clique com o botão direito do mouse no componente e escolha **Consulta**.  
 
 -   Depois que o status do componente for confirmado, clique com o botão direito do mouse no componente novamente e escolha **Parar**.  
 
--   **Consulte** o componente novamente para confirmar se ele foi interrompido e, em seguida, clique com o botão direito do mouse no componente mais uma vez e escolha **Iniciar**.  
+-   **Consulte** o componente novamente para confirmar que ele foi interrompido e, em seguida, clique com o botão direito do mouse no componente mais uma vez e escolha **Iniciar**.  
 
 > [!IMPORTANT]  
->  Ao adicionar uma assinatura do Microsoft Intune ao ponto de conexão de serviço, ela configura automaticamente a função do sistema de sites como online. O ponto de conexão de serviço não dá suporte ao modo offline quando configurado com uma assinatura do Intune.  
+>  O processo que adiciona uma assinatura do Microsoft Intune ao ponto de conexão de serviço configura automaticamente a função do sistema de sites como online. O ponto de conexão de serviço não dá suporte ao modo offline quando configurado com uma assinatura do Intune.  
 
 **Quando a função é instalada em um computador remoto do servidor do site:**  
 
--   A conta de computador do servidor do site deve ser um administrador local no computador que hospeda uma conexão de serviço remoto
+-   A conta de computador do servidor do site deve ser um administrador local no computador que hospeda uma conexão de serviço remoto.
 
--   Você deve configurar o servidor do sistema de sites que hospeda a função com uma Conta de instalação do sistema de sites  
+-   Você deve configurar o servidor do sistema de sites que hospeda a função com uma Conta de instalação do sistema de sites.  
 
--   A conta de instalação do sistema de sites é usada pelo gerenciador de distribuição no servidor de sites para transferir atualizações do ponto de conexão de serviço
+-   A conta de instalação do sistema de sites é usada pelo gerenciador de distribuição no servidor de sites para transferir atualizações do ponto de conexão de serviço.
 
 ##  <a name="a-namebkmkurlsa-internet-access-requirements"></a><a name="bkmk_urls"></a> Requisitos de acesso à Internet  
 Para habilitar a operação, o computador que hospeda o ponto de conexão de serviço e quaisquer firewalls entre o computador e a Internet deve passar as comunicações pela **porta TCP 443** e **porta TCP 443** nos seguintes locais da Internet. O ponto de conexão de serviço também dá suporte ao uso de um proxy da Web (com ou sem autenticação) para acessar esses locais.  
@@ -117,10 +117,10 @@ Para habilitar a operação, o computador que hospeda o ponto de conexão de ser
 ## <a name="install-the-service-connection-point"></a>Instalar o ponto de conexão de serviço
 Quando você executa **Instalação** para instalar o site de nível superior de uma hierarquia, você tem a opção de instalar o ponto de conexão de serviço.
 
-Após a execução da configuração, ou se você estiver reinstalando a função de sistema de site, use o assistente **Adicionar Funções do Sistema de Site**, ou o assistente **Criar Servidor do Sistema de Site** para instalar o sistema de site em um servidor no site de nível superior da hierarquia (o site de administração central ou um site primário autônomo).  Ambos os assistentes estão localizados na guia **Início** no console em **Administração** > **Configuração do Site** > **Funções de Sistema de Servidores e Site**.
+Após a execução da configuração, ou se você estiver reinstalando a função do sistema de sites, use o assistente **Adicionar Funções do Sistema de Site** ou o assistente **Criar Servidor do Sistema de Site** para instalar o sistema de site em um servidor no site de nível superior da hierarquia, isto é, o site de administração central ou um site primário autônomo. Ambos os assistentes estão localizados na guia **Início** no console em **Administração** > **Configuração do Site** > **Funções de Servidores e Sistema de Site**.
 
 
 
-<!--HONumber=Jan17_HO1-->
+<!--HONumber=Feb17_HO1-->
 
 

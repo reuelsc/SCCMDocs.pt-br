@@ -2,7 +2,7 @@
 title: Planejar e configurar o gerenciamento de aplicativos | Microsoft Docs
 description: "Implemente e configure as dependências necessárias para implantar aplicativos no System Center Configuration Manager."
 ms.custom: na
-ms.date: 01/17/2017
+ms.date: 02/03/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
@@ -16,8 +16,8 @@ author: robstackmsft
 ms.author: robstack
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: d2a12edcc6bc7413558e25b694b69133c2496019
-ms.openlocfilehash: 0a38ea116e589425048f6c46378df46ecc0d375b
+ms.sourcegitcommit: 50c08d63e7220a47d21dcbdcd7abafba7c7f5f75
+ms.openlocfilehash: 4eca69f54ec0bca5f1f972d3814ceb87d4a30d67
 
 
 ---
@@ -112,7 +112,7 @@ Use as informações descritas neste artigo como auxílio para implantar as depe
 
 1.  No console do Configuration Manager, escolha **Administração** > **Configuração do Site** > **Funções de Servidores e Sistema de Site** e selecione o servidor a ser usado para o Catálogo de Aplicativos.  
 
-3.  Na guia **Início**, no grupo **Criar**, escolha **Adicionar Funções do Sistema de Site**.  
+3.  Na guia **Início**, no grupo **Servidor**, clique em **Adicionar funções do sistema de sites**.  
 
 4.  Na página **Geral**, especifique as configurações gerais para o sistema de site e, em seguida, escolha **Próximo**.  
 
@@ -228,6 +228,6 @@ A identidade visual personalizada do Centro de Software é aplicada de acordo co
 
 
 
-<!--HONumber=Jan17_HO3-->
+<!--HONumber=Feb17_HO1-->
 
 

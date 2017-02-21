@@ -16,8 +16,8 @@ author: mtillman
 ms.author: mtillman
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: d242c9ae0ca6e3a3f3bee3a93176b9ab802319ae
-ms.openlocfilehash: a75cba2a6bb280c29f300c8ef2d3fbfbc7a558d2
+ms.sourcegitcommit: 76cb0c41865859fd410a187435d73c6a23b0c57e
+ms.openlocfilehash: 7b53b094eeb1d59d052c63831eeab0e10edb5913
 
 
 ---
@@ -57,7 +57,7 @@ O registro automático permite que os usuários registrem computadores com Windo
 
 5. Especifique as URLs para o Intune:
 
-  - **URL de Registro do MDM** – Use `https://enterpriseenrollment-s.manage.microsoft.com/EnrollmentServer/Discovery.svc` para a URL de registro do MDM.
+  - **URL de Conformidade do MDM**: use o valor padrão.
   - **URL de Termos de Uso do MDM** – Use o valor padrão. Essa URL exibe os termos de uso para os usuários ao registrar dispositivos.
   - **URL de Conformidade do MDM** – Use o valor padrão. Se um dispositivo não estiver em conformidade, uma mensagem de **Acesso negado** será exibida com essa URL. A URL aponta para uma página que ajuda os usuários a entenderem por que o dispositivo não é compatível com a política e como eles podem deixá-lo em conformidade novamente.
 
@@ -75,7 +75,7 @@ O registro automático permite que os usuários registrem computadores com Windo
 ### <a name="create-dns-alias-for-device-enrollment"></a>Criar o alias DNS para registro de dispositivo  
  Um alias DNS (tipo de registro CNAME) facilita o registro dos dispositivos para os usuários ao popular automaticamente o nome do servidor durante o registro do dispositivo. Para criar um alias DNS (tipo de registro CNAME), você precisa configurar um CNAME nos registros DNS da sua empresa que redirecione as solicitações enviadas a uma URL no domínio da empresa para os servidores de serviço de nuvem da Microsoft.  Por exemplo, se o domínio da sua empresa for contoso.com, você deverá criar um CNAME no DNS que redirecione EnterpriseEnrollment.contoso.com para EnterpriseEnrollment-s.manage.microsoft.com.  
 
- Embora a criação de entradas de DNS de CNAME seja opcional, os registros CNAME facilitam o registro para os usuários. Se não for possível encontrar nenhum registro CNAME do registro, os usuários deverão inserir manualmente o nome do servidor MDM: [https://enrollment.manage.microsoft.com](https://enrollment.manage.microsoft.com).
+ Embora a criação de entradas de DNS de CNAME seja opcional, os registros CNAME facilitam o registro para os usuários. Se não for possível encontrar nenhum registro CNAME no registro, os usuários deverão inserir manualmente o nome do servidor MDM: https://enrollment.manage.microsoft.com.
 
 |Tipo|Nome do host|Aponta para|  
 |----------|---------------|---------------|  
@@ -120,6 +120,6 @@ O registro automático permite que os usuários registrem computadores com Windo
 
 
 
-<!--HONumber=Jan17_HO4-->
+<!--HONumber=Feb17_HO2-->
 
 
