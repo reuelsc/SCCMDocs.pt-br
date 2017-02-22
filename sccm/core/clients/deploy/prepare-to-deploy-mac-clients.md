@@ -59,7 +59,7 @@ Se os clientes Mac não puderem confirmar o status de revogação de um certific
 
 Antes de instalar o cliente do Configuration Manager em um computador Mac, decida como o certificado do cliente será instalado:  
 
--   Usar o registro do Configuration Manager usando a [ferramenta CMEnroll](/sccm/core/clients/deploy/deploy-clients-to-macs#install-the-client-and-then-enroll-the-client-certificate-on-the-mac). O processo de registro não oferece suporte à renovação automática de certificados, portanto, é necessário registrar novamente os computadores Mac antes de o certificado instalado expirar.  
+-   Usar o registro do Configuration Manager com a [ferramenta CMEnroll](/sccm/core/clients/deploy/deploy-clients-to-macs#install-the-client-and-then-enroll-the-client-certificate-on-the-mac). O processo de registro não oferece suporte à renovação automática de certificados, portanto, é necessário registrar novamente os computadores Mac antes de o certificado instalado expirar.  
 
 -   [Usar um método de solicitação e de instalação de certificado independente do Configuration Manager](/sccm/core/clients/deploy/deploy-clients-to-macs#use-a-certificate-request-and-installation-method-that-is-independent-from-configuration-manager).  
 

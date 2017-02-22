@@ -81,7 +81,7 @@ O diagrama a seguir mostra um exemplo de como criar e aplicar configurações de
  O Configuration Manager dá suporte ao gerenciamento de alguns dispositivos que não instalaram o software cliente e que não são gerenciados pelo Intune. Para obter mais informações, consulte [Gerenciar dispositivos móveis com a infraestrutura local no System Center Configuration Manager](../../mdm/understand/manage-mobile-devices-with-on-premises-infrastructure.md) e [Gerenciar dispositivos móveis com o System Center Configuration Manager e o Exchange](../../mdm/deploy-use/manage-mobile-devices-with-exchange-activesync.md).  
 
 ## <a name="user-based-management"></a>Gerenciamento baseado em usuário  
- O Configuration Manager dá suporte a coleções de usuários do Active Directory Domain Services. Ao usar uma coleção de usuários, é possível instalar o software em todos os computadores que os membros da coleção usam. Para ter certeza de que o software implantado é instalado somente nos dispositivos especificados como um dispositivo primário do usuário, configure a afinidade de dispositivo de usuário. Um usuário pode ter um ou mais dispositivos primários.  
+ O Configuration Manager dá suporte a coleções de usuários do Active Directory Domain Services. Se você usar uma coleção de usuários, poderá instalar o software em todos os computadores usados pelos membros da coleção. Para ter certeza de que o software implantado é instalado somente nos dispositivos especificados como um dispositivo primário do usuário, configure a afinidade de dispositivo de usuário. Um usuário pode ter um ou mais dispositivos primários.  
 
  Um das maneiras como os usuários podem controlar a experiência de implantação de software é usar a interface do cliente do **Centro de Software**. O **Centro de Software** é instalado automaticamente em computadores cliente e executado por meio do menu **Iniciar**. O **Centro de Software** permite que os usuários gerenciem seu próprio software e executem as tarefas a seguir:  
 
@@ -98,7 +98,7 @@ O diagrama a seguir mostra um exemplo de como criar e aplicar configurações de
 
  Um link no **Centro de Software** permite que os usuários se conectem ao **Catálogo de Aplicativos**, no qual é possível procurar, instalar e solicitar softwares. O **Catálogo de Aplicativos** também é usado para configurar as definições de preferência, apagar dispositivos móveis e, quando configurado, especificar um dispositivo primário para afinidade de dispositivo de usuário.   
 
- Os usuários também podem acessar o **Catálogo de Aplicativos** por meio de uma sessão de Internet ou de intranet de navegador.  
+ Os usuários também podem acessar o **Catálogo de Aplicativos** por meio de uma sessão de Internet ou de intranet do navegador.  
 
 
 
