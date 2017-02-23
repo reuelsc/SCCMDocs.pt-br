@@ -2,7 +2,7 @@
 title: Configurar o Asset Intelligence | Microsoft Docs
 description: Configurar o Asset Intelligence no System Center Configuration Manager.
 ms.custom: na
-ms.date: 12/28/2016
+ms.date: 2/22/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
@@ -13,8 +13,8 @@ ms.topic: get-started-article
 ms.assetid: 08e0382d-de05-4a76-ba5c-7223173f7066
 caps.latest.revision: 7
 caps.handback.revision: 0
-author: nbigman
-ms.author: nbigman
+author: andredm7
+ms.author: andredm
 manager: angrobe
 translationtype: Human Translation
 ms.sourcegitcommit: 8a5dc7361da34f3e6b926acd35c72c0c0767ce70
@@ -224,7 +224,7 @@ O Asset Intelligence faz a correspondência dos produtos que você especificar n
 
 4.  Na guia **Início**, no grupo **Configurações**, escolha **Manutenção do Site**. Selecione uma tarefa e escolha **Editar** para modificar as configurações. 
 
-    É recomendável que você defina o período de tempo para fora do horário de pico do site. O período de tempo é o intervalo de tempo em que a tarefa pode ser executada. É definido pela **Hora de início após** e **Hora de início mais recente** especificadas na caixa de diálogo **Propriedades da Tarefa** .  
+      É recomendável que você defina o período de tempo para fora do horário de pico do site. O período de tempo é o intervalo de tempo em que a tarefa pode ser executada. É definido pela **Hora de início após** e **Hora de início mais recente** especificadas na caixa de diálogo **Propriedades da Tarefa** .  
 
     Você pode iniciar a tarefa imediatamente selecionando o dia atual e configurando a hora **Iniciar após** para alguns minutos após a hora atual.  
 

@@ -2,7 +2,7 @@
 title: "Inventário de hardware | Microsoft Docs | Linux UNIX "
 description: "Saiba como usar o inventário de hardware para Linux e UNIX no System Center Configuration Manager."
 ms.custom: na
-ms.date: 10/06/2016
+ms.date: 02/22/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
@@ -12,8 +12,8 @@ ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 1026d616-2a20-4fb2-8604-d331763937f8
 caps.latest.revision: 6
-author: nbigman
-ms.author: nbigman
+author: andredm7
+ms.author: andredm
 manager: angrobe
 translationtype: Human Translation
 ms.sourcegitcommit: fc392e4440e84614f92218e9c7a09ec1c2c64f53

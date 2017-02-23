@@ -2,7 +2,7 @@
 title: "Segurança e privacidade de coleções | Microsoft Docs"
 description: "Veja as práticas recomendadas de segurança e privacidade em coleções no System Center Configuration Manager."
 ms.custom: na
-ms.date: 10/06/2016
+ms.date: 2/22/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
@@ -13,8 +13,8 @@ ms.topic: article
 ms.assetid: 30bf2451-5415-4be2-ba8d-21759370cd83
 caps.latest.revision: 5
 caps.handback.revision: 0
-author: nbigman
-ms.author: nbigman
+author: andredm7
+ms.author: andredm
 manager: angrobe
 translationtype: Human Translation
 ms.sourcegitcommit: fc392e4440e84614f92218e9c7a09ec1c2c64f53

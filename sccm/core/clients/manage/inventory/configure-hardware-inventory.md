@@ -2,7 +2,7 @@
 title: "Configurar o inventário de hardware | Microsoft Docs"
 description: "Configure o inventário de hardware para todos os clientes ou para uma coleção no System Center Configuration Manager."
 ms.custom: na
-ms.date: 01/03/2017
+ms.date: 02/22/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
@@ -13,8 +13,8 @@ ms.topic: article
 ms.assetid: 0e45290e-f8f7-4335-801e-570225d12c2b
 caps.latest.revision: 5
 caps.handback.revision: 0
-author: nbigman
-ms.author: nbigman
+author: andredm7
+ms.author: andredm
 manager: angrobe
 translationtype: Human Translation
 ms.sourcegitcommit: 05c27c7aa36e0b4236867766dab36125c31467b3

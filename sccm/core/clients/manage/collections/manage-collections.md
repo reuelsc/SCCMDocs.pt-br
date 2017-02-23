@@ -2,7 +2,7 @@
 title: "Gerenciar coleções | Microsoft Docs"
 description: "Realize tarefas de gerenciamento de coleções comuns no System Center Configuration Manager."
 ms.custom: na
-ms.date: 10/06/2016
+ms.date: 2/22/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
@@ -13,8 +13,8 @@ ms.topic: article
 ms.assetid: e102fd1a-76df-4d8e-b1b0-10ee18318f67
 caps.latest.revision: 8
 caps.handback.revision: 0
-author: nbigman
-ms.author: nbigman
+author: andredm7
+ms.author: andredm
 manager: angrobe
 translationtype: Human Translation
 ms.sourcegitcommit: fc392e4440e84614f92218e9c7a09ec1c2c64f53
