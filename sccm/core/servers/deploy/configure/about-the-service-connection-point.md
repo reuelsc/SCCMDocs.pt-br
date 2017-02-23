@@ -17,8 +17,8 @@ author: Brenduns
 ms.author: brenduns
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: d3e6f011527f05b35e411af52d723f459aad66ca
-ms.openlocfilehash: 99b218f23ff8ad0fbac9dbdc28c46829e6800f85
+ms.sourcegitcommit: 3a24fe53cc243294694b779fad4c3ab83ca2ecb7
+ms.openlocfilehash: ae2cc7030c1fc404dcc7392b8c3067fc0f8cafc0
 
 
 ---
@@ -83,7 +83,7 @@ Para usar o Configuration Manager Service Manager, no console, navegue para **Mo
 -   A conta de instalação do sistema de sites é usada pelo gerenciador de distribuição no servidor de sites para transferir atualizações do ponto de conexão de serviço.
 
 ##  <a name="a-namebkmkurlsa-internet-access-requirements"></a><a name="bkmk_urls"></a> Requisitos de acesso à Internet  
-Para habilitar a operação, o computador que hospeda o ponto de conexão de serviço e quaisquer firewalls entre o computador e a Internet deve passar as comunicações pela **porta TCP 443** e **porta TCP 443** nos seguintes locais da Internet. O ponto de conexão de serviço também dá suporte ao uso de um proxy da Web (com ou sem autenticação) para acessar esses locais.  
+Para habilitar a operação, o computador que hospeda o ponto de conexão de serviço e quaisquer firewalls entre o computador e a Internet deve passar as comunicações pela **porta TCP 443** e **porta TCP 443** nos seguintes locais da Internet. O ponto de conexão de serviço também dá suporte ao uso de um proxy da Web (com ou sem autenticação) para acessar esses locais.  Se você precisar configurar uma conta de proxy da web, consulte: [Suporte do servidor proxy no System Center Configuration Manager](/sccm/core/plan-design/network/proxy-server-support).
 
 **Atualizações e manutenção**  
 
@@ -121,6 +121,6 @@ Após a execução da configuração, ou se você estiver reinstalando a funçã
 
 
 
-<!--HONumber=Feb17_HO1-->
+<!--HONumber=Feb17_HO3-->
 
 
