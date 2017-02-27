@@ -2,7 +2,7 @@
 title: Configurar o Endpoint Protection | Microsoft Docs
 description: "Saiba como configurar o Configuration Manager para atualizar e distribuir as definições de malware do Windows Defender."
 ms.custom: na
-ms.date: 10/06/2016
+ms.date: 02/14/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
@@ -16,13 +16,13 @@ author: NathBarn
 ms.author: nathbarn
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: 180d05d3493f8c4288ad4bf640da15bd599c2072
-ms.openlocfilehash: 783d8352e3e1f06af3a5d8534b4fa811f36fdc17
+ms.sourcegitcommit: 017bd5b899b364fc832c721d63cc7dbad0a11671
+ms.openlocfilehash: 92ab3f7470fd977e5f849bea54aca1a7ef460562
 
 
 ---
 
-# <a name="configure-endpoint-protection-in-system-center-configuration-manager"></a>Configurar o Endpoint Protection no System Center Configuration Manager
+# <a name="configure-endpoint-protection"></a>Configurar Endpoint Protection
 
 *Aplica-se a: System Center Configuration Manager (Branch Atual)*
 
@@ -39,14 +39,14 @@ Antes de usar o Endpoint Protection para gerenciar a segurança e malware em com
 
 |Etapas|Detalhes|  
 |-----------|-------------|  
-|**Etapa 1:** Criar uma função do sistema de sites do ponto do Endpoint Protection.|A função do sistema de sites do ponto do Endpoint Protection deve ser instalada antes que você possa usar o Endpoint Protection. Ela deve estar instalada em apenas um servidor do sistema de sites e deve estar instalada no topo da hierarquia em um site de administração central ou em um site primário autônomo. Consulte a [Etapa 1: Criar uma função do sistema de sites do ponto do Endpoint Protection](../../protect/deploy-use/configure-endpoint-protection.md).|  
-|**Etapa 2:** Configurar alertas para o Endpoint Protection.|Os alertas informam o administrador quando eventos específicos ocorrem, como no caso de uma infecção por malware. Os alertas são exibidos no nó **Alertas** do espaço de trabalho **Monitoramento** ou, como opção, podem ser enviados por email para usuários especificados. Consulte [Etapa 2: Configurar alertas para o Endpoint Protection](../../protect/deploy-use/configure-endpoint-protection.md).|  
-|**Etapa 3:** Configurar atualizações de definição para o Endpoint Protection.|O Endpoint Protection pode ser configurado para usar várias origens para baixar atualizações de definições. Consulte [Etapa 3: Configurar atualizações de definição para o Endpoint Protection](../../protect/deploy-use/configure-endpoint-protection.md).|  
-|**Etapa 4:** Configurar a política antimalware padrão e criar políticas antimalware personalizadas.|A política antimalware padrão é aplicada quando o cliente do Endpoint Protection está instalado. As políticas personalizadas que você implantou são aplicadas por padrão até 60 minutos após a implantação do cliente. Verifique se você configurou as políticas antimalware antes de implantar o cliente do Endpoint Protection. Consulte [Como criar e implantar políticas antimalware para o Endpoint Protection no System Center Configuration Manager](../../protect/deploy-use/endpoint-antimalware-policies.md).|  
-|**Etapa 5:** Definir configurações personalizadas do cliente para o Endpoint Protection.|Use configurações personalizadas do cliente para definir as configurações do Endpoint Protection para coleções de computadores em sua hierarquia.<br /><br /> Observações: não defina as configurações do cliente padrão do Endpoint Protection, a menos que tenha certeza de que deseja aplicá-las a todos os computadores na hierarquia. Consulte a [Etapa 5: Definir configurações personalizadas do cliente para o Endpoint Protection](../../protect/deploy-use/configure-endpoint-protection.md).|  
+|**Etapa 1:** [Criar uma função do sistema de sites do ponto do Endpoint Protection](endpoint-protection-site-role.md)|A função do sistema de sites do ponto do Endpoint Protection deve ser instalada antes que você possa usar o Endpoint Protection. Ela deve estar instalada em apenas um servidor do sistema de sites e deve estar instalada no topo da hierarquia em um site de administração central ou em um site primário autônomo. |  
+|**Etapa 2:** [Configurar alertas para o Endpoint Protection](endpoint-configure-alerts.md)|Os alertas informam o administrador quando eventos específicos ocorrem, como no caso de uma infecção por malware. Os alertas são exibidos no nó **Alertas** do espaço de trabalho **Monitoramento** ou, como opção, podem ser enviados por email para usuários especificados. |  
+|**Etapa 3:** [Configurar atualizações de definição para o Endpoint Protection](endpoint-definition-updates.md)|O Endpoint Protection pode ser configurado para usar várias origens para baixar atualizações de definições. |  
+|**Etapa 4:** [Configurar a política antimalware padrão e criar políticas antimalware personalizadas](endpoint-antimalware-policies.md)|A política antimalware padrão é aplicada quando o cliente do Endpoint Protection está instalado. As políticas personalizadas que você implantou são aplicadas por padrão até 60 minutos após a implantação do cliente. Verifique se você configurou políticas antimalware antes de implantar o cliente Endpoint Protection. Confira |  
+|**Etapa 5:** [Definir configurações personalizadas do cliente para o Endpoint Protection](endpoint-protection-configure-client.md)|Use configurações personalizadas do cliente para definir as configurações do Endpoint Protection para coleções de computadores em sua hierarquia.<br /><br /> Observações: não defina as configurações do cliente padrão do Endpoint Protection, a menos que tenha certeza de que deseja aplicá-las a todos os computadores na hierarquia. |  
 
 
 
-<!--HONumber=Dec16_HO3-->
+<!--HONumber=Feb17_HO3-->
 
 

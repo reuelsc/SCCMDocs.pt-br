@@ -1,8 +1,8 @@
 ---
-title: Funcionalidades do Technical Preview 1612 do System Center Configuration Manager | Microsoft Docs
+title: Funcionalidades no Technical Preview 1612 do Configuration Manager
 description: "Saiba mais sobre os recursos disponíveis no Technical Preview do System Center Configuration Manager, versão 1612."
 ms.custom: na
-ms.date: 1/3/2017
+ms.date: 01/23/2017
 ms.prod: configuration-manager
 ms.technology:
 - configmgr-other
@@ -16,8 +16,8 @@ author: Brenduns
 ms.author: brenduns
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: e7075eb675353be130fdcc867d9e4dd1009dab35
-ms.openlocfilehash: 2de36316b20b2a7b2937d767e618f4fec1affb69
+ms.sourcegitcommit: 3c8f968276cb6d412a4a06cb70f1c8e45e91c605
+ms.openlocfilehash: cd53f093056fbaa2ef6fd88d5451b7698f296569
 
 ---
 # <a name="capabilities-in-technical-preview-1612-for-system-center-configuration-manager"></a>Funcionalidades do Technical Preview 1612 do System Center Configuration Manager
@@ -50,11 +50,11 @@ Além de instalar e configurar o banco de dados de data warehouse, vários novos
 
 | Etapa         | Detalhes  |
 |:------:|-----------|  
-| **1**  |  O servidor do site transfere e armazena dados no banco de dados do site.  |  
-| **2** |   O ponto do Data Warehouse Service obtém dados do banco de dados do site com base na sua agenda e configuração.  |  
+| **1**  |     O servidor do site transfere e armazena dados no banco de dados do site.  |  
+| **2** |      O ponto do Data Warehouse Service obtém dados do banco de dados do site com base na sua agenda e configuração.  |  
 | **3** |  O ponto do Data Warehouse Service transfere e armazena uma cópia dos dados sincronizados no banco de dados de data warehouse. |  
 | **A** |  Usando relatórios internos, é criada uma solicitação dos dados, a qual é passada para o ponto do Reporting Services usando o SQL Server Reporting Services. |  
-| **B** |   A maioria dos relatórios contém informações atuais, e tais solicitações são executadas no banco de dados do site. |  
+| **B** |      A maioria dos relatórios contém informações atuais, e tais solicitações são executadas no banco de dados do site. |  
 | **C** | Quando um relatório solicita dados históricos usando um dos relatórios com uma *Categoria* de **Data Warehouse**, a solicitação é executada no banco de dados de data warehouse.   |  
 
 ### <a name="prerequisites-for-the-data-warehouse-service-point-and-database"></a>Pré-requisitos para o banco de dados e o ponto do Data Warehouse Service
@@ -85,12 +85,12 @@ Página **Geral** ‑ As informações gerais a seguir são necessárias:
 - **Configurações do banco de dados do Configuration Manager:**   
   - **Nome do Servidor** ‑ Especifique o FQDN do servidor que hospeda o banco de dados do site. Se você não usar uma instância padrão do SQL Server, deverá especificar a instância depois do FQDN no seguinte formato: ***&lt;Sqlserver_FQDN >\&lt;Nome_da_instância>***
   - **Nome do banco de dados** ‑ Especifique o nome do banco de dados do site.
-  - **Verificar** – Clique em **Verificar** para certificar-se de que a conexão com o banco de dados do site foi bem-sucedida.
+  -    **Verificar** – Clique em **Verificar** para certificar-se de que a conexão com o banco de dados do site foi bem-sucedida.
 </br></br>
 - **Configurações do banco de dados de data warehouse:**
-  - **Nome do servidor** ‑ Especifique o FQDN do servidor que hospeda o banco de dados e o ponto do Data Warehouse Service. Se você não usar uma instância padrão do SQL Server, deverá especificar a instância depois do FQDN no seguinte formato: ***&lt;Sqlserver_FQDN >\&lt;Nome_da_instância>***
-  - **Nome do banco de dados** ‑ Especifique o FQDN para o banco de dados de data warehouse.  O Configuration Manager criará o banco de dados com esse nome. Se você especificar um nome de banco de dados que já existe na instância do SQL Server, o Configuration Manager usará esse banco de dados.
-  - **Verificar** – Clique em **Verificar** para certificar-se de que a conexão com o banco de dados do site foi bem-sucedida.
+  -    **Nome do servidor** ‑ Especifique o FQDN do servidor que hospeda o banco de dados e o ponto do Data Warehouse Service. Se você não usar uma instância padrão do SQL Server, deverá especificar a instância depois do FQDN no seguinte formato: ***&lt;Sqlserver_FQDN >\&lt;Nome_da_instância>***
+  -    **Nome do banco de dados** ‑ Especifique o FQDN para o banco de dados de data warehouse.  O Configuration Manager criará o banco de dados com esse nome. Se você especificar um nome de banco de dados que já existe na instância do SQL Server, o Configuration Manager usará esse banco de dados.
+  -    **Verificar** – Clique em **Verificar** para certificar-se de que a conexão com o banco de dados do site foi bem-sucedida.
 
 Página **Configurações de sincronização**:   
 - **Configurações de dados:**
@@ -107,7 +107,7 @@ Depois de instalar a função de data warehouse, verifique se a conta usada como
 #### <a name="troubleshoot-installation-and-data-synchronization"></a>Solucionar problemas de sincronização de dados e instalação
 Use os seguintes logs para investigar problemas com a instalação do ponto do Data Warehouse Service ou com a sincronização de dados:
 - **DWSSMSI.log** e **DWSSSetup.log** ‑ Use esses logs para investigar erros ao instalar o ponto do Data Warehouse Service.
--   **Microsoft.ConfigMgrDataWarehouse.log** – Use este log para investigar a sincronização de dados entre o banco de dados do site e o banco de dados de data warehouse.
+-     **Microsoft.ConfigMgrDataWarehouse.log** – Use este log para investigar a sincronização de dados entre o banco de dados do site e o banco de dados de data warehouse.
 
 ### <a name="reporting"></a>Relatórios
 Depois de instalar uma função do sistema de sites do Data Warehouse, os seguintes relatórios estão disponíveis no seu ponto do Reporting Services com uma *Categoria* de **Data Warehouse:**
@@ -143,7 +143,7 @@ Use as seguintes etapas para mover o banco de dados de data warehouse para um no
 
 Você pode examinar os seguintes logs do Configuration Manager para confirmar se a função do sistema de site foi reinstalada com êxito:  
 - **DWSSMSI.log** e **DWSSSetup.log** ‑ Use esses logs para investigar erros ao instalar o ponto do Data Warehouse Service.
--   **Microsoft.ConfigMgrDataWarehouse.log** – Use este log para investigar a sincronização de dados entre o banco de dados do site e o banco de dados de data warehouse.
+-     **Microsoft.ConfigMgrDataWarehouse.log** – Use este log para investigar a sincronização de dados entre o banco de dados do site e o banco de dados de data warehouse.
 
 
 ## <a name="content-library-cleanup-tool"></a>Ferramenta de Limpeza da Biblioteca de Conteúdo
@@ -173,7 +173,7 @@ A ferramenta pode ser executada em dois modos:
   2. **Modo de exclusão**: quando você executa a ferramenta com a opção **/delete**, ela é executada no modo de exclusão.
 
      - Quando a ferramenta é executada nesse modo, o conteúdo órfão encontrado no ponto de distribuição especificado pode ser excluído da biblioteca de conteúdo do ponto de distribuição.
-     -  Antes de excluir cada arquivo, é solicitado que o usuário confirme se o arquivo deve ser excluído.  Você pode selecionar, **Y** para sim, **N** para não ou **Sim para todos** para ignorar as futuras solicitações e excluir todo o conteúdo órfão.  
+     -     Antes de excluir cada arquivo, é solicitado que o usuário confirme se o arquivo deve ser excluído.  Você pode selecionar, **Y** para sim, **N** para não ou **Sim para todos** para ignorar as futuras solicitações e excluir todo o conteúdo órfão.  
      </br>
 
      Recomendamos que você execute a ferramenta no modo de hipóteses modo e examine o arquivo de log resultante antes de executar a ferramenta com a opção /delete.  
@@ -206,7 +206,7 @@ Com base nos comentários do User Voice, adicionamos as seguintes melhorias à p
   Muitos objetos agora dão suporte a uma nova coluna chamada **Caminho do Objeto**.  Quando você pesquisar e incluir essa coluna nos resultados da exibição, poderá exibir o caminho para cada objeto. Por exemplo, se você executar uma pesquisa por aplicativos no nó Aplicativos e também pesquisar nos subnós, a coluna *Caminho do Objeto* no painel de resultados mostrará o caminho para cada objeto retornado.   
 
 - **Preservação do texto de pesquisa:**  
-  Quando você inserir texto na caixa de texto de pesquisa e, em seguida, alterar o nó pesquisado, agora o texto digitado será mantido e permanecerá disponível para uso sem precisar digitá-lo novamente.  
+  Quando você inserir texto na caixa de texto de pesquisa e alternar entre a pesquisa de um subdiretório e o nó atual, o texto digitado persistirá e permanecerá disponível para uma nova pesquisa, sem a necessidade de redigitá-lo.
 
 - **Preservação da sua decisão de pesquisar subnós:**  
  A opção selecionada para a pesquisa no *nó atual* ou em *todos os subnós* agora é mantida após alterar o nó no qual você está trabalhando.   Esse novo comportamento significa que você não precisa redefinir constantemente a decisão ao percorrer o console.  Ao abrir o console, a opção padrão é pesquisar somente o nó atual.
@@ -216,9 +216,9 @@ Agora você poderá configurar uma lista de arquivos executáveis (com a extens�
 
 ### <a name="try-it-out"></a>Experimente
 Para configurar uma lista de arquivos executáveis
-1.  Na página de propriedades de qualquer tipo de implantação, escolha a guia **Tratamento do Instalador**.
-2.  Clique em **Adicionar** para adicionar um ou mais arquivos executáveis à lista (por exemplo **Edge.exe**)
-3.  Clique em **OK** para fechar a caixa de diálogo Propriedades do tipo de implantação.
+1.    Na página de propriedades de qualquer tipo de implantação, escolha a guia **Tratamento do Instalador**.
+2.    Clique em **Adicionar** para adicionar um ou mais arquivos executáveis à lista (por exemplo **Edge.exe**)
+3.    Clique em **OK** para fechar a caixa de diálogo Propriedades do tipo de implantação.
 
 Agora, quando você implantar esse aplicativo em um usuário ou dispositivo e um dos executáveis adicionados estiver em execução, o usuário final verá uma caixa de diálogo do Centro de Software informando que a instalação falhou porque um aplicativo está em execução.
 
@@ -243,20 +243,21 @@ Agora, você pode retornar à página anterior ao executar uma sequência de tar
 Adicionamos o suporte a arquivos de instalação expressa no Configuration Manager para atualizações do Windows 10. Ao usar uma versão do Windows 10 com suporte, agora você poderá usar as definições do Configuration Manager para baixar somente a diferença entre a Atualização Cumulativa do Windows 10 do mês atual e a atualização do mês anterior. Atualmente, no Branch Atual do Configuration Manager, a Atualização Cumulativa do Windows 10 (incluindo todas as atualizações dos meses anteriores) é baixada a cada mês. Usar arquivos de instalação expressa proporciona downloads menores e instalações mais rápidas nos clientes.
 
 > [!IMPORTANT]
-> Embora as configurações para dar suporte ao uso de arquivos de instalação expressa estejam disponíveis no Configuration Manager, apenas há suporte para esta funcionalidade no Windows 10 versão 1607 com uma atualização que será lançada no início de 2017 e versões posteriores do Windows. O Windows 10 versão 1607 sem a atualização de versão e versões anteriores não dão suporte a arquivos de instalação expressa.
+> Embora as configurações para dar suporte ao uso de arquivos de instalação expressa estejam disponíveis no Configuration Manager, apenas há suporte para esta funcionalidade no Windows 10 versão 1607 com uma atualização do Windows Update Agent que será lançada em 10 de janeiro de 2017 (corrigir terça-feira). Para obter mais informações sobre essas atualizações, consulte o [artigo de suporte 3213986](https://support.microsoft.com/help/4009938/january-10-2017-kb3213986-os-build-14393-693). Você pode tirar proveito dos arquivos de instalação expressa quando o próximo conjunto de atualizações for lançado em 14 de fevereiro de 2017. O Windows 10 versão 1607 sem a atualização de versão e versões anteriores não dão suporte a arquivos de instalação expressa.
+
 
 ### <a name="to-enable-the-download-of-express-installation-files-for-windows-10-updates-on-the-server"></a>Para habilitar o download de arquivos de instalação expressa para atualizações do Windows 10 no servidor
 Para começar a sincronizar os metadados para arquivos de instalação expressa do Windows 10, você deve habilitá-la nas Propriedades do Ponto de Atualização de Software.
-1.  No console do Configuration Manager, navegue até **Administração** > **Configuração de Site** > **Sites**.
-2.  Selecione o site de administração central ou um site primário autônomo.
-3.  Na guia **Início** , no grupo **Configurações** , clique em **Configurar Componentes do Site**e **Ponto de Atualização de Software**. Na guia **Arquivos de Atualização**, selecione **Baixar arquivos completos para todas as atualizações aprovadas e arquivos de instalação expressa para o Windows 10**.
+1.    No console do Configuration Manager, navegue até **Administração** > **Configuração de Site** > **Sites**.
+2.    Selecione o site de administração central ou um site primário autônomo.
+3.    Na guia **Início** , no grupo **Configurações** , clique em **Configurar Componentes do Site**e **Ponto de Atualização de Software**. Na guia **Arquivos de Atualização**, selecione **Baixar arquivos completos para todas as atualizações aprovadas e arquivos de instalação expressa para o Windows 10**.
 
 ### <a name="to-enable-support-for-clients-to-download-and-install-express-installation-files"></a>Para habilitar o suporte para clientes baixarem e instalarem os arquivos de instalação expressa
 Para habilitar o suporte a arquivos de instalação expressa nos clientes, você deve habilitar os arquivos de instalação expressa em clientes na seção Atualizações de Software das configurações do cliente. Isso cria um novo ouvinte HTTP que escuta solicitações para baixar arquivos de instalação expressa na porta que você especificar. Depois de implantar as configurações de cliente para habilitar essa funcionalidade no cliente, ele tentará baixar a diferença entre a Atualização Cumulativa do Windows 10 do mês atual e a atualização do mês anterior (os clientes devem executar uma versão do Windows 10 com suporte a arquivos de instalação expressa).
-1.  Habilite o suporte a arquivos de instalação expressa nas propriedades do Componente de Ponto de Atualização de Software (procedimento anterior).
-2.  No console do Configuration Manager, navegue para **Administração** > **Configurações do Cliente**.
-3.  Selecione as configurações de cliente apropriadas e, em seguida, na guia **Início**, clique em **Propriedades**.
-4.  Selecione a página **Atualizações de Software**, defina **Sim** para a configuração **Habilitar instalação de Atualizações Expressas em clientes** e configure a porta usada pelo ouvinte HTTP no cliente para a configuração **Porta usada para baixar o conteúdo para as Atualizações Expressas**.
+1.    Habilite o suporte a arquivos de instalação expressa nas propriedades do Componente de Ponto de Atualização de Software (procedimento anterior).
+2.    No console do Configuration Manager, navegue para **Administração** > **Configurações do Cliente**.
+3.    Selecione as configurações de cliente apropriadas e, em seguida, na guia **Início**, clique em **Propriedades**.
+4.    Selecione a página **Atualizações de Software**, defina **Sim** para a configuração **Habilitar instalação de Atualizações Expressas em clientes** e configure a porta usada pelo ouvinte HTTP no cliente para a configuração **Porta usada para baixar o conteúdo para as Atualizações Expressas**.
 
 
 ## <a name="odata-endpoint-data-access"></a>Acesso a dados do ponto de extremidade OData
@@ -316,6 +317,6 @@ Agora que você pode configurar a MFA (Autenticação Multifator) para o registr
 
 
 
-<!--HONumber=Jan17_HO1-->
+<!--HONumber=Feb17_HO2-->
 
 

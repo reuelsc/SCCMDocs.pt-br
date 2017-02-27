@@ -2,7 +2,7 @@
 title: Preparar Servidores Windows | Microsoft Docs
 description: "Verifique se um computador atende aos pré-requisitos para uso como um servidor do site ou um servidor de sistema de sites para o System Center Configuration Manager."
 ms.custom: na
-ms.date: 10/06/2016
+ms.date: 2/14/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
@@ -17,8 +17,8 @@ author: Brenduns
 ms.author: brenduns
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: 6ed317d45d90758832d4157985dd95d5e253c6fc
-ms.openlocfilehash: bd89f97f4252ddea2d1bf7ab329417477c77868d
+ms.sourcegitcommit: dd102603356864add4084c6881c39bebcbd635f2
+ms.openlocfilehash: 9b97dedb5d2be0bd2e47260033e6e4361467dc4e
 
 
 ---
@@ -26,27 +26,27 @@ ms.openlocfilehash: bd89f97f4252ddea2d1bf7ab329417477c77868d
 
 *Aplica-se a: System Center Configuration Manager (Branch Atual)*
 
-Antes de usar um computador Windows como servidor de sistema de sites para o System Center Configuration Manager, você deve verificar se o computador atende os pré-requisitos para o uso pretendido como servidor do site ou servidor de sistema de sites.  
+Antes de você usar um computador Windows como servidor de sistema de sites para o System Center Configuration Manager, o computador deve atender aos pré-requisitos para o uso pretendido como servidor de site ou servidor de sistema de sites.  
 
--   Isso geralmente inclui um ou mais recursos ou funções do Windows, habilitados usando o Gerenciador do Servidor dos computadores.  
+-   Esses pré-requisitos geralmente incluem um ou mais recursos ou funções do Windows, habilitados usando o Gerenciador do Servidor dos computadores.  
 
--   Como o método para habilitar funções e recursos do Windows é diferente em sistemas operacionais distintos, consulte a documentação de seu sistema operacional para obter informações detalhadas sobre como configurá-los para os sistemas operacionais que você usa.  
+-   Como o método para permitir que funções e recursos do Windows é diferente entre os sistemas operacionais, confira a documentação do sistema operacional para obter informações detalhadas sobre como configurar o sistema operacional que você usa.  
 
-As informações neste artigo fornecem uma visão geral dos tipos de configurações do Windows que são necessárias para dar suporte a sistemas de sites do Configuration Manager. Para obter detalhes de configuração para funções específicas do sistema de sites, consulte [Pré-requisitos de site e sistema de sites](/sccm/core/plan-design/configs/site-and-site-system-prerequisites).
+As informações neste artigo fornecem uma visão geral dos tipos de configurações do Windows que são necessárias para dar suporte a sistemas de sites do Configuration Manager. Para obter detalhes de configuração para funções específicas do sistema de sites, confira [Pré-requisitos de site e sistema de sites](/sccm/core/plan-design/configs/site-and-site-system-prerequisites).
 
 ##  <a name="a-namebkmkwinfeaturesa-windows-features-and-roles"></a><a name="BKMK_WinFeatures"></a> Recursos e funções do Windows  
- Ao configurar funções e recursos do Windows em um computador, pode ser necessário reiniciar o computador para concluir a configuração. Portanto, recomendamos que você identifique quais computadores hospedarão cada função do sistema de sites antes de instalar um servidor do site ou de sistema de sites do Configuration Manager.
+ Ao configurar funções e recursos do Windows em um computador, pode ser necessário reiniciar o computador para concluir a configuração. Portanto, é uma boa ideia identificar computadores que hospedarão funções do sistema de site específicas antes de instalar um site do Configuration Manager ou servidor de sistema de site.
 ### <a name="features"></a>Recursos  
- os recursos do Windows a seguir são necessários em determinados servidores de sistema de sites e devem ser configurados antes de instalar uma função de sistema de sites no computador.  
+ Os recursos do Windows a seguir são necessários em determinados servidores de sistema de sites e devem ser configurados antes de instalar uma função de sistema de sites no computador.  
 
 -   **.NET Framework**: incluindo  
 
     -   ASP.NET  
     -   Ativação HTTP  
     -   Ativação não HTTP  
-    -   Serviços do WCF  
+    -   Serviços do WCF (Windows Communication Foundation)  
 
-    Diferentes versões do .NET Framework são exigidas por diferentes funções do sistema de sites.  
+    As funções do sistema de site diferentes exigem versões diferentes do .NET Framework.  
 
     Como o .NET Framework 4.0 e posteriores não são compatíveis para substituir as versões 3.5 e anteriores, quando diferentes versões são listadas como necessárias, é preciso planejar para habilitar cada versão no mesmo computador.  
 
@@ -75,7 +75,7 @@ As informações neste artigo fornecem uma visão geral dos tipos de configuraç
     -   Ferramentas de Gerenciamento >  
         -   Compatibilidade de gerenciamento do IIS 6  
         -   Compatibilidade de Metabase do IIS 6  
-        -   Compatibilidade de WMI do IIS 6  
+        -   Compatibilidade do WMI (Instrumentação de Gerenciamento do Windows) do IIS 6  
     -   Segurança >  
         -   Filtragem de Solicitações  
         -   Autenticação do Windows  
@@ -99,30 +99,30 @@ As informações neste artigo fornecem uma visão geral dos tipos de configuraç
 -   **Windows Server Update Services**: essa função é necessária quando você implanta atualizações de software.  
 
 ##  <a name="a-namebkmkiisfilteringa-iis-request-filtering-for-distribution-points"></a><a name="BKMK_IISFiltering"></a> Filtragem de Solicitações do IIS para pontos de distribuição  
- Por padrão, o IIS usa a filtragem de solicitações para bloquear o acesso de várias extensões de nome de arquivo e de locais de pasta por comunicação HTTP ou HTTPS. Em um ponto de distribuição, isso impede que os clientes baixem os pacotes que contêm extensões ou locais de pasta bloqueados.  
+ Por padrão, o IIS usa a Filtragem de Solicitações para bloquear o acesso de várias extensões de nome de arquivo e de locais de pasta por comunicação HTTP ou HTTPS. Em um ponto de distribuição, isso impede que os clientes baixem os pacotes que têm extensões ou locais de pasta bloqueados.  
 
- Quando os arquivos de origem do pacote contêm extensões bloqueadas no IIS pela sua configuração de filtragem de solicitações, é necessário configurar a filtragem de solicitações para permiti-las. Isso é feito [editando o recurso Filtragem de Solicitações](https://technet.microsoft.com/library/hh831621.aspx) no Gerenciador do IIS nos computadores do ponto de distribuição.  
+ Quando os arquivos de origem do pacote têm extensões bloqueadas no IIS pela sua configuração de Filtragem de Solicitações, é necessário configurar a Filtragem de Solicitações para permiti-las. Isso é feito [editando o recurso Filtragem de Solicitações](https://technet.microsoft.com/library/hh831621.aspx) no Gerenciador do IIS nos computadores do ponto de distribuição.  
 
- Além disso, as seguintes extensões de nome de arquivo são usadas pelo Configuration Manager para pacotes e aplicativos. verifique se suas configurações da Filtragem de Solicitações não bloqueiem estas extensões de arquivo:  
+ Além disso, as seguintes extensões de nome de arquivo são usadas pelo Configuration Manager para pacotes e aplicativos. Verifique se suas configurações da Filtragem de Solicitações não bloqueiam estas extensões de arquivo:  
 
 -   .PCK  
 -   .PKG  
 -   .STA  
 -   .TAR  
 
-Por exemplo, você pode ter arquivos de origem para uma implantação de software que inclui uma pasta chamada **bin**ou que contém um arquivo com a extensão de nome de arquivo **.mdb** .  
+Por exemplo, arquivos de origem para uma implantação de software podem incluir uma pasta chamada **bin** ou ter um arquivo com a extensão de nome de arquivo **.mdb**.  
 
--   Por padrão, a filtragem de solicitações do IIS bloqueia o acesso a esses elementos (**bin** é bloqueado como um segmento oculto e **.mdb** é bloqueado como uma extensão de nome de arquivo).  
+-   Por padrão, a Filtragem de Solicitações do IIS bloqueia o acesso a esses elementos (**bin** é bloqueado como um segmento oculto e **.mdb** é bloqueado como uma extensão de nome de arquivo).  
 
 -   Quando você usa a configuração padrão do IIS em um ponto de distribuição, os clientes que usam BITS falham ao baixar essa implantação de software do ponto de distribuição e indicam que estão aguardando conteúdo.  
 
--   Para permitir que os clientes baixem esse conteúdo, em cada ponto de distribuição aplicável, edite **Filtragem de Solicitações** no Gerenciador do IIS para permitir o acesso a extensões de arquivos e pastas contidas em pacotes e aplicativos que você implanta.  
+-   Para permitir que os clientes baixem esse conteúdo, em cada ponto de distribuição aplicável, edite **Filtragem de Solicitações** no Gerenciador do IIS para permitir o acesso a extensões de arquivos e pastas que estão em pacotes e aplicativos que você implanta.  
 
 > [!IMPORTANT]  
 >  As edições feitas no Filtro de Solicitações podem aumentar a superfície de ataque do computador.  
 >   
->  -   As edições feitas no nível do servidor aplicam-se a todos os sites no servidor  
-> -   As edições feitas em sites individuais aplicam-se apenas ao site  
+>  -   As edições feitas no nível do servidor aplicam-se a todos os sites no servidor.  
+> -   As edições feitas em sites individuais aplicam-se apenas ao site.  
 >   
 >  A prática recomendada de segurança é executar o Configuration Manager em um servidor Web dedicado. Se precisar executar outros aplicativos no servidor Web, use um site da Web personalizado para o Configuration Manager. Para obter informações, consulte [Sites para servidores de sistema de sites no System Center Configuration Manager](../../../core/plan-design/network/websites-for-site-system-servers.md).  
 
@@ -139,10 +139,10 @@ Por exemplo, você pode ter arquivos de origem para uma implantação de softwar
  - HEAD
  - PROPFIND
 
-Para obter informações sobre como configurar a filtragem de solicitações, consulte [Configurar filtragem de solicitações no IIS](https://technet.microsoft.com/library/hh831621.aspx#Verbs) no TechNet ou a documentação semelhante que se aplica à versão do Windows Server que hospeda o ponto de gerenciamento.
+Para saber mais sobre como configurar a filtragem de solicitações, confira [Configurar filtragem de solicitações no IIS](https://technet.microsoft.com/library/hh831621.aspx#Verbs) no TechNet ou a documentação semelhante que se aplica à versão do Windows Server que hospeda o ponto de gerenciamento.
 
 
 
-<!--HONumber=Dec16_HO3-->
+<!--HONumber=Feb17_HO3-->
 
 

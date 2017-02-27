@@ -2,7 +2,7 @@
 title: "Novidades na híbrida MDM | Microsoft Docs"
 description: "Saiba mais sobre os novos recursos de gerenciamento de dispositivo móvel disponíveis para implantações híbridas com o Intune e o System Center Configuration Manager."
 ms.custom: na
-ms.date: 01/12/2017
+ms.date: 02/14/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
@@ -16,8 +16,8 @@ author: Mtillman
 ms.author: mtillman
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: 07578e3aaa93a06a2fa90e72de2b7c71ce2a14b9
-ms.openlocfilehash: f405514402d7140e26bff6da5e8c2759a80b8a7f
+ms.sourcegitcommit: 7972aa2c39f5b86e69087b1ed5a1c3b50ba69940
+ms.openlocfilehash: f74bd019b5403f3f5702795279759270261ce4db
 
 ---
 # <a name="whats-new-in-hybrid-mobile-device-management-with-system-center-configuration-manager-and-microsoft-intune"></a>Novidades no gerenciamento de dispositivo móvel híbrido com o System Center Configuration Manager e o Microsoft Intune
@@ -35,6 +35,20 @@ Este artigo fornece detalhes sobre os novos recursos de MDM (gerenciamento de di
 |**Novo no Microsoft Intune** | Em geral, todos os recursos listados nessa categoria devem funcionar com todas as versões do Configuration Manager, incluindo versões do System Center 2012 R2 Configuration Manager, uma vez que esses recursos exigem apenas o serviço Intune e não exigem funcionalidades adicionais no Configuration Manager.|
 |**Novo no Configuration Manager Technical Preview**| Todos os recursos listados nessa categoria funcionam apenas com a versão de Technical Preview especificada. Para testar esses recursos, você deve instalar a versão de Technical Preview especificada na descrição do recurso. Para mais informações, confira [Technical Preview do System Center Configuration Manager](../../core/get-started/technical-preview.md).|
 |**Novo no Configuration Manager (Branch Atual)**| Todos os recursos listados nessa categoria funcionam apenas com a versão especificada do Configuration Manager (Branch Atual), como a versão 1511 ou 1602. Se estiver usando uma versão mais antiga do Configuration Manager para sua implantação híbrida, atualize para a versão do Configuration Manager (Branch Atual) especificada na descrição do recurso. Para mais informações, confira [Atualização para o System Center Configuration Manager](../../core/servers/deploy/install/upgrade-to-configuration-manager.md).|
+
+## <a name="new-hybrid-features-in-february-2017"></a>Novos recursos híbridos em fevereiro de 2017
+
+### <a name="new-in-microsoft-intune"></a>Novo no Microsoft Intune
+
+Os recursos do Intune a seguir introduzidos em fevereiro de 2017 funcionam em implantações híbridas:
+
+- **Modernização do site Portal da Empresa**
+
+  O site Portal da Empresa dá suporte a aplicativos destinados a usuários que não têm dispositivos gerenciados. O site se alinha com outros produtos e serviços da Microsoft, usando um novo esquema de cores contrastantes, ilustrações dinâmicas e um "menu de hambúrguer", que contém detalhes de contato de suporte técnico e informações sobre os dispositivos gerenciados existentes. A página inicial é reorganizada para enfatizar os aplicativos que estão disponíveis para usuários, com carrosséis para aplicativos Em Destaque e Atualizados Recentemente. Você pode localizar imagens antes e depois disponíveis na página [Atualizações da interface do usuário](/intune/whats-new/whats-new-in-intune-app-ui).
+
+- **Novo endereço de servidor MDM para dispositivos Windows**
+
+  O endereço do servidor MDM para o registro de dispositivos do Windows e do Windows Phone foi alterado de manage.microsoft.com para enrollment.manage.microsoft.com. Notifique o usuário para que ele use enrollment.manage.microsoft.com como o endereço do servidor MDM caso solicitado durante o registro de um dispositivo Windows ou Windows Phone. Essa atualização também requer que qualquer CNAME no DNS que redirecione EnterpriseEnrollment.contoso.com para manage.microsoft.com seja substituído por um CNAME no DNS que redirecione EnterpriseEnrollment.contoso.com para EnterpriseEnrollment-s.manage.microsoft.com. Para obter informações adicionais sobre essa alteração, acesse http://aka.ms/intuneenrollsvrchange. 
 
 ## <a name="new-hybrid-features-in-january-2017"></a>Novos recursos híbridos em janeiro de 2017
 
@@ -71,20 +85,20 @@ Os recursos do Intune a seguir introduzidos em dezembro de 2016 funcionam em imp
 
   O aplicativo de Portal da empresa para Android agora está disponível na China. Devido à ausência do Google Play Store na China, os dispositivos Android devem obter aplicativos de marketplaces de aplicativos chinês. O aplicativo de Portal da empresa para Android está disponível para download nos seguintes repositórios:
 
-  - [Baidu](https://go.microsoft.com/fwlink/?linkid=836946)
-  - [Huawei](https://go.microsoft.com/fwlink/?linkid=836948)
-  - [Tencent](https://go.microsoft.com/fwlink/?linkid=836949)
-  - [Wandoujia](https://go.microsoft.com/fwlink/?linkid=836950)
-  - [Xiaomi](https://go.microsoft.com/fwlink/?linkid=836947)
+  -    [Baidu](https://go.microsoft.com/fwlink/?linkid=836946)
+  -    [Huawei](https://go.microsoft.com/fwlink/?linkid=836948)
+  -    [Tencent](https://go.microsoft.com/fwlink/?linkid=836949)
+  -    [Wandoujia](https://go.microsoft.com/fwlink/?linkid=836950)
+  -    [Xiaomi](https://go.microsoft.com/fwlink/?linkid=836947)
 
   O aplicativo de Portal da Empresa para Android usa o Google Play Services para se comunicar com o serviço Microsoft Intune. Como o Google Play Services ainda não está disponível na China, executar qualquer uma das seguintes tarefas pode levar até 8 horas para ser concluída.
 
   | Console de Administração do Configuration Manager | Aplicativo Portal da Empresa do Intune para Android | Site do Portal da empresa do Intune |
-  |----|----|----|      
-  | Desativar/apagar (remover todos os dados)   | Remover um dispositivo remoto | Remover dispositivo (local e remoto) |
-  | Desativar/apagar (remover dados da empresa)   | Redefinir o dispositivo | Redefinir o dispositivo|
+  |----|----|----|        
+  | Desativar/apagar (remover todos os dados)    | Remover um dispositivo remoto | Remover dispositivo (local e remoto) |
+  | Desativar/apagar (remover dados da empresa)    | Redefinir o dispositivo | Redefinir o dispositivo|
   | Implantações de aplicativo novo ou atualizado | Instalar aplicativos de linha de negócios disponíveis | Redefinição de senha de dispositivo|
-  | Bloqueio remoto | | |
+  | Bloqueio remoto    | | |
   | Redefinição de senha | | |        
 
 
@@ -153,9 +167,9 @@ O suporte para o System Center 2012 Configuration Manager SP1 e o System Center
 Se você estiver executando uma implantação híbrida com o Configuration Manager 2012 SP1 ou R2 RTM, recomendamos que antes de 10 de abril de 2017 você atualize para o Configuration Manager (ramificação atual) ou para o service pack mais recente com suporte do Configuration Manager 2012 (R2 SP1 ou SP2) para evitar a interrupção do serviço.
 
 Recursos adicionais:
--   [Atualizar para o System Center Configuration Manager (ramificação atual)](/sccm/core/servers/deploy/install/upgrade-to-configuration-manager)
--   [Planejar a atualização para o System Center 2012 R2 Configuration Manager SP1](https://technet.microsoft.com/library/jj822981.aspx#BKMK_PlanningR2SP1Upgrade)
--   [Planejar a atualização para o System Center 2012 Configuration Manager SP2](https://technet.microsoft.com/library/jj822981.aspx#BKMK_PlanningSP2Upgrade)
+-    [Atualizar para o System Center Configuration Manager (ramificação atual)](/sccm/core/servers/deploy/install/upgrade-to-configuration-manager)
+-    [Planejar a atualização para o System Center 2012 R2 Configuration Manager SP1](https://technet.microsoft.com/library/jj822981.aspx#BKMK_PlanningR2SP1Upgrade)
+-    [Planejar a atualização para o System Center 2012 Configuration Manager SP2](https://technet.microsoft.com/library/jj822981.aspx#BKMK_PlanningSP2Upgrade)
 
 ### <a name="windows-phone-8-company-portal-upload-deprecated"></a>Upload do Portal da Empresa do Windows Phone 8 preterido
 *25 de outubro de 2016*
@@ -170,6 +184,6 @@ A capacidade de carregar um aplicativo do Portal da Empresa assinado foi removid
 
 
 
-<!--HONumber=Feb17_HO1-->
+<!--HONumber=Feb17_HO2-->
 
 

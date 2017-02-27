@@ -2,7 +2,7 @@
 title: "Ponto de distribuição baseado em pull | Microsoft Docs"
 description: "Saiba mais sobre as configurações e limitações para usar um ponto de distribuição de recepção com o System Center Configuration Manager."
 ms.custom: na
-ms.date: 10/06/2016
+ms.date: 2/14/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
@@ -16,8 +16,8 @@ author: Brenduns
 ms.author: brenduns
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: 6ed317d45d90758832d4157985dd95d5e253c6fc
-ms.openlocfilehash: f94d928244699c1c926dca05823f0029c588c7f1
+ms.sourcegitcommit: 9b366262ae59a8cb57c0f1760b961194d17bcf52
+ms.openlocfilehash: db5039ff6cb93e3099b096196d49a1f06c315a6b
 
 
 ---
@@ -29,7 +29,7 @@ ms.openlocfilehash: f94d928244699c1c926dca05823f0029c588c7f1
 
 Um ponto de distribuição de recepção para o System Center Configuration Manager é um ponto de distribuição padrão que obtém o conteúdo baixando-o de um local de origem, como um cliente, em vez de ter o conteúdo enviado a ele por push do servidor do site.  
 
- Quando você implanta conteúdo em um grande número de pontos de distribuição em um site, os pontos de distribuição de recepção podem ajudar a reduzir a carga de processamento no servidor do site e ajudar a acelerar a transferência do conteúdo para cada ponto de distribuição. Para obter essa eficiência, é necessário descarregar o processo de transferência do conteúdo para cada ponto de distribuição do processo do gerenciador de distribuição no servidor do site.  
+ Quando você implanta conteúdo em um grande número de pontos de distribuição em um site, os pontos de distribuição de recepção podem ajudar a reduzir a carga de processamento no servidor do site e acelerar a transferência do conteúdo para cada ponto de distribuição. Para obter essa eficiência, é necessário descarregar o processo de transferência do conteúdo para cada ponto de distribuição do processo do gerenciador de distribuição no servidor do site.  
 
 -   Você pode configurar pontos de distribuição individuais para serem pontos de distribuição de recepção.  
 
@@ -48,7 +48,7 @@ Os pontos de distribuição de recepção dão suporte às mesmas configuraçõe
 
 -   Quando o Gerenciador de Transferência de Pacote confirma que o conteúdo está disponível, ele notifica o ponto de distribuição de recepção para que ele baixe o conteúdo. Quando o ponto de distribuição de recepção recebe a notificação ele tenta baixar o conteúdo dos seus pontos de distribuição de origem.  
 
--   Depois que o ponto de distribuição de recepção conclui o download do conteúdo, ele envia esse status a um ponto de gerenciamento. No entanto, se após 60 minutos esse status não for recebido, o Gerenciador de Transferência de Pacote será ativado e verificará se o ponto de distribuição de recepção baixou o conteúdo. Se o download do conteúdo estiver em andamento, o Gerenciador de Transferência de Pacote ficará suspenso por 60 minutos antes de repetir essa verificação. Esse ciclo continua até que o ponto de distribuição de recepção conclua a transferência de conteúdo.  
+-   Depois que o ponto de distribuição de recepção conclui o download do conteúdo, ele envia esse status a um ponto de gerenciamento. No entanto, se após 60 minutos esse status não tiver sido recebido, o Gerenciador de Transferência de Pacote será ativado e verificará se o ponto de distribuição de recepção baixou o conteúdo. Se o download do conteúdo estiver em andamento, o Gerenciador de Transferência de Pacote ficará suspenso por 60 minutos antes de repetir essa verificação. Esse ciclo continua até que o ponto de distribuição de recepção conclua a transferência de conteúdo.  
 
 **Você pode configurar um ponto de distribuição de recepção** durante ou após a instalação ao editar as propriedades da função de sistema de sites do ponto de distribuição.  
 
@@ -67,9 +67,9 @@ Os pontos de distribuição de recepção dão suporte às mesmas configuraçõe
     > [!NOTE]  
     >  Quando um ponto de distribuição é configurado como ponto de distribuição de recepção, a guia **Limites de Taxa** não fica visível nas propriedades do ponto de distribuição.  
 
--   Um ponto de distribuição de recepção não usa as **Configurações de repetição** para distribuição de conteúdo. As**Configurações de repetição** podem ser configuradas como parte das **Propriedades do Componente de Distribuição de Software** para cada site. Para exibir ou configurar essas propriedades, no espaço de trabalho **Administração** do console do Configuration Manager, expanda **Configuração do Site** e selecione **Sites**. Em seguida, no painel de resultados, selecione um site e, na guia **Início** , selecione **Configurar Componentes do Site**e **Distribuição de Software**.  
+-   Um ponto de distribuição de recepção não usa as **Configurações de repetição** para distribuição de conteúdo. As**Configurações de repetição** podem ser configuradas como parte das **Propriedades do Componente de Distribuição de Software** para cada site. Para exibir ou configurar essas propriedades, no espaço de trabalho **Administração** do console do Configuration Manager, expanda **Configuração do Site** e selecione **Sites**. Em seguida, no painel de resultados, selecione um site e, na guia **Início**, selecione **Configurar Componentes do Site**. Por fim, selecione **Distribuição de Software**.  
 
--   Para transferir conteúdo de um ponto de distribuição de origem em uma floresta remota, o computador que hospeda o ponto de distribuição de recepção deve ter um cliente do Configuration Manager instalado e uma Conta de Acesso à Rede que possa acessar o ponto de distribuição de origem deve ser configurada para uso.  
+-   Para transferir conteúdo de um ponto de distribuição de origem em uma floresta remota, o computador que hospeda o ponto de distribuição de recepção deve ter um cliente do Configuration Manager instalado. Uma Conta de Acesso à Rede que pode acessar o ponto de distribuição de origem deve ser configurada para uso.  
 
 -   Em um computador configurado como ponto de distribuição de recepção e que executa o cliente do Configuration Manager, a versão do cliente deve ser a mesma do site do Configuration Manager que instala esse ponto de distribuição de recepção. É exigido que o ponto de distribuição de recepção use o CCMFramework comum tanto ao ponto de distribuição de recepção quanto ao cliente do Configuration Manager.  
 
@@ -80,7 +80,7 @@ Os pontos de distribuição de recepção dão suporte às mesmas configuraçõe
 
 -   Um ponto de distribuição de recepção pode ser especificado como um ponto de distribuição de origem para outro ponto de distribuição de recepção.  
 
--   Somente os pontos de distribuição que dão suporte a HTTP podem ser especificados como pontos de distribuição de origem ao usar o Configuration Manager.  
+-   Somente os pontos de distribuição que dão suporte a HTTP podem ser especificados como um ponto de distribuição de origem ao usar o Configuration Manager.  
 
 -   É possível usar o SDK do Configuration Manager para especificar um ponto de distribuição de origem configurado para HTTPS. Para usar um ponto de distribuição de origem configurado para HTTPS, o ponto de distribuição de recepção deve ser colocalizado em um computador que executa o cliente do Configuration Manager.  
 
@@ -98,12 +98,12 @@ Pode ser atribuída uma prioridade a cada ponto de distribuição em uma lista d
 
 Quando um ponto de distribuição de recepção baixa conteúdo de um ponto de distribuição de origem, o ponto de distribuição de recepção é contado como um cliente na coluna **Cliente Acessado (Exclusivo)** do relatório **Resumo de uso do ponto de distribuição** .  
 
- Por padrão, um ponto de distribuição de recepção usa sua **conta de computador** para transferir o conteúdo de um ponto de distribuição de origem. No entanto, quando o ponto de distribuição de recepção transfere o conteúdo de um ponto de distribuição de origem que está em uma floresta remota, o ponto de distribuição de recepção sempre usa a Conta de Acesso à Rede. Esse processo exige que o computador tenha o cliente do Configuration Manager instalado e que uma Conta de Acesso à Rede esteja configurada para uso e tenha acesso ao ponto de distribuição de origem.  
+ Por padrão, um ponto de distribuição de recepção usa sua **conta de computador** para transferir o conteúdo de um ponto de distribuição de origem. No entanto, quando o ponto de distribuição de recepção transfere o conteúdo de um ponto de distribuição de origem que está em uma floresta remota, o ponto de distribuição de recepção sempre usa a conta de acesso à rede. Esse processo exige que o computador tenha o cliente do Configuration Manager instalado e que uma conta de acesso à rede esteja configurada para uso e tenha acesso ao ponto de distribuição de origem.  
 
 ## <a name="about-content-transfers"></a>Sobre as transferências de conteúdo  
  Para gerenciar a transferência de conteúdo, os pontos de distribuição de recepção usam o componente **CCMFramework** do software cliente do Configuration Manager.  
 
--   Essa estrutura é instalada pelo **Pulldp.msi** quando você configura o ponto de distribuição para ser um ponto de distribuição de recepção e não requer que o cliente do Configuration Manager seja instalado.  
+-   Essa estrutura é instalada pelo **Pulldp.msi** quando você configura o ponto de distribuição para ser um ponto de distribuição por pull. A estrutura não exige o cliente do Configuration Manager.  
 
 -   Após a instalação do ponto de distribuição de recepção, o serviço CCMExec no computador do ponto de distribuição deve estar operacional para que esse ponto de distribuição funcione.  
 
@@ -114,6 +114,6 @@ Quando um ponto de distribuição de recepção baixa conteúdo de um ponto de d
 
 
 
-<!--HONumber=Dec16_HO3-->
+<!--HONumber=Feb17_HO3-->
 
 

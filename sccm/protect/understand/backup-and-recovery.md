@@ -16,12 +16,12 @@ author: Brenduns
 ms.author: brenduns
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: 8d638d7e8f203ff2501a09918ab3424706d1261f
-ms.openlocfilehash: 17a87fee7d22bd2bcfd074670339e66a64972863
+ms.sourcegitcommit: 3aa9f2e4d3f7210981b5b84942485de11fe15cb2
+ms.openlocfilehash: a7e052bc0e1c354b75a7f95afdd266ed742ce689
 
 ---
 
-# <a name="backup-and-recovery"></a>Backup e descoberta 
+# <a name="backup-and-recovery"></a>Backup e descoberta
 
 *Aplica-se a: System Center Configuration Manager (Branch Atual)*
 
@@ -89,7 +89,7 @@ Use as seções a seguir para ajudá-lo a criar sua estratégia de backup do Con
 >  O Configuration Manager pode recuperar o banco de dados do site por meio da tarefa de manutenção de backup do Configuration Manager ou de um backup do banco de dados do site criado com outro processo. Por exemplo, é possível restaurar o banco de dados do site por um backup criado como parte de um plano de manutenção do Microsoft SQL Server. Você pode restaurar o banco de dados do site por meio de um backup criado usando o System Center 2012 DPM (Data Protection Manager). Para obter mais informações, consulte [Usando o Data Protection Manager para fazer backup do banco de dados do site](#BKMK_DPMBackup).  
 
 ###  <a name="a-namebkmkbackupmaintenancetaska-backup-maintenance-task"></a><a name="BKMK_BackupMaintenanceTask"></a> Tarefa de manutenção de backup  
- É possível automatizar o backup de sites do Configuration Manager agendando a tarefa de manutenção Servidor do Site de Backup predefinida. É possível fazer backup de um site de administração central e de um site primário, mas não há suporte de backup para sites secundários ou servidores de sistema de site. Quando o serviço de backup do Configuration Manager é executado, ele segue as instruções definidas no arquivo de controle de backup (**<ConfigMgrInstallationFolder\>\Inboxes\Smsbkup.box\Smsbkup.ctl**). É possível modificar o arquivo de controle de backup para alterar o comportamento do serviço de backup. As informações de status de backup do site são gravadas no arquivo **Smsbkup.log** . O arquivo é criado na pasta de destino especificada nas propriedades da tarefa de manutenção Servidor do Site de Backup.  
+ É possível automatizar o backup de sites do Configuration Manager agendando a tarefa de manutenção Servidor do Site de Backup predefinida. É possível fazer backup de um site de administração central e de um site primário, mas não há suporte de backup para sites secundários ou servidores de sistema de site. Quando o serviço de backup do Configuration Manager é executado, ele segue as instruções definidas no arquivo de controle de backup (**&lt;PastaDeInstalaçãoDoConfigMgr\>\Inboxes\Smsbkup.box\Smsbkup.ctl**). É possível modificar o arquivo de controle de backup para alterar o comportamento do serviço de backup. As informações de status de backup do site são gravadas no arquivo **Smsbkup.log** . O arquivo é criado na pasta de destino especificada nas propriedades da tarefa de manutenção Servidor do Site de Backup.  
 
 
 ##### <a name="to-enable-the-site-backup-maintenance-task"></a>Para habilitar a tarefa de manutenção de backup do site  
@@ -116,7 +116,7 @@ Use as seções a seguir para ajudá-lo a criar sua estratégia de backup do Con
     -   **Unidades locais no servidor do site e no SQL Server**: especifica que os arquivos de backup do site são armazenados no caminho especificado na unidade local do servidor do site e que os arquivos de backup do banco de dados do site são armazenados no caminho especificado na unidade local do servidor de banco de dados do site. É necessário criar as pastas locais para poder executar a tarefa de backup. A conta de computador do servidor do site deve ter permissões de **Gravação** NTFS para a pasta criada no servidor do site. A conta de computador do SQL Server deve ter permissões de **Gravação** NTFS para a pasta criada no servidor de banco de dados do site. Essa opção está disponível somente quando o banco de dados do site não está instalado no servidor do site.  
 
     > [!NOTE]  
-    >   - A opção de navegar até o destino do backup está disponível somente quando o caminho UNC do destino do backup é especificado.
+    >    - A opção de navegar até o destino do backup está disponível somente quando o caminho UNC do destino do backup é especificado.
 
     > - O nome da pasta ou do compartilhamento usado como destino do backup não oferece suporte ao uso de caracteres Unicode.  
 
@@ -139,7 +139,7 @@ Use as seções a seguir para ajudá-lo a criar sua estratégia de backup do Con
 
     -   Quando a tarefa de manutenção Servidor do Site de Backup estiver configurada para criar um alerta em caso de falha do backup, é possível verificar as falhas de backup no nó **Alertas** do espaço de trabalho **Monitoramento** .  
 
-    -   Em <*ConfigMgrInstallationFolder*>\Logs, verifique se há avisos e erros em Smsbkup.log. Quando o backup do site for concluído com êxito, você verá `Backup completed` com um carimbo de data e hora e a ID de mensagem `STATMSG: ID=5035`.  
+    -   Em &lt;*PastaDeInstalaçãoDoConfigMgr*>\Logs, verifique se há avisos e erros em Smsbkup.log. Quando o backup do site for concluído com êxito, você verá `Backup completed` com um carimbo de data e hora e a ID de mensagem `STATMSG: ID=5035`.  
 
     > [!TIP]  
     >  Quando a tarefa de manutenção de backup falha, é possível reiniciá-la interrompendo e reiniciando o serviço SMS_SITE_BACKUP.  
@@ -164,7 +164,7 @@ Use as seções a seguir para ajudá-lo a criar sua estratégia de backup do Con
 -   O site poderá não ter nenhum instantâneo de backup, se, por exemplo, a tarefa de manutenção de servidor do site de backup falhar. Como a tarefa de backup remove o instantâneo de backup anterior antes de começar a fazer o backup dos dados atuais, não haverá um instantâneo de backup válido.  
 
 ###  <a name="a-namebkmkusingafterbackupa-using-the-afterbackupbat-file"></a><a name="BKMK_UsingAfterBackup"></a> Usando o arquivo AfterBackup.bat  
- Após o backup bem-sucedido do site, a tarefa do Servidor do Site de Backup tentará executar automaticamente um arquivo chamado AfterBackup.bat. Você deve criar manualmente o arquivo AfterBackup.bat em <*ConfigMgrInstallationFolder*>\Inboxes\Smsbkup. Se existir um arquivo AfterBackup.bat e ele estiver armazenado na pasta correta, ele será executado automaticamente depois que a tarefa de backup for concluída. O arquivo AfterBackup.bat permite arquivar o instantâneo de backup no final de cada operação de backup, e executa automaticamente outras tarefas pós-backup que não fazem parte da tarefa de manutenção do servidor do site de backup. O arquivo AfterBackup.bat integra o arquivo e as operações de backup, garantindo assim que cada novo instantâneo de backup seja arquivado. Quando o arquivo AfterBackup.bat não está presente, a tarefa de backup a ignora sem efeito sobre a operação de backup. Para verificar se a tarefa de backup do site executou com sucesso o arquivo AfterBackup.bat, consulte o nó **Status do Componente** no espaço de trabalho **Monitoramento** e verifique as mensagens de status de SMS_SITE_BACKUP. Quando a tarefa inicia com êxito o arquivo de comando AfterBackup.bat, você vê uma mensagem ID 5040.  
+ Após o backup bem-sucedido do site, a tarefa do Servidor do Site de Backup tentará executar automaticamente um arquivo chamado AfterBackup.bat. Você deve criar manualmente o arquivo AfterBackup.bat em &lt;*PastaDeInstalaçãoDoConfigMgr*>\Inboxes\Smsbkup. Se existir um arquivo AfterBackup.bat e ele estiver armazenado na pasta correta, ele será executado automaticamente depois que a tarefa de backup for concluída. O arquivo AfterBackup.bat permite arquivar o instantâneo de backup no final de cada operação de backup, e executa automaticamente outras tarefas pós-backup que não fazem parte da tarefa de manutenção do servidor do site de backup. O arquivo AfterBackup.bat integra o arquivo e as operações de backup, garantindo assim que cada novo instantâneo de backup seja arquivado. Quando o arquivo AfterBackup.bat não está presente, a tarefa de backup a ignora sem efeito sobre a operação de backup. Para verificar se a tarefa de backup do site executou com sucesso o arquivo AfterBackup.bat, consulte o nó **Status do Componente** no espaço de trabalho **Monitoramento** e verifique as mensagens de status de SMS_SITE_BACKUP. Quando a tarefa inicia com êxito o arquivo de comando AfterBackup.bat, você vê uma mensagem ID 5040.  
 
 > [!TIP]  
 >  Para criar o arquivo AfterBackup.bat para arquivar os arquivos de backup do servidor do site, você deve usar uma ferramenta de comando de cópia, como o Robocopy, no arquivo em lotes. Por exemplo, você pode criar o arquivo AfterBackup.bat, e na primeira linha, adicionar algo semelhante a: `Robocopy E:\ConfigMgr_Backup \\ServerName\ShareName\ConfigMgr_Backup /MIR`. Para obter mais informações sobre o Robocopy, veja a página da Web de referência de linha de comando [Robocopy](http://go.microsoft.com/fwlink/p/?LinkId=228408) .  
@@ -220,7 +220,7 @@ Use as seções a seguir para ajudá-lo a criar sua estratégia de backup do Con
 4.  Na guia **Função do Site** , no grupo **Propriedades** , clique em **Propriedades**.  
 5.  As pastas que armazenam os dados de migração de estado do usuário estão listadas na seção **Detalhes da Pasta** na guia **Geral** .  
 
-
+## <a name="recover-a-configuration-manager-site"></a>Recuperar um site do Configuration Manager
  Uma recuperação de site do Configuration Manager é necessária sempre que um site do Configuration Manager falha ou ocorre perda de dados no banco de dados do site. Reparação e nova sincronização de dados são as tarefas principais de uma recuperação de site para evitar a interrupção das operações.  
 
 > [!IMPORTANT]  
@@ -433,7 +433,7 @@ Use as seções a seguir para ajudá-lo a criar sua estratégia de backup do Con
 
     -   **Obrigatória:** Talvez  
 
-    -   **Valores:** <ReferenceSiteFQDN\>  
+    -   **Valores:** &lt;FQDNDoSiteDeReferência\>  
 
     -   **Detalhes:** especificará o site primário de referência que o site de administração central usa para recuperar dados globais se o backup do banco de dados for mais antigo que o período de retenção do controle de alterações ou quando o site for recuperado sem backup.  
 
@@ -447,7 +447,7 @@ Use as seções a seguir para ajudá-lo a criar sua estratégia de backup do Con
 
     -   **Obrigatória:** Não  
 
-    -   **Valores:** <PathToSiteServerBackupSet\>  
+    -   **Valores:** &lt;CaminhoParaConjuntoDeBackupDoServidorDeSite\>  
 
     -   **Detalhes:** especifica o caminho para o conjunto de backups do servidor de site. Essa chave é opcional quando a configuração **ServerRecoveryOptions** tem o valor **1** ou **2**. Especifique um valor para a chave **SiteServerBackupLocation** recuperar o site usando um backup do site. Caso não especifique um valor, o site é reinstalado sem ser restaurado por meio de um conjunto de backup.  
 
@@ -455,7 +455,7 @@ Use as seções a seguir para ajudá-lo a criar sua estratégia de backup do Con
 
     -   **Obrigatória:** Talvez  
 
-    -   **Valores:** <PathToSiteDatabaseBackupSet\>  
+    -   **Valores:** &lt;CaminhoParaConjuntoDeBackupDoBancoDeDadosDoSite\>  
 
     -   **Detalhes:** especifica o caminho para o conjunto de backup do banco de dados do site. A chave **BackupLocation** é necessária quando o valor **1** ou **4** é configurado para a chave **ServerRecoveryOptions** , e o valor **10** é configurado para a chave **DatabaseRecoveryOptions** .  
 
@@ -477,7 +477,7 @@ Use as seções a seguir para ajudá-lo a criar sua estratégia de backup do Con
 
     -   **Obrigatória:** Sim  
 
-    -   **Valores:** <Código do site\>  
+    -   **Valores:** &lt;Código do site\>  
 
     -   **Detalhes:** três caracteres alfanuméricos que identificam exclusivamente o site na hierarquia. É necessário especificar o código do site que foi usado pelo site antes da falha.  
 
@@ -493,7 +493,7 @@ Use as seções a seguir para ajudá-lo a criar sua estratégia de backup do Con
 
     -   **Obrigatória:** Sim  
 
-    -   **Valores:** <*ConfigMgrInstallationPath*>  
+    -   **Valores:** &lt;*ConfigMgrInstallationPath*>  
 
     -   **Detalhes:** especifica a pasta de instalação dos arquivos de programa do Configuration Manager.  
 
@@ -504,7 +504,7 @@ Use as seções a seguir para ajudá-lo a criar sua estratégia de backup do Con
 
     -   **Obrigatória:** Sim  
 
-    -   **Valores:** <*FQDN do Provedor de SMS*>  
+    -   **Valores:** &lt;*FQDN do Provedor de SMS*>  
 
     -   **Detalhes:** especifica o FQDN para o servidor que hospedará o Provedor de SMS. Você deve especificar o servidor que hospedou o Provedor de SMS antes da falha.  
 
@@ -526,7 +526,7 @@ Use as seções a seguir para ajudá-lo a criar sua estratégia de backup do Con
 
     -   **Obrigatória:** Sim  
 
-    -   **Valores:** <*PathToSetupPrerequisiteFiles*>  
+    -   **Valores:** &lt;*PathToSetupPrerequisiteFiles*>  
 
     -   **Detalhes:** especifica o caminho para os arquivos de pré-requisito da Instalação. Dependendo do valor do **PrerequisiteComp** , a Instalação usará esse caminho para armazenar arquivos baixados ou para localizar arquivos baixados anteriormente.  
 
@@ -560,7 +560,7 @@ Use as seções a seguir para ajudá-lo a criar sua estratégia de backup do Con
 
     -   **Obrigatória:** Sim  
 
-    -   **Valores:** *<SQLServerName\>*  
+    -   **Valores:** *&lt;NomeDoServidorSQL\>*  
 
     -   **Detalhes:** o nome do servidor ou o nome da instância clusterizada executando o SQL Server que hospedará o banco de dados do site. Você deverá especificar o mesmo servidor que hospedou o banco de dados do site antes da falha.  
 
@@ -570,11 +570,11 @@ Use as seções a seguir para ajudá-lo a criar sua estratégia de backup do Con
 
     -   **Valores:**  
 
-         *&lt;SiteDatabaseName\>*  
+         *&lt;NomeDoBancoDeDadosDoSite\>*  
 
          ou  
 
-         *<InstanceName\>*\\*<SiteDatabaseName\>*  
+         *&lt;NomeDaInstância\>*\\*&lt;NomeDoBancoDeDadosDoSite\>*  
 
     -   **Detalhes:** especifica o nome do banco de dados do SQL Server a ser criado ou usado para instalar o banco de dados do site de administração central. Você deverá especificar o mesmo nome do banco de dados usado antes da falha.  
 
@@ -585,7 +585,7 @@ Use as seções a seguir para ajudá-lo a criar sua estratégia de backup do Con
 
     -   **Obrigatória:** Não  
 
-    -   **Valores:** <*SSBPortNumber*>  
+    -   **Valores:** &lt;*SSBPortNumber*>  
 
     -   **Detalhes:** especifica a porta do SQL Server Service Broker (SSB) usada pelo SQL Server. Normalmente, o SSB está configurado para usar a porta TCP 4022, mas há suporte para outras portas. Você deve especificar a mesma porta do SSB que foi usada antes da falha.  
 
@@ -646,7 +646,7 @@ Use as seções a seguir para ajudá-lo a criar sua estratégia de backup do Con
 
     -   **Obrigatória:** Não  
 
-    -   **Valores:** <PathToSiteServerBackupSet\>  
+    -   **Valores:** &lt;CaminhoParaConjuntoDeBackupDoServidorDeSite\>  
 
     -   **Detalhes:** especifica o caminho para o conjunto de backups do servidor de site. Essa chave é opcional quando a configuração **ServerRecoveryOptions** tem o valor **1** ou **2**. Especifique um valor para a chave **SiteServerBackupLocation** recuperar o site usando um backup do site. Caso não especifique um valor, o site é reinstalado sem ser restaurado por meio de um conjunto de backup.  
 
@@ -654,7 +654,7 @@ Use as seções a seguir para ajudá-lo a criar sua estratégia de backup do Con
 
     -   **Obrigatória:** Talvez  
 
-    -   **Valores:** <PathToSiteDatabaseBackupSet\>  
+    -   **Valores:** &lt;CaminhoParaConjuntoDeBackupDoBancoDeDadosDoSite\>  
 
     -   **Detalhes:** especifica o caminho para o conjunto de backup do banco de dados do site. A chave **BackupLocation** é necessária quando o valor **1** ou **4** é configurado para a chave **ServerRecoveryOptions** , e o valor **10** é configurado para a chave **DatabaseRecoveryOptions** .  
 
@@ -676,7 +676,7 @@ Use as seções a seguir para ajudá-lo a criar sua estratégia de backup do Con
 
     -   **Obrigatória:** Sim  
 
-    -   **Valores:** <Código do site\>  
+    -   **Valores:** &lt;Código do site\>  
 
     -   **Detalhes:** três caracteres alfanuméricos que identificam exclusivamente o site na hierarquia. É necessário especificar o código do site que foi usado pelo site antes da falha.  
 
@@ -692,7 +692,7 @@ Use as seções a seguir para ajudá-lo a criar sua estratégia de backup do Con
 
     -   **Obrigatória:** Sim  
 
-    -   **Valores:** <*ConfigMgrInstallationPath*>  
+    -   **Valores:** &lt;*ConfigMgrInstallationPath*>  
 
     -   **Detalhes:** especifica a pasta de instalação dos arquivos de programa do Configuration Manager.  
 
@@ -703,7 +703,7 @@ Use as seções a seguir para ajudá-lo a criar sua estratégia de backup do Con
 
     -   **Obrigatória:** Sim  
 
-    -   **Valores:** <*FQDN do Provedor de SMS*>  
+    -   **Valores:** &lt;*FQDN do Provedor de SMS*>  
 
     -   **Detalhes:** especifica o FQDN para o servidor que hospedará o Provedor de SMS. Você deve especificar o servidor que hospedou o Provedor de SMS antes da falha.  
 
@@ -725,7 +725,7 @@ Use as seções a seguir para ajudá-lo a criar sua estratégia de backup do Con
 
     -   **Obrigatória:** Sim  
 
-    -   **Valores:** <*PathToSetupPrerequisiteFiles*>  
+    -   **Valores:** &lt;*PathToSetupPrerequisiteFiles*>  
 
     -   **Detalhes:** especifica o caminho para os arquivos de pré-requisito da Instalação. Dependendo do valor do **PrerequisiteComp** , a Instalação usará esse caminho para armazenar arquivos baixados ou para localizar arquivos baixados anteriormente.  
 
@@ -759,7 +759,7 @@ Use as seções a seguir para ajudá-lo a criar sua estratégia de backup do Con
 
     -   **Obrigatória:** Sim  
 
-    -   **Valores:** *<SQLServerName\>*  
+    -   **Valores:** *&lt;NomeDoServidorSQL\>*  
 
     -   **Detalhes:** o nome do servidor ou o nome da instância clusterizada executando o SQL Server que hospedará o banco de dados do site. Você deverá especificar o mesmo servidor que hospedou o banco de dados do site antes da falha.  
 
@@ -769,11 +769,11 @@ Use as seções a seguir para ajudá-lo a criar sua estratégia de backup do Con
 
     -   **Valores:**  
 
-         *&lt;SiteDatabaseName\>*  
+         *&lt;NomeDoBancoDeDadosDoSite\>*  
 
          ou  
 
-         *<InstanceName\>*\\*<SiteDatabaseName\>*  
+         *&lt;NomeDaInstância\>*\\*&lt;NomeDoBancoDeDadosDoSite\>*  
 
     -   **Detalhes:** especifica o nome do banco de dados do SQL Server a ser criado ou usado para instalar o banco de dados do site de administração central. Você deverá especificar o mesmo nome do banco de dados usado antes da falha.  
 
@@ -784,7 +784,7 @@ Use as seções a seguir para ajudá-lo a criar sua estratégia de backup do Con
 
     -   **Obrigatória:** Não  
 
-    -   **Valores:** <*SSBPortNumber*>  
+    -   **Valores:** &lt;*SSBPortNumber*>  
 
     -   **Detalhes:** especifica a porta do SQL Server Service Broker (SSB) usada pelo SQL Server. Normalmente, o SSB está configurado para usar a porta TCP 4022, mas há suporte para outras portas. Você deve especificar a mesma porta do SSB que foi usada antes da falha.  
 
@@ -794,7 +794,7 @@ Use as seções a seguir para ajudá-lo a criar sua estratégia de backup do Con
 
     -   **Obrigatória:** Talvez  
 
-    -   **Valores:** <*SiteCodeForCentralAdministrationSite*>  
+    -   **Valores:** &lt;*SiteCodeForCentralAdministrationSite*>  
 
     -   **Detalhes:** especifica o site de administração central ao qual o site primário será anexado quando ingressar na hierarquia do Configuration Manager. Essa configuração é necessária se o site primário foi anexado ao site de administração central antes da falha. É necessário especificar o código do site usado para o site de administração central antes da falha.  
 
@@ -802,7 +802,7 @@ Use as seções a seguir para ajudá-lo a criar sua estratégia de backup do Con
 
     -   **Obrigatória:** Não  
 
-    -   **Valores:** <*Interval*>  
+    -   **Valores:** &lt;*Interval*>  
 
     -   **Detalhes:** especifica o intervalo de repetição (em minutos) para tentar uma conexão ao site de administração central depois de a conexão falhar. Por exemplo, se a conexão com o site de administração central falhar, o site primário aguardará o número de minutos especificado para CASRetryInterval e tentará novamente se conectar.  
 
@@ -810,7 +810,7 @@ Use as seções a seguir para ajudá-lo a criar sua estratégia de backup do Con
 
     -   **Obrigatória:** Não  
 
-    -   **Valores:** <*Timeout*>  
+    -   **Valores:** &lt;*Timeout*>  
 
     -   **Detalhes:** especifica o valor máximo do tempo limite (em minutos) para o site primário se conectar ao site de administração central. Por exemplo, se o site primário falhar ao conectar-se ao site de administração central, o site primário tentará novamente a conexão ao site de administração central baseado no CASRetryInterval até chegar ao período do WaitForCASTimeout. Você pode especificar um valor de 0 a 100.  
 
@@ -903,7 +903,7 @@ Use as seções a seguir para ajudá-lo a criar sua estratégia de backup do Con
  O SMS Writer é um serviço que interage com o VSS (Serviço de Cópias de Sombra de Volume) durante o processo de backup. O serviço SMS Writer deve estar em execução para o backup do site do Configuration Manager para ser concluído com êxito.  
 
 ### <a name="purpose"></a>Finalidade  
- O SMS Writer registra-se no serviço VSS e se associa às suas interfaces e eventos. Quando o VSS transmite eventos ou envia notificações específicas para o SMS Writer, o SMS Writer responde à notificação e executa a ação apropriada. O SMS Writer lê o arquivo de controle de backup (smsbkup.ctl), localizado em <*Caminho de Instalação do ConfigMgr*>\inboxes\smsbkup.box, e determina os arquivos e os dados que devem ser armazenados em backup. O SMS Writer cria metadados, que consistem em vários componentes, com base nessas informações e em dados específicos da chave e das subchaves de registro de SMS. O serviço envia os metadados ao VSS quando solicitado. Em seguida, o VSS envia os metadados ao aplicativo solicitante, o Gerenciador de Backup do Configuration Manager. O Gerenciador de Backup seleciona os dados que passam por backup e envia esses dados ao SMS Writer via VSS. O SMS Writer executa as etapas apropriadas para se preparar para o backup. Quando o VSS está pronto para capturar o instantâneo, ele envia um evento, o SMS Writer interrompe todos os serviços do Configuration Manager e assegura que as atividades do Configuration Manager sejam congeladas enquanto o instantâneo é criado. Depois que o instantâneo é concluído, o SMS Writer reinicia os serviços e as atividades.  
+ O SMS Writer registra-se no serviço VSS e se associa às suas interfaces e eventos. Quando o VSS transmite eventos ou envia notificações específicas para o SMS Writer, o SMS Writer responde à notificação e executa a ação apropriada. O SMS Writer lê o arquivo de controle de backup (smsbkup.ctl), localizado em &lt;*Caminho de Instalação do ConfigMgr*>\inboxes\smsbkup.box, e determina os arquivos e os dados que devem ser armazenados em backup. O SMS Writer cria metadados, que consistem em vários componentes, com base nessas informações e em dados específicos da chave e das subchaves de registro de SMS. O serviço envia os metadados ao VSS quando solicitado. Em seguida, o VSS envia os metadados ao aplicativo solicitante, o Gerenciador de Backup do Configuration Manager. O Gerenciador de Backup seleciona os dados que passam por backup e envia esses dados ao SMS Writer via VSS. O SMS Writer executa as etapas apropriadas para se preparar para o backup. Quando o VSS está pronto para capturar o instantâneo, ele envia um evento, o SMS Writer interrompe todos os serviços do Configuration Manager e assegura que as atividades do Configuration Manager sejam congeladas enquanto o instantâneo é criado. Depois que o instantâneo é concluído, o SMS Writer reinicia os serviços e as atividades.  
 
  O serviço SMS Writer é instalado automaticamente. Ele deve estar em execução quando o aplicativo VSS solicitar um backup ou uma restauração.  
 
@@ -918,6 +918,6 @@ Use as seções a seguir para ajudá-lo a criar sua estratégia de backup do Con
 
 
 
-<!--HONumber=Jan17_HO4-->
+<!--HONumber=Feb17_HO2-->
 
 

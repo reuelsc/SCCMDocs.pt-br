@@ -2,7 +2,7 @@
 title: Perguntas frequentes sobre o cliente do Endpoint Protection | Microsoft Docs
 description: Obtenha respostas para as perguntas frequentes sobre o Windows Defender e o Endpoint Protection.
 ms.custom: na
-ms.date: 10/06/2016
+ms.date: 02/14/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
@@ -16,8 +16,8 @@ author: NathBarn
 ms.author: nathbarn
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: bff083fe279cd6b36a58305a5f16051ea241151e
-ms.openlocfilehash: f0352e59390ade7212a64cf0de883bbb1ca28bab
+ms.sourcegitcommit: 017bd5b899b364fc832c721d63cc7dbad0a11671
+ms.openlocfilehash: b88bc5f734b85527b81e5848deb0617db4c8dfbc
 
 
 ---
@@ -29,39 +29,23 @@ ms.openlocfilehash: f0352e59390ade7212a64cf0de883bbb1ca28bab
 Essas perguntas frequentes são para usuários de computador cujo administrador de TI implantou o Windows Defender ou Endpoint Protection em seus computadores gerenciados. Aqui, o conteúdo pode não se aplicar a outros softwares antimalware. O Microsoft System Center Endpoint Protection gerencia o Windows Defender no Windows 10. Ele também pode implantar e gerenciar o cliente do Endpoint Protection em computadores antes do Windows 10. Embora o Windows Defender seja descrito neste artigo, suas informações também se aplicam ao Endpoint Protection.  
 
 -   [Por que preciso de software antivírus e antispyware?](#why-do-i-need-antivirus-and-antispyware-software)  
-
--   [Como saber se meu computador está infectado com um software mal-intencionado?](#how-can-i-tell-if-my-computer-is-infected-with-malicious-software)  
-
+-   [Como saber se meu computador está infectado com um software mal-intencionado?](#how-can-i-tell-if-my-computer-is-infected-with-malicious-software)
+-   [Como encontrar a versão do Windows Defender?](#how-can-i-find-the-version-of-windows-defender)
 -   [O que devo fazer se o Windows Defender ou o Endpoint Protection detectar software mal-intencionado no meu computador?](#what-should-i-do-if-windows-defender-or-endpoint-protection-detects-software-on-my-computer)  
-
 -   [O que é um vírus?](#what-is-a-virus)  
-
 -   [O que é um spyware?](#what-is-spyware)  
-
 -   [Qual é a diferença entre vírus, spywares e outros softwares potencialmente prejudiciais?](#hat-s-the-difference-between-viruses-spyware-and-other-potentially-harmful-software)  
-
 -   [De onde vêm vírus, spywares e outros softwares potencialmente indesejados?](#where-do-viruses-spyware-and-other-potentially-unwanted-software-come-from)  
-
 -   [Posso obter software mal-intencionado sem saber?](#can-i-get-malicious-software-without-knowing-it)  
-
 -   [Por que é importante examinar os contratos de licença antes de instalar o software?](#why-is-it-important-to-review-license-agreements-before-installing-software)  
-
 -   [Qual é a diferença entre o Windows Defender e o Endpoint Protection?](#what-s-the-difference-between-endpoint-protection-and-windows-defender)  
-
 -   [Por que o Windows Defender não detecta cookies?](#why-doesn-t-windows-defender-detect-cookies)  
-
 -   [Como posso evitar malwares?](#how-can-i-prevent-malware)  
-
 -   [Quais são as definições de vírus e spyware?](#what-are-virus-and-spyware-definitions)  
-
 -   [Como posso manter as definições de vírus e spyware atualizadas?](#how-do-i-keep-virus-and-spyware-definitions-up-to-date)  
-
 -   [Como remover ou restaurar itens da quarentena pelo Windows Defender ou Endpoint Protection?](#how-do-i-remove-or-restore-items-quarantined-by-windows-defender-or-endpoint-protection)  
-
 -   [O que é proteção em tempo real?](#what-is-real-time-protection)  
-
 -   [Como saber se o Windows Defender ou o Endpoint Protection está em execução no meu computador?](#how-do-i-know-that-windows-defender-or-endpoint-protection-is-running-on-my-computer)
-
 -   [Como configurar alertas do Windows Defender ou do Endpoint Protection?](#how-to-set-up-windows-defender-or-endpoint-protection-alerts)  
 
 ##  <a name="why-do-i-need-antivirus-and-antispyware-software"></a>Por que preciso de software antivírus e anti-spyware?  
@@ -79,7 +63,7 @@ Essas perguntas frequentes são para usuários de computador cujo administrador 
     |Monitorar atividade de arquivo e programa em seu computador|Esta opção monitora quando os arquivos e programas começam a ser executados no computador e o alerta sobre quaisquer ações executadas por eles ou neles. Isso é importante, pois o software mal-intencionado pode usar as vulnerabilidades nos programas que você instalou para executar software mal-intencionado ou indesejado sem seu conhecimento. Por exemplo, spyware pode ser executado em segundo plano quando você inicia um programa que usa com frequência. O Windows Defender monitora os programas e o alerta quando detecta atividade suspeita.|  
     |Habilitar monitoramento de comportamento|Esta opção monitora coleções de padrões de comportamento suspeitos que não podem ser detectados por métodos de detecção de antivírus tradicionais.|  
 
-    |Habilitar Sistema de Inspeção de Rede|Esta opção ajuda a proteger o computador contra explorações de "dia zero" de vulnerabilidades conhecidas, diminuindo a janela de tempo entre o momento em que uma vulnerabilidade é descoberta e a aplicação de uma atualização.|  
+    |Habilitar Sistema de Inspeção de Rede|Esta opção ajuda a proteger o computador contra explorações de "dia zero" de vulnerabilidades conhecidas, reduzindo a janela de tempo entre o momento em que uma vulnerabilidade é descoberta e a aplicação de uma atualização.|  
 
 -   **Opções de verificação** – é possível usar o Windows Defender para verificar possíveis ameaças, como vírus, spywares e outros softwares mal-intencionados que possam colocar o computador em risco. Você também pode usá-lo para agendar verificações regularmente, bem como remover softwares mal-intencionados detectados durante uma verificação.  
 
@@ -104,6 +88,9 @@ Essas perguntas frequentes são para usuários de computador cujo administrador 
 -   Seu computador, de repente, começa a ser executado mais lentamente do que o habitual. Nem todos os problemas de desempenho do computador são causados por software mal-intencionado, mas o software mal-intencionado, especialmente spyware, pode causar uma alteração perceptível.  
 
 Pode haver um software mal-intencionado no computador mesmo se você não percebe nenhum sintoma. Esse tipo de software pode coletar informações sobre você e o computador sem seu conhecimento ou consentimento. Para ajudar a proteger sua privacidade e o computador, você deve executar o Windows Defender ou Endpoint Protection em todos os momentos.  
+
+## <a name="how-can-i-find-the-version-of-windows-defender"></a>Como encontrar a versão do Windows Defender?
+ Para exibir a versão do Windows Defender em execução no computador, abra o Windows Defender (clique em **Iniciar** e procure **Windows Defender**), clique em **Configurações** e role até o fim das configurações para localizar as **Informações de versão** do Windows Defender.
 
 ##  <a name="what-should-i-do-if-windows-defender-or-endpoint-protection-detects-malicious-software-on-my-computer"></a>O que devo fazer se o Windows Defender ou o Endpoint Protection detectar software mal-intencionado no computador?  
 
@@ -279,6 +266,6 @@ Para remover todos os itens indesejados ou potencialmente prejudiciais que o Win
 
 
 
-<!--HONumber=Dec16_HO3-->
+<!--HONumber=Feb17_HO3-->
 
 
