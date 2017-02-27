@@ -1,3 +1,4 @@
+
 ---
 title: Cache de pares do cliente | System Center Configuration Manager
 description: "Use cache de pares para locais de fonte de conteúdo do cliente durante a implantação de conteúdo com o System Center Configuration Manager."
@@ -16,8 +17,8 @@ author: Brenduns
 ms.author: brenduns
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: 6aaa833c1301cf82f7d8df3bc13f0a6936fc6e9d
-ms.openlocfilehash: 96b3a72a7beb31396813ae468ae3eeacc845b582
+ms.sourcegitcommit: 2dd898c9b022c6f0bc243623835af0eece94128f
+ms.openlocfilehash: 95d1671501f672e1d5abe3f0fbbd7d2dfb21e0a3
 
 ---
 # <a name="peer-cache-for-configuration-manager-clients"></a>Cache de pares para clientes do Configuration Manager
@@ -51,8 +52,6 @@ Para ajudar você a entender o uso do cache de pares, exiba o painel Fontes de D
 ## <a name="requirements-and-considerations-for-peer-cache"></a>Requisitos e considerações do Cache de Pares
 - O Cache de Pares tem suporte em qualquer sistema operacional Windows com suporte como cliente do Configuration Manager. Não há suporte para sistemas operacionais não Windows para o Cache de Pares.
 
-- Você deve configurar seu site com uma **Conta de Acesso à Rede** que tenha **Controle Total** da pasta de cache em cada cliente. Por padrão, a pasta é ***%windir%\ccmcache***.
-
 - Os clientes só podem transferir conteúdo de clientes de cache de pares que estão em seu grupo de limites atual.
 
 -     Como o limite atual de uma fonte de conteúdo do Cache de Pares é determinado pelo último envio de inventário de hardware daquele cliente, um cliente que usa um perfil móvel para um local de rede e que está em um grupo de limites diferente ainda poderá ser considerado um membro de seu grupo de limites anterior para o Cache de Pares. Isso pode resultar em uma fonte de conteúdo de cache de pares sendo oferecida a um cliente que não está em seu local de rede imediato. É recomendado excluir os clientes que estão sujeitos a essa configuração de participarem como uma fonte do Cache de Pares.
@@ -70,6 +69,6 @@ Em cada computador habilitado para o Cache de Pares, se o Firewall do Windows es
 
 
 
-<!--HONumber=Feb17_HO2-->
+<!--HONumber=Feb17_HO4-->
 
 

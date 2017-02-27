@@ -2,7 +2,7 @@
 title: "Ponto de distribuição baseado em nuvem | Microsoft Docs"
 description: "Saiba mais sobre as configurações e limitações para usar um ponto de distribuição baseado em nuvem com o System Center Configuration Manager."
 ms.custom: na
-ms.date: 2/14/2017
+ms.date: 2/24/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
@@ -16,8 +16,8 @@ author: Brenduns
 ms.author: brenduns
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: 8800a497a8c1e26b89ad3817ee2c15258bd1d5c5
-ms.openlocfilehash: f9164eeb19027366525ebc41640c82de3a606e4d
+ms.sourcegitcommit: 97051d9c65ef5ea28c94468b24863120624e8de0
+ms.openlocfilehash: b78b3b20a8b317a242cd06f9fda6326f41673915
 
 
 ---
@@ -185,9 +185,7 @@ Clientes que usam pontos de distribuição baseados em nuvem usam a sequência a
 
 3.  Quando um ponto de distribuição preferencial ou remoto não está disponível, o cliente pode, então, retornar para obter o conteúdo de um ponto de distribuição baseado em nuvem.  
 
-    > [!NOTE]  
-        >  Clientes na Internet que recebem a um ponto de distribuição baseado na Internet e um ponto de distribuição baseado em nuvem como locais de conteúdo para uma implantação, só tentam recuperar conteúdo do ponto de distribuição baseado na Internet. Se o cliente na Internet não recuperar o conteúdo do ponto de distribuição baseado na Internet, ele não tentará acessar o ponto de distribuição baseado em nuvem.  
-
+    
 
   Quando um cliente usa um ponto de distribuição baseado em nuvem como um local de conteúdo, ele se autentica para esse ponto de distribuição usando o token de acesso ao Configuration Manager. Se o cliente confiar no certificado do ponto de distribuição baseado em nuvem do Configuration Manager, ele poderá baixar o conteúdo solicitado.  
 
@@ -217,6 +215,6 @@ Clientes que usam pontos de distribuição baseados em nuvem usam a sequência a
 
 
 
-<!--HONumber=Feb17_HO3-->
+<!--HONumber=Feb17_HO4-->
 
 
