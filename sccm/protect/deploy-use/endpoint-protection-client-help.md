@@ -2,7 +2,7 @@
 title: Ajuda do cliente do Endpoint Protection | Microsoft Docs
 description: "Saiba mais sobre recursos e aprimoramentos no Endpoint Protection que ajudam a proteger seu computador contra ameaças."
 ms.custom: na
-ms.date: 01/03/2017
+ms.date: 02/14/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
@@ -16,8 +16,8 @@ author: NathBarn
 ms.author: nathbarn
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: 1432568286605d29683416885d7aa522c649016e
-ms.openlocfilehash: ef2d8b540856b395575b99de79fa463de5d133ac
+ms.sourcegitcommit: 017bd5b899b364fc832c721d63cc7dbad0a11671
+ms.openlocfilehash: 212c73fcb947c3b56da6055bf47fe078301ad90d
 
 
 ---
@@ -29,14 +29,12 @@ ms.openlocfilehash: ef2d8b540856b395575b99de79fa463de5d133ac
 Essa versão do Windows Defender ou do Endpoint Protection inclui os seguintes recursos para ajudar a proteger seu computador contra ameaças:  
 
 -   **Integração do Firewall do Windows.** A configuração do Endpoint Protection permite ligar ou desligar o Firewall do Windows.  
-
 -   **Sistema de Inspeção da Rede.** Este recurso aprimora a proteção em tempo real ao inspecionar o tráfego de rede para ajudar a bloquear de forma pró-ativa a exploração de vulnerabilidades conhecidas de rede.  
-
 -   **Mecanismo de proteção.** A proteção em tempo real localiza e interrompe a instalação ou execução de malware em seu computador. O mecanismo atualizado oferece recursos de detecção e limpeza aprimorados com melhor desempenho.  
 
 O Windows Defender é fornecido como parte do sistema operacional Windows 10.  Em versões anteriores do Windows, o administrador pode fornecer o Windows Defender ou o Endpoint Protection usando software de gerenciamento.
 
-Para ajuda de solução de problemas, consulte [Solução de problemas do cliente Windows Defender ou Endpoint Protection](troubleshoot-endpoint-client.md). Para obter uma lista dos novos recursos, consulte [Novidades no cliente Windows Defender](https://support.microsoft.com/help/29276/windows-10-whats-new-in-windows-defender).
+Você também pode encontrar uma lista de [perguntas frequentes sobre o Windows Defender e o Endpoint Protection](endpoint-protection-client-faq.md). Para ajuda de solução de problemas, consulte [Solução de problemas do cliente Windows Defender ou Endpoint Protection](troubleshoot-endpoint-client.md). Para obter uma lista dos novos recursos, consulte [Novidades no cliente Windows Defender](https://support.microsoft.com/help/29276/windows-10-whats-new-in-windows-defender).
 
 ## <a name="windows-firewall-integration"></a>Integração do Firewall do Windows  
  O Firewall do Windows pode ajudar a impedir que invasores ou softwares maliciosos tenham acesso ao seu computador pela Internet ou por uma rede. Agora, quando você instala o Endpoint Protection, o assistente de instalação verifica se o Firewall do Windows está ativado. Se você tiver desativado o Firewall do Windows intencionalmente, poderá desmarcar uma caixa de seleção para evitar ativá-lo. É possível alterar as configurações do Firewall do Windows a qualquer momento, via Sistema e Segurança no Painel de Controle.  
@@ -60,11 +58,10 @@ Para exibir as configurações do Windows Defender, pesquise `Windows Defender` 
 
 ### <a name="see-also"></a>Consulte também  
  [Perguntas frequentes sobre o cliente do Endpoint Protection](endpoint-protection-client-faq.md)   
-
  [Solucionando problemas do cliente Windows Defender ou Endpoint Protection](troubleshoot-endpoint-client.md)
 
 
 
-<!--HONumber=Jan17_HO1-->
+<!--HONumber=Feb17_HO3-->
 
 

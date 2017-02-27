@@ -17,8 +17,8 @@ author: robstackmsft
 ms.author: robstack
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: cabd1083a6d7c49ef1bc46c6ec35cffd6d858344
-ms.openlocfilehash: fccf655110c2ed7689c128a0a619838d18b3355a
+ms.sourcegitcommit: 72157aa0e94b99eb947fdd9891b7e91c1001ea22
+ms.openlocfilehash: 64964834b63167e1f78c44410396b8e18735875e
 
 
 ---
@@ -57,7 +57,8 @@ Para obter mais informações sobre os tipos de instalação de aplicativos, con
 
       *Para especificar um par nome-valor*
         1. Para adicionar um novo par, escolha **Novo**.
-        2. Na caixa de diálogo **Adicionar Par Nome/Valor**, especifique o seguinte:         - **Tipo**. Na lista, selecione o tipo de valor que deseja especificar.
+        2. Na caixa de diálogo **Adicionar Par Nome/Valor**, especifique o seguinte:
+            - **Tipo**. Na lista, selecione o tipo de valor que deseja especificar.
             - **Nome**. Insira o nome da chave de lista de propriedades para o qual deseja especificar um valor.
             - **Valor**. Insira o valor que será aplicado à chave inserida.
 
@@ -69,8 +70,9 @@ Para obter mais informações sobre os tipos de instalação de aplicativos, con
 
       Para obter mais informações sobre listas de propriedades XML, consulte [Noções básicas sobre listas de propriedades XML](https://developer.apple.com/library/ios/documentation/Cocoa/Conceptual/PropertyLists/UnderstandXMLPlist/UnderstandXMLPlist.html) na biblioteca do desenvolvedor do iOS.
 
-            The format of the XML property list varies depending on the app you are configuring. Contact the app supplier for details about the format to use.
-            Intune supports the following data types in a property list:
+        The format of the XML property list varies depending on the app you are configuring. Contact the app supplier for details about the format to use.
+        Intune supports the following data types in a property list:
+
             ```
             <integer>
             <real>
@@ -79,8 +81,9 @@ Para obter mais informações sobre os tipos de instalação de aplicativos, con
             <dict>
             <true /> or <false />
             ```
-            For more information about data types, see [About Property Lists](https://developer.apple.com/library/content/documentation/Cocoa/Conceptual/PropertyLists/AboutPropertyLists/AboutPropertyLists.html) in the iOS Developer Library.
-            Intune also supports the following token types in the property list:
+    Para obter mais informações sobre tipos de dados, consulte o artigo [Sobre listas de propriedades](https://developer.apple.com/library/content/documentation/Cocoa/Conceptual/PropertyLists/AboutPropertyLists/AboutPropertyLists.html) na biblioteca do desenvolvedor do iOS.
+    O Intune também dá suporte aos seguintes tipos de token na lista de propriedades:
+    
             ```
             {{userprincipalname}} - (Example: John@contoso.com)
             {{mail}} - (Example: John@contoso.com)
@@ -139,6 +142,6 @@ Ao criar um arquivo de configuração de aplicativo móvel, você pode usar este
 
 
 
-<!--HONumber=Dec16_HO3-->
+<!--HONumber=Feb17_HO3-->
 
 
