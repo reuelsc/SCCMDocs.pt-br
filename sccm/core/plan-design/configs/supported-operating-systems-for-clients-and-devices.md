@@ -16,8 +16,9 @@ author: nbigman
 ms.author: nbigman
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: 4688b4b12a7afa5fcfdc0e42f984271d98f10316
-ms.openlocfilehash: d2d888edf51d46a2dd13ef6b7ed39c066179a088
+ms.sourcegitcommit: bdd7961d9126dc6f3c1ae1fec1842c862e8a7c6d
+ms.openlocfilehash: 12633a7b9f799ffc74e0ee657e091595ed7eaf67
+ms.lasthandoff: 02/22/2017
 
 ---
 # <a name="supported-operating-systems-for-clients-and-devices-for-system-center-configuration-manager"></a>Sistemas operacionais com suporte para clientes e dispositivos para o System Center Configuration Manager
@@ -34,13 +35,13 @@ ms.openlocfilehash: d2d888edf51d46a2dd13ef6b7ed39c066179a088
 -   Não há suporte para a instalação ou execução do cliente do Configuration Manager para Linux ou UNIX ou do cliente para Mac em computadores com uma conta diferente da raiz. Isso pode impedir o funcionamento correto dos serviços essenciais.  
 
 ##  <a name="windows-computers"></a>Computadores com Windows  
- É possível gerenciar computadores Windows com o cliente do Configuration Manager, incluído com o Configuration Manager. Para mais informações, confira [Como implantar clientes em computadores Windows no System Center Configuration Manager](../../../core/clients/deploy/deploy-clients-to-windows-computers.md).  
+ Você pode usar o cliente do Configuration Manager que está incluído no Configuration Manager para gerenciar os seguintes sistemas operacionais do Windows. Para mais informações, confira [Como implantar clientes em computadores Windows no System Center Configuration Manager](../../../core/clients/deploy/deploy-clients-to-windows-computers.md).  
 
 **Sistemas operacionais com suporte:**  
 
+
 -  **Windows Server 2016**: Standard, Datacenter <sup>1</sup>
   - O sistema operacional é compatível desde o Configuration Manager versão 1606, com o pacote cumulativo de atualizações do hotfix do KB3186654 (ou a versão de linha de base 1606, lançada em outubro de 2016).  
-
 
 -   **Windows Server 2012 R2** (x64): Standard, Datacenter <sup>1</sup>    
 
@@ -56,9 +57,8 @@ ms.openlocfilehash: d2d888edf51d46a2dd13ef6b7ed39c066179a088
 
 -   **Windows Server 2008 com SP2** (x86, x64): Standard, Enterprise, Datacenter <sup>1</sup>    
 
--   **Windows 10 Enterprise LTSB** (x86, x64) <sup>3</sup>    
-
--   **Windows 10** (x86, x64): Pro, Enterprise    
+-   **Windows 10**: Pro, Enterprise  
+   Consulte [Suporte para versões do Windows 10](/sccm/core/plan-design/configs/support-for-windows-10) para obter detalhes sobre as diferentes versões do Windows 10 para as quais as diferentes versões do Configuration Manager dão suporte.
 
 -   **Windows 8.1** (x86, x64): Professional, Enterprise    
 
@@ -83,7 +83,6 @@ ms.openlocfilehash: d2d888edf51d46a2dd13ef6b7ed39c066179a088
 
  <sup>2</sup> Para dar suporte à instalação do cliente por push, o computador que executa esta versão do sistema operacional deve executar o serviço de função do Servidor de Arquivos para a função de servidor dos Serviços de Arquivo e Armazenamento. Para saber mais sobre como instalar recursos do Windows em um computador Server Core, confira [Instalar funções e recursos de servidor em um servidor Server Core](http://go.microsoft.com/fwlink/p/?LinkId=299359) na biblioteca do TechNet do Windows Server 2012.  
 
- <sup>3</sup> O uso deste sistema operacional exige a versão 1602 ou posterior do Configuration Manager.  
 
 ##  <a name="windows-embedded-computers"></a>Computadores Windows Embedded  
  É possível gerenciar dispositivos com Windows Embedded instalando o software cliente do Configuration Manager no dispositivo.  Para mais informações, consulte [Planejando a implantação de cliente em dispositivos do Windows Embedded no System Center Configuration Manager](../../../core/clients/deploy/plan/planning-for-client-deployment-to-windows-embedded-devices.md).  
@@ -349,9 +348,4 @@ O Configuration Manager dá suporte ao gerenciamento limitado de dispositivos qu
 -   **Exchange Server 2013**  
 
 -   **Exchange Online (Office 365)**: inclui o Business Productivity Online Standard Suite  
-
-
-
-<!--HONumber=Feb17_HO1-->
-
 

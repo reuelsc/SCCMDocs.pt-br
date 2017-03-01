@@ -16,8 +16,9 @@ author: Brenduns
 ms.author: brenduns
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: 0c084e9f630a96c7b22c3dbdd72e18ad4a86926d
-ms.openlocfilehash: 9631b5622fec19e0248eb919bc8bd876152f66d7
+ms.sourcegitcommit: 1a3460143628ef297c99c364ded7ebea86d270dd
+ms.openlocfilehash: c266bb753ea69785b674508647c3857b2218cb77
+ms.lasthandoff: 02/18/2017
 
 
 ---
@@ -29,7 +30,7 @@ Use este tópico para saber mais sobre como executar a Instalação do Configura
 
 Quando você usa a mídia de linha de base da versão 1606, o site que você instala ou para o qual atualiza é:
 - Um *site do Branch Atual* que é equivalente a um site que foi instalado pela primeira vez usando a mídia de linha de base da 1511 e então atualizado para a versão 1606 e com o pacote cumulativo de atualizações do hotfix da 1606 – KB3186654.
--   Um *site do LTSB* que é equivalente ao site do Branch Atual que executa a versão 1606 com o pacote cumulativo de atualizações do hotfix da 1606 – KB3186654. A mídia de linha de base já inclui o pacote cumulativo de atualizações do hotfix.  Mas o LTSB não dá suporte a todos os recursos ou funcionalidades disponíveis com o Branch Atual, conforme detalhado em [Introdução ao Branch de Manutenção em Longo Prazo do System Center Configuration Manager](introduction-to-the-ltsb.md).
+-    Um *site do LTSB* que é equivalente ao site do Branch Atual que executa a versão 1606 com o pacote cumulativo de atualizações do hotfix da 1606 – KB3186654. A mídia de linha de base já inclui o pacote cumulativo de atualizações do hotfix.  Mas o LTSB não dá suporte a todos os recursos ou funcionalidades disponíveis com o Branch Atual, conforme detalhado em [Introdução ao Branch de Manutenção em Longo Prazo do System Center Configuration Manager](introduction-to-the-ltsb.md).
 
 Se você não estiver familiarizado com os diferentes branches do System Center Configuration Manager, confira [Qual branch do Configuration Manager devo usar](which-branch-should-i-use.md).
 
@@ -70,7 +71,7 @@ A mídia de linha de base da versão 1606 dá suporte a uma nova chave de arquiv
 Ao usar um script autônomo para instalar uma ramificação licenciada, é necessário adicionar a seção, os nomes de chave e valores a seguir na seção de Opções do seu script. Você não precisa usar esses valores para instalar com script a Edição de avaliação do Branch Atual:  
 
  **SABranchOptions**
--   **Nome da chave: SSActive**
+-     **Nome da chave: SAActive**
   - Valores: 0 ou 1.  
   - Detalhes: 0 instala uma Edição de Avaliação não licenciada do Branch Atual e 1 instala uma edição licenciada.   
 
@@ -81,7 +82,7 @@ Ao usar um script autônomo para instalar uma ramificação licenciada, é neces
 Por exemplo, para instalar uma edição do Branch Atual, você usaria:
 
   **Nome da chave: SABranchOptions**
-   -    **SSActive = 1**
+   -    **SAActive = 1**
    - **CurrentBranch = 1**
 
 
@@ -97,7 +98,7 @@ Para mais informações, confira [Use a command line to install System Center Co
 Ao usar a mídia de linha de base da 1606 para instalar um novo site de qualquer um dos branches, use os procedimentos de planejamento, preparo e instalação de site documentados no tópico [Installing System Center Configuration Manager sites](/sccm/core/servers/deploy/install/installing-sites) (Instalando sites do System Center Configuration Manager) com a adição das seguintes considerações para a Instalação:
 
 - Durante a Instalação, você deve escolher o branch do Configuration Manager que deseja instalar e pode especificar os detalhes do contrato do Software Assurance.
--   Nova instalação com scripts. Para obter mais informações, consulte "Novas opções de instalação com scripts" anteriormente neste artigo.
+-    Nova instalação com scripts. Para obter mais informações, consulte "Novas opções de instalação com scripts" anteriormente neste artigo.
 
 ## <a name="expand-a-stand-alone-primary-site"></a>Expandir um site primário autônomo
 Você pode expandir um site primário autônomo que executa o LTSB.  O processo não é diferente daquele usado para um site de Branch Atual com uma limitação:
@@ -111,7 +112,7 @@ Ao atualizar do System Center 2012 Configuration Manager, use o planejamento, pr
 
 **Atualização para o Branch Atual:**
 - Durante a Instalação, você deve escolher o Branch Atual e pode especificar detalhes para o contrato do Software Assurance.
--   Nova instalação com scripts. Para obter mais informações, consulte "Novas opções de instalação com scripts" anteriormente neste artigo.
+-     Nova instalação com scripts. Para obter mais informações, consulte "Novas opções de instalação com scripts" anteriormente neste artigo.
 
 **Atualização para o LTSB:**  
 - Etapas adicionais para seguir na lista de verificação de pré-atualização.
@@ -147,9 +148,4 @@ Para obter mais informações, veja [a pasta CD.Latest](/sccm/core/servers/manag
 Para fazer backup, recuperar ou executar a manutenção do site em um site que executa o LTSB, use as diretrizes e os procedimentos de [Backup e recuperação para o System Center Configuration Manager](/sccm/protect/understand/backup-and-recovery).  
 
 Use a Instalação do Configuration Manager da pasta CD.Latest do backup do seu site do LTSB.
-
-
-
-<!--HONumber=Jan17_HO1-->
-
 

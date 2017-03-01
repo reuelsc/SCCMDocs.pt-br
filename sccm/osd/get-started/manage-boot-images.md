@@ -17,8 +17,9 @@ author: Dougeby
 ms.author: dougeby
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: 89158debdf4c345a325feeb608db2215a88ed81b
-ms.openlocfilehash: 3b7125e782b60853e750aeb7ba923490e46a76b0
+ms.sourcegitcommit: 4edf7d09d39fa22fb5812aecc88febd763001eba
+ms.openlocfilehash: 369aa062d0f38eedebc0a7c351a7ce67b53d199b
+ms.lasthandoff: 02/21/2017
 
 
 ---
@@ -29,11 +30,11 @@ ms.openlocfilehash: 3b7125e782b60853e750aeb7ba923490e46a76b0
 Uma imagem de inicialização no Configuration Manager é uma imagem do [WinPE (Windows PE)](https://msdn.microsoft.com/library/windows/hardware/dn938389%28v=vs.85%29.aspx) usada durante uma implantação de sistema operacional. Imagens de inicialização são usadas para iniciar um computador no WinPE, que é um sistema operacional mínimo com componentes e serviços limitados que preparam o computador de destino para a instalação do Windows.  Use as seções a seguir para gerenciar imagens de inicialização.
 
 ##  <a name="a-namebkmkbootimagedefaulta-default-boot-images"></a><a name="BKMK_BootImageDefault"></a> Imagens de inicialização padrão  
- O Configuration Manager fornece duas imagens de inicialização padrão: uma para dar suporte a plataformas x86 e outra para dar suporte a plataformas x64. Essas imagens são armazenadas em: \\\\*nomedoservidor*>\SMS_<*códigodosite*>\osd\boot\\<*x64 ou i386*.  
+ O Configuration Manager fornece duas imagens de inicialização padrão: uma para dar suporte a plataformas x86 e outra para dar suporte a plataformas x64. Essas imagens são armazenadas em: \\\\*servername*>\SMS_<*sitecode*>\osd\boot\\<*x64*> ou <*i386*>.  
 
- Quando você atualiza o Configuration Manager para uma nova versão, o Configuration Manager pode substituir as imagens de inicialização padrão e as imagens de inicialização personalizadas baseadas nas imagens de inicialização padrão, nesse local, pelos arquivos atualizados. As opções que podem ser configuradas nas imagens de inicialização padrão no site (como componentes opcionais) são transportadas quando as imagens de inicialização são atualizadas, inclusive drivers. Os objetos de driver de origem devem ser válidos, incluindo os arquivos de origem do driver, ou os drivers não serão adicionados às imagens de inicialização atualizada no site. Outras imagens de inicialização que não sejam baseadas em imagens de inicialização padrão, mesmo se baseadas na mesma versão do Windows ADK, não serão atualizadas. Após a atualização das imagens de inicialização, você precisará redistribuí-las aos pontos de distribuição. Qualquer mídia que use as imagens de inicialização precisará ser recriada. Se não quiser que suas imagens de inicialização padrão personalizadas sejam atualizadas automaticamente, você deverá armazená-las em um local diferente.  
+ Quando você atualiza o Configuration Manager para uma nova versão, o Configuration Manager pode substituir as imagens de inicialização padrão e as imagens de inicialização personalizadas baseadas nas imagens de inicialização padrão, nesse local, pelos arquivos atualizados. As opções que podem ser configuradas nas imagens de inicialização padrão no site (como componentes opcionais) são transportadas quando as imagens de inicialização são atualizadas, inclusive drivers. Os objetos de driver de origem devem ser válidos, incluindo os arquivos de origem do driver, ou os drivers não serão adicionados às imagens de inicialização atualizada no site. Outras imagens de inicialização que não sejam baseadas em imagens de inicialização padrão, mesmo se baseadas na mesma versão do Windows ADK, não serão atualizadas. Após a atualização das imagens de inicialização, você precisará redistribuí-las aos pontos de distribuição. Qualquer mídia que use as imagens de inicialização precisará ser recriada. Se não quiser que suas imagens de inicialização padrão/personalizadas sejam atualizadas automaticamente, você deverá armazená-las em um local diferente.  
 
- A ferramenta Log de Rastreamento do Configuration Manager é adicionada a todas as imagens de inicialização que você adiciona à **Biblioteca de Software**. Quando você estiver no WinPE, será possível iniciar a ferramenta Rastreamento de Log do Configuration Manager digitando **CMTrace** em um prompt de comando.  
+ A ferramenta Log de Rastreamento do Configuration Manager é adicionada a todas as imagens de inicialização que você adiciona à **Biblioteca de Software**. Quando você estiver no WinPE, será possível iniciar a Ferramenta de Rastreamento de Log do Configuration Manager digitando **CMTrace** em um prompt de comando.  
 
 ##  <a name="a-namebkmkbootimagecustoma-customize-a-boot-image"></a><a name="BKMK_BootImageCustom"></a> Personalizar uma imagem de inicialização  
  É possível personalizar uma imagem de inicialização ou [Modificar uma imagem de inicialização](#BKMK_ModifyBootImages) no console do Configuration Manager quando ele é baseado em uma versão do Windows PE de uma versão do Windows ADK com suporte. Quando um site for atualizado com uma nova versão e uma nova versão do Windows ADK for instalada, as imagens de inicialização personalizadas (não no local da imagem de inicialização padrão) não serão atualizadas com a nova versão do Windows ADK. Quando isso acontecer, não será mais possível personalizar as imagens de inicialização no console do Configuration Manager. No entanto, elas continuarão funcionando como antes da atualização.  
@@ -248,9 +249,4 @@ Uma imagem de inicialização no Configuration Manager é uma imagem do [WinPE (
 1.  Verifique se o arquivo de recurso de sequência de tarefas apropriado (tsres.dll) está na pasta de idioma correspondente, no servidor do site, antes de atualizar a imagem de inicialização. Por exemplo, o arquivo de recurso em inglês está no seguinte local: <*ConfigMgrInstallationFolder*> \OSD\bin\x64\00000409\tsres.dll.  
 
 2.  Como parte do comando prestart, configure a variável de ambiente SMSTSLanguageFolder para a ID de idioma apropriada. A ID de idioma deve ser especificada usando decimal e não hexadecimal. Por exemplo, para configurar o ID do idioma para inglês, especifique o valor decimal 1033 em vez do valor hexadecimal 00000409, usado para o nome da pasta.  
-
-
-
-<!--HONumber=Jan17_HO4-->
-
 
