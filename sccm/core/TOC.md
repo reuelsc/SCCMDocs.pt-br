@@ -90,7 +90,7 @@
 ###  [Configurar seu laboratório](get-started/set-up-your-lab.md)
 
 ##   [Technical Preview](get-started/technical-preview.md)
-<!-- ###  [Capabilities in 1702](get-started/capabilities-in-technical-preview-1702.md) -->
+###  [Recursos do 1702](get-started/capabilities-in-technical-preview-1702.md)
 ###  [Recursos do 1701](get-started/capabilities-in-technical-preview-1701.md)
 ###  [Recursos do 1612](get-started/capabilities-in-technical-preview-1612.md)
 ###  [Recursos do 1611](get-started/capabilities-in-technical-preview-1611.md)
@@ -305,8 +305,3 @@
 ###  [Atualizar clientes Linux e UNIX](clients/manage/upgrade/upgrade-clients-for-linux-and-unix-servers.md)
 ###  [Atualizar clientes do Mac](clients/manage/upgrade/upgrade-clients-on-mac-computers.md)
 ###  [Upgrade Analytics](clients/manage/upgrade/upgrade-analytics.md)
-
-
-<!--HONumber=Feb17_HO4-->
-
-
