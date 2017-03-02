@@ -304,4 +304,4 @@
 ###  [Atualizar clientes Windows](clients/manage/upgrade/upgrade-clients-for-windows-computers.md)
 ###  [Atualizar clientes Linux e UNIX](clients/manage/upgrade/upgrade-clients-for-linux-and-unix-servers.md)
 ###  [Atualizar clientes do Mac](clients/manage/upgrade/upgrade-clients-on-mac-computers.md)
-###  [Upgrade Analytics](clients/manage/upgrade/upgrade-analytics.md)
+###  [Preparação para atualização](clients/manage/upgrade/upgrade-analytics.md)
