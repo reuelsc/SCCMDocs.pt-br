@@ -18,6 +18,7 @@ manager: angrobe
 translationtype: Human Translation
 ms.sourcegitcommit: 08afca8b422474639cbdb860e555fe0da27361a4
 ms.openlocfilehash: d8f25e849a8456f1658c4c7da32be733282bbde8
+ms.lasthandoff: 12/16/2016
 
 ---
 # <a name="how-to-assign-clients-to-a-site-in-system-center-configuration-manager"></a>Como atribuir clientes a um site no System Center Configuration Manager
@@ -71,7 +72,7 @@ Se a atribuição do cliente falhar, o software cliente permanecerá instalado, 
 > [!NOTE]  
 >  Se um cliente do Configuration Manager tiver vários adaptadores de rede e, portanto, tiver vários endereços IP, o endereço IP usado para uma atribuição de site de cliente de avaliação será atribuído aleatoriamente.  
 
- Para obter informações sobre como configurar grupos de limites para atribuição de site e como configurar um site de fallback para atribuição automática de site, consulte [Define site boundaries and boundary groups for System Center Configuration Manager](../../../core/servers/deploy/configure/define-site-boundaries-and-boundary-groups.md).  
+ Para obter informações sobre como configurar grupos de limites para atribuição de site e como configurar um site de fallback para atribuição automática de site, consulte [Definir limites de site e grupos de limites para o System Center Configuration Manager](../../../core/servers/deploy/configure/define-site-boundaries-and-boundary-groups.md).  
 
  Clientes do Configuration Manager que usam a tentativa de atribuição automática de site para encontrar grupos de limites de sites publicados no Active Directory Domain Services. Se isso falhar (por exemplo, o esquema do Active Directory não for estendido para o Configuration Manager, ou os clientes forem computadores do grupo de trabalho), os clientes poderão obter informações do grupo de limites em um ponto de gerenciamento.  
 
@@ -162,9 +163,4 @@ Quando o cliente baixa uma política de cliente de um ponto de gerenciamento no 
  Esses computadores cliente que se movem para outros sites (todos os sites primários e todos os sites secundários) podem sempre usar pontos de gerenciamento em outros sites para solicitações de local de conteúdo. Pontos de gerenciamento no site atual podem proporcionar aos clientes uma lista de pontos de distribuição que possuem conteúdo que os clientes precisam.  
 
  Para computadores cliente configurados para gerenciamento de clientes somente da Internet e para dispositivos móveis e computadores Mac registrados pelo Configuration Manager, esses clientes se comunicam somente com pontos de gerenciamento em seu site atribuído. Esses clientes nunca se comunicam com pontos de gerenciamento em sites secundários ou com pontos de gerenciamento em outros sites primários.  
-
-
-
-<!--HONumber=Dec16_HO3-->
-
 
