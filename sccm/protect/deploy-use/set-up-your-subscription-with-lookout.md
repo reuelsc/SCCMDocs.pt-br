@@ -18,6 +18,7 @@ manager: angrobe
 translationtype: Human Translation
 ms.sourcegitcommit: c13c6268fa76ade7feb0981f9c4a6e325e393aca
 ms.openlocfilehash: f29d5834b82dd8888cff56fb0ad8024629f829ab
+ms.lasthandoff: 12/16/2016
 
 
 ---
@@ -129,9 +130,4 @@ A proteção contra ameaças de dispositivo do Lookout classifica ameaças a dis
 Quando a instalação estiver concluída, a proteção contra ameaças de dispositivo do Lookout começará a sondar o Azure AD quanto a dispositivos que correspondam aos grupos de registro especificados.  Você pode encontrar informações sobre os dispositivos registrados no módulo Dispositivos.  O status inicial dos dispositivos é mostrado como pendente.  O status do dispositivo será alterado quando o aplicativo Lookout for Work estiver instalado, aberto e ativado no dispositivo.  Para obter detalhes sobre como obter o Lookout for Work no dispositivo, consulte o tópico [Configurar e implantar aplicativos Lookout for Work](configure-and-deploy-lookout-for-work-apps.md).
 ## <a name="next-steps"></a>Próximas etapas
 [Habilitar conexão do Lookout MTP no Intune](enable-lookout-connection-in-intune.md)
-
-
-
-<!--HONumber=Dec16_HO3-->
-
 

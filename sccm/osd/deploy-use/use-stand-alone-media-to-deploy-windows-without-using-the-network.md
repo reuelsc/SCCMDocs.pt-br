@@ -18,6 +18,7 @@ manager: angrobe
 translationtype: Human Translation
 ms.sourcegitcommit: 74341fb60bf9ccbc8822e390bd34f9eda58b4bda
 ms.openlocfilehash: 30ae794381c6894e11b21a8167d0af60463c5279
+ms.lasthandoff: 12/16/2016
 
 
 ---
@@ -79,9 +80,4 @@ A mídia autônoma no System Center Configuration Manager contém tudo o que é 
 
 ## <a name="install-the-operating-system-from-stand-alone-media"></a>Instalar o sistema operacional por meio de uma mídia autônoma  
  Insira a mídia autônoma em uma unidade inicializável no computador e ligue-a para instalar o sistema operacional.  
-
-
-
-<!--HONumber=Dec16_HO3-->
-
 
