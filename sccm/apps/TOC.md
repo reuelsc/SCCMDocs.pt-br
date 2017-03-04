@@ -11,12 +11,9 @@
 # Implantar e usar
 
 ## [Criar aplicativos](deploy-use/create-applications.md)
-### [Criar aplicativos iOS](get-started/creating-ios-applications.md)
 ### [Criar aplicativos de computador Mac](get-started/creating-mac-computer-applications.md)
 ### [Criar aplicativos do Windows](get-started/creating-windows-applications.md)
-### [Criar aplicativos do Windows Phone](get-started/creating-windows-phone-applications.md)
 ### [Criar aplicativos de servidores Linux e UNIX](get-started/creating-linux-and-unix-server-applications.md)
-### [Criar aplicativos Android](get-started/creating-android-applications.md)
 ### [Criar aplicativos Windows Embedded](get-started/creating-windows-embedded-applications.md)
 ### [Criar condições globais](deploy-use/create-global-conditions.md)
 ### [Pacotes e programas](deploy-use/packages-and-programs.md)
@@ -33,21 +30,10 @@
 ## Gerenciar aplicativos
 ### [Tarefas de gerenciamento](deploy-use/management-tasks-applications.md)
 ### [Afinidade de dispositivo de usuário](deploy-use/link-users-and-devices-with-user-device-affinity.md)
-### [Políticas de configuração de aplicativo iOS](deploy-use/configure-ios-apps-with-app-configuration-policies.md)
-### [Aplicativos iOS comprados por volume](deploy-use/manage-volume-purchased-ios-apps.md)
 ### [Aplicativos da Windows Store para Empresas comprados por volume](deploy-use/manage-apps-from-the-windows-store-for-business.md)
 ### [Ambientes virtuais do App-V](deploy-use/create-app-v-virtual-environments.md)
-
-## Proteger aplicativos
-### [Políticas de gerenciamento de aplicativos móveis](deploy-use/protect-apps-using-mam-policies.md)
-### [Políticas do Managed Browser](deploy-use/manage-internet-access-using-managed-browser-policies.md)
 
 ## Atualizar e desativar aplicativos
 ### [Atualizar e desativar aplicativos](deploy-use/update-and-retire-applications.md)
 ### [Revisar e substituir aplicativos](deploy-use/revise-and-supersede-applications.md)
 ### [Desinstalar aplicativos](deploy-use/uninstall-applications.md)
-
-
-<!--HONumber=Dec16_HO3-->
-
-

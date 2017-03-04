@@ -8,7 +8,6 @@
 ## [Planejar e definir as configurações de conformidade](plan-design/plan-for-and-configure-compliance-settings.md)
 ## [Tarefas comuns para gerenciar a conformidade](plan-design/common-tasks-for-managing-compliance.md)
 ### [Dispositivos com o cliente do Configuration Manager](plan-design/common-tasks-for-managing-compliance-on-devices-with-the-client.md)
-### [Dispositivos que não executam o cliente do Configuration Manager](plan-design/common-tasks-for-managing-compliance-on-devices-not-running-the-client.md)
 ### [Criar e implantar linhas de base de configuração](plan-design/common-tasks-for-creating-and-deploying-configuration-baselines.md)
 ## [Segurança e privacidade](plan-design/security-and-privacy-for-compliance-settings.md)
 
@@ -19,11 +18,6 @@
 #### [Windows 10](deploy-use/create-configuration-items-for-windows-10-devices-managed-with-the-client.md)
 #### [Mac OS X](deploy-use/create-configuration-items-for-mac-os-x-devices-managed-with-the-client.md)
 #### [Desktop e servidor Windows (personalizado)](deploy-use/create-custom-configuration-items-for-windows-desktop-and-server-computers-managed-with-the-client.md)
-### [Dispositivos gerenciados sem o cliente do Configuration Manager](deploy-use/configuration-items-for-devices-managed-without-the-client.md)
-#### [Windows 8.1 e Windows 10](deploy-use/create-configuration-items-for-windows-8.1-and-windows-10-devices-managed-without-the-client.md)
-#### [Windows Phone](deploy-use/create-configuration-items-for-windows-phone-devices-managed-without-the-client.md)
-#### [iOS e Mac OS X](deploy-use/create-configuration-items-for-ios-and-mac-os-x-devices-managed-without-the-client.md)
-#### [Android e Samsung KNOX Standard](deploy-use/create-configuration-items-for-android-and-samsung-knox-devices-managed-without-the-client.md)
 ## [Criar itens de configuração filho](deploy-use/create-child-configuration-items.md)
 
 ## [Criar linhas de base de configuração](deploy-use/create-configuration-baselines.md)
@@ -37,8 +31,3 @@
 ## [Criar perfis de conexão remota](deploy-use/create-remote-connection-profiles.md)
 ## [Atualizar dispositivos do Windows para uma versão mais recente](deploy-use/upgrade-windows-version.md)
 ## [Monitorar as configurações de conformidade](deploy-use/monitor-compliance-settings.md)
-
-
-<!--HONumber=Dec16_HO3-->
-
-
