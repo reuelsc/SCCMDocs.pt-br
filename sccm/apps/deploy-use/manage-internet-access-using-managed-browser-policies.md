@@ -19,6 +19,7 @@ manager: angrobe
 translationtype: Human Translation
 ms.sourcegitcommit: dcdaec52c9eafba3f7ce569f0dabb98921b4dc0a
 ms.openlocfilehash: f870a98fa9e839df16d0ca9deb96a18128f35ba6
+ms.lasthandoff: 12/16/2016
 
 
 ---
@@ -134,7 +135,7 @@ Use as informações a seguir para saber mais sobre os formatos permitidos e car
 
     -   http://*  
 
-    -   http://www.contoso.com :*  
+    -   http://www.contoso.com:*  
 
     -   http://www.contoso.com: / *  
 
@@ -151,9 +152,4 @@ Use as informações a seguir para saber mais sobre os formatos permitidos e car
 -   Se um dispositivo estiver recebendo políticas de navegador gerenciado pela primeira vez e houver conflito entre duas políticas, as URLs não serão impostas ao dispositivo. Use o nó **Conflitos de Política** do espaço de trabalho **Política** para ver os conflitos.  
 
 -   Se um dispositivo já tiver recebido uma política de navegador gerenciado e uma segunda política for implantada com configurações conflitantes, as configurações originais permanecerão no dispositivo. Use o nó **Conflitos de Política** do espaço de trabalho **Política** para ver os conflitos.  
-
-
-
-<!--HONumber=Dec16_HO3-->
-
 
