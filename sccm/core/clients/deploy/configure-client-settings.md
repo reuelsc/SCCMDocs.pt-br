@@ -12,12 +12,13 @@ ms.tgt_pltfrm: na
 ms.topic: get-started-article
 ms.assetid: 95e9858a-bad4-4651-9e61-2e31dc5050fa
 caps.latest.revision: 5
-author: nbigman
-ms.author: nbigman
+author: arob98
+ms.author: angrobe
 manager: angrobe
 translationtype: Human Translation
 ms.sourcegitcommit: 809c7938968b4a6efce6ef37fe7b7baf2c9dd3e7
 ms.openlocfilehash: 77e17786302c885052c8861107a49ff826accb65
+ms.lasthandoff: 12/16/2016
 
 ---
 # <a name="how-to-configure-client-settings-in-system-center-configuration-manager"></a>Como definir as configurações do cliente no System Center Configuration Manager
@@ -79,8 +80,3 @@ Ao implantar essas configurações personalizadas, elas substituirão as configu
     >  Para exibir as configurações do cliente, você deve ter acesso de leitura às Configurações do Cliente.  
 
     
-
-
-<!--HONumber=Dec16_HO3-->
-
-

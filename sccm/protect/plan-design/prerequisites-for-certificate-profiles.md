@@ -12,12 +12,13 @@ ms.tgt_pltfrm: na
 ms.topic: get-started-article
 ms.assetid: 0317fd02-3721-4634-b18b-7c976a4e92bf
 caps.latest.revision: 9
-author: Nbigman
-ms.author: nbigman
+author: arob98
+ms.author: angrobe
 manager: angrobe
 translationtype: Human Translation
 ms.sourcegitcommit: 593fbd0587d54490246f48ae54f666bac6b7830d
 ms.openlocfilehash: 08fb30da2060728142648f13846be737f98f2276
+ms.lasthandoff: 12/16/2016
 
 
 ---
@@ -46,9 +47,4 @@ Os perfis de certificado no System Center Configuration Manager (também conheci
 |O Módulo de Política do System Center Configuration Manager instalado no servidor que executa o serviço de função do Serviço de Registro de Dispositivo de Rede para os Serviços de Certificados do Active Directory|Para implantar perfis de certificado, é necessário instalar o Módulo de Política do System Center Configuration Manager. Você pode encontrar esse módulo de política na mídia de instalação do System Center Configuration Manager.|  
 |Dados de descoberta|Os valores para a entidade do certificado e nome alternativo da entidade são fornecidos pelo System Center Configuration Manager e recuperados das informações coletadas na descoberta:<br /><br /> Para certificados de usuário: descoberta de Usuário do Active Directory<br /><br /> Para certificados de computador: Descoberta de Sistemas do Active Directory e Descoberta de Rede|  
 |Permissões de segurança específicas para gerenciar os perfis de certificado|Você deve ter as seguintes permissões de segurança para gerenciar configurações de acesso aos recurso da empresa, como perfis de certificado, perfis de Wi-Fi e perfis VPN:<br /><br /> Para exibir e gerenciar alertas e relatórios para perfis de certificado: **Criar**, **Excluir**, **Modificar**, **Modificar Relatório**, **Ler**e **Executar Relatório** para o objeto **Alertas** .<br /><br /> Para criar e gerenciar perfis de certificado: **Criar Política**, **Modificar Relatório**, **Ler** e **Executar Relatório** para o objeto **Perfil de Certificado** .<br /><br /> Para gerenciar implantações de perfil de Wi-Fi, certificado e VPN: **Implantar Políticas de Configuração**, **Modificar Alerta de Status do Cliente**, **Ler**e **Ler Recurso** para o objeto **Coleção** .<br /><br /> Para gerenciar todas as políticas de configuração: **Criar**, **Excluir**, **Modificar**, **Ler** e **Definir Escopo de Segurança** para o objeto **Política de Configuração** .<br /><br /> Para executar consultas relacionadas aos perfis de certificado: permissão para **Ler** para o objeto **Consulta** .<br /><br /> Para exibir as informações de perfis de certificado no console do System Center Configuration Manager: permissão para **Ler** o objeto **Site**.<br /><br /> Para exibir mensagens de status para perfis de certificado: permissão para **Ler** para o objeto **Mensagens de Status** .<br /><br /> Para criar e modificar o perfil de certificado de autoridade de certificação confiável: **Criar Política**, **Modificar Relatório**, **Ler** e **Executar Relatório** para o objeto **Perfil Certificado de Autoridade de Certificação Confiável** .<br /><br /> Para criar e gerenciar Perfis de VPN: **Criar Política**, **Modificar Relatório**, **Ler** e **Executar Relatório** para o objeto **Perfil de VPN** .<br /><br /> Para criar e gerenciar perfis Wi-Fi: permissões para **Criar Política**, **Modificar Relatório**, **Ler** e **Executar Relatório** para o objeto **Perfil Wi-Fi** .<br /><br /> A função de segurança do **Gerente de Acesso de Recurso da Empresa** inclui essas permissões que são necessárias para gerenciar os perfis de certificado no System Center Configuration Manager. Para obter mais informações, consulte a seção **Configure role-based administration** no tópico [Configure security in System Center Configuration Manager](../../core/plan-design/security/configure-security.md) .|  
-
-
-
-<!--HONumber=Dec16_HO3-->
-
 

@@ -13,12 +13,13 @@ ms.topic: get-started-article
 ms.assetid: 20a573b3-53cb-4ed5-bae1-7542f533ed20
 caps.latest.revision: 11
 caps.handback.revision: 0
-author: nbigman
-ms.author: nbigman
+author: arob98
+ms.author: angrobe
 manager: angrobe
 translationtype: Human Translation
 ms.sourcegitcommit: 52d2e088b8db3c2e9a0af640ca3db72b9fd7af60
 ms.openlocfilehash: 0ca218e4276699dd9029308e1d8ac524563da7c5
+ms.lasthandoff: 01/03/2017
 
 
 ---
@@ -63,9 +64,4 @@ Implantar clientes no seu site leva tempo e algumas instalações não são bem-
  Para monitorar o status de clientes implantados, confira [Como monitorar clientes no System Center Configuration Manager](../../../core/clients/manage/monitor-clients.md)  
 
  Você pode usar relatórios do Configuration Manager para obter mais informações sobre o status dos clientes no seu site. Para obter mais informações sobre como executar relatórios, consulte [Relatórios no System Center Configuration Manager](../../../core/servers/manage/reporting.md).  
-
-
-
-<!--HONumber=Jan17_HO1-->
-
 

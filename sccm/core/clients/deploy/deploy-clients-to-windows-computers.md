@@ -13,12 +13,13 @@ ms.topic: get-started-article
 ms.assetid: 341f0d0b-f907-44cf-9e10-e1b41fc15f82
 caps.latest.revision: 13
 caps.handback.revision: 0
-author: nbigman
-ms.author: nbigman
+author: arob98
+ms.author: angrobe
 manager: angrobe
 translationtype: Human Translation
 ms.sourcegitcommit: 9555a16d97224a1cf49a426ab225468b07403f60
 ms.openlocfilehash: 0e5e624fdfc2b5ee5b497d1063bd4e2d15df578b
+ms.lasthandoff: 12/30/2016
 
 
 ---
@@ -472,8 +473,3 @@ Verifique os pré-requisitos e, em seguida, siga as instruções na seção [Com
 
 ### <a name="see-also"></a>Consulte também
 [Métodos de instalação do cliente no System Center Configuration Manager](../../../core/clients/deploy/plan/client-installation-methods.md)
-
-
-<!--HONumber=Dec16_HO5-->
-
-

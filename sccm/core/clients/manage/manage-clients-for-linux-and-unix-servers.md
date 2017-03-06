@@ -13,12 +13,13 @@ ms.topic: article
 ms.assetid: 948664f2-239d-47a8-92fc-f8efeebd5796
 caps.latest.revision: 7
 caps.handback.revision: 0
-author: nbigman
-ms.author: nbigman
+author: arob98
+ms.author: angrobe
 manager: angrobe
 translationtype: Human Translation
 ms.sourcegitcommit: 9206b82eca02877c30eebf146d42bcca7290eb42
 ms.openlocfilehash: 7a5ff0e75b8cdac68e3854c4f5aba01a7d423e9b
+ms.lasthandoff: 12/30/2016
 
 
 ---
@@ -79,9 +80,4 @@ Ao gerenciar servidores Linux e UNIX com o System Center Configuration Manager, 
 |importPFX|Use esta opção para especificar um certificado para substituir o certificado que está sendo usado atualmente por um cliente.<br /><br /> Quando você usa o **-importPFX**, também é necessário usar o parâmetro **–password** da linha de comando para fornecer a senha associada ao arquivo PKCS#12.<br /><br /> Use **-rootcerts** para especificar requisitos de certificado raiz adicionais.<br /><br /> Exemplo: **certutil -importPFX &lt;Caminho para o certificado PKCS#12> -password &lt;Senha do certificado\> [-rootcerts &lt;lista de certificados separados por vírgula>]**|  
 |-importsitecert|Use esta opção para atualizar o certificado de assinatura de servidor do site localizado no servidor de gerenciamento.<br /><br /> Exemplo: **certutil -importsitecert &lt;Caminho para o certificado DER\>**|  
 |-importcrl|Use esta opção para atualizar a CRL no cliente com um ou mais caminhos de arquivo da CRL.<br /><br /> Exemplo: **certutil -importcrl &lt;caminhos de arquivos CRL separados por vírgula\>**|  
-
-
-
-<!--HONumber=Dec16_HO5-->
-
 

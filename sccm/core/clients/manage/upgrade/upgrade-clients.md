@@ -1,5 +1,5 @@
 ---
-title: "Atualizar clientes – Configuration Manager | Microsoft Docs"
+title: Atualizar clientes | Microsoft Docs
 description: "Obter informações sobre como atualizar clientes no System Center Configuration Manager."
 ms.custom: na
 ms.date: 01/01/2017
@@ -12,12 +12,13 @@ ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 446c83b5-c292-4e74-ba19-0792ac6b3472
 caps.latest.revision: 8
-author: nbigman
-ms.author: nbigman
+author: arob98
+ms.author: angrobe
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: 3743c80b0c2b5142f3a537ba3855ffd14794d42b
-ms.openlocfilehash: 56a3ec8ddfaaa233b41347da0ff853fdf92c275c
+ms.sourcegitcommit: 52d2e088b8db3c2e9a0af640ca3db72b9fd7af60
+ms.openlocfilehash: f369bccb1da6d428fb321455272190e1a0439ec3
+ms.lasthandoff: 01/03/2017
 
 
 ---
@@ -149,9 +150,4 @@ ms.openlocfilehash: 56a3ec8ddfaaa233b41347da0ff853fdf92c275c
 -   Pode ser usada somente para atualizar o software cliente e não para instalar um novo cliente.  
 
  [Como testar atualizações do cliente em uma coleção de pré-produção no System Center Configuration Manager](../../../../core/clients/manage/upgrade/test-client-upgrades.md)  
-
-
-
-<!--HONumber=Jan17_HO4-->
-
 

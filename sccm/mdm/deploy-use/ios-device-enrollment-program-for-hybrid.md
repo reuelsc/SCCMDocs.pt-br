@@ -2,7 +2,7 @@
 title: "Registrar dispositivos iOS com o DEP (Gerenciador de Registro de Dispositivo) – Configuration Manager | Microsoft Docs"
 description: "Habilite o registro no DEP (Programa de Registro de Dispositivos) do iOS para implantações híbridas no Configuration Manager com o Intune."
 ms.custom: na
-ms.date: 10/06/2016
+ms.date: 03/05/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
@@ -18,6 +18,7 @@ manager: angrobe
 translationtype: Human Translation
 ms.sourcegitcommit: 991eff171dce95590a7f050e0d3b07f98c0224b3
 ms.openlocfilehash: 4222ca27e19ade46d53f8cd4598643ddd4fd5c8f
+ms.lasthandoff: 01/24/2017
 
 ---
 # <a name="ios-device-enrollment-program-dep-enrollment-for-hybrid-deployments-with-configuration-manager"></a>Registro no DEP (Programa de Registro de Dispositivos) do iOS para implantações híbridas com o Configuration Manager
@@ -121,9 +122,4 @@ As empresas podem adquirir dispositivos iOS por meio do programa de registro de 
 
 4.  **Distribuir os dispositivos para os usuários**   
     Agora você pode fornecer seus dispositivos de propriedade corporativa para usuários. Quando um dispositivo iOS for ativado, ele será registrado para gerenciamento pelo Intune.
-
-
-
-<!--HONumber=Jan17_HO4-->
-
 

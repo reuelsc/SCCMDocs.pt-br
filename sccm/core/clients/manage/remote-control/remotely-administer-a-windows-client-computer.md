@@ -13,12 +13,13 @@ ms.topic: article
 ms.assetid: 3c9648c4-645e-4e47-ae10-2da817b8c83b
 caps.latest.revision: 5
 caps.handback.revision: 0
-author: nbigman
-ms.author: nbigman
+author: arob98
+ms.author: angrobe
 manager: angrobe
 translationtype: Human Translation
 ms.sourcegitcommit: 08afca8b422474639cbdb860e555fe0da27361a4
 ms.openlocfilehash: dd794de867e1d0db47be9dc21a6d494087f76bc1
+ms.lasthandoff: 12/16/2016
 
 
 ---
@@ -97,9 +98,4 @@ Aqui estão três maneiras de iniciar o visualizador de controle remoto:
     > -   **/?** – Exibe as opções de linha de comando para o visualizador de controle remoto.  
     >   
     >  **Exemplo:CmRcViewer.exe** *<Endereço\>* *<\\\Nome do Servidor do Site>*  
-
-
-
-<!--HONumber=Dec16_HO3-->
-
 

@@ -12,12 +12,13 @@ ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 33bcf8b3-a6b6-4fc9-bb59-70a9621b2b0d
 caps.latest.revision: 9
-author: nbigman
-ms.author: nbigman
+author: arob98
+ms.author: angrobe
 manager: angrobe
 translationtype: Human Translation
 ms.sourcegitcommit: fc392e4440e84614f92218e9c7a09ec1c2c64f53
 ms.openlocfilehash: 0d8944bef9578a41b529a2d53b5a4d0094eaa21c
+ms.lasthandoff: 12/16/2016
 
 ---
 # <a name="sync-data-from-configuration-manager-to-the-microsoft-operations-management-suite"></a>Sincronizar dados do Configuration Manager com o Microsoft Operations Management Suite
@@ -51,9 +52,4 @@ Depois de vincular o Configuration Manager ao OMS, será possível adicionar ou 
 2.  Nessa página, há duas guias:
   * A guia **Azure Active Directory Azure** mostra seu **Locatário**, sua **ID do cliente**, a **Expiração da Chave Secreta do Cliente** e permite que você **Verifique** se sua **Chave Secreta do Cliente** expirou.
   * A guia **Propriedades de Conexão do OMS** mostra sua **Assinatura do Azure**, **grupo de recursos do Azure**, **Espaço de Trabalho do Operations Management Suite** e uma lista de **Coleções de dispositivos para os quais o Operations Management Suite pode obter dados**. Use os botões **Adicionar** e **Remover** para modificar quais coleções são permitidas.
-
-
-
-<!--HONumber=Dec16_HO3-->
-
 

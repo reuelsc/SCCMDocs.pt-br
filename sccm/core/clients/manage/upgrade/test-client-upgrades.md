@@ -13,12 +13,13 @@ ms.topic: article
 ms.assetid: 49ef2ed2-2e15-4637-8b63-1d5b7f9c17e1
 caps.latest.revision: 10
 caps.handback.revision: 0
-author: nbigman
-ms.author: nbigman
+author: arob98
+ms.author: angrobe
 manager: angrobe
 translationtype: Human Translation
 ms.sourcegitcommit: 52d2e088b8db3c2e9a0af640ca3db72b9fd7af60
 ms.openlocfilehash: 250c9312b932670c408554f3968ae43ae4f3dbaa
+ms.lasthandoff: 01/03/2017
 
 
 ---
@@ -79,9 +80,4 @@ ms.openlocfilehash: 250c9312b932670c408554f3968ae43ae4f3dbaa
 2.  Examine as versões de cliente em produção e pré-produção, verifique se a coleção correta de pré-produção está especificada, clique em **Promover** e, em seguida, em **Sim**.  
 
 3.  Após a caixa de diálogo fechar, a versão atualizada do cliente substituirá a versão do cliente em uso na sua hierarquia. Em seguida, você poderá atualizar os clientes de todo o seu site. Consulte [Como atualizar clientes para computadores Windows no System Center Configuration Manager](../../../../core/clients/manage/upgrade/upgrade-clients-for-windows-computers.md) para obter mais informações.  
-
-
-
-<!--HONumber=Jan17_HO1-->
-
 

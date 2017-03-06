@@ -12,12 +12,13 @@ ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 0c63dcc5-a1bd-4037-959a-2e6ba0fd1b2c
 caps.latest.revision: 6
-author: Nbigman
-ms.author: nbigman
+author: arob98
+ms.author: angrobe
 manager: angrobe
 translationtype: Human Translation
 ms.sourcegitcommit: bff083fe279cd6b36a58305a5f16051ea241151e
 ms.openlocfilehash: 0f76ed3dd74a80d9e22cfa743e5aa484f6cd7d97
+ms.lasthandoff: 12/16/2016
 
 
 ---
@@ -281,9 +282,4 @@ O System Center Configuration Manager usa a assinatura e a criptografia para aju
 
 ##  <a name="about-ssl-vulnerabilities"></a>Sobre as vulnerabilidades do SSL  
  Recomendamos a desabilitação do SSL 3.0, a habilitação do TLS 1.1 e 1.2 e a reordenação de pacotes de codificação relacionados ao TLS, para melhorar a segurança dos servidores do Configuration Manager. É possível saber como executar estas ações [neste artigo da base de dados](https://support.microsoft.com/en-us/kb/245030/). Esta ação não afetará a funcionalidade do Configuration Manager.  
-
-
-
-<!--HONumber=Dec16_HO3-->
-
 

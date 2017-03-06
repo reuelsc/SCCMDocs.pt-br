@@ -12,12 +12,13 @@ ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 2bca3db9-115a-451d-8c93-f073ceefe0c7
 caps.latest.revision: 6
-author: nbigman
-ms.author: nbigman
+author: arob98
+ms.author: angrobe
 manager: angrobe
 translationtype: Human Translation
 ms.sourcegitcommit: a71e37060937f40bcb1bdb1c6165b7799fc72675
 ms.openlocfilehash: a9847e67ab1935fb66824945637ff683c006bdbe
+ms.lasthandoff: 12/30/2016
 
 
 ---
@@ -99,9 +100,4 @@ O diagrama a seguir mostra um exemplo de como criar e aplicar configurações de
  Um link no **Centro de Software** permite que os usuários se conectem ao **Catálogo de Aplicativos**, no qual é possível procurar, instalar e solicitar softwares. O **Catálogo de Aplicativos** também é usado para configurar as definições de preferência, apagar dispositivos móveis e, quando configurado, especificar um dispositivo primário para afinidade de dispositivo de usuário.   
 
  Os usuários também podem acessar o **Catálogo de Aplicativos** por meio de uma sessão de Internet ou de intranet do navegador.  
-
-
-
-<!--HONumber=Dec16_HO5-->
-
 

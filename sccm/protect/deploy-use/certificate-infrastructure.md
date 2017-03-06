@@ -13,12 +13,13 @@ ms.topic: get-started-article
 ms.assetid: 29ae59b7-2695-4a0f-a9ff-4f29222f28b3
 caps.latest.revision: 7
 caps.handback.revision: 0
-author: Nbigman
-ms.author: nbigman
+author: arob98
+ms.author: angrobe
 manager: angrobe
 translationtype: Human Translation
 ms.sourcegitcommit: bff083fe279cd6b36a58305a5f16051ea241151e
 ms.openlocfilehash: 56e0a1923305c5134386623b1e306b8ebd013d53
+ms.lasthandoff: 12/16/2016
 
 ---
 # <a name="certificate-infrastructure"></a>Infraestrutura de certificado
@@ -191,9 +192,4 @@ ms.openlocfilehash: 56e0a1923305c5134386623b1e306b8ebd013d53
  Agora que você concluiu as etapas de configuração para instalar o Serviço de Registro de Dispositivo de Rede e as dependências, o ponto de registro de certificado e o Módulo de Política do System Center Configuration Manager, você está pronto para implantar certificados em usuários e dispositivos criando e implantando os perfis de certificado. Para obter mais informações sobre como criar perfis de certificado, consulte [Como criar perfis de certificado no System Center Configuration Manager](../../protect/deploy-use/create-certificate-profiles.md).  
 
  Se você desejar desinstalar o Módulo de Política do System Center Configuration Manager, use **Programas e Recursos** no Painel de Controle.  
-
-
-
-<!--HONumber=Dec16_HO3-->
-
 

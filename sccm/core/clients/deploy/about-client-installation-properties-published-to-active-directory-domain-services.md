@@ -13,12 +13,13 @@ ms.topic: article
 ms.assetid: 101d7d4d-92db-419d-b2ae-3c1c1dea68e9
 caps.latest.revision: 6
 caps.handback.revision: 0
-author: nbigman
-ms.author: nbigman
+author: arob98
+ms.author: angrobe
 manager: angrobe
 translationtype: Human Translation
 ms.sourcegitcommit: bc610b495047c49853c0a8f478cbf2773c0d3603
 ms.openlocfilehash: e50095ef618ec40a51c29ef2c8116f8e07401bd1
+ms.lasthandoff: 12/16/2016
 
 ---
 # <a name="about-client-installation-properties-published-to-active-directory-domain-services"></a>Sobre as propriedades de instalação de cliente publicadas nos Serviços de Domínio do Active Directory
@@ -125,9 +126,4 @@ Esses computadores cliente não podem ler ou acessar as propriedades de instala�
 -   Clientes que são atribuídos a um site do Configuration Manager que não está publicado no Active Directory Domain Services.  
 
 -   Clientes que são instalados quando estão na Internet.  
-
-
-
-<!--HONumber=Dec16_HO3-->
-
 

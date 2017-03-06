@@ -2,7 +2,7 @@
 title: "Gerenciar dispositivos móveis | Microsoft Docs"
 description: "Gerencie dispositivos móveis usando o conector do Exchange Server no System Center Configuration Manager."
 ms.custom: na
-ms.date: 10/06/2016
+ms.date: 03/05/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
@@ -18,6 +18,7 @@ manager: angrobe
 translationtype: Human Translation
 ms.sourcegitcommit: 0d6479bcc134103e6005159a8ea295a5f359a436
 ms.openlocfilehash: 4a2b60d893e8d430b107a5bc43ec0748177c27c3
+ms.lasthandoff: 12/16/2016
 
 
 ---
@@ -135,9 +136,4 @@ Use o conector do Exchange Server no System Center Configuration Manager quando 
     -   Para confirmar se o Gerenciador de Componentes do Site instalou com sucesso o conector do Exchange Server, procure a ID de status **1015** do componente **SMS_EXCHANGE_CONNECTOR** . Se o Configuration Manager não puder instalar o conector com êxito (por exemplo, porque o computador do Servidor de Acesso para Cliente especificado está offline), o Configuration Manager tentará instalar novamente a cada 60 minutos até que a instalação seja concluída com êxito ou até que você remova o conector do Exchange Server.  
 
     -   No computador do servidor do site, procure o arquivo SiteComp.log e, no arquivo de log, procure `Component SMS_EXCHANGE_CONNECTOR flagged for installation`. Uma instalação bem-sucedida é registrada com o seguinte texto: `STATMSG: ID=1015`.  
-
-
-
-<!--HONumber=Dec16_HO3-->
-
 

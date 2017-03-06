@@ -2,7 +2,7 @@
 title: "MDM (gerenciamento de dispositivo móvel) local | Microsoft Docs"
 description: "Conheça o Gerenciamento de Dispositivo Móvel Local, uma solução de gerenciamento de dispositivos no System Center Configuration Manager."
 ms.custom: na
-ms.date: 10/06/2016
+ms.date: 03/05/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
@@ -18,6 +18,7 @@ manager: angrobe
 translationtype: Human Translation
 ms.sourcegitcommit: 0d6479bcc134103e6005159a8ea295a5f359a436
 ms.openlocfilehash: cbd33bf3cf7d623d9ba7a657d4ca7d746d7e79da
+ms.lasthandoff: 12/16/2016
 
 
 ---
@@ -50,9 +51,4 @@ O Gerenciamento de Dispositivo Móvel Local do System Center Configuration Manag
 -   [Registrar dispositivos para o gerenciamento de dispositivo móvel local no System Center Configuration Manager](../deploy-use/enroll-devices-on-premises-mdm.md)  
 
      Saiba mais sobre como o registro ocorre, como os usuários podem registrar seus próprios dispositivos e como registrar dispositivos em massa com um pacote de registro.  
-
-
-
-<!--HONumber=Dec16_HO3-->
-
 

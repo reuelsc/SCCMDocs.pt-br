@@ -13,12 +13,13 @@ ms.topic: article
 ms.assetid: 24633725-791a-4df7-8dce-2c24c1a19a03
 caps.latest.revision: 14
 caps.handback.revision: 0
-author: nbigman
-ms.author: nbigman
+author: arob98
+ms.author: angrobe
 manager: angrobe
 translationtype: Human Translation
 ms.sourcegitcommit: 06cafc8f7934cde738a87ac1a1da585a9d4e2a99
 ms.openlocfilehash: 534a15279bff96d93ffb6564eeac2835f57f5645
+ms.lasthandoff: 02/09/2017
 
 
 ---
@@ -93,9 +94,4 @@ Use essas soluções de gerenciamento de dispositivo sozinhas ou combinadas umas
 |Bloqueio do Configuration Manager|Sim|Sim|Sim||  
 |Quarentena e bloqueio do Exchange Server (e Configuration Manager)||||Sim|  
 |Apagamento remoto| |Sim|Sim|Sim|  
-
-
-
-<!--HONumber=Feb17_HO2-->
-
 

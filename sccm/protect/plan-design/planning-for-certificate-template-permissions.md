@@ -13,12 +13,13 @@ ms.topic: get-started-article
 ms.assetid: eab0e09d-b09e-4c14-ab14-c5f87472522e
 caps.latest.revision: 5
 caps.handback.revision: 0
-author: Nbigman
-ms.author: nbigman
+author: arob98
+ms.author: angrobe
 manager: angrobe
 translationtype: Human Translation
 ms.sourcegitcommit: 238ef5814c0c1b832c28d63c9f3879e21a6c439b
 ms.openlocfilehash: 3c3725678561c32fce316ed1209ac8fe73a0eed1
+ms.lasthandoff: 12/16/2016
 
 
 ---
@@ -62,9 +63,4 @@ As informações a seguir podem ajudar a planejar como configurar permissões pa
     -   No servidor do sistema de sites que hospeda o ponto de registro de certificado, crie a seguinte chave do Registro DWORD para que ela tenha o valor de 1: HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\SCCM\CRP\SkipTemplateCheckOnlyIfAccountAccessDenied  
 
 3.  Na autoridade de certificação emissora, na guia **Segurança** , nas propriedades do modelo de certificado, adicione um ou mais grupos de segurança para conceder permissões de Leitura e Registro às contas de usuário ou dispositivo.  
-
-
-
-<!--HONumber=Dec16_HO3-->
-
 

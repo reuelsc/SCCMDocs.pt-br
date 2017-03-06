@@ -2,7 +2,7 @@
 title: "Gerenciar o bloqueio de ativação do iOS | Microsoft Docs"
 description: "Gerencie o Bloqueio de Ativação do iOS com o System Center Configuration Manager."
 ms.custom: na
-ms.date: 12/15/2016
+ms.date: 03/05/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
@@ -18,6 +18,7 @@ manager: angrobe
 translationtype: Human Translation
 ms.sourcegitcommit: a25c6b409ea6501ead762fabb8cc11c62c84885d
 ms.openlocfilehash: cf98bbb9dee6142e8b085dbffcadb3ed712adcb9
+ms.lasthandoff: 12/16/2016
 
 
 ---
@@ -104,9 +105,4 @@ Você só pode ignorar o Bloqueio de Ativação ou recuperar o código de bypass
     - nos dados de descoberta do dispositivo na caixa de diálogo de propriedades do dispositivo.
     - na coluna **Estado de Bypass do Bloqueio de Ativação** na exibição **Dispositivos** (esta coluna fica oculta por padrão).
     - na seção **Informações de Ações no Dispositivo Remoto** , na guia **Resumo** do painel de detalhes (quando um dispositivo estiver selecionado).
-
-
-
-<!--HONumber=Dec16_HO3-->
-
 

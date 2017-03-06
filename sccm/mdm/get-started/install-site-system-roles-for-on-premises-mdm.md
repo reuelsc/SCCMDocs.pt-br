@@ -2,7 +2,7 @@
 title: "Instalar funções para o MDM local – Configuration Manager | Microsoft Docs"
 description: "Instalar funções do sistema de sites para o gerenciamento de dispositivo móvel local no System Center Configuration Manager."
 ms.custom: na
-ms.date: 10/06/2016
+ms.date: 03/05/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
@@ -18,6 +18,7 @@ manager: angrobe
 translationtype: Human Translation
 ms.sourcegitcommit: 3743c80b0c2b5142f3a537ba3855ffd14794d42b
 ms.openlocfilehash: 916b971f851f968f6534ac834bd3182cc61614aa
+ms.lasthandoff: 01/24/2017
 
 
 ---
@@ -71,9 +72,4 @@ O Gerenciamento de Dispositivo Móvel Local do System Center Configuration Manag
      Ele transforma, efetivamente, o ponto de gerenciamento em um ponto de gerenciamento do dispositivo.  
 
  Depois que as funções do sistema de sites foram adicionadas e configuradas para gerenciar dispositivos modernos, você precisará, então, configurar os servidores que hospedam as funções como pontos de extremidade confiáveis para registrar e se comunicar com os dispositivos gerenciados. Consulte [Configurar certificados para comunicações confiáveis do Gerenciamento de Dispositivo Móvel Local no System Center Configuration Manager](../../mdm/get-started/set-up-certificates-on-premises-mdm.md) para obter mais informações.  
-
-
-
-<!--HONumber=Jan17_HO4-->
-
 

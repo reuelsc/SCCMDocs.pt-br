@@ -12,12 +12,13 @@ ms.tgt_pltfrm: na
 ms.topic: get-started-article
 ms.assetid: a933d69c-5feb-4b2b-84e8-56b3b64d5947
 caps.latest.revision: 11
-author: nbigman
-ms.author: nbigman
+author: arob98
+ms.author: angrobe
 manager: angrobe
 translationtype: Human Translation
 ms.sourcegitcommit: 9206b82eca02877c30eebf146d42bcca7290eb42
 ms.openlocfilehash: 9c2fd7cea178716f81571856608ce517049a3e8d
+ms.lasthandoff: 12/30/2016
 
 
 ---
@@ -78,9 +79,4 @@ Recomendamos a instalação de pacotes de idiomas do cliente antes da implantaç
  Quando você tem uma opção de que tipo de filtro de gravação habilitar, escolha FBWF e configure exceções para manter o estado do cliente e os dados de inventário entre reinicialização do dispositivo para a eficiência da rede e da CPU no cliente do Configuration Manager. Para obter mais informações sobre filtros de gravação, veja   [Planejando a implantação de cliente em dispositivos do Windows Embedded no System Center Configuration Manager](../../../../core/clients/deploy/plan/planning-for-client-deployment-to-windows-embedded-devices.md).  
 
  Para obter mais informações sobre o número máximo de clientes do Windows Embedded para os quais um site primário pode dar suporte, veja [Sistemas operacionais com suporte para clientes e dispositivos](../../../../core/plan-design/configs/supported-operating-systems-for-clients-and-devices.md).  
-
-
-
-<!--HONumber=Dec16_HO5-->
-
 

@@ -13,12 +13,13 @@ ms.topic: article
 ms.assetid: f7560876-8084-4570-aeab-7fd44f4ba737
 caps.latest.revision: 15
 caps.handback.revision: 0
-author: nbigman
-ms.author: nbigman
+author: arob98
+ms.author: angrobe
 manager: angrobe
 translationtype: Human Translation
 ms.sourcegitcommit: d7265aec46474ba7fc317ddb5e20b91b7b134585
 ms.openlocfilehash: 36f6eb3fe48e904adf4d04450906fada9b477246
+ms.lasthandoff: 12/30/2016
 
 ---
 # <a name="about-client-settings-in-system-center-configuration-manager"></a>Sobre as configurações do cliente no System Center Configuration Manager
@@ -641,9 +642,4 @@ Muitas das configurações do cliente são autoexplicativas. Outras são descrit
 -   **Permitir ao usuário definir os seus dispositivos primários**  
 
      Especifique se os usuários estão autorizados a identificar seus próprios dispositivos primários na guia **Meus Dispositivos** do Catálogo de Aplicativos.  
-
-
-
-<!--HONumber=Dec16_HO5-->
-
 

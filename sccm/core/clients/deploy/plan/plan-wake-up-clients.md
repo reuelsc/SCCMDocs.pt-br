@@ -12,12 +12,13 @@ ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 52ee82b2-0b91-4829-89df-80a6abc0e63a
 caps.latest.revision: 6
-author: nbigman
-ms.author: nbigman
+author: arob98
+ms.author: angrobe
 manager: angrobe
 translationtype: Human Translation
 ms.sourcegitcommit: 55c953f312a9fb31e7276dde2fdd59f8183b4e4d
 ms.openlocfilehash: 12ee719a6a8b072fab27d083aeb2b8439484058d
+ms.lasthandoff: 12/16/2016
 
 ---
 # <a name="plan-how-to-wake-up-clients-in-system-center-configuration-manager"></a>Planejar a ativação de clientes no System Center Configuration Manager
@@ -96,9 +97,4 @@ Você também deve decidir se pretende usar pacotes de difusão para sub-rede, o
 
 > [!WARNING]  
 >  Há riscos de segurança associados com transmissões direcionadas a sub-redes: Um invasor pode enviar fluxos contínuos de eco ICMP (Internet Control Message Protocol) de um endereço de origem falsificado para o endereço de transmissão direcionado, o que faz com que todos os hosts respondam àquele endereço de origem. Esse tipo de ataque de negação de serviço é comumente chamado de ataque smurf e é geralmente mitigado não permitindo transmissões direcionadas a sub-redes.
-
-
-
-<!--HONumber=Dec16_HO3-->
-
 

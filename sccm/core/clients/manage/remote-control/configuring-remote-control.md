@@ -13,12 +13,13 @@ ms.topic: article
 ms.assetid: 45affc27-aa11-4249-9493-082ac23a3a3d
 caps.latest.revision: 4
 caps.handback.revision: 0
-author: nbigman
-ms.author: nbigman
+author: arob98
+ms.author: angrobe
 manager: angrobe
 translationtype: Human Translation
 ms.sourcegitcommit: 9206b82eca02877c30eebf146d42bcca7290eb42
 ms.openlocfilehash: 20c28a625adb69f239b9c0e7673e57dd39e8d561
+ms.lasthandoff: 12/30/2016
 
 
 ---
@@ -67,9 +68,4 @@ Para ativar a tradução do teclado, em **Controle Remoto do Configuration Manag
 |Alt+Delete|Exibe o menu do Windows.|  
 |Ctrl+Alt+sinal de subtração (no teclado numérico)|Copia a janela ativa do computador local na Área de transferência do computador remoto.|  
 |Ctrl+Alt+sinal de mais (no teclado numérico)|Copia toda a área da janela do computador local na Área de transferência do computador remoto.|  
-
-
-
-<!--HONumber=Dec16_HO5-->
-
 

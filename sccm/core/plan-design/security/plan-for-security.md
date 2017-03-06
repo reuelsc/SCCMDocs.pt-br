@@ -13,12 +13,13 @@ ms.topic: article
 ms.assetid: 2a216814-ca8c-4d2e-bcef-dc00966a3c9f
 caps.latest.revision: 6
 caps.handback.revision: 0
-author: Nbigman
-ms.author: nbigman
+author: arob98
+ms.author: angrobe
 manager: angrobe
 translationtype: Human Translation
 ms.sourcegitcommit: af06fb10d905e3fe447c6cd6ed35dac10488161f
 ms.openlocfilehash: 1bf519ad4593f6a08d7dc393f9fab91c70b51b25
+ms.lasthandoff: 01/05/2017
 
 
 ---
@@ -308,9 +309,4 @@ Use os seguintes procedimentos para pré-provisionar e verificar a chave de raiz
 
 ### <a name="see-also"></a>Consulte também
 [Referência técnica de controles de criptografia para o System Center Configuration Manager](../../../protect/deploy-use/cryptographic-controls-technical-reference.md).  
-
-
-
-<!--HONumber=Jan17_HO1-->
-
 
