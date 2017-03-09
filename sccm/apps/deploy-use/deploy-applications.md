@@ -17,8 +17,9 @@ author: robstackmsft
 ms.author: robstack
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: 7be9abadeb51d4f9e862f69c332756b19ce3e110
-ms.openlocfilehash: a52bef3c8d12ffe2d9b13dc79cbc8950d3f36aea
+ms.sourcegitcommit: cb42b6f324dc0019c2109be4d91e0eab4dca4d70
+ms.openlocfilehash: 8c54bc455828712c7f9ea297f26c98c41848cf9c
+ms.lasthandoff: 03/08/2017
 
 
 ---
@@ -84,8 +85,8 @@ Não é possível alterar a ação de uma implantação após ela ter sido criad
 
     > [!NOTE]
     >  As solicitações de aprovação do aplicativo são exibidas no nó **Solicitações de Aprovação** , no **Gerenciamento de Aplicativos** no espaço de trabalho **Biblioteca de Software** . Se uma solicitação não for aprovada dentro de 45 dias, ela será removida. Além disso, reinstalar o cliente do Configuration Manager pode cancelar as solicitações de aprovação pendentes.
-    > Depois de ter aprovado um aplicativo para a instalação, você pode escolher subsequentemente para negar a solicitação clicando em **Negar** no console do Configuration Manager (anteriormente esse botão estava esmaecido após aprovação).
-    > Essa ação não faz com que o aplicativo seja desinstalado de nenhum dispositivo, mas impede que os usuários instalem novas cópias do aplicativo do Centro de Software.
+    >  Depois de ter aprovado um aplicativo para a instalação, você pode escolher subsequentemente para negar a solicitação clicando em **Negar** no console do Configuration Manager (anteriormente esse botão estava esmaecido após aprovação).
+    >  Essa ação não faz com que o aplicativo seja desinstalado de nenhum dispositivo, mas impede que os usuários instalem novas cópias do aplicativo do Centro de Software.
 
 
 
@@ -116,8 +117,7 @@ Ao implantar aplicativos em dispositivos Windows Embedded habilitados com filtro
 
 >[!NOTE]
     >  Quando você implanta um aplicativo a um dispositivo Windows Embedded, verifique se o dispositivo é um membro de uma coleção com uma janela de manutenção configurada. Para obter mais informações sobre como as janelas de manutenção são usadas ao implantar aplicativos nos dispositivos Windows Embedded, consulte o tópico [Criar aplicativos Windows Embedded](../../apps/get-started/creating-windows-embedded-applications.md).
-
-    >  The options **Software Installation** and **System restart (if required to complete the installation)** are not used if the deployment purpose is set to **Available**. You can also configure the level of notification a user sees when the application is installed.
+    > As opções **Instalação de software** e **Reinicialização do sistema (se necessário para conclusão da instalação)** não são usadas se a finalidade de implantação está definida como **Disponível**. É possível configurar o nível de notificação que um usuário vê quando o aplicativo está instalado.
 
 ### <a name="specify-alert-options-for-the-deployment"></a>Especificar as opções de alerta para a implantação
 
@@ -159,9 +159,4 @@ Além disso, para uma implantação de alto risco, como uma sequência de tarefa
 ## <a name="for-more-information"></a>Para obter mais informações:
 - [Configurações para gerenciar implantações de alto risco](../../protect/understand/settings-to-manage-high-risk-deployments.md)
 - [Como definir as configurações do cliente](../../core/clients/deploy/configure-client-settings.md)
-
-
-
-<!--HONumber=Dec16_HO3-->
-
 
