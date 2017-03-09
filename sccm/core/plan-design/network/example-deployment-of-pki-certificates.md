@@ -2,7 +2,7 @@
 title: "Certificados PKI de implantação | Microsoft Docs"
 description: Siga um exemplo passo a passo para conhecer como criar e implantar certificados PKI que o System Center Configuration Manager usa.
 ms.custom: na
-ms.date: 10/06/2016
+ms.date: 02/14/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
@@ -12,12 +12,13 @@ ms.tgt_pltfrm: na
 ms.topic: get-started-article
 ms.assetid: 3417ff88-7177-4a0d-8967-ab21fe7eba17
 caps.latest.revision: 11
-author: Nbigman
-ms.author: nbigman
+author: arob98
+ms.author: angrobe
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: efd4f5617568b8bff5de78d29d82202f798f8920
-ms.openlocfilehash: 97b7eb8e4d9555090cc145688116d424a56efdda
+ms.sourcegitcommit: 2a62ef64bf4e08d7027d10827d35d648bdbbeefe
+ms.openlocfilehash: 21fe718835bbbaa6382e0f0a87784e01e4c35283
+ms.lasthandoff: 02/14/2017
 
 
 ---
@@ -56,7 +57,7 @@ Este exemplo de implantação passo a passo, que usa uma AC (autoridade de certi
 
  [Implantar o certificado do cliente para computadores Mac](#BKMK_MacClient_SP1)  
 
-##  <a name="a-namebkmktestnetworkenvironmenta-test-network-requirements"></a><a name="BKMK_testnetworkenvironment"></a> Requisitos de rede de teste  
+##  <a name="BKMK_testnetworkenvironment"></a> Requisitos de rede de teste  
  As instruções passo a passo têm os seguintes requisitos:  
 
 -   A rede de teste está executando Serviços de Domínio do Active Directory no Windows Server 2008, e está instalada como um único domínio, uma única floresta.  
@@ -69,7 +70,7 @@ Este exemplo de implantação passo a passo, que usa uma AC (autoridade de certi
 
 -   Você pode entrar com uma conta de administrador de domínio raiz ou uma conta de administrador de domínio corporativo e use essa conta para todos os procedimentos desta implantação de exemplo.  
 
-##  <a name="a-namebkmkoverview2008a-overview-of-the-certificates"></a><a name="BKMK_overview2008"></a> Visão geral dos certificados  
+##  <a name="BKMK_overview2008"></a> Visão geral dos certificados  
  A tabela a seguir lista os tipos de certificados PKI que podem ser necessários para o System Center Configuration Manager e descreve como eles são usados.  
 
 |Requisitos do certificado|Descrição do certificado|  
@@ -82,7 +83,7 @@ Este exemplo de implantação passo a passo, que usa uma AC (autoridade de certi
 |Certificados para Intel AMT|Há três certificados relacionados ao gerenciamento fora de banda para computadores Intel AMT:<ul><li>Um certificado de provisionamento AMT (Active Management Technology)</li><li>Um certificado do servidor Web AMT</li><li>Opcionalmente, um certificado de autenticação de cliente para redes com ou sem fio 802.1X</li></ul>O certificado de provisionamento AMT deve ser instalado externamente ao System Center Configuration Manager no computador do ponto de serviço fora de banda e depois você escolhe o certificado instalado nas propriedades do ponto de serviço fora de banda. O certificado do servidor Web AMT e o certificado de autenticação de cliente são instalados durante provisionamento e gerenciamento de AMT e você escolhe os modelos de certificado configurados nas propriedades dos componentes de gerenciamento fora de banda.<br /><br /> Para obter as etapas para configurar esses certificados, confira [Implantar os certificados para AMT](#BKMK_AMT2008_cm2012) neste tópico.|  
 |Certificado do cliente para computadores Mac|Você pode solicitar e instalar esse certificado em um computador Mac quando usar o registro do System Center Configuration Manager e escolher o modelo de certificado configurado como uma configuração do cliente do dispositivo móvel.<br /><br /> Para obter as etapas para configurar este certificado, veja [Implantar o certificado do cliente para computadores Mac](#BKMK_MacClient_SP1) neste tópico.|  
 
-##  <a name="a-namebkmkwebserver2008cm2012a-deploy-the-web-server-certificate-for-site-systems-that-run-iis"></a><a name="BKMK_webserver2008_cm2012"></a> Implantar o certificado do servidor Web para sistemas de sites que executam o IIS  
+##  <a name="BKMK_webserver2008_cm2012"></a> Implantar o certificado do servidor Web para sistemas de sites que executam o IIS  
  Esta implantação de certificados abrange os seguintes procedimentos:  
 
 -   Criar e emitir o modelo de certificado do servidor Web na autoridade de certificação  
@@ -91,7 +92,7 @@ Este exemplo de implantação passo a passo, que usa uma AC (autoridade de certi
 
 -   Configurar o IIS para usar o certificado do servidor Web  
 
-###  <a name="a-namebkmkwebserver22008a-create-and-issue-the-web-server-certificate-template-on-the-certification-authority"></a><a name="BKMK_webserver22008"></a> Criar e emitir o modelo de certificado do servidor Web na autoridade de certificação  
+###  <a name="BKMK_webserver22008"></a> Criar e emitir o modelo de certificado do servidor Web na autoridade de certificação  
  Esse procedimento cria um modelo de certificado para sistemas de sites do System Center Configuration Manager e o adiciona à Autoridade de Certificação.  
 
 ##### <a name="to-create-and-issue-the-web-server-certificate-template-on-the-certification-authority"></a>Criar e emitir o modelo de certificado do servidor Web na Autoridade de Certificação  
@@ -125,7 +126,7 @@ Este exemplo de implantação passo a passo, que usa uma AC (autoridade de certi
 
 13. Se você não precisar criar ou emitir mais certificados, feche a **Autoridade de Certificação**.  
 
-###  <a name="a-namebkmkwebserver32008a-request-the-web-server-certificate"></a><a name="BKMK_webserver32008"></a> Solicitar o certificado do servidor Web  
+###  <a name="BKMK_webserver32008"></a> Solicitar o certificado do servidor Web  
  Este procedimento permite que você especifique valores FQDN de intranet e Internet que serão configurados nas propriedades do servidor de sistema de sites e instale o certificado do servidor Web no servidor membro que executa o IIS.  
 
 ##### <a name="to-request-the-web-server-certificate"></a>Para solicitar o certificado do servidor Web  
@@ -175,7 +176,7 @@ Este exemplo de implantação passo a passo, que usa uma AC (autoridade de certi
 
 16. Feche os **Certificados (computador local)**.  
 
-###  <a name="a-namebkmkwebserver42008a-configure-iis-to-use-the-web-server-certificate"></a><a name="BKMK_webserver42008"></a> Configurar o IIS para usar o certificado do servidor Web  
+###  <a name="BKMK_webserver42008"></a> Configurar o IIS para usar o certificado do servidor Web  
  Este procedimento associa o certificado instalado ao **Site Padrão**do IIS.  
 
 ##### <a name="to-set-up-iis-to-use-the-web-server-certificate"></a>Configurar o IIS para usar o certificado do servidor Web  
@@ -200,12 +201,9 @@ Este exemplo de implantação passo a passo, que usa uma AC (autoridade de certi
 > [!IMPORTANT]  
 >  Ao instalar o servidor do sistema de sites do System Center Configuration Manager neste computador, verifique se você especificou os mesmos FQDNs nas propriedades do sistema de sites que especificou ao solicitar o certificado.  
 
-##  <a name="a-namebkmkclouddp2008cm2012a-deploy-the-service-certificate-for-cloud-based-distribution-points"></a><a name="BKMK_clouddp2008_cm2012"></a> Implantar o certificado de serviço para pontos de distribuição baseados em nuvem  
+##  <a name="BKMK_clouddp2008_cm2012"></a> Implantar o certificado de serviço para pontos de distribuição baseados em nuvem  
 
-> [!NOTE]  
->  O certificado de serviço para pontos de distribuição baseados em nuvem se aplica ao System Center Configuration Manager SP1 e posterior.  
-
- Esta implantação de certificados abrange os seguintes procedimentos:  
+Esta implantação de certificados abrange os seguintes procedimentos:  
 
 -   [Criar e emitir o modelo de certificado personalizado do servidor Web na autoridade de certificação](#BKMK_clouddpcreating2008)  
 
@@ -213,7 +211,7 @@ Este exemplo de implantação passo a passo, que usa uma AC (autoridade de certi
 
 -   [Exportar o certificado personalizado do servidor Web para pontos de distribuição baseados em nuvem](#BKMK_clouddpexporting2008)  
 
-###  <a name="a-namebkmkclouddpcreating2008a-create-and-issue-a-custom-web-server-certificate-template-on-the-certification-authority"></a><a name="BKMK_clouddpcreating2008"></a> Criar e emitir o modelo de certificado personalizado do servidor Web na autoridade de certificação  
+###  <a name="BKMK_clouddpcreating2008"></a> Criar e emitir o modelo de certificado personalizado do servidor Web na autoridade de certificação  
  Este procedimento cria um modelo de certificado personalizado com base no modelo de certificado do servidor Web. O certificado é para os pontos de distribuição baseados em nuvem do System Center Configuration Manager e a chave privada deve ser exportável. Depois que o modelo de certificado é criado, ele é adicionado à autoridade de certificação.  
 
 > [!NOTE]  
@@ -256,7 +254,7 @@ Este exemplo de implantação passo a passo, que usa uma AC (autoridade de certi
 
 13. Se você não precisar criar ou emitir mais certificados, feche a **Autoridade de Certificação**.  
 
-###  <a name="a-namebkmkclouddprequesting2008a-request-the-custom-web-server-certificate"></a><a name="BKMK_clouddprequesting2008"></a> Solicitar o certificado personalizado do servidor Web  
+###  <a name="BKMK_clouddprequesting2008"></a> Solicitar o certificado personalizado do servidor Web  
  Este procedimento solicita e instala o certificado personalizado do servidor Web no servidor membro que executará o servidor do site.  
 
 ##### <a name="to-request-the-custom-web-server-certificate"></a>Para solicitar o certificado personalizado do servidor Web  
@@ -298,7 +296,7 @@ Este exemplo de implantação passo a passo, que usa uma AC (autoridade de certi
 
 17. Feche os **Certificados (computador local)**.  
 
-###  <a name="a-namebkmkclouddpexporting2008a-export-the-custom-web-server-certificate-for-cloud-based-distribution-points"></a><a name="BKMK_clouddpexporting2008"></a> Exportar o certificado personalizado do servidor Web para pontos de distribuição baseados em nuvem  
+###  <a name="BKMK_clouddpexporting2008"></a> Exportar o certificado personalizado do servidor Web para pontos de distribuição baseados em nuvem  
  Este procedimento exporta o certificado personalizado do servidor Web para um arquivo, assim ele pode ser importando quando você criar o ponto de distribuição baseado em nuvem.  
 
 ##### <a name="to-export-the-custom-web-server-certificate-for-cloud-based-distribution-points"></a>Para exportar o certificado personalizado do servidor Web para pontos de distribuição baseados em nuvem  
@@ -326,7 +324,7 @@ Este exemplo de implantação passo a passo, que usa uma AC (autoridade de certi
 
  O certificado agora está pronto para ser importado quando você criar um ponto de distribuição baseado em nuvem.  
 
-##  <a name="a-namebkmkclient2008cm2012a-deploy-the-client-certificate-for-windows-computers"></a><a name="BKMK_client2008_cm2012"></a> Implantar o certificado do cliente para computadores Windows  
+##  <a name="BKMK_client2008_cm2012"></a> Implantar o certificado do cliente para computadores Windows  
  Esta implantação de certificados abrange os seguintes procedimentos:  
 
 -   Criar e emitir o modelo de certificado de autenticação de estação de trabalho na autoridade de certificação  
@@ -335,7 +333,7 @@ Este exemplo de implantação passo a passo, que usa uma AC (autoridade de certi
 
 -   Registrar automaticamente o certificado de autenticação de estação de trabalho e verificar sua instalação nos computadores  
 
-###  <a name="a-namebkmkclient02008a-create-and-issue-the-workstation-authentication-certificate-template-on-the-certification-authority"></a><a name="BKMK_client02008"></a> Criar e emitir o modelo de certificado de autenticação de estação de trabalho na autoridade de certificação  
+###  <a name="BKMK_client02008"></a> Criar e emitir o modelo de certificado de autenticação de estação de trabalho na autoridade de certificação  
  Esse procedimento cria um modelo de certificado para computadores cliente do System Center Configuration Manager e o adiciona à Autoridade de Certificação.  
 
 ##### <a name="to-create-and-issue-the-workstation-authentication-certificate-template-on-the-certification-authority"></a>Para criar e emitir o modelo de certificado de autenticação de estação de trabalho na autoridade de certificação  
@@ -361,7 +359,7 @@ Este exemplo de implantação passo a passo, que usa uma AC (autoridade de certi
 
 9. Se você não precisar criar ou emitir mais certificados, feche a **Autoridade de Certificação**.  
 
-###  <a name="a-namebkmkclient12008a-configure-autoenrollment-of-the-workstation-authentication-template-by-using-group-policy"></a><a name="BKMK_client12008"></a> Configurar o registro automático do modelo de autenticação de estação de trabalho usando a política de grupo  
+###  <a name="BKMK_client12008"></a> Configurar o registro automático do modelo de autenticação de estação de trabalho usando a política de grupo  
  Este procedimento configura a política de grupo para registrar automaticamente o certificado do cliente em computadores.  
 
 ##### <a name="to-set-up-autoenrollment-of-the-workstation-authentication-template-by-using-group-policy"></a>Para configurar o registro automático do modelo de autenticação da estação de trabalho usando a política de grupo  
@@ -385,7 +383,7 @@ Este exemplo de implantação passo a passo, que usa uma AC (autoridade de certi
 
 8.  Feche o **Gerenciamento de Política de Grupo**.  
 
-###  <a name="a-namebkmkclient22008a-automatically-enroll-the-workstation-authentication-certificate-and-verify-its-installation-on-computers"></a><a name="BKMK_client22008"></a> Registrar automaticamente o certificado de autenticação de estação de trabalho e verificar sua instalação nos computadores  
+###  <a name="BKMK_client22008"></a> Registrar automaticamente o certificado de autenticação de estação de trabalho e verificar sua instalação nos computadores  
  Este procedimento instala o certificado do cliente em computadores e verifica a instalação.  
 
 ##### <a name="to-automatically-enroll-the-workstation-authentication-certificate-and-verify-its-installation-on-the-client-computer"></a>Para registrar automaticamente o certificado de autenticação de estação de trabalho e verificar sua instalação no computador cliente  
@@ -419,7 +417,7 @@ Este exemplo de implantação passo a passo, que usa uma AC (autoridade de certi
 
  Agora, o computador está configurado com um certificado do cliente do System Center Configuration Manager.  
 
-##  <a name="a-namebkmkclientdistributionpoint2008cm2012a-deploy-the-client-certificate-for-distribution-points"></a><a name="BKMK_clientdistributionpoint2008_cm2012"></a> Implantar o certificado do cliente para pontos de distribuição  
+##  <a name="BKMK_clientdistributionpoint2008_cm2012"></a> Implantar o certificado do cliente para pontos de distribuição  
 
 > [!NOTE]  
 >  Este certificado também pode ser usado para imagens de mídia que não usam inicialização PXE, pois os requisitos do certificado são os mesmos.  
@@ -432,7 +430,7 @@ Este exemplo de implantação passo a passo, que usa uma AC (autoridade de certi
 
 -   Exportar o certificado do cliente para pontos de distribuição  
 
-###  <a name="a-namebkmkclientdistributionpoint02008a-create-and-issue-a-custom-workstation-authentication-certificate-template-on-the-certification-authority"></a><a name="BKMK_clientdistributionpoint02008"></a> Criar e emitir um modelo personalizado de certificado de autenticação de estação de trabalho na autoridade de certificação  
+###  <a name="BKMK_clientdistributionpoint02008"></a> Criar e emitir um modelo personalizado de certificado de autenticação de estação de trabalho na autoridade de certificação  
  Este procedimento cria um modelo de certificado personalizado para pontos de distribuição do System Center Configuration Manager para que a chave privada possa ser exportada e adiciona o modelo do certificado à autoridade de certificação.  
 
 > [!NOTE]  
@@ -473,7 +471,7 @@ Este exemplo de implantação passo a passo, que usa uma AC (autoridade de certi
 
 12. Se você não precisar criar ou emitir mais certificados, feche a **Autoridade de Certificação**.  
 
-###  <a name="a-namebkmkclientdistributionpoint12008a-request-the-custom-workstation-authentication-certificate"></a><a name="BKMK_clientdistributionpoint12008"></a> Solicitar o certificado personalizado de autenticação de estação de trabalho  
+###  <a name="BKMK_clientdistributionpoint12008"></a> Solicitar o certificado personalizado de autenticação de estação de trabalho  
  Este procedimento solicita e instala o certificado do cliente personalizado no servidor membro que executa o IIS e que será configurado como ponto de distribuição.  
 
 ##### <a name="to-request-the-custom-workstation-authentication-certificate"></a>Para solicitar o certificado personalizado de autenticação de estação de trabalho  
@@ -504,7 +502,7 @@ Este exemplo de implantação passo a passo, que usa uma AC (autoridade de certi
 
 13. Não feche os **Certificados (computador local)**.  
 
-###  <a name="a-namebkmkexportclientdistributionpoint22008a-export-the-client-certificate-for-distribution-points"></a><a name="BKMK_exportclientdistributionpoint22008"></a> Exportar o certificado do cliente para pontos de distribuição  
+###  <a name="BKMK_exportclientdistributionpoint22008"></a> Exportar o certificado do cliente para pontos de distribuição  
  Este procedimento exporta o certificado personalizado de autenticação de estação de trabalho para um arquivo para que ele possa ser importado nas propriedades do ponto de distribuição.  
 
 ##### <a name="to-export-the-client-certificate-for-distribution-points"></a>Para exportar o certificado do cliente para pontos de distribuição  
@@ -535,7 +533,7 @@ Este exemplo de implantação passo a passo, que usa uma AC (autoridade de certi
 > [!TIP]  
 >  Você pode usar o mesmo arquivo de certificado ao configurar imagens de mídia para uma implantação do sistema operacional que não usa inicialização PXE e a sequência de tarefas para instalar a imagem deve contatar um ponto de gerenciamento que requer conexões de cliente HTTPS.  
 
-##  <a name="a-namebkmkmobiledevices2008cm2012a-deploy-the-enrollment-certificate-for-mobile-devices"></a><a name="BKMK_mobiledevices2008_cm2012"></a> Implantar o certificado de registro para dispositivos móveis  
+##  <a name="BKMK_mobiledevices2008_cm2012"></a> Implantar o certificado de registro para dispositivos móveis  
  Esta implantação do certificado tem um procedimento único para criar e emitir o modelo de certificado de registro na autoridade de certificação.  
 
 ### <a name="create-and-issue-the-enrollment-certificate-template-on-the-certification-authority"></a>Criar e emitir o modelo de certificado de registro na autoridade de certificação  
@@ -570,7 +568,7 @@ Este exemplo de implantação passo a passo, que usa uma AC (autoridade de certi
 
  Agora o modelo de certificado de registro de dispositivo móvel está pronto para ser selecionado quando você configurar um perfil de registro de dispositivo móvel nas configurações do cliente.  
 
-##  <a name="a-namebkmkamt2008cm2012a-deploy-the-certificates-for-amt"></a><a name="BKMK_AMT2008_cm2012"></a> Implantar os certificados para AMT  
+##  <a name="BKMK_AMT2008_cm2012"></a> Implantar os certificados para AMT  
  Esta implantação de certificados abrange os seguintes procedimentos:  
 
 -   Criar, emitir e instalar o certificado de provisionamento AMT  
@@ -579,7 +577,7 @@ Este exemplo de implantação passo a passo, que usa uma AC (autoridade de certi
 
 -   Criar e emitir os certificados de autenticação de cliente para computadores AMT 802.1X  
 
-###  <a name="a-namebkmkamtprovisioning2008a-create-issue-and-install-the-amt-provisioning-certificate"></a><a name="BKMK_AMTprovisioning2008"></a> Criar, emitir e instalar o certificado de provisionamento AMT  
+###  <a name="BKMK_AMTprovisioning2008"></a> Criar, emitir e instalar o certificado de provisionamento AMT  
  Crie o certificado de provisionamento com sua AC interna quando computadores AMT são configurados com a impressão digital do certificado da AC raiz interna. Quando não for esse o caso e você precisar usar uma autoridade de certificação externa, use as instruções da empresa que emitiu o certificado de provisionamento AMT, o que, muitas vezes, envolverá solicitar o certificado do site público da empresa. Você também poderá encontrar instruções detalhadas para a AC externa escolhida no [site do Intel vPro Expert Center: Microsoft vPro Manageability](http://go.microsoft.com/fwlink/?LinkId=132001).  
 
 > [!IMPORTANT]  
@@ -735,14 +733,11 @@ Este exemplo de implantação passo a passo, que usa uma AC (autoridade de certi
 
  Agora o modelo de certificado de autenticação do cliente está pronto para emitir certificados para computadores AMT que podem ser usados para autenticação do cliente do 802.1X. Escolha esse modelo de certificado nas propriedades do componente de gerenciamento fora de banda.  
 
-##  <a name="a-namebkmkmacclientsp1a-deploy-the-client-certificate-for-mac-computers"></a><a name="BKMK_MacClient_SP1"></a> Implantar o certificado do cliente para computadores Mac  
+##  <a name="BKMK_MacClient_SP1"></a> Implantar o certificado do cliente para computadores Mac  
 
-> [!NOTE]  
->  O certificado do cliente para computadores Mac se aplica apenas ao System Center Configuration Manager SP1 e posterior.  
+Esta implantação do certificado tem um procedimento único para criar e emitir o modelo de certificado de registro na autoridade de certificação.  
 
- Esta implantação do certificado tem um procedimento único para criar e emitir o modelo de certificado de registro na autoridade de certificação.  
-
-###  <a name="a-namebkmkmacclientcreatingissuinga-create-and-issue-a-mac-client-certificate-template-on-the-certification-authority"></a><a name="BKMK_MacClient_CreatingIssuing"></a> Criar e emitir um modelo de certificado do cliente Mac na autoridade de certificação  
+###  <a name="BKMK_MacClient_CreatingIssuing"></a> Criar e emitir um modelo de certificado do cliente Mac na autoridade de certificação  
  Este procedimento cria um modelo de certificado personalizado para computadores Mac do System Center Configuration Manager e o adiciona à autoridade de certificação.  
 
 > [!NOTE]  
@@ -782,9 +777,4 @@ Este exemplo de implantação passo a passo, que usa uma AC (autoridade de certi
 13. Se você não precisar criar ou emitir mais certificados, feche a **Autoridade de Certificação**.  
 
  Agora o modelo de certificado do cliente Mac está pronto para ser selecionado quando você definir as configurações do cliente para registro.
-
-
-
-<!--HONumber=Jan17_HO2-->
-
 
