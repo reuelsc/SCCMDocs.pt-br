@@ -12,12 +12,13 @@ ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 2117f786-d521-4790-9e8d-ec096c63c9d7
 caps.latest.revision: 8
-author: Nbigman
-ms.author: nbigman
+author: Robstack
+ms.author: robstack
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: 593fbd0587d54490246f48ae54f666bac6b7830d
-ms.openlocfilehash: c80750358d64cf87f8a3ce3a4c4f4030a9dfd742
+ms.sourcegitcommit: 8679df3f8a3b692391537bacd6144a4f2fae357b
+ms.openlocfilehash: d527cb4bfb55ca50c8d2a0fed7c427af5747fe99
+ms.lasthandoff: 02/09/2017
 
 
 ---
@@ -30,7 +31,7 @@ Você deseja que seus usuários consigam acessar com segurança os recursos de s
 
 -   É possível minimizar os esforços dos usuários para se conectar aos recursos corporativos habilitando a conectividade VPN com o uso dos perfis de VPN. Saiba mais em [Perfis de VPN no System Center Configuration Manager](../deploy-use/vpn-profiles.md).  
 
--   Os perfis de Wi-Fi no fornecem um conjunto de ferramentas e recursos para ajudá-lo a criar, implantar e monitorar configurações de rede sem fio nos dispositivos de sua organização. Implantando essas configurações, você minimiza o esforço que os usuários finais precisam fazer para se conectarem às redes sem fio corporativas. Saiba mais em [Perfis de Wi-Fi no System Center Configuration Manager](../deploy-use/introduction-to-wifi-profiles.md).  
+-   Os perfis de Wi-Fi no fornecem um conjunto de ferramentas e recursos para ajudá-lo a criar, implantar e monitorar configurações de rede sem fio nos dispositivos de sua organização. Implantando essas configurações, você minimiza o esforço que os usuários finais precisam fazer para se conectarem às redes sem fio corporativas. Saiba mais em [Perfis de Wi-Fi no System Center Configuration Manager](/sccm/protect/deploy-use/create-wifi-profiles).  
 
 -   Os [Perfis de certificado no System Center Configuration Manager](../deploy-use/introduction-to-certificate-profiles.md) descrevem como provisionar os dispositivos de seus usuários com os certificados que eles precisam para conectar aos recursos da empresa.  
 
@@ -41,9 +42,4 @@ Você deseja que seus usuários consigam acessar com segurança os recursos de s
 -   Os perfis de email fornecem um conjunto de ferramentas e recursos para ajudá-lo a criar, implantar e monitorar configurações de email nos dispositivos. Isso permite aos usuários acessar email corporativo em seus dispositivos pessoais sem qualquer configuração necessária da sua parte. Saiba mais em [Perfis de email no System Center Configuration Manager](../deploy-use/introduction-to-email-profiles.md).  
 
 -   O Configuration Manager possibilita a integração com o Windows Hello for Business (anteriormente, Microsoft Passport for Work), que é um método de entrada alternativo que usa o Active Directory ou uma conta do Azure Active Directory para substituir uma senha, cartão inteligente ou cartão inteligente virtual. Saiba mais em [Configurações do Windows Hello for Business no System Center Configuration Manager](../deploy-use/windows-hello-for-business-settings.md).  
-
-
-
-<!--HONumber=Dec16_HO3-->
-
 

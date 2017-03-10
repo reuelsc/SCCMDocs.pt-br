@@ -1,10 +1,10 @@
 ---
-title: Configurando o Endpoint Protection | Microsoft Docs
+title: "Criar uma função do sistema de sites do ponto do Endpoint Protection | Microsoft Docs"
 description: "Saiba como configurar o Endpoint Protection para gerenciar a segurança e malware em computadores cliente do Configuration Manager."
 defintion: 
 definition: 
 ms.custom: na
-ms.date: 10/06/2016
+ms.date: 02/14/2016
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
@@ -18,12 +18,13 @@ author: NathBarn
 ms.author: nathbarn
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: bff083fe279cd6b36a58305a5f16051ea241151e
-ms.openlocfilehash: 4639203bf5e90486ce4b97abc2fc4f54eae3afe9
+ms.sourcegitcommit: 017bd5b899b364fc832c721d63cc7dbad0a11671
+ms.openlocfilehash: 884b5f2ec3f1aa273128dfeaaf88d969c9d8669d
+ms.lasthandoff: 02/15/2017
 
 
 ---
-# <a name="create-an-endpoint-protection-point-site-system-role"></a>Criar uma função do sistema de sites do ponto do Endpoint Protection
+# <a name="create-an-endpoint-protection-point-site-system-role"></a>Criar uma função do sistema de site do ponto do Endpoint Protection
 
 *Aplica-se a: System Center Configuration Manager (Branch Atual)*
 
@@ -60,11 +61,6 @@ ms.openlocfilehash: 4639203bf5e90486ce4b97abc2fc4f54eae3afe9
 
 8.  Conclua o assistente.
 
-> [!div class="button"]
-[Próxima etapa >](endpoint-configure-alerts.md)
-
-> [!div class="button"]
-[Voltar >](endpoint-protection-configure.md)
 
 ## <a name="existing-site-system-server"></a>Servidor do sistema de site existente
 
@@ -89,15 +85,4 @@ ms.openlocfilehash: 4639203bf5e90486ce4b97abc2fc4f54eae3afe9
     >  Essa opção define as configurações do Cloud Protection Service (anteriormente conhecido como MAPS) que são usadas por padrão. Você pode definir configurações personalizadas para cada política antimalware que você configurar. Para mais informações, consulte [Como criar e implantar políticas antimalware para o Endpoint Protection no System Center Configuration Manager](endpoint-antimalware-policies.md).
 
 8.  Conclua o assistente.
-
-> [!div class="button"]
-[Próxima etapa >](endpoint-configure-alerts.md)
-
-> [!div class="button"]
-[Voltar >](endpoint-protection-configure.md)
-
-
-
-<!--HONumber=Dec16_HO3-->
-
 
