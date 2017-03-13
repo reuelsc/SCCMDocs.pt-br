@@ -2,7 +2,7 @@
 title: Monitorar o status do Endpoint Protection | Microsoft Docs
 description: Saiba como monitorar o Endpoint Protection na sua hierarquia do System Center Configuration Manager.
 ms.custom: na
-ms.date: 12/9/2016
+ms.date: 03/13/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
@@ -18,6 +18,7 @@ manager: angrobe
 translationtype: Human Translation
 ms.sourcegitcommit: 0fa837c68eb073d2ceaf48c938137a94141a102e
 ms.openlocfilehash: 99e266e44f718d97c2a6e61e8e6816752751ed7b
+ms.lasthandoff: 01/24/2017
 
 
 ---
@@ -27,7 +28,7 @@ ms.openlocfilehash: 99e266e44f718d97c2a6e61e8e6816752751ed7b
 
 Você pode monitorar o Endpoint Protection na sua hierarquia do Microsoft System Center Configuration Manager usando o nó **Status do Endpoint Protection** em **Segurança** no espaço de trabalho **Monitoramento**, no nó **Endpoint Protection** no espaço de trabalho **Ativos e Conformidade** e usando relatórios.  
 
-##  <a name="a-namebkmk1a-how-to-monitor-endpoint-protection-by-using-the-endpoint-protection-status-node"></a><a name="BKMK_1"></a> Como monitorar o Endpoint Protection usando o Nó de Status do Endpoint Protection  
+##  <a name="BKMK_1"></a> Como monitorar o Endpoint Protection usando o Nó de Status do Endpoint Protection  
 
 1.  No console do Configuration Manager, clique em **Monitoramento**.  
 
@@ -47,7 +48,7 @@ Você pode monitorar o Endpoint Protection na sua hierarquia do Microsoft System
     > [!IMPORTANT]  
     >  As informações exibidas no nó **Status do Endpoint Protection** baseia-se nos dados últimos que foram resumidos do banco de dados do Configuration Manager e podem não ser atuais. Se você deseja recuperar os dados mais recentes, na guia **Início** clique em **Executar Resumo**, ou clique em **Agendar Resumo** para ajustar o intervalo de resumo.  
 
-##  <a name="a-namebkmk2a-how-to-monitor-endpoint-protection-in-the-assets-and-compliance-workspace"></a><a name="BKMK_2"></a> Como monitorar o Endpoint Protection no espaço de trabalho Ativos e Conformidade  
+##  <a name="BKMK_2"></a> Como monitorar o Endpoint Protection no espaço de trabalho Ativos e Conformidade  
 
 1.  No console do Configuration Manager, clique em **Ativos e Conformidade**.  
 
@@ -59,7 +60,7 @@ Você pode monitorar o Endpoint Protection na sua hierarquia do Microsoft System
 
 3.  Na lista *<nome da coleção\>*, selecione um computador e clique na guia **Detalhe do Malware**.  
 
-##  <a name="a-namebkmk3a-how-to-monitor-endpoint-protection-by-using-reports"></a><a name="BKMK_3"></a> Como monitorar o Endpoint Protection usando relatórios  
+##  <a name="BKMK_3"></a> Como monitorar o Endpoint Protection usando relatórios  
  Use os relatórios a seguir para ajudar a exibir informações sobre o Endpoint Protection na sua hierarquia. Você também pode usar esses relatórios para ajudar a solucionar quaisquer problemas com o Endpoint Protection. Para obter mais informações sobre como configurar relatórios no Configuration Manager, consulte [Relatórios no System Center Configuration Manager](../../core/servers/manage/reporting.md) e [Arquivos de log no System Center Configuration Manager](../../core/plan-design/hierarchy/log-files.md). Os relatórios do Endpoint Protection encontram-se na pasta do Endpoint Protection.  
 
 |Nome do relatório|Descrição|  
@@ -81,9 +82,4 @@ Você pode monitorar o Endpoint Protection na sua hierarquia do Microsoft System
 |**Permitido**|Um usuário administrativo selecionado para permitir que o software que contém o malware seja executado.|  
 |**Nenhuma ação**|O Endpoint Protection não realizou nenhuma ação no malware. Isso pode ocorrer se o computador for reiniciado depois que o malware é detectado e o malware não for detectado; Por exemplo, se a unidade de rede mapeada no qual malware detectado não é reconectado quando o computador for reiniciado.|  
 |**Bloqueado**|O Endpoint Protection bloqueou a execução do malware. Isso pode ocorrer se houver um processo no computador para conter malware.|
-
-
-
-<!--HONumber=Jan17_HO4-->
-
 
