@@ -2,7 +2,7 @@
 title: "Escolher Intune autônomo ou MDM híbrido | Microsoft Docs"
 description: "Escolha se deseja implantar o gerenciamento de dispositivo móvel híbrido com o Intune e com o Configuration Manager ou executar o Intune autônomo."
 ms.custom: na
-ms.date: 11/07/2016
+ms.date: 03/05/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
@@ -16,8 +16,9 @@ author: Mtillman
 ms.author: mtillman
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: a5c9e312641d91ff297fbcfa6066a93c2a0e1ee0
-ms.openlocfilehash: 3480484a96e96a191b4f02208fcf838db5cb6ba7
+ms.sourcegitcommit: 84e3896dd05a8c157f4e94625b0eca60aacc11d3
+ms.openlocfilehash: 8f2625aadfd0aed92d9922c7e3c0d3d166a78cdd
+ms.lasthandoff: 02/25/2017
 
 ---
 # <a name="choose-between-microsoft-intune-standalone-and-hybrid-mobile-device-management-with-system-center-configuration-manager"></a>Escolha entre o gerenciamento de dispositivo móvel híbrido e independente do Microsoft Intune com o System Center Configuration Manager
@@ -44,16 +45,11 @@ Se estiver decidindo entre o autônomo e o híbrido, considere os recursos que e
 
 -   Controle de acesso baseado em função, restringir o acesso a funções administrativas com base em funções atribuídas.
 
--   Dimensionar – implantar e gerenciar mais de 50 mil dispositivos móveis.
+-   Dimensionar – implantar e gerenciar mais de 100 mil dispositivos móveis.
 
 -   Único painel – gerenciar clientes de computadores tradicionais e dispositivos gerenciados pelo Intune usando o mesmo console.
 
 Se você estiver começando a planejar a implantação do Intune hoje e tiver um período de vários meses para pilotos, teste de aceitação e implantação, considere a possibilidade de escolher o Intune autônomo agora, entendendo que as novas atualizações para o serviço de nuvem incluirão mais funcionalidades. Durante o primeiro semestre do ano civil 2017, o Intune autônomo receberá atualizações que fornecem grande parte das funcionalidades avançadas de uma implantação híbrida com o Configuration Manager. O Intune autônomo logo passará para a plataforma de nuvem Microsoft Azure e isso trará melhorias de escalabilidade, acesso baseado em função por meio do Portal do Azure, relatórios personalizados e acesso programático por meio da API do Graph do Azure.
 
 Você pode mudar de híbrido para Intune autônomo ou de autônomo para híbrido, mas isso requer ajuda de operações e do Suporte da Microsoft. Para isso também será necessário cancelar o registro e registrar novamente todos os dispositivos depois que a autoridade de gerenciamento for alterada.  A Microsoft está trabalhando para melhorar a experiência com as mudanças de configurações em uma atualização futura do serviço.
-
-
-
-<!--HONumber=Dec16_HO3-->
-
 

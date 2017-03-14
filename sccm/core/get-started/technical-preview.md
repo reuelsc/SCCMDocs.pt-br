@@ -2,7 +2,7 @@
 title: Technical Preview do System Center Configuration Manager | Microsoft Docs
 description: "Saiba mais sobre a versão do Technical Preview que permite a você testar novas funcionalidades e recursos no System Center Configuration Manager."
 ms.custom: na
-ms.date: 2/1/2017
+ms.date: 2/24/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
@@ -16,9 +16,9 @@ author: Brenduns
 ms.author: brenduns
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: 4b1daa727477b1273cdbee1bc7e3ac8af5911ff0
-ms.openlocfilehash: 4703178c5ce3e23cb9d2e4557466fcec571c2983
-ms.lasthandoff: 02/22/2017
+ms.sourcegitcommit: 0d1f8eb9274dde96eb4295c007c0f49036d1a3de
+ms.openlocfilehash: e140ef9daad9fb4105cea543115af19a4378c903
+ms.lasthandoff: 02/27/2017
 
 
 ---
@@ -36,7 +36,7 @@ ms.lasthandoff: 02/22/2017
 
 
 
-##  <a name="a-namebkmkreqsa-requirements-and-limitations-for-the-technical-preview"></a><a name="bkmk_reqs"></a> Requisitos e limitações do Technical Preview  
+##  <a name="bkmk_reqs"></a> Requisitos e limitações do Technical Preview  
 
 > [!IMPORTANT]     
 >  O Technical Preview é licenciado somente para uso em ambiente de laboratório.  A Microsoft não pode fornecer serviços de suporte e alguns recursos podem não estar disponíveis para o software na versão de preview. Além disso, o software na versão de preview pode padrões diferentes ou reduzidos de segurança, privacidade, acessibilidade, disponibilidade e confiabilidade em comparação com o software fornecido comercialmente.  
@@ -77,7 +77,7 @@ ms.lasthandoff: 02/22/2017
 
 -   Não há suporte para atualização para um build de produção (ramificação atual) deste build de preview. No entanto, quando as atualizações estão disponíveis para uma versão prévia, é possível localizá-las e instalá-las do nó **Atualizações e Manutenção** do console do Configuration Manager. Para obter um vídeo do processo de atualização no console, veja [Instalação dos pacotes de atualização do ConfigMgr](https://www.youtube.com/embed/KBd_EGFbUT8) no youtube.com.  
 
-##  <a name="a-namebkmkinstalla-install-and-update-the-technical-preview"></a><a name="bkmk_install"></a> Instalar e atualizar a Visualização Técnica  
+##  <a name="bkmk_install"></a> Instalar e atualizar a Visualização Técnica  
  O System Center Configuration Manager Technical Preview é diferente da versão atual do System Center Configuration Manager.  
 
  Para usar a technical preview, primeiro você deve instalar uma **versão de linha de base** do build da versão de technical preview. Depois de instalar uma versão de linha de base, use as **atualizações no console** para atualizar sua instalação para a versão de preview mais recente.     Normalmente, as novas versões da Technical Preview são disponibilizadas todos os meses.
@@ -95,7 +95,7 @@ Cada versão de visualização conta com suporte até que três versões sucessi
 
 
 
-##  <a name="a-namebkmktpfeedbacka-providing-feedback"></a><a name="BKMK_TPFeedback"></a> Enviando comentários  
+##  <a name="BKMK_TPFeedback"></a> Enviando comentários  
  Adoraríamos receber seus comentários sobre nossas visualizações técnicas. Para enviar comentários sobre os recursos em cada visualização, clique no link de nosso formulário de comentários na página do [programa de comentários do Configuration Manager](https://connect.microsoft.com/ConfigurationManagervnext/Feedback) no site do Microsoft Connect.  
 
  E se tiver sugestões sobre novos recursos que gostaria de ver, gostaríamos de saber também. Para enviar novas ideias e para votar nas ideias enviadas por outras pessoas, [visite nossa página de opinião do usuário](http://configurationmanager.uservoice.com).  
@@ -105,11 +105,23 @@ Cada versão de visualização conta com suporte até que três versões sucessi
 
 
 
-##  <a name="a-namebkmktpcapsa-capabilities-delivered-in-technical-previews"></a><a name="bkmk_tpCaps"></a> Recursos fornecidos na visualização técnica  
+##  <a name="bkmk_tpCaps"></a> Recursos fornecidos na visualização técnica  
  Veja a seguir os recursos fornecidos com cada versão de technical preview do Configuration Manager.  Recursos que estão disponíveis a partir de uma versão de technical preview permanecem disponíveis nas versões posteriores. De forma semelhante, os recursos que foram adicionados à Versão do System Center Configuration Manager (branch atual) permanecem disponíveis em versões de technical preview posteriores.  Clique no conteúdo relativo a cada versão de preview saber mais sobre uma funcionalidade específica.  
 
  |Funcionalidade|Versão do Technical Preview|Versão do Branch Atual|  
  |----------------|---------------------|--------------------|
+ |Novas configurações de conformidade para dispositivos iOS|[Tech Preview 1702](capabilities-in-technical-preview-1702.md#new-compliance-settings-for-ios-devices)|![Não foi adicionado](media/Red_X.gif)|
+ |Criar certificados PFX com suporte a S/MIME|[Tech Preview 1702](capabilities-in-technical-preview-1702.md#create-pfx-certificates-with-s-mime-support)|![Não foi adicionado](media/Red_X.gif)|
+ |Verificar se há arquivos executáveis antes de instalar um aplicativo|[Tech Preview 1702](capabilities-in-technical-preview-1702.md#check-for-running-executable-files-before-installing-an-application)|![Não foi adicionado](media/Red_X.gif)|
+ |Enviar comentários do console do Configuration Manager | [Tech Preview 1702](capabilities-in-technical-preview-1702.md#send-feedback-from-the-configuration-manager-console)    |![Não foi adicionado](media/Red_X.gif)  |
+ |Alterações em Atualizações e Manutenção  | [Tech Preview 1702](capabilities-in-technical-preview-1702.md#changes-for-updates-and-servicing)  |![Não foi adicionado](media/Red_X.gif) |
+ |Aprimoramentos de cache de pares  | [Tech Preview 1702](capabilities-in-technical-preview-1702.md#peer-cache-improvements) |![Não foi adicionado](media/Red_X.gif)|
+ |Usar o Azure Active Directory  | [Tech Preview 1702](capabilities-in-technical-preview-1702.md#azurediscovery) |![Não foi adicionado](media/Red_X.gif)|
+ |Aprimoramentos na política de conformidade de dispositivo de acesso condicional | [Tech Preview 1702](capabilities-in-technical-preview-1702.md#conditional-access-device-compliance-policy-improvements) |![Não foi adicionado](media/Red_X.gif)|
+ |Alerta de versão do cliente de antimalware | [Tech Preview 1702](capabilities-in-technical-preview-1702.md#antimalware-client-version-alert) |![Não foi adicionado](media/Red_X.gif)|
+ |Avaliação de conformidade para atualizações do Windows Update for Business | [Tech Preview 1702](capabilities-in-technical-preview-1702.md#compliance-assessment-for-windows-update-for-business-updates) |![Não foi adicionado](media/Red_X.gif)|
+ |Aprimoramentos nas configurações e mensagens de notificação do Centro de Software para sequências de tarefas de alto impacto| [Tech Preview 1702](capabilities-in-technical-preview-1702.md#improvements-to-software-center-settings-and-notification-messages-for-high-impact-task-sequences) |![Não foi adicionado](media/Red_X.gif)|
+ |Suporte do Android for Work| [Tech Preview 1702](capabilities-in-technical-preview-1702.md#android-for-work-support) |![Não foi adicionado](media/Red_X.gif)|
  |Aprimoramentos de grupos de limites para os pontos de atualização de software | [Tech Preview 1701](capabilities-in-technical-preview-1701.md#boundary-groups-improvements-for-software-update-points)    |![Não foi adicionado](media/Red_X.gif)  |
  |O inventário de hardware coleta informações de UEFI | [Tech Preview 1701](capabilities-in-technical-preview-1701.md#hardware-inventory-collects-uefi-information)|![Não foi adicionado](media/Red_X.gif)  |
  |Melhorias na implantação do sistema operacional| [Tech Preview 1701](capabilities-in-technical-preview-1701.md#improvements-to-operating-system-deployment)|![Não foi adicionado](media/Red_X.gif)  |

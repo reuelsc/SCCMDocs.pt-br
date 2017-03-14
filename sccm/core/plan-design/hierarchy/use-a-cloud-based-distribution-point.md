@@ -16,8 +16,9 @@ author: Brenduns
 ms.author: brenduns
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: 97051d9c65ef5ea28c94468b24863120624e8de0
-ms.openlocfilehash: b78b3b20a8b317a242cd06f9fda6326f41673915
+ms.sourcegitcommit: 3eab8e62ace29c0fcb24d47ec7e398d807347a38
+ms.openlocfilehash: a1d701c77afb4d6317d8a137fdf46422063df085
+ms.lasthandoff: 02/28/2017
 
 
 ---
@@ -62,7 +63,7 @@ Pontos de distribuição com base em nuvem oferecem os seguintes benefícios adi
 
 Os pontos de distribuição baseados em nuvem têm as seguintes limitações:  
 
--   Você não pode usar um ponto de distribuição com base na nuvem para hospedar pacotes de atualização de software.  
+-  Antes de usar a versão 1610 com o Hotfix KB4010155, você não pode usar um ponto de distribuição baseado em nuvem para hospedar pacotes de atualização de software. A próxima versão do Branch Atual após a versão 1610 dará suporte a essa opção sem a necessidade de instalar essa correção.  
 
 -   Você não pode usar um ponto de distribuição com base em nuvem para PXE ou implantações habilitadas para multicast.  
 
@@ -76,7 +77,7 @@ Os pontos de distribuição baseados em nuvem têm as seguintes limitações:
 
 -   Os pontos de distribuição baseados em nuvem não podem ser configurados como pontos de distribuição de recepção.  
 
-##  <a name="a-namebkmkprereqsclouddpa-prerequisites-for-cloud-based-distribution-points"></a><a name="BKMK_PrereqsCloudDP"></a> Pré-requisitos para pontos de distribuição baseados em nuvem  
+##  <a name="BKMK_PrereqsCloudDP"></a> Pré-requisitos para pontos de distribuição baseados em nuvem  
  Estes são os pré-requisitos para o uso de pontos de distribuição baseados em nuvem:  
 
 -   Uma assinatura do Azure (confira [Sobre assinaturas e certificados](#BKMK_CloudDPCerts) neste tópico).
@@ -91,7 +92,7 @@ Os pontos de distribuição baseados em nuvem têm as seguintes limitações:
 
 -   Os clientes devem ser capazes de acessar a Internet para usar o ponto de distribuição baseado em nuvem.  
 
-##  <a name="a-namebkmkclouddpcosta-cost-of-using-cloud-based-distribution"></a><a name="BKMK_CloudDPCost"></a> Custo da utilização de uma distribuição baseada em nuvem  
+##  <a name="BKMK_CloudDPCost"></a> Custo da utilização de uma distribuição baseada em nuvem  
  Quando você usa um ponto de distribuição baseado em nuvem, planeje o custo de armazenamento de dados e das transferências de download que os clientes do Configuration Manager executarão.  
 
  O Configuration Manager inclui opções para ajudar a controlar os custos e monitorar o acesso a dados:  
@@ -139,7 +140,7 @@ Os pontos de distribuição baseados em nuvem têm as seguintes limitações:
 
      Para interromper um serviço de nuvem, no console do Configuration Manager, selecione o ponto de distribuição no nó **Pontos de Distribuição em Nuvem**, em **Serviços em Nuvem**, no espaço de trabalho **Administração**. Em seguida, escolha **Parar serviço** para interromper o serviço de nuvem que é executado no Azure.  
 
-##  <a name="a-namebkmkclouddpcertsa-about-subscriptions-and-certificates-for-cloud-based-distribution-points"></a><a name="BKMK_CloudDPCerts"></a> Sobre assinaturas e certificados para pontos de distribuição baseados em nuvem  
+##  <a name="BKMK_CloudDPCerts"></a> Sobre assinaturas e certificados para pontos de distribuição baseados em nuvem  
  Pontos de distribuição baseados em nuvem requerem certificados para habilitar o Configuration Manager a gerenciar o serviço de nuvem que hospeda o ponto de distribuição, e para os clientes acessarem o conteúdo do ponto de distribuição. As informações a seguir fornecem uma visão geral desses certificados. Para obter informações mais detalhadas, consulte [Requisitos de certificado PKI para o System Center Configuration Manager](../../../core/plan-design/network/pki-certificate-requirements.md).  
 
  **Certificados**  
@@ -163,7 +164,7 @@ Os pontos de distribuição baseados em nuvem têm as seguintes limitações:
 
    Para obter um exemplo de implantação deste certificado, confira a seção **Implantando o certificado de serviço em pontos de distribuição baseados em nuvem** no tópico [Exemplo passo a passo de implantação dos certificados PKI para o System Center Configuration Manager: Autoridade de certificação do Windows Server 2008](/sccm/core/plan-design/network/example-deployment-of-pki-certificates).  
 
-##  <a name="a-namebkmktasksa-common-management-tasks-for-cloud-based-distribution-points"></a><a name="bkmk_Tasks"></a> Tarefas comuns de gerenciamento para pontos de distribuição baseados em nuvem  
+##  <a name="bkmk_Tasks"></a> Tarefas comuns de gerenciamento para pontos de distribuição baseados em nuvem  
 
 -   **Comunicação do servidor do site com o ponto de distribuição baseado em nuvem**: quando instalar um ponto de distribuição baseado em nuvem, atribua um site primário para gerenciar a transferência de conteúdo para o serviço de nuvem. Essa ação equivale a instalar a função do sistema de site do ponto de distribuição em um site específico.  
 
@@ -185,7 +186,7 @@ Clientes que usam pontos de distribuição baseados em nuvem usam a sequência a
 
 3.  Quando um ponto de distribuição preferencial ou remoto não está disponível, o cliente pode, então, retornar para obter o conteúdo de um ponto de distribuição baseado em nuvem.  
 
-    
+
 
   Quando um cliente usa um ponto de distribuição baseado em nuvem como um local de conteúdo, ele se autentica para esse ponto de distribuição usando o token de acesso ao Configuration Manager. Se o cliente confiar no certificado do ponto de distribuição baseado em nuvem do Configuration Manager, ele poderá baixar o conteúdo solicitado.  
 
@@ -212,9 +213,4 @@ Clientes que usam pontos de distribuição baseados em nuvem usam a sequência a
 -   **Desinstalar um ponto de distribuição baseado em nuvem**: para desinstalar um ponto de distribuição baseado em nuvem, selecione o ponto de distribuição no console do Configuration Manager e selecione **Excluir**.  
 
     Quando um ponto de distribuição baseado em nuvem é excluído de uma hierarquia, o Configuration Manager remove o conteúdo do serviço de nuvem no Azure.  
-
-
-
-<!--HONumber=Feb17_HO4-->
-
 

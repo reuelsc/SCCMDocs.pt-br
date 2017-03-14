@@ -17,8 +17,9 @@ author: Brenduns
 ms.author: brenduns
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: 6ed317d45d90758832d4157985dd95d5e253c6fc
-ms.openlocfilehash: 37e45e604e89d3ce280bb2bff47d4a55b6cdfaf8
+ms.sourcegitcommit: 40e018084dd2703327ff653f962f488432b1ec98
+ms.openlocfilehash: 3bab51be96445f766e8f5bbf54eee854e5d09cee
+ms.lasthandoff: 02/28/2017
 
 
 ---
@@ -26,7 +27,7 @@ ms.openlocfilehash: 37e45e604e89d3ce280bb2bff47d4a55b6cdfaf8
 
 *Aplica-se a: System Center Configuration Manager (Branch Atual)*
 
-As seções a seguir fornecem detalhes técnicos para ajudá-lo a configurar o System Center Configuration Manager a fim de estar compatível com requisitos internacionais específicos.  
+As seções a seguir fornecem detalhes técnicos para ajudá-lo a tornar o System Center Configuration Manager em conformidade com requisitos internacionais específicos.  
 
 ## <a name="gb18030-requirements"></a>Requisitos GB18030  
  O Configuration Manager atende aos padrões que estão definidos no GB18030, portanto é possível usar o Configuration Manager na China. Uma implantação do Configuration Manager deve ter as seguintes configurações para atender aos requisitos GB18030:  
@@ -43,9 +44,4 @@ As seções a seguir fornecem detalhes técnicos para ajudá-lo a configurar o S
     >  Estes agrupamentos de banco de dados são uma exceção aos requisitos observados na seção [Suporte para versões do SQL Server para o System Center Configuration Manager](../../../core/plan-design/configs/support-for-sql-server-versions.md).  
 
 -   Você deve colocar um arquivo com o nome **GB18030.SMS** na pasta raiz do volume do sistema de cada computador do servidor do site na hierarquia. Esse arquivo não contém dados e pode ser um arquivo de texto vazio que está nomeado para atender a esse requisito.  
-
-
-
-<!--HONumber=Dec16_HO3-->
-
 

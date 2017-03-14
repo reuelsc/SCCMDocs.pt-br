@@ -2,7 +2,7 @@
 title: Avaliar o Configuration Manager | Microsoft Docs
 description: "Crie um ambiente de laboratório para avaliar o System Center Configuration Manager para uso em sua organização."
 ms.custom: na
-ms.date: 10/06/2016
+ms.date: 2/28/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
@@ -17,8 +17,9 @@ author: brenduns
 ms.author: brenduns
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: 35e48666f4d1a2363304650f960531fd0630a291
-ms.openlocfilehash: ad3c849bd3ebfc6c0aa795e5b49a4850371cda47
+ms.sourcegitcommit: 0ea90d3f3bef80b8acf9018a1338ae05fc948af4
+ms.openlocfilehash: d7ea785ab1beee09b9adda735a87f89bc9481620
+ms.lasthandoff: 02/28/2017
 
 
 ---
@@ -26,50 +27,44 @@ ms.openlocfilehash: ad3c849bd3ebfc6c0aa795e5b49a4850371cda47
 
 *Aplica-se a: System Center Configuration Manager (Branch Atual)*
 
-Saiba como criar um ambiente de laboratório para avaliar o System Center Configuration Manager para uso em sua organização.  
+ Saiba como criar um ambiente de laboratório para avaliar o System Center Configuration Manager para uso em sua organização.  
 
-## <a name="evaluate-system-center-configuration-manager-by-building-your-own-lab-environment"></a>Avaliar o System Center Configuration Manager ao compilar seu próprio ambiente de laboratório  
- O System Center Configuration Manager é uma ferramenta poderosa e complexa para gerenciar usuários, dispositivos e software. Recomendamos que você realize uma avaliação total do System Center Configuration Manager antes da implantação completa, para que seja possível unir o entendimento conceitual com exercícios práticos.  
+ O System Center Configuration Manager é uma ferramenta poderosa e complexa para gerenciar usuários, dispositivos e software. É recomendável avaliar completamente o System Center Configuration Manager antes da implantação completa, para que seja possível unir o entendimento conceitual com exercícios práticos.  
 
- Este guia destina-se principalmente a administradores que avaliam o uso do Configuration Manager em ambientes corporativos.  
+ Este guia destina-se principalmente a administradores que estão avaliando o uso do Configuration Manager em ambientes corporativos:  
 
--   Administradores que buscam uma solução para gerenciar por completo computadores, servidores e dispositivos móveis  
+-   Administradores que desejam uma solução para gerenciar totalmente computadores, servidores e dispositivos móveis  
 
 -   Administradores em setores de alta segurança que exigem a segurança do gerenciamento de dispositivo local com a flexibilidade do gerenciamento de dispositivo baseado em nuvem  
 
--   Administradores que buscam gerenciar o escalonamento vertical de sua arquitetura de servidor local  
+-   Administradores que desejam gerenciar o escalonamento vertical de sua arquitetura de servidor local  
 
-### <a name="what-this-lab-does"></a>O que esse laboratório faz  
- O principal objetivo de criar esse ambiente é fornecer o conhecimento geral para começar a trabalhar com o Configuration Manager, bem como aprimorar seu entendimento do Configuration Manager na prática. Para isso, você acompanhará um assembly acelerado da versão atual do Configuration Manager, usando dois servidores:  
+## <a name="what-this-lab-does"></a>O que esse laboratório faz  
+ A meta principal de criar esse ambiente de laboratório é fornecer a você o conhecimento geral para começar a trabalhar com o Configuration Manager e para aprimorar a compreensão do Configuration Manager. Você acompanhará um assembly acelerado da versão atual do Configuration Manager, usando dois servidores:  
 
--   Um que hospeda o Active Directory, o Controlador de Domínio e o servidor DNS  
+-   Um que hospeda o Active Directory, o controlador de domínio e o servidor DNS  
 
--   E um segundo, que hospeda o Configuration Manager e todos os componentes do SQL Server de associados.  
+-   Um que hospeda o Configuration Manager e todos os componentes do SQL Server associados  
 
--   Computadores cliente são instalados no Hyper-V. O laboratório em si também pode ser executado como um sistema totalmente virtualizado em um único servidor.  
+Computadores cliente são instalados no Hyper-V. O laboratório em si também pode ser executado como um sistema totalmente virtualizado em um único servidor.  
 
-### <a name="what-this-lab-does-not-do"></a>O que este laboratório não faz  
- Este laboratório não apresentará todos os cenários do Configuration Manager e não foi projetado para ser migrado imediatamente para um ambiente ativo.  
+## <a name="what-this-lab-does-not-do"></a>O que este laboratório não faz  
+ Este laboratório não levará você por todos os cenários do Configuration Manager. Ele não foi projetado para ser imediatamente migrado para um ambiente ativo.  
 
- Ao compilar este laboratório, você terá um ambiente funcional para trabalhar. No entanto, esse ambiente não será otimizado em relação ao desempenho do sistema, gerenciamento de espaço em disco, armazenamento do SQL Server, etc.  
+ Ao compilar este laboratório, você terá um ambiente funcional para trabalhar. Porém, esse ambiente não será otimizado para fatores como o desempenho do sistema, gerenciamento de espaço em disco e armazenamento do SQL Server.  
 
-###  <a name="a-namebkmkevalreca-recommended-reading-prior-to-beginning-the-lab"></a><a name="BKMK_EvalRec"></a> Leitura recomendada antes de começar o laboratório  
- Há uma grande quantidade de conteúdo disponível na [Documentação do System Center Configuration Manager](http://docs.microsoft.com/sccm/). Foi incluída abaixo uma seleção de tópicos desta biblioteca, cuja leitura é recomendada antes de começar estes exercícios, para todos os administradores que trabalham em laboratórios.  
+##  <a name="BKMK_EvalRec"></a> Leitura recomendada antes de criar o laboratório  
+ Há uma grande quantidade de conteúdo disponível na [Documentação do System Center Configuration Manager](http://docs.microsoft.com/sccm/). É recomendável que você leia os tópicos a seguir desta biblioteca antes de começar a criar o laboratório:  
 
--   Conheça os conceitos básicos do console do Configuration Manager, portais do usuário final e cenários de exemplo na [Introdução ao System Center Configuration Manager](../../core/understand/introduction.md)  
+-   Conheça os conceitos básicos do console do Configuration Manager, portais do usuário final e cenários de exemplo na [Introdução ao System Center Configuration Manager](../../core/understand/introduction.md).  
 
--   Saiba mais sobre os recursos de gerenciamento primário do Configuration Manager em [Recursos e funcionalidades do System Center Configuration Manager](../../core/plan-design/changes/features-and-capabilities.md)  
+-   Saiba mais sobre os recursos de gerenciamento primário do Configuration Manager em [Recursos e funcionalidades do System Center Configuration Manager](../../core/plan-design/changes/features-and-capabilities.md).  
 
--   Reforce seu conhecimento com os [Conceitos básicos do System Center Configuration Manager](../../core/understand/fundamentals.md)  
+-   Reforce seu conhecimento com os [Conceitos básicos do System Center Configuration Manager](../../core/understand/fundamentals.md).  
 
--   Aprenda a importância de funções de segurança em [Conceitos básicos da administração baseada em funções para o System Center Configuration Manager](../../core/understand/fundamentals-of-role-based-administration.md)  
+-   Aprenda a importância de funções de segurança em [Conceitos básicos da administração baseada em funções para o System Center Configuration Manager](../../core/understand/fundamentals-of-role-based-administration.md).  
 
--   Conhecer esses [Conceitos de gerenciamento de conteúdo](../../core/plan-design/hierarchy/fundamental-concepts-for-content-management.md) pode fornecer conceitos específicos relacionados ao gerenciamento de conteúdo  
+-   Saiba mais sobre gerenciamento de conteúdo em [Conceitos de gerenciamento de conteúdo](../../core/plan-design/hierarchy/fundamental-concepts-for-content-management.md).  
 
--   [Entenda como os clientes encontram serviços e recursos do site para o System Center Configuration Manager](../../core/plan-design/hierarchy/understand-how-clients-find-site-resources-and-services.md) para dar suporte às operações diárias com êxito durante toda a sua implantação  
-
-
-
-<!--HONumber=Jan17_HO4-->
-
+-   Saiba como dar suporte às operações diárias com êxito durante toda a sua implantação em [Entender como os clientes encontram serviços e recursos do site para o System Center Configuration Manager](../../core/plan-design/hierarchy/understand-how-clients-find-site-resources-and-services.md).  
 

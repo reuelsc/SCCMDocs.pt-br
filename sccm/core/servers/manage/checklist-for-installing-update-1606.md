@@ -16,8 +16,9 @@ author: Brenduns
 ms.author: brenduns
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: 7847396fa2ec79a6044c41c1b53572a81692ec8e
-ms.openlocfilehash: 8ab8e504c3881c4dc07ffb569a1f440f4318d689
+ms.sourcegitcommit: 30af3326578d39c6d995672071705bcaeb877e4d
+ms.openlocfilehash: b0def6eb962d243a7ea5910b8d56bbb448b3a2e4
+ms.lasthandoff: 02/23/2017
 
 ---
 # <a name="checklist-for-installing-update-1606-for-system-center-configuration-manager"></a>Lista de verificação para instalar a atualização 1606 do System Center Configuration Manager
@@ -124,7 +125,7 @@ Para obter mais informações, consulte [Backup e recuperação para o System Ce
 
 O Configuration Manager não dá suporte ao backup de sites secundários, nem ao teste de atualização de um banco de dados do site secundário.   
 
-Não execute um teste da atualização do banco de dados no banco de dados do site de produção. Fazer isso atualiza o banco de dados do site e pode deixar seu site inoperável. Para saber mais, veja a seção [Testar a atualização de banco de dados do site](../../../core/servers/deploy/install/upgrade-to-configuration-manager.md#bkmk_test) em [Atualizar para o System Center Configuration Manager](../../../core/servers/deploy/install/upgrade-to-configuration-manager.md).  
+Não execute um teste da atualização do banco de dados no banco de dados do site de produção. Fazer isso atualiza o banco de dados do site e pode deixar seu site inoperável. Para obter mais informações, consulte [Etapa 2: Testar a atualização do banco de dados antes de instalar uma atualização](/sccm/core/servers/manage/install-in-console-updates#bkmk_step2) de **Antes de instalar uma atualização no console**.
 
  **Planeje o piloto do cliente:** ao instalar uma atualização que atualiza o cliente, é possível testar essa nova atualização do cliente na pré-produção antes que ela seja implantada e atualize todos os seus clientes ativos.   
 
@@ -147,9 +148,4 @@ Para obter mais informações, confira **Etapa 3: Executar o verificador de pré
   Recomendamos que você planeje a instalação da atualização fora do horário comercial normal de cada site, quando o processo de instalação da atualização e suas ações de reinstalação dos componentes do site e das funções do sistema de sites terão um efeito mínimo sobre as operações de seu negócio.
 
 Para obter mais informações, consulte [Atualizações para o System Center Configuration Manager](../../../core/servers/manage/updates.md).  
-
-
-
-<!--HONumber=Feb17_HO2-->
-
 

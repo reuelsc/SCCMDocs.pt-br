@@ -17,8 +17,9 @@ author: Brenduns
 ms.author: brenduns
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: 10b1010ccbf3889c58c55b87e70b354559243c90
-ms.openlocfilehash: d51a602de9e0cf85d80c74c034613002682e52ea
+ms.sourcegitcommit: a0d4eb601948aa3abb12409f3475d69cacf4a6aa
+ms.openlocfilehash: 90e16b316872cb370c9c2e645f46ac12afab7107
+ms.lasthandoff: 02/28/2017
 
 ---
 
@@ -26,7 +27,7 @@ ms.openlocfilehash: d51a602de9e0cf85d80c74c034613002682e52ea
 
 *Aplica-se a: System Center Configuration Manager (Branch Atual), (Branch de Manutenção de Longo Prazo)*
 
-Use este tópico para saber mais sobre os requisitos de licenciamento das opções de instalação disponíveis com a versão de outubro de 2016 do System Center Configuration Manager versão 1606, que incluem a versão 1606 do Branch Atual, o LTSB (Branch de Manutenção de Longo Prazo) e a versão 1606 da instalação de avaliação do Branch Atual.
+Use este tópico para saber mais sobre os requisitos de licenciamento para as opções de instalação disponíveis com o lançamento de outubro de 2016 do System Center Configuration Manager versão 1606. Essas opções de instalação incluem a versão 1606 do Branch Atual, o LTSB (Branch de Manutenção de Longo Prazo) e a instalação de avaliação do Branch Atual versão 1606.
 
 **Visão geral do licenciamento:**   
 Os clientes com SA (Software Assurance) ativo para as licenças do System Center Configuration Manager ou com direitos de assinatura equivalentes a partir de 1º de outubro de 2016 têm direito de usar a versão 1606, de outubro de 2016, do System Center Configuration Manager. Clientes que adquiriram direitos do System Center Configuration Manager em ou após 1º de outubro de 2016 encontrarão duas opções licenciadas durante a instalação: o Branch Atual e o LTSB (Branch de Manutenção em Longo Prazo).
@@ -42,7 +43,7 @@ Este tópico faz referência ao contrato do Software Assurance (ou direitos de a
 
 |Branch|Licenciamento|Detalhes|
 |----------------|---------------------|--------------------|
-|Branch Atual | Requer um contrato de Software Assurance ativo (ou direitos equivalentes) para o Configuration Manager. </br></br> Consulte [Software Assurance e o Branch Atual](#software-assurance-and-the-current-Branch) neste tópico.| Com suporte para uso em ambientes de produção que desejam receber atualizações regulares de qualidade e recursos da Microsoft. </br></br> Este branch fornece acesso para usar todos os recursos e aprimoramentos. </br></br> Cada atualização de versão tem suporte por 1 (um) ano após seu lançamento. Depois disso, você deve atualizar para uma versão mais recente que ainda [tem suporte](/sccm/core/servers/manage/current-branch-versions-supported).|
+|Branch Atual | Requer um contrato de Software Assurance ativo (ou direitos equivalentes) para o Configuration Manager. </br></br> Consulte [Software Assurance e o Branch Atual](#software-assurance-and-the-current-Branch) neste tópico.| Com suporte para uso em ambientes de produção que desejam receber atualizações regulares de qualidade e recursos da Microsoft. </br></br> Este branch fornece acesso para usar todos os recursos e aprimoramentos. </br></br> Cada atualização de versão tem suporte por&1; (um) ano após seu lançamento. Depois disso, você deve atualizar para uma versão mais recente que ainda [tem suporte](/sccm/core/servers/manage/current-branch-versions-supported).|
 |LTSB (Branch de Manutenção de Longo Prazo)| Requer um contrato de Software Assurance atual com a Microsoft no momento do lançamento (1º de outubro de 2016) </br></br> Consulte [Software Assurance e o LTSB](#software-assurance-and-the-ltsb) neste tópico. | Com suporte para uso em ambientes de produção. Destinado a uso por clientes que deixaram seus direitos de SA (Software Assurance) ou direitos de assinatura equivalentes do Configuration Manager vencerem depois de 1º de outubro de 2016. </br></br> Este branch é limitado em comparação ao Branch Atual. </br></br> Atualizações de segurança críticas do Configuration Manager são disponibilizadas para este branch, mas nenhum novo recurso está disponível. |
 |Instalação de avaliação do Branch Atual| Não requer um contrato de Software Assurance com a Microsoft. | As [instalações de avaliação](https://www.microsoft.com/en-us/evalcenter/evaluate-system-center-configuration-manager-and-endpoint-protection) são sempre o Branch Atual e podem ser usadas por 180 dias. </br></br> A instalação de avaliação pode ser atualizada para uma instalação completa do Branch Atual. Não é possível atualizar uma instalação de avaliação para o Branch de Manutenção de Longo Prazo.|
 
@@ -51,8 +52,8 @@ Além do Branch Atual, do LTSB e da instalação de avaliação do Branch Atual,
 
 ## <a name="licensed-branches"></a>Branches licenciados
 Os clientes com SA (Software Assurance) ativo para as licenças do System Center Configuration Manager ou com direitos de assinatura equivalentes a partir de 1º de outubro de 2016 têm direito de usar a versão 1606, de outubro de 2016, do System Center Configuration Manager. Clientes que adquiriram direitos da versão 1606 do System Center Configuration Manager em ou após 1º de outubro de 2016 encontrarão duas opções licenciadas durante a instalação:
--   **Branch Atual**
--   **LTSB (Branch de Manutenção de Longo Prazo)**
+-    **Branch Atual**
+-    **LTSB (Branch de Manutenção de Longo Prazo)**
 
 
 Consulte a tabela na seção anterior para obter mais informações.
@@ -83,15 +84,15 @@ O LTSB se baseia na versão 1606 do Branch Atual e tem as seguintes limitações
 
 
 ### <a name="software-assurance-expiration-date"></a>Data de validade do Software Assurance
-Começando com a versão de outubro de 2016 da mídia de linha de base da versão 1606 do System Center Configuration Manager, você pode especificar a data de validade do contrato do Software Assurance. Para fazer isso, use a **Data de validade do Software Assurance**, que é um valor opcional que você pode especificar como um lembrete conveniente quando executar a instalação do Configuration Manager, ou posteriormente no console do Configuration Manager.
+Começando com a versão de outubro de 2016 da mídia de linha de base da versão 1606 do System Center Configuration Manager, você pode especificar a data de validade do contrato do Software Assurance. A **Data de validade do Software Assurance**, que é um valor opcional que você pode especificar como um lembrete conveniente quando executar a instalação do Configuration Manager ou posteriormente no console do Configuration Manager.
 
 >  [!NOTE]   
->  A Microsoft não valida a data de validade inserida e não usará essa data para validação da licença.  No entanto, você pode usá-la como um lembrete da data de vencimento. Isso é útil porque o Configuration Manager verifica periodicamente se há novas atualizações de software oferecidas online. O status de licença do Software Assurance deve estar atualizado para que você esteja qualificado para usar essas atualizações adicionais.    
+>  A Microsoft não valida a data de validade especificada e não usa essa data para validação da licença.  No entanto, você pode usá-la como um lembrete da data de vencimento. Isso é útil porque o Configuration Manager verifica periodicamente se há novas atualizações de software oferecidas online. O status de licença do Software Assurance deve estar atualizado para que você esteja qualificado para usar essas atualizações adicionais.    
 
 **Para especificar a data:**
-- Especifique o valor na página **Chave do Produto (Product Key)** do Assistente de Instalação quando você executar a Instalação da mídia de linha de base da versão 1606 do System Center Configuration Manager.
+- Quando você executa a instalação da mídia de linha de base da versão 1606 do System Center Configuration Manager, você pode especificar o valor na página **Chave do Produto (Product Key)** do assistente de Instalação.
 
-- Também é possível especificar essa data na guia **Licenciamento** das **Propriedades de Configurações de Hierarquia** no console do Configuration Manager.
+- No console do Configuration Manager, nas **Propriedades de Configurações de Hierarquia**, você pode especificar o valor na guia **Licenciamento**.
 
 Para obter mais informações sobre o licenciamento do Software Assurance e o Branch Atual do System Center Configuration Manager, consulte [Licenciamento e branches do System Center Configuration Manager](/sccm/core/understand/learn-more-editions).
 
@@ -113,9 +114,4 @@ Use os links a seguir para saber mais sobre os detalhes do licenciamento de prod
 - Onde encontrar seu contrato de Software Assurance (começa a cerca de 43 segundos do início): [https://www.microsoft.com/showcase/video.aspx?uuid=fe1846cb-1d26-49fc-b064-57b25dcc31a0](https://www.microsoft.com/showcase/video.aspx?uuid=fe1846cb-1d26-49fc-b064-57b25dcc31a0).
 
 - Como obter permissões para o VLSC: [https://www.microsoft.com/showcase/video.aspx?uuid=ac4ed1ca-d0a9-43cd-89fa-74ccb555dec4](https://www.microsoft.com/showcase/video.aspx?uuid=ac4ed1ca-d0a9-43cd-89fa-74ccb555dec4).  Você pode delegar permissões de leitura e gravação no VLSC para outras pessoas de sua organização.
-
-
-
-<!--HONumber=Dec16_HO3-->
-
 

@@ -2,7 +2,7 @@
 title: Hardware recomendado | Microsoft Docs
 description: "Obtenha recomendações de hardware para ajudar você a dimensionar o ambiente do System Center Configuration Manager, além de uma implantação básica."
 ms.custom: na
-ms.date: 12/30/2016
+ms.date: 2/28/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
@@ -17,8 +17,9 @@ author: Brenduns
 ms.author: brenduns
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: d61c726d9690a1ec512b8dbab74b0f760012c880
-ms.openlocfilehash: 7caee70c327d84f1e016c689f824d843ccdb3b42
+ms.sourcegitcommit: 63ee782a718cf4a66ffe25b022aa317f3e45784c
+ms.openlocfilehash: 6701d5f21e8511ec9cf4fe7bc5804b3e2fdc4c71
+ms.lasthandoff: 02/28/2017
 
 
 ---
@@ -31,7 +32,7 @@ As recomendações a seguir são diretrizes para ajudar a dimensionar seu ambien
  Use as informações nas seções a seguir como um guia para ajudar a planejar o hardware que pode atender aos volumes de processamento de clientes e sites que usam os recursos do Configuration Manager disponíveis com as configurações padrão.  
 
 
-##  <a name="a-namebkmkscalesiesystemsa-site-systems"></a><a name="bkmk_ScaleSieSystems"></a> Sistemas de sites  
+##  <a name="bkmk_ScaleSieSystems"></a> Sistemas de sites  
  Esta seção fornece as configurações de hardware recomendadas para sistemas de sites do Configuration Manager para implantações que dão suporte ao número máximo de clientes e usam todos os recursos do Configuration Manager ou a maior parte deles. Implantações que dão suporte a menos que o número máximo de clientes e que não usam todos os recursos disponíveis podem exigir menos recursos do computador. Em geral, os fatores principais que limitam o desempenho geral do sistema incluem, na ordem:  
 
 1.  Desempenho da E/S de disco  
@@ -42,24 +43,24 @@ As recomendações a seguir são diretrizes para ajudar a dimensionar seu ambien
 
 Para obter um melhor desempenho, use as configurações de RAID 10 para todas as unidades de dados e rede Ethernet de 1 Gbps.  
 
-###  <a name="a-namebkmkscalesiteservera-site-servers"></a><a name="bkmk_ScaleSiteServer"></a> Servidores do site  
+###  <a name="bkmk_ScaleSiteServer"></a> Servidores do site  
 
 |Site primário autônomo|CPU (núcleos)|Memória (GB)|Alocação de memória para o SQL Server (%)|  
 |-------------------------------|---------------|---------------|----------------------------------------|  
 |Servidor do site primário autônomo com uma função de site do banco de dados no mesmo servidor<sup>1</sup>|16|96|80|  
 |Servidor de site primário autônomo com um banco de dados do site remoto|8|16|-|  
 |Servidor de banco de dados remoto para um site primário autônomo|16|64|90|  
-|Servidor do site de administração central com uma função de site do banco de dados no mesmo servidor<sup>1</sup>|16|96|80|  
+|Servidor do site de administração central com uma função de site do banco de dados no mesmo servidor<sup>1</sup>|20|128|80|  
 |Servidor de site de administração central com um banco de dados do site remoto|8|16|-|  
 |Servidor de banco de dados remoto para um site de administração central|16|96|90|  
 |Site primário filho com a função de site do banco de dados no mesmo servidor|16|96|80|  
 |Servidor de site primário filho com um banco de dados do site remoto|8|16|-|  
-|Servidor de banco de dados remoto para um site primário filho|16|64|90|  
+|Servidor de banco de dados remoto para um site primário filho|16|72|90|  
 |Servidor do site secundário|8|16|-|  
 
  <sup>1</sup> Quando o servidor do site e do SQL Server estão instalados no mesmo computador, a implantação dá suporte a um máximo de [números de tamanho e escala](/sccm/core/plan-design/configs/size-and-scale-numbers) para sites e clientes. Porém, essa configuração pode limitar as [opções de alta disponibilidade para o System Center Configuration Manager](/sccm/protect/understand/high-availability-options), como ao usar um cluster do SQL Server. Além disso, por causa dos requisitos de E/S mais elevados necessários para dar suporte tanto ao SQL Server quanto ao servidor do site do Configuration Manager ao executar ambos no mesmo computador, será recomendável considerar o uso de uma configuração com um computador remoto do SQL Server se você tiver uma implantação maior.  
 
-###  <a name="a-namebkmkremotesitesystema-remote-site-system-servers"></a><a name="bkmk_RemoteSiteSystem"></a> Servidores do sistema de sites remoto  
+###  <a name="bkmk_RemoteSiteSystem"></a> Servidores do sistema de sites remoto  
  As diretrizes a seguir são para computadores que contêm uma função de sistema de sites único. Você planeja fazer ajustes ao instalar várias funções de sistema de site no mesmo computador.  
 
 |Função do sistema de site|CPU (núcleos)|Memória (GB)|Espaço em disco (GB)|  
@@ -76,7 +77,7 @@ Para obter um melhor desempenho, use as configurações de RAID 10 para todas as
 
 -   Aumentar o **limite da Memória Particular de WsusPool** em quatro vezes ou defini-lo como **0** (ilimitado).  
 
-###  <a name="a-namebkmkdiskspacea-disk-space-for-site-systems"></a><a name="bkmk_DiskSpace"></a> Espaço em disco para sistemas de sites  
+###  <a name="bkmk_DiskSpace"></a> Espaço em disco para sistemas de sites  
  A configuração e a alocação de disco contribuem para o desempenho de Configuration Manager. Como cada ambiente do Configuration Manager é diferente, os valores que você implementa podem variar com a seguinte diretriz.  
 
  Para obter o melhor desempenho, coloque cada objeto em um volume RAID separado e dedicado. Para todos os volumes de dados (Configuration Manager e seus arquivos de banco de dados), use RAID 10 para obter o melhor desempenho.  
@@ -109,7 +110,7 @@ Para obter um melhor desempenho, use as configurações de RAID 10 para todas as
 
     -   SQL Server 2014 Express: 10 GB  
 
-##  <a name="a-namebkmkscaleclienta-clients"></a><a name="bkmk_ScaleClient"></a> Clientes  
+##  <a name="bkmk_ScaleClient"></a> Clientes  
  Esta seção fornece as configurações de hardware recomendadas para computadores gerenciados usando o software cliente do Configuration Manager.  
 
 ### <a name="client-for-windows-computers"></a>Cliente para computadores Windows  
@@ -147,7 +148,7 @@ Para obter um melhor desempenho, use as configurações de RAID 10 para todas as
 |Espaço em disco|500 MB de espaço em disco disponível, com 5 GB recomendados para o cache do cliente do Configuration Manager.|  
 |Conectividade de rede|Os computadores cliente do Configuration Manager devem ter conectividade de rede com os sistemas de sites do Configuration Manager para habilitar o gerenciamento.|  
 
-##  <a name="a-namebkmkscaleconsolea-configuration-manager-console"></a><a name="bkmk_ScaleConsole"></a> Console do Configuration Manager  
+##  <a name="bkmk_ScaleConsole"></a> Console do Configuration Manager  
  Os requisitos na tabela a seguir se aplicam a cada computador que executa o console do Configuration Manager.  
 
  **Configuração mínima de hardware:**  
@@ -176,7 +177,7 @@ Para obter um melhor desempenho, use as configurações de RAID 10 para todas as
 Além do PowerShell, há suporte para o WMF (Windows Management Framework) 3.0 e 4.0.   
 É possível instalar o PowerShell antes ou após a instalação do console do Configuration Manager.  
 
-##  <a name="a-namebkmkscalelaba-lab-deployments"></a><a name="bkmk_ScaleLab"></a> Implantações de laboratório  
+##  <a name="bkmk_ScaleLab"></a> Implantações de laboratório  
  Use as recomendações mínimas de hardware a seguir para implantações de laboratório e teste do Configuration Manager. Essas recomendações se aplicam a todos os tipos de site, até 100 clientes:  
 
 |Função|CPU (núcleos)|Memória (GB)|Espaço em disco (GB)|  
@@ -184,9 +185,4 @@ Além do PowerShell, há suporte para o WMF (Windows Management Framework) 3.0 e
 |Servidor de banco de dados e site|2 - 4|7 - 12|100|  
 |Servidor do sistema de site|1 - 4|2 - 4|50|  
 |Cliente|1 - 2|1 - 3|30|  
-
-
-
-<!--HONumber=Dec16_HO5-->
-
 

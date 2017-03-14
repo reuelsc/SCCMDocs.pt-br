@@ -17,8 +17,9 @@ ms.author: andredm
 manager: angrobe
 robots: noindex
 translationtype: Human Translation
-ms.sourcegitcommit: c13c6268fa76ade7feb0981f9c4a6e325e393aca
-ms.openlocfilehash: fd5830fef3759def7806dbbe1802872df19ca939
+ms.sourcegitcommit: b1295fff41d99b0bd6fc00ccab7a4b8bbdb60866
+ms.openlocfilehash: 99d1d14e89903d78167ec2f7d91f8393827bd616
+ms.lasthandoff: 02/27/2017
 
 ---
 # <a name="device-compliance-policies-in-system-center-configuration-manager"></a>Políticas de conformidade de dispositivo no System Center Configuration Manager
@@ -40,6 +41,7 @@ As **políticas de conformidade** no System Center Configuration Manager definem
 -   Se o dispositivo está desbloqueado ou com raiz  
 
 -   Se o email no dispositivo é gerenciado por uma política do Intune ou se o dispositivo é relatado como não íntegro pelo serviço de atestado de integridade de dispositivo do Windows.  
+-   Aplicativos que não podem ser instalados no dispositivo
 
 
  Implante políticas de conformidade em coleções de usuários. Quando uma política de conformidade é implantada para um usuário, todos os dispositivos de usuários são verificados quanto à conformidade.  
@@ -54,7 +56,8 @@ As **políticas de conformidade** no System Center Configuration Manager definem
 |**Perfil de email**|N/D|N/D|Em Quarentena|N/D|  
 |**Versão mínima do SO**|Em Quarentena|Em Quarentena|Em Quarentena|Em Quarentena|  
 |**Versão máxima do SO**|Em Quarentena|Em Quarentena|Em Quarentena|Em Quarentena|  
-|**Atestado de Integridade do Dispositivo (atualização 1602)**|A configuração não é aplicável ao Windows 8.1<br /><br /> O Windows 10 e o Windows 10 Mobile estão em quarentena.|N/D|N/D|N/D|  
+|**Atestado de Integridade do Dispositivo (atualização&1602;)**|A configuração não é aplicável ao Windows 8.1<br /><br /> O Windows 10 e o Windows 10 Mobile estão em quarentena.|N/D|N/D|N/D|
+|**Aplicativos que não podem ser instalados**|N/D|N/D|Em Quarentena|Em Quarentena|
 
  **Corrigida** = A conformidade é imposta pelo sistema operacional do dispositivo (por exemplo, o usuário será forçado a definir um PIN).  Nunca há um caso em que a configuração será fora de conformidade.  
 
@@ -62,16 +65,10 @@ As **políticas de conformidade** no System Center Configuration Manager definem
 
 -   O dispositivo será bloqueado se o usuário for afetado pela política de acesso condicional.  
 
--   O portal da empresa ou um portal da Web notificará o usuário sobre quaisquer problemas de conformidade.  
-
+-   O portal da empresa ou um portal da Web notificará o usuário sobre quaisquer problemas de conformidade.
 
 ### <a name="next-steps"></a>Próximas etapas  
 [Criar e implantar uma política de conformidade de dispositivo](create-compliance-policy.md)
 ### <a name="see-also"></a>Consulte também  
  [Gerenciar o acesso a serviços no System Center Configuration Manager](../../protect/deploy-use/manage-access-to-services.md)
-
-
-
-<!--HONumber=Dec16_HO3-->
-
 

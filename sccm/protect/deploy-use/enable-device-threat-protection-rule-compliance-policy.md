@@ -16,46 +16,63 @@ author: andredm7
 ms.author: andredm
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: c13c6268fa76ade7feb0981f9c4a6e325e393aca
-ms.openlocfilehash: b4eb4768dadba7e5a635d90a87d669cc4b3869f4
+ms.sourcegitcommit: 498b8c02dbf1391e6331c8b9ad7b6ef0fdef22d0
+ms.openlocfilehash: 319289c9b211935ba10cb6d3da386ffed3c0153e
+ms.lasthandoff: 02/23/2017
 
 
 ---
-# <a name="enable-device-threat-protection-rule-in-the-compliance-policy"></a>Habilitar a regra de proteção contra ameaças móveis na política de conformidade
+# <a name="create-a-lookout-device-threat-protection-rule"></a>Criar uma regra de proteção contra ameaças do dispositivo do Lookout
 
 *Aplica-se a: System Center Configuration Manager (Branch Atual)*
 
-O Intune com a proteção contra ameaças móveis, Lookout, oferece a capacidade de detectar ameaças móveis e fazer uma avaliação de risco no dispositivo. Você pode criar uma regra de política de conformidade no Configuration Manager a fim de incluir a avaliação de risco e determinar se o dispositivo é compatível. Em seguida, você pode usar a política de acesso condicional para permitir ou bloquear o acesso ao Exchange, ao SharePoint e a outros serviços com base na conformidade do dispositivo.
+## <a name="before-you-begin"></a>Antes de começar
+
+O Intune com a proteção contra ameaças móveis, Lookout, oferece a capacidade de detectar ameaças móveis e fazer uma avaliação de risco no dispositivo. Você pode criar uma regra de política de conformidade no Configuration Manager a fim de incluir a avaliação de risco e determinar se o dispositivo está em conformidade. Em seguida, você pode usar a política de acesso condicional para permitir ou bloquear o acesso ao Exchange, ao SharePoint e a outros serviços com base na conformidade do dispositivo.
 
 Para que a detecção de ameaças ao dispositivo do Lookout influencie a política de conformidade do dispositivo:
 
-* Habilite a regra **Proteção contra Ameaças ao Dispositivo** na política de conformidade.
+-   A regra **Proteção contra Ameaças ao Dispositivo** deve ser habilitada na política de conformidade.
 
-* A página **Status do Lookout** no **Console de administrador do Intune** deve aparecer como **Ativa**. Consulte o tópico [Habilitar a conexão MTP do Lookout no Intune](enable-lookout-connection-in-intune.md) para obter mais detalhes e instruções sobre como ativar a integração do Lookout.
+-   A página **Status do Lookout** no **Console de administrador do Intune** deve aparecer como **Ativa**. Consulte o tópico [Habilitar a conexão MTP do Lookout no Intune](https://docs.microsoft.com/sccm/protect/deploy-use/enable-lookout-connection-in-intune) para obter mais detalhes e instruções sobre como ativar a integração do Lookout.
 
+Antes de criar a regra de proteção contra ameaça ao dispositivo na política de conformidade, recomendamos que você faça o seguinte:
 
-Antes de criar a regra de proteção contra ameaças do dispositivo na política de conformidade, recomendamos a [configuração de sua assinatura com a proteção contra ameaças ao dispositivo do Lookout](set-up-your-subscription-with-lookout.md), [habilitação da conexão do Lookout no Intune](enable-lookout-connection-in-intune.md) e [configuração do aplicativo Lookout for work](configure-and-deploy-lookout-for-work-apps.md). A regra de conformidade é imposta somente após a conclusão da instalação.
+1.  [Configure sua assinatura com a proteção contra ameaças de dispositivo do Lookout](https://docs.microsoft.com/sccm/protect/deploy-use/set-up-your-subscription-with-lookout)
 
-Para habilitar a regra de proteção contra ameaça ao dispositivo, use uma política de conformidade existente ou crie uma nova.
+2.  [Habilite a conexão do Lookout no Intune](https://docs.microsoft.com/sccm/protect/deploy-use/enable-lookout-connection-in-intune)
+
+3.  [Configure o aplicativo Lookout for Work](https://docs.microsoft.com/sccm/protect/deploy-use/configure-and-deploy-lookout-for-work-apps)
+
+>[!NOTE]
+>A regra de conformidade é imposta somente após a conclusão da instalação.
+
+## <a name="to-create-a-device-threat-protection-rule"></a>Para criar uma regra de proteção contra ameaças do dispositivo
 
 Como parte da configuração de proteção contra ameaça ao dispositivo do Lookout, no [console do Lookout](https://aad.lookout.com), crie uma política que classifica diversas ameaças nos níveis alto, médio e baixo. Na política de conformidade do Intune, você usará o nível de ameaça para definir o nível máximo de ameaças permitido.
 
-Na página **Regras** do assistente de política de conformidade, defina uma nova regra com as informações a seguir:
-  * Condição: nível máximo de risco de proteção contra ameaças ao dispositivo.
-  * Valor: o valor pode ser um dos seguintes:
-    * **Nenhum (protegido)**: este é o mais seguro. Isso significa que o dispositivo não pode ter quaisquer ameaças. Se qualquer nível de ameaças for encontrado, o dispositivo será avaliado como não compatível.
-    * **Baixo**: o dispositivo será avaliado como compatível se houver apenas as ameaças de nível baixo. Qualquer ameaça superior coloca o dispositivo em um status de não compatível.
-    * **Médio**: o dispositivo é avaliado como compatível se as ameaças encontradas no dispositivo forem de nível baixo ou médio. Se forem detectadas ameaças de nível alto, o dispositivo será determinado como não compatível.
-    * **Alto**: esse é o menos seguro. Essencialmente, essa opção permite todos os níveis de risco, e talvez seja útil somente se você estiver usando esta solução para fins de relatório.
+Para criar uma regra de proteção contra ameaças do dispositivo do Lookout:
 
-Se você criar políticas de acesso condicional para o Office 365 e outros serviços, a avaliação de compatibilidade acima será levada em consideração e os dispositivos incompatíveis serão impedidos de acessar recursos da empresa até que a ameaça seja resolvida.
+1.  No console do Configuration Manager, clique no espaço de trabalho **Ativos e Conformidade**.
 
-O status de proteção contra ameaça do dispositivo é exibido no nó **Segurança** no espaço de trabalho **Monitoramento**.
-Um resumo do status com vários níveis de ameaça será exibido em um gráfico visual. Clique nas seções específicas do gráfico para ver mais informações, como o número de dispositivos indicados como não compatíveis pela plataforma, e os erros relatados.
-Você também pode ver o status individual do dispositivo no espaço de trabalho **Ativos e conformidade**, em **Dispositivos**.  Você pode adicionar as colunas **Conformidade do dispositivo contra ameaça** e **Nível de ameaça do dispositivo** para ver o status.  Essas colunas não são exibidas por padrão.
+2.  Nos **Ativos e Conformidade**, expanda **Políticas de Conformidade.**
 
+3.  Clique com o botão direito do mouse em **Políticas de Conformidade** e selecione **Criar Política de Conformidade**.
 
+4.  Insira o nome da política de conformidade e, em seguida, selecione **Regras de conformidade para dispositivos gerenciados sem o cliente do Configuration Manager**.
 
-<!--HONumber=Dec16_HO3-->
+5.  Selecione as plataformas de sistema operacional que serão provisionadas com a política de conformidade (Android 4.1 e posterior e/ou iOS 8 e posterior).
 
+6.  Na página **Regras**, clique em **Novo** para especificar as regras para um dispositivo em conformidade.
 
+7.  Na página **Adicionar Regra**, defina uma nova regra com as seguintes informações:
+    1.  Condição: nível máximo de risco de proteção contra ameaças ao dispositivo.
+    
+    2.  Valor: o valor pode ser um dos seguintes:
+        1.  **Nenhum (protegido)**: este é o mais seguro. Isso significa que o dispositivo não pode ter quaisquer ameaças. Se qualquer nível de ameaças for encontrado, o dispositivo será avaliado como sem conformidade.
+        2.  **Baixo**: o dispositivo será avaliado como compatível se houver apenas as ameaças de nível baixo. Qualquer ameaça superior coloca o dispositivo em um status de não compatível.
+        3.  **Médio**: o dispositivo é avaliado como compatível se as ameaças encontradas no dispositivo forem de nível baixo ou médio. Se forem detectadas ameaças de nível alto, o dispositivo será determinado como não compatível.
+        4.  **Alto**: esse é o menos seguro. Essencialmente, essa opção permite todos os níveis de risco, e talvez seja útil somente se você estiver usando esta solução para fins de relatório.
+
+>[!IMPORTANT]
+>Se você criar políticas de acesso condicional para o Office 365 e outros serviços, a avaliação de compatibilidade acima será levada em consideração e os dispositivos incompatíveis serão impedidos de acessar recursos da empresa até que a ameaça seja resolvida.

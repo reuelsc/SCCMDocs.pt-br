@@ -2,7 +2,7 @@
 title: "Perguntas frequentes sobre Produtos e Licenças| Microsoft Docs"
 description: "Encontre respostas para perguntas comuns sobre produtos e licenças do System Center Configuration Manager."
 ms.custom: na
-ms.date: 2/17/2017
+ms.date: 2/28/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
@@ -16,9 +16,9 @@ author: Brenduns
 ms.author: brenduns
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: 81689631899b626bd33df8853cf82646d7e57afc
-ms.openlocfilehash: 47e35018902c424dc492025bb08bd4df4d81fcbe
-ms.lasthandoff: 02/18/2017
+ms.sourcegitcommit: d8f1a1a5757bbc3e2b0c17b1a89fbd56bbae6019
+ms.openlocfilehash: c1a276ad1ed6d10d286ab389ab3f05ec780c4e58
+ms.lasthandoff: 02/28/2017
 
 
 ---
@@ -32,10 +32,9 @@ Estas perguntas frequentes abordam o licenciamento de versões de Branch Atual (
 Para obter mais informações sobre os recursos do System Center Configuration Manager, consulte a página do produto [System Center Configuration Manager](https://www.microsoft.com/cloud-platform/system-center-configuration-manager) da Microsoft
 
 
-## <a name="details"></a>Detalhes
-O System Center Configuration Manager é...
 
-## <a name="faq"></a>Perguntas Frequentes
+
+## <a name="system-center-configuration-manager-licensing-faq"></a>Perguntas frequentes sobre o licenciamento do System Center Configuration Manager
 
 1.    **O que é Branch Atual (CB)?**   
 Branch Atual é o build de produção pronta do System Center Configuration Manager que fornece um modelo de serviço ativo. Esse modelo de serviço é como a experiência com a opção de instalação do Windows 10 ou Windows Server 2016 Nano Server. Essa abordagem dá suporte aos clientes que estão se movendo em uma “cadência de nuvem" e desejam inovar de forma mais rápida. Com o modelo de serviço de Branch Atual, os clientes do System Center Configuration Manager continuam a receber novos recursos e funcionalidades. Por esse motivo, apenas os clientes com Software Assurance ativo nas licenças do System Center Configuration Manager ou com direitos de assinatura equivalente podem instalar e usar o Branch Atual do System Center Configuration Manager.

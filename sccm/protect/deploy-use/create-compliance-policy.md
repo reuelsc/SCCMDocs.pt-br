@@ -17,8 +17,9 @@ ms.author: andredm
 manager: angrobe
 robots: noindex
 translationtype: Human Translation
-ms.sourcegitcommit: c13c6268fa76ade7feb0981f9c4a6e325e393aca
-ms.openlocfilehash: 4cc7148be602367b579d63535a4938919bacf829
+ms.sourcegitcommit: b1295fff41d99b0bd6fc00ccab7a4b8bbdb60866
+ms.openlocfilehash: dda0916fac15cf768ecc2a44fda3b8939bcd048e
+ms.lasthandoff: 02/27/2017
 
 ---
 
@@ -123,7 +124,7 @@ ms.openlocfilehash: 4cc7148be602367b579d63535a4938919bacf829
     * iOS 6+
     * Android 4.0+
     * Samsung KNOX Standard 4.0+
-* **Exigir uma senha para desbloquear um dispositivo ocioso (atualização 1602):** exige que os usuários insiram uma senha para acessar o dispositivo que está bloqueado.
+* **Exigir uma senha para desbloquear um dispositivo ocioso (atualização&1602;):** exige que os usuários insiram uma senha para acessar o dispositivo que está bloqueado.
 
   **Com suporte em:**
   * Windows Phone 8+
@@ -131,7 +132,7 @@ ms.openlocfilehash: 4cc7148be602367b579d63535a4938919bacf829
   * Android 4.0+
   * Samsung KNOX Standard 4.0+
 
-* **Minutos de inatividade antes que a senha seja exigida (atualização 1602):** especifica o tempo ocioso antes que o usuário precise inserir novamente sua senha. Defina o valor como uma das opções disponíveis: **1 minuto**, **5 minutos**, **15 minutos**, **30 minutos**, **1 hora**.
+* **Minutos de inatividade antes que a senha seja exigida (atualização&1602;):** especifica o tempo ocioso antes que o usuário precise inserir novamente sua senha. Defina o valor como uma das opções disponíveis: **1 minuto**, **5 minutos**, **15 minutos**, **30 minutos**, **1 hora**.
 
   Essa regra deve ser usada com **Exigir uma senha para desbloquear um dispositivo ocioso**. O valor definido aqui determina quando o dispositivo é considerado ocioso e é bloqueado, e  **Exigir uma senha para desbloquear um dispositivo ocioso** definida como **Verdadeira**exigirá que o usuário insira uma senha para acessar o dispositivo bloqueado.
 
@@ -218,12 +219,14 @@ ms.openlocfilehash: 4cc7148be602367b579d63535a4938919bacf829
   - **Inicialização segura habilitada:** quando a Inicialização Segura está habilitada, o sistema é forçado a inicializar em um estado confiável de fábrica. Além disso, quando a Inicialização Segura está habilitada, os principais componentes usados para inicializar o computador devem ter assinaturas criptográficas corretas que sejam de confiança da organização fabricante do dispositivo. O firmware UEFI verifica isso antes de permitir que o computador seja iniciado. Se algum arquivo tiver sido violado, rompendo sua assinatura, o sistema não será inicializado.
   - **Antimalware de Início Antecipado habilitado (aplica-se somente a PCs):** o ELAM (Antimalware de Início Antecipado) fornece proteção para os computadores em sua rede quando estes são iniciados e antes que drivers de terceiros sejam inicializados.<br />Essa regra está desativada por padrão.
 
+- **Aplicativos que não podem ser instalados no dispositivo:** se os usuários instalarem um aplicativo da lista de aplicativos fora de conformidade do administrador, eles serão bloqueados ao tentar acessar o email corporativo. Essa regra exige o nome do aplicativo e a ID do aplicativo ao adicionar um aplicativo à lista fora de conformidade definida pelo administrador. O editor do aplicativo também pode ser adicionado, mas não é obrigatório.
+
+  **Com suporte em:**
+  * iOS 6+
+  * Android 4.0+
+  * Samsung KNOX Standard 4.0+
+
   Para saber mais sobre o funcionamento do serviço HAS, confira [CSP do Atestado de Integridade](https://msdn.microsoft.com/library/dn934876.aspx).
   **Com suporte em:**
   * Windows 10 e Windows 10 Mobile
-
-
-
-<!--HONumber=Dec16_HO3-->
-
 

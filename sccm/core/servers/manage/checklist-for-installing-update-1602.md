@@ -16,8 +16,9 @@ author: Brenduns
 ms.author: brenduns
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: a2e2bc5e873c48283d18ea6eaa5d1bb351f2a033
-ms.openlocfilehash: 1c3149b4c0247377ad556b6fe594047a6f14b989
+ms.sourcegitcommit: 30af3326578d39c6d995672071705bcaeb877e4d
+ms.openlocfilehash: e73055707454bc052b753c5e74be9674d6aa5b8c
+ms.lasthandoff: 02/23/2017
 
 
 ---
@@ -112,7 +113,7 @@ Para obter mais informações, consulte [Backup e recuperação para o System Ce
 -   Se você usar réplicas de banco de dados para pontos de gerenciamento em um site primário, desabilite a replicação antes de criar o backup do banco de dados do site.  
 
 O Configuration Manager não dá suporte ao backup de sites secundários, nem ao teste de atualização de um banco de dados do site secundário.   
-Não execute um teste da atualização do banco de dados no banco de dados do site de produção. Fazer isso atualiza o banco de dados do site e pode deixar seu site inoperável. Para obter mais informações, consulte a seção [Testar a atualização de banco de dados do site](../../../core/servers/deploy/install/upgrade-to-configuration-manager.md#bkmk_test) em [Atualizar para o System Center Configuration Manager](../../../core/servers/deploy/install/upgrade-to-configuration-manager.md).  
+Não execute um teste da atualização do banco de dados no banco de dados do site de produção. Fazer isso atualiza o banco de dados do site e pode deixar seu site inoperável. Para obter mais informações, consulte [Etapa 2: Testar a atualização do banco de dados antes de instalar uma atualização](/sccm/core/servers/manage/install-in-console-updates#bkmk_step2) de **Antes de instalar uma atualização no console**.  
 
  **Planeje o piloto do cliente:** ao instalar uma atualização que atualiza o cliente, é possível testar essa nova atualização do cliente na pré-produção antes que ela seja implantada e atualize todos os seus clientes ativos.   
 
@@ -136,9 +137,4 @@ Para obter mais informações, consulte [Atualizações para o System Center Con
 
 ## <a name="see-also"></a>Consulte também  
  [Atualizações para o System Center Configuration Manager](../../../core/servers/manage/updates.md)
-
-
-
-<!--HONumber=Feb17_HO2-->
-
 

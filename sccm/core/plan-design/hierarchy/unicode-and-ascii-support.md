@@ -2,7 +2,7 @@
 title: Suporte a Unicode e ASCII | Microsoft Docs
 description: Saiba mais sobre o suporte para caracteres ASCII e Unicode em objetos do System Center Configuration Manager.
 ms.custom: na
-ms.date: 10/06/2016
+ms.date: 3/1/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
@@ -17,8 +17,9 @@ author: Brenduns
 ms.author: brenduns
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: 6ed317d45d90758832d4157985dd95d5e253c6fc
-ms.openlocfilehash: 1888ce257232b63e4671aa619da190ea570b8a57
+ms.sourcegitcommit: b35e747c8c297d61bb549b9767c4318f51e5fdb4
+ms.openlocfilehash: 18f1c64c1f27001a0fdfbab4236d09a5bc279272
+ms.lasthandoff: 03/01/2017
 
 
 ---
@@ -32,11 +33,11 @@ O System Center Configuration Manager cria a maioria dos objetos usando caracter
 
 -   [Objetos que usam caracteres ASCII](#BKMK_ASCIIchar)  
 
--   [Limitações Adicionais](#BKMK_OtherCharLimitations)  
+-   [Limitações adicionais](#BKMK_OtherCharLimitations)  
 
 -   [Objetos do Configuration Manager que não são localizados](#BKMK_LangNonLocalize)  
 
-##  <a name="a-namebkmkasciichara-objects-that-use-ascii-characters"></a><a name="BKMK_ASCIIchar"></a> Objetos que usam caracteres ASCII  
+##  <a name="BKMK_ASCIIchar"></a> Objetos que usam caracteres ASCII  
  O Configuration Manager dá suporte ao conjunto de caracteres ASCII somente quando os seguintes objetos são criados:  
 
 -   Código do site  
@@ -46,9 +47,9 @@ O System Center Configuration Manager cria a maioria dos objetos usando caracter
 -   As seguintes contas do Configuration Manager:  
 
     > [!NOTE]  
-    >  Estas contas dão suporte aos caracteres ASCII e RUS em um site executado no idioma russo.  
+    >  Estas contas dão suporte aos caracteres ASCII e RUS em um site executado em russo.  
 
-    -   Conta de Instalação do Cliente por Push  
+    -   Conta de instalação do cliente por push  
 
     -   Conta de publicação de referência de estado de integridade  
 
@@ -56,13 +57,13 @@ O System Center Configuration Manager cria a maioria dos objetos usando caracter
 
     -   Conta de conexão do banco de dados do ponto de gerenciamento  
 
-    -   Conta de Acesso à Rede  
+    -   Conta de acesso à rede  
 
-    -   Conta de Acesso ao Pacote  
+    -   Conta de acesso ao pacote  
 
     -   Conta do remetente padrão  
 
-    -   Conta de instalação do sistema de site  
+    -   Conta de instalação do sistema de sites  
 
     -   Conta da conexão do ponto de atualização do software  
 
@@ -71,9 +72,9 @@ O System Center Configuration Manager cria a maioria dos objetos usando caracter
     > [!NOTE]  
     >  As contas que você especificar para a administração baseada em funções oferecerão suporte para Unicode.  
     >   
-    >  A conta do ponto do Reporting Services oferece suporte a Unicode, exceto aos caracteres RUS.  
+    >  A conta do ponto do Reporting Services dá suporte a Unicode, exceto aos caracteres RUS.  
 
--   FQDN para servidores de sites e sistemas de site  
+-   FQDN (nome de domínio totalmente qualificado) para servidores do site e sistemas de sites  
 
 -   Caminho de instalação para o Configuration Manager  
 
@@ -99,11 +100,11 @@ O System Center Configuration Manager cria a maioria dos objetos usando caracter
 
     -   A pasta que contém os relatórios do Configuration Manager  
 
-    -   A pasta que armazena o Backup do Configuration Manager  
+    -   A pasta que armazena o backup do Configuration Manager  
 
-    -   A pasta que armazena os arquivos de origem de instalação para a instalação do site.  
+    -   A pasta que armazena os arquivos de origem de instalação para a instalação do site  
 
-    -   A pasta que armazena os downloads de pré-requisitos para uso pelo programa de instalação  
+    -   A pasta que armazena os downloads de pré-requisitos para uso pela instalação  
 
 -   O caminho para os seguintes objetos:  
 
@@ -131,22 +132,17 @@ O System Center Configuration Manager cria a maioria dos objetos usando caracter
 
     -   O conteúdo do armazenamento de dados AMT  
 
--   Nomes do arquivo .ISO da mídia de inicialização  
+-   Nomes do arquivo ISO da mídia de inicialização  
 
-##  <a name="a-namebkmkothercharlimitationsa-additional-limitations"></a><a name="BKMK_OtherCharLimitations"></a> Limitações adicionais  
+##  <a name="BKMK_OtherCharLimitations"></a> Limitações adicionais  
  Estas são as limitações adicionais para conjuntos de caracteres e versões de idioma com suporte:  
 
 -   O Configuration Manager não dá suporte à alteração de localidade do computador do servidor de site.  
 
 -   Uma AC (autoridade de certificação) corporativa não oferece suporte a nomes de computador cliente que usam DBCS (conjunto de caracteres de dois bytes). Os nomes de computador cliente que você pode usar são restritos pela limitação PKI do conjunto de caracteres IA5. Além disso, o Configuration Manager não dá suporte a valores de nome de entidade e de AC que usam DBCS.  
 
-##  <a name="a-namebkmklangnonlocalizea-configuration-manager-objects-that-are-not-localized"></a><a name="BKMK_LangNonLocalize"></a> Objetos do Configuration Manager que não são localizados  
+##  <a name="BKMK_LangNonLocalize"></a> Objetos do Configuration Manager que não são localizados  
  O banco de dados do Configuration Manager dá suporte a Unicode para a maioria dos objetos que ele armazena e, quando possível, exibe essas informações no idioma do sistema operacional que corresponde à localidade de um computador. Para a interface de cliente ou o console do Configuration Manager exibir informações no idioma do sistema operacional do computador, a localidade do computador deve corresponder ao idioma do cliente ou servidor que você instala em um site.  
 
  No entanto, diversos objetos do Configuration Manager não dão suporte a Unicode, e são armazenados no banco de dados usando ASCII, ou têm limitações de idioma adicionais. Essas informações são sempre exibidas usando o conjunto de caracteres ASCII ou no idioma em uso quando o objeto foi criado.  
-
-
-
-<!--HONumber=Dec16_HO3-->
-
 
