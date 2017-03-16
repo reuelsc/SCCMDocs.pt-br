@@ -19,6 +19,7 @@ manager: angrobe
 translationtype: Human Translation
 ms.sourcegitcommit: 10b1010ccbf3889c58c55b87e70b354559243c90
 ms.openlocfilehash: 132803a1aa9aad5c5462686bd656688418e47d07
+ms.lasthandoff: 12/16/2016
 
 
 ---
@@ -29,7 +30,7 @@ ms.openlocfilehash: 132803a1aa9aad5c5462686bd656688418e47d07
 Para monitorar a infraestrutura e as operações no System Center Configuration Manager, use o espaço de trabalho **Monitoramento** no console do Configuration Manager.  
 
 > [!NOTE]  
->  A exceção para esse local é Migração, que é monitorada diretamente no nó **Migração** do espaço de trabalho **Administração** . Para obter mais informações, consulte [Operations for migrating to System Center Configuration Manager](../../../core/migration/operations-for-migration.md).  
+>  A exceção para esse local é Migração, que é monitorada diretamente no nó **Migração** do espaço de trabalho **Administração** . Para obter mais informações, consulte [Operações de migração para o System Center Configuration Manager](../../../core/migration/operations-for-migration.md).  
 
  Além de usar o console do Configuration Manager para monitorar, é possível usar os relatórios do Configuration Manager ou exibir arquivos de log do Configuration Manager para componentes do Configuration Manager. Para obter informações sobre os relatórios, consulte [Relatórios no System Center Configuration Manager](../../../core/servers/manage/reporting.md). Para obter informações sobre os arquivos de log, consulte [Arquivos de log no System Center Configuration Manager](../../../core/plan-design/hierarchy/log-files.md).  
 
@@ -55,7 +56,7 @@ Para minimizar o risco de falha em um site, se as tarefas de monitoramento revel
 
 
 
-##  <a name="a-namebkmkmonintormgmttasksa-monitor--common-management-tasks-for-configuration-manager"></a><a name="BKMK_MonintorMgmtTasks"></a> Monitorar tarefas comuns de gerenciamento do Configuration Manager  
+##  <a name="BKMK_MonintorMgmtTasks"></a> Monitorar tarefas comuns de gerenciamento do Configuration Manager  
  O Configuration Manager fornece monitoramento interno de dentro do console do Configuration Manager. Você pode monitorar muitas tarefas incluindo as relacionadas a atualizações de software, gerenciamento de energia e implantação do conteúdo em toda a hierarquia.  
 
  Use as informações a seguir para ajudar você a monitorar as tarefas comuns do Configuration Manager:  
@@ -87,10 +88,10 @@ Consulte [Monitorar o uso de aplicativos com a medição de software no System C
  Consulte [Monitorar atualizações de software no System Center Configuration Manager](../../../sum/deploy-use/monitor-software-updates.md).  
 
 
-##  <a name="a-namebkmkmonitorinfrastructurea-monitor-hierarchy-infrastructure-for-configuration-manager"></a><a name="BKMK_MonitorInfrastructure"></a> Monitorar a infraestrutura de hierarquia do Configuration Manager  
+##  <a name="BKMK_MonitorInfrastructure"></a> Monitorar a infraestrutura de hierarquia do Configuration Manager  
 O Configuration Manager oferece diversos métodos para monitorar o status e as operações da sua hierarquia. Você pode verificar o status dos sites do sistema em toda a hierarquia, monitorar a replicação entre sites em uma hierarquia de sites ou exibição geográfica, monitorar links de replicação entre sites para replicação de banco de dados e usar a ferramenta Replication Link Analyzer para corrigir problemas de replicação.  
 
-###  <a name="a-namebkmkshnodea-about-the-site-hierarchy-node"></a><a name="BKMK_SH_Node"></a> Sobre o nó da Hierarquia do Site  
+###  <a name="BKMK_SH_Node"></a> Sobre o nó da Hierarquia do Site  
 O nó **Hierarquia do site** do espaço de trabalho **Monitoramento** oferece uma visão geral da sua hierarquia e dos links entre sites do Configuration Manager. Você pode usar dois modos de exibição:  
 
 -   **Diagrama Hierárquico**: Esse modo de exibição mostra a sua hierarquia como um mapa de topologia que foi simplificado para mostrar somente informações essenciais.  
@@ -126,13 +127,13 @@ A opção a seguir modifica a exibição geográfica.
 
      Quando você especifica um local, você pode usar a caixa **Local** para pesquisar um site específico da sua hierarquia. Com o site selecionado, insira o local como um nome de cidade ou endereço na coluna **Local** . O Configuration Manager usa o Bing Mapas para resolver o local.  
 
-###  <a name="a-namebkmkmonitorreplinksandstatussa-how-to-monitor-database-replication-links-and-replication-status"></a><a name="BKMK_MonitorRepLinksAndStatuss"></a> Como monitorar o status de replicação e links de replicação de banco de dados  
+###  <a name="BKMK_MonitorRepLinksAndStatuss"></a> Como monitorar o status de replicação e links de replicação de banco de dados  
  Além dos detalhes de alto nível que são acessíveis no nó **Hierarquia do Site** do espaço de trabalho **Monitoramento** . Você também pode monitorar os detalhes da replicação de banco de dados ao usar o nó **Replicação de Banco de Dados** do espaço de trabalho **Monitoramento** . Em **Replicação de Banco de Dados**, é possível monitorar o status dos links de replicação entre sites e os detalhes de inicialização e de replicação de grupos de replicação no site ao qual o seu Configuration Manager está conectado.  
 
 > [!TIP]  
 >  Embora um nó **Replicação de Banco de Dados** também apareça no nó **Configuração da Hierarquia** , no espaço de trabalho **Administração** , não é possível exibir o status dos links de replicação de banco de dados desse local.  
 
-####  <a name="a-namebkmkmonitorreplicationlinksa-replication-link-status"></a><a name="BKMK_MonitorReplicationLinks"></a> Status do link de replicação  
+####  <a name="BKMK_MonitorReplicationLinks"></a> Status do link de replicação  
 A replicação de banco de dados entre sites envolve a replicação de diversos conjuntos de informações, chamados de grupos de replicação. Cada grupo de replicação replica com diferentes prioridades de replicação. Por padrão, os dados contidos em um grupo de replicação e a frequência da replicação não podem ser modificados.  
 
  Quando um link de replicação está ativo e não tem um status com falha ou degradado, todos os grupos de replicação são replicados em tempo adequado. Quando ocorrer falha de um ou mais grupos de replicação ao concluir a replicação no período de tempo esperado, o link será exibido como degradado. Os links degradados ainda funcionarão, mas será necessário monitorá-los para garantir que eles retornem ao status de ativos ou investigá-los para garantir que não ocorram mais degradações ou falhas de replicação.  
@@ -149,7 +150,7 @@ A replicação de banco de dados entre sites envolve a replicação de diversos 
 
  Embora o site pai esteja em processo de atualização para um novo service pack e você exiba o status do link a partir do site filho, o status do link será exibido como ativo. Após a atualização, até que o site filho também tenha o mesmo service pack que o site pai, o status do link será exibido como ativo, quando exibido a partir do site pai, e como sendo configurado, quando exibido do site filho.  
 
-####  <a name="a-namebkmkmonitorreplicationstatusa-replication-status"></a><a name="BKMK_MonitorReplicationStatus"></a> Status de replicação  
+####  <a name="BKMK_MonitorReplicationStatus"></a> Status de replicação  
  Você pode usar o nó **Replicação de Banco de Dados** no espaço de trabalho **Monitoramento** , para exibir o status da replicação para um link de replicação e exibir detalhes sobre o banco de dados do site em cada site do link de replicação. Também é possível exibir detalhes sobre os grupos de replicação. Para exibir detalhes, selecione um link de replicação e a guia apropriada do status de replicação que deseja exibir. Veja a seguir detalhes sobre as diferentes guias para o status de replicação.  
 
  **Resumo**  
@@ -190,7 +191,7 @@ A replicação de banco de dados entre sites envolve a replicação de diversos 
 > [!TIP]  
 >  Os grupos de replicação de dados do site são enviados somente do site filho para o site pai. Os grupos de replicação para dados globais replicam em ambas as direções.  
 
-###  <a name="a-namebkmkrlaa-about-the-replication-link-analyzer"></a><a name="BKMK_RLA"></a> Sobre o Replication Link Analyzer  
+###  <a name="BKMK_RLA"></a> Sobre o Replication Link Analyzer  
  O Configuration Manager inclui o **Replication Link Analyzer**, usado para analisar e reparar problemas de replicação. Você pode usar o Replication Link Analyzer para corrigir as falhas de link de replicação quando a replicação falha ou quando ela para de funcionar, mas não foi ainda reportada com falha. O Replication Link Analyzer pode ser usado para corrigir problemas de replicação entre os computadores a seguir na hierarquia do Configuration Manager (a direção da falha de replicação não importa):  
 
 -   Entre um servidor do site e o servidor de banco de dados do site.  
@@ -229,7 +230,7 @@ As ações de correção e investigação com e sem êxito são registradas em l
 
 -   Com o lançamento do System Center Configuration Manager versão 1511, o Replication Link Analyzer gera erros de certificado do SQL Server Service Broker para sites primários atualizados do System Center 2012 Configuration Manager. Isso ocorre devido a alterações nos nomes dos certificados introduzidos com a versão 1511, para a qual o Replication Link Analyzer ainda não foi atualizado. Esses erros podem ser ignorados com segurança.  
 
-###  <a name="a-namebkmkprocsformonitoringreplicationa-procedures-for-monitoring-database-replication"></a><a name="BKMK_ProcsforMonitoringReplication"></a> Procedimentos para monitorar a replicação de banco de dados  
+###  <a name="BKMK_ProcsforMonitoringReplication"></a> Procedimentos para monitorar a replicação de banco de dados  
 
 ##### <a name="to-monitor-high-level-site-to-site-database-replication-status"></a>Para monitorar o status de replicação de banco de dados de site a site de alto nível    
 1.  No console do Configuration Manager, clique em **Monitoramento**.  
@@ -242,9 +243,4 @@ As ações de correção e investigação com e sem êxito são registradas em l
 1.  No console do Configuration Manager, clique em **Monitoramento**.  
 
 2.  No espaço de trabalho **Monitoramento** , clique em **Replicação do Banco de Dados**e selecione o link de replicação que deseja monitorar. Em seguida, no espaço de trabalho, selecione a guia apropriada para exibir os diferentes detalhes sobre o status de replicação para esse link.  
-
-
-
-<!--HONumber=Dec16_HO3-->
-
 
