@@ -18,6 +18,7 @@ manager: angrobe
 translationtype: Human Translation
 ms.sourcegitcommit: 55c953f312a9fb31e7276dde2fdd59f8183b4e4d
 ms.openlocfilehash: 09f8bc7ee04ff64934030f825a791bc043341963
+ms.lasthandoff: 12/16/2016
 
 ---
 # <a name="how-to-configure-wake-on-lan-in-system-center-configuration-manager"></a>Como configurar Wake on LAN no System Center Configuration Manager
@@ -28,7 +29,7 @@ Especifique as configurações de Wake on LAN para o System Center Configuration
 
 Você pode complementar o Wake on LAN usando as configurações cliente de proxy de ativação. No entanto, para usar o proxy de ativação, você deve primeiro habilitar o Wake on LAN para o site e especificar **Usar somente pacotes de ativação** e a opção **Unicast** para o método de transmissão Wake on LAN. Esta solução de ativação também oferece suporte a conexões ad hoc, como uma conexão de área de trabalho remota.
 
-Use o primeiro procedimento para configurar um site primário para Wake on LAN. Em seguida, use o segundo procedimento para definir as configurações cliente de proxy de ativação. Esse segundo procedimento define as configurações padrão do cliente para as configurações de proxy de ativação para aplicar a todos os computadores na hierarquia. Se você deseja que essas configurações se apliquem somente aos computadores selecionados, crie uma configuração de dispositivo personalizada e a atribua à coleção que contém os computadores que deseja configurar para o proxy de ativação. Para obter mais informações sobre como criar configurações personalizadas do cliente, consulte [How to configure client settings in System Center Configuration Manager](../../../core/clients/deploy/configure-client-settings.md).
+Use o primeiro procedimento para configurar um site primário para Wake on LAN. Em seguida, use o segundo procedimento para definir as configurações cliente de proxy de ativação. Esse segundo procedimento define as configurações padrão do cliente para as configurações de proxy de ativação para aplicar a todos os computadores na hierarquia. Se você deseja que essas configurações se apliquem somente aos computadores selecionados, crie uma configuração de dispositivo personalizada e a atribua à coleção que contém os computadores que deseja configurar para o proxy de ativação. Para obter mais informações sobre como criar configurações personalizadas do cliente, consulte [Como configurar as definições de cliente no System Center Configuration Manager](../../../core/clients/deploy/configure-client-settings.md).
 
 Um computador que recebe as configurações de cliente do proxy de ativação provavelmente pausará sua conexão de rede por 1 a 3 segundos. Isso ocorre porque o cliente deve redefinir a placa de interface de rede para habilitar que o driver de proxy de ativação nela.
 
@@ -57,9 +58,4 @@ Você pode usar os seguintes relatórios do Wake On LAN para monitorar a instala
 
 > [!TIP]
 > Para testar se o proxy de ativação está funcionando, teste uma conexão em um computador suspenso. Por exemplo, conecte-se a uma pasta compartilhada naquele computador ou tente a conexão no computador usando a Área de Trabalho Remota. Se você usa o DirectAccess, verifique se os prefixos IPv6 funcionam ao tentar os mesmos testes em um computador suspenso que está atualmente na Internet.
-
-
-
-<!--HONumber=Dec16_HO3-->
-
 
