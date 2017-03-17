@@ -29,7 +29,7 @@ ms.lasthandoff: 01/21/2017
 
 Considere os seguintes requisitos antes de preparar a infraestrutura do Configuration Manager para manipular o Gerenciamento de dispositivo móvel local.
 
-##  <a name="a-namebkmkdevicesa-supported-devices"></a><a name="bkmk_devices"></a> Dispositivos com suporte  
+##  <a name="bkmk_devices"></a> Dispositivos com suporte  
  O Gerenciamento de Dispositivo Móvel local permite gerenciar dispositivos móveis usando os recursos de gerenciamento inseridos nos sistemas operacionais dos dispositivos.  A funcionalidade de gerenciamento baseia-se no padrão OMA DM (Gerenciamento de Dispositivo da Open Mobile Alliance), e várias plataformas de dispositivo usam esse padrão para permitir que os dispositivos sejam gerenciados.  Nós os chamamos de **dispositivos modernos** (na documentação e na interface do usuário do console do Configuration Manager) para diferenciá-los de outros dispositivos que exigem o cliente do Configuration Manager para gerenciá-los.  
 
  > [!NOTE]  
@@ -41,7 +41,7 @@ Considere os seguintes requisitos antes de preparar a infraestrutura do Configur
 > -   Windows 10 Mobile  
 > -   Windows 10 Mobile Enterprise   
 
-##  <a name="a-namebkmkintunea-use-of-the--microsoft-intune-subscription"></a><a name="bkmk_intune"></a> Uso da assinatura do Microsoft Intune  
+##  <a name="bkmk_intune"></a> Uso da assinatura do Microsoft Intune  
  Para começar a usar o Gerenciamento de dispositivo móvel local, você precisará de uma assinatura do Microsoft Intune. A assinatura apenas é necessária para acompanhar o licenciamento dos dispositivos e não é usada para gerenciar ou armazenar informações de gerenciamento dos dispositivos. Todo o gerenciamento é manipulado na empresa de sua organização usando a infraestrutura do Configuration Manager local.  
 
  > [!NOTE]  
@@ -54,7 +54,7 @@ Considere os seguintes requisitos antes de preparar a infraestrutura do Configur
 
  Para obter informações sobre como configurar a assinatura do Intune, consulte [Configure uma assinatura do Microsoft Intune para o gerenciamento de dispositivo móvel local no System Center Configuration Manager](../../mdm/get-started/set-up-intune-subscription-on-premises-mdm.md).  
 
-##  <a name="a-namebkmkrolesa-required-site-system-roles"></a><a name="bkmk_roles"></a> Funções do sistema de sites necessárias  
+##  <a name="bkmk_roles"></a> Funções do sistema de sites necessárias  
  O Gerenciamento de Dispositivo Móvel local requer, pelo menos, uma de cada uma das seguintes funções do sistema de sites:  
 
 -   **Ponto proxy do registro** para dar suporte a solicitações de registro.  
@@ -69,11 +69,11 @@ Considere os seguintes requisitos antes de preparar a infraestrutura do Configur
 
  Essas funções do sistema de sites podem ser instaladas no único servidor de sistema de sites ou podem ser executadas separadamente em servidores diferentes de acordo com as necessidades de sua organização. Cada servidor do sistema de sites usado para o Gerenciamento de Dispositivo Móvel local deve ser configurado como um ponto de extremidade HTTPS para a comunicação com dispositivos confiáveis. Para obter mais informações, consulte [Comunicação confiável necessária](#bkmk_trustedComs).  
 
- Para obter mais informações sobre como planejar funções do sistema de sites, veja [Plan for site system servers and site system roles for System Center Configuration Manager](../../core/plan-design/hierarchy/plan-for-site-system-servers-and-site-system-roles.md).  
+ Para obter mais informações sobre como planejar funções do sistema de sites, veja [Planejamento para servidores de sistema de sites e funções de sistema de sites no System Center Configuration Manager](../../core/plan-design/hierarchy/plan-for-site-system-servers-and-site-system-roles.md).  
 
- Para obter mais informações sobre como adicionar as funções do sistema de sites necessárias, veja [Install site system roles for On-premises Mobile Device Management in System Center Configuration Manager](../../mdm/get-started/install-site-system-roles-for-on-premises-mdm.md).  
+ Para obter mais informações sobre como adicionar as funções do sistema de sites necessárias, veja [Instalar funções do sistema de sites para o gerenciamento de dispositivo móvel local no System Center Configuration Manager](../../mdm/get-started/install-site-system-roles-for-on-premises-mdm.md).  
 
-##  <a name="a-namebkmktrustedcomsa-required-trusted-communications"></a><a name="bkmk_trustedComs"></a> Comunicação confiável necessária  
+##  <a name="bkmk_trustedComs"></a> Comunicação confiável necessária  
  O Gerenciamento de Dispositivo Móvel local exige que as funções do sistema de sites sejam habilitadas para a comunicação HTTPS. Dependendo de suas necessidades, é possível usar a AC (autoridade de certificação) de sua empresa para estabelecer as conexões confiáveis entre servidores e dispositivos ou usar uma AC disponível publicamente para ser a autoridade confiável.  De qualquer forma, você precisará que um certificado de servidor Web seja configurado com o IIS nos servidores do sistema de sites que hospedam as funções do sistema de sites necessárias; além disso, você precisará do certificado raiz da AC instalado nos dispositivos que precisam se conectar aos servidores.  
 
  Se você usar a AC de sua empresa para estabelecer uma comunicação confiável, será necessário realizar as seguintes tarefas:  
@@ -106,7 +106,7 @@ Considere os seguintes requisitos antes de preparar a infraestrutura do Configur
 
  Para obter mais informações, consulte [Set up certificates for trusted communications for On-premises Mobile Device Management in System Center Configuration Manager](../../mdm/get-started/set-up-certificates-on-premises-mdm.md)  
 
-##  <a name="a-namebkmkenrollmenta-enrollment-considerations"></a><a name="bkmk_enrollment"></a> Considerações sobre registro  
+##  <a name="bkmk_enrollment"></a> Considerações sobre registro  
  Para habilitar o registro de dispositivo para o Gerenciamento de Dispositivo Móvel local, os usuários devem ter permissão de registro e seus dispositivos devem poder ter uma comunicação confiável com os servidores do sistema de sites que hospedam as funções do sistema de sites necessárias.  
 
  A concessão da permissão de registro de usuário pode ser obtida por meio da configuração de um perfil de registro nas configurações do cliente do Configuration Manager. É possível usar as configurações padrão do cliente para enviar por push o perfil de registro para todos os usuários descobertos ou configurar o perfil de registro nas configurações personalizadas do cliente e enviar por push as configurações para uma ou mais coleções de usuários.  
