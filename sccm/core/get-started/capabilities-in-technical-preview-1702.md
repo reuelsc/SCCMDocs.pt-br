@@ -16,16 +16,14 @@ author: Brenduns
 ms.author: brenduns
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: 619899aaf8bde36e2bd62b5ba8a037b8580df198
-ms.openlocfilehash: 58b343aed6ea1d846801aca5e0a95200df1acc94
-ms.lasthandoff: 03/01/2017
+ms.sourcegitcommit: ee7f69bd65152deffb2456d9807e1e8fee8802ec
+ms.openlocfilehash: dd28c8218c77686884bdcff508080185cae97489
+ms.lasthandoff: 03/07/2017
 
 ---
 # <a name="capabilities-in-technical-preview-1702-for-system-center-configuration-manager"></a>Funcionalidades do Technical Preview 1702 do System Center Configuration Manager
 
 *Aplica-se a: System Center Configuration Manager (Technical Preview)*
-
-
 
 Este artigo apresenta os recursos disponíveis no Technical Preview do System Center Configuration Manager, versão 1702. Você pode instalar esta versão para atualizar e adicionar novas funcionalidades ao seu site do Configuration Manager Technical Preview. Antes de instalar esta versão do technical preview, consulte o tópico introdutório, [Technical Preview do System Center Configuration Manager](../../core/get-started/technical-preview.md), para se familiarizar com os requisitos e limitações gerais de uso de um technical preview, como atualizar entre versões e como fornecer comentários sobre os recursos em um technical preview.    
 
@@ -323,7 +321,7 @@ Você verá o nome da conta e o nome de organização no portal do Intune quando
 #### <a name="approve-and-deploy-android-for-work-apps"></a>Aprovar e implantar aplicativos do Android for Work
 Siga essas etapas para aprovar aplicativos na loja Play for Work, sincronizá-los com o console do Configuration Manager e implantá-los em dispositivos Android for Work gerenciados. Para implantar aplicativos nos perfis de trabalho dos usuários, você precisará aprovar os aplicativos na Play for Work e, então, sincronizar os aplicativos com o console do Configuration Manager.
 
-1. Abra um navegador e vá para: http://www.play.com/work
+1. Abra um navegador e acesse: https://play.google.com/work.
 2. Entre usando a conta de administrador do Google associada ao seu locatário do Intune.
 3. Procure aplicativos que você deseja implantar em seu ambiente e clique em **Aprovar** para cada um deles.
 4. No console do Configuration Manager, vá para **Administrador** > **Visão Geral** > **Serviços de Nuvem** > **Android for Work** e clique em **Sincronizar**.

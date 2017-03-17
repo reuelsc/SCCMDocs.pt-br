@@ -2,7 +2,7 @@
 title: "Proteja seus dados com apagamento, bloqueio ou redefinição de senha remotos usando o System Center Configuration Manager | Microsoft Docs"
 description: "Proteja os dados do dispositivo com apagamento completo, apagamento seletivo, bloqueio remoto ou redefinição de senha usando o System Center Configuration Manager."
 ms.custom: na
-ms.date: 10/06/2016
+ms.date: 03/05/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
@@ -17,8 +17,9 @@ author: mtillman
 ms.author: mtillman
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: 828e2ac9a3f9bcea1571d24145a1021fdf1091f3
-ms.openlocfilehash: d3dd55b496a124c478f1cf2880a096e2fbdd9145
+ms.sourcegitcommit: 2c723fe7137a95df271c3612c88805efd8fb9a77
+ms.openlocfilehash: 3aa4c2ad3568cc6ced70a65141a2c103af8b740f
+ms.lasthandoff: 03/06/2017
 
 ---
 # <a name="protect-data-with-remote-wipe-lock-or-passcode-reset-using-system-center-configuration-manager"></a>Protege seus dados com apagamento, bloqueio ou redefinição de senha remotos usando o System Center Configuration Manager
@@ -241,12 +242,6 @@ O Configuration Manager fornece recursos de apagamento seletivo, apagamento comp
 
 3.  Clique em **Ações de Dispositivo Remoto** no **Grupo de Dispositivos**e selecione **Mostrar Estado do Bloqueio Remoto**.  
 
-## <a name="see-also"></a>Consulte também  
+### <a name="see-also"></a>Consulte também  
  [Apagamento Seletivo do Windows para Gerenciamento de Dados do Dispositivo](http://technet.microsoft.com/library/dn486874.aspx)   
- [MDM (gerenciamento de dispositivo móvel) híbrido com o System Center Configuration Manager e o Microsoft Intune](../../mdm/understand/hybrid-mobile-device-management.md)
-
-
-
-<!--HONumber=Dec16_HO3-->
-
 

@@ -16,8 +16,9 @@ author: robstackmsft
 ms.author: robstack
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: bff083fe279cd6b36a58305a5f16051ea241151e
-ms.openlocfilehash: 1f254ee31bae1c3d7b1506e68c40baf78793bf66
+ms.sourcegitcommit: f9097014c7e988ec8e139e518355c4efb19172b3
+ms.openlocfilehash: ec3d130674d606410e6da7babee126e017aff234
+ms.lasthandoff: 03/04/2017
 
 
 ---
@@ -35,70 +36,7 @@ O Hello para Empresas permite que você use um **gesto de usuário** para logon,
 
 -   Você pode armazenar certificados de autenticação no KSP (provedor de armazenamento de chaves) do Windows Hello para Empresas. Para obter mais informações, consulte [Certificate profiles (Perfis de Certificado)](introduction-to-certificate-profiles.md).  
 
-- É possível implantar as políticas do Windows Hello para Empresas em dispositivos Windows 10 ingressados em domínio que executam o cliente do Configuration Manager. Essa configuração é descrita em [Configurar o Windows Hello para Empresas em dispositivos Windows 10 ingressados em domínio](#configure-windows-hello-for-business-on-domain-joined-windows-10-devices) abaixo. Quando você estiver usando o Configuration Manager com o Intune (híbrido), será possível definir essas configurações em dispositivos Windows 10 e Windows 10 Mobile, mas não em dispositivos ingressados em domínio que executam o cliente do Configuration Manager.   
-
-## <a name="configure-windows-hello-for-business-settings-hybrid"></a>Configurar o Windows Hello para Empresas (híbrido)  
-
-1.  No console do Configuration Manager, clique em **Administração** > **Serviços em Nuvem** > **Assinaturas do Microsoft Intune**.  
-
-3.  Na lista, selecione sua assinatura do Microsoft Intune e, em seguida, na guia **Início** , no grupo **Assinatura** , clique em **Configurar plataformas** > **Windows (MDM)**.  
-
-4.  Na guia **Windows Hello para Empresas** da caixa de diálogo **Propriedades de assinatura do Microsoft Intune** , escolha um dos seguintes valores que afetarão todos os dispositivos Windows 10 e Windows 10 Mobile registrados:  
-
-    -   **Desabilitar Windows Hello para Empresas em dispositivos registrados** ou **Habilitar Windows Hello para Empresas em dispositivos registrados** - habilita ou desabilita o uso do Windows Hello para Empresas em todos os dispositivos Windows 10 e Windows 10 Mobile registrados.  
-
-    -   **Usar um Trusted Platform Module (TPM)** – um chip do TPM (Trusted Platform Module) fornece uma camada adicional de segurança de dados. Selecione uma das seguintes opções:  
-
-        -   **Necessário** (padrão) - somente dispositivos com um TPM acessível podem provisionar o Windows Hello para Empresas.  
-
-        -   **Preferenciais** - Primeira tentativa para usar dispositivos em um TPM. Se não estiver disponível, eles podem usar criptografia de software  
-
-    -   **Exigir comprimento mínimo de PIN** – especifique o número mínimo de caracteres necessários para o PIN do Windows Hello para Empresas. Você deve usar pelo menos quatro caracteres (o valor padrão são seis caracteres).  
-
-    -   **Exigir comprimento máximo de PIN** – especifique o número máximo de caracteres permitidos para o PIN do Windows Hello para Empresas. Você pode usar até 127 caracteres.  
-
-    -   **Exigir letras minúsculas no PIN** – especifica se letras minúsculas devem ser usadas no PIN do Windows Hello para Empresas. Escolha:  
-
-        -   **Permitido** - Os usuários podem usar caracteres minúsculos em seu PIN.  
-
-        -   **Necessário** - Os usuários devem incluir pelo menos um caractere minúsculo no PIN.  
-
-        -   **Não permitido** (padrão) - Os usuários não devem usar caracteres minúsculos em seu PIN.  
-
-    -   **Exigir letras maiúsculas no PIN** – especifica se letras maiúsculas devem ser usadas no PIN do Windows Hello para Empresas. Escolha:  
-
-        -   **Permitido** - Os usuários podem usar caracteres maiúsculos em seu PIN.  
-
-        -   **Necessário** - Os usuários devem incluir pelo menos um caractere maiúsculo no PIN.  
-
-        -   **Não permitido** (padrão) - Os usuários não devem usar caracteres maiúsculos no PIN.  
-
-    -   **Exigir caracteres especiais** – especifica o uso de caracteres especiais no PIN. Escolha:  
-
-        -   **Permitido** - Os usuários podem usar caracteres especiais em seu PIN.  
-
-        -   **Necessário** - Os usuários devem incluir pelo menos um caractere especial em seu PIN.  
-
-        -   **Não permitido** (padrão) - Os usuários não devem usar caracteres especiais no PIN (este também é o comportamento se a configuração não estiver configurada).  
-
-         Os caracteres especiais incluem: **! " # $ % & ' ( ) \* + , - . / : ; < = > ? @ [ \ ] ^ _ ` { &#124; } ~**.  
-
-    -   **Exigir a expiração do PIN (dias)** – especifica o número de dias antes da alteração obrigatória do PIN do dispositivo. O padrão é 41 dias.  
-
-    -   **Evitar a reutilização de PINs anteriores** – use essa configuração para restringir a reutilização de PINs usados anteriormente. O padrão determina que os últimos cinco PINS usados não podem ser reutilizados.  
-
-    -   **Habilitar gestos biométricos** – permite a autenticação biométrica, como reconhecimento facial ou impressão digital, como uma alternativa a um PIN do Windows Hello para Empresas. Os usuários ainda devem configurar um PIN de trabalho no caso de falha de autenticação biométrica.  
-
-         Se definido como **Habilitado**, o Windows Hello para Empresas permite autenticação biométrica.  Se definido como **Desabilitado**, o Windows Hello para Empresas impede a autenticação biométrica (para todos os tipos de conta).  
-
-    -   **Usar antifalsificação avançada, quando disponível** – define se a antifalsificação avançada é usada em dispositivos que são compatíveis com ela.  
-
-         Se definido como **Habilitado**, o Windows exige que todos os usuários usem a antifalsificação para recursos faciais quando há suporte.  
-
-    -   **Usar Remote Passport** – se essa opção for definida como **Habilitada**, os usuários poderão usar o Hello para Empresas para servir como um dispositivo portátil complementar para autenticação de computador desktop. O computador desktop deve ser associado ao Azure Active Directory e o dispositivo complementar deve ser configurado com um PIN do Windows Hello para Empresas.  
-
-5.  Ao terminar, clique em **OK**.  
-
+- É possível implantar as políticas do Windows Hello para Empresas em dispositivos Windows 10 ingressados em domínio que executam o cliente do Configuration Manager. Essa configuração é descrita em [Configurar o Windows Hello para Empresas em dispositivos Windows 10 ingressados em domínio](#configure-windows-hello-for-business-on-domain-joined-windows-10-devices) abaixo. Quando você estiver usando o Configuration Manager com o Intune (híbrido), será possível definir essas configurações em dispositivos Windows 10 e Windows 10 Mobile, mas não em dispositivos ingressados em domínio que executam o cliente do Configuration Manager. Confira [Definir configurações do Windows Hello para empresas (híbrido)](../../mdm/deploy-use/windows-hello-for-business-settings.md) para saber mais.
 
 ## <a name="configure-windows-hello-for-business-on-domain-joined-windows-10-devices"></a>Configurar o Windows Hello para Empresas em dispositivos Windows 10 ingressados em domínio
 É possível controlar as configurações do Windows Hello para Empresas em dispositivos Windows 10 ingressados em domínio de três maneiras:
@@ -163,9 +101,4 @@ Para obter mais informações sobre o gerenciamento de aplicativos do Configurat
  [Proteger a infraestrutura de dados e do site com o System Center Configuration Manager](../../protect/understand/protect-data-and-site-infrastructure.md)
 
  [Gerenciar a verificação de identidade usando o Windows Hello para Empresas](https://technet.microsoft.com/itpro/windows/keep-secure/manage-identity-verification-using-microsoft-passport).  
-
-
-
-<!--HONumber=Dec16_HO3-->
-
 

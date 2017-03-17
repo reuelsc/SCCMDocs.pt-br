@@ -2,7 +2,7 @@
 title: "Termos e condições no System Center Configuration Manager | Microsoft Docs"
 description: "Implante os termos e condições nos grupos de usuários no System Center Configuration Manager."
 ms.custom: na
-ms.date: 10/06/2016
+ms.date: 03/05/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
@@ -16,12 +16,13 @@ author: mtillman
 ms.author: mtillman
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: 55c953f312a9fb31e7276dde2fdd59f8183b4e4d
-ms.openlocfilehash: 2f8b14bef14d82584fd2bf6cdd05018bdd463ce4
+ms.sourcegitcommit: 2c723fe7137a95df271c3612c88805efd8fb9a77
+ms.openlocfilehash: d8235db376fc62a7ac00d6e5a27823710630eca6
+ms.lasthandoff: 03/06/2017
 
 
 ---
-# <a name="terms-and-conditions-in-system-center-configuration-manager"></a>Terms and Conditions in System Center Configuration Manager
+# <a name="add-terms-and-conditions-with-system-center-configuration-manager"></a>Adicionar Termos e Condições com o System Center Configuration Manager
 
 *Aplica-se a: System Center Configuration Manager (Branch Atual)*
 
@@ -120,8 +121,6 @@ Você pode implantar os termos e condições do System Center Configuration Mana
 
      É recomendável aumentar o número de versão e exigir aceitação sempre que você fizer alterações significativas em seus termos e condições. Se você estiver corrigindo erros de digitação ou alterando a formatação, por exemplo, mantenha o número de versão atual.
 
-
-
-<!--HONumber=Dec16_HO3-->
-
+> [!div class="button"]
+ [< Etapa anterior](configure-intune-subscription.md)  [Próxima etapa >](create-service-connection-point.md)
 

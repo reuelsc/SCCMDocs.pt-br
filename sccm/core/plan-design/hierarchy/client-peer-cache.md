@@ -17,8 +17,9 @@ author: Brenduns
 ms.author: brenduns
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: 2dd898c9b022c6f0bc243623835af0eece94128f
-ms.openlocfilehash: 95d1671501f672e1d5abe3f0fbbd7d2dfb21e0a3
+ms.sourcegitcommit: f9097014c7e988ec8e139e518355c4efb19172b3
+ms.openlocfilehash: 895b8ae58a9fda3fd22f58d77129053df09c4ccb
+ms.lasthandoff: 03/04/2017
 
 ---
 # <a name="peer-cache-for-configuration-manager-clients"></a>Cache de pares para clientes do Configuration Manager
@@ -28,7 +29,7 @@ ms.openlocfilehash: 95d1671501f672e1d5abe3f0fbbd7d2dfb21e0a3
 Começando com o System Center Configuration Manager versão 1610, você pode usar o **Cache de pares** para ajudar a gerenciar a implantação de conteúdo para clientes em locais remotos. O Cache de Pares é uma solução interna do Configuration Manager que habilita os clientes a compartilharem conteúdo com outros clientes diretamente do cache local.   
 
 > [!TIP]  
-> Com a versão 1610, o cache de pares e o painel de fontes de dados do cliente são recursos de pré-lançamento. Para habilitá-los, confira [Usar recursos de pré-lançamento de atualizações](/sccm/core/servers/manage/install-in-console-updates#bkmk_prerelease).
+> Apresentado com a versão 1610, o cache de pares e o painel de fontes de dados do cliente são recursos de pré-lançamento. Para habilitá-los, confira [Usar recursos de pré-lançamento de atualizações](/sccm/core/servers/manage/pre-release-features).
 
  -     Use as configurações do cliente para habilitar clientes para usar cache de pares.
  -     Para compartilhar conteúdo, os clientes do Cache de Pares devem ser membros do grupo de limites atual do cliente que procura o conteúdo. Clientes de cache de pares em grupos de limites vizinhos não estão incluídos no pool de locais de origem de conteúdo disponíveis quando um cliente usa o fallback para buscar o conteúdo de um grupo de limites vizinho. Para obter mais informações sobre grupos de limite atuais e próximos, consulte [Grupos de limites](/sccm/core/servers/deploy/configure/define-site-boundaries-and-boundary-groups##a-namebkmkboundarygroupsa-boundary-groups).
@@ -66,9 +67,4 @@ Para ajudar você a entender o uso do cache de pares, exiba o painel Fontes de D
   -  **Porta para download de conteúdo de pares (HTTP/HTTPS)**
 
 Em cada computador habilitado para o Cache de Pares, se o Firewall do Windows estiver em uso, o Configuration Manager o configurará para permitir o uso das portas que você configurar.
-
-
-
-<!--HONumber=Feb17_HO4-->
-
 

@@ -2,7 +2,7 @@
 title: "Configurar o gerenciamento de dispositivo híbrido do Windows com o System Center Configuration Manager e o Microsoft Intune | Microsoft Docs"
 description: "Configurar o gerenciamento do dispositivo Windows híbrido com o System Center Configuration Manager e o Microsoft Intune."
 ms.custom: na
-ms.date: 10/06/2016
+ms.date: 03/05/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
@@ -16,8 +16,9 @@ author: mtillman
 ms.author: mtillman
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: 76cb0c41865859fd410a187435d73c6a23b0c57e
-ms.openlocfilehash: 7b53b094eeb1d59d052c63831eeab0e10edb5913
+ms.sourcegitcommit: 2c723fe7137a95df271c3612c88805efd8fb9a77
+ms.openlocfilehash: a4fc4a16c78b0eaa0dcefdd596b049eacf1d255b
+ms.lasthandoff: 03/06/2017
 
 
 ---
@@ -31,7 +32,7 @@ Você pode usar o Configuration Manager com o Intune para gerenciar computadores
 As opções de registro do Windows incluem:
 
 - [Registro automático com o Azure AD](#azure-active-directory-enrollment)
-- [Computadores Windows](#set-up-windows-device-enrollment)
+- [Computadores Windows](#configure-windows-pc-enrollment)
 - [Dispositivos Windows Mobile 10 e Windows Phone](#enable-windows-phone-devices)
 
 ## <a name="azure-active-directory-enrollment"></a>Registro no Azure Active Directory
@@ -118,8 +119,6 @@ O registro automático permite que os usuários registrem computadores com Windo
 
   Depois da configuração, você precisará permitir que os usuários saibam como registrar seus dispositivos. Consulte [O que dizer aos usuários sobre o registro de seus dispositivos](https://docs.microsoft.com/intune/deploy-use/what-to-tell-your-end-users-about-using-microsoft-intune). Essas informações se aplicam a dispositivos móveis gerenciados pelo Microsoft Intune e pelo Configuration Manager.  
 
-
-
-<!--HONumber=Feb17_HO2-->
-
+  > [!div class="button"]
+  [< Etapa anterior](create-service-connection-point.md)  [Próxima etapa >](set-up-additional-management.md)
 

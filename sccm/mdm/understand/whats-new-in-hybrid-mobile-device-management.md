@@ -1,5 +1,5 @@
 ---
-title: "Novidades na híbrida MDM | Microsoft Docs"
+title: "Novidades no MDM híbrido| Microsoft Docs"
 description: "Saiba mais sobre os novos recursos de gerenciamento de dispositivo móvel disponíveis para implantações híbridas com o Intune e o System Center Configuration Manager."
 ms.custom: na
 ms.date: 02/14/2017
@@ -16,9 +16,9 @@ author: Mtillman
 ms.author: mtillman
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: 69d3e7d51911d6195c2f62a5e81c0faca38ed306
-ms.openlocfilehash: a8fd3c24f3267ea451f4c94854e8577046efaeca
-ms.lasthandoff: 02/27/2017
+ms.sourcegitcommit: 2c723fe7137a95df271c3612c88805efd8fb9a77
+ms.openlocfilehash: 58c64b2e02e5e5eb54cb50a468502ba6f1e4f0c1
+ms.lasthandoff: 03/06/2017
 
 ---
 # <a name="whats-new-in-hybrid-mobile-device-management-with-system-center-configuration-manager-and-microsoft-intune"></a>Novidades no gerenciamento de dispositivo móvel híbrido com o System Center Configuration Manager e o Microsoft Intune

@@ -1,8 +1,8 @@
 ---
-title: Configurar a assinatura do Intune | Microsoft Docs | No local
+title: Configurar a assinatura do Intune | Microsoft Docs
 description: "Configure uma assinatura do Intune rastrear o licenciamento do Gerenciamento de Dispositivo Móvel Local no System Center Configuration Manager."
 ms.custom: na
-ms.date: 11/18/2016
+ms.date: 03/05/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
@@ -17,8 +17,9 @@ author: Mtillman
 ms.author: mtillman
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: 828e2ac9a3f9bcea1571d24145a1021fdf1091f3
-ms.openlocfilehash: 2cc9f59d9d32d149aa477ba61afba0094f302fc4
+ms.sourcegitcommit: 2c723fe7137a95df271c3612c88805efd8fb9a77
+ms.openlocfilehash: f86eac30ed0eada92ddbd25891d1693ae55b4851
+ms.lasthandoff: 03/06/2017
 
 
 ---
@@ -38,7 +39,7 @@ O Gerenciamento de Dispositivo Móvel Local do System Center Configuration Manag
  O Intune é para o Gerenciamento de Dispositivo Móvel Local funcionar. Basta [inscrever-se](http://www.microsoft.com/en-us/server-cloud/products/microsoft-intune/) para obter uma avaliação ou assinatura paga e ir para a próxima etapa para adicionar a assinatura ao Configuration Manager.  
 
 ##  <a name="add-the-intune-subscription-to-configuration-manager"></a>Adicionar a assinatura do Intune no Configuration Manager  
- Para adicionar a assinatura ao Configuration Manager, siga as mesmas etapas básicas como faria ao adicionar a assinatura no gerenciamento de dispositivo móvel com o Intune. Leia as notas abaixo para diferenças específicas e, em seguida, use as instruções em [Criar assinatura do Microsoft Intune](../deploy-use/setup-hybrid-mdm.md#step-3-configure-intune-subscription).  
+ Para adicionar a assinatura ao Configuration Manager, siga as mesmas etapas básicas como faria ao adicionar a assinatura no gerenciamento de dispositivo móvel com o Intune. Leia as notas abaixo para diferenças específicas e, em seguida, use as instruções em [Criar assinatura do Microsoft Intune](../deploy-use/setup-hybrid-mdm.md#configure-intune-subscription).  
 
 > [!NOTE]  
 >  Ao adicionar a assinatura do Intune, tenha em mente o seguinte:  
@@ -67,9 +68,4 @@ O Gerenciamento de Dispositivo Móvel Local do System Center Configuration Manag
 5.  Se você planeja gerenciar computadores desktop com Windows 10, clique com o botão direito do mouse em **Assinatura do Microsoft Intune**, clique em **Configurar plataformas**e, em seguida, em **Habilitar registro do Windows**.  
 
 6.  Clique na caixa de seleção próxima da opção **Habilitar registro do Windows**e, em seguida, clique em **OK**.  
-
-
-
-<!--HONumber=Dec16_HO3-->
-
 

@@ -2,7 +2,7 @@
 title: "Ponto de distribuição baseado em nuvem | Microsoft Docs"
 description: "Saiba mais sobre as configurações e limitações para usar um ponto de distribuição baseado em nuvem com o System Center Configuration Manager."
 ms.custom: na
-ms.date: 2/24/2017
+ms.date: 3/27/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
@@ -16,9 +16,9 @@ author: Brenduns
 ms.author: brenduns
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: 3eab8e62ace29c0fcb24d47ec7e398d807347a38
-ms.openlocfilehash: a1d701c77afb4d6317d8a137fdf46422063df085
-ms.lasthandoff: 02/28/2017
+ms.sourcegitcommit: f9097014c7e988ec8e139e518355c4efb19172b3
+ms.openlocfilehash: 489f38d3f88391e42b5271c03151203d22b26d9e
+ms.lasthandoff: 03/04/2017
 
 
 ---
@@ -63,7 +63,7 @@ Pontos de distribuição com base em nuvem oferecem os seguintes benefícios adi
 
 Os pontos de distribuição baseados em nuvem têm as seguintes limitações:  
 
--  Antes de usar a versão 1610 com o Hotfix KB4010155, você não pode usar um ponto de distribuição baseado em nuvem para hospedar pacotes de atualização de software. A próxima versão do Branch Atual após a versão 1610 dará suporte a essa opção sem a necessidade de instalar essa correção.  
+-  Antes de usar a versão 1610 com o Hotfix KB4010155, você não pode usar um ponto de distribuição baseado em nuvem para hospedar pacotes de atualização de software. Esse problema foi corrigido a partir da versão 1702.  
 
 -   Você não pode usar um ponto de distribuição com base em nuvem para PXE ou implantações habilitadas para multicast.  
 

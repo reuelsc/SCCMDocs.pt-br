@@ -2,7 +2,7 @@
 title: "Pré-requisitos de migração | Microsoft Docs"
 description: "Entenda as versões compatíveis do Configuration Manager, os idiomas com suporte do site de origem e as configurações necessárias para migração."
 ms.custom: na
-ms.date: 10/06/2016
+ms.date: 3/7/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
@@ -17,8 +17,9 @@ author: Brenduns
 ms.author: brenduns
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: 6cbb790df47c9a87514b0233e2d0c12dd6f23ee9
-ms.openlocfilehash: 70e2531076abedc1381b6e3bccf15b5afe27b465
+ms.sourcegitcommit: ee7f69bd65152deffb2456d9807e1e8fee8802ec
+ms.openlocfilehash: cd90f5462ac4bb4c0a2021e6d5dde65161b9c5f6
+ms.lasthandoff: 03/07/2017
 
 
 ---
@@ -36,19 +37,22 @@ Para migrar de uma hierarquia de origem com suporte, é necessário ter acesso a
 
 -   [Configurações necessárias para a migração](#BKMK_Required_Configurations)  
 
-##  <a name="a-namebkmksupportedmigrationversionsa-versions-of-configuration-manager-that-are-supported-for-migration"></a><a name="BKMK_SupportedMigrationVersions"></a> Versões do Configuration Manager com suporte para migração  
+##  <a name="BKMK_SupportedMigrationVersions"></a> Versões do Configuration Manager com suporte para migração  
  Você pode migrar dados de uma hierarquia de origem que executa qualquer uma das seguintes versões do Configuration Manager:  
 
--   Configuration Manager 2007 SP2 (para fins de migração, o Configuration Manager 2007 R2 ou R3 no site de origem não são considerados. Contanto que o site de origem execute o SP2, os sites com o complemento R2 ou R3 instalado contam com suporte para migração para o System Center Configuration Manager)  
+-   Configuration Manager 2007 SP2 (para fins de migração, o Configuration Manager 2007 R2 ou R3 no site de origem não são considerados. Contanto que o site de origem execute o SP2, os sites com o complemento R2 ou R3 instalado contam com suporte para migração para o System Center Configuration Manager).  
 
--   System Center 2012 Configuration Manager SP2 ou System Center 2012 R2 Configuration Manager SP1  
+-   System Center 2012 Configuration Manager SP2 ou System Center 2012 R2 Configuration Manager SP1.  
 
     > [!TIP]  
     >  Além de migração, você pode usar uma atualização in-loco de sites que executam o System Center 2012 Configuration Manager para o System Center Configuration Manager.  
 
--   Uma hierarquia do System Center Configuration Manager da mesma versão ou de versão inferior do System Center Configuration Manager  
+-   Uma hierarquia do System Center Configuration Manager da mesma versão ou de versão inferior do System Center Configuration Manager.  
 
-##  <a name="a-namebkmksorcesitelanguagea-source-site-languages-that-are-supported-for-migration"></a><a name="BKMK_SorceSiteLanguage"></a> Idiomas do site de origem com suporte para migração  
+  Por exemplo, se você tiver uma hierarquia de destino que executa o System Center Configuration Manager 1606, use a migração para copiar dados de uma hierarquia de origem que executa a versão 1606 ou 1602. No entanto, não é possível migrar dados de uma hierarquia de origem que executa o 1610.  
+
+
+##  <a name="BKMK_SorceSiteLanguage"></a> Idiomas do site de origem com suporte para migração  
  Ao migrar dados entre as hierarquias do Configuration Manager, eles são armazenados na hierarquia de destino em formato de idioma neutro para o System Center Configuration Manager. Devido ao fato de o Configuration Manager 2007 não armazenar os dados em um formato de idioma neutro, o processo de migração deve converter os objetos nesse formato durante a migração do Configuration Manager 2007. Portanto, somente os sites de origem do Configuration Manager 2007 instalados com os seguintes idiomas têm suporte para migração:  
 
 -   Inglês  
@@ -69,7 +73,7 @@ Para migrar de uma hierarquia de origem com suporte, é necessário ter acesso a
 
 Quando você migra dados de uma hierarquia do System Center 2012 Configuration Manager ou do System Center Configuration Manager, não há limitações de idioma do site de origem. Os objetos do banco de dados do site de origem já estão em um formato de idioma neutro.  
 
-##  <a name="a-namebkmkrequiredconfigurationsa-required-configurations-for-migration"></a><a name="BKMK_Required_Configurations"></a> Configurações necessárias para a migração  
+##  <a name="BKMK_Required_Configurations"></a> Configurações necessárias para a migração  
 Veja a seguir as configurações necessárias para o uso da migração e de suas operações.  
 
 -   **Para configurar, executar e monitorar a migração no console do Configuration Manager:**  
@@ -82,7 +86,7 @@ Veja a seguir as configurações necessárias para o uso da migração e de suas
 
     -   **Conta do Site de Origem:** essa conta é usada para acessar o Provedor de SMS do site de origem.  
 
-        -   Para sites de origem do Configuration Manager 2007 SP2, essa conta necessita de permissão de **Leitura** para todos os objetos do site de origem.  
+        -   Para sites de origem do Configuration Manager&2007; SP2, essa conta necessita de permissão de **Leitura** para todos os objetos do site de origem.  
 
         -   Para um site de origem do System Center 2012 Configuration Manager ou do System Center Configuration Manager, essa conta exige permissão de **Leitura** para todos os objetos do site de origem. Você concede essa permissão à conta usando a administração baseada em funções. Para obter informações sobre como usar a administração baseada em funções, consulte [Fundamentals of role-based administration for System Center Configuration Manager](../../core/understand/fundamentals-of-role-based-administration.md).  
 
@@ -118,14 +122,9 @@ Veja a seguir as configurações necessárias para o uso da migração e de suas
 
      A **Conta de Acesso do Site de Origem** configurada para coletar dados do Provedor de SMS do site de origem deve possuir as seguintes permissões:  
 
-    -   Para atualizar um ponto de distribuição do Configuration Manager 2007, a conta necessita das permissões de **Leitura**, **Executar** e **Excluir** para a classe do **Site** no servidor do site do Configuration Manager 2007 para remover com êxito o ponto de distribuição do site de origem do Configuration Manager 2007  
+    -   Para atualizar um ponto de distribuição do Configuration Manager&2007;, a conta necessita das permissões de **Leitura**, **Executar** e **Excluir** para a classe do **Site** no servidor do site do Configuration Manager&2007; para remover com êxito o ponto de distribuição do site de origem do Configuration Manager&2007;  
 
     -   Para reatribuir um ponto de distribuição do System Center 2012 Configuration Manager ou do System Center Configuration Manager, a conta deve ter uma permissão **Modificar** para o objeto **Site** no site de origem. Você pode conceder essa permissão para a conta usando a administração baseada em funções. Para obter informações sobre como usar a administração baseada em funções, consulte [Fundamentals of role-based administration for System Center Configuration Manager](../../core/understand/fundamentals-of-role-based-administration.md).  
 
      Para atualizar ou reatribuir com sucesso um ponto de distribuição a uma nova hierarquia, as portas configuradas para solicitações de cliente no site que gerencia o ponto de distribuição na hierarquia de origem deve ser igual às portas que estão configuradas para solicitações de cliente no site de destino que irá gerenciar o ponto de distribuição. Para obter informações sobre portas de solicitação de cliente, consulte [Como configurar portas de comunicação do cliente no System Center Configuration Manager](../../core/clients/deploy/configure-client-communication-ports.md).  
-
-
-
-<!--HONumber=Dec16_HO3-->
-
 

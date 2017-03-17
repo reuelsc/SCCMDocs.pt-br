@@ -2,7 +2,7 @@
 title: "Atualizações no console | Microsoft Docs"
 description: "O System Center Configuration Manager sincroniza com a nuvem da Microsoft para obter atualizações que você pode instalar no console."
 ms.custom: na
-ms.date: 2/23/2017
+ms.date: 3/7/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
@@ -16,9 +16,9 @@ author: Brenduns
 ms.author: brenduns
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: a0d4eb601948aa3abb12409f3475d69cacf4a6aa
-ms.openlocfilehash: a2bf28c724f8e07f32a30ab5e0b832b46cf362bb
-ms.lasthandoff: 02/28/2017
+ms.sourcegitcommit: f9097014c7e988ec8e139e518355c4efb19172b3
+ms.openlocfilehash: eafa95922485066632a5da522e6c3de69b45050f
+ms.lasthandoff: 03/04/2017
 
 
 ---
@@ -33,7 +33,7 @@ Somente atualizações que se aplicam à sua infraestrutura e versão são baixa
 
 -   No **modo online**, o ponto de conexão de serviço se conecta automaticamente ao serviço de nuvem da Microsoft e baixa as atualizações aplicáveis.  
 
-     Por padrão, o Configuration Manager verifica se há novas atualizações a cada 24 horas. A partir da versão 1602, você também pode verificar imediatamente se há atualizações escolhendo **Verificar Atualizações** no nó **Administração** > **Serviços de Nuvem** > **Atualizações e Manutenção** do console do Configuration Manager.  
+     Por padrão, o Configuration Manager verifica se há novas atualizações a cada 24 horas. Você também pode verificar imediatamente se há atualizações escolhendo **Verificar Atualizações** no nó **Administração** > **Serviços de Nuvem** > **Atualizações e Manutenção** do console do Configuration Manager.  
 
 -   No **modo offline**, o ponto de conexão de serviço não se conecta ao serviço de nuvem da Microsoft. Você deve manualmente [usar a Ferramenta de Conexão de Serviço para o System Center Configuration Manager](../../../core/servers/manage/use-the-service-connection-tool.md) para baixar e importar as atualizações disponíveis.  
 
@@ -44,7 +44,7 @@ Após a sincronização das atualizações, você pode exibi-las no console do C
 
 -   As atualizações que você não instalou são exibidas como **Disponíveis**.
 
--   As atualizações que você instalou são exibidas como **Instaladas**.  Começando com a atualização da versão 1606, apenas a atualização instalada mais recentemente é mostrada. Você pode escolher o botão **Histórico** na faixa de opções para exibir as atualizações instaladas anteriormente.
+-   As atualizações que você instalou são exibidas como **Instaladas**.  Apenas a atualização instalada mais recentemente é mostrada. Você pode escolher o botão **Histórico** na faixa de opções para exibir as atualizações instaladas anteriormente.
 
 
 
@@ -61,7 +61,7 @@ Para entender melhor o que acontece quando as atualizações são baixadas, cons
 -   [Fluxograma — Replicação de atualização para o System Center Configuration Manager](../../../core/servers/manage/update-replication-flowchart.md)  
 
 ## <a name="assign-permissions-to-view-and-manage-updates-and-features"></a>Atribuir permissões para exibir e gerenciar atualizações e recursos
-Antes da instalação da atualização 1606, para exibir as atualizações no console, um usuário deve receber uma função de segurança que inclui a permissão para **Ler** no grupo de permissões **Site**, e o escopo de segurança **Tudo**. A partir da atualização 1606, uma classe de segurança de administração baseada em função chamada **Pacotes de atualização** concede acesso para exibir e gerenciar atualizações no console do Configuration Manager.    
+Para exibir as atualizações no console, um usuário deve possuir uma função de segurança de administração baseada em função que inclua a classe de segurança chamada **Pacotes de atualização**. Essa classe concede acesso para exibir e gerenciar as atualizações no console do Configuration Manager.    
 
 **Sobre a classe de Pacotes de atualização:**  
 Por padrão, os **Pacotes de atualização** (SMS_CM_Updatepackages) faz parte das seguintes funções de segurança internas com as permissões listadas:
@@ -95,13 +95,10 @@ Por padrão, os **Pacotes de atualização** (SMS_CM_Updatepackages) faz parte d
 ###  <a name="bkmk_step1"></a> Etapa 1: Analisar a lista de verificação de atualização  
 Examine a lista de verificação de atualização aplicável de ações a serem executadas antes de iniciar a atualização:
 
--   Atualizar para a 1511 da [Atualização para o System Center Configuration Manager](../../../core/servers/deploy/install/upgrade-to-configuration-manager.md).    
+- Atualizar para 1606: veja [Lista de verificação para instalar a atualização 1606](../../../core/servers/manage/checklist-for-installing-update-1606.md).  
 
--   Atualizar para a 1602 da 1511: consulte [Lista de verificação para instalar a atualização 1602](../../../core/servers/manage/checklist-for-installing-update-1602.md).
-
-- Atualizar para a 1606 da 1511 ou da 1602: consulte [Lista de verificação para instalar a atualização 1606](../../../core/servers/manage/checklist-for-installing-update-1606.md).  
-
-- Atualizar para a 1610 da 1511, 1602 ou da 1606: consulte [Lista de verificação para instalar a atualização 1610](../../../core/servers/manage/checklist-for-installing-update-1610.md).  
+- Atualizar para a 1610 da 1606: veja [Lista de verificação para instalar a atualização 1610](../../../core/servers/manage/checklist-for-installing-update-1610.md).  
+<!--- Update to 1702 from either 1606 or 1610: See [Checklist for installing update 1702](../../../core/servers/manage/checklist-for-installing-update-1702.md). -->  
 
 ###  <a name="bkmk_step2"></a> Etapa 2: Testar a atualização do banco de dados antes de instalar uma atualização  
 As informações nesta etapa se aplicam somente quando você estiver instalando uma *atualização* para um site do System Center Configuration Manager. Se você estiver *atualizando* um System Center 2012 Configuration Manager para o System Center Configuration Manager, consulte [Testar a atualização de banco de dados do site](/sccm/core/servers/deploy/install/upgrade-to-configuration-manager#a-namebkmktesta-test-the-site-database-upgrade).
@@ -172,7 +169,7 @@ Posteriormente, quando você instalar a atualização, terá a opção de config
 
 -   Quando usa um console do Configuration Manager após a atualização do site, você recebe uma solicitação para atualizar o console.  
 
--  Após o servidor do site concluir com êxito a instalação de uma atualização, ela atualiza automaticamente todas as funções de sistema de site aplicáveis.  A única limitação para isso se refere aos pontos de distribuição. Ao instalar uma atualização de um site que já executa a versão 1606 ou posterior, os pontos de distribuição não ficam mais offline para serem atualizados ao mesmo tempo. Em vez disso, o servidor do site usa as configurações de distribuição de conteúdo do site para distribuir a atualização para um subconjunto de pontos de distribuição por vez. O resultado é que apenas alguns pontos de distribuição ficam offline para instalar a atualização. Isso permite que pontos de distribuição que ainda não começaram a ser atualizados ou que concluíram a atualização permaneçam online e forneçam conteúdo aos clientes.
+-  Após o servidor do site concluir com êxito a instalação de uma atualização, ela atualiza automaticamente todas as funções de sistema de site aplicáveis.  A única limitação para isso se refere aos pontos de distribuição. Ao instalar uma atualização, todos os pontos de distribuição não são reinstalados e, ao mesmo tempo, ficam offline para atualização. Em vez disso, o servidor do site usa as configurações de distribuição de conteúdo do site para distribuir a atualização para um subconjunto de pontos de distribuição por vez. O resultado é que apenas alguns pontos de distribuição ficam offline para instalar a atualização. Isso permite que pontos de distribuição que ainda não começaram a ser atualizados ou que concluíram a atualização permaneçam online e forneçam conteúdo aos clientes.
 
 
 ###  <a name="bkmk_overview"></a> Visão geral da instalação da atualização no console  
@@ -185,7 +182,7 @@ Será apresentado a você um Assistente de atualizações que exibe uma lista da
     -   Avisos de pré-requisito também podem interromper a instalação da atualização. Você deve corrigir esses avisos antes de tentar novamente a instalação da atualização. Consulte [Repetir a instalação de uma atualização com falha](#bkmk_retry) para obter mais informações.  
     -   A seleção da opção **Ignorar os avisos de verificação de pré-requisitos e instalar essa atualização, independentemente dos requisitos ausentes** define uma condição para a instalação da atualização que ignora os avisos de pré-requisito. Isso permite que a instalação da atualização continue. Se você não selecionar essa opção, a instalação da atualização será interrompida quando um aviso for encontrado. A menos que você tenha executado anteriormente a verificação de pré-requisitos e corrigido os avisos de pré-requisito de um site, não recomendamos o uso dessa opção.  
 
-      A partir da versão 1606, nos espaços de trabalho **Administração** e **Monitoramento**, o nó de Atualizações e Manutenção inclui um botão na Faixa de opções chamado **Ignorar os avisos de pré-requisito**. Esse botão fica disponível quando um pacote de atualização falha ao concluir a instalação devido a avisos de verificação de pré-requisitos. Por exemplo, se você instalar uma atualização sem usar a opção de ignorar avisos de pré-requisito (de dentro do Assistente de Atualizações) e a instalação da atualização for interrompida com um estado de aviso de pré-requisito, mas sem erros, você poderá escolher **Ignorar avisos de pré-requisito** posteriormente na faixa de opções para disparar uma continuação automática da instalação da atualização que ignora os avisos de pré-requisito. Quando você usa essa opção, a instalação da atualização continua automaticamente depois de alguns minutos.
+      Nos espaços de trabalho **Administração** e **Monitoramento**, o nó Atualizações e Manutenção inclui um botão na Faixa de opções chamado **Ignorar avisos de pré-requisito**. Esse botão fica disponível quando um pacote de atualização falha ao concluir a instalação devido a avisos de verificação de pré-requisitos. Por exemplo, se você instalar uma atualização sem usar a opção de ignorar avisos de pré-requisito (de dentro do Assistente de Atualizações) e a instalação da atualização for interrompida com um estado de aviso de pré-requisito, mas sem erros, você poderá escolher **Ignorar avisos de pré-requisito** posteriormente na faixa de opções para disparar uma continuação automática da instalação da atualização que ignora os avisos de pré-requisito. Quando você usa essa opção, a instalação da atualização continua automaticamente depois de alguns minutos.
 
 
 
@@ -211,7 +208,7 @@ Use o seguinte para monitorar o progresso:
 
 -   No console do Configuration Manager, vá até o nó **Monitoramento** > **Visão Geral** > **Status de Serviço e Atualizações**. Esse nó mostra o status de instalação somente do pacote de atualização que está sendo instalado no momento.  
 
-    A partir da versão 1606, a instalação do pacote de atualização é dividida nas seguintes fases para facilitar o monitoramento. Para cada fase, os detalhes adicionais incluem qual arquivo de log exibir para obter mais informações:  
+  A instalação do pacote de atualização é dividida nas seguintes fases para facilitar o monitoramento. Para cada fase, os detalhes adicionais incluem qual arquivo de log exibir para obter mais informações:  
     -   **Download** (essa fase se aplica somente ao site de nível superior em que a função do sistema de sites do ponto de conexão de serviço está instalada.)
     -   **Replicação**
     -   **Verificação de pré-requisitos**
@@ -323,36 +320,7 @@ Para exibir os recursos disponíveis e seus status, no console, navegue até **A
 Quando um recurso não é opcional, ele é instalado automaticamente e não aparece no nó **Recursos**.  
 
 ##  <a name="bkmk_prerelease"></a> Usar recursos de pré-lançamento de atualizações
-Os recursos de pré-lançamento foram incluídos no produto para testes iniciais em um ambiente de produção, mas não devem ser considerados prontos para produção. A partir do 1606, você deverá dar consentimento para usar Recursos de pré-lançamento no System Center Configuration Manager antes de selecionar e habilitar seu uso.  
-
-Dar o consentimento é uma ação única por hierarquia que não pode ser desfeita. Até que dê o consentimento, você não pode habilitar novos recursos de pré-lançamento incluídos com a atualização 1606 e versões de atualização posteriores.
-
-Para dar consentimento, no console, vá até **Administração** > **Configuração do Site** > **Sites** e escolha **Configurações da Hierarquia**. Na guia **Geral**, escolha **Consentir com o uso de recursos de pré-lançamento**.
-
- > [!NOTE]
- > Se você tiver habilitado os recursos de pré-lançamento da Atualização 1602 antes de instalar a Atualização 1606, esses recursos permanecerão habilitados para uso após a instalação da 1606, mesmo que você não tenha consentido com o uso dos recursos de pré-lançamento.
-
-Quando sua hierarquia executa a versão 1606 ou posterior e você instala uma atualização que inclui recursos de pré-lançamento, esses recursos são visíveis no Assistente de Atualizações e Manutenção com os recursos regulares incluídos na atualização:
-  - **Se você tiver consentido:** você poderá habilitar os recursos de pré-lançamento no Assistente de Atualizações e Manutenção quando estiver instalando a atualização. Para fazer isso, selecione os recursos de pré-lançamento como faria com qualquer outro recurso.     
-
-    Você também pode esperar para habilitar um recurso de pré-lançamento mais tarde do nó **Administração** > **Serviços de Nuvem** > **Atualizações e Manutenção** > **Recursos** do console. No nó **Recursos**, escolha o recurso e escolha **Ativar**. (Essa opção está esmaecida até você dar consentimento.)  
-  -   **Se você não tiver consentido:** ao instalar uma atualização, os recursos de pré-lançamento ficarão visíveis no Assistente de Atualizações e Manutenção, mas ficarão esmaecidos e não poderão ser habilitados. Após a instalação da atualização, você pode exibir esses recursos no nó **Recursos**, mas não habilitá-los até que você tenha dado o consentimento nas **Configurações da Hierarquia**.
-
- > [!TIP]
- > Quando você estiver instalando a atualização 1606, os recursos de pré-lançamento incluídos com a atualização 1606 não ficam visíveis no Assistente de Atualizações e Manutenção e não podem ser habilitados no momento em questão. Após a instalação da atualização 1606, você pode exibir os recursos de pré-lançamento incluídos no nó **Recursos**.
-
-Se você tiver dado consentimento em um site primário autônomo e, depois, expandir a hierarquia instalando um novo site de administração central, você deverá dar consentimento novamente no site de administração central.
-
-**Os seguintes recursos de pré-lançamento estão disponíveis:**
-
- |Recurso                    |Adicionado como pré-lançamento |Adicionado como recurso completo |  
-|----------------------------|---------------------|------------------------|
-| Cache de Pares para distribuição de conteúdo para clientes |  [Versão 1610](/sccm/core/plan-design/hierarchy/client-peer-cache) |![Ainda não](media/83c5d168-8faf-4e8e-920b-528e3c43ffd4.gif)|
-| Gateway de gerenciamento de nuvem |  [Versão 1610](/sccm/core/clients/manage/plan-cloud-management-gateway) |![Ainda não](media/83c5d168-8faf-4e8e-920b-528e3c43ffd4.gif)|
-| Painel Fontes de Dados do Cliente |  [Versão 1610](/sccm/core/servers/deploy/configure/monitor-content-you-have-distributed#client-data-sources-dashboard) |![Ainda não](media/83c5d168-8faf-4e8e-920b-528e3c43ffd4.gif)|
-| Conector do Microsoft Operations Management Suite  | [Versão 1606](../../../core/clients/manage/sync-data-microsoft-operations-management-suite.md) |![Ainda não](media/83c5d168-8faf-4e8e-920b-528e3c43ffd4.gif)|
-| Realização de serviços em uma coleção com reconhecimento de cluster (realização de serviços em um grupo de servidores)| [Versão 1602](../../../core/get-started/capabilities-in-technical-preview-1605.md#BKMK_ServerGroups)|![Ainda não](media/83c5d168-8faf-4e8e-920b-528e3c43ffd4.gif)|
-|Acesso condicional para PCs gerenciados pelo System Center Configuration Manager | [Versão 1602](../../../protect/deploy-use/manage-access-to-o365-services-for-pcs-managed-by-sccm.md)     |![Ainda não](media/83c5d168-8faf-4e8e-920b-528e3c43ffd4.gif)                        |
+Os recursos de pré-lançamento são recursos que estão incluídos na Ramificação atual para testes iniciais em um ambiente de produção. Esses recursos não devem ser considerados prontos para produção, mas podem ser usados em seu ambiente de produção. Para saber mais sobre os recursos de pré-lançamento, inclusive como habilitá-los em seu ambientes, veja [Recursos de pré-lançamento](/sccm/core/servers/manage/pre-release-features).                |
 
 
 ## <a name="known-issues"></a>Problemas conhecidos

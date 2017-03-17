@@ -1,8 +1,8 @@
 ---
-title: "Etapas de preparação | Microsoft Docs | MDM Local"
+title: "Etapas de preparação | Microsoft Docs"
 description: "Prepare-se para gerenciar dispositivos com o Gerenciamento de Dispositivo Móvel local no System Center Configuration Manager."
 ms.custom: na
-ms.date: 10/06/2016
+ms.date: 03/05/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
@@ -16,8 +16,9 @@ author: Mtillman
 ms.author: mtillman
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: 0d6479bcc134103e6005159a8ea295a5f359a436
-ms.openlocfilehash: a5c9fa5994f9b7bd13fe53edb6998609852b98ca
+ms.sourcegitcommit: 2c723fe7137a95df271c3612c88805efd8fb9a77
+ms.openlocfilehash: 2ba11c8e2d8214ce9aca7c887fcb539b38da4e84
+ms.lasthandoff: 03/06/2017
 
 
 ---
@@ -44,9 +45,4 @@ O gerenciamento de dispositivos com o Gerenciamento de Dispositivo Móvel Local 
 -   [Configurar o registro de dispositivo para o gerenciamento de dispositivo móvel local no System Center Configuration Manager](../../mdm/get-started/set-up-device-enrollment-on-premises-mdm.md)  
 
      Nesta tarefa, você concede permissão aos usuários para registrar computadores e dispositivos e instalar o certificado raiz confiável nos dispositivos (normalmente aqueles que não ingressaram no domínio) para permitir conexões de HTTPS para servidores do sistema de site.  
-
-
-
-<!--HONumber=Dec16_HO3-->
-
 

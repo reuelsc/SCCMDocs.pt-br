@@ -13,12 +13,13 @@ ms.topic: article
 ms.assetid: 321b19b2-a093-4b8f-995f-41f74b886eb5
 caps.latest.revision: 13
 caps.handback.revision: 0
-author: Nbigman
-ms.author: nbigman
+author: arob98
+ms.author: angrobe
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: 0fa837c68eb073d2ceaf48c938137a94141a102e
-ms.openlocfilehash: 7d42ec89300d4eb6b02bafb3f83d341f8e3ca0c0
+ms.sourcegitcommit: 2c723fe7137a95df271c3612c88805efd8fb9a77
+ms.openlocfilehash: f1ae976899de1fd3efcbde0c7268f071a5d0218b
+ms.lasthandoff: 03/06/2017
 
 
 ---
@@ -39,15 +40,9 @@ Use perfis de Wi-Fi no System Center Configuration Manager para implantar as con
 
 -   Dispositivos que executam o Windows RT 8.1  
 
--   Dispositivos que executam o Windows Phone 8.1  
-
 -   Dispositivos que executam o Windows 10 Desktop ou Mobile  
 
--   Dispositivos IPhone que executam o iOS 5, iOS 6, iOS 7 e iOS 8  
-
--   Dispositivos IPad que executam o iOS 5, iOS 6, iOS 7 e iOS 8  
-
--   Dispositivos Android que executam a versão 4 ou posterior
+[Criar perfis de Wi-Fi para dispositivos móveis](../../mdm/deploy-use/create-wifi-profiles.md) fornece informações sobre como usar os perfis de Wi-Fi no Configuration Manager para implantar as configurações de rede sem fio para usuários de dispositivo móvel."
 
 > [!IMPORTANT]  
 >  Para implantar perfis em dispositivos Android, iOS, Windows Phone e em dispositivos registrados Windows 8.1 ou posteriores, esses dispositivos devem ser registrados no Microsoft Intune. Para obter informações sobre como registrar seus dispositivos, consulte [Registrar dispositivos para gerenciamento no Intune](https://docs.microsoft.com/intune/deploy-use/enroll-devices-in-microsoft-intune).  
@@ -92,7 +87,7 @@ Use perfis de Wi-Fi no System Center Configuration Manager para implantar as con
     >  Tipos de segurança: **WPA2 Enterprise** ou **WPA2 Personal**  
     > Tipos de criptografia: **AES** ou **TKIP**  
     > Tipos de EAP: **Cartão inteligente ou outro certificado** ou **PEAP**  
-  
+
     > Para dispositivos Android, os tipos de segurança **WPA Pessoal**, **WPA2 Pessoal** e **WEP** não têm suporte.  
 
 2.  selecione o método de criptografia usado pela rede sem fio.  
@@ -133,9 +128,4 @@ Use perfis de Wi-Fi no System Center Configuration Manager para implantar as con
 
 ### <a name="next-steps"></a>Próximas etapas
  Para obter informações sobre como implantar o perfil Wi-Fi, consulte [Como implantar perfis de Wi-Fi no System Center Configuration Manager](deploy-wifi-vpn-email-cert-profiles.md).  
-
-
-
-<!--HONumber=Jan17_HO4-->
-
 

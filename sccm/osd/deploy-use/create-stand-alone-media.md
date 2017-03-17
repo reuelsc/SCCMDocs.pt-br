@@ -17,8 +17,9 @@ author: Dougeby
 ms.author: dougeby
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: 66cd6d099acdd9db2bc913a69993aaf5e17237fe
-ms.openlocfilehash: 411ca1d13778521f7fa0dba71980158477cd0735
+ms.sourcegitcommit: ee7f69bd65152deffb2456d9807e1e8fee8802ec
+ms.openlocfilehash: 708525604c3f40cf75b5408c3666193186b7cf50
+ms.lasthandoff: 03/07/2017
 
 
 ---
@@ -36,7 +37,7 @@ A mídia autônoma no Configuration Manager contém tudo o que é necessário pa
 
  A mídia autônoma inclui a sequência de tarefas que automatiza as etapas para instalar o sistema operacional e qualquer outro conteúdo necessário, inclusive a imagem de inicialização, imagem do sistema operacional e drivers de dispositivo. Como tudo o que é necessário para implantar o sistema operacional é armazenado na mídia autônoma, o espaço em disco necessário para mídia autônoma é significativamente maior do que o espaço em disco necessário para outros tipos de mídia. Quando você cria mídia autônoma em um site de administração central, o cliente recupera seu código de site atribuído do Active Directory. A mídia autônoma criada em sites filho atribuirá automaticamente ao cliente o código desse site.  
 
-##  <a name="a-namebkmkcreatestandalonemediaa-create-stand-alone-media"></a><a name="BKMK_CreateStandAloneMedia"></a> Criar mídia autônoma  
+##  <a name="BKMK_CreateStandAloneMedia"></a> Criar mídia autônoma  
  Antes de criar mídia autônoma usando o Assistente para criação de mídia de sequência de tarefas, certifique-se de que as seguintes condições forem atendidas:  
 
 ### <a name="create-a-task-sequence-to-deploy-an-operating-system"></a>Criar uma sequência de tarefas para implantar um sistema operacional
@@ -53,115 +54,111 @@ Não há suporte para as seguintes ações na mídia autônoma:
 - O aplicativo dinâmico é instalado por meio da tarefa Instalar aplicativo.
 
 Se a sequência de tarefas para implantar um sistema operacional incluir a etapa [Instalar Pacote](../../osd/understand/task-sequence-steps.md#BKMK_InstallPackage) e você criar a mídia autônoma em um site de administração central, poderá ocorrer um erro. O site de administração central não possui as políticas de configuração de cliente necessárias para habilitar o agente de distribuição de software durante a execução da sequência de tarefas. O erro a seguir pode aparecer no arquivo CreateTsMedia.log:<br /><br /> “Falha no método WMI SMS_TaskSequencePackage.GetClientConfigPolicies (0x80041001)”<br /><br /> Para mídia autônoma que inclui uma etapa **Instalar Pacote**, é necessário criar a mídia autônoma em um site primário que contém o agente de distribuição de software habilitado ou adicionar uma etapa [Executar Linha de Comando](../understand/task-sequence-steps.md#BKMK_RunCommandLine) após a etapa [Configurar Windows e ConfigMgr](../understand/task-sequence-steps.md#BKMK_SetupWindowsandConfigMgr) e antes da primeira etapa **Instalar Pacote** na sequência de tarefas. A etapa **Executar linha de comando** executa como um comando WMIC para habilitar o agente de distribuição de software antes da primeira etapa de Instalar pacote ser executada. Você pode usar o seguinte em sua etapa de sequência de tarefas de **Executar linha de comando** :<br /><br />
-```WMIC /namespace:\\\root\ccm\policy\machine\requestedconfig path ccm_SoftwareDistributionClientConfig CREATE ComponentName="Enable SWDist", Enabled="true", LockSettings="TRUE", PolicySource="local", PolicyVersion="1.0", SiteSettingsKey="1" /NOINTERACTIVE
+```
+WMIC /namespace:\\\root\ccm\policy\machine\requestedconfig path ccm_SoftwareDistributionClientConfig CREATE ComponentName="Enable SWDist", Enabled="true", LockSettings="TRUE", PolicySource="local", PolicyVersion="1.0", SiteSettingsKey="1" /NOINTERACTIVE
 ```
 
-### Distribute all content associated with the task sequence
-You must distribute all content that is required by the task sequence the  to at least one distribution point. This includes the boot image, operating system image, and other associated files. The wizard gathers the information from the distribution point when it creates the stand-alone media. You must have **Read** access rights to the content library on that distribution point.  For details, see [Distribute content referenced by a task sequence](manage-task-sequences-to-automate-tasks.md#BKMK_DistributeTS).
+### <a name="distribute-all-content-associated-with-the-task-sequence"></a>Distribuir todo o conteúdo associado à sequência de tarefas
+Você deve distribuir todo o conteúdo exigido pela sequência de tarefas para pelo menos um ponto de distribuição. Isso inclui a imagem de inicialização, a imagem do sistema operacional e outros arquivos associados. O assistente reúne as informações do ponto de distribuição quando ele cria a mídia autônoma. Você precisa ter direitos de acesso de **Leitura** à biblioteca de conteúdo no ponto de distribuição.  Para obter detalhes, consulte [Distribuir o conteúdo referenciado por uma sequência de tarefas](manage-task-sequences-to-automate-tasks.md#BKMK_DistributeTS).
 
-### Prepare the removable USB drive
-*For a removable USB drive:*
+### <a name="prepare-the-removable-usb-drive"></a>Preparar a unidade USB removível
+*Para uma unidade USB removível:*
 
-If you are going to use a removable USB drive, the USB  drive must be connected to the computer where the wizard is run and the USB drive must be detectable by Windows as a removal device. The wizard writes directly to the USB drive when it creates the media. Stand-alone media uses a FAT32 file system. You cannot create stand-alone media on a USB flash drive whose content contains a file over 4 GB in size.
+Se você pretende usar uma unidade USB removível, a unidade USB deve ser conectada ao computador no qual o assistente é executado e a unidade USB deve ser detectável pelo Windows como um dispositivo de remoção. O assistente grava diretamente na unidade USB ao criar a mídia. A mídia autônoma usa um sistema de arquivos FAT32. Não é possível criar uma mídia autônoma em uma unidade flash USB cujo conteúdo contém um arquivo de tamanho superior a 4 GB.
 
-### Create an output folder
-*For a CD/DVD set:*
+### <a name="create-an-output-folder"></a>Criar uma pasta de saída
+*Para um conjunto de CD/DVD:*
 
-Before you run the Create Task Sequence Media Wizard to create media for a CD or DVD set, you must create a folder for the output files created by the wizard. Media that is created for a CD or DVD set is written as .iso files directly to the folder.
+Para executar o Assistente para Criar Mídia de Sequência de Tarefas para criar mídia para um conjunto de CD ou DVD, é preciso criar uma pasta para os arquivos de saída criados pelo assistente. A mídia criada para um conjunto de CD ou DVD é gravada como arquivos .iso diretamente na pasta.
 
 
- Use the following procedure to create stand-alone media for a removable USB drive or a CD/DVD set.  
+ Use o procedimento a seguir para criar mídia autônoma para uma unidade USB removível ou um aparelho de CD/DVD.  
 
-## To create stand-alone media  
+## <a name="to-create-stand-alone-media"></a>Para criar mídia autônoma  
 
-1.  In the Configuration Manager console, click **Software Library**.  
+1.  No console do Configuration Manager, clique em **Biblioteca de Software**.  
 
-2.  In the **Software Library** workspace, expand **Operating Systems**, and then click **Task Sequences**.  
+2.  No espaço de trabalho **Biblioteca de Software** , expanda **Sistemas Operacionais**e clique em **Sequências de Tarefas**.  
 
-3.  On the **Home** tab, in the **Create** group, click **Create Task Sequence Media** to start the Create Task Sequence Media Wizard.  
+3.  Na guia **Início** , no grupo **Criar** , clique em **Criar Mídia de Sequência de Tarefas** para iniciar o Assistente para Criar Mídia de Sequência de Tarefas.  
 
-4.  On the **Select Media Type** page, specify the following options, and then click **Next**.  
+4.  Na página **Selecionar o Tipo de Mídia** , especifique as opções a seguir e clique em **Próximo**.  
 
-    -   Select **Stand-alone media**.  
+    -   Selecione **Mídia autônoma**.  
 
-    -   Optionally, if you want to allow the operating system to be deployed without requiring user input, select **Allow unattended operating system deployment**. When you select this option the user is not prompted for network configuration information or for optional task sequences. However, the user is still prompted for a password if the media is configured for password protection.  
+    -   Opcionalmente, se você quiser permitir que o sistema operacional seja implantado sem exigir a entrada do usuário, selecione **Permitir implantação autônoma do sistema operacional**. Quando você seleciona essa opção, o usuário não precisa inserir informações de configuração de rede nem sequências de tarefas opcionais. No entanto, ainda será solicitada ao usuário uma senha, se a mídia estiver configurada para proteção por senha.  
 
-5.  On the **Media Type** page, specify whether the media is a flash drive or a CD/DVD set, and then click configure the following:  
+5.  Na página **Tipo de Mídia** , especifique se a mídia é uma unidade flash ou um conjunto de CD/DVD e clique em configurar o seguinte:  
 
     > [!IMPORTANT]  
-    >  Stand-alone media uses a FAT32 file system. You cannot create stand-alone media on a USB flash drive whose content contains a file over 4 GB in size.  
+    >  A mídia autônoma usa um sistema de arquivos FAT32. Não é possível criar uma mídia autônoma em uma unidade flash USB cujo conteúdo contém um arquivo de tamanho superior a 4 GB.  
 
-    -   If you select **USB flash drive**, specify the drive where you want to store the content.  
+    -   Se você selecionar a **Unidade flash USB**, especifique a unidade na qual deseja armazenar o conteúdo.  
 
-    -   If you select **CD/DVD set**, specify the capacity of the media and the name and path of the output files. The wizard writes the output files to this location. For example: **\\\servername\folder\outputfile.iso**  
+    -   Caso selecione **Conjunto de CD/DVD**, especifique a capacidade da mídia, o nome e o caminho dos arquivos de saída. O assistente grava os arquivos de saída nesse local. Por exemplo: **\\\nomedoservidor\pasta\arquivodesaida.iso**  
 
-         If the capacity of the media is too small to store the entire content, multiple files are created and you must store the content on multiple CDs or DVDs. When multiple media is required, Configuration Manager adds a sequence number to the name of each output file that it creates. In addition, if you deploy an application along with the operating system and the application cannot fit on a single media, Configuration Manager stores the application across multiple media. When the stand-alone media is run, Configuration Manager prompts the user for the next media where the application is stored.  
+         Se a capacidade da mídia for muito pequena para armazenar todo o conteúdo, vários arquivos são criados e você deve armazenar o conteúdo em vários CDs ou DVDs. Se várias mídias forem necessárias, o Configuration Manager adicionará um número de sequência ao nome de cada arquivo de saída criado. Além disso, se você implantar um aplicativo juntamente com o sistema operacional e o aplicativo não couber em uma única mídia, o Configuration Manager armazenará o aplicativo em várias mídias. Quando a mídia autônoma é executada, o Configuration Manager solicita ao usuário a próxima mídia, na qual o aplicativo está armazenado.  
 
         > [!IMPORTANT]  
-        >  If you select an existing .iso image, the Task Sequence Media Wizard deletes that image from the drive or share as soon as you proceed to the next page of the wizard. The existing image is deleted, even if you then cancel the wizard.  
+        >  Se você selecionar uma imagem .iso existente, o Assistente de Mídia de Sequência de Tarefas excluirá essa imagem da unidade ou do compartilhamento assim que você prosseguir para a próxima página do assistente. A imagem existente será excluída mesmo se você cancelar o assistente.  
 
-     Click **Next**.  
+     Clique em **Avançar**.  
 
-6.  On the **Security** page, enter a strong password to help protect the media, and then click **Next**. If you specify a password, the password is required to use the media.  
+6.  Na página **Segurança** , insira uma senha forte para ajudar a proteger a mídia e clique em **Próxima**. Se você especificar uma senha, ela será necessária para usar a mídia.  
 
     > [!IMPORTANT]  
-    >  On stand-alone media, only the task sequence steps and their variables are encrypted. The remaining content of the media is not encrypted, so do not include any sensitive information in task sequence scripts. Store and implement all sensitive information by using task sequence variables.  
+    >  Na mídia autônoma, somente as etapas da sequência de tarefas e suas variáveis são criptografadas. O conteúdo restante da mídia não é criptografado, portanto não inclua nenhuma informação confidencial nos scripts da sequência de tarefas. Armazene e implemente todas as informações confidenciais usando as variáveis da sequência de tarefas.  
 
-7.  On the **Stand-Alone CD/DVD** page, specify the task sequence that deploys the operating system, and then click **Next**. Choose **Detect associated application dependencies and add them to this media** to add content to the stand-alone media for application dependencies.
+7.  Na página **CD/DVD Autônomo** , especifique a sequência de tarefas que implanta o sistema operacional e clique em **Próxima**. Escolha **Detectar dependências de aplicativos associadas e adicioná-las a esta mídia** para adicionar conteúdo à mídia autônoma para dependências de aplicativos.
 > [!TIP]
-> If you do not see expected application dependencies, deselect and then reselect the **Detect associated application dependencies and add them to this media** setting to refresh the list.
+> Se você não vir as dependências de aplicativo esperadas, cancele a seleção e selecione novamente a configuração **Detectar dependências de aplicativos associadas e adicioná-las a esta mídia** para atualizar a lista.
 
-The wizard lets you select only those task sequences that are associated with a boot image.  
+O assistente permite que você selecione apenas as sequências de tarefas associadas a uma imagem de inicialização.  
 
-8.  On the **Distribution Points** page, specify the distribution points that contain the content required by the task sequence, and then click **Next**.  
+8.  Na página **Pontos de Distribuição** , especifique o ponto de distribuição que tem o conteúdo exigido pela sequência de tarefas e clique em **Próximo**.  
 
-     Configuration Manager will only display distribution points that have the content. You must distribute all of the content associated with the task sequence (boot image, operating system image, etc.) to at least one distribution point before you can continue. After you distribute the content, you can either restart the wizard or remove any distribution points that you already selected  on this page, go to the previous page, and then back to the **Distribution Points** page to refresh the distribution point list. For more information about distributing content, see [Distribute content referenced by a task sequence](manage-task-sequences-to-automate-tasks.md#BKMK_DistributeTS). For more information about distribution points and content management, see [Manage content and content infrastructure for System Center Configuration Manager](../../core/servers/deploy/configure/manage-content-and-content-infrastructure.md).  
+     O Configuration Manager vai exibir apenas pontos de distribuição que tenham o conteúdo. Você deve distribuir todo o conteúdo associado à sequência de tarefas (imagem de inicialização, imagem do sistema operacional, etc.) para, pelo menos, um ponto de distribuição antes que possa continuar. Após distribuir o conteúdo, você pode reiniciar o assistente ou remover os pontos de distribuição que já selecionou nessa página, ir para a página anterior e voltar para a página **Pontos de distribuição** para atualizar a lista de pontos de distribuição. Para obter mais informações sobre como distribuir conteúdo, consulte [Distribuir o conteúdo referenciado por uma sequência de tarefas](manage-task-sequences-to-automate-tasks.md#BKMK_DistributeTS). Para obter mais informações sobre pontos de distribuição e gerenciamento de conteúdo, consulte [Gerenciar conteúdo e infraestrutura de conteúdo do System Center Configuration Manager](../../core/servers/deploy/configure/manage-content-and-content-infrastructure.md).  
 
     > [!NOTE]  
-    >  You must have **Read** access rights to the content library on the distribution points.  
+    >  É necessário ter direitos de acesso de **Leitura** à biblioteca de conteúdo nos pontos de distribuição.  
 
-9. On the **Customization** page, specify the following information, and then click **Next**.  
+9. Na página **Personalização** , especifique as informações a seguir e clique em **Próxima**.  
 
-    -   Specify the variables that the task sequence uses to deploy the operating system.  
+    -   Especifique as variáveis que a sequência de tarefas usa para implantar o sistema operacional.  
 
-    -   Specify any prestart commands that you want to run before the task sequence. Prestart commands are a script or an executable that can interact with the user in Windows PE before the task sequence runs to install the operating system. For more information about prestart commands for media, see [Prestart commands for task sequence media in System Center Configuration Manager](../understand/prestart-commands-for-task-sequence-media.md).  
+    -   Especifique quaisquer comandos prestart que deseja executar antes da sequência de tarefas. Os comandos prestart são um script ou um executável que podem interagir com o usuário no Windows PE antes da execução da sequência de tarefas para instalar o sistema operacional. Para obter mais informações sobre comandos prestart para mídia, consulte [Comandos prestart para mídia de sequência de tarefas no System Center Configuration Manager](../understand/prestart-commands-for-task-sequence-media.md).  
 
-         Optionally, select **Files for the prestart command** to include any required files for the prestart command.  
+         Opcionalmente, selecione **Arquivos no comando prestart** para incluir quaisquer arquivos necessários no comando prestart.  
 
         > [!TIP]  
-        >  During task sequence media creation, the task sequence writes the package ID and prestart command-line, including the value for any task sequence variables, to the CreateTSMedia.log log file on the computer that runs the Configuration Manager console. You can review this log file to verify the value for the task sequence variables.  
+        >  Durante a criação de mídia de sequência de tarefas, a sequência de tarefas grava a ID do pacote e a linha de comando prestart, que inclui o valor de quaisquer variáveis de sequência de tarefas, no arquivo de log CreateTSMedia.log no computador que executa o console do Configuration Manager. Você poderá analisar esse arquivo de log para verificar o valor das variáveis de sequência de tarefas.  
 
-10. Complete the wizard.  
+10. Conclua o assistente.  
 
- The stand-alone media files (.iso) are created in the destination folder. If you selected **Stand-Alone CD/DVD**, you can now copy the output files to a set of CDs or DVDs.  
+ Os arquivos de mídia autônoma (.iso) são criados na pasta de destino. Se tiver selecionado **CD/DVD Autônomo**, agora você poderá copiar os arquivos de saída para um conjunto de CDs ou DVDs.  
 
-##  <a name="BKMK_StandAloneMediaTSExample"></a> Example task sequence for stand-alone media  
- Use the following table as a guide as you create a task sequence to deploy an operating system using stand-alone media. The table will help you decide the general sequence for your task sequence steps and how to organize and structure those task sequence steps into logical groups. The task sequence that you create might vary from this sample and can contain more or fewer task sequence steps and groups.  
+##  <a name="BKMK_StandAloneMediaTSExample"></a> Exemplo de sequência de tarefas para mídia autônoma  
+ Use a tabela a seguir como um guia que você crie uma sequência de tarefas para implantar um sistema operacional usando mídia autônoma. A tabela ajudará você a decidir a sequência geral de etapas da sequência de tarefas e como organizar e estruturar essas etapas de sequência de tarefas em grupos lógicos. A sequência de tarefas que você criar pode variar do que esse exemplo e pode conter mais ou menos etapas da sequência de tarefas e grupos.  
 
 > [!NOTE]  
->  You must always use the Task Sequence Media Wizard to create stand-alone media.  
+>  Você sempre deve usar o Assistente de mídia de sequência de tarefas para criar mídia autônoma.  
 
-|Task Sequence Group or Step|Description|  
+|Grupo de sequências de tarefas ou etapa|Descrição|  
 |---------------------------------|-----------------|  
-|Capture File and Settings - **(New Task Sequence Group)**|Create a task sequence group. A task sequence group keeps similar task sequence steps together for better organization and error control.|  
-|Capture Windows Settings|Use this task sequence step to identify the Microsoft Windows settings that are captured from the existing operating system on the destination computer prior to reimaging. You can capture the computer name, user and organizational information, and the time zone settings.|  
-|Capture Network Settings|Use this task sequence step to capture network settings from the computer that receives the task sequence. You can capture the domain or workgroup membership of the computer and the network adapter setting information.|  
-|Capture User Files and Settings - **(New Task Sequence Sub-Group)**|Create a task sequence group within a task sequence group. This sub-group contains the steps needed to capture user state data from the existing operating system on the destination computer prior to reimaging. Similar to the initial group that you added, this sub-group keeps similar task sequence steps together for better organization and error control.|  
-|Set Local State Location|Use this task sequence step to specify a local location using the protected path task sequence variable. The user state is stored on a protected directory on the hard drive.|  
-|Capture User State|Use this task sequence step to capture the user files and settings you want to migrate to the new operating system.|  
-|Install Operating System - **(New Task Sequence Group)**|Create another task sequence sub-group. This sub-group contains the steps needed to install the operating system.|  
-|Reboot to Windows PE or hard disk|Use this task sequence step to specify restart options for the computer that receives this task sequence. This step will display a message to the user indicating that the computer will be restarted so that the installation can continue.<br /><br /> This step uses the read-only **_SMSTSInWinPE** task sequence variable. If the associated value equals **false** the task sequence step will continue.|  
-|Apply Operating System|Use this task sequence step to install the operating system image onto the destination computer. This step deletes all files on that volume (with the exception of Configuration Manager-specific control files) and then applies all volume images contained in the WIM file to the corresponding sequential disk volume. You can also specify a **sysprep** answer file to configure which disk partition to use for the installation.|  
-|Apply Windows Settings|Use this task sequence step to configure the Windows settings configuration information for the destination computer. The windows settings you can apply are user and organizational information, product or license key information, time zone, and the local administrator password.|  
-|Apply Network Settings|Use this task sequence step to specify the network or workgroup configuration information for the destination computer. You can also specify if the computer uses a DHCP server or you can statically assign the IP address information.|  
-|Apply Driver Package|Use this task sequence step to make all device drivers in a driver package available for use by Windows setup. All necessary device drivers must be contained on the stand-alone media.|  
-|Setup Operating System - **(New Task Sequence Group)**|Create another task sequence sub-group. This sub-group contains the steps needed to install the Configuration Manager client.|  
-|Setup Windows and ConfigMgr|Use this task sequence step to install the Configuration Manager client software. Configuration Manager installs and registers the Configuration Manager client GUID. You can assign the necessary installation parameters in the **Installation properties** window.|  
-|Restore User Files and Settings - **(New Task Sequence Group)**|Create another task sequence sub-group. This sub-group contains the steps needed to restore the user state.|  
-|Restore User State|Use this task sequence step to initiate the User State Migration Tool (USMT) to restore the user state and settings that were captured from the Capture User State Action to the destination computer.|  
-
-
-
-<!--HONumber=Dec16_HO4-->
-
+|Captura de arquivos e configurações - **(novo grupo de sequências de tarefas)**|Crie um grupo de sequências de tarefas. Um grupo de sequências de tarefas mantém etapas da sequência de tarefas semelhantes juntas para melhor organização e controle de erro.|  
+|Capturar Configurações do Windows|Use essa etapa de sequência de tarefas para identificar as configurações do Microsoft Windows que são capturadas do sistema operacional existente no computador de destino antes de fazer uma nova imagem. Você pode capturar o nome do computador, usuário e informações organizacionais e as configurações de fuso horário.|  
+|Capturar Configurações da Rede|Use essa etapa de sequência de tarefas para capturar as configurações de rede do computador que recebe a sequência de tarefas. Você pode capturar a associação de grupo de trabalho ou domínio do computador e informações de configuração de adaptador de rede.|  
+|Capturar arquivos de usuário e configurações - **(nova tarefa sequência subgrupo)**|Crie um grupo de sequências de tarefas dentro de um grupo de sequências de tarefas. Esse subgrupo contém as etapas necessárias para capturar dados de estado do usuário do sistema operacional existente no computador de destino antes de fazer uma nova imagem. Semelhante para o grupo inicial que você adicionou, esse subgrupo mantém controlam semelhante etapas da sequência de tarefas para o erro e melhor organização.|  
+|Definir Local estado local|Use essa etapa de sequência de tarefas para especificar um local usando a variável de sequência de tarefas de caminho protegido. O estado do usuário é armazenado em um diretório protegido no disco rígido.|  
+|Capturar Estado do Usuário|Use essa etapa de sequência de tarefas para capturar os arquivos de usuário e configurações que você deseja migrar para o novo sistema operacional.|  
+|Instalar o sistema operacional - **(novo grupo de sequências de tarefas)**|Crie outro grupo de subpropriedades de sequência de tarefas. Esse subgrupo contém as etapas necessárias para instalar o sistema operacional.|  
+|Reinicialize no Windows PE ou o disco rígido|Use essa etapa de sequência de tarefas para especificar opções de reinicialização do computador que recebe essa sequência de tarefas. Esta etapa exibirá uma mensagem para o usuário indicando que o computador será reiniciado para que a instalação possa continuar.<br /><br /> Esta etapa usa somente leitura **_SMSTSInWinPE** variável de sequência de tarefas. Se o valor for igual a **false** continuará a etapa de sequência de tarefas.|  
+|Aplicar Sistema Operacional|Use essa etapa de sequência de tarefas para instalar a imagem do sistema operacional no computador de destino. Esta etapa exclui todos os arquivos nesse volume (com exceção de arquivos de controle específicos do Configuration Manager) e aplica todas as imagens de volume contidas no arquivo WIM para o volume de disco sequencial correspondente. Você também pode especificar um arquivo de resposta **sysprep** para configurar qual partição de disco usar para a instalação.|  
+|Aplicar as Configurações do Windows|Use essa etapa de sequência de tarefas para configurar as informações de configuração de configurações do Windows no computador de destino. Você pode aplicar as configurações do windows são usuários e informações organizacionais, informações de chave de produto ou licença, fuso horário e a senha de administrador local.|  
+|Aplicar Configurações de Rede|Use essa etapa de sequência de tarefas para especificar as informações de configuração de rede ou grupo de trabalho do computador de destino. Você também pode especificar se o computador usa um servidor DHCP ou você pode atribuir estaticamente as informações de endereço IP.|  
+|Aplicar pacote de driver|Use essa etapa de sequência de tarefas para disponibilizar todos os drivers de dispositivo em um pacote de driver para uso pela instalação do Windows. Todos os drivers de dispositivo necessários devem estar contidos na mídia autônoma.|  
+|Configurar o sistema operacional - **(novo grupo de sequências de tarefas)**|Crie outro grupo de subpropriedades de sequência de tarefas. Esse subgrupo contém as etapas necessárias para instalar o cliente do Configuration Manager.|  
+|Instalar Windows e ConfigMgr|Use essa etapa de sequência de tarefas para instalar o software cliente do Configuration Manager. O Configuration Manager instala e registra o GUID do cliente do Configuration Manager. Você pode atribuir os parâmetros necessários para a instalação na janela **Propriedades de instalação** .|  
+|Restaurar arquivos e configurações - **(novo grupo de sequências de tarefas)**|Crie outro grupo de subpropriedades de sequência de tarefas. Esse subgrupo contém as etapas necessárias para restaurar o estado do usuário.|  
+|Restaurar Estado do Usuário|Use essa etapa de sequência de tarefas para iniciar a USMT (Ferramenta de Migração do Usuário) para restaurar o estado e as configurações do usuário que foram capturadas da ação Capturar Estado do Usuário para o computador de destino.|  
 

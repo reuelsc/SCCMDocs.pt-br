@@ -17,8 +17,9 @@ author: robstackmsft
 ms.author: robstack
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: 5155cacf8c8747f2fc439208e7adabdfcaaafb63
-ms.openlocfilehash: 066ac5e676091850d04c330f22ebcfbadb787914
+ms.sourcegitcommit: f9097014c7e988ec8e139e518355c4efb19172b3
+ms.openlocfilehash: da86fc2f61ce8229fb0d3f58a4f8a24d1514b30e
+ms.lasthandoff: 03/04/2017
 
 
 ---
@@ -35,6 +36,9 @@ Um aplicativo do System Center Configuration Manager tem os arquivos e as inform
 -   Crie manualmente o aplicativo e adicione tipos de implantação posteriormente.  
 
 -   Importe um aplicativo de um arquivo.  
+
+> [!NOTE]  
+>  [Criar aplicativos para dispositivos móveis ](../../mdm/deploy-use/create-applications.md) fornece informações detalhadas sobre a criação de aplicativos para Android, Windows Phone e iOS.  
 
 Use as seguintes etapas para criar aplicativos e tipos de implantação do Configuration Manager.  
 
@@ -465,9 +469,4 @@ A tabela a seguir apresenta scripts de exemplo do Microsoft VB (Visual Basic) qu
 |**Mac OS X**|Cria um tipo de implantação para computadores Mac de um arquivo .cmmac criado com a ferramenta CMAppUtil.<br /><br /> Aplica-se somente a computadores Mac que executam o cliente Configuration Manager.|  
 |**Aplicativo Web**|Cria um tipo de implantação que especifica um link para um aplicativo da web. O tipo de implantação instala um atalho para o aplicativo da web no dispositivo do usuário.<br /><br /> Se tiver instalado o navegador gerenciado pelo Intune em dispositivos iOS ou Android que você gerencia, você poderá garantir que os usuários poderão usar somente o navegador gerenciado para abrir o aplicativo. Para fazer isso, use um dos seguintes formatos ao especificar um link para o aplicativo, substituindo **http:** por **http-intunemam:** ou **https:** por **https-intunemam:**<br /><br /> - **http-intunemam://<caminho para o aplicativo Web\>**<br /><br /> - **https-intunemam://<caminho para o aplicativo Web\>**<br /><br /> Você pode usar os requisitos de aplicativo do Configuration Manager para garantir que os aplicativos que deseja associar ao navegador gerenciado sejam instalados apenas em dispositivos iOS e Android.<br /><br /> Para obter mais informações sobre o navegador gerenciado do Intune, consulte [Manage Internet access using managed browser policies](../../apps/deploy-use/manage-internet-access-using-managed-browser-policies.md) (Gerenciar o acesso à Internet usando políticas de navegador gerenciado).|  
 |**Windows Installer por meio do MDM (\*.msi)**|Esse tipo de instalador permite criar e implantar aplicativos baseados no Windows Installer em PCs com o Windows 10.<br /><br /> As seguintes considerações se aplicam quando você usa esse tipo de instalador:<br><br>- Você só pode carregar um único arquivo com a extensão .msi.<br /><br /> - O código do produto do arquivo e a versão do produto são usados para detecção de aplicativo.<br /><br /> - O comportamento de reinicialização padrão do aplicativo será usado. O Configuration Manager não controla isto.<br /><br /> - Serão instalados pacotes do MSI por usuário para um único usuário.<br /><br /> - Serão instalados pacotes do MSI por computador para todos os usuários no dispositivo.<br /><br /> - Atualmente, os pacotes do MSI de modo dual apenas são instalados para todos os usuários no dispositivo.<br /><br /> - As atualizações de aplicativos são permitidas quando o código do produto MSI de cada versão é o mesmo|  
-
-
-
-<!--HONumber=Dec16_HO3-->
-
 

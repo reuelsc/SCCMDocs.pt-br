@@ -2,7 +2,7 @@
 title: "Referência para tarefas de manutenção | Microsoft Docs"
 description: "Leia detalhes para cada uma das tarefas de manutenção de site do System Center Configuration Manager e se essas tarefas são habilitadas por padrão."
 ms.custom: na
-ms.date: 2/7/2017
+ms.date: 3/8/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
@@ -17,8 +17,9 @@ author: Brenduns
 ms.author: brenduns
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: 6e19d1239cb61b570203fdd13563d5f8c5afc6ad
-ms.openlocfilehash: d2e53e7c0cd0dd1a97d3620a14a15369e1d7e0ec
+ms.sourcegitcommit: dcbcd57b95f304f007e92ebe2b9aeefb4b579662
+ms.openlocfilehash: 92d3c215569916a5557309d7f488aa88f387da92
+ms.lasthandoff: 03/09/2017
 
 
 ---
@@ -52,6 +53,11 @@ Este tópico lista detalhes de cada uma das tarefas de manutenção de site do S
 -   **Site primário**: habilitado    
 -   Site secundário: indisponível  
 
+**Excluir Histórico de Download de Cliente Antigo**: use esta tarefa para excluir os dados históricos sobre a fonte de download usada pelos clientes. As informações de fonte baixadas são usadas para preencher o [painel de Fontes de Dados do Cliente](/sccm/core/servers/deploy/configure/monitor-content-you-have-distributed#client-data-sources-dashboard).  
+-  Site de administração central – indisponível
+-     **Site primário** – habilitado
+-  Site secundário - não disponível
+
 **Excluir Operações Antigas do Cliente**: use essa tarefa para excluir todos os dados antigos de operações do cliente do banco de dados do site. Isso inclui, por exemplo, dados de notificações do cliente antigas ou expiradas (como solicitações de download do computador ou políticas do usuário) e do Endpoint Protection (como solicitações de um usuário administrativo para os clientes executarem uma varredura ou baixar definições atualizadas).
 
 -   **Site de administração central**: habilitado    
@@ -63,6 +69,12 @@ Este tópico lista detalhes de cada uma das tarefas de manutenção de site do S
 -   **Site de administração central**: habilitado   
 -   **Site primário**: habilitado    
 -   Site secundário: indisponível  
+
+**Excluir Dados de Tráfego Antigos do Gateway de Gerenciamento de Nuvem**: use esta tarefa para excluir todos os dados antigos de tráfego que passam pelo [gateway de gerenciamento de nuvem](/sccm/core/clients/manage/plan-cloud-management-gateway) do banco de dados do site. Por exemplo, isso inclui dados sobre o número de solicitações, total de bytes de solicitação, total de bytes de resposta, número de solicitações com falha e número máximo de solicitações simultâneas.  
+- **Site de administração central** – habilitado
+- **Site primário** – habilitado
+- Site secundário - não disponível
+
 
 **Excluir Arquivos Antigos Coletados**: use essa tarefa para excluir informações antigas sobre arquivos coletados do banco de dados. Essa tarefa também exclui os arquivos coletados da estrutura de pasta do servidor do site no site selecionado. Por padrão, as cinco cópias mais recentes de arquivos coletados são armazenadas no servidor de sites no diretório **Inboxes\sinv.box\FileCol**. Para obter mais informações, consulte [Introdução ao inventário se software no System Center Configuration Manager](/sccm/core/clients/manage/inventory/introduction-to-software-inventory).  
 
@@ -227,6 +239,11 @@ Esta tarefa só opera em recursos que são clientes do Configuration Manager. É
 -   **Site primário**: habilitado    
 -   Site secundário: indisponível  
 
+**Excluir Registros Órfãos de Estado de Implantação de Cliente**: use esta tarefa para limpar periodicamente a tabela que contém informações sobre o estado de implantação do cliente. Essa tarefa limpará registros associados a dispositivos obsoletos ou encerrados.  
+-   **Site de administração central**: habilitado    
+-   **Site primário**: habilitado    
+-   Site secundário: indisponível 
+
 **Excluir Revisões Não Usadas de Aplicativo**: use essa tarefa para excluir revisões de aplicativos que não são mais referenciadas. Para mais informações, consulte [Como revisar e substituir aplicativos no System Center Configuration Manager](../../../apps/deploy-use/revise-and-supersede-applications.md).  
 
 -   Site de administração central: indisponível    
@@ -288,9 +305,4 @@ Esses mapeamentos são armazenados em uma tabela para referência rápida. Quand
 -   Site de administração central: indisponível    
 -   **Site primário**: habilitado    
 -   Site secundário: indisponível  
-
-
-
-<!--HONumber=Feb17_HO1-->
-
 
