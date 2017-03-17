@@ -8,7 +8,7 @@ ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
 ms.technology:
-- configmgr-client
+- configmgr-hybrid
 ms.tgt_pltfrm: na
 ms.topic: get-started-article
 ms.assetid: b36f5e4a-2b57-4d18-83f6-197081ac2a0a
@@ -54,14 +54,14 @@ As seguintes tarefas explicam como registrar computadores e dispositivos em mass
 
 -   [Verificar o registro do dispositivo](#bkmk_verifyEnroll)  
 
-##  <a name="a-namebkmkcreatecerta-create-a-certificate-profile"></a><a name="bkmk_createCert"></a> Criar um perfil de certificado  
+##  <a name="bkmk_createCert"></a> Criar um perfil de certificado  
  O principal componente do pacote de registro é um perfil de certificado, que é usado para provisionar automaticamente um certificado raiz confiável no dispositivo que está sendo registrado.  Este certificado raiz é necessário para a comunicação confiável entre os dispositivos e as funções do sistema de sites necessários para o Gerenciamento de Dispositivo Móvel Local. Sem o certificado raiz, o dispositivo não seria confiável em conexões HTTPS entre ele e os servidores que hospedam o ponto de registro, o ponto proxy do registro, o ponto de distribuição e as funções do sistema de sites do ponto de gerenciamento de dispositivos.  
 
  Como parte da preparação do sistema para o Gerenciamento de Dispositivo Móvel Local, você exporta um certificado raiz que pode ser usado no perfil de certificado do pacote de registro. Para obter instruções sobre como obter o certificado raiz confiável, consulte [Exportar o certificado com a mesma raiz do certificado do servidor Web](../../mdm/get-started/set-up-certificates-on-premises-mdm.md#bkmk_exportCert).  
 
  Use o certificado raiz exportado para criar um perfil de certificado. Para obter instruções, consulte [How to create certificate profiles in System Center Configuration Manager (Como criar perfis de certificado no System Center Configuration Manager)](../../protect/deploy-use/create-certificate-profiles.md).  
 
-##  <a name="a-namecreatewifia-create-a-wi-fi-profile"></a><a name="CreateWifi"></a> Criar um perfil de Wi-Fi  
+##  <a name="CreateWifi"></a> Criar um perfil de Wi-Fi  
  O outro componente do pacote usado para o registro em massa é um perfil de Wi-Fi. Alguns dispositivos podem não ter a conectividade de rede necessária para dar suporte ao registro até que as configurações de rede sejam provisionadas. Incluir um perfil de Wi-Fi no pacote de registro fornece um meio para estabelecer a conectividade de rede para o dispositivo.  
 
  Para criar um perfil de Wi-Fi no Configuration Manager, siga as instruções descritas em [How to create Wi-Fi profiles in System Center Configuration Manager (Como criar perfis de Wi-Fi no System Center Configuration Manager)](../../protect/deploy-use/create-wifi-profiles.md).  
@@ -78,7 +78,7 @@ As seguintes tarefas explicam como registrar computadores e dispositivos em mass
 >
 > - Embora o Configuration Manager tenha uma configuração de informações do servidor proxy no perfil de Wi-Fi, ele não configura o proxy quando o dispositivo é registrado. Se você precisar configurar um servidor proxy com seus dispositivos registrados, será possível implantar as configurações usando os itens de configuração quando dispositivos forem registrados ou criar o segundo pacote usando a Windows ICD (Designer de Configuração e Imagens) para implantar junto com o pacote de registro em massa.
 
-##  <a name="a-namebkmkcreateenrolla-create-an-enrollment-profile"></a><a name="bkmk_createEnroll"></a> Criar um perfil de registro  
+##  <a name="bkmk_createEnroll"></a> Criar um perfil de registro  
  O perfil de registro permite especificar as configurações necessárias para o registro de dispositivo, incluindo um perfil de certificado que provisionará dinamicamente um certificado raiz confiável no dispositivo e um perfil de Wi-Fi que provisionará as configurações de rede, se necessário.  
 
  Antes de criar um perfil de registro, verifique se você tem um perfil de certificado e um perfil de Wi-Fi (se necessário) criado. Para obter mais informações, consulte [Criar um perfil de certificado](#bkmk_createCert) e [Criar um perfil de Wi-Fi](#CreateWifi).  
@@ -104,7 +104,7 @@ As seguintes tarefas explicam como registrar computadores e dispositivos em mass
 
 8.  Confirme as configurações do perfil de registro e clique em **Avançar**. Clique em **Fechar** para sair do assistente.  
 
-##  <a name="a-namebkmkcreateppkga-create-an-enrollment-package-ppkg-file"></a><a name="bkmk_createPpkg"></a> Criar um arquivo (ppkg) de pacote de registro  
+##  <a name="bkmk_createPpkg"></a> Criar um arquivo (ppkg) de pacote de registro  
  O pacote de registro é o arquivo usado para registrar dispositivos em massa para o Gerenciamento de Dispositivo Móvel Local.  Este arquivo deve ser criado com o Configuration Manager. É possível criar tipos semelhantes de pacotes com o Windows ICD (Designer de Configuração e Imagens), mas apenas os pacotes criados no Configuration Manager podem ser usados para registrar dispositivos para o Gerenciamento de Dispositivo Móvel local do início ao fim. Os pacotes criados com o Windows ICD podem fornecer somente o nome UPN necessário para o registro, mas não executam o processo de registro real.  
 
  O processo para criar o pacote de registro requer o Windows ADK (Kit de Avaliação e Implantação do Windows) para o Windows 10.  No servidor que executa o console do Configuration Manager, certifique-se de ter a versão 1511 do Windows ADK instalada. Para mais informações, consulte a seção [Baixar kits e ferramentas para o Windows 10](https://msdn.microsoft.com/windows/hardware/dn913721.aspx)do ADK  
@@ -125,7 +125,7 @@ As seguintes tarefas explicam como registrar computadores e dispositivos em mass
 
 4.  Clique em **OK**.  
 
-##  <a name="a-namebkmkgetppkga-use-the-package-to-bulk-enroll-a-device"></a><a name="bkmk_getPpkg"></a> Usar o pacote para registrar um dispositivo em massa  
+##  <a name="bkmk_getPpkg"></a> Usar o pacote para registrar um dispositivo em massa  
  É possível usar o pacote para registrar dispositivos antes ou depois que o dispositivo tiver sido configurado por meio do processo OOBE (tela de apresentação).   O pacote de registro também pode ser incluído como parte de um pacote de provisionamento do OEM (fabricante de equipamento original).  
 
  O pacote deve ser fisicamente entregue ao dispositivo para ser usado para o registro em massa. É possível entregar o pacote de registro para o dispositivo de várias maneiras, dependendo de suas necessidades, incluindo:  
@@ -160,7 +160,7 @@ As seguintes tarefas explicam como registrar computadores e dispositivos em mass
 
 6.  Clique na conta e em **Sincronizar**, o que iniciará o gerenciamento com o Configuration Manager.  
 
-##  <a name="a-namebkmkverifyenrolla-verify-enrollment-of-device"></a><a name="bkmk_verifyEnroll"></a> Verificar o registro do dispositivo  
+##  <a name="bkmk_verifyEnroll"></a> Verificar o registro do dispositivo  
  É possível verificar se os dispositivos foram registrados com êxito no console do Configuration Manager.  
 
 -   Inicie o console do Configuration Manager.  
