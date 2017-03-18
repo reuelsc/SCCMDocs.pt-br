@@ -16,9 +16,9 @@ ms.author: mtillman
 manager: angrobe
 ROBOTS: NOINDEX, NOFOLLOW
 translationtype: Human Translation
-ms.sourcegitcommit: bd870d66bb1a482cb5985f1fc0fe66a7dee206eb
-ms.openlocfilehash: d286b038c900873154d3a0761aa1eaface47e186
-ms.lasthandoff: 01/14/2017
+ms.sourcegitcommit: 2c723fe7137a95df271c3612c88805efd8fb9a77
+ms.openlocfilehash: 623a30eddebcae196ff345ef5debc8183ecd6ae6
+ms.lasthandoff: 03/16/2017
 
 ---
 # <a name="past-hybrid-features-with-system-center-configuration-manager-and-microsoft-intune"></a>Recursos híbridos anteriores com o System Center Configuration Manager e Microsoft Intune

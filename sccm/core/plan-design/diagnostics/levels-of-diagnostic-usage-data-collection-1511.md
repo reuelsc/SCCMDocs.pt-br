@@ -36,6 +36,7 @@ translation.priority.ht:
 translationtype: Human Translation
 ms.sourcegitcommit: 34a4c3d0d641c4ab03e068c6dad78300057861bd
 ms.openlocfilehash: 4c7717e4f5a20c5c8d20fef21d0c67172b3198bd
+ms.lasthandoff: 03/16/2017
 
 ---
 # <a name="levels-of-diagnostic-usage-data-collection-for-version-1511-of-system-center-configuration-manager"></a>Níveis da coleta de dados de diagnóstico e de uso da versão 1511 do System Center Configuration Manager
@@ -47,13 +48,13 @@ O System Center Configuration Manager versão 1511 coleta três níveis de dados
 > [!IMPORTANT]  
 >  O Configuration Manager não coleta códigos do site, nomes de site, endereços IP, nomes de usuário, nomes de computador, endereços físicos nem endereços de email nos níveis Básico ou Avançado. Qualquer coleta dessas informações no nível Completo não é proposital, ou seja, é potencialmente incluída nas informações de diagnóstico avançado como arquivos de log ou instantâneos de memória. A Microsoft não usará essas informações para identificá-lo, contatá-lo nem para desenvolver publicidade.  
 
-##  <a name="a-namebkmkchangea-how-to-change-the-level"></a><a name="bkmk_change"></a> Como alterar o nível  
+##  <a name="bkmk_change"></a> Como alterar o nível  
  Os administradores que têm um escopo administrativo baseado em função que inclui permissões **Modificar** na classe de objeto **Site** podem alterar o nível dos dados coletados nas configurações de Dados de Diagnóstico e de Uso no console do Configuration Manager.
 
  Para fazer isso, no console, acesse a guia Backstage (a guia superior esquerda com a seta suspensa), selecione **Dados de Uso** e, em seguida, selecione o nível de dados que você deseja usar.  
 
 
-##  <a name="a-namebkmklevel1a-level-1---basic"></a><a name="bkmk_level1"></a> Nível 1 — Básico  
+##  <a name="bkmk_level1"></a> Nível 1 — Básico  
  O nível Básico inclui dados sobre sua hierarquia, dados necessários para ajudar a melhorar sua experiência de instalação ou de atualização e dados que ajudam a determinar as atualizações do Configuration Manager aplicáveis à sua hierarquia.  
 
  A partir da versão 1511 do System Center Configuration Manager, este nível inclui o seguinte:  
@@ -94,7 +95,7 @@ O System Center Configuration Manager versão 1511 coleta três níveis de dados
 
 -   Estatísticas de telemetria (quando executar, tempo de execução e erros)  
 
-##  <a name="a-namebkmklevel2a-level-2---enhanced"></a><a name="bkmk_level2"></a> Nível 2 - Avançado  
+##  <a name="bkmk_level2"></a> Nível 2 - Avançado  
 O nível Avançado é o padrão após a conclusão da instalação. Esse nível inclui dados coletados no nível Básico, dados específicos ao recurso (frequência e duração de uso), configurações do cliente do Configuration Manager (nome do componente, estado e algumas configurações como intervalos de sondagem), bem como informações básicas sobre atualizações de software.  
 
 Esse nível é recomendado porque fornece à Microsoft o mínimo de dados necessários para fazer melhorias úteis em versões futuras de produtos e serviços. Esse nível não coleta nomes de objeto (sites, usuários, computadores ou objetos), detalhes sobre objetos relacionados à segurança ou vulnerabilidades como contagens de sistemas que exigem atualizações de software.  
@@ -251,7 +252,7 @@ A partir da versão 1511 do System Center Configuration Manager, este nível inc
 
     -   Contagem de coleções por tipo  
 
-##  <a name="a-namebkmklevel3a-level-3---full"></a><a name="bkmk_level3"></a> Nível 3 - Completo  
+##  <a name="bkmk_level3"></a> Nível 3 - Completo  
 O nível Completo inclui todos os dados nos níveis Básico e Avançado. Também inclui informações adicionais sobre o Endpoint Protection, o percentual de conformidade da atualização e as informações de atualização de software. Esse nível também pode incluir informações de diagnóstico avançado, como arquivos do sistema e instantâneos de memória, que podem incluir informações pessoais que existiam na memória ou nos arquivos de log no momento da captura.  
 
 A partir da versão 1511 do System Center Configuration Manager, este nível inclui o seguinte:  
@@ -281,9 +282,4 @@ A partir da versão 1511 do System Center Configuration Manager, este nível inc
 -   Percentuais de êxito de verificação da atualização de software  
 
 -   Número mínimo/máximo/médio de horas desde a última verificação de atualização de software  
-
-
-
-<!--HONumber=Jan17_HO4-->
-
 
