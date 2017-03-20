@@ -19,6 +19,7 @@ manager: angrobe
 translationtype: Human Translation
 ms.sourcegitcommit: 89158debdf4c345a325feeb608db2215a88ed81b
 ms.openlocfilehash: 485cb3ca4988f983c1ec71b6c8daf136571bf0ea
+ms.lasthandoff: 01/24/2017
 
 
 ---
@@ -28,10 +29,10 @@ ms.openlocfilehash: 485cb3ca4988f983c1ec71b6c8daf136571bf0ea
 
 As imagens do sistema operacional no System Center Configuration Manager são arquivos WIM e representam uma coleção compactada de arquivos e pastas de referência necessários para instalar e configurar com êxito um sistema operacional em um computador. Uma imagem personalizada do sistema operacional é compilada e capturada de um computador de referência configurado com todos os arquivos do sistema operacional, os arquivos de suporte, as atualizações de software, as ferramentas e os outros aplicativos de software. A proporção de configuração manual do computador de referência fica a seu critério. É possível automatizar completamente a configuração do computador de referência usando uma sequência de tarefas de criação e captura, configurar manualmente certos aspectos do computador de referência e depois automatizar o restante usando sequências de tarefas, ou ainda configurar manualmente o computador de referência sem usar sequências de tarefas. Use as seções a seguir para personalizar um sistema operacional.
 
-##  <a name="a-namebkmkpreparereferencecomputera-prepare-for-the--reference-computer"></a><a name="BKMK_PrepareReferenceComputer"></a> Preparar o computador de referência  
+##  <a name="BKMK_PrepareReferenceComputer"></a> Preparar o computador de referência  
  Há várias coisas a ser consideradas antes de capturar uma imagem do sistema operacional de um computador de referência.  
 
-###  <a name="a-namebkmkrefcomputerdecidea-decide-between-an-automated-or-manual-configuration"></a><a name="BKMK_RefComputerDecide"></a> Decidir entre uma configuração manual ou automatizada  
+###  <a name="BKMK_RefComputerDecide"></a> Decidir entre uma configuração manual ou automatizada  
  Veja a seguir as vantagens e desvantagens de configurações automatizada e manual do computador de referência.  
 
 #### <a name="automated-configuration"></a>Configuração automatizada  
@@ -66,7 +67,7 @@ As imagens do sistema operacional no System Center Configuration Manager são ar
 
 -   Exige que uma pessoa esteja ativamente envolvida em todo o processo.  
 
-###  <a name="a-namebkmkrefcomputerconsiderationsa-considerations-for-the-reference-computer"></a><a name="BKMK_RefComputerConsiderations"></a> Considerações para o computador de referência  
+###  <a name="BKMK_RefComputerConsiderations"></a> Considerações para o computador de referência  
  A lista a seguir relaciona os itens básicos que devem ser considerados ao se configurar um computador de referência.  
 
 -   **Sistema operacional a implantar**  
@@ -110,7 +111,7 @@ As imagens do sistema operacional no System Center Configuration Manager são ar
 
      É possível configurar o computador de referência com as propriedades de personalização de área de trabalho que você deseja incluir ao capturar a imagem do sistema operacional do computador de referência. As propriedades da área de trabalho incluem papel de parede, identidade visual organizacional e um perfil de usuário padrão.  
 
-##  <a name="a-namebkmkmanuallybuildreferencea-manually-build-a-reference-computer"></a><a name="BKMK_ManuallyBuildReference"></a> Criar um computador de referência manualmente  
+##  <a name="BKMK_ManuallyBuildReference"></a> Criar um computador de referência manualmente  
  Use o procedimento a seguir para criar manualmente um computador de referência.  
 
 > [!NOTE]  
@@ -133,13 +134,8 @@ As imagens do sistema operacional no System Center Configuration Manager são ar
 
  Depois que o computador de referência estiver pronto, use uma sequência de tarefas para capturar a imagem do sistema operacional do computador de referência.  Para obter etapas detalhadas, veja [Capturar uma imagem do sistema operacional de um computador de referência existente](../deploy-use/create-a-task-sequence-to-capture-an-operating-system.md#BKMK_CaptureExistingRefComputer).  
 
-##  <a name="a-namebkmkusetstobuildreferencea-use-a-task-sequence-to-build-a-reference-computer"></a><a name="BKMK_UseTSToBuildReference"></a> Use uma sequência de tarefas para criar um computador de referência  
+##  <a name="BKMK_UseTSToBuildReference"></a> Use uma sequência de tarefas para criar um computador de referência  
  É possível automatizar o processo para criar um computador de referência usando uma sequência de tarefas para implantar o sistema operacional, drivers, aplicativos e assim por diante.  Use as etapas a seguir para compilar o computador de referência e capturar a imagem do sistema operacional do computador de referência.  
 
--   Use uma sequência de tarefas para compilar e capturar a imagem do sistema operacional do computador de referência.  Para obter etapas detalhadas, consulte [Use a task sequence to build and capture a reference computer](../deploy-use/create-a-task-sequence-to-capture-an-operating-system.md#BKMK_BuildCaptureTS).  
-
-
-
-<!--HONumber=Jan17_HO4-->
-
+-   Use uma sequência de tarefas para compilar e capturar a imagem do sistema operacional do computador de referência.  Para obter etapas detalhadas, consulte [Use uma sequência de tarefas para criar e capturar um computador de referência](../deploy-use/create-a-task-sequence-to-capture-an-operating-system.md#BKMK_BuildCaptureTS).  
 
