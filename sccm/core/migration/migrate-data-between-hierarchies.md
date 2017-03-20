@@ -19,6 +19,7 @@ manager: angrobe
 translationtype: Human Translation
 ms.sourcegitcommit: a8959c72608a1531fb323176c33a848a4a669b1c
 ms.openlocfilehash: dface33392c2a2a662522656eabf0936b52b28fc
+ms.lasthandoff: 12/30/2016
 
 
 ---
@@ -42,7 +43,7 @@ Considere o seguinte ao planejar sua estratégia de migração:
 
 -   Você pode mover dados de vários sites de origem para um único site na hierarquia de destino.  
 
-##  <a name="a-namebkmkmigrationconceptsa-concepts-for-migration"></a><a name="BKMK_MigrationConcepts"></a> Conceitos de migração  
+##  <a name="BKMK_MigrationConcepts"></a> Conceitos de migração  
  Você pode encontrar os seguintes conceitos e termos ao usar a migração.  
 
 |Conceito ou termo|Mais informações|  
@@ -52,11 +53,11 @@ Considere o seguinte ao planejar sua estratégia de migração:
 |Hierarquia de destino|Uma hierarquia do System Center Configuration Manager em que é executada a migração para importar dados de uma hierarquia de origem.|  
 |Coleta de dados|O processo contínuo de identificar as informações em uma hierarquia de origem que podem ser migradas para a hierarquia de destino. O Configuration Manager verifica a hierarquia de origem em um agendamento para identificar alterações às informações na hierarquia de origem que você migrou anteriormente e que você pode desejar atualizar na hierarquia de destino.<br /><br /> Para obter mais informações, consulte [Coleta de dados](../../core/migration/planning-a-source-hierarchy-strategy.md#BKMK_Data_Gathering) em [Planejamento de uma estratégia de hierarquia de origem no System Center Configuration Manager](../../core/migration/planning-a-source-hierarchy-strategy.md).|  
 |Trabalhos de migração|O processo de configurar os objetos específicos para migrar, e então gerenciar a migração desses objetos para a hierarquia de destino.<br /><br /> Para mais informações, consulte [Planejamento de uma estratégia de trabalho de migração no System Center Configuration Manager](../../core/migration/planning-a-migration-job-strategy.md)|  
-|Migração do cliente|O processo de transferência de informações que clientes usam do banco de dados do site de origem ao banco de dados da hierarquia de destino. A migração dos dados é seguida por uma atualização do software do cliente nos dispositivos com a versão de software do cliente da hierarquia de destino.<br /><br /> Para obter mais informações, consulte [Planning a client migration strategy in System Center Configuration Manager](../../core/migration/planning-a-client-migration-strategy.md).|  
+|Migração do cliente|O processo de transferência de informações que clientes usam do banco de dados do site de origem ao banco de dados da hierarquia de destino. A migração dos dados é seguida por uma atualização do software do cliente nos dispositivos com a versão de software do cliente da hierarquia de destino.<br /><br /> Para obter mais informações, consulte [Planejamento de uma estratégia de migração de cliente no System Center Configuration Manager](../../core/migration/planning-a-client-migration-strategy.md).|  
 |Pontos de distribuição compartilhados|Os pontos de distribuição da hierarquia de origem que são compartilhados com a hierarquia de destino durante o período de migração.<br /><br /> Durante o período de migração, os clientes atribuídos aos sites na hierarquia de destino podem obter conteúdo dos pontos de distribuição compartilhados.<br /><br /> Para obter mais informações, veja [Compartilhar pontos de distribuição entre hierarquias de origem e de destino](../../core/migration/planning-a-content-deployment-migration-strategy.md#About_Shared_DPs_in_Migration) em [Planejamento de uma estratégia de migração de implantação de conteúdo no System Center Configuration Manager](../../core/migration/planning-a-content-deployment-migration-strategy.md).|  
 |Monitorando a migração|O processo de monitoramento de atividades de migração. Você monitora o progresso e o sucesso da migração no nó **Migração** no espaço de trabalho **Administração**.<br /><br /> Para mais informações, consulte [Planejamento para monitorar a atividade de migração no System Center Configuration Manager](../../core/migration/planning-to-monitor-migration-activity.md).|  
 |Parar Coleta de Dados|O processo de interromper a coleta de dados de sites de origem. Quando você não tiver mais dados para migrar de uma hierarquia de origem ou se desejar pausar as atividades relacionadas à migração, poderá configurar a hierarquia de destino para interromper a coleta de dados da hierarquia de origem.<br /><br /> Para obter mais informações, consulte [Coleta de dados](../../core/migration/planning-a-source-hierarchy-strategy.md#BKMK_Data_Gathering) em [Planejamento de uma estratégia de hierarquia de origem no System Center Configuration Manager](../../core/migration/planning-a-source-hierarchy-strategy.md).|  
-|Limpar dados de migração|O processo de concluir a migração de uma hierarquia de origem removendo as informações sobre a migração do banco de dados das hierarquias de destino.<br /><br /> Para obter mais informações, consulte [Planning to complete migration in System Center Configuration Manager](../../core/migration/planning-to-complete-migration.md).|  
+|Limpar dados de migração|O processo de concluir a migração de uma hierarquia de origem removendo as informações sobre a migração do banco de dados das hierarquias de destino.<br /><br /> Para obter mais informações, consulte [Planejamento da conclusão da migração no System Center Configuration Manager](../../core/migration/planning-to-complete-migration.md).|  
 
 ## <a name="typical-workflow-for-migration"></a>Fluxo de trabalho típico para migração  
 Para configurar um fluxo de trabalho para migração:
@@ -75,7 +76,7 @@ Para configurar um fluxo de trabalho para migração:
 
 Depois de migrar dados de uma hierarquia de origem do Configuration Manager que não usará mais para gerenciar seu ambiente, você pode encerrar essa hierarquia de origem e essa infraestrutura.  
 
-##  <a name="a-namebkmkmigrationscenariosa-migration-scenarios"></a><a name="BKMK_MigrationScenarios"></a> Cenários de migração  
+##  <a name="BKMK_MigrationScenarios"></a> Cenários de migração  
  O Configuration Manager dá suporte aos seguintes cenários de migração.  
 
 > [!NOTE]  
@@ -110,9 +111,4 @@ Depois de migrar dados de uma hierarquia de origem do Configuration Manager que 
 
 ## <a name="see-also"></a>Consulte também  
  [Começar a usar o System Center Configuration Manager](../../core/servers/deploy/start-using.md)
-
-
-
-<!--HONumber=Dec16_HO5-->
-
 
