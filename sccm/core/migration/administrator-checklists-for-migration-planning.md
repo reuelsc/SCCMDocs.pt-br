@@ -19,6 +19,7 @@ manager: angrobe
 translationtype: Human Translation
 ms.sourcegitcommit: 5e6e8a18a8fc705c993177b3c5b4113a351a45a4
 ms.openlocfilehash: 36f7c37e4da3f2bce64a25d266dae57d9fe98c36
+ms.lasthandoff: 12/30/2016
 
 
 ---
@@ -28,7 +29,7 @@ ms.openlocfilehash: 36f7c37e4da3f2bce64a25d266dae57d9fe98c36
 
 Use as listas de verificação do administrador a seguir para ajudá-lo a planejar sua estratégia de migração para o System Center Configuration Manager.
 
-##  <a name="a-namechecklistmigraitonplanninga-administrator-checklist-for-migration-planning"></a><a name="Checklist_Migraiton_Planning"></a> Lista de verificação do administrador para planejamento de migração  
+##  <a name="Checklist_Migraiton_Planning"></a> Lista de verificação do administrador para planejamento de migração  
  Use a seguinte lista de verificação para as etapas de planejamento da pré-migração:  
 
 -   **Avalie o ambiente atual:**  
@@ -37,7 +38,7 @@ Use as listas de verificação do administrador a seguir para ajudá-lo a planej
 
 -   **Examine a funcionalidade e as alterações disponíveis com a versão do Configuration Manager que você utiliza e use essas informações para ajudá-lo a criar sua hierarquia de destino:**  
 
-    Para obter mais informações, consulte [Fundamentals of System Center Configuration Manager](../../core/understand/fundamentals.md) e [What's new in System Center Configuration Manager](../../core/plan-design/changes/what-has-changed-from-configuration-manager-2012.md).  
+    Para obter mais informações, consulte [Aspectos fundamentais do System Center Configuration Manager](../../core/understand/fundamentals.md) e [Novidades no System Center Configuration Manager](../../core/plan-design/changes/what-has-changed-from-configuration-manager-2012.md).  
 
 
 -   **Determine o modelo de segurança administrativa a ser usado para a administração baseada em função:**  
@@ -76,7 +77,7 @@ Use as listas de verificação do administrador a seguir para ajudá-lo a planej
 
     Decida quando objetos e clientes serão migrados. Após a conclusão da migração, você pode planejar o encerramento dos servidores do site na hierarquia de origem.  
 
-##  <a name="a-namechecklisthierarchyformigrationa-administrator-checklist-for-hierarchy-migration"></a><a name="Checklist_Hierarchy_for_migration"></a> Lista de verificação do administrador para migração de hierarquia  
+##  <a name="Checklist_Hierarchy_for_migration"></a> Lista de verificação do administrador para migração de hierarquia  
 Use a seguinte lista de verificação para ajudá-lo a planejar uma hierarquia de destino antes de começar a migração.  
 
 -   **Identifique os computadores para usar na hierarquia de destino:**  
@@ -113,7 +114,7 @@ Use a seguinte lista de verificação para ajudá-lo a planejar uma hierarquia d
     -   Verifique se os clientes do Configuration Manager instalados na hierarquia de destino podem se comunicar com êxito com seu site atribuído.  
 
 
-##  <a name="a-namechecklisitmigrationa-administrator-checklist-for-migration"></a><a name="Checklisit_Migration"></a> Lista de verificação do administrador para migração  
+##  <a name="Checklisit_Migration"></a> Lista de verificação do administrador para migração  
 Use a seguinte lista de verificação para migrar dados da hierarquia de origem para a hierarquia de destino.  
 
 -   **Habilite a migração na hierarquia de destino:**  
@@ -164,9 +165,4 @@ Use a seguinte lista de verificação para migrar dados da hierarquia de origem 
 -   **Concluir a migração:**  
 
     Depois ter migrar dados e clientes de todos os sites na hierarquia de origem e atualizar os pontos de distribuição aplicáveis, é possível concluir a migração. Para concluir a migração, você interrompe a coleta de dados para cada site de origem na hierarquia de origem. Em seguida, remova as informações de migração das quais não precisa e encerre sua infraestrutura de hierarquia de origem. Para obter mais informações, consulte [Planning to complete migration in System Center Configuration Manager](../../core/migration/planning-to-complete-migration.md).  
-
-
-
-<!--HONumber=Dec16_HO5-->
-
 
