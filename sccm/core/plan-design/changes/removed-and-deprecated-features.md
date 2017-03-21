@@ -2,7 +2,7 @@
 title: Recursos preteridos | Microsoft Docs
 description: "Saiba mais sobre os recursos, produtos e sistemas operacionais aos quais o System Center Configuration Manager não dá mais suporte."
 ms.custom: na
-ms.date: 1/5/2017
+ms.date: 3/9/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
@@ -17,8 +17,9 @@ author: Brenduns
 ms.author: brenduns
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: 1948e2914fff91f156dd8956c018ff0fabcda2f9
-ms.openlocfilehash: 3a1edd1b59676e59d4bfcd4c01a23f7a04f91f4f
+ms.sourcegitcommit: 477ffa5d61d2dfaedf8a3a1f5687e2d72698ad28
+ms.openlocfilehash: cb57a8699081415af7e2e9dc29b0a321f100823d
+ms.lasthandoff: 03/10/2017
 
 
 ---
@@ -58,14 +59,14 @@ Para obter mais informações, consulte:
 
 Detalhes adicionais dos recursos removidos na versão 1511 da liberação do System Center Configuration Manager:
 
-###  <a name="a-namebkmkamta-out-of-band-management"></a><a name="bkmk_amt"></a> Gerenciamento fora da banda  
+###  <a name="bkmk_amt"></a> Gerenciamento fora da banda  
  Com o Configuration Manager, o suporte nativo para computadores baseados em AMT de dentro do console do Configuration Manager foi removido.  
 
 -   Os computadores baseados em AMT permanecem totalmente gerenciados quando você usa o [Complemento Intel SCS para o Microsoft System Center Configuration Manager](http://www.intel.com/content/www/us/en/software/setup-configuration-software.html). O uso do complemento fornece acesso aos recursos mais recentes para gerenciar o AMT e, ao mesmo tempo, remove as limitações introduzidas até que o Configuration Manager possa incorporar essas mudanças.  
 
 -   O gerenciamento fora de banda no System Center 2012 Configuration Manager não é afetado por essa alteração.  
 
-###  <a name="a-namebkmknapa-network-access-protection"></a><a name="bkmk_nap"></a> Proteção de Acesso à Rede  
+###  <a name="bkmk_nap"></a> Proteção de Acesso à Rede  
  O System Center Configuration Manager removeu o suporte para a Proteção de Acesso à Rede. O recurso foi preterido no Windows Server 2012 R2 e removido do Windows 10.  
 
  Para alternativas de proteção de acesso à rede, consulte a seção *Funcionalidade preterida* de [Visão Geral dos Serviços de Acesso e Política de Rede](https://technet.microsoft.com/library/hh831683.aspx).  
@@ -76,10 +77,10 @@ Detalhes adicionais dos recursos removidos na versão 1511 da liberação do Sys
 
 |**Sistemas operacionais**|**Substituição anunciada pela primeira vez**|**Suporte removido** |  
 |-|-|-|  
-|Windows Server 2008|10 de julho de 2015|O suporte termina com a primeira atualização liberada após 31 de dezembro de 2016 (veja a observação 1).|  
+|Windows Server 2008|10 de julho de 2015|1511 </br></br>O suporte como um sistema de sites foi removido. (Consulte a observação 1).|  
 |Windows Server 2008 R2|10 de julho de 2015|O suporte termina com a primeira atualização liberada após 31 de dezembro de 2016 (veja a observação 2).|  
 
--   Observação 1: após o término do suporte, esse sistema operacional não dará mais suporte a servidores do site ou à maioria das funções do sistema de sites. No entanto, ele permanecerá com suporte para a função do sistema de sites de ponto de distribuição (incluindo ponto de distribuição pull) até o anúncio de que esse suporte será preterido ou a expiração do período de suporte estendido desse sistema operacional.  
+-   Observação 1: não há suporte para esse sistema operacional para servidores do site ou funções do sistema de sites, com exceção do ponto de distribuição e do ponto de distribuição pull. Você pode continuar a usar esse sistema operacional como um ponto de distribuição até que a substituição desse suporte seja anunciada ou o período de suporte estendido do sistema operacional expire. Para obter mais informações, consulte [Installation of System Center Configuration Manager CB and LTSB fails on Windows Server 2008](https://support.microsoft.com/help/4015095) (A instalação do CB e do LTSB do System Center Configuration Manager falha no Windows Server 2008). 
 
 -   Observação 2: após o término do suporte, esse sistema operacional não dará mais suporte a servidores do site ou à maioria das funções do sistema de sites. No entanto, ele permanecerá com suporte para a função de sistema de sites de ponto de migração de estado e de ponto de distribuição (incluindo pontos de distribuição pull e para PXE e multicast) até o anúncio de que esse suporte será preterido ou a expiração do período de suporte estendido desse sistema operacional. Da versão 1602 em diante, você pode atualizar in-loco o sistema operacional de um servidor do site do Windows Server 2008 R2 para o Windows Server 2012 R2.  
 
@@ -110,9 +111,4 @@ Detalhes adicionais dos recursos removidos na versão 1511 da liberação do Sys
 |-|-|-|  
 |SQL Server 2008|10 de julho de 2015|Versão 1511|  
 |SQL Server 2008 R2|10 de julho de 2015|O suporte termina com a primeira atualização liberada após 31 de dezembro de 2016.|  
-
-
-
-<!--HONumber=Feb17_HO2-->
-
 

@@ -2,7 +2,7 @@
 title: "Conceitos básicos do gerenciamento de conteúdo | Microsoft Docs"
 description: "Use as ferramentas e opções no System Center Configuration Manager para gerenciar o conteúdo que você implanta."
 ms.custom: na
-ms.date: 10/06/2016
+ms.date: 3/15/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
@@ -17,9 +17,9 @@ author: Brenduns
 ms.author: brenduns
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: 83020f532edd7a640f0087aad40789e026f75913
-ms.openlocfilehash: 00751cd03a3dd49718994e31bc396e4e7d29ed2b
-ms.lasthandoff: 02/28/2017
+ms.sourcegitcommit: 766120f5ca79f279a513b62c35a2374c859b253a
+ms.openlocfilehash: 079be3c97e4239f8c5293bed5a2ce13abfbe7798
+ms.lasthandoff: 03/15/2017
 
 
 ---
@@ -63,7 +63,7 @@ Para obter mais informações sobre essas contas, consulte [Gerenciar contas par
 -   O Configuration Manager dá suporte a até cinco versões incrementais de um conjunto de conteúdo antes de reenviar o todo o conjunto do conteúdo. Após a quinta atualização, a próxima alteração no conjunto de conteúdo faz com que o Configuration Manager crie uma nova versão do conjunto de conteúdo. O Configuration Manager distribui a nova versão do conteúdo definido para substituir o conjunto anterior e qualquer uma de suas versões incrementais. Depois que o novo conjunto de conteúdo é distribuído, alterações incrementais subsequentes aos arquivos de origem são novamente replicadas pela replicação diferencial binária.  
 
 
-A BDR tem suporte entre cada site pai e filho de uma hierarquia. Dentro de um site, a BDR tem suporte entre o servidor do site e seus pontos de distribuição. Esse suporte inclui pontos de distribuição de recepção mas não pontos de distribuição baseados em nuvem. Pontos de distribuição com base na nuvem não oferecem suporte a replicação diferencial binária para a transferência de conteúdo.  
+A BDR tem suporte entre cada site pai e filho de uma hierarquia. Em um site, a BDR tem suporte entre o servidor do site e seus pontos de distribuição normais. No entanto, os pontos de distribuição pull e os pontos de distribuição baseados em nuvem não dão suporte à replicação diferencial binária para a transferência de conteúdo. Os pontos de distribuição pull dão suporte a deltas de nível de arquivo, transferindo novos arquivos, mas não os blocos em um arquivo.
 
 Aplicativos sempre usam replicação diferencial binária. A replicação diferencial binária é opcional para pacotes e não é habilitada por padrão. Para usar replicação diferencial binária para pacotes, você deve habilitar esta funcionalidade para cada pacote. Para tanto, selecione a opção **Habilitar replicação diferencial binária** ao criar um novo pacote ou ao editar a guia **Fonte de Dados** das propriedades do pacote.  
 

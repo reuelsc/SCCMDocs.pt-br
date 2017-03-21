@@ -2,7 +2,7 @@
 title: "Proteção Avançada contra Ameaças do Windows Defender | Microsoft Docs"
 description: "Saiba como gerenciar e monitorar a Proteção Avançada contra Ameaças do Windows Defender, um novo serviço que ajuda as empresas a responder a ataques avançados."
 ms.custom: na
-ms.date: 10/06/2016
+ms.date: 03/07/2017
 ms.prod: configuration-manager
 ms.technology:
 - configmgr-other
@@ -16,8 +16,9 @@ author: NathBarn
 ms.author: nathbarn
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: 299fada2b6587ace44e635c4f26cc7a482d44843
-ms.openlocfilehash: 880ea4fcb0730f0e9adbc9f142262f241f5df9dc
+ms.sourcegitcommit: 8f4ec982a54cf3cefef310268a54850e70e2e63a
+ms.openlocfilehash: 237dc9cbccb973720a633490f096aed4bc16d183
+ms.lasthandoff: 03/13/2017
 
 ---
 # <a name="windows-defender-advanced-threat-protection"></a>Proteção Avançada contra Ameaças do Windows Defender
@@ -110,10 +111,6 @@ O Windows Defender ATP é um serviço da [Central de Segurança do Windows](http
 > Os arquivos de configuração do Windows Defender ATP contém informações confidenciais que devem ser mantidas seguras.
 
 [Proteção Avançada contra Ameaças do Windows Defender](https://technet.microsoft.com/itpro/windows/keep-secure/windows-defender-advanced-threat-protection)
+
 [Solucionar problemas de integração da Proteção Avançada contra Ameaças do Windows Defender](https://technet.microsoft.com/itpro/windows/keep-secure/troubleshoot-onboarding-windows-defender-advanced-threat-protection)
-
-
-
-<!--HONumber=Dec16_HO3-->
-
 

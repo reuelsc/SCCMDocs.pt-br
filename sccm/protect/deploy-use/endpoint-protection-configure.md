@@ -16,8 +16,9 @@ author: NathBarn
 ms.author: nathbarn
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: 017bd5b899b364fc832c721d63cc7dbad0a11671
-ms.openlocfilehash: 92ab3f7470fd977e5f849bea54aca1a7ef460562
+ms.sourcegitcommit: a8218e23743dafaf8ff1166142cf2dcca1212133
+ms.openlocfilehash: 6917644d6719a1ca636713aa5aebf277927123c8
+ms.lasthandoff: 03/14/2017
 
 
 ---
@@ -42,11 +43,6 @@ Antes de usar o Endpoint Protection para gerenciar a segurança e malware em com
 |**Etapa 1:** [Criar uma função do sistema de sites do ponto do Endpoint Protection](endpoint-protection-site-role.md)|A função do sistema de sites do ponto do Endpoint Protection deve ser instalada antes que você possa usar o Endpoint Protection. Ela deve estar instalada em apenas um servidor do sistema de sites e deve estar instalada no topo da hierarquia em um site de administração central ou em um site primário autônomo. |  
 |**Etapa 2:** [Configurar alertas para o Endpoint Protection](endpoint-configure-alerts.md)|Os alertas informam o administrador quando eventos específicos ocorrem, como no caso de uma infecção por malware. Os alertas são exibidos no nó **Alertas** do espaço de trabalho **Monitoramento** ou, como opção, podem ser enviados por email para usuários especificados. |  
 |**Etapa 3:** [Configurar atualizações de definição para o Endpoint Protection](endpoint-definition-updates.md)|O Endpoint Protection pode ser configurado para usar várias origens para baixar atualizações de definições. |  
-|**Etapa 4:** [Configurar a política antimalware padrão e criar políticas antimalware personalizadas](endpoint-antimalware-policies.md)|A política antimalware padrão é aplicada quando o cliente do Endpoint Protection está instalado. As políticas personalizadas que você implantou são aplicadas por padrão até 60 minutos após a implantação do cliente. Verifique se você configurou políticas antimalware antes de implantar o cliente Endpoint Protection. Confira |  
+|**Etapa 4:** [Configurar a política antimalware padrão e criar políticas antimalware personalizadas](endpoint-antimalware-policies.md)|A política antimalware padrão é aplicada quando o cliente do Endpoint Protection está instalado. As políticas personalizadas que você implantou são aplicadas por padrão até 60 minutos após a implantação do cliente. Verifique se você configurou políticas antimalware antes de implantar o cliente Endpoint Protection. |  
 |**Etapa 5:** [Definir configurações personalizadas do cliente para o Endpoint Protection](endpoint-protection-configure-client.md)|Use configurações personalizadas do cliente para definir as configurações do Endpoint Protection para coleções de computadores em sua hierarquia.<br /><br /> Observações: não defina as configurações do cliente padrão do Endpoint Protection, a menos que tenha certeza de que deseja aplicá-las a todos os computadores na hierarquia. |  
-
-
-
-<!--HONumber=Feb17_HO3-->
-
 

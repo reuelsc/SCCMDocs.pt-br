@@ -17,9 +17,9 @@ author: arob98
 ms.author: angrobe
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: d7265aec46474ba7fc317ddb5e20b91b7b134585
-ms.openlocfilehash: 36f6eb3fe48e904adf4d04450906fada9b477246
-ms.lasthandoff: 12/30/2016
+ms.sourcegitcommit: 289db441899359f3bf3abe5d38896c7acd2045b6
+ms.openlocfilehash: 5eaca19f2b21b1c62b956d2a44d492d3ddd6d10a
+ms.lasthandoff: 03/10/2017
 
 ---
 # <a name="about-client-settings-in-system-center-configuration-manager"></a>Sobre as configurações do cliente no System Center Configuration Manager
@@ -333,7 +333,7 @@ Muitas das configurações do cliente são autoexplicativas. Outras são descrit
 
 -   **Atraso aleatório máximo**
 
-    A coleta de informações de hardware é executada de forma aleatória em até duas horas para que a operação não ocorra simultaneamente em todos os clientes. É possível definir o atraso máximo para restringir o tempo durante o qual a operação é executada.      
+    A coleta de informações de hardware é executada de forma aleatória em até quatro horas para que a operação não ocorra simultaneamente em todos os clientes. É possível definir o atraso máximo para restringir o tempo durante o qual a operação é executada.      
 
 ##  <a name="metered-internet-connections"></a>Planos de Internet Limitados  
  Você pode gerenciar o modo como os computadores cliente com Windows 8 se comunicam com sites do Configuration Manager quando usam conexões de Internet limitadas. Provedores de Internet ocasionalmente cobram por quantidade de dados que você envia e recebe quando está em uma conexão de Internet limitada.  
@@ -505,7 +505,7 @@ Muitas das configurações do cliente são autoexplicativas. Outras são descrit
 
     -   Escolha o ícone **Novo** para adicionar um novo tipo de arquivo ao inventário. Em seguida, especifique as informações a seguir na caixa de diálogo **Propriedades de Arquivo Inventariado**:  
 
-        -   **Nome**: forneça um nome para o arquivo que você deseja inventariar. Você pode usar o caractere **\** para representar qualquer cadeia de caracteres de texto, e o caractere **?** para representar qualquer caractere único. Por exemplo, se você desejar inventariar todos os arquivos com a extensão .doc, especifique o nome do arquivo **\*.doc**.  
+        -   **Nome**: forneça um nome para o arquivo que você deseja inventariar. Você pode usar o caractere **\** para representar qualquer cadeia de caracteres de texto, e o caractere**?**para representar qualquer caractere único. Por exemplo, se você desejar inventariar todos os arquivos com a extensão .doc, especifique o nome do arquivo**\*.doc**.  
 
         -   **Local**: escolha **Definir** para abrir a caixa de diálogo **Propriedades do Caminho**. Você pode configurar o inventário de software para pesquisar o arquivo especificado em todos os discos rígidos do cliente, pesquisar um caminho especificado (por exemplo, **C:\Pasta**) ou uma variável especificada (por exemplo, *%windir%*). Também é possível pesquisar todas as subpastas no caminho especificado.  
 
@@ -528,7 +528,7 @@ Muitas das configurações do cliente são autoexplicativas. Outras são descrit
 
     -   Na caixa de diálogo **Propriedades do Arquivo Coletado** , forneça as seguintes informações:  
 
-        -   **Nome**: forneça um nome para o arquivo que você deseja coletar. Você pode usar o caractere **\** para representar qualquer cadeia de caracteres de texto, e o caractere **?** para representar qualquer caractere único.  
+        -   **Nome**: forneça um nome para o arquivo que você deseja coletar. Você pode usar o caractere **\** para representar qualquer cadeia de caracteres de texto, e o caractere**?** para representar qualquer caractere único.  
 
         -   **Local**: escolha **Definir** para abrir a caixa de diálogo **Propriedades do Caminho**. Você pode configurar o inventário de software para pesquisar o arquivo que você deseja coletar em todos os discos rígidos do cliente, pesquisar em um caminho especificado (por exemplo, **C:\Pasta**) ou em uma variável especificada (por exemplo, *%windir%*). Também é possível pesquisar todas as subpastas no caminho especificado.  
 

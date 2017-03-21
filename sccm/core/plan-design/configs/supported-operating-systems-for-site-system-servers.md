@@ -2,7 +2,7 @@
 title: Servidores de sistema de sites com suporte | Microsoft Docs
 description: "Saiba quais versões do Windows você pode usar para hospedar um site ou função de sistema de sites do System Center Configuration Manager."
 ms.custom: na
-ms.date: 2/1/2017
+ms.date: 3/9/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
@@ -16,8 +16,9 @@ author: Brenduns
 ms.author: brenduns
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: 4688b4b12a7afa5fcfdc0e42f984271d98f10316
-ms.openlocfilehash: bb017e575e0318b73cc5ea4e27fd33b1e9c2a02a
+ms.sourcegitcommit: 477ffa5d61d2dfaedf8a3a1f5687e2d72698ad28
+ms.openlocfilehash: f175e11d9402e7c57c45edb4d5bbe969de5dcdf7
+ms.lasthandoff: 03/10/2017
 
 
 ---
@@ -231,24 +232,9 @@ A partir da versão 1606, com o pacote cumulativo de atualizações do hotfix do
 ## <a name="windows-server-2008-with-sp2-x86-x64-standard-enterprise-and-datacenter"></a>Windows Server 2008 com SP2 (x86, x64): Standard, Enterprise e Datacenter  
  Agora o Windows Server 2008 está com suporte estendido e não mais com suporte base, conforme detalhado na [Política de Ciclo de Vida da Microsoft](https://support.microsoft.com/lifecycle). Para obter mais informações sobre o suporte futuro para esses sistemas operacionais como servidores do sistema de sites com o Configuration Manager, consulte [Recursos removidos e preteridos do System Center Configuration Manager](../../../core/plan-design/changes/removed-and-deprecated-features.md).  
 
-**Servidores do site:**  
-
--   Site de administração central  
-
--   Site primário  
-
--   Site secundário  
+Não há suporte para esse sistema operacional para servidores do site ou funções do sistema de sites, com exceção do ponto de distribuição e do ponto de distribuição pull. Você pode continuar a usar esse sistema operacional como um ponto de distribuição até que a substituição desse suporte seja anunciada ou o período de suporte estendido do sistema operacional expire. Para obter mais informações, consulte [Installation of System Center Configuration Manager CB and LTSB fails on Windows Server 2008](https://support.microsoft.com/help/4015095) (A instalação do CB e do LTSB do System Center Configuration Manager falha no Windows Server 2008).
 
 **Servidores de sistema de sites:**  
-
--   Ponto de serviços Web do Catálogo de Aplicativos  
-
--   Ponto de sites da Web do catálogo de aplicativos  
-
--   Ponto de sincronização do Asset Intelligence  
-
--   Ponto de registro de certificado  
-
 -   Ponto de distribuição  
 
     -   Os pontos de distribuição neste sistema operacional não dão suporte a Multicast.  
@@ -257,29 +243,7 @@ A partir da versão 1606, com o pacote cumulativo de atualizações do hotfix do
 
     -   Os pontos de distribuição dão suporte a várias configurações diferentes que têm diferentes requisitos. Em alguns casos, essas configurações dão suporte à instalação não apenas em servidores, mas em sistemas operacionais cliente. Para obter mais informações sobre as opções disponíveis para pontos de distribuição, consulte [Manage content and content infrastructure for System Center Configuration Manager](../../../core/servers/deploy/configure/manage-content-and-content-infrastructure.md) (Gerenciar o conteúdo e a infraestrutura de conteúdo do System Center Configuration Manager).  
 
--   Ponto do Endpoint Protection  
 
--   Ponto de registro  
-
--   Ponto proxy do registro  
-
--   Ponto de status de fallback  
-
--   Ponto de gerenciamento
-
--   Ponto do Reporting Services  
-
--   Ponto de conexão de serviço  
-
--   Servidor de banco de dados do site  
-
-     Não há suporte para servidores de banco de dados de sites em um RODC (controlador de domínio somente leitura). Para obter mais informações, consulte [Você pode encontrar problemas ao instalar o SQL Server em um controlador de domínio](http://go.microsoft.com/fwlink/p/?LinkId=264856) na Base de Dados de Conhecimento Microsoft. Além disso, os servidores do site secundário não têm suporte em qualquer controlador de domínio.  
-
--   SMS_Provider  
-
--   Ponto de atualização de software  
-
--   Ponto de migração de estado  
 
 ## <a name="windows-10-x86-x64-pro-and-enterprise"></a>Windows 10 (x86, x64): Pro e Enterprise  
 **Servidores de sistema de sites:**  
@@ -345,9 +309,4 @@ A partir da versão 1606, com o pacote cumulativo de atualizações do hotfix do
 -   Há suporte apenas para a versão de 64 bits.  
 
 -   Os pontos de distribuição nesse sistema operacional não dão suporte a PXE nem a Multicast.
-
-
-
-<!--HONumber=Feb17_HO1-->
-
 
