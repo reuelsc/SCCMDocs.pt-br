@@ -16,9 +16,9 @@ author: Brenduns
 ms.author: brenduns
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: ee7f69bd65152deffb2456d9807e1e8fee8802ec
-ms.openlocfilehash: dd28c8218c77686884bdcff508080185cae97489
-ms.lasthandoff: 03/07/2017
+ms.sourcegitcommit: 8f4ec982a54cf3cefef310268a54850e70e2e63a
+ms.openlocfilehash: 3bdbcd1a3c64a1d50f2f6219b2a5e17d60979864
+ms.lasthandoff: 03/13/2017
 
 ---
 # <a name="capabilities-in-technical-preview-1702-for-system-center-configuration-manager"></a>Funcionalidades do Technical Preview 1702 do System Center Configuration Manager
@@ -313,6 +313,10 @@ As seções a seguir descrevem o gerenciamento do Android for Work.
   - **Gerenciar todos os dispositivos como Android** – (desabilitada) todos os dispositivos Android, incluindo dispositivos que dão suporte ao Android for Work, serão registrados como dispositivos Android convencionais
   - **Gerenciar dispositivos com suporte como Android for Work** – (habilitada) todos os dispositivos que dão suporte ao Android for Work são registrados como dispositivos Android for Work. Qualquer dispositivo Android que não tem suporte para Android for Work é registrado como um dispositivo Android convencional.
   - **Gerenciar dispositivos com suporte como Android for Work somente para os usuários nestes grupos** – (teste) permite direcionar o gerenciamento do Android for Work a um conjunto de usuários limitado. Somente os membros dos grupos selecionados que registram um dispositivo que dá suporte ao Android for Work são registrados como dispositivos Android for Work. Todos os outros são registrados como dispositivos Android.
+  
+> [!NOTE]
+> Um problema conhecido impede que a opção **Gerenciar dispositivos com suporte para os usuários somente desses grupos como Android para o trabalho** funcione conforme o esperado. Os dispositivos dos usuários nos grupos Azure AD especificados se registrarão como Android, em vez de Android para o trabalho. Para testar o Android para o trabalho, você deve usar a opção **Gerenciar todos os dispositivos com suporte como Android para o trabalho**.
+
 
   Para habilitar o registro do Android for Work, você deve escolher uma das opções inferiores. A opção **Gerenciar dispositivos com suporte como Android for Work somente para os usuários nestes grupos** requer que você configure grupos de segurança do Azure Active Directory primeiro.
 
@@ -350,4 +354,7 @@ Para testar isso, crie um item de configuração por meio do fluxo de trabalho p
 Os dispositivos registrados como Android for Work podem apenas ser apagados seletivamente porque você gerencia apenas o perfil de trabalho. Isso protege o perfil pessoal de ser apagado. Executar um apagamento seletivo em um dispositivo Android for Work remove o perfil de trabalho, incluindo todos os aplicativos e dados e cancela o registro do dispositivo.
 
 Para apagar seletivamente um dispositivo Android for Work, use o [processo de apagamento seletivo](https://docs.microsoft.com/sccm/mdm/deploy-use/wipe-lock-reset-devices#selective-wipe) normal no console do Configuration Manager.
+
+#### <a name="known-issues-for-android-for-work"></a>Problemas conhecidos do Android para o trabalho
+**Configurar a sincronização nos perfis de email do Android para o trabalho os faz falhar na implantação** Uma das opções da interface do usuário do ConfigMgr nos perfis de email do Android para o trabalho é "Programação". Em outras plataformas, isso permite que o administrador configure uma programação de sincronização de email e outros dados de conta de email nos dispositivos móveis em que estão implantados. No entanto, ele não funciona para perfis de email do Android para o trabalho e escolher qualquer opção diferente de "Não configurado" fará com que o perfil não seja implantado em todos os dispositivos.
 

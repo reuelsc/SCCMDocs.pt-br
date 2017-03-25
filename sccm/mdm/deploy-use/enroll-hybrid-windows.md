@@ -2,7 +2,7 @@
 title: "Configurar o gerenciamento de dispositivo híbrido do Windows com o System Center Configuration Manager e o Microsoft Intune | Microsoft Docs"
 description: "Configurar o gerenciamento do dispositivo Windows híbrido com o System Center Configuration Manager e o Microsoft Intune."
 ms.custom: na
-ms.date: 03/05/2017
+ms.date: 03/09/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
@@ -12,13 +12,13 @@ ms.tgt_pltfrm: na
 ms.topic: get-started-article
 ms.assetid: dc1f70f5-64ab-42ab-aa91-d3858803e12f
 caps.latest.revision: 9
-author: mtillman
-ms.author: mtillman
+author: nathbarn
+ms.author: nathbarn
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: 2c723fe7137a95df271c3612c88805efd8fb9a77
-ms.openlocfilehash: a4fc4a16c78b0eaa0dcefdd596b049eacf1d255b
-ms.lasthandoff: 03/06/2017
+ms.sourcegitcommit: a8218e23743dafaf8ff1166142cf2dcca1212133
+ms.openlocfilehash: 996d01d3c5d5be4544246a5f321f67b60a8f5508
+ms.lasthandoff: 03/14/2017
 
 
 ---
@@ -26,99 +26,80 @@ ms.lasthandoff: 03/06/2017
 
 *Aplica-se a: System Center Configuration Manager (Branch Atual)*
 
-Você pode usar o Configuration Manager com o Intune para gerenciar computadores, laptops e outros dispositivos que executam o Windows como dispositivos móveis. Você pode configurar o Azure Active Directory para permitir o registro automático de computadores Windows. Você também pode configurar o Configuration Manager para simplificar o registro usando o aplicativo do Portal da Empresa.
+Este tópico informa aos administradores de TI, como eles podem permitir que seus usuários tragam os PCs com Windows e dispositivos móveis para o gerenciamento usando o Gerenciador de Configuração e o Microsoft Intune. Existem dois métodos de registro:
+-  O registro automático do Azure Active Directory (AD) quando os usuários conectam a sua conta a um dispositivo
+- Registro por instalação e inscrição no aplicativo de Portal da empresa
 
+## <a name="choose-how-to-enroll-windows-devices"></a>Escolha como registrar os dispositivos Windows
 
-As opções de registro do Windows incluem:
+Dois fatores determinam como você vai registrar os dispositivos Windows:
+- **Você usa o Azure Active Directory Premium?** <br>[O Azure AD Premium](https://docs.microsoft.com/azure/active-directory/active-directory-get-started-premium) está incluído no Enterprise Mobility + Security e outros planos de licenciamento.
+- **Quais versões de clientes Windows serão registradas?** <br>Dispositivos Windows 10 podem registrar automaticamente adicionando uma conta corporativa ou escolar. Versões anteriores devem ser registrados usando o aplicativo de Portal da Empresa.
 
-- [Registro automático com o Azure AD](#azure-active-directory-enrollment)
-- [Computadores Windows](#configure-windows-pc-enrollment)
-- [Dispositivos Windows Mobile 10 e Windows Phone](#enable-windows-phone-devices)
+||**Azure AD Premium**|**Ouro AD**|
+|----------|---------------|---------------|  
+|**Windows 10**|[Registro automático](#automatic-enrollment) |[Registro do Portal da Empresa](#company-portal-enrollment)|
+|**Versões anteriores do Windows**|[Registro do Portal da Empresa](#company-portal-enrollment)|[Registro do Portal da Empresa](#company-portal-enrollment)|
 
-## <a name="azure-active-directory-enrollment"></a>Registro no Azure Active Directory
+## <a name="automatic-enrollment"></a>Registro automático
 
-O registro automático permite que os usuários registrem computadores com Windows 10 e dispositivos com Windows 10 Mobile pessoais ou da empresa no Intune adicionando uma conta corporativa ou de estudante e concordando em ser gerenciado. Em segundo plano, o dispositivo do usuário registra-se e ingressa no Azure Active Directory. Depois de registrado, o dispositivo pode ser gerenciado com o Intune.
+O registro automático permite que os usuários registrem computadores da empresa ou dispositivos pessoais com Windows 10, adicionando uma conta corporativa ou de estudante e concordando em ser gerenciado. Em segundo plano, o dispositivo do usuário registra-se e ingressa no Azure Active Directory. Depois de registrado, o dispositivo pode ser gerenciado com o Intune. Dispositivos gerenciados ainda podem usar o Portal da empresa para tarefas, mas não é necessário instalá-lo para ser registrado.
 
 **Pré-requisitos**
 - Assinatura do Azure Active Directory Premium ([assinatura de avaliação](http://go.microsoft.com/fwlink/?LinkID=816845))
 - Assinatura do Microsoft Intune
 
+### <a name="configure-automatic-enrollment"></a>Configurar o registro automático
 
-### <a name="configure-automatic-mdm-enrollment"></a>Configurar o registro automático do MDM
+1. Entre no [portal do Azure](https://manage.windowsazure.com), navegue até o nó do **Active Directory** no painel esquerdo e selecione o diretório.
+2. Selecione a guia **Configurar** e role até a seção chamada **Dispositivos**.
+3. Selecione **Todos** para **Usuários podem unir dispositivos de área de trabalho**.
+4. Selecione o número máximo de dispositivos que deseja autorizar por usuário.
 
-1. No [Portal de Gerenciamento do Azure](https://manage.windowsazure.com) (https://manage.windowsazure.com), navegue até o nó **Active Directory** e selecione o diretório.
+Por padrão, autenticação de dois fatores não está habilitada para o serviço. No entanto, a autenticação de dois fatores é recomendável ao registrar um dispositivo. Antes de solicitar a autenticação de dois fatores para esse serviço, você deve configurar um provedor de autenticação de dois fatores no Azure Active Directory e configurar suas contas de usuário para autenticação multifator. Consulte [Guia de Introdução com o servidor de autenticação multifator do Azure](https://docs.microsoft.com/azure/multi-factor-authentication/multi-factor-authentication-get-started-cloud).
 
-2. Clique na guia **Aplicativos** e você verá **Microsoft Intune** na lista de aplicativos.
+## <a name="company-portal-enrollment"></a>Registro do Portal da Empresa
+Os usuários finais ou um [gerenciador de registro de dispositivo](enroll-devices-with-device-enrollment-manager.md) pode registrar dispositivos Windows instalando o aplicativo de Portal da Empresa e, em seguida, entre com suas credenciais de trabalho. Para simplificar o registro para seus usuários finais, você deve adicionar um CNAME em seu registro de DNS.
 
-    ![Aplicativos Azure AD com o Microsoft Intune](../media/aad-intune-app.png)
+### <a name="enable-windows-device-management"></a>Habilite o gerenciamento do dispositivo Windows
+Para habilitar o gerenciamento de dispositivos do Windows para PCs ou dispositivos móveis, use as seguintes etapas:
 
-3. Clique na seta para **Microsoft Intune** e você verá uma página que permite configurar o Microsoft Intune.
-
-4. Clique em **Configurar** para começar a configurar o registro automático do MDM com o Microsoft Intune.
-
-5. Especifique as URLs para o Intune:
-
-  - **URL de Conformidade do MDM**: use o valor padrão.
-  - **URL de Termos de Uso do MDM** – Use o valor padrão. Essa URL exibe os termos de uso para os usuários ao registrar dispositivos.
-  - **URL de Conformidade do MDM** – Use o valor padrão. Se um dispositivo não estiver em conformidade, uma mensagem de **Acesso negado** será exibida com essa URL. A URL aponta para uma página que ajuda os usuários a entenderem por que o dispositivo não é compatível com a política e como eles podem deixá-lo em conformidade novamente.
-
-6.  Especifique quais dispositivos dos usuários devem ser gerenciados pelo Microsoft Intune. Os dispositivos do Windows 10 desses usuários serão automaticamente registrados para gerenciamento com o Microsoft Intune.
-
-  - **Todos**
-  - **Grupos**
-  - **Nenhum**
-
-7. Escolha **Salvar**.
-
-## <a name="configure-windows-pc-enrollment"></a>Configurar o registro de computador Windows
- Para habilitar o gerenciamento de dispositivo móvel do Windows, você precisa habilitar o gerenciamento do sistema operacional.  Você também pode adicionar um DNS CNAME para simplificar o registro para os usuários.
+1.  Antes de configurar o registro para qualquer plataforma, conclua os pré-requisitos e os procedimentos em [Configurar MDM híbrido](setup-hybrid-mdm.md).  
+2.  No console do Gerenciador de Configuração, no espaço de trabalho **Administração**, acesse **Visão Geral** > **Serviços de Nuvem** > **Assinaturas do Microsoft Intune**.  
+3.  Na faixa de opções, escolha **Configurar Plataformas** e clique na plataforma Windows:
+    - **Windows** para Windows PCs e laptops, em seguida, execute as seguintes etapas:
+      1. Na guia **Geral**, selecione **Habilitar registro do Windows**.
+      2. Se você usa um certificado de assinatura de código e implantar o aplicativo de Portal da Empresa, navegue até o **certificado de assinatura de código**. Os usuários de dispositivo também podem instalar o aplicativo de Portal da empresa na Windows Store ou você pode implantar o aplicativo da Windows Store para Empresas sem assinatura de código.
+      3. Você também pode configurar as [configurações do Windows Hello para Empresas](windows-hello-for-business-settings.md).
+    - **Windows Phone** para telefones e tablets com Windows, em seguida, execute as seguintes etapas:
+      1. Na guia **Geral**, clique em **Windows Phone 8.1 e Windows 10 Mobile**. Não há suporte para o Windows Phone 8.0.
+      2. Se sua organização precisa carregar aplicativos da empresa, você pode carregar o arquivo ou o token necessário. Para obter mais informações sobre aplicativos de sideload, consulte [Criar aplicativos para Windows](https://docs.microsoft.com/sccm/apps/get-started/creating-windows-applications).
+        - **Token de registro de aplicativo**
+        - **arquivo .pfx**
+        - **Nenhum** se você usar um certificado da Symantec, você poderá especificar **mostrar um alerta antes de expirarem os certificados da Symantec**.
+4. Clique em **OK** para fechar a caixa de diálogo.  Para simplificar o processo de registro usando o Portal da Empresa, você deve criar um alias DNS para o registro do dispositivo. Em seguida, você pode dizer aos usuários como registrar seus dispositivos.
 
 ### <a name="create-dns-alias-for-device-enrollment"></a>Criar o alias DNS para registro de dispositivo  
- Um alias DNS (tipo de registro CNAME) facilita o registro dos dispositivos para os usuários ao popular automaticamente o nome do servidor durante o registro do dispositivo. Para criar um alias DNS (tipo de registro CNAME), você precisa configurar um CNAME nos registros DNS da sua empresa que redirecione as solicitações enviadas a uma URL no domínio da empresa para os servidores de serviço de nuvem da Microsoft.  Por exemplo, se o domínio da sua empresa for contoso.com, você deverá criar um CNAME no DNS que redirecione EnterpriseEnrollment.contoso.com para EnterpriseEnrollment-s.manage.microsoft.com.  
+Um DNS alias (tipo de registro CNAME) facilita para os usuários registrem seus dispositivos ao se conectar ao serviço sem exigir que o usuário insira um endereço de servidor. Para criar um alias DNS (tipo de registro CNAME), você precisa configurar um CNAME nos registros DNS da sua empresa que redirecione as solicitações enviadas a uma URL no domínio da empresa para os servidores de serviço de nuvem da Microsoft.  Por exemplo, se o domínio da sua empresa for contoso.com, você deverá criar um CNAME no DNS que redirecione EnterpriseEnrollment.contoso.com para EnterpriseEnrollment-s.manage.microsoft.com.  
 
  Embora a criação de entradas de DNS de CNAME seja opcional, os registros CNAME facilitam o registro para os usuários. Se não for possível encontrar nenhum registro CNAME no registro, os usuários deverão inserir manualmente o nome do servidor MDM: https://enrollment.manage.microsoft.com.
 
-|Tipo|Nome do host|Aponta para|  
-|----------|---------------|---------------|  
-|CNAME|EnterpriseEnrollment.company_domain.com|EnterpriseEnrollment-s.manage.microsoft.com|  
-|CNAME|EnterpriseRegistration.company_domain.com|EnterpriseRegistration.windows.net|  
-### <a name="to-enable-enrollment-for-windows-devices"></a>Para habilitar o registro para dispositivos Windows  
+|Tipo|Nome do host|Aponta para|TTL|  
+|----------|---------------|---------------|---|
+|CNAME|EnterpriseEnrollment.company_domain.com|EnterpriseEnrollment-s.manage.microsoft.com| 1 hora|
 
-1.  **Pré-requisitos** – Antes de configurar o registro para qualquer plataforma, conclua os pré-requisitos e os procedimentos em [Configurar MDM híbrido](setup-hybrid-mdm.md).  
+Se você tiver mais de um sufixo UPN, você precisará criar um CNAME para cada nome de domínio e apontar cada um para EnterpriseEnrollment-s.manage.microsoft.com. Por exemplo, se os usuários da Contoso usam name@contoso.com, mas também usam name@us.contoso.com e name@eu.constoso.com como seu email/UPN, o administrador de DNS da Contoso precisaria criar os seguintes CNAMEs.
 
-2.  No console do Configuration Manager, no espaço de trabalho **Administração** , acesse **Serviços de Nuvem** > **Assinaturas do Microsoft Intune**.  
+|Tipo|Nome do host|Aponta para|TTL|  
+|----------|---------------|---------------|---|
+|CNAME|EnterpriseEnrollment.contoso.com|EnterpriseEnrollment-s.manage.microsoft.com|1 hora|
+|CNAME|EnterpriseEnrollment.us.contoso.com|EnterpriseEnrollment-s.manage.microsoft.com|1 hora|
+|CNAME|EnterpriseEnrollment.eu.contoso.com|EnterpriseEnrollment-s.manage.microsoft.com| 1 hora|
 
-    > [!WARNING]  
-    >  Se outras caixas de diálogo do Configuration Manager forem abertas, feche-as antes de continuar com este procedimento.  
+## <a name="tell-users-how-to-enroll-devices"></a>Informe aos usuários para registrarem os dispositivos  
 
-3.  Na guia **Início** , clique em **Configurar Plataformas**e depois clique em **Windows**.  
+ Depois da configuração, você precisará permitir que os usuários saibam como registrar seus dispositivos. Consulte [O que dizer aos usuários sobre o registro de seus dispositivos](https://docs.microsoft.com/intune/deploy-use/what-to-tell-your-end-users-about-using-microsoft-intune) para obter diretrizes. Você pode direcionar os usuários para [registrar seu dispositivo Windows no Intune](https://docs.microsoft.com/intune/enduser/enroll-your-device-in-intune-windows). Essas informações se aplicam a dispositivos móveis gerenciados pelo Microsoft Intune e pelo Configuration Manager.
 
-4.  Na guia **Geral** , selecione **Habilitar registro do Windows**.  
-
- Depois da configuração, você precisará permitir que os usuários saibam como registrar seus dispositivos. Consulte [O que dizer aos usuários sobre o registro de seus dispositivos](https://docs.microsoft.com/intune/deploy-use/what-to-tell-your-end-users-about-using-microsoft-intune). Essas informações se aplicam a dispositivos móveis gerenciados pelo Microsoft Intune e pelo Configuration Manager.
-
-## <a name="enable-windows-phone-devices"></a>Habilitar dispositivos Windows Phone  
-  Se os usuários forem registrar somente o Windows Phone 8.1 e os dispositivos posteriores e se você não for implantar aplicativos de linha de negócios para dispositivos Windows Phone, nenhum certificado da Symantec será necessário. Depois de habilitar o registro do Windows Phone, você deve instruir os usuários a instalarem o aplicativo Portal da Empresa da Windows Phone Store para registrar seus dispositivos.  
-
-  Conclua as etapas a seguir para os dispositivos com Windows Phone que você gerenciará.  
-
-### <a name="to-enable-enrollment-for-windows-phone-81-and-later-devices"></a>Para habilitar o registro para Windows Phone 8.1 e dispositivos posteriores  
-
- 1.  **Pré-requisitos** – Antes de configurar o registro para qualquer plataforma, conclua os pré-requisitos e os procedimentos em [Configurar MDM híbrido](setup-hybrid-mdm.md).  
-
- 2.  No console do Configuration Manager, no espaço de trabalho **Administração** , acesse **Serviços de Nuvem** > **Assinaturas do Microsoft Intune**.  
-
-     > [!WARNING]  
-     >  Se outras caixas de diálogo do Configuration Manager forem abertas, feche-as antes de continuar com este procedimento.  
-
- 3.  Na guia **Início** , clique em **Configurar Plataformas**e depois clique em **Windows Phone**.  
-
- 4.  Na guia **Geral** , escolha  **Windows Phone 8.1 e Windows 10 Mobile**. Você pode carregar os dados do aquivo .xml AET ou um arquivo .pfx para permitir a implantação do Portal da Empresa, ou instruir os usuários a baixar o Portal da Empresa na Loja do Windows Phone.  
-
-      Clique em **OK**.  
-
-  Depois da configuração, você precisará permitir que os usuários saibam como registrar seus dispositivos. Consulte [O que dizer aos usuários sobre o registro de seus dispositivos](https://docs.microsoft.com/intune/deploy-use/what-to-tell-your-end-users-about-using-microsoft-intune). Essas informações se aplicam a dispositivos móveis gerenciados pelo Microsoft Intune e pelo Configuration Manager.  
-
-  > [!div class="button"]
-  [< Etapa anterior](create-service-connection-point.md)  [Próxima etapa >](set-up-additional-management.md)
+> [!div class="button"]
+[< Etapa anterior](create-service-connection-point.md)  [Próxima etapa >](set-up-additional-management.md)
 
