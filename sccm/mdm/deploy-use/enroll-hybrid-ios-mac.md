@@ -13,8 +13,8 @@ ms.topic: get-started-article
 ms.assetid: 5eae4400-58ca-4c71-804c-6a585cd3df5d
 caps.latest.revision: 10
 caps.handback.revision: 0
-author: mtillman
-ms.author: mtillman
+author: nathbarn
+ms.author: nathbarn
 manager: angrobe
 translationtype: Human Translation
 ms.sourcegitcommit: 2c723fe7137a95df271c3612c88805efd8fb9a77
@@ -69,6 +69,6 @@ Com o Configuration Manager e o Intune, você pode habilitar o registro de dispo
 
  Depois da configuração, você precisará permitir que os usuários saibam como registrar seus dispositivos. Consulte [O que dizer aos usuários sobre o registro de seus dispositivos](https://docs.microsoft.com/intune/deploy-use/what-to-tell-your-end-users-about-using-microsoft-intune). Essas informações se aplicam a dispositivos móveis gerenciados pelo Microsoft Intune e pelo Configuration Manager.
 
- > [!div class="button"]
- [< Etapa anterior](create-service-connection-point.md)  [Próxima etapa >](set-up-additional-management.md)
+> [!div class="button"]
+[< Etapa anterior](create-service-connection-point.md)  [Próxima etapa >](set-up-additional-management.md)
 
