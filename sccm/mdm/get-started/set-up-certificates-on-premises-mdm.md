@@ -23,7 +23,7 @@ ms.lasthandoff: 03/06/2017
 
 
 ---
-# <a name="set-up-certificates-for-trusted-communications-for-on-premises-mobile-device-management-in-system-center-configuration-manager"></a>Set up certificates for trusted communications for On-premises Mobile Device Management in System Center Configuration Manager
+# <a name="set-up-certificates-for-trusted-communications-for-on-premises-mobile-device-management-in-system-center-configuration-manager"></a>Configurar certificados para comunicações confiáveis do Gerenciamento de Dispositivo Móvel Local no System Center Configuration Manager
 
 *Aplica-se a: System Center Configuration Manager (Branch Atual)*
 
