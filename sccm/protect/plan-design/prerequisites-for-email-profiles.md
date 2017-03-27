@@ -13,12 +13,13 @@ ms.topic: get-started-article
 ms.assetid: dccf0b73-43bd-4545-8914-114168ebad36
 caps.latest.revision: 5
 caps.handback.revision: 0
-author: Nbigman
-ms.author: nbigman
+author: arob98
+ms.author: angrobe
 manager: angrobe
 translationtype: Human Translation
 ms.sourcegitcommit: 0fa837c68eb073d2ceaf48c938137a94141a102e
 ms.openlocfilehash: bdb7f78480f73bc4559c4ff49ecb7b047581780a
+ms.lasthandoff: 01/24/2017
 
 
 ---
@@ -40,9 +41,4 @@ Os perfis de email no System Center Configuration Manager têm dependências ext
 |Dependência|Mais informações|  
 |----------------|----------------------|  
 |Atributo mail no active directory|Se você deseja gerar os endereços de email de usuários em um perfil de email usando o endereço de SMTP primário do usuário, esse endereço deve existir no atributo **mail** no Active Directory.<br /><br /> Para obter mais informações, consulte a documentação do Windows Server.|
-
-
-
-<!--HONumber=Jan17_HO4-->
-
 

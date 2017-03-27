@@ -12,12 +12,13 @@ ms.tgt_pltfrm: na
 ms.topic: get-started-article
 ms.assetid: 54ef5fbb-521d-4ca5-a1c5-61e6f538d71e
 caps.latest.revision: 8
-author: nbigman
-ms.author: nbigman
+author: arob98
+ms.author: angrobe
 manager: angrobe
 translationtype: Human Translation
 ms.sourcegitcommit: 55c953f312a9fb31e7276dde2fdd59f8183b4e4d
 ms.openlocfilehash: c1b3b3e7fe756ce3e0c82ffc15693999d8e817d2
+ms.lasthandoff: 12/16/2016
 
 
 ---
@@ -36,7 +37,7 @@ Se um computador cliente ou dispositivo móvel cliente não for mais confiável,
 
  Se seus sistemas de site aceitam conexões de cliente HTTPS e sua PKI (infraestrutura de chave pública) oferece suporte para uma CRL (lista de certificados revogados), sempre considere a revogação de certificado como a principal linha de defesa contra certificados potencialmente comprometidos. O bloqueio de clientes no Configuration Manager oferece uma segunda linha de defesa para proteger sua hierarquia.  
 
-##  <a name="a-namebkmkblockvscrla-considerations-for-blocking-clients"></a><a name="BKMK_Block_vs_CRL"></a> Considerações para bloqueio de clientes  
+##  <a name="BKMK_Block_vs_CRL"></a> Considerações para bloqueio de clientes  
 
 -   Essa opção está disponível para conexões de cliente HTTP e HTTPS, mas possui segurança limitada quando clientes se conectam a sistemas de sites usando HTTP.  
 
@@ -71,9 +72,4 @@ Se um computador cliente ou dispositivo móvel cliente não for mais confiável,
 
     > [!NOTE]  
     >  Você pode proteger ainda mais os sistemas de site que executam o IIS por meio de clientes desconhecidos configurando uma CTL (lista de certificados confiáveis) no IIS.  
-
-
-
-<!--HONumber=Dec16_HO3-->
-
 

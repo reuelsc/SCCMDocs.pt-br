@@ -12,12 +12,13 @@ ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: d827cf91-b18f-4ee7-b538-24ba6f003ab9
 caps.latest.revision: 6
-author: nbigman
-ms.author: nbigman
+author: arob98
+ms.author: angrobe
 manager: angrobe
 translationtype: Human Translation
 ms.sourcegitcommit: 3743c80b0c2b5142f3a537ba3855ffd14794d42b
 ms.openlocfilehash: e9965373db17a752c8ae7fddb5f91fa1df912d49
+ms.lasthandoff: 01/24/2017
 
 
 ---
@@ -37,7 +38,7 @@ Você pode exibir informações de servidores Linux e UNIX no console do System 
 
  As seções a seguir descrevem como obter esses detalhes do gerenciador de recursos, bem como relatórios.  
 
-##  <a name="a-namebkmkuseresourceexpforlnua-use-resource-explorer-to-view-inventory-for-linux-and-unix-servers"></a><a name="BKMK_UseResourceExpforLnU"></a> Usar o gerenciador de recursos para exibir o inventário de servidores Linux e UNIX  
+##  <a name="BKMK_UseResourceExpforLnU"></a> Usar o gerenciador de recursos para exibir o inventário de servidores Linux e UNIX  
 
  Após um cliente do Configuration Manager enviar o inventário de hardware para o site do Configuration Manager, você pode usar o Gerenciador de Recursos para exibir essas informações. O cliente do Configuration Manager para Linux e UNIX não adiciona novas classes ou exibições de inventário ao Gerenciador de Recursos. Os dados de inventário Linux e UNIX mapeiam para classes WMI existentes. Você pode exibir os detalhes sobre inventário de seus servidores Linux e UNIX nas classificações de baseadas em Windows usando o Gerenciador de Recursos.  
 
@@ -45,7 +46,7 @@ Você pode exibir informações de servidores Linux e UNIX no console do System 
 
  Para obter informações sobre como usar o Gerenciador de Recursos, consulte [Como usar o Gerenciador de Recursos para exibir o inventário de hardware no System Center Configuration Manager](../../../core/clients/manage/inventory/use-resource-explorer-to-view-hardware-inventory.md).  
 
-##  <a name="a-namebkmkusereportsforlnua-how-to-use-reports-to-view-information-for-linux-and-unix-servers"></a><a name="BKMK_UseReportsforLnU"></a> Como usar relatórios para exibir informações para servidores Linux e UNIX  
+##  <a name="BKMK_UseReportsforLnU"></a> Como usar relatórios para exibir informações para servidores Linux e UNIX  
  Os relatórios do Configuration Manager incluem informações de servidores Linux e UNIX, juntamente com informações de computadores baseados no Windows. Nenhuma configuração adicional é necessária para integrar os dados do Linux e UNIX aos relatórios.  
 
  Por exemplo, se você executar o relatório chamado Contagem de Versões do Sistema Operacional, ele exibirá a lista de diferentes sistemas operacionais e o número de clientes que executando cada sistema operacional. O relatório se baseia nas informações do inventário de hardware que foram enviadas por diferentes clientes do Configuration Manager que executam diferentes sistemas operacionais.  
@@ -53,9 +54,4 @@ Você pode exibir informações de servidores Linux e UNIX no console do System 
  Também é possível criar relatórios personalizados específicos para os dados dos servidores Linux e UNIX. A propriedade **Legenda** da classe de inventário de hardware **Sistema Operacional** é um atributo útil que você pode usar para identificar sistemas operacionais específicos na consulta do relatório.  
 
  Para obter informações sobre os relatórios no Configuration Manager, consulte [Relatórios no System Center Configuration Manager](../../../core/servers/manage/reporting.md).  
-
-
-
-<!--HONumber=Jan17_HO4-->
-
 

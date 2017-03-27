@@ -12,12 +12,13 @@ ms.tgt_pltfrm: na
 ms.topic: get-started-article
 ms.assetid: 03cec407-0f9f-454f-a360-b005af738d29
 caps.latest.revision: 6
-author: nbigman
-ms.author: nbigman
+author: arob98
+ms.author: angrobe
 manager: angrobe
 translationtype: Human Translation
 ms.sourcegitcommit: 55c953f312a9fb31e7276dde2fdd59f8183b4e4d
 ms.openlocfilehash: 9eadb91a575323b4c36af14962f370046ea513ce
+ms.lasthandoff: 12/16/2016
 
 
 ---
@@ -57,9 +58,4 @@ Clientes no System Center Configuration Manager devem localizar um ponto de gere
 2.  Na guia **Site** , especifique o sufixo DNS dos pontos de gerenciamento e clique em **OK**.  
 
      Se o site tiver mais de um ponto de gerenciamento e eles estiverem em mais de um domínio, especifique apenas um domínio. Ao conectarem-se a um ponto de gerenciamento nesse domínio, os clientes baixam uma lista de pontos de gerenciamento disponíveis, que incluirá os pontos de gerenciamento de outros domínios.
-
-
-
-<!--HONumber=Dec16_HO3-->
-
 

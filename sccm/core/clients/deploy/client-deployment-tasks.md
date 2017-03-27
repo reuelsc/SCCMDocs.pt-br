@@ -12,12 +12,13 @@ ms.tgt_pltfrm: na
 ms.topic: get-started-article
 ms.assetid: 54dd2e8e-66f3-4a10-987a-ed7dde4d32f6
 caps.latest.revision: 3
-author: nbigman
-ms.author: nbigman
+author: arob98
+ms.author: angrobe
 manager: angrobe
 translationtype: Human Translation
 ms.sourcegitcommit: 55c953f312a9fb31e7276dde2fdd59f8183b4e4d
 ms.openlocfilehash: 39a797891386c3711263451b05aaca7a02d42239
+ms.lasthandoff: 12/16/2016
 
 
 ---
@@ -36,9 +37,4 @@ ms.openlocfilehash: 39a797891386c3711263451b05aaca7a02d42239
 -   [Como atribuir clientes a um site no System Center Configuration Manager](../../../core/clients/deploy/assign-clients-to-a-site.md)  
 
 -   [Como configurar o status do cliente no System Center Configuration Manager](../../../core/clients/deploy/configure-client-status.md)  
-
-
-
-<!--HONumber=Dec16_HO3-->
-
 

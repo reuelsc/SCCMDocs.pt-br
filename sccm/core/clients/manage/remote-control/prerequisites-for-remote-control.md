@@ -13,12 +13,13 @@ ms.topic: article
 ms.assetid: c1b2057e-b74f-43fa-a293-763a8f866d3d
 caps.latest.revision: 6
 caps.handback.revision: 0
-author: nbigman
-ms.author: nbigman
+author: arob98
+ms.author: angrobe
 manager: angrobe
 translationtype: Human Translation
 ms.sourcegitcommit: fc392e4440e84614f92218e9c7a09ec1c2c64f53
 ms.openlocfilehash: eafa0d85935c2009cc63d17b06ed83a4666d7fac
+ms.lasthandoff: 12/16/2016
 
 
 ---
@@ -65,9 +66,4 @@ O controle remoto no System Center Configuration Manager tem dependências exter
 |O controle remoto deve ser habilitado para clientes|Por padrão, o controle remoto não está habilitado quando você instala o Configuration Manager. Para obter informações sobre como habilitar e configurar o controle remoto, consulte [Configurando o controle remoto no System Center Configuration Manager](../../../../core/clients/manage/remote-control/configuring-remote-control.md).|  
 |Ponto do Reporting Services|A função do sistema de sites do ponto do Reporting Services deve estar instalada antes que seja possível executar relatórios para o controle remoto. Para obter mais informações, consulte [Relatórios no System Center Configuration Manager](../../../../core/servers/manage/reporting.md).|  
 |Permissões de segurança para gerenciar o controle remoto|Para acessar recursos da coleção e iniciar uma sessão de controle remoto do console do Configuration Manager: permissão para **Controlar AMT**, **Ler**, **Ler Recurso** e **Controlar Remotamente** para o objeto **Coleção**.<br /><br /> A função de segurança **Operador de Ferramentas Remotas** inclui essas permissões necessárias para gerenciar o controle remoto no Configuration Manager.<br /><br /> Para mais informações, consulte [Configurar administração baseada em funções para o System Center Configuration Manager](../../../../core/servers/deploy/configure/configure-role-based-administration.md).<br /><br /> Além disso, é necessário adicionar usuários a quem você deseja conceder permissão para usar o controle remoto e a assistência remota à lista de modos de exibição permitidos do controle remoto usando a opção **Visualizadores autorizados do Controle Remoto e da Assistência Remota** nas configurações **Ferramentas Remotas** do cliente.|  
-
-
-
-<!--HONumber=Dec16_HO3-->
-
 

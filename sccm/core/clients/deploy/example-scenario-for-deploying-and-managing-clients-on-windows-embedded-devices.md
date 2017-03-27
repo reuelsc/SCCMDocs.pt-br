@@ -12,12 +12,13 @@ ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 10049c89-b37c-472b-b317-ce4f56cd4be7
 caps.latest.revision: 8
-author: nbigman
-ms.author: nbigman
+author: arob98
+ms.author: angrobe
 manager: angrobe
 translationtype: Human Translation
 ms.sourcegitcommit: a650ad8e7b1f9468dd04165a3e43a89387b5d696
 ms.openlocfilehash: b07af49e2fecf6cc41258c87794ca7952206bb8a
+ms.lasthandoff: 01/17/2017
 
 
 ---
@@ -179,9 +180,4 @@ A Coho Vineyard & Winery está abrindo um centro de visitantes e precisa de quio
     -   O software de apresentação interativa está instalado e sendo executado automaticamente, pronto para os visitantes.  
 
 14. Após a configuração inicial, toda reinicialização exigida pelas atualizações ocorre somente quando o centro de visitantes está fechado.  
-
-
-
-<!--HONumber=Jan17_HO3-->
-
 

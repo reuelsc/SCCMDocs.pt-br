@@ -12,12 +12,13 @@ ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 74c60941-5eae-4905-9e58-252bdb39df96
 caps.latest.revision: 10
-author: nbigman
-ms.author: nbigman
+author: arob98
+ms.author: angrobe
 manager: angrobe
 translationtype: Human Translation
 ms.sourcegitcommit: 3743c80b0c2b5142f3a537ba3855ffd14794d42b
 ms.openlocfilehash: 6bdc5cca01bf5a79a6177d7cf1de96b8ff2c2305
+ms.lasthandoff: 01/24/2017
 
 
 ---
@@ -64,7 +65,7 @@ Siga as etapas de alto nível descritas abaixo para atualizar o cliente para com
 
  Se você não usar o registro do Configuration Manager, mas instalar o certificado do cliente independentemente do Configuration Manager, veja [Configurar o cliente atualizado para usar um certificado existente](#BKMK_UpgradingClient_MachineEnrollment).  
 
-##  <a name="a-namebkmkupgradingclientmachineenrollmenta-configure-the-upgraded-client-to-use-an-existing-certificate"></a><a name="BKMK_UpgradingClient_MachineEnrollment"></a> Configure the upgraded client to use an existing certificate  
+##  <a name="BKMK_UpgradingClient_MachineEnrollment"></a> Configure the upgraded client to use an existing certificate  
  Execute o procedimento a seguir para evitar que o Assistente de Registro de Computador seja executado e configure o cliente atualizado para usar um certificado de cliente existente.  
 
 -   No console do Configuration Manager, crie um item de configuração do tipo **Mac OS X**.  
@@ -102,9 +103,4 @@ Siga as etapas de alto nível descritas abaixo para atualizar o cliente para com
 -   Adicione o item de configuração à linha de base de configuração e implante-a em todos os computadores Mac que instalam um certificado independentemente do Configuration Manager.  
 
  Para obter mais informações sobre como criar e implantar itens de configuração para computadores Mac, consulte [Como criar itens de configuração para dispositivos Mac OS X gerenciados com o cliente do System Center Configuration Manager](../../../../compliance/deploy-use/create-configuration-items-for-mac-os-x-devices-managed-with-the-client.md) e [Como implantar linhas de base de configuração no System Center Configuration Manager](../../../../compliance/deploy-use/deploy-configuration-baselines.md).  
-
-
-
-<!--HONumber=Jan17_HO4-->
-
 

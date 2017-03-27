@@ -12,13 +12,14 @@ ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 600086d5-bd9e-4ac1-8ace-c7a62de80dc2
 caps.latest.revision: 0
-author: nbigman
-ms.author: nbigman
+author: arob98
+ms.author: angrobe
 manager: angrobe
 Robots: NOINDEX,NOFOLLOW
 translationtype: Human Translation
 ms.sourcegitcommit: 10b1010ccbf3889c58c55b87e70b354559243c90
 ms.openlocfilehash: 30d0177dc7fcc7f39d00c48067130d587435bf2d
+ms.lasthandoff: 12/16/2016
 
 ---
 # <a name="use-the-client-software-from-the-version-1606-baseline-media-for-extended-interoperability-with-future-versions-of-a-current-branch-site"></a>Usar o software cliente da mídia versão 1606 da linha de base para interoperabilidade estendida com futuras versões de um site do Branch Atual
@@ -42,23 +43,18 @@ Quando você usa o cliente de interoperabilidade estendida da versão do System 
 Planeje atualizar o cliente de interoperabilidade estendida em dispositivos gerenciados com o Branch Atual antes que o suporte do cliente expire. Para fazer isso, baixe uma nova versão do cliente da Microsoft e, em seguida, implante esse software cliente atualizado nos dispositivos que usam o cliente de interoperabilidade estendida atual.
 
 **Limitações do cliente de interoperabilidade estendida:**
--   Atualizações para o software cliente de interoperabilidade estendida não estão disponíveis por meio de atualizações no console. Detalhes adicionais para a implantação de um software cliente atualizado serão fornecidos quando um cliente atualizado for liberado.
+-     Atualizações para o software cliente de interoperabilidade estendida não estão disponíveis por meio de atualizações no console. Detalhes adicionais para a implantação de um software cliente atualizado serão fornecidos quando um cliente atualizado for liberado.
 
 ## <a name="identify-the-client-version-you-use"></a>Identificar a versão de cliente que você usa
 A seguir estão as versões principais de clientes disponíveis para o Branch Atual e LTSB:
 
 |Versão do cliente|Branch e versão |  
 |----------------|---------------------|
-|5.00.8325.xxxx |   - Branch Atual 1511|
-|5.00.8355.xxxx |- Branch Atual 1602|
-|5.00.8412.1307 |- Branch Atual 1606 </br> - Branch Atual 1606 com o pacote cumulativo de atualizações do hotfix 1606 (KB3186654)</br>- Cliente de interoperabilidade estendida da mídia da linha de base versão 1606|  
+|5.00.8325.xxxx |    - Branch Atual 1511|
+|5.00.8355.xxxx    |- Branch Atual 1602|
+|5.00.8412.1307    |- Branch Atual 1606 </br> - Branch Atual 1606 com o pacote cumulativo de atualizações do hotfix 1606 (KB3186654)</br>- Cliente de interoperabilidade estendida da mídia da linha de base versão 1606|  
 
 No cliente, você pode exibir a versão do cliente na guia **Geral** do miniaplicativo do painel de controle do Configuration Manager.
 
 Na guia **Componentes** do miniaplicativo, alguns componentes mostram valores diferentes. Por exemplo, para uma versão de cliente 8412.1307, alguns componentes podem estar listados como 5.00.8412.**1000** ou 5.00.8412.**1006**.  Essa diferença nos últimos quatro dígitos para alguns componentes é normal e não indica uma falha do componente em atualizar para a versão atual do cliente.
-
-
-
-<!--HONumber=Dec16_HO3-->
-
 

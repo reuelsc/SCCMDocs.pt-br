@@ -13,12 +13,13 @@ ms.topic: article
 ms.assetid: 7d2bb377-1005-4a55-bd1f-b80a6d0b22e1
 caps.latest.revision: 6
 caps.handback.revision: 0
-author: nbigman
-ms.author: nbigman
+author: arob98
+ms.author: angrobe
 manager: angrobe
 translationtype: Human Translation
 ms.sourcegitcommit: 55c953f312a9fb31e7276dde2fdd59f8183b4e4d
 ms.openlocfilehash: eea9faaac579ecafd67eaac05dc7ee7ca7819db7
+ms.lasthandoff: 12/16/2016
 
 
 ---
@@ -61,9 +62,4 @@ Você pode atualizar a versão do cliente para Linux e UNIX em um computador par
      Por exemplo, use a seguinte linha de comando para executar o script: **at –f /tmp/upgrade.sh –m now + 5 minutes**  
 
  Após o cliente agendar com êxito a execução do script **upgrade.sh** , o cliente envia uma mensagem de status indicando que a implantação do software foi concluída com êxito. No entanto, a instalação do cliente real é gerenciada pelo computador após o atraso. Após a conclusão da atualização do cliente, valide a instalação examinando o arquivo **/var/opt/microsoft/scxcm.log** no computador cliente. Além disso, é possível confirmar se o cliente está instalado e se comunicando com o site exibindo detalhes do cliente no nó **Dispositivos** do espaço de trabalho **Ativos e Conformidade** do console do Configuration Manager.  
-
-
-
-<!--HONumber=Dec16_HO3-->
-
 

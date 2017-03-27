@@ -13,12 +13,13 @@ ms.topic: get-started-article
 ms.assetid: abd45393-d84e-4583-bc80-74bbb3709577
 caps.latest.revision: 7
 caps.handback.revision: 0
-author: nbigman
-ms.author: nbigman
+author: arob98
+ms.author: angrobe
 manager: angrobe
 translationtype: Human Translation
 ms.sourcegitcommit: 55c953f312a9fb31e7276dde2fdd59f8183b4e4d
 ms.openlocfilehash: 58251f6a4eebac4cba9f3d51f8d0aaad068c3ab8
+ms.lasthandoff: 12/16/2016
 
 
 ---
@@ -48,9 +49,4 @@ O System Center Configuration Manager dá suporte à instalação de cliente do 
 >  Com exceção de clientes Windows Embedded em modo de manutenção, os clientes do Configuration Manager que não são executados em ambientes virtualizados também usam esse atraso aleatório. Quando você têm muitos clientes implantados, esse comportamento ajuda a evitar picos na largura de banda de rede e reduz o requisito de processamento da CPU nos sistemas de site do Configuration Manager, como o ponto de gerenciamento e o servidor do site. O intervalo de atraso varia de acordo com a capacidade do Configuration Manager.  
 >   
 >  O atraso aleatório é desabilitado por padrão para atualizações de software e implantações de aplicativos necessárias usando a seguinte configuração do cliente: **Agente de Computador**: **Desabilitar data limite aleatória**.
-
-
-
-<!--HONumber=Dec16_HO3-->
-
 
