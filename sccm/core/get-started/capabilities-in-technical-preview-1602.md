@@ -15,9 +15,11 @@ caps.latest.revision: 6
 author: Brenduns
 ms.author: brenduns
 manager: angrobe
+robots: noindex,nofollow
 translationtype: Human Translation
 ms.sourcegitcommit: 5d08d1f9ccd995d544c3c21c4af52ede73343077
 ms.openlocfilehash: 6e737d06563b256010f302af4e805eb6812524e2
+ms.lasthandoff: 01/24/2017
 
 ---
 # <a name="capabilities-in-technical-preview-1602-for-system-center-configuration-manager"></a>Funcionalidades no Technical Preview 1602 do System Center Configuration Manager
@@ -28,7 +30,7 @@ Este artigo apresenta os recursos disponíveis no Technical Preview do System Ce
 
  Veja a seguir os novos recursos que você pode experimentar nesta versão.  
 
-##  <a name="a-namebkmkmdma-improvements-to-mobile-device-management"></a><a name="BKMK_MDM"></a> Melhorias no gerenciamento de dispositivo móvel  
+##  <a name="BKMK_MDM"></a> Melhorias no gerenciamento de dispositivo móvel  
 
 ### <a name="ios-activation-lock"></a>Bloqueio de Ativação do iOS  
  O System Center Configuration Manager pode ajudar a gerenciar o Bloqueio de Ativação do iOS, um recurso do aplicativo Buscar meu iPhone para dispositivos iOS 7.1 e posteriores. O Bloqueio de Ativação é habilitado automaticamente quando o aplicativo Buscar meu iPhone for usado em um dispositivo. Depois que ele for habilitado, a ID da Apple e a senha do usuário deverão ser inseridas antes que qualquer pessoa possa:  
@@ -43,12 +45,12 @@ Este artigo apresenta os recursos disponíveis no Technical Preview do System Ce
 
  Para ver os detalhes, consulte [Ajudar a proteger dispositivos iOS com bypass de Bloqueio de Ativação para o Configuration Manager](/sccm/mdm/deploy-use/manage-ios-activation-lock)  
 
-##  <a name="a-namebkmksc1601a-improvements-to-software-center-in-version-1602"></a><a name="BKMK_SC1601"></a> Melhorias no Centro de Software na versão 1602  
+##  <a name="BKMK_SC1601"></a> Melhorias no Centro de Software na versão 1602  
 
 ### <a name="refresh-pc-machine-and-user-policy-from-software-center"></a>Atualizar a política de computador e de usuário do computador no Centro de Software  
  Uma nova opção, **Política de Sincronização**, foi adicionada à página **Opções** > **Manutenção do Computador** do Centro de Software, o que faz com que o computador atualize sua política de computador e de usuário do Configuration Manager.  
 
-##  <a name="a-namebkmkwin10servicinga-improvements-to-windows-10-servicing"></a><a name="BKMK_Win10Servicing"></a> Melhorias no Serviço do Windows 10  
+##  <a name="BKMK_Win10Servicing"></a> Melhorias no Serviço do Windows 10  
  Na Technical Preview 1602, adicionamos as seguintes melhorias ao Serviço do Windows 10:  
 
 -   Novas opções de filtro para Planos de Serviço.  Agora é possível filtrar por **Idioma**, **Obrigatório** e **Título**. Somente as atualizações que atendem aos critérios especificados serão adicionadas à implantação associada.  
@@ -58,9 +60,4 @@ Este artigo apresenta os recursos disponíveis no Technical Preview do System Ce
 -   As atualizações do Windows 10 disponíveis agora são exibidas apenas no nó **Manutenção do Windows 10** \ **Todas as Atualizações do Windows 10** do console do Configuration Manager. Essas atualizações não são mais exibidas no nó **Atualizações de Software** \ **Todas as Atualizações de Software**.  
 
 -   Os usuários finais que iniciam um pacote de Atualização do Windows 10 veem um diálogo que informará que estão atualizando seus sistemas operacionais.  
-
-
-
-<!--HONumber=Jan17_HO4-->
-
 

@@ -15,9 +15,11 @@ caps.latest.revision: 8
 author: Brenduns
 ms.author: brenduns
 manager: angrobe
+robots: noindex,nofollow
 translationtype: Human Translation
 ms.sourcegitcommit: 5d08d1f9ccd995d544c3c21c4af52ede73343077
 ms.openlocfilehash: 1d3adcf3310d88b1266388aa03ae5ea03e23f2a5
+ms.lasthandoff: 01/24/2017
 
 ---
 # <a name="capabilities-in-technical-preview-1603-for-system-center-configuration-manager"></a>Funcionalidades no Technical Preview 1603 do System Center Configuration Manager
@@ -34,7 +36,7 @@ Este artigo apresenta os recursos disponíveis no Technical Preview do System Ce
 
  **Veja a seguir os novos recursos que você pode experimentar nesta versão.**  
 
-##  <a name="a-namebkmksc1603a-improvements-to-software-center"></a><a name="BKMK_SC1603"></a> Melhorias no Centro de Software  
+##  <a name="BKMK_SC1603"></a> Melhorias no Centro de Software  
 
 ### <a name="new-tiled-view-for-apps"></a>Nova exibição lado a lado para aplicativos  
  Agora, os usuários finais podem escolher entre uma lista de aplicativos ou uma exibição lado a lado dos aplicativos na guia **Aplicativos** do Centro de Software.  
@@ -42,7 +44,7 @@ Este artigo apresenta os recursos disponíveis no Technical Preview do System Ce
 ### <a name="select-multiple-updates-in-software-center"></a>Escolher várias atualizações no Centro de Software  
  Na guia **Atualizações** do Centro de Software, agora você pode escolher várias atualizações ou **Atualizar Tudo** para começar a instalação de várias atualizações simultaneamente.  
 
-##  <a name="a-namebkmkrc1603a-improvements-to-remote-control"></a><a name="BKMK_RC1603"></a> Melhorias no controle remoto  
+##  <a name="BKMK_RC1603"></a> Melhorias no controle remoto  
 
 ### <a name="limit-shared-clipboard-access-in-a-remote-control-session"></a>Limitar o acesso compartilhado à área de transferência em uma sessão de controle remoto  
  Agora você pode habilitar a nova configuração do cliente de ferramentas remotas **Solicitar ao usuário permissão para transferência de arquivo na área de transferência compartilhada** para limitar o acesso à área de transferência compartilhada em uma sessão de controle remoto.  
@@ -51,7 +53,7 @@ Este artigo apresenta os recursos disponíveis no Technical Preview do System Ce
 
  Isso adiciona uma camada de proteção para o usuário final como anteriormente, caso o visualizador tenha recebido controle total do computador do usuário final; eles podiam usar a área de transferência compartilhada para transferir arquivos da sessão para o computador local de maneira que era totalmente transparente para o usuário final.  
 
-##  <a name="a-namebkmkramdisktftpa-customize-the-ramdisk-tftp-block-size-and-window-size-on-pxe-enabled-distribution-points"></a><a name="BKMK_RamDiskTFTP"></a> Personalizar o tamanho do bloco e da janela do RamDisk TFTP nos pontos de distribuição habilitados para PXE  
+##  <a name="BKMK_RamDiskTFTP"></a> Personalizar o tamanho do bloco e da janela do RamDisk TFTP nos pontos de distribuição habilitados para PXE  
  Na Technical Preview 1603, você pode personalizar o tamanho do bloco e da janela do RamDisk TFTP para pontos de distribuição habilitados para PXE. Se você tiver personalizado sua rede, isso poderá fazer com que o download da imagem de inicialização falhe com um erro de tempo limite devido ao tamanho muito grande do bloco ou da janela. A personalização do tamanho do bloco e da janela do RamDisk TFTP permite otimizar o tráfego TFTP ao usar o PXE para atender aos seus requisitos de rede específicos.   
 Você precisará testar as configurações personalizadas no ambiente para determinar o que é mais eficiente.  
 
@@ -91,9 +93,4 @@ Você precisará testar as configurações personalizadas no ambiente para deter
      **Valor**: &lt;tamanho de bloco personalizado\>  
 
  O valor padrão é 4096 (4 k).  
-
-
-
-<!--HONumber=Jan17_HO4-->
-
 

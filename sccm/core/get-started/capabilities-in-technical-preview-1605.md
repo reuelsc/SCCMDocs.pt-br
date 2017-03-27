@@ -15,10 +15,11 @@ caps.latest.revision: 36
 author: Brenduns
 ms.author: brenduns
 manager: angrobe
-robots: noindex,nofollow
 translationtype: Human Translation
 ms.sourcegitcommit: 5d08d1f9ccd995d544c3c21c4af52ede73343077
 ms.openlocfilehash: 3af395b84dd6878af9b846b438049e55baf9472e
+ms.lasthandoff: 01/24/2017
+
 
 ---
 # <a name="capabilities-in-technical-preview-1605-for-system-center-configuration-manager"></a>Funcionalidades no Technical Preview 1605 do System Center Configuration Manager
@@ -35,7 +36,7 @@ Este artigo apresenta os recursos disponíveis no Technical Preview do System Ce
 
  **Veja a seguir os novos recursos que você pode experimentar nesta versão.**  
 
-##  <a name="a-namebkmkperappvpna-per-app-vpn-for-windows-10-devices"></a><a name="BKMK_PerAppVPN"></a> VPN por aplicativo para dispositivos com Windows 10  
+##  <a name="BKMK_PerAppVPN"></a> VPN por aplicativo para dispositivos com Windows 10  
  Para dispositivos Windows 10 gerenciados usando o Configuration Manager com o Intune, você pode adicionar uma lista de aplicativos que abrem automaticamente uma conexão VPN que você configurou por meio do console de administração do Configuration Manager. Você tem a opção de restringir o tráfego VPN para esses aplicativos, ou você pode continuar a permitir todo o tráfego pela conexão VPN.  
 
  **Requisitos**:  
@@ -44,17 +45,17 @@ Este artigo apresenta os recursos disponíveis no Technical Preview do System Ce
 
 -   Um perfil de VPN do Windows 10 que foi implantado em pelo menos um dispositivo  
 
-##  <a name="a-namebkmkinstallsua-improvements-to-the-install-software-updates-task-sequence"></a><a name="BKMK_InstallSU"></a> Melhorias na sequência de tarefas de Instalar Atualizações de Software  
+##  <a name="BKMK_InstallSU"></a> Melhorias na sequência de tarefas de Instalar Atualizações de Software  
  As seguintes melhorias foram feitas na sequência de tarefas de Instalar Atualizações de Software:  
 
 -   Uma nova variável de sequência de tarefas, SMSTSSoftwareUpdateScanTimeout, está disponível para oferecer a capacidade de controlar o tempo limite na varredura de atualizações de software durante a etapa de sequência de tarefas de Instalar atualizações de software. O valor padrão é 30 minutos.  
 
 -   Houve aprimoramentos para registro em log. O arquivo smsts.log conterá novas entradas de log que fazem referência a outros arquivos de log que ajudarão você a solucionar problemas durante o processo de instalação de atualizações.  
 
-##  <a name="a-namebkmkprepareconfigmgrclienta-improvements-to-the-prepare-configmgr-client-for-capture-task-sequence-step"></a><a name="BKMK_PrepareConfigMgrClient"></a> Melhorias na etapa de sequência de tarefas Preparar o Cliente do ConfigMgr para Captura  
+##  <a name="BKMK_PrepareConfigMgrClient"></a> Melhorias na etapa de sequência de tarefas Preparar o Cliente do ConfigMgr para Captura  
  A etapa Preparar o Cliente do ConfigMgr agora removerá completamente o cliente do Configuration Manager, em vez de apenas remover informações importantes. Quando a sequência de tarefas implantar a imagem capturada do sistema operacional, ela instalará um novo cliente do Configuration Manager sempre.  
 
-##  <a name="a-namebkmkgracea-grace-period-for-required-application-deployments"></a><a name="BKMK_Grace"></a> Período de cortesia para implantações de aplicativos obrigatórios  
+##  <a name="BKMK_Grace"></a> Período de cortesia para implantações de aplicativos obrigatórios  
  Em alguns casos, talvez você queira conceder aos usuários mais tempo instalar as implantações de aplicativo obrigatórias além dos prazos configurados. Por exemplo, se um usuário final acabou de voltar de férias, eles terá que aguardar um longo período enquanto as implantações de aplicativo atrasadas são instaladas. No entanto, eles ainda podem instalar o aplicativo imediatamente a qualquer momento que desejarem.  
 
  Para ajudar a resolver esse problema, agora você pode definir um **período de carência** implantando configurações de cliente do Configuration Manager para uma coleção.  
@@ -71,7 +72,7 @@ Este artigo apresenta os recursos disponíveis no Technical Preview do System Ce
 
  Opções semelhantes foram adicionadas ao assistente de implantação de atualizações de software, ao assistente de regras de implantação automática e páginas de propriedades. No entanto, elas não estão implementadas no momento nesse technical preview.  
 
-##  <a name="a-namebkmkremotea-new-experience-for-remote-device-actions"></a><a name="BKMK_Remote"></a> Nova experiência para ações de dispositivo remoto  
+##  <a name="BKMK_Remote"></a> Nova experiência para ações de dispositivo remoto  
  A experiência para executar as ações de dispositivo remoto do console do Configuration Manager foi aprimorada.  
 Ações comuns, como **Desativar/Apagar**, **Redefinir Senha**, **Bloqueio Remoto** e **Ignorar Bloqueio de Ativação** agora podem ser encontradas no menu **Ações do Dispositivo Remoto** acessado pelo espaço de trabalho **Ativos e Conformidade**.  
 
@@ -87,7 +88,7 @@ Ações comuns, como **Desativar/Apagar**, **Redefinir Senha**, **Bloqueio Remot
 
  Para mais informações sobre o bypass do Bloqueio de Ativação do iOS, confira [Ajudar a proteger dispositivos iOS com bypass de Bloqueio de Ativação para o Configuration Manager](/sccm/mdm/deploy-use/manage-ios-activation-lock), em especial a seção **Problemas atuais conhecidos com o bypass do Bloqueio de Ativação no Configuration Manager Technical Preview**.  
 
-##  <a name="a-namebkmkwsfba-windows-store-for-business-apps"></a><a name="BKMK_WSFB"></a> Aplicativos da Windows Store para Empresas  
+##  <a name="BKMK_WSFB"></a> Aplicativos da Windows Store para Empresas  
  Na [Windows Store para Empresas](https://www.microsoft.com/business-store), é possível encontrar e adquirir aplicativos para sua organização, individualmente ou por volume. Ao conectar a loja ao Configuration Manager, é possível gerenciar aplicativos adquiridos por volume no console do Configuration Manager, por exemplo:  
 
 -   É possível sincronizar a lista de aplicativos adquiridos com o Configuration Manager  
@@ -158,7 +159,7 @@ Ações comuns, como **Desativar/Apagar**, **Redefinir Senha**, **Bloqueio Remot
 >   
 >  No momento, não é possível implantar aplicativos licenciados online com o Configuration Manager.  
 
-##  <a name="a-namebkmkvpp2a-general-improvements-for-volume-purchased-apps"></a><a name="BKMK_VPP2"></a> Melhorias gerais para aplicativos adquiridos por volume  
+##  <a name="BKMK_VPP2"></a> Melhorias gerais para aplicativos adquiridos por volume  
 
 -   Nessa versão, os aplicativos adquiridos por volume da Windows Store para Empresas e da iOS App Store foram consolidados na mesma exibição, **Informações sobre Licença para Aplicativos da Loja**.  
 
@@ -170,14 +171,14 @@ Ações comuns, como **Desativar/Apagar**, **Redefinir Senha**, **Bloqueio Remot
 
 -   O local usado para obter e carregar um token de VPP da Apple para aplicativos adquiridos por volume no console do Configuration Manager mudou. Agora você pode fazer isso no espaço de trabalho **Administração** no nó **Serviços de Nuvem** > **Tokens do Apple Volume Purchase Program**.  
 
-##  <a name="a-namebkmkvppa-enterprise-data-protection-edp"></a><a name="BKMK_VPP"></a> EDP (Proteção de dados empresariais)  
+##  <a name="BKMK_VPP"></a> EDP (Proteção de dados empresariais)  
  Você pode criar itens de configuração que permitem implantar suas políticas de EDP (proteção de dados empresariais), incluindo permitindo que você escolha seus aplicativos protegidos, seu nível de proteção EDP e como encontrar dados empresariais na rede. Para obter mais informações sobre a EDP, consulte os seguintes tópicos:  
 
 -   [Protect your enterprise data using enterprise data protection (EDP)](https://technet.microsoft.com/itpro/windows/keep-secure/protect-enterprise-data-using-edp) (Proteger os dados empresariais usando a EDP (proteção de dados empresariais))  
 
 -   [Create and deploy an enterprise data protection (EDP) policy using System Center Configuration Manager](https://technet.microsoft.com/itpro/windows/keep-secure/create-edp-policy-using-sccm) (Criar e implantar uma política de EDP (proteção de dados empresariais) usando o System Center Configuration Manager)  
 
-##  <a name="a-namebkmkenda-end-users-can-install-apps-from-the-company-portal"></a><a name="BKMK_End"></a> Os usuários finais podem instalar aplicativos do Portal da Empresa  
+##  <a name="BKMK_End"></a> Os usuários finais podem instalar aplicativos do Portal da Empresa  
  O MDM local foi introduzido na versão 1511 do System Center Configuration Manager. Nas versões anteriores, você podia implantar aplicativos em dispositivos Windows 10 gerenciados por MDM com uma finalidade da implantação de instalação **Obrigatória** para todos os dispositivos gerenciados por MDM locais.  
 
  Nesta versão, agora você pode implantar aplicativos com uma finalidade da implantação **Disponível** para usuários de computadores Windows 10 gerenciados por MDM locais e agora os próprios usuários podem instalar esses aplicativos do Portal da Empresa.
@@ -268,12 +269,12 @@ Nesse technical preview, se o Portal da Empresa estiver aberto por mais de 15 mi
 
      Depois de abrir o Portal da Empresa, você verá uma caixa de diálogo de autenticação chamada **System Center Configuration Manager**. Especifique as credenciais do Active Directory do usuário (na forma de user@domain ou domínio\usuário) para fazer logon.  
 
-##  <a name="a-namebkmksw1a-new-tabs-for-updates-and-operating-systems-in-software-center"></a><a name="BKMK_SW1"></a> Novas guias para Atualizações e Sistemas operacionais no Centro de Software  
+##  <a name="BKMK_SW1"></a> Novas guias para Atualizações e Sistemas operacionais no Centro de Software  
  Nessa versão, as seguintes alterações foram feitas para melhorar o layout do aplicativo do Centro de Software:  
 
 -   A guia **Aplicativos** foi dividida em três guias separadas para **Atualizações**, **Sistemas operacionais** (que anteriormente eram encontradas na lista **Filtros**) e **Aplicativos**.  
 
-##  <a name="a-namebkmkservergroupsa-service-a--server-group"></a><a name="BKMK_ServerGroups"></a> Manutenção de um grupo de servidores  
+##  <a name="BKMK_ServerGroups"></a> Manutenção de um grupo de servidores  
  O Technical Preview do System Center Configuration Manager, versão 1511, incluía a habilidade de criar uma coleção em que todos os dispositivos na coleção compõem um grupo de servidores. Em seguida, você pode definir as configurações do grupo de servidores a serem usadas ao implantar as atualizações de software no grupo de servidores, controlar o percentual de computadores atualizados a qualquer momento e configurar scripts do PowerShell de pré-implantação e pós-implantação para executar ações personalizadas.  
 
  O Technical Preview do System Center Configuration Manager, versão 1605, adiciona a capacidade de atualizar os computadores em um grupo de servidores em uma ordem especificada que você define, adiciona o monitoramento aprimorado para exibir o status dos computadores no grupo de servidores e fornece a capacidade de limpar os bloqueios de implantação que é útil quando os clientes falharam em instalar as atualizações de software e estão impedindo que outros clientes instalem suas atualizações de software.  
@@ -340,7 +341,7 @@ Nesse technical preview, se o Portal da Empresa estiver aberto por mais de 15 mi
 
 2.  Na guia **Início**, no grupo **Implantação**, clique em **Limpar Bloqueios de Implantação de Grupo de Servidores**. Quando os clientes não conseguem instalar as atualizações de software e impedem que outros clientes instale suas atualizações de software, os bloqueios de implantação podem ser removidos manualmente.  
 
-##  <a name="a-namebkmkatpa-support-for-windows-defender-advanced-threat-protection-service"></a><a name="BKMK_ATP"></a> Suporte para o serviço Proteção Avançada contra Ameaças do Windows Defender  
+##  <a name="BKMK_ATP"></a> Suporte para o serviço Proteção Avançada contra Ameaças do Windows Defender  
  A ATP (Proteção Avançada contra Ameaças) do Windows Defender é um novo serviço que ajudará as empresas a detectar, investigar e responder a ataques avançados em suas redes. Saiba mais sobre a [ATP do Windows Defender](https://blogs.windows.com/windowsexperience/2016/03/01/announcing-windows-defender-advanced-threat-protection). O Configuration Manager pode ajudá-lo a integrar e monitorar os dispositivos de cliente da Edição de Aniversário do Windows 10 gerenciados.  
 
 ### <a name="try-it-now"></a>Experimente agora!  
@@ -407,7 +408,7 @@ Nesse technical preview, se o Portal da Empresa estiver aberto por mais de 15 mi
 
         -   **Não integrado** – A política foi aplicada, mas o agente não informou sua integração  
 
-##  <a name="a-namebkmkdhaa-on-premises-device-health-attestation"></a><a name="BKMK_DHA"></a> Atestado de integridade do dispositivo local  
+##  <a name="BKMK_DHA"></a> Atestado de integridade do dispositivo local  
  O atestado de integridade para dispositivos Windows 10 agora podem ser configurados para comunicação usando a infraestrutura local. Os administradores podem especificar se o relatório é gerado pelos recursos locais ou na nuvem. Se local for escolhido para o relatório de atestado de integridade, uma URL poderá ser especificada para o serviço. Isso permite que os computadores cliente sem acesso à Internet habilitem e gerenciem dispositivos usando o atestado de integridade.  
 
 ### <a name="enable-health-attestation-for-on-premises-devices"></a>Habilitar atestado de integridade para dispositivos no local  
@@ -417,10 +418,10 @@ Nesse technical preview, se o Portal da Empresa estiver aberto por mais de 15 mi
 
 2.  Especifique a **URL do Serviço de Atestado de Integridade local**e clique em **OK**.  
 
-##  <a name="a-namebkmkrestartoptionsa-new-restart-options-for-windows-10-clients-after-software-update-installation"></a><a name="BKMK_RestartOptions"></a> Novas opções de reinício para clientes do Windows 10 após a instalação da atualização de software  
+##  <a name="BKMK_RestartOptions"></a> Novas opções de reinício para clientes do Windows 10 após a instalação da atualização de software  
  Quando uma atualização de software que requer reinicialização é implantada usando o Configuration Manager e é instalada em um computador, uma reinicialização pendente é agendada e uma caixa de diálogo de reinicialização é exibida. No momento, para o Windows 8 e acima, se você desligar ou reiniciar o computador usando as opções de energia do Windows (em vez da caixa de diálogo de reinicialização), a caixa de diálogo de reinicialização permanecerá depois da reinicialização do computador e ainda será necessário reiniciá-lo no prazo configurado. Nesse technical Preview, as opções **Atualizar e Reiniciar** e **Atualizar e Desligar** estarão disponíveis em computadores Windows 10, nas opções de energia do Windows, sempre que houver uma reinicialização pendente para uma atualização de software do Configuration Manager. Depois de usar uma dessas opções, a caixa de diálogo de reinicialização não será exibida após o computador reiniciar.  
 
-##  <a name="a-namebkmkimeia-pre-declare-corporate-owned-devices-with-imei-or-ios-serial-number"></a><a name="BKMK_IMEI"></a> Pré-declarar dispositivos corporativos com número de série do iOS ou IMEI  
+##  <a name="BKMK_IMEI"></a> Pré-declarar dispositivos corporativos com número de série do iOS ou IMEI  
  Agora é possível identificar os dispositivos corporativos importando seus números IMEI (identidade da estação internacional do equipamento móvel). Você pode carregar um arquivo .csv (valores separados por vírgula) que contém os números IMEI do dispositivo ou inserir manualmente as informações sobre o dispositivo.  Você também pode importar os números de série para dispositivos iOS.  As informações importadas definirão a propriedade dos dispositivos que são registrados como “Corporativos”.  Uma licença do Intune ainda é necessária para cada usuário que acessa o serviço.  
 
 ### <a name="try-it-out"></a>Experimente!  
@@ -469,9 +470,4 @@ Nesse technical preview, se o Portal da Empresa estiver aberto por mais de 15 mi
      Clique em **Avançar**.  
 
 4.  Examine os resultados da importação do arquivo. Os números de série ou IMEI importados anteriormente terão seus detalhes atualizados com novos detalhes.  Clique em **Avançar** para continuar ou em **Voltar** para preservar os detalhes atualizados e conclua o assistente.  
-
-
-
-<!--HONumber=Jan17_HO4-->
-
 

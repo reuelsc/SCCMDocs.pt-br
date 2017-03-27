@@ -15,9 +15,11 @@ caps.latest.revision: 7
 author: Brenduns
 ms.author: brenduns
 manager: angrobe
+robots: noindex,nofollow
 translationtype: Human Translation
 ms.sourcegitcommit: 5d08d1f9ccd995d544c3c21c4af52ede73343077
 ms.openlocfilehash: 4da12425382c5d64602b2728e0e661c8cb89a5e4
+ms.lasthandoff: 01/24/2017
 
 ---
 # <a name="capabilities-in-technical-preview-1601-for-system-center-configuration-manager"></a>Funcionalidades no Technical Preview 1601 do System Center Configuration Manager
@@ -59,7 +61,7 @@ Este artigo apresenta os recursos disponíveis no Technical Preview do System Ce
 
 **Veja a seguir os novos recursos que você pode experimentar nesta versão.**  
 
-##  <a name="a-namebkmkhybrid1a-improvements-to-microsoft-intune-integration"></a><a name="bkmk_hybrid1"></a> Melhorias para a integração do Microsoft Intune  
+##  <a name="bkmk_hybrid1"></a> Melhorias para a integração do Microsoft Intune  
 Na Visualização técnica 1601, adicionamos suporte para os seguintes recursos:  
 
 ### <a name="improvements-to-conditional-access"></a>Aprimoramentos ao acesso condicional  
@@ -125,7 +127,7 @@ Na Visualização técnica 1601, adicionamos suporte para os seguintes recursos:
 
      Para usar essa opção, vá para a página **Geral** do assistente **Configurar Política de Acesso Condicional** para o Exchange no local.  
 
-##  <a name="a-namebkmkclientstatusa-client-online-status"></a><a name="bkmk_clientStatus"></a> Status online do cliente  
+##  <a name="bkmk_clientStatus"></a> Status online do cliente  
 Começando com o technical preview 1601, você pode identificar rapidamente se um cliente está online ou offline no console do Configuration Manager. Com colunas e ícones atualizados nas listas de dispositivos do console, você pode avaliar o status dos clientes em seu ambiente para identificar áreas problemáticas e outras questões que precisam de atenção.  
 
 Um cliente estará online se estiver conectado a uma função de sistema de sites do ponto de gerenciamento do Configuration Manager. Enquanto o ponto de gerenciamento estiver recebendo mensagens de ping do cliente, seu status está online. Se o gerenciamento não receber uma mensagem em 5 minutos, o status do cliente será alterado para offline.  
@@ -158,7 +160,7 @@ Um cliente estará online se estiver conectado a uma função de sistema de site
 
  Para mostrar alterações recentes no status do cliente, atualize o console.  
 
-##  <a name="a-namebkmkappmgmt1601a-improvements-to-application-management"></a><a name="bkmk_appmgmt1601"></a> Aprimoramentos no gerenciamento de aplicativos  
+##  <a name="bkmk_appmgmt1601"></a> Aprimoramentos no gerenciamento de aplicativos  
  Na Visualização técnica 1601, adicionamos suporte para os seguintes recursos:  
 
 ### <a name="manage-volume-purchased-apps-for-ios-devices"></a>Gerenciar aplicativos adquiridos por volume para dispositivos iOS  
@@ -194,7 +196,7 @@ Um cliente estará online se estiver conectado a uma função de sistema de site
 
 -   No assistente **Implantar Software**, na página **Política de Configuração de Aplicativo**, associe a política de configuração de aplicativo criada com um tipo compatível de implantação de aplicativos.  
 
-##  <a name="a-namebkmkcompliance1601a-improvements-to-compliance-settings"></a><a name="bkmk_compliance1601"></a> Aprimoramentos para configurações de conformidade  
+##  <a name="bkmk_compliance1601"></a> Aprimoramentos para configurações de conformidade  
  Na Visualização técnica 1601, adicionamos suporte para os seguintes recursos:  
 
 ### <a name="microsoft-edge-browser-settings"></a>Configurações do navegador Microsoft Edge  
@@ -217,9 +219,4 @@ Um cliente estará online se estiver conectado a uma função de sistema de site
  Para ver as novas configurações, escolha **Modo de Quiosque – Samsung KNOX** no item de configuração da página **Configurações do Dispositivo** do assistente **Criar Item de Configuração**.  
 
  Para mais informações, consulte [Como criar itens de configuração para dispositivos Windows 8.1 e Windows 10 gerenciados sem o cliente do System Center Configuration Manager](../../compliance/deploy-use/create-configuration-items-for-windows-8.1-and-windows-10-devices-managed-without-the-client.md).  
-
-
-
-<!--HONumber=Jan17_HO4-->
-
 

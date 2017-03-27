@@ -2,7 +2,7 @@
 title: "Exibir dados de diagnóstico | Microsoft Docs"
 description: "Veja os dados de uso e de diagnóstico para confirmar se sua hierarquia do System Center Configuration Manager não contém nenhuma informação confidencial."
 ms.custom: na
-ms.date: 12/29/2016
+ms.date: 3/27/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
@@ -18,6 +18,7 @@ manager: angrobe
 translationtype: Human Translation
 ms.sourcegitcommit: 688e05aae0e0b15b54835f8d64a98487f4d7b64d
 ms.openlocfilehash: fcd7ac43f7b2d2c92d6aadd7c490f198ac99e5e6
+ms.lasthandoff: 12/30/2016
 
 
 ---
@@ -36,7 +37,7 @@ Use o comando SQL a seguir para exibir o conteúdo desta tabela e mostrar os dad
 
 Quando o ponto de conexão de serviço está no modo offline, é possível usar a ferramenta de conexão de serviço para exportar os dados atuais de diagnóstico e de uso para um arquivo CSV (valores separados por vírgula). Execute a ferramenta de conexão de serviço no ponto de conexão de serviço usando o parâmetro **-Export**.  
 
-##  <a name="a-namebkmkhashesa-one-way-hashes"></a><a name="bkmk_hashes"></a> Hashes unidirecionais  
+##  <a name="bkmk_hashes"></a> Hashes unidirecionais  
 Alguns dados consistem em cadeias de caracteres alfanuméricos aleatórios. O Configuration Manager usa o algoritmo SHA-256, que usa hashes unidirecionais, para garantir que não coletamos dados potencialmente confidenciais. O algoritmo mantém os dados em um estado no qual eles ainda podem ser usados para fins de correlação e comparação. Por exemplo, em vez de coletar os nomes de tabelas no banco de dados do site, um hash unidirecional é capturado para cada nome de tabela. Isso garante que os nomes de tabela personalizados criados ou os complementos de produtos de outros usuários não estão visíveis. Em seguida, podemos executar o mesmo hash unidirecional dos nomes de tabela SQL fornecidos por padrão no produto e comparar os resultados das duas consultas para determinar o desvio de seu esquema de banco de dados em relação ao padrão do produto. Isso é usado para aperfeiçoar as atualizações que exigem alterações no esquema SQL.  
 
 Ao exibir os dados brutos, um valor com hash comum aparecerá em cada linha de dados. Essa é a ID da hierarquia. Esse valor com hash é usado para garantir que os dados são correlacionados com a mesma hierarquia sem identificar o cliente nem a origem.  
@@ -66,9 +67,4 @@ Ao exibir os dados brutos, um valor com hash comum aparecerá em cada linha de d
     $result = [Convert]::ToBase64String($hashedBytes)    
     return $result   
     ```  
-
-
-
-<!--HONumber=Dec16_HO5-->
-
 

@@ -15,9 +15,11 @@ caps.latest.revision: 6
 author: Brenduns
 ms.author: brenduns
 manager: angrobe
+robots: noindex,nofollow
 translationtype: Human Translation
 ms.sourcegitcommit: 5d08d1f9ccd995d544c3c21c4af52ede73343077
 ms.openlocfilehash: 7fff6f2807a679b621b736b8ad0b6561fb37affe
+ms.lasthandoff: 01/24/2017
 
 ---
 # <a name="capabilities-in-technical-preview-1512-for-system-center-configuration-manager"></a>Funcionalidades no Technical Preview 1512 do System Center Configuration Manager
@@ -28,7 +30,7 @@ Este artigo apresenta os recursos disponíveis no Technical Preview do System Ce
 
  Veja a seguir os novos recursos que você pode experimentar nesta versão.  
 
-##  <a name="a-namebkmkdevicehealtha-device-health-attestation"></a><a name="bkmk_devicehealth"></a> Atestado de integridade do dispositivo  
+##  <a name="bkmk_devicehealth"></a> Atestado de integridade do dispositivo  
  Começando com o Technical Preview 1512, os administradores podem ver o status do atestado de integridade de dispositivo Windows 10 no console do Configuration Manager.  Essa funcionalidade está disponível para o Configuration Manager e o Configuration Manager com o Microsoft Intune. O atestado de integridade do dispositivo permite que o administrador garanta que os computadores cliente têm configurações confiáveis de BIOS, TPM e software de inicialização. Para dar suporte de atestado de integridade do dispositivo, os dispositivos do cliente devem estar executando o Win10 com o TPM 2 habilitado. O atestado de integridade do dispositivo exibe o número de dispositivos habilitados para cada um dos seguintes:  
 
 -   Antimalware de inicialização antecipada  
@@ -43,7 +45,7 @@ O console também exibe as principais configurações de atestado de integridade
 
 Para visualizar a exibição do atestado de integridade do dispositivo no console do Configuration Manager, acesse o espaço de trabalho **Monitoramento**, clique no nó **Segurança** e clique em **Atestado de Integridade**.  
 
-##  <a name="a-namebkmkviewtermsa-in-console-monitoring-for-terms-and-conditions"></a><a name="bkmk_viewterms"></a> Monitoramento no console dos termos e condições  
+##  <a name="bkmk_viewterms"></a> Monitoramento no console dos termos e condições  
 A partir do Technical Preview 1512, ao integrar o Configuration Manager ao Microsoft Intune, você poderá usar o console do Configuration Manager para ver quais usuários aceitaram os termos e condições configurados pelo departamento de TI, e quais não aceitaram.  
 
 **Para exibir informações de resumo:**  
@@ -56,7 +58,7 @@ A partir do Technical Preview 1512, ao integrar o Configuration Manager ao Micro
 
 2.  Na parte inferior do console, selecione a guia **Implantações**, selecione a implantação e clique em **Exibir Status.**  
 
-##  <a name="a-namebkmkeppolicya-improvements-to-endpoint-protection-policy-settings"></a><a name="bkmk_EPpolicy"></a> Aprimoramentos nas configurações da política do Endpoint Protection  
+##  <a name="bkmk_EPpolicy"></a> Aprimoramentos nas configurações da política do Endpoint Protection  
 Na Visualização Técnica 1512, adicionamos as seguintes novas configurações na política antimalware do Endpoint Protection:  
 
 -   Proteção em tempo real: **Bloco de aplicativos potencialmente indesejados no download e antes da instalação**  
@@ -90,9 +92,4 @@ Na Visualização Técnica 1512, adicionamos as seguintes novas configurações 
 **Pré-requisitos para usar as políticas do Endpoint Protection:**  
 
 Antes de usar as políticas do Endpoint Protection, você deve instalar e gerenciar o cliente Endpoint Protection usando as configurações de cliente do Endpoint Protection. Isso é feito usando o cliente do System Center Endpoint Protection para Windows 7, Windows 8, Windows 8.1 ou Windows Defender para Windows 10 gerenciado. Consulte [Endpoint Protection no System Center Configuration Manager](../../protect/deploy-use/endpoint-protection.md).  
-
-
-
-<!--HONumber=Jan17_HO4-->
-
 
