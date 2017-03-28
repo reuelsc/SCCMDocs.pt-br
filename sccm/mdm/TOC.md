@@ -39,6 +39,7 @@
 ### [Windows Phone](deploy-use/create-configuration-items-for-windows-phone-devices-managed-without-the-client.md)
 ### [iOS e Mac OS X](deploy-use/create-configuration-items-for-ios-and-mac-os-x-devices-managed-without-the-client.md)
 ### [Android e Samsung KNOX Standard](deploy-use/create-configuration-items-for-android-and-samsung-knox-devices-managed-without-the-client.md)
+### [Android for Work](deploy-use/create-configuration-items-for-android-for-work-devices-managed-without-the-client.md)
 
 ## [Sincronizar dispositivos registrados no Intune](deploy-use/sync-intune-device.md)
 
@@ -71,10 +72,11 @@
 ### [Gerenciar o acesso do computador aos serviços do O365](deploy-use/manage-access-to-o365-services-for-pcs-managed-by-sccm.md)
 
 ## [Gerenciar o acesso com base em riscos](deploy-use/manage-access-based-on-device-network-app-risk.md)
-### [Configurar a proteção contra ameaças Lookout](deploy-use/set-up-your-subscription-with-lookout.md)
+### [Configurar o recurso Lookout Mobile Threat Defense](deploy-use/set-up-your-subscription-with-lookout.md)
 ### [Habilitar o Lookout no Intune](deploy-use/enable-lookout-connection-in-intune.md)
 ### [Implantar o Lookout para aplicativos de trabalho](deploy-use/configure-and-deploy-lookout-for-work-apps.md)
 ### [Habilitar a política de proteção de ameaça do dispositivo](deploy-use/enable-device-threat-protection-rule-compliance-policy.md)
+### [Monitorar o recurso Mobile Threat Defense](deploy-use/monitor-mobile-threat-defense-compliance.md)
 ### [Solucionar problemas de integração do Lookout](deploy-use/troubleshoot-lookout-integration.md)
 
 # MDM (Gerenciamento de dispositivos móveis) local
