@@ -13,12 +13,13 @@ ms.topic: get-started-article
 ms.assetid: c1d71899-308f-49d5-adfa-3a3ec0163ed8
 caps.latest.revision: 10
 caps.handback.revision: 0
-author: nbigman
-ms.author: nbigman
+author: arob98
+ms.author: angrobe
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: 55c953f312a9fb31e7276dde2fdd59f8183b4e4d
-ms.openlocfilehash: 6e76c3ae104c0561a5c7b178823b7a48761518fe
+ms.sourcegitcommit: 1b9e49da1a5bbfca93fe683b82d2c0056a22cc1f
+ms.openlocfilehash: 192c3685092df6310b7129877c7fb5dfd9ef7ad5
+ms.lasthandoff: 03/21/2017
 
 
 ---
@@ -28,7 +29,7 @@ ms.openlocfilehash: 6e76c3ae104c0561a5c7b178823b7a48761518fe
 
 Este artigo contém informações sobre segurança e privacidade para clientes no System Center Configuration Manager e para dispositivos móveis que são gerenciados pelo conector do Exchange Server:  
 
-##  <a name="a-namebkmksecuritycliientsa-security-best-practices-for-clients"></a><a name="BKMK_Security_Cliients"></a> Práticas recomendadas de segurança para clientes  
+##  <a name="BKMK_Security_Cliients"></a> Práticas recomendadas de segurança para clientes  
  Quando o Configuration Manager aceita dados de dispositivos que executam o cliente do Configuration Manager, isso introduz o risco de os clientes atacarem o site. Por exemplo, eles podem enviar inventário com problemas ou tentar sobrecarregar os sistemas de site. Implante o cliente do Configuration Manager somente em dispositivos em que você confia. Além disso, use as práticas de segurança recomendadas a seguir para ajudar a proteger o site contra dispositivos não autorizados ou comprometidos:  
 
  **Use certificados PKI (Infraestrutura de Chave Pública) para comunicação do cliente com os sistemas de sites que executam o IIS.**  
@@ -146,7 +147,7 @@ Este artigo contém informações sobre segurança e privacidade para clientes n
 
  Essa configuração permite que o cliente do Configuration Manager execute scripts do PowerShell não assinados, o que pode permitir que o malware seja executado em computadores cliente. Se for necessário selecionar essa opção, use uma configuração de cliente personalizada e atribua-a apenas aos computadores cliente que executam scripts do PowerShell não assinados.  
 
-##  <a name="a-namebkmkmobilea-security-best-practices-for-mobile-devices"></a><a name="bkmk_mobile"></a> Práticas recomendadas de segurança para dispositivos móveis  
+##  <a name="bkmk_mobile"></a> Práticas recomendadas de segurança para dispositivos móveis  
  **Para dispositivos móveis registrados com o Configuration Manager e que terão suporte na Internet: instale o ponto proxy do registro em uma rede de perímetro e o ponto de registro na intranet**  
 
  Essa separação de função ajuda a proteger o ponto de registro de um ataque. Se o ponto de registro estiver comprometido, um invasor poderá obter certificados de autenticação e roubar as credenciais de usuários que registram seus dispositivos móveis.  
@@ -199,7 +200,7 @@ Este artigo contém informações sobre segurança e privacidade para clientes n
 
  Para obter uma lista dos cmdlets mínimos que o conector do Exchange Server requer, consulte [Gerenciar dispositivos móveis com o System Center Configuration Manager e o Exchange](../../../../mdm/deploy-use/manage-mobile-devices-with-exchange-activesync.md).  
 
-##  <a name="a-namebkmkmacsa-security-best-practices-for-macs"></a><a name="bkmk_macs"></a> Práticas recomendadas de segurança para Macs  
+##  <a name="bkmk_macs"></a> Práticas recomendadas de segurança para Macs  
  **Para computadores Mac: armazene e acesse os arquivos de origem do cliente de um local seguro.**  
 
  O Configuration Manager não verifica se estes arquivos de origem do cliente foram violados antes da instalação ou registro do cliente em um computador Mac. Baixe esses arquivos de uma fonte confiável e armazene e acesse-os com segurança.  
@@ -208,7 +209,7 @@ Este artigo contém informações sobre segurança e privacidade para clientes n
 
  Para garantir a continuidade dos negócios, monitore e acompanhe o período de validade dos certificados que você usa em computadores Mac. O Configuration Manager não dá suporte para a renovação automática desse certificado nem avisa que o certificado está prestes a expirar. Um período de validade típico é 1 ano.  
 
- Para obter informações sobre como renovar o certificado, consulte  [Renewing the Mac Client Certificate Manually](../../../../core/clients/deploy/deploy-clients-to-macs.md#BKMK_Man).  
+ Para obter informações sobre como renovar o certificado, consulte  [Renewing the Mac Client Certificate Manually](../../../../core/clients/deploy/deploy-clients-to-macs.md#renewing-the-mac-client-certificate).  
 
  **Para computadores Mac: considere configurar o certificado de AC raiz confiável, que é acreditado apenas para o protocolo SSL, para ajudá-lo a proteger-se contra elevação de privilégios.**  
 
@@ -237,7 +238,7 @@ Este artigo contém informações sobre segurança e privacidade para clientes n
 
 6.  Feche a caixa de diálogo e, quando solicitado, insira a senha do administrador e clique em **Atualizar Configurações**.  
 
-##  <a name="a-namebkmksecurityissuesclientsa-security-issues-for-configuration-manager-clients"></a><a name="BKMK_SecurityIssues_Clients"></a> Problemas de segurança para clientes do Configuration Manager  
+##  <a name="BKMK_SecurityIssues_Clients"></a> Problemas de segurança para clientes do Configuration Manager  
  Os seguintes problemas de segurança não têm nenhuma atenuação:  
 
 -   Mensagens de status não são autenticadas  
@@ -282,7 +283,7 @@ Este artigo contém informações sobre segurança e privacidade para clientes n
 
      Se o dispositivo Windows Embedded estiver executando um sistema operacional anterior ao Windows 7 e um usuário tentar fazer logon enquanto os filtros de gravação estiverem desabilitados para confirmar alterações feitas pelo Configuration Manager, o número de tentativas de logon incorretas permitido antes que a conta seja bloqueada será efetivamente reduzido à metade. Por exemplo, se **Limite de Bloqueio de Conta** estiver configurado como 6 e um usuário errar sua senha 3 vezes, a conta será bloqueada, criando uma situação de negação de serviço.  Se os usuários fizerem logon em dispositivos inseridos nesse cenário, advirta-os sobre a possibilidade de um limite de bloqueio reduzido.  
 
-##  <a name="a-namebkmkprivacycliientsa-privacy-information-for-configuration-manager-clients"></a><a name="BKMK_Privacy_Cliients"></a> Informações de privacidade para clientes do Configuration Manager  
+##  <a name="BKMK_Privacy_Cliients"></a> Informações de privacidade para clientes do Configuration Manager  
  Quando você implanta o cliente do Configuration Manager, habilita as configurações do cliente para que possa usar os recursos de gerenciamento do Configuration Manager. As definições que você usa para configurar os recursos podem ser aplicadas a todos os clientes na hierarquia do Configuration Manager, independentemente se estão diretamente conectados à rede corporativa, através de uma sessão remota, ou conectado à Internet, mas com suporte do Configuration Manager.  
 
  As informações do cliente são armazenadas no banco de dados do Configuration Manager e não são enviadas à Microsoft. As informações são mantidas no banco de dados até que sejam excluídas pelas tarefas de manutenção do site **Excluir Dados Antigos de Descoberta** a cada 90 dias. Você pode configurar o intervalo de exclusão.  
@@ -299,15 +300,10 @@ Este artigo contém informações sobre segurança e privacidade para clientes n
 
  Para poder instalar o cliente do Configuration Manager com verificação de status do cliente, considere seus requisitos de privacidade.  
 
-##  <a name="a-namebkmkprivacyexchangeconnectora-privacy-information-for-mobile-devices-that-are-managed-with-the-exchange-server-connector"></a><a name="BKMK_Privacy_ExchangeConnector"></a> Informações de privacidade para dispositivos móveis gerenciados com o conector do Exchange Server  
+##  <a name="BKMK_Privacy_ExchangeConnector"></a> Informações de privacidade para dispositivos móveis gerenciados com o conector do Exchange Server  
  O conector do Exchange Server localiza e gerencia dispositivos que se conectam ao Exchange Server (local ou hospedado) usando o protocolo ActiveSync. Os registros localizados pelo conector do Exchange Server são armazenados no banco de dados do Configuration Manager. As informações são coletadas do Exchange Server. Ele não contém qualquer informação adicional do que os dispositivos móveis enviam para o Exchange Server.  
 
  As informações do dispositivo móvel não são enviadas à Microsoft. As informações do dispositivo móvel são armazenadas no banco de dados do Configuration Manager. As informações são mantidas no banco de dados até que sejam excluídas pelas tarefas de manutenção do site **Excluir Dados Antigos de Descoberta** a cada 90 dias. Você pode configurar o intervalo de exclusão.  
 
  Para poder instalar e configurar o conector do Exchange Server, considere os requisitos de privacidade.  
-
-
-
-<!--HONumber=Dec16_HO3-->
-
 

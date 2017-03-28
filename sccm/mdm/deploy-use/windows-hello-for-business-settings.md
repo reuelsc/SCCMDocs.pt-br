@@ -16,9 +16,9 @@ author: robstackmsft
 ms.author: robstack
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: 2c723fe7137a95df271c3612c88805efd8fb9a77
-ms.openlocfilehash: 2bacc7cb9a903fa5fde7c8867f516b04847e1172
-ms.lasthandoff: 03/06/2017
+ms.sourcegitcommit: 8c7bf901caa49c8585a9ed3913d4a5a2aac57013
+ms.openlocfilehash: 7ac2baeb3c10ce90eb643fa28a953186b571d037
+ms.lasthandoff: 03/21/2017
 
 
 ---
@@ -34,7 +34,7 @@ O Hello para Empresas permite que você use um **gesto de usuário** para logon,
 
 -   É possível usar o Configuration Manager para controlar quais gestos os usuários podem e não podem usar para se conectar.  
 
--   Você pode armazenar certificados de autenticação no KSP (provedor de armazenamento de chaves) do Windows Hello para Empresas. Para obter mais informações, consulte [Certificate profiles (Perfis de Certificado)](introduction-to-certificate-profiles.md).  
+-   Você pode armazenar certificados de autenticação no KSP (provedor de armazenamento de chaves) do Windows Hello para Empresas. Para obter mais informações, consulte [Certificate profiles (Perfis de Certificado)](create-pfx-certificate-profiles.md).  
 
 - É possível implantar as políticas do Windows Hello para Empresas em dispositivos Windows 10 ingressados em domínio que executam o cliente do Configuration Manager. Essa configuração é descrita em [Configurar o Windows Hello para Empresas em dispositivos Windows 10 ingressados em domínio](../../protect/deploy-use/windows-hello-for-business-settings.md#configure-windows-hello-for-business-on-domain-joined-windows-10-devices). Quando você estiver usando o Configuration Manager com o Intune (híbrido), será possível definir essas configurações em dispositivos Windows 10 e Windows 10 Mobile, mas não em dispositivos ingressados em domínio que executam o cliente do Configuration Manager.   
 

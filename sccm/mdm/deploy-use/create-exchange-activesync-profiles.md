@@ -17,9 +17,9 @@ author: arob98
 ms.author: angrobe
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: 2c723fe7137a95df271c3612c88805efd8fb9a77
-ms.openlocfilehash: 1cbe1d8f34b0a7482232488e907190a7a9cadf30
-ms.lasthandoff: 03/06/2017
+ms.sourcegitcommit: 8c7bf901caa49c8585a9ed3913d4a5a2aac57013
+ms.openlocfilehash: 74083f65d906fde967081229b244df24e9e08e0a
+ms.lasthandoff: 03/21/2017
 
 
 ---
@@ -47,7 +47,7 @@ Os perfis de email funcionam com o Microsoft Intune para permitir que você prov
 
  Além de configurar uma conta de email no dispositivo, você também pode configurar as configurações de sincronização de contatos, calendários e tarefas.  
 
- Ao criar um perfil de email, você pode incluir uma grande variedade de configurações de segurança, inclusive certificados de identidade, criptografia e assinatura que foram provisionados usando os perfis de certificado do System Center Configuration Manager. Para obter mais informações sobre perfis de certificado, consulte [Perfis de certificado do System Center Configuration Manager](introduction-to-certificate-profiles.md).    
+ Ao criar um perfil de email, você pode incluir uma grande variedade de configurações de segurança, inclusive certificados de identidade, criptografia e assinatura que foram provisionados usando os perfis de certificado do System Center Configuration Manager. Para obter mais informações sobre perfis de certificado, consulte [Perfis de certificado do System Center Configuration Manager](create-pfx-certificate-profiles.md).    
 
 
 ## <a name="create-a-new-exchange-activesync-email-profile"></a>Criar um novo perfil de email do Exchange ActiveSync  
@@ -101,7 +101,7 @@ Iniciar o Assistente de Criação de Perfil de Email do Exchange ActiveSync
     -   **Certificado de identidade:** clique em **Selecionar** e selecione um certificado a ser usado para a identidade.  
 
         > [!NOTE]  
-        >  Antes de selecionar o certificado de identidade, primeiro você deve configurá-lo como um perfil de certificado de protocolo de registro de certificado simples (SCEP). Para obter mais informações sobre perfis de certificado, consulte [Perfis de certificado do System Center Configuration Manager](introduction-to-certificate-profiles.md).  
+        >  Antes de selecionar o certificado de identidade, primeiro você deve configurá-lo como um perfil de certificado de protocolo de registro de certificado simples (SCEP). Para obter mais informações sobre perfis de certificado, consulte [Perfis de certificado do System Center Configuration Manager](create-pfx-certificate-profiles.md).  
 
          Essa opção só estará disponível se você selecionou **Certificados** em **Método de autenticação**.  
 
@@ -110,14 +110,14 @@ Iniciar o Assistente de Criação de Perfil de Email do Exchange ActiveSync
     -   **Certificados de criptografia:** clique em **Selecionar** e selecione um certificado a ser usado para a criptografia. Essa opção é aplicável somente a dispositivos iOS.  
 
         > [!NOTE]  
-        >  Antes de selecionar o certificado de criptografia, primeiro você deve configurá-lo como um perfil de certificado de protocolo de registro de certificado simples (SCEP). Para obter mais informações sobre perfis de certificado, consulte [Perfis de certificado do System Center Configuration Manager](introduction-to-certificate-profiles.md).  
+        >  Antes de selecionar o certificado de criptografia, primeiro você deve configurá-lo como um perfil de certificado de protocolo de registro de certificado simples (SCEP). Para obter mais informações sobre perfis de certificado, consulte [Perfis de certificado do System Center Configuration Manager](create-pfx-certificate-profiles.md).  
 
          Essa opção só estará disponível se você selecionou **Usar S/MIME**.  
 
     -   **Certificados de autenticação:** clique em **Selecionar** e selecione um certificado a ser usado para a assinatura. Essa opção é aplicável somente a dispositivos iOS.  
 
         > [!NOTE]  
-        >  Antes de selecionar o certificado de assinatura, primeiro você deve configurá-lo como um perfil de certificado de protocolo de registro de certificado simples (SCEP). Para obter mais informações sobre perfis de certificado, consulte [Perfis de certificado do System Center Configuration Manager](introduction-to-certificate-profiles.md).  
+        >  Antes de selecionar o certificado de assinatura, primeiro você deve configurá-lo como um perfil de certificado de protocolo de registro de certificado simples (SCEP). Para obter mais informações sobre perfis de certificado, consulte [Perfis de certificado do System Center Configuration Manager](create-pfx-certificate-profiles.md).  
 
          Essa opção só estará disponível se você selecionou **Usar S/MIME**.  
 

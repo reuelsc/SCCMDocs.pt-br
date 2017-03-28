@@ -16,8 +16,9 @@ author: Brenduns
 ms.author: brenduns
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: 3aa9f2e4d3f7210981b5b84942485de11fe15cb2
-ms.openlocfilehash: a7e052bc0e1c354b75a7f95afdd266ed742ce689
+ms.sourcegitcommit: 1b9e49da1a5bbfca93fe683b82d2c0056a22cc1f
+ms.openlocfilehash: 67441d0c19114f628e8b4308f58165ba67c738df
+ms.lasthandoff: 03/21/2017
 
 ---
 
@@ -66,7 +67,7 @@ Prepare abordagens de backup e recuperação para evitar perda de dados. Para si
 > [!NOTE]  
 >  Se você usa um grupo de disponibilidade AlwaysOn do SQL Server para hospedar o banco de dados do site, modifique seus planos de backup e recuperação conforme descrito na seção [Alterações de backup e recuperação quando você usa um grupo de disponibilidade AlwaysOn do SQL Server](../../core/servers/deploy/configure/sql-server-alwayson-for-a-highly-available-site-database.md#bkmk_BnR) do tópico [AlwaysOn do SQL Server para um banco de dados do site altamente disponível do System Center Configuration Manager](../../core/servers/deploy/configure/sql-server-alwayson-for-a-highly-available-site-database.md).  
 
-##  <a name="a-namebkmksitebackupa-back-up-a-configuration-manager-site"></a><a name="BKMK_SiteBackup"></a> Fazer backup de um site do Configuration Manager  
+##  <a name="BKMK_SiteBackup"></a> Fazer backup de um site do Configuration Manager  
  O Configuration Manager tem uma tarefa de manutenção de backup que:  
 
 -   É executada conforme um agendamento  
@@ -88,7 +89,7 @@ Use as seções a seguir para ajudá-lo a criar sua estratégia de backup do Con
 > [!NOTE]  
 >  O Configuration Manager pode recuperar o banco de dados do site por meio da tarefa de manutenção de backup do Configuration Manager ou de um backup do banco de dados do site criado com outro processo. Por exemplo, é possível restaurar o banco de dados do site por um backup criado como parte de um plano de manutenção do Microsoft SQL Server. Você pode restaurar o banco de dados do site por meio de um backup criado usando o System Center 2012 DPM (Data Protection Manager). Para obter mais informações, consulte [Usando o Data Protection Manager para fazer backup do banco de dados do site](#BKMK_DPMBackup).  
 
-###  <a name="a-namebkmkbackupmaintenancetaska-backup-maintenance-task"></a><a name="BKMK_BackupMaintenanceTask"></a> Tarefa de manutenção de backup  
+###  <a name="BKMK_BackupMaintenanceTask"></a> Tarefa de manutenção de backup  
  É possível automatizar o backup de sites do Configuration Manager agendando a tarefa de manutenção Servidor do Site de Backup predefinida. É possível fazer backup de um site de administração central e de um site primário, mas não há suporte de backup para sites secundários ou servidores de sistema de site. Quando o serviço de backup do Configuration Manager é executado, ele segue as instruções definidas no arquivo de controle de backup (**&lt;PastaDeInstalaçãoDoConfigMgr\>\Inboxes\Smsbkup.box\Smsbkup.ctl**). É possível modificar o arquivo de controle de backup para alterar o comportamento do serviço de backup. As informações de status de backup do site são gravadas no arquivo **Smsbkup.log** . O arquivo é criado na pasta de destino especificada nas propriedades da tarefa de manutenção Servidor do Site de Backup.  
 
 
@@ -144,7 +145,7 @@ Use as seções a seguir para ajudá-lo a criar sua estratégia de backup do Con
     > [!TIP]  
     >  Quando a tarefa de manutenção de backup falha, é possível reiniciá-la interrompendo e reiniciando o serviço SMS_SITE_BACKUP.  
 
-###  <a name="a-namebkmkdpmbackupa-using-data-protection-manager-to-back-up-your-site-database"></a><a name="BKMK_DPMBackup"></a> Usando o Data Protection Manager para fazer backup do banco de dados do site  
+###  <a name="BKMK_DPMBackup"></a> Usando o Data Protection Manager para fazer backup do banco de dados do site  
  Você pode usar o System Center 2012 Data Protection Manager (DPM) para fazer backup do banco de dados do site. É necessário criar um novo grupo de proteção no DPM para o computador do banco de dados do site. Na página **Selecionar Membros do Grupo** do Assistente para Criar Novo Grupo de Proteção, selecione o serviço SMS Writer na lista de fontes de dados e selecione o banco de dados do site como membro apropriado. Para obter mais informações sobre como usar o DPM para fazer backup do banco de dados do site, consulte a [Biblioteca de Documentação do Data Protection Manager](http://go.microsoft.com/fwlink/?LinkId=272772) no TechNet.  
 
 > [!IMPORTANT]  
@@ -152,7 +153,7 @@ Use as seções a seguir para ajudá-lo a criar sua estratégia de backup do Con
 
  Depois de restaurar o banco de dados do site, siga as etapas da Instalação para recuperar o site. Selecione a opção de recuperação **Usar um banco de dados do site recuperado manualmente** para usar o banco de dados do site recuperado com o uso do Data Protection Manager.  
 
-###  <a name="a-namebkmkarchivingbackupsnapshota-archiving-the-backup-snapshot"></a><a name="BKMK_ArchivingBackupSnapshot"></a> Arquivando o instantâneo de backup  
+###  <a name="BKMK_ArchivingBackupSnapshot"></a> Arquivando o instantâneo de backup  
  A primeira vez que a tarefa de manutenção Servidor do Site de Backup é executada, um instantâneo de backup é criado, e você pode usá-lo para recuperar o servidor do site em caso de falha. Quando a tarefa de backup é executada novamente durante ciclos subsequentes, é criado um novo instantâneo de backup que substitui o instantâneo anterior. Consequentemente, o site fica com apenas um instantâneo de backup e não há como recuperar um instantâneo de backup anterior.  
 
  Como prática recomendada, mantenha diversos arquivos de instantâneo de backup, pelos seguintes motivos:  
@@ -163,7 +164,7 @@ Use as seções a seguir para ajudá-lo a criar sua estratégia de backup do Con
 
 -   O site poderá não ter nenhum instantâneo de backup, se, por exemplo, a tarefa de manutenção de servidor do site de backup falhar. Como a tarefa de backup remove o instantâneo de backup anterior antes de começar a fazer o backup dos dados atuais, não haverá um instantâneo de backup válido.  
 
-###  <a name="a-namebkmkusingafterbackupa-using-the-afterbackupbat-file"></a><a name="BKMK_UsingAfterBackup"></a> Usando o arquivo AfterBackup.bat  
+###  <a name="BKMK_UsingAfterBackup"></a> Usando o arquivo AfterBackup.bat  
  Após o backup bem-sucedido do site, a tarefa do Servidor do Site de Backup tentará executar automaticamente um arquivo chamado AfterBackup.bat. Você deve criar manualmente o arquivo AfterBackup.bat em &lt;*PastaDeInstalaçãoDoConfigMgr*>\Inboxes\Smsbkup. Se existir um arquivo AfterBackup.bat e ele estiver armazenado na pasta correta, ele será executado automaticamente depois que a tarefa de backup for concluída. O arquivo AfterBackup.bat permite arquivar o instantâneo de backup no final de cada operação de backup, e executa automaticamente outras tarefas pós-backup que não fazem parte da tarefa de manutenção do servidor do site de backup. O arquivo AfterBackup.bat integra o arquivo e as operações de backup, garantindo assim que cada novo instantâneo de backup seja arquivado. Quando o arquivo AfterBackup.bat não está presente, a tarefa de backup a ignora sem efeito sobre a operação de backup. Para verificar se a tarefa de backup do site executou com sucesso o arquivo AfterBackup.bat, consulte o nó **Status do Componente** no espaço de trabalho **Monitoramento** e verifique as mensagens de status de SMS_SITE_BACKUP. Quando a tarefa inicia com êxito o arquivo de comando AfterBackup.bat, você vê uma mensagem ID 5040.  
 
 > [!TIP]  
@@ -171,7 +172,7 @@ Use as seções a seguir para ajudá-lo a criar sua estratégia de backup do Con
 
  Embora o uso pretendido do AfterBackup.bat seja arquivar instantâneos de backup, você pode criar um arquivo AfterBackup.bat para executar tarefas adicionais ao final de cada operação de backup.  
 
-###  <a name="a-namebkmksupplementalbackupa-supplemental-backup-tasks"></a><a name="BKMK_SupplementalBackup"></a> Tarefas de backup complementares  
+###  <a name="BKMK_SupplementalBackup"></a> Tarefas de backup complementares  
  A tarefa de manutenção do servidor do site de backup fornece um instantâneo de backup para os arquivos do servidor do site e banco de dados do site, mas há outros itens sem backup que você deve considerar ao criar a estratégia de backup. Use as seções a seguir para ajudá-lo a concluir sua estratégia de backup do Configuration Manager.  
 
 #### <a name="back-up-custom-reporting-services-reports"></a>Fazer backup de relatórios personalizados do Reporting Services  
@@ -241,12 +242,12 @@ Use as seções a seguir para ajudá-lo a criar sua estratégia de backup do Con
 > [!NOTE]  
 >  Após restaurar o banco de dados do site que estava configurado para as réplicas de banco de dados, reconfigure cada réplica para poder usá-las, recriando as publicações e assinaturas.  
 
-###  <a name="a-namebkmkdeterminerecoveryoptionsa-determine-your-recovery-options"></a><a name="BKMK_DetermineRecoveryOptions"></a> Determinar as opções de recuperação  
+###  <a name="BKMK_DetermineRecoveryOptions"></a> Determinar as opções de recuperação  
  Há duas áreas principais que você deve considerar para a recuperação do servidor do site primário e site de administração central do Configuration Manager, o servidor do site e o banco de dados do site. Use as seguintes seções para ajudar a determinar as opções que você deve escolher para o seu cenário de recuperação.  
 
 > [!NOTE]  
 
-####  <a name="a-namebkmksiteserverrecoveryoptionsa-site-server-recovery-options"></a><a name="BKMK_SiteServerRecoveryOptions"></a> Opções de recuperação do servidor do site  
+####  <a name="BKMK_SiteServerRecoveryOptions"></a> Opções de recuperação do servidor do site  
  Você deve iniciar a Instalação de uma cópia da pasta CD.Latest criada fora da pasta de instalação do Configuration Manager. Em seguida, selecione a opção **Recuperar um site** . Quando você executa a instalação, tem as seguintes opções de recuperação para o servidor do site que falhou:  
 
 -   **Recover the site server using an existing backup (Recuperar o servidor do site usando um backup existente)**: use essa opção quando houver um backup do servidor do site do Configuration Manager criado no servidor do site, como parte da tarefa de manutenção **Servidor do Site de Backup** anterior à falha. O site é reinstalado e as definições configuradas, com base no site de backup.  
@@ -256,7 +257,7 @@ Use as seções a seguir para ajudá-lo a criar sua estratégia de backup do Con
 > [!NOTE]  
 >  Quando a instalação detecta um site do Configuration Manager existente no servidor, é possível iniciar uma recuperação de site, mas as opções de recuperação do servidor do site são limitadas. Por exemplo, se você executar a instalação em um servidor de site existente, quando escolher a recuperação poderá recuperar o servidor de banco de dados do site, mas a opção de recuperação do servidor do site estará desativada.  
 
-####  <a name="a-namebkmksitedatabaserecoveryoptiona-site-database-recovery-options"></a><a name="BKMK_SiteDatabaseRecoveryOption"></a> Opções de recuperação do banco de dados do site  
+####  <a name="BKMK_SiteDatabaseRecoveryOption"></a> Opções de recuperação do banco de dados do site  
  Quando você executa a instalação, tem as seguintes opções de recuperação para o banco de dados do site:  
 
 -   **Recover the site database using a backup set (Recuperar o banco de dados do site usando um conjunto de backup)**: use essa opção quando você tiver um backup do banco de dados do site do Configuration Manager criado como parte da tarefa de manutenção do **Servidor do Site de Backup** anterior à falha do banco de dados do site. Quando há uma hierarquia, as alterações feitas no banco de dados do site após o último backup do banco de dados do site são recuperadas do site de administração central para um site primário, ou de um site primário de referência para um site de administração central. Ao recuperar o banco de dados do site para um site primário autônomo, as alterações do site após o último backup são perdidas.  
@@ -275,14 +276,14 @@ Use as seções a seguir para ajudá-lo a criar sua estratégia de backup do Con
 
 -   **Ignorar recuperação do banco de dados**: use essa opção quando não ocorrer perda de dados no servidor de banco de dados do site do Configuration Manager. Essa opção é válida somente quando o banco de dados do site está em um computador diferente do servidor do site que está sendo recuperado.  
 
-####  <a name="a-namebkmksqlretentiona-sql-server-change-tracking-retention-period"></a><a name="bkmk_SQLretention"></a> Período de retenção do controle de alterações do SQL Server  
+####  <a name="bkmk_SQLretention"></a> Período de retenção do controle de alterações do SQL Server  
  O controle de alterações é habilitado para o banco de dados do site no SQL Server. O controle de alterações permite que o Configuration Manager consulte informações sobre as alterações feitas nas tabelas do banco de dados após determinado período anterior. O período de retenção especifica por quanto tempo as informações do controle de alterações são mantidas. Por padrão, o banco de dados do site é configurado para ter um período de retenção de 5 dias. Ao recuperar um banco de dados do site, o processo de recuperação procede de maneira diferente quando o backup está dentro ou está fora do período de retenção. Por exemplo, se o servidor de banco de dados do site falhar e o último backup tiver 7 dias, ele estará fora do período de retenção.
 
  Para obter mais informações sobre elementos internos de controle de alterações do SQL Server, consulte os seguintes blogs da equipe do SQL Server: [Limpeza do Controle de Alterações – parte 1](https://blogs.msdn.microsoft.com/sql_server_team/change-tracking-cleanup-part-1) e [Limpeza do Controle de Alterações – parte 2](https://blogs.msdn.microsoft.com/sql_server_team/change-tracking-cleanup-part-2).
 
 
 
-####  <a name="a-namebkmkreinita-process-to-reinitialize-site-or-global-data"></a><a name="bkmk_reinit"></a> Processo para reinicializar o site ou dados globais  
+####  <a name="bkmk_reinit"></a> Processo para reinicializar o site ou dados globais  
  O processo para reinicializar o site ou dados globais substitui dados existentes no banco de dados do site por dados de outro banco de dados do site. Por exemplo, quando o site ABC reinicializa os dados do site XYZ, ocorrem as seguintes etapas:  
 
 -   Os dados são copiados do site XYZ para o site ABC.  
@@ -297,7 +298,7 @@ Use as seções a seguir para ajudá-lo a criar sua estratégia de backup do Con
 ##### <a name="example-scenario-2"></a>Cenário de exemplo 2  
  **O site de administração central reinicializa os dados do site de um site primário**: o processo de recuperação remove os dados existentes desse site primário no banco de dados do site de administração central e substitui os dados pelos dados copiados do site primário. Os dados do site de outros sites primários não são afetados.  
 
-####  <a name="a-namebkmksitedbrecoveryscenariosa-site-database-recovery-scenarios"></a><a name="BKMK_SiteDBRecoveryScenarios"></a> Cenários de recuperação de banco de dados do site  
+####  <a name="BKMK_SiteDBRecoveryScenarios"></a> Cenários de recuperação de banco de dados do site  
  Depois que um banco de dados do site é restaurado de um backup, o Configuration Manager tenta restaurar as alterações no site e nos dados globais após o último backup do banco de dados. Veja a seguir uma descrição das ações iniciadas pelo Configuration Manager depois que um banco de dados do site é restaurado do backup.  
 
  **Site recuperado é um site administração central:**  
@@ -362,7 +363,7 @@ Use as seções a seguir para ajudá-lo a criar sua estratégia de backup do Con
 >   
 >  **ALTER QUEUE [dbo].[ConfigMgrDRSSiteQueue] WITH STATUS = ON**  
 
-###  <a name="a-namebkmkunattendedsiterecoverykeysa-unattended-site-recovery-script-file-keys"></a><a name="BKMK_UnattendedSiteRecoveryKeys"></a> Chaves de arquivo de script de recuperação autônoma do site  
+###  <a name="BKMK_UnattendedSiteRecoveryKeys"></a> Chaves de arquivo de script de recuperação autônoma do site  
  Para executar uma recuperação autônoma de um site de administração central ou de um site primário do Configuration Manager, é possível criar um script de instalação autônoma e usar a Instalação com a opção de comando /script. O script fornece o mesmo tipo de informação que o Assistente de Instalação solicita, porém não há configurações padrão. Todos os valores devem ser especificados para as chaves de instalação que se aplicam ao tipo de recuperação usado.  
 
  Você pode executar a Instalação autônoma do Configuration Manager usando um arquivo de inicialização com a opção de linha de comando de instalação /script. A instalação autônoma tem suporte para a recuperação de site de administração central e de site primário do Configuration Manager. Para usar a opção de linha de comando de instalação /script, é necessário criar um arquivo de inicialização e especificar o nome do arquivo de inicialização após a opção de linha de comando de instalação /script. O nome do arquivo não é importante, contanto que tenha a extensão de nome de arquivo .ini. Para fazer referência ao arquivo de inicialização de instalação na linha de comando, é necessário fornecer o caminho completo do arquivo. Por exemplo, se o arquivo de inicialização de instalação for nomeado como setup.ini e armazenado na pasta C:\setup, sua linha de comando será:  
@@ -814,7 +815,7 @@ Use as seções a seguir para ajudá-lo a criar sua estratégia de backup do Con
 
     -   **Detalhes:** especifica o valor máximo do tempo limite (em minutos) para o site primário se conectar ao site de administração central. Por exemplo, se o site primário falhar ao conectar-se ao site de administração central, o site primário tentará novamente a conexão ao site de administração central baseado no CASRetryInterval até chegar ao período do WaitForCASTimeout. Você pode especificar um valor de 0 a 100.  
 
-###  <a name="a-namebkmkpostrecoverya-post-recovery-tasks"></a><a name="BKMK_PostRecovery"></a> Tarefas de pós-recuperação  
+###  <a name="BKMK_PostRecovery"></a> Tarefas de pós-recuperação  
  Feita a recuperação de seu site, há várias tarefas de pós-recuperação a considerar antes da conclusão da recuperação do site. Use as seções a seguir para ajudá-lo a concluir o processo de recuperação do site.  
 
 #### <a name="re-enter-user-account-passwords"></a>Digite novamente as senhas de conta de usuário  
@@ -844,7 +845,7 @@ Use as seções a seguir para ajudá-lo a criar sua estratégia de backup do Con
  Recuperado o servidor do site, é necessário digitar novamente as chaves de sideload do Windows especificadas para o site porque elas são redefinidas durante a recuperação do site. Ao digitar novamente as chaves de sideload, a contagem na coluna **Ativações usadas** para as chaves de sideload do Windows é redefinida no console do Configuration Manager. Por exemplo, digamos que antes da falha do site a contagem de **Total de ativações** estava definida como **100** e de **Ativações usadas** como **90** para o número de chaves usadas pelos dispositivos. Recuperado o site, a coluna **Total de ativações** continua a exibir **100**, mas a coluna **Ativações usadas** exibe incorretamente **0**. No entanto, quando 10 novos dispositivos usarem uma chave de sideload, não haverá mais chaves de sideload disponíveis e o dispositivo seguinte irá falhar ao usar uma chave de sideload.  
 
 #### <a name="recreate-the-microsoft-intune-subscription"></a>Recriar a Assinatura do Microsoft Intune  
- Se você recuperar um servidor do site do Configuration Manager depois que o computador do servidor do site for restaurado ao estado anterior, a assinatura do Microsoft Intune não será restaurada. É necessário reconectar a assinatura depois de recuperar o site.  Não crie uma nova solicitação de APN. Em vez disso, carregue o arquivo .pem atual válido carregado na última vez em que o gerenciamento do iOS foi configurado ou renovado. Para obter mais informações, consulte [Configuring the Microsoft Intune subscription](../../mdm/deploy-use/setup-hybrid-mdm.md#step-3-configure-intune-subscription).  
+ Se você recuperar um servidor do site do Configuration Manager depois que o computador do servidor do site for restaurado ao estado anterior, a assinatura do Microsoft Intune não será restaurada. É necessário reconectar a assinatura depois de recuperar o site.  Não crie uma nova solicitação de APN. Em vez disso, carregue o arquivo .pem atual válido carregado na última vez em que o gerenciamento do iOS foi configurado ou renovado. Para obter mais informações, consulte [Configuring the Microsoft Intune subscription](/sccm/mdm/deploy-use/configure-intune-subscription).  
 
 #### <a name="configure-ssl-for-site-system-roles-that-use-iis"></a>Configurar o SSL para funções do sistema de site que usam IIS  
  Ao recuperar sistemas de site que executam o IIS e que foram configurados para HTTPS antes da falha, você precisa reconfigurar o IIS para usar o certificado do servidor Web.  
@@ -888,7 +889,7 @@ Use as seções a seguir para ajudá-lo a criar sua estratégia de backup do Con
 #### <a name="update-certificates-used-for-cloud-based-distribution-points"></a>Atualizar certificados usados para pontos de distribuição baseados em nuvem  
  O Configuration Manager requer um certificado de gerenciamento que ele utiliza para comunicação do servidor do site com o ponto de distribuição baseado em nuvem. Após recuperações de site, você deve atualizar os certificados para os pontos de distribuição baseados em nuvem.  
 
-####  <a name="a-namebkmkrecoversecondarysitea-recover-a-secondary-site"></a><a name="BKMK_RecoverSecondarySite"></a> Recuperar um site secundário  
+####  <a name="BKMK_RecoverSecondarySite"></a> Recuperar um site secundário  
  O Configuration Manager não dá suporte ao backup do banco de dados em um site secundário, mas dá suporte à recuperação reinstalando o site secundário. A recuperação de sites secundários é necessária quando um site secundário do Configuration Manager falha. Você pode recuperar sites secundários usando a ação **Recuperar Site Secundário** do nó **Sites** no console do Configuration Manager. Diferentemente da recuperação de um site de administração central ou site primário, a recuperação de sites secundários não usa um arquivo de backup, e em vez disso reinstala os arquivos do site secundário no computador do site secundário com falha. Em seguida, os dados do site secundário são reinicializados com os dados do site pai primário. Durante o processo de recuperação, o Configuration Manager verifica se há uma biblioteca de conteúdo no computador do site secundário e se o conteúdo apropriado está disponível. O site secundário usará a biblioteca de conteúdo existente, se ela contiver o conteúdo apropriado. Caso contrário, para recuperar a biblioteca de conteúdo de um site secundário recuperado, será necessário redistribuir ou pré-configurar o conteúdo para o site recuperado. Quando você possui um ponto de distribuição que não está no site secundário, não é necessário reinstalar o ponto de distribuição durante recuperações do site secundário. Após a recuperação de site secundário, o site sincroniza-se automaticamente com o ponto de distribuição.  
 
  Você pode verificar o status da recuperação de sites secundários usando a ação **Mostrar Status da Instalação** do nó **Sites** no console do Configuration Manager.  
@@ -899,7 +900,7 @@ Use as seções a seguir para ajudá-lo a criar sua estratégia de backup do Con
 > [!IMPORTANT]  
 >  Durante a recuperação de sites secundários, o Configuration Manager não instalará o SQL Server Express se ele não estiver instalado no computador. Portanto, para poder recuperar um site secundário, você deve instalar manualmente o SQL Server Express ou o SQL Server. Você deve usar a mesma versão do SQL Server e a mesma instância do SQL Server usadas para o banco de dados do site secundário antes da falha.  
 
-##  <a name="a-namebkmksmswriterservicea-sms-writer-service"></a><a name="BKMK_SMSWriterService"></a> Serviço SMS Writer  
+##  <a name="BKMK_SMSWriterService"></a> Serviço SMS Writer  
  O SMS Writer é um serviço que interage com o VSS (Serviço de Cópias de Sombra de Volume) durante o processo de backup. O serviço SMS Writer deve estar em execução para o backup do site do Configuration Manager para ser concluído com êxito.  
 
 ### <a name="purpose"></a>Finalidade  
@@ -915,9 +916,4 @@ Use as seções a seguir para ajudá-lo a criar sua estratégia de backup do Con
 
 ### <a name="volume-shadow-copy-service"></a>Serviço de Cópias de Sombra de Volume  
  O VSS é um conjunto de APIs COM que implementa uma estrutura para permitir a execução de backups de volume enquanto os aplicativos de um sistema continuam a ser gravados nos volumes. O VSS fornece uma interface consistente que permite a coordenação entre os aplicativos do usuário que atualizam dados em disco (o serviço SMS Writer) e aqueles que fazem backup dos aplicativos (o serviço Gerenciador de Backup). Para obter mais informações sobre o VSS, consulte o tópico [Serviço de Cópias de Sombra de Volume](http://go.microsoft.com/fwlink/p/?LinkId=241968) no Windows Server TechCenter.  
-
-
-
-<!--HONumber=Feb17_HO2-->
-
 
