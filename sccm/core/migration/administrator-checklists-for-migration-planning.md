@@ -152,7 +152,7 @@ Use a seguinte lista de verificação para migrar dados da hierarquia de origem 
 
     Quando você migra um cliente para a hierarquia de destino, ele é associado aos dados que você migrou anteriormente para essa hierarquia de destino.  
 
-    Para obter mais informações, consulte [Planning a client migration strategy in System Center Configuration Manager](../../core/migration/planning-a-client-migration-strategy.md).  
+    Para obter mais informações, consulte [Planejamento de uma estratégia de migração de cliente no System Center Configuration Manager](../../core/migration/planning-a-client-migration-strategy.md).  
 
 -   **Atualizar ou reatribuir pontos de distribuição compartilhados:**  
 
@@ -164,5 +164,5 @@ Use a seguinte lista de verificação para migrar dados da hierarquia de origem 
 
 -   **Concluir a migração:**  
 
-    Depois ter migrar dados e clientes de todos os sites na hierarquia de origem e atualizar os pontos de distribuição aplicáveis, é possível concluir a migração. Para concluir a migração, você interrompe a coleta de dados para cada site de origem na hierarquia de origem. Em seguida, remova as informações de migração das quais não precisa e encerre sua infraestrutura de hierarquia de origem. Para obter mais informações, consulte [Planning to complete migration in System Center Configuration Manager](../../core/migration/planning-to-complete-migration.md).  
+    Depois ter migrar dados e clientes de todos os sites na hierarquia de origem e atualizar os pontos de distribuição aplicáveis, é possível concluir a migração. Para concluir a migração, você interrompe a coleta de dados para cada site de origem na hierarquia de origem. Em seguida, remova as informações de migração das quais não precisa e encerre sua infraestrutura de hierarquia de origem. Para obter mais informações, consulte [Planejamento da conclusão da migração no System Center Configuration Manager](../../core/migration/planning-to-complete-migration.md).  
 
