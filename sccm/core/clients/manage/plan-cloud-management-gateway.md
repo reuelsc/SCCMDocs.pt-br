@@ -1,7 +1,7 @@
 ---
 title: Planejar o gateway de gerenciamento de nuvem | Microsoft Docs
 description: 
-ms.date: 12/19/2016
+ms.date: 03/28/2017
 ms.prod: configuration-manager
 ms.technology:
 - configmgr-client
@@ -10,9 +10,9 @@ author: arob98
 ms.author: angrobe
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: 1df2d8bcd73633ac1d37cc3ef31343be9c5bc95d
-ms.openlocfilehash: 6e2895565e868eb80a8f4f4b46b8a28eb4961e28
-ms.lasthandoff: 12/19/2016
+ms.sourcegitcommit: dab5da5a4b5dfb3606a8a6bd0c70a0b21923fff9
+ms.openlocfilehash: c61769cc97c320452c9ee27a924cb01480e6f33d
+ms.lasthandoff: 03/27/2017
 
 ---
 
@@ -43,7 +43,7 @@ Os certificados de cliente e os certificados SSL são necessários para autentic
 - O gateway de gerenciamento de nuvem dá suporte apenas às funções de ponto de gerenciamento e de ponto de atualização de software.
 -   No momento, os seguintes recursos não têm suporte no Configuration Manager para o gateway de gerenciamento de nuvem:
 
-    -   Implantação e atualização do cliente usando o push do cliente
+    -   Implantação do cliente
     -   Atribuição automática de site
     -   Políticas de usuário
     -   Catálogo de aplicativos (incluindo solicitações de aprovação de software)

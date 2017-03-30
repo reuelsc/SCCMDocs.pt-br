@@ -16,9 +16,9 @@ author: andredm7
 ms.author: andredm
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: 2c723fe7137a95df271c3612c88805efd8fb9a77
-ms.openlocfilehash: b7c55ce5629565cb1e3aede6680ef1796f56cb20
-ms.lasthandoff: 03/06/2017
+ms.sourcegitcommit: 23b1d24e908d04b64c3bbfa518793a44e696d468
+ms.openlocfilehash: e9028a54e538b4ec987dbaeb5ba1ee22ad091728
+ms.lasthandoff: 03/29/2017
 
 
 ---
@@ -51,7 +51,7 @@ ms.lasthandoff: 03/06/2017
 
 -   Windows 8.1  
 
--   O Windows 10 ainda não tem suporte total.  Se você tentar definir o acesso condicional para PCs com Windows 10, talvez encontre alguns problemas.  Consulte [Problemas conhecidos](#bkmk_KnownIssues) para obter mais detalhes.  
+-   Windows 10 
 
 ## <a name="configure-conditional-access"></a>Configurar o acesso condicional  
  Para configurar o acesso condicional, primeiro você precisa criar uma política de conformidade e configurar a política de acesso condicional. Ao configurar as políticas de acesso condicional para PCs, você pode exigir que os PCs estejam em conformidade com a política de conformidade a fim de acessar os serviços do Exchange Online e do SharePoint Online.  
@@ -135,15 +135,16 @@ ms.lasthandoff: 03/06/2017
 
  Usuários finais bloqueados por falta de conformidade verão informações de conformidade no Centro de Software do System Center Configuration Manager e iniciarão uma nova avaliação de política quando problemas de conformidade forem corrigidos.  
 
-##  <a name="bkmk_KnownIssues"></a> Problemas conhecidos  
- Talvez você veja os seguintes problemas ao usar esse recurso:  
+<!---
+##  <a name="bkmk_KnownIssues"></a> Known issues  
+ You may see the following issues when using this feature:  
 
--   Nesta atualização 1602, a conformidade de cinco dias não é imposta. Mesmo se a verificação de conformidade no dispositivo do usuário final tiver ocorrido há mais de cinco dias, os usuários ainda poderão acessar o Office 365 e o SharePoint online.  
+-   In this 1602 update,  the 5 day compliance is not enforced. Even if compliance check on the end-user's device has happened more than 5 days ago, users still can access Office 365 and SharePoint online.  
 
--   Quando um dispositivo não for compatível com a política de conformidade, o motivo não será exibido automaticamente. O usuário final deve acessar o novo Centro de Software para descobrir o motivo da não conformidade. O motivo é exibido na seção de Conformidade do dispositivo do Centro de Software.  
+-   When a device is not compliant with the compliance policy, the reason is not automatically displayed. The end- user must go to the new Software Center to find the reason for non-compliance. The reason is displayed in the Device compliance section of the Software Center.  
 
--   Os usuários do Windows 10 podem ver várias falhas de acesso ao tentar acessar recursos do O365 e/ou do SharePoint Online. Observe que o acesso condicional não tem suporte total para o Windows 10.  
-
+-   Windows 10 users may see multiple access failures when trying to reach O365 and/or SharePoint online resources. Note that conditional access is not fully supported for Windows 10.  
+--->
 ### <a name="see-also"></a>Consulte também  
  [Proteger a infraestrutura de dados e do site com o System Center Configuration Manager](../../protect/understand/protect-data-and-site-infrastructure.md)
 

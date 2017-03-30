@@ -18,9 +18,9 @@ author: Mtillman
 ms.author: mtillman
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: 0d6479bcc134103e6005159a8ea295a5f359a436
-ms.openlocfilehash: ef68a9f998ea6ff9628e01f6ac622711de68375d
-ms.lasthandoff: 12/16/2016
+ms.sourcegitcommit: 3b1451edaed69a972551bd060293839aa11ec8b2
+ms.openlocfilehash: be9596537e9c80a6d78aa0685d33382bfd242afe
+ms.lasthandoff: 03/28/2017
 
 
 ---
@@ -31,14 +31,15 @@ ms.lasthandoff: 12/16/2016
 
 O registro em massa no Gerenciamento de Dispositivo Móvel Local do System Center Configuration Manager é uma maneira mais automatizada para registrar dispositivos, quando comparado ao registro de usuário, que exige que os usuários insiram suas credenciais para registrar o dispositivo.  O registro em massa usa um pacote de registro para autenticar o dispositivo durante o registro. O pacote (um arquivo .ppkg) contém um perfil de certificado e, opcionalmente, um perfil de Wi-Fi, caso o dispositivo precise de conectividade de intranet para dar suporte ao registro.  
 
- > [!NOTE]  
+> [!NOTE]  
 >  O branch atual do Configuration Manager dá suporte ao registro no Gerenciamento de Dispositivo Móvel Local para dispositivos que executam os seguintes sistemas operacionais:  
 >   
->  -   Windows 10 Enterprise  
+> -  Windows 10 Enterprise  
 > -   Windows 10 Pro  
-> -   Windows 10 Team \(a partir do Configuration Manager versão 1602\)  
+> -   Windows 10 Team  
 > -   Windows 10 Mobile  
 > -   Windows 10 Mobile Enterprise
+> -   Windows 10 IoT Enterprise   
 
 As seguintes tarefas explicam como registrar computadores e dispositivos em massa para o Gerenciamento de Dispositivo Móvel Local:  
 

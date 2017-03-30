@@ -16,9 +16,9 @@ author: arob98
 ms.author: angrobe
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: 55c953f312a9fb31e7276dde2fdd59f8183b4e4d
-ms.openlocfilehash: 0e5f65552045e9cef06f5286b0087153751c79b0
-ms.lasthandoff: 12/16/2016
+ms.sourcegitcommit: dab5da5a4b5dfb3606a8a6bd0c70a0b21923fff9
+ms.openlocfilehash: b63367dbaacde60a364e9da6afca65383b635840
+ms.lasthandoff: 03/27/2017
 
 
 ---
@@ -34,14 +34,14 @@ Antes de poder gerenciar um servidor Linux ou UNIX com o System Center Configura
 
  Depois de instalar o cliente, é possível especificar as Configurações do Cliente no console do Configuration Manager para configurar o agente cliente da mesma maneira que faria com clientes baseados em Windows. Para obter mais informações, consulte  [Client settings for Linux and UNIX servers](../../../core/clients/manage/manage-clients-for-linux-and-unix-servers.md#BKMK_ClientSettingsforLnU).  
 
-##  <a name="a-namebkmkaboutinstallpackagesa-about-client-installation-packages-and-the-universal-agent"></a><a name="BKMK_AboutInstallPackages"></a> Sobre pacotes de instalação do cliente e o agente Universal  
+##  <a name="BKMK_AboutInstallPackages"></a> Sobre pacotes de instalação do cliente e o agente Universal  
  Para instalar o cliente para Linux e UNIX em uma plataforma específica, você deve usar o pacote de instalação do cliente aplicável para o computador no qual você instala o cliente. Pacotes de instalação do cliente aplicáveis são incluídos como parte do download de cada cliente no [Centro de Download da Microsoft](http://go.microsoft.com/fwlink/?LinkID=525184). Além dos pacotes de instalação do cliente, o download do cliente inclui o script **install** que gerencia a instalação do cliente em cada computador.  
 
  Quando você instala um cliente, você pode usar as mesmas propriedades de processo e de linha de comando, independentemente do pacote de instalação de cliente que você usar.  
 
- Para obter informações sobre os sistemas operacionais, as plataformas e os pacotes de instalação do cliente aos quais cada versão do cliente do Configuration Manager para Linux e UNIX dá suporte, consulte [Servidores Linux e UNIX](../../plan-design/configs/supported-operating-systems-for-clients-and-devices.md#bkmk_LinuxOS).  
+ Para obter informações sobre os sistemas operacionais, as plataformas e os pacotes de instalação do cliente aos quais cada versão do cliente do Configuration Manager para Linux e UNIX dá suporte, consulte [Servidores Linux e UNIX](/sccm/core/plan-design/configs/supported-operating-systems-for-clients-and-devices#linux-and-unix-servers).  
 
-##  <a name="a-namebkmkinstalllnuclienta-install-the-client-on-linux-and-unix-servers"></a><a name="BKMK_InstallLnUClient"></a> Instalar o cliente em servidores Linux e UNIX  
+##  <a name="BKMK_InstallLnUClient"></a> Instalar o cliente em servidores Linux e UNIX  
  Para instalar o cliente para Linux e UNIX, você pode executar um script em cada computador Linux ou UNIX. O script é nomeado **instalar** e oferece suporte às propriedades de linha de comando que modificam o comportamento da instalação e referenciam o pacote de instalação do cliente. O pacote de instalação de cliente e script de instalação deve estar localizado no cliente. O pacote de instalação de cliente contém os arquivos do cliente do Configuration Manager para um sistema operacional e para uma plataforma Linux ou UNIX específica.
 Cada pacote de instalação de cliente contém todos os arquivos necessários para concluir a instalação do cliente e ao contrário dos computadores baseados no Windows, baixe arquivos adicionais de um ponto de gerenciamento ou em outro local de origem.  
 
@@ -72,7 +72,7 @@ Cada pacote de instalação de cliente contém todos os arquivos necessários pa
 
      Exemplo: ccm-Universal-x64.&lt;build\>.tar  
 
-###  <a name="a-namebkmktoinstalllnuclinenta-to-install-the-configuration-manager-client-on-linux-and-unix-servers"></a><a name="BKMK_ToInstallLnUClinent"></a> Para instalar o cliente do Configuration Manager em servidores Linux e UNIX  
+###  <a name="BKMK_ToInstallLnUClinent"></a> Para instalar o cliente do Configuration Manager em servidores Linux e UNIX  
 
 1.  Em um computador com Windows, [baixe o arquivo do cliente apropriado para o servidor Linux ou UNIX](http://go.microsoft.com/fwlink/?LinkID=525184) você deseja gerenciar.  
 
@@ -91,7 +91,7 @@ Cada pacote de instalação de cliente contém todos os arquivos necessários pa
 
 6.  Após o script ser executado, valide a instalação ao examinar o arquivo **/var/opt/microsoft/scxcm.log** . Além disso, é possível confirmar se o cliente está instalado e se comunicando com o site exibindo detalhes do cliente no nó **Dispositivos** do espaço de trabalho **Ativos e Conformidade** do console do Configuration Manager.  
 
-###  <a name="a-namebkmkcmdlineinstalllnuclienta-command-line-properties-for-installing-the-client-on-linux-and-unix-servers"></a><a name="BKMK_CmdLineInstallLnUClient"></a> Propriedades de linha de comando para instalar o cliente em servidores Linux e UNIX  
+###  <a name="BKMK_CmdLineInstallLnUClient"></a> Propriedades de linha de comando para instalar o cliente em servidores Linux e UNIX  
  As seguintes propriedades estão disponíveis para modificar o comportamento do script de instalação:  
 
 > [!NOTE]  
@@ -117,7 +117,8 @@ Cada pacote de instalação de cliente contém todos os arquivos necessários pa
 
      Opcional. Especifica o FQDN, o servidor de ponto de status de fallback que o cliente usa para enviar mensagens de estado.  
 
-     Para obter mais informações sobre o ponto de status de fallback, consulte [Determine Whether You Require a Fallback Status Point](../../../core/clients/deploy/plan/determine-the-site-system-roles-for-clients.md#BKMK_Determine_FSP) .  
+     Para obter mais informações sobre o ponto de status de fallback, consulte [Determine Whether You Require a Fallback Status Point](/sccm/core/clients/deploy/plan/determine-the-site-system-roles-for-clients#determine-if-you-need-a-fallback-status-point) .  
+
 
 -   **-dir &lt;diretório\>**  
 
@@ -216,14 +217,14 @@ Cada pacote de instalação de cliente contém todos os arquivos necessários pa
 
      Exemplo: -rootcerts &lt;Caminho completo e nome do arquivo\>,&lt;Caminho completo e nome do arquivo\>  
 
-###  <a name="a-namebkmkuninstalllnuclienta-uninstalling-the-client-from-linux-and-unix-servers"></a><a name="BKMK_UninstallLnUClient"></a> Desinstalando o cliente dos servidores Linux e UNIX  
+###  <a name="BKMK_UninstallLnUClient"></a> Desinstalando o cliente dos servidores Linux e UNIX  
  Para desinstalar o cliente do Configuration Manager para Linux e UNIX, use o utilitário de desinstalação, **desinstalar**. Por padrão, esse arquivo está localizado no **/opt/microsoft/SMS/bin/** pasta no computador cliente. Este comando de desinstalação não oferece suporte a quaisquer parâmetros de linha de comando e removerá todos os arquivos relacionados para o software cliente do servidor.  
 
  Para desinstalar o cliente, use a seguinte linha de comando: **/opt/microsoft/configmgr/bin/uninstall**  
 
  Não é necessário reinicializar o computador depois de desinstalar o cliente do Configuration Manager para Linux e UNIX.  
 
-##  <a name="a-namebkmkconfiglnuclientcommuincationsa-configure-request-ports-for-the-client-for-linux-and-unix"></a><a name="BKMK_ConfigLnUClientCommuincations"></a> Configurar portas de solicitação do cliente para Linux e UNIX  
+##  <a name="BKMK_ConfigLnUClientCommuincations"></a> Configurar portas de solicitação do cliente para Linux e UNIX  
  Semelhante a clientes baseados em Windows, o cliente do Configuration Manager para Linux e UNIX usa HTTP e HTTPS para se comunicar com sistemas de sites do Configuration Manager. As portas que o cliente do Configuration Manager usa para se comunicar são conhecidas como portas da solicitação.  
 
  Quando você instala o cliente do Configuration Manager para Linux e UNIX, é possível alterar as portas de solicitação padrão dos clientes, especificando as propriedades de instalação **-httpport** e **-httpsport**. Quando você não especificar a propriedade de instalação e um valor personalizado, o cliente usa os valores padrão. Os valores padrão são **80** para tráfego HTTP e **443** para tráfego HTTPS.  
@@ -232,10 +233,10 @@ Cada pacote de instalação de cliente contém todos os arquivos necessários pa
 
  Para obter mais informações sobre números de porta de comunicação de cliente, consulte [Como configurar portas de comunicação do cliente no System Center Configuration Manager](../../../core/clients/deploy/configure-client-communication-ports.md).  
 
-##  <a name="a-namebkmkconfigclientmpa-configure-the-client-for-linux-and-unix-to-locate-management-points"></a><a name="BKMK_ConfigClientMP"></a> Configurar o cliente para Linux e UNIX localizar pontos de gerenciamento  
+##  <a name="BKMK_ConfigClientMP"></a> Configurar o cliente para Linux e UNIX localizar pontos de gerenciamento  
  Ao instalar o cliente do Configuration Manager para Linux e UNIX, é necessário especificar um ponto de gerenciamento para ser usado como um ponto inicial de contato.  
 
  O cliente do Configuration Manager para Linux e UNIX entra em contato com esse ponto de gerenciamento no momento em que o cliente é instalado. Se o cliente falhar no contato com o ponto de gerenciamento, o software cliente continuará tentando até obter êxito.  
 
- Para obter mais informações sobre como os clientes localizam os pontos de gerenciamento, consulte [Locating Management Points](../../../core/clients/deploy/assign-clients-to-a-site.md#BKMK_LocatingMPs).
+ Para obter mais informações sobre como os clientes localizam os pontos de gerenciamento, consulte [Locating Management Points](/sccm/core/clients/deploy/assign-clients-to-a-site#locating-management-points).
 

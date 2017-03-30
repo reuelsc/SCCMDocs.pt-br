@@ -16,8 +16,9 @@ author: Brenduns
 ms.author: brenduns
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: 34dded3a8caf8c2be0313bc012cbd8ad2a909fad
-ms.openlocfilehash: 20bcc1cd909eec13eaca0a6de66806bd496f729d
+ms.sourcegitcommit: dab5da5a4b5dfb3606a8a6bd0c70a0b21923fff9
+ms.openlocfilehash: b330c97a0853d1673f1cf7e0691891b72407fa51
+ms.lasthandoff: 03/27/2017
 
 ---
 # <a name="capabilities-in-technical-preview-1701-for-system-center-configuration-manager"></a>Funcionalidades no Technical Preview 1701 do System Center Configuration Manager
@@ -40,23 +41,23 @@ Com essa visualização, você deve usar o novo comportamento de grupo de limite
 - Os clientes que buscam um novo ponto de atualização de software tentarão usar um associado a seu grupo de limite atual.
 - Quando o cliente não conseguir acessar seu ponto de atualização de software atual e não conseguir localizar um de seus grupos de limite atual, o cliente usará o comportamento de Fallback para expandir o pool disponível de pontos de atualização de software que pode ser usado.    
 
-Para obter mais informações sobre grupos de limites, consulte [Grupos de limites](/sccm/core/servers/deploy/configure/define-site-boundaries-and-boundary-groups#BKMK_BoundaryGroups) no conteúdo do Branch Atual.
+Para obter mais informações sobre grupos de limites, consulte [Grupos de limites](/sccm/core/servers/deploy/configure/boundary-groups) no conteúdo do Branch Atual.
 
 No entanto, com essa visualização, grupos de limites para pontos de atualização de software são apenas parcialmente implementados. Você pode adicionar pontos de atualização de software e configurar grupos de limites vizinhos que contêm pontos de atualização de software, mas o tempo de fallback para pontos de atualização de software ainda não tem suporte e os clientes aguardarão duas horas antes de iniciar o fallback.
 
 O seguinte descreve o comportamento de pontos de atualização de software com essa visualização técnica:  
 
--   **Novos clientes usam grupos de limites para selecionar pontos de atualização de software**. Um cliente instalado após a instalação da versão 1701selecione um ponto de atualização de software dos associados ao grupo de limite do cliente.
+-    **Novos clientes usam grupos de limites para selecionar pontos de atualização de software**. Um cliente instalado após a instalação da versão 1701selecione um ponto de atualização de software dos associados ao grupo de limite do cliente.
 
   Isso substitui o comportamento anterior em que os clientes selecionavam um ponto de atualização de software aleatoriamente de uma lista dos que compartilham a floresta de clientes.   
 
--   **Clientes instalados anteriormente continuam a usar seu atual ponto de atualização de software até fazerem fallback para localizar um novo.**
+-    **Clientes instalados anteriormente continuam a usar seu atual ponto de atualização de software até fazerem fallback para localizar um novo.**
 Clientes que foram instalados anteriormente e que já têm um ponto de atualização de software continuarão a usar o ponto de atualização de software até fazerem fallback. Isso inclui pontos de atualização de software que não estão associados ao grupo de limite atual do cliente. Eles não tentam localizar e usar imediatamente um ponto de atualização de software do grupo de limite atual.
 
   Um cliente que já tem um ponto de atualização de software começa a usar esse novo comportamento de grupo de limite somente após o cliente não conseguir acessar seu ponto de atualização de software atual e iniciar um fallback.
 Esse atraso para alternar para o novo comportamento é intencional. Isso ocorre porque uma alteração do ponto de atualização de software pode resultar em um grande uso de largura de banda de rede à medida que o cliente sincroniza dados com o novo ponto de atualização de software. O atraso na transição pode ajudar a evitar a saturação de sua rede se todos os clientes mudarem para os novos pontos de atualização de software ao mesmo tempo.
 
--   **Configurações de tempo de fallback:** configurações para quando os clientes iniciarem fallback para pesquisar um novo ponto de atualização de software a clientes não têm suporte neste technical preview. Isso inclui configurações para **Tempos de fallback (em minutos)** e **Nunca realizar fallback**, que você pode configurar para relacionamentos de grupo de limite diferentes.
+-    **Configurações de tempo de fallback:** configurações para quando os clientes iniciarem fallback para pesquisar um novo ponto de atualização de software a clientes não têm suporte neste technical preview. Isso inclui configurações para **Tempos de fallback (em minutos)** e **Nunca realizar fallback**, que você pode configurar para relacionamentos de grupo de limite diferentes.
 
   Em vez disso, os clientes mantêm seu comportamento atual no qual um cliente tenta se conectar ao seu ponto de atualização de software atual por duas horas antes de começar o fallback, para localizar um novo ponto de atualização de software que pode ser usado.
 
@@ -132,9 +133,9 @@ Para fazer isso, modifique um arquivo de configuração para apontar para a nuve
     &lt;setting name="FairFaxAuthorityResource" serializeAs="String">   
     &lt;value>https://login.microsoftonline.com/&lt;/value>
 
-2.  Depois de salvar o arquivo com as duas alterações, reinicie o console do Configuration Manager no mesmo computador e, em seguida, use esse console para instalar o conector do OMS. Para instalar o conector, use as informações em [Sincronizar dados do Configuration Manager para o Microsoft Operations Management Suite](/sccm/core/clients/manage/sync-data-microsoft-operations-management-suite) e selecione o **Espaço de trabalho do Operations Management Suite** que está na nuvem Microsoft Azure Governamental.
+2.    Depois de salvar o arquivo com as duas alterações, reinicie o console do Configuration Manager no mesmo computador e, em seguida, use esse console para instalar o conector do OMS. Para instalar o conector, use as informações em [Sincronizar dados do Configuration Manager para o Microsoft Operations Management Suite](/sccm/core/clients/manage/sync-data-microsoft-operations-management-suite) e selecione o **Espaço de trabalho do Operations Management Suite** que está na nuvem Microsoft Azure Governamental.
 
-3.  Após instalar o conector do OMS, a conexão com a nuvem Governamental estará disponível quando você usar um console que se conecta ao site.
+3.    Após instalar o conector do OMS, a conexão com a nuvem Governamental estará disponível quando você usar um console que se conecta ao site.
 
 ## <a name="android-and-ios-versions-are-no-longer-targetable-in-creation-wizards-for-hybrid-mdm"></a>As versões do Android e iOS não precisam mais ser direcionadas nos assistentes de criação do MDM híbrido
 
@@ -157,9 +158,4 @@ Essa alteração afeta os assistentes de criação dos seguintes itens:
 Com essa alteração, as implantações híbridas podem fornecer suporte com mais rapidez para novas versões do Android e do iOS sem precisar de uma nova versão ou extensão do Configuration Manager. Assim que uma nova versão passar a ter suporte no Intune autônomo, os usuários poderão atualizar seus dispositivos móveis para essa versão.
 
 Para evitar problemas ao atualizar de versões anteriores do Configuration Manager, as versões dos sistemas operacionais móveis ainda estarão disponíveis nas páginas de propriedades desses itens. Se você ainda precisar direcionar a uma versão específica, crie o novo item e especifique a versão de destino na página de propriedades do item recém-criado.
-
-
-
-<!--HONumber=Jan17_HO4-->
-
 

@@ -16,9 +16,9 @@ author: nathbarn
 ms.author: nathbarn
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: 1b9e49da1a5bbfca93fe683b82d2c0056a22cc1f
-ms.openlocfilehash: c27d9129b261b166ad7b21aff468d47eba116d67
-ms.lasthandoff: 03/21/2017
+ms.sourcegitcommit: 3b1451edaed69a972551bd060293839aa11ec8b2
+ms.openlocfilehash: 20be68496099a67ad2d475067f073da2cef16c86
+ms.lasthandoff: 03/28/2017
 
 
 ---
@@ -72,7 +72,7 @@ Você pode implantar os termos e condições do System Center Configuration Mana
 
 ## <a name="to-monitor-terms-and-conditions"></a>Para monitorar termos e condições  
 
-1.  A partir da versão 1602, você pode monitorar as implantações de termos e condições no console do Configuration Manager. No console do Configuration Manager, acesse **Monitoramento** > **Visão Geral** > **Implantações**.  
+1.  Você pode monitorar implantações de termos e condições no console do Configuration Manager. No console do Configuration Manager, acesse **Monitoramento** > **Visão Geral** > **Implantações**.  
 
 2.  Selecione a implantação dos termos e condições na lista de implantações  
 
