@@ -17,9 +17,9 @@ author: Mtillman
 ms.author: mtillman
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: cec595d473ca2459e43a7fa1c70b7668a8a48986
-ms.openlocfilehash: d529a058968cf99dce77997844b33ff5dc7c0004
-ms.lasthandoff: 01/21/2017
+ms.sourcegitcommit: 507bad02c6e028f09a8b0c8a566ac55f7c3942a5
+ms.openlocfilehash: 544c3bea0c7df96887ee1717f061c39c64b82d01
+ms.lasthandoff: 03/22/2017
 
 
 ---
@@ -35,11 +35,12 @@ Considere os seguintes requisitos antes de preparar a infraestrutura do Configur
  > [!NOTE]  
 >  O branch atual do Configuration Manager dá suporte ao registro no Gerenciamento de Dispositivo Móvel Local para dispositivos que executam os seguintes sistemas operacionais:  
 >   
->  -   Windows 10 Enterprise  
+> -  Windows 10 Enterprise  
 > -   Windows 10 Pro  
 > -   Windows 10 Team \(a partir do Configuration Manager versão 1602\)  
 > -   Windows 10 Mobile  
-> -   Windows 10 Mobile Enterprise   
+> -   Windows 10 Mobile Enterprise
+> -   Windows 10 IoT Enterprise   
 
 ##  <a name="bkmk_intune"></a> Uso da assinatura do Microsoft Intune  
  Para começar a usar o Gerenciamento de dispositivo móvel local, você precisará de uma assinatura do Microsoft Intune. A assinatura apenas é necessária para acompanhar o licenciamento dos dispositivos e não é usada para gerenciar ou armazenar informações de gerenciamento dos dispositivos. Todo o gerenciamento é manipulado na empresa de sua organização usando a infraestrutura do Configuration Manager local.  

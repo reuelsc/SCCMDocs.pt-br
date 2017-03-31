@@ -2,7 +2,7 @@
 title: Portas usadas pelo Configuration Manager | Microsoft Docs
 description: "Saiba mais sobre as portas necessárias e personalizáveis que o System Center Configuration Manager usa para conexões."
 ms.custom: na
-ms.date: 3/1/2017
+ms.date: 3/20/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
@@ -17,9 +17,9 @@ author: Brenduns
 ms.author: brenduns
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: 6bfc5c0e3c0bdc8408ad2dd2a7807ef3e018ef60
-ms.openlocfilehash: 8cd1c5363ba05dbb35ca5a0daf32979dd8b51b19
-ms.lasthandoff: 03/01/2017
+ms.sourcegitcommit: 4c2906c2a963e0ae92e3c0d223afb7a47377526a
+ms.openlocfilehash: ffc2adb34427aa62f4a377e887c2ff54d47abeff
+ms.lasthandoff: 03/20/2017
 
 
 ---
@@ -603,6 +603,14 @@ Para obter mais informações, consulte [Requisitos de acesso à Internet](/sccm
     -   Serviço SQL Server, que usa como padrão a porta TCP 1433.  
 
 -   A comunicação entre sites entre o mecanismo de banco de dados do SQL Server e várias funções do sistema de sites do Configuration Manager padroniza a porta TCP 1433.  
+
+- O Configuration Manager usará as mesmas portas e protocolos para se comunicar com cada réplica do Grupo de Disponibilidade do SQL que hospeda o banco de dados do site como se a réplica for uma instância autônoma do SQL Server.
+
+Quando você usar o Azure e o banco de dados do site estiver atrás de um balanceador de carga interno ou externo, configure as seguintes exceções de firewall em cada réplica e adicione regras de balanceamento de carga para as seguintes portas:
+ - SQL sobre TCP: TCP 1433
+ - SQL Server Service Broker: TCP 4022
+ - Protocolo SMB: TCP 445
+ - Mapeador de ponto de extremidade RPC: TCP 135
 
 > [!WARNING]  
 >  O Configuration Manager não dá suporte a portas dinâmicas. Como as instâncias nomeadas do SQL Server por padrão usam as portas dinâmicas para fazer conexões com o mecanismo de banco de dados, ao usar uma instância nomeada, configure manualmente a porta estática que deseja usar para a comunicação entre sites.  

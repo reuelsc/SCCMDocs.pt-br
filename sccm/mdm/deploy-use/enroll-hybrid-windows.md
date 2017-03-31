@@ -2,7 +2,7 @@
 title: "Configurar o gerenciamento de dispositivo híbrido do Windows com o System Center Configuration Manager e o Microsoft Intune | Microsoft Docs"
 description: "Configurar o gerenciamento do dispositivo Windows híbrido com o System Center Configuration Manager e o Microsoft Intune."
 ms.custom: na
-ms.date: 03/09/2017
+ms.date: 03/17/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
@@ -16,9 +16,9 @@ author: nathbarn
 ms.author: nathbarn
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: a8218e23743dafaf8ff1166142cf2dcca1212133
-ms.openlocfilehash: 996d01d3c5d5be4544246a5f321f67b60a8f5508
-ms.lasthandoff: 03/14/2017
+ms.sourcegitcommit: 6424fb07802b62820b4dc78a58ab30d3b956abef
+ms.openlocfilehash: 4189fe34efc2ae134150a89791dc10bbab1b9d02
+ms.lasthandoff: 03/17/2017
 
 
 ---
@@ -36,7 +36,7 @@ Dois fatores determinam como você vai registrar os dispositivos Windows:
 - **Você usa o Azure Active Directory Premium?** <br>[O Azure AD Premium](https://docs.microsoft.com/azure/active-directory/active-directory-get-started-premium) está incluído no Enterprise Mobility + Security e outros planos de licenciamento.
 - **Quais versões de clientes Windows serão registradas?** <br>Dispositivos Windows 10 podem registrar automaticamente adicionando uma conta corporativa ou escolar. Versões anteriores devem ser registrados usando o aplicativo de Portal da Empresa.
 
-||**Azure AD Premium**|**Ouro AD**|
+||**Azure AD Premium**|**Outro AD**|
 |----------|---------------|---------------|  
 |**Windows 10**|[Registro automático](#automatic-enrollment) |[Registro do Portal da Empresa](#company-portal-enrollment)|
 |**Versões anteriores do Windows**|[Registro do Portal da Empresa](#company-portal-enrollment)|[Registro do Portal da Empresa](#company-portal-enrollment)|
@@ -80,7 +80,7 @@ Para habilitar o gerenciamento de dispositivos do Windows para PCs ou dispositiv
 4. Clique em **OK** para fechar a caixa de diálogo.  Para simplificar o processo de registro usando o Portal da Empresa, você deve criar um alias DNS para o registro do dispositivo. Em seguida, você pode dizer aos usuários como registrar seus dispositivos.
 
 ### <a name="create-dns-alias-for-device-enrollment"></a>Criar o alias DNS para registro de dispositivo  
-Um DNS alias (tipo de registro CNAME) facilita para os usuários registrem seus dispositivos ao se conectar ao serviço sem exigir que o usuário insira um endereço de servidor. Para criar um alias DNS (tipo de registro CNAME), você precisa configurar um CNAME nos registros DNS da sua empresa que redirecione as solicitações enviadas a uma URL no domínio da empresa para os servidores de serviço de nuvem da Microsoft.  Por exemplo, se o domínio da sua empresa for contoso.com, você deverá criar um CNAME no DNS que redirecione EnterpriseEnrollment.contoso.com para EnterpriseEnrollment-s.manage.microsoft.com.  
+Um DNS alias (tipo de registro CNAME) facilita para os usuários registrem seus dispositivos ao se conectar ao serviço sem exigir que o usuário insira um endereço de servidor. Para criar um alias DNS (tipo de registro CNAME), você deve configurar um CNAME nos registros DNS da sua empresa que redirecione as solicitações enviadas a uma URL no domínio da empresa para os servidores de serviço de nuvem da Microsoft.  Por exemplo, se o domínio da sua empresa for contoso.com, você deverá criar um CNAME no DNS que redirecione EnterpriseEnrollment.contoso.com para EnterpriseEnrollment-s.manage.microsoft.com.  
 
  Embora a criação de entradas de DNS de CNAME seja opcional, os registros CNAME facilitam o registro para os usuários. Se não for possível encontrar nenhum registro CNAME no registro, os usuários deverão inserir manualmente o nome do servidor MDM: https://enrollment.manage.microsoft.com.
 
@@ -88,7 +88,7 @@ Um DNS alias (tipo de registro CNAME) facilita para os usuários registrem seus 
 |----------|---------------|---------------|---|
 |CNAME|EnterpriseEnrollment.company_domain.com|EnterpriseEnrollment-s.manage.microsoft.com| 1 hora|
 
-Se você tiver mais de um sufixo UPN, você precisará criar um CNAME para cada nome de domínio e apontar cada um para EnterpriseEnrollment-s.manage.microsoft.com. Por exemplo, se os usuários da Contoso usam name@contoso.com, mas também usam name@us.contoso.com e name@eu.constoso.com como seu email/UPN, o administrador de DNS da Contoso precisaria criar os seguintes CNAMEs.
+Se você tiver mais de um sufixo UPN, você precisará criar um CNAME para cada nome de domínio e apontar cada um para EnterpriseEnrollment-s.manage.microsoft.com. Por exemplo, se os usuários da Contoso usarem name@contoso.com, mas também usarem name@us.contoso.com e name@eu.constoso.com como seu email/UPN, o administrador de DNS da Contoso precisará criar os seguintes CNAMEs.
 
 |Tipo|Nome do host|Aponta para|TTL|  
 |----------|---------------|---------------|---|

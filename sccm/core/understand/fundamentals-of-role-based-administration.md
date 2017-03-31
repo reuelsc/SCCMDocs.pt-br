@@ -16,8 +16,9 @@ author: Brenduns
 ms.author: brenduns
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: a8cb3c9850b183eec156c37a181c04088b71805e
-ms.openlocfilehash: 40837306816639ff8cea8930fec75b05edc5164a
+ms.sourcegitcommit: 1b9e49da1a5bbfca93fe683b82d2c0056a22cc1f
+ms.openlocfilehash: ddf2ad1cae51c1e36df5a6d86822e2b9abe604e2
+ms.lasthandoff: 03/21/2017
 
 
 ---
@@ -65,7 +66,7 @@ Ao projetar e implementar a segurança administrativa para o Configuration Manag
 > [!IMPORTANT]  
 >  Atrasos de replicação entre sites podem impedir que um site receba alterações para a administração baseada em funções. Para obter informações sobre como monitorar a replicação de banco de dados entre sites, consulte o tópico [Transferências de dados entre sites no System Center Configuration Manager](../../core/servers/manage/data-transfers-between-sites.md).  
 
-##  <a name="a-namebkmkplanrolesa-security-roles"></a><a name="bkmk_Planroles"></a> Funções de segurança  
+##  <a name="bkmk_Planroles"></a> Funções de segurança  
  Use as funções de segurança para conceder permissões de segurança a usuários administrativos. Funções de segurança são grupos de permissões de segurança atribuídas a usuários administrativos para que eles executem suas tarefas administrativas. Essas permissões de segurança definem as ações administrativas que um usuário administrativo pode executar e as permissões concedidas a tipos de objetos particulares. Como uma prática recomendada de segurança, atribua as funções de segurança que fornecem o mínimo de permissões.  
 
  O Configuration Manager tem diversas funções de segurança internas para suporte de agrupamentos típicos de tarefas administrativas, e é possível criar suas próprias funções de segurança personalizadas para oferecer suporte a seus requisitos específicos de negócios. Exemplos de funções de segurança interna:  
@@ -79,7 +80,7 @@ Ao projetar e implementar a segurança administrativa para o Configuration Manag
 > [!TIP]  
 >  Você pode exibir a lista de funções de segurança internas e funções de segurança personalizadas que você cria, incluindo suas descrições, no console do Configuration Manager. Para exibir as funções, no espaço de trabalho **Administração**, expanda **Segurança** e, em seguida, selecione **Funções de Segurança**.  
 
- Cada função de segurança tem as permissões específicas para diferentes tipos de objeto. Por exemplo, a função de segurança *MMM de Aplicativo* tem as seguintes permissões para aplicativos: Aprovar, Criar, Excluir, Modificar, Modificar Pastas, Mover Objetos, Ler/Implantar e Definir Escopo de Segurança.
+ Cada função de segurança tem as permissões específicas para diferentes tipos de objeto. Por exemplo, a função de segurança *Autor de Aplicativos* tem as seguintes permissões para aplicativos: Aprovar, Criar, Excluir, Modificar, Modificar Pastas, Mover Objetos, Ler, Executar Relatório e Definir Escopo de Segurança.
 
  Você não pode alterar as permissões das funções de segurança internas, mas pode copiar a função, fazer alterações e então salvar essas alterações como uma nova função de segurança personalizada. Também é possível importar funções de segurança que você exportou de outra hierarquia, por exemplo, de uma rede de teste. Examine as funções de segurança e suas permissões para determinar se você usará as funções de segurança internas ou precisará criar suas próprias funções de segurança personalizadas.  
 
@@ -95,7 +96,7 @@ Ao projetar e implementar a segurança administrativa para o Configuration Manag
 
 Para obter informações sobre como criar e configurar funções de segurança para administração baseada em funções, consulte [Criar funções de segurança personalizadas](../../core/servers/deploy/configure/configure-role-based-administration.md#BKMK_CreateSecRole) e [Configurar funções de segurança](../../core/servers/deploy/configure/configure-role-based-administration.md#BKMK_ConfigSecRole) no tópico [Configurar administração baseada em funções para o System Center Configuration Manager](../../core/servers/deploy/configure/configure-role-based-administration.md).  
 
-##  <a name="a-namebkmkplancola-collections"></a><a name="bkmk_planCol"></a> Coleções  
+##  <a name="bkmk_planCol"></a> Coleções  
  Coleções especificam os recursos de usuário e computador que um usuário administrativo pode exibir ou gerenciar. Por exemplo, para usuários administrativos implantarem aplicativos ou executarem controle remoto, eles devem ser atribuídos a uma função de segurança que conceda acesso a uma coleção que contenha esses recursos. Você pode selecionar coleções de usuários ou dispositivos.  
 
  Para obter mais informações sobre coleções, consulte [Introdução a coleções no System Center Configuration Manager](../../core/clients/manage/collections/introduction-to-collections.md).  
@@ -112,7 +113,7 @@ Para obter informações sobre como criar e configurar funções de segurança p
 
 Para obter informações sobre como configurar coleções para administração baseada em funções, consulte [Configurar coleções para gerenciar a segurança](../../core/servers/deploy/configure/configure-role-based-administration.md#BKMK_ConfigColl) no tópico [Configurar administração baseada em funções para o System Center Configuration Manager](../../core/servers/deploy/configure/configure-role-based-administration.md).  
 
-##  <a name="a-namebkmkplanscopea-security-scopes"></a><a name="bkmk_PlanScope"></a> Escopos de segurança  
+##  <a name="bkmk_PlanScope"></a> Escopos de segurança  
  Use escopos de segurança para fornecer aos usuários administrativos acesso a objetos protegidos. Um escopo de segurança é um conjunto nomeado de objetos protegíveis que são atribuídos a usuários administradores como um grupo. Todos os objetos protegíveis devem ser atribuídos a um ou mais escopos de segurança. O Configuration Manager tem dois escopos de segurança internos:  
 
 -   O escopo de segurança interno *Todos* concede acesso a todos os escopos. Você não pode atribuir objetos a este escopo de segurança.  
@@ -212,9 +213,4 @@ Crie escopos de segurança quando precisar limitar o acesso ao separar instânci
 -   Diferentes usuários administrativos necessitam de acesso distinto para algumas instâncias de um tipo de objeto. Por exemplo, um grupo de usuários administrativos requer permissão de Leitura para grupos de atualização de software específicos e outro grupo de usuários administrativos requer permissões de Modificar e Excluir para outros grupos de atualização de software. Crie escopos de segurança diferentes para esses grupos de atualização de software.  
 
 Para obter informações sobre como configurar escopos de segurança para administração baseada em funções, consulte [Configurar escopos de segurança para um objeto](../../core/servers/deploy/configure/configure-role-based-administration.md#BKMK_ConfigSecScope) no tópico [Configurar administração baseada em funções para o System Center Configuration Manager](../../core/servers/deploy/configure/configure-role-based-administration.md).  
-
-
-
-<!--HONumber=Jan17_HO5-->
-
 

@@ -17,9 +17,9 @@ author: Brenduns
 ms.author: brenduns
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: dcbcd57b95f304f007e92ebe2b9aeefb4b579662
-ms.openlocfilehash: 92d3c215569916a5557309d7f488aa88f387da92
-ms.lasthandoff: 03/09/2017
+ms.sourcegitcommit: 1b9e49da1a5bbfca93fe683b82d2c0056a22cc1f
+ms.openlocfilehash: c3ca3b895d54b6dc886068b92b39d0d95c466de2
+ms.lasthandoff: 03/21/2017
 
 
 ---
@@ -141,7 +141,7 @@ Essa tarefa aplica-se a dispositivos registrados pelo Microsoft Intune (híbrido
 **Excluir Dados Antigos de Log**: use essa tarefa para excluir dados antigos de log que são usados para solução de problemas do banco de dados. Esses dados não estão relacionados às operações de componente do Configuration Manager.  
 
 > [!IMPORTANT]  
-> Por padrão, esta tarefa é executada diariamente em cada site. Em um site de administração central e sites primários, a tarefa exclui dados com mais de 30 dias. Ao usar o SQL Server Express em um site secundário, certifique-se que esta tarefa seja executada diariamente e exclua os dados que ficaram inativos por&7; dias.  
+> Por padrão, esta tarefa é executada diariamente em cada site. Em um site de administração central e sites primários, a tarefa exclui dados com mais de 30 dias. Ao usar o SQL Server Express em um site secundário, certifique-se que esta tarefa seja executada diariamente e exclua os dados que ficaram inativos por 7 dias.  
 
 -   **Site de administração central**: habilitado    
 -   **Site primário**: habilitado    
@@ -207,6 +207,11 @@ Essa tarefa aplica-se a dispositivos registrados pelo Microsoft Intune (híbrido
 -   **Site primário**: habilitado    
 -   Site secundário: indisponível  
 
+**Excluir registros de pacotes de registro em massa MDM expirados**: use esta tarefa para excluir certificados de registro em massa antigos e perfis correspondentes depois que o certificado de registro expirar. Para obter mais informações, consulte [Criar perfis de certificado](/sccm/protect/deploy-use/create-certificate-profiles).
+-   **Site de administração central**: habilitado
+-   **Site primário**: habilitado
+-   Site secundário: indisponível
+
 **Excluir Dados de Descoberta de Cliente Inativo**: use essa tarefa para excluir dados de descoberta de clientes inativos do banco de dados. Os clientes são marcados como inativos quando são sinalizados como obsoletos e por configurações feitas no status do cliente.
 
 Esta tarefa só opera em recursos que são clientes do Configuration Manager. É diferente da tarefa **Excluir Dados Antigos de Descoberta**, que exclui qualquer registro de dados de descoberta antigo. Quando esta tarefa é executada em um site, remove os dados do banco de dados em todos os sites em uma hierarquia. Para obter mais informações, consulte [How to configure client status in System Center Configuration Manager](../../../core/clients/deploy/configure-client-status.md).  
@@ -242,7 +247,7 @@ Esta tarefa só opera em recursos que são clientes do Configuration Manager. É
 **Excluir Registros Órfãos de Estado de Implantação de Cliente**: use esta tarefa para limpar periodicamente a tabela que contém informações sobre o estado de implantação do cliente. Essa tarefa limpará registros associados a dispositivos obsoletos ou encerrados.  
 -   **Site de administração central**: habilitado    
 -   **Site primário**: habilitado    
--   Site secundário: indisponível 
+-   Site secundário: indisponível
 
 **Excluir Revisões Não Usadas de Aplicativo**: use essa tarefa para excluir revisões de aplicativos que não são mais referenciadas. Para mais informações, consulte [Como revisar e substituir aplicativos no System Center Configuration Manager](../../../apps/deploy-use/revise-and-supersede-applications.md).  
 

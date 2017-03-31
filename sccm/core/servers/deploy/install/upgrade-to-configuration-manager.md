@@ -2,7 +2,7 @@
 title: "Atualização para o System Center Configuration Manager | Microsoft Docs"
 description: "Conheça as etapas para executar uma atualização in-loco com êxito de um site e hierarquia que executa o System Center 2012 Configuration Manager."
 ms.custom: na
-ms.date: 2/23/2017
+ms.date: 3/27/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
@@ -16,9 +16,9 @@ author: Brenduns
 ms.author: brenduns
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: 8f4ec982a54cf3cefef310268a54850e70e2e63a
-ms.openlocfilehash: 49e3a9d6f4b8e1afbb76fcba33a7fb58e5a6b13f
-ms.lasthandoff: 03/13/2017
+ms.sourcegitcommit: 6424fb07802b62820b4dc78a58ab30d3b956abef
+ms.openlocfilehash: ca07b46db0967ca03cc5e858b835d2c2108f1210
+ms.lasthandoff: 03/17/2017
 
 
 ---
@@ -34,6 +34,7 @@ Você pode executar uma atualização in-loco para atualizar para o System Cente
  > Ao gerenciar a infraestrutura do site e da hierarquia do System Center Configuration Manager, os termos *upgrade*, *atualização* e *instalação* são usados para descrever três conceitos separados. Para saber como cada termo é usado, consulte [About upgrade, update, and install](/sccm/core/understand/upgrade-update-install) (Sobre upgrade, atualização e instalação).
 
 ##  <a name="bkmk_path"></a> Caminhos de atualização in-loco  
+
 **Atualizar para a versão 1606**  
 Em 15 de dezembro de 2016, a mídia de linha de base para a versão 1606 foi relançada para adicionar suporte a cenários adicionais de atualização. Essa nova versão dá suporte para a atualização do seguinte para uma versão totalmente licenciada do System Center Configuration Manager versão 1606:  
 -   Uma instalação de avaliação do System Center Configuration Manager versão 1606
@@ -78,8 +79,8 @@ Quando tiver a mídia de linha de base versão 1511, você poderá atualizar o s
 
 Examine os sistemas operacionais de servidor em uso para hospedar funções de sistema de sites:  
 
--   Alguns sistemas operacionais mais antigos com suporte pelo System Center 2012 Configuration Manager não têm suporte pelo System Center Configuration Manager, e as funções de sistema de sites nesses sistemas operacionais devem ser realocadas ou removidas antes da atualização  
--   O Verificador de Pré-requisitos do Configuration Manager não verifica os pré-requisitos para funções do sistema de sites no servidor do site ou em computadores remotos  
+-   Alguns sistemas operacionais mais antigos com suporte pelo System Center 2012 Configuration Manager não têm suporte pelo System Center Configuration Manager, e as funções de sistema de sites nesses sistemas operacionais devem ser realocadas ou removidas antes da atualização. Examine a documentação [Sistemas operacionais com suporte para servidores de sistema de sites](../../../../core/plan-design/configs/supported-operating-systems-for-site-system-servers.md).   
+-   O Verificador de Pré-requisitos do Configuration Manager não verifica os pré-requisitos para funções do sistema de sites no servidor do site ou em sistemas de sites remotos  
 
 Examine os pré-requisitos necessários em cada computador que hospeda uma função do sistema de sites:  
 

@@ -16,8 +16,9 @@ author: Dougeby
 ms.author: dougeby
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: 74341fb60bf9ccbc8822e390bd34f9eda58b4bda
-ms.openlocfilehash: 77ac69cecab7aa460001a8d2800e61f20a8565ed
+ms.sourcegitcommit: 1b9e49da1a5bbfca93fe683b82d2c0056a22cc1f
+ms.openlocfilehash: 562e81df12e46a2332aa5e4de8b7c9e5819bde80
+ms.lasthandoff: 03/21/2017
 
 
 ---
@@ -27,7 +28,7 @@ ms.openlocfilehash: 77ac69cecab7aa460001a8d2800e61f20a8565ed
 
 A implantação de sistema operacional no System Center 2012 Configuration Manager tem dependências externas e dependências dentro do produto. Use as seções a seguir para ajudá-lo a preparar uma implantação do sistema operacional.  
 
-##  <a name="a-namebkmkexternaldependenciesa-dependencies-external-to-configuration-manager"></a><a name="BKMK_ExternalDependencies"></a> Dependências externas ao Configuration Manager  
+##  <a name="BKMK_ExternalDependencies"></a> Dependências externas ao Configuration Manager  
  A seguir, há informações sobre ferramentas externas, kits de instalação e sistemas operacionais necessários para implantar sistemas operacionais no Configuration Manager.  
 
 ### <a name="windows-adk-for-windows-10"></a>Windows ADK para Windows 10  
@@ -104,7 +105,7 @@ Você precisa instalar os seguintes hotfixes do WSUS 4.0:
 ### <a name="windows-device-drivers"></a>Drivers de dispositivos Windows  
  Os drivers de dispositivos Windows podem ser usados ao instalar o sistema operacional no computador de destino e ao executar o Windows PE usando uma imagem de inicialização. Para obter mais informações sobre drivers de dispositivo, consulte [Gerenciar drivers](../get-started/manage-drivers.md).  
 
-##  <a name="a-namebkmkinternaldependenciesa-configuration-manager-dependencies"></a><a name="BKMK_InternalDependencies"></a> Dependências do Configuration Manager  
+##  <a name="BKMK_InternalDependencies"></a> Dependências do Configuration Manager  
  A seguir, há informações sobre os pré-requisitos de implantação de sistema operacional do Configuration Manager.  
 
 ### <a name="operating-system-image"></a>Imagem do sistema operacional  
@@ -124,10 +125,10 @@ Você precisa instalar os seguintes hotfixes do WSUS 4.0:
  Para obter mais informações sobre como instalar pontos de distribuição e gerenciar conteúdo, consulte [Gerenciar conteúdo e infraestrutura de conteúdo](../../core/servers/deploy/configure/manage-content-and-content-infrastructure.md).  
 
 ### <a name="pxe-enabled-distribution-point"></a>Ponto de distribuição habilitado para PXE  
- Para realizar as implantações iniciadas por PXE, é necessário configurar um ponto de distribuição para aceitar as solicitações PXE de clientes. Para obter mais informações sobre como configurar o ponto de distribuição, consulte [Configurações de ponto de distribuição](../../core/servers/deploy/configure/install-and-configure-distribution-points.md#a-namebkmkconfigsa-distribution-point-configurations) e localize a categoria de configuração do PXE na tabela.  
+ Para realizar as implantações iniciadas por PXE, é necessário configurar um ponto de distribuição para aceitar as solicitações PXE de clientes. Para obter mais informações sobre como configurar o ponto de distribuição, consulte [Configurar um ponto de distribuição](/sccm/core/servers/deploy/configure/install-and-configure-distribution-points#pxe).  
 
 ### <a name="multicast-enabled-distribution-point"></a>Ponto de distribuição habilitado para multicast  
- Para otimizar as imagens do sistema operacional usando multicast, configure um ponto de distribuição que ofereça suporte a multicast. Para obter mais informações sobre como configurar o ponto de distribuição, consulte [Configurações de ponto de distribuição](../../core/servers/deploy/configure/install-and-configure-distribution-points.md#a-namebkmkconfigsa-distribution-point-configurations) e localize a categoria de configuração de Multicast na tabela.  
+ Para otimizar as imagens do sistema operacional usando multicast, configure um ponto de distribuição que ofereça suporte a multicast. Para obter mais informações sobre como configurar o ponto de distribuição, consulte [Configurar um ponto de distribuição](/sccm/core/servers/deploy/configure/install-and-configure-distribution-points#multicast).   
 
 ### <a name="state-migration-point"></a>Ponto de migração de estado  
  Ao capturar e restaurar os dados do estado do usuário para implantações lado a lado e de atualização, é necessário configurar um ponto de migração de estado para armazenar os dados de estado do usuário em outro computador.  
@@ -162,7 +163,7 @@ Você precisa instalar os seguintes hotfixes do WSUS 4.0:
 ### <a name="security-scopes-for-operating-system-deployments"></a>Escopos de segurança para implantações de sistema operacional  
  Use os escopos de segurança para fornecer aos usuários administrativos o acesso a objetos protegíveis usados nas implantações de sistema operacional, como imagens de sistema operacional e de inicialização, pacotes de drivers e pacotes de sequência de tarefas. Para obter mais informações, consulte [Escopos de segurança](../../core/understand/fundamentals-of-role-based-administration.md#bkmk_PlanScope).  
 
-##  <a name="a-namebkmkwdsa-windows-deployment-services"></a><a name="BKMK_WDS"></a> Serviços de Implantação do Windows  
+##  <a name="BKMK_WDS"></a> Serviços de Implantação do Windows  
  O WDS (Serviços de Implantação do Windows) deve ser instalado no mesmo servidor que os pontos de distribuição configurados para dar suporte a PXE ou multicast. O WDS está incluído no sistema operacional do servidor. Para implantações do PXE, o WDS é o serviço que executa a inicialização do PXE. Quando o ponto de distribuição está instalado e habilitado para PXE, o Configuration Manager instala um provedor no WDS que usa as funções de inicialização do PXE do WDS.  
 
 > [!NOTE]  
@@ -176,7 +177,7 @@ Você precisa instalar os seguintes hotfixes do WSUS 4.0:
 
 -   Caso o provedor esteja instalado em um servidor remoto, você deve instalar o WDS no servidor do site e no provedor remoto.  
 
-###  <a name="a-namebkmkwdsanddhcpa-considerations-when-you-have-wds-and-dhcp-on-the-same-server"></a><a name="BKMK_WDSandDHCP"></a> Considerações sobre quando você tem o WDS e DHCP no mesmo servidor  
+###  <a name="BKMK_WDSandDHCP"></a> Considerações sobre quando você tem o WDS e DHCP no mesmo servidor  
  Considere os seguintes problemas de configuração se você planeja co-hospedar o ponto de distribuição em um servidor executando DHCP.  
 
 -   Você deve ter um servidor DHCP funcionando com um escopo ativo. Os Serviços de Implantação do Windows utilizam PXE, o que requer um servidor DHCP.  
@@ -208,10 +209,10 @@ Você precisa instalar os seguintes hotfixes do WSUS 4.0:
     > [!NOTE]  
     >  Além disso, se a autorização de DHCP for necessária no servidor, a porta 68 do cliente DHCP precisará estar aberta no servidor.  
 
-##  <a name="a-namebkmksupportedosa-supported-operating-systems"></a><a name="BKMK_SupportedOS"></a> Sistemas operacionais com suporte  
+##  <a name="BKMK_SupportedOS"></a> Sistemas operacionais com suporte  
  Todos os sistemas operacionais Windows listados como sistemas operacionais cliente com suporte em [Sistemas operacionais com suporte para clientes e dispositivos](../../core/plan-design/configs/supported-operating-systems-for-clients-and-devices.md) têm suporte para implantações de sistema operacional.  
 
-##  <a name="a-namebkmksupporteddiskconfiga-supported-disk-configurations"></a><a name="BKMK_SupportedDiskConfig"></a> Configurações de disco compatíveis  
+##  <a name="BKMK_SupportedDiskConfig"></a> Configurações de disco compatíveis  
  As combinações de configurações de disco rígido nos computadores de referência e destino que têm suporte para a implantação de sistema operacional do Configuration Manager são mostradas na tabela a seguir.  
 
 |Configuração de disco rígido do computador de referência|Configuração de disco rígido do computador de destino|  
@@ -237,9 +238,4 @@ Você precisa instalar os seguintes hotfixes do WSUS 4.0:
 
 ## <a name="next-steps"></a>Próximas etapas
 [Preparar para implantação de sistema operacional](../get-started/prepare-for-operating-system-deployment.md)
-
-
-
-<!--HONumber=Dec16_HO3-->
-
 
