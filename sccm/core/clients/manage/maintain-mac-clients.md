@@ -128,7 +128,7 @@ Veja os procedimentos para desinstalar os clientes Mac e para renovar os certifi
 
     -   **Configuração selecionada:** escolha **Procurar** e selecione o script de descoberta especificado anteriormente.  
 
-    -   Em **os seguintes valores** digite **The domain/default pair of (com.microsoft.ccmclient, SMSID) does not exist**.  
+    -   Em **os seguintes valores** digite **O par domínio/padrão (com.microsoft.ccmclient, SMSID) não existe**.  
 
     -   Habilite a opção **Executar o script de correção especificado quando esta configuração não for compatível**.  
 
