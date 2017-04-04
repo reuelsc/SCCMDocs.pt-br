@@ -86,7 +86,7 @@ Veja a seguir as configurações necessárias para o uso da migração e de suas
 
     -   **Conta do Site de Origem:** essa conta é usada para acessar o Provedor de SMS do site de origem.  
 
-        -   Para sites de origem do Configuration Manager&2007; SP2, essa conta necessita de permissão de **Leitura** para todos os objetos do site de origem.  
+        -   Para sites de origem do Configuration Manager 2007 SP2, essa conta necessita de permissão de **Leitura** para todos os objetos do site de origem.  
 
         -   Para um site de origem do System Center 2012 Configuration Manager ou do System Center Configuration Manager, essa conta exige permissão de **Leitura** para todos os objetos do site de origem. Você concede essa permissão à conta usando a administração baseada em funções. Para obter informações sobre como usar a administração baseada em funções, consulte [Fundamentals of role-based administration for System Center Configuration Manager](../../core/understand/fundamentals-of-role-based-administration.md).  
 
@@ -122,7 +122,7 @@ Veja a seguir as configurações necessárias para o uso da migração e de suas
 
      A **Conta de Acesso do Site de Origem** configurada para coletar dados do Provedor de SMS do site de origem deve possuir as seguintes permissões:  
 
-    -   Para atualizar um ponto de distribuição do Configuration Manager&2007;, a conta necessita das permissões de **Leitura**, **Executar** e **Excluir** para a classe do **Site** no servidor do site do Configuration Manager&2007; para remover com êxito o ponto de distribuição do site de origem do Configuration Manager&2007;  
+    -   Para atualizar um ponto de distribuição do Configuration Manager 2007, a conta necessita das permissões de **Leitura**, **Executar** e **Excluir** para a classe do **Site** no servidor do site do Configuration Manager 2007 para remover com êxito o ponto de distribuição do site de origem do Configuration Manager 2007  
 
     -   Para reatribuir um ponto de distribuição do System Center 2012 Configuration Manager ou do System Center Configuration Manager, a conta deve ter uma permissão **Modificar** para o objeto **Site** no site de origem. Você pode conceder essa permissão para a conta usando a administração baseada em funções. Para obter informações sobre como usar a administração baseada em funções, consulte [Fundamentals of role-based administration for System Center Configuration Manager](../../core/understand/fundamentals-of-role-based-administration.md).  
 
