@@ -18,6 +18,7 @@ manager: angrobe
 translationtype: Human Translation
 ms.sourcegitcommit: a93ea730c39cce9dc46036f5aa6ece4a62679d0f
 ms.openlocfilehash: 0d16d362b798c194645f987088ba8a95a7be3f19
+ms.lasthandoff: 02/15/2017
 
 
 ---
@@ -28,14 +29,14 @@ ms.openlocfilehash: 0d16d362b798c194645f987088ba8a95a7be3f19
 Cada site do System Center Configuration Manager que você instala inclui um servidor do site, que é um **servidor do sistema de sites**. O site também pode incluir servidores adicionais do sistema de sites em computadores que são remotos do servidor do site. Servidores de sistemas de sites (o servidor do site ou um servidor do sistema de sites remoto) dão suporte a **funções de sistema de sites**.
 
 
-##  <a name="a-namebkmksiteserversa-site-system-servers"></a><a name="bkmk_siteservers"></a> Servidores de sistema de sites  
+##  <a name="bkmk_siteservers"></a> Servidores de sistema de sites  
  Quando você instala uma função do sistema de sites em um computador, esse computador torna-se um servidor do sistema de sites. Em cada site, você instala um ou mais servidores adicionais do sistema de sites. Também é possível optar por não instalar servidores adicionais do sistema de sites e executar todas as funções do sistema de sites diretamente no computador do servidor do site. Cada servidor de sistema de site dá suporte a uma ou mais funções de sistema de site. Servidores adicionais podem expandir os recursos e a capacidade de um site, compartilhando a carga de processamento da CPU que funções do sistema de site colocam em um servidor.  
 
  Ao considerar a adição de um servidor de sistema de site, verifique se o servidor atende aos pré-requisitos para o uso pretendido. Também é uma boa ideia adicioná-lo a um local de rede com largura de banda suficiente para se comunicar com pontos de extremidade esperados, incluindo o servidor do site, os recursos de domínio, um local baseado em nuvem, os servidores de sistema de site e os clientes).  
 
  Se você configurar o servidor do sistema de sites com um proxy para ser usado pelas funções de sistema de sites, confira [Funções do sistema de sites que podem usar um servidor proxy](#bkmk_proxy).  
 
-##  <a name="a-namebkmkplanrolesa-site-system-roles"></a><a name="bkmk_planroles"></a> Site system roles  
+##  <a name="bkmk_planroles"></a> Site system roles  
  As funções do sistema de sites são instaladas em um computador para fornecer recursos adicionais ao site. Os exemplos incluem:  
 
 -   Pontos de gerenciamento adicionais para que o site possa dar suporte a mais dispositivos, até chegar à capacidade com suporte pelos sites.  
@@ -118,7 +119,7 @@ Depois de instalar um site, você pode mover o local de algumas funções de sis
 
 -   **Ponto do Validador da Integridade do Sistema.** Embora essa função de sistema de site permaneça visível no console do Configuration Manager, não é mais usada.  
 
-###  <a name="a-namebkmkproxya-site-system-roles-that-can-use-a-proxy-server"></a><a name="bkmk_proxy"></a> Funções do sistema de sites que podem usar um servidor proxy  
+###  <a name="bkmk_proxy"></a> Funções do sistema de sites que podem usar um servidor proxy  
  Algumas funções do sistema de sites do Configuration Manager requerem conexões com a Internet e usarão um servidor proxy quando o servidor do sistema de sites que hospeda a função for configurado para um. Normalmente, essa conexão é feita no contexto do **sistema** do computador em que a função de sistema de site está instalada. A conexão não pode usar uma configuração de proxy para contas de usuário típicas. Quando um servidor proxy é solicitado a concluir uma conexão com a Internet, você deve configurar o computador para usar um servidor proxy:  
 
 -   Você pode configurar um servidor proxy ao instalar uma função de sistema de site.  
@@ -152,9 +153,4 @@ Veja a seguir as funções do sistema de sites que podem usar um servidor proxy:
  Para saber mais sobre servidores proxy para pontos de atualização de software, confira a seção "Configurações do servidor proxy" no tópico [Instalar um ponto de atualização de software](../../../sum/get-started/install-a-software-update-point.md).  
 
 -   **Ponto de conexão de serviço.** Quando configurado para estar online (não offline), essa função de sistema de site conecta-se ao Microsoft Intune e ao serviço de nuvem da Microsoft.  
-
-
-
-<!--HONumber=Feb17_HO3-->
-
 
