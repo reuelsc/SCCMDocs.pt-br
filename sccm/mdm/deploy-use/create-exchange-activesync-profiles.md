@@ -17,9 +17,9 @@ author: arob98
 ms.author: angrobe
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: dab5da5a4b5dfb3606a8a6bd0c70a0b21923fff9
-ms.openlocfilehash: c90e5ebc2aca3f2133227fa59057aad8db3713f4
-ms.lasthandoff: 03/27/2017
+ms.sourcegitcommit: aa8924a013ebdbee888cab33001fddbe7ad2d67e
+ms.openlocfilehash: a0353c49360cd99bc92b4546e12a52c3d13d1d14
+ms.lasthandoff: 03/30/2017
 
 
 ---
@@ -105,10 +105,6 @@ Iniciar o Assistente de Criação de Perfil de Email do Exchange ActiveSync
 
     -   **Usar S/MIME** (somente para dispositivos iOS) - envia emails de saída usando criptografia S/MIME. Escolha dentre as seguintes opções:
 
-        -   **Certificados de autenticação:** clique em **Selecionar** e selecione um certificado a ser usado para a assinatura. Essa opção é aplicável somente a dispositivos iOS.  
-
-            > [!NOTE]  
-            >  Antes de selecionar o certificado de assinatura, primeiro você deve configurá-lo como um perfil de certificado de protocolo de registro de certificado simples (SCEP) ou PFX. Para obter mais informações sobre perfis de certificado, consulte [Perfis de certificado do System Center Configuration Manager](/sccm/protect/deploy-use/introduction-to-certificate-profiles).  
 
         -   **Certificados de criptografia:** clique em **Selecionar** e selecione um certificado a ser usado para a criptografia. Essa opção é aplicável somente a dispositivos iOS. Você só pode selecionar um certificado PFX para usar como certificado de criptografia.
 
