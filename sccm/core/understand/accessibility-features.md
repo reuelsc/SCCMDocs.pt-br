@@ -2,7 +2,7 @@
 title: Acessibilidade | Microsoft Docs
 description: "Saiba mais sobre os recursos que tornam o System Center Configuration Manager acessível para pessoas com deficiências."
 ms.custom: na
-ms.date: 10/06/2016
+ms.date: 3/27/2017
 ms.reviewer: na
 ms.suite: na
 ms.prod: configuration-manager
@@ -16,8 +16,9 @@ author: Brenduns
 ms.author: brenduns
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: bf0ca29a68cb8fbbcacc2acd148c06abf08c5cab
-ms.openlocfilehash: ca1207b8d48ca66096d1bbe674541223c033d895
+ms.sourcegitcommit: dab5da5a4b5dfb3606a8a6bd0c70a0b21923fff9
+ms.openlocfilehash: 98599b3c188c9e9b508fea79ecf9a2b2348e9288
+ms.lasthandoff: 03/27/2017
 
 ---
 # <a name="accessibility-features-in-system-center-configuration-manager"></a>Recursos de acessibilidade no System Center Configuration Manager
@@ -28,7 +29,7 @@ ms.openlocfilehash: ca1207b8d48ca66096d1bbe674541223c033d895
 O System Center Configuration Manager inclui recursos para ajudar a torná-lo acessível para pessoas com deficiências.
 
 
-## <a name="a-namebkmkaconsolea-accessibility-features-for-the-configuration-manager-console"></a><a name="bkmk_aconsole"></a> Recursos de acessibilidade para o console do Configuration Manager  
+## <a name="bkmk_aconsole"></a> Recursos de acessibilidade para o console do Configuration Manager  
 -   Para acessar um espaço de trabalho, use os seguintes atalhos de teclado:  
 
 |Espaço de trabalho|Atalho de teclado|  
@@ -46,14 +47,14 @@ O System Center Configuration Manager inclui recursos para ajudar a torná-lo ac
 
 -   Para acessar a barra de endereços quando seu foco estiver no nó de árvore, use Shift+Tab três vezes.  
 
--   Em uma página de assistente ou de propriedades, você pode se mover entre as caixas com os atalhos de teclado. Pressione a tecla Alt mais o caractere sublinhado (Alt+_) para selecionar uma caixa específica.  
+-   Em uma página de assistente ou de propriedades, você pode se mover entre as caixas com os atalhos de teclado. Pressione a tecla Alt mais o caractere sublinhado (Alt+_) para selecionar uma caixa específica.     
 
- -  A partir da versão 1606, para navegar até os diferentes nós de um espaço de trabalho, insira a primeira letra do nome do nó. Cada pressionamento de tecla move o cursor para o próximo nó que começa com determinada letra. Quando você estiver usando um leitor de tela, o leitor lê o nome do nó.
+-  Para navegar até os diferentes nós de um espaço de trabalho, insira a primeira letra do nome do nó. Cada pressionamento de tecla move o cursor para o próximo nó que começa com determinada letra. Quando você estiver usando um leitor de tela, o leitor lê o nome do nó.
 
 > [!NOTE]  
 >  As informações nessa seção podem se aplicar somente a usuários que licenciam produtos da Microsoft nos Estados Unidos. Se você adquiriu este produto fora dos Estados Unidos, pode usar o cartão de informações da subsidiária fornecido com o pacote do software ou acessar o [site de Acessibilidade da Microsoft](http://go.microsoft.com/fwlink/?LinkId=8431) para obter informações de contato dos serviços de suporte da Microsoft. Você pode contatar a subsidiária para descobrir se os tipos de produtos e serviços descritos nessa seção estão disponíveis na sua área. As informações sobre acessibilidade estão disponíveis em outros idiomas, incluindo japonês e francês.  
 
-##  <a name="a-namebkmkahelpa-accessibility-features-for-configuration-manager-help"></a><a name="bkmk_ahelp"></a> Recursos de acessibilidade para a Ajuda do Configuration Manager  
+##  <a name="bkmk_ahelp"></a> Recursos de acessibilidade para a Ajuda do Configuration Manager  
  A Ajuda do Configuration Manager inclui recursos que o tornam acessível a um maior número de usuários, incluindo aqueles que têm destreza limitada, visão subnormal ou outras deficiências.  
 
 |Para fazer isso|Usar este atalho de teclado|  
@@ -108,9 +109,4 @@ O System Center Configuration Manager inclui recursos para ajudar a torná-lo ac
 
     > [!NOTE]  
     >  Se você alterar a fonte dos tópicos da Ajuda na janela da Ajuda, a alteração também afetará a fonte das páginas da Web no Internet Explorer.  
-
-
-
-<!--HONumber=Feb17_HO1-->
-
 

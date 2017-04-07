@@ -2,7 +2,7 @@
 title: "Gerenciar o Windows como serviço – Configuration Manager | Microsoft Docs"
 description: "Exibir o estado do Windows como serviço usando o Configuration Manager, criar planos de manutenção para formar anéis de implantação e exibir alertas quando os clientes do Windows 10 estiverem próximos do fim do suporte."
 ms.custom: na
-ms.date: 01/23/2017
+ms.date: 03/26/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
@@ -16,8 +16,9 @@ author: Dougeby
 ms.author: dougeby
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: 89158debdf4c345a325feeb608db2215a88ed81b
-ms.openlocfilehash: b3859bc01c37dab04275028585e892f927606025
+ms.sourcegitcommit: 23b1d24e908d04b64c3bbfa518793a44e696d468
+ms.openlocfilehash: 87c3a35f4688c505f9b659a1bfe62f7a04cc7f11
+ms.lasthandoff: 03/29/2017
 
 
 ---
@@ -32,7 +33,7 @@ ms.openlocfilehash: b3859bc01c37dab04275028585e892f927606025
 
  Use as seguintes seções para gerenciar o Windows como serviço.
 
-##  <a name="a-namebkmkprerequisitesa-prerequisites"></a><a name="BKMK_Prerequisites"></a> Pré-requisitos  
+##  <a name="BKMK_Prerequisites"></a> Pré-requisitos  
  Para ver os dados no painel de serviço do Windows 10, faça o seguinte:  
 
 -   Computadores Windows 10 devem usar as atualizações de software do Configuration Manager com o WSUS (Windows Server Update Services) para o gerenciamento de atualização de software. Quando os computadores usarem o Windows Update for Business (ou Windows Insiders) para o gerenciamento de atualização de software, o computador não será avaliado nos planos de serviço do Windows 10. Para obter mais informações, consulte [Integration with Windows Update for Business in Windows 10](../../sum/deploy-use/integrate-windows-update-for-business-windows-10.md).  
@@ -58,7 +59,7 @@ ms.openlocfilehash: b3859bc01c37dab04275028585e892f927606025
 
 -   As atualizações de software devem ser configuradas e sincronizadas. É necessário selecionar a classificação **Atualizações** e sincronizar as atualizações de software antes as atualizações de recursos do Windows 10 fiquem disponíveis no console do Configuration Manager. Para obter mais informações, consulte [Preparar-se para o gerenciamento de atualização de software](../../sum/get-started/prepare-for-software-updates-management.md).  
 
-##  <a name="a-namebkmkservicingdashboarda-windows-10-servicing-dashboard"></a><a name="BKMK_ServicingDashboard"></a> Painel de serviço do Windows 10  
+##  <a name="BKMK_ServicingDashboard"></a> Painel de serviço do Windows 10  
  O painel de serviço do Windows 10 fornece informações sobre os computadores Windows 10 em seu ambiente, os planos de serviço ativos, as informações de conformidade e assim por diante. Os dados contidos no painel de serviço do Windows 10 dependem da instalação do Ponto de Conexão de Serviço. O painel contém os seguintes blocos:  
 
 -   **Bloco Uso do Windows 10**: fornece uma divisão dos builds públicos do Windows 10. Os builds do Windows Insiders são listados como **outros** , bem como quaisquer builds que ainda não são conhecidos para seu site. O ponto de conexão de serviço baixará os metadados que informam sobre os builds do Windows e, em seguida, esses dados são comparados com os dados de descoberta.  
@@ -91,7 +92,7 @@ ms.openlocfilehash: b3859bc01c37dab04275028585e892f927606025
 
  Quando uma atualização atende aos critérios, o plano de serviço adiciona a atualização ao pacote de implantação, distribui o pacote para os pontos de distribuição e implanta a atualização na coleção com base nas configurações definidas no plano de serviço.  É possível monitorar as implantações no bloco Monitoramento do Plano de Serviço no Painel de Serviço do Windows 10. Para obter mais informações, consulte [Implantar atualizações de software](../../sum/deploy-use/monitor-software-updates.md).  
 
-##  <a name="a-namebkmkservicingplana-windows-10-servicing-plan"></a><a name="BKMK_ServicingPlan"></a> Plano de serviço do Windows 10  
+##  <a name="BKMK_ServicingPlan"></a> Plano de serviço do Windows 10  
  Durante a implantação do Windows 10 CB, é possível criar um ou mais planos de serviço para definir os anéis de implantação que você deseja ter em seu ambiente e, em seguida, monitorá-los no painel de serviço do Windows 10.   
 Os planos de manutenção usam apenas a classificação de atualizações de software **Atualizações** , e não as atualizações cumulativas para o Windows 10. Para essas atualizações, você ainda precisará implantar com o fluxo de trabalho das atualizações de software.  A experiência do usuário final com um plano de serviço é a mesma quando comparado às atualizações de software, incluindo as configurações definidas no plano de serviço.  
 
@@ -136,7 +137,9 @@ Os planos de manutenção usam apenas a classificação de atualizações de sof
 
         -   **Pronto para Liberação (Branch Atual)**: no modelo de serviço CB, as atualizações de recursos estão disponíveis assim que são lançadas pela Microsoft.
 
-        -   **Pronto para Negócios (Branch Atual para Negócios)**: o branch de manutenção CBB é normalmente usado para a implantação ampla. Os clientes do Windows 10 no branch de manutenção do CBB recebem a mesma compilação do Windows 10 que aqueles no branch de manutenção do CB, mas em um momento posterior.
+        -   **Pronto para Negócios (Branch Atual para Negócios)**: o branch de manutenção CBB normalmente é usado para a implantação ampla. Os clientes do Windows 10 no branch de manutenção do CBB recebem a mesma compilação do Windows 10 que aqueles no branch de manutenção do CB, mas em um momento posterior.
+
+        Para saber mais sobre manutenção de ramificações e quais opções são melhores para você, veja [Manutenção de ramificações](https://technet.microsoft.com/itpro/windows/manage/waas-overview#servicing-branches).
 
     -   **Por quantos dias você gostaria de aguardar após a publicação pela Microsoft de uma nova atualização antes de implantá-la em seu ambiente**: o Configuration Manager avalia se inclui uma atualização na implantação, caso a data atual seja posterior à data de lançamento, somada ao número de dias que você definir para essa configuração.
 
@@ -203,7 +206,7 @@ Os planos de manutenção usam apenas a classificação de atualizações de sof
 
     4.  **Prioridade de envio**: especifique a prioridade de envio do pacote de implantação. O Configuration Manager usa a prioridade de envio do pacote de implantação quando envia o pacote para pontos de distribuição. Os pacotes de implantação são enviados por ordem de prioridade: Alta, Média, ou Baixa. Pacotes com prioridades idênticas são enviados na ordem em que foram criados. Se não houver uma lista de pendências, o pacote será processado imediatamente, não importando qual seja a prioridade.  
 
-11. Na página Pontos de Distribuição, especifique os pontos de distribuição ou grupos de pontos de distribuição que hospedarão os arquivos de atualização. Para obter mais informações sobre pontos de distribuição, consulte [Distribution point configurations](../../core/servers/deploy/configure/install-and-configure-distribution-points.md#a-namebkmkconfigsa-distribution-point-configurations).  
+11. Na página Pontos de Distribuição, especifique os pontos de distribuição ou grupos de pontos de distribuição que hospedarão os arquivos de atualização. Para obter mais informações sobre pontos de distribuição, consulte [Configurar um ponto de distribuição](/sccm/core/servers/deploy/configure/install-and-configure-distribution-points#bkmk_configs).
 
     > [!NOTE]  
     >  A página está disponível somente quando você cria um novo pacote de implantação de atualização de software.  
@@ -220,7 +223,7 @@ Os planos de manutenção usam apenas a classificação de atualizações de sof
 
  Depois de concluir o assistente, o plano de serviço será executado. Isso adicionará as atualizações que atendem aos critérios especificados a um grupo de atualização de software, baixará as atualizações na biblioteca de conteúdo no servidor do site, distribuirá as atualizações aos pontos de distribuição configurados e implantará o grupo de atualizações de software nos clientes da coleção de destino.  
 
-##  <a name="a-namebkmkmodifyservicingplana-modify-a-servicing-plan"></a><a name="BKMK_ModifyServicingPlan"></a> Modificar um plano de serviço  
+##  <a name="BKMK_ModifyServicingPlan"></a> Modificar um plano de serviço  
 Depois de criar um plano de serviço básico no painel de serviço do Windows 10 ou precisar alterar as configurações de um plano de serviço existente, é possível ir para as propriedades do plano de serviço.
 
 > [!NOTE]
@@ -256,17 +259,17 @@ Use o procedimento a seguir para modificar as propriedades de um plano de servi�
 
     -   **Nível de detalhe**: especifique o nível de detalhe para as mensagens de estado que são relatadas pelos computadores cliente.  
 
-   **Configurações de Download**: na guia Configurações de Download, defina as seguintes configurações:  
+    **Configurações de Download**: na guia Configurações de Download, defina as seguintes configurações:  
 
-    -   Especifique se o cliente irá baixar e instalar as atualizações de software quando estiver conectado a uma rede lenta ou usando um local de conteúdos de fallback.  
+    - Especifique se o cliente irá baixar e instalar as atualizações de software quando estiver conectado a uma rede lenta ou usando um local de conteúdos de fallback.  
 
-    -   Especifique se o cliente deve baixar e instalar as atualizações de software por meio de um ponto de distribuição de fallback quando o conteúdo das atualizações de software não está disponível ou de um ponto de distribuição preferencial.  
+    - Especifique se o cliente deve baixar e instalar as atualizações de software por meio de um ponto de distribuição de fallback quando o conteúdo das atualizações de software não está disponível ou de um ponto de distribuição preferencial.  
 
     -   **Permitir que os clientes compartilhem conteúdo com outros clientes na mesma sub-rede**: especifique se deseja habilitar o uso do BranchCache para downloads de conteúdo. Para obter mais informações sobre o BranchCache, consulte [Fundamental concepts for content management (Conceitos fundamentais para o gerenciamento de conteúdo)](../../core/plan-design/hierarchy/fundamental-concepts-for-content-management.md#branchcache).  
 
     -   Especifique se os clientes deverão baixar as atualizações de software do Microsoft Update se elas não estiverem disponíveis nos pontos de distribuição.
-    > [!IMPORTANT]
-    > Não use essa configuração para atualizações de serviço do Windows 10. O Configuration Manager (pelo menos até a versão 1610) não baixará as atualizações de serviço do Windows 10 do Microsoft Update.
+        > [!IMPORTANT]
+        > Não use essa configuração para atualizações de serviço do Windows 10. O Configuration Manager (pelo menos até a versão 1610) não baixará as atualizações de serviço do Windows 10 do Microsoft Update.
 
     -   Especifique se os clientes têm permissão para baixar após o prazo de uma instalação quando usam conexão de Internet limitada. Provedores de Internet ocasionalmente cobram por quantidade de dados que você envia e recebe quando está em uma conexão de Internet limitada.   
 
@@ -274,9 +277,4 @@ Use o procedimento a seguir para modificar as propriedades de um plano de servi�
 
     > [!NOTE]  
     >  Você pode verificar os alertas de atualizações de software recentes no nó **Atualizações de Software** no espaço de trabalho **Biblioteca de Software** .  
-
-
-
-<!--HONumber=Jan17_HO4-->
-
 

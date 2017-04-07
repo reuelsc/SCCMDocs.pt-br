@@ -2,7 +2,7 @@
 title: "Opções de linha de comando de instalação | Microsoft Docs"
 description: "Use as informações deste artigo para configurar scripts ou instalar o System Center Configuration Manager por meio de uma linha de comando."
 ms.custom: na
-ms.date: 13/2017
+ms.date: 03/27/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
@@ -16,8 +16,9 @@ author: Brenduns
 ms.author: brenduns
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: 36b1ab794bb1dc80c673bd41dae11f46053f3be3
-ms.openlocfilehash: 55f9fe5c05cd09b9291b6370200c9fbe15699e7d
+ms.sourcegitcommit: dab5da5a4b5dfb3606a8a6bd0c70a0b21923fff9
+ms.openlocfilehash: 04fe7b3e674287c4255563ab4a308e54d0b6c3aa
+ms.lasthandoff: 03/27/2017
 
 ---
 # <a name="command-line-options-for-setup-in-system-center-configuration-manager"></a>Opções de linha de comando para Instalação no System Center Configuration Manager
@@ -27,7 +28,7 @@ ms.openlocfilehash: 55f9fe5c05cd09b9291b6370200c9fbe15699e7d
 
  Use as informações a seguir para configurar scripts ou instalar o System Center Configuration Manager por meio de uma linha de comando.  
 
-##  <a name="a-namebkmksetupa-command-line-options-for-setup"></a><a name="bkmk_setup"></a> Opções de linha de comando para instalação  
+##  <a name="bkmk_setup"></a> Opções de linha de comando para instalação  
  **/DEINSTALL**  
  Desinstala o site. É necessário executar a Instalação no computador de servidor do site.  
 
@@ -68,7 +69,7 @@ ms.openlocfilehash: 55f9fe5c05cd09b9291b6370200c9fbe15699e7d
  **/MANAGELANGS <*Caminho do script de idioma*>**  
  Gerencia os idiomas instalados em um site instalado anteriormente. Para usar essa opção, é necessário executar a Instalação em **<*Caminho de instalação do Configuration Manager*>\BIN\X64** no servidor do site e fornecer o local do arquivo de script de idioma que contém as configurações de idioma. Para obter mais informações sobre as opções de idioma disponíveis no arquivo de script de instalação de idioma, consulte [Opções de linha de comando para gerenciar idiomas](#bkmk_Lang) neste tópico.  
 
-##  <a name="a-namebkmklanga-command-line-options-to-manage-languages"></a><a name="bkmk_Lang"></a> Opções de linha de comando para gerenciar idiomas  
+##  <a name="bkmk_Lang"></a> Opções de linha de comando para gerenciar idiomas  
  **Identificação**  
 
 -   **Nome da chave:** Action  
@@ -145,7 +146,7 @@ ms.openlocfilehash: 55f9fe5c05cd09b9291b6370200c9fbe15699e7d
 
     -   **Detalhes:** especifica o caminho para os arquivos de pré-requisito da Instalação. Dependendo do valor do **PrerequisiteComp** , a Instalação usará esse caminho para armazenar arquivos baixados ou para localizar arquivos baixados anteriormente.  
 
-##  <a name="a-namebkmkunattendeda-unattended-setup-script-file-keys"></a><a name="bkmk_Unattended"></a> Chaves de arquivo de script da instalação autônoma  
+##  <a name="bkmk_Unattended"></a> Chaves de arquivo de script da instalação autônoma  
  Use as seções a seguir para ajudá-lo a criar seu script para a Instalação autônoma. As listas mostram as chaves de script da Instalação disponíveis, seus valores correspondentes, se são necessárias, em que tipo de instalação são usadas e uma breve descrição da chave.  
 
 ### <a name="unattended-install-for-a-central-administration-site"></a>Instalação autônoma de um site de administração central  
@@ -160,6 +161,14 @@ ms.openlocfilehash: 55f9fe5c05cd09b9291b6370200c9fbe15699e7d
     -   **Valores:** InstallCAS  
 
     -   **Detalhes:** instala um site de administração central.  
+
+-   **Nome da chave:** CDLatest  
+
+    -   **Obrigatório:** Sim – somente ao usar a mídia da pasta CD.Latest.    
+
+    -   **Valores:** 1 qualquer valor diferente de 1 é considerado como não usando o CD.Latest.
+
+    -   **Detalhes:** seu script deve incluir essa chave e o valor ao executar a instalação de uma mídia em uma pasta CD.Latest com a finalidade de instalar um site primário ou de administração central ou recuperar um site de administração central ou primário. Esse valor informa à instalação que a forma de mídia CD.Latest está sendo usada.
 
 **Opções**  
 
@@ -398,6 +407,14 @@ Use os detalhes a seguir para instalar um site primário usando um arquivo de sc
     -   **Valores:** InstallPrimarySite  
 
     -   **Detalhes:** instala um site primário.  
+
+-   **Nome da chave:** CDLatest  
+
+    -   **Obrigatório:** Sim – somente ao usar a mídia da pasta CD.Latest.    
+
+    -   **Valores:** 1 qualquer valor diferente de 1 é considerado como não usando o CD.Latest.
+
+    -   **Detalhes:** seu script deve incluir essa chave e o valor ao executar a instalação de uma mídia em uma pasta CD.Latest com a finalidade de instalar um site primário ou de administração central ou recuperar um site de administração central ou primário. Esse valor informa à instalação que a forma de mídia CD.Latest está sendo usada.
 
 **Opções**  
 
@@ -717,6 +734,14 @@ Use os detalhes a seguir para instalar um site primário usando um arquivo de sc
 
     -   **Detalhes:** recupera um site de administração central.  
 
+-   **Nome da chave:** CDLatest  
+
+    -   **Obrigatório:** Sim – somente ao usar a mídia da pasta CD.Latest.    
+
+    -   **Valores:** 1 qualquer valor diferente de 1 é considerado como não usando o CD.Latest.
+
+    -   **Detalhes:** seu script deve incluir essa chave e o valor ao executar a instalação de uma mídia em uma pasta CD.Latest com a finalidade de instalar um site primário ou de administração central ou recuperar um site de administração central ou primário. Esse valor informa à instalação que a forma de mídia CD.Latest está sendo usada.
+
 **RecoveryOptions**  
 
 -   **Nome da chave:** ServerRecoveryOptions  
@@ -978,6 +1003,14 @@ Use os detalhes a seguir para instalar um site primário usando um arquivo de sc
     -   **Valores:** <*RecoverPrimarySite*>  
 
     -   **Detalhes:** recupera um site primário.  
+
+-   **Nome da chave:** CDLatest  
+
+    -   **Obrigatório:** Sim – somente ao usar a mídia da pasta CD.Latest.    
+
+    -   **Valores:** 1 qualquer valor diferente de 1 é considerado como não usando o CD.Latest.
+
+    -   **Detalhes:** seu script deve incluir essa chave e o valor ao executar a instalação de uma mídia em uma pasta CD.Latest com a finalidade de instalar um site primário ou de administração central ou recuperar um site de administração central ou primário. Esse valor informa à instalação que a forma de mídia CD.Latest está sendo usada.    
 
 **RecoveryOptions**  
 
@@ -1243,9 +1276,4 @@ Use os detalhes a seguir para instalar um site primário usando um arquivo de sc
     -   **Valores:** <*Número da porta*>  
 
     -   **Detalhes:** especifica o número da porta a ser usado para a porta do proxy.  
-
-
-
-<!--HONumber=Jan17_HO1-->
-
 

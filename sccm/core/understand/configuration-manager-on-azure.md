@@ -2,7 +2,7 @@
 title: Configuration Manager no Azure | Microsoft Docs
 description: "Informações sobre o uso do Configuration Manager em um ambiente do Azure."
 ms.custom: na
-ms.date: 01/30/2017
+ms.date: 03/27/2017
 ms.reviewer: na
 ms.suite: na
 ms.tgt_pltfrm: na
@@ -16,8 +16,9 @@ author: Brenduns
 ms.author: brenduns
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: 264e009952db34a6f4929ecb70dc6857117ce4fe
-ms.openlocfilehash: e8798adc0e479417c682450d181611284c148e6d
+ms.sourcegitcommit: dab5da5a4b5dfb3606a8a6bd0c70a0b21923fff9
+ms.openlocfilehash: 5276ad999fc871496d79e6efff34d5edc6335380
+ms.lasthandoff: 03/27/2017
 
 ---
 # <a name="configuration-manager-on-azure---frequently-asked-questions"></a>Configuration Manager no Azure – Perguntas frequentes
@@ -39,11 +40,11 @@ Não, é um IaaS (Infraestrutura como Serviço) porque você hospeda os servidor
 
 ### <a name="what-areas-should-i-pay-attention-to-when-considering-a-move-of-my-configuration-manager-infrastructure-to-azure"></a>A quais áreas devo prestar atenção ao considerar uma mudança da minha infraestrutura do Configuration Manager para o Azure?
 Boa pergunta, aqui estão as áreas que são mais importantes ao tomar essa decisão, cada uma é explorada em uma seção separada deste tópico:
-1.  Rede
-2.  Disponibilidade
-3.  Desempenho
-4.  Custo
-5.  Experiência do usuário
+1.    Rede
+2.    Disponibilidade
+3.    Desempenho
+4.    Custo
+5.    Experiência do usuário
 
 ## <a name="networking"></a>Rede
 ### <a name="what-about-networking-requirements-should-i-use-expressroute-or-an-azure-vpn-gateway"></a>E quanto aos requisitos de rede, devo usar o ExpressRoute ou um Gateway de VPN do Azure?
@@ -145,8 +146,8 @@ O **Gateway de Gerenciamento de Nuvem** fornece uma maneira simples de gerenciar
 
 Você pode começar a usar o gateway de gerenciamento de nuvem em seu ambiente e nos fornecer comentários para melhorá-lo. Para obter mais informações sobre os recursos de pré-lançamento, consulte [Usar recursos de pré-lançamento de atualizações](/sccm/core/servers/manage/install-in-console-updates#a-namebkmkprereleasea-use-pre-release-features-from-updates).
 
-### <a name="i-also-heard-that-you-have-another-new-feature-called-peer-cache-in-the-technical-preview-version-1604-is-that-different-than-branchcache-which-one-should-i-choose"></a>Também ouvi que você tem outro novo recurso chamado Cache de Sistema Par na versão 1604 de Technical Preview. Isso é diferente do BranchCache? Qual devo escolher?
-Sim, totalmente diferente. O [Cache de Sistema Par](/sccm/core/get-started/capabilities-in-technical-preview-1604#bkmk_peercache) é uma tecnologia do Configuration Manager totalmente nativa, em que o BranchCache é um recurso do Windows. Ambos podem ser úteis para você. O BranchCache usa uma difusão para localizar o conteúdo necessário, enquanto o Cache de Sistema Par usa configurações de grupo de limite e fluxo de trabalho de distribuição regulares do Configuration Manager.
+### <a name="i-also-heard-that-you-have-another-new-feature-called-peer-cache-introduced-as-a-pre-release-feature-in-version-1610-is-that-different-than-branchcache-which-one-should-i-choose"></a>Também ouvi que você tem outro novo recurso chamado Cache de Sistema Par introduzido com um recurso de pré-lançamento na versão 1610. Isso é diferente do BranchCache? Qual devo escolher?
+Sim, totalmente diferente. O [Cache de Sistema Par](/sccm/core/plan-design/hierarchy/client-peer-cache) é uma tecnologia do Configuration Manager totalmente nativa, em que o BranchCache é um recurso do Windows. Ambos podem ser úteis para você. O BranchCache usa uma difusão para localizar o conteúdo necessário, enquanto o Cache de Sistema Par usa configurações de grupo de limite e fluxo de trabalho de distribuição regulares do Configuration Manager.
 
 Você pode configurar qualquer cliente como uma origem de Cache de Sistema Par. Então, quando os pontos de gerenciamento fornecem aos clientes informações sobre os locais de fonte de conteúdo, eles fornecem detalhes sobre os pontos de distribuição e quaisquer origens de Cache de Sistema Par que contenham o conteúdo de que o cliente precisa.
 
@@ -179,9 +180,4 @@ Difícil dizer, uma vez que cada ambiente é diferente. O melhor a se fazer é d
  - Mais informações sobre o ExpressRoute: http://azure.microsoft.com/documentation/articles/expressroute-introduction/
 
  
-
-
-
-<!--HONumber=Jan17_HO5-->
-
 

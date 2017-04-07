@@ -2,7 +2,7 @@
 title: Gerenciar aplicativos iOS adquiridos por volume | Microsoft Docs
 description: "Implante, gerencie e monitore licenças de aplicativos adquiridos por meio da loja de aplicativos iOS."
 ms.custom: na
-ms.date: 03/05/2017
+ms.date: 03/28/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
@@ -17,9 +17,9 @@ author: mtillman
 ms.author: mtillman
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: 2c723fe7137a95df271c3612c88805efd8fb9a77
-ms.openlocfilehash: aef92114af913b420a6e96876141a13a855677ea
-ms.lasthandoff: 03/06/2017
+ms.sourcegitcommit: 3c2a07f560e0aa3d2beb7cc50e71c98ac45c27e1
+ms.openlocfilehash: a63acf0d80edba1e965ba8ea99fe90edb8aa2faf
+ms.lasthandoff: 03/28/2017
 
 ---
 # <a name="manage-volume-purchased-ios-apps-with-system-center-configuration-manager"></a>Gerenciar aplicativos iOS adquiridos por volume com o System Center Configuration Manager
@@ -35,32 +35,42 @@ ms.lasthandoff: 03/06/2017
 ## <a name="manage-volume-purchased-apps-for-ios-devices"></a>Gerenciar aplicativos adquiridos por volume para dispositivos iOS  
  Compre várias licenças para aplicativos iOS por meio do VPP (Apple Volume Purchase Program). Isso envolve a configuração de uma conta do Apple VPP no site da Apple e upload do token Apple VPP no Configuration Manager, o que fornece as seguintes funcionalidades:  
 
--   Sincronize as informações de compra por volume com o Configuration Manager.  
+-   Sincronize as informações de compra por volume com o Configuration Manager. 
+ 
+- Os aplicativos de sincronização do Apple Volume Purchase Program for Business e o Apple Volume Purchase Program for Education.
+
+- Associe vários tokens de programa de compra por volume da Apple ao seu Configuration Manager.
 
 -   Os aplicativos adquiridos são exibidos no console do Configuration Manager.  
 
 -   É possível implantar aplicativos, monitorá-los e acompanhar o número de licenças para cada aplicativo utilizado.  
 
--   O Configuration Manager pode ajudá-lo a recuperar licenças quando necessário, desinstalando aplicativos adquiridos por volume implantados em usuários.  
+-   O Configuration Manager pode ajudá-lo a recuperar licenças quando necessário, desinstalando aplicativos adquiridos por volume implantados.  
 
 ## <a name="before-you-start"></a>Antes de começar  
  Antes de começar, você precisará obter um token Apple VPP e carregá-lo no Configuration Manager.  
 
-> [!IMPORTANT]  
->  -   Atualmente, cada organização pode ter apenas uma conta e um token de VPP.  
-> -   Há suporte apenas para o Apple Volume Purchase Program for Business.  
-> -   Depois de associar uma conta do Apple VPP ao Intune, não é possível associar outra conta posteriormente. Por esse motivo, garanta que mais de uma pessoa tem os detalhes da conta usada.  
-> -   Se você já tiver usado um token VPP com outro produto de MDM em sua conta existente do Apple VPP, será necessário gerar um novo para ser usado com o Configuration Manager.  
-> -   Cada token é válido por um ano.  
-> -   Por padrão, o Configuration Manager é sincronizado com o serviço Apple VPP duas vezes por dia, para garantir que suas licenças são sincronizadas com o Configuration Manager.  
->   
->      Somente as alterações nas licenças são sincronizadas. Porém, uma vez a cada sete dias, uma sincronização completa será executada.  
->   
->      Ao escolher **Sincronização** para fazer uma sincronização manual, essa opção sempre fará com que uma sincronização completa seja executada.  
-> -   Se você precisar recuperar ou restaurar o banco de dados do Configuration Manager, recomendamos a execução de uma sincronização manual logo em seguida, para garantir que os dados de licença sincronizados estarão atualizados.  
-> -   Embora seja possível implantar aplicativos iOS adquiridos por volume em coleções de usuários ou dispositivos, os aplicativos VPP implantados em um dispositivo sem usuário (por exemplo, um dispositivo registrado sem a afinidade de usuário usando o DEP [Programa de registro de dispositivos] ou o Apple Configurator) não serão instalados.  
+-   Se você já tiver usado um token VPP com outro produto de MDM em sua conta existente do Apple VPP, será necessário gerar um novo para ser usado com o Configuration Manager.  
+-   Cada token é válido por um ano.  
+-   Por padrão, o Configuration Manager é sincronizado com o serviço Apple VPP duas vezes por dia, para garantir que suas licenças são sincronizadas com o Configuration Manager.  
+      Somente as alterações nas licenças são sincronizadas. Porém, uma vez a cada sete dias, uma sincronização completa será executada.  
+      Ao escolher **Sincronização** para fazer uma sincronização manual, essa opção sempre fará com que uma sincronização completa seja executada.  
+-   Se você precisar recuperar ou restaurar o banco de dados do Configuration Manager, recomendamos a execução de uma sincronização manual logo em seguida, para garantir que os dados de licença sincronizados estarão atualizados.  
+-   Além disso, é necessário ter importado um certificado APNs (Apple Push Notification Service) válido da Apple para permitir o gerenciamento de dispositivos iOS, incluindo a implantação de aplicativos. Para obter mais informações, consulte [Set up iOS hybrid device management](enroll-hybrid-ios-mac.md) (Configurar o gerenciamento de dispositivo híbrido iOS).  
 
- Além disso, é necessário ter importado um certificado APNs (Apple Push Notification Service) válido da Apple para permitir o gerenciamento de dispositivos iOS, incluindo a implantação de aplicativos. Para obter mais informações, consulte [Set up iOS hybrid device management](enroll-hybrid-ios-mac.md) (Configurar o gerenciamento de dispositivo híbrido iOS).  
+Começando com o System Center Configuration Manager versão 1702, agora você pode implantar aplicativos licenciados a dispositivos, além dos usuários. Dependendo da capacidade dos aplicativos para dar suporte ao licenciamento de dispositivos, uma licença apropriada será solicitada quando você implantá-la, da seguinte maneira:
+
+|||||
+|-|-|-|-|
+|Versão do Configuration Manager|O aplicativo dá suporte ao licenciamento de dispositivos?|Tipo de coleção de implantação|Licença solicitada|
+|Anterior à versão 1702|Sim|usuário|Licença de usuário|
+|Anterior à versão 1702|Não|usuário|Licença de usuário|
+|Anterior à versão 1702|Sim|Dispositivo|Licença de usuário|
+|Anterior à versão 1702|Não|Dispositivo|Licença de usuário|
+|Versão 1702 e posterior|Sim|usuário|Licença de usuário|
+|Versão 1702 e posterior|Não|usuário|Licença de usuário|
+|Versão 1702 e posterior|Sim|Dispositivo|Licença de dispositivo|
+|Versão 1702 e posterior|Não|Dispositivo|Licença de usuário|
 
 ## <a name="step-1---to-get-and-upload-an-apple-vpp-token"></a>Etapa 1: obter e carregar um token de VPP da Apple  
 
@@ -79,6 +89,8 @@ ms.lasthandoff: 03/06/2017
     -   **Descrição** – opcionalmente, insira uma descrição que ajudará você a identificar esse token de VPP no console do Configuration Manager.  
 
     -   **Categorias atribuídas para aprimorar a pesquisa e a filtragem** – você também pode atribuir categorias para o token de VPP para facilitar a pesquisa no console do Configuration Manager.  
+    -   **ID da Apple** - insira a ID de email da Apple associada ao token de VPP.
+    -   **Tipo de token** - selecione o tipo de token de VPP que você deseja usar. Você pode escolher os tipos de token **Business** e **EDU**.
 
 5.  Escolha **Avançar** e conclua o assistente.  
 
@@ -96,12 +108,14 @@ O aplicativo do Configuration Manager criado contém o aplicativo da Windows Sto
     > [!IMPORTANT]  
     > É necessário escolher a finalidade da implantação **Obrigatória**. Atualmente, não há suporte para instalações disponíveis.
 
- Quando você implantar o aplicativo, uma licença será usada por cada usuário que instalar o aplicativo.  
+ Quando você implantar o aplicativo, uma licença será usada por cada usuário ou para instalações de dispositivo, cada dispositivo que instalar o aplicativo.  Se você direcionar uma coleção de dispositivos com um aplicativo que oferece suporte ao licenciamento de dispositivos, uma licença de dispositivo será declarada.  Se você direcionar uma coleção de dispositivos com um aplicativo que não oferece suporte ao licenciamento de dispositivos, uma licença de usuário será declarada. 
+
+ Quando você cria um aplicativo a partir do nó **Informações de licença para aplicativos de armazenamento**, o aplicativo é associado a licenças a partir do token para o aplicativo selecionado.  Por exemplo, você verá duas versões do mesmo aplicativo no nó. Isso ocorre porque cada versão do aplicativo está associada com um token de VPP da Apple diferente.  Em seguida, você pode criar aplicativos a partir de cada token e implantá-los separadamente.
 
  Para recuperar uma licença, você deve alterar a ação de implantação para **Desinstalar**. A licença será recuperada após a desinstalação do aplicativo.  
 
 ## <a name="step-3---monitor-ios-vpp-apps"></a>Etapa 3 - Monitorar aplicativos de VPP iOS  
- O nó **Informações de Licença para Aplicativos da Loja** do espaço de trabalho **Biblioteca de Software** exibe informações sobre os aplicativos iOS adquiridos por volume. As informações incluem o número total de licenças que você tem para cada aplicativo e a quantidade que foi implantada.
+ O nó **Informações de Licença para Aplicativos da Loja** do espaço de trabalho **Biblioteca de Software** exibe informações sobre os aplicativos iOS adquiridos por volume. As informações incluem o número total de licenças que você tem para cada aplicativo e a quantidade que foi implantada. Além disso, o modo de exibição mostra a qual token de VPP o aplicativo está associado e o tipo do token
 
  Também é possível monitorar o uso de licença de todos os aplicativos VPP adquiridos por meio do relatório **Aplicativos do Apple Volume Purchase Program para iOS com contagens de licença**.  
 

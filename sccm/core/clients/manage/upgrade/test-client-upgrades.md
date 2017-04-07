@@ -2,7 +2,7 @@
 title: "Testar atualizações do cliente em uma coleção de pré-produção | Microsoft Docs"
 description: "Teste atualizações do cliente em uma coleção de pré-produção no System Center Configuration Manager."
 ms.custom: na
-ms.date: 12/12/2016
+ms.date: 3/27/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
@@ -17,9 +17,9 @@ author: arob98
 ms.author: angrobe
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: 52d2e088b8db3c2e9a0af640ca3db72b9fd7af60
-ms.openlocfilehash: 250c9312b932670c408554f3968ae43ae4f3dbaa
-ms.lasthandoff: 01/03/2017
+ms.sourcegitcommit: dab5da5a4b5dfb3606a8a6bd0c70a0b21923fff9
+ms.openlocfilehash: 533c8e8b30519d83b8fc7a9d204d51e76974c4b1
+ms.lasthandoff: 03/27/2017
 
 
 ---
@@ -57,7 +57,7 @@ ms.lasthandoff: 01/03/2017
 
 ##  <a name="to-install-a-configuration-manager-update-that-includes-a-new-version-of-the-client"></a>Para instalar uma atualização do Configuration Manager que inclui uma nova versão do cliente  
 
-1.  No console do Configuration Manager, abra **Administração** > **Serviços de Nuvem** > **Atualizações e Serviços**, selecione uma atualização **Disponível** e escolha **Instalar Pacote de Atualização**  
+1.  No console do Configuration Manager, abra **Administração** > **Atualizações e Serviços**, selecione uma atualização **Disponível** e escolha **Instalar Pacote de Atualização**. (Antes da versão 1702, Atualizações e Manutenção ficava em **Administração** > **Serviços de Nuvem**.)
 
      Para obter mais informações, consulte [Atualizações para o System Center Configuration Manager](../../../../core/servers/manage/updates.md)  
 
@@ -72,7 +72,7 @@ ms.lasthandoff: 01/03/2017
 
 ##  <a name="to-promote-the-new-client-to-production"></a>Para promover o novo cliente para produção  
 
-1.  No console do Configuration Manager, abra **Administração** > **Serviços de Nuvem** > **Atualizações e Manutenção** e escolha **Promover o Cliente de Pré-produção**.
+1.  No console do Configuration Manager, abra **Administração** > **Atualizações e Manutenção** e escolha **Promover o Cliente de Pré-produção**. (Antes da versão 1702, Atualizações e Manutenção ficava em **Administração** > **Serviços de Nuvem**.)
 
     > [!TIP]
     > O botão **Promover o Cliente de Pré-produção** também está disponível quando você está monitorando implantações de cliente no console em **Monitoramento** > **Status do Cliente** > **Implantação de Cliente de Pré-produção**.

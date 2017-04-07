@@ -2,7 +2,7 @@
 title: Configurar alertas do Endpoint Protection | Microsoft Docs
 description: Saiba como configurar alertas do Endpoint Protection no System Center Configuration Manager.
 ms.custom: na
-ms.date: 02/14/2017
+ms.date: 03/23/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
@@ -16,8 +16,9 @@ author: NathBarn
 ms.author: nathbarn
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: 9b20b50843cadc478d5b75a276d2a24aea30f2ff
-ms.openlocfilehash: 6e7b080c1e1876c0ccef9ce6568ce88b65dfca87
+ms.sourcegitcommit: dab5da5a4b5dfb3606a8a6bd0c70a0b21923fff9
+ms.openlocfilehash: 7f4329b289b606dee5bf31aad8207de52667229f
+ms.lasthandoff: 03/27/2017
 
 
 ---
@@ -90,14 +91,15 @@ ms.openlocfilehash: 6e7b080c1e1876c0ccef9ce6568ce88b65dfca87
 
 9. Clique em **OK** para fechar a caixa de diálogo *Propriedades do\>***<Nome da Coleção**.  
 
+## <a name="alert-for-outdated-malware-client"></a>Alerta de cliente de malware desatualizado
+
+A partir do Configuration Manager versão 1702, você poderá configurar um alerta para garantir que os clientes do Endpoint Protection não estejam desatualizados. Agora você pode exibir a **Versão do Cliente Antimalware** e o **Status de Implantação do Endpoint Protection** acessando **Ativos e Conformidade** > **Visão Geral** > **Dispositivos** > **Todos os Clientes de Desktops e Servidores**. Para verificar se há um alerta, exiba **Alertas** no espaço de trabalho **Monitoramento**. Se mais de 20% dos clientes gerenciados estiver executando uma versão expirada do software antimalware, o alerta de que o cliente antimalware está desatualizado será exibido. Esse alerta não aparece na guia **Monitoramento** > **Visão Geral**. Para atualizar clientes antimalware expirados, habilite as atualizações de software para clientes antimalware.
+
+Para configurar o percentual em que o alerta é gerado, expanda **Monitoramento** > **Alertas** > **Todos os Alertas**, clique duas vezes em **Clientes antimalware desatualizados** e modifique a opção **Acionar alerta se o percentual de clientes gerenciados com uma versão desatualizada do cliente antimalware for de mais de**.
+
 > [!div class="button"]
 [Próxima etapa >](endpoint-definition-updates.md)
 
 > [!div class="button"]
 [Voltar >](endpoint-protection-site-role.md)
-
-
-
-<!--HONumber=Feb17_HO1-->
-
 

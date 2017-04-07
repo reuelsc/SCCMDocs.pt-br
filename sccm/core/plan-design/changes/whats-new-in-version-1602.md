@@ -15,9 +15,11 @@ caps.latest.revision: 3
 author: Brenduns
 ms.author: brenduns
 manager: angrobe
+robots: noindex,nofollow
 translationtype: Human Translation
-ms.sourcegitcommit: 221228890b12bd6875de51e17a1124303b318201
-ms.openlocfilehash: 0314513bed65457c63508bfe2212e3e52d8d03da
+ms.sourcegitcommit: dab5da5a4b5dfb3606a8a6bd0c70a0b21923fff9
+ms.openlocfilehash: 9a548f43625a907173e7b967d26356bd80f1c5d9
+ms.lasthandoff: 03/27/2017
 
 ---
 # <a name="what39s-new-in-version-1602-of-system-center-configuration-manager"></a>Novidades da versão 1602 do System Center Configuration Manager
@@ -38,7 +40,7 @@ A atualização 1602 do System Center Configuration Manager está disponível ap
 
 ## <a name="site-infrastructure"></a>Infraestrutura do site  
 
-###  <a name="a-namebkmkupgradeosa-in-place-upgrade-the-operating-system-of-site-servers-that-run-windows-server-2008-r2"></a><a name="bkmk_UpgradeOS"></a> Atualização in-loco do sistema operacional dos servidores do site que executam o Windows Server 2008 R2  
+###  <a name="bkmk_UpgradeOS"></a> Atualização in-loco do sistema operacional dos servidores do site que executam o Windows Server 2008 R2  
  Os sites do Configuration Manager que executam a versão 1602 ou posterior dão suporte à atualização in-loco do sistema operacional dos servidores do site do Windows Server 2008 R2 para o Windows Server 2012 R2.  
 
 > [!WARNING]  
@@ -48,7 +50,7 @@ A atualização 1602 do System Center Configuration Manager está disponível ap
 
  Para atualizar um servidor, use os procedimentos de atualização do Windows Server 2012 R2. Não é necessário executar uma restauração do servidor do site do Configuration Manager após a atualização. Para obter os procedimentos de atualização, consulte [Opções de atualização para o Windows Server 2012 R2](https://technet.microsoft.com/library/dn303416.aspx) na documentação do Windows Server.  
 
-###  <a name="a-namebkmkaoaga-sql-server-alwayson-availability-groups"></a><a name="bkmk_AOAG"></a> Grupos de disponibilidade AlwaysOn do SQL Server  
+###  <a name="bkmk_AOAG"></a> Grupos de disponibilidade AlwaysOn do SQL Server  
  Use grupos de disponibilidade AlwaysOn do SQL Server para hospedar o banco de dados do site em sites primários e o site de administração central como uma solução de alta disponibilidade e recuperação de desastre.  
 
  Para obter detalhes, consulte [AlwaysOn do SQL Server para um banco de dados do site altamente disponível do System Center Configuration Manager](../../../core/servers/deploy/configure/sql-server-alwayson-for-a-highly-available-site-database.md).  
@@ -218,9 +220,4 @@ O Configuration Manager pode solicitar o status do Bloqueio de Ativação de dis
 -   **Fora de conformidade**: usuários que aceitaram uma versão dos termos e condições, mas não a última versão.  
 
 -   **Desconhecido**: usuários que nunca aceitaram os termos e condições, incluindo aqueles sem um dispositivo registrado.  
-
-
-
-<!--HONumber=Dec16_HO5-->
-
 

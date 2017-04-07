@@ -17,8 +17,9 @@ author: NathBarn
 ms.author: nathbarn
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: 1432568286605d29683416885d7aa522c649016e
-ms.openlocfilehash: fde190f141fb55462755119b533519d05af3f3c3
+ms.sourcegitcommit: 6accec2d356861b273b25ba2b6338d9684a46ff6
+ms.openlocfilehash: 1b096e71f5131214fb4e235e84d0b7f63e566831
+ms.lasthandoff: 03/29/2017
 
 
 ---
@@ -167,8 +168,7 @@ Se você tiver problemas com o Windows Defender ou Endpoint Protection, entre em
 ##  <a name="starting-windows-defender-or-endpoint-protection-service"></a>Iniciar o serviço do Windows Defender ou Endpoint Protection  
  **Sintoma**  
 
- Você receberá uma mensagem informando que â €œ**Windows Defender ou**  
- **Endpoint Protection não está monitorando o seu computador porque o serviço do programa foi interrompido. Reinicie-o agora.**â€  
+ Você recebe uma mensagem informando que o **Windows Defender ou o Endpoint Protection não está monitorando seu computador porque o serviço do programa foi interrompido. Reinicie-o agora.** 
 
  **Solução**  
 
@@ -176,7 +176,7 @@ Se você tiver problemas com o Windows Defender ou Endpoint Protection, entre em
 
 -   Feche todos os aplicativos e reinicie o computador.  
 
-### <a name="step-2-make-sure-the-windows-defender-orbr-------endpoint-protection-service-is-set-to-automatic-and-is-started"></a>Etapa 2: Verificar se o serviço “Windows Defender” ou<br />      “Endpoint Protection” está definido como automático e foi iniciado  
+### <a name="step-2-make-sure-the-windows-defender-or-endpoint-protection-service-is-set-to-automatic-and-is-started"></a>Etapa 2: Verificar se o serviço "Windows Defender" ou "Endpoint Protection" está definido como automático e foi iniciado  
 
 1.  Clique em **Iniciar** , procure por **services.msc**e pressione **Enter**.  
 
@@ -318,9 +318,4 @@ Se você tiver problemas com o Windows Defender ou Endpoint Protection, entre em
  [Perguntas frequentes sobre o cliente do Endpoint Protection](../../protect/deploy-use/endpoint-protection-client-faq.md)   
 
  [Ajuda do cliente do Endpoint Protection](../../protect/deploy-use/endpoint-protection-client-help.md)
-
-
-
-<!--HONumber=Jan17_HO1-->
-
 

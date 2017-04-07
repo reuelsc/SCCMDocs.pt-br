@@ -2,7 +2,7 @@
 title: Como criar perfis de certificado SCEP | Microsoft Docs
 description: "Saiba como usar perfis de certificado para provisionar dispositivos gerenciados com os certificados necessários no System Center Configuration Manager."
 ms.custom: na
-ms.date: 11/22/2016
+ms.date: 03/28/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
@@ -17,11 +17,13 @@ author: Nbigman
 ms.author: nbigman
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: 0fa837c68eb073d2ceaf48c938137a94141a102e
-ms.openlocfilehash: cb9351fc63e49af611c494ec82a6c8651afae30f
+ms.sourcegitcommit: dab5da5a4b5dfb3606a8a6bd0c70a0b21923fff9
+ms.openlocfilehash: f919ac97b24604babca4f70f184220604227eb0e
+ms.lasthandoff: 03/27/2017
 
 
 ---
+
 # <a name="create-certificate-profiles"></a>Criar perfis de certificado
 
 *Aplica-se a: System Center Configuration Manager (Branch Atual)*
@@ -57,6 +59,8 @@ Na página **Geral** do Assistente para Criar Perfil de Certificado, especifique
 -   **Configurações do protocolo SCEP**: selecione este tipo de perfil de certificado se desejar solicitar um certificado para um usuário ou dispositivo usando o protocolo SCEP e o serviço de função de Serviço de Registro de Dispositivo de Rede.
 
 -   **Troca de Informações Pessoais – Configurações PKCS #12 (PFX) – Importar**: selecione esta opção para importar um certificado PFX. Para saber mais sobre a criação de certificado PFX, consulte [Criar perfis de certificado PFX](../../protect/deploy-use/create-pfx-certificate-profiles.md).
+
+- **Troca de Informações Pessoais – Configurações PKCS #12 (PFX) – Criar**: selecione esta opção para criar um novo perfil de certificado PFX. Para saber mais sobre a criação de certificado PFX, consulte [Criar perfis de certificado PFX](../../protect/deploy-use/create-pfx-certificate-profiles.md).
 
 
 
@@ -183,10 +187,7 @@ Na página **Geral** do Assistente para Criar Perfil de Certificado, especifique
 ###  <a name="specify-supported-platforms-for-the-certificate-profile"></a>Especificar as plataformas com suporte para o perfil de certificado  
 
 1. Na página **Plataformas com suporte** do Assistente para Criar Perfil de Certificado, selecione os sistemas operacionais nos quais deseja instalar o perfil de certificado. Ou, clique em **Selecionar Tudo** para instalar o perfil de certificado em todos os sistemas operacionais disponíveis.
-2. Examine a página **Resumo** do assistente e escolha **Concluir**. O novo perfil de certificado aparece no nó **Perfis de Certificado** no espaço de trabalho **Ativos e Conformidade** e está pronto para ser implantado nos usuários ou dispositivos, conforme descrito em [Como implantar perfis no System Center Configuration Manager](deploy-wifi-vpn-email-cert-profiles.md).  
-
-
-
-<!--HONumber=Jan17_HO4-->
-
-
+2. Examine a página **Resumo** do assistente e escolha **Concluir**. 
+ 
+ 
+O novo perfil de certificado aparece no nó **Perfis de Certificado** no espaço de trabalho **Ativos e Conformidade** e está pronto para ser implantado nos usuários ou dispositivos, conforme descrito em [Como implantar perfis no System Center Configuration Manager](deploy-wifi-vpn-email-cert-profiles.md).  

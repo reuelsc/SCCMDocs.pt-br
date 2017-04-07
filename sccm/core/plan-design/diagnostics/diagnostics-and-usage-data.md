@@ -2,7 +2,7 @@
 title: "Dados de uso e diagnóstico | Microsoft Docs"
 description: "Saiba mais sobre os dados de diagnóstico e de uso que o System Center Configuration Manager coleta sobre si mesmo."
 ms.custom: na
-ms.date: 12/29/2016
+ms.date: 3/27/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
@@ -17,8 +17,9 @@ author: Brenduns
 ms.author: brenduns
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: 24a233516058e645df2a43623855665b97b041b0
-ms.openlocfilehash: 54ec4886eaad6999cdf3ffff7411942859f1a5b2
+ms.sourcegitcommit: dab5da5a4b5dfb3606a8a6bd0c70a0b21923fff9
+ms.openlocfilehash: 4a4b7c9c0d40b6bd3ea2f318e37d744f1a0cc084
+ms.lasthandoff: 03/27/2017
 
 
 ---
@@ -40,10 +41,14 @@ O System Center Configuration Manager coleta dados de diagnóstico e de uso sobr
 -   [Como os dados de diagnóstico e de uso são usados no System Center Configuration Manager](../../../core/plan-design/diagnostics/how-diagnostics-and-usage-data-is-used.md)  
 
 -   Níveis da coleta de dados de diagnóstico e de uso:
-    - [Dados de diagnóstico para 1511](/sccm/core/plan-design/diagnostics/levels-of-diagnostic-usage-data-collection-1511)
-    - [Dados de diagnóstico para 1602](/sccm/core/plan-design/diagnostics/levels-of-diagnostic-usage-data-collection-1602)
-    - [Dados de diagnóstico para 1606](/sccm/core/plan-design/diagnostics/levels-of-diagnostic-usage-data-collection-1606)  
+    - [Dados de diagnóstico para 1702](/sccm/core/plan-design/diagnostics/levels-of-diagnostic-usage-data-collection-1702)      
     - [Dados de diagnóstico para 1610](/sccm/core/plan-design/diagnostics/levels-of-diagnostic-usage-data-collection-1610)  
+    - [Dados de diagnóstico para 1606](/sccm/core/plan-design/diagnostics/levels-of-diagnostic-usage-data-collection-1606)    
+
+<!--
+    - [Diagnostic data for 1602](/sccm/core/plan-design/diagnostics/levels-of-diagnostic-usage-data-collection-1602)
+    - [Diagnostic data for  1511](/sccm/core/plan-design/diagnostics/levels-of-diagnostic-usage-data-collection-1511)
+-->
 
 -   [Como os dados de diagnóstico e de uso são coletados pelo System Center Configuration Manager](../../../core/plan-design/diagnostics/how-diagnostics-and-usage-data-is-collected.md)  
 
@@ -55,9 +60,4 @@ O System Center Configuration Manager coleta dados de diagnóstico e de uso sobr
 
 ## <a name="see-also"></a>Consulte também  
  [Sobre o ponto de conexão de serviço no System Center Configuration Manager](../../../core/servers/deploy/configure/about-the-service-connection-point.md)
-
-
-
-<!--HONumber=Dec16_HO5-->
-
 

@@ -2,7 +2,7 @@
 title: "Ponto de conexão de serviço | Microsoft Docs"
 description: "Saiba mais sobre essa função do sistema de sites do Configuration Manager, bem como entenda e planeje seus diversos usos."
 ms.custom: na
-ms.date: 2/7/2017
+ms.date: 3/30/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
@@ -17,8 +17,9 @@ author: Brenduns
 ms.author: brenduns
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: 3a24fe53cc243294694b779fad4c3ab83ca2ecb7
-ms.openlocfilehash: ae2cc7030c1fc404dcc7392b8c3067fc0f8cafc0
+ms.sourcegitcommit: 6accec2d356861b273b25ba2b6338d9684a46ff6
+ms.openlocfilehash: ad6df047beff670411d203220576b87f7d56d50c
+ms.lasthandoff: 03/29/2017
 
 
 ---
@@ -42,17 +43,18 @@ O ponto de conexão de serviço do System Center Configuration Manager é uma fu
 
   Para saber mais sobre os dados coletados em cada nível e como alterar o nível de coleta após a instalação da função, veja [Dados de diagnóstico e de uso](/sccm/core/plan-design/diagnostics/diagnostics-and-usage-data) e siga o link da versão do Configuration Manager que você usa.  
 
-    Para obter mais informações, consulte [Configurações e níveis de dados de uso](../../../../core/servers/deploy/install/setup-reference.md#bkmk_usage).  
+  Para obter mais informações, consulte [Configurações e níveis de dados de uso](../../../../core/servers/deploy/install/setup-reference.md#bkmk_usage).  
 
 -   **Baixar as atualizações que se aplicam à sua infraestrutura do Configuration Manager**: somente atualizações relevantes para sua infraestrutura ficam disponíveis, com base nos dados de uso carregados.  
 
- **Cada hierarquia dá suporte a uma única instância dessa função:**  
+- **Cada hierarquia dá suporte a uma única instância dessa função:**  
 
-    -   A função do sistema de sites só pode ser instalada no site de nível superior da hierarquia (um site de administração central ou site primário autônomo).  
+ -   A função do sistema de sites só pode ser instalada no site de nível superior da hierarquia (um site de administração central ou site primário autônomo).  
 
-    -   Se expandir um site primário autônomo para uma hierarquia maior, você deve desinstalar essa função do site primário e, em seguida, pode instalá-lo no site de administração central.  
+  -   Se expandir um site primário autônomo para uma hierarquia maior, você deve desinstalar essa função do site primário e, em seguida, pode instalá-lo no site de administração central.  
 
-##  <a name="a-namebkmkmodesa-modes-of-operation"></a><a name="bkmk_modes"></a> Modos de operação  
+
+##  <a name="bkmk_modes"></a> Modos de operação  
  O ponto de conexão de serviço oferece suporte a dois modos de operação:  
 
 -   No **modo online**, o ponto de conexão de serviço verifica atualizações automaticamente, a cada 24 horas, e baixa novas atualizações disponíveis para sua infraestrutura e versão do produto atuais, disponibilizando-as no console do Configuration Manager.  
@@ -82,7 +84,7 @@ Para usar o Configuration Manager Service Manager, no console, navegue para **Mo
 
 -   A conta de instalação do sistema de sites é usada pelo gerenciador de distribuição no servidor de sites para transferir atualizações do ponto de conexão de serviço.
 
-##  <a name="a-namebkmkurlsa-internet-access-requirements"></a><a name="bkmk_urls"></a> Requisitos de acesso à Internet  
+##  <a name="bkmk_urls"></a> Requisitos de acesso à Internet  
 Para habilitar a operação, o computador que hospeda o ponto de conexão de serviço e quaisquer firewalls entre o computador e a Internet deve passar as comunicações pela **porta TCP 443** e **porta TCP 443** nos seguintes locais da Internet. O ponto de conexão de serviço também dá suporte ao uso de um proxy da Web (com ou sem autenticação) para acessar esses locais.  Se você precisar configurar uma conta de proxy da web, consulte: [Suporte do servidor proxy no System Center Configuration Manager](/sccm/core/plan-design/network/proxy-server-support).
 
 **Atualizações e manutenção**  
@@ -119,8 +121,10 @@ Quando você executa **Instalação** para instalar o site de nível superior de
 
 Após a execução da configuração, ou se você estiver reinstalando a função do sistema de sites, use o assistente **Adicionar Funções do Sistema de Site** ou o assistente **Criar Servidor do Sistema de Site** para instalar o sistema de site em um servidor no site de nível superior da hierarquia, isto é, o site de administração central ou um site primário autônomo. Ambos os assistentes estão localizados na guia **Início** no console em **Administração** > **Configuração do Site** > **Funções de Servidores e Sistema de Site**.
 
+## <a name="log-files-used-by-the-service-connection-point"></a>Os arquivos de log usados pelo ponto de conexão de serviço
+Para exibir informações sobre carregamentos para a Microsoft, veja o **Dmpuploader.log** no computador que executa o ponto de conexão de serviço.  Para downloads, incluindo o progresso do download de atualizações, veja **Dmpdownloader.log**. Para obter a lista completa de logs relacionados ao ponto de conexão de serviço, veja [Ponto de conexão de serviço](/sccm/core/plan-design/hierarchy/log-files#BKMK_WITLog) no tópico de arquivos de log do Configuration Manager.
 
-
-<!--HONumber=Feb17_HO3-->
-
+Você também pode usar os fluxogramas a seguir para entender o fluxo de processo e as principais entradas de log para downloads de atualização e replicação de atualizações para outros sites:
+ - [Fluxograma — baixar atualizações](/sccm/core/servers/manage/download-updates-flowchart)
+ - [Fluxograma — atualizar replicação](/sccm/core/servers/manage/update-replication-flowchart)
 

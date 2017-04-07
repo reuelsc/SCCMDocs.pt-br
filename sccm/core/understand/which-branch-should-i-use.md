@@ -16,9 +16,9 @@ author: Brenduns
 ms.author: brenduns
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: 26a362b4e5f25414178cae6843869a54eb99028c
-ms.openlocfilehash: b190b6116fba8080ad4e144e4e349e0926d1340b
-ms.lasthandoff: 02/28/2017
+ms.sourcegitcommit: dab5da5a4b5dfb3606a8a6bd0c70a0b21923fff9
+ms.openlocfilehash: ef044af5f6b32e4161d54c0ab1fb2ef2d245264b
+ms.lasthandoff: 03/27/2017
 
 
 ---
@@ -70,7 +70,7 @@ Para mais informações, confira [Support for Current Branch versions](/sccm/cor
 ##  <a name="long-term-servicing-branch-of-system-center-configuration"></a>Branch de Manutenção em Longo Prazo do System Center Configuration
 Esse é um branch licenciado para uso na produção para clientes do Configuration Manager que estão usando o Branch Atual e que permitiram que seu SA (Software Assurance) do Configuration Manager ou seus direitos de assinatura equivalentes expirassem após 1º de outubro de 2016. Para mais informações sobre as opções de licenciamento e Software Assurance, confira [Licenciamento e branches do System Center Configuration Manager](learn-more-editions.md).
 
-O LTSB não recebe atualizações no console que oferecem novas funcionalidades ou atualiza funcionalidades existentes. No entanto, correções de segurança críticas são fornecidas.
+O LTSB baseia-se na versão 1606. Essa ramificação não recebe atualizações no console que oferecem novas funcionalidades ou atualiza funcionalidades existentes. No entanto, correções de segurança críticas são fornecidas. Para instalar o LTSB, você deverá usar a [mídia de linha de base](/sccm/core/servers/manage/updates#baseline-and-update-versions) da versão 1606 que você obtém como um DVD com o System Center 2016 ou System Center Configuration Manager.
 
 Para instalar o LTSB como um novo site ou uma atualização do site do Configuration Manager 2012 com suporte, use a [mídia de linha de base](/sccm/core/servers/manage/updates#baseline-and-update-versions) da versão 1606 obtida como um DVD com a versão do System Center 2016 ou System Center Configuration Manager (Branch Atual e Branch de Manutenção em Longo Prazo 1606). Você pode usar a mídia de linha de base para instalar um novo site que executa a versão 1606 do Branch Atual ou um novo site que executa o Branch de Manutenção em Longo Prazo.
 

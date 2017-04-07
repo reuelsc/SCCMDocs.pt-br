@@ -17,9 +17,9 @@ author: arob98
 ms.author: angrobe
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: 238ef5814c0c1b832c28d63c9f3879e21a6c439b
-ms.openlocfilehash: 3c3725678561c32fce316ed1209ac8fe73a0eed1
-ms.lasthandoff: 12/16/2016
+ms.sourcegitcommit: dab5da5a4b5dfb3606a8a6bd0c70a0b21923fff9
+ms.openlocfilehash: 832be8c9fda727804f57e83768cd8799db722c67
+ms.lasthandoff: 03/27/2017
 
 
 ---
@@ -37,7 +37,7 @@ As informações a seguir podem ajudar a planejar como configurar permissões pa
 
 -   Leitura para a conta que executa o console do System Center Configuration Manager  
 
- Para obter mais informações sobre essas permissões de segurança, consulte [Etapa 1: Instalar e configurar o Serviço de Registro de Dispositivo de Rede e Dependências](../deploy-use/certificate-infrastructure.md#step-1-install-and-configure-the-network-device-enrollment-service-and-dependencies).  
+ Para saber mais sobre estas permissões de segurança, veja [Configuração de infraestrutura de certificado](../deploy-use/certificate-infrastructure.md).  
 
  Quando você utiliza essa configuração padrão, os usuários e os dispositivos não podem solicitar diretamente certificados dos modelos de certificado, e todas as solicitações devem ser iniciadas pelo Serviço de Registro de Dispositivo de Rede. Essa é uma restrição importante, pois esses modelos de certificado devem ser configurados com **Fornecer na solicitação** para a Entidade do certificado, o que significa que existe um risco de representação se um usuário não autorizado ou um dispositivo comprometido solicitar um certificado. Na configuração padrão, o Serviço de Registro de Dispositivo de Rede deve iniciar essa solicitação. No entanto, esse risco de representação permanece se o serviço que executa o Serviço de Registro de Dispositivo de Rede está comprometido. Para evitar esse risco, siga todas as práticas recomendadas de segurança para o Serviço de Registro de Dispositivo de Rede e o computador que executa esse serviço de função.  
 

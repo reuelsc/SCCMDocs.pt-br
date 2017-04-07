@@ -2,7 +2,7 @@
 title: Gerenciar aplicativos da Windows Store para Empresas | Microsoft Docs
 description: Gerenciar e implantar aplicativos da Windows Store para Empresas usando o System Center Configuration Manager.
 ms.custom: na
-ms.date: 02/14/2017
+ms.date: 3/29/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
@@ -16,143 +16,111 @@ author: robstackmsft
 ms.author: robstack
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: f955b5aadfc617e08d5d933dee8e42de838f83c0
-ms.openlocfilehash: bf2937f5ba86db19d9cb40e2c98cbb8ba365f7eb
+ms.sourcegitcommit: 6accec2d356861b273b25ba2b6338d9684a46ff6
+ms.openlocfilehash: f2d9da1c584f78e27e84b7f55e7ffe4dd052a27c
+ms.lasthandoff: 03/29/2017
 
 ---
+
 # <a name="manage-apps-from-the-windows-store-for-business-with-system-center-configuration-manager"></a>Gerenciar aplicativos da Windows Store para Empresas com o System Center Configuration Manager
-
-*Aplica-se a: System Center Configuration Manager (Branch Atual)*
-
-Na [Windows Store para Empresas](https://www.microsoft.com/business-store), é possível encontrar e comprar aplicativos Windows para sua organização, individualmente ou por volume. Conectando o repositório ao Configuration Manager, é possível sincronizar a lista de aplicativos comprados com o Configuration Manager, exibi-los no console do Configuration Manager e implantá-los da mesma forma como você implantaria qualquer outro aplicativo.
+Na [Windows Store para Empresas](https://www.microsoft.com/business-store), é possível encontrar e adquirir aplicativos Windows para sua organização, individualmente ou por volume. Conectando a loja ao Configuration Manager, você pode sincronizar a lista de aplicativos que comprou com o Configuration Manager, vê-los no console do Configuration Manager e implantá-los como faria com qualquer outro aplicativo.
 
 
 ## <a name="online-and-offline-apps"></a>Aplicativos online e offline
 
 A Windows Store para Empresas dá suporte a dois tipos de aplicativo:
 
-- **Online** – esse tipo de licença exige que os usuários e dispositivos se conectem ao repositório para obter um aplicativo e sua licença. Dispositivos Windows 10 devem ser ingressados em um domínio do Azure Active Directory.
-- **Offline** – as organizações podem armazenar aplicativos e licenças em cache para implantá-los diretamente em suas redes locais, sem se conectar à loja ou ter uma conexão com a Internet.
+- **Online** – este tipo de licença exige que usuários e dispositivos se conectem à loja para obter um aplicativo e sua licença. Dispositivos Windows 10 devem ser ingressados em um domínio do Azure Active Directory.
+- **Offline** – as organizações podem armazenar em cache aplicativos e licenças para implantá-los diretamente em sua rede local, sem se conectar à loja ou ter uma conexão com a Internet.
 
-Leia mais sobre o [Windows Store para Empresas](https://technet.microsoft.com/itpro/windows/whats-new/windows-store-for-business-overview).
+[Leia mais](https://technet.microsoft.com/itpro/windows/whats-new/windows-store-for-business-overview?f=255&MSPPError=-2147217396) sobre o Windows Store para Empresas.
 
-O Configuration Manager dá suporte ao gerenciamento de aplicativos da Windows Store para Empresas em dispositivos Windows 10 que executam o cliente do Configuration Manager e em dispositivos Windows 10 registrados no Microsoft Intune (configuração híbrida). O Configuration Manager oferece os seguintes recursos para aplicativos online e offline.
+O Configuration Manager dá suporte ao gerenciamento de aplicativos da Windows Store para Empresas em dispositivos Windows 10 que executam o cliente do Configuration Manager e a dispositivos Windows 10 registrados no Microsoft Intune (conhecido como configuração híbrida). O Configuration Manager oferece os seguintes recursos para aplicativos online e offline.
 
 > [!IMPORTANT]
-> Para usar essas funcionalidades, os dispositivos Windows 10 devem executar a versão de novembro de 2015 (1511) ou posterior.
+> Para usar essa funcionalidade, dispositivos Windows 10 devem estar executando a versão de novembro de 2015 (1511) ou posterior.
+
 
 |Funcionalidade|Aplicativos offline|Aplicativos online|
 |------------|------------|------------|
-|Sincronizar dados do aplicativo com o Configuration Manager<br>(A sincronização ocorre a cada 24 horas ou é possível iniciar uma sincronização imediata.)|Sim|Sim|
+|Sincronizar dados do aplicativo com o Configuration Manager<br>(a sincronização ocorre a cada 24 horas)|Sim|Sim|
 |Criar aplicativos do Configuration Manager de aplicativos da loja|Sim|Sim|
-|Suporte para aplicativos gratuitos da loja|Sim|Sim<sup>1</sup>|
-|Suporte para aplicativos pagos da loja|Não|Sim<sup>1</sup>|
-|Suporte para implantações obrigatórias em coleções de usuários ou dispositivos|Sim|Sim<sup>1</sup>|
-|Suporte para implantações disponíveis em coleções de usuários ou dispositivos|Sim<sup>2</sup>|Não|
+|Suporte para aplicativos gratuitos da loja|Sim|Sim|
+|Suporte para aplicativos pagos da loja|Não|Sim|
+|Suporte para implantações obrigatórias em coleções de usuários ou dispositivos|Sim|Sim|
+|Suporte para implantações disponíveis em coleções de usuários ou dispositivos|Sim|Sim|
+|Suporte a aplicativos de linha de negócios da loja|Sim|Sim|
 
-<sup>1</sup>O suporte é válido somente para dispositivos gerenciados pelo Intune. Nada o impede de criar um aplicativo online no console do Configuration Manager e implantá-lo em um dispositivo gerenciado pelo cliente do Configuration Manager, mas a implantação não funcionará. Os usuários serão direcionados para a página relevante da loja de aplicativos para instalar o aplicativo manualmente.
+Para implantar aplicativos licenciados online em PCs com Windows 10 com o cliente do Configuration Manager, ele deverá estar executando a Atualização do Windows 10 para Criadores ou posterior.
 
-<sup>2</sup>O suporte é válido somente para dispositivos gerenciados pelo cliente do Configuration Manager.
+## <a name="deploying-online-apps-using-the-windows-store-for-business-with-pcs-that-run-the-configuration-manager-client"></a>Implantando aplicativos online usando a Windows Store para Empresas com PCs que executam o cliente do Configuration Manager
+Antes de implantar aplicativos da Windows Store para Empresas em PCs que executam o cliente do Configuration Manager completo, considere o seguinte:
 
-<!--- ## Activate the Windows Store for Business capability
-Because this is a pre-release feature, before you can connect Configuration Manager to the Windows Store for Business, you must take the following steps:
+- Para a funcionalidade completa, os PCs devem estar executando a Atualização do Windows 10 para Criadores, ou posterior.
+- Os PCs devem estar associados ao espaço de trabalho do Azure Active Directory e estar no mesmo locatário do AAD onde você registrou a Windows Store para Empresas como uma ferramenta de gerenciamento.
+- Quando os PCs estão conectados com a conta de administrador interna, eles não podem acessar os aplicativos na Windows Store para Empresas.
+- Os PCs devem ter uma conexão de Internet em tempo real para a Windows Store para Empresa.
 
-**Give your consent to use pre-release features**
-1. In the **Administration** workspace of the Configuration Manager console, choose **Site Configuration** > **Sites**.
-2. Select the top-level site in your hierarchy, then, open **Hierarchy Settings**.
-3. In the **Hierarchy Settings Properties** dialog box, check the box, **Consent to use Pre-Release** features.
-4. Choose **OK**.
+### <a name="notes-for-pcs-running-earlier-versions-of-windows-10"></a>Observações para PCs que executam versões anteriores do Windows 10
+Em computadores que executam uma versão do Windows 10 anterior à Atualização para Criadores (com o cliente do Configuration Manager), a seguinte funcionalidade aplica-se:
 
-**Activate the Windows Store for Business capability**
-1. In the **Administration** workspace of the Configuration Manager console, choose **Cloud Services** > **Updates and Servicing** > **Features**.
-2. Select **Windows Store for Business Integration**, and then in the **Home** tab, in the **Features** group, choose **Turn on**.
-3. Close and re-open the Configuration Manager console.
-4. You'll now see the node **Windows Store for Business** in the **Administration** workspace under **Cloud Services**. --->
+
+- Quando a instalação for imposta pelo usuário que está instalando o aplicativo ou o aplicativo atingir seu prazo de instalação ou postar reavaliação de instalação para as implantações necessárias:
+    - O aplicativo será "imposto" iniciando o aplicativo da Windows Store para Empresas. 
+    - O usuário final deverá concluir a instalação pela loja antes que ele seja realmente instalado
+    - O status do aplicativo no console do Configuration Manager relatará falha com o erro "O aplicativo da Windows Store foi aberto no computador cliente e está aguardando o usuário concluir a instalação".
+- No próximo ciclo de avaliação do aplicativo:
+    - Se o aplicativo tiver sido instalado pelo usuário final pela loja, o aplicativo relatará o status **Sucesso**. 
+    - Se o usuário final não tiver tentado instalar o aplicativo pela loja:
+        - As implantações necessárias tentarão iniciar a loja e impor novamente a instalação do aplicativo.
+        - As implantações disponíveis não serão impostas novamente.
+
+#### <a name="further-notes-for-pcs-running-earlier-versions-of-windows-10"></a>Outras observações para PCs que executam versões anteriores do Windows 10:
+
+- Você pode implantar aplicativos personalizados de linha de negócios da Windows Store para Empresas
+- Quando você implanta aplicativos pagos pela loja, os usuários finais serão solicitados a fazer logon na loja e comprar o aplicativo por sua conta.
+- Se você tiver implantado uma Política de grupo desabilitando o acesso para a versão de cliente da Windows Store, as implantações da Windows Store para Empresas não funcionará, mesmo se estiver habilitada.
+
 
 ## <a name="set-up-windows-store-for-business-synchronization"></a>Configurar a sincronização da Windows Store para Empresas
 
-> [!IMPORTANT]
-> Ao configurar uma conexão entre o Configuration Manager e a Windows Store para Empresas, é necessário fornecer uma pasta em que o conteúdo do aplicativo sincronizado do repositório será mantido.
-Para garantir que essa pasta é segura e que seu conteúdo pode ser implantado em dispositivos, verifique se as seguintes permissões existem:
--    O computador no qual você instala a função do sistema de sites do ponto de conexão de serviço (o site de nível superior na hierarquia) deve ter permissões de leitura e gravação na pasta especificada durante o uso da conta **Computer$**.
--    O autor do aplicativo deve ter permissões de leitura da pasta especificada.
--    A conta **Computer$** de cada computador que hospeda uma instância do Provedor de SMS deve poder usar a pasta especificada.
-
-
-No Azure Active Directory, registre o Configuration Manager como uma ferramenta de gerenciamento de API Web ou de aplicativo Web. Isso fornecerá uma ID de cliente que você precisará mais tarde.
-1. No nó [https://manage.windowsazure.com](https://manage.windowsazure.com) do Active Directory, selecione o Azure Active Directory e escolha **Aplicativos** > **Adicionar**.
-2.  Escolha **Adicionar um aplicativo que minha organização está desenvolvendo**.
-3.  Insira um nome para o aplicativo, selecione **Aplicativo Web** e/ou **API Web** e escolha **Avançar**.
+**No Azure Active Directory, registre o Configuration Manager como uma ferramenta de gerenciamento de "Aplicativo Web e/ou API da Web". Isso lhe fornecerá uma ID de cliente de que você precisará mais tarde.**
+1. No nó Active Directory de [https://manage.windowsazure.com](https://manage.windowsazure.com), selecione seu Azure Active Directory e clique em **Aplicativos** > **Adicionar**.
+2.  Clique em **Adicionar um aplicativo que minha organização esteja desenvolvendo**.
+3.  Insira um nome para o aplicativo, selecione **Aplicativo Web** e/ou **API da Web** e clique na seta **Avançar**.
 4.  Insira a mesma URL para **URL de Entrada** e **URI da ID do Aplicativo**. A URL pode ser qualquer uma e não precisa ser resolvida para um endereço real. Por exemplo, você pode inserir *https://seudomínio/sccm*.
 5.  Conclua o assistente.
 
-No Azure Active Directory, crie uma chave de cliente para a ferramenta de gerenciamento registrada.
-1.  Realce o aplicativo que você acabou de criar e escolha **Configurar**.
-2.  Em **Chaves**, selecione uma duração na lista e escolha **Salvar**. Isso criará uma nova chave de cliente. Não saia desta página antes de carregar com êxito a Windows Store para Empresas no Configuration Manager.
+**No Azure Active Directory, crie uma chave de cliente para a ferramenta de gerenciamento registrada**
+1.  Realce o aplicativo que você acabou de criar e clique em **Configurar**.
+2.  Em **Chaves**, escolha uma duração na lista e clique em **Salvar**. Isso criará uma nova chave de cliente. Não saia dessa página até que você tenha carregado com êxito a Windows Store para Empresas no Configuration Manager.
 
-Na Windows Store para Empresas, configure o Configuration Manager como a ferramenta de gerenciamento do repositório.
+**Na Windows Store para Empresas, configure o Configuration Manager como a ferramenta de gerenciamento da loja.**
 1.  Abra [https://businessstore.microsoft.com/en-us/managementtools](https://businessstore.microsoft.com/en-us/managementtools) e se conecte, se solicitado.
 2.  Aceite os termos de uso, se solicitado.
-3.  Em **Ferramentas de Gerenciamento**, escolha **Adicionar uma ferramenta de gerenciamento**.
-4.  Em **Pesquisar a ferramenta por nome**, digite o nome do aplicativo que você criou anteriormente no Azure Active Directory e escolha **Adicionar**.
-5.  Escolha **Ativar** ao lado do aplicativo que você acabou de importar.
-6.  Na página **Gerenciar > Informações da Conta**, selecione **Exibir Aplicativos Licenciados Offline** se desejar permitir a compra de aplicativos licenciados offline.
+3.  Em **Ferramentas de Gerenciamento**, clique em **Adicionar uma ferramenta de gerenciamento**.
+4.  Em **Pesquisar a ferramenta por nome**, digite o nome do aplicativo que você criou anteriormente no AAD e clique em **Adicionar**.
+5.  Clique em **Ativar** ao lado do aplicativo que você acabou de importar.
+6.  Na página **Gerenciar > Informações da Conta**, selecione **Exibir Aplicativos Licenciados Offline** se quiser permitir que aplicativos licenciados offline sejam comprados.
 
-> [!Note]
-> Se você usava mais de uma ferramenta de gerenciamento para implantar o Windows Store para aplicativos de negócios, anteriormente, só podia associar uma delas ao Windows Store for Business. Agora você pode associar várias ferramentas de gerenciamento ao armazenamento, por exemplo, o Intune e o Configuration Manager.
+**Adicionar a conta da loja ao Configuration Manager**
 
-Adicione a conta do repositório ao Configuration Manager.
-
-1. Verifique se você comprou pelo menos um aplicativo da Windows Store para Empresas. No espaço de trabalho **Administração** do console do Configuration Manager, expanda **Serviços de Nuvem** e escolha **Windows Store para Empresas**.
-2.  Na guia **Início**, no grupo **Windows Store para Empresas**, escolha **Adicionar Conta da Windows Store para Empresas**.
-3.  Adicione sua ID de locatário, ID do cliente e chave de segredo do cliente do Azure Active Directory e conclua o assistente.
+1. Verifique se você comprou pelo menos um aplicativo da Windows Store para Empresas. No espaço de trabalho **Administração** do console do Configuration Manager, expanda **Serviços de Nuvem** e clique em **Windows Store para Empresas**.
+2.  Na guia **Início**, no grupo **Windows Store para Empresas**, clique em **Adicionar Conta da Windows Store para Empresas**. 
+3.  Adicione a ID de locatário, a id de cliente e a chave de cliente do Azure Active Directory e conclua o assistente.
 4. Quando terminar, você verá a conta configurada na lista **Windows Store para Empresas** no console do Configuration Manager.
 
-Altere os idiomas do aplicativo que serão mostrados no Catálogo de Aplicativos para os usuários baixarem.
 
-1.    No espaço de trabalho **Administração** do console do Configuration Manager, escolha **Serviços de Nuvem** > **Atualizações e Manutenção** > **Windows Store para Empresas**.
-2.    Selecione sua conta da Windows Store para Empresas e escolha **Propriedades**.
-3.    Selecione a guia **Idioma**.
-4.    Adicione ou remova os idiomas que serão mostrados no Catálogo de Aplicativos. Selecione o idioma padrão do catálogo de aplicativos que será disponibilizado para os usuários.
-
->[!IMPORTANT]
->Nesta versão, se você alterar os idiomas que serão sincronizados, será necessário reiniciar o serviço SMS Executive no servidor do site antes que as configurações de idioma entrem em vigor.
-
-
-Modifique a chave de segredo do cliente do Azure Active Directory.
-
-1.    No espaço de trabalho **Administração** do console do Configuration Manager, escolha **Serviços de Nuvem** > **Atualizações e Manutenção** > **Windows Store para Empresas**.
-2.    Selecione sua conta da Windows Store para Empresas e escolha **Propriedades**.
-3.    Na caixa de diálogo **Propriedades da Conta da Windows Store para Empresas**, insira uma nova chave no campo **Chave de segredo do cliente** e escolha **Verificar**. Após a verificação, escolha **Aplicar** e feche a caixa de diálogo.
-
-## <a name="sync-apps-from-the-store-with-configuration-manager"></a>Sincronizar aplicativos da loja com o Configuration Manager
-
-A sincronização ocorre a cada 24 horas ou é possível iniciar uma sincronização imediata usando este procedimento:
-
-1. No espaço de trabalho **Administração** do console do Configuration Manager, escolha **Serviços de Nuvem** > **Atualizações e Manutenção** > **Windows Store para Empresas**.
-3.    Na guia **Início**, no grupo **Sincronização**, escolha **Sincronizar Agora**.
-4.    O aplicativo que você comprou será exibido no nó **Informações de Licença para Aplicativos da Loja** do espaço de trabalho **Gerenciamento de Aplicativos**.
-
-
-## <a name="create-and-deploy-a-configuration-manager-application-from-a-windows-store-for-business-app"></a>Criar e implantar um aplicativo do Configuration Manager por meio de um aplicativo da Windows Store para Empresas
-
-Este procedimento pressupõe que você tenha adquirido, no mínimo, um aplicativo gratuito ou comprado pelo menos um aplicativo licenciado online pago na Windows Store para Empresas.
-
-1.  No espaço de trabalho **Biblioteca de Software** do console do Configuration Manager, expanda **Gerenciamento de Aplicativos** e escolha **Informações de Licença para Aplicativos da Loja**.
-2.  Escolha o aplicativo que você deseja implantar e, na guia **Início**, no grupo **Criar**, escolha **Criar Aplicativo**.
+## <a name="create-and-deploy-a-configuration-manager-application-from-a-windows-store-for-business-app"></a>Criar e implantar um aplicativo do Configuration Manager por meio de um aplicativo da Windows Store para Empresas.
+1.  No espaço de trabalho **Biblioteca de Software** do console do Configuration Manager, expanda **Gerenciamento de Aplicativos** e clique em **Informações sobre Licença para Aplicativos da Loja**.
+2.  Escolha o aplicativo que deseja implantar e, na guia **Início**, no grupo **Criar**, clique em **Criar Aplicativo**.
 É criado um aplicativo do Configuration Manager contendo o aplicativo da Windows Store para Empresas. Em seguida, é possível implantar e monitorar o aplicativo, como você faria com qualquer outro aplicativo do Configuration Manager.
-
 > [!IMPORTANT]
-> Para dispositivos registrados no Intune, os aplicativos implantados ficam disponíveis somente para o usuário que registrou o dispositivo originalmente. Nenhum outro usuário poderá usar o aplicativo.
+> Para dispositivos registrados no Intune, os aplicativos implantados ficam disponíveis somente para o usuário que registrou o dispositivo originalmente. Nenhum outro usuário pode acessar o aplicativo.
 
 ## <a name="monitor-windows-store-for-business-apps"></a>Monitorar aplicativos da Windows Store para Empresas
 
-No espaço de trabalho **Biblioteca de Software**, expanda **Gerenciamento de Aplicativos** e escolha **Informações de Licença para Aplicativos da Loja**.
+No espaço de trabalho **Biblioteca de Software**, expanda **Gerenciamento de Aplicativos** e clique em **Informações sobre Licença para Aplicativos da Loja**.
 
-Para cada aplicativo da loja que você gerenciar, é possível exibir informações sobre o aplicativo, incluindo nome, plataforma, número de licenças do aplicativo que você tem e número de licenças disponíveis.
-
-
-
-<!--HONumber=Feb17_HO3-->
-
+Para cada aplicativo da loja que gerencia, você pode ver as informações sobre o aplicativo, incluindo seu nome, a plataforma, quantas licenças do aplicativo que você possui e o número de licenças que estão disponíveis.
 

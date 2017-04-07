@@ -2,7 +2,7 @@
 title: "Gerenciar sequências de tarefas para automatizar tarefas | Microsoft Docs"
 description: "É possível criar, editar, implantar, importar e exportar as sequências de tarefas para gerenciá-las em seu ambiente do System Center Configuration Manager."
 ms.custom: na
-ms.date: 10/06/2016
+ms.date: 03/24/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
@@ -16,8 +16,9 @@ author: Dougeby
 ms.author: dougeby
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: d04d28bbd5116a841c0872cf3f9ca18783dddc78
-ms.openlocfilehash: 417b31fa1feb6d0f674f14ef9e5c7cebd7013916
+ms.sourcegitcommit: dab5da5a4b5dfb3606a8a6bd0c70a0b21923fff9
+ms.openlocfilehash: 113fa73bf0bd1b3b8a4754eb1e96549c520d7995
+ms.lasthandoff: 03/27/2017
 
 
 ---
@@ -29,7 +30,7 @@ Use as sequências de tarefas para automatizar etapas no seu ambiente do System 
 
  Use as seções a seguir para gerenciar as sequências de tarefas.
 
-##  <a name="a-namebkmkcreatetasksequencea-create-task-sequences"></a><a name="BKMK_CreateTaskSequence"></a> Criar sequências de tarefas  
+##  <a name="BKMK_CreateTaskSequence"></a> Criar sequências de tarefas  
  Crie sequências de tarefas usando o Assistente para Criar Sequência de Tarefas. Este assistente pode criar os seguintes tipos de sequências de tarefas:  
 
 |Tipo de sequência de tarefas|Mais informações|  
@@ -41,7 +42,13 @@ Use as sequências de tarefas para automatizar etapas no seu ambiente do System 
 |[Sequência de tarefas para gerenciar discos rígidos virtuais](use-a-task-sequence-to-manage-virtual-hard-disks.md)|Esse tipo de sequência de tarefas contém as etapas para criar um VHD, que inclui instalar um sistema operacional e aplicativos, que podem ser publicados no System Center VMM (Virtual Machine Manager) por meio do console do Configuration Manager.|  
 |[Sequência de tarefas personalizada](create-a-custom-task-sequence.md)|Esse tipo de sequência de tarefas não adiciona etapas à sequência de tarefas. É necessário editar a sequência de tarefas e adicionar etapas a ela após sua criação.|  
 
-##  <a name="a-namebkmkmodifytasksequencea-edit-a-task-sequence"></a><a name="BKMK_ModifyTaskSequence"></a> Editar uma sequência de tarefas  
+## <a name="return-to-previous-page-when-a-task-sequence-fails"></a>Retornar à página anterior quando uma sequência de tarefas falhar
+A partir do Configuration Manager versão 1702, você pode retornar à página anterior ao executar uma sequência de tarefas e ocorrer uma falha. Antes dessa versão, era necessário reiniciar a sequência de tarefas ao ocorrer uma falha. Por exemplo, você pode usar o botão **Anterior** nos seguintes cenários:
+
+- Quando um computador é iniciado no Windows PE, a caixa de diálogo de inicialização da sequência de tarefas pode ser exibida antes da sequência estar disponível. Ao clicar em Avançar nesse cenário, a página final da sequência de tarefas exibe uma mensagem informando que não há sequências de tarefas disponíveis. Agora, você pode clicar em **Anterior** para pesquisar novamente por sequências de tarefas disponíveis. Você pode repetir esse processo até que a sequência de tarefas esteja disponível.
+- Quando você executa uma sequência de tarefas, porém pacotes dependentes de conteúdo ainda não estão disponíveis nos pontos de distribuição, a sequência de tarefas falhará. Agora, você poderá distribuir o conteúdo ausente (se ainda não tiver sido distribuído) ou aguardar o conteúdo estar disponível nos pontos de distribuição e, em seguida, clicar em **Anterior** para que a pesquisa de sequência de tarefas pesquise novamente o conteúdo.
+
+##  <a name="BKMK_ModifyTaskSequence"></a> Editar uma sequência de tarefas  
  Você pode modificar uma sequência de tarefas adicionando ou removendo etapas de sequência de tarefas e grupos de sequência de tarefas, ou alterando a ordem das etapas. Use o procedimento a seguir para modificar uma sequência de tarefas existente.  
 
 > [!IMPORTANT]  
@@ -71,7 +78,53 @@ Use as sequências de tarefas para automatizar etapas no seu ambiente do System 
 
  Para obter uma lista das etapas de sequência de tarefas disponíveis, consulte [Task sequence steps (Etapas da sequência de tarefas)](../understand/task-sequence-steps.md).  
 
-##  <a name="a-namebkmkdistributetsa-distribute-content-referenced-by-a-task-sequence"></a><a name="BKMK_DistributeTS"></a> Distribuir o conteúdo referenciado por uma sequência de tarefas  
+## <a name="configure-high-impact-task-sequence-settings"></a>Definir configurações da sequência de tarefas de alto impacto
+A partir do Configuration Manager versão 1702, você pode definir uma sequência de tarefas como alto impacto e personalizar as mensagens recebidas pelos usuários quando eles executam a sequência de tarefas.
+
+### <a name="set-a-task-sequence-as-a-high-impact-task-sequence"></a>Definir uma sequência de tarefas como uma sequência de tarefas de alto impacto
+Use o procedimento a seguir para definir uma sequência de tarefas como de alto impacto.
+> [!NOTE]
+> Qualquer sequência de tarefas que atender a determinadas condições será automaticamente definida como de alto impacto. Para obter detalhes, consulte [Gerenciar implantações de alto risco](http://docs.microsoft.com/sccm/protect/understand/settings-to-manage-high-risk-deployments).
+
+1. No console do Configuration Manager, acesse **Biblioteca de Software** > **Sistemas Operacionais** > **Sequências de Tarefas**.
+2. Selecione a sequência de tarefas a ser editada e clique em **Propriedades**.
+3. Na guia **Notificação do Usuário**, selecione **Essa é uma sequência de tarefas de alto impacto**.
+
+### <a name="create-a-custom-notification-for-high-risk-deployments"></a>Criar uma notificação personalizada para implantações de alto risco
+Use o procedimento a seguir para criar uma notificação personalizada para implantações de alto impacto.
+1. No console do Configuration Manager, acesse **Biblioteca de Software** > **Sistemas Operacionais** > **Sequências de Tarefas**.
+2. Selecione a sequência de tarefas a ser editada e clique em **Propriedades**.
+3. Na guia **Notificação do Usuário**, selecione **Usar texto personalizado**.
+>  [!NOTE]
+>  É possível definir o texto de notificação do usuário apenas quando **Essa é uma sequência de tarefas de alto impacto** está selecionado.
+
+4. Defina as seguintes configurações (máximo de 255 caracteres para cada caixa de texto):
+
+  **Texto do título da notificação do usuário**: especifica o texto azul exibido na notificação do usuário do Centro de Software. Por exemplo, na notificação do usuário padrão, esta seção contém algo como "Confirmar que você deseja atualizar o sistema operacional neste computador".
+
+  **Texto da mensagem da notificação do usuário**: há três caixas de texto que fornecem o corpo da notificação personalizada. Todas as caixas de texto exigem que você adicione texto.
+  - 1º de caixa de texto: especifica o corpo do texto principal, geralmente contendo instruções para o usuário. Por exemplo, na notificação de usuário padrão, esta seção contém algo como "Atualizar o sistema operacional levará tempo e o computador poderá ser reiniciado várias vezes".
+  - 2ª caixa de texto: especifica o texto em negrito abaixo do corpo do texto principal. Por exemplo, na notificação de usuário padrão, esta seção contém algo como “Essa atualização in-loco instala o novo sistema operacional e migra automaticamente seus aplicativos, dados e configurações”.
+  - 3ª caixa de texto: especifica a última linha de texto sob o texto em negrito. Por exemplo, na notificação do usuário padrão, essa seção contém algo como “Clique em Instalar para começar. Caso contrário, clique em Cancelar”.   
+
+  Digamos que você defina a seguinte notificação personalizada nas propriedades.
+
+    ![Notificação personalizado para uma sequência de tarefas](..\media\user-notification.png)
+
+    A mensagem de notificação a seguir será exibida quando o usuário final abrir a instalação do Centro de Software.
+
+    ![Notificação personalizado para uma sequência de tarefas](..\media\user-notification-enduser.png)
+
+### <a name="configure-software-center-properties"></a>Configurar as propriedades do Centro de Software
+Use o procedimento a seguir para configurar os detalhes da sequência de tarefas exibida no Centro de Software. Esses detalhes são apenas para fins informativos.  
+1. No console do Configuration Manager, acesse **Biblioteca de Software** > **Sistemas Operacionais** > **Sequências de Tarefas**.
+2. Selecione a sequência de tarefas a ser editada e clique em **Propriedades**.
+3. Na guia **Geral**, as seguintes configurações do Centro de Software estão disponíveis:
+  - **Reinicialização Necessária**: permite que o usuário saiba se uma reinicialização é necessária durante a instalação.
+  - **Tamanho do download (MB)**: especifica quantos megabytes são exibidos no Centro de Software para a sequência de tarefas.  
+  - **Tempo de execução estimado (minutos)**: especifica o tempo de execução estimado em minutos exibido no Centro de Software para a sequência de tarefas.
+
+##  <a name="BKMK_DistributeTS"></a> Distribuir o conteúdo referenciado por uma sequência de tarefas  
  Para os clientes executarem uma sequência de tarefas que faz referência ao conteúdo, distribua esse conteúdo para pontos de distribuição. A qualquer momento você pode selecionar uma sequência de tarefas e distribuir seu conteúdo para criar uma nova lista de pacotes de referência para distribuição. Se você fizer alterações à sequência de tarefas com o conteúdo atualizado, será necessário redistribuí-lo antes de disponibilizá-lo para os clientes. Use o procedimento a seguir para distribuir o conteúdo que é referenciado por uma sequência de tarefas.  
 
 #### <a name="to-distribute-referenced-content-to-distribution-points"></a>Para distribuir o conteúdo referenciado para pontos de distribuição  
@@ -97,7 +150,7 @@ Use as sequências de tarefas para automatizar etapas no seu ambiente do System 
 
  É possível pré-configurar o conteúdo referenciado na sequência de tarefas. O Configuration Manager cria um arquivo de conteúdo compactado e pré-configurado que contém os arquivos, as dependências associadas e os metadados associados para o conteúdo selecionado. Você pode importar manualmente o conteúdo em um servidor de site, site secundário ou ponto de distribuição. Para obter mais informações sobre como pré-configurar arquivos de conteúdo, consulte [Prestage content (Pré-configurar conteúdo)](../../core/servers/deploy/configure/deploy-and-manage-content.md#a-namebkmkprestagea-use-prestaged-content).  
 
-##  <a name="a-namebkmkdeploytsa-deploy-a-task-sequence"></a><a name="BKMK_DeployTS"></a> Implantar uma sequência de tarefas  
+##  <a name="BKMK_DeployTS"></a> Implantar uma sequência de tarefas  
  Use o procedimento a seguir para implantar uma sequência de tarefas para computadores em uma coleção.  
 
 > [!WARNING]  
@@ -230,7 +283,7 @@ Use as sequências de tarefas para automatizar etapas no seu ambiente do System 
 
 11. Conclua o assistente.  
 
-##  <a name="a-namebkmkexportimporta-export-and-import-task-sequences"></a><a name="BKMK_ExportImport"></a> Exportar e importar sequências de tarefas  
+##  <a name="BKMK_ExportImport"></a> Exportar e importar sequências de tarefas  
  Você pode exportar e importar sequências de tarefas com ou sem seus objetos relacionados, como uma imagem do sistema operacional, uma imagem de inicialização, um pacote do agente cliente, um pacote de driver e aplicativos que têm dependências.  
 
  Considere o seguinte ao exportar e importar sequências de tarefas.  
@@ -297,7 +350,7 @@ Use as sequências de tarefas para automatizar etapas no seu ambiente do System 
 
  Após importar a sequência de tarefas, edite-a para especificar senhas que estavam na sequência de tarefas original. Por motivos de segurança, as senhas não são exportadas.  
 
-##  <a name="a-namebkmkcreatetsvariablesa-create-task-sequence-variables-for-computers-and-collections"></a><a name="BKMK_CreateTSVariables"></a> Criar variáveis de sequência de tarefas em computadores e coleções  
+##  <a name="BKMK_CreateTSVariables"></a> Criar variáveis de sequência de tarefas em computadores e coleções  
  Você pode definir variáveis de sequência de tarefas personalizadas para computadores e coleções. As variáveis definidas para um computador são chamadas de variáveis de sequência de tarefas por computador. As variáveis definidas para uma coleção são chamadas de variáveis de sequência de tarefas por coleção. Se houver um conflito, as variáveis por computador prevalecerão sobre as variáveis por coleção. Isso significa que as variáveis de sequência de tarefas associadas a um computador específico possuem prioridade sobre variáveis atribuídas à coleção que contém o computador.  
 
  Por exemplo, se a coleção ABC tiver uma variável atribuída a ela e o computador XYZ, que é um membro da coleção ABC, tiver uma variável com o mesmo nome atribuída a ele, a variável atribuída ao computador XYZ terá prioridade sobre a variável atribuída à coleção ABC.  
@@ -342,7 +395,7 @@ Use as sequências de tarefas para automatizar etapas no seu ambiente do System 
 
 6.  Depois de adicionar todas as variáveis à coleção, clique em **OK**.  
 
-##  <a name="a-namebkmkadditionalactionstsa-additional-actions-to-manage-task-sequences"></a><a name="BKMK_AdditionalActionsTS"></a> Ações adicionais para gerenciar sequências de tarefas  
+##  <a name="BKMK_AdditionalActionsTS"></a> Ações adicionais para gerenciar sequências de tarefas  
  Você pode gerenciar sequências de tarefas usando ações adicionais ao selecionar a sequência de tarefas, usando o procedimento a seguir.  
 
 #### <a name="to-select-a-task-sequence-to-manage"></a>Para selecionar uma sequência de tarefas a ser gerenciada  
@@ -366,9 +419,4 @@ Use as sequências de tarefas para automatizar etapas no seu ambiente do System 
 
 ## <a name="next-steps"></a>Próximas etapas
 [Cenários para implantar sistemas operacionais corporativos](scenarios-to-deploy-enterprise-operating-systems.md)
-
-
-
-<!--HONumber=Dec16_HO3-->
-
 

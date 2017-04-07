@@ -17,9 +17,9 @@ ms.author: andredm
 manager: angrobe
 robots: noindex
 translationtype: Human Translation
-ms.sourcegitcommit: 2c723fe7137a95df271c3612c88805efd8fb9a77
-ms.openlocfilehash: 58375a7f23109bbb2e304c17312f3438aa683cb2
-ms.lasthandoff: 03/06/2017
+ms.sourcegitcommit: dab5da5a4b5dfb3606a8a6bd0c70a0b21923fff9
+ms.openlocfilehash: 6832bb6c6a26be76720938154942a5eb99022785
+ms.lasthandoff: 03/27/2017
 
 ---
 
@@ -48,17 +48,12 @@ ms.lasthandoff: 03/06/2017
     * **Crítico** – dispositivos que não cumprem essa regra de conformidade relatam uma severidade de falha de **Crítico** em relatórios do Configuration Manager.
     * **Crítico com evento** – dispositivos que não cumprem essa regra de conformidade relatam uma severidade de falha de **Crítico com evento** em relatórios do Configuration Manager. Este nível de severidade também é registrado como um evento do Windows no log de eventos do aplicativo.|      
 
-5.  Na página **Plataformas com Suporte** , escolha as plataformas de dispositivo nas quais esta política de conformidade será avaliada ou clique em **Selecionar todas** para escolher todas as plataformas de dispositivo.
+5.  Na página **Plataformas com Suporte** , escolha as plataformas de dispositivo nas quais esta política de conformidade será avaliada ou clique em **Selecionar todas** para escolher todas as plataformas de dispositivo. As plataformas com suporte são: Windows 7, 8.1, 10, Windows Server 2008 R2, 2012, 2012 R2 e 2016.
 
 6.  Na página **Regras** , defina uma ou mais regras que definem a configuração que os dispositivos devem ter para que eles sejam avaliados como compatíveis. Quando você cria uma política de conformidade, algumas regras são habilitadas por padrão, mas você pode editar ou excluí-las. Para obter uma lista completa de todas as regras, consulte a seção **Regras de política de conformidade** mais adiante neste tópico.
 
 > [!NOTE]  
->  Em PCs com Windows, o sistema operacional Windows versão 8.1 será relatado como 6.3 em vez de 8.1.    Se a regra de versão do sistema operacional é definida como Windows 8.1 para Windows, em seguida, o dispositivo será relatado como não compatível mesmo que o dispositivo tenha Windows OS 8.1. Verifique se você está definindo a versão **relatada** correta do Windows para as regras de sistema operacional mínima e máxima. O número de versão deve corresponder à versão retornada pelo comando winver. Windows Phones não têm esse problema, a versão será relatada como 8.1 conforme o esperado.  
->   
->  Em PCs com o sistema operacional Windows 10, a versão deve ser definida como “10.0” + o número de build do sistema operacional retornado pelo comando winver. Por exemplo, poderia ser algo como 10.0.10586.  
-> O Windows 10 Mobile não apresenta esse problema.  
->   
->  ![CA&#95;Win10OSversion](media/CA_Win10OSversion.png)  
+>  Em PCs com Windows, o sistema operacional Windows versão 8.1 será relatado como 6.3 em vez de 8.1.    Se a regra de versão do sistema operacional é definida como Windows 8.1 para Windows, em seguida, o dispositivo será relatado como não compatível mesmo que o dispositivo tenha Windows OS 8.1. Verifique se você está definindo a versão **relatada** correta do Windows para as regras de sistema operacional mínima e máxima. O número de versão deve corresponder à versão retornada pelo comando winver. Windows Phones não têm esse problema, a versão será relatada como 8.1 conforme o esperado. Em PCs com o sistema operacional Windows 10, a versão deve ser definida como “10.0” + o número de build do sistema operacional retornado pelo comando **winver**.
 
 7.  Na página **Resumo** do assistente, examine as configurações feitas e conclua o assistente.
 
@@ -100,6 +95,36 @@ ms.lasthandoff: 03/06/2017
 
     -   **Desconhecido**: exibe uma lista de todos os usuários e dispositivos que não relataram a conformidade para a implantação da política selecionada junto com o status atual do cliente dos dispositivos.
 
+### <a name="to-monitor-the-individual-compliance-status"></a>Para monitorar o status individual de conformidade
+
+Você também pode ver o status individual do dispositivo:
+
+1.  No console do Configuration Manager, clique no espaço de trabalho **Ativos e conformidade**.
+
+2.  Clique em **Dispositivos**.
+3.  Clique com botão direito em uma das colunas para habilitar mais colunas.
+
+Você pode adicionar as seguintes colunas:
+
+- **ID do dispositivo do Azure Active Directory:** o identificador exclusivo para o dispositivo no AAD.
+
+- **Detalhes de Erro de Conformidade:** os detalhes das mensagens de erro quando o processo de ponta a ponta dá errado. Se esta coluna estiver em branco, isso significará que nenhum erro foi encontrado e o status de conformidade foi registrado com êxito.
+
+- **Local do Erro de Conformidade:** fornece mais detalhes sobre onde ocorreu a falha de compatibilidade. Se esta coluna estiver em branco, isso significará que nenhum erro foi encontrado e o status de conformidade foi registrado com êxito. Exemplos de onde o processo de conformidade pode falhar: 
+    - Cliente do ConfigMgr
+    - Ponto de gerenciamento
+    - Intune
+    - Azure Active Directory
+<br></br>
+- **Tempo de Avaliação de Conformidade:** última vez em que foi verificada a conformidade.
+
+- **Hora da Definição da Conformidade:** última vez que a conformidade foi atualizada para o Azure Active Directory.
+
+- **Conformidade de Acesso Condicional:** se o computador está em conformidade com políticas de acesso condicional ou não.
+
+> [!IMPORTANT]
+> Essas colunas não são exibidas por padrão.
+
 ### <a name="to-view-intune-compliance-policies-charts"></a>Para exibir gráficos de políticas de conformidade do Intune
 1. Começando da versão 1610 do Configuration Manager, no console do Configuration Manager, você pode clicar em **Monitoramento**.
 2. No espaço de trabalho **Monitoramento**, acesse **Visão Geral** > **Configurações de Conformidade** >  **Políticas de Conformidade**.
@@ -124,7 +149,7 @@ ms.lasthandoff: 03/06/2017
     * iOS 6+
     * Android 4.0+
     * Samsung KNOX Standard 4.0+
-* **Exigir uma senha para desbloquear um dispositivo ocioso (atualização&1602;):** exige que os usuários insiram uma senha para acessar o dispositivo que está bloqueado.
+* **Exigir uma senha para desbloquear um dispositivo ocioso (atualização 1602):** exige que os usuários insiram uma senha para acessar o dispositivo que está bloqueado.
 
   **Com suporte em:**
   * Windows Phone 8+
@@ -132,7 +157,7 @@ ms.lasthandoff: 03/06/2017
   * Android 4.0+
   * Samsung KNOX Standard 4.0+
 
-* **Minutos de inatividade antes que a senha seja exigida (atualização&1602;):** especifica o tempo ocioso antes que o usuário precise inserir novamente sua senha. Defina o valor como uma das opções disponíveis: **1 minuto**, **5 minutos**, **15 minutos**, **30 minutos**, **1 hora**.
+* **Minutos de inatividade antes que a senha seja exigida (atualização 1602):** especifica o tempo ocioso antes que o usuário precise inserir novamente sua senha. Defina o valor como uma das opções disponíveis: **1 minuto**, **5 minutos**, **15 minutos**, **30 minutos**, **1 hora**.
 
   Essa regra deve ser usada com **Exigir uma senha para desbloquear um dispositivo ocioso**. O valor definido aqui determina quando o dispositivo é considerado ocioso e é bloqueado, e  **Exigir uma senha para desbloquear um dispositivo ocioso** definida como **Verdadeira**exigirá que o usuário insira uma senha para acessar o dispositivo bloqueado.
 
@@ -222,4 +247,29 @@ ms.lasthandoff: 03/06/2017
   Para saber mais sobre o funcionamento do serviço HAS, confira [CSP do Atestado de Integridade](https://msdn.microsoft.com/library/dn934876.aspx).
   **Com suporte em:**
   * Windows 10 e Windows 10 Mobile
+
+- **Aplicativos que não podem ser instalados no dispositivo:** se os usuários instalarem um aplicativo da lista de aplicativos fora de conformidade do administrador, eles serão bloqueados ao tentar acessar o email corporativo e outros recursos corporativos que deem suporte ao acesso condicional. Essa regra exige o nome do aplicativo e a ID do aplicativo ao adicionar um aplicativo à lista fora de conformidade definida pelo administrador. O editor do aplicativo também pode ser adicionado, mas não é obrigatório.
+    - **Com suporte em:**
+      * iOS 6+
+      * Android 4.0+
+      * Samsung KNOX Standard 4.0+
+
+#### <a name="whats-app-id"></a>O que é a ID do Aplicativo?
+
+A ID do Aplicativo é um identificador que identifica exclusivamente o aplicativo dentro dos serviços de aplicativos da Apple e do Google. Por exemplo, com.contoso.myapp.
+
+#### <a name="find-app-ids"></a>Localizar IDs do Aplicativo
+
+- **Android**
+    - Você pode localizar a ID do Aplicativo na URL da Google Play Store usada para criar o aplicativo:
+        - ID do Aplicativo de Exemplo: ***…?id=com.companyname.appname&hl=en***
+
+- **iOS**
+    - No iTunes Store, a URL localiza **ID#**, por exemplo: ***/id875948587?mt=8***
+    - Em um navegador da Web, navegue até a URL a seguir, substituindo o número pelo número de ID que você acabou de encontrar: 
+        - https://itunes.apple.com/lookup?id=875948587
+    - Baixe e abra o arquivo de texto
+    - Procure o texto "*bundleid*"
+    - ID do Aplicativo de Exemplo: "*bundleId*":"*com.companyname.appname*" 
+
 

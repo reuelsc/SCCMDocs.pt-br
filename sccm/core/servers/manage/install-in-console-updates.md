@@ -16,9 +16,9 @@ author: Brenduns
 ms.author: brenduns
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: f9097014c7e988ec8e139e518355c4efb19172b3
-ms.openlocfilehash: eafa95922485066632a5da522e6c3de69b45050f
-ms.lasthandoff: 03/04/2017
+ms.sourcegitcommit: dab5da5a4b5dfb3606a8a6bd0c70a0b21923fff9
+ms.openlocfilehash: 3b50ada9f63e41d1b6f01009c141b8f361f5180e
+ms.lasthandoff: 03/27/2017
 
 
 ---
@@ -33,14 +33,14 @@ Somente atualizações que se aplicam à sua infraestrutura e versão são baixa
 
 -   No **modo online**, o ponto de conexão de serviço se conecta automaticamente ao serviço de nuvem da Microsoft e baixa as atualizações aplicáveis.  
 
-     Por padrão, o Configuration Manager verifica se há novas atualizações a cada 24 horas. Você também pode verificar imediatamente se há atualizações escolhendo **Verificar Atualizações** no nó **Administração** > **Serviços de Nuvem** > **Atualizações e Manutenção** do console do Configuration Manager.  
+     Por padrão, o Configuration Manager verifica se há novas atualizações a cada 24 horas. Você também pode verificar imediatamente se há atualizações escolhendo **Verificar Atualizações** no nó **Administração** > **Atualizações e Manutenção** do console do Configuration Manager. (Antes da versão 1702, este nó ficava em **Administração** > **Serviços de Nuvem**.)
 
 -   No **modo offline**, o ponto de conexão de serviço não se conecta ao serviço de nuvem da Microsoft. Você deve manualmente [usar a Ferramenta de Conexão de Serviço para o System Center Configuration Manager](../../../core/servers/manage/use-the-service-connection-tool.md) para baixar e importar as atualizações disponíveis.  
 
 > [!NOTE]  
 >  Além das atualizações que você obtém ao realizar a sincronização com o serviço de nuvem da Microsoft, correções fora de banda instaladas usando a [Ferramenta de Registro de Atualização](http://technet.microsoft.com/library/mt691544.aspx) também são importadas para seu console, em que você pode selecioná-las para instalação.  
 
-Após a sincronização das atualizações, você pode exibi-las no console do Configuration Manager indo até o nó **Administração** > **Serviços de Nuvem** > **Atualizações e Manutenção**:  
+Após a sincronização das atualizações, você pode exibi-las no console do Configuration Manager indo até o nó **Administração** > **Atualizações e Manutenção**:  
 
 -   As atualizações que você não instalou são exibidas como **Disponíveis**.
 
@@ -98,7 +98,8 @@ Examine a lista de verificação de atualização aplicável de ações a serem 
 - Atualizar para 1606: veja [Lista de verificação para instalar a atualização 1606](../../../core/servers/manage/checklist-for-installing-update-1606.md).  
 
 - Atualizar para a 1610 da 1606: veja [Lista de verificação para instalar a atualização 1610](../../../core/servers/manage/checklist-for-installing-update-1610.md).  
-<!--- Update to 1702 from either 1606 or 1610: See [Checklist for installing update 1702](../../../core/servers/manage/checklist-for-installing-update-1702.md). -->  
+
+- Atualizar para a 1702 da 1606 ou da 1610: consulte [Lista de verificação para instalar a atualização 1702](../../../core/servers/manage/checklist-for-installing-update-1702.md).
 
 ###  <a name="bkmk_step2"></a> Etapa 2: Testar a atualização do banco de dados antes de instalar uma atualização  
 As informações nesta etapa se aplicam somente quando você estiver instalando uma *atualização* para um site do System Center Configuration Manager. Se você estiver *atualizando* um System Center 2012 Configuration Manager para o System Center Configuration Manager, consulte [Testar a atualização de banco de dados do site](/sccm/core/servers/deploy/install/upgrade-to-configuration-manager#a-namebkmktesta-test-the-site-database-upgrade).
@@ -146,7 +147,7 @@ Posteriormente, quando você instalar a atualização, terá a opção de config
 
 #### <a name="to-run-the-prerequisite-checker-before-installing-an-update"></a>Para executar o verificador de pré-requisitos antes de instalar uma atualização  
 
-1.  Abra o console do Configuration Manager, vá até **Administração** > **Serviços de Nuvem** > **Atualizações e Manutenção**.  
+1.  Abra o console do Configuration Manager, vá até **Administração** > **Atualizações e Manutenção**.   
 
 2.  Clique com botão direito no pacote de atualizações para o qual você deseja executar a verificação de pré-requisitos.  
 
@@ -203,7 +204,7 @@ Como parte da instalação da atualização, o Configuration Manager:
 **3. Monitorar o andamento de atualizações durante a instalação**  
 Use o seguinte para monitorar o progresso:  
 
--   No console do Configuration Manager, vá até o nó **Administração** > **Serviços de Nuvem** > **Atualizações e Manutenção**. Esse nó mostra o status da instalação para todos os pacotes de atualização.
+-   Abra o console do Configuration Manager: nó **Administração** > **Atualizações e Manutenção**. Esse nó mostra o status da instalação para todos os pacotes de atualização.
 
 
 -   No console do Configuration Manager, vá até o nó **Monitoramento** > **Visão Geral** > **Status de Serviço e Atualizações**. Esse nó mostra o status de instalação somente do pacote de atualização que está sendo instalado no momento.  
@@ -241,7 +242,7 @@ Recomendamos a instalação da atualização imediatamente.
 Após a conclusão da atualização do console, verifique se a versão do console e do site está correta. Vá para **Sobre o System Center Configuration Manager** no canto superior esquerdo do console.  
 
 ###  <a name="bkmk_toptier"></a> Para iniciar a instalação da atualização no site de nível superior  
-No site de nível superior de sua hierarquia, no console do Configuration Manager, acesse **Administração** > **Serviços de Nuvem** > **Atualizações e Manutenção**, selecione uma atualização **Disponível** e clique em **Instalar Pacote de Atualização**.  
+No site de nível superior de sua hierarquia, no console do Configuration Manager, acesse **Administração** > **Atualizações e Manutenção**, selecione uma atualização **Disponível** e clique em **Instalar Pacote de Atualização**.  
 
 ###  <a name="bkmk_secondary"></a> Para iniciar a instalação da atualização em um site secundário  
 Após a atualização do site primário pai de um site secundário, você poderá atualizar o site secundário de dentro do console do Configuration Manager.  Para fazer isso, use o **Assistente de Atualização de Site Secundário**.  
@@ -268,7 +269,7 @@ Você pode repetir a instalação de uma atualização para toda a hierarquia qu
     -   Falha na instalação
     -   Falha na replicação do conteúdo para o site   
 
-    Acesse **Administração** > **Serviços de Nuvem** > **Atualizações e Manutenção**, selecione a atualização e selecione uma das opções a seguir:  
+    Acesse **Administração** > **Atualizações e Manutenção**, selecione a atualização e selecione uma das opções a seguir:  
 
     -   **Repetir** – quando você executar **Repetir** deste nó, a instalação da atualização começará novamente e ignorará automaticamente os avisos de pré-requisito. Ela também replicará novamente o conteúdo para a atualização se a replicação tiver falhado anteriormente.
     - **Ignorar avisos de pré-requisito** – a partir da versão 1606, se a instalação da atualização for interrompida devido a um aviso, você poderá escolher **Ignorar avisos de pré-requisito**. Essa ação permite a continuação da instalação da atualização (após alguns minutos) e usa a opção para ignorar os avisos de pré-requisito.   
@@ -315,7 +316,7 @@ Para obter mais informações, consulte [Monitorar a infraestrutura de hierarqui
 ##  <a name="bkmk_options"></a> Habilitar recursos opcionais de atualizações  
 Ao instalar uma atualização que inclui um ou mais recursos opcionais, você terá a oportunidade de habilitar esses recursos em sua hierarquia.  Você pode fazer isso no momento da instalação da atualização ou retornar ao console posteriormente e habilitar os recursos opcionais.
 
-Para exibir os recursos disponíveis e seus status, no console, navegue até **Administração** > **Serviços de Nuvem** > **Atualizações e Manutenção** > **Recursos**.
+Para exibir os recursos disponíveis e seus status, no console, navegue até **Administração** > **Atualizações e Manutenção** > **Recursos**.
 
 Quando um recurso não é opcional, ele é instalado automaticamente e não aparece no nó **Recursos**.  
 

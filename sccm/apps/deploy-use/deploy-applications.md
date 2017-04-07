@@ -17,9 +17,9 @@ author: robstackmsft
 ms.author: robstack
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: cb42b6f324dc0019c2109be4d91e0eab4dca4d70
-ms.openlocfilehash: 8c54bc455828712c7f9ea297f26c98c41848cf9c
-ms.lasthandoff: 03/08/2017
+ms.sourcegitcommit: 23b1d24e908d04b64c3bbfa518793a44e696d468
+ms.openlocfilehash: 0eaa1d13e9c273a6649f50d73fb357f04464d94c
+ms.lasthandoff: 03/29/2017
 
 
 ---
@@ -81,6 +81,7 @@ Não é possível alterar a ação de uma implantação após ela ter sido criad
 
 - **Enviar pacotes de ativação** – Se a finalidade da implantação estiver definida como **Necessária** e essa opção estiver selecionada, um pacote de ativação será enviado aos computadores antes de a implantação ser instalada. Esse pacote ativa os computadores na data limite da instalação. Para usar essa opção, os computadores e as redes devem ser configurados para Wake on LAN.
 - **Todos os clientes com uma conexão de Internet limitada para baixar conteúdo após a data limite de instalação, o que pode estar sujeito a custos adicionais** – Essa opção está disponível somente para implantações com a finalidade de **Necessária**.
+- **Fechar automaticamente todos os executáveis em execução especificados na guia de comportamento de instalação da caixa de diálogo de propriedades do tipo de implantação** - para obter mais informações sobre como configurar uma lista de arquivos executáveis que podem impedir que um aplicativo seja instalado, veja **Como verificar se há arquivos executáveis antes de instalar um aplicativo** mais adiante neste tópico.
 - **Exigir aprovação do administrador, se os usuários solicitarem este aplicativo** – Se essa opção estiver selecionada, o administrador precisará aprovar todas as solicitações do usuário para o aplicativo antes que ele possa ser instalado. Essa opção estará esmaecida quando a finalidade da implantação for **Necessária** ou quando o aplicativo for implantado em uma coleção de dispositivos.
 
     > [!NOTE]
@@ -155,6 +156,27 @@ O tempo máximo de adiamento sempre se baseia nos valores de notificação defin
 Além disso, para uma implantação de alto risco, como uma sequência de tarefas que implanta um sistema operacional, a experiência de notificação do usuário agora será mais invasiva. Em vez de uma notificação transitória na barra de tarefas, uma caixa de diálogo como a seguinte será exibida no computador cada vez que você for notificado de que uma manutenção de software crítica é necessária:
 
 ![Caixa de diálogo Software Exigido](media/client-toast-notification.png)
+
+## <a name="how-to-check-for-running-executable-files-before-installing-an-application"></a>Como verificar se há arquivos executáveis antes de instalar um aplicativo
+
+>[!Tip]
+>Apresentado com a versão 1702, esse é um recurso de pré-lançamento. Para habilitá-lo, veja [Recursos de pré-lançamento no System Center Configuration Manager](https://docs.microsoft.com/sccm/core/servers/manage/pre-release-features).
+
+Na caixa de diálogo **Propriedades** de um tipo de implantação, na guia **Comportamento de Instalação**, você pode especificar um ou mais arquivos executáveis que, se estiverem em execução, bloquearão a instalação do tipo de implantação. O usuário deve fechar o arquivo executável em execução (ou ele pode ser fechado automaticamente para implantações com a finalidade obrigatória) antes de o tipo de implantação poder ser instalado. Para configurar isso:
+
+1. Abra a caixa de diálogo **Propriedades** para qualquer tipo de implantação.
+2. Na guia **Comportamento da Instalação** da caixa de diálogo *<deployment type name>* **Propriedades**, clique em **Adicionar**.
+3. Na caixa de diálogo **Adicionar ou Editar Arquivo Executável**, digite o nome do arquivo executável que, se estiver em execução, bloqueará a instalação do aplicativo. Opcionalmente, você também pode inserir um nome amigável para o aplicativo para ajudar a identificá-lo na lista.
+4. Clique em **OK** e feche a caixa de diálogo *<deployment type name>* **Propriedades**.
+5. Em seguida, ao implantar um aplicativo na página **Configurações de implantação** do Assistente de Implantação de Software, selecione **Fechar automaticamente todos os executáveis em execução especificados na guia de comportamento de instalação da caixa de diálogo de propriedades do tipo de implantação**, em seguida, continue para implantar o aplicativo.
+
+Depois que o aplicativo alcançar os PCs do cliente, o comportamento a seguir se aplicará:
+
+- Se o aplicativo tiver sido implantado como **Disponível** e um usuário final tentar instalá-lo, será solicitado que ele feche todos os executáveis em execução especificados antes de prosseguir com a instalação.
+
+- Se o aplicativo tiver sido implantado como **Necessário** e a opção **Fechar automaticamente todos os executáveis em execução especificados na guia de comportamento de instalação da caixa de diálogo de propriedades do tipo de implantação** estiver selecionada, ele verá uma caixa de diálogo informando que os executáveis especificados serão fechados automaticamente quando o prazo da instalação for atingido. Você pode agendar essas caixas de diálogo em **Configurações do Cliente** > **Agente de Computador**. Se você não quiser que o usuário final veja essas mensagens, selecione **Ocultar no Centro de Software e todas as notificações** na guia **Experiência do Usuário** das propriedades da implantação.
+
+- Se o aplicativo tiver sido implantado como **Necessário** e a opção **Fechar automaticamente todos os executáveis em execução especificados na guia de comportamento de instalação da caixa de diálogo de propriedades do tipo de implantação** não estiver selecionada, a instalação do aplicativo falhará se um ou mais dos aplicativos especificados estiverem em execução.
 
 ## <a name="for-more-information"></a>Para obter mais informações:
 - [Configurações para gerenciar implantações de alto risco](../../protect/understand/settings-to-manage-high-risk-deployments.md)

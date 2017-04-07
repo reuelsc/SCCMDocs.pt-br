@@ -2,7 +2,7 @@
 title: "Ferramenta de Registro de Atualização | Microsoft Docs"
 description: "Descubra quando e como usar a ferramenta de registro de atualização para importar manualmente uma atualização para o console do Configuration Manager."
 ms.custom: na
-ms.date: 10/06/2016
+ms.date: 3/27/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
@@ -16,8 +16,9 @@ author: Brenduns
 ms.author: brenduns
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: 10b1010ccbf3889c58c55b87e70b354559243c90
-ms.openlocfilehash: c729212d38168acfff3f11ea41f3d52b234c70c8
+ms.sourcegitcommit: dab5da5a4b5dfb3606a8a6bd0c70a0b21923fff9
+ms.openlocfilehash: 35a4c201f73469fdfaa5bb8629e91886f7ae8751
+ms.lasthandoff: 03/27/2017
 
 
 ---
@@ -59,20 +60,15 @@ Quando for preciso instalar uma versão fora de banda e o nome do arquivo da atu
 
     -   **&lt;Produto\>-&lt;versão do produto\>-&lt;ID do artigo da KB\>-ConfigMgr.Update.exe**  
 
-    Depois que o hotfix for registrado, ele aparecerá como uma nova atualização no console em até 24 horas.  Você pode acelerar o processo usando uma das seguintes opções:  
+    Depois que o hotfix for registrado, ele aparecerá como uma nova atualização no console em até 24 horas.  Você pode acelerar o processo:
 
-    -   Com a versão 1511: no console do Configuration Manager, navegue até **Administração > Serviços de Nuvem > Atualizações e Manutenção** e escolha **Iniciar processo de descoberta de atualização imediatamente**.  Isso inicia a importação do hotfix imediatamente após a conclusão do processo de registro, tornando-o disponível no console.  
-
-    -   Com a versão 1602 e posteriores: no console do Configuration Manager, navegue para **Administração > Serviços de Nuvem > Atualizações e Manutenção** e clique em **Verificar Atualizações**  
+    - Abra o console do Configuration Manager, vá até **Administração** > **Atualizações e Manutenção** e clique em **Verificar Atualizações**. (Antes da versão 1702, Atualizações e Manutenção ficava em **Administração** > **Serviços de Nuvem**.) 
 
     A ferramenta de registro de atualização registra suas ações em um arquivo .log no computador local. O arquivo de log tem o mesmo nome do arquivo .exe do hotfix e é gravado na pasta **%SystemRoot%/Temp**.  
 
      Depois que a atualização for registrada, você poderá fechar a ferramenta de registro de atualização.  
 
-3.  Abra o console do Configuration Manager e navegue até **Administração** > **Serviços de Nuvem** > **Atualizações e Manutenção**. Os hotfixes que foram importados agora estão disponíveis para instalação. Para obter informações sobre a instalação de atualizações, consulte [Instalar atualizações no console para o System Center Configuration Manager](../../../core/servers/manage/install-in-console-updates.md)  
+3.  Abra o console do Configuration Manager e navegue até **Administração** > **Atualizações e Manutenção**. Os hotfixes que foram importados agora estão disponíveis para instalação. (Antes da versão 1702, Atualizações e Manutenção ficava em **Administração** > **Serviços de Nuvem**.)
 
-
-
-<!--HONumber=Dec16_HO3-->
-
+ Para obter informações sobre a instalação de atualizações, consulte [Instalar atualizações no console para o System Center Configuration Manager](../../../core/servers/manage/install-in-console-updates.md)  
 

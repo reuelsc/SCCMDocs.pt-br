@@ -2,7 +2,7 @@
 title: "Variáveis internas de sequência de tarefas | Microsoft Docs"
 description: "As variáveis internas da sequência de tarefas fornecem informações sobre o ambiente no qual a sequência de tarefas é executada e estão disponíveis durante toda a sequência de tarefas."
 ms.custom: na
-ms.date: 10/06/2016
+ms.date: 03/26/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
@@ -17,8 +17,9 @@ author: Dougeby
 ms.author: dougeby
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: c9fb0fa46058c773eec6ac23999357d35d9f970f
-ms.openlocfilehash: a75adebfe2bbec8f6fe5206561530a720c0bfbf1
+ms.sourcegitcommit: dab5da5a4b5dfb3606a8a6bd0c70a0b21923fff9
+ms.openlocfilehash: a3e6cca8d58055cc2d54aff3cb70a276fb40e829
+ms.lasthandoff: 03/27/2017
 
 
 ---
@@ -51,7 +52,7 @@ ms.openlocfilehash: a75adebfe2bbec8f6fe5206561530a720c0bfbf1
 |_SMSTSMachineName|Armazena e especifica o nome do computador. Armazena o nome do computador que usará a sequência de tarefas para registrar todas as mensagens de status. Para alterar o nome do computador no novo sistema operacional, use a variável **OSDComputerName** .<br /><br /> Exemplo:<br /><br /> **ABC**|  
 |_SMSTSMDataPath|Especifica o caminho definido pela variável SMSTSLocalDataDrive. Quando você define SMSTSLocalDataDrive antes do início da sequência de tarefas, como ao definir uma variável de coleta, o Configuration Manager define a variável _SMSTSMDataPath depois que a sequência de tarefas é iniciada.|  
 |_SMSTSMediaType|Especifica o tipo de mídia que é usada para iniciar a instalação. Exemplos de tipos de mídia são mídia de inicialização, mídia cheia, PXE e mídia pré-configurada.|  
-|_SMSTSMP|Armazena o nome ou endereço IP de um ponto de gerenciamento do Configuration Manager.|  
+|_SMSTSMP|Armazena a URL ou endereço IP de um ponto de gerenciamento do Configuration Manager.|  
 |_SMSTSMPPort|Armazena o número da porta do ponto de gerenciamento de um ponto de gerenciamento do Configuration Manager.<br /><br /> Exemplo:<br /><br /> **80**|  
 |_SMSTSOrgName|Armazena o nome do título de identidade visual exibido na caixa de diálogo de interface de usuário da sequência de tarefas em andamento.<br /><br /> Exemplo:<br /><br /> **Empresa XYZ**|  
 |_SMSTSOSUpgradeActionReturnCode|Armazena o valor de código de saída retornado da Instalação para indicar êxito ou falha.  Essa variável é definida durante a etapa da sequência de tarefas Atualização do sistema operacional. Isso é útil com a opção de linha de comando /Compat da Instalação do Windows 10.<br /><br /> Exemplo:<br /><br /> Após a conclusão de /Compat, você pode executar ações nas etapas posteriores, dependendo do código de saída de falha ou êxito. Em caso de êxito, é possível iniciar a atualização. Ou você pode definir um marcador no ambiente (por exemplo, adicionar um arquivo ou definir uma chave do Registro), que pode ser usado para criar uma coleção de computadores que estão prontos para atualização ou que exigem uma ação antes de ser atualizados.|  
@@ -79,6 +80,7 @@ ms.openlocfilehash: a75adebfe2bbec8f6fe5206561530a720c0bfbf1
 |TSErrorOnWarning|Use essa variável para especificar se o mecanismo de sequência de tarefas considera um aviso detectado como um erro durante a etapa de sequência de tarefas de instalação do aplicativo. A sequência de tarefas define a variável _TSAppInstallStatus de acordo com o **Aviso** quando um ou mais aplicativos, ou uma dependência necessária, não foram instalados pois um requisito não foi atendido. Quando você define a variável TSErrorOnWarning como **True** e a variável _TSAppInstallStatus é definida como Aviso, ele será tratado como um erro. Um valor de **False** é o comportamento padrão.|  
 |SMSTSLanguageFolder|Use essa variável para alterar o idioma de exibição de uma imagem de inicialização neutra de idioma.|  
 |SMSTSLocalDataDrive|Especifica onde os arquivos temporários são armazenados no computador de destino enquanto a sequência de tarefas está em execução.<br /><br /> Essa variável deve ser definida antes do início da sequência de tarefas, como definindo uma variável de coleta. Depois de iniciada a sequência de tarefas, o Configuration Manager define a variável _SMSTSMDataPath depois que a sequência de tarefas é iniciada.|  
+|SMSTSMP|Use esta variável para especificar a URL ou endereço IP de um ponto de gerenciamento do Configuration Manager.|  
 |SMSTSMPListRequestTimeout|Use essa variável para especificar quantos milissegundos uma sequência de tarefas espera antes de tentar instalar novamente uma atualização de software ou aplicativo após uma falha ao recuperar a lista de ponto de gerenciamento dos serviços de localização. Por padrão, a sequência de tarefas espera 60.000 milissegundos (60 segundos) antes de tentar novamente a etapa e repetições até três vezes. Essa variável é aplicável somente às etapas da sequência de tarefas Instalar Aplicativo e Instalar Atualizações de Software.|  
 |SMSTSMPListRequestTimeoutEnabled|Use essa variável para permitir que solicitações MPList repetidas atualizem o cliente se este não estiver na intranet. <br />Por padrão, essa variável é definida como True. Quando os clientes estão na Internet, você pode definir essa variável como False para evitar atrasos desnecessários. Essa variável é aplicável somente às etapas da sequência de tarefas Instalar Aplicativo e Instalar Atualizações de Software.|  
 |SMSTSPeerDownload|Use essa variável para habilitar o cliente a usar o Cache de sistemas pares do Windows PE.<br /><br /> Exemplo:<br /><br /> SMSTSPeerDownload = **TRUE** habilita essa funcionalidade.|  
@@ -94,9 +96,4 @@ ms.openlocfilehash: a75adebfe2bbec8f6fe5206561530a720c0bfbf1
 |SMSTSSoftwareUpdateScanTimeout| Possibilita controlar o tempo limite para a verificação de atualizações de software durante a etapa de sequência de tarefas [Instalar Atualizações de Software](task-sequence-steps.md#BKMK_InstallSoftwareUpdates). Por exemplo, você poderá aumentar o valor padrão se tiver muitas atualizações de software para instalar. O valor padrão é 30 minutos. |
 |SMSTSUDAUsers|Especifica o usuário principal do computador de destino. Especifique os usuários usando o seguinte formato. Separe vários usuários usando uma vírgula (,).<br /><br /> Exemplo:<br /><br /> **domínio\usuário1, domínio\usuário2, domínio\usuário3**<br /><br /> Para obter mais informações sobre como associar usuários ao computador de destino, consulte [Associate users with a destination computer (Associar usuários a um computador de destino)](../get-started/associate-users-with-a-destination-computer.md).|  
 |SMSTSWaitForSecondReboot|A partir da versão 1602 no Configuration Manager, essa variável opcional da sequência de tarefas está disponível para ajudar a controlar o comportamento do cliente quando uma instalação de atualização de software exige duas reinicializações. Essa variável deve ser definida antes da etapa [Instalar Atualizações de Software](task-sequence-steps.md#BKMK_InstallSoftwareUpdates) para evitar a falha da sequência de tarefas devido à segunda reinicialização depois da instalação de atualização de software.<br /><br /> Defina o valor de SMSTSWaitForSecondReboot em segundos para especificar por quanto tempo a sequência de tarefas é pausada durante a etapa Instalar Atualizações de Software quando o computador é reiniciado, a fim de permitir tempo suficiente caso haja uma segunda reinicialização. <br />Por exemplo, se você definir SMSTSWaitForSecondReboot para 600, a sequência de tarefas será pausada por 10 minutos após uma reinicialização antes da execução das etapas adicionais da sequência de tarefas. Isso é útil quando centenas de atualizações de software são instaladas em uma única etapa da sequência de tarefas Instalar Atualizações de Software.|  
-
-
-
-<!--HONumber=Dec16_HO3-->
-
 

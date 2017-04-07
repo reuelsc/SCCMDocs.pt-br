@@ -2,7 +2,7 @@
 title: "Criar mídia autônoma com o System Center Configuration Manager | Microsoft Docs"
 description: "Use uma mídia autônoma para implantar o sistema operacional em um computador sem uma conexão com a rede ou com um site do Configuration Manager."
 ms.custom: na
-ms.date: 12/21/2016
+ms.date: 03/24/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
@@ -17,9 +17,9 @@ author: Dougeby
 ms.author: dougeby
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: ee7f69bd65152deffb2456d9807e1e8fee8802ec
-ms.openlocfilehash: 708525604c3f40cf75b5408c3666193186b7cf50
-ms.lasthandoff: 03/07/2017
+ms.sourcegitcommit: dab5da5a4b5dfb3606a8a6bd0c70a0b21923fff9
+ms.openlocfilehash: d4689545ce2be5c16a65b24489f30028a0f90f94
+ms.lasthandoff: 03/27/2017
 
 
 ---
@@ -97,32 +97,37 @@ Para executar o Assistente para Criar Mídia de Sequência de Tarefas para criar
 
     -   Caso selecione **Conjunto de CD/DVD**, especifique a capacidade da mídia, o nome e o caminho dos arquivos de saída. O assistente grava os arquivos de saída nesse local. Por exemplo: **\\\nomedoservidor\pasta\arquivodesaida.iso**  
 
-         Se a capacidade da mídia for muito pequena para armazenar todo o conteúdo, vários arquivos são criados e você deve armazenar o conteúdo em vários CDs ou DVDs. Se várias mídias forem necessárias, o Configuration Manager adicionará um número de sequência ao nome de cada arquivo de saída criado. Além disso, se você implantar um aplicativo juntamente com o sistema operacional e o aplicativo não couber em uma única mídia, o Configuration Manager armazenará o aplicativo em várias mídias. Quando a mídia autônoma é executada, o Configuration Manager solicita ao usuário a próxima mídia, na qual o aplicativo está armazenado.  
+         Se a capacidade da mídia for muito pequena para armazenar todo o conteúdo, vários arquivos são criados e você deve armazenar o conteúdo em vários CDs ou DVDs. Se várias mídias forem necessárias, o Configuration Manager adicionará um número de sequência ao nome de cada arquivo de saída criado. Além disso, se você implantar um aplicativo juntamente com o sistema operacional e o aplicativo não couber em uma única mídia, o Configuration Manager armazenará o aplicativo em várias mídias. Quando a mídia autônoma é executada, o Configuration Manager solicita ao usuário a próxima mídia, na qual o aplicativo está armazenado.   
 
-        > [!IMPORTANT]  
-        >  Se você selecionar uma imagem .iso existente, o Assistente de Mídia de Sequência de Tarefas excluirá essa imagem da unidade ou do compartilhamento assim que você prosseguir para a próxima página do assistente. A imagem existente será excluída mesmo se você cancelar o assistente.  
+         > [!IMPORTANT]  
+         >  Se você selecionar uma imagem .iso existente, o Assistente de Mídia de Sequência de Tarefas excluirá essa imagem da unidade ou do compartilhamento assim que você prosseguir para a próxima página do assistente. A imagem existente será excluída mesmo se você cancelar o assistente.  
 
      Clique em **Avançar**.  
 
-6.  Na página **Segurança** , insira uma senha forte para ajudar a proteger a mídia e clique em **Próxima**. Se você especificar uma senha, ela será necessária para usar a mídia.  
+6.  Na página **Segurança**, escolha entre as seguintes configurações e clique em **Avançar**:
+    - **Proteger mídia com senha**: insira uma senha forte para ajudar a proteger a mídia. Se você especificar uma senha, ela será necessária para usar a mídia.  
 
-    > [!IMPORTANT]  
-    >  Na mídia autônoma, somente as etapas da sequência de tarefas e suas variáveis são criptografadas. O conteúdo restante da mídia não é criptografado, portanto não inclua nenhuma informação confidencial nos scripts da sequência de tarefas. Armazene e implemente todas as informações confidenciais usando as variáveis da sequência de tarefas.  
+        > [!IMPORTANT]  
+        >  Na mídia autônoma, somente as etapas da sequência de tarefas e suas variáveis são criptografadas. O conteúdo restante da mídia não é criptografado, portanto não inclua nenhuma informação confidencial nos scripts da sequência de tarefas. Armazene e implemente todas as informações confidenciais usando as variáveis da sequência de tarefas.  
 
+    - **Selecione um intervalo de datas válido para essa mídia autônoma** (a partir da versão 1702): defina datas de início e vencimento opcionais na mídia. Essas configurações estão desabilitadas por padrão. As datas são comparadas com a hora do sistema no computador antes de a mídia autônoma ser executada. Quando a hora do sistema for anterior à hora de início ou posterior à hora de expiração, a mídia autônoma não será iniciada. Essas opções também estão disponíveis usando o cmdlet New-CMStandaloneMedia PowerShell.
 7.  Na página **CD/DVD Autônomo** , especifique a sequência de tarefas que implanta o sistema operacional e clique em **Próxima**. Escolha **Detectar dependências de aplicativos associadas e adicioná-las a esta mídia** para adicionar conteúdo à mídia autônoma para dependências de aplicativos.
-> [!TIP]
-> Se você não vir as dependências de aplicativo esperadas, cancele a seleção e selecione novamente a configuração **Detectar dependências de aplicativos associadas e adicioná-las a esta mídia** para atualizar a lista.
+    > [!TIP]
+    > Se você não vir as dependências de aplicativo esperadas, cancele a seleção e selecione novamente a configuração **Detectar dependências de aplicativos associadas e adicioná-las a esta mídia** para atualizar a lista.
 
-O assistente permite que você selecione apenas as sequências de tarefas associadas a uma imagem de inicialização.  
+    O assistente permite que você selecione apenas as sequências de tarefas associadas a uma imagem de inicialização.  
 
-8.  Na página **Pontos de Distribuição** , especifique o ponto de distribuição que tem o conteúdo exigido pela sequência de tarefas e clique em **Próximo**.  
+8. Na página **Selecionar Aplicativo** (disponível a partir da versão 1702), especifique o conteúdo do aplicativo a ser incluído como parte do arquivo de mídia e clique em **Avançar**.
+9. Na página **Selecionar Pacote** (disponível a partir da versão 1702), especifique o conteúdo do pacote a ser incluído como parte do arquivo de mídia e clique em **Avançar**.
+10. Na página **Selecionar Pacote do Driver** (disponível a partir da versão 1702), especifique o conteúdo do pacote do driver a ser incluído como parte do arquivo de mídia e clique em **Avançar**.
+11.  Na página **Pontos de Distribuição** , especifique o ponto de distribuição que tem o conteúdo exigido pela sequência de tarefas e clique em **Próximo**.  
 
      O Configuration Manager vai exibir apenas pontos de distribuição que tenham o conteúdo. Você deve distribuir todo o conteúdo associado à sequência de tarefas (imagem de inicialização, imagem do sistema operacional, etc.) para, pelo menos, um ponto de distribuição antes que possa continuar. Após distribuir o conteúdo, você pode reiniciar o assistente ou remover os pontos de distribuição que já selecionou nessa página, ir para a página anterior e voltar para a página **Pontos de distribuição** para atualizar a lista de pontos de distribuição. Para obter mais informações sobre como distribuir conteúdo, consulte [Distribuir o conteúdo referenciado por uma sequência de tarefas](manage-task-sequences-to-automate-tasks.md#BKMK_DistributeTS). Para obter mais informações sobre pontos de distribuição e gerenciamento de conteúdo, consulte [Gerenciar conteúdo e infraestrutura de conteúdo do System Center Configuration Manager](../../core/servers/deploy/configure/manage-content-and-content-infrastructure.md).  
 
     > [!NOTE]  
     >  É necessário ter direitos de acesso de **Leitura** à biblioteca de conteúdo nos pontos de distribuição.  
 
-9. Na página **Personalização** , especifique as informações a seguir e clique em **Próxima**.  
+12. Na página **Personalização** , especifique as informações a seguir e clique em **Próxima**.  
 
     -   Especifique as variáveis que a sequência de tarefas usa para implantar o sistema operacional.  
 
@@ -133,7 +138,7 @@ O assistente permite que você selecione apenas as sequências de tarefas associ
         > [!TIP]  
         >  Durante a criação de mídia de sequência de tarefas, a sequência de tarefas grava a ID do pacote e a linha de comando prestart, que inclui o valor de quaisquer variáveis de sequência de tarefas, no arquivo de log CreateTSMedia.log no computador que executa o console do Configuration Manager. Você poderá analisar esse arquivo de log para verificar o valor das variáveis de sequência de tarefas.  
 
-10. Conclua o assistente.  
+13. Conclua o assistente.  
 
  Os arquivos de mídia autônoma (.iso) são criados na pasta de destino. Se tiver selecionado **CD/DVD Autônomo**, agora você poderá copiar os arquivos de saída para um conjunto de CDs ou DVDs.  
 

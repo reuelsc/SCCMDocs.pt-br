@@ -2,7 +2,7 @@
 title: A pasta CD.Latest | Microsoft Docs
 description: "Saiba mais sobre o novo processo de atualização que fornece atualizações para o produto de dentro do console do Configuration Manager."
 ms.custom: na
-ms.date: 10/06/2016
+ms.date: 3/27/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
@@ -16,8 +16,9 @@ author: Brenduns
 ms.author: brenduns
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: 10b1010ccbf3889c58c55b87e70b354559243c90
-ms.openlocfilehash: dcf56f6b82f89e81d636ea920f36133e245cbb1e
+ms.sourcegitcommit: dab5da5a4b5dfb3606a8a6bd0c70a0b21923fff9
+ms.openlocfilehash: 9cbda4db3c8fcd0bc039e9bb0f490af519b7d04b
+ms.lasthandoff: 03/27/2017
 
 
 ---
@@ -40,11 +41,13 @@ No entanto, a mídia de linha de base, como a versão de linha de base 1606 lan�
 
 -   Você executa a tarefa de backup interna do Configuration Manager: a pasta é criada ou atualizada no local da pasta de backup indicada.  
 
+-  A partir da versão 1606, a pasta CD.Latest é criada quando você instala um novo site usando a mídia de linha de base (como a versão 1606).
+
 Os arquivos de origem da pasta CD.Latest têm suporte para o seguinte:  
 
-1.  **Backup e recuperação:** a pasta CD.Latest contém os arquivos de origem que você usa para reinstalar seu site como parte de uma recuperação de site. Para recuperar um site do Configuration Manager, o backup do site deve incluir a pasta CD.Latest (a tarefa de backup interna do site inclui automaticamente essa pasta como parte do backup do site).  
+1.  **Backup e recuperação:** para recuperar um site, você deverá usar os arquivos de origem de uma pasta CD.Latest que corresponde a seu site. Quando você executa um backup do site usando a tarefa interna de backup do site, a pasta CD.Latest é incluída como parte do backup.
 
-    -   **Ao reinstalar um site como parte de uma recuperação de site,** você instala o site da pasta CD.Latest incluída no backup. Isso instala o site usando as versões dos arquivos que correspondem ao backup do seu site e ao banco de dados do site.  
+    -   **Ao reinstalar um site como parte de uma recuperação de site,** você instala o site da pasta CD.Latest incluída no backup. Isso instala o site usando as versões dos arquivos que correspondem ao backup do seu site e ao banco de dados do site.  Se você não tiver acesso à versão correta da pasta CD.Latest, poderá obter uma pasta CD.Latest com as versões de arquivo corretas instalando um site em um ambiente de laboratório e, em seguida, atualizando esse site para corresponder à versão que você deseja recuperar.
 
         > [!IMPORTANT]  
         >  Se a pasta CD.Latest correta e seu conteúdo não estiverem disponíveis, você não poderá recuperar um site e deverá reinstalá-lo.  
@@ -60,9 +63,4 @@ Os arquivos de origem da pasta CD.Latest têm suporte para o seguinte:
 >   
 >  -   Instalar um novo site para uma nova hierarquia  
 >  -   Atualizar um site do Microsoft System Center 2012 Configuration Manager para o System Center Configuration Manager
-
-
-
-<!--HONumber=Dec16_HO3-->
-
 

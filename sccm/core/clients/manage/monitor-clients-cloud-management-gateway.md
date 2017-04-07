@@ -1,17 +1,18 @@
 ---
 title: Monitorar o gateway de gerenciamento de nuvem no Configuration Manager | Microsoft Docs
 description: 
-ms.date: 11/18/2016
+ms.date: 03/28/2017
 ms.prod: configuration-manager
 ms.technology:
 - configmgr-client
 ms.assetid: 15f72f80-9850-40ce-9c3a-443ba04b6a03
-author: nbigman
-ms.author: nbigman
+author: arob98
+ms.author: angrobe
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: ef12c9b966a1b83b61243311b30e1a925c20d2e3
-ms.openlocfilehash: 4475205c37c20631a189e0c315dc48e288c15ba6
+ms.sourcegitcommit: 199096db7a23fb14db98b95e75246ed254848ab7
+ms.openlocfilehash: df32a7d95799d8ae685fd66e2d9ddf25e32b37d0
+ms.lasthandoff: 03/27/2017
 
 ---
 
@@ -49,16 +50,5 @@ Os alertas de tráfego de saída ajudarão você a saber quando o tráfego se ap
 
 ## <a name="monitor-logs"></a>Monitorar os logs
 
-O serviço de gateway de gerenciamento de nuvem gera entradas nos seguintes arquivos de log:
-
--   **Cloudmgr.log** – contém entradas para implantar o serviço de gateway de gerenciamento de nuvem, o status contínuo do serviço e os dados de uso associados ao serviço.
-
--   **SMS\_Cloud\_ProxyConnector.log** – contém entradas para configurar conexões entre o serviço do gateway de gerenciamento de nuvem e o ponto de conexão do gateway de gerenciamento de nuvem.
-
-Para obter mais informações, consulte [Arquivos de log no System Center Configuration Manager](/sccm/core/plan-design/hierarchy/log-files).
-
-
-
-<!--HONumber=Jan17_HO4-->
-
+O serviço de gateway de gerenciamento de nuvem gera entradas em vários arquivos de log. Para obter mais informações, consulte [Arquivos de log no System Center Configuration Manager](/sccm/core/plan-design/hierarchy/log-files).
 

@@ -17,9 +17,9 @@ author: Brenduns
 ms.author: brenduns
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: 766120f5ca79f279a513b62c35a2374c859b253a
-ms.openlocfilehash: 079be3c97e4239f8c5293bed5a2ce13abfbe7798
-ms.lasthandoff: 03/15/2017
+ms.sourcegitcommit: dab5da5a4b5dfb3606a8a6bd0c70a0b21923fff9
+ms.openlocfilehash: 238e460885b6490b3744690640f9ff040902b35f
+ms.lasthandoff: 03/27/2017
 
 
 ---
@@ -116,7 +116,8 @@ Para obter mais informações, consulte [Cache de pares do Windows PE](../../../
 ## <a name="content-library"></a>Biblioteca de conteúdo  
  A biblioteca de conteúdo é o repositório de instância única de conteúdo que o Configuration Manager usa para reduzir o tamanho geral do corpo de conteúdo combinado que você distribui.  
 
-Saiba mais sobre a [biblioteca de conteúdo](../../../core/plan-design/hierarchy/the-content-library.md).
+- Saiba mais sobre a [biblioteca de conteúdo](../../../core/plan-design/hierarchy/the-content-library.md).
+- Use a [ferramenta de limpeza da biblioteca de conteúdo](/sccm/core/plan-design/hierarchy/content-library-cleanup-tool) para remover o conteúdo que não está mais associado a um aplicativo.  
 
 
 ## <a name="distribution-points"></a>Pontos de distribuição  

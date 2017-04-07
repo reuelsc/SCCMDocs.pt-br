@@ -2,7 +2,7 @@
 title: "Domínios do Active Directory com suporte | Microsoft Docs"
 description: "Obtenha os requisitos para a associação de um sistema de sites do System Center Configuration Manager em um domínio do Active Directory."
 ms.custom: na
-ms.date: 1/3/2017
+ms.date: 3/23/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
@@ -17,8 +17,9 @@ author: Brenduns
 ms.author: brenduns
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: a3da133205506ba0463dd3207da5ceb5a5d1ab49
-ms.openlocfilehash: ea527a7767b33eaf495e78522364d8a7a47712ca
+ms.sourcegitcommit: 3f397efe458fd85124d2a83d4a869642015fd4a5
+ms.openlocfilehash: 2654ab4eaaaf6a4bf3bd7dca9908e7033647dc2c
+ms.lasthandoff: 03/23/2017
 
 
 ---
@@ -43,16 +44,23 @@ Todos os sistemas de sites do System Center Configuration Manager devem ser memb
 É necessário desinstalar a função do sistema de sites (incluindo o site, caso seja um servidor do site) antes de fazer essas alterações.  
 
 **Há suporte para domínios com os seguintes níveis funcionais de domínio:**  
+- Windows Server 2016
 
--   Windows Server 2008  
+- Windows Server 2012 R2  
 
--   Windows Server 2008 R2  
+- Windows Server 2012
 
--   Windows Server 2012  
+- Windows Server 2008 R2
 
--   Windows Server 2012 R2  
+- Windows Server 2008  
 
-##  <a name="a-namebkmkdisjointa-disjoint-namespace"></a><a name="bkmk_Disjoint"></a> Namespace não contíguo  
+
+
+
+
+
+
+##  <a name="bkmk_Disjoint"></a> Namespace não contíguo  
 O Configuration Manager dá suporte à instalação de sistemas de sites e clientes em um domínio com namespace não contíguo.  
 
 Um cenário de namespace não contíguo é aquele em que o sufixo DNS (Sistema de Nomes de Domínio) primário de um computador não corresponde ao nome de domínio DNS do Active Directory em que o computador reside. O computador que usa o sufixo DNS primário sem correspondência é chamado não contíguo. Outro cenário de namespace não contíguo ocorrerá se o nome de domínio NetBIOS de um controlador de domínio não corresponder ao nome de domínio DNS do Active Directory.  
@@ -71,7 +79,7 @@ A tabela a seguir identifica os cenários com suporte para um namespace não con
 > [!IMPORTANT]  
 >  Ao fazer referência a um computador no Configuration Manager, insira o computador usando seu sufixo DNS Primário. Esse sufixo deve corresponder ao Nome de Domínio Totalmente Qualificado registrado como o atributo **dnsHostName** no domínio do Active Directory e ao Nome da Entidade de Serviço associado ao sistema.  
 
-##  <a name="a-namebkmkslda-single-label-domains"></a><a name="bkmk_SLD"></a> Domínios de rótulo único  
+##  <a name="bkmk_SLD"></a> Domínios de rótulo único  
  O Configuration Manager dá suporte a sistemas de sites e clientes em um domínio de rótulo único quando os critérios a seguir são atendidos:  
 
 -   O domínio de rótulo único no Active Directory Domain Services deve ser configurado com um namespace DNS não contíguo que tem um domínio primário válido.  
@@ -79,10 +87,4 @@ A tabela a seguir identifica os cenários com suporte para um namespace não con
      **Por exemplo:** o domínio de rótulo único da Contoso é configurado para ter um namespace não contíguo no DNS de contoso.com. Portanto, ao especificar o sufixo DNS no Configuration Manager para um computador no domínio Contoso, especifique “Contoso.com” e não “Contoso”.  
 
 -   As conexões do DCOM (Distributed Component Object Model) entre os servidores do site no contexto do sistema devem ser bem-sucedidas com o uso da autenticação Kerberos.  
-  
-
-
-
-<!--HONumber=Jan17_HO1-->
-
 

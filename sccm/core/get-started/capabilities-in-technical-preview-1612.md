@@ -16,8 +16,9 @@ author: Brenduns
 ms.author: brenduns
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: 3c8f968276cb6d412a4a06cb70f1c8e45e91c605
-ms.openlocfilehash: cd53f093056fbaa2ef6fd88d5451b7698f296569
+ms.sourcegitcommit: dab5da5a4b5dfb3606a8a6bd0c70a0b21923fff9
+ms.openlocfilehash: bcb14a2be312d4d8a4a9c235652c7bf971a7a976
+ms.lasthandoff: 03/27/2017
 
 ---
 # <a name="capabilities-in-technical-preview-1612-for-system-center-configuration-manager"></a>Funcionalidades do Technical Preview 1612 do System Center Configuration Manager
@@ -120,7 +121,7 @@ Depois de instalar uma função do sistema de sites do Data Warehouse, os seguin
 | **Relatório Geral do Inventário de Software**  | Exibe todo o inventário de software para um computador específico.|
 | **Visão Geral de Integridade de Infraestrutura**  |Exibe uma visão geral da integridade da infraestrutura do seu Configuration Manager.|
 | **Lista de Malwares Detectados**  |Exibe os malwares que foram detectados na sua organização.|
-|** Relatório de Resumo de Distribuição de Software** | Um resumo da distribuição de software para um anúncio e computador específicos.|
+|**Relatório de Resumo de Distribuição de Software** | Um resumo da distribuição de software para um anúncio e computador específicos.|
 
 ### <a name="move-the-data-warehouse-database"></a>Mover o banco de dados de data warehouse
 Use as seguintes etapas para mover o banco de dados de data warehouse para um novo SQL Server:
@@ -182,9 +183,15 @@ Quando a ferramenta de limpeza da biblioteca de conteúdo é executada em um des
 
 
 ### <a name="run-the-tool"></a>Executar a ferramenta
-Para executar a ferramenta, abra um prompt de comando administrativo para uma pasta que contém **ContentLibraryCleanup.exe**.  
+Para executar a ferramenta:
+1. abra um prompt de comando administrativo para uma pasta que contém **ContentLibraryCleanup.exe**.  
+2. Em seguida, insira uma linha de comando que inclui as opções de linha de comando necessárias e os comutadores opcionais que você deseja usar.
 
-Em seguida, insira uma linha de comando que inclui as opções de linha de comando necessárias e os comutadores opcionais que você deseja usar.
+**Problema conhecido** Quando a ferramenta é executada, um erro semelhante ao seguinte pode ser retornado quando qualquer pacote ou implantação tiver falhado ou estiver em andamento:
+-  *System.InvalidOperationException: esta biblioteca de conteúdo não pode ser limpa no momento porque o pacote <packageID> não está totalmente instalado.*
+
+**Solução alternativa:** nenhuma. A ferramenta não é confiável para identificar arquivos órfãos quando o conteúdo está em andamento ou não pôde ser implantado. Portanto, a ferramenta não permitirá que você limpe conteúdo até que esse problema seja resolvido.
+
 
 
 ### <a name="command-line-switches"></a>Opções de linha de comando  
@@ -314,9 +321,4 @@ Depois de fazer essas alterações de configuração, você poderá criar uma po
 ## <a name="change-to-configuring-multi-factor-authentication-for-device-enrollment"></a>Alterar a configuração da autenticação multifator para registro de dispositivo
 
 Agora que você pode configurar a MFA (Autenticação Multifator) para o registro de dispositivo no Portal do Azure, a opção de MFA foi removida no console do Configuration Manager. Você pode encontrar mais informações sobre como configurar o MFA para registro [neste tópico do Microsoft Intune](https://docs.microsoft.com/en-us/intune/deploy-use/multi-factor-authentication-azure-active-directory).
-
-
-
-<!--HONumber=Feb17_HO2-->
-
 

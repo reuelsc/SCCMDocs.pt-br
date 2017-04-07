@@ -2,7 +2,7 @@
 title: "Backup e recuperação | Microsoft Docs"
 description: Saiba como fazer o backup e recuperar seus sites em caso de falha ou perda de dados no System Center Configuration Manager.
 ms.custom: na
-ms.date: 1/3/2017
+ms.date: 3/27/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
@@ -16,9 +16,9 @@ author: Brenduns
 ms.author: brenduns
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: 1b9e49da1a5bbfca93fe683b82d2c0056a22cc1f
-ms.openlocfilehash: 67441d0c19114f628e8b4308f58165ba67c738df
-ms.lasthandoff: 03/21/2017
+ms.sourcegitcommit: dab5da5a4b5dfb3606a8a6bd0c70a0b21923fff9
+ms.openlocfilehash: ea6668ee7ee6b209b659426a0dc2c0be605ceaf1
+ms.lasthandoff: 03/27/2017
 
 ---
 
@@ -110,9 +110,9 @@ Use as seções a seguir para ajudá-lo a criar sua estratégia de backup do Con
     > [!IMPORTANT]  
     >  Para ajudar a evitar a violação dos arquivos de backup, armazene os arquivos em um local seguro. O caminho de backup mais seguro é uma unidade local, para que possibilite definir permissões do sistema de arquivos NTFS na pasta. O Configuration Manager não criptografa os dados de backup armazenados no caminho do backup.  
 
-    -   **Unidade local no servidor do site para dados e banco de dados do site**: especifica que os arquivos de backup do site e do banco de dados do site são armazenados no caminho especificado na unidade de disco local do servidor do site. É necessário criar a pasta local para poder executar a tarefa de backup.   A conta Sistema Local no servidor do site deve ter permissões de **Gravação** no sistema de arquivos NTFS para a pasta local do backup do servidor do site. A conta Sistema Local no computador que está executando o SQL Server deve ter permissões de **Gravação** NTFS para a pasta do backup do banco de dados do site.  
+    -   **Unidade local no servidor do site para dados e banco de dados do site**: especifica que os arquivos de backup do site e do banco de dados do site são armazenados no caminho especificado na unidade de disco local do servidor do site. É necessário criar a pasta local para poder executar a tarefa de backup. A conta Sistema Local no servidor do site deve ter permissões de **Gravação** no sistema de arquivos NTFS para a pasta local do backup do servidor do site. A conta Sistema Local no computador que está executando o SQL Server deve ter permissões de **Gravação** NTFS para a pasta do backup do banco de dados do site.  
 
-    -   **Caminho de rede (nome UNC) para dados e banco de dados do site**: especifica que os arquivos de backup do site e do banco de dados do site são armazenados no caminho UNC especificado. Você deve criar o compartilhamento antes de executar a tarefa de backup. A conta de computador do servidor do site e a conta de computador do SQL Server, se o SQL Server estiver instalado em outro computador, deverão ter permissões de **Gravação** NTFS e compartilhar permissões para a pasta de rede compartilhada.  
+    -   **Caminho de rede (nome UNC) para dados e banco de dados do site**: especifica que os arquivos de backup do site e do banco de dados do site são armazenados no caminho UNC especificado. É necessário criar o compartilhamento para poder executar a tarefa de backup. A conta de computador do servidor do site e a conta de computador do SQL Server, se o SQL Server estiver instalado em outro computador, devem ter permissões de **Gravação** NTFS e compartilhar permissões para a pasta de rede compartilhada.  
 
     -   **Unidades locais no servidor do site e no SQL Server**: especifica que os arquivos de backup do site são armazenados no caminho especificado na unidade local do servidor do site e que os arquivos de backup do banco de dados do site são armazenados no caminho especificado na unidade local do servidor de banco de dados do site. É necessário criar as pastas locais para poder executar a tarefa de backup. A conta de computador do servidor do site deve ter permissões de **Gravação** NTFS para a pasta criada no servidor do site. A conta de computador do SQL Server deve ter permissões de **Gravação** NTFS para a pasta criada no servidor de banco de dados do site. Essa opção está disponível somente quando o banco de dados do site não está instalado no servidor do site.  
 
@@ -390,6 +390,14 @@ Use as seções a seguir para ajudá-lo a criar sua estratégia de backup do Con
 
     -   **Detalhes:** recupera um site de administração central  
 
+-   **Nome da chave:** CDLatest  
+
+    -   **Obrigatório:** Sim – somente ao usar a mídia da pasta CD.Latest.    
+
+    -   **Valores:** 1 qualquer valor diferente de 1 é considerado como não usando o CD.Latest.
+
+    -   **Detalhes:** seu script deve incluir essa chave e o valor ao executar a instalação de uma mídia em uma pasta CD.Latest com a finalidade de instalar um site primário ou de administração central ou recuperar um site de administração central ou primário. Esse valor informa à instalação que a forma de mídia CD.Latest está sendo usada.  
+
 **RecoveryOptions**  
 
 -   **Nome da chave:** ServerRecoveryOptions  
@@ -602,6 +610,14 @@ Use as seções a seguir para ajudá-lo a criar sua estratégia de backup do Con
     -   **Valores:** RecoverPrimarySite  
 
     -   **Detalhes:** recupera um site primário  
+
+-   **Nome da chave:** CDLatest  
+
+    -   **Obrigatório:** Sim – somente ao usar a mídia da pasta CD.Latest.    
+
+    -   **Valores:** 1 qualquer valor diferente de 1 é considerado como não usando o CD.Latest.
+
+    -   **Detalhes:** seu script deve incluir essa chave e o valor ao executar a instalação de uma mídia em uma pasta CD.Latest com a finalidade de instalar um site primário ou de administração central ou recuperar um site de administração central ou primário. Esse valor informa à instalação que a forma de mídia CD.Latest está sendo usada.
 
 **RecoveryOptions**  
 

@@ -2,7 +2,7 @@
 title: "Introdução aos perfis de certificado | Microsoft Docs"
 description: "Saiba como os perfis de certificado no System Center Configuration Manager funcionam com Serviços de Certificados do Active Directory."
 ms.custom: na
-ms.date: 12/28/2016
+ms.date: 03/30/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
@@ -16,12 +16,13 @@ author: arob98
 ms.author: angrobe
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: 8a5dc7361da34f3e6b926acd35c72c0c0767ce70
-ms.openlocfilehash: d51670b47aab77cc4e630a6aeaa0744f916bf3b9
-ms.lasthandoff: 12/30/2016
+ms.sourcegitcommit: dab5da5a4b5dfb3606a8a6bd0c70a0b21923fff9
+ms.openlocfilehash: ba1d5b04cb0cb0284525e295a6086a3c0ac67e9f
+ms.lasthandoff: 03/27/2017
 
 
 ---
+
 # <a name="introduction-to-certificate-profiles-in-system-center-configuration-manager"></a>Introdução aos perfis de certificado no System Center Configuration Manager
 
 *Aplica-se a: System Center Configuration Manager (Branch Atual)*
@@ -46,10 +47,10 @@ Os perfis de certificado oferecem os seguintes recursos de gerenciamento:
 ## <a name="types-of-certificate-profiles"></a>Tipos de perfis de certificado  
  Há três tipos de perfis de certificado:  
 
--   **Certificado de AC confiável** - Permite implantar uma AC de raiz ou intermediária confiável para formar uma cadeia de certificados de confiança quando o dispositivo precisar autenticar-se em um servidor.  
+-   **Certificado de AC confiável** - permite implantar uma AC de raiz ou intermediária confiável para formar uma cadeia de certificados de confiança quando o dispositivo precisar autenticar-se em um servidor.  
 
 -   **Protocolo SCEP** – permite solicitar um certificado para um dispositivo ou usuário usando o protocolo SCEP e o Serviço de Registro de Dispositivo de Rede em um servidor que executa o Windows Server 2012 R2.
--   -   **Troca de informações pessoais (.pfx)** – permite que você solicite um certificado .pfx (também conhecido como PKCS #12) para um dispositivo ou usuário.
+-   **Troca de informações pessoais (.pfx)** – permite que você solicite um certificado .pfx (também conhecido como PKCS #12) para um dispositivo ou usuário.
 
     > [!NOTE]  
     >  Você deve criar um perfil de certificado do tipo **Certificado de Autoridade de Certificação confiável** para poder criar um perfil de certificado de **protocolo SCEP**.  
@@ -100,4 +101,3 @@ Você pode monitorar implantações de perfil de certificado exibindo resultados
 -   O dispositivo é bloqueado da hierarquia do System Center Configuration Manager.  
 
  Para revogar os certificados, o servidor do site envia um comando de revogação para a autoridade de certificação emissora. O motivo da revogação é **Cessação da Operação**.  
-

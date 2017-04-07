@@ -2,7 +2,7 @@
 title: Criar perfis de certificado PFX | Microsoft Docs
 description: "Saiba como usar arquivos PFX no System Center Configuration Manager para gerar certificados específicos do usuário que dão suporte à troca de dados criptografados."
 ms.custom: na
-ms.date: 03/05/2017
+ms.date: 03/30/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
@@ -17,9 +17,9 @@ author: robstackmsft
 ms.author: robstack
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: 2c723fe7137a95df271c3612c88805efd8fb9a77
-ms.openlocfilehash: eddecee8886296fb6132d7477afebbfc7fd280d1
-ms.lasthandoff: 03/06/2017
+ms.sourcegitcommit: 3b1451edaed69a972551bd060293839aa11ec8b2
+ms.openlocfilehash: 2495cef2442706b343bac6d510946c1226b64cfc
+ms.lasthandoff: 03/28/2017
 
 
 ---
@@ -29,37 +29,29 @@ ms.lasthandoff: 03/06/2017
 
 Os perfis de certificado funcionam com os Serviços de Certificados do Active Directory e com a função Serviço de Registro de Dispositivo de Rede para provisionar certificados de autenticação para os dispositivos gerenciados para que os usuários possam acessar perfeitamente os recursos da empresa. Por exemplo, você pode criar e implantar perfis de certificado para fornecer os certificados necessários para que os usuários iniciem conexões VPN e sem fio.
 
-[Perfis de certificado](../../protect/deploy-use/introduction-to-certificate-profiles.md) fornece informações gerais sobre como criar e configurar perfis de certificado. Este tópico destaca algumas informações específicas sobre perfis de certificado relacionados ao gerenciamento de dispositivos móveis.
+[Perfis de certificado](../../protect/deploy-use/introduction-to-certificate-profiles.md) fornece informações gerais sobre como criar e configurar perfis de certificado. Este tópico destaca algumas informações específicas sobre perfis de certificado relacionados aos certificados PFX.
 
-- Os perfis de certificado fornecem registro e renovação de uma AC (autoridade de certificação) corporativa para dispositivos que executam iOS, Windows 8.1, Windows RT 8.1, Windows 10 Desktop e Mobile e Android. Esses certificados podem ser usados para conexões Wi-Fi e VPN.
+-  O Configuration Manager dá suporte à implantação de certificados em repositórios de certificado diferentes, dependendo dos requisitos, do tipo de dispositivo e do sistema operacional. Os dispositivos a seguir têm suporte quando eles são registrados com o Intune:
 
--  Para implantar perfis de certificado que usam o SCEP, você deve instalar um módulo de política para NDES em um servidor que executa o Windows Server 2012 R2 com a função de Serviços de Certificados do Active Directory, e um NDES operacional que possa ser acessado pelos dispositivos que exigem os certificados. Para dispositivos registrados pelo Microsoft Intune, isso requer que o NDES esteja acessível pela Internet, por exemplo, em uma sub-rede filtrada (também conhecida como DMZ).
-
--  O Configuration Manager dá suporte à implantação de certificados em repositórios de certificado diferentes, dependendo dos requisitos, do tipo de dispositivo e do sistema operacional. Os seguintes dispositivos e sistemas operacionais têm suporte:
- -   Windows RT 8.1  
- -   Windows 8.1  
- -   Windows Phone 8.1  
- -   Windows 10 Desktop e Mobile  
  -   iOS  
- -   Android  
- > [!IMPORTANT]  
- >  Para implantar perfis em dispositivos Android, iOS, Windows Phone e em dispositivos registrados Windows 8.1 ou posteriores, esses dispositivos devem ser [registrados no Microsoft Intune](https://technet.microsoft.com/en-us/library/dn646962.aspx).   
 
 - Para outros pré-requisitos, confira [Pré-requisitos de perfil de certificado](../../protect/plan-design/prerequisites-for-certificate-profiles.md).
 
 ## <a name="pfx-certificate-profiles"></a>Perfis de certificado PFX
-O System Center Configuration Manager permite provisionar arquivos de troca de informações pessoais (.pfx) para dispositivos do usuário. Os arquivos PFX podem ser usados para gerar certificados específicos do usuário para dar suporte à troca de dados criptografados. Os certificados PFX podem ser criados no Configuration Manager ou importados. Com o System Center Configuration Manager, os certificados PFX, sejam novos ou importados, podem ser implantados em dispositivos iOS, Android e em dispositivos com Windows 10. Estes arquivos podem ser implantados em vários dispositivos para dar suporte à comunicação de PKI baseada no usuário.  
+O System Center Configuration Manager permite provisionar arquivos de troca de informações pessoais (.pfx) para dispositivos do usuário. Os arquivos PFX podem ser usados para gerar certificados específicos do usuário para dar suporte à troca de dados criptografados. Os certificados PFX podem ser criados no Configuration Manager ou importados.
 
 > [!TIP]  
 >  Um tutorial passo a passo que descreve esse processo está disponível em [Como criar e implantar perfis de certificado PFX no Configuration Manager](http://blogs.technet.com/b/karanrustagi/archive/2015/09/01/how-to-create-and-deploy-pfx-certificate-profiles-in-configuration-manager.aspx).  
 
-### <a name="create-and-deploy-a-personal-information-exchange-pfx-certificate-profile"></a>Criar e implantar um perfil de certificado PFX (Troca de Informações Pessoais)  
+## <a name="create-and-deploy-a-personal-information-exchange-pfx-certificate-profile"></a>Criar e implantar um perfil de certificado PFX (Troca de Informações Pessoais)  
+
+### <a name="get-started"></a>Introdução
 
 1.  No console do System Center Configuration Manager, clique em **Ativos e Conformidade**.  
 
 2.  No espaço de trabalho **Ativos e Conformidade** , expanda **Configurações de Conformidade**, expanda **Acesso ao Recurso da Empresa**e clique em **Perfis de Certificado**.  
 
-3.  Na guia **Início** , no grupo **Criar** , clique em **Criar Perfil Certificado**. O Assistente para **Criar Perfil de Certificado** é aberto.  
+3.  Na guia **Início** , no grupo **Criar** , clique em **Criar Perfil Certificado**.
 
 4.  Na página **Geral** do Assistente para **Criar Perfil de Certificado** , especifique as seguintes informações:  
 
@@ -67,39 +59,23 @@ O System Center Configuration Manager permite provisionar arquivos de troca de i
 
     -   **Descrição**: forneça uma descrição que ofereça uma visão geral do perfil de certificado e outras informações relevantes que ajudem a identificá-lo no console do System Center Configuration Manager. Você pode usar no máximo 256 caracteres.  
 
-    -   **Especifique o tipo de perfil de certificado que deseja criar**: escolha um dos seguintes tipos de perfil de certificado:  
-
-        -   **Certificado de AC confiável**: selecione este tipo de perfil de certificado se desejar implantar uma AC (autoridade de certificação) raiz confiável ou intermediar o certificado da AC para formar uma cadeia de confiança de certificados para quando o usuário, ou dispositivo, precisar autenticar outro dispositivo. Por exemplo, o dispositivo pode ser um servidor RADIUS ou VPN (rede virtual privada). Você também deve configurar um perfil de certificado de autoridade de certificação confiável antes de criar um perfil de certificado SCEP. Neste caso, o certificado de autoridade de certificação confiável tem que ser o certificado confiável raiz da AC que emitirá o certificado para o usuário ou dispositivo.  
-
-        -   **Configurações do protocolo SCEP**: selecione este tipo de perfil de certificado se desejar solicitar um certificado para um usuário ou dispositivo usando o protocolo SCEP e o serviço de função de Serviço de Registro de Dispositivo de Rede.  
+    -   **Especifique o tipo de perfil de certificado que deseja criar**: para certificados PFX, escolha um desses:  
 
         -   **Troca de Informações Pessoais – Configurações PKCS #12 (PFX) – Importar**: selecione esta opção para importar um certificado PFX.  
+        -   **Troca de Informações Pessoais – Configurações PKCS #12 (PFX) – Criar**: selecione esta opção para criar um novo certificado PFX.
 
-5.  Na janela **Propriedades do Certificado** do assistente **Criar Perfil de Certificado** , especifique o local onde o certificado PFX será armazenado nos dispositivos de destino.  
+### <a name="import-a-pfx-certificate"></a>Importar um certificado PFX
 
-    -   **Instalar em um TPM (Trusted Platform Module), se houver**  
+Para importar um certificado PFX, você precisará do SDK do Configuration Manager. Todos os certificados que você importar para um usuário serão implantados em todos os dispositivos em que o usuário se registra.
 
-    -   **Instalar em um TPM (Trusted Platform Module); caso contrário, ocorrerá uma falha**  
-
-    -   **Instalar o Provedor de Armazenamento de Chaves de Software**  
-
-     Clique em **Avançar**.  
-
-6.  Na janela **Plataformas com Suporte** do assistente para **Criar Perfil de Certificado** , especifique quais sistemas operacionais ou plataformas podem receber o arquivo PFX importado.  
-
-    -   **Windows 10**  
-
-    -   **iPhone**  
-
-    -   **iPad**  
-
-    -   **Android**  
-
-7.  Clique em **Próximo**, examine a página **Resumo** e feche o assistente.  
-
-8.  O perfil de certificado que contém o arquivo PFX agora está disponível do espaço de trabalho **Perfis de Certificado** . No console do **Ativos e Conformidade** , vá para **Configurações de Conformidade** > **Acesso ao Recurso da Empresa** > **Perfis de Certificado** e clique com o botão direito do mouse para implantar o novo certificado nas coleções de Usuários.  
-
-9. Usando o SDK para Windows 8.1 disponível no Centro de Download ([http://go.microsoft.com/fwlink/?LinkId=613525](http://go.microsoft.com/fwlink/?LinkId=613525), implante um Script para Criar PFX. O Script para Criar PFX adicionado no Configuration Manager 2012 SP2 adiciona uma classe SMS_ClientPfxCertificate ao SDK. Esta classe inclui os seguintes métodos:  
+1. Na página **Certificado PFX** do **Assistente Criar Perfil de Certificado**, especifique o local onde o certificado PFX será armazenado nos dispositivos nos quais você o implantará:
+    -     **Instalar em um TPM (Trusted Platform Module), se houver**  
+    -   **Instalar em um TPM (Trusted Platform Module); caso contrário, ocorrerá uma falha** 
+    -   **Instalar para o Windows Hello para Empresas, caso contrário, falhará** 
+    -   **Instalar o Provedor de Armazenamento de Chaves de Software** 
+2. Clique em **Avançar**. 
+3. Na página **Plataformas Suportadas** do assistente, escolha as plataformas de dispositivo nas quais este certificado será instalado e clique em **Avançar**.
+4. Usando o SDK para Windows 8.1 disponível no Centro de Download ([http://go.microsoft.com/fwlink/?LinkId=613525](http://go.microsoft.com/fwlink/?LinkId=613525), implante um Script para Criar PFX. O Script para Criar PFX adicionado no Configuration Manager 2012 SP2 adiciona uma classe SMS_ClientPfxCertificate ao SDK. Esta classe inclui os seguintes métodos:  
 
     -   ImportForUser  
 
@@ -107,7 +83,7 @@ O System Center Configuration Manager permite provisionar arquivos de troca de i
 
      Exemplo de script:  
 
-    ```  
+```  
     $EncryptedPfxBlob = "<blob>"  
     $Password = "abc"  
     $ProfileName = "PFX_Profile_Name"  
@@ -122,20 +98,47 @@ O System Center Configuration Manager permite provisionar arquivos de troca de i
         $NewEntry.UserName = $UserName  
     $Resource = $WMIConnection.psbase.InvokeMethod("ImportForUser",$NewEntry,$null)  
 
-    ```  
+```  
 
-     As seguintes variáveis de script devem ser modificadas para o seu script:  
+As seguintes variáveis de script devem ser modificadas para o seu script:  
 
-    -   <blob\> = O blob com criptografia PFX base64  
+   -   blob\ = The PFX base64-encrypted blob  
+   -   $Password = A senha do arquivo PFX  
+   -   $ProfileName = O nome do perfil PFX  
+   -   ComputerName = nome do computador host   
 
-    -   $Password = A senha do arquivo PFX  
+### <a name="create-a-new-pfx-certificate"></a>Criar um novo certificado PFX
 
-    -   $ProfileName = O nome do perfil PFX  
+Quando você cria e implanta um certificado PFX, o mesmo certificado será instalado em todos os dispositivos em que o usuário se registra.
 
-    -   ComputerName = nome do computador host  
+1. Na página **Plataformas Suportadas** do assistente, escolha as plataformas de dispositivo nas quais este certificado será instalado e clique em **Avançar**.
+2. Na página **Autoridades de Certificação** do assistente, configure o seguinte:
+    - **Site primário** - selecione o site primário do Configuration Manager do qual você deseja selecionar uma autoridade de certificação.
+    - **Autoridades de certificação** - depois de selecionar um site primário, selecione a autoridade de certificação que você deseja na lista e clique em **Avançar**.
+3. Na página **Certificado PFX** do assistente, configure os seguintes valores:
+    - **Limite de renovação (%)**: especifique o percentual do tempo de vida do certificado restante antes da renovação das solicitações de dispositivo do certificado.
+    - **Nome do modelo de certificado**: clique em **Procurar** para selecionar o nome de um modelo de certificado que foi adicionado a uma AC emissora. Para procurar pelos modelos de certificado, a conta de usuário que você estiver usando para executar o console do Configuration Manager deve ter permissão de **Leitura** para o modelo de certificado. Alternativamente, digite o nome do modelo de certificado. 
+    - **Formato de nome da entidade**: na lista, selecione o modo como o Configuration Manager cria automaticamente o nome da entidade na solicitação de certificado. Se o certificado for para um usuário, você também pode incluir o endereço de email do usuário no nome da entidade. Escolha **Nome comum** ou **Nome totalmente diferenciado**.
+    - **Nome alternativo da entidade**: especifique como o Configuration Manager criará automaticamente os valores para o SAN (nome alternativo da entidade) na solicitação de certificado. Se tiver selecionado um tipo de certificado de usuário, por exemplo, você pode incluir o UPN no nome alternativo da entidade. Escolha:
+        - **Endereço de email** 
+        - **UPN (Nome UPN)** 
+    - **Período de validade do certificado** - 
+    - **Provedor de armazenamento de chave do Windows** (exibido somente se você selecionou Windows como uma plataforma com suporte) - 
+        -     **Instalar em um TPM (Trusted Platform Module), se houver**  
+        -   **Instalar em um TPM (Trusted Platform Module); caso contrário, ocorrerá uma falha** 
+        -   **Instalar para o Windows Hello para Empresas, caso contrário, falhará** 
+        -   **Instalar o Provedor de Armazenamento de Chaves de Software** 
+4. Clique em **Avançar**.
 
-### <a name="see-also"></a>Consulte também
+### <a name="finish-up"></a>Concluir
+
+1.  Clique em **Próximo**, examine a página **Resumo** e feche o assistente.  
+2.  O perfil de certificado que contém o arquivo PFX agora está disponível do espaço de trabalho **Perfis de Certificado** . 
+3.  Para implantar o perfil, no espaço de trabalho **Ativos e Conformidade**, abra **Configurações de Conformidade** > **Acesso ao Recurso da Empresa** > **Perfis de Certificado**, clique com o botão direito no certificado desejado e clique em **Implantar**. 
+
+
+
+## <a name="see-also"></a>Consulte também
 [Criar um novo perfil de certificado](../../protect/deploy-use/create-certificate-profiles.md#create-a-new-certificate-profile) orienta você pelo Assistente para criar perfil de certificado.
 
 [Implantar Wi-Fi, VPN, email e perfis de certificado](../../protect/deploy-use/deploy-wifi-vpn-email-cert-profiles.md) para obter informações sobre como implantar perfis de certificado.
-

@@ -16,8 +16,9 @@ author: Dougeby
 ms.author: dougeby
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: 74341fb60bf9ccbc8822e390bd34f9eda58b4bda
-ms.openlocfilehash: 32af7da62bfe767a21a891338bd778ebf45f2685
+ms.sourcegitcommit: dab5da5a4b5dfb3606a8a6bd0c70a0b21923fff9
+ms.openlocfilehash: 88a72259bca79f2fa985e86cb57ec7a974bad24d
+ms.lasthandoff: 03/27/2017
 
 
 ---
@@ -27,7 +28,7 @@ ms.openlocfilehash: 32af7da62bfe767a21a891338bd778ebf45f2685
 
 Use sequências de tarefas no System Center Configuration Manager para atualizar automaticamente um sistema operacional do Windows 7 ou posterior para o Windows 10 em um computador de destino. Você cria uma sequência de tarefas que faz referência à imagem do sistema operacional que você deseja instalar no computador de destino e qualquer outro conteúdo adicional, como aplicativos ou atualizações de software que você deseja instalar. A sequência de tarefas para atualizar um sistema operacional faz parte do cenário [Atualizar o Windows para a versão mais recente](upgrade-windows-to-the-latest-version.md).  
 
-##  <a name="a-namebkmkupgradeosa-create-a-task-sequence-to-upgrade-an-operating-system"></a><a name="BKMK_UpgradeOS"></a> Criar uma sequência de tarefas para atualizar um sistema operacional  
+##  <a name="BKMK_UpgradeOS"></a> Criar uma sequência de tarefas para atualizar um sistema operacional  
  Para atualizar o sistema operacional em computadores para o Windows 10, você pode criar uma sequência de tarefas e selecionar a opção **Atualizar um sistema operacional do pacote de atualização** no assistente Criar Sequência de Tarefas. O assistente adicionará as etapas para atualizar o sistema operacional, aplicar atualizações de software e instalar aplicativos. Antes de criar a sequência de tarefas, o seguinte deve estar disponível:  
 
 -   **Necessária**  
@@ -70,6 +71,42 @@ Use sequências de tarefas no System Center Configuration Manager para atualizar
 
 9. Conclua o assistente.  
 
+
+
+## <a name="configure-pre-cache-content"></a>Configurar o conteúdo de armazenamento prévio em cache
+A partir da versão 1702, para sequências de tarefas e implantações disponíveis, você pode optar por usar o recurso de armazenamento prévio em cache para que os clientes baixem apenas conteúdo relevante antes de um usuário instalar o conteúdo.
+> [!TIP]  
+> Apresentado com a versão 1702, o pré-cache é um recurso de pré-lançamento. Para habilitá-lo, confira [Use pre-release features from updates](/sccm/core/servers/manage/pre-release-features) (Usar recursos de pré-lançamento de atualizações).
+
+Por exemplo, digamos que você deseja implantar uma sequência de tarefas de atualização in-loco do Windows 10, deseja apenas uma sequência de tarefas para todos os usuários e tem várias arquiteturas e/ou idiomas. Antes da versão 1702, se você criar uma implantação disponível e, em seguida, o usuário clicar em **Instalar** no Centro de Software, o conteúdo será baixado neste momento. Isso acrescenta um tempo antes que a instalação esteja pronta para iniciar. Além disso, todo o conteúdo referenciado na sequência de tarefas é baixado. Isso inclui o pacote de atualização do sistema operacional para todas as arquiteturas e idiomas. Se cada um tiver aproximadamente 3 GB de tamanho, o pacote de download poderá ser bastante grande.
+
+O conteúdo de armazenamento prévio em cache oferece a opção de permitir que o cliente baixe apenas o conteúdo aplicável assim que receber a implantação. Portanto, quando o usuário clicar em **Instalar** no Centro de Software, o conteúdo estará pronto e a instalação iniciará rapidamente, pois o conteúdo está no disco rígido local.
+
+### <a name="to-configure-the-pre-cache-feature"></a>Para configurar o recurso de armazenamento prévio em cache
+
+1. Crie pacotes de atualização de sistema operacional para arquiteturas e idiomas específicos. Especifique a arquitetura e o idioma na guia **Fonte de Dados** do pacote. Para o idioma, use a conversão decimal (por exemplo, 1033 é o decimal para inglês e 0x0409 é o equivalente hexadecimal). Para ver mais detalhes, veja [Criar uma sequência de tarefas para atualizar um sistema operacional](/sccm/osd/deploy-use/create-a-task-sequence-to-upgrade-an-operating-system).
+
+    Os valores de arquitetura e idioma são usados para corresponder condições de etapa de sequência de tarefas que você criará na próxima etapa para determinar se o pacote de atualização do sistema operacional deve ser previamente armazenado em cache.
+2. Crie uma sequência de tarefas com etapas condicionais para diferentes idiomas e arquiteturas. Por exemplo, para a versão em inglês, você pode criar uma etapa com o seguinte:
+
+    ![Propriedades de armazenamento prévio em cache](../media/precacheproperties2.png)
+
+    ![Opções de armazenamento prévio em cache](../media/precacheoptions2.png)  
+
+3. Implantar a sequência de tarefas. Para o recurso de armazenamento prévio em cache, configure o seguinte:
+    - Na guia **Geral**, selecione **Conteúdo previamente baixado para esta sequência de tarefas**.
+    - Na guia **Configurações de implantação**, configure a sequência de tarefas com **Disponível** para **Finalidade**. Se você criar uma implantação **Obrigatória**, a funcionalidade de armazenamento prévio em cache não funcionará.
+    - Na guia **Agendamento**, para a configuração **Agendar quando essa implantação estará disponível**, escolha uma hora futura que conceda aos clientes tempo suficiente para armazenar previamente em cache o conteúdo para a implantação disponibilizada para os usuários. Por exemplo, você pode definir o tempo disponível para 3 horas no futuro para oferecer tempo suficiente para o conteúdo ser previamente armazenado em cache.  
+    - Na guia **Pontos de Distribuição**, defina as configurações **Opções de implantação**. Se o conteúdo não tiver sido armazenado previamente em cache em um cliente antes de um usuário iniciar a instalação, essas configurações serão usadas.
+
+
+### <a name="user-experience"></a>Experiência do usuário
+- Quando o cliente receber a política de implantação, ele começará a armazenar previamente o conteúdo em cache. Isso inclui todo o conteúdo referenciado (todos os demais tipos de pacote) e somente o pacote atualização do sistema operacional que corresponder ao cliente, com base nas condições que você definir na sequência de tarefas.
+- Quando a implantação for disponibilizada para os usuários (a configuração na guia **Agendamento** da implantação), uma notificação será exibida para informar os usuários sobre a nova implantação e ela ficará visível no Centro de Software. O usuário poderá acessar o Centro de Software e clicar em **Instalar** para iniciar a instalação.
+- Se o conteúdo não tiver sido armazenado previamente em cache em sua totalidade, ele usará as configurações especificadas na guia **Opções de Implantação** da implantação. É recomendável que haja tempo suficiente desde que a implantação é criada até o momento em que ela se fica disponível para os usuários, a fim de conceder aos clientes tempo suficiente para armazenar previamente o conteúdo em cache.
+
+
+
 ## <a name="download-package-content-task-sequence-step"></a>Baixar etapa de sequência de tarefas do conteúdo do pacote  
  A etapa [Baixar Conteúdo do Pacote](../understand/task-sequence-steps.md#BKMK_DownloadPackageContent) pode ser usada antes da etapa **Atualizar o Sistema Operacional** nos seguintes cenários:  
 
@@ -91,9 +128,4 @@ Use sequências de tarefas no System Center Configuration Manager para atualizar
 
 ## <a name="folder-and-files-removed-after-computer-restart"></a>Pasta e arquivos removidos após o computador reiniciar  
  Quando a sequência de tarefas para atualizar um sistema operacional para Windows 10 e todas as outras etapas da sequência de tarefas forem concluídas, os scripts de pós-processamento e reversão não são removidos quando o computador for reiniciado.  Esses arquivos de script não contêm informações confidenciais.  
-
-
-
-<!--HONumber=Dec16_HO3-->
-
 

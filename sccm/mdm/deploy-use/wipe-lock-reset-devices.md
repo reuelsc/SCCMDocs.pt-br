@@ -2,7 +2,7 @@
 title: "Proteja seus dados com apagamento, bloqueio ou redefinição de senha remotos usando o System Center Configuration Manager | Microsoft Docs"
 description: "Proteja os dados do dispositivo com apagamento completo, apagamento seletivo, bloqueio remoto ou redefinição de senha usando o System Center Configuration Manager."
 ms.custom: na
-ms.date: 03/05/2017
+ms.date: 03/27/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
@@ -13,13 +13,13 @@ ms.topic: article
 ms.assetid: 770da7bd-02dd-474a-9604-93ff1ea0c1e4
 caps.latest.revision: 18
 caps.handback.revision: 0
-author: mtillman
-ms.author: mtillman
+author: nathbarn
+ms.author: nathbarn
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: 2c723fe7137a95df271c3612c88805efd8fb9a77
-ms.openlocfilehash: 3aa4c2ad3568cc6ced70a65141a2c103af8b740f
-ms.lasthandoff: 03/06/2017
+ms.sourcegitcommit: dab5da5a4b5dfb3606a8a6bd0c70a0b21923fff9
+ms.openlocfilehash: ef020a0409c1f1a68f76ecadc9885801e6c1ad4e
+ms.lasthandoff: 03/27/2017
 
 ---
 # <a name="protect-data-with-remote-wipe-lock-or-passcode-reset-using-system-center-configuration-manager"></a>Protege seus dados com apagamento, bloqueio ou redefinição de senha remotos usando o System Center Configuration Manager
@@ -77,19 +77,22 @@ O Configuration Manager fornece recursos de apagamento seletivo, apagamento comp
 |Agente de gerenciamento|O privilégio de administrador do dispositivo é revogado.|O privilégio de administrador do dispositivo é revogado.|  
 |Perfis de email|Não aplicável.|Para perfis de email provisionados pelo Intune, a conta de email e o email são removidos.|  
 
+**Android for Work**
+
+Executar a limpeza seletiva em um dispositivo Android para Trabalho remove o perfil de trabalho junto com todos os dados, os aplicativos e as configurações no perfil de trabalho nesse dispositivo. Isso retira o dispositivo do gerenciamento com o Configuration Manager e o Intune. O apagamento completo não tem suporte para Android for Work.
+
  **Windows 10, Windows 8.1, Windows RT 8.1 e Windows RT**  
 
-|Conteúdo removido ao desativar um dispositivo|Windows 10, Windows 8.1 e Windows RT 8.1|Windows RT|  
-|---------------------------------|-------------|-----------|
-|Aplicativos da empresa e dados associados instalados usando o Configuration Manager e o Intune.|Os aplicativos são desinstalados e a chaves de sideload são removidas. Os aplicativos que usam a Limpeza Seletiva do Windows terão a chave de criptografia revogada, e os dados não estarão mais acessíveis.|As chaves de sideload são removidas, mas os aplicativos permanecem instalados.|  
-|Perfis VPN e Wi-Fi|Removidos.|Não aplicável.|  
-|Certificados|Removidos e revogados.|Não aplicável.|  
-|Configurações|Requisitos removidos.||  
-|Agente de gerenciamento|Não aplicável. O agente de gerenciamento é integrado.|Não aplicável. O agente de gerenciamento é integrado.|  
-|Perfis de email|Remove o email habilitado para EFS que inclui o aplicativo Mail para emails e anexos de email do Windows.|Não aplicável.|  
+|Conteúdo removido ao desativar um dispositivo|Windows 10, Windows 8.1 e Windows RT 8.1|  
+|---------------------------------|-------------|
+|Aplicativos da empresa e dados associados instalados usando o Configuration Manager e o Intune.|Os aplicativos são desinstalados e a chaves de sideload são removidas. Os aplicativos que usam a Limpeza Seletiva do Windows terão a chave de criptografia revogada, e os dados não estarão mais acessíveis.|  
+|Perfis VPN e Wi-Fi|Removidos.|  
+|Certificados|Removidos e revogados.|  
+|Configurações|Requisitos removidos.|
+|Agente de gerenciamento|Não aplicável. O agente de gerenciamento é integrado.|  
+|Perfis de email|Remove o email habilitado para EFS que inclui o aplicativo Mail para emails e anexos de email do Windows.|  
 
- **Windows 10 Mobile, Windows Phone 8.0 e Windows Phone 8.1**  
-
+ **Windows 10 Mobile, Windows Phone 8.0 e Windows Phone 8.1**
 
  |Conteúdo removido ao desativar um dispositivo|Windows 10 Mobile, Windows Phone 8 e Windows Phone 8.1|  
 |-|-|
@@ -102,53 +105,29 @@ O Configuration Manager fornece recursos de apagamento seletivo, apagamento comp
  As configurações a seguir também são removidas dos dispositivos Windows 10 Mobile e Windows Phone 8.1:  
 
 -   Exigir uma senha para desbloquear os dispositivos móveis  
-
 -   Permitir senha simples  
-
 -   Comprimento mínimo da senha  
-
 -   Tipo de senha necessária  
-
 -   Expiração da senha (dias)  
-
 -   Lembrar de histórico de senha  
-
 -   Número de falhas de logon repetidas permitido antes do dispositivo ser apagado  
-
 -   Minutos de inatividade antes de a senha ser necessária  
-
 -   Tipo de senha necessária – o número mínimo de conjuntos de caracteres  
-
 -   Permitir câmera  
-
 -   Exigir criptografia no dispositivo móvel  
-
 -   Permitir armazenamento removível  
-
 -   Permitir navegador da web  
-
 -   Permitir loja de aplicativo  
-
 -   Permitir captura de tela  
-
 -   Permitir localização geográfica  
-
 -   Permitir Conta da Microsoft  
-
 -   Permitir copiar e colar  
-
 -   Permitir compartilhamento de Internet por Wi-Fi  
-
 -   Permitir conexão automática para liberar pontos de acesso Wi-Fi  
-
 -   Permitir relatórios de pontos de acesso Wi-Fi  
-
 -   Permitir redefinição de fábrica  
-
 -   Permitir Bluetooth  
-
 -   Permitir NFC  
-
 -   Permitir Wi-Fi  
 
 ### <a name="to-initiate-a-remote-wipe-from-the-configuration-manager-console"></a>Para iniciar um apagamento remoto no console do Configuration Manager  
@@ -192,10 +171,11 @@ O Configuration Manager fornece recursos de apagamento seletivo, apagamento comp
 |Plataforma|Redefinição de senha|  
 |--------------|--------------------|  
 |iOS|Suportado para limpar a senha de um dispositivo. Não cria uma nova senha temporária.|  
-|Android|Suportado e uma senha temporária é criada.|  
+|Android|Suportado e uma senha temporária é criada.|
+|Android for Work | Sem suporte|
 |Windows 10|Não tem suporte no momento.|  
 |Windows Phone 8 e Windows Phone 8.1|Com suporte|  
-|Windows RT 8.1 e Windows RT|Sem suporte|  
+|Windows RT 8.1 |Sem suporte|  
 |Windows 8.1|Sem suporte|  
 
 ### <a name="to-reset-the-passcode-on-a-mobile-device-remotely-in-configuration-manager"></a>Para reconfigurar a senha em um dispositivo móvel remotamente no Configuration Manager  
@@ -223,7 +203,7 @@ O Configuration Manager fornece recursos de apagamento seletivo, apagamento comp
 |Android|Com suporte|  
 |Windows 10|Não tem suporte no momento.|  
 |Windows Phone 8 e Windows Phone 8.1|Com suporte|  
-|Windows RT 8.1 e Windows RT|Suportado se o usuário atual do dispositivo for o mesmo usuário que registrou o dispositivo.|  
+|Windows RT 8.1 |Suportado se o usuário atual do dispositivo for o mesmo usuário que registrou o dispositivo.|  
 |Windows 8.1|Suportado se o usuário atual do dispositivo for o mesmo usuário que registrou o dispositivo.|  
 
 ### <a name="to-lock-a-mobile-device-remotely-through-the-configuration-manager-console"></a>Para bloquear um dispositivo móvel remotamente por meio do console do Configuration Manager  

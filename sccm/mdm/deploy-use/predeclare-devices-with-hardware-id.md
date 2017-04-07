@@ -2,7 +2,7 @@
 title: "Pré-declarar dispositivos com números de série do iOS ou IMEI | Microsoft Docs"
 description: "Pré-declare dispositivos corporativos com o número de série do iOS ou IMEI deles."
 ms.custom: na
-ms.date: 03/05/2017
+ms.date: 03/24/2017
 ms.reviewer: na
 ms.suite: na
 ms.prod: configuration-manager
@@ -12,13 +12,13 @@ ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: ddb4c68e-e7f7-475a-89e2-7379a86e44c4
 caps.latest.revision: 3
-author: mtillman
-ms.author: mtillman
+author: nathbarn
+ms.author: nathbarn
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: 0fd410a6572acce685dc6cdb954c1c2d97d5ed8b
-ms.openlocfilehash: 2aa9c8c65904e573b6a81ac865e09d1cf2458509
-ms.lasthandoff: 12/16/2016
+ms.sourcegitcommit: 7573590763c68a4c97d388be1e64054c318da9cc
+ms.openlocfilehash: 4fe6741481c79ed4e4496846152902d6d8ca1f96
+ms.lasthandoff: 03/24/2017
 
 ---
 # <a name="predeclare-devices-with-imei-or-ios-serial-numbers"></a>Pré-declarar dispositivos com número de série do iOS ou IMEI
@@ -26,6 +26,8 @@ ms.lasthandoff: 12/16/2016
 *Aplica-se a: System Center Configuration Manager (Branch Atual)*
 
 Você pode identificar os dispositivos corporativos importando seus números IMEI (identidade internacional de equipamento móvel) ou números de série do iOS. Você pode carregar um arquivo .csv (valores separados por vírgula) que contém os números IMEI do dispositivo ou inserir manualmente as informações sobre o dispositivo.  As informações importadas definirão a **Propriedade** dos dispositivos registrados como **Corporativo** nas listas de dispositivos. Uma licença do Intune ainda é necessária para cada usuário que acessa o serviço.  
+
+Quando você carrega os números de série para dispositivos iOS de propriedade da empresa, eles devem ser combinados com um perfil de registro corporativo. Os dispositivos devem então ser registrados usando o programa de registro do dispositivo (DEP) da Apple ou o Apple Configurator para eles aparecerem como sendo da empresa. 
 
 ## <a name="how-to-predeclare-corporate-owned-devices"></a>Como pré-declarar dispositivos corporativos
 

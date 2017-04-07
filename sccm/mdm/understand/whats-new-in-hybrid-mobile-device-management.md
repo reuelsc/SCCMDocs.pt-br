@@ -1,8 +1,8 @@
 ---
-title: "Novidades no MDM híbrido| Microsoft Docs"
-description: "Saiba mais sobre os novos recursos de gerenciamento de dispositivo móvel disponíveis para implantações híbridas com o Intune e o System Center Configuration Manager."
+title: "O que há de novo no MDM híbrido com o Configuration Manager | Microsoft Docs"
+description: "Saiba mais sobre os novos recursos de gerenciamento de dispositivo móvel disponíveis para implantações híbridas com o Configuration Manager e o Intune."
 ms.custom: na
-ms.date: 02/14/2017
+ms.date: 03/28/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
@@ -16,9 +16,9 @@ author: Mtillman
 ms.author: mtillman
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: 2c723fe7137a95df271c3612c88805efd8fb9a77
-ms.openlocfilehash: 58c64b2e02e5e5eb54cb50a468502ba6f1e4f0c1
-ms.lasthandoff: 03/06/2017
+ms.sourcegitcommit: 3c2a07f560e0aa3d2beb7cc50e71c98ac45c27e1
+ms.openlocfilehash: cc3e4055ce6b648e4554773518fc928cfb51c5f3
+ms.lasthandoff: 03/28/2017
 
 ---
 # <a name="whats-new-in-hybrid-mobile-device-management-with-system-center-configuration-manager-and-microsoft-intune"></a>Novidades no gerenciamento de dispositivo móvel híbrido com o System Center Configuration Manager e o Microsoft Intune
@@ -36,6 +36,93 @@ Este artigo fornece detalhes sobre os novos recursos de MDM (gerenciamento de di
 |**Novo no Microsoft Intune** | Em geral, todos os recursos listados nessa categoria devem funcionar com todas as versões do Configuration Manager, incluindo versões do System Center 2012 R2 Configuration Manager, uma vez que esses recursos exigem apenas o serviço Intune e não exigem funcionalidades adicionais no Configuration Manager.|
 |**Novo no Configuration Manager Technical Preview**| Todos os recursos listados nessa categoria funcionam apenas com a versão de Technical Preview especificada. Para testar esses recursos, você deve instalar a versão de Technical Preview especificada na descrição do recurso. Para mais informações, confira [Technical Preview do System Center Configuration Manager](../../core/get-started/technical-preview.md).|
 |**Novo no Configuration Manager (Branch Atual)**| Todos os recursos listados nessa categoria funcionam apenas com a versão especificada do Configuration Manager (Branch Atual), como a versão 1511 ou 1602. Se estiver usando uma versão mais antiga do Configuration Manager para sua implantação híbrida, atualize para a versão do Configuration Manager (Branch Atual) especificada na descrição do recurso. Para mais informações, confira [Atualização para o System Center Configuration Manager](../../core/servers/deploy/install/upgrade-to-configuration-manager.md).|
+
+## <a name="new-hybrid-features-in-march-2017"></a>Novos recursos híbridos em março de 2017
+
+### <a name="new-in-microsoft-intune"></a>Novo no Microsoft Intune
+
+Os seguintes recursos do Intune introduzidos em março de 2017 funcionam em implantações híbridas:
+
+- **Nova experiência do usuário para o aplicativo Portal da Empresa para Android**
+
+  O aplicativo Portal da Empresa para Android tem uma aparência mais moderna para sua interface do usuário. As atualizações importantes são:
+
+  - Cores: os cabeçalhos da guia Portal da Empresa estão coloridos na identidade visual definida pela TI.
+  - Aplicativos: na guia **Aplicativos**, os botões **Aplicativos em destaque** e **Todos os aplicativos** foram atualizados.
+  - Pesquisa: na guia **Aplicativos**, o botão **Pesquisa** é um botão de ação flutuante.
+  - Aplicativos de navegação: a exibição **Todos os aplicativos** mostra uma exibição com as guias **Em destaque**, **Todos** e **Categorias** para facilitar a navegação.
+  - Suporte: as guias **Meus dispositivos** e **Entrar em contato com a TI** foram atualizadas para melhorar a legibilidade.
+
+  Para obter mais detalhes sobre essas alterações, consulte [Atualizações da interface do usuário para aplicativos de usuário final do Intune](/intune/enduser/whats-new-in-intune-app-ui).
+
+- **Assinatura de Script para o Portal de Empresa do Windows 10**
+
+  Se precisar baixar e carregar o aplicativo Portal da Empresa do Windows 10, agora você poderá usar um script para simplificar e facilitar o processo de autenticação de aplicativo para sua organização.  Para baixar o script e suas instruções de uso, consulte [Microsoft Intune Signing Script for Windows 10 Company Portal](https://aka.ms/win10cpscript) (Script de assinatura do Microsoft Intune para o Portal da Empresa do Windows 10) na Galeria do TechNet. Para obter mais detalhes sobre este comunicado, consulte [Updating your Windows 10 Company Portal app](https://blogs.technet.microsoft.com/intunesupport/2017/03/13/updating-your-windows-10-company-portal-app/) (Atualizar seu aplicativo Portal da Empresa do Windows 10) no blog da equipe de suporte do Intune.
+
+- **Suporte aprimorado para os usuários Android na China**
+
+  Devido à ausência da Google Play Store na China, os dispositivos Android devem obter aplicativos de marketplaces chineses. O Portal da Empresa dará suporte a este fluxo de trabalho, redirecionando os usuários Android na China para baixarem os aplicativos Portal da Empresa e Outlook de lojas de aplicativos locais. Isso melhorará a experiência do usuário quando as políticas de acesso condicional estiverem habilitadas para gerenciamento de dispositivos e aplicativos móveis. Os aplicativos Portal da Empresa e Outlook para Android estão disponíveis nas seguintes lojas de aplicativos chinesas:
+
+  - [Baidu](https://go.microsoft.com/fwlink/?linkid=836946)
+  - [Xiaomi](https://go.microsoft.com/fwlink/?linkid=836947)
+  - [Tencent](https://go.microsoft.com/fwlink/?linkid=836949)
+  - [Huawei](https://go.microsoft.com/fwlink/?linkid=836948)
+  - [Wandoujia](https://go.microsoft.com/fwlink/?linkid=836950)
+
+- **Verifique se seus aplicativos do Portal da Empresa estão atualizados**
+
+  Em dezembro de 2016, lançamos uma atualização que habilitou a imposição da MFA (Autenticação Multifator) em um grupo de usuários quando eles registram um dispositivo iOS, Android, Windows 8.1+ ou Windows Phone 8.1+. Este recurso não funcionará sem determinadas versões de linha de base do aplicativo Portal da Empresa para Android (v5.0.3419.0+) e iOS (v2.1.17+).
+
+  Os recursos de gerenciamento do Intune estão melhorando continuamente e muitas melhorias têm atualizações coordenadas para os aplicativos do Portal da Empresa em todas as plataformas com suporte. Como resultado, é recomendável que você mantenha as versões mais recentes dos aplicativos do Portal da Empresa instaladas nos dispositivos para aproveitar os aprimoramentos do Intune e obter a melhor experiência de usuário.
+
+  >[!Tip]
+  > Peça aos seus usuários para definirem seus dispositivos para atualizar automaticamente os aplicativos da loja de aplicativos apropriada. Se tiver disponibilizado o aplicativo Portal da Empresa Android em um compartilhamento de rede, você poderá baixar a versão mais recente do [Centro de Download da Microsoft](https://www.microsoft.com/download/details.aspx?id=49140).
+
+- **O Microsoft Teams agora está habilitado para MAM no iOS e no Android**
+
+  Os aplicativos do Microsoft Teams para iOS e Android agora estão habilitados com recursos de MAM (gerenciamento de aplicativo móvel) do Intune, para que você possa capacitar as equipes para trabalharem livremente entre dispositivos, garantindo que as conversas e dados corporativos estejam protegidos em cada turno. Para obter mais detalhes, consulte [o comunicado sobre o Microsoft Teams](https://blogs.technet.microsoft.com/enterprisemobility/2017/03/14/microsoft-teams-is-now-generally-available-and-mam-enabled-on-ios-and-android/) no blog Enterprise Mobility + Security.
+
+### <a name="new-in-configuration-manager-current-branch"></a>Novo no Configuration Manager (Branch Atual)
+
+Os seguintes recursos que estavam anteriormente disponíveis nas versões do Configuration Manager Technical Preview agora estão disponíveis em implantações híbridas com o Intune e a versão 1702 do Configuration Manager (branch atual).
+
+- [Suporte do Android for Work](/sccm/core/plan-design/changes/whats-new-in-version-1702##android-for-work-support)
+- [Configurações de conformidade de aplicativos fora de conformidade](/sccm/core/plan-design/changes/whats-new-in-version-1702#conditional-access-device-compliance-policy-improvements)
+- [Criação e distribuição de certificado PFX e suporte a S/MIME](/sccm/core/plan-design/changes/whats-new-in-version-1702#improvements-to-certificate-profiles)
+- [Android and iOS versions are no longer targetable in creation wizards for hybrid MDM (As versões do Android e iOS não precisam mais ser indicadas nos assistentes de criação do MDM híbrido)](/sccm/core/plan-design/changes/whats-new-in-version-1702#android-and-ios-versions-are-no-longer-targetable-in-creation-wizards-for-hybrid-mdm)
+
+Os seguintes recursos híbridos adicionais também estão incluídos na versão 1702 do Configuration Manager (ramificação atual):
+
+- **Suporte aprimorado para o Apple Volume Purchase Program (VPP)**
+
+  - Agora você pode implantar aplicativos licenciados para dispositivos, bem como os usuários. Dependendo da capacidade dos aplicativos para dar suporte ao licenciamento de dispositivos, uma licença apropriada será solicitada quando você implantá-la, da seguinte maneira:
+
+    | Versão do Configuration Manager | O aplicativo dá suporte ao licenciamento de dispositivos? | Tipo de coleção de implantação | Licença solicitada |
+    |-|-|-|-|
+    |Anterior à versão 1702|Sim|usuário|Licença de usuário|
+    |Anterior à versão 1702|Não|usuário|Licença de usuário|
+    |Anterior à versão 1702|Sim|Dispositivo|Licença de usuário|
+    |Anterior à versão 1702|Não|Dispositivo|Licença de usuário|
+    |Versão 1702 e posterior|Sim|usuário|Licença de usuário|
+    |Versão 1702 e posterior|Não|usuário|Licença de usuário|
+    |Versão 1702 e posterior|Sim|Dispositivo|Licença de dispositivo|
+    |Versão 1702 e posterior|Não|Dispositivo|Licença de usuário|
+
+  - Agora você também pode implantar e controlar aplicativos que você adquiriu do Volume Purchase Program for Education do iOS.
+
+  - Agora você pode associar vários tokens de programa de compra por volume da Apple ao seu Configuration Manager.
+
+  Para saber mais sobre aplicativos do iOS adquiridos por volume, veja [Gerenciar aplicativos iOS adquiridos por volume](/sccm/mdm/deploy-use/manage-volume-purchased-ios-apps).
+
+- **Suporte para aplicativos de linha de negócios na Windows Store para Empresas**
+
+  Agora você pode sincronizar aplicativos personalizados de linha de negócios da Windows Store para Empresas.
+
+- **Novas ferramentas de monitoramento de defesa contra ameaças móveis**
+
+    Você agora tem novas maneiras de monitorar o status de conformidade com seu provedor de serviços de defesa contra ameaças móveis.
+
+    Para saber mais, veja [Como monitorar a conformidade com defesa contra ameaças móveis](/sccm/mdm/deploy-use/monitor-mobile-threat-defense-compliance).
 
 ## <a name="new-hybrid-features-in-february-2017"></a>Novos recursos híbridos em fevereiro de 2017
 
@@ -55,15 +142,19 @@ Os recursos do Intune a seguir introduzidos em fevereiro de 2017 funcionam em im
 
 - **Suporte do Android for Work**
 
-  Agora você pode gerenciar dispositivos Android usando o Android for Work em ambientes de MDM híbridos com o Configuration Manager Technical Preview 1702. Os dispositivos Android com suporte agora podem ser registrados como dispositivos Android for Work, o que cria um perfil de trabalho no dispositivo no qual os aplicativos aprovados na Play for Work podem ser implantados. Você também pode configurar e implantar itens de configuração, políticas de conformidade e perfis de acesso aos recursos para esses dispositivos.
+  Agora você pode gerenciar dispositivos Android usando o Android for Work em ambientes de MDM híbridos com o Configuration Manager Technical Preview 1702. Os dispositivos Android com suporte agora podem ser registrados como dispositivos Android for Work, o que cria um perfil de trabalho no dispositivo no qual os aplicativos aprovados na Play for Work podem ser implantados. Você também pode configurar e implantar itens de configuração, políticas de conformidade e perfis de acesso aos recursos para esses dispositivos. Para saber mais, veja [Suporte do Android for Work](/sccm/core/get-started/capabilities-in-technical-preview-1702#android-for-work-support).
 
 - **Configurações de conformidade de aplicativos fora de conformidade**
 
-  Agora você pode criar regras de aplicativos fora de conformidade para aplicativos Android e iOS nas políticas de conformidade. Se os dispositivos tiverem os aplicativos especificados instalados, eles serão marcados como “fora de conformidade” e perderão o acesso aos recursos da empresa de acordo com as políticas de acesso condicional em vigor.
+  Agora você pode criar regras de aplicativos fora de conformidade para aplicativos Android e iOS nas políticas de conformidade. Se os dispositivos tiverem os aplicativos especificados instalados, eles serão marcados como “fora de conformidade” e perderão o acesso aos recursos da empresa de acordo com as políticas de acesso condicional em vigor. Para saber mais, veja [Aprimoramentos na política de conformidade de dispositivo de acesso condicional](/sccm/core/get-started/capabilities-in-technical-preview-1702#conditional-access-device-compliance-policy-improvements).
 
 - **Criação e distribuição de certificado PFX e suporte a S/MIME**
 
-  Agora você pode criar e implantar certificados PFX para usuários em um ambiente híbrido. Esse certificado pode então ser usado para criptografia e descriptografia de email S/MIME pelos dispositivos que o usuário registrou.
+  Agora você pode criar e implantar certificados PFX para usuários em um ambiente híbrido. Esse certificado pode então ser usado para criptografia e descriptografia de email S/MIME pelos dispositivos que o usuário registrou. Para saber mais, veja [Criar certificados PFX com suporte a S MIME](/sccm/core/get-started/capabilities-in-technical-preview-1702#create-pfx-certificates-with-s-mime-support).
+
+- **Suporte para parâmetros de configuração adicionais do iOS**
+   
+    Agora você tem 42 configurações adicionais do iOS que pode configurar como parte de um item de configuração. A maioria das configurações (35 ao todo) foi adicionada para dispositivos iOS supervisionados. Para saber mais, confira [Novas configurações de conformidade para dispositivos iOS](/sccm/core/get-started/capabilities-in-technical-preview-1702#new-compliance-settings-for-ios-devices).
 
 ## <a name="new-hybrid-features-in-january-2017"></a>Novos recursos híbridos em janeiro de 2017
 

@@ -2,7 +2,7 @@
 title: "Configurações do cliente | Microsoft Docs"
 description: "Escolha as configurações do cliente usando o console de administração no System Center Configuration Manager."
 ms.custom: na
-ms.date: 12/12/2016
+ms.date: 03/24/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
@@ -17,9 +17,9 @@ author: arob98
 ms.author: angrobe
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: 289db441899359f3bf3abe5d38896c7acd2045b6
-ms.openlocfilehash: 5eaca19f2b21b1c62b956d2a44d492d3ddd6d10a
-ms.lasthandoff: 03/10/2017
+ms.sourcegitcommit: dab5da5a4b5dfb3606a8a6bd0c70a0b21923fff9
+ms.openlocfilehash: bd2cf7b0df4a1f50c006e8280bf59ea91f1b4477
+ms.lasthandoff: 03/27/2017
 
 ---
 # <a name="about-client-settings-in-system-center-configuration-manager"></a>Sobre as configurações do cliente no System Center Configuration Manager
@@ -329,7 +329,7 @@ Muitas das configurações do cliente são autoexplicativas. Outras são descrit
     -   Arquivos NOIDMIF devem estar na pasta Windows\System32\CCM\Inventory\Noidmif.  
 
     > [!NOTE]  
-    >  Essa definição só está disponível nas configurações do cliente padrão. 
+    >  Essa definição só está disponível nas configurações do cliente padrão.
 
 -   **Atraso aleatório máximo**
 
@@ -601,6 +601,12 @@ Muitas das configurações do cliente são autoexplicativas. Outras são descrit
 -   **Período de tempo para o qual todas as implantações pendentes com prazo nesse período também serão instaladas**  
 
      Use essa configuração para especificar o período de tempo da configuração anterior. Você pode inserir um valor entre 1 e 23 horas e de 1 a 365 dias. Por padrão, essa configuração é definida para 7 dias.  
+
+-   **Habilitar instalação dos arquivos de instalação do Express em clientes**
+
+-   **Porta usada para baixar conteúdo para arquivos de instalação do Express**
+
+-   **Habilitar o gerenciamento do cliente do Office 365 novamente** Use essa configuração para habilitar o gerenciamento do agente de cliente do Office 365. Quando você define o valor como **Sim**, ele permite que você defina as configurações de instalação do Office 365, baixe arquivos de CDNs (Redes de Distribuição de Conteúdo) do Office e implante os arquivos como um aplicativo no Configuration Manager.
 
 ##  <a name="user-and-device-affinity"></a>Afinidade de dispositivo e de usuário  
 

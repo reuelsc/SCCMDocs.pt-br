@@ -16,9 +16,9 @@ author: Brenduns
 ms.author: brenduns
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: 477ffa5d61d2dfaedf8a3a1f5687e2d72698ad28
-ms.openlocfilehash: f175e11d9402e7c57c45edb4d5bbe969de5dcdf7
-ms.lasthandoff: 03/10/2017
+ms.sourcegitcommit: dab5da5a4b5dfb3606a8a6bd0c70a0b21923fff9
+ms.openlocfilehash: 86109f7186422c2b29ee933e827a7d14123e5792
+ms.lasthandoff: 03/27/2017
 
 
 ---
@@ -182,6 +182,11 @@ A partir da versão 1606, com o pacote cumulativo de atualizações do hotfix do
 
 ## <a name="windows-server-2008-r2-with-sp1-x64-standard-enterprise-and-datacenter"></a>Windows Server 2008 R2 com SP1 (x64): Standard, Enterprise e Datacenter  
  Agora o Windows Server 2008 R2 está com suporte estendido e não mais com suporte base, conforme detalhado na [Política de Ciclo de Vida da Microsoft](https://support.microsoft.com/lifecycle). Para obter mais informações sobre o suporte futuro para esses sistemas operacionais como servidores do sistema de sites com o Configuration Manager, consulte [Recursos removidos e preteridos do System Center Configuration Manager](../../../core/plan-design/changes/removed-and-deprecated-features.md).  
+
+ A partir do Configuration Manager versão 1702, este sistema operacional não oferece suporte a servidores de site ou a maioria das funções de sistema de site, mas permanece com suporte para a função de sistema de sites de ponto de migração de estado e de ponto de distribuição (incluindo pontos de distribuição pull e para PXE e multicast).
+ 
+ Versões anteriores à 1702 continuam a dar suporte ao seu uso para o seguinte.
+
 
 **Servidores do site:**  
 

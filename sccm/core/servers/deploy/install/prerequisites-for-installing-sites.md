@@ -2,7 +2,7 @@
 title: "Pré-requisitos de sites | Microsoft Docs"
 description: "Saiba mais sobre os pré-requisitos para instalar os diferentes tipos de sites do System Center Configuration Manager."
 ms.custom: na
-ms.date: 3/1/2017
+ms.date: 3/27/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
@@ -16,9 +16,9 @@ author: Brenduns
 ms.author: brenduns
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: b6c570d8addbe7df5aace461ee725a7df1d35a31
-ms.openlocfilehash: 76c8bb6d0922fad996e27c04a86cb9b4ad32a810
-ms.lasthandoff: 03/01/2017
+ms.sourcegitcommit: dab5da5a4b5dfb3606a8a6bd0c70a0b21923fff9
+ms.openlocfilehash: ff89d4aea6be871e64e0a788f054ba4cadb3e51d
+ms.lasthandoff: 03/27/2017
 
 ---
 # <a name="prerequisites-for-installing-system-center-configuration-manager-sites"></a>Pré-requisitos para instalar sites do System Center Configuration Manager
@@ -60,14 +60,14 @@ Os pré-requisitos a seguir se aplicam à instalação de um site de administra�
 - O servidor do site e os computadores de banco de dados do site devem atender a todas as configurações de pré-requisito. Antes de iniciar a Instalação, será possível [executar manualmente o Verificador de Pré-requisitos](../../../../core/servers/deploy/install/prerequisite-checker.md) para identificar e corrigir problemas.  
 
 
-### <a name="bkmk_expand"></a> Expansão de um site primário autônomo
+### <a name="bkmk_expand"></a> Pré-requisitos para expandir um site primário autônomo
 Um site primário autônomo deve atender aos seguinte pré-requisitos para que você possa expandi-lo para uma hierarquia com um site de administração central:
 
--   **É necessário instalar a mídia de instalação do novo site de administração central (que contém os arquivos de origem) que corresponde à versão do site primário autônomo**
+-   **É necessário instalar o novo site de administração central usando mídia de um CD. A última pasta (que contém os arquivos de origem) que corresponde à versão do site primário autônomo**
 
-     Para garantir a correspondência de versões, instale o novo site usando os arquivos de origem encontrados na [pasta CD.Latest](../../../../core/servers/manage/the-cd.latest-folder.md) no site primário autônomo.
+ Para garantir a correspondência de versões, use os arquivos de origem encontrados na [pasta CD.Latest](/sccm/core/servers/manage/the-cd.latest-folder) no site primário autônomo.
 
-     Para obter mais informações sobre os arquivos de origem corretos a serem usados para instalar diferentes sites, consulte [Opções de instalação de diferentes tipos de sites](../../../../core/servers/deploy/install/prepare-to-install-sites.md#bkmk_options), no tópico [Preparar para instalar sites](../../../../core/servers/deploy/install/prepare-to-install-sites.md).
+ Para obter mais informações sobre os arquivos de origem corretos a serem usados para instalar diferentes sites, consulte [Opções de instalação de diferentes tipos de sites](../../../../core/servers/deploy/install/prepare-to-install-sites.md#bkmk_options), no tópico [Preparar para instalar sites](../../../../core/servers/deploy/install/prepare-to-install-sites.md).
 
 
 -   **O site primário autônomo não pode ser configurado para migrar dados de outra hierarquia do Configuration Manager**  
