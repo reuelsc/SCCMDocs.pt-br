@@ -16,9 +16,9 @@ author: Mtillman
 ms.author: mtillman
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: 3c2a07f560e0aa3d2beb7cc50e71c98ac45c27e1
-ms.openlocfilehash: cc3e4055ce6b648e4554773518fc928cfb51c5f3
-ms.lasthandoff: 03/28/2017
+ms.sourcegitcommit: 3eb48942c1259d2aa1b3c200fad73b39b11c0b8c
+ms.openlocfilehash: 51560360a0cb7ecb4a2b0d7eaeb4fdd62d6afc13
+ms.lasthandoff: 03/30/2017
 
 ---
 # <a name="whats-new-in-hybrid-mobile-device-management-with-system-center-configuration-manager-and-microsoft-intune"></a>Novidades no gerenciamento de dispositivo móvel híbrido com o System Center Configuration Manager e o Microsoft Intune
@@ -81,6 +81,16 @@ Os seguintes recursos do Intune introduzidos em março de 2017 funcionam em impl
 - **O Microsoft Teams agora está habilitado para MAM no iOS e no Android**
 
   Os aplicativos do Microsoft Teams para iOS e Android agora estão habilitados com recursos de MAM (gerenciamento de aplicativo móvel) do Intune, para que você possa capacitar as equipes para trabalharem livremente entre dispositivos, garantindo que as conversas e dados corporativos estejam protegidos em cada turno. Para obter mais detalhes, consulte [o comunicado sobre o Microsoft Teams](https://blogs.technet.microsoft.com/enterprisemobility/2017/03/14/microsoft-teams-is-now-generally-available-and-mam-enabled-on-ios-and-android/) no blog Enterprise Mobility + Security.
+
+### <a name="new-in-configuration-manager-technical-preview-1703"></a>Novidades no Configuration Manager Technical Preview 1703
+
+- **Suporte adicional para cenários do Apple Volume Purchase Program**
+
+   A partir do Technical Preview 1703, agora você tem suporte para os seguintes cenários do Volume Purchase Program (VPP):
+
+   - Licenciamento do dispositivo – Aplicativos com suporte para o licenciamento do dispositivo e que são implantados em coleções de dispositivos necessitarão apenas de uma licença por dispositivo.  Anteriormente, você deveria usar uma licença para cada usuário em um dispositivo. Para mais informações, confira [Implantar aplicativos iOS adquiridos por volume em coleções de dispositivos](/sccm/core/get-started/capabilities-in-technical-preview-1703#deploy-volume-purchased-ios-apps-to-device-collections).
+   - Uso de vários tokens de VPP para um locatário híbrido único com ambos os tokens usados para gerenciar aplicativos VPP.
+   - Uso de tokens educacionais de VPP com a capacidade de distinguir entre os tokens corporativos e educacionais.
 
 ### <a name="new-in-configuration-manager-current-branch"></a>Novo no Configuration Manager (Branch Atual)
 

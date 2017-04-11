@@ -2,7 +2,7 @@
 title: Cache de pares do cliente | System Center Configuration Manager
 description: "Use cache de pares para locais de fonte de conteúdo do cliente durante a implantação de conteúdo com o System Center Configuration Manager."
 ms.custom: na
-ms.date: 3/27/2017
+ms.date: 4/4/2017
 ms.reviewer: na
 ms.suite: na
 ms.prod: configuration-manager
@@ -16,9 +16,9 @@ author: Brenduns
 ms.author: brenduns
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: dab5da5a4b5dfb3606a8a6bd0c70a0b21923fff9
-ms.openlocfilehash: 5298f1c836c1a872862b0e972180ac0c99c59751
-ms.lasthandoff: 03/27/2017
+ms.sourcegitcommit: 26feb0b166beb7e48cb800a5077d00dbc3eec51a
+ms.openlocfilehash: dcd05d7d120f8997562da7d92b38c8b52a512357
+ms.lasthandoff: 04/04/2017
 
 ---
 
@@ -70,7 +70,7 @@ Para ajudar você a entender o uso do cache de pares, exiba o painel Fontes de D
 A partir da versão 1702, você pode usar três relatórios para exibir o uso de cache de pares. No console, vá até **Monitoramento** > **Relatórios** > **Relatórios**. Todos os relatórios têm um tipo de **Conteúdo de Distribuição de Software**:
 1.  **Rejeição de conteúdo de origem de cache de pares**:  
 Use esse relatório para entender com que frequência as fontes de cache de pares em um grupo de limites rejeitou uma solicitação de conteúdo.
- - **Problema conhecido:** ao fazer uma busca detalhada nos resultados como *MaxCPULoad* ou *MaxDiskIO*, você poderá receber um erro que sugere que o relatório ou os detalhes não podem ser encontrados. Para solucionar esse problema, use os seguintes dois relatórios que mostram os resultados diretamente. 
+ - **Problema conhecido:** ao fazer uma busca detalhada nos resultados como *MaxCPULoad* ou *MaxDiskIO*, você poderá receber um erro que sugere que o relatório ou os detalhes não podem ser encontrados. Para solucionar esse problema, use os seguintes dois relatórios que mostram os resultados diretamente.
 
 2. **Rejeição de conteúdo de origem do cache de pares por condição**:  
 Use esse relatório para entender os detalhes de rejeição para um grupo de limites ou tipo de rejeição especificado. É possível especificar
@@ -87,9 +87,11 @@ Use esse relatório para entender os detalhes de rejeição para um grupo de lim
 
 
 ## <a name="requirements-and-considerations-for-peer-cache"></a>Requisitos e considerações do Cache de Pares
-- O Cache de Pares tem suporte em qualquer sistema operacional Windows com suporte como cliente do Configuration Manager. Não há suporte para sistemas operacionais não Windows para o Cache de Pares.
+-   O Cache de Pares tem suporte em qualquer sistema operacional Windows com suporte como cliente do Configuration Manager. Não há suporte para sistemas operacionais não Windows para o Cache de Pares.
 
-- Os clientes só podem transferir conteúdo de clientes de cache de pares que estão em seu grupo de limites atual.
+-   Os clientes só podem transferir conteúdo de clientes de cache de pares que estão em seu grupo de limites atual.
+
+-   Cada site em que os clientes usam Cache Par deve ser configurado com uma [Conta de Acesso à Rede](/sccm/core/plan-design/hierarchy/manage-accounts-to-access-content#a-namebkmknaaa-network-access-account). A conta é usada pelo computador de origem do Cache Par para autenticar solicitações de download de colegas e exige apenas permissões de usuário de domínio para essa finalidade.
 
 -     Como o limite atual de uma fonte de conteúdo do Cache de Pares é determinado pelo último envio de inventário de hardware daquele cliente, um cliente que usa um perfil móvel para um local de rede e que está em um grupo de limites diferente ainda poderá ser considerado um membro de seu grupo de limites anterior para o Cache de Pares. Isso pode resultar em uma fonte de conteúdo de cache de pares sendo oferecida a um cliente que não está em seu local de rede imediato. É recomendado excluir os clientes que estão sujeitos a essa configuração de participarem como uma fonte do Cache de Pares.
 
