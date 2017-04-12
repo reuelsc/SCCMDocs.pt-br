@@ -2,7 +2,7 @@
 title: "Notas de versão – Configuration Manager | Microsoft Docs"
 description: "Consulte essas notas para problemas urgentes que ainda não foram corrigidos no produto ou abordados em um artigo da Base de Dados de Conhecimento Microsoft."
 ms.custom: na
-ms.date: 3/27/27
+ms.date: 03/27/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
