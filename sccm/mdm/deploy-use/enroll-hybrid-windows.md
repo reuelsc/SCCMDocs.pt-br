@@ -16,9 +16,9 @@ author: nathbarn
 ms.author: nathbarn
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: 6424fb07802b62820b4dc78a58ab30d3b956abef
-ms.openlocfilehash: 4189fe34efc2ae134150a89791dc10bbab1b9d02
-ms.lasthandoff: 03/17/2017
+ms.sourcegitcommit: 4bf5cc25c4ffb89df620b02044f43a13adc1443e
+ms.openlocfilehash: c87841ee1b30ebbcbbe8cd06309d909c38c01fdf
+ms.lasthandoff: 04/06/2017
 
 
 ---
@@ -26,12 +26,27 @@ ms.lasthandoff: 03/17/2017
 
 *Aplica-se a: System Center Configuration Manager (Branch Atual)*
 
-Este tópico informa aos administradores de TI, como eles podem permitir que seus usuários tragam os PCs com Windows e dispositivos móveis para o gerenciamento usando o Gerenciador de Configuração e o Microsoft Intune. Existem dois métodos de registro:
--  O registro automático do Azure Active Directory (AD) quando os usuários conectam a sua conta a um dispositivo
-- Registro por instalação e inscrição no aplicativo de Portal da empresa
+Este tópico informa aos administradores de TI, como eles podem permitir que seus usuários tragam os PCs com Windows e dispositivos móveis para o gerenciamento usando o Gerenciador de Configuração e o Microsoft Intune.
+
+## <a name="enable-windows-device-management"></a>Habilite o gerenciamento do dispositivo Windows
+Para habilitar o gerenciamento de dispositivos do Windows para PCs ou dispositivos móveis, use as seguintes etapas:
+
+1.  Antes de configurar o registro para qualquer plataforma, conclua os pré-requisitos e os procedimentos em [Configurar MDM híbrido](setup-hybrid-mdm.md).  
+2.  No console do Gerenciador de Configuração, no espaço de trabalho **Administração**, acesse **Visão Geral** > **Serviços de Nuvem** > **Assinaturas do Microsoft Intune**.  
+3.  Na faixa de opções, escolha **Configurar Plataformas** e clique na plataforma Windows:
+    - **Windows** para Windows PCs e laptops, em seguida, execute as seguintes etapas:
+      1. Na guia **Geral**, selecione **Habilitar registro do Windows**.
+      2. Se você usa um certificado de assinatura de código e implantar o aplicativo de Portal da Empresa, navegue até o **certificado de assinatura de código**. Os usuários de dispositivo também podem instalar o aplicativo de Portal da empresa na Windows Store ou você pode implantar o aplicativo da Windows Store para Empresas sem assinatura de código.
+      3. Você também pode configurar as [configurações do Windows Hello para Empresas](windows-hello-for-business-settings.md).
+    - **Windows Phone** para telefones e tablets com Windows, em seguida, execute as seguintes etapas:
+      1. Na guia **Geral**, clique em **Windows Phone 8.1 e Windows 10 Mobile**. Não há suporte para o Windows Phone 8.0.
+      2. Se sua organização precisa carregar aplicativos da empresa, você pode carregar o arquivo ou o token necessário. Para obter mais informações sobre aplicativos de sideload, consulte [Criar aplicativos para Windows](https://docs.microsoft.com/sccm/apps/get-started/creating-windows-applications).
+        - **Token de registro de aplicativo**
+        - **arquivo .pfx**
+        - **Nenhum** se você usar um certificado da Symantec, você poderá especificar **mostrar um alerta antes de expirarem os certificados da Symantec**.
+4. Clique em **OK** para fechar a caixa de diálogo.  Para simplificar o processo de registro usando o Portal da Empresa, você deve criar um alias DNS para o registro do dispositivo. Em seguida, você pode dizer aos usuários como registrar seus dispositivos.
 
 ## <a name="choose-how-to-enroll-windows-devices"></a>Escolha como registrar os dispositivos Windows
-
 Dois fatores determinam como você vai registrar os dispositivos Windows:
 - **Você usa o Azure Active Directory Premium?** <br>[O Azure AD Premium](https://docs.microsoft.com/azure/active-directory/active-directory-get-started-premium) está incluído no Enterprise Mobility + Security e outros planos de licenciamento.
 - **Quais versões de clientes Windows serão registradas?** <br>Dispositivos Windows 10 podem registrar automaticamente adicionando uma conta corporativa ou escolar. Versões anteriores devem ser registrados usando o aplicativo de Portal da Empresa.
@@ -58,31 +73,11 @@ O registro automático permite que os usuários registrem computadores da empres
 
 Por padrão, autenticação de dois fatores não está habilitada para o serviço. No entanto, a autenticação de dois fatores é recomendável ao registrar um dispositivo. Antes de solicitar a autenticação de dois fatores para esse serviço, você deve configurar um provedor de autenticação de dois fatores no Azure Active Directory e configurar suas contas de usuário para autenticação multifator. Consulte [Guia de Introdução com o servidor de autenticação multifator do Azure](https://docs.microsoft.com/azure/multi-factor-authentication/multi-factor-authentication-get-started-cloud).
 
-## <a name="company-portal-enrollment"></a>Registro do Portal da Empresa
-Os usuários finais ou um [gerenciador de registro de dispositivo](enroll-devices-with-device-enrollment-manager.md) pode registrar dispositivos Windows instalando o aplicativo de Portal da Empresa e, em seguida, entre com suas credenciais de trabalho. Para simplificar o registro para seus usuários finais, você deve adicionar um CNAME em seu registro de DNS.
-
-### <a name="enable-windows-device-management"></a>Habilite o gerenciamento do dispositivo Windows
-Para habilitar o gerenciamento de dispositivos do Windows para PCs ou dispositivos móveis, use as seguintes etapas:
-
-1.  Antes de configurar o registro para qualquer plataforma, conclua os pré-requisitos e os procedimentos em [Configurar MDM híbrido](setup-hybrid-mdm.md).  
-2.  No console do Gerenciador de Configuração, no espaço de trabalho **Administração**, acesse **Visão Geral** > **Serviços de Nuvem** > **Assinaturas do Microsoft Intune**.  
-3.  Na faixa de opções, escolha **Configurar Plataformas** e clique na plataforma Windows:
-    - **Windows** para Windows PCs e laptops, em seguida, execute as seguintes etapas:
-      1. Na guia **Geral**, selecione **Habilitar registro do Windows**.
-      2. Se você usa um certificado de assinatura de código e implantar o aplicativo de Portal da Empresa, navegue até o **certificado de assinatura de código**. Os usuários de dispositivo também podem instalar o aplicativo de Portal da empresa na Windows Store ou você pode implantar o aplicativo da Windows Store para Empresas sem assinatura de código.
-      3. Você também pode configurar as [configurações do Windows Hello para Empresas](windows-hello-for-business-settings.md).
-    - **Windows Phone** para telefones e tablets com Windows, em seguida, execute as seguintes etapas:
-      1. Na guia **Geral**, clique em **Windows Phone 8.1 e Windows 10 Mobile**. Não há suporte para o Windows Phone 8.0.
-      2. Se sua organização precisa carregar aplicativos da empresa, você pode carregar o arquivo ou o token necessário. Para obter mais informações sobre aplicativos de sideload, consulte [Criar aplicativos para Windows](https://docs.microsoft.com/sccm/apps/get-started/creating-windows-applications).
-        - **Token de registro de aplicativo**
-        - **arquivo .pfx**
-        - **Nenhum** se você usar um certificado da Symantec, você poderá especificar **mostrar um alerta antes de expirarem os certificados da Symantec**.
-4. Clique em **OK** para fechar a caixa de diálogo.  Para simplificar o processo de registro usando o Portal da Empresa, você deve criar um alias DNS para o registro do dispositivo. Em seguida, você pode dizer aos usuários como registrar seus dispositivos.
 
 ### <a name="create-dns-alias-for-device-enrollment"></a>Criar o alias DNS para registro de dispositivo  
 Um DNS alias (tipo de registro CNAME) facilita para os usuários registrem seus dispositivos ao se conectar ao serviço sem exigir que o usuário insira um endereço de servidor. Para criar um alias DNS (tipo de registro CNAME), você deve configurar um CNAME nos registros DNS da sua empresa que redirecione as solicitações enviadas a uma URL no domínio da empresa para os servidores de serviço de nuvem da Microsoft.  Por exemplo, se o domínio da sua empresa for contoso.com, você deverá criar um CNAME no DNS que redirecione EnterpriseEnrollment.contoso.com para EnterpriseEnrollment-s.manage.microsoft.com.  
 
- Embora a criação de entradas de DNS de CNAME seja opcional, os registros CNAME facilitam o registro para os usuários. Se não for possível encontrar nenhum registro CNAME no registro, os usuários deverão inserir manualmente o nome do servidor MDM: https://enrollment.manage.microsoft.com.
+Embora a criação de entradas de DNS de CNAME seja opcional, os registros CNAME facilitam o registro para os usuários. Se não for possível encontrar nenhum registro CNAME no registro, os usuários deverão inserir manualmente o nome do servidor MDM: https://enrollment.manage.microsoft.com.
 
 |Tipo|Nome do host|Aponta para|TTL|  
 |----------|---------------|---------------|---|
