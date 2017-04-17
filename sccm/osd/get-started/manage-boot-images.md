@@ -17,9 +17,9 @@ author: Dougeby
 ms.author: dougeby
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: 70034213442f4c3d5a28ab65c2ceb51aa64320ad
-ms.openlocfilehash: 207975538b63390fb5789b19c519db89db62e0a5
-ms.lasthandoff: 03/31/2017
+ms.sourcegitcommit: 0cf2ac6440588ccf4848baa7a195f78e8675447d
+ms.openlocfilehash: c6a1eb9ccaee45eb242fb320cb6b492d1a39d349
+ms.lasthandoff: 04/11/2017
 
 
 ---
@@ -29,18 +29,10 @@ ms.lasthandoff: 03/31/2017
 
 Uma imagem de inicialização no Configuration Manager é uma imagem do [WinPE (Windows PE)](https://msdn.microsoft.com/library/windows/hardware/dn938389%28v=vs.85%29.aspx) usada durante uma implantação de sistema operacional. Imagens de inicialização são usadas para iniciar um computador no WinPE, que é um sistema operacional mínimo com componentes e serviços limitados que preparam o computador de destino para a instalação do Windows.  Use as seções a seguir para gerenciar imagens de inicialização.
 
-##  <a name="BKMK_BootImageDefault"></a> Imagens de inicialização padrão  
-Começando na versão 1702, quando você atualiza a versão do Windows ADK e, em seguida, atualiza para a versão mais recente do Configuration Manager, as imagens de inicialização padrão são atualizadas. Inclui a nova versão de janela PE do Windows ADK atualizado, a nova versão do cliente do Configuration Manager e todas as personalizações permanecem inalteradas. Imagens de inicialização personalizadas não são atualizadas. Antes da versão 1702, você deve atualizar manualmente a imagem de inicialização para usar a nova versão do Windows ADK.
-
-Quando você executa a atualização do Configuration Manager para uma nova versão principal usando o processo de instalação, o Configuration Manager pode atualizar as imagens de inicialização padrão, assim como imagens de inicialização personalizadas baseadas em imagens de inicialização padrão que estão armazenadas no local padrão.
-
-As opções que podem ser configuradas nas imagens de inicialização padrão no site (como componentes opcionais) são transportadas quando as imagens de inicialização são atualizadas, inclusive drivers. Os objetos de driver de origem devem ser válidos, incluindo os arquivos de origem do driver, ou os drivers não serão adicionados às imagens de inicialização atualizada no site. Outras imagens de inicialização que não sejam baseadas em imagens de inicialização padrão, mesmo se baseadas na mesma versão do Windows ADK, não serão atualizadas. Após a atualização das imagens de inicialização, você precisará redistribuí-las aos pontos de distribuição. Qualquer mídia que use as imagens de inicialização precisará ser recriada. Se não quiser que suas imagens de inicialização padrão/personalizadas sejam atualizadas automaticamente, você deverá armazená-las em um local diferente.  
-
-
 ## <a name="BKMK_BootImageDefault"></a> Imagens de inicialização padrão
 O Configuration Manager fornece duas imagens de inicialização padrão: uma para dar suporte a plataformas x86 e outra para dar suporte a plataformas x64. Essas imagens são armazenadas em: \\\\*servername*>\SMS_<*sitecode*>\osd\boot\\<*x64*> ou <*i386*>. As imagens de inicialização padrão são atualizadas ou geradas novamente dependendo da ação que você tomar.
 
-**Use as atualizações e manutenção para instalar a versão mais recente do Configuration Manager** A partir da versão 1702, quando você atualizar a versão do Windows ADK e usar as atualizações e manutenção para instalar a versão mais recente do Configuration Manager, ele regenerará as imagens de inicialização padrão. Inclui a nova versão da Janela PE do Windows ADK atualizado e a nova versão de personalizações, drivers e cliente, entre outros, do Configuration Manager. Imagens de inicialização personalizadas não são modificadas. 
+**Use as atualizações e manutenção para instalar a versão mais recente do Configuration Manager** A partir da versão 1702, quando você atualizar a versão do Windows ADK e usar as atualizações e manutenção para instalar a versão mais recente do Configuration Manager, ele regenerará as imagens de inicialização padrão. Inclui a nova versão da Janela PE do Windows ADK atualizado e a nova versão de personalizações, drivers e cliente, entre outros, do Configuration Manager. Imagens de inicialização personalizadas não são modificadas.
 
 Antes da versão 1702, o Configuration Manager atualiza a imagem de inicialização (boot.wim) existente com os componentes do cliente, drivers, personalizações, etc., mas não usará a versão mais recente do Windows PE do Windows ADK. Você deve modificar manualmente a imagem de inicialização para usar a nova versão do Windows ADK.
 
