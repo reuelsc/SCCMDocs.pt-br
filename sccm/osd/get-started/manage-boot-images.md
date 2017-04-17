@@ -17,9 +17,9 @@ author: Dougeby
 ms.author: dougeby
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: 4edf7d09d39fa22fb5812aecc88febd763001eba
-ms.openlocfilehash: 369aa062d0f38eedebc0a7c351a7ce67b53d199b
-ms.lasthandoff: 02/21/2017
+ms.sourcegitcommit: 70034213442f4c3d5a28ab65c2ceb51aa64320ad
+ms.openlocfilehash: 207975538b63390fb5789b19c519db89db62e0a5
+ms.lasthandoff: 03/31/2017
 
 
 ---
@@ -29,19 +29,41 @@ ms.lasthandoff: 02/21/2017
 
 Uma imagem de inicialização no Configuration Manager é uma imagem do [WinPE (Windows PE)](https://msdn.microsoft.com/library/windows/hardware/dn938389%28v=vs.85%29.aspx) usada durante uma implantação de sistema operacional. Imagens de inicialização são usadas para iniciar um computador no WinPE, que é um sistema operacional mínimo com componentes e serviços limitados que preparam o computador de destino para a instalação do Windows.  Use as seções a seguir para gerenciar imagens de inicialização.
 
-##  <a name="a-namebkmkbootimagedefaulta-default-boot-images"></a><a name="BKMK_BootImageDefault"></a> Imagens de inicialização padrão  
- O Configuration Manager fornece duas imagens de inicialização padrão: uma para dar suporte a plataformas x86 e outra para dar suporte a plataformas x64. Essas imagens são armazenadas em: \\\\*servername*>\SMS_<*sitecode*>\osd\boot\\<*x64*> ou <*i386*>.  
+##  <a name="BKMK_BootImageDefault"></a> Imagens de inicialização padrão  
+Começando na versão 1702, quando você atualiza a versão do Windows ADK e, em seguida, atualiza para a versão mais recente do Configuration Manager, as imagens de inicialização padrão são atualizadas. Inclui a nova versão de janela PE do Windows ADK atualizado, a nova versão do cliente do Configuration Manager e todas as personalizações permanecem inalteradas. Imagens de inicialização personalizadas não são atualizadas. Antes da versão 1702, você deve atualizar manualmente a imagem de inicialização para usar a nova versão do Windows ADK.
 
- Quando você atualiza o Configuration Manager para uma nova versão, o Configuration Manager pode substituir as imagens de inicialização padrão e as imagens de inicialização personalizadas baseadas nas imagens de inicialização padrão, nesse local, pelos arquivos atualizados. As opções que podem ser configuradas nas imagens de inicialização padrão no site (como componentes opcionais) são transportadas quando as imagens de inicialização são atualizadas, inclusive drivers. Os objetos de driver de origem devem ser válidos, incluindo os arquivos de origem do driver, ou os drivers não serão adicionados às imagens de inicialização atualizada no site. Outras imagens de inicialização que não sejam baseadas em imagens de inicialização padrão, mesmo se baseadas na mesma versão do Windows ADK, não serão atualizadas. Após a atualização das imagens de inicialização, você precisará redistribuí-las aos pontos de distribuição. Qualquer mídia que use as imagens de inicialização precisará ser recriada. Se não quiser que suas imagens de inicialização padrão/personalizadas sejam atualizadas automaticamente, você deverá armazená-las em um local diferente.  
+Quando você executa a atualização do Configuration Manager para uma nova versão principal usando o processo de instalação, o Configuration Manager pode atualizar as imagens de inicialização padrão, assim como imagens de inicialização personalizadas baseadas em imagens de inicialização padrão que estão armazenadas no local padrão.
 
- A ferramenta Log de Rastreamento do Configuration Manager é adicionada a todas as imagens de inicialização que você adiciona à **Biblioteca de Software**. Quando você estiver no WinPE, será possível iniciar a Ferramenta de Rastreamento de Log do Configuration Manager digitando **CMTrace** em um prompt de comando.  
+As opções que podem ser configuradas nas imagens de inicialização padrão no site (como componentes opcionais) são transportadas quando as imagens de inicialização são atualizadas, inclusive drivers. Os objetos de driver de origem devem ser válidos, incluindo os arquivos de origem do driver, ou os drivers não serão adicionados às imagens de inicialização atualizada no site. Outras imagens de inicialização que não sejam baseadas em imagens de inicialização padrão, mesmo se baseadas na mesma versão do Windows ADK, não serão atualizadas. Após a atualização das imagens de inicialização, você precisará redistribuí-las aos pontos de distribuição. Qualquer mídia que use as imagens de inicialização precisará ser recriada. Se não quiser que suas imagens de inicialização padrão/personalizadas sejam atualizadas automaticamente, você deverá armazená-las em um local diferente.  
 
-##  <a name="a-namebkmkbootimagecustoma-customize-a-boot-image"></a><a name="BKMK_BootImageCustom"></a> Personalizar uma imagem de inicialização  
+
+## <a name="BKMK_BootImageDefault"></a> Imagens de inicialização padrão
+O Configuration Manager fornece duas imagens de inicialização padrão: uma para dar suporte a plataformas x86 e outra para dar suporte a plataformas x64. Essas imagens são armazenadas em: \\\\*servername*>\SMS_<*sitecode*>\osd\boot\\<*x64*> ou <*i386*>. As imagens de inicialização padrão são atualizadas ou geradas novamente dependendo da ação que você tomar.
+
+**Use as atualizações e manutenção para instalar a versão mais recente do Configuration Manager** A partir da versão 1702, quando você atualizar a versão do Windows ADK e usar as atualizações e manutenção para instalar a versão mais recente do Configuration Manager, ele regenerará as imagens de inicialização padrão. Inclui a nova versão da Janela PE do Windows ADK atualizado e a nova versão de personalizações, drivers e cliente, entre outros, do Configuration Manager. Imagens de inicialização personalizadas não são modificadas. 
+
+Antes da versão 1702, o Configuration Manager atualiza a imagem de inicialização (boot.wim) existente com os componentes do cliente, drivers, personalizações, etc., mas não usará a versão mais recente do Windows PE do Windows ADK. Você deve modificar manualmente a imagem de inicialização para usar a nova versão do Windows ADK.
+
+**Atualização do Configuration Manager 2012 para Configuration Manager de Branch atual (CB)** Ao atualizar do Configuration Manager 2012 para CB do Configuration Manager usando o processo de instalação, o Configuration Manager regenerará as imagens de inicialização padrão. Inclui a nova versão de janela PE do Windows ADK atualizado, a nova versão do cliente do Configuration Manager e todas as personalizações permanecem inalteradas. Imagens de inicialização personalizadas não são modificadas.
+
+**Atualizar pontos de distribuição com a imagem de inicialização** Quando você usa a ação **Atualizar Pontos de Distribuição** no nó **imagens de inicialização** no console do Configuration Manager, ele atualiza as imagens de inicialização padrão com os componentes do cliente, drivers, personalizações, etc., mas não usará a versão mais recente do Windows PE do Windows ADK. Imagens de inicialização personalizadas não são modificadas.
+
+Além disso, considere o seguinte para qualquer uma das ações acima:
+- Os objetos de driver de fonte devem ser válidos, incluindo os arquivos de origem do driver ou os drivers não serão adicionados às imagens de inicialização no site.
+- Imagens de inicialização que não são baseadas em imagens de inicialização padrão, mesmo que usem a mesma versão do Windows PE, não serão modificadas.
+- Você deve redistribuir as imagens de inicialização modificadas para pontos de distribuição.
+- Você deve recriar qualquer mídia que usa as imagens de inicialização modificadas.
+- Se não quiser que suas imagens de inicialização padrão/personalizadas sejam atualizadas automaticamente, não as armazene no local padrão.
+
+> [!NOTE]
+> A ferramenta Log de Rastreamento do Configuration Manager é adicionada a todas as imagens de inicialização que você adiciona à **Biblioteca de Software**. Quando você estiver no Windows PE, você pode iniciar a ferramenta de Log de rastreamento do Configuration Manager digitando **CMTrace** em um prompt de comando.  
+
+##  <a name="BKMK_BootImageCustom"></a> Personalizar uma imagem de inicialização  
  É possível personalizar uma imagem de inicialização ou [Modificar uma imagem de inicialização](#BKMK_ModifyBootImages) no console do Configuration Manager quando ele é baseado em uma versão do Windows PE de uma versão do Windows ADK com suporte. Quando um site for atualizado com uma nova versão e uma nova versão do Windows ADK for instalada, as imagens de inicialização personalizadas (não no local da imagem de inicialização padrão) não serão atualizadas com a nova versão do Windows ADK. Quando isso acontecer, não será mais possível personalizar as imagens de inicialização no console do Configuration Manager. No entanto, elas continuarão funcionando como antes da atualização.  
 
  Quando uma imagem de inicialização é baseada em uma versão diferente do Windows ADK instalada em um site, você deverá personalizar as imagens de inicialização usando outro método, como usar a ferramenta de linha de comando DISM (Gerenciamento e Manutenção de Imagens de Implantação) que faz parte do Windows AIK e Windows ADK. Para obter mais informações, consulte [Customize boot images (Personalizar imagens de inicialização)](customize-boot-images.md).  
 
-##  <a name="a-namebkmkaddbootimagesa-add-a-boot-image"></a><a name="BKMK_AddBootImages"></a> Adicionar uma imagem de inicialização  
+##  <a name="BKMK_AddBootImages"></a> Adicionar uma imagem de inicialização  
 
  Durante a instalação do site, o Configuration Manager adiciona automaticamente imagens de inicialização baseadas em uma versão do WinPE da versão do Windows ADK com suporte. Dependendo da versão do Configuration Manager, é possível adicionar imagens de inicialização baseadas em uma versão do WinPE diferente da versão com suporte do Windows ADK.  Ocorre um erro quando você tenta adicionar uma imagem de inicialização que contém uma versão do WinPE sem suporte.  
 
@@ -96,7 +118,7 @@ Uma imagem de inicialização no Configuration Manager é uma imagem do [WinPE (
 > [!NOTE]  
 >  Ao selecionar o nó **Imagem de Inicialização** no console do Configuration Manager, a coluna **Tamanho (KB)** exibe o tamanho descompactado de cada imagem de inicialização. No entanto, quando o Configuration Manager envia a imagem de inicialização pela rede, ele envia uma cópia compactada da imagem, que normalmente é bem menor que o tamanho exibido na coluna **Tamanho (KB)**.  
 
-##  <a name="a-namebkmkdistributebootimagesa-distribute-boot-images-to-a-distribution-point"></a><a name="BKMK_DistributeBootImages"></a> Distribuir imagens de inicialização para um ponto de distribuição  
+##  <a name="BKMK_DistributeBootImages"></a> Distribuir imagens de inicialização para um ponto de distribuição  
  As imagens de inicialização são distribuídas para os pontos de distribuição da mesma forma que outros conteúdos são distribuídos. Na maioria dos casos, você precisa distribuir a imagem de inicialização para pelo menos um ponto de distribuição antes de implantar um sistema operacional e antes de criar a mídia.  
 
 > [!NOTE]  
@@ -110,7 +132,7 @@ Uma imagem de inicialização no Configuration Manager é uma imagem do [WinPE (
 
  Para ver as etapas da distribuição de uma imagem de inicialização, consulte [Distribute content](../../core/servers/deploy/configure/deploy-and-manage-content.md#a-namebkmkdistributea-distribute-content).  
 
-##  <a name="a-namebkmkmodifybootimagesa-modify-a-boot-image"></a><a name="BKMK_ModifyBootImages"></a> Modificar uma imagem de inicialização  
+##  <a name="BKMK_ModifyBootImages"></a> Modificar uma imagem de inicialização  
  Você pode adicionar ou remover drivers de dispositivo da imagem ou editar as propriedades associadas à imagem de inicialização. Os drivers de dispositivo adicionados ou removidos podem incluir adaptadores de rede ou drivers de armazenamento em massa. Ao modificar imagens de inicialização, considere os seguintes fatores:  
 
 -   Você deve importar e habilitar os drivers de dispositivo no catálogo de drivers do dispositivo antes de adicioná-los à imagem de inicialização.  
@@ -212,7 +234,7 @@ Uma imagem de inicialização no Configuration Manager é uma imagem do [WinPE (
 
 6.  Depois de configurar as propriedades, clique em **OK**.  
 
-##  <a name="a-namebkmkbootimagepxea-configure-a-boot-image-to-deploy-from-a-pxe-enabled-distribution-point"></a><a name="BKMK_BootImagePXE"></a> Configurar uma imagem de inicialização para ser implantada de um ponto de distribuição habilitado para PXE  
+##  <a name="BKMK_BootImagePXE"></a> Configurar uma imagem de inicialização para ser implantada de um ponto de distribuição habilitado para PXE  
  Antes que seja possível usar uma imagem de inicialização para uma implantação de sistema operacional do PXE, é necessário configurar a imagem de inicialização para ser implantada de um ponto de distribuição habilitado para PXE.  
 
 #### <a name="to-configure-a-boot-image-to-deploy-from-a-pxe-enabled-distribution-point"></a>Para configurar uma imagem de inicialização para ser implantada de um ponto de distribuição habilitado para PXE  
@@ -232,7 +254,7 @@ Uma imagem de inicialização no Configuration Manager é uma imagem do [WinPE (
 
 6.  Depois de configurar as propriedades, clique em **OK**.  
 
-##  <a name="a-namebkmkbootimagelanguagea-configure-multiple-languages-for-boot-image-deployment"></a><a name="BKMK_BootImageLanguage"></a> Configurar vários idiomas para implantação de imagem de inicialização  
+##  <a name="BKMK_BootImageLanguage"></a> Configurar vários idiomas para implantação de imagem de inicialização  
  As imagens de inicialização têm neutralidade de idioma. Isso permite que você use uma imagem de inicialização que exiba o texto de sequência de tarefas em diversos idiomas. No WinPE, no entanto, seria necessário incluir o suporte de idioma apropriado dos Componentes Opcionais do Windows PE e definir a variável de sequência de tarefas apropriada, para indicar qual idioma poderia ser exibido. O idioma do sistema operacional implantado é independente do idioma exibido no WinPE, em qualquer versão do Configuration Manager. O idioma que será exibido para o usuário é determinado como segue:  
 
 -   Quando um usuário executa uma sequência de tarefas de um sistema operacional existente, o Configuration Manager utiliza automaticamente o idioma configurado para o usuário. Quando a sequência de tarefas é executada automaticamente como resultado de um prazo de implantação obrigatória, o Configuration Manager utiliza o idioma do sistema operacional.  
