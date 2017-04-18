@@ -54,9 +54,9 @@
 ### [Cenário do Endpoint Protection](deploy-use/scenarios-endpoint-protection.md)
 ### [Ajuda do cliente do Endpoint Protection](deploy-use/endpoint-protection-client-help.md)
 ### [Solução de problemas de cliente](deploy-use/troubleshoot-endpoint-client.md)
+### [Configurações do Device Guard](deploy-use/use-device-guard-with-configuration-manager.md)
 
 ## [Implantar perfis de Wi-Fi, VPN, email e certificado](deploy-use/deploy-wifi-vpn-email-cert-profiles.md)
-
 ## [Configurações do Windows Hello para Empresas](deploy-use/windows-hello-for-business-settings.md)
 
 ## [Configurações de termos e condições](../mdm/deploy-use/terms-and-conditions.md)
