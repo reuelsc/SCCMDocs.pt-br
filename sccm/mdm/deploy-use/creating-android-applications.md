@@ -16,9 +16,9 @@ author: robstackmsft
 ms.author: robstack
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: dab5da5a4b5dfb3606a8a6bd0c70a0b21923fff9
-ms.openlocfilehash: 45dbf119ed5eaf875293f4eb3d89b986af6019e5
-ms.lasthandoff: 03/27/2017
+ms.sourcegitcommit: 27a92dc1c3710ff55f0b145386319dda371533d9
+ms.openlocfilehash: d3b20a59a9147e09e58f04f83f97fd72ebfef5a1
+ms.lasthandoff: 04/07/2017
 
 ---
 # <a name="create-android-applications-with-system-center-configuration-manager"></a>Criar aplicativos Android com o System Center Configuration Manager
@@ -30,12 +30,10 @@ Um aplicativo do System Center Configuration Manager tem um ou mais tipos de imp
  Você pode criar aplicativos com os seguintes métodos:  
 
 -   Crie automaticamente os aplicativos e tipos de implantação, lendo os arquivos de instalação do aplicativo.  
-
 -   Crie manualmente o aplicativo e adicione tipos de implantação posteriormente.  
-
 -   Importe um aplicativo de um arquivo.  
 
-Veja [Iniciar o assistente para criar aplicativo](../../apps/deploy-use/create-applications.md#start-the-create-application-wizard) e conheça as etapas necessárias para criar os aplicativos do Configuration Manager e os tipos de implantação. Além disso, lembre-se das seguintes considerações ao criar e implantar aplicativos para dispositivos Android.  
+Veja [Iniciar o assistente para criar aplicativo](../../apps/deploy-use/create-applications.md#start-the-create-application-wizard) e conheça as etapas necessárias para criar os aplicativos do Configuration Manager e os tipos de implantação. Além disso, lembre-se das seguintes considerações ao criar e implantar aplicativos em dispositivos Android.  
 
 ## <a name="general-considerations-for-android-apps"></a>Considerações gerais para aplicativos Android
 
@@ -58,10 +56,10 @@ Siga essas etapas para aprovar aplicativos na loja Play for Work, sincronizá-lo
 
 1. Abra um navegador e acesse: https://play.google.com/work.
 2. Entre usando a conta de administrador do Google associada ao seu locatário do Intune.
-3. Procure aplicativos que você deseja implantar em seu ambiente e clique em **Aprovar** para cada um deles para tornar o aplicativo disponível para Android for Work.
+3. Procure os aplicativos que você deseja implantar em seu ambiente e clique em **Aprovar** para cada um deles para disponibilizar o aplicativo no Android for Work.
 4. No console do Configuration Manager, vá para **Administrador** > **Visão Geral** > **Serviços de Nuvem** > **Android for Work** e clique em **Sincronizar**.
-5. Aguarde 10 minutos para os aplicativos serem sincronizados e vá para **Biblioteca de Software** > **Visão Geral** > **Gerenciamento de Aplicativos** > **Informações sobre Licença para Aplicativos da Store**.
-6. Clique em um aplicativo sincronizado da Play for Work e clique em **Criar Aplicativo**.
+5. Aguarde 10 minutos para os aplicativos serem sincronizados e vá para **Biblioteca de Software** > **Visão Geral** > **Gerenciamento de Aplicativos** > **Informações sobre Licença para Aplicativos da Loja**.
+6. Escolha um aplicativo sincronizado da Play for Work e, em seguida, escolha **Criar Aplicativo**.
 7. Conclua o assistente e clique em **Fechar**.
 8. Vá para **Biblioteca de Software** > **Visão Geral** > **Gerenciamento de Aplicativos** > **Aplicativos**, selecione um aplicativo do Android for Work e implante como de costume.
 

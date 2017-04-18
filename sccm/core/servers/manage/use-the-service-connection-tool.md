@@ -2,7 +2,7 @@
 title: "Ferramenta de conexão de serviço | Microsoft Docs"
 description: "Saiba mais sobre esta ferramenta que permite que você se conecte ao serviço de nuvem do Configuration Manager para carregar manualmente as informações de uso."
 ms.custom: na
-ms.date: 10/06/2016
+ms.date: 4/7/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
@@ -16,9 +16,9 @@ author: Brenduns
 ms.author: brenduns
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: dab5da5a4b5dfb3606a8a6bd0c70a0b21923fff9
-ms.openlocfilehash: 7a9c5bb9890b00cf3485998aa46286c890429cc0
-ms.lasthandoff: 03/27/2017
+ms.sourcegitcommit: 32f7fc4ef9c8e8d3c2ec8eeaf9a3174bad992ffb
+ms.openlocfilehash: 0da80521bf223a765c3731f8ad59623d85a4c9fa
+ms.lasthandoff: 04/08/2017
 
 
 ---
@@ -26,9 +26,9 @@ ms.lasthandoff: 03/27/2017
 
 *Aplica-se a: System Center Configuration Manager (Branch Atual)*
 
-Use a **ferramenta de conexão de serviço** quando seus servidores do sistema de sites do Configuration Manager não estiverem conectados à Internet, mas você ainda quiser se manter a par das atualizações mais recentes do Configuration Manager.  
+Use a **ferramenta de conexão de serviço** quando o ponto de conexão de serviço estiver no modo offline ou quando os servidores do sistema de site do Configuration Manager não estiverem conectados à Internet. A ferramenta pode ajudá-lo a manter o site atualizado com as atualizações mais recentes do Configuration Manager.  
 
- A ferramenta permite que você se conecte ao serviço de nuvem do Configuration Manager para carregar manualmente as informações de uso da sua hierarquia e baixar atualizações. Carregar dados de uso é necessário para permitir que o serviço de nuvem forneça as atualizações corretas para sua implantação.  
+Quando executada, a ferramenta permite que você se conecte manualmente ao serviço de nuvem do Configuration Manager para carregar as informações de uso da sua hierarquia e baixar atualizações. Carregar dados de uso é necessário para permitir que o serviço de nuvem forneça as atualizações corretas para sua implantação.  
 
 ## <a name="prerequisites-for-using-the-service-connection-tool"></a>Pré-requisitos para usar a ferramenta de conexão de serviço
 A seguir estão os pré-requisitos e problemas conhecidos.
@@ -85,11 +85,11 @@ Você também precisará copiar a pasta ServiceConnectionTool com todo seu conte
 ### <a name="overview"></a>Visão geral
 **Há três etapas principais para usar a ferramenta de conexão de serviço:**  
 
-1.  **Preparação**: nessa etapa, você coloca seus dados de uso em um arquivo .cab e o armazena em uma unidade USB (ou em algum local de transferência alternativo que você especificar).  
+1.  **Preparação**: esta etapa deve ser executada no computador que hospeda o ponto de conexão de serviço. Ao ser executada, a ferramenta coloca os dados de uso em um arquivo .cab e os armazena em uma unidade USB (ou em algum local de transferência alternativo que você especificar).  
 
-2.  **Conexão**: nessa etapa, você executa a ferramenta em um computador remoto que se conecta à Internet para carregar dados e baixar atualizações.  
+2.  **Conexão**: nesta etapa, a ferramenta será executada em um computador remoto que se conecta à Internet para carregar dados de uso e baixar atualizações.  
 
-3.  **Importação**: nessa etapa, você importa atualizações do Configuration Manager para seu site de modo que seja possível exibir e instalar as atualizações do Configuration Manager.  
+3.  **Importação**: esta etapa deve ser executada no computador que hospeda o ponto de conexão de serviço. Ao ser executada, a ferramenta importará as atualizações baixadas e as adicionará ao site, assim, elas poderão ser exibidas e instaladas por meio do console do Configuration Manager.  
 
 A partir da versão 1606, ao se conectar à Microsoft, você pode carregar vários arquivos .cab ao mesmo tempo (cada um de uma hierarquia diferente) e especificar um servidor proxy e um usuário para o servidor proxy.   
 

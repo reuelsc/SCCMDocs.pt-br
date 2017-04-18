@@ -2,7 +2,7 @@
 title: "Recursos de pré-lançamento | Microsoft Docs"
 description: "Recursos de pré-lançamento no System Center Configuration Manager"
 ms.custom: na
-ms.date: 3/29/2017
+ms.date: 4/7/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
@@ -16,9 +16,9 @@ author: Brenduns
 ms.author: brenduns
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: 6accec2d356861b273b25ba2b6338d9684a46ff6
-ms.openlocfilehash: c1c8cf505bbc5cab1b6dfb7637eda4a87941c722
-ms.lasthandoff: 03/29/2017
+ms.sourcegitcommit: 32f7fc4ef9c8e8d3c2ec8eeaf9a3174bad992ffb
+ms.openlocfilehash: a7ebfea849afcaf236d7e630aad2c7f3f1807a23
+ms.lasthandoff: 04/08/2017
 
 
 ---
@@ -43,6 +43,8 @@ Quando você instala uma atualização que inclui recursos de pré-lançamento, 
   -   **Se você não tiver consentido:** ao instalar uma atualização, os recursos de pré-lançamento ficarão visíveis no Assistente de Atualizações e Manutenção, mas ficarão esmaecidos e não poderão ser habilitados. Após a instalação da atualização, você pode exibir esses recursos no nó **Recursos**, mas não habilitá-los até que você tenha dado o consentimento nas **Configurações da Hierarquia**.
 
 Se você tiver dado consentimento em um site primário autônomo e, depois, expandir a hierarquia instalando um novo site de administração central, você deverá dar consentimento novamente no site de administração central.
+
+ Ao habilitar um recurso de pré-lançamento, o gerenciador de hierarquia (HMAN) do Configuration Manager deve processar a alteração antes desse recurso ser disponibilizado. O processamento da alteração costuma ser imediato, mas pode levar até 30 minutos para ser concluído, dependendo do ciclo de processamento do HMAN. Após o processamento da alteração, é necessário reiniciar o console antes de exibir a nova interface do usuário relacionada a esse recurso.
 
 **Os seguintes recursos de pré-lançamento estão disponíveis:**
 

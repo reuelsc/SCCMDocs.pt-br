@@ -14,16 +14,16 @@ author: Brenduns
 ms.author: brenduns
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: 70034213442f4c3d5a28ab65c2ceb51aa64320ad
-ms.openlocfilehash: 9332278e960051caf6875f45212af644e2ea7890
-ms.lasthandoff: 03/31/2017
+ms.sourcegitcommit: d7b13f3dea5a3ae413ca6b8150ec24e1632a4d4d
+ms.openlocfilehash: 3e97184dc923cd3972c23252c1bc001edb73fe3f
+ms.lasthandoff: 04/12/2017
 
 ---
 # <a name="what39s-new-in-version-1702-of-system-center-configuration-manager"></a>Novidades da versão 1702 do System Center Configuration Manager
 
 *Aplica-se a: System Center Configuration Manager (Branch Atual)*
 
-A atualização 1702 da ramificação atual do System Center Configuration Manager está disponível como uma atualização no console para sites instalados anteriormente que executam a versão 1606 ou 1610.
+A atualização 1702 da ramificação atual do System Center Configuration Manager está disponível como uma atualização no console para sites instalados anteriormente que executam as versões 1602, 1606 ou 1610.
 
 > [!TIP]  
 > Para instalar um novo site, você deve usar uma versão de linha de base do Configuration Manager.  
@@ -189,7 +189,7 @@ Agora, você pode retornar à página anterior ao executar uma sequência de tar
 - Quando você executa uma sequência de tarefas, porém pacotes dependentes de conteúdo ainda não estão disponíveis nos pontos de distribuição, a sequência de tarefas falhará. Agora, você poderá distribuir o conteúdo ausente (se ainda não tiver sido distribuído) ou aguardar o conteúdo estar disponível nos pontos de distribuição e, em seguida, clicar em **Anterior** para que a pesquisa de sequência de tarefas pesquise novamente o conteúdo.
 
 ### <a name="pre-cache-content-for-available-deployments-and-task-sequences"></a>Conteúdo de armazenamento prévio em cache para sequências de tarefas e implantações disponíveis
-A partir da versão 1702, para implantações disponíveis e sequências de tarefas, você pode optar por usar o conteúdo de armazenamento prévio em cache. O conteúdo de armazenamento prévio em cache oferece a opção de permitir que o cliente baixe apenas o conteúdo aplicável assim que receber a implantação. Portanto, quando o usuário clicar em **Instalar** no Centro de Software, o conteúdo estará pronto e a instalação iniciará rapidamente, pois o conteúdo está no disco rígido local. Para obter detalhes, veja [Configurar o conteúdo de armazenamento prévio em cache](/sccm/osd/deploy-use/create-a-task-sequence-to-upgrade-an-operating-system#configure-pre-cache-content).
+A partir da versão 1702, para implantações disponíveis de sequências de tarefas, é possível optar por usar o conteúdo de armazenamento prévio em cache. O conteúdo de armazenamento prévio em cache oferece a opção de permitir que o cliente baixe apenas o conteúdo aplicável assim que receber a implantação. Portanto, quando o usuário clicar em **Instalar** no Centro de Software, o conteúdo estará pronto e a instalação iniciará rapidamente, pois o conteúdo está no disco rígido local. Para obter detalhes, veja [Configurar o conteúdo de armazenamento prévio em cache](/sccm/osd/deploy-use/create-a-task-sequence-to-upgrade-an-operating-system#configure-pre-cache-content).
 
 ### <a name="convert-from-bios-to-uefi-during-an-in-place-upgrade"></a>Converter de BIOS para UEFI durante uma atualização in-loco
 A Atualização do Windows 10 para Criadores apresenta uma ferramenta de conversão simples que automatiza o processo para reparticionar o disco rígido para hardware habilitado para UEFI e integra a ferramenta de conversão ao processo de atualização in-loco do Windows 7 para o Windows 10. Quando você combina essa ferramenta com a sequência de tarefas de atualização do sistema operacional e a ferramenta de OEM que converte o firmware do BIOS para UEFI, pode converter os computadores de BIOS para UEFI durante uma atualização in-loco para a Atualização do Windows 10 para Criadores. Para obter detalhes, consulte [Etapas de sequência de tarefas para gerenciar o BIOS para a conversão para UEFI](/sccm/osd/deploy-use/task-sequence-steps-to-manage-bios-to-uefi-conversion#convert-from-bios-to-uefi-during-an-in-place-upgrade).

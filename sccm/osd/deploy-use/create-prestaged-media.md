@@ -2,7 +2,7 @@
 title: "Criar mídia pré-configurada com o System Center Configuration Manager | Microsoft Docs"
 description: "Crie mídia em pré-teste no System Center Configuration Manager para simplificar a implantação do Windows em vários cenários."
 ms.custom: na
-ms.date: 10/06/2016
+ms.date: 04/11/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
@@ -16,8 +16,9 @@ author: Dougeby
 ms.author: dougeby
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: 74341fb60bf9ccbc8822e390bd34f9eda58b4bda
-ms.openlocfilehash: 56cfc5837adf986e5d2bf4a73ef9de3b1f60b4f9
+ms.sourcegitcommit: ae9488a34c6b1e04397c4875de4b3bc607f7116c
+ms.openlocfilehash: 33abf3853d912d423e427db4d35fb4a16167164e
+ms.lasthandoff: 04/11/2017
 
 
 ---
@@ -36,7 +37,7 @@ A mídia em pré-teste contém a imagem de inicialização usada para iniciar o 
 
  Quando o computador é iniciado pela primeira vez depois de a mídia pré-configurada ter sido aplicada, o computador é iniciado com o Windows PE e conecta-se a um ponto de gerenciamento para localizar a sequência de tarefas que conclui o processo de implantação de sistema operacional. Você pode especificar aplicativos, pacotes e pacotes de driver para incluir como parte da mídia pré-testada. Quando você implanta uma sequência de tarefa que utiliza mídia pré-testada, o assistente verifica o cache de sequência de tarefas local quanto a conteúdo válido primeiro, e se o conteúdo não puder ser localizado ou não for revisado, o assistente baixa o conteúdo do ponto de distribuição.  
 
-##  <a name="a-namebkmkcreateprestagedmediaa-how-to-create-prestaged-media"></a><a name="BKMK_CreatePrestagedMedia"></a> Como criar mídia em pré-teste  
+##  <a name="BKMK_CreatePrestagedMedia"></a> Como criar mídia em pré-teste  
  Antes de criar a mídia pré-testada usando o Assistente para Criar Mídia de Sequência de Tarefas, verifique se as seguintes condições foram atendidas:  
 
 |Tarefa|Descrição|  
@@ -47,7 +48,7 @@ A mídia em pré-teste contém a imagem de inicialização usada para iniciar o 
 |Disco rígido no computador de destino|O disco rígido do computador de destino deve ser formatado antes que a mídia pré-configurada seja preparada no disco rígido do computador. Se o disco rígido não estiver formatado quando a mídia for aplicada, a sequência de tarefas que implanta o sistema operacional falhará quando tentar iniciar o computador de destino.|  
 
 > [!NOTE]  
->  O Assistente para Criar Mídia de Sequência de Tarefas define a seguinte condição de variável de sequência de tarefas na mídia: **_SMSTSMedia = OEMMedia**. Você pode usar essa condição em toda a sequência de tarefas.  
+>  O Assistente para Criar Mídia de Sequência de Tarefas define a seguinte condição de variável de sequência de tarefas na mídia: **_SMSTSMediaType = OEMMedia**. Você pode usar essa condição em toda a sequência de tarefas.  
 
  Use o procedimento a seguir para criar mídia em pré-teste.  
 
@@ -143,9 +144,4 @@ A mídia em pré-teste contém a imagem de inicialização usada para iniciar o 
 
 ## <a name="next-steps"></a>Próximas etapas
 [Cenários para implantar sistemas operacionais corporativos](scenarios-to-deploy-enterprise-operating-systems.md)
-
-
-
-<!--HONumber=Dec16_HO3-->
-
 

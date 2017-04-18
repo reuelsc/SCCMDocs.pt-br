@@ -13,9 +13,9 @@ ms.technology:
 - configmgr-sum
 ms.assetid: b8d8af88-e8ac-4deb-921b-975e2d2afd80
 translationtype: Human Translation
-ms.sourcegitcommit: dab5da5a4b5dfb3606a8a6bd0c70a0b21923fff9
-ms.openlocfilehash: 459ad5a428102b5e040bec2eaf2a70fc89789dff
-ms.lasthandoff: 03/27/2017
+ms.sourcegitcommit: d7b13f3dea5a3ae413ca6b8150ec24e1632a4d4d
+ms.openlocfilehash: fcdcbcde61402b47871d51deba32d23867a78370
+ms.lasthandoff: 04/12/2017
 
 ---
 
@@ -23,7 +23,8 @@ ms.lasthandoff: 03/27/2017
 A partir da versão 1702, o Configuration Manager oferece suporte a arquivos de instalação expressa para atualizações do Windows 10. Ao usar uma versão do Windows 10 com suporte, você poderá usar as definições do Configuration Manager para baixar somente as alterações entre a Atualização Cumulativa do Windows 10 do mês atual e a atualização do mês anterior. Sem os arquivos de instalação expressa, o Configuration Manager baixa a Atualização Cumulativa do Windows 10 (incluindo todas as atualizações dos meses anteriores) a cada mês. Usar arquivos de instalação expressa proporciona downloads menores e instalações mais rápidas nos clientes.
 
 > [!IMPORTANT]
-> Embora as configurações para dar suporte ao uso de arquivos de instalação expressa estejam disponíveis no Configuration Manager versão 1702, o suporte ao cliente do sistema operacional está disponível no Windows 10 versão 1607 com uma atualização do Windows Update Agent. Essa atualização está incluída com as atualizações lançadas em 11 de abril de 2017 (Patch Tuesday). <!--For more information about these updates, see [support article 4015217](http://support.microsoft.com/kb/4015217).--> As atualizações futuras aproveitarão a expressa para downloads menores. O Windows 10 versão 1607 sem a atualização de versão e versões anteriores não dão suporte a arquivos de instalação expressa.
+> Embora as configurações para dar suporte ao uso de arquivos de instalação expressa estejam disponíveis no Configuration Manager versão 1702, o suporte ao cliente do sistema operacional está disponível no Windows 10 versão 1607 com uma atualização do Windows Update Agent. Essa atualização está incluída com as atualizações lançadas em 11 de abril de 2017 (Patch Tuesday). Para obter mais informações sobre essas atualizações, consulte o [artigo de suporte 4015217](http://support.microsoft.com/kb/4015217). As atualizações futuras aproveitarão a expressa para downloads menores. O Windows 10 versão 1607 sem a atualização de versão e versões anteriores não dão suporte a arquivos de instalação expressa.
+
 
 ### <a name="to-enable-the-download-of-express-installation-files-for-windows-10-updates-on-the-server"></a>Para habilitar o download de arquivos de instalação expressa para atualizações do Windows 10 no servidor
 Para começar a sincronizar os metadados para arquivos de instalação expressa do Windows 10, você deve habilitá-la nas Propriedades do Ponto de Atualização de Software.

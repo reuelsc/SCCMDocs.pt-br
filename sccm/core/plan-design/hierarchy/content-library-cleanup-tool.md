@@ -2,7 +2,7 @@
 title: "A ferramenta de limpeza da biblioteca de conteúdo | Microsoft Docs"
 description: "Use a ferramenta de limpeza da biblioteca de conteúdo para remover conteúdo órfão não associado a uma implantação do System Center Configuration Manager."
 ms.custom: na
-ms.date: 3/27/2017
+ms.date: 4/7/2017
 ms.reviewer: na
 ms.suite: na
 ms.prod: configuration-manager
@@ -16,9 +16,9 @@ author: Brenduns
 ms.author: brenduns
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: 23b1d24e908d04b64c3bbfa518793a44e696d468
-ms.openlocfilehash: 718e9b9eaa2dace2c72b031c244c72ef5f7e7b2f
-ms.lasthandoff: 03/29/2017
+ms.sourcegitcommit: 32f7fc4ef9c8e8d3c2ec8eeaf9a3174bad992ffb
+ms.openlocfilehash: 76e6772bdd5cbd32d525e728f6ebc988b045da78
+ms.lasthandoff: 04/08/2017
 
 ---
 # <a name="the-content-library-cleanup-tool-for-system-center-configuration-manager"></a>A ferramenta de limpeza da biblioteca de conteúdo no System Center Configuration Manager
@@ -74,7 +74,7 @@ As opções de linha de comando a seguir podem ser usadas em qualquer ordem.
 |**/delete**  |**Opcional** </br> Use essa opção quando você desejar excluir o conteúdo do ponto de distribuição. Você será perguntado antes do conteúdo ser efetivamente excluído. </br></br> Quando essa opção não for usada, a ferramenta registra os resultados de qual conteúdo seria excluído, mas não exclui conteúdo do ponto de distribuição. </br></br> Exemplo: ***ContentLibraryCleanup.exe /dp server1.contoso.com /delete*** |
 | **/q**       |**Opcional** </br> Essa opção executa a ferramenta no modo silencioso, o qual suprime todos os avisos (como os avisos para excluir conteúdo) e não abre automaticamente o arquivo de log. </br></br> Exemplo: ***ContentLibraryCleanup.exe /q /dp server1.contoso.com*** |
 | **/dp &lt;FQDN do ponto de distribuição>**  | **Necessária** </br> Especifique o FQDN (nome de domínio totalmente qualificado) do ponto de distribuição que você deseja limpar. </br></br> Exemplo: ***ContentLibraryCleanup.exe /dp server1.contoso.com***|
-| **/ps &lt;FQDN do site primário>**       | **Opcional** ao limpar o conteúdo de um ponto de distribuição em um site primário.</br>**Obrigatório** ao limpar o conteúdo de um ponto de distribuição em um site secundário. </br></br> Especifique o FQDN do site primário ao qual o ponto de distribuição pertence, ou do pai primário quando o ponto de distribuição estiver em um site secundário. </br></br> Exemplo: ***ContentLibraryCleanup.exe /dp server1.contoso.com /ps siteserver1.contoso.com*** |
+| **/ps &lt;FQDN do site primário>**       | **Opcional** ao limpar o conteúdo de um ponto de distribuição em um site primário.</br>**Obrigatório** ao limpar o conteúdo de um ponto de distribuição em um site secundário. </br></br>A ferramenta se conecta ao site primário pai para executar consultas no SMS_Provider. Essas consultas permitem à ferramenta determinar qual conteúdo deve estar no ponto de distribuição, a fim de identificar o conteúdo órfão e removê-lo. Essa conexão ao site primário pai deve ser feita para pontos de distribuição em um site secundário, pois os detalhes necessários não estão disponíveis diretamente do site secundário.</br></br> Especifique o FQDN do site primário ao qual o ponto de distribuição pertence, ou do pai primário quando o ponto de distribuição estiver em um site secundário. </br></br> Exemplo: ***ContentLibraryCleanup.exe /dp server1.contoso.com /ps siteserver1.contoso.com*** |
 | **/sc &lt;código do site primário>**  | **Opcional** ao limpar o conteúdo de um ponto de distribuição em um site primário.</br>**Obrigatório** ao limpar o conteúdo de um ponto de distribuição em um site secundário. </br></br> Especifique o código do site primário ao qual o ponto de distribuição pertence, ou do site pai primário quando o ponto de distribuição estiver em um site secundário.</br></br> Exemplo: ***ContentLibraryCleanup.exe /dp server1.contoso.com /sc ABC*** |
 | **/log <log file directory>**       |**Opcional** </br> Especifique o local onde a ferramenta grava o arquivo de log. Ele pode ser uma unidade local ou um compartilhamento de rede.</br></br> Quando essa opção não for usada, o arquivo de log será colocado na pasta temp do usuário, no computador em que a ferramenta é executada.</br></br> Exemplo de unidade local: ***ContentLibraryCleanup.exe /dp server1.contoso.com /log C:\Users\Administrator\Desktop*** </br></br>Exemplo de compartilhamento de rede: ***ContentLibraryCleanup.exe /dp server1.contoso.com /log \\&lt;share>\&lt;folder>***|
 

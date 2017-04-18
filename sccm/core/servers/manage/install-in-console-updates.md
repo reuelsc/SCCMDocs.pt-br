@@ -2,7 +2,7 @@
 title: "Atualizações no console | Microsoft Docs"
 description: "O System Center Configuration Manager sincroniza com a nuvem da Microsoft para obter atualizações que você pode instalar no console."
 ms.custom: na
-ms.date: 3/7/2017
+ms.date: 4/7/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
@@ -16,9 +16,9 @@ author: Brenduns
 ms.author: brenduns
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: dab5da5a4b5dfb3606a8a6bd0c70a0b21923fff9
-ms.openlocfilehash: 3b50ada9f63e41d1b6f01009c141b8f361f5180e
-ms.lasthandoff: 03/27/2017
+ms.sourcegitcommit: 32f7fc4ef9c8e8d3c2ec8eeaf9a3174bad992ffb
+ms.openlocfilehash: 18c199e78750eadc06b9635fa6104d36c2ac018d
+ms.lasthandoff: 04/08/2017
 
 
 ---
@@ -319,6 +319,10 @@ Ao instalar uma atualização que inclui um ou mais recursos opcionais, você te
 Para exibir os recursos disponíveis e seus status, no console, navegue até **Administração** > **Atualizações e Manutenção** > **Recursos**.
 
 Quando um recurso não é opcional, ele é instalado automaticamente e não aparece no nó **Recursos**.  
+
+
+Ao habilitar um novo recurso ou recurso de pré-lançamento, o gerenciador de hierarquia (HMAN) do Configuration Manager deve processar a alteração antes de o recurso ser disponibilizado. O processamento da alteração costuma ser imediato, mas pode levar até 30 minutos para ser concluído, dependendo do ciclo de processamento do HMAN. Após o processamento da alteração, é necessário reiniciar o console antes de exibir a nova interface do usuário relacionada a esse recurso.
+
 
 ##  <a name="bkmk_prerelease"></a> Usar recursos de pré-lançamento de atualizações
 Os recursos de pré-lançamento são recursos que estão incluídos na Ramificação atual para testes iniciais em um ambiente de produção. Esses recursos não devem ser considerados prontos para produção, mas podem ser usados em seu ambiente de produção. Para saber mais sobre os recursos de pré-lançamento, inclusive como habilitá-los em seu ambientes, veja [Recursos de pré-lançamento](/sccm/core/servers/manage/pre-release-features).                |

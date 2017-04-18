@@ -16,9 +16,9 @@ author: Dougeby
 ms.author: dougeby
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: dab5da5a4b5dfb3606a8a6bd0c70a0b21923fff9
-ms.openlocfilehash: 88a72259bca79f2fa985e86cb57ec7a974bad24d
-ms.lasthandoff: 03/27/2017
+ms.sourcegitcommit: d7b13f3dea5a3ae413ca6b8150ec24e1632a4d4d
+ms.openlocfilehash: e63b639836bc38a030a051e80db4b057ab75a0b0
+ms.lasthandoff: 04/12/2017
 
 
 ---
@@ -74,7 +74,7 @@ Use sequências de tarefas no System Center Configuration Manager para atualizar
 
 
 ## <a name="configure-pre-cache-content"></a>Configurar o conteúdo de armazenamento prévio em cache
-A partir da versão 1702, para sequências de tarefas e implantações disponíveis, você pode optar por usar o recurso de armazenamento prévio em cache para que os clientes baixem apenas conteúdo relevante antes de um usuário instalar o conteúdo.
+A partir da versão 1702, para implantações disponíveis de sequências de tarefas, é possível optar por usar o recurso de armazenamento prévio em cache para que os clientes baixem apenas o conteúdo relevante antes de um usuário instalá-lo.
 > [!TIP]  
 > Apresentado com a versão 1702, o pré-cache é um recurso de pré-lançamento. Para habilitá-lo, confira [Use pre-release features from updates](/sccm/core/servers/manage/pre-release-features) (Usar recursos de pré-lançamento de atualizações).
 
