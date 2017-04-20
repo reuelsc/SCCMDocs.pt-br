@@ -2,7 +2,7 @@
 title: Criar aplicativos de servidores Linux e UNIX | Microsoft Docs
 description: "Veja quais considerações você deverá levar em conta ao criar e implantar aplicativos para dispositivos Linux e Unix."
 ms.custom: na
-ms.date: 10/06/2016
+ms.date: 04/13/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
@@ -16,8 +16,9 @@ author: robstackmsft
 ms.author: robstack
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: b599a58f25a868c638b7ee00cefff80b2f71244e
-ms.openlocfilehash: f4373c888434aa6cd22e5f9b871e172cc50a7d30
+ms.sourcegitcommit: 4b9261db93c9bf72c492e3c9be5b30f81835134a
+ms.openlocfilehash: 72ebd8bd29b5ecdd817631e447291c04f49d9808
+ms.lasthandoff: 04/13/2017
 
 
 ---
@@ -145,7 +146,7 @@ A tabela a seguir lista as propriedades de pacotes e programas sem suporte:
 
     -   **Taxa de transferência máxima durante o período de limitação (Kbps)**  
 
-    -   **Taxa de transferência máxima durante o período de limitação (Kbps)**  
+    -   **Taxa de transferência máxima fora do período de limitação (Kbps)**  
 
 As seguintes configurações de Transferência Inteligente em Segundo Plano não possuem suporte e são ignoradas pelo cliente do Linux e UNIX:  
 
@@ -164,9 +165,4 @@ As seguintes configurações de Transferência Inteligente em Segundo Plano não
 
 > [!TIP]  
 >  Se o software que você deseja implantar estiver localizado em um compartilhamento de NFS (Network File System) que o servidor Linux ou UNIX poderá acessar, não é necessário usar um ponto de distribuição para baixar o pacote. Em vez disso, ao criar o pacote, não marque a caixa de seleção **Este pacote contém arquivos de origem**. Ao configurar o programa, especifique a linha de comando apropriada para acessar diretamente o pacote no ponto de montagem do NFS.  
-
-
-
-<!--HONumber=Dec16_HO3-->
-
 

@@ -16,9 +16,9 @@ author: Brenduns
 ms.author: brenduns
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: dab5da5a4b5dfb3606a8a6bd0c70a0b21923fff9
-ms.openlocfilehash: e9d6f53961c4eb410a56774443e357cca7c18dcc
-ms.lasthandoff: 03/27/2017
+ms.sourcegitcommit: dda2f4c01078fbbd174cbcb30357554c24f6abeb
+ms.openlocfilehash: 0fea1dece0768a2b7bcd3fcedc2288ea2d52e73d
+ms.lasthandoff: 04/17/2017
 
 
 ---
@@ -45,7 +45,7 @@ Os clientes que estão na Internet ou configurados como clientes somente de Inte
 
 **Para iniciar:**
 - Primeiro, [defina locais de rede como limites](/sccm/core/servers/deploy/configure/boundaries).
-- Em seguida, continue [configurando grupos de limites](/sccm/core/servers/deploy/configure/boundary-groups) para associar os clientes dentro desses limites nos servidores de sistema de sites que eles podem usar. 
+- Em seguida, continue [configurando grupos de limites](/sccm/core/servers/deploy/configure/boundary-groups) para associar os clientes dentro desses limites nos servidores de sistema de sites que eles podem usar.
 
 
 
