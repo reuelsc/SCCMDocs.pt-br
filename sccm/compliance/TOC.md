@@ -4,7 +4,7 @@
 # Introdução
 ## [Introdução às configurações de conformidade](get-started/get-started-with-compliance-settings.md)
 
-# Planejamento e design
+# Plano e design
 ## [Planejar e definir as configurações de conformidade](plan-design/plan-for-and-configure-compliance-settings.md)
 ## [Tarefas comuns para gerenciar a conformidade](plan-design/common-tasks-for-managing-compliance.md)
 ### [Dispositivos com o cliente do Configuration Manager](plan-design/common-tasks-for-managing-compliance-on-devices-with-the-client.md)
@@ -29,5 +29,5 @@
 
 ## [Criar itens de configuração de perfis e dados de usuário](deploy-use/create-user-data-and-profiles-configuration-items.md)
 ## [Criar perfis de conexão remota](deploy-use/create-remote-connection-profiles.md)
-## [Atualizar dispositivos do Windows para uma versão mais recente](deploy-use/upgrade-windows-version.md)
+## [Atualizar dispositivos Windows para uma nova edição](deploy-use/upgrade-windows-version.md)
 ## [Monitorar as configurações de conformidade](deploy-use/monitor-compliance-settings.md)
