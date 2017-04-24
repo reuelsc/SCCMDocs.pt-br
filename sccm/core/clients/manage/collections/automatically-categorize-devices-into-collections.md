@@ -2,7 +2,7 @@
 title: "Categorizar automaticamente dispositivos em coleções | Microsoft Docs"
 description: "Categorize os dispositivos em coleções com o System Center Configuration Manager."
 ms.custom: na
-ms.date: 01/07/2016
+ms.date: 04/23/2016
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
@@ -18,6 +18,7 @@ manager: angrobe
 translationtype: Human Translation
 ms.sourcegitcommit: 05c27c7aa36e0b4236867766dab36125c31467b3
 ms.openlocfilehash: b1bac05e9335dd757b8f499f97daea24e0f4acbd
+ms.lasthandoff: 01/03/2017
 
 ---
 # <a name="automatically-categorize-devices-into-collections-with-system-center-configuration-manager"></a>Categorizar dispositivos em coleções automaticamente com o System Center Configuration Manager
@@ -55,9 +56,4 @@ Em **Ativos e Conformidade** > **Visão Geral** > **Dispositivos**, na lista **D
 Se a coluna **Categoria do Dispositivo** não for exibida, clique com o botão direito do mouse no título de uma das colunas na lista **Dispositivos** (como **Nome**) e selecione **Categoria do Dispositivo**.
 
 Se você atribuir um dispositivo a uma categoria e depois excluir a categoria, o relatório **Lista de Dispositivos registrados por usuário no Microsoft Intune** exibirá um GUID na coluna **Categoria do Dispositivo**, em vez de um nome de categoria.
-
-
-
-<!--HONumber=Jan17_HO1-->
-
 

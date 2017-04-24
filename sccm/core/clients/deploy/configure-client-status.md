@@ -2,7 +2,7 @@
 title: Configurar o status do cliente | Microsoft Docs
 description: "Selecione as configurações do status do cliente no System Center Configuration Manager."
 ms.custom: na
-ms.date: 10/06/2016
+ms.date: 04/23/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
@@ -13,8 +13,8 @@ ms.topic: get-started-article
 ms.assetid: a2275ba2-c83d-43e7-90ed-418963a707fe
 caps.latest.revision: 6
 caps.handback.revision: 0
-author: arob98
-ms.author: angrobe
+author: robstackmsft
+ms.author: robstack
 manager: angrobe
 translationtype: Human Translation
 ms.sourcegitcommit: 55c953f312a9fb31e7276dde2fdd59f8183b4e4d
@@ -29,7 +29,7 @@ ms.lasthandoff: 12/16/2016
 
 Para monitorar o status do cliente do System Center Configuration Manager e corrigir os problemas encontrados, configure seu site para especificar os parâmetros que são usados para marcar clientes como inativos e configurar opções para alertá-los se a sua atividade ficar abaixo do limite especificado. Você também pode desabilitar os computadores de consertar automaticamente os problemas que o status do cliente localizar.  
 
-##  <a name="a-namebkmk1a-to-configure-client-status"></a><a name="BKMK_1"></a> Para configurar o status do cliente  
+##  <a name="BKMK_1"></a> Para configurar o status do cliente  
 
 1.  No console do Configuration Manager, clique em **Monitoramento**.  
 
@@ -56,7 +56,7 @@ Para monitorar o status do cliente do System Center Configuration Manager e corr
 
 5.  Clique em **OK** para salvar as propriedades e fechar a caixa de diálogo **Propriedades das Configurações de Status dos Clientes** .  
 
-##  <a name="a-namebkmkschedulea-to-configure-the-schedule-for-client-status"></a><a name="BKMK_Schedule"></a> Para configurar o agendamento do status do cliente  
+##  <a name="BKMK_Schedule"></a> Para configurar o agendamento do status do cliente  
 
 1.  No console do Configuration Manager, clique em **Monitoramento**.  
 
@@ -67,7 +67,7 @@ Para monitorar o status do cliente do System Center Configuration Manager e corr
     > [!NOTE]  
     >  Quando você altera o agendamento das atualizações de status do cliente, a atualização não entrará em efeito até a próxima atualização de status do cliente agendada (do agendamento configurado anteriormente).  
 
-##  <a name="a-namebkmk2a-to-configure-alerts-for-client-status"></a><a name="BKMK_2"></a> Para configurar alertas de status do cliente  
+##  <a name="BKMK_2"></a> Para configurar alertas de status do cliente  
 
 1.  No console do Configuration Manager, clique em **Ativos e Conformidade**.  
 
@@ -95,7 +95,7 @@ Para monitorar o status do cliente do System Center Configuration Manager e corr
 
 7.  Clique em **OK** para fechar a caixa de diálogo *&lt;Nome da Coleção\>***Propriedades**.  
 
-##  <a name="a-namebkmk3a-to-exclude-computers-from-automatic-remediation"></a><a name="BKMK_3"></a> Para excluir computadores de correção automática  
+##  <a name="BKMK_3"></a> Para excluir computadores de correção automática  
 
 1.  Abra o editor do registro no computador cliente para o qual você deseja desabilitar a correção automática.  
 

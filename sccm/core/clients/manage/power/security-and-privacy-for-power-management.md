@@ -2,7 +2,7 @@
 title: "Segurança e privacidade para gerenciamento de energia | Microsoft Docs"
 description: "Obtenha as informações de segurança e privacidade do gerenciamento de energia no System Center Configuration Manager."
 ms.custom: na
-ms.date: 10/06/2016
+ms.date: 04/23/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
@@ -19,6 +19,7 @@ manager: angrobe
 translationtype: Human Translation
 ms.sourcegitcommit: fc392e4440e84614f92218e9c7a09ec1c2c64f53
 ms.openlocfilehash: f72059973057e707f58cb6b7aa495226b6c1962c
+ms.lasthandoff: 12/16/2016
 
 
 ---
@@ -37,9 +38,4 @@ Esta seção contém as informações de segurança e privacidade do gerenciamen
  As informações de consumo de energia são armazenadas no banco de dados do Configuration Manager e não são enviadas à Microsoft. As informações detalhadas são mantidas no banco de dados durante 31 dias e as informações resumidas são mantidas por 13 meses. Não é possível configurar o intervalo de exclusão.  
 
  Antes de configurar o gerenciamento de energia, considere seus requisitos de privacidade.  
-
-
-
-<!--HONumber=Dec16_HO3-->
-
 

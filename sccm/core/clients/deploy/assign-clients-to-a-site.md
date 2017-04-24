@@ -2,7 +2,7 @@
 title: Atribuir clientes a um site | Microsoft Docs
 description: Atribuir clientes a um site no System Center Configuration Manager.
 ms.custom: na
-ms.date: 12/16/2016
+ms.date: 04/23/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
@@ -12,8 +12,8 @@ ms.tgt_pltfrm: na
 ms.topic: get-started-article
 ms.assetid: ba9b623f-6e86-4006-93f2-83d563de0cd0
 caps.latest.revision: 10
-author: arob98
-ms.author: angrobe
+author: robstackmsft
+ms.author: robstack
 manager: angrobe
 translationtype: Human Translation
 ms.sourcegitcommit: 08afca8b422474639cbdb860e555fe0da27361a4
@@ -56,7 +56,7 @@ Se a atribuição do cliente falhar, o software cliente permanecerá instalado, 
 > [!NOTE]  
 >  Se você atribuir manualmente um computador cliente a um código do site do Configuration Manager que não existe, a atribuição do site falhará.   
 
-##  <a name="a-namebkmkautomaticassignmenta-using-automatic-site-assignment-for-computers"></a><a name="BKMK_AutomaticAssignment"></a> Usando atribuição manual de site para computadores  
+##  <a name="BKMK_AutomaticAssignment"></a> Usando atribuição manual de site para computadores  
  A atribuição automática do site pode ocorrer durante a implementação do cliente, ou quando você clica em **Localizar Site** na guia **Avançado** nas **Propriedades do Configuration Manager** no Painel de Controle. O cliente do Configuration Manager compara seu próprio local de rede com os limites configurados na hierarquia do Configuration Manager. Quando o local de rede do cliente está dentro de um grupo de limites habilitado para atribuição de site, ou a hierarquia está configurada para um local de fallback, o cliente é automaticamente atribuído a esse site sem que você tenha que especificar um código de site.  
 
  Você pode configurar limites usando um ou mais destes procedimentos:  

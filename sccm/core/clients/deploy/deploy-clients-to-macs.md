@@ -2,7 +2,7 @@
 title: Implantar os clientes Mac | Microsoft Docs
 description: Saiba como implantar clientes em computadores Mac no System Center Configuration Manager.
 ms.custom: na
-ms.date: 01/03/2017
+ms.date: 04/23/2017
 ms.prod: configuration-manager
 ms.reviewer: aaroncz
 ms.suite: na
@@ -12,8 +12,8 @@ ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: e46ad501-5d73-44ac-92de-0de14ef72b83
 caps.latest.revision: 12
-author: arob98
-ms.author: angrobe
+author: robstackmsft
+ms.author: robstack
 manager: angrobe
 translationtype: Human Translation
 ms.sourcegitcommit: 1b9e49da1a5bbfca93fe683b82d2c0056a22cc1f

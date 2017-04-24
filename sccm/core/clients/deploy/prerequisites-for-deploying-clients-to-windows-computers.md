@@ -2,7 +2,7 @@
 title: "Pré-requisitos de implantação do cliente Windows | Microsoft Docs"
 description: "Conheça os pré-requisitos para a implantação de clientes em computadores Windows no System Center Configuration Manager."
 ms.custom: na
-ms.date: 03/5/2017
+ms.date: 04/23/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
@@ -13,8 +13,8 @@ ms.topic: get-started-article
 ms.assetid: 1a2a9b48-a95b-4643-b00c-b3079584ae2e
 caps.latest.revision: 16
 caps.handback.revision: 0
-author: arob98
-ms.author: angrobe
+author: robstackmsft
+ms.author: robstack
 manager: angrobe
 translationtype: Human Translation
 ms.sourcegitcommit: dab5da5a4b5dfb3606a8a6bd0c70a0b21923fff9

@@ -2,7 +2,7 @@
 title: "Tarefas de implantação de cliente para o System Center Configuration Manager | Microsoft Docs"
 description: Saiba como implantar e configurar clientes no System Center Configuration Manager.
 ms.custom: na
-ms.date: 10/06/2016
+ms.date: 04/23/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
