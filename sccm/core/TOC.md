@@ -98,6 +98,7 @@
 ###  [Configurar seu laboratório](get-started/set-up-your-lab.md)
 
 ##   [Technical Preview](get-started/technical-preview.md)
+###  [Recursos do 1704](get-started/capabilities-in-technical-preview-1704.md)
 ###  [Recursos do 1703](get-started/capabilities-in-technical-preview-1703.md)
 ###  [Recursos do 1702](get-started/capabilities-in-technical-preview-1702.md)
 ###  [Recursos do 1701](get-started/capabilities-in-technical-preview-1701.md)
