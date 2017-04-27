@@ -16,8 +16,9 @@ author: Dougeby
 ms.author: dougeby
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: 6bb2bf0a029bc21e9420ac0ba782e8ea21291896
-ms.openlocfilehash: 692e8331f39f7c9ce78a6b710b8990760bf128c4
+ms.sourcegitcommit: 690d03d9c8c49a815bd318df549d7401a855bc5d
+ms.openlocfilehash: b4b04907f2cd48d81e864e46ca47c14a0b98a9f7
+ms.lasthandoff: 04/24/2017
 
 
 ---
@@ -27,7 +28,7 @@ ms.openlocfilehash: 692e8331f39f7c9ce78a6b710b8990760bf128c4
 
 As sequências de tarefas no System Center Configuration Manager são usadas para automatizar uma variedade de tarefas em seu ambiente. Essas tarefas são principalmente projetadas e testadas para a implantação de sistemas operacionais.  O Configuration Manager traz muitos outros recursos que devem ser a principal tecnologia usada para cenários como [instalação de aplicativos](../../apps/understand/introduction-to-application-management.md), [instalação de atualizações de software](../../sum/understand/software-updates-introduction.md), [definição de configuração](../../compliance/understand/ensure-device-compliance.md) ou automação personalizada. Existem outras tecnologias de automação do Microsoft System Center, como [Orchestrator](https://technet.microsoft.com/library/hh237242.aspx) e [Service Management Automation](https://technet.microsoft.com/library/dn469260.aspx) , que também devem ser consideradas.  
 
-O poder das sequências de tarefas está em sua flexibilidade e em como você pode usá-las para definir configurações do cliente, distribuir software, atualizar drivers, editar estados do usuário e executar outras tarefas independentes da implantação de sistema operacional. É possível criar uma sequência de tarefas personalizada para adicionar qualquer quantidade de tarefas. É possível criar uma sequência de tarefas personalizada para adicionar qualquer quantidade de tarefas. O uso de sequências de tarefas personalizadas para implantação que não do sistema operacional tem suporte no Configuration Manager. No entanto, se uma sequência de tarefa tiver resultados inconsistentes ou indesejados, busque formas de simplificar a operação. Você pode fazer isso usando as etapas mais simples, dividindo as ações em várias sequências de tarefas ou ao usar uma abordagem em fases para criar e testar a sequência de tarefas.
+O poder das sequências de tarefas está em sua flexibilidade e em como você pode usá-las para definir configurações do cliente, distribuir software, atualizar drivers, editar estados do usuário e executar outras tarefas independentes da implantação de sistema operacional. É possível criar uma sequência de tarefas personalizada para adicionar qualquer quantidade de tarefas. O uso de sequências de tarefas personalizadas para implantação que não do sistema operacional tem suporte no Configuration Manager. No entanto, se uma sequência de tarefa tiver resultados inconsistentes ou indesejados, busque formas de simplificar a operação. Você pode fazer isso usando as etapas mais simples, dividindo as ações em várias sequências de tarefas ou ao usar uma abordagem em fases para criar e testar a sequência de tarefas.
 
  As seguintes etapas têm suporte para uso em uma sequência de tarefas personalizadas de implantações que não sejam de sistema operacional:  
 
@@ -55,9 +56,4 @@ O poder das sequências de tarefas está em sua flexibilidade e em como você po
 
 ## <a name="next-steps"></a>Próximas etapas
 [Implantar a sequência de tarefas](manage-task-sequences-to-automate-tasks.md#a-namebkmkdeploytsa-deploy-a-task-sequence)
-
-
-
-<!--HONumber=Jan17_HO3-->
-
 

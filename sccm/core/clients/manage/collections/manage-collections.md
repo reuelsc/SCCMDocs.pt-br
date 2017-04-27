@@ -2,7 +2,7 @@
 title: "Gerenciar coleções | Microsoft Docs"
 description: "Realize tarefas de gerenciamento de coleções comuns no System Center Configuration Manager."
 ms.custom: na
-ms.date: 2/22/2017
+ms.date: 4/25/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
@@ -17,8 +17,9 @@ author: andredm7
 ms.author: andredm
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: fc392e4440e84614f92218e9c7a09ec1c2c64f53
-ms.openlocfilehash: b41b50c75f1b89c8fc712b53988bd8e24813106d
+ms.sourcegitcommit: d94acac84f052a01de9d9c9f65f237c0006c45b8
+ms.openlocfilehash: 4d44f98eb0755619cdd2101203a13725186b835b
+ms.lasthandoff: 04/26/2017
 
 
 ---
@@ -40,7 +41,7 @@ Use as informações de visão geral contidas neste tópico para ajudá-lo a exe
 |---------------------|-------------|----------------------|  
 |**Mostrar Membros**|Exibe todos os recursos que são membros da coleção selecionada em um nó temporário do nó **Dispositivos** .|Nenhuma informação adicional.|  
 |**Adicionar itens selecionados**|Fornece as seguintes opções para executar uma das seguintes ações:<br /><br /> - <br />                    **Adicionar Itens Selecionados à Coleção de Dispositivos Existente** – Abre a caixa de diálogo **Selecionar Coleção**, em que é possível selecionar a coleção à qual você deseja adicionar os membros da coleção selecionada. A coleção selecionada está incluída nesta coleção usando uma regra de associação **Incluir Coleções** .<br /><br /> - **Adicionar Itens Selecionados à Nova Coleção de Dispositivos** – Abre o **Assistente para Criar Coleção de Dispositivos**, em que é possível criar uma nova coleção. A coleção selecionada está incluída nesta coleção usando uma regra de associação **Incluir Coleções** .|[Como criar coleções no System Center Configuration Manager](../../../../core/clients/manage/collections/create-collections.md)|  
-|**Instalar o cliente**|Abre o **Assistente para Instalar Cliente**, que usa a instalação do cliente por push para instalar um cliente do Configuration Manager em todos os computadores da coleção selecionada.|[Tarefas de implantação de cliente do System Center Configuration Manager](../../../../core/clients/deploy/client-deployment-tasks.md)|  
+|**Instalar o cliente**|Abre o **Assistente para Instalar Cliente**, que usa a instalação do cliente por push para instalar um cliente do Configuration Manager em todos os computadores da coleção selecionada.|[Como implantar clientes em computadores com Windows](../../../../core/clients/deploy/deploy-clients-to-windows-computers.md)|  
 |**Gerenciar solicitações de afinidade**|Abre a caixa de diálogo **Gerenciar Solicitações de Afinidade de Dispositivo de Usuário** , em que você pode aprovar ou rejeitar solicitações pendentes para estabelecer as afinidades de dispositivo de usuário para os dispositivos na coleção selecionada.|[Vincular usuários e dispositivos com a afinidade de dispositivo de usuário no System Center Configuration Manager](../../../../apps/deploy-use/link-users-and-devices-with-user-device-affinity.md)|  
 |**Desmarcar implantações PXE necessárias**|Desmarca quaisquer implantações de inicialização PXE necessárias de todos os membros da coleção selecionada.|[Introdução à implantação de sistema operacional](../../../../osd/understand/introduction-to-operating-system-deployment.md)|  
 |**Atualizar associação**|Avalia a associação da coleção selecionada. Para coleções com vários membros, essa atualização pode levar algum tempo para ser concluída. Use a ação **Atualizar** para atualizar a exibição com os novos membros de coleções depois que a atualização for concluída.|Nenhuma informação adicional.|  
@@ -71,7 +72,7 @@ Use as informações de visão geral contidas neste tópico para ajudá-lo a exe
 |**Simular Implantação**|Abre o **Assistente de Simulação de Implantação de Aplicativo** , que permite testar os resultados de uma implantação de aplicativo sem instalar ou desinstalar o aplicativo.|[Como simular implantações de aplicativos com o System Center Configuration Manager](../../../../apps/deploy-use/simulate-application-deployments.md)|  
 |**Implantar**|Exibe as seguintes opções:<br /><br /> - **Aplicativo** – Abre o **Assistente de Implantação de Software**, em que é possível selecionar e configurar uma implantação de aplicativo na coleção selecionada.<br /><br /> - <br />                    **Programa** – Abre o **Assistente de Implantação de Software** , em que é possível selecionar e configurar uma implantação de pacote e programa na coleção selecionada.<br /><br /> - **Linha de Base de Configuração** – Abre a caixa de diálogo **Implantar Linhas de Base de Configuração**, em que é possível configurar a implantação de uma ou mais linhas de base de configuração na coleção selecionada.|[Como implantar aplicativos com o System Center Configuration Manager](../../../../apps/deploy-use/deploy-applications.md)<br /><br /> [Pacotes e programas no System Center Configuration Manager](../../../../apps/deploy-use/packages-and-programs.md)<br /><br /> [Como implantar linhas de base de configuração no System Center Configuration Manager](../../../../compliance/deploy-use/deploy-configuration-baselines.md)|  
 
-##  <a name="a-namebkmkcollpropa-collection-properties"></a><a name="BKMK_CollProp"></a> Propriedades de coleção  
+##  <a name="BKMK_CollProp"></a> Propriedades de coleção  
  Quando você abre a caixa de diálogo **Propriedades** de uma coleção, é possível exibir e configurar as propriedades a seguir de uma coleção.  
 
 |Nome da guia|Mais informações|  
@@ -85,9 +86,4 @@ Use as informações de visão geral contidas neste tópico para ajudá-lo a exe
 |**Grupos de pontos de distribuição**|Permite que você associe um ou mais grupos de pontos de distribuição aos membros da coleção selecionada. Para mais informações, consulte [Gerenciar conteúdo e infraestrutura de conteúdo do System Center Configuration Manager](../../../../core/servers/deploy/configure/manage-content-and-content-infrastructure.md).|  
 |**Segurança**|Exibe os usuários administrativos que têm permissões sobre a coleção selecionada das funções associadas e dos escopos de segurança.|  
 |**Monitor**|Permite configurar quando os alertas são gerados para o status do cliente e o Endpoint Protection. Para mais informações, consulte [Como configurar o status do cliente no System Center Configuration Manager](../../../../core/clients/deploy/configure-client-status.md) e [Como monitorar o Endpoint Protection no System Center Configuration Manager](../../../../protect/deploy-use/monitor-endpoint-protection.md).|  
-
-
-
-<!--HONumber=Dec16_HO3-->
-
 

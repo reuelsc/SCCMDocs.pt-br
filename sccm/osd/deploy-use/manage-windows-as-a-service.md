@@ -16,9 +16,9 @@ author: Dougeby
 ms.author: dougeby
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: 23b1d24e908d04b64c3bbfa518793a44e696d468
-ms.openlocfilehash: 87c3a35f4688c505f9b659a1bfe62f7a04cc7f11
-ms.lasthandoff: 03/29/2017
+ms.sourcegitcommit: 690d03d9c8c49a815bd318df549d7401a855bc5d
+ms.openlocfilehash: 2c2c0f81736c1b00ea487ae1261803a8105bb5e4
+ms.lasthandoff: 04/24/2017
 
 
 ---
@@ -53,7 +53,6 @@ ms.lasthandoff: 03/29/2017
 -   O ponto de conexão de serviço deve ser instalado e configurado no modo **Online, conexão persistente** para que seja possível ver os dados no painel de serviço do Windows 10. Quando estiver no modo offline, você não verá as atualizações de dados no painel até receber atualizações de serviço do Configuration Manager.   
      Para obter mais informações, consulte [Sobre o ponto de conexão de serviço](../../core/servers/deploy/configure/about-the-service-connection-point.md).  
 
--   Especifique a configuração de política de grupo, **Adiar Atualizações**, para determinar se um computador é CB ou CBB.  
 
 -   O Internet Explorer 9 ou posterior deve estar instalado no computador que executa o console do Configuration Manager.  
 
@@ -122,14 +121,19 @@ Os planos de manutenção usam apenas a classificação de atualizações de sof
 
     -   **Coleção de Destino**: especifica a coleção de destino a ser usada para o plano de serviço. Os membros da coleção recebem as atualizações do Windows 10 definidas no plano de serviço.  
 
-    > [!NOTE]  
-    >  A partir da versão 1602 do Configuration Manager, quando você fizer uma implantação de alto risco, como um plano de manutenção, a janela **Selecionar Coleção** exibirá apenas as coleções personalizadas que atendem às configurações de verificação da implantação que são definidas nas propriedades do site. As implantações de alto risco sempre estão limitadas às coleções personalizadas criadas e à coleção interna de **Computadores desconhecidos** . Ao criar uma implantação de alto risco, não é possível selecionar uma coleção interna como **Todos os Sistemas**. Desmarque **Ocultar coleções com uma contagem de membros maior que a configuração de tamanho mínimo do site** para ver todas as coleções personalizadas que contêm menos clientes do que o tamanho máximo configurado. Para obter mais informações, consulte [Configurações para gerenciar implantações de alto risco](../../protect/understand/settings-to-manage-high-risk-deployments.md).  
-    > As configurações de verificação de implantação baseiam-se na associação atual da coleção. Depois de implantar o plano de manutenção, a associação à coleção não será reavaliada quanto às configurações de implantação de alto risco.  
-    > Por exemplo, suponhamos que você defina **Tamanho padrão** como 100 e o **Tamanho máximo** como 1000. Ao criar uma implantação de alto risco, a janela **Selecionar coleção** exibirá somente as coleções que contêm menos de 100 clientes. Se você desmarcar a definição **Ocultar coleções com uma contagem de membro maior que a configuração de tamanho mínimo do site**, a janela exibirá coleções que contêm menos de 1000 clientes.  
-    > Ao selecionar uma coleção que contém uma função de site, o seguinte se aplica:  
-    >   
-    >  -   Se a coleção contiver um servidor do sistema de sites e nas configurações de verificação de implantação você configurar para coleções de bloco com servidores do sistema de sites, ocorrerá um erro e não será possível continuar.  
-    > -   Se a coleção contiver um servidor do sistema de sites e nas configurações de verificação de implantação for configurada a opção para avisar se as coleções que têm servidores do sistema de sites, se a coleção exceder o valor do tamanho padrão ou se a coleção contiver um servidor, o Assistente de Implantação de Software exibirá um aviso de alto risco. Você deve concordar em criar uma implantação de alto risco e uma mensagem de status de auditoria é criada.  
+        > [!NOTE]  
+        >  A partir da versão 1602 do Configuration Manager, quando você fizer uma implantação de alto risco, como um plano de manutenção, a janela **Selecionar Coleção** exibirá apenas as coleções personalizadas que atendem às configurações de verificação da implantação que são definidas nas propriedades do site.
+        >    
+        > As implantações de alto risco sempre estão limitadas às coleções personalizadas criadas e à coleção interna de **Computadores desconhecidos** . Ao criar uma implantação de alto risco, não é possível selecionar uma coleção interna como **Todos os Sistemas**. Desmarque **Ocultar coleções com uma contagem de membros maior que a configuração de tamanho mínimo do site** para ver todas as coleções personalizadas que contêm menos clientes do que o tamanho máximo configurado. Para obter mais informações, consulte [Configurações para gerenciar implantações de alto risco](../../protect/understand/settings-to-manage-high-risk-deployments.md).  
+        >  
+        > As configurações de verificação de implantação baseiam-se na associação atual da coleção. Depois de implantar o plano de manutenção, a associação à coleção não será reavaliada quanto às configurações de implantação de alto risco.  
+        >  
+        > Por exemplo, suponhamos que você defina **Tamanho padrão** como 100 e o **Tamanho máximo** como 1000. Ao criar uma implantação de alto risco, a janela **Selecionar coleção** exibirá somente as coleções que contêm menos de 100 clientes. Se você desmarcar a definição **Ocultar coleções com uma contagem de membro maior que a configuração de tamanho mínimo do site**, a janela exibirá coleções que contêm menos de 1000 clientes.  
+        >
+        > Ao selecionar uma coleção que contém uma função de site, o seguinte se aplica:    
+        >   
+        >    - Se a coleção contiver um servidor do sistema de sites e nas configurações de verificação de implantação você configurar para coleções de bloco com servidores do sistema de sites, ocorrerá um erro e não será possível continuar.    
+        >    - Se a coleção contiver um servidor do sistema de sites e nas configurações de verificação de implantação for configurada a opção para avisar se as coleções que têm servidores do sistema de sites, se a coleção exceder o valor do tamanho padrão ou se a coleção contiver um servidor, o Assistente de Implantação de Software exibirá um aviso de alto risco. Você deve concordar em criar uma implantação de alto risco e uma mensagem de status de auditoria é criada.  
 
 6.  Na página Anel de Implantação, defina as seguintes configurações:  
 
@@ -169,10 +173,10 @@ Os planos de manutenção usam apenas a classificação de atualizações de sof
 
         -   **Horário específico**: selecione essa configuração para instalar automaticamente as atualizações de software na implantação, em uma data e hora específica. O Configuration Manager determina o prazo para instalar as atualizações de software, adicionando o intervalo **Horário específico** configurado para o **Tempo disponível do software**.  
 
-        > [!NOTE]  
-        >  O prazo real da instalação é o prazo exibido, mais um período de tempo aleatório de até 2 horas. Isso reduz o impacto potencial de todos os computadores cliente na coleção de destino que está instalando as atualizações na implantação ao mesmo tempo.  
-        >   
-        >  É possível definir a configuração do cliente **Agente de Computador** , **Desativar data limite aleatória** , para desabilitar o atraso de aleatoriedade da instalação das atualizações necessárias. Para obter mais informações, consulte [Computer Agent](../../core/clients/deploy/about-client-settings.md#computer-agent).  
+            > [!NOTE]  
+            >  O prazo real da instalação é o prazo exibido, mais um período de tempo aleatório de até 2 horas. Isso reduz o impacto potencial de todos os computadores cliente na coleção de destino que está instalando as atualizações na implantação ao mesmo tempo.  
+            >   
+            >  É possível definir a configuração do cliente **Agente de Computador** , **Desativar data limite aleatória** , para desabilitar o atraso de aleatoriedade da instalação das atualizações necessárias. Para obter mais informações, consulte [Computer Agent](../../core/clients/deploy/about-client-settings.md#computer-agent).  
 
 9. Na página Experiência do Usuário, defina as seguintes configurações:  
 

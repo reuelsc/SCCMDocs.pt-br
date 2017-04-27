@@ -17,9 +17,9 @@ author: Brenduns
 ms.author: brenduns
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: 1b9e49da1a5bbfca93fe683b82d2c0056a22cc1f
-ms.openlocfilehash: c3ca3b895d54b6dc886068b92b39d0d95c466de2
-ms.lasthandoff: 03/21/2017
+ms.sourcegitcommit: d94acac84f052a01de9d9c9f65f237c0006c45b8
+ms.openlocfilehash: a2d4420c2274a9b1ceb47ffd267849fdb5a55a61
+ms.lasthandoff: 04/26/2017
 
 
 ---
@@ -147,7 +147,7 @@ Essa tarefa aplica-se a dispositivos registrados pelo Microsoft Intune (híbrido
 -   **Site primário**: habilitado    
 -   **Site secundário**: habilitado  
 
-**Excluir Histórico de Tarefa de Notificação Antigo**: use essa tarefa para excluir informações sobre tarefas de notificação de clientes do banco de dados do site quando elas não tiverem sido atualizadas por um período determinado. Para saber mais sobre notificações do cliente, veja [Tarefas de implantação de cliente do System Center Configuration Manager](../../../core/clients/deploy/client-deployment-tasks.md).  
+**Excluir Histórico de Tarefa de Notificação Antigo**: use essa tarefa para excluir informações sobre tarefas de notificação de clientes do banco de dados do site quando elas não tiverem sido atualizadas por um período determinado. Para saber mais sobre notificações do cliente, veja [Tarefas de implantação de cliente do System Center Configuration Manager](../../../core/clients/manage/monitor-clients.md).  
 
 -   Site de administração central: indisponível    
 -   **Site primário**: habilitado    

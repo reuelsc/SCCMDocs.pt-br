@@ -15,9 +15,9 @@ author: Dougeby
 ms.author: dougeby
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: dab5da5a4b5dfb3606a8a6bd0c70a0b21923fff9
-ms.openlocfilehash: 6820b6d4423ab0ac250effb4ec1160432de8eaba
-ms.lasthandoff: 03/27/2017
+ms.sourcegitcommit: ae008c91a7387ba76f2bfac13f8feb489a0cc558
+ms.openlocfilehash: 528ce515c86c4e778532290026a90a46476c4576
+ms.lasthandoff: 04/21/2017
 
 
 ---
@@ -36,21 +36,19 @@ Em uma sequência de tarefas existente para instalar um sistema operacional, voc
 1. Crie um novo grupo de sequências de tarefas após as etapas para capturar arquivos e configurações e antes das etapas para instalar o sistema operacional. Por exemplo, crie um grupo após o grupo de **Capturar Arquivos e Configurações** denominado **BIOS-to-UEFI (BIOS para UEFI)**.
 2. Na guia **Opções** do novo grupo, adicione uma nova variável de sequência de tarefas como uma condição em que **_SMSTSBootUEFI** é **diferente** de **true**. Isso impede que as etapas no grupo sejam executadas quando um computador já estiver no modo UEFI.
 
-   ![Grupo BIOS para UEFI](../../core/get-started/media/BIOS-to-UEFI-group.png)
+  ![Grupo BIOS para UEFI](../../core/get-started/media/BIOS-to-UEFI-group.png)
 3. No novo grupo, adicione a etapa de sequência de tarefas **Reiniciar Computador**. Em **Especifique o que executar após reiniciar**, selecione **The boot image assigned to this task sequence is selected (A imagem de inicialização atribuída a essa sequência de tarefas está selecionada)** para iniciar o computador no Windows PE.  
 4. Na guia **Opções**, adicione uma variável de sequência de tarefa como uma condição em que **_SMSTSInWinPE equals false (_SMSTSInWinPE é igual a falso)**. Isso impede que esta etapa seja executada se o computador já estiver no Windows PE.
 
-    ![Etapa Reiniciar Computador](../../core/get-started/media/restart-in-windows-pe.png)
+  ![Etapa Reiniciar Computador](../../core/get-started/media/restart-in-windows-pe.png)
 5. Adicione uma etapa para iniciar a ferramenta de OEM que converterá o firmware de BIOS para UEFI. Isso geralmente será uma etapa de sequência de tarefas **Executar Linha de Comando** com uma linha de comando para iniciar a ferramenta de OEM.
-6.    Adicione a etapa de sequência de tarefas Formatar e Particionar Disco que particionará e formatará o disco rígido. Na etapa, faça o seguinte:
-    1.    Crie a partição FAT32 que será convertida em UEFI antes de o sistema operacional ser instalado. Escolha **GGT** para **Tipo de disco**.
-
-       ![Etapa Formatar e particionar disco](../media/format-and-partition-disk.png)
-    2.    Vá para as propriedades da partição FAT32. Digite **TSUEFIDrive** no campo **Variável**. Quando a sequência de tarefas detectar essa variável, ela preparará para a transição de UEFI antes de reiniciar o computador.
-
-       ![Propriedades da partição](../../core/get-started/media/partition-properties.png)
-    3. Crie uma partição NTFS que o mecanismo de sequência de tarefas usa para salvar seu estado e para armazenar arquivos de log.
-7.    Adicione a etapa de sequência de tarefas **Reiniciar Computador**. Em **Especifique o que executar após reiniciar**, selecione **The boot image assigned to this task sequence is selected (A imagem de inicialização atribuída a essa sequência de tarefas está selecionada)** para iniciar o computador no Windows PE.  
+6. Adicione a etapa de sequência de tarefas Formatar e Particionar Disco que particionará e formatará o disco rígido. Na etapa, faça o seguinte:
+  1. Crie a partição FAT32 que será convertida em UEFI antes de o sistema operacional ser instalado. Escolha **GGT** para **Tipo de disco**.
+    ![Etapa Formatar e particionar disco](../media/format-and-partition-disk.png)
+  2. Vá para as propriedades da partição FAT32. Digite **TSUEFIDrive** no campo **Variável**. Quando a sequência de tarefas detectar essa variável, ela preparará para a transição de UEFI antes de reiniciar o computador.
+    ![Propriedades da partição](../../core/get-started/media/partition-properties.png)
+  3. Crie uma partição NTFS que o mecanismo de sequência de tarefas usa para salvar seu estado e para armazenar arquivos de log.
+7. Adicione a etapa de sequência de tarefas **Reiniciar Computador**. Em **Especifique o que executar após reiniciar**, selecione **The boot image assigned to this task sequence is selected (A imagem de inicialização atribuída a essa sequência de tarefas está selecionada)** para iniciar o computador no Windows PE.  
 
 ## <a name="convert-from-bios-to-uefi-during-an-in-place-upgrade"></a>Converter de BIOS para UEFI durante uma atualização in-loco
 A Atualização do Windows 10 para Criadores apresenta uma ferramenta de conversão simples que automatiza o processo para reparticionar o disco rígido para hardware habilitado para UEFI e integra a ferramenta de conversão ao processo de atualização in-loco do Windows 7 para o Windows 10. Quando você combina essa ferramenta com a sequência de tarefas de atualização do sistema operacional e a ferramenta de OEM que converte o firmware do BIOS para UEFI, pode converter os computadores de BIOS para UEFI durante uma atualização in-loco para a Atualização do Windows 10 para Criadores.
@@ -61,13 +59,10 @@ A Atualização do Windows 10 para Criadores apresenta uma ferramenta de convers
 - Ferramenta de OEM que converte o firmware do computador de BIOS para UEFI
 
 ### <a name="to-convert-from-bios-to-uefi-during-an-in-place-upgrade"></a>Para converter de BIOS para UEFI durante uma atualização in-loco
-1.    Crie uma sequência de tarefas de atualização do sistema operacional que executa uma atualização in-loco para a Atualização do Windows 10 para Criadores.
-2.    Edite a sequência de tarefas. No **Grupo de pós-processamento**, adicione as seguintes etapas:
-    1.    Em Geral, adicione uma etapa **Executar linha de comando**. Você adicionará a linha de comando para a ferramenta MBR2GPT que converte um disco de MBR para GPT sem modificar ou excluir dados do disco. Na linha de comando, digite o seguinte: **MBR2GPT /convert /disk:0 /AllowFullOS**.
-        > [!NOTE]  
-           > Você pode optar por executar a ferramenta MBR2GPT.EXE no Windows PE em vez de no sistema operacional completo. Você pode fazer isso adicionando uma etapa para reiniciar o computador no WinPE antes da etapa executar a ferramenta MBR2GPT.EXE e removendo a opção /AllowFullOS na linha de comando. Para obter detalhes sobre a ferramenta e as opções disponíveis, veja [MBR2GPT. EXE](https://technet.microsoft.com/itpro/windows/deploy/mbr-to-gpt).
-
-    2.    Adicione uma etapa para iniciar a ferramenta de OEM que converterá o firmware de BIOS para UEFI. Isso geralmente será uma etapa de sequência de tarefas Executar Linha de Comando com uma linha de comando para iniciar a ferramenta de OEM.
-    3.    Em Geral, adicione a etapa **Reiniciar o computador**. Para especificar o que deve ser executado após a reinicialização, selecione **O sistema operacional padrão atualmente instalado**.
-3.    Implantar a sequência de tarefas.
+1. Crie uma sequência de tarefas de atualização do sistema operacional que executa uma atualização in-loco para a Atualização do Windows 10 para Criadores.
+2. Edite a sequência de tarefas. No **Grupo de pós-processamento**, adicione as seguintes etapas:
+   1. Em Geral, adicione uma etapa **Executar linha de comando**. Você adicionará a linha de comando para a ferramenta MBR2GPT que converte um disco de MBR para GPT sem modificar ou excluir dados do disco. Na linha de comando, digite o seguinte: **MBR2GPT /convert /disk:0 /AllowFullOS**. Você pode optar por executar a ferramenta MBR2GPT.EXE no Windows PE em vez de no sistema operacional completo. Você pode fazer isso adicionando uma etapa para reiniciar o computador no WinPE antes da etapa executar a ferramenta MBR2GPT.EXE e removendo a opção /AllowFullOS na linha de comando. Para obter detalhes sobre a ferramenta e as opções disponíveis, veja [MBR2GPT. EXE](https://technet.microsoft.com/itpro/windows/deploy/mbr-to-gpt).
+   2. Adicione uma etapa para iniciar a ferramenta de OEM que converterá o firmware de BIOS para UEFI. Isso geralmente será uma etapa de sequência de tarefas Executar Linha de Comando com uma linha de comando para iniciar a ferramenta de OEM.
+   3. Em Geral, adicione a etapa **Reiniciar o computador**. Para especificar o que deve ser executado após a reinicialização, selecione **O sistema operacional padrão atualmente instalado**.
+3. Implantar a sequência de tarefas.
 
