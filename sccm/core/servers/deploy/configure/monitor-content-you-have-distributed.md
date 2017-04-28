@@ -2,7 +2,7 @@
 title: "Monitorar o conteúdo | Microsoft Docs"
 description: "Entenda como monitorar o conteúdo distribuído usando o console do Configuration Manager."
 ms.custom: na
-ms.date: 2/8/2017
+ms.date: 4/17/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
@@ -16,9 +16,9 @@ author: Brenduns
 ms.author: brenduns
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: d7b13f3dea5a3ae413ca6b8150ec24e1632a4d4d
-ms.openlocfilehash: 7496c8bf11d058c94bc36fd28e9557b6470b61f1
-ms.lasthandoff: 04/12/2017
+ms.sourcegitcommit: dda2f4c01078fbbd174cbcb30357554c24f6abeb
+ms.openlocfilehash: 7659d5789b8ce4e9e0b585a331c8f68869c9492d
+ms.lasthandoff: 04/17/2017
 
 ---
 # <a name="monitor-content-you-have-distributed-with-system-center-configuration-manager"></a>Monitorar o conteúdo que você distribuiu com o System Center Configuration Manager
@@ -155,7 +155,7 @@ Use o procedimento a seguir para exibir o status de configuração de pontos de 
 Começando da versão 1610, é possível usar o painel **Fontes de Dados do Cliente** para ajudar a entender o uso do [Cache de Pares](/sccm/core/plan-design/hierarchy/client-peer-cache) em seu ambiente. O painel começará a exibir os dados após os clientes baixarem o conteúdo e enviarem as informações de volta para o site. Isso pode levar até 24 horas.
 
 > [!TIP]  
-> Com a versão 1610, o cache de pares e o painel de fontes de dados do cliente são recursos de pré-lançamento. Para habilitá-los, confira [Usar recursos de pré-lançamento de atualizações](/sccm/core/servers/manage/install-in-console-updates#bkmk_prerelease). O painel **Fontes de Dados do Cliente** ficará visível somente após ser habilitado. Depois de ser habilitado, pode levar até 24 horas para que ele comece a exibir dados. 
+> O **Cache de Pares de Cliente** e o **Painel de Fontes de Dados do Cliente** são recursos de pré-lançamento, apresentados na versão 1610. Você deve habilitar o Cache de mesmo nível do cliente antes do painel de fontes de dados do cliente fica visível no console. Para habilitar o Cache de Pares de Clientes, confira [Usar recursos de pré-lançamento de atualizações](/sccm/core/servers/manage/install-in-console-updates#bkmk_prerelease). Depois de ser habilitado, pode levar até 24 horas para que ele comece a exibir dados.
 
 No console, acesse **Monitoramento** > **Status de Distribuição** > **Fontes de Dados do Cliente**. Aqui você pode escolher um período de tempo para aplicar ao painel. Em seguida, na exibição, escolha o grupo de limites ou o pacote do qual quer ver informações. Ao exibir as informações, você pode passar o mouse sobre a superfície para ver mais detalhes sobre conteúdo ou as origens da política.
 

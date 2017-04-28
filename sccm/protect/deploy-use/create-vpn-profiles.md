@@ -2,7 +2,7 @@
 title: Como criar perfis de VPN no System Center Configuration Manager | Microsoft Docs
 description: Saiba como criar perfis de VPN no System Center Configuration Manager.
 ms.custom: 
-ms.date: 12/28/2016
+ms.date: 4/19/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
@@ -12,14 +12,14 @@ ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: f338e4db-73b5-45ff-92f4-1b89a8ded989
 caps.latest.revision: 15
-author: nbigman
+author: robstackmsft
 caps.handback.revision: 0
-ms.author: nbigman
+ms.author: robstack
 ms.manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: f9097014c7e988ec8e139e518355c4efb19172b3
-ms.openlocfilehash: e3959dc46be225a0edaa94dda73bb4c4ceadf7fe
-ms.lasthandoff: 03/04/2017
+ms.sourcegitcommit: 761c3f58f7c57d8f87ee802da37821895062546d
+ms.openlocfilehash: faf8a8fc3f9a54ce3a5a45cc4b20fa5ca8bb4d95
+ms.lasthandoff: 04/19/2017
 
 
 ---
@@ -40,7 +40,7 @@ Para conexões VPN de terceiros, distribua o aplicativo VPN antes de implantar o
 
 1.  Conclua a página **Geral**. . Observe o seguinte:  
 
-       - Não use os caracteres \\/:*?<>&#124; ou o caractere de espaço no nome do perfil VPN. Esses são caracteres sem suporte pelo perfil VPN do Windows Server.  
+       - Não use os caracteres \\/:*?&lt;>&#124; ou o caractere de espaço no nome do perfil VPN. Esses são caracteres sem suporte pelo perfil VPN do Windows Server.  
 
        -   Selecione **Importar um item de perfil VPN existente de um arquivo** para importar as informações de perfil VPN que foram exportadas para um arquivo XML (somente Windows 8.1 e Windows RT).  
 
@@ -53,20 +53,20 @@ Para conexões VPN de terceiros, distribua o aplicativo VPN antes de implantar o
         > [!NOTE]  
         >  Dispositivos que executam iOS não oferecem suporte ao uso de vários servidores VPN. Se você configurar vários servidores VPN e implantar o perfil VPN em um dispositivo iOS, apenas o servidor padrão será usado.  
 
-     Esta tabela fornece opções de tipos de conexão. Consulte a documentação do servidor VPN para obter mais informações.  
+     Esta tabela fornece opções de tipos de conexão. Consulte a documentação do servidor VPN para obter mais informações.
 
-    |Opção|Mais informações|Tipo de conexão|  
-    |------------|----------------------|---------------------|  
-    |**Território**|O realm de autenticação que você deseja usar. Um realm de autenticação é um agrupamento de recursos de autenticação usado pelo tipo de conexão Pulse Secure.|Pulse Secure|  
-    |**Função**|A função de usuário que tem acesso a essa conexão.|Pulse Secure|  
-    |**Grupo de logon ou domínio**|O nome do grupo de logon ou domínio ao qual você deseja se conectar.|Dell SonicWALL Mobile Connect|  
-    |**Impressão digital**|Uma cadeia de caracteres, por exemplo "Código de impressões digitais da Contoso" que será usado para verificar que o servidor VPN é confiável.<br /><br /> Uma impressão digital pode ser:<br /><br /> - Enviada ao cliente para que ele saiba que pode confiar em qualquer servidor que apresentar essa impressão digital durante a conexão.<br /><br /> - Se o dispositivo ainda não tiver a impressão digital, ele solicitará ao usuário para confiar no servidor VPN ao qual está se conectando enquanto mostra a impressão digital (o usuário verifica a impressão digital e manualmente escolhe **confiar** para se conectar).|Check Point Mobile VPN|  
-    |**Enviar todo o tráfego de rede através da conexão VPN**|Se esta opção não estiver marcada, você poderá especificar rotas adicionais para a conexão (para os tipos de conexão **Microsoft SSL (SSTP)**, **Microsoft Automatic**, **IKEv2**, **PPTP** e **L2TP** ), que é conhecida como túnel dividido ou VPN.<br /><br /> Apenas as conexões com a rede da empresa são enviadas por um túnel VPN. O túnel VPN não é usado quando você se conecta aos recursos na Internet.|Todos|  
-    |**Sufixo DNS específico da conexão**|O sufixo DNS (Sistema de Nomes de Domínio) específico da conexão.|- <br />                            Microsoft SSL (SSTP)<br /><br /> - Microsoft Automatic<br /><br /> - <br />                            IKEv2<br /><br /> - <br />                            PPTP<br /><br /> - <br />                            L2TP|  
-    |**Ignorar VPN quando conectado à rede Wi-Fi da empresa**|A conexão VPN não será usada quando o dispositivo estiver conectado à rede Wi-Fi da empresa.|- Cisco AnyConnect<br /><br /> - Pulse Secure<br /><br /> - F5 Edge Client<br /><br /> - Dell SonicWALL Mobile Connect<br /><br /> - Check Point Mobile VPN<br /><br /> - Microsoft SSL (SSTP)<br /><br /> - Microsoft Automatic<br /><br /> - IKEv2<br /><br /> - L2TP|  
-    |**Ignorar VPN quando conectado à rede Wi-Fi local**|A conexão VPN não será usada quando o dispositivo estiver conectado a uma rede Wi-Fi doméstica.|Todos|  
-    |**Por aplicativo VPN (iOS 7 e posterior, Mac OS X 10.9 e posterior)**|Associar essa conexão VPN a um aplicativo iOS para que a conexão seja aberta quando o aplicativo é executado. É possível associar o perfil de VPN a um aplicativo ao implantá-lo.|- <br />                        Cisco AnyConnect<br /><br /> - Pulse Secure<br /><br /> - F5 Edge Client<br /><br /> - Dell SonicWALL Mobile Connect<br /><br /> - Check Point Mobile VPN|  
-    |**XML personalizado (opcional)**|Especificar comandos XML personalizados que configuram a conexão VPN.<br /><br /> Exemplos:<br /><br /> Para o **Pulse Secure**:<br /><br /> **<pulse-schema><isSingleSignOnCredential\>true</isSingleSignOnCredential\></pulse-schema>**<br /><br /> Para o **CheckPoint Mobile VPN**:<br /><br /> **&lt;CheckPointVPN port="443" name="CheckPointSelfhost" sso="true" debug="3" /\>**<br /><br /> Para o **Dell SonicWALL Mobile Connect**:<br /><br /> **<MobileConnect\><Compression\>false</Compression\><debugLogging\>True</debugLogging\><packetCapture\>False</packetCapture\></MobileConnect\>**<br /><br /> Para o **F5 Edge Client**:<br /><br /> **<f5-vpn-conf><single-sign-on-credential /></f5-vpn-conf>**<br /><br /> Consulte a documentação do VPN de cada fabricante para obter mais informações sobre como escrever comandos XML personalizados.|- Cisco AnyConnect<br /><br /> - Pulse Secure<br /><br /> - F5 Edge Client<br /><br /> - Dell SonicWALL Mobile Connect<br /><br /> - Check Point Mobile VPN|  
+|Opção          | Mais informações| Tipo de conexão|  
+|----------------|----------------------|---------------------|  
+|**Território**     |O realm de autenticação que você deseja usar. Um realm de autenticação é um agrupamento de recursos de autenticação usado pelo tipo de conexão Pulse Secure.|Pulse Secure|    
+|**Função**        |A função de usuário que tem acesso a essa conexão. |Pulse Secure|  
+|**Grupo de logon ou domínio** |O nome do grupo de logon ou domínio ao qual você deseja se conectar.|Dell SonicWALL Mobile Connect|  
+|**Impressão digital**  |Uma cadeia de caracteres, por exemplo "Código de impressões digitais da Contoso" que será usado para verificar que o servidor VPN é confiável.<br /><br /> Uma impressão digital pode ser:<br /><br /> - Enviada ao cliente para que ele saiba que pode confiar em qualquer servidor que apresentar essa impressão digital durante a conexão.<br /><br /> - Se o dispositivo ainda não tiver a impressão digital, ele solicitará ao usuário para confiar no servidor VPN ao qual está se conectando enquanto mostra a impressão digital (o usuário verifica a impressão digital e manualmente escolhe **confiar** para se conectar).|Check Point Mobile VPN|  
+|**Enviar todo o tráfego de rede através da conexão VPN** |Se esta opção não estiver marcada, você poderá especificar rotas adicionais para a conexão (para os tipos de conexão **Microsoft SSL (SSTP)**, **Microsoft Automatic**, **IKEv2**, **PPTP** e **L2TP** ), que é conhecida como túnel dividido ou VPN.<br /><br /> Apenas as conexões com a rede da empresa são enviadas por um túnel VPN. O túnel VPN não é usado quando você se conecta aos recursos na Internet. |Todos|  
+|**Sufixo DNS específico da conexão** |O sufixo DNS (Sistema de Nomes de Domínio) específico da conexão.|- Microsoft SSL (SSTP)<br /><br /> - Microsoft Automatic<br /><br /> - IKEv2<br /><br /> - PPTP<br /><br /> - L2TP|  
+|**Ignorar VPN quando conectado à rede Wi-Fi da empresa**  |A conexão VPN não será usada quando o dispositivo estiver conectado à rede Wi-Fi da empresa.|- Cisco AnyConnect<br /><br /> - Pulse Secure<br /><br /> - F5 Edge Client<br /><br /> - Dell SonicWALL Mobile Connect<br /><br /> - Check Point Mobile VPN<br /><br /> - Microsoft SSL (SSTP)<br /><br /> - Microsoft Automatic<br /><br /> - IKEv2<br /><br /> - L2TP|  
+|**Ignorar VPN quando conectado à rede Wi-Fi local**  |A conexão VPN não será usada quando o dispositivo estiver conectado a uma rede Wi-Fi doméstica.|Todos|  
+|**Por aplicativo VPN (iOS 7 e posterior, Mac OS X 10.9 e posterior)** |Associar essa conexão VPN a um aplicativo iOS para que a conexão seja aberta quando o aplicativo é executado. É possível associar o perfil de VPN a um aplicativo ao implantá-lo.|- Cisco AnyConnect<br /><br /> - Pulse Secure<br /><br /> - F5 Edge Client<br /><br /> - Dell SonicWALL Mobile Connect<br /><br /> - Check Point Mobile VPN|  
+|**XML personalizado (opcional)** |Especificar comandos XML personalizados que configuram a conexão VPN.<br /><br /> Exemplos:<br /><br /> Para o **Pulse Secure**:<br /><br /> **&lt;pulse-schema>&lt;isSingleSignOnCredential>true&lt;/isSingleSignOnCredential\>&lt;/pulse-schema>**<br /><br /> Para o **CheckPoint Mobile VPN**:<br /><br /> **&lt;CheckPointVPN port="443" name="CheckPointSelfhost" sso="true" debug="3">**<br /><br /> Para o **Dell SonicWALL Mobile Connect**:<br /><br /> **&lt;MobileConnect\>&lt;Compression\>false&lt;/Compression\>&lt;debugLogging\>True&lt;/debugLogging\>&lt;packetCapture\>False&lt;/packetCapture\>&lt;/MobileConnect\>**<br /><br /> Para o **F5 Edge Client**:<br /><br /> **&lt;f5-vpn-conf>&lt;single-sign-on-credential>&lt;/f5-vpn-conf>**<br /><br /> Consulte a documentação do VPN de cada fabricante para obter mais informações sobre como escrever comandos XML personalizados.|- Cisco AnyConnect<br /><br /> - Pulse Secure<br /><br /> - F5 Edge Client<br /><br /> - Dell SonicWALL Mobile Connect<br /><br /> - Check Point Mobile VPN|  
 
 > [!NOTE]  
 >  Para saber mais sobre a criação de perfis de VPN para dispositivos móveis, confira [Criar perfis de VPN](../../mdm/deploy-use/create-vpn-profiles.md)  

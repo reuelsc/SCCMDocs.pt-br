@@ -2,7 +2,7 @@
 title: "Verificações de pré-requisitos | Microsoft Docs"
 description: "Veja as verificações de pré-requisitos disponíveis para o System Center Configuration Manager. Inclui verificações de direitos de segurança."
 ms.custom: na
-ms.date: 3/1/2017
+ms.date: 4/17/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
@@ -16,16 +16,16 @@ author: Brenduns
 ms.author: brenduns
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: 496c1444822a4601fad67f421115a609e976386d
-ms.openlocfilehash: 5a8f4a84ef5b4ccb4434ca8eb260c1c7899207ab
-ms.lasthandoff: 03/01/2017
+ms.sourcegitcommit: dda2f4c01078fbbd174cbcb30357554c24f6abeb
+ms.openlocfilehash: 14834f62ffaa8fcba5ddb7536a0b76e18b557e53
+ms.lasthandoff: 04/17/2017
 
 ---
 # <a name="list-of-prerequisite-checks-for-system-center-configuration-manager"></a>Lista de verificações de pré-requisitos para o System Center Configuration Manager
 
 *Aplica-se a: System Center Configuration Manager (Branch Atual)*
 
-As seções a seguir detalham as verificações de pré-requisitos disponíveis. 
+As seções a seguir detalham as verificações de pré-requisitos disponíveis.
 
 Para obter informações sobre o uso do Verificador de Pré-requisitos, consulte [Verificador de Pré-requisitos](prerequisite-checker.md).  
 
@@ -117,7 +117,7 @@ A tabela a seguir lista as verificações de pré-requisitos que o Verificador d
 |**Associação do domínio**|Verifica se o computador do Configuration Manager é membro de um domínio do Windows.|Erro|Site de administração central, <br>Site primário, <br>Site secundário, <br>Provedor de SMS, <br>SQL Server|
 |**Associação do domínio**|Verifica se o computador do Configuration Manager é membro de um domínio do Windows.|Aviso|Ponto de gerenciamento, <br>Ponto de distribuição|
 |**Unidade FAT no Servidor do Site**|Verifica se a unidade de disco foi formatada com o sistema de arquivos FAT. Para aumentar a segurança, instale componentes do servidor do site em unidades de disco formatadas com o sistema de arquivos NTFS.|Aviso|Site primário|
-|**Espaço livre em disco no servidor do site**|Para instalar o servidor do site, o computador do servidor do site deve ter pelo menos 5 GB de espaço livre em disco. É necessário ter mais 1 GB de espaço livre para instalar a função do sistema de site do Provedor de SMS no mesmo computador.|Erro|Site de administração central, <br>Site primário, <br>Site secundário|
+|**Espaço livre em disco no servidor do site**|Para instalar o servidor do site, o computador do servidor do site deve ter pelo menos 15 GB de espaço livre em disco. É necessário ter mais 1 GB de espaço livre para instalar a função do sistema de site do Provedor de SMS no mesmo computador.|Erro|Site de administração central, <br>Site primário, <br>Site secundário|
 |**Reinicialização do sistema pendente**|Verifica se outro programa exige que o servidor seja reiniciado antes de executar a Instalação.|Erro|Site de administração central, <br>Site primário, <br>Site secundário, <br>Console do Configuration Manager, <br>Provedor de SMS, <br>SQL Server, <br>Ponto de gerenciamento, <br>Ponto de distribuição|
 |**Controlador de Domínio Somente Leitura**|Não há suporte para servidores de banco de dados de sites e servidores de sites secundários em um controlador de domínio somente leitura (RODC). Para obter mais informações, consulte [Problemas ao instalar o SQL Server em um controlador de domínio](http://go.microsoft.com/fwlink/p/?LinkId=264856) na Base de Dados de Conhecimento Microsoft.|Erro|Site de administração central, <br>Site primário, <br>Site secundário|
 |**Extensões de esquema**|Determina se o esquema de Serviços de Domínio Active Directory foi estendido; tendo sido, a versão das extensões de esquema usadas. As extensões de esquema do Active Directory Configuration Manager não são obrigatórias para a instalação do servidor do site, mas são recomendadas para o uso completo de todos os recursos do Configuration Manager. Para obter mais informações sobre as vantagens de estender o esquema, consulte [Preparar o Active Directory para publicação de sites](../../../../core/plan-design/network/extend-the-active-directory-schema.md).|Aviso|Site de administração central, <br>Site primário|

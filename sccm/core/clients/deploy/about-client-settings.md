@@ -13,13 +13,13 @@ ms.topic: article
 ms.assetid: f7560876-8084-4570-aeab-7fd44f4ba737
 caps.latest.revision: 15
 caps.handback.revision: 0
-author: arob98
-ms.author: angrobe
+author: robstackmsft
+ms.author: robstack
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: dab5da5a4b5dfb3606a8a6bd0c70a0b21923fff9
-ms.openlocfilehash: bd2cf7b0df4a1f50c006e8280bf59ea91f1b4477
-ms.lasthandoff: 03/27/2017
+ms.sourcegitcommit: 4eee9731a4a27328c47c0d15931cab28cf520a18
+ms.openlocfilehash: d1d2ec7c053d13ebaeb00d0dfeb126716b5f7ae5
+ms.lasthandoff: 04/18/2017
 
 ---
 # <a name="about-client-settings-in-system-center-configuration-manager"></a>Sobre as configurações do cliente no System Center Configuration Manager
@@ -505,7 +505,7 @@ Muitas das configurações do cliente são autoexplicativas. Outras são descrit
 
     -   Escolha o ícone **Novo** para adicionar um novo tipo de arquivo ao inventário. Em seguida, especifique as informações a seguir na caixa de diálogo **Propriedades de Arquivo Inventariado**:  
 
-        -   **Nome**: forneça um nome para o arquivo que você deseja inventariar. Você pode usar o caractere **\** para representar qualquer cadeia de caracteres de texto, e o caractere**?**para representar qualquer caractere único. Por exemplo, se você desejar inventariar todos os arquivos com a extensão .doc, especifique o nome do arquivo**\*.doc**.  
+        -   **Nome**: forneça um nome para o arquivo que você deseja inventariar. Você pode usar o caractere **\** para representar qualquer cadeia de caracteres de texto e o caractere **?** para representar qualquer caractere único. Por exemplo, se você desejar inventariar todos os arquivos com a extensão .doc, especifique o nome do arquivo **\*.doc**.  
 
         -   **Local**: escolha **Definir** para abrir a caixa de diálogo **Propriedades do Caminho**. Você pode configurar o inventário de software para pesquisar o arquivo especificado em todos os discos rígidos do cliente, pesquisar um caminho especificado (por exemplo, **C:\Pasta**) ou uma variável especificada (por exemplo, *%windir%*). Também é possível pesquisar todas as subpastas no caminho especificado.  
 
@@ -528,7 +528,7 @@ Muitas das configurações do cliente são autoexplicativas. Outras são descrit
 
     -   Na caixa de diálogo **Propriedades do Arquivo Coletado** , forneça as seguintes informações:  
 
-        -   **Nome**: forneça um nome para o arquivo que você deseja coletar. Você pode usar o caractere **\** para representar qualquer cadeia de caracteres de texto, e o caractere**?** para representar qualquer caractere único.  
+        -   **Nome**: forneça um nome para o arquivo que você deseja coletar. Você pode usar o caractere **\** para representar qualquer cadeia de caracteres de texto e o caractere **?** para representar qualquer caractere único.  
 
         -   **Local**: escolha **Definir** para abrir a caixa de diálogo **Propriedades do Caminho**. Você pode configurar o inventário de software para pesquisar o arquivo que você deseja coletar em todos os discos rígidos do cliente, pesquisar em um caminho especificado (por exemplo, **C:\Pasta**) ou em uma variável especificada (por exemplo, *%windir%*). Também é possível pesquisar todas as subpastas no caminho especificado.  
 

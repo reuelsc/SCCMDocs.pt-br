@@ -17,9 +17,9 @@ author: Brenduns
 ms.author: brenduns
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: dab5da5a4b5dfb3606a8a6bd0c70a0b21923fff9
-ms.openlocfilehash: aca3525fc143b281f41c3d9bd20bb93b1d91f6ce
-ms.lasthandoff: 03/27/2017
+ms.sourcegitcommit: 761c3f58f7c57d8f87ee802da37821895062546d
+ms.openlocfilehash: 44338c705e308896c5203be239c160a8220369a8
+ms.lasthandoff: 04/19/2017
 
 
 ---
@@ -234,4 +234,11 @@ Isso acontece apenas quando você adiciona a mesma **Coleção de Usuário** à 
 Esse problema afeta o acesso condicional do System Center Configuration Manager para o **Exchange no Local** com a atualização 1602 e deve ser resolvido em uma atualização futura.  
 
 **Solução alternativa:** adicione a **Coleção de Usuário** à página **Coleções de Destino** antes de escolher **Coleção de Usuário** na página **Coleção Isenta** ou verifique se você não está adicionando a mesma **Coleção de Usuário** às Coleções Isenta e de Destino.
+
+## <a name="endpoint-protection"></a>Endpoint Protection
+<!--  Product Studio bug 485370 added by Nathbarn 04 19 2017 -->
+### <a name="antimalware-policy-fails-to-apply-on-windows-server-2016-core"></a>A política de antimalware não se aplica no Windows Server 2016 Core
+A política de antimalware não se aplica no Windows Server 2016 Core.  O código de erro é 0x80070002.  Há uma dependência ausente para ConfigSecurityPolicy.exe.
+
+**Solução alternativa:**  não há.  Como administrador, você pode usar a política de grupos para gerenciar as configurações do Windows Server 2016 Core.
 

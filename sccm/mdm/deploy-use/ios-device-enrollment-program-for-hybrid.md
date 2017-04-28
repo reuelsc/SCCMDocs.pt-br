@@ -16,9 +16,9 @@ author: mtillman
 ms.author: mtillman
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: 1b9e49da1a5bbfca93fe683b82d2c0056a22cc1f
-ms.openlocfilehash: 2ace86cc842d6a3a5b2114c4e4c33c2d65c2f256
-ms.lasthandoff: 03/21/2017
+ms.sourcegitcommit: 4eee9731a4a27328c47c0d15931cab28cf520a18
+ms.openlocfilehash: 555da7187b505a926731350d16787bc02d28dad3
+ms.lasthandoff: 04/18/2017
 
 ---
 # <a name="ios-device-enrollment-program-dep-enrollment-for-hybrid-deployments-with-configuration-manager"></a>Registro no DEP (Programa de Registro de Dispositivos) do iOS para implantações híbridas com o Configuration Manager
@@ -75,12 +75,14 @@ As empresas podem adquirir dispositivos iOS por meio do programa de registro de 
             > O DEP com afinidade do usuário requer que o ponto de extremidade misto/nome do usuário do ADFS WS-Trust 1.3 esteja habilitado para solicitar o token do usuário.
 
             -   **Sem afinidade de usuário**: o dispositivo não está afiliado a um usuário. Use esta afiliação para dispositivos que executam tarefas sem acessar aos dados de usuário local. Os aplicativos que exigem a afiliação com usuário não funcionarão.  
+             ![Captura de tela do nome de perfil DEP, descrição e prompt de Afinidade do Usuário](../media/dep-general.png)
 
-    2.  On the **Programa de Registro de Dispositivo** , especifique as informações a seguir e clique em **Avançar**.  
+    2.  Na página **Configurações do Programa de Registro do Dispositivo**, especifique as informações a seguir e clique em **Avançar**.  
 
         -   **Departamento**: esta informação aparece quando os usuários tocam em “Sobre a Configuração” durante a ativação.  
 
-        -   **Número de telefone de suporte**: exibido quando o usuário clica no botão **Precisa de Ajuda** durante a ativação.  
+        -   **Número de telefone de suporte**: exibido quando o usuário clica no botão **Precisa de Ajuda** durante a ativação.
+       ![Captura de tela da atribuição de perfil DEP para dispositivos iOS](../media/dep-settings.png)
 
         -   **Modo de preparação**: este estado é definido durante a ativação e não pode ser alterado sem redefinir o dispositivo de fábrica:  
 
@@ -105,6 +107,7 @@ As empresas podem adquirir dispositivos iOS por meio do programa de registro de 
         -   **Zoom** – Se habilitado, o Assistente de Configuração solicitará o serviço durante a ativação
         -   **Siri** – Se habilitado, o Assistente de Instalação solicitará o serviço durante a ativação  
         -   **Enviar dados de diagnóstico para a Apple** – Se habilitado, o Assistente de Instalação solicitará o serviço durante a ativação  
+        ![Captura de tela da atribuição de perfil DEP para dispositivos iOS](../media/dep-setup-assistant.png)
 
     4.  Na página **Gerenciamento Adicional**, especifique se uma conexão USB pode ser usada para configurações de gerenciamento adicional. Ao selecionar **Exigir certificado**, você deve importar um certificado de gerenciamento do Apple Configurator a ser usado para este perfil.  Defina como **Não permitir** para impedir a sincronização de arquivos com iTunes ou gerenciamento por meio do Apple Configurator. A Microsoft recomenda definir **Não permitir**, exportar configurações adicionais do Apple Configurator e implantar como um perfil de configuração do iOS Personalizado, em vez de usar essa configuração para permitir a implantação manual com ou sem um certificado.  
 
@@ -118,8 +121,11 @@ As empresas podem adquirir dispositivos iOS por meio do programa de registro de 
     Vá até o [Portal do Programa de Registro de Dispositivo](https://deploy.apple.com) (https://deploy.apple.com) e entre com sua ID Apple corporativa. Vá para **Programa de Implantação** > **Programa de Registro de Dispositivo** > **Gerenciar Dispositivos**. Especifique como você vai **Escolher Dispositivos**, forneça informações do dispositivo e especifique os detalhes por **Número de Série**, **Número do Pedido**do dispositivo ou ao **Carregar o Arquivo CSV**. Em seguida, selecione **Atribuir ao Servidor**, selecione o <*ServerName*> que você especificou na etapa 3 e clique em **OK**.  
 
 3.  **Sincronizar dispositivos gerenciados pelo DEP**   
-    No console do **Ativos e Conformidade** , vá para **Todos os Dispositivos de Propriedade Corporativa** > **iOS** > **Informações do Dispositivo**. Na guia **Início** , clique em **Sincronização de DEP**. Uma solicitação de sincronização é enviada à Apple. Depois de concluída a sincronização, os dispositivos gerenciados pelo DEP são exibidos. A caixa de diálogo **Status de Registro** dos dispositivos gerenciados indica **Não contatado** até que o dispositivo seja ligado e execute o Assistente de Configuração para registrar o dispositivo.  
+    No espaço de trabalho **Ativos e Conformidade**, vá para **Todos os Dispositivos de Propriedade Corporativa** > **Dispositivos Pré-declarados**. Na guia **Início** , clique em **Sincronização de DEP**. Uma solicitação de sincronização é enviada à Apple. Depois de concluída a sincronização, os dispositivos gerenciados pelo DEP são exibidos.
 
-4.  **Distribuir os dispositivos para os usuários**   
-    Agora você pode fornecer seus dispositivos de propriedade corporativa para usuários. Quando um dispositivo iOS for ativado, ele será registrado para gerenciamento pelo Intune.
+4.  **Atribuir perfil DEP**<br>No espaço de trabalho **Ativos e Conformidade**, vá para **Todos os Dispositivos de Propriedade Corporativa** > **iOS** > **Perfis de Registro**. Selecione o perfil de registro DEP, em seguida, na guia **Início**, clique em **Atribuir a dispositivos**. Selecione os dispositivos que usarão esse perfil de registro, clique em **Adicionar** em seguida, clique em **OK**.   
+     ![Captura de tela da atribuição de perfil DEP para dispositivos iOS](../media/dep-assign-profile.png)
+
+5.  **Distribuir os dispositivos para os usuários**   
+    Agora você pode fornecer seus dispositivos de propriedade corporativa para usuários. A caixa de diálogo **Status de Registro** dos dispositivos gerenciados indica **Não contatado** até que o dispositivo seja ligado e execute o Assistente de Configuração para registrar o dispositivo. Quando um dispositivo iOS for ativado, ele será registrado para gerenciamento pelo Intune.
 

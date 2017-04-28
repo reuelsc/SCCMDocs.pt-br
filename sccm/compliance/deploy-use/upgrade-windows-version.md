@@ -1,8 +1,8 @@
 ---
-title: "Atualizar dispositivos do Windows para uma versão nova | Microsoft Docs"
-description: "Atualize dispositivos que executam o Windows 10 Desktop, o Windows 10 Mobile ou Windows 10 Holographic para uma edição mais recente automaticamente."
+title: "Atualizar dispositivos do Windows para uma versão diferente com o Configuration Manager | Microsoft Docs"
+description: "Atualize automaticamente os dispositivos que executam o Windows 10 Desktop, Windows 10 Mobile ou Windows 10 Holographic para outra edição com o Configuration Manager."
 ms.custom: na
-ms.date: 11/18/2016
+ms.date: 04/18/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
@@ -17,8 +17,9 @@ author: robstackmsft
 ms.author: robstack
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: 1a4a9da88caba55d9e340c7fb1f31f4e3b957f3e
-ms.openlocfilehash: f14dfb77be7b53e74d53e0c1fc7e7f1731952d40
+ms.sourcegitcommit: 4eee9731a4a27328c47c0d15931cab28cf520a18
+ms.openlocfilehash: cfde0a43947013bbd3a1093688cee19fe309fd03
+ms.lasthandoff: 04/18/2017
 
 
 ---
@@ -28,7 +29,7 @@ ms.openlocfilehash: f14dfb77be7b53e74d53e0c1fc7e7f1731952d40
 *Aplica-se a: System Center Configuration Manager (Branch Atual)*
 
 
-A **Política de Atualização de Edição** do System Center Configuration Manager permite atualizar automaticamente os dispositivos que executem uma das seguintes versões do Windows 10 para uma edição mais recente:
+A **Política de Atualização de Edição** do System Center Configuration Manager permite atualizar automaticamente os dispositivos que executem uma das seguintes versões do Windows 10 para uma edição diferente:
 
 - Windows 10 Desktop
 - Windows 10 Mobile
@@ -92,9 +93,4 @@ A nova política é exibida no nó **Atualização de Edição do Windows 10** d
 Você pode monitorar a implantação que acabou de ser criada no nó **Implantações** do espaço de trabalho **Monitoramento** .  
 
  Quando a política atinge um computador Windows definido como destino e é avaliada, ela será reiniciada dentro de duas horas para aplicar a atualização. Certifique-se de informar os usuários nos quais você implanta a política ou agende a política para ser executada fora do horário de trabalho dos usuários.
-
-
-
-<!--HONumber=Dec16_HO3-->
-
 

@@ -2,7 +2,7 @@
 title: "Referência da instalação | Microsoft Docs"
 description: "Examine essa referência para ajudar você a se preparar para instalar um site ou hierarquia do Configuration Manager."
 ms.custom: na
-ms.date: 2/7/2017
+ms.date: 4/18/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
@@ -16,8 +16,9 @@ author: Brenduns
 ms.author: brenduns
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: fc9c8c1e6d57e886e5208d8b8968cb936c269a01
-ms.openlocfilehash: beddcdb0349af4d232cd75ae742f02074abc350d
+ms.sourcegitcommit: 761c3f58f7c57d8f87ee802da37821895062546d
+ms.openlocfilehash: 739461a6cca0fd67431093524c1e8158afd80d0f
+ms.lasthandoff: 04/19/2017
 
 
 ---
@@ -27,25 +28,21 @@ ms.openlocfilehash: beddcdb0349af4d232cd75ae742f02074abc350d
 
 A Instalação do System Center Configuration Manager fornece links para vários tópicos, que estão detalhados nas seções a seguir. As informações nas seções a seguir podem ajudá-lo a preparar a instalação de um site ou hierarquia do Configuration Manager e a preparar para algumas das decisões que é necessário tomar durante a instalação.  
 
--   [Antes de começar](#bkmk_start)  
--   [Avaliar a preparação do servidor](#bkmk_assess)  
--   [Clientes para sistemas operacionais adicionais](#bkmk_Addclients)  
--   [Dados de diagnóstico e de uso para o System Center Configuration Manager](../../../../core/plan-design/diagnostics/diagnostics-and-usage-data.md)  
 
-##  <a name="a-namebkmkstarta-before-you-begin"></a><a name="bkmk_start"></a> Antes de começar  
+##  <a name="bkmk_start"></a> Antes de começar  
 Antes de instalar novos sites do Configuration Manager, não deixe de ler as informações a seguir, que podem ajudar a preparar o terreno para um projeto de implantação bem-sucedido:  
 
 -   [Conceitos básicos do System Center Configuration Manager](../../../../core/understand/fundamentals.md)  
 -   [Planejar a infraestrutura do System Center Configuration Manager](../../../plan-design/network/configure-firewalls-ports-domains.md)  
 -   [Preparar para instalar sites do System Center Configuration Manager](prepare-to-install-sites.md)  
 
-##  <a name="a-namebkmkassessa-assess-server-readiness"></a><a name="bkmk_assess"></a> Avaliar a preparação do servidor  
+##  <a name="bkmk_assess"></a> Avaliar a preparação do servidor  
 Antes de iniciar a instalação de um novo site, certifique-se de que o servidor de sites e os servidores de sistema de sites remoto que você planeja usar para o site (como o servidor que hospeda o banco de dados do site) atendem a todas as configurações de pré-requisitos. Os seguintes tópicos da biblioteca de documentação podem ajudar:  
 
 -   [Configurações com suporte para o System Center Configuration Manager](../../../../core/plan-design/configs/supported-configurations.md)  
 -   [Verificador de Pré-requisitos](prerequisite-checker.md)  
 
-##  <a name="a-namebkmkaddclientsa-clients-for-additional-operating-systems"></a><a name="bkmk_Addclients"></a> Clientes para sistemas operacionais adicionais  
+##  <a name="bkmk_Addclients"></a> Clientes para sistemas operacionais adicionais  
 É possível baixar o software cliente do Configuration Manager no Centro de Download da Microsoft para os seguintes sistemas operacionais:  
 
 -   Mac (Apple)  
@@ -54,12 +51,9 @@ Antes de iniciar a instalação de um novo site, certifique-se de que o servidor
 
 Use os seguintes links para baixar clientes com a versão do Configuration Manager que você usa:  
 
--   [System Center Configuration Manager (branch atual)](http://www.microsoft.com/download/details.aspx?id=47719)  
--   [System Center 2012 R2 Configuration Manager SP1 e System Center 2012 Configuration Manager SP2](http://go.microsoft.com/fwlink/?LinkID=626550)  
--   [System Center 2012 R2 Configuration Manager](http://go.microsoft.com/fwlink/?LinkID=316448)  
--   [System Center 2012 Configuration Manager SP1](http://www.microsoft.com/en-pk/download/details.aspx?id=36212)  
+-   Veja [Microsoft System Center Configuration Manager – Clientes para Sistemas Operacionais Adicionais](http://www.microsoft.com/download/details.aspx?id=47719)  
 
-##  <a name="a-namebkmkusagea-usage-data-levels-and-settings"></a><a name="bkmk_usage"></a> Configurações e níveis de dados de uso  
+##  <a name="bkmk_usage"></a> Configurações e níveis de dados de uso  
 Ao instalar seu primeiro site do System Center Configuration Manager, ele instala e configura automaticamente uma nova função do sistema de sites, o **ponto de conexão de serviço**, no servidor de sites. O ponto de conexão de serviço possui as seguintes configurações padrão:  
 
 -   Modo **online** (também há suporte para o modo offline)  
@@ -82,10 +76,5 @@ Os três níveis de coleção de dados são:
 
 Para saber mais, incluindo a divulgação dos detalhes coletados por cada nível, veja [Dados de diagnóstico e de uso para o System Center Configuration Manager](../../../../core/plan-design/diagnostics/diagnostics-and-usage-data.md).  
 
-[Política de Privacidade do System Center Configuration Manager](http://go.microsoft.com/fwlink/?LinkID=626527)
-
-
-
-<!--HONumber=Feb17_HO2-->
-
+Para exibir o System Center Configuration Manager Privacy Statement online, vá para [http://go.microsoft.com/fwlink/?LinkID=626527](http://go.microsoft.com/fwlink/?LinkID=626527).
 

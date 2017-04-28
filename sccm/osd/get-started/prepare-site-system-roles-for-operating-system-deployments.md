@@ -17,9 +17,9 @@ author: Dougeby
 ms.author: dougeby
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: 74341fb60bf9ccbc8822e390bd34f9eda58b4bda
-ms.openlocfilehash: 1069a18eecbc5f53b74ad89e166e6f2c7b180693
-ms.lasthandoff: 12/16/2016
+ms.sourcegitcommit: 761c3f58f7c57d8f87ee802da37821895062546d
+ms.openlocfilehash: 11c0f169afebdb071fefb5ce300fd1ae3481a94f
+ms.lasthandoff: 04/19/2017
 
 
 ---
@@ -116,7 +116,7 @@ Você precisará testar as configurações personalizadas no ambiente para deter
 
      **Tipo**: REG_DWORD  
 
-     **Valor**: <tamanho da janela personalizado\>  
+     **Valor**: &lt;tamanho de janela personalizado>  
 
  O valor padrão é 1 (um bloco de dados preenche a janela)  
 
@@ -129,7 +129,7 @@ Você precisará testar as configurações personalizadas no ambiente para deter
 
      **Tipo**: REG_DWORD  
 
-     **Valor**: <tamanho do bloco personalizado\>  
+     **Valor**: &lt;tamanho de bloco personalizado>  
 
  O valor padrão é 4096 (4 k).  
 
