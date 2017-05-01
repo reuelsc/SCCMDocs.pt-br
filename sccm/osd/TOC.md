@@ -58,14 +58,10 @@
 ### [Criar uma sequência de tarefas personalizada](deploy-use/create-a-custom-task-sequence.md)
 ### [Criar uma sequência de tarefas para implantações que não são de sistema operacional](deploy-use/create-a-task-sequence-for-non-operating-system-deployments.md)
 ### [Etapas de sequência de tarefas para gerenciar o BIOS para a conversão de UEFI](deploy-use/task-sequence-steps-to-manage-bios-to-uefi-conversion.md)
+### [Pré-provisionar o BitLocker no Windows PE](deploy-use/preprovision-bitlocker-in-windows-pe.md)
 
 ## [Criar mídia de sequência de tarefas](deploy-use/create-task-sequence-media.md)
 ### [Criar mídia autônoma](deploy-use/create-stand-alone-media.md)
 ### [Criar mídia pré-configurada](deploy-use/create-prestaged-media.md)
 ### [Criar mídia inicializável](deploy-use/create-bootable-media.md)
 ### [Criar mídia de captura](deploy-use/create-capture-media.md)
-
-
-<!--HONumber=Dec16_HO3-->
-
-
