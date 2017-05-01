@@ -2,7 +2,7 @@
 title: Requisitos de certificado PKI | Microsoft Docs
 description: "Encontre requisitos de certificados PKI de que você pode precisar para o System Center Configuration Manager."
 ms.custom: na
-ms.date: 02/23/2017
+ms.date: 04/24/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
@@ -16,9 +16,9 @@ author: robstackmsft
 ms.author: robstack
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: 405540b16b60c42430e884febb942bfbbcbeca32
-ms.openlocfilehash: 7021c079b12f03420565f5633102070e4e0ad7f8
-ms.lasthandoff: 04/19/2017
+ms.sourcegitcommit: 690d03d9c8c49a815bd318df549d7401a855bc5d
+ms.openlocfilehash: a99b58acef7448af2c9576bfa0ec2635f5a4f86f
+ms.lasthandoff: 04/24/2017
 
 
 ---
@@ -36,6 +36,8 @@ Os certificados PKI (infraestrutura de chave pública) que podem ser necessário
 > O System Center Configuration Manager oferece suporte aos certificados do Algoritmo de Hash Seguro 2 (SHA-2). Os certificados SHA-2 têm uma vantagem importante de segurança. Portanto, recomendamos o seguinte:
 > - emita novos certificados de autenticação do cliente e servidor assinados com o SHA-2, que inclui o SHA-256 e o SHA-512, entre outros.
 > - todos os serviços voltados para a Internet devem usar um certificado SHA-2. Por exemplo, se você comprar um certificado público para uso com um gateway de gerenciamento de nuvem, certifique-se de comprar um certificado SHA-2.  
+>
+>Desde 14 de fevereiro de 2017, o Windows não confia mais em determinados certificados assinados com SHA-1. Em geral, é recomendável que você emita novos certificados de autenticação de cliente e servidor assinados com SHA-2 (que inclui o SHA-256 e o SHA-512, entre outros). Além disso, é recomendável que todos os serviços voltados para a Internet usem um certificado SHA-2. Por exemplo, se você comprar um certificado público para uso com um gateway de gerenciamento de nuvem, certifique-se de comprar um certificado SHA-2.
 >
 > Na maioria dos casos, a alteração nos certificados SHA-2 não afeta as operações. Saiba mais em [Windows Enforcement of SHA1 certificates](http://social.technet.microsoft.com/wiki/contents/articles/32288.windows-enforcement-of-sha1-certificates.aspx) (Imposição do Windows de certificados SHA-1).
 
