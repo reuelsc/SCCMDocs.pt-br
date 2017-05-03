@@ -2,7 +2,7 @@
 title: "Recursos de pré-lançamento | Microsoft Docs"
 description: "Recursos de pré-lançamento no System Center Configuration Manager"
 ms.custom: na
-ms.date: 4/13/2017
+ms.date: 4/24/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
@@ -16,16 +16,16 @@ author: Brenduns
 ms.author: brenduns
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: 329de5ffb6eb1403c02cd1db634c32f045e82488
-ms.openlocfilehash: c9896d53061b11f249f32f118620524c6a270ec9
-ms.lasthandoff: 04/14/2017
+ms.sourcegitcommit: 690d03d9c8c49a815bd318df549d7401a855bc5d
+ms.openlocfilehash: b12fcb3c372c34ee47306a9b536c3d0c4764b8be
+ms.lasthandoff: 04/24/2017
 
 
 ---
 # <a name="pre-release-features-in-system-center-configuration-manager"></a>Recursos de pré-lançamento no System Center Configuration Manager
 *Aplica-se a: System Center Configuration Manager (Branch Atual)*
 
- Os recursos de pré-lançamento são recursos que estão incluídos na Ramificação atual para testes iniciais em um ambiente de produção. Esses recursos não devem ser considerados prontos para produção, mas podem ser usados em seu ambiente de produção.
+Os recursos de pré-lançamento são recursos que estão incluídos na Ramificação atual para testes iniciais em um ambiente de produção. Eles têm suporte total, mas ainda estão em desenvolvimento ativo e podem receber alterações até que saiam da categoria de pré-lançamento.
 
  Antes de poder usar os recursos de pré-lançamento, você deverá dar consentimento para usar Recursos de pré-lançamento dentro do console do Configuration Manager antes de selecionar e habilitar seu uso.  
 

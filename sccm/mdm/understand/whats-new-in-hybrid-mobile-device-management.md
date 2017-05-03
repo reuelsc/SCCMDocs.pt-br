@@ -2,7 +2,7 @@
 title: "O que há de novo no MDM híbrido com o Configuration Manager | Microsoft Docs"
 description: "Saiba mais sobre os novos recursos de gerenciamento de dispositivo móvel disponíveis para implantações híbridas com o Configuration Manager e o Intune."
 ms.custom: na
-ms.date: 03/28/2017
+ms.date: 04/21/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
@@ -16,9 +16,9 @@ author: Mtillman
 ms.author: mtillman
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: 761c3f58f7c57d8f87ee802da37821895062546d
-ms.openlocfilehash: 489defeae18c219fe2f717d5caa1f15bcdaf07cf
-ms.lasthandoff: 04/19/2017
+ms.sourcegitcommit: ae008c91a7387ba76f2bfac13f8feb489a0cc558
+ms.openlocfilehash: 0af5ae68353fcf1db846e2e27f3391fe87dcfc42
+ms.lasthandoff: 04/21/2017
 
 ---
 # <a name="whats-new-in-hybrid-mobile-device-management-with-system-center-configuration-manager-and-microsoft-intune"></a>Novidades no gerenciamento de dispositivo móvel híbrido com o System Center Configuration Manager e o Microsoft Intune
@@ -57,7 +57,13 @@ Este artigo fornece detalhes sobre os novos recursos de MDM (gerenciamento de di
 
 - **Bloquear os aplicativos de acessarem o SharePoint Online**
 
-    Agora, você pode criar uma política de acesso condicional com base em aplicativos para impedir que os aplicativos, que não têm políticas de proteção do aplicativo aplicadas, acessem o [SharePoint Online](/InTune/deploy-use/mam-ca-for-sharepoint-online). No cenário de acesso condicional com base em aplicativos, você pode especificar os aplicativos que deseja ter acesso ao SharePoint Online usando o portal do Azure.
+  Agora, você pode criar uma política de acesso condicional com base em aplicativos para impedir que os aplicativos, que não têm políticas de proteção do aplicativo aplicadas, acessem o [SharePoint Online](/InTune/deploy-use/mam-ca-for-sharepoint-online). No cenário de acesso condicional com base em aplicativos, você pode especificar os aplicativos que deseja ter acesso ao SharePoint Online usando o portal do Azure.
+
+### <a name="new-in-configuration-manager-technical-preview-1704"></a>Novidades no Configuration Manager Technical Preview 1704
+
+- **Configurar aplicativos Android com as políticas de configuração de aplicativo**
+
+  Você pode usar políticas de configuração de aplicativo no System Center Configuration Manager (Configuration Manager) para distribuir as configurações pré-definidas quando um usuário executa um aplicativo em dispositivos Android for Work. As políticas de configuração de aplicativo Android só estão disponíveis em dispositivos com Android for Work e aplicam-se a aplicativos aprovados da loja Play for Work. Para saber mais sobre como experimentar este recurso, confira [Configurar aplicativos Android com as políticas de configuração de aplicativo](/sccm/core/get-started/capabilities-in-technical-preview-1704#configure-android-apps-with-app-configuration-policies).
 
 ## <a name="march-2017"></a>Março de 2017
 
