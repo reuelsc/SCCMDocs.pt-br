@@ -2,7 +2,7 @@
 title: "Nova versão 1702 | Microsoft Docs"
 description: "Veja os detalhes das alterações e os novos recursos introduzidos na versão 1702 do System Center Configuration Manager."
 ms.custom: na
-ms.date: 3/31/2017
+ms.date: 05/02/2017
 ms.reviewer: na
 ms.suite: na
 ms.technology:
@@ -14,16 +14,16 @@ author: Brenduns
 ms.author: brenduns
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: d7b13f3dea5a3ae413ca6b8150ec24e1632a4d4d
-ms.openlocfilehash: 3e97184dc923cd3972c23252c1bc001edb73fe3f
-ms.lasthandoff: 04/12/2017
+ms.sourcegitcommit: 90775fcf2549080a43e9c1606caa79d9eb90a89c
+ms.openlocfilehash: 4616ebb84ae63acbe6af892918aa2dd1a0be4825
+ms.lasthandoff: 05/02/2017
 
 ---
 # <a name="what39s-new-in-version-1702-of-system-center-configuration-manager"></a>Novidades da versão 1702 do System Center Configuration Manager
 
 *Aplica-se a: System Center Configuration Manager (Branch Atual)*
 
-A atualização 1702 da ramificação atual do System Center Configuration Manager está disponível como uma atualização no console para sites instalados anteriormente que executam as versões 1602, 1606 ou 1610.
+A atualização 1702 da ramificação atual do System Center Configuration Manager está disponível como uma atualização no console para sites instalados anteriormente que executam as versões 1602, 1606 ou 1610. Também está disponível como uma versão de linha de base que você pode usar ao instalar uma nova implantação.
 
 > [!TIP]  
 > Para instalar um novo site, você deve usar uma versão de linha de base do Configuration Manager.  
