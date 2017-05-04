@@ -2,7 +2,7 @@
 title: "Monitorar clientes – Configuration Manager | Microsoft Docs"
 description: "Obtenha orientações detalhadas sobre como monitorar clientes no System Center Configuration Manager."
 ms.custom: na
-ms.date: 10/06/2016
+ms.date: 04/23/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
@@ -12,13 +12,13 @@ ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 2c8f57cf-1968-48de-87fb-4897432ed6e0
 caps.latest.revision: 23
-author: arob98
-ms.author: angrobe
+author: robstackmsft
+ms.author: robstack
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: 3743c80b0c2b5142f3a537ba3855ffd14794d42b
-ms.openlocfilehash: 85afe010e734d20ae1f1479b3edd166c54cc8fd2
-ms.lasthandoff: 01/24/2017
+ms.sourcegitcommit: 690d03d9c8c49a815bd318df549d7401a855bc5d
+ms.openlocfilehash: 08a4d9b29871b49e3118aef949572cef64940f96
+ms.lasthandoff: 04/24/2017
 
 
 ---
@@ -29,7 +29,7 @@ ms.lasthandoff: 01/24/2017
 
  Depois que o aplicativo cliente do System Center Configuration Manager tiver sido instalado nos computadores e dispositivos com Windows no seu site, você poderá monitorar a integridade e a atividade deles no console do Configuration Manager.  
 
-##  <a name="a-namebkmkabouta-about-client-status"></a><a name="bkmk_about"></a> Sobre o status do cliente  
+##  <a name="bkmk_about"></a> Sobre o status do cliente  
  O Configuration Manager fornece os seguintes tipos de informação como status do cliente:  
 
 -   **Status online do cliente** ‑ A partir da versão 1602 do Configuration Manager, esse status indica se o computador está online ou não. Um computador será considerado online se estiver conectado ao seu ponto de gerenciamento atribuído.  Para indicar se o cliente está online, ele envia mensagens como ping ao ponto de gerenciamento. Se o ponto de gerenciamento não receber uma mensagem no tempo médio de cinco minutos, o cliente será considerado offline.  
@@ -42,7 +42,7 @@ ms.lasthandoff: 01/24/2017
 
      Você pode configurar a correção para não ser executada em computadores específicos, por exemplo, um servidor importante para os negócios. Além disso, se houver itens adicionais que você deseja avaliar, você poderá usar as configurações de conformidade do Configuration Manager para fornecer uma solução abrangente para monitorar a integridade geral, a atividade e a conformidade de computadores na organização. Para obter mais informações sobre as configurações de conformidade, veja [Planejando e configurando as configurações de conformidade no System Center Configuration Manager](../../../compliance/plan-design/plan-for-and-configure-compliance-settings.md).  
 
-##  <a name="a-namebkmkindstatusa-monitor-the-status-of-individual-clients"></a><a name="bkmk_indStatus"></a> Monitorar o status de clientes individuais  
+##  <a name="bkmk_indStatus"></a> Monitorar o status de clientes individuais  
 
 1.  No console do Configuration Manager, clique em **Ativos e Conformidade** > **Dispositivos** ou escolha uma coleção em **Coleções de Dispositivos**.  
 
@@ -65,7 +65,7 @@ ms.lasthandoff: 01/24/2017
 
 3.  Clique em um cliente individual no painel de lista para ver mais status no painel de detalhes, incluindo informações sobre a atividade e as verificações do cliente.  
 
-##  <a name="a-namebkmkallstatusa-monitor-the-status-of-all-clients"></a><a name="bkmk_allStatus"></a> Monitorar o status de todos os clientes  
+##  <a name="bkmk_allStatus"></a> Monitorar o status de todos os clientes  
 
 1.  No console do Configuration Manager, clique em **Monitoramento** > **Status do Cliente**. Nessa página do console, você pode examinar as estatísticas gerais da atividade e das verificações do cliente em todo o site.  Também é possível alterar o escopo das informações ao escolher outra coleção.  
 
@@ -77,7 +77,7 @@ ms.lasthandoff: 01/24/2017
 
  Você pode configurar alertas para notificar quando os clientes verificam resultados ou a atividade do cliente fica abaixo de uma porcentagem especificada de cliente em uma coleção ou quando a correção fica em uma porcentagem especificada de cliente. Para obter informações sobre como configurar o status do cliente, consulte [Como configurar o status do cliente no System Center Configuration Manager](../../../core/clients/deploy/configure-client-status.md).  
 
-##  <a name="a-namebkmkclienthealtha-checks-and-remediations-made-by-client-check"></a><a name="BKMK_ClientHealth"></a> Verificações e correções feitas pela verificação do cliente  
+##  <a name="BKMK_ClientHealth"></a> Verificações e correções feitas pela verificação do cliente  
  As seguintes verificações e correções podem ser executadas pela verificação do cliente.  
 
 |Verificação do Cliente|Ação de correção|Mais informações|  
@@ -110,4 +110,7 @@ ms.lasthandoff: 01/24/2017
 |Verificar se o provedor WMI do cliente está íntegro|Reiniciar o serviço de Instrumentação de Gerenciamento do Windows|A correção dessa verificação do cliente é realizada somente em computadores que executam o Windows Server 2003, Windows XP (64 bits) ou versões anteriores.|  
 |Verificar se o serviço de proxy de ativação está em execução (Proxy de ativação do ConfigMgr)|Iniciar o serviço Proxy de ativação do ConfigMgr|Esta verificação do cliente é feita apenas se a configuração **Gerenciamento de Energia**: **Habilitar proxy de ativação** estiver definida como **Sim** em sistemas operacionais do cliente com suporte.|  
 |Verificar se o tipo de inicialização do serviço de proxy de ativação (Proxy de ativação do ConfigMgr) é automático|Redefinir o tipo de inicialização do serviço Proxy do ConfigMgr ativação como automático|Esta verificação do cliente é feita apenas se a configuração **Gerenciamento de Energia**: **Habilitar proxy de ativação** estiver definida como **Sim** em sistemas operacionais do cliente com suporte.|  
+
+## <a name="client-deployment-log-files"></a>Arquivos de log de implantação de cliente
+Para saber mais sobre os arquivos de log usados por operações de gerenciamento e implantação de cliente, confira [Arquivos de log no System Center Configuration Manager](/sccm/core/plan-design/hierarchy/log-files#BKMK_ClientLogs).
 

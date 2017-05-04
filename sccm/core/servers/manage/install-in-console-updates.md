@@ -16,9 +16,9 @@ author: Brenduns
 ms.author: brenduns
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: 32f7fc4ef9c8e8d3c2ec8eeaf9a3174bad992ffb
-ms.openlocfilehash: 18c199e78750eadc06b9635fa6104d36c2ac018d
-ms.lasthandoff: 04/08/2017
+ms.sourcegitcommit: d94acac84f052a01de9d9c9f65f237c0006c45b8
+ms.openlocfilehash: 29a55948a1897e1345ba14ec685b9288a844feaa
+ms.lasthandoff: 04/26/2017
 
 
 ---
@@ -325,7 +325,7 @@ Ao habilitar um novo recurso ou recurso de pré-lançamento, o gerenciador de hi
 
 
 ##  <a name="bkmk_prerelease"></a> Usar recursos de pré-lançamento de atualizações
-Os recursos de pré-lançamento são recursos que estão incluídos na Ramificação atual para testes iniciais em um ambiente de produção. Esses recursos não devem ser considerados prontos para produção, mas podem ser usados em seu ambiente de produção. Para saber mais sobre os recursos de pré-lançamento, inclusive como habilitá-los em seu ambientes, veja [Recursos de pré-lançamento](/sccm/core/servers/manage/pre-release-features).                |
+Os recursos de pré-lançamento são recursos que estão incluídos na Ramificação atual para testes iniciais em um ambiente de produção. Esses recursos não devem ser considerados prontos para produção, mas podem ser usados em seu ambiente de produção. Para saber mais sobre os recursos de pré-lançamento, inclusive como habilitá-los em seu ambientes, confira [Recursos de pré-lançamento](/sccm/core/servers/manage/pre-release-features).             
 
 
 ## <a name="known-issues"></a>Problemas conhecidos

@@ -17,9 +17,9 @@ author: Brenduns
 ms.author: brenduns
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: 4c2906c2a963e0ae92e3c0d223afb7a47377526a
-ms.openlocfilehash: ffc2adb34427aa62f4a377e887c2ff54d47abeff
-ms.lasthandoff: 03/20/2017
+ms.sourcegitcommit: 690d03d9c8c49a815bd318df549d7401a855bc5d
+ms.openlocfilehash: 78caa69e10f5d386daab1e61e484d4d134469708
+ms.lasthandoff: 04/24/2017
 
 
 ---
@@ -552,13 +552,13 @@ Para obter mais informações, consulte [Requisitos de acesso à Internet](/sccm
 
 2.  **Porta alternativa disponível**: uma porta alternativa pode ser definida dentro do Configuration Manager para esse valor. Se tiver sido definida uma porta personalizada, substitua essa porta personalizada ao definir as informações de filtro IP para políticas IPsec ou para configurar firewalls.  
 
-3.  **WSUS (Windows Server Update Services)**: o WSUS pode ser instalado no site da Web padrão (porta 80) ou em um site da Web personalizado (porta 8530).  
+3.  **Windows Server Update Services (WSUS)**: o WSUS pode ser instalado para usar portas 80/443 ou portas 8530/8531 para comunicação de cliente. Ao executar o WSUS no Windows Server 2012 ou Windows Server 2016, o WSUS é configurado por padrão para usar a porta 8530 para HTTP e a porta 8531 para HTTPS.  
 
      Após a instalação, a porta pode ser alterada. Não é necessário usar o mesmo número de porta em toda a hierarquia do site.  
 
     -   Se a porta HTTP for 80, a porta HTTPS deverá ser 443.  
 
-    -   Se a porta HTTP for outro número, a porta HTTPS deverá ser 1 número acima, por exemplo, 8530 ou 8531.  
+    -   Se a porta HTTP for outro número, a porta HTTPS deverá ser 1 número acima, por exemplo, 8530 e 8531.   
 
     > [!NOTE]  
     >  Ao configurar o ponto de atualização de software para usar HTTPS, a porta HTTP deve também ser aberta. Dados não criptografados, como o EULA para atualizações específicas, usam a porta HTTP.  

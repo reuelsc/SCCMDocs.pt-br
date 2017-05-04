@@ -17,9 +17,9 @@ author: Dougeby
 ms.author: dougeby
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: dab5da5a4b5dfb3606a8a6bd0c70a0b21923fff9
-ms.openlocfilehash: a3e6cca8d58055cc2d54aff3cb70a276fb40e829
-ms.lasthandoff: 03/27/2017
+ms.sourcegitcommit: ae008c91a7387ba76f2bfac13f8feb489a0cc558
+ms.openlocfilehash: f5feccc4f810e1a94bb7dcdd5ad507d84b9c3b4a
+ms.lasthandoff: 04/21/2017
 
 
 ---
@@ -76,6 +76,11 @@ ms.lasthandoff: 03/27/2017
 |SMSTSDownloadProgram|Use essa variável para especificar um Provedor de Conteúdo Alternativo, um programa de download usado para baixar conteúdo em vez do programa de download padrão do Configuration Manager, para a sequência de tarefas. Como parte do processo de download do conteúdo, a sequência de tarefas verifica a variável para um programa de download especificado. Se especificado, a sequência de tarefas executa o programa para realizar o download.|  
 |SMSTSDownloadRetryCount|Use essa variável para especificar o número de vezes que o Configuration Manager tenta baixar conteúdo de um ponto de distribuição. Por padrão, o cliente tentará novamente **2** vezes.|  
 |SMSTSDownloadRetryDelay|Use essa variável para especificar o número de segundos que o Configuration Manager aguarda antes de tentar baixar conteúdo novamente de um ponto de distribuição. Por padrão, o cliente aguardará **15** segundos antes de tentar novamente.|  
+|SMSTSDriverReceiveTimeOut|Use essa variável para especificar o número de segundos antes do tempo limite de conexão para o servidor.|
+|SMSTSDriverRequestConnectTimeOut|Use essa variável para especificar o número de segundos de espera para a conexão do servidor HTTP ao solicitar o catálogo de drivers durante a etapa de sequência de tarefas do Driver de Aplicação Automática. Se a conexão demorar mais do que a configuração de tempo limite, a solicitação será cancelada. Por padrão, o limite é definido como 60 segundos.|  
+|SMSTSDriverRequestReceiveTimeOut|Use essa variável para especificar o número de segundos de espera por uma resposta para a solicitação de um catálogo de drivers durante a etapa de sequência de tarefas do Driver de Aplicação Automática. Se a conexão demorar mais do que a configuração de tempo limite, a solicitação será cancelada. Por padrão, o limite é definido como 480 segundos.|
+|SMSTSDriverRequestResolveTimeOut|Use essa variável para especificar o número de segundos de espera por uma resolução do nome de HTTP para a solicitação de um catálogo de drivers durante a etapa de sequência de tarefas do Driver de Aplicação Automática. Se a conexão demorar mais do que a configuração de tempo limite, a solicitação será cancelada. Por padrão, o limite é definido como 60 segundos.|
+|SMSTSDriverRequestSendTimeOut|Use essa variável para especificar o número de segundos a ser usado ao enviar a solicitação de um catálogo de drivers durante a etapa de sequência de tarefas do Driver de Aplicação Automática. Se a solicitação demorar mais do que a configuração de tempo limite, a solicitação será cancelada. Por padrão, o limite é definido como 60 segundos.|
 |SMSTSErrorDialogTimeout|Quando ocorre um erro em uma sequência de tarefas, é exibida uma caixa de diálogo que é automaticamente descartada após um número de segundos especificado por essa variável. Por padrão, a caixa de diálogo é automaticamente descartada após **900** segundos (15 minutos).|  
 |TSErrorOnWarning|Use essa variável para especificar se o mecanismo de sequência de tarefas considera um aviso detectado como um erro durante a etapa de sequência de tarefas de instalação do aplicativo. A sequência de tarefas define a variável _TSAppInstallStatus de acordo com o **Aviso** quando um ou mais aplicativos, ou uma dependência necessária, não foram instalados pois um requisito não foi atendido. Quando você define a variável TSErrorOnWarning como **True** e a variável _TSAppInstallStatus é definida como Aviso, ele será tratado como um erro. Um valor de **False** é o comportamento padrão.|  
 |SMSTSLanguageFolder|Use essa variável para alterar o idioma de exibição de uma imagem de inicialização neutra de idioma.|  

@@ -2,7 +2,7 @@
 title: "Configurações do Windows Hello para Empresas | Microsoft Docs"
 description: Saiba como integrar o Windows Hello para Empresas com o System Center Configuration Manager.
 ms.custom: na
-ms.date: 03/28/2017
+ms.date: 04/25/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
@@ -16,9 +16,9 @@ author: robstackmsft
 ms.author: robstack
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: dab5da5a4b5dfb3606a8a6bd0c70a0b21923fff9
-ms.openlocfilehash: c9a6842958e6fa3f740caabbaf20aabb9df4e8a8
-ms.lasthandoff: 03/27/2017
+ms.sourcegitcommit: 699b79b68440b61904a9053e5004318a2a248bfd
+ms.openlocfilehash: 75def95561feb35f2f060f0daa72291983324d4f
+ms.lasthandoff: 04/25/2017
 
 
 ---
@@ -28,7 +28,9 @@ ms.lasthandoff: 03/27/2017
 
 O System Center Configuration Manager permite que você se integre com o Windows Hello para Empresas (anteriormente conhecida como Microsoft Passport para Windows), um método de entrada alternativo para dispositivos Windows 10. O Hello para Empresas usa o Active Directory ou uma conta do Azure Active Directory para substituir uma senha, cartão inteligente ou cartão inteligente virtual.  
 
-O Hello para Empresas permite que você use um **gesto de usuário** para logon, em vez de uma senha. O gesto do usuário pode ser um PIN simples, uma autenticação biométrica ou um dispositivo externo, como um leitor de impressão digital.  
+O Hello para Empresas permite que você use um **gesto de usuário** para logon, em vez de uma senha. O gesto do usuário pode ser um PIN simples, uma autenticação biométrica ou um dispositivo externo, como um leitor de impressão digital.
+
+[Saiba mais sobre o Windows Hello para empresas](https://docs.microsoft.com/windows/access-protection/hello-for-business/hello-identity-verification)
 
  O Configuration Manager integra-se com o Windows Hello para Empresas de duas maneiras:  
 
@@ -47,7 +49,7 @@ O Hello para Empresas permite que você use um **gesto de usuário** para logon,
 
 Observe que, além dessa configuração, também é necessário implantar um perfil de certificado, conforme descrito em [Configurar um perfil de certificado](#configure-a-certificate-profile).
 
-## <a name="recommended-approach----configure-a-windows-hello-for-business-profile"></a>Recomendado abordagem – configurar um perfil do Windows Hello para Empresas  
+## <a name="configure-a-windows-hello-for-business-profile"></a>Configurar um perfil para o Windows Hello para empresas  
 
 No console do Configuration Manager, em **Acesso ao Recurso da Empresa**, clique com o botão direito do mouse em **Perfil do Windows Hello para Empresas** e escolha **Novo** para iniciar o assistente de perfil. Forneça as configurações solicitadas pelo assistente, reveja-as e confirme-as na última página e clique em **Fechar**. Aqui está um exemplo de como será a aparência de suas configurações:  
 
@@ -69,7 +71,7 @@ No console do Configuration Manager, em **Acesso ao Recurso da Empresa**, clique
 
 6.  Na caixa de diálogo **Editor de Gerenciamento de Política de Grupo**, navegue até **Configuração do Computador** > **Políticas** > **Modelos Administrativos** > **Componentes do Windows** > **Windows Hello para Empresas**.  
 
-7.  Clique com o botão direito do mouse em **Habilitar Windows Hello para Empresas** e, em seguida, clique em **Editar**.   
+7.  Clique com o botão direito do mouse em **Habilitar Windows Hello para Empresas**  e, em seguida, clique em **Editar**.   
 
 8.  Selecione **Habilitado**, clique em **Aplicar**e, em seguida, clique em **OK**.
 
@@ -82,7 +84,7 @@ Agora você pode vincular o objeto de Política de Grupo que você acabou de cri
 ## <a name="configure-windows-hello-for-business-by-deploying-a-powershell-script-with-configuration-manager"></a>Configurar o Windows Hello para Empresas implantando um script do PowerShell com o Configuration Manager    
 É possível criar e implantar o seguinte script do PowerShell usando o gerenciamento de aplicativos do Configuration Manager.    
 
-**powershell.exe -ExecutionPolicy Bypass -NoLogo -NoProfile -Command "& {New-ItemProperty "HKLM:\Software\Policies\Microsoft\PassportForWork" -Name "Enabled" -Value 1 -PropertyType "DWord" -Force}"** 
+**powershell.exe -ExecutionPolicy Bypass -NoLogo -NoProfile -Command "& {New-ItemProperty "HKLM:\Software\Policies\Microsoft\PassportForWork" -Name "Enabled" -Value 1 -PropertyType "DWord" -Force}" ** 
 
 Para obter mais informações sobre o gerenciamento de aplicativos do Configuration Manager, consulte [Introdução ao gerenciamento de aplicativos no System Center Configuration Manager](/sccm/apps/understand/introduction-to-application-management).  
 
@@ -111,8 +113,7 @@ Você primeiro deverá ter criado o **Administradores de Chave** e adicionado a 
 
  Para obter mais informações, consulte [Certificate profiles (Perfis de Certificado)](introduction-to-certificate-profiles.md).  
 
-## <a name="see-also"></a>Consulte também  
- [Proteger a infraestrutura de dados e do site com o System Center Configuration Manager](../../protect/understand/protect-data-and-site-infrastructure.md)
 
- [Gerenciar a verificação de identidade usando o Windows Hello para Empresas](https://technet.microsoft.com/itpro/windows/keep-secure/manage-identity-verification-using-microsoft-passport).  
+
+
 

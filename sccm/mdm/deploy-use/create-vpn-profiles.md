@@ -13,13 +13,13 @@ ms.topic: article
 ms.assetid: 45388103-2410-4c7e-b4cf-73a1bda485fc
 caps.latest.revision: 18
 caps.handback.revision: 0
-author: mtillman
-ms.author: mtillman
+author: lleonard-msft
+ms.author: alleonar
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: 8c7bf901caa49c8585a9ed3913d4a5a2aac57013
-ms.openlocfilehash: 82f7db908f83d69a86c82ed97b845ff84e78f8b3
-ms.lasthandoff: 03/21/2017
+ms.sourcegitcommit: 699b79b68440b61904a9053e5004318a2a248bfd
+ms.openlocfilehash: 8adc41a30bf12a91a272029db49e50ba003d3e9c
+ms.lasthandoff: 04/25/2017
 
 ---
 # <a name="vpn-profiles-on-mobile-devices-in-system-center-configuration-manager"></a>Perfis de VPN em dispositivos móveis no System Center Configuration Manager
@@ -75,10 +75,10 @@ Use perfis de VPN no System Center Configuration Manager para implantar as confi
 
     -   **Método de Autenticação:** selecione o método de autenticação que a conexão VPN usará. Os métodos disponíveis dependem do tipo de conexão, conforme mostrado nesta tabela.  
 
-        |Método de Autenticação|Tipos de conexão com suporte|  
+        |Método de Autenticação|Tipos de&nbsp;conexão&nbsp;com suporte|  
         |---------------------------|--------------------------------|  
-        |**Certificados**<br /><br /> **Observação:** se o certificado de cliente for utilizado para autenticação em um servidor RADIUS, como um Servidor de Políticas de Rede, o Nome Alternativo da Entidade no certificado deverá ser definido como o nome UPN.|- <br />                            Cisco AnyConnect<br /><br /> - Pulse Secure<br /><br /> - F5 Edge Client<br /><br /> - Dell SonicWALL Mobile Connect<br /><br /> - Check Point Mobile VPN|  
-        |**Nome de usuário e senha**|- <br />                            Pulse Secure<br /><br /> - F5 Edge Client<br /><br /> - Dell SonicWALL Mobile Connect<br /><br /> - Check Point Mobile VPN|  
+        |**Certificados**<br /><br /> **Observações:**<br />– Se o certificado de cliente autenticar em um servidor RADIUS, como um Servidor de Políticas de Rede, o Nome Alternativo da Entidade no certificado deverá ser definido como o UPN.<br/><br />– Para implantações do Android, selecione o identificador EKU e o valor de hash de impressão digital do emissor do certificado.  Caso contrário, os usuários devem selecionar o certificado apropriado manualmente.  |- Cisco AnyConnect<br /><br /> - Pulse Secure<br /><br /> - F5 Edge Client<br /><br /> - Dell SonicWALL Mobile Connect<br /><br /> - Check Point Mobile VPN|  
+        |**Nome de usuário e senha**|- Pulse Secure<br /><br /> - F5 Edge Client<br /><br /> - Dell SonicWALL Mobile Connect<br /><br /> - Check Point Mobile VPN|  
         |**Microsoft EAP-TTLS**|- Microsoft SSL (SSTP)<br /><br /> - Microsoft Automatic<br /><br /> - PPTP<br /><br /> - IKEv2<br /><br /> - L2TP|  
         |**EAP protegido (PEAP) da Microsoft**|- Microsoft SSL (SSTP)<br /><br /> - Microsoft Automatic<br /><br /> - IKEv2<br /><br /> - PPTP<br /><br /> - L2TP|  
         |**Senha de segurança da Microsoft (EAP-MSCHAP v2)**|- Microsoft SSL (SSTP)<br /><br /> - Microsoft Automatic<br /><br /> - IKEv2<br /><br /> - PPTP<br /><br /> - L2TP|  
@@ -109,18 +109,15 @@ Use perfis de VPN no System Center Configuration Manager para implantar as confi
 
          ![Configurar acesso condicional para VPN](media/vpn-conditional-access.png)
 
+         Quando suportado pela versão do Windows que está executando o Configuration Manager _e_ o método de autorização selecionado, você pode clicar em **Configurar** para abrir a caixa de diálogo de propriedades do Windows e configurar as propriedades do método de autenticação.  Se a opção **Configurar** estiver desabilitada, use meios alternativos para configurar as propriedades do método de autenticação.
 
-> [!NOTE]  
-> Para alguns métodos de autenticação, é possível clicar em **Configurar** para abrir a caixa de diálogo de propriedades do Windows (caso haja suporte a esse método de autenticação na versão do Windows em que o console do Configuration Manager está sendo executado), na qual é possível configurar as propriedades do método de autenticação.  
-
-
-1.  Na página **Configurações de Proxy** do **Assistente para Criar Perfil VPN**, marque a caixa de seleção **Definir configurações de proxy para este perfil VPN** caso a sua conexão VPN use um servidor proxy. Em seguida, forneça as informações do servidor proxy. Para obter mais informações, consulte a documentação do Windows Server.  
+2.  Na página **Configurações de Proxy** do **Assistente para Criar Perfil VPN**, marque a caixa de seleção **Definir configurações de proxy para este perfil VPN** caso a sua conexão VPN use um servidor proxy. Em seguida, forneça as informações do servidor proxy. Para obter mais informações, consulte a documentação do Windows Server.  
 
     > [!NOTE]  
     >  Em computadores com Windows 8.1, o perfil VPN não exibirá as informações de proxy até você se conectar à VPN com esse computador.  
 
 
-2. Definir outras configurações de DNS (se necessário)  
+3. Definir outras configurações de DNS (se necessário)  
  Na página **Configurar Conexão VPN Automática** é possível definir o seguinte:  
 
     -   **Habilitar VPN sob demanda** use se desejar definir configurações de DNS adicionais para dispositivos Windows Phone 8.1. Essa configuração aplica-se somente a dispositivos Windows Phone 8.1 e só deve ser habilitada nos perfis VPN que serão implantados em dispositivos Windows Phone 8.1.
@@ -153,9 +150,9 @@ Use perfis de VPN no System Center Configuration Manager para implantar as confi
     >  Se a opção **Enviar todo o tráfego de rede pela conexão VPN** não estiver marcada e a conexão VPN estiver usando um túnel dividido, uma conexão VPN poderá ser aberta automaticamente se você configurar rotas ou um sufixo DNS específico da conexão.  
 
 
-1. Na página **Plataformas com Suporte** do **Assistente para Criar Perfil VPN**, selecione os sistemas operacionais nos quais o perfil VPN será instalado ou clique em **Selecionar todos** para instalar o perfil VPN em todos os sistemas operacionais disponíveis.  
+4. Na página **Plataformas com Suporte** do **Assistente para Criar Perfil VPN**, selecione os sistemas operacionais nos quais o perfil VPN será instalado ou clique em **Selecionar todos** para instalar o perfil VPN em todos os sistemas operacionais disponíveis.  
 
-2. Conclua o assistente. O novo perfil VPN é exibido no nó **Perfis VPN** no espaço de trabalho **Ativos e Conformidade** .  
+5. Conclua o assistente. O novo perfil VPN é exibido no nó **Perfis VPN** no espaço de trabalho **Ativos e Conformidade** .  
 
 
 **Implantação:** Confira [Implantar Wi-Fi, VPN, email e perfis de certificado](../../protect/deploy-use/deploy-wifi-vpn-email-cert-profiles.md) para obter informações sobre como implantar perfis de VPN.

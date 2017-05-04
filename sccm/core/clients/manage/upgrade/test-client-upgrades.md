@@ -2,7 +2,7 @@
 title: "Testar atualizações do cliente em uma coleção de pré-produção | Microsoft Docs"
 description: "Teste atualizações do cliente em uma coleção de pré-produção no System Center Configuration Manager."
 ms.custom: na
-ms.date: 3/27/2017
+ms.date: 04/23/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
@@ -13,13 +13,13 @@ ms.topic: article
 ms.assetid: 49ef2ed2-2e15-4637-8b63-1d5b7f9c17e1
 caps.latest.revision: 10
 caps.handback.revision: 0
-author: arob98
-ms.author: angrobe
+author: robstackmsft
+ms.author: robstack
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: dab5da5a4b5dfb3606a8a6bd0c70a0b21923fff9
-ms.openlocfilehash: 533c8e8b30519d83b8fc7a9d204d51e76974c4b1
-ms.lasthandoff: 03/27/2017
+ms.sourcegitcommit: 690d03d9c8c49a815bd318df549d7401a855bc5d
+ms.openlocfilehash: 7edd3e46b4813dd50df7d01b367f8e73bb350a7d
+ms.lasthandoff: 04/24/2017
 
 
 ---
@@ -54,6 +54,9 @@ ms.lasthandoff: 03/27/2017
 
 ![Testar atualizações do cliente](media/test-client-upgrades.png)
 
+>[!NOTE]
+>Para alterar essas configurações, sua conta deverá ser um membro da função de segurança **Administrador Completo** e o escopo de segurança **Tudo**.
+
 
 ##  <a name="to-install-a-configuration-manager-update-that-includes-a-new-version-of-the-client"></a>Para instalar uma atualização do Configuration Manager que inclui uma nova versão do cliente  
 
@@ -80,4 +83,7 @@ ms.lasthandoff: 03/27/2017
 2.  Examine as versões de cliente em produção e pré-produção, verifique se a coleção correta de pré-produção está especificada, clique em **Promover** e, em seguida, em **Sim**.  
 
 3.  Após a caixa de diálogo fechar, a versão atualizada do cliente substituirá a versão do cliente em uso na sua hierarquia. Em seguida, você poderá atualizar os clientes de todo o seu site. Consulte [Como atualizar clientes para computadores Windows no System Center Configuration Manager](../../../../core/clients/manage/upgrade/upgrade-clients-for-windows-computers.md) para obter mais informações.  
+
+>[!NOTE]
+>Para habilitar o cliente de pré-produção ou promover um cliente de pré-produção para um cliente de produção, sua conta deverá ser membro da função de segurança que tem as permissões **Leitura** e **Modificar** para o objeto **Atualizar Pacotes**.
 
