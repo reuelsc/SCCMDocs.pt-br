@@ -2,7 +2,7 @@
 title: A pasta CD.Latest | Microsoft Docs
 description: "Saiba mais sobre o novo processo de atualização que fornece atualizações para o produto de dentro do console do Configuration Manager."
 ms.custom: na
-ms.date: 3/27/2017
+ms.date: 05/02/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
@@ -16,9 +16,9 @@ author: Brenduns
 ms.author: brenduns
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: d94acac84f052a01de9d9c9f65f237c0006c45b8
-ms.openlocfilehash: 5fbf1a2605b4915a2f592875a5ac88368160ce87
-ms.lasthandoff: 04/26/2017
+ms.sourcegitcommit: 90775fcf2549080a43e9c1606caa79d9eb90a89c
+ms.openlocfilehash: 5c39e09b44500fa2f356f83579bb2fb2c1d0e937
+ms.lasthandoff: 05/02/2017
 
 
 ---
@@ -41,7 +41,7 @@ No entanto, a mídia de linha de base, como a versão de linha de base 1606 lan�
 
 -   Você executa a tarefa de backup interna do Configuration Manager: a pasta é criada ou atualizada no local da pasta de backup indicada.  
 
--  A partir da versão 1606, a pasta CD.Latest é criada quando você instala um novo site usando a mídia de linha de base (como a versão 1606).
+-  A partir da versão 1606, a pasta CD.Latest é criada quando você instala um novo site usando a mídia de linha de base (como a versão 1606 ou 1702).
 
 Os arquivos de origem da pasta CD.Latest têm suporte para o seguinte:  
 
