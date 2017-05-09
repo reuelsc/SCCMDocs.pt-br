@@ -71,13 +71,14 @@
 ### [Gerenciar o acesso ao Dynamics CRM Online](deploy-use/manage-dynamics-crm-online-access.md)
 ### [Gerenciar o acesso do computador aos serviços do O365](deploy-use/manage-access-to-o365-services-for-pcs-managed-by-sccm.md)
 
-## [Gerenciar o acesso com base em riscos](deploy-use/manage-access-based-on-device-network-app-risk.md)
-### [Configurar o recurso Lookout Mobile Threat Defense](deploy-use/set-up-your-subscription-with-lookout.md)
-### [Habilitar o Lookout no Intune](deploy-use/enable-lookout-connection-in-intune.md)
-### [Implantar o Lookout para aplicativos de trabalho](deploy-use/configure-and-deploy-lookout-for-work-apps.md)
-### [Habilitar a política de proteção de ameaça do dispositivo](deploy-use/enable-device-threat-protection-rule-compliance-policy.md)
-### [Monitorar o recurso Mobile Threat Defense](deploy-use/monitor-mobile-threat-defense-compliance.md)
-### [Solucionar problemas de integração do Lookout](deploy-use/troubleshoot-lookout-integration.md)
+## [Gerenciar o acesso com base em riscos de dispositivo](deploy-use/mobile-threat-defense.md)
+### [Lookout no Configuration Manager](deploy-use/lookout-mobile-threat-defense-in-configuration-manager.md)
+#### [Configurar o recurso Lookout Mobile Threat Defense](deploy-use/set-up-your-subscription-with-lookout.md)
+#### [Habilitar o Lookout no Intune](deploy-use/enable-lookout-connection-in-intune.md)
+#### [Implantar o Lookout para aplicativos de trabalho](deploy-use/configure-and-deploy-lookout-for-work-apps.md)
+#### [Criar política de conformidade do Lookout](deploy-use/enable-device-threat-protection-rule-compliance-policy.md)
+#### [Solucionar problemas de integração do Lookout](deploy-use/troubleshoot-lookout-integration.md)
+#### [Monitorar o recurso Mobile Threat Defense](deploy-use/monitor-mobile-threat-defense-compliance.md)
 
 # MDM (Gerenciamento de dispositivos móveis) local
 ## [O que é o MDM local](understand/manage-mobile-devices-with-on-premises-infrastructure.md)
