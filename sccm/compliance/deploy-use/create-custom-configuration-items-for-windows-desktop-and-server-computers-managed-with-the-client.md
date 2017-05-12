@@ -16,9 +16,11 @@ caps.handback.revision: 0
 author: robstackmsft
 ms.author: robstack
 manager: angrobe
-translationtype: Human Translation
-ms.sourcegitcommit: 991eff171dce95590a7f050e0d3b07f98c0224b3
-ms.openlocfilehash: e55883471fde63036c91b315ed6db6dceb315207
+ms.translationtype: Human Translation
+ms.sourcegitcommit: 31819a1df4e63e1114682490a9b3c3b4e5c99cfa
+ms.openlocfilehash: e040c6b3a951d1bdf5a46dd82f1bd92b45c2e71d
+ms.contentlocale: pt-br
+ms.lasthandoff: 05/02/2017
 
 
 ---
@@ -52,7 +54,7 @@ Use o item de configuração **Servidores e Desktops Windows personalizados** do
 
  Um método de detecção no Configuration Manager contém regras que são usadas para detectar se um aplicativo é instalado em um computador. Essa detecção ocorre antes que o item de configuração é avaliado quanto à conformidade. Para detectar se um aplicativo estiver instalado, você pode detectar a presença de um arquivo do Windows Installer para o aplicativo, use um script personalizado, ou selecione **sempre assumir o aplicativo é instalado** para avaliar o item de configuração para fins de conformidade, independentemente se o aplicativo está instalado.  
 
- Use estes procedimentos para configurar métodos de detecção no System Center 2012 Configuration Manager.  
+ Use estes procedimentos para configurar métodos de detecção no System Center Configuration Manager.  
 
 ### <a name="to-detect-an-application-installation-by-using-the-windows-installer-file"></a>Para detectar a instalação de um aplicativo usando o arquivo do Windows Installer  
 
@@ -356,9 +358,4 @@ Na página **Plataformas com Suporte** do **Assistente para Criar Item de Config
 
 ## <a name="complete-the-wizard"></a>Concluir o assistente  
  Na página **Resumo** do Assistente, examine as ações a serem tomadas e conclua o assistente. O novo item de configuração é exibido no **itens de configuração** nó o **ativos e conformidade** espaço de trabalho.  
-
-
-
-<!--HONumber=Jan17_HO4-->
-
 

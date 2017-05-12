@@ -1,8 +1,8 @@
 ---
 title: "Instalar um site usando a mídia de linha de base 1606 | Microsoft Docs"
-description: "Saiba como usar a mídia de linha de base da 1606 para instalar ou atualizar sites para o System Center Configuration Manager."
+description: Instalar ou atualizar para o LTSB para System Center Configuration Manager.
 ms.custom: na
-ms.date: 10/12/2016
+ms.date: 05/01/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
@@ -15,10 +15,11 @@ caps.latest.revision: 0
 author: Brenduns
 ms.author: brenduns
 manager: angrobe
-translationtype: Human Translation
-ms.sourcegitcommit: 1a3460143628ef297c99c364ded7ebea86d270dd
-ms.openlocfilehash: c266bb753ea69785b674508647c3857b2218cb77
-ms.lasthandoff: 02/18/2017
+ms.translationtype: Human Translation
+ms.sourcegitcommit: 31819a1df4e63e1114682490a9b3c3b4e5c99cfa
+ms.openlocfilehash: 39653604ba5fd8e1fe9dd4d42889221d983f9bec
+ms.contentlocale: pt-br
+ms.lasthandoff: 05/02/2017
 
 
 ---
@@ -26,13 +27,18 @@ ms.lasthandoff: 02/18/2017
 
 *Aplica-se a: System Center Configuration Manager (Branch Atual), (Branch de Manutenção de Longo Prazo)*
 
-Use este tópico para saber mais sobre como executar a Instalação do Configuration Manager quando você usar mídia de linha de base da versão 1606 do Microsoft System Center 2016 ou do System Center Configuration Manager (Branch Atual e Branch de Manutenção em Longo Prazo da 1606). Você pode usar essa mídia para instalar um novo site ou para atualizar do System Center 2012 Configuration Manager com Service Pack 2 ou System Center 2012 R2 Configuration Manager com Service Pack 1. Durante a instalação, você pode optar por instalar o Branch Atual ou o LTSB (Branch de Manutenção em Longo Prazo).
+Quando você executa a Configuração da mídia de linha de base da versão 1606 para o Configuration Manager, é possível instalar o Branch de Manutenção em Longo Prazo ou o Branch Atual do System Center Configuration Manager.
+
+A mídia de linha de base está disponível em DVD como parte da versão do Microsoft System Center 2016 ou do System Center Configuration Manager (Branch Atual e Branch de Manutenção em Longo Prazo 1606). Para saber mais sobre a mídia de linha de base, confira [Baseline and update versions](/sccm/core/servers/manage/updates#baseline-and-udpate-versions) (Versões de linha de base e atualização).
+
 
 Quando você usa a mídia de linha de base da versão 1606, o site que você instala ou para o qual atualiza é:
 - Um *site do Branch Atual* que é equivalente a um site que foi instalado pela primeira vez usando a mídia de linha de base da 1511 e então atualizado para a versão 1606 e com o pacote cumulativo de atualizações do hotfix da 1606 – KB3186654.
 -    Um *site do LTSB* que é equivalente ao site do Branch Atual que executa a versão 1606 com o pacote cumulativo de atualizações do hotfix da 1606 – KB3186654. A mídia de linha de base já inclui o pacote cumulativo de atualizações do hotfix.  Mas o LTSB não dá suporte a todos os recursos ou funcionalidades disponíveis com o Branch Atual, conforme detalhado em [Introdução ao Branch de Manutenção em Longo Prazo do System Center Configuration Manager](introduction-to-the-ltsb.md).
 
 Se você não estiver familiarizado com os diferentes branches do System Center Configuration Manager, confira [Qual branch do Configuration Manager devo usar](which-branch-should-i-use.md).
+
+
 
 
 ## <a name="changes-to-setup-with-the-1606-baseline-media"></a>Alterações na instalação com a mídia de linha de base da 1606
@@ -98,6 +104,7 @@ Para mais informações, confira [Use a command line to install System Center Co
 Ao usar a mídia de linha de base da 1606 para instalar um novo site de qualquer um dos branches, use os procedimentos de planejamento, preparo e instalação de site documentados no tópico [Installing System Center Configuration Manager sites](/sccm/core/servers/deploy/install/installing-sites) (Instalando sites do System Center Configuration Manager) com a adição das seguintes considerações para a Instalação:
 
 - Durante a Instalação, você deve escolher o branch do Configuration Manager que deseja instalar e pode especificar os detalhes do contrato do Software Assurance.
+- Todos os sites na mesma hierarquia devem executar o mesmo branch. Não há suporte para ter uma hierarquia com uma combinação do LTSB e do Branch Atual em sites diferentes.
 -    Nova instalação com scripts. Para obter mais informações, consulte "Novas opções de instalação com scripts" anteriormente neste artigo.
 
 ## <a name="expand-a-stand-alone-primary-site"></a>Expandir um site primário autônomo

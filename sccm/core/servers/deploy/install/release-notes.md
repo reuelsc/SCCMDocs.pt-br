@@ -16,10 +16,11 @@ caps.handback.revision: 0
 author: Brenduns
 ms.author: brenduns
 manager: angrobe
-translationtype: Human Translation
-ms.sourcegitcommit: 761c3f58f7c57d8f87ee802da37821895062546d
-ms.openlocfilehash: 44338c705e308896c5203be239c160a8220369a8
-ms.lasthandoff: 04/19/2017
+ms.translationtype: Human Translation
+ms.sourcegitcommit: 7a6c89254d01f4074e5c170b20338686178ebdd3
+ms.openlocfilehash: 59946d1328be1606ba7c4dab647e814c1b4e638a
+ms.contentlocale: pt-br
+ms.lasthandoff: 04/28/2017
 
 
 ---
@@ -216,6 +217,12 @@ Executar um apagamento completo em dispositivos Windows 10 RTM (versões anterio
 Quando um administrador implantar um conjunto de termos em várias coleções de usuários, e um usuário for membro de mais de uma dessas coleções, esse usuário terá várias cópias apresentadas de termos idênticos ao abrir o Portal da Empresa.  Por exemplo, se um usuário chamado “SampleUser” for membro de duas coleções de usuários diferentes, uma chamada “CompanyEmployeesFTE” e “CompanyEmployeesNA”, e os termos e condições chamados “CompanyTerms” forem implantados em CompanyEmployeesFTE e CompanyEmployeesNA, SampleUser verá dois conjuntos idênticos de CompanyTerms na página de aceitação dos termos. Visto que os usuários só podem aceitar ou recusar todos os termos, não há nenhum risco de haver um estado de aceitação ambíguo (no qual o usuário tenha aceitado e rejeitado os termos ao mesmo tempo). O relatório de aceitação dos Termos e Condições incluirá apenas uma linha para cada conjunto de termos para cada usuário. Portanto, não há nenhum erro no relatório. O único efeito é que o usuário verá dois conjuntos de termos na página de aceitação.  
 
 **Solução alternativa**: certifique-se de que cada usuário está incluído somente em uma coleção à qual os termos foram implantados.  
+
+### <a name="android-for-work-email-profiles-that-use-certificate-authentication-are-not-applied-to-devices"></a>Perfis de email do Android for Work que usam a autenticação de certificado não são aplicados aos dispositivos
+<!--  487657 -->
+Quando um perfil de email do Android for Work for criado, haverá duas opções para autenticação. Um é o nome de usuário e senha, o outro são certificados. Neste momento, a opção de certificados não está funcionando. Se o perfil for criado com o método de autenticação definido como **certificados**, o perfil não será aplicado ao dispositivo, e o usuário receberá uma solicitação para inserir manualmente os detalhes da conta de email.
+
+**SOLUÇÃO ALTERNATIVA**: nenhuma. Os administradores devem usar a opção de **nome de usuário e senha**, ou aguarde até que este problema tenha sido resolvido.
 
 ## <a name="reports-and-monitoring"></a>Relatórios e monitoramento  
 

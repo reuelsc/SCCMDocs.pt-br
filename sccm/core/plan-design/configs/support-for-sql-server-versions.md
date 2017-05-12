@@ -2,7 +2,7 @@
 title: "Versões do SQL Server com suporte | Microsoft Docs"
 description: "Obtenha os requisitos de configuração e versão do SQL Server para hospedar um banco de dados de site do System Center Configuration Manager."
 ms.custom: na
-ms.date: 3/27/2017
+ms.date: 05/01/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
@@ -15,10 +15,11 @@ caps.latest.revision: 21
 author: Brenduns
 ms.author: brenduns
 manager: angrobe
-translationtype: Human Translation
-ms.sourcegitcommit: dab5da5a4b5dfb3606a8a6bd0c70a0b21923fff9
-ms.openlocfilehash: ea9edf6392c41e31276900454cd78ce4bc32be7b
-ms.lasthandoff: 03/27/2017
+ms.translationtype: Human Translation
+ms.sourcegitcommit: d5a6fdc9a526c4fc3a9027dcedf1dd66a6fff5a7
+ms.openlocfilehash: fa7f232fd385f742bb11c6596c954d87c2da87a8
+ms.contentlocale: pt-br
+ms.lasthandoff: 05/02/2017
 
 
 ---
@@ -54,10 +55,15 @@ Há suporte para as seguintes instâncias:
  O SQL Server deve estar localizado no computador do servidor do site.  
 
 ##  <a name="bkmk_SQLVersions"></a> Versões compatíveis do Microsoft SQL Server  
- Em uma hierarquia com vários sites, diferentes sites podem usar diferentes versões do SQL Server para hospedar o banco de dados do site, desde que o Configuration Manager dê suporte às versões do SQL Server utilizadas.  
+ Em uma hierarquia com vários sites, diferentes sites podem usar diferentes versões do SQL Server para hospedar o banco de dados do site, desde que o seguinte seja verdadeiro:
+ -  O Configuration Manager dá suporte à versão do SQL Server que você usa.
+ -  As versões do SQL Server que você usa ainda têm suporte da Microsoft.
+ -  O SQL Server oferece suporte à replicação entre as duas versões do SQL Server.  Por exemplo, o [SQL Server não oferece suporte à replicação entre o SQL Server 2008 R2 e o SQL Server 2016](https://docs.microsoft.com/sql/relational-databases/replication/deprecated-features-in-sql-server-replication).
+
+
 
  A mesmo que especificado o contrário, as versões do SQL Server a seguir têm suporte com todas as versões ativas do no System Center Configuration Manager. Se for adicionado suporte para uma nova versão ou service pack do SQL Server, a versão do Configuration Manager que adiciona esse suporte será observada. Da mesma forma, se o suporte for preterido, procure os detalhes sobre as versões afetadas do Configuration Manager.   
- 
+
 Suporte para um service pack específico do SQL Server inclui atualizações cumulativas para esse service pack, a menos que uma atualização cumulativa não tenha compatibilidade com versões anteriores dessa versão do service pack básico. Quando não houver versão de service pack, o suporte será feito para essa versão do SQL Server sem service pack. No futuro, se um service pack for lançado para essa versão, uma instrução de suporte separada será declarada antes dessa nova versão do service pack ter suporte.
 
 

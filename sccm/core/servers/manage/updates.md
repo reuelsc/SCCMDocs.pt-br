@@ -2,7 +2,7 @@
 title: "Atualizações | Microsoft Docs"
 description: "Saiba mais sobre um método de serviço no console chamado **Atualizações e Manutenção** que facilita a localização e a instalação das atualizações recomendadas."
 ms.custom: na
-ms.date: 3/27/2017
+ms.date: 05/02/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
@@ -16,10 +16,11 @@ caps.handback.revision: 0
 author: Brenduns
 ms.author: brenduns
 manager: angrobe
-translationtype: Human Translation
-ms.sourcegitcommit: dab5da5a4b5dfb3606a8a6bd0c70a0b21923fff9
-ms.openlocfilehash: bd72d17e463cb65e79b78613b631b0267b2b26a0
-ms.lasthandoff: 03/27/2017
+ms.translationtype: Human Translation
+ms.sourcegitcommit: 90775fcf2549080a43e9c1606caa79d9eb90a89c
+ms.openlocfilehash: a33960fb89b71c0f8128e21a5054f5b63cfc6b17
+ms.contentlocale: pt-br
+ms.lasthandoff: 05/02/2017
 
 
 ---
@@ -48,7 +49,7 @@ Se você usa o branch do Technical Preview, consulte [Technical Preview do Syste
 
 
 ##  <a name="bkmk_Baselines"></a> Versões de linha de base e atualização  
- A primeira versão da ramificação atual do System Center Configuration Manager era a versão 1511, que foi a versão de linha de base. Uma versão de linha de base mais recente é a 1606.
+ A primeira versão da ramificação atual do System Center Configuration Manager era a versão 1511, que foi a versão de linha de base. As versões mais recentes de linha de base incluem a versão 1606 e 1702:
 
 -   Use a versão de linha de base mais recente ao instalar um novo site em uma nova hierarquia.  
 
@@ -76,7 +77,7 @@ As seguintes versões do Configuration Manager estão disponíveis como uma linh
 
 |Versão |Data de disponibilidade|[Data de término do suporte](/sccm/core/servers/manage/current-branch-versions-supported) |Linha de base|Atualização no console|  
 |-------------|-----------|------------|--------------|------------------------|  
-|[1702](/sccm/core/plan-design/changes/whats-new-in-version-1702)<br /><br /> 5.00.8498.1000|27/03/2017| 27/03/2018|Não|Sim|
+|[1702](/sccm/core/plan-design/changes/whats-new-in-version-1702)<br /><br /> 5.00.8498.1000|27/03/2017| 27/03/2018|Sim|Sim|
 |[1610](/sccm/core/plan-design/changes/whats-new-in-version-1610)<br /><br /> 5.00.8458.1000|18/11/2016| 18/11/2017|Não|Sim|
 |[1606](/sccm/core/plan-design/changes/whats-new-in-version-1606)<br /><br /> 5.00.8412.1000|22/07/2016| 22/07/2017|Não|Sim|
 |[1606](/sccm/core/plan-design/changes/whats-new-in-version-1606) com o pacote cumulativo de atualizações do hotfix 1606 (KB3186654) </br></br>5.00.8412.1307 *(Observação 1)* |12/10/2016| 22/07/2017|Sim|Não|

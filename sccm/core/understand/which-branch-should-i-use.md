@@ -2,7 +2,7 @@
 title: Qual branch devo usar | Microsoft Docs
 description: "Aprenda as diferenças entre os branches do System Center Configuration Manager disponíveis."
 ms.custom: na
-ms.date: 10/12/2016
+ms.date: 05/02/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
@@ -15,10 +15,11 @@ caps.latest.revision: 0
 author: Brenduns
 ms.author: brenduns
 manager: angrobe
-translationtype: Human Translation
-ms.sourcegitcommit: dab5da5a4b5dfb3606a8a6bd0c70a0b21923fff9
-ms.openlocfilehash: ef044af5f6b32e4161d54c0ab1fb2ef2d245264b
-ms.lasthandoff: 03/27/2017
+ms.translationtype: Human Translation
+ms.sourcegitcommit: 90775fcf2549080a43e9c1606caa79d9eb90a89c
+ms.openlocfilehash: f791278b0aa8efc734a894da7dab1704bb567ed0
+ms.contentlocale: pt-br
+ms.lasthandoff: 05/02/2017
 
 
 ---
@@ -29,16 +30,19 @@ ms.lasthandoff: 03/27/2017
 
 Desde outubro de 2016, há três branches do System Center Configuration Manager disponíveis. Use este tópico para ajudar a escolher o branch correto para você.
 
+> [!TIP]  
+> Todos os sites em uma hierarquia devem executar o mesmo branch. Não há suporte para ter uma hierarquia com uma branches diferentes em sites diferentes.
+
 ## <a name="current-branch-of-system-center-configuration-manager"></a>Branch atual do System Center Configuration Manager
 Essa é um branch licenciado para uso em um ambiente de produção em que você deseja a opção de ter os recursos e funcionalidades mais recentes. Esse é o branch a ser usado se você tiver um dos seguintes: System Center Datacenter, System Center Standard, System Center Configuration Manager ou direitos de assinatura equivalentes. Para mais informações sobre as opções de licenciamento e Software Assurance, confira [Licenciamento e branches do System Center Configuration Manager](learn-more-editions.md).
 
 
 >  [!TIP]
-> O Branch Atual também pode ser instalado como uma edição de avaliação que não requer uma licença. A edição de avaliação pode ser usada por 180 dias e dá suporte à atualização para uma edição licenciada do Branch Atual.
+> O Branch Atual pode ser instalado como uma edição de avaliação que não requer uma licença. A edição de avaliação pode ser usada por 180 dias e dá suporte à atualização para uma edição licenciada do Branch Atual.
 
 O Branch Atual é atualizado várias vezes ao ano com novos recursos. Cada versão de atualização tem suporte por um ano após seu lançamento. Você deve atualizar para uma versão mais recente do Branch Atual na data da validade ou antes da validade desse período de um ano. As atualizações para as versões mais novas estão disponíveis como atualizações no console.
 
-Para instalar o Branch Atual como um novo site ou como uma atualização do System Center 2012 Configuration Manager com Service Pack 2 ou System Center 2012 R2 Configuration Manager com Service Pack 1 use a [mídia de linha de base](/sccm/core/servers/manage/updates#baseline-and-update-versions) do System Center Configuration Manager fornecida como um DVD com o System Center 2016 ou que está disponível como parte da versão autônoma do System Center Configuration Manager. O acesso a esta mídia depende de como o System Center Configuration Manager foi licenciado.
+Para instalar o Branch Atual como um novo site ou como uma atualização do System Center 2012 Configuration Manager com Service Pack 2 ou System Center 2012 R2 Configuration Manager com Service Pack 1 use a [mídia de linha de base](/sccm/core/servers/manage/updates#baseline-and-update-versions) do System Center Configuration Manager fornecida como um DVD com o System Center 2016 ou que está disponível como parte da versão autônoma do System Center Configuration Manager. O acesso a esta mídia depende de como o System Center Configuration Manager foi licenciado. Versões de linha de base posteriores, como 1702, não dão suporte à instalação do LTSB.
 
 Você também pode usar a mídia de linha de base para instalar um novo site de uma edição de avaliação do Branch Atual. Se você deseja instalar apenas uma edição de avaliação, pode obter o software do site do [Centro de Avaliação do TechNet](https://www.microsoft.com/evalcenter/evaluate-system-center-configuration-manager-and-endpoint-protection).
 
@@ -139,4 +143,15 @@ Para mais informações, confira [Technical Preview do System Center Configurati
 **Opções de atualização**
 -    Você pode instalar qualquer atualização no console para uma nova versão de Technical Preview.
 -    Não há nenhuma opção de converter uma Technical Preview para o Branch Atual ou LTSB.
+
+
+## <a name="identify-your-branch-and-version"></a>Identificar seu branch e versão
+Ao exibir as informações da versão de um site do Configuration Manager, também confirma o branch.
+
+**Versão**   
+Para verificar a versão do site, no console, acesse **Sobre o System Center Configuration Manager** no canto superior esquerdo do console em que a **Versão do site** é exibida. Consulte []() para obter uma lista das versões do site.
+
+**Branch**  
+Para confirmar o branch do seu site (como LTSB ou Branch Atual), no console, acesse **Administração** > **Configuração do Site** > **Sites** e abra **Configurações da Hierarquia**. Se houver uma opção para converter para o Branch Atual e ela estiver ativa, o site executará a versão LTSB. Quando o site executa o Branch Atual, essa opção fica esmaecida.
+Para saber mais sobre as diferentes versões do Configuration Manager, veja “Versões de linha de base e atualização” em [Atualizações para o Configuration Manager](/sccm/core/servers/manage/updates).
 

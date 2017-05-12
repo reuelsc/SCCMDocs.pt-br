@@ -4,17 +4,18 @@ description:
 author: robstackmsft
 ms.author: robstack
 manager: angrobe
-ms.date: 04/23/2017
+ms.date: 05/01/2017
 ms.topic: article
 ms.prod: configuration-manager
 ms.service: 
 ms.technology:
 - configmgr-client
 ms.assetid: e0ec7d66-1502-4b31-85bb-94996b1bc66f
-translationtype: Human Translation
-ms.sourcegitcommit: 2bcc5d9dde1f1a2d9c33575d6c463e281ac818e8
-ms.openlocfilehash: 61b8cd8458718b9a54edb129739c619f947ac380
-ms.lasthandoff: 12/16/2016
+ms.translationtype: Human Translation
+ms.sourcegitcommit: d5a6fdc9a526c4fc3a9027dcedf1dd66a6fff5a7
+ms.openlocfilehash: 97e1bc6585cee0ff433da0ec0b60b9604cb7348f
+ms.contentlocale: pt-br
+ms.lasthandoff: 05/02/2017
 
 ---
 
@@ -24,13 +25,27 @@ ms.lasthandoff: 12/16/2016
 
 A partir da versão 1610, o processo de configuração do gateway de gerenciamento de nuvem no Configuration Manager inclui as seguintes etapas:
 
-## <a name="step-1-create-a-custom-ssl-certificate"></a>Etapa 1: Criar um certificado SSL personalizado
+## <a name="step-1-configure-required-certificates"></a>Etapa 1: Configurar os certificados necessários
 
-Você pode criar um certificado SSL personalizado para o gateway de gerenciamento de nuvem da mesma maneira que faria para um ponto de distribuição baseado em nuvem. Siga as instruções para [Implantando o certificado de serviço em pontos de distribuição baseados em nuvem](/sccm/core/plan-design/network/example-deployment-of-pki-certificates#BKMK_clouddp2008_cm2012), mas faça estas ações de forma diferente:
+## <a name="option-1-preferred---use-the-server-authentication-certificate-from-a-public-and-globally-trusted-certificate-provider-like-verisign"></a>Opção 1 (preferencial) - Use o certificado de autenticação do servidor de um provedor de certificados público e globalmente confiável (como a VeriSign)
 
--   Ao configurar o novo modelo de certificado, conceda permissões de **Leitura** e **Registro** para o grupo de segurança que você configurou para os servidores do Configuration Manager.
+Ao usar esse método, os clientes confiarão automaticamente no certificado, e você não precisará criar um certificado SSL personalizado por conta própria.
 
--  Ao solicitar o certificado de servidor Web personalizado, forneça um FQDN para o nome comum do certificado que termine em **cloudapp.net** para usar o gateway de gerenciamento de nuvem na nuvem pública do Azure, ou **usgovcloudapp.net** para a nuvem do Azure Governamental.
+1. Crie um CNAME (registro de nome canônico) no DNS (serviço de nome de domínio) público de sua organização para criar um alias para o serviço de gateway de gerenciamento de nuvem com um nome amigável que será usado no certificado público.
+Por exemplo, a Contoso nomeia seu serviço de gateway de gerenciamento de nuvem como **GraniteFalls**, o qual no Azure será **GraniteFalls.CloudApp.Net**. No namespace contoso.com do DNS público da Contoso, o administrador de DNS cria um novo registro CNAME para **GraniteFalls.Contoso.com** para o nome de host real **GraniteFalls.CloudApp.net**.
+2. Em seguida, solicite um certificado de autenticação de servidor de um provedor público usando o CN (nome comum) do alias CNAME.
+Por exemplo, a Contoso usa **GraniteFalls.Contoso.com** para o CN do certificado.
+3. Crie o serviço de gateway de gerenciamento de nuvem no console do Configuration Manager usando esse certificado.
+    - Na página **Configurações** do Assistente para Criar Gateway de Gerenciamento de Nuvem, ao adicionar o certificado de servidor para esse serviço de nuvem (em **Arquivo de certificado**), o assistente extrairá o nome do host do CN do certificado como o nome do serviço e, em seguida, acrescentará isso a **cloudapp.net** (ou **usgovcloudapp.net** para a nuvem do Azure US Government) como o FQDN do Serviço para criar o serviço no Azure.
+Por exemplo, ao criar o gateway de gerenciamento de nuvem na Contoso, o nome do host **GraniteFalls** é extraído do CN do certificado, para que o serviço real no Azure seja criado como **GraniteFalls.CloudApp.net**.
+
+### <a name="option-2---create-a-custom-ssl-certificate-for-cloud-management-gateway-in-the-same-way-as-for-a-cloud-based-distribution-point"></a>Opção 2 - Crie um certificado SSL personalizado para o gateway de gerenciamento de nuvem da mesma maneira que faria para um ponto de distribuição baseado em nuvem
+
+Você pode criar um certificado SSL personalizado para o gateway de gerenciamento de nuvem da mesma maneira que faria para um ponto de distribuição baseado em nuvem. Siga as instruções para [Implantando o certificado de serviço em pontos de distribuição baseados em nuvem](/sccm/core/plan-design/network/example-deployment-of-pki-certificates), mas faça estas ações de forma diferente:
+
+- Ao configurar o novo modelo de certificado, conceda permissões de **Leitura** e **Registro** para o grupo de segurança que você configurou para os servidores do Configuration Manager.
+- Ao solicitar o certificado de servidor Web personalizado, forneça um FQDN para o nome comum do certificado que termine em **cloudapp.net** para usar o gateway de gerenciamento de nuvem na nuvem pública do Azure, ou **usgovcloudapp.net** para a nuvem do Azure Governamental.
+
 
 ## <a name="step-2-export-the-client-certificates-root"></a>Etapa 2: Exportar a raiz do certificado do cliente
 
@@ -44,7 +59,7 @@ A maneira mais fácil de exportar a raiz dos certificados de cliente usados na r
 
 2.  No menu Arquivo, escolha **Adicionar/Remover Snap-in...**.
 
-3.  Na caixa de diálogo Adicionar/Remover Snap-ins, escolha **Certificados** > **Adicionar &gt; **  >  **Conta de computador** > **Avançar** > **Computador Local** > **Concluir**. 
+3.  Na caixa de diálogo Adicionar/Remover Snap-ins, escolha **Certificados** > **Adicionar &gt;**   >  **Conta de computador** > **Avançar** > **Computador Local** > **Concluir**. 
 
 4.  Acesse **Certificados** &gt; **Pessoal** &gt; **Certificados**.
 

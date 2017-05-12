@@ -2,7 +2,7 @@
 title: "Lista de verificação para 1702 | System Center Configuration Manager"
 description: "Conheça as ações a serem executadas antes de atualizar para o System Center Configuration Manager versão 1702."
 ms.custom: na
-ms.date: 3/27/2017
+ms.date: 05/02/2017
 ms.reviewer: na
 ms.suite: na
 ms.prod: configuration-manager
@@ -15,10 +15,11 @@ caps.latest.revision: 7
 author: Brenduns
 ms.author: brenduns
 manager: angrobe
-translationtype: Human Translation
-ms.sourcegitcommit: dab5da5a4b5dfb3606a8a6bd0c70a0b21923fff9
-ms.openlocfilehash: dd54a5668f8df73b0724f5c15a1a6a83f8fe8496
-ms.lasthandoff: 03/27/2017
+ms.translationtype: Human Translation
+ms.sourcegitcommit: 90775fcf2549080a43e9c1606caa79d9eb90a89c
+ms.openlocfilehash: c4ace452d62d4fa08f4457cb1735718ca4bd016d
+ms.contentlocale: pt-br
+ms.lasthandoff: 05/02/2017
 
 ---
 # <a name="checklist-for-installing-update-1702-for-system-center-configuration-manager"></a>Lista de verificação para instalar a atualização 1702 do System Center Configuration Manager
@@ -26,6 +27,9 @@ ms.lasthandoff: 03/27/2017
 *Aplica-se a: System Center Configuration Manager (Branch Atual)*
 
 Ao usar a ramificação atual do System Center Configuration Manager, você pode instalar a atualização no console da versão 1702 para atualizar sua hierarquia da versão anterior.
+
+> [!TIP]  
+A versão 1702 ainda está disponível como [mídia de linha de base](/sccm/core/servers/manage/updates#a-namebkmkbaselinesa-baseline-and-update-versions) que você pode usar para instalar o primeiro site de uma nova hierarquia.
 
 Para obter a atualização da versão 1702, você deve usar uma função do sistema de sites do ponto de conexão de serviço no site de nível superior da hierarquia. Isso pode ser no modo online ou offline. Depois que a hierarquia baixar o pacote de atualização da Microsoft, você o encontrará no console em **Administração &gt; Visão Geral &gt; Serviços de Nuvem &gt; Atualizações e Manutenção**.
 

@@ -15,10 +15,11 @@ caps.latest.revision: 3
 author: nathbarn
 ms.author: nathbarn
 manager: angrobe
-translationtype: Human Translation
-ms.sourcegitcommit: 7573590763c68a4c97d388be1e64054c318da9cc
-ms.openlocfilehash: 4fe6741481c79ed4e4496846152902d6d8ca1f96
-ms.lasthandoff: 03/24/2017
+ms.translationtype: Human Translation
+ms.sourcegitcommit: e6833951db27b227a3ca22925e9d9f4c3fc443fc
+ms.openlocfilehash: e8606b8a9268a0a0668b75070cf35894f4794123
+ms.contentlocale: pt-br
+ms.lasthandoff: 05/04/2017
 
 ---
 # <a name="predeclare-devices-with-imei-or-ios-serial-numbers"></a>Pré-declarar dispositivos com número de série do iOS ou IMEI
@@ -27,7 +28,7 @@ ms.lasthandoff: 03/24/2017
 
 Você pode identificar os dispositivos corporativos importando seus números IMEI (identidade internacional de equipamento móvel) ou números de série do iOS. Você pode carregar um arquivo .csv (valores separados por vírgula) que contém os números IMEI do dispositivo ou inserir manualmente as informações sobre o dispositivo.  As informações importadas definirão a **Propriedade** dos dispositivos registrados como **Corporativo** nas listas de dispositivos. Uma licença do Intune ainda é necessária para cada usuário que acessa o serviço.  
 
-Quando você carrega os números de série para dispositivos iOS de propriedade da empresa, eles devem ser combinados com um perfil de registro corporativo. Os dispositivos devem então ser registrados usando o programa de registro do dispositivo (DEP) da Apple ou o Apple Configurator para eles aparecerem como sendo da empresa. 
+Quando você carrega os números de série para dispositivos iOS de propriedade da empresa, eles devem ser combinados com um perfil de registro corporativo. Os dispositivos devem então ser registrados usando o programa de registro do dispositivo (DEP) da Apple ou o Apple Configurator para eles aparecerem como sendo da empresa.
 
 ## <a name="how-to-predeclare-corporate-owned-devices"></a>Como pré-declarar dispositivos corporativos
 
@@ -61,7 +62,7 @@ Quando você carrega os números de série para dispositivos iOS de propriedade 
 
 ## <a name="format-for-uploading-csv-files"></a>Formato para carregar arquivos .csv
 
-O arquivo .csv que você usa para identificar dispositivos pelo IMEI ou pelo número de série deve ter o seguinte formato, exceto a linha superior, que é fornecida apenas para orientação. Cada linha deve conter um número IMEI ou o número de série do iOS. Somente os números de série de dispositivos iOS podem ser pré-declarados; use o número IMEI para outras plataformas de dispositivo. Esta tabela contém dados de exemplo:
+O arquivo .csv que você usa para identificar dispositivos pelo IMEI ou pelo número de série deve ter o seguinte formato, exceto a linha superior, que é fornecida apenas para orientação. Cada linha deve conter um número de ID, pode ser um número IMEI ou o número de série do iOS. Você pode incluir os dois. Os números de IMEI podem ser usados para dispositivos Android, iOS e Windows. Também há suporte para os números de série do iOS.  Esta tabela contém dados de exemplo:
 
 | IMEI #  | Nº de série do iOS #  | Sistema operacional | Detalhes |
 |------------ |---------------|-----|-----|
