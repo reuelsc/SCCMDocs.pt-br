@@ -2,7 +2,7 @@
 title: Gerenciar aplicativos iOS adquiridos por volume | Microsoft Docs
 description: "Implante, gerencie e monitore licenças de aplicativos adquiridos por meio da loja de aplicativos iOS."
 ms.custom: na
-ms.date: 03/28/2017
+ms.date: 05/03/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
@@ -16,10 +16,11 @@ caps.handback.revision: 0
 author: mtillman
 ms.author: mtillman
 manager: angrobe
-translationtype: Human Translation
-ms.sourcegitcommit: 3c2a07f560e0aa3d2beb7cc50e71c98ac45c27e1
-ms.openlocfilehash: a63acf0d80edba1e965ba8ea99fe90edb8aa2faf
-ms.lasthandoff: 03/28/2017
+ms.translationtype: Human Translation
+ms.sourcegitcommit: c6a6137fa978e1ea28aefea2aea4e29ba661efd6
+ms.openlocfilehash: 55f1204b088a7b636a90561f20aa41c7de72bc05
+ms.contentlocale: pt-br
+ms.lasthandoff: 05/04/2017
 
 ---
 # <a name="manage-volume-purchased-ios-apps-with-system-center-configuration-manager"></a>Gerenciar aplicativos iOS adquiridos por volume com o System Center Configuration Manager
@@ -112,7 +113,7 @@ O aplicativo do Configuration Manager criado contém o aplicativo da Windows Sto
 
  Quando você cria um aplicativo a partir do nó **Informações de licença para aplicativos de armazenamento**, o aplicativo é associado a licenças a partir do token para o aplicativo selecionado.  Por exemplo, você verá duas versões do mesmo aplicativo no nó. Isso ocorre porque cada versão do aplicativo está associada com um token de VPP da Apple diferente.  Em seguida, você pode criar aplicativos a partir de cada token e implantá-los separadamente.
 
- Para recuperar uma licença, você deve alterar a ação de implantação para **Desinstalar**. A licença será recuperada após a desinstalação do aplicativo.  
+ Para recuperar uma licença, crie uma nova implantação para o aplicativo com a ação de implantação **Desinstalar**. Não é possível alterar a ação de implantação na implantação original. A licença será recuperada após a desinstalação do aplicativo.  
 
 ## <a name="step-3---monitor-ios-vpp-apps"></a>Etapa 3 - Monitorar aplicativos de VPP iOS  
  O nó **Informações de Licença para Aplicativos da Loja** do espaço de trabalho **Biblioteca de Software** exibe informações sobre os aplicativos iOS adquiridos por volume. As informações incluem o número total de licenças que você tem para cada aplicativo e a quantidade que foi implantada. Além disso, o modo de exibição mostra a qual token de VPP o aplicativo está associado e o tipo do token

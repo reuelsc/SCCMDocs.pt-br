@@ -15,10 +15,11 @@ caps.latest.revision: 24
 author: Dougeby
 ms.author: dougeby
 manager: angrobe
-translationtype: Human Translation
-ms.sourcegitcommit: 1b9e49da1a5bbfca93fe683b82d2c0056a22cc1f
-ms.openlocfilehash: 562e81df12e46a2332aa5e4de8b7c9e5819bde80
-ms.lasthandoff: 03/21/2017
+ms.translationtype: Human Translation
+ms.sourcegitcommit: 065b1fcb25d7c7845b6f26e757b36e7fb97ce013
+ms.openlocfilehash: ef4536578456c13de5afaa5cd1977d2e6b4b6bd1
+ms.contentlocale: pt-br
+ms.lasthandoff: 05/10/2017
 
 
 ---
@@ -52,6 +53,9 @@ A implantação de sistema operacional no System Center 2012 Configuration Manag
 -   [Cenários do Windows ADK para Windows 10 para Profissionais de TI](https://technet.microsoft.com/library/mt280162\(v=vs.85\).aspx)  
 
 -   [Baixar o Windows ADK para Windows 10](https://msdn.microsoft.com/windows/hardware/dn913721.aspx#adkwin10)  
+
+-   [Suporte para Windows 10](/sccm/core/plan-design/configs/support-for-windows-10)  
+
 
 ### <a name="user-state-migration-tool-usmt"></a>USMT (Ferramenta de Migração do Usuário)  
  O Configuration Manager usa um pacote de USMT que contém arquivos de origem da USMT 10 para capturar e restaurar o estado do usuário como parte da implantação do seu sistema operacional. A Instalação do Configuration Manager no site de nível superior cria automaticamente o pacote da USMT. A USMT 10 pode capturar o estado do usuário do Windows 7, Windows 8, Windows 8.1 e Windows 10. A USMT 10 é distribuída no Windows ADK (Kit de Avaliação e Implantação do Windows) para Windows 10.  

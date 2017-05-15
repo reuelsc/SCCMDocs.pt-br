@@ -15,10 +15,11 @@ caps.latest.revision:
 author: andredm7
 ms.author: andredm
 manager: angrobe
-translationtype: Human Translation
-ms.sourcegitcommit: dab5da5a4b5dfb3606a8a6bd0c70a0b21923fff9
-ms.openlocfilehash: fa5919b72114d71e1fbad74418c662d199827690
-ms.lasthandoff: 03/27/2017
+ms.translationtype: Human Translation
+ms.sourcegitcommit: 212628639300e9c361f7cee61b3df6b1cb6874ce
+ms.openlocfilehash: 8edf83a0f761dfc16274ce49c3aa2b878c7fe6cd
+ms.contentlocale: pt-br
+ms.lasthandoff: 05/05/2017
 
 
 ---
@@ -68,10 +69,11 @@ Além disso, na tela **Dispositivos**, você pode selecionar dispositivos espec�
 |**Status da ameaça**| Sim | O estado atual da ameaça no dispositivo. Estados possíveis: **Ativa**, **Resolvida** ou **Ignorada:** indica que o usuário ignorou a ameaça em seu dispositivo, mas a ameaça ainda está presente. |
 |**Tipo de ameaça**| Sim | Tipo de ameaça de parceiro de Defesa contra Ameaças Móveis. Os valores possíveis: **Aplicativo**, **Arquivo** ou **SO** |
 |**ID da conta do AAD**| Não | O identificador exclusivo do Azure Active Directory. |
-|**Classificação**| Sim | O parceiro de Defesa contra Ameaças Móveis forneceu a classificação de ameaça. Os valores possíveis: **Habilitador de Raiz, Riskware, Adware, Chargeware, DataLeak, Cavalo de Troia, worms, vírus, Exploit, Backdoor, Bot, AppDropper, ClickFraud, Spam, Spyware, SurveillanceWare, Vulnerabilidade, Desconhecido, RootJailbrake, Conectividade, TollFraud, SideloadedApp** |
+|**Classificação**| Sim | O parceiro de Defesa contra Ameaças Móveis forneceu a classificação de ameaça. Valores possíveis: **Root Enabler, Riskware, Adware, Chargeware, DataLeak, Trojan, Worm, Virus, Exploit, Backdoor, Bot, AppDropper, ClickFraud, Spam, Spyware, SurveillanceWare, Vulnerability, Unknown, Root Jailbrake, Connectivity, TollFraud, SideloadedApp** |
 |**ID do Dispositivo**| Não | A ID de objeto do Azure Active Directory que representa o dispositivo ingressado no local de trabalho com informações sobre a ameaça. |
 |**ID da Ameaça**| Não | O parceiro de Defesa contra Ameaças Móveis gerou um identificador exclusivo para a ameaça. A ID da Ameaça é usada para a resolução de acompanhamento. |
 |**URL da Ameaça**| Não | Quando presente, a URL de ameaça vincula-se de volta para a exibição do console de gerenciamento do parceiro de Defesa contra Ameaças Móveis dessa ameaça específica. |
 
 > [!TIP] 
 > Habilite as colunas que não estão **visíveis por padrão** para ver mais detalhes sobre o status de conformidade de Defesa contra Ameaças Móveis para seus dispositivos.
+

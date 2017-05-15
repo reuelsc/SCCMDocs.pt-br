@@ -16,9 +16,11 @@ caps.handback.revision: 0
 author: Brenduns
 ms.author: brenduns
 manager: angrobe
-translationtype: Human Translation
-ms.sourcegitcommit: 96bfa443cd2894bb1c46322cd5f984071916d9a6
-ms.openlocfilehash: 6942f4d74303d8ade8add6cc81da872648f208be
+ms.translationtype: Human Translation
+ms.sourcegitcommit: c5a58d79f81ccdf19ad88dc932e3a52eac2c18ab
+ms.openlocfilehash: 80c43ab93ee5a2de6bf8d7993dfd46f0005d2df8
+ms.contentlocale: pt-br
+ms.lasthandoff: 05/09/2017
 
 
 ---
@@ -37,7 +39,7 @@ Para habilitar a migração de dados para o seu ambiente do System Center Config
 
 -   [Identificar sites de origem adicionais da hierarquia de origem](#BKBM_ConfigSrcSites)  
 
-##  <a name="a-namebkbmconfigsrchierarchya-specify-a-source-hierarchy-for-migration"></a><a name="BKBM_ConfigSrcHierarchy"></a> Especificar uma hierarquia de origem para migração  
+##  <a name="BKBM_ConfigSrcHierarchy"></a> Especificar uma hierarquia de origem para migração  
  Para migrar dados para a sua hierarquia de destino, é necessário especificar uma hierarquia de origem com suporte que tem os dados que você deseja migrar. Por padrão, o site de nível superior dessa hierarquia torna-se um site de origem da hierarquia de origem. Se você migrar de uma hierarquia do Configuration Manager 2007, será possível configurar sites de origem adicionais para migração, depois que os dados forem coletados do site de origem inicial. Se você migrar de uma hierarquia do System Center 2012 Configuration Manager ou do System Center Configuration Manager, não será necessário configurar sites de origem adicionais para migrar dados da hierarquia de origem. Isso se deve ao fato de essas versões do Configuration Manager usarem um banco de dados compartilhado que está disponível no site de nível superior da hierarquia de origem. O banco de dados compartilhado tem todas as informações que você pode migrar.  
 
  Use os procedimentos a seguir para especificar uma hierarquia de origem para migração e para identificar sites de origem adicionais em uma hierarquia do Configuration Manager 2007.  
@@ -58,7 +60,7 @@ Para habilitar a migração de dados para o seu ambiente do System Center Config
 
 6.  Especifique as contas de acesso do site de origem que têm as seguintes permissões:  
 
-    -   Conta do site de origem: Permissão de **Leitura** ao Provedor de SMS para o site de nível superior especificado na hierarquia de origem.  
+    -   Conta do site de origem: Permissão de **Leitura** ao Provedor de SMS para o site de nível superior especificado na hierarquia de origem. Atualizações e compartilhamentos de pontos de distribuição requerem as permissões **Modificar** e **Excluir** para o site na Hierarquia de Origem.
 
     -   Conta do banco de dados do site de origem: Permissão de **Leitura** e **Executar** ao banco de dados do SQL Server para o site de nível superior especificado na hierarquia de origem.  
 
@@ -70,7 +72,7 @@ Para habilitar a migração de dados para o seu ambiente do System Center Config
 
 9. Quando a coleta de dados for concluída, clique em **Fechar** para fechar a caixa de diálogo **Status da Coleta de Dados** e concluir a configuração.  
 
-##  <a name="a-namebkbmconfigsrcsitesa-identify-additional-source-sites-of-the-source-hierarchy"></a><a name="BKBM_ConfigSrcSites"></a> Identificar sites de origem adicionais da hierarquia de origem  
+##  <a name="BKBM_ConfigSrcSites"></a> Identificar sites de origem adicionais da hierarquia de origem  
  Quando você configura uma hierarquia de origem suportada, o site de nível superior dessa hierarquia é automaticamente configurado como um site de origem e os dados são automaticamente coletados. A próxima ação que você executar dependerá da versão do Configuration Manager executada pela hierarquia de origem:  
 
 -   Para uma hierarquia de origem do Configuration Manager 2007, é possível iniciar a migração desse site de origem inicial ou configurar sites de origem adicionais na hierarquia de origem, após a conclusão da coleta de dados para o site de origem inicial. Para migrar dados disponíveis apenas em um site filho, configure sites de origem adicionais para uma hierarquia do Configuration Manager 2007. Por exemplo, você poderia configurar sites de origem adicionais para coletar dados sobre o conteúdo que você deseja migrar quando este conteúdo foi criado em um site filho na hierarquia de origem e não está disponível no site de nível superior da hierarquia de origem.  
@@ -93,7 +95,7 @@ Use o procedimento a seguir para configurar sites de origem adicionais para hier
 
 5.  Na caixa de diálogo **Credenciais do Site de Origem** , para as contas de acesso do site de origem, especifique as contas que têm as seguintes permissões:  
 
-    -   Conta do site de origem: Permissão de **Leitura** ao Provedor de SMS para o site de nível superior especificado na hierarquia de origem.  
+    -   Conta do site de origem: Permissão de **Leitura** ao Provedor de SMS para o site de nível superior especificado na hierarquia de origem. Atualizações e compartilhamentos de pontos de distribuição requerem as permissões **Modificar** e **Excluir** para o site na Hierarquia de Origem.  
 
     -   Conta do banco de dados do site de origem: Permissão de **Leitura** e **Executar** ao banco de dados do SQL Server para o site de nível superior especificado na hierarquia de origem.  
 
@@ -104,9 +106,4 @@ Use o procedimento a seguir para configurar sites de origem adicionais para hier
 7. Clique em **OK** para salvar a configuração. Esse procedimento abrirá a caixa de diálogo **Status da Coleta de Dados** , e a coleta de dados será iniciada automaticamente.  
 
 8.  Quando a coleta de dados for concluída, clique em **Fechar** para finalizar a configuração.  
-
-
-
-<!--HONumber=Dec16_HO5-->
-
 

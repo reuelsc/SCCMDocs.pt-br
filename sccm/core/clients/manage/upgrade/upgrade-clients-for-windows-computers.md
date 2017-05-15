@@ -2,7 +2,7 @@
 title: Atualizar clientes | Microsoft Docs
 description: Atualizar clientes em computadores Windows no System Center Configuration Manager.
 ms.custom: na
-ms.date: 04/23/2017
+ms.date: 05/04/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
@@ -16,10 +16,11 @@ caps.handback.revision: 0
 author: robstackmsft
 ms.author: robstack
 manager: angrobe
-translationtype: Human Translation
-ms.sourcegitcommit: 2c723fe7137a95df271c3612c88805efd8fb9a77
-ms.openlocfilehash: a5b59a1d31d897473262edcd0912ef0fcbedd100
-ms.lasthandoff: 03/06/2017
+ms.translationtype: Human Translation
+ms.sourcegitcommit: 212628639300e9c361f7cee61b3df6b1cb6874ce
+ms.openlocfilehash: 98b8c92e4dad3cef1ed3701b9c0f9111eb9941ea
+ms.contentlocale: pt-br
+ms.lasthandoff: 05/05/2017
 
 
 ---
@@ -98,5 +99,8 @@ ms.lasthandoff: 03/06/2017
 
 8.  Se desejar que o pacote de instalação do cliente seja copiado nos pontos de distribuição que foram habilitados para o conteúdo pré-configurado, clique em **Distribuir automaticamente o pacote de instalação do cliente para pontos de distribuição que são habilitados para o conteúdo pré-configurado**.  
 
-9. Clique em **OK** para salvar as configurações e fechar a caixa de diálogo **Propriedades das Configurações da Hierarquia** . Os clientes recebem essas configurações no próximo download da política.  
+9. Clique em **OK** para salvar as configurações e fechar a caixa de diálogo **Propriedades das Configurações da Hierarquia** . Os clientes recebem essas configurações no próximo download da política.
+
+>[!NOTE]
+>As atualizações de cliente aceitam todas as janelas de manutenção do Configuration Manager que você configurar.
 

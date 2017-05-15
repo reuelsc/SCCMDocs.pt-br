@@ -2,7 +2,7 @@
 title: "Testar atualizações do cliente em uma coleção de pré-produção | Microsoft Docs"
 description: "Teste atualizações do cliente em uma coleção de pré-produção no System Center Configuration Manager."
 ms.custom: na
-ms.date: 04/23/2017
+ms.date: 05/04/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
@@ -16,10 +16,11 @@ caps.handback.revision: 0
 author: robstackmsft
 ms.author: robstack
 manager: angrobe
-translationtype: Human Translation
-ms.sourcegitcommit: 690d03d9c8c49a815bd318df549d7401a855bc5d
-ms.openlocfilehash: 7edd3e46b4813dd50df7d01b367f8e73bb350a7d
-ms.lasthandoff: 04/24/2017
+ms.translationtype: Human Translation
+ms.sourcegitcommit: 212628639300e9c361f7cee61b3df6b1cb6874ce
+ms.openlocfilehash: 572ef13883f7930e69ec1f1f53c9bfe029898c81
+ms.contentlocale: pt-br
+ms.lasthandoff: 05/05/2017
 
 
 ---
@@ -86,4 +87,5 @@ ms.lasthandoff: 04/24/2017
 
 >[!NOTE]
 >Para habilitar o cliente de pré-produção ou promover um cliente de pré-produção para um cliente de produção, sua conta deverá ser membro da função de segurança que tem as permissões **Leitura** e **Modificar** para o objeto **Atualizar Pacotes**.
+>As atualizações de cliente aceitam todas as janelas de manutenção do Configuration Manager que você configurar.
 

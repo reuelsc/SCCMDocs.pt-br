@@ -2,7 +2,7 @@
 title: Preparar para implantar o software cliente em Macs | Microsoft Docs
 description: "As tarefas de configuração antes da implantação do cliente do Configuration Manager em Macs."
 ms.custom: na
-ms.date: 04/23/2017
+ms.date: 05/04/2017
 ms.prod: configuration-manager
 ms.reviewer: aaroncz
 ms.suite: na
@@ -15,10 +15,11 @@ caps.latest.revision: 12
 author: robstackmsft
 ms.author: robstack
 manager: angrobe
-translationtype: Human Translation
-ms.sourcegitcommit: 0900e45115f02861c33fe2abdb046d11fdef3474
-ms.openlocfilehash: 9f51c15adaa850eb8343601ddcd13046480fc9c0
-ms.lasthandoff: 01/03/2017
+ms.translationtype: Human Translation
+ms.sourcegitcommit: c6a6137fa978e1ea28aefea2aea4e29ba661efd6
+ms.openlocfilehash: b3bb72f81812705b4654e268025074402e89a7cb
+ms.contentlocale: pt-br
+ms.lasthandoff: 05/04/2017
 
 
 ---
@@ -60,7 +61,7 @@ Se os clientes Mac não puderem confirmar o status de revogação de um certific
 
 Antes de instalar o cliente do Configuration Manager em um computador Mac, decida como o certificado do cliente será instalado:  
 
--   Usar o registro do Configuration Manager com a [ferramenta CMEnroll](/sccm/core/clients/deploy/deploy-clients-to-macs#install-the-client-and-then-enroll-the-client-certificate-on-the-mac). O processo de registro não oferece suporte à renovação automática de certificados, portanto, é necessário registrar novamente os computadores Mac antes de o certificado instalado expirar.  
+-   Usar o registro do Configuration Manager usando a [ferramenta CMEnroll](/sccm/core/clients/deploy/deploy-clients-to-macs#install-the-client-and-then-enroll-the-client-certificate-on-the-mac). O processo de registro não oferece suporte à renovação automática de certificados, portanto, é necessário registrar novamente os computadores Mac antes de o certificado instalado expirar.  
 
 -   [Usar um método de solicitação e de instalação de certificado independente do Configuration Manager](/sccm/core/clients/deploy/deploy-clients-to-macs#use-a-certificate-request-and-installation-method-that-is-independent-from-configuration-manager).  
 
@@ -100,6 +101,9 @@ Para ver um exemplo de implantação que cria e instala esse certificado do serv
  Para ver um exemplo de implantação que cria e instala o certificado do cliente para pontos de gerenciamento, consulte [Implantando o certificado do cliente para computadores com Windows](../../plan-design/network/example-deployment-of-pki-certificates.md#BKMK_client2008_cm2012)  
 
  Para ver um exemplo de implantação que cria e instala o certificado do cliente para pontos de distribuição, consulte [Implantando o certificado do cliente para pontos de distribuição](../../plan-design/network/example-deployment-of-pki-certificates.md#BKMK_clientdistributionpoint2008_cm2012).  
+
+>[!IMPORTANT]
+>  Para implantar o cliente em dispositivos com macOS Sierra, o nome da entidade do certificado do ponto de gerenciamento deve estar configurado corretamente, por exemplo, usando o FQDN do servidor de ponto de gerenciamento.
 
 ## <a name="prepare-the-client-certificate-template-for-macs"></a>Preparar o modelo de certificado do cliente para Macs  
 

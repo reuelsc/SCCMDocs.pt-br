@@ -2,7 +2,7 @@
 title: "Conceitos básicos do gerenciamento de conteúdo | Microsoft Docs"
 description: "Use as ferramentas e opções no System Center Configuration Manager para gerenciar o conteúdo que você implanta."
 ms.custom: na
-ms.date: 3/15/2017
+ms.date: 05/04/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
@@ -16,10 +16,11 @@ caps.handback.revision: 0
 author: Brenduns
 ms.author: brenduns
 manager: angrobe
-translationtype: Human Translation
-ms.sourcegitcommit: dab5da5a4b5dfb3606a8a6bd0c70a0b21923fff9
-ms.openlocfilehash: 238e460885b6490b3744690640f9ff040902b35f
-ms.lasthandoff: 03/27/2017
+ms.translationtype: Human Translation
+ms.sourcegitcommit: 212628639300e9c361f7cee61b3df6b1cb6874ce
+ms.openlocfilehash: f73dde64e0e8a0fc49f45b3afb3b8f00c926a820
+ms.contentlocale: pt-br
+ms.lasthandoff: 05/05/2017
 
 
 ---
@@ -29,9 +30,12 @@ ms.lasthandoff: 03/27/2017
 
 O System Center Configuration Manager dá suporte a um sistema robusto de ferramentas e opções para gerenciar o conteúdo que você implanta aplicativos, pacotes, atualizações de software e implantações de sistema operacional.  
 
- O conteúdo que você implanta é armazenado em servidores de site e servidores do sistema de sites do ponto de distribuição. Esse conteúdo pode exigir uma grande quantidade de largura de banda de rede quando está sendo transferido entre os locais. Para planejar e usar com eficiência a infraestrutura de gerenciamento de conteúdo, recomendamos que você compreenda as opções e configurações disponíveis e considerar como usá-las para melhor se ajustarem ao seu ambiente de rede e às suas necessidades de implantação de conteúdo.  
+O conteúdo que você implanta é armazenado em servidores de site e servidores do sistema de sites do ponto de distribuição. Esse conteúdo pode exigir uma grande quantidade de largura de banda de rede quando está sendo transferido entre os locais. Para planejar e usar com eficiência a infraestrutura de gerenciamento de conteúdo, recomendamos que você compreenda as opções e configurações disponíveis e considerar como usá-las para melhor se ajustarem ao seu ambiente de rede e às suas necessidades de implantação de conteúdo.  
 
-A seguir estão os conceitos principais do gerenciamento de conteúdo. Quando um conceito requer informações adicionais ou complexas, são fornecidos links para direcioná-lo a esses detalhes.  
+> [!TIP]    
+> Você pode saber mais sobre o processo de distribuição de conteúdo e encontrar ajuda para diagnosticar e resolver problemas gerais relacionados a distribuição de conteúdo. Confira o artigo [Noções básicas e solução de problemas de distribuição de conteúdo do Microsoft Configuration Manager](https://support.microsoft.com/help/4000401/content-distribution-in-mcm) no site support.microsoft.com.
+
+Veja a seguir os principais conceitos de gerenciamento de conteúdo. Quando um conceito requer informações adicionais ou complexas, são fornecidos links para direcioná-lo a esses detalhes.
 
 ## <a name="accounts-used-for-content-management"></a>Contas usadas para gerenciamento de conteúdo  
  As contas a seguir podem ser usadas com o gerenciamento de conteúdo:  
