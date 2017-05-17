@@ -15,9 +15,11 @@ caps.latest.revision: 15
 author: Brenduns
 ms.author: brenduns
 manager: angrobe
-translationtype: Human Translation
+ms.translationtype: Human Translation
 ms.sourcegitcommit: 5d08d1f9ccd995d544c3c21c4af52ede73343077
 ms.openlocfilehash: c22e29da8036d69db917205f28a19a69281a64db
+ms.contentlocale: pt-br
+ms.lasthandoff: 05/17/2017
 
 ---
 # <a name="capabilities-in-technical-preview-1608-for-system-center-configuration-manager"></a>Funcionalidades no Technical Preview 1608 do System Center Configuration Manager
@@ -49,7 +51,7 @@ Adicionamos um campo às propriedades de software inventariado que permite defin
 
 ### <a name="filter-the-software-display"></a>Filtrar a exibição de software
 Depois de definir relações de pai para filho, é possível filtrar a exibição para mostrar apenas o software pai ou que não tem nenhuma relação definida. Isso oculta todos os softwares definidos como um filho de outro software inventariado. Para fazer isso:
-   1.   Na barra de pesquisa, escolha **Adicionar critérios**
+   1.    Na barra de pesquisa, escolha **Adicionar critérios**
    2. Selecione **Software Pai** e, em seguida, altere o valor dos critérios para **está vazio** e, em seguida, clique em **Pesquisar**.
 
 A exibição agora mostra apenas os itens de software pai ou o software com nenhuma relação definida. O software que é apenas um filho de outro título não é exibido.
@@ -62,9 +64,4 @@ Esse comportamento poderá ser desativado pelo visualizador se eles preferirem d
 > [!NOTE]
 >
 > Chaves especiais, como ~!#@$%, não serão convertidas corretamente.
-
-
-
-<!--HONumber=Jan17_HO4-->
-
 

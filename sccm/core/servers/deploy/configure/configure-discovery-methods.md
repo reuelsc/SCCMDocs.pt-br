@@ -15,9 +15,11 @@ caps.latest.revision: 5
 author: Brenduns
 ms.author: brenduns
 manager: angrobe
-translationtype: Human Translation
+ms.translationtype: Human Translation
 ms.sourcegitcommit: 860815010068422f2d8854ed2d574c24cc386891
 ms.openlocfilehash: 63a3c2ef66c80d1da9b50e67166a2196cf1b081b
+ms.contentlocale: pt-br
+ms.lasthandoff: 05/17/2017
 
 ---
 # <a name="configure-discovery-methods-for-system-center-configuration-manager"></a>Configurar métodos de descoberta para o System Center Configuration Manager
@@ -44,7 +46,7 @@ Configure métodos de descoberta para serem executados em um site do System Cent
 4.  Clique em **OK** para salvar a configuração.  
 
 
-##  <a name="a-namebkmkconfigadforestdisca-configure-active-directory-forest-discovery"></a><a name="BKMK_ConfigADForestDisc"></a> Configurar a Descoberta de Florestas do Active Directory  
+##  <a name="BKMK_ConfigADForestDisc"></a> Configurar a Descoberta de Florestas do Active Directory  
 Para concluir a configuração de descoberta de florestas do Active Directory, é necessário definir as configurações em dois locais:  
 
 -   No nó **Métodos de Descoberta**, você pode:
@@ -98,7 +100,7 @@ Use os procedimentos a seguir para habilitar a descoberta de florestas do Active
 
 4.  Ao concluir a configuração da floresta a ser usada com a descoberta de florestas do Active Directory, escolha **OK** para salvá-la.  
 
-##  <a name="a-namebkmkconfigaddiscgenerala-configure-active-directory-discovery-for-computers-users-or-groups"></a><a name="BKMK_ConfigADDiscGeneral"></a> Configurar a Descoberta do Active Directory para computadores, usuários ou grupos  
+##  <a name="BKMK_ConfigADDiscGeneral"></a> Configurar a Descoberta do Active Directory para computadores, usuários ou grupos  
  Use as informações das seções a seguir para configurar a descoberta de computadores, usuários ou grupos. Você usará estes métodos de descoberta:  
 
 -   Descoberta de grupos do Active Directory  
@@ -210,7 +212,7 @@ Use os procedimentos a seguir para habilitar a descoberta de florestas do Active
 
 8.  Quando concluir a configuração da Descoberta de Usuários do Active Directory para esse site, escolha **OK** para salvá-la.  
 
-##  <a name="a-namebkmkconfighbdisca-configure-heartbeat-discovery"></a><a name="BKMK_ConfigHBDisc"></a> Configurar a Descoberta de Pulsação  
+##  <a name="BKMK_ConfigHBDisc"></a> Configurar a Descoberta de Pulsação  
  Por padrão, a Descoberta de Pulsação é habilitada quando você instala um site primário do Configuration Manager. Consequentemente, você precisa configurar somente o cronograma da frequência com que os clientes enviam os registro dos dados de descoberta da Descoberta de Pulsação para um ponto de gerenciamento quando não quiser que eles usem o valor padrão de sete dias.  
 
 > [!NOTE]  
@@ -226,10 +228,10 @@ Use os procedimentos a seguir para habilitar a descoberta de florestas do Active
 
 4.  Configure a frequência com que os clientes enviam registros de dados de Descoberta de pulsação e escolha **OK** para salvar a configuração.  
 
-##  <a name="a-namebkmkconfignetworkdisca-configure-network-discovery"></a><a name="BKMK_ConfigNetworkDisc"></a> Configurar a Descoberta de Rede  
+##  <a name="BKMK_ConfigNetworkDisc"></a> Configurar a Descoberta de Rede  
  Use as informações contidas nas seções a seguir para ajudá-lo a configurar a descoberta de rede.  
 
-###  <a name="a-namebkmkaboutconfignetworkdisca-about-configuring-network-discovery"></a><a name="BKMK_AboutConfigNetworkDisc"></a> Sobre a configuração de Descoberta de Rede  
+###  <a name="BKMK_AboutConfigNetworkDisc"></a> Sobre a configuração de Descoberta de Rede  
  Antes de configurar a descoberta de rede, é necessário saber o seguinte:  
 
 -   Níveis disponíveis de descoberta de rede  
@@ -244,14 +246,14 @@ Para saber mais, consulte [Sobre a Descoberta de Rede](../../../../core/servers/
 
  Por exemplo, talvez você queira descobrir todos os dispositivos SNMP (Simple Network Management Protocol) que usam um nome de comunidade SNMP específico. Além disso, para a execução da mesma descoberta, você poderá desabilitar a descoberta em uma sub-rede específica. Quando a descoberta for executada, a descoberta de rede não descobrirá dispositivos SNMP com o nome de comunidade especificado na sub-rede desabilitada.  
 
-####  <a name="a-namebkmkdeterminenettopologya-determine-your-network-topology"></a><a name="BKMK_DetermineNetTopology"></a> Determinar a topologia de rede  
+####  <a name="BKMK_DetermineNetTopology"></a> Determinar a topologia de rede  
  Você pode usar uma descoberta somente de topologia para mapear sua rede. Esse tipo de descoberta não descobre clientes potenciais. A Descoberta de Rede somente de topologia depende do SNMP.  
 
  Ao mapear a topologia de rede, você deve configurar o **Máximo de saltos** na guia **SNMP** na caixa de diálogo **Propriedades da Descoberta e Rede**. Apenas alguns saltos podem ajudar a controlar a largura de banda de rede é usada quando a descoberta é executada. À medida que você descobre mais sobre a rede, pode aumentar o número de saltos para ter um entendimento melhor da topologia de rede.  
 
  Depois de entender a topologia de rede, você poderá configurar propriedades adicionais para que a Descoberta de Rede descubra clientes potenciais e seus sistemas operacionais enquanto você está usando configurações disponíveis para limitar os segmentos de rede que a Descoberta de Rede pode pesquisar.  
 
-####  <a name="a-namebkmklimitbysubneta-limit-searches-by-using-subnets"></a><a name="BKMK_LimitBySubnet"></a> Limitar pesquisas usando sub-redes  
+####  <a name="BKMK_LimitBySubnet"></a> Limitar pesquisas usando sub-redes  
  Você pode configurar a Descoberta de Rede para pesquisar sub-redes específicas durante uma descoberta. Por padrão, a Descoberta de Rede pesquisa a sub-rede do servidor que executa a descoberta. Todas as sub-redes adicionais que você configurar e ativar aplicam-se somente às opções de pesquisa de SNMP e de DHCP (Dynamic Host Configuration Protocol). Quando a Descoberta de Rede pesquisa domínios, ela não é limitada por configurações de sub-redes.  
 
  Se você especificar uma ou mais sub-redes na guia **Sub-redes** na caixa de diálogo **Propriedades da Descoberta de Rede** , somente as sub-redes marcadas como **Habilitadas** serão pesquisadas.  
@@ -264,7 +266,7 @@ Para saber mais, consulte [Sobre a Descoberta de Rede](../../../../core/servers/
 
 -   As consultas baseadas em domínio podem descobrir recursos que estão localizados na sub-rede.  
 
-####  <a name="a-namebkmksearchbydomaina-search-a-specific-domain"></a><a name="BKMK_SearchByDomain"></a> Pesquisar um domínio específico  
+####  <a name="BKMK_SearchByDomain"></a> Pesquisar um domínio específico  
  Você pode configurar uma Descoberta de Rede para pesquisar um domínio específico ou um conjunto de domínios durante uma descoberta. Por padrão, a Descoberta de Rede pesquisa o domínio do servidor que executa a descoberta.  
 
  Se você especificar um ou mais domínios na guia **Domínio** na caixa de diálogo **Propriedades da Descoberta de Rede** , somente os domínios marcados como **Habilitados** serão pesquisados.  
@@ -277,7 +279,7 @@ Para saber mais, consulte [Sobre a Descoberta de Rede](../../../../core/servers/
 
 -   Os servidores DHCP ainda podem responder com uma lista de recursos localizados no domínio.  
 
-####  <a name="a-namebkmklimitbysnmpnamea-limit-searches-by-using-snmp-community-names"></a><a name="BKMK_LimitBySNMPname"></a> Limitar pesquisas usando nomes de comunidade SNMP  
+####  <a name="BKMK_LimitBySNMPname"></a> Limitar pesquisas usando nomes de comunidade SNMP  
  Configure uma Descoberta de Rede para pesquisar uma comunidade SNMP específica ou um conjunto de comunidades durante uma descoberta. Por padrão, o nome da comunidade de **pública** está configurado para uso.  
 
  A Descoberta de Rede usa nomes de comunidades para obter acesso aos roteadores que são dispositivos SNMP. Um roteador pode fornecer à Descoberta de Rede informações sobre outros roteadores e sub-redes que estejam vinculados ao primeiro roteador.  
@@ -290,7 +292,7 @@ Para saber mais, consulte [Sobre a Descoberta de Rede](../../../../core/servers/
 > [!NOTE]  
 >  Além de usar o nome da comunidade SNMP, você pode especificar o endereço IP ou o nome que pode ser resolvido de um dispositivo SNMP específico. Isso é feito na guia **Dispositivos SNMP** na caixa de diálogo **Propriedades de Descoberta de Rede**.  
 
-####  <a name="a-namebkmksearchbydhcpa-search-a-specific-dhcp-server"></a><a name="BKMK_SearchByDHCP"></a> Pesquisar um servidor DHCP específico  
+####  <a name="BKMK_SearchByDHCP"></a> Pesquisar um servidor DHCP específico  
  Você pode configurar a Descoberta de Rede para usar um servidor SNMP específico ou vários servidores para descobrir clientes DHCP durante uma descoberta.  
 
  A Descoberta de Rede pesquisa cada servidor DHCP especificado na guia **DHCP** na caixa de diálogo **Propriedades da Descoberta de Rede** . Se o servidor que executa a descoberta conceder seu endereço IP de um servidor DHCP, você poderá configurar a descoberta para pesquisa esse servidor marcando a caixa **Incluir o servidor DHCP que o servidor do site está configurado para usar**.  
@@ -298,7 +300,7 @@ Para saber mais, consulte [Sobre a Descoberta de Rede](../../../../core/servers/
 > [!NOTE]  
 >  Para configurar um servidor DHCP com êxito na Descoberta de Rede, o ambiente deve oferecer suporte a IPv4. Não é possível configurar a Descoberta de Rede para usar um servidor DHCP em um ambiente IPv6 nativo.  
 
-###  <a name="a-namebkmkhowtoconfignetdisca-how-to-configure-network-discovery"></a><a name="BKMK_HowToConfigNetDisc"></a> Como configurar a Descoberta de Rede  
+###  <a name="BKMK_HowToConfigNetDisc"></a> Como configurar a Descoberta de Rede  
  Use os procedimentos a seguir para descobrir primeiro somente a topologia de rede e, em seguida, configurar a Descoberta de Rede para descobrir clientes potenciais usando uma ou mais das opções disponíveis da Descoberta de Rede.  
 
 ##### <a name="to-determine-your-network-topology"></a>Para determinar a topologia de rede  
@@ -407,7 +409,7 @@ Para saber mais, consulte [Sobre a Descoberta de Rede](../../../../core/servers/
 
 12. Escolha **OK** para salvar as configurações.  
 
-###  <a name="a-namebkmkhowtoverifynetdisca-how-to-verify-that-network-discovery-has-finished"></a><a name="BKMK_HowToVerifyNetDisc"></a> Como verificar se a Descoberta de Rede foi concluída  
+###  <a name="BKMK_HowToVerifyNetDisc"></a> Como verificar se a Descoberta de Rede foi concluída  
  O tempo de que a Descoberta de Rede precisa para ser concluída pode variar dependendo de uma série de fatores. Esses fatores podem incluir um ou mais destes itens:  
 
 -   O tamanho da rede  
@@ -454,9 +456,4 @@ Como a Descoberta de Rede não cria mensagens para alertar quando a descoberta e
     -   Descrição: **Este componente foi iniciado**  
 
     Essa informação verifica se a descoberta de rede foi iniciada. Se essa informação não estiver presente, reagende a descoberta de rede.  
-
-
-
-<!--HONumber=Feb17_HO3-->
-
 

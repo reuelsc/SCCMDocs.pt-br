@@ -15,9 +15,11 @@ caps.latest.revision: 8
 author: robstackmsft
 ms.author: robstack
 manager: angrobe
-translationtype: Human Translation
+ms.translationtype: Human Translation
 ms.sourcegitcommit: 991eff171dce95590a7f050e0d3b07f98c0224b3
 ms.openlocfilehash: 2012ab5e55da8d707fd668e0163b42fe7d56c72f
+ms.contentlocale: pt-br
+ms.lasthandoff: 05/17/2017
 
 
 ---
@@ -110,9 +112,4 @@ Os cenários neste tópico oferecem uma introdução ao uso das configurações 
 6.  Conclua o assistente para criar o item de configuração.  
 
  Agora você pode usar as informações do tópico [Tarefas comuns para criar e implantar linhas de base de configuração](../../compliance/plan-design/common-tasks-for-creating-and-deploying-configuration-baselines.md) para ajudar a implantar nos dispositivos a configuração que você criou.  
-
-
-
-<!--HONumber=Jan17_HO4-->
-
 

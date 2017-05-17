@@ -12,9 +12,11 @@ ms.service:
 ms.technology:
 - configmgr-sum
 ms.assetid: a0767664-fd60-46a8-9da5-86cc431ce53c
-translationtype: Human Translation
+ms.translationtype: Human Translation
 ms.sourcegitcommit: 4e44e2b8f6baf020c3b7742bafd607082ffacaa4
 ms.openlocfilehash: 02e30ba48f3564fa8a31f21793c145054e02e002
+ms.contentlocale: pt-br
+ms.lasthandoff: 05/17/2017
 
 ---
 
@@ -58,9 +60,4 @@ ms.openlocfilehash: 02e30ba48f3564fa8a31f21793c145054e02e002
 6.  Clique no nó **Grupos de Atualização de Software** para exibir o grupo de atualização de software.  
 
 7.  Selecione o grupo de atualização de software e, na guia **Início** , no grupo **Atualizar** , clique em **Mostrar Membros** para exibir uma lista de atualizações de software que estão incluídas no grupo de atualização de software.  
-
-
-
-<!--HONumber=Jan17_HO4-->
-
 

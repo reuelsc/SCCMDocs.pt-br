@@ -16,9 +16,11 @@ caps.handback.revision: 0
 author: andredm7
 ms.author: andredm
 manager: angrobe
-translationtype: Human Translation
+ms.translationtype: Human Translation
 ms.sourcegitcommit: dacfdf02f04c6bd731ca0fc11e5af371b409c8b4
 ms.openlocfilehash: 1cee12d6f9c406e2438a3ed76674c3498fe9abbd
+ms.contentlocale: pt-br
+ms.lasthandoff: 01/03/2017
 
 
 ---
@@ -57,8 +59,3 @@ ms.openlocfilehash: 1cee12d6f9c406e2438a3ed76674c3498fe9abbd
 
 > [!NOTE]  
 >  O inventário de software não realizará o inventário da unidade do cliente novamente, a menos que esse arquivo seja excluído da unidade no computador cliente.
-
-
-<!--HONumber=Jan17_HO1-->
-
-

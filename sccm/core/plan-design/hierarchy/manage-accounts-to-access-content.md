@@ -15,9 +15,11 @@ caps.latest.revision: 4
 author: Brenduns
 ms.author: brenduns
 manager: angrobe
-translationtype: Human Translation
+ms.translationtype: Human Translation
 ms.sourcegitcommit: e592a732259147ee71d404a68982c28e5138e243
 ms.openlocfilehash: 0e982d08d54af39b13f553fc531a200f921e94a6
+ms.contentlocale: pt-br
+ms.lasthandoff: 05/17/2017
 
 ---
 # <a name="manage-accounts-to-access-content-in-system-center-configuration-manager"></a>Gerenciar contas para acessar conteúdo | System Center Configuration Manager
@@ -34,7 +36,7 @@ Antes de implantar o conteúdo no System Center Configuration Manager, considere
 
 -   **Conta de Conexão Multicast**. Usada para implantações de sistema operacional.  
 
-##  <a name="a-namebkmknaaa-network-access-account"></a><a name="bkmk_NAA"></a> Conta de acesso à rede  
+##  <a name="bkmk_NAA"></a> Conta de acesso à rede  
  Os computadores cliente usam a Conta de acesso à rede quando não podem usar a conta do computador local para acessar conteúdo em pontos de distribuição. Por exemplo, isso se aplica a clientes do grupo de trabalho e computadores de domínios não confiáveis. Essa conta também pode ser usada durante a implantação do sistema operacional quando o computador que está instalando o sistema operacional ainda não tem uma conta de computador no domínio.  
 
 -   Os clientes usam somente a conta de acesso à rede para acessar recursos na rede.  
@@ -66,7 +68,7 @@ Conceda a essa conta as permissões mínimas adequadas que o cliente necessita p
 
 3.  Clique na guia **Conta de acesso à rede**. Configure uma ou mais contas e clique em **OK**.  
 
-##  <a name="a-namebkmkpaaa-package-access-accounts"></a><a name="bkmk_Paa"></a> Contas de Acesso ao Pacote  
+##  <a name="bkmk_Paa"></a> Contas de Acesso ao Pacote  
  As Contas de Acesso ao Pacote possibilitam definir permissões do sistema de arquivos NTFS para especificar usuários e grupos de usuários que podem acessar o conteúdo do pacote em pontos de distribuição. Por padrão, o Configuration Manager concede acesso somente a contas de **Usuários** e **Administradores** genéricas. Entretanto, você pode controlar o acesso a computadores cliente usando contas ou grupos do Windows adicionais. Os dispositivos móveis sempre recuperam o conteúdo do pacote anonimamente e, portanto, não usam as Contas de Acesso ao Pacote.  
 
  Por padrão, quando o Configuration Manager copia os arquivos de conteúdo de um pacote para um ponto de distribuição, ele concede acesso de **Leitura** ao grupo local **Usuários** e **Controle Total** ao grupo local **Administradores**. As permissões reais necessárias dependerão do pacote. Se houver clientes em grupos de trabalho ou em florestas não confiáveis, os clientes usarão a Conta de Acesso à Rede para acessar o conteúdo do pacote. Verifique se a Conta de Acesso à Rede tem permissões para o pacote usando as Contas de Acesso ao Pacote definidas.  
@@ -102,7 +104,7 @@ Conceda a essa conta as permissões mínimas adequadas que o cliente necessita p
     > [!NOTE]  
     >  Quando você adiciona um nome de usuário para a conta e o Configuration Manager encontra uma conta de usuário local e uma conta de usuário de domínio com esse nome, o Configuration Manager estabelece direitos de acesso para a conta de usuário de domínio.  
 
-##  <a name="a-namebkmkmultia-multicast-connection-account"></a><a name="bkmk_multi"></a> Conta de Conexão Multicast  
+##  <a name="bkmk_multi"></a> Conta de Conexão Multicast  
  A Conta de Conexão Multicast é usada por pontos de distribuição configurados para multicast, para ler as informações do banco de dados do site.  
 
 -   Especifique uma conta a ser usada ao configurar conexões de banco de dados do Configuration Manager para multicast.  
@@ -119,9 +121,4 @@ Se você criar essa conta, crie-a com direitos limitados, a conta local no compu
 
 > [!IMPORTANT]  
 >  Não conceda a essa conta direitos interativos de logon.  
-
-
-
-<!--HONumber=Feb17_HO1-->
-
 

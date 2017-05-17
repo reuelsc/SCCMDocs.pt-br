@@ -16,9 +16,11 @@ caps.handback.revision: 0
 author: Dougeby
 ms.author: dougeby
 manager: angrobe
-translationtype: Human Translation
+ms.translationtype: Human Translation
 ms.sourcegitcommit: 89158debdf4c345a325feeb608db2215a88ed81b
 ms.openlocfilehash: 87ab9925717a307cbda3cea1f2e470ae012fa067
+ms.contentlocale: pt-br
+ms.lasthandoff: 05/17/2017
 
 
 ---
@@ -28,10 +30,10 @@ ms.openlocfilehash: 87ab9925717a307cbda3cea1f2e470ae012fa067
 
 O System Center Configuration Manager fornece um catálogo de drivers que pode ser usado para gerenciar os drivers de dispositivos do Windows no ambiente do Configuration Manager. É possível usar o catálogo de drivers para importar drivers de dispositivo no Configuration Manager, para agrupá-los em pacotes e para distribuir esses pacotes em pontos de distribuição, dos quais é possível acessá-los ao implantar um sistema operacional. Drivers de dispositivo podem ser acessados quando você instala o sistema operacional integral no computador de destino e quando instala o Windows PE usando uma imagem de inicialização. Os drivers de dispositivo do Windows consistem em um arquivo INF (arquivo de informações) de instalação e arquivos adicionais necessários para dar suporte ao dispositivo. Quando um sistema operacional é implantado, o Configuration Manager obtém as informações de hardware e plataforma para o dispositivo por meio de seu arquivo INF. Use o seguinte para gerenciar drivers em seu ambiente do Configuration Manager.
 
-##  <a name="a-namebkmkdrivercategoriesa-device-driver-categories"></a><a name="BKMK_DriverCategories"></a> Categorias de driver de dispositivo  
+##  <a name="BKMK_DriverCategories"></a> Categorias de driver de dispositivo  
  Quando você importa drivers de dispositivo, é possível atribuir os drivers de dispositivo a uma categoria. Categorias de driver de dispositivo ajudam a agrupar drivers de dispositivo de uso similar no catálogo de driver. Por exemplo, você pode atribuir todos os drivers de dispositivo do adaptador de rede a uma categoria específica. Em seguida, ao criar uma sequência de tarefas que inclua a etapa [Auto Apply Drivers](../understand/task-sequence-steps.md#BKMK_AutoApplyDrivers) , é possível especificar uma categoria específica de drivers de dispositivo. O Configuration Manager faz a varredura do hardware e seleciona os drivers aplicáveis dessa categoria a serem preparados no sistema para uso da Instalação do Windows.  
 
-##  <a name="a-namebkmkmanagingdriverpackagesa-driver-packages"></a><a name="BKMK_ManagingDriverPackages"></a> Pacotes de driver  
+##  <a name="BKMK_ManagingDriverPackages"></a> Pacotes de driver  
  É possível agrupar drivers de dispositivo semelhantes em pacotes para ajudar a simplificar as implantações de sistema operacional. Por exemplo, você pode decidir criar um pacote de driver para cada fabricante de computador na rede. É possível criar um pacote de driver durante a importação de drivers no catálogo de drivers diretamente no nó **Pacotes de Driver** . Depois de criado, o pacote de driver deverá ser distribuído para pontos de distribuição, de onde os computadores cliente do Configuration Manager podem instalar os drivers conforme forem necessários. Considere o seguinte:  
 
 -   Quando você cria um pacote de driver, o local de origem do pacote deve apontar para um compartilhamento de rede vazio, não usado por outro pacote de driver, e o Provedor de SMS deve ter as permissões de Leitura e Gravação para esse local.  
@@ -42,7 +44,7 @@ O System Center Configuration Manager fornece um catálogo de drivers que pode s
 
  Use as seções a seguir para criar e gerenciar pacotes de driver.  
 
-###  <a name="a-namecreatingdriverpackagesa-create-a-driver-package"></a><a name="CreatingDriverPackages"></a> Criar um pacote de driver  
+###  <a name="CreatingDriverPackages"></a> Criar um pacote de driver  
  Use o procedimento a seguir para criar um novo pacote de driver.  
 
 > [!IMPORTANT]  
@@ -74,7 +76,7 @@ O System Center Configuration Manager fornece um catálogo de drivers que pode s
 
  Se o nó **Pacotes de Driver** contiver diversos pacotes, você poderá adicionar pastas ao nó para separar os pacotes em grupos lógicos.  
 
-###  <a name="a-namebkmkpackageactionsa-additional-actions-for-driver-packages"></a><a name="BKMK_PackageActions"></a> Ações adicionais para pacotes de driver  
+###  <a name="BKMK_PackageActions"></a> Ações adicionais para pacotes de driver  
  Você pode executar ações adicionais para gerenciar pacotes de driver ao selecionar um ou mais pacotes de driver do nó **Pacotes de Driver** . Essas ações incluem:  
 
 |Ação|Descrição|  
@@ -87,10 +89,10 @@ O System Center Configuration Manager fornece um catálogo de drivers que pode s
 |**Atualizar Pontos de Distribuição**|Atualiza o pacote de driver de dispositivo em todos os pontos de distribuição onde o pacote é armazenado. Essa ação copia somente o conteúdo alterado desde a última vez que ele foi distribuído.|  
 |**Propriedades**|Abre a caixa de diálogo **Propriedades** , onde é possível verificar e alterar as propriedades e o conteúdo do driver de dispositivo. Por exemplo, é possível alterar o nome e a descrição do driver de dispositivo, habilitá-lo e especificar as plataformas em que o driver de dispositivo pode ser executado.|  
 
-##  <a name="a-namebkmkdevicedriversa-device-drivers"></a><a name="BKMK_DeviceDrivers"></a> Drivers de dispositivo  
+##  <a name="BKMK_DeviceDrivers"></a> Drivers de dispositivo  
  É possível instalar drivers de dispositivo em computadores de destino sem incluí-los na imagem do sistema operacional que está sendo implantada. O Configuration Manager fornece um catálogo de drivers que contém referências a todos os drivers de dispositivos importados para o Configuration Manager. O catálogo de drivers está localizado no espaço de trabalho **Biblioteca de Software** e consiste em dois nós: **Drivers** e **Pacotes de Driver**. O nó **Drivers** lista todos os drivers que você importou no catálogo de drivers. Use esse nó para descobrir os detalhes sobre cada driver importado, modificar os drivers em um pacote de driver ou em uma imagem de inicialização, habilitar ou desabilitar um driver e assim por diante.  
 
-###  <a name="a-namebkmkimportdriversa-import-device-drivers-into-the-driver-catalog"></a><a name="BKMK_ImportDrivers"></a> Importar drivers de dispositivo para o catálogo de drivers  
+###  <a name="BKMK_ImportDrivers"></a> Importar drivers de dispositivo para o catálogo de drivers  
  Você deve importar drivers de dispositivo no catálogo de drivers para poder usá-los quando implantar um sistema operacional. Para melhor gerenciar seus drivers de dispositivos, importe somente aqueles drivers de dispositivos que pretende instalar como parte da implantação de seu sistema operacional. No entanto, você também pode armazenar várias versões de drivers de dispositivo no catálogo de drivers, de modo a facilitar a atualização dos drivers de dispositivo existentes, quando os requisitos de dispositivo de hardware mudarem em sua rede.  
 
  Como parte do processo de importação do driver de dispositivo, o Configuration Manager lê as informações do provedor, da classe, da versão, da assinatura, do hardware e da plataforma com suporte associadas ao dispositivo. Por padrão, o driver é nomeado após o primeiro dispositivo de hardware que ele suporta; no entanto, é possível renomeá-lo posteriormente. A lista de plataformas com suporte baseia-se nas informações do arquivo INF do driver. Como a precisão dessas informações pode variar, verifique manualmente se há suporte para o driver de dispositivo após ele ser importado para o catálogo de drivers.  
@@ -166,7 +168,7 @@ O System Center Configuration Manager fornece um catálogo de drivers que pode s
 
 8.  Conclua o assistente.  
 
-###  <a name="a-namebkmkmodifydriverpackagea-manage-device-drivers-in-a-driver-package"></a><a name="BKMK_ModifyDriverPackage"></a> Gerenciar drivers de dispositivo em um pacote de driver  
+###  <a name="BKMK_ModifyDriverPackage"></a> Gerenciar drivers de dispositivo em um pacote de driver  
  Use os procedimentos a seguir para modificar pacotes de driver e imagens de inicialização. Para adicionar ou remover drivers de dispositivo, localize os drivers no nó **Drivers** e edite os pacotes ou as imagens de inicialização aos quais os drivers selecionados estão associados.  
 
 #### <a name="to-modify-the-device-drivers-in-a-driver-package"></a>Para modificar os drivers de dispositivo em um pacote de driver  
@@ -187,7 +189,7 @@ O System Center Configuration Manager fornece um catálogo de drivers que pode s
 
      Clique em **OK**.  
 
-###  <a name="a-namebkmkmanagedriversbootimagea-manage-device-drivers-in-a-boot-image"></a><a name="BKMK_ManageDriversBootImage"></a> Gerenciar drivers de dispositivo em uma imagem de inicialização  
+###  <a name="BKMK_ManageDriversBootImage"></a> Gerenciar drivers de dispositivo em uma imagem de inicialização  
  É possível adicionar, a imagens de inicialização, drivers de dispositivo do Windows que foram importados no catálogo de driver. Ao adicionar drivers de dispositivo a uma imagem de inicialização, use as seguintes diretrizes:  
 
 -   Adicione somente drivers de dispositivo de armazenamento em massa e adaptador de rede a imagens de inicialização, pois outros tipos de drivers geralmente não são necessários. Drivers não obrigatórios aumentam o tamanho das imagens de inicialização desnecessariamente.  
@@ -228,7 +230,7 @@ O System Center Configuration Manager fornece um catálogo de drivers que pode s
 
 7.  Clique em **OK**.  
 
-###  <a name="a-namebkmkdriveractionsa-additional-actions-for-device-drivers"></a><a name="BKMK_DriverActions"></a> Ações adicionais para drivers de dispositivo  
+###  <a name="BKMK_DriverActions"></a> Ações adicionais para drivers de dispositivo  
  Você pode executar ações adicionais para gerenciar drivers de dispositivo ao selecionar um ou mais drivers de dispositivo do nó **Drivers** . Essas ações incluem:  
 
 |Ação|Descrição|  
@@ -240,7 +242,7 @@ O System Center Configuration Manager fornece um catálogo de drivers que pode s
 |**Moverr**|Move o driver de dispositivo para outra pasta do nó **Drivers** .|  
 |**Propriedades**|Abre a caixa de diálogo **Propriedades** , onde é possível verificar e alterar as propriedades do driver de dispositivo. Por exemplo, é possível alterar o nome e a descrição do driver de dispositivo, ativá-lo e especificar as plataformas em que o driver de dispositivo pode ser executado.|  
 
-##  <a name="a-namebkmktsdriversa-use-task-sequences-to-install-device-drivers"></a><a name="BKMK_TSDrivers"></a> Usar sequências de tarefas para instalar drivers de dispositivo  
+##  <a name="BKMK_TSDrivers"></a> Usar sequências de tarefas para instalar drivers de dispositivo  
  Use sequências de tarefas para automatizar a forma como o sistema operacional é implantado. Cada etapa na sequência de tarefas pode executar uma ação específica, como instalar um driver de dispositivo. Ao implantar sistemas operacionais, você pode usar as duas etapas de sequência de tarefas a seguir para instalar os drivers de dispositivo:  
 
 -   [Auto Apply Drivers](../understand/task-sequence-steps.md#BKMK_AutoApplyDrivers): essa etapa permite que você combine automaticamente e instale drivers de dispositivo como parte de uma implantação de sistema operacional. Você pode configurar a etapa de sequência de tarefas para instalar somente o driver mais compatível com cada dispositivo de hardware detectado ou especificar que a etapa de sequência de tarefas instale todos os drivers compatíveis com cada dispositivo de hardware detectado, e então deixar que a Instalação do Windows escolha o melhor driver. Além disso, pode especificar uma categoria de drivers de dispositivo para limitar os drivers disponíveis para essa etapa.  
@@ -249,7 +251,7 @@ O System Center Configuration Manager fornece um catálogo de drivers que pode s
 
  Ao usar essas etapas de sequência de tarefas, você também pode especificar como os drivers de dispositivo são instalados no computador onde o sistema operacional está sendo implantado. Para obter mais informações, consulte [Gerenciar sequências de tarefas para automatizar tarefas](../deploy-use/manage-task-sequences-to-automate-tasks.md).  
 
-##  <a name="a-namebkmkinstallingdevicediriverstsa-use-task-sequences-to-install-device-drivers-on-computers"></a><a name="BKMK_InstallingDeviceDiriversTS"></a> Usar sequências de tarefas para instalar drivers de dispositivo em computadores  
+##  <a name="BKMK_InstallingDeviceDiriversTS"></a> Usar sequências de tarefas para instalar drivers de dispositivo em computadores  
  Use o procedimento a seguir para instalar drivers de dispositivo como parte da implantação de sistema operacional.  
 
 #### <a name="use-a-task-sequence-to-install-device-drivers"></a>Usar uma sequência de tarefas para instalar drivers de dispositivo  
@@ -273,11 +275,6 @@ O System Center Configuration Manager fornece um catálogo de drivers que pode s
 
  Para obter mais informações sobre como criar uma sequência de tarefas para instalar um sistema operacional, consulte [Create a task sequence to install an operating system (Criar uma sequência de tarefas para instalar um sistema operacional)](../deploy-use/create-a-task-sequence-to-install-an-operating-system.md).  
 
-##  <a name="a-namebkmkdriverreportsa-driver-management-reports"></a><a name="BKMK_DriverReports"></a> Relatórios de gerenciamento de drivers  
+##  <a name="BKMK_DriverReports"></a> Relatórios de gerenciamento de drivers  
  Na categoria de relatórios **Gerenciamento de driver** , vários relatórios podem ser usados para determinar informações gerais sobre os drivers de dispositivo no catálogo de driver. Para obter mais informações sobre relatórios, consulte [Relatórios](../../core/servers/manage/reporting.md).
-
-
-
-<!--HONumber=Jan17_HO4-->
-
 

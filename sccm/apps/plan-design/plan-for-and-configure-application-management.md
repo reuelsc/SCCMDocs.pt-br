@@ -15,9 +15,11 @@ caps.latest.revision: 13
 author: robstackmsft
 ms.author: robstack
 manager: angrobe
-translationtype: Human Translation
+ms.translationtype: Human Translation
 ms.sourcegitcommit: 1c43c4968f93985515249ddb117269f8ed61302a
 ms.openlocfilehash: 46cc3fcfd9516cf1c124e24b50d0aac0cb0025dc
+ms.contentlocale: pt-br
+ms.lasthandoff: 05/17/2017
 
 
 ---
@@ -225,9 +227,4 @@ A identidade visual personalizada do Centro de Software é aplicada de acordo co
 
 > [!WARNING]  
 >  Após a instalação das funções do sistema de site do Catálogo de Aplicativos, você não verá imediatamente o Catálogo de Aplicativos ao clicar no link **Encontrar aplicativos adicionais no Catálogo de Aplicativos** do Centro de Software. O catálogo de aplicativos ficará disponível no Software Center quando o cliente fizer seus próximos downloads de sua política de cliente ou até 25 horas após a instalação das funções do sistema de site do catálogo de aplicativos.  
-
-
-
-<!--HONumber=Feb17_HO2-->
-
 

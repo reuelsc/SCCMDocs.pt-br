@@ -17,9 +17,11 @@ author: Brenduns
 ms.author: brenduns
 manager: angrobe
 robots: noindex
-translationtype: Human Translation
+ms.translationtype: Human Translation
 ms.sourcegitcommit: 7479e54b5db2eff893bf9fbaf52c104836cda519
 ms.openlocfilehash: 5b5540c35c02df6e3d06e4aa9269b8da3238233e
+ms.contentlocale: pt-br
+ms.lasthandoff: 05/17/2017
 
 
 ---
@@ -149,9 +151,4 @@ Ao estender o esquema para o System Center Configuration Manager, as seguintes c
 > -   Classe: cn=MS-SMS-Server-Locator-Point  
 
 Você pode verificar se a lista anterior é atual exibindo o arquivo **ConfigMgr_ad_schema.LDF** da pasta **\SMSSETUP\BIN\x64** da mídia de instalação do System Center Configuration Manager.  
-
-
-
-<!--HONumber=Feb17_HO2-->
-
 

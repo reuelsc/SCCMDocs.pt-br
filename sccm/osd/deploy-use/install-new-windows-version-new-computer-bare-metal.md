@@ -15,9 +15,11 @@ caps.latest.revision: 8
 author: Dougeby
 ms.author: dougeby
 manager: angrobe
-translationtype: Human Translation
+ms.translationtype: Human Translation
 ms.sourcegitcommit: 89158debdf4c345a325feeb608db2215a88ed81b
 ms.openlocfilehash: 584dad7d8b05a2da9f7a66b73028ae99ff1a594f
+ms.contentlocale: pt-br
+ms.lasthandoff: 05/17/2017
 
 
 ---
@@ -29,13 +31,13 @@ Este tópico fornece as etapas gerais no System Center Configuration Manager par
 
 Use as seções a seguir para atualizar um computador existente com uma nova versão do Windows.  
 
-##  <a name="a-namebkmkplana-plan"></a><a name="BKMK_Plan"></a> Planoo  
+##  <a name="BKMK_Plan"></a> Planoo  
 
 -   **Planejar e implementar requisitos de infraestrutura**  
 
      Existem vários requisitos de infraestrutura que devem estar em vigor antes que você possa implantar sistemas operacionais, como Windows ADK, WDS (Serviços de Implantação do Windows), configurações de disco rígido com suporte, etc. Para mais informações, consulte [Requisitos de infraestrutura para implantação do sistema operacional](../plan-design/infrastructure-requirements-for-operating-system-deployment.md).
 
-##  <a name="a-namebkmkconfigurea-configure"></a><a name="BKMK_Configure"></a> Configurar  
+##  <a name="BKMK_Configure"></a> Configurar  
 
 1.  **Preparar uma imagem de inicialização**  
 
@@ -59,7 +61,7 @@ Use as seções a seguir para atualizar um computador existente com uma nova ver
 
      Use uma sequência de tarefas para automatizar a instalação do sistema operacional na rede. Use as etapas em [Criar uma sequência de tarefas para instalar um sistema operacional](create-a-task-sequence-to-install-an-operating-system.md) para criar a sequência de tarefas para implantar o sistema operacional. Dependendo do método de implantação que você escolher, pode haver considerações adicionais para a sequência de tarefas.  
 
-##  <a name="a-namebkmkdeploya-deploy"></a><a name="BKMK_Deploy"></a> Implantar  
+##  <a name="BKMK_Deploy"></a> Implantar  
 
 -   Use um dos seguintes métodos de implantação para implantar o sistema operacional:  
 
@@ -78,9 +80,4 @@ Use as seções a seguir para atualizar um computador existente com uma nova ver
 -   **Monitorar a implantação da sequência de tarefas**  
 
      Para monitorar a implantação da sequência de tarefas para instalar o sistema operacional, consulte [Monitorar implantações do sistema operacional](monitor-operating-system-deployments.md).  
-
-
-
-<!--HONumber=Jan17_HO4-->
-
 

@@ -16,9 +16,11 @@ caps.handback.revision: 0
 author: andredm7
 ms.author: andredm
 manager: angrobe
-translationtype: Human Translation
+ms.translationtype: Human Translation
 ms.sourcegitcommit: 05c27c7aa36e0b4236867766dab36125c31467b3
 ms.openlocfilehash: c0b4fcda6599ed91fe2393b97bdcec6cdfba9b7c
+ms.contentlocale: pt-br
+ms.lasthandoff: 01/03/2017
 
 
 ---
@@ -70,9 +72,4 @@ As janelas de manutenção permitem que você defina um período em que as opera
 7.  Faça uma seleção na lista suspensa **Aplicar este agendamento a**.  
 
 8.  Escolha **OK** e feche a caixa de diálogo **Propriedades do &lt;nome da coleção\>**.  
-
-
-
-<!--HONumber=Jan17_HO1-->
-
 

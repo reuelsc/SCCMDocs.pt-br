@@ -15,9 +15,11 @@ caps.latest.revision: 10
 author: Brenduns
 ms.author: brenduns
 manager: angrobe
-translationtype: Human Translation
+ms.translationtype: Human Translation
 ms.sourcegitcommit: a181171cc1a92ec4519f4e4b34ca3274a0aa0440
 ms.openlocfilehash: 1c9e7ada6a8aa228b30e58865baae0f6e529e6af
+ms.contentlocale: pt-br
+ms.lasthandoff: 05/17/2017
 
 
 ---
@@ -35,7 +37,7 @@ Os clientes do System Center Configuration Manager usam um processo chamado *loc
 
 
 
-##  <a name="a-namebkmkfunda-fundamentals-of-service-location"></a><a name="bkmk_fund"></a> Fundamentals of service location  
+##  <a name="bkmk_fund"></a> Fundamentals of service location  
  Um cliente avalia seu local de rede atual, a preferência de protocolo de comunicação e o site atribuído ao usar o local do serviço para localizar um ponto de gerenciamento com o qual ela possa se comunicar.  
 
  **Um cliente se comunica com um ponto de gerenciamento para:**  
@@ -56,7 +58,7 @@ Os clientes do System Center Configuration Manager usam um processo chamado *loc
 
 -   Quando você implanta uma função de sistema de site que usa o Internet Information Services (IIS) oferece suporte à comunicação de clientes, você deve especificar se os clientes conectam ao sistema de site usando HTTP ou HTTPS. Se você usar HTTP, também deve considerar as opções de assinatura e criptografia. Para saber mais, consulte [Planejar assinatura e criptografia](../../../core/plan-design/security/plan-for-security.md#BKMK_PlanningForSigningEncryption) em [Planejar a segurança no System Center Configuration Manager](../../../core/plan-design/security/plan-for-security.md).  
 
-##  <a name="a-namebkmkplanservicelocationa-service-location-and-how-clients-determine-their-assigned-management-point"></a><a name="BKMK_Plan_Service_Location"></a> Local do serviço e como os clientes determinam seu ponto de gerenciamento atribuído  
+##  <a name="BKMK_Plan_Service_Location"></a> Local do serviço e como os clientes determinam seu ponto de gerenciamento atribuído  
 Quando um cliente é atribuído inicialmente a um site primário, ele seleciona um ponto de gerenciamento padrão para o site. Sites primários dão suporte a vários pontos de gerenciamento, e cada cliente independente identifica um ponto de gerenciamento como seu ponto de gerenciamento padrão. Esse ponto de gerenciamento padrão então se torna o ponto de gerenciamento atribuído desse cliente. (Você também pode usar comandos de instalação do cliente para definir o ponto de gerenciamento atribuído para um cliente no momento da instalação).  
 
 Um cliente seleciona um ponto de gerenciamento para se comunicarem com base no local de rede atual e nas configurações de grupo de limite. Embora tenha um ponto de gerenciamento atribuído, esse não pode ser o ponto de gerenciamento que o cliente usa.  
@@ -83,7 +85,7 @@ Por exemplo, quando um cliente do Configuration Manager na Internet se conecta a
 
 Um cliente que não está configurado para a Internet não recebe pontos de gerenciamento voltados apenas para a Internet. Clientes de grupo de trabalho configurados para a Internet comunicam-se apenas com pontos de gerenciamento voltados para a Internet.  
 
-##  <a name="a-namebkmkmplista-the-mp-list"></a><a name="BKMK_MPList"></a> A lista de MP  
+##  <a name="BKMK_MPList"></a> A lista de MP  
 A lista de MP é a origem preferencial para o local de origem do serviço para um cliente, pois é uma lista priorizada de pontos de gerenciamento que o cliente já identificou. Essa lista é classificada por cada cliente com base em seu local de rede no momento em que o cliente atualizou a lista, armazenando-a localmente no cliente no WMI.  
 
 ### <a name="building-the-initial-mp-list"></a>Criar a lista de MP inicial  
@@ -134,7 +136,7 @@ Depois de estabelecer comunicação com um ponto de gerenciamento, um cliente co
 
 Depois, o cliente seleciona aleatoriamente um novo ponto de gerenciamento para usar.  
 
-##  <a name="a-namebkmkada-active-directory"></a><a name="bkmk_ad"></a> Active Directory  
+##  <a name="bkmk_ad"></a> Active Directory  
 Clientes que ingressaram no domínio podem usar o AD DS para o local do serviço. Isso requer que sites [publiquem dados para o Active Directory](http://technet.microsoft.com/library/hh696543.aspx).  
 
 Um cliente poderá usar AD DS para o local do serviço quando todas as condições a seguir forem verdadeiras:  
@@ -145,7 +147,7 @@ Um cliente poderá usar AD DS para o local do serviço quando todas as condiçõ
 
 Se um cliente não conseguir localizar um ponto de gerenciamento para usar para a localização do serviço do AD DS, ele tentará usar DNS.  
 
-##  <a name="a-namebkmkdnsa-dns"></a><a name="bkmk_dns"></a> DNS  
+##  <a name="bkmk_dns"></a> DNS  
 Clientes na intranet podem usar o DNS para o local do serviço. Isso exige que pelo menos um site em uma hierarquia publique informações sobre pontos de gerenciamento no DNS.  
 
 Considere usar o DNS para o local do serviço quando qualquer uma das seguintes condições forem verdadeiras:
@@ -243,15 +245,10 @@ Se você estiver usando o DNS do Windows Server, você poderá usar o procedimen
 
 Repita essas etapas para cada ponto de gerenciamento da intranet que você desejar publicar no DNS.  
 
-##  <a name="a-namebkmkwinsa-wins"></a><a name="bkmk_wins"></a> WINS  
+##  <a name="bkmk_wins"></a> WINS  
 Quando outros mecanismos de localização de serviço falharem, os clientes poderão encontrar um ponto de gerenciamento inicial verificando o WINS.  
 
 Por padrão, um site primário publica para o WINS, o primeiro ponto de gerenciamento no site que está configurado para HTTP e o primeiro ponto de gerenciamento configurado para HTTPS.  
 
 Se você não quiser que os clientes encontrem um ponto de gerenciamento HTTP em WINS, configure-os com a propriedade CCMSetup.exe Client.msi **SMSDIRECTORYLOOKUP=NOWINS**.  
-
-
-
-<!--HONumber=Feb17_HO2-->
-
 

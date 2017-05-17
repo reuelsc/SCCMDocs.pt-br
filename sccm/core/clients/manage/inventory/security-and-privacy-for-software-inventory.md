@@ -16,9 +16,11 @@ caps.handback.revision: 0
 author: andredm7
 ms.author: andredm
 manager: angrobe
-translationtype: Human Translation
+ms.translationtype: Human Translation
 ms.sourcegitcommit: fc392e4440e84614f92218e9c7a09ec1c2c64f53
 ms.openlocfilehash: 2144dfa87f40fcb2195f7278a21b47e05d6d6f38
+ms.contentlocale: pt-br
+ms.lasthandoff: 12/16/2016
 
 
 ---
@@ -28,7 +30,7 @@ ms.openlocfilehash: 2144dfa87f40fcb2195f7278a21b47e05d6d6f38
 
 Este tópico contém as informações de segurança e privacidade do inventário de software no System Center Configuration Manager.  
 
-##  <a name="a-namebkmksecurityhardwareinventorya-security-best-practices-for-software-inventory"></a><a name="BKMK_Security_HardwareInventory"></a> Práticas recomendadas de segurança para inventário de software  
+##  <a name="BKMK_Security_HardwareInventory"></a> Práticas recomendadas de segurança para inventário de software  
  Use as seguintes práticas recomendadas de segurança ao coletar dados de inventário de software de clientes:  
 
 |Prática recomendada de segurança|Mais informações|  
@@ -52,7 +54,7 @@ Este tópico contém as informações de segurança e privacidade do inventário
 
  O inventário de software é habilitado por padrão como uma configuração do cliente.  
 
-##  <a name="a-namebkmkprivacyhardwareinventorya-privacy-information-for-software-inventory"></a><a name="BKMK_Privacy_HardwareInventory"></a> Informações sobre privacidade para o inventário de software  
+##  <a name="BKMK_Privacy_HardwareInventory"></a> Informações sobre privacidade para o inventário de software  
  O inventário de hardware permite que você recupere todas as informações armazenadas no Registro e no WMI em clientes do Configuration Manager. O inventário de software permite descobrir todos os arquivos de um tipo especificado ou coletar todos os arquivos especificados de clientes. O Asset Intelligence aprimora os recursos de inventário estendendo o inventário de hardware e software e adicionando novas funcionalidades de gerenciamento de licenças.  
 
  O inventário de hardware é habilitado por padrão como uma configuração do cliente, e as informações do WMI coletadas são determinadas pelas opções que você selecionar. O inventário de software é habilitado por padrão, mas arquivos não são coletados por padrão. A coleta de dados do Asset Intelligence é habilitada automaticamente; mesmo assim, é possível selecionar as classes de relatório de inventário de hardware a ser habilitadas.  
@@ -60,9 +62,4 @@ Este tópico contém as informações de segurança e privacidade do inventário
  As informações de inventário não são enviadas à Microsoft. As informações de inventário são armazenadas no banco de dados do Configuration Manager. Quando os clientes usam HTTPS para se conectarem a pontos de gerenciamento, os dados de inventário que enviam para o site são criptografados durante a transferência. Se os clientes usarem HTTP para se conectar a pontos de gerenciamento, você terá a opção de habilitar a criptografia de inventário. Os dados de inventário não são armazenados em formato criptografado no banco de dados. As informações são mantidas no banco de dados até que sejam excluídas pelas tarefas de manutenção do site **Excluir Histórico de Inventário Antigo** ou **Excluir Arquivos Coletados Antigos** a cada 90 dias. Você pode configurar o intervalo de exclusão.  
 
  Antes de configurar o inventário de hardware, o inventário de software, a coleta de arquivos ou a coleta de dados do Asset Intelligence, considere seus requisitos de privacidade.  
-
-
-
-<!--HONumber=Dec16_HO3-->
-
 

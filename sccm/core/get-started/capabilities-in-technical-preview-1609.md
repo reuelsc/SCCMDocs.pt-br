@@ -15,9 +15,11 @@ caps.latest.revision: 2
 author: Brenduns
 ms.author: brenduns
 manager: angrobe
-translationtype: Human Translation
+ms.translationtype: Human Translation
 ms.sourcegitcommit: 5d08d1f9ccd995d544c3c21c4af52ede73343077
 ms.openlocfilehash: 89a41c8a3137d0e54011ddf9a1d9b4894ecb7df8
+ms.contentlocale: pt-br
+ms.lasthandoff: 05/17/2017
 
 ---
 # <a name="capabilities-in-technical-preview-1609-for-system-center-configuration-manager"></a>Funcionalidades no Technical Preview 1609 do System Center Configuration Manager
@@ -240,15 +242,15 @@ As seções a seguir detalham as alterações introduzidas com essa versão pré
 
 ### <a name="changes-in-ui-and-behavior-for-boundary-groups-and-content-locations"></a>Alterações na interface do usuário e comportamento de grupos de limites e locais de conteúdo
 A seguir estão as principais alterações de grupos de limites e como os clientes encontram conteúdo. Muitas dessas alterações e conceitos funcionam em conjunto.
--   **As configurações para rápido ou lento foram removidas:** você não configura mais pontos de distribuição individuais para serem rápidos ou lentos.  Em vez disso, cada sistema de sites associado a um grupo de limites é tratado da mesma forma. Por causa dessa alteração, as guias **Referências** das propriedades do grupo de limites não dão mais suporte à configuração de Rápido ou Lento.
--   **Novo grupo de limites padrão em cada site:** cada site primário tem um novo grupo de limites padrão chamado ***Default-Site-Boundary-Group\<sitecode>***.  Quando um cliente não está em um local de rede que é atribuído a um grupo de limites, o cliente usará os sistemas de sites associados ao grupo padrão do seu site atribuído. Planeje usar esse grupo de limites como uma substituição para o conceito de local de conteúdo de fallback.    
- -  **'Allow fallback source locations for content' (Permitir locais de origem de fallback para conteúdo)** foi removido: você não configura mais explicitamente um ponto de distribuição para ser usado para o fallback e as opções essa configuração foram removidos da interface do usuário.
+-    **As configurações para rápido ou lento foram removidas:** você não configura mais pontos de distribuição individuais para serem rápidos ou lentos.  Em vez disso, cada sistema de sites associado a um grupo de limites é tratado da mesma forma. Por causa dessa alteração, as guias **Referências** das propriedades do grupo de limites não dão mais suporte à configuração de Rápido ou Lento.
+-     **Novo grupo de limites padrão em cada site:** cada site primário tem um novo grupo de limites padrão chamado ***Default-Site-Boundary-Group\<sitecode>***.  Quando um cliente não está em um local de rede que é atribuído a um grupo de limites, o cliente usará os sistemas de sites associados ao grupo padrão do seu site atribuído. Planeje usar esse grupo de limites como uma substituição para o conceito de local de conteúdo de fallback.      
+ -    **'Allow fallback source locations for content' (Permitir locais de origem de fallback para conteúdo)** foi removido: você não configura mais explicitamente um ponto de distribuição para ser usado para o fallback e as opções essa configuração foram removidos da interface do usuário.
 
     Além disso, o resultado da configuração **Permitir que os clientes usem um local de origem de fallback para o conteúdo** em um tipo de implantação para aplicativos foi alterado. Essa configuração em um tipo de implantação agora permite que um cliente use o grupo de limites de site padrão como um local de fonte de conteúdo.
 
- -  **Relações de grupos de limites:** cada grupo de limites pode ser vinculado a um ou mais grupos de limites adicionais. Esses links formam relações que são configuradas na nova guia de propriedades de grupo limites chamada **Relações**:
-    -   Cada grupo de limites ao qual o cliente está associado diretamente é chamado de grupo de limites **atual**.  
-    -   Qualquer grupo de limites que um cliente possa usar devido a uma associação entre o grupo de limites *atual* desse cliente e outro grupo é chamado de grupo de limites **vizinho**.
+ -    **Relações de grupos de limites:** cada grupo de limites pode ser vinculado a um ou mais grupos de limites adicionais. Esses links formam relações que são configuradas na nova guia de propriedades de grupo limites chamada **Relações**:
+     -    Cada grupo de limites ao qual o cliente está associado diretamente é chamado de grupo de limites **atual**.  
+    -     Qualquer grupo de limites que um cliente possa usar devido a uma associação entre o grupo de limites *atual* desse cliente e outro grupo é chamado de grupo de limites **vizinho**.
     -  A guia **Relações** é o local em que você adiciona grupos de limites que podem ser usados como um grupo de limites *vizinho*. Você também pode configurar um tempo em minutos que determina quando um cliente que não consegue localizar o conteúdo de um ponto de distribuição no grupo *atual* começará a pesquisar locais de conteúdo daqueles grupos de limites *vizinhos*.
 
         Quando você adicionar ou alterar uma configuração de grupo de limites, terá a opção de bloquear o fallback para aquele grupo de limites específico daquele grupo atual que está sendo configurado.
@@ -260,7 +262,7 @@ A seguir estão as principais alterações de grupos de limites e como os client
     Esse comportamento substitui o que anteriormente era chamado de fallback de conteúdo.  Você pode substituir esse comportamento padrão de 120 minutos associando explicitamente o grupo de limites de site padrão a um grupo *atual* e definindo um tempo específico em minutos ou bloqueando totalmente o fallback para impedir seu uso.
 
 
--   **Os clientes tentam obter o conteúdo de cada ponto de distribuição por até dois minutos:** quando um cliente pesquisa um local de fonte de conteúdo, ele tenta acessar cada ponto de distribuição por dois minutos antes de tentar outro ponto de distribuição. Essa é uma alteração de versões anteriores em que os clientes tentavam se conectar a um ponto de distribuição por até duas horas.
+-     **Os clientes tentam obter o conteúdo de cada ponto de distribuição por até dois minutos:** quando um cliente pesquisa um local de fonte de conteúdo, ele tenta acessar cada ponto de distribuição por dois minutos antes de tentar outro ponto de distribuição. Essa é uma alteração de versões anteriores em que os clientes tentavam se conectar a um ponto de distribuição por até duas horas.
 
     - O primeiro ponto de distribuição que um cliente tenta usar é selecionado aleatoriamente do pool de pontos de distribuição disponíveis no grupo (ou grupos) de limites *atual* do cliente.
 
@@ -276,9 +278,9 @@ A seguir estão as principais alterações de grupos de limites e como os client
 
 ### <a name="how-the-new-model-works"></a>Como o novo modelo funciona
 Quando você configura grupos de limites, associa limites (locais de rede) e funções do sistema de sites, como pontos de distribuição, ao grupo de limites. Isso ajuda a vincular os clientes aos servidores do sistema de sites como pontos de distribuição que estão localizados próximos aos clientes na rede.   
--   Você pode atribuir o mesmo limite a vários grupos de limites
--   Servidores de sistema de sites, como pontos de distribuição, podem ser associados a vários grupos de limites, tornando-os disponíveis para uma gama mais ampla de locais de rede
--   Se um ponto de distribuição não estiver associado a um grupo de limites, os clientes não poderão usar esse ponto de distribuição como um local de fonte de conteúdo.
+-    Você pode atribuir o mesmo limite a vários grupos de limites
+-    Servidores de sistema de sites, como pontos de distribuição, podem ser associados a vários grupos de limites, tornando-os disponíveis para uma gama mais ampla de locais de rede
+-    Se um ponto de distribuição não estiver associado a um grupo de limites, os clientes não poderão usar esse ponto de distribuição como um local de fonte de conteúdo.
 
 A partir desse technical preview, você define relações de grupo de limites para configurar o comportamento de fallback para locais de fonte de conteúdo. Esse novo comportamento é configurado na nova guia **Relações** das propriedades do grupo de limites e substitui a configuração dos sistemas de sites para serem rápidos ou lentos e a configuração de um grupo de limites para permitir o fallback do local de fonte para o conteúdo.
 
@@ -286,24 +288,24 @@ Na guia Relações você adiciona outros grupos de limites para configurar uma r
 
 Quando um cliente não consegue encontrar conteúdo e começa a pesquisar os locais dos grupos de limites vizinho, ele aumenta o pool de pontos de distribuição disponíveis para aquele cliente de uma maneira controlada.  
 
--   Um grupo de limites pode ter mais de uma Relação. Isso permite que você configure o fallback para vizinhos diferentes para que ele ocorra após períodos de tempo diferentes.
--   Os clientes realizarão o fallback apenas para um grupo de limites que seja um vizinho de seu gripo de limites atual.
--   Quando um cliente é um membro de vários grupos de limites, o grupo de limite atual é definido como uma união de todos os grupos de limites do cliente.  Esse cliente pode, então, realizar o fallback para um vizinho de qualquer um desses grupos de limites original.
+-    Um grupo de limites pode ter mais de uma Relação. Isso permite que você configure o fallback para vizinhos diferentes para que ele ocorra após períodos de tempo diferentes.
+-    Os clientes realizarão o fallback apenas para um grupo de limites que seja um vizinho de seu gripo de limites atual.
+-    Quando um cliente é um membro de vários grupos de limites, o grupo de limite atual é definido como uma união de todos os grupos de limites do cliente.  Esse cliente pode, então, realizar o fallback para um vizinho de qualquer um desses grupos de limites original.
 
 Além dos links que você define, há um link implícito que é criado automaticamente entre os grupos de limites que você cria e o grupo de limites padrão que é criado automaticamente para cada site. Esse link automático:
--   É usado por clientes que não estão em um limite associado a nenhum grupo de limites na sua hierarquia e usam automaticamente o grupo de limites padrão do seu site atribuído para identificar os locais de fonte de conteúdo válidos.   
--   É uma opção de fallback padrão do grupo de limites atual para o grupo de limites padrão de sites que é usada após 120 minutos.
+-    É usado por clientes que não estão em um limite associado a nenhum grupo de limites na sua hierarquia e usam automaticamente o grupo de limites padrão do seu site atribuído para identificar os locais de fonte de conteúdo válidos.   
+-     É uma opção de fallback padrão do grupo de limites atual para o grupo de limites padrão de sites que é usada após 120 minutos.
 
 **Exemplo de uso do novo modelo:**     
 Você cria três grupos de limites que não compartilham limites ou servidores de sistemas de sites:
--   Grupo BG_A com os pontos de distribuição DP_A1 e DP_A2 associados ao grupo
--   Grupo BG_B com os pontos de distribuição DP_B1 e DP_B2 associados ao grupo
--   Grupo BG_C com os pontos de distribuição DP_C1 e DP_C2 associados ao grupo
+-    Grupo BG_A com os pontos de distribuição DP_A1 e DP_A2 associados ao grupo
+-    Grupo BG_B com os pontos de distribuição DP_B1 e DP_B2 associados ao grupo
+-    Grupo BG_C com os pontos de distribuição DP_C1 e DP_C2 associados ao grupo
 
 Você adiciona os locais de rede dos seus clientes como limites apenas para o grupo BG_A e, em seguida, configura relações daquele grupo de limites para os outros dois grupos de limites:
--   Você configura os pontos de distribuição para o primeiro grupo *vizinho* (BG_B) a ser usado depois de 10 minutos. Esse grupo contém os pontos de distribuição DP_B1 e DP_B2. Ambos estão bem conectadas aos primeiros locais de limite dos grupos.
--   Você configura o segundo grupo *vizinho* (BG_C) a ser usado depois de 20 minutos. Esse grupo contém os pontos de distribuição DP_C1 e DP_C2. Ambos estão em uma WAN dos outros dois grupos de limites.
--   Você também adiciona um ponto de distribuição que está localizado no servidor de site ao grupo de limites de site padrão dos sites. Esse é o local de fonte de conteúdo de menor preferência, mas está localizado centralmente para todos os seus grupos de limites.
+-    Você configura os pontos de distribuição para o primeiro grupo *vizinho* (BG_B) a ser usado depois de 10 minutos. Esse grupo contém os pontos de distribuição DP_B1 e DP_B2. Ambos estão bem conectadas aos primeiros locais de limite dos grupos.
+-    Você configura o segundo grupo *vizinho* (BG_C) a ser usado depois de 20 minutos. Esse grupo contém os pontos de distribuição DP_C1 e DP_C2. Ambos estão em uma WAN dos outros dois grupos de limites.
+-    Você também adiciona um ponto de distribuição que está localizado no servidor de site ao grupo de limites de site padrão dos sites. Esse é o local de fonte de conteúdo de menor preferência, mas está localizado centralmente para todos os seus grupos de limites.
 
     Exemplo de grupos de limites e tempos de fallback:
 
@@ -311,21 +313,21 @@ Você adiciona os locais de rede dos seus clientes como limites apenas para o gr
 
 
 Com essa configuração:
--   O cliente inicia a pesquisa de conteúdo dos pontos de distribuição em seu grupo de limites *atual* (BG_A), pesquisando cada ponto de distribuição por dois minutos antes de alternar para o próximo ponto de distribuição no grupo de limites. O pool de clientes dos locais de fonte de conteúdo válidos incluem o DP_A1 e o DP_A2.
--   Se o cliente não conseguir localizar o conteúdo de seu grupo de limites *atual* depois de pesquisar por 10 minutos, ele adicionará os pontos de distribuição do grupo de limites BG_B à sua pesquisa. Então, ele continua a pesquisar o conteúdo de um ponto de distribuição em seu pool combinado de pontos de distribuição que agora inclui os dos grupos de limites BG_A e BG_B. O cliente continua a entrar em contato com cada ponto de distribuição por dois minutos antes de mudar para o próximo ponto de distribuição de seu pool. O pool de clientes dos locais de fonte de conteúdo válidos incluem DP_A1, DP_A2, DP_B1 e DP_B2.
--   Depois de mais 10 minutos (total de 20 minutos), se o cliente ainda não encontra um ponto de distribuição com o conteúdo, ele expande seu pool de pontos de distribuição disponíveis para os pontos do segundo grupo *vizinho*, o grupo de limites BG_C. O cliente agora tem 6 pontos de distribuição para pesquisar (DP_A1, DP_A2, DP_B2, DP_B2, DP_C1 e DP_C2) e continua a mudar para um novo ponto de distribuição a cada dois minutos até que o conteúdo seja encontrado.
--   Se o cliente não tiver encontrado conteúdo depois de um total de 120 minutos, ele realizará o fallback para incluir o *grupo de limites de site padrão* como parte de sua pesquisa contínua. Agora o pool de pontos de distribuição inclui todos os pontos de distribuição dos três grupos de limites configurados e o ponto de distribuição final localizado no computador do servidor do site.  O cliente continua, então, a pesquisa do conteúdo, alterando os pontos de distribuição a cada dois minutos até que o conteúdo seja encontrado.
+-    O cliente inicia a pesquisa de conteúdo dos pontos de distribuição em seu grupo de limites *atual* (BG_A), pesquisando cada ponto de distribuição por dois minutos antes de alternar para o próximo ponto de distribuição no grupo de limites. O pool de clientes dos locais de fonte de conteúdo válidos incluem o DP_A1 e o DP_A2.
+-    Se o cliente não conseguir localizar o conteúdo de seu grupo de limites *atual* depois de pesquisar por 10 minutos, ele adicionará os pontos de distribuição do grupo de limites BG_B à sua pesquisa. Então, ele continua a pesquisar o conteúdo de um ponto de distribuição em seu pool combinado de pontos de distribuição que agora inclui os dos grupos de limites BG_A e BG_B. O cliente continua a entrar em contato com cada ponto de distribuição por dois minutos antes de mudar para o próximo ponto de distribuição de seu pool. O pool de clientes dos locais de fonte de conteúdo válidos incluem DP_A1, DP_A2, DP_B1 e DP_B2.
+-    Depois de mais 10 minutos (total de 20 minutos), se o cliente ainda não encontra um ponto de distribuição com o conteúdo, ele expande seu pool de pontos de distribuição disponíveis para os pontos do segundo grupo *vizinho*, o grupo de limites BG_C. O cliente agora tem 6 pontos de distribuição para pesquisar (DP_A1, DP_A2, DP_B2, DP_B2, DP_C1 e DP_C2) e continua a mudar para um novo ponto de distribuição a cada dois minutos até que o conteúdo seja encontrado.
+-    Se o cliente não tiver encontrado conteúdo depois de um total de 120 minutos, ele realizará o fallback para incluir o *grupo de limites de site padrão* como parte de sua pesquisa contínua. Agora o pool de pontos de distribuição inclui todos os pontos de distribuição dos três grupos de limites configurados e o ponto de distribuição final localizado no computador do servidor do site.  O cliente continua, então, a pesquisa do conteúdo, alterando os pontos de distribuição a cada dois minutos até que o conteúdo seja encontrado.
 
 Ao configurar os diferentes grupos vizinhos para estarem disponíveis em momentos diferentes, você controla quando pontos de distribuição específicos são adicionados como um local de fonte de conteúdo e quando, ou se, o cliente usa o fallback para o grupo de limites de site padrão como uma rede de segurança para o conteúdo que não está disponível em nenhum outro local.
 
 
-### <a name="a-namebkmkupdateaupdate-existing-boundary-groups-to-the-new-model"></a><a name="bkmk_update"></a>Atualizar grupos de limites existentes para o novo modelo
+### <a name="bkmk_update"></a>Atualizar grupos de limites existentes para o novo modelo
 Quando você instala a versão 1609 e atualiza seu site, as configurações a seguir são feitas automaticamente. Elas devem garantir que o comportamento de fallback atual permaneça disponível, até que você configure novos grupos de limites e relações.  
--   Os pontos de distribuição não protegidos em um site são adicionados ao grupo de limites *Default-Site-Boundary-Group\<sitecode>* desse site.
--   É feita uma cópia de cada grupo de limites existente que inclui um servidor do site configurado com uma conexão lenta. O nome do novo grupo é ***\<nome do grupo de limites original>-Slow-Tmp***:  
-    -   Os sistemas de sites que têm uma conexão rápida são deixados no grupo de limites original.
-    -   Uma cópia dos sistemas de sites que têm uma conexão lenta são adicionadas à cópia do grupo de limites. Os sistemas de sites originais configurados como lentos permanecem no grupo de limites original para compatibilidade com versões anteriores, mas não são usados nesse grupo de limites.
-    -   Esta cópia do grupo de limites não tem limites associados a ela. No entanto, um link de fallback é criado entre o grupo original e a nova cópia de grupo de limites que tem o tempo de fallback definido como zero.
+-    Os pontos de distribuição não protegidos em um site são adicionados ao grupo de limites *Default-Site-Boundary-Group\<sitecode>* desse site.
+-    É feita uma cópia de cada grupo de limites existente que inclui um servidor do site configurado com uma conexão lenta. O nome do novo grupo é ***\<nome do grupo de limites original>-Slow-Tmp***:  
+    -    Os sistemas de sites que têm uma conexão rápida são deixados no grupo de limites original.
+    -    Uma cópia dos sistemas de sites que têm uma conexão lenta são adicionadas à cópia do grupo de limites. Os sistemas de sites originais configurados como lentos permanecem no grupo de limites original para compatibilidade com versões anteriores, mas não são usados nesse grupo de limites.
+    -     Esta cópia do grupo de limites não tem limites associados a ela. No entanto, um link de fallback é criado entre o grupo original e a nova cópia de grupo de limites que tem o tempo de fallback definido como zero.
 
  A tabela a seguir identifica o novo comportamento de fallback que você pode esperar da combinação das configurações de ponto a distribuição e as configurações de implantação originais:
 
@@ -334,7 +336,7 @@ A configuração de implantação original para "Não executar programa" na rede
 Selecionada     |  Selecionada    |  **Sem fallback** – usar apenas os pontos de distribuição no grupo de limites atual       
 Selecionada     |  Não selecionada|  **Sem fallback** – usar apenas os pontos de distribuição no grupo de limites atual       
 Não selecionada |  Não selecionada|  **Fallback para o vizinho** – usar os pontos de distribuição no grupo de limites atual e, em seguida, adicionar os pontos de distribuição do grupo de limite vizinho. A menos que um link explícito para o grupo de limites de site padrão esteja configurado, os clientes não realizarão o fallback para esse grupo.    
-Não selecionada | Selecionada     |   **Fallback normal** – usar pontos de distribuição no grupo de limites atual, em seguida, os dos grupos de limites vizinho e padrão de site
+Não selecionada | Selecionada        |   **Fallback normal** – usar pontos de distribuição no grupo de limites atual, em seguida, os dos grupos de limites vizinho e padrão de site
 
  Todas as outras configurações de implantação resultam em **Fallback normal**.  
 
@@ -391,7 +393,7 @@ Se você optar por não implantar o pacote no assistente, vá para a etapa 9.
 >[!NOTE]
 >Depois de implantar aplicativos do Office 365, você pode criar regras de implantação automática para manter os aplicativos. Para criar uma ADR para aplicativos do Office 365, clique em **Create an ADR (Criar um ADR)** e selecione **Office 365 Client (Cliente do Office 365)** quando você escolher o produto. Para mais informações, confira [Automatically deploy software updates](/sccm/sum/deploy-use/automatically-deploy-software-updates) (Implantar atualizações de software automaticamente).
 
-## <a name="a-namebkmkueficonversionaimprovements-for-bios-to-uefi-conversion"></a><a name="BKMK_UEFIConversion"></a>Melhorias na conversão de BIOS para UEFI
+## <a name="BKMK_UEFIConversion"></a>Melhorias na conversão de BIOS para UEFI
 Agora você pode personalizar uma sequência de tarefas de implantação do sistema operacional com uma nova variável, TSUEFIDrive, para que a etapa Reiniciar o Computador prepare uma partição FAT32 no disco rígido para a transição para UEFI. O procedimento a seguir fornece um exemplo de como você pode criar etapas de sequência de tarefas para preparar o disco rígido para a conversão de BIOS para UEFI.
 
 #### <a name="to-prepare-the-fat32-partition-for-the-conversion-to-uefi"></a>Para preparar a partição FAT32 para a conversão para UEFI:
@@ -405,13 +407,13 @@ Em uma sequência de tarefas existente para instalar um sistema operacional, voc
 
     ![Etapa Reiniciar Computador](media/Restart-in-Windows-PE.png)
 5. Adicione uma etapa para iniciar a ferramenta de OEM que converterá o firmware de BIOS para UEFI. Isso geralmente será uma etapa de sequência de tarefas **Executar Linha de Comando** com uma linha de comando para iniciar a ferramenta de OEM.
-5.  Adicione a etapa de sequência de tarefas Formatar e Particionar Disco que particionará e formatará o disco rígido. Na etapa, faça o seguinte:
-    1.  Crie a partição FAT32 que será convertida em UEFI antes de o sistema operacional ser instalado. Escolha **GGT** para **Tipo de disco**.
+5.    Adicione a etapa de sequência de tarefas Formatar e Particionar Disco que particionará e formatará o disco rígido. Na etapa, faça o seguinte:
+    1.    Crie a partição FAT32 que será convertida em UEFI antes de o sistema operacional ser instalado. Escolha **GGT** para **Tipo de disco**.
     ![Etapa Formatar e particionar disco](media/Format-and-partition-disk.png)
-    2.  Vá para as propriedades da partição FAT32. Digite **TSUEFIDrive** no campo **Variável**. Quando a sequência de tarefas detectar essa variável, ela preparará para a transição de UEFI antes de reiniciar o computador.
+    2.    Vá para as propriedades da partição FAT32. Digite **TSUEFIDrive** no campo **Variável**. Quando a sequência de tarefas detectar essa variável, ela preparará para a transição de UEFI antes de reiniciar o computador.
     ![Propriedades da partição](media/Partition-properties.png)
     3. Crie uma partição NTFS que o mecanismo de sequência de tarefas usa para salvar seu estado e para armazenar arquivos de log.
-6.  Adicione a etapa de sequência de tarefas **Reiniciar Computador**. Em **Especifique o que executar após reiniciar**, selecione **The boot image assigned to this task sequence is selected (A imagem de inicialização atribuída a essa sequência de tarefas está selecionada)** para iniciar o computador no Windows PE.  
+6.    Adicione a etapa de sequência de tarefas **Reiniciar Computador**. Em **Especifique o que executar após reiniciar**, selecione **The boot image assigned to this task sequence is selected (A imagem de inicialização atribuída a essa sequência de tarefas está selecionada)** para iniciar o computador no Windows PE.  
 
 
 
@@ -454,9 +456,4 @@ Conclua as seções a seguir na ordem:
 
 ## <a name="see-also"></a>Consulte também
 [Technical Preview do System Center Configuration Manager](../../core/get-started/technical-preview.md)
-
-
-
-<!--HONumber=Jan17_HO4-->
-
 

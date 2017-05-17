@@ -16,9 +16,11 @@ caps.handback.revision: 0
 author: Dougeby
 ms.author: dougeby
 manager: angrobe
-translationtype: Human Translation
+ms.translationtype: Human Translation
 ms.sourcegitcommit: 89158debdf4c345a325feeb608db2215a88ed81b
 ms.openlocfilehash: 5acf800ff5aebd849e294393337755145a60cca5
+ms.contentlocale: pt-br
+ms.lasthandoff: 05/17/2017
 
 
 ---
@@ -30,7 +32,7 @@ A mídia de captura no Configuration Manager permite que você capture uma image
 
 -   [Criar uma sequência de tarefas para capturar um sistema operacional](create-a-task-sequence-to-capture-an-operating-system.md)  
 
-##  <a name="a-namebkmkcreatecapturemediaa-how-to-create-capture-media"></a><a name="BKMK_CreateCaptureMedia"></a> Como criar mídia de captura  
+##  <a name="BKMK_CreateCaptureMedia"></a> Como criar mídia de captura  
  Use a mídia de captura para capturar uma imagem do sistema operacional de um computador de referência. A mídia de captura contém a imagem de inicialização que inicia o computador de referência e a sequência de tarefas que captura a imagem do sistema operacional.
 
 Você cria a mídia de captura usando o Assistente para Criar Mídia de Sequência de Tarefas. Antes de executar o assistente, todas as condições a seguir devem ser atendidas:  
@@ -80,9 +82,4 @@ Você cria a mídia de captura usando o Assistente para Criar Mídia de Sequênc
         >  É necessário ter direitos de acesso de leitura à biblioteca de conteúdo do ponto de distribuição.  
 
 7.  Conclua o assistente.  
-
-
-
-<!--HONumber=Jan17_HO4-->
-
 

@@ -15,9 +15,11 @@ caps.handback.revision: 0
 author: Brenduns
 ms.author: brenduns
 manager: angrobe
-translationtype: Human Translation
+ms.translationtype: Human Translation
 ms.sourcegitcommit: 1defe96163f1bb70f586619ad89098c6f0e6c665
 ms.openlocfilehash: 3eea3a6e5f23808570ded4be3bd7412954518b96
+ms.contentlocale: pt-br
+ms.lasthandoff: 05/17/2017
 
 
 ---
@@ -44,7 +46,7 @@ No System Center Configuration Manager, a administração baseada em funções c
 
 -   [Modificar o escopo administrativo de um usuário administrativo](#BKMK_ModAdminUser)  
 
-##  <a name="a-namebkmkcreatesecrolea-create-custom-security-roles"></a><a name="BKMK_CreateSecRole"></a> Criar funções de segurança personalizadas  
+##  <a name="BKMK_CreateSecRole"></a> Criar funções de segurança personalizadas  
  O Configuration Manager oferece várias funções de segurança internas. Se necessitar de funções de segurança adicionais, você poderá criar uma função de segurança personalizada criando a cópia de uma função de segurança existente e modificando essa cópia. Você pode criar uma função de segurança personalizada para conceder aos usuários administrativos as permissões de segurança adicionais de que eles necessitam e que não estão incluídas atualmente em uma função de segurança atribuída. Usando uma função de segurança personalizada, você pode conceder a eles somente as permissões de que eles precisam e impedir a atribuição de uma função de segurança que conceda mais permissões do que eles precisam.  
 
  Use o procedimento a seguir para criar uma nova atribuição de segurança usando uma função de segurança existente como modelo.  
@@ -83,7 +85,7 @@ No System Center Configuration Manager, a administração baseada em funções c
             > [!NOTE]  
             >  Após importar uma função de segurança, você poderá editar as propriedades dessa função para alterar as permissões de objeto associadas a ela.  
 
-##  <a name="a-namebkmkconfigsecrolea-configure-security-roles"></a><a name="BKMK_ConfigSecRole"></a> Configurar funções de segurança  
+##  <a name="BKMK_ConfigSecRole"></a> Configurar funções de segurança  
  Os grupos de permissões de segurança definidos para uma função de segurança são chamados de atribuições de operação de segurança. As atribuições de operação de segurança representam uma combinação de tipos de objetos e ações que estão disponíveis para cada tipo de objeto. Você pode modificar as operações de segurança disponíveis para qualquer função de segurança personalizada, mas não é possível modificar as funções de segurança internas que o Configuration Manager fornece.  
 
  Use o procedimento a seguir para modificar as operações de segurança para uma função de segurança.  
@@ -109,7 +111,7 @@ No System Center Configuration Manager, a administração baseada em funções c
 
 8.  Após concluir a configuração das atribuições de operação de segurança, escolha **OK** para salvar a nova atribuição de segurança.  
 
-##  <a name="a-namebkmkconfigsecscopea-configure-security-scopes-for-an-object"></a><a name="BKMK_ConfigSecScope"></a> Configurar escopos de segurança para um objeto  
+##  <a name="BKMK_ConfigSecScope"></a> Configurar escopos de segurança para um objeto  
  Você gerencia a associação de um escopo de segurança para um objeto por meio do objeto, não por meio do escopo de segurança. As únicas configurações diretas para as quais os escopos de segurança oferecem suporte são as alterações de nome e descrição. Para alterar o nome e a descrição de um escopo de segurança ao exibir as propriedades dele, é necessário ter a permissão **Modificar** para o objeto protegível dos **Escopos de Segurança** .  
 
  Quando você cria um objeto no Configuration Manager, esse novo objeto é associado a cada escopo de segurança que está associado às funções de segurança da conta usada para criar o objeto quando essas funções de segurança fornecem a permissão **Criar** ou **Definir Escopo de Segurança**. Você só pode alterar os escopos de segurança aos quais o objeto está associado após sua criação.  
@@ -131,14 +133,14 @@ No System Center Configuration Manager, a administração baseada em funções c
     > [!NOTE]  
     >  Quando você cria um novo objeto, você pode atribuí-lo a vários escopos de segurança. Para modificar o número de escopos de segurança associados ao objeto, é necessário alterar essa atribuição após a criação do objeto.  
 
-##  <a name="a-namebkmkconfigcolla-configure-collections-to-manage-security"></a><a name="BKMK_ConfigColl"></a> Configurar coleções para gerenciar a segurança  
+##  <a name="BKMK_ConfigColl"></a> Configurar coleções para gerenciar a segurança  
  Não existem procedimentos para configurar coleções para a administração baseada em funções. As coleções não têm uma configuração de administração baseada em função. Em vez disso, você atribui coleções a um usuário administrativo ao configurar o usuário administrativo. As operações de segurança da coleção permitidas nas funções de segurança atribuídas aos usuários determinam as permissões que um usuário administrativo tem para coleções e recursos da coleção (membros da coleção).  
 
  Quando um usuário administrativo possui permissões para uma coleção, ele também tem permissões para coleções que estão limitadas a essa coleção. Por exemplo, a sua organização usa uma coleção chamada Todos os Desktops, e lá há uma coleção chamada Todos os Desktops da América do Norte que está limitada à coleção Todos os Desktops. Se um usuário administrativo tiver permissões para Todos os Desktops, ele também terá as mesmas permissões para a coleção Todos os Desktops da América do Norte.
 
  Além disso, um usuário administrativo não pode usar a permissão **Excluir** ou **Modificar** em uma coleção que está diretamente atribuída a ele. Porém, podem usar essas permissões nas coleções que estão limitadas a essa coleção. No exemplo anterior, o usuário administrativo pode excluir ou modificar a coleção Todos os Desktops da América do Norte, mas não pode excluir ou modificar a coleção Todos os Desktops.  
 
-##  <a name="a-namebkmkcreateadminusera-create-a-new-administrative-user"></a><a name="BKMK_Create_AdminUser"></a> Criar um novo usuário administrativo  
+##  <a name="BKMK_Create_AdminUser"></a> Criar um novo usuário administrativo  
  Para conceder acesso para gerenciar o Configuration Manager a indivíduos ou membros de um grupo de segurança, crie um usuário administrativo no Configuration Manager e especifique a conta do Windows do Usuário ou Grupo de Usuários. Cada usuário administrativo no Configuration Manager deve receber a atribuição de pelo menos uma função de segurança e um escopo de segurança. Você também pode atribuir coleções para limitar o escopo administrativo do usuário administrativo.  
 
  Use os procedimentos a seguir para criar novos usuários administrativos.  
@@ -173,7 +175,7 @@ No System Center Configuration Manager, a administração baseada em funções c
 
     -   Se tiver selecionado **Somente objetos protegíveis em escopos de segurança ou coleções especificadas**, poderá escolher **Adicionar** para selecionar coleções e escopos de segurança adicionais. Ou selecione um ou mais objetos na lista e escolha **Remover** para removê-los. Escolha **OK** para concluir esse procedimento.  
 
-##  <a name="a-namebkmkmodadminusera-modify-the-administrative-scope-of-an-administrative-user"></a><a name="BKMK_ModAdminUser"></a> Modificar o escopo administrativo de um usuário administrativo  
+##  <a name="BKMK_ModAdminUser"></a> Modificar o escopo administrativo de um usuário administrativo  
  É possível modificar o escopo administrativo de um usuário administrativo ao adicionar ou remover funções de segurança, escopos de segurança e coleções que estão associados ao usuário. Cada usuário administrativo deve ser associado a pelo menos uma função de segurança e um escopo de segurança. Talvez você precise atribuir uma ou mais coleções para o escopo administrativo do usuário. A maioria das funções de segurança interage com as coleções e não funciona corretamente sem uma coleção atribuída.  
 
  Ao modificar um usuário administrativo, você pode alterar o comportamento de como os objetos protegíveis são associados às funções de segurança atribuídas. Os três comportamentos que podem ser selecionados são:  
@@ -300,9 +302,4 @@ Use o procedimento a seguir para modificar um usuário administrativo que tem o 
 
     > [!CAUTION]  
     >  Quando uma função de segurança concede a usuários administrativos a permissão de implantação de coleção, os usuários administrativos podem distribuir objetos a partir de qualquer escopo de segurança para os quais eles têm permissões de **leitura** de objetos, mesmo se o escopo de segurança esteja associado a uma função de segurança diferente.  
-
-
-
-<!--HONumber=Feb17_HO3-->
-
 

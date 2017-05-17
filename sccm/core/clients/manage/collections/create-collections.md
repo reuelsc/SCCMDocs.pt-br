@@ -16,9 +16,11 @@ caps.handback.revision: 0
 author: andredm7
 ms.author: andredm
 manager: angrobe
-translationtype: Human Translation
+ms.translationtype: Human Translation
 ms.sourcegitcommit: 9555a16d97224a1cf49a426ab225468b07403f60
 ms.openlocfilehash: e28fdeae809cadf78017dd2920e3f1a9484ec8a3
+ms.contentlocale: pt-br
+ms.lasthandoff: 12/30/2016
 
 
 ---
@@ -44,7 +46,7 @@ Coleções são grupos de usuários ou dispositivos. Use coleções para tarefas
 
  Para obter informações sobre como criar coleções para computadores com Linux e UNIX, consulte [Como gerenciar clientes para servidores Linux e UNIX no System Center Configuration Manager](../../../../core/clients/manage/manage-clients-for-linux-and-unix-servers.md).  
 
-##  <a name="a-namebkmk1a-to-create-a-device-collection"></a><a name="BKMK_1"></a> Para criar uma coleção de dispositivos  
+##  <a name="BKMK_1"></a> Para criar uma coleção de dispositivos  
 
 1.  No console do Configuration Manager, escolha **Ativos e Conformidade** > **Coleções de Dispositivos**.  
 
@@ -120,7 +122,7 @@ Coleções são grupos de usuários ou dispositivos. Use coleções para tarefas
 > [!NOTE]  
 >  É necessário atualizar ou recarregar o console do Configuration Manager para ver os membros da coleção. No entanto, os membros não aparecerão na coleção até depois da primeira atualização agendada ou se você selecionar manualmente **Atualizar Associação** para a coleção. Pode levar alguns minutos para concluir uma atualização da coleção.  
 
-##  <a name="a-namebkmk2a-to-create-a-user-collection"></a><a name="BKMK_2"></a> Para criar uma coleção de usuários  
+##  <a name="BKMK_2"></a> Para criar uma coleção de usuários  
 
 1.  No console do Configuration Manager, escolha **Ativos e Conformidade** > **Coleções de Usuários**.  
 
@@ -192,7 +194,7 @@ Coleções são grupos de usuários ou dispositivos. Use coleções para tarefas
 > [!NOTE]  
 >  É necessário atualizar ou recarregar o console do Configuration Manager para ver os membros da coleção. No entanto, os membros não aparecerão na coleção até após a primeira atualização agendada ou selecionar manualmente **Atualizar Associação** para a coleção. Pode levar alguns minutos para concluir uma atualização da coleção.  
 
-##  <a name="a-namebkmk3a-to-import-a-collection"></a><a name="BKMK_3"></a> Para importar uma coleção  
+##  <a name="BKMK_3"></a> Para importar uma coleção  
 
 1.  No console do Configuration Manager, escolha **Ativos e Conformidade** > **Coleções de Usuários** ou **Coleções de Dispositivos**.  
 
@@ -206,9 +208,4 @@ Coleções são grupos de usuários ou dispositivos. Use coleções para tarefas
     >  O arquivo que você deseja importar deve ter sido exportado de um site que executa a mesma versão do Configuration Manager que esse. Para obter mais informações sobre como exportar coleções, consulte [Como gerenciar coleções no System Center Configuration Manager](../../../../core/clients/manage/collections/manage-collections.md).  
 
 6.  Conclua o assistente para importar a coleção. A nova coleção é exibida no nó **Coleções de Usuários** ou **Coleções de Dispositivos** do espaço de trabalho **Ativos e Conformidade** . Atualize ou recarregue o console do Configuration Manager para ver os membros da coleção recém-importada.  
-
-
-
-<!--HONumber=Dec16_HO5-->
-
 

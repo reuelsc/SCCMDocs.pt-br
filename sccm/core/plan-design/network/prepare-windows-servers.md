@@ -16,9 +16,11 @@ caps.handback.revision: 0
 author: Brenduns
 ms.author: brenduns
 manager: angrobe
-translationtype: Human Translation
+ms.translationtype: Human Translation
 ms.sourcegitcommit: dd102603356864add4084c6881c39bebcbd635f2
 ms.openlocfilehash: 9b97dedb5d2be0bd2e47260033e6e4361467dc4e
+ms.contentlocale: pt-br
+ms.lasthandoff: 05/17/2017
 
 
 ---
@@ -34,7 +36,7 @@ Antes de você usar um computador Windows como servidor de sistema de sites para
 
 As informações neste artigo fornecem uma visão geral dos tipos de configurações do Windows que são necessárias para dar suporte a sistemas de sites do Configuration Manager. Para obter detalhes de configuração para funções específicas do sistema de sites, confira [Pré-requisitos de site e sistema de sites](/sccm/core/plan-design/configs/site-and-site-system-prerequisites).
 
-##  <a name="a-namebkmkwinfeaturesa-windows-features-and-roles"></a><a name="BKMK_WinFeatures"></a> Recursos e funções do Windows  
+##  <a name="BKMK_WinFeatures"></a> Recursos e funções do Windows  
  Ao configurar funções e recursos do Windows em um computador, pode ser necessário reiniciar o computador para concluir a configuração. Portanto, é uma boa ideia identificar computadores que hospedarão funções do sistema de site específicas antes de instalar um site do Configuration Manager ou servidor de sistema de site.
 ### <a name="features"></a>Recursos  
  Os recursos do Windows a seguir são necessários em determinados servidores de sistema de sites e devem ser configurados antes de instalar uma função de sistema de sites no computador.  
@@ -98,7 +100,7 @@ As informações neste artigo fornecem uma visão geral dos tipos de configuraç
 -   **Serviços de Implantação do Windows**: essa função é usada com a Implantação de Sistema Operacional.  
 -   **Windows Server Update Services**: essa função é necessária quando você implanta atualizações de software.  
 
-##  <a name="a-namebkmkiisfilteringa-iis-request-filtering-for-distribution-points"></a><a name="BKMK_IISFiltering"></a> Filtragem de Solicitações do IIS para pontos de distribuição  
+##  <a name="BKMK_IISFiltering"></a> Filtragem de Solicitações do IIS para pontos de distribuição  
  Por padrão, o IIS usa a Filtragem de Solicitações para bloquear o acesso de várias extensões de nome de arquivo e de locais de pasta por comunicação HTTP ou HTTPS. Em um ponto de distribuição, isso impede que os clientes baixem os pacotes que têm extensões ou locais de pasta bloqueados.  
 
  Quando os arquivos de origem do pacote têm extensões bloqueadas no IIS pela sua configuração de Filtragem de Solicitações, é necessário configurar a Filtragem de Solicitações para permiti-las. Isso é feito [editando o recurso Filtragem de Solicitações](https://technet.microsoft.com/library/hh831621.aspx) no Gerenciador do IIS nos computadores do ponto de distribuição.  
@@ -140,9 +142,4 @@ Por exemplo, arquivos de origem para uma implantação de software podem incluir
  - PROPFIND
 
 Para saber mais sobre como configurar a filtragem de solicitações, confira [Configurar filtragem de solicitações no IIS](https://technet.microsoft.com/library/hh831621.aspx#Verbs) no TechNet ou a documentação semelhante que se aplica à versão do Windows Server que hospeda o ponto de gerenciamento.
-
-
-
-<!--HONumber=Feb17_HO3-->
-
 

@@ -16,9 +16,11 @@ caps.handback.revision: 0
 author: Brenduns
 ms.author: brenduns
 manager: angrobe
-translationtype: Human Translation
+ms.translationtype: Human Translation
 ms.sourcegitcommit: 72263ec5e7104924a1ca46dc2000be9f8568599f
 ms.openlocfilehash: a776667cc9f24bd4a468afea76e466c34ce66864
+ms.contentlocale: pt-br
+ms.lasthandoff: 05/17/2017
 
 
 ---
@@ -344,9 +346,4 @@ Essa conta deve ser de um administrador local no computador onde o WSUS está in
 >  Limite o escopo da conta. Por exemplo, crie Contas Executar como Sequência de Tarefas diferente para cada sequência de tarefas; desse modo, se uma conta for comprometida, somente os computadores cliente aos quais a conta tem acesso ficarão comprometidos.  
 >   
 >  Se a linha de comando exigir acesso administrativo no computador, considere a criação de uma conta de administrador local exclusivamente para a Conta Executar como Sequência de Tarefas em todos os computadores que executarão a sequência de tarefas. Exclua a conta assim que ela não for mais necessária.  
-
-
-
-<!--HONumber=Feb17_HO2-->
-
 

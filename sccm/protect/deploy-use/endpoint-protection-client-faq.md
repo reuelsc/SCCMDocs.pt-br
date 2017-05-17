@@ -15,9 +15,11 @@ caps.latest.revision: 15
 author: NathBarn
 ms.author: nathbarn
 manager: angrobe
-translationtype: Human Translation
+ms.translationtype: Human Translation
 ms.sourcegitcommit: 017bd5b899b364fc832c721d63cc7dbad0a11671
 ms.openlocfilehash: b88bc5f734b85527b81e5848deb0617db4c8dfbc
+ms.contentlocale: pt-br
+ms.lasthandoff: 05/17/2017
 
 
 ---
@@ -263,9 +265,4 @@ Para remover todos os itens indesejados ou potencialmente prejudiciais que o Win
  [Solucionando problemas do cliente Windows Defender ou Endpoint Protection](troubleshoot-endpoint-client.md)   
 
  [Ajuda do cliente do Endpoint Protection](endpoint-protection-client-help.md)
-
-
-
-<!--HONumber=Feb17_HO3-->
-
 

@@ -15,9 +15,11 @@ caps.latest.revision: 3
 author: Brenduns
 ms.author: brenduns
 manager: angrobe
-translationtype: Human Translation
+ms.translationtype: Human Translation
 ms.sourcegitcommit: d1bf0fdc3e735eb31492476fd46f008620150c0b
 ms.openlocfilehash: 8f951805c2fc25059965c15c94934c0f8546735c
+ms.contentlocale: pt-br
+ms.lasthandoff: 05/17/2017
 
 ---
 # <a name="upgrade-an-evaluation-installation-of-system-center-configuration-manager-to-a-full-installation"></a>Atualizar uma instalação de avaliação para uma instalação completa do System Center Configuration Manager
@@ -52,9 +54,4 @@ Pré-requisitos para atualizar de uma versão de avaliação para uma versão li
 
     > [!NOTE]  
     >  A barra de título do console do Configuration Manager que permanece conectado ao site que está sendo atualizado pode indicar que o site ainda é uma versão de avaliação até que você reconecte o console ao site.  
-
-
-
-<!--HONumber=Feb17_HO2-->
-
 

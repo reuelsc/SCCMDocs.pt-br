@@ -15,9 +15,11 @@ caps.latest.revision: 3
 author: Brenduns
 ms.author: brenduns
 manager: angrobe
-translationtype: Human Translation
+ms.translationtype: Human Translation
 ms.sourcegitcommit: 099345d59891841a336cbada896ec349751fecd3
 ms.openlocfilehash: 54e54409a1792c7e28620a5e3cea3e8d8695c7d4
+ms.contentlocale: pt-br
+ms.lasthandoff: 05/17/2017
 
 ---
 # <a name="package-transfer-manager-in-system-center-configuration-manager"></a>Gerenciador de Transferência de Pacotes no System Center Configuration Manager
@@ -87,9 +89,4 @@ As informações a seguir descrevem como o Gerenciador de Transferência de Paco
     -   **Ponto de distribuição padrão**: quando o Gerenciador de Transferência de Pacote conclui a transferência dos arquivos para cada ponto de distribuição remoto designado, ele verifica o hash do conteúdo no ponto de distribuição. Em seguida, notifica o Gerenciador de Distribuição de que a distribuição foi concluída.  
 
     -   **Ponto de distribuição de recepção**: após baixar o conteúdo, o ponto de distribuição de recepção verifica o hash do conteúdo. Em seguida, ele envia uma mensagem de status para o ponto de gerenciamento de site para indicar êxito. Se, após 60 minutos esse status não for recebido, o Gerenciador de Transferência de Pacote é ativado novamente. Ele verifica com o ponto de distribuição de recepção para confirmar se o conteúdo foi baixado. Se o download do conteúdo estiver em andamento, o Gerenciador de Transferência de Pacote ficará suspenso por 60 minutos, até repetir essa verificação. Esse ciclo continua até que o ponto de distribuição de recepção conclua a transferência de conteúdo.  
-
-
-
-<!--HONumber=Feb17_HO2-->
-
 

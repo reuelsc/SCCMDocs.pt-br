@@ -16,9 +16,11 @@ caps.handback.revision: 0
 author: Brenduns
 ms.author: brenduns
 manager: angrobe
-translationtype: Human Translation
+ms.translationtype: Human Translation
 ms.sourcegitcommit: 88649111ea3a38c027efb4952211546afd0bf27e
 ms.openlocfilehash: 58beef440db8e019a06ce7c4c8eaabc8e85ce954
+ms.contentlocale: pt-br
+ms.lasthandoff: 05/17/2017
 
 
 ---
@@ -110,9 +112,4 @@ Para estender o esquema do Configuration Manager:
  Depois que o repositório estiver configurado, as permissões tiverem sido concedidas e você tiver instalado um site primário do Configuration Manager, é possível configurar esse site para publicar dados no Active Directory.  
 
  Para saber mais sobre a publicação, veja [Publicar dados do site para o System Center Configuration Manager](../../../core/servers/deploy/configure/publish-site-data.md).  
-
-
-
-<!--HONumber=Feb17_HO1-->
-
 

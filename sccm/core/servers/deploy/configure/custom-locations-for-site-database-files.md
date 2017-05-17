@@ -15,9 +15,11 @@ caps.latest.revision: 3
 author: Brenduns
 ms.author: brenduns
 manager: angrobe
-translationtype: Human Translation
+ms.translationtype: Human Translation
 ms.sourcegitcommit: 5e5155aa8c03b7e0c200d083024c8fa386f97aa7
 ms.openlocfilehash: cfac2c03c1b71b40c68d8acd5fbd96c5e98caaa9
+ms.contentlocale: pt-br
+ms.lasthandoff: 05/17/2017
 
 ---
 # <a name="custom-locations-for-system-center-configuration-manager-site-database-files"></a>Locais personalizados para os arquivos do banco de dados do site do System Center Configuration Manager
@@ -42,9 +44,4 @@ ms.openlocfilehash: cfac2c03c1b71b40c68d8acd5fbd96c5e98caaa9
 -   Siga a documentação para a versão do SQL Server que você usa para orientá-lo sobre como mover um banco de dados de usuário. Por exemplo, se você usa o SQL Server 2014, consulte [Mover bancos de dados de usuário](https://technet.microsoft.com/library/ms345483\(v=sql.120\).aspx) no TechNet.  
 
 -   Depois de completar a movimentação de arquivos de banco de dados, reinicie o serviço **SMS_Executive** no servidor de sites do Configuration Manager.  
-
-
-
-<!--HONumber=Feb17_HO2-->
-
 

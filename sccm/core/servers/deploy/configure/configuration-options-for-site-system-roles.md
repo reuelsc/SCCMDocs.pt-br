@@ -15,9 +15,11 @@ caps.latest.revision: 5
 author: Brenduns
 ms.author: brenduns
 manager: angrobe
-translationtype: Human Translation
+ms.translationtype: Human Translation
 ms.sourcegitcommit: fff93794afdfa9f890b1f06d6c330d8cffc5796c
 ms.openlocfilehash: b4db5d86cc0ed020ed176feb2e8f1f9dc51a2280
+ms.contentlocale: pt-br
+ms.lasthandoff: 05/17/2017
 
 ---
 # <a name="configuration-options-for-site-system-roles-for-system-center-configuration-manager"></a>Configurar opções para funções do sistema de sites para o System Center Configuration Manager
@@ -26,7 +28,7 @@ ms.openlocfilehash: b4db5d86cc0ed020ed176feb2e8f1f9dc51a2280
 
 A maioria das opções de configuração de funções do sistema de sites do System Center Configuration Manager é autoexplicativa ou é explicada nas caixas de diálogo ou no assistente quando você as configura. As seções a seguir explicam as funções do sistema de sites cujas configurações precisam de informações adicionais.  
 
-##  <a name="a-namebkmkapplicationcatalogwebsitea-application-catalog-website-point"></a><a name="BKMK_ApplicationCatalog_Website"></a> Ponto de sites da Web do Catálogo de Aplicativos  
+##  <a name="BKMK_ApplicationCatalog_Website"></a> Ponto de sites da Web do Catálogo de Aplicativos  
  Para saber mais sobre como configurar o ponto de sites da Web do Catálogo de Aplicativos para o Catálogo de Aplicativos, veja [Planejar e configurar o gerenciamento de aplicativos no System Center Configuration Manager](../../../../apps/plan-design/plan-for-and-configure-application-management.md).  
 
  **Conexões de clientes**  
@@ -45,7 +47,7 @@ A maioria das opções de configuração de funções do sistema de sites do Sys
 
  Digite o nome que os usuários veem no Catálogo de Aplicativos. Essas informações de identidade visual ajudam os usuários a identificar este site da Web como uma fonte confiável.  
 
-##  <a name="a-namebkmkapplicationcatalogwebservicea-application-catalog-web-service-point"></a><a name="BKMK_ApplicationCatalog_WebService"></a> Ponto de serviços Web do Catálogo de Aplicativos  
+##  <a name="BKMK_ApplicationCatalog_WebService"></a> Ponto de serviços Web do Catálogo de Aplicativos  
  Para saber mais sobre como configurar o ponto de serviço Web do Catálogo de Aplicativos para o Catálogo de Aplicativos, veja [Planejar e configurar o gerenciamento de aplicativos no System Center Configuration Manager](../../../../apps/plan-design/plan-for-and-configure-application-management.md).  
 
  **HTTPS**  
@@ -54,10 +56,10 @@ A maioria das opções de configuração de funções do sistema de sites do Sys
 
  Para ver um exemplo de implantação do certificado do servidor e obter informações sobre como configurá-lo no IIS, veja a seção *Implantação do certificado de servidor Web para sistemas de sites que executam o IIS* em [Exemplo de implantação passo a passo dos certificados PKI para o System Center Configuration Manager: autoridade de certificação do Windows Server 2008](/sccm/core/plan-design/network/example-deployment-of-pki-certificates).  
 
-##  <a name="a-namebkmkcertificateregistrationpointa-certificate-registration-point"></a><a name="BKMK_CertificateRegistrationPoint"></a> Ponto de registro de certificado  
+##  <a name="BKMK_CertificateRegistrationPoint"></a> Ponto de registro de certificado  
  Para saber mais sobre como configurar o ponto de registro de certificado, veja [Introdução aos perfis de certificado](/sccm/protect/deploy-use/introduction-to-certificate-profiles).  
 
-##  <a name="a-namebkmkdistributionpointa-distribution-point"></a><a name="BKMK_Distribution_Point"></a> Ponto de distribuição  
+##  <a name="BKMK_Distribution_Point"></a> Ponto de distribuição  
  Para saber mais sobre como definir o ponto de distribuição para implantação de conteúdo, veja [Gerenciar conteúdo e infraestrutura de conteúdo do System Center Configuration Manager](../../../../core/servers/deploy/configure/manage-content-and-content-infrastructure.md).  
 
  Para saber mais sobre como definir o ponto de distribuição para implantações PXE, veja [Use o PXE para implantar o Windows pela rede com o System Center Configuration Manager](../../../../osd/deploy-use/use-pxe-to-deploy-windows-over-the-network.md).  
@@ -97,7 +99,7 @@ Marque esta caixa de seleção para habilitar o ponto de distribuição para con
  - **Nas versões anteriores à 1610**, você pode marcar a caixa de seleção **Permitir local de origem de fallback para conteúdo** para permitir que clientes fora desses grupos de limites façam fallback e usem o ponto de distribuição como um local de origem para conteúdo quando nenhum outro ponto de distribuição estiver disponível.
  - **Começando da versão 1610**, não é mais possível configurar a opção **Permitir local de origem de fallback para conteúdo**.  Em vez disso, você configura relações entre grupos de limites que determinam quando um cliente pode começar a pesquisar localizações de fontes de conteúdo válidas em grupos de limites adicionais.
 
-##  <a name="a-namebkmkenrollmentpointa-enrollment-point"></a><a name="BKMK_Enrollment_Point"></a> Ponto de registro  
+##  <a name="BKMK_Enrollment_Point"></a> Ponto de registro  
 Pontos de registro são usados para instalar computadores Mac e registrar os dispositivos gerenciados com o gerenciamento de dispositivos móveis locais. Para obter mais informações, consulte:  
 
 -   [Como implantar clientes em Macs no System Center Configuration Manager](../../../../core/clients/deploy/deploy-clients-to-macs.md)  
@@ -109,7 +111,7 @@ Pontos de registro são usados para instalar computadores Mac e registrar os dis
 
  Para ver um exemplo de implantação do certificado do servidor e obter informações sobre como configurá-lo no IIS, veja a seção *Implantação do certificado de servidor Web para sistemas de sites que executam o IIS* em [Exemplo de implantação passo a passo dos certificados PKI para o System Center Configuration Manager: autoridade de certificação do Windows Server 2008](/sccm/core/plan-design/network/example-deployment-of-pki-certificates).  
 
-##  <a name="a-namebkmkenrollmentproxypointa-enrollment-proxy-point"></a><a name="BKMK_Enrollment_Proxy_Point"></a> Ponto proxy do registro  
+##  <a name="BKMK_Enrollment_Proxy_Point"></a> Ponto proxy do registro  
 Para saber mais sobre como configurar um ponto de proxy do registro para dispositivos móveis, veja [Como os usuários registram dispositivos com o Gerenciamento de Dispositivo Móvel local no System Center Configuration Manager](../../../../mdm/deploy-use/user-enroll-devices-on-premises-mdm.md).  
 
 **Conexões de clientes**  
@@ -117,7 +119,7 @@ Para saber mais sobre como configurar um ponto de proxy do registro para disposi
 
  Para ver um exemplo de implantação do certificado do servidor e obter informações sobre como configurá-lo no IIS, veja a seção *Implantação do certificado de servidor Web para sistemas de sites que executam o IIS* em [Exemplo de implantação passo a passo dos certificados PKI para o System Center Configuration Manager: autoridade de certificação do Windows Server 2008](/sccm/core/plan-design/network/example-deployment-of-pki-certificates).  
 
-##  <a name="a-namebkmkfallbackstatuspointa-fallback-status-point"></a><a name="BKMK_Fallback_Status_Point"></a> Ponto de status de fallback  
+##  <a name="BKMK_Fallback_Status_Point"></a> Ponto de status de fallback  
 **Número de mensagens de estado** e **Intervalo de limitação (em segundos)**  
 Embora as configurações padrão para essas opções (10.000 mensagens de estado e 3.600 segundos para o intervalo de limitação) sejam suficientes para a maioria das circunstâncias, talvez seja preciso alterá-las quando ambas das seguintes condições forem verdadeiras:  
 
@@ -152,9 +154,4 @@ Redefina os valores de limitação para o ponto de status de fallback se alguma 
 -   Você achar que as configurações de limitação atuais criam alto uso da CPU no servidor do site.  
 
 Não altere as definições das configurações de limitação do ponto de status de fallback a menos que você entenda as consequências. Por exemplo, quando você aumenta as configurações de limitação para alto, o uso de CPU no servidor do site pode aumentar para alto, o que reduz a velocidade de todas as operações do site.  
-
-
-
-<!--HONumber=Feb17_HO2-->
-
 

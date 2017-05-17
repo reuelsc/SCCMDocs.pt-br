@@ -16,9 +16,11 @@ caps.handback.revision: 0
 author: robstackmsft
 ms.author: robstack
 manager: angrobe
-translationtype: Human Translation
+ms.translationtype: Human Translation
 ms.sourcegitcommit: 991eff171dce95590a7f050e0d3b07f98c0224b3
 ms.openlocfilehash: 5682cacb43af5bf9248446f1c35b08f137bdae9d
+ms.contentlocale: pt-br
+ms.lasthandoff: 05/17/2017
 
 
 ---
@@ -90,9 +92,4 @@ No procedimento a seguir, você aprenderá a adicionar este item de configuraç�
  Se quiser dar uma olhada rápida nas estatísticas de conformidade dessa implantação, no espaço de trabalho **Monitoramento** , clique em **Implantações**. Na parte inferior da tela, você verá um gráfico **Estatísticas de Conformidade** .  
 
  Para obter informações mais detalhadas sobre como monitorar linhas de base de configuração, consulte [Monitorar configurações de conformidade](../../compliance/deploy-use/monitor-compliance-settings.md)  
-
-
-
-<!--HONumber=Jan17_HO4-->
-
 

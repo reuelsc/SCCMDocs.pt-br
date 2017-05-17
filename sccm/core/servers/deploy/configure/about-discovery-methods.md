@@ -14,9 +14,11 @@ caps.latest.revision: 8
 author: Brenduns
 ms.author: brenduns
 manager: angrobe
-translationtype: Human Translation
+ms.translationtype: Human Translation
 ms.sourcegitcommit: 81d7516b814d2db74d4d857871071c8911755754
 ms.openlocfilehash: 6e53f501281e31f2b7df54b9740eac970f108257
+ms.contentlocale: pt-br
+ms.lasthandoff: 05/17/2017
 
 ---
 # <a name="about-discovery-methods-for-system-center-configuration-manager"></a>Sobre métodos de descoberta para o System Center Configuration Manager
@@ -25,7 +27,7 @@ ms.openlocfilehash: 6e53f501281e31f2b7df54b9740eac970f108257
 
 Os métodos de descoberta do System Center Configuration Manager podem encontrar diferentes dispositivos na sua rede ou dispositivos e usuários do Active Directory. Para usar um método de descoberta de maneira eficiente, você deve compreender suas configurações disponíveis e limitações.  
 
-##  <a name="a-namebkmkaboutforesta-active-directory-forest-discovery"></a><a name="bkmk_aboutForest"></a> Descoberta de Florestas do Active Directory  
+##  <a name="bkmk_aboutForest"></a> Descoberta de Florestas do Active Directory  
  **Configurável:** sim  
 
  **Habilitado por padrão:** não  
@@ -78,7 +80,7 @@ As ações da descoberta de florestas do Active Directory são registradas nos l
 
 Para obter mais informações sobre como configurar esse método de descoberta, confira [Configure discovery methods for System Center Configuration Manager](../../../../core/servers/deploy/configure/configure-discovery-methods.md) (Configurar os métodos de descoberta para o System Center Configuration Manager).  
 
-##  <a name="a-namebkmkaboutgroupa-active-directory-group-discovery"></a><a name="bkmk_aboutGroup"></a> Descoberta de grupos do Active Directory  
+##  <a name="bkmk_aboutGroup"></a> Descoberta de grupos do Active Directory  
 **Configurável:** sim  
 
 **Habilitado por padrão:** não  
@@ -120,7 +122,7 @@ As ações da descoberta de grupos do Active Directory são registradas no arqui
 
 Para obter mais informações sobre como configurar esse método de descoberta, confira [Configure discovery methods for System Center Configuration Manager](../../../../core/servers/deploy/configure/configure-discovery-methods.md) (Configurar os métodos de descoberta para o System Center Configuration Manager).  
 
-##  <a name="a-namebkmkaboutsystema-active-directory-system-discovery"></a><a name="bkmk_aboutSystem"></a> Descoberta de sistemas do Active Directory  
+##  <a name="bkmk_aboutSystem"></a> Descoberta de sistemas do Active Directory  
 **Configurável:** sim  
 
 **Habilitado por padrão:** não  
@@ -158,7 +160,7 @@ As ações da descoberta de sistemas do Active Directory são registradas no arq
 
 Para obter mais informações sobre como configurar esse método de descoberta, confira [Configure discovery methods for System Center Configuration Manager](../../../../core/servers/deploy/configure/configure-discovery-methods.md) (Configurar os métodos de descoberta para o System Center Configuration Manager).  
 
-##  <a name="a-namebkmkaboutusera-active-directory-user-discovery"></a><a name="bkmk_aboutUser"></a> Descoberta de Usuário do Active Directory  
+##  <a name="bkmk_aboutUser"></a> Descoberta de Usuário do Active Directory  
 **Configurável:** sim  
 
 **Habilitado por padrão:** não  
@@ -188,7 +190,7 @@ As ações da descoberta de usuários do Active Directory são registradas no ar
 
 Para obter mais informações sobre como configurar esse método de descoberta, confira [Configure discovery methods for System Center Configuration Manager](../../../../core/servers/deploy/configure/configure-discovery-methods.md) (Configurar os métodos de descoberta para o System Center Configuration Manager).  
 
-##  <a name="a-namebkmkaboutheartbeata-heartbeat-discovery"></a><a name="bkmk_aboutHeartbeat"></a> Descoberta de pulsação  
+##  <a name="bkmk_aboutHeartbeat"></a> Descoberta de pulsação  
 **Configurável:** sim  
 
 **Habilitado por padrão:** sim  
@@ -224,7 +226,7 @@ As ações de descoberta de pulsação são registradas nos seguintes locais:
 
 Para obter mais informações sobre como configurar esse método de descoberta, confira [Configure discovery methods for System Center Configuration Manager](../../../../core/servers/deploy/configure/configure-discovery-methods.md) (Configurar os métodos de descoberta para o System Center Configuration Manager).  
 
-##  <a name="a-namebkmkaboutnetworka-network-discovery"></a><a name="bkmk_aboutNetwork"></a> Descoberta de Rede  
+##  <a name="bkmk_aboutNetwork"></a> Descoberta de Rede  
 **Configurável:** sim  
 
 **Habilitado por padrão:** não  
@@ -268,7 +270,7 @@ A atividade da descoberta de rede é registrada no arquivo **Netdisc.log** na pa
 > [!NOTE]  
 >  Redes complexas e conexões de largura de banda baixa podem causar lentidão na execução da descoberta de rede e gerar tráfego de rede significativo. Como prática recomendada, execute a descoberta de rede somente quando os outros métodos de descoberta não conseguirem localizar os recursos que você deve descobrir. Por exemplo, use a descoberta de rede se você deve descobrir computadores do grupo de trabalho. Os computadores do grupo de trabalho não são descobertos por outros métodos de descoberta.  
 
-###  <a name="a-namebkmknetdisclevelsa-levels-of-network-discovery"></a><a name="BKMK_NetDiscLevels"></a> Níveis de descoberta de rede  
+###  <a name="BKMK_NetDiscLevels"></a> Níveis de descoberta de rede  
 Ao configurar a descoberta de rede, especifique um dos três níveis de descoberta:  
 
 |Nível de descoberta|Detalhes|  
@@ -281,7 +283,7 @@ Ao configurar a descoberta de rede, especifique um dos três níveis de descober
 
  Por exemplo, ao usar a descoberta de rede pela primeira vez, você pode iniciar somente o nível de topologia para identificar sua infraestrutura de rede. Em seguida, você pode reconfigurar a descoberta de rede para descobrir objetos e seus sistemas operacionais de dispositivos. Também é possível definir as configurações que limitam a descoberta de rede a um intervalo específico de segmentos de rede. Dessa forma, você pode descobrir objetos em locais de rede necessários e evitar tráfego de rede desnecessário; além disso, é possível descobrir objetos de roteadores de borda ou de fora da sua rede.  
 
-###  <a name="a-namebkmknetdiscoptionsa-network-discovery-options"></a><a name="BKMK_NetDiscOptions"></a> Opções de descoberta de rede  
+###  <a name="BKMK_NetDiscOptions"></a> Opções de descoberta de rede  
 Para habilitar a descoberta de rede para pesquisar dispositivos endereçáveis por IP, você deve configurar uma ou mais das opções a seguir que especifiquem como consultar dispositivos.  
 
 > [!NOTE]  
@@ -329,7 +331,7 @@ Especifique cada dispositivo SNMP que você deseja que a descoberta de rede cons
 
 -   Você deve configurar a descoberta de rede para usar o nome da comunidade do dispositivo, caso contrário o dispositivo rejeita a consulta baseada em SNMP.  
 
-###  <a name="a-namebkmklimitnetdisca-limiting-network-discovery"></a><a name="BKMK_LimitNetDisc"></a> Limitação da descoberta de rede  
+###  <a name="BKMK_LimitNetDisc"></a> Limitação da descoberta de rede  
 Quando a descoberta de rede consulta um dispositivos SNMP na borda da sua rede, ela pode identificar informações sobre sub-redes e dispositivos SNMP que estão fora da rede imediata. Use as informações a seguir para limitar a descoberta de rede configurando os dispositivos SNMP com os quais a descoberta pode se comunicar e especificando os segmentos de rede a serem consultados.  
 
 **Sub-redes:**  
@@ -374,12 +376,12 @@ O diagrama a seguir mostra o que a descoberta de rede somente de topologia encon
 > [!WARNING]  
 >  Cada aumento do número de saltos de roteador pode aumentar significativamente o número de recursos que podem ser descobertos e aumentar a largura de banda da rede que a Descoberta de Rede usa.  
 
-##  <a name="a-namebkmkaboutservera-server-discovery"></a><a name="bkmk_aboutServer"></a> Descoberta de Servidor  
+##  <a name="bkmk_aboutServer"></a> Descoberta de Servidor  
 **Configurável:** não  
 
 Além dos métodos de descoberta configuráveis pelo usuário, o Configuration Manager usa um processo chamado **Descoberta de Servidor** (SMS_WINNT_SERVER_DISCOVERY_AGENT). Esse método de descoberta cria registros de recursos para computadores que são sistemas de sites, como um computador configurado como ponto de gerenciamento.  
 
-##  <a name="a-namebkmkshareda-common-features-of-active-directory-group-discovery-system-discovery-and-user-discovery"></a><a name="bkmk_shared"></a> Recursos comuns da descoberta de grupos, sistemas e usuários do Active Directory  
+##  <a name="bkmk_shared"></a> Recursos comuns da descoberta de grupos, sistemas e usuários do Active Directory  
 Esta seção fornece informações sobre os recursos que são comuns aos seguintes métodos de descoberta:  
 
 -   Descoberta de grupos do Active Directory  
@@ -421,7 +423,7 @@ As opções a seguir estão disponíveis para uso com vários métodos de descob
 
 -   [Pesquisar atributos personalizados do Active Directory](#bkmk_customAD)  
 
-###  <a name="a-namebkmkdeltaa-delta-discovery"></a><a name="bkmk_delta"></a> Descoberta de deltas  
+###  <a name="bkmk_delta"></a> Descoberta de deltas  
 Disponível para:  
 
 -   Descoberta de grupos do Active Directory  
@@ -450,7 +452,7 @@ Embora a descoberta de deltas possa detectar novos recursos e alterações na as
 
 Você configura a descoberta de deltas na guia **Agendamento de Sondagem** , nas propriedades de cada método de descoberta.  
 
-###  <a name="a-namebkmkstalelogona-filter-stale-computer-records-by-domain-logon"></a><a name="bkmk_stalelogon"></a> Filtrar registros obsoletos do computador por logon de domínio  
+###  <a name="bkmk_stalelogon"></a> Filtrar registros obsoletos do computador por logon de domínio  
 Disponível para:  
 
 -   Descoberta de grupos do Active Directory  
@@ -472,7 +474,7 @@ Configure a filtragem na guia **Opção** nas caixas de diálogo **Propriedades 
 > [!WARNING]  
 >  Ao configurar esse filtro e **Filtrar registros obsoletos por senha do computador**, o computador que atende aos critérios de um dos filtros é excluído da descoberta.  
 
-###  <a name="a-namebkmkstalepassworda-filter-stale-records-by-computer-password"></a><a name="bkmk_stalepassword"></a> Filtrar registros obsoletos por senha do computador  
+###  <a name="bkmk_stalepassword"></a> Filtrar registros obsoletos por senha do computador  
 Disponível para:  
 
 -   Descoberta de grupos do Active Directory  
@@ -492,7 +494,7 @@ Configure a filtragem na guia **Opção** nas caixas de diálogo **Propriedades 
 > [!WARNING]  
 >  Ao configurar esse filtro e **Filtrar registros obsoletos por logon do domínio**, o computador que atende aos critérios de um dos filtros é excluído da descoberta.  
 
-###  <a name="a-namebkmkcustomada-search-customized-active-directory-attributes"></a><a name="bkmk_customAD"></a> Pesquisar atributos personalizados do Active Directory  
+###  <a name="bkmk_customAD"></a> Pesquisar atributos personalizados do Active Directory  
  Disponível para:  
 
 -   Descoberta de sistemas do Active Directory  
@@ -502,9 +504,4 @@ Configure a filtragem na guia **Opção** nas caixas de diálogo **Propriedades 
 Cada método de descoberta dá suporte a uma lista exclusiva de atributos do Active Directory que podem ser descobertos.  
 
 Você pode exibir e configurar a lista de atributos personalizados na guia **Atributos do Active Directory** nas caixas de diálogo **Propriedades da descoberta de sistemas do Active Directory** e **Propriedades da descoberta de usuários do Active Directory**.  
-
-
-
-<!--HONumber=Feb17_HO1-->
-
 

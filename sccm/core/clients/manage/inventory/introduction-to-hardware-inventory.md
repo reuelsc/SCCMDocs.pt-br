@@ -16,9 +16,11 @@ caps.handback.revision: 0
 author: andredm7
 ms.author: andredm
 manager: angrobe
-translationtype: Human Translation
+ms.translationtype: Human Translation
 ms.sourcegitcommit: 3743c80b0c2b5142f3a537ba3855ffd14794d42b
 ms.openlocfilehash: a543b945c4727540faa064c068b175ef63cb5a4b
+ms.contentlocale: pt-br
+ms.lasthandoff: 01/24/2017
 
 
 ---
@@ -55,9 +57,4 @@ Use o inventário de hardware no System Center Configuration Manager para coleta
 - Use arquivos IDMIF para coletar informações sobre os ativos que não estão associados a um cliente do Configuration Manager, por exemplo, projetores, fotocopiadoras e impressoras de rede.  
 
  Para obter mais informações sobre como usar métodos para estender o inventário de hardware do Configuration Manager, consulte [Como configurar o inventário de hardware no System Center Configuration Manager](../../../../core/clients/manage/inventory/configure-hardware-inventory.md).  
-
-
-
-<!--HONumber=Jan17_HO4-->
-
 

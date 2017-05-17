@@ -16,9 +16,11 @@ caps.latest.revision: 21
 author: NathBarn
 ms.author: nathbarn
 manager: angrobe
-translationtype: Human Translation
+ms.translationtype: Human Translation
 ms.sourcegitcommit: bff083fe279cd6b36a58305a5f16051ea241151e
 ms.openlocfilehash: 9085a4daed409eeff4c95e5c467f123d0a38147a
+ms.contentlocale: pt-br
+ms.lasthandoff: 12/16/2016
 
 
 
@@ -73,9 +75,4 @@ ms.openlocfilehash: 9085a4daed409eeff4c95e5c467f123d0a38147a
 -   Atualizações distribuídas por meio do Centro de Proteção contra Malware da Microsoft – Esse método baixará atualizações de definições por meio do Centro de Proteção contra Malware da Microsoft.
 
 -   [Atualizações de compartilhamentos de arquivo UNC](endpoint-definitions-network.md) – Com esse método, você pode salvar as atualizações de definições e de mecanismos mais recentes em um compartilhamento na rede. Os clientes podem acessar a rede para instalar as atualizações.
-
-
-
-<!--HONumber=Dec16_HO3-->
-
 

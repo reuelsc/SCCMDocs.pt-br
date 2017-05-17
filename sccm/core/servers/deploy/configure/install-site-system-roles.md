@@ -15,9 +15,11 @@ caps.latest.revision: 4
 author: Brenduns
 ms.author: brenduns
 manager: angrobe
-translationtype: Human Translation
+ms.translationtype: Human Translation
 ms.sourcegitcommit: 8370e3b102afed518e8154d4944ab420188faccf
 ms.openlocfilehash: 76b070f8e203cc0c751f35e5a4b4904504786c04
+ms.contentlocale: pt-br
+ms.lasthandoff: 05/17/2017
 
 ---
 # <a name="install-site-system-roles-for-system-center-configuration-manager"></a>Instalar funções do sistema de sites ao System Center Configuration Manager
@@ -38,7 +40,7 @@ Antes de instalar a função do sistema de sites, o Configuration Manager verifi
 
 -   O Configuration Manager usa a **Conta de Instalação do Sistema de Sites** para instalar as funções do sistema de sites. Você determina essa conta ao executar o assistente aplicável para criar um novo servidor de sistema de site ou adicionar funções do sistema de site a um servidor de sistema de site existente. Por padrão, essa conta é a conta do sistema local do computador do servidor do site, mas, você pode especificar uma conta de usuário do domínio para usar como a Conta de Instalação do Sistema de Site. Para obter mais informações, consulte [Contas usadas no System Center Configuration Manager](../../../../core/plan-design/hierarchy/accounts.md).  
 
-##  <a name="a-namebkmkinstalla-to-install-site-system-roles-on-an-existing-site-system-server"></a><a name="bkmk_Install"></a> Para instalar funções do sistema de sites em um servidor do sistema de sites existente  
+##  <a name="bkmk_Install"></a> Para instalar funções do sistema de sites em um servidor do sistema de sites existente  
 
 1.  No console do Configuration Manager, clique em **Administração**.  
 
@@ -81,9 +83,4 @@ Antes de instalar a função do sistema de sites, o Configuration Manager verifi
 
 > [!TIP]  
 >  O cmdlet do Windows PowerShell, New-CMSiteSystemServer, executa a mesma função que esse procedimento. Para mais informações, consulte [New-CMSiteSystemServer](http://go.microsoft.com/fwlink/p/?LinkID=271414) na documentação de Referência de Cmdlet do System Center 2012 Configuration Manager SP1.  
-
-
-
-<!--HONumber=Feb17_HO2-->
-
 

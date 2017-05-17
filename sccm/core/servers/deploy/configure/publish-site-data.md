@@ -15,9 +15,11 @@ caps.latest.revision: 8
 author: Brenduns
 ms.author: brenduns
 manager: angrobe
-translationtype: Human Translation
+ms.translationtype: Human Translation
 ms.sourcegitcommit: e7629fdf7fdf615fa27894158c3d101432c95a04
 ms.openlocfilehash: bcfb002c503485f03ba27d7346acb61d0d3c6087
+ms.contentlocale: pt-br
+ms.lasthandoff: 05/17/2017
 
 
 ---
@@ -71,9 +73,4 @@ Para saber mais sobre como clientes localizam um ponto gerenciamento, veja [Ente
     >  Se você permitir que sites publiquem em uma floresta, deve estender o esquema do Active Directory dessa floresta para o Configuration Manager. A conta de floresta do Active Directory deve ter permissões de controle total ao contêiner do sistema nessa floresta.  
 
 5.  Ao concluir a configuração da floresta a ser usada com a descoberta de florestas do Active Directory, clique em **OK** para salvá-la.  
-
-
-
-<!--HONumber=Feb17_HO1-->
-
 

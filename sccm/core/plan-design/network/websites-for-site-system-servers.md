@@ -16,9 +16,11 @@ caps.handback.revision: 0
 author: Brenduns
 ms.author: brenduns
 manager: angrobe
-translationtype: Human Translation
+ms.translationtype: Human Translation
 ms.sourcegitcommit: 26bbec1e8d6c53ce297689ba4390b9347229eb15
 ms.openlocfilehash: 886ff3b8e867fc340c79648a57feae81653b0ccd
+ms.contentlocale: pt-br
+ms.lasthandoff: 05/17/2017
 
 
 ---
@@ -34,7 +36,7 @@ Várias funções de sistema de sites do Configuration Manager requerem o uso do
 
 
 
-##  <a name="a-namebkmkwhat2knowa-what-to-know-before-choosing-to-use-custom-websites"></a><a name="BKMK_What2Know"></a> O que saber antes de escolher usar sites personalizados  
+##  <a name="BKMK_What2Know"></a> O que saber antes de escolher usar sites personalizados  
  Por padrão, as funções do sistema de sites usam o **Site Padrão** no IIS. Isso é configurado automaticamente quando a função de sistema de sites é instalada. No entanto, em sites primários, você pode optar por usar sites personalizados em vez disso. Quando você usa sites personalizados:  
 
 -   Sites personalizados estão habilitados para todo o site, não para servidores ou funções individuais do sistema de sites.  
@@ -132,9 +134,4 @@ Uma vez que as etapas para criar um site personalizado variam para versões dife
     2.  Inicie o site **SMSWEB**.  
 
     3.  Reinicie o serviço **SMS_SITE_COMPONENT_MANAGER** no servidor do site.  
-
-
-
-<!--HONumber=Feb17_HO2-->
-
 

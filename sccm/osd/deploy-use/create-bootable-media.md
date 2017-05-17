@@ -16,9 +16,11 @@ caps.handback.revision: 0
 author: Dougeby
 ms.author: dougeby
 manager: angrobe
-translationtype: Human Translation
+ms.translationtype: Human Translation
 ms.sourcegitcommit: 89158debdf4c345a325feeb608db2215a88ed81b
 ms.openlocfilehash: 9032698fa12bf453041ea06bf330d3b4687c2a97
+ms.contentlocale: pt-br
+ms.lasthandoff: 05/17/2017
 
 
 ---
@@ -32,7 +34,7 @@ Mídias inicializáveis no Configuration Manager contém a imagem de inicializa�
 
 -   [Substituir um computador existente e transferir configurações](replace-an-existing-computer-and-transfer-settings.md)  
 
-##  <a name="a-namebkmkcreatebootablemediaa-create-bootable-media"></a><a name="BKMK_CreateBootableMedia"></a> Criar mídia inicializável  
+##  <a name="BKMK_CreateBootableMedia"></a> Criar mídia inicializável  
  Quando você inicializa a mídia inicializável, o computador de destino é iniciado, conecta-se à rede e recupera a sequência de tarefas especificada, a imagem do sistema operacional e qualquer outro conteúdo necessário da rede. Como a sequência de tarefa não está na mídia, você pode alterar a sequência de tarefas ou o conteúdo sem precisar recriar a mídia. Os pacotes em mídia inicializável não são criptografados. Você deve tomar as medidas de segurança apropriadas, como adicionar uma senha à mídia, para verificar se o conteúdo do pacote está protegido contra usuários não autorizados.  
 
  Antes de criar mídia inicializável usando o Assistente para Criar Mídia de Sequência de Tarefas, verifique se as seguintes condições foram atendidas:  
@@ -155,9 +157,4 @@ As informações nesta seção ajudam a criar mídia inicializável em uma unida
 
 ## <a name="next-steps"></a>Próximas etapas  
 [Use a mídia inicializável para implantar o Windows na rede](use-bootable-media-to-deploy-windows-over-the-network.md)  
-
-
-
-<!--HONumber=Jan17_HO4-->
-
 

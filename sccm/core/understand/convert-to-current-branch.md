@@ -15,9 +15,11 @@ caps.latest.revision: 0
 author: Brenduns
 ms.author: brenduns
 manager: angrobe
-translationtype: Human Translation
+ms.translationtype: Human Translation
 ms.sourcegitcommit: 60631bc0346bd78d704e7129bb755af504c59b1b
 ms.openlocfilehash: 6e7edc85630d22c5bbba1ff66bd1199903db76db
+ms.contentlocale: pt-br
+ms.lasthandoff: 05/17/2017
 
 ---
 
@@ -54,9 +56,4 @@ Se seu site executar o LTSB, será possível usar a opção a seguir no console 
  2. Selecione a opção de converter para a Ramificação Atual e, em seguida, clique em **Aplicar**.  
 
 Quando o seu site for convertido para a Ramificação Atual, os recursos anteriormente indisponíveis estarão disponíveis para uso.
-
-
-
-<!--HONumber=Feb17_HO2-->
-
 

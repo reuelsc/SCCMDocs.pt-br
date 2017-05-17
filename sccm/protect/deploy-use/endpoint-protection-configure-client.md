@@ -15,9 +15,11 @@ caps.latest.revision: 21
 author: NathBarn
 ms.author: nathbarn
 manager: angrobe
-translationtype: Human Translation
+ms.translationtype: Human Translation
 ms.sourcegitcommit: bff083fe279cd6b36a58305a5f16051ea241151e
 ms.openlocfilehash: 2d7ec9cc626f3ccfded990cf8ba392c4979adfee
+ms.contentlocale: pt-br
+ms.lasthandoff: 12/16/2016
 
 
 ---
@@ -173,9 +175,4 @@ Para obter mais informações sobre implantação de sistema operacional no Conf
 Depois de concluir as etapas anteriores, você poderá preparar o computador de referência para geração de imagens. Para obter mais informações sobre implantação de sistema operacional no Configuration Manager, consulte [Gerenciar imagens do sistema operacional com o System Center Configuration Manager](/sccm/osd/get-started/manage-operating-system-images).
 
 Quando uma imagem que contém o software cliente do Endpoint Protection é implantada, o cliente do Endpoint Protection reporta automaticamente as informações para o site do Configuration Manager ao qual o computador está atribuído, e a política aplicável ao computador cliente é baixada e aplicada.
-
-
-
-<!--HONumber=Dec16_HO3-->
-
 

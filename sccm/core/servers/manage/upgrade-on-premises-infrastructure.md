@@ -16,9 +16,11 @@ caps.handback.revision: 0
 author: Brenduns
 ms.author: brenduns
 manager: angrobe
-translationtype: Human Translation
+ms.translationtype: Human Translation
 ms.sourcegitcommit: 2e711cce2435957f3e85dad08f17260e1a224fc2
 ms.openlocfilehash: c6448932e91a02984ca57cef0b75c10ea3f43fa1
+ms.contentlocale: pt-br
+ms.lasthandoff: 05/17/2017
 
 
 ---
@@ -32,7 +34,7 @@ Use as informações descritas neste tópico para ajudá-lo a atualizar a infrae
 
 - Se desejar atualizar a infraestrutura do System Center Configuration Manager para uma nova versão, consulte [Atualizações para o System Center Configuration Manager](/sccm/core/servers/manage/updates).
 
-##  <a name="a-namebkmksupconfigupgradesitesrva-upgrade-the-operating-system-of-site-systems"></a><a name="BKMK_SupConfigUpgradeSiteSrv"></a> Atualizar o sistema operacional dos sistemas de sites  
+##  <a name="BKMK_SupConfigUpgradeSiteSrv"></a> Atualizar o sistema operacional dos sistemas de sites  
  O Configuration Manager dá suporte à atualização in-loco do sistema operacional dos servidores que hospedam um servidor do site e dos servidores remotos que hospedam qualquer função do sistema de site, nas seguintes situações:  
 
 -   Atualização in-loco para um service pack posterior do Windows Server, se o nível do service pack do Windows resultante tiver suporte do Configuration Manager.  
@@ -148,7 +150,7 @@ Os seguintes cenários de atualização do Windows Server são consultados com f
 
 
 
-##  <a name="a-namebkmksupconfigupgradeclienta-upgrade-the-operating-system-of-configuration-manager-clients"></a><a name="BKMK_SupConfigUpgradeClient"></a> Atualizar o sistema operacional de clientes do Configuration Manager  
+##  <a name="BKMK_SupConfigUpgradeClient"></a> Atualizar o sistema operacional de clientes do Configuration Manager  
  O Configuration Manager dá suporte a uma atualização in-loco do sistema operacional para clientes do Configuration Manager nas seguintes situações:  
 
 -   Atualização in-loco para um service pack posterior do Windows, se o nível do service pack resultante tiver suporte do Configuration Manager.  
@@ -157,7 +159,7 @@ Os seguintes cenários de atualização do Windows Server são consultados com f
 
 -   Atualizações de serviços de compilação a compilação do Windows 10.  Consulte [Gerenciar o Windows como um serviço usando o System Center Configuration Manager](../../../osd/deploy-use/manage-windows-as-a-service.md) para obter mais informações.  
 
-##  <a name="a-namebkmksupconfigupgradedbsrva-upgrade-sql-server-on-the-site-database-server"></a><a name="BKMK_SupConfigUpgradeDBSrv"></a> Atualizar o SQL Server no servidor de banco de dados do site  
+##  <a name="BKMK_SupConfigUpgradeDBSrv"></a> Atualizar o SQL Server no servidor de banco de dados do site  
   O Configuration Manager dá suporte a uma atualização in-loco do SQL Server de uma versão com suporte do SQL no servidor de banco de dados do site. Os cenários de atualização do SQL Server nesta seção têm suporte do Configuration Manager e incluem requisitos para cada cenário.
 
  Para obter informações sobre as versões do SQL Server que têm suporte do Configuration Manager, consulte [Suporte para versões do SQL Server para o System Center Configuration Manager](../../../core/plan-design/configs/support-for-sql-server-versions.md).  
@@ -210,9 +212,4 @@ Para obter mais informações sobre o SQL Server, consulte a documentação sobr
 
 > [!NOTE]  
 >  Ao alterar a edição do SQL Server em uso no site de administração central de uma Standard Edition para uma Datacenter ou Enterprise Edition, a partição do banco de dados que limita o número de clientes com suporte da hierarquia não é alterada.
-
-
-
-<!--HONumber=Feb17_HO3-->
-
 

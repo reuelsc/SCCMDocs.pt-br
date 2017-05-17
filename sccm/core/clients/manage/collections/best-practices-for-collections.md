@@ -16,9 +16,11 @@ caps.handback.revision: 0
 author: andredm7
 ms.author: andredm
 manager: angrobe
-translationtype: Human Translation
+ms.translationtype: Human Translation
 ms.sourcegitcommit: fc392e4440e84614f92218e9c7a09ec1c2c64f53
 ms.openlocfilehash: 8f3086adac2c6886316a2fd65b3d471acac9077c
+ms.contentlocale: pt-br
+ms.lasthandoff: 12/16/2016
 
 
 ---
@@ -41,9 +43,4 @@ Use as práticas recomendadas a seguir para coletas no System Center Configurati
 
 ## <a name="make-sure-that-maintenance-windows-are-large-enough-to-deploy-critical-software-updates"></a>Verifique se as janelas de manutenção são grandes o suficiente para implantar atualizações de software críticas  
  Você pode configurar janelas de manutenção para coleções de dispositivos, para restringir os momentos em que o Configuration Manager pode instalar software nesses dispositivos. Se você configurar a janela de manutenção como muito pequena, o cliente não poderá instalar atualizações críticas de software, o que o deixa vulnerável ao ataque mitigado pela atualização de software.  
-
-
-
-<!--HONumber=Dec16_HO3-->
-
 

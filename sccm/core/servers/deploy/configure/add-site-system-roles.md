@@ -16,9 +16,11 @@ caps.handback.revision: 0
 author: Brenduns
 ms.author: brenduns
 manager: angrobe
-translationtype: Human Translation
+ms.translationtype: Human Translation
 ms.sourcegitcommit: 7fa191ce37a68f604673fe9b9724f76c3ff10032
 ms.openlocfilehash: 1ad4abf1f06ed24bd1d505648280b5e5d80220c7
+ms.contentlocale: pt-br
+ms.lasthandoff: 05/17/2017
 
 
 ---
@@ -50,9 +52,4 @@ O Configuration Manager não dá suporte a funções do sistema de sites para v�
 -   [Configurar opções para funções do sistema de sites para o System Center Configuration Manager](../../../../core/servers/deploy/configure/configuration-options-for-site-system-roles.md)  
 
      Algumas funções do sistema de sites permitem configurações que exigem mais detalhes do que pode ser explicado na interface do usuário. Esse tópico fornece esses detalhes.  
-
-
-
-<!--HONumber=Feb17_HO1-->
-
 

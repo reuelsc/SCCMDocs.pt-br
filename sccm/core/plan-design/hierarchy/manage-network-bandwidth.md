@@ -16,9 +16,11 @@ caps.handback.revision: 0
 author: Brenduns
 ms.author: brenduns
 manager: angrobe
-translationtype: Human Translation
+ms.translationtype: Human Translation
 ms.sourcegitcommit: 37e4f27fcea0bbdd39c9fd3ab38aa46e3059f73a
 ms.openlocfilehash: d9dff97126c34a726677de60dd7647370c553b6e
+ms.contentlocale: pt-br
+ms.lasthandoff: 05/17/2017
 
 
 ---
@@ -26,7 +28,7 @@ ms.openlocfilehash: d9dff97126c34a726677de60dd7647370c553b6e
 # <a name="manage-network-bandwidth-for-content"></a>Gerenciar largura de banda de rede para o conteúdo
 Para ajudar a gerenciar a largura de banda de rede usada no processo de gerenciamento de conteúdo do System Center Configuration Manager, você pode usar controles internos para agendamento e limitação. Você também pode usar conteúdo pré-testado. As seções a seguir descrevem essas opções mais detalhadamente.
 
-##  <a name="a-namebkmkplanningforthrottlingascheduling-and-throttling"></a><a name="BKMK_PlanningForThrottling"></a>Agendamento e limitação  
+##  <a name="BKMK_PlanningForThrottling"></a>Agendamento e limitação  
 
  Ao criar um pacote, altere o caminho de origem do conteúdo ou atualize o conteúdo no ponto de distribuição; os arquivos são copiados do caminho de origem para a biblioteca de conteúdo no servidor do site. Em seguida, o conteúdo é copiado da biblioteca de conteúdo no servidor do site para a biblioteca de conteúdo nos pontos de distribuição. Quando os arquivos de origem do conteúdo são atualizados e os arquivos de origem já foram distribuídos, o Configuration Manager recupera somente os arquivos novos ou atualizados e os envia ao ponto de distribuição.
 
@@ -41,7 +43,7 @@ Para ajudar a gerenciar a largura de banda de rede usada no processo de gerencia
 
 Para saber mais, veja [Instalar e configurar pontos de distribuição para o System Center Configuration Manager](/sccm/core/servers/deploy/configure/install-and-configure-distribution-points).  
 
-##  <a name="a-namebkmkprestagingcontentaprestaged-content"></a><a name="BKMK_PrestagingContent"></a>Conteúdo pré-teste  
+##  <a name="BKMK_PrestagingContent"></a>Conteúdo pré-teste  
  Você pode pré-testar o conteúdo para adicionar os arquivos de conteúdo à biblioteca de conteúdo em um servidor de sites ou ponto de distribuição antes de distribuir o conteúdo. Como os arquivos de conteúdo já estão na biblioteca de conteúdo, eles não são transferidos pela rede durante a distribuição. Você pode pré-configurar arquivos de conteúdo para aplicativos e pacotes.  
 
 No console do Configuration Manager, selecione o conteúdo que você deseja pré-testar e, em seguida, use o **Assistente para Criar Arquivo de Conteúdo de Pré-Teste**. Isso cria um arquivo de conteúdo compactado e pré-testado, que contém os arquivos, as metadados associados ao conteúdo. Em seguida, você pode importar manualmente o conteúdo em um servidor do site ou ponto de distribuição. Observe o seguinte:  
@@ -58,7 +60,7 @@ Opcionalmente, você pode configurar o ponto de distribuição como **pré-testa
 
 -   Sempre usar o processo de distribuição de conteúdo padrão para o conteúdo no pacote.  
 
-###  <a name="a-namebkmkdeterminetoprestagecontentadetermine-whether-to-prestage-content"></a><a name="BKMK_DetermineToPrestageContent"></a>Determinar se deseja pré-testar o conteúdo  
+###  <a name="BKMK_DetermineToPrestageContent"></a>Determinar se deseja pré-testar o conteúdo  
  Considere a pré-configuração do conteúdo para aplicativos e pacotes nos seguintes cenários:  
 
 -   **Para lidar com o problema de largura de banda de rede limitada do servidor de sites ao ponto de distribuição.** Se o agendamento e a limitação não são suficientes para atender às suas preocupações sobre largura de banda, considere pré-testar o conteúdo no ponto de distribuição. Cada ponto de distribuição tem a configuração **Habilitar este ponto de distribuição para conteúdo pré-configurado** que você pode definir nas propriedades do ponto de distribuição. Quando você habilita essa opção, o ponto de distribuição é identificado como um ponto de distribuição pré-configurado, e você pode escolher como gerenciar o conteúdo por pacote.  
@@ -75,9 +77,4 @@ Opcionalmente, você pode configurar o ponto de distribuição como **pré-testa
     >  As opções anteriores são aplicáveis por pacote e são usadas somente quando um ponto de distribuição é identificado como pré-testado. Os pontos de distribuição que não foram identificados como pré-configurados ignoram essas configurações. Nesse caso, o conteúdo será sempre distribuído do servidor do site para os pontos de distribuição pela rede.  
 
 -   **Para restaurar a biblioteca de conteúdo em um servidor de sites.** quando ocorre falha em um servidor do site, as informações sobre pacotes e aplicativos contidas na biblioteca de conteúdo são restauradas para o banco de dados do site como parte do processo de restauração, mas os arquivos dessa biblioteca não são restaurados como parte do processo. Se você não tiver um backup do sistema de arquivos para restaurar a biblioteca de conteúdo, é possível criar um arquivo de conteúdo pré-testado de outro site que contenha os pacotes e aplicativos que você precisa ter. Você pode, então, extrair o arquivo de conteúdo pré-testado no servidor de sites recuperado. Para saber mais sobre backup e recuperação do servidor de sites, veja [Backup e recuperação para o System Center Configuration Manager](/sccm/protect/understand/backup-and-recovery).  
-
-
-
-<!--HONumber=Feb17_HO1-->
-
 

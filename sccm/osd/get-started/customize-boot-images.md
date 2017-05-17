@@ -16,9 +16,11 @@ caps.handback.revision: 0
 author: Dougeby
 ms.author: dougeby
 manager: angrobe
-translationtype: Human Translation
+ms.translationtype: Human Translation
 ms.sourcegitcommit: 89158debdf4c345a325feeb608db2215a88ed81b
 ms.openlocfilehash: ab2ecb64c9c80b4effed79ba08769c99473db0c4
+ms.contentlocale: pt-br
+ms.lasthandoff: 05/17/2017
 
 
 ---
@@ -300,9 +302,4 @@ Cada versão do Configuration Manager dá suporte a uma versão específica do W
     3.  Clique na imagem de inicialização identificada na etapa 3.  
 
     4.  Na guia **Início** , no grupo **Implantação** , clique em **Atualizar Pontos de Distribuição**.  
-
-
-
-<!--HONumber=Jan17_HO4-->
-
 

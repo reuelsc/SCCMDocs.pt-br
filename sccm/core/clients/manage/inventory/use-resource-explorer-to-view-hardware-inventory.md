@@ -15,9 +15,11 @@ caps.latest.revision: 7
 author: andredm7
 ms.author: andredm
 manager: angrobe
-translationtype: Human Translation
+ms.translationtype: Human Translation
 ms.sourcegitcommit: 05c27c7aa36e0b4236867766dab36125c31467b3
 ms.openlocfilehash: 6265ee70b70a715862b1651d2f3760bef096ee8a
+ms.contentlocale: pt-br
+ms.lasthandoff: 01/03/2017
 
 
 ---
@@ -49,10 +51,5 @@ Use o Gerenciador de Recursos no System Center Configuration Manager para exibir
 3.  Escolha o computador que contém o inventário que você deseja exibir e, em seguida, na guia **Início** > grupo **Dispositivos**, escolha **Iniciar** >  **Gerenciador de Recursos**.   
 
 4.  Clique com o botão direito do mouse em qualquer item do painel direito da janela **Gerenciador de Recursos** e escolha **Propriedades** para abrir a caixa de diálogo *Propriedades do <nome do item\>***** para exibir as informações de inventário coletadas em um formato mais legível.  
-
-
-
-
-<!--HONumber=Jan17_HO1-->
 
 

@@ -15,9 +15,11 @@ caps.latest.revision: 13
 author: Dougeby
 ms.author: dougeby
 manager: angrobe
-translationtype: Human Translation
+ms.translationtype: Human Translation
 ms.sourcegitcommit: 288a4c649f371d9701fe7249449356aa222bf372
 ms.openlocfilehash: 35f04e237efffbdb12893f658950a99dc0b98b85
+ms.contentlocale: pt-br
+ms.lasthandoff: 05/17/2017
 
 
 ---
@@ -37,7 +39,7 @@ Este tópico fornece as etapas no System Center Configuration Manager para atual
 
  Use as etapas a seguir para implantar sistemas operacionais na rede usando uma sequência de tarefas.  
 
-##  <a name="a-namebkmkplana-plan"></a><a name="BKMK_Plan"></a> Planoo  
+##  <a name="BKMK_Plan"></a> Planoo  
 
 -   **Examine as limitações da sequência de tarefas para atualizar um sistema operacional**  
 
@@ -59,7 +61,7 @@ Este tópico fornece as etapas no System Center Configuration Manager para atual
 
      Os únicos pré-requisitos para o cenário de atualização é que você tenha um ponto de distribuição disponível para o pacote de atualização de sistema operacional e quaisquer outros pacotes incluídos na sequência de tarefas. Para mais informações, consulte [Instalar ou modificar um ponto de distribuição](../../core/servers/deploy/configure/install-and-configure-distribution-points.md).
 
-##  <a name="a-namebkmkconfigurea-configure"></a><a name="BKMK_Configure"></a> Configurar  
+##  <a name="BKMK_Configure"></a> Configurar  
 
 1.  **Preparar o pacote de atualização de sistema operacional**  
 
@@ -75,7 +77,7 @@ Este tópico fornece as etapas no System Center Configuration Manager para atual
     > [!NOTE]  
     >  Normalmente, você usará as etapas em [Criar uma sequência de tarefas para atualizar um sistema operacional](create-a-task-sequence-to-upgrade-an-operating-system.md) para criar uma sequência de tarefas para atualizar um sistema operacional para o Windows 10. A sequência de tarefas inclui a etapa Atualizar Sistema Operacional, bem como etapas recomendadas adicionais e os grupos para lidar com o processo de atualização ponta a ponta. No entanto, é possível criar uma sequência de tarefas personalizada e adicionar a etapa [Atualizar Sistema Operacional](../understand/task-sequence-steps.md#BKMK_UpgradeOS) da sequência de tarefas para atualizar o sistema operacional. Essa é a única etapa necessária para atualizar o sistema operacional para o Windows 10. Se você escolher esse método, adicione também a etapa [Reiniciar Computador](../understand/task-sequence-steps.md#a-namebkmkrestartcomputera-restart-computer) após a etapa Atualizar Sistema Operacional para concluir a atualização. Certifique-se de usar a configuração **Sistema operacional padrão instalado atualmente** para reiniciar o computador no sistema operacional instalado e não no Windows PE.  
 
-##  <a name="a-namebkmkdeploya-deploy"></a><a name="BKMK_Deploy"></a> Implantar  
+##  <a name="BKMK_Deploy"></a> Implantar  
 
 -   Use um dos seguintes métodos de implantação para implantar o sistema operacional:  
 
@@ -88,9 +90,4 @@ Este tópico fornece as etapas no System Center Configuration Manager para atual
 -   **Monitorar a implantação da sequência de tarefas**  
 
      Para monitorar a implantação da sequência de tarefas para atualizar o sistema operacional, consulte [Monitorar implantações do sistema operacional](monitor-operating-system-deployments.md).  
-
-
-
-<!--HONumber=Feb17_HO1-->
-
 

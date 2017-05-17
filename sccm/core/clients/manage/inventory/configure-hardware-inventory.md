@@ -16,9 +16,11 @@ caps.handback.revision: 0
 author: andredm7
 ms.author: andredm
 manager: angrobe
-translationtype: Human Translation
+ms.translationtype: Human Translation
 ms.sourcegitcommit: 05c27c7aa36e0b4236867766dab36125c31467b3
 ms.openlocfilehash: deed112cca011b3b410c1197b7abf0f36a864f3c
+ms.contentlocale: pt-br
+ms.lasthandoff: 01/03/2017
 
 
 ---
@@ -48,9 +50,4 @@ Este procedimento define as configurações do cliente para o inventário de har
 7.  Defina outras [configurações do cliente de inventário de hardware](../../../../core/clients/deploy/about-client-settings.md#hardware-inventory) necessárias.  
 
 Os dispositivos cliente serão definidos com essas configurações na próxima vez que baixarem a política do cliente. Para iniciar a recuperação de política para um cliente individual, veja [How to manage clients in System Center Configuration Manager](../../../../core/clients/manage/manage-clients.md).  
-
-
-
-<!--HONumber=Jan17_HO1-->
-
 

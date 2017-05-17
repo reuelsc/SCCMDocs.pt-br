@@ -16,9 +16,11 @@ caps.handback.revision: 0
 author: andredm7
 ms.author: andredm
 manager: angrobe
-translationtype: Human Translation
+ms.translationtype: Human Translation
 ms.sourcegitcommit: 05c27c7aa36e0b4236867766dab36125c31467b3
 ms.openlocfilehash: 80d5a13ea5d40150ddd537251e837083e649ac52
+ms.contentlocale: pt-br
+ms.lasthandoff: 01/03/2017
 
 
 ---
@@ -52,7 +54,7 @@ O arquivo Configuration.mof é usado para definir as classes de dados a ser inve
 ## <a name="procedures-to-extend-hardware-inventory"></a>Procedimentos para estender o inventário de hardware  
 Esses procedimentos ajudam a configurar as configurações padrão do cliente de inventário de hardware e se aplicam a todos os clientes em sua hierarquia. Se quiser que essas configurações se apliquem somente a alguns clientes, crie uma configuração personalizada do dispositivo de cliente e a atribua a uma coleção de clientes específicos. Consulte [Como definir as configurações do cliente no System Center Configuration Manager](../../../../core/clients/deploy/configure-client-settings.md).  
 
-###  <a name="a-namebkmkenablea-to-enable-or-disable-existing-inventory-classes"></a><a name="BKMK_Enable"></a> Para habilitar ou desabilitar as classes de inventário existentes  
+###  <a name="BKMK_Enable"></a> Para habilitar ou desabilitar as classes de inventário existentes  
 
 1.  No console do Configuration Manager, escolha **Administração** > **Configurações do Cliente** > **Configurações do Cliente Padrão**.  
 
@@ -68,7 +70,7 @@ Esses procedimentos ajudam a configurar as configurações padrão do cliente de
     >  Quando você adiciona novas classes ao inventário de hardware do Configuration Manager, aumenta o tamanho do arquivo de inventário que é coletado e enviado ao servidor do site. Isso pode afetar negativamente o desempenho da rede e do site do Configuration Manager. Habilite somente as classes de inventário que você deseja coletar.  
 
 
-###  <a name="a-namebkmkadda-to-add-a-new-inventory-class"></a><a name="BKMK_Add"></a> Para adicionar uma nova classe de inventário  
+###  <a name="BKMK_Add"></a> Para adicionar uma nova classe de inventário  
 
 Você só pode adicionar classes de inventário do servidor de nível superior na hierarquia e modificando as configurações de cliente padrão. Essa opção não está disponível quando você cria configurações personalizadas do dispositivo.
 
@@ -101,7 +103,7 @@ Você só pode adicionar classes de inventário do servidor de nível superior n
      Ao terminar de configurar as propriedades, clique em **OK** para fechar a caixa de diálogo **Qualificadores de classe** e as outras caixas de diálogo abertas. 
 
 
-###  <a name="a-namebkmkimporta-to-import-hardware-inventory-classes"></a><a name="BKMK_Import"></a> Para importar classes de inventário de hardware  
+###  <a name="BKMK_Import"></a> Para importar classes de inventário de hardware  
 
 Você só pode importar classes de inventário quando você modifica as configurações de cliente padrão. No entanto, você pode usar configurações personalizadas do cliente para importar as informações que não contém uma alteração de esquema, como alterar a propriedade de uma classe existente de **True** para **False**.  
 
@@ -117,7 +119,7 @@ Você só pode importar classes de inventário quando você modifica as configur
 
 8.  Na caixa de diálogo **Importar**, selecione o arquivo MOF (Managed Object Format) que deseja importar e, em seguida, escolha **OK**. Examine os itens que serão importados e, em seguida, clique em **Importar**.  
 
-###  <a name="a-namebkmkexporta-to-export-hardware-inventory-classes"></a><a name="BKMK_Export"></a> Para exportar classes de inventário de hardware  
+###  <a name="BKMK_Export"></a> Para exportar classes de inventário de hardware  
 
 1.  No console do Configuration Manager, escolha **Administração** > **Configurações do Cliente** > **Configurações do Cliente Padrão**.  
 
@@ -140,7 +142,7 @@ Você só pode importar classes de inventário quando você modifica as configur
 > [!IMPORTANT]  
 >  Antes de adicionar informações de arquivos MIF ao banco de dados do Configuration Manager, você deve criar ou importar informações de classe para eles. Para obter mais informações, veja as seções [Para adicionar uma nova classe de inventário](#BKMK_Add) e [Para importar classes de inventário de hardware](#BKMK_Import) neste tópico.  
 
-###  <a name="a-namebkmknoidmifa-to-create-noidmif-files"></a><a name="BKMK_NOIDMIF"></a> Para criar arquivos NOIDMIF  
+###  <a name="BKMK_NOIDMIF"></a> Para criar arquivos NOIDMIF  
  Arquivos NOIDMIF podem ser usados para adicionar informações a um inventário de hardware do cliente que normalmente não pode ser coletado pelo Configuration Manager e está associado a um dispositivo de cliente específico. Por exemplo, muitas empresas rotulam cada computador da organização com um número de ativo e então, catalogam esses números manualmente. Quando você cria um arquivo NOIDMIF, essas informações podem ser adicionadas ao banco de dados do Configuration Manager e ser usadas para consultas e relatórios. Para obter informações sobre como criar arquivos NOIDMIF, veja a documentação do SDK do Configuration Manager.  
 
 > [!IMPORTANT]  
@@ -148,16 +150,11 @@ Você só pode importar classes de inventário quando você modifica as configur
 
  Depois de criar um arquivo NOIDMIF, armazene-o na pasta *%Windir%***\System32\CCM\Inventory\Noidmifs** em cada cliente. O Configuration Manager coleta informações de arquivos NODMIF nesta pasta durante o próximo ciclo de inventário de hardware agendado.  
 
-###  <a name="a-namebkmkidmifa-to-create-idmif-files"></a><a name="BKMK_IDMIF"></a> Para criar arquivos IDMIF  
+###  <a name="BKMK_IDMIF"></a> Para criar arquivos IDMIF  
  Os arquivos IDMIF podem ser usados para adicionar informações sobre ativos que normalmente não poderiam ser inventariadas pelo Configuration Manager e que não estão associadas a um dispositivo de cliente específico, ao banco de dados do Configuration Manager. Por exemplo, você pode usar arquivos IDMIF para coletar informações sobre projetores, players de DVD, fotocopiadoras ou outros equipamentos que não contém um cliente do Configuration Manager. Para obter informações sobre como criar arquivos IDMIF, veja a documentação do SDK do Configuration Manager.  
 
  Depois de criar um arquivo IDMIF, armazene-o na pasta *%Windir%***\System32\CCM\Inventory\Idmifs** nos computadores cliente. O Configuration Manager coleta informações desse arquivo durante o próximo ciclo de inventário de hardware agendado. Você deve declarar novas classes para informações contidas no arquivo adicionando ou importá-los.  
 
 > [!NOTE]
 > Os arquivos MIF podem conter grandes quantidades de dados e a coleta desses dados pode prejudicar o desempenho de seu site. Habilite a coleta de MIF somente quando necessário e configure a opção **Tamanho máximo de arquivo MIF personalizado (KB)** nas configurações de inventário de hardware. Para mais informações, consulte [Introdução ao inventário de hardware no System Center Configuration Manager](introduction-to-hardware-inventory.md).
-
-
-
-<!--HONumber=Jan17_HO1-->
-
 
