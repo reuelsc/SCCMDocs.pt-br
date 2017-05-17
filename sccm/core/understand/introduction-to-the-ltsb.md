@@ -16,10 +16,10 @@ author: Brenduns
 ms.author: brenduns
 manager: angrobe
 ms.translationtype: Human Translation
-ms.sourcegitcommit: 31819a1df4e63e1114682490a9b3c3b4e5c99cfa
-ms.openlocfilehash: 90ba9937cf4ea708a3b5fa69c5975fdf906feeaa
+ms.sourcegitcommit: d940fd1bbf96767d44f8c55315e814be55a83897
+ms.openlocfilehash: 91c1ca860069c6ebe0d20230c4620bf3f68735a2
 ms.contentlocale: pt-br
-ms.lasthandoff: 05/02/2017
+ms.lasthandoff: 05/08/2017
 
 
 ---
@@ -32,6 +32,8 @@ O LTSB (Branch de Manutenção em Longo Prazo) do System Center Configuration Ma
 
 Com base no Configuration Manager versão 1606, o LTSB tem menos funcionalidades quando comparado com o Branch Atual do Configuration Manager.
 
+ > [!TIP]   
+ > Se estava procurando informações sobre os canais do **Windows Server**, confira o artigo [Windows Server 2016 new Current Branch for Business servicing option]( https://blogs.technet.microsoft.com/windowsserver/2016/07/12/windows-server-2016-new-current-branch-for-business-servicing-option/) (Nova opção de manutenção do Branch Atual para Negócios do Windows Server 2016).
 
 ## <a name="features-that-are-not-available-in-the-ltsb-of-configuration-manager"></a>Recursos que não estão disponíveis no LTSB do Configuration Manager
 O Branch Atual do Configuration Manager oferece suporte à seguinte funcionalidade que não está disponível quando você usa o LTSB:
@@ -67,7 +69,7 @@ Os clientes com SA (Software Assurance) ativo para as licenças do System Center
 
 Clientes que têm direitos perpétuos do System Center Configuration Manager ou que permitirem que o SA ou a assinatura expire após 1º de outubro podem instalar a versão do LTSB do System Center Configuration Manager que for atual no momento em que a licença expirar.
 
-[Os termos e condições completos dos produtos que você compra por meio dos programas de licenciamento por volume da Microsoft podem ser encontrados aqui](http://go.microsoft.com/fwlink/?LinkId=800052)
+[Os termos e condições completos dos produtos que você compra por meio dos programas de licenciamento por volume da Microsoft podem ser encontrados aqui](http://go.microsoft.com/fwlink/?LinkId=800052).
 
 Para saber mais sobre licenciamento para branches do Configuration Manager, confira [Licenciamento e branches do System Center Configuration Manager](learn-more-editions.md).
 

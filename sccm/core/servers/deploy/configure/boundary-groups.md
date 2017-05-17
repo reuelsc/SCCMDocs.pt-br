@@ -16,10 +16,10 @@ author: Brenduns
 ms.author: brenduns
 manager: angrobe
 ms.translationtype: Human Translation
-ms.sourcegitcommit: 90775fcf2549080a43e9c1606caa79d9eb90a89c
-ms.openlocfilehash: cb5c8f8f91857bf5f9377a9f871f0d9d9b0cc939
+ms.sourcegitcommit: d940fd1bbf96767d44f8c55315e814be55a83897
+ms.openlocfilehash: 5684fd4fbfd0ffb8f3ffbcfa122eef3dafd77327
 ms.contentlocale: pt-br
-ms.lasthandoff: 05/02/2017
+ms.lasthandoff: 05/08/2017
 
 
 ---
@@ -111,7 +111,7 @@ No entanto, se o conteúdo for distribuído sob demanda e não estiver disponív
 ## <a name="software-update-points"></a>Pontos de atualização de software
 A partir da versão 1702, os clientes usam grupos de limites para localizar um novo ponto de atualização de software. Você pode adicionar pontos de atualização de software individuais a grupos de limites diferentes para controlar quais servidores um cliente pode encontrar.
 
-Quando você atualiza de uma versão anterior à 1702, todos os pontos de atualização de software existentes são adicionados ao grupo de limites de site padrão em cada site. Isso mantém o comportamento anterior à atualização onde os clientes selecionam um ponto de atualização de software do conjunto de pontos de atualização de software disponíveis que você configurou para a hierarquia.  Esse comportamento é mantido até que você escolha adicionar pontos de atualização de software individuais a grupos de limites diferentes com uma seleção controlada e comportamento de fallback.
+Quando você atualiza de uma versão anterior à 1702, todos os pontos de atualização de software existentes são adicionados ao grupo de limites de site padrão em cada site. Isso mantém o comportamento anterior à atualização onde os clientes selecionam um ponto de atualização de software do conjunto de pontos de atualização de software disponíveis que você configurou para a hierarquia.  Esse comportamento é mantido até que você escolha adicionar pontos de atualização de software individuais a grupos de limites diferentes para seleção controlada e comportamento de fallback.
 
 Se você instala um novo site que executa a versão 1702 ou posterior, atribua pontos de atualização de software para um grupo de limites para que os clientes possam localizar e usá-los.
 
