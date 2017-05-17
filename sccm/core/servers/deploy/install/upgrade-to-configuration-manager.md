@@ -16,10 +16,10 @@ author: Brenduns
 ms.author: brenduns
 manager: angrobe
 ms.translationtype: Human Translation
-ms.sourcegitcommit: 90775fcf2549080a43e9c1606caa79d9eb90a89c
-ms.openlocfilehash: 057cd079e452321a51c41797e8dd1a8f5b6a5688
+ms.sourcegitcommit: d940fd1bbf96767d44f8c55315e814be55a83897
+ms.openlocfilehash: 9e58ab8dd892adf25429564adfd6f86849ddcbdf
 ms.contentlocale: pt-br
-ms.lasthandoff: 05/02/2017
+ms.lasthandoff: 05/08/2017
 
 
 ---
@@ -39,7 +39,6 @@ Você pode executar uma atualização in-loco para atualizar para o System Cente
 **Atualizar para a versão 1702**   
 Quando tiver a mídia de linha de base versão 1702, você poderá atualizar o seguinte para uma versão totalmente licenciada do System Center Configuration Manager versão 1702:   
 -      Uma instalação de avaliação do System Center Configuration Manager versão 1702
--      Uma instalação de versão Release Candidate do System Center Configuration Manager
 -      System Center 2012 Configuration Manager com Service Pack 1
 -      System Center 2012 Configuration Manager com Service Pack 2
 -      System Center 2012 R2 Configuration Manager
