@@ -2,7 +2,7 @@
 title: Gerenciamento de cliente baseado na Internet | Microsoft Docs
 description: Crie um plano para gerenciar clientes baseados na Internet no System Center Configuration Manager.
 ms.custom: na
-ms.date: 04/23/2017
+ms.date: 05/16/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
@@ -17,10 +17,10 @@ author: robstackmsft
 ms.author: robstack
 manager: angrobe
 ms.translationtype: Human Translation
-ms.sourcegitcommit: 828e2ac9a3f9bcea1571d24145a1021fdf1091f3
-ms.openlocfilehash: 82867e77840e14e9b8170801ea3c4a9f399c9890
+ms.sourcegitcommit: ae60eb25383f4bd07faaa1265185a471ee79b1e9
+ms.openlocfilehash: 90c30bfb22735f73422f1547301552bf42022bb9
 ms.contentlocale: pt-br
-ms.lasthandoff: 12/16/2016
+ms.lasthandoff: 05/17/2017
 
 
 ---
@@ -34,7 +34,7 @@ O gerenciamento de clientes baseado na Internet (às vezes chamado de IBCM) perm
 
  Use as seções a seguir para ajudá-lo a planejar o gerenciamento de clientes baseado na Internet.  
 
-##  <a name="BKMK_IBCM_FeaturesNotSupported"></a> Recursos sem suporte na Internet  
+##  <a name="features-that-are-not-supported-on-the-internet"></a>Recursos sem suporte na Internet  
  Nem todas as funcionalidades do gerenciamento de cliente são adequadas para a Internet, portanto, não têm suporte quando os clientes são gerenciados na Internet. Os recursos sem suporte para gerenciamento na Internet normalmente contam com os Serviços de Domínio Active Directory ou não são apropriados para uma rede pública, como a descoberta de rede e o WOL (Wake-on-LAN).  
 
  Os seguintes recursos não têm suporte quando os clientes são gerenciados na Internet:  
@@ -55,7 +55,7 @@ O gerenciamento de clientes baseado na Internet (às vezes chamado de IBCM) perm
 
  Quando você tem um ponto de atualização de software configurado para aceitar conexões da Internet, os clientes baseados na Internet do Configuration Manager sempre são verificados em relação a esse ponto de atualização de software, para determinar quais atualizações de software são necessárias. No entanto, quando esses clientes estão na Internet, primeiro tentam baixar as atualizações de software do Microsoft Update, em vez de fazer isso de um ponto de distribuição baseado na Internet. Somente se isso falhar, eles tentarão baixar as atualizações de software necessárias de um ponto de distribuição baseado na Internet. Clientes que não estão configurados para gerenciamento de clientes baseado na Internet nunca tentam baixar atualizações de software do Microsoft Update, mas sempre usam os pontos de distribuição do Configuration Manager.  
 
-##  <a name="BKMK_PlanforInternetSiteSystems"></a> Considerações sobre a comunicação do cliente da Internet ou de uma floresta não confiável  
+##  <a name="considerations-for-client-communications-from-the-internet-or-untrusted-forest"></a>Considerações sobre a comunicação do cliente da Internet ou de uma floresta não confiável  
  As seguintes funções de sistema de site instaladas em sites primários oferecem suporte a conexões de clientes que estão em locais não confiáveis, como a Internet ou uma floresta não confiável (sites secundários não oferecem suporte a conexões de clientes em locais não confiáveis):  
 
 -   Ponto de sites da Web do Catálogo de Aplicativos  
@@ -96,7 +96,7 @@ Embora não haja nenhum requisito para haver uma relação de confiança entre a
 -   **Túnel**:   
     Se o seu servidor Web proxy não conseguir dar suporte aos requisitos da ponte SSL ou se desejar configurar o suporte da Internet para dispositivos móveis registrados pelo Configuration Manager, também haverá suporte para o túnel SSL. É uma opção menos segura, pois os pacotes de SSL da Internet são encaminhados para os sistemas de site sem terminação SSL, para que não possam ser inspecionados quanto a conteúdo malicioso. Quando você usa o túnel SSL, não existem requisitos de certificado do servidor proxy da Web.  
 
-##  <a name="BKMK_PlanforInternetClients"></a> Planejando clientes baseados na Internet  
+##  <a name="planning-for-internet-based-clients"></a>Planejando clientes baseados na Internet  
  Você deve decidir se os computadores cliente gerenciados pela Internet serão configurados para gerenciamento na intranet e na internet, ou somente por gerenciamento do cliente na Internet. Você só pode configurar a opção de gerenciamento de cliente durante a instalação de um computador cliente. Se você mudar de ideia mais tarde, deverá reinstalar o cliente.  
 
 > [!NOTE]  
@@ -116,7 +116,7 @@ Embora não haja nenhum requisito para haver uma relação de confiança entre a
 
  O benefício da comutação automática entre gerenciamento de clientes baseado na Internet e o gerenciamento de clientes da intranet é que os computadores cliente podem usar automaticamente todos os recursos do Configuration Manager sempre que estiverem conectados à intranet e ainda serem gerenciados para as funções essenciais de gerenciamento quando estiverem na Internet. Além disso, um download que começou na Internet pode perfeitamente continuar na intranet e vice-versa.  
 
-##  <a name="BKMK_PrerequisitsForInternetClientMgmt"></a> Pré-requisitos para o gerenciamento de clientes baseado na Internet  
+##  <a name="prerequisites-for-internet-based-client-management"></a>Pré-requisitos para o gerenciamento de clientes baseado na Internet  
  O gerenciamento de clientes baseados na Internet no Configuration Manager tem as seguintes dependências externas:  
 
 -   Clientes que serão gerenciados na Internet devem ter uma conexão com a Internet.  
