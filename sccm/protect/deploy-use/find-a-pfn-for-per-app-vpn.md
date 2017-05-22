@@ -15,9 +15,11 @@ caps.latest.revision: 3
 author: Nbigman
 ms.author: nbigman
 manager: angrobe
-translationtype: Human Translation
+ms.translationtype: Human Translation
 ms.sourcegitcommit: bff083fe279cd6b36a58305a5f16051ea241151e
 ms.openlocfilehash: ce50645155ecb14a82d8b982aa69c0f87dd15fbf
+ms.contentlocale: pt-br
+ms.lasthandoff: 12/16/2016
 
 ---
 # <a name="find-a-package-family-name-pfn-for-per-app-vpn"></a>Localizar um nome da família de pacotes (PFN) para VPN por aplicativo
@@ -77,7 +79,7 @@ Eis aqui as informações recuperadas do OneNote:
 3.  Clique no link do aplicativo. Observe que a URL que você acessa tem uma série de letras no final. Em nosso exemplo, a URL tem esta aparência: `https://www.microsoft.com/en-us/store/apps/onenote/9wzdncrfhvjl`
 4.  Em uma guia diferente, cole o seguinte URL, `https://bspmts.mp.microsoft.com/v1/public/catalog/Retail/Products/<app id>/applockerdata`, substituindo `<app id>` pela ID do aplicativo obtida no https://www.microsoft.com/en-us/store/apps – aquela série de letras no final da URL na etapa 3. Em nosso exemplo, o exemplo do OneNote, você deve colar: `https://bspmts.mp.microsoft.com/v1/public/catalog/Retail/Products/9wzdncrfhvjl/applockerdata`.
 
-No Edge, as informações que você deseja são exibidas; no Internet Explorer, clique em **Abrir** para ver as informações. O valor do PFN é fornecido na primeira linha. Esta é a aparência dos resultados para o nosso exemplo:
+No Microsoft Edge, as informações que você deseja são exibidas; no Internet Explorer, clique em **Abrir** para ver as informações. O valor do PFN é fornecido na primeira linha. Esta é a aparência dos resultados para o nosso exemplo:
 
 
 `{`
@@ -86,9 +88,4 @@ No Edge, as informações que você deseja são exibidas; no Internet Explorer, 
 `  "windowsPhoneLegacyId": "ca05b3ab-f157-450c-8c49-a1f127f5e71d",`
 `  "publisherCertificateName": "CN=Microsoft Corporation, O=Microsoft Corporation, L=Redmond, S=Washington, C=US"`
 `}`
-
-
-
-<!--HONumber=Dec16_HO3-->
-
 
