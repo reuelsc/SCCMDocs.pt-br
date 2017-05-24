@@ -14,10 +14,11 @@ caps.latest.revision: 3
 author: Brenduns
 ms.author: brenduns
 manager: angrobe
-translationtype: Human Translation
-ms.sourcegitcommit: dab5da5a4b5dfb3606a8a6bd0c70a0b21923fff9
-ms.openlocfilehash: 2f1bc62a4695d60dc4679e479797ee84cd4ddee4
-ms.lasthandoff: 03/27/2017
+ms.translationtype: Human Translation
+ms.sourcegitcommit: f809c9327db9f298168674add2d09820fdecd1b8
+ms.openlocfilehash: 14b4172ad713a3981b8a5abe182405e271d78c26
+ms.contentlocale: pt-br
+ms.lasthandoff: 05/17/2017
 
 ---
 # <a name="use-the-setup-wizard-to-install-system-center-configuration-manager-sites"></a>Use o Assistente de Instalação para instalar sites do System Center Configuration Manager
@@ -310,7 +311,7 @@ Para expandir um site primário autônomo, primeiro consulte os [pré-requisitos
     > [!IMPORTANT]  
     > Quando o Configuration Manager instala o SQL Server Express, ele instala o SQL Server Express 2012 sem service pack:  
 
-    > -   Para que o site secundário tenha suporte, depois de ser instalado, é necessário atualizar o SQL Server Express 2012 instalando o Service Pack 2 (ou posterior).
+    > -   Para que o site secundário tenha suporte, após a instalação, é necessário atualizar o SQL Server Express 2012 para [uma versão com suporte](/sccm/core/plan-design/configs/support-for-sql-server-versions#bkmk_SQLVersions).
     > -   Além disso, se a instalação do novo site secundário falhar ao concluir, mas primeiro concluir a instalação do SQL Server Express 2012, você deverá atualizar essa instância do SQL Server Express antes que o Configuration Manager possa tentar novamente a instalação do site secundário com êxito.  
 
      **Usar uma instância existente do SQL Server**  

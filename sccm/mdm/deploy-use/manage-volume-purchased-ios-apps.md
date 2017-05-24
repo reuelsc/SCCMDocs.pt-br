@@ -2,7 +2,7 @@
 title: Gerenciar aplicativos iOS adquiridos por volume | Microsoft Docs
 description: "Implante, gerencie e monitore licenças de aplicativos adquiridos por meio da loja de aplicativos iOS."
 ms.custom: na
-ms.date: 05/03/2017
+ms.date: 05/12/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
@@ -17,10 +17,10 @@ author: mtillman
 ms.author: mtillman
 manager: angrobe
 ms.translationtype: Human Translation
-ms.sourcegitcommit: c6a6137fa978e1ea28aefea2aea4e29ba661efd6
-ms.openlocfilehash: 55f1204b088a7b636a90561f20aa41c7de72bc05
+ms.sourcegitcommit: f4cb711f369698fe8e045f8c83dd96ec6fb29d70
+ms.openlocfilehash: ce706e938f558406044f7890c80bb7156c3b262b
 ms.contentlocale: pt-br
-ms.lasthandoff: 05/04/2017
+ms.lasthandoff: 05/17/2017
 
 ---
 # <a name="manage-volume-purchased-ios-apps-with-system-center-configuration-manager"></a>Gerenciar aplicativos iOS adquiridos por volume com o System Center Configuration Manager
@@ -58,6 +58,7 @@ ms.lasthandoff: 05/04/2017
       Ao escolher **Sincronização** para fazer uma sincronização manual, essa opção sempre fará com que uma sincronização completa seja executada.  
 -   Se você precisar recuperar ou restaurar o banco de dados do Configuration Manager, recomendamos a execução de uma sincronização manual logo em seguida, para garantir que os dados de licença sincronizados estarão atualizados.  
 -   Além disso, é necessário ter importado um certificado APNs (Apple Push Notification Service) válido da Apple para permitir o gerenciamento de dispositivos iOS, incluindo a implantação de aplicativos. Para obter mais informações, consulte [Set up iOS hybrid device management](enroll-hybrid-ios-mac.md) (Configurar o gerenciamento de dispositivo híbrido iOS).  
+-   O Configuration Manager dá suporte à adição de até 3000 tokens VPP.
 
 Começando com o System Center Configuration Manager versão 1702, agora você pode implantar aplicativos licenciados a dispositivos, além dos usuários. Dependendo da capacidade dos aplicativos para dar suporte ao licenciamento de dispositivos, uma licença apropriada será solicitada quando você implantá-la, da seguinte maneira:
 

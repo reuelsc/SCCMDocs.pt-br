@@ -15,10 +15,11 @@ caps.latest.revision: 5
 author: Brenduns
 ms.author: brenduns
 manager: angrobe
-translationtype: Human Translation
-ms.sourcegitcommit: 3eb48942c1259d2aa1b3c200fad73b39b11c0b8c
-ms.openlocfilehash: d497bd5a2971315eecdc0900f735ab2cd8b2e7bc
-ms.lasthandoff: 03/30/2017
+ms.translationtype: Human Translation
+ms.sourcegitcommit: f4cb711f369698fe8e045f8c83dd96ec6fb29d70
+ms.openlocfilehash: bb1b96a56db68dcea22270855b899ba3a90afd0d
+ms.contentlocale: pt-br
+ms.lasthandoff: 05/17/2017
 
 ---
 # <a name="capabilities-in-technical-preview-1703-for-system-center-configuration-manager"></a>Funcionalidades do Technical Preview 1703 do System Center Configuration Manager
@@ -41,10 +42,10 @@ Agora você pode implantar aplicativos licenciados para dispositivos, bem como o
 |Anterior à versão 1702|Não|usuário|Licença de usuário|
 |Anterior à versão 1702|Sim|Dispositivo|Licença de usuário|
 |Anterior à versão 1702|Não|Dispositivo|Licença de usuário|
-|1702 e posterior|Sim|usuário|Licença de usuário|
-|1702 e posterior|Não|usuário|Licença de usuário|
-|1702 e posterior|Sim|Dispositivo|Licença de dispositivo|
-|1702 e posterior|Não|Dispositivo|Licença de usuário|
+|Versão 1702 e posterior|Sim|usuário|Licença de usuário|
+|Versão 1702 e posterior|Não|usuário|Licença de usuário|
+|Versão 1702 e posterior|Sim|Dispositivo|Licença de dispositivo|
+|Versão 1702 e posterior|Não|Dispositivo|Licença de usuário|
 
 Para saber mais sobre aplicativos do iOS adquiridos por volume, veja [Gerenciar aplicativos iOS adquiridos por volume](/sccm/mdm/deploy-use/manage-volume-purchased-ios-apps).
 
@@ -141,28 +142,24 @@ Esta versão apresenta a capacidade de expandir e recolher grupos de sequência 
 
 
 ## <a name="client-settings-to-configure-windows-analytics-for-upgrade-readiness"></a>Configurações do cliente para configurar o Windows Analytics para Preparação para Atualização
-Começando com esta versão, você pode usar as configurações do dispositivo cliente para simplificar a configuração de Análise do Windows quando você usa [preparação para atualização](/sccm/core/clients/manage/upgrade/upgrade-analytics) com o Configuration Manager. A Análise do Windows coleta e relata dados de telemetria sobre seus clientes do Configuration Manager para seu espaço de trabalho do Operations Manager Suite (OMS). Os dados de telemetria coletados podem ajudá-lo a priorizar as decisões sobre atualizações do Windows para os dispositivos gerenciados.
-
-Os dados de telemetria que o Configuration Manager coleta estão na forma dos arquivos de log do Rastreamento de Eventos para Windows (ETW). Esses arquivos de log são enviados para o site do Configuration Manager quando o cliente envia o inventário de hardware. Esses arquivos são transferidos para seu espaço de trabalho do OMS. Os arquivos de log e seus dados são removidos do site do Configuration Manager após transferir os logs do OMS.
+A partir desta versão, você pode usar as configurações do dispositivo cliente para simplificar a configuração da telemetria do Windows necessária para usar soluções do [Windows Analytics](https://www.microsoft.com/en-us/WindowsForBusiness/windows-analytics) como [Preparação para Atualização](/sccm/core/clients/manage/upgrade/upgrade-analytics) com o Configuration Manager. O Configuration Manager pode recuperar dados do Windows Analytics que podem fornecer informações valiosas sobre o estado atual de seu ambiente com base nos dados de telemetria do Windows relatados por seus computadores cliente. Os dados de telemetria do Windows são relatados por computadores cliente ao serviço de telemetria do Windows e, depois, os dados relevantes são transferidos para soluções do Windows Analytics hospedadas em um dos espaços de trabalho do OMS de sua organização. A Preparação para Atualização é uma solução do Windows Analytics que ajuda você a priorizar as decisões sobre atualizações do Windows para os dispositivos gerenciados.
 
 Para obter informações sobre as configurações de telemetria do Windows, consulte [Configure a telemetria do Windows em sua organização](https://technet.microsoft.com/itpro/windows/manage/configure-windows-telemetry-in-your-organization).
 
 ### <a name="prerequisites"></a>Pré-requisitos
-- Você deve ter configurado o seu site para usar Log Analytics de prontidão de atualização do OMS. Para obter informações, consulte [atualização Readiness](/sccm/core/clients/manage/upgrade/upgrade-analytics) na biblioteca de conteúdo para a ramificação atual.
-- Clientes devem usar o inventário de hardware para enviar os dados de telemetria.
+- Você precisa configurar seu site para usar o serviço de nuvem Preparação para Atualização. Para saber mais, veja [Preparação para Atualização](/sccm/core/clients/manage/upgrade/upgrade-analytics)
 
 ### <a name="configure-windows-analytics-client-settings"></a>Definir configurações de cliente de análise do Windows
-Para configurar a análise do Windows, no console do Configuration Manager, vá para **Administração** > **Configurações do cliente**, clique duas vezes em **Configurações do cliente-padrão** e, em seguida, selecione **Análise do Windows**.  
+Para configurar a análise do Windows, no console do Configuration Manager, vá para **Administração** > **Configurações do cliente**, clique duas vezes em **Criar Configurações do Dispositivo Cliente Personalizado** e, em seguida, marque **Windows Analytics**.  
 
-Configure, então, o seguinte:
+Em seguida, configure o seguinte depois de navegar até a guia de configurações do **Windows Analytics**:
 - **ID comercial**  
-A ID comercial mapeia informações de dispositivos que você gerencia para seu espaço de trabalho do OMS. Se você já configurou uma ID comercial para uso com a preparação de atualização para uso com o Configuration Manager, use essa ID. Se você ainda não tiver uma ID comercial, consulte [Gerar a chave da ID comercial]( https://technet.microsoft.com /itpro/windows/deploy/upgrade-readiness-get-started#generate-your-commercial-id-key).
+A ID de chave comercial mapeia informações de dispositivos que você gerencia para o espaço de trabalho do OMS que hospeda os dados do Windows Analytics de sua organização. Se você já configurou uma ID comercial para uso com a Preparação para Atualização use essa ID. Se você ainda não tiver uma chave de ID comercial, veja [Gerar a chave de ID comercial]( https://technet.microsoft.com /itpro/windows/deploy/upgrade-readiness-get-started#generate-your-commercial-id-key).
 
 - Defina um **nível de telemetria para dispositivos com Windows 10**   
-Para obter informações sobre o que é coletado por cada nível de telemetria do Windows 10, consulte [Níveis de telemetria]( https://technet.microsoft.com/itpro/windows/manage/configure-windows-telemetry-in-your-organization#telemetry-levels) na documentação online do Windows.
+Para saber mais sobre o que é coletado por cada nível de telemetria do Windows 10, veja [Configurar a telemetria do Windows em sua organização]( https://technet.microsoft.com/itpro/windows/manage/configure-windows-telemetry-in-your-organization#telemetry-levels).
 
 - Escolha **aceitar a coleta de dados comerciais em dispositivos com Windows 7, 8 e 8.1**   
 Para obter informações sobre dados coletados desses sistemas operacionais quando você aceita, baixe o arquivo pdf [Windows 7, Windows 8, and Windows 8.1 appraiser telemetry events and fields](https://go.microsoft.com/fwlink/?LinkID=822965) (Campos e eventos de telemetria de avaliação do Windows 7, Windows 8 e Windows 8.1) da Microsoft.
 
-- **Configurar coleta de dados do Internet Explorer**
-
+- **Configurar a coleta de dados do Internet Explorer** Em dispositivos que executam o Windows 8.1 ou anteriores, a coleta de dados do Internet Explorer pode permitir que a Preparação para Atualização detecte incompatibilidades de aplicativos Web que poderiam impedir uma atualização tranquila para o Windows 10. A coleta de dados do Internet Explorer pode ser habilitada de acordo com a zona da internet. Para saber mais sobre as zonas de internet, veja [Sobre zonas de segurança de URL](https://msdn.microsoft.com/en-us/library/ms537183(v=vs.85).aspx).

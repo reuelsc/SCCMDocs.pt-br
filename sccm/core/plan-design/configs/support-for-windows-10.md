@@ -16,13 +16,13 @@ author: brenduns
 ms.author: brenduns
 manager: angrobe
 ms.translationtype: Human Translation
-ms.sourcegitcommit: 065b1fcb25d7c7845b6f26e757b36e7fb97ce013
-ms.openlocfilehash: 2ec25e9b093d9451d8880ba36f4d022ec4bad001
+ms.sourcegitcommit: f809c9327db9f298168674add2d09820fdecd1b8
+ms.openlocfilehash: ed5efcf7b305f8bee6e99e00c5285f6ae7033d82
 ms.contentlocale: pt-br
-ms.lasthandoff: 05/10/2017
+ms.lasthandoff: 05/17/2017
 
 ---
-# <a name="support-for-windows-10-for-system-center-configuration-manager"></a>Suporte para Windows 10 para System Center Configuration Manager
+# <a name="support-for-windows-10-for-system-center-configuration-manager"></a>Suporte para Windows 10 para System Center Configuration Manager  
 
 *Aplica-se a: System Center Configuration Manager (Branch Atual)*
 
@@ -64,7 +64,7 @@ Quando você implanta sistemas operacionais com o Configuration Manager, o [Wind
 
 A tabela a seguir enumera as versões do Windows ADK para Windows 10 que você pode usar com as diferentes versões do Configuration Manager.
 
-|Versões do Windows 10 |Configuration Manager 1606 |Configuration Manager 1610  |Configuration Manager 1702 |
+|Versões do Windows 10 ADK |Configuration Manager 1606 |Configuration Manager 1610  |Configuration Manager 1702 |
 |--------------------|-----|-----|-----|
 |1507  |![Sem suporte](media/Red_X.png)         |![Sem suporte](media/Red_X.png)  |![Sem suporte](media/Red_X.png)|
 |1511  |![Compatível com versões anteriores](media/blue_compat.png)|![Sem suporte](media/Red_X.png)  |![Sem suporte](media/Red_X.png)|

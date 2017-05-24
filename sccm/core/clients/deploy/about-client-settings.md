@@ -17,8 +17,8 @@ author: robstackmsft
 ms.author: robstack
 manager: angrobe
 ms.translationtype: Human Translation
-ms.sourcegitcommit: 4eee9731a4a27328c47c0d15931cab28cf520a18
-ms.openlocfilehash: d1d2ec7c053d13ebaeb00d0dfeb126716b5f7ae5
+ms.sourcegitcommit: ae60eb25383f4bd07faaa1265185a471ee79b1e9
+ms.openlocfilehash: 3d90f16eac59b7069ff2f33170eba85d2cde65ef
 ms.contentlocale: pt-br
 ms.lasthandoff: 05/17/2017
 
@@ -215,9 +215,9 @@ Muitas das configurações do cliente são autoexplicativas. Outras são descrit
 
      Se a entrada de PIN do BitLocker estiver configurada nos computadores, essa opção pode ignorar a necessidade de inserir um PIN quando o computador é reiniciado após uma instalação de software.  
 
-    -   **Sempre**: o Configuration Manager suspende temporariamente o requisito do BitLocker de inserir um PIN na próxima inicialização do computador após a instalação do software que requer uma reinicialização, e a iniciou. Essa configuração aplica-se apenas a reinicializações de computador feitas pelo Configuration Manager e não suspende a necessidade de inserir o PIN do BitLocker quando o usuário reinicia o computador. O requisito de entrada de PIN do BitLocker é retomado após a inicialização do Windows.  
+    -   **Sempre**: o Configuration Manager suspende temporariamente o BitLocker após a instalação do software que exige uma reinicialização e a iniciou. Essa configuração aplica-se apenas a reinicializações de computador feitas pelo Configuration Manager e não suspende a necessidade de inserir o PIN do BitLocker quando o usuário reinicia o computador. O requisito de entrada de PIN do BitLocker é retomado após a inicialização do Windows.
 
-    -   **Nunca**: O Configuration Manager não suspende a necessidade do BitLocker de inserir um PIN na próxima inicialização do computador, após ter instalado o software que requer reinicialização. Nesse cenário, a instalação do software não pode terminar até que o usuário insira o PIN para concluir o processo de inicialização padrão e carregar o Windows.  
+    -   **Nunca**: o Configuration Manager não suspende o BitLocker na próxima inicialização do computador, após ter instalado o software que exige a reinicialização. Nesse cenário, a instalação do software não pode terminar até que o usuário insira o PIN para concluir o processo de inicialização padrão e carregar o Windows.
 
 -   **O software adicional gerencia a implantação de aplicativos e as atualizações de software**  
 

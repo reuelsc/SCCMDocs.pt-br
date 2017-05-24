@@ -2,7 +2,7 @@
 title: "Versões do SQL Server com suporte | Microsoft Docs"
 description: "Obtenha os requisitos de configuração e versão do SQL Server para hospedar um banco de dados de site do System Center Configuration Manager."
 ms.custom: na
-ms.date: 05/01/2017
+ms.date: 05/10/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
@@ -16,10 +16,10 @@ author: Brenduns
 ms.author: brenduns
 manager: angrobe
 ms.translationtype: Human Translation
-ms.sourcegitcommit: d5a6fdc9a526c4fc3a9027dcedf1dd66a6fff5a7
-ms.openlocfilehash: fa7f232fd385f742bb11c6596c954d87c2da87a8
+ms.sourcegitcommit: f809c9327db9f298168674add2d09820fdecd1b8
+ms.openlocfilehash: 4166560602edf6eb299511c8b59dc3903e3bfffc
 ms.contentlocale: pt-br
-ms.lasthandoff: 05/02/2017
+ms.lasthandoff: 05/17/2017
 
 
 ---
@@ -45,14 +45,19 @@ Há suporte para as seguintes instâncias:
 -   Um cluster do SQL Server. Consulte [Usar um cluster do SQL Server para o banco de dados do site do System Center Configuration Manager](../../../core/servers/deploy/configure/use-a-sql-server-cluster-for-the-site-database.md).
 -   Um grupo de disponibilidade AlwaysOn do SQL Server. Essa opção exige o Configuration Manager versão 1602 ou posterior. Para obter detalhes, consulte [AlwaysOn do SQL Server para um banco de dados do site altamente disponível do System Center Configuration Manager](../../../core/servers/deploy/configure/sql-server-alwayson-for-a-highly-available-site-database.md).
 
-> [!NOTE]  
->  Não há suporte para um cluster do SQL Server em uma configuração de cluster de NLB (Balanceamento de Carga de Rede). Além disso, não há suporte para a replicação ponto a ponto nem para a tecnologia de espelhamento de banco de dados do SQL Server. Há suporte para a replicação transacional padrão do SQL Server apenas para replicar objetos para os pontos de gerenciamento que são configurados para usar [réplicas de banco de dados](https://technet.microsoft.com/library/mt608546.aspx).  
-
 
  **Sites secundários:**  
  O banco de dados do site pode usar a instância padrão de uma instalação completa do SQL Server ou SQL Server Express.  
 
  O SQL Server deve estar localizado no computador do servidor do site.  
+
+ **Limitações ao suporte**   
+ As configurações a seguir não têm suporte:
+ -   Um cluster do SQL Server em uma configuração de cluster de NLB (Balanceamento de Carga de Rede)
+ -   Um cluster do SQL Server em um CSV (Volume Compartilhado Clusterizado)
+ -   Tecnologia de espelhamento de Banco de Dados do SQL Server e replicação ponto a ponto
+
+Há suporte para a replicação transacional do SQL Server apenas para replicar objetos para os pontos de gerenciamento que são configurados para usar [réplicas de banco de dados](https://technet.microsoft.com/library/mt608546.aspx).  
 
 ##  <a name="bkmk_SQLVersions"></a> Versões compatíveis do Microsoft SQL Server  
  Em uma hierarquia com vários sites, diferentes sites podem usar diferentes versões do SQL Server para hospedar o banco de dados do site, desde que o seguinte seja verdadeiro:
@@ -109,14 +114,14 @@ Você pode usar essa versão do SQL Server sem uma versão de atualização cumu
 -   Um site primário  
 -   Um site secundário  
 
+<!-- Support for this service pack version has been dropped by Microsoft    
+### SQL Server 2012 SP2: Standard, Enterprise   
+ You can use this version of SQL Server with no minimum cumulative update version for the following:  
 
-### <a name="sql-server-2012-sp2-standard-enterprise"></a>SQL Server 2012 SP2: Standard, Enterprise   
- Você pode usar essa versão do SQL Server sem uma versão de atualização cumulativa mínima para o seguinte:  
-
--   Um site de administração central  
--   Um site primário  
--   Um site secundário  
-
+-   A central administration site  
+-   A primary site  
+-   A secondary site  
+-->
 
 ### <a name="sql-server-2008-r2-sp3-standard-enterprise-datacenter"></a>SQL Server 2008 R2 SP3: Standard, Enterprise, Datacenter     
   Não há suporte para esta versão do SQL Server [a partir da versão 1702](/sccm/core/plan-design/changes/removed-and-deprecated-features#deprecated-support-for-sql-server-versions-as-a-site-database).  
@@ -155,10 +160,13 @@ Você pode usar essa versão do SQL Server sem uma versão de atualização cumu
 
 -   Um site secundário  
 
-### <a name="sql-server-2012-express-sp2"></a>SQL Server 2012 Express SP2   
- Você pode usar essa versão do SQL Server sem uma versão de atualização cumulativa mínima para o seguinte:  
+<!-- Support for this service pack version has been dropped by Microsoft   
+### SQL Server 2012 Express SP2   
+ You can use this version of SQL Server with no minimum cumulative update version for the following:  
 
--   Um site secundário  
+-   A secondary site  
+-->
+
 
 ##  <a name="bkmk_SQLConfig"></a> Configurações necessárias para o SQL Server  
  Os itens a seguir são necessários para todas as instalações do SQL Server usadas para um banco de dados do site (incluindo o SQL Server Express). Quando o Configuration Manager instala o SQL Server Express como parte de uma instalação de site secundário, essas configurações são criadas automaticamente para você.  

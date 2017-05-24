@@ -16,10 +16,11 @@ caps.handback.revision: 0
 author: Brenduns
 ms.author: brenduns
 manager: angrobe
-translationtype: Human Translation
-ms.sourcegitcommit: 3eb48942c1259d2aa1b3c200fad73b39b11c0b8c
-ms.openlocfilehash: 39361102d77441488bf61c9cbbfb0086774e0c09
-ms.lasthandoff: 03/30/2017
+ms.translationtype: Human Translation
+ms.sourcegitcommit: d5166b16ffbe46af561b1ce98c0494cc4aaa72a8
+ms.openlocfilehash: e040552dab21ba9a71e06a78f6acc2ffe1b0eb61
+ms.contentlocale: pt-br
+ms.lasthandoff: 05/17/2017
 
 
 ---
@@ -92,7 +93,7 @@ O Configuration Manager dá suporte ao uso da eliminação de duplicação de da
 Para obter mais informações, consulte [Configuration Manager Distribution Points and Windows Server 2012 Data Deduplication (Pontos de distribuição do Configuration Manager e eliminação de duplicação de dados do Windows Server 2012)](http://blogs.technet.com/b/configmgrteam/archive/2014/02/18/configuration-manager-distribution-points-and-windows-server-2012-data-deduplication.aspx) no blog da equipe do Configuration Manager e [Visão geral de eliminação de duplicação de dados](http://technet.microsoft.com/library/hh831602.aspx) na biblioteca do TechNet do Windows Server.  
 
 ##  <a name="bkmk_DA"></a> DirectAccess  
-O Configuration Manager dá suporte ao recurso DirectAccess no Windows Server 2008 R2 para a comunicação entre clientes e servidores do sistema de sites.  
+O Configuration Manager dá suporte ao recurso DirectAccess no Windows Server 2008 R2 e posterior para a comunicação entre clientes e sistemas de servidor de sites.  
 
 -   Quando todos os requisitos do DirectAccess são atendidos, o DirectAccess permite que os clientes do Configuration Manager na Internet se comuniquem com seu site atribuído como se estivessem na intranet.  
 

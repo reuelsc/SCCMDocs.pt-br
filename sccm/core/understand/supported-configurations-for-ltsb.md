@@ -2,7 +2,7 @@
 title: "Configurações com suporte para o LTSB | Microsoft Docs"
 description: "Entenda quais sistemas operacionais e produtos dependentes funcionam com o Branch de Manutenção em Longo Prazo do System Center Configuration Manager."
 ms.custom: na
-ms.date: 3/9/2017
+ms.date: 5/10/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
@@ -15,10 +15,11 @@ caps.latest.revision: 0
 author: Brenduns
 ms.author: brenduns
 manager: angrobe
-translationtype: Human Translation
-ms.sourcegitcommit: 477ffa5d61d2dfaedf8a3a1f5687e2d72698ad28
-ms.openlocfilehash: 78dcbf76f21a286506b9c605e2c176714736935b
-ms.lasthandoff: 03/10/2017
+ms.translationtype: Human Translation
+ms.sourcegitcommit: f809c9327db9f298168674add2d09820fdecd1b8
+ms.openlocfilehash: ec33d5febcbf7b57e220f7fe27db9671080fecff
+ms.contentlocale: pt-br
+ms.lasthandoff: 05/17/2017
 
 
 ---
@@ -30,7 +31,7 @@ Use as informações neste tópico para entender quais sistemas operacionais e d
 Caso não esteja indicado de outra forma aqui ou nos tópicos específicos do LTSB, as mesmas configurações e limitações que se aplicam à versão 1606 do Branch Atual se aplicam ao LTSB.  Quando ocorrerem conflitos, use as informações que se aplicam à edição que você está usando. Normalmente, o LTSB é mais limitado do que o Branch Atual.
 
 ## <a name="general-statement-of-support"></a>Declaração geral de suporte
-Os produtos e tecnologias detalhadas nas seções a seguir têm suporte com o Configuration Manager. No entanto, sua inclusão neste conteúdo não expressa uma extensão do suporte para qualquer produto além do ciclo de vida de suporte individual desses produtos. Os produtos além de seu ciclo de vida de suporte não têm suporte para uso com o Configuration Manager. Para obter mais informações, confira o site do [Ciclo de Vida do Suporte da Microsoft](http://go.microsoft.com/fwlink/p/?LinkId=208270) e leia as [Perguntas frequentes sobre a Política de Ciclo de Vida do Suporte da Microsoft](http://go.microsoft.com/fwlink/p/?LinkId=31976).
+Há suporte para os seguintes produtos e tecnologias por esse branch do Configuration Manager. No entanto, sua inclusão neste conteúdo não expressa uma extensão do suporte para qualquer produto ou versão além do ciclo de vida de suporte individual desses produtos. Os produtos além de seu ciclo de vida de suporte não têm suporte para uso com o Configuration Manager. Para obter mais informações, confira o site do [Ciclo de Vida do Suporte da Microsoft](http://go.microsoft.com/fwlink/p/?LinkId=208270) e leia as [Perguntas frequentes sobre a Política de Ciclo de Vida do Suporte da Microsoft](http://go.microsoft.com/fwlink/p/?LinkId=31976).
 
 Além disso, os produtos e versões do produto que não estão listados nos tópicos a seguir não têm suporte, a menos que eles tenham sido apresentados no [Enterprise Mobility + Security Blog](https://blogs.technet.microsoft.com/enterprisemobility/) (Blog do Enterprise Mobility + Security).
 
@@ -310,13 +311,11 @@ O LTSB dá suporte às seguintes versões do SQL Server para hospedar o ponto de
 - SQL Server 2014 SP2: Standard, Enterprise
 - SQL Server 2014 SP1: Standard, Enterprise
 - SQL Server 2012 SP3: Standard, Enterprise
-- SQL Server 2012 SP2: Standard, Enterprise
 - SQL Server 2008 R2 SP3: Standard, Enterprise, Datacenter
 - SQL Server 2016 Express
 - SQL Server 2014 Express SP2
 - SQL Server 2014 Express SP1
 - SQL Server 2012 Express SP3
-- SQL Server 2012 Express SP2
 
 ## <a name="support-for-active-directory-domains"></a>Suporte para domínios do Active Directory
 Todos os sistemas de sites do LTSB devem ser membros de um domínio do Active Directory do Windows com suporte. O suporte para domínios do Active Directory tem os mesmos requisitos e limitações que aparecem no [Support for Active Directory domains](/sccm/core/plan-design/configs/support-for-active-directory-domains) (Suporte para domínios do Active Directory), mas é limitada para os seguintes níveis funcionais de domínio:

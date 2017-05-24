@@ -15,9 +15,11 @@ caps.latest.revision: 11
 author: NathBarn
 ms.author: nathbarn
 manager: angrobe
-translationtype: Human Translation
-ms.sourcegitcommit: 4688b4b12a7afa5fcfdc0e42f984271d98f10316
-ms.openlocfilehash: 90e6d82e7fd1ff0ad4f1d616cc23201769fe26e2
+ms.translationtype: Human Translation
+ms.sourcegitcommit: ae60eb25383f4bd07faaa1265185a471ee79b1e9
+ms.openlocfilehash: 3c31271f3e3ae7aa45da03b3d75fd78242330646
+ms.contentlocale: pt-br
+ms.lasthandoff: 05/17/2017
 
 
 ---
@@ -33,21 +35,15 @@ O Endpoint Protection no System Center Configuration Manager permite gerenciar p
  Ao usar o Endpoint Protection com o Configuration Manager, você tem os seguintes benefícios:  
 
 -   Configure políticas antimalware, configurações do Firewall do Windows e gerencie a Proteção Avançada contra Ameaças do Windows Defender para alguns grupos de computadores  
-
 -   Use as atualizações de software do Configuration Manager para baixar os arquivos de definição antimalware mais recentes para manter os computadores cliente atualizados  
-
 -   Envie notificações por email, use o monitoramento no console e exiba relatórios para manter usuários administrativos informados quando for detectado malware nos computadores cliente  
 
-A partir do Windows 10 e do Windows Server 2016, os computadores não exigem nenhum cliente adicional para o gerenciamento do Endpoint Protection. No Windows 8.1 e em computadores mais antigos, o Endpoint Protection instala seu próprio cliente além do cliente do Configuration Manager. O cliente do Endpoint Protection tem os seguintes recursos:  
+A partir dos computadores Windows 10 e Windows Server 2016, o Windows Defender já vem instalado. Para esses sistemas operacionais, um cliente de gerenciamento para Windows Defender é instalado durante a instalação do cliente do Configuration Manager. No Windows 8.1 e em computadores mais antigos, o Endpoint Protection é instalado com o cliente do Configuration Manager. O Windows Defender e o cliente do Endpoint Protection têm os seguintes recursos:  
 
 -   Detecção e correção de malware e spyware  
-
 -   Detecção e correção de rootkits  
-
 -   Avaliação de vulnerabilidades crítica e atualizações automáticas de mecanismos e definições  
-
 -   Detecção de vulnerabilidade de rede por meio do Sistema de Inspeção de Rede  
-
 -   Integração com o Cloud Protection Service para relatar a presença de malware à Microsoft. Ao optar por fazer parte desse serviço, o cliente do Endpoint Protection ou o Windows Defender poderá baixar as definições mais recentes do Centro de Proteção contra Malware quando for detectado malware não identificado em um computador.  
 
 > [!NOTE]  
@@ -119,9 +115,4 @@ Use as etapas a seguir para baixar o arquivo de imagem que contém o software cl
 6. Clique no ícone de seta para baixar o arquivo. O nome do arquivo é **SW_DVD5_Sys_Ctr_Endpnt_Prtctn_1606_MultiLang_EptProt_Lin_Mac_MLF_X21-30777.ISO**.
 
  Para obter mais informações sobre como instalar e gerenciar clientes do Endpoint Protection em computadores Linux e Mac, use a documentação que acompanha esses produtos, que está localizado na pasta **Documentação** .
-
-
-
-<!--HONumber=Feb17_HO1-->
-
 

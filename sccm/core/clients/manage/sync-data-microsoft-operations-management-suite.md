@@ -15,10 +15,11 @@ caps.latest.revision: 9
 author: arob98
 ms.author: angrobe
 manager: angrobe
-translationtype: Human Translation
+ms.translationtype: Human Translation
 ms.sourcegitcommit: dab5da5a4b5dfb3606a8a6bd0c70a0b21923fff9
 ms.openlocfilehash: 3acfaa2cf8c64ece5cef65b80372067336d6a815
-ms.lasthandoff: 03/27/2017
+ms.contentlocale: pt-br
+ms.lasthandoff: 05/17/2017
 
 ---
 
@@ -68,7 +69,7 @@ A partir da versão 1702, você pode usar o conector do OMS para se conectar a u
 Depois de vincular o Configuration Manager ao OMS, será possível adicionar ou remover coleções e exibir as propriedades da conexão do OMS.
 
 ## <a name="verify-the-oms-connector-properties"></a>Verifique as propriedades do conector do OMS
-1.    No console do Configuration Manager, vá até **Administração** > **Serviços de Nuvem** e, em seguida, selecione **Conector do OMS** para abrir a página **Conexão do OMS****.
+1.    No console do Configuration Manager, vá até **Administração** > **Serviços de Nuvem** e, em seguida, selecione **Conector do OMS** para abrir a página **Conexão do OMS ****.
 2.    Nessa página, há duas guias:
   - **Azure Active Directory:**   
     Esta guia mostra **Locatário**, **ID do Cliente**, **Expiração da Chave Secreta do Cliente** e permite que você verifique se sua chave secreta do cliente expirou.
@@ -96,12 +97,10 @@ Depois de vincular o Configuration Manager ao OMS, será possível adicionar ou 
 
   Altere o valor para o nome da configuração *FairFaxAuthorityResource* para que seja igual a "https://login.microsoftonline.com/"
 
-  - **Original:**
-    &lt;setting name="FairFaxAuthorityResource" serializeAs="String">   
+  - **Original:**&lt;setting name="FairFaxAuthorityResource" serializeAs="String">   
     &lt;value>&lt;/value>
 
-    - **Editado:**
-    &lt;setting name="FairFaxAuthorityResource" serializeAs="String">   
+    - **Editado:**&lt;setting name="FairFaxAuthorityResource" serializeAs="String">   
     &lt;value>https://login.microsoftonline.com/&lt;/value>
 
 2.    Depois de salvar o arquivo com as duas alterações, reinicie o console do Configuration Manager no mesmo computador e, em seguida, use esse console para instalar o conector do OMS. Para instalar o conector, use as informações em [Sincronizar dados do Configuration Manager para o Microsoft Operations Management Suite](/sccm/core/clients/manage/sync-data-microsoft-operations-management-suite) e selecione o **Espaço de trabalho do Operations Management Suite** que está na nuvem Microsoft Azure Governamental.

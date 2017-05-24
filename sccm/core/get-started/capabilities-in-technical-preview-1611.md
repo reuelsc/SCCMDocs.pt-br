@@ -15,9 +15,11 @@ caps.latest.revision: 2
 author: Brenduns
 ms.author: brenduns
 manager: angrobe
-translationtype: Human Translation
+ms.translationtype: Human Translation
 ms.sourcegitcommit: 5d08d1f9ccd995d544c3c21c4af52ede73343077
 ms.openlocfilehash: 5e77ebbfd3f3d573d903fe58024a22feb9884e4a
+ms.contentlocale: pt-br
+ms.lasthandoff: 05/17/2017
 
 ---
 # <a name="capabilities-in-technical-preview-1611-for-system-center-configuration-manager"></a>Funcionalidades do Technical Preview 1611 do System Center Configuration Manager
@@ -75,9 +77,4 @@ O recurso de conteúdo de armazenamento prévio em cache oferece a opção de pe
 
 ## <a name="see-also"></a>Consulte também
 [Technical Preview do System Center Configuration Manager](../../core/get-started/technical-preview.md)
-
-
-
-<!--HONumber=Jan17_HO4-->
-
 

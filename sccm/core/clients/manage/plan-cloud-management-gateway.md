@@ -1,7 +1,7 @@
 ---
 title: Planejar o gateway de gerenciamento de nuvem | Microsoft Docs
 description: 
-ms.date: 04/23/2017
+ms.date: 05/16/2017
 ms.prod: configuration-manager
 ms.technology:
 - configmgr-client
@@ -10,14 +10,14 @@ author: robstackmsft
 ms.author: robstack
 manager: angrobe
 ms.translationtype: Human Translation
-ms.sourcegitcommit: dab5da5a4b5dfb3606a8a6bd0c70a0b21923fff9
-ms.openlocfilehash: c61769cc97c320452c9ee27a924cb01480e6f33d
+ms.sourcegitcommit: ae60eb25383f4bd07faaa1265185a471ee79b1e9
+ms.openlocfilehash: b1295891a5567e64b901c79100c2971e526dc874
 ms.contentlocale: pt-br
-ms.lasthandoff: 03/27/2017
+ms.lasthandoff: 05/17/2017
 
 ---
 
-# <a name="plan-for-cloud-management-gateway-in-configuration-manager"></a>Planejar o gateway de gerenciamento de nuvem no Configuration Manager
+# <a name="plan-for-the-cloud-management-gateway-in-configuration-manager"></a>Planejar o gateway de gerenciamento de nuvem no Configuration Manager
 
 *Aplica-se a: System Center Configuration Manager (Branch Atual)*
 
@@ -96,4 +96,103 @@ O gateway de gerenciamento de nuvem usa a seguinte funcionalidade do Microsoft A
 ## <a name="next-steps"></a>Próximas etapas
 
 [Configurar o gateway de gerenciamento de nuvem](setup-cloud-management-gateway.md)
+
+
+## <a name="frequently-asked-questions-about-the-cloud-management-gateway-cmg"></a>Perguntas frequentes sobre o CMG (Gateway de gerenciamento de nuvem)
+
+### <a name="why-use-the-cloud-management-gateway"></a>Por que usar o gateway de gerenciamento de nuvem?
+
+Use esta função para simplificar o gerenciamento de clientes baseado na Internet em três etapas no console do Configuration Manager.
+
+1. Implante o CMG no Azure usando o assistente [Criar Gateway de Gerenciamento de Nuvem](/sccm/core/clients/manage/setup-cloud-management-gateway).
+2. Configure a função de sistema de site [ponto de conexão do gateway de gerenciamento de nuvem](/sccm/core/servers/deploy/configure/install-site-system-roles).
+3. [Configure funções para o tráfego de gateway de gerenciamento na nuvem](/sccm/core/clients/manage/setup-cloud-management-gateway#step-7-configure-roles-for-cloud-management-gateway-traffic), como o ponto de gerenciamento e o ponto de atualização de software.
+
+### <a name="how-does-the-cloud-management-gateway-work"></a>Como funciona o gateway de gerenciamento de nuvem?
+
+- O ponto de conexão do gateway de gerenciamento de nuvem permite uma conexão consistente e de alto desempenho da Internet para o gateway de gerenciamento de nuvem.
+- O Configuration Manager publica configurações no CMG, incluindo informações de conexão e configurações de segurança.
+- O CMG autentica e encaminha as solicitações de cliente do Configuration Manager para o ponto de conexão do gateway de gerenciamento de nuvem. Essas solicitações são encaminhadas para funções na rede corporativa de acordo com mapeamentos de URL.
+
+### <a name="how-is-the-cloud-management-gateway-deployed"></a>Como o gateway de gerenciamento de nuvem é implantado?
+
+O componente do gerenciador de serviço de nuvem no ponto de conexão de serviço lida com todas as tarefas de implantação de CMG. Além disso, ele monitora e reporta informações de integridade e de registro em log do serviço do Azure AD.
+
+#### <a name="certificate-requirements"></a>Requisitos de certificado
+
+Você precisará dos seguintes certificados para proteger o CMG:
+
+- **Certificado de gerenciamento** – pode ser qualquer certificado, incluindo certificados autoassinados. Use um certificado público carregado no Azure AD ou um [PFX com chave privada](/sccm/mdm/deploy-use/create-pfx-certificate-profiles) importado no Configuration Manager a fim de autenticar com o Azure AD. 
+- **Certificado de serviço Web** – recomendamos que você use um certificado de autoridade de certificação público para ganhar a confiança nativa dos clientes. O CName precisa ser criado na registar de DNS público. Não há suporte para certificados curinga.
+- **Carregamento de certificados Raiz/SubCA no CMG** – o CMG precisa realizar uma validação completa da cadeia em certificados PKI do cliente. Se você usar uma autoridade de certificação corporativa para emissão de certificados PKI do cliente, e a autoridade de certificação raiz ou subordinada dele não estiver disponível na internet, você deverá carregá-lo no CMG.
+
+#### <a name="deployment-process"></a>Processo de implantação
+
+A implantação é dividida em duas fases:
+
+- Implantar o serviço de nuvem
+    - Carregue seu arquivo de [Esquema de Definição de Serviço do Azure](https://msdn.microsoft.com/library/azure/ee758711.aspx) (csdef)
+    - Carregue seu arquivo de [Esquema de Configuração de Serviço do Azure](https://msdn.microsoft.com/library/azure/ee758710.aspx) (cscfg).
+- Configurar o componente CMG em seu servidor do Azure AD, e configurar pontos de extremidade, manipuladores HTTP e serviços no ISS (Serviços de Informações da Internet)
+
+Se você alterar a configuração do CMG, uma implantação de configuração será iniciada para o CMG.
+
+### <a name="how-does-the-cloud-management-gateway-help-ensure-security"></a>Como o gateway de gerenciamento de nuvem ajuda a garantir a segurança?
+
+O CMG ajuda a garantir a segurança das seguintes maneiras:
+
+- Aceita e gerencia conexões de pontos de conexão CMG, incluindo a autenticação mútua de SSL usando certificados internos e IDs de conexão.
+- Aceita e encaminha as solicitações de cliente
+    - Pré-autentica as conexões usando SSL mútua no certificado PKI do cliente.
+    - A lista de certificados confiáveis verifica a raiz do certificado PKI do cliente. Especifique essa configuração nas configurações de comunicação do cliente nas propriedades do site. Também executa a mesma validação como ponto de gerenciamento para o cliente.
+    - Valida URLs recebidas
+    - Filtra as URLs recebidas para verificar se algum ponto de conexão de CMG pode atender à solicitação da URL.  
+    - Verifica a seleção de tamanho de conteúdo para cada ponto de extremidade de publicação.
+    - Usa 'round-robin' para balancear a carga entre os pontos de conexão de CMG do mesmo site.
+
+- Protege o ponto de conexão de CMG
+    - Compila conexões HTTP/TCP consistentes para todas as instâncias virtuais do CMG em conexão. Verifica e mantém conexões a cada minuto.
+    - Autentica mutuamente a autenticação SSL com CMG usando certificados internos.
+    - Encaminha solicitações HTTP com base nos mapeamentos de URL.
+    - Reporta o status de conexão para mostrar o status de integridade do serviço de administração.
+    - Reporta o tráfego de ponto de extremidade por ponto de extremidade a cada cinco minutos.
+
+- Protege as funções voltadas para o cliente do Configuration Manager do ponto de extremidade de publicação, como o ponto de gerenciamento, e pontos de extremidade host do ponto de atualização de software em solicitações do IIS para o cliente do serviço. Cada ponto de extremidade publicado no CMG tem um mapeamento de URL.
+A URL externa é aquela usada pelo cliente para se comunicar com o CMG.
+A URL interna é o ponto de conexão de CMG usado para encaminhar solicitações para o servidor interno. 
+
+#### <a name="example"></a>Exemplo:
+Quando você habilita o tráfego CMG em um ponto de gerenciamento, o Configuration Manager cria internamente um conjunto de mapeamentos de URL para cada servidor de ponto de gerenciamento, como ccm_system, ccm_incoming e sms_mp.
+A URL externa do ponto de extremidade do ponto de gerenciamento ccm_system pode parecer com **https://<CMG service name>/CCM_Proxy_MutualAuth/<MP Role ID>/CCM_System**. A URL é exclusiva para cada ponto de gerenciamento. Depois, o cliente do Configuration Manager coloca o nome de MP habilitado para CMG como **<CMG service name>/CCM_Proxy_MutualAuth/<MP Role ID>** em sua lista de pontos de gerenciamento da internet. Todas as URLs externas publicadas são carregadas automaticamente no CMG, assim o CMG é capaz de fazer a filtragem de URL. Todo o mapeamento de URL é replicado no ponto de conexão de CMG, para que ele possa encaminhar para servidores internos de acordo com a URL externa de solicitação do cliente.
+
+### <a name="what-ports-are-used-by-the-cloud-management-gateway"></a>Quais portas são usadas pelo gateway de gerenciamento de nuvem? 
+
+- Nenhuma porta de entrada é necessária na rede local. A implantação de CMG criará automaticamente um grupo no CMG. 
+- Além da 443, algumas portas de saída são exigidas pelo ponto de conexão do CMG.
+
+|||||
+|-|-|-|-|
+|Fluxo de dados|Servidor|Portas do servidor|Cliente|
+|Implantação de CMG|Azure|443|Ponto de conexão de serviço do Configuration Manager|
+|Compilar canal de CMG|CMG|Instância da VM: 1 Porta: 443<br>Instância da VM: N (N>=2 e N<16) Portas: 10124~N 10140~N|Ponto de conexão de CMG|
+|Cliente para CMG|CMG|443|Cliente|
+|Função de conector de CMG com o site (atualmente os pontos de gerenciamento e os pontos de atualização de software)|Função de site|Protocolo/portas configuradas na função de site|Ponto de conexão de CMG|
+
+### <a name="how-can-you-improve-performance-of-the-cloud-management-gateway"></a>Como você pode melhorar o desempenho do gateway de gerenciamento de nuvem?
+
+- Se for possível, configure o CMG, o ponto de conexão do CMG e o servidor de site do Configuration Manager na mesma região de rede a fim de reduzir a latência.
+- Atualmente, a conexão entre o cliente do Configuration Manager e o CMG não tem reconhecimento de região.
+- Para obter alta disponibilidade, recomendamos pelo menos duas instâncias virtuais do CMG e dois pontos de conexão de CMG por site 
+- Você pode dimensionar o CMG para oferecer suporte a mais clientes adicionando mais instâncias de VM. A carga delas é balanceada pelo Balanceador de carga do Azure AD.
+- Crie mais pontos de conexão de CMG para distribuir a carga entre eles. O CMG fará 'round-robin' do tráfego para seus pontos de conexão de CMG.
+- O número de clientes com suporte por instância de VM do CMG é de 6 mil na versão 1702. Quando o canal do CMG estiver com muita carga, a solicitação ainda será tratada, mas pode demorar mais tempo do que o normal.
+
+### <a name="how-can-you-monitor-the-cloud-management-gateway"></a>Como você pode monitorar o gateway de gerenciamento de nuvem?
+
+Para solução de problemas de implantação, use **CloudMgr.log** e **CMGSetup.log**.
+Para solução de problemas de integridade de serviço, use **CMGService.log** e **SMS_CLOUD_PROXYCONNECTOR.log**.
+Para solução de problemas de tráfego de clientes, use **CMGHttpHandler.log**, **CMGService.log** e **SMS_CLOUD_PROXYCONNECTOR.log**.
+
+Para obter uma lista com todos os arquivos de log relacionadas ao CMG, veja [Arquivos de log no Configuration Manager](https://docs.microsoft.com/sccm/core/plan-design/hierarchy/log-files#cloud-management-gateway)
+
 

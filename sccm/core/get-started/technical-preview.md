@@ -15,10 +15,11 @@ caps.latest.revision: 157
 author: Brenduns
 ms.author: brenduns
 manager: angrobe
-translationtype: Human Translation
-ms.sourcegitcommit: ae008c91a7387ba76f2bfac13f8feb489a0cc558
-ms.openlocfilehash: 8ffaee12bd826e2f19653b215ee19423ea672433
-ms.lasthandoff: 04/21/2017
+ms.translationtype: Human Translation
+ms.sourcegitcommit: f809c9327db9f298168674add2d09820fdecd1b8
+ms.openlocfilehash: 3a7370fedee417588d219dc7bff46205faf42929
+ms.contentlocale: pt-br
+ms.lasthandoff: 05/17/2017
 
 
 ---
@@ -45,23 +46,7 @@ ms.lasthandoff: 04/21/2017
 
 -   Cada instalação permanece ativa durante 90 dias antes de se tornar inativa.  
 
--   O inglês é o único idioma com suporte.  
-
--   Há suporte apenas para um site primário autônomo. Não há suporte para um site de administração central, para vários sites primários ou para sites secundários.  
-
--   Há suporte apenas para as seguintes versões do SQL Server:  
-
-    -   SQL Server 2016 (sem Service Pack e posterior)
-    -   SQL Server 2014 (sem Service Pack e posterior)
-    -   SQL Server 2012 (sem Service Pack 2 ou posterior)
-
-
--   O site dá suporte a até 10 clientes, que devem executar um dos seguintes:  
-
-      -   Windows 10  
-      -   Windows 8.1  
-      -   Windows 8  
-      -   Windows 7  
+-   O inglês é o único idioma com suporte.
 
 
 -   Há suporte apenas para os seguintes sinalizadores de instalação (opções):  
@@ -79,6 +64,23 @@ ms.lasthandoff: 04/21/2017
 -   Não há suporte para a atualização para esta compilação de visualização.  
 
 -   Não há suporte para atualização para um build de produção (ramificação atual) deste build de preview. No entanto, quando as atualizações estão disponíveis para uma versão prévia, é possível localizá-las e instalá-las do nó **Atualizações e Manutenção** do console do Configuration Manager. Para obter um vídeo do processo de atualização no console, veja [Instalação dos pacotes de atualização do ConfigMgr](https://www.youtube.com/embed/KBd_EGFbUT8) no youtube.com.  
+-   Há suporte apenas para um site primário autônomo. Não há suporte para um site de administração central, para vários sites primários ou para sites secundários.  
+
+Há suporte para os seguintes produtos e tecnologias por esse branch do Configuration Manager. No entanto, sua inclusão neste conteúdo não implica uma extensão de suporte para um produto ou versão além do ciclo de vida de suporte individual desse produto. Os produtos além de seu ciclo de vida de suporte não têm suporte para uso com o Configuration Manager. Para obter mais informações sobre os Ciclos de vida de suporte da Microsoft, visite o site [Ciclo de Vida do Suporte da Microsoft](http://go.microsoft.com/fwlink/p/?LinkId=208270) .  
+
+-   Há suporte apenas para as seguintes versões do SQL Server:  
+
+    -   SQL Server 2016 (sem Service Pack e posterior)
+    -   SQL Server 2014 (com Service Pack 1 e posterior)
+    -   SQL Server 2012 (com Service Pack 3 ou posterior)
+
+
+-   O site dá suporte a até 10 clientes, que devem executar um dos seguintes:  
+
+      -   Windows 10  
+      -   Windows 8.1  
+      -   Windows 8  
+      -   Windows 7  
 
 ##  <a name="bkmk_install"></a> Instalar e atualizar a Visualização Técnica  
  O System Center Configuration Manager Technical Preview é diferente da versão atual do System Center Configuration Manager.  

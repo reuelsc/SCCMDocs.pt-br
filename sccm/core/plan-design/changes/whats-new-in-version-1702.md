@@ -13,10 +13,11 @@ ms.assetid: 409e26e1-7716-4f1d-a0ee-34feabf20792
 author: Brenduns
 ms.author: brenduns
 manager: angrobe
-translationtype: Human Translation
-ms.sourcegitcommit: 90775fcf2549080a43e9c1606caa79d9eb90a89c
-ms.openlocfilehash: 4616ebb84ae63acbe6af892918aa2dd1a0be4825
-ms.lasthandoff: 05/02/2017
+ms.translationtype: Human Translation
+ms.sourcegitcommit: f4cb711f369698fe8e045f8c83dd96ec6fb29d70
+ms.openlocfilehash: a2954b3c6f9a09b7246347e780c4cfc49ba39ca1
+ms.contentlocale: pt-br
+ms.lasthandoff: 05/17/2017
 
 ---
 # <a name="what39s-new-in-version-1702-of-system-center-configuration-manager"></a>Novidades da versão 1702 do System Center Configuration Manager
@@ -172,8 +173,8 @@ Agora há suporte para conteúdo adicional na mídia autônoma. Você pode selec
 ### <a name="hardware-inventory-collects-uefi-information"></a>O inventário de hardware coleta informações de UEFI
 Uma nova classe de inventário de hardware (**SMS_Firmware**) e a propriedade (**UEFI**) estão disponíveis para ajudá-lo a determinar se um computador é iniciado no modo UEFI. Quando um computador é iniciado no modo UEFI, a propriedade **UEFI** é definida como **TRUE**. Isso é habilitado no inventário de hardware por padrão. Para obter mais informações sobre o inventário de hardware, consulte [Como configurar o inventário de hardware](/sccm/core/clients/manage/inventory/configure-hardware-inventory).
 
-### <a name="improvements-to-software-center-settings-and-notification-messages-for-high-impact-task-sequences"></a>Aprimoramentos nas configurações e mensagens de notificação do Centro de Software para sequências de tarefas de alto impacto
-Esta versão inclui os seguintes aprimoramentos para configurações e mensagens de notificação do Centro de Software para sequências de tarefas de implantação de alto impacto:
+### <a name="improvements-to-software-center-warning-messages-for-high-impact-task-sequences"></a>Aprimoramentos nas mensagens de aviso do Centro de Software para sequências de tarefas de alto impacto
+Esta versão inclui os seguintes aprimoramentos para mensagens de aviso do Centro de Software para sequências de tarefas de implantação de alto impacto:
 
 - Nas propriedades da sequência de tarefas, agora você pode configurar qualquer sequência de tarefas, incluindo sequências de tarefas que não do sistema operacional, como uma implantação de alto risco. Qualquer sequência de tarefas que atender a determinadas condições será automaticamente definida como de alto impacto. Para obter detalhes, consulte [Gerenciar implantações de alto risco](/sccm/protect/understand/settings-to-manage-high-risk-deployments).
 - Nas propriedades da sequência de tarefas, você pode optar por usar a mensagem de notificação padrão ou criar sua própria mensagem de notificação personalizada para implantações de alto impacto.

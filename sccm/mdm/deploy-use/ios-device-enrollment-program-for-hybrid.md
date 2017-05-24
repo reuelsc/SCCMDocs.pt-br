@@ -16,8 +16,8 @@ author: mtillman
 ms.author: mtillman
 manager: angrobe
 ms.translationtype: Human Translation
-ms.sourcegitcommit: 4eee9731a4a27328c47c0d15931cab28cf520a18
-ms.openlocfilehash: 555da7187b505a926731350d16787bc02d28dad3
+ms.sourcegitcommit: ae60eb25383f4bd07faaa1265185a471ee79b1e9
+ms.openlocfilehash: 5b5eadd7b4026eae59acceaef43cdacd7a33d3ac
 ms.contentlocale: pt-br
 ms.lasthandoff: 05/17/2017
 
@@ -39,7 +39,7 @@ As empresas podem adquirir dispositivos iOS por meio do programa de registro de 
     Para poder registrar dispositivos iOS do DEP (Programa de Registro de Dispositivo), você deve concluir as etapas para [Configurar o gerenciamento de dispositivo móvel híbridos](../../mdm/deploy-use/setup-hybrid-mdm.md) incluindo [etapas para dar suporte ao registro no iOS](../deploy-use/enroll-hybrid-ios-mac.md).
 
 2.  **Criar uma solicitação de token do DEP**   
-    No console do Configuration Manager, no espaço de trabalho **Administração**, expanda **Configuração da Hierarquia**, expanda **Serviços de Nuvem** e clique em **Assinaturas do Windows Intune**. Clique em **Criar Solicitação de Token de DEP** na guia **Início** , clique em **Procurar** para especificar o local de download para a solicitação de token de DEP e clique em **Baixar**. Salve o arquivo de solicitação de token DEP (.pem) localmente. O arquivo .pem é usado para solicitar um token confiável (.p7m) do portal do Programa de Registro de Dispositivo da Apple.  
+    No console do Configuration Manager, no espaço de trabalho **Administração**, expanda **Configuração da Hierarquia**, expanda **Serviços de Nuvem** e clique em **Assinaturas do Microsoft Intune**. Clique em **Criar Solicitação de Token de DEP** na guia **Início** , clique em **Procurar** para especificar o local de download para a solicitação de token de DEP e clique em **Baixar**. Salve o arquivo de solicitação de token DEP (.pem) localmente. O arquivo .pem é usado para solicitar um token confiável (.p7m) do portal do Programa de Registro de Dispositivo da Apple.  
 
 3.  **Obter um token do Programa de Registro de Dispositivo**   
     Vá até o [Portal do Programa de Registro de Dispositivo](https://deploy.apple.com) (https://deploy.apple.com) e entre com sua ID Apple corporativa. Essa ID da Apple deve ser usada no futuro para renovar seu token do DEP.  
@@ -55,7 +55,7 @@ As empresas podem adquirir dispositivos iOS por meio do programa de registro de 
      Esse arquivo de certificado (.p7m) é usado para estabelecer uma relação de confiança entre servidores do Programa de Registro de Dispositivo da Apple.  
 
 4.  **Adicione o token do DEP ao Configuration Manager**   
-    No console do Configuration Manager, no espaço de trabalho **Administração**, expanda a **Configuração da Hierarquia** e clique em **Assinaturas do Windows Intune**. Clique em **Configurar Plataformas** na guia **Início** e clique em **iOS**. Selecione **Habilitar Programa de Registro de Dispositivo**, navegue até o arquivo de certificado (.p7m), clique em **Abrir**, em **Carregar**e em **OK**.  
+    No console do Configuration Manager, no espaço de trabalho **Administração**, expanda a **Configuração da Hierarquia** e clique em **Assinaturas do Microsoft Intune**. Clique em **Configurar Plataformas** na guia **Início** e clique em **iOS**. Selecione **Habilitar Programa de Registro de Dispositivo**, navegue até o arquivo de certificado (.p7m), clique em **Abrir**, em **Carregar**e em **OK**.  
 
 #### <a name="set-up-enrollment-for-apple-device-enrollment-program-dep-ios-devices"></a>Configuração do registro para dispositivos iOS do DEP (Programa de Registro de Dispositivo) Apple  
 

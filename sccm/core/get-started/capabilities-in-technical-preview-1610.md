@@ -15,9 +15,11 @@ caps.latest.revision: 2
 author: Brenduns
 ms.author: brenduns
 manager: angrobe
-translationtype: Human Translation
+ms.translationtype: Human Translation
 ms.sourcegitcommit: 5d08d1f9ccd995d544c3c21c4af52ede73343077
 ms.openlocfilehash: 59633ce68e2bb2d722900215751f345d6d098721
+ms.contentlocale: pt-br
+ms.lasthandoff: 05/17/2017
 
 ---
 # <a name="capabilities-in-technical-preview-1610-for-system-center-configuration-manager"></a>Funcionalidades no Technical Preview 1610 do System Center Configuration Manager
@@ -63,19 +65,19 @@ Como administrador, agora você pode negar uma solicitação de aplicativo aprov
 #### <a name="try-it-out"></a>Experimente
 Para negar uma solicitação de aplicativo aprovada:
 
-1.  No console do Configuration Manager, [crie e implante um aplicativo](https://docs.microsoft.com/en-us/sccm/apps/deploy-use/create-applications) que requer aprovação.
-2.  Em um computador cliente, abra o Centro de Software e envie uma solicitação para o aplicativo.
-3.  No console do Configuration Manager, aprove a solicitação do aplicativo.
-4.  Negue a solicitação do aplicativo aprovado: no console do Configuration Manager, navegue até **Biblioteca de Software** > **Visão Geral** > **Gerenciamento de Aplicativo** > **solicitações de aprovação** e selecione a solicitação de aplicativo que deseja negar.  Na faixa de opções, clique em **Negar**.
+1.    No console do Configuration Manager, [crie e implante um aplicativo](https://docs.microsoft.com/en-us/sccm/apps/deploy-use/create-applications) que requer aprovação.
+2.    Em um computador cliente, abra o Centro de Software e envie uma solicitação para o aplicativo.
+3.    No console do Configuration Manager, aprove a solicitação do aplicativo.
+4.    Negue a solicitação do aplicativo aprovado: no console do Configuration Manager, navegue até **Biblioteca de Software** > **Visão Geral** > **Gerenciamento de Aplicativo** > **solicitações de aprovação** e selecione a solicitação de aplicativo que deseja negar.  Na faixa de opções, clique em **Negar**.
 
 ## <a name="exclude-clients-from-automatic-upgrade"></a>Excluir clientes da atualização automática
 O Technical Preview 1610 apresenta uma nova configuração que você pode usar para excluir uma coleção de clientes e impedir que instalem automaticamente versões atualizadas dos clientes.  Ela se aplica à atualização automática, bem como a outros métodos, como a atualização baseada na atualização de software, scripts de logon e políticas de grupo. Pode ser usada para uma coleção de computadores que precisam de maior atenção ao atualizar o cliente. Um cliente que estiver em uma coleção excluída ignorará todas as solicitações para instalar o software cliente atualizado.
 
 ### <a name="configure-exclusion-from-automatic-upgrade"></a>Configurar a exclusão da atualização automática
 Para configurar exclusões de atualizações automáticas:
-1.  No console do Configuration Manager, abra **Configurações da Hierarquia** em **Administração > Configuração do Site > Sites** e selecione a guia **Atualizar Cliente**.
-2.  Marque a caixa de seleção **Excluir clientes especificados da atualização** e, para **Coleção de exclusão**, selecione a coleção que deseja excluir. É possível selecionar apenas uma coleção para exclusão.
-3.  Clique em **OK** para fechar e salvar a configuração. Em seguida, após os clientes atualizarem a política, os clientes na coleção excluída não instalarão automaticamente as atualizações no software cliente.
+1.    No console do Configuration Manager, abra **Configurações da Hierarquia** em **Administração > Configuração do Site > Sites** e selecione a guia **Atualizar Cliente**.
+2.    Marque a caixa de seleção **Excluir clientes especificados da atualização** e, para **Coleção de exclusão**, selecione a coleção que deseja excluir. É possível selecionar apenas uma coleção para exclusão.
+3.    Clique em **OK** para fechar e salvar a configuração. Em seguida, após os clientes atualizarem a política, os clientes na coleção excluída não instalarão automaticamente as atualizações no software cliente.
 
   ![Configurações para exclusão de atualizações automáticas](media/automatic_upgrade_exclusion.png)
 
@@ -128,13 +130,13 @@ Especificamente, você pode definir as seguintes configurações do Windows Defe
 
 ### <a name="try-it-out"></a>Experimente!
 
-1.  No console do Configuration Manager, clique em **Ativos e Conformidade** > **Visão Geral** > **Configurações de Conformidade** > **Itens de Configuração** e crie um novo **Item de Configuração**.
-2.  Insira um nome, selecione **Windows 8.1 e Windows 10** em **Configurações para dispositivos gerenciados sem o cliente do Configuration Manager** e clique em **Avançar**.
-3.  Verifique se **Todos os Windows 10 (64 bits)** e **Todos os Windows 10 (32 bits)** estão selecionados na página **Plataformas com Suporte** e, em seguida, clique em **Avançar**.
-4.  Selecione o grupo de configurações **Windows Defender** e clique em **Avançar**.
-5.  Defina as configurações desejadas nesta página e clique em **Avançar**.
-6.  Conclua o assistente.
-7.  Adicione este item de configuração a uma linha de base de configuração e implante essa linha de base em computadores que executam o Windows 10 com Atualização de novembro (1511) ou superior.
+1.    No console do Configuration Manager, clique em **Ativos e Conformidade** > **Visão Geral** > **Configurações de Conformidade** > **Itens de Configuração** e crie um novo **Item de Configuração**.
+2.    Insira um nome, selecione **Windows 8.1 e Windows 10** em **Configurações para dispositivos gerenciados sem o cliente do Configuration Manager** e clique em **Avançar**.
+3.    Verifique se **Todos os Windows 10 (64 bits)** e **Todos os Windows 10 (32 bits)** estão selecionados na página **Plataformas com Suporte** e, em seguida, clique em **Avançar**.
+4.    Selecione o grupo de configurações **Windows Defender** e clique em **Avançar**.
+5.    Defina as configurações desejadas nesta página e clique em **Avançar**.
+6.    Conclua o assistente.
+7.    Adicione este item de configuração a uma linha de base de configuração e implante essa linha de base em computadores que executam o Windows 10 com Atualização de novembro (1511) ou superior.
 
 > [!NOTE]
 > Lembre-se de marcar a caixa de seleção **Corrigir as configurações não compatíveis** ao implantar a linha de base de configuração.
@@ -145,8 +147,8 @@ Agora você pode solicitar uma sincronização de política em um dispositivo m�
 
 ### <a name="try-it-out"></a>Experimente!
 
-1.  No console do Configuration Manager, acesse **Ativos e Conformidade** > **Visão Geral** > Dispositivos.
-2.  No menu **Ações de Dispositivo Remoto**, selecione **Enviar Solicitação de Sincronização**.
+1.    No console do Configuration Manager, acesse **Ativos e Conformidade** > **Visão Geral** > Dispositivos.
+2.    No menu **Ações de Dispositivo Remoto**, selecione **Enviar Solicitação de Sincronização**.
 
 A sincronização pode levar de cinco a dez minutos. Todas as alterações em políticas são sincronizadas com o dispositivo. Você pode acompanhar o estado da solicitação de sincronização na coluna **Estado de Sincronização Remota** na exibição **Dispositivos** ou na caixa de diálogo **Propriedades** do dispositivo.
 
@@ -162,9 +164,4 @@ Agora é possível exigir que dispositivos Windows 10, registrados no Azure Acti
 
 ## <a name="see-also"></a>Consulte também
 [Technical Preview do System Center Configuration Manager](../../core/get-started/technical-preview.md)
-
-
-
-<!--HONumber=Jan17_HO4-->
-
 
