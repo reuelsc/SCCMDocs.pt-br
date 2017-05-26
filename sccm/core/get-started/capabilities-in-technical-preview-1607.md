@@ -77,5 +77,5 @@ Para obter mais informações sobre esse problema, consulte o [Blog da equipe de
 1. No console do Configuration Manager, vá para **Administração** > **Visão Geral** > **Configuração de Site** > **Sites**.
 2. Na guia **Início** , no grupo **Sites** , clique em **Configurações da Hierarquia**.
 3. Vá para a guia **Aprovação de Cliente e Registros de Conflitos**.
-4. Clique em **Adicionar** na seção **	Identificadores de hardware duplicados** para adicionar novos identificadores de hardware.
+4. Clique em **Adicionar** na seção **Identificadores de hardware duplicados** para adicionar novos identificadores de hardware.
 
