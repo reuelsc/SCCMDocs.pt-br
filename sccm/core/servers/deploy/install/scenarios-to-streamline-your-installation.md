@@ -27,7 +27,7 @@ ms.lasthandoff: 05/17/2017
 
 *Aplica-se a: System Center Configuration Manager (Branch Atual)*
 
-Com o lançamento das versões de atualização para o branch atual do System Center Configuration Manager, há novos cenários para simplificar a instalação de uma nova hierarquia para uma versão de atualização (como a atualização 1610) e para atualizar do Microsoft System Center 2012 Configuration Manager. 
+Com o lançamento das versões de atualização para o branch atual do System Center Configuration Manager, há novos cenários para simplificar a instalação de uma nova hierarquia para uma versão de atualização (como a atualização 1610) e para atualizar do Microsoft System Center 2012 Configuration Manager.
 
 Entre os cenários com suporte estão:  
 
@@ -113,9 +113,7 @@ Siga essa sequência:
     -   Um site primário filho instala automaticamente as mesmas atualizações que você instala em um site de administração central.  
     -   Os sites secundários não instalam automaticamente as novas versões. Você deve atualizá-los manualmente de dentro do console.  
 
-   
-
-    Após essa etapa, quando você instala atualizações no site de administração central, os sites primários filho instalarão essa atualização apenas quando for permitido pela janela de manutenção.  
+  Após essa etapa, quando você instala atualizações no site de administração central, os sites primários filho instalarão essa atualização apenas quando for permitido pela janela de manutenção.  
 
 4.  **Instale a versão de atualização em seu site de nível superior.** Isso atualiza o site de nível superior. Após um site de administração central instalar a versão da atualização, cada site primário filho instalará automaticamente a atualização, a menos que a instalação seja bloqueada por uma janela de manutenção.  
 
