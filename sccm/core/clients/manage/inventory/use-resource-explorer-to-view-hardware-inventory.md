@@ -42,7 +42,7 @@ Use o Gerenciador de Recursos no System Center Configuration Manager para exibir
     >  O Configuration Manager retém o histórico de inventário de hardware para o número de dias que você especificar na tarefa de manutenção do site **Excluir históricos de inventários antigos**  
 
 > [!NOTE]  
->  Para obter informações sobre como exibir o inventário de hardware de clientes que executam Linux e UNIX, veja [How to monitor clients for Linux and UNIX servers in System Center Configuration Manager](../../../../core/clients/manage/monitor-clients-for-linux-and-unix-servers.md).  
+>  Para obter informações sobre como exibir o inventário de hardware de clientes que executam Linux e UNIX, veja [Como monitorar clientes para servidores Linux e UNIX no System Center Configuration Manager](../../../../core/clients/manage/monitor-clients-for-linux-and-unix-servers.md).  
 
 ### <a name="how-to-run-resource-explorer-from-the-configuration-manager-console"></a>Como executar o Gerenciador de Recursos no console do Configuration Manager  
 
