@@ -248,7 +248,7 @@ Você pode instalar o cliente do System Center Configuration Manager em computad
 
  **Requisitos de firewall**: Certifique-se de que firewalls não bloqueie as comunicações entre as portas que você especificar como as portas de solicitação de cliente. O cliente para Linux e UNIX se comunica diretamente com os pontos de gerenciamento, pontos de distribuição e pontos de status de fallback.  
 
- Para obter informações sobre portas de solicitação e de comunicação do cliente, consulte  [Configure the Client for Linux and UNIX to Locate Management Points](../../../../core/clients/deploy/deploy-clients-to-unix-and-linux-servers.md#BKMK_ConfigClientMP).  
+ Para obter informações sobre portas de solicitação e de comunicação do cliente, consulte  [Configurar o cliente para Linux e UNIX para localizar pontos de gerenciamento](../../../../core/clients/deploy/deploy-clients-to-unix-and-linux-servers.md#BKMK_ConfigClientMP).  
 
 ##  <a name="BKMK_PlanningforCommunicationsforLnU"></a> Planejamento da comunicação entre florestas com relações de confiança para servidores Linux e UNIX  
  Os servidores Linux e UNIX que você gerenciada com o Configuration Manager funcionam como clientes de grupo de trabalho e requerem configurações semelhantes às de clientes baseados no Windows que estão em um grupo de trabalho. Para obter informações sobre comunicações de computadores que estão em grupos de trabalho, consulte a seção [Comunicações entre florestas do Active Directory](../../../../core/plan-design/hierarchy/communications-between-endpoints.md#Plan_Com_X-Forest) no tópico [Comunicação entre pontos de extremidade no System Center Configuration Manager](../../../../core/plan-design/hierarchy/communications-between-endpoints.md) tópico.  
