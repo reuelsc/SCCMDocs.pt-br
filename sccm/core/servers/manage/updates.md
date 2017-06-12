@@ -115,7 +115,7 @@ O Configuration Manager descobre novas atualizações quando você sincroniza a 
 
 -   Quando o ponto de conexão de serviço está no modo online, o site sincroniza-se com a Microsoft diariamente para identificar automaticamente as novas atualizações que se aplicam à infraestrutura.  Para baixar atualizações e arquivos redist para atualizações, o computador que hospeda a função do sistema de sites do ponto de conexão de serviço usa o contexto **Sistema** para acessar os seguintes locais da Internet: go.microsoft.com e Microsoft.com. Para obter informações sobre outros locais aos quais o ponto de conexão de serviço se conecta, consulte [Requisitos de acesso de Internet](../../../core/servers/deploy/configure/about-the-service-connection-point.md#bkmk_urls) em [Sobre o ponto de conexão de serviço no System Center Configuration Manager](../../../core/servers/deploy/configure/about-the-service-connection-point.md).  
 
--   Quando o ponto de conexão de serviço estiver no modo offline, use a ferramenta de conexão de serviço para sincronizar-se manualmente com a Microsoft Cloud. Para obter mais informações, consulte [Use the Service Connection Tool for System Center Configuration Manager](../../../core/servers/manage/use-the-service-connection-tool.md).  
+-   Quando o ponto de conexão de serviço estiver no modo offline, use a ferramenta de conexão de serviço para sincronizar-se manualmente com a Microsoft Cloud. Para obter mais informações, consulte [Usar a Ferramenta de Conexão de Serviço do System Center Configuration Manager](../../../core/servers/manage/use-the-service-connection-tool.md)  
 
 -   As atualizações no console substituem a necessidade de localizar e instalar atualizações, service packs e novos recursos individuais de forma independente.  
 
