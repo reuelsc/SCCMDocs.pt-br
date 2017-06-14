@@ -16,9 +16,10 @@ caps.handback.revision: 0
 author: Brenduns
 ms.author: brenduns
 manager: angrobe
-translationtype: Human Translation
+ms.translationtype: Human Translation
 ms.sourcegitcommit: 10b1010ccbf3889c58c55b87e70b354559243c90
 ms.openlocfilehash: 132803a1aa9aad5c5462686bd656688418e47d07
+ms.contentlocale: pt-br
 ms.lasthandoff: 12/16/2016
 
 
@@ -62,7 +63,7 @@ Para minimizar o risco de falha em um site, se as tarefas de monitoramento revel
  Use as informações a seguir para ajudar você a monitorar as tarefas comuns do Configuration Manager:  
 
  **Alertas**  
-   Veja [Monitor alerts](../../../core/servers/manage/use-alerts-and-the-status-system.md#BKMK_MonitorAlerts) em [Use alerts and the status system for System Center Configuration Manager](../../../core/servers/manage/use-alerts-and-the-status-system.md).  
+   Veja [Monitorar alertas](../../../core/servers/manage/use-alerts-and-the-status-system.md#BKMK_MonitorAlerts) em [Usar alertas e o sistema de status para o System Center Configuration Manager](../../../core/servers/manage/use-alerts-and-the-status-system.md).  
 
  **Configurações de conformidade**  
    Veja [Como monitorar as configurações de conformidade no System Center Configuration Manager](../../../compliance/deploy-use/monitor-compliance-settings.md).  
