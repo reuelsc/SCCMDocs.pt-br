@@ -28,7 +28,7 @@ ms.lasthandoff: 03/06/2017
 *Aplica-se a: System Center Configuration Manager (Branch Atual)*
 
 ## <a name="troubleshoot-login-errors"></a>Solução de problemas de erros de logon
-### <a name="403-errors"></a>Erros&403;
+### <a name="403-errors"></a>Erros 403
 Você verá um erro 403 quando você fizer logon no [console do Lookout MTP](https://aad.lookout.com): **você não está autorizado a acessar o serviço** Isso pode acontecer quando o nome de usuário especificado não é um membro do grupo do Azure AD (Active Directory) configurado para acessar o Lookout MTP.
 
 O Lookout MTP está configurado para permitir que apenas os usuários de um grupo do Azure AD configurado tenham acesso. Se você não tiver certeza de qual grupo está configurado com acesso ao Lookout MTP, contate o suporte do Lookout.
@@ -51,7 +51,7 @@ Para resolver esse problema, o usuário administrador global deve fazer logon em
 ### <a name="device-not-showing-up-in-the-lookout-mtp-console-device-list"></a>O dispositivo não está aparecendo na lista de dispositivos do console do Lookout MTP
 
 Isso pode acontecer em qualquer um dos seguintes cenários:
-* Quando o usuário ao qual este dispositivo pertence não está no **Grupo de Registro** especificado no **Console do Lookout MTP**.  Do módulo **Sistema**, acesse a guia **Conector do Intune** e veja as configurações do **Gerenciamento de Registro**.  Você deverá ver um ou mais grupos do Azure AD configurados para o registro.  Verifique se o usuário ao qual o dispositivo ausente pertence faz parte de um dos grupos especificados do Azure AD.  Depois que um novo usuário for adicionado ao grupo de registro, demorará para o intervalo de sondagem configurado (o padrão é&5; minutos) ver o dispositivo no módulo **Dispositivos** do Console do Lookout MTP.
+* Quando o usuário ao qual este dispositivo pertence não está no **Grupo de Registro** especificado no **Console do Lookout MTP**.  Do módulo **Sistema**, acesse a guia **Conector do Intune** e veja as configurações do **Gerenciamento de Registro**.  Você deverá ver um ou mais grupos do Azure AD configurados para o registro.  Verifique se o usuário ao qual o dispositivo ausente pertence faz parte de um dos grupos especificados do Azure AD.  Depois que um novo usuário for adicionado ao grupo de registro, demorará para o intervalo de sondagem configurado (o padrão é 5 minutos) ver o dispositivo no módulo **Dispositivos** do Console do Lookout MTP.
 
 * Se o dispositivo não tiver suporte no Lookout MTP.  Os dispositivos que não têm suporte serão exibidos na seção **Dispositivos Gerenciados** das configurações do conector no Console do Lookout MTP.
 
