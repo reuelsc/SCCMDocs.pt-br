@@ -2,7 +2,7 @@
 title: Instalar o Updates Publisher | Microsoft Docs
 description: Instalar o System Center Updates Publisher em seu ambiente
 ms.custom: na
-ms.date: 4/29/2017
+ms.date: 07/03/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
@@ -17,10 +17,10 @@ ms.author: brenduns
 manager: angrobe
 robots: NOINDEX, NOFOLLOW
 ms.translationtype: Human Translation
-ms.sourcegitcommit: 90775fcf2549080a43e9c1606caa79d9eb90a89c
-ms.openlocfilehash: 996766d0bd9ab2a3acb1970414f0ae511d97fbff
+ms.sourcegitcommit: 70772ba7d08560aa66abcce29dc6cc6334aa2032
+ms.openlocfilehash: 63ea0383497a3f06870c0907c732010259d1a809
 ms.contentlocale: pt-br
-ms.lasthandoff: 05/17/2017
+ms.lasthandoff: 07/03/2017
 
 ---
 # <a name="install-updates-publisher"></a>Instalar o Updates Publisher
@@ -119,7 +119,7 @@ Como essa pasta contém todos os arquivos necessários para usar o Updates Publi
 Após a conclusão da instalação, execute **UpdatesPublisher.exe** na pasta *UpdatesPublisher* para iniciar o Updates Publisher.
 
 ## <a name="next-steps"></a>Próximas etapas
- Depois de instalar o Updates Publisher, recomendamos que você [configure as opções](/tools/updates-publisher-options) para o Updates Publisher. Você deve configurar algumas opções antes de poder usar alguns recursos do Updates Publisher.
+ Depois de instalar o Updates Publisher, recomendamos que você [configure as opções](updates-publisher-options.md) para o Updates Publisher. Você deve configurar algumas opções antes de poder usar alguns recursos do Updates Publisher.
 
- No entanto, se você quiser usar os padrões e não planeja implantar atualizações em um servidor de atualização ou em dispositivos gerenciados, acesse diretamente [Gerenciar catálogos de atualização de software](/tools/updates-publisher-catalogs) ou [Criar atualizações de software](/tools/create-updates-with-updates-publisher) e crie catálogos de atualização de sua preferência.
+ No entanto, se você quiser usar os padrões e não planeja implantar atualizações em um servidor de atualização ou em dispositivos gerenciados, acesse diretamente [Gerenciar catálogos de atualização de software](updates-publisher-catalogs.md) ou [Criar atualizações de software](create-updates-with-updates-publisher.md) e crie catálogos de atualização de sua preferência.
 
