@@ -16,10 +16,10 @@ ms.author: brenduns
 manager: angrobe
 ROBOTS: NOINDEX, NOFOLLOW
 ms.translationtype: Human Translation
-ms.sourcegitcommit: 831d8a66c827d246069c7415cdce7a7c4bb95b33
-ms.openlocfilehash: 19e3099773f887129374413482702de3f4b0a36f
+ms.sourcegitcommit: db673277d1cc2d24e8dba2439b2b1891c883ebd0
+ms.openlocfilehash: 8b80f4d14eafa4cbbfb083178a118bc0e71f4019
 ms.contentlocale: pt-br
-ms.lasthandoff: 05/17/2017
+ms.lasthandoff: 06/16/2017
 
 ---
 # <a name="what39s-new-in-version-1610-of-system-center-configuration-manager"></a>Novidades da versão 1610 do System Center Configuration Manager
@@ -143,7 +143,7 @@ Se você configurar um período de carência para a imposição e marcar a caixa
 
 
 ## <a name="improved-functionality-in-dialog-boxes-about-required-software"></a>Funcionalidade aprimorada em caixas de diálogo do software necessário
-Quando um usuário recebe software obrigatório, na configuração **Adiar e lembrar dentro de:** é possível selecionar a partir da seguinte lista suspensa de valores: 
+Quando um usuário receber software obrigatório, na configuração **Suspender e lembrar dentro de:** ele pode selecionar na seguinte lista suspensa de valores: 
 - **Mais tarde**. Especifica que as notificações são agendadas com base nas configurações de notificação definidas nas configurações do Agente Cliente.
 - **Tempo fixo**. Especifica que a notificação será agendada para ser exibida novamente após o tempo selecionado (por exemplo, em 30 minutos).
 
