@@ -15,27 +15,29 @@ caps.latest.revision: 13
 author: Dougeby
 ms.author: dougeby
 manager: angrobe
-ms.translationtype: Human Translation
-ms.sourcegitcommit: 288a4c649f371d9701fe7249449356aa222bf372
-ms.openlocfilehash: 35f04e237efffbdb12893f658950a99dc0b98b85
+ms.translationtype: HT
+ms.sourcegitcommit: 1035dbbf944a3a467d637a4a948a75b0946eb711
+ms.openlocfilehash: 026d61113a918e43ac4395ef092b1931f33f16d3
 ms.contentlocale: pt-br
-ms.lasthandoff: 05/17/2017
-
+ms.lasthandoff: 07/11/2017
 
 ---
-# <a name="upgrade-windows-to-the-latest-version-with-system-center-configuration-manager"></a>Atualizar o Windows para a versão mais recente com o System Center Configuration Manager
+# Atualizar o Windows para a versão mais recente com o System Center Configuration Manager
+<a id="upgrade-windows-to-the-latest-version-with-system-center-configuration-manager" class="xliff"></a>
 
 *Aplica-se a: System Center Configuration Manager (Branch Atual)*
 
-Este tópico fornece as etapas no System Center Configuration Manager para atualizar um sistema operacional em um computador do Windows 7 ou posterior para o Windows 10. É possível escolher entre diferentes métodos de implantação, como mídia autônoma ou o Centro de Software. O cenário de atualização in-loco do Windows 10:  
+Este tópico fornece as etapas no System Center Configuration Manager para atualizar um sistema operacional em um computador com Windows 7 ou posterior para o Windows 10 ou do Windows Server 2012 para o Windows Server 2016, em um computador de destino. É possível escolher entre diferentes métodos de implantação, como mídia autônoma ou o Centro de Software. O cenário de atualização in-loco:  
 
--   Atualiza o sistema operacional em computadores que, atualmente, executam o Windows 7, Windows 8 ou Windows 8.1. Também é possível fazer atualizações de build a build do Windows 10. Por exemplo, é possível atualizar o Windows 10 RTM para o Windows 10, versão 1511.  
+-   Atualiza o sistema operacional em computadores que, atualmente, executam o:
+    - Windows 7, Windows 8 ou Windows 8.1. Também é possível fazer atualizações de build a build do Windows 10. Por exemplo, é possível atualizar o Windows 10 RTM para o Windows 10, versão 1511.  
+    - Windows Server 2012. Também é possível fazer atualizações de build a build do Windows Server 2016. Para obter mais detalhes sobre caminhos de atualização, confira [Caminhos de atualização com suporte](https://docs.microsoft.com/windows-server/get-started/supported-upgrade-paths#upgrading-previous-retail-versions-of-windows-server-to-windows-server-2016).    
 
 -   Mantém os aplicativos, as configurações e os dados do usuário no computador.  
 
 -   Não tem dependências externas, como o Windows ADK.  
 
--   É normalmente mais rápido e mais resiliente do que as implantações tradicionais de sistema operacional.  
+-   É mais rápido e mais resiliente do que as implantações tradicionais de sistema operacional.  
 
  Use as etapas a seguir para implantar sistemas operacionais na rede usando uma sequência de tarefas.  
 
@@ -59,23 +61,23 @@ Este tópico fornece as etapas no System Center Configuration Manager para atual
 
 -   **Planejar e implementar requisitos de infraestrutura**  
 
-     Os únicos pré-requisitos para o cenário de atualização é que você tenha um ponto de distribuição disponível para o pacote de atualização de sistema operacional e quaisquer outros pacotes incluídos na sequência de tarefas. Para mais informações, consulte [Instalar ou modificar um ponto de distribuição](../../core/servers/deploy/configure/install-and-configure-distribution-points.md).
+     Os únicos pré-requisitos para o cenário de atualização são que você tenha um ponto de distribuição disponível para o pacote de atualização de sistema operacional e quaisquer outros pacotes incluídos na sequência de tarefas. Para mais informações, consulte [Instalar ou modificar um ponto de distribuição](../../core/servers/deploy/configure/install-and-configure-distribution-points.md).
 
 ##  <a name="BKMK_Configure"></a> Configurar  
 
 1.  **Preparar o pacote de atualização de sistema operacional**  
 
-     O pacote de atualização do Windows 10 contém os arquivos de origem necessários para atualizar o sistema operacional no computador de destino. Este pacote de atualização deve ter a mesma edição, arquitetura e linguagem que às dos clientes que receberão a atualização.  Para obter mais informações, consulte [Gerenciar pacotes de atualização do sistema operacional](../get-started/manage-operating-system-upgrade-packages.md).  
+     O pacote de atualização do Windows 10 contém os arquivos de origem necessários para atualizar o sistema operacional no computador de destino. Este pacote de atualização deve ter a mesma edição, arquitetura e linguagem que as dos clientes que receberão a atualização.  Para obter mais informações, consulte [Gerenciar pacotes de atualização do sistema operacional](../get-started/manage-operating-system-upgrade-packages.md).  
 
 2.  **Criar uma sequência de tarefas para atualizar o sistema operacional**  
 
      Normalmente, você usará as etapas em [Criar uma sequência de tarefas para atualizar um sistema operacional](create-a-task-sequence-to-upgrade-an-operating-system.md) para automatizar a atualização do sistema operacional.  
 
-    > [IMPORTANTE] Ao usar mídia autônoma, você deve incluir uma imagem de inicialização na sequência de tarefas para que ela fique disponível no Assistente de mídia de sequência de tarefas.
-
+    > [!IMPORTANT]
+    > Ao usar mídia autônoma, você deve incluir uma imagem de inicialização na sequência de tarefas para que ela fique disponível no Assistente para Mídia de Sequência de Tarefas.
 
     > [!NOTE]  
-    >  Normalmente, você usará as etapas em [Criar uma sequência de tarefas para atualizar um sistema operacional](create-a-task-sequence-to-upgrade-an-operating-system.md) para criar uma sequência de tarefas para atualizar um sistema operacional para o Windows 10. A sequência de tarefas inclui a etapa Atualizar Sistema Operacional, bem como etapas recomendadas adicionais e os grupos para lidar com o processo de atualização ponta a ponta. No entanto, é possível criar uma sequência de tarefas personalizada e adicionar a etapa [Atualizar Sistema Operacional](../understand/task-sequence-steps.md#BKMK_UpgradeOS) da sequência de tarefas para atualizar o sistema operacional. Essa é a única etapa necessária para atualizar o sistema operacional para o Windows 10. Se você escolher esse método, adicione também a etapa [Reiniciar Computador](../understand/task-sequence-steps.md#a-namebkmkrestartcomputera-restart-computer) após a etapa Atualizar Sistema Operacional para concluir a atualização. Certifique-se de usar a configuração **Sistema operacional padrão instalado atualmente** para reiniciar o computador no sistema operacional instalado e não no Windows PE.  
+    > Normalmente, você usará as etapas em [Criar uma sequência de tarefas para atualizar um sistema operacional](create-a-task-sequence-to-upgrade-an-operating-system.md) para criar uma sequência de tarefas para atualizar um sistema operacional para o Windows 10. A sequência de tarefas inclui a etapa Atualizar Sistema Operacional, bem como etapas recomendadas adicionais e os grupos para lidar com o processo de atualização ponta a ponta. No entanto, é possível criar uma sequência de tarefas personalizada e adicionar a etapa [Atualizar Sistema Operacional](../understand/task-sequence-steps.md#BKMK_UpgradeOS) da sequência de tarefas para atualizar o sistema operacional. Essa é a única etapa necessária para atualizar o sistema operacional para o Windows 10. Se você escolher esse método, adicione também a etapa [Reiniciar Computador](../understand/task-sequence-steps.md#a-namebkmkrestartcomputera-restart-computer) após a etapa Atualizar Sistema Operacional para concluir a atualização. Certifique-se de usar a configuração **Sistema operacional padrão instalado atualmente** para reiniciar o computador no sistema operacional instalado e não no Windows PE.  
 
 ##  <a name="BKMK_Deploy"></a> Implantar  
 
@@ -85,7 +87,8 @@ Este tópico fornece as etapas no System Center Configuration Manager para atual
 
     -   [Usar a mídia autônoma para implantar o Windows sem uso da rede](use-stand-alone-media-to-deploy-windows-without-using-the-network.md)  
 
-## <a name="monitor"></a>Monitor  
+## Monitor
+<a id="monitor" class="xliff"></a>  
 
 -   **Monitorar a implantação da sequência de tarefas**  
 

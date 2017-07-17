@@ -15,14 +15,15 @@ caps.latest.revision: 6
 author: robstackmsft
 ms.author: robstack
 manager: angrobe
-ms.translationtype: Human Translation
-ms.sourcegitcommit: 27a92dc1c3710ff55f0b145386319dda371533d9
-ms.openlocfilehash: d3b20a59a9147e09e58f04f83f97fd72ebfef5a1
+ms.translationtype: HT
+ms.sourcegitcommit: 344b55aecd72479b759b40e8252e64a06c5eaba0
+ms.openlocfilehash: 3bfb7364c3de5264a5fa8a684965d9aebeb84719
 ms.contentlocale: pt-br
-ms.lasthandoff: 05/17/2017
+ms.lasthandoff: 07/13/2017
 
 ---
-# <a name="create-android-applications-with-system-center-configuration-manager"></a>Criar aplicativos Android com o System Center Configuration Manager
+# Criar aplicativos Android com o System Center Configuration Manager
+<a id="create-android-applications-with-system-center-configuration-manager" class="xliff"></a>
 
 *Aplica-se a: System Center Configuration Manager (Branch Atual)*
 
@@ -36,7 +37,8 @@ Um aplicativo do System Center Configuration Manager tem um ou mais tipos de imp
 
 Veja [Iniciar o assistente para criar aplicativo](../../apps/deploy-use/create-applications.md#start-the-create-application-wizard) e conheça as etapas necessárias para criar os aplicativos do Configuration Manager e os tipos de implantação. Além disso, lembre-se das seguintes considerações ao criar e implantar aplicativos em dispositivos Android.  
 
-## <a name="general-considerations-for-android-apps"></a>Considerações gerais para aplicativos Android
+## Considerações gerais para aplicativos Android
+<a id="general-considerations-for-android-apps" class="xliff"></a>
 
 O Configuration Manager dá suporte à implantação dos seguintes tipos de aplicativos para Android:
 
@@ -48,9 +50,11 @@ Há suporte para as seguintes ações de implantação:
 
 |Tipo de dispositivo|Ações com suporte|
 |-|-|
-|Android|**Disponível**, **Necessário**. O usuário deve concordar com a instalação e com a desinstalação.
+|Android|**Disponível**, **Necessária** O usuário deve concordar com a instalação e com a desinstalação.|
+|Android for Work | **Necessária** |
 
-## <a name="approve-and-deploy-android-for-work-apps"></a>Aprovar e implantar aplicativos do Android for Work
+## Aprovar e implantar aplicativos do Android for Work
+<a id="approve-and-deploy-android-for-work-apps" class="xliff"></a>
 Como administrador do Configuration Manager, você também pode aprovar e implantar aplicativos no [site do Play for Work](https://play.google.com/work)e implantar esses aplicativos em dispositivos gerenciados do Android for Work.
 
 Siga essas etapas para aprovar aplicativos na loja Play for Work, sincronizá-los com o console do Configuration Manager e implantá-los em dispositivos Android for Work gerenciados. Para implantar aplicativos nos perfis de trabalho dos usuários, você precisará aprovar os aplicativos na Play for Work e, então, sincronizar os aplicativos com o console do Configuration Manager.
