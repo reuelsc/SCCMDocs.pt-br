@@ -17,10 +17,10 @@ author: nathbarn
 ms.author: nathbarn
 manager: angrobe
 ms.translationtype: Human Translation
-ms.sourcegitcommit: 27a92dc1c3710ff55f0b145386319dda371533d9
-ms.openlocfilehash: 0e93cd55ce49afb6395dcbe758c933bf509dd367
+ms.sourcegitcommit: 86620254897aa9a775dc433de7010b5814c1ec3e
+ms.openlocfilehash: af6fa2dfae5549e89c46d05d0cef1e24342558f9
 ms.contentlocale: pt-br
-ms.lasthandoff: 05/17/2017
+ms.lasthandoff: 07/06/2017
 
 
 ---
@@ -28,9 +28,9 @@ ms.lasthandoff: 05/17/2017
 
 *Aplica-se a: System Center Configuration Manager (Branch Atual)*
 
-Este tópico ajuda o administrador de TI a habilitar o registro híbrido de dispositivos Android e Android for Work. Assim, o administrador de TI poderá usar o System Center Configuration Manager para gerenciar os dispositivos por meio de uma assinatura configurada do Microsoft Intune. Os usuários podem baixar o aplicativo Android do portal da empresa no Google Play, que permite registrar dispositivos Android (incluindo Samsung KNOX Standard) e Android for Work. 
+Este tópico ajuda o administrador de TI a habilitar o registro híbrido de dispositivos Android e Android for Work. Assim, o administrador de TI poderá usar o System Center Configuration Manager para gerenciar os dispositivos por meio de uma assinatura configurada do Microsoft Intune. Os usuários podem baixar o aplicativo Android do portal da empresa no Google Play, que permite registrar dispositivos Android (incluindo Samsung KNOX Standard) e Android for Work.
 
-Como administrador do Configuration Manager, é possível gerenciar as configurações de conformidade, apagar ou excluir dispositivos Android, implantar aplicativos e coletar inventários de software e hardware. Se o aplicativo do Android do portal da empresa não estiver instalado nos dispositivos Android, você não terá todos os recursos de gerenciamento, como inventário e configurações de conformidade, mas ainda poderá implantar aplicativos em dispositivos Android.  
+Como administrador do Configuration Manager, é possível gerenciar as configurações de conformidade, apagar ou excluir dispositivos Android, implantar aplicativos e coletar inventários de software e hardware. Sem o aplicativo Portal da Empresa para Android instalado no dispositivo, você não terá os recursos de gerenciamento, como inventário e configurações de conformidade, mas ainda poderá implantar aplicativos em dispositivos Android.  
 
 ## <a name="enable-android-enrollment"></a>Habilitar o registro do Android  
 As etapas a seguir permitem que o Configuration Manager gerencie dispositivos Android sem um perfil de trabalho, ou seja, o registro "Android clássico".
@@ -43,9 +43,9 @@ As etapas a seguir permitem que o Configuration Manager gerencie dispositivos An
  Após a configuração, será necessário permitir que os usuários saibam como registrar seus dispositivos. Consulte [O que dizer aos usuários sobre o registro de seus dispositivos](https://docs.microsoft.com/intune/deploy-use/what-to-tell-your-end-users-about-using-microsoft-intune). Essas informações se aplicam a dispositivos móveis gerenciados pelo Microsoft Intune e pelo Configuration Manager.
 
 ## <a name="enable-android-for-work-enrollment"></a>Habilitar o registro do Android for Work
-As etapas a seguir permitem que o Configuration Manager gerencie dispositivos Android sem um perfil de trabalho, ou seja, o registro "Android clássico".
+As etapas a seguir permitem que o Configuration Manager gerencie dispositivos Android com um perfil de trabalho.
 
-1. Crie uma conta do Google em https://accounts.google.com/SignUp para usar como conta de administrador do Android for Work. Também é possível entrar com a conta que será associada a todas as tarefas de gerenciamento do Android for Work nesse locatário do Intune. Essa pode ser uma conta do Google compartilhada entre os administradores que gerenciam dispositivos Android. Essa é a conta do Google que sua organização usa para gerenciar e publicar aplicativos no console do Play for Work. Você usará essa conta para aprovar os aplicativos na loja do Play for Work, portanto, mantenha o controle do nome da conta e senha.
+1. Crie uma conta do Google em https://accounts.google.com/SignUp para usar como conta de administrador do Android for Work. Também é possível entrar com a conta associada a todas as tarefas de gerenciamento do Android for Work nesse locatário do Intune. Essa conta pode ser do Google compartilhada entre os administradores que gerenciam dispositivos Android. Essa é a conta do Google que sua organização usa para gerenciar e publicar aplicativos no console do Play for Work. Você usará essa conta para aprovar os aplicativos na loja do Play for Work, portanto, mantenha o controle do nome da conta e senha.
 2. Habilite o registro do Android associando a conta do Google ao locatário do Intune gerenciado no Configuration Manager:
    1. No console do Configuration Manager, no espaço de trabalho **Administração**, escolha **Visão Geral** > **Serviços de Nuvem** > **Assinaturas do Microsoft Intune** e escolha sua assinatura do Intune.
    2. Na guia **Início** do grupo **Assinatura**, escolha **Configurar Plataformas** > **Android for Work**.
@@ -59,12 +59,12 @@ As etapas a seguir permitem que o Configuration Manager gerencie dispositivos An
    - **Gerenciar dispositivos com suporte como Android for Work apenas para os usuários que fazem parte desses grupos** (habilitado somente para alguns grupos). Permite destinar o gerenciamento do Android for Work a um conjunto limitado de usuários. Dispositivos que oferecem suporte ao Android for Work serão registrados como dispositivos Android for Work somente quando os membros dos grupos selecionados realizarem o registro. Todos os outros dispositivos serão registrados como dispositivos Android.
 
 > [!NOTE]
-> Um problema conhecido impede que a opção **Gerenciar dispositivos com suporte para os usuários somente desses grupos como Android para o trabalho** funcione conforme o esperado. Os dispositivos dos usuários nos grupos Azure AD especificados se registrarão como Android, em vez de Android para o trabalho. Para habilitar o Android for Work, é necessário usar a opção **Gerenciar todos os dispositivos com suporte como Android for Work**.
+> Um problema conhecido impede que a opção **Gerenciar dispositivos com suporte para os usuários somente desses grupos como Android para o trabalho** funcione conforme o esperado. Os dispositivos dos usuários nos grupos do Azure AD especificados são inscritos como Android, em vez de Android for Work. Para habilitar o Android for Work, é necessário usar a opção **Gerenciar todos os dispositivos com suporte como Android for Work**.
 
 
 Após a configuração, será necessário permitir que os usuários saibam como registrar seus dispositivos. Consulte [O que dizer aos usuários sobre o registro de seus dispositivos](https://docs.microsoft.com/intune/deploy-use/what-to-tell-your-end-users-about-using-microsoft-intune). Essas informações se aplicam a dispositivos móveis gerenciados pelo Microsoft Intune e pelo Configuration Manager.
 
-O nome da conta e da organização aparecerá no portal do Intune quando a associação for concluída. Nesse momento, feche ambos os navegadores.
+Após o término da associação, você verá o nome da conta e da organização no portal do Intune. No momento, você pode fechar os dois navegadores.
 
 ### <a name="enroll-an-android-for-work-device"></a>Registrar um dispositivo Android for Work
 A maneira como os usuários registram dispositivos Android for Work é semelhante ao registro do Android. Os usuários podem baixar e executar o aplicativo de Portal da Empresa para Android em seus dispositivos móveis. O aplicativo solicitará que eles criem um perfil de trabalho como parte do processo de registro. Após a criação do perfil de trabalho, os usuários devem mudar para a versão gerenciada do Portal da Empresa. O Portal da Empresa gerenciado é marcado com uma pequena pasta laranja no canto inferior direito.

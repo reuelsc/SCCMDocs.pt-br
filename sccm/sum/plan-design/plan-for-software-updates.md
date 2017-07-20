@@ -6,7 +6,7 @@ keywords:
 author: dougeby
 ms.author: dougeby
 manager: angrobe
-ms.date: 03/28/2017
+ms.date: 06/27/2017
 ms.topic: article
 ms.prod: configuration-manager
 ms.service: 
@@ -14,10 +14,10 @@ ms.technology:
 - configmgr-sum
 ms.assetid: d071b0ec-e070-40a9-b7d4-564b92a5465f
 ms.translationtype: Human Translation
-ms.sourcegitcommit: 690d03d9c8c49a815bd318df549d7401a855bc5d
-ms.openlocfilehash: 703adc87b9498e39a1db71b94f1bc1a05a4889ec
+ms.sourcegitcommit: f4c46bfab9b40b29654f4e883817a5508ab25b74
+ms.openlocfilehash: b5a2fd9f15992c9e5ef8aede64af5446b6852b1a
 ms.contentlocale: pt-br
-ms.lasthandoff: 05/17/2017
+ms.lasthandoff: 06/28/2017
 
 
 ---
@@ -294,6 +294,9 @@ As atualizações de software requerem que uma versão com suporte do WSUS estej
 
 -   Se uma atualização de software substituta não for aprovada para implantação em seu ambiente de produção.  
 
+    > [!NOTE]  
+    >  Quando o Configuration Manager define uma atualização de software substituída como **expirada**, ele não define a atualização como **expirada** no WSUS. No entanto, quando a tarefa de limpeza do WSUS é executada, as atualizações definidas como **expiradas** no Configuration Manager são definidas com o status de **Recusadas** no servidor do WSUS e o Agente do Windows Update nos computadores não verificará mais essas atualizações. Isso significa que os clientes continuarão a verificar se há uma atualização expirada até que a tarefa de limpeza seja executada. Para obter informações sobre a tarefa de limpeza do WSUS, veja [Manutenção de atualizações de software](/sccm/sum/deploy-use/software-updates-maintenance).
+    
 ###  <a name="BKMK_UpdateLanguages"></a> Idiomas  
  As configurações de idioma do ponto de atualização de software permitem configurar os idiomas para os quais os detalhes de resumo (metadados de atualizações de software) são sincronizados para atualizações de software, e os idiomas do arquivo de atualização do software serão baixados para as atualizações de software.  
 
