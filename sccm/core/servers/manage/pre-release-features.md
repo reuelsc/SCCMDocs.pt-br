@@ -2,7 +2,7 @@
 title: "Recursos de pré-lançamento | Microsoft Docs"
 description: "Recursos de pré-lançamento no System Center Configuration Manager"
 ms.custom: na
-ms.date: 4/24/2017
+ms.date: 6/13/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
@@ -16,32 +16,32 @@ author: Brenduns
 ms.author: brenduns
 manager: angrobe
 ms.translationtype: Human Translation
-ms.sourcegitcommit: 690d03d9c8c49a815bd318df549d7401a855bc5d
-ms.openlocfilehash: b12fcb3c372c34ee47306a9b536c3d0c4764b8be
+ms.sourcegitcommit: 3619a73d3a39659de927e1711a7ec81de9918064
+ms.openlocfilehash: 988f8da0b221f8c0b470e7a0a8ed995356193f98
 ms.contentlocale: pt-br
-ms.lasthandoff: 05/17/2017
+ms.lasthandoff: 06/13/2017
 
 
 ---
 # <a name="pre-release-features-in-system-center-configuration-manager"></a>Recursos de pré-lançamento no System Center Configuration Manager
 *Aplica-se a: System Center Configuration Manager (Branch Atual)*
 
-Os recursos de pré-lançamento são recursos que estão incluídos na Ramificação atual para testes iniciais em um ambiente de produção. Eles têm suporte total, mas ainda estão em desenvolvimento ativo e podem receber alterações até que saiam da categoria de pré-lançamento.
+Os recursos de pré-lançamento são recursos que estão na Ramificação atual para testes iniciais em um ambiente de produção. Esses recursos têm suporte total, mas ainda estão em desenvolvimento ativo e podem receber alterações até que saiam da categoria de pré-lançamento.
 
  Antes de poder usar os recursos de pré-lançamento, você deverá dar consentimento para usar Recursos de pré-lançamento dentro do console do Configuration Manager antes de selecionar e habilitar seu uso.  
 
-Dar o consentimento é uma ação única por hierarquia que não pode ser desfeita. Até dar o consentimento, você não pode habilitar novos recursos de pré-lançamento incluídos com a atualização.
+Dar o consentimento é uma ação única por hierarquia que não pode ser desfeita. Até dar o consentimento, você não pode habilitar novos recursos de pré-lançamento incluídos com a atualização. Após ativar um recurso de pré-lançamento, não será possível desativá-lo.
 
 Para dar consentimento, no console, vá até **Administração** > **Configuração do Site** > **Sites** e escolha **Configurações da Hierarquia**. Na guia **Geral**, escolha **Consentir com o uso de recursos de pré-lançamento**.
 
  > [!NOTE]
- > Se você tiver habilitado previamente os recursos de pré-lançamento da Atualização 1602, antes de instalar a versão de atualização mais recente, esses recursos permanecerão habilitados para uso mesmo que você não tenha consentido com o uso dos recursos de pré-lançamento.
+ > Se você já habilitou os recursos de pré-lançamento da Atualização 1602, antes de ter instalado a versão de atualização mais recente, esses recursos serão habilitados para uso mesmo que você não tenha consentido com o uso dos recursos de pré-lançamento.
 
 Quando você instala uma atualização que inclui recursos de pré-lançamento, esses recursos são visíveis no Assistente de Atualizações e Manutenção com os recursos regulares incluídos na atualização:
   - **Se você tiver consentido:** você poderá habilitar os recursos de pré-lançamento no Assistente de Atualizações e Manutenção quando estiver instalando a atualização. Para fazer isso, selecione os recursos de pré-lançamento como faria com qualquer outro recurso.     
 
     Você também pode esperar para habilitar um recurso de pré-lançamento mais tarde do nó **Administração** > **Atualizações e Manutenção** > **Recursos** do console. No nó **Recursos**, escolha o recurso e escolha **Ativar**. Essa opção está esmaecida até você dar consentimento. (Antes da versão 1702, Atualizações e Manutenção ficava em **Administração** > **Serviços de Nuvem**.)
-  -   **Se você não tiver consentido:** ao instalar uma atualização, os recursos de pré-lançamento ficarão visíveis no Assistente de Atualizações e Manutenção, mas ficarão esmaecidos e não poderão ser habilitados. Após a instalação da atualização, você pode exibir esses recursos no nó **Recursos**, mas não habilitá-los até que você tenha dado o consentimento nas **Configurações da Hierarquia**.
+  -   **Se você não tiver consentido:** ao instalar uma atualização, os recursos de pré-lançamento ficarão visíveis no Assistente de Atualizações e Manutenção, mas ficarão esmaecidos e não poderão ser habilitados. Após a atualização ser instalada, você poderá exibir esses recursos no nó **Recursos**. No entanto, você não poderá habilitá-las até dar consentimento nas **Configurações de Hierarquia**.
 
 Se você tiver dado consentimento em um site primário autônomo e, depois, expandir a hierarquia instalando um novo site de administração central, você deverá dar consentimento novamente no site de administração central.
 

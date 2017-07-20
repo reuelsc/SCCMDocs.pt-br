@@ -17,10 +17,10 @@ author: robstackmsft
 ms.author: robstack
 manager: angrobe
 ms.translationtype: Human Translation
-ms.sourcegitcommit: ae60eb25383f4bd07faaa1265185a471ee79b1e9
-ms.openlocfilehash: 3d90f16eac59b7069ff2f33170eba85d2cde65ef
+ms.sourcegitcommit: c8717925dba42451b1e241a7c2f59e43896d7d99
+ms.openlocfilehash: 4a169098f30e4a9d708e41ee25c6a400d5ff0e85
 ms.contentlocale: pt-br
-ms.lasthandoff: 05/17/2017
+ms.lasthandoff: 06/19/2017
 
 ---
 # <a name="about-client-settings-in-system-center-configuration-manager"></a>Sobre as configurações do cliente no System Center Configuration Manager
@@ -65,7 +65,7 @@ Muitas das configurações do cliente são autoexplicativas. Outras são descrit
 
 - **Configurar o tamanho do cache do cliente**
 
-  O cache do cliente em computadores com Windows armazena arquivos temporários usados para instalar aplicativos e programas. Escolha **Sim** para especificar o **Tamanho máximo do cache** (megabytes ou percentual de disco). Se for definido como **Não**, o tamanho padrão será 5.120 MB.
+  O cache do cliente em computadores com Windows armazena arquivos temporários usados para instalar aplicativos e programas. Escolha **Sim** para especificar o **Tamanho máximo do cache** (megabytes ou percentual de disco). O tamanho do cache do cliente pode expandir para o tamanho máximo em MB ou a porcentagem do disco, **o que for menor**. Se for definido como **Não**, o tamanho padrão será 5.120 MB.
 
 ## <a name="client-policy"></a>Política do cliente  
 
@@ -248,6 +248,10 @@ Muitas das configurações do cliente são autoexplicativas. Outras são descrit
     > -   ID do erro **0X87D00327** e a descrição **O script não está assinado** como um erro de status da implantação no espaço de trabalho **Monitoramento** do console do Configuration Manager.  
     > -   Códigos e descrições de **0X87D00327** e **O script não está assinado** ou **0X87D00320** e **O host de script ainda não foi instalado** com o tipo de erro **Erro de Descoberta** em relatórios. Um exemplo é **Detalhes de erros de itens de configuração em uma linha de base de configuração para um ativo**.  
     > -   A mensagem **Script is not signed (Error: 87D00327; Source: CCM)** no arquivo **DcmWmiProvider.log** .  
+
+-   **Mostrar notificações para novas implantações**  
+
+     Escolha **Sim** se quiser exibir uma notificação para implantações que estavam disponíveis há menos de uma semana.  Essa mensagem será exibida sempre que o agente cliente for iniciado.
 
 -   **Desabilitar data limite aleatória**  
 

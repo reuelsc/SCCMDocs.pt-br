@@ -2,7 +2,7 @@
 title: "Lista de verificação para 1702 | System Center Configuration Manager"
 description: "Conheça as ações a serem executadas antes de atualizar para o System Center Configuration Manager versão 1702."
 ms.custom: na
-ms.date: 05/02/2017
+ms.date: 6/6/2017
 ms.reviewer: na
 ms.suite: na
 ms.prod: configuration-manager
@@ -16,10 +16,10 @@ author: Brenduns
 ms.author: brenduns
 manager: angrobe
 ms.translationtype: Human Translation
-ms.sourcegitcommit: 90775fcf2549080a43e9c1606caa79d9eb90a89c
-ms.openlocfilehash: c4ace452d62d4fa08f4457cb1735718ca4bd016d
+ms.sourcegitcommit: 3619a73d3a39659de927e1711a7ec81de9918064
+ms.openlocfilehash: 355dfb361a1ab3e1bd436dae1df8a416bf79c6c8
 ms.contentlocale: pt-br
-ms.lasthandoff: 05/17/2017
+ms.lasthandoff: 06/13/2017
 
 ---
 # <a name="checklist-for-installing-update-1702-for-system-center-configuration-manager"></a>Lista de verificação para instalar a atualização 1702 do System Center Configuration Manager
@@ -108,10 +108,7 @@ Para obter mais informações, consulte [Sobre o Replication Link Analyzer](/scc
 **Instale todas as atualizações críticas aplicáveis aos sistemas operacionais nos computadores que hospedam o site, o servidor de banco de dados do site e as funções do sistema de site remoto:** antes de instalar uma atualização do Configuration Manager, instale todas as atualizações críticas para cada sistema de sites aplicável. Se uma atualização instalada precisar de uma reinicialização, reinicie os computadores aplicáveis antes de iniciar a atualização.
 
 **Desabilitar réplicas de banco de dados para pontos de gerenciamento em sites primários:**   
-O Configuration Manager não pode atualizar com êxito um site primário que tenha uma réplica de banco de dados habilitada para pontos de gerenciamento. Desabilite a replicação de banco de dados antes de você:
-
--   Criar um backup do banco de dados do site para testar a atualização do banco de dados.
--   Instalar uma atualização para o Configuration Manager.
+O Configuration Manager não pode atualizar com êxito um site primário que tenha uma réplica de banco de dados habilitada para pontos de gerenciamento. Desabilite a replicação de banco de dados antes de instalar uma atualização para o Configuration Manager.
 
 Para obter mais informações, consulte [Réplicas de banco de dados para pontos de gerenciamento no System Center Configuration Manager](/sccm/core/servers/deploy/configure/database-replicas-for-management-points).
 
@@ -139,21 +136,24 @@ Para obter mais informações, consulte [Tarefas de manutenção do System Cente
 
 Para obter mais informações, consulte [Backup e recuperação para o System Center Configuration Manager](/sccm/protect/understand/backup-and-recovery).
 
-**Testar a atualização do banco de dados em uma cópia do backup mais recente do banco de dados do site:** antes de atualizar um site de administração central ou site primário do System Center Configuration Manager, você pode testar o processo de atualização do banco de dados do site em uma cópia do banco de dados do site.
+<!-- Removed from update guidance 6/6/2017
+**Test the database upgrade on a copy of the most recent site database backup:** 
+Before you update a System Center Configuration Manager central administration site or primary site, you can test the site database upgrade process on a copy of the site database.
 
--   Recomendamos que você teste o processo de atualização de banco de dados do site, pois ao atualizar um site, o banco de dados do site pode ser modificado.
+-   We recommend that you test the site database upgrade process because when you upgrade a site, the site database might be modified.
 
--   Embora o teste de atualização do banco de dados não seja necessário, ele pode identificar problemas na atualização antes que seu banco de dados de produção seja afetado.
+-   Although a test database upgrade is not required, it can identify problems for the upgrade before your production database is affected.
 
--   Uma atualização do banco de dados do site com falha pode deixar o banco de dados do site inoperante e pode requerer uma recuperação do site para restaurar a funcionalidade.
+-   A failed site database upgrade can render your site database inoperable and might require a site recovery to restore functionality.
 
--   Embora o banco de dados do site seja compartilhado entre sites em uma hierarquia, planeje testar o banco de dados em cada site aplicável antes de atualizar o site.
+-   Although the site database is shared between sites in a hierarchy, plan to test the database at each applicable site before you upgrade that site.
 
--   Se você usar réplicas de banco de dados para pontos de gerenciamento em um site primário, desabilite a replicação antes de criar o backup do banco de dados do site.
+-   If you use database replicas for management points at a primary site, disable replication before you create the backup of the site database.
 
-O Configuration Manager não dá suporte ao backup de sites secundários, nem ao teste de atualização de um banco de dados do site secundário.
+Configuration Manager does not support the backup of secondary sites nor does it support the test upgrade of a secondary site database.
 
-Não execute um teste da atualização do banco de dados no banco de dados do site de produção. Fazer isso atualiza o banco de dados do site e pode deixar seu site inoperável. Para obter mais informações, consulte [Etapa 2: Testar a atualização do banco de dados antes de instalar uma atualização](/sccm/core/servers/manage/install-in-console-updates#bkmk_step2) de **Antes de instalar uma atualização no console**.
+Do not run a test database upgrade on the production site database. Doing so updates the site database and could render your site inoperable. For more information, see [Step 2: Test the database upgrade before installing an update](/sccm/core/servers/manage/install-in-console-updates#bkmk_step2) from **Before you install an in-console update**.
+-->
 
 **Planeje o cliente piloto:**   
 Ao instalar uma atualização que atualiza o cliente, você pode testar essa nova atualização do cliente em pré-produção antes que ela seja implantada e atualize todos os clientes ativos.
@@ -186,11 +186,11 @@ Para obter mais informações, consulte [Atualizações para o System Center Con
 
 ## <a name="post-update-checklist"></a>Lista de verificação pós-atualização
 Examine as seguintes ações a serem executadas depois que a instalação da atualização tiver sido concluída.
-1.    Verifique se a replicação de site a site está ativa. No console, exiba **Monitoramento** > **Hierarquia do Site** e **Monitoramento** > **Replicação de Banco de Dados** para obter indicações de problemas ou confirmação de que os links de replicação estão ativos.
-2.    Verifique se cada servidor do site e a função do sistema de site foram atualizados para a versão 1702. No console, você pode adicionar a coluna opcional **Versão** para a exibição de alguns nós incluindo **Sites** e **Pontos de Distribuição**.
+1.  Verifique se a replicação de site a site está ativa. No console, exiba **Monitoramento** > **Hierarquia do Site** e **Monitoramento** > **Replicação de Banco de Dados** para obter indicações de problemas ou confirmação de que os links de replicação estão ativos.
+2.  Verifique se cada servidor do site e a função do sistema de site foram atualizados para a versão 1702. No console, você pode adicionar a coluna opcional **Versão** para a exibição de alguns nós incluindo **Sites** e **Pontos de Distribuição**.
 
  Quando necessário, uma função de sistema de site será reinstalada automaticamente para ser atualizada para a nova versão. Reinicie os sistemas de site remoto que não foram atualizados com êxito.
-3.    Reconfigure as réplicas de banco de dados para pontos de gerenciamento em sites primários que você desabilitou antes de iniciar a atualização.
+3.  Reconfigure as réplicas de banco de dados para pontos de gerenciamento em sites primários que você desabilitou antes de iniciar a atualização.
 4.  Reconfigure as tarefas de manutenção de banco de dados que foram desabilitadas antes de iniciar a atualização.
-5.    Se você configurou o piloto de cliente antes de instalar a atualização, atualize os clientes de acordo com o plano que você criou.
+5.  Se você configurou o piloto de cliente antes de instalar a atualização, atualize os clientes de acordo com o plano que você criou.
 

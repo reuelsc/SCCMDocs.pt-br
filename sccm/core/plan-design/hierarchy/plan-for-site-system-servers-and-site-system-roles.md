@@ -16,10 +16,10 @@ author: Brenduns
 ms.author: brenduns
 manager: angrobe
 ms.translationtype: Human Translation
-ms.sourcegitcommit: a93ea730c39cce9dc46036f5aa6ece4a62679d0f
-ms.openlocfilehash: 0d16d362b798c194645f987088ba8a95a7be3f19
+ms.sourcegitcommit: 0ebda27c0f3848615346c2ecf1ab8b9bb9ab6f0d
+ms.openlocfilehash: 0a3704a2d3b75ed7e0a7f718b681448ab6fc078d
 ms.contentlocale: pt-br
-ms.lasthandoff: 05/17/2017
+ms.lasthandoff: 05/26/2017
 
 
 ---
@@ -81,7 +81,7 @@ Depois de instalar um site, você pode mover o local de algumas funções de sis
 
 -   **Ponto de distribuição.** Uma função do sistema de site que contém arquivos de origem para serem baixados por clientes, como conteúdo de aplicativos, pacotes de software, atualizações de software, imagens de sistemas operacionais e imagens de inicialização. Por padrão, essa função é instalada no computador do servidor do site de novos sites primários e secundários quando o site é instalado. Não há suporte para essa função em um site de administração central. Você pode instalar múltiplas instâncias dessa função em um site com suporte, e em vários sites na mesma hierarquia. Para obter mais informações, consulte [Conceitos fundamentais para o gerenciamento de conteúdo no System Center Configuration Manager](../../../core/plan-design/hierarchy/fundamental-concepts-for-content-management.md) e [Gerenciar conteúdo e infraestrutura de conteúdo do System Center Configuration Manager](../../../core/servers/deploy/configure/manage-content-and-content-infrastructure.md).  
 
--   **Ponto de status de fallback.** Uma função do sistema de site que ajuda a monitorar a instalação do cliente e identificar os clientes não gerenciados, pois eles não podem se comunicar com o ponto de gerenciamento. Embora essa função tenha suporte apenas em sites primários, você pode instalar várias instâncias dela em um site ou em vários sites na mesma hierarquia. Para obter mais informações, consulte [Content source location scenarios](../../../core/plan-design/hierarchy/content-source-location-scenarios.md).
+-   **Ponto de status de fallback.** Uma função do sistema de site que ajuda a monitorar a instalação do cliente e identificar os clientes não gerenciados, pois eles não podem se comunicar com o ponto de gerenciamento. Embora essa função tenha suporte em sites primários, você pode instalar várias instâncias dela em um site e em vários sites na mesma hierarquia.     
 
 
 -   **Ponto do Endpoint Protection.** Função do sistema de site que o Configuration Manager usa para aceitar os termos de licença do Endpoint Protection e configurar a associação padrão para o Cloud Protection Service. Uma hierarquia dá suporte a apenas uma única instância dessa função, e esta deve estar no site de camada superior da hierarquia (um site de administração central ou o site primário autônomo). Se expandir um site primário autônomo para uma hierarquia maior, você deverá desinstalar essa função do site primário e, em seguida, instalá-lo no site de administração central. Para saber mais, confira [Endpoint Protection no System Center Configuration Manager](../../../protect/deploy-use/endpoint-protection.md).  

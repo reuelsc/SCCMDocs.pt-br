@@ -1,8 +1,8 @@
 ---
 title: "Criar uma sequência de tarefas para capturar e restaurar o estado do usuário | Microsoft Docs"
-description: "Use as sequências da tarefas do System Center Configuration Manager para capturar e restaurar dados de estado do usuário em cenários de implantação do sistema operacional."
+description: "Use as sequências da tarefas do System Center Configuration Manager para capturar e restaurar dados de estado do usuário em cenários de implantação de sistema operacional."
 ms.custom: na
-ms.date: 10/06/2016
+ms.date: 06/07/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
@@ -16,9 +16,11 @@ caps.handback.revision: 0
 author: Dougeby
 ms.author: dougeby
 manager: angrobe
-translationtype: Human Translation
-ms.sourcegitcommit: 74341fb60bf9ccbc8822e390bd34f9eda58b4bda
-ms.openlocfilehash: fdfbdd1acb1190ca7de9cff2b4b7f916d8dc1272
+ms.translationtype: Human Translation
+ms.sourcegitcommit: c6ee0ed635ab81b5e454e3cd85637ff3e20dbb34
+ms.openlocfilehash: 4b3668094d576b1b8710f08b384aa2f7c5eb0cca
+ms.contentlocale: pt-br
+ms.lasthandoff: 06/08/2017
 
 
 ---
@@ -26,9 +28,9 @@ ms.openlocfilehash: fdfbdd1acb1190ca7de9cff2b4b7f916d8dc1272
 
 *Aplica-se a: System Center Configuration Manager (Branch Atual)*
 
-Você pode usar as sequências da tarefas do System Center Configuration Manager para capturar e restaurar dados de estado do usuário em cenários de implantação do sistema operacional no qual você deseja manter o estado do usuário do sistema operacional atual. Dependendo do tipo de sequência de tarefas criado, as etapas de captura e restauração podem ser adicionadas automaticamente como parte da sequência de tarefas. Em outros cenários, talvez seja necessário adicionar manualmente as etapas de captura e restauração à sequência de tarefas. Este tópico fornece as etapas que devem ser adicionadas a uma sequência de tarefas existente para capturar e restaurar dados de estado do usuário.  
+Você pode usar as sequências da tarefas do System Center Configuration Manager para capturar e restaurar dados de estado do usuário em cenários de implantação de sistema operacional no qual você deseja manter o estado do usuário do sistema operacional atual. Dependendo do tipo de sequência de tarefas criado, as etapas de captura e restauração podem ser adicionadas automaticamente como parte da sequência de tarefas. Em outros cenários, talvez seja necessário adicionar manualmente as etapas de captura e restauração à sequência de tarefas. Este tópico fornece as etapas que devem ser adicionadas a uma sequência de tarefas existente para capturar e restaurar dados de estado do usuário.  
 
-##  <a name="a-namebkmkcapturerestoreuserstatea-how-to-capture-and-restore-user-state-data"></a><a name="BKMK_CaptureRestoreUserState"></a> Como capturar e restaurar dados de estado do usuário  
+##  <a name="BKMK_CaptureRestoreUserState"></a> Como capturar e restaurar dados de estado do usuário  
  Para capturar e restaurar o estado do usuário, é necessário adicionar as seguintes etapas à sequência de tarefas:  
 
 -   **Solicitar Armazenamento de Estado**: essa etapa é necessária somente se você armazenar o estado do usuário no ponto de migração de estado.  
@@ -80,7 +82,7 @@ Você pode usar as sequências da tarefas do System Center Configuration Manager
 
         -   Clique em **Capturar todos os perfis de usuário usando as opções padrão** para capturar todos os perfis de usuário.  
 
-        -   Clique em **Personalizar captura de perfis de usuário** para especificar perfis de usuário individuais para capturar.  
+        -   Clique em **Personalizar captura de perfis de usuário** para especificar perfis de usuário individuais para capturar. Selecione o arquivo de configuração (miguser.xml, migsys.xml ou migapp.xml) que contém as informações de perfil do usuário. Você não pode usar o arquivo de configuração config.xml aqui, mas pode adicioná-lo manualmente à linha de comando do USMT usando as variáveis OSDMigrageAdditionalCaptureOptions e OSDMigrateAdditionalRestoreOptions.
 
     -   Selecione **Habilitar log detalhado** para especificar a quantidade de informações a serem gravadas nos arquivos de log em caso de erro.  
 
@@ -133,7 +135,7 @@ Você pode usar as sequências da tarefas do System Center Configuration Manager
 
         -   Clique em **Restaurar todos os perfis de usuário usando as opções padrão** para restaurar todos os perfis de usuário.  
 
-        -   Clique em **Personalizar captura de perfil de usuário** para restaurar perfis de usuário individuais.  
+        -   Clique em **Personalizar restauração de perfil do usuário** para restaurar perfis de usuário individuais. Selecione o arquivo de configuração (miguser.xml, migsys.xml ou migapp.xml) que contém as informações de perfil do usuário. Você não pode usar o arquivo de configuração config.xml aqui, mas pode adicioná-lo manualmente à linha de comando do USMT usando as variáveis OSDMigrageAdditionalCaptureOptions e OSDMigrateAdditionalRestoreOptions.
 
     -   Selecione **Restaurar perfis de usuário do computador local** para fornecer uma nova senha para os perfis restaurados. Não é possível migrar senhas para perfis locais.  
 
@@ -169,9 +171,4 @@ Você pode usar as sequências da tarefas do System Center Configuration Manager
 
 ## <a name="next-steps"></a>Próximas etapas
 [Monitorar a implantação da sequência de tarefas](monitor-operating-system-deployments.md#BKMK_TSDeployStatus)
-
-
-
-<!--HONumber=Dec16_HO3-->
-
 

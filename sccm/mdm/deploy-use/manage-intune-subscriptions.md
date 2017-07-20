@@ -2,7 +2,7 @@
 title: Gerenciar uma assinatura do Intune associado ao System Center Configuration Manager | Microsoft Docs
 description: Gerencie uma assinatura do Intune associado ao System Center Configuration Manager.
 ms.custom: na
-ms.date: 03/05/2017
+ms.date: 06/02/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
@@ -17,10 +17,10 @@ author: mtillman
 ms.author: mtillman
 manager: angrobe
 ms.translationtype: Human Translation
-ms.sourcegitcommit: 2c723fe7137a95df271c3612c88805efd8fb9a77
-ms.openlocfilehash: 2e0b3cd1070d0f8adb1219acd33c3126d2758a49
+ms.sourcegitcommit: 662901e850566756759fcfc61c58f3c0e56bc5aa
+ms.openlocfilehash: 2cb4d724c8b78657458a30c0bb020f67c6b62795
 ms.contentlocale: pt-br
-ms.lasthandoff: 05/17/2017
+ms.lasthandoff: 06/03/2017
 
 ---
 # <a name="manage-an-intune-subscription-associated-with-system-center-configuration-manager"></a>Gerenciar uma assinatura do Intune associado ao System Center Configuration Manager
@@ -55,6 +55,5 @@ Se você adicionar uma assinatura do Microsoft Intune (uma assinatura de avalia�
 Agora você pode criar um novo ponto de conexão de serviço, adicionar uma nova assinatura do Intune ao Configuration Manager e definir o Configuration Manager como a Autoridade MDM.
 
 ## <a name="how-to-change-mdm-authority-to-intune"></a>Como alterar a autoridade do MDM para o Intune
-
-Começando na versão 1610, é possível mudar a autoridade MDM do Configuration Manager para o Intune. Informações sobre esse recurso estarão disponíveis em breve.
+A partir do Configuration Manager versão 1610 e do Microsoft Intune versão 1705, você pode alterar sua autoridade MDM sem precisar entrar em contato com o Suporte da Microsoft e sem a necessidade de cancelar o registro e registrar novamente os dispositivos gerenciados existentes. Para obter detalhes, veja [Alterar sua autoridade de MDM](/sccm/mdm/deploy-use/change-mdm-authority).
 

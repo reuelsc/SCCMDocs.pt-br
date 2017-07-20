@@ -12,19 +12,21 @@ ms.service:
 ms.technology:
 - configmgr-sum
 ms.assetid: b27682de-adf8-4edd-9572-54886af8f7fb
-translationtype: Human Translation
-ms.sourcegitcommit: 78524abd4c45f0b7402d6f1e85afc60bb72ab0ee
-ms.openlocfilehash: 34b0819957ffcc3711ee354a5b821d78fa7445cb
+ms.translationtype: Human Translation
+ms.sourcegitcommit: c6ee0ed635ab81b5e454e3cd85637ff3e20dbb34
+ms.openlocfilehash: 804a9d7a32cfbdb498c6748c5d99a1874261c231
+ms.contentlocale: pt-br
+ms.lasthandoff: 06/08/2017
 
 ---
 
-#  <a name="a-namebkmkautodeploya-automatically-deploy-software-updates"></a><a name="BKMK_AutoDeploy"></a> Implantar atualizações de software automaticamente  
+#  <a name="BKMK_AutoDeploy"></a> Implantar atualizações de software automaticamente  
 
 *Aplica-se a: System Center Configuration Manager (Branch Atual)*
 
  Você pode implantar automaticamente as atualizações de software adicionando novas atualizações a um grupo de atualização que tenha uma implantação ativa ou usando ADR (regra de implantação automática). Geralmente, as ADRs são usadas para implantar atualizações de software mensais (geralmente conhecidas como "Patch Tuesday") e para o gerenciamento de atualizações de definições. Se você precisar de ajuda para determinar qual método de implantação é adequado para você, consulte [Implantar atualizações de software](deploy-software-updates.md)
 
-##  <a name="a-namebkmkaddupdatestoexistinggroupa-add-software-updates-to-a-deployed-update-group"></a><a name="BKMK_AddUpdatesToExistingGroup"></a> Adicionar atualizações de software a um grupo de atualização implantado  
+##  <a name="BKMK_AddUpdatesToExistingGroup"></a> Adicionar atualizações de software a um grupo de atualização implantado  
 Depois de criar e implantar um grupo de atualização de software, você pode adicionar novas atualizações ao grupo e elas serão implantadas automaticamente.  
 
 > [!IMPORTANT]  
@@ -46,7 +48,7 @@ Use o procedimento a seguir para adicionar atualizações de software a um grupo
 
 6.  Clique no grupo de atualização de software e, na guia **Início** , no grupo **Atualizar** , clique em **Mostrar Membros** para exibir uma lista de atualizações de software no grupo.  
 
-##  <a name="a-namebkmkcreateautomaticdeploymentrulea-create-an-automatic-deployment-rule-adr"></a><a name="BKMK_CreateAutomaticDeploymentRule"></a> Criar uma ADR (regra de implantação automática)  
+##  <a name="BKMK_CreateAutomaticDeploymentRule"></a> Criar uma ADR (regra de implantação automática)  
 É possível aprovar e implantar automaticamente atualizações de software usando uma ADR. Você pode fazer com que a regra adicione atualizações de software para um novo grupo de atualização de software sempre que a regra for executada ou que ao adicionar atualizações de software a um grupo existente. Quando uma regra é executada e adiciona as atualizações de software a um grupo existente, a regra remove todas as atualizações de software do grupo e adiciona as atualizações de software que atendem aos critérios que você definir para o grupo. Para executar uma ADR para encontrar atualizações de software recém-liberadas diariamente e implantá-las nos clientes, por exemplo, é necessário escolher a opção para criar um novo grupo de atualização de software em vez de adicionar as atualizações de software a um grupo existente.  
 
 > [!WARNING]  
@@ -167,15 +169,15 @@ Use o procedimento a seguir para adicionar atualizações de software a um grupo
 
 10. Na página Configurações de Download, defina as seguintes configurações:  
 
-    -   Especifique se o cliente irá baixar e instalar as atualizações de software quando estiver conectado a uma rede lenta ou usando um local de conteúdos de fallback.  
+    - Especifique se o cliente irá baixar e instalar as atualizações de software quando estiver conectado a uma rede lenta ou usando um local de conteúdos de fallback.  
 
-    -   Especifique se o cliente deve baixar e instalar as atualizações de software por meio de um ponto de distribuição de fallback quando o conteúdo das atualizações de software não está disponível ou de um ponto de distribuição preferencial.  
+    - Especifique se o cliente deve baixar e instalar as atualizações de software por meio de um ponto de distribuição de fallback quando o conteúdo das atualizações de software não está disponível ou de um ponto de distribuição preferencial.  
 
-    -   **Permitir que os clientes compartilhem conteúdo com outros clientes na mesma sub-rede**: especifique se deseja habilitar o uso do BranchCache para downloads de conteúdo. Para obter mais informações sobre o BranchCache, veja [Concepts for content management](../../core/plan-design/hierarchy/fundamental-concepts-for-content-management.md#branchcache).  
+    - **Permitir que os clientes compartilhem conteúdo com outros clientes na mesma sub-rede**: especifique se deseja habilitar o uso do BranchCache para downloads de conteúdo. Para obter mais informações sobre o BranchCache, veja [Concepts for content management](../../core/plan-design/hierarchy/fundamental-concepts-for-content-management.md#branchcache).  
 
-    -   Especifique se os clientes que estão conectados à intranet deverão baixar atualizações de software do Microsoft Update se as atualizações de software não estiverem disponíveis nos pontos de distribuição.  
+    - **Se as atualizações de software não estiverem disponíveis no ponto de distribuição nos grupos de site, atuais ou vizinhos, baixe o conteúdo do Microsoft Updates**: selecione essa configuração para que os clientes que estiverem conectados à intranet baixem as atualizações de software do Microsoft Update se as atualizações de software não estiverem disponíveis nos pontos de distribuição. Os clientes baseados na Internet sempre podem ir para o Microsoft Update para obter o conteúdo das atualizações de software.
 
-    -   Especifique se os clientes têm permissão para baixar após o prazo de uma instalação quando usam conexão de Internet limitada. Provedores de Internet ocasionalmente cobram por quantidade de dados que você envia e recebe quando está em uma conexão de Internet limitada.  
+    - Especifique se os clientes têm permissão para baixar após o prazo de uma instalação quando usam conexão de Internet limitada. Provedores de Internet ocasionalmente cobram por quantidade de dados que você envia e recebe quando está em uma conexão de Internet limitada.  
 
     > [!NOTE]  
     >  Os clientes solicitam o local do conteúdo de um ponto de gerenciamento de atualizações de software em uma implantação. O comportamento do download depende de como você configurou o ponto de distribuição, o pacote de implantação e as configurações desta página. Para obter mais informações, consulte [Content source location scenarios](../../core/plan-design/hierarchy/content-source-location-scenarios.md).  
@@ -221,7 +223,7 @@ Use o procedimento a seguir para adicionar atualizações de software a um grupo
 
  Depois de concluir o assistente, a ADR será executada. Isso adicionará as atualizações de software que atendem aos critérios especificados a um grupo de atualização de software, baixará as atualizações de software na biblioteca atual no servidor do site, distribuirá as atualizações de software aos pontos de distribuição configurados e então implantará o grupo de atualizações de software a clientes em uma coleção de destino.  
 
-##  <a name="a-namebkmkadddeploymenttoadra-add-a-new-deployment-to-an-existing-adr"></a><a name="BKMK_AddDeploymentToADR"></a> Adicionar uma nova implantação a uma ADR existente  
+##  <a name="BKMK_AddDeploymentToADR"></a> Adicionar uma nova implantação a uma ADR existente  
  Depois de criar uma ADR, é possível adicionar outras implantações à regra. Isso pode ajudá-lo a gerenciar a complexidade de implantar diferentes atualizações em diferentes coleções. Cada nova implantação tem a gama completa de funcionalidade e experiência de monitoramento da implantação.  
 
 #### <a name="to-add-a-new-deployment-to-an-existing-adr"></a>Para adicionar uma nova implantação a uma ADR existente  
@@ -299,26 +301,21 @@ Use o procedimento a seguir para adicionar atualizações de software a um grupo
 
 8. Na página Configurações de Download, defina as seguintes configurações:  
 
-    -   Especifique se o cliente irá baixar e instalar as atualizações de software quando estiver conectado a uma rede lenta ou usando um local de conteúdos de fallback.  
+    - Especifique se o cliente irá baixar e instalar as atualizações de software quando estiver conectado a uma rede lenta ou usando um local de conteúdos de fallback.  
 
-    -   Especifique se o cliente deve baixar e instalar as atualizações de software por meio de um ponto de distribuição de fallback quando o conteúdo das atualizações de software não está disponível ou de um ponto de distribuição preferencial.  
+    - Especifique se o cliente deve baixar e instalar as atualizações de software por meio de um ponto de distribuição de fallback quando o conteúdo das atualizações de software não está disponível ou de um ponto de distribuição preferencial.  
 
-    -   **Permitir que os clientes compartilhem conteúdo com outros clientes na mesma sub-rede**: especifique se deseja habilitar o uso do BranchCache para downloads de conteúdo. Para obter mais informações sobre o BranchCache, veja [Concepts for content management](../../core/plan-design/hierarchy/fundamental-concepts-for-content-management.md#branchcache).  
+    - **Permitir que os clientes compartilhem conteúdo com outros clientes na mesma sub-rede**: especifique se deseja habilitar o uso do BranchCache para downloads de conteúdo. Para obter mais informações sobre o BranchCache, veja [Concepts for content management](../../core/plan-design/hierarchy/fundamental-concepts-for-content-management.md#branchcache).  
 
-    -   Especifique se os clientes que estão conectados à intranet deverão baixar atualizações de software do Microsoft Update se as atualizações de software não estiverem disponíveis nos pontos de distribuição.  
+    - **Se as atualizações de software não estiverem disponíveis no ponto de distribuição nos grupos de site, atuais ou vizinhos, baixe o conteúdo do Microsoft Updates**: selecione essa configuração para que os clientes que estiverem conectados à intranet baixem as atualizações de software do Microsoft Update se as atualizações de software não estiverem disponíveis nos pontos de distribuição. Os clientes baseados na Internet sempre podem ir para o Microsoft Update para obter o conteúdo das atualizações de software.
 
-    -   Especifique se os clientes têm permissão para baixar após o prazo de uma instalação quando usam conexão de Internet limitada. Provedores de Internet ocasionalmente cobram por quantidade de dados que você envia e recebe quando está em uma conexão de Internet limitada.  
+    - Especifique se os clientes têm permissão para baixar após o prazo de uma instalação quando usam conexão de Internet limitada. Provedores de Internet ocasionalmente cobram por quantidade de dados que você envia e recebe quando está em uma conexão de Internet limitada.  
 
     > [!NOTE]  
-    >  Os clientes solicitam o local do conteúdo de um ponto de gerenciamento de atualizações de software em uma implantação. O comportamento do download depende de como você configurou o ponto de distribuição, o pacote de implantação e as configurações desta página. Para obter mais informações, consulte [Content source location scenarios](../../core/plan-design/hierarchy/content-source-location-scenarios.md).  
+    > Os clientes solicitam o local do conteúdo de um ponto de gerenciamento de atualizações de software em uma implantação. O comportamento do download depende de como você configurou o ponto de distribuição, o pacote de implantação e as configurações desta página. Para obter mais informações, consulte [Content source location scenarios](../../core/plan-design/hierarchy/content-source-location-scenarios.md).  
 
 Para obter mais informações sobre o processo de implantação, veja [Software update deployment process](../../sum/understand/software-updates-introduction.md#BKMK_DeploymentProcess).
 
 ## <a name="next-steps"></a>Próximas etapas
 [Monitorar atualizações de software](monitor-software-updates.md)
-
-
-
-<!--HONumber=Dec16_HO3-->
-
 

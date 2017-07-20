@@ -16,10 +16,10 @@ author: andredm7
 ms.author: andredm
 manager: angrobe
 ms.translationtype: Human Translation
-ms.sourcegitcommit: 23b1d24e908d04b64c3bbfa518793a44e696d468
-ms.openlocfilehash: e9028a54e538b4ec987dbaeb5ba1ee22ad091728
+ms.sourcegitcommit: c8717925dba42451b1e241a7c2f59e43896d7d99
+ms.openlocfilehash: e78fe989b7ff445717c8320c4eae3900eb46baea
 ms.contentlocale: pt-br
-ms.lasthandoff: 05/17/2017
+ms.lasthandoff: 06/19/2017
 
 
 ---
@@ -27,31 +27,25 @@ ms.lasthandoff: 05/17/2017
 
 *Aplica-se a: System Center Configuration Manager (Branch Atual)*
 
-
-
- A partir da versão 1602 do Configuration Manager, é possível configurar o acesso condicional para computadores gerenciados pelo System Center Configuration Manager.  
+A partir da versão 1602 do Configuration Manager, é possível configurar o acesso condicional para computadores gerenciados pelo System Center Configuration Manager.  
 
 > [!IMPORTANT]  
->  Esse é um recurso de pré-lançamento disponível nas atualizações 1602, 1606 e 1610. Os recursos de pré-lançamento foram incluídos no produto para testes iniciais em um ambiente de produção, mas não devem ser considerados prontos para produção. Para obter mais informações, consulte [Usar recursos de pré-lançamento de atualizações](../../core/servers/manage/install-in-console-updates.md#bkmk_prerelease).
+> Esse é um recurso de pré-lançamento disponível nas atualizações 1602, 1606 e 1610. Os recursos de pré-lançamento foram incluídos no produto para testes iniciais em um ambiente de produção, mas não devem ser considerados prontos para produção. Para obter mais informações, consulte [Usar recursos de pré-lançamento de atualizações](../../core/servers/manage/install-in-console-updates.md#bkmk_prerelease).
 > - Depois de instalar a atualização 1602, o tipo de recurso é exibido como liberado apesar de ser pré-lançamento.
 > - Se você atualiza da 1602 para a 1606, o tipo de recurso é exibido como liberado apesar de continuar sendo pré-lançamento.
 > - Se você atualiza da versão 1511 diretamente para a 1606, o tipo de recurso é exibido como pré-lançamento.
 
- Se você estiver procurando informações sobre como configurar o acesso condicional para dispositivos registrados e gerenciados pelo Intune, ou para PCs que ingressaram no domínio e não são avaliados com relação à conformidade, consulte [Gerenciar o acesso a serviços no System Center Configuration Manager](../../protect/deploy-use/manage-access-to-services.md).  
-
+Se você estiver procurando informações sobre como configurar o acesso condicional para dispositivos registrados e gerenciados pelo Intune, ou para PCs que ingressaram no domínio e não são avaliados com relação à conformidade, consulte [Gerenciar o acesso a serviços no System Center Configuration Manager](../../protect/deploy-use/manage-access-to-services.md).
 
 ## <a name="supported-services"></a>Serviços com suporte  
 
--   Exchange Online  
-
--   SharePoint Online  
+-   Exchange Online
+-   SharePoint Online
 
 ## <a name="supported-pcs"></a>PCs com suporte  
 
--   Windows 7  
-
--   Windows 8.1  
-
+-   Windows 7
+-   Windows 8.1
 -   Windows 10 
 
 ## <a name="configure-conditional-access"></a>Configurar o acesso condicional  
@@ -61,7 +55,7 @@ ms.lasthandoff: 05/17/2017
 
 -   Sincronização do ADFS e uma assinatura de O365. A assinatura de O365 serve para configurar o Exchange Online e o SharePoint Online.  
 
--   Uma assinatura do Microsoft Intune. A assinatura do Microsoft Intune deve ser configurada no console do Configuration Manager. Isso ainda exige que você esteja em uma implantação híbrida.  
+-   Uma assinatura do Microsoft Intune. A assinatura do Microsoft Intune deve ser configurada no console do Configuration Manager. A assinatura do Intune é usada para transmitir o estado de conformidade do dispositivo para o Azure Active Directory e para o licenciamento do usuário.  
 
  Os PCs devem atender aos seguintes requisitos:  
 
@@ -125,12 +119,12 @@ ms.lasthandoff: 05/17/2017
 
 5.  Defina o requisito de PC com Windows com a opção**Dispositivos devem ser compatíveis**.  
 
-6.  Em **Grupos de Destino**, clique em **Modificar** para selecionar os grupos de segurança do Active Directory do Azure aos quais a política será aplicada.  
+6.  Em **Grupos de Destino**, clique em **Modificar** para selecionar os grupos de segurança do Azure Active Directory aos quais a política será aplicada.  
 
     > [!NOTE]  
     >  O mesmo grupo de usuários de segurança deve ser usado para implantar a política de conformidade e o Grupo de Destino para a política de acesso condicional.  
 
-     Opcionalmente, em **Grupos isentos**, clique em **Modificar** para selecionar os grupos de segurança do Active Directory do Azure que são isentos dessa política.  
+     Opcionalmente, em **Grupos isentos**, clique em **Modificar** para selecionar os grupos de segurança do Azure Active Directory que são isentos dessa política.  
 
 7.  Clique em **Salvar** para criar e salvar a política  
 
@@ -146,6 +140,8 @@ ms.lasthandoff: 05/17/2017
 
 -   Windows 10 users may see multiple access failures when trying to reach O365 and/or SharePoint online resources. Note that conditional access is not fully supported for Windows 10.  
 --->
-### <a name="see-also"></a>Consulte também  
- [Proteger a infraestrutura de dados e do site com o System Center Configuration Manager](../../protect/understand/protect-data-and-site-infrastructure.md)
+## <a name="see-also"></a>Consulte também
+
+- [Proteger a infraestrutura de dados e do site com o System Center Configuration Manager](../../protect/understand/protect-data-and-site-infrastructure.md)
+- [Fluxograma de solução de problemas de acesso condicional para o Configuration Manager](https://gallery.technet.microsoft.com/Conditional-access-fd747c1a?redir=0)
 

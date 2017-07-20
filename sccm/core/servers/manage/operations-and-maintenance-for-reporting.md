@@ -15,9 +15,11 @@ caps.latest.revision: 5
 author: Dougeby
 ms.author: dougeby
 manager: angrobe
-translationtype: Human Translation
-ms.sourcegitcommit: 10b1010ccbf3889c58c55b87e70b354559243c90
-ms.openlocfilehash: f5a58ba9ecd9b0998c2859b6d3f45e493d7ef3cb
+ms.translationtype: Human Translation
+ms.sourcegitcommit: f62d969dd49fb00b688602128df74b28ff551135
+ms.openlocfilehash: df572cd0c64c82e25164430a53e1b893b3ba3cf5
+ms.contentlocale: pt-br
+ms.lasthandoff: 06/07/2017
 
 
 ---
@@ -27,10 +29,10 @@ ms.openlocfilehash: f5a58ba9ecd9b0998c2859b6d3f45e493d7ef3cb
 
 Após implantar a infraestrutura para geração de relatórios no System Center Configuration Manager, haverá diversas operações que você poderá realizar para gerenciar relatórios e assinaturas de relatório.  
 
-##  <a name="a-namebkmkmanagereportsa-manage-configuration-manager-reports"></a><a name="BKMK_ManageReports"></a> Gerenciar relatórios do Configuration Manager  
+##  <a name="BKMK_ManageReports"></a> Gerenciar relatórios do Configuration Manager  
  O Configuration Manager oferece mais de 400 relatórios predefinidos que o ajudarão a coletar, organizar e apresentar informações sobre usuários, inventário de hardware e software, atualizações de software, aplicativos, status do site e outras operações do Configuration Manager na sua organização. Você pode usar os relatórios predefinidos como estão ou modificar um relatório para que atenda às suas necessidades. Você também pode criar relatórios baseados em SQL e em modelos personalizados para atender às suas necessidades. Use as seções a seguir para ajudá-lo a gerenciar os relatórios do Configuration Manager.  
 
-###  <a name="a-namebkmkrunreporta-run-a-configuration-manager-report"></a><a name="BKMK_RunReport"></a> Executar um relatório do Configuration Manager  
+###  <a name="BKMK_RunReport"></a> Executar um relatório do Configuration Manager  
  Relatórios no Configuration Manager são armazenados no SQL Server Reporting Services e os dados renderizados no relatório são recuperados do banco de dados de site do Configuration Manager. Você pode acessar relatórios no console do Configuration Manager ou usando o Gerenciador de relatórios, acessar em um navegador da web. Você pode abrir relatórios em qualquer computador que tenha acesso ao computador que está executando o SQL Server Reporting Services, e é necessário ter direitos suficientes para exibir os relatórios. Ao executar um relatório, o título, a descrição e a categoria do mesmo são exibidos no idioma do sistema operacional local.  
 
 > [!NOTE]  
@@ -38,6 +40,9 @@ Após implantar a infraestrutura para geração de relatórios no System Center 
 
 > [!WARNING]  
 >  Para executar relatórios, é necessário ter direitos de **Leitura** para a permissão **Site** e a permissão **Executar Relatório** configuradas para objetos específicos.  
+
+> [!IMPORTANT]    
+> Deve haver uma relação de confiança bidirecional estabelecida para usuários de um domínio diferente do que a conta do ponto do Reporting Services para executar com sucesso os relatórios.
 
 > [!NOTE]  
 >  O Report Manager é uma ferramenta de gerenciamento e acesso a relatórios baseada na Web que é usada para administrar uma única instância do servidor de relatório em um local remoto por meio de uma conexão HTTP. Você pode usar o Report Manager para realizar tarefas operacionais como, por exemplo, exibir relatórios, modificar propriedades de relatórios e gerenciar assinaturas de relatório associadas. Este tópico oferece as etapas para exibir um relatório e modificar propriedades de relatórios no Report Manager. Para obter mais informações sobre as outras opções oferecidas pelo Report Manager, consulte [Report Manager](http://go.microsoft.com/fwlink/p/?LinkId=224916) nos Manuais Online do SQL Server 2008.  
@@ -73,7 +78,7 @@ Após implantar a infraestrutura para geração de relatórios no System Center 
 
 4.  Quando houver parâmetros obrigatórios, especifique-os e clique em **Exibir Relatório**.  
 
-###  <a name="a-namebkmkmodifyreportpropertiesa-modify-the-properties-for-a-configuration-manager-report"></a><a name="BKMK_ModifyReportProperties"></a> Modificar as propriedades de um relatório do Configuration Manager  
+###  <a name="BKMK_ModifyReportProperties"></a> Modificar as propriedades de um relatório do Configuration Manager  
  No console do Configuration Manager, é possível exibir as propriedades de um relatório, como o seu nome e a sua descrição, mas para alterar suas propriedades, use o Report Manager. Use o procedimento a seguir para modificar as propriedades de um relatório do Configuration Manager.  
 
 #### <a name="to-modify-report-properties-in-report-manager"></a>Para modificar as propriedades de um relatório no Report Manager  
@@ -91,7 +96,7 @@ Após implantar a infraestrutura para geração de relatórios no System Center 
 
 5.  Ao terminar, clique em **aplicar**. As propriedades do relatório serão salvas no servidor de relatório e o console do Configuration Manager vai recuperar as propriedades do relatório atualizado para o relatório.  
 
-###  <a name="a-namebkmkeditreporta-edit-a-configuration-manager-report"></a><a name="BKMK_EditReport"></a> Editar um relatório do Configuration Manager  
+###  <a name="BKMK_EditReport"></a> Editar um relatório do Configuration Manager  
  Quando um relatório existente do Configuration Manager não recuperar as informações necessárias ou não fornecer o layout ou o design desejado, você poderá editar o relatório no Construtor de Relatórios.  
 
 > [!NOTE]  
@@ -115,7 +120,7 @@ Após implantar a infraestrutura para geração de relatórios no System Center 
 
 4.  No Construtor de Relatórios, modifique as configurações apropriadas do relatório e clique em **Salvar** para salvar o relatório no servidor de relatório.  
 
-###  <a name="a-namebkmkcreatemodelbasedreporta-create-a-model-based-report"></a><a name="BKMK_CreateModelBasedReport"></a> Criar um relatório baseado em um modelo  
+###  <a name="BKMK_CreateModelBasedReport"></a> Criar um relatório baseado em um modelo  
  Um relatório baseado em modelo permite selecionar de modo interativo os itens que você deseja incluir no relatório. Para obter mais informações sobre a criação de modelos de relatório, veja [Criando modelos de relatório personalizados para o System Center Configuration Manager no SQL Server Reporting Services](creating-custom-report-models-in-sql-server-reporting-services.md).  
 
 > [!IMPORTANT]  
@@ -157,7 +162,7 @@ Após implantar a infraestrutura para geração de relatórios no System Center 
 
 10. Clique em **Salvar** para salvar o relatório no servidor de relatório. Você pode executar e modificar o novo relatório no nó **Relatórios** do espaço de trabalho **Monitoramento** .  
 
-###  <a name="a-namebkmkcreatesqlbasedreporta-create-a-sql-based-report"></a><a name="BKMK_CreateSQLBasedReport"></a> Criar um relatório baseado em SQL  
+###  <a name="BKMK_CreateSQLBasedReport"></a> Criar um relatório baseado em SQL  
  Um relatório baseado em SQL permite recuperar dados baseados em uma instrução SQL do relatório.  
 
 > [!IMPORTANT]  
@@ -200,10 +205,10 @@ Após implantar a infraestrutura para geração de relatórios no System Center 
 
 9. Clique em **Salvar** para salvar o relatório no servidor de relatório. Você pode executar o novo relatório no nó **Relatórios** do espaço de trabalho **Monitoramento** .  
 
-##  <a name="a-namebkmkmanagereportsubscriptionsa-manage-report-subscriptions"></a><a name="BKMK_ManageReportSubscriptions"></a> Gerenciar assinaturas de relatório  
+##  <a name="BKMK_ManageReportSubscriptions"></a> Gerenciar assinaturas de relatório  
  As assinaturas de relatório no SQL Server Reporting Services permitem que você configure a entrega automática de relatórios especificados por email ou para um compartilhamento de arquivos em intervalos agendados. Use o **Assistente para Criar Assinatura** no System Center 2012 Configuration Manager para configurar assinaturas de relatório.  
 
-###  <a name="a-namebkmkreportsubscriptionfilesharea-create-a-report-subscription-to-deliver-a-report-to-a-file-share"></a><a name="BKMK_ReportSubscriptionFileShare"></a> Criar uma assinatura de relatório para entregar um relatório a um compartilhamento de arquivo  
+###  <a name="BKMK_ReportSubscriptionFileShare"></a> Criar uma assinatura de relatório para entregar um relatório a um compartilhamento de arquivo  
  Quando você cria uma assinatura de relatório para entregá-lo a um compartilhamento de arquivo, o relatório é copiado no formato definido para o compartilhamento especificado. Você pode se inscrever e solicitar a entrega de apenas um relatório de cada vez.  
 
  Diferentemente dos relatórios hospedados e gerenciados por um servidor de relatório, os relatórios entregues a uma pasta de compartilhamento são arquivos estáticos. Os recursos interativos definidos para o relatório não funcionam para relatórios armazenados como arquivos no sistema de arquivos. Recursos de interação são representados como elementos estáticos. Se o relatório incluir gráficos, a apresentação padrão será usada. Se o relatório apresenta vínculo com outro relatório, o link é processado como texto estático. Se você deseja manter os recursos interativos em um relatório entregue, use a entrega de email. Para obter mais informações sobre a entrega de email, veja a seção [Criar uma assinatura de relatório para entregar um relatório por email](#BKMK_ReportSubscriptionEmail) mais adiante neste tópico.  
@@ -284,7 +289,7 @@ Após implantar a infraestrutura para geração de relatórios no System Center 
 
 8.  Na página **Conclusão** , clique em **Fechar** para sair do assistente. Verifique se a assinatura do relatório foi criada com êxito. É possível exibir e modificar as assinaturas de relatório no nó **Assinaturas** sob **Gerando Relatórios** no espaço de trabalho **Monitoramento** .  
 
-###  <a name="a-namebkmkreportsubscriptionemaila-create-a-report-subscription-to-deliver-a-report-by-email"></a><a name="BKMK_ReportSubscriptionEmail"></a> Criar uma assinatura de relatório para entregar um relatório por email  
+###  <a name="BKMK_ReportSubscriptionEmail"></a> Criar uma assinatura de relatório para entregar um relatório por email  
  Quando você cria uma assinatura de relatório para entregar um relatório por email, um email é enviado aos destinatários que você configurar, e o relatório é incluído como um anexo. O servidor de relatório não valida endereços de email ou os obtém a partir de um servidor de email. Você precisa saber com antecedência quais endereços de email deseja usar. Por padrão, é possível enviar por email relatórios a qualquer conta de email válida, dentro ou fora de sua organização. Você pode selecionar uma ou ambas as opções de entrega de email a seguir:  
 
 -   Enviar uma notificação e um hiperlink para o relatório gerado.  
@@ -358,9 +363,4 @@ Após implantar a infraestrutura para geração de relatórios no System Center 
 -   Na página **Resumo** , revise as configurações de assinatura de relatório. Clique em **Anterior** para alterar as configurações ou clique em **Próxima** para criar a assinatura do relatório.  
 
 -   Na página **Conclusão** , clique em **Fechar** para sair do assistente. Verifique se a assinatura do relatório foi criada com êxito. É possível exibir e modificar as assinaturas de relatório no nó **Assinaturas** sob **Gerando Relatórios** no espaço de trabalho **Monitoramento** .  
-
-
-
-<!--HONumber=Dec16_HO3-->
-
 

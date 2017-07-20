@@ -14,10 +14,10 @@ ms.technology:
 - configmgr-sum
 ms.assetid: 57184274-5fea-4d79-a2b4-22e08ed26daf
 ms.translationtype: Human Translation
-ms.sourcegitcommit: 78524abd4c45f0b7402d6f1e85afc60bb72ab0ee
-ms.openlocfilehash: d736715f1f2c92b4c91f156ecb8abe3513811a34
+ms.sourcegitcommit: c6ee0ed635ab81b5e454e3cd85637ff3e20dbb34
+ms.openlocfilehash: 2a0d5f12b99689749833c109d4fa399f99451d8a
 ms.contentlocale: pt-br
-ms.lasthandoff: 05/17/2017
+ms.lasthandoff: 06/08/2017
 
 
 ---
@@ -236,10 +236,10 @@ ms.lasthandoff: 05/17/2017
 
     -   **Notificações ao usuário**: especifique se quer exibir notificações das atualizações de software no Centro de Software no computador cliente no **Tempo disponível do software** configurado e se deseja exibir as notificações ao usuário nos computadores cliente. Quando o **Tipo de implantação** está definido como **Disponível** na página Configurações de implantação, não é possível selecionar **Ocultar no Centro de Software e todas as notificações**.  
 
-    -   **Comportamento do prazo**: *somente disponível quando o **Tipo de implantação** *está definido como **Obrigatório** *na página Configurações de Implantação.*   
+    -   **Comportamento do prazo**: *disponível apenas quando o **Tipo de implantação** *estiver definido como **Obrigatório** *na página Configurações de Implantação.*   
     Especifique o comportamento que deve ocorrer quando o prazo é alcançado para a implantação da atualização de software. Especifique se deseja instalar as atualizações de software na implantação. Especifique também se o sistema deve ser reiniciado após a instalação da atualização de software, independentemente de uma janela de manutenção configurada. Para obter mais informações sobre janelas de manutenção, consulte [Como usar janelas de manutenção](../../core/clients/manage/collections/use-maintenance-windows.md).  
 
-    -   **Comportamento de reinício de dispositivo**: *somente disponível quando o **Tipo de implantação** *está definido como **Obrigatório** *na página Configurações de Implantação.*    
+    -   **Comportamento de reinício de dispositivo**: *disponível apenas quando o **Tipo de implantação** *estiver definido como **Obrigatório** *na página Configurações de Implantação.*    
     Especifique se uma reinicialização do sistema em servidores e estações de trabalho deve ser suprimida depois que as atualizações de software são instaladas e uma reinicialização do sistema é necessária para concluir a instalação.  
 
         > [!IMPORTANT]  
@@ -259,15 +259,15 @@ ms.lasthandoff: 05/17/2017
 
 10. Na página Configurações de Download, defina as seguintes configurações:  
 
-    -   Especifique se o cliente irá baixar e instalar as atualizações de software quando estiver conectado a uma rede lenta ou usando um local de conteúdos de fallback.  
+    - Especifique se o cliente irá baixar e instalar as atualizações de software quando estiver conectado a uma rede lenta ou usando um local de conteúdos de fallback.  
 
-    -   Especifique se o cliente deve baixar e instalar as atualizações de software por meio de um ponto de distribuição de fallback quando o conteúdo das atualizações de software não está disponível ou de um ponto de distribuição preferencial.  
+    - Especifique se o cliente deve baixar e instalar as atualizações de software por meio de um ponto de distribuição de fallback quando o conteúdo das atualizações de software não está disponível ou de um ponto de distribuição preferencial.  
 
-    -   **Permitir que os clientes compartilhem conteúdo com outros clientes na mesma sub-rede**: especifique se deseja habilitar o uso do BranchCache para downloads de conteúdo. Para obter mais informações sobre o BranchCache, consulte [Fundamental concepts for content management (Conceitos fundamentais para o gerenciamento de conteúdo)](../../core/plan-design/hierarchy/fundamental-concepts-for-content-management.md#branchcache).  
+    - **Permitir que os clientes compartilhem conteúdo com outros clientes na mesma sub-rede**: especifique se deseja habilitar o uso do BranchCache para downloads de conteúdo. Para obter mais informações sobre o BranchCache, consulte [Fundamental concepts for content management (Conceitos fundamentais para o gerenciamento de conteúdo)](../../core/plan-design/hierarchy/fundamental-concepts-for-content-management.md#branchcache).  
 
-    -   Especifique se os clientes que estão conectados à intranet deverão baixar atualizações de software do Microsoft Update se as atualizações de software não estiverem disponíveis nos pontos de distribuição.  
+    - **Se as atualizações de software não estiverem disponíveis no ponto de distribuição nos grupos de site, atuais ou vizinhos, baixe o conteúdo do Microsoft Updates**: selecione essa configuração para que os clientes que estiverem conectados à intranet baixem as atualizações de software do Microsoft Update se as atualizações de software não estiverem disponíveis nos pontos de distribuição. Os clientes baseados na Internet sempre podem ir para o Microsoft Update para obter o conteúdo das atualizações de software.
 
-    -   Especifique se os clientes têm permissão para baixar após o prazo de uma instalação quando usam conexão de Internet limitada. Provedores de Internet ocasionalmente cobram por quantidade de dados que você envia e recebe quando está em uma conexão de Internet limitada.  
+    - Especifique se os clientes têm permissão para baixar após o prazo de uma instalação quando usam conexão de Internet limitada. Provedores de Internet ocasionalmente cobram por quantidade de dados que você envia e recebe quando está em uma conexão de Internet limitada.  
 
     > [!NOTE]  
     >  Os clientes solicitam o local do conteúdo de um ponto de gerenciamento de atualizações de software em uma implantação. O comportamento do download depende de como você configurou o ponto de distribuição, o pacote de implantação e as configurações desta página. Para obter mais informações, consulte [Content source location scenarios](../../core/plan-design/hierarchy/content-source-location-scenarios.md).  

@@ -16,9 +16,11 @@ caps.handback.revision: 0
 author: robstackmsft
 ms.author: robstack
 manager: angrobe
-translationtype: Human Translation
-ms.sourcegitcommit: 10b1010ccbf3889c58c55b87e70b354559243c90
-ms.openlocfilehash: 09f7bdaa29a01fb2a38aa223db56b5bce3bc5205
+ms.translationtype: Human Translation
+ms.sourcegitcommit: 2087badc9dd1d216352dce232b145a786783ac89
+ms.openlocfilehash: e42b13c68ecaeac94245838c2f42e2790799de2b
+ms.contentlocale: pt-br
+ms.lasthandoff: 05/18/2017
 
 
 ---
@@ -28,7 +30,7 @@ ms.openlocfilehash: 09f7bdaa29a01fb2a38aa223db56b5bce3bc5205
 
 As consultas no System Center Configuration Manager permitem recuperar informações do banco de dados do site com base nos critérios que você especificar. O Configuration Manager coleta informações de banco de dados do site durante a operação padrão. Por exemplo, usando as informações coletadas da descoberta ou do inventário, você pode configurar uma consulta para identificar os dispositivos que atendem aos critérios especificados.  
 
- Para obter mais informações sobre consultas, consulte [Introdução a consultas no System Center Configuration Manager](../../../core/servers/manage/introduction-to-queries.md). Para obter mais informações sobre as práticas recomendadas de segurança e informações de privacidade para as operações do Configuration Manager que coletam as informações que podem ser recuperadas por meio de consultas, consulte [Segurança e privacidade no System Center Configuration Manager](../../../core/plan-design/security/security-and-privacy.md).  
+ Para obter mais informações sobre consultas, consulte [Introdução a consultas no System Center Configuration Manager](../../../core/servers/manage/introduction-to-queries.md). Para saber mais sobre as práticas recomendadas de segurança e informações de privacidade para as operações do Configuration Manager que coletam as informações que podem ser recuperadas por meio de consultas, veja [Segurança e privacidade no System Center Configuration Manager](../../../core/plan-design/security/security-and-privacy.md).  
 
 ## <a name="security-best-practices-for-queries"></a>Práticas recomendadas de segurança para consultas  
  Use a prática recomendada de segurança a seguir para consultas.  
@@ -39,9 +41,4 @@ As consultas no System Center Configuration Manager permitem recuperar informaç
 
 ## <a name="see-also"></a>Consulte também  
  [Referência técnica de consultas no System Center Configuration Manager](../../../core/servers/manage/queries-technical-reference.md)
-
-
-
-<!--HONumber=Dec16_HO3-->
-
 

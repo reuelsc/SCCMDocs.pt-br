@@ -16,9 +16,11 @@ caps.handback.revision: 0
 author: Brenduns
 ms.author: brenduns
 manager: angrobe
-translationtype: Human Translation
-ms.sourcegitcommit: 45931f60273f3130cca36320770126a36dcc3d1e
-ms.openlocfilehash: 9870ffa6ae5f80db823bfc74a7cc2e67fc8cf21d
+ms.translationtype: Human Translation
+ms.sourcegitcommit: c6ee0ed635ab81b5e454e3cd85637ff3e20dbb34
+ms.openlocfilehash: 17f3955aa7c63a13bab03b46002f7de0b0ec38fe
+ms.contentlocale: pt-br
+ms.lasthandoff: 06/08/2017
 
 
 ---
@@ -48,7 +50,7 @@ Com o System Center Configuration Manager, é possível migrar vários objetos d
 
 -   [Planejar a migração de personalizações de regras de medição de software](#Plan_Migrate_SWM_Rules)  
 
-##  <a name="a-nameplanmigratesoftwareupdatesa-plan-to-migrate-software-updates"></a><a name="Plan_migrate_Software_updates"></a> Planejar a migração de atualizações de software  
+##  <a name="Plan_migrate_Software_updates"></a> Planejar a migração de atualizações de software  
  É possível migrar objetos de atualização de software, como os pacotes de atualização de software e implantações de atualização de software.  
 
  Para migrar com êxito os objetos de atualização de software, é necessário primeiro configurar sua hierarquia de destino com configurações que correspondem ao ambiente da hierarquia de origem. Isso requer as seguintes ações:  
@@ -79,7 +81,7 @@ Quando você migra de uma hierarquia de origem do Configuration Manager 2007, o 
 
 Quando você migra objetos de uma hierarquia de origem do System Center 2012 Configuration Manager ou do System Center Configuration Manager, os objetos de atualizações de software não são modificados.  
 
-##  <a name="a-nameplanmigratecontenta-plan-to-migrate-content"></a><a name="Plan_Migrate_content"></a> Planejar a migração de conteúdo  
+##  <a name="Plan_Migrate_content"></a> Planejar a migração de conteúdo  
  É possível migrar o conteúdo de uma hierarquia de origem com suporte para a hierarquia de destino. Para uma hierarquia de origem do Configuration Manager 2007, esse conteúdo inclui programas e pacotes de distribuição de software e aplicativos virtuais, como o App-V (Microsoft Application Virtualization). Para hierarquias de origem do System Center 2012 Configuration Manager e do System Center Configuration Manager, esse conteúdo inclui aplicativos e aplicativos virtuais do App-V. Ao migrar o conteúdo entre hierarquias, os arquivos de origem compactados migram para a hierarquia de destino.  
 
 ### <a name="packages-and-programs"></a>Pacotes e programas  
@@ -121,13 +123,13 @@ Ao migrar de uma hierarquia de origem do System Center 2012 Configuration Manage
 ### <a name="applications"></a>Aplicativos  
  É possível migrar aplicativos de uma hierarquia de origem do System Center 2012 Configuration Manager ou do System Center Configuration Manager com suporte para uma hierarquia de destino. Se você reatribuir um cliente da hierarquia de origem para a hierarquia de destino, o cliente retém o histórico de aplicativos instalados anteriormente para evitar que o cliente execute novamente o aplicativo migrado.  
 
-##  <a name="a-namebkmkmigratecollectionsa-plan-to-migrate-collections"></a><a name="BKMK_MigrateCollections"></a> Planejar a migração de coleções  
+##  <a name="BKMK_MigrateCollections"></a> Planejar a migração de coleções  
  É possível migrar os critérios das coleções de uma hierarquia de origem do System Center 2012 Configuration Manager ou do System Center Configuration Manager com suporte. Para isso, use um trabalho de migração com base em objeto. Ao migrar uma coleção, você migra as regras para a coleção e não as informações sobre os membros da coleção e nem informações ou objetos relacionados a eles.  
 
  Não há suporte para a migração do objeto de coleção quando você migra de uma hierarquia de origem do Configuration Manager 2007.  
 
-##  <a name="a-nameplanmigrateosda-plan-to-migrate-operating-system-deployments"></a><a name="Plan_migrate_OSD"></a> Planejar a migração de implantações de sistema operacional  
-É possível migrar os seguintes objetos de implantação do sistema operacional de uma hierarquia de origem com suporte:  
+##  <a name="Plan_migrate_OSD"></a> Planejar a migração de implantações de sistema operacional  
+É possível migrar os seguintes objetos de implantação de sistema operacional de uma hierarquia de origem com suporte:  
 
 -   Pacotes e imagens do sistema operacional. O caminho de origem das imagens de inicialização é atualizado para o local de imagem padrão para o Windows AIK (Kit de Instalação Administrativa do Windows) no site de destino. Estes são os requisitos e as limitações para migrar pacotes e imagens do sistema operacional:  
 
@@ -142,9 +144,9 @@ Ao migrar de uma hierarquia de origem do System Center 2012 Configuration Manage
     > [!NOTE]  
     >  Quando você migra uma sequência de tarefas, o Configuration Manager pode migrar objetos que não são necessários na hierarquia de destino. Esses objetos incluem imagens de inicialização e pacotes de instalação de cliente do Configuration Manager 2007.  
 
--   Drivers e pacotes de driver.  
+-   Drivers e pacotes de driver. Quando você migra os pacotes de driver, a conta de computador do provedor de SMS na hierarquia de destino deve ter controle total para a origem do pacote.
 
-##  <a name="a-nameplanmigratecompliancesettingsa-plan-to-migrate-desired-configuration-management"></a><a name="Plan_Migrate_Compliance_settings"></a> Planejar a migração do gerenciamento de configuração desejado  
+##  <a name="Plan_Migrate_Compliance_settings"></a> Planejar a migração do gerenciamento de configuração desejado  
 É possível migrar itens de configuração e as linhas de base de configuração.  
 
 > [!NOTE]  
@@ -152,14 +154,14 @@ Ao migrar de uma hierarquia de origem do System Center 2012 Configuration Manage
 
 É possível importar Pacotes de configuração do Configuration Manager 2007. O processo de importação converte automaticamente os pacotes de configuração para serem compatíveis com o System Center Configuration Manager.  
 
-##  <a name="a-nameplanmigrateboundariesa-plan-to-migrate-boundaries"></a><a name="Plan_migrate_Boundaries"></a> Planejar a migração de limites  
+##  <a name="Plan_migrate_Boundaries"></a> Planejar a migração de limites  
  É possível migrar os limites entre hierarquias. Quando você migra limites do Configuration Manager 2007, cada limite do site de origem é migrado ao mesmo tempo e é adicionado a um novo grupo de limites que é criado na hierarquia de destino. Quando você migra limites de uma hierarquia do System Center 2012 Configuration Manager ou do System Center Configuration Manager, cada limite selecionado é adicionado a um novo grupo de limites na hierarquia de destino.  
 
  Cada grupo de limites criado automaticamente está habilitado para localização de conteúdo, mas não para atribuição de site. Isso impede que os limites sejam sobrepostos para a atribuição de site entre as hierarquias de origem e de destino. Quando você migra de um site de origem do Configuration Manager 2007, isso ajuda a impedir que novos clientes do Configuration Manager 2007 instalados sejam atribuídos incorretamente à hierarquia de destino. Por padrão, os clientes do System Center Configuration Manager não são atribuídos automaticamente a sites do Configuration Manager 2007.  
 
  Durante a migração, se você compartilhar um ponto de distribuição com a hierarquia de destino, todos os limites associados a essa distribuição serão automaticamente migrados para a hierarquia de destino. Na hierarquia de destino, a migração cria um novo grupo de limites somente leitura para cada ponto de distribuição compartilhado. Se você alterar os limites do ponto de distribuição na hierarquia de destino, o grupo de limites da hierarquia de destino será atualizado com essas alterações durante o ciclo seguinte de coleta de dados.  
 
-##  <a name="a-nameplanmigratereportsa-plan-to-migrate-reports"></a><a name="Plan_Migrate_reports"></a> Planejar a migração de relatórios  
+##  <a name="Plan_Migrate_reports"></a> Planejar a migração de relatórios  
 O Configuration Manager não dá suporte à migração de relatórios. Em vez disso, use o Construtor de Relatórios do SQL Server Reporting Services para exportar os relatórios da hierarquia de origem e, depois, importá-los na hierarquia de destino.  
 
 > [!NOTE]  
@@ -167,7 +169,7 @@ O Configuration Manager não dá suporte à migração de relatórios. Em vez di
 
 Para obter mais informações sobre relatórios, consulte [Relatórios no System Center Configuration Manager](../../core/servers/manage/reporting.md).  
 
-##  <a name="a-nameplanmigrateorgfoldersa-plan-to-migrate-organizational-and-search-folders"></a><a name="Plan_Migrate_Org_Folders"></a> Planejar a migração de pastas organizacionais e de pesquisa  
+##  <a name="Plan_Migrate_Org_Folders"></a> Planejar a migração de pastas organizacionais e de pesquisa  
  Você pode migrar pastas organizacionais e de pesquisa de uma hierarquia de origem com suporte para uma hierarquia de destino. Além disso, de uma hierarquia de origem do System Center 2012 Configuration Manager ou do System Center Configuration Manager, é possível migrar os critérios de uma pesquisa salva para uma hierarquia de destino.  
 
  Por padrão, o processo de migração mantém suas estruturas de pasta de pesquisa e pasta administrativa para os objetos e as coleções quando você realiza a migração. No entanto, no assistente para Criar Trabalho de Migração, na página **Configurações**, você pode configurar um trabalho de migração para que não migre a estrutura organizacional de objetos ao desmarcar a caixa de seleção dessa opção. As estruturas organizacionais das coleções são sempre mantidas.  
@@ -176,19 +178,14 @@ Para obter mais informações sobre relatórios, consulte [Relatórios no System
 
  Quando migra uma pesquisa salva de uma hierarquia de origem do System Center 2012 Configuration Manager ou do System Center Configuration Manager, você migra os critérios da pesquisa, e não as informações sobre os resultados da pesquisa. A migração de uma pesquisa salva não é aplicável de um site de origem do Configuration Manager 2007.  
 
-##  <a name="a-nameplanmigrateaia-plan-to-migrate-asset-intelligence-customizations"></a><a name="Plan_Migrate_AI"></a> Planejar a migração de personalizações do Asset Intelligence  
+##  <a name="Plan_Migrate_AI"></a> Planejar a migração de personalizações do Asset Intelligence  
  Você pode migrar personalizações do Asset Intelligence de uma hierarquia de origem com suporte para uma hierarquia de destino. Não há alterações significativas na estrutura das personalizações do Asset Intelligence entre o Configuration Manager 2007 e o System Center Configuration Manager.  
 
 > [!NOTE]  
 >  O System Center Configuration Manager não dá suporte à migração de objetos do Asset Intelligence de um site do Configuration Manager 2007 que estiver usando o Asset Intelligence Service 2.0 (AIS 2.0).  
 
-##  <a name="a-nameplanmigrateswmrulesa-plan-to-migrate-software-metering-rules-customizations"></a><a name="Plan_Migrate_SWM_Rules"></a> Planejar a migração de personalizações de regras de medição de software  
+##  <a name="Plan_Migrate_SWM_Rules"></a> Planejar a migração de personalizações de regras de medição de software  
  Não há alterações significativas na medição de software entre o Configuration Manager 2007 e o System Center Configuration Manager. Você pode migrar suas regras de medição de software de uma hierarquia de origem com suporte para uma hierarquia de destino.  
 
  Por padrão, as regras de medição de software que você migra para uma hierarquia de destino não são associadas a um site específico da hierarquia de destino e, em vez disso, são aplicadas a todos os clientes da hierarquia. Para aplicar uma regra de medição de software a clientes em um site específico, você deve editar a regra de medição depois que ela é migrada.  
-
-
-
-<!--HONumber=Jan17_HO2-->
-
 

@@ -16,10 +16,10 @@ author: Dougeby
 ms.author: dougeby
 manager: angrobe
 ms.translationtype: Human Translation
-ms.sourcegitcommit: dab5da5a4b5dfb3606a8a6bd0c70a0b21923fff9
-ms.openlocfilehash: 113fa73bf0bd1b3b8a4754eb1e96549c520d7995
+ms.sourcegitcommit: c6ee0ed635ab81b5e454e3cd85637ff3e20dbb34
+ms.openlocfilehash: 2f3d66362c49d28a52d7f9c535eb0b3b4cc4eaf7
 ms.contentlocale: pt-br
-ms.lasthandoff: 05/17/2017
+ms.lasthandoff: 06/08/2017
 
 
 ---
@@ -79,12 +79,70 @@ A partir do Configuration Manager versão 1702, você pode retornar à página a
 
  Para obter uma lista das etapas de sequência de tarefas disponíveis, consulte [Task sequence steps (Etapas da sequência de tarefas)](../understand/task-sequence-steps.md).  
 
+## <a name="configure-software-center-properties"></a>Configurar as propriedades do Centro de Software
+Use o procedimento a seguir para configurar os detalhes da sequência de tarefas exibida no Centro de Software. Esses detalhes são apenas para fins informativos.  
+1. No console do Configuration Manager, acesse **Biblioteca de Software** > **Sistemas Operacionais** > **Sequências de Tarefas**.
+2. Selecione a sequência de tarefas a ser editada e clique em **Propriedades**.
+3. Na guia **Geral**, as seguintes configurações do Centro de Software estão disponíveis:
+  - **Reinicialização Necessária**: permite que o usuário saiba se uma reinicialização é necessária durante a instalação.
+  - **Tamanho do download (MB)**: especifica quantos megabytes são exibidos no Centro de Software para a sequência de tarefas.  
+  - **Tempo de execução estimado (minutos)**: especifica o tempo de execução estimado em minutos exibido no Centro de Software para a sequência de tarefas.
+
+## <a name="configure-advanced-task-sequence-settings"></a>Definir as configurações da sequência de tarefas avançadas
+Use o procedimento a seguir para configurar os detalhes da sequência de tarefas exibida no Centro de Software. Esses detalhes são apenas para fins informativos.  
+1. No console do Configuration Manager, acesse **Biblioteca de Software** > **Sistemas Operacionais** > **Sequências de Tarefas**.
+2. Selecione a sequência de tarefas a ser editada e clique em **Propriedades**.
+3. Na guia **Avançado**, as seguintes configurações estão disponíveis:
+
+    - **Executar outro programa primeiro**    
+    Marque esta caixa de seleção para executar outro programa (em outro pacote) antes da sequência de tarefas ser executada. Por padrão, essa caixa de seleção está desmarcada. O programa que você especificar para executar primeiro não precisa ser anunciado separadamente.
+
+        > [!IMPORTANT]     
+        Esta configuração aplica-se apenas às sequências de tarefas que são executadas no sistema operacional completo. O Configuration Manager ignorará esta configuração se a sequência de tarefas for iniciada usando o PXE ou a mídia de inicialização.
+
+    - **Pacote**     
+        Quando você seleciona **Executar outro programa primeiro**, digite ou navegue para o pacote que contém o programa que deve ser executado antes dessa sequência de tarefas.
+
+    - **Programa**     
+    Quando você seleciona **Executar outro programa primeiro**, selecione o programa que deve ser executado antes dessa sequência de tarefas na lista suspensa **Programa**.
+
+        > [!NOTE]    
+        > Se o programa selecionado não for executado em um cliente, a sequência de tarefas não será executada. Se o programa selecionado for executado com êxito, ele não será executado novamente, mesmo se a sequência de tarefas for executada novamente no mesmo cliente.
+ 
+    - **Desabilitar esta sequência de tarefas nos computadores onde está implantada**    
+    Se você selecionar essa opção, todas as implantações que contêm essa sequência de tarefas serão temporariamente desabilitadas. A sequência de tarefas é removida da lista de anúncios disponíveis para execução e não será executada até que ela tenha sido habilitada novamente. Por padrão, esta opção está desmarcada.
+
+    - **Tempo de execução máximo permitido**    
+    Especifica o tempo máximo (em minutos) que é esperado para executar a sequência de tarefas no computador de destino. Você deve usar um número inteiro igual ou maior que zero. Por padrão, esse valor é definido como 120 minutos.
+
+        > [!IMPORTANT]    
+        > Se você estiver usando janelas de manutenção para a coleção em que essa sequência de tarefas é executada, poderá ocorrer um conflito se o **Tempo de execução máximo permitido** for maior do que o tempo da janela de manutenção agendada. Se o tempo de execução máximo for definido como **0**, a sequência de tarefas será iniciada durante a janela de manutenção e continuará sendo executado até que seja concluído ou que ocorra uma falha após a janela de manutenção ser fechada. Como resultado, as sequências de tarefas com um tempo de execução máximo definido como **0** pode ser executado após o término de suas janelas de manutenção. Se você definir o tempo de execução máximo para um período específico (ou seja, não definido como **0**) que exceda a duração de qualquer janela de manutenção disponível, essa sequência de tarefas não será executada. Para obter mais informações, consulte [Como usar janelas de manutenção](/sccm/core/clients/manage/collections/use-maintenance-windows).
+ 
+        Se o valor for definido como **0**, o Configuration Manager avaliará o tempo de execução máximo permitido para **12** horas (720 minutos) para monitoramento do progresso. No entanto, a sequência de tarefas será iniciada, desde que a duração da contagem regressiva não exceda o valor da janela de manutenção.
+
+    > [!NOTE]    
+    > Se o tempo de execução máximo for atingido, o Configuration Manager interromperá a sequência de tarefas se ela estiver definida para ser executada com direitos administrativos e a configuração para permitir que os usuários interajam com esse programa não estiver selecionada. Se a sequência de tarefas não for interrompida, o Configuration Manager parará de monitorar a sequência de tarefas após o tempo de execução máximo permitido ser atingido. 
+
+    - **Usar uma imagem de inicialização**   
+        Habilite esta opção para usar a imagem de inicialização selecionada quando a sequência de tarefas for executada. 
+
+        Clique em **Procurar** para selecionar uma imagem de inicialização diferente. Desmarque esta opção para desabilitar o uso da imagem de inicialização selecionada quando a sequência de tarefas for executada.
+
+    - **Essa sequência de tarefas pode ser executada em qualquer plataforma**     
+        Se você selecionar essa opção, o Configuration Manager não verificará o tipo de plataforma do computador de destino quando a sequência de tarefas for implantada. Essa opção é habilitada por padrão.
+
+    - **Essa sequência de tarefas pode ser executada somente nas plataformas clientes especificadas**    
+        Esta opção especifica os processadores, os sistemas operacionais e os service packs em que essa sequência de tarefas pode ser executada. Quando você seleciona essa opção, pelo menos uma plataforma também deve ser selecionada na lista. Por padrão, nenhuma plataforma é selecionada. O Configuration Manager usa essas informações quando avalia quais computadores de destino em uma coleção recebem a sequência de tarefas implantada.
+
+        > [!NOTE]    
+        > Quando uma sequência de tarefas é executada da mídia de inicialização ou pela inicialização de PXE, essa opção é ignorada e a sequência de tarefas é executada como se a opção **Este programa pode ser executado em qualquer plataforma** estiver selecionada.
+
 ## <a name="configure-high-impact-task-sequence-settings"></a>Definir configurações da sequência de tarefas de alto impacto
 A partir do Configuration Manager versão 1702, você pode definir uma sequência de tarefas como alto impacto e personalizar as mensagens recebidas pelos usuários quando eles executam a sequência de tarefas.
 
 ### <a name="set-a-task-sequence-as-a-high-impact-task-sequence"></a>Definir uma sequência de tarefas como uma sequência de tarefas de alto impacto
 Use o procedimento a seguir para definir uma sequência de tarefas como de alto impacto.
-> [!NOTE]
+> [!NOTE]    
 > Qualquer sequência de tarefas que atender a determinadas condições será automaticamente definida como de alto impacto. Para obter detalhes, consulte [Gerenciar implantações de alto risco](http://docs.microsoft.com/sccm/protect/understand/settings-to-manage-high-risk-deployments).
 
 1. No console do Configuration Manager, acesse **Biblioteca de Software** > **Sistemas Operacionais** > **Sequências de Tarefas**.
@@ -96,7 +154,7 @@ Use o procedimento a seguir para criar uma notificação personalizada para impl
 1. No console do Configuration Manager, acesse **Biblioteca de Software** > **Sistemas Operacionais** > **Sequências de Tarefas**.
 2. Selecione a sequência de tarefas a ser editada e clique em **Propriedades**.
 3. Na guia **Notificação do Usuário**, selecione **Usar texto personalizado**.
->  [!NOTE]
+>  [!NOTE]    
 >  É possível definir o texto de notificação do usuário apenas quando **Essa é uma sequência de tarefas de alto impacto** está selecionado.
 
 4. Defina as seguintes configurações (máximo de 255 caracteres para cada caixa de texto):
@@ -107,23 +165,15 @@ Use o procedimento a seguir para criar uma notificação personalizada para impl
   - 1º de caixa de texto: especifica o corpo do texto principal, geralmente contendo instruções para o usuário. Por exemplo, na notificação de usuário padrão, esta seção contém algo como "Atualizar o sistema operacional levará tempo e o computador poderá ser reiniciado várias vezes".
   - 2ª caixa de texto: especifica o texto em negrito abaixo do corpo do texto principal. Por exemplo, na notificação de usuário padrão, esta seção contém algo como “Essa atualização in-loco instala o novo sistema operacional e migra automaticamente seus aplicativos, dados e configurações”.
   - 3ª caixa de texto: especifica a última linha de texto sob o texto em negrito. Por exemplo, na notificação do usuário padrão, essa seção contém algo como “Clique em Instalar para começar. Caso contrário, clique em Cancelar”.   
+    
+Digamos que você defina a seguinte notificação personalizada nas propriedades.
 
-  Digamos que você defina a seguinte notificação personalizada nas propriedades.
+![Notificação personalizado para uma sequência de tarefas](..\media\user-notification.png)
 
-    ![Notificação personalizado para uma sequência de tarefas](..\media\user-notification.png)
+A mensagem de notificação a seguir será exibida quando o usuário final abrir a instalação do Centro de Software.
 
-    A mensagem de notificação a seguir será exibida quando o usuário final abrir a instalação do Centro de Software.
+![Notificação personalizado para uma sequência de tarefas](..\media\user-notification-enduser.png)
 
-    ![Notificação personalizado para uma sequência de tarefas](..\media\user-notification-enduser.png)
-
-### <a name="configure-software-center-properties"></a>Configurar as propriedades do Centro de Software
-Use o procedimento a seguir para configurar os detalhes da sequência de tarefas exibida no Centro de Software. Esses detalhes são apenas para fins informativos.  
-1. No console do Configuration Manager, acesse **Biblioteca de Software** > **Sistemas Operacionais** > **Sequências de Tarefas**.
-2. Selecione a sequência de tarefas a ser editada e clique em **Propriedades**.
-3. Na guia **Geral**, as seguintes configurações do Centro de Software estão disponíveis:
-  - **Reinicialização Necessária**: permite que o usuário saiba se uma reinicialização é necessária durante a instalação.
-  - **Tamanho do download (MB)**: especifica quantos megabytes são exibidos no Centro de Software para a sequência de tarefas.  
-  - **Tempo de execução estimado (minutos)**: especifica o tempo de execução estimado em minutos exibido no Centro de Software para a sequência de tarefas.
 
 ##  <a name="BKMK_DistributeTS"></a> Distribuir o conteúdo referenciado por uma sequência de tarefas  
  Para os clientes executarem uma sequência de tarefas que faz referência ao conteúdo, distribua esse conteúdo para pontos de distribuição. A qualquer momento você pode selecionar uma sequência de tarefas e distribuir seu conteúdo para criar uma nova lista de pacotes de referência para distribuição. Se você fizer alterações à sequência de tarefas com o conteúdo atualizado, será necessário redistribuí-lo antes de disponibilizá-lo para os clientes. Use o procedimento a seguir para distribuir o conteúdo que é referenciado por uma sequência de tarefas.  
@@ -352,19 +402,22 @@ Use o procedimento a seguir para configurar os detalhes da sequência de tarefas
  Após importar a sequência de tarefas, edite-a para especificar senhas que estavam na sequência de tarefas original. Por motivos de segurança, as senhas não são exportadas.  
 
 ##  <a name="BKMK_CreateTSVariables"></a> Criar variáveis de sequência de tarefas em computadores e coleções  
- Você pode definir variáveis de sequência de tarefas personalizadas para computadores e coleções. As variáveis definidas para um computador são chamadas de variáveis de sequência de tarefas por computador. As variáveis definidas para uma coleção são chamadas de variáveis de sequência de tarefas por coleção. Se houver um conflito, as variáveis por computador prevalecerão sobre as variáveis por coleção. Isso significa que as variáveis de sequência de tarefas associadas a um computador específico possuem prioridade sobre variáveis atribuídas à coleção que contém o computador.  
+Você pode definir variáveis de sequência de tarefas personalizadas para computadores e coleções. As variáveis definidas para um computador são chamadas de variáveis de sequência de tarefas por computador. As variáveis definidas para uma coleção são chamadas de variáveis de sequência de tarefas por coleção. Se houver um conflito, as variáveis por computador prevalecerão sobre as variáveis por coleção. Isso significa que as variáveis de sequência de tarefas associadas a um computador específico possuem prioridade sobre variáveis atribuídas à coleção que contém o computador.  
 
- Por exemplo, se a coleção ABC tiver uma variável atribuída a ela e o computador XYZ, que é um membro da coleção ABC, tiver uma variável com o mesmo nome atribuída a ele, a variável atribuída ao computador XYZ terá prioridade sobre a variável atribuída à coleção ABC.  
+Por exemplo, se a coleção ABC tiver uma variável atribuída a ela e o computador XYZ, que é um membro da coleção ABC, tiver uma variável com o mesmo nome atribuída a ele, a variável atribuída ao computador XYZ terá prioridade sobre a variável atribuída à coleção ABC.  
 
- É possível ocultar as variáveis por computador e por coleção de forma que elas não fiquem visíveis no console do Configuration Manager. Se você não deseja mais que essas variáveis fiquem ocultas, deve excluí-las e redefini-las sem selecionar a opção para ocultá-las. Quando você usa a opção **Não exibir esse valor no console do Configuration Manager**, o valor da variável não é exibido, mas pode ainda ser usado pela sequência de tarefas quando for executada.  
+É possível ocultar as variáveis por computador e por coleção de forma que elas não fiquem visíveis no console do Configuration Manager. Se você não deseja mais que essas variáveis fiquem ocultas, deve excluí-las e redefini-las sem selecionar a opção para ocultá-las. Quando você usa a opção **Não exibir esse valor no console do Configuration Manager**, o valor da variável não é exibido no console, mas pode ainda ser usado pela sequência de tarefas quando for executada.  
 
- É possível gerenciar variáveis por computador em um site primário ou em um site de administração central. O Configuration Manager não dá suporte a mais de 1.000 variáveis atribuídas para um computador.  
+> [!WARNING]    
+> A configuração **Não exibir esse valor no console do Configuration Manager** aplica-se ao console do Configuration Manager, mas os valores das variáveis ainda são exibidos no arquivo de log da sequência de tarefas (SMSTS.LOG). 
 
-> [!WARNING]  
+É possível gerenciar variáveis por computador em um site primário ou em um site de administração central. O Configuration Manager não dá suporte a mais de 1.000 variáveis atribuídas para um computador.  
+
+> [!IMPORTANT]  
 >  Ao usar variáveis por coleção para sequências de tarefas, considere o seguinte:  
 >   
->  -   Como as alterações nas coleções são sempre replicadas por meio da hierarquia, quaisquer alterações feitas nas variáveis da coleção serão aplicadas não somente aos membros do site atual, mas a todos os membros da coleção, por meio da hierarquia.  
-> -   Quando você exclui uma coleção, essa ação também exclui as variáveis da sequência de tarefas que estão configuradas para a coleção.  
+> - Como as alterações nas coleções são sempre replicadas por meio da hierarquia, quaisquer alterações feitas nas variáveis da coleção serão aplicadas não somente aos membros do site atual, mas a todos os membros da coleção, por meio da hierarquia.  
+> - Quando você exclui uma coleção, essa ação também exclui as variáveis da sequência de tarefas que estão configuradas para a coleção.  
 
  Use os procedimentos a seguir para criar variáveis de sequência de tarefas para um computador ou uma coleção.  
 
@@ -397,7 +450,7 @@ Use o procedimento a seguir para configurar os detalhes da sequência de tarefas
 6.  Depois de adicionar todas as variáveis à coleção, clique em **OK**.  
 
 ##  <a name="BKMK_AdditionalActionsTS"></a> Ações adicionais para gerenciar sequências de tarefas  
- Você pode gerenciar sequências de tarefas usando ações adicionais ao selecionar a sequência de tarefas, usando o procedimento a seguir.  
+ Você pode gerenciar sequências de tarefas usando ações adicionais ao selecionar uma sequência de tarefas.  
 
 #### <a name="to-select-a-task-sequence-to-manage"></a>Para selecionar uma sequência de tarefas a ser gerenciada  
 
@@ -416,7 +469,6 @@ Use o procedimento a seguir para configurar os detalhes da sequência de tarefas
 |**Habilitar**|Habilita a sequência de tarefas, de forma que ela possa ser executada. Não é necessário reimplantar uma sequência de tarefas implantada após ser habilitada.|  
 |**Criar Arquivo de Conteúdo de Pré-teste**|Inicia o Assistente para Criar Arquivo de Conteúdo de Pré-Teste para criar um conteúdo de pré-teste de sequência de tarefas. Para obter informações sobre como criar um arquivo de conteúdo pré-teste, consulte [Prestage content (Conteúdo pré-teste)](../../core/servers/deploy/configure/deploy-and-manage-content.md#a-namebkmkprestagea-use-prestaged-content).|  
 |**Moverr**|Move a sequência de tarefas selecionada para outra pasta.|  
-|**Propriedades**|Abre a caixa de diálogo **Propriedades** para a sequência da tarefas selecionada. Use essa caixa de diálogo para alterar o comportamento do objeto de sequência de tarefas. No entanto, você não pode alterar as etapas da sequência de tarefas usando essa caixa de diálogo.|  
 
 ## <a name="next-steps"></a>Próximas etapas
 [Cenários para implantar sistemas operacionais corporativos](scenarios-to-deploy-enterprise-operating-systems.md)

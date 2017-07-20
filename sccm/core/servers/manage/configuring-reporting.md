@@ -15,9 +15,11 @@ caps.latest.revision: 6
 author: Dougeby
 ms.author: dougeby
 manager: angrobe
-translationtype: Human Translation
-ms.sourcegitcommit: 10b1010ccbf3889c58c55b87e70b354559243c90
-ms.openlocfilehash: aed95333b6509b0aa7061f23969381f1ce8aff7f
+ms.translationtype: Human Translation
+ms.sourcegitcommit: f62d969dd49fb00b688602128df74b28ff551135
+ms.openlocfilehash: 7ae6bac23e585d6f61aff0f3155d050f1b537620
+ms.contentlocale: pt-br
+ms.lasthandoff: 06/07/2017
 
 
 ---
@@ -33,7 +35,7 @@ Antes de criar, modificar e executar relatórios no console do System Center Con
 
 -   [Planejamento para emissão de relatórios no System Center Configuration Manager](../../../core/servers/manage/planning-for-reporting.md)  
 
-##  <a name="a-namebkmksqlreportingservicesa-sql-server-reporting-services"></a><a name="BKMK_SQLReportingServices"></a> SQL Server Reporting Services  
+##  <a name="BKMK_SQLReportingServices"></a> SQL Server Reporting Services  
  O SQL Server Reporting Services é uma plataforma de relatórios baseada em servidor que oferece funcionalidade de relatório abrangente para uma variedade de fontes de dados. O ponto do Reporting Services no Configuration Manager se comunica com o SQL Server Reporting Services para copiar relatórios do Configuration Manager para uma pasta de relatórios específica, para definir configurações do Reporting Services, bem como definir suas configurações de segurança. O Reporting Services se conecta ao banco de dados do site do Configuration Manager para recuperar dados retornados ao executar relatórios.  
 
  Antes de instalar o ponto do Reporting Services em um site do Configuration Manager, você precisa instalar e configurar o SQL Server Reporting Services no sistema de sites que hospeda a função de sistema de sites do ponto do Reporting Services. Para obter informações sobre como instalar o Reporting Services, consulte a [TechNet Library do SQL Server](http://go.microsoft.com/fwlink/p/?LinkId=266389).  
@@ -59,7 +61,7 @@ Antes de criar, modificar e executar relatórios no console do System Center Con
 
 7.  Clique em **Sair** para fechar o Reporting Services Configuration Manager.  
 
-##  <a name="a-namebkmkreportbuilder3a-configure-reporting-to-use-report-builder-30"></a><a name="BKMK_ReportBuilder3"></a> Configurar relatórios para usar o Construtor de Relatórios 3.0  
+##  <a name="BKMK_ReportBuilder3"></a> Configurar relatórios para usar o Construtor de Relatórios 3.0  
 
 #### <a name="to-change-the-report-builder-manifest-name-to-report-builder-30"></a>Para alterar o nome manifesto do Construtor de Relatórios para Construtor de Relatórios 3.0  
 
@@ -73,14 +75,17 @@ Antes de criar, modificar e executar relatórios no console do System Center Con
 
 5.  Feche o Editor do Registro do Windows.  
 
-##  <a name="a-namebkmkinstallreportingservicespointa-install-a-reporting-services-point"></a><a name="BKMK_InstallReportingServicesPoint"></a> Instalar um ponto do Reporting Services  
+##  <a name="BKMK_InstallReportingServicesPoint"></a> Instalar um ponto do Reporting Services  
  O ponto do Reporting Services deve ser instalado em um site para gerenciar relatórios no site. O ponto do Reporting Services copia pastas de relatórios e relatórios no SQL Server Reporting Services, aplica a política de segurança nos relatórios e pastas e define as configurações no Reporting Services. É necessário configurar um ponto do Reporting Services antes que os relatórios sejam exibidos no console do Configuration Manager e antes de gerenciar os relatórios no Configuration Manager. O ponto do Reporting Services é uma função do sistema de site que deve ser configurada em um servidor com o Microsoft SQL Server Reporting Services instalado e em execução. Para obter mais informações sobre os pré-requisitos, consulte [Pré-requisitos para relatórios](prerequisites-for-reporting.md).  
 
 > [!IMPORTANT]  
 >  Ao selecionar um site para instalar o ponto do Reporting Services, é importante lembrar que os usuários que acessarão os relatórios devem estar no mesmo escopo de segurança do site onde o ponto do Reporting Services está instalado.  
 
-> [!IMPORTANT]  
+> [!NOTE]  
 >  Após instalar um ponto do Reporting Services em um sistema de site, não altere a URL do servidor de relatório. Por exemplo, se você criar o ponto do Reporting Services e, no Reporting Services Configuration Manager, modificar a URL do servidor de relatório, o console do Configuration Manager continuará usando a URL antiga e você não poderá executar, editar nem criar relatórios por meio do console. Quando você tiver que alterar o servidor de relatório da URL, remova o ponto do Reporting Services, altere a URL e reinstale o ponto do Reporting Services.  
+
+> [!IMPORTANT]    
+> Quando você instala um ponto do Reporting Services, deve especificar uma conta do ponto do Reporting Services. Posteriormente, quando os usuários de um domínio diferente executarem um relatório, o relatório não funcionará a menos que haja uma relação de confiança bidirecional estabelecida entre os domínios.
 
  Use o procedimento a seguir para instalar o ponto do Reporting Services.  
 
@@ -126,7 +131,7 @@ Antes de criar, modificar e executar relatórios no console do System Center Con
 
     -   **Conta do ponto do Reporting Services**: clique em **Definir** e selecione uma conta a ser usada quando o SQL Server Reporting Services no ponto do Reporting Services se conectar ao banco de dados do site do Configuration Manager para recuperar os dados exibidos em um relatório. Selecione **Conta existente** para especificar uma conta de usuário do Windows que tenha sido configurada anteriormente como uma conta do Configuration Manager, ou selecione **Nova conta** para especificar uma conta de usuário do Windows que não esteja configurada como uma conta do Configuration Manager. O Configuration Manager concede automaticamente o acesso do usuário especificado ao banco de dados do site. O usuário será exibido na subpasta **Contas** do nó **Segurança** no espaço de trabalho **Administração** com o nome de conta **Ponto do Reporting Services do ConfigMgr** .  
 
-         A conta que executa o Reporting Services deve pertencer ao grupo de segurança local de domínio **Grupo de Acesso de Autorização do Windows**e ter a permissão **Ler tokenGroupsGlobalAndUniversal** configurada como **Permitir**.  
+         A conta que executa o Reporting Services deve pertencer ao grupo de segurança local de domínio **Grupo de Acesso de Autorização do Windows**e ter a permissão **Ler tokenGroupsGlobalAndUniversal** configurada como **Permitir**. Deve haver uma relação de confiança bidirecional estabelecida para usuários de um domínio diferente do que a conta do ponto do Reporting Services para executar com sucesso os relatórios.
 
          A conta de usuário e a senha especificadas do Windows serão criptografadas e armazenadas no banco de dados do Reporting Services. O Reporting Services recupera os dados para os relatórios a partir do banco de dados do site usando essa conta e senha.  
 
@@ -142,7 +147,7 @@ Antes de criar, modificar e executar relatórios no console do System Center Con
     > [!NOTE]  
     >  Quando as pastas de relatórios forem criadas e os relatórios forem copiados para o servidor de relatórios, o Configuration Manager determinará o idioma apropriado para os objetos. Se o pacote do idioma associado estiver instalado no site, o Configuration Manager criará os objetos no mesmo idioma em que o sistema operacional em execução no servidor de relatórios do site. Se o idioma não estiver disponível, os relatórios serão criados e exibidos em inglês. Ao instalar um ponto do Reporting Services em um site sem pacotes de idiomas, os relatórios são instalados em inglês. Se você instalar um pacote de idiomas após instalar o ponto do Reporting Services, será necessário desinstalar e reinstalar o ponto do Reporting Services para que os relatórios fiquem disponíveis no idioma do pacote de idiomas apropriado. Para obter mais informações sobre pacotes de idiomas, consulte [Pacotes de idiomas no System Center Configuration Manager](../deploy/install/language-packs.md).  
 
-###  <a name="a-namebkmkfileinstallationandsecuritya-file-installation-and-report-folder-security-rights"></a><a name="BKMK_FileInstallationAndSecurity"></a> Instalação de arquivos e direitos de segurança da pasta de relatórios  
+###  <a name="BKMK_FileInstallationAndSecurity"></a> Instalação de arquivos e direitos de segurança da pasta de relatórios  
  O Configuration Manager realiza as seguintes ações para instalar o ponto do Reporting Services e configurar o Reporting Services:  
 
 > [!IMPORTANT]  
@@ -172,14 +177,14 @@ Antes de criar, modificar e executar relatórios no console do System Center Con
 
      O Configuration Manager se conecta ao Reporting Services e define as permissões para usuários nas pastas raiz do Configuration Manager e do Reporting Services e pastas de relatórios específicas. Após a instalação inicial do ponto do Reporting Services, o Configuration Manager se conecta ao Reporting Services em um intervalo de 10 minutos para verificar se os direitos de usuário configurados nas pastas de relatórios são os direitos associados definidos para usuários do Configuration Manager. Quando usuários são adicionados ou direitos de usuários são modificados na pasta de relatórios usando o Gerenciador de Relatórios do Reporting Services, o Configuration Manager substitui essas alterações usando as atribuições baseadas em funções armazenadas no banco de dados do site. O Configuration Manager também remove usuários que não têm direitos de gerar relatórios no Configuration Manager.  
 
-##  <a name="a-namebkmksecurityrolesa-reporting-services-security-roles-for-configuration-manager"></a><a name="BKMK_SecurityRoles"></a> Funções de segurança do Reporting Services para o Configuration Manager  
+##  <a name="BKMK_SecurityRoles"></a> Funções de segurança do Reporting Services para o Configuration Manager  
  Quando o Configuration Manager instala o ponto do Reporting Services, ele adiciona as seguintes funções de segurança no Reporting Services:  
 
 -   **Usuários de Relatório do ConfigMgr**: os usuários que recebem essa função de segurança podem apenas executar relatórios do Configuration Manager.  
 
 -   **Administradores de Relatório do ConfigMgr**: os usuários que recebem essa função de segurança podem executar todas as tarefas relacionadas a relatórios no Configuration Manager.  
 
-##  <a name="a-namebkmkverifyreportingservicespointinstallationa-verify-the-reporting-services-point-installation"></a><a name="BKMK_VerifyReportingServicesPointInstallation"></a> Verifique a instalação do ponto do Reporting Services  
+##  <a name="BKMK_VerifyReportingServicesPointInstallation"></a> Verifique a instalação do ponto do Reporting Services  
  Após adicionar a função do site do ponto do Reporting Services, você poderá verificar a instalação observando mensagens de status e entradas de arquivo de log específicos. Use o procedimento a seguir para verificar se a instalação do ponto do Reporting Services foi bem-sucedida.  
 
 > [!WARNING]  
@@ -203,7 +208,7 @@ Antes de criar, modificar e executar relatórios no console do System Center Con
 
 7.  Abra o Srsrp.log e percorra o arquivo de log começando pela hora em que o ponto do Reporting Services foi instalado com êxito. Verifique se as pastas de relatórios foram criadas, os relatórios implantados e a política de segurança de cada pasta confirmada. Procure **Verificado com êxito que o Serviço web SRS está adequado no servidor** após a última linha de confirmações de política de segurança.  
 
-##  <a name="a-namebkmkcertificatea-configure-a-self-signed-certificate-for-configuration-manager-console-computers"></a><a name="BKMK_Certificate"></a> Configurar um certificado autoassinado para computadores de console do Configuration Manager  
+##  <a name="BKMK_Certificate"></a> Configurar um certificado autoassinado para computadores de console do Configuration Manager  
  Há muitas opções para a criação de relatórios do SQL Server Reporting Services. Quando você cria ou edita relatórios no console do Configuration Manager, o Configuration Manager abre o Construtor de Relatórios para usá-lo como ambiente de criação. Independentemente da forma como você cria seus relatórios do Configuration Manager, um certificado autoassinado é necessário para autenticação do servidor no servidor de banco de dados do site. O Configuration Manager instala automaticamente o certificado no servidor do site e nos computadores com o Provedor de SMS instalado. Portanto, você poderá criar ou editar relatórios no console do Configuration Manager quando ele for executado de um desses computadores. No entanto, quando cria ou modifica relatórios em um console do Configuration Manager instalado em um computador diferente, você precisa exportar o certificado do servidor do site e adicioná-lo ao repositório de certificados **Pessoas Confiáveis** do computador que executa o console do Configuration Manager.  
 
 > [!NOTE]  
@@ -243,7 +248,7 @@ Antes de criar, modificar e executar relatórios no console do System Center Con
 
     5.  Clique em **Concluir** para fechar o assistente e concluir a configuração do certificado no computador.  
 
-##  <a name="a-namebkmkmodifyreportingservicespointa-modify-reporting-services-point-settings"></a><a name="BKMK_ModifyReportingServicesPoint"></a> Modificar as configurações de ponto do Reporting Services  
+##  <a name="BKMK_ModifyReportingServicesPoint"></a> Modificar as configurações de ponto do Reporting Services  
  Após a instalação do ponto do Reporting Services, você pode modificar as configurações de conexão do banco de dados do site e de autenticação nas propriedades do ponto do Reporting Services. Use o procedimento a seguir para modificar as configurações do ponto do Reporting Services.  
 
 #### <a name="to-modify-reporting-services-point-settings"></a>Para modificar as configurações do ponto do Reporting Services  
@@ -280,7 +285,7 @@ Antes de criar, modificar e executar relatórios no console do System Center Con
 ## <a name="upgrading-sql-server"></a>Atualizando o SQL Server  
  Após atualizar o SQL Server e o SQL Server Reporting Services usado como fonte de dados para um ponto do Reporting Services, talvez você veja alguns erros ao executar ou editar relatórios no console do Configuration Manager. Para que o relatório seja executado adequadamente no console do Configuration Manager, é necessário remover a função do sistema de sites do ponto do Reporting Services para o site e reinstalá-la. No entanto, após a atualização você poderá continuar executando e editando relatórios com êxito em um navegador da Internet.  
 
-##  <a name="a-namebkmkconfigurereportoptionsa-configure-report-options"></a><a name="BKMK_ConfigureReportOptions"></a> Configurar opções de relatório  
+##  <a name="BKMK_ConfigureReportOptions"></a> Configurar opções de relatório  
  Use as opções de relatório de um site do Configuration Manager para selecionar o ponto do Reporting Services padrão que será usado para gerenciar seus relatórios. Embora você possa ter mais de um ponto do Reporting Services em um site, somente o servidor de relatório padrão selecionado nas opções de relatório será usado para gerenciar relatórios. Use o procedimento a seguir para configurar as opções de relatório para o seu site.  
 
 #### <a name="to-configure-report-options"></a>Para configurar as opções de relatório  
@@ -295,9 +300,4 @@ Antes de criar, modificar e executar relatórios no console do System Center Con
 
 ## <a name="next-steps"></a>Próximas etapas
 [Operações e manutenção de relatórios](operations-and-maintenance-for-reporting.md)
-
-
-
-<!--HONumber=Dec16_HO3-->
-
 

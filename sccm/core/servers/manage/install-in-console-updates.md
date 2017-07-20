@@ -2,7 +2,7 @@
 title: "Atualizações no console | Microsoft Docs"
 description: "O System Center Configuration Manager sincroniza com a nuvem da Microsoft para obter atualizações que você pode instalar no console."
 ms.custom: na
-ms.date: 4/7/2017
+ms.date: 06/13/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
@@ -16,10 +16,10 @@ author: Brenduns
 ms.author: brenduns
 manager: angrobe
 ms.translationtype: Human Translation
-ms.sourcegitcommit: d94acac84f052a01de9d9c9f65f237c0006c45b8
-ms.openlocfilehash: 29a55948a1897e1345ba14ec685b9288a844feaa
+ms.sourcegitcommit: 3619a73d3a39659de927e1711a7ec81de9918064
+ms.openlocfilehash: 34ddb646137aaf1160d850ba7c1e0109f467225d
 ms.contentlocale: pt-br
-ms.lasthandoff: 05/17/2017
+ms.lasthandoff: 06/13/2017
 
 
 ---
@@ -36,10 +36,11 @@ Somente atualizações que se aplicam à sua infraestrutura e versão são baixa
 
      Por padrão, o Configuration Manager verifica se há novas atualizações a cada 24 horas. Você também pode verificar imediatamente se há atualizações escolhendo **Verificar Atualizações** no nó **Administração** > **Atualizações e Manutenção** do console do Configuration Manager. (Antes da versão 1702, este nó ficava em **Administração** > **Serviços de Nuvem**.)
 
--   No **modo offline**, o ponto de conexão de serviço não se conecta ao serviço de nuvem da Microsoft. Você deve manualmente [usar a Ferramenta de Conexão de Serviço para o System Center Configuration Manager](../../../core/servers/manage/use-the-service-connection-tool.md) para baixar e importar as atualizações disponíveis.  
+-   No **modo offline**, o ponto de conexão de serviço não se conecta ao serviço de nuvem da Microsoft. Para baixar e importar as atualizações disponíveis, [use a Ferramenta de Conexão de Serviço para o System Center Configuration Manager](../../../core/servers/manage/use-the-service-connection-tool.md).  
 
 > [!NOTE]  
->  Além das atualizações que você obtém ao realizar a sincronização com o serviço de nuvem da Microsoft, correções fora de banda instaladas usando a [Ferramenta de Registro de Atualização](http://technet.microsoft.com/library/mt691544.aspx) também são importadas para seu console, em que você pode selecioná-las para instalação.  
+>   Você pode importar correções fora da banda para o console. Para fazer isso, use a [Ferramenta de registro de atualização](/sccm/core/servers/manage/use-the-update-registration-tool-to-import-hotfixes). Essas correções fora de banda complementam as atualizações que você obtém quando sincroniza com o serviço Microsoft Cloud.
+
 
 Após a sincronização das atualizações, você pode exibi-las no console do Configuration Manager indo até o nó **Administração** > **Atualizações e Manutenção**:  
 
@@ -62,13 +63,13 @@ Para entender melhor o que acontece quando as atualizações são baixadas, cons
 -   [Fluxograma — Replicação de atualização para o System Center Configuration Manager](../../../core/servers/manage/update-replication-flowchart.md)  
 
 ## <a name="assign-permissions-to-view-and-manage-updates-and-features"></a>Atribuir permissões para exibir e gerenciar atualizações e recursos
-Para exibir as atualizações no console, um usuário deve possuir uma função de segurança de administração baseada em função que inclua a classe de segurança chamada **Pacotes de atualização**. Essa classe concede acesso para exibir e gerenciar as atualizações no console do Configuration Manager.    
+Para exibir as atualizações no console, um usuário deve ter uma função de segurança de administração baseada em função que inclua a classe de segurança **Pacotes de atualização**. Essa classe concede acesso para exibir e gerenciar as atualizações no console do Configuration Manager.    
 
 **Sobre a classe de Pacotes de atualização:**  
 Por padrão, os **Pacotes de atualização** (SMS_CM_Updatepackages) faz parte das seguintes funções de segurança internas com as permissões listadas:
  -  **Administrador Completo** com permissões para **Modificar** e **Ler** :
-    -   Um usuário com essa função de segurança e acesso ao escopo de segurança **Tudo** pode exibir atualizações, instalar atualizações e habilitar recursos durante a instalação, além de habilitar recursos individuais após a atualização ter sido instalada.
-    - Um usuário com essa função de segurança e acesso ao escopo de segurança **Padrão** pode exibir atualizações, instalar atualizações e habilitar recursos durante a instalação, além de exibir recursos após uma atualização ser instalada. Mas esse usuário não pode habilitar os recursos depois que a atualização está instalada.
+    -   Um usuário com essa função de segurança e acesso ao escopo de segurança **Tudo** pode exibir e instalar atualizações. O usuário também pode habilitar recursos durante a instalação e habilitar recursos individuais após a atualização ser instalada.
+    - Um usuário com essa função de segurança e acesso ao escopo de segurança **Padrão** pode exibir e instalar atualizações. O usuário também pode habilitar recursos durante a instalação e exibir recursos após uma atualização ser instalada. Mas esse usuário não pode habilitar os recursos depois que a atualização está instalada.
 
 - **Analista somente leitura** com permissão para **Ler** :
   -  Um usuário com essa função de segurança e acesso ao escopo **Padrão** pode exibir atualizações, mas não instalá-las. Esse usuário também pode exibir recursos após uma atualização ter sido instalada, mas não pode habilitá-las.
@@ -87,9 +88,6 @@ Por padrão, os **Pacotes de atualização** (SMS_CM_Updatepackages) faz parte d
 
 
 
-
-
-
 ##  <a name="bkmk_beforeinstall"></a> Antes de instalar uma atualização no console  
  Examine as etapas a seguir antes de instalar atualizações de dentro do console do Configuration Manager.  
 
@@ -102,49 +100,16 @@ Examine a lista de verificação de atualização aplicável de ações a serem 
 
 - Atualizar para a 1702 da 1606 ou da 1610: consulte [Lista de verificação para instalar a atualização 1702](../../../core/servers/manage/checklist-for-installing-update-1702.md).
 
-###  <a name="bkmk_step2"></a> Etapa 2: Testar a atualização do banco de dados antes de instalar uma atualização  
-As informações nesta etapa se aplicam somente quando você estiver instalando uma *atualização* para um site do System Center Configuration Manager. Se você estiver *atualizando* um System Center 2012 Configuration Manager para o System Center Configuration Manager, consulte [Testar a atualização de banco de dados do site](/sccm/core/servers/deploy/install/upgrade-to-configuration-manager#a-namebkmktesta-test-the-site-database-upgrade).
+<!-- Removed as update guidance 6/6/2017. The Test DB Upgrade details are no longer recommended nor required. They live on in a new topic for customers who still want to use them. -->
 
-Antes de instalar uma nova atualização em sua hierarquia, como a atualização para a versão 1610, você pode testar a atualização de seu banco de dados do site. O nome da opção de linha de comando usada para testar a instalação de uma atualização para um backup de seu banco de dados do site é **testdbupgrade**.  
-
-Se a instalação de uma atualização falhar, não deve ser necessário realizar uma recuperação de site. Em vez disso, você pode repetir a instalação da atualização. Portanto, embora o teste de atualização de banco de dados seja menos importante do que era nas versões anteriores do produto como o System Center 2012 Configuration Manager, ainda o recomendamos.
-
-
-#### <a name="to-run-testdbupgrade-before-installing-an-update"></a>Para executar o testdbupgrade antes de instalar uma atualização  
-
-1.  Obtenha um conjunto de arquivos de origem da pasta **CD.Latest** de um site que executa a versão para a qual você planeja atualizar. Isso pode exigir, primeiro, a instalação de um site em um ambiente de laboratório ou teste que executa essa versão do System Center Configuration Manager.  
-
-     A pasta **CD.Latest** para um site contém os arquivos de origem dessa versão. Você deve usar esses arquivos de origem para executar o teste de atualização de seu banco de dados do site. Para obter mais informações, consulte [A pasta CD.Latest do System Center Configuration Manager](../../../core/servers/manage/the-cd.latest-folder.md).  
-
-     Por exemplo, se o seu site executar a versão 1606 e você quiser atualizar para a versão 1610, obtenha uma pasta CD.Latest de um site que já foi atualizado para a versão 1610. Normalmente, você pode instalar um site novo e temporário em um laboratório e atualizá-lo para a versão 1610 a fim de criar a pasta CD.Latest com os arquivos necessários.  
-
-2.  Copie a pasta CD.Latest para um local na instância do SQL Server que você usará para executar a atualização do banco de dados de teste.
-
-3.  Crie um backup do banco de dados do site do qual você deseja testar a atualização e restaure uma cópia desse banco de dados em uma instância do SQL Server que não hospeda um site do Configuration Manager. A instância do SQL Server deve usar a mesma edição do SQL Server que seu banco de dados do site.  
-
-4.  Após a restauração da cópia do banco de dados, execute a **Instalação** na pasta CD.Latest que você copiou de seu ambiente de laboratório ou teste. Ao executar a Instalação, use a opção de linha de comando **/TESTDBUPGRADE** . Se a instância do SQL Server que hospeda a cópia do banco de dados não for a instância padrão, será necessário fornecer também os argumentos da linha de comando para identificar a instância que hospeda a cópia do banco de dados do site.  
-
-     Por exemplo, suponha que você planeja atualizar um banco de dados do site com o nome de banco de dados SMS_ABC. Você restaura uma cópia desse banco de dados do site para uma instância suportada do SQL Server com o nome de instância DBTest. Para testar uma atualização dessa cópia do banco de dados do site, use a linha de comando a seguir: **Setup.exe /TESTDBUPGRADE DBtest\CM_ABC**  
-
-     Você pode encontrar Setup.exe no seguinte local na mídia de origem do System Center Configuration Manager: **SMSSETUP\BIN\X64**.  
-
-5.  Na instância do SQL Server em que você executa o teste de atualização do banco de dados, monitore o arquivo ConfigMgrSetup.log na raiz da unidade do sistema para verificar o andamento e o êxito.  
-
-     Se ocorrer falha na atualização do teste, corrija os problemas relacionados à falha de atualização do banco de dados do site, crie um novo backup do banco de dados do site e, em seguida, teste a atualização da nova cópia.  
-
-     Depois que o processo for concluído com êxito, exclua a cópia do banco de dados.  
-
-    > [!NOTE]  
-    >  Não é possível restaurar a cópia do banco de dados do site, utilizada para a atualização de teste, para uso como um banco de dados do site em qualquer site.  
-
-###  <a name="bkmk_step3"></a> Etapa 3: Executar o verificador de pré-requisitos antes de instalar uma atualização  
+###  <a name="step-2-run-the-prerequisite-checker-before-installing-an-update"></a>Etapa 2: Executar o verificador de pré-requisitos antes de instalar uma atualização  
 Antes de instalar uma atualização, considere a execução da verificação de pré-requisitos para essa atualização. Se você executar o pré-requisito antes de instalar uma atualização:  
 
 -   Os arquivos de atualização serão replicados em outros sites antes de instalar a atualização.  
 
 -   A verificação de pré-requisitos será executada automaticamente outra vez quando você optar por instalar a atualização.  
 
-Posteriormente, quando você instalar a atualização, terá a opção de configurá-la para ignorar os avisos de verificação de pré-requisitos.  
+Posteriormente, quando você instalar a atualização, poderá configurá-la para ignorar os avisos de verificação de pré-requisitos.  
 
 #### <a name="to-run-the-prerequisite-checker-before-installing-an-update"></a>Para executar o verificador de pré-requisitos antes de instalar uma atualização  
 
@@ -163,15 +128,15 @@ Posteriormente, quando você instalar a atualização, terá a opção de config
 ##  <a name="bkmk_install"></a> Instalação de atualizações no console  
  Quando estiver pronto para instalar as atualizações de dentro do console do Configuration Manager, comece pelo site de nível superior de sua hierarquia. Esse site pode ser o site de administração central ou um site primário autônomo.  
 
- Recomendamos que você planeje a instalação da atualização fora do horário comercial normal de cada site. O processo de instalação da atualização e suas ações de reinstalação dos componentes do site e das funções do sistema de sites terão um efeito mínimo sobre as operações de seu negócio.  
+ Recomendamos que você instale a atualização fora do horário comercial normal de cada site para minimizar o efeito nas operações comerciais. Isso ocorre porque a instalação da atualização pode incluir ações como reinstalar os componentes do site e funções de sistema de site.  
 
 -   Os sites primários filho iniciam automaticamente a atualização após a conclusão da instalação da atualização no site de administração central. Este é o processo padrão e recomendado. É possível usar os [Service windows for site servers](/sccm/core/servers/manage/service-windows) (Períodos de serviço para servidores do site). para controlar quando um site primário instala atualizações.  
 
--   É necessário atualizar manualmente os sites secundários de dentro do console do Configuration Manager após a conclusão da atualização do site pai primário. Não há suporte para atualização automática de servidores do site secundário.  
+-   Atualize manualmente os sites secundários de dentro do console do Configuration Manager após a conclusão da atualização do site pai primário. Não há suporte para atualização automática de servidores do site secundário.  
 
 -   Quando usa um console do Configuration Manager após a atualização do site, você recebe uma solicitação para atualizar o console.  
 
--  Após o servidor do site concluir com êxito a instalação de uma atualização, ela atualiza automaticamente todas as funções de sistema de site aplicáveis.  A única limitação para isso se refere aos pontos de distribuição. Ao instalar uma atualização, todos os pontos de distribuição não são reinstalados e, ao mesmo tempo, ficam offline para atualização. Em vez disso, o servidor do site usa as configurações de distribuição de conteúdo do site para distribuir a atualização para um subconjunto de pontos de distribuição por vez. O resultado é que apenas alguns pontos de distribuição ficam offline para instalar a atualização. Isso permite que pontos de distribuição que ainda não começaram a ser atualizados ou que concluíram a atualização permaneçam online e forneçam conteúdo aos clientes.
+-  Após o servidor do site concluir com êxito a instalação de uma atualização, ela atualiza automaticamente todas as funções de sistema de site aplicáveis.  A única limitação refere-se aos pontos de distribuição. Ao instalar uma atualização, todos os pontos de distribuição não são reinstalados e, ao mesmo tempo, ficam offline para atualização. Em vez disso, o servidor do site usa as configurações de distribuição de conteúdo do site para distribuir a atualização para um subconjunto de pontos de distribuição por vez. O resultado é que apenas alguns pontos de distribuição ficam offline para instalar a atualização. Os pontos de distribuição que não começaram a ser atualizados ou que concluíram a atualização permaneçam online e forneçam conteúdo aos clientes.
 
 
 ###  <a name="bkmk_overview"></a> Visão geral da instalação da atualização no console  
@@ -179,12 +144,12 @@ Posteriormente, quando você instalar a atualização, terá a opção de config
 Será apresentado a você um Assistente de atualizações que exibe uma lista das áreas de produtos para as quais a atualização se aplica.  
 
 -   Na página **Geral** do assistente, você pode configurar **Avisos de pré-requisito**.  
-      -   Os erros de pré-requisito sempre interrompem a instalação da atualização. Você deve corrigir os erros antes de poder tentar novamente a instalação da atualização. Consulte [Repetir a instalação de uma atualização com falha](#bkmk_retry) para obter mais informações.  
+      -   Os erros de pré-requisito sempre interrompem a instalação da atualização. Corrija os erros antes de poder tentar novamente a instalação da atualização. Consulte [Repetir a instalação de uma atualização com falha](#bkmk_retry) para obter mais informações.  
 
-    -   Avisos de pré-requisito também podem interromper a instalação da atualização. Você deve corrigir esses avisos antes de tentar novamente a instalação da atualização. Consulte [Repetir a instalação de uma atualização com falha](#bkmk_retry) para obter mais informações.  
-    -   A seleção da opção **Ignorar os avisos de verificação de pré-requisitos e instalar essa atualização, independentemente dos requisitos ausentes** define uma condição para a instalação da atualização que ignora os avisos de pré-requisito. Isso permite que a instalação da atualização continue. Se você não selecionar essa opção, a instalação da atualização será interrompida quando um aviso for encontrado. A menos que você tenha executado anteriormente a verificação de pré-requisitos e corrigido os avisos de pré-requisito de um site, não recomendamos o uso dessa opção.  
+    -   Avisos de pré-requisito também podem interromper a instalação da atualização. Corrija esses avisos antes de tentar novamente a instalação da atualização. Para saber mais, veja [Repetir a instalação de uma atualização com falha](#bkmk_retry).  
+    -   A opção **Ignorar os avisos de verificação de pré-requisitos e instalar essa atualização, independentemente dos requisitos ausentes** define uma condição para a instalação da atualização que ignora os avisos de pré-requisito. Isso permite que a instalação da atualização continue. Se você não selecionar essa opção, a instalação da atualização será interrompida quando um aviso for encontrado. A menos que você tenha executado anteriormente a verificação de pré-requisitos e corrigido os avisos de pré-requisito de um site, não recomendamos o uso dessa opção.  
 
-      Nos espaços de trabalho **Administração** e **Monitoramento**, o nó Atualizações e Manutenção inclui um botão na Faixa de opções chamado **Ignorar avisos de pré-requisito**. Esse botão fica disponível quando um pacote de atualização falha ao concluir a instalação devido a avisos de verificação de pré-requisitos. Por exemplo, se você instalar uma atualização sem usar a opção de ignorar avisos de pré-requisito (de dentro do Assistente de Atualizações) e a instalação da atualização for interrompida com um estado de aviso de pré-requisito, mas sem erros, você poderá escolher **Ignorar avisos de pré-requisito** posteriormente na faixa de opções para disparar uma continuação automática da instalação da atualização que ignora os avisos de pré-requisito. Quando você usa essa opção, a instalação da atualização continua automaticamente depois de alguns minutos.
+      Nos espaços de trabalho **Administração** e **Monitoramento**, o nó Atualizações e Manutenção inclui um botão na Faixa de opções chamado **Ignorar avisos de pré-requisito**. Esse botão fica disponível quando um pacote de atualização falha ao concluir a instalação devido a avisos de verificação de pré-requisitos. Por exemplo, você instala uma atualização sem usar a opção para ignorar os avisos de pré-requisitos (de dentro do Assistente de atualizações). A instalação da atualização é interrompida com um estado de aviso de pré-requisito, mas sem erros. Mais tarde você pode escolher **Ignorar avisos de pré-requisito** na faixa de opções para disparar uma continuação automática dessa instalação de atualização que, em seguida, ignora os avisos de pré-requisito. Quando você usa essa opção, a instalação da atualização continua automaticamente depois de alguns minutos.
 
 
 
@@ -197,7 +162,7 @@ Como parte da instalação da atualização, o Configuration Manager:
 
 -   Gerencia as atualizações para os clientes com base nas seleções feitas por você para o piloto do cliente e para [atualizações automáticas do cliente](https://technet.microsoft.com/library/mt627885.aspx).  
 
--   Não será necessário reiniciar os servidores do sistema de sites como parte da atualização (a menos que o .NET seja instalado como parte de um pré-requisito de funções do sistema de sites).  
+-   Não reiniciará os servidores do sistema de sites como parte da atualização a menos que o .NET seja instalado como parte de um pré-requisito de funções do sistema de sites.  
 
 > [!TIP]  
 >  Quando as atualizações são instaladas, o Configuration Manager também atualiza a pasta CD.Latest. Essa pasta é usada durante uma recuperação de site.  
@@ -210,19 +175,23 @@ Use o seguinte para monitorar o progresso:
 
 -   No console do Configuration Manager, vá até o nó **Monitoramento** > **Visão Geral** > **Status de Serviço e Atualizações**. Esse nó mostra o status de instalação somente do pacote de atualização que está sendo instalado no momento.  
 
-  A instalação do pacote de atualização é dividida nas seguintes fases para facilitar o monitoramento. Para cada fase, os detalhes adicionais incluem qual arquivo de log exibir para obter mais informações:  
-    -   **Download** (essa fase se aplica somente ao site de nível superior em que a função do sistema de sites do ponto de conexão de serviço está instalada.)
-    -   **Replicação**
-    -   **Verificação de pré-requisitos**
-    -   **Instalação**
-    -   **Pós-instalação** (essa fase está disponível desde a versão 1610.)
+    A instalação do pacote de atualização é dividida nas seguintes fases para facilitar o monitoramento. Para cada fase, os detalhes adicionais incluem qual arquivo de log exibir para obter mais informações:  
+    -   **Download** (essa fase se aplica somente ao site de nível superior em que o sistema de sites do ponto de conexão de serviço está instalada.)   
+
+    -   **Replicação**   
+
+    -   **Verificação de pré-requisitos**   
+
+    -   **Instalação**    
+
+    -   **Pós-instalação** (as [tarefas de pós-instalação](#post-installation-tasks) estão disponíveis desde a versão 1610).  
 
 -   Você pode exibir o arquivo **CMUpdate.log** em **&lt;ConfigMgr_Installation_Directory>\Logs**  
 
 **4. Quando a instalação da atualização é concluída**  
 Após a conclusão da instalação da primeira atualização de site:  
 
--   Os sites primários filho instalarão automaticamente a atualização. Nenhuma ação do usuário é necessária.  
+-   Os sites primários filho instalam automaticamente a atualização. Nenhuma ação do usuário é necessária.  
 
 -   Será necessário atualizar manualmente os sites secundários de dentro do console do Configuration Manager.
 > [!TIP]
@@ -254,7 +223,68 @@ Após a atualização do site primário pai de um site secundário, você poder�
 
 Para monitorar a instalação da atualização em um site secundário, selecione o servidor do site secundário. Em seguida, na guia **Início**, no grupo **Site**, escolha **Mostrar Status da Instalação**. Você também pode adicionar a coluna **Versão** à exibição da coluna para que você possa exibir a versão de cada site secundário.  
 
-Após um site secundário ser atualizado com êxito, se o status no console não for atualizado ou sugerir uma falha na atualização, você poderá usar a opção **Tentar realizar a instalação novamente**. Essa opção não reinstala a atualização de um site secundário que instalou a instalação com êxito, mas força o console a atualizar o status.
+Após um site secundário ser atualizado com êxito, se o status no console não for atualizado ou sugerir uma falha na atualização, use a opção **Tentar realizar a instalação novamente**. Essa opção não reinstala a atualização de um site secundário que instalou a instalação com êxito, mas força o console a atualizar o status.
+
+### <a name="post-installation-tasks"></a>Tarefas de pós-instalação
+A partir da versão 1610, você pode exibir informações sobre tarefas de pós-instalação.
+
+Quando um site instala uma atualização, há várias tarefas que não podem ser iniciadas até a atualização concluir a instalação no servidor do site. Veja a seguir uma lista de tarefas de pós-instalação que são essenciais para operações do site e de hierarquia. Como elas são essenciais, são monitoradas ativamente. As tarefas adicionais que não são diretamente monitoradas incluem a reinstalação de funções do sistema de site. Para exibir o status de tarefas de pós-instalação críticas, selecione a tarefa **Pós-instalação** enquanto monitora a instalação da atualização para um site.
+
+Nem todas as tarefas são concluídas imediatamente. Algumas tarefas não serão iniciados até a conclusão da instalação da atualização de cada site. Portanto, algumas novas funcionalidades que você possa estar aguardando poderão ser atrasadas até que essas tarefas sejam concluídas. Por exemplo, como ativar novos recursos não é iniciado até que todos os sites concluam a instalação da atualização, novos recursos poderão não estar visíveis por algum tempo.
+
+As tarefas de pós-instalação incluem:
+
+-   **Instalação do serviço SMS_EXECUTIVE**
+  -   Serviços fundamentais que são executados no servidor do site.
+  -   A reinstalação desse serviço deve ser concluída rapidamente.
+
+
+-   **Instalação do componente SMS_DATABASE_NOTIFICATION_MONITOR**
+  -   A thread essencial de componente do site do serviço SMS_EXECUTIVE.
+  -   A reinstalação desse serviço deve ser concluída rapidamente.
+
+
+-   **Instalação do componente SMS_HIERARCHY_MANAGER**
+  -   Componente de site fundamental que é executado no servidor do site.
+  -   Responsável por reinstalar as funções do sistema de site nos servidores do sistema de site.  Não é exibido o status para a reinstalação de função do sistema de sites individuais.
+  -   A reinstalação desse serviço deve ser concluída rapidamente.
+
+
+-   **Instalação do componente SMS_REPLICATION_CONFIGURATION_MONITOR**
+  -   Componente de site fundamental que é executado no servidor do site.
+  -   A reinstalação desse serviço deve ser concluída rapidamente.
+
+
+-   **Instalação do componente SMS_POLICY_PROVIDER**
+  -   Componente de site fundamental que é executado apenas em sites primários.
+  -   A reinstalação desse serviço deve ser concluída rapidamente.
+
+
+-   **Monitoramento de inicialização de replicação**   
+  -   Isso é exibido apenas no site de administração central e em sites primários filho.
+  -   Dependente do SMS_REPLICATION_CONFIGURATION_MONITOR.
+  -   Deve ser concluído rapidamente.
+
+
+-   **Atualizando o Pacote de Pré-produção do Cliente do Configuration Manager**    
+  -   Isso é exibido até mesmo quando a pré-produção do cliente (também chamada de piloto do cliente) não está habilitada para uso.
+  -   Não é iniciado até que todos os sites na hierarquia concluam a instalação da atualização.
+
+
+-   **Atualização da pasta do Cliente no Servidor do Site**
+  -   Isso não será exibido se você usar o cliente em pré-produção.  
+  -   Deve ser concluído rapidamente.
+
+
+-   **Atualização do Pacote do Cliente do Configuration Manager**
+  -   Isso não será exibido se você usar o cliente em pré-produção.  
+  -   Termina somente depois que todos os sites instalam a atualização.  
+
+
+-   **Ativação de recursos**
+  -   Isso é exibido apenas no site de nível superior da hierarquia.
+  -   Não é iniciado até que todos os sites na hierarquia concluam a instalação da atualização.
+  -   Os recursos individuais não são exibidos.
 
 
 ##  <a name="bkmk_retry"></a> Repetir a instalação de uma atualização com falha  
@@ -272,13 +302,13 @@ Você pode repetir a instalação de uma atualização para toda a hierarquia qu
 
     Acesse **Administração** > **Atualizações e Manutenção**, selecione a atualização e selecione uma das opções a seguir:  
 
-    -   **Repetir** – quando você executar **Repetir** deste nó, a instalação da atualização começará novamente e ignorará automaticamente os avisos de pré-requisito. Ela também replicará novamente o conteúdo para a atualização se a replicação tiver falhado anteriormente.
+    -   **Repetir** – quando você executar **Repetir** deste nó, a instalação da atualização começará novamente e ignorará automaticamente os avisos de pré-requisito. O conteúdo para a atualização também replicará novamente se a replicação tiver falhado anteriormente.
     - **Ignorar avisos de pré-requisito** – a partir da versão 1606, se a instalação da atualização for interrompida devido a um aviso, você poderá escolher **Ignorar avisos de pré-requisito**. Essa ação permite a continuação da instalação da atualização (após alguns minutos) e usa a opção para ignorar os avisos de pré-requisito.   
 
 2.  **Repita a instalação para o site:**  
  Você pode repetir a instalação de uma atualização em um site específico quando essa atualização estiver em um dos estados a seguir:  
 
-    -   A verificação de pré-requisito foi aprovada com um ou mais avisos, e a opção de ignorar os avisos da verificação de pré-requisito não foi definida no Assistente de Atualização (O valor das atualizações para **Ignorar Aviso de Pré-requisito** no nó Atualizações e manutenção é **No**.)  
+    -   Verificação de pré-requisitos aprovada com um ou mais avisos e opção de ignorar os avisos de verificação de pré-requisitos não foi definida no Assistente de Atualização. (O valor das atualizações para **Ignorar aviso de pré-requisito** no nó Atualizações e manutenção é **Não**).  
     -   Falha dos pré-requisitos    
     -   Falha na instalação    
 
@@ -298,7 +328,7 @@ Use a lista de verificação a seguir para concluir tarefas comuns e configuraç
 
 Para obter mais informações, consulte [Monitorar a infraestrutura de hierarquia e de replicação no System Center Configuration Manager](../../../core/servers/manage/monitor-hierarchy-and-replication-infrastructure.md) e [Sobre o Replication Link Analyzer](../../../core/servers/manage/monitor-hierarchy-and-replication-infrastructure.md#BKMK_RLA).  
 
- **Confirme se os servidores do site e os servidores do sistema de sites remoto foram reiniciados (se for necessário):** examine a infraestrutura de seu site e certifique-se de que os servidores de site e os servidores do sistema de sites aplicáveis (remotos do servidor do site) foram reinicializados com êxito.  Normalmente, isso é esperado apenas quando o Configuration Manager instala o .NET como pré-requisito para uma função de sistema de sites.  
+ **Confirme se os servidores do site e os servidores do sistema de sites remoto foram reiniciados (se for necessário):** examine a infraestrutura de seu site e certifique-se de que os servidores de site e os servidores do sistema de sites aplicáveis foram reinicializados com êxito. Normalmente, os servidores de site são reiniciados apenas quando o Configuration Manager instala o .NET como pré-requisito para uma função de sistema de sites.  
 
  **Atualize consoles autônomos do Configuration Manager:** certifique-se de que todos os consoles remotos do Configuration Manager sejam atualizados para a mesma versão. Você receberá uma solicitação para atualizar o console quando:  
 
@@ -308,14 +338,14 @@ Para obter mais informações, consulte [Monitorar a infraestrutura de hierarqui
 
 **Reconfigure as réplicas de banco de dados para os pontos de gerenciamento nos sites primários:** se você utilizar réplicas de banco de dados para pontos de gerenciamento em sites primários, será necessário desinstalar as réplicas de banco de dados antes de atualizar o site. Depois de atualizar um site primário, reconfigure a réplica de banco de dados para pontos de gerenciamento. Para obter mais informações, consulte [Réplicas de banco de dados para pontos de gerenciamento no System Center Configuration Manager](../../../core/servers/deploy/configure/database-replicas-for-management-points.md).  
 
-**Reconfigure quaisquer tarefas de manutenção de banco de dados desabilitadas antes da atualização:** se você tiver desabilitado as [Tarefas de manutenção de banco de dados para o System Center Configuration Manager](../../../core/servers/manage/maintenance-tasks.md) em um site antes da atualização, reconfigure-as no site. Use as mesmas configurações que estavam em vigor antes da atualização.  
+**Reconfigure quaisquer tarefas de manutenção de banco de dados desabilitadas antes da atualização:** se você tiver desabilitado as [tarefas de manutenção](../../../core/servers/manage/maintenance-tasks.md) de banco de dados antes de instalar a atualização, reconfigure-as no site. Use as mesmas configurações que estavam em vigor antes da atualização.  
 
-**Atualizar clientes:** para obter informações sobre como atualizar clientes existentes e como instalar novos clientes, consulte [Como atualizar clientes para computadores Windows no System Center Configuration Manager](../../../core/clients/manage/upgrade/upgrade-clients-for-windows-computers.md).  
+**Clientes de atualização:** para saber mais, veja [Como atualizar clientes para computadores Windows no System Center Configuration Manager](../../../core/clients/manage/upgrade/upgrade-clients-for-windows-computers.md).  
 
 **Configurações adicionais:** examine as alterações feitas antes de iniciar a atualização e restaure essas configurações em seus sites e hierarquia.  
 
 ##  <a name="bkmk_options"></a> Habilitar recursos opcionais de atualizações  
-Ao instalar uma atualização que inclui um ou mais recursos opcionais, você terá a oportunidade de habilitar esses recursos em sua hierarquia.  Você pode fazer isso no momento da instalação da atualização ou retornar ao console posteriormente e habilitar os recursos opcionais.
+Quando uma atualização inclui um ou mais recursos opcionais, você tem a oportunidade de habilitar esses recursos em sua hierarquia.  Você pode habilitar recursos quando a atualização é instalada ou pode retornar ao console posteriormente e habilitar os recursos opcionais.
 
 Para exibir os recursos disponíveis e seus status, no console, navegue até **Administração** > **Atualizações e Manutenção** > **Recursos**.
 
@@ -326,32 +356,32 @@ Ao habilitar um novo recurso ou recurso de pré-lançamento, o gerenciador de hi
 
 
 ##  <a name="bkmk_prerelease"></a> Usar recursos de pré-lançamento de atualizações
-Os recursos de pré-lançamento são recursos que estão incluídos na Ramificação atual para testes iniciais em um ambiente de produção. Esses recursos não devem ser considerados prontos para produção, mas podem ser usados em seu ambiente de produção. Para saber mais sobre os recursos de pré-lançamento, inclusive como habilitá-los em seu ambientes, confira [Recursos de pré-lançamento](/sccm/core/servers/manage/pre-release-features).             
+Os recursos de pré-lançamento estão incluídos na Ramificação atual para testes iniciais em um ambiente de produção. Você pode usar esses recursos em seu ambiente de produção, mas eles não são considerados prontos para produção. Saiba mais sobre os [recursos de pré-lançamento](/sccm/core/servers/manage/pre-release-features), inclusive como habilitá-los em seu ambientes.             
 
 
 ## <a name="known-issues"></a>Problemas conhecidos
 
 ###  <a name="bkmk_faq"></a> Por que eu não vejo determinadas atualizações em meu console?  
- Se você não conseguir encontrar uma atualização específica (ou quaisquer atualizações em seu console) após uma sincronização bem-sucedida com o serviço de nuvem da Microsoft, o motivo pode ser o seguinte:  
+ Se você não conseguir encontrar uma atualização específica em seu console após uma sincronização bem-sucedida com o serviço de nuvem da Microsoft, o motivo pode ser o seguinte:  
 
 -   A atualização exige uma configuração que sua infraestrutura não usa, ou a versão atual de seu produto não atende a um pré-requisito para receber a atualização.  
 
-     Se você achar que tem as configurações necessárias ou atende a outros pré-requisitos para uma atualização ausente, confirme se o ponto de conexão de serviço está no modo online. Em seguida, use a opção **Verificar se Há Atualizações** no nó **Atualizações e Manutenção** para forçar uma verificação.  Se você estiver no modo offline, use a ferramenta de conexão de serviço para sincronizar-se manualmente com o serviço de nuvem.  
+     Se você achar que tem as configurações necessárias e os pré-requisitos para uma atualização ausente, confirme se o ponto de conexão de serviço está no modo online. Em seguida, use a opção **Verificar se Há Atualizações** no nó **Atualizações e Manutenção** para forçar uma verificação.  Se você estiver no modo offline, use a ferramenta de conexão de serviço para sincronizar-se manualmente com o serviço de nuvem.  
 
 -   Sua conta não tem as permissões corretas de administração baseada em funções para exibir as atualizações no console do Configuration Manager.
 
     Consulte [Permissões para gerenciar atualizações](../../../core/servers/manage/install-in-console-updates.md#assign-permissions-to-view-and-manage-updates-and-features) neste tópico para obter informações sobre permissões necessárias para exibir as atualizações e habilitar recursos do console.
 
 ### <a name="why-do-i-see-two-updates-for-version-1610"></a>Por que vejo duas atualizações para a versão 1610?
-Ao exibir atualizações no console, você poderá ver duas atualizações para instalar a versão 1610. Essas atualizações têm datas diferentes. Isso acontece quando uma das seguintes opções for verdadeira:   
--    Você instalou uma versão anterior (como 1606) após a versão 1610 ter ficado disponível
+Ao exibir atualizações no console, você poderá ver duas atualizações para instalar a versão 1610. Essas atualizações têm datas diferentes. Ambos serão exibidos quando uma das seguintes condições for verdadeira:   
+-   Você instalou uma versão anterior (como 1606) após a versão 1610 ter ficado disponível
 
--    Sua hierarquia executa a versão 1511 ou 1602 e não foi possível baixar a versão 1606
+-   Sua hierarquia executa a versão 1511 ou 1602 e não foi possível baixar a versão 1606
 
 Há duas versões de atualização 1610, porque esta atualização foi lançada novamente após algumas pequenas alterações a alguns binários do arquivo. Essas alterações não afetam a funcionalidade do Configuration Manager ou a atualização.
 
-Quando as atualizações ficarem disponíveis no seu console, recomendamos que você instale a atualização com a data mais recente. No entanto, como as duas atualizações fornecem os mesmos recursos, se você já instalou um deles não precisa fazer mais nada.
--    Se você instalou a atualização mais antiga, não precisa instalar a atualização mais recente. Entretanto, se instalar a atualização mais recente depois de ter instalado a primeira atualização, os binários em questão serão atualizados, mas nenhuma alteração adicional ocorrerá e nenhuma ação adicional de sua parte é necessária.
+Quando as atualizações ficarem disponíveis no seu console, recomendamos que você instale a atualização com a data mais recente. No entanto, como as duas atualizações fornecem os mesmos recursos, quando você já tiver instalado um deles não precisa fazer mais nada.
+-   Se você instalou a atualização mais antiga, não precisa instalar a atualização mais recente. No entanto, se você instalar a atualização mais recente depois de instalar a primeira atualização, os binários em questão serão atualizados. Não ocorre nenhuma alteração adicional e nenhuma ação adicional de sua parte será necessária.
 
--    Se você instalou a atualização mais recente e, em seguida, instalou a atualização mais antiga, nenhuma ação adicional é necessária. Isso ocorre porque os binários mais recentes que você já instalado não serão substituídos pelos binários da atualização original.
+-   Se você instalou a atualização mais recente e, em seguida, instalou a atualização mais antiga, nenhuma ação adicional é necessária. Isso ocorre porque os binários mais recentes que você já instalou não serão substituídos pelos binários da atualização original.
 

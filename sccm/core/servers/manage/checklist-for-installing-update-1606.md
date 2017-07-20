@@ -2,7 +2,7 @@
 title: "Lista de verificação para a 1606 | Microsoft Docs"
 description: "Saiba mais sobre as ações a serem executadas antes de atualizar do System Center Configuration Manager versão 1511 ou 1602 para a 1606."
 ms.custom: na
-ms.date: 2/7/2017
+ms.date: 6/6/2017
 ms.reviewer: na
 ms.suite: na
 ms.prod: configuration-manager
@@ -16,10 +16,10 @@ author: Brenduns
 ms.author: brenduns
 manager: angrobe
 ms.translationtype: Human Translation
-ms.sourcegitcommit: 30af3326578d39c6d995672071705bcaeb877e4d
-ms.openlocfilehash: b0def6eb962d243a7ea5910b8d56bbb448b3a2e4
+ms.sourcegitcommit: 3619a73d3a39659de927e1711a7ec81de9918064
+ms.openlocfilehash: a6bda116499845fedff0126e2890755931de85bb
 ms.contentlocale: pt-br
-ms.lasthandoff: 05/17/2017
+ms.lasthandoff: 06/13/2017
 
 ---
 # <a name="checklist-for-installing-update-1606-for-system-center-configuration-manager"></a>Lista de verificação para instalar a atualização 1606 do System Center Configuration Manager
@@ -78,11 +78,7 @@ Para replicação de banco de dados, você pode usar o Replication Link Analyzer
 
  **Instale todas as atualizações críticas aplicáveis de sistemas operacionais em computadores que hospedam o site, o servidor de banco de dados do site e as funções do sistema de sites remoto:** antes de instalar uma atualização do Configuration Manager, instale todas as atualizações críticas para cada sistema de sites aplicável. Se uma atualização instalada precisar de uma reinicialização, reinicie os computadores aplicáveis antes de iniciar a atualização.  
 
- **Desabilite as réplicas de banco de dados para pontos de gerenciamento nos sites primários:** o Configuration Manager não pode atualizar com êxito um site primário que tenha uma réplica de banco de dados para pontos de gerenciamento habilitada. Desabilite a replicação de banco de dados antes de você:  
-
--   Criar um backup do banco de dados do site para testar a atualização do banco de dados.  
-
--   Instalar uma atualização para o Configuration Manager.  
+ **Desabilite as réplicas de banco de dados para pontos de gerenciamento nos sites primários:** o Configuration Manager não pode atualizar com êxito um site primário que tenha uma réplica de banco de dados para pontos de gerenciamento habilitada. Desabilite a replicação de banco de dados antes de instalar uma atualização para o Configuration Manager.  
 
 Para saber mais, veja [Réplicas de banco de dados para pontos de gerenciamento no System Center Configuration Manager](../../../core/servers/deploy/configure/database-replicas-for-management-points.md).  
 
@@ -111,22 +107,23 @@ Para obter mais informações, consulte [Tarefas de manutenção do System Cente
 
 Para obter mais informações, consulte [Backup e recuperação para o System Center Configuration Manager](../../../protect/understand/backup-and-recovery.md).  
 
+<!-- Removed from update guidance 6/6/2017
+ **Test the database upgrade on a copy of the most recent site database backup:** Before you update a System Center Configuration Manager central administration site or primary site, test the site database upgrade process on a copy of the site database.  
 
- **Testar a atualização do banco de dados em uma cópia do backup mais recente do banco de dados do site:** antes de atualizar um site de administração central ou site primário do System Center Configuration Manager, teste o processo de atualização do banco de dados do site em uma cópia do banco de dados do site.  
+-   You should test the site database upgrade process because when you upgrade a site, the site database might be modified.  
 
--   Você deve testar o processo de atualização de banco de dados do site, pois ao atualizar um site, o banco de dados do site pode ser modificado.  
+-   Although a test database upgrade is not required, it can identify problems for the upgrade before your production database is affected.  
 
--   Embora o teste de atualização do banco de dados não seja necessário, ele pode identificar problemas na atualização antes que seu banco de dados de produção seja afetado.  
+-   A failed site database upgrade can render your site database inoperable and might require a site recovery to restore functionality.  
 
--   Uma atualização do banco de dados do site com falha pode deixar o banco de dados do site inoperante e pode requerer uma recuperação do site para restaurar a funcionalidade.  
+-   Although the site database is shared between sites in a hierarchy, plan to test the database at each applicable site before you upgrade that site.  
 
--   Embora o banco de dados do site seja compartilhado entre sites em uma hierarquia, planeje testar o banco de dados em cada site aplicável antes de atualizar o site.  
+-   If you use database replicas for management points at a primary site, disable replication before you create the backup of the site database.  
 
--   Se você usar réplicas de banco de dados para pontos de gerenciamento em um site primário, desabilite a replicação antes de criar o backup do banco de dados do site.  
+Configuration Manager does not support the backup of secondary sites nor does it support the test upgrade of a secondary site database.   
 
-O Configuration Manager não dá suporte ao backup de sites secundários, nem ao teste de atualização de um banco de dados do site secundário.   
-
-Não execute um teste da atualização do banco de dados no banco de dados do site de produção. Fazer isso atualiza o banco de dados do site e pode deixar seu site inoperável. Para obter mais informações, consulte [Etapa 2: Testar a atualização do banco de dados antes de instalar uma atualização](/sccm/core/servers/manage/install-in-console-updates#bkmk_step2) de **Antes de instalar uma atualização no console**.
+Do not run a test database upgrade on the production site database. Doing so updates the site database and could render your site inoperable. For more information, For more information, see [Step 2: Test the database upgrade before installing an update](/sccm/core/servers/manage/install-in-console-updates#bkmk_step2) from **Before you install an in-console update**.
+-->
 
  **Planeje o piloto do cliente:** ao instalar uma atualização que atualiza o cliente, é possível testar essa nova atualização do cliente na pré-produção antes que ela seja implantada e atualize todos os seus clientes ativos.   
 

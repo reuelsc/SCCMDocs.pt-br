@@ -2,7 +2,7 @@
 title: "Projetar uma hierarquia de site – Configuration Manager | Microsoft Docs"
 description: "Compreenda as topologias disponíveis e as opções de gerenciamento para o System Center Configuration Manager para poder planejar a hierarquia do site."
 ms.custom: na
-ms.date: 1/3/2017
+ms.date: 6/16/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
@@ -17,10 +17,10 @@ author: Brenduns
 ms.author: brenduns
 manager: angrobe
 ms.translationtype: Human Translation
-ms.sourcegitcommit: 35e48666f4d1a2363304650f960531fd0630a291
-ms.openlocfilehash: e346e83b0ae0dc7a612cef7a7b9fb1fdb42236bc
+ms.sourcegitcommit: db673277d1cc2d24e8dba2439b2b1891c883ebd0
+ms.openlocfilehash: 4710b1b89eb50cb7bcf4c4ee50c12a96b6561bc9
 ms.contentlocale: pt-br
-ms.lasthandoff: 05/17/2017
+ms.lasthandoff: 06/16/2017
 
 
 ---
@@ -66,7 +66,7 @@ Em seguida, após considerar as opções de gerenciamento de conteúdo que podem
 
 -   O site da administração central é o site de nível superior em uma hierarquia.  
 
--   Ao configurar uma hierarquia que tem mais de um site primário, você deve instalar um site de administração central e ele deve ser o primeiro site a ser instalado.  
+-   Ao configurar uma hierarquia que tem mais de um site primário, você deve instalar um site de administração central. Se você precisar imediatamente de dois ou mais sites primários, instale primeiro o site de administração central. Quando você já tiver um site primário e quiser instalar um site de administração central, deverá [expandir o site primário autônomo](/sccm/core/servers/deploy/install/prerequisites-for-installing-sites#bkmk_expand) para instalar o site de administração central. 
 
 -   O site de administração central oferece suporte a apenas sites primários como sites filho.  
 

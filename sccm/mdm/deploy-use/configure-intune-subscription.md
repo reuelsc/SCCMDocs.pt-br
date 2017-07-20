@@ -2,7 +2,7 @@
 title: Configurar sua assinatura do Intune usando o System Center Configuration Manager | Microsoft Docs
 description: Configure sua assinatura do Intune usando o System Center Configuration Manager.
 ms.custom: na
-ms.date: 03/05/2017
+ms.date: 06/02/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
@@ -17,10 +17,10 @@ author: mtillman
 ms.author: mtillman
 manager: angrobe
 ms.translationtype: Human Translation
-ms.sourcegitcommit: 2c723fe7137a95df271c3612c88805efd8fb9a77
-ms.openlocfilehash: 10cc64ae7e4d91f53201c2896b359e77ef04d32d
+ms.sourcegitcommit: 662901e850566756759fcfc61c58f3c0e56bc5aa
+ms.openlocfilehash: 22d890c972d3166f9c7b583d8d3fa917c1897880
 ms.contentlocale: pt-br
-ms.lasthandoff: 05/17/2017
+ms.lasthandoff: 06/03/2017
 
 ---
 # <a name="configure-your-intune-subscription-with-system-center-configuration-manager-and-microsoft-intune"></a>Configurar sua assinatura do Intune usando o System Center Configuration Manager
@@ -53,7 +53,7 @@ A assinatura do Intune faz o seguinte:
 5.  Na página **Assinatura** , clique em **Entrar** e entre usando sua conta empresarial ou de estudante. Na caixa de diálogo **Definir a autoridade de gerenciamento de dispositivos móveis**, marque a caixa de seleção para gerenciar apenas dispositivos móveis usando o Configuration Manager por meio do console do Configuration Manager. Para continuar sua assinatura, selecione essa opção.
 
     > [!IMPORTANT]
-    >  Após selecionar o Configuration Manager como sua autoridade de gerenciamento, não será possível alterar futuramente a autoridade de gerenciamento para o Microsoft Intune.
+    >  Quando você seleciona o Configuration Manager como sua autoridade de gerenciamento, pode alterar apenas sua autoridade de gerenciamento para o Microsoft Intune no Configuration Manager versão 1610 ou posterior e o Microsoft Intune versão 1705 sem precisar entrar em contato com o Suporte da Microsoft e sem a necessidade de cancelar o registro e registrar novamente os dispositivos gerenciados. Para obter detalhes, veja [Alterar sua autoridade de MDM](/sccm/mdm/deploy-use/change-mdm-authority).
 
 6.  Clique nos links de privacidade para revisá-los e clique em **Próximo**.
 

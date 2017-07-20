@@ -2,7 +2,7 @@
 title: Data warehouse| Microsoft Docs
 description: "Ponto de serviço e banco de dados do Data Warehouse para o System Center Configuration Manager"
 ms.custom: na
-ms.date: 3/28/2017
+ms.date: 5/31/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
@@ -16,10 +16,10 @@ author: Brenduns
 ms.author: brenduns
 manager: angrobe
 ms.translationtype: Human Translation
-ms.sourcegitcommit: 3c2a07f560e0aa3d2beb7cc50e71c98ac45c27e1
-ms.openlocfilehash: 9239f6e749c368835e8594ca2d07378d8555b99e
+ms.sourcegitcommit: dc221ddf547c43ab1f25ff83c3c9bb603297ece6
+ms.openlocfilehash: f11a53bbc85b40077b3909568db5ae5552b0456c
 ms.contentlocale: pt-br
-ms.lasthandoff: 05/17/2017
+ms.lasthandoff: 06/01/2017
 
 
 ---
@@ -51,6 +51,7 @@ Quando a função de sistema de site é instalada, ele instala e configura o ban
 - A conta de computador do computador no qual você instala a função de sistema de site é usada para sincronizar os dados com o banco de dados do data warehouse. Essa conta exige as seguintes permissões:  
   - **Administrador** no computador que hospedará o banco de dados do data warehouse.
   - **DB_owner** permissão no banco de dados do data warehouse.
+  - As permissões **Db_reader** e **execute** para o banco de dados de site de nível superior.
 -    O banco de dados do data warehouse tem suporte em uma instância padrão ou nomeada do SQL Server 2012 ou mais recente. A edição deve ser Enterprise ou Datacenter.
   - Grupo de disponibilidade do SQL Server AlwaysOn: essa configuração não tem suporte.
   - Cluster do SQL Server: não há suporte para clusters de failover do SQL Server. Isso ocorre porque o banco de dados do data warehouse não foi testado profundamente em clusters de failover do SQL Server.

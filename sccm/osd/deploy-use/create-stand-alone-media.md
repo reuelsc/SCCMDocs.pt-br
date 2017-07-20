@@ -2,7 +2,7 @@
 title: "Criar mídia autônoma com o System Center Configuration Manager | Microsoft Docs"
 description: "Use uma mídia autônoma para implantar o sistema operacional em um computador sem uma conexão com a rede ou com um site do Configuration Manager."
 ms.custom: na
-ms.date: 03/24/2017
+ms.date: 06/07/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
@@ -17,10 +17,10 @@ author: Dougeby
 ms.author: dougeby
 manager: angrobe
 ms.translationtype: Human Translation
-ms.sourcegitcommit: dab5da5a4b5dfb3606a8a6bd0c70a0b21923fff9
-ms.openlocfilehash: d4689545ce2be5c16a65b24489f30028a0f90f94
+ms.sourcegitcommit: c6ee0ed635ab81b5e454e3cd85637ff3e20dbb34
+ms.openlocfilehash: 98f902429ad1b9965a0dc4cc2e1bd071ad5c0779
 ms.contentlocale: pt-br
-ms.lasthandoff: 05/17/2017
+ms.lasthandoff: 06/08/2017
 
 
 ---
@@ -36,10 +36,10 @@ A mídia autônoma no Configuration Manager contém tudo o que é necessário pa
 
 -   [Atualizar o Windows para a versão mais recente](upgrade-windows-to-the-latest-version.md)  
 
- A mídia autônoma inclui a sequência de tarefas que automatiza as etapas para instalar o sistema operacional e qualquer outro conteúdo necessário, inclusive a imagem de inicialização, imagem do sistema operacional e drivers de dispositivo. Como tudo o que é necessário para implantar o sistema operacional é armazenado na mídia autônoma, o espaço em disco necessário para mídia autônoma é significativamente maior do que o espaço em disco necessário para outros tipos de mídia. Quando você cria mídia autônoma em um site de administração central, o cliente recupera seu código de site atribuído do Active Directory. A mídia autônoma criada em sites filho atribuirá automaticamente ao cliente o código desse site.  
+A mídia autônoma inclui a sequência de tarefas que automatiza as etapas para instalar o sistema operacional e qualquer outro conteúdo necessário, inclusive a imagem de inicialização, imagem do sistema operacional e drivers de dispositivo. Como tudo o que é necessário para implantar o sistema operacional é armazenado na mídia autônoma, o espaço em disco necessário para mídia autônoma é significativamente maior do que o espaço em disco necessário para outros tipos de mídia. Quando você cria mídia autônoma em um site de administração central, o cliente recupera seu código de site atribuído do Active Directory. A mídia autônoma criada em sites filho atribuirá automaticamente ao cliente o código desse site.  
 
 ##  <a name="BKMK_CreateStandAloneMedia"></a> Criar mídia autônoma  
- Antes de criar mídia autônoma usando o Assistente para criação de mídia de sequência de tarefas, certifique-se de que as seguintes condições forem atendidas:  
+Antes de criar mídia autônoma usando o Assistente para criação de mídia de sequência de tarefas, certifique-se de que as seguintes condições forem atendidas:  
 
 ### <a name="create-a-task-sequence-to-deploy-an-operating-system"></a>Criar uma sequência de tarefas para implantar um sistema operacional
 Como parte da mídia autônoma, você deve especificar a sequência de tarefas para implantar um sistema operacional. Para ver as etapas para criar uma nova sequência de tarefas, consulte [Criar uma sequência de tarefas para instalar um sistema operacional no System Center Configuration Manager](create-a-task-sequence-to-install-an-operating-system.md).
@@ -54,10 +54,19 @@ Não há suporte para as seguintes ações na mídia autônoma:
 - O pacote dinâmico é instalado por meio da tarefa Instalar pacotes.
 - O aplicativo dinâmico é instalado por meio da tarefa Instalar aplicativo.
 
-Se a sequência de tarefas para implantar um sistema operacional incluir a etapa [Instalar Pacote](../../osd/understand/task-sequence-steps.md#BKMK_InstallPackage) e você criar a mídia autônoma em um site de administração central, poderá ocorrer um erro. O site de administração central não possui as políticas de configuração de cliente necessárias para habilitar o agente de distribuição de software durante a execução da sequência de tarefas. O erro a seguir pode aparecer no arquivo CreateTsMedia.log:<br /><br /> “Falha no método WMI SMS_TaskSequencePackage.GetClientConfigPolicies (0x80041001)”<br /><br /> Para mídia autônoma que inclui uma etapa **Instalar Pacote**, é necessário criar a mídia autônoma em um site primário que contém o agente de distribuição de software habilitado ou adicionar uma etapa [Executar Linha de Comando](../understand/task-sequence-steps.md#BKMK_RunCommandLine) após a etapa [Configurar Windows e ConfigMgr](../understand/task-sequence-steps.md#BKMK_SetupWindowsandConfigMgr) e antes da primeira etapa **Instalar Pacote** na sequência de tarefas. A etapa **Executar linha de comando** executa como um comando WMIC para habilitar o agente de distribuição de software antes da primeira etapa de Instalar pacote ser executada. Você pode usar o seguinte em sua etapa de sequência de tarefas de **Executar linha de comando** :<br /><br />
-```
-WMIC /namespace:\\\root\ccm\policy\machine\requestedconfig path ccm_SoftwareDistributionClientConfig CREATE ComponentName="Enable SWDist", Enabled="true", LockSettings="TRUE", PolicySource="local", PolicyVersion="1.0", SiteSettingsKey="1" /NOINTERACTIVE
-```
+> [!NOTE]    
+> Se a sequência de tarefas para implantar um sistema operacional incluir a etapa [Instalar Pacote](../../osd/understand/task-sequence-steps.md#BKMK_InstallPackage) e você criar a mídia autônoma em um site de administração central, poderá ocorrer um erro. O site de administração central não possui as políticas de configuração de cliente necessárias para habilitar o agente de distribuição de software durante a execução da sequência de tarefas. O erro a seguir pode aparecer no arquivo CreateTsMedia.log:    
+>     
+> “Falha no método WMI SMS_TaskSequencePackage.GetClientConfigPolicies (0x80041001)”    
+> 
+> Para mídia autônoma que inclui uma etapa **Instalar Pacote**, é necessário criar a mídia autônoma em um site primário que contém o agente de distribuição de software habilitado ou adicionar uma etapa [Executar Linha de Comando](../understand/task-sequence-steps.md#BKMK_RunCommandLine) após a etapa [Configurar Windows e ConfigMgr](../understand/task-sequence-steps.md#BKMK_SetupWindowsandConfigMgr) e antes da primeira etapa **Instalar Pacote** na sequência de tarefas. A etapa **Executar linha de comando** executa como um comando WMIC para habilitar o agente de distribuição de software antes da primeira etapa de Instalar pacote ser executada. Você pode usar o seguinte em sua etapa de sequência de tarefas de **Executar linha de comando** :    
+>    
+> *WMIC /namespace:\\\root\ccm\policy\machine\requestedconfig path ccm_SoftwareDistributionClientConfig CREATE ComponentName="Enable SWDist", Enabled="true", LockSettings="TRUE", PolicySource="local", PolicyVersion="1.0", SiteSettingsKey="1" /NOINTERACTIVE*
+
+
+> [!IMPORTANT]    
+> Quando você usa a etapa de sequência de tarefas **Instalação do Windows e do ConfigMgr** na sequência de tarefas do sistema operacional, não selecione a configuração **Usar pacote de cliente de pré-produção quando disponível** para mídia autônoma. Se essa configuração estiver selecionada e o pacote de cliente de pré-produção estiver disponível, isso será usado na mídia autônoma. Isso não tem suporte. Para obter detalhes sobre essa configuração, veja [Instalação do Windows e do ConfigMgr](/sccm/osd/understand/task-sequence-steps#BKMK_SetupWindowsandConfigMgr).
+
 
 ### <a name="distribute-all-content-associated-with-the-task-sequence"></a>Distribuir todo o conteúdo associado à sequência de tarefas
 Você deve distribuir todo o conteúdo exigido pela sequência de tarefas para pelo menos um ponto de distribuição. Isso inclui a imagem de inicialização, a imagem do sistema operacional e outros arquivos associados. O assistente reúne as informações do ponto de distribuição quando ele cria a mídia autônoma. Você precisa ter direitos de acesso de **Leitura** à biblioteca de conteúdo no ponto de distribuição.  Para obter detalhes, consulte [Distribuir o conteúdo referenciado por uma sequência de tarefas](manage-task-sequences-to-automate-tasks.md#BKMK_DistributeTS).

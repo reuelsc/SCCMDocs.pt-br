@@ -16,10 +16,10 @@ author: Brenduns
 ms.author: brenduns
 manager: angrobe
 ms.translationtype: Human Translation
-ms.sourcegitcommit: dab5da5a4b5dfb3606a8a6bd0c70a0b21923fff9
-ms.openlocfilehash: fefa5f3aa12d82b66a251cf0525475496e1e35cf
+ms.sourcegitcommit: f7cd9c71287d62c9f5d36e2f032bc2a6065572ae
+ms.openlocfilehash: 8ff48b08d1abb7481592c0ea076d4efa15c3d8ee
 ms.contentlocale: pt-br
-ms.lasthandoff: 05/17/2017
+ms.lasthandoff: 06/06/2017
 
 ---
 # <a name="use-a-command-line-to-install-system-center-configuration-manager-sites"></a>Usar a linha de comando para instalar sites do System Center Configuration Manager
@@ -67,7 +67,7 @@ ms.lasthandoff: 05/17/2017
     -   Identificação  
     -   Recuperação
 
-Para obter mais informações sobre backup e recuperação, consulte [Chaves de arquivo de script de recuperação de site autônoma](../../../../protect/understand/backup-and-recovery.md#BKMK_UnattendedSiteRecoveryKeys) no tópico [Backup e recuperação no Configuration Manager](../../../../protect/understand/backup-and-recovery.md).  
+Para saber mais, veja [Recuperação autônoma de sites para o Configuration Manager](/sccm/protect/understand/unattended-recovery).  
 
 Para obter uma lista dos valores e chaves a serem usados em um arquivo de script de instalação autônoma, consulte [Chaves de arquivo de script da instalação autônoma](../../../../core/servers/deploy/install/command-line-options-for-setup.md#bkmk_Unattended).  
 
@@ -87,7 +87,7 @@ Quando você usa mídia da pasta CD.Latest para executar uma instalação com sc
 - Instalar um novo site de administração central
 - Instalar um novo site primário
 - Recuperar um site de administração central
-- Recuperar um site primário 
+- Recuperar um site primário
 
 Esse valor não é suportado para uso com mídia de instalação que você obtém do site de Licenciamento por Volume da Microsoft.
 Veja as [opções de linha de comando](/sccm/core/servers/deploy/install/command-line-options-for-setup) para obter informações sobre como usar esse nome de chave no arquivo de script.

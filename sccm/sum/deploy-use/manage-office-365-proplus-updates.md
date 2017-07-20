@@ -5,7 +5,7 @@ keywords:
 author: dougeby
 ms.author: dougeby
 manager: angrobe
-ms.date: 03/24/2017
+ms.date: 05/31/2017
 ms.topic: article
 ms.prod: configuration-manager
 ms.service: 
@@ -13,10 +13,10 @@ ms.technology:
 - configmgr-sum
 ms.assetid: eac542eb-9aa1-4c63-b493-f80128e4e99b
 ms.translationtype: Human Translation
-ms.sourcegitcommit: dab5da5a4b5dfb3606a8a6bd0c70a0b21923fff9
-ms.openlocfilehash: 016580dc6ee3c5268833db941d42416a976d201c
+ms.sourcegitcommit: dc221ddf547c43ab1f25ff83c3c9bb603297ece6
+ms.openlocfilehash: 744bcb603a02bc7d237ffb3a7f925037b94a23ba
 ms.contentlocale: pt-br
-ms.lasthandoff: 05/17/2017
+ms.lasthandoff: 06/01/2017
 
 ---
 
@@ -142,6 +142,9 @@ Isso é especialmente útil porque as atualizações do Office 365 não são apl
 4. Na página **Import Client Settings (Importar Configurações do Cliente)**, escolha se deseja importar as configurações do cliente do Office 365 de um arquivo de configuração XML existente ou especificar as configurações manualmente e clique em **Avançar**.  
 
     Quando você tiver um arquivo de configuração existente, insira o local do arquivo e vá para a etapa 7. Observe que o local deve ser especificado no formato &#92;&#92;*servidor*&#92;*compartilhamento*&#92;*nome do arquivo*.XML.
+    > [!IMPORTANT]    
+    > O arquivo de configuração XML deve conter apenas [idiomas com suporte pelo cliente do Office 365 ProPlus](https://technet.microsoft.com/library/cc179219&#40;v=office.16&#41;.aspx).
+
 5. Na página **Client Products (Produtos do Cliente)**, selecione o pacote do Office 365 usado, selecione os aplicativos que deseja incluir, selecione quaisquer produtos Office adicionais que devem ser incluídos e clique em **Avançar**.
 6. Na página **Configurações do Cliente**, escolha as configurações a serem incluídas e clique em **Avançar**.
 7. Na página **Implantação**, escolha se deseja implantar o aplicativo e clique em **Avançar**.  
@@ -151,7 +154,7 @@ Se você optar por não implantar o pacote no assistente, vá para a etapa 9.
 10. Você pode implantar ou editar o aplicativo exatamente como faria com qualquer outro aplicativo no Configuration Manager de **Biblioteca de Software** > **Visão Geral** > **Gerenciamento de Aplicativos** > **Aplicativos**.   
 
 > [!IMPORTANT]
-> O aplicativo do Office 365 que você cria e implanta usando o Assistente para aplicativo do Office 365 no Configuration Manager não é gerenciado automaticamente pelo Configuration Manager até que você habilite a configuração de agente de cliente de atualização **Habilitar o gerenciamento do cliente do Office 365 novamente**. Para obter detalhes, veja [Sobre configurações do cliente](/sccm/core/clients/deploy/about-client-settings).
+> O aplicativo do Office 365 que você cria e implanta usando o Assistente para aplicativo do Office 365 no Configuration Manager não é gerenciado automaticamente pelo Configuration Manager até que você habilite a configuração de agente de cliente de atualização **Habilitar o gerenciamento do agente do cliente do Office 365**. Para obter detalhes, veja [Sobre configurações do cliente](/sccm/core/clients/deploy/about-client-settings).
 
 >[!NOTE]
 >Depois de implantar aplicativos do Office 365, você pode criar regras de implantação automática para manter os aplicativos. Para criar uma regra de implantação automática para aplicativos do Office 365, clique em **Criar um ADR** no painel de gerenciamento de cliente do Office 365 e selecione **Cliente do Office 365** quando escolher o produto. Para mais informações, confira [Automatically deploy software updates](/sccm/sum/deploy-use/automatically-deploy-software-updates) (Implantar atualizações de software automaticamente).
