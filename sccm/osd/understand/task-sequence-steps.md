@@ -17,10 +17,10 @@ author: Dougeby
 ms.author: dougeby
 manager: angrobe
 ms.translationtype: Human Translation
-ms.sourcegitcommit: dab5da5a4b5dfb3606a8a6bd0c70a0b21923fff9
-ms.openlocfilehash: 071d758f1015d16217a54fe26df5f8f948c818a3
+ms.sourcegitcommit: 6f9e6e93fce95666503907010a5c253158c5de7c
+ms.openlocfilehash: f648d7626af50d95fbaa5a7a2abd821a9c47f5d1
 ms.contentlocale: pt-br
-ms.lasthandoff: 05/17/2017
+ms.lasthandoff: 07/07/2017
 
 
 ---
@@ -280,7 +280,7 @@ As etapas de sequência de tarefas a seguir podem ser adicionadas à sequência 
  Especifique o fuso horário para o computador de destino. Esse valor pode ser substituído pelo valor capturado pela etapa da sequência de tarefas **Capturar as configurações do Windows** .  
 
 ##  <a name="BKMK_AutoApplyDrivers"></a> Drivers de Aplicação Automática  
- Use a etapa da sequência de tarefas **Aplicação automática de drivers** para corresponder e instalar drivers como parte da implantação do sistema operacional.  
+ Use a etapa da sequência de tarefas **Aplicação automática de drivers** para corresponder e instalar drivers como parte da implantação de sistema operacional.  
 
  A etapa da sequência de tarefas **Aplicação automática de drivers** executa as seguintes ações:  
 
@@ -623,11 +623,14 @@ Essa etapa de sequência de tarefas é executada somente no Windows PE. Ela não
 
 -   Pacotes  
 
- Essa etapa funciona bem em uma sequência de tarefas para atualizar um sistema operacional nos seguintes cenários:  
+ Esta etapa funciona bem em uma sequência de tarefas para atualizar um sistema operacional nos seguintes cenários:  
 
 -   Para usar uma sequência de tarefas de atualização única que pode funcionar com plataformas x86 e x64. Para fazer isso, inclua duas etapas **Baixar Conteúdo do Pacote** no grupo **Preparar para Atualização** com condições para detectar a arquitetura do cliente e baixar apenas o Pacote de atualização do sistema operacional apropriado. Configure cada etapa **Baixar Conteúdo do Pacote** para usar a mesma variável e use a variável para o caminho de mídia na etapa **Atualizar Sistema Operacional** .  
 
 -   Para baixar um pacote de drivers aplicáveis dinamicamente, use duas etapas **Baixar Conteúdo do Pacote** com condições para detectar o tipo de hardware apropriado para cada pacote de drivers. Configure cada etapa **Baixar Conteúdo do Pacote** para usar a mesma variável e use a variável para o valor **Conteúdo de Teste** na seção de drivers da etapa **Atualizar Sistema Operacional** .  
+
+> [!NOTE]    
+> Quando você implanta uma sequência de tarefas que contém a etapa Baixar Conteúdo do Pacote, não selecione **Baixar todo o conteúdo localmente antes de iniciar a sequência de tarefas** para **Opções de implantação** na página **Pontos de Distribuição** do Assistente de Implantação de Software.  
 
 Esta etapa é executada em um sistema operacional padrão ou no Windows PE. No entanto, a opção para salvar o pacote no cache do cliente do Configuration Manager não tem suporte no WinPE.
 
@@ -654,11 +657,11 @@ Esta etapa é executada em um sistema operacional padrão ou no Windows PE. No e
  **Coloque no seguinte local**  
  Escolha esta opção para salvar o pacote em um dos seguintes locais:  
 
--   **Diretório de trabalho da sequência de tarefas**  
+ -   **Diretório de trabalho da sequência de tarefas**  
 
--   **Cache do cliente do Configuration Manager**: use esta opção para armazenar o conteúdo no cache dos clientes. Isso permite que o cliente atue como uma fonte de cache de sistemas pares para outros clientes de cache de sistemas pares. Para mais informações, confira [Prepare Windows PE peer cache to reduce WAN traffic](../get-started/prepare-windows-pe-peer-cache-to-reduce-wan-traffic.md) (Preparar o cache par do Windows PE para reduzir o tráfego da WAN).  
+ -   **Cache do cliente do Configuration Manager**: use esta opção para armazenar o conteúdo no cache dos clientes. Isso permite que o cliente atue como uma fonte de cache de sistemas pares para outros clientes de cache de sistemas pares. Para mais informações, confira [Prepare Windows PE peer cache to reduce WAN traffic](../get-started/prepare-windows-pe-peer-cache-to-reduce-wan-traffic.md) (Preparar o cache par do Windows PE para reduzir o tráfego da WAN).  
 
--   **Caminho personalizado**  
+ -   **Caminho personalizado**  
 
  **Salvar caminho como uma variável**  
  Você pode salvar o caminho como uma variável que pode ser usada em outra etapa da sequência de tarefas. O Configuration Manager adiciona um sufixo numérico ao nome da variável. Por exemplo, se você especificar uma variável de %*mycontent*% como uma variável personalizada, essa será a raiz de onde todo o conteúdo referenciado está armazenado (que podem ser vários pacotes). Quando você faz referência à variável, adicionará um sufixo numérico à variável. Por exemplo, para o primeiro pacote, você fará referência à variável %*mycontent01*%. Quando você fizer referência à variável em etapas subsequentes, como uma atualização do sistema operacional, usa %*mycontent02*% ou %*mycontent03*% em que o número corresponde à ordem na qual o pacote está listado na etapa.  

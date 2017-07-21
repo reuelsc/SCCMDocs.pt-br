@@ -16,10 +16,10 @@ author: nathbarn
 ms.author: nathbarn
 manager: angrobe
 ms.translationtype: Human Translation
-ms.sourcegitcommit: e6833951db27b227a3ca22925e9d9f4c3fc443fc
-ms.openlocfilehash: e8606b8a9268a0a0668b75070cf35894f4794123
+ms.sourcegitcommit: 5eed004bd38a567dfdd4e392300be656a7abe3f7
+ms.openlocfilehash: c692fad43807e54cecbd7ab60284ea740d60617d
 ms.contentlocale: pt-br
-ms.lasthandoff: 05/17/2017
+ms.lasthandoff: 05/25/2017
 
 ---
 # <a name="predeclare-devices-with-imei-or-ios-serial-numbers"></a>Pré-declarar dispositivos com número de série do iOS ou IMEI
@@ -62,7 +62,7 @@ Quando você carrega os números de série para dispositivos iOS de propriedade 
 
 ## <a name="format-for-uploading-csv-files"></a>Formato para carregar arquivos .csv
 
-O arquivo .csv que você usa para identificar dispositivos pelo IMEI ou pelo número de série deve ter o seguinte formato, exceto a linha superior, que é fornecida apenas para orientação. Cada linha deve conter um número de ID, pode ser um número IMEI ou o número de série do iOS. Você pode incluir os dois. Os números de IMEI podem ser usados para dispositivos Android, iOS e Windows. Também há suporte para os números de série do iOS.  Esta tabela contém dados de exemplo:
+O arquivo .csv que você usa para identificar dispositivos pelo IMEI ou pelo número de série de iOS deve ter o seguinte formato, exceto a linha superior, que é fornecida apenas para orientação. Cada linha deve conter um número de identificação, pode ser um número IMEI ou o número de série do iOS. Para dispositivos iOS, você pode incluir ambos. Os números de IMEI podem ser usados para dispositivos Android, iOS e Windows. Esta tabela contém dados de exemplo:
 
 | Nº do IMEI  | Nº de série do iOS  | Sistema operacional | Detalhes |
 |------------ |---------------|-----|-----|

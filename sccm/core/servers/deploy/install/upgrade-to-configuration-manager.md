@@ -2,7 +2,7 @@
 title: "Atualização para o System Center Configuration Manager | Microsoft Docs"
 description: "Conheça as etapas para executar uma atualização in-loco com êxito de um site e hierarquia que executa o System Center 2012 Configuration Manager."
 ms.custom: na
-ms.date: 05/02/2017
+ms.date: 6/6/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
@@ -16,10 +16,10 @@ author: Brenduns
 ms.author: brenduns
 manager: angrobe
 ms.translationtype: Human Translation
-ms.sourcegitcommit: d940fd1bbf96767d44f8c55315e814be55a83897
-ms.openlocfilehash: 9e58ab8dd892adf25429564adfd6f86849ddcbdf
+ms.sourcegitcommit: 3619a73d3a39659de927e1711a7ec81de9918064
+ms.openlocfilehash: 1166b739e1e8d667172d97883f484fdbc3a142c1
 ms.contentlocale: pt-br
-ms.lasthandoff: 05/17/2017
+ms.lasthandoff: 06/13/2017
 
 
 ---
@@ -38,11 +38,11 @@ Você pode executar uma atualização in-loco para atualizar para o System Cente
 
 **Atualizar para a versão 1702**   
 Quando tiver a mídia de linha de base versão 1702, você poderá atualizar o seguinte para uma versão totalmente licenciada do System Center Configuration Manager versão 1702:   
--      Uma instalação de avaliação do System Center Configuration Manager versão 1702
--      System Center 2012 Configuration Manager com Service Pack 1
--      System Center 2012 Configuration Manager com Service Pack 2
--      System Center 2012 R2 Configuration Manager
--      System Center 2012 R2 Configuration Manager com Service Pack 1
+-     Uma instalação de avaliação do System Center Configuration Manager versão 1702
+-     System Center 2012 Configuration Manager com Service Pack 1
+-     System Center 2012 Configuration Manager com Service Pack 2
+-     System Center 2012 R2 Configuration Manager
+-     System Center 2012 R2 Configuration Manager com Service Pack 1
 
 **Atualizar para a versão 1606**  
 Em 15 de dezembro de 2016, a mídia de linha de base para a versão 1606 foi relançada para adicionar suporte a cenários adicionais de atualização. Essa nova versão dá suporte para a atualização do seguinte para uma versão totalmente licenciada do System Center Configuration Manager versão 1606:  
@@ -101,7 +101,7 @@ Examine os pré-requisitos necessários em cada computador que hospeda uma funç
 
 Para obter informações gerais sobre as plataformas com suporte e as configurações de pré-requisito, consulte [Supported configurations for System Center Configuration Manager](../../../../core/plan-design/configs/supported-configurations.md).  
 
-Para obter informações sobre o uso do Windows ADK com o Configuration Manager, consulte [Infrastructure requirements for operating system deployment in System Center Configuration Manager](../../../../osd/plan-design/infrastructure-requirements-for-operating-system-deployment.md) (Requisitos de infraestrutura para implantação do sistema operacional no System Center Configuration Manager).  
+Para obter informações sobre o uso do Windows ADK com o Configuration Manager, consulte [Infrastructure requirements for operating system deployment in System Center Configuration Manager](../../../../osd/plan-design/infrastructure-requirements-for-operating-system-deployment.md) (Requisitos de infraestrutura para implantação de sistema operacional no System Center Configuration Manager).  
 
 **Examinar o status do site e da hierarquia e verificar se não existem problemas não resolvidos:**  
 Antes de atualizar um site, resolva todos os problemas operacionais do servidor do site, do servidor de banco de dados do site e das funções do sistema de site que estão instalados em computadores remotos. Uma atualização de site pode falhar devido a problemas operacionais existentes.  
@@ -115,7 +115,7 @@ Para obter mais informações, consulte [Windows Update](http://go.microsoft.com
 As seguintes funções de sistema de sites não são mais usadas no System Center Configuration Manager e devem ser desinstaladas antes da atualização do System Center 2012 Configuration Manager:  
 
 -   Ponto de Gerenciamento Fora de Banda  
--   Ponto do Validador da Integridade do Serviço  
+-   Ponto do Validador da Integridade do Sistema  
 
 **Desabilitar réplicas de banco de dados para pontos de gerenciamento em sites primários:**  
 O Configuration Manager não pode atualizar com êxito um site primário que tenha uma réplica de banco de dados habilitada para pontos de gerenciamento. Desabilite a replicação de banco de dados antes de você:  
@@ -151,7 +151,7 @@ Para obter mais informações sobre tarefas de manutenção de site, veja:
 **Executar o Verificador de Pré-requisitos de Instalação**:  
 Antes de atualizar um site, você pode executar o **Verificador de Pré-requisitos** independentemente da Instalação para validar que seu site atende aos pré-requisitos. Posteriormente, ao atualizar o site, o Verificador de pré-requisitos será executado novamente.  
 
-Se você usar a mídia de linha de base para a versão 1606 de outubro de 2016, a verificação de pré-requisitos independente avaliará o site quanto à atualização para o Branch Atual e para o LTSB (Branch de Manutenção em Longo Prazo) do System Center Configuration Manager. Como não há suporte para alguns recursos de LTSB, você poderá ver entradas em *ConfigMgrPrereq.log* que são semelhantes ao seguinte:
+Se você usar a mídia de linha de base para a versão 1606 de outubro de 2016, a verificação de pré-requisitos independente avaliará o site quanto à atualização para o Branch Atual e para o LTSB (Branch de Manutenção em Longo Prazo) do System Center Configuration Manager. Como não há suporte para alguns recursos de LTSB, você poderá ver entradas em *ConfigMgrPrereq.log* semelhantes ao seguinte:
  - INFORMAÇÕES: o site é uma edição LTSB.
  - Função do sistema de sites 'Ponto de sincronização do Asset Intelligence' sem suporte para a edição LTSB;    Erro;    O Configuration Manager detectou que o 'ponto de sincronização do Asset Intelligence' está instalado. Não há suporte para o Asset Intelligence na edição LTSB. Você deve desinstalar a função de sistema de sites de ponto de sincronização do Asset Intelligence antes de continuar.
 
@@ -194,7 +194,7 @@ Antes de atualizar um site de administração central do Configuration Manager o
 
 -   Você deve testar o processo de atualização de banco de dados do site, pois quando você atualiza um site, o banco de dados do site pode ser modificado  
 -   Embora o teste de atualização de banco de dados não seja necessário, ele pode identificar problemas na atualização antes que seu banco de dados de produção seja afetado  
--   Uma atualização do banco de dados do site com falha pode deixar o banco de dados do site inoperante e pode requerer uma recuperação do site para restaurar a funcionalidade  
+-   Uma atualização do banco de dados do site com falha pode deixar o banco de dados do site inoperante e pode requerer uma recuperação de site para restaurar a funcionalidade  
 -   Embora o banco de dados do site seja compartilhado entre sites em uma hierarquia, planeje testar o banco de dados em cada site aplicável antes de atualizar esse site  
 -   Se você usar réplicas de banco de dados para pontos de gerenciamento em um site primário, desabilite a replicação antes de criar o backup do banco de dados do site  
 
@@ -271,7 +271,7 @@ Quando um site é atualizado para o System Center Configuration Manager, algumas
      Os agendamentos personalizados de resumo para atualizações de software ou grupos de atualização de software são redefinidos para o valor padrão de 1 hora. Concluída a atualização, redefina os valores personalizados de resumo para a frequência necessária.  
 
 ##  <a name="bkmk_test"></a> Testar a atualização de banco de dados do site  
-As informações a seguir se aplicarão somente quando você estiver atualizando uma versão anterior como o System Center 2012 Configuration Manager para o System Center Configuration Manager. Se seu site já executar o System Center Configuration Manager e você estiver instalando uma nova atualização, consulte [Etapa 2: Testar a atualização do banco de dados antes de instalar uma atualização](/sccm/core/servers/manage/install-in-console-updates#bkmk_step2) de **Antes de instalar uma atualização no console**.
+As informações a seguir se aplicarão somente quando você estiver atualizando uma versão anterior como o System Center 2012 Configuration Manager para o System Center Configuration Manager.
 
 Para atualizar um site, teste uma cópia do banco de dados do site para a atualização.  
 

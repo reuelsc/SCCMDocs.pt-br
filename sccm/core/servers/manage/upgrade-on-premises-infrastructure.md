@@ -2,7 +2,7 @@
 title: Atualizar infraestrutura local | Microsoft Docs
 description: Saiba como atualizar a infraestrutura, como o SQL Server e o sistema operacional do site dos sistemas de sites.
 ms.custom: na
-ms.date: 2/14/2017
+ms.date: 06/05/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
@@ -17,10 +17,10 @@ author: Brenduns
 ms.author: brenduns
 manager: angrobe
 ms.translationtype: Human Translation
-ms.sourcegitcommit: 2e711cce2435957f3e85dad08f17260e1a224fc2
-ms.openlocfilehash: c6448932e91a02984ca57cef0b75c10ea3f43fa1
+ms.sourcegitcommit: 0564cb678200d17d97c0f1d111c0b4b41d8ba40e
+ms.openlocfilehash: 188b7f2537dd0e569a5c00995620124512cf311b
 ms.contentlocale: pt-br
-ms.lasthandoff: 05/17/2017
+ms.lasthandoff: 06/30/2017
 
 
 ---
@@ -39,9 +39,10 @@ Use as informações descritas neste tópico para ajudá-lo a atualizar a infrae
 
 -   Atualização in-loco para um service pack posterior do Windows Server, se o nível do service pack do Windows resultante tiver suporte do Configuration Manager.  
 -   Atualização in-loco de:
-    - Windows Server 2012 R2 para Windows Server 2016 ([Ver detalhes adicionais](#upgrade-windows-server-2012-r2-to-2016)).
-    - Windows Server 2012 para Windows Server 2012 R2 ([Ver detalhes adicionais](#upgrade-windows-server-2012-to-windows-server-2012-r2)).
-    - Quando você usa o Configuration Manager versão 1602 ou posterior, também há suporte para atualizar o Windows Server 2008 R2 para o Windows Server 2012 R2 ([Ver detalhes adicionais](#upgrade-windows-server-2008-r2-to-windows-server-2012-r2)).
+    - Windows Server 2012 R2 para Windows Server 2016 ([Ver detalhes adicionais](#bkmk_2016)).
+    - Windows Server 2012 para Windows Server 2016 ([Ver detalhes adicionais](#bkmk_2016)).
+    - Windows Server 2012 para Windows Server 2012 R2 ([Ver detalhes adicionais](#bkmk_2012r2)).
+    - Quando você usa o Configuration Manager versão 1602 ou posterior, também há suporte para atualizar o Windows Server 2008 R2 para o Windows Server 2012 R2 ([Ver detalhes adicionais](#bkmk_from2008r2)).
 
     > [!WARNING]  
     >  Antes de atualizar para o Windows Server 2012 R2, *você deve desinstalar o WSUS 3.2* do servidor.  
@@ -52,29 +53,29 @@ Para atualizar um servidor, use os procedimentos de atualização fornecidos pel
   -  [Opções de atualização para o Windows Server 2012 R2](https://technet.microsoft.com/library/dn303416.aspx) na documentação do Windows Server.  
   - [Opções de atualização e conversão para o Windows Server 2016](https://technet.microsoft.com/windows-server-docs/get-started/supported-upgrade-paths) na documentação do Windows Server.
 
-### <a name="upgrade-windows-server-2012-r2-to-2016"></a>Atualizar o Windows Server 2012 R2 para o 2016  
-Este cenário de atualização do sistema operacional tem as seguintes condições:
+### <a name="bkmk_2016"></a> Atualizar o Windows Server 2012 ou o Windows Server 2012 R2 para 2016
+Quando você atualiza o Windows Server 2012 ou Windows Server 2012 R2 para Windows Server 2016, o seguinte se aplica:
+
 
 **Antes da atualização:**  
--     Remova o cliente do SCEP (System Center Endpoint Protection). O Windows Server 2016 tem o Windows Defender interno, que substitui o cliente do SCEP. A presença do cliente do SCEP pode impedir uma atualização para o Windows Server 2016.
+-   Remova o cliente do SCEP (System Center Endpoint Protection). O Windows Server 2016 tem o Windows Defender interno, que substitui o cliente do SCEP. A presença do cliente do SCEP pode impedir uma atualização para o Windows Server 2016.
 
 **Após a atualização:**
--     Certifique-se de que o Windows Defender esteja habilitado, configurado para o início automático e em execução.
--     Certifique-se de que os seguintes serviços do Configuration Manager estejam em execução:
+-   Certifique-se de que o Windows Defender esteja habilitado, configurado para o início automático e em execução.
+-   Certifique-se de que os seguintes serviços do Configuration Manager estejam em execução:
   -     SMS_EXECUTIVE
   -     SMS_SITE_COMPONENT_MANAGER
 
 
--     Verifique se os serviços de **Ativação de Processos do Windows** e **WWW/W3svc** estão habilitados, configurados para o início automático e em execução para as seguintes funções de sistema de site (esses serviços são desabilitados durante a atualização):
+-   Verifique se os serviços de **Ativação de Processos do Windows** e **WWW/W3svc** estão habilitados, configurados para o início automático e em execução para as seguintes funções de sistema de site (esses serviços são desabilitados durante a atualização):
   -     Servidor do site
   -     Ponto de gerenciamento
   -     Ponto de serviços Web do Catálogo de Aplicativos
-  -     Ponto de sites da Web do catálogo de aplicativos
+  -     Ponto de sites da Web do Catálogo de Aplicativos
 
+-   Certifique-se de que cada servidor que hospeda uma função de sistema de sites continue atendendo a todos os [pré-requisitos das funções de sistema de sites](/sccm/core/plan-design/configs/site-and-site-system-prerequisites) que são executadas no servidor. Por exemplo, talvez seja necessário reinstalar o BITS, o WSUS ou definir configurações específicas para o IIS.
 
--     Certifique-se de que cada servidor que hospeda uma função de sistema de sites continue atendendo a todos os [pré-requisitos das funções de sistema de sites](/sccm/core/plan-design/configs/site-and-site-system-prerequisites) que são executadas no servidor. Por exemplo, talvez seja necessário reinstalar o BITS, o WSUS ou definir configurações específicas para o IIS.
-
-  Após restaurar os pré-requisitos ausentes, inicie o servidor mais uma vez para garantir que os serviços estejam iniciados e operacionais.
+-   Após restaurar os pré-requisitos ausentes, inicie o servidor mais uma vez para garantir que os serviços estejam iniciados e operacionais.
 
 **Problema conhecido para consoles remotos do Configuration Manager:**  
 Após atualizar o servidor do site ou um servidor que hospeda uma instância de SMS_Provider para o Windows Server 2016, talvez os usuários administrativos não possam conectar um console do Configuration Manager ao site. Para contornar esse problema, você precisa restaurar manualmente as permissões para o grupo de Administradores de SMS no WMI. As permissões devem ser definidas no servidor do site e, em cada servidor remoto que hospeda uma instância do SMS_Provider:
@@ -84,46 +85,45 @@ Após atualizar o servidor do site ou um servidor que hospeda uma instância de 
 3. Expanda a árvore abaixo da Raiz, selecione o nó **SMS** e clique em **Segurança**.  Verifique se o grupo **Administradores de SMS** tem as seguintes permissões:
   -     Habilitar conta
   -     Habilitação remota
-4. Em seguida, na guia **Segurança**, abaixo do nó **SMS**, selecione o nó **site_**&lt;*sitecode*> e clique em **Segurança**. Verifique se o grupo **Administradores de SMS** tem as seguintes permissões:
+4. Na guia **Segurança**, abaixo do nó **SMS**, selecione o nó **site_&lt;sitecode**> e escolha **Segurança**. Verifique se o grupo **Administradores de SMS** tem as seguintes permissões:
   -   Executar métodos
   -   Gravação do provedor
   -   Habilitar conta
   -   Habilitação remota
 5. Salve as permissões para restaurar o acesso do console do Configuration Manager.
 
-### <a name="windows-server-2012-to-windows-server-2012-r2"></a>Windows Server 2012 para Windows Server 2012 R2
+### <a name="bkmk_2012r2"></a> Windows Server 2012 para Windows Server 2012 R2
 
 **Antes da atualização:**
 -  Diferente dos outros cenários com suporte, este cenário não requer considerações adicionais antes da atualização.
 
 **Após a atualização:**
-  -    Certifique-se de que o Serviço de Implantação do Windows esteja iniciado e em execução para as seguintes funções de sistema de site (o serviço é interrompido durante a atualização):
+  - Certifique-se de que o Serviço de Implantação do Windows esteja iniciado e em execução para as seguintes funções de sistema de site (o serviço é interrompido durante a atualização):
     - Servidor do site
     - Ponto de gerenciamento
     - Ponto de serviços Web do Catálogo de Aplicativos
     - Ponto de sites da Web do Catálogo de Aplicativos
 
-
   -     Verifique se os serviços de **Ativação de Processos do Windows** e **WWW/W3svc** estão habilitados, configurados para o início automático e em execução para as seguintes funções de sistema de site (esses serviços são desabilitados durante a atualização):
-    -     Servidor do site
-    -     Ponto de gerenciamento
-    -     Ponto de serviços Web do Catálogo de Aplicativos
-    -     Ponto de sites da Web do catálogo de aplicativos
+    -   Servidor do site
+    -   Ponto de gerenciamento
+    -   Ponto de serviços Web do Catálogo de Aplicativos
+    -   Ponto de sites da Web do Catálogo de Aplicativos
 
 
   -     Certifique-se de que cada servidor que hospeda uma função de sistema de sites continue atendendo a todos os [pré-requisitos das funções de sistema de sites](/sccm/core/plan-design/configs/site-and-site-system-prerequisites) que são executadas no servidor. Por exemplo, talvez seja necessário reinstalar o BITS, o WSUS ou definir configurações específicas para o IIS.
 
   Após restaurar os pré-requisitos ausentes, inicie o servidor mais uma vez para garantir que os serviços estejam iniciados e operacionais.
 
-### <a name="upgrade-windows-server-2008-r2-to-windows-server-2012-r2"></a>Atualizar o Windows Server 2008 R2 para o Windows Server 2012 R2
+### <a name="bkmk_from2008r2"></a> Atualizar o Windows Server 2008 R2 para o Windows Server 2012 R2
 Este cenário de atualização do sistema operacional tem as seguintes condições:  
 
 **Antes da atualização:**
--     Desinstale o WSUS 3.2.  
+-   Desinstale o WSUS 3.2.  
     Antes de atualizar o sistema operacional de um servidor para o Windows Server 2012 R2, você precisa desinstalar o WSUS 3.2 do servidor. Para obter informações sobre esta etapa crítica, confira a seção "Funcionalidade nova e alterada" em "Visão geral do Windows Server Update Services" na documentação do Windows Server.
 
 **Após a atualização:**
-  -    Certifique-se de que o Serviço de Implantação do Windows esteja iniciado e em execução para as seguintes funções de sistema de site (o serviço é interrompido durante a atualização):
+  - Certifique-se de que o Serviço de Implantação do Windows esteja iniciado e em execução para as seguintes funções de sistema de site (o serviço é interrompido durante a atualização):
     - Servidor do site
     - Ponto de gerenciamento
     - Ponto de serviços Web do Catálogo de Aplicativos
@@ -131,10 +131,10 @@ Este cenário de atualização do sistema operacional tem as seguintes condiçõ
 
 
   -     Verifique se os serviços de **Ativação de Processos do Windows** e **WWW/W3svc** estão habilitados, configurados para o início automático e em execução para as seguintes funções de sistema de site (esses serviços são desabilitados durante a atualização):
-    -     Servidor do site
-    -     Ponto de gerenciamento
-    -     Ponto de serviços Web do Catálogo de Aplicativos
-    -     Ponto de sites da Web do Catálogo de Aplicativos
+    -   Servidor do site
+    -   Ponto de gerenciamento
+    -   Ponto de serviços Web do Catálogo de Aplicativos
+    -   Ponto de sites da Web do Catálogo de Aplicativos
 
 
   -     Certifique-se de que cada servidor que hospeda uma função de sistema de sites continue atendendo a todos os [pré-requisitos das funções de sistema de sites](/sccm/core/plan-design/configs/site-and-site-system-prerequisites) que são executadas no servidor. Por exemplo, talvez seja necessário reinstalar o BITS, o WSUS ou definir configurações específicas para o IIS.

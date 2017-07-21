@@ -15,9 +15,11 @@ caps.latest.revision: 4
 author: robstackmsft
 ms.author: robstack
 manager: angrobe
-translationtype: Human Translation
-ms.sourcegitcommit: 10b1010ccbf3889c58c55b87e70b354559243c90
-ms.openlocfilehash: 479a7e902ff19b8ec501ff01c8e56565fd69f51b
+ms.translationtype: Human Translation
+ms.sourcegitcommit: 2087badc9dd1d216352dce232b145a786783ac89
+ms.openlocfilehash: 44f454d2f7c9d317d1ad99ba724931b4631bd11e
+ms.contentlocale: pt-br
+ms.lasthandoff: 05/18/2017
 
 
 ---                     
@@ -27,17 +29,12 @@ ms.openlocfilehash: 479a7e902ff19b8ec501ff01c8e56565fd69f51b
 
 As consultas no System Center Configuration Manager permitem retornar informações do banco de dados do site com base nos critérios que você especificar. Você pode usar consultas para recuperar informações sobre recursos no seu site ou sobre mensagens de status e dados de inventário.  
 
-## <a name="queries-topics"></a>Tópicos de consultas  
- Use os tópicos a seguir para ajudar a usar consultas no Configuration Manager.  
+## <a name="topics-about-using-queries-in-configuration-manager"></a>Tópicos sobre como usar consultas no Configuration Manager  
+ Use os tópicos a seguir para ajudar a usar consultas no Configuration Manager:  
 
 -   [Introdução a consultas no System Center Configuration Manager](../../../core/servers/manage/introduction-to-queries.md)  
 
 -   [Operações e manutenção de consultas no System Center Configuration Manager](../../../core/servers/manage/operations-and-maintenance-for-queries.md)  
 
 -   [Segurança e privacidade de consultas no System Center Configuration Manager](../../../core/servers/manage/security-and-privacy-for-queries.md)  
-
-
-
-<!--HONumber=Dec16_HO3-->
-
 

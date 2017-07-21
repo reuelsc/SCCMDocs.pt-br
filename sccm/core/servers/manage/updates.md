@@ -17,10 +17,10 @@ author: Brenduns
 ms.author: brenduns
 manager: angrobe
 ms.translationtype: Human Translation
-ms.sourcegitcommit: 90775fcf2549080a43e9c1606caa79d9eb90a89c
-ms.openlocfilehash: a33960fb89b71c0f8128e21a5054f5b63cfc6b17
+ms.sourcegitcommit: f4c46bfab9b40b29654f4e883817a5508ab25b74
+ms.openlocfilehash: 4bc076bba4672d0be0032ec785da20e60b11a6c4
 ms.contentlocale: pt-br
-ms.lasthandoff: 05/17/2017
+ms.lasthandoff: 06/28/2017
 
 
 ---
@@ -30,7 +30,7 @@ ms.lasthandoff: 05/17/2017
 
 O System Center Configuration Manager usa um método de serviço no console chamado **Atualizações e Manutenção** que facilita a localização e a instalação das atualizações recomendadas para a infraestrutura do Configuration Manager. Esse método de serviço no console é complementado por atualizações fora da banda, como hotfixes, destinadas a clientes que precisam resolver problemas possivelmente específicos de seus ambientes.  
 
-> [!TIP]
+> [!TIP]  
 > Ao gerenciar a infraestrutura do site e da hierarquia do System Center Configuration Manager, os termos *upgrade*, *atualização* e *instalação* são usados para descrever três conceitos separados. Para saber como cada termo é usado, consulte [About upgrade, update, and install](/sccm/core/understand/upgrade-update-install) (Sobre upgrade, atualização e instalação).
 
 
@@ -67,7 +67,7 @@ Depois de instalar uma versão de linha de base, versões adicionais do Configur
 
 Ao instalar uma atualização, ela armazena os arquivos de instalação dessa versão no servidor do site em uma pasta chamada CD.Mais recente. Consulte [A pasta CD.Latest para o System Center Configuration Manager](../../../core/servers/manage/the-cd.latest-folder.md) para obter mais informações sobre esses arquivos.  
 
--   Use os arquivos na pasta CD.Mais recente durante a recuperação do site e para instalar sites adicionais em uma hierarquia que não execute mais uma versão de linha de base.  
+-   Use os arquivos na pasta CD.Mais recente durante a recuperação de site e para instalar sites adicionais em uma hierarquia que não execute mais uma versão de linha de base.  
 
 -   Você não pode usar os arquivos de instalação da CD.Mais recente para instalar o primeiro site de uma nova hierarquia ou para atualizar um site do System Center 2012 Configuration Manager.  
 
@@ -85,7 +85,7 @@ As seguintes versões do Configuration Manager estão disponíveis como uma linh
 | 1511 <br /><br /> 5.00.8325.1000|12/08/2015| 12/08/2016|Sim|Não|  
 
 
-*(Observação 1)* Esta mídia de linha de base 1606 está disponível como parte do Microsoft System Center 2016 ou do System Center Configuration Manager (Branch Atual e Branch de Manutenção em Longo Prazo 1606).
+*(Observação 1)* A mídia de linha de base 1606 e 1702 está disponível como parte das versões do Microsoft System Center 2016 ou do System Center Configuration Manager (Branch Atual e Branch de Manutenção de Longo Prazo) no VLSC [(Volume License Service Center)](https://www.microsoft.com/Licensing/servicecenter/Downloads/DownloadsAndKeys.aspx). Por exemplo, no VLSC você pode pesquisar por *System Center Config Mgr (branch atual e LTSB)*, e a mídia de linha de base versão 1606 e 1702 retornam e ficam disponível para download.
 
 Para verificar a versão do site do Configuration Manager, no console vá para **Sobre o System Center Configuration Manager** no canto superior esquerdo do console onde é exibida a versão do novo site e do console.  
 
@@ -115,7 +115,7 @@ O Configuration Manager descobre novas atualizações quando você sincroniza a 
 
 -   Quando o ponto de conexão de serviço está no modo online, o site sincroniza-se com a Microsoft diariamente para identificar automaticamente as novas atualizações que se aplicam à infraestrutura.  Para baixar atualizações e arquivos redist para atualizações, o computador que hospeda a função do sistema de sites do ponto de conexão de serviço usa o contexto **Sistema** para acessar os seguintes locais da Internet: go.microsoft.com e Microsoft.com. Para obter informações sobre outros locais aos quais o ponto de conexão de serviço se conecta, consulte [Requisitos de acesso de Internet](../../../core/servers/deploy/configure/about-the-service-connection-point.md#bkmk_urls) em [Sobre o ponto de conexão de serviço no System Center Configuration Manager](../../../core/servers/deploy/configure/about-the-service-connection-point.md).  
 
--   Quando o ponto de conexão de serviço estiver no modo offline, use a ferramenta de conexão de serviço para sincronizar-se manualmente com a Microsoft Cloud. Para obter mais informações, consulte [Usar a Ferramenta de Conexão de Serviço do System Center Configuration Manager](../../../core/servers/manage/use-the-service-connection-tool.md)  
+-   Quando o ponto de conexão de serviço estiver no modo offline, use a ferramenta de conexão de serviço para sincronizar-se manualmente com a nuvem da Microsoft. Para obter mais informações, consulte [Usar a Ferramenta de Conexão de Serviço do System Center Configuration Manager](../../../core/servers/manage/use-the-service-connection-tool.md)  
 
 -   As atualizações no console substituem a necessidade de localizar e instalar atualizações, service packs e novos recursos individuais de forma independente.  
 

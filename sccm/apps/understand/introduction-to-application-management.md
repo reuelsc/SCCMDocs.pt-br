@@ -15,11 +15,11 @@ caps.latest.revision: 18
 author: robstackmsft
 ms.author: robstack
 manager: angrobe
-experimental: true
-experiment_id: rob-table-161101
-translationtype: Human Translation
-ms.sourcegitcommit: 5aef08865b232ff2dacec6906098bebf4e42e6b1
-ms.openlocfilehash: 699adb5fac0c625c321db011af6989cc4c0778ec
+ms.translationtype: Human Translation
+ms.sourcegitcommit: f4c46bfab9b40b29654f4e883817a5508ab25b74
+ms.openlocfilehash: 959a36413d06bb225f260bd44c1d3d59efd44e69
+ms.contentlocale: pt-br
+ms.lasthandoff: 06/28/2017
 
 
 ---
@@ -37,11 +37,11 @@ Neste tópico, você aprenderá as noções básicas que você precisa saber ant
 
  Quando o aplicativo é implantado em dispositivos, os **requisitos** decidem qual tipo de implantação está instalada no dispositivo.  
 
- Claro, há muito mais coisas que você pode fazer com um aplicativo e você saberá mais sobre elas ao ler este guia. A tabela a seguir apresenta alguns conceitos que você precisará saber antes de começar a se aprofundar. Você não precisará de todos eles em todos os aplicativos que criar:  
+ Você pode fazer muito mais com um aplicativo. Você saberá mais à medida que lê este guia. A tabela a seguir apresenta alguns conceitos que você precisará saber antes de começar a obter detalhes:  
 
 |Conceito|Descrição|    
 |-|-|  
-|**Requirements**|Nas versões anteriores do Configuration Manager, geralmente você deve criar uma coleção que contém os dispositivos que você desejava implantar em um aplicativo. Embora você ainda possa fazer isso, os requisitos reduzem essa necessidade ao permitir que você especifique critérios muito mais granulares de acordo com os quais um aplicativo será instalado.<br /><br /> Por exemplo, você pode especificar que um aplicativo pode instalar somente em dispositivos que executam o Windows 10. Em seguida, você pode implantar o aplicativo em todos os seus dispositivos, mas ele será instalado somente em dispositivos que executam o Windows 10.<br /><br /> O cliente do Configuration Manager avalia os requisitos para determinar se um aplicativo e qualquer de seus tipos de implantação serão instalados. Em seguida, ele determina o tipo de implantação correto pelo qual instalar um aplicativo. A cada sete dias, por padrão, as regras de requisitos são reavaliadas para garantir a conformidade de acordo com a configuração do cliente **Agendar a reavaliação de implantações**.<br /><br /> Para obter detalhes, consulte [Create and deploy an application (Criar e implantar um aplicativo)](../../apps/get-started/create-and-deploy-an-application.md).|  
+|**Requirements**|Nas versões anteriores do Configuration Manager, geralmente você deve criar uma coleção que contém os dispositivos que você desejava implantar em um aplicativo. Embora você ainda possa criar uma coleção, com os requisitos você pode especificar critérios mais detalhados para uma implantação de aplicativo.<br /><br /> Por exemplo, você pode especificar que um aplicativo pode instalar somente em dispositivos que executam o Windows 10. Em seguida, você pode implantar o aplicativo em todos os seus dispositivos, mas ele será instalado somente em dispositivos que executam o Windows 10.<br /><br /> O cliente do Configuration Manager avalia os requisitos para determinar se um aplicativo e qualquer de seus tipos de implantação serão instalados. Em seguida, ele determina o tipo de implantação correto pelo qual instalar um aplicativo. A cada sete dias, por padrão, as regras de requisitos são reavaliadas para garantir a conformidade de acordo com a configuração do cliente **Agendar a reavaliação de implantações**.<br /><br /> Para obter detalhes, consulte [Create and deploy an application (Criar e implantar um aplicativo)](../../apps/get-started/create-and-deploy-an-application.md).|  
 |**Condições globais**|Enquanto que os requisitos são usados com um tipo de implantação específica em um único aplicativo, você também pode criar condições globais. Essas são bibliotecas de requisitos predefinidos, que você pode usar com qualquer aplicativo e qualquer tipo de implantação.<br /><br /> O Configuration Manager contém um conjunto de condições globais internas e você também pode criar os seus próprios conjuntos.<br /><br /> Para obter detalhes, consulte [Create global conditions (Criar condições globais)](../../apps/deploy-use/create-global-conditions.md).|  
 |**Implantação simulada**|Avalia os requisitos, o método de detecção e as dependências para um aplicativo. Relata os resultados sem realmente instalar o aplicativo.<br /><br /> Para obter detalhes, consulte [Simulate application deployments (Simular implantações de aplicativos)](../../apps/deploy-use/simulate-application-deployments.md).|  
 |**Ação de implantação**|Especifica se você deseja instalar ou desinstalar (quando há suporte) o aplicativo que você está implantando.<br /><br /> Para obter detalhes, consulte [Deploy applications (Implantar aplicativos)](../../apps/deploy-use/deploy-applications.md).|  
@@ -56,7 +56,7 @@ Neste tópico, você aprenderá as noções básicas que você precisa saber ant
  O Configuration Manager permite que você implante os seguintes tipos de aplicativos:  
 
 - Windows Installer (arquivo *.msi)
-- Pacote do aplicativo do Windows (*.appx, *.appxbundle)
+- Pacote de aplicativos do Windows (*.appx, *.appxbundle)
 - Pacote de aplicativo Windows (na Windows Store)
 - Microsoft Application Virtualization 4
 - Microsoft Application Virtualization 5
@@ -110,9 +110,4 @@ Além disso, quando você gerencia dispositivos por meio do gerenciamento de dis
 -   Scripts que são executados em um agendamento recorrente e que não usam a avaliação global.
 
  Para obter mais informações, consulte [Pacotes e programas](../../apps/deploy-use/packages-and-programs.md).  
-
-
-
-<!--HONumber=Dec16_HO5-->
-
 
