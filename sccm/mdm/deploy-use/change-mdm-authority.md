@@ -16,7 +16,6 @@ ms.openlocfilehash: b80fec937b50dca3ab995be281c44c3145300f9f
 ms.contentlocale: pt-br
 ms.lasthandoff: 06/03/2017
 
-
 ---
 # <a name="change-your-mdm-authority"></a>Alterar sua autoridade de MDM
 A partir do Configuration Manager versão 1610 e do Microsoft Intune versão 1705, você pode alterar sua autoridade MDM sem precisar entrar em contato com o Suporte da Microsoft e sem a necessidade de cancelar o registro e registrar novamente os dispositivos gerenciados existentes.
@@ -39,7 +38,8 @@ Examine as informações a seguir para se preparar para a alteração para a aut
 - No console do Configuration Manager, remova todas as funções do Gerenciador de registro de dispositivos. Vá para **Administração** > **Serviços de Nuvem** > **Assinaturas do Microsoft Intune**, selecione a assinatura do Microsoft Intune, clique em **Propriedades**, clique na guia **Gerenciador de Registro de Dispositivos** e remova todas as funções do Gerenciador de registro de dispositivos.
 - No console doConfiguration Manager, remova as categorias de dispositivo existentes. Vá para **Ativos e Conformidade** > **Visão Geral** > **Coleções de Dispositivos**, escolha **Gerenciar Categorias de Dispositivos** e remova as categorias de dispositivos existentes.
 - Não deve haver nenhum impacto perceptível para os usuários finais durante a alteração na autoridade de MDM. No entanto, você talvez deva comunicar esta alteração aos usuários para que eles verifiquem se seus dispositivos estão ligados e se eles conseguem se conectar ao serviço logo após a alteração. Isso garantirá que o máximo de dispositivos possível se conectará e se registrará com o serviço por meio da nova autoridade o mais rápido possível.
-- Se você estiver usando o Configuration Manager (locatário híbrido) para gerenciar dispositivos iOS antes da alteração na autoridade de MDM, deverá garantir que o mesmo certificado Apple Push Notification Service (APNs) que era usado no Configuration Manager seja renovado e usado para configurar o locatário novamente no Intune autônomo.    
+- Se você estiver usando o Configuration Manager (locatário híbrido) para gerenciar dispositivos iOS antes da alteração na autoridade de MDM, deverá garantir que o mesmo certificado Apple Push Notification Service (APNs) que era usado no Configuration Manager seja renovado e usado para configurar o locatário novamente no Intune autônomo.
+
     > [!IMPORTANT]  
     > Se um certificado APNs diferente for usado para o Intune autônomo, TODOS os dispositivos iOS registrados anteriormente terão o registro cancelado e você precisará passar pelo processo de registrá-los novamente. Antes de fazer a alteração da autoridade de MDM, verifique se você sabe exatamente qual certificado APNs foi usado para gerenciar os dispositivos iOS no Configuration Manager. Localize o mesmo certificado listado no Apple Push Certificates Portal (https://identity.apple.com), o Portal de Certificados por Push da Apple, e verifique se o usuário cuja ID da Apple usada para criar o certificado APNs original é identificado e está disponível para renovar o mesmo certificado APNs como parte da mudança para a nova autoridade de MDM.  
 
@@ -52,15 +52,15 @@ O processo para alterar a autoridade de MDM para o Intune autônomo inclui as se
 - Da próxima vez que o dispositivo se conectar ao serviço, ele sincronizará e receberá as novas configurações da nova autoridade de MDM.
 
 #### <a name="to-change-the-mdm-authority-to-intune-standalone"></a>Para alterar a autoridade de MDM para o Intune autônomo
-1.    No console do Configuration Manager, vá para **Administração** &gt; **Visão Geral** &gt; **Serviços de Nuvem** &gt; **Assinatura do Microsoft Intune** e exclua sua assinatura do Intune.
-2.    Selecione **Alterar a autoridade de MDM para o Microsoft Intune** e, em seguida, clique em **Avançar**.
+1.  No console do Configuration Manager, vá para **Administração** &gt; **Visão Geral** &gt; **Serviços de Nuvem** &gt; **Assinatura do Microsoft Intune** e exclua sua assinatura do Intune.
+2.  Selecione **Alterar a autoridade de MDM para o Microsoft Intune** e, em seguida, clique em **Avançar**.
 
     ![Baixar a solicitação de certificado APNs](/sccm/mdm/deploy-use/media/mdm-change-delete-subscription.png)
-3.    Entre no locatário do Intune que você usou originalmente quando definiu a autoridade de MDM no Configuration Manager.
-4.    Clique em **Próximo** e conclua o assistente.
-5.    A autoridade de MDM agora está redefinida. A assinatura do Intune não deve ser exibida no nó de assinaturas do Microsoft Intune do console do Configuration Manager.
-6.    Faça logon para o [Console de administração do Microsoft Intune](http://manage.microsoft.com) usando o mesmo locatário do Intune utilizado antes.
-7.    Confirme se a autoridade de MDM foi redefinida e, em seguida, defina a autoridade de MDM como **Microsoft Intune**. Depois de alterar a autoridade de MDM, você a verá refletida no console. Para saber mais, veja [Como definir a autoridade de MDM](https://docs.microsoft.com/en-us/intune/deploy-use/prerequisites-for-enrollment#step-2-set-mdm-authority).
+3.  Entre no locatário do Intune que você usou originalmente quando definiu a autoridade de MDM no Configuration Manager.
+4.  Clique em **Próximo** e conclua o assistente.
+5.  A autoridade de MDM agora está redefinida. A assinatura do Intune não deve ser exibida no nó de assinaturas do Microsoft Intune do console do Configuration Manager.
+6.  Faça logon para o [Console de administração do Microsoft Intune](http://manage.microsoft.com) usando o mesmo locatário do Intune utilizado antes.
+7.  Confirme se a autoridade de MDM foi redefinida e, em seguida, defina a autoridade de MDM como **Microsoft Intune**. Depois de alterar a autoridade de MDM, você a verá refletida no console. Para saber mais, veja [Como definir a autoridade de MDM](https://docs.microsoft.com/en-us/intune/deploy-use/prerequisites-for-enrollment#step-2-set-mdm-authority).
 <!-- [Azure portal](https://docs.microsoft.com/en-us/intune-azure/enroll-devices/set-mdm-authority) -->
 
 
@@ -68,7 +68,7 @@ O processo para alterar a autoridade de MDM para o Intune autônomo inclui as se
 Quando você tiver dispositivos iOS, deverá configurar o certificado APNs no Intune.
 
 #### <a name="to-configure-the-apns-certificate"></a>Para configurar o certificado APNs
-1.    Baixar a solicitação de certificado APNs.
+1.  Baixar a solicitação de certificado APNs.
     <!--The process is different depending on how you connect to Intune:
     **Azure portal**   
     In the [Azure portal](https://azure.portal.com), choose **More Services** &gt; **Monitoring + Management** &gt; **Intune**. On the **Intune** blade, choose **Device enrollment** &gt; **Apple Enrollment** &gt; **Apple MDM Push Certificate**, and then select **Download your CSR** to download and save the .csr file locally.   
@@ -80,22 +80,22 @@ Quando você tiver dispositivos iOS, deverá configurar o certificado APNs no In
 
     ![Baixar a solicitação de certificado APNs](/sccm/mdm/deploy-use/media/mdm-change-download-apns-certificate.png)
 
-2.    Vá para o [Portal de Certificados de Push da Apple](http://go.microsoft.com/fwlink/?LinkId=269844) e entre com a **mesma** ID da Apple que foi usada anteriormente para criar e renovar o certificado APNs que você usou no Configuration Manager (híbrido).
+2.  Vá para o [Portal de Certificados de Push da Apple](http://go.microsoft.com/fwlink/?LinkId=269844) e entre com a **mesma** ID da Apple que foi usada anteriormente para criar e renovar o certificado APNs que você usou no Configuration Manager (híbrido).
 
     ![Página de conexão do Portal de Certificados de Push da Apple](/sccm/mdm/deploy-use/media/mdm-change-apns-portal.png)
 
-3.    Selecione o certificado APNs que você usou no Configuration Manager (híbrido) e, em seguida, clique em **Renovar**.   
+3.  Selecione o certificado APNs que você usou no Configuration Manager (híbrido) e, em seguida, clique em **Renovar**.   
 
     ![Caixa de diálogo Renovar APNs](/sccm/mdm/deploy-use/media/mdm-change-renew-apns.png)
 
-4.    Selecione o arquivo de solicitação de assinatura de certificado APNs (.csr) que você baixou e, em seguida, clique em **Carregar**.
+4.  Selecione o arquivo de solicitação de assinatura de certificado APNs (.csr) que você baixou e, em seguida, clique em **Carregar**.
 
     ![Página de conexão do Portal de Certificados de Push da Apple](/sccm/mdm/deploy-use/media/mdm-change-renew-apns-upload.png)  
-5.    Selecione o mesmo APNs e, em seguida, clique em **Baixar**. Baixe o certificado APNs (.pem) e salve o arquivo localmente.  
+5.  Selecione o mesmo APNs e, em seguida, clique em **Baixar**. Baixe o certificado APNs (.pem) e salve o arquivo localmente.  
 
     ![Página de conexão do Portal de Certificados de Push da Apple](/sccm/mdm/deploy-use/media/mdm-change-renew-apns-download.png)
 
-6.    Carregue o certificado APNs renovado para o locatário do Intune usando a mesma ID da Apple que antes.
+6.  Carregue o certificado APNs renovado para o locatário do Intune usando a mesma ID da Apple que antes.
 <!--The process is different depending on how to connect to Intune:  
     **Azure portal**   
     In the [Azure portal](https://azure.portal.com), choose **More Services** &gt; **Monitoring + Management** &gt; **Intune**. On the **Intune** blade, choose **Device enrollment** &gt; **Apple Enrollment**  &gt; **Apple MDM Push Certificate**, enter your Apple ID in step 3, select the certificate (.pem) file in step 4, and then click **Upload**.     
@@ -171,13 +171,13 @@ O processo para alterar a autoridade de MDM para o Configuration Manager (híbri
 - Da próxima vez que o dispositivo se conectar ao serviço, ele sincronizará e receberá as novas configurações da nova autoridade de MDM.
 
 #### <a name="to-change-the-mdm-authority-to-configuration-manager"></a>Para alterar a autoridade de MDM para o Configuration Manager
-1.    No console do Configuration Manager, no espaço de trabalho **Administração** &gt; **Visão Geral** &gt; **Serviços de Nuvem** &gt; **Assinaturas do Microsoft Intune** e selecione para adicionar uma assinatura do Intune.
-2.    Entre no locatário do Intune que você usou originalmente quando definiu a autoridade de MDM no Intune e clique em **Avançar**.
-3.    Selecione **Alterar minha autoridade do MDM para o Configuration Manager** e clique em **Avançar**.
+1.  No console do Configuration Manager, no espaço de trabalho **Administração** &gt; **Visão Geral** &gt; **Serviços de Nuvem** &gt; **Assinaturas do Microsoft Intune** e selecione para adicionar uma assinatura do Intune.
+2.  Entre no locatário do Intune que você usou originalmente quando definiu a autoridade de MDM no Intune e clique em **Avançar**.
+3.  Selecione **Alterar minha autoridade do MDM para o Configuration Manager** e clique em **Avançar**.
 4.  Selecione a coleção de usuário que conterá todos os usuários que continuarão a ser gerenciado pela nova autoridade de MDM híbrida.
 5.  Clique em **Próximo** e conclua o assistente.  
-5.    A autoridade de MDM agora é alterada para o **Configuration Manager**.
-6.    Faça logon no [Console de administração do Microsoft Intune](http://manage.microsoft.com) usando o mesmo locatário do Intune e confirme que a autoridade de MDM foi alterada para **Definir para o Configuration Manager**.
+5.  A autoridade de MDM agora é alterada para o **Configuration Manager**.
+6.  Faça logon no [Console de administração do Microsoft Intune](http://manage.microsoft.com) usando o mesmo locatário do Intune e confirme que a autoridade de MDM foi alterada para **Definir para o Configuration Manager**.
 
 
 ### <a name="enable-ios-enrollment"></a>Habilitar registro do iOS
@@ -194,22 +194,22 @@ Quando você tiver dispositivos iOS, deverá configurar o certificado APNs no Co
     > [!IMPORTANT]
     > Você deve baixar uma solicitação de assinatura de novo certificado. Não use um arquivo existente ou ocorrerá erro.  
 
-2.    Vá para o [Portal de Certificados de Push da Apple](http://go.microsoft.com/fwlink/?LinkId=269844) e entre com a **mesma** ID da Apple que foi usada anteriormente para criar e renovar o certificado APNs que você usou no Intune autônomo.
+2.  Vá para o [Portal de Certificados de Push da Apple](http://go.microsoft.com/fwlink/?LinkId=269844) e entre com a **mesma** ID da Apple que foi usada anteriormente para criar e renovar o certificado APNs que você usou no Intune autônomo.
 
     ![Página de conexão do Portal de Certificados de Push da Apple](/sccm/mdm/deploy-use/media/mdm-change-apns-portal.png)
 
-3.    Selecione o certificado APNs que você usou no Intune autônomo e, em seguida, clique em **Renovar**.   
+3.  Selecione o certificado APNs que você usou no Intune autônomo e, em seguida, clique em **Renovar**.   
 
     ![Caixa de diálogo Renovar APNs](/sccm/mdm/deploy-use/media/mdm-change-renew-apns.png)
 
-4.    Selecione o arquivo de solicitação de assinatura de certificado APNs (.csr) que você baixou e, em seguida, clique em **Carregar**.
+4.  Selecione o arquivo de solicitação de assinatura de certificado APNs (.csr) que você baixou e, em seguida, clique em **Carregar**.
 
     ![Página de conexão do Portal de Certificados de Push da Apple](/sccm/mdm/deploy-use/media/mdm-change-renew-apns-upload.png)  
-5.    Selecione o mesmo APNs e, em seguida, clique em **Baixar**. Baixe o certificado APNs (.pem) e salve o arquivo localmente.  
+5.  Selecione o mesmo APNs e, em seguida, clique em **Baixar**. Baixe o certificado APNs (.pem) e salve o arquivo localmente.  
 
     ![Página de conexão do Portal de Certificados de Push da Apple](/sccm/mdm/deploy-use/media/mdm-change-renew-apns-download.png)
 
-6.    Carregue o certificado APNs renovado para o locatário híbrido usando a mesma ID da Apple que antes.
+6.  Carregue o certificado APNs renovado para o locatário híbrido usando a mesma ID da Apple que antes.
 
     1.  No console do Configuration Manager, no espaço de trabalho **Administração** &gt; **Serviços de Nuvem** &gt; **Assinaturas do Microsoft Intune** e escolha **Configurar Plataformas** &gt; **iOS**.  
     2.  Na caixa de diálogo **Propriedades da Assinatura do Microsoft Intune**, selecione a guia **Certificado APNs** e clique para marcar a caixa de seleção **Habilitar registro do iOS e do MAC OS X (MDM)**.  
