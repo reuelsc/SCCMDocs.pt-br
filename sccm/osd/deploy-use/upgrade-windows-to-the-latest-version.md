@@ -22,8 +22,7 @@ ms.contentlocale: pt-br
 ms.lasthandoff: 07/11/2017
 
 ---
-# Atualizar o Windows para a versão mais recente com o System Center Configuration Manager
-<a id="upgrade-windows-to-the-latest-version-with-system-center-configuration-manager" class="xliff"></a>
+# <a name="upgrade-windows-to-the-latest-version-with-system-center-configuration-manager"></a>Atualizar o Windows para a versão mais recente com o System Center Configuration Manager
 
 *Aplica-se a: System Center Configuration Manager (Branch Atual)*
 
@@ -87,8 +86,7 @@ Este tópico fornece as etapas no System Center Configuration Manager para atual
 
     -   [Usar a mídia autônoma para implantar o Windows sem uso da rede](use-stand-alone-media-to-deploy-windows-without-using-the-network.md)  
 
-## Monitor
-<a id="monitor" class="xliff"></a>  
+## <a name="monitor"></a>Monitor  
 
 -   **Monitorar a implantação da sequência de tarefas**  
 
