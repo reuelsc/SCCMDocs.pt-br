@@ -2,7 +2,7 @@
 title: "Lista de verificação para 1702 | System Center Configuration Manager"
 description: "Conheça as ações a serem executadas antes de atualizar para o System Center Configuration Manager versão 1702."
 ms.custom: na
-ms.date: 6/6/2017
+ms.date: 06/06/2017
 ms.reviewer: na
 ms.suite: na
 ms.prod: configuration-manager
