@@ -107,7 +107,7 @@ Você pode permitir que os usuários registrem seus dispositivos sem o registro 
 ### <a name="create-cnames-to-simplify-enrollment"></a>Criar CNAMEs para simplificar o registro
 Crie registros de recursos DNS CNAME para o domínio de sua empresa. Por exemplo, se o site da empresa fosse contoso.com, você criaria um CNAME no DNS que redirecione EnterpriseEnrollment.contoso.com para enterpriseenrollment-s.manage.microsoft.com.
 
-Embora a criação de entradas de DNS de CNAME seja opcional, os registros CNAME facilitam o registro para os usuários. Se não for possível encontrar nenhum registro CNAME no registro, os usuários deverão inserir manualmente o nome do servidor MDM: https://enrollment.manage.microsoft.com.
+Embora a criação de entradas de DNS de CNAME seja opcional, os registros CNAME facilitam o registro para os usuários. Se não for possível encontrar nenhum registro CNAME no registro, os usuários deverão inserir manualmente o nome do servidor MDM enrollment.manage.microsoft.com.
 
 |Tipo|Nome do host|Aponta para|TTL|  
 |----------|---------------|---------------|---|
