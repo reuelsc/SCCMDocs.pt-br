@@ -2,7 +2,7 @@
 title: Tamanho e escala | Microsoft Docs
 description: "Identifique o número de funções do sistema de sites e de sites que você precisará para dar suporte aos dispositivos em seu ambiente do System Center Configuration Manager."
 ms.custom: na
-ms.date: 12/30/2016
+ms.date: 07/24/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
@@ -15,9 +15,11 @@ caps.latest.revision: 4
 author: Brenduns
 ms.author: brenduns
 manager: angrobe
-translationtype: Human Translation
-ms.sourcegitcommit: f9c43e26758d5171a6ef56e827b4b054ebc8a5e5
-ms.openlocfilehash: c7ad33339e65e6e00e88f98d6e13baceb98dae77
+ms.translationtype: HT
+ms.sourcegitcommit: 5945abb49fe06c59355805aa94b04d0d445ecbc3
+ms.openlocfilehash: f539e2d282b56e56a9c58c773788325b27ea6b37
+ms.contentlocale: pt-br
+ms.lasthandoff: 07/24/2017
 
 ---
 # <a name="size-and-scale-numbers-for-system-center-configuration-manager"></a>Números de tamanho e escala para o System Center Configuration Manager
@@ -37,7 +39,7 @@ Use as informações neste tópico em conjunto com as informações nos seguinte
 
 Os números de suporte a seguir baseiam-se no uso do hardware recomendado para o Configuration Manager e as configurações padrão para todos os recursos disponíveis do Configuration Manager. Quando você não usar o hardware recomendado ou usar as configurações personalizadas de mais agressivas (como executar o inventário de hardware ou software com mais frequência do que os padrões de uma vez a cada sete dias), o desempenho dos sistemas de sites poderá ser degradado e poderão não atingir os níveis de suporte definidos.
 
-##  <a name="a-namebkmksitesystemscalea-site-types"></a><a name="bkmk_SiteSystemScale"></a> Tipos de site  
+##  <a name="bkmk_SiteSystemScale"></a> Tipos de site  
  **Site de administração central:**  
 
 -   Um site de administração central pode dar suporte a até 25 sites primários filho.  
@@ -67,7 +69,7 @@ Os números de suporte a seguir baseiam-se no uso do hardware recomendado para o
 
     -   Cada instância desta função do sistema de sites dá suporte ao número máximo de clientes com suporte pela hierarquia.  
 
-## <a name="a-namebkmkrolesa-site-system-roles"></a><a name="bkmk_roles"></a> Site system roles    
+## <a name="bkmk_roles"></a> Site system roles    
 
 **Ponto de serviços Web do Catálogo de Aplicativos:**  
 
@@ -125,13 +127,13 @@ Os números de suporte a seguir baseiam-se no uso do hardware recomendado para o
 
 -   Por padrão, o Configuration Manager não dá suporte à configuração de pontos de atualização de software como clusters de NLB (Balanceamento de Carga de Rede). No entanto, é possível usar o SDK do Configuration Manager para configurar até quatro pontos de atualização de software em um cluster de NLB.  
 
-##  <a name="a-namebkmkclientnumbersa-client-numbers-for-sites-and-hierarchies"></a><a name="bkmk_clientnumbers"></a> Números de cliente para sites e hierarquias  
+##  <a name="bkmk_clientnumbers"></a> Números de cliente para sites e hierarquias  
  Use as informações a seguir para determinar para quantos clientes e quais tipos de cliente, você pode dar suporte em um site ou em uma hierarquia.  
 
-###  <a name="a-namebkmkcasa-hierarchy-with-a-central-administration-site"></a><a name="bkmk_cas"></a> Hierarquia com um site de administração central  
+###  <a name="bkmk_cas"></a> Hierarquia com um site de administração central  
 Um site de administração central oferece suporte a uma quantidade total de dispositivos que inclui até o número de dispositivos listados para os três grupos a seguir:  
 
--   700.000 desktops (computadores que executam Windows, Linux e UNIX)  
+-   700.000 desktops (computadores que executam Windows, Linux e UNIX). Consulte também, suporte para [dispositivos inseridos](#embedded).
 
 -   25.000 dispositivos que executam Mac e Windows CE 7.0  
 
@@ -147,19 +149,19 @@ Um site de administração central oferece suporte a uma quantidade total de dis
 >  Em uma hierarquia na qual o site de administração central usa uma edição Standard do SQL Server, a hierarquia dá suporte a 50.000 dispositivos e desktops no máximo. A edição do SQL Server em uso em um site primário autônomo não limita a capacidade desse site a fim de dar suporte ao número especificado de clientes.  
 
 
-###  <a name="a-namebkmkchipria-child-primary-site"></a><a name="bkmk_chipri"></a> Site primário filho  
+###  <a name="bkmk_chipri"></a> Site primário filho  
 Cada site primário autônomo em uma hierarquia com um site de administração central oferece suporte ao seguinte:  
 
--   150.000 clientes e dispositivos no total que não se limitam a um grupo ou tipo específico, contanto que o suporte não exceda o número com suporte para a hierarquia.  
+-   150.000 clientes e dispositivos no total que não se limitam a um grupo ou tipo específico, contanto que o suporte não exceda o número com suporte para a hierarquia. Consulte também, suporte para [dispositivos inseridos](#embedded).
 
 Por exemplo, um site primário que dá suporte para até 25.000 computadores que executam Mac e Windows CE 7.0 (pois esse é o limite para uma hierarquia) pode dar suporte a 125.000 computadores desktop adicionais. Isso traz o número total de dispositivos com suporte até o limite máximo com suporte de 150.000 do site primário filho.
 
-###  <a name="a-namebkmkpria-stand-alone-primary-site"></a><a name="bkmk_pri"></a> Site primário autônomo  
+###  <a name="bkmk_pri"></a> Site primário autônomo  
 Um site primário autônomo oferece suporte à seguinte quantidade de dispositivos:  
 
 -   175.000 clientes e dispositivos no total, não podendo exceder:  
 
-    -   150.000 desktops (computadores que executam Windows, Linux e UNIX)  
+    -   150.000 desktops (computadores que executam Windows, Linux e UNIX). Consulte também, suporte para [dispositivos inseridos](#embedded).
 
     -   25.000 dispositivos que executam Mac e Windows CE 7.0
 
@@ -169,14 +171,18 @@ Um site primário autônomo oferece suporte à seguinte quantidade de dispositiv
 
         -   150.000 dispositivos baseados em nuvem  
 
+
 Por exemplo, um site primário autônomo que dá suporte a 150.000 desktops e 10.000 Mac ou Windows CE 7.0 pode dar suporte a apenas 15.000 dispositivos adicionais. Esses dispositivos podem ser baseados em nuvem ou serem gerenciados usando o MDM local.  
 
-###  <a name="a-namebkmkseca-secondary-sites"></a><a name="bkmk_sec"></a> Sites secundários  
+### <a name="embedded"></a> Sites primários e dispositivos Windows Embedded
+Os sites primários dão suporte aos dispositivos Windows Embedded que têm o FBWF (Filtros de Gravação Baseado em Arquivo) habilitado. Quando dispositivos inseridos não têm filtros de gravação habilitados, um site primário pode dar suporte a um número de dispositivos inseridos de até o número permitido de dispositivos para esse site. Do número total de dispositivos com suporte por um site primário, um máximo de 10.000 deles pode ser dispositivos Windows Embedded quando esses dispositivos são configurados para as exceções listadas na observação importante localizada em [Planejamento para implantação do cliente para dispositivos Windows Embedded](/sccm/core/clients/deploy/plan/planning-for-client-deployment-to-windows-embedded-devices). Um site primário dá suporte a apenas 3.000 dispositivos Windows Embedded com EWF habilitado e que não estão configurados para as exceções.
+
+###  <a name="bkmk_sec"></a> Sites secundários  
 Sites secundários oferecem suporte ao seguinte:  
 
 -   15.000 desktops (computadores que executam Windows, Linux e UNIX)  
 
-###  <a name="a-namebkmkmpa-management-points"></a><a name="bkmk_mp"></a> Pontos de gerenciamento  
+###  <a name="bkmk_mp"></a> Pontos de gerenciamento  
 Cada ponto de gerenciamento pode dar suporte à seguinte quantidade de dispositivos:  
 
 -   25.000 clientes e dispositivos no total, não podendo exceder:  
@@ -188,9 +194,4 @@ Cada ponto de gerenciamento pode dar suporte à seguinte quantidade de dispositi
         -   10.000 dispositivos que são gerenciados usando o MDM local  
 
         -   10.000 dispositivos que executam clientes Mac e Windows CE 7.0
-
-
-
-<!--HONumber=Dec16_HO5-->
-
 

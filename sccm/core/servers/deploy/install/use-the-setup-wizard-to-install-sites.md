@@ -1,7 +1,7 @@
 ---
 title: "Assistente de instalação | Microsoft Docs"
 ms.custom: na
-ms.date: 3/27/2017
+ms.date: 7/24/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
@@ -14,11 +14,11 @@ caps.latest.revision: 3
 author: Brenduns
 ms.author: brenduns
 manager: angrobe
-ms.translationtype: Human Translation
-ms.sourcegitcommit: f809c9327db9f298168674add2d09820fdecd1b8
-ms.openlocfilehash: 14b4172ad713a3981b8a5abe182405e271d78c26
+ms.translationtype: HT
+ms.sourcegitcommit: 5945abb49fe06c59355805aa94b04d0d445ecbc3
+ms.openlocfilehash: 678f1b35fe6f7649dacb766f7c671f4ec8ea1435
 ms.contentlocale: pt-br
-ms.lasthandoff: 05/17/2017
+ms.lasthandoff: 07/24/2017
 
 ---
 # <a name="use-the-setup-wizard-to-install-system-center-configuration-manager-sites"></a>Use o Assistente de Instalação para instalar sites do System Center Configuration Manager
@@ -140,7 +140,9 @@ Se você estiver instalando um site de administração central como parte de um 
 
 12. Na página **Informações do Banco de Dados**, especifique as informações a seguir:  
 
-    -   **Nome do SQL Server (FQDN):** por padrão, é definido para ser o computador do servidor do site.  
+    -   **Nome do SQL Server (FQDN):** por padrão, é definido para ser o computador do servidor do site.
+
+     Se você usar uma porta personalizada, adicione-a ao FQDN do SQL Server. Para fazer isso, siga o FQDN do servidor de sequência com uma vírgula e o número da porta.   Por exemplo, para o servidor *SQLServer1.fabrikam.com*, use o seguinte para especificar a porta *1551*: **SQLServer1.fabrikam.com,1551**
 
     -   **Nome da instância:** por padrão, fica em branco. Ele usa a instância padrão do SQL no computador do servidor do site.  
 

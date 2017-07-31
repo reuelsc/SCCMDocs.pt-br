@@ -15,12 +15,11 @@ caps.latest.revision:
 author: Brenduns
 ms.author: brenduns
 manager: angrobe
-ms.translationtype: Human Translation
-ms.sourcegitcommit: dc221ddf547c43ab1f25ff83c3c9bb603297ece6
-ms.openlocfilehash: f11a53bbc85b40077b3909568db5ae5552b0456c
+ms.translationtype: HT
+ms.sourcegitcommit: ef42d1483053e9a6c502f4ebcae5a231aa6ba727
+ms.openlocfilehash: c421c3495f56503d5cbda7b1a5ab5350a168912d
 ms.contentlocale: pt-br
-ms.lasthandoff: 06/01/2017
-
+ms.lasthandoff: 07/26/2017
 
 ---
 #  <a name="the-data-warehouse-service-point-for-system-center-configuration-manager"></a>O ponto de serviço do Data Warehouse para o System Center Configuration Manager
@@ -52,7 +51,7 @@ Quando a função de sistema de site é instalada, ele instala e configura o ban
   - **Administrador** no computador que hospedará o banco de dados do data warehouse.
   - **DB_owner** permissão no banco de dados do data warehouse.
   - As permissões **Db_reader** e **execute** para o banco de dados de site de nível superior.
--    O banco de dados do data warehouse tem suporte em uma instância padrão ou nomeada do SQL Server 2012 ou mais recente. A edição deve ser Enterprise ou Datacenter.
+-   O banco de dados do data warehouse tem suporte em uma instância padrão ou nomeada do SQL Server 2012 ou mais recente. A edição deve ser Enterprise ou Datacenter.
   - Grupo de disponibilidade do SQL Server AlwaysOn: essa configuração não tem suporte.
   - Cluster do SQL Server: não há suporte para clusters de failover do SQL Server. Isso ocorre porque o banco de dados do data warehouse não foi testado profundamente em clusters de failover do SQL Server.
   - Quando o banco de dados do data warehouse é remoto no servidor do site, é necessário ter uma licença separada para o SQL Server que hospeda o banco de dados.
@@ -78,7 +77,7 @@ Ao instalar a função, o Configuration Manager cria o banco de dados de data wa
 Página **Seleção de Função do Sistema**:  
 
 Página **Geral**:
--     **Configurações de conexão do banco de dados do data warehouse do Configuration Manager**:
+-   **Configurações de conexão do banco de dados do data warehouse do Configuration Manager**:
  - **Nome de domínio totalmente qualificado do SQL Server**:  
  Especifique o FQDN (nome de domínio totalmente qualificado) do servidor que hospeda o banco de dados do ponto de serviço do Data Warehouse.
  - **Nome da instância do SQL Server, se for aplicável**:   
@@ -86,7 +85,7 @@ Página **Geral**:
  - **Nome do banco de dados**:   
  Especifique um nome para o banco de dados do data warehouse.  O Configuration Manager criará o banco de dados do data warehouse com esse nome. Se você especificar um nome de banco de dados que já existe na instância do SQL Server, o Configuration Manager usará esse banco de dados.
  - **Porta do SQL Server usada para conexão**:   
- Especifique o número da porta TCP/IP configurado para o SQL Server que hospeda o banco de dados do data warehouse. Esta porta é usada pelo serviço de sincronização do data warehouse para se conectar ao banco de dados do data warehouse.  
+ Especifique o número da porta TCP/IP configurado para o SQL Server que hospeda o banco de dados de data warehouse. Esta porta é usada pelo serviço de sincronização do data warehouse para se conectar ao banco de dados do data warehouse.  
 
 Página **Agenda de sincronização**:   
 - **Agenda de sincronização**:
@@ -103,15 +102,15 @@ A função de sistema de site do Data Warehouse inclui os seguintes relatórios,
  - **Implantação de Aplicativos -Histórico**:   
  Exibe detalhes de implantação de aplicativo para um aplicativo e computador específicos.
  - **Proteção de Ponto de Extremidade e Conformidade de Atualização de Software - Histórico**: veja os computadores que não têm atualizações de software.  
- - **Inventário Geral de Hardware - Histórico**:      
+ - **Inventário Geral de Hardware - Histórico**:   
  Exibe todo o inventário de hardware para um computador específico.
- - **Inventário Geral de Software - Histórico**:      
+ - **Inventário Geral de Software - Histórico**:   
  Exibe todo o inventário de software para um computador específico.
- - **Visão Geral de Integridade da Infraestrutura - Histórico**:     
+ - **Visão Geral de Integridade da Infraestrutura - Histórico**:  
  Exibe uma visão geral da integridade de sua infraestrutura do Configuration Manager
- - **Lista de Malwares Detectados - Histórico**:     
+ - **Lista de Malwares Detectados - Histórico**:    
  Exibe os malwares que foram detectados na sua organização.
- - **Resumo de Distribuição de Software - Histórico**:     
+ - **Resumo de Distribuição de Software - Histórico**:   
  Um resumo da distribuição de software para um anúncio e computador específicos.
 
 
@@ -126,13 +125,13 @@ Ao contrário da movimentação do banco de dados do data warehouse, essa altera
 ## <a name="move-the-data-warehouse-database"></a>Mover o banco de dados de data warehouse
 Use as seguintes etapas para mover o banco de dados de data warehouse para um novo SQL Server:
 
-1.    Use o SQL Server Management Studio para fazer backup do banco de dados de data warehouse e restaure o banco de dados em um SQL Server no novo computador que hospedará o data warehouse.   
+1.  Use o SQL Server Management Studio para fazer backup do banco de dados de data warehouse e restaure o banco de dados em um SQL Server no novo computador que hospedará o data warehouse.   
 > [!NOTE]     
 > Depois de restaurar o banco de dados para o novo servidor, verifique se as permissões de acesso ao novo banco de dados de data warehouse são as mesmas do original.  
 
-2.    Use o console do Configuration Manager para remover a função do sistema de sites do ponto do Data Warehouse Service do servidor atual.
-3.    Reinstale o ponto de serviço do Data Warehouse e especifique o nome do novo SQL Server e a instância que hospeda o banco de dados de data warehouse restaurado.
-4.    A movimentação será concluída depois de instalar a função do sistema de sites.
+2.  Use o console do Configuration Manager para remover a função do sistema de sites do ponto do Data Warehouse Service do servidor atual.
+3.  Reinstale o ponto de serviço do Data Warehouse e especifique o nome do novo SQL Server e a instância que hospeda o banco de dados de data warehouse restaurado.
+4.  A movimentação será concluída depois de instalar a função do sistema de sites.
 
 ## <a name="troubleshooting-data-warehouse-issues"></a>Solucionar problemas do data warehouse
 **Arquivos de log**:  
@@ -167,7 +166,7 @@ Quando você abre um relatório do data warehouse, o seguinte erro retorna:
     1. Abra o IIS, clique em **Certificados de Servidor**, clique com o botão direito em **Criar um Certificado Autoassinado** e especifique o "nome amigável" do nome do certificado como **Certificado de Identificação do Data Warehouse SQL Server**. Selecione o repositório de certificados como **Pessoal**.
     2. Abra **SQL Server Configuration Manager**, em **Configuração de Rede do SQL Server**, clique com o botão direito para selecionar **Propriedades** em **Protocolos para MSSQLSERVER**. Em seguida, na guia **Certificado**, selecione **Certificado de Identificação do Data Warehouse SQL Server** como o certificado e salve as alterações.  
     3. Abra **SQL Server Configuration Manager**, em **Serviços do SQL Server**, reinicie **Serviço do SQL Server** e **Reporting Service**.
-    4.    Abra o Console de Gerenciamento da Microsoft (MMC) e adicione o snap-in para **Certificados**, escolha gerenciar o certificado para **Conta de computador** do computador local. Em seguida, no MMC, expanda o **Pessoal** pasta > **Certificados** e exporte o **Certificado de Identificação do Data Warehouse SQL Server** como um arquivo **Binário X.509 codificado por DER (.CER)**.    
+    4.  Abra o Console de Gerenciamento da Microsoft (MMC) e adicione o snap-in para **Certificados**, escolha gerenciar o certificado para **Conta de computador** do computador local. Em seguida, no MMC, expanda o **Pessoal** pasta > **Certificados** e exporte o **Certificado de Identificação do Data Warehouse SQL Server** como um arquivo **Binário X.509 codificado por DER (.CER)**.    
   2.    No computador que hospeda os Serviços de Relatório do SQL Server, abra o MMC e adicione o snap-in para **Certificados** e, em seguida, selecione gerenciar os certificados para **Conta de computador**. Na pasta **Autoridades de Certificação Raiz Confiáveis**, importe o **Certificado de Identificação do Data Warehouse SQL Server**.
 
 
@@ -178,7 +177,7 @@ Quando você abre um relatório do data warehouse, o seguinte erro retorna:
 
 | Etapa   | Detalhes  |
 |:------:|-----------|  
-| **1**  |     O servidor do site transfere e armazena dados no banco de dados do site.  |  
+| **1**  |  O servidor do site transfere e armazena dados no banco de dados do site.  |  
 | **2**  |      O ponto de serviço do Data Warehouse obtém dados do banco de dados do site com base na sua agenda e configuração.  |  
 | **3**  |  O ponto de serviço do Data Warehouse transfere e armazena uma cópia dos dados sincronizados no banco de dados de data warehouse. |  
 **Relatórios**

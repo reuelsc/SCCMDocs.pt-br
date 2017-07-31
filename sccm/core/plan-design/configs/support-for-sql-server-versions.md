@@ -15,12 +15,11 @@ caps.latest.revision: 21
 author: Brenduns
 ms.author: brenduns
 manager: angrobe
-ms.translationtype: Human Translation
-ms.sourcegitcommit: f809c9327db9f298168674add2d09820fdecd1b8
-ms.openlocfilehash: 4166560602edf6eb299511c8b59dc3903e3bfffc
+ms.translationtype: HT
+ms.sourcegitcommit: ef42d1483053e9a6c502f4ebcae5a231aa6ba727
+ms.openlocfilehash: b35e45b9514297e2f9ce405a3244462ed735f39f
 ms.contentlocale: pt-br
-ms.lasthandoff: 05/17/2017
-
+ms.lasthandoff: 07/26/2017
 
 ---
 # <a name="supported-sql-server-versions-for-system-center-configuration-manager"></a>Versões do SQL Server com suporte no System Center Configuration Manager
@@ -55,7 +54,7 @@ Há suporte para as seguintes instâncias:
  As configurações a seguir não têm suporte:
  -   Um cluster do SQL Server em uma configuração de cluster de NLB (Balanceamento de Carga de Rede)
  -   Um cluster do SQL Server em um CSV (Volume Compartilhado Clusterizado)
- -   Tecnologia de espelhamento de Banco de Dados do SQL Server e replicação ponto a ponto
+ -   Tecnologia de espelhamento de banco de dados do SQL Server e replicação ponto a ponto
 
 Há suporte para a replicação transacional do SQL Server apenas para replicar objetos para os pontos de gerenciamento que são configurados para usar [réplicas de banco de dados](https://technet.microsoft.com/library/mt608546.aspx).  
 
@@ -204,7 +203,7 @@ Você pode usar essa versão do SQL Server sem uma versão de atualização cumu
     -   Para um site secundário: defina um mínimo de 4 GB (gigabytes).  
 
 **Gatilhos aninhados de SQL:**  
-A opção [Gatilhos aninhados de SQL](http://go.microsoft.com/fwlink/?LinkId=528802) deve estar habilitada.  
+ A opção[Gatilhos aninhados de SQL](http://go.microsoft.com/fwlink/?LinkId=528802) deve estar habilitada.  
 
  **Integração de CLR do SQL Server**  
   O banco de dados do site exige que o CLR (common language runtime) do SQL Server seja habilitado. Isso é habilitado automaticamente quando o Configuration Manager é instalado. Para saber mais sobre o CLR, confira [Introdução à integração do SQL Server CLR](https://msdn.microsoft.com/library/ms254498\(v=vs.110\).aspx).  
@@ -261,6 +260,6 @@ Para obter um exemplo de como configurar o SQL Server para usar uma porta espec�
 ## <a name="upgrade-options-for-sql-server"></a>Opções de atualização para o SQL Server
 Se você precisa atualizar sua versão do SQL Server, recomendamos os seguintes métodos, do mais fácil para o mais complexo.
 1. [Atualização do SQL Server no local](/sccm/core/servers/manage/upgrade-on-premises-infrastructure#a-namebkmksupconfigupgradedbsrva-upgrade-sql-server-on-the-site-database-server) (recomendado).
-2. Instale uma nova versão do SQL Server em um computador novo e, em seguida, [use a opção de mover o banco de dados](/sccm/core/servers/manage/modify-your-infrastructure#a-namebkmkdbconfiga-modify-the-site-database-configuration) da instalação do Configuration Manager para apontar o servidor do site para o novo SQL Server.
+2. Instale uma nova versão do SQL Server em um novo computador e, em seguida, [use a opção de mover o banco de dados](/sccm/core/servers/manage/modify-your-infrastructure#a-namebkmkdbconfiga-modify-the-site-database-configuration) da instalação do Configuration Manager para apontar o servidor do site para o novo SQL Server.
 3. Use [backup e recuperação](/sccm/protect/understand/backup-and-recovery).
 

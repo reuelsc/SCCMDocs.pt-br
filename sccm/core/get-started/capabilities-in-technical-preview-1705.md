@@ -14,11 +14,11 @@ ms.assetid: 00684289-d21a-45f8-b1e3-c5c787d73096
 author: Brenduns
 ms.author: brenduns
 manager: angrobe
-ms.translationtype: Human Translation
-ms.sourcegitcommit: f4c46bfab9b40b29654f4e883817a5508ab25b74
-ms.openlocfilehash: 1a38d25fbc26bd1f45c6fa2a0e931536af2d8b2f
+ms.translationtype: HT
+ms.sourcegitcommit: ef42d1483053e9a6c502f4ebcae5a231aa6ba727
+ms.openlocfilehash: b977a79baec73999caa21648adcb6fcfec4a4935
 ms.contentlocale: pt-br
-ms.lasthandoff: 06/28/2017
+ms.lasthandoff: 07/26/2017
 
 ---
 # <a name="capabilities-in-technical-preview-1705-for-system-center-configuration-manager"></a>Funcionalidades na Visualização Técnica 1705 do System Center Configuration Manager
@@ -93,9 +93,9 @@ Depois que a ferramenta é executada:
 | **-I &lt;Nome da instância do SQL Server>**             | *Opcional* <br> Use isso para identificar a instância do SQL Server que hospeda o banco de dados do site. |
 | **-FDELETE**                              | *Opcional* <br> Use isto para forçar a exclusão de um pacote de atualização baixado com êxito. |  
  **Exemplos:**  
- Em um cenário típico, você deve redefinir uma atualização que apresenta problemas de download. O nome de domínio totalmente qualificado do seu SQL Server é *server1.fabrikam.com*, o banco de site é *CM_XYZ* e a interface gráfica do usuário do pacote é *61F16B3C-F1F6-4F9F-8647-2A524B0C802C*.  Execute: ***CMUpdateReset.exe -S server1.fabrikam.com -D CM_XYZ -P 61F16B3C-F1F6-4F9F-8647-2A524B0C802C***
+ Em um cenário típico, você deve redefinir uma atualização que apresenta problemas de download. O FQDN do seu SQL Server é *server1.fabrikam.com*, o banco de dados do site é *CM_XYZ* e a GUID do pacote é *61F16B3C-F1F6-4F9F-8647-2A524B0C802C*.  Execute: ***CMUpdateReset.exe -S server1.fabrikam.com -D CM_XYZ -P 61F16B3C-F1F6-4F9F-8647-2A524B0C802C***
 
- Em um cenário mais complexo, você deve forçar a exclusão do pacote de atualização problemático. O nome de domínio totalmente qualificado do seu SQL Server é *server1.fabrikam.com*, o banco de site é *CM_XYZ* e a interface gráfica do usuário do pacote é *61F16B3C-F1F6-4F9F-8647-2A524B0C802C*.  Execute: ***CMUpdateReset.exe  -FDELETE -S server1.fabrikam.com -D CM_XYZ -P 61F16B3C-F1F6-4F9F-8647-2A524B0C802C***
+ Em um cenário mais complexo, você deve forçar a exclusão do pacote de atualização problemático. O FQDN do seu SQL Server é *server1.fabrikam.com*, o banco de dados do site é *CM_XYZ* e a GUID do pacote é *61F16B3C-F1F6-4F9F-8647-2A524B0C802C*.  Execute: ***CMUpdateReset.exe  -FDELETE -S server1.fabrikam.com -D CM_XYZ -P 61F16B3C-F1F6-4F9F-8647-2A524B0C802C***
 
 ### <a name="test-the-tool-with-the-technical-preview"></a>Teste a ferramenta com a Visualização Técnica  
 Você pode usar essa ferramenta com as versões 1606 ou posteriores da Visualização Técnica. Esse suporte a versões anteriores é fornecido para que a ferramenta possa ser usada com um número maior de cenários de atualização da visualização técnica, sem ter de esperar até a próxima versão de visualização técnica estar disponível.
