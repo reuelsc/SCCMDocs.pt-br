@@ -12,9 +12,11 @@ ms.service:
 ms.technology:
 - configmgr-sum
 ms.assetid: fdf05118-162a-411e-b72e-386b9dc9a5e1
-translationtype: Human Translation
+ms.translationtype: Human Translation
 ms.sourcegitcommit: 238ef5814c0c1b832c28d63c9f3879e21a6c439b
 ms.openlocfilehash: 179f076f228daa5adf612275a822cd379b0ce1e3
+ms.contentlocale: pt-br
+ms.lasthandoff: 12/16/2016
 
 
 ---
@@ -83,7 +85,7 @@ Este tópico lista os pré-requisitos para atualizações de software no System 
 ### <a name="reporting-services-point"></a>Ponto do Reporting Services  
  A função do sistema de site do ponto do Reporting Services pode exibir relatórios de atualizações de software. Essa função é opcional, mas recomendada. Para obter mais informações sobre como criar um ponto do Reporting Services, consulte [Configurando relatórios](../../core/servers/manage/configuring-reporting.md).  
 
-##  <a name="a-namebkmkrecoverupgradesa-recover-from-synchronizing-the-upgrades-category-before-you-install-kb-3095113"></a><a name="BKMK_RecoverUpgrades"></a> Recuperar-se da sincronização da categoria Atualizações antes de instalar o KB 3095113  
+##  <a name="BKMK_RecoverUpgrades"></a> Recuperar-se da sincronização da categoria Atualizações antes de instalar o KB 3095113  
  Você deve instalar o [hotfix 3095113](https://support.microsoft.com/kb/3095113) para o WSUS nos pontos de atualização de software e servidores do site antes de sincronizar a classificação **Atualizações** . Se o hotfix não estiver instalado quando a classificação **Atualizações** for habilitada, o WSUS verá a atualização de recurso do build 1511 do Windows 10 mesmo que não possa baixar e implantar corretamente os pacotes associados. Se você sincronizar todas as atualizações sem primeiro ter instalado o [hotfix 3095113](https://support.microsoft.com/kb/3095113), o SUSDB (banco de dados do WSUS) será populado com dados inúteis que deverão ser apagados para que as atualizações possam ser implantadas corretamente.  Use o procedimento a seguir para se recuperar desse problema.  
 
 #### <a name="to-recover-from-synchronizing-the-upgrades-classification-before-you-install-kb-3095113"></a>Para se recuperar da sincronização da classificação Atualizações antes de instalar o KB 3095113  
@@ -111,9 +113,4 @@ Este tópico lista os pré-requisitos para atualizações de software no System 
 
 ## <a name="next-steps"></a>Próximas etapas
 [Preparar-se para o gerenciamento de atualização de software](../get-started/prepare-for-software-updates-management.md)
-
-
-
-<!--HONumber=Dec16_HO3-->
-
 
