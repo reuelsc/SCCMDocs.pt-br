@@ -20,6 +20,7 @@
 
 ## Implantar aplicativos
 ### [Implantar aplicativos](deploy-use/deploy-applications.md)
+### [Compartilhar um aplicativo](deploy-use/share-applications.md)
 ### [Simular implantações de aplicativos](deploy-use/simulate-application-deployments.md)
 ### [Implantar aplicativos virtuais do App-V](get-started/deploying-app-v-virtual-applications.md)
 
@@ -37,3 +38,5 @@
 ### [Atualizar e desativar aplicativos](deploy-use/update-and-retire-applications.md)
 ### [Revisar e substituir aplicativos](deploy-use/revise-and-supersede-applications.md)
 ### [Desinstalar aplicativos](deploy-use/uninstall-applications.md)
+
+## [Executar e gerenciar scripts](deploy-use/create-deploy-scripts.md)
