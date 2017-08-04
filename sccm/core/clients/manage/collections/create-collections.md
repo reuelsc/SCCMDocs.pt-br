@@ -16,12 +16,11 @@ caps.handback.revision: 0
 author: andredm7
 ms.author: andredm
 manager: angrobe
-ms.translationtype: Human Translation
-ms.sourcegitcommit: 9555a16d97224a1cf49a426ab225468b07403f60
-ms.openlocfilehash: e28fdeae809cadf78017dd2920e3f1a9484ec8a3
+ms.translationtype: HT
+ms.sourcegitcommit: 5f1412fb132e3a074742e11f1142b2594146cbe1
+ms.openlocfilehash: 44b4707b1a40624c51decf548d23ddd2164c5833
 ms.contentlocale: pt-br
-ms.lasthandoff: 12/30/2016
-
+ms.lasthandoff: 07/28/2017
 
 ---
 # <a name="how-to-create-collections-in-system-center-configuration-manager"></a>Como criar coleções no System Center Configuration Manager
@@ -57,65 +56,65 @@ Coleções são grupos de usuários ou dispositivos. Use coleções para tarefas
 5.  Na página **Regras de Associação** do **Assistente de Criação de Coleção de Dispositivos**, na lista **Adicionar Regra**, selecione o tipo de regra de associação que você deseja usar para esta coleção. É possível configurar várias regras para cada coleção.  
 
         
-        ##### To configure a direct rule  
+##### <a name="to-configure-a-direct-rule"></a>Para configurar uma regra direta  
 
-        1.  Na página **Pesquisar Recursos** do **Assistente para Criar Regra de Associação Direta**, especifique as seguintes informações:  
+1.  Na página **Pesquisar Recursos** do **Assistente para Criar Regra de Associação Direta**, especifique as seguintes informações:  
 
-            -   **Classe de recurso**: selecione o tipo de recurso que você deseja pesquisar e adicione à coleção. Selecione um dos valores de **Recursos do Sistema** para pesquisar dados de inventário retornados de computadores cliente ou **Computador Desconhecido** para selecionar valores retornados por computadores desconhecidos.  
+-   **Classe de recurso**: selecione o tipo de recurso que você deseja pesquisar e adicione à coleção. Selecione um dos valores de **Recursos do Sistema** para pesquisar dados de inventário retornados de computadores cliente ou **Computador Desconhecido** para selecionar valores retornados por computadores desconhecidos.  
 
-            -   **Nome do atributo**: selecione o atributo associado à classe de recurso selecionada que você deseja pesquisar. Por exemplo, se quiser selecionar computadores por seu nome NetBIOS, selecione **Recurso do Sistema** na lista **Classe de recurso** e **Nome NetBIOS** na lista **Nome do atributo** .  
+-   **Nome do atributo**: selecione o atributo associado à classe de recurso selecionada que você deseja pesquisar. Por exemplo, se quiser selecionar computadores por seu nome NetBIOS, selecione **Recurso do Sistema** na lista **Classe de recurso** e **Nome NetBIOS** na lista **Nome do atributo** .  
 
-            -   **Excluir recursos marcados como obsoletos** – se um computador cliente estiver marcado como obsoleto, não inclua esse valor nos resultados da pesquisa.  
+-   **Excluir recursos marcados como obsoletos** – se um computador cliente estiver marcado como obsoleto, não inclua esse valor nos resultados da pesquisa.  
 
-            -   **Excluir recursos que não têm o cliente do Configuration Manager instalado** – eles não serão exibidos nos resultados da pesquisa.  
+-   **Excluir recursos que não têm o cliente do Configuration Manager instalado** – eles não serão exibidos nos resultados da pesquisa.  
 
-            -   **Valor:** insira um valor que deseja procurar no nome do atributo selecionado. Você pode usar o caractere de porcentagem **%** como um curinga. Por exemplo, para pesquisar computadores que têm um nome NetBIOS que começa com “M”, digite **M%** nesse campo.  
+-   **Valor:** insira um valor que deseja procurar no nome do atributo selecionado. Você pode usar o caractere de porcentagem **%** como um curinga. Por exemplo, para pesquisar computadores que têm um nome NetBIOS que começa com “M”, digite **M%** nesse campo.  
 
-        2.  Na página **Selecionar Recursos**, selecione os recursos que você deseja adicionar à coleção na lista **Recursos** e escolha **Avançar**.  
+2.  Na página **Selecionar Recursos**, selecione os recursos que você deseja adicionar à coleção na lista **Recursos** e escolha **Avançar**.  
 
 
-        ##### To configure a query rule  
+##### <a name="to-configure-a-query-rule"></a>Para configurar uma regra de consulta  
 
-        1.  Na caixa de diálogo **Propriedades de Regra de Consulta** , especifique as seguintes informações:  
+1.  Na caixa de diálogo **Propriedades de Regra de Consulta** , especifique as seguintes informações:  
 
-            -   **Nome**: especifique um nome exclusivo.  
+-   **Nome**: especifique um nome exclusivo.  
 
-            -   **Importar Instrução de Consulta** – Abre a caixa de diálogo **Procurar Consulta**, em que é possível selecionar uma [consulta do Configuration Manager](../../../../core/servers/manage/create-queries.md) a ser usada como a regra de consulta para a coleção.   
+-   **Importar Instrução de Consulta** – Abre a caixa de diálogo **Procurar Consulta**, em que é possível selecionar uma [consulta do Configuration Manager](../../../../core/servers/manage/create-queries.md) a ser usada como a regra de consulta para a coleção.   
 
-            -   **Classe de recurso:** selecione o tipo de recurso que você deseja pesquisar e adicione à coleção. Selecione um dos valores de **Recursos do Sistema** para pesquisar dados de inventário retornados de computadores cliente ou **Computador Desconhecido** para selecionar valores retornados por computadores desconhecidos.  
+-   **Classe de recurso:** selecione o tipo de recurso que você deseja pesquisar e adicione à coleção. Selecione um dos valores de **Recursos do Sistema** para pesquisar dados de inventário retornados de computadores cliente ou **Computador Desconhecido** para selecionar valores retornados por computadores desconhecidos.  
 
-            -   **Editar Instrução de Consulta** – Abre a caixa de diálogo **	Propriedades da Instrução da Consulta**, em que é possível criar uma consulta a ser usada como a regra para a coleção. Para obter mais informações sobre consultas, consulte [Referência técnica de consultas no System Center Configuration Manager](../../../../core/servers/manage/queries-technical-reference.md).  
+-   **Editar Instrução de Consulta** – Abre a caixa de diálogo **	Propriedades da Instrução da Consulta**, em que é possível criar uma consulta a ser usada como a regra para a coleção. Para obter mais informações sobre consultas, consulte [Referência técnica de consultas no System Center Configuration Manager](../../../../core/servers/manage/queries-technical-reference.md).  
 
     
-        ##### To configure an include collection rule  
+##### <a name="to-configure-an-include-collection-rule"></a>Para configurar uma regra de coleção de inclusão  
 
-        In the **Select Collections** dialog box, select the collections you want to include in the new collection, then choose **OK**.  
+Na caixa de diálogo **Selecionar Coleções**, selecione as coleções que você deseja incluir na nova coleção e, em seguida, escolha **OK**.  
 
-        ##### To configure an exclude collection rule  
+##### <a name="to-configure-an-exclude-collection-rule"></a>Para configurar uma regra de coleção de exclusão  
 
-        In the **Select Collections** dialog box, select the collections you want to exclude from the new collection, then choose **OK**.  
+Na caixa de diálogo **Selecionar Coleções**, selecione as coleções que você deseja excluir da nova coleção e, em seguida, escolha **OK**.  
 
-    -   **Usar atualizações incrementais para esta coleção** – Selecione esta opção para examinar periodicamente apenas recursos novos ou alterados da avaliação da coleção anterior, independentemente de uma avaliação completa da coleção. Atualizações incrementais ocorrem em intervalos de 10 minutos.  
+-   **Usar atualizações incrementais para esta coleção** – Selecione esta opção para examinar periodicamente apenas recursos novos ou alterados da avaliação da coleção anterior, independentemente de uma avaliação completa da coleção. Atualizações incrementais ocorrem em intervalos de 10 minutos.  
 
-        > [!IMPORTANT]  
-        >  As coleções configuradas usando regras de consulta que usam as seguintes classes não dão suporte a atualizações incrementais:  
-        >   
-        >  -   SMS_G_System_CollectedFile  
-        > -   SMS_G_System_LastSoftwareScan  
-        > -   SMS_G_System_AppClientState  
-        > -   SMS_G_System_DCMDeploymentState  
-        > -   SMS_G_System_DCMDeploymentErrorAssetDetails  
-        > -   SMS_G_System_DCMDeploymentCompliantAssetDetails  
-        > -   SMS_G_System_DCMDeploymentNonCompliantAssetDetails  
-        > -   SMS_G_User_DCMDeploymentCompliantAssetDetails (somente para coleções de usuários)  
-        > -   SMS_G_User_DCMDeploymentNonCompliantAssetDetails (somente para coleções de usuários)  
-        > -   SMS_G_System_SoftwareUsageData  
-        > -   SMS_G_System_CI_ComplianceState  
-        > -   SMS_G_System_EndpointProtectionStatus  
-        > -   SMS_GH_System_*  
-        > -   SMS_GEH_System_*  
+> [!IMPORTANT]  
+>  As coleções configuradas usando regras de consulta que usam as seguintes classes não dão suporte a atualizações incrementais:  
+>   
+> -   SMS_G_System_CollectedFile  
+> -   SMS_G_System_LastSoftwareScan  
+> -   SMS_G_System_AppClientState  
+> -   SMS_G_System_DCMDeploymentState  
+> -   SMS_G_System_DCMDeploymentErrorAssetDetails  
+> -   SMS_G_System_DCMDeploymentCompliantAssetDetails  
+> -   SMS_G_System_DCMDeploymentNonCompliantAssetDetails  
+> -   SMS_G_User_DCMDeploymentCompliantAssetDetails (somente para coleções de usuários)  
+> -   SMS_G_User_DCMDeploymentNonCompliantAssetDetails (somente para coleções de usuários)  
+> -   SMS_G_System_SoftwareUsageData  
+> -   SMS_G_System_CI_ComplianceState  
+> -   SMS_G_System_EndpointProtectionStatus  
+> -   SMS_GH_System_*  
+> -   SMS_GEH_System_*  
 
-    -   **Agendar uma atualização completa para esta coleção** – Agende uma avaliação completa regular da associação da coleção.  
+-   **Agendar uma atualização completa para esta coleção** – Agende uma avaliação completa regular da associação da coleção.  
 
 6.  Conclua o assistente para criar a nova coleção. A nova coleção é exibida no nó **Coleções de Dispositivos** do espaço de trabalho **Ativos e Conformidade** .  
 
@@ -134,60 +133,60 @@ Coleções são grupos de usuários ou dispositivos. Use coleções para tarefas
 
     -   Na lista **Adicionar Regra** , selecione o tipo de regra de associação que deseja usar para esta coleção. É possível configurar várias regras para cada coleção.  
 
-         ##### <a name="to-configure-a-direct-rule"></a>Para configurar uma regra direta  
+##### <a name="to-configure-a-direct-rule"></a>Para configurar uma regra direta  
 
-        1.  Na página **Pesquisar Recursos** do **Assistente de Criação de Regra de Associação Direta**, especifique:  
+1.  Na página **Pesquisar Recursos** do **Assistente de Criação de Regra de Associação Direta**, especifique:  
 
-            -   **Classe de recurso**: selecione o tipo de recurso que você deseja pesquisar e adicione à coleção. Selecione os valores de **Recurso de Usuário** para pesquisar informações de usuário coletadas pelo Configuration Manager ou de **Recurso do Grupo de Usuários** para pesquisar informações de grupo de usuários coletadas pelo Configuration Manager.  
+-   **Classe de recurso**: selecione o tipo de recurso que você deseja pesquisar e adicione à coleção. Selecione os valores de **Recurso de Usuário** para pesquisar informações de usuário coletadas pelo Configuration Manager ou de **Recurso do Grupo de Usuários** para pesquisar informações de grupo de usuários coletadas pelo Configuration Manager.  
 
-            -   **Nome do atributo**: selecione o atributo associado à classe de recurso que você deseja pesquisar. Por exemplo, se quiser selecionar os usuários por nome de UO (Unidade Organizacional), selecione **Recurso de Usuário** na lista **Classe de recurso** e **Nome de UO de usuário** na lista **Nome do atributo** .  
+-   **Nome do atributo**: selecione o atributo associado à classe de recurso que você deseja pesquisar. Por exemplo, se quiser selecionar os usuários por nome de UO (Unidade Organizacional), selecione **Recurso de Usuário** na lista **Classe de recurso** e **Nome de UO de usuário** na lista **Nome do atributo** .  
 
-            -   **Valor:** insira um valor que você deseja pesquisar. Você pode usar o caractere de porcentagem **%** como um curinga. Por exemplo, para pesquisar usuários na UO da Contoso, digite **Contoso** neste campo.  
+-   **Valor:** insira um valor que você deseja pesquisar. Você pode usar o caractere de porcentagem **%** como um curinga. Por exemplo, para pesquisar usuários na UO da Contoso, digite **Contoso** neste campo.  
 
-        2.  Na página **Selecionar Recursos**, selecione os recursos que você deseja adicionar à coleção na lista **Recursos**.  
+2.  Na página **Selecionar Recursos**, selecione os recursos que você deseja adicionar à coleção na lista **Recursos**.  
 
-        ##### <a name="to-configure-a-query-rule"></a>Para configurar uma regra de consulta  
+##### <a name="to-configure-a-query-rule"></a>Para configurar uma regra de consulta  
 
-        1.  Na caixa de diálogo **Propriedades da Regra de consulta**, forneça:  
+1.  Na caixa de diálogo **Propriedades da Regra de consulta**, forneça:  
 
-            -   **Nome**: um nome exclusivo.  
+-   **Nome**: um nome exclusivo.  
 
-            -   **Importar Instrução de Consulta** – Abre a caixa de diálogo **Procurar Consulta**, em que é possível selecionar uma [consulta do Configuration Manager](../../../../core/servers/manage/queries-technical-reference.md) a ser usada como a regra de consulta para a coleção.  
+-   **Importar Instrução de Consulta** – Abre a caixa de diálogo **Procurar Consulta**, em que é possível selecionar uma [consulta do Configuration Manager](../../../../core/servers/manage/queries-technical-reference.md) a ser usada como a regra de consulta para a coleção.  
 
-            -   **Classe de recurso**: selecione o tipo de recurso que você deseja pesquisar e adicione à coleção. Selecione os valores de **Recurso de Usuário** para pesquisar informações de usuário coletadas pelo Configuration Manager ou de **Recurso do Grupo de Usuários** para pesquisar informações de grupo de usuários coletadas pelo Configuration Manager.  
+-   **Classe de recurso**: selecione o tipo de recurso que você deseja pesquisar e adicione à coleção. Selecione os valores de **Recurso de Usuário** para pesquisar informações de usuário coletadas pelo Configuration Manager ou de **Recurso do Grupo de Usuários** para pesquisar informações de grupo de usuários coletadas pelo Configuration Manager.  
 
-            -   **Editar Instrução de Consulta** – Abre a caixa de diálogo **Propriedades da Instrução da Consulta**, em que é possível [criar uma consulta](../../../../core/servers/manage/queries-technical-reference.md) a ser usada como a regra para a coleção.  
+-   **Editar Instrução de Consulta** – Abre a caixa de diálogo **Propriedades da Instrução da Consulta**, em que é possível [criar uma consulta](../../../../core/servers/manage/queries-technical-reference.md) a ser usada como a regra para a coleção.  
 
-        ##### <a name="to-configure-an-include-collection-rule"></a>Para configurar uma regra de coleção de inclusão  
+##### <a name="to-configure-an-include-collection-rule"></a>Para configurar uma regra de coleção de inclusão  
 
-        Na caixa de diálogo **Selecionar Coleções**, selecione as coleções que você deseja incluir na nova coleção e, em seguida, escolha **OK**.  
+Na caixa de diálogo **Selecionar Coleções**, selecione as coleções que você deseja incluir na nova coleção e, em seguida, escolha **OK**.  
 
-        ##### <a name="to-configure-an-exclude-collection-rule"></a>Para configurar uma regra de coleção de exclusão  
+##### <a name="to-configure-an-exclude-collection-rule"></a>Para configurar uma regra de coleção de exclusão  
 
-        Na caixa de diálogo **Selecionar Coleções**, selecione as coleções que você deseja excluir da nova coleção e, em seguida, escolha **OK**.  
+Na caixa de diálogo **Selecionar Coleções**, selecione as coleções que você deseja excluir da nova coleção e, em seguida, escolha **OK**.  
 
 
-    -   **Usar atualizações incrementais para esta coleção** – Selecione esta opção para examinar periodicamente apenas recursos novos ou alterados da avaliação da coleção anterior, independentemente de uma avaliação completa da coleção. Atualizações incrementais ocorrem em intervalos de 10 minutos.  
+-   **Usar atualizações incrementais para esta coleção** – Selecione esta opção para examinar periodicamente apenas recursos novos ou alterados da avaliação da coleção anterior, independentemente de uma avaliação completa da coleção. Atualizações incrementais ocorrem em intervalos de 10 minutos.  
 
-        > [!IMPORTANT]  
-        >  As coleções configuradas usando regras de consulta que usam as seguintes classes não dão suporte a atualizações incrementais:  
-        >   
-        >  -   SMS_G_System_CollectedFile  
-        > -   SMS_G_System_LastSoftwareScan  
-        > -   SMS_G_System_AppClientState  
-        > -   SMS_G_System_DCMDeploymentState  
-        > -   SMS_G_System_DCMDeploymentErrorAssetDetails  
-        > -   SMS_G_System_DCMDeploymentCompliantAssetDetails  
-        > -   SMS_G_System_DCMDeploymentNonCompliantAssetDetails  
-        > -   SMS_G_User_DCMDeploymentCompliantAssetDetails (somente para coleções de usuários)  
-        > -   SMS_G_User_DCMDeploymentNonCompliantAssetDetails (somente para coleções de usuários)  
-        > -   SMS_G_System_SoftwareUsageData  
-        > -   SMS_G_System_CI_ComplianceState  
-        > -   SMS_G_System_EndpointProtectionStatus  
-        > -   SMS_GH_System_*  
-        > -   SMS_GEH_System_*  
+> [!IMPORTANT]  
+>  As coleções configuradas usando regras de consulta que usam as seguintes classes não dão suporte a atualizações incrementais:  
+>   
+> -   SMS_G_System_CollectedFile  
+> -   SMS_G_System_LastSoftwareScan  
+> -   SMS_G_System_AppClientState  
+> -   SMS_G_System_DCMDeploymentState  
+> -   SMS_G_System_DCMDeploymentErrorAssetDetails  
+> -   SMS_G_System_DCMDeploymentCompliantAssetDetails  
+> -   SMS_G_System_DCMDeploymentNonCompliantAssetDetails  
+> -   SMS_G_User_DCMDeploymentCompliantAssetDetails (somente para coleções de usuários)  
+> -   SMS_G_User_DCMDeploymentNonCompliantAssetDetails (somente para coleções de usuários)  
+> -   SMS_G_System_SoftwareUsageData  
+> -   SMS_G_System_CI_ComplianceState  
+> -   SMS_G_System_EndpointProtectionStatus  
+> -   SMS_GH_System_*  
+> -   SMS_GEH_System_*  
 
-    -   **Agendar uma atualização completa para esta coleção** – Agende uma avaliação completa regular da associação da coleção.  
+-   **Agendar uma atualização completa para esta coleção** – Agende uma avaliação completa regular da associação da coleção.  
 
 6.  Conclua o assistente. A nova coleção é exibida no nó **Coleções de Usuários** do espaço de trabalho **Ativos e Conformidade** .  
 

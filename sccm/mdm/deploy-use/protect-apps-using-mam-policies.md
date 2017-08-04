@@ -16,11 +16,11 @@ caps.handback.revision: 0
 author: mtillman
 ms.author: mtillman
 manager: angrobe
-ms.translationtype: Human Translation
-ms.sourcegitcommit: 2c723fe7137a95df271c3612c88805efd8fb9a77
-ms.openlocfilehash: 74f4dd44089d4a13526c981589e1f497f0e10290
+ms.translationtype: HT
+ms.sourcegitcommit: 3c75c1647954d6507f9e28495810ef8c55e42cda
+ms.openlocfilehash: 50c137f159b0ef631f7173b8eec190182ce41cee
 ms.contentlocale: pt-br
-ms.lasthandoff: 05/17/2017
+ms.lasthandoff: 07/29/2017
 
 ---
 # <a name="protect-apps-using-mobile-application-management-policies-in-system-center-configuration-manager"></a>Proteger aplicativos usando políticas de gerenciamento de aplicativos móveis no System Center Configuration Manager
@@ -43,12 +43,12 @@ Para usar essa nova funcionalidade, você precisa usar a Versão Prévia do Port
 
 Para aplicar restrições a um aplicativo, este deve incorporar o SDK (Software Development Kit ) do Aplicativo o Microsoft Intune. Há dois métodos de obter esse tipo de aplicativo:  
 
--   **Usar um aplicativo gerenciado por política** (Android e iOS): esses aplicativos têm o SDK do aplicativo inserido. Para adicionar este tipo de aplicativo, especifique um link para o aplicativo de uma loja de aplicativos, como a iTunes Store ou o Google Play. Nenhum processamento adicional é necessário para este tipo de aplicativo. Para obter uma lista dos aplicativos gerenciados pela política que estão disponíveis para dispositivos iOS e Android, veja [Aplicativos gerenciados para políticas de gerenciamento de aplicativos móveis do Microsoft Intune](https://technet.microsoft.com/en-us/library/dn708489.aspx).  
+-   **Usar um aplicativo gerenciado por política** (Android e iOS): esses aplicativos têm o SDK do aplicativo inserido. Para adicionar este tipo de aplicativo, especifique um link para o aplicativo de uma loja de aplicativos, como a iTunes Store ou o Google Play. Nenhum processamento adicional é necessário para este tipo de aplicativo. Para obter uma lista dos aplicativos gerenciados pela política que estão disponíveis para dispositivos iOS e Android, veja [Aplicativos gerenciados para políticas de gerenciamento de aplicativos móveis do Microsoft Intune](https://technet.microsoft.com/library/dn708489.aspx).  
 
 -   **Usar um aplicativo "encapsulado"** (Android e iOS): esses aplicativos são empacotados novamente para incluir o SDK do aplicativo usando a **Ferramenta de Encapsulamento de Aplicativos do Microsoft Intune**. Normalmente, essa ferramenta é usada para processar aplicativos da empresa criados internamente. Ele não pode ser usado para processar aplicativos que foram baixados da loja de aplicativos. Consulte os artigos a seguir para obter mais informações:
-    - [Preparar aplicativos iOS para gerenciamento de aplicativos móveis com a Ferramenta de Encapsulamento de Aplicativos do Microsoft Intune](https://technet.microsoft.com/en-us/library/dn878028.aspx)
+    - [Preparar aplicativos iOS para gerenciamento de aplicativos móveis com a Ferramenta de Encapsulamento de Aplicativos do Microsoft Intune](https://technet.microsoft.com/library/dn878028.aspx)
 
-    - [Preparar aplicativos Android para o gerenciamento de aplicativos móveis com a Ferramenta de Encapsulamento de Aplicativos do Microsoft Intune](https://technet.microsoft.com/en-us/library/mt147413.aspx)  
+    - [Preparar aplicativos Android para o gerenciamento de aplicativos móveis com a Ferramenta de Encapsulamento de Aplicativos do Microsoft Intune](https://technet.microsoft.com/library/mt147413.aspx)  
 
 ## <a name="create-and-deploy-an-app-with-a-mobile-application-management-policy"></a>Criar e implantar um aplicativo com uma política de gerenciamento de aplicativos móveis  
 
@@ -58,7 +58,7 @@ Para aplicar restrições a um aplicativo, este deve incorporar o SDK (Software 
 
      Por exemplo, a URL do Microsoft Word para aplicativo do iPad é **https://itunes.apple.com/us/app/microsoft-word-for-ipad/id586447913?mt=8**  
 
--   **Para criar um aplicativo encapsulado**: use as informações nos tópicos [Preparar aplicativos iOS para gerenciamento de aplicativos móveis com a Ferramenta de Encapsulamento de Aplicativos do Microsoft Intune](https://technet.microsoft.com/en-us/library/dn878028.aspx) e [Preparar aplicativos Android para o gerenciamento de aplicativos móveis com a Ferramenta de Encapsulamento de Aplicativos do Microsoft Intune](https://technet.microsoft.com/en-us/library/mt147413.aspx) para criar um aplicativo encapsulado.  
+-   **Para criar um aplicativo encapsulado**: use as informações nos tópicos [Preparar aplicativos iOS para gerenciamento de aplicativos móveis com a Ferramenta de Encapsulamento de Aplicativos do Microsoft Intune](https://technet.microsoft.com/library/dn878028.aspx) e [Preparar aplicativos Android para o gerenciamento de aplicativos móveis com a Ferramenta de Encapsulamento de Aplicativos do Microsoft Intune](https://technet.microsoft.com/library/mt147413.aspx) para criar um aplicativo encapsulado.  
 
      A ferramenta cria um aplicativo processado e um arquivo de manifesto associado. Esses arquivos são usados ao criar um aplicativo do Configuration Manager que contém o aplicativo.  
 
@@ -178,5 +178,5 @@ Para mais informações, consulte [Gerenciar o acesso à Internet usando políti
 -   Se nenhuma política tiver sido implantada ainda no dispositivo e duas configurações conflitantes forem implantadas, a configuração padrão integrada no dispositivo será usada.  
 
 ##  <a name="see-a-list-of-available-policy-managed-apps"></a>Veja uma lista dos aplicativos gerenciados por política disponíveis  
- Para obter uma lista dos aplicativos gerenciados pela política que estão disponíveis para dispositivos iOS e Android, consulte [Parceiros de aplicativo do Microsoft Intune](https://www.microsoft.com/en-us/cloud-platform/microsoft-intune-partners).  
+ Para obter uma lista dos aplicativos gerenciados pela política que estão disponíveis para dispositivos iOS e Android, consulte [Parceiros de aplicativo do Microsoft Intune](https://www.microsoft.com/cloud-platform/microsoft-intune-partners).  
 

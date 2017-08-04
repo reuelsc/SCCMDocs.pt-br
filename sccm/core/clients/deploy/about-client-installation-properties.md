@@ -15,11 +15,11 @@ caps.latest.revision: 15
 author: robstackmsft
 ms.author: robstack
 manager: angrobe
-ms.translationtype: Human Translation
-ms.sourcegitcommit: a1fc9f2db7c9c2b40d986bb39a0b27d6cc699987
-ms.openlocfilehash: 454828d64b5643e57da4cff3aa3f671e8cd157b1
+ms.translationtype: HT
+ms.sourcegitcommit: afe0ecc4230733fa76e41bf08df5ccfb221da7c8
+ms.openlocfilehash: fef330a14ad2a1f75d520eac0706a376953993e8
 ms.contentlocale: pt-br
-ms.lasthandoff: 01/05/2017
+ms.lasthandoff: 08/04/2017
 
 ---
 # <a name="about-client-installation-properties-in-system-center-configuration-manager"></a>Sobre as propriedades de instalação do cliente no System Center Configuration Manager
@@ -528,8 +528,6 @@ Especifica um ponto de gerenciamento inicial para o cliente do Configuration Man
 
 > [!IMPORTANT]  
 >  Se o ponto de gerenciamento aceitar somente conexões de cliente por HTTPS, será necessário prefixar o nome do ponto de gerenciamento com https://.  
-
-Exemplo: `CCMSetup.exe SMSMP=smsmp01.contoso.com`  
 
 Exemplo: `CCMSetup.exe SMSMP=smsmp01.contoso.com`
 
