@@ -51,7 +51,7 @@ Use o comando CCMSetup.exe do System Center Configuration Manager para instalar 
 
  No prompt de comando, o comando CCMSetup.exe usa o seguinte formato:  
 
- `CCMSetup.exe [&lt;Ccmsetup properties\>] [&lt;client.msi setup properties>]`  
+ `CCMSetup.exe [<Ccmsetup properties>] [<client.msi setup properties>]`  
 
  Exemplo:  
 
