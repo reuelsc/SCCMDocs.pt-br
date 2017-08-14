@@ -1,5 +1,4 @@
 ---
-
 title: "Configurar classificações e produtos para sincronizar | Microsoft Docs"
 description: "Siga estas etapas para configurar classificações e produtos para sincronizar no console do Configuration Manager."
 keywords: 
@@ -13,11 +12,11 @@ ms.service:
 ms.technology:
 - configmgr-sum
 ms.assetid: 5ddde4e6-d553-4182-b752-6bc8b4a26745
-translationtype: Human Translation
-ms.sourcegitcommit: e6cf8c799b5be2f7dbb6fadadddf702ec974ae45
-ms.openlocfilehash: 6add66e625c790b65edf64216c2262a5d082f820
-
-
+ms.translationtype: HT
+ms.sourcegitcommit: afe0ecc4230733fa76e41bf08df5ccfb221da7c8
+ms.openlocfilehash: 2da61e6e06850b36543b9fd41bd9a7d2368006fb
+ms.contentlocale: pt-br
+ms.lasthandoff: 08/04/2017
 
 ---
 #  <a name="configure-classifications-and-products-to-synchronize"></a>configurar classificações e produtos para sincronizar  
@@ -51,9 +50,13 @@ ms.openlocfilehash: 6add66e625c790b65edf64216c2262a5d082f820
     > - **Ferramentas**: especifica um utilitário ou um recurso que ajuda a concluir uma ou mais tarefas.  
     > - **Pacotes cumulativos de atualizações**: especifica um conjunto cumulativo de hotfixes que são reunidos para facilitar a implantação. Esses hotfixes podem incluir atualizações de segurança, atualizações críticas, atualizações e assim por diante. Um pacote cumulativo de atualizações geralmente aborda uma área específica, como segurança ou um componente do produto.  
     > - **Atualizações**: especifica uma atualização para um aplicativo ou arquivo que está atualmente instalado.  
-    > - **Upgrade**: especifica uma atualização para os recursos e funcionalidades do Windows 10.  
-    >   
-    >      Seus sites e pontos de atualização de software devem executar o WSUS 4.0 com o [hotfix 3095113](https://support.microsoft.com/kb/3095113) para obter a classificação de **Upgrade**.  
+    > - **Upgrade**: especifica uma atualização para os recursos e funcionalidades do Windows 10. Seus sites e pontos de atualização de software devem executar o WSUS 4.0 com o [hotfix 3095113](https://support.microsoft.com/kb/3095113) para obter a classificação de **Upgrade**.    
+    >       
+
+    > [!NOTE]    
+    > A partir do Configuration Manager versão 1706, você também pode marcar a caixa de seleção **Incluir drivers e atualizações de firmware do Microsoft Surface** para sincronizar os drivers do Microsoft Surface. Todos os pontos de atualização de software devem executar o Windows Server 2016 para sincronizar com êxito os drivers do Surface.     
+    >    
+    > Esse é um recurso de pré-lançamento. Os recursos de pré-lançamento foram incluídos no produto para testes iniciais em um ambiente de produção, mas não devem ser considerados prontos para produção. Você deve ativar esse recurso para que ele seja disponibilizado. Para obter mais informações, consulte [Usar recursos de pré-lançamento de atualizações](https://docs.microsoft.com/sccm/core/servers/manage/install-in-console-updates#bkmk_prerelease).
 
 5.  Na guia **Produtos** , especifique os produtos para os quais você deseja sincronizar atualizações de software e clique em **Fechar**.  
 
@@ -65,12 +68,6 @@ ms.openlocfilehash: 6add66e625c790b65edf64216c2262a5d082f820
     > [!IMPORTANT]  
     >  O Configuration Manager armazena uma lista de produtos e famílias de produtos que você pode escolher ao instalar o ponto de atualização de software pela primeira vez. Os produtos e as famílias de produtos que forem lançados após o lançamento do Configuration Manager podem não estar disponíveis para seleção até que você conclua a sincronização das atualizações de software, o que atualizará a lista de produtos e famílias de produtos disponíveis para você escolher.  
 
-
 ## <a name="next-steps"></a>Próximas etapas
 Inicie a sincronização de atualizações de software para recuperar atualizações de software com base nos novos critérios. Para ver mais detalhes, consulte [Sincronizar atualizações de software](synchronize-software-updates.md).
-
-
-
-<!--HONumber=Dec16_HO3-->
-
 

@@ -16,12 +16,11 @@ caps.handback.revision: 0
 author: Dougeby
 ms.author: dougeby
 manager: angrobe
-ms.translationtype: Human Translation
-ms.sourcegitcommit: 6f9e6e93fce95666503907010a5c253158c5de7c
-ms.openlocfilehash: f648d7626af50d95fbaa5a7a2abd821a9c47f5d1
+ms.translationtype: HT
+ms.sourcegitcommit: b7461f89f483314bd07248bbc9d5dde85ca6b6c2
+ms.openlocfilehash: e0726febc4c36a26c5e067914734838bf2681e6c
 ms.contentlocale: pt-br
-ms.lasthandoff: 07/07/2017
-
+ms.lasthandoff: 08/03/2017
 
 ---
 # <a name="task-sequence-steps-in-system-center-configuration-manager"></a>Etapas da sequência de tarefas no System Center Configuration Manager
@@ -1527,9 +1526,9 @@ Depois de selecionar as variáveis de uma regra, você deve fornecer um valor pa
 >  Quando você importa uma sequência de tarefas com a etapa Definir variáveis dinâmicas, o **Valor secreto** é selecionado para o valor da variável, sendo o valor removido ao importar a sequência de tarefas. Como resultado, você deve reinserir o valor da variável dinâmica novamente depois de importar a sequência de tarefas.  
 
 ##  <a name="BKMK_SetTaskSequenceVariable"></a> Definir Variável de Sequência de Tarefas  
- Use a etapa **Definir variável de sequência de tarefas** para definir o valor de uma variável usada com a sequência de tarefas.  
+Use a etapa **Definir variável de sequência de tarefas** para definir o valor de uma variável usada com a sequência de tarefas.  
 
- Esta etapa pode ser executada em um sistema operacional padrão ou no Windows PE. Variáveis de sequência de tarefas são lidas por ações de sequência de tarefas e especificam o comportamento dessas ações. Para mais informações sobre variáveis de sequência de tarefas específicas, confira [Task sequence action variables](task-sequence-action-variables.md) (Variáveis de ação de sequência de tarefas).  
+Esta etapa pode ser executada em um sistema operacional padrão ou no Windows PE. Variáveis de sequência de tarefas são lidas por ações de sequência de tarefas e especificam o comportamento dessas ações. Para mais informações sobre variáveis de sequência de tarefas específicas, confira [Task sequence action variables](task-sequence-action-variables.md) (Variáveis de ação de sequência de tarefas).  
 
 ### <a name="details"></a>Detalhes  
  Na guia **Propriedades** desta etapa, você pode definir as configurações descritas nesta seção.  
@@ -1553,6 +1552,16 @@ Depois de selecionar as variáveis de uma regra, você deve fornecer um valor pa
 
  **Valor**  
  O valor que associado à variável de sequência de tarefas. O valor pode ser outra variável de sequência de tarefas na sintaxe %<varname\>%.  
+
+## <a name="hide-task-sequence-progress"></a>Ocultar o progresso da sequência de tarefas
+<!-- 1354291 -->
+Com a versão 1706, você pode controlar quando o andamento da sequência de tarefas é exibido aos usuários finais por meio de uma nova variável. Em sua sequência de tarefas, use a etapa **Definir Variável de Sequência de Tarefas** para definir o valor para a variável **TSDisableProgressUI** a fim de ocultar ou exibir o andamento da sequência de tarefas. Você pode usar a etapa Definir Variável de Sequência de Tarefas várias vezes em uma sequência de tarefas para alterar o valor da variável. Isso permite que você oculte ou exiba o andamento da sequência de tarefas em diferentes seções da sequência de tarefas.
+
+ - **Para ocultar o progresso da sequência de tarefas**  
+No editor de sequência de tarefas, use a etapa [Definir Variável de Sequência de Tarefas](#BKMK_SetTaskSequenceVariable) para definir o valor da variável **TSDisableProgressUI** como **True** a fim de ocultar o andamento da sequência de tarefas.
+
+ - **Para exibir o andamento da sequência de tarefas**  
+No editor de sequência de tarefas, use a etapa [Definir Variável de Sequência de Tarefas](#BKMK_SetTaskSequenceVariable) para definir o valor da variável **TSDisableProgressUI** como **False** a fim de exibir o andamento da sequência de tarefas.
 
 ##  <a name="BKMK_SetupWindowsandConfigMgr"></a> Instalar Windows e ConfigMgr  
  Use a etapa **Instalação do Windows e ConfigMgr** para realizar a transição do Windows PE para o novo sistema operacional. Esta etapa da sequência de tarefas é necessária em qualquer implantação de sistema operacional. Ele instala o cliente do Configuration Manager no novo sistema operacional e prepara a sequência de tarefas para continuar a execução no novo sistema operacional.  

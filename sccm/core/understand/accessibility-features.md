@@ -2,7 +2,7 @@
 title: Acessibilidade | Microsoft Docs
 description: "Saiba mais sobre os recursos que tornam o System Center Configuration Manager acessível para pessoas com deficiências."
 ms.custom: na
-ms.date: 3/27/2017
+ms.date: 7/31/2017
 ms.reviewer: na
 ms.suite: na
 ms.prod: configuration-manager
@@ -15,11 +15,11 @@ caps.latest.revision: 6
 author: Brenduns
 ms.author: brenduns
 manager: angrobe
-ms.translationtype: Human Translation
-ms.sourcegitcommit: dab5da5a4b5dfb3606a8a6bd0c70a0b21923fff9
-ms.openlocfilehash: 98599b3c188c9e9b508fea79ecf9a2b2348e9288
+ms.translationtype: HT
+ms.sourcegitcommit: 3c75c1647954d6507f9e28495810ef8c55e42cda
+ms.openlocfilehash: ca518796477dda149a9f4c0ebd65f0a082eab806
 ms.contentlocale: pt-br
-ms.lasthandoff: 05/17/2017
+ms.lasthandoff: 07/29/2017
 
 ---
 # <a name="accessibility-features-in-system-center-configuration-manager"></a>Recursos de acessibilidade no System Center Configuration Manager
@@ -31,14 +31,38 @@ O System Center Configuration Manager inclui recursos para ajudar a torná-lo ac
 
 
 ## <a name="bkmk_aconsole"></a> Recursos de acessibilidade para o console do Configuration Manager  
--   Para acessar um espaço de trabalho, use os seguintes atalhos de teclado:  
 
-|Espaço de trabalho|Atalho de teclado|  
-|------|--------|  
-|Ativos e conformidade|Ctrl+1|  
-|Biblioteca de software|Ctrl+2|  
-|monitoramento|Ctrl+3|  
-|Administração|Ctrl+4|  
+**Atalhos e aprimoramentos na versão 1706 e posterior**
+
+|Atalho de teclado|  Finalidade|
+|--------|--------|  
+|Ctrl + M|Define o foco no painel principal (central).|
+|Ctrl + T|Define o foco o nó superior no painel de navegação. Se o foco já estiver nesse painel, ele será definido para o último nó que você visitou.|
+|Ctrl + I|Define o foco para a barra de trilha, abaixo da faixa de opções.|
+|Ctrl + L|Define o foco para o campo **Pesquisa**, quando estiver disponível.|
+|Ctrl + D|Define o foco para o painel de detalhes, quando estiver disponível.|
+|Alt     |Altera o foco para dentro e fora da faixa de opções.|
+
+
+- Melhora a navegação no painel de navegação quando você digita as letras de um nome de nó.
+- A navegação por teclado no modo de exibição principal e na faixa de opções agora é circular.
+- Agora, a navegação por teclado no painel de detalhes é circular. Para retornar ao painel ou objeto anterior, use Ctrl + D, depois, Shift + TAB.
+- Depois de atualizar um modo de exibição do Espaço de Trabalho, o foco é definido para o painel principal desse espaço de trabalho.
+- Correção de um problema para permitir que os leitores de tela anunciem os nomes dos itens de lista.
+- Adição de nomes acessíveis para vários controles na página, o que permite aos leitores de tela anunciarem informações importantes.
+
+
+**Os atalhos de teclado a seguir estão disponíveis para todas as versões**
+
+- Para acessar um espaço de trabalho, use os seguintes atalhos de teclado:  
+
+|Atalho de teclado| Espaço de trabalho|
+|--------|--------|  
+|Ctrl + 1| Ativos e conformidade|
+|Ctrl + 2|  Biblioteca de software|
+|Ctrl + 3|  monitoramento|
+|Ctrl + 4|  Administração|
+
 
 -   Para acessar um menu do espaço de trabalho, pressione a tecla Tab até que o ícone Expandir/Recolher esteja em foco. Em seguida, pressione a tecla de seta para baixo para acessar o menu do espaço de trabalho.  
 

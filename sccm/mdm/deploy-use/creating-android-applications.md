@@ -2,7 +2,7 @@
 title: Criar aplicativos Android | Microsoft Docs
 description: "Consulte quais considerações você deverá levar em conta ao criar e implantar aplicativos para dispositivos Android."
 ms.custom: na
-ms.date: 03/27/2017
+ms.date: 07/31/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
@@ -16,18 +16,17 @@ author: robstackmsft
 ms.author: robstack
 manager: angrobe
 ms.translationtype: HT
-ms.sourcegitcommit: 344b55aecd72479b759b40e8252e64a06c5eaba0
-ms.openlocfilehash: 3bfb7364c3de5264a5fa8a684965d9aebeb84719
+ms.sourcegitcommit: 3c75c1647954d6507f9e28495810ef8c55e42cda
+ms.openlocfilehash: 3a89abc81cd70f4e499bf4e3087fd53915377c44
 ms.contentlocale: pt-br
-ms.lasthandoff: 07/13/2017
+ms.lasthandoff: 07/29/2017
 
 ---
-# Criar aplicativos Android com o System Center Configuration Manager
-<a id="create-android-applications-with-system-center-configuration-manager" class="xliff"></a>
+# <a name="create-android-applications-with-system-center-configuration-manager"></a>Criar aplicativos Android com o System Center Configuration Manager
 
 *Aplica-se a: System Center Configuration Manager (Branch Atual)*
 
-Um aplicativo do System Center Configuration Manager tem um ou mais tipos de implantação que abrangem os arquivos de instalação e as informações necessárias para implantar o software em um dispositivo. Um tipo de implantação também tem regras que especificam quando e como o software é implantado.  
+Um aplicativo do System Center Configuration Manager tem um ou mais tipos de implantação. Os tipos de implantação são compostos pelos arquivos de instalação e informações necessárias para implantar o software em um dispositivo. Um tipo de implantação também tem regras que especificam quando e como o software é implantado.  
 
  Você pode criar aplicativos com os seguintes métodos:  
 
@@ -37,8 +36,7 @@ Um aplicativo do System Center Configuration Manager tem um ou mais tipos de imp
 
 Veja [Iniciar o assistente para criar aplicativo](../../apps/deploy-use/create-applications.md#start-the-create-application-wizard) e conheça as etapas necessárias para criar os aplicativos do Configuration Manager e os tipos de implantação. Além disso, lembre-se das seguintes considerações ao criar e implantar aplicativos em dispositivos Android.  
 
-## Considerações gerais para aplicativos Android
-<a id="general-considerations-for-android-apps" class="xliff"></a>
+## <a name="general-considerations-for-android-apps"></a>Considerações gerais para aplicativos Android
 
 O Configuration Manager dá suporte à implantação dos seguintes tipos de aplicativos para Android:
 
@@ -53,11 +51,10 @@ Há suporte para as seguintes ações de implantação:
 |Android|**Disponível**, **Necessária** O usuário deve concordar com a instalação e com a desinstalação.|
 |Android for Work | **Necessária** |
 
-## Aprovar e implantar aplicativos do Android for Work
-<a id="approve-and-deploy-android-for-work-apps" class="xliff"></a>
-Como administrador do Configuration Manager, você também pode aprovar e implantar aplicativos no [site do Play for Work](https://play.google.com/work)e implantar esses aplicativos em dispositivos gerenciados do Android for Work.
+## <a name="approve-and-deploy-android-for-work-apps"></a>Aprovar e implantar aplicativos do Android for Work
+Como administrador do Configuration Manager, você também pode aprovar aplicativos no [site do Play for Work](https://play.google.com/work)e implantar esses aplicativos em dispositivos gerenciados do Android for Work.
 
-Siga essas etapas para aprovar aplicativos na loja Play for Work, sincronizá-los com o console do Configuration Manager e implantá-los em dispositivos Android for Work gerenciados. Para implantar aplicativos nos perfis de trabalho dos usuários, você precisará aprovar os aplicativos na Play for Work e, então, sincronizar os aplicativos com o console do Configuration Manager.
+Siga essas etapas para aprovar aplicativos na loja Play for Work, sincronizá-los com o console do Configuration Manager e implantá-los em dispositivos Android for Work gerenciados. Para implantar aplicativos nos perfis de trabalho dos usuários, você precisa aprovar os aplicativos na Play for Work e, então, sincronizar os aplicativos com o console do Configuration Manager.
 
 1. Abra um navegador e acesse: https://play.google.com/work.
 2. Entre usando a conta de administrador do Google associada ao seu locatário do Intune.

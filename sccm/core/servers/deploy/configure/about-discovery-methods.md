@@ -1,7 +1,7 @@
 ---
 title: "Métodos de descoberta | Microsoft Docs"
 ms.custom: na
-ms.date: 2/3/2017
+ms.date: 07/31/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
@@ -14,11 +14,11 @@ caps.latest.revision: 8
 author: Brenduns
 ms.author: brenduns
 manager: angrobe
-ms.translationtype: Human Translation
-ms.sourcegitcommit: 81d7516b814d2db74d4d857871071c8911755754
-ms.openlocfilehash: 6e53f501281e31f2b7df54b9740eac970f108257
+ms.translationtype: HT
+ms.sourcegitcommit: 3c75c1647954d6507f9e28495810ef8c55e42cda
+ms.openlocfilehash: 442e5e1fbddd00248819a8de79adc78929474fc0
 ms.contentlocale: pt-br
-ms.lasthandoff: 05/17/2017
+ms.lasthandoff: 07/29/2017
 
 ---
 # <a name="about-discovery-methods-for-system-center-configuration-manager"></a>Sobre métodos de descoberta para o System Center Configuration Manager
@@ -189,6 +189,27 @@ Você pode exibir a lista padrão completa de atributos de objeto retornados pel
 As ações da descoberta de usuários do Active Directory são registradas no arquivo **adusrdis.log** e na pasta **&lt;InstallationPath\>\LOGS** no servidor do site.  
 
 Para obter mais informações sobre como configurar esse método de descoberta, confira [Configure discovery methods for System Center Configuration Manager](../../../../core/servers/deploy/configure/configure-discovery-methods.md) (Configurar os métodos de descoberta para o System Center Configuration Manager).  
+
+## <a name="azureaddisc"></a> Descoberta de Usuários do Azure Active Directory
+A partir da versão 1706, você pode usar a Descoberta de Usuário do Azure Active Directory (Azure AD), quando você configura o ambiente para usar os serviços do Azure.
+Use esse método de descoberta para pesquisar no Azure AD por usuários autenticados em sua instância do Azure AD, a fim de localizar os seguintes atributos:  
+-   objectId
+-   displayName
+-   mail
+-   mailNickname
+-   onPremisesSecurityIdentifier
+-   userPrincipalName
+-   AAD tenantID
+
+Este método dá suporte a uma sincronização completa e à sincronização delta de dados de Usuário do Azure AD. Essas informações podem ser usadas junto com dados de descoberta coletados de outros métodos de descoberta.
+
+As ações para Descoberta de Usuário do Azure AD são registradas no arquivo de log SMS_AZUREAD_DISCOVERY_AGENT.log no servidor de sites de nível superior da hierarquia.
+
+Para configurar a Descoberta de Usuário do Azure AD, use o Assistente para Serviços do Azure.  Para saber mais sobre como configurar esse método de descoberta, confira [Configurar a Descoberta de Usuário do Azure AD](/sccm/core/servers/deploy/configure/configure-discovery-methods).
+
+
+
+
 
 ##  <a name="bkmk_aboutHeartbeat"></a> Descoberta de pulsação  
 **Configurável:** sim  
@@ -407,7 +428,7 @@ Quando cada um desses três métodos de descoberta é executado em um site espec
 
 A descoberta pesquisa os locais especificados por objetos e tenta coletar informações sobre eles. Um DDR é criado quando é possível identificar informações suficientes sobre um recurso. As informações necessárias variam de acordo com o método de descoberta usado.  
 
-Se você configurar a execução do mesmo método de descoberta em sites do Configuration Manager diferentes para aproveitar a consulta de servidores locais do Active Directory, poderá configurar cada site com um conjunto exclusivo de opções de descoberta. Como os dados de descoberta são compartilhados com cada site na hierarquia, evite a sobreposição entre essas configurações para descobrir de forma eficiente cada recurso uma única vez. 
+Se você configurar a execução do mesmo método de descoberta em sites do Configuration Manager diferentes para aproveitar a consulta de servidores locais do Active Directory, poderá configurar cada site com um conjunto exclusivo de opções de descoberta. Como os dados de descoberta são compartilhados com cada site na hierarquia, evite a sobreposição entre essas configurações para descobrir de forma eficiente cada recurso uma única vez.
 
 Em ambientes menores, você pode considerar executar cada método de descoberta em um único site da sua hierarquia para reduzir a sobrecarga administrativa e a possibilidade de várias ações de descoberta para redescobrir os mesmos recursos. Ao reduzir a quantidade de sites em que executa a descoberta, você pode reduzir a largura de banda da rede que a descoberta está usando. Também pode reduzir a quantidade total de DDRs criados e que devem ser processados pelos servidores do seu site.  
 

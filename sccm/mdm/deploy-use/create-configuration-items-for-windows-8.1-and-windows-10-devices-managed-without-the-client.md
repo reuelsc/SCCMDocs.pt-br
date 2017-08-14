@@ -2,7 +2,7 @@
 title: "Criar itens de configuração para dispositivos Windows 8.1 e Windows 10 gerenciados com o Intune | Microsoft Docs"
 description: "Use o item de configuração do Windows 10 do System Center Configuration Manager para gerenciar as configurações de computadores Windows 10."
 ms.custom: na
-ms.date: 03/05/2017
+ms.date: 07/31/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
@@ -16,18 +16,15 @@ caps.handback.revision: 0
 author: robstackmsft
 ms.author: robstack
 manager: angrobe
-ms.translationtype: Human Translation
-ms.sourcegitcommit: dab5da5a4b5dfb3606a8a6bd0c70a0b21923fff9
-ms.openlocfilehash: f75bac7887772119f30654fe15c16a8f993cad75
+ms.translationtype: HT
+ms.sourcegitcommit: 3c75c1647954d6507f9e28495810ef8c55e42cda
+ms.openlocfilehash: cbfc5f178e72b40526a4cb540f962a3b82203699
 ms.contentlocale: pt-br
-ms.lasthandoff: 05/17/2017
-
+ms.lasthandoff: 07/29/2017
 
 ---
 # <a name="how-to-create-configuration-items-for-windows-81-and-windows-10-devices-managed-without-the-system-center-configuration-manager-client"></a>Como criar itens de configuração para dispositivos Windows 8.1 e Windows 10 gerenciados sem o cliente do System Center Configuration Manager
-||  
-|-|  
-|Este artigo contém informações sobre a [nova funcionalidade introduzida na versão 1602](https://technet.microsoft.com/library/mt622084.aspx) do \(branch atual\) do System Center Configuration Manager. Para usar a nova funcionalidade, você precisa [instalar a atualização 1602](https://technet.microsoft.com/library/mt607046.aspx). Se não tiver atualizado para a versão mais recente do Configuration Manager, você poderá [baixar a documentação da versão que usa](https://gallery.technet.microsoft.com/Documentation-for-System-ea90eaf1) na Galeria do TechNet.|  
+
   
  Use o item de configuração do **Windows 8.1 e Windows 10** do System Center Configuration Manager para gerenciar as configurações para dispositivos Windows 8.1 e Windows 10 que estão registrados no Microsoft Intune ou são gerenciados localmente pelo Configuration Manager.  
   
@@ -45,7 +42,7 @@ ms.lasthandoff: 05/17/2017
   
 6.  Se você criar e atribuir categorias, clique em **Categorias** para ajudá-lo a pesquisar e filtrar itens de configuração no console do Configuration Manager.  
   
-7.  Na página **Plataformas com Suporte** do assistente, selecione as plataformas específicas do Windows que avaliarão o item de configuração.  
+7.  Na página **Plataformas com Suporte** do assistente, selecione as plataformas específicas do Windows que avaliará o item de configuração.  
   
 8.  Na página **Configurações do Dispositivo** do assistente, selecione o grupo de configurações que deseja configurar. Veja [Referência de configurações do item de configuração do Windows 8.1 e Windows 10](#BKMK_Setref) neste tópico para obter detalhes e clique **Avançar**.  
   
@@ -54,7 +51,7 @@ ms.lasthandoff: 05/17/2017
   
 9. Em cada página de configurações, defina as configurações necessárias e se deseja corrigi-las quando não forem compatíveis nos dispositivos (quando houver suporte para essa opção).  
   
-10. Para cada grupo de configurações, você também pode configurar a severidade que será relatada quando um item de configuração for considerado não compatível de:  
+10. Para cada grupo de configurações, você também pode configurar a gravidade relatada quando um item de configuração for considerado não compatível de:  
   
     -   **Nenhum** – dispositivos que não cumprem essa regra de conformidade não relatam uma severidade de falha em relatórios do Configuration Manager.  
   
@@ -90,7 +87,8 @@ ms.lasthandoff: 05/17/2017
 |**Tempo ocioso antes que o dispositivo móvel seja bloqueado**|Especifique o período de tempo que um dispositivo pode ficar ocioso (sem entrada do usuário) antes de ser bloqueado.|  
 |**Complexidade da senha**|Escolha se é possível especificar um PIN como “1234” ou se é necessário fornecer uma senha forte.|  
 |**Qualidade da senha**|Selecione o nível necessário de complexidade de senha e também se dispositivos biométricos podem ser usados.|  
-|**Enviar PIN de recuperação de senha ao Exchange Server**||  
+|**Enviar PIN de recuperação de senha ao Exchange Server**|-|
+|**Criptografia de dispositivo**|Habilite a criptografia em dispositivos de destino.|  
   
 ###  <a name="device"></a>Dispositivo  
   
@@ -108,6 +106,11 @@ ms.lasthandoff: 05/17/2017
 |**Gravação de voz**|Permitir o uso dos recursos de gravação de voz do dispositivo.<br /><br /> (somente Windows 10)|
 |**Cortana**|Permite o uso do assistente de voz Cortana.<br /><br /> (somente Windows 10)|
 |**Notificações da central de ações**|Habilitar ou desabilitar o painel de notificações no Windows 10. <br /><br /> (somente Windows 10)|
+|**Modificação das configurações de região (somente desktop)**|Impede que o usuário final altere as configurações de região no dispositivo.|
+|**Modificação das configurações de energia e suspensão (somente desktop)**|Impede que o usuário final altere as configurações de energia e suspensão no dispositivo.|
+|**Modificação das configurações de idioma (somente desktop)**|Impede que o usuário altere as configurações de idioma no dispositivo.|
+|**Modificação do horário do sistema**|Impede que o usuário final altere a data e hora do dispositivo.|
+|**Modificação do nome do dispositivo**|Impede que o usuário final altere o nome do dispositivo.|
   
 ### <a name="email-management"></a>Gerenciamento de email  
  Essas configurações são destinadas a dispositivos que executam o Windows 8.1 e o Windows 10.  
@@ -119,7 +122,7 @@ ms.lasthandoff: 05/17/2017
 |**Formatos de mensagens permitidos**|Especifique se os emails do usuário podem ser em HTML ou somente em texto sem formatação.|  
 |**Tamanho máximo de email de texto sem formatação (baixado automaticamente)**|Controla o tamanho máximo de emails com texto sem formatação quando baixados automaticamente.|  
 |**Tamanho máximo para email HTML (baixado automaticamente)**|Controla o tamanho máximo de emails em HTML quando baixados automaticamente.|  
-|**Tamanho máximo de um anexo (baixado automaticamente)**|Configura o email de tamanho máximo será baixado automaticamente.|  
+|**Tamanho máximo de um anexo (baixado automaticamente)**|Configura o tamanho máximo do email baixado automaticamente.|  
 |**Sincronização de calendário**|Permita a sincronização de calendários com o dispositivo.|  
 |**Conta de email personalizada**|Permita o uso de uma conta que não seja da Microsoft no dispositivo.|  
 |**Tornar a Conta da Microsoft opcional no aplicativo de email do Windows**|Configure essa definição para remover o requisito de uma conta da Microsoft no Windows Mail.|  
@@ -131,7 +134,10 @@ ms.lasthandoff: 05/17/2017
 |-------------|-------------|  
 |**Armazenamento de aplicativos**|Permite o acesso a loja de aplicativos no dispositivo.|  
 |**Digite uma senha para acessar o armazenamento de aplicativos**|Os usuários devem digitar uma senha para acessar a loja de aplicativos.|  
-|**Compras no aplicativo**|Permite que os usuários façam compras no aplicativo.|  
+|**Compras no aplicativo**|Permite que os usuários façam compras no aplicativo.|
+|**Atualização automática de aplicativos da store**|Permite que aplicativos instalados da Windows Store sejam atualizados automaticamente.|
+|**Usar somente armazenamento particular**|Habilite esta opção para permitir que somente os usuários finais façam download de aplicativos de seu repositório particular.|
+|**Inicialização de aplicativo proveniente do armazenamento**|Usado para desabilitar todos os aplicativos que foram previamente instalados no dispositivo ou baixados da Windows Store.|
   
 ### <a name="browser"></a>Navegador  
  Essas configurações são destinadas a dispositivos que executam o Windows 8.1 e o Windows 10.  
@@ -157,11 +163,11 @@ ms.lasthandoff: 05/17/2017
 |**Nível de segurança para zona da intranet**|Configure o nível de segurança para a zona da intranet.|  
 |**Nível de segurança para a zona de sites confiáveis**|Configure o nível de segurança para a zona de sites confiáveis.|  
 |**Nível de segurança para a zona de sites restritos**|Configure o nível de segurança para a zona de sites restritos.|  
-|**Namespaces para a zona da intranet**|Configure sites que serão adicionados ou removidos da área da intranet.|  
+|**Namespaces para a zona da intranet**|Configure sites que são adicionados ou removidos da zona da intranet.|  
 |**Ir para um site da intranet por uma entrada de palavra única**|Habilita ou desabilita a configuração que permite que o Internet Explorer acesse automaticamente um site de Intranet se um nome de site válido for inserido sem um HTTP precedente:|  
 |**Opção de menu do Modo Empresarial**|Permita que os usuários ativem e desativem o modo Empresarial no menu **Ferramentas** do Internet Explorer.|  
-|**Local do relatório de registro em log (URL)**|Especifique uma URL em que os sites visitados serão registrados quando o modo Empresarial estiver ativo.|  
-|**Local da lista do site do modo Empresarial (URL)**|Especifique o local da lista de sites que usarão o modo Empresarial quando ele estiver ativo.|  
+|**Local do relatório de registro em log (URL)**|Especifique uma URL na qual os sites visitados serão registrados quando o Modo Empresarial estiver ativo.|  
+|**Local da lista do site do modo Empresarial (URL)**|Especifique o local da lista de sites que usam o Modo Empresarial quando ele estiver ativo.|  
   
 ###  <a name="cloud"></a>Nuvem  
  Essas configurações são destinadas a dispositivos que executam o Windows 8.1 e o Windows 10.  
@@ -228,21 +234,21 @@ ms.lasthandoff: 05/17/2017
 |**Conexão de rede sem fio**|Habilite ou desabilite a funcionalidade de Wi-Fi dos dispositivos.|  
 |**Compartilhamento da Internet por Wi-Fi**|Permite que os usuários usem seus dispositivos como um ponto de acesso móvel.|  
 |**Descarregar dados para Wi-Fi quando possível**|Configure essa opção para usar a conexão Wi-Fi no dispositivo quando possível.|  
-|**Relatórios de ponto de acesso Wi-Fi**||  
-|**Configuração manual de Wi-Fi**||  
+|**Relatórios de ponto de acesso Wi-Fi**|-|  
+|**Configuração manual de Wi-Fi**|-|  
   
 #### <a name="to-configure-a-wireless-network-connection"></a>Para configurar uma conexão de rede sem fio  
   
 1.  Na página **Definir configurações de comunicação sem fio de dispositivos móveis** clique em **Adicionar**.  
   
-2.  Na caixa de diálogo **Conexão de Rede Sem Fio** , especifique as seguintes informações sobre a conexão sem fio que será provisionada nos dispositivos móveis:  
+2.  Na caixa de diálogo **Conexão de Rede Sem Fio**, especifique as seguintes informações sobre a conexão sem fio provisionada nos dispositivos móveis:  
   
 |Configuração|Mais informações|  
 |-------------|----------------------|  
 |**Nome da rede (SSID)**|Insira o nome da rede Wi-Fi.|  
 |**Conexão de rede**|Escolha **Internet** ou **Trabalho**.|  
 |**Autenticação**|Escolha o método de autenticação para a conexão sem fio do:<br /><br /> - **Aberto**<br /><br /> - **Compartilhado**<br /><br /> - **WPA**<br /><br /> - **WPA-PSK**<br /><br /> - **WPA2**<br /><br /> - **WPA2-PSK**|  
-|**Criptografia de dados**|Escolha o método de criptografia usado por esta conexão. Os valores que podem ser selecionados serão diferentes dependendo do método de **Autenticação** selecionado:<br /><br /> - **Desabilitado**<br /><br /> - **WEP**<br /><br /> - **TKIP**<br /><br /> - **AES**|  
+|**Criptografia de dados**|Escolha o método de criptografia usado por esta conexão. Os valores que podem ser selecionados são diferentes dependendo do método de **Autenticação** selecionado:<br /><br /> - **Desabilitado**<br /><br /> - **WEP**<br /><br /> - **TKIP**<br /><br /> - **AES**|  
 |**Índice de chave**|Selecione um índice de chave de **1** a **4** que será usado com uma configuração de **Criptografia de dados** de **WEP**.|  
 |**Esta rede se conecta à Internet**|Selecione esta opção se desejar fornecer configurações de proxy que permitem que dispositivos móveis em uma conexão sem fio se conectem à Internet.|  
 |**Configurações do servidor proxy**|Especifique, conforme necessário, as configurações de **Servidor** e **Porta** para **HTTP**, **WAP** e **Soquetes**.|  
@@ -258,7 +264,7 @@ ms.lasthandoff: 05/17/2017
   
 -   **Arquivo de certificado** – Clique em Procurar e selecione o arquivo de certificado com a extensão **.cer** que deseja importar.  
   
--   **Repositório de destino** – Escolha um ou mais repositórios de destino em que o certificado importado será adicionado no dispositivo móvel de:  
+-   **Repositório de destino** – Escolha um ou mais repositórios de destino nos quais o certificado importado será adicionado ao dispositivo móvel de:  
   
     -   **Root**  
   
@@ -292,11 +298,11 @@ ms.lasthandoff: 05/17/2017
 |-------------|-------------|  
 |**Controle de conta de usuário**|Habilita ou desabilita o Controle de Conta de Usuário do Windows no dispositivo.|  
 |**Firewall da rede**|Habilita ou desabilita o Firewall do Windows.<br /><br /> (somente Windows 8.1)|  
-|**Atualizações (Windows 8.1 e anterior)**|Escolha como as atualizações de software do Windows serão baixadas no computador. Por exemplo, é possível baixar automaticamente as atualizações, mas permitir que o usuário escolha quando instalá-las.|  
-|**Classificação mínima de atualizações**|Escolha a classificação mínima das atualizações que serão baixadas nos computadores com Windows: **Nenhuma**, **Importante**ou **Recomendada**.|  
-|**Atualizações (Windows 10)**|Escolha como as atualizações de software do Windows serão baixadas no computador. Por exemplo, é possível baixar automaticamente as atualizações, mas permitir que o usuário escolha quando instalá-las.<br /><br /> (somente Windows 10)|  
-|**Dia de instalação**|Escolha o dia em que as atualizações serão instaladas.<br /><br /> (somente Windows 10)|  
-|**Hora de instalação**|Escolha a hora em que as atualizações serão instaladas.<br /><br /> (somente Windows 10)|  
+|**Atualizações (Windows 8.1 e anterior)**|Escolha como as atualizações de software do Windows são baixadas nos computadores. Por exemplo, é possível baixar automaticamente as atualizações, mas permitir que o usuário escolha quando instalá-las.|  
+|**Classificação mínima de atualizações**|Escolha a classificação mínima das atualizações baixadas nos computadores com Windows: **Nenhuma**, **Importante**ou **Recomendada**.|  
+|**Atualizações (Windows 10)**|Escolha como as atualizações de software do Windows são baixadas nos computadores. Por exemplo, é possível baixar automaticamente as atualizações, mas permitir que o usuário escolha quando instalá-las.<br /><br /> (somente Windows 10)|  
+|**Dia de instalação**|Escolha o dia de instalação das atualizações.<br /><br /> (somente Windows 10)|  
+|**Hora de instalação**|Escolha a hora de instalação das atualizações.<br /><br /> (somente Windows 10)|  
 |**SmartScreen**|Habilite ou desabilite a Tela Inteligente do Windows.|  
 |**Proteção contra vírus**|Selecione esta opção para garantir que o software antivírus está instalado no dispositivo.|  
 |**As assinaturas de proteção contra vírus estão atualizadas**|Selecione esta opção para garantir que os arquivos de assinatura de antivírus estão atualizados.|  
@@ -316,15 +322,15 @@ ms.lasthandoff: 05/17/2017
   
  Não é possível especificar aplicativos compatíveis e não compatíveis no mesmo item de configuração.  
   
-#### <a name="to-specify-apps-that-will-be-allowed-or-blocked"></a>Para especificar os aplicativos que serão permitidos ou bloqueados  
+#### <a name="to-specify-apps-that-are-allowed-or-blocked"></a>Para especificar os aplicativos que serão permitidos ou bloqueados  
   
-1.  Na página **Lista de Aplicativos Permitidos e Bloqueados**, especifique as seguintes informações:  
+Na página **Lista de Aplicativos Permitidos e Bloqueados**, especifique as seguintes informações:  
   
-    |Configuração|Mais informações|  
+|Configuração|Mais informações|  
     |-------------|----------------------|  
     |**Lista de aplicativos bloqueados**|Escolha essa opção se quiser especificar uma lista de aplicativos que os usuários não têm permissão para instalar.|  
     |**Lista de aplicativos permitidos**|Selecione esta opção se desejar especificar uma lista de aplicativos que os usuários têm permissão para instalar. Qualquer outro aplicativo será impedido de ser instalado.|  
-    |**Adicionar**|Adiciona um aplicativo à lista selecionada. Especifique um nome da sua preferência, opcionalmente o editor do aplicativo, e a URL para o aplicativo na loja de aplicativos.<br /><br /> Para especificar a URL, na Windows Store, procure o aplicativo que você quer usar.<br /><br /> Abra a página do aplicativo e copie a URL para a área de transferência. Agora você pode usar isso como a URL em uma lista de aplicativos permitidos ou bloqueados.<br /><br /> **Exemplo:** pesquise o aplicativo **Skype** na loja. A URL usada será **http://www.windowsphone.com/store/app/skype/c3f8e570-68b3-4d6a-bdbb-c0a3f4360a51**.|  
+    |**Adicionar**|Adiciona um aplicativo à lista selecionada. Especifique um nome da sua preferência, opcionalmente o editor do aplicativo, e a URL para o aplicativo na loja de aplicativos.<br /><br /> Para especificar a URL, na Windows Store, procure o aplicativo que você quer usar.<br /><br /> Abra a página do aplicativo e copie a URL para a área de transferência. Agora você pode usar isso como a URL em uma lista de aplicativos permitidos ou bloqueados.<br /><br /> **Exemplo:** pesquise o aplicativo **Skype** na loja. A URL usada é **http://www.windowsphone.com/store/app/skype/c3f8e570-68b3-4d6a-bdbb-c0a3f4360a51**.|  
     |**Editarar**|Permite editar o nome, editor e a URL do aplicativo selecionado.|  
     |**Removerr**|Exclui o aplicativo selecionado da lista.|  
     |**Importarar**|Importa uma lista dos aplicativos que você especificou em um arquivo de valores separados por vírgulas. Use o formato, nome do aplicativo, editor e a URL do aplicativo no arquivo.|  
@@ -357,7 +363,8 @@ Para obter informações sobre como configurar a proteção de dados empresariai
 Essas configurações são destinadas a dispositivos que executam o Windows 10 e posteriores.  
   
 |Nome da configuração|Detalhes|  
-|------------------|-------------|  
+|------------------|-------------| 
+|Microsoft Edge|Permita o uso do navegador da Web Edge no dispositivo.| 
 |**Permitir sugestões de pesquisa na barra de endereços**|Permite que o mecanismo de pesquisa sugira sites à medida que você digita as frases da pesquisa.|  
 |**Permitir envio de tráfego de intranet no Internet Explorer**||  
 |**Permitir Não Rastrear**|Não rastreia informações de sites quando você não quer que rastreiem sua visita a um site.|  
@@ -366,7 +373,14 @@ Essas configurações são destinadas a dispositivos que executam o Windows 10 e
 |**Permitir cookies**|Permita ou desabilite cookies.|  
 |**Permitir Preenchimento Automático**|Permita o uso do recurso Autopreenchimento do navegador Edge.|  
 |**Permitir Gerenciador de Senhas**|Permita o uso do recurso gerenciador de senha do navegador Edge.|  
-|**Local da lista de sites do Modo Empresarial**|Especifica onde encontrar a lista de sites que será aberta no modo Empresarial. Os usuários não podem editar essa lista.|  
+|**Local da lista de sites do Modo Empresarial**|Especifica onde encontrar a lista de sites que abre no modo Empresarial. Os usuários não podem editar essa lista.|
+|**Bloquear o acesso à página about:flags**|Impeça o usuário final de acessar a página about:flags no Edge que contém configurações experimentais e de desenvolvedor.|
+|**Substituição de prompt SmartScreen**|Permitir que o usuário final ignore os avisos de filtro SmartScreen sobre sites mal-intencionados.|
+|**Substituição de prompt SmartScreen para arquivos**|Permitir que o usuário final ignore os avisos de filtro SmartScreen sobre o download de arquivos mal-intencionados.|
+|**Endereço IP do localhost WebRTC**|Bloqueie a exibição do endereço IP do localhost dos usuários ao fazer chamadas telefônicas usando a protocolo RTC da Web.|
+|**Mecanismo de pesquisa padrão**|Especifique o mecanismo de pesquisa padrão a ser usado. Os usuários finais podem alterar esse valor a qualquer momento.|
+|**URL de XML OpenSearch**|Você pode usar um arquivo XML de OpenSearch para criar um serviço de pesquisa para o Microsoft Edge.<br>Para obter mais detalhes, confira [OpenSearch](https://msdn.microsoft.com/library/windows/desktop/dd940337).|
+|**Home pages (somente desktop)**|Adicione uma lista de sites que você deseja usar como home pages no navegador Edge (somente no desktop).|  
 
 
 ### <a name="windows-defender"></a>Windows Defender
@@ -392,7 +406,7 @@ Essas configurações são destinadas a dispositivos que executam o Windows 10 e
 |**Verificar arquivos abertos em pastas de rede compartilhadas**|Permite que o Defender verifique arquivos em unidades de rede compartilhadas (por exemplo, aquelas acessadas de um caminho UNC)<br>Se os arquivos na unidade forem somente leitura, o Defender não poderá remover qualquer malware encontrado neles.|
 |**Intervalo de atualização de assinatura**|Especifica o intervalo de verificação usado pelo Defender para procurar novos arquivos de assinatura.
 |**Permitir proteção da nuvem**|Permite ou bloqueia o Microsoft Active Protection Service de receber informações sobre a atividade de malware de dispositivos gerenciados. Essas informações são usadas para aprimorar o serviço no futuro.|
-|**Solicitar aos usuários o envio de amostras**|Controla se os arquivos que podem exigir mais análise da Microsoft para determinar se são mal-intencionados são enviados automaticamente à Microsoft.|
+|**Solicitar aos usuários o envio de amostras**|Controla se os arquivos que podem exigir mais análise para determinar se são mal-intencionados são enviados automaticamente à Microsoft.|
 |**Detecção de aplicativos potencialmente indesejados**|Proteger os dispositivos de área de trabalho do Windows registrados contra a execução de software classificado pelo Windows Defender como potencialmente indesejados. Você pode se proteger contra a execução desses aplicativos, ou usar o modo de auditoria para informar quando um aplicativo potencialmente indesejado for instalado.|
 |**Exclusões de arquivos e pastas**|Adicione um ou mais arquivos e pastas como C:\Path ou %ProgramFiles%\Path\filename.exe à lista de exclusões. Esses arquivos e pastas não serão incluídos em verificações em tempo real ou programadas.|
 |**Exclusões de extensão de arquivo**|Adicione uma ou mais extensões de arquivo, como jpg ou txt, à lista de exclusões. Qualquer arquivo com essas extensões não serão incluídos em verificações em tempo real ou programadas.|

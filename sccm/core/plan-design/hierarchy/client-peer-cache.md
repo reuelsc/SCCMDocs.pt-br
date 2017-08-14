@@ -2,7 +2,7 @@
 title: Cache de pares do cliente | System Center Configuration Manager
 description: "Use cache de pares para locais de fonte de conteúdo do cliente durante a implantação de conteúdo com o System Center Configuration Manager."
 ms.custom: na
-ms.date: 7/3/2017
+ms.date: 7/31/2017
 ms.reviewer: na
 ms.suite: na
 ms.prod: configuration-manager
@@ -15,11 +15,11 @@ caps.latest.revision: 3
 author: Brenduns
 ms.author: brenduns
 manager: angrobe
-ms.translationtype: Human Translation
-ms.sourcegitcommit: ed6b65a1a5aabc0970cd0333cb033405cf6d2aea
-ms.openlocfilehash: 94802680747a3d371716c1b345b2cba098150716
+ms.translationtype: HT
+ms.sourcegitcommit: 3c75c1647954d6507f9e28495810ef8c55e42cda
+ms.openlocfilehash: 89fcd16887ae77299f9d18472ee6a1ba56794eca
 ms.contentlocale: pt-br
-ms.lasthandoff: 07/03/2017
+ms.lasthandoff: 07/29/2017
 
 ---
 
@@ -94,7 +94,9 @@ Use esse relatório para entender os detalhes de rejeição para um grupo de lim
 
 -   Os clientes só podem transferir conteúdo de clientes de cache de pares que estão em seu grupo de limites atual.
 
--   Cada site em que os clientes usam Cache Par deve ser configurado com uma [Conta de Acesso à Rede](/sccm/core/plan-design/hierarchy/manage-accounts-to-access-content#a-namebkmknaaa-network-access-account). A conta é usada pelo computador de origem do Cache Par para autenticar solicitações de download de colegas e exige apenas permissões de usuário de domínio para essa finalidade.
+-   Antes da versão 1706, cada site em que os clientes usam Cache Par deve ser configurado com uma [Conta de Acesso à Rede](/sccm/core/plan-design/hierarchy/manage-accounts-to-access-content#a-namebkmknaaa-network-access-account). A partir da versão 1706, essa conta não é mais necessária, com uma exceção.  A exceção é quando um cliente usa o cache de pares para obter e executar uma sequência de tarefas no Centro de Software, e essa sequência de tarefas reinicia o cliente no WinPE.  Nesse cenário, o cliente ainda precisa da Conta de Acesso à Rede quando estiver no WinPE, para que possa acessar a fonte de cache de pares para obter o conteúdo.
+
+    Quando é necessária, a Conta de Acesso à Rede é usada pelo computador de origem do Cache Par para autenticar solicitações de download de colegas e exige apenas permissões de usuário de domínio para essa finalidade.
 
 -   Como o limite atual de uma fonte de conteúdo do Cache de Pares é determinado pelo último envio de inventário de hardware daquele cliente, um cliente que usa um perfil móvel para um local de rede e que está em um grupo de limites diferente ainda poderá ser considerado um membro de seu grupo de limites anterior para o Cache de Pares. Isso pode resultar em uma fonte de conteúdo de cache de pares sendo oferecida a um cliente que não está em seu local de rede imediato. É recomendado excluir os clientes que estão sujeitos a essa configuração de participarem como uma fonte do Cache de Pares.
 

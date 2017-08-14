@@ -2,7 +2,7 @@
 title: Administrar remotamente o computador Windows | Microsoft Docs
 description: Administre um computador cliente Windows remoto usando o System Center Configuration Manager.
 ms.custom: na
-ms.date: 04/23/2017
+ms.date: 07/27/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
@@ -16,12 +16,11 @@ caps.handback.revision: 0
 author: robstackmsft
 ms.author: robstack
 manager: angrobe
-ms.translationtype: Human Translation
-ms.sourcegitcommit: 08afca8b422474639cbdb860e555fe0da27361a4
-ms.openlocfilehash: dd794de867e1d0db47be9dc21a6d494087f76bc1
+ms.translationtype: HT
+ms.sourcegitcommit: 3c75c1647954d6507f9e28495810ef8c55e42cda
+ms.openlocfilehash: aecc4ccfec98932f3988f1ca1fcdc898cd417933
 ms.contentlocale: pt-br
-ms.lasthandoff: 12/16/2016
-
+ms.lasthandoff: 07/29/2017
 
 ---
 # <a name="how-to-remotely-administer-a-windows-client-computer-by-using-system-center-configuration-manager"></a>Como administrar remotamente um computador cliente com Windows usando o System Center Configuration Manager
@@ -91,12 +90,11 @@ Aqui estão três maneiras de iniciar o visualizador de controle remoto:
 
 -   No prompt de comando do Windows, digite *<Pasta de instalação do Configuration Manager\>***\AdminConsole\Bin\x64\CmRcViewer.exe**  
 
-    > [!NOTE]  
-    >  O CmRcViewer.exe dá suporte às seguintes opções de linha de comando:  
-    >   
-    >  -   *<Endereço\>* ‑ Especifica o nome NetBIOS, o FQDN (nome de domínio totalmente qualificado) ou o endereço IP do computador cliente ao qual você deseja se conectar.  
-    > -   *<Nome do Servidor do Site\>* – Especifica o nome do servidor do site do System Center Configuration Manager ao qual você deseja enviar mensagens de status relacionadas à sessão de controle remoto.  
-    > -   **/?** – Exibe as opções de linha de comando para o visualizador de controle remoto.  
-    >   
-    >  **Exemplo:CmRcViewer.exe** *<Endereço\>* *<\\\Nome do Servidor do Site>*  
+O CmRcViewer.exe dá suporte às seguintes opções de linha de comando:  
+
+- *Endereço* – Especifica o nome NetBIOS, o FQDN (nome de domínio totalmente qualificado) ou o endereço IP do computador cliente ao qual você deseja se conectar.
+- *Nome do Servidor do Site* – Especifica o nome do servidor do site do System Center Configuration Manager ao qual você deseja enviar mensagens de status relacionadas à sessão de controle remoto.
+- **/?** – Exibe as opções de linha de comando para o visualizador de controle remoto.  
+     
+**Exemplo:CmRcViewer.exe** *<Endereço\>* *<\\\Nome do Servidor do Site>*  
 

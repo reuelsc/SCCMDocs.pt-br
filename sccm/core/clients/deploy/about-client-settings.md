@@ -2,7 +2,7 @@
 title: "Configurações do cliente | Microsoft Docs"
 description: "Escolha as configurações do cliente usando o console de administração no System Center Configuration Manager."
 ms.custom: na
-ms.date: 03/24/2017
+ms.date: 08/01/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
@@ -16,11 +16,11 @@ caps.handback.revision: 0
 author: robstackmsft
 ms.author: robstack
 manager: angrobe
-ms.translationtype: Human Translation
-ms.sourcegitcommit: c8717925dba42451b1e241a7c2f59e43896d7d99
-ms.openlocfilehash: 4a169098f30e4a9d708e41ee25c6a400d5ff0e85
+ms.translationtype: HT
+ms.sourcegitcommit: c0d94b8e6ca6ffd82e879b43097a9787e283eb6d
+ms.openlocfilehash: a8233c361e1a78b14a02f328da445814624e38d8
 ms.contentlocale: pt-br
-ms.lasthandoff: 06/19/2017
+ms.lasthandoff: 08/02/2017
 
 ---
 # <a name="about-client-settings-in-system-center-configuration-manager"></a>Sobre as configurações do cliente no System Center Configuration Manager
@@ -55,7 +55,7 @@ Muitas das configurações do cliente são autoexplicativas. Outras são descrit
 
 -   **Taxa de transferência máxima fora do período de limitação (Kbps)**  
 
-   Especifique a taxa de transferência máxima que será usada por clientes fora do período de limitação do BITS quando você tiver optado por permitir a limitação do BITS fora do período.  
+   Especifique a taxa de transferência máxima que é usada por clientes fora do período de limitação do BITS quando você tiver optado por permitir a limitação do BITS fora do período.  
 
 ## <a name="client-cache-settings"></a>Configurações de cache do cliente
 
@@ -63,9 +63,25 @@ Muitas das configurações do cliente são autoexplicativas. Outras são descrit
 
   Começando da versão 1606, use essa definição para configurar o computador cliente para o [BranchCache](/sccm/core/plan-design/configs/support-for-windows-features-and-networks#branchcache). Para permitir o armazenamento em cache do BranchCache no cliente, defina **Habilitar o BranchCache** como **Sim**.
 
+- **Habilitar o BranchCache**
+
+Habilite o BranchCache nos computadores cliente.
+
+- **Tamanho do cache BranchCache máximo (percentual do disco)**.
+
 - **Configurar o tamanho do cache do cliente**
 
-  O cache do cliente em computadores com Windows armazena arquivos temporários usados para instalar aplicativos e programas. Escolha **Sim** para especificar o **Tamanho máximo do cache** (megabytes ou percentual de disco). O tamanho do cache do cliente pode expandir para o tamanho máximo em MB ou a porcentagem do disco, **o que for menor**. Se for definido como **Não**, o tamanho padrão será 5.120 MB.
+  O cache do cliente em computadores com Windows armazena arquivos temporários usados para instalar aplicativos e programas. Escolha **Sim** e depois especifique:
+    - **Tamanho máximo de cache** (megabytes). 
+    - **Tamanho máximo do cache** (percentual do disco).
+O tamanho do cache do cliente pode expandir para o tamanho máximo em MB ou a porcentagem do disco, **o que for menor**. Se for definido como **Não**, o tamanho padrão será 5.120 MB.
+
+- **Habilitar cliente do Configuration Manager em um SO completo para compartilhar conteúdo**
+
+Habilite o cache de pares para clientes do Configuration Manager. Em seguida, especifique as informações da porta pela qual o cliente se comunica com o computador de mesmo nível. O Configuration Manager configurará automaticamente as regras de Firewall do Windows para permitir esse tráfego. Se você usar um firewall diferente, deverá configurar manualmente as regras para permitir esse tráfego.
+
+
+
 
 ## <a name="client-policy"></a>Política do cliente  
 
@@ -118,7 +134,7 @@ Muitas das configurações do cliente são autoexplicativas. Outras são descrit
 
 -   **Agendar a avaliação da conformidade**  
 
-     Escolha **Agendar** para criar o agendamento padrão que será exibido aos usuários quando eles implantam uma linha de base de configuração. Esse valor pode ser configurado para cada linha de base na caixa de diálogo **Implantar Linha de Base de Configuração** .  
+     Escolha **Agendar** para criar o agendamento padrão que é exibido aos usuários quando eles implantam uma linha de base de configuração. Esse valor pode ser configurado para cada linha de base na caixa de diálogo **Implantar Linha de Base de Configuração** .  
 
 -   **Habilitar perfis e dados do usuário**  
 
@@ -140,7 +156,7 @@ Muitas das configurações do cliente são autoexplicativas. Outras são descrit
 
      -   Você deseja configurar manualmente o servidor mais próximo para clientes ou garantir que eles não se conectem a um servidor em uma conexão de rede lenta.  
 
-     -   Você deseja controlar quais clientes se conectam a qual servidor. Isso pode ser por motivos comerciais, de desempenho ou teste.  
+     -   Você deseja controlar quais clientes se conectam a qual servidor. Essa configuração pode ser por motivos comerciais, de desempenho ou teste.  
 
      -   Você não quer esperar até 25 horas ou uma alteração de rede para que os clientes sejam configurados com um ponto de sites da Web do catálogo de aplicativos diferente.  
 

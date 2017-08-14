@@ -2,7 +2,7 @@
 title: "Configurar o gerenciamento de dispositivo híbrido do Android com o System Center Configuration Manager e o Microsoft Intune | Microsoft Docs"
 description: "Preparar para gerenciar dispositivos móveis Android com o Configuration Manager e o Intune."
 ms.custom: na
-ms.date: 03/27/2017
+ms.date: 07/31/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
@@ -16,12 +16,11 @@ caps.handback.revision: 0
 author: nathbarn
 ms.author: nathbarn
 manager: angrobe
-ms.translationtype: Human Translation
-ms.sourcegitcommit: 86620254897aa9a775dc433de7010b5814c1ec3e
-ms.openlocfilehash: af6fa2dfae5549e89c46d05d0cef1e24342558f9
+ms.translationtype: HT
+ms.sourcegitcommit: 3c75c1647954d6507f9e28495810ef8c55e42cda
+ms.openlocfilehash: b47ecd1754a623b1b57dc5c5ecb42a6b0b64404e
 ms.contentlocale: pt-br
-ms.lasthandoff: 07/06/2017
-
+ms.lasthandoff: 07/29/2017
 
 ---
 # <a name="set-up-android-hybrid-device-management-with-system-center-configuration-manager-and-microsoft-intune"></a>Configurar o gerenciamento de dispositivo híbrido do Android com o System Center Configuration Manager e o Microsoft Intune
@@ -39,6 +38,9 @@ As etapas a seguir permitem que o Configuration Manager gerencie dispositivos An
 2. No console do Configuration Manager, no espaço de trabalho **Administração**, escolha **Visão Geral** > **Serviços de Nuvem** > **Assinatura do Microsoft Intune** e escolha sua assinatura do Intune.  
 3. Na guia **Início** do grupo **Assinatura**, escolha **Configurar Plataformas** > **Android**.  
 4. Na caixa de diálogo **Propriedades da Assinatura do Microsoft Intune**, escolha a guia **Android** e clique para marcar a caixa de seleção **Habilitar registro do Android**.  
+
+> [!NOTE]
+>  A capacidade **Bloquear dispositivos de propriedade pessoal** não está disponível no momento. 
 
  Após a configuração, será necessário permitir que os usuários saibam como registrar seus dispositivos. Consulte [O que dizer aos usuários sobre o registro de seus dispositivos](https://docs.microsoft.com/intune/deploy-use/what-to-tell-your-end-users-about-using-microsoft-intune). Essas informações se aplicam a dispositivos móveis gerenciados pelo Microsoft Intune e pelo Configuration Manager.
 

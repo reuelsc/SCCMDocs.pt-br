@@ -16,11 +16,11 @@ author: andredm7
 ms.author: andredm
 manager: angrobe
 robots: noindex
-ms.translationtype: Human Translation
-ms.sourcegitcommit: 216d288aa7b7f2b98df86f59355d879366dcd44d
-ms.openlocfilehash: 4baa6e0fe009f5f7dc33f5ab4adb1ec5e5c5271b
+ms.translationtype: HT
+ms.sourcegitcommit: 3c75c1647954d6507f9e28495810ef8c55e42cda
+ms.openlocfilehash: 6630d0170df22f46f14df241ffd8d48266c69263
 ms.contentlocale: pt-br
-ms.lasthandoff: 05/17/2017
+ms.lasthandoff: 07/29/2017
 
 ---
 
@@ -277,6 +277,31 @@ ms.lasthandoff: 05/17/2017
       * iOS 6+
       * Android 4.0+
       * Samsung KNOX Standard 4.0+
+<br></br>
+* **Tipo de senha necessária**. Especifica se o usuário deve criar uma senha Alfanumérica ou Numérica. Para senhas Alfanuméricas, especifique também o número mínimo de conjuntos de caracteres que a senha deverá conter. Há quatro conjuntos de caracteres: minúsculas, maiúsculas, letras, Símbolos e Números.
+
+    **Com suporte em:**
+    * Windows Phone 8+
+    * Windows 8.1+
+    * iOS 6+
+<br></br>
+* **Bloquear a depuração de USB no dispositivo**. Você não precisa definir essas configurações, pois a depuração de USB já está desabilitada em dispositivos com Android for Work.
+
+    **Com suporte em:**
+    * Android 4.0+
+    * Samsung KNOX Standard 4.0+
+<br></br>
+* **Bloquear aplicativos de fontes desconhecidas**. Exija que dispositivos impeçam a instalação de aplicativos de fontes desconhecidas. Você não precisa definir essa configuração, pois os dispositivos com Android for Work sempre restringem a instalação de fontes desconhecidas.
+
+    **Com suporte em:**
+    * Android 4.0+
+    * Samsung KNOX Standard 4.0+
+<br></br>
+* **Exigir verificação de ameaças em aplicativos**. Essa configuração especifica que o recurso Verificar aplicativos fique habilitado no dispositivo. 
+
+    **Com suporte em:**
+    * Android 4.2 a 4.4
+    * Samsung KNOX Standard 4.0+
 
 ### <a name="find-an-app-id"></a>Localizar uma ID do aplicativo
 

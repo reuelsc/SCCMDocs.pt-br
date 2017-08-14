@@ -2,7 +2,7 @@
 title: Configurar a descoberta | Microsoft Docs
 description: "Configure métodos de descoberta para serem executados em um site do Configuration Manager para encontrar recursos que você pode gerenciar usando sua infraestrutura de rede e o Active Directory."
 ms.custom: na
-ms.date: 2/17/2017
+ms.date: 7/31/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
@@ -15,11 +15,11 @@ caps.latest.revision: 5
 author: Brenduns
 ms.author: brenduns
 manager: angrobe
-ms.translationtype: Human Translation
-ms.sourcegitcommit: 860815010068422f2d8854ed2d574c24cc386891
-ms.openlocfilehash: 63a3c2ef66c80d1da9b50e67166a2196cf1b081b
+ms.translationtype: HT
+ms.sourcegitcommit: 0663ba84762c44a5c303562548499f195bae9e1c
+ms.openlocfilehash: 34a539ceaea6b070f81a28d2c0a9ce388e26cfeb
 ms.contentlocale: pt-br
-ms.lasthandoff: 05/17/2017
+ms.lasthandoff: 08/01/2017
 
 ---
 # <a name="configure-discovery-methods-for-system-center-configuration-manager"></a>Configurar métodos de descoberta para o System Center Configuration Manager
@@ -33,7 +33,9 @@ Configure métodos de descoberta para serem executados em um site do System Cent
 
 -   A Descoberta de Servidor é um método de descoberta automática que localiza os computadores que você utiliza como sistemas de sites. Você não pode configurar ou desabilitá-la.  
 
-**Para habilitar qualquer método de descoberta configurável:**  
+**Para habilitar um método de descoberta configurável:**  
+ > [!NOTE]  
+ > As informações a seguir não se aplicam à Descoberta de Usuário do Azure Active Directory. Em vez disso, confira [Configurar a Descoberta de Usuário do Azure AD](#azureaadisc) mais adiante neste tópico.
 
 1.  No console do Configuration Manager, escolha **Administração** > **Configuração da Hierarquia** e escolha **Métodos de Descoberta**.  
 
@@ -211,6 +213,14 @@ Use os procedimentos a seguir para habilitar a descoberta de florestas do Active
 7.  Opcionalmente, na guia **Atributos do Active Directory** , você pode configurar atributos adicionais do Active Directory para computadores que você deseja descobrir. Os atributos de objeto padrão também são listados.  
 
 8.  Quando concluir a configuração da Descoberta de Usuários do Active Directory para esse site, escolha **OK** para salvá-la.  
+
+## <a name="azureaadisc"></a> Configurar a Descoberta de Usuário do Azure AD
+A partir da versão 1706, você pode configurar a Descoberta de Usuário do Azure Active Directory quando você conecta o Configuration Manager à sua [assinatura do Azure e ao Azure Active Directory](/sccm/core/servers/deploy/configure/azure-services-wizard).
+
+A Descoberta de Usuários do Azure AD está configurada como parte do *Gerenciamento de Nuvem*. O procedimento para fazer isso é detalhado na em [Criar o aplicativo Web do Azure para uso com o Configuration Manager](/sccm/core/servers/deploy/configure/Azure-services-wizard#webapp) no tópico *Configurar serviços do Azure para uso com o Configuration Manager*.
+
+
+
 
 ##  <a name="BKMK_ConfigHBDisc"></a> Configurar a Descoberta de Pulsação  
  Por padrão, a Descoberta de Pulsação é habilitada quando você instala um site primário do Configuration Manager. Consequentemente, você precisa configurar somente o cronograma da frequência com que os clientes enviam os registro dos dados de descoberta da Descoberta de Pulsação para um ponto de gerenciamento quando não quiser que eles usem o valor padrão de sete dias.  

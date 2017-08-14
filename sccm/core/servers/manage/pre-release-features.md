@@ -2,7 +2,7 @@
 title: "Recursos de pré-lançamento | Microsoft Docs"
 description: "Recursos de pré-lançamento no System Center Configuration Manager"
 ms.custom: na
-ms.date: 6/13/2017
+ms.date: 7/31/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
@@ -15,12 +15,11 @@ caps.latest.revision: 36
 author: Brenduns
 ms.author: brenduns
 manager: angrobe
-ms.translationtype: Human Translation
-ms.sourcegitcommit: 3619a73d3a39659de927e1711a7ec81de9918064
-ms.openlocfilehash: 988f8da0b221f8c0b470e7a0a8ed995356193f98
+ms.translationtype: HT
+ms.sourcegitcommit: 3c75c1647954d6507f9e28495810ef8c55e42cda
+ms.openlocfilehash: 7b594daeed81ef2d991ad06489f9184a69804117
 ms.contentlocale: pt-br
-ms.lasthandoff: 06/13/2017
-
+ms.lasthandoff: 07/29/2017
 
 ---
 # <a name="pre-release-features-in-system-center-configuration-manager"></a>Recursos de pré-lançamento no System Center Configuration Manager
@@ -51,9 +50,10 @@ Se você tiver dado consentimento em um site primário autônomo e, depois, expa
 
  |Recurso          |Adicionado como pré-lançamento | Adicionado como recurso completo|  
 |------------------|---------------------|---------------------|
+| Criar e executar scripts do PowerShell do console do Configuration Manager |  [Versão 1706](/sccm/apps/deploy-use/create-deploy-scripts)|![Ainda não](media/83c5d168-8faf-4e8e-920b-528e3c43ffd4.gif)|
 | Gerenciamento de Proteção do Dispositivo com Configuration Manager |  [Versão 1702](/sccm/protect/deploy-use/use-device-guard-with-configuration-manager)|![Ainda não](media/83c5d168-8faf-4e8e-920b-528e3c43ffd4.gif)|
 | Verificar se há arquivos executáveis antes de instalar um aplicativo  |   [Versão 1702](/sccm/apps/deploy-use/deploy-applications#how-to-check-for-running-executable-files-before-installing-an-application) |![Ainda não](media/83c5d168-8faf-4e8e-920b-528e3c43ffd4.gif)|
-| Ponto de serviço do Data Warehouse  |  [Versão 1702](/sccm/core/servers/manage/data-warehouse) |![Ainda não](media/83c5d168-8faf-4e8e-920b-528e3c43ffd4.gif)|
+| Ponto de serviço do Data Warehouse  |  [Versão 1702](/sccm/core/servers/manage/data-warehouse) |[Versão 1706](/sccm/core/servers/manage/data-warehouse)|
 | Cache de Pares para distribuição de conteúdo para clientes |  [Versão 1610](/sccm/core/plan-design/hierarchy/client-peer-cache) |![Ainda não](media/83c5d168-8faf-4e8e-920b-528e3c43ffd4.gif)|
 | Gateway de gerenciamento de nuvem |  [Versão 1610](/sccm/core/clients/manage/plan-cloud-management-gateway) |![Ainda não](media/83c5d168-8faf-4e8e-920b-528e3c43ffd4.gif)|
 | Painel Fontes de Dados do Cliente |  [Versão 1610](/sccm/core/servers/deploy/configure/monitor-content-you-have-distributed#client-data-sources-dashboard) |![Ainda não](media/83c5d168-8faf-4e8e-920b-528e3c43ffd4.gif)|

@@ -2,7 +2,7 @@
 title: Criar perfis de email do Exchange ActiveSync | Microsoft Docs
 description: Saiba como criar e configurar perfis de email no System Center Configuration Manager que funcionam com o Microsoft Intune.
 ms.custom: na
-ms.date: 03/28/2017
+ms.date: 07/28/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
@@ -16,12 +16,11 @@ caps.handback.revision: 0
 author: lleonard-msft
 ms.author: alleonar
 manager: angrobe
-ms.translationtype: Human Translation
-ms.sourcegitcommit: 761c3f58f7c57d8f87ee802da37821895062546d
-ms.openlocfilehash: bcf337d2abbcd5aad0f99098f6afd4a73ada3a0b
+ms.translationtype: HT
+ms.sourcegitcommit: c0d94b8e6ca6ffd82e879b43097a9787e283eb6d
+ms.openlocfilehash: 7434c98f2217cf63fdcd250b91e772de72daaea9
 ms.contentlocale: pt-br
-ms.lasthandoff: 05/17/2017
-
+ms.lasthandoff: 08/02/2017
 
 ---
 
@@ -48,7 +47,7 @@ Para implantar perfis de email nos dispositivos, você deve registrar os disposi
 
  Além de configurar uma conta de email no dispositivo, você também pode definir as configurações de sincronização para os contatos, calendários e tarefas.  
 
- Ao criar um perfil de email, você pode incluir várias configurações de segurança. Essas configurações incluem os certificados de identidade, criptografia e assinatura que foram configurados usando os perfis de certificado do System Center Configuration Manager. Para obter mais informações sobre perfis de certificado, consulte [Perfis de certificado do System Center Configuration Manager](/sccm/protect/deploy-use/introduction-to-certificate-profiles).    
+ Ao criar um perfil de email, você pode incluir várias configurações de segurança. Essas configurações incluem os certificados de identidade, criptografia e assinatura que foram configurados usando os perfis de certificado do System Center Configuration Manager. Para obter mais informações sobre perfis de certificado, consulte [Perfis de certificado do System Center Configuration Manager](/sccm/protect/deploy-use/introduction-to-certificate-profiles.md).    
 
 ## <a name="create-an-exchange-activesync-email-profile"></a>Criar um perfil de email do Exchange ActiveSync  
 
@@ -104,19 +103,21 @@ Para criar um perfil, use o Assistente para Criar Perfil de Email do Exchange Ac
 
     -   **Certificado de identidade**. Escolha **Selecionar**, em seguida, escolha um certificado a ser usado para a identidade.  
 
-        > [!NOTE]  
-        > Antes de escolher o certificado de identidade, primeiro você deve configurá-lo como um perfil de certificado SCEP (Protocolo de Registro de Certificado Simples). Para obter mais informações sobre perfis de certificado, consulte [Perfis de certificado do System Center Configuration Manager](/sccm/protect/deploy-use/introduction-to-certificate-profiles).  
+         Os certificados de identidade devem ser certificados SCEP; não é possível usar um certificado PFX.  Para saber mais, confira [Perfis de certificado no System Center Configuration Manager](/sccm/protect/deploy-use/introduction-to-certificate-profiles).  
 
          Essa opção só estará disponível se você escolheu **Certificados** no **Método de autenticação**.  
 
     -   **Use S/MIME**. Envie um email de saída usando a criptografia S/MIME. Essa opção é aplicável somente a dispositivos iOS. Escolha dentre as seguintes opções:
 
+        -   **Certificados de assinatura**.  Escolha **Selecionar**, depois, escolha um perfil de certificado para usar para criptografia.  
+
+            O perfil pode ser um certificado SCEP ou PFX.  No entanto, se a assinatura e a criptografia forem usadas, você deverá selecionar os perfis de certificado PFX para *assinatura e criptografia*.
+
         -   **Certificados de criptografia**. Escolha **Selecionar**, em seguida, escolha um certificado a usar para a criptografia. Você só pode escolher um certificado PFX para usar como um certificado de criptografia.
 
-        Se você escolher um certificado de criptografia e um certificado de assinatura, eles deverão estar no formato PFX.
+        -   Para criptografar todas as mensagens em dispositivos iOS, marque a caixa de seleção **Exigir criptografia**.    
 
-        > [!NOTE]  
-        > Antes de escolher os certificados, primeiro você deve configurá-los como um perfil de certificado SCEP ou PFX. Para obter mais informações sobre perfis de certificado, consulte [Perfis de certificado do System Center Configuration Manager](/sccm/protect/deploy-use/introduction-to-certificate-profiles).  
+         Você deve criar perfis de certificado antes de poder escolhê-los aqui.  Para saber mais, confira [Perfis de certificado no System Center Configuration Manager](/sccm/protect/deploy-use/introduction-to-certificate-profiles).  
 
 ## <a name="configure-synchronization-settings-for-the-exchange-activesync-email-profile"></a>Defina as configurações de sincronização para o perfil de email do Exchange ActiveSync  
 

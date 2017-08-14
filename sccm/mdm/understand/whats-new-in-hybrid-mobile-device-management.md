@@ -16,10 +16,10 @@ author: Mtillman
 ms.author: mtillman
 manager: angrobe
 ms.translationtype: HT
-ms.sourcegitcommit: 94dc0335dab74bec7989753343418fae49b3ebe9
-ms.openlocfilehash: ab011cb06b43b06fc6e2a89e2f413d35a541a111
+ms.sourcegitcommit: c0d94b8e6ca6ffd82e879b43097a9787e283eb6d
+ms.openlocfilehash: 8e660c667daec9b1f7630e15599df5e3cfe55b5e
 ms.contentlocale: pt-br
-ms.lasthandoff: 07/14/2017
+ms.lasthandoff: 08/02/2017
 
 ---
 # <a name="whats-new-in-hybrid-mobile-device-management-with-system-center-configuration-manager-and-microsoft-intune"></a>Novidades no gerenciamento de dispositivo móvel híbrido com o System Center Configuration Manager e o Microsoft Intune
@@ -45,6 +45,19 @@ Este artigo fornece detalhes sobre os novos recursos de MDM (gerenciamento de di
 - **Avisos de fim de suporte adicionados para Android e Windows Phone**
 
     Novos avisos foram adicionados em relação ao fim do suporte para versões do Android e do Windows Phone. Para obter mais detalhes, veja [Avisos](#notices).
+
+
+
+### <a name="new-in-configuration-manager-current-branch"></a>Novo no Configuration Manager (Branch Atual)
+
+Os seguintes recursos que estavam anteriormente disponíveis nas versões do Configuration Manager Technical Preview agora estão disponíveis em implantações híbridas com o Intune e a versão 1706 do Configuration Manager (branch atual).
+
+- [Suporte do Entrust para autoridades de certificação Entrust](/sccm/core/get-started/capabilities-in-technical-preview-1706#support-for-entrust-certification-authorities)
+- [Novas configurações de política de gerenciamento de aplicativo móvel](/sccm/core/plan-design/changes/whats-new-in-version-1706#new-mobile-application-management-policy-settings)
+- [Atualizações para configuração de compartilhamento do Android for Work](/sccm/core/plan-design/changes/whats-new-in-version-1706#updates-to-android-for-work-sharing-configuration)
+- [Novas regras de política de conformidade do dispositivo](/sccm/core/plan-design/changes/whats-new-in-version-1706#new-device-compliance-policy-rules)
+- [Novas definições de configuração para dispositivos com Windows 10 que não são gerenciados com o cliente do Configuration Manager](/sccm/core/plan-design/changes/whats-new-in-version-1706#new-configuration-settings-for-windows-10-devices-that-are-not-managed-with-the-configuration-manager-client)
+- [Suporte do Cisco (IPsec) para perfis de VPN do macOS](/sccm/core/get-started/capabilities-in-technical-preview-1706#cisco-ipsec-support-for-macos-vpn-profiles)
 
 ## <a name="june-2017"></a>Junho de 2017
 

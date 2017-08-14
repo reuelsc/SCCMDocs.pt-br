@@ -1,5 +1,4 @@
 ---
-
 title: "Integração ao Windows Update for Business no Windows 10 | Microsoft Docs"
 description: "Use o Windows Update para Empresas para manter dispositivos baseados no Windows 10 na sua organização atualizados para dispositivos conectados ao serviço do Windows Update."
 keywords: 
@@ -13,10 +12,11 @@ ms.service:
 ms.technology:
 - configmgr-sum
 ms.assetid: 183315fe-27bd-456f-b2c5-e8d25e05229b
-translationtype: Human Translation
-ms.sourcegitcommit: e6cf8c799b5be2f7dbb6fadadddf702ec974ae45
-ms.openlocfilehash: 8bdbacd54632475ac69a0d0a9a34b2567c3daa13
-
+ms.translationtype: HT
+ms.sourcegitcommit: 3c75c1647954d6507f9e28495810ef8c55e42cda
+ms.openlocfilehash: 26e73a69d5e6ca69e766fcf3cedd992353c92cd6
+ms.contentlocale: pt-br
+ms.lasthandoff: 07/29/2017
 
 ---
 # <a name="integration-with-windows-update-for-business-in-windows-10"></a>Integração com o Windows Update for Business no Windows 10
@@ -45,7 +45,7 @@ A atualização do WUfB (Windows Update for Business) permite que você mantenha
 
 -   A implantação completa do cliente do Configuration Manager que usa a infraestrutura de atualizações de software não funcionará para clientes que estão conectados ao WUfB para receber atualizações.  
 
-## <a name="identify-clients-that-use--wufb-for-windows-10-updates"></a>Identificar clientes que usam as atualizações do WUfB para o Windows 10  
+## <a name="identify-clients-that-use-wufb-for-windows-10-updates"></a>Identificar clientes que usam as atualizações do WUfB para o Windows 10  
  Use o procedimento a seguir para identificar clientes que usam o WUfB para obter atualizações do Windows 10, configure esses clientes para pararem de usar o WSUS para obter atualizações e implante um agente cliente de configuração para desabilitar o fluxo de trabalho de atualizações de software para esses clientes.  
 
  **Pré-requisitos**  
@@ -67,8 +67,40 @@ A atualização do WUfB (Windows Update for Business) permite que você mantenha
 
 5.  Os computadores gerenciados via WUfB exibirão **Desconhecido** no status de conformidade e não serão contados como parte do percentual de conformidade geral.  
 
+## <a name="configure-windows-update-for-business-deferral-policies"></a>Configurar as políticas de adiamento do Windows Update for Business
+<!-- 1290890 -->
+A partir do Configuration Manager versão 1706, você pode configurar as políticas de adiamento para as Atualizações de Recurso do Windows 10 ou Atualizações de Qualidade para dispositivos com Windows 10 gerenciados diretamente pelo Windows Update for Business. Você pode gerenciar as políticas de adiamento no novo nó **Políticas do Windows Update for Business** em **Biblioteca de Software** > **Manutenção do Windows 10**.
 
+### <a name="prerequisites"></a>Pré-requisitos
+Os dispositivos com Windows 10 gerenciados pelo Windows Update for Business devem ter conectividade com a Internet.
 
-<!--HONumber=Dec16_HO3-->
+#### <a name="to-create-a-windows-update-for-business-deferral-policy"></a>Para criar uma política de adiamento do Windows Update for Business
+1. Em **Biblioteca de Software** > **Manutenção do Windows 10** > **Políticas do Windows Update for Business**
+2. Na guia **Início**, no grupo **Criar**, selecione **Criar a Política do Windows Update for Business** para abrir o Assistente de criação de política do Windows Update for Business.
+3. Na página **Geral**, forneça um nome e uma descrição para a política.
+4. Na página **Políticas de Adiamento**, defina se deseja adiar ou pausar as Atualizações de Recurso.    
+    Normalmente, as Atualizações de Recurso são recursos novos do Windows. Depois de definir a configuração **Nível de preparação do branch**, defina se, e por quanto tempo, você quer adiar o recebimento de Atualizações de Recurso após a disponibilização da Microsoft.
+    - **Nível de preparação do branch**: defina o branch para o qual o dispositivo receberá atualizações do Windows (Branch Atual ou Branch Atual para Negócios).
+    - **Período de adiamento (dias)**: especifique o número de dias durante os quais as Atualizações de Recurso serão adiadas. Você pode adiar o recebimento dessas Atualizações de Recurso por um período de 180 dias a partir do lançamento.
+    - **Pausar Atualizações de Recurso a partir de**: selecione se você quer pausar o recebimento de Atualizações de Recursos nos dispositivos durante um período de até 60 dias a partir do momento que você pausar as atualizações. Após o número máximo de dias, a funcionalidade de pausa expirará automaticamente, e o dispositivo verificará no Windows Update se há atualizações aplicáveis. Após essa verificação, você poderá pausar as atualizações novamente. Retome as Atualizações de Recurso desmarcando a caixa de seleção.   
+5. Escolha se deseja adiar ou pausar as Atualizações de Qualidade.     
+    Normalmente, as Atualizações de Qualidade são correções e aprimoramentos funcionalidades existentes do Windows, e geralmente são publicadas na primeira terça-feira de cada mês, embora possam ser liberadas a qualquer momento pela Microsoft. Você pode definir se, e por quanto tempo, deseja adiar o recebimento das Atualizações de Qualidade após sua disponibilização.
+    - **Período de adiamento (dias)**: especifique o número de dias durante os quais as Atualizações de Recurso serão adiadas. Você pode adiar o recebimento dessas Atualizações de Recurso por um período de 180 dias a partir do lançamento.
+    - **Pausar Atualizações de Qualidade a partir de**: selecione se você quer pausar o recebimento de Atualizações de Qualidade nos dispositivos durante um período de até 35 dias a partir do momento que você pausar as atualizações. Após o número máximo de dias, a funcionalidade de pausa expirará automaticamente, e o dispositivo verificará no Windows Update se há atualizações aplicáveis. Após essa verificação, você poderá pausar as atualizações novamente. Retome as Atualizações de Qualidade desmarcando a caixa de seleção.
+6. Selecione **Instalar as atualizações de outros produtos da Microsoft** para habilitar a configuração da política de grupo que torna as configurações de adiamento aplicáveis ao Microsoft Update, bem como para o Windows Update.
+7. Selecione **Incluir drivers com o Windows Update** para atualizar automaticamente os drivers de Windows Updates. Se você desmarcar essa configuração, as atualizações de driver não serão baixadas do Windows Update.
+8. Conclua o assistente para criar a nova política de adiamento.
 
+#### <a name="to-deploy-a-windows-update-for-business-deferral-policy"></a>Para implantar uma política de adiamento do Windows Update for Business
+1. Em **Biblioteca de Software** > **Manutenção do Windows 10** > **Políticas do Windows Update for Business**
+2. Na guia **Início**, no grupo **Implantação**, selecione **Implantar a Política do Windows Update for Business**.
+3. Defina as seguintes configurações:
+    - **Política de configuração para implantação**: selecione a política do Windows Update for Business que você deseja implantar.
+    - **Coleção**: clique em **Procurar** para selecionar a coleção de usuários na qual você deseja implantar a política.
+    - **Corrigir regras não compatíveis quando houver suporte**: selecione para corrigir automaticamente quaisquer regras não compatíveis com o WMI (Instrumentação de Gerenciamento do Windows), o Registro, scripts e todas as configurações de dispositivos móveis registrados pelo Configuration Manager.
+    - **Permitir correção fora da janela de manutenção**: se uma janela de manutenção tiver sido configurada para a coleção na qual você está implantando a política, habilite esta opção para permitir que as configurações de conformidade corrijam o valor fora da janela de manutenção. Para obter mais informações sobre janelas de manutenção, consulte [Como usar janelas de manutenção](/sccm/core/clients/manage/collections/use-maintenance-windows).
+    - **Gerar um alerta**: configura um alerta gerado se a conformidade da linha de base de configuração for menor que um percentual especificado por uma data e hora determinadas. Você também pode especificar se deseja que um alerta seja enviado para o System Center Operations Manager.
+    - **Atraso aleatório (horas)**: especifica uma janela de atraso para evitar o processamento excessivo no Serviço de Registro de Dispositivo de Rede. O valor padrão é de 64 horas.
+    - **Agenda**: especifique o agendamento de avaliação de conformidade com base no qual o perfil implantado será avaliado em computadores cliente. O agendamento poderá ser simples ou personalizado. O perfil será avaliado por computadores cliente quando o usuário fizer logon.
+4.  Conclua o assistente para implantar o perfil.
 

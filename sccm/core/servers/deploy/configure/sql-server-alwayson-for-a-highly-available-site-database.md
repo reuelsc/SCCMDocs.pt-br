@@ -2,7 +2,7 @@
 title: SQL Server AlwaysOn | Microsoft Docs
 description: Planeje usar um grupo de disponibilidade AlwaysOn do SQL Server com SCCM.
 ms.custom: na
-ms.date: 5/26/2017
+ms.date: 7/31/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
@@ -15,12 +15,11 @@ caps.latest.revision: 16
 author: Brenduns
 ms.author: brenduns
 manager: angrobe
-ms.translationtype: Human Translation
-ms.sourcegitcommit: dc221ddf547c43ab1f25ff83c3c9bb603297ece6
-ms.openlocfilehash: 188ae877368a6cb2ec9998bff74259b4e5b5e7ce
+ms.translationtype: HT
+ms.sourcegitcommit: 3c75c1647954d6507f9e28495810ef8c55e42cda
+ms.openlocfilehash: c746365238e1255d73387a9496521bb03a56b21b
 ms.contentlocale: pt-br
-ms.lasthandoff: 06/01/2017
-
+ms.lasthandoff: 07/29/2017
 
 ---
 # <a name="prepare-to-use-sql-server-always-on-availability-groups-with-configuration-manager"></a>Preparar para usar os grupos de disponibilidade AlwaysOn do SQL Server com o Configuration Manager
@@ -43,7 +42,9 @@ Veja a seguir os cenários com suporte para usar grupos de disponibilidade com o
 
 -      [Criar um grupo de disponibilidade para uso com o Configuration Manager](/sccm/core/servers/deploy/configure/configure-aoag#create-and-configure-an-availability-group).
 -     [Configurar um site para usar um grupo de disponibilidade](/sccm/core/servers/deploy/configure/configure-aoag#configure-a-site-to-use-the-database-in-the-availability-group).
--     [Adicionar ou remover membros de réplica de um grupo de disponibilidade que hospeda um banco de dados do site](/sccm/core/servers/deploy/configure/configure-aoag#add-and-remove-replica-members).
+-     [Adicionar ou remover membros de réplica síncrona de um grupo de disponibilidade que hospeda um banco de dados do site](/sccm/core/servers/deploy/configure/configure-aoag#add-and-remove-synchronous-replica-members).
+-     [Configurar réplicas de confirmação assíncrona](/sccm/core/servers/deploy/configure/configure-aoag#configure-an-asynchronous-commit-repilca) (exige o Configuration Manager versão 1706 ou posterior.)
+-     [Recuperar um site de uma réplica de confirmação assíncrona](/sccm/core/servers/deploy/configure/configure-aoag#use-the-asynchronous-replica-to-recover-your-site) (exige o Configuration Manager versão 1706 ou posterior.)
 -     [Mova o banco de dados para fora do site de um grupo de disponibilidade para uma instância padrão ou nomeada de um SQL Server autônomo](/sccm/core/servers/deploy/configure/configure-aoag#stop-using-an-availability-group).
 
 
@@ -62,31 +63,35 @@ Cada réplica no grupo de disponibilidade deve executar uma versão do SQL Serve
 É necessário usar uma edição *Enterprise* do SQL Server.
 
 **Conta**  
-Cada instância do SQL Server pode ser executada sob uma conta de usuário de domínio (**conta de serviço**) ou **Sistema Local**. Cada réplica em um grupo pode ter uma configuração diferente. De acordo com as [práticas recomendadas do SQL Server](/sql/sql-server/install/security-considerations-for-a-sql-server-installation#before-installing-includessnoversionincludesssnoversion-mdmd), use uma conta com as menores permissões possíveis.
+Cada instância do SQL Server pode ser executada sob uma conta de usuário de domínio (**conta de serviço**) ou uma conta fora do domínio. Cada réplica em um grupo pode ter uma configuração diferente. De acordo com as [práticas recomendadas do SQL Server](/sql/sql-server/install/security-considerations-for-a-sql-server-installation#before-installing-includessnoversionincludesssnoversion-mdmd), use uma conta com as menores permissões possíveis.
 
-Por exemplo, para configurar contas de serviço e permissões para o SQL Server 2016, veja [Configurar contas de serviço e permissões do Windows](/sql/database-engine/configure-windows/configure-windows-service-accounts-and-permissions) no MSDN.
+-   Para configurar contas de serviço e permissões para o SQL Server 2016, veja [Configurar contas de serviço e permissões do Windows](/sql/database-engine/configure-windows/configure-windows-service-accounts-and-permissions) no MSDN.
+-   Para usar uma conta fora do domínio, você deverá usar certificados. Para saber mais, confira [Usar certificados para um ponto de extremidade de espelhamento de banco de dados (Transact-SQL)](https://docs.microsoft.com/sql/database-engine/database-mirroring/use-certificates-for-a-database-mirroring-endpoint-transact-sql).
 
-  Se você usar **Sistema Local** para executar uma réplica, deverá configurar a autenticação de ponto de extremidade. Isso inclui a delegação de direitos para habilitar uma conexão para o ponto de extremidade do servidor de réplica.
-  -     Delegue os direitos do SQL Server, adicionando a conta de computador de cada SQL Server como um logon nos outros SQL Servers no nó e concedendo a essa conta direitos de SA.  
-  -     Delegue os direitos de ponto de extremidade para cada servidor remoto no ponto de extremidade local executando o seguinte script em cada réplica:    
-
-              GRANT CONNECT ON endpoint::[endpoint_name]  
-              TO [domain\servername$]
 
 Para saber mais, veja [Criar um ponto de extremidade de espelhamento de banco de dados para grupos de disponibilidade AlwaysOn](/sql/database-engine/availability-groups/windows/database-mirroring-always-on-availability-groups-powershell).
 
 ### <a name="availability-group-configurations"></a>Configurações de grupo de disponibilidade
 **Membros de réplica:**  
-O grupo de disponibilidade deve ter uma réplica primária e pode ter até duas réplicas secundárias síncronas.  Cada membro de réplica deve:
+-   O grupo de disponibilidade deve ter uma réplica primária.
+-   Antes da versão 1706, você podia ter até duas réplicas secundárias síncronas.
+-   A partir da versão 1706, você pode usar o mesmo número e tipo de réplicas em um grupo de disponibilidade como compatível com a versão do SQL Server que você usa.
+
+    Você pode usar a réplica de confirmação assíncrona para recuperar sua réplica síncrona. Confira [Opções de recuperação do banco de dados do site]( /sccm/protect/understand/backup-and-recovery#BKMK_SiteDatabaseRecoveryOption) no tópico Backup e recuperação para obter informações sobre como fazer isso.
+    > [!CAUTION]  
+    > O Configuration Manager não dá suporte a failover para usar a réplica de confirmação assíncrona como seu banco de dados do site.
+Como o Configuration Manager não valida o estado da réplica de confirmação assíncrona para confirmar que é atual, e [por design essa réplica pode estar fora de sincronia]( https://msdn.microsoft.com/library/ff877884(SQL.120).aspx(d=robot)#Availability%20Modes), o uso de uma réplica de confirmação assíncrona como o banco de dados do site pode colocar em risco a integridade do site e dos dados.
+
+Cada membro de réplica deve:
 -   Usar a **instância padrão**  
     *A partir da versão 1702, você pode usar uma* ***instância nomeada***.
 
--      Ter **Conexões na Função Primária** definida como **Sim**
--      Ter **Secundária Legível** definida como **Sim**  
--      Ser definida para **Failover Manual**       
+-     Ter **Conexões na Função Primária** definida como **Sim**
+-     Ter **Secundária Legível** definida como **Sim**  
+-     Ser definida para **Failover Manual**      
 
     >  [!TIP]
-    >  O Configuration Manager dá suporte ao uso de réplicas do grupo de disponibilidade quando definidas para **Failover Automático**. No entanto, o **Failover Manual** deve ser definido quando:
+    >  O Configuration Manager dá suporte ao uso de réplicas síncronas do grupo de disponibilidade quando definidas para **Failover Automático**. No entanto, o **Failover Manual** deve ser definido quando:
     >  -  Você executar a instalação para especificar o uso do banco de dados do site no grupo de disponibilidade.
     >  -  Quando você instala qualquer atualização para o Configuration Manager (não apenas as atualizações que se aplicam ao banco de dados do site).  
 
@@ -95,15 +100,15 @@ Todas as réplicas em um grupo de disponibilidade devem ser hospedadas no local 
 
 Quando você configurar um grupo de disponibilidade no Azure e o grupo estiver atrás de um balanceador de carga interno ou externo, a seguir estarão as portas padrão que você deverá abrir para habilitar o acesso de Instalação para cada réplica:   
 
--      Mapeador de pontos de extremidade RCP - **TCP 135**   
--      Protocolo SMB – **TCP 445**  
+-     Mapeador de pontos de extremidade RCP - **TCP 135**   
+-     Protocolo SMB – **TCP 445**  
     *Você pode remover essa porta após a movimentação do banco de dados ser concluída. A partir da versão 1702, essa porta não é mais necessária.*
--      SQL Server Service Broker - **TCP 4022**
--      SQL sobre TCP – **TCP 1433**   
+-     SQL Server Service Broker - **TCP 4022**
+-     SQL sobre TCP – **TCP 1433**   
 
 Após a Instalação ser concluída, as seguintes portas deverão permanecer acessíveis:
--      SQL Server Service Broker - **TCP 4022**
--      SQL sobre TCP – **TCP 1433**
+-     SQL Server Service Broker - **TCP 4022**
+-     SQL sobre TCP – **TCP 1433**
 
 A partir da versão 1702, você pode usar portas personalizadas para essas configurações. As mesmas portas devem ser usadas pelo ponto de extremidade e em todas as réplicas no grupo de disponibilidade.
 
@@ -119,25 +124,25 @@ Quando você executa a Instalação do Configuration Manager para configurar um 
 Os servidores de réplica secundária exigem esse caminho de arquivo apenas enquanto você estiver usando a Instalação para especificar a instância do banco de dados no grupo de disponibilidade. Depois que a Instalação concluir a configuração do banco de dados do site no grupo de disponibilidade, você poderá excluir o caminho não utilizado dos servidores de réplica secundária.
 
 Por exemplo, considere o seguinte cenário:
--    Você cria um grupo de disponibilidade que usa três SQL Servers.
+-   Você cria um grupo de disponibilidade que usa três SQL Servers.
 
--    Seu servidor de réplica primária é uma nova instalação do SQL Server 2014. Por padrão, os arquivos .MDF e .LDF do banco de dados são armazenados em C:\Arquivos de Programas\Microsoft SQL Server\MSSQL12.MSSQLSERVER\MSSQL\DATA.
+-   Seu servidor de réplica primária é uma nova instalação do SQL Server 2014. Por padrão, os arquivos .MDF e .LDF do banco de dados são armazenados em C:\Arquivos de Programas\Microsoft SQL Server\MSSQL12.MSSQLSERVER\MSSQL\DATA.
 
--    Ambos os servidores de réplica secundária foram atualizados para o SQL Server 2014 de versões anteriores e mantêm o caminho de arquivo original para armazenar arquivos de banco de dados: C:\Arquivos de Programas\Microsoft SQL Server\MSSQL10.MSSQLSERVER\MSSQL\DATA.
+-   Ambos os servidores de réplica secundária foram atualizados para o SQL Server 2014 de versões anteriores e mantêm o caminho de arquivo original para armazenar arquivos de banco de dados: C:\Arquivos de Programas\Microsoft SQL Server\MSSQL10.MSSQLSERVER\MSSQL\DATA.
 
--    Antes de tentar mover o banco de dados do site para esse grupo de disponibilidade, em cada servidor de réplica secundária você deve criar o seguinte caminho de arquivo, mesmo que as réplicas secundárias não vão usar esse local de arquivo: C:\Arquivos de Programas\Microsoft SQL Server\MSSQL12.MSSQLSERVER\MSSQL\DATA (esta é uma duplicata do caminho que está em uso na réplica primária).
+-   Antes de tentar mover o banco de dados do site para esse grupo de disponibilidade, em cada servidor de réplica secundária você deve criar o seguinte caminho de arquivo, mesmo que as réplicas secundárias não vão usar esse local de arquivo: C:\Arquivos de Programas\Microsoft SQL Server\MSSQL12.MSSQLSERVER\MSSQL\DATA (esta é uma duplicata do caminho que está em uso na réplica primária).
 
--    Depois, conceda à conta de serviço do SQL Server em cada réplica secundária acesso de controle total para o local do arquivo criado recentemente no servidor.
+-   Depois, conceda à conta de serviço do SQL Server em cada réplica secundária acesso de controle total para o local do arquivo criado recentemente no servidor.
 
--    Agora, você pode executar com êxito a Instalação do Configuration Manager para configurar o site a usar o banco de dados no grupo de disponibilidade.
+-   Agora, você pode executar com êxito a Instalação do Configuration Manager para configurar o site a usar o banco de dados no grupo de disponibilidade.
 
 **Configurar o banco de dados em uma nova réplica:**   
  O banco de dados de cada réplica deve ser definido com o seguinte:
--     **Integração CLR** deve estar *habilitada*
--      **Tamanho máximo de repl de texto** deve ser *2147483647*
--      O proprietário do banco de dados deve ser a *Conta SA*
--      **TRUSTWORTY** deve ser **ON**
--      **Service Broker** deve estar *habilitado*
+-   **Integração CLR** deve estar *habilitada*
+-     **Tamanho máximo de repl de texto** deve ser *2147483647*
+-     O proprietário do banco de dados deve ser a *Conta SA*
+-     **TRUSTWORTY** deve ser **ON**
+-     **Service Broker** deve estar *habilitado*
 
 Você pode fazer essas configurações em apenas uma réplica primária. Para configurar uma réplica secundária, você deverá primeiro fazer failover do primário para o secundário para transformar o secundário em nova réplica primária.   
 
@@ -213,7 +218,7 @@ A partir do SQL Server 2016 Standard, os [grupos de disponibilidade básicos](ht
 **Servidores SQL que hospedam os grupos de disponibilidade adicional:**   
 Antes da versão 1610 do Configuration Manager, quando um grupo de disponibilidade em um SQL Server hospedar um ou mais grupos de disponibilidade além do grupo que você usar para o Configuration Manager, cada réplica em cada um dos grupos de disponibilidade adicionais deverá ter as seguintes configurações definidas no momento em que você executar a instalação do Configuration Manager Setup ou instalar uma atualização para o Configuration Manager:
 -   **Failover Manual**
--     **permitir qualquer conexão somente leitura**
+-   **permitir qualquer conexão somente leitura**
 
 **Uso de bancos de dados sem suporte:**
 -   **O Configuration Manager dá suporte apenas ao banco de dados do site em um grupo de disponibilidade:** não há suporte para o seguinte:

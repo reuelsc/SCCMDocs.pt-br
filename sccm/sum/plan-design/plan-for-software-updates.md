@@ -1,5 +1,4 @@
 ---
-
 title: "Planejar atualizações de software | Microsoft Docs"
 description: "É essencial ter um plano para a infraestrutura de ponto de atualização de software antes de usar atualizações de software em um ambiente de produção do System Center Configuration Manager."
 keywords: 
@@ -13,12 +12,11 @@ ms.service:
 ms.technology:
 - configmgr-sum
 ms.assetid: d071b0ec-e070-40a9-b7d4-564b92a5465f
-ms.translationtype: Human Translation
-ms.sourcegitcommit: f4c46bfab9b40b29654f4e883817a5508ab25b74
-ms.openlocfilehash: b5a2fd9f15992c9e5ef8aede64af5446b6852b1a
+ms.translationtype: HT
+ms.sourcegitcommit: afe0ecc4230733fa76e41bf08df5ccfb221da7c8
+ms.openlocfilehash: 8b739a01a6bb5cacf0f7109e2e6fa3b31dd666d3
 ms.contentlocale: pt-br
-ms.lasthandoff: 06/28/2017
-
+ms.lasthandoff: 08/04/2017
 
 ---
 
@@ -109,11 +107,15 @@ Para pesquisar o significado de um código de erro, você deve converter o códi
 
 
 ###  <a name="BKMK_ManuallySwitchSUPs"></a>Mudar manualmente clientes para um novo ponto de atualização de software
-A partir da versão 1606 do Configuration Manager, você pode habilitar a opção para clientes do Configuration Manager mudarem para um novo ponto de atualização de software quando houver problemas com o ponto de atualização de software ativo. Essa opção resulta em alterações somente quando um cliente recebe vários pontos de atualização de software de um ponto de gerenciamento.  
+A partir da versão 1606 do Configuration Manager, você pode habilitar a opção para clientes do Configuration Manager mudarem para um novo ponto de atualização de software quando houver problemas com o ponto de atualização de software ativo. Essa opção resulta em alterações somente quando um cliente recebe vários pontos de atualização de software de um ponto de gerenciamento.
 
-Habilite essa opção em uma coleção de dispositivos ou em um conjunto de dispositivos selecionados. Uma vez habilitada, os clientes procurarão outro ponto de atualização de software na próxima verificação. Dependendo de suas definições de configuração do WSUS (classificações de atualização, produtos, se os pontos de atualização de software compartilham um banco de dados do WSUS etc.), mudar para um novo ponto de atualização de software gerará tráfego de rede adicional. Portanto, você deve usar essa opção apenas quando for necessário.  
+> [!IMPORTANT]    
+> Quando você alternar os dispositivos para usar um novo servidor, os dispositivos usam fallback para localizar esse novo servidor. Portanto, examine as configurações de seu grupo de limites e certifique-se de que seus pontos de atualização de software estejam nos grupos de limites corretos antes de iniciar esta alteração. Para ver os detalhes, confira [Pontos de atualização de software](/sccm/core/servers/deploy/configure/boundary-groups#software-update-points).
+>
+> A alteração para um novo ponto de atualização de software gerará tráfego de rede adicional. A quantidade de tráfego depende de suas definições de configuração do WSUS (classificações de atualização, produtos, se os pontos de atualização de software compartilham um banco de dados do WSUS etc.). Se você planeja alternar vários dispositivos, considere a possibilidade de fazer isso durante as janelas de manutenção a fim de reduzir o impacto em sua rede durante a sincronização para o novo servidor de ponto de atualização de software.
 
 #### <a name="to-enable-the-option-to-switch-software-update-points"></a>Para habilitar a opção de alternar pontos de atualização de software  
+Habilite essa opção em uma coleção de dispositivos ou em um conjunto de dispositivos selecionados. Uma vez habilitada, os clientes procurarão outro ponto de atualização de software na próxima verificação.
 
 1.  No console do Configuration Manager, vá até **Ativos e Conformidade > Visão Geral > Coleções de Dispositivos**.  
 
@@ -295,8 +297,8 @@ As atualizações de software requerem que uma versão com suporte do WSUS estej
 -   Se uma atualização de software substituta não for aprovada para implantação em seu ambiente de produção.  
 
     > [!NOTE]  
-    >  Quando o Configuration Manager define uma atualização de software substituída como **expirada**, ele não define a atualização como **expirada** no WSUS. No entanto, quando a tarefa de limpeza do WSUS é executada, as atualizações definidas como **expiradas** no Configuration Manager são definidas com o status de **Recusadas** no servidor do WSUS e o Agente do Windows Update nos computadores não verificará mais essas atualizações. Isso significa que os clientes continuarão a verificar se há uma atualização expirada até que a tarefa de limpeza seja executada. Para obter informações sobre a tarefa de limpeza do WSUS, veja [Manutenção de atualizações de software](/sccm/sum/deploy-use/software-updates-maintenance).
-    
+    > Quando o Configuration Manager define uma atualização de software substituída como **Expirada**, ele não define a atualização como **Recusada** no WSUS. No entanto, quando a tarefa de limpeza do WSUS é executada, as atualizações definidas como **Expiradas** no Configuration Manager são definidas com o status de **Recusadas** no servidor do WSUS e o Agente do Windows Update nos computadores não verificará mais essas atualizações. Isso significa que os clientes continuarão a verificar se há uma atualização expirada até que a tarefa de limpeza seja executada. Para obter informações sobre a tarefa de limpeza do WSUS, veja [Manutenção de atualizações de software](/sccm/sum/deploy-use/software-updates-maintenance).
+
 ###  <a name="BKMK_UpdateLanguages"></a> Idiomas  
  As configurações de idioma do ponto de atualização de software permitem configurar os idiomas para os quais os detalhes de resumo (metadados de atualizações de software) são sincronizados para atualizações de software, e os idiomas do arquivo de atualização do software serão baixados para as atualizações de software.  
 

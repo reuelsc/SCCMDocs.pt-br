@@ -2,7 +2,7 @@
 title: "Versões incrementais do System Center Configuration Manager | Microsoft Docs"
 description: "Saiba como instalar e gerenciar atualizações do System Center Configuration Manager."
 ms.custom: na
-ms.date: 3/27/2017
+ms.date: 7/31/2017
 ms.reviewer: na
 ms.suite: na
 ms.prod: configuration-manager
@@ -15,11 +15,11 @@ caps.latest.revision: 4
 author: Brenduns
 ms.author: brenduns
 manager: angrobe
-ms.translationtype: Human Translation
-ms.sourcegitcommit: dab5da5a4b5dfb3606a8a6bd0c70a0b21923fff9
-ms.openlocfilehash: fb968fe866920c93edaa43be457032c3e7fd1c42
+ms.translationtype: HT
+ms.sourcegitcommit: c0d94b8e6ca6ffd82e879b43097a9787e283eb6d
+ms.openlocfilehash: 043c9521f4a94ea2df5cebb4ca1c0b1127f0edbc
 ms.contentlocale: pt-br
-ms.lasthandoff: 05/17/2017
+ms.lasthandoff: 08/02/2017
 
 ---
 # <a name="whats-new-in-system-center-configuration-manager-incremental-versions"></a>Novidades nas versões incrementais do System Center Configuration Manager
@@ -37,14 +37,11 @@ ms.lasthandoff: 05/17/2017
 
  Essas versões de atualização são essenciais para entender a versão incremental da sua instalação do System Center Configuration Manager, bem como quais recursos podem estar disponíveis para habilitar na sua implantação.
 
- A versão inicial da ramificação atual do System Center Configuration Manager é a versão 1511. Atualizações adicionais estão disponíveis desde esta versão inicial. Use os links a seguir para descobrir as novidades de cada versão:
+ A versão inicial da ramificação atual do System Center Configuration Manager é a versão 1511. Atualizações adicionais estão disponíveis desde esta versão inicial. Use os links a seguir para descobrir as novidades de cada versão que permanecem com suporte:
+  - [Novidades na versão 1706](../../../core/plan-design/changes/whats-new-in-version-1706.md)  
   - [Novidades na versão 1702](../../../core/plan-design/changes/whats-new-in-version-1702.md)
   - [Novidades na versão 1610](../../../core/plan-design/changes/whats-new-in-version-1610.md)
-  - [Novidades na versão 1606](../../../core/plan-design/changes/whats-new-in-version-1606.md)  
 
-<!-- 
-  - [What's new in version 1602](../../../core/plan-design/changes/whats-new-in-version-1602.md)
--->
 
  Cada versão de atualização tem suporte por um ano após seu lançamento. Recomendamos que você permaneça atualizado com a versão mais recente sempre que possível. Para mais informações, consulte [Suporte para versões do branch atual do System Center Configuration Manager](../../../core/servers/manage/current-branch-versions-supported.md).  
 

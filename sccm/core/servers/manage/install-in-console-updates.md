@@ -15,12 +15,11 @@ caps.latest.revision: 36
 author: Brenduns
 ms.author: brenduns
 manager: angrobe
-ms.translationtype: Human Translation
-ms.sourcegitcommit: 3619a73d3a39659de927e1711a7ec81de9918064
-ms.openlocfilehash: 34ddb646137aaf1160d850ba7c1e0109f467225d
+ms.translationtype: HT
+ms.sourcegitcommit: 3c75c1647954d6507f9e28495810ef8c55e42cda
+ms.openlocfilehash: 2bbc8935bee306ed0bc312cc43b8f5374a8df7ff
 ms.contentlocale: pt-br
-ms.lasthandoff: 06/13/2017
-
+ms.lasthandoff: 07/29/2017
 
 ---
 # <a name="install-in-console-updates-for-system-center-configuration-manager"></a>Instalações de atualizações para o System Center Configuration Manager
@@ -289,6 +288,9 @@ As tarefas de pós-instalação incluem:
 
 ##  <a name="bkmk_retry"></a> Repetir a instalação de uma atualização com falha  
 Quando a instalação de uma atualização falhar, examine os comentários no console para identificar as resoluções para erros e avisos. Você também pode ver o arquivo ConfigMgrPrereq.log no servidor do site para obter mais detalhes. Antes de tentar novamente a instalação de uma atualização, você deve corrigir os erros e os avisos.  
+
+> [!TIP]  
+> Se uma atualização tiver problemas de download ou replicação, você poderá usar a [ferramenta de redefinição de atualização](/sccm/core/servers/manage/update-reset-tool). Essa ferramenta está disponível em sites que executam a versão 1706 ou posterior. 
 
 Quando estiver pronto para repetir a instalação de uma atualização, selecione a atualização com falha e escolha uma opção aplicável. O comportamento de repetição da instalação da atualização depende do nó em que você inicia a repetição e da opção de repetição usada.  
 

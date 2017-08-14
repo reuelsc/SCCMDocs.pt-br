@@ -2,7 +2,7 @@
 title: "Atualizar dispositivos do Windows para uma versão diferente com o Configuration Manager | Microsoft Docs"
 description: "Atualize automaticamente os dispositivos que executam o Windows 10 Desktop, Windows 10 Mobile ou Windows 10 Holographic para outra edição com o Configuration Manager."
 ms.custom: na
-ms.date: 04/18/2017
+ms.date: 07/31/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
@@ -16,12 +16,11 @@ caps.handback.revision: 0
 author: robstackmsft
 ms.author: robstack
 manager: angrobe
-ms.translationtype: Human Translation
-ms.sourcegitcommit: 4eee9731a4a27328c47c0d15931cab28cf520a18
-ms.openlocfilehash: cfde0a43947013bbd3a1093688cee19fe309fd03
+ms.translationtype: HT
+ms.sourcegitcommit: 3c75c1647954d6507f9e28495810ef8c55e42cda
+ms.openlocfilehash: cd8c644d07dab0010dc211df8ce4f2dc6e1fa7ae
 ms.contentlocale: pt-br
-ms.lasthandoff: 05/17/2017
-
+ms.lasthandoff: 07/29/2017
 
 ---
 
@@ -34,14 +33,14 @@ A **Política de Atualização de Edição** do System Center Configuration Mana
 
 - Windows 10 Desktop
 - Windows 10 Mobile
-- Windows 10 Holographic
+<!-- - Windows 10 Holographic -->
 
 Há suporte para os seguintes caminhos de atualização:
 
 - Do Windows 10 Pro para Windows 10 Enterprise
 - Do Windows 10 Home para Windows 10 Education
 - Do Windows 10 Mobile para Windows 10 Mobile Enterprise
-- Do Windows 10 Holographic Pro para Windows 10 Holographic Enterprise
+<!-- - From Windows 10 Holographic Pro to Windows 10 Holographic Enterprise -->
 
 Os dispositivos devem ser registrados no Microsoft Intune ou executar o software cliente do Configuration Manager. Essa política não é compatível no momento com PCs gerenciados por MDM local.
 
@@ -50,7 +49,7 @@ Os dispositivos devem ser registrados no Microsoft Intune ou executar o software
 
 -   Uma chave do produto (Product Key) que é válida para instalar a nova versão do Windows em todos os dispositivos de que destino com a política (para sistemas operacionais de área de trabalho)  
 
--   Um arquivo de licença da Microsoft que contém as informações de licenciamento para instalar a nova versão do Windows em todos os dispositivos de destino com a política (para Windows Mobile 10 e Windows 10 Holographic).
+-   Um arquivo de licença da Microsoft que contém as informações de licenciamento para instalar a nova versão do Windows em todos os dispositivos de destino com a política (para Windows Mobile 10<!-- and Windows 10 Holographic-->).
 
 - Para criar e implantar esse tipo de política, você deve recebido a atribuição da função de segurança de **Administrador Completo** do Configuration Manager.
 
@@ -68,7 +67,7 @@ Os dispositivos devem ser registrados no Microsoft Intune ou executar o software
 
     -   **Descrição** (opcional) - opcionalmente, digite uma descrição para a política que ajuda a identificá-la no console do Intune.  
 
-    -   **SKU para atualizar o dispositivo** - na lista suspensa, selecione a versão do Windows 10 Desktop, Windows 10 Holographic ou Windows 10 Mobile para a qual você deseja atualizar os dispositivos de destino.  
+    -   **SKU para atualizar o dispositivo** – na lista suspensa, selecione a versão do Windows 10 Desktop, <!-- Windows 10 Holographic,--> ou Windows 10 Mobile para a qual você deseja atualizar os dispositivos de destino.  
 
     -   **Informações de licença** - Selecione um destes:  
 
@@ -77,7 +76,7 @@ Os dispositivos devem ser registrados no Microsoft Intune ou executar o software
             > [!NOTE]  
             >  Depois de criar uma política que contém uma chave do produto (Product Key), não é possível editar a chave do produto (Product Key) mais tarde. Isso ocorre porque a chave é obscurecida por motivos de segurança. Para alterar a chave do produto (Product Key), você deve reinserir a chave inteira.  
 
-        -   **Arquivo de Licença** - Clique em **Procurar** para selecionar um arquivo de licença válida no formato XML que será usado para atualizar os dispositivos de destino que executam os sistemas operacionais Windows 10 Holographic e Windows 10 Mobile.  
+        -   **Arquivo de Licença** – Clique em **Procurar** para selecionar um arquivo de licença válida no formato XML que será usado para atualizar os dispositivos de destino que executam os sistemas operacionais <!--Windows 10 Holographic and -->Windows 10 Mobile.  
 
 6.  Conclua o assistente.  
 
@@ -91,7 +90,15 @@ A nova política é exibida no nó **Atualização de Edição do Windows 10** d
 
 4.  Na caixa de diálogo **Implantar a Atualização do Windows 10 Edition**, escolha a coleção a qual você deseja implantar a política e o agendamento pelo qual a política será avaliada e, em seguida, clique em **OK**. Para PCs gerenciados com o cliente do Configuration Manager, você deve implantar a política para uma coleção de dispositivos. Para computadores que são registrados com o Intune, você pode implantar a política a um usuário ou uma coleção de dispositivos. 
 
-Você pode monitorar a implantação que acabou de ser criada no nó **Implantações** do espaço de trabalho **Monitoramento** .  
 
- Quando a política atinge um computador Windows definido como destino e é avaliada, ela será reiniciada dentro de duas horas para aplicar a atualização. Certifique-se de informar os usuários nos quais você implanta a política ou agende a política para ser executada fora do horário de trabalho dos usuários.
+
+## <a name="next-steps"></a>Próximas etapas
+
+Ao monitorar a implantação que você acabou de criar no nó **Implantações** do espaço de trabalho **Monitoramento**, você poderá ver erros indicando que a implantação não foi bem-sucedida, como:
+- **Não aplicável para este dispositivo**
+- **Falha na conversão do tipo de dados**
+
+Esses erros não significam que a implantação falhou. Verifique se a atualização foi executada com êxito no PC de destino.
+
+Quando a política atinge um computador Windows definido como destino e é avaliada, ela será reiniciada dentro de duas horas para aplicar a atualização. Certifique-se de informar os usuários nos quais você implanta a política ou agende a política para ser executada fora do horário de trabalho dos usuários.
 

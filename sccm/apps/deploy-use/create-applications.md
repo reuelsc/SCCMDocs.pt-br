@@ -16,12 +16,11 @@ caps.handback.revision: 0
 author: robstackmsft
 ms.author: robstack
 manager: angrobe
-ms.translationtype: Human Translation
-ms.sourcegitcommit: f9097014c7e988ec8e139e518355c4efb19172b3
-ms.openlocfilehash: da86fc2f61ce8229fb0d3f58a4f8a24d1514b30e
+ms.translationtype: HT
+ms.sourcegitcommit: b7461f89f483314bd07248bbc9d5dde85ca6b6c2
+ms.openlocfilehash: 4d048d4f9ab01b28e6c21a38cca4d82c85030618
 ms.contentlocale: pt-br
-ms.lasthandoff: 05/17/2017
-
+ms.lasthandoff: 08/03/2017
 
 ---
 # <a name="create-applications-with-system-center-configuration-manager"></a>Criar aplicativos com o System Center Configuration Manager
@@ -198,6 +197,14 @@ O novo aplicativo aparece no nó **Aplicativos** do console do Configuration Man
 
         > [!IMPORTANT]  
         >  A Conta do Sistema do computador do servidor do site deve ter permissões ao local do conteúdo que você especifica.  
+
+    -   **Desinstalar as configurações do conteúdo**--Especifique uma das seguintes opções:
+        - **Mesmo que o conteúdo de instalação**--Selecione esta opção se o conteúdo de instalação e desinstalação forem os mesmos. Esse é o comportamento padrão.
+        - **Sem conteúdo de instalação**--Selecione esta opção se o seu aplicativo não precisar de conteúdo para desinstalação.
+        - **Diferente do conteúdo da instalação**--Selecione esta opção se o conteúdo de desinstalação for diferente do conteúdo de instalação.
+
+4. Se você tiver selecionado **Diferente do conteúdo de instalação**, procure, ou insira, o local do conteúdo do aplicativo que será usado para desinstalar o aplicativo.
+5. Clique em **OK** para fechar a caixa de diálogo Propriedades do tipo de implantação.
 
     -   **Manter o conteúdo no cache do cliente** – selecione essa opção para especificar se o conteúdo deve ser mantido no cache do computador cliente por tempo indeterminado, mesmo após sua execução. Embora essa opção seja útil em algumas implantações, como do software baseado no Windows Installer que precisa de uma cópia de origem local disponível para aplicar atualizações, ela reduz o espaço em cache disponível. Selecionar essa opção pode causar uma falha em uma implantação grande posteriormente se o cache não tiver espaço suficiente.  
 
