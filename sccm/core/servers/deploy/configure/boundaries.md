@@ -1,6 +1,6 @@
 ---
-title: "定义边界 | Microsoft Docs"
-description: "了解如何在 Intranet 上定义可包含你要管理的设备的网络位置。"
+title: Definir limites | Microsoft Docs
+description: "Entenda como definir locais de rede na sua intranet que podem conter dispositivos que você deseja gerenciar."
 ms.custom: na
 ms.date: 3/27/2017
 ms.prod: configuration-manager
@@ -17,70 +17,70 @@ manager: angrobe
 ms.openlocfilehash: bed70809008fde5e2b0215f4dce049402edf83ba
 ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
 ms.translationtype: HT
-ms.contentlocale: zh-CN
+ms.contentlocale: pt-BR
 ms.lasthandoff: 08/07/2017
 ---
-# <a name="define-network-locations-as-boundaries-for-system-center-configuration-manager"></a>将网络位置定义为 System Center Configuration Manager 的边界
+# <a name="define-network-locations-as-boundaries-for-system-center-configuration-manager"></a>Definir locais de rede como limites para o System Center Configuration Manager
 
-*适用范围：System Center Configuration Manager (Current Branch)*
+*Aplica-se a: System Center Configuration Manager (Branch Atual)*
 
-Configuration Manager 边界是网络上的位置，其中包含你要管理的设备。 设备所在的边界相当于 Active Directory 站点，或由安装在设备上的 Configuration Manager 客户端指定的网络 IP 地址。
- - 你可以手动创建单个边界。 但是，Configuration Manager 不支持以边界的形式直接输入超网。 作为替代，请使用 IP 地址范围边界类型。
- - 可以将 [Active Directory Forest Discovery](../../../../core/servers/deploy/configure/about-discovery-methods.md#bkmk_aboutForest) 方法配置成为每个 IP 子网和其发现的 Active Directory 站点自动发现并创建边界。 当 Active Directory 林发现确定分配给 Active Directory 站点的超网时，Configuration Manager 将超网转换为 IP 地址范围边界。  
+Os limites do Configuration Manager são locais na sua rede que contêm dispositivos que você deseja gerenciar. O limite em que um dispositivo estiver é equivalente ao site do Active Directory ou endereço IP da rede que é identificado pelo cliente do Configuration Manager que é instalado no dispositivo.
+ - Você pode criar limites individuais manualmente. No entanto, o Configuration Manager não dá suporte à entrada direta de uma super-rede como limite. Em vez disso, use o tipo de limite de intervalo de endereços IP.
+ - Você pode configurar o método [Descoberta de Florestas do Active Directory](../../../../core/servers/deploy/configure/about-discovery-methods.md#bkmk_aboutForest) para detecção automática e criar limites para cada sub-rede IP e Site do Active Directory detectado. Quando a descoberta de florestas do Active Directory identifica uma super-rede que é atribuída a um site do Active Directory, o Configuration Manager converte a super-rede em um limite de intervalo de endereços IP.  
 
-设备使用 Configuration Manager 管理员感知不到的 IP 地址的情况并不罕见。 当不确定设备的网络位置时，请通过在设备上使用 **IPCONFIG** 命令确认设备所报告的自身位置。  
+Não é incomum um dispositivo usar um endereço IP de que o administrador do Configuration Manager não esteja ciente. Quando o local de rede de um dispositivo for incerto, confirme o que o dispositivo reporta como seu local usando o comando **IPCONFIG** no dispositivo.  
 
-当你创建边界时，边界会自动获得一个名称，该名称基于边界的类型和作用域。 你无法修改此名称。 作为替代方式，你可以指定一个描述以帮助在 Configuration Manager 控制台中标识该边界。  
+Ao criar um limite, ele recebe automaticamente um nome baseado no tipo e no escopo do limite. Não é possível modificar esse nome. Em vez disso, você pode especificar uma descrição para ajudar a identificar o limite no console do Configuration Manager.  
 
-每个边界都可供层次结构中的每个站点使用。 创建边界之后，你可以修改其属性以执行以下操作：  
--   将边界添加到一个或多个边界组。  
--   更改边界的类型或作用域。  
--   查看边界“站点系统”  选项卡以了解哪些站点系统服务器（分发点、状态迁移点和管理点）与边界相关联。  
+Cada limite está disponível para uso por todos os sites na sua hierarquia. Depois que um limite tiver sido criado, você poderá modificar suas propriedades para fazer o seguinte:  
+-   Adicionar o limite a um ou mais grupos de limites.  
+-   Alterar o tipo ou o escopo do limite.  
+-   Exiba a guia **Sistemas de Sites** de limites para ver quais servidores do sistema de sites (pontos de distribuição, pontos de migração de estado e pontos de gerenciamento) estão associados ao limite.  
 
-## <a name="to-create-a-boundary"></a>创建边界  
+## <a name="to-create-a-boundary"></a>Para criar um limite  
 
-1.  在 Configuration Manager 控制台中，单击“管理” > “层次结构尊重” > “边界”  
+1.  No console do Configuration Manager, clique em **Administração** > **Configuração da Hierarquia** > **Limites**  
 
-2.  在“主页”  选项卡上的“创建”  组中，单击“创建边界”  **Boundary.**。  
+2.  Na guia **Início** , no grupo **Criar** , clique em **Criar Boundary.**  
 
-3.  在“创建边界”对话框的“常规”  选项卡上，你可以指定“描述”  以便通过友好名称或引用来标识边界。  
+3.  Na guia **Geral** da caixa de diálogo Criar Limite, é possível especificar uma **Descrição** para identificar o limite por um nome amigável ou de referência.  
 
-4.  为此边界选择“类型”  ：  
+4.  Selecione um **Tipo** para esse limite:  
 
-    -   如果选择“IP 子网” ，你必须为此边界指定“子网 ID”  。  
+    -   Se selecionar **Sub-rede IP**, será necessário especificar uma **ID de Sub-rede** para esse limite.  
         > [!TIP]  
-        >  你可以指定“网络”  和“子网掩码”  以便自动指定“子网 ID”  。 在保存边界时，只会保存子网 ID 值。  
+        >  Você pode especificar a **Rede** e a **Máscara de Sub-rede** para que a **ID de Sub-rede** seja especificada automaticamente. Quando você salva o limite, somente o valor da ID de Sub-rede é salvo.  
 
-    -   如果选择“Active Directory 站点” ，则必须指定或“浏览”  到站点服务器的本地林中的 Active Directory 站点。  
+    -   Se selecionar o **site do Active Directory**, você deverá especificar ou **Procurar** um site do Active Directory na floresta local do servidor do site.  
 
         > [!IMPORTANT]  
-        >  如果为边界指定 Active Directory 站点，则边界包括作为该 Active Directory 站点成员的每个 IP 子网。 如果 Active Directory 站点的配置在 Active Directory 中发生变化，则此边界中包括的网络位置也会更改。  
+        >  Ao especificar um site do Active Directory para um limite, o limite inclui uma sub-rede IP que é um membro de um site do Active Directory. Se a configuração do site do Active Directory mudar no Active Directory, os locais de rede inclusos nesse limite também mudarão.  
 
-    -   如果选择“IPv6 前缀” ，你必须以 IPv6 前缀格式指定“前缀”  。  
+    -   Se selecionar o **Prefixo IPv6**, você deverá especificar um **Prefixo** no formato de prefixo IPv6.  
 
-    -   如果选择“IP 地址范围” ，你必须指定包括 IP 子网的一部分或包括多个 IP 子网的“起始 IP 地址”  和“结束 IP 地址”  。    
+    -   Se selecionar **Intervalo de endereços IP**, será necessário especificar um **Endereço IP Inicial** e um **Endereço IP Final** que inclui parte de uma sub-rede IP ou várias sub-redes IP.    
 
-5.  单击“确定”  保存新边界。  
+5.  Clique em **OK** para salvar o novo limite.  
 
-## <a name="to-configure-a-boundary"></a>配置边界  
+## <a name="to-configure-a-boundary"></a>Para configurar um limite  
 
-1.  在 Configuration Manager 控制台中，单击“管理” > “层次结构尊重” > “边界”  
+1.  No console do Configuration Manager, clique em **Administração** > **Configuração da Hierarquia** > **Limites**  
 
-2.  选择要修改的边界。  
+2.  Selecione o limite que você deseja modificar.  
 
-3.  在“主页”  选项卡上的“属性”  组中，单击“属性” 。  
+3.  Na guia **Início** , no grupo **Propriedades** , clique em **Propriedades**.  
 
-4.  在边界的“属性”  对话框中，选择“常规”  选项卡以编辑边界的“描述”  或“类型”  。 你也可以通过编辑边界的网络位置来更改边界的作用域。 例如，对于 Active Directory 站点边界，你可以指定新的 Active Directory 站点名称。  
+4.  Na caixa de diálogo **Propriedades** do limite, selecione a guia **Geral** para editar a **Descrição** ou **Tipo** do limite. Você também pode alterar o escopo de um limite editando os locais de rede para o limite. Por exemplo, para um limite de site do Active Directory, você pode especificar um novo nome de site do Active Directory.  
 
-5.  选择“站点系统”  选项卡以查看与此边界关联的站点系统。 你无法从边界的属性中更改此配置。  
+5.  Selecione a guia **Sistemas de Site** para exibir os sistemas de site que estão associados a esse limite. Não é possível alterar essa configuração a partir das propriedades de um limite.  
 
     > [!TIP]  
-    >  对于列为边界的站点系统的站点系统服务器，站点系统服务器必须关联为包含此边界的至少一个边界组的站点系统服务器。 这配置在边界组的“引用”  选项卡上。  
+    >  Para que um servidor do sistema de sites seja listado como um sistema de sites para um limite, ele deve ser associado como um servidor do sistema de sites a pelo menos um grupo de limites que inclui esse limite. Isso é configurado na guia **Referências** de um grupo de limite.  
 
-6.  选择“边界组”  选项卡以修改此边界的边界组成员身份：  
+6.  Selecione a guia **Grupos de Limites** para modificar a associação a um grupo de limites para esse limite:  
 
-    -   要将此边界添加到一个或多个边界组，请单击“添加” ，选中一个或多个边界组的复选框，然后单击“确定” 。  
+    -   Para adicionar esse limite a um ou mais grupos de limites, clique em **Adicionar**, marque a caixa de seleção para um ou mais grupos de limites e clique em **OK**.  
 
-    -   要从某个边界组中删除此边界，请选择该边界组，然后单击“删除” 。  
+    -   Para remover esse limite de um grupo de limites, selecione o grupo de limites e clique em **Remover**.  
 
-7.  单击“确定”  关闭边界属性并保存配置。  
+7.  Clique em **OK** para fechar as propriedades de limite e salvar a configuração.  
