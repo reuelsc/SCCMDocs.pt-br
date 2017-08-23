@@ -1,109 +1,105 @@
 ---
-title: "Migração de hierarquias de origem | Microsoft Docs"
-description: "Configure uma hierarquia de origem e sites de origem para que você possa migrar dados para seu ambiente do System Center Configuration Manager."
+title: "迁移源层次结构 | Microsoft Docs"
+description: "配置源层次结构和源站点，使用户可以将数据迁移到 System Center Configuration Manager 环境。"
 ms.custom: na
 ms.date: 12/29/2016
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
-ms.technology:
-- configmgr-other
+ms.technology: configmgr-other
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: ccce7cb5-e18f-4337-8adf-2018edca3c00
-caps.latest.revision: 5
-caps.handback.revision: 0
+caps.latest.revision: "5"
+caps.handback.revision: "0"
 author: Brenduns
 ms.author: brenduns
 manager: angrobe
-ms.translationtype: Human Translation
-ms.sourcegitcommit: c5a58d79f81ccdf19ad88dc932e3a52eac2c18ab
 ms.openlocfilehash: 80c43ab93ee5a2de6bf8d7993dfd46f0005d2df8
-ms.contentlocale: pt-br
-ms.lasthandoff: 05/17/2017
-
-
+ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
+ms.translationtype: HT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 08/07/2017
 ---
-# <a name="configure-source-hierarchies-and-source-sites-for-migration-to-system-center-configuration-manager"></a>Configurar hierarquias de origem e sites de origem para migração para o System Center Configuration Manager
+# <a name="configure-source-hierarchies-and-source-sites-for-migration-to-system-center-configuration-manager"></a>配置源层次结构和源站点以迁移到 System Center Configuration Manager
 
-*Aplica-se a: System Center Configuration Manager (Branch Atual)*
+*适用范围：System Center Configuration Manager (Current Branch)*
 
-Para habilitar a migração de dados para o seu ambiente do System Center Configuration Manager, é necessário configurar uma hierarquia de origem do Configuration Manager com suporte e um ou mais sites de origem nessa hierarquia que contenham os dados que você deseja migrar.  
+为了能够将数据迁移到 System Center Configuration Manager 环境，必须配置支持的 Configuration Manager 源层次结构，以及该层次结构中一个或多个包含要迁移的数据的源站点。  
 
 > [!NOTE]  
->  As operações de migração são executadas no site de nível superior na hierarquia de destino. Se você configurar a migração ao usar um console do Configuration Manager que esteja conectado a um site filho primário, você deverá dar tempo para a configuração replicar no site da administração central, iniciar e, em seguida, replicar o status de volta para o site primário ao qual você está conectado.  
+>  迁移的操作在目标层次结构中的顶层站点上运行。 如果在使用连接到主子站点的 Configuration Manager 控制台时配置迁移，必须留出时间让配置复制到管理中心站点，开始运行，然后将状态复制回连接到的主站点。  
 
- Use as informações e os procedimentos nas seções a seguir para especificar a hierarquia de origem e adicionar outros sites de origem. Após concluir esses procedimentos, você poderá criar trabalhos de migração e começar a migrar dados da hierarquia de origem para a hierarquia de destino.  
+ 使用下列部分中的信息和过程来指定源层次结构以及添加其他源站点。 完成这些过程之后，可以创建迁移作业，并开始将数据从源层次结构迁移到目标层次结构。  
 
--   [Especificar uma hierarquia de origem para migração](#BKBM_ConfigSrcHierarchy)  
+-   [为迁移指定源层次结构](#BKBM_ConfigSrcHierarchy)  
 
--   [Identificar sites de origem adicionais da hierarquia de origem](#BKBM_ConfigSrcSites)  
+-   [确定源层次结构的其他源站点](#BKBM_ConfigSrcSites)  
 
-##  <a name="BKBM_ConfigSrcHierarchy"></a> Especificar uma hierarquia de origem para migração  
- Para migrar dados para a sua hierarquia de destino, é necessário especificar uma hierarquia de origem com suporte que tem os dados que você deseja migrar. Por padrão, o site de nível superior dessa hierarquia torna-se um site de origem da hierarquia de origem. Se você migrar de uma hierarquia do Configuration Manager 2007, será possível configurar sites de origem adicionais para migração, depois que os dados forem coletados do site de origem inicial. Se você migrar de uma hierarquia do System Center 2012 Configuration Manager ou do System Center Configuration Manager, não será necessário configurar sites de origem adicionais para migrar dados da hierarquia de origem. Isso se deve ao fato de essas versões do Configuration Manager usarem um banco de dados compartilhado que está disponível no site de nível superior da hierarquia de origem. O banco de dados compartilhado tem todas as informações que você pode migrar.  
+##  <a name="BKBM_ConfigSrcHierarchy"></a>为迁移指定源层次结构  
+ 要将数据迁移到目标层次结构，必须指定支持的源层次结构，其中包含要迁移的数据。 默认情况下，该层次结构的顶层站点成为源层次结构的源站点。 如果从 Configuration Manager 2007 层次结构中迁移，则在从初始源站点中收集了数据后，便可以为迁移配置其他源站点。 如果从 System Center 2012 Configuration Manager 或 System Center Configuration Manager 层次结构中迁移，则不必设置其他源站点以从源层次结构中迁移数据。 这是因为 Configuration Manager 的这些版本使用在源层次结构的顶层站点可用的共享数据库。 共享数据库包含你可以迁移的所有信息。  
 
- Use os procedimentos a seguir para especificar uma hierarquia de origem para migração e para identificar sites de origem adicionais em uma hierarquia do Configuration Manager 2007.  
+ 使用下列过程来为迁移指定源层次结构以及确定 Configuration Manager 2007 层次结构中的其他源站点。  
 
- Execute este procedimento com um console do Configuration Manager conectado à hierarquia de destino:  
+ 使用连接到目标层次结构的 Configuration Manager 控制台运行此过程：  
 
-### <a name="to-configure-a-source-hierarchy"></a>Para configurar uma hierarquia de origem   
+### <a name="to-configure-a-source-hierarchy"></a>配置源层次结构   
 
-1.  No console do Configuration Manager, clique em **Administração**.  
+1.  在 Configuration Manager 控制台中，单击“管理” 。  
 
-2.  No espaço de trabalho **Administração** , expanda **Migração**e clique em **Hierarquia de Origem**.  
+2.  在“管理”  工作区中，展开“迁移” ，然后单击“源层次结构” 。  
 
-3.  Na guia **Início** , no grupo **Migração** , clique em **Especificar Hierarquia de Origem**.  
+3.  在“主页”  选项卡上的“迁移”  组中，单击“指定源层次结构” 。  
 
-4.  Na caixa de diálogo **Especificar Hierarquia de Origem** , para **Hierarquia de Origem**, selecione **Nova Hierarquia de Origem**.  
+4.  在“指定源层次结构”  对话框中，为“源层次结构” 选择“新源层次结构” 。  
 
-5.  Para **Servidor do site do Configuration Manager da camada superior**, insira o nome ou endereço IP do site de nível superior de uma hierarquia de origem com suporte.  
+5.  对于“顶层 Configuration Manager 站点服务器”，输入受支持的源层次结构的顶层站点的名称或 IP 地址。  
 
-6.  Especifique as contas de acesso do site de origem que têm as seguintes permissões:  
+6.  指定具有下列权限的源站点访问帐户：  
 
-    -   Conta do site de origem: Permissão de **Leitura** ao Provedor de SMS para o site de nível superior especificado na hierarquia de origem. Atualizações e compartilhamentos de pontos de distribuição requerem as permissões **Modificar** e **Excluir** para o site na Hierarquia de Origem.
+    -   源站点帐户：对源层次结构中指定顶层站点的 SMS 提供程序的“读取”  权限。 必须拥有对源层次结构中网站的**修改**和**删除**权限，才能执行分发点共享和升级操作。
 
-    -   Conta do banco de dados do site de origem: Permissão de **Leitura** e **Executar** ao banco de dados do SQL Server para o site de nível superior especificado na hierarquia de origem.  
+    -   源站点数据库帐户：对源层次结构中指定顶层站点的 SQL Server 数据库的“读取”  和“执行”  权限。  
 
-     Se você especificar o uso da conta de computador, o Configuration Manager usará a conta de computador do site de nível superior da hierarquia de destino. Para essa opção, certifique-se de que essa conta é membro do grupo de segurança **Distributed COM – Usuários** no domínio em que reside o site de nível superior da hierarquia de origem.  
+     如果指定使用计算机帐户，Configuration Manager 将使用目标层次结构的顶层站点的计算机帐户。 对于此选项，请确保此帐户是源层次结构的顶层站点所在域中“分布式 COM 用户”安全组的成员。  
 
-7.  Para compartilhar pontos de distribuição entre as hierarquias de origem e de destino, marque a caixa de seleção **Habilitar o compartilhamento de ponto de distribuição para o servidor do site de origem** . Se você não habilitar o compartilhamento do ponto de distribuição agora, poderá fazê-lo editando as credenciais do site de origem após a conclusão da coleta de dados.  
+7.  要在源层次结构和目标层次结构之间共享分发点，请选中“为源站点服务器启用分发点共享”  复选框。 如果此时不启用分发点共享，则可在数据收集完成后通过编辑源站点的凭据来启用分发点共享。  
 
-8.  Clique em **OK** para salvar a configuração. Esse procedimento abrirá a caixa de diálogo **Status da Coleta de Dados** , e a coleta de dados será iniciada automaticamente.  
+8.  单击“确定”  保存配置。 这将打开“数据收集状态”  对话框，并且数据收集将自动开始。  
 
-9. Quando a coleta de dados for concluída, clique em **Fechar** para fechar a caixa de diálogo **Status da Coleta de Dados** e concluir a configuração.  
+9. 数据收集完成后，单击“关闭”  以关闭“数据收集状态”  对话框并完成配置。  
 
-##  <a name="BKBM_ConfigSrcSites"></a> Identificar sites de origem adicionais da hierarquia de origem  
- Quando você configura uma hierarquia de origem suportada, o site de nível superior dessa hierarquia é automaticamente configurado como um site de origem e os dados são automaticamente coletados. A próxima ação que você executar dependerá da versão do Configuration Manager executada pela hierarquia de origem:  
+##  <a name="BKBM_ConfigSrcSites"></a>确定源层次结构的其他源站点  
+ 在配置支持的源层次结构时，会将该层次结构的顶层站点自动配置为源站点，并且会自动从该站点中收集数据。 接下来要进行的操作取决于源层次结构运行的 Configuration Manager 版本：  
 
--   Para uma hierarquia de origem do Configuration Manager 2007, é possível iniciar a migração desse site de origem inicial ou configurar sites de origem adicionais na hierarquia de origem, após a conclusão da coleta de dados para o site de origem inicial. Para migrar dados disponíveis apenas em um site filho, configure sites de origem adicionais para uma hierarquia do Configuration Manager 2007. Por exemplo, você poderia configurar sites de origem adicionais para coletar dados sobre o conteúdo que você deseja migrar quando este conteúdo foi criado em um site filho na hierarquia de origem e não está disponível no site de nível superior da hierarquia de origem.  
+-   对于 Configuration Manager 2007 源层次结构，在初始源站点的数据收集完成后，便可以开始从该初始源站点中进行迁移，或者配置源层次结构中的其他源站点。 若要迁移仅从子站点中可用的数据，请为 Configuration Manager 2007 层次结构配置其他源站点。 例如，要迁移的内容是在源层次结构中的子站点上创建，并且在源层次结构的顶层站点上不可用，则可以配置其他源站点来收集有关该内容的数据。  
 
--   Para uma hierarquia de origem do System Center 2012 Configuration Manager ou do System Center Configuration Manager, não é necessário configurar sites de origem adicionais. Isso se deve ao fato de essas versões do Configuration Manager usarem um banco de dados compartilhado que está disponível no site de nível superior da hierarquia de origem. O banco de dados compartilhado tem todas as informações que você pode migrar de todos os sites nessa hierarquia de origem. Isso torna os dados que você pode migrar disponíveis no site de nível superior da hierarquia de origem.  
+-   针对 System Center 2012 Configuration Manager 或 System Center Configuration Manager 源层次结构，则无需配置其他源站点。 这是因为 Configuration Manager 的这些版本使用在源层次结构的顶层站点可用的共享数据库。 共享数据库包含从该源层次结构中的所有站点迁移的所有信息。 这样，你将可以在源层次结构的顶层站点中找到可迁移的数据。  
 
-Quando você configura sites de origem adicionais para uma hierarquia de origem do Configuration Manager 2007, é necessário configurar sites de origem adicionais do nível superior até o nível inferior da hierarquia. É necessário configurar um site pai como um site de origem antes de configurar qualquer um de seus sites filho como sites de origem.  
+在为 Configuration Manager 2007 源层次结构配置其他源站点时，必须在源层次结构中按自上而下的顺序配置其他源站点。 在将父站点的任何子站点配置为源站点之前，你必须将该父站点配置为源站点。  
 
-Use o procedimento a seguir para configurar sites de origem adicionais para hierarquias de origem do Configuration Manager 2007:  
+使用下列过程来为 Configuration Manager 2007 源层次结构配置其他源站点：  
 
-### <a name="to-identify-additional-source-sites-in-the-source-hierarchy"></a>Para identificar sites de origem adicionais na hierarquia de origem 
+### <a name="to-identify-additional-source-sites-in-the-source-hierarchy"></a>确定源层次结构中的其他源站点 
 
-1.  No console do Configuration Manager, clique em **Administração**.  
+1.  在 Configuration Manager 控制台中，单击“管理” 。  
 
-2.  No espaço de trabalho **Administração** , expanda **Migração**e clique em **Hierarquia de Origem**.  
+2.  在“管理”  工作区中，展开“迁移” ，然后单击“源层次结构” 。  
 
-3.  Escolha o site que deseja configurar como um site de origem.  
+3.  选择要配置为源站点的站点。  
 
-4.  Na guia **Início** , no grupo **Site de Origem** , clique em **Configurar**.  
+4.  在“主页”  选项卡上的“源站点”  组中，单击“配置” 。  
 
-5.  Na caixa de diálogo **Credenciais do Site de Origem** , para as contas de acesso do site de origem, especifique as contas que têm as seguintes permissões:  
+5.  在“源站点凭据”  对话框中，为源站点访问帐户指定具有以下权限的帐户：  
 
-    -   Conta do site de origem: Permissão de **Leitura** ao Provedor de SMS para o site de nível superior especificado na hierarquia de origem. Atualizações e compartilhamentos de pontos de distribuição requerem as permissões **Modificar** e **Excluir** para o site na Hierarquia de Origem.  
+    -   源站点帐户：对源层次结构中指定顶层站点的 SMS 提供程序的“读取”  权限。 必须拥有对源层次结构中网站的**修改**和**删除**权限，才能执行分发点共享和升级操作。  
 
-    -   Conta do banco de dados do site de origem: Permissão de **Leitura** e **Executar** ao banco de dados do SQL Server para o site de nível superior especificado na hierarquia de origem.  
+    -   源站点数据库帐户：对源层次结构中指定顶层站点的 SQL Server 数据库的“读取”  和“执行”  权限。  
 
-    Se você especificar o uso da conta de computador, o Configuration Manager usará a conta de computador do site de nível superior da hierarquia de destino. Para essa opção, certifique-se de que essa conta é membro do grupo de segurança **Distributed COM – Usuários** no domínio em que reside o site de nível superior da hierarquia de origem.  
+    如果指定使用计算机帐户，Configuration Manager 将使用目标层次结构的顶层站点的计算机帐户。 对于此选项，请确保此帐户是源层次结构的顶层站点所在域中“分布式 COM 用户”安全组的成员。  
 
-6.  Para compartilhar pontos de distribuição entre as hierarquias de origem e de destino, marque a caixa de seleção **Habilitar o compartilhamento de ponto de distribuição para o servidor do site de origem** . Se você não habilitar o compartilhamento do ponto de distribuição agora, poderá fazê-lo editando as credenciais do site de origem após a conclusão da coleta de dados.  
+6.  要在源层次结构和目标层次结构之间共享分发点，请选中“为源站点服务器启用分发点共享”  复选框。 如果此时不启用分发点共享，则可在数据收集完成后通过编辑源站点的凭据来启用分发点共享。  
 
-7. Clique em **OK** para salvar a configuração. Esse procedimento abrirá a caixa de diálogo **Status da Coleta de Dados** , e a coleta de dados será iniciada automaticamente.  
+7. 单击“确定”  保存配置。 这将打开“数据收集状态”  对话框，并且数据收集将自动开始。  
 
-8.  Quando a coleta de dados for concluída, clique em **Fechar** para finalizar a configuração.  
-
+8.  数据收集完成后，单击“关闭”  完成配置。  

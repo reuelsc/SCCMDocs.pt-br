@@ -1,58 +1,55 @@
 ---
-title: "Afinidade de usuário para dispositivos híbridos gerenciados no Configuration Manager | Microsoft Docs"
-description: "Configurar afinidade de usuário para dispositivos gerenciados no Configuration Manager."
+title: "Configuration Manager 中混合托管设备的用户关联 | Microsoft Docs"
+description: "配置 Configuration Manager 中托管设备的用户关联。"
 ms.custom: na
 ms.date: 03/05/2017
 ms.reviewer: na
 ms.suite: na
 ms.prod: configuration-manager
-ms.technology:
-- configmgr-hybrid
+ms.technology: configmgr-hybrid
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: b5d520a7-e9e5-40ee-91f9-f2684214beb6
-caps.latest.revision: 6
+caps.latest.revision: "6"
 author: mtillman
 ms.author: mtillman
 manager: angrobe
-ms.translationtype: Human Translation
-ms.sourcegitcommit: 55c953f312a9fb31e7276dde2fdd59f8183b4e4d
-ms.openlocfilehash: 74dcc0f4e680893db804956615248b7e1230d2b5
-ms.contentlocale: pt-br
-ms.lasthandoff: 12/16/2016
-
+ms.openlocfilehash: d039792a88b9e7704f37718a88f841dd9216d1b1
+ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
+ms.translationtype: HT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 08/07/2017
 ---
-# <a name="user-affinity-for-hybrid-managed-devices-in-configuration-manager"></a>Afinidade de usuário para dispositivos híbridos gerenciados no Configuration Manager
+# <a name="user-affinity-for-hybrid-managed-devices-in-configuration-manager"></a>Configuration Manager 中混合托管设备的用户关联
 
-*Aplica-se a: System Center Configuration Manager (Branch Atual)*
+*适用范围：System Center Configuration Manager (Current Branch)*
 
-Ao configurar perfis para dispositivos corporativos, o administrador pode especificar se os dispositivos gerenciados podem ter *afinidade de usuário*, que identifica um usuário específico com o dispositivo.  
+配置公司拥有的设备的配置文件时，管理员可以指定托管设备是否可以具有“用户关联”（用于标识设备的特定用户）。  
 
-##  <a name="BKMK_iOSCP"></a> Dispositivos gerenciados com afinidade de usuário  
- Dispositivos configurados com **user affinity** podem instalar e executar o aplicativo de Portal da Empresa para baixar aplicativos e gerenciar dispositivos. Assim que os usuários receberem seus dispositivos, eles deverão concluir várias etapas adicionais a fim de completar o Assistente de Configuração e instalar o aplicativo de Portal da Empresa.  
+##  <a name="BKMK_iOSCP"></a>具有用户关联的托管设备  
+ 配置了“用户关联”的设备可以安装和运行公司门户应用，以下载应用和管理设备。 用户收到设备后，必须完成一些其他步骤，以便完成设置助理并安装公司门户应用。  
 
-#### <a name="how-to-enroll-ios-devices-with-user-affinity"></a>Como registrar dispositivos iOS com afinidade de usuário  
+#### <a name="how-to-enroll-ios-devices-with-user-affinity"></a>如何注册具有用户关联的 iOS 设备  
 
-1.  Quando os usuários ligarem seus dispositivos pela primeira vez, receberão uma solicitação para concluir o Assistente de Configuração. O perfil de registro pode especificar a solicitação de credenciais durante a instalação. Os usuários devem usar as credenciais (ou seja, o nome pessoal exclusivo ou UPN) associadas à assinatura do Intune.  
+1.  用户首次打开新设备时，系统会提示其完成设置助理。 注册配置文件可以指定在安装过程中提示输入凭据。 用户必须使用与其在 Intune 中的订阅相关联的凭据（即唯一的个人名称或 UPN）。  
 
-2.  Durante a configuração, será solicitado que os usuários informem uma ID Apple. É necessário fornecer uma ID Apple para que o dispositivo seja instalado no Portal da Empresa. Os usuários também podem fornecer uma ID Apple depois da conclusão na instalação nas **Configuração** do iOS.  
+2.  安装过程中，系统还可能提示用户输入 Apple ID。 必须提供 Apple ID 设备才能安装公司门户。 用户也可以在安装完成后在 iOS“设置”菜单中提供 Apple ID。  
 
-3.  Após a conclusão da configuração, o dispositivo iOS deve instalar o aplicativo Portal da Empresa por meio da App Store, por exemplo, [aplicativo Portal da Empresa](https://itunes.apple.com/us/app/id719171358).  
+3.  安装完成后，iOS 设备必须从应用商店安装公司门户应用，例如[公司门户应用](https://itunes.apple.com/us/app/id719171358)。  
 
-4.  Agora, o usuário pode fazer logon no Portal da Empresa com o UPN usado durante a configuração do dispositivo.  
+4.  现在用户可以使用在设置设备时使用的 UPN 登录公司门户。  
 
-5.  Após o logon, o usuário recebe uma solicitação para registrar seu dispositivo. A primeira etapa é **Identificar o dispositivo**. O aplicativo apresenta uma lista de dispositivos iOS que foram registrados pela empresa e atribuídos à conta do Intune do usuário final. Escolha o dispositivo correspondente.  
+5.  登录后，系统会提示用户注册其设备。 第一步是“识别其设备”。 应用会提供一份已向企业注册并已分配到最终用户的 Intune 帐户的 iOS 设备列表。 选择匹配的设备。  
 
-     Se o dispositivo ainda não tiver sido registrado pela empresa, selecione "novo dispositivo" para continuar com o fluxo de registro padrão.  
+     如果该设备还不是企业拥有的设备，选择“新设备”以继续标准注册流程。  
 
-6.  Na próxima tela, o usuário deverá confirmar o número de série do novo dispositivo. O usuário pode tocar no link "confirmar o Número de Série" para iniciar o aplicativo de Configurações para verificar o número de série. Em seguida, o usuário deve inserir os quatro últimos caracteres do número de série no aplicativo Portal da Empresa.  
+6.  在下一个屏幕上，用户必须确认新设备的序列。 用户可以点击“确认序列号”链接以启动设置应用程序来验证序列号。 然后用户必须将序列号的最后 4 个字符输入到公司门户应用中。  
 
-     Essa etapa verifica se o dispositivo é o dispositivo corporativo registrado no Intune. Se o número de série no dispositivo não corresponder, o dispositivo incorreto terá sido selecionado. Volte para a tela anterior e selecione um dispositivo diferente.  
+     此步骤验证该设备是否是在 Intune 中注册的企业设备。 如果设备上的序列号不匹配，则选择了错误的设备。 返回到上一屏幕并选择其他设备。  
 
-7.  Após a verificação do número de série, o aplicativo Portal da Empresa redirecionará para o site do Portal da Empresa a fim de finalizar o registro e solicitará que o usuário retorne ao aplicativo.  
+7.  验证序列号后，公司门户应用将重定向到公司门户网站以完成注册，然后会提示用户返回到应用。  
 
-8.  O registro está concluído. Agora você pode usar este dispositivo com o conjunto completo de recursos.  
+8.  注册现已完成。 现在你可以使用此设备的完整功能集。  
 
-##  <a name="BKMK_noUA"></a> Dispositivos gerenciados sem afinidade de usuário  
- Dispositivos configurados com **no user affinity** não têm suporte no Portal da Empresa e não devem instalar o aplicativo. O Portal da Empresa se destina a usuários com credenciais corporativas e que precisam de acesso aos recursos corporativos personalizados (por exemplo, email). O dispositivo registrado sem **afinidade do usuário** não deve ter uma entrada de usuário dedicada. Quiosque, ponto de venda (PDV) ou dispositivos de utilitário compartilhados são casos de uso comuns de dispositivos registrados sem afinidade de usuário. Se a afinidade de usuário for necessária, certifique-se de que o perfil de registro do dispositivo tenha a opção **Afinidade de Usuário** selecionada antes de registrar o dispositivo. Para alterar o status de afinidade em um dispositivo, você deverá desativar e registrar novamente o dispositivo.
-
+##  <a name="BKMK_noUA"></a>不具有用户关联的托管设备  
+ 配置为“无用户关联”的设备不支持公司门户，因此不能安装该应用。 公司门户适用于具有企业凭据的用户，并且需要访问个性化企业资源（例如邮件）的权限。 注册为“无用户关联”的设备并不具有专用的用户登录。 展台、销售点 (POS) 或共享实用程序设备是注册为“无用户关联”的设备的典型用例。 如果需要用户关联，注册设备前请确保设备的注册配置文件选中“用户关联”。 若要更改设备的关联状态，必须停用并重新注册设备。

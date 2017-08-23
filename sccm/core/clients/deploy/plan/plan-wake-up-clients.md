@@ -1,101 +1,98 @@
 ---
-title: Ativando clientes | Microsoft Docs
-description: "Planeje a ativação de clientes no System Center Configuration Manager."
+title: "唤醒客户端 | Microsoft Docs"
+description: "计划如何在 System Center Configuration Manager 中唤醒客户端。"
 ms.custom: na
 ms.date: 04/23/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
-ms.technology:
-- configmgr-client
+ms.technology: configmgr-client
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 52ee82b2-0b91-4829-89df-80a6abc0e63a
-caps.latest.revision: 6
+caps.latest.revision: "6"
 author: robstackmsft
 ms.author: robstack
 manager: angrobe
-ms.translationtype: Human Translation
-ms.sourcegitcommit: 55c953f312a9fb31e7276dde2fdd59f8183b4e4d
-ms.openlocfilehash: 12ee719a6a8b072fab27d083aeb2b8439484058d
-ms.contentlocale: pt-br
-ms.lasthandoff: 12/16/2016
-
+ms.openlocfilehash: 20f595a5b0634a627dff9ba6feeb848754615f2c
+ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
+ms.translationtype: HT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 08/07/2017
 ---
-# <a name="plan-how-to-wake-up-clients-in-system-center-configuration-manager"></a>Planejar a ativação de clientes no System Center Configuration Manager
+# <a name="plan-how-to-wake-up-clients-in-system-center-configuration-manager"></a>计划如何在 System Center Configuration Manager 中唤醒客户端
 
-*Aplica-se a: System Center Configuration Manager (Branch Atual)*
+*适用范围：System Center Configuration Manager (Current Branch)*
 
- O Configuration Manager dá suporte a duas tecnologias LAN (rede local) que ativam os computadores no modo de suspensão quando você deseja instalar o software necessário, como atualizações de software e aplicativos: pacotes de ativação tradicionais e comandos de ativação AMT.  
+ Configuration Manager 支持两项局域网 (LAN) 唤醒技术，以在你要安装必需的软件（如软件更新和应用程序）时唤醒处于睡眠模式下的计算机：传统唤醒数据包和 AMT 开机命令。  
 
-Você pode completar o método tradicional do pacote de ativação usando as configurações de proxy de ativação do cliente. Proxy de ativação usa um protocolo ponto a ponto e computadores selecionados para verificar se outros computadores na sub-rede estão ativos e ativá-los, se necessário. Quando o site está configurado para Wake on LAN e os clientes são configurados para proxy de ativação, o processo funciona da seguinte forma:  
+可以使用唤醒代理客户端设置来对传统唤醒数据包方法进行补充。 唤醒代理使用对等协议和选定的计算机来检查子网上的其他计算机是否已唤醒并在必要时唤醒这些计算机。 在为 LAN 唤醒配置站点并为唤醒代理配置客户端后，过程将按以下方式工作：  
 
-1.  Computadores com o cliente do Configuration Manager instalado e que não estão em suspensão na sub-rede verificam se outros computadores na sub-rede estão ativos. Eles fazem isso enviando uns aos outros um comando ping do TCP/IP a cada 5 segundos.  
+1.  安装有 Configuration Manager 的客户端并且未在子网上休眠的计算机将检查子网上的其他计算机是否已唤醒。 它们通过每隔 5 秒就相互发送 TCP/IP ping 命令来完成此操作。  
 
-2.  Se não houver resposta de outros computadores, supõe-se que estarão em modo de suspensão. Os computadores ativos tornam-se *computadores gerenciadores* da sub-rede.  
+2.  如果其他计算机没有响应，则假定它们已休眠。 已唤醒的计算机将成为子网的“管理器计算机”。  
 
-     É possível que um computador não responda por outro motivo que não seja a suspensão (por exemplo, está desligado, removido da rede, ou a configuração de proxy de ativação do cliente não é mais aplicada), por isso recebem um pacote de ativação todos os dias às 14h. hora local. Computadores que não respondem não serão mais considerados como em suspensão e não serão despertados pelo proxy de ativação.  
+     可能由于计算机休眠以外的原因（例如，计算机已关闭、已从网络中移除或者不再应用代理唤醒客户端设置）而导致计算机可能无法响应，因此将于当地时间每天下午两点向计算机发送唤醒数据包 。 未响应的计算机将不会被认为在休眠并且唤醒代理不会将其唤醒。  
 
-     Para oferecer suporte ao proxy de ativação, pelo menos três computadores devem estar ativos em cada sub-rede. Para conseguir isso, três computadores, de forma não determinista, são escolhidos para serem *computadores guardiões* da sub-rede. Isso significa que permanecem ativos, apesar de qualquer política de ativação configurada para suspensão ou hibernação após um período de inatividade. Computadores guardiões respeitam comandos de desligamento ou reinicialização, por exemplo, como resultado de tarefas de manutenção. Se isso acontecer, os computadores guardiões restantes ativarão outro computador na sub-rede, de modo que a sub-rede continuará a ter três computadores guardiões.  
+     若要支持唤醒代理，必须为每个子网至少唤醒三台计算机。 若要实现此目的，必须为子网随机选择三台计算机作为“守护计算机”。 这意味着尽管任何配置的电源策略在一段不活动时间后处于睡眠或休眠状态，它们也将保持唤醒状态。 例如为了维护任务，守护计算机将遵守关闭或重启命令。 如果发生此事，则其余守护计算机将唤醒子网上的另一计算机，从而子网将继续拥有三台守护计算机。  
 
-3.  Computadores gerenciadores solicitam comutador de rede para redirecionar tráfego de rede dos computadores em suspensão para si mesmos.  
+3.  管理器计算机将要求网络交换机为睡眠计算机将网络流量重定向到自身。  
 
-     O redirecionamento é alcançado pela transmissão, por parte do computador gerenciador, de uma estrutura de Ethernet que usa o endereço MAC do computador em suspensão como endereço de origem. Isso faz com que o comutador de rede se comporte como se o computador em suspensão tivesse se movido para a mesma porta do computador gerenciador. O computador gerenciador também envia pacotes ARP para os computadores em suspensão, para manter a entrada como nova no cache ARP. O computador gerenciador também responderá a solicitações de ARP em nome do computador em suspensão e responderá com o endereço MAC do computador em suspensão.  
+     此重定向是通过管理器计算机对使用睡眠计算机的 MAC 地址作为源地址的以太网帧进行广播实现的。 这使网络交换机按睡眠计算机已移至管理器计算机所在的同一端口来处理。 管理器计算机还会发送 ARP 包，以使睡眠计算机将 ARP 缓存中的条目保持最新。 管理器计算机还将代表睡眠计算机响应 ARP 请求，并使用睡眠计算机的 MAC 地址进行答复。  
 
     > [!WARNING]  
-    >  Durante esse processo, o mapeamento IP-MAC para o computador em suspensão permanece o mesmo. O proxy de ativação funciona informando ao comutador de rede que um adaptador de rede diferente está usando a porta registrada por outro adaptador de rede. No entanto, esse comportamento é conhecido como flap de MAC e é incomum em operação de rede padrão. Algumas ferramentas de monitoramento de rede procuram esse comportamento e podem supor que algo está errado. Consequentemente, essas ferramentas de monitoramento podem gerar alertas ou fechar portas quando você usa o proxy de ativação.  
+    >  在此过程中，睡眠计算机的 IP 至 MAC 映射将保持不变。 唤醒代理的工作方式是将其他网络适配器正在使用另一网络适配器所注册端口的情况通知网络交换机。 但是，这种称作 MAC 漂移的行为在标准网络操作中并不常见。 有些网络监控工具会查找此行为并可假定存在错误。 因此，这些监控工具可在你使用唤醒代理时生成警报或关闭端口。  
     >   
-    >  Não use proxy de ativação se sua rede de serviços e ferramentas de monitoramento não permitirem flaps de MAC.  
+    >  如果你的网络监控工具和服务不允许 MAC 漂移，则请勿使用唤醒代理。  
 
-4.  Quando um computador gerenciador vê uma nova solicitação de conexão TCP para um computador suspenso e a solicitação é para uma porta que esse computador usava como escuta antes de entrar em suspensão, o computador gerenciador envia um pacote de ativação para o computador suspenso e depois interrompe o redirecionamento de tráfego para esse computador.  
+4.  当管理器计算机发现针对睡眠计算机的新 TCP 连接请求，并且该请求发往睡眠计算机在睡眠前侦听的端口，则管理器计算机会向睡眠计算机发送唤醒数据包，然后阻止为此计算机重定向流量。  
 
-5.  O computador em suspensão recebe o pacote e é ativado. O computador de envio automaticamente tenta novamente a conexão e desta vez, o computador está ativo e pode responder.  
+5.  睡眠计算机会收到唤醒数据包并唤醒。 发送计算机将自动重试连接，并且计算机这次会唤醒并可以响应。  
 
- Proxy de ativação tem os seguintes pré-requisitos e limitações:  
+ 唤醒代理具有下列先决条件和限制：  
 
 > [!IMPORTANT]  
->  Se você dispõe de uma equipe separada responsável pela infraestrutura e pelos serviços de rede, notifique e inclua essa equipe durante o período de avaliação e teste. Por exemplo, em uma rede que usa o controle de acesso de rede 802.1X, o proxy de ativação não funciona e pode interromper o serviço de rede. Além disso, o proxy de ativação pode fazer com que algumas ferramentas de monitoramento de rede gerem alertas quando detectam o tráfego para ativar outros computadores.  
+>  如果由独立团队负责网络基础结构和网络服务，则在评估和测试期间通知此团队并将其包括进来。 例如，在使用 802.1X 网络访问控制的网络上，唤醒代理将无法工作，而且可能会破坏网络服务。 此外，唤醒代理可能会导致某些网络监视工具在检测到与唤醒其他计算机相关的流量时生成警报。  
 
--   Os clientes com suporte são Windows 7, 8 do Windows, Windows Server 2008 R2, Windows Server 2012.  
+-   支持的客户端是 Windows 7、Windows 8、Windows Server 2008 R2 和 Windows Server 2012。  
 
--   Não há suporte para sistemas operacionais convidados executados em uma máquina virtual.  
+-   不支持在虚拟机上运行来宾操作系统。  
 
--   Os clientes devem ser habilitados para proxy de ativação usando as configurações do cliente. Embora a operação de proxy de ativação não dependa de inventário de hardware, os clientes não informam a instalação do proxy de ativação a menos que estejam habilitados para inventário de hardware e tenham enviado pelo menos um inventário de hardware.  
+-   必须使用客户端设置为唤醒代理启用客户端。 尽管唤醒代理操作并不依赖硬件清单，但是除非已针对硬件清单将它们启用并在至少一个硬件清单中提交，否则客户端不会报告唤醒代理服务的安装。  
 
--   Adaptadores de rede (e possivelmente o BIOS) devem ser habilitados e configurados para pacotes de ativação. Se o adaptador de rede não estiver configurado para pacotes de ativação ou se essa configuração estiver desabilitada, o Configuration Manager vai configurá-la e habilitá-la automaticamente em um computador ao receber a configuração do cliente para habilitar o proxy de ativação.  
+-   对于唤醒数据包，必须启用并配置网络适配器（并且还有可能要启用 BIOS）。 如果未为唤醒数据包配置网络适配器或者此设置已禁用，则 Configuration Manager 将在收到客户端设置时为计算机自动配置并启用该设置，以启用唤醒代理。  
 
--   Se um computador tiver mais de um adaptador de rede, não será possível configurar qual adaptador usar para o proxy de ativação; a escolha é não determinista. No entanto, o adaptador escolhido é registrado no arquivo SleepAgent_<DOMAIN\>@SYSTEM_0.log.  
+-   如果计算机具有多个网络适配器，则你无法配置即将用于唤醒代理的适配器；选择是不确定的。 不过，所选的适配器记录在 SleepAgent_<DOMAIN\>@SYSTEM_0.log 文件中。  
 
--   A rede deve permitir solicitações de eco ICMP (pelo menos dentro da sub-rede). Não é possível configurar o intervalo de 5 segundos usado para enviar os comandos de ping ICMP.  
+-   网络必须允许 ICMP 回显请求（至少在子网中）。 你无法将用于发送 ICMP ping 命令的间隔配置为 5 秒。  
 
--   A comunicação é descriptografada e não autenticada e não há suporte para IPsec.  
+-   通信未加密并且未经过身份验证，不支持 IPsec。  
 
--   Não há suporte para as seguintes configurações de rede:  
+-   不支持下列网络配置：  
 
-    -   802.1 X com autenticação de porta  
+    -   具有端口身份验证的 802.1X  
 
-    -   Redes sem fio  
+    -   无线网络  
 
-    -   Comutadores de rede que conectam endereços MAC a portas específicas  
+    -   将 MAC 地址绑定到特定端口的网络交换机  
 
-    -   Redes somente IPv6  
+    -   仅适用于 IPv6 的网络  
 
-    -   Durações de concessão de DHCP inferior a 24 horas  
+    -   DHCP 租赁持续时间不到 24 小时  
 
-Se você desejar ativar computadores para instalação de software agendada, deverá configurar todos os sites primários para usar pacotes de ativação.  
+如果希望唤醒计算机以执行计划的软件安装，则必须配置每个主站点以使用唤醒数据包。  
 
- Para usar proxy de ativação, você deve implantar as configurações de cliente do proxy de ativação do Gerenciamento de Energia, além de configurar o site primário.  
+ 若要使用唤醒代理，除了配置主站点之外，还必须部署电源管理唤醒代理客户端设置。  
 
-Você também deve decidir se pretende usar pacotes de difusão para sub-rede, ou pacotes unicast, e que número da porta UDP usar. Por padrão, pacotes de ativação profissionais são transmitidos usando a porta UDP 9, mas para ajudar a aumentar a segurança, você pode selecionar uma porta alternativa para o site se essa porta alternativa tiver suporte para roteadores e firewalls intermediários.  
+还必须决定是使用子网导向型广播包还是单播包以及要使用什么 UDP 端口号。 默认情况下，传统唤醒数据包通过 UDP 端口 9 传输，但为便于提高安全级别，你可以为站点选择备用端口（如果干预路由器和防火墙支持该备用端口）。  
 
-### <a name="choose-between-unicast-and-subnet-directed-broadcast-for-wake-on-lan"></a>Escolha entre as transmissões unicast e de sub-rede para Wake on LAN  
- Se você escolher ativar computadores enviando pacotes de ativação tradicionais, deve decidir se quer transmitir pacotes unicast ou pacotes de transmissão direcionados à sub-rede. Se você utilizar proxy de ativação, deverá usar pacotes unicast. Caso contrário, use a tabela a seguir para ajudá-lo a determinar qual método de transmissão escolher.  
+### <a name="choose-between-unicast-and-subnet-directed-broadcast-for-wake-on-lan"></a>为 LAN 唤醒在单播和子网导向型广播之间选择  
+ 如果选择通过发送传统的唤醒数据包来唤醒计算机，则你必须决定是传输单播包，还是传输子网导向型广播包。 如果使用唤醒代理，则必须使用单播包。 或者，可使用下表来帮助你确定要选择的传输方法。  
 
-|Método de transmissão|Vantagem|Desvantagem|  
+|传输方法|优点|缺点|  
 |-------------------------|---------------|------------------|  
-|Unicast|Solução mais segura do que transmissões direcionadas a sub-rede porque o pacote é enviado diretamente a um computador, em vez de a todos os computadores de uma sub-rede.<br /><br /> Pode não ser necessário reconfigurar os roteadores (talvez seja necessário configurar o cache do ARP).<br /><br /> Consome menos largura de banda de rede de transmissões de difusão direcionadas à sub-rede.<br /><br /> Compatível com IPv4 e IPv6.|Pacotes de ativação não encontram computadores de destino que alteraram seu endereço de sub-rede após o último agendamento de inventário de hardware.<br /><br /> Talvez seja necessário configurar os comutadores para encaminhar pacotes UDP.<br /><br /> Alguns adaptadores de rede podem não responder a pacotes de ativação em todos os estados de suspensão quando usam unicast como o método de transmissão.|  
-|Transmissão direcionada à sub-rede|Taxa de sucesso superior do que unicast se houver computadores que mudam frequentemente de endereço IP na mesma sub-rede.<br /><br /> Nenhuma reconfiguração de comutador é necessária.<br /><br /> Alta taxa de compatibilidade com adaptadores de computador para todos os estados de suspensão, porque as transmissões direcionadas à sub-rede eram o método de transmissão original para o envio de pacotes de ativação.|Solução menos segura do que usar unicast porque um invasor pode enviar fluxos contínuos de solicitações de eco ICMP por meio de um endereço de origem falso para o endereço de transmissão direcionado. Isso faz com que todos os hosts respondam a esse endereço de origem. Quando os roteadores são configurados para permitir transmissões direcionadas à sub-rede, a configuração adicional é recomendada por razões de segurança:<br /><br /> -   Configure os roteadores para permitir somente transmissões direcionadas a IP do servidor do site do Configuration Manager usando um número da porta UDP especificado.<br />-   Configure o Configuration Manager para usar o número da porta não padrão especificado.<br /><br /> Pode ser necessário reconfigurar todos os roteadores intermediários para habilitar transmissões direcionadas a sub-redes.<br /><br /> Consome mais largura de banda de rede que as transmissões em unicast.<br /><br /> Compatível somente com IPv4. Não há suporte para IPv6.|  
+|单播|此解决方案比子网导向型广播更为安全，因为数据包被直接发送到某台计算机而非子网上的所有计算机。<br /><br /> 可能不需要重新配置路由器（你可能必须配置 ARP 高速缓存）。<br /><br /> 比子网导向型广播传输消耗更少的网络带宽。<br /><br /> 支持 IPv4 和 IPv6。|唤醒数据包不会查找在最后硬件清单计划之后更改了子网地址的目标计算机。<br /><br /> 可能必须配置交换机以转发 UDP 包。<br /><br /> 当使用单播作为传输方法时，某些网络适配器可能均会处于睡眠状态而不会响应唤醒数据包。|  
+|子网导向型广播|如果你在同一子网上具有频繁更改其 IP 地址的计算机，则此解决方案比单播的成功率更高。<br /><br /> 无需进行交换机重新配置。<br /><br /> 对于所有睡眠状态，与计算机适配器具有较高的符合率，因为子网导向型广播是用于发送唤醒数据包的原始传输方法。|此解决方案没有使用单播安全，因为攻击者可能会从伪造的源地址向定向广播地址发送 ICMP 回显请求持续流。 这导致所有主机均回复该源地址。 如果路由器已配置为允许子网导向型广播，则出于安全原因，建议使用附加配置：<br /><br /> -   通过使用指定的 UDP 端口号，将路由器配置为只允许来自 Configuration Manager 站点服务器的 IP 导向型广播。<br />-   将 Configuration Manager 配置为使用指定的非默认端口号。<br /><br /> 可能需要重新配置所有干预路由器以启用子网定向广播。<br /><br /> 比单播传输消耗更多网络带宽。<br /><br /> 仅支持 IPv4；不支持 IPv6。|  
 
 > [!WARNING]  
->  Há riscos de segurança associados com transmissões direcionadas a sub-redes: Um invasor pode enviar fluxos contínuos de eco ICMP (Internet Control Message Protocol) de um endereço de origem falsificado para o endereço de transmissão direcionado, o que faz com que todos os hosts respondam àquele endereço de origem. Esse tipo de ataque de negação de serviço é comumente chamado de ataque smurf e é geralmente mitigado não permitindo transmissões direcionadas a sub-redes.
-
+>  与子网定向广播相关的安全风险：攻击者可能会从伪造的源地址向定向广播地址发送 Internet 控制消息协议 (ICMP) 回显请求连续流，这可能会使主机回复该源地址。 此类型的拒绝服务攻击通常叫做 Smurf 攻击，通常可以通过不启用子网定向广播得到缓解。

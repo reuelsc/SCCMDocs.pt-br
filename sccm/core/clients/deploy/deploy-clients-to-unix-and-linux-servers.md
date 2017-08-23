@@ -1,243 +1,239 @@
 ---
-title: Implantar clientes UNIX/Linux | Microsoft Docs
-description: Saiba como implantar clientes em um servidor UNIX ou Linux no System Center Configuration Manager.
+title: "部署 UNIX/Linux 客户端 | Microsoft Docs"
+description: "了解如何在 System Center Configuration Manager 中将客户端部署到 UNIX 或 Linux 服务器。"
 ms.custom: na
 ms.date: 04/23/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
-ms.technology:
-- configmgr-client
+ms.technology: configmgr-client
 ms.tgt_pltfrm: na
 ms.topic: get-started-article
 ms.assetid: 15a4e323-9f42-4fea-bb14-f2b905d1f77c
-caps.latest.revision: 9
+caps.latest.revision: "9"
 author: robstackmsft
 ms.author: robstack
 manager: angrobe
-ms.translationtype: Human Translation
-ms.sourcegitcommit: dab5da5a4b5dfb3606a8a6bd0c70a0b21923fff9
-ms.openlocfilehash: b63367dbaacde60a364e9da6afca65383b635840
-ms.contentlocale: pt-br
-ms.lasthandoff: 03/27/2017
-
-
+ms.openlocfilehash: d61d53daa5ef3d9c986cba8791d4471fea94d29d
+ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
+ms.translationtype: HT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 08/07/2017
 ---
-# <a name="how-to-deploy-clients-to-unix-and-linux-servers-in-system-center-configuration-manager"></a>Como implantar clientes para servidores UNIX e Linux no System Center Configuration Manager
+# <a name="how-to-deploy-clients-to-unix-and-linux-servers-in-system-center-configuration-manager"></a>在 System Center Configuration Manager 中如何将客户端部署到 UNIX 和 Linux 服务器
 
-*Aplica-se a: System Center Configuration Manager (Branch Atual)*
+*适用范围：System Center Configuration Manager (Current Branch)*
 
-Antes de poder gerenciar um servidor Linux ou UNIX com o System Center Configuration Manager, é necessário instalar o cliente do Configuration Manager para Linux e UNIX em cada servidor Linux ou UNIX. Você pode executar a instalação do cliente manualmente em cada computador ou usar um script de shell que instala o cliente remotamente. O Configuration Manager não dá suporte para o uso de instalação do cliente por push para servidores Linux ou UNIX. Como opção, você pode configurar um Runbook para o System Center Orchestrator automatizar a instalação do cliente no servidor Linux ou UNIX.  
+在可以用 System Center Configuration Manager 管理 Linux 或 UNIX 服务器之前，你必须在每个 Linux 或 UNIX 服务器上安装适用于 Linux 和 UNIX 的 Configuration Manager 客户端。 可以在每台计算机上手动完成客户端安装，或远程使用安装客户端的 shell 脚本。 Configuration Manager 不支持对 Linux 或 UNIX 服务器使用客户端请求安装。 （可选）你可以为 System Center orchestrator 配置 Runbook 来自动执行 Linux 或 UNIX 服务器上的客户端安装。  
 
- Independentemente do método de instalação que você usar, o processo de instalação requer o uso de um script chamado **install** para gerenciar o processo de instalação. Esse script será incluído quando você baixar o cliente para Linux e UNIX.  
+ 无论你使用何种安装方法，在安装过程要求使用名为 **install** 的脚本来管理安装过程。 此脚本时，包含您下载适用于 Linux 和 UNIX 的客户端。  
 
- O script de instalação para o cliente do Configuration Manager para Linux e UNIX dá suporte a propriedades de linha de comando. Algumas propriedades de linha de comando são necessárias, enquanto outros são opcionais. Por exemplo, quando você instala o cliente, você deve especificar um ponto de gerenciamento do site que é usado pelo servidor Linux ou UNIX para o contato inicial com o site. Para obter uma lista completa das propriedades de linha de comando, consulte [Propriedades de linha de comando para instalar o cliente em servidores Linux e UNIX](#BKMK_CmdLineInstallLnUClient).  
+ 安装脚本 Configuration Manager 适用于 Linux 和 UNIX 的客户端支持的命令行属性。 某些命令行属性是必需的其他一些是可选。 例如，在安装客户端时，您必须指定由其与该站点的初始联系 Linux 或 UNIX 服务器的站点中的管理点。 有关命令行属性的完整列表，请参阅 [在 Linux 和 UNIX 服务器上安装客户端的命令行属性](#BKMK_CmdLineInstallLnUClient)。  
 
- Depois de instalar o cliente, é possível especificar as Configurações do Cliente no console do Configuration Manager para configurar o agente cliente da mesma maneira que faria com clientes baseados em Windows. Para obter mais informações, consulte  [Client settings for Linux and UNIX servers](../../../core/clients/manage/manage-clients-for-linux-and-unix-servers.md#BKMK_ClientSettingsforLnU).  
+ 安装客户端后，在 Configuration Manager 控制台指定客户端设置，从而用和配置基于 Windows 的客户端相同的方式配置客户端代理。 有关详细信息，请参阅  [Client settings for Linux and UNIX servers](../../../core/clients/manage/manage-clients-for-linux-and-unix-servers.md#BKMK_ClientSettingsforLnU)。  
 
-##  <a name="BKMK_AboutInstallPackages"></a> Sobre pacotes de instalação do cliente e o agente Universal  
- Para instalar o cliente para Linux e UNIX em uma plataforma específica, você deve usar o pacote de instalação do cliente aplicável para o computador no qual você instala o cliente. Pacotes de instalação do cliente aplicáveis são incluídos como parte do download de cada cliente no [Centro de Download da Microsoft](http://go.microsoft.com/fwlink/?LinkID=525184). Além dos pacotes de instalação do cliente, o download do cliente inclui o script **install** que gerencia a instalação do cliente em cada computador.  
+##  <a name="BKMK_AboutInstallPackages"></a> 有关客户端安装包和通用代理  
+ 若要在特定平台上安装适用于 Linux 和 UNIX 的客户端，你必须对要安装客户端的计算机使用合适的客户端安装包。 合适的客户端安装包是从 [Microsoft 下载中心](http://go.microsoft.com/fwlink/?LinkID=525184)下载的每个客户端的一部分。 除了客户端安装包，客户端下载内容还包括在每台计算机上管理客户端安装的 **install** 脚本。  
 
- Quando você instala um cliente, você pode usar as mesmas propriedades de processo e de linha de comando, independentemente do pacote de instalação de cliente que você usar.  
+ 在安装客户端时，可以使用相同的过程和命令行属性而不考虑您使用的客户端安装包。  
 
- Para obter informações sobre os sistemas operacionais, as plataformas e os pacotes de instalação do cliente aos quais cada versão do cliente do Configuration Manager para Linux e UNIX dá suporte, consulte [Servidores Linux e UNIX](/sccm/core/plan-design/configs/supported-operating-systems-for-clients-and-devices#linux-and-unix-servers).  
+ 有关适用于 Linux 和 UNIX 的每个版本的 Configuration Manager 客户端支持的操作系统、平台和客户端安装包的详细信息，请参阅 [Linux 和 UNIX 服务器](/sccm/core/plan-design/configs/supported-operating-systems-for-clients-and-devices#linux-and-unix-servers)。  
 
-##  <a name="BKMK_InstallLnUClient"></a> Instalar o cliente em servidores Linux e UNIX  
- Para instalar o cliente para Linux e UNIX, você pode executar um script em cada computador Linux ou UNIX. O script é nomeado **instalar** e oferece suporte às propriedades de linha de comando que modificam o comportamento da instalação e referenciam o pacote de instalação do cliente. O pacote de instalação de cliente e script de instalação deve estar localizado no cliente. O pacote de instalação de cliente contém os arquivos do cliente do Configuration Manager para um sistema operacional e para uma plataforma Linux ou UNIX específica.
-Cada pacote de instalação de cliente contém todos os arquivos necessários para concluir a instalação do cliente e ao contrário dos computadores baseados no Windows, baixe arquivos adicionais de um ponto de gerenciamento ou em outro local de origem.  
+##  <a name="BKMK_InstallLnUClient"></a> 在 Linux 和 UNIX 服务器上安装客户端  
+ 若要安装适用于 Linux 和 UNIX 的客户端，请在每个 Linux 或 UNIX 的计算机上运行脚本。 该脚本命名为 **安装** ，同时支持命令行属性，修改安装行为和引用客户端安装包。 安装脚本和客户端安装包必须位于客户端上。 客户端安装程序包中包含针对特定 Linux 或 UNIX 的操作系统和平台的 Configuration Manager 客户端文件。
+每个客户端安装包包含所有必需的文件以完成客户端安装并与不同的是基于 Windows 的计算机，不会下载其他文件从管理点或其他源位置。  
 
- Depois de instalar o cliente do Configuration Manager para Linux e UNIX, não é necessário reinicializar o computador. Assim que a instalação do software for concluída, o cliente está operacional. Se você reinicializar o computador, o cliente do Configuration Manager reiniciará automaticamente.  
+ 安装适用于 Linux 和 UNIX 的 Configuration Manager 客户端后，你不需要重新启动计算机。 一旦软件安装完成后，客户端所操作。 如果重新启动计算机，Configuration Manager 客户端将自动重新启动。  
 
- O cliente instalado é executado com credenciais raiz. São necessárias credenciais raiz para coletar o inventário de hardware e executar implantações de software.  
+ 使用根凭据运行安装的客户端。 要求根凭据收集硬件清单信息并执行软件部署。  
 
- Veja a seguir o formato do comando:  
+ 以下为命令格式：  
 
- **./install -mp &lt;computador\> -sitecode &lt;códigodosite\> &lt;propriedade #1> &lt;propriedade #2> &lt;pacote de instalação do cliente\>**  
+ **./install -mp &lt;computer\> -sitecode &lt;sitecode\> &lt;property #1> &lt;property #2> &lt;client installation package\>**  
 
--   **instalar** é o nome do arquivo de script que instala o cliente para Linux e UNIX. Esse arquivo é fornecido com o software cliente.  
+-   **安装** 安装适用于 Linux 和 UNIX 的客户端的脚本文件的名称。 此文件提供的客户端软件。  
 
--   **-mp &lt;computador** especifica o ponto de gerenciamento inicial que é usado pelo cliente.  
+-   **-mp &lt;computer** 指定客户端使用的初始管理点。  
 
-     Exemplo: smsmp.contoso.com  
+     示例：smsmp.contoso.com  
 
--   **-sitecode &lt;código do site\>** especifica o código do site ao qual o cliente é atribuído.  
+-   **-sitecode &lt;site code\>** 指定将客户端分配到的站点的站点代码。  
 
-     Exemplo: S01  
+     示例：S01  
 
--   &lt;propriedade #1> &lt;propriedade #2> especifica as propriedades de linha de comando a serem usadas com o script de instalação.  
+-   &lt;property #1> &lt;property #2> 指定要与安装脚本搭配使用的命令行属性。  
 
     > [!NOTE]  
-    >  Para obter mais informações, consulte [Propriedades de linha de comando para instalar o cliente em servidores Linux e UNIX](#BKMK_CmdLineInstallLnUClient)  
+    >  有关详细信息，请参阅 [在 Linux 和 UNIX 服务器上安装客户端的命令行属性](#BKMK_CmdLineInstallLnUClient)  
 
--   **pacote de instalação do cliente** é o nome do pacote .tar de instalação do cliente para o sistema operacional do computador, versão e arquitetura da CPU. O arquivo de. tar de instalação do cliente deve ser especificado pela última.  
+-   **客户端安装包** 是此计算机的操作系统、版本和 CPU 体系结构的客户端安装 .tar 包的名称。 必须最后指定客户端安装.tar 文件。  
 
-     Exemplo: ccm-Universal-x64.&lt;build\>.tar  
+     示例：ccm-Universal-x64.&lt;build\>.tar  
 
-###  <a name="BKMK_ToInstallLnUClinent"></a> Para instalar o cliente do Configuration Manager em servidores Linux e UNIX  
+###  <a name="BKMK_ToInstallLnUClinent"></a> 若要在 Linux 和 UNIX 服务器上安装 Configuration Manager 客户端  
 
-1.  Em um computador com Windows, [baixe o arquivo do cliente apropriado para o servidor Linux ou UNIX](http://go.microsoft.com/fwlink/?LinkID=525184) você deseja gerenciar.  
+1.  在 Windows 计算机上，为你想要管理的 [Linux 或 UNIX 服务器下载合适的客户端文件](http://go.microsoft.com/fwlink/?LinkID=525184) 。  
 
-2.  Execute o arquivo autoextraível .exe no computador com Windows para extrair o script de instalação e o arquivo .tar de instalação do cliente.  
+2.  在 Window 计算机上运行自解压 .exe 文件以提取安装脚本和客户端安装 .tar 文件。  
 
-3.  Copie o script **install** e o arquivo .tar em uma pasta no servidor que deseja gerenciar.  
+3.  复制 **安装** 脚本和 .tar 文件到你想要管理的服务器上的文件夹。  
 
-4.  No servidor UNIX ou Linux, execute o seguinte comando para habilitar o script a ser executado como um programa: **chmod +x install**  
+4.  在 UNIX 或 Linux 服务器上，运行以下命令以启用要作为程序运行的脚本： **chmod +x install**  
 
     > [!IMPORTANT]  
-    >  Você deve usar credenciais raiz para instalar o cliente.  
+    >  您必须使用根凭据来安装客户端。  
 
-5.  Em seguida, execute o seguinte comando para instalar o cliente do Configuration Manager: **./install –mp &lt;nomehost\> -sitecode &lt;código\> ccm-Universal-x64.&lt;build\>.tar**  
+5.  接下来，运行以下命令以安装 Configuration Manager 客户端：**./install -mp &lt;hostname\> -sitecode &lt;code\> ccm-Universal-x64.&lt;build\>.tar**  
 
-     Quando você digitar esse comando, use propriedades de linha de comando adicionais que você precisar.  Para obter a lista das propriedades de linha de comando, veja [Propriedades de linha de comando para instalar o cliente em servidores Linux e UNIX](#BKMK_CmdLineInstallLnUClient)  
+     当进入此命令时，使用您所需要的其他命令行属性。  有关命令行属性的列表，请参阅 [在 Linux 和 UNIX 服务器上安装客户端的命令行属性](#BKMK_CmdLineInstallLnUClient)  
 
-6.  Após o script ser executado, valide a instalação ao examinar o arquivo **/var/opt/microsoft/scxcm.log** . Além disso, é possível confirmar se o cliente está instalado e se comunicando com o site exibindo detalhes do cliente no nó **Dispositivos** do espaço de trabalho **Ativos e Conformidade** do console do Configuration Manager.  
+6.  脚本运行后，通过查看“/var/opt/microsoft/scxcm.log”  文件验证安装 。 此外，可以通过在 Configuration Manager 控制台中“资产和符合性”工作区的“设备”节点中查看客户端的详细信息，确认客户端是否已安装并与站点通信。  
 
-###  <a name="BKMK_CmdLineInstallLnUClient"></a> Propriedades de linha de comando para instalar o cliente em servidores Linux e UNIX  
- As seguintes propriedades estão disponíveis para modificar o comportamento do script de instalação:  
+###  <a name="BKMK_CmdLineInstallLnUClient"></a> 在 Linux 和 UNIX 服务器上安装客户端的命令行属性  
+ 以下属性可用于修改安装脚本的行为：  
 
 > [!NOTE]  
->  Use a propriedade **-h** para exibir essa lista de propriedades com suporte.  
+>  使用属性 **-h** 要显示此列表的受支持的属性。  
 
--   **-mp &lt;servidor FQDN\>**  
+-   **-mp &lt;server FQDN\>**  
 
-     Necessário. Especifica o FQDN, o servidor de ponto de gerenciamento que o cliente usará como um ponto inicial de contato.  
+     必须的。 指定通过 FQDN，客户端将用作初始联系点的管理点服务器。  
 
     > [!IMPORTANT]  
-    >  Esta propriedade não especifica o ponto de gerenciamento ao qual o cliente será atribuído após a instalação.  
+    >  此属性不会指定安装后为其分配客户端的管理点。  
 
     > [!NOTE]  
-    >  Quando você usa a propriedade **-mp** para especificar um ponto de gerenciamento que está configurado para aceitar somente conexões de cliente HTTPS, você também deve usar a propriedade **-UsePKICert** .  
+    >  当你使用 **-mp** 属性来指定配置为只接受 HTTPS 客户端连接的管理点时，还必须使用 **-UsePKICert** 属性。  
 
--   **-sitecode &lt;códigodosite\>**  
+-   **-sitecode &lt;sitecode\>**  
 
-     Necessário. Especifica o site primário do Configuration Manager ao qual atribuir o cliente do Configuration Manager.  
+     必须的。 指定要将 Configuration Manager 客户端分配到的 Configuration Manager 主站点。  
 
-     Exemplo: - sitecode S01  
+     示例：-sitecode S01  
 
 -   **-fsp &lt;server_FQDN>**  
 
-     Opcional. Especifica o FQDN, o servidor de ponto de status de fallback que o cliente usa para enviar mensagens de estado.  
+     可选。 指定通过 FQDN，客户端用于提交状态消息的回退状态点服务器。  
 
-     Para obter mais informações sobre o ponto de status de fallback, consulte [Determine Whether You Require a Fallback Status Point](/sccm/core/clients/deploy/plan/determine-the-site-system-roles-for-clients#determine-if-you-need-a-fallback-status-point) .  
+     有关回退状态点的详细信息，请参阅 [Determine Whether You Require a Fallback Status Point](/sccm/core/clients/deploy/plan/determine-the-site-system-roles-for-clients#determine-if-you-need-a-fallback-status-point) 。  
 
 
--   **-dir &lt;diretório\>**  
+-   **-dir &lt;directory\>**  
 
-     Opcional. Especifica um local alternativo para instalar os arquivos do cliente do Configuration Manager.  
+     可选。 指定替代位置以安装 Configuration Manager 客户端文件。  
 
-     Por padrão, o cliente é instalado no seguinte local: **/opt/microsoft**.  
+     默认情况下，在客户端安装到以下位置： **/opt/microsoft**。  
 
 -   **-nostart**  
 
-     Opcional. Impede a inicialização automática do serviço de cliente do Configuration Manager, **ccmexec.bin**, após concluir a instalação do cliente.  
+     可选。 客户端安装完成后，阻止自动启动 Configuration Manager 客户端服务 **ccmexec.bin**。  
 
-     Depois que o cliente é instalado, você deve iniciar o serviço de cliente manualmente.  
+     在客户端安装后，您必须手动启动客户端服务。  
 
-     Por padrão, o serviço de cliente é iniciado depois de concluir a instalação do cliente, e cada vez que o computador for reiniciado.  
+     默认情况下，客户端服务启动后客户端安装完成后，每次在计算机重新启动。  
 
--   **-Limpa**  
+-   **-清理**  
 
-     Opcional. Especifica a remoção de todos os arquivos do cliente e dados de um cliente instalado anteriormente para Linux e UNIX, antes de inicia a instalação. Isso remove o banco de dados do cliente e o repositório de certificados.  
+     可选。 在新的安装开始之前指定适用于 Linux 和 UNIX 的所有客户端文件和来自以前安装的客户端数据删除。 这会删除客户端的数据库和证书存储。  
 
 -   **-keepdb**  
 
-     Opcional. Especifica que o banco de dados do cliente local é mantido e reutilizado ao reinstalar um cliente. Por padrão, quando você reinstalar um cliente esse banco de dados é excluído.  
+     可选。 指定本地客户端数据库保留，并重复使用时重新安装客户端。 默认情况下，当你重新安装客户端将删除此数据库。  
 
--   **-UsePKICert &lt;parâmetro\>**  
+-   **-UsePKICert &lt;parameter\>**  
 
-     Opcional. Especifica o nome de arquivo e caminho completo para um certificado x. 509 PKI no formato de certificado padrão de chave pública (PKCS #12). Esse certificado é usado para autenticação do cliente. Se um certificado não for especificado durante a instalação e você precisará adicionar ou alterar um certificado, use o utilitário **certutil** . Consulte [How to manage certificates on the client for Linux and UNIX](../../../core/clients/manage/manage-clients-for-linux-and-unix-servers.md#BKMK_ManageLinuxCerts) para obter informações sobre certutil.  
+     可选。 公钥证书标准 (PKCS #12) 格式指定完整路径和文件名为 X.509 PKI 证书的名称。 此证书用于客户端身份验证。 如果在安装过程中未指定证书，则你需要添加或更改证书，请使用 **certutil** 实用工具。 有关 certutil 的信息，请参阅 [How to manage certificates on the client for Linux and UNIX](../../../core/clients/manage/manage-clients-for-linux-and-unix-servers.md#BKMK_ManageLinuxCerts) 。  
 
-     Ao usar **-UsePKICert**, você também deve fornecer a senha associada ao arquivo PKCS nº 12 usando o parâmetro de linha de comando **-certpw** .  
+     当您使用 **-UsePKICert**, ，还必须提供通过使用与 PKCS #12 文件相关联的密码 **-certpw** 命令行参数。  
 
-     Se você não usar essa propriedade para especificar um certificado PKI, o cliente usa um certificado autoassinado e todas as comunicações com sistemas de site são via HTTP.  
+     如果不使用此属性可指定 PKI 证书，客户端使用自签名的证书和与站点系统的所有通讯都是通过 HTTP。  
 
-     Se você especificar um certificado inválido na linha de comando de instalação de cliente, nenhum erro será retornado. Isso ocorre porque a validação de certificado ocorre depois que o cliente é instalado. Quando o cliente é iniciado, os certificados são validados com o ponto de gerenciamento e se um certificado não passam na validação a seguinte mensagem aparece no **scxcm.log**, o arquivo de log de cliente do Unix e Linux Configuration Manager: **Falha validar o certificado do ponto de gerenciamento**. O local do arquivo de log padrão é:  **/var/opt/microsoft/scxcm.log**.  
+     如果您在上指定了无效的证书客户端安装命令行，会返回任何错误。 这是因为客户端安装后会发生的证书验证。 如果客户端启动，证书的验证与管理点并且如果验证失败的证书中将显示以下消息 **scxcm.log**, ，Unix 和 Linux Configuration Manager 客户端的日志文件： **失败验证管理点证书**。 默认的日志文件位置是：  **/var/opt/microsoft/scxcm.log**。  
 
     > [!NOTE]  
-    >  Você deve especificar essa propriedade ao instalar um cliente e usar a propriedade **-mp** para especificar um ponto de gerenciamento que seja configurado para aceitar somente conexões de clientes via HTTPS.  
+    >  安装客户端时，必须指定此属性并使用 **-mp** 属性指定配置为仅接受 HTTPS 客户端连接的管理点。  
 
-     Exemplo: -UsePKICert &lt;Nome do arquivo e caminho completo\> -certpw &lt;senha\>  
+     示例：-UsePKICert &lt;Full path and filename\> -certpw &lt;password\>  
 
--   **-certpw &lt;parâmetro\>**  
+-   **-certpw &lt;parameter\>**  
 
-     Opcional. Especifica a senha associada com o arquivo PKCS #12 que você especificou usando o **- /usepkicert** propriedade.  
+     可选。 指定通过使用与您指定的 PKCS #12 文件相关联的密码 **-UsePKICert** 属性。  
 
-     Exemplo: -UsePKICert &lt;Nome do arquivo e caminho completo\> -certpw &lt;senha\>  
+     示例：-UsePKICert &lt;Full path and filename\> -certpw &lt;password\>  
 
--   **-/Nocrlcheck**  
+-   **-NoCRLCheck**  
 
-     Opcional. Especifica que um cliente não deve verificar a lista de certificados revogados (CRL) ao se comunicar por HTTPS usando um certificado PKI. Quando essa opção não for especificada, o cliente verifica a CRL antes de estabelecer uma conexão HTTPS usando certificados PKI. Para obter mais informações sobre a verificação de CRL do cliente, consulte Planejando a revogação de certificados PKI.  
+     可选。 指定客户端应通过使用 PKI 证书通过 HTTPS 通信时检查证书吊销列表 (CRL)。 如果未指定此选项，客户端在通过使用 PKI 证书建立 HTTPS 连接前检查 CRL。 有关客户端 CRL 检查的详细信息，请参阅 PKI 证书吊销的规划。  
 
-     Exemplo: -UsePKICert &lt;Nome do arquivo e caminho completo\> -certpw &lt;senha\> -NoCRLCheck  
+     示例：-UsePKICert &lt;Full path and filename\> -certpw &lt;password\> -NoCRLCheck  
 
--   **-rootkeypath &lt;local do arquivo\>**  
+-   **-rootkeypath &lt;file location\>**  
 
-     Opcional. Especifica o nome de arquivo e caminho completo para a chave raiz confiável do Configuration Manager. A chave de raiz confiável do Configuration Manager fornece um mecanismo que os clientes Linux e UNIX usam para verificar se eles estão conectados a um sistema de sites que pertence à hierarquia correta.  
+     可选。 指定 Configuration Manager 受信任的根密钥的完整路径和文件名。 Configuration Manager 受信任的根密钥提供一种机制，Linux 和 UNIX 客户端使用此机制来确认它们已连接到属于正确的层次结构的站点系统。  
 
-     Se você não especificar a chave de raiz confiável na linha de comando, o cliente confiará no primeiro ponto de gerenciamento com o qual ele se comunica e recuperará automaticamente a chave de raiz confiável do ponto de gerenciamento.  
+     如果未在命令行上指定受信任的根密钥，客户端将信任其与之通信的第一个管理点，并将从该管理点自动检索受信任的根密钥。  
 
-     Para obter mais informações, consulte  [Planning for the Trusted Root Key](../../../core/plan-design/security/plan-for-security.md#BKMK_PlanningForRTK).  
+     有关详细信息，请参阅  [Planning for the Trusted Root Key](../../../core/plan-design/security/plan-for-security.md#BKMK_PlanningForRTK)。  
 
-     Exemplo: -rootkeypath &lt;Nome do arquivo e caminho completo\>  
+     示例：-rootkeypath &lt;Full path and filename\>  
 
--   **-httpport &lt;porta\>**  
+-   **-httpport &lt;port\>**  
 
-     Opcional. Especifica a porta configurada nos pontos de gerenciamento que o cliente usa ao se comunicar com pontos de gerenciamento via HTTP. Se a porta não for especificada, o valor padrão de 80 é usado.  
+     可选。 指定在客户端在通过 HTTP 与管理点通信时所使用的管理点配置的端口。 如果未指定端口，使用默认值为 80。  
 
-     Exemplo: -httpport 80  
+     示例：-httpport 80  
 
--   **-httpsport &lt;porta\>**  
+-   **-httpsport &lt;port\>**  
 
-     Opcional. Especifica a porta configurada nos pontos de gerenciamento que o cliente usa ao se comunicar com pontos de gerenciamento via HTTPS. Se a porta não for especificada, será usado o valor padrão de 443.  
+     可选。 指定在客户端在通过 HTTPS 与管理点通信时所使用的管理点配置的端口。 如果未指定端口，使用默认值 443。  
 
-     Exemple: -UsePKICert &lt;caminho completo e nome do certificado\> -httpsport 443  
+     示例：-UsePKICert &lt;Full path and certificate name\> -httpsport 443  
 
 -   **-ignoreSHA256validation**  
 
-     Opcional. Especifica que a instalação do cliente ignora a validação do SHA-256. Use essa opção ao instalar o cliente em sistemas operacionais que não foram lançados com uma versão do OpenSSL que dá suporte a SHA-256. Para obter mais informações, consulte [About Linux and UNIX Operating Systems That do not Support SHA-256](../../../core/clients/deploy/plan/planning-for-client-deployment-to-linux-and-unix-computers.md#BKMK_NoSHA-256).  
+     可选。 指定客户端安装将 SHA 256 验证跳过。 在操作系统上安装客户端时使用此选项，该操作系统未使用支持 SHA-256 的 OpenSSL 版本发布。 有关详细信息，请参阅 [About Linux and UNIX Operating Systems That do not Support SHA-256](../../../core/clients/deploy/plan/planning-for-client-deployment-to-linux-and-unix-computers.md#BKMK_NoSHA-256)。  
 
--   **-signcertpath &lt;local do arquivo\>**  
+-   **-signcertpath &lt;file location\>**  
 
-     Opcional. Especifica o caminho completo e **. cer** nome do arquivo do certificado autoassinado exportado no servidor do site. Se certificados PKI não estiverem disponíveis, o servidor do site do Configuration Manager gerará automaticamente os certificados autoassinados.  
+     可选。 指定的完整路径和 **.cer** 的站点服务器上的导出自签名证书的文件名。 如果 PKI 证书不可用，Configuration Manager 站点服务器自动生成自签名的证书。  
 
-     Esses certificados são usados para validar que as políticas do cliente baixadas do ponto de gerenciamento foram enviadas do local desejado. Se um certificado autoassinado não for especificado durante a instalação ou se você precisar alterar o certificado, use o utilitário **certutil** . Consulte [How to manage certificates on the client for Linux and UNIX](../../../core/clients/manage/manage-clients-for-linux-and-unix-servers.md#BKMK_ManageLinuxCerts) para obter informações sobre certutil.  
+     这些证书用于验证从管理点下载的客户端策略发送从预期的站点。 如果在安装过程中未指定证书，或者你需要更改证书，请使用 **certutil** 实用工具。 有关 certutil 的信息，请参阅 [How to manage certificates on the client for Linux and UNIX](../../../core/clients/manage/manage-clients-for-linux-and-unix-servers.md#BKMK_ManageLinuxCerts) 。  
 
-     Esse certificado é recuperado por meio do repositório de certificados **SMS** e tem como nome da Entidade **Servidor do Site** e como nome amigável **Certificado de Autenticação do Servidor do Site**.  
+     此证书可通过 **SMS** 证书存储检索，并且具有“站点服务器”  使用者名称以及“站点服务器签名证书” 友好名称。  
 
-     Se essa opção não for especificada durante a instalação, clientes Linux e UNIX confiarão o primeiro ponto de gerenciamento que se comunicam e recuperará automaticamente o certificado de autenticação de ponto de gerenciamento.  
+     如果在安装过程中未指定此选项，Linux 和 UNIX 的客户端将信任它们与通信并将自动检索来自该管理点签名证书的第一个管理点。  
 
-     Exemplo: -signcertpath &lt;Caminho completo e nome do arquivo\>  
+     示例：-signcertpath &lt;Full path and file name\>  
 
 -   **-rootcerts**  
 
-     Opcional. Especifica certificados PKI adicionais para importar que não fazem parte de uma hierarquia de autoridade de certificação de pontos de gerenciamento. Se você especificar vários certificados na linha de comando, eles devem ser delimitados por vírgulas.  
+     可选。 指定其他 PKI 证书导入不是管理点证书颁发机构 (CA) 层次结构的一部分。 如果在命令行中指定多个证书，它们应该是以逗号分隔。  
 
-     Use esta opção se você usar certificados de cliente PKI encadeado a um certificado de autoridade de certificação de raiz confiável para os pontos de gerenciamento de sites. Os pontos de gerenciamento rejeitarão o cliente se o certificado do cliente não estiver encadeado a um certificado raiz confiável na lista de emissores de certificado do site.  
+     如果您使用未链接至您的站点管理点信任的根 CA 证书的 PKI 客户端证书，使用此选项。 如果客户端证书未链接到站点的证书颁发者列表中的受信任的根证书，管理点将拒绝此客户端。  
 
-     Se você não usar essa opção, o cliente Linux e UNIX verificará a hierarquia de confiança usando apenas o certificado no **- /usepkicert** opção.  
+     如果不使用此选项，Linux 和 UNIX 的客户端将验证使用的证书中的信任层次结构 **-UsePKICert** 选项。  
 
-     Exemplo: -rootcerts &lt;Caminho completo e nome do arquivo\>,&lt;Caminho completo e nome do arquivo\>  
+     示例：-rootcerts &lt;Full path and file name\>,&lt;Full path and file name\>  
 
-###  <a name="BKMK_UninstallLnUClient"></a> Desinstalando o cliente dos servidores Linux e UNIX  
- Para desinstalar o cliente do Configuration Manager para Linux e UNIX, use o utilitário de desinstalação, **desinstalar**. Por padrão, esse arquivo está localizado no **/opt/microsoft/SMS/bin/** pasta no computador cliente. Este comando de desinstalação não oferece suporte a quaisquer parâmetros de linha de comando e removerá todos os arquivos relacionados para o software cliente do servidor.  
+###  <a name="BKMK_UninstallLnUClient"></a> 从 Linux 和 UNIX 服务器上卸载客户端  
+ 若要卸载适用于 Linux 和 UNIX 的 Configuration Manager 客户端，请使用卸载实用工具 **uninstall**。 默认情况下，此文件位于 **/选择/microsoft/configmgr/bin/** 客户端计算机上的文件夹。 这将卸载命令不支持任何命令行参数，并且将删除所有从服务器向客户端软件相关的文件。  
 
- Para desinstalar o cliente, use a seguinte linha de comando: **/opt/microsoft/configmgr/bin/uninstall**  
+ 若要卸载客户端，请使用下面的命令行: **/opt/microsoft/configmgr/bin/uninstall**  
 
- Não é necessário reinicializar o computador depois de desinstalar o cliente do Configuration Manager para Linux e UNIX.  
+ 安装适用于 Linux 和 UNIX 的 Configuration Manager 客户端后，你不需要重新启动计算机。  
 
-##  <a name="BKMK_ConfigLnUClientCommuincations"></a> Configurar portas de solicitação do cliente para Linux e UNIX  
- Semelhante a clientes baseados em Windows, o cliente do Configuration Manager para Linux e UNIX usa HTTP e HTTPS para se comunicar com sistemas de sites do Configuration Manager. As portas que o cliente do Configuration Manager usa para se comunicar são conhecidas como portas da solicitação.  
+##  <a name="BKMK_ConfigLnUClientCommuincations"></a> 适用于 Linux 和 UNIX 客户端配置请求端口  
+ 与基于 Windows 的客户端类似，适用于 Linux 和 UNIX 的 Configuration Manager 客户端使用 HTTP 和 HTTPS 与 Configuration Manager 站点系统通信。 Configuration Manager 客户端用于通信的端口称为请求端口。  
 
- Quando você instala o cliente do Configuration Manager para Linux e UNIX, é possível alterar as portas de solicitação padrão dos clientes, especificando as propriedades de instalação **-httpport** e **-httpsport**. Quando você não especificar a propriedade de instalação e um valor personalizado, o cliente usa os valores padrão. Os valores padrão são **80** para tráfego HTTP e **443** para tráfego HTTPS.  
+ 当你安装适用于 Linux 和 UNIX 的 Configuration Manager 客户端时，你可以通过指定 **-httpport** 和 **-httpsport** 安装属性更改客户端默认请求端口 。 当未指定的安装属性和自定义的值时，客户端将使用默认值。 默认值为 **80** 对于 HTTP 流量和 **443** HTTPS 通信。  
 
- Depois de instalar o cliente, você não pode alterar sua configuração de porta de solicitação. Em vez disso, para alterar a configuração de porta, você deve reinstalar o cliente e especifique a nova configuração de porta. Quando você reinstalar o cliente para alterar os números de porta de solicitação, execute o **instalar** comando similar à nova instalação de cliente, mas usar a propriedade de linha de comando adicionais do **- keepdb**. Essa opção instrui a instalação para manter o banco de dados do cliente e arquivos, incluindo o armazenamento GUID e certificados de clientes.  
+ 安装客户端后，不能更改其请求端口配置。 相反，若要更改端口配置必须重新安装客户端并指定新的端口配置。 当你重新安装客户端以更改请求端口号时，运行 **安装** 命令类似于新的客户端安装，但使用的其他命令行属性 **-keepdb**。 此开关将指示要保留的客户端数据库和文件包括客户端 GUID 和证书存储区的安装。  
 
- Para obter mais informações sobre números de porta de comunicação de cliente, consulte [Como configurar portas de comunicação do cliente no System Center Configuration Manager](../../../core/clients/deploy/configure-client-communication-ports.md).  
+ 有关客户端通信端口号的详细信息，请参阅[如何在 System Center Configuration Manager 中配置客户端通信端口](../../../core/clients/deploy/configure-client-communication-ports.md)。  
 
-##  <a name="BKMK_ConfigClientMP"></a> Configurar o cliente para Linux e UNIX localizar pontos de gerenciamento  
- Ao instalar o cliente do Configuration Manager para Linux e UNIX, é necessário especificar um ponto de gerenciamento para ser usado como um ponto inicial de contato.  
+##  <a name="BKMK_ConfigClientMP"></a> 配置客户端适用于 Linux 和 UNIX 来查找管理点  
+ 在安装适用于 Linux 和 UNIX 的 Configuration Manager 客户端时，必须指定用作初始联系点的管理点。  
 
- O cliente do Configuration Manager para Linux e UNIX entra em contato com esse ponto de gerenciamento no momento em que o cliente é instalado. Se o cliente falhar no contato com o ponto de gerenciamento, o software cliente continuará tentando até obter êxito.  
+ 适用于 Linux 和 UNIX 的 Configuration Manager 客户端将在客户端安装时联系此管理点。 如果客户端无法联系管理点，客户端软件将不断重试直到成功。  
 
- Para obter mais informações sobre como os clientes localizam os pontos de gerenciamento, consulte [Locating Management Points](/sccm/core/clients/deploy/assign-clients-to-a-site#locating-management-points).
-
+ 有关客户端如何查找管理点的详细信息，请参阅 [Locating Management Points](/sccm/core/clients/deploy/assign-clients-to-a-site#locating-management-points)。

@@ -1,366 +1,362 @@
 ---
-title: "Operações e manutenção de relatórios | Microsoft Docs"
-description: "Conheça os detalhes de gerenciar relatórios e assinaturas de relatório no System Center Configuration Manager."
+title: "报表的操作和维护 | Microsoft Docs"
+description: "了解管理 System Center Configuration Manager 中的报表和报表订阅的详细信息。"
 ms.custom: na
 ms.date: 10/06/2016
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
-ms.technology:
-- configmgr-other
+ms.technology: configmgr-other
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: b89bcfbf-f5b6-4fb1-bb5e-a5cc18ec0c78
-caps.latest.revision: 5
+caps.latest.revision: "5"
 author: Dougeby
 ms.author: dougeby
 manager: angrobe
-ms.translationtype: Human Translation
-ms.sourcegitcommit: f62d969dd49fb00b688602128df74b28ff551135
 ms.openlocfilehash: df572cd0c64c82e25164430a53e1b893b3ba3cf5
-ms.contentlocale: pt-br
-ms.lasthandoff: 06/07/2017
-
-
+ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
+ms.translationtype: HT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 08/07/2017
 ---
-# <a name="operations-and-maintenance-for-reporting-in-system-center-configuration-manager"></a>Operações e manutenção para relatórios no System Center Configuration Manager
+# <a name="operations-and-maintenance-for-reporting-in-system-center-configuration-manager"></a>System Center Configuration Manager 中报告的操作和维护
 
-*Aplica-se a: System Center Configuration Manager (Branch Atual)*
+*适用范围：System Center Configuration Manager (Current Branch)*
 
-Após implantar a infraestrutura para geração de relatórios no System Center Configuration Manager, haverá diversas operações que você poderá realizar para gerenciar relatórios e assinaturas de relatório.  
+为 System Center Configuration Manager 中的报表准备好基础结构后，通常可以执行多种操作来管理报表和报表订阅。  
 
-##  <a name="BKMK_ManageReports"></a> Gerenciar relatórios do Configuration Manager  
- O Configuration Manager oferece mais de 400 relatórios predefinidos que o ajudarão a coletar, organizar e apresentar informações sobre usuários, inventário de hardware e software, atualizações de software, aplicativos, status do site e outras operações do Configuration Manager na sua organização. Você pode usar os relatórios predefinidos como estão ou modificar um relatório para que atenda às suas necessidades. Você também pode criar relatórios baseados em SQL e em modelos personalizados para atender às suas necessidades. Use as seções a seguir para ajudá-lo a gerenciar os relatórios do Configuration Manager.  
+##  <a name="BKMK_ManageReports"></a>管理 Configuration Manager 报表  
+ Configuration Manager 提供了超过 400 个预定义报表，可帮助收集、组织和呈现有关用户、硬件和软件清单、软件更新、应用程序、站点状态以及组织中其他 Configuration Manager 操作的信息。 你可以按原样使用这些预定义报表，或者你可以修改报表来满足你的需求。 也可以创建基于自定义模型和基于 SQL 的报表来满足需求。 使用以下部分可帮助管理 Configuration Manager 报表。  
 
-###  <a name="BKMK_RunReport"></a> Executar um relatório do Configuration Manager  
- Relatórios no Configuration Manager são armazenados no SQL Server Reporting Services e os dados renderizados no relatório são recuperados do banco de dados de site do Configuration Manager. Você pode acessar relatórios no console do Configuration Manager ou usando o Gerenciador de relatórios, acessar em um navegador da web. Você pode abrir relatórios em qualquer computador que tenha acesso ao computador que está executando o SQL Server Reporting Services, e é necessário ter direitos suficientes para exibir os relatórios. Ao executar um relatório, o título, a descrição e a categoria do mesmo são exibidos no idioma do sistema operacional local.  
+###  <a name="BKMK_RunReport"></a>运行 Configuration Manager 报表  
+ 在 Configuration Manager 中的报表存储在 SQL Server Reporting Services，并从 Configuration Manager 站点数据库检索报表中呈现的数据。 您可以访问 Configuration Manager 控制台中或通过使用报表管理器，在 web 浏览器访问的报表。 你可以在对运行 SQL Server Reporting Services 的计算机具有访问权限的任何计算机上打开报表，你必须具有足够的权限才能查看报表。 在运行报表时，报表标题、描述和类别采用本地操作系统的语言显示。  
 
 > [!NOTE]  
->  Em alguns idiomas diferentes do inglês, os caracteres podem não aparecer corretamente nos relatórios.  Nesse caso, os relatórios podem ser exibidos usando o Report Manager baseado na Web ou o Console do Administrador Remoto.  
+>  在某些非英语语言中，字符可能无法在报表中正确显示。  在此情况下，可以使用基于 Web 的报表管理器或通过远程管理员控制台来查看报表。  
 
 > [!WARNING]  
->  Para executar relatórios, é necessário ter direitos de **Leitura** para a permissão **Site** e a permissão **Executar Relatório** configuradas para objetos específicos.  
+>  要运行报表，你必须对为特定对象配置的“站点”许可和“运行报表”许可具有“读取”权限。  
 
 > [!IMPORTANT]    
-> Deve haver uma relação de confiança bidirecional estabelecida para usuários de um domínio diferente do que a conta do ponto do Reporting Services para executar com sucesso os relatórios.
+> 必须为来自与 Reporting Services 点帐户不同域的用户建立双向信任，以便成功运行报表。
 
 > [!NOTE]  
->  O Report Manager é uma ferramenta de gerenciamento e acesso a relatórios baseada na Web que é usada para administrar uma única instância do servidor de relatório em um local remoto por meio de uma conexão HTTP. Você pode usar o Report Manager para realizar tarefas operacionais como, por exemplo, exibir relatórios, modificar propriedades de relatórios e gerenciar assinaturas de relatório associadas. Este tópico oferece as etapas para exibir um relatório e modificar propriedades de relatórios no Report Manager. Para obter mais informações sobre as outras opções oferecidas pelo Report Manager, consulte [Report Manager](http://go.microsoft.com/fwlink/p/?LinkId=224916) nos Manuais Online do SQL Server 2008.  
+>  报表管理器是一种基于 Web 的报表访问和管理工具，可以使用该工具通过 HTTP 连接来管理远程位置上的单一报表服务器实例。 你可以使用报表管理器来执行操作任务，例如，查看报表、修改报表属性以及管理关联的报表订阅。 本主题提供在报表管理器中查看报表和修改报表属性的步骤，但若要了解有关报表管理器提供的其他选项的详细信息，请参阅 SQL Server 2008 联机丛书中的[报表管理器](http://go.microsoft.com/fwlink/p/?LinkId=224916)。  
 
- Use os procedimentos a seguir para executar um relatório do Configuration Manager.  
+ 使用以下过程运行 Configuration Manager 报表。  
 
-##### <a name="to-run-a-report-in-the-configuration-manager-console"></a>Para executar um relatório no console do Configuration Manager  
+##### <a name="to-run-a-report-in-the-configuration-manager-console"></a>若要在 Configuration Manager 控制台中运行报表  
 
-1.  No console do Configuration Manager, clique em **Monitoramento**.  
+1.  在 Configuration Manager 控制台中，单击“监视”。  
 
-2.  No espaço de trabalho **Monitoramento** , expanda **Relatórios**e clique em **Relatórios** na lista de relatórios disponíveis.  
+2.  在“监视”工作区中，展开“报表”，然后单击“报表”以列出可用报表。  
 
     > [!IMPORTANT]  
-    >  Nesta versão do Configuration Manager, os relatórios **Todo o conteúdo** exibem somente pacotes, e não aplicativos.  
+    >  在此版本的 Configuration Manager 中，“全部内容”报表仅显示包，而不显示应用程序。  
 
     > [!TIP]  
-    >  Se não houver relatórios listados, verifique se que o ponto do Reporting Services está instalado e configurado. Para mais informações, consulte [Configuração de relatórios](configuring-reporting.md).  
+    >  如果没有列出报表，请验证是否安装和配置了 Reporting Services 点。 有关详细信息，请参阅[配置报表](configuring-reporting.md)。  
 
-3.  Selecione o relatório que deseja executar, e na guia **Início** , na seção **Grupo de Relatórios** , clique em **Executar** para abrir o relatório.  
+3.  选择要运行的报表，然后在“主页”选项卡上的“报表组”部分，单击“运行”以打开报表。  
 
-4.  Quando houver parâmetros obrigatórios, especifique-os e clique em **Exibir Relatório**.  
+4.  如果有必需的参数，请指定这些参数，然后单击“查看报表”。  
 
-#### <a name="to-run-a-report-in-a-web-browser"></a>Para executar um relatório em um navegador da Web  
+#### <a name="to-run-a-report-in-a-web-browser"></a>在 Web 浏览器中运行报表  
 
-1.  No navegador da Web, insira a URL do Report Manager, por exemplo, **http:\/\/Server1\/Reports**. Você pode determinar a URL do Gerenciador de relatórios no **URL do Gerenciador de relatórios** página no Reporting Services Configuration Manager.  
+1.  在 Web 浏览器中，输入报表管理器 URL，例如，**http:\/\/Server1\/Reports**。 您可以确定报表管理器 URL 上**报表管理器 URL** 页在 Reporting Services 配置管理器。  
 
-2.  No Report Manager, clique na pasta de relatórios do Configuration Manager, por exemplo, **ConfigMgr\_CAS**.  
-
-    > [!TIP]  
-    >  Se não houver relatórios listados, verifique se que o ponto do Reporting Services está instalado e configurado. Para mais informações, consulte [Configuração de relatórios](configuring-reporting.md).  
-
-3.  Clique na categoria do relatório que deseja executar e no link do relatório. O relatório será aberto no Report Manager.  
-
-4.  Quando houver parâmetros obrigatórios, especifique-os e clique em **Exibir Relatório**.  
-
-###  <a name="BKMK_ModifyReportProperties"></a> Modificar as propriedades de um relatório do Configuration Manager  
- No console do Configuration Manager, é possível exibir as propriedades de um relatório, como o seu nome e a sua descrição, mas para alterar suas propriedades, use o Report Manager. Use o procedimento a seguir para modificar as propriedades de um relatório do Configuration Manager.  
-
-#### <a name="to-modify-report-properties-in-report-manager"></a>Para modificar as propriedades de um relatório no Report Manager  
-
-1.  No navegador da Web, insira a URL do Report Manager, por exemplo, **http:\/\/Server1\/Reports**. Você pode determinar a URL do Gerenciador de relatórios no **URL do Gerenciador de relatórios** página no Reporting Services Configuration Manager.  
-
-2.  No Report Manager, clique na pasta de relatórios do Configuration Manager, por exemplo, **ConfigMgr\_CAS**.  
+2.  在报表管理器中，单击 Configuration Manager 的报表文件夹，例如，**ConfigMgr\_CAS**。  
 
     > [!TIP]  
-    >  Se não houver relatórios listados, verifique se que o ponto do Reporting Services está instalado e configurado. Para mais informações, consulte [Configuração de relatórios](configuring-reporting.md)  
+    >  如果没有列出报表，请验证是否安装和配置了 Reporting Services 点。 有关详细信息，请参阅[配置报表](configuring-reporting.md)。  
 
-3.  Clique na categoria do relatório do qual deseja modificar as propriedades e clique no link do relatório. O relatório será aberto no Report Manager.  
+3.  单击要运行的报表的报表类别，然后单击报表的链接。 报表将在报表管理器中打开。  
 
-4.  Clique na guia **Propriedades** . Você pode modificar o nome e a descrição do relatório.  
+4.  如果有必需的参数，请指定这些参数，然后单击“查看报表” 。  
 
-5.  Ao terminar, clique em **aplicar**. As propriedades do relatório serão salvas no servidor de relatório e o console do Configuration Manager vai recuperar as propriedades do relatório atualizado para o relatório.  
+###  <a name="BKMK_ModifyReportProperties"></a>修改 Configuration Manager 报表的属性  
+ 在 Configuration Manager 控制台中，可以查看报表的属性（例如报表名称和描述），但若要更改属性，请使用报表管理器。 使用以下过程来修改 Configuration Manager 报表的属性。  
 
-###  <a name="BKMK_EditReport"></a> Editar um relatório do Configuration Manager  
- Quando um relatório existente do Configuration Manager não recuperar as informações necessárias ou não fornecer o layout ou o design desejado, você poderá editar o relatório no Construtor de Relatórios.  
+#### <a name="to-modify-report-properties-in-report-manager"></a>在报表管理器中修改报表属性  
+
+1.  在 Web 浏览器中，输入报表管理器 URL，例如，**http:\/\/Server1\/Reports**。 您可以确定报表管理器 URL 上**报表管理器 URL** 页在 Reporting Services 配置管理器。  
+
+2.  在报表管理器中，单击 Configuration Manager 的报表文件夹，例如，**ConfigMgr\_CAS**。  
+
+    > [!TIP]  
+    >  如果没有列出报表，请验证是否安装和配置了 Reporting Services 点。 有关详细信息，请参阅[配置报表](configuring-reporting.md)  
+
+3.  单击要修改其属性的报表的报表类别，然后单击报表的链接。 报表将在报表管理器中打开。  
+
+4.  单击“属性”选项卡。 你可以修改报表名称和描述。  
+
+5.  完成后，单击“应用”。 报表属性保存在报表服务器上，Configuration Manager 控制台将检索报表的更新报表属性。  
+
+###  <a name="BKMK_EditReport"></a>编辑 Configuration Manager 报表  
+ 如果现有 Configuration Manager 报表未检索必须具有的信息或未提供所需的布局或设计，则可以在报表生成器中编辑该报表。  
 
 > [!NOTE]  
->  É possível optar por clonar um relatório existente ao abri-lo para edição ou clicar em **Salvar como** para salvá-lo como um novo relatório.  
+>  你也可以选择克隆现有报表，方式为：打开报表进行编辑，然后单击“另存为”将其另存为新报表。  
 
 > [!IMPORTANT]  
->  A conta do usuário deve ter a permissão **Modificar do site** e a permissão **Modificar Relatório** dos objetos específicos associados ao relatório que você deseja modificar.  
+>  对于与你要修改的报表关联的对象，用户帐户必须具有“站点修改”权限和“修改报表”权限。  
 
 > [!IMPORTANT]  
->  Quando o Configuration Manager é atualizado para uma versão mais recente, os relatórios predefinidos são substituídos por novos relatórios. Se você modificar um relatório predefinido, será necessário fazer backup do relatório antes de instalar a nova versão, e depois restaurar o relatório no Reporting Services. Se você estiver fazendo alterações significativas em um relatório predefinido, considere criar um novo relatório, em vez disso. Os novos relatórios criados antes da atualização de um site não serão substituídos.  
+>  Configuration Manager 升级到较新版本时，新报表将覆盖预定义的报表。 如果修改预定义报表，你必须在安装新版本之前备份报表，然后在 Reporting Services 中还原报表。 如果要对预定义报表进行大量更改，请考虑改为创建新报表。 不会覆盖在升级站点之前创建的新报表。  
 
- Use o procedimento a seguir para editar as propriedades de um relatório do Configuration Manager.  
+ 使用以下过程来编辑 Configuration Manager 报表的属性。  
 
-#### <a name="to-edit-report-properties"></a>Para editar as propriedades de um relatório  
+#### <a name="to-edit-report-properties"></a>编辑报表属性  
 
-1.  No console do Configuration Manager, clique em **Monitoramento**.  
+1.  在 Configuration Manager 控制台中，单击“监视”。  
 
-2.  No espaço de trabalho **Monitoramento** , expanda **Relatórios**e clique em **Relatórios** na lista de relatórios disponíveis.  
+2.  在“监视”工作区中，展开“报表”，然后单击“报表”以列出可用报表。  
 
-3.  Selecione o relatório que deseja modificar e na guia **Início** , na seção **Grupo de Relatórios** , clique em **Editar**. Especifique a sua conta e senha de usuário, se necessário, e clique em **OK**. Se o Construtor de Relatórios não estiver instalado no computador, será necessário instalá-lo. Clique em **Executar** para instalar o Construtor de Relatórios, o qual é necessário para modificar e criar relatórios.  
+3.  选择要修改的报表，然后在“主页”选项卡上的“报表组”部分，单击“编辑”。 如果出现提示，请输入你的用户帐户和密码，然后单击“确定”。 如果计算机上未安装报表生成器，将会提示你进行安装。 单击“运行”安装修改和创建报表所需的报表生成器。  
 
-4.  No Construtor de Relatórios, modifique as configurações apropriadas do relatório e clique em **Salvar** para salvar o relatório no servidor de relatório.  
+4.  在报表生成器中，修改相应的报表设置，然后单击“保存”以将报表保存到报表服务器。  
 
-###  <a name="BKMK_CreateModelBasedReport"></a> Criar um relatório baseado em um modelo  
- Um relatório baseado em modelo permite selecionar de modo interativo os itens que você deseja incluir no relatório. Para obter mais informações sobre a criação de modelos de relatório, veja [Criando modelos de relatório personalizados para o System Center Configuration Manager no SQL Server Reporting Services](creating-custom-report-models-in-sql-server-reporting-services.md).  
-
-> [!IMPORTANT]  
->  A conta do usuário deve ter a permissão **Modificar do site** para criar um novo relatório. O usuário só poderá criar um relatório nas pastas para as quais tenha permissões para **Modificar Relatório** .  
-
- Use o procedimento a seguir para criar um relatório do Configuration Manager baseado em modelo.  
-
-#### <a name="to-create-a-model-based-report"></a>Para criar um relatório baseado em modelo  
-
-1.  No console do Configuration Manager, clique em **Monitoramento**.  
-
-2.  No espaço de trabalho **Monitoramento** , expanda **Relatórios** e clique em **Relatórios**.  
-
-3.  Na guia **Início** , na seção **Criar** , clique em **Criar Relatório** para abrir o **Assistente para Criar Relatório**.  
-
-4.  Na página **Informações** , defina as seguintes configurações:  
-
-    -   **Tipo:** Selecione **Relatório baseado em modelo** para criar um relatório no Construtor de Relatórios usando um modelo do Reporting Services.  
-
-    -   **Nome**: Especifique um nome para o relatório.  
-
-    -   **Descrição**: Especifique uma descrição para o relatório.  
-
-    -   **Servidor**: Exibe o nome do servidor de relatório no qual você está criando o relatório.  
-
-    -   **Caminho**: Clique em **Procurar** para especificar uma pasta na qual você deseja armazenar o relatório.  
-
-     Clique em **Avançar**.  
-
-5.  Na página **Seleção de Modelo** , selecione um modelo disponível na lista usada para criar o relatório. Ao selecionar o modelo de relatório, a seção **Visualização** mostra as exibições e as entidades do SQL Server disponibilizadas pelo modelo de relatório selecionado.  
-
-6.  Na página de **Resumo** , analise as configurações. Clique em **Anterior** para alterar as configurações ou clique em **Próximo** para criar o relatório no Configuration Manager.  
-
-7.  Na página **Confirmação** , clique em **Fechar** para sair do assistente, depois, abra o Construtor de Relatórios para definir as configurações do relatório. Especifique a sua conta e senha de usuário, se necessário, e clique em **OK**. Se o Construtor de Relatórios não estiver instalado no computador, será necessário instalá-lo. Clique em **Executar** para instalar o Construtor de Relatórios, o qual é necessário para modificar e criar relatórios.  
-
-8.  No Construtor de Relatórios, crie o layout do relatório, selecione os dados nas exibições disponíveis do SQL Server, adicione os parâmetros no relatório e assim por diante. Para obter mais informações sobre como usar o Construtor de Relatórios para criar um novo relatório, consulte a Ajuda do Construtor de Relatórios.  
-
-9. Clique em **Executar** para executar o relatório. Verifique se o relatório contém as informações desejadas. Clique em **Design** para retornar à exibição Design e modificar o relatório, se necessário.  
-
-10. Clique em **Salvar** para salvar o relatório no servidor de relatório. Você pode executar e modificar o novo relatório no nó **Relatórios** do espaço de trabalho **Monitoramento** .  
-
-###  <a name="BKMK_CreateSQLBasedReport"></a> Criar um relatório baseado em SQL  
- Um relatório baseado em SQL permite recuperar dados baseados em uma instrução SQL do relatório.  
+###  <a name="BKMK_CreateModelBasedReport"></a>创建基于模型\-的报表  
+ 基于模型的报表允许以交互方式选择要包括在报表中的项目。 有关创建自定义报表模型的详细信息，请参阅[在 SQL Server Reporting Services 中为 System Center Configuration Manager 创建自定义报表模型](creating-custom-report-models-in-sql-server-reporting-services.md)。  
 
 > [!IMPORTANT]  
->  Ao criar uma instrução SQL para um relatório personalizado, não faça referência diretamente a tabelas do SQL Server. Em vez disso, faça referência às exibições do relatório do SQL Server \(nomes de exibições que comecem com v\_\) no banco de dados do site. Você também pode fazer referência a procedimentos armazenados públicos \(nomes de procedimentos armazenados que comecem com sp\_\) no banco de dados do site.  
+>  用户帐户必须具有“站点修改”权限才能创建新报表。 用户只能在其具有“修改报表”权限的文件夹中创建报表。  
+
+ 使用以下过程来创建基于模型的 Configuration Manager 报表。  
+
+#### <a name="to-create-a-model-based-report"></a>创建基于模型的报表  
+
+1.  在 Configuration Manager 控制台中，单击“监视”。  
+
+2.  在“监视”工作区中，展开“报表”，并单击“报表”。  
+
+3.  在“主页”选项卡上的“创建”部分，单击“创建报表”，以打开“创建报表向导”。  
+
+4.  在“信息”页上，配置下列设置：  
+
+    -   **类型**：选择“基于模型的报表”以使用 Reporting Services 模型在报表生成器中创建报表。  
+
+    -   **名称**：指定报表的名称。  
+
+    -   **描述**：指定报表的描述。  
+
+    -   **服务器**：显示你在其上创建此报表的报表服务器的名称。  
+
+    -   **路径**：单击“浏览”指定要在其中存储报表的文件夹。  
+
+     单击“下一步”。  
+
+5.  在“模型选择”页上的列表中选择要用于创建此报表的可用模型。 当你选择报表模型时，“预览”部分将显示所选报表模型提供的 SQL Server 视图和实体。  
+
+6.  在“摘要”页上，检查配置设置。 单击“上一步”以更改设置，或单击“下一步”以在 Configuration Manager 中创建报表。  
+
+7.  在“确认”页上，单击“关闭”退出向导，然后打开报表生成器以配置报表设置。 如果出现提示，请输入你的用户帐户和密码，然后单击“确定”。 如果计算机上未安装报表生成器，将会提示你进行安装。 单击“运行”安装修改和创建报表所需的报表生成器。  
+
+8.  在 Microsoft 报表生成器中，创建报表布局，选择可用 SQL Server 视图中的数据，向报表中添加参数，诸如此类。 有关使用报表生成器来创建新报表的详细信息，请参阅报表生成器帮助。  
+
+9. 单击“运行”以运行报表。 验证报表是否提供了预期信息。 如果需要，单击“设计”返回到“设计”视图以修改报表。  
+
+10. 单击“保存”将报表保存到报表服务器。 你可以在“监视”工作区的“报表”节点中运行和修改新报表。  
+
+###  <a name="BKMK_CreateSQLBasedReport"></a>创建基于 SQL \-的报表  
+ 基于 SQL 的报表使你能够检索基于报表 SQL 语句的数据。  
 
 > [!IMPORTANT]  
->  A conta do usuário deve ter a permissão **Modificar do site** para criar um novo relatório. O usuário só poderá criar um relatório nas pastas para as quais tenha permissões para **Modificar Relatório** .  
+>  在为自定义报表创建 SQL 语句时，不要直接引用 SQL Server 表， 而是从站点数据库中引用报表 SQL Server 视图\(以 v\_ 开头的视图名称\)。 还可以从站点数据库中引用公共存储过程\(以 sp\_ 开头的存储过程名称\)。  
 
- Use o procedimento a seguir para criar um relatório do Configuration Manager baseado em SQL.  
+> [!IMPORTANT]  
+>  用户帐户必须具有“站点修改”权限才能创建新报表。 用户只能在其具有“修改报表”权限的文件夹中创建报表。  
 
-#### <a name="to-create-a-sql-based-report"></a>Para criar um relatório baseado em SQL  
+ 使用以下过程来创建基于 SQL 的 Configuration Manager 报表。  
 
-1.  No console do Configuration Manager, clique em **Monitoramento**.  
+#### <a name="to-create-a-sql-based-report"></a>创建基于 SQL 的报表  
 
-2.  No espaço de trabalho **Monitoramento** , expanda **Relatórios**e clique em **Relatórios**.  
+1.  在 Configuration Manager 控制台中，单击“监视”。  
 
-3.  Na guia **Início** , na seção **Criar** , clique em **Criar Relatório** para abrir o **Assistente para Criar Relatório**.  
+2.  在“监视”工作区中，展开“报表”，然后单击“报表”。  
 
-4.  Na página **Informações** , defina as seguintes configurações:  
+3.  在“主页”选项卡上的“创建”部分，单击“创建报表”，以打开“创建报表向导”。  
 
-    -   **Tipo**: Selecione **Relatório baseado em SQL** para criar um relatório no Construtor de Relatórios usando uma instrução SQL.  
+4.  在“信息”页上，配置下列设置：  
 
-    -   **Nome**: Especifique um nome para o relatório.  
+    -   **类型**：选择“基于 SQL 的报表”以使用 SQL 语句在报表生成器中创建报表。  
 
-    -   **Descrição**: Especifique uma descrição para o relatório.  
+    -   **名称**：指定报表的名称。  
 
-    -   **Servidor**: Exibe o nome do servidor de relatório no qual você está criando o relatório.  
+    -   **描述**：指定报表的描述。  
 
-    -   **Caminho**: Clique em **Procurar** para especificar uma pasta na qual você deseja armazenar o relatório.  
+    -   **服务器**：显示你在其上创建此报表的报表服务器的名称。  
 
-     Clique em **Avançar**.  
+    -   **路径**：单击“浏览”指定要在其中存储报表的文件夹。  
 
-5.  Na página de **Resumo** , analise as configurações. Clique em **Anterior** para alterar as configurações ou clique em **Próximo** para criar o relatório no Configuration Manager.  
+     单击“下一步”。  
 
-6.  Na página **Confirmação** , clique em **Fechar** para sair do assistente, e abra o Construtor de Relatórios para definir as configurações do relatório. Especifique a sua conta e senha de usuário, se necessário, e clique em **OK**. Se o Construtor de Relatórios não estiver instalado no computador, será necessário instalá-lo. Clique em **Executar** para instalar o Construtor de Relatórios, o qual é necessário para modificar e criar relatórios.  
+5.  在“摘要”页上，检查配置设置。 单击“上一步”以更改设置，或单击“下一步”以在 Configuration Manager 中创建报表。  
 
-7.  No Construtor de Relatórios da Microsoft, especifique a instrução SQL para o relatório ou crie a mesma usando as colunas nas exibições disponíveis do SQL Server, adicione os parâmetros no relatório e assim por diante.  
+6.  在“确认”页上，单击“关闭”退出向导并打开报表生成器以配置报表设置。 如果出现提示，请输入你的用户帐户和密码，然后单击“确定”。 如果计算机上未安装报表生成器，将会提示你进行安装。 单击“运行”安装修改和创建报表所需的报表生成器。  
 
-8.  Clique em **Executar** para executar o relatório. Verifique se o relatório contém as informações desejadas. Clique em **Design** para retornar à exibição Design e modificar o relatório, se necessário.  
+7.  在 Microsoft 报表生成器中，为报表提供 SQL 语句或使用可用 SQL Server 视图中的列生成 SQL 语句，向报表中添加参数，诸如此类。  
 
-9. Clique em **Salvar** para salvar o relatório no servidor de relatório. Você pode executar o novo relatório no nó **Relatórios** do espaço de trabalho **Monitoramento** .  
+8.  单击“运行”以运行报表。 验证报表是否提供了预期信息。 如果需要，单击“设计”返回到“设计”视图以修改报表。  
 
-##  <a name="BKMK_ManageReportSubscriptions"></a> Gerenciar assinaturas de relatório  
- As assinaturas de relatório no SQL Server Reporting Services permitem que você configure a entrega automática de relatórios especificados por email ou para um compartilhamento de arquivos em intervalos agendados. Use o **Assistente para Criar Assinatura** no System Center 2012 Configuration Manager para configurar assinaturas de relatório.  
+9. 单击“保存”将报表保存到报表服务器。 你可以在“监视”工作区的“报表”节点中运行新报表。  
 
-###  <a name="BKMK_ReportSubscriptionFileShare"></a> Criar uma assinatura de relatório para entregar um relatório a um compartilhamento de arquivo  
- Quando você cria uma assinatura de relatório para entregá-lo a um compartilhamento de arquivo, o relatório é copiado no formato definido para o compartilhamento especificado. Você pode se inscrever e solicitar a entrega de apenas um relatório de cada vez.  
+##  <a name="BKMK_ManageReportSubscriptions"></a>管理报表订阅  
+ SQL Server Reporting Services 中的报表订阅使你能够配置按计划的间隔通过电子邮件自动交付指定报表或将指定报表自动交付到文件共享。 使用 System Center 2012 Configuration Manager 中的**创建订阅向导**来配置报表订阅。  
 
- Diferentemente dos relatórios hospedados e gerenciados por um servidor de relatório, os relatórios entregues a uma pasta de compartilhamento são arquivos estáticos. Os recursos interativos definidos para o relatório não funcionam para relatórios armazenados como arquivos no sistema de arquivos. Recursos de interação são representados como elementos estáticos. Se o relatório incluir gráficos, a apresentação padrão será usada. Se o relatório apresenta vínculo com outro relatório, o link é processado como texto estático. Se você deseja manter os recursos interativos em um relatório entregue, use a entrega de email. Para obter mais informações sobre a entrega de email, veja a seção [Criar uma assinatura de relatório para entregar um relatório por email](#BKMK_ReportSubscriptionEmail) mais adiante neste tópico.  
+###  <a name="BKMK_ReportSubscriptionFileShare"></a>创建报表订阅以向文件共享传递报表  
+ 创建报表订阅以向文件共享传递报表时，会使用指定的格式将报表复制到你指定的文件共享中。 一次只能订阅和请求传递一个报表。  
 
- Ao criar uma assinatura que utiliza a entrega de compartilhamento de arquivos, especifique uma pasta existente como a pasta de destino. O servidor de relatório não cria pastas no sistema de arquivos. A pasta especificada deve ser acessível através de uma conexão de rede. Ao especificar a pasta de destino em uma assinatura, use um caminho UNC e não inclua barras invertidas no caminho da pasta. Por exemplo, um caminho UNC válido para a pasta de destino é: \\\\&lt;nomedoservidor\>\\reportfiles\\operations\\2011.  
+ 与报表服务器承载和管理的报表不同的是，向共享文件夹传递的报表是静态文件。 对于作为文件系统上的文件存储的报表，为报表定义的交互式功能无效。 交互式功能将呈现为静态元素。 如果报表包含图表，则会使用默认的表示形式。 如果报表链接到另一个报表，则链接呈现为静态文本。 如果想在传递的报表中保留交互式功能，请改用电子邮件传递。 有关电子邮件传递的详细信息，请参阅本主题后面的[创建报表订阅以通过电子邮件传递报表](#BKMK_ReportSubscriptionEmail)章节。  
 
- Os relatórios podem ser processados em uma variedade de formatos de arquivo, como MHTML ou Excel. Para salvar o relatório em um formato de arquivo específico, selecione esse formato de renderização ao criar sua assinatura. Por exemplo, escolher o Excel salva o relatório como um arquivo do Microsoft Excel. Embora você possa selecionar qualquer formato de renderização com suporte, alguns formatos funcionam melhor do que outros na renderização de um arquivo.  
+ 在创建使用文件共享传递的订阅时，必须将现有的文件夹指定为目标文件夹。 报表服务器不会在文件系统上创建文件夹。 对于你指定的文件夹，必须可以通过网络连接来访问它。 在指定订阅中的目标文件夹时，请使用 UNC 路径，并且不要在文件夹路径中包含末尾的反斜杠。 例如，目标文件夹的有效 UNC 路径是：\\\\&lt;servername\>\\reportfiles\\operations\\2011。  
 
- Use o procedimento a seguir para criar uma assinatura de relatório para entregar um relatório a um compartilhamento de arquivo.  
+ 可以使用各种文件格式（例如 MHTML 或 Excel）来呈现报表。 若要将报表保存为特定的文件格式，请在创建订阅时选择该呈现格式。 例如，选择“Excel”以将报表保存为 Microsoft Excel 文件。 虽然可以选择任何受支持的呈现格式，但在呈现为文件时，某些格式的效果比另一些好。  
 
-#### <a name="to-create-a-report-subscription-to-deliver-a-report-to-a-file-share"></a>Para criar uma assinatura de relatório para entregar um relatório a um compartilhamento de arquivo  
+ 使用下列过程来创建向文件共享传递报表的报表订阅。  
 
-1.  No console do Configuration Manager, clique em **Monitoramento**.  
+#### <a name="to-create-a-report-subscription-to-deliver-a-report-to-a-file-share"></a>创建向文件共享传递报表的报表订阅  
 
-2.  No espaço de trabalho **Monitoramento** , expanda **Gerando Relatórios** e clique em **Relatórios** para listar os relatórios disponíveis. Você pode selecionar uma pasta de relatório para listar somente os relatórios associados à pasta.  
+1.  在 Configuration Manager 控制台中，单击“监视”。  
 
-3.  Selecione o relatório que deseja adicionar à assinatura, e na guia **Início** , na seção **Grupo de Relatórios** , clique em **Criar Inscrição** para abrir o **Assistente para Criar Assinatura**.  
+2.  在“监视”工作区中，展开“报表”，然后单击“报表”，以列出可用报表。 可以选择一个报表文件夹，以仅列出与该文件夹关联的报表。  
 
-4.  Na página **Entrega de Assinatura** , defina as seguintes configurações:  
+3.  选择要添加到订阅中的报表，然后在“主页”选项卡上的“报表组”部分中，单击“创建订阅”，以打开“创建订阅向导”。  
 
-    -   Relatório entregue por: Selecione **Compartilhamento de Arquivo do Windows** para entregar o relatório a um compartilhamento de arquivos.  
+4.  在“订阅传递”页上，配置下列设置：  
 
-    -   **Nome do Arquivo**: Especifique o nome do arquivo para o relatório. Por padrão, o arquivo de relatório não inclui uma extensão de nome de arquivo. Selecione **Adicionar extensão de arquivo quando criada** para adicionar automaticamente uma extensão de nome de arquivo a esse relatório com base no formato de renderização.  
+    -   报表传递方式：选择“Windows 文件共享”，以向文件共享传递报表。  
 
-    -   **Caminho**: especifique um caminho UNC para uma pasta existente para a qual você deseja enviar este relatório \(por exemplo, \\\\&lt;nome do servidor\>\\&lt;compartilhamento do servidor\>\\&lt;pasta do relatório\>\).  
+    -   **文件名**：指定报表的文件名。 默认情况下，报表文件不包含文件扩展名。 选择“创建时添加文件扩展名”，以自动根据呈现格式向此报表添加文件扩展名。  
+
+    -   **路径**：指定想将此报表传递到其中的现有文件夹的 UNC 路径\(例如，\\\\&lt;服务器名称\>\\&lt;服务器共享\>\\&lt;报表文件夹\>\)。  
 
         > [!NOTE]  
-        >  O nome de usuário especificado posteriormente nesta página deve ter acesso a esse compartilhamento de servidor e ter permissões de gravação na pasta de destino.  
+        >  稍后在此页上指定的用户名必须能够访问此服务器共享，并且必须具有目标文件夹的“写入”权限。  
 
-    -   **Renderizar Formato**: Selecione um dos seguintes formatos do arquivo de relatório:  
+    -   **呈现格式**：为报表文件选择下列格式之一：  
 
-        -   **Arquivo XML com dados de relatório**: Salva o relatório no formato de linguagem XML.  
+        -   **具有报表数据的 XML 文件**：使用可扩展标记语言格式保存报表。  
 
-        -   **CSV \(delimitado por vírgula\)**: Salva o relatório no formato de valores separados por vírgula.  
+        -   **CSV \(逗号分隔\)**：使用逗号分隔值格式保存报表。  
 
-        -   **Arquivo TIFF**: Salva o relatório no formato TIFF.  
+        -   **TIFF 文件**：使用标记图像文件格式保存报表。  
 
-        -   **Arquivo do Acrobat \(PDF\)**: Salva o relatório no formato PDF do Acrobat.  
+        -   **Acrobat \(PDF\)文件**：使用 Acrobat 可移植文档格式保存报表。  
 
-        -   **HTML 4.0**: Salva o relatório como uma página da Web visível apenas em navegadores que oferecem suporte a HTML 4.0. O Internet Explorer 5 e as versões posteriores oferecem suporte a HTML 4.0.  
+        -   **HTML 4.0**：将报表保存为仅在支持 HTML 4.0 的浏览器中才能查看的网页。 Internet Explorer 5 和更高版本支持 HTML 4.0。  
 
             > [!NOTE]  
-            >  Se houver imagens em seu relatório, o formato HTML 4.0 não irá incluí-las no arquivo.  
+            >  如果报表包含图像，HTML 4.0 格式并不会在文件中包含这些图像。  
 
-        -   **MHTML \(arquivo Web\)**: Salva o relatório no formato MIME HTML \(mhtml\), que é visível em muitos navegadores da Web.  
+        -   **MHTML \(Web 存档\)**：使用 MIME HTML 格式 \(mhtml\) 保存报表（可在多个 Web 浏览器中查看）。  
 
-        -   **Processador RPL**: Salva o relatório no formato RPL \(Report Page Layout\).  
+        -   **RPL 呈现器**：使用报表页面布局 \(RPL\) 格式保存报表。  
 
-        -   **Excel**: Salva o relatório como uma planilha do Microsoft Excel.  
+        -   **Excel**：将报表保存为 Microsoft Excel 电子表格。  
 
-        -   **Word**: Salva o relatório como um documento do Microsoft Word.  
+        -   **Word**：将报表保存为 Microsoft Word 文档。  
 
-    -   **Nome de usuário**: Especifique uma conta de usuário do Windows com permissões para acessar o compartilhamento do servidor de destino e a pasta. A conta de usuário deve ter acesso a esse compartilhamento de servidor e ter permissão de gravação na pasta de destino.  
+    -   **用户名**：指定具有目标服务器共享和文件夹的访问权限的 Windows 用户帐户。 该用户帐户必须能够访问此服务器共享，并且必须具有目标文件夹的“写入”权限。  
 
-    -   **Senha**: Especifique a senha para a conta de usuário do Windows. Em **Confirmar Senha**, insira a senha novamente.  
+    -   **密码**：指定 Windows 用户帐户的密码。 在“确认密码”中，重新输入密码。  
 
-    -   Selecione uma das seguintes opções para configurar o comportamento quando um arquivo com o mesmo nome existe na pasta de destino:  
+    -   选择下列选项之一，以配置当目标文件夹中存在同名文件时的行为：  
 
-        -   **Substituir um arquivo existente por uma versão mais nova**: Especifica que, quando o arquivo de relatório já existe, a nova versão o substitui.  
+        -   **使用较新版本覆盖现有文件**：指定在报表文件已存在时用新版本覆盖它。  
 
-        -   **Não substituir um arquivo existente**: Especifica que, quando o arquivo de relatório já existe, nenhuma ação ocorre.  
+        -   **不覆盖现有文件**：指定在报表文件已存在时不执行任何操作。  
 
-        -   **Incrementar nomes de arquivo à medida que versões mais novas forem adicionadas**: Especifica que, quando o arquivo de relatório já existe, um número é adicionado ao novo relatório para o nome de arquivo distingui-lo de outras versões.  
+        -   **添加较新版本时递增文件名**：指定在报表文件已存在时，向新报表的文件名添加一个数字，以将它与其他版本区分开来。  
 
-    -   **Descrição**: Especifica a descrição para a assinatura de relatório.  
+    -   **描述**：指定报表订阅的描述。  
 
-     Clique em **Avançar**.  
+     单击“下一步”。  
 
-5.  Na página **Agendamento da Assinatura** , selecione uma das seguintes opções de agendamento de entrega para a assinatura do relatório:  
+5.  在“订阅计划”页上，为报表订阅选择下列传递计划选项之一：  
 
-    -   **Usar agendamento compartilhado**: Um agendamento compartilhado é um agendamento previamente definido que pode ser usado por outras assinaturas de relatório. Marque essa caixa de seleção e selecione um agendamento compartilhado na lista, se algum tiver sido especificado.  
+    -   **使用共享计划**：共享计划是以前定义的计划，可以由其他报表订阅使用。 选中此复选框，然后在列表中选择一个共享计划（如果已指定了任何共享计划的话）。  
 
-    -   **Criar novo agendamento**: Configure o agendamento no qual é executado esse relatório, incluindo o intervalo, a data e a hora de início e a data de término para essa assinatura.  
+    -   **创建新计划**：配置此报表的运行计划，包括间隔、开始时间和日期以及此订阅的结束日期。  
 
-6.  Na página **Parâmetros de Assinatura** , especifique os parâmetros usados para esse relatório quando ele é executado de forma autônoma. Quando não existem parâmetros para o relatório, essa página não é exibida.  
+6.  在“订阅参数”页上，指定在无人参与的情况下运行此报表时所使用的参数。 如果没有为报表指定参数，则不会显示此页。  
 
-7.  Na página **Resumo** , revise as configurações de assinatura de relatório. Clique em **Anterior** para alterar as configurações ou clique em **Próxima** para criar a assinatura do relatório.  
+7.  在“摘要”页上，查看报表订阅的设置。 单击“上一步”以更改设置，或单击“下一步”，以创建报表订阅。  
 
-8.  Na página **Conclusão** , clique em **Fechar** para sair do assistente. Verifique se a assinatura do relatório foi criada com êxito. É possível exibir e modificar as assinaturas de relatório no nó **Assinaturas** sob **Gerando Relatórios** no espaço de trabalho **Monitoramento** .  
+8.  在“完成”页上，单击“关闭”退出向导。 验证是否已成功创建报表订阅。 可以在“监视”工作区中的“订阅”节点的“报表”下查看和修改报表订阅。  
 
-###  <a name="BKMK_ReportSubscriptionEmail"></a> Criar uma assinatura de relatório para entregar um relatório por email  
- Quando você cria uma assinatura de relatório para entregar um relatório por email, um email é enviado aos destinatários que você configurar, e o relatório é incluído como um anexo. O servidor de relatório não valida endereços de email ou os obtém a partir de um servidor de email. Você precisa saber com antecedência quais endereços de email deseja usar. Por padrão, é possível enviar por email relatórios a qualquer conta de email válida, dentro ou fora de sua organização. Você pode selecionar uma ou ambas as opções de entrega de email a seguir:  
+###  <a name="BKMK_ReportSubscriptionEmail"></a>创建报表订阅以通过电子邮件传递报表  
+ 在创建报表订阅以通过电子邮件传递报表时，将向你配置的收件人发送电子邮件，而且会将报表包含为附件。 报表服务器不会验证电子邮件地址，也不会从电子邮件服务器获取电子邮件地址。 你必须事先知道要使用的电子邮件地址。 默认情况下，可以将报表通过电子邮件发送到组织内部或外部的任何有效的电子邮件帐户。 可以选择下列一个或全部两个电子邮件传递选项：  
 
--   Enviar uma notificação e um hiperlink para o relatório gerado.  
+-   发送通知和所生成的报表的超链接。  
 
--   Enviar um relatório anexado ou inserido. O formato de renderização e o navegador determinam se o relatório é inserido ou anexado. Se seu navegador der suporte para HTML 4.0 e MHTML e se for possível selecionar o formato de renderização MHTML \(arquivo Web\), o relatório será inserido como parte da mensagem. Todos os outros formatos de renderização \(CSV, PDF, Word e assim por diante\) entregam os relatórios como anexos. O Reporting Services não verifica o tamanho do anexo ou da mensagem antes de enviar o relatório. Se o anexo ou a mensagem exceder o limite máximo permitido por seu servidor de email, o relatório não será entregue.  
+-   发送嵌入或附加的报表。 呈现格式和浏览器决定报表是嵌入的还是附加的。 如果浏览器支持 HTML 4.0 和 MHTML，且选择“MHTML\(Web 存档\)”呈现格式，则报表将嵌入到邮件中。 所有其他呈现格式\(CSV、PDF、Word 等\)将报表作为附件传递。 Reporting Services 在发送报表之前不会检查附件或邮件的大小。 如果附件或邮件超过了邮件服务器允许的最大限制值，则不会传递报表。  
 
 > [!IMPORTANT]  
->  Você deve definir as configurações de email no Reporting Services para a opção de entrega **Email** ficar disponível. Para obter mais informações sobre como definir as configurações de email no Reporting Services, consulte [Configurando um servidor de relatório para entrega de email](http://go.microsoft.com/fwlink/p/?LinkId=226668) nos Manuais Online do SQL Server.  
+>  必须在 Reporting Services 中配置电子邮件设置，以便让“电子邮件”传递选项可用。 有关在 Reporting Services 中配置电子邮件设置的详细信息，请参阅 SQL Server 联机丛书中的[配置报表服务器以进行电子邮件传递](http://go.microsoft.com/fwlink/p/?LinkId=226668)。  
 
- Use o procedimento a seguir para criar uma assinatura de relatório para entregar um relatório por email.  
+ 使用下列过程来创建报表订阅，以使用电子邮件传递报表。  
 
-#### <a name="to-create-a-report-subscription-to-deliver-a-report-by-email"></a>Para criar uma assinatura de relatório para entregar um relatório por email  
+#### <a name="to-create-a-report-subscription-to-deliver-a-report-by-email"></a>创建报表订阅以通过电子邮件传递报表  
 
--   No console do Configuration Manager, clique em **Monitoramento**.  
+-   在 Configuration Manager 控制台中，单击“监视”。  
 
--   No espaço de trabalho **Monitoramento** , expanda **Gerando Relatórios** e clique em **Relatórios** para listar os relatórios disponíveis. Você pode selecionar uma pasta de relatório para listar somente os relatórios associados à pasta.  
+-   在“监视”工作区中，展开“报表”，然后单击“报表”以列出可用报表。 可以选择一个报表文件夹，以仅列出与该文件夹关联的报表。  
 
--   Selecione o relatório que deseja adicionar à assinatura, e na guia **Início** , na seção **Grupo de Relatórios** , clique em **Criar Inscrição** para abrir o **Assistente para Criar Assinatura**.  
+-   选择要添加到订阅中的报表，然后在“主页”选项卡上的“报表组”部分中，单击“创建订阅”，以打开“创建订阅向导”。  
 
--   Na página **Entrega de Assinatura** , defina as seguintes configurações:  
+-   在“订阅传递”页上，配置下列设置：  
 
-    -   **Relatório entregue por**: Selecione **Email** para entregar o relatório como um anexo em uma mensagem de email.  
+    -   **报表传递方式**：选择“电子邮件”，以将报表作为电子邮件的附件传递。  
 
-    -   **Para**: Especifique um endereço de email válido ao qual enviar esse relatório.  
+    -   结束时间：指定有效的电子邮件地址以接收此报表。  
 
         > [!NOTE]  
-        >  Você pode inserir vários destinatários de email separando cada endereço de email com ponto e vírgula.  
+        >  通过用分号来分隔每个电子邮件地址，可以输入多个电子邮件收件人。  
 
-    -   **Cc**: Opcionalmente, especifique um endereço de email ao qual copiar esse relatório.  
+    -   **抄送**：根据需要指定要将此报表复制到的电子邮件地址。  
 
-    -   **Cco**: Opcionalmente, especifique um endereço de email ao qual enviar uma cópia oculta desse relatório.  
+    -   **密件抄送**：根据需要指定要将此报表的密件副本发送到的电子邮件地址。  
 
-    -   **Responder para**: Especifique o endereço de resposta a ser usado se o destinatário responder à mensagem de email.  
+    -   **回复**：指定在收件人回复电子邮件时要使用的回复地址。  
 
-    -   **Assunto**: Especifique uma linha de assunto para a mensagem de email de assinatura.  
+    -   **主题**：指定订阅电子邮件的主题行。  
 
-    -   **Prioridade**: Selecione o sinalizador de prioridade para essa mensagem de email. Selecione **Baixa**, **Normal**ou **Alta**. A configuração de prioridade é usada pelo Microsoft Exchange para definir um sinalizador que indica a importância da mensagem de email.  
+    -   **优先级**：选择此电子邮件的优先级标记。 请选择“低”、“普通”或“高”。 Microsoft Exchange 使用优先级设置来设置标记，以指示电子邮件的重要性。  
 
-    -   **Comentário**: Especifique o texto a ser adicionado ao corpo da mensagem de email de assinatura.  
+    -   **备注**：指定要添加到订阅电子邮件的正文的文本。  
 
-    -   **Descrição**: Especifique a descrição para essa assinatura de relatório.  
+    -   **描述**：指定此报表订阅的描述。  
 
-    -   **Incluir Link**: Inclui uma URL ao relatório inscrito no corpo da mensagem de email.  
+    -   **包括链接**：在电子邮件的正文中包括订阅的报表的 URL。  
 
-    -   **Incluir Relatório**: Especifique que o relatório é anexado à mensagem de email. O formato no qual o relatório será anexado é especificado na lista **Renderizar Formato** .  
+    -   **包括报表**：指定将报表附加到电子邮件。 在“呈现格式”列表中指定用于附加报表的格式。  
 
-    -   **Renderizar Formato**: Selecione um dos seguintes formatos para o relatório anexado:  
+    -   **呈现格式**：为附加的报表选择下列格式之一：  
 
-        -   **Arquivo XML com dados de relatório**: Salva o relatório no formato de linguagem XML.  
+        -   **具有报表数据的 XML 文件**：使用可扩展标记语言格式保存报表。  
 
-        -   **CSV \(delimitado por vírgula\)**: Salva o relatório no formato de valores separados por vírgula.  
+        -   **CSV \(逗号分隔\)**：使用逗号分隔值格式保存报表。  
 
-        -   **Arquivo TIFF**: Salva o relatório no formato TIFF.  
+        -   **TIFF 文件**：使用标记图像文件格式保存报表。  
 
-        -   **Arquivo do Acrobat \(PDF\)**: Salva o relatório no formato PDF do Acrobat.  
+        -   **Acrobat \(PDF\)文件**：使用 Acrobat 可移植文档格式保存报表。  
 
-        -   **MHTML \(arquivo Web\)**: Salva o relatório no formato MIME HTML \(mhtml\), que é visível em muitos navegadores da Web.  
+        -   **MHTML \(Web 存档\)**：使用 MIME HTML 格式 \(mhtml\) 保存报表（可在多个 Web 浏览器中查看）。  
 
-        -   **Excel**: Salva o relatório como uma planilha do Microsoft Excel.  
+        -   **Excel**：将报表保存为 Microsoft Excel 电子表格。  
 
-        -   **Word**: Salva o relatório como um documento do Microsoft Word.  
+        -   **Word**：将报表保存为 Microsoft Word 文档。  
 
--   Na página **Agendamento da Assinatura** , selecione uma das seguintes opções de agendamento de entrega para a assinatura do relatório:  
+-   在“订阅计划”页上，为报表订阅选择下列传递计划选项之一：  
 
-    -   **Usar agendamento compartilhado**: Um agendamento compartilhado é um agendamento previamente definido que pode ser usado por outras assinaturas de relatório. Marque essa caixa de seleção e selecione um agendamento compartilhado na lista, se algum tiver sido especificado.  
+    -   **使用共享计划**：共享计划是以前定义的计划，可以由其他报表订阅使用。 选中此复选框，然后在列表中选择一个共享计划（如果已指定了任何共享计划的话）。  
 
-    -   **Criar novo agendamento**: Configure o agendamento no qual esse relatório será executado, incluindo o intervalo, a data e a hora de início e a data de término para essa assinatura.  
+    -   **创建新计划**：配置此报表的运行计划，包括间隔、开始时间和日期以及此订阅的结束日期。  
 
--   Na página **Parâmetros de Assinatura** , especifique os parâmetros usados para esse relatório quando ele é executado de forma autônoma. Quando não existem parâmetros para o relatório, essa página não é exibida.  
+-   在“订阅参数”页上，指定在无人参与的情况下运行此报表时所使用的参数。 如果没有为报表指定参数，则不会显示此页。  
 
--   Na página **Resumo** , revise as configurações de assinatura de relatório. Clique em **Anterior** para alterar as configurações ou clique em **Próxima** para criar a assinatura do relatório.  
+-   在“摘要”页上，查看报表订阅的设置。 单击“上一步”以更改设置，或单击“下一步”，以创建报表订阅。  
 
--   Na página **Conclusão** , clique em **Fechar** para sair do assistente. Verifique se a assinatura do relatório foi criada com êxito. É possível exibir e modificar as assinaturas de relatório no nó **Assinaturas** sob **Gerando Relatórios** no espaço de trabalho **Monitoramento** .  
-
+-   在“完成”页上，单击“关闭”退出向导。 验证是否已成功创建报表订阅。 可以在“监视”工作区中的“订阅”节点的“报表”，下查看和修改报表订阅。  

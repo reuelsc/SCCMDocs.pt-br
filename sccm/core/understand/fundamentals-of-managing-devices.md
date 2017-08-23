@@ -1,104 +1,100 @@
 ---
-title: "Conceitos básicos do gerenciamento de dispositivos | Microsoft Docs"
-description: Saiba como usar o System Center Configuration Manager para gerenciar dispositivos.
+title: "管理设备的基础知识 | Microsoft Docs"
+description: "了解如何使用 System Center Configuration Manager 管理设备。"
 ms.custom: na
 ms.date: 12/04/2016
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
-ms.technology:
-- configmgr-other
+ms.technology: configmgr-other
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 2bca3db9-115a-451d-8c93-f073ceefe0c7
-caps.latest.revision: 6
+caps.latest.revision: "6"
 author: arob98
 ms.author: angrobe
 manager: angrobe
-ms.translationtype: Human Translation
-ms.sourcegitcommit: a71e37060937f40bcb1bdb1c6165b7799fc72675
-ms.openlocfilehash: a9847e67ab1935fb66824945637ff683c006bdbe
-ms.contentlocale: pt-br
-ms.lasthandoff: 12/30/2016
-
-
+ms.openlocfilehash: 45d84122a86da880268c93ecd994250df6b76c8a
+ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
+ms.translationtype: HT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 08/07/2017
 ---
-# <a name="fundamentals-of-managing-devices-with-system-center-configuration-manager"></a>Conceitos básicos do gerenciamento de dispositivos com o System Center Configuration Manager
+# <a name="fundamentals-of-managing-devices-with-system-center-configuration-manager"></a>使用 System Center Configuration Manager 管理设备的基础知识
 
-*Aplica-se a: System Center Configuration Manager (Branch Atual)*
+*适用范围：System Center Configuration Manager (Current Branch)*
 
-O System Center Configuration Manager pode gerenciar duas categorias de dispositivos:
+System Center Configuration Manager 可管理两大类设备：
 
--   Os *clientes* são dispositivos como estações de trabalho, laptops, servidores e dispositivos móveis nos quais você instala o software cliente do Configuration Manager. Algumas funções de gerenciamento, como o inventário de hardware, exigem esse software cliente.  
+-   客户端是安装了 Configuration Manage 客户端软件的设备，例如工作站、笔记本电脑、服务器和移动设备。 某些管理功能（例如硬件清单）需要此客户端软件。  
 
--   Os *dispositivos gerenciados* podem incluir *clientes*, mas normalmente consistem em um dispositivo móvel no qual o software cliente do Configuration Manager não está instalado. Nesse tipo de dispositivo, é possível gerenciar usando o Intune ou o gerenciamento de dispositivo móvel local interno do Configuration Manager.
+-   托管设备可以是客户端，但通常为未安装 Configuration Manager 客户端软件的移动设备。 在这种设备上，可以使用 Intune 或 Configuration Manager 中的内置本地移动设备管理进行管理。
 
-Você também pode agrupar e identificar os dispositivos com base no usuário e não apenas no tipo de cliente.
+还可以根据用户，而不仅仅是客户端类型对设备进行分组和标识。
 
-## <a name="managing-devices-with-the-configuration-manager-client"></a>Gerenciando dispositivos com o cliente do Configuration Manager
+## <a name="managing-devices-with-the-configuration-manager-client"></a>使用 Configuration Manager 客户端管理设备
 
-Há duas formas de usar o software cliente do Configuration Manager para gerenciar um dispositivo. A primeira é descobrir o dispositivo na rede e, em seguida, implantar o software cliente nesse dispositivo. A outra é instalar manualmente o software cliente em um novo computador e, em seguida, adicionar esse computador ao seu site quando ele é adicionado à rede. Para descobrir dispositivos nos quais o software cliente ainda não foi instalado, execute um ou mais dos métodos de descoberta internos. Depois que um dispositivo for descoberto, use um dos vários métodos para instalar o software cliente. Para obter mais informações sobre o uso da descoberta, consulte [Executar descoberta para o System Center Configuration Manager](../../core/servers/deploy/configure/run-discovery.md).  
+使用 Configuration Manager 客户端软件管理设备有两种方法。 第一种方法是发现网络上的设备，然后将客户端软件部署到该设备。 另一种方法是在新计算机上手动安装客户端软件，然后在该计算机加入网络时加入你的站点。 若要发现尚未安装客户端软件的设备，请运行一个或多个内置发现方法。 发现设备后，使用众多方法之一来安装客户端软件。 有关使用发现的信息，请参阅[运行 System Center Configuration Manager 发现](../../core/servers/deploy/configure/run-discovery.md)。  
 
- Depois de descobrir os dispositivos com suporte para executar o software cliente do Configuration Manager, você poderá usar um dos vários métodos para instalar o software. Depois que o software estiver instalado e o cliente for atribuído a um site primário, o dispositivo pode começar a ser gerenciado.  Os métodos de instalação comuns incluem:
+ 发现支持运行 Configuration Manager 客户端软件的设备后，可以使用众多方法之一来安装软件。 安装软件并将客户端分配到主站点后，即可开始管理设备。  常见安装方法包括：
 
- - Instalação do cliente por push.
+ - 客户端请求安装。
 
- - Instalação baseada em atualização de software.
+ - 基于软件更新的安装。
 
- - Política de grupo.
+ - 组策略。
 
- - Instalação manual em um computador.
- - Incluindo o cliente como parte de uma imagem do sistema operacional que você implanta.  
-
-
- Depois que o cliente estiver instalado, é possível simplificar as tarefas de gerenciamento de dispositivos usando coleções. As coleções são grupos de dispositivos ou usuários que você cria para poder gerenciá-los como um grupo. Por exemplo, é possível instalar um aplicativo para dispositivo móvel em todos os dispositivos móveis registrados pelo Configuration Manager. Se esse for o caso, você poderá usar a coleção Todos os Dispositivos Móveis.  
-
- Para obter mais informações, consulte esses tópicos:  
-
--   [Escolher uma solução de gerenciamento de dispositivo para o System Center Configuration Manager](../../core/plan-design/choose-a-device-management-solution.md)  
-
--   [Métodos de instalação do cliente no System Center Configuration Manager](../../core/clients/deploy/plan/client-installation-methods.md)  
-
--   [Introdução às coleções no System Center Configuration Manager](../../core/clients/manage/collections/introduction-to-collections.md)  
-
-### <a name="client-settings"></a>Configurações do cliente  
- Ao instalar o Configuration Manager pela primeira vez, todos os clientes da hierarquia são configurados usando as configurações de cliente padrão que você pode alterar. Essas configurações de cliente incluem opções como:
-
- -  Com que frequência os dispositivos se comunicam com o site.
-
- -  Se o cliente está configurado para atualizações de software e outras operações de gerenciamento.
-
- -  Se os usuários podem registrar seus dispositivos móveis para serem gerenciados pelo Configuration Manager.  
-
-Você pode criar configurações personalizadas de cliente e, em seguida, atribui-las às coleções.  Os membros da coleção são configurados para ter as configurações personalizadas e você pode criar várias configurações de cliente personalizadas que são aplicadas na ordem especificada (por ordem numérica).  Se houver conflito entre elas, a configuração com o menor número substituirá as demais.  
-
-O diagrama a seguir mostra um exemplo de como criar e aplicar configurações de cliente personalizadas.  
-
- ![Configurações do cliente](media/ClientSettings.gif)  
-
- Para saber mais sobre configurações de cliente, confira  
-                [Como definir as configurações do cliente no System Center Configuration Manager](../../core/clients/deploy/configure-client-settings.md) e [Sobre as configurações do cliente no System Center Configuration Manager](../../core/clients/deploy/about-client-settings.md).
-
-## <a name="managing-devices-without-the-configuration-manager-client"></a>Gerenciando dispositivos sem o cliente do Configuration Manager  
- O Configuration Manager dá suporte ao gerenciamento de alguns dispositivos que não instalaram o software cliente e que não são gerenciados pelo Intune. Para obter mais informações, consulte [Gerenciar dispositivos móveis com a infraestrutura local no System Center Configuration Manager](../../mdm/understand/manage-mobile-devices-with-on-premises-infrastructure.md) e [Gerenciar dispositivos móveis com o System Center Configuration Manager e o Exchange](../../mdm/deploy-use/manage-mobile-devices-with-exchange-activesync.md).  
-
-## <a name="user-based-management"></a>Gerenciamento baseado em usuário  
- O Configuration Manager dá suporte a coleções de usuários do Active Directory Domain Services. Se você usar uma coleção de usuários, poderá instalar o software em todos os computadores usados pelos membros da coleção. Para ter certeza de que o software implantado é instalado somente nos dispositivos especificados como um dispositivo primário do usuário, configure a afinidade de dispositivo de usuário. Um usuário pode ter um ou mais dispositivos primários.  
-
- Um das maneiras como os usuários podem controlar a experiência de implantação de software é usar a interface do cliente do **Centro de Software**. O **Centro de Software** é instalado automaticamente em computadores cliente e executado por meio do menu **Iniciar**. O **Centro de Software** permite que os usuários gerenciem seu próprio software e executem as tarefas a seguir:  
-
--   Instalar software.  
-
--   Agendar a instalação automática do software fora do horário comercial.  
-
--   Configurar quando o Configuration Manager pode instalar o software em seu dispositivo.  
-
--   Configurar as definições de acesso para controle remoto se o controle remoto estiver habilitado no Configuration Manager.  
-
--   Configurar opções de gerenciamento de energia se algum administrador configurar essa opção.  
+ - 在计算机上手动安装。
+ - 将客户端包含在要部署的操作系统映像中。  
 
 
- Um link no **Centro de Software** permite que os usuários se conectem ao **Catálogo de Aplicativos**, no qual é possível procurar, instalar e solicitar softwares. O **Catálogo de Aplicativos** também é usado para configurar as definições de preferência, apagar dispositivos móveis e, quando configurado, especificar um dispositivo primário para afinidade de dispositivo de usuário.   
+ 安装客户端后，可以通过使用集合来简化管理设备的工作。 集合是创建的设备或用户组，以便作为一个组对其进行管理。 例如，你可能希望在通过 Configuration Manager 注册的所有移动设备上安装移动设备应用程序。 如果是这种情况，可使用“所有移动设备”集合。  
 
- Os usuários também podem acessar o **Catálogo de Aplicativos** por meio de uma sessão de Internet ou de intranet do navegador.  
+ 有关详细信息，请参阅以下主题：  
 
+-   [为 System Center Configuration Manager 选择设备管理解决方案](../../core/plan-design/choose-a-device-management-solution.md)  
+
+-   [System Center Configuration Manager 中的客户端安装方法](../../core/clients/deploy/plan/client-installation-methods.md)  
+
+-   [System Center Configuration Manager 中的集合简介](../../core/clients/manage/collections/introduction-to-collections.md)  
+
+### <a name="client-settings"></a>客户端设置  
+ 在初次安装 Configuration Manager 时，将通过使用可更改的默认客户端设置配置层次结构中的所有客户端。 这些客户端设置包括以下配置选项：
+
+ -  设备与站点通信的频率。
+
+ -  是否针对软件更新和其他管理操作设置客户端。
+
+ -  用户是否可以注册其移动设备，以便受 Configuration Manager 管理。  
+
+可创建自定义客户端设置，然后将其分配到集合。  将集合中的成员配置为具有自定义设置，你可以创建多个自定义客户端设置，并根据你（按数值顺序）指定的顺序应用这些设置。  如果存在冲突的设置，则具有最低序号的设置优先于其他设置。  
+
+下图显示了创建和应用自定义客户端设置的方法示例。  
+
+ ![客户端设置](media/ClientSettings.gif)  
+
+ 若要了解有关客户端设置的详细信息，请参阅  
+                [如何在 System Center Configuration Manager 中配置客户端设置](../../core/clients/deploy/configure-client-settings.md)和[关于 System Center Configuration Manager 中的客户端设置](../../core/clients/deploy/about-client-settings.md)。
+
+## <a name="managing-devices-without-the-configuration-manager-client"></a>不使用 Configuration Manager 客户端而管理设备  
+ Configuration Manager 支持管理未安装客户端软件且不由 Intune 管理的一些设备。 有关详细信息，请参阅[在 System Center Configuration Manager 中使用本地基础结构管理移动设备](../../mdm/understand/manage-mobile-devices-with-on-premises-infrastructure.md)和[使用 System Center Configuration Manager 和 Exchange 管理移动设备](../../mdm/deploy-use/manage-mobile-devices-with-exchange-activesync.md)。  
+
+## <a name="user-based-management"></a>基于用户的管理  
+ Configuration Manager 支持 Active Directory 域服务用户的集合。 使用用户集合时，可以在该集合成员使用的所有计算机上安装软件。 若要确保要部署的软件仅在指定为用户主要设备的设备上安装，请设置用户设备相关性。 用户可以有一个或多个主设备。  
+
+ 用户可对其软件部署体验进行控制的一种方式是使用**软件中心**客户端接口。 **软件中心**自动安装在客户端计算机上，并通过“开始”菜单运行。 **软件中心**使用户能管理自己的软件，以及执行下列任务：  
+
+-   安装软件。  
+
+-   安排软件在非工作时间自动安装。  
+
+-   配置 Configuration Manager 在设备上安装软件的时间。  
+
+-   配置远程控制的访问权限设置（如果在 Configuration Manager 中设置了远程控制）。  
+
+-   配置电源管理的选项（如果管理员设置了此项）。  
+
+
+ 通过**软件中心**中的链接，用户可以连接到**应用程序目录**，在该目录中，用户可以浏览、安装和请求软件。 此外，**应用程序目录**还可用于配置首选项设置、擦除移动设备，以及为用户设备相关性指定主设备（如果设置此项）。   
+
+ 用户还可通过浏览器 Intranet 或 Internet 会话访问**应用程序目录**。  

@@ -1,104 +1,100 @@
 ---
-title: "Atualizar dispositivos do Windows para uma versão diferente com o Configuration Manager | Microsoft Docs"
-description: "Atualize automaticamente os dispositivos que executam o Windows 10 Desktop, Windows 10 Mobile ou Windows 10 Holographic para outra edição com o Configuration Manager."
+title: "使用 Configuration Manager 将 Windows 设备升级到不同版本 | Microsoft Docs"
+description: "使用 Configuration Manager 将运行 Windows 10 桌面版、Windows 10 移动版或 Windows 10 全息版的设备自动升级到不同版本。"
 ms.custom: na
 ms.date: 07/31/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
-ms.technology:
-- configmgr-other
+ms.technology: configmgr-other
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: b0c9db74-841e-46eb-8924-957cde968bf7
-caps.latest.revision: 8
-caps.handback.revision: 0
+caps.latest.revision: "8"
+caps.handback.revision: "0"
 author: robstackmsft
 ms.author: robstack
 manager: angrobe
-ms.translationtype: HT
-ms.sourcegitcommit: 3c75c1647954d6507f9e28495810ef8c55e42cda
 ms.openlocfilehash: cd8c644d07dab0010dc211df8ce4f2dc6e1fa7ae
-ms.contentlocale: pt-br
-ms.lasthandoff: 07/29/2017
-
+ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
+ms.translationtype: HT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 08/07/2017
 ---
+# <a name="upgrade-windows-devices-with-the-edition-upgrade-policy-in-system-center-configuration-manager"></a>在 System Center Configuration Manager 中使用版本升级策略升级 Windows 设备
 
-# <a name="upgrade-windows-devices-with-the-edition-upgrade-policy-in-system-center-configuration-manager"></a>Atualizar dispositivos Windows com a política de atualização de edição no System Center Configuration Manager
-
-*Aplica-se a: System Center Configuration Manager (Branch Atual)*
+*适用范围：System Center Configuration Manager (Current Branch)*
 
 
-A **Política de Atualização de Edição** do System Center Configuration Manager permite atualizar automaticamente os dispositivos que executem uma das seguintes versões do Windows 10 para uma edição diferente:
+System Center Configuration Manager **版本升级策略**可以将运行以下任一 Windows 10 版本的设备自动升级至不同版本：
 
-- Windows 10 Desktop
-- Windows 10 Mobile
+- Windows 10 桌面版
+- Windows 10 移动版
 <!-- - Windows 10 Holographic -->
 
-Há suporte para os seguintes caminhos de atualização:
+支持下列升级路径：
 
-- Do Windows 10 Pro para Windows 10 Enterprise
-- Do Windows 10 Home para Windows 10 Education
-- Do Windows 10 Mobile para Windows 10 Mobile Enterprise
+- 从 Windows 10 专业版到 Windows 10 企业版
+- 从 Windows 10 家庭版到 Windows 10 教育版
+- 从 Windows 10 移动版到 Windows 10 移动企业版
 <!-- - From Windows 10 Holographic Pro to Windows 10 Holographic Enterprise -->
 
-Os dispositivos devem ser registrados no Microsoft Intune ou executar o software cliente do Configuration Manager. Essa política não é compatível no momento com PCs gerenciados por MDM local.
+设备必须在 Microsoft Intune 中注册或运行 Configuration Manager 客户端软件。 此策略当前不兼容本地 MDM 管理的电脑。
 
-## <a name="before-you-start"></a>Antes de começar  
- Antes de começar a atualizar os dispositivos para a versão mais recente, será necessário o seguinte:  
+## <a name="before-you-start"></a>开始之前  
+ 在开始将设备升级至最新版本之前，你将需要以下内容之一：  
 
--   Uma chave do produto (Product Key) que é válida para instalar a nova versão do Windows em todos os dispositivos de que destino com a política (para sistemas operacionais de área de trabalho)  
+-   在该策略针对的所有设备上安装 Windows 新版本使用的有效产品密钥（针对于桌面操作系统）  
 
--   Um arquivo de licença da Microsoft que contém as informações de licenciamento para instalar a nova versão do Windows em todos os dispositivos de destino com a política (para Windows Mobile 10<!-- and Windows 10 Holographic-->).
+-   在该策略针对的所有设备上安装 Windows 新版本使用的包含许可信息的 Microsoft 许可证文件（针对 Windows 10 移动版<!-- and Windows 10 Holographic-->）。
 
-- Para criar e implantar esse tipo de política, você deve recebido a atribuição da função de segurança de **Administrador Completo** do Configuration Manager.
+- 若要创建和部署此策略类型，必须分配有 Configuration Manager **完全权限管理员**安全角色。
 
-## <a name="configure-the-edition-upgrade-policy"></a>Configurar a política de atualização de edição  
+## <a name="configure-the-edition-upgrade-policy"></a>配置版本升级策略  
 
-1.  No console do Configuration Manager, clique em **Ativos e Conformidade** > **Configurações de Conformidade** > **Atualização da Edição do Windows 10**.  
+1.  在 Configuration Manager 控制台中，单击“资产和符合性” > “符合性设置” > “Windows 10 版本升级”。  
 
-3.  Na guia **Início** , no grupo **Criar** , clique em **Criar Política de Atualização de Edição**.  
+3.  在“主页”  选项卡上的“创建”  组中，单击“创建版本升级策略” 。  
 
-4.  Clique em **Criar Política**.  
+4.  单击“创建策略” 。  
 
-5.  Na página **Geral** do **Assistente de Criação de Política de Atualização de Edição**, especifique as seguintes informações:  
+5.  在“创建版本升级策略向导”  的“常规” 页上，指定以下信息：  
 
-    -   **Nome** - Insira um nome para a política de atualização de edição.  
+    -   **名称** - 输入版本升级策略的名称。  
 
-    -   **Descrição** (opcional) - opcionalmente, digite uma descrição para a política que ajuda a identificá-la no console do Intune.  
+    -   **描述** （可选）- 根据需要，输入有助于在 Intune 控制台中识别该策略的描述。  
 
-    -   **SKU para atualizar o dispositivo** – na lista suspensa, selecione a versão do Windows 10 Desktop, <!-- Windows 10 Holographic,--> ou Windows 10 Mobile para a qual você deseja atualizar os dispositivos de destino.  
+    -   **将设备升级到的 SKU 版本** – 从下拉列表中，选择你想将目标设备升级到的版本：Windows 10 桌面版<!-- Windows 10 Holographic,-->或 Windows 10 移动版。  
 
-    -   **Informações de licença** - Selecione um destes:  
+    -   **许可证信息** - 选择以下之一：  
 
-        -   **Chave do Produto (Product Key)** - Insira uma chave do produto (Product Key) válida do Windows 10 que será usada para atualizar os dispositivos que você visa que executam sistemas operacionais Windows 10 Desktop.  
+        -   **产品密钥** - 输入有效的 Windows 10 产品密钥，该密钥将用于升级运行 Windows 10 桌面版操作系统的目标设备。  
 
             > [!NOTE]  
-            >  Depois de criar uma política que contém uma chave do produto (Product Key), não é possível editar a chave do produto (Product Key) mais tarde. Isso ocorre porque a chave é obscurecida por motivos de segurança. Para alterar a chave do produto (Product Key), você deve reinserir a chave inteira.  
+            >  在创建包含产品密钥的策略后，将无法对产品密钥进行编辑。 这是因为出于安全考虑，密钥将被遮盖。 若要更改产品密钥，必须重新输入完整的密钥。  
 
-        -   **Arquivo de Licença** – Clique em **Procurar** para selecionar um arquivo de licença válida no formato XML que será usado para atualizar os dispositivos de destino que executam os sistemas operacionais <!--Windows 10 Holographic and -->Windows 10 Mobile.  
+        -   **许可证文件** - 单击“浏览”以选择有效的 XML 格式的许可证文件，该文件将用于升级运行 <!--Windows 10 Holographic and -->Windows 10 移动版操作系统的目标设备。  
 
-6.  Conclua o assistente.  
+6.  完成向导。  
 
-A nova política é exibida no nó **Atualização de Edição do Windows 10** do espaço de trabalho **Ativos e Conformidade** .  
+新策略会显示在“资产和符合性”  工作区的“Windows 10 版本升级”  节点中。  
 
-## <a name="deploy-the-edition-upgrade-policy"></a>Implantar a política de atualização de edição  
+## <a name="deploy-the-edition-upgrade-policy"></a>部署版本升级策略  
 
-1.  No console do Configuration Manager, clique em **Ativos e Conformidade** > **Configurações de Conformidade** > **Atualização da Edição do Windows 10**.  
+1.  在 Configuration Manager 控制台中，单击“资产和符合性” > “符合性设置” > “Windows 10 版本升级”。  
 
-3.  Selecione a política de atualização de edição do Windows 10 que deseja implantar e, na guia **Início** , no grupo **Implantação** , clique em **Implantar**.  
+3.  选择你想部署的 Windows 10 版本升级策略，然后在“主页”  选项卡上的“部署”  组中，单击“部署” 。  
 
-4.  Na caixa de diálogo **Implantar a Atualização do Windows 10 Edition**, escolha a coleção a qual você deseja implantar a política e o agendamento pelo qual a política será avaliada e, em seguida, clique em **OK**. Para PCs gerenciados com o cliente do Configuration Manager, você deve implantar a política para uma coleção de dispositivos. Para computadores que são registrados com o Intune, você pode implantar a política a um usuário ou uma coleção de dispositivos. 
+4.  在“部署 Windows 10 版本升级”对话框中，选择要为其部署策略的集合和评估该策略的计划，然后单击“确定”。 对于 Configuration Manager 客户端管理的电脑，必须将策略部署到设备集合。 对于已注册 Intune 的电脑，可以将策略部署到用户或设备集合。 
 
 
 
-## <a name="next-steps"></a>Próximas etapas
+## <a name="next-steps"></a>后续步骤
 
-Ao monitorar a implantação que você acabou de criar no nó **Implantações** do espaço de trabalho **Monitoramento**, você poderá ver erros indicando que a implantação não foi bem-sucedida, como:
-- **Não aplicável para este dispositivo**
-- **Falha na conversão do tipo de dados**
+当监视刚从“监视”工作区的“部署”节点创建的部署时，可能会看到指示部署不成功的错误，如下所示：
+- 不适用于此设备
+- 数据类型转换失败
 
-Esses erros não significam que a implantação falhou. Verifique se a atualização foi executada com êxito no PC de destino.
+这些错误并不表示部署已失败。 在已成功执行升级的目标电脑上进行验证。
 
-Quando a política atinge um computador Windows definido como destino e é avaliada, ela será reiniciada dentro de duas horas para aplicar a atualização. Certifique-se de informar os usuários nos quais você implanta a política ou agende a política para ser executada fora do horário de trabalho dos usuários.
-
+该策略应用到目标 Windows 电脑并进行评估后，该电脑将在两小时内重启以应用升级。 确保通知所有要向其部署策略，或计划在其业余时间运行该策略的用户。

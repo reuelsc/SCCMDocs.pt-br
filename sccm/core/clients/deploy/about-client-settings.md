@@ -1,672 +1,669 @@
 ---
-title: "Configurações do cliente | Microsoft Docs"
-description: "Escolha as configurações do cliente usando o console de administração no System Center Configuration Manager."
+title: "客户端设置 | Microsoft Docs"
+description: "通过使用 System Center Configuration Manager 中的管理控制台选择客户端设置。"
 ms.custom: na
 ms.date: 08/01/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
-ms.technology:
-- configmgr-client
+ms.technology: configmgr-client
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: f7560876-8084-4570-aeab-7fd44f4ba737
-caps.latest.revision: 15
-caps.handback.revision: 0
+caps.latest.revision: "15"
+caps.handback.revision: "0"
 author: robstackmsft
 ms.author: robstack
 manager: angrobe
-ms.translationtype: HT
-ms.sourcegitcommit: c0d94b8e6ca6ffd82e879b43097a9787e283eb6d
 ms.openlocfilehash: a8233c361e1a78b14a02f328da445814624e38d8
-ms.contentlocale: pt-br
-ms.lasthandoff: 08/02/2017
-
+ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
+ms.translationtype: HT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 08/07/2017
 ---
-# <a name="about-client-settings-in-system-center-configuration-manager"></a>Sobre as configurações do cliente no System Center Configuration Manager
+# <a name="about-client-settings-in-system-center-configuration-manager"></a>关于 System Center Configuration Manager 中的客户端设置
 
-*Aplica-se a: System Center Configuration Manager (Branch Atual)*
+*适用于：System Center Configuration Manager (Current Branch)*
 
-Todas as configurações de cliente no System Center Configuration Manager são gerenciadas no console do Configuration Manager do nó **Configurações do Cliente** no espaço de trabalho **Administração**. O Configuration Manager é fornecido com um conjunto de configurações padrão. Quando você altera as configurações padrão do cliente, essas configurações são aplicadas a todos os clientes na hierarquia. Você também pode configurar configurações personalizadas do cliente, que substituem as configurações padrão do cliente ao atribuí-las a coleções. Para obter informações sobre como definir as configurações do cliente, consulte [How to configure client settings in System Center Configuration Manager](../../../core/clients/deploy/configure-client-settings.md).  
+System Center Configuration Manager 中的所有客户端设置在 Configuration Manager 控制台中从“管理”工作区中“客户端设置”节点进行托管。 Configuration Manager 附带一组默认设置。 如果更改默认的客户端设置，则这些设置将应用于层次结构中的所有客户端。 你也可以配置自定义客户端设置，当将这些设置分配给集合时，它们将替代默认客户端设置。 有关如何配置客户端设置的信息，请参阅 [How to configure client settings in System Center Configuration Manager](../../../core/clients/deploy/configure-client-settings.md)。  
 
-Muitas das configurações do cliente são autoexplicativas. Outras são descritas aqui.  
+许多客户端设置具有自解释性。 此处介绍了其他内容。  
 
-## <a name="background-intelligent-transfer-service"></a>Serviço de Transferência Inteligente em Segundo Plano  
+## <a name="background-intelligent-transfer-service"></a>后台智能传输服务  
 
--   **Limitar a largura de banda de rede máxima para transferências em segundo plano do BITS**  
+-   **限制 BITS 后台传输的最大网络带宽**  
 
-   Quando essa opção é **Verdadeira** ou **Sim**, os clientes usarão a limitação de largura de banda do BITS.  
+   当此选项为“True”或“是”时，客户端将使用 BITS 带宽限制。  
 
--   **Hora de início do período de limitação**  
+-   **限制时段开始时间**  
 
-   Especifique a hora de início local para o período de limitação do BITS.  
+   指定 BITS 限制时段的本地开始时间。  
 
--   **Hora de término do período de limitação**  
+-   **限制时段结束时间**  
 
-   Especifique a hora de início final para o período de limitação do BITS. Se for o mesmo que a **Hora de início do período de limitação**, a limitação do BITS sempre estará habilitada.  
+   指定 BITS 限制时段的本地结束时间。 如果此值与“限制时段开始时间”相等，则会始终启用 BITS 限制。  
 
--   **Taxa de transferência máxima durante o período de limitação (Kbps)**  
+-   **限制时段期间的最大传输速率(Kbps)**  
 
-   Especifique a taxa de transferência máxima que pode ser usada pelos clientes durante o período.  
+   指定客户端在此时段可以使用的最大传输速率。  
 
--   **Permitir downloads de BITS fora do período de limitação**  
+-   **允许 BITS 在限制时段外下载**  
 
-   Escolha essa opção para permitir que os clientes do Configuration Manager usem configurações de BITS separadas fora do período especificado.  
+   选择此选项以允许 Configuration Manager 客户端在指定时段之外使用单独的 BITS 设置。  
 
--   **Taxa de transferência máxima fora do período de limitação (Kbps)**  
+-   **限制时段外的最大传输速率(Kbps)**  
 
-   Especifique a taxa de transferência máxima que é usada por clientes fora do período de limitação do BITS quando você tiver optado por permitir a limitação do BITS fora do período.  
+   选择在限制时段之外允许 BITS 限制时，指定客户端在 BITS 限制时段外使用的最大传输速率。  
 
-## <a name="client-cache-settings"></a>Configurações de cache do cliente
+## <a name="client-cache-settings"></a>客户端缓存设置
 
-- **Configurar o BranchCache**
+- **配置 BranchCache**
 
-  Começando da versão 1606, use essa definição para configurar o computador cliente para o [BranchCache](/sccm/core/plan-design/configs/support-for-windows-features-and-networks#branchcache). Para permitir o armazenamento em cache do BranchCache no cliente, defina **Habilitar o BranchCache** como **Sim**.
+  从版本 1606 开始，使用此设置可设置客户端计算机的 [BranchCache](/sccm/core/plan-design/configs/support-for-windows-features-and-networks#branchcache)。 若要允许客户端上的 BranchCache 缓存，请将“启用 BranchCache”设置为“是”。
 
-- **Habilitar o BranchCache**
+- **启用 BranchCache**
 
-Habilite o BranchCache nos computadores cliente.
+在客户端计算机上启用 BranchCache。
 
-- **Tamanho do cache BranchCache máximo (percentual do disco)**.
+- **最大 BranchCache 缓存大小（占磁盘的百分比）**。
 
-- **Configurar o tamanho do cache do cliente**
+- **配置客户端缓存大小**
 
-  O cache do cliente em computadores com Windows armazena arquivos temporários usados para instalar aplicativos e programas. Escolha **Sim** e depois especifique:
-    - **Tamanho máximo de cache** (megabytes). 
-    - **Tamanho máximo do cache** (percentual do disco).
-O tamanho do cache do cliente pode expandir para o tamanho máximo em MB ou a porcentagem do disco, **o que for menor**. Se for definido como **Não**, o tamanho padrão será 5.120 MB.
+  Windows 计算机上的客户端缓存会保存用于安装应用程序和程序的临时文件。 选择“是”，然后指定：
+    - 最大缓存大小 (MB)。 
+    - 最大缓存大小（占磁盘的百分比）。
+客户端缓存大小可以扩展到最大大小（按 MB 或磁盘百分比指定），以较小者为准。 如果此选项为“否”，则默认大小为 5,120 MB。
 
-- **Habilitar cliente do Configuration Manager em um SO completo para compartilhar conteúdo**
+- **在完整的 OS 中启用 Configuration Manager 客户端，以共享内容**
 
-Habilite o cache de pares para clientes do Configuration Manager. Em seguida, especifique as informações da porta pela qual o cliente se comunica com o computador de mesmo nível. O Configuration Manager configurará automaticamente as regras de Firewall do Windows para permitir esse tráfego. Se você usar um firewall diferente, deverá configurar manualmente as regras para permitir esse tráfego.
-
-
+启用用于 Configuration Manager 客户端的对等缓存。 然后，指定客户端与对等计算机进行通信的端口信息。 Configuration Manager 将自动配置 Windows 防火墙规则以允许此流量。 如果使用其他防火墙，则必须手动配置规则以允许此流量。
 
 
-## <a name="client-policy"></a>Política do cliente  
 
--   **Intervalo de sondagem da política do cliente (minutos)**  
 
-   Especifique a frequência com que os seguintes clientes do Configuration Manager baixam a política do cliente:  
+## <a name="client-policy"></a>客户端策略  
 
-  -   Computadores Windows (por exemplo, desktops, servidores, laptops)  
+-   **客户端策略轮询间隔(分钟)**  
 
-  -   Dispositivos móveis registrados pelo Configuration Manager  
+   指定以下 Configuration Manager 客户端下载客户端策略的频率：  
 
-  -   Computadores Mac  
+  -   Windows 计算机（例如，台式机、服务器、便携计算机）  
 
-  -   Computadores que executam o Linux ou UNIX  
+  -   Configuration Manager 注册的移动设备  
 
--   **Habilitar sondagem de política de usuário nos clientes**  
+  -   Mac 计算机  
 
-   Ao definir como **Verdadeira** ou **Sim**, e o Configuration Manager tiver [descoberto o usuário](../../../core/servers/deploy/configure/about-discovery-methods.md#bkmk_aboutUser), os clientes nos computadores receberão aplicativos e programas destinados ao usuário conectado.  
+  -   运行 Linux 或 UNIX 的计算机  
 
-   Como o Catálogo de Aplicativos recebe a lista de software disponível para usuários do servidor do site, essa configuração não deve ser **Verdadeira** ou **Sim** para que os usuários vejam e solicitem aplicativos do Catálogo de Aplicativos. No entanto, se essa configuração for **Falsa** ou **Não**, o seguinte não funcionará quando os usuários usarem o Catálogo de Aplicativos:  
+-   **在客户端上启用用户策略轮询**  
 
-  -   Os usuários não podem instalar os aplicativos que veem no Catálogo de Aplicativos.  
+   如果此选项设置为“True”或“是”并且 Configuration Manager [发现了用户](../../../core/servers/deploy/configure/about-discovery-methods.md#bkmk_aboutUser)，则计算机上的客户端将接收以登录的用户为目标的应用程序和程序。  
 
-  -   Os usuários não verão as notificações sobre suas solicitações de aprovação de aplicativo. Em vez disso, eles devem atualizar o catálogo de aplicativos e verificar o status de aprovação.  
+   由于应用程序目录从站点服务器接收可供用户使用的软件的列表，因此此设置不必为“True”或“是”，用户便可以从应用程序目录中查看和请求应用程序。 但是如果此设置为“False”或“否”，则在用户使用应用程序目录时以下各项将不工作：  
 
-  -   Os usuários não receberão as revisões e atualizações para aplicativos publicadas no catálogo de aplicativos. Contudo, eles verão as alterações nas informações do aplicativo no Catálogo de Aplicativos.  
+  -   用户无法安装他们在应用程序目录中看到的应用程序。  
 
-  -   Se você remover uma implantação de aplicativo depois que o cliente tiver instalado o aplicativo do catálogo de aplicativos, os clientes continuarão verificando se o aplicativo está instalado por até 2 dias.  
+  -   用户将看不到有关他们的应用程序批准请求的通知。 相反，他们必须刷新应用程序目录并检查审批状态。  
 
-   Além disso, quando essa configuração for **Falsa** ou **Não**, os usuários não receberão os aplicativos necessários que você implanta em usuários ou outras tarefas de gerenciamento contidas nas políticas do usuário.  
+  -   用户将不会收到发布到应用程序目录的应用程序的修订和更新。 但是，他们会在应用程序目录中看到对应用程序所做更改的信息。  
 
-   Essa configuração se aplica aos usuários quando o computador está na intranet e Internet. Ela deverá ser **Verdadeira** ou **Sim** se desejar habilitar políticas de usuário pela Internet.  
+  -   如果在客户端应用程序目录中安装应用程序后删除应用程序部署，则客户端最多会对是否安装了应用程序的情况继续检查 2 天。  
 
--   **Ativar solicitações de política de usuário de clientes da Internet**  
+   此外，如果此设置为“False”或“否”，则用户将不会收到为用户部署的所需应用程序或用户策略中的任何其他管理任务。  
 
-   Quando o cliente e o site estão configurados para gerenciamento de clientes baseado na Internet e você define essa opção como **Verdadeira** ou **Sim** e ambas das condições a seguir são aplicáveis, os usuários recebem a política do usuário quando o computador está na Internet:  
+   当用户的计算机位于 Intranet 或 Internet 时，此设置会应用到用户。 如果还想在 Internet 上启用用户策略，则其必须为“True”或“是”。  
 
-  -   A configuração do cliente **Habilitar sondagem da política de usuário nos clientes** é **Verdadeira** ou **Habilitar política de usuário em clientes** é **Sim**.  
+-   **启用来自 Internet 客户端的用户策略请求**  
 
-  -   O ponto de gerenciamento baseado na Internet autentica com êxito o usuário utilizando a autenticação do Windows (Kerberos ou NTLM).  
+   如果为基于 Internet 的客户端管理配置客户端和站点，并且将此选项设置为“True”或“是”且以下两个条件都适用，则当用户的计算机在 Internet 上时，用户将收到用户策略：  
 
-   Se você deixar essa opção como **Falsa** ou **Não**, ou se alguma das condições falhar, um computador na Internet receberá somente as políticas do computador. Nesse cenário, os usuários ainda podem ver, solicitar e instalar aplicativos de um catálogo de aplicativos baseados na Internet. Se essa configuração for **Falsa** ou **Não**, mas **Habilitar sondagem da política de usuário nos clientes** for **Verdadeira** ou **Habilitar política de usuário em clientes** for **Sim**, os usuários não receberão as políticas de usuário até que o computador esteja conectado à intranet.  
+  -   “在客户端上启用用户策略轮询”客户端设置为“True”或“在客户端上启用用户策略”为“是”。  
 
-   Para mais informações sobre o gerenciamento de clientes na Internet, confira [Considerações sobre a comunicação do cliente da Internet ou de uma floresta não confiável](../../../core/plan-design/hierarchy/communications-between-endpoints.md#BKMK_clientspan) em [Comunicação entre pontos de extremidade no System Center Configuration Manager](../../../core/plan-design/hierarchy/communications-between-endpoints.md).  
+  -   基于 Internet 的管理点可通过使用 Windows 身份验证（Kerberos 或 NTLM）成功地对用户进行验证。  
+
+   如果将此选项保留为“False” 或“否”，或者任何一个条件失败，则 Internet 上的计算机将仅收到计算机策略。 在此情况下，用户仍然能够查看、请求和安装基于 Internet 的应用程序目录中的应用程序。 如果此设置为“False”或“否”，但“在客户端上启用用户策略轮询”为“True”或“在客户端上启用用户策略”为“是”，则在计算机连接到 Intranet 之前，用户将不会收到用户策略。  
+
+   有关在 Internet 上管理客户端的详细信息，请参阅 [System Center Configuration Manager 中终结点之间的通信](../../../core/plan-design/hierarchy/communications-between-endpoints.md#BKMK_clientspan)中的[来自 Internet 或不受信任林的客户端通信的注意事项](../../../core/plan-design/hierarchy/communications-between-endpoints.md)。  
 
   > [!NOTE]  
-  >  As solicitações de aprovação de aplicativo dos usuários não exigem autenticação de usuário nem políticas de usuário.  
+  >  来自用户的应用程序批准请求不需要用户策略或用户身份验证。  
 
-##  <a name="compliance-settings"></a>Configurações de conformidade  
+##  <a name="compliance-settings"></a>符合性设置  
 
--   **Agendar a avaliação da conformidade**  
+-   **计划符合性评估**  
 
-     Escolha **Agendar** para criar o agendamento padrão que é exibido aos usuários quando eles implantam uma linha de base de configuração. Esse valor pode ser configurado para cada linha de base na caixa de diálogo **Implantar Linha de Base de Configuração** .  
+     选择“计划”以创建在用户部署配置基线时向用户显示的默认计划。 可以在“部署配置基线”对话框中为每个基线配置此值。  
 
--   **Habilitar perfis e dados do usuário**  
+-   **启用用户数据和配置文件**  
 
-     Escolha **Sim** se quiser implantar os itens de configuração [dados e perfis do usuário](../../../compliance/deploy-use/create-user-data-and-profiles-configuration-items.md) em computadores Windows 8 em sua hierarquia.  
+     如果想要向层次结构中的 Windows 8 计算机部署[用户数据和配置文件](../../../compliance/deploy-use/create-user-data-and-profiles-configuration-items.md)配置项目，请选择“是”。  
 
-## <a name="computer-agent"></a>Agente de Computador  
+## <a name="computer-agent"></a>计算机代理  
 
--   **Ponto de sites da Web do Catálogo de Aplicativos padrão**  
+-   **默认应用程序目录网站点**  
 
-     O Configuration Manager usa essa configuração para conectar usuários ao Catálogo de Aplicativos do Centro de Software. Você pode especificar um servidor que hospeda o ponto de sites da Web do catálogo de aplicativos pelo nome NetBIOS ou FQDN, especificar a detecção automática ou especificar uma URL para implantações personalizadas. Na maioria dos casos, a detecção automática é a melhor opção porque oferece os seguintes benefícios:  
+     Configuration Manager 使用此设置将用户连接到软件中心中的应用程序目录。 你可以通过 NetBIOS 名称或 FQDN 指定承载应用程序目录网站点的服务器、指定自动检测，或者指定自定义部署的 URL。 在大多数情况下，自动检测是最佳选择，因为它具有下列优点：  
 
-    -   Os clientes receberão automaticamente um ponto de sites da Web do catálogo de aplicativos do seu site se este contiver um ponto de sites da Web do catálogo de aplicativos.  
+    -   如果客户端的站点具有应用程序目录网站点，则从客户端站点中向客户端自动提供应用程序目录网站点。  
 
-    -   Pontos de sites da Web do catálogo de aplicativos na intranet configurados para HTTPS têm preferência sobre os que não o são. Isso ajuda a proteger contra um servidor não autorizado.
+    -   Intranet 上配置为使用 HTTPS 的应用程序目录网站点优先于未配置为使用 HTTPS 的应用程序目录网站点。 这有助于防御恶意服务器。
 
-    -   Quando os clientes são configurados para gerenciamento de clientes baseado na Internet e na intranet, eles recebem um ponto de sites da Web do catálogo de aplicativos baseado na Internet quando estão na Internet e um ponto de sites da Web do catálogo de aplicativos baseado na intranet quando estão na intranet.  
+    -   对基于 Intranet 和 Internet 的客户端管理配置客户端后，如果客户端在 Internet 上，则会为它们提供基于 Internet 的应用程序目录网站点；如果客户端在 Intranet 上，则会为它们提供基于 Intranet 的应用程序目录网站点。  
 
-     A detecção automática não garante que os clientes receberão um ponto de sites da Web do catálogo de aplicativos que esteja mais perto deles. Você pode decidir por não usar a **Detecção automática** pelos seguintes motivos:  
+     自动检测不保证将为客户端提供与其最接近的应用程序目录网站点。 由于以下原因，你可能决定不使用“自动检测”：  
 
-     -   Você deseja configurar manualmente o servidor mais próximo para clientes ou garantir que eles não se conectem a um servidor em uma conexão de rede lenta.  
+     -   你想要为客户端手动配置最接近的服务器，或者确保客户端不跨慢速网络连接连接到服务器。  
 
-     -   Você deseja controlar quais clientes se conectam a qual servidor. Essa configuração pode ser por motivos comerciais, de desempenho ou teste.  
+     -   你想要控制哪些客户端连接到哪台服务器。 此配置可能出于测试、性能或商业原因。  
 
-     -   Você não quer esperar até 25 horas ou uma alteração de rede para que os clientes sejam configurados com um ponto de sites da Web do catálogo de aplicativos diferente.  
+     -   你不想等待 25 个小时之久，或者不想为客户端网络更改配置其他应用程序目录网站点。  
 
-     Se você especificar o ponto de sites da Web do catálogo de aplicativos em vez de usa a detecção automática, especifique o nome NetBIOS em vez do FQDN da intranet. Isso ajuda a reduzir a probabilidade de solicitação de credenciais de usuários quando eles se conectam ao Catálogo de Aplicativos pela intranet. Para usar o nome NetBIOS, as seguintes condições devem ser aplicáveis:  
+     如果指定应用程序目录网站点而不是使用自动检测，请指定 NetBIOS 名称而不是 intranet FQDN。 这有助于降低用户在连接到 Intranet 上的应用程序目录时提示用户输入凭据的可能性。 要使用 NetBIOS 名称，必须应用下列条件：  
 
-     -   O nome NetBIOS é especificado nas propriedades do ponto de sites da Web do catálogo de aplicativos.  
+     -   在应用程序目录网站点属性中指定 NetBIOS 名称。  
 
-     -   Você usa o WINS ou todos os clientes estão no mesmo domínio do ponto de sites da Web do catálogo de aplicativos.  
+     -   使用 WINS 或者所有客户端与应用程序目录网站点在同一域中。  
 
-     -   O ponto de sites da Web do catálogo de aplicativos está configurado para conexões do cliente HTTP ou está configurado para conexões do cliente HTTPS, e o certificado do servidor Web contém o nome NetBIOS.  
+     -   针对 HTTP 客户端连接或 HTTPS 客户端连接配置了应用程序目录网站点，并且 Web 服务器证书包含 NetBIOS 名称。  
 
-     Geralmente, os usuários apresentam credenciais quando a URL contém um FQDN, mas não quando a URL é um nome NetBIOS. Espere que os usuários sempre sejam solicitados quando eles se conectam à Internet, pois essa conexão deve usar o FQDN de Internet. Quando os usuários são solicitados a apresentar credenciais quando estão na Internet, verifique se o servidor que executa o ponto de sites da Web do catálogo de aplicativos podem se conectar a um controlador de domínio para a conta do usuário para que o usuário possa ser autenticado usando o Kerberos.  
-
-    > [!NOTE]  
-    >  Como funciona a detecção automática:  
-    >   
-    >  O cliente faz uma solicitação de local de serviço para um ponto de gerenciamento. Se houver um ponto de sites da Web do catálogo de aplicativos no mesmo site do cliente, o servidor é fornecido ao cliente como o servidor do catálogo de aplicativos a ser usado. Quando mais de um ponto de sites da Web do catálogo de aplicativos está disponível no site, um servidor habilitado para HTTPS tem prioridade sobre um servidor não habilitado para HTTPS. Depois dessa filtragem, todos os clientes recebem um dos servidores para usar como o Catálogo de Aplicativos. O Configuration Manager não faz o balanceamento de carga entre vários servidores. Quando o site do cliente não contém um ponto de sites da Web do catálogo de aplicativos, o ponto de gerenciamento retorna de forma não determinística um ponto de sites da Web do catálogo de aplicativos da hierarquia.  
-    >   
-    >  Quando o cliente estiver na intranet, se o ponto de sites da Web do catálogo de aplicativos escolhido for configurado com um nome NetBIOS para a URL do Catálogo de Aplicativos, os clientes receberão esse nome NetBIOS em vez do FQDN de intranet. Quando o cliente é detectado como na Internet, somente o FQDN de Internet é fornecido ao cliente.  
-    >   
-    >  O cliente faz a solicitação de local de serviço a cada 25 horas ou sempre que detecta uma alteração de rede. Por exemplo, se o cliente se mover da intranet para a Internet e puder localizar um ponto de gerenciamento baseado na Internet, o ponto de gerenciamento baseado na Internet fornecerá servidores do ponto de sites da Web do catálogo de aplicativos baseados na Internet para os clientes.  
-
--   **Adicionar sites da Web do Catálogo de Aplicativos padrão à zona de sites confiáveis do Internet Explorer**  
-
-     Se essa opção for **Verdadeira** ou **Sim**, a URL padrão atual do site do Catálogo de Aplicativos será adicionada automaticamente à zona de sites confiáveis no Internet Explorer em clientes.  
-
-     Essa definição garante que a configuração do Internet Explorer para Modo Protegido não está habilitada. Se o Modo Protegido estiver habilitado, o cliente do Configuration Manager poderá não conseguir instalar aplicativos do Catálogo de Aplicativos. Por padrão, a zona de sites confiáveis oferece suporte ao logon de usuário para o catálogo de aplicativos, o que requer autenticação do Windows.  
-
-     Se você deixar essa opção como **Falsa**, os clientes do Configuration Manager só conseguirão instalar aplicativos do Catálogo de Aplicativos se essas configurações do Internet Explorer estiverem definidas em outra zona da URL do catálogo de aplicativos que os clientes usam.  
+     通常，当 URL 包含 FQDN 时会提示用户输入凭据，但当 URL 为 NetBIOS 名称时不会。 当用户从 Internet 进行连接时，应该始终提示用户，因为此连接必须使用 Internet FQDN。 如果当用户在 Internet 上时提示用户输入凭据，请确保运行应用程序目录网站点的服务器可以连接到用户帐户的域控制器，以便可以使用 Kerberos 对用户进行身份验证。  
 
     > [!NOTE]  
-    >  Sempre que o Configuration Manager adiciona um Catálogo de Aplicativos à zona de sites confiáveis, o Configuration Manager remove uma URL padrão anterior do Catálogo de Aplicativos que o Configuration Manager adicionou antes de adicionar uma nova entrada.  
+    >  自动检测的工作原理：  
     >   
-    >  O Configuration Manager não poderá adicionar a URL se ela já estiver especificada em uma das zonas de segurança. Nesse cenário, você deve remover a URL da outra zona ou definir manualmente as configurações necessárias do Internet Explorer.  
+    >  客户端向管理点提出服务位置请求。 如果存在与客户端在同一站点中的应用程序目录网站点，则会将此服务器作为应用程序目录服务器提供给客户端使用。 如果站点中有多个可用的应用程序目录网站点，则启用 HTTPS 的服务器优先于未启用 HTTPS 的服务器。 在进行此筛选之后，会为所有客户端提供服务器之一以用作应用程序目录；Configuration Manager 不在多个服务器之间进行负载平衡。 如果客户端的站点不包含应用程序目录网站点，则管理点会不确定地从层次结构中返回应用程序目录网站点。  
+    >   
+    >  当客户端在 Intranet 上时，如果为所选的应用程序目录网站点配置了应用程序目录 URL 的 NetBIOS 名称，则会为客户端提供此 NetBIOS 名称，而不是 Intranet FQDN。 当检测到客户端在 Internet 时，仅向客户端提供 Internet FQDN。  
+    >   
+    >  每 25 个小时或者每当客户端检测到网络更改时，客户端便会提出此服务位置请求。 例如，客户端从 Intranet 移动到 Internet，并且客户端可以查找基于 Internet 的管理点，则基于 Internet 的管理点会将基于 Internet 的应用程序目录网站点服务器提供给客户端。  
 
--   **Permitir que os aplicativos Silverlight sejam executados no modo de confiança elevada**  
+-   **向 Internet Explorer 受信任的站点区域添加默认应用程序目录网站**  
 
-     Essa configuração deve ser **Sim** se os usuários executarem o cliente do Configuration Manager e usarem o Catálogo de Aplicativos.  
+     如果此选项为“True”或“是”，则当前默认应用程序目录网站 URL 会自动添加到客户端上 Internet Explorer 的受信任的站点区域中。  
 
-     Se você alterar essa configuração, ela terá efeito quando o usuário carregar o navegador da próxima vez ou atualizar a janela do navegador aberta no momento.  
+     此设置确保不启用 Internet Explorer 的“保护模式”设置。 如果启用“保护模式”，则 Configuration Manager 客户端可能无法安装应用程序目录中的应用程序。 默认情况下，受信任的站点区域还支持应用程序目录用户登录，这需要 Windows 身份验证。  
 
-     Para mais informações sobre esta configuração, consulte [Certificados para o Microsoft Silverlight 5 e modo de confiança elevada necessários para o catálogo de aplicativo](../../../apps/plan-design/security-and-privacy-for-application-management.md#BKMK_CertificatesSilverlight5) em [Segurança e privacidade para o gerenciamento de aplicativos no System Center Configuration Manager](../../../apps/plan-design/security-and-privacy-for-application-management.md).  
+     如果将此选项保留为“False”，则 Configuration Manager 客户端可能无法从应用程序目录安装应用程序，除非在客户端使用的应用程序目录 URL 的另一个区域中配置这些 Internet Explorer 设置。  
 
--   **Nome da organização exibido no Centro de Software**  
+    > [!NOTE]  
+    >  每当 Configuration Manager 将默认的应用程序目录添加到受信任的站点区域中时，Configuration Manager 会删除之前它在添加新条目前添加的默认应用程序目录 URL。  
+    >   
+    >  如果已在安全区域之一中指定了 URL，则 Configuration Manager 无法添加此 URL。 在此情况下，必须从其他区域中删除此 URL，或者手动配置所需的 Internet Explorer 设置。  
 
-     Digite o nome que os usuários veem no Centro de Software. Essa informação de identidade visual ajuda os usuários a identificarem este aplicativo como uma fonte confiável.  
+-   **允许 Silverlight 应用程序在提升的信任模式下运行**  
 
--   **Usar o novo Centro de Software**  
+     如果用户运行 Configuration Manager 客户端并使用应用程序目录，则该设置必须为“是”。  
 
-     Se habilitado, todos os computadores cliente direcionados por essas configurações de cliente usarão o novo Centro de Software. O Centro de Software mostra os aplicativos disponíveis para o usuário que estavam acessíveis anteriormente apenas no Catálogo de Aplicativos que depende de Silverlight.  
+     如果更改此设置，则当用户下次加载其浏览器或刷新其当前打开的浏览器窗口时，更改将生效。  
 
-     As funções do sistema de sites do ponto de sites da Web do catálogo de aplicativos e do ponto de serviços Web do catálogo de aplicativos ainda são necessárias para que os aplicativos disponíveis para o usuário sejam exibidos no Centro de Software.  
+     有关此设置的详细信息，请参阅 [System Center Configuration Manager 中应用程序管理的安全和隐私](../../../apps/plan-design/security-and-privacy-for-application-management.md)中的 [Microsoft Silverlight 5 的证书和应用程序目录所需的提升信任模式](../../../apps/plan-design/security-and-privacy-for-application-management.md#BKMK_CertificatesSilverlight5)。  
 
-     Para obter mais informações, consulte [Planejar e configurar o gerenciamento de aplicativos no System Center Configuration Manager](../../../apps/plan-design/plan-for-and-configure-application-management.md).  
+-   **软件中心中显示的组织名称**  
 
--   **Permissões de instalação**  
+     键入用户在软件中心中看到的名称。 此品牌信息有助于用户将此应用程序识别为受信任的源。  
 
-    > [!WARNING]  
-    >  Essa configuração aplica-se o Centro de Software e ao Catálogo de Aplicativos. Essa configuração não tem efeito quando os usuários utilizam o portal da empresa.  
+-   **使用新的软件中心**  
 
-     Configure como os usuários podem iniciar a instalação de software, as atualizações de software e as sequências de tarefas:  
+     如果启用，这些客户端设置所针对的所有客户端计算机都将使用新的软件中心。 软件中心显示以前只能在依赖于 Silverlight 的应用程序目录中访问的用户可用应用。  
 
-    -   **Todos os usuários**: os usuários conectados a um computador cliente com qualquer autorização, exceto Convidado, podem iniciar a instalação de software, as atualizações de software e as sequências de tarefas.  
+     仍然需要应用程序目录网站点站点系统角色和应用程序目录 Web 服务点站点系统角色来让用户可用的应用显示在软件中心。  
 
-    -   **Somente administradores**: os usuários conectados a um computador cliente devem ser membros do grupo local de Administradores para iniciar a instalação de software, as atualizações de software e as sequências de tarefas.  
+     有关详细信息，请参阅[在 System Center Configuration Manager 中规划和配置应用程序管理](../../../apps/plan-design/plan-for-and-configure-application-management.md)。  
 
-    -   **Somente Administradores e usuários primários**: os usuários conectados a um computador cliente devem ser membros do grupo local de Administradores ou um usuário primário do computador para iniciar a instalação de software, as atualizações de software e as sequências de tarefas.  
-
-    -   **Nenhum Usuário**: nenhum usuário conectado a um computador cliente pode iniciar a instalação de software, as atualizações de software e as sequências de tarefas. Implantações necessárias para o computador são sempre instaladas no prazo. Os usuários não podem iniciar a instalação do software usando o Catálogo de Aplicativos ou o Centro de Software.  
-
--   **Suspender a entrada de PIN do BitLocker na reinicialização**  
-
-     Se a entrada de PIN do BitLocker estiver configurada nos computadores, essa opção pode ignorar a necessidade de inserir um PIN quando o computador é reiniciado após uma instalação de software.  
-
-    -   **Sempre**: o Configuration Manager suspende temporariamente o BitLocker após a instalação do software que exige uma reinicialização e a iniciou. Essa configuração aplica-se apenas a reinicializações de computador feitas pelo Configuration Manager e não suspende a necessidade de inserir o PIN do BitLocker quando o usuário reinicia o computador. O requisito de entrada de PIN do BitLocker é retomado após a inicialização do Windows.
-
-    -   **Nunca**: o Configuration Manager não suspende o BitLocker na próxima inicialização do computador, após ter instalado o software que exige a reinicialização. Nesse cenário, a instalação do software não pode terminar até que o usuário insira o PIN para concluir o processo de inicialização padrão e carregar o Windows.
-
--   **O software adicional gerencia a implantação de aplicativos e as atualizações de software**  
-
-     Habilite essa opção somente se uma das seguintes condições forem aplicáveis:  
-
-    -   Você usa uma solução de fornecedor que requer que essa configuração seja habilitada.  
-
-    -   Você usa o SDK (Software Development Kit) do Configuration Manager para gerenciar notificações do agente cliente e a instalação de atualizações de aplicativos e software.  
+-   **安装权限**  
 
     > [!WARNING]  
-    >  Se você escolher essa opção quando nenhuma dessas condições for aplicável, as atualizações de software e os aplicativos necessários não serão instalados nos clientes. Essa configuração não impede que os usuários instalem aplicativos do Catálogo de Aplicativos nem que os pacotes, programas e sequências de tarefas sejam instalados em computadores cliente.  
+    >  此设置适用于应用程序目录和软件中心。 当用户使用公司门户时，此设置不起作用。  
 
--   **Política de execução do PowerShell**  
+     配置用户启动软件、软件更新和任务序列安装的方式：  
 
-     Configurar como os clientes do Configuration Manager podem executar scripts do Windows PowerShell. Esses scripts são muitas vezes usados para detecção e configuração de itens em configurações de conformidade. Eles também podem ser enviados em uma implantação como um script padrão.  
+    -   **所有用户**：使用除“来宾”之外的任何权限登录到客户端计算机的用户可以启动软件、软件更新和任务序列的安装。  
 
-    -   **Ignorar**: o cliente do Configuration Manager ignora a configuração do Windows PowerShell no computador cliente para que os scripts não assinados possam ser executados.  
+    -   **仅限管理员**：登录到客户端计算机的用户必须是本地管理员组的成员才能启动软件、软件更新和任务序列的安装。  
 
-    -   **Restrito**: o cliente do Configuration Manager usa a configuração atual do Windows PowerShell no computador cliente. Essa configuração determina se é possível executar scripts não assinados.  
+    -   **仅限管理员和主要用户**：登录到客户端计算机的用户必须是本地管理员组的成员或计算机的主要用户才能启动软件、软件更新和任务序列的安装。  
 
-    -   **Tudo Assinado**: o cliente do Configuration Manager executará scripts apenas se forem assinados por um fornecedor confiável. Essa restrição aplica-se, independentemente da configuração atual do Windows PowerShell no computador cliente.  
+    -   **无用户**：登录到客户端计算机的用户无法启动软件、软件更新和任务序列的安装。 计算机的必需部署始终在截止日期安装。 用户无法从应用程序目录或软件中心启动软件的安装。  
 
-     Essa opção exige no mínimo a versão do Windows PowerShell 2.0. O padrão é todos **Tudo Assinado**.  
+-   **重新启动时挂起 Bitlocker PIN 项**  
+
+     如果在计算机上配置了 BitLocker PIN 条目，则在软件安装之后重启计算机时，此选项可以略过输入 PIN 的要求。  
+
+    -   **始终**：在安装需要重启的软件并且启动计算机重启之后，Configuration Manager 会临时暂停 BitLocker。 此设置仅适用于 Configuration Manager 启动的计算机重启。当用户重启计算机时，它不会取消输入 BitLocker PIN 的要求。 在 Windows 启动后恢复 BitLocker PIN 输入要求。
+
+    -   **从不**：在安装需要重启的软件之后，Configuration Manager 不会在下次计算机启动时暂停 BitLocker。 在此情况下，直到用户输入 PIN 来完成标准启动过程并加载 Windows，才能完成软件安装。
+
+-   **其他用于管理应用程序部署和软件更新的软件**  
+
+     只有在下列条件之一成立时才启用此选项：  
+
+    -   你使用需要启用此设置供应商解决方案。  
+
+    -   使用 Configuration Manager 软件开发工具包 (SDK)，管理客户端代理通知以及应用程序和软件更新的安装。  
+
+    > [!WARNING]  
+    >  如果在任一条件都不适用时选择此选项，则不会在客户端上安装软件更新和所需的应用程序。 此设置不阻止用户安装应用程序目录中的应用程序，或者不阻止在客户端计算机上安装包、程序以及任务序列。  
+
+-   **PowerShell 执行策略**  
+
+     配置 Configuration Manager 客户端运行 Windows PowerShell 脚本的方式。 这些脚本经常用于检测配置项目中的合规性设置。 它们也可以在开发过程中作为标准脚本发送。  
+
+    -   **不使用**：Configuration Manager 客户端在客户端计算机上不使用 Windows PowerShell 配置，以便未签名的脚本可以运行。  
+
+    -   **受限**：Configuration Manager 客户端在客户端计算机上使用当前的 Windows PowerShell 配置。 这些配置可确定未签名的脚本是否可以运行。  
+
+    -   **已全部签名**：只有当受信任的发行者对脚本进行了签名，Configuration Manager 客户端才能运行这些脚本。 系统将应用此限制，而与客户端计算机上的当前 Windows PowerShell 配置无关。  
+
+     此选项至少需要 Windows PowerShell 版本 2.0。 默认值为“已全部签名”。  
 
     > [!TIP]  
-    >  Se os scripts não assinados não forem executados devido a essa configuração do cliente, o Configuration Manager relatará esse erro das seguintes maneiras:  
+    >  如果由于此客户端设置的缘故而无法运行未签名的脚本，则 Configuration Manager 会用以下方法报告此错误：  
     >   
-    > -   ID do erro **0X87D00327** e a descrição **O script não está assinado** como um erro de status da implantação no espaço de trabalho **Monitoramento** do console do Configuration Manager.  
-    > -   Códigos e descrições de **0X87D00327** e **O script não está assinado** ou **0X87D00320** e **O host de script ainda não foi instalado** com o tipo de erro **Erro de Descoberta** em relatórios. Um exemplo é **Detalhes de erros de itens de configuração em uma linha de base de configuração para um ativo**.  
-    > -   A mensagem **Script is not signed (Error: 87D00327; Source: CCM)** no arquivo **DcmWmiProvider.log** .  
+    > -   错误 ID“0X87D00327”和“脚本未签名”的说明作为控制台的“监视”Configuration Manager工作区中的部署状态错误。  
+    > -   错误代码“0X87D00327”及描述“脚本未签名”，或“0X87D00320”及描述“尚未安装脚本宿主”（报表中的错误类型为“发现错误”）。 其中一个示例为**资产配置基线中配置项目的错误详细信息**。  
+    > -   **Script is not signed (Error: 87D00327; Source: CCM)** 文件中的消息 **DcmWmiProvider.log**。  
 
--   **Mostrar notificações para novas implantações**  
+-   **显示关于新部署的通知**  
 
-     Escolha **Sim** se quiser exibir uma notificação para implantações que estavam disponíveis há menos de uma semana.  Essa mensagem será exibida sempre que o agente cliente for iniciado.
+     如果要显示将于一周内进行部署的通知，请选择“是”。  此消息将在每次启动客户端代理时显示。
 
--   **Desabilitar data limite aleatória**  
+-   **禁用截止时间随机化**  
 
-     Esta configuração determina se o cliente usa um atraso de ativação de até duas horas para instalar as atualizações de software necessárias quando o prazo é alcançado. Por padrão, o atraso de ativação está desabilitado.  
+     此设置确定在达到截止时间时客户端是否使用长达 2 小时的激活延迟来安装所需的软件更新。 默认情况下，激活延迟处于禁用状态。  
 
-     Para cenários de VDI (Virtual Desktop Infrastructure), esse atraso pode ajudar a distribuir o processamento da CPU e a transferência de dados para um computador com várias máquinas virtuais que executam o cliente do Configuration Manager. Mesmo que você não use VDI, se muitos clientes instalarem as mesmas atualizações ao mesmo tempo, isso poderá aumentar negativamente o uso da CPU no servidor do site. Ele também pode diminuir os pontos de distribuição e reduzir significativamente a largura de banda de rede disponível.  
+     对于虚拟机基础结构 (VDI) 情况，此延迟有助于为其中有多个虚拟机运行 Configuration Manager 客户端的计算机分发 CPU 处理和数据传输。 即使不使用 VDI，如果许多客户端同时安装相同的更新，那么这也可能会在站点服务器上负面增加 CPU 使用率。 这还可以减慢分发点的速度，以及大大减小可用网络带宽。  
 
-     Se as atualizações de software necessárias precisarem ser instaladas sem demora quando o prazo configurado for alcançado, escolha **Sim** para essa configuração.  
+     如果在达到配置的截止时间时必需毫不延迟地安装所需的软件更新，请对此设置选择“是”。  
 
--   **Período de carência para a imposição após a data limite da implantação (horas)**
+-   **部署截止日期后强制的宽限期(小时)**
 
-     Em alguns casos, talvez você queira conceder aos usuários mais tempo instalar as atualizações de software ou as implantações de aplicativo obrigatórias além dos prazos configurados. Isso normalmente pode ser necessário quando um computador ficou desligado por um período estendido e precisa reinstalar uma grande quantidade de implantações de atualização ou aplicativo. Por exemplo, se um usuário acabou de voltar de férias, eles terá que aguardar um longo período enquanto as implantações de aplicativo atrasadas são instaladas. Para ajudar a resolver esse problema, defina um período de carência para a imposição implantando configurações de cliente do Configuration Manager para uma coleção.
+     在某些情况下，可能会希望为用户提供更多时间（超出所配置的任何截止时间）来安装所需的应用程序部署或软件更新。 通常，当一台计算机关闭的时间过长和计算机需要安装大量应用程序或更新部署时，会需要执行这种操作。 例如，如果用户刚从假期返回，则他们可能需要等待很长时间，因为安装的应用程序部署已过期。 为了帮助解决此问题，可通过将 Configuration Manager 客户端设置部署到集合来定义强制的宽限期。
 
-     Você pode definir um período de carência entre uma e 120 horas. Essa configuração é usada em conjunto com a propriedade de implantação **Atrasar a imposição dessa implantação de acordo com as preferências do usuário**. Para obter mais detalhes, consulte [Implantar aplicativos](/sccm/apps/deploy-use/deploy-applications).
+     可以设置 1 到 120 小时的宽限期。 此设置与部署属性“根据用户偏好延迟此强制部署”结合使用。 有关详细信息，请参阅[部署应用程序](/sccm/apps/deploy-use/deploy-applications)。
 
-##  <a name="computer-restart"></a>Reinicialização do computador  
- Ao especificar as configurações de reinicialização do computador, verifique se o valor do intervalo de notificação temporária da reinicialização e o valor do intervalo da contagem regressiva são mais curtos do que a menor janela de manutenção aplicada ao computador.  
+##  <a name="computer-restart"></a>计算机重启  
+ 如果指定这些计算机重启设置，请确保重启临时通知间隔的值与最终倒计时间隔的值的持续时间比应用于计算机的最短维护时段还短。  
 
- Para obter mais informações sobre as janelas de manutenção, consulte [Como usar janelas de manutenção no System Center Configuration Manager](../../../core/clients/manage/collections/use-maintenance-windows.md).  
+ 有关维护时段的详细信息，请参阅[如何在 System Center Configuration Manager 中使用维护时段](../../../core/clients/manage/collections/use-maintenance-windows.md)。  
 
 ##  <a name="endpoint-protection"></a>Endpoint Protection  
 
--   **Gerenciar o cliente Endpoint Protection em computadores cliente**  
+-   **在客户端计算机上管理 Endpoint Protection 客户端**  
 
-     Escolha **Verdadeiro** ou **Sim** se desejar gerenciar clientes do Endpoint Protection existentes em computadores na sua hierarquia.  
+     若要在层次结构中的计算机上管理现有的 Endpoint Protection 客户端，请选择“True”或“是”。  
 
-     Escolha esta opção se você já tiver instalado o cliente Endpoint Protection e desejar gerenciá-lo com o Configuration Manager.  
+     如果已经安装了 Endpoint Protection 客户端并且想要使用 Configuration Manager 来管理它，请选择此选项。  
 
-     Além disso, escolha essa opção se você quiser criar um script para desinstalar uma solução antimalware existente, instalar o cliente Endpoint Protection e implantar esse script usando um aplicativo, pacote ou programa do Configuration Manager.  
+     此外，如果想要创建脚本来卸载现有反恶意软件解决方案、安装 Endpoint Protection 客户端以及使用 Configuration Manager 应用程序或包和程序来部署此脚本，请选择此选项。  
 
--   **Instalar o cliente do Endpoint Protection em computadores cliente**  
+-   **在客户端计算机上安装 Endpoint Protection 客户端**  
 
-     Escolha **Verdadeiro** ou **Sim** para instalar e habilitar o cliente Endpoint Protection em computadores cliente nos quais ele ainda não estiver instalado.  
+     选择“True”或“是”，在尚未安装该客户端的客户端计算机上安装和启用 Endpoint Protection 客户端。  
 
     > [!NOTE]  
-    >  Se o cliente Endpoint Protection já estiver instalado, escolher **Falso** ou **Não** não desinstalará o cliente Endpoint Protection. Para desinstalar o cliente do Endpoint Protection, defina a configuração do cliente **Gerenciar cliente do Endpoint Protection em computadores cliente** como **Falsa** ou **Não**. Em seguida, implante um pacote e programa para desinstalar o cliente do Endpoint Protection.  
+    >  如果已经安装了 Endpoint Protection 客户端，则选择“False”或“否”将不卸载 Endpoint Protection 客户端。 若要卸载 Endpoint Protection 客户端，将“在客户端计算机上管理 Endpoint Protection 客户端”客户端设置设为“False”或“否”）。 然后，部署包和程序以卸载 Endpoint Protection 客户端。  
 
--   **Para dispositivos Windows Embedded com filtros de gravação, confirme a instalação de cliente do Endpoint Protection (requer reinicialização)**  
+-   **对于带有写入筛选器的 Windows Embedded 设备，提交 Endpoint Protection 客户端安装(需要重新启动)**  
 
-     Escolha **Sim** para desabilitar o filtro de gravação no dispositivo Windows Embedded e reiniciar o dispositivo. Isso confirma a instalação no dispositivo.  
+     选择“是”以对 Windows Embedded 设备禁用写入筛选器并重启该设备。 这会在设备上执行安装。  
 
-     Se **Não** for especificado, o cliente será instalado em uma sobreposição temporária que será apagada quando o dispositivo for reiniciado. Neste cenário, o cliente Endpoint Protection não é confirmado até que outra instalação confirme alterações no dispositivo. Essa é a configuração padrão.  
+     如果指定“否”，则在临时覆盖区上安装客户端，重启设备时会清除此临时覆盖区。 在此情况下不会提交 Endpoint Protection 客户端，直到另一个安装对设备执行更改为止。 此为默认设置。  
 
--   **Suprimir qualquer reinicialização necessária do computador após o Endpoint Protection ser instalado**  
+-   **在安装 Endpoint Protection 客户端后取消任何所需的计算机重启**  
 
-     Escolha **Verdadeiro** ou **Sim** para suprimir uma reinicialização do computador se exigida depois que o cliente Endpoint Protection for instalado.  
+     安装 Endpoint Protection 客户端后，如果需要，请选择“True”或“是”取消计算机重启。  
 
     > [!IMPORTANT]  
-    >  Se o cliente Endpoint Protection exigir uma reinicialização do computador e essa configuração for **Falsa**, a reinicialização ocorrerá independentemente das janelas de manutenção configuradas.  
+    >  如果 Endpoint Protection 客户端需要计算机重启，并且此设置为“False”，则将进行重启，而与已经配置的任何维护时段无关。  
 
--   **Período de tempo permitido durante o qual os usuários podem adiar o reinício necessário para concluir a instalação do Endpoint Protection (horas)**  
+-   **允许用户将要求的重启推迟一段时间，以完成 Endpoint Protection 安装（小时）**  
 
-     Especifique o número de horas que os usuários podem adiar a reinicialização de um computador se isso for necessário depois da instalação do cliente Endpoint Protection. Esta opção poderá ser configurada apenas se a opção **Suprimir qualquer reinicialização necessária do computador após o Endpoint Protection ser instalado** for **Falsa**.  
+     如果在安装 Endpoint Protection 客户端后需要计算机重启，请指定用户可以延迟计算机重启的小时数。 只有当“安装 Endpoint Protection 客户端后禁止任何要求的计算机重启”选项为“False”时，才可配置此选项。  
 
--   **Desabilitar fontes alternativas (como o Windows Update, Microsoft Windows Server Update Services ou compartilhamentos UNC) para a atualização da definição inicial em computadores cliente**  
+-   **禁用替代源（例如 Windows 更新、Microsoft Windows Server Update Services 或 UNC 共享）来更新客户端计算机的初始定义**  
 
-     Escolha **Verdadeiro** ou **Sim** se desejar que o Configuration Manager instale somente a atualização da definição inicial em computadores cliente. Essa configuração pode ser útil para evitar conexões de rede desnecessárias e reduzir a largura de banda da rede durante a instalação inicial da atualização da definição.  
+     如果希望 Configuration Manager 在客户端计算机上仅安装初始定义更新，请选择“True”或“是”。 此设置可有助于在初次安装定义更新期间避免不必要的网络连接以及减小网络带宽。  
 
-##  <a name="hardware-inventory"></a>Inventário de hardware  
+##  <a name="hardware-inventory"></a>硬件清单  
 
--   **Tamanho máximo de arquivo MIF personalizado (KB)**  
+-   **最大自定义 MIF 文件大小(KB)**  
 
-     Especifique o tamanho máximo, em quilobytes, permitido para cada arquivo personalizado MIF (Formato de Informações de Gerenciamento) que serão coletados de um cliente durante um ciclo de inventário de hardware. Se algum arquivo MIF exceder esse tamanho, o inventário de hardware do Configuration Manager não o processará. É possível especificar um tamanho de 1 a 5.000 KB. Por padrão, esse valor é definido como 250 KB. Essa configuração não afeta o tamanho do arquivo de dados de inventário de hardware regular.  
-
-    > [!NOTE]  
-    >  Essa definição só está disponível nas configurações do cliente padrão.  
-
--   **Classes de inventário de hardware**  
-
-     No Configuration Manager, você pode estender as informações de hardware que coleta dos clientes sem editar manualmente o arquivo sms_def.mof. Escolha **Definir Classes** se desejar estender o Inventário de Hardware do Configuration Manager. Para mais informações, confira [How to configure hardware inventory in System Center Configuration Manager](../../../core/clients/manage/inventory/configure-hardware-inventory.md) (Como configurar o Inventário de Hardware no System Center Configuration Manager).  
-
--   **Coletar arquivos MIF**  
-
-     Use esta configuração para especificar se os arquivos MIF devem ser coletados de clientes Configuration Manager durante o Inventário de Hardware.  
-
-     Para que um arquivo MIF seja coletado pelo inventário de hardware, ele deve estar no local correto no computador cliente. Por padrão, os arquivos devem estar localizados da seguinte maneira:  
-
-    -   Arquivos IDMIF devem estar na pasta Windows\System32\CCM\Inventory\Idmif.  
-
-    -   Arquivos NOIDMIF devem estar na pasta Windows\System32\CCM\Inventory\Noidmif.  
+     指定将在硬件清单周期过程中从客户端收集的每个自定义管理信息格式 (MIF) 文件所允许的最大大小 (KB)。 如果任何 MIF 文件超过此大小，Configuration Manager 硬件清单就不会处理这些文件。 可指定介于 1 到 5,000 KB 之间的大小。 默认情况下，此值设置为 250 KB。 此设置不影响常规硬件清单数据文件的大小。  
 
     > [!NOTE]  
-    >  Essa definição só está disponível nas configurações do cliente padrão.
+    >  此设置仅在默认客户端设置中可用。  
 
--   **Atraso aleatório máximo**
+-   **硬件清单类**  
 
-    A coleta de informações de hardware é executada de forma aleatória em até quatro horas para que a operação não ocorra simultaneamente em todos os clientes. É possível definir o atraso máximo para restringir o tempo durante o qual a operação é executada.      
+     在 Configuration Manager 中，可以扩展从客户端中收集的硬件信息，而不用手动编辑 sms_def.mof 文件。 如果想要扩展 Configuration Manager 硬件清单，请选择“设置类”。 有关详细信息，请参阅[如何在 System Center Configuration Manager 中配置硬件清单](../../../core/clients/manage/inventory/configure-hardware-inventory.md)。  
 
-##  <a name="metered-internet-connections"></a>Planos de Internet Limitados  
- Você pode gerenciar o modo como os computadores cliente com Windows 8 se comunicam com sites do Configuration Manager quando usam conexões de Internet limitadas. Provedores de Internet ocasionalmente cobram por quantidade de dados que você envia e recebe quando está em uma conexão de Internet limitada.  
+-   **收集 MIF 文件**  
+
+     使用此设置指定是否在硬件清单过程中从 Configuration Manager 客户端收集 MIF 文件。  
+
+     为了按照硬件清单收集 MIF 文件，此文件必须位于客户端计算机上的正确位置中。 默认情况下，这些文件的位置如下所示：  
+
+    -   IDMIF 文件应位于 Windows\System32\CCM\Inventory\Idmif 文件夹中。  
+
+    -   NOIDMIF 文件应位于 Windows\System32\CCM\Inventory\Noidmif 文件夹中。  
+
+    > [!NOTE]  
+    >  此设置仅在默认客户端设置中可用。
+
+-   **最大随机延迟**
+
+    硬件信息的集合可在长达四个小时内处于随机状态，这样便不会在所有的客户端上同时发生操作。 可以设置最大延迟，以便限制操作发生的时段。      
+
+##  <a name="metered-internet-connections"></a>按流量计费的 Internet 连接  
+ 可以管理 Windows 8 客户端计算机在使用按流量计费的 Internet 连接时如何与 Configuration Manager 站点通信。 Internet 提供商有时根据你在按流量计费的 Internet 连接上发送和接收的数据量计费。  
 
 > [!NOTE]  
->  A configuração de cliente definida não é aplicada a computadores cliente com Windows 8 nas seguintes situações:  
+>  在以下情况下，配置的客户端设置不适用于 Windows 8 客户端计算机：  
 >   
-> -   O computador está em uma conexão de dados em roaming: o cliente do Configuration Manager não executa tarefas que exigem que os dados sejam transferidos para sites do Configuration Manager.  
-> -   As propriedades de conexão de rede do Windows são configuradas como ilimitadas: o cliente Configuration Manager se comporta como se esta fosse uma conexão de Internet ilimitada e, por isso, transfere os dados para os sites do Configuration Manager.  
+> -   计算机采用漫游数据连接：Configuration Manager 客户端不会执行需要将数据传输到 Configuration Manager 站点的任何任务。  
+> -   Windows 网络连接属性被配置为不按流量计费：Configuration Manager 客户端的行为方式好像是不按流量计费的 Internet 连接，因此会将数据传输至 Configuration Manager 站点。  
 
--   **Comunicação de cliente em conexões de Internet limitadas**  
+-   **客户端通过按流量计费的 Internet 连接进行的通信**  
 
-     Na lista suspensa, escolha uma das seguintes opções para computadores cliente com Windows 8:  
+     从下拉列表中，针对 Windows 8 客户端计算机选择以下选项之一：  
 
-    -   **Permitir**: todas as comunicações do cliente são permitidas pela conexão de Internet limitada, a menos que o dispositivo cliente esteja usando uma conexão de dados móvel.  
+    -   **允许**：除非客户端设备正在使用漫游数据连接，否则允许通过按流量计费的 Internet 连接进行所有客户端通信。  
 
-    -   **Limite**: somente as seguintes comunicações do cliente são permitidas pela conexão de Internet limitada:  
+    -   **限制**：只允许通过按流量计费的 Internet 连接进行以下客户端通信：  
 
-        -   Recuperação de política do cliente  
+        -   客户端策略检索  
 
-        -   Mensagens de estado do cliente para enviar ao site  
+        -   将发送到站点的客户端状态消息  
 
-        -   Solicitações de instalação de software usando o catálogo de aplicativos  
+        -   通过使用应用程序目录提出的软件安装请求  
 
-        -   Implantações necessárias (quando é atingido o prazo de instalação)  
+        -   所需部署（达到安装截止时间后）  
 
         > [!IMPORTANT]  
-        >  Se um usuário iniciar uma instalação de software por meio do Centro de Software ou do catálogo de aplicativos, estes são sempre permitidos, independentemente das configurações de conexão de Internet limitada.  
+        >  如果用户从软件中心或应用程序目录中启动软件安装，则始终允许这些项，与按流量计费的 Internet 连接设置无关。  
 
-         Se o limite de transferência de dados for alcançado para a conexão da Internet limitada, o cliente não tentará mais se comunicar com os sites do Configuration Manager.  
+         如果达到按流量计费的 Internet 连接的数据传输限制，则客户端不再尝试与 Configuration Manager 站点通信。  
 
-    -   **Bloquear**: o cliente do Configuration Manager não tenta se comunicar com os sites do Configuration Manager quando ele está em uma conexão de Internet limitada. Este é o valor padrão.  
+    -   **阻止**：Configuration Manager 客户端采用按流量计费的 Internet 连接时不尝试与 Configuration Manager 站点通信。 此为默认值。  
 
-##  <a name="power-management"></a>Gerenciamento de Energia  
+##  <a name="power-management"></a>电源管理  
 
--   **Permitir que os usuários excluam seu dispositivo do gerenciamento de energia**  
+-   **允许用户从电源管理中排除其设备**  
 
-     Na lista suspensa, escolha **Verdadeiro** ou **Sim** para permitir que usuários do Centro de Software excluam o computador de quaisquer configurações definidas de gerenciamento de energia.  
+     从下拉列表中，选择“True”或“是”，以允许软件中心的用户从任何配置的电源管理设置中排除其计算机。  
 
--   **Habilitar proxy de ativação**  
+-   **启用唤醒代理**  
 
-     Especifique **Sim** para complementar a configuração Wake On LAN do site quando estiver definida para pacotes unicast.  
+     指定“是”以在为单播包配置站点 LAN 唤醒设置后对其进行补充。  
 
-     Para mais informações sobre o proxy de ativação, confira [Planejar a ativação de clientes no System Center Configuration Manager](../../../core/clients/deploy/plan/plan-wake-up-clients.md).  
+     有关唤醒代理的详细信息，请参阅[规划如何在 System Center Configuration Manager 中唤醒客户端](../../../core/clients/deploy/plan/plan-wake-up-clients.md)。  
 
     > [!WARNING]  
-    >  Não habilite o proxy de ativação em uma rede de produção sem primeiro entender como ele funciona e avaliá-lo em um ambiente de teste.  
+    >  在未首先了解唤醒代理的工作原理以及在测试环境中对其进行评估之前，请不要在生产网络中启用唤醒代理。  
 
--   **Número de porta proxy de ativação (UDP)**  
+-   **唤醒代理端口号(UDP)**  
 
-     Mantenha o valor padrão do número da porta que os computadores gerenciados usam para enviar pacotes de ativação a computadores em suspensão. Ou então, altere o número para um valor de sua escolha.  
+     保留托管计算机用于向睡眠中计算机发送唤醒包的端口号的默认值。 或者将此数字更改为你选择的值。  
 
-     O número da porta especificado aqui é configurado automaticamente para clientes que executam o Firewall do Windows quando você usa a opção **Exceção do Windows Firewall para proxy de ativação**. Se os clientes executam um firewall diferente, você deve configurá-lo manualmente para permitir o número de porta UDP especificado para essa configuração.  
+     如果使用“针对唤醒代理的 Windows 防火墙例外”选项，则会为运行 Windows 防火墙的客户端自动配置在此处指定的端口号。 如果客户端运行另一个防火墙，则你必须手动将其配置为允许为此设置指定的 UDP 端口号。  
 
--   **Número de porta Wake On LAN (UDP)**  
+-   **LAN 唤醒端口号(UDP)**  
 
-     Mantenha o valor padrão 9, a menos que você tenha alterado o número da porta Wake On LAN (UDP) na guia **Portas** das **Propriedades** do site.  
-
-    > [!IMPORTANT]  
-    >  Esse número deve corresponder ao número nas **Propriedades**do site. Se você alterar esse número em um só lugar, ele não será atualizado automaticamente em outro lugar.  
-
-##  <a name="remote-tools"></a>Ferramentas remotas  
-
--   **Habilitar o controle remoto em clientes** e **Perfis de exceção do firewall**  
-
-     Escolha se o controle remoto do Configuration Manager está habilitado para todos os computadores cliente que recebem essas configurações do cliente. Escolha **Configurar** para habilitar o controle remoto. Outra opção é definir configurações de firewall para permitir que o controle remoto funcione em computadores cliente.  
-
-     O controle remoto está desativado por padrão.  
+     保留默认值 9，除非在站点“属性”的“端口”选项卡上更改了 LAN 唤醒 (UDP) 端口号。  
 
     > [!IMPORTANT]  
-    >  Se as configurações de firewall não estiverem definidas, o controle remoto poderá não funcionar corretamente.  
+    >  此数字必须与站点“属性”中的数字匹配。 如果在一个位置更改此数字，则不会在其他位置自动更新此数字。  
 
--   **Os usuários podem alterar as configurações de política ou notificação no Centro de Software**  
+##  <a name="remote-tools"></a>远程工具  
 
-     Escolha se os usuários podem alterar as opções de controle remoto do Centro de Software.  
+-   **在客户端上启用远程控制**及描述“脚本未签名” **防火墙例外配置文件**  
 
--   **Permitir o controle remoto de um computador autônomo**  
+     选择是否为接收这些客户端设置的所有客户端计算机启用 Configuration Manager 远程控制。 选择“配置”以启用远程控制。 根据需要将防火墙设置配置为允许远程控制在客户端计算机上工作。  
 
-     Escolha se um administrador pode usar o controle remoto para acessar um computador cliente que está desconectado ou bloqueado. Apenas um computador conectado e desbloqueado pode ser controlado remotamente quando essa configuração está desabilitada.  
-
--   **Solicitar permissão de Controle Remoto ao usuário**  
-
-     Escolha se o computador cliente exibirá uma mensagem solicitando permissão do usuário antes de permitir uma sessão de controle remoto.  
-
--   **Conceder permissão de Controle Remoto para o grupo local de administradores**  
-
-     Escolha se os administradores locais no servidor que inicia a conexão de controle remoto pode estabelecer sessões de controle remoto com computadores cliente.  
-
--   **Nível de acesso permitido**  
-
-     Especifique o nível de acesso de controle remoto que será permitido. Você pode escolher:  
-
-    -   Controle total  
-
-    -   Somente exibição  
-
-    -   Nenhum  
-
--   **Visualizadores permitidos**  
-
-     Escolha **Definir Visualizadores** para abrir a caixa de diálogo **Definir a Configuração do Cliente** e especifique os nomes dos usuários do Windows que podem estabelecer sessões de controle remoto com computadores cliente.  
-
--   **Mostrar ícone de notificação de sessão na barra de tarefas**  
-
-     Escolha esta opção para mostrar um ícone na barra de tarefas de computadores cliente para indicar se uma sessão de controle remoto está ativa.  
-
--   **Mostrar barra de conexão da sessão**  
-
-     Escolha esta opção para mostrar uma barra de tarefas de conexão da sessão de alta visibilidade em computadores cliente para indicar se uma sessão de controle remoto está ativa.  
-
--   **Tocar um som no cliente**  
-
-     Escolha esta opção para usar som para indicar quando uma sessão de controle remoto está ativa em um computador cliente. Você pode tocar um som quando a sessão se conecta ou se desconecta, ou você pode tocar um som repetidamente durante a sessão.  
-
--   **Gerenciar configurações de assistência remota não solicitada**  
-
-     Escolha esta opção para permitir que o Configuration Manager gerencie sessões de assistência remota não solicitada.  
-
-     Em uma sessão de assistência remota não solicitada, o usuário no computador cliente não solicitou assistência para iniciar uma sessão.  
-
--   **Gerenciar configurações de assistência remota solicitada**  
-
-     Escolha esta opção para permitir que o Configuration Manager gerencie sessões de assistência remota solicitada.  
-
-     Em uma sessão de assistência remota solicitada, o usuário no computador cliente enviou uma solicitação de assistência remota ao administrador.  
-
--   **Nível de acesso para assistência remota**  
-
-     Escolha nível de acesso para atribuir a sessões de assistência remota iniciadas no console do Configuration Manager.  
-
-    > [!NOTE]  
-    >  O usuário no computador cliente sempre deve conceder permissão para que uma sessão de assistência remota ocorra.  
-
--   **Gerenciar configurações da Área de Trabalho Remota**  
-
-     Escolha esta opção para permitir que o Configuration Manager gerencie sessões da Área de Trabalho Remota para computadores.  
-
--   **Permitir que os visualizadores autorizados se conectem usando a conexão de Área de Trabalho Remota**  
-
-     Escolha esta opção para permitir que os usuários especificados na lista de visualizadores autorizados sejam adicionados ao grupo de usuários locais da Área de Trabalho Remota em computadores cliente.  
-
--   **Exigir autenticação no nível da rede em computadores que executam o sistema operacional Windows Vista e versões posteriores**  
-
-     Escolha esta opção mais segura se deseja usar a autenticação no nível da rede para estabelecer conexões de Área de Trabalho Remota com computadores cliente que executam Windows Vista ou posterior. A autenticação no nível da rede requer menos recursos do computador remoto inicialmente, pois ela conclui a autenticação de usuário antes de estabelecer uma conexão de Área de Trabalho Remota. Esse método é mais seguro porque pode ajudar a proteger o computador contra usuários ou software mal-intencionado e reduz o risco de ataques de negação de serviço.  
-
-## <a name="software-deployment"></a>Implantação de software  
-
--   **Reavaliação de agendamento para implantações**  
-
-     Configure um agendamento para quando o Configuration Manager reavalia as regras de requisito para todas as implantações. O valor padrão é a cada 7 dias.  
+     默认情况下，禁用了远程控制。  
 
     > [!IMPORTANT]  
-    >  É recomendável que você não altere esse valor para um valor menor do que o padrão. Fazer isso pode afetar negativamente o desempenho da rede e de computadores cliente.  
+    >  如果未配置防火墙设置，则远程控制可能无法正常工作。  
 
-     Você também pode iniciar essa ação de um computador cliente do Configuration Manager escolhendo a ação **Ciclo de Avaliação de Implantação do Aplicativo** na guia **Ações** do **Configuration Manager** no Painel de Controle.  
+-   **用户可以在软件中心内更改策略或通知设置**  
 
-##  <a name="software-inventory"></a>Inventário de software  
+     选择用户是否可以从软件中心中更改远程控制选项。  
 
--   **Detalhe no relatório de inventário**  
+-   **允许远程控制无人参与的计算机**  
 
-     Especifique o nível de informações de arquivo para o inventário. Você pode inventariar detalhes sobre o arquivo, detalhes sobre o produto associado ao arquivo ou todas as informações sobre o arquivo.  
+     选择管理员是否可以使用远程控制来访问注销或锁定的客户端计算机。 禁用此设置后，只能远程控制登录和解锁的计算机。  
 
--   **Inventariar estes tipos de arquivo**  
+-   **提示用户提供远程控制权限**  
 
-     Se desejar especificar os tipos de arquivo para inventariar, escolha **Definir Tipos** e configure o seguinte na caixa de diálogo **Definir a Configuração do Cliente**:  
+     选择客户端计算机是否将显示一条消息，以在允许远程控制会话之前请求提供用户的权限。  
+
+-   **将远程控制权限授予本地管理员组**  
+
+     选择服务器上启动远程控制连接的本地管理员是否可以与客户端计算机建立远程控制会话。  
+
+-   **允许的访问级别**  
+
+     指定将允许的远程控制访问级别。 可以选择：  
+
+    -   完全控制  
+
+    -   仅查看  
+
+    -   无  
+
+-   **允许的查看者**  
+
+     单击“设置查看者”打开“配置客户端设置”对话框，指定可以与客户端计算机建立远程控制会话的 Windows 用户的名称。  
+
+-   **在任务栏上显示会话通知图标**  
+
+     选择此选项在客户端计算机的任务栏上显示一个图标，指示远程控制会话处于活动状态。  
+
+-   **显示会话连接栏**  
+
+     选择此选项在客户端计算机上显示高可见性会话连接栏，指示远程控制会话处于活动状态。  
+
+-   **在客户端上播放声音**  
+
+     选择此选项，使用声音指示远程控制会话在客户端计算机上处于活动状态。 你可以在会话连接或断开时播放声音，或者可以在会话过程中重复播放声音。  
+
+-   **管理未经请求的远程协助设置**  
+
+     选择此选项，允许 Configuration Manager 管理未经请求的远程协助会话。  
+
+     在未经请求的远程协助会话中，客户端计算机上的用户没有请求协助以便启动会话。  
+
+-   **管理经请求的远程协助设置**  
+
+     选择此选项，允许 Configuration Manager 管理经请求的远程协助会话。  
+
+     在经请求的远程协助会话中，客户端计算机上的用户向管理员发送远程协助请求。  
+
+-   **远程协助访问级别**  
+
+     选择访问级别，分配给在 Configuration Manager 控制台中启动的远程协助会话。  
 
     > [!NOTE]  
-    >  Se várias configurações personalizadas do cliente forem aplicadas a um computador, o inventário retornado por cada configuração será mesclado.  
+    >  客户端计算机用户必须始终允许发生远程帮助会话。  
 
-    -   Escolha o ícone **Novo** para adicionar um novo tipo de arquivo ao inventário. Em seguida, especifique as informações a seguir na caixa de diálogo **Propriedades de Arquivo Inventariado**:  
+-   **管理远程桌面设置**  
 
-        -   **Nome**: forneça um nome para o arquivo que você deseja inventariar. Você pode usar o caractere **\** para representar qualquer cadeia de caracteres de texto e o caractere **?** para representar qualquer caractere único. Por exemplo, se você desejar inventariar todos os arquivos com a extensão .doc, especifique o nome do arquivo **\*.doc**.  
+     选择此选项，允许 Configuration Manager 管理计算机的远程桌面会话。  
 
-        -   **Local**: escolha **Definir** para abrir a caixa de diálogo **Propriedades do Caminho**. Você pode configurar o inventário de software para pesquisar o arquivo especificado em todos os discos rígidos do cliente, pesquisar um caminho especificado (por exemplo, **C:\Pasta**) ou uma variável especificada (por exemplo, *%windir%*). Também é possível pesquisar todas as subpastas no caminho especificado.  
+-   **允许获得许可的查看者使用远程桌面连接进行连接**  
 
-        -   **Excluir arquivos criptografados e compactados**: quando você escolhe esta opção, todos os arquivos que foram compactados ou criptografados não serão inventariados.  
+     选择此选项，允许将允许的查看者列表中指定的用户添加到客户端计算机上的远程桌面本地用户组中。  
 
-        -   **Excluir arquivos na pasta do Windows**: quando você seleciona esta opção, todos os arquivos na pasta do Windows e suas subpastas não serão inventariados.  
+-   **在运行 Windows Vista 和更高版本的操作系统的计算机上要求网络级别身份验证**  
 
-    -   Escolha **OK** para fechar a caixa de diálogo **Propriedades de Arquivo Inventariado**.  
+     如果想要使用网络级别身份验证与运行 Windows Vista 或更高版本的客户端计算机建立远程桌面连接，请选择此更加安全的选项。 网络级别身份验证最初需要较少的远程计算机资源，因为它在建立远程桌面连接之前完成了用户身份验证。 此方法更加安全，因为它可以帮助保护计算机不受恶意用户或软件的攻击，并且可减小拒绝服务攻击风险。  
 
-    -   Adicione todos os arquivos que você deseja inventariar e escolha **OK** para fechar a caixa de diálogo **Definir a Configuração do Cliente**.  
+## <a name="software-deployment"></a>软件部署  
 
--   **Coletar arquivos**  
+-   **计划部署的重新评估**  
 
-     Se você desejar coletar arquivos de computadores cliente, escolha **Definir Arquivos** e configure o seguinte:  
+     配置 Configuration Manager 为所有部署重新评估要求规则的时间计划。 默认值为每 7 天一次。  
+
+    > [!IMPORTANT]  
+    >  我们建议不要将此值更改为低于默认值的值。 执行此操作可能会对网络和客户端计算机的性能产生负面影响。  
+
+     还可以通过从控制面板中的“Configuration Manager”的“操作”选项卡选择“应用程序部署评估周期”操作，从 Configuration Manager 客户端计算机初始化此操作。  
+
+##  <a name="software-inventory"></a>软件清单  
+
+-   **清单报告详细信息**  
+
+     指定要列出清单的文件信息的级别。 可列出关于文件的详细信息清单、与文件关联的产品的详细信息清单，或者关于文件的所有信息清单。  
+
+-   **列出这些文件类型的清单**  
+
+     如果想要指定要列出清单的文件类型，请选择“设置类型”，然后在“配置客户端设置”对话框中配置以下各项：  
 
     > [!NOTE]  
-    >  Se várias configurações personalizadas do cliente forem aplicadas a um computador, o inventário retornado por cada configuração será mesclado.  
+    >  如果对计算机应用了多个自定义客户端设置，则将合并每个设置返回的清单。  
 
-    -   Na caixa de diálogo **Definir a Configuração do Cliente**, clique no ícone **Novo** para adicionar um arquivo a ser coletado.  
+    -   选择“新建”图标，将新文件类型添加到清单。 然后在“清单文件属性”对话框中，指定以下信息：  
 
-    -   Na caixa de diálogo **Propriedades do Arquivo Coletado** , forneça as seguintes informações:  
+        -   **名称**：提供要列出清单的文件的名称。 你可以使用 **\** 字符来表示任何文本字符串，使用 **?** 字符来表示任何单一字符。 例如，若要列出扩展名为 .doc 的所有文件的清单，请指定文件名 **\*.doc**。  
 
-        -   **Nome**: forneça um nome para o arquivo que você deseja coletar. Você pode usar o caractere **\** para representar qualquer cadeia de caracteres de texto e o caractere **?** para representar qualquer caractere único.  
+        -   **位置**：选择“设置”，打开“路径属性”对话框。 可配置软件清单以在所有客户端硬盘中搜索指定的文件，搜索指定的路径（例如 **C:\Folder**）或搜索指定的变量（例如 *%windir%*）。 还可以搜索指定路径下面的所有子文件夹。  
 
-        -   **Local**: escolha **Definir** para abrir a caixa de diálogo **Propriedades do Caminho**. Você pode configurar o inventário de software para pesquisar o arquivo que você deseja coletar em todos os discos rígidos do cliente, pesquisar em um caminho especificado (por exemplo, **C:\Pasta**) ou em uma variável especificada (por exemplo, *%windir%*). Também é possível pesquisar todas as subpastas no caminho especificado.  
+        -   **排除加密文件和压缩文件**如果选择此选项，则将不列出压缩或加密的任何文件的清单。  
 
-        -   **Excluir arquivos criptografados e compactados**: quando você escolhe esta opção, todos os arquivos que foram compactados ou criptografados não serão coletados.  
+        -   **排除 Windows 文件夹中的文件**如果选择此选项，则将不列出 Windows 文件夹及其子文件夹中的任何文件的清单。  
 
-        -   **Parar coleção de arquivos quando o tamanho total dos arquivos exceder (KB)** – Especifique o tamanho do arquivo (em quilobytes) depois do qual nenhum dos arquivos especificados em **Nome** será coletado.  
+    -   选择“确定”以关闭“清单文件属性”对话框。  
+
+    -   添加想要列出清单的所有文件，然后选择“确定”以关闭“配置客户端设置” 对话框。  
+
+-   **收集文件**  
+
+     如果想从客户端计算机中收集文件，请选择“设置文件”，然后配置以下各项：  
+
+    > [!NOTE]  
+    >  如果对计算机应用了多个自定义客户端设置，则将合并每个设置返回的清单。  
+
+    -   在“配置客户端设置”对话框中，选择“新建”图标以添加要收集的文件。  
+
+    -   在“收集的文件属性”  对话框中，提供以下信息：  
+
+        -   **名称**：为要收集的文件提供名称。 你可以使用 **\** 字符来表示任何文本字符串，使用 **?** 字符来表示任何单一字符。  
+
+        -   **位置**：选择“设置”，打开“路径属性”对话框。 可配置软件清单以在所有客户端硬盘中搜索要收集的文件，搜索指定的路径（例如 **C:\Folder**）或搜索指定的变量（例如 *%windir%*）。 还可以搜索指定路径下面的所有子文件夹。  
+
+        -   **排除加密文件和压缩文件**如果选择此选项，则将不收集压缩或加密的任何文件。  
+
+        -   “文件的总大小超过 (KB) 时停止文件收集”：指定文件大小 (KB)，之后将不再收集“名称”下指定的文件。  
 
           > [!NOTE]  
-          >  O servidor do site coleta as cinco versões alteradas mais recentemente de arquivos coletados e as armazena no *&lt;Diretório de instalação do ConfigMgr\>*\Inboxes\Sinv.box\Filecol. Se um arquivo não foi alterado desde que o último inventário de software foi coletado, o arquivo não será coletado novamente.  
+          >  站点服务器收集五个最近更改的收集文件版本，并将它们存储在 *&lt;ConfigMgr installation directory\>*\Inboxes\Sinv.box\Filecol 目录中。 如果自上次软件清单收集以来文件未更改，则不会再收集该文件。  
           >   
-          >  O inventário de software não coleta arquivos maiores que 20 MB.  
+          >  软件清单不收集超过 20 MB 的文件。  
           >   
-          >  O valor **Tamanho máximo para todos os arquivos coletados (KB)** na caixa de diálogo **Definir a Configuração do Cliente** exibe o tamanho máximo para todos os arquivos coletados. Quando esse tamanho é atingido, a coleção será interrompida. Todos os arquivos já coletados são retidos e enviados para o servidor do site.  
+          >  “配置客户端设置”对话框中的“所有收集的文件的最大大小(KB)”值显示所有收集的文件的最大大小。 达到该大小后，将停止文件收集。 已收集的任何文件都会被保留并发送到站点服务器。  
 
           > [!IMPORTANT]
-          >  Se você configurar o inventário de software para coletar muitos arquivos grandes, isso pode afetar negativamente o desempenho da rede e do servidor do site.  
+          >  如果将软件清单配置为收集许多大文件，则这可能会对网络和站点服务器的性能有负面影响。  
 
-        Para obter informações sobre como exibir os arquivos coletados, confira [How to use Resource Explorer to view software inventory in System Center Configuration Manager](../../../core/clients/manage/inventory/use-resource-explorer-to-view-software-inventory.md) (Como usar o Gerenciador de Recursos para exibir o inventário de software no System Center Configuration Manager).  
+        有关如何查看收集的文件的信息，请参阅[如何使用资源浏览器 System Center Configuration Manager 中查看软件清单](../../../core/clients/manage/inventory/use-resource-explorer-to-view-software-inventory.md)。  
 
-    -   Escolha **OK** para fechar a caixa de diálogo **Propriedades do Arquivo Coletado**.  
+    -   选择“确定”以关闭“收集的文件属性”对话框。  
 
-    -   Adicione todos os arquivos que você deseja coletar e escolha **OK** para fechar a caixa de diálogo **Definir a Configuração do Cliente**.  
+    -   添加想要收集的所有文件，然后选择“确定”以关闭“配置客户端设置”对话框。  
 
--   **Definir Nomes**  
+-   **设置名称**  
 
-     Durante o inventário de software, nomes de fabricantes e nomes de produtos são recuperados por meio das informações de cabeçalho de arquivos instalados em clientes no site. Como esses nomes nem sempre são padronizados nas informações de cabeçalho do arquivo, quando você vê as informações de inventário de software no Gerenciador de Recursos ou executa consultas, diferentes versões do mesmo fabricante ou nome do produto podem aparecer às vezes. Para padronizar esses nomes, escolha **Definir Nomes** e configure o seguinte na caixa de diálogo **Definir a Configuração do Cliente**:  
+     在列出软件清单过程中，会从安装在站点客户端上的文件的标题信息中检索制造商名称和产品名称。 因为这些名称在文件标题信息中并不始终是标准化名称，所以当你在资源浏览器中查看软件清单信息或运行查询时，有时可能会显示相同制造商或产品名称的不同版本。 如果想要标准化这些显示名称，请选择“设置名称”，然后在“配置客户端设置”对话框中配置以下各项：  
 
-    -   **Tipo de nome**: o inventário de software coleta informações sobre produtos e fabricantes. Na lista suspensa, escolha se você quer configurar nomes de exibição para um **Fabricante** ou um **Produto**.  
+    -   **名称类型**：软件清单收集关于制造商和产品的信息。 从下拉列表中，选择是要为“制造商”还是“产品”配置显示名称。  
 
-    -   **Nome de exibição:** especifique o nome de exibição que você deseja usar em vez dos nomes na lista **Nomes inventariados**. Você pode escolher o ícone **Novo** para especificar um novo nome de exibição.  
+    -   **显示名称**：指定想要用来替代“清单名称”列表中的名称的显示名称。 可以选择“新建”图标以指定新的显示名称。  
 
-    -   **Nomes inventariados**: escolha o ícone **Novo** para adicionar um novo nome inventariado, que será substituído no inventário de software pelo nome selecionado na lista **Nome de exibição**. Você pode adicionar vários nomes que serão substituídos.  
+    -   **清单名称**：选择“新建”图标以添加一个新清单名称，该名称将在软件清单中被“显示名称”列表中所选择的名称替代。 你可以添加将替换的多个名称。  
 
-##  <a name="software-updates"></a>Atualizações de software  
+##  <a name="software-updates"></a>软件更新  
 
--   **Habilitar atualizações de software em clientes**  
+-   **在客户端上启用软件更新**  
 
-     Use essa configuração para habilitar atualizações de software em clientes do Configuration Manager. Ao desabilitar essa configuração, o Configuration Manager removerá as políticas de implantação existentes do cliente. Quando você reativa essa configuração, o cliente baixa a política de implantação atual.  
+     使用此设置在 Configuration Manager 客户端上启用软件更新。 禁用此设置时，Configuration Manager 会从客户端删除现有部署策略。 当重新启用此设置时，客户端会下载当前部署策略。  
 
     > [!IMPORTANT]  
-    >  Quando você desabilita essa configuração, as políticas de NAP e de conformidade que dependem da configuração do dispositivo para atualizações de software não funcionarão mais.  
+    >  禁用此设置时，依赖于软件更新设备设置的 NAP 和合规性设置策略将不再起作用。  
 
--   **Agendamento de verificação de atualização de software**  
+-   **软件更新扫描计划**  
 
-     Use essa configuração para especificar com que frequência o cliente inicia uma verificação de avaliação de conformidade de atualização de software. A verificação da avaliação de conformidade determina o estado das atualizações de software no cliente (por exemplo, necessárias ou instaladas). Para mais informações sobre a avaliação de conformidade, confira [Software updates compliance assessment](../../../sum/understand/software-updates-introduction.md#BKMK_SUMCompliance) (Avaliação de conformidade de atualizações de software).  
+     使用此设置指定客户端启动软件更新符合性评估扫描的频率。 此符合性评估扫描确定客户端上的软件更新的状态（例如必需或者已安装）。 有关符合性评估的详细信息，请参阅[软件更新符合性评估](../../../sum/understand/software-updates-introduction.md#BKMK_SUMCompliance)。  
 
-     Por padrão, um agendamento simples é usado e a verificação de conformidade é iniciada a cada 7 dias. Você pode optar por criar uma agenda personalizada para especificar uma data e hora exatas de início, escolher se quer usar UTC ou horário local, e configurar o intervalo recorrente para um dia específico da semana.  
+     默认情况下，会使用简单的计划，而且合规性扫描每 7 天启动一次。 可以选择创建自定义计划以指定确切的开始日期和时间，选择是使用 UTC 还是使用本地时间，以及为一周中的特定日配置重复间隔。  
 
     > [!NOTE]  
-    >  Se você especificar um intervalo de menos de 1 dia, o Configuration Manager assumirá 1 dia automaticamente como padrão.  
+    >  如果指定小于 1 天的间隔，则 Configuration Manager 将自动默认为 1 天。  
 
     > [!WARNING]  
-    >  A hora de início real em computadores cliente é a hora de início mais um período de tempo aleatório de até 2 horas. Isso evita que os computadores cliente iniciem a verificação e conectem ao WSUS (Windows Server Update Services) no servidor ativo de ponto de atualização de software ao mesmo tempo.  
+    >  客户端计算机上的实际开始时间是开始时间加上随机的一段时间（最多为 2 小时）。 这可以防止客户端计算机同时启动扫描和连接到活动软件更新点服务器上的 Windows Server Update Services (WSUS)。  
 
--   **Reavaliação de implantação da agenda**  
+-   **计划部署重新评估**  
 
-     Use essa definição para configurar quantas vezes o Agente Cliente de Atualizações de Software reavalia as atualizações de software para o status de instalação em computadores cliente do Configuration Manager. Quando as atualizações de software que foram instaladas anteriormente não são mais encontradas em computadores cliente e ainda são necessárias, elas são reinstaladas.
+     使用此设置可配置软件更新客户端代理重新评估 Configuration Manager 客户端计算机上的软件更新安装状态的频率。 如果在客户端计算机上无法再找到以前安装的软件更新，但仍然需要它们，则会重新安装这些软件更新。
 
-     O agendamento da reavaliação de implantação deve ser ajustado com base na política da empresa para conformidade de atualização de software, indicando se os usuários têm a capacidade de desinstalar as atualizações de software, entre outros. Lembre-se de que cada ciclo de reavaliação de implantação resulta em certa atividade da CPU do computador cliente e da rede. Por padrão, um agendamento simples é usado e a verificação de reavaliação da implantação é iniciada a cada sete dias.  
-
-    > [!NOTE]  
-    >  Se você especificar um intervalo de menos de 1 dia, o Configuration Manager assumirá 1 dia automaticamente como padrão.  
-
--   **Quando qualquer prazo de atualização de software for alcançado, instale todas as outras implantações de atualização de software com um prazo dentro de um período especificado**  
-
-     Use essa configuração para instalar todas as atualizações de software em implementações necessárias que têm prazos dentro de um período especificado. Quando um prazo é alcançado para uma implantação de atualização de software necessária, a instalação inicia nos clientes das atualizações de software na implantação. Essa configuração determina se deve ser iniciada também a instalação das atualizações de software definidas em outras implantações necessárias que têm um prazo configurado dentro do período especificado.  
-
-     Use essa configuração para agilizar a instalação da atualização de software para atualizações de software necessárias, aumentar potencialmente a segurança, diminuir potencialmente as notificações de exibição e diminuir potencialmente as reinicializações do sistema em computadores cliente. Por padrão, essa configuração não está habilitada.  
-
--   **Período de tempo para o qual todas as implantações pendentes com prazo nesse período também serão instaladas**  
-
-     Use essa configuração para especificar o período de tempo da configuração anterior. Você pode inserir um valor entre 1 e 23 horas e de 1 a 365 dias. Por padrão, essa configuração é definida para 7 dias.  
-
--   **Habilitar instalação dos arquivos de instalação do Express em clientes**
-
--   **Porta usada para baixar conteúdo para arquivos de instalação do Express**
-
--   **Habilitar o gerenciamento do cliente do Office 365 novamente** Use essa configuração para habilitar o gerenciamento do agente de cliente do Office 365. Quando você define o valor como **Sim**, ele permite que você defina as configurações de instalação do Office 365, baixe arquivos de CDNs (Redes de Distribuição de Conteúdo) do Office e implante os arquivos como um aplicativo no Configuration Manager.
-
-##  <a name="user-and-device-affinity"></a>Afinidade de dispositivo e de usuário  
-
--   **Limite de uso de afinidade de dispositivo do usuário (minutos)**  
-
-     Especifique o número de minutos antes que o Configuration Manager crie um mapeamento de afinidade de dispositivo de usuário.  
-
--   **Limite de uso de afinidade de dispositivo do usuário (dias)**  
-
-     Especifique o número de dias nos quais o limite de afinidade com base no uso é medido.  
+     应根据公司针对软件更新合规性的政策、用户是否能够卸载软件更新等来调整部署重新评估计划。 请记住，每个部署重新评估周期都会导致某些网络和客户端计算机 CPU 活动。 默认情况下，会使用简单的计划，而且部署重新评估扫描每 7 天启动一次。  
 
     > [!NOTE]  
-    >  Por exemplo, se o **Limite de uso da afinidade de dispositivo de usuário (minutos)** for especificado como **60** minutos e o **Limite de uso da afinidade de dispositivo de usuário (dias)** for especificado como **5** dias, o usuário deverá utilizar o dispositivo por 60 minutos em um período de 5 dias para criar automaticamente a afinidade de dispositivo de usuário.  
+    >  如果指定小于 1 天的间隔，则 Configuration Manager 将自动默认为 1 天。  
 
--   **Configurar automaticamente a afinidade de dispositivo de usuário por meio de dados de uso**  
+-   **在达到任何软件更新部署截止时间时，安装所有截止时间在指定时间段内的其他软件更新部署**  
 
-     Escolha **Verdadeiro** ou **Sim** para permitir que o Configuration Manager crie automaticamente afinidades de dispositivo de usuário com base nas informações de uso coletadas.  
+     使用此设置可安装截止时间在指定时间段内的所需部署中的所有软件更新。 在所需的软件更新部署的截止时间到达时，会在客户端上启动该部署中软件更新的安装过程。 此设置确定是否也启动在所需的其他部署（它们的截止时间被配置为在指定的时间段内）中定义的软件更新的安装过程。  
 
-##  <a name="mobile-devices"></a>Dispositivos móveis  
+     使用此设置可加快所需的软件更新的软件更新安装速度，从而可能可以提高安全性、减少显示的通知数和减少客户端计算机上的系统重新启动次数。 默认情况下不启用此设置。  
 
--   **Perfil de registro do dispositivo móvel**  
+-   **在此时间段内截止的所有挂起的部署在一定时间内也将进行安装。**  
 
-     Para definir essa configuração, você deve primeiro definir como **Verdadeiro** a configuração de usuário do dispositivo móvel **Permitir que os usuários registrem dispositivos móveis**. Em seguida, escolha **Definir Perfil** para especificar um perfil de registro com informações sobre o modelo do certificado a ser usado durante o processo de registro, o site que tem um ponto de registro e um ponto proxy do registro e o site que gerenciará o dispositivo após o registro.  
+     使用此设置可指定前一个设置的时间段。 可以输入介于 1 到 23 个小时和介于 1 到 365 天的值。 默认情况下，此设置将配置为 7 天。  
+
+-   **在客户端上启用快速安装文件的安装**
+
+-   **用于为快速安装文件下载内容的端口**
+
+-   **再次启用 Office 365 客户端的管理** 使用此设置启用 Office 365 客户端代理的管理。 将值设置为“是”时，此程序可用于配置 Office 365 安装设置、从 Office 内容传送网络 (CDN) 下载文件，以及将文件部署为 Configuration Manager 中的应用程序。
+
+##  <a name="user-and-device-affinity"></a>用户和设备相关性  
+
+-   **用户设备相关性使用情况阈值(分钟)**  
+
+     指定在 Configuration Manager 创建用户设备相关性映射之前的分钟数。  
+
+-   **用户设备相关性使用情况阈值(天)**  
+
+     指定基于使用情况的相关性阈值的测量天数。  
+
+    > [!NOTE]  
+    >  例如，如果将“用户设备相关性使用情况阈值(分钟)”指定为“60”分钟，并将“用户设备相关性使用情况阈值(天)”指定为“5”天，那么，用户必须在 5 天的期间内使用设备 60 分钟，才能自动创建用户设备相关性。  
+
+-   **利用使用情况数据自动配置用户设备相关性**  
+
+     选择“True”或“是”，让 Configuration Manager 基于收集的使用情况信息自动创建用户设备相关性。  
+
+##  <a name="mobile-devices"></a>移动设备  
+
+-   **移动设备注册配置文件**  
+
+     在可以配置此设置之前，必须首先将移动设备用户设置“允许用户注册移动设备”设置为“真”。 然后，可以选择“设置配置文件”，以指定注册配置文件（包含有关要在注册过程中使用的证书模板的信息）、包含注册点和注册代理点的站点以及将在注册后管理设备的站点。  
 
     > [!IMPORTANT]  
-    >  Verifique se você configurou um modelo de certificado a ser usado para registro do dispositivo móvel antes de configurar essa opção.  
+    >  在配置此选项之前，请确保你配置了要用于移动设备注册的证书模板。  
 
-##  <a name="enrollment"></a>Registro  
+##  <a name="enrollment"></a>注册  
 
--   **Perfil de registro do dispositivo móvel**  
+-   **移动设备注册配置文件**  
 
-     Para definir essa configuração, você deve primeiro definir como **Sim** a configuração de usuário do registro **Permitir que os usuários registrem dispositivos móveis e computadores Mac**. Em seguida, escolha **Definir Perfil** para especificar um perfil de registro com informações sobre o modelo do certificado a ser usado durante o processo de registro, o site que tem um ponto de registro e um ponto proxy do registro e o site que gerenciará o dispositivo após o registro.  
+     在可以配置此设置之前，必须首先将注册用户设置“允许用户注册移动设备和 Mac 计算机”设置为“是”。 然后，可以选择“设置配置文件”，以指定注册配置文件（包含有关要在注册过程中使用的证书模板的信息）、包含注册点和注册代理点的站点以及将在注册后管理设备的站点。  
 
     > [!IMPORTANT]  
-    >  Verifique se você configurou um modelo de certificado a ser usado para registro do dispositivo móvel ou registro de certificado de cliente Mac antes de configurar essa opção.  
+    >  在配置此选项之前，请确保你配置了要用于移动设备注册或用于 Mac 客户端证书注册的证书模板。  
 
-## <a name="user-and-device-affinity"></a>Afinidade de dispositivo e de usuário  
+## <a name="user-and-device-affinity"></a>用户和设备相关性  
 
--   **Permitir ao usuário definir os seus dispositivos primários**  
+-   **允许用户定义其主要设备**  
 
-     Especifique se os usuários estão autorizados a identificar seus próprios dispositivos primários na guia **Meus Dispositivos** do Catálogo de Aplicativos.  
-
+     指定是否允许用户在应用程序目录的“我的设备”选项卡上标识他们自己的主要设备。  

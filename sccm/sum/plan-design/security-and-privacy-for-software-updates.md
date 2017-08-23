@@ -1,7 +1,6 @@
 ---
-
-title: "Segurança e privacidade das atualizações de software | Microsoft Docs"
-description: "Siga essas práticas recomendadas de segurança para atualizações de software e saiba mais sobre como o Configuration Manager lida com informações de privacidade."
+title: "软件更新的安全和隐私 | Microsoft Docs"
+description: "请遵循以下软件更新安全的最佳做法，了解 Configuration Manager 如何处理隐私信息。"
 keywords: 
 author: dougeby
 ms.author: dougeby
@@ -10,71 +9,63 @@ ms.date: 10/06/2016
 ms.topic: article
 ms.prod: configuration-manager
 ms.service: 
-ms.technology:
-- configmgr-sum
+ms.technology: configmgr-sum
 ms.assetid: 41d6d5d8-ba84-4efb-b105-4d1eed239824
-translationtype: Human Translation
-ms.sourcegitcommit: e6cf8c799b5be2f7dbb6fadadddf702ec974ae45
 ms.openlocfilehash: 4b4f045138abc14b6e93b3b990c5f3a8b4f2f952
-
-
-
+ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
+ms.translationtype: HT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 08/07/2017
 ---
-# <a name="security-and-privacy-for-software-updates-in-system-center-configuration-manager"></a>Segurança e privacidade das atualizações de software no System Center Configuration Manager
+# <a name="security-and-privacy-for-software-updates-in-system-center-configuration-manager"></a>System Center Configuration Manager 中软件更新的安全和隐私
 
-*Aplica-se a: System Center Configuration Manager (Branch Atual)*
+*适用范围：System Center Configuration Manager (Current Branch)*
 
-Este tópico contém as informações de segurança e privacidade do atualizações de software no System Center Configuration Manager.  
+本主题包括有关 System Center Configuration Manager 中软件更新的安全和隐私的信息。  
 
-##  <a name="a-namebkmksecurityhardwareinventorya-security-best-practices-for-software-updates"></a><a name="BKMK_Security_HardwareInventory"></a> Práticas recomendadas de segurança para atualizações de software  
- Use as seguintes práticas recomendadas de segurança quando você implantar atualizações de software aos clientes:  
+##  <a name="BKMK_Security_HardwareInventory"></a> 软件更新的最佳安全方案  
+ 在将软件更新部署到客户端时，请使用以下最佳安全方案：  
 
--   Não altere as permissões padrão nos pacotes de atualização de software.  
+-   不要更改有关软件更新包的默认权限。  
 
-     Por padrão, os pacotes de atualização de software são definidos para permitir que os administradores de **Controle Total** e usuários tenham acesso de **Leitura** . Se você alterar essas permissões, isso permitirá que um invasor adicione, remova ou exclua as atualizações de software.  
+     默认情况下，软件更新包设置为向管理员提供“完全控制”  访问权，以及向用户提供“读取”  访问权。 如果更改这些权限，则可能会使攻击者能够添加、移除或删除软件更新。  
 
--   Controle o acesso ao local de download de atualizações de software.  
+-   控制对软件更新下载位置的访问。  
 
-     As contas de computador para o Provedor de SMS, o servidor do site e o usuário administrativo que realmente baixam as atualizações de software para o local de download requerem acesso de **Gravação** para o local de download. Restrinja o acesso ao local de download para reduzir o risco de ataques de falsificação aos arquivos de origem de atualizações de software no local de download.  
+     与 SMS 提供程序、站点服务器和实际上将软件更新下载到下载位置的管理用户对应的计算机帐户需要此下载位置的“写入”  访问权。 限制对此下载位置的访问，以减少攻击者在下载位置中篡改软件更新源文件的风险。  
 
-     Além disso, se você usar um compartilhamento UNC para o local de download, proteja o canal de rede usando assinatura IPsec ou SMB para evitar falsificação dos arquivos de origem de atualizações de software quando eles forem transferidos via rede.  
+     此外，如果将 UNC 共享用于下载位置，则通过使用 IPsec 或 SMB 签名来保护网络通道，以防止软件更新源文件在通过网络传输时被篡改。  
 
--   Use o UTC para avaliar horários de implantação.  
+-   使用 UTC 来估计部署时间。  
 
-     Se for usado o horário local em vez do UTC, os usuários poderão ter um atraso na instalação das atualizações de software por conta da mudança de fuso horário em seus computadores  
+     如果使用本地时间而不是 UTC，则用户可能会通过更改其计算机上的时区来延迟软件更新的安装。  
 
--   Habilite SSL no WSUS e siga as práticas recomendadas para proteger o WSUS (Windows Server Update Services).  
+-   在 WSUS 上启用 SSL，然后按照保护 Windows Server Update Services (WSUS) 的最佳方案进行。  
 
-     Identifique e siga as práticas recomendadas de segurança para a versão do WSUS que você usa com o Configuration Manager.  
+     找到并遵循用于 Configuration Manager 的 WSUS 版本的安全最佳做法。  
 
     > [!IMPORTANT]  
-    >  Caso configure o ponto de atualização de software para habilitar comunicações SSL para o servidor WSUS, configure raízes virtuais para SSL no servidor WSUS.  
+    >  如果配置软件更新点以便为 WSUS 服务器启用 SSL 通信，则必须在 WSUS 服务器上配置 SSL 的虚拟根。  
 
--   Habilite verificação de CRL.  
+-   启用 CRL 检查。  
 
-     Por padrão, o Configuration Manager não verifica a CRL (lista de certificados revogados) para confirmar a assinatura nas atualizações de software antes de serem implantadas nos computadores. Verificar a CRL sempre que um certificado é usado oferece mais segurança contra o uso de certificado revogado, mas gera atraso de conexão e incorre em processamentos adicionais no computador em que a verificação é executada.  
+     默认情况下，Configuration Manager 不会检查证书吊销列表 (CRL)，以便在将软件更新部署到计算机之前验证软件更新上的签名。 如果在每次使用证书时都检查 CRL，则能更好地抵御因使用已吊销的证书而造成的安全威胁，但这样做会使连接出现延迟，并在执行 CRL 检查的计算机上引发额外的处理操作。  
 
-     Para obter mais informações sobre como habilitar a verificação de CRL para atualizações de software, consulte [Como habilitar a verificação CRL para atualizações de software no System Center Configuration Manager](../get-started/manage-settings-for-software-updates.md#crl-checking-for-software-updates).  
+     有关如何为软件更新启用 CRL 检查的详细信息，请参阅[如何在 System Center Configuration Manager 中对软件更新启用 CRL 检查](../get-started/manage-settings-for-software-updates.md#crl-checking-for-software-updates)。  
 
--   Configure o WSUS para usar um site personalizado.  
+-   配置 WSUS 以使用自定义网站。  
 
-     Quando você instala o WSUS no ponto de atualização de software, pode usar o site Padrão do IIS existente ou criar um site personalizado do WSUS. Crie um site personalizado para o WSUS de forma que o IIS hospede os serviços do WSUS em um site virtual dedicado, em vez de compartilhar o mesmo site usado por outros sistemas de sites do Configuration Manager ou outros aplicativos.  
+     在软件更新点上安装 WSUS 时，可以选择使用现有的 IIS 默认网站或创建自定义的 WSUS 网站。 为 WSUS 创建自定义网站，以便 IIS 在专用的虚拟网站中承载 WSUS 服务，而不是共享由其他 Configuration Manager 站点系统或其他应用程序使用的同一个网站。  
 
-     Para mais informações, consulte [Configurar o WSUS para usar um site da Web personalizado](plan-for-software-updates.md#BKMK_CustomWebSite).  
+     有关详细信息，请参阅[配置 WSUS 以使用自定义网站](plan-for-software-updates.md#BKMK_CustomWebSite)。  
 
-##  <a name="a-namebkmkprivacyhardwareinventorya-privacy-information-for-software-updates"></a><a name="BKMK_Privacy_HardwareInventory"></a> Informações de privacidade para atualizações de software  
- As atualizações de software verificam os computadores cliente para determinar quais atualizações de software são necessárias, e então enviam as informações de volta ao banco de dados do site. Durante o processo de atualizações de software, o Configuration Manager pode transmitir informações entre clientes e servidores que identificam o computador e as contas de logon.  
+##  <a name="BKMK_Privacy_HardwareInventory"></a>软件更新的隐私信息  
+ 软件更新会扫描客户端计算机，以确定所需的软件更新，然后将该信息发送回站点数据库。 在软件更新过程中， Configuration Manager 可能会在客户端和服务器之间传输信息，这些信息标识计算机和登录帐户。  
 
- O Configuration Manager mantém informações de estado sobre o processo de implantação de software. As informações de estado não são criptografadas durante a transmissão ou o armazenamento. As informações de estado são armazenadas no banco de dados do Configuration Manager e excluídas pelas tarefas de manutenção do banco de dados. Nenhuma informação de estado é enviada à Microsoft.  
+ Configuration Manager 会维护有关软件部署过程的状态信息。 状态信息在传输或存储期间并未加密。 状态信息存储在 Configuration Manager 数据库中，而且由数据库维护任务删除。 状态信息不会发送给 Microsoft。  
 
- O uso de atualizações de software do Configuration Manager para instalar atualizações de software em computadores cliente pode estar sujeito aos termos de licença de software dessas atualizações, que são separados dos Termos de Licença de Software do System Center Configuration Manager. Sempre examine e concorde com os Termos de Licenciamento de Software antes de instalar as atualizações de software usando o Configuration Manager.  
+ 使用 Configuration Manager 软件更新在客户端计算机上安装软件更新时，可能要遵守这些更新的软件许可证条款，它们不同于 System Center Configuration Manager 的软件许可证条款。 在使用 Configuration Manager 安装软件更新之前，请务必查看并同意软件许可条款。  
 
- O Configuration Manager não implementa atualizações de software por padrão e requer diversas etapas de configuração para que as informações sejam coletadas.  
+ 默认情况下，Configuration Manager 并不实施软件更新，而且在收集信息前，需要执行几个配置步骤。  
 
- Antes de configurar as atualizações de software, considere os requisitos de privacidade.  
-
-
-
-<!--HONumber=Dec16_HO3-->
-
-
+ 在配置软件更新之前，请考虑隐私要求。  

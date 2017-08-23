@@ -1,91 +1,84 @@
 ---
-title: "Introdução às configurações de conformidade | Microsoft Docs"
-description: "Saiba como as configurações de conformidade funcionam no System Center Configuration Manager. Também saiba mais sobre os conceitos básicos que você precisa saber."
+title: "符合性设置入门 | Microsoft Docs"
+description: "了解 System Center Configuration Manager 中符合性设置的工作原理。 此外，还可以了解需要知道的核心概念。"
 ms.custom: na
 ms.date: 10/06/2016
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
-ms.technology:
-- configmgr-other
+ms.technology: configmgr-other
 ms.tgt_pltfrm: na
 ms.topic: get-started-article
 ms.assetid: a2742d52-851e-4abc-b623-d12d91684c0b
-caps.latest.revision: 11
+caps.latest.revision: "11"
 author: robstackmsft
 ms.author: robstack
 manager: angrobe
-translationtype: Human Translation
-ms.sourcegitcommit: f9e939d871e95a3248d8e5d96cb73063a81fd5cf
 ms.openlocfilehash: f16c87dfd0c4f80d96aedf7f5f7497f2bbd4752a
-
-
+ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
+ms.translationtype: HT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 08/07/2017
 ---
-# <a name="get-started-with-compliance-settings-in-system-center-configuration-manager"></a>Introdução às configurações de conformidade no System Center Configuration Manager
+# <a name="get-started-with-compliance-settings-in-system-center-configuration-manager"></a>System Center Configuration Manager 中的符合性设置入门
 
-*Aplica-se a: System Center Configuration Manager (Branch Atual)*
+*适用范围：System Center Configuration Manager (Current Branch)*
 
-Antes de começar a criar itens de configuração do System Center Configuration Manager, leia este tópico para entender como funcionam as configurações de conformidade e para saber mais sobre os conceitos básicos que precisará conhecer.  
+在开始创建 System Center Configuration Manager 配置项目之前，应查看此主题以理解符合性设置的工作原理，并了解需要知道的核心概念。  
 
-## <a name="how-compliance-settings-works"></a>Como funcionam as configurações de conformidade  
- As configurações de conformidade permitem que você gerencie a configuração e a conformidade de servidores, laptops, computadores desktop e dispositivos móveis na sua organização.  
+## <a name="how-compliance-settings-works"></a>符合性设置如何工作  
+ 通过符合性设置，可以管理组织中的服务器、笔记本电脑、台式计算机和移动设备的配置和符合性。  
 
- Os itens de configuração se enquadram em duas categorias principais:  
+ 配置项目分为两个主要类别：  
 
--   **Configurações para dispositivos gerenciados com o cliente do Configuration Manager** –normalmente, trata-se de dispositivos nos quais você instalou o software cliente do Configuration Manager para gerenciar o dispositivo.  
+-   **使用 Configuration Manager 客户端管理的设备的设置** - 通常是需要在这些设备上安装 Configuration Manager 客户端软件后才能管理的设备。  
 
--   **Configurações para dispositivos gerenciados sem o cliente do Configuration Manager** – normalmente, trata-se de dispositivos gerenciados com o Microsoft Intune ou com o gerenciamento de dispositivo local do Configuration Manager.  
+-   **不使用 Configuration Manager 客户端管理的设备的设置** - 通常是可使用 Microsoft Intune 或 Configuration Manager 本地设备管理管理的设备。  
 
-## <a name="what-devices-are-supported"></a>Quais dispositivos têm suporte?  
+## <a name="what-devices-are-supported"></a>支持哪些移动设备？  
 
 
-|Tipo de dispositivo|Mais informações|  
+|设备类型|更多信息|  
 |------------|----------------------|  
-|Computadores Windows (com o cliente do Configuration Manager)|Permite que você crie itens de configuração personalizados que lhe permitem avaliar itens como chaves de registro, arquivos e atributos do Active Directory.<br /><br /> Quando usa o tipo do item de configuração do Windows 10, você seleciona as configurações que deseja em uma lista predefinida.|  
-|Computadores Windows (registrados com o Microsoft Intune)|Selecione as configurações desejadas em uma lista predefinida.|  
-|Dispositivos iOS (registrados com o Microsoft Intune)|Selecione as configurações desejadas em uma lista predefinida.|  
-|Dispositivos Android (registrados com o Microsoft Intune)|Selecione as configurações desejadas em uma lista predefinida.|  
-|Dispositivos Windows Phone (registrados com o Microsoft Intune)|Selecione as configurações desejadas em uma lista predefinida.|  
-|Computadores Mac (com o cliente do Configuration Manager)|Permite que você crie itens de configuração personalizados que lhe permitem avaliar itens como valores de preferências do Mac OS X (lista de propriedades) e os resultados retornados por um script.|  
-|Computadores Mac (registrados com o Microsoft Intune)|Selecione as configurações desejadas em uma lista predefinida.|  
+|Windows 电脑（使用 Configuration Manager 客户端）|允许创建自定义配置项目，这些项目可让你访问类似于注册表项、文件和 Active Directory 特性的项目。<br /><br /> 当使用 Windows 10 的配置项目类型时，将从预定义列表中选择所需的设置。|  
+|Windows 电脑（已注册 Microsoft Intune）|从预定义列表中选择所需的设置。|  
+|iOS 设备（已注册 Microsoft Intune）|从预定义列表中选择所需的设置。|  
+|Android 设备（已注册 Microsoft Intune）|从预定义列表中选择所需的设置。|  
+|Windows Phone 设备（已注册 Microsoft Intune）|从预定义列表中选择所需的设置。|  
+|Mac 计算机（使用 Configuration Manager 客户端）|允许你创建自定义配置项目，这些项目可让你访问类似 Mac OS X 首选项（属性列表）值和脚本返回的结果等项目。|  
+|Mac 计算机（已注册 Microsoft Intune）|从预定义列表中选择所需的设置。|  
 
-## <a name="what-is-a-configuration-item"></a>O que é um item de configuração?  
- Um item de configuração pode ser considerado um contêiner que armazena as informações a seguir (as informações que você configura dependem do tipo de item de configuração):  
+## <a name="what-is-a-configuration-item"></a>什么是配置项目？  
+ 可以将配置项目看作一个容器，它存储以下信息（你配置的信息取决于配置项目类型：  
 
--   **Informações de método de detecção** (somente para itens de configuração do Windows que contêm configurações do aplicativo) - permite detectar se um aplicativo está instalado detectando o arquivo do instalador do Windows do aplicativo ou usando um script personalizado.  
+-   “检测方法信息” （适用于仅包含应用程序设置 Windows 的配置项目）- 可让你通过检测此应用程序的 Windows installer 文件或使用自定义脚本来检测应用程序是否安装。  
 
--   **Configurações** - as configurações representam as condições comerciais ou técnicas que são usadas para avaliar a conformidade nos dispositivos cliente. Você pode definir uma nova configuração ou navegar até uma configuração existente em um computador de referência.  
+-   “设置” -  represent the business or technical conditions that are used to assess compliance on client devices. 你可以配置新设置，或浏览到引用计算机上的现有设置。  
 
--   **Regras de conformidade** - as regras de conformidade especificam as condições que definem a conformidade de um item de configuração. Antes que uma configuração possa ser avaliada quanto à conformidade, ela deve ter pelo menos uma regra de conformidade. Algumas configurações permitem que você corrija valores considerados não compatíveis. Você pode criar novas regras ou navegar até uma configuração existente em qualquer item de configuração para selecionar regras nele.  
+-   “符合性规则” -  specify the conditions that define the compliance of a configuration item setting. 设置必须具有至少一个符合性规则，才能对它评估符合性。 某些设置可以让你修正发现不符合的值。 可以创建新规则，或浏览到任何配置项目中的现有设置以在其中选择规则。  
 
--   **Plataformas com suporte** - são as plataformas de dispositivo que você define e nas quais será verificada a conformidade do item de configuração. Se você implantar um item de configuração em um dispositivo que não está na lista de plataformas com suporte, ele não será avaliado quanto à conformidade.  
+-   “受支持的平台” - 这些是你定义的设备平台，在这些平台上将对配置项目进行符合性评估。 如果将配置项目部署到不在受支持的平台列表上的设备，则无法对其进行符合性评估。  
 
-## <a name="what-is-a-configuration-baseline"></a>O que é uma linha de base de configuração?  
- A conformidade é avaliada por meio da definição de uma linha de base de configuração que contém os itens de configuração que você deseja avaliar e configurações e regras que descrevem o nível de conformidade que você precisa ter. É possível importar esses dados de configuração da Web em pacotes de configuração do Microsoft System Center Configuration Manager como melhores práticas que são definidas pela Microsoft e outros fornecedores, no Configuration Manager, e que você importar para o Configuration Manager. Também é possível criar novos itens de configuração e linhas de base de configuração.  
+## <a name="what-is-a-configuration-baseline"></a>什么是配置基线？  
+ 通过定义配置基线来进行符合性评估，配置基线包含要评估的配置项目和描述你必须具有的符合性级别的设置和规则。 作为由 Microsoft 和其他供应商在 Configuration Manager 中定义的最佳做法，可以从 Microsoft System Center Configuration Manager 配置包的 Web 中导入此配置数据，然后导入到 Configuration Manager 中。 或者，你可以创建新的配置项目或配置基线。  
 
- Após a definição de uma linha de base de configuração, você pode implantá-la para usuários e dispositivos por meio de coleções e avaliar suas configurações de conformidade segundo uma agenda. Várias linhas de base de configuração podem ser implantadas nos dispositivos. Isso propicia um alto nível de controle.  
+ 定义配置基线后，可以通过集合将它分配给用户和设备并按计划评估其设置的符合性。 可将多个配置基线分配给设备。 这样可为你提供高级版的控制。  
 
- Dispositivos cliente avaliam sua conformidade com relação a cada linha de base de configuração implantada e, imediatamente, informam os resultados ao site usando mensagens de estado e de status. Se um dispositivo cliente não estiver conectado à rede, mas tiver baixado itens de configuração que são referenciados em uma linha de base de configuração implantada, a linha de base de configuração será avaliada quanto à conformidade. As informações de conformidade são enviadas quando a conexão for restabelecida.  
+ 客户端设备根据部署的每个配置基线评估其符合性，并使用状况消息和状态消息立即向站点报告结果。 如果客户端当前未连接到网络，但已下载在部署的配置基线中引用的配置项目，则将评估配置基线的符合性信息。 将在重新连接时发送符合性信息。  
 
- É possível monitorar os resultados da avaliação da linha de base de configuração no nó **Implantações** no espaço de trabalho **Monitoramento** no console do Configuration Manager para exibir as causas mais comuns dos erros e dos casos de não conformidade, bem como o número de usuários e dispositivos afetados. Você também pode executar relatórios de configurações de conformidade para encontrar detalhes adicionais, como quais dispositivos estão ou não em conformidade e qual elemento da linha de base de configuração está fazendo com que um computador não esteja em conformidade. Você também pode exibir resultados de avaliação de conformidade de computadores Windows que executam o software cliente do Configuration Manager usando a guia **Configurações** no **Configuration Manager** no Painel de Controle.  
+ 可从 Configuration Manager 控制台中的“监视”工作区中的“部署”节点监视配置基线评估符合性的结果，以查看出现不符合性和错误最常见的原因以及受影响的用户和设备数量。 你也可以运行符合性设置报告来查找其他详细信息，例如哪些设备符合，哪些不符合，以及哪些配置基线的元素导致计算机出现不符合的情况。 还可以通过“控制面板”中的“Configuration Manager”中的“配置”选项卡，从运行 Configuration Manager 客户端软件的 Windows 计算机中查看符合性评估结果。  
 
-## <a name="user-data-and-profiles-configuration-items"></a>Itens de configuração de perfis e dados do usuário  
- Itens de configuração de perfis e dados do usuário contêm configurações que controlam como os usuários em sua hierarquia gerenciam o redirecionamento de pastas, arquivos offline e perfis de roaming em computadores que executam o Windows 8 e posterior. É possível implantar essas configurações em coleções de usuários e monitorar sua conformidade no nó **Monitoramento** do console do Configuration Manager. Diferente de outros itens de configuração, você não os acrescenta às linhas de base de configuração antes de implantá-las. Você pode implantá-las diretamente na caixa de diálogo **Implantar Item de Configuração de Perfis e Dados de Usuário** .  
+## <a name="user-data-and-profiles-configuration-items"></a>用户数据和配置文件的配置项目  
+ 用户数据和配置文件配置项目包含控制层次机构中的用户如何在运行 Windows 8 和更高版本的计算机上管理文件夹重定向、脱机文件和漫游配置文件的设置。 可以将这些设置部署到用户的集合，然后从 Configuration Manager 控制台的“监视”节点中监视其符合性。 与其他配置项目不同，你在部署它们之前没有将其添加到配置基线。 你可在“部署用户数据和配置文件的配置项目”  对话框中直接部署它们。  
 
- Para obter detalhes, consulte [Criar itens de configuração de perfis e dados de usuário](/sccm/compliance/deploy-use/create-user-data-and-profiles-configuration-items).  
+ 有关详细信息，请参阅[创建用户数据和配置文件配置项目](/sccm/compliance/deploy-use/create-user-data-and-profiles-configuration-items)。  
 
-## <a name="remote-connection-profiles"></a>Perfis de conexão remota  
- Os perfis de conexão remota fornecem um conjunto de ferramentas e recursos para ajudar você a criar, implantar e monitorar configurações de conexão remota nos dispositivos da sua organização. Implantando essas configurações, você minimiza o esforço que os usuários finais precisam fazer para se conectarem aos seus computadores na rede corporativa.  
+## <a name="remote-connection-profiles"></a>远程连接配置文件  
+ 远程连接配置文件提供了一组工具和资源，帮助你为组织中的设备创建、部署和监视远程连接设置。 通过部署这些设置，你可以最大程度地减少最终用户连接到公司网络上他们的计算机所需的工作。  
 
-Para obter detalhes, consulte [Create remote connection profiles (Criar perfis de conexão remota)](/sccm/compliance/deploy-use/create-remote-connection-profiles).  
+有关详细信息，请参阅[创建远程连接配置文件](/sccm/compliance/deploy-use/create-remote-connection-profiles)。  
 
-## <a name="windows-edition-upgrade"></a>Atualização de edição do Windows
-A Política de Atualização de Edição permite atualizar automaticamente dispositivos que executam determinadas versões do Windows 10 para uma edição mais recente, fornecendo um novo arquivo de licença ou chave do produto (Product Key).
+## <a name="windows-edition-upgrade"></a>Windows 版本升级
+凭借版本升级策略，可通过提供新的产品密钥或许可证文件将运行某些版本的 Windows 10 的设备自动升级到较新的版本。
 
-Para obter detalhes, consulte [Atualizar dispositivos Windows com a política de atualização de edição](/sccm/compliance/deploy-use/upgrade-windows-version)
-
-
-
-<!--HONumber=Dec16_HO3-->
-
-
+有关详细信息，请参阅[使用版本升级策略升级 Windows 设备](/sccm/compliance/deploy-use/upgrade-windows-version)

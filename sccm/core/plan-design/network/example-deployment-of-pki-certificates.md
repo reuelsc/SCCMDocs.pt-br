@@ -1,781 +1,777 @@
 ---
-title: "Certificados PKI de implantação | Microsoft Docs"
-description: Siga um exemplo passo a passo para conhecer como criar e implantar certificados PKI que o System Center Configuration Manager usa.
+title: "部署 PKI 证书 | Microsoft Docs"
+description: "按照分步示例，了解创建和部署 System Center Configuration Manager 使用的 PKI 证书的方法。"
 ms.custom: na
 ms.date: 02/14/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
-ms.technology:
-- configmgr-other
+ms.technology: configmgr-other
 ms.tgt_pltfrm: na
 ms.topic: get-started-article
 ms.assetid: 3417ff88-7177-4a0d-8967-ab21fe7eba17
-caps.latest.revision: 11
+caps.latest.revision: "11"
 author: arob98
 ms.author: angrobe
 manager: angrobe
-ms.translationtype: Human Translation
-ms.sourcegitcommit: 2a62ef64bf4e08d7027d10827d35d648bdbbeefe
-ms.openlocfilehash: 21fe718835bbbaa6382e0f0a87784e01e4c35283
-ms.contentlocale: pt-br
-ms.lasthandoff: 02/14/2017
-
-
+ms.openlocfilehash: b15f85b4483bbae2444d4e73d2e2aa0b3979d9ab
+ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
+ms.translationtype: HT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 08/07/2017
 ---
-# <a name="step-by-step-example-deployment-of-the-pki-certificates-for-system-center-configuration-manager-windows-server-2008-certification-authority"></a>Exemplo de implantação passo a passo dos certificados PKI para o System Center Configuration Manager: autoridade de certificação do Windows Server 2008
+# <a name="step-by-step-example-deployment-of-the-pki-certificates-for-system-center-configuration-manager-windows-server-2008-certification-authority"></a>System Center Configuration Manager 的 PKI 证书的分步部署示例：Windows Server 2008 证书颁发机构
 
-*Aplica-se a: System Center Configuration Manager (Branch Atual)*
+*适用范围：System Center Configuration Manager (Current Branch)*
 
-Este exemplo de implantação passo a passo, que usa uma AC (autoridade de certificação) do Windows Server 2008, contém procedimentos que mostram como criar e implantar os certificados PKI (infraestrutura de chave pública) usados pelo System Center Configuration Manager. Esses procedimentos usam uma Autoridade de Certificação (CA) corporativa e modelos de certificado. As etapas são apropriadas para uma rede de teste somente, como uma verificação de conceito.  
+此分步示例部署使用 Windows Server 2008 证书颁发机构 (CA)，提供创建和部署 System Center Configuration Manager 使用的公钥基础结构 (PKI) 证书的过程。 这些过程使用企业证书颁发机构 (CA) 和证书模板。 这些步骤仅适用于网络测试，作为对概念的验证。  
 
- Como não existe um método único de implantação dos certificados necessários, consulte a documentação de implantação de PKI sobre os procedimentos necessários e as práticas recomendadas para implantar os certificados necessários em um ambiente de produção. Para obter mais informações sobre os requisitos de certificado, consulte [Requisitos de certificado PKI para o System Center Configuration Manager](../../../core/plan-design/network/pki-certificate-requirements.md).  
+ 由于部署所需的证书不止有一种方法，所以请查阅特定 PKI 部署文档，获取为特定生产环境部署所需证书必需的过程和最佳方案。 有关证书要求的详细信息，请参阅 [System Center Configuration Manager 的 PKI 证书要求](../../../core/plan-design/network/pki-certificate-requirements.md)。  
 
 > [!TIP]  
->  Você pode adaptar as instruções neste tópico para sistemas operacionais que não estão documentados na seção Requisitos de rede de teste. No entanto, se você estiver executando a AC emissora no Windows Server 2012, a versão do modelo de certificado não será solicitada. Em vez disso, especifique isso na guia **Compatibilidade** das propriedades do modelo:  
+>  本主题中的说明可适用于未在“测试网络要求”部分中描述的其他操作系统。 但是，如果在 Windows Server 2012 上运行颁发 CA，将不会提示你提供证书模板版本。 请改为在模板属性的“兼容性”选项卡上指定这一点：  
 >   
->  -   **Autoridade de Certificação**: **Windows Server 2003**  
-> -   **Destinatário do certificado**: **Windows XP / Server 2003**  
+>  -   **证书颁发机构**： **Windows Server 2003**  
+> -   **证书接收者**： **Windows XP/Server 2003**  
 
-## <a name="in-this-section"></a>Nesta seção  
- As seções a seguir incluem instruções em um exemplo passo a passo de criação e implantação dos seguintes certificados que podem ser usados ​​com o System Center Configuration Manager:  
+## <a name="in-this-section"></a>本节内容  
+ 下列部分用示例介绍了创建和部署可用于 System Center Configuration Manager 的以下证书的分步说明：  
 
- [Requisitos de rede de teste](#BKMK_testnetworkenvironment)  
+ [测试网络要求](#BKMK_testnetworkenvironment)  
 
- [Visão geral dos certificados](#BKMK_overview2008)  
+ [证书的概述](#BKMK_overview2008)  
 
- [Implantar o certificado do servidor Web para sistemas de sites que executam o IIS](#BKMK_webserver2008_cm2012)  
+ [为运行 IIS 的站点系统部署 Web 服务器证书](#BKMK_webserver2008_cm2012)  
 
- [Implantar o certificado de serviço para pontos de distribuição baseados em nuvem](#BKMK_clouddp2008_cm2012)  
+ [为基于云的分发点部署服务证书](#BKMK_clouddp2008_cm2012)  
 
- [Implantar o certificado do cliente para computadores Windows](#BKMK_client2008_cm2012)  
+ [为 Windows 计算机部署客户端证书](#BKMK_client2008_cm2012)  
 
- [Implantar o certificado do cliente para pontos de distribuição](#BKMK_clientdistributionpoint2008_cm2012)  
+ [为分发点部署客户端证书](#BKMK_clientdistributionpoint2008_cm2012)  
 
- [Implantar o certificado de registro para dispositivos móveis](#BKMK_mobiledevices2008_cm2012)  
+ [为移动设备部署注册证书](#BKMK_mobiledevices2008_cm2012)  
 
- [Implantar os certificados para AMT](#BKMK_AMT2008_cm2012)  
+ [为 AMT 部署证书](#BKMK_AMT2008_cm2012)  
 
- [Implantar o certificado do cliente para computadores Mac](#BKMK_MacClient_SP1)  
+ [部署 Mac 计算机的客户端证书](#BKMK_MacClient_SP1)  
 
-##  <a name="BKMK_testnetworkenvironment"></a> Requisitos de rede de teste  
- As instruções passo a passo têm os seguintes requisitos:  
+##  <a name="BKMK_testnetworkenvironment"></a>测试网络要求  
+ 分步说明具有以下要求：  
 
--   A rede de teste está executando Serviços de Domínio do Active Directory no Windows Server 2008, e está instalada como um único domínio, uma única floresta.  
+-   测试网络运行 Windows Server 2008 的 Active Directory 域服务并且是作为单个域、单个林安装的。  
 
--   Existe um servidor membro executando o Windows Server 2008 Enterprise Edition, que tem a função de Serviços de Certificados do Active Directory instalado nele e é configurado como uma AC (Autoridade de Certificação) raiz corporativa.  
+-   具有运行 Windows Server 2008 Enterprise Edition 的成员服务器，它上面安装了 Active Directory 证书服务角色，并设置为企业根证书颁发机构 (CA)。  
 
--   Você tem um computador com o Windows Server 2008 (Standard Edition ou Enterprise Edition, R2 ou posterior) instalado, esse computador é designado como um servidor membro e o IIS (Serviços de Informações da Internet) está instalados nele. Esse computador será o servidor do sistema de sites do System Center Configuration Manager que você configurará com um FQDN (nome de domínio totalmente qualificado) de intranet para dar suporte a conexões do cliente na intranet e um FQDN de Internet, se precisar dar suporte a dispositivos móveis registrados pelo System Center Configuration Manager e clientes na Internet.  
+-   具有一台安装了 Windows Server 2008（Standard Edition 或 Enterprise Edition、R2 或更高版本）并指定为成员服务器的计算机，并在该计算机上安装了 Internet Information Services (IIS)。 此计算机将是你将使用 Intranet 完全限定的域名 (FQDN)（以支持 Intranet 上的客户端连接）和 Internet FQDN（如果必须支持由 Internet 上的 System Center Configuration Manager 和客户端注册的移动设备）进行配置的 System Center Configuration Manager 站点系统服务器。  
 
--   Você tem um cliente do Windows Vista com o service pack mais recente instalado e este computador está configurado com um nome do computador que compreende caracteres ASCII e está associado ao domínio. O computador será um computador de cliente do System Center Configuration Manager.  
+-   具有一个安装了最新 Service Pack 的 Windows Vista 客户端，并且此计算机设置了由 ASCII 字符组成的计算机名称并加入到域。 此计算机将作为 System Center Configuration Manager 客户端计算机。  
 
--   Você pode entrar com uma conta de administrador de domínio raiz ou uma conta de administrador de domínio corporativo e use essa conta para todos os procedimentos desta implantação de exemplo.  
+-   可以使用根域管理员帐户或企业域管理员帐户登录，然后使用此帐户来完成本示例部署中的所有过程。  
 
-##  <a name="BKMK_overview2008"></a> Visão geral dos certificados  
- A tabela a seguir lista os tipos de certificados PKI que podem ser necessários para o System Center Configuration Manager e descreve como eles são usados.  
+##  <a name="BKMK_overview2008"></a>证书的概述  
+ 下表列出了 System Center Configuration Manager 可能需要的 PKI 证书类型，并描述了这些证书的使用方式。  
 
-|Requisitos do certificado|Descrição do certificado|  
+|证书要求|证书描述|  
 |-----------------------------|-----------------------------|  
-|Certificado do servidor Web para sistemas de sites que executam IIS|Use este certificado para criptografar dados e autenticar o servidor para os clientes. Ele deve ser instalado externamente do System Center Configuration Manager em servidores de sistemas de sites que executam o IIS (Serviços de Informações da Internet) e que estão configurados no System Center Configuration Manager para usar HTTPS.<br /><br /> Para obter as etapas para configurar e instalar este certificado, veja [Implantar o certificado do servidor Web para sistemas de sites que executam o IIS](#BKMK_webserver2008_cm2012) neste tópico.|  
-|Certificado de serviço para os clientes se conectarem a pontos de distribuição baseados em nuvem|Para obter as etapas para configurar e instalar este certificado, consulte [Implantar o certificado de serviço para pontos de distribuição baseados em nuvem](#BKMK_clouddp2008_cm2012) neste tópico.<br /><br /> **Importante:** esse certificado é usado em conjunto com o certificado de gerenciamento do Microsoft Azure. Para obter mais informações sobre o certificado de gerenciamento, consulte [How to Create a Management Certificate](http://go.microsoft.com/fwlink/p/?LinkId=220281) (Como criar um certificado de gerenciamento) e [How to Add a Management Certificate to a Windows Azure Subscription](http://go.microsoft.com/fwlink/?LinkId=241722) (Como adicionar um certificado de gerenciamento a uma assinatura do Microsoft Azure) na seção Plataforma Microsoft Azure da Biblioteca MSDN.|  
-|Certificado do cliente para computadores com Windows|Este certificado é usado para autenticar computadores cliente do System Center Configuration Manager em sistemas de sites que estão configurados para usar HTTPS. Ele também pode ser usado para pontos de gerenciamento e pontos de migração para monitoramento do status operacional quando estiverem configurados para usar HTTPS. Ele deve ser instalado externamente ao System Center Configuration Manager nos computadores.<br /><br /> Para obter as etapas para configurar e instalar este certificado, veja [Implantar o certificado do cliente para computadores Windows](#BKMK_client2008_cm2012) neste tópico.|  
-|Certificado do cliente para pontos de distribuição|Este certificado tem duas finalidades:<br /><br /> Use este certificado para autenticar o ponto de distribuição para um ponto de gerenciamento habilitado para HTTPS antes que o ponto de distribuição envie mensagens de status.<br /><br /> Quando a opção do ponto de distribuição **Habilitar suporte a PXE para clientes** é selecionada, o certificado é enviado para computadores que o PXE inicializa para que eles possam se conectar a um ponto de gerenciamento habilitado para HTTPS durante a implantação do sistema operacional.<br /><br /> Para obter as etapas para configurar e instalar este certificado, veja [Implantar o certificado do cliente para pontos de distribuição](#BKMK_clientdistributionpoint2008_cm2012) neste tópico.|  
-|Certificado de registro para dispositivos móveis|Este certificado é usado para autenticar clientes de dispositivos móveis do System Center Configuration Manager em sistemas de sites que estão configurados para usar HTTPS. Ele deve ser instalado como parte do registro do dispositivo móvel no System Center Configuration Manager e você escolhe o modelo do certificado definido como uma configuração do cliente do dispositivo móvel.<br /><br /> Para obter as etapas para configurar este certificado, veja [Implantar o certificado de registro para dispositivos móveis](#BKMK_mobiledevices2008_cm2012) neste tópico.|  
-|Certificados para Intel AMT|Há três certificados relacionados ao gerenciamento fora de banda para computadores Intel AMT:<ul><li>Um certificado de provisionamento AMT (Active Management Technology)</li><li>Um certificado do servidor Web AMT</li><li>Opcionalmente, um certificado de autenticação de cliente para redes com ou sem fio 802.1X</li></ul>O certificado de provisionamento AMT deve ser instalado externamente ao System Center Configuration Manager no computador do ponto de serviço fora de banda e depois você escolhe o certificado instalado nas propriedades do ponto de serviço fora de banda. O certificado do servidor Web AMT e o certificado de autenticação de cliente são instalados durante provisionamento e gerenciamento de AMT e você escolhe os modelos de certificado configurados nas propriedades dos componentes de gerenciamento fora de banda.<br /><br /> Para obter as etapas para configurar esses certificados, confira [Implantar os certificados para AMT](#BKMK_AMT2008_cm2012) neste tópico.|  
-|Certificado do cliente para computadores Mac|Você pode solicitar e instalar esse certificado em um computador Mac quando usar o registro do System Center Configuration Manager e escolher o modelo de certificado configurado como uma configuração do cliente do dispositivo móvel.<br /><br /> Para obter as etapas para configurar este certificado, veja [Implantar o certificado do cliente para computadores Mac](#BKMK_MacClient_SP1) neste tópico.|  
+|运行 IIS 的站点系统的 Web 服务器证书|此证书用于对数据进行加密以及向客户端验证服务器。 此证书必须安装在站点系统服务器（运行 Internet Information Services (IIS) 且在 System Center Configuration Manager 中设置为使用 HTTPS）上 System Center Configuration Manager 的外部。<br /><br /> 有关设置和安装此证书的步骤，请参阅本主题中的[为运行 IIS 的站点系统部署 Web 服务器证书](#BKMK_webserver2008_cm2012)。|  
+|客户端用于连接到基于云的分发点的服务证书|有关配置和安装此证书的步骤，请参阅本主题中的[为基于云的分发点部署服务证书](#BKMK_clouddp2008_cm2012)。<br /><br /> **重要说明：** 此证书与 Windows Azure 管理证书结合使用。 有关管理证书的详细信息，请参阅 MSDN 库的“Microsoft Azure 平台”部分中的[如何创建管理证书](http://go.microsoft.com/fwlink/p/?LinkId=220281)和[如何将管理证书添加到 Microsoft Azure 订阅](http://go.microsoft.com/fwlink/?LinkId=241722)。|  
+|Windows 计算机的客户端证书|此证书用于向设置为使用 HTTPS 的站点系统验证 System Center Configuration Manager 客户端计算机。 如果管理点和状态迁移点已设置为使用 HTTPS，也可以为管理点和状态迁移点使用此证书来监视其操作状态。 此证书必须安装在计算机上 System Center Configuration Manager 的外部。<br /><br /> 有关设置和安装此证书的步骤，请参阅本主题中的[为 Windows 计算机部署客户端证书](#BKMK_client2008_cm2012)。|  
+|分发点的客户端证书|此证书有两个用途：<br /><br /> 在分发点发送状态消息之前，此证书向启用 HTTPS 的管理点验证分发点。<br /><br /> 如果选择了“为客户端启用 PXE 支持”  分发点选项，则会将证书发送到通过 PXE 方式启动的计算机，以便它们能够在操作系统部署过程中连接到启用 HTTPS 的管理点。<br /><br /> 有关设置和安装此证书的步骤，请参阅本主题中的[为分发点部署客户端证书](#BKMK_clientdistributionpoint2008_cm2012)。|  
+|移动设备的注册证书|此证书用于向设置为使用 HTTPS 的站点系统验证 System Center Configuration Manager 移动设备客户端。 此证书必须作为 System Center Configuration Manager 中的移动设备注册的一部分进行安装，并且选择配置的证书模板作为移动设备客户端设置。<br /><br /> 有关设置此证书的步骤，请参阅本主题中的[为移动设备部署注册证书](#BKMK_mobiledevices2008_cm2012)。|  
+|Intel AMT 的证书|三个与基于 Intel AMT 的计算机的带外管理相关的证书：<ul><li>主动管理技术 (AMT) 设置证书</li><li>AMT Web 服务器证书</li><li>（可选）802.1X 有线或无线网络的客户端身份验证证书</li></ul>AMT 预配证书必须安装在带外服务点计算机上 System Center Configuration Manager 的外部，然后才能在带外服务点属性中选择安装的证书。 AMT Web 服务器证书和客户端身份验证证书在 AMT 设置和管理过程中安装，并且在带外管理组件属性中选择配置的证书模板。<br /><br /> 有关设置这些证书的步骤，请参阅本主题中的[为 AMT 部署证书](#BKMK_AMT2008_cm2012)。|  
+|Mac 计算机的客户端证书|在使用 System Center Configuration Manager 注册并选择配置的证书模板作为移动设备客户端设置时，可以从 Mac 计算机中请求并安装此证书。<br /><br /> 有关设置此证书的步骤，请参阅本主题中的[部署 Mac 计算机的客户端证书](#BKMK_MacClient_SP1)。|  
 
-##  <a name="BKMK_webserver2008_cm2012"></a> Implantar o certificado do servidor Web para sistemas de sites que executam o IIS  
- Esta implantação de certificados abrange os seguintes procedimentos:  
+##  <a name="BKMK_webserver2008_cm2012"></a>为运行 IIS 的站点系统部署 Web 服务器证书  
+ 此证书部署包含以下过程：  
 
--   Criar e emitir o modelo de certificado do servidor Web na autoridade de certificação  
+-   在证书颁发机构创建和颁发 Web 服务器证书模板  
 
--   Solicitar o certificado do servidor Web  
+-   申请 Web 服务器证书  
 
--   Configurar o IIS para usar o certificado do servidor Web  
+-   将 IIS 配置为使用 Web 服务器证书  
 
-###  <a name="BKMK_webserver22008"></a> Criar e emitir o modelo de certificado do servidor Web na autoridade de certificação  
- Esse procedimento cria um modelo de certificado para sistemas de sites do System Center Configuration Manager e o adiciona à Autoridade de Certificação.  
+###  <a name="BKMK_webserver22008"></a>在证书颁发机构创建和颁发 Web 服务器证书模板  
+ 此过程为 System Center Configuration Manager 站点系统创建证书模板并将其添加到证书颁发机构。  
 
-##### <a name="to-create-and-issue-the-web-server-certificate-template-on-the-certification-authority"></a>Criar e emitir o modelo de certificado do servidor Web na Autoridade de Certificação  
+##### <a name="to-create-and-issue-the-web-server-certificate-template-on-the-certification-authority"></a>在证书颁发机构创建和颁发 Web 服务器证书模板  
 
-1.  Crie um grupo de segurança chamado **Servidores IIS ConfigMgr** que contenha os servidores membros para instalar os sistemas de sites do System Center Configuration Manager que executarão o IIS.  
+1.  创建一个名为“ConfigMgr IIS 服务器”的安全组，其中包含成员服务器，用于安装将运行 IIS 的 System Center Configuration Manager 站点系统。  
 
-2.  No servidor membro com os Serviços de Certificados instalados, no console da Autoridade de Certificação, clique com o botão direito do mouse em **Modelos de Certificado** e escolha **Gerenciar** para carregar o console **Modelos de Certificado**.  
+2.  在安装了证书服务的成员服务器上，在“证书颁发机构”控制台中右键单击“证书模板”，然后选择“管理”以加载“证书模板”控制台。  
 
-3.  No painel de resultados, clique com o botão direito do mouse na entrada que tem **Servidor Web** na coluna **Nome de Exibição do Modelo** e escolha **Duplicar Modelo**.  
+3.  在结果窗格中，右键单击“模板显示名称”列中包含“Web 服务器”的条目，然后选择“复制模板”。  
 
-4.  Na caixa de diálogo **Duplicar Modelo**, verifique se a opção **Windows 2003 Server, Enterprise Edition** está marcada e escolha **OK**.  
+4.  在“复制模板”对话框中，确保已选择“Windows 2003 Server，Enterprise Edition”，然后选择“确定”。  
 
     > [!IMPORTANT]  
-    >  Não selecione **Windows 2008 Server, Enterprise Edition**.  
+    >  不要选择“Windows 2008 Server，Enterprise Edition” 。  
 
-5.  Na caixa de diálogo **Propriedades do Novo Modelo**, na guia **Geral**, insira um nome de modelo, como **Certificado do Servidor Web do ConfigMgr** para gerar os certificados Web que serão usados nos sistemas de sites do Configuration Manager.  
+5.  在“新模板的属性”对话框中的“常规”选项卡上，输入生成将在 Configuration Manager 站点系统上使用的 Web 证书所需的模板名称，例如 **ConfigMgr Web 服务器证书**。  
 
-6.  Escolha a guia **Nome da Entidade** e verifique se **Fornecer na solicitação** está selecionado.  
+6.  选择“使用者名称”选项卡，并确保选择了“在请求中提供”。  
 
-7.  Escolha a guia **Segurança** e remova a permissão **Registrar** dos grupos de segurança **Admins. do Domínio** e **Administradores de Empresa**.  
+7.  选择“安全”选项卡，并从“域管理员”和“企业管理员”安全组中删除“注册”权限。  
 
-8.  Escolha **Adicionar**, insira **Servidores IIS do ConfigMgr** na caixa de texto e escolha **OK**.  
+8.  选择“添加”，在文本框中输入“ConfigMgr IIS 服务器”，然后选择“确定”。  
 
-9. Escolha a permissão **Registrar** para este grupo e não desmarque a permissão **Ler**.  
+9. 为此组选择“注册”权限，并且不要清除“读取”权限。  
 
-10. Escolha **OK** e feche o **Console de Modelos de Certificado**.  
+10. 选择“确定”，然后关闭“证书模板”控制台。  
 
-11. No console da Autoridade de Certificação, clique com o botão direito do mouse em **Modelos de Certificado**, escolha **Novo** e **Modelo de Certificado a Ser Emitido**.  
+11. 在“证书颁发机构”控制台中，右键单击“证书模板”，选择“新建”，然后选择“要颁发的证书模板”。  
 
-12. Na caixa de diálogo **Habilitar Modelos de Certificado**, escolha o novo modelo que você acabou de criar, **Certificado do Servidor Web do ConfigMgr** e escolha **OK**.  
+12. 在“启用证书模板”对话框中，选择刚创建的新模板“ConfigMgr Web 服务器证书”，然后选择“确定”。  
 
-13. Se você não precisar criar ou emitir mais certificados, feche a **Autoridade de Certificação**.  
+13. 如果不需要创建和颁发其他证书，请关闭“证书颁发机构”。  
 
-###  <a name="BKMK_webserver32008"></a> Solicitar o certificado do servidor Web  
- Este procedimento permite que você especifique valores FQDN de intranet e Internet que serão configurados nas propriedades do servidor de sistema de sites e instale o certificado do servidor Web no servidor membro que executa o IIS.  
+###  <a name="BKMK_webserver32008"></a>申请 Web 服务器证书  
+ 此过程允许你指定将在站点系统服务器属性中设置的 Intranet 和 Internet FQDN 值，然后将 Web 服务器证书安装到运行 IIS 的成员服务器上。  
 
-##### <a name="to-request-the-web-server-certificate"></a>Para solicitar o certificado do servidor Web  
+##### <a name="to-request-the-web-server-certificate"></a>申请 Web 服务器证书  
 
-1.  Reinicie o servidor membro que executa o IIS para garantir que o computador possa acessar o modelo de certificado que você criou usando as permissões **Ler** e **Registrar** configuradas por você.  
+1.  重启运行 IIS 的成员服务器，以确保计算机可访问你通过使用所配置的“读取”和“注册”权限创建的证书模板。  
 
-2.  Escolha **Iniciar**, **Executar** e, em seguida, digite **mmc.exe.** No console vazio, escolha **Arquivo** e **Adicionar/Remover Snap-in**.  
+2.  依次选择“开始”、“运行”，然后键入 **mmc.exe.** 在空白控制台中，选择“文件”，然后选择“添加/删除管理单元”。  
 
-3.  Na caixa de diálogo **Adicionar ou Remover Snap-ins**, escolha **Certificados** na lista de **Snap-ins disponíveis** e escolha **Adicionar**.  
+3.  在“添加/删除管理单元”对话框中，从“可用的管理单元”列表中选择“证书”，然后选择“添加”。  
 
-4.  Na caixa de diálogo **Snap-in de certificado**, escolha **Conta de computador** e escolha **Avançar**.  
+4.  在“证书管理单元”对话框中，选择“计算机帐户”，然后选择“下一步”。  
 
-5.  Na caixa de diálogo **Selecionar Computador**, verifique se a opção **Computador local: (o computador no qual este console está sendo executado)** está marcada e escolha **Concluir**.  
+5.  在“选择计算机”对话框中，确保选中“本地计算机: (运行此控制台的计算机)”，然后选择“完成”。  
 
-6.  Na caixa de diálogo **Adicionar ou Remover Snap-ins**, escolha **OK**.  
+6.  在“添加/删除管理单元”对话框中，选择“确定”。  
 
-7.  No console, expanda **Certificados (Computador Local)** e escolha **Pessoal**.  
+7.  在控制台中展开“证书 (本地计算机)”，然后选择“个人”。  
 
-8.  Clique com o botão direito do mouse em **Certificados**, escolha **Todas as Tarefas** e **Solicitar Novo Certificado**.  
+8.  右键单击“证书”，选择“所有任务”，然后选择“申请新证书”。  
 
-9. Na página **Antes de Começar** escolha **Avançar**.  
+9. 在“开始之前”页上，选择“下一步”。  
 
-10. Se você vir a página **Selecionar Política de Registro de Certificado**, escolha **Avançar**.  
+10. 如果看到“选择证书注册策略”页，请选择“下一步”。  
 
-11. Na página **Solicitar Certificados**, identifique o **Certificado do Servidor Web do ConfigMgr** na lista de certificados disponíveis e escolha **Mais informações são necessárias para se registrar neste certificado. Clique aqui para definir as configurações**.  
+11. 在“申请证书”页面上，从可用的证书列表中找到“ConfigMgr Web 服务器证书”，然后选择“注册此证书需要更多信息”**。单击这里以配置设置”**。  
 
-12. Na caixa de diálogo **Propriedades do Certificado**, na guia **Entidade**, não faça nenhuma alteração no **Nome da entidade**. Isso significa que a caixa **Valor** para o **Nome da entidade** permanece em branco. Em vez disso, na seção **Nome alternativo**, escolha a lista suspensa **Tipo** e escolha **DNS**.  
+12. 在“证书属性”对话框中的“使用者”选项卡上，不要对“使用者名称”进行任何更改。 这意味着“使用者名称”  部分的“值”  框保留为空白。 作为替代，请从“备用名称”部分选择“类型”下拉列表，然后选择“DNS”。  
 
-13. Na caixa **Valor**, especifique os valores de FQDN que serão especificados nas propriedades do sistema de sites do System Center Configuration Manager e escolha **OK** para fechar a caixa de diálogo **Propriedades do Certificado**.  
+13. 在“值”框中，指定将在 System Center Configuration Manager 站点系统属性中指定的 FQDN 值，然后选择“确定”关闭“证书属性”对话框。  
 
-     Exemplos:  
+     例如：  
 
-    -   Se o sistema de sites aceitar apenas conexões de clientes da intranet e o FQDN de intranet do servidor do sistema de sites for **server1.internal.contoso.com**, digite **server1.internal.contoso.com** e escolha **Adicionar**.  
+    -   如果站点系统将仅接受来自 Intranet 的客户端连接，并且站点系统服务器的 Intranet FQDN 为 **server1.internal.contoso.com**：输入 **server1.internal.contoso.com**，然后选择“添加”。  
 
-    -   Se o sistema de sites aceitar conexões de clientes da intranet e da Internet, o FQDN de intranet do servidor do sistema de sites for **server1.internal.contoso.com** e o FQDN de Internet do servidor do sistema de sites for **server.contoso.com**:  
+    -   如果站点系统将接受来自 Intranet 和 Internet 的客户端连接，并且站点系统服务器的 Intranet FQDN 为 **server1.internal.contoso.com** ，站点系统服务器的 Internet FQDN 为 **server.contoso.com**：  
 
-        1.  Digite **server1.internal.contoso.com** e escolha **Adicionar**.  
+        1.  输入 **server1.internal.contoso.com**，然后选择“添加”。  
 
-        2.  Digite **server.contoso.com** e escolha **Adicionar**.  
+        2.  输入 **server.contoso.com**，然后选择“添加”。  
 
         > [!NOTE]  
-        >  Você pode especificar os FQDNs para o System Center Configuration Manager em qualquer ordem. No entanto, verifique se todos os dispositivos que usarão o certificado, tais como dispositivos móveis e servidores Web proxy, podem usar um SAN (nome alternativo da entidade) de certificado e vários valores no SAN. Se os dispositivos tiverem suporte limitado para valores de SAN em certificados, altere a ordem dos FQDNs ou use o valor Entidade.  
+        >  可按任何顺序为 System Center Configuration Manager 指定 FQDN。 但是，请检查将使用证书的所有设备（例如移动设备和代理 Web 服务器）是否可使用证书使用者可选名称 (SAN) 和 SAN 中的多个值。 如果设备对证书中的 SAN 值的支持有限，你可能必须更改 FQDN 的顺序或改用“使用者”值。  
 
-14. Na página **Solicitar Certificados**, escolha **Certificado do Servidor Web do ConfigMgr** na lista de certificados disponíveis e escolha **Registrar**.  
+14. 在“申请证书”页面上，从可用的证书列表中选择“ConfigMgr Web 服务器证书”，然后选择“注册”。  
 
-15. Na página **Resultados da Instalação de Certificados** espere até que o certificado seja instalado e escolha **Concluir**.  
+15. 在“证书安装结果”页面中，等待证书安装完成，然后选择“完成”。  
 
-16. Feche os **Certificados (computador local)**.  
+16. 关闭“证书（本地计算机）” 。  
 
-###  <a name="BKMK_webserver42008"></a> Configurar o IIS para usar o certificado do servidor Web  
- Este procedimento associa o certificado instalado ao **Site Padrão**do IIS.  
+###  <a name="BKMK_webserver42008"></a>将 IIS 配置为使用 Web 服务器证书  
+ 此过程将安装的证书绑定到 IIS 的“默认网站” 。  
 
-##### <a name="to-set-up-iis-to-use-the-web-server-certificate"></a>Configurar o IIS para usar o certificado do servidor Web  
+##### <a name="to-set-up-iis-to-use-the-web-server-certificate"></a>将 IIS 设置为使用 Web 服务器证书  
 
-1.  No servidor membro que tem o IIS instalado, escolha **Iniciar**, **Programas**, **Ferramentas Administrativas** e **Gerenciador do IIS (Serviços de Informações da Internet)**.  
+1.  在安装了 IIS 的成员服务器上，依次选择“开始”、“程序”、“管理工具”，然后选择“Internet Information Services (IIS) 管理器”。  
 
-2.  Expanda **Sites**, clique com o botão direito do mouse em **Site Padrão** e escolha **Editar Ligações**.  
+2.  展开“站点”，右键单击“默认网站”，然后选择“编辑绑定”。  
 
-3.  Escolha a entrada **https** e escolha **Editar**.  
+3.  选择“https”条目，然后选择“编辑”。  
 
-4.  Na caixa de diálogo **Editar Associação do Site**, selecione o certificado que você solicitou usando o modelo de Certificados do Servidor Web ConfigMgr e escolha **OK**.  
+4.  在“编辑网站绑定”对话框中，使用“ConfigMgr Web 服务器证书”模板选择你申请的证书，然后选择“确定”。  
 
     > [!NOTE]  
-    >  Se não tiver certeza de qual é o certificado correto, escolha um e escolha **Exibir**. Isso permite comparar os detalhes do certificado selecionado com os certificados no snap-in de certificados. Por exemplo, o snap-in de certificados mostra o modelo de certificado que foi usado para solicitar o certificado. Em seguida, você pode comparar a impressão digital do certificado solicitado usando o modelo de Certificados do Servidor Web ConfigMgr à impressão digital do certificado selecionado atualmente na caixa de diálogo **Editar Associação do Site**.  
+    >  如果不确定哪一个是正确的证书，请选择一个证书，然后选择“查看”。 这样，便可以将所选的证书详细信息与证书管理单元中的证书进行比较。 例如，证书管理单元显示用于申请证书的证书模板。 然后，可以将使用“ConfigMgr Web 服务器证书”模板申请的证书的证书指纹与当前在“编辑网站绑定”对话框中选择的证书的证书指纹进行比较。  
 
-5.  Escolha **OK** na caixa de diálogo **Editar Associação do Site** e escolha **Fechar**.  
+5.  在“编辑网站绑定”对话框中选择“确定”，然后选择“关闭”。  
 
-6.  Feche o **Gerenciador do IIS (Serviços de Informações da Internet)**.  
+6.  关闭“Internet Information Services (IIS) 管理器” 。  
 
- Agora o servidor membro está configurado com um certificado do servidor Web do System Center Configuration Manager.  
+ 成员服务器现在已设置 System Center Configuration Manager Web 服务器证书。  
 
 > [!IMPORTANT]  
->  Ao instalar o servidor do sistema de sites do System Center Configuration Manager neste computador, verifique se você especificou os mesmos FQDNs nas propriedades do sistema de sites que especificou ao solicitar o certificado.  
+>  在此计算机上安装 System Center Configuration Manager 站点系统服务器时，请确保在站点系统属性中指定与请求证书时所指定的 FQDN 相同的 FQDN。  
 
-##  <a name="BKMK_clouddp2008_cm2012"></a> Implantar o certificado de serviço para pontos de distribuição baseados em nuvem  
+##  <a name="BKMK_clouddp2008_cm2012"></a>为基于云的分发点部署服务证书  
 
-Esta implantação de certificados abrange os seguintes procedimentos:  
+此证书部署包含以下过程：  
 
--   [Criar e emitir o modelo de certificado personalizado do servidor Web na autoridade de certificação](#BKMK_clouddpcreating2008)  
+-   [在证书颁发机构创建和颁发自定义 Web 服务器证书模板](#BKMK_clouddpcreating2008)  
 
--   [Solicitar o certificado personalizado do servidor Web](#BKMK_clouddprequesting2008)  
+-   [申请自定义 Web 服务器证书](#BKMK_clouddprequesting2008)  
 
--   [Exportar o certificado personalizado do servidor Web para pontos de distribuição baseados em nuvem](#BKMK_clouddpexporting2008)  
+-   [为基于云的分发点导出自定义 Web 服务器证书](#BKMK_clouddpexporting2008)  
 
-###  <a name="BKMK_clouddpcreating2008"></a> Criar e emitir o modelo de certificado personalizado do servidor Web na autoridade de certificação  
- Este procedimento cria um modelo de certificado personalizado com base no modelo de certificado do servidor Web. O certificado é para os pontos de distribuição baseados em nuvem do System Center Configuration Manager e a chave privada deve ser exportável. Depois que o modelo de certificado é criado, ele é adicionado à autoridade de certificação.  
+###  <a name="BKMK_clouddpcreating2008"></a>在证书颁发机构创建和颁发自定义 Web 服务器证书模板  
+ 此过程创建基于 Web 服务器证书模板的自定义证书模板。 此证书适用于 System Center Configuration Manager 基于云的分发点，并且私钥必须可导出。 创建了证书模板后，会将其添加到证书颁发机构。  
 
 > [!NOTE]  
->  Este procedimento usa um modelo de certificado diferente do modelo de certificado do servidor Web que você criou para sistemas de sites que executam o IIS. Embora ambos os certificados requeiram a funcionalidade de autenticação de servidor, o certificado para pontos de distribuição baseado em nuvem requer que você insira um valor personalizado para o Nome da Entidade e a chave privada deve ser exportada. Como prática recomendada de segurança, não configure modelos de certificado para permitir que a chave privada seja exportada a menos que essa configuração seja necessária. O ponto de distribuição baseado em nuvem requer essa configuração, pois você deve importar o certificado como um arquivo, em vez de escolhe-lo no repositório de certificados.  
+>  此过程使用为运行 IIS 的站点系统创建的 web 服务器证书模板中的不同证书模板。 尽管两个证书都需要服务器身份验证功能，但基于云的分发点的证书需要输入使用者名称的自定义值，并且私钥必须可导出。 最佳安全方案是，除非此配置为必需，否则不要设置证书模板以便可导出私钥。 基于云的分发点需要此配置，原因是必须以文件形式导入证书，而不是从证书存储中选择证书。  
 >   
->  Ao criar um novo modelo de certificado para esse certificado, você pode restringir os computadores que podem solicitar um certificado cuja chave privada pode ser exportada. Em uma rede de produção, você também pode adicionar as seguintes alterações a esse certificado:  
+>  在为此证书创建新证书模板时，可以限制可申请其私钥可导出的证书的计算机。 在生产网络上，还可以考虑为此证书增加以下更改：  
 >   
->  -   Requerer aprovação para instalar o certificado, para obter segurança adicional.  
-> -   Aumentar o período de validade do certificado. Como você precisa exportar e importar o certificado todas as vezes antes de ele expirar, um aumento no período de validade reduz a frequência de repetição desse procedimento. No entanto, um aumento no período de validade também diminui a segurança do certificado, pois ele fornece mais tempo para que um invasor descriptografe a chave privada e roube o certificado.  
-> -   Usar um valor personalizado no SAN (Nome Alternativo da Entidade) do certificado para ajudar a identificá-lo dos certificados do servidor Web padrão que você usa com o IIS.  
+>  -   要求批准来安装证书以提高安全性。  
+> -   增长证书有效期。 由于每次证书到期之前都必须导出并导入证书，因此增长有效期可减少必须重复此过程的频率。 但是，增长有效期还会降低证书的安全性，因为攻击者将有更多的时间来对私钥进行解密并窃取证书。  
+> -   在证书的使用者备用名称 (SAN) 中使用自定义值来帮助从用于 IIS 的标准 Web 服务器证书中识别此证书。  
 
-##### <a name="to-create-and-issue-the-custom-web-server-certificate-template-on-the-certification-authority"></a>Para criar e emitir o modelo de certificado personalizado do servidor Web na autoridade de certificação  
+##### <a name="to-create-and-issue-the-custom-web-server-certificate-template-on-the-certification-authority"></a>在证书颁发机构创建和颁发自定义 Web 服务器证书模板  
 
-1.  Crie um grupo de segurança chamado **Servidores de Site do ConfigMgr** que contenha os servidores membros para instalar os servidores do site primário do System Center Configuration Manager que gerenciará os pontos de distribuição baseados em nuvem.  
+1.  创建一个名为“ConfigMgr 站点服务器”的安全组，其中包含成员服务器，用于安装将管理基于云的分发点的 System Center Configuration Manager 主站点服务器。  
 
-2.  No servidor membro que executa o console da Autoridade de Certificação, clique com o botão direito do mouse em **Modelos de Certificado** e escolha **Gerenciar** para carregar o console de gerenciamento Modelos de Certificado.  
+2.  在运行“证书颁发机构”控制台的成员服务器上，右键单击“证书模板”，然后选择“管理”以加载“证书模板”管理控制台。  
 
-3.  No painel de resultados, clique com o botão direito do mouse na entrada que tem **Servidor Web** na coluna **Nome de Exibição do Modelo** e escolha **Duplicar Modelo**.  
+3.  在结果窗格中，右键单击“模板显示名称”列中包含“Web 服务器”的条目，然后选择“复制模板”。  
 
-4.  Na caixa de diálogo **Duplicar Modelo**, verifique se a opção **Windows 2003 Server, Enterprise Edition** está marcada e escolha **OK**.  
+4.  在“复制模板”对话框中，确保已选择“Windows 2003 Server，Enterprise Edition”，然后选择“确定”。  
 
     > [!IMPORTANT]  
-    >  Não selecione **Windows 2008 Server, Enterprise Edition**.  
+    >  不要选择“Windows 2008 Server，Enterprise Edition” 。  
 
-5.  Na caixa de diálogo **Propriedades do Novo Modelo**, na guia **Geral**, insira um nome de modelo, como **Certificado do Ponto de Distribuição Baseado em Nuvem do ConfigMgr**, para gerar os certificados do servidor Web para pontos de distribuição baseados em nuvem.  
+5.  在“新模板的属性”对话框中的“常规”选项卡上，输入生成基于云分发点的 Web 服务器证书所需的模板名称，例如**ConfigMgr 基于云的分发点证书**。  
 
-6.  Escolha a guia **Tratamento de Solicitação** e escolha **Permitir que a chave privada seja exportada**.  
+6.  选择“请求处理”选项卡，然后选择“允许导出私钥”。  
 
-7.  Escolha a guia **Segurança** e remova a permissão **Registrar** do grupo de segurança **Administradores de Empresa**.  
+7.  选择“安全”选项卡，然后从“企业管理员”安全组中删除“注册”权限。  
 
-8.  Escolha **Adicionar**, insira **Servidores do Site do ConfigMgr** na caixa de texto e escolha **OK**.  
+8.  选择“添加”，在文本框中输入“ConfigMgr 站点服务器”，然后选择“确定”。  
 
-9. Selecione a permissão **Registrar** para este grupo e não desmarque a permissão **Ler** .  
+9. 为此组选择“注册”  权限，并且不要清除“读取”  权限。  
 
-10. Escolha **OK** e feche o **Console de Modelos de Certificado**.  
+10. 选择“确定”，然后关闭“证书模板”控制台。  
 
-11. No console da Autoridade de Certificação, clique com o botão direito do mouse em **Modelos de Certificado**, escolha **Novo** e **Modelo de Certificado a Ser Emitido**.  
+11. 在“证书颁发机构”控制台中，右键单击“证书模板”，选择“新建”，然后选择“要颁发的证书模板”。  
 
-12. Na caixa de diálogo **Habilitar Modelos de Certificado**, escolha o novo modelo que você acabou de criar, **Certificado do Ponto de Distribuição Baseado em Nuvem do ConfigMgr** e escolha **OK**.  
+12. 在“启用证书模板”对话框中，选择刚创建的新模板“ConfigMgr 基于云的分发点证书”，然后选择“确定”。  
 
-13. Se você não precisar criar ou emitir mais certificados, feche a **Autoridade de Certificação**.  
+13. 如果不必创建和颁发其他证书，请关闭“证书颁发机构”。  
 
-###  <a name="BKMK_clouddprequesting2008"></a> Solicitar o certificado personalizado do servidor Web  
- Este procedimento solicita e instala o certificado personalizado do servidor Web no servidor membro que executará o servidor do site.  
+###  <a name="BKMK_clouddprequesting2008"></a>申请自定义 Web 服务器证书  
+ 此过程将申请自定义 Web 服务器证书并随后将其安装到将运行站点服务器的成员服务器上。  
 
-##### <a name="to-request-the-custom-web-server-certificate"></a>Para solicitar o certificado personalizado do servidor Web  
+##### <a name="to-request-the-custom-web-server-certificate"></a>申请自定义 Web 服务器证书  
 
-1.  Reinicie o servidor membro depois de criar e configurar o grupo de segurança **Servidores do Site do ConfigMgr** para assegurar que o computador possa acessar o modelo de certificado criado usando as permissões **Ler** e **Registrar** que você configurou.  
+1.  在创建和配置“ConfigMgr 站点服务器”安全组后重启成员服务器，以确保计算机可访问你通过使用所配置的“读取”和“注册”权限创建的证书模板。  
 
-2.  Escolha **Iniciar**, **Executar** e, em seguida, digite **mmc.exe.** No console vazio, escolha **Arquivo** e **Adicionar/Remover Snap-in**.  
+2.  依次选择“开始”、“运行”，然后输入 **mmc.exe.** 在空白控制台中，选择“文件”，然后选择“添加/删除管理单元”。  
 
-3.  Na caixa de diálogo **Adicionar ou Remover Snap-ins**, escolha **Certificados** na lista de **Snap-ins disponíveis** e escolha **Adicionar**.  
+3.  在“添加/删除管理单元”对话框中，从“可用的管理单元”列表中选择“证书”，然后选择“添加”。  
 
-4.  Na caixa de diálogo **Snap-in de certificado**, escolha **Conta de computador** e escolha **Avançar**.  
+4.  在“证书管理单元”对话框中，选择“计算机帐户”，然后选择“下一步”。  
 
-5.  Na caixa de diálogo **Selecionar Computador**, verifique se a opção **Computador local: (o computador no qual este console está sendo executado)** está marcada e escolha **Concluir**.  
+5.  在“选择计算机”对话框中，确保选中“本地计算机: (运行此控制台的计算机)”，然后选择“完成”。  
 
-6.  Na caixa de diálogo **Adicionar ou Remover Snap-ins**, escolha **OK**.  
+6.  在“添加/删除管理单元”对话框中，选择“确定”。  
 
-7.  No console, expanda **Certificados (Computador Local)** e escolha **Pessoal**.  
+7.  在控制台中展开“证书 (本地计算机)”，然后选择“个人”。  
 
-8.  Clique com o botão direito do mouse em **Certificados**, escolha **Todas as Tarefas** e **Solicitar Novo Certificado**.  
+8.  右键单击“证书”，选择“所有任务”，然后选择“申请新证书”。  
 
-9. Na página **Antes de Começar** escolha **Avançar**.  
+9. 在“开始之前”页上，选择“下一步”。  
 
-10. Se você vir a página **Selecionar Política de Registro de Certificado**, escolha **Avançar**.  
+10. 如果看到“选择证书注册策略”页，请选择“下一步”。  
 
-11. Na página **Solicitar Certificados**, identifique o **Certificado do Ponto de Distribuição Baseado em Nuvem do ConfigMgr** na lista de certificados disponíveis e escolha **Mais informações são necessárias para se registrar neste certificado. Escolha aqui para definir as configurações**.  
+11. 在“申请证书”页面上，从可用的证书列表中找到“ConfigMgr 基于云的分发点证书”，然后选择“注册此证书需要更多信息，选择此处以配置设置”。  
 
-12. Na caixa de diálogo **Propriedades do Certificado**, na guia **Entidade** do **Nome da entidade**, escolha **Nome comum** como **Tipo**.  
+12. 在“证书属性”对话框中的“使用者”选项卡上，为“使用者名称”选择“公用名”作为“类型”。  
 
-13. Na caixa **Valor** , especifique a escolha do nome do serviço e do nome de domínio usando um formato FQDN. Por exemplo: **clouddp1.contoso.com**.  
-
-    > [!NOTE]  
-    >  Torne o nome de serviço único em seu namespace. Você usará o DNS para criar um alias (registro CNAME) para mapear este nome do serviço para um GUID (identificador) gerado automaticamente e um endereço IP do Windows Azure.  
-
-14. Escolha **Adicionar** e escolha **OK** para fechar a caixa de diálogo **Propriedades do Certificado**.  
-
-15. Na página **Solicitar Certificados**, escolha **Certificado do Ponto de Distribuição Baseado em Nuvem do ConfigMgr** na lista de certificados disponíveis e escolha **Registrar**.  
-
-16. Na página **Resultados da Instalação de Certificados** espere até que o certificado seja instalado e escolha **Concluir**.  
-
-17. Feche os **Certificados (computador local)**.  
-
-###  <a name="BKMK_clouddpexporting2008"></a> Exportar o certificado personalizado do servidor Web para pontos de distribuição baseados em nuvem  
- Este procedimento exporta o certificado personalizado do servidor Web para um arquivo, assim ele pode ser importando quando você criar o ponto de distribuição baseado em nuvem.  
-
-##### <a name="to-export-the-custom-web-server-certificate-for-cloud-based-distribution-points"></a>Para exportar o certificado personalizado do servidor Web para pontos de distribuição baseados em nuvem  
-
-1.  No console **Certificados (Computador Local)**, clique com o botão direito do mouse no certificado que você acabou de instalar, escolha **Todas as Tarefas** e escolha **Exportar**.  
-
-2.  No Assistente para Exportação de Certificados, escolha **Avançar**.  
-
-3.  Na página **Exportar Chave Privada**, escolha **Sim, exportar a chave privada** e escolha **Avançar**.  
+13. 在“值”  框中，使用 FQDN 格式指定你选择的服务名称和域名。 例如： **clouddp1.contoso.com**。  
 
     > [!NOTE]  
-    >  Se essa opção não estiver disponível, o certificado foi criado sem a opção de exportar a chave privada. Nesse cenário, você não pode exportar o certificado no formato exigido. Você deve configurar o modelo de certificado para que a chave privada possa ser exportada e, em seguida, solicitar o certificado novamente.  
+    >  使服务名称在命名空间中唯一。 你将使用 DNS 创建别名（CNAME 记录）以从 Windows Azure 中将此服务名称映射到自动生成的标识符 (GUID) 和 IP 地址。  
 
-4.  Na página **Formato do Arquivo de Exportação**, verifique se a opção **Troca de Informações Pessoais – PKCS nº 12 (.PFX)** está selecionada.  
+14. 选择“添加”，然后选择“确定”关闭“证书属性”对话框。  
 
-5.  Na página **Senha**, especifique uma senha forte para proteger o certificado exportado com sua chave privada e escolha **Avançar**.  
+15. 在“申请证书”页上，从可用的证书列表中选择“ConfigMgr 基于云的分发点证书”，然后选择“注册”。  
 
-6.  Na página **Arquivo a Ser Exportado**, especifique o nome do arquivo que você deseja exportar e escolha **Avançar**.  
+16. 在“证书安装结果”页面中，等待证书安装完成，然后选择“完成”。  
 
-7.  Para fechar o assistente, escolha **Concluir** na página **Assistente para Exportação de Certificados** e escolha **OK** na caixa de diálogo de confirmação.  
+17. 关闭“证书（本地计算机）” 。  
 
-8.  Feche os **Certificados (computador local)**.  
+###  <a name="BKMK_clouddpexporting2008"></a>为基于云的分发点导出自定义 Web 服务器证书  
+ 此过程将自定义 Web 服务器证书导出为文件，以便在创建基于云的分发点时可将其导入。  
 
-9. Armazene o arquivo com segurança e verifique se você pode acessá-lo do console do System Center Configuration Manager.  
+##### <a name="to-export-the-custom-web-server-certificate-for-cloud-based-distribution-points"></a>为基于云的分发点导出自定义 Web 服务器证书  
 
- O certificado agora está pronto para ser importado quando você criar um ponto de distribuição baseado em nuvem.  
+1.  在“证书(本地计算机)”控制台中，右键单击刚刚安装的证书，选择“所有任务”，然后选择“导出”。  
 
-##  <a name="BKMK_client2008_cm2012"></a> Implantar o certificado do cliente para computadores Windows  
- Esta implantação de certificados abrange os seguintes procedimentos:  
+2.  在证书导出向导中，选择“下一步”。  
 
--   Criar e emitir o modelo de certificado de autenticação de estação de trabalho na autoridade de certificação  
+3.  在“导出私钥”页上，选择“是，导出私钥”，然后选择“下一步”。  
 
--   Configurar o registro automático do modelo de autenticação de estação de trabalho usando a política de grupo  
+    > [!NOTE]  
+    >  如果此选项不可用，则表明在创建证书时没有选择导出私钥。 在这种情况下，您无法按要求的格式导出证书。 必须设置证书模板以便导出私钥，然后再次申请证书。  
 
--   Registrar automaticamente o certificado de autenticação de estação de trabalho e verificar sua instalação nos computadores  
+4.  在“导出文件格式”页上，确保“个人信息交换 - PKCS #12 (.PFX)”选项处于选定状态。  
 
-###  <a name="BKMK_client02008"></a> Criar e emitir o modelo de certificado de autenticação de estação de trabalho na autoridade de certificação  
- Esse procedimento cria um modelo de certificado para computadores cliente do System Center Configuration Manager e o adiciona à Autoridade de Certificação.  
+5.  在“密码”页上，指定一个用于保护导出的证书及其私钥的强密码，然后选择“下一步”。  
 
-##### <a name="to-create-and-issue-the-workstation-authentication-certificate-template-on-the-certification-authority"></a>Para criar e emitir o modelo de certificado de autenticação de estação de trabalho na autoridade de certificação  
+6.  在“要导出的文件”页上，指定你要导出的文件的名称，然后选择“下一步”。  
 
-1.  No servidor membro que executa o console da Autoridade de Certificação, clique com o botão direito do mouse em **Modelos de Certificado** e escolha **Gerenciar** para carregar o console de gerenciamento Modelos de Certificado.  
+7.  要关闭向导，请在“证书导出向导”页中选择“完成”，然后在确认对话框中选择“确定”。  
 
-2.  No painel de resultados, clique com o botão direito do mouse na entrada que tem **Autenticação de Estação de Trabalho** na coluna **Nome de Exibição do Modelo** e escolha **Duplicar Modelo**.  
+8.  关闭“证书（本地计算机）” 。  
 
-3.  Na caixa de diálogo **Duplicar Modelo**, verifique se a opção **Windows 2003 Server, Enterprise Edition** está marcada e escolha **OK**.  
+9. 安全地存储文件，确保可以从 System Center Configuration Manager 控制台访问该文件。  
+
+ 证书现在已准备好，可在你创建基于云的分发点时导入。  
+
+##  <a name="BKMK_client2008_cm2012"></a>为 Windows 计算机部署客户端证书  
+ 此证书部署包含以下过程：  
+
+-   在证书颁发机构创建和颁发工作站身份验证证书模板  
+
+-   使用组策略配置工作站身份验证模板的自动注册  
+
+-   自动注册工作站身份验证证书并验证其在计算机上的安装  
+
+###  <a name="BKMK_client02008"></a>在证书颁发机构创建和颁发工作站身份验证证书模板  
+ 此过程为 System Center Configuration Manager 客户端计算机创建证书模板并将其添加到证书颁发机构。  
+
+##### <a name="to-create-and-issue-the-workstation-authentication-certificate-template-on-the-certification-authority"></a>在证书颁发机构创建和颁发工作站身份验证证书模板  
+
+1.  在运行“证书颁发机构”控制台的成员服务器上，右键单击“证书模板”，然后选择“管理”以加载“证书模板”管理控制台。  
+
+2.  在结果窗格中，右键单击在“模板显示名称”列中包含“工作站身份验证”的条目，然后选择“复制模板”。  
+
+3.  在“复制模板”对话框中，确保已选择“Windows 2003 Server，Enterprise Edition”，然后选择“确定”。  
 
     > [!IMPORTANT]  
-    >  Não selecione **Windows 2008 Server, Enterprise Edition**.  
+    >  不要选择“Windows 2008 Server，Enterprise Edition” 。  
 
-4.  Na caixa de diálogo **Propriedades do Novo Modelo**, na guia **Geral**, insira um nome de modelo, como **Certificado do Cliente do ConfigMgr**, para gerar os certificados do cliente que serão usados nos computadores cliente do Configuration Manager.  
+4.  在“新模板的属性”对话框中的“常规”选项卡上，输入生成在 Configuration Manager 客户端计算机上使用的客户端证书所需的模板名称，例如 **ConfigMgr 客户端证书**。  
 
-5.  Escolha a guia **Segurança**, selecione o grupo **Computadores do Domínio** e selecione as permissões adicionais **Ler** e **Registrar Automaticamente**. Não desmarque **Registrar**.  
+5.  选择“安全”选项卡，选择“域计算机”组，然后选择其他权限“读取”和“自动注册”。 不要清除“注册” 。  
 
-6.  Escolha **OK** e feche o **Console de Modelos de Certificado**.  
+6.  选择“确定”，然后关闭“证书模板”控制台。  
 
-7.  No console da Autoridade de Certificação, clique com o botão direito do mouse em **Modelos de Certificado**, escolha **Novo** e **Modelo de Certificado a Ser Emitido**.  
+7.  在“证书颁发机构”控制台中，右键单击“证书模板”，选择“新建”，然后选择“要颁发的证书模板”。  
 
-8.  Na caixa de diálogo **Habilitar Modelos de Certificado**, escolha o novo modelo que você acabou de criar, **Certificado do Cliente do ConfigMgr** e escolha **OK**.  
+8.  在“启用证书模板”对话框中，选择刚创建的新模板“ConfigMgr 客户端证书”，然后选择“确定”。  
 
-9. Se você não precisar criar ou emitir mais certificados, feche a **Autoridade de Certificação**.  
+9. 如果不需要创建和颁发其他证书，请关闭“证书颁发机构”。  
 
-###  <a name="BKMK_client12008"></a> Configurar o registro automático do modelo de autenticação de estação de trabalho usando a política de grupo  
- Este procedimento configura a política de grupo para registrar automaticamente o certificado do cliente em computadores.  
+###  <a name="BKMK_client12008"></a>使用组策略配置工作站身份验证模板的自动注册  
+ 此过程将设置组策略以使其在计算机上自动注册客户端证书。  
 
-##### <a name="to-set-up-autoenrollment-of-the-workstation-authentication-template-by-using-group-policy"></a>Para configurar o registro automático do modelo de autenticação da estação de trabalho usando a política de grupo  
+##### <a name="to-set-up-autoenrollment-of-the-workstation-authentication-template-by-using-group-policy"></a>若要使用组策略设置工作站身份验证模板的自动注册  
 
-1.  No controlador de domínio, escolha **Iniciar**, **Ferramentas Administrativas** e **Gerenciamento de Política de Grupo**.  
+1.  在域控制器上，依次选择“开始”、“管理工具”和“组策略管理”。  
 
-2.  Navegue até seu domínio, clique nele com o botão direito do mouse e escolha **Criar um GPO neste domínio e fornecer um link para ele aqui**.  
-
-    > [!NOTE]  
-    >  Esta etapa usa a prática recomendada de criação de uma nova Política de Grupo para configurações personalizadas em vez de editar a Política de Domínio Padrão que está instalada com os Serviços de Domínio Active Directory. Ao atribuir essa Política de Grupo no nível de domínio, você a aplicará a todos os computadores no domínio. Em um ambiente de produção, você pode restringir o registro automático para que ele registra somente em computadores selecionados. Você pode atribuir a política de grupo no nível da unidade organizacional ou filtrar a política de grupo de domínio com um grupo de segurança para que ela se aplique apenas aos computadores no grupo. Se você restringir o registro automático, lembre-se de incluir o servidor que está configurado como ponto de gerenciamento.  
-
-3.  Na caixa de diálogo **Novo GPO**, insira um nome, como **Certificados de Registro Automático**, para a nova política de grupo e escolha **OK**.  
-
-4.  No painel de resultados, na guia **Objetos de Política de Grupo Vinculados**, clique com o botão direito do mouse na nova política de grupo e escolha **Editar**.  
-
-5.  Na caixa de diálogo **Editor de Gerenciamento de Política de Grupo**, expanda **Políticas** em **Configuração do Computador** e vá até **Configurações do Windows** / **Configurações de Segurança** / **Políticas de Chave Pública**.  
-
-6.  Clique com o botão direito do mouse no tipo de objeto chamado **Cliente Serviços Certificado – Registro Automático** e escolha **Propriedades**.  
-
-7.  Na lista suspensa **Modelo de Configuração**, escolha **Habilitado**, **Renovar certificados expirados, atualizar certificados pendentes e remover certificados revogados**, escolha **Atualizar certificados que usam modelos de certificados** e escolha **OK**.  
-
-8.  Feche o **Gerenciamento de Política de Grupo**.  
-
-###  <a name="BKMK_client22008"></a> Registrar automaticamente o certificado de autenticação de estação de trabalho e verificar sua instalação nos computadores  
- Este procedimento instala o certificado do cliente em computadores e verifica a instalação.  
-
-##### <a name="to-automatically-enroll-the-workstation-authentication-certificate-and-verify-its-installation-on-the-client-computer"></a>Para registrar automaticamente o certificado de autenticação de estação de trabalho e verificar sua instalação no computador cliente  
-
-1.  Reinicie o computador da estação de trabalho e aguarde alguns minutos antes de entrar.  
+2.  转到你的域，右键单击域，然后选择“在这个域中创建 GPO 并在此处链接”。  
 
     > [!NOTE]  
-    >  A reinicialização de um computador é o método mais confiável de garantir o êxito no registro automático do certificado.  
+    >  此步骤使用为自定义设置创建新的组策略这一最佳方案，而不是编辑随 Active Directory 域服务安装的默认域策略。 在域级别分配此组策略时，你会将它应用到域中的所有计算机。 在生产环境中，你可以限制自动注册，以便仅在选定的计算机上注册。 可以在组织单位级别分配组策略，或者可以通过安全组筛选域组策略，以便其仅应用于组中的计算机。 如果限制自动注册，请记住包括设置为管理点的服务器。  
 
-2.  Entre com uma conta que tenha privilégios administrativos.  
+3.  在“新建 GPO”对话框中，为新的组策略输入名称，如**自动注册证书**，然后选择“确定”。  
 
-3.  Na caixa de pesquisa, digite **mmc.exe.** e pressione **Enter**.  
+4.  在结果窗格的“链接的组策略对象”选项卡上，右键单击新的组策略，然后选择“编辑”。  
 
-4.  No console de gerenciamento vazio, escolha **Arquivo** e **Adicionar/Remover Snap-in**.  
+5.  在“组策略管理编辑器”中，展开“计算机配置”下的“策略”，然后转到“Windows 设置” / “安全设置” / “公钥策略”。  
 
-5.  Na caixa de diálogo **Adicionar ou Remover Snap-ins**, escolha **Certificados** na lista de **Snap-ins disponíveis** e escolha **Adicionar**.  
+6.  右键单击名为“证书服务客户端 - 自动注册”的对象类型，然后选择“属性”。  
 
-6.  Na caixa de diálogo **Snap-in de certificado**, escolha **Conta de computador** e escolha **Avançar**.  
+7.  从“配置型号”下拉列表中，依次选择“已启用”、“续订过期证书、更新未决证书并删除吊销的证书”、“更新使用证书模板的证书”，然后选择“确定”。  
 
-7.  Na caixa de diálogo **Selecionar Computador**, verifique se a opção **Computador local: (o computador no qual este console está sendo executado)** está marcada e escolha **Concluir**.  
+8.  关闭“组策略管理” 。  
 
-8.  Na caixa de diálogo **Adicionar ou Remover Snap-ins**, escolha **OK**.  
+###  <a name="BKMK_client22008"></a>自动注册工作站身份验证证书并验证其在计算机上的安装  
+ 此过程在计算机上安装客户端证书，并验证安装。  
 
-9. No console, expanda **Certificados (Computador Local)**, **Pessoal** e escolha **Certificados**.  
+##### <a name="to-automatically-enroll-the-workstation-authentication-certificate-and-verify-its-installation-on-the-client-computer"></a>自动注册工作站身份验证证书并验证其在客户端计算机上的安装  
 
-10. No painel de resultados, confirme se um certificado tem a **Autenticação de Cliente** na coluna **Finalidade** e que o **Certificado do Cliente do ConfigMgr** está na coluna **Modelo de Certificado**.  
+1.  重启工作站计算机，并等待几分钟再登录。  
 
-11. Feche os **Certificados (computador local)**.  
+    > [!NOTE]  
+    >  重新启动计算机是确保证书注册成功最可靠的方法。  
 
-12. Repita as etapas de 1 a 11 para o servidor membro para verificar se o servidor que será configurado como ponto de gerenciamento também tem um certificado do cliente.  
+2.  使用具有管理特权的帐户登录。  
 
- Agora, o computador está configurado com um certificado do cliente do System Center Configuration Manager.  
+3.  在搜索框中，输入 **mmc.exe.**，然后按 **Enter**。  
 
-##  <a name="BKMK_clientdistributionpoint2008_cm2012"></a> Implantar o certificado do cliente para pontos de distribuição  
+4.  在空管理控制台中，选择“文件”，然后选择“添加/删除管理单元”。  
+
+5.  在“添加/删除管理单元”对话框中，从“可用的管理单元”列表中选择“证书”，然后选择“添加”。  
+
+6.  在“证书管理单元”对话框中，选择“计算机帐户”，然后选择“下一步”。  
+
+7.  在“选择计算机”对话框中，确保选中“本地计算机: (运行此控制台的计算机)”，然后选择“完成”。  
+
+8.  在“添加/删除管理单元”对话框中，选择“确定”。  
+
+9. 在控制台中展开“证书（本地计算机）”，展开“个人”，然后选择“证书”。  
+
+10. 在结果窗格中，确认证书在“预期目的”列中包含“客户端身份验证”，并且在“证书模板”列中包含“ConfigMgr 客户端证书”。  
+
+11. 关闭“证书（本地计算机）” 。  
+
+12. 对成员服务器重复步骤 1 至 11，以验证将被设置为管理点的服务器是否也具有客户端证书。  
+
+ 计算机现在已设置 System Center Configuration Manager 客户端证书。  
+
+##  <a name="BKMK_clientdistributionpoint2008_cm2012"></a>为分发点部署客户端证书  
 
 > [!NOTE]  
->  Este certificado também pode ser usado para imagens de mídia que não usam inicialização PXE, pois os requisitos do certificado são os mesmos.  
+>  由于证书要求相同，此证书还可用于不使用 PXE 启动的媒体映像。  
 
- Esta implantação de certificados abrange os seguintes procedimentos:  
+ 此证书部署包含以下过程：  
 
--   Criar e emitir um modelo personalizado de certificado de autenticação de estação de trabalho na autoridade de certificação  
+-   在证书颁发机构创建和颁发自定义工作站身份验证证书模板  
 
--   Solicitar o certificado personalizado de autenticação de estação de trabalho  
+-   申请自定义工作站身份验证证书  
 
--   Exportar o certificado do cliente para pontos de distribuição  
+-   为分发点导出客户端证书  
 
-###  <a name="BKMK_clientdistributionpoint02008"></a> Criar e emitir um modelo personalizado de certificado de autenticação de estação de trabalho na autoridade de certificação  
- Este procedimento cria um modelo de certificado personalizado para pontos de distribuição do System Center Configuration Manager para que a chave privada possa ser exportada e adiciona o modelo do certificado à autoridade de certificação.  
+###  <a name="BKMK_clientdistributionpoint02008"></a>在证书颁发机构创建和颁发自定义工作站身份验证证书模板  
+ 此过程为 System Center Configuration Manager 分发点创建自定义证书模板，以便可导出私钥，并将该证书模板添加到证书颁发机构。  
 
 > [!NOTE]  
->  Este procedimento usa um modelo de certificado diferente do modelo de certificado que você criou para computadores cliente. Embora ambos os certificados requeiram a funcionalidade de autenticação de cliente, o certificado para pontos de distribuição requer que a chave privada seja exportada. Como prática recomendada de segurança, não configure modelos de certificado para permitir que a chave privada seja exportada a menos que essa configuração seja necessária. O ponto de distribuição requer essa configuração, pois você deve importar o certificado como um arquivo, em vez de escolhe-lo no repositório de certificados.  
+>  此过程使用来自为客户端计算机创建的证书模板的不同证书模板。 尽管两个证书都需要客户端身份验证功能，但分发点证书要求已导出私钥。 最佳安全方案是，除非此配置为必需，否则不要设置证书模板以便可导出私钥。 分发点之所以需要此配置，原因是你必须以文件形式导入证书，而不是从证书存储中选择证书。  
 >   
->  Ao criar um novo modelo de certificado para esse certificado, você pode restringir os computadores que podem solicitar um certificado cuja chave privada pode ser exportada. No exemplo de implantação, esse será o grupo de segurança que você criou anteriormente para servidores do sistema de sites do System Center Configuration Manager que executam o IIS. Em uma rede de produção que distribui as funções do sistema de site do IIS, considere a criação de um novo grupo de segurança para os servidores que executam pontos de distribuição, assim você pode restringir o certificado apenas para esses servidores do sistema de site. Você também pode adicionar as seguintes modificações para o certificado:  
+>  在为此证书创建新证书模板时，可以限制可申请其私钥可导出的证书的计算机。 在我们的示例部署中，这将是你之前为运行 IIS 的 System Center Configuration Manager 站点系统服务器创建的安全组。 在分发 IIS 站点系统角色的生产网络上，考虑为运行分发点的服务器创建一个新安全组，以便能够将证书限制为仅供这些站点系统服务器使用。 你还可以考虑为此证书增加以下修改之处：  
 >   
->  -   Requerer aprovação para instalar o certificado, para obter segurança adicional.  
-> -   Aumentar o período de validade do certificado. Como você precisa exportar e importar o certificado todas as vezes antes de ele expirar, um aumento no período de validade reduz a frequência de repetição desse procedimento. No entanto, um aumento no período de validade também diminui a segurança do certificado, pois ele fornece mais tempo para que um invasor descriptografe a chave privada e roube o certificado.  
-> -   Usar um valor personalizado no campo Entidade do certificado ou SAN (Nome Alternativo da Entidade) para ajudar a identificar esse certificado dos certificados do cliente padrão. Isso pode ser particularmente útil se você usar o mesmo certificado para vários pontos de distribuição.  
+>  -   要求批准来安装证书以提高安全性。  
+> -   增长证书有效期。 由于每次证书到期之前都必须导出并导入证书，因此增长有效期可减少必须重复此过程的频率。 但是，增长有效期还会降低证书的安全性，因为攻击者将有更多的时间来对私钥进行解密并窃取证书。  
+> -   在证书的“使用者”字段或使用者备用名称 (SAN) 中使用自定义值来帮助从标准客户端证书中识别此证书。 如果你将为多个分发点使用同一证书，则这一点可能特别有用。  
 
-##### <a name="to-create-and-issue-the-custom-workstation-authentication-certificate-template-on-the-certification-authority"></a>Para criar e emitir o modelo personalizado de certificado de autenticação de estação de trabalho na autoridade de certificação  
+##### <a name="to-create-and-issue-the-custom-workstation-authentication-certificate-template-on-the-certification-authority"></a>在证书颁发机构创建和颁发自定义工作站身份验证证书模板  
 
-1.  No servidor membro que executa o console da Autoridade de Certificação, clique com o botão direito do mouse em **Modelos de Certificado** e escolha **Gerenciar** para carregar o console de gerenciamento Modelos de Certificado.  
+1.  在运行“证书颁发机构”控制台的成员服务器上，右键单击“证书模板”，然后选择“管理”以加载“证书模板”管理控制台。  
 
-2.  No painel de resultados, clique com o botão direito do mouse na entrada que tem **Autenticação de Estação de Trabalho** na coluna **Nome de Exibição do Modelo** e escolha **Duplicar Modelo**.  
+2.  在结果窗格中，右键单击在“模板显示名称”列中包含“工作站身份验证”的条目，然后选择“复制模板”。  
 
-3.  Na caixa de diálogo **Duplicar Modelo**, verifique se a opção **Windows 2003 Server, Enterprise Edition** está marcada e escolha **OK**.  
+3.  在“复制模板”对话框中，确保已选择“Windows 2003 Server，Enterprise Edition”，然后选择“确定”。  
 
     > [!IMPORTANT]  
-    >  Não selecione **Windows 2008 Server, Enterprise Edition**.  
+    >  不要选择“Windows 2008 Server，Enterprise Edition” 。  
 
-4.  Na caixa de diálogo **Propriedades do Novo Modelo**, na guia **Geral**, insira um nome de modelo, como **Certificado do Ponto de Distribuição do Cliente do ConfigMgr**, para gerar o certificado de autenticação de cliente para pontos de distribuição.  
+4.  在“新模板的属性”对话框中的“常规”选项卡上，输入生成分发点的客户端身份验证证书所需的模板名称，例如 **ConfigMgr 客户端分发点证书**。  
 
-5.  Escolha a guia **Tratamento de Solicitação** e escolha **Permitir que a chave privada seja exportada**.  
+5.  选择“请求处理”选项卡，然后选择“允许导出私钥”。  
 
-6.  Escolha a guia **Segurança** e remova a permissão **Registrar** do grupo de segurança **Administradores de Empresa**.  
+6.  选择“安全”选项卡，然后从“企业管理员”安全组中删除“注册”权限。  
 
-7.  Escolha **Adicionar**, insira **Servidores IIS do ConfigMgr** na caixa de texto e escolha **OK**.  
+7.  选择“添加”，在文本框中输入“ConfigMgr IIS 服务器”，然后选择“确定”。  
 
-8.  Selecione a permissão **Registrar** para este grupo e não desmarque a permissão **Ler** .  
+8.  为此组选择“注册”  权限，并且不要清除“读取”  权限。  
 
-9. Escolha **OK** e feche o **Console de Modelos de Certificado**.  
+9. 选择“确定”，然后关闭“证书模板”控制台。  
 
-10. No console da Autoridade de Certificação, clique com o botão direito do mouse em **Modelos de Certificado**, escolha **Novo** e **Modelo de Certificado a Ser Emitido**.  
+10. 在“证书颁发机构”控制台中，右键单击“证书模板”，选择“新建”，然后选择“要颁发的证书模板”。  
 
-11. Na caixa de diálogo **Habilitar Modelos de Certificado**, escolha o novo modelo que você acabou de criar, **Certificado do Ponto de Distribuição de Cliente do ConfigMgr** e escolha **OK**.  
+11. 在“启用证书模板”对话框中，选择刚创建的新模板“ConfigMgr 客户端分发点证书”，然后选择“确定”。  
 
-12. Se você não precisar criar ou emitir mais certificados, feche a **Autoridade de Certificação**.  
+12. 如果不必创建和颁发其他证书，请关闭“证书颁发机构”。  
 
-###  <a name="BKMK_clientdistributionpoint12008"></a> Solicitar o certificado personalizado de autenticação de estação de trabalho  
- Este procedimento solicita e instala o certificado do cliente personalizado no servidor membro que executa o IIS e que será configurado como ponto de distribuição.  
+###  <a name="BKMK_clientdistributionpoint12008"></a>申请自定义工作站身份验证证书  
+ 此过程申请自定义客户端证书，然后将其安装到运行 IIS 并将设置为分发点的成员服务器上。  
 
-##### <a name="to-request-the-custom-workstation-authentication-certificate"></a>Para solicitar o certificado personalizado de autenticação de estação de trabalho  
+##### <a name="to-request-the-custom-workstation-authentication-certificate"></a>申请自定义工作站身份验证证书  
 
-1.  Escolha **Iniciar**, **Executar** e, em seguida, digite **mmc.exe.** No console vazio, escolha **Arquivo** e **Adicionar/Remover Snap-in**.  
+1.  依次选择“开始”、“运行”，然后输入 **mmc.exe.** 在空白控制台中，选择“文件”，然后选择“添加/删除管理单元”。  
 
-2.  Na caixa de diálogo **Adicionar ou Remover Snap-ins**, escolha **Certificados** na lista de **Snap-ins disponíveis** e escolha **Adicionar**.  
+2.  在“添加/删除管理单元”对话框中，从“可用的管理单元”列表中选择“证书”，然后选择“添加”。  
 
-3.  Na caixa de diálogo **Snap-in de certificado**, escolha **Conta de computador** e escolha **Avançar**.  
+3.  在“证书管理单元”对话框中，选择“计算机帐户”，然后选择“下一步”。  
 
-4.  Na caixa de diálogo **Selecionar Computador**, verifique se a opção **Computador local: (o computador no qual este console está sendo executado)** está marcada e escolha **Concluir**.  
+4.  在“选择计算机”对话框中，确保选中“本地计算机: (运行此控制台的计算机)”，然后选择“完成”。  
 
-5.  Na caixa de diálogo **Adicionar ou Remover Snap-ins**, escolha **OK**.  
+5.  在“添加/删除管理单元”对话框中，选择“确定”。  
 
-6.  No console, expanda **Certificados (Computador Local)** e escolha **Pessoal**.  
+6.  在控制台中展开“证书 (本地计算机)”，然后选择“个人”。  
 
-7.  Clique com o botão direito do mouse em **Certificados**, escolha **Todas as Tarefas** e **Solicitar Novo Certificado**.  
+7.  右键单击“证书”，选择“所有任务”，然后选择“申请新证书”。  
 
-8.  Na página **Antes de Começar** escolha **Avançar**.  
+8.  在“开始之前”页上，选择“下一步”。  
 
-9. Se você vir a página **Selecionar Política de Registro de Certificado**, escolha **Avançar**.  
+9. 如果看到“选择证书注册策略”页，请选择“下一步”。  
 
-10. Na página **Solicitar Certificados**, escolha **Certificado do Ponto de Distribuição Cliente do ConfigMgr** na lista de certificados disponíveis e escolha **Registrar**.  
+10. 在“申请证书”页上，从可用的证书列表中选择“ConfigMgr 客户端分发点证书”，然后选择“注册”。  
 
-11. Na página **Resultados da Instalação de Certificados** espere até que o certificado seja instalado e escolha **Concluir**.  
+11. 在“证书安装结果”页面中，等待证书安装完成，然后选择“完成”。  
 
-12. No painel de resultados, confirme se um certificado tem a **Autenticação de Cliente** na coluna **Finalidade** e que o **Certificado do Ponto de Distribuição do Cliente do ConfigMgr** está na coluna **Modelo de Certificado**.  
+12. 在结果窗格中，确认证书在“预期目的”列中包含“客户端身份验证”，并且在“证书模板”列中包含“ConfigMgr 客户端分发点证书”。  
 
-13. Não feche os **Certificados (computador local)**.  
+13. 不要关闭“证书（本地计算机）” 。  
 
-###  <a name="BKMK_exportclientdistributionpoint22008"></a> Exportar o certificado do cliente para pontos de distribuição  
- Este procedimento exporta o certificado personalizado de autenticação de estação de trabalho para um arquivo para que ele possa ser importado nas propriedades do ponto de distribuição.  
+###  <a name="BKMK_exportclientdistributionpoint22008"></a>为分发点导出客户端证书  
+ 此过程将自定义工作站身份验证证书导出为文件，以便可将其导入分发点属性。  
 
-##### <a name="to-export-the-client-certificate-for-distribution-points"></a>Para exportar o certificado do cliente para pontos de distribuição  
+##### <a name="to-export-the-client-certificate-for-distribution-points"></a>为分发点导出客户端证书  
 
-1.  No console **Certificados (Computador Local)**, clique com o botão direito do mouse no certificado que você acabou de instalar, escolha **Todas as Tarefas** e escolha **Exportar**.  
+1.  在“证书(本地计算机)”控制台中，右键单击刚刚安装的证书，选择“所有任务”，然后选择“导出”。  
 
-2.  No Assistente para Exportação de Certificados, escolha **Avançar**.  
+2.  在证书导出向导中，选择“下一步”。  
 
-3.  Na página **Exportar Chave Privada**, escolha **Sim, exportar a chave privada** e escolha **Avançar**.  
+3.  在“导出私钥”页上，选择“是，导出私钥”，然后选择“下一步”。  
 
     > [!NOTE]  
-    >  Se essa opção não estiver disponível, o certificado foi criado sem a opção de exportar a chave privada. Nesse cenário, você não pode exportar o certificado no formato exigido. Você deve configurar o modelo de certificado para que a chave privada possa ser exportada e, em seguida, solicitar o certificado novamente.  
+    >  如果此选项不可用，则表明在创建证书时没有选择导出私钥。 在这种情况下，您无法按要求的格式导出证书。 必须设置证书模板以便导出私钥，然后再次申请证书。  
 
-4.  Na página **Formato do Arquivo de Exportação**, verifique se a opção **Troca de Informações Pessoais – PKCS nº 12 (.PFX)** está selecionada.  
+4.  在“导出文件格式”页上，确保“个人信息交换 - PKCS #12 (.PFX)”选项处于选定状态。  
 
-5.  Na página **Senha**, especifique uma senha forte para proteger o certificado exportado com sua chave privada e escolha **Avançar**.  
+5.  在“密码”页上，指定一个用于保护导出的证书及其私钥的强密码，然后选择“下一步”。  
 
-6.  Na página **Arquivo a Ser Exportado**, especifique o nome do arquivo que você deseja exportar e escolha **Avançar**.  
+6.  在“要导出的文件”页上，指定你要导出的文件的名称，然后选择“下一步”。  
 
-7.  Para fechar o assistente, escolha **Concluir** na página **Assistente para Exportação de Certificados** e escolha **OK** na caixa de diálogo de confirmação.  
+7.  要关闭向导，请在“证书导出向导”页中选择“完成”，并在确认对话框中选择“确定”。  
 
-8.  Feche os **Certificados (computador local)**.  
+8.  关闭“证书（本地计算机）” 。  
 
-9. Armazene o arquivo com segurança e verifique se você pode acessá-lo do console do System Center Configuration Manager.  
+9. 安全地存储文件，确保可以从 System Center Configuration Manager 控制台访问该文件。  
 
- Agora o certificado está pronto para ser importado quando você configurar o ponto de distribuição.  
+ 证书现在已准备好，可在你设置分发点时导入。  
 
 > [!TIP]  
->  Você pode usar o mesmo arquivo de certificado ao configurar imagens de mídia para uma implantação do sistema operacional que não usa inicialização PXE e a sequência de tarefas para instalar a imagem deve contatar um ponto de gerenciamento que requer conexões de cliente HTTPS.  
+>  在为不使用 PXE 启动的操作系统部署设置媒体映像，并且用于安装映像的任务序列必须与需要 HTTPS 客户端连接的管理点联系时，你可以使用同一证书文件。  
 
-##  <a name="BKMK_mobiledevices2008_cm2012"></a> Implantar o certificado de registro para dispositivos móveis  
- Esta implantação do certificado tem um procedimento único para criar e emitir o modelo de certificado de registro na autoridade de certificação.  
+##  <a name="BKMK_mobiledevices2008_cm2012"></a>为移动设备部署注册证书  
+ 此证书部署包含一个用于在证书颁发机构创建和颁发注册证书模板的单一过程。  
 
-### <a name="create-and-issue-the-enrollment-certificate-template-on-the-certification-authority"></a>Criar e emitir o modelo de certificado de registro na autoridade de certificação  
- Esse procedimento cria um modelo de certificado de registro para dispositivos móveis do System Center Configuration Manager e o adiciona à Autoridade de Certificação.  
+### <a name="create-and-issue-the-enrollment-certificate-template-on-the-certification-authority"></a>在证书颁发机构创建和颁发注册证书模板  
+ 此过程为 System Center Configuration Manager 移动设备创建注册证书模板并将其添加到证书颁发机构。  
 
-##### <a name="to-create-and-issue-the-enrollment-certificate-template-on-the-certification-authority"></a>Para criar e emitir o modelo de certificado de registro na autoridade de certificação  
+##### <a name="to-create-and-issue-the-enrollment-certificate-template-on-the-certification-authority"></a>在证书颁发机构创建和颁发注册证书模板  
 
-1.  Cria um grupo de segurança que contém usuários que registrarão dispositivos móveis no System Center Configuration Manager.  
+1.  创建一个安全组，其中包含将在 System Center Configuration Manager 中注册移动设备的用户。  
 
-2.  No servidor membro que tem os Serviços de Certificados instalados, no console da Autoridade de Certificação, clique com o botão direito do mouse em **Modelos de Certificado** e escolha **Gerenciar** para carregar o console de gerenciamento de Modelos de Certificado.  
+2.  在安装了证书服务的成员服务器上，在“证书颁发机构”控制台中右键单击“证书模板”，然后选择“管理”以加载“证书模板”管理控制台。  
 
-3.  No painel de resultados, clique com o botão direito do mouse na entrada que tem **Sessão Autenticada** na coluna **Nome de Exibição do Modelo** e escolha **Duplicar Modelo**.  
+3.  在结果窗格中，右键单击在“模板显示名称”列中包含“经过身份验证的会话”的条目，然后选择“复制模板”。  
 
-4.  Na caixa de diálogo **Duplicar Modelo**, verifique se a opção **Windows 2003 Server, Enterprise Edition** está marcada e escolha **OK**.  
+4.  在“复制模板”对话框中，确保已选择“Windows 2003 Server，Enterprise Edition”，然后选择“确定”。  
 
     > [!IMPORTANT]  
-    >  Não selecione **Windows 2008 Server, Enterprise Edition**.  
+    >  不要选择“Windows 2008 Server，Enterprise Edition” 。  
 
-5.  Na caixa de diálogo **Propriedades do Novo Modelo**, na guia **Geral**, insira um nome do modelo, como **Certificado de Registro do Dispositivo Móvel do ConfigMgr** para gerar os certificados de registro para os dispositivos móveis a serem gerenciados pelo System Center Configuration Manager.  
+5.  在“新模板的属性”对话框中的“常规”选项卡上，输入模板名称，例如“ConfigMgr 移动设备注册证书”，以便为要由 System Center Configuration Manager 管理的移动设备生成注册证书。  
 
-6.  Escolha a guia **Nome da Entidade**, verifique se a opção **Criar com base nas informações do Active Directory** está marcada, selecione **Nome comum** para o **Formato de nome da entidade:** e desmarque **Nome UPN** de **Incluir estas informações no nome da entidade alternativo**.  
+6.  选择“使用者名称”选项卡，确保选中“用此 Active Directory 信息生成”，再为“使用者名称格式:”选择“公用名”，然后从“将这个信息包括在另一个使用者名称中”取消选择“用户主体名称(UPN)”。  
 
-7.  Escolha a guia **Segurança**, escolha o grupo de segurança que contém usuários que têm dispositivos móveis a serem registrados e escolha a permissão adicional **Registrar**. Não desmarque **Ler**.  
+7.  选择“安全”选项卡，选择安全组（其中包含拥有要注册的移动设备的用户），并选择“注册”的其他权限。 不要清除“读取” 。  
 
-8.  Escolha **OK** e feche o **Console de Modelos de Certificado**.  
+8.  选择“确定”，然后关闭“证书模板”控制台。  
 
-9. No console da Autoridade de Certificação, clique com o botão direito do mouse em **Modelos de Certificado**, escolha **Novo** e **Modelo de Certificado a Ser Emitido**.  
+9. 在“证书颁发机构”控制台中，右键单击“证书模板”，选择“新建”，然后选择“要颁发的证书模板”。  
 
-10. Na caixa de diálogo **Habilitar Modelos de Certificado**, escolha o novo modelo que você acabou de criar, **Certificado de Registro do Dispositivo Móvel do ConfigMgr** e escolha **OK**.  
+10. 在“启用证书模板”对话框中，选择刚创建的新模板“ConfigMgr 移动设备注册证书”，然后选择“确定”。  
 
-11. Se você não precisar criar ou emitir mais certificados, feche o console da Autoridade de Certificação.  
+11. 如果不需要创建和颁发其他证书，请关闭“证书颁发机构”控制台。  
 
- Agora o modelo de certificado de registro de dispositivo móvel está pronto para ser selecionado quando você configurar um perfil de registro de dispositivo móvel nas configurações do cliente.  
+ 移动设备注册证书模板现在已准备好，当你在客户端设置中设置移动设备注册配置文件时即可选择。  
 
-##  <a name="BKMK_AMT2008_cm2012"></a> Implantar os certificados para AMT  
- Esta implantação de certificados abrange os seguintes procedimentos:  
+##  <a name="BKMK_AMT2008_cm2012"></a>为 AMT 部署证书  
+ 此证书部署包含以下过程：  
 
--   Criar, emitir e instalar o certificado de provisionamento AMT  
+-   创建、颁发和安装 AMT 设置证书  
 
--   Criar e emitir o certificado do servidor Web para computadores AMT  
+-   为基于 AMT 的计算机创建和颁发 Web 服务器证书  
 
--   Criar e emitir os certificados de autenticação de cliente para computadores AMT 802.1X  
+-   为 802.1X 基于 AMT 的计算机创建和颁发客户端身份验证证书  
 
-###  <a name="BKMK_AMTprovisioning2008"></a> Criar, emitir e instalar o certificado de provisionamento AMT  
- Crie o certificado de provisionamento com sua AC interna quando computadores AMT são configurados com a impressão digital do certificado da AC raiz interna. Quando não for esse o caso e você precisar usar uma autoridade de certificação externa, use as instruções da empresa que emitiu o certificado de provisionamento AMT, o que, muitas vezes, envolverá solicitar o certificado do site público da empresa. Você também poderá encontrar instruções detalhadas para a AC externa escolhida no [site do Intel vPro Expert Center: Microsoft vPro Manageability](http://go.microsoft.com/fwlink/?LinkId=132001).  
+###  <a name="BKMK_AMTprovisioning2008"></a>创建、颁发和安装 AMT 设置证书  
+ 在通过内部根 CA 的证书指纹设置基于 AMT 的计算机时，使用内部 CA 创建设置证书。 如果不是这种情况，并且必须使用外部证书颁发机构，请使用颁发 AMT 设置证书的公司提供的说明，这些说明通常涉及到从公司的公共网站中申请证书。 还可以在此处找到所选外部 CA 的详细说明：[Intel vPro Expert Center：Microsoft vPro Manageability 网站](http://go.microsoft.com/fwlink/?LinkId=132001)。  
 
 > [!IMPORTANT]  
->  CAs externas podem não oferecer suporte ao identificador de objeto de provisionamento do Intel AMT. Quando esse for o caso, forneça o atributo OU do **Certificado de Instalação de Cliente do Intel(R)**.  
+>  外部 CA 可能不支持 Intel AMT 设置对象标识符。 在这种情况下，请提供 **Intel(R) 客户端设置证书** OU 属性。  
 
- Quando você solicitar um certificado de provisionamento AMT de uma AC externa, instale o certificado no repositório de certificados do computador pessoal no servidor membro que hospedará o ponto de serviço fora de banda.  
+ 当你从外部 CA 申请 AMT 设置证书时，请将该证书安装到承载带外服务点的成员服务器上的计算机个人证书存储中。  
 
-##### <a name="to-request-and-issue-the-amt-provisioning-certificate"></a>Para solicitar e emitir o certificado de provisionamento AMT  
+##### <a name="to-request-and-issue-the-amt-provisioning-certificate"></a>申请和颁发 AMT 设置证书  
 
-1.  Crie um grupo de segurança que contenha as contas de computador de servidores do sistema de sites que executarão o ponto de serviço fora de banda.  
+1.  创建一个安全组，其中包含将运行带外服务点的站点系统服务器的计算机帐户。  
 
-2.  No servidor membro com os Serviços de Certificados instalados, no console da Autoridade de Certificação, clique com o botão direito do mouse em **Modelos de Certificado** e escolha **Gerenciar** para carregar o console **Modelos de Certificado**.  
+2.  在安装了证书服务的成员服务器上，在“证书颁发机构”控制台中右键单击“证书模板”，然后选择“管理”以加载“证书模板”控制台。  
 
-3.  No painel de resultados, clique com o botão direito do mouse na entrada que tem **Servidor Web** na coluna **Nome de Exibição do Modelo** e escolha **Duplicar Modelo**.  
+3.  在结果窗格中，右键单击“模板显示名称”列中包含“Web 服务器”的条目，然后选择“复制模板”。  
 
-4.  Na caixa de diálogo **Duplicar Modelo**, verifique se a opção **Windows 2003 Server, Enterprise Edition** está marcada e escolha **OK**.  
+4.  在“复制模板”对话框中，确保已选择“Windows 2003 Server，Enterprise Edition”，然后选择“确定”。  
 
     > [!IMPORTANT]  
-    >  Não selecione **Windows 2008 Server, Enterprise Edition**.  
+    >  不要选择“Windows 2008 Server，Enterprise Edition” 。  
 
-5.  Na caixa de diálogo **Propriedades do Novo Modelo**, na guia **Geral**, insira um nome de modelo, como **Provisionamento AMT do ConfigMgr**, para o certificado de provisionamento AMT.  
+5.  在“新模板的属性”对话框中的“常规”选项卡上，输入 AMT 设置证书模板的模板名称，如 **ConfigMgr AMT 设置**。  
 
-6.  Escolha a guia **Nome da Entidade**, escolha **Criar com base nas informações do Active Directory** e **Nome comum**.  
+6.  选择“使用者名称”选项卡，选择“用 Active Directory 中的信息生成”，然后选择“公用名”。  
 
-7.  Escolha a guia **Extensões**, verifique se **Políticas de Aplicativo** está selecionada e escolha **Editar**.  
+7.  选择“扩展”选项卡，确保选择“应用程序策略”，然后选择“编辑”。  
 
-8.  Na caixa de diálogo **Editar Extensão de Políticas de Aplicativo**, escolha **Adicionar**.  
+8.  在“编辑应用程序策略扩展”对话框中，选择“添加”。  
 
-9. Na caixa de diálogo **Adicionar Política de Aplicativo**, escolha **Novo**.  
+9. 在“添加应用程序策略”对话框中，选择“新建”。  
 
-10. Na caixa de diálogo **Nova Política de Aplicativo**, digite **Provisionamento AMT** no campo **Nome** e digite o seguinte número para o **Identificador de Objeto**: **2.16.840.1.113741.1.2.3**.  
+10. 在“新建应用程序策略”对话框中，在“名称”字段输入“AMT 设置”，然后为“对象标识符”输入以下数字：**2.16.840.1.113741.1.2.3**。  
 
-11. Escolha **OK** e **OK** na caixa de diálogo **Adicionar Política de Aplicativo**.  
+11. 选择“确定”，然后选择“添加应用程序策略”对话框中的“确定”。  
 
-12. Escolha **OK** na caixa de diálogo **Editar Extensão de Políticas de Aplicativo**.  
+12. 选择“编辑应用程序策略扩展”对话框中的“确定”。  
 
-13. Na caixa de diálogo **Propriedades do Novo Modelo**, o seguinte está listado como descrição das **Políticas de Aplicativo**: **Autenticação de Servidor** e **Provisionamento AMT**.  
+13. 在“新模板的属性”对话框中，将如“应用程序策略”描述列出以下内容：“服务器身份验证”和“AMT 设置”。  
 
-14. Escolha a guia **Segurança** e remova a permissão **Registrar** dos grupos de segurança **Admins. do Domínio** e **Administradores de Empresa**.  
+14. 选择“安全”选项卡，并从“域管理员”和“企业管理员”安全组中删除“注册”权限。  
 
-15. Escolha **Adicionar**, insira o nome de um grupo de segurança que contenha a conta de computador para a função do sistema de sites do ponto de serviço fora de banda e escolha **OK**.  
+15. 选择“添加”，输入包含带外服务点站点系统角色的计算机帐户的安全组的名称，然后选择“确定”。  
 
-16. Escolha a permissão **Registrar** para este grupo e não desmarque a permissão **Ler**.  
+16. 为此组选择“注册”权限，并且不要清除“读取”权限。  
 
-17. Escolha **OK** e feche o console de **Modelos de Certificado**.  
+17. 选择“确定”，然后关闭“证书模板”控制台。  
 
-18. Em **Autoridade de Certificação**, clique com o botão direito do mouse em **Modelos de Certificado**, escolha **Novo** e escolha **Modelo de Certificado a ser Emitido**.  
+18. 在“证书颁发机构”中，右键单击“证书模板”，选择“新建”，然后选择“要颁发的证书模板”。  
 
-19. Na caixa de diálogo **Habilitar Modelos de Certificado**, escolha o novo modelo que você acabou de criar, **Provisionamento AMT do ConfigMgr** e escolha **OK**.  
+19. 在“启用证书模板”对话框中，选择刚创建的新模板“ConfigMgr AMT 设置”，然后选择“确定”。  
 
     > [!NOTE]  
-    >  Se você não conseguir concluir as etapas 18 ou 19, verifique se está usando o Enterprise Edition do Windows Server 2008. Embora você possa configurar modelos com o Windows Server Standard Edition e os Serviços de Certificados, não é possível implantar certificados usando modelos de certificado modificados, a menos que você esteja usando o Enterprise Edition do Windows Server 2008.  
+    >  如果不能完成步骤 18 或 19，请检查你是否正在使用 Windows Server 2008 Enterprise Edition。 虽然可以使用 Windows Server Standard Edition 和证书服务设置模板，但是只有使用 Windows Server 2008 Enterprise Edition 时才能使用修改的证书模板部署证书。  
 
-20. Não feche **Autoridade de Certificação**.  
+20. 不要关闭“证书颁发机构” 。  
 
- O certificado de provisionamento AMT de sua AC interna agora está pronto para ser instalado no computador do ponto de serviço fora de banda.  
+ 来自内部 CA 的 AMT 设置证书现在已准备好，可安装在带外服务点计算机上。  
 
-##### <a name="to-install-the-amt-provisioning-certificate"></a>Para instalar o certificado de provisionamento AMT  
+##### <a name="to-install-the-amt-provisioning-certificate"></a>安装 AMT 设置证书  
 
-1.  Reinicie o servidor membro que executa o IIS para confirmar que ele pode acessar o modelo de certificado com a permissão configurada.  
+1.  重启运行 IIS 的成员服务器，确保它可以使用配置的权限访问证书模板。  
 
-2.  Escolha **Iniciar**, **Executar** e, em seguida, digite **mmc.exe.** No console vazio, escolha **Arquivo** e **Adicionar/Remover Snap-in**.  
+2.  依次选择“开始”、“运行”，然后输入 **mmc.exe.** 在空白控制台中，选择“文件”，然后选择“添加/删除管理单元”。  
 
-3.  Na caixa de diálogo **Adicionar ou Remover Snap-ins**, escolha **Certificados** na lista de **Snap-ins disponíveis** e escolha **Adicionar**.  
+3.  在“添加/删除管理单元”对话框中，从“可用的管理单元”列表中选择“证书”，然后选择“添加”。  
 
-4.  Na caixa de diálogo **Snap-in de certificado**, escolha **Conta de computador** e escolha **Avançar**.  
+4.  在“证书管理单元”对话框中，选择“计算机帐户”，然后选择“下一步”。  
 
-5.  Na caixa de diálogo **Selecionar Computador**, verifique se a opção **Computador local: (o computador no qual este console está sendo executado)** está marcada e escolha **Concluir**.  
+5.  在“选择计算机”对话框中，确保选中“本地计算机: (运行此控制台的计算机)”，然后选择“完成”。  
 
-6.  Na caixa de diálogo **Adicionar ou Remover Snap-ins**, escolha **OK**.  
+6.  在“添加/删除管理单元”对话框中，选择“确定”。  
 
-7.  No console, expanda **Certificados (Computador Local)** e escolha **Pessoal**.  
+7.  在控制台中展开“证书 (本地计算机)”，然后选择“个人”。  
 
-8.  Clique com o botão direito do mouse em **Certificados**, escolha **Todas as Tarefas** e **Solicitar Novo Certificado**.  
+8.  右键单击“证书”，选择“所有任务”，然后选择“申请新证书”。  
 
-9. Na página **Antes de Começar** escolha **Avançar**.  
+9. 在“开始之前”页上，选择“下一步”。  
 
-10. Se você vir a página **Selecionar Política de Registro de Certificado**, escolha **Avançar**.  
+10. 如果看到“选择证书注册策略”页，请选择“下一步”。  
 
-11. Na página **Solicitar Certificados**, selecione **Provisionamento AMT** na lista de certificados disponíveis e escolha **Registrar**.  
+11. 在“申请证书”页上，从可用的证书列表中选择“AMT 设置”，然后选择“注册”。  
 
-12. Na página **Resultados da Instalação de Certificados** espere até que o certificado seja instalado e escolha **Concluir**.  
+12. 在“证书安装结果”页面中，等待证书安装完成，然后选择“完成”。  
 
-13. Feche os **Certificados (computador local)**.  
+13. 关闭“证书（本地计算机）” 。  
 
- O certificado de provisionamento AMT de sua AC interna agora está instalado e pronto para ser selecionado nas propriedades do ponto de serviço fora de banda.  
+ 来自内部 CA 的 AMT 设置证书现已安装并准备好，可在带外服务点属性中选择。  
 
-### <a name="create-and-issue-the-web-server-certificate-for-amt-based-computers"></a>Criar e emitir o certificado do servidor Web para computadores AMT  
- Use o procedimento a seguir para preparar os certificados do servidor Web para computadores AMT.  
+### <a name="create-and-issue-the-web-server-certificate-for-amt-based-computers"></a>为基于 AMT 的计算机创建和颁发 Web 服务器证书  
+ 使用下列过程为基于 AMT 的计算机准备 Web 服务器证书。  
 
-##### <a name="to-create-and-issue-the-web-server-certificate-template"></a>Para criar e emitir o modelo de certificado do servidor Web  
+##### <a name="to-create-and-issue-the-web-server-certificate-template"></a>创建和颁发 Web 服务器证书模板  
 
-1.  Crie um grupo de segurança vazio que contenha as contas de computador do AMT que o System Center Configuration Manager cria durante o provisionamento AMT.  
+1.  创建一个空白的安全组，该组包含 System Center Configuration Manager 在 AMT 设置期间创建的 AMT 计算机帐户。  
 
-2.  No servidor membro com os Serviços de Certificados instalados, no console da Autoridade de Certificação, clique com o botão direito do mouse em **Modelos de Certificado** e escolha **Gerenciar** para carregar o console **Modelos de Certificado**.  
+2.  在安装了证书服务的成员服务器上，在“证书颁发机构”控制台中右键单击“证书模板”，然后选择“管理”以加载“证书模板”控制台。  
 
-3.  No painel de resultados, clique com o botão direito do mouse na entrada que tem **Servidor Web** na coluna **Nome de Exibição do Modelo** e escolha **Duplicar Modelo**.  
+3.  在结果窗格中，右键单击“模板显示名称”列中包含“Web 服务器”的条目，然后选择“复制模板”。  
 
-4.  Na caixa de diálogo **Duplicar Modelo**, verifique se a opção **Windows 2003 Server, Enterprise Edition** está marcada e escolha **OK**.  
-
-    > [!IMPORTANT]  
-    >  Não selecione **Windows 2008 Server, Enterprise Edition**  
-
-5.  Na caixa de diálogo **Propriedades do Novo Modelo**, na guia **Geral**, insira um nome de modelo, como **Certificado do Servidor Web AMT do ConfigMgr**, para gerar os certificados Web que serão usados para gerenciamento fora de banda em computadores AMT.  
-
-6.  Escolha a guia **Nome da Entidade**, escolha **Criar com base nas informações do Active Directory**, escolha **Nome comum** para o **Formato de nome de entidade** e desmarque **Nome UPN** para o nome da entidade alternativo.  
-
-7.  Escolha a guia **Segurança** e remova a permissão **Registrar** dos grupos de segurança **Admins. do Domínio** e **Administradores de Empresa**.  
-
-8.  Escolha **Adicionar** e insira o nome do grupo de segurança que você criou para provisionamento AMT e escolha **OK**.  
-
-9. Escolha as seguintes permissões **Permitir** para esse grupo de segurança: **Ler** e **Registrar**.  
-
-10. Escolha **OK** e feche o console de **Modelos de Certificado**.  
-
-11. No console da **Autoridade de Certificação**, clique com o botão direito do mouse em **Modelos de Certificado**, escolha **Novo** e **Modelo de Certificado a Ser Emitido**.  
-
-12. Na caixa de diálogo **Habilitar Modelos de Certificado**, escolha o novo modelo que você acabou de criar, **Certificado do Servidor Web AMT do ConfigMgr** e escolha **OK**.  
-
-13. Se você não precisar criar ou emitir mais certificados, feche a **Autoridade de Certificação**.  
-
- Agora o modelo de servidor Web AMT está pronto para configurar computadores AMT com certificados do servidor Web. Escolha esse modelo de certificado nas propriedades do componente de gerenciamento fora de banda.  
-
-### <a name="create-and-issue-the-client-authentication-certificates-for-8021x-amt-based-computers"></a>Criar e emitir os certificados de autenticação de cliente para computadores AMT 802.1X  
- Use o procedimento a seguir se computadores AMT forem usar certificados do cliente para redes com ou sem fio 802.1X autenticadas.  
-
-##### <a name="to-create-and-issue-the-client-authentication-certificate-template-on-the-ca"></a>Para criar e emitir o modelo de certificado de autenticação do cliente na autoridade de certificação  
-
-1.  No servidor membro com os Serviços de Certificados instalados, no console da Autoridade de Certificação, clique com o botão direito do mouse em **Modelos de Certificado** e escolha **Gerenciar** para carregar o console **Modelos de Certificado**.  
-
-2.  No painel de resultados, clique com o botão direito do mouse na entrada que tem **Autenticação de Estação de Trabalho** na coluna **Nome de Exibição do Modelo** e escolha **Duplicar Modelo**.  
+4.  在“复制模板”对话框中，确保已选择“Windows 2003 Server，Enterprise Edition”，然后选择“确定”。  
 
     > [!IMPORTANT]  
-    >  Não selecione **Windows 2008 Server, Enterprise Edition**  
+    >  不要选择“Windows 2008 Server，Enterprise Edition” **。**  
 
-3.  Na caixa de diálogo **Propriedades do Novo Modelo**, na guia **Geral**, insira um nome de modelo, como **Certificado de Autenticação de Cliente do AMT 802.1X do ConfigMgr**, para gerar os certificados do cliente que serão usados para gerenciamento fora de banda em computadores AMT.  
+5.  在“新模板的属性”对话框的“常规”选项卡上，输入生成用于在 AMT 计算机上进行带外管理的 Web 证书所需的模板名称，例如 **ConfigMgr AMT Web 服务器证书**。  
 
-4.  Escolha a guia **Nome da Entidade**, escolha **Criar com base nas informações do Active Directory** e **Nome comum** para o **Formato de nome de entidade**. Desmarque **Nome DNS** para o nome alternativo da entidade e escolha **Nome UPN**.  
+6.  选择“使用者名称”选项卡，选择“用 Active Directory 中的信息生成”，为“使用者名称格式”选择“公用名”，然后为使用者可选名称清除“用户主体名称(UPN)”。  
 
-5.  Escolha a guia **Segurança** e remova a permissão **Registrar** dos grupos de segurança **Admins. do Domínio** e **Administradores de Empresa**.  
+7.  选择“安全”选项卡，并从“域管理员”和“企业管理员”安全组中删除“注册”权限。  
 
-6.  Escolha **Adicionar**, insira o nome do grupo de segurança que você especificará nas propriedades do componente de gerenciamento fora de banda para conter as contas de computador dos computadores AMT e escolha **OK**.  
+8.  选择“添加”，输入为 AMT 设置所创建的安全组的名称，然后选择“确定”。  
 
-7.  Selecione as seguintes permissões **Permitir** para esse grupo de segurança: **Ler** e **Registrar**.  
+9. 为此安全组选择下列“允许”权限：“读取”和“注册”。  
 
-8.  Escolha **OK** e feche o console de gerenciamento de **Modelos de Certificado**, **certtmpl – [Modelos de Certificado]**.  
+10. 选择“确定”，然后关闭“证书模板”控制台。  
 
-9. No console de gerenciamento da **Autoridade de Certificação**, clique com o botão direito do mouse em **Modelos de Certificado**, escolha **Novo** e **Modelo de Certificado a Ser Emitido**.  
+11. 在“证书颁发机构”控制台中，右键单击“证书模板”，选择“新建”，然后选择“要颁发的证书模板”。  
 
-10. Na caixa de diálogo **Habilitar Modelos de Certificado**, escolha o novo modelo que você acabou de criar, **Certificado de Autenticação de Cliente AMT 802.1X do ConfigMgr** e escolha **OK**.  
+12. 在“启用证书模板”对话框中，选择刚创建的新模板“ConfigMgr AMT Web 服务器证书”，然后选择“确定”。  
 
-11. Se você não precisar criar ou emitir mais certificados, feche a **Autoridade de Certificação**.  
+13. 如果不必创建和颁发其他证书，请关闭“证书颁发机构”。  
 
- Agora o modelo de certificado de autenticação do cliente está pronto para emitir certificados para computadores AMT que podem ser usados para autenticação do cliente do 802.1X. Escolha esse modelo de certificado nas propriedades do componente de gerenciamento fora de banda.  
+ 现在，AMT Web 服务器模板已准备好利用 Web 服务器证书来设置基于 AMT 的计算机。 在带外管理组件属性中选择该证书模板。  
 
-##  <a name="BKMK_MacClient_SP1"></a> Implantar o certificado do cliente para computadores Mac  
+### <a name="create-and-issue-the-client-authentication-certificates-for-8021x-amt-based-computers"></a>为 802.1X 基于 AMT 的计算机创建和颁发客户端身份验证证书  
+ 如果基于 AMT 的计算机将对经过 802.1X 身份验证的有线或无线网络使用客户端证书，请使用下列过程。  
 
-Esta implantação do certificado tem um procedimento único para criar e emitir o modelo de certificado de registro na autoridade de certificação.  
+##### <a name="to-create-and-issue-the-client-authentication-certificate-template-on-the-ca"></a>在 CA 上创建和颁发客户端身份验证证书模板的步骤  
 
-###  <a name="BKMK_MacClient_CreatingIssuing"></a> Criar e emitir um modelo de certificado do cliente Mac na autoridade de certificação  
- Este procedimento cria um modelo de certificado personalizado para computadores Mac do System Center Configuration Manager e o adiciona à autoridade de certificação.  
+1.  在安装了证书服务的成员服务器上，在“证书颁发机构”控制台中右键单击“证书模板”，然后选择“管理”以加载“证书模板”控制台。  
+
+2.  在结果窗格中，右键单击在“模板显示名称”列中包含“工作站身份验证”的条目，然后选择“复制模板”。  
+
+    > [!IMPORTANT]  
+    >  不要选择“Windows 2008 Server，Enterprise Edition” **。**  
+
+3.  在“新模板的属性”对话框的“常规”选项卡上，输入生成用于在 AMT 计算机上进行带外管理的客户端证书所需的模板名称，例如 **ConfigMgr AMT 802.1X 客户端身份验证证书**。  
+
+4.  选择“使用者名称”选项卡，选择“用 Active Directory 中的信息生成”，然后为“使用者名称格式”选择“公用名”。 为使用者可选名称清除“DNS 名称”，然后选择“用户主体名称(UPN)”。  
+
+5.  选择“安全”选项卡，并从“域管理员”和“企业管理员”安全组中删除“注册”权限。  
+
+6.  选择“添加”，输入你将在带外管理组件属性中指定的安全组的名称，以包含基于 AMT 的计算机的计算机帐户，然后选择“确定”。  
+
+7.  为此安全组选择下列“允许”  权限：“读取”  和“注册” 。  
+
+8.  选择“确定”，然后关闭“证书模板”管理控制台，“certtmpl - [证书模板]”。  
+
+9. 在“证书颁发机构”管理控制台中，右键单击“证书模板”，选择“新建”，然后选择“要颁发的证书模板”。  
+
+10. 在“启用证书模板”对话框中，选择刚创建的新模板“ConfigMgr AMT 802.1X 客户端身份验证证书”，然后选择“确定”。  
+
+11. 如果不需要创建和颁发其他证书，请关闭“证书颁发机构”。  
+
+ 客户端身份验证证书模板现在已准备好向基于 AMT 的计算机颁发用于 802.1X 客户端身份验证的证书。 在带外管理组件属性中选择该证书模板。  
+
+##  <a name="BKMK_MacClient_SP1"></a>部署 Mac 计算机的客户端证书  
+
+此证书部署包含一个用于在证书颁发机构创建和颁发注册证书模板的单一过程。  
+
+###  <a name="BKMK_MacClient_CreatingIssuing"></a>在证书颁发机构创建和颁发 Mac 客户端证书模板  
+ 本过程为 System Center Configuration Manager Mac 计算机创建自定义证书模板，并将该证书模板添加到证书颁发机构。  
 
 > [!NOTE]  
->  Este procedimento usa um modelo de certificado diferente do modelo que você pode ter criado para computadores cliente Windows ou para pontos de distribuição.  
+>  本过程使用的证书模板不同于你可能已为 Windows 客户端计算机或分发点创建的证书模板。  
 >   
->  Ao criar um novo modelo de certificado para esse certificado, você pode restringir a solicitação do certificado a usuários autorizados.  
+>  为此证书创建新证书模板时，你可以指定只有授权用户才能提出证书请求。  
 
-##### <a name="to-create-and-issue-the-mac-client-certificate-template-on-the-certification-authority"></a>Para criar e emitir o modelo de certificado do cliente Mac na autoridade de certificação  
+##### <a name="to-create-and-issue-the-mac-client-certificate-template-on-the-certification-authority"></a>在证书颁发机构创建和颁发 Mac 客户端证书模板  
 
-1.  Crie um grupo de segurança que contenha as contas de usuário para usuários administrativos que registrarão o certificado no computador Mac usando o System Center Configuration Manager.  
+1.  创建一个安全组，以包含将使用 System Center Configuration Manager 在 Mac 计算机上注册证书的管理用户的用户帐户。  
 
-2.  No servidor membro que executa o console da Autoridade de Certificação, clique com o botão direito do mouse em **Modelos de Certificado** e escolha **Gerenciar** para carregar o console de gerenciamento Modelos de Certificado.  
+2.  在运行“证书颁发机构”控制台的成员服务器上，右键单击“证书模板”，然后选择“管理”以加载“证书模板”管理控制台。  
 
-3.  No painel de resultados, clique com o botão direito do mouse na entrada que mostra **Sessão Autenticada** na coluna **Nome de Exibição do Modelo** e escolha **Duplicar Modelo**.  
+3.  在结果窗格中，右键单击在“模板显示名称”列中显示“经过身份验证的会话”的条目，然后选择“复制模板”。  
 
-4.  Na caixa de diálogo **Duplicar Modelo**, verifique se a opção **Windows 2003 Server, Enterprise Edition** está marcada e escolha **OK**.  
+4.  在“复制模板”对话框中，确保已选择“Windows 2003 Server，Enterprise Edition”，然后选择“确定”。  
 
     > [!IMPORTANT]  
-    >  Não selecione **Windows 2008 Server, Enterprise Edition**.  
+    >  不要选择“Windows 2008 Server，Enterprise Edition” 。  
 
-5.  Na caixa de diálogo **Propriedades do Novo Modelo**, na guia **Geral**, insira um nome de modelo, como **Certificado do Cliente Mac do ConfigMgr**, para gerar o certificado do cliente Mac.  
+5.  在“新模板的属性”对话框中的“常规”选项卡上，输入生成 Mac 客户端证书所需的模板名称，如 **ConfigMgr Mac 客户端证书**。  
 
-6.  Escolha a guia **Nome da Entidade**, verifique se a opção **Criar com base nas informações do Active Directory** está marcada, escolha **Nome comum** para o **Formato de nome da entidade:** e desmarque **Nome UPN** de **Incluir estas informações no nome da entidade alternativo**.  
+6.  选择“使用者名称”选项卡，确保选中“用此 Active Directory 信息生成”，再为“使用者名称格式:”选择“公用名”，然后从“将这个信息包括在另一个使用者名称中”取消选择“用户主体名称(UPN)”。  
 
-7.  Escolha a guia **Segurança** e remova a permissão **Registrar** dos grupos de segurança **Admins. do Domínio** e **Administradores de Empresa**.  
+7.  选择“安全”选项卡，并从“域管理员”和“企业管理员”安全组中删除“注册”权限。  
 
-8.  Escolha **Adicionar**, especifique o grupo de segurança que você criou na etapa um e escolha **OK**.  
+8.  选择“添加”，指定你在步骤一中创建的安全组，然后选择“确定”。  
 
-9. Escolha a permissão **Registrar** para este grupo e não desmarque a permissão **Ler**.  
+9. 为此组选择“注册”权限，并且不要清除“读取”权限。  
 
-10. Escolha **OK** e feche o **Console de Modelos de Certificado**.  
+10. 选择“确定”，然后关闭“证书模板”控制台。  
 
-11. No console da Autoridade de Certificação, clique com o botão direito do mouse em **Modelos de Certificado**, escolha **Novo** e **Modelo de Certificado a Ser Emitido**.  
+11. 在“证书颁发机构”控制台中，右键单击“证书模板”，选择“新建”，然后选择“要颁发的证书模板”。  
 
-12. Na caixa de diálogo **Habilitar Modelos de Certificado**, escolha o novo modelo que você acabou de criar, **Certificado do Cliente Mac do ConfigMgr** e escolha **OK**.  
+12. 在“启用证书模板”对话框中，选择刚创建的新模板“ConfigMgr Mac 客户端证书”，然后选择“确定”。  
 
-13. Se você não precisar criar ou emitir mais certificados, feche a **Autoridade de Certificação**.  
+13. 如果不必创建和颁发其他证书，请关闭“证书颁发机构”。  
 
- Agora o modelo de certificado do cliente Mac está pronto para ser selecionado quando você definir as configurações do cliente para registro.
-
+ 现在，在你为注册设置客户端设置时，可以选择 Mac 客户端证书模板。

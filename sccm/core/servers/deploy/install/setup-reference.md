@@ -1,81 +1,77 @@
 ---
-title: "Referência da instalação | Microsoft Docs"
-description: "Examine essa referência para ajudar você a se preparar para instalar um site ou hierarquia do Configuration Manager."
+title: "安装参考 | Microsoft Docs"
+description: "查看此参考可帮助做好 Configuration Manager 站点或层次结构安装准备。"
 ms.custom: na
 ms.date: 4/18/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
-ms.technology:
-- configmgr-other
+ms.technology: configmgr-other
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: cdb9fb0c-0912-41e4-b427-f40620971763
-caps.latest.revision: 22
+caps.latest.revision: "22"
 author: Brenduns
 ms.author: brenduns
 manager: angrobe
-ms.translationtype: Human Translation
-ms.sourcegitcommit: 761c3f58f7c57d8f87ee802da37821895062546d
 ms.openlocfilehash: 739461a6cca0fd67431093524c1e8158afd80d0f
-ms.contentlocale: pt-br
-ms.lasthandoff: 05/17/2017
-
-
+ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
+ms.translationtype: HT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 08/07/2017
 ---
-# <a name="reference-for-system-center-configuration-manager-setup"></a>Referência da instalação do System Center Configuration Manager
+# <a name="reference-for-system-center-configuration-manager-setup"></a>System Center Configuration Manager 安装的参考
 
-*Aplica-se a: System Center Configuration Manager (Branch Atual)*
+*适用范围：System Center Configuration Manager (Current Branch)*
 
-A Instalação do System Center Configuration Manager fornece links para vários tópicos, que estão detalhados nas seções a seguir. As informações nas seções a seguir podem ajudá-lo a preparar a instalação de um site ou hierarquia do Configuration Manager e a preparar para algumas das decisões que é necessário tomar durante a instalação.  
+System Center Configuration Manager 安装程序提供了几个主题的链接，以下部分对相关内容进行了详细介绍。 此处提供的信息有助于准备安装 Configuration Manager 站点或层次结构，且有助于为某些必须在安装过程中做出的决定做好准备。  
 
 
-##  <a name="bkmk_start"></a> Antes de começar  
-Antes de instalar novos sites do Configuration Manager, não deixe de ler as informações a seguir, que podem ajudar a preparar o terreno para um projeto de implantação bem-sucedido:  
+##  <a name="bkmk_start"></a> 在开始之前  
+在安装新的 Configuration Manager 站点之前，请确保已经查看以下信息，这些信息有助于为成功完成部署设计做好准备：  
 
--   [Conceitos básicos do System Center Configuration Manager](../../../../core/understand/fundamentals.md)  
--   [Planejar a infraestrutura do System Center Configuration Manager](../../../plan-design/network/configure-firewalls-ports-domains.md)  
--   [Preparar para instalar sites do System Center Configuration Manager](prepare-to-install-sites.md)  
+-   [System Center Configuration Manager 基础知识](../../../../core/understand/fundamentals.md)  
+-   [System Center Configuration Manager 基础结构规划](../../../plan-design/network/configure-firewalls-ports-domains.md)  
+-   [准备安装 System Center Configuration Manager 站点](prepare-to-install-sites.md)  
 
-##  <a name="bkmk_assess"></a> Avaliar a preparação do servidor  
-Antes de iniciar a instalação de um novo site, certifique-se de que o servidor de sites e os servidores de sistema de sites remoto que você planeja usar para o site (como o servidor que hospeda o banco de dados do site) atendem a todas as configurações de pré-requisitos. Os seguintes tópicos da biblioteca de documentação podem ajudar:  
+##  <a name="bkmk_assess"></a> 评估服务器准备情况  
+在开始安装新站点之前，请确保计划用于站点的站点服务器和远程站点系统服务器（如承载站点数据库的服务器）满足所有必备项配置。 文档库中的下列主题可有所帮助：  
 
--   [Configurações com suporte para o System Center Configuration Manager](../../../../core/plan-design/configs/supported-configurations.md)  
--   [Verificador de Pré-requisitos](prerequisite-checker.md)  
+-   [System Center Configuration Manager 支持的配置](../../../../core/plan-design/configs/supported-configurations.md)  
+-   [先决条件检查程序](prerequisite-checker.md)  
 
-##  <a name="bkmk_Addclients"></a> Clientes para sistemas operacionais adicionais  
-É possível baixar o software cliente do Configuration Manager no Centro de Download da Microsoft para os seguintes sistemas operacionais:  
+##  <a name="bkmk_Addclients"></a> 其他操作系统的客户端  
+可从 Microsoft 下载中心为以下操作系统下载 Configuration Manager 的客户端软件：  
 
--   Mac (Apple)  
+-   Mac   (Apple)  
 -   UNIX  
 -   Linux  
 
-Use os seguintes links para baixar clientes com a versão do Configuration Manager que você usa:  
+使用以下链接下载所使用的 Configuration Manager 版本的客户端：  
 
--   Veja [Microsoft System Center Configuration Manager – Clientes para Sistemas Operacionais Adicionais](http://www.microsoft.com/download/details.aspx?id=47719)  
+-   请参阅 [Microsoft System Center Configuration Manager - 适用于其他操作系统的客户端](http://www.microsoft.com/download/details.aspx?id=47719)  
 
-##  <a name="bkmk_usage"></a> Configurações e níveis de dados de uso  
-Ao instalar seu primeiro site do System Center Configuration Manager, ele instala e configura automaticamente uma nova função do sistema de sites, o **ponto de conexão de serviço**, no servidor de sites. O ponto de conexão de serviço possui as seguintes configurações padrão:  
+##  <a name="bkmk_usage"></a> 使用情况的数据级别和设置  
+安装第一个 System Center Configuration Manager 站点时，Configuration Manager 会在站点服务器上自动安装和配置新站点系统角色“服务连接点”。 服务连接点具有以下默认设置：  
 
--   Modo **online** (também há suporte para o modo offline)  
--   Nível de coleção de dados **avançado** (há suporte para dois outros níveis de coleção de dados: Básico e Completo)  
+-   “联机”模式（也提供脱机模式）  
+-   数据收集级别为“增强”（也提供“基本”和“完整”这两个数据收集级别）  
 
-Quando esta função estiver online, a Microsoft pode coletar automaticamente informações de diagnóstico e de uso pela Internet. Informações coletadas nos ajudam a:  
+当服务连接点站点系统角色处于联机状态时，Microsoft 可通过 Internet 自动收集诊断和使用情况信息。 收集的信息可帮助我们：  
 
--   Identificar e solucionar problemas  
--   Melhorar nossos produtos e serviços  
--   Identificar atualizações para o Gerenciador de Configurações que se aplicam à versão do Gerenciador de Configurações que você usa  
+-   识别和解决问题  
+-   改进我们的产品和服务  
+-   标识适用于所使用的 Configuration Manager 版本的 Configuration Manager 更新  
 
-### <a name="levels-of-data-collection"></a>Níveis de coleta de dados  
-Os três níveis de coleção de dados são:
+### <a name="levels-of-data-collection"></a>数据收集级别  
+数据收集包括以下三个级别：
 
--   **Básico** inclui dados sobre a instalação e atualização, como o número de sites e quais recursos do Configuration Manager estão habilitados. Nenhuma informação de identificação pessoal será transmitida.  
+-   “基本”包括有关安装和升级的数据，如站点的数目和启用的 Configuration Manager 功能。 不会传输任何个人身份信息。  
 
--   **Avançado** inclui os dados da configuração Básica, dados de transmissão sobre a hierarquia, como cada recurso é usado (frequência e duração) e informações de diagnóstico avançadas, como o estado de memória do servidor quando ocorre uma falha de sistema ou do aplicativo. Nenhum dado de identificação pessoal será transmitido.  
+-   “增强”包括“基本”级别设置中的数据，并传输有关层次结构、每个功能的使用方式（频率和持续时间）的数据以及增强的诊断信息（如出现系统或应用故障时，服务器的内存状态）。 不会传输任何个人身份数据。  
 
--   **Completo** inclui os dados das configurações Básica e Avançada e também envia informações de diagnóstico avançadas, como arquivos de sistema e instantâneos de memória. Essa opção pode incluir informações de identificação pessoal, mas elas não serão usadas para identificá-lo ou contatá-lo, nem para enviar publicidade para você.  
+-   “完整”包括“基本”和“增强”级别设置中的数据，并且还将发送高级诊断信息，如系统文件和内存快照。 此选项可能包括个人身份信息，但我们不会使用这些信息来确定你的身份或联系你，或定向发送广告。  
 
-Para saber mais, incluindo a divulgação dos detalhes coletados por cada nível, veja [Dados de diagnóstico e de uso para o System Center Configuration Manager](../../../../core/plan-design/diagnostics/diagnostics-and-usage-data.md).  
+有关详细信息（包括各级别所收集详情的披露），请参阅 [System Center Configuration Manager 的诊断和使用情况数据](../../../../core/plan-design/diagnostics/diagnostics-and-usage-data.md)。  
 
-Para exibir o System Center Configuration Manager Privacy Statement online, vá para [http://go.microsoft.com/fwlink/?LinkID=626527](http://go.microsoft.com/fwlink/?LinkID=626527).
-
+若要在线查看 System Center Configuration Manager 隐私声明，请转到 [http://go.microsoft.com/fwlink/?LinkID=626527](http://go.microsoft.com/fwlink/?LinkID=626527)。

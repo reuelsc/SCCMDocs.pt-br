@@ -1,6 +1,6 @@
 ---
-title: "Adicionar atualizações a um grupo de atualização – Configuration Manager | Microsoft Docs"
-description: "Adicione atualizações de software manualmente ou automaticamente a um grupo de atualização de software no seu ambiente."
+title: "将更新添加到更新组 - Configuration Manager | Microsoft Docs"
+description: "手动或自动将软件更新添加到环境中的软件更新组。"
 keywords: 
 author: dougeby
 ms.author: dougeby
@@ -9,55 +9,51 @@ ms.date: 01/23/2017
 ms.topic: article
 ms.prod: configuration-manager
 ms.service: 
-ms.technology:
-- configmgr-sum
+ms.technology: configmgr-sum
 ms.assetid: a0767664-fd60-46a8-9da5-86cc431ce53c
-ms.translationtype: Human Translation
-ms.sourcegitcommit: 4e44e2b8f6baf020c3b7742bafd607082ffacaa4
 ms.openlocfilehash: 02e30ba48f3564fa8a31f21793c145054e02e002
-ms.contentlocale: pt-br
-ms.lasthandoff: 05/17/2017
-
+ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
+ms.translationtype: HT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 08/07/2017
 ---
+# <a name="add-software-updates-to-an-update-group"></a>将软件更新添加到更新组  
 
-# <a name="add-software-updates-to-an-update-group"></a>Adicionar atualizações de software a um grupo de atualização  
+*适用范围：System Center Configuration Manager (Current Branch)*
 
-*Aplica-se a: System Center Configuration Manager (Branch Atual)*
+ 软件更新组会为你提供行之有效的方法来组织你的环境中的软件更新。 你可以将软件更新手动添加到软件更新组，或通过运用 ADR，将软件更新自动添加到软件更新组。 你还可以手动部署软件更新组，或通过运用 ADR 自动部署该组。 在部署软件更新组后，你可以将新的软件更新添加到组，Configuration Manager 将自动对它们进行部署。 使用下列过程以将软件更新添加到新的或现有的软件更新组。  
 
- Os grupos de atualização de software fornecem um método eficaz para organizar as atualizações de software em seu ambiente. É possível adicionar atualizações de software manual ou automaticamente a um grupo de atualização de software usando uma ADR. Além disso, é possível implantar um grupo de atualização de software manual ou automaticamente usando uma ADR. Depois de implantar um grupo de atualização de software, você pode adicionar novas atualizações de software ao grupo e o Configuration Manager as implantará automaticamente. Use os procedimentos a seguir para adicionar atualizações de software a um grupo de atualização de software novo ou existente.  
+#### <a name="to-add-software-updates-to-a-new-software-update-group"></a>将软件更新添加到新的软件更新组  
 
-#### <a name="to-add-software-updates-to-a-new-software-update-group"></a>Para adicionar atualizações de software a um novo grupo de atualização de software  
+1.  在 Configuration Manager 控制台中，单击“软件库” 。  
 
-1.  No console do Configuration Manager, clique em **Biblioteca de Software**.  
+2.  在“软件库”工作区中，展开“软件更新” ，然后单击“所有软件更新” 。  
 
-2.  No espaço de trabalho Biblioteca de Software, expanda **Atualizações de Software**e clique em **Todas as Atualizações de Software**.  
+3.  选择要添加到新软件更新组的软件更新。  
 
-3.  Selecione as atualizações de software a serem adicionadas ao novo grupo de atualização de software.  
+4.  在“主页”  选项卡上的“更新”  组中，单击“创建软件更新组” 。  
 
-4.  Na guia **Início** , no grupo **Atualizar** , clique em **Criar Grupo de Atualização de Software**.  
+5.  指定软件更新组的名称并根据需要提供描述。 使用名称和描述提供足够的信息，供你确定软件更新组中软件更新的类型。 要继续，请单击“创建” 。  
 
-5.  Especifique o nome do grupo de atualização de software e, opcionalmente, forneça uma descrição. Use o nome e a descrição que fornece informações suficientes para que você determine qual tipo de atualizações de software está no grupo de atualização de software. Para continuar, clique em **Criar**.  
+6.  单击“软件更新组”  以显示新的软件更新组。  
 
-6.  Clique em **Grupos de Atualização de Software** para exibir o novo grupo de atualização de software.  
+7.  选择软件更新组，在“主页”  选项卡内的“更新”  组中，单击“显示成员”  以显示组中所包含的软件更新的列表。  
 
-7.  Selecione o grupo de atualização de software e, na guia **Início** , no grupo **Atualizar** , clique em **Mostrar Membros** para exibir uma lista de atualizações de software que estão incluídas no grupo.  
+#### <a name="to-add-software-updates-to-an-existing-software-update-group"></a>将软件更新添加到现有软件更新组中  
 
-#### <a name="to-add-software-updates-to-an-existing-software-update-group"></a>Para adicionar atualizações de software a um grupo de atualização de software existente  
+1.  在 Configuration Manager 控制台中，单击“软件库” 。  
 
-1.  No console do Configuration Manager, clique em **Biblioteca de Software**.  
+2.  在“软件库”工作区中，展开“软件更新” ，然后单击“所有软件更新” 。  
 
-2.  No espaço de trabalho Biblioteca de Software, expanda **Atualizações de Software**e clique em **Todas as Atualizações de Software**.  
-
-3.  Selecione as atualizações de software que deseja adicionar ao novo grupo de atualização de software.  
+3.  选择要添加到新软件更新组的软件更新。  
 
     > [!NOTE]  
-    >  Por padrão, no nó **Todas as Atualizações de Software**, o Configuration Manager exibe somente atualizações de software com uma classificação **Crítico** e **Segurança** e que foram liberadas nos últimos 30 dias.  
+    >  在“所有软件更新”节点上，默认情况下 Configuration Manager 只显示分类为“严重”和“安全”并且在过去 30 天内发布的软件更新。  
 
-4.  Na guia **Início** , no grupo **Atualizar** , clique em **Editar Associação**.  
+4.  在“主页”  选项卡上的“更新”  组中，单击“编辑成员身份” 。  
 
-5.  Selecione o grupo de atualização de software ao qual você deseja adicionar as atualizações de software.  
+5.  选择要添加软件更新的软件更新组。  
 
-6.  Clique no nó **Grupos de Atualização de Software** para exibir o grupo de atualização de software.  
+6.  单击“软件更新组”  节点以显示软件更新组。  
 
-7.  Selecione o grupo de atualização de software e, na guia **Início** , no grupo **Atualizar** , clique em **Mostrar Membros** para exibir uma lista de atualizações de software que estão incluídas no grupo de atualização de software.  
-
+7.  选择软件更新组，并在“主页”  选项卡中的“更新”  组中单击“显示成员”  ，以显示软件更新组中所包括的软件更新列表。  

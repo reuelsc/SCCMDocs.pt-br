@@ -1,197 +1,194 @@
 ---
-title: Tamanho e escala | Microsoft Docs
-description: "Identifique o número de funções do sistema de sites e de sites que você precisará para dar suporte aos dispositivos em seu ambiente do System Center Configuration Manager."
+title: "大小和扩展 | Microsoft Docs"
+description: "确定需要用来支持 System Center Configuration Manager 环境中设备的站点系统角色和站点的数量。"
 ms.custom: na
 ms.date: 07/24/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
-ms.technology:
-- configmgr-other
+ms.technology: configmgr-other
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: c5a42100-2f60-4952-b495-918025ea6559
-caps.latest.revision: 4
+caps.latest.revision: "4"
 author: Brenduns
 ms.author: brenduns
 manager: angrobe
-ms.translationtype: HT
-ms.sourcegitcommit: 5945abb49fe06c59355805aa94b04d0d445ecbc3
 ms.openlocfilehash: f539e2d282b56e56a9c58c773788325b27ea6b37
-ms.contentlocale: pt-br
-ms.lasthandoff: 07/24/2017
-
+ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
+ms.translationtype: HT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 08/07/2017
 ---
-# <a name="size-and-scale-numbers-for-system-center-configuration-manager"></a>Números de tamanho e escala para o System Center Configuration Manager
+# <a name="size-and-scale-numbers-for-system-center-configuration-manager"></a>System Center Configuration Manager 的大小和扩展数量
 
-*Aplica-se a: System Center Configuration Manager (Branch Atual)*
-
-
-
-Cada implantação do System Center Configuration Manager tem um número máximo de sites, funções do sistema de sites e dispositivos aos quais ela pode dar suporte. Esses números variam conforme sua estrutura de hierarquia (os tipos e os números de sites usados) e as funções do sistema de sites implantados.  As informações nas seguintes áreas podem ajudar a identificar o número de funções de sites e do sistema de sites que será necessário para dar suporte aos dispositivos que você pretende gerenciar com o seu ambiente.
-
-Use as informações neste tópico em conjunto com as informações nos seguintes artigos:
--   [Hardware recomendado](../../../core/plan-design/configs/recommended-hardware.md)
--   [Sistemas operacionais com suporte para servidores de sistema de sites](../../../core/plan-design/configs/supported-operating-systems-for-site-system-servers.md)  
--   [Sistemas operacionais com suporte para clientes e dispositivos](../../../core/plan-design/configs/supported-operating-systems-for-clients-and-devices.md)
--   [Pré-requisitos de sites e do sistema de sites](../../../core/plan-design/configs/site-and-site-system-prerequisites.md)
+*适用范围：System Center Configuration Manager (Current Branch)*
 
 
-Os números de suporte a seguir baseiam-se no uso do hardware recomendado para o Configuration Manager e as configurações padrão para todos os recursos disponíveis do Configuration Manager. Quando você não usar o hardware recomendado ou usar as configurações personalizadas de mais agressivas (como executar o inventário de hardware ou software com mais frequência do que os padrões de uma vez a cada sete dias), o desempenho dos sistemas de sites poderá ser degradado e poderão não atingir os níveis de suporte definidos.
 
-##  <a name="bkmk_SiteSystemScale"></a> Tipos de site  
- **Site de administração central:**  
+每个 System Center Configuration Manager 部署存在可支持的站点、站点系统角色和设备的最大数量。 这些数量因层次结构（使用的站点的类型和数量）和部署的站点系统角色而异。  以下几个方面的信息可帮助确定用于支持环境中需管理的设备的站点系统角色和站点的数量。
 
--   Um site de administração central pode dar suporte a até 25 sites primários filho.  
+将本主题中的信息和以下文章中的信息结合使用：
+-   [推荐硬件](../../../core/plan-design/configs/recommended-hardware.md)
+-   [站点系统服务器支持的操作系统](../../../core/plan-design/configs/supported-operating-systems-for-site-system-servers.md)  
+-   [客户端和设备支持的操作系统](../../../core/plan-design/configs/supported-operating-systems-for-clients-and-devices.md)
+-   [站点和站点系统先决条件](../../../core/plan-design/configs/site-and-site-system-prerequisites.md)
 
-**Site primário:**  
 
--   Cada site primário fornece suporte a até 250 sites secundários.  
+以下的支持数量基于对 Configuration Manager 使用推荐的硬件，并对所有可用的 Configuration Manager 功能使用默认配置。 如果不使用推荐的硬件，或者使用更高的自定义配置（例如运行硬件或软件清单的频率超过七天一次的默认频率），站点系统的性能可能会下降，并且可能无法满足所述的支持级别。
 
--   O número de sites secundários por site primário se baseia em conexões de WAN (rede de longa distância) continuamente conectadas e confiáveis. Para os locais que têm menos de 500 clientes, considere um ponto de distribuição em vez de um site secundário.  
+##  <a name="bkmk_SiteSystemScale"></a>站点类型  
+ **管理中心站点：**  
 
- Para saber mais sobre os números de clientes e dispositivos com suporte em um site primário, consulte [Números de clientes para sites e hierarquias](#bkmk_clientnumbers) neste tópico.  
+-   一个管理中心站点最多可支持 25 个子主站点。  
 
-**Site secundário:**  
+**主站点：**  
 
--   Sites secundários não dão suporte a sites filhos.  
+-   每个主站点最多支持 250 个辅助站点。  
 
--   Um site de administração central pode dar suporte a até 25 sites primários filho.  
+-   每个主站点的辅助站点数基于持续连接和可靠的广域网 (WAN) 连接。 对于具有少于 500 个客户端的位置，请考虑使用分发点而不是辅助站点。  
 
-**Ponto de sites da Web do Catálogo de Aplicativos:**  
+ 有关主站点可支持的客户端数和设备数的信息，请参阅本主题中的[站点和层次结构的客户端数量](#bkmk_clientnumbers)。  
 
--   É possível instalar várias instâncias do ponto de sites da Web do catálogo de aplicativos em sites primários.  
+**辅助站点：**  
+
+-   辅助站点不支持子站点。  
+
+-   一个管理中心站点最多可支持 25 个子主站点。  
+
+**应用程序目录网站点：**  
+
+-   你可以在主站点安装“应用程序目录”网站点的多个实例。  
 
     > [!TIP]  
-    >  Como melhor prática, instale o ponto de sites da Web do catálogo de aplicativos e o ponto de serviços Web do catálogo de aplicativos juntos no mesmo sistema de sites quando eles fornecerem serviço aos clientes que estejam na intranet.  
+    >  最佳做法是，当“应用程序目录”网站点和“应用程序目录”Web 服务点为位于 Intranet 上的客户端提供服务时，将它们一起安装在相同的站点系统上。  
 
-    -   Para melhorar o desempenho, planeje o suporte a até 50.000 clientes por instância.  
+    -   为改进性能，计划每个实例最多支持 50,000 个客户端。  
 
-    -   Cada instância desta função do sistema de sites dá suporte ao número máximo de clientes com suporte pela hierarquia.  
+    -   此站点系统角色的每个实例支持层次结构所支持的最大客户端数。  
 
 ## <a name="bkmk_roles"></a> Site system roles    
 
-**Ponto de serviços Web do Catálogo de Aplicativos:**  
+**应用程序目录 web 服务点：**  
 
--   É possível instalar várias instâncias do ponto de serviços Web do catálogo de aplicativos em sites primários.  
+-   你可以在主站点安装“应用程序目录”Web 服务点的多个实例。  
 
     > [!TIP]  
-    >  Como melhor prática, instale o ponto de sites da Web do catálogo de aplicativos e o ponto de serviços Web do catálogo de aplicativos juntos no mesmo sistema de sites quando eles fornecerem serviço aos clientes que estejam na intranet.  
+    >  最佳做法是，当“应用程序目录”网站点和“应用程序目录”Web 服务点为位于 Intranet 上的客户端提供服务时，将它们一起安装在相同的站点系统上。  
 
-    -   Para melhorar o desempenho, planeje o suporte a até 50.000 clientes por instância.  
+    -   为改进性能，计划每个实例最多支持 50,000 个客户端。  
 
-    -   Cada instância desta função do sistema de sites dá suporte ao número máximo de clientes com suporte pela hierarquia.  
+    -   此站点系统角色的每个实例支持层次结构所支持的最大客户端数。  
 
-**Ponto de distribuição:**  
+**分发点：**  
 
--   Pontos de distribuição por site:  
+-   每个站点的分发点：  
 
-    -   Cada site primário e secundário dá suporte a até 250 pontos de distribuição.  
+    -   每个主站点和辅助站点最多支持 250 个分发点。  
 
-    -   Cada site primário e secundário dá suporte a até 2000 pontos de distribuição adicionais configurados como pontos de distribuição pull. **Por exemplo**, um único site primário dá suporte a 2250 pontos de distribuição quando 2000 deles são configurados como pontos de distribuição de pull.  
+    -   每个主站点和辅助站点最多支持 2000 个被配置为请求分发点的其他分发点。 **例如**，当其中的 2000 个分发点被配置为请求分发点时，一个单一主站点可支持 2250 个分发点。  
 
-    -   Cada ponto de distribuição dá suporte a conexões de até 4.000 clientes.  
+    -   每个分发点最多支持来自 4,000 台客户端的连接。  
 
-    -   Um ponto de distribuição pull atua como um cliente quando acessa o conteúdo de um ponto de distribuição de origem.  
+    -   请求分发点从源分发点访问内容时，它的作用类似于客户端。  
 
--   Cada site primário dá suporte a um total combinado de até 5.000 pontos de distribuição. Este total inclui todos os pontos de distribuição no site primário e todos os pontos de distribuição que pertencem aos sites secundários filho do site primário.  
+-   每个主站点最多支持合并总计 5,000 个分发点。 该总数包括主站点中的所有分发点和隶属于主站点的子辅助站点的所有分发点。  
 
--   Cada ponto de distribuição dá suporte a um total combinado de até 10.000 pacotes e aplicativos.  
+-   每个分发点最多支持合并总计 10,000 个包和应用程序。  
 
 > [!WARNING]  
->  O número real de clientes aos quais um ponto de distribuição pode dar suporte depende da velocidade da rede e da configuração de hardware do computador do ponto de distribuição.  
+>  一个分发点可以支持的客户端实际数取决于网络速度和分发点计算机的硬件配置。  
 >   
->  O número de pontos de distribuição pull aos quais um ponto de distribuição pode dar suporte depende de maneira semelhante da velocidade da rede e da configuração de hardware do computador do ponto de distribuição de origem. Mas esse número também é afetado pela quantidade de conteúdo que você implantou. Isso ocorre porque, diferentemente dos clientes que normalmente acessam o conteúdo em momentos diferentes durante implantação, todos os pontos de distribuição pull solicitam o conteúdo ao mesmo tempo e podem solicitar todo o conteúdo disponível, não apenas o conteúdo aplicável a ele, como faria um cliente. Quando uma carga de processamento excessiva for colocada em um ponto de distribuição de origem, poderá haver atrasos inesperados na distribuição do conteúdo para os pontos de distribuição esperados em seu ambiente.  
+>  一个源分发点可以支持的请求分发点数同样取决于网络速度和源分发点计算机的硬件配置， 但这一数量还受已部署的内容量的影响。 这是因为与客户端不同的是，客户端通常在部署期间的不同时间访问内容，而所有请求分发点在同一时间请求内容 - 并可以请求所有可用内容，而不仅仅是适用于它们的内容，客户端则仅请求适用于它们的内容。 当太多处理负载放置在源分发点上时，将会导致将内容分发到你的环境中的预期分发点出现意外延迟。  
 
 
-**Ponto de status de fallback:**  
+**回退状态点：**  
 
--   Cada ponto de status de fallback pode dar suporte a até 100.000 clientes.  
+-   每个回退状态点最多可支持 100,000 个客户端。  
 
-**Ponto de gerenciamento:**  
+**管理点：**  
 
--   Cada site primário dá suporte a até 15 pontos de gerenciamento.  
+-   每个主站点最多支持 15 个管理点。  
 
     > [!TIP]  
-    >  Não instale os pontos de gerenciamento em servidores que estejam em um link lento partindo do servidor do site primário ou do servidor de banco de dados do site.  
+    >  请勿在从主站点服务器或站点数据库服务器通过慢速链接的服务器上安装管理点。  
 
--   Cada site secundário dá suporte a um único ponto de gerenciamento que deve ser instalado no servidor do site secundário.  
+-   每个辅助站点支持一个单一管理点，该管理点必须安装在辅助站点服务器上。  
 
- Para saber mais sobre os números de clientes e dispositivos com suporte em um ponto de gerenciamento, consulte a seção [Pontos de gerenciamento](#bkmk_mp) neste tópico.  
+ 有关管理点可支持的客户端数和设备数的信息，请参阅本主题中的[管理点](#bkmk_mp)一节。  
 
-**Ponto de atualização de software:**  
+**软件更新点：**  
 
--   Um ponto de atualização de software instalado no servidor do site pode dar suporte a até 25.000 clientes.  
+-   安装在站点服务器上的软件更新点最多可支持 25,000 个客户端。  
 
--   Um ponto de atualização de software que é remoto do servidor do site pode dar suporte a até 150.000 clientes quando o computador remoto atende aos requisitos do WSUS (Windows Server Update Services) para dar suporte a esse número de clientes.  
+-   当远程计算机满足 Windows Server Update Services (WSUS) 支持此数量客户端的要求时，远离站点服务器的软件更新点最多可支持 150,000 个客户端。  
 
--   Por padrão, o Configuration Manager não dá suporte à configuração de pontos de atualização de software como clusters de NLB (Balanceamento de Carga de Rede). No entanto, é possível usar o SDK do Configuration Manager para configurar até quatro pontos de atualização de software em um cluster de NLB.  
+-   默认情况下，Configuration Manager 不支持将软件更新点配置为网络负载平衡 (NLB) 群集。 但是，可以使用 Configuration Manager SDK 在 NLB 群集上配置最多 4 个软件更新点。  
 
-##  <a name="bkmk_clientnumbers"></a> Números de cliente para sites e hierarquias  
- Use as informações a seguir para determinar para quantos clientes e quais tipos de cliente, você pode dar suporte em um site ou em uma hierarquia.  
+##  <a name="bkmk_clientnumbers"></a>站点和层次结构的客户端数量  
+ 使用以下信息来确定站点中或层次结构中可以支持多少客户端和哪些客户端类型。  
 
-###  <a name="bkmk_cas"></a> Hierarquia com um site de administração central  
-Um site de administração central oferece suporte a uma quantidade total de dispositivos que inclui até o número de dispositivos listados para os três grupos a seguir:  
+###  <a name="bkmk_cas"></a>具有管理中心站点的层次结构  
+管理中心站点最多可支持包括对下列三组列出的设备数量总数：  
 
--   700.000 desktops (computadores que executam Windows, Linux e UNIX). Consulte também, suporte para [dispositivos inseridos](#embedded).
+-   700,000 台台式机（运行 Windows、Linux 和 UNIX 的计算机）。 另请参阅对[嵌入式设备](#embedded)的支持。
 
--   25.000 dispositivos que executam Mac e Windows CE 7.0  
+-   运行 Mac 和 Windows CE 7.0 的 25,000 台设备  
 
--   Um dos seguintes, dependendo de como sua implantação dá suporte ao MDM (gerenciamento de dispositivo móvel):  
+-   下列情况之一，具体取决于你的部署支持移动设备管理 (MDM) 的方式：  
 
-    -   100.000 dispositivos que você gerencia usando o MDM local  
+    -   使用本地 MDM 管理的 100,000 台设备  
 
-    -   300.000 dispositivos baseados em cluster  
+    -   300,000 台基于云的设备  
 
- Por exemplo, em uma hierarquia você pode dar suporte a 700.000 desktops, até 25.000 clientes Mac e Windows CE 7.0 e até 300.000 dispositivos baseados em nuvem quando integra o Microsoft Intune, somando 1.025.000 dispositivos. Se você der suporte a dispositivos gerenciados pelo MDM local, o total para a hierarquia será de 825.000 dispositivos.  
+ 例如，在集成 Microsoft Intune 时，层次结构中可以支持 700,000 台台式机、最多 25,000 个 Mac 和 Windows CE 7.0 和最多 300,000 台基于云的设备 - 总共 1,025,000 台设备。 如果支持通过本地 MDM 管理的设备，那么层次结构支持的设备总数为 825,000 台设备。  
 
 > [!IMPORTANT]  
->  Em uma hierarquia na qual o site de administração central usa uma edição Standard do SQL Server, a hierarquia dá suporte a 50.000 dispositivos e desktops no máximo. A edição do SQL Server em uso em um site primário autônomo não limita a capacidade desse site a fim de dar suporte ao número especificado de clientes.  
+>  在管理中心站点使用标准版 SQL Server 的层次结构中，层次结构最多可支持 50,000 台台式机和设备。 在独立主站点上使用的 SQL Server 版本不限制该站点容量，以便其支持最大的规定客户端数量。  
 
 
-###  <a name="bkmk_chipri"></a> Site primário filho  
-Cada site primário autônomo em uma hierarquia com um site de administração central oferece suporte ao seguinte:  
+###  <a name="bkmk_chipri"></a>子主站点  
+包含管理中心站点的层次结构中的每个子主站点支持：  
 
--   150.000 clientes e dispositivos no total que não se limitam a um grupo ou tipo específico, contanto que o suporte não exceda o número com suporte para a hierarquia. Consulte também, suporte para [dispositivos inseridos](#embedded).
+-   总共 150,000 台客户端和设备，不局限于特定组或类型，只要不超过层次结构所支持的数量。 另请参阅对[嵌入式设备](#embedded)的支持。
 
-Por exemplo, um site primário que dá suporte para até 25.000 computadores que executam Mac e Windows CE 7.0 (pois esse é o limite para uma hierarquia) pode dar suporte a 125.000 computadores desktop adicionais. Isso traz o número total de dispositivos com suporte até o limite máximo com suporte de 150.000 do site primário filho.
+例如，一个支持 25,000 台（因为这是一个层次结构的上限数量）运行 Mac 和 Windows CE 7.0 的计算机的主站点，还可支持 125,000 个台式计算机。 这就使支持的设备总数达到子主站点支持的上限数量 - 150,000。
 
-###  <a name="bkmk_pri"></a> Site primário autônomo  
-Um site primário autônomo oferece suporte à seguinte quantidade de dispositivos:  
+###  <a name="bkmk_pri"></a>独立主站点  
+独立主站点支持下列数量的设备：  
 
--   175.000 clientes e dispositivos no total, não podendo exceder:  
+-   总数不超过 175,000 的客户端和设备  
 
-    -   150.000 desktops (computadores que executam Windows, Linux e UNIX). Consulte também, suporte para [dispositivos inseridos](#embedded).
+    -   150,000 台台式机（运行 Windows、Linux 和 UNIX 的计算机）。 另请参阅对[嵌入式设备](#embedded)的支持。
 
-    -   25.000 dispositivos que executam Mac e Windows CE 7.0
+    -   运行 Mac 和 Windows CE 7.0 的 25,000 台设备
 
-    -   Um dos seguintes, dependendo de como sua implantação oferece suporte ao gerenciamento de dispositivos móveis:  
+    -   下列情况之一，具体取决于你的部署支持移动设备管理的方式：  
 
-        -   50.000 dispositivos que você gerencia usando o MDM local  
+        -   使用本地 MDM 管理的 50,000 台设备  
 
-        -   150.000 dispositivos baseados em nuvem  
+        -   150,000 台基于云的设备  
 
 
-Por exemplo, um site primário autônomo que dá suporte a 150.000 desktops e 10.000 Mac ou Windows CE 7.0 pode dar suporte a apenas 15.000 dispositivos adicionais. Esses dispositivos podem ser baseados em nuvem ou serem gerenciados usando o MDM local.  
+例如，支持 150,000 台台式机和 10,000 个 Mac 或 Windows CE 7.0 的独立主站点仅可额外支持 15,000 台设备。 这些设备可以是基于云的，也可以是使用本地 MDM 管理的。  
 
-### <a name="embedded"></a> Sites primários e dispositivos Windows Embedded
-Os sites primários dão suporte aos dispositivos Windows Embedded que têm o FBWF (Filtros de Gravação Baseado em Arquivo) habilitado. Quando dispositivos inseridos não têm filtros de gravação habilitados, um site primário pode dar suporte a um número de dispositivos inseridos de até o número permitido de dispositivos para esse site. Do número total de dispositivos com suporte por um site primário, um máximo de 10.000 deles pode ser dispositivos Windows Embedded quando esses dispositivos são configurados para as exceções listadas na observação importante localizada em [Planejamento para implantação do cliente para dispositivos Windows Embedded](/sccm/core/clients/deploy/plan/planning-for-client-deployment-to-windows-embedded-devices). Um site primário dá suporte a apenas 3.000 dispositivos Windows Embedded com EWF habilitado e que não estão configurados para as exceções.
+### <a name="embedded"></a>主站点和 Windows Embedded 设备
+主站点支持启用了基于文件的写入筛选器 (FBWF) 的 Windows Embedded 设备。 如果嵌入式设备没有启用写入筛选器，则主站点支持大量嵌入式设备，数量最多达该站点允许的设备数。 在主站点支持的设备总数中，其中最多 10,000 台设备可为 Windows Embedded 设备，前提是当这些设备是为[规划 Windows Embedded 设备的客户端部署](/sccm/core/clients/deploy/plan/planning-for-client-deployment-to-windows-embedded-devices)的重要说明中列出的异常而配置时。 主站点仅支持 3,000 台启用了 EWF 且不是为异常配置的 Windows Embedded 设备。
 
-###  <a name="bkmk_sec"></a> Sites secundários  
-Sites secundários oferecem suporte ao seguinte:  
+###  <a name="bkmk_sec"></a>辅助站点  
+辅助站点支持：  
 
--   15.000 desktops (computadores que executam Windows, Linux e UNIX)  
+-   15,000 台台式机（运行 Windows、Linux 和 UNIX 的计算机）  
 
-###  <a name="bkmk_mp"></a> Pontos de gerenciamento  
-Cada ponto de gerenciamento pode dar suporte à seguinte quantidade de dispositivos:  
+###  <a name="bkmk_mp"></a>管理点  
+每个管理点可以支持以下数目的设备：  
 
--   25.000 clientes e dispositivos no total, não podendo exceder:  
+-   总数不超过 25,000 的客户端和设备  
 
-    -   25.000 desktops (computadores que executam Windows, Linux e UNIX)  
+    -   25,000 台台式机（运行 Windows、Linux 和 UNIX 的计算机）  
 
-    -   Uma das seguintes opções (não ambas):  
+    -   下列之一（不能两种都包含）：  
 
-        -   10.000 dispositivos que são gerenciados usando o MDM local  
+        -   使用本地 MDM 管理的 10,000 台设备  
 
-        -   10.000 dispositivos que executam clientes Mac e Windows CE 7.0
-
+        -   10,000 台运行 Mac 和 Windows CE 7.0 客户端的设备

@@ -1,94 +1,91 @@
 ---
-title: "Ponto de conexão de serviço | Microsoft Docs"
-description: "Saiba mais sobre essa função do sistema de sites do Configuration Manager, bem como entenda e planeje seus diversos usos."
+title: "服务连接点 | Microsoft Docs"
+description: "了解此 Configuration Manager 站点系统角色，并了解和规划其使用范围。"
 ms.custom: na
 ms.date: 6/28/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
-ms.technology:
-- configmgr-other
+ms.technology: configmgr-other
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: bc2282d5-0571-465b-9528-a555855eaacd
-caps.latest.revision: 18
-caps.handback.revision: 0
+caps.latest.revision: "18"
+caps.handback.revision: "0"
 author: Brenduns
 ms.author: brenduns
 manager: angrobe
-ms.translationtype: Human Translation
-ms.sourcegitcommit: 0ec241d07f51b80b84d65676ef1207b31a9a9983
 ms.openlocfilehash: e3d41dc1bb732e887d722f39ee86deaf0aae3240
-ms.contentlocale: pt-br
-ms.lasthandoff: 06/28/2017
-
-
+ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
+ms.translationtype: HT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 08/07/2017
 ---
-# <a name="about-the-service-connection-point-in-system-center-configuration-manager"></a>Sobre o ponto de conexão de serviço no System Center Configuration Manager
+# <a name="about-the-service-connection-point-in-system-center-configuration-manager"></a>关于 System Center Configuration Manager 中的服务连接点
 
-*Aplica-se a: System Center Configuration Manager (Branch Atual)*
+*适用范围：System Center Configuration Manager (Current Branch)*
 
-O ponto de conexão de serviço do System Center Configuration Manager é uma função do sistema de sites que atende a várias funções importantes para a hierarquia. Antes de configurar o ponto de conexão de serviço, entenda e planeje os usos que podem afetar como você configurará essa função de sistema de sites:  
+System Center Configuration Manager 服务连接点是一个站点系统角色，为层次结构提供几个重要的功能。 设置服务连接点之前，需了解和规划其使用范围，这可能会影响到设置此站点系统角色的方式：  
 
--   **Gerencie dispositivos móveis com o Microsoft Intune**: esta função substitui o conector do Windows Intune usado por versões anteriores do Configuration Manager e pode ser configurada com os detalhes da sua assinatura do Intune. Consulte [Hybrid mobile device management (MDM) with System Center Configuration Manager and Microsoft Intune (MDM (Gerenciamento de dispositivo móvel) híbrido com o System Center Configuration Manager e Microsoft Intune)](../../../../mdm/understand/hybrid-mobile-device-management.md).  
+-   **使用 Microsoft Intune 管理移动设备** – 此角色替换此前版本的 Configuration Manager 使用的 Windows Intune 连接器，并可通过 Intune 订阅详细信息进行配置。 请参阅[使用 System Center Configuration Manager 和 Microsoft Intune 的混合移动设备管理 (MDM)](../../../../mdm/understand/hybrid-mobile-device-management.md)。  
 
--   **Gerenciar dispositivos móveis com o MDM local**: esta função dá suporte a dispositivos locais gerenciados que não se conectam à Internet. Consulte [Gerenciar dispositivos móveis com a infraestrutura local no System Center Configuration Manager](../../../../mdm/understand/manage-mobile-devices-with-on-premises-infrastructure.md).  
+-   **使用本地 MDM 管理移动设备** – 此角色为你所管理的未连接到 Internet 的本地设备提供支持。 请参阅[在 System Center Configuration Manager 中使用本地基础结构管理移动设备](../../../../mdm/understand/manage-mobile-devices-with-on-premises-infrastructure.md)。  
 
--   **Carregar dados de uso da sua infraestrutura do Configuration Manager**: você pode controlar a quantidade ou o nível dos detalhes que carrega. Os dados carregados nos ajuda a:  
+-   **从 Configuration Manager 基础结构上传使用情况数据** – 可以控制上传的详细信息的量和级别。 上载的数据帮助我们：  
 
-    -   Identificar e solucionar problemas proativamente  
+    -   主动识别和排除问题  
 
-    -   Melhorar nossos produtos e serviços  
+    -   改进我们的产品和服务  
 
-    -   Identificar atualizações para o Configuration Manager que se aplicam à versão do Configuration Manager usada  
+    -   确定适用于你所使用的 Configuration Manager 版本的 Configuration Manager 更新  
 
-  Para saber mais sobre os dados coletados em cada nível e como alterar o nível de coleta após a instalação da função, veja [Dados de diagnóstico e de uso](/sccm/core/plan-design/diagnostics/diagnostics-and-usage-data) e siga o link da versão do Configuration Manager que você usa.  
+  有关各级别收集的数据，以及安装角色后如何更改收集级别的信息，请参阅[诊断和使用情况数据](/sccm/core/plan-design/diagnostics/diagnostics-and-usage-data)，然后按照针对你所用的 Configuration Manage 版本的链接进行操作。  
 
-  Para obter mais informações, consulte [Configurações e níveis de dados de uso](../../../../core/servers/deploy/install/setup-reference.md#bkmk_usage).  
+  有关详细信息，请参阅[使用情况数据级别和设置](../../../../core/servers/deploy/install/setup-reference.md#bkmk_usage)。  
 
--   **Baixar as atualizações que se aplicam à sua infraestrutura do Configuration Manager**: somente atualizações relevantes para sua infraestrutura ficam disponíveis, com base nos dados de uso carregados.  
+-   **下载适用于你的 Configuration Manager 基础结构的更新** - 基于你所上传的使用情况数据，仅适用于你的基础结构的相关更新可用。  
 
-- **Cada hierarquia dá suporte a uma única instância dessa função:**  
+- **每个层次结构支持此角色的单一实例：**  
 
- -   A função do sistema de sites só pode ser instalada no site de nível superior da hierarquia (um site de administração central ou site primário autônomo).  
+ -   此站点系统角色只能安装在层次结构的顶层站点上，即管理中心站点或独立主站点。  
 
-  -   Se expandir um site primário autônomo para uma hierarquia maior, você deve desinstalar essa função do site primário e, em seguida, pode instalá-lo no site de administração central.  
+  -   如果将独立主站点扩展到更大的层次结构，则必须从主站点中卸载此角色，然后才可将其安装在管理中心站点上。  
 
 
-##  <a name="bkmk_modes"></a> Modos de operação  
- O ponto de conexão de serviço oferece suporte a dois modos de operação:  
+##  <a name="bkmk_modes"></a>操作模式  
+ 服务连接点支持两种操作模式：  
 
--   No **modo online**, o ponto de conexão de serviço verifica atualizações automaticamente, a cada 24 horas, e baixa novas atualizações disponíveis para sua infraestrutura e versão do produto atuais, disponibilizando-as no console do Configuration Manager.  
+-   在“联机模式”下，服务连接点每 24 小时会自动检查更新并下载可用于当前基础结构和产品版本的新更新，使其在 Configuration Manager 控制台中可用。  
 
--   No **modo offline**, o ponto de conexão de serviço não se conecta ao serviço de nuvem da Microsoft e você deve [Usar a ferramenta de conexão de serviço do System Center Configuration Manager](../../../../core/servers/manage/use-the-service-connection-tool.md) manualmente para importar as atualizações disponíveis.  
+-   在“脱机模式”下，服务连接点不会连接到 Microsoft 云服务，因此必须手动[使用 System Center Configuration Manager 的服务连接工具](../../../../core/servers/manage/use-the-service-connection-tool.md)导入可用更新。  
 
-Quando você alterar o modo entre online ou offline depois de ter instalado o ponto de conexão de serviço, será preciso reiniciar o thread SMS_DMP_DOWNLOADER do serviço SMS_Executive do Configuration Manager antes que essa alteração entre em vigor. Para fazer isso, use o Configuration Manager Service Manager para reiniciar apenas o thread SMS_DMP_DOWNLOADER do serviço SMS_Executive. Também é possível reiniciar o serviço SMS_Executive do Configuration Manager (que reinicia a maioria dos componentes do site) ou aguardar até que uma tarefa agendada, como um backup do site, interrompa e posteriormente reinicie o SMS_Executive para você.  
+安装了服务连接点之后在联机或脱机模式之间进行更改时，随后必须首先重新启动 Configuration Manager SMS_Executive 服务的 SMS_DMP_DOWNLOADER 线程，此更改才会生效。 为此，请使用 Configuration Manager 服务管理器仅重新启动 SMS_Executive 服务的 SMS_DMP_DOWNLOADER 线程。 还可以为 Configuration Manager 重新启动 SMS_Executive 服务（这会重新启动大多数站点组件），或等待诸如站点备份这类计划任务（它会停止，然后稍后会为你重新启动 SMS_Executive 服务）。  
 
-Para usar o Configuration Manager Service Manager, no console, navegue para **Monitoramento** > **Status do Sistema** > **Status do Componente**, clique em **Iniciar** e escolha **Configuration Manager Service Manager**. No Service Manager:  
+若要使用 Configuration Manager 服务管理器，请在控制台中转至“监视” > “系统状态” > “组件状态”，选择“启动”，然后选择“Configuration Manager 服务管理器”。 在服务管理器中：  
 
--   No painel de navegação, expanda o site e **Componentes**, depois escolha o componente que você deseja reiniciar.  
+-   在导航窗格中，依次展开站点和“组件”，然后选择要重新启动的组件。  
 
--   No painel de detalhes, clique com o botão direito do mouse no componente e escolha **Consulta**.  
+-   在细节窗格中，右键单击该组件，然后选择“查询”。  
 
--   Depois que o status do componente for confirmado, clique com o botão direito do mouse no componente novamente e escolha **Parar**.  
+-   确认该组件的状态之后，再次右键单击该组件，选择“停止”。  
 
--   **Consulte** o componente novamente para confirmar que ele foi interrompido e, em seguida, clique com o botão direito do mouse no componente mais uma vez e escolha **Iniciar**.  
+-   再次“查询”该组件，以确认它已停止，然后再一次右键单击该组件，并选择“启动”。  
 
 > [!IMPORTANT]  
->  O processo que adiciona uma assinatura do Microsoft Intune ao ponto de conexão de serviço configura automaticamente a função do sistema de sites como online. O ponto de conexão de serviço não dá suporte ao modo offline quando configurado com uma assinatura do Intune.  
+>  将 Microsoft Intune 订阅添加到服务连接点的过程会自动将站点系统角色设置为联机状态。 使用 Intune 订阅进行设置时，服务连接点不支持脱机模式。  
 
-**Quando a função é instalada em um computador remoto do servidor do site:**  
+**当角色安装在远离站点服务器的计算机上：**  
 
--   A conta de computador do servidor do site deve ser um administrador local no computador que hospeda uma conexão de serviço remoto.
+-   站点服务器的计算机帐户必须是承载远程服务连接的计算机上的本地管理员。
 
--   Você deve configurar o servidor do sistema de sites que hospeda a função com uma Conta de instalação do sistema de sites.  
+-   必须设置承载具有站点系统安装帐户的角色的站点系统服务器。  
 
--   A conta de instalação do sistema de sites é usada pelo gerenciador de distribuição no servidor de sites para transferir atualizações do ponto de conexão de serviço.
+-   站点服务器上的分发管理器使用该站点系统安装帐户来传输服务连接点的更新。
 
-##  <a name="bkmk_urls"></a> Requisitos de acesso à Internet  
-Para habilitar a operação, o computador que hospeda o ponto de conexão de serviço e quaisquer firewalls entre o computador e a Internet deve passar as comunicações pela **porta TCP 443** e **porta TCP 443** nos seguintes locais da Internet. O ponto de conexão de serviço também dá suporte ao uso de um proxy da Web (com ou sem autenticação) para acessar esses locais.  Se você precisar configurar uma conta de proxy da web, consulte: [Suporte do servidor proxy no System Center Configuration Manager](/sccm/core/plan-design/network/proxy-server-support).
+##  <a name="bkmk_urls"></a> Internet 访问要求  
+若要启用操作，托管服务连接点的计算机以及该计算机与 Internet 之间的任何防火墙必须通过**端口 TCP 443** 和**端口 TCP 443** 与以下 Internet 位置进行通信。 服务连接点也支持使用 Web 代理（具有或不具有身份验证皆可）来使用这些位置。  如果需要配置 Web 代理帐户，请参阅：[System Center Configuration Manager 中的代理服务器支持](/sccm/core/plan-design/network/proxy-server-support)。
 
-**Atualizações e manutenção**  
+**更新和维护服务**  
 
 -   *.akamaiedge.net  
 
@@ -113,21 +110,20 @@ Para habilitar a operação, o computador que hospeda o ponto de conexão de ser
 -   https://login.microsoftonline.com/{TenantID}
 
 
-**Serviço do Windows 10**  
+**Windows 10 维护服务**  
 
 -   download.microsoft.com  
 
 -   https://go.microsoft.com/fwlink/?LinkID=619849  
 
-## <a name="install-the-service-connection-point"></a>Instalar o ponto de conexão de serviço
-Quando você executa **Instalação** para instalar o site de nível superior de uma hierarquia, você tem a opção de instalar o ponto de conexão de serviço.
+## <a name="install-the-service-connection-point"></a>安装服务连接点
+运行“安装程序”以安装层次结构的顶层站点时，可以选择安装服务连接点。
 
-Após a execução da configuração, ou se você estiver reinstalando a função do sistema de sites, use o assistente **Adicionar Funções do Sistema de Site** ou o assistente **Criar Servidor do Sistema de Site** para instalar o sistema de site em um servidor no site de nível superior da hierarquia, isto é, o site de administração central ou um site primário autônomo. Ambos os assistentes estão localizados na guia **Início** no console em **Administração** > **Configuração do Site** > **Funções de Servidores e Sistema de Site**.
+安装程序运行后，或者重新安装站点系统角色时，请使用“添加站点系统角色”向导或“创建站点系统服务器”向导，以在位于层次结构顶层站点（管理中心站点或独立主站点）的服务器上安装站点系统。 这两个向导都位于控制台的“主页”选项卡中的“管理” > “站点配置” > “服务器和站点系统角色”上。
 
-## <a name="log-files-used-by-the-service-connection-point"></a>Os arquivos de log usados pelo ponto de conexão de serviço
-Para exibir informações sobre carregamentos para a Microsoft, veja o **Dmpuploader.log** no computador que executa o ponto de conexão de serviço.  Para downloads, incluindo o progresso do download de atualizações, veja **Dmpdownloader.log**. Para obter a lista completa de logs relacionados ao ponto de conexão de serviço, veja [Ponto de conexão de serviço](/sccm/core/plan-design/hierarchy/log-files#BKMK_WITLog) no tópico de arquivos de log do Configuration Manager.
+## <a name="log-files-used-by-the-service-connection-point"></a>供服务连接点使用的日志文件
+若要查看有关 Microsoft 上传的信息，请参阅运行服务连接点的计算机上的 **Dmpuploader.log**。  有关下载，包括更新的下载进度，请参阅 **Dmpdownloader.log**。 有关与服务连接点相关的日志的完整列表，请参阅 Configuration Manager 日志文件主题中的[服务连接点](/sccm/core/plan-design/hierarchy/log-files#BKMK_WITLog)。
 
-Você também pode usar os fluxogramas a seguir para entender o fluxo de processo e as principais entradas de log para downloads de atualização e replicação de atualizações para outros sites:
- - [Fluxograma — baixar atualizações](/sccm/core/servers/manage/download-updates-flowchart)
- - [Fluxograma — atualizar replicação](/sccm/core/servers/manage/update-replication-flowchart)
-
+还可以使用以下流程图了解有关更新下载和更新到其他网站的复制的过程流和关键日志条目：
+ - [流程图 - 下载更新](/sccm/core/servers/manage/download-updates-flowchart)
+ - [流程图 - 更新复制](/sccm/core/servers/manage/update-replication-flowchart)

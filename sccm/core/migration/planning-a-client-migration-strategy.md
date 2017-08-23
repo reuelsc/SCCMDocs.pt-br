@@ -1,110 +1,103 @@
 ---
-title: "Planejar a migração do cliente | Microsoft Docs"
-description: Saiba mais sobre as tarefas que migram clientes de uma hierarquia de origem para uma hierarquia de destino do System Center Configuration Manager.
+title: "规划客户端迁移 | Microsoft Docs"
+description: "了解将客户端从源层次结构迁移到 System Center Configuration Manager 目标层次结构的任务。"
 ms.custom: na
 ms.date: 12/30/2016
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
-ms.technology:
-- configmgr-other
+ms.technology: configmgr-other
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 2e27b0b7-7bd3-45cd-bc99-9c991606c637
-caps.latest.revision: 6
+caps.latest.revision: "6"
 author: Brenduns
 ms.author: brenduns
 manager: angrobe
-translationtype: Human Translation
-ms.sourcegitcommit: ac4576035fda943e38d960dd425d44b7a6ef6a01
 ms.openlocfilehash: b52ca4059dfeed08cabf1f75319da40d6499622f
-
-
+ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
+ms.translationtype: HT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 08/07/2017
 ---
-# <a name="plan-a-client-migration-strategy-in-system-center-configuration-manager"></a>Planejar uma estratégia de migração de cliente no System Center Configuration Manager
+# <a name="plan-a-client-migration-strategy-in-system-center-configuration-manager"></a>在 System Center Configuration Manager 中规划客户端迁移策略
 
-*Aplica-se a: System Center Configuration Manager (Branch Atual)*
+*适用范围：System Center Configuration Manager (Current Branch)*
 
-Para migrar clientes da hierarquia de origem para uma hierarquia de destino do System Center Configuration Manager, é necessário executar duas tarefas. Você deve migrar os objetos associados ao cliente e reinstalar ou reatribuir os clientes da hierarquia de origem para a hierarquia de destino. Migre os objetos primeiro para que fiquem disponíveis quando os clientes forem migrados. Os objetos associados ao cliente são migrados por meio de trabalhos de migração. Para obter informações sobre como migrar os objetos associados ao cliente, consulte [Planejando estratégia de trabalho de migração no System Center Configuration Manager](../../core/migration/planning-a-migration-job-strategy.md).  
+要将客户端从源层次结构迁移到 System Center Configuration Manager 目标层次结构，必须执行两个任务。 你必须迁移与客户端关联的对象，并且必须重新安装或将客户端从源层次结构重新分配到目标层次结构。 请先迁移对象，以便在迁移客户端时这些对象可用。 与客户端关联的对象是通过使用迁移作业迁移的。 有关如何迁移与客户端关联的对象的信息，请参阅[在 System Center Configuration Manager 中规划迁移作业策略](../../core/migration/planning-a-migration-job-strategy.md)。  
 
- Use as seções a seguir para ajudar a planejar como migrar clientes para a hierarquia de destino.  
+ 使用下列部分来帮助你规划将客户端迁移到目标层次结构。  
 
--   [Planejar a migração de clientes para a hierarquia de destino](#Planning_for_Client_Agent_Migration)  
+-   [规划将客户端迁移到目标层次结构](#Planning_for_Client_Agent_Migration)  
 
--   [Planejar como tratar os dados mantidos nos clientes durante a migração](#Planning_for_Client_Data_Migration)  
+-   [规划在迁移过程中处理客户端中保留的数据](#Planning_for_Client_Data_Migration)  
 
--   [Planejar os dados de inventário e de conformidade durante a migração](#Planning_for_Inventory_data_migration)  
+-   [在迁移过程中规划清单和符合性数据](#Planning_for_Inventory_data_migration)  
 
-##  <a name="a-nameplanningforclientagentmigrationa-plan-to-migrate-clients-to-the-destination-hierarchy"></a><a name="Planning_for_Client_Agent_Migration"></a> Planejar a migração de clientes para a hierarquia de destino  
- Ao migrar clientes de uma hierarquia de origem, o software cliente no computador cliente é atualizado para corresponder à versão do produto da hierarquia de destino.  
+##  <a name="Planning_for_Client_Agent_Migration"></a> 规划将客户端迁移到目标层次结构  
+ 从源层次结构中迁移客户端时，客户端计算机上的客户端软件将升级，以与目标层次结构的产品版本匹配。  
 
--   **Uma hierarquia de origem do Configuration Manager 2007:** ao migrar clientes de uma hierarquia de origem que executa uma versão com suporte do Configuration Manager, o software cliente é atualizado para a versão do cliente da hierarquia de destino.  
+-   **Configuration Manager 2007 源层次结构：**从运行受支持版本的 Configuration Manager 源层次结构中迁移客户端时，客户端软件将升级到目标层次结构的客户端版本。  
 
--   **Uma hierarquia de origem do System Center 2012 Configuration Manager ou posterior:** ao migrar clientes entre hierarquias que são da mesma versão do produto, o software cliente não é alterado nem atualizado. Em vez disso, o cliente é reatribuído da hierarquia de origem para um local na hierarquia de destino.  
+-   **System Center 2012 Configuration Manager 或更高版本的层次结构：**在产品版本相同的层次结构之间迁移客户端时，客户端软件不会更改或升级。 而是会从源层次结构重新分配到目标层次结构中的站点。  
 
     > [!NOTE]  
-    >  Quando não há suporte para a versão do produto de uma hierarquia para migração para sua hierarquia de destino, atualize todos os sites e clientes na hierarquia de origem para uma versão compatível do produto. Depois de atualizar a hierarquia de origem para uma versão do produto com suporte, você poderá migrar entre as hierarquias. Para obter mais informações, veja [Versões do Configuration Manager com suporte para migração](../../core/migration/prerequisites-for-migration.md#BKMK_SupportedMigrationVersions) em [Pré-requisitos para a migração no System Center Configuration Manager](../../core/migration/prerequisites-for-migration.md).  
+    >  如果层次结构的产品版本不支持迁移到目标层次结构，请将源层次结构中的所有站点和客户端升级到兼容的产品版本。 源层次结构升级到支持的产品版本后，你可以在层次结构之间进行迁移。 有关详细信息，请参阅 [System Center Configuration Manager 中迁移的先决条件](../../core/migration/prerequisites-for-migration.md)中的[迁移支持的 Configuration Manager 版本](../../core/migration/prerequisites-for-migration.md#BKMK_SupportedMigrationVersions)。  
 
-Use as seguintes informações para ajudá-lo a planejar a migração do cliente:  
+使用以下信息来帮助你规划客户端迁移：  
 
--   Para atualizar ou reatribuir clientes do site de origem para o site de destino, você poderá usar qualquer método de implantação de cliente com suporte para implantar clientes na hierarquia de destino. Os métodos típicos de implantação de cliente incluem instalação de cliente por push, distribuição de software, Política de Grupo e instalação do cliente com base na atualização de software. Para mais informações, consulte [Métodos de instalação do cliente no System Center Configuration Manager](../../core/clients/deploy/plan/client-installation-methods.md).  
+-   若要将客户端从源站点升级或重新分配到目标站点，你可以使用支持的任何客户端部署方法在目标层次结构中部署客户端。 典型的客户端部署方法包括客户端请求安装、软件分发、组策略和基于软件更新的客户端安装。 有关详细信息，请参阅 [System Center Configuration Manager 中的客户端安装方法](../../core/clients/deploy/plan/client-installation-methods.md)。  
 
--   Verifique se o dispositivo que executa o software cliente na hierarquia de origem atende aos requisitos mínimos de hardware e executa um sistema operacional com suporte pela versão do Configuration Manager na hierarquia de destino.  
+-   确保源层次结构中运行客户端软件的设备满足最低硬件要求，并运行目标层次结构中的 Configuration Manager 版本支持的操作系统。  
 
--   Antes de migrar um cliente, execute um trabalho de migração para migrar as informações que o cliente usará na hierarquia de destino.  
+-   在迁移客户端之前，请运行迁移作业以迁移客户端将在目标层次结构中使用的信息。  
 
--   Os clientes que são atualizados mantêm seu histórico de execução de implantações. Isso impede que as implantações sejam executadas novamente de forma desnecessária na hierarquia de destino.  
+-   升级的客户端保留其部署的运行历史记录。 这可以防止部署在目标层次结构中进行不必要的重新运行。  
 
-    -   Para clientes do Configuration Manager 2007, o histórico de execução de anúncio é mantido.  
+    -   对于 Configuration Manager 2007 客户端，会保留播发运行历史记录。  
 
-    -   Para clientes do System Center 2012 Configuration Manager ou System Center Configuration Manager, o histórico de execução de implantação é mantido.  
+    -   对于 System Center 2012 Configuration Manager 或 System Center Configuration Manager 客户端，会保留部署运行历史记录。  
 
--   Você pode migrar clientes de sites na hierarquia de origem na ordem que desejar. No entanto, é recomendável migrar um número limitado de clientes em fases, em vez de um número grande de clientes de uma única vez. Uma migração em fases reduz os requisitos de largura de banda da rede e o processamento do servidor quando cada cliente recém-atualizado envia a seu site atribuído seu inventário completo inicial e os dados de conformidade.  
+-   你可以按所选的任何顺序从源层次结构内的站点中迁移客户端。 但是，请考虑分阶段迁移限制数量的客户端，而不是一次迁移大量的客户端。 分阶段迁移可减少每个新升级的客户端将其初始完整清单和符合性数据提交到为其分配的站点时的网络带宽需求和服务器处理。  
 
--   Ao migrar clientes do Configuration Manager 2007, o software cliente existente é desinstalado do computador cliente e o novo software cliente é instalado.  
+-   在迁移 Configuration Manager 2007 客户端时，会从客户端计算机中卸载现有客户端软件，并安装新的客户端软件。  
 
--   O Configuration Manager não pode migrar um cliente do Configuration Manager 2007 que tem o cliente App-V instalado, a menos que a versão do cliente App-V seja a 4.6 SP1 ou posterior.  
+-   Configuration Manager 无法迁移安装了 App-V 客户端的 Configuration Manager 2007 客户端，除非 App-V 客户端版本为 4.6 SP1 或更高版本。  
 
-Você pode monitorar o processo de migração do cliente no nó **Migração** do espaço de trabalho **Administração**, no console do Configuration Manager.  
+可以在 Configuration Manager 控制台“管理”工作区的“迁移”节点中监视客户端迁移进程。  
 
-Concluída a migração do cliente para a hierarquia de destino, você não poderá mais gerenciar o dispositivo usando sua hierarquia de origem e deve considerar remover o cliente da hierarquia de origem. Apesar de não ser um requisito para a migração de hierarquias, isso poderá ajudar a evitar a identificação do cliente migrado em um relatório de hierarquia de origem, ou ainda uma contagem incorreta de recursos entre as duas hierarquias durante a migração. Por exemplo, quando um cliente migrado permanecer no banco de dados do site de origem, você possivelmente executará um relatório de atualizações de software que identificará incorretamente o computador como um recurso não gerenciado, quando na verdade ele é gerenciado pela hierarquia de destino.  
+将客户端迁移到目标层次结构后，将不再能够使用源层次结构管理该设备，并且应考虑从源层次结构中删除客户端。 尽管这不是迁移层次结构时必须进行的操作，但它可帮助防止在源层次结构报表中标识已迁移的客户端，或不正确地计算迁移过程中两个层次结构之间的资源数量。 例如，当已迁移客户端保留在源站点数据库中时，如果计算机现在由目标层次结构管理，则运行的软件更新报表可能会不正确地将该计算机标识为不受管理的资源。  
 
-##  <a name="a-nameplanningforclientdatamigrationa-plan-to-handle-data-maintained-on-clients-during-migration"></a><a name="Planning_for_Client_Data_Migration"></a> Planejar como tratar os dados mantidos nos clientes durante a migração  
-Ao migrar um cliente de sua hierarquia de origem para a hierarquia de destino, algumas informações são mantidas no dispositivo enquanto outras ficam indisponíveis no dispositivo após a migração.  
+##  <a name="Planning_for_Client_Data_Migration"></a> 规划在迁移过程中处理客户端中保留的数据  
+将客户端从其源层次结构迁移到目标层次结构时，某些信息在迁移之后会保留在设备上，而其他信息则在设备上不可用。  
 
-As informações a seguir são mantidas no dispositivo do cliente:  
+以下信息将保留在客户端设备上：  
 
--   O GUID (Identificador Exclusivo), que associa um cliente a suas informações no banco de dados do Configuration Manager.  
+-   唯一标识符 (GUID)，用于将客户端与其在 Configuration Manager 数据库中的信息关联。  
 
--   O histórico de anúncio ou implantação, que evita execuções desnecessárias de anúncios e implantações de clientes na hierarquia de destino.  
+-   播发或部署历史记录，用于防止客户端不必要地在目标层次结构中重新运行播发或部署。  
 
-As informações a seguir não são mantidas no dispositivo do cliente:  
+以下信息不会保留在客户端设备上：  
 
--   Os arquivos no cache de cliente. Se o cliente necessitar desses arquivos para instalar o software, ele deverá baixar os arquivos novamente da hierarquia de destino.  
+-   客户端缓存中的文件。 如果客户端需要这些文件来安装软件，则客户端将再次从目标层次结构中下载这些文件。  
 
--   As informações da hierarquia de origem sobre anúncios ou implantações que ainda não foram executados. Se você desejar que o cliente execute anúncios ou implantações após sua migração, será necessário reimplantá-los no cliente na hierarquia de destino.  
+-   源层次结构中有关尚未运行的任何播发或部署的信息。 如果希望客户端在其迁移后运行这些播发或部署，你必须将它们重新部署到目标层次结构中的客户端。  
 
--   Informações sobre o inventário. O cliente reenvia essa informação a seu site atribuído na hierarquia de destino após a migração do cliente e a geração dos novos dados do cliente.  
+-   有关清单的信息。 客户端在迁移之后向目标层次结构中为其分配的站点呈现此信息，并且已生成新的客户端数据。  
 
--   Dados de conformidade. O cliente reenvia essa informação a seu site atribuído na hierarquia de destino após a migração do cliente e a geração dos novos dados do cliente.  
+-   符合性数据。 客户端在迁移之后向目标层次结构中为其分配的站点呈现此信息，并且已生成新的客户端数据。  
 
-Quando um cliente migra, as informações armazenadas no Registro do cliente do Configuration Manager e o caminho do arquivo não são mantidos. Após a migração, reaplique essas configurações. As configurações típicas incluem:  
+当客户端迁移时，不会保留存储在 Configuration Manager 客户端注册表和文件路径中的信息。 迁移之后，请重新应用这些设置。 典型的设置包括以下各项：  
 
--   Esquemas de energia  
+-   电源使用方案  
 
--   Configurações de log  
+-   日志记录设置  
 
--   Configurações de política local  
+-   本地策略设置  
 
-Além disso, talvez seja necessário você reinstalar alguns aplicativos.  
+此外，你可能必须重新安装某些应用程序。  
 
-##  <a name="a-nameplanningforinventorydatamigrationa-plan-for--inventory-and-compliance-data-during-migration"></a><a name="Planning_for_Inventory_data_migration"></a> Planejar os dados de inventário e de conformidade durante a migração  
-Os dados de inventário e de conformidade do cliente não são salvos quando você migra um cliente para a hierarquia de destino. Em vez disso, essa informação é recriada na hierarquia de destino quando o cliente envia primeiro informação a seu site atribuído. Para ajudar a reduzir os requisitos de largura de banda da rede e o processamento do servidor resultantes, é recomendável migrar um número pequeno de clientes por fase, em vez de um número grande de clientes de uma vez.  
+##  <a name="Planning_for_Inventory_data_migration"></a> 在迁移过程中规划清单和符合性数据  
+当你将客户端迁移到目标层次结构时，不会保存客户端清单和符合性数据， 而是会在客户端第一次将其信息发送到为其分配的站点时在目标层次结构中重新创建此信息。 为了帮助减少产生的网络带宽需求和服务器处理，请考虑分阶段迁移少量的客户端，而不是一次迁移大量的客户端。  
 
- Além disso, você não pode migrar de uma hierarquia de origem as personalizações de inventário de hardware. É necessário introduzi-las na hierarquia de destino independentemente da migração. Para obter informações sobre como estender o inventário de hardware personalizado, consulte [Como configurar o inventário de hardware no System Center Configuration Manager](../../core/clients/manage/inventory/configure-hardware-inventory.md).  
-
-
-
-<!--HONumber=Dec16_HO5-->
-
-
+ 此外，你无法从源层次结构迁移硬件清单的自定义项。 你必须独立于迁移将这些自定义项引入目标层次结构。 有关如何扩展硬件清单的信息，请参阅[如何在 System Center Configuration Manager 中配置硬件清单](../../core/clients/manage/inventory/configure-hardware-inventory.md)。  

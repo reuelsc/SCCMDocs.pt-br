@@ -1,157 +1,154 @@
 ---
-title: "Opções de função do sistema de sites | Microsoft Docs"
-description: "Consulte este artigo para obter detalhes sobre funções do sistema de sites do Configuration Manager que não são necessariamente autoexplicativas."
+title: "站点系统角色选项 | Microsoft Docs"
+description: "可参阅本文以详细了解那些不一定易于理解的 Configuration Manager 站点系统角色。"
 ms.custom: na
 ms.date: 2/8/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
-ms.technology:
-- configmgr-other
+ms.technology: configmgr-other
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 0e9f0fbd-e442-4509-a021-bfdedf2d04dd
-caps.latest.revision: 5
+caps.latest.revision: "5"
 author: Brenduns
 ms.author: brenduns
 manager: angrobe
-ms.translationtype: Human Translation
-ms.sourcegitcommit: fff93794afdfa9f890b1f06d6c330d8cffc5796c
 ms.openlocfilehash: b4db5d86cc0ed020ed176feb2e8f1f9dc51a2280
-ms.contentlocale: pt-br
-ms.lasthandoff: 05/17/2017
-
+ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
+ms.translationtype: HT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 08/07/2017
 ---
-# <a name="configuration-options-for-site-system-roles-for-system-center-configuration-manager"></a>Configurar opções para funções do sistema de sites para o System Center Configuration Manager
+# <a name="configuration-options-for-site-system-roles-for-system-center-configuration-manager"></a>System Center Configuration Manager 站点系统角色的配置选项
 
-*Aplica-se a: System Center Configuration Manager (Branch Atual)*
+*适用范围：System Center Configuration Manager (Current Branch)*
 
-A maioria das opções de configuração de funções do sistema de sites do System Center Configuration Manager é autoexplicativa ou é explicada nas caixas de diálogo ou no assistente quando você as configura. As seções a seguir explicam as funções do sistema de sites cujas configurações precisam de informações adicionais.  
+System Center Configuration Manager 站点系统角色的大多数配置选项都不言自明，或在对其进行配置时于向导或对框中予以了解释。 以下部分介绍站点系统角色，这些角色具有可能需要额外信息的设置。  
 
-##  <a name="BKMK_ApplicationCatalog_Website"></a> Ponto de sites da Web do Catálogo de Aplicativos  
- Para saber mais sobre como configurar o ponto de sites da Web do Catálogo de Aplicativos para o Catálogo de Aplicativos, veja [Planejar e configurar o gerenciamento de aplicativos no System Center Configuration Manager](../../../../apps/plan-design/plan-for-and-configure-application-management.md).  
+##  <a name="BKMK_ApplicationCatalog_Website"></a>应用程序目录网站点  
+ 有关如何为应用程序目录设置应用程序目录网站点的信息，请参阅[规划和配置 System Center Configuration Manager 中的应用程序管理](../../../../apps/plan-design/plan-for-and-configure-application-management.md)。  
 
- **Conexões de clientes**  
+ **客户端连接**  
 
- Selecione **HTTPS** para conectar usando a configuração mais segura e determinar se os clientes se conectam da Internet. Essa opção requer um certificado PKI no servidor para autenticação de servidor para clientes e criptografia de dados sobre SSL (Secure Socket Layer). Para obter mais informações sobre os requisitos de certificado, consulte [Requisitos de certificado PKI para o System Center Configuration Manager](../../../../core/plan-design/network/pki-certificate-requirements.md).  
+ 选择“HTTPS”以使用更安全的连接设置，并确定客户端是否从 Internet 进行连接。 此选项需要服务器上的 PKI 证书以向客户端进行服务器身份验证，或用于通过安全套接字层 (SSL) 对数据进行加密。 有关证书要求的详细信息，请参阅 [System Center Configuration Manager 的 PKI 证书要求](../../../../core/plan-design/network/pki-certificate-requirements.md)。  
 
- Para ver um exemplo de implantação do certificado do servidor e obter informações sobre como configurá-lo no IIS (Serviços de Informações da Internet), veja a seção *Implantação do certificado de servidor Web para sistemas de sites que executam o IIS* no tópico [Exemplo de implantação passo a passo dos certificados PKI para o System Center Configuration Manager: autoridade de certificação do Windows Server 2008](/sccm/core/plan-design/network/example-deployment-of-pki-certificates).  
+ 有关服务器证书部署的示例以及有关如何在 Internet Information Services (IIS) 中配置该证书的信息，请参阅 *System Center Configuration Manager 的 PKI 证书的分步部署示例：Windows Server 2008 证书颁发机构*主题中的[为运行 IIS 的站点系统部署 Web 服务器证书](/sccm/core/plan-design/network/example-deployment-of-pki-certificates)部分。  
 
- **Adicionar o site da Web do catálogo de aplicativos à zona sites confiáveis**  
+ **将应用程序目录网站添加到受信任的站点区域**  
 
- Esta mensagem exibe o valor nas configurações do cliente padrão se a configuração do cliente **Adicionar o site da Web do catálogo de aplicativos à zona sites confiáveis** estiver definida como **Verdadeiro** ou **Falso** no momento. Se você definiu essa configuração usando as configurações do cliente personalizado, deve verificar esse valor por conta própria.  
+ 无论当前将“将应用程序目录网站添加到 Internet Explorer 受信任的站点区域”客户端设置设置为“True”，还是“False”，此消息都显示默认客户端设置中的值。 如果使用自定义客户端设置配置此设置，必须自行检查此值。  
 
- Se esse sistema de site estiver configurado para um FQDN (nome de domínio totalmente qualificado) e o site da Web não estiver na zona de sites confiáveis no Internet Explorer, os usuários deverão fornecer credenciais ao se conectarem ao Catálogo de Aplicativos.  
+ 如果针对完全限定的域名 (FQDN) 设置此站点系统，并且网站不在 Internet Explorer 的受信任的站点区域中，则在用户连接到应用程序目录时会提示用户输入凭据。  
 
- **Nome da organização**  
+ **组织名称**  
 
- Digite o nome que os usuários veem no Catálogo de Aplicativos. Essas informações de identidade visual ajudam os usuários a identificar este site da Web como uma fonte confiável.  
+ 输入用户在应用程序目录中看到的名称。 此品牌信息有助于用户将此网站识别为受信任的源。  
 
-##  <a name="BKMK_ApplicationCatalog_WebService"></a> Ponto de serviços Web do Catálogo de Aplicativos  
- Para saber mais sobre como configurar o ponto de serviço Web do Catálogo de Aplicativos para o Catálogo de Aplicativos, veja [Planejar e configurar o gerenciamento de aplicativos no System Center Configuration Manager](../../../../apps/plan-design/plan-for-and-configure-application-management.md).  
+##  <a name="BKMK_ApplicationCatalog_WebService"></a>应用程序目录 Web 服务点  
+ 有关如何为应用程序目录设置应用程序目录 Web 服务点的信息，请参阅[规划和配置 System Center Configuration Manager 中的应用程序管理](../../../../apps/plan-design/plan-for-and-configure-application-management.md)。  
 
  **HTTPS**  
 
- Selecione **HTTPS** para autenticar os pontos de sites da Web do Catálogo de Aplicativos para este ponto de serviço Web do catálogo de aplicativos.  Essa opção requer um certificado PKI nos servidores que executam o ponto de sites da Web do Catálogo de Aplicativos para autenticação do servidor e criptografia de dados sobre SSL. Para obter mais informações sobre os requisitos de certificado, consulte [Requisitos de certificado PKI para o System Center Configuration Manager](../../../../core/plan-design/network/pki-certificate-requirements.md).  
+ 选择“HTTPS”  以向此应用程序目录 Web 服务点验证应用程序目录网站点。  此选项需要运行应用程序目录网站点的服务器上的 PKI 证书来进行服务器身份验证和通过 SSL 对数据进行加密。 有关证书要求的详细信息，请参阅 [System Center Configuration Manager 的 PKI 证书要求](../../../../core/plan-design/network/pki-certificate-requirements.md)。  
 
- Para ver um exemplo de implantação do certificado do servidor e obter informações sobre como configurá-lo no IIS, veja a seção *Implantação do certificado de servidor Web para sistemas de sites que executam o IIS* em [Exemplo de implantação passo a passo dos certificados PKI para o System Center Configuration Manager: autoridade de certificação do Windows Server 2008](/sccm/core/plan-design/network/example-deployment-of-pki-certificates).  
+ 有关服务器证书部署的示例以及有关如何在 IIS 中配置该证书的信息，请参阅 *System Center Configuration Manager 的 PKI 证书的分步部署示例：Windows Server 2008 证书颁发机构*主题中的[为运行 IIS 的站点系统部署 Web 服务器证书](/sccm/core/plan-design/network/example-deployment-of-pki-certificates)部分。  
 
-##  <a name="BKMK_CertificateRegistrationPoint"></a> Ponto de registro de certificado  
- Para saber mais sobre como configurar o ponto de registro de certificado, veja [Introdução aos perfis de certificado](/sccm/protect/deploy-use/introduction-to-certificate-profiles).  
+##  <a name="BKMK_CertificateRegistrationPoint"></a>证书注册点  
+ 有关如何设置证书注册点的详细信息，请参阅[证书配置文件简介](/sccm/protect/deploy-use/introduction-to-certificate-profiles)。  
 
-##  <a name="BKMK_Distribution_Point"></a> Ponto de distribuição  
- Para saber mais sobre como definir o ponto de distribuição para implantação de conteúdo, veja [Gerenciar conteúdo e infraestrutura de conteúdo do System Center Configuration Manager](../../../../core/servers/deploy/configure/manage-content-and-content-infrastructure.md).  
+##  <a name="BKMK_Distribution_Point"></a>分发点  
+ 若要深入了解如何为内容部署设置分发点，请参阅[为 System Center Configuration Manager 管理内容和内容基础结构](../../../../core/servers/deploy/configure/manage-content-and-content-infrastructure.md)。  
 
- Para saber mais sobre como definir o ponto de distribuição para implantações PXE, veja [Use o PXE para implantar o Windows pela rede com o System Center Configuration Manager](../../../../osd/deploy-use/use-pxe-to-deploy-windows-over-the-network.md).  
+ 若要深入了解如何为 PXE 部署设置分发点，请参阅[使用 PXE 与 System Center Configuration Manager 一起通过网络部署 Windows](../../../../osd/deploy-use/use-pxe-to-deploy-windows-over-the-network.md)。  
 
- Para saber mais sobre como definir o ponto de distribuição para implantações multicast, veja [Usar o multicast para implantar o Windows pela rede com o System Center Configuration Manager](../../../../osd/deploy-use/use-multicast-to-deploy-windows-over-the-network.md).  
+ 若要深入了解如何为多播部署设置分发点，请参阅[使用多播与 System Center Configuration Manager 一起通过网络部署 Windows](../../../../osd/deploy-use/use-multicast-to-deploy-windows-over-the-network.md)。  
 
- **Instalar e configurar o IIS se exigido pelo Configuration Manager**  
- Selecione esta opção para que o Configuration Manager instale e configure o IIS no sistema de sites, se ainda não estiver instalado. O IIS deve ser instalado em todos os pontos de distribuição, e você deve selecionar essa configuração para continuar no assistente.  
+ **在 Configuration Manager 要求的情况下安装和配置 IIS**  
+ 选择此选项以让 Configuration Manager 在站点系统上安装和设置 IIS（如果尚未安装）。 必须在所有分发点上安装 IIS，并且你必须选择此设置才能在向导中继续。  
 
- **Conta de instalação do sistema de sites**  
- Para pontos de distribuição instalados em um servidor do site, há suporte apenas para a conta do computador do servidor do site para uso como a Conta de Instalação de Sistema de Site.  
+ **站点系统安装帐户**  
+ 对于站点服务器上安装的分发点，只支持使用站点服务器的计算机帐户作为站点系统安装帐户。  
 
- **Criar um certificado autoassinado ou importar um certificado de cliente PKI**  
- Este certificado tem duas finalidades:  
+ **创建自签名证书或导入 PKI 客户端证书**  
+ 此证书有两个用途：  
 
-1.  autentica o ponto de distribuição em um ponto de gerenciamento antes que o ponto de distribuição envie mensagens de status.  
+1.  在分发点发送状态消息之前，该证书向管理点验证分发点。  
 
-2.  Quando a opção **Habilitar suporte a PXE para clientes** é selecionada, o certificado é enviado para computadores que executam uma inicialização PXE, para que eles possam se conectar a um ponto de gerenciamento durante a implantação do sistema operacional.  
+2.  如果选择了“为客户端启用 PXE 支持”，则会将证书发送到执行 PXE 启动的计算机，以便这些计算机能够在操作系统部署过程中连接到管理点。  
 
-Quando todos os pontos de gerenciamento do site estiverem configurados para HTTP, crie um certificado autoassinado. Quando os pontos de gerenciamento estiverem configurados para HTTPS, importe um certificado de cliente PKI.  
+如果针对 HTTP 设置了站点中的所有管理点，请创建自签名证书。 如果针对 HTTPS 设置了管理点，请导入 PKI 客户端证书。  
 
-Para importar o certificado, navegue até um arquivo PKCS #12 (Public-Key Cryptography Standards #12) que contenha um certificado PKI com os seguintes requisitos para o Configuration Manager:  
+要导入证书，请浏览到包含 PKI 证书的公钥加密标准 #12 (PKCS #12) 文件，对于 Configuration Manager 有以下要求：  
 
--   O uso pretendido deve incluir a autenticação do cliente.  
+-   计划的使用必须包括客户端身份验证。  
 
--   A chave privada deve poder ser exportada.  
+-   必须设置为可导出私钥。  
 
-Não há nenhum requisito específico para o nome da entidade do certificado nem para o SAN (Nome Alternativo da Entidade), e você pode usar o mesmo certificado para vários pontos de distribuição.  
+没有针对证书使用者名称或使用者备用名称 (SAN) 的特定要求，并且你可以为多个分发点使用同一证书。  
 
-Para obter mais informações sobre os requisitos de certificado, consulte [Requisitos de certificado PKI para o System Center Configuration Manager](../../../../core/plan-design/network/pki-certificate-requirements.md). Para ver um exemplo de implantação deste certificado, consulte a seção *Implantando o certificado de cliente para pontos de distribuição* em [Exemplo de implantação passo a passo dos certificados PKI para o System Center Configuration Manager: Autoridade de Certificação do Windows Server 2008](/sccm/core/plan-design/network/example-deployment-of-pki-certificates).  
+有关证书要求的详细信息，请参阅 [System Center Configuration Manager 的 PKI 证书要求](../../../../core/plan-design/network/pki-certificate-requirements.md)。 有关此证书的示例部署，请参阅 [System Center Configuration Manager 的 PKI 证书的分步部署示例：Windows Server 2008 证书颁发机构](/sccm/core/plan-design/network/example-deployment-of-pki-certificates)主题中的*为分发点部署客户端证书*部分。  
 
-**Habilitar este ponto de distribuição para conteúdo pré-configurado**  
-Marque esta caixa de seleção para habilitar o ponto de distribuição para conteúdo pré-testado. Quando essa caixa de seleção estiver marcada, você pode configurar o comportamento de distribuição ao distribuir conteúdo. Você pode escolher sempre pré-testar o conteúdo no ponto de distribuição, pré-testar o conteúdo inicial para o pacote, mas usar o processo normal de distribuição de conteúdo quando houver atualizações ou sempre usar o processo normal de distribuição de conteúdo para o conteúdo no pacote.  
+**为预安排内容启用此分发点**  
+选中此复选框以便为预留内容启用分发点。 如果选中此复选框，可在分发内容时设置分发行为。 可选择是始终在分发点上预留内容、为包预留初始内容但在内容有更新时使用正常内容分发过程，还是为包中的内容始终使用正常内容分发过程。  
 
-**Grupos de limites**  
- Você pode associar grupos de limites a um ponto de distribuição. Durante a implantação do conteúdo, os clientes devem estar em um grupo de limites associado ao ponto de distribuição para usá-lo como um local de origem para conteúdo.
- - **Nas versões anteriores à 1610**, você pode marcar a caixa de seleção **Permitir local de origem de fallback para conteúdo** para permitir que clientes fora desses grupos de limites façam fallback e usem o ponto de distribuição como um local de origem para conteúdo quando nenhum outro ponto de distribuição estiver disponível.
- - **Começando da versão 1610**, não é mais possível configurar a opção **Permitir local de origem de fallback para conteúdo**.  Em vez disso, você configura relações entre grupos de limites que determinam quando um cliente pode começar a pesquisar localizações de fontes de conteúdo válidas em grupos de limites adicionais.
+**边界组**  
+ 你可以将边界组关联到分发点。 在内容部署过程中，客户端必须位于与分发点关联的边界组中，才能将其用作内容的源位置。
+ - 版本 1610 之前，可选中“允许内容源位置回退”复选框，以便在没有其他分发点可用时让这些边界组外部的客户端回退并使用分发点作为内容的源位置。
+ - **从 1610 版起**，用户不能再配置“允许内容源位置回退”。  但可以设置边界组之间的关系，以检查客户端何时可以开始搜索有效内容源位置的其他边界组。
 
-##  <a name="BKMK_Enrollment_Point"></a> Ponto de registro  
-Pontos de registro são usados para instalar computadores Mac e registrar os dispositivos gerenciados com o gerenciamento de dispositivos móveis locais. Para obter mais informações, consulte:  
+##  <a name="BKMK_Enrollment_Point"></a>注册点  
+注册点用于安装 Mac 计算机，并用于注册通过本地移动设备管理来进行管理的设备。 有关详细信息，请参阅以下内容：  
 
--   [Como implantar clientes em Macs no System Center Configuration Manager](../../../../core/clients/deploy/deploy-clients-to-macs.md)  
+-   [如何在 System Center Configuration Manager 中将客户端部署到 Mac](../../../../core/clients/deploy/deploy-clients-to-macs.md)  
 
--   [Como os usuários registram dispositivos com o Gerenciamento de Dispositivo Móvel local no System Center Configuration Manager](../../../../mdm/deploy-use/user-enroll-devices-on-premises-mdm.md)  
+-   [用户如何在 System Center Configuration Manager 中向本地移动设备管理注册设备](../../../../mdm/deploy-use/user-enroll-devices-on-premises-mdm.md)  
 
-**Conexões permitidas**  
- A configuração HTTPS é selecionada automaticamente e requer um certificado PKI no servidor para autenticação do servidor para o ponto de proxy do registro, autenticação de servidor para ponto de serviço fora da banda, e criptografia de dados sobre SSL. Para obter mais informações sobre os requisitos de certificado, consulte [Requisitos de certificado PKI para o System Center Configuration Manager](../../../../core/plan-design/network/pki-certificate-requirements.md).  
+**允许的连接**  
+ HTTPS 设置是自动选择的，并且需要服务器上的 PKI 证书以向注册代理点和带外服务点进行服务器身份验证，以及通过 SSL 对数据进行加密。 有关证书要求的详细信息，请参阅 [System Center Configuration Manager 的 PKI 证书要求](../../../../core/plan-design/network/pki-certificate-requirements.md)。  
 
- Para ver um exemplo de implantação do certificado do servidor e obter informações sobre como configurá-lo no IIS, veja a seção *Implantação do certificado de servidor Web para sistemas de sites que executam o IIS* em [Exemplo de implantação passo a passo dos certificados PKI para o System Center Configuration Manager: autoridade de certificação do Windows Server 2008](/sccm/core/plan-design/network/example-deployment-of-pki-certificates).  
+ 有关服务器证书部署的示例以及有关如何在 IIS 中配置该证书的信息，请参阅 *System Center Configuration Manager 的 PKI 证书的分步部署示例：Windows Server 2008 证书颁发机构*主题中的[为运行 IIS 的站点系统部署 Web 服务器证书](/sccm/core/plan-design/network/example-deployment-of-pki-certificates)部分。  
 
-##  <a name="BKMK_Enrollment_Proxy_Point"></a> Ponto proxy do registro  
-Para saber mais sobre como configurar um ponto de proxy do registro para dispositivos móveis, veja [Como os usuários registram dispositivos com o Gerenciamento de Dispositivo Móvel local no System Center Configuration Manager](../../../../mdm/deploy-use/user-enroll-devices-on-premises-mdm.md).  
+##  <a name="BKMK_Enrollment_Proxy_Point"></a>注册代理点  
+若要深入了解如何为移动设备设置注册代理点，请参阅[用户如何在 System Center Configuration Manager 中向本地移动设备管理注册设备](../../../../mdm/deploy-use/user-enroll-devices-on-premises-mdm.md)。  
 
-**Conexões de clientes**  
- A configuração HTTPS é selecionada automaticamente e requer um certificado PKI no servidor para autenticação do servidor para dispositivos móveis e computadores Mac registrados pelo Configuration Manager e para criptografia de dados sobre protocolo SSL. Para obter mais informações sobre os requisitos de certificado, consulte [Requisitos de certificado PKI para o System Center Configuration Manager](../../../../core/plan-design/network/pki-certificate-requirements.md).  
+**客户端连接**  
+ HTTPS 设置是自动选择的，并且需要服务器上的 PKI 证书以向 Configuration Manager 注册的移动设备和 Mac 计算机进行服务器身份验证，并通过安全套接字层 (SSL) 对数据进行加密。 有关证书要求的详细信息，请参阅 [System Center Configuration Manager 的 PKI 证书要求](../../../../core/plan-design/network/pki-certificate-requirements.md)。  
 
- Para ver um exemplo de implantação do certificado do servidor e obter informações sobre como configurá-lo no IIS, veja a seção *Implantação do certificado de servidor Web para sistemas de sites que executam o IIS* em [Exemplo de implantação passo a passo dos certificados PKI para o System Center Configuration Manager: autoridade de certificação do Windows Server 2008](/sccm/core/plan-design/network/example-deployment-of-pki-certificates).  
+ 有关服务器证书部署的示例以及有关如何在 IIS 中配置该证书的信息，请参阅 *System Center Configuration Manager 的 PKI 证书的分步部署示例：Windows Server 2008 证书颁发机构*主题中的[为运行 IIS 的站点系统部署 Web 服务器证书](/sccm/core/plan-design/network/example-deployment-of-pki-certificates)部分。  
 
-##  <a name="BKMK_Fallback_Status_Point"></a> Ponto de status de fallback  
-**Número de mensagens de estado** e **Intervalo de limitação (em segundos)**  
-Embora as configurações padrão para essas opções (10.000 mensagens de estado e 3.600 segundos para o intervalo de limitação) sejam suficientes para a maioria das circunstâncias, talvez seja preciso alterá-las quando ambas das seguintes condições forem verdadeiras:  
+##  <a name="BKMK_Fallback_Status_Point"></a>回退状态点  
+“状态消息数量”和“限制间隔(秒)”  
+尽管这些选项的默认设置（10,000 条状态消息和 3,600 秒的限制间隔）对于大多数情况已经足够，但在以下条件都成立时，你可能必须更改这些设置：  
 
--   O ponto de status de fallback aceita conexões somente da intranet.  
+-   回退状态点仅接受来自 Intranet 的连接。  
 
--   Você usa o ponto de status de fallback durante uma implantação do cliente para muitos computadores.  
+-   在多台计算机的客户端部署转出过程中，你使用回退状态点。  
 
-Neste cenário, um fluxo contínuo de mensagens de estado pode criar uma lista de pendências que causa alto uso da CPU no servidor de sites por um período prolongado. Além disso, talvez você não veja informações atualizadas sobre a implantação do cliente no console do Configuration Manager e nos relatórios de implantação do cliente.  
+在这种情况下，持续的状态消息流可能会造成状态消息积压，从而导致站点服务器上的中央处理单元 (CPU) 高使用率持续很长一段时间。 此外，你可能无法在 Configuration Manager 控制台和客户端部署报表中看到有关客户端部署的最新信息。  
 
-Essas configurações do ponto de status de fallback foram projetadas para serem definidas para mensagens de estado geradas durante a implantação do cliente. As configurações não foram projetadas para serem definidas para problemas de comunicação do cliente, como quando clientes na Internet não conseguem se conectar ao ponto de gerenciamento baseado na Internet. Como o ponto de status de fallback não pode aplicar essas configurações somente às mensagens de estado geradas durante a implantação do cliente, não defina essas configurações quando o ponto de status de fallback aceitar conexões da Internet.  
+这些回退状态点设置针对在客户端部署过程中生成的状态消息进行设置。 这些设置不针对客户端通信问题（例如 Internet 上的客户端无法连接到其基于 Internet 的管理点）进行设置。 由于回退状态点无法将这些设置仅应用于在客户端部署过程中生成的状态消息，因此，如果回退状态点接受来自 Internet 的连接，请不要配置这些设置。  
 
-Cada computador que instala o cliente do System Center 2012 Configuration Manager com êxito envia as quatro mensagens de estado a seguir para o ponto de status de fallback:  
+成功安装 System Center 2012 Configuration Manager 客户端的每台计算机都会向回退状态点发送下列四条状态消息：  
 
--   Implantação do cliente iniciada  
+-   客户端部署已启动  
 
--   Implantação do cliente com êxito  
+-   客户端部署成功  
 
--   Atribuição do cliente iniciada  
+-   客户端分配已启动  
 
--   Atribuição do cliente com êxito  
+-   客户端分配成功  
 
-Os computadores que não podem ser instalados, nem atribuir o cliente do Configuration Manager enviam mensagens de estado adicionais.  
+无法安装的计算机或无法分配 Configuration Manager 客户端的计算机还会发送额外状态消息。  
 
-Por exemplo, se você implantar o cliente do Configuration Manager em 20.000 computadores, a implantação poderá criar 80.000 mensagens de estado enviadas ao ponto de status de fallback. Como a configuração de limitação padrão permite o envio de 10.000 mensagens de estado ao ponto de status de fallback a cada 3,600 segundos (1 hora), as mensagens de estado podem ficar acumuladas no ponto de status de fallback. Você também deve considerar a largura de banda de rede disponível entre o ponto de status de fallback e o servidor de sites, e a potência de processamento do servidor de sites para processar muitas mensagens de estado.  
+例如，如果将 Configuration Manager 客户端部署到 20,000 台计算机，则部署可能会向回退状态点发送 80,000 条状态消息。 由于默认限制配置允许每 3,600 秒（1 小时）向回退状态点发送 10,000 条状况消息，状况消息可能在回退状态点囤积。 还必须考虑回退状态点和站点服务器之间的可用网络带宽，以及站点服务器处理多条状态消息的处理能力。  
 
-Para ajudar a evitar esses problemas, considere aumentar o número de mensagens de estado e diminuir o intervalo de limitação.  
+为了帮助避免这些问题，请考虑增加状态消息数并缩短限制间隔。  
 
-Redefina os valores de limitação para o ponto de status de fallback se alguma das seguintes condições for verdadeira:  
+如果下列任一条件成立，请重置回退状态点的限制值：  
 
--   Você calcular que os valores de limitação atuais são maiores do que o necessário para processar mensagens de estado do ponto de status de fallback.  
+-   你计算出当前限制值高于处理来自回退状态点的状态消息所需的值。  
 
--   Você achar que as configurações de limitação atuais criam alto uso da CPU no servidor do site.  
+-   你发现，当前限制设置会在站点服务器上造成 CPU 高使用率。  
 
-Não altere as definições das configurações de limitação do ponto de status de fallback a menos que você entenda as consequências. Por exemplo, quando você aumenta as configurações de limitação para alto, o uso de CPU no servidor do site pode aumentar para alto, o que reduz a velocidade de todas as operações do site.  
-
+除非你了解后果，否则请不要更改回退状态点限制设置的设置。 例如，如果将限制设置提高到很高，则站点服务器上的 CPU 使用率可能会提高到很高，从而减慢所有站点操作的速度。  

@@ -1,191 +1,187 @@
 ---
-title: Migrar objetos | Microsoft Docs
-description: "Saiba como planejar a migração de objetos entre hierarquias em um ambiente do System Center Configuration Manager."
+title: "迁移对象 | Microsoft Docs"
+description: "了解如何在 System Center Configuration Manager 环境中规划跨层次结构的对象迁移。"
 ms.custom: na
 ms.date: 1/12/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
-ms.technology:
-- configmgr-other
+ms.technology: configmgr-other
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 066caf00-e419-4efb-93d3-ba4ba878297c
-caps.latest.revision: 7
-caps.handback.revision: 0
+caps.latest.revision: "7"
+caps.handback.revision: "0"
 author: Brenduns
 ms.author: brenduns
 manager: angrobe
-ms.translationtype: Human Translation
-ms.sourcegitcommit: c6ee0ed635ab81b5e454e3cd85637ff3e20dbb34
 ms.openlocfilehash: 17f3955aa7c63a13bab03b46002f7de0b0ec38fe
-ms.contentlocale: pt-br
-ms.lasthandoff: 06/08/2017
-
-
+ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
+ms.translationtype: HT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 08/07/2017
 ---
-# <a name="plan-for-the-migration-of-configuration-manager-objects-to-system-center-configuration-manager"></a>Planejar a migração de objetos do Configuration Manager para o System Center Configuration Manager
+# <a name="plan-for-the-migration-of-configuration-manager-objects-to-system-center-configuration-manager"></a>规划将 Configuration Manager 对象迁移到 System Center Configuration Manager
 
-*Aplica-se a: System Center Configuration Manager (Branch Atual)*
+*适用范围：System Center Configuration Manager (Current Branch)*
 
-Com o System Center Configuration Manager, é possível migrar vários objetos diferentes associados a diferentes recursos encontrados em um site de origem. Use as seções a seguir para ajudá-lo a planejar a migração de objetos entre hierarquias.  
+借助 System Center Configuration Manager，可以迁移与源站点上的不同功能关联的许多不同对象。 使用下列部分来帮助你规划层次结构之间的对象迁移。  
 
--   [Planejar a migração de atualizações de software](#Plan_migrate_Software_updates)  
+-   [规划软件更新迁移](#Plan_migrate_Software_updates)  
 
--   [Planejar a migração de conteúdo](#Plan_Migrate_content)  
+-   [规划内容迁移](#Plan_Migrate_content)  
 
--   [Planejar a migração de coleções](#BKMK_MigrateCollections)  
+-   [规划集合迁移](#BKMK_MigrateCollections)  
 
--   [Planejar a migração de implantações de sistema operacional](#Plan_migrate_OSD)  
+-   [规划操作系统部署迁移](#Plan_migrate_OSD)  
 
--   [Planejar a migração do gerenciamento de configuração desejado](#Plan_Migrate_Compliance_settings)  
+-   [规划所需的配置管理的迁移](#Plan_Migrate_Compliance_settings)  
 
--   [Planejar a migração de limites](#Plan_migrate_Boundaries)  
+-   [规划边界迁移](#Plan_migrate_Boundaries)  
 
--   [Planejar a migração de relatórios](#Plan_Migrate_reports)  
+-   [规划报表迁移](#Plan_Migrate_reports)  
 
--   [Planejar a migração de pastas organizacionais e de pesquisa](#Plan_Migrate_Org_Folders)  
+-   [规划组织文件夹和搜索文件夹的迁移](#Plan_Migrate_Org_Folders)  
 
--   [Planejar a migração de personalizações do Asset Intelligence](#Plan_Migrate_AI)  
+-   [规划资产智能自定义项的迁移](#Plan_Migrate_AI)  
 
--   [Planejar a migração de personalizações de regras de medição de software](#Plan_Migrate_SWM_Rules)  
+-   [规划软件计数规则自定义的迁移](#Plan_Migrate_SWM_Rules)  
 
-##  <a name="Plan_migrate_Software_updates"></a> Planejar a migração de atualizações de software  
- É possível migrar objetos de atualização de software, como os pacotes de atualização de software e implantações de atualização de software.  
+##  <a name="Plan_migrate_Software_updates"></a>规划软件更新迁移  
+ 可以迁移软件更新对象，例如软件更新包和软件更新部署。  
 
- Para migrar com êxito os objetos de atualização de software, é necessário primeiro configurar sua hierarquia de destino com configurações que correspondem ao ambiente da hierarquia de origem. Isso requer as seguintes ações:  
+ 要成功迁移软件更新对象，必须首先将目标层次结构设置为包含与源层次结构环境匹配的配置。 这需要进行以下操作：  
 
--   Implantar um ponto de atualização de software ativo na hierarquia de destino  
+-   在目标层次结构中部署活动软件更新点  
 
--   Configurar o catálogo de produtos e idiomas para corresponder à configuração da hierarquia de origem  
+-   设置产品目录和语言以与源层次结构的配置匹配  
 
--   Sincronizar o ponto de atualização de software na hierarquia do destino com um WSUS (Windows Server Update Services)  
+-   将目标层次结构中的软件更新点与 Windows Server Update Services (WSUS) 同步  
 
-Ao migrar as atualizações de software, considere o seguinte:  
+在迁移软件更新时，请考虑下列事项：  
 
--   A migração dos objetos de atualização de software pode falhar quando você não sincroniza as informações na hierarquia de destino para corresponder à hierarquia de origem.  
+-   如果尚未同步目标层次结构中的信息以与源层次结构中的配置匹配，软件更新对象的迁移可能会失败。  
 
     > [!WARNING]  
-    >  O Configuration Manager não dá suporte para usar a ferramenta WSUSutil para sincronizar dados entre a hierarquia de origem e de destino.  
+    >  Configuration Manager 不支持使用 WSUSutil 工具在源和目标层次结构之间同步数据。  
 
--   Você não pode migrar as atualizações personalizadas que são publicadas usando o System Center Updates Publisher. Em vez disso, as atualizações personalizadas devem ser republicadas na hierarquia de destino.  
+-   你无法迁移通过使用 System Center Updates Publisher 发布的自定义更新， 而是必须将自定义更新重新发布到目标层次结构。  
 
-Quando você migra de uma hierarquia de origem do Configuration Manager 2007, o processo de migração modifica alguns objetos de atualização de software para o formato usado na hierarquia de destino. Use a tabela a seguir para planejar a migração dos objetos de atualização de software do Configuration Manager 2007.  
+在从 Configuration Manager 2007 源层次结构中进行迁移时，迁移过程会将某些软件更新对象修改为目标层次结构使用的格式。 使用下表来帮助你规划从 Configuration Manager 2007 进行的软件更新对象迁移。  
 
-|Objeto do Configuration Manager 2007|Nome do objeto após a migração|  
+|Configuration Manager 2007 对象|迁移后的对象名称|  
 |-----------------------------------|---------------------------------|  
-|Listas de atualizações de software|As listas de atualizações de software são convertidas em grupos de atualização de software.|  
-|Implantações de atualização de software|As implantações de atualização de software são convertidas em implantações e grupos de atualizações.<br /><br /> Após migrar uma implantação de atualização de software do Configuration Manager 2007, você precisará habilitá-la na hierarquia de destino para implantá-la.|  
-|Pacotes de atualizações de software|Os pacotes de atualizações de software permanecem como pacotes de atualizações de software.|  
-|Modelos de atualizações de software|Os modelos de atualizações de software permanecem como modelos de atualizações de software.<br /><br /> O valor de **Duração** nos modelos de implantação do Configuration Manager 2007 não é migrado.|  
+|软件更新列表|软件更新列表将转换为软件更新组。|  
+|软件更新部署|软件更新部署将转换为部署和更新组。<br /><br /> 从 Configuration Manager 2007 中迁移软件更新部署后，必须在目标层次结构中启用该部署，然后才能使用它。|  
+|软件更新包|软件更新包仍然是软件更新包。|  
+|软件更新模板|软件更新模板仍然是软件更新模板。<br /><br /> Configuration Manager 2007 部署中的“持续时间”值不会迁移。|  
 
-Quando você migra objetos de uma hierarquia de origem do System Center 2012 Configuration Manager ou do System Center Configuration Manager, os objetos de atualizações de software não são modificados.  
+从 System Center 2012 Configuration Manager 或 System Center Configuration Manager 源层次结构中迁移对象时，不会修改软件更新对象。  
 
-##  <a name="Plan_Migrate_content"></a> Planejar a migração de conteúdo  
- É possível migrar o conteúdo de uma hierarquia de origem com suporte para a hierarquia de destino. Para uma hierarquia de origem do Configuration Manager 2007, esse conteúdo inclui programas e pacotes de distribuição de software e aplicativos virtuais, como o App-V (Microsoft Application Virtualization). Para hierarquias de origem do System Center 2012 Configuration Manager e do System Center Configuration Manager, esse conteúdo inclui aplicativos e aplicativos virtuais do App-V. Ao migrar o conteúdo entre hierarquias, os arquivos de origem compactados migram para a hierarquia de destino.  
+##  <a name="Plan_Migrate_content"></a>规划内容迁移  
+ 你可以将内容从支持的源层次结构迁移到目标层次结构。 对于 Configuration Manager 2007 源层次结构，此内容包括软件分发包以及程序和虚拟应用程序，如 Microsoft Application Virtualization (App-V)。 对于 System Center 2012 Configuration Manager 和 System Center Configuration Manager 源层次结构，此内容包括应用程序和 App-V 虚拟应用程序。 在层次结构之间迁移内容时，压缩的源文件迁移到目标层次结构。  
 
-### <a name="packages-and-programs"></a>Pacotes e programas  
- Quando você migrar pacotes e programas, eles não foram modificados pela migração. No entanto, para migrá-los, é necessário configurar cada pacote para usar um caminho UNC para seu local de arquivo de origem. Como parte da configuração para migrar pacotes e programas, é necessário atribuir um site na hierarquia de destino para gerenciar esse conteúdo. Esse conteúdo não é migrado de um site atribuído, mas após a migração, o site atribuído acessa o local do arquivo de origem original usando o mapeamento UNC.  
+### <a name="packages-and-programs"></a>包和程序  
+ 当你迁移包和程序时，迁移过程不会对其进行修改。 但是，在迁移这些包和程序之前，必须设置每个包以便为其源文件位置使用通用命名约定 (UNC) 路径。 在进行配置以迁移包和程序的过程中，你必须在目标层次结构中分配一个站点来管理此内容。 不会从分配的站点中迁移内容，但在迁移之后，分配的站点将通过使用 UNC 映射来访问原始源文件位置。  
 
- Após migrar um pacote e programa para a hierarquia de destino e enquanto a migração da hierarquia de origem permanece ativa, é possível tornar o conteúdo disponível para clientes nessa hierarquia usando um ponto de distribuição compartilhado. Para usar um ponto de distribuição compartilhado, o conteúdo deverá permanecer acessível no ponto de distribuição do site de origem. Para obter informações sobre pontos de distribuição compartilhados, consulte [Compartilhar pontos de distribuição entre hierarquias de origem e destino](../../core/migration/planning-a-content-deployment-migration-strategy.md#About_Shared_DPs_in_Migration) em [Planejar uma estratégia de migração de implantação de conteúdo no System Center Configuration Manager](../../core/migration/planning-a-content-deployment-migration-strategy.md).  
+ 将包和程序迁移到目标层次结构之后，并且从源层次结构中进行的迁移处于活动状态时，你可以通过使用共享的分发点使内容可供该层次结构中的客户端使用。 若要使用共享的分发点，内容在源站点的分发点上必须保持为可访问。 有关共享的分发点的详细信息，请参阅[在 System Center Configuration Manager 中规划内容部署迁移策略](../../core/migration/planning-a-content-deployment-migration-strategy.md)中的[在源和目标层次结构之间共享分发点](../../core/migration/planning-a-content-deployment-migration-strategy.md#About_Shared_DPs_in_Migration)。  
 
- Para o conteúdo que foi migrado, se a versão do conteúdo for alterada na hierarquia de origem ou de destino, os clientes não poderão mais acessar o conteúdo do ponto de distribuição compartilhado na hierarquia de destino. Neste cenário, é necessário migrar o conteúdo novamente para restaurar uma versão consistente do pacote entre as hierarquias de origem e de destino. Essas informações são sincronizadas durante o ciclo de coleta de dados.  
-
-> [!TIP]  
->  Para cada pacote que você migrar, atualize o pacote na hierarquia de destino. Essa ação pode evitar problemas com a implantação do pacote nos pontos de distribuição na hierarquia de destino. No entanto, quando você atualiza um pacote no ponto de distribuição na hierarquia de destino, os clientes nessa hierarquia não poderão mais adquirir esse pacote de um ponto de distribuição compartilhado. Para atualizar um pacote na hierarquia de destino, no console do Configuration Manager, acesse a Biblioteca de Software, clique com o botão direito do mouse no pacote e selecione **Atualizar Pontos de Distribuição**. Execute essa ação para cada pacote que você migrou.  
+ 对于已迁移的内容，如果内容版本在源层次结构或目标层次结构中发生变化，则客户端将不再能够从目标层次结构中共享的分发点中访问内容。 在这种情况下，你必须重新迁移内容以还原源层次结构和目标层次结构之间一致的包版本。 此信息在数据收集周期中同步。  
 
 > [!TIP]  
->  Você pode usar o Package Conversion Manager do Microsoft System Center Configuration Manager para converter pacotes e programas em aplicativos do System Center Configuration Manager. Baixe o Package Conversion Manager do site [Centro de Download da Microsoft](http://go.microsoft.com/fwlink/p/?LinkId=212950) . Para obter mais informações, confira [Configuration Manager Package Conversion Manager](http://go.microsoft.com/fwlink/p/?LinkId=247245).  
+>  对于每个所迁移的包，请更新目标层次结构中的包。 此操作可以防止将包部署到目标层次结构中的分发点时产生问题。 但是，当更新目标层次结构分发点中的包时，该层次结构中的客户端将不再能够从共享的分发点获取该程序包。 要更新目标层次结构中的包，请在 Configuration Manager 控制台中转到“软件库”，右键单击此包，然后选择“更新分发点”。 对于每个迁移的包执行此操作。  
 
-### <a name="virtual-applications"></a>Aplicativos virtuais  
-Quando você migra pacotes do App-V de um site do Configuration Manager 2007 com suporte, o processo de migração os converte em aplicativos na hierarquia de destino. Além disso, com base nos anúncios existentes do pacote do App-V, os seguintes tipos de implantação são criados na hierarquia de destino:  
+> [!TIP]  
+>  可以使用 Microsoft System Center Configuration Manager 包转换管理器将包和程序转换成 System Center Configuration Manager 应用程序。 请从 [Microsoft Download Center（Microsoft 下载中心）](http://go.microsoft.com/fwlink/p/?LinkId=212950) 站点中下载包转换管理器。 有关详细信息，请参阅 [Configuration Manager 包转换管理器](http://go.microsoft.com/fwlink/p/?LinkId=247245)。  
 
--   Se não há nenhum anúncio, cria-se um tipo de implantação que usa as configurações de tipo de implantação padrão.  
+### <a name="virtual-applications"></a>虚拟应用程序  
+从支持的 Configuration Manager 2007 站点中迁移 App-V 包时，迁移过程会将这些包转换为目标层次结构中的应用程序。 此外，将根据 App-V 包的现有播发在目标层次结构中创建下列部署类型：  
 
--   Se houver um anúncio, será criado um tipo de implantação que usa as mesmas configurações que o anúncio do Configuration Manager 2007.  
+-   如果没有播发，则会创建一个使用默认部署类型设置的部署类型。  
 
--   Se houver vários anúncios, será criado um tipo de implantação para cada anúncio do Configuration Manager 2007 usando as configurações do anúncio em questão.  
+-   如果存在一个播发，则会创建一个使用与 Configuration Manager 2007 播发相同的设置的部署类型。  
+
+-   如果存在多个播发，则会使用该播发的设置为每个 Configuration Manager 2007 播发创建一个部署类型。  
 
 > [!IMPORTANT]  
->  Se você migrar um pacote do App-V do Configuration Manager 2007 migrado anteriormente, a migração falhará porque pacotes de aplicativos virtuais não dão suporte ao comportamento de substituição de migração. Nesse cenário, é necessário excluir o pacote de aplicativos virtuais migrado da hierarquia de destino e criar um novo trabalho de migração para migrar o aplicativo virtual.  
+>  如果迁移以前迁移过的 Configuration Manager 2007 App-V 包，则迁移将失败，原因是虚拟应用程序包不支持覆盖迁移行为。 在这种情况下，你必须从目标层次结构中删除迁移的虚拟应用程序包，然后创建一个新迁移作业来迁移虚拟应用程序。  
 
 > [!NOTE]  
->  Após a migração de um pacote do App-V, é possível usar o assistente para atualizar conteúdo para alterar o caminho de origem para os tipos de implantação do App-V. Para obter informações sobre como atualizar o conteúdo de um tipo de implantação, consulte Como gerenciar tipos de implantação em [Tarefas de gerenciamento para aplicativos do System Center Configuration Manager](../../apps/deploy-use/management-tasks-applications.md).  
+>  迁移 App-V 包之后，可以使用更新内容向导来更改 App-V 部署类型的源路径。 有关如何更新部署类型内容的详细信息，请参阅 [System Center Configuration Manager 应用程序的管理任务](../../apps/deploy-use/management-tasks-applications.md)中的“如何管理部署类型”。  
 
-Ao migrar de uma hierarquia de origem do System Center 2012 Configuration Manager ou do System Center Configuration Manager, além de aplicativos e tipos de implantação do App-V, é possível migrar objetos para o ambiente virtual do App-V. Para obter mais informações sobre ambientes do App-V, consulte [Implantando aplicativos virtuais do App-V com o System Center Configuration Manager](../../apps/get-started/deploying-app-v-virtual-applications.md).  
+从 System Center 2012 Configuration Manager 或 System Center Configuration Manager 源层次结构中进行迁移时，除了 App-V 部署类型和应用程序外，还可以迁移 App-V 虚拟环境的对象。 有关 App-V 环境的详细信息，请参阅[使用 System Center Configuration Manager 部署 App-V 虚拟应用程序](../../apps/get-started/deploying-app-v-virtual-applications.md)。  
 
-### <a name="advertisements"></a>Anúncios  
-É possível migrar anúncios de um site de origem do Configuration Manager 2007 com suporte para a hierarquia de destino usando a migração baseada em coleção. Ao atualizar um cliente, ele retém o histórico de anúncios executados anteriormente para evitar que o cliente execute novamente os anúncios migrados.  
+### <a name="advertisements"></a>播发  
+可以通过使用基于集合的迁移将播发从支持的 Configuration Manager 2007 源站点迁移到目标层次结构。 如果升级客户端，它将保留以前运行的播发的历史记录以防止客户端重新运行已迁移的播发。  
 
 > [!NOTE]  
->  Não é possível migrar anúncios para pacotes virtuais. Essa é uma exceção para a migração de anúncios.  
+>  你无法迁移虚拟包的播发。 这是播发迁移的一个例外。  
 
-### <a name="applications"></a>Aplicativos  
- É possível migrar aplicativos de uma hierarquia de origem do System Center 2012 Configuration Manager ou do System Center Configuration Manager com suporte para uma hierarquia de destino. Se você reatribuir um cliente da hierarquia de origem para a hierarquia de destino, o cliente retém o histórico de aplicativos instalados anteriormente para evitar que o cliente execute novamente o aplicativo migrado.  
+### <a name="applications"></a>应用程序  
+ 可以将应用程序从支持的 System Center 2012 Configuration Manager 或 System Center Configuration Manager 源层次结构迁移到目标层次结构中。 如果将客户端从源层次结构重新分配到目标层次结构，则客户端将保留以前安装的应用程序的历史记录以防止客户端重新运行已迁移的应用程序。  
 
-##  <a name="BKMK_MigrateCollections"></a> Planejar a migração de coleções  
- É possível migrar os critérios das coleções de uma hierarquia de origem do System Center 2012 Configuration Manager ou do System Center Configuration Manager com suporte. Para isso, use um trabalho de migração com base em objeto. Ao migrar uma coleção, você migra as regras para a coleção e não as informações sobre os membros da coleção e nem informações ou objetos relacionados a eles.  
+##  <a name="BKMK_MigrateCollections"></a>规划集合迁移  
+ 可以从支持的 System Center 2012 Configuration Manager 或 System Center Configuration Manager 源层次结构迁移集合的条件。 为此，请使用基于对象的迁移作业。 在迁移集合时，你将迁移集合的规则，而不是有关集合成员的信息，或者与集合成员相关的信息或对象。  
 
- Não há suporte para a migração do objeto de coleção quando você migra de uma hierarquia de origem do Configuration Manager 2007.  
+ 在从 Configuration Manager 2007 源层次结构中进行迁移时，不支持迁移集合对象。  
 
-##  <a name="Plan_migrate_OSD"></a> Planejar a migração de implantações de sistema operacional  
-É possível migrar os seguintes objetos de implantação de sistema operacional de uma hierarquia de origem com suporte:  
+##  <a name="Plan_migrate_OSD"></a>规划操作系统部署迁移  
+你可以从支持的源层次结构中迁移下列操作系统部署对象：  
 
--   Pacotes e imagens do sistema operacional. O caminho de origem das imagens de inicialização é atualizado para o local de imagem padrão para o Windows AIK (Kit de Instalação Administrativa do Windows) no site de destino. Estes são os requisitos e as limitações para migrar pacotes e imagens do sistema operacional:  
+-   操作系统映像和包。 启动映像的源路径在目标站点上将更新为 Windows 管理安装工具包 (Windows AIK) 的默认映像位置。 下面是迁移操作系统映像和包的要求及限制：  
 
-    -   Para migrar os arquivos de imagem com êxito, a conta do computador do servidor do Provedor de SMS para o site de nível superior da hierarquia de destino deve ter a permissão de **Ler** e **Gravar** para os arquivos de origem da imagem para o local do Windows AIK dos sites de origem.  
+    -   要成功迁移映像文件，目标层次结构顶层站点的 SMS 提供程序服务器的计算机帐户必须具有源站点 Windows AIK 位置的映像源文件的“读取”和“写入”权限。  
 
-    -   Ao migrar um pacote de instalação do sistema operacional, garanta que a configuração do pacote nos pontos do site de origem para a pasta contenha o arquivo WIM e não para o próprio arquivo WIM. Se os pontos de pacote de instalação apontam para o arquivo WIM, a migração do pacote de instalação falha.  
+    -   在迁移操作系统安装包时，请确保源站点上包的配置指向包含 WIM 文件的文件夹，而不是指向 WIM 文件本身。 如果安装包指向 WIM 文件，安装包的迁移将失败。  
 
-    -   Quando você migra um pacote de imagem de inicialização de um site de origem do Configuration Manager 2007, a ID do pacote não é mantida no site de destino. Consequentemente, os clientes na hierarquia de destino não podem usar os pacotes de imagem de inicialização que estão disponíveis em pontos de distribuição compartilhados.  
+    -   从 Configuration Manager 2007 源站点中迁移启动映像包时，此包的包 ID 不会保留在目标站点中。 结果是，目标层次结构中的客户端无法使用在共享的分发点上可用的启动映像包。  
 
--   Sequências de tarefas. Ao migrar uma sequência de tarefas que contém uma referência ao pacote de instalação do cliente, essa referência é substituída por uma referência ao pacote de instalação de cliente da hierarquia de destino.  
+-   任务序列。 在迁移包含对客户端安装包的引用的任务序列时，会将该引用替换为对目标层次结构的客户端安装包的引用。  
 
     > [!NOTE]  
-    >  Quando você migra uma sequência de tarefas, o Configuration Manager pode migrar objetos que não são necessários na hierarquia de destino. Esses objetos incluem imagens de inicialização e pacotes de instalação de cliente do Configuration Manager 2007.  
+    >  在迁移任务序列时，Configuration Manager 可能会迁移目标层次结构中不需要的对象。 这些对象包括启动映像和 Configuration Manager 2007 客户端安装包。  
 
--   Drivers e pacotes de driver. Quando você migra os pacotes de driver, a conta de computador do provedor de SMS na hierarquia de destino deve ter controle total para a origem do pacote.
+-   驱动程序和驱动程序包。 在迁移驱动程序包时，目标层次结构中 SMS 提供程序的计算机帐户必须可以完全控制包源。
 
-##  <a name="Plan_Migrate_Compliance_settings"></a> Planejar a migração do gerenciamento de configuração desejado  
-É possível migrar itens de configuração e as linhas de base de configuração.  
-
-> [!NOTE]  
->  Não há suporte para migração de itens de configuração não interpretados das hierarquias de origem do Configuration Manager 2007. Não é possível migrar ou importar esses itens de configuração para a hierarquia de destino. Para obter informações sobre itens de configuração não interpretados, consulte “Item de configuração não interpretado” no tópico [Sobre itens de configuração no gerenciamento de configuração desejado](http://go.microsoft.com/fwlink/?LinkId=103846) na biblioteca de documentação do Configuration Manager 2007.  
-
-É possível importar Pacotes de configuração do Configuration Manager 2007. O processo de importação converte automaticamente os pacotes de configuração para serem compatíveis com o System Center Configuration Manager.  
-
-##  <a name="Plan_migrate_Boundaries"></a> Planejar a migração de limites  
- É possível migrar os limites entre hierarquias. Quando você migra limites do Configuration Manager 2007, cada limite do site de origem é migrado ao mesmo tempo e é adicionado a um novo grupo de limites que é criado na hierarquia de destino. Quando você migra limites de uma hierarquia do System Center 2012 Configuration Manager ou do System Center Configuration Manager, cada limite selecionado é adicionado a um novo grupo de limites na hierarquia de destino.  
-
- Cada grupo de limites criado automaticamente está habilitado para localização de conteúdo, mas não para atribuição de site. Isso impede que os limites sejam sobrepostos para a atribuição de site entre as hierarquias de origem e de destino. Quando você migra de um site de origem do Configuration Manager 2007, isso ajuda a impedir que novos clientes do Configuration Manager 2007 instalados sejam atribuídos incorretamente à hierarquia de destino. Por padrão, os clientes do System Center Configuration Manager não são atribuídos automaticamente a sites do Configuration Manager 2007.  
-
- Durante a migração, se você compartilhar um ponto de distribuição com a hierarquia de destino, todos os limites associados a essa distribuição serão automaticamente migrados para a hierarquia de destino. Na hierarquia de destino, a migração cria um novo grupo de limites somente leitura para cada ponto de distribuição compartilhado. Se você alterar os limites do ponto de distribuição na hierarquia de destino, o grupo de limites da hierarquia de destino será atualizado com essas alterações durante o ciclo seguinte de coleta de dados.  
-
-##  <a name="Plan_Migrate_reports"></a> Planejar a migração de relatórios  
-O Configuration Manager não dá suporte à migração de relatórios. Em vez disso, use o Construtor de Relatórios do SQL Server Reporting Services para exportar os relatórios da hierarquia de origem e, depois, importá-los na hierarquia de destino.  
+##  <a name="Plan_Migrate_Compliance_settings"></a>规划所需的配置管理的迁移  
+你可以迁移配置项目和配置基线。  
 
 > [!NOTE]  
->  Como há alterações no esquema dos relatórios entre o Configuration Manager 2007 e o System Center Configuration Manager, teste cada relatório que você importar de uma hierarquia do Configuration Manager 2007 para garantir que ele funcione conforme o esperado.  
+>  迁移不支持 Configuration Manager 2007 源层次结构中未解释的配置项目。 你无法将这些配置项目迁移或导入到目标层次结构。 有关未解释的配置项目的详细信息，请参阅 Configuration Manager 2007 文档库的[关于所需的配置管理中的配置项目](http://go.microsoft.com/fwlink/?LinkId=103846)主题中的“未解释的配置项目”。  
 
-Para obter mais informações sobre relatórios, consulte [Relatórios no System Center Configuration Manager](../../core/servers/manage/reporting.md).  
+可以导入 Configuration Manager 2007 配置包。 导入过程会自动转换配置包以与 System Center Configuration Manager 兼容。  
 
-##  <a name="Plan_Migrate_Org_Folders"></a> Planejar a migração de pastas organizacionais e de pesquisa  
- Você pode migrar pastas organizacionais e de pesquisa de uma hierarquia de origem com suporte para uma hierarquia de destino. Além disso, de uma hierarquia de origem do System Center 2012 Configuration Manager ou do System Center Configuration Manager, é possível migrar os critérios de uma pesquisa salva para uma hierarquia de destino.  
+##  <a name="Plan_migrate_Boundaries"></a>规划边界迁移  
+ 你可以在层次结构之间迁移边界。 从 Configuration Manager 2007 中迁移边界时，源站点中的每个边界会同时迁移，而且将添加到在目标层次结构中创建的新边界组。 从 System Center 2012 Configuration Manager 或 System Center Configuration Manager 层次结构中迁移边界时，你选择的每个边界均将添加到目标层次结构中的新边界组。  
 
- Por padrão, o processo de migração mantém suas estruturas de pasta de pesquisa e pasta administrativa para os objetos e as coleções quando você realiza a migração. No entanto, no assistente para Criar Trabalho de Migração, na página **Configurações**, você pode configurar um trabalho de migração para que não migre a estrutura organizacional de objetos ao desmarcar a caixa de seleção dessa opção. As estruturas organizacionais das coleções são sempre mantidas.  
+ 将为内容位置启用自动创建的每个边界组，但不会为站点分配这样做。 这可以防止在源和目标层次结构之间出现站点分配的重叠边界。 从 Configuration Manager 2007 源站点中迁移有助于防止新安装的 Configuration Manager 2007 客户端错误地分配到目标层次结构。 默认情况下，System Center Configuration Manager 客户端不会自动分配到 Configuration Manager 2007 站点。  
 
- Uma exceção a isso é uma pasta de pesquisa que contém aplicativos virtuais. Quando um pacote do App-V é migrado, ele é transformado em um aplicativo no System Center Configuration Manager. Após a migração da pasta de pesquisa, apenas os pacotes restantes são encontrados, e a pasta de pesquisa não é capaz de localizar o pacote de App-V em virtude dessa conversão para um aplicativo ocorrida quando ele é migrado.  
+ 在迁移过程中，如果与目标层次结构共享分发点，则与该分发点关联的任何边界都会自动迁移到目标层次结构。 在目标层次结构中，迁移过程会为每个共享的分发点创建一个新的只读边界组。 如果更改源层次结构中的分发点的边界，则在下次数据收集周期中，会使用这些更改来更新目标层次结构中的边界组。  
 
- Quando migra uma pesquisa salva de uma hierarquia de origem do System Center 2012 Configuration Manager ou do System Center Configuration Manager, você migra os critérios da pesquisa, e não as informações sobre os resultados da pesquisa. A migração de uma pesquisa salva não é aplicável de um site de origem do Configuration Manager 2007.  
-
-##  <a name="Plan_Migrate_AI"></a> Planejar a migração de personalizações do Asset Intelligence  
- Você pode migrar personalizações do Asset Intelligence de uma hierarquia de origem com suporte para uma hierarquia de destino. Não há alterações significativas na estrutura das personalizações do Asset Intelligence entre o Configuration Manager 2007 e o System Center Configuration Manager.  
+##  <a name="Plan_Migrate_reports"></a>规划报表迁移  
+Configuration Manager 不支持迁移报表。 实际上，它使用 SQL Server Reporting Services Report Builder 从源层次结构中导出报表，然后将它们导入到目标层次结构。  
 
 > [!NOTE]  
->  O System Center Configuration Manager não dá suporte à migração de objetos do Asset Intelligence de um site do Configuration Manager 2007 que estiver usando o Asset Intelligence Service 2.0 (AIS 2.0).  
+>  由于对 Configuration Manager 2007 和 System Center Configuration Manager 之间的报表进行了架构上的更改，请测试从 Configuration Manager 2007 层次结构导入的每个报表，以确保它们正常工作。  
 
-##  <a name="Plan_Migrate_SWM_Rules"></a> Planejar a migração de personalizações de regras de medição de software  
- Não há alterações significativas na medição de software entre o Configuration Manager 2007 e o System Center Configuration Manager. Você pode migrar suas regras de medição de software de uma hierarquia de origem com suporte para uma hierarquia de destino.  
+有关报表的详细信息，请参阅 [System Center Configuration Manager 中的报表](../../core/servers/manage/reporting.md)。  
 
- Por padrão, as regras de medição de software que você migra para uma hierarquia de destino não são associadas a um site específico da hierarquia de destino e, em vez disso, são aplicadas a todos os clientes da hierarquia. Para aplicar uma regra de medição de software a clientes em um site específico, você deve editar a regra de medição depois que ela é migrada.  
+##  <a name="Plan_Migrate_Org_Folders"></a>规划组织文件夹和搜索文件夹的迁移  
+ 可以将组织文件夹和搜索文件夹从支持的源层次结构迁移到目标层次结构。 此外，可以将保存的搜索条件从 System Center 2012 Configuration Manager 或 System Center Configuration Manager 源层次结构迁移到目标层次结构中。  
 
+ 默认情况下，在迁移时迁移过程将为对象和集合保持搜索文件夹和管理文件夹的结构。 但是，在“创建迁移作业向导”的“设置”页上，可以将迁移作业设置为不迁移对象的组织结构（取消勾选此选项的框）。 将始终保持集合的组织结构。  
+
+ 但包含虚拟应用程序的搜索文件夹是一个例外。 在迁移 App-V 包时，会将 App-V 包转换为 System Center Configuration Manager 中的应用程序。 在迁移搜索文件夹之后，只会查找剩余的包，而且搜索文件夹无法查找 App-V 包，因为在迁移 App-V 包时已将此包转换为应用程序。  
+
+ 从 System Center 2012 Configuration Manager 或 System Center Configuration Manager 源层次结构中迁移已保存的搜索时，将迁移搜索的条件，而不是有关搜索结果的信息。 迁移已保存的搜索并不适用于 Configuration Manager 2007 源站点。  
+
+##  <a name="Plan_Migrate_AI"></a>规划资产智能自定义项的迁移  
+ 可以将资产智能的自定义从支持的源层次结构迁移到目标层次结构。 在 Configuration Manager 2007 与 System Center Configuration Manager 之间，资产智能自定义的结构并无显著变化。  
+
+> [!NOTE]  
+>  System Center Configuration Manager 不支持从使用 Asset Intelligence Service 2.0 (AIS 2.0) 的 Configuration Manager 2007 站点中迁移资产智能对象。  
+
+##  <a name="Plan_Migrate_SWM_Rules"></a>规划软件计数规则自定义的迁移  
+ 在 Configuration Manager 2007 与 System Center Configuration Manager 之间，软件计数并无显著变化。 可以将软件计数规则从支持的源层次结构迁移到目标层次结构。  
+
+ 默认情况下，迁移到目标层次结构的软件计数规则不会与目标层次结构中的特定站点关联，而是应用到层次结构中的所有客户端。 若要将软件计数规则应用到特定站点中的客户端，必须在迁移计数规则后编辑它。  

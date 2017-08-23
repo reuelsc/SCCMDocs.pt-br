@@ -1,269 +1,263 @@
 ---
-title: Alta disponibilidade | Microsoft Docs
-description: "Aprenda a implantar o System Center Configuration Manager usando as opções que mantêm um alto nível de serviço disponível."
+title: "高可用性 | Microsoft Docs"
+description: "了解如何使用维持高可用性服务的选项部署 System Center Configuration Manager。"
 ms.custom: na
 ms.date: 10/06/2016
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
-ms.technology:
-- configmgr-other
+ms.technology: configmgr-other
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 1a38421d-24c1-4fef-bf6c-42fce53109ac
-caps.latest.revision: 4
+caps.latest.revision: "4"
 author: Brenduns
 ms.author: brenduns
 manager: angrobe
-translationtype: Human Translation
-ms.sourcegitcommit: 1a4a9da88caba55d9e340c7fb1f31f4e3b957f3e
 ms.openlocfilehash: d3e9afb90cdc85bc7299626b642c52be659e3bdf
-
+ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
+ms.translationtype: HT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 08/07/2017
 ---
-# <a name="high-availability-options-for-system-center-configuration-manager"></a>Opções de alta disponibilidade para o System Center Configuration Manager
+# <a name="high-availability-options-for-system-center-configuration-manager"></a>System Center Configuration Manager 的高可用性选项
 
-*Aplica-se a: System Center Configuration Manager (Branch Atual)*
-
-
-
-É possível implantar o System Center Configuration Manager usando opções que mantêm um alto nível de serviço disponível.   
-
-Opções que dão suporte à alta disponibilidade:   
-
--   Os sites oferecem suporte a várias instâncias de servidores do sistema de site que prestam serviços importantes aos clientes.  
-
--   Os sites de administração central e sites primários oferecem suporte ao backup do banco de dados do site. O banco de dados do site contêm todas as configurações para sites e clientes, e é compartilhado entre sites em uma hierarquia que contém um site de administração central.  
-
--   As opções de recuperação de site interna podem reduzir o tempo de inatividade do servidor e incluem opções avançadas que simplificam a recuperação quando você tem uma hierarquia com um site de administração central.  
-
--   Os clientes podem corrigir automaticamente problemas típicos sem intervenção administrativa.  
-
--   Os sites geram alertas sobre clientes que falham ao enviar dados recentes, os quais alertam os administradores sobre possíveis problemas.  
-
--   O Configuration Manager fornece vários relatórios internos que permitem identificar problemas e tendências antes que se tornem problemas para as operações do cliente ou do servidor.  
-
- O Configuration Manager não fornece um serviço em tempo real, e você deve esperar que ele opere com alguma latência de dados. Portanto, é incomum para a maioria dos cenários que envolvem um interrupção temporária de serviço se tornarem um problema crítico. Quando você tiver configurado sites e hierarquias tendo a alta disponibilidade em mente, o tempo de inatividade pode ser minimizado, a autonomia das operações mantida e um alto nível de serviço fornecido.  
-
- Por exemplo, os clientes do Configuration Manager geralmente operam de forma autônoma usando agendamentos conhecidos e configurações para operações, e agendamento para enviar dados ao site para processamento.  
-
--   Quando os clientes não podem entrar em contato com o site, eles armazenam os dados em cache para serem enviados até que eles possam contatar o site.  
-
--   Os clientes que não podem entrar em contato com o site continuam a operar usando os últimos agendamentos conhecidos e as informações em cache, como um aplicativo baixado anteriormente que eles devem executar ou instalar, até que eles possam contatar o site e receber políticas novas.  
-
--   O site monitora seus sistemas de site e clientes para atualizações de status periódicas e pode gerar alertas quando há falhas no registro.  
-
--   Relatórios internos fornecem informações para operações contínuas, bem como operações e tendências históricas. O Configuration Manager dá suporte a mensagens baseadas em estado que fornecem informações quase em tempo real para operações contínuas.  
-
-  Use as informações neste tópico com as informações nos seguintes artigos:
--   [Hardware recomendado](../../core/plan-design/configs/recommended-hardware.md)
--   [Sistemas operacionais com suporte para servidores de sistema de sites](../../core/plan-design/configs/supported-operating-systems-for-site-system-servers.md)  
-
--   [Pré-requisitos de sites e do sistema de sites](../../core/plan-design/configs/site-and-site-system-prerequisites.md)
+*适用范围：System Center Configuration Manager (Current Branch)*
 
 
-##  <a name="a-namebkmksnha-high-availability-for-sites-and-hierarchies"></a><a name="bkmk_snh"></a> Alta disponibilidade para sites e hierarquias  
- **Use um cluster do SQL Server para hospedar o banco de dados do site:**  
 
- Ao usar um cluster do SQL Server para o banco de dados em um site de administração central ou site primário, você usa o suporte a failover embutido no SQL Server.  
+可以使用维持高可用性服务的选项部署 System Center Configuration Manager。   
 
- Os sites secundários não podem usar um cluster do SQL Server e não oferecem suporte ao backup nem à restauração de seu banco de dados do site. Recupere um site secundário reinstalando-o do site primário pai.  
+支持高可用性的选项：   
 
- **Use o grupo de disponibilidade AlwaysOn do SQL Server para hospedar o banco de dados do site:**  
+-   站点支持向客户端提供重要服务的站点系统服务器的多个实例。  
 
- A partir da versão 1602, você pode usar grupos de disponibilidade AlwaysOn do SQL Server para hospedar o banco de dados do site em sites primários e o site de administração central como uma solução de alta disponibilidade e de recuperação de desastres. Para mais informações, consulte [AlwaysOn do SQL Server para um banco de dados de site altamente disponível para o System Center Configuration Manager](../../core/servers/deploy/configure/sql-server-alwayson-for-a-highly-available-site-database.md).  
+-   管理中心站点和主站点支持站点数据库备份。 站点数据库包含站点和客户端的所有配置，并在包含管理中心站点的层次结构中的站点之间共享。  
 
- **Implante uma hierarquia de sites com um site de administração central e um ou mais sites primários filho:**  
+-   内置站点恢复选项可以减少服务器停机时间，并且包含高级选项，当你具有包含管理中心站点的层次结构时，这些选项可以简化恢复。  
 
- Esta configuração pode fornecer tolerância a falhas quando os sites gerenciam segmentos sobrepostos da sua rede. Além disso, essa configuração oferece uma opção de recuperação adicional para usar as informações no banco de dados compartilhado disponível em outro site, para recriar o banco de dados do site no site recuperado. Você pode usar essa opção para substituir um backup indisponível ou com falha do banco de dados de sites com falha.  
+-   客户端可以自动修正典型问题，而无需管理员干预。  
 
- **Crie backups regulares em sites de administração central e sites primários:**  
+-   站点会生成关于无法提交最新数据的客户端的警报，从而警告管理员注意潜在问题。  
 
- Ao criar e testar um backup regular do site, você pode verificar se tem os dados necessários para recuperar um site, e a experiência para recuperar um site no período mínimo de tempo.  
+-   Configuration Manage 提供了一些内置报表，使用户能够在发生服务器或客户端操作问题之前找出问题和趋势。  
 
- **Instale diversas instâncias das funções do sistema de site:**  
+ Configuration Manager 未提供实时服务，操作时肯定会有一些数据延迟。 因此，大多数涉及临时性服务中断的情况很少会转变为严重问题。 当你考虑着高可用性配置了你的站点和层次结构之后，可以最大程度地降低停机时间，保持操作自动化并提供高水平的服务。  
 
- Ao instalar diversas instâncias de funções críticas do sistema de site, como o ponto de gerenciamento e o ponto de distribuição, você fornece pontos de contato redundantes para clientes caso um servidor do sistema de site específico esteja offline.  
+ 例如，Configuration Manager 客户端通常使用已知的操作计划和配置以及用于将数据提交至站点以进行处理的计划自动运行。  
 
- **Instale várias instâncias do Provedor de SMS no site:** o Provedor de SMS fornece o ponto de contato administrativo para um ou mais consoles do Configuration Manager. Ao instalar vários Provedores de SMS, você pode fornecer redundância para pontos de contato para administrar o site e a hierarquia.  
+-   当客户端无法联系站点时，它们会缓存要提交的数据，直到能够与站点联系为止。  
 
-##  <a name="a-namebkmkssra-high-availability-for-site-system-roles"></a><a name="bkmk_ssr"></a> Alta disponibilidade para funções do sistema de sites  
- Em cada site, você implanta funções do sistema de site para fornecer os serviços que você deseja que os clientes usem nesse site. O banco de dados do site contém as informações de configuração do site e de todos os clientes. Use uma ou mais das opções disponíveis para fornecer alta disponibilidade do banco de dados do site, e a recuperação do site e o banco de dados do site se necessário.  
+-   无法联系站点的客户端会使用上一次已知的计划和缓存信息（如以前下载的必须运行或安装的应用程序）继续运行，直到它们能够联系站点以及接收新策略为止。  
 
- **Redundância para funções importantes do sistema de sites:**  
+-   站点将监视其站点系统和客户端，看是否有定期状态更新，并且可以在无法注册这些内容时生成警报。  
 
--   Ponto de serviços Web do Catálogo de Aplicativos  
+-   通过内置报表，可以深入了解正在进行的操作以及历史操作和趋势。 Configuration Manager 支持基于状态的消息，这些消息提供关于正在进行的操作的准实时信息。  
 
--   Ponto de sites da Web do catálogo de aplicativos  
+  将本主题中的信息和以下文章中的信息一起使用：
+-   [推荐硬件](../../core/plan-design/configs/recommended-hardware.md)
+-   [站点系统服务器支持的操作系统](../../core/plan-design/configs/supported-operating-systems-for-site-system-servers.md)  
 
--   Ponto de distribuição  
-
--   Ponto de gerenciamento  
-
--   Ponto de atualização de software  
-
--   Ponto de migração de estado  
-
- Você pode instalar diversas instâncias da função do ponto do Reporting Services para fornecer redundância para relatar sobre sites e clientes.
-
- Você pode usar o PowerShell para instalar a função do sistema de sites do ponto de atualização de software em um cluster NLB (Balanceamento de Carga de Rede) do Windows para dar suporte a failover  
+-   [站点和站点系统先决条件](../../core/plan-design/configs/site-and-site-system-prerequisites.md)
 
 
- **Backup do site interno:**  
+##  <a name="bkmk_snh"></a>站点和层次结构的高可用性  
+ **使用 SQL Server 群集托管站点数据库：**  
 
- O Configuration Manager inclui uma tarefa de backup interno para ajudá-lo a fazer backup do site e das informações críticas regularmente. Além disso, o assistente de instalação do Configuration Manager oferece suporte a ações de restauração do site para ajudá-lo a restaurar um site para operações.  
+ 对管理中心站点或主站点上的数据库使用 SQL Server 群集时，可以使用 SQL Server 中的内置故障转移支持。  
 
- **Como publicar no Active Directory Domain Services e no DNS:**  
+ 辅助站点无法使用 SQL Server 群集，并且不支持备份或还原其站点数据库。 可以通过从其父主站点中重新安装辅助站点来恢复辅助站点。  
 
- Você pode configurar cada site para publicar dados sobre servidores do sistema de site e serviços nos Serviços de Domínio Active Directory e no DNS. Isso permite que os clientes identifiquem o servidor mais acessível na rede e identifiquem quando novos servidores do sistema de site que podem fornecer serviços importantes, como pontos de gerenciamento, estão disponíveis.  
+ **使用 SQL Server AlwaysOn 可用性组托管站点数据库：**  
 
- **Provedor de SMS e console do Configuration Manager:**  
+ 从版本 1602 开始，可以使用 SQL Server AlwaysOn 可用性组以承载主站点和管理中心站点上的站点数据库作为高可用性和灾难恢复解决方案。 有关详细信息，请参阅[通过 SQL Server AlwaysOn 实现适用于 System Center Configuration Manager 的高可用性站点数据库](../../core/servers/deploy/configure/sql-server-alwayson-for-a-highly-available-site-database.md)。  
 
- O Configuration Manager dá suporte à instalação de vários Provedores de SMS, cada um em um computador separado, para assegurar diversos pontos de acesso para o console do Configuration Manager. Isso garante que se um computador do Provedor de SMS estiver offline, você continuará com a capacidade de exibir e reconfigurar sites e clientes do site do Configuration Manager.  
+ **使用管理中心站点以及一个或多个子主站点来部署站点层次结构：**  
 
- Quando um console do Configuration Manager se conecta a um site, ele se conecta a uma instância do Provedor de SMS desse site. A instância do Provedor de SMS é selecionada de forma não determinística. Se o Provedor de SMS selecionado não estiver disponível, você terá as seguintes opções:  
+ 如果你的站点管理网络的重叠段，则此配置可以提供容错功能。 此外，此配置提供了其他恢复选项，以使用其他站点中可用的共享数据库中的信息在恢复的站点中重建站点数据库。 可以使用此选项替换故障站点数据库的故障备份或不可用备份。  
 
--   Reconectar o console ao site. Cada solicitação de conexão nova é atribuída de forma não determinística a uma instância do Provedor de SMS e é possível que a nova conexão seja atribuída a uma instância disponível.  
+ **在管理中心站点和主站点创建定期备份：**  
 
--   Conecte o console a um site diferente do site do Configuration Manager e gerencie a configuração dessa conexão. Isso apresenta um ligeiro atraso das alterações de configuração de não mais do que alguns minutos. Depois que o Provedor de SMS do site estiver online, você poderá reconectar o console do Configuration Manager diretamente ao site que deseja gerenciar.  
+ 如果创建和测试定期站点备份，则可以确保具有恢复站点所需的数据，以及获得用最少时间恢复站点的体验。  
 
- Você pode instalar o console do Configuration Manager em diversos computadores para uso por usuários administrativos. Cada Provedor de SMS oferece suporte a conexões de vários consoles do Configuration Manager.  
+ **安装站点系统角色的多个实例：**  
 
- **Ponto de gerenciamento:**  
+ 在安装关键站点系统角色（如管理点和分发点）的多个实例时，你可以为客户端提供多余的联系点，以防特定站点系统服务器脱机。  
 
- Instale vários pontos de gerenciamento em cada site primário e permita que os sites publiquem dados do site na sua infraestrutura do Active Directory e no DNS.  
+ **在站点上安装多个 SMS 提供程序实例：**SMS 提供程序为一个或多个 Configuration Manager 控制台提供管理联系点。 安装多个 SMS 提供程序时，可以提供联系点冗余以管理你的站点和层次结构。  
 
- Vários pontos de gerenciamento ajudam a equilibrar a carga do uso de qualquer ponto de gerenciamento único por vários clientes. Além disso, você pode instalar uma ou mais réplicas de banco de dados para pontos de gerenciamento para diminuir as operações com uso intensivo de CPU do ponto de gerenciamento e aumentar a disponibilidade dessa função crítica do sistema de site  
+##  <a name="bkmk_ssr"></a>站点系统角色的高可用性  
+ 在每个站点中，你可以部署站点系统角色，以提供想要客户端在该站点上使用的服务。 站点数据库包含站点和所有客户端的配置信息。 使用一个或多个可用选项提供站点数据库高可用性，并在需要时恢复站点和站点数据库。  
 
- Como você pode instalar somente um ponto de gerenciamento em um site secundário, o qual deve estar localizado no servidor do site secundário, os pontos de gerenciamento em sites secundários não são considerados como tendo uma configuração de alta disponibilidade.  
+ **重要站点系统角色的冗余：**  
+
+-   应用程序目录 Web 服务点  
+
+-   应用程序目录网站点  
+
+-   分发点  
+
+-   管理点  
+
+-   软件更新点  
+
+-   状态迁移点  
+
+ 可以安装 Reporting Services 点的多个实例以提供用于报告站点和客户端的冗余。
+
+ 可以使用 PowerShell 在 Windows 网络负载平衡 (NLB) 群集上安装软件更新点站点系统角色以提供故障转移支持  
+
+
+ **内置站点备份：**  
+
+ Configuration Manager 包括内置备份任务，以帮助你按照定期计划备份站点和关键信息。 此外，Configuration Manager 安装向导支持站点还原操作，以帮助你还原站点操作。  
+
+ **发布到 Active Directory 域服务和 DNS：**  
+
+ 你可以将每个站点配置为将有关站点系统服务器和服务的数据发布到 Active Directory 域服务和 DNS。 这样，客户端就可以确定网络上大多数可访问的服务器，以及确定可以提供重要服务的新站点系统服务器（如管理点）的可用时间。  
+
+ **SMS 提供程序和 Configuration Manager 控制台：**  
+
+ Configuration Manager 支持将多个 SMS 提供程序中的每个提供程序安装在单独的计算机上，以确保 Configuration Manager 控制台拥有多个访问点。 这可以确保在一台 SMS 提供程序计算机脱机的情况下你仍然能够查看和重新配置 Configuration Manager 站点和客户端。  
+
+ 当 Configuration Manager 控制台连接至站点时，它会连接到该站点中的 SMS 提供程序实例。 系统不确定地选择了 SMS 提供程序的实例。 如果所选的 SMS 提供程序不可用，则可以选择：  
+
+-   将控制台重新连接到该站点。 系统不确定地为每个新连接请求分配了 SMS 提供程序的实例，并且可能会为新连接分配可用实例。  
+
+-   将控制台连接到不同的 Configuration Manager 站点，并管理该连接中的配置。 这会使配置更改略微延迟，延迟时间不超过几分钟。 当站点的 SMS 提供程序处于联机状态时，你可以将 Configuration Manager 控制台直接重新连接到你想要管理的站点。  
+
+ 你可以在多个计算机上安装 Configuration Manager 控制台以供管理用户使用。 每个 SMS 提供程序都支持从多个 Configuration Manager 控制台的连接。  
+
+ **管理点：**  
+
+ 在每个主站点上安装多个管理点，并使站点能够将站点数据发布到 Active Directory 基础结构和 DNS。  
+
+ 多个管理点有助于通过多个客户端对任何单个管理点的使用进行负载平衡。 此外，你可以为管理点安装一个或多个数据库副本，以减少管理点中需要使用大量 CPU 资源的操作并提高此关键站点系统角色的可用性。  
+
+ 因为你只能在辅助站点（必须位于辅助站点服务器上）中安装一个管理点，所以不认为辅助站点中的管理点具有高可用配置。  
 
 > [!NOTE]  
->  Os dispositivos gerenciados pelo gerenciamento local de dispositivos móveis se conectam apenas a um ponto de gerenciamento em um site primário. O ponto de gerenciamento é atribuído pelo Configuration Manager ao dispositivo móvel durante o registro e não se altera. Quando você instala vários pontos de gerenciamento e habilita mais de um para dispositivos móveis, o ponto de gerenciamento que está atribuído a um cliente de dispositivo móvel é não determinístico.  
+>  通过本地移动设备管理管理的设备仅连接到主站点上的一个管理点。 在注册过程中，管理点被 Configuration Manager 分配给移动设备，并且在以后不会发生更改。 安装多个管理点并为移动设备启用多个管理点时，分配给移动设备的管理点具有不确定性。  
 >   
->  Se o ponto de gerenciamento usado por um cliente de dispositivo móvel ficar indisponível, você deverá resolver o problema nesse ponto de gerenciamento ou apagar o dispositivo móvel e registrá-lo novamente para que ele possa ser atribuído a um ponto de gerenciamento operacional habilitado para dispositivos móveis.  
+>  如果移动设备客户端使用的管理点变得不可用，则必须解决此管理点问题，或者必须擦除移动设备并重新注册移动设备，以便它可以分配给为移动设备启用的操作管理点。  
 
- **Ponto de distribuição:**  
+ **分发点：**  
 
- Instale vários pontos de distribuição e implante conteúdo em vários pontos de distribuição. Você pode configurar grupos de limite de sobreposição para o local do conteúdo para assegurar que os clientes em cada sub-rede possam acessar uma implantação de dois ou mais pontos de distribuição. Finalmente, considere a possibilidade de configurar um ou mais pontos de distribuição como locais de fallback para o conteúdo.  
+ 安装多个分发点，并将内容部署到多个分发点。 你可以为内容位置配置重叠边界组，以确保每个子网上的客户端都可以从两个或更多个分发点访问部署。 最后，请考虑将一个或多个分发点配置为内容回退位置。  
 
- Para obter mais informações sobre locais de fallback, consulte [Gerenciar conteúdo e infraestrutura de conteúdo do System Center Configuration Manager](../../core/servers/deploy/configure/manage-content-and-content-infrastructure.md).  
+ 有关内容回退位置的详细信息，请参阅[管理 System Center Configuration Manager 的内容和内容基础结构](../../core/servers/deploy/configure/manage-content-and-content-infrastructure.md)。  
 
- **Pontos de serviços Web do catálogo de aplicativos e ponto de sites da Web do catálogo de aplicativos:**  
+ **应用程序目录 Web 服务点和应用程序目录网站点：**  
 
- É possível instalar diversas instâncias de cada função do sistema de site e implantar uma de cada no mesmo computador do sistema de site para obter um melhor desempenho.  
+ 可以安装每个站点系统角色的多个实例，但为了获得最佳性能，请在相同的站点系统计算机上部署每个角色的一个实例。  
 
- Cada função do sistema de site do catálogo de aplicativos fornece as mesmas informações que outras instâncias da função do sistema de site, independentemente da localização dessa função de servidor do site na hierarquia. Portanto, quando um cliente fizer uma solicitação ao catálogo de aplicativos e tiver sido definida a configuração do cliente do dispositivo Ponto de sites da Web do catálogo de aplicativos padrão para Detectar automaticamente, o cliente poderá ser direcionado a uma instância disponível. É dada preferência aos servidores do sistema de sites do catálogo de aplicativos local, de acordo com o local de rede atual do cliente.  
+ 每个应用程序目录站点系统角色都提供了与该站点系统角色的其他实例相同的信息，而不管此站点服务器角色在层次结构中处于哪个位置。 因此，如果客户端提出对应用程序目录的请求，而你为“自动检测”配置了“默认应用程序目录网站点”设备客户端设置，则可以将客户端定向到可用的实例。 根据客户端的当前网络位置，会优先选择本地应用程序目录站点系统服务器。  
 
- Para obter mais informações sobre esta configuração de cliente e como a detecção automática funciona, veja a seção [Agente de Computador](../../core/clients/deploy/about-client-settings.md#computer-agent) no tópico [Sobre configurações do cliente no System Center Configuration Manager](../../core/clients/deploy/about-client-settings.md).  
+ 有关此客户端设置和自动检测如何工作的详细信息，请参阅[关于 System Center Configuration Manager 中的客户端设置](../../core/clients/deploy/about-client-settings.md)主题中的[计算机代理](../../core/clients/deploy/about-client-settings.md#computer-agent)部分。  
 
-##  <a name="a-namebkmkclienta-high-availability-for-clients"></a><a name="bkmk_client"></a> Alta disponibilidade para clientes  
- **As operações do cliente são autônomas:**  
+##  <a name="bkmk_client"></a>客户端的高可用性  
+ **客户端操作具有自主性：**  
 
- A autonomia do cliente do Configuration Manager inclui o seguinte:  
+ Configuration Manager 客户端自主性包括以下内容：  
 
--   Os clientes não exigem contato contínuo com servidores do sistema de site específicos. Eles usam configurações conhecidas para realizar ações predefinidas em um agendamento.  
+-   客户端不需要与任何特定站点系统服务器不断联系。 它们使用已知的配置按计划执行预配置的操作。  
 
--   Os clientes podem usar qualquer instância disponível de uma função do sistema de site que preste serviços para clientes, e eles tentam contatar servidores conhecidos até que um servidor disponível seja localizado.  
+-   客户端可以使用向其提供服务的站点系统角色的任何可用实例，并且将尝试联系已知服务器，直到找到可用服务器为止。  
 
--   Os clientes podem executar implantações de inventário, software e ações agendadas semelhantes independente de contato direto com servidores do sistema de site.  
+-   客户端可以运行清单、软件部署以及与站点系统服务器直接联系无关的类似计划操作。  
 
--   Os clientes configurados para usar um ponto de status de fallback podem enviar detalhes ao ponto de status de fallback quando não podem se comunicar com um ponto de gerenciamento.  
+-   配置为使用回退状态点的客户端在无法与管理点通信时可以将详细信息提交到回退状态点。  
 
- **Os clientes podem corrigir a si mesmos:**  
+ **客户端可以修复自身：**  
 
- Os clientes corrigem automaticamente a maioria dos problemas típicos sem intervenção administrativa direta:  
+ 客户端可以自动修正大多数典型问题而无需管理员直接干预：  
 
--   Periodicamente, os clientes autoavaliam seu status e têm iniciativa para corrigir problemas típicos usando um cache local de etapas de correção e arquivos de origem para reparos.  
+-   客户端定期对其状态进行自我评估，并使用本地缓存的用于修复的修正步骤和源文件来修正典型问题。  
 
--   Quando um cliente não consegue enviar informações de status para seu site, o site pode gerar um alerta. Os usuários administrativos que recebem esses alertas podem tomar uma medida imediata para restaurar a operação normal do cliente.  
+-   当客户端无法将其状态信息提交至其站点时，站点可能会生成警报。 接收这些警报的管理用户可以立即采取措施以还原客户端的正常操作。  
 
- **Os clientes armazenam em cache informações a serem utilizadas no futuro:**  
+ **客户端缓存信息以在将来使用：**  
 
- Quando um cliente se comunica com um ponto de gerenciamento, o cliente pode obter e armazenar em cache as informações a seguir:  
+ 当客户端与管理点通信时，客户端可以获取和缓存以下信息：  
 
--   Configurações do cliente.  
+-   客户端设置。  
 
--   Agendamentos do cliente.  
+-   客户端计划。  
 
--   Informações sobre implantações de software e um download do software com agendamento para instalação pelo cliente, quando a implantação está configurada para esta ação.  
+-   关于软件部署的信息以及客户端计划安装的软件的下载信息（如果为此操作配置了部署）。  
 
- Quando um cliente não pode contatar um ponto de gerenciamento, os clientes armazenam em cache localmente o status, o estado e as informações que eles relatam ao site e transferem esses dados depois de estabelecer contato com um ponto de gerenciamento.  
+ 客户端无法联系管理点时，客户端将在本地缓存要报告给站点的状态、状况以及客户端信息，并在与管理点建立联系后传输此数据。  
 
- **O cliente pode enviar o status para um ponto de status de fallback:**  
+ **客户端可以将状态提交到回退状态点：**  
 
- Ao configurar um cliente para usar um ponto de status de fallback, você fornece um ponto de contato adicional para que o cliente envie detalhes importantes sobre sua operação. Os clientes configurados para usar um ponto de status de fallback continuam a enviar um status sobre suas operações para a função do sistema de site mesmo quando o cliente não pode se comunicar com um ponto de gerenciamento.  
+ 将客户端配置为使用回退状态点时，可以提供其他联系点供客户端提交关于其操作的重要详细信息。 配置为使用回退状态点的客户端会继续将关于其操作的状态发送给该站点系统角色，即使客户端无法与管理点通信也不例外。  
 
- **Gerenciamento central de dados do cliente e identidade do cliente:**  
+ **客户端数据和客户端标识的集中管理：**  
 
- O banco de dados do site retém informações importantes sobre cada identidade do cliente, em vez do cliente individual, e associa esses dados a um computador ou usuário específico. Isso significa que:  
+ 站点数据库（而不是单个客户端）保留有关每个客户端的标识的重要信息，并将该数据与特定计算机或用户关联。 这意味着：  
 
--   Os arquivos de origem do cliente em um computador podem ser instalados e reinstalados sem afetar os registros históricos do computador no qual o cliente está instalado.  
+-   可以卸载和重新安装计算机上的客户端源文件，而不会影响安装客户端的计算机的历史记录。  
 
--   A falha de um computador cliente não afeta a integridade das informações armazenadas no banco de dados. Essas informações podem permanecer disponíveis para emissão de relatórios.  
+-   客户端计算机故障不会影响存储在数据库中的信息的完整性。 此信息可以用于生成报表。  
 
-##  <a name="a-namebkmknonhaoptionsa-options-for-sites-and-site-system-roles-that-are-not-highly-available"></a><a name="bkmk_nonHAoptions"></a> Opções para sites e funções do sistema de sites que não estão altamente disponíveis  
- Vários sistemas de site não oferecem suporte a múltiplas instâncias em um site ou na hierarquia. Estas informações podem ajudar você a se preparar para quando esses sistemas de sites ficarem offline.  
+##  <a name="bkmk_nonHAoptions"></a>不具备高可用性的站点和站点系统角色的选项  
+ 有几个站点系统不支持一个站点或层次结构中的多个实例。 此信息可以帮助你为这些站点系统脱机做好准备。  
 
- **Servidor do site (site):**  
+ **站点服务器（站点）：**  
 
- O Configuration Manager não dá suporte à instalação do servidor de site para cada site em um cluster do Windows Server ou NLB.  
+ Configuration Manager 不支持在 Windows Server 群集或 NLB 群集上为每个站点安装站点服务器。  
 
- As seguintes informações podem ajudá-lo a se preparar caso o servidor de site falhe ou não esteja operacional:  
+ 下列信息可以帮助你为站点服务器失败或无法工作的情况做好准备：  
 
--   Use a tarefa de backup interna para criar regularmente um backup do site. Em um ambiente de teste, pratique regularmente a restauração de sites a partir de um backup.  
+-   使用内置的备份任务定期创建站点的备份。 在测试环境中，定期练习从备份中还原站点。  
 
--   Implante vários sites primários do Configuration Manager em uma hierarquia com um site de administração central para criar redundância. Se houver uma falha no site, considere usar a política de grupo do Windows ou os scripts de logon para transferir clientes a um site funcional.  
+-   在具有管理中心站点的层次结构中部署多个 Configuration Manager 主站点，以创建冗余性。 如果遇到站点失败的情况，请考虑使用 Windows 组策略或登录脚本将客户端重新分配到正常工作的站点。  
 
--   Se possuir uma hierarquia com um site de administração central, você poderá recuperar o site de administração central ou um site primário filho usando a opção de recuperar o banco de dados de um site a partir de outro site na hierarquia.  
+-   如果你的层次结构具有管理中心站点，则可以使用从层次结构中的另一个站点恢复站点数据库的选项来恢复管理中心站点或子主站点。  
 
--   Os sites secundários não podem ser restaurados e devem ser reinstalados.  
+-   无法还原辅助站点，必须重新安装它。  
 
- **Ponto de sincronização do Asset Intelligence (hierarquia):**  
+ **资产智能同步点（层次结构）：**  
 
- Essa função do sistema de sites não é considerada crítica e fornece funcionalidade opcional no Configuration Manager. Se esse sistema de site ficar offline, use uma das seguintes opções:  
+ 此站点系统角色未被视为任务关键角色，而且它在 Configuration Manager 中提供了可选的功能。 如果此站点系统脱机，请使用下列选项之一：  
 
--   Resolva o motivo do sistema de site estar offline.  
+-   分析站点系统脱机的原因。  
 
--   Desinstale a função do servidor atual e instale-a em um novo servidor.  
+-   从当前服务器中卸载角色，然后在新服务器上安装角色。  
 
- **Ponto do Endpoint Protection (hierarquia):**  
+ **Endpoint Protection 点（层次结构）：**  
 
- Essa função do sistema de sites não é considerada crítica e fornece funcionalidade opcional no Configuration Manager. Se esse sistema de site ficar offline, use uma das seguintes opções:  
+ 此站点系统角色未被视为任务关键角色，而且它在 Configuration Manager 中提供了可选的功能。 如果此站点系统脱机，请使用下列选项之一：  
 
--   Resolva o motivo do sistema de site estar offline.  
+-   分析站点系统脱机的原因。  
 
--   Desinstale a função do servidor atual e instale-a em um novo servidor.  
+-   从当前服务器中卸载角色，然后在新服务器上安装角色。  
 
- **Ponto de registro (site):**  
+ **注册点（站点）：**  
 
- Essa função do sistema de sites não é considerada crítica e fornece funcionalidade opcional no Configuration Manager. Se esse sistema de site ficar offline, use uma das seguintes opções:  
+ 此站点系统角色未被视为任务关键角色，而且它在 Configuration Manager 中提供了可选的功能。 如果此站点系统脱机，请使用下列选项之一：  
 
--   Resolva o motivo do sistema de site estar offline.  
+-   分析站点系统脱机的原因。  
 
--   Desinstale a função do servidor atual e instale-a em um novo servidor.  
+-   从当前服务器中卸载角色，然后在新服务器上安装角色。  
 
- **Ponto proxy do registro (site):**  
+ **注册代理点（站点）：**  
 
- Essa função do sistema de sites não é considerada crítica e fornece funcionalidade opcional no Configuration Manager. Entretanto, você pode instalar múltiplas instâncias dessa função do sistema de site em um site, e em vários sites na hierarquia. Se esse sistema de site ficar offline, use uma das seguintes opções:  
+ 此站点系统角色未被视为任务关键角色，而且它在 Configuration Manager 中提供了可选的功能。 但是，可以在一个站点中和在层次结构的多个站点中安装此站点系统角色的多个实例。 如果此站点系统脱机，请使用下列选项之一：  
 
--   Resolva o motivo do sistema de site estar offline.  
+-   分析站点系统脱机的原因。  
 
--   Desinstale a função do servidor atual e instale-a em um novo servidor.  
+-   从当前服务器中卸载角色，然后在新服务器上安装角色。  
 
- Quando você tiver mais de um servidor proxy do registro em um site, use um alias DNS para o nome do servidor. Quando se utiliza essa configuração, o round robin do DNS fornece alguma tolerância a falhas e balanceamento de carga caso os usuários registrem seus dispositivos móveis.  
+ 如果在一个站点中具有多台注册代理服务器，则将 DNS 别名用于服务器名称。 如果使用此配置，DNS 轮循机制能在用户注册移动设备时提供一定程度的容错和负载平衡。  
 
- **Ponto de status de fallback (site ou hierarquia):**  
+ **回退状态点（站点或层次结构）：**  
 
- Essa função do sistema de sites não é considerada crítica e fornece funcionalidade opcional no Configuration Manager. Se esse sistema de site ficar offline, use uma das seguintes opções:  
+ 此站点系统角色未被视为任务关键角色，而且它在 Configuration Manager 中提供了可选的功能。 如果此站点系统脱机，请使用下列选项之一：  
 
--   Resolva o motivo do sistema de site estar offline.  
+-   分析站点系统脱机的原因。  
 
--   Desinstale a função do servidor atual e instale-a em um novo servidor. Como os clientes são atribuídos ao ponto de status de fallback durante a instalação do cliente, é necessário modificar os clientes existentes para usar o novo servidor do sistema de site.  
+-   从当前服务器中卸载角色，然后在新服务器上安装角色。 由于在客户端安装过程中将回退状态点分配给客户端，因此，你将需要修改现有的客户端，以使用新的站点系统服务器。  
 
-### <a name="see-also"></a>Consulte também  
- [Configurações com suporte para o System Center Configuration Manager](../../core/plan-design/configs/supported-configurations.md)
-
-
-
-<!--HONumber=Dec16_HO3-->
-
-
+### <a name="see-also"></a>另请参阅  
+ [System Center Configuration Manager 支持的配置](../../core/plan-design/configs/supported-configurations.md)

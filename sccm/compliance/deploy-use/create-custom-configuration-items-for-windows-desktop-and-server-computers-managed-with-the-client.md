@@ -1,82 +1,79 @@
 ---
-title: "Criar itens de configuração para computadores com Windows gerenciados pelo cliente – Configuration Manager | Microsoft Docs"
-description: "Gerencie configurações para computadores e servidores Windows com um item personalizado de configuração de Desktops e Servidores Windows."
+title: "为客户端托管的 Windows 计算机创建配置项 - Configuration Manager | Microsoft Docs"
+description: "使用自定义 Windows 台式机和服务器配置项目管理 Windows 计算机和服务器的设置。"
 ms.custom: na
 ms.date: 11/18/2016
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
-ms.technology:
-- configmgr-other
+ms.technology: configmgr-other
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 1eb2fcaf-acac-4388-9b31-6cccafacaabe
-caps.latest.revision: 9
-caps.handback.revision: 0
+caps.latest.revision: "9"
+caps.handback.revision: "0"
 author: robstackmsft
 ms.author: robstack
 manager: angrobe
-ms.translationtype: Human Translation
-ms.sourcegitcommit: 31819a1df4e63e1114682490a9b3c3b4e5c99cfa
 ms.openlocfilehash: e040c6b3a951d1bdf5a46dd82f1bd92b45c2e71d
-ms.contentlocale: pt-br
-ms.lasthandoff: 05/17/2017
-
-
+ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
+ms.translationtype: HT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 08/07/2017
 ---
-# <a name="how-to-create-custom-configuration-items-for-windows-desktop-and-server-computers-managed-with-the-system-center-configuration-manager-client"></a>Como criar itens de configuração personalizados para computadores desktop e de servidor com Windows gerenciados com o cliente do System Center Configuration Manager
+# <a name="how-to-create-custom-configuration-items-for-windows-desktop-and-server-computers-managed-with-the-system-center-configuration-manager-client"></a>如何为使用 System Center Configuration Manager 客户端管理的 Windows 台式机和服务器计算机创建配置项目
 
-*Aplica-se a: System Center Configuration Manager (Branch Atual)*
+*适用范围：System Center Configuration Manager (Current Branch)*
 
 
-Use o item de configuração **Servidores e Desktops Windows personalizados** do System Center Configuration Manager para gerenciar as configurações de computadores e servidores Windows e que são gerenciados pelo cliente do Configuration Manager.  
+使用 System Center Configuration Manager“自定义 Windows 台式机和服务器”配置项目为由 Configuration Manager 客户端管理的 Windows 计算机和服务器管理设置。  
 
-## <a name="start-the-create-configuration-item-wizard"></a>Iniciar o Assistente para criar item de configuração
+## <a name="start-the-create-configuration-item-wizard"></a>启动“创建配置项目向导”
 
-1.  No console do Configuration Manager, clique em **Ativos e Conformidade** > **Configurações de Conformidade** > **Itens de Configuração**.  
+1.  在 Configuration Manager 控制台中，单击“资产和符合性” > “符合性设置” > “配置项目”。  
 
-3.  Na guia **Início** , no grupo **Criar** , clique em **Criar Item de Configuração**.  
+3.  在“主页”  选项卡上的“创建”  组中，单击“创建配置项目” 。  
 
-4.  Na página **Geral** do **Assistente para Criar Item de Configuração**, especifique um nome e uma descrição opcional para o item de configuração.  
+4.  在“创建配置项目向导”  的“常规” 页面上，指定配置项目的名称和可选描述。  
 
-5.  Em **Especificar o tipo de item de configuração que deseja criar**, selecione **Windows Desktops e Servers (personalizado)**.  
+5.  在“指定要创建的配置项目的类型” 下，选择“Windows 台式机和服务器(自定义)” 。  
 
     > [!TIP]  
-    >  Se quiser fornecer configurações do método de detecção que verifica a existência de um aplicativo, selecione **Este arquivo de configuração contém as configurações do aplicativo**.  
+    >  如果要提供检查应用程序是否存在的检测方法设置，请选择“此配置文件包含应用程序设置” 。  
 
-6.  Se você criar e atribuir categorias, clique em **Categorias** para ajudá-lo a pesquisar e filtrar itens de configuração no console do Configuration Manager.  
+6.  如果创建并分配类别以帮助在 Configuration Manager 控制台中搜索和筛选配置项目，请单击“类别”。  
 
-## <a name="provide-detection-method-information"></a>Fornecer informações do método de detecção  
- Use este procedimento para fornecer informações sobre o método de detecção para o item de configuração.  
+## <a name="provide-detection-method-information"></a>提供检测方法信息  
+ 使用此过程可为配置项目提供检测方法信息。  
 
 > [!NOTE]  
->  Se aplica somente se você selecionou **este item de configuração contém as configurações do aplicativo** sobre o **geral** página do assistente.  
+>  仅适用于您选择 **此配置项目包含应用程序设置** 上 **常规** 向导页。  
 
- Um método de detecção no Configuration Manager contém regras que são usadas para detectar se um aplicativo é instalado em um computador. Essa detecção ocorre antes que o item de configuração é avaliado quanto à conformidade. Para detectar se um aplicativo estiver instalado, você pode detectar a presença de um arquivo do Windows Installer para o aplicativo, use um script personalizado, ou selecione **sempre assumir o aplicativo é instalado** para avaliar o item de configuração para fins de conformidade, independentemente se o aplicativo está instalado.  
+ Configuration Manager 中的检测方法包含用于检测应用程序是否在计算机上安装的规则。 此检测发生之前针对符合性评估配置项目。 若要检测是否安装了应用程序，则可以检测到该应用程序的 Windows Installer 文件是否存在，请使用自定义脚本，或者选择 **始终假设安装应用程序** 来评估法规遵从性而不考虑是否安装了该应用程序的配置项目。  
 
- Use estes procedimentos para configurar métodos de detecção no System Center Configuration Manager.  
+ 请按这些过程操作，在 System Center Configuration Manager 中配置检测方法。  
 
-### <a name="to-detect-an-application-installation-by-using-the-windows-installer-file"></a>Para detectar a instalação de um aplicativo usando o arquivo do Windows Installer  
+### <a name="to-detect-an-application-installation-by-using-the-windows-installer-file"></a>若要通过使用 Windows Installer 文件中检测应用程序安装  
 
-1.  No **métodos de detecção** página do **Criar Assistente de Item de configuração**, selecione o **Use Windows Installer detection** caixa de seleção.  
+1.  在上 **检测方法** 页 **创建配置项目向导**, ，选择 **使用 Windows Installer 检测** 复选框。  
 
-2.  Clique em **Abrir**, navegue até o arquivo do Windows Installer (. msi) que você deseja detectar e, em seguida, clique em **Abrir**.  
+2.  单击 **打开**, ，浏览到你想要检测，然后单击 Windows Installer (.msi) 文件 **打开**。  
 
-3.  O **versão** caixa é preenchida automaticamente com o número de versão de arquivo do Windows Installer que você selecionou. Você pode inserir um novo número de versão nesta caixa, se o valor exibido está incorreto.  
+3.  **版本** 框中将自动填充所选的 Windows Installer 文件的版本号。 如果显示的值不正确的情况下，可以在此框中输入新的版本号。  
 
-4.  Marque a caixa de seleção **Este aplicativo está instalado para um ou mais usuários** se desejar detectar o perfil de cada usuário no computador.  
+4.  如果要检测计算机上的每个用户配置文件，请选中“此应用程序是针对一个或多个用户安装的”  复选框。  
 
-### <a name="to-detect-a-specific-application-and-deployment-type"></a>Para detectar um tipo específico de aplicativo e implantação  
+### <a name="to-detect-a-specific-application-and-deployment-type"></a>若要检测特定应用程序和部署类型  
 
-1.  Na página **Métodos de Detecção** do **Assistente para Criar Item de Configuração**, marque a caixa de seleção **Detectar um tipo de implantação e aplicativo específico** e clique em **Selecionar**.  
+1.  在“创建配置项目向导”  的“检测方法” 页上，选中“检测特定的应用程序和部署类型”  复选框，然后单击“选择” 。  
 
-2.  Na caixa de diálogo **Especificar Aplicativo** , selecione o aplicativo e um tipo de implantação associado que deseja detectar.  
+2.  在“指定应用程序”  对话框中，选择要检测的应用程序和关联部署类型。  
 
-### <a name="to-detect-an-application-installation-by-using-a-custom-script"></a>Para detectar a instalação de um aplicativo usando um script personalizado  
+### <a name="to-detect-an-application-installation-by-using-a-custom-script"></a>若要使用自定义脚本检测应用程序安装  
 
-1.  No **métodos de detecção** página do **Criar Assistente de Item de configuração**, selecione o **usar um script personalizado para detectar este aplicativo** caixa de seleção.  
+1.  在上 **检测方法** 页 **创建配置项目向导**, ，选择 **使用自定义脚本检测此应用程序** 复选框。  
 
-2.  Na lista, selecione o idioma do script que você deseja abrir. Escolha entre os seguintes scripts:  
+2.  在列表中，选择想要打开的脚本语言。 从下面的脚本进行选择：  
 
     -   **VBScript**  
 
@@ -84,278 +81,277 @@ Use o item de configuração **Servidores e Desktops Windows personalizados** do
 
     -   **PowerShell**  
 
-3.  Clique em **Abrir**, navegue até o script que deseja usar e clique em **Abrir**.  
+3.  单击“打开” ，浏览到要使用的脚本，然后单击“打开” 。  
 
-##  <a name="configure-settings"></a>Definir configurações  
- Use este procedimento para definir as configurações no item de configuração.  
+##  <a name="configure-settings"></a>配置设置  
+ 使用此过程可在配置项目中配置设置。  
 
- Configurações representam as condições comerciais ou técnicas que são usadas para avaliar a conformidade em dispositivos cliente. Você pode definir uma nova configuração ou navegar até uma configuração existente em um computador de referência.  
+ 设置表示业务或技术用于评估客户端设备上的符合性的条件。 你可以配置新设置，或浏览到引用计算机上的现有设置。  
 
-1.  No **configurações** página do **Criar Assistente de Item de configuração**, clique em **novo**.  
+1.  在上 **设置** 页 **创建配置项目向导**, ，单击 **新建**。  
 
-2.  Sobre o **geral** guia do **Criar configuração** diálogo caixa, forneça as seguintes informações:  
+2.  在上 **常规** 选项卡上 **创建设置** 对话框框中，提供以下信息：  
 
-    -   **Nome:** Insira um nome exclusivo para a configuração. Você pode usar no máximo 256 caracteres.  
+    -   **名称：** 输入设置的唯一名称。 最多可以使用 256 个字符。  
 
-    -   **Descrição:** Insira uma descrição para a configuração. Você pode usar no máximo 256 caracteres.  
+    -   **描述:** 输入设置的说明。 最多可以使用 256 个字符。  
 
-    -   **Tipo de configuração:** na lista, escolha e configure um dos seguintes tipos de configuração a ser usado para esta configuração:  
+    -   **设置类型：**在列表中，选择和配置要用于此设置的以下设置类型之一：  
 
-        -   **Consulta ao Active Directory**  
+        -   **Active Directory 查询**  
 
-             **Prefixo LDAP** - Especifique um prefixo válido para a consulta dos Serviços de Domínio do Active Directory para avaliar a conformidade nos computadores cliente. Você pode usar o **LDAP: / /** para um ou **GC: / /** para realizar uma pesquisa de catálogo global.  
+             **LDAP 前缀** - 指定 Active Directory 域服务查询的有效前缀以评估客户端计算机上的符合性。 您可以使用 **LDAP: / /** 为或 **GC: / /** 执行全局编录搜索...  
 
-             **DN (nome distinto)** -especifique o nome distinto do objeto Active Directory Domain Services que é avaliada quanto à conformidade nos computadores cliente.  
+             **可分辨名称 (DN)** -指定客户端计算机上的符合性评估的 Active Directory 域服务对象的可分辨的名称。  
 
-             Por exemplo, se quiser avaliar um valor relacionado a um usuário chamado João Fernandes no domínio corp.contoso.com, digite o seguinte:  
+             例如，如果要评估与 corp.contoso.com 域中名为 John Smith 的用户相关的值，请输入以下内容：  
 
-            -   **Filtro de pesquisa** - Especifique um filtro LDAP opcional para refinar os resultados da consulta aos Serviços de Domínio Active Directory para avaliar a conformidade nos computadores cliente.  
+            -   **搜索筛选器** - 指定可选的 LDAP 筛选器以优化 Active Directory 域服务查询的结果，从而评估客户端计算机上的符合性。  
 
-                 Para retornar todos os resultados da consulta, digite **(objectclass=\*)**.  
+                 要从查询返回所有结果，请输入 **(objectclass=\*)**。  
 
-            -   **Escopo da pesquisa** - especifique o escopo da pesquisa nos Serviços de Domínio do Active Directory. Você pode escolher:  
+            -   **搜索作用域** - 指定 Active Directory 域服务中的搜索作用域/可以从以下选项进行选择：  
 
-                -   **Base** -consulta apenas o objeto especificado.  
+                -   **基本** -查询只指定的对象。  
 
-                -   **Um Nível** – Esta opção não é usada nesta versão do Configuration Manager.  
+                -   **一级** - 此版本的 Configuration Manager 中不使用此选项。  
 
-                -   **Subárvore** -consulta o objeto especificado e sua subárvore completa no diretório.  
+                -   **子树** -查询指定的对象及其整个子树的目录中。  
 
-            -   **Propriedade** -especifique a propriedade do objeto Active Directory Domain Services que é usada para avaliar a conformidade em computadores cliente.  
+            -   **属性** -指定用于评估客户端计算机上的符合性的 Active Directory 域服务对象的属性。  
 
-                 Por exemplo, se você quiser consultar a propriedade do Active Directory **badPwdCount**, que armazena o número de vezes que um usuário digitar incorretamente uma senha, digite **badPwdCount** neste campo.  
+                 例如，如果您想要查询 Active Directory 属性 **badPwdCount**, 、 存储的用户不正确地输入密码的次数、 输入 **badPwdCount** 此字段中。  
 
-            -   **Consulta** -exibe a consulta construída a partir de entradas no **prefixo LDAP**, **DN (nome distinto)**, **filtro de pesquisa** (se especificado), e **propriedade**, que são usados para avaliar a conformidade em computadores cliente.  
+            -   **查询** -显示的查询中的条目构建的 **LDAP 前缀**, ， **可分辨的名称 (DN)**, ， **搜索筛选器** （如果指定），和 **属性**, ，它用于评估客户端计算机上的符合性。  
 
-             Para obter mais informações sobre como construir consultas LDAP, consulte a documentação do Windows Server.  
+             有关构造 LDAP 查询的详细信息，请参阅 Windows Server 文档。  
 
-        -   **Assembly**  
+        -   **程序集**  
 
-             Defina o seguinte para esse tipo de configuração:  
+             配置此设置类型的以下项：  
 
-            -   **Nome do assembly:** Especifica o nome do objeto de assembly que você deseja pesquisar. O nome não pode ser o mesmo que outros objetos de assembly do mesmo tipo e deve ser registrado no Cache de Assembly Global. O nome do assembly pode ter até 256 caracteres.  
+            -   **程序集名称：** 指定您想要搜索的程序集对象的名称。 该名称不能与同类型的其他程序集对象相同，并且必须在全局程序集缓存中注册。 程序集名称最多可以含有 256 个字符。  
 
-             Um assembly é um trecho de código que pode ser compartilhado entre aplicativos. Módulos (assemblies) podem ter a extensão de nome de arquivo. dll ou .exe. Cache de Assembly Global é uma pasta chamada *%systemroot%\Assembly* no cliente computadores em que todos os assemblies compartilhados são armazenados.  
+             程序集是可在应用程序之间共享的一段代码。 程序集可以具有 .dll 或 .exe 文件扩展名。 全局程序集缓存是一个名为文件夹 *%systemroot%\Assembly* 在客户端上存储所有共享程序集的位置的计算机。  
 
-        -   **Sistema de arquivos**  
+        -   **文件系统**  
 
-            -   **Tipo** – Na lista, selecione se deseja pesquisar um **Arquivo** ou uma **Pasta**.  
+            -   **类型** – 从列表中，选择要搜索“文件”  还是“文件夹” 。  
 
-            -   **Caminho** -especifique o caminho da pasta ou arquivo especificado nos computadores cliente. Você pode especificar variáveis de ambiente do sistema e a variável de ambiente *%USERPROFILE%* no caminho.  
+            -   **路径** -指定客户端计算机上的指定的文件或文件夹的路径。 你可以在路径中指定系统环境变量和 *%USERPROFILE%* 环境变量。  
 
                 > [!NOTE]  
-                >  Se você usar a variável de ambiente *%USERPROFILE%* nas caixas **Caminho** ou **Nome do arquivo ou da pasta** , todos os perfis de usuário no computador cliente serão pesquisados, o que poderá resultar em várias instâncias do arquivo ou da pasta que foi encontrada.  
+                >  如果在“路径”  或“文件或文件夹名称”  框中使用 **%USERPROFILE%** 环境变量，则将搜索客户端计算机上的所有用户配置文件，这会导致找到该文件或文件夹的多个实例。  
                 >   
-                >  Se as configurações de conformidade não tiverem acesso ao caminho especificado, será gerado um erro de descoberta. Além disso, se o arquivo que você está procurando está em uso, é gerado um erro de detecção.  
+                >  如果符合性设置无权访问指定路径，则会生成发现错误。 此外，如果您要搜索的文件当前正在使用，则生成发现错误。  
 
-            -   **Nome de arquivo ou pasta** -especifique o nome do objeto de arquivo ou pasta para pesquisar. Você pode especificar variáveis de ambiente do sistema e a variável de ambiente *%USERPROFILE%* no nome do arquivo ou da pasta. Você também pode usar os caracteres curinga * e ? no nome do arquivo.  
-
-                > [!NOTE]  
-                >  Se você especificar um nome de arquivo ou de pasta e usar caracteres curinga, essa combinação poderá produzir um grande número de resultados e poderá resultar em alta utilização de recursos no computador cliente e em alto tráfego de rede ao relatar resultados para o Configuration Manager.  
-
-            -   **Incluir subpastas** – Habilite esta opção se também desejar pesquisar quaisquer subpastas no caminho especificado.  
-
-            -   **Esse arquivo ou pasta está associada um aplicativo de 64 bits** - se habilitada, somente os locais de arquivo de 64 bits (como *% ProgramFiles %*) será verificada em computadores de 64 bits. Se essa opção não estiver habilitada, ambos os locais de 32 bits (como *%ProgramFiles(x86)%*) e de 64 bits serão verificados.  
+            -   **文件或文件夹名称** -指定要搜索的文件或文件夹对象的名称。 你可以在文件或文件夹名称中指定系统环境变量和 *%USERPROFILE%* 环境变量。 还可以在文件名中 使用通配符 * 和 ?。  
 
                 > [!NOTE]  
-                >  Se o mesmo arquivo ou pasta existir nos dois locais do arquivo do sistema de 64 e de 32 bits no mesmo computador de 64 bits, vários arquivos serão detectados pela condição global.  
+                >  如果指定文件或文件夹名称并使用通配符，则此组合可能会产生大量结果，并可能会在向 Configuration Manager 报告结果时导致客户端计算机上资源使用率较高和网络流量较高。  
 
-             O tipo de configuração **Sistema de arquivos** não dá suporte à especificação de um caminho UNC para um compartilhamento de rede na caixa **Caminho** .  
+            -   **包括子文件夹** – 如果也要搜索指定路径下面的任何子文件夹，请启用此选项。  
 
-        -   **Metabase do IIS**  
-
-            -   **Caminho de metabase** -Especifique um caminho válido para a Metabase do IIS (Serviços de Informações da Internet).  
-
-            -   **ID da Propriedade** - Especifique a propriedade numérica da configuração da Metabase do IIS.  
-
-        -   **Chave do Registro**  
-
-            -   **Hive** - Na lista, selecione o hive de Registro que deseja pesquisar.  
-
-            -   **Chave** - Especifique o nome da chave do Registro que deseja pesquisar. Use o formato *key\subkey*.  
-
-            -   **Essa chave do registro está associada um aplicativo de 64 bits** -Especifica se as chaves do registro de 64 bits devem ser pesquisadas além as chaves de registro de 32 bits em clientes que executam uma versão de 64 bits do Windows.  
+            -   **此文件或文件夹是与 64 位应用程序相关联** -如果启用，仅限 64 位文件位置 (如 *%programfiles%*) 将进行检查，在 64 位计算机上。 如果未启用此选项，则会检查 32 位（如 *%ProgramFiles(x86)%*）和 64 位位置。  
 
                 > [!NOTE]  
-                >  Se a mesma chave do Registro existir nos dois locais do Registro, de 64 e de 32 bits, no mesmo computador de 64 bits, ambas as chaves do Registro serão detectadas pela condição global.  
+                >  如果在同一 64 位计算机上的 64 位和 32 位系统文件位置中存在相同的文件或文件夹，则全局条件会发现多个文件。  
 
-        -   **Valor do Registro**  
+             “文件系统”  设置类型不支持在“路径”  框中指定网络共享的 UNC 路径。  
 
-            -   **Hive** - Na lista, selecione o hive de Registro que deseja pesquisar.  
+        -   **IIS 元数据库**  
 
-            -   **Chave** - Especifique o nome da chave do Registro que deseja pesquisar. Use o formato *key\subkey*.  
+            -   **元数据库路径** - 指定 Internet Information Services (IIS) 元数据库的有效路径。  
 
-            -   **Valor** – Especifique o valor que deve estar contido na chave do Registro especificado.  
+            -   **属性 ID** - 指定 IIS 元数据库设置的数值属性。  
 
-            -   **A chave do Registro está associada ao aplicativo de 64 bits** - Especifica se as chaves do Registro de 64 bits devem ser pesquisadas além das chaves do Registro de 32 bits em clientes que executam uma versão de 64 bits do Windows.  
+        -   **注册表项**  
 
-                > [!NOTE]  
-                >  Se a mesma chave do Registro existir nos dois locais do Registro, de 64 e de 32 bits, no mesmo computador de 64 bits, ambas as chaves do Registro serão detectadas pela condição global.  
+            -   **配置单元** – 在列表中，选择要在其中进行搜索的注册表配置单元。  
 
-             Você também pode clicar em **Procurar** para navegar até um local do Registro no computador ou em um computador remoto. Para procurar um computador remoto, você deve ter direitos de administrador no computador remoto e o computador remoto deve estar executando o serviço Registro remoto.  
+            -   **项** - 指定要搜索的注册表项名称。 使用格式 *注册表*。  
 
-        -   **script**  
-
-            -   **Script de descoberta** – Clique em **Adicionar** para digitar ou procure o script que deseja usar. Você pode usar scripts do Windows PowerShell, VBScript ou Microsoft JScript.  
-
-            -   **Executar scripts usando as credenciais do usuário conectado** – Se você habilitar esta opção, o script será executado em computadores cliente que usam as credenciais de usuários conectados.  
+            -   **此注册表项是否与 64 位应用程序相关联** -指定是否应在正在运行 Windows 的 64 位版本的客户端上的 32 位注册表项除了搜索 64 位注册表项。  
 
                 > [!NOTE]  
-                >  O valor retornado pelo script será usado para avaliar a conformidade da condição global. Por exemplo, ao usar o VBScript, você poderá usar o comando **WScript.Echo Result** para retornar o valor da variável *Result* para a condição global.  
+                >  如果在同一 64 位计算机上的 64 位和 32 位注册表位置中存在相同的注册表项，则全局条件会发现两个注册表项。  
 
-        -   **Consulta SQL**  
+        -   **注册表值**  
 
-            -   **Instância do SQL Server** – Escolha se deseja que a consulta SQL seja executada na instância padrão, em todas as instâncias ou em um determinado nome da instância do banco de dados.  
+            -   **配置单元** - 在列表中，选择要在其中进行搜索的注册表配置单元。  
+
+            -   **项** - 指定要搜索的注册表项名称。 使用格式 *注册表*。  
+
+            -   **值** – 指定必须包含在指定注册表项中的值。  
+
+            -   **此注册表项与 64 位应用程序关联** - 指定在运行 64 位版本的 Windows 的客户端上除了搜索 32 位注册表项之外是否也应该搜索 64 位注册表项。  
 
                 > [!NOTE]  
-                >  O nome da instância deve se referir a uma instância local do SQL Server. Para se referir a uma instância de servidor em cluster do SQL, você deve usar uma configuração de script.  
+                >  如果在同一 64 位计算机上的 64 位和 32 位注册表位置中存在相同的注册表项，则全局条件会发现两个注册表项。  
 
-            -   **Banco de dados** -especifique o nome do banco de dados Microsoft SQL Server no qual você deseja executar a consulta SQL.  
+             还可以单击“浏览”  以浏览到计算机或远程计算机上的注册表位置。 若要浏览远程计算机，必须具有管理员权限的远程计算机上和远程计算机必须运行远程注册表服务。  
 
-            -   **Coluna** -especifique o nome da coluna retornado pela instrução Transact-SQL que é usada para avaliar a conformidade da condição global.  
+        -   **脚本**  
 
-            -   **Instrução Transact-SQL** – especifique a consulta SQL completa que deseja usar para a condição global. Você também pode clicar **Abrir** para abrir uma consulta SQL existente.  
+            -   **发现脚本** – 单击“添加”  以进行输入，或浏览到要使用的脚本。 您可以使用 Windows PowerShell、 VBScript、 或 Microsoft JScript 脚本。  
+
+            -   **使用登录用户凭据运行脚本** – 如果启用此选项，则脚本会在使用登录用户凭据的客户端计算机上。  
+
+                > [!NOTE]  
+                >  脚本返回的值用于评估全局条件的符合性。 例如，使用 VBScript 时，可以使用命令“WScript.Echo Result”  将 *Result* 变量值返回给全局条件。  
+
+        -   **SQL 查询**  
+
+            -   **SQL Server 实例** – 选择是要在默认实例、所有实例还是指定的数据库实例名称上运行 SQL 查询。  
+
+                > [!NOTE]  
+                >  实例名称必须引用 SQL Server 的本地实例。 为了引用群集的 SQL Server 实例，应该使用脚本设置。  
+
+            -   **数据库** -指定要对其运行的 SQL 查询的 Microsoft SQL Server 数据库的名称。  
+
+            -   **列** -指定将用于评估全局条件的符合性的 TRANSACT-SQL 语句返回的列名称。  
+
+            -   **TRANSACT-SQL 语句** – 指定您想要用于全局条件的完整 SQL 查询。 也可以单击“打开”  以打开现有的 SQL 查询。  
 
                 > [!IMPORTANT]  
-                >  As configurações da consulta SQL não dão suporte a comandos SQL que modificam o banco de dados. Só é possível usar comandos SQL que leem as informações do banco de dados.  
+                >  SQL 查询设置不支持任何修改数据库的 SQL 命令。 只能使用从数据库读取信息的 SQL 命令。  
 
-        -   **Consulta WQL**  
+        -   **WQL 查询**  
 
-            -   **Namespace** -especifique o namespace do Windows Management Instrumentation (WMI) que é usado para criar uma consulta WQL que é avaliada quanto à conformidade nos computadores cliente. O valor padrão é Root\cimv2.  
+            -   **命名空间** -指定 Windows Management Instrumentation (WMI) 命名空间用来构建针对客户端计算机上的符合性评估的 WQL 查询。 默认值为 Root\cimv2。  
 
-            -   **Classe** -Especifica a classe WMI que é usada para criar uma consulta WQL que é avaliada quanto à conformidade nos computadores cliente.  
+            -   **类** -指定用于构建针对客户端计算机上的符合性评估的 WQL 查询的 WMI 类。  
 
-            -   **Propriedade** -Especifica a propriedade WMI que é usada para criar uma consulta WQL que é avaliada quanto à conformidade nos computadores cliente.  
+            -   **属性** -指定用于构建针对客户端计算机上的符合性评估的 WQL 查询的 WMI 属性。  
 
-            -   **Cláusula WHERE da consulta WQL** - Você pode usar o item **Cláusula WHERE da consulta WQL** para especificar uma cláusula WHERE a ser aplicada ao namespace, à classe e à propriedade especificados em computadores cliente.  
+            -   “WQL 查询 WHERE 子句” - 你可使用“WQL 查询 WHERE 子句”  项目来指定应用于客户端计算机上指定命名空间、类和属性的 WHERE 子句。  
 
-        -   **Consulta XPath**  
+        -   **XPath 查询**  
 
-            -   **Caminho** - Especifique o caminho para o arquivo .xml nos computadores cliente que será usado para avaliar a conformidade. O Configuration Manager dá suporte ao uso de todas as variáveis de ambiente do sistema Windows e à variável de usuário *%USERPROFILE%* no nome do caminho.  
+            -   **路径** - 指定客户端计算机上用于评估符合性的 .xml 文件的路径。 Configuration Manager 支持在路径名称中使用所有 Windows 系统环境变量和 *%USERPROFILE%* 用户变量。  
 
-            -   **Nome do arquivo XML** -especifique o nome do arquivo que contém a consulta XML que é usada para avaliar a conformidade em computadores cliente.  
+            -   **XML 文件名** -指定包含用于评估客户端计算机上的符合性的 XML 查询的文件的名称。  
 
-            -   **Incluir subpastas** - Habilite esta opção se também desejar pesquisar quaisquer subpastas no caminho especificado.  
+            -   **包括子文件夹** – 如果也要搜索指定路径下面的任何子文件夹，请启用此选项。  
 
-            -   **Este arquivo está associado a um aplicativo de 64 bits** ‑ Escolha se o local do arquivo do sistema de 64 bits (*%windir%*\System32) deve ser pesquisado além do local do arquivo do sistema de 32 bits (*%windir%*\Syswow64) em clientes do Configuration Manager que executam uma versão de 64 bits do Windows.  
+            -   **此文件与 64 位应用程序关联** - 选择除了运行 64 位版本的 Windows 的 Configuration Manager 客户端上的 32 位系统文件位置 (*%windir%*\Syswow64) 外，是否还应搜索 64 位系统文件位置 (*%windir%*\System32)。  
 
-            -   **Consulta XPath** -especifique uma completa XML caminho language (XPath) consulta válida que é usada para avaliar a conformidade em computadores cliente.  
+            -   **XPath 查询** -指定的有效完整 XML 路径语言 (XPath) 查询用于评估客户端计算机上的符合性。  
 
-            -   **Namespaces** - Abre a caixa de diálogo **Namespaces do XML** para identificar namespaces e prefixos a ser usados durante a consulta XPath.  
+            -   **命名空间** - 打开“XML 命名空间”  对话框以标识要在 XPath 查询期间使用的命名空间和前缀。  
 
-             Se você tentar descobrir um arquivo .XML criptografado, as configurações de conformidade encontram o arquivo, mas a consulta XPath não produzirá nenhum resultado e nenhum erro será gerado.  
+             如果尝试发现加密的 .xml 文件，则符合性设置会查找该文件，但 XPath 查询不生成任何结果，并且不生成任何错误。  
 
-             Se a consulta XPath não for válida, a configuração será avaliada como não compatível nos computadores cliente.  
+             如果 XPath 查询无效，则设置在客户端计算机上会评估为不符合。  
 
-    -   **Tipo de dados:** na lista, escolha o formato no qual a condição retorna os dados antes que sejam usados para avaliar a configuração. O **tipo de dados** lista não é exibida para todos os tipos de configuração.  
+    -   **数据类型：** 在列表中，选择在用于评估设置之前条件用于返回数据的格式。 **数据类型** 列表不显示所有设置类型。  
 
         > [!NOTE]  
-        >  O **ponto flutuante** tipo de dados suporta apenas 3 dígitos após o ponto decimal.  
+        >  **浮点数** 小数点后的数据类型支持只需 3 位数字。  
 
-3.  Configurar detalhes adicionais sobre essa configuração sob o **Definindo tipo** lista. Os itens que você pode configurar variam dependendo do tipo de configuração que você selecionou.  
+3.  配置此设置下的更多详情 **设置类型** 列表。 您可以配置的项已选择的设置类型而异。  
 
     > [!NOTE]  
-    >  Quando você cria as configurações do tipo **sistema de arquivos**, **chave do registro**, e **valor do registro**, você pode clicar em **Procurar** para definir a configuração de valores em um computador de referência. Para procurar uma chave do registro ou um valor em um computador remoto, o computador remoto deve ter o serviço Registro remoto habilitado.  
+    >  当您创建的类型设置 **文件系统**, ， **注册表项**, ，和 **注册表值**, ，您可以单击 **浏览** 在引用计算机上配置基于值的设置。 若要浏览到注册表项或远程计算机上的值，远程计算机必须具有启用远程注册表服务。  
 
-4.  Clique em **OK** para salvar a configuração e fechar a caixa de diálogo **Criar Configuração** .  
+4.  单击“确定”  以保存设置并关闭“创建设置”  对话框。  
 
-##  <a name="configure-compliance-rules"></a>Configurar regras de conformidade  
- Use o procedimento a seguir para configurar as regras de conformidade para o item de configuração.  
+##  <a name="configure-compliance-rules"></a>配置符合性规则  
+ 使用以下过程可为配置项目配置符合性规则。  
 
- Regras de conformidade especificam as condições que definem a conformidade de um item de configuração. Antes de uma configuração pode ser avaliada para conformidade, ele deve ter pelo menos uma regra de conformidade. WMI, registro e as configurações de script permitem corrigir os valores encontrados são incompatíveis. Você pode criar novas regras ou navegue até uma configuração existente em qualquer item de configuração para selecionar regras nele.  
+ 符合性规则指定定义配置项目的符合性的条件。 设置可以评估的符合性之前，它必须具有至少一个符合性规则。 WMI、 注册表和脚本设置可以修正找到要不符合要求的值。 您可以创建新的规则或浏览到要在其中选择规则任何配置项目中的现有设置。  
 
-### <a name="to-create-a-compliance-rule"></a>Para criar uma regra de conformidade  
+### <a name="to-create-a-compliance-rule"></a>若要创建符合性规则  
 
-1.  No **as regras de conformidade** página do **Criar Assistente de Item de configuração**, clique em **novo**.  
+1.  在上 **法规遵从性规则** 页 **创建配置项目向导**, ，单击 **新建**。  
 
-2.  No **Create Rule** caixa de diálogo caixa, forneça as seguintes informações:  
+2.  在 **Create Rule** 对话框框中，提供以下信息：  
 
-    -   **Nome:** Digite um nome para a regra de conformidade.  
+    -   **名称：** 输入符合性规则的名称。  
 
-    -   **Descrição:** Insira uma descrição para a regra de conformidade.  
+    -   **描述:** 输入符合性规则的说明。  
 
-    -   **Configuração selecionada:** Clique em **Procurar** para abrir o **Selecionar configuração** caixa de diálogo. Selecione a configuração que você deseja definir uma regra de, ou clique em **nova configuração**. Quando tiver terminado, clique em **Selecione**.  
+    -   **选定的设置：** 单击 **浏览** 若要打开 **选择设置** 对话框。 选择您想要定义的规则，或单击设置 **新设置**。 在完成，请单击 **选择**。  
 
         > [!NOTE]  
-        >  Você também pode clicar em **propriedades** para exibir informações sobre a configuração selecionada no momento.  
+        >  您也可以单击 **属性** 若要查看有关当前所选设置的信息。  
 
-    -   **Tipo de regra:** Selecione o tipo de regra de conformidade que você deseja usar:  
+    -   **规则类型：** 选择您想要使用的符合性规则的类型：  
 
-        -   **Valor** criar uma regra que compara o valor retornado pelo item de configuração com um valor que você especificar.  
+        -   **值** 创建配置项与您指定的值返回的值进行比较的规则。  
 
-        -   **Existential** criar uma regra que avalia a configuração dependendo se ela existe em um dispositivo cliente ou no número de vezes que ele for encontrado.  
+        -   **Existential** 创建计算结果具体取决于它是否存在或找到了该次数客户端设备上设置的规则。  
 
-    -   Para um tipo de regra de **valor**, especifique as seguintes informações:  
+    -   为规则类型的 **值**, ，指定以下信息：  
 
-        -   **a configuração deve estar de acordo com a seguinte regra** – selecione um operador e um valor que é avaliada quanto à conformidade com a configuração selecionada. Você pode usar os seguintes operadores:  
+        -   **设置必须符合以下规则** – 选择一个运算符和一个值，与所选设置的符合性评估。 可以使用以下运算符：  
 
-            |Operador|Mais informações|  
+            |运算符|更多信息|  
             |--------------|----------------------|  
-            |Igual a|Nenhuma informação adicional|  
-            |Não é igual a|Nenhuma informação adicional|  
-            |Maior que|Nenhuma informação adicional|  
-            |Menor que|Nenhuma informação adicional|  
-            |Entre|Nenhuma informação adicional|  
-            |Maior ou igual a|Nenhuma informação adicional|  
-            |Menor ou igual a|Nenhuma informação adicional|  
-            |Um dos|Na caixa de texto, especifique uma entrada em cada linha.|  
-            |Nenhum dos|Na caixa de texto, especifique uma entrada em cada linha.|  
+            |等于|无更多信息|  
+            |不等于|无更多信息|  
+            |大于|无更多信息|  
+            |小于|无更多信息|  
+            |之间|无更多信息|  
+            |大于或等于|无更多信息|  
+            |小于或等于|无更多信息|  
+            |其中一个|在文本框中，在每个行中指定一个条目。|  
+            |无|在文本框中，在每个行中指定一个条目。|  
 
-        -   **Corrigir regras não compatíveis quando houver suporte** – Selecione esta opção se desejar que o Configuration Manager corrija automaticamente as regras não compatíveis. O Configuration Manager pode corrigir automaticamente os seguintes tipos de regra:  
+        -   “在支持时修正不符合性规则” – 如果希望 Configuration Manager 自动修正不符合性规则，则选择此选项。 Configuration Manager 可以自动修正以下的规则类型：  
 
-            -   **Valor do registro** – o valor do registro é corrigido se ele está em conformidade e criado se ele não existir.  
+            -   **注册表值** – 时不符合要求，进行修正的注册表值并创建如果不存在。  
 
-            -   **Script** (executando automaticamente um script de correção).  
+            -   **脚本** (通过自动运行修正脚本)。  
 
-            -   **Consulta WQL**  
+            -   **WQL 查询**  
 
             > [!IMPORTANT]  
-            >  Você só pode corrigir regras não compatíveis quando o operador de regra é definido como **é igual a**.  
+            >  仅当规则运算符设置为“等于” 时，才能修正非符合性规则。  
 
-        -   **Não conformidade de relatório se essa instância de configuração não foi encontrada** – o item de configuração relatórios de não conformidade se essa configuração não for encontrada em computadores cliente.  
+        -   **如果找不到此设置实例报告不符合性** – 配置项目报告不符合性如果客户端计算机上找不到此设置。  
 
-        -   **Severidade de não conformidade para relatórios:** especifique o nível de severidade relatado (nos relatórios do Configuration Manager) se a regra de conformidade não for cumprida. Os níveis de severidade disponíveis são os seguintes:  
+        -   **报表的不符合性严重性程度：**指定不符合此符合性规则时报告的严重性级别（在 Configuration Manager 报表中）。 可用的严重性级别如下：  
 
-            -   **Nenhum** Computadores que não cumprem essa regra de conformidade não relatam uma severidade de falha.  
+            -   **无** 不符合此符合性规则的计算机不报告故障严重性。  
 
-            -   **Informações** Computadores que não cumprem essa regra de conformidade relatam uma severidade de falha de **Informações**.  
+            -   **信息** 不符合此符合性规则的计算机将报告故障严重性“信息”。  
 
-            -   **Aviso** Computadores que não cumprem essa regra de conformidade relatam uma severidade de falha de **Aviso**.  
+            -   **警告** 不符合此符合性规则的计算机将报告故障严重性“警告”。  
 
-            -   **Crítico** Computadores que não cumprem essa regra de conformidade relatam uma severidade de falha de **Crítico**.  
+            -   **严重** 不符合此符合性规则的计算机将报告故障严重性“严重”。  
 
-            -   **Crítico com evento** Computadores que não cumprem essa regra de conformidade relatam uma severidade de falha de **Crítico**. Esse nível de severidade também é registrado como um evento do Windows no log de eventos de aplicativos.  
+            -   **事件严重** 不符合此符合性规则的计算机将报告故障严重性“严重”。 应用程序事件日志中也会以 Windows 事件的形式记录此严重性级别。  
 
-        -   Para um tipo de regra de **Existential**, especifique as seguintes informações:  
+        -   对于规则类型“现有” ，指定以下信息：  
 
             > [!NOTE]  
-            >  As opções exibidas podem variar dependendo do tipo de configuração que você estiver configurando uma regra.  
+            >  根据为其配置规则的设置类型，显示的选项可能有所不同。  
 
-            -   **A configuração deve existir em dispositivos cliente**  
+            -   **此设置必须存在于客户端设备**  
 
-            -   **A configuração não deve existir em dispositivos cliente**  
+            -   **设置不得存在于客户端设备**  
 
-            -   **A configuração ocorre o seguinte número de vezes:**  
+            -   **该设置会发生以下次数：**  
 
-        -   **Severidade de não conformidade para relatórios:** especifique o nível de severidade relatado (nos relatórios do Configuration Manager) se a regra de conformidade não for cumprida. Os níveis de severidade disponíveis são os seguintes:  
+        -   **报表的不符合性严重性程度：**指定不符合此符合性规则时报告的严重性级别（在 Configuration Manager 报表中）。 可用的严重性级别如下：  
 
-            -   **Nenhum** Computadores que não cumprem essa regra de conformidade não relatam uma severidade de falha.  
+            -   **无** 不符合此符合性规则的计算机不报告故障严重性。  
 
-            -   **Informações** Computadores que não cumprem essa regra de conformidade relatam uma severidade de falha de **Informações**.  
+            -   **信息** 不符合此符合性规则的计算机将报告故障严重性“信息”。  
 
-            -   **Aviso** Computadores que não cumprem essa regra de conformidade relatam uma severidade de falha de **Aviso**.  
+            -   **警告** 不符合此符合性规则的计算机将报告故障严重性“警告”。  
 
-            -   **Crítico** Computadores que não cumprem essa regra de conformidade relatam uma severidade de falha de **Crítico**.  
+            -   **严重** 不符合此符合性规则的计算机将报告故障严重性“严重”。  
 
-            -   **Crítico com evento** Computadores que não cumprem essa regra de conformidade relatam uma severidade de falha de **Crítico**. Esse nível de severidade também é registrado como um evento do Windows no log de eventos de aplicativos.  
+            -   **事件严重** 不符合此符合性规则的计算机将报告故障严重性“严重”。 应用程序事件日志中也会以 Windows 事件的形式记录此严重性级别。  
 
-3.  Clique em **OK** para fechar a caixa de diálogo **Criar Regra** .  
+3.  单击“确定”  关闭“创建规则”  对话框。  
 
-##  <a name="specify-supported-platforms"></a>Especificar as plataformas com suporte  
- Plataformas com suporte são os sistemas operacionais nos quais um item de configuração é avaliado quanto à conformidade.  
+##  <a name="specify-supported-platforms"></a>指定支持的平台  
+ 支持的平台是在其上对配置项目评估符合性的操作系统。  
 
-Na página **Plataformas com Suporte** do **Assistente para Criar Item de Configuração**, na lista, selecione as versões do Windows nas quais você deseja que o item de configuração seja avaliado quanto à conformidade, ou clique em **Selecionar tudo**.  
+在“创建配置项目向导”  的“支持的平台” 页上，在列表中选择要在其上对配置项目评估符合性的 Windows 版本，或单击“全选” 。  
 
-## <a name="complete-the-wizard"></a>Concluir o assistente  
- Na página **Resumo** do Assistente, examine as ações a serem tomadas e conclua o assistente. O novo item de configuração é exibido no **itens de configuração** nó o **ativos e conformidade** espaço de trabalho.  
-
+## <a name="complete-the-wizard"></a>完成向导  
+ 在向导的“摘要”  页上，查看将执行的操作，然后完成向导。 新的配置项目显示在 **配置项目** 中的节点 **资产和符合性** 工作区。  

@@ -1,92 +1,85 @@
 ---
-title: "Preparar para implantações em computadores desconhecidos | Microsoft Docs"
-description: "Saiba como implantar sistemas operacionais em computadores que não são gerenciados pelo Configuration Manager no seu ambiente do System Center Configuration Manager."
+title: "准备未知计算机部署 | Microsoft Docs"
+description: "了解如何在 System Center Configuration Manager 环境中将操作系统部署到不受 Configuration Manager 管理的计算机。"
 ms.custom: na
 ms.date: 10/06/2016
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
-ms.technology:
-- configmgr-osd
+ms.technology: configmgr-osd
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 9e447e34-0943-49ed-b6ba-3efebf3566c1
-caps.latest.revision: 10
-caps.handback.revision: 0
+caps.latest.revision: "10"
+caps.handback.revision: "0"
 author: Dougeby
 ms.author: dougeby
 manager: angrobe
-translationtype: Human Translation
-ms.sourcegitcommit: 74341fb60bf9ccbc8822e390bd34f9eda58b4bda
 ms.openlocfilehash: 445e76950f0605da917f3d0e7e71557d969e3c2d
-
-
+ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
+ms.translationtype: HT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 08/07/2017
 ---
-# <a name="prepare-for-unknown-computer-deployments-in-system-center-configuration-manager"></a>Preparar implantações de computador desconhecido no System Center Configuration Manager
+# <a name="prepare-for-unknown-computer-deployments-in-system-center-configuration-manager"></a>在 System Center Configuration Manager 中准备未知计算机部署
 
-*Aplica-se a: System Center Configuration Manager (Branch Atual)*
+*适用范围：System Center Configuration Manager (Current Branch)*
 
-Use as informações neste tópico para implantar sistemas operacionais em computadores desconhecidos no ambiente do System Center Configuration Manager. Um computador desconhecido é qualquer computador que não seja gerenciado pelo Configuration Manager. Isso significa que não há registro desses computadores no banco de dados do Configuration Manager. Computadores desconhecidos incluem:  
+使用本主题中的信息将操作系统部署到 System Center Configuration Manager 环境中的未知计算机。 未知计算机是不受 Configuration Manager 管理的计算机。 这意味着 Configuration Manager 数据库中没有这些计算机的记录。 未知计算机包括下列各项：  
 
--   Um computador no qual o cliente do Configuration Manager não está instalado  
+-   未安装 Configuration Manager 客户端的计算机  
 
--   Um computador que não foi importado para o Configuration Manager  
+-   未导入到 Configuration Manager 中的计算机  
 
--   Um computador que não foi descoberto pelo Configuration Manager  
+-   未被 Configuration Manager 发现的计算机  
 
- É possível implantar sistemas operacionais em computadores desconhecidos com os seguintes métodos de implantação:  
+ 你可以使用下列部署方法将操作系统部署到未知计算机中：  
 
--   [Usar PXE para implantar o Windows na rede](../deploy-use/use-pxe-to-deploy-windows-over-the-network.md)  
+-   [使用 PXE 通过网络部署 Windows](../deploy-use/use-pxe-to-deploy-windows-over-the-network.md)  
 
--   [Usar a mídia inicializável para implantar um sistema operacional](../deploy-use/create-bootable-media.md)  
+-   [使用可启动媒体部署操作系统](../deploy-use/create-bootable-media.md)  
 
--   [Usar a mídia pré-configurada para implantar um sistema operacional](../deploy-use/create-prestaged-media.md)  
+-   [使用预留媒体部署操作系统](../deploy-use/create-prestaged-media.md)  
 
-## <a name="unknown-computer-deployment-workflow"></a>Fluxo de trabalho de implantação em computador desconhecido  
- Veja a seguir o fluxo de trabalho básico para implantar um sistema operacional em um computador desconhecido:  
+## <a name="unknown-computer-deployment-workflow"></a>未知计算机部署工作流  
+ 下面是将操作系统部署到未知计算机的基本工作流：  
 
--   Selecione um objeto de computador desconhecido para usar na implantação. É possível implantar o sistema operacional em um dos objetos do computador desconhecido na coleção **Todos os Computadores Desconhecidos** ou adicionar os objetos na coleção **Todos os Computadores Desconhecidos** a outra coleção. O Configuration Manager fornece dois objetos de computador desconhecido na coleção **Todos os Computadores Desconhecidos**. Um objeto é para computadores x86 e o outro para computadores x64.  
+-   选择要在部署中使用的未知计算机对象。 可将操作系统部署到“所有未知计算机”集合中的其中一个未知计算机对象  ，也可将  “所有未知计算机”集合中的对象添加到另一个集合。 在“所有未知计算机”集合中 Configuration Manager 提供了两个未知计算机对象。 一种对象表示 x86 计算机，另一种对象表示 x64 计算机。  
 
     > [!NOTE]  
-    >  O objeto **Computador x86 Desconhecido** é para computadores compatíveis somente com x86. O objeto **Computador x64 Desconhecido** é para computadores compatíveis com x86 e x64. Em outras palavras, esses objetos descrevem a arquitetura do computador de destino. Eles não descrevem o sistema operacional que você deseja implantar no computador de destino.  
+    >  “x86 未知计算机”  对象表示仅支持 x86 的计算机。 “x64 未知计算机”对象表示支持 x86 和 x64 的计算机。 换句话说，这些对象描述目标计算机的体系结构。 它们不描述你要在目标计算机上部署的操作系统。  
 
--   Configure um ponto de distribuição habilitado para PXE ou crie a mídia para dar suporte a implantações em computador desconhecido.  
+-   配置已启用 PXE 的分发点或创建媒体以支持未知计算机部署。  
 
--   Implante uma sequência de tarefas para instalar o sistema operacional.  
+-   部署用以安装操作系统的任务序列。  
 
-## <a name="unknown-computer-installation-process"></a>Processo de instalação do computador desconhecido  
- Quando um computador é primeiramente iniciado do PXE ou da mídia, o Configuration Manager verifica se existe um registro desse computador no banco de dados do Configuration Manager. Se existe registro, o Configuration Manager verifica se há sequências de tarefas implantadas no registro. Se não existe registro, o Configuration Manager verifica se há sequências de tarefas implantadas em um objeto de computador desconhecido. Em ambos os casos, o Configuration Manager executa uma das ações a seguir:  
+## <a name="unknown-computer-installation-process"></a>未知计算机安装过程  
+ 第一次从 PXE 或媒体中启动计算机时，Configuration Manage 会进行检查以确定 Configuration Manage 数据库中是否存在该计算机的记录。 如果有记录，Configuration Manager 随后将进行检查以确定是否有部署到该记录的任何任务序列。 如果没有记录，Configuration Manager 将进行检查以确定是否有部署到未知计算机对象的任何任务序列。 在任何一种情况下，Configuration Manager 都会随后执行以下操作之一：  
 
--   Se há uma sequência de tarefas disponível, o Configuration Manager solicita ao usuário que execute a sequência de tarefas.  
+-   如果有可用的任务序列，Configuration Manager 将提示用户运行该任务序列。  
 
--   Se houver uma sequência de tarefas obrigatória, o Configuration Manager a executará automaticamente.  
+-   如果有必需的任务序列，Configuration Manager 将自动运行该任务序列。  
 
--   Se não houver uma sequência de tarefas implantada no registro, o Configuration Manager gerará um erro indicando que não há sequências de tarefas implantadas no computador de destino.  
+-   如果没有为记录部署任务序列，Configuration Manager 将生成错误，指出目标计算机没有任何部署的任务序列。  
 
- Quando um computador desconhecido é iniciado, o Configuration Manager reconhece o computador como um computador não provisionado, e não como um computador desconhecido. Isso significa que o computador pode agora receber as sequências de tarefas que foram implantadas no objeto do computador desconhecido. A sequência de tarefas implantada instala uma imagem do sistema operacional que deve incluir o cliente do Configuration Manager.  
+ 在启动未知计算机时，Configuration Manager 会将该计算机识别为未预配的计算机，而不是未知计算机。 这意味着计算机现在可接收之前部署到未知计算机对象的任务序列。 部署的任务序列随后安装必须包括 Configuration Manager 客户端的操作系统映像。  
 
- Concluída a instalação do cliente do Configuration Manager, é criado um registro para o computador e o computador é listado na coleção apropriada do Configuration Manager. Se o computador falhar ao instalar a imagem do sistema operacional ou o cliente do Configuration Manager, será criado um registro “Desconhecido” para o computador e o computador aparecerá na coleção **Todos os Sistemas**.  
+ 安装 Configuration Manager 客户端之后，将创建计算机的记录，并且计算机会在相应的 Configuration Manager 集合中列出。 如果该计算机未能安装操作系统映像或 Configuration Manager 客户端，则将为该计算机的创建一条“未知”记录，并且该计算机将出现在“所有系统”集合中。  
 
 > [!NOTE]  
->  Durante a instalação da imagem do sistema operacional, a sequência de tarefas pode recuperar as variáveis da coleção, mas não as variáveis desse computador.  
+>  在操作系统映像安装过程中，任务序列可从此计算机中检索集合变量，而无法检索计算机变量。  
 
-##  <a name="a-namebkmkenablingunknowna-enabling-unknown-computer-support"></a><a name="BKMK_EnablingUnknown"></a> Habilitando o suporte a computador desconhecido  
- Use as opções a seguir para habilitar o suporte a computadores desconhecidos ao implantar um sistema operacional usando o PXE, a mídia inicializável e a mídia pré-configurada.  
+##  <a name="BKMK_EnablingUnknown"></a> 启用未知计算机支持  
+ 在使用 PXE、可启动媒体和预留媒体部署操作系统时，使用以下内容可启用未知计算机支持。  
 
 -   **PXE**  
 
-     Marque a caixa de seleção **Habilitar suporte a computadores desconhecidos** na guia **PXE** de um ponto de distribuição que está habilitado para PXE. Para obter mais informações, consulte [Configuring distribution points to accept PXE requests](prepare-site-system-roles-for-operating-system-deployments.md#BKMK_PXEDistributionPoint) (Configurando pontos de distribuição para aceitar solicitações PXE).  
+     在针对 PXE 启用分发点的“PXE”  选项卡上，选中“启用未知计算机支持”  复选框。 有关详细信息，请参阅[配置分发点以接受 PXE 请求](prepare-site-system-roles-for-operating-system-deployments.md#BKMK_PXEDistributionPoint)。  
 
--   **Mídia inicializável**  
+-   **可启动媒体**  
 
-     Marque a caixa de seleção **Habilitar suporte a computadores desconhecidos** , na página **Segurança** do Assistente para Criar Mídia de Sequência de Tarefas. Para obter mais informações, consulte [Configuring distribution points to accept PXE requests](prepare-site-system-roles-for-operating-system-deployments.md#BKMK_PXEDistributionPoint) (Configurando pontos de distribuição para aceitar solicitações PXE) e [Use PXE to deploy Windows over the network with System Center Configuration Manager](../deploy-use/use-pxe-to-deploy-windows-over-the-network.md) (Usar o PXE para implantar o Windows pela rede com o System Center Configuration Manager).  
+     在创建任务序列媒体向导的“安全”  页上，选中“启用未知计算机支持”  复选框。 有关详细信息，请参阅[配置分发点以接受 PXE 请求](prepare-site-system-roles-for-operating-system-deployments.md#BKMK_PXEDistributionPoint) 和[使用 PXE 与 System Center Configuration Manager 一起通过网络部署 Windows](../deploy-use/use-pxe-to-deploy-windows-over-the-network.md)。  
 
--   **Mídia em pré-teste**  
+-   **预留媒体**  
 
-     Marque a caixa de seleção **Habilitar suporte a computadores desconhecidos** , na página **Segurança** do Assistente para Criar Mídia de Sequência de Tarefas. Para obter mais informações, consulte [Create prestaged media with System Center Configuration Manager](../deploy-use/create-prestaged-media.md).  
-
-
-
-<!--HONumber=Dec16_HO3-->
-
-
+     在创建任务序列媒体向导的“安全”  页上，选中“启用未知计算机支持”  复选框。 有关详细信息，请参阅 [Create prestaged media with System Center Configuration Manager](../deploy-use/create-prestaged-media.md)。  

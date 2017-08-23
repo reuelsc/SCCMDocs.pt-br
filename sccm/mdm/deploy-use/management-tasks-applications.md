@@ -1,59 +1,56 @@
 ---
-title: Gerenciar aplicativos no System Center Configuration Manager | Microsoft Docs
-description: Gerencie aplicativos no System Center Configuration Manager.
+title: "在 System Center Configuration Manager 中管理应用程序 | Microsoft Docs"
+description: "在 System Center Configuration Manager 中管理应用程序。"
 ms.custom: na
 ms.date: 03/05/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
-ms.technology:
-- configmgr-hybrid
+ms.technology: configmgr-hybrid
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 8adbe2e2-de26-4a80-8bbd-a5f34b8bac79
-caps.latest.revision: 18
-caps.handback.revision: 0
+caps.latest.revision: "18"
+caps.handback.revision: "0"
 author: mtillman
 ms.author: mtillman
 manager: angrobe
-ms.translationtype: Human Translation
-ms.sourcegitcommit: 2c723fe7137a95df271c3612c88805efd8fb9a77
 ms.openlocfilehash: bc7bb99bc526ed0bbaaad15fc9af39fa8b7c3893
-ms.contentlocale: pt-br
-ms.lasthandoff: 05/17/2017
-
+ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
+ms.translationtype: HT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 08/07/2017
 ---
-# <a name="manage-applications-in-system-center-configuration-manager"></a>Gerenciar aplicativos no System Center Configuration Manager
+# <a name="manage-applications-in-system-center-configuration-manager"></a>在 System Center Configuration Manager 中管理应用程序
 
-*Aplica-se a: System Center Configuration Manager (Branch Atual)*
+*适用范围：System Center Configuration Manager (Current Branch)*
 
-Quando você gerencia dispositivos por meio do gerenciamento de dispositivo local do Microsoft Intune ou do Configuration Manager, é possível gerenciar estes tipos de aplicativos adicionais:
-- Pacote de aplicativos do Windows Phone (arquivo *.xap)
-- Pacote de aplicativo para iOS (arquivo *.ipa)
-- Pacote de aplicativo para Android (arquivo *.apk)
-- Pacote do aplicativo para Android no Google Play
-- Pacote de aplicativo do Windows Phone (na Windows Store)
-- Windows Installer por meio do MDM
-- Aplicativo da Web
+通过 Microsoft Intune 或 Configuration Manager 在本地设备管理中管理设备时，还可以管理以下应用程序类型：
+- Windows Phone 应用包（*.xap 文件）
+- iOS 应用包（*.ipa 文件）
+- Android 应用包（*.apk 文件）
+- “Google Play 上的 Android 应用包”
+- Windows Phone 应用包（在 Windows Phone 应用商店中）
+- 通过 MDM 的 Windows 安装程序
+- Web 应用程序
 
-Esta seção fornece informações detalhadas sobre como criar e gerenciar aplicativos usando o MDM híbrido ou o MDM local.
+本部分详细介绍使用混合 MDM 或本地 MDM 创建和管理应用程序。
 
-[Tarefas de gerenciamento para aplicativos do System Center Configuration Manager](../../apps/deploy-use/management-tasks-applications.md) fornece informações gerais sobre como gerenciar aplicativos do System Center Configuration Manager e os tipos de implantação.
+[System Center Configuration Manager 应用程序的管理任务](../../apps/deploy-use/management-tasks-applications.md)提供有关管理 System Center Configuration Manager 应用程序和部署类型的其他常规信息。
 
-## <a name="deploying-and-monitoring-apps"></a>Implantar e monitorar aplicativos
+## <a name="deploying-and-monitoring-apps"></a>部署和监视应用
 
-A implantação e monitoramento de aplicativos no System Center Configuration Manager segue os mesmos processos para dispositivos móveis usados em dispositivos locais, como laptops e desktops. Leia os tópicos a seguir para saber mais sobre a implantação e monitoramento de aplicativos:
+在 System Center Configuration Manager 中部署和监视应用程序对移动设备和现场设备（如笔记本电脑和台式机）是一样的过程。 可以阅读以下主题，了解有关部署和监视应用程序的一般信息：
 
-- [Implantar aplicativos no System Center Configuration Manager](../../apps/deploy-use/deploy-applications.md)
-- [Monitorar aplicativos no System Center Configuration Manager](../../apps/deploy-use/monitor-applications-from-the-console.md)
+- [在 System Center Configuration Manager 中部署应用程序](../../apps/deploy-use/deploy-applications.md)
+- [在 System Center Configuration Manager 中监视应用程序](../../apps/deploy-use/monitor-applications-from-the-console.md)
 
-Confira aqui algumas considerações para ter em mente ao implantar e monitorar aplicativos, específicas ao gerenciamento de dispositivos móveis.
+以下是特定于移动设备管理的部署和监视应用程序时需要牢记的一些注意事项。
 
-- Os dispositivos registrados em MDM não dão suporte às configurações de agendamento, às experiência do usuário nem às implantações simuladas.
+- 已注册 MDM 的设备不支持模拟部署、用户体验或计划设置。
 
-- Associe a implantação com uma política de configuração de aplicativo do iOS, se você já tiver configurado uma. Confira [Configurar aplicativos iOS com políticas de configuração de aplicativo](configure-ios-apps-with-app-configuration-policies.md).
+- 可以将该部署与 iOS 应用配置策略（如果已配置）相关联。 请参阅[使用应用配置策略配置 iOS 应用](configure-ios-apps-with-app-configuration-policies.md)。
 
-### <a name="next-steps"></a>Próximas etapas
+### <a name="next-steps"></a>后续步骤
 
-Eventualmente, você pode querer fazer alterações em um aplicativo, desinstalá-lo ou substituir um aplicativo já implantado por um novo aplicativo. Leia [Atualizar e desativar aplicativos com o System Center Configuration Manager](../../apps/deploy-use/update-and-retire-applications.md) para entender esses recursos.
-
+最后，建议更改、卸载应用程序，或者将已部署的应用程序替换为新的应用程序。 请参阅[使用 System Center Configuration Manager 更新和停用应用程序](../../apps/deploy-use/update-and-retire-applications.md)以了解这些功能。

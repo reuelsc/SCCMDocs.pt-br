@@ -1,305 +1,300 @@
 ---
-title: "Configurar administração baseada em função | Microsoft Docs"
+title: "配置基于角色的管理 | Microsoft Docs"
 ms.custom: na
 ms.date: 2/14/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
-ms.technology:
-- configmgr-other
+ms.technology: configmgr-other
 ms.tgt_pltfrm: na
 ms.topic: get-started-article
 ms.assetid: 57413dd3-b2f8-4a5f-b27f-8464d357caff
-caps.latest.revision: 7
-caps.handback.revision: 0
+caps.latest.revision: "7"
+caps.handback.revision: "0"
 author: Brenduns
 ms.author: brenduns
 manager: angrobe
-ms.translationtype: Human Translation
-ms.sourcegitcommit: 1defe96163f1bb70f586619ad89098c6f0e6c665
 ms.openlocfilehash: 3eea3a6e5f23808570ded4be3bd7412954518b96
-ms.contentlocale: pt-br
-ms.lasthandoff: 05/17/2017
-
-
+ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
+ms.translationtype: HT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 08/07/2017
 ---
+# <a name="configure-role-based-administration-for-system-center-configuration-manager"></a>为 System Center Configuration Manager 配置基于角色的管理   
 
-# <a name="configure-role-based-administration-for-system-center-configuration-manager"></a>Configurar administração baseada em função para o System Center Configuration Manager   
+*适用范围：System Center Configuration Manager (Current Branch)*
 
-*Aplica-se a: System Center Configuration Manager (Branch Atual)*
+在 System Center Configuration Manager 中，基于角色的管理结合了安全角色、安全作用域和分配的集合来定义每个管理用户的管理作用域。 管理作用域包括管理用户可在 Configuration Manager 控制台中查看的对象，以及管理用户有权执行的与这些对象相关的任务。 基于角色的管理配置应用于层次结构中的每个站点。  
 
-No System Center Configuration Manager, a administração baseada em funções combina funções de segurança, escopos de segurança e coleções atribuídas para definir o escopo administrativo para cada usuário administrativo. Um escopo administrativo inclui os objetos que um usuário administrativo pode exibir no console do Configuration Manager e as tarefas relacionadas a esses objetos que o usuário administrativo tem permissão para realizar. As configurações de administração baseada em funções são aplicadas em cada site de uma hierarquia.  
+ 如果尚未熟悉基于角色的管理的概念，请参阅 [System Center Configuration Manager 的基于角色的管理基础](../../../../core/understand/fundamentals-of-role-based-administration.md)。  
 
- Se ainda não estiver familiarizado com os conceitos da administração baseada em funções, confira [Fundamentos da administração baseada em funções para o System Center Configuration Manager](../../../../core/understand/fundamentals-of-role-based-administration.md).  
+ 下列过程中的信息有助于创建和配置基于角色的管理以及相关安全设置：  
 
- As informações contidas nos procedimentos a seguir podem ajudá-lo a criar e configurar a administração baseada em funções e as configurações de segurança relacionadas:  
+-   [创建自定义安全角色](#BKMK_CreateSecRole)  
 
--   [Criar funções de segurança personalizadas](#BKMK_CreateSecRole)  
+-   [配置安全角色](#BKMK_ConfigSecRole)  
 
--   [Configurar funções de segurança](#BKMK_ConfigSecRole)  
+-   [配置对象的安全作用域](#BKMK_ConfigSecScope)  
 
--   [Configurar escopos de segurança para um objeto](#BKMK_ConfigSecScope)  
+-   [配置集合来管理安全性](#BKMK_ConfigColl)  
 
--   [Configurar coleções para gerenciar a segurança](#BKMK_ConfigColl)  
+-   [创建新管理用户](#BKMK_Create_AdminUser)  
 
--   [Criar um novo usuário administrativo](#BKMK_Create_AdminUser)  
+-   [修改管理用户的管理作用域](#BKMK_ModAdminUser)  
 
--   [Modificar o escopo administrativo de um usuário administrativo](#BKMK_ModAdminUser)  
+##  <a name="BKMK_CreateSecRole"></a> 创建自定义安全角色  
+ Configuration Manager 提供若干内置安全角色。 如果需要其他安全角色，你可以通过创建现有安全角色的副本然后对该副本进行修改来创建自定义安全角色。 可创建自定义安全角色，向管理用户授予他们需要的但未包含在当前已分配安全角色中的其他安全权限。 通过使用自定义安全角色，你可以只向管理用户授予他们需要的权限，并避免分配会授予超出其所需的权限的安全角色。  
 
-##  <a name="BKMK_CreateSecRole"></a> Criar funções de segurança personalizadas  
- O Configuration Manager oferece várias funções de segurança internas. Se necessitar de funções de segurança adicionais, você poderá criar uma função de segurança personalizada criando a cópia de uma função de segurança existente e modificando essa cópia. Você pode criar uma função de segurança personalizada para conceder aos usuários administrativos as permissões de segurança adicionais de que eles necessitam e que não estão incluídas atualmente em uma função de segurança atribuída. Usando uma função de segurança personalizada, você pode conceder a eles somente as permissões de que eles precisam e impedir a atribuição de uma função de segurança que conceda mais permissões do que eles precisam.  
+ 使用下列过程，通过使用现有安全角色作为模板来创建一个新安全角色。  
 
- Use o procedimento a seguir para criar uma nova atribuição de segurança usando uma função de segurança existente como modelo.  
+#### <a name="to-create-custom-security-roles"></a>创建自定义安全角色  
 
-#### <a name="to-create-custom-security-roles"></a>Para criar funções de segurança personalizadas  
+1.  在 Configuration Manager 控制台中，转到“管理”。  
 
-1.  No console do Configuration Manager, acesse **Administração**.  
+2.  在“管理”工作区，展开“安全”，然后选择“安全角色”。  
 
-2.  No espaço de trabalho **Administração**, expanda **Segurança**e selecione **Funções de Segurança**.  
+     使用下列过程之一来创建新安全角色：  
 
-     Use um dos seguintes processos para criar a nova função de segurança:  
+    -   要创建新的自定义安全角色，请执行下列操作：  
 
-    -   Para criar uma nova função de segurança personalizada, execute as seguintes ações:  
+        1.  选择现有安全角色以用作新安全角色的来源。  
 
-        1.  Selecione uma função de segurança existente para usar como origem para a nova função de segurança.  
+        2.  在“主页”选项卡上的“安全角色”组中，选择“复制”。 这将创建源安全角色的副本。  
 
-        2.  Na guia **Início**, no grupo **Função de Segurança**, escolha **Copiar**. Isso criará uma cópia da função de segurança de origem.  
+        3.  在复制安全角色向导中，为新的自定义安全角色指定“名称”  。  
 
-        3.  No assistente Copiar Função de Segurança, especifique um **Nome** para a nova função de segurança personalizada.  
+        4.  在“安全操作分配” 中，展开每个“安全操作”  节点以显示可用操作。  
 
-        4.  Em **Atribuições de operações de segurança**, expanda cada nó **Operações de Segurança** para exibir as ações disponíveis.  
-
-        5.  Para alterar a configuração de uma operação de segurança, escolha a seta para baixo na coluna **Valor** e escolha **Sim** ou **Não**.  
+        5.  若要更改安全操作的设置，请在“值”列中选择向下箭头，然后选择“是”或“否”。  
 
             > [!CAUTION]  
-            >  Ao configurar uma atribuição de segurança personalizada, não conceda permissões que não sejam exigidas pelos usuários administrativos associados à nova função de segurança. Por exemplo, o valor **Modificar** da operação de segurança **Funções de Segurança** concede aos usuários administrativos permissão para editar qualquer função de segurança acessível, mesmo que eles não estejam associados a essa função de segurança.  
+            >  配置自定义安全角色时，请确保不要向与新安全角色关联的管理用户授予其不需要的权限。 例如，“安全角色”的“修改”值安全操作将向管理用户授予编辑任何可访问安全角色的权限，即使这些用户未与该安全角色关联。  
 
-        6.  Após configurar as permissões, escolha **OK** para salvar a nova função de segurança.  
+        6.  配置权限后，选择“确定”，保存新安全角色。  
 
-    -   Para importar uma função de segurança exportada de outra hierarquia do Configuration Manager, execute as seguintes ações:  
+    -   要导入从另一个 Configuration Manager 层次结构中导出的安全角色，请执行下列操作：  
 
-        1.  Na guia **Início**, no grupo **Criar**, escolha **Importar Função de Segurança**.  
+        1.  在“主页”选项卡上的“创建”组中，选择“导入安全角色”。  
 
-        2.  Especifique o arquivo .xml que contém a configuração da função de segurança que você deseja importar. Escolha **Abrir** para concluir o procedimento e salvar a função de segurança.  
+        2.  指定包含要导入的安全角色配置的 xml 文件。 选择“打开”，完成该过程并保存安全角色。  
 
             > [!NOTE]  
-            >  Após importar uma função de segurança, você poderá editar as propriedades dessa função para alterar as permissões de objeto associadas a ela.  
+            >  导入安全角色之后，你可以编辑安全角色属性来更改与安全角色关联的对象权限。  
 
-##  <a name="BKMK_ConfigSecRole"></a> Configurar funções de segurança  
- Os grupos de permissões de segurança definidos para uma função de segurança são chamados de atribuições de operação de segurança. As atribuições de operação de segurança representam uma combinação de tipos de objetos e ações que estão disponíveis para cada tipo de objeto. Você pode modificar as operações de segurança disponíveis para qualquer função de segurança personalizada, mas não é possível modificar as funções de segurança internas que o Configuration Manager fornece.  
+##  <a name="BKMK_ConfigSecRole"></a> 配置安全角色  
+ 为安全角色定义的安全权限组称为安全操作分配。 安全操作分配表示对象类型以及可用于每个对象类型的操作的组合。 可为任何自定义安全角色修改可用的安全操作，但无法修改 Configuration Manager 提供的内置安全角色。  
 
- Use o procedimento a seguir para modificar as operações de segurança para uma função de segurança.  
+ 使用下列过程来修改安全角色的安全操作。  
 
-#### <a name="to-modify-security-roles"></a>Para modificar as funções de segurança  
+#### <a name="to-modify-security-roles"></a>修改安全角色  
 
-1.  No console do Configuration Manager, escolha **Administração**.  
+1.  在 Configuration Manager 控制台中，选择“管理”。  
 
-2.  No espaço de trabalho **Administração**, expanda **Segurança**e selecione **Funções de Segurança**.  
+2.  在“管理”工作区，展开“安全”，然后选择“安全角色”。  
 
-3.  Selecione a função de segurança personalizada que deseja modificar.  
+3.  选择要修改的自定义安全角色。  
 
-4.  Na guia **Início**, no grupo **Propriedades**, clique em **Propriedades**.  
+4.  在“主页”选项卡上的“属性”组中，选择“属性”。  
 
-5.  Escolha a guia **Permissões**.  
+5.  选择“权限”选项卡。  
 
-6.  Em **Atribuições de operações de segurança**, expanda cada nó **Operações de Segurança** para exibir as ações disponíveis.  
+6.  在“安全操作分配” 中，展开每个“安全操作”  节点以显示可用操作。  
 
-7.  Para alterar a configuração de uma operação de segurança, escolha a seta para baixo na coluna **Valor** e escolha **Sim** ou **Não**.  
+7.  若要更改安全操作的设置，请在“值”列中选择向下箭头，然后选择“是”或“否”。  
 
     > [!CAUTION]  
-    >  Ao configurar uma atribuição de segurança personalizada, não conceda permissões que não sejam exigidas pelos usuários administrativos associados à nova função de segurança. Por exemplo, o valor **Modificar** da operação de segurança **Funções de Segurança** concede aos usuários administrativos permissão para editar qualquer função de segurança acessível, mesmo que eles não estejam associados a essa função de segurança.  
+    >  配置自定义安全角色时，请确保不要向与新安全角色关联的管理用户授予其不需要的权限。 例如，“安全角色”的“修改”值安全操作将向管理用户授予编辑任何可访问安全角色的权限，即使这些用户未与该安全角色关联。  
 
-8.  Após concluir a configuração das atribuições de operação de segurança, escolha **OK** para salvar a nova atribuição de segurança.  
+8.  完成配置安全操作分配后，选择“确定”，保存新安全角色。  
 
-##  <a name="BKMK_ConfigSecScope"></a> Configurar escopos de segurança para um objeto  
- Você gerencia a associação de um escopo de segurança para um objeto por meio do objeto, não por meio do escopo de segurança. As únicas configurações diretas para as quais os escopos de segurança oferecem suporte são as alterações de nome e descrição. Para alterar o nome e a descrição de um escopo de segurança ao exibir as propriedades dele, é necessário ter a permissão **Modificar** para o objeto protegível dos **Escopos de Segurança** .  
+##  <a name="BKMK_ConfigSecScope"></a> 配置对象的安全作用域  
+ 通过对象（而不是安全作用域）管理对象的安全作用域关联。 安全作用域支持的唯一直接配置是更改其名称和描述。 要在查看安全作用域属性时更改安全作用域的名称和描述，你必须具有“安全作用域”  安全对象的“修改”  权限。  
 
- Quando você cria um objeto no Configuration Manager, esse novo objeto é associado a cada escopo de segurança que está associado às funções de segurança da conta usada para criar o objeto quando essas funções de segurança fornecem a permissão **Criar** ou **Definir Escopo de Segurança**. Você só pode alterar os escopos de segurança aos quais o objeto está associado após sua criação.  
+ 在 Configuration Manager 中创建新对象时，新对象与每个与帐户安全角色关联的安全作用域相关联，当这些安全角色提供“创建”权限或“设置安全作用域”权限时，该帐户用于创建对象。 只有在创建对象后，才能更改与之关联的安全作用域。  
 
- Por exemplo, foi atribuída a você uma função de segurança que lhe concede permissão para criar um novo grupo de limites. Quando você cria um novo grupo de limites, você não tem opção à qual você possa atribuir escopos de segurança específicos. Em vez disso, os escopos de segurança disponíveis nas funções de segurança às quais você está associado são automaticamente atribuídos ao novo grupo de limites. Após salvar o novo grupo de limites, você poderá editar os escopos de segurança associados a ele.  
+ 例如，已为你分配了一个安全角色，该安全角色可授予创建新边界组的权限。 创建新边界组时，你没有可为其分配特定安全作用域的选项。 作为替代，会将与你关联的安全角色中的可用安全作用域自动分配给新的边界组。 保存新边界组之后，可编辑与新边界组关联的安全作用域。  
 
- Use o procedimento a seguir para configurar os escopos de segurança atribuídos a um objeto.  
+ 使用下列过程来配置分配给对象的安全作用域。  
 
-#### <a name="to-configure-security-scopes-for-an-object"></a>Para configurar escopos de segurança para um objeto  
+#### <a name="to-configure-security-scopes-for-an-object"></a>为对象配置安全作用域  
 
-1.  No console do Configuration Manager, selecione um objeto que dê suporte à atribuição a um escopo de segurança.  
+1.  在 Configuration Manager 控制台中，选择支持分配给安全作用域的对象。  
 
-2.  Na guia **Início**, no grupo **Classificar**, escolha **Definir Escopos de Segurança**.  
+2.  在“主页”选项卡上的“分类”组中，选择“设置安全作用域”。  
 
-3.  Na caixa de diálogo **Definir Escopos de Segurança** , selecione ou apague os escopos de segurança aos quais esse objeto está associado. Cada objeto que oferece suporte a escopos de segurança deve ser atribuído a pelo menos um escopo de segurança.  
+3.  在“设置安全作用域”  对话框中，选中或清除此对象与之关联的安全作用域。 必须将支持安全作用域的每个对象分配给至少一个安全作用域。  
 
-4.  Escolha **OK** para salvar os escopos de segurança atribuídos.  
-
-    > [!NOTE]  
-    >  Quando você cria um novo objeto, você pode atribuí-lo a vários escopos de segurança. Para modificar o número de escopos de segurança associados ao objeto, é necessário alterar essa atribuição após a criação do objeto.  
-
-##  <a name="BKMK_ConfigColl"></a> Configurar coleções para gerenciar a segurança  
- Não existem procedimentos para configurar coleções para a administração baseada em funções. As coleções não têm uma configuração de administração baseada em função. Em vez disso, você atribui coleções a um usuário administrativo ao configurar o usuário administrativo. As operações de segurança da coleção permitidas nas funções de segurança atribuídas aos usuários determinam as permissões que um usuário administrativo tem para coleções e recursos da coleção (membros da coleção).  
-
- Quando um usuário administrativo possui permissões para uma coleção, ele também tem permissões para coleções que estão limitadas a essa coleção. Por exemplo, a sua organização usa uma coleção chamada Todos os Desktops, e lá há uma coleção chamada Todos os Desktops da América do Norte que está limitada à coleção Todos os Desktops. Se um usuário administrativo tiver permissões para Todos os Desktops, ele também terá as mesmas permissões para a coleção Todos os Desktops da América do Norte.
-
- Além disso, um usuário administrativo não pode usar a permissão **Excluir** ou **Modificar** em uma coleção que está diretamente atribuída a ele. Porém, podem usar essas permissões nas coleções que estão limitadas a essa coleção. No exemplo anterior, o usuário administrativo pode excluir ou modificar a coleção Todos os Desktops da América do Norte, mas não pode excluir ou modificar a coleção Todos os Desktops.  
-
-##  <a name="BKMK_Create_AdminUser"></a> Criar um novo usuário administrativo  
- Para conceder acesso para gerenciar o Configuration Manager a indivíduos ou membros de um grupo de segurança, crie um usuário administrativo no Configuration Manager e especifique a conta do Windows do Usuário ou Grupo de Usuários. Cada usuário administrativo no Configuration Manager deve receber a atribuição de pelo menos uma função de segurança e um escopo de segurança. Você também pode atribuir coleções para limitar o escopo administrativo do usuário administrativo.  
-
- Use os procedimentos a seguir para criar novos usuários administrativos.  
-
-#### <a name="to-create-a-new-administrative-user"></a>Para criar um novo usuário administrativo  
-
-1.  No console do Configuration Manager, escolha **Administração**.  
-
-2.  No espaço de trabalho **Administração**, expanda **Segurança**e escolha **Usuários Administrativos**.  
-
-3.  Na guia **Início**, no grupo **Criar**, escolha **Adicionar Usuário ou Grupo**.  
-
-4.  Escolha **Procurar** e selecione a conta de usuário ou grupo a ser usada para esse novo usuário administrativo.  
+4.  选择“确定”，保存分配的安全作用域。  
 
     > [!NOTE]  
-    >  Para a administração baseada em console, somente os usuários de domínio ou grupos de segurança podem ser especificados como um usuário administrativo.  
+    >  在创建新对象时，你可以将对象分配给多个安全作用域。 若要修改与对象关联的安全作用域的数量，必须在创建对象之后更改此分配。  
 
-5.  Para **Funções de segurança associadas**, escolha **Adicionar** para abrir uma lista das funções de segurança disponíveis, marque a caixa de uma ou mais funções de segurança e escolha **OK**.  
+##  <a name="BKMK_ConfigColl"></a> 配置集合来管理安全性  
+ 没有用于为基于角色的管理配置集合的过程。 集合不具有基于角色的管理配置。 作为替代，会在配置管理用户时将集合分配给管理用户。 用户已分配安全角色中启用的集合安全操作可确定管理用户对集合和集合资源（集合成员）所拥有的权限。  
 
-6.  Escolha uma das duas opções a seguir para definir o comportamento de objeto protegível para o novo usuário:  
+ 如果管理用户拥有某个集合的权限，则对于限制为该集合的集合，他们也拥有权限。 例如，组织使用一个名为“所有台式机”的集合，并且有一个名为“所有北美台式机”集合，该集合限制为“所有台式机”集合。 如果管理用户拥有“所有台式机”的权限，则他们也拥有“所有北美台式机”集合的那些相同权限。
 
-    -   **Todos os objetos protegíveis que são relevantes para suas funções de segurança associadas**: essa opção associa o usuário administrativo ao escopo de segurança **Todos** e a coleções de nível raiz integradas a **Todos os sistemas**e **Todos os usuários e Grupos de usuários**. As funções de segurança que são atribuídas ao usuário definem o acesso a objetos. Os novos objetos que esse usuário administrativo cria são atribuídos ao escopo de segurança **Padrão** .  
+ 此外，管理用户不能在直接分配给他们的集合上使用“删除”或“修改”权限。 但是，他们可在限于该集合的集合上使用这些权限。 在之前的示例中，管理用户可以删除或修改“所有北美台式机”集合，但无法删除或修改“所有台式机”集合。  
 
-    -   **Somente objetos protegíveis em escopos de segurança especificados ou coleções**: por padrão, essa opção associa o usuário administrativo ao escopo de segurança **Padrão** e a coleções de **Todos os sistemas** e **Todos os usuários e Grupos de usuários**. No entanto, os escopos de segurança e as coleções atuais são limitados aos que estão associados à conta que você usou para criar o novo usuário administrativo. Essa opção oferece suporte à adição ou remoção de escopos de segurança e coleções para personalizar o escopo administrativo do usuário administrativo.  
+##  <a name="BKMK_Create_AdminUser"></a> 创建新管理用户  
+ 要授予个人或安全组成员访问权限以管理 Configuration Manager，请在 Configuration Manager 中创建一个管理用户，并指定 Windows 帐户“用户”或“用户组”。 必须为 Configuration Manager 中的每个管理用户分配至少一个安全角色和一个安全作用域。 你还可以分配集合来限制管理用户的管理作用域。  
+
+ 使用以下过程来创建新的管理用户。  
+
+#### <a name="to-create-a-new-administrative-user"></a>创建新的管理用户  
+
+1.  在 Configuration Manager 控制台中，选择“管理”。  
+
+2.  在“管理”工作区中，展开“安全”，然后选择“管理用户”。  
+
+3.  在“主页”选项卡上的“创建”组中，选择“添加用户或组”。  
+
+4.  选择“浏览”，然后选择要用于此新管理用户的用户帐户或组。  
+
+    > [!NOTE]  
+    >  对于基于控制台的管理，只能将域用户或安全组指定为管理用户。  
+
+5.  对于“关联的安全角色”，选择“添加”打开可用安全角色的列表，选中一个或多个安全角色的复选框，然后选择“确定”。  
+
+6.  选择以下两个选项之一，定义新用户的安全对象行为：  
+
+    -   **与其关联安全角色相关的所有安全对象**：此选项将管理用户与“全部”安全作用域以及“所有系统”和“所有用户和用户组”的根级别内置集合关联。 分配给用户的安全角色定义对象的访问权限。 会将此管理用户创建的新对象分配到“默认”  安全作用域。  
+
+    -   **仅限指定的安全作用域或集合中的安全对象**：默认情况下，此选项将管理用户与“默认”安全作用域以及“所有系统”和“所有用户和用户组”集合关联。 但是，实际安全作用域和集合仅限于那些与创建新管理用户所需的帐户关联的安全作用域和集合。 此选项支持添加或删除安全作用域和集合来自定义管理用户的管理作用域。  
 
     > [!IMPORTANT]  
-    >  As opções anteriores associam cada escopo de segurança e coleção associados a cada função de segurança atribuída ao usuário administrativo. Você pode usar uma terceira opção, **Somente objetos protegíveis como determinado pelas funções de segurança do usuário administrativo**, para associar funções de segurança individuais a escopos de segurança e coleções específicos. Essa terceira opção fica disponível com a criação do novo usuário administrativo, quando você modifica o usuário administrativo.  
+    >  前面的选项将每个分配的安全作用域和集合与分配给管理用户的每个安全角色关联。 可使用第三个选项“仅限由管理用户的安全角色确定的安全对象”将单独的安全角色与特定安全作用域和集合关联。 在你创建新管理用户之后修改管理用户时，可以使用这第三个选项。  
 
-7.  Dependendo da sua seleção na etapa 6, execute a seguinte ação:  
+7.  根据在步骤 6 中所做的选择执行以下操作：  
 
-    -   Se você tiver selecionado **Todos os objetos protegíveis que são relevantes para suas funções de segurança associadas**, escolha **OK** para concluir esse procedimento.  
+    -   如果选择了“与其关联安全角色相关的所有安全对象”，请选择“确定”，完成此过程。  
 
-    -   Se tiver selecionado **Somente objetos protegíveis em escopos de segurança ou coleções especificadas**, poderá escolher **Adicionar** para selecionar coleções e escopos de segurança adicionais. Ou selecione um ou mais objetos na lista e escolha **Remover** para removê-los. Escolha **OK** para concluir esse procedimento.  
+    -   如果选择了“仅指定安全作用域或集合中的安全对象”，则可选择“添加”，选择其他集合和安全作用域。 或者选择列表中的一个或多个对象，然后选择“删除”，将其删除。 选择“确定”完成此过程。  
 
-##  <a name="BKMK_ModAdminUser"></a> Modificar o escopo administrativo de um usuário administrativo  
- É possível modificar o escopo administrativo de um usuário administrativo ao adicionar ou remover funções de segurança, escopos de segurança e coleções que estão associados ao usuário. Cada usuário administrativo deve ser associado a pelo menos uma função de segurança e um escopo de segurança. Talvez você precise atribuir uma ou mais coleções para o escopo administrativo do usuário. A maioria das funções de segurança interage com as coleções e não funciona corretamente sem uma coleção atribuída.  
+##  <a name="BKMK_ModAdminUser"></a> 修改管理用户的管理作用域  
+ 你可以通过添加或删除与管理用户关联的安全角色、安全作用域和集合来修改该用户的管理作用域。 必须将每个管理用户与至少一个安全角色和一个安全作用域关联。 你可能必须将一个或多个集合分配到用户的管理作用域。 大多数安全角色都与集合交互，如果没有分配的集合，将无法正常工作。  
 
- Ao modificar um usuário administrativo, você pode alterar o comportamento de como os objetos protegíveis são associados às funções de segurança atribuídas. Os três comportamentos que podem ser selecionados são:  
+ 当你修改管理用户时，你可以更改有关安全对象如何与分配的安全角色关联的行为。 你可选择的三个行为如下所示：  
 
--   **Todos os objetos protegíveis relevantes para suas funções de segurança associadas**: essa opção associa o usuário administrativo ao escopo **Todos** e a coleções de nível raiz integradas a **Todos os Sistemas**e **Todos os Usuários e Grupos de Usuários**. As funções de segurança que são atribuídas ao usuário definem o acesso a objetos.  
+-   **与其关联的安全角色相关的所有安全对象**：此选项将管理用户与“全部”作用域以及“所有系统”和“所有用户和用户组”的根级别内置集合关联。 分配给用户的安全角色定义对象的访问权限。  
 
--   **Somente objetos protegíveis em escopos de segurança especificados ou coleções**: essa opção associa o usuário administrativo aos mesmos escopos de segurança e coleções associados à conta usada para configurar o usuário administrativo. Essa opção oferece suporte à adição ou remoção de funções de segurança e coleções para personalizar o escopo administrativo do usuário administrativo.  
+-   **仅限指定的安全作用域或集合中的安全对象**：此选项将管理用户和与用于配置管理用户的帐户关联的相同安全作用域和集合相关联。 此选项支持添加或删除安全角色和集合来自定义管理用户的管理作用域。  
 
--   **Somente objetos protegíveis conforme determinados pelas funções de segurança do usuário administrativo**: essa opção permite criar as associações específicas entre as funções de segurança individuais e escopos de segurança específicos e coleções para o usuário.  
-
-    > [!NOTE]  
-    >  Essa opção está disponível somente quando você modifica as propriedades de um usuário administrativo.  
-
-A configuração atual para o comportamento de objeto protegível altera o processo que você usa para atribuir as funções de segurança adicionais. Use os procedimentos a seguir que são baseados em opções diferentes para objetos protegíveis a fim de ajudá-lo a gerenciar um usuário administrativo.  
-
-Use o procedimento a seguir para exibir e gerenciar a configuração de objetos protegíveis para um usuário administrativo.  
-
-#### <a name="to-view-and-manage-the-securable-object-behavior-for-an-administrative-user"></a>Para exibir e gerenciar o comportamento do objeto protegível para um usuário administrativo  
-
-1.  No console do Configuration Manager, escolha **Administração**.  
-
-2.  No espaço de trabalho **Administração**, expanda **Segurança**e escolha **Usuários Administrativos**.  
-
-3.  Selecione o usuário administrativo que deseja modificar.  
-
-4.  Na guia **Início**, no grupo **Propriedades**, clique em **Propriedades**.  
-
-5.  Escolha a guia **Escopos de Segurança** para exibir a configuração atual de objetos protegíveis para esse usuário administrativo.  
-
-6.  Para modificar o comportamento do objeto protegível, selecione uma nova opção para o comportamento do objeto protegível. Após alterar essa configuração, confira o procedimento apropriado para obter diretrizes sobre como configurar os escopos de segurança, as coleções e as funções de segurança para esse usuário administrativo.  
-
-7.  Escolha **OK** para concluir o procedimento.  
-
-Use o procedimento a seguir para modificar um usuário administrativo que têm o comportamento de objeto protegível definido como **Todos os objetos protegíveis que são relevantes para suas funções de segurança associadas**.  
-
-#### <a name="for-option-all-securable-objects-that-are-relevant-to-their-associated-security-roles"></a>Como opção: todos os objetos protegíveis que são relevantes para suas funções de segurança associadas  
-
-1.  No console do Configuration Manager, escolha **Administração**.  
-
-2.  No espaço de trabalho **Administração**, expanda **Segurança**e escolha **Usuários Administrativos**.  
-
-3.  Selecione o usuário administrativo que deseja modificar.  
-
-4.  Na guia **Início**, no grupo **Propriedades**, clique em **Propriedades**.  
-
-5.  Escolha a guia **Escopos de Segurança** para confirmar se o usuário administrativo está configurado para **Todos os objetos protegíveis que são relevantes para suas funções de segurança associadas**.  
-
-6.  Para modificar as funções de segurança atribuídas, escolha a guia **Funções de Segurança**.  
-
-    -   Para atribuir funções de segurança adicionais a esse usuário administrativo, escolha **Adicionar**, marque a caixa de cada função de segurança adicional que você deseja atribuir e escolha **OK**.  
-
-    -   Para remover as funções de segurança, selecione uma ou mais funções de segurança da lista e escolha **Remover**.  
-
-7.  Para modificar o comportamento de objeto protegível, escolha a guia **Escopos de Segurança** e escolha a nova opção para o comportamento de objeto protegível. Após alterar essa configuração, confira o procedimento apropriado para obter diretrizes sobre como configurar os escopos de segurança, as coleções e as funções de segurança para esse usuário administrativo.  
+-   **仅限由管理用户的安全角色确定的安全对象**：此选项使你能在单独的安全角色与用户的特定安全作用域以及集合之间创建特定关联。  
 
     > [!NOTE]  
-    >  Quando o comportamento de objeto protegível está definido como **Todos os objetos protegíveis que são relevantes para suas funções de segurança associadas**, você não pode adicionar ou remover escopos de segurança e coleções específicas.  
+    >  只有在你修改管理用户的属性时，此选项才可用。  
 
-8.  Escolha **OK** para concluir esse procedimento.  
+安全对象行为的当前配置会改变你用于分配其他安全角色的过程。 使用基于安全对象的不同选项的以下过程来帮助你对管理用户进行管理。  
 
-Use o procedimento a seguir para modificar um usuário administrativo que tem o comportamento de objeto protegível definido como **Somente objetos protegíveis em escopos de segurança ou coleções especificadas**.  
+使用以下过程查看和管理管理用户的安全对象配置。  
 
-#### <a name="for-option-only-securable-objects-in-specified-security-scopes-or-collections"></a>Como opção: somente objetos protegíveis em escopos de segurança ou coleções especificadas  
+#### <a name="to-view-and-manage-the-securable-object-behavior-for-an-administrative-user"></a>查看和管理管理用户的安全对象行为  
 
-1.  No console do Configuration Manager, escolha **Administração**.  
+1.  在 Configuration Manager 控制台中，选择“管理”。  
 
-2.  No espaço de trabalho **Administração**, expanda **Segurança**e escolha **Usuários Administrativos**.  
+2.  在“管理”工作区中，展开“安全”，然后选择“管理用户”。  
 
-3.  Selecione o usuário administrativo que deseja modificar.  
+3.  选择要修改的管理用户。  
 
-4.  Na guia **Início**, no grupo **Propriedades**, clique em **Propriedades**.  
+4.  在“主页”选项卡上的“属性”组中，选择“属性”。  
 
-5.  Escolha a guia **Escopos de Segurança** para confirmar se o usuário está configurado para **Somente objetos protegíveis em escopos de segurança ou coleções especificadas**.  
+5.  选择“安全作用域”选项卡，查看此管理用户安全对象的当前配置。  
 
-6.  Para modificar as funções de segurança atribuídas, escolha a guia **Funções de Segurança**.  
+6.  要修改安全对象行为，请为安全对象行为选择一个新选项。 更改此配置后，请查看相应的过程，了解为此管理用户配置安全作用域和集合以及安全角色的进一步指引。  
 
-    -   Para atribuir funções de segurança adicionais a esse usuário, escolha **Adicionar**, marque a caixa de cada função de segurança adicional que você deseja atribuir e escolha **OK**.  
+7.  选择“确定”完成该过程。  
 
-    -   Para remover as funções de segurança, selecione uma ou mais funções de segurança da lista e escolha **Remover**.  
+使用以下过程来修改安全对象行为设置为“与其关联安全角色相关的所有安全对象”的管理用户。  
 
-7.  Para modificar os escopos de segurança e as coleções associadas a funções de segurança, escolha a guia **Escopos de Segurança**.  
+#### <a name="for-option-all-securable-objects-that-are-relevant-to-their-associated-security-roles"></a>选项：与其关联的安全角色相关的所有安全对象  
 
-    -   Para associar novos escopos de segurança ou coleções com todas as funções de segurança que estão atribuídos a esse usuário administrativo, escolha **Adicionar** e selecione uma das quatro opções. Se você selecionar **Escopo de Segurança** ou **Coleção**, marque a caixa para um ou mais objetos para concluir essa seleção e escolha **OK**.  
+1.  在 Configuration Manager 控制台中，选择“管理”。  
 
-    -   Para remover uma coleção ou um escopo de segurança, escolha o objeto e escolha **Remover**.  
+2.  在“管理”工作区中，展开“安全”，然后选择“管理用户”。  
 
-8.  Escolha **OK** para concluir esse procedimento.  
+3.  选择要修改的管理用户。  
 
-Use o procedimento a seguir para modificar um usuário administrativo que tem o comportamento de objeto protegível definido como **Somente objetos protegíveis como determinado pelas funções de segurança do usuário administrativo**.  
+4.  在“主页”选项卡上的“属性”组中，选择“属性”。  
 
-#### <a name="for-option-only-securable-objects-as-determined-by-the-security-roles-of-the-administrative-user"></a>Como opção: somente objetos protegíveis como determinado pelas funções de segurança do usuário administrativo  
+5.  选择“安全作用域”选项卡，确认已针对“与其关联安全角色相关的所有安全对象”配置了管理用户。  
 
-1.  No console do Configuration Manager, escolha **Administração**.  
+6.  若要修改分配的安全角色，请选择“安全角色”选项卡。  
 
-2.  No espaço de trabalho **Administração**, expanda **Segurança**e escolha **Usuários Administrativos**.  
+    -   若要为此管理用户分配其他安全角色，请选择“添加”，选中要分配的每个其他安全角色的复选框，然后选择“确定”。  
 
-3.  Selecione o usuário administrativo que deseja modificar.  
+    -   若要删除安全角色，请从列表选择一个或多个安全角色，然后选择“删除”。  
 
-4.  Na guia **Início**, no grupo **Propriedades**, clique em **Propriedades**.  
+7.  若要修改安全对象行为，请选择“安全作用域”选项卡，并为安全对象行为选择新选项。 更改此配置后，请查看相应的过程，了解为此管理用户配置安全作用域和集合以及安全角色的进一步指引。  
 
-5.  Escolha a guia **Escopos de Segurança** para confirmar se o usuário administrativo está configurado para **Somente objetos protegíveis em escopos de segurança ou coleções especificadas**.  
+    > [!NOTE]  
+    >  如果安全对象行为设置为了“与其关联安全角色相关的所有安全对象”，则无法添加或删除特定安全作用域和集合。  
 
-6.  Para modificar as funções de segurança atribuídas, escolha a guia **Funções de Segurança**.  
+8.  选择“确定”完成此过程。  
 
-    -   Para atribuir funções de segurança adicionais para esse usuário administrativo, escolha **Adicionar**. Na caixa de diálogo **Adicionar Função de Segurança**, selecione uma ou mais funções de segurança disponíveis, escolha **Adicionar** e selecione um tipo de objeto para associar a funções de segurança selecionadas. Se você selecionar **Escopo de Segurança** ou **Coleção**, marque a caixa para um ou mais objetos para concluir essa seleção e escolha **OK**.  
+使用以下过程来修改其安全对象行为设置为“仅指定安全作用域或集合中的安全对象” 的管理用户。  
+
+#### <a name="for-option-only-securable-objects-in-specified-security-scopes-or-collections"></a>选项：仅限指定的安全作用域或集合中的安全对象  
+
+1.  在 Configuration Manager 控制台中，选择“管理”。  
+
+2.  在“管理”工作区中，展开“安全”，然后选择“管理用户”。  
+
+3.  选择要修改的管理用户。  
+
+4.  在“主页”选项卡上的“属性”组中，选择“属性”。  
+
+5.  选择“安全作用域”选项卡，确认已针对“仅指定安全作用域或集合中的安全对象”配置了用户。  
+
+6.  若要修改分配的安全角色，请选择“安全角色”选项卡。  
+
+    -   若要为此用户分配其他安全角色，请选择“添加”，选中要分配的每个其他安全角色的复选框，然后选择“确定”。  
+
+    -   若要删除安全角色，请从列表选择一个或多个安全角色，然后选择“删除”。  
+
+7.  若要修改与安全角色关联的安全作用域和集合，请选择“安全作用域”选项卡。  
+
+    -   若要将新的安全作用域或集合与分配给此管理用户的所有安全角色关联，请选择“添加”并选择四个选项之一。 如果选择“安全作用域”或“集合”，请选中一个或多个对象的复选框以完成该选择，然后选择“确定”。  
+
+    -   若要删除安全作用域或集合，请选择该对象，然后选择“删除”。  
+
+8.  选择“确定”完成此过程。  
+
+使用以下过程来修改其安全对象行为设置为“仅限由管理用户的安全角色确定的安全对象” 的管理用户。  
+
+#### <a name="for-option-only-securable-objects-as-determined-by-the-security-roles-of-the-administrative-user"></a>选项：仅限由管理用户的安全角色确定的安全对象  
+
+1.  在 Configuration Manager 控制台中，选择“管理”。  
+
+2.  在“管理”工作区中，展开“安全”，然后选择“管理用户”。  
+
+3.  选择要修改的管理用户。  
+
+4.  在“主页”选项卡上的“属性”组中，选择“属性”。  
+
+5.  选择“安全作用域”选项卡，确认已针对“仅指定安全作用域或集合中的安全对象”配置了管理用户。  
+
+6.  若要修改分配的安全角色，请选择“安全角色”选项卡。  
+
+    -   若要为此管理用户分配其他安全角色，请选择“添加”。 在“添加安全角色”对话框上，选择一个或多个可用安全角色，选择“添加”，并选择要与所选安全角色关联的对象类型。 如果选择“安全作用域”或“集合”，请选中一个或多个对象的复选框以完成该选择，然后选择“确定”。  
 
         > [!NOTE]  
-        >  Você deve configurar pelo menos um escopo de segurança antes das funções de segurança selecionadas poder ser atribuídas ao usuário administrativo. Quando você seleciona várias funções de segurança, cada escopo de segurança e coleção que você configura está associado a cada uma das funções de segurança selecionadas.  
+        >  你至少必须配置一个安全作用域，然后才能将所选安全角色分配给管理用户。 如果选择多个安全角色，则配置的每个安全作用域和集合将与每个所选的安全角色关联。  
 
-    -   Para remover as funções de segurança, selecione uma ou mais funções de segurança da lista e escolha **Remover**.  
+    -   若要删除安全角色，请从列表选择一个或多个安全角色，然后选择“删除”。  
 
-7.  Para modificar os escopos de segurança e as coleções associados a uma função de segurança específica, escolha a guia **Escopos de Segurança**, selecione a função de segurança e escolha **Editar**.  
+7.  若要修改与特定安全角色关联的安全作用域和集合，请选择“安全作用域”选项卡，选择该安全角色，然后选择“编辑”。  
 
-    -   Para associar novos objetos a essa função de segurança, escolha **Adicionar** e selecione um tipo de objeto para associar a funções de segurança selecionadas. Se você selecionar **Escopo de Segurança** ou **Coleção**, marque a caixa para um ou mais objetos para concluir essa seleção e escolha **OK**.  
+    -   若要将新对象与此安全角色关联，请选择“添加”，并选择要与所选安全角色关联的对象类型。 如果选择“安全作用域”或“集合”，请选中一个或多个对象的复选框以完成该选择，然后选择“确定”。  
 
         > [!NOTE]  
-        >  Você deve configurar pelo menos um escopo de segurança.  
+        >  必须至少配置一个安全作用域。  
 
-    -   Para remover uma coleção ou escopo de segurança que está associado a essa função de segurança, selecione o objeto e escolha **Remover**.  
+    -   若要删除与此安全角色关联的安全作用域或集合，请选择该对象，然后选择“删除”。  
 
-    -   Modificados os objetos associados, escolha **OK**.  
+    -   完成修改关联对象后，选择“确定”。  
 
-8.  Escolha **OK** para concluir esse procedimento.  
+8.  选择“确定”完成此过程。  
 
     > [!CAUTION]  
-    >  Quando uma função de segurança concede a usuários administrativos a permissão de implantação de coleção, os usuários administrativos podem distribuir objetos a partir de qualquer escopo de segurança para os quais eles têm permissões de **leitura** de objetos, mesmo se o escopo de segurança esteja associado a uma função de segurança diferente.  
-
+    >  如果安全角色向管理用户授予集合部署权限，则这些管理用户可从他们具有对象“读取”  权限的任何安全作用域中分发对象，即使该安全作用域与其他安全角色关联。  

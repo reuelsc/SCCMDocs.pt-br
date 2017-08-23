@@ -1,137 +1,133 @@
 ---
-title: Sites da Web para sistemas de sites | Microsoft Docs
-description: "Saiba mais sobre os sites padrão e personalizado para servidores do sistema de sites no System Center Configuration Manager."
+title: "站点系统的网站 | Microsoft Docs"
+description: "了解 System Center Configuration Manager 中的站点系统服务器的默认和自定义网站。"
 ms.custom: na
 ms.date: 2/8/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
-ms.technology:
-- configmgr-other
+ms.technology: configmgr-other
 ms.tgt_pltfrm: na
 ms.topic: get-started-article
 ms.assetid: 681f0893-e83b-476e-9ec0-a5dc7c9deeb6
-caps.latest.revision: 15
-caps.handback.revision: 0
+caps.latest.revision: "15"
+caps.handback.revision: "0"
 author: Brenduns
 ms.author: brenduns
 manager: angrobe
-ms.translationtype: Human Translation
-ms.sourcegitcommit: 26bbec1e8d6c53ce297689ba4390b9347229eb15
 ms.openlocfilehash: 886ff3b8e867fc340c79648a57feae81653b0ccd
-ms.contentlocale: pt-br
-ms.lasthandoff: 05/17/2017
-
-
+ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
+ms.translationtype: HT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 08/07/2017
 ---
-# <a name="websites-for-site-system-servers-in-system-center-configuration-manager"></a>Sites para servidores de sistema de sites no System Center Configuration Manager
+# <a name="websites-for-site-system-servers-in-system-center-configuration-manager"></a>System Center Configuration Manager 中的站点系统服务器网站
 
-*Aplica-se a: System Center Configuration Manager (Branch Atual)*
+*适用范围：System Center Configuration Manager (Current Branch)*
 
-Várias funções de sistema de sites do Configuration Manager requerem o uso do IIS (Serviços de Informações da Internet) da Microsoft e usam o site padrão do IIS para hospedar serviços de sistema de sites. Quando você precisar executar outros aplicativos Web no mesmo servidor e as configurações não forem compatíveis com o Configuration Manager, considere o uso de um site personalizado para Configuration Manager.  
+多个 Configuration Manager 站点系统角色需要使用 Microsoft Internet Information Services (IIS) 和默认的 IIS 网站来托管站点系统服务。 当必须在同一服务器上运行其他 Web 应用程序，且设置与 Configuration Manager 不兼容时，请考虑使用 Configuration Manager 的自定义网站。  
 
 > [!TIP]  
->  É uma prática recomendada de segurança dedicar um servidor aos sistemas de sites do Configuration Manager que requerem o IIS. Ao executar outros aplicativos em um sistema de sites do Configuration Manager, você pode aumentar a superfície de ataques do computador.  
+>  安全的最佳方案是将一台服务器专用于需要 IIS 的 Configuration Manager 站点系统。 在 Configuration Manager 站点系统上运行其他应用程序时，会增大该计算机的受攻击面。  
 
 
 
 
-##  <a name="BKMK_What2Know"></a> O que saber antes de escolher usar sites personalizados  
- Por padrão, as funções do sistema de sites usam o **Site Padrão** no IIS. Isso é configurado automaticamente quando a função de sistema de sites é instalada. No entanto, em sites primários, você pode optar por usar sites personalizados em vez disso. Quando você usa sites personalizados:  
+##  <a name="BKMK_What2Know"></a>选择使用自定义网站前的须知  
+ 默认情况下，站点系统角色使用 IIS 中的“默认网站”。 这会在站点系统角色安装时自动设置。 但在主站点上，可以转而选择使用自定义网站。 使用自定义网站时：  
 
--   Sites personalizados estão habilitados para todo o site, não para servidores ou funções individuais do sistema de sites.  
+-   为整个站点启用自定义网站，而不是为单独的站点系统服务器或角色启用。  
 
--   Em sites primários, cada computador que hospedará uma função aplicável do sistema de sites deverá ser configurado com um site personalizado nomeado **SMSWEB**. Até que esse site seja criado e as funções de sistema de sites no computador sejam configuradas para usar o site personalizado, os clientes não poderão se comunicar com funções do sistema de sites no computador.  
+-   在主站点上，将承载适用的站点系统角色的每台计算机必须设置有名为 **SMSWEB** 的自定义网站。 在创建此网站且将此计算机上的站点系统角色设置为使用自定义网站之前，客户端可能无法与此计算机上的站点系统角色进行通信。  
 
--   Uma vez que os sites secundários são automaticamente configurados para usarem um site personalizado quando o site primário pai é configurado para fazer isso, você também deve criar sites personalizados no IIS em cada servidor do sistema de sites secundário que requer IIS.  
+-   由于当主父站点设置为使用自定义网站时，其辅助站点也会自动如此设置，因此还必须在每个需要 IIS 的辅助站点系统服务器上的 IIS 中创建自定义网站。  
 
 
-  **Pré-requisitos para usar sites personalizados:**  
+  **使用自定义网站的先决条件：**  
 
- Antes de habilitar a opção de usar sites personalizados em um site, você deve:  
+ 启用选项以使用站点的自定义网站之前，你必须：  
 
--   Criar um site personalizado chamado **SMSWEB** no IIS em cada servidor de sistema de sites que exigir IIS. Faça isso no site primário e em quaisquer sites filho secundários.  
+-   在每个需要 IIS 的站点系统服务器上的 IIS 中，创建名为 **SMSWEB** 的自定义网站。 在主站点和任何子辅助站点中执行此操作。  
 
--   Configure o site personalizado para responder à mesma porta configurada para a comunicação de cliente do Configuration Manager (porta de solicitação do cliente).  
+-   设置自定义网站，以响应为 Configuration Manager 客户端通信设置的同一端口（客户端请求端口）。  
 
--   Para cada site personalizado ou site padrão que usar uma pasta personalizada, coloque uma cópia do tipo de documento padrão que você usa na pasta raiz que hospeda o site. Por exemplo, em um computador Windows Server 2008 R2 com configurações padrão, o **iisstart.htm** é um de vários tipos de documentos padrão disponíveis. Você pode encontrar esse arquivo na raiz do site da Web padrão e colocar uma cópia desse arquivo (ou uma cópia do tipo de documento padrão usado) na pasta raiz que hospeda o site da Web SMSWEB personalizado. Para saber mais sobre os tipos de documento padrão, veja [Documento padrão &lt;defaultDocument\> do IIS](http://www.iis.net/configreference/system.webserver/defaultdocument).  
+-   对于每个自定义网站或使用自定义文件夹的默认网站，请将所用的默认文档类型的副本放到承载网站的根文件夹中。 例如，在使用默认配置的 Windows Server 2008 R2 计算机上，**iisstart.htm** 是几种默认可用的文档类型之一。 可以在默认网站的根文件夹中找到此文件，然后将此文件的副本（或所用默认文档类型的副本）放到承载 SMSWEB 自定义网站的根文件夹中。 有关默认文档类型的详细信息，请参阅 [IIS 的默认文档 &lt;defaultDocument\>](http://www.iis.net/configreference/system.webserver/defaultdocument)。  
 
-**Sobre os requisitos de IIS ‑**
-**As seguintes funções de sistema de sites requerem IIS e um site para hospedar os serviços de sistema de sites:**  
+**关于 IIS 要求：**
+**下列站点系统角色需要 IIS 和网站才能托管站点系统服务：**  
 
--   Ponto de serviços Web do Catálogo de Aplicativos  
+-   应用程序目录 Web 服务点  
 
--   Ponto de sites da Web do catálogo de aplicativos  
+-   应用程序目录网站点  
 
--   Ponto de distribuição  
+-   分发点  
 
--   Ponto de registro  
+-   注册点  
 
--   Ponto proxy do registro  
+-   注册代理点  
 
--   Ponto de status de fallback  
+-   回退状态点  
 
--   Ponto de gerenciamento  
+-   管理点  
 
--   Ponto de atualização de software  
+-   软件更新点  
 
--   Ponto de migração de estado  
+-   状态迁移点  
 
-Considerações adicionais:  
+其他注意事项：  
 
--   Quando um site primário tem sites personalizados habilitados, os clientes atribuídos ao site são direcionados a comunicarem-se com os sites personalizado, em vez de sites padrão, em servidores de sistema de sites aplicáveis  
+-   当主站点启用了自定义网站时，分配到此站点的客户端将被定向为与自定义网站（而不是适用的站点系统服务器上的默认网站）进行通信  
 
--   Se você usar sites personalizados para um site primário, considere usá-los para todos os sites primários em sua hierarquia para assegurar que os clientes possam usar roaming com sucesso dentro da hierarquia. (Roaming é quando um computador cliente é movido para um novo segmento de rede gerenciado por outro site. O roaming pode afetar os recursos que o cliente pode acessar localmente, em vez de acessar em um link WAN).  
+-   如果对某个主站点使用自定义网站，请考虑为层次结构中的所有主站点使用自定义网站，以确保客户端可成功地在层次结构中漫游。 （当客户端计算机移动到不同站点托管的新网络段时进行漫游。 漫游可影响客户端可本地访问，而不是通过 WAN 链接访问的资源）。  
 
--   As funções do sistema de sites que usam o IIS, mas não aceitam conexões de cliente, como o ponto do Reporting Services, também usam o site SMSWEB em vez de usar o padrão.  
+-   使用 IIS 但不接受客户端连接的站点系统角色（例如 Reporting Services 点）也使用 SMSWEB 网站，而非默认网站。  
 
--   Os sites personalizados exigem atribuir números de porta que difiram daqueles usados pelo site de computadores padrão. Um site padrão e um site personalizado não podem ser executados ao mesmo tempo se ambos tentarem usar as mesmas portas TCP/IP.  
+-   自定义网站需要你指定不同于计算机默认网站所使用的端口号。 如果默认网站和自定义网站均尝试使用相同的 TCP/IP 端口，则它们无法同时运行。  
 
--   As portas TCP/IP que você configurar no IIS para o site personalizado devem corresponder às portas de solicitação do cliente para o site.  
+-   在 IIS 中为自定义网站设置的 TCP/IP 端口必须与此站点的客户端请求端口匹配。  
 
-## <a name="switch-between-default-and-custom-websites"></a>Alternar entre sites padrão e personalizados  
-Embora você possa marcar ou desmarcar a caixa de seleção para usar sites personalizados em um site primário a qualquer momento (essa é uma caixa de seleção na guia Geral de Propriedades do site), planeje cuidadosamente antes de fazer essa alteração. Quando essa configuração for alterada, todas as funções de sistema de sites aplicáveis ao site primário e a sites secundários filho devem ser desinstaladas e reinstaladas:  
+## <a name="switch-between-default-and-custom-websites"></a>在默认网站和自定义网站之间切换  
+虽然你可随时选中或取消选中在主站点使用自定义网站的复选框（此复选框位于站点“属性”的“常规”选项卡上），但在进行此更改之前请仔细规划。 当此配置更改时，必须卸载主站点和子辅助站点中所有适用的站点系统角色，然后重新安装：  
 
-As seguintes funções são **reinstaladas automaticamente**:  
+以下角色将 **自动重新安装**：  
 
--   Ponto de gerenciamento  
+-   管理点  
 
--   Ponto de distribuição  
+-   分发点  
 
--   Ponto de atualização de software  
+-   软件更新点  
 
--   Ponto de status de fallback  
+-   回退状态点  
 
--   Ponto de migração de estado  
+-   状态迁移点  
 
-As funções a seguir devem ser **reinstaladas manualmente**:  
+以下角色必须 **手动重新安装**：  
 
--   Ponto de serviços Web do Catálogo de Aplicativos  
+-   应用程序目录 Web 服务点  
 
--   Ponto de sites da Web do catálogo de aplicativos  
+-   应用程序目录网站点  
 
--   Ponto de registro  
+-   注册点  
 
--   Ponto proxy do registro  
+-   注册代理点  
 
-Além disso:  
+此外：  
 
--   Quando você alterna do site da Web padrão para usar um site da Web personalizado, o Configuration Manager não remove diretórios virtuais antigos. Se desejar remover os arquivos que o Configuration Manager usou, exclua manualmente os diretórios virtuais que foram criados sob o site da Web padrão.  
+-   从使用默认网站更改为使用自定义网站时，Configuration Manager 不会删除旧虚拟目录。 如果想删除 Configuration Manager 使用的文件，必须手动删除在默认网站下创建的虚拟目录。  
 
--   Se você alterar o site para usar sites personalizados, os clientes que já estão atribuídos ao site devem ser reconfigurados para usar as novas portas de solicitação de cliente para os sites personalizados. Veja [Como configurar as portas de comunicação do cliente no System Center Configuration Manager](../../../core/clients/deploy/configure-client-communication-ports.md).  
+-   如果更改站点以使用自定义网站，则必须将已分配到站点的客户端重新配置为使用针对自定义网站的新客户端请求端口。 请参阅[如何在 System Center Configuration Manager 中配置客户端通信端口](../../../core/clients/deploy/configure-client-communication-ports.md)。  
 
-## <a name="set-up-custom-websites"></a>Configurar sites personalizados  
-Uma vez que as etapas para criar um site personalizado variam para versões diferentes do sistema operacional, consulte a documentação para sua versão do sistema operacional para obter as etapas exatas, mas use as seguintes informações quando aplicável:  
+## <a name="set-up-custom-websites"></a>设置自定义网站  
+由于自定义网站的创建步骤随操作系统版本的不同而有所不同，所以请参阅你操作系统版本的文档以了解确切步骤，但请在适当时使用以下信息：  
 
--   O nome do site deve ser: **SMSWEB**.  
+-   网站名称必须是：**SMSWEB**。  
 
--   Ao configurar HTTPS, você deve especificar um certificado SSL para poder salvar a configuração.  
+-   设置 HTTPS 时，必须先指定 SSL 证书才能保存配置。  
 
--   Depois de criar o site personalizado, remova as portas de site personalizado que você usar de outros sites no IIS:  
+-   创建自定义网站后，请删除 IIS 中所用的其他网站的自定义网站端口：  
 
-    1.  Edite as **Associações** de outros sites para remover portas que correspondam àquelas atribuídas ao site **SMSWEB**.  
+    1.  编辑其他网站的“绑定”，以删除与分配给 **SMSWEB** 网站的端口匹配的端口。  
 
-    2.  Inicie o site **SMSWEB**.  
+    2.  启动 **SMSWEB** 网站。  
 
-    3.  Reinicie o serviço **SMS_SITE_COMPONENT_MANAGER** no servidor do site.  
-
+    3.  在站点的站点服务器上重启 **SMS_SITE_COMPONENT_MANAGER** 服务。  

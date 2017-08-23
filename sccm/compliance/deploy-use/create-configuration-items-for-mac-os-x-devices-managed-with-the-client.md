@@ -1,179 +1,175 @@
 ---
-title: "Criar itens de configuração para os Macs gerenciados pelo cliente – Configuration Manager | Microsoft Docs"
-description: "Use o item de configuração do Mac OS X do System Center Configuration Manager para gerenciar as configurações de dispositivos Mac OS X."
+title: "为客户端托管的 Mac 创建配置项 - Configuration Manager | Microsoft Docs"
+description: "使用 System Center Configuration Manager Mac OS X 配置项目管理对 Mac OS X 设备的设置。"
 ms.custom: na
 ms.date: 03/28/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
-ms.technology:
-- configmgr-other
+ms.technology: configmgr-other
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 722d5bf5-bedc-4dfc-b324-6eeb773874e9
-caps.latest.revision: 8
-caps.handback.revision: 0
+caps.latest.revision: "8"
+caps.handback.revision: "0"
 author: robstackmsft
 ms.author: robstack
 manager: angrobe
-ms.translationtype: Human Translation
-ms.sourcegitcommit: dab5da5a4b5dfb3606a8a6bd0c70a0b21923fff9
 ms.openlocfilehash: 541e5ad629a9e2ed9c353dff150f9b86b9d12b7d
-ms.contentlocale: pt-br
-ms.lasthandoff: 05/17/2017
-
-
+ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
+ms.translationtype: HT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 08/07/2017
 ---
-# <a name="how-to-create-configuration-items-for-mac-os-x-devices-managed-with-the-system-center-configuration-manager-client"></a>Como criar itens de configuração para dispositivos Mac OS X gerenciados com o cliente do System Center Configuration Manager
-Use o item de configuração do **Mac OS X (personalizado)** do System Center Configuration Manager para gerenciar as configurações de dispositivos Mac OS X que são gerenciados pelo cliente do Configuration Manager.  
+# <a name="how-to-create-configuration-items-for-mac-os-x-devices-managed-with-the-system-center-configuration-manager-client"></a>如何为使用 System Center Configuration Manager 客户端管理的 Mac OS X设备创建配置项目
+使用 System Center Configuration Manager **Mac OS X（自定义）**配置项目，管理由 Configuration Manager 客户端托管的 Mac OS X 设备的设置。  
   
- O sistema operacional Mac OS X usa arquivos de lista de propriedade (ou plist) para armazenar configurações de aplicativo. Use as configurações de conformidade para avaliar e corrigir configurações em um arquivo de lista de propriedade. Você também pode gerenciar as configurações do Mac OS X escrevendo um Script do Shell que retorna um valor que pode ser avaliado e corrigido quanto à conformidade.  
+ Mac OS X 操作系统使用属性列表（或列表）文件来存储应用程序设置。 使用符合性设置来评估和修正属性列表文件中的设置。 还可以通过编写一个 Shell 脚本来管理 Mac OS X 设置，该脚本会返回一个值，可以评估和修正符合性。  
   
-### <a name="to-create-a-custom-mac-os-x-configuration-item"></a>Para criar um item de configuração personalizado do Mac OS X  
+### <a name="to-create-a-custom-mac-os-x-configuration-item"></a>创建自定义 Mac OS X 配置项目  
   
-1.  No console do Configuration Manager, clique em **Ativos e conformidade**.  
+1.  在 Configuration Manager 控制台中，单击“资产和符合性”。  
   
-2.  No espaço de trabalho **Ativos e Conformidade** , expanda **Configurações de Conformidade**e clique em **Itens de Configuração**.  
+2.  在“资产和符合性”  工作区中，展开“符合性设置” ，然后单击“配置项目” 。  
   
-3.  Na guia **Início** , no grupo **Criar** , clique em **Criar Item de Configuração**.  
+3.  在“主页”  选项卡上的“创建”  组中，单击“创建配置项目” 。  
   
-4.  Na página **Geral** do **Assistente para Criar Item de Configuração**, especifique um nome e uma descrição opcional para o item de configuração.  
+4.  在“创建配置项目向导”  的“常规” 页面上，指定配置项目的名称和可选描述。  
   
-5.  Em **Especificar o tipo de item de configuração que deseja criar**, selecione **Mac OS X (personalizado)**.  
+5.  在“指定要创建的配置项目的类型” 下，选择“Mac OS X（自定义）” 。  
   
-6.  Se você criar e atribuir categorias, clique em **Categorias** para ajudá-lo a pesquisar e filtrar itens de configuração no console do Configuration Manager.  
+6.  如果创建并分配类别以帮助在 Configuration Manager 控制台中搜索和筛选配置项目，请单击“类别”。  
   
-7.  Na página **Plataformas com Suporte** do assistente, selecione as versões específicas do Mac OS X que avaliarão o item de configuração.  
+7.  在向导的“支持的平台”  页中，选择将评估配置项目的特定 Mac OS X 版本。  
   
-8.  Na página **Configurações** do assistente, você adicionará novas configurações que serão avaliadas quanto à conformidade em computadores Mac. Clique em **Novo** para abrir a caixa de diálogo **Criar Configuração** .  
+8.  在向导的“设置”  页面中，将添加要评估在 Mac 计算机上的符合性的新设置。 单击“新建”  以打开“创建设置”  对话框。  
   
-9. Na caixa de diálogo **Criar Configuração** , digite um nome exclusivo e uma descrição para a configuração.  
+9. 在“创建设置”  对话框框中，输入设置的唯一名称和描述。  
   
-10. Escolha o **Tipo de configuração** desejado e forneça as informações necessárias, como mostrado na seguinte tabela:  
+10. 选择需要的“设置类型”  ，然后提供下表所示的所需信息：  
   
-    -   **Preferências do Mac OS X** -  
+    -   **Mac OS X 首选项** -  
   
-        -   **ID de Aplicativo** – Especifique a ID de aplicativo do arquivo de lista de propriedade no qual você deseja avaliar uma chave quanto à conformidade.  
+        -   **应用程序 ID** – 指定想要用于评估符合性键的属性列表文件的应用程序 ID。  
   
-             Por exemplo, se você quiser editar as configurações do navegador Safari, você pode usar **com.apple.Safari.plist**.  
+             例如，如果您想要编辑的 Safari Web 浏览器设置，则可能会使用 **com.apple.Safari.plist**。  
   
-        -   **Chave** – especifique o nome da chave que você deseja avaliar a conformidade em computadores Mac. Use a seguinte sintaxe: */<dicionário\>/<nomechave\>*.  
-  
-            > [!IMPORTANT]  
-            >  O nome de chave diferencia maiúsculas de minúsculas e não será avaliado se for diferente do nome de chave no computador Mac. Além disso, você não pode editar o nome da chave depois que você o especificou. Se você precisar editar o nome da chave, exclua e recrie a configuração.  
-  
-    -   **Script** -  
-  
-        -   **Script de Descoberta** – Clique em **Adicionar Script**e insira um script do Shell para avaliar as configurações no computador Mac para fins de conformidade. Use o comando **echo** no script do Shell para retornar valores para o Configuration Manager para fins de conformidade. O Configuration Manager usa os resultados retornados em **STDOUT** para avaliar a conformidade.  
+        -   **密钥** – 指定要在 Mac 计算机上的符合性评估的键的名称。 使用以下语法：*/<dictionary\>/<keyname\>*。  
   
             > [!IMPORTANT]  
-            >  Não inclua o comando **reboot** no script de descoberta. Como o script de descoberta é executado sempre que o cliente é reiniciado, isso fará com que o computador com Mac seja reiniciado de forma contínua.  
+            >  键名区分大小写，如果这些名称与 Mac 计算机上的键名不同，将不会对它们进行评估。 而且，无法在指定键名后对其进行编辑。 如果您需要编辑的项名称，删除并重新创建该设置。  
   
-        -   **Script de correção (opcional)** – Opcionalmente, clique em **Adicionar Script** e insira um script de shell que é usado para corrigir quaisquer configurações não compatíveis encontradas em computadores cliente Mac.  
+    -   **脚本** -  
+  
+        -   **发现脚本** – 单击“添加脚本” ，然后输入一个 shell 脚本，以评估 Mac 计算机上设置的符合性。 使用 shell 脚本中的 **echo** 命令，向 Configuration Manager 返回值以实现符合性。 Configuration Manager 使用 **STDOUT** 中返回的结果评估符合性。  
   
             > [!IMPORTANT]  
-            >  Para garantir que você não insira uma formatação de caracteres que não pode ser interpretada pelo computador Mac, não use copiar e colar, mas digite no script.  
+            >  发现脚本中不包括“重新启动”  命令。 因为发现脚本在每次客户端重新启动时运行，这将导致 Mac 计算机不断重新启动。  
   
-11. Escolha o **Tipo de dados** que é o formato no qual a condição retorna os dados antes que sejam usados para avaliar a configuração.  
+        -   **修正脚本（可选）** – 也可单击“添加脚本”  ，然后输入一个 shell 脚本，用于修正 Mac 客户端计算机上发现的任何不符合要求的设置。  
+  
+            > [!IMPORTANT]  
+            >  为了确保不引入 Mac 计算机无法解释的格式字符，请勿使用复制与粘贴，而键入脚本。  
+  
+11. 选择“数据类型”  ，它是用于评估设置之前条件返回数据的格式。  
   
     > [!NOTE]  
-    >  O **ponto flutuante** tipo de dados suporta apenas 3 dígitos após o ponto decimal.  
+    >  “浮点”  数据类型仅支持小数点后 3 个数字。  
     >   
-    >  O Configuration Manager não oferece suporte ao uso do tipo de dados **Booliano** para parâmetros de script de item de configuração de Mac. Em vez disso, defina o tipo de dados como **Inteiro** e certifique-se de que o script retorna um valor inteiro.  
+    >  Configuration Manager 不支持对 Mac 配置项目脚本设置使用**布尔**数据类型。 而应将数据类型设置为“整数”  ，并确保脚本返回一个整数值。  
   
-12. Clique em **OK** para salvar a configuração e fechar a caixa de diálogo **Criar Configuração** e continue para adicionar quantas configurações forem necessárias.  
+12. 单击“确定”  以保存设置并关闭“创建设置”  对话框，然后继续根据需要添加多项设置。  
   
-13. Na página **Regras de Conformidade** do assistente, você especificará as condições que definem a conformidade de um item de configuração. Antes que uma configuração possa ser avaliada quanto à conformidade, ela deve ter pelo menos uma regra de conformidade. Clique em **Novo** para adicionar uma nova regra.  
+13. 在向导的“符合性规则”  页面中，可指定定义配置项目的符合性的条件。 必须至少具有一个符合性规则，才可以评估设置的符合性。 单击“新建”  以添加新规则。  
   
-14. Na caixa de diálogo **Criar Regra** , forneça as seguintes informações:  
+14. 在“创建规则”  对话框中，提供以下信息：  
   
-    -   **Nome:** Digite um nome para a regra de conformidade.  
+    -   **名称：** 输入符合性规则的名称。  
   
-    -   **Descrição:** Insira uma descrição para a regra de conformidade.  
+    -   **描述:** 输入符合性规则的说明。  
   
-    -   **Configuração selecionada:** Clique em **Procurar** para abrir o **Selecionar configuração** caixa de diálogo. Selecione a configuração que você deseja definir uma regra de, ou clique em **nova configuração**. Quando tiver terminado, clique em **Selecione**.  
+    -   **选定的设置：** 单击 **浏览** 若要打开 **选择设置** 对话框。 选择您想要定义的规则，或单击设置 **新设置**。 在完成，请单击 **选择**。  
   
         > [!TIP]  
-        >  Você também pode clicar em **propriedades** para exibir informações sobre a configuração selecionada no momento.  
+        >  您也可以单击 **属性** 若要查看有关当前所选设置的信息。  
   
-    -   **Tipo de regra:** selecione o tipo de regra de conformidade que deseja usar:  
+    -   **规则类型：** 选择要使用的符合性规则的类型：  
   
-        -   **Valor:** crie uma regra que compara o valor retornado pelo item de configuração com um valor especificado.  
+        -   **值：** 创建将配置项目返回的值与指定值进行比较的一条规则。  
   
-        -   **Existential** - Crie uma regra que avalia a configuração dependendo se ela existir em um dispositivo.  
+        -   **现有** – 创建根据设置是否存在来评估它的一条规则。  
   
-    -   Para um tipo de regra de **Valor**, especifique as seguintes informações:  
+    -   对于规则类型“值” ，指定以下信息：  
   
-        -   A configuração deve estar em conformidade com a seguinte regra – Selecione um operador e um valor que será avaliado quanto à conformidade com a configuração selecionada. Você pode usar os seguintes operadores:  
+        -   设置必须符合以下规则 – 选择运算符以及对其评估与所选设置的符合性的值。 可以使用以下运算符：  
   
-            -   **Igual a**  
+            -   **等于**  
   
-            -   **Não é igual a**  
+            -   **不等于**  
   
-            -   **Maior que**  
+            -   **大于**  
   
-            -   **Menor que**  
+            -   **小于**  
   
-            -   **Entre**  
+            -   **之间**  
   
-            -   **Maior ou igual a**  
+            -   **大于或等于**  
   
-            -   **Menor ou igual a**  
+            -   **小于或等于**  
   
-            -   **Um dos** - Na caixa de texto, especifique uma entrada em cada linha.  
+            -   **之一** – 在文本框中，每行指定一个条目。  
   
-            -   **Nenhum dos** - Na caixa de texto, especifique uma entrada em cada linha.  
+            -   **无** – 在文本框中，每行指定一个条目。  
   
-        -   **Corrigir regras não compatíveis quando houver suporte** – Selecione esta opção se desejar que o Configuration Manager corrija automaticamente as regras não compatíveis.  
+        -   “在支持时修正不符合性规则” – 如果希望 Configuration Manager 自动修正不符合性规则，则选择此选项。  
   
             > [!IMPORTANT]  
-            >  Só é possível corrigir regras não compatíveis quando o operador de regra é definido como **É igual a**.  
+            >  仅当规则运算符设置为“等于” 时，才能修正非符合性规则。  
   
-        -   **Relatar não conformidade se esta instância de configuração não for encontrada** – O item de configuração relata a não conformidade se esta configuração não for encontrada no computador Mac.  
+        -   **找不到此设置实例的情况下的报表不符合性** – 如果在 Mac 计算机上找不到此设置，则配置项目报告不符合性。  
   
-    -   **Severidade de não conformidade para relatórios** - Especifique o nível de severidade relatado em caso de falha desta regra de conformidade. Os níveis de severidade disponíveis são os seguintes:  
+    -   **报表的不符合性严重性** – 指定不符合此符合性规则时报告的严重性级别。 可用的严重性级别如下：  
   
-        -   **Nenhum** - os computadores que não cumprem essa regra de conformidade não relatam uma severidade de falha em relatórios do Configuration Manager.  
+        -   **无** - 对于 Configuration Manager 报表，不符合此合规性规则的设备不报告故障严重性。  
   
-        -   **Informações** - os computadores que não cumprem essa regra de conformidade relatam uma severidade de falha de **Informações** em relatórios do Configuration Manager.  
+        -   **信息** - 对于 Configuration Manager 报表，不符合此合规性规则的计算机将报告故障严重性**信息**。  
   
-        -   **Aviso** - os computadores que não cumprem essa regra de conformidade relatam uma severidade de falha de **Aviso** em relatórios do Configuration Manager.  
+        -   **警告** - 对于 Configuration Manager 报表，不符合此合规性规则的计算机将报告故障严重性**警告**。  
   
-        -   **Crítico** - os computadores que não cumprem essa regra de conformidade relatam uma severidade de falha de **Crítico** em relatórios do Configuration Manager.  
+        -   **严重** - 对于 Configuration Manager 报表，不符合此合规性规则的计算机将报告故障严重性**严重**。  
   
-        -   **Crítico com evento** - os computadores que não cumprem essa regra de conformidade relatam uma severidade de falha de **Crítico** em relatórios do Configuration Manager. Esse nível de severidade também é registrado pelo computador cliente Mac.  
+        -   **事件严重** - 对于 Configuration Manager 报表，不符合此合规性规则的计算机将报告故障严重性**严重**。 此严重性级别也由 Mac 客户端计算机记录。  
   
-    -   Para um tipo de regra de **Existential**, especifique as seguintes informações:  
+    -   对于规则类型“现有” ，指定以下信息：  
   
-        -   Escolha uma destas:  
+        -   选择以下选项之一：  
   
-            -   **A configuração deve existir em dispositivos cliente**  
+            -   **此设置必须存在于客户端设备**  
   
-            -   **A configuração não deve existir em dispositivos cliente**  
+            -   **设置不得存在于客户端设备**  
   
-        -   **Severidade de não conformidade para relatórios:** Especifique o nível de severidade relatado se a regra de conformidade falhar. Os níveis de severidade disponíveis são os seguintes:  
+        -   **报表的不符合性严重性：** 指定如果此符合性规则失败报告的严重性级别。 可用的严重性级别如下：  
   
-            -   **Nenhum** - os computadores que não cumprem essa regra de conformidade não relatam uma severidade de falha em relatórios do Configuration Manager.  
+            -   **无** - 对于 Configuration Manager 报表，不符合此合规性规则的设备不报告故障严重性。  
   
-            -   **Informações** - os computadores que não cumprem essa regra de conformidade relatam uma severidade de falha de **Informações** em relatórios do Configuration Manager.  
+            -   **信息** - 对于 Configuration Manager 报表，不符合此合规性规则的计算机将报告故障严重性**信息**。  
   
-            -   **Aviso** - os computadores que não cumprem essa regra de conformidade relatam uma severidade de falha de **Aviso** em relatórios do Configuration Manager.  
+            -   **警告** - 对于 Configuration Manager 报表，不符合此合规性规则的计算机将报告故障严重性**警告**。  
   
-            -   **Crítico** - os computadores que não cumprem essa regra de conformidade relatam uma severidade de falha de **Crítico** em relatórios do Configuration Manager.  
+            -   **严重** - 对于 Configuration Manager 报表，不符合此合规性规则的计算机将报告故障严重性**严重**。  
   
-            -   **Crítico com evento** - os computadores que não cumprem essa regra de conformidade relatam uma severidade de falha de **Crítico** em relatórios do Configuration Manager. Esse nível de severidade também é registrado pelo computador cliente Mac.  
+            -   **事件严重** - 对于 Configuration Manager 报表，不符合此合规性规则的计算机将报告故障严重性**严重**。 此严重性级别也由 Mac 客户端计算机记录。  
   
         > [!NOTE]  
-        >  As opções exibidas podem variar dependendo do tipo de configuração que está sendo usado para definir uma regra.  
+        >  根据为其配置规则的设置类型，显示的选项可能有所不同。  
   
-    -   Clique em **OK** para fechar a caixa de diálogo **Criar Regra** .  
+    -   单击“确定”  关闭“创建规则”  对话框。  
   
-15. Na página **Resumo** , confirme as configurações para o novo item de configuração e, em seguida, conclua o assistente.  
+15. 在“摘要”  页上，确认新配置项目的设置，然后完成此向导。  
   
- O novo item de configuração é exibido no nó **Itens de Configuração** do espaço de trabalho **Ativos e Conformidade** .  
+ 新配置项目会显示在“资产和符合性”  工作区的“配置项目”  节点中。  
   
- Se quiser adicionar esse item de configuração a uma linha de base de configuração, consulte [Como criar linhas de base de configuração para as configurações de conformidade no System Center Configuration Manager](../../compliance/deploy-use/create-configuration-baselines.md).  
+ 如果现在想要将此配置项目添加到配置基线，请参阅[如何在 System Center Configuration Manager 中创建配置基线](../../compliance/deploy-use/create-configuration-baselines.md)。  
   
-## <a name="see-also"></a>Consulte também  
- [Itens de configuração de dispositivos gerenciados com o cliente do System Center Configuration Manager](../../compliance/deploy-use/configuration-items-for-devices-managed-with-the-client.md)
-
+## <a name="see-also"></a>另请参阅  
+ [使用 System Center Configuration Manager 客户端管理的设备的配置项目](../../compliance/deploy-use/configuration-items-for-devices-managed-with-the-client.md)

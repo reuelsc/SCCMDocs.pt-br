@@ -1,80 +1,76 @@
 ---
-title: "Configurar portas de comunicação do cliente | Microsoft Docs"
-description: "Defina as portas de comunicação do cliente no System Center Configuration Manager."
+title: "配置客户端通信端口 | Microsoft Docs"
+description: "在 System Center Configuration Manager 设置客户端通信端口。"
 ms.custom: na
 ms.date: 04/23/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
-ms.technology:
-- configmgr-client
+ms.technology: configmgr-client
 ms.tgt_pltfrm: na
 ms.topic: get-started-article
 ms.assetid: 406bbdbf-ab4a-4121-a68b-154f96ea14ec
-caps.latest.revision: 5
-caps.handback.revision: 0
+caps.latest.revision: "5"
+caps.handback.revision: "0"
 author: robstack
 ms.author: robstackmsft
 manager: angrobe
-ms.translationtype: Human Translation
-ms.sourcegitcommit: 55c953f312a9fb31e7276dde2fdd59f8183b4e4d
-ms.openlocfilehash: 12e7b8e96dc29a97dc9f81b43618fd7d0faeb1bb
-ms.contentlocale: pt-br
-ms.lasthandoff: 12/16/2016
-
-
+ms.openlocfilehash: 63e033fdb436930ac5f37e7408ca9292bc444560
+ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
+ms.translationtype: HT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 08/07/2017
 ---
-# <a name="how-to-configure-client-communication-ports-in-system-center-configuration-manager"></a>Como configurar portas de comunicação do cliente no System Center Configuration Manager
+# <a name="how-to-configure-client-communication-ports-in-system-center-configuration-manager"></a>如何在 System Center Configuration Manager 中配置客户端通信端口
 
-*Aplica-se a: System Center Configuration Manager (Branch Atual)*
+*适用范围：System Center Configuration Manager (Current Branch)*
 
-É possível alterar os números das portas de solicitação que os clientes do System Center Configuration Manager utilizam para se comunicarem com os sistemas de site que usam HTTP e HTTPS. Embora seja provável que o HTTP ou o HTTPS já estejam configurados para firewalls, a notificação de cliente que utiliza o HTTP ou o HTTPS requer mais uso da CPU e da memória do computador do ponto de gerenciamento do que o uso de um número de porta personalizado. Você também pode especificar o número da porta do site a ser usado caso você ative clientes usando os pacotes de ativação tradicionais.  
+可以更改 System Center Configuration Manager 客户端用来与使用 HTTP 和 HTTPS 进行通信的站点系统通信的请求端口号。 虽然为防火墙配置了 HTTP 或 HTTPS 的可能性更高，但是，与使用自定义端口号相比，使用 HTTP 或 HTTPS 的客户端通知在管理点计算机上将需要使用更多的 CPU 资源和内存。 如果通过使用传统的唤醒数据包唤醒客户端，则还可以指定要使用的站点端口号。  
 
- Ao especificar portas de solicitação HTTP e HTTPS, você poderá especificar um número de porta padrão e um número de porta alternativo. Os clientes automaticamente experimentam a porta alternativa depois de falha de comunicação com a porta padrão. Você pode especificar configurações para comunicações de dados HTTP e HTTPS.  
+ 在指定 HTTP 和 HTTPS 请求端口时，可以指定默认端口号和备用端口号。 在使用默认端口通信失败后，客户端会自动尝试使用备用端口。 可以指定 HTTP 和 HTTPS 数据通信的设置。  
 
- Os valores padrão para as portas de solicitação do cliente são **80** para tráfego HTTP e **443** para tráfego HTTPS. Altere-os somente se não desejar usar esses valores padrão. Um cenário típico de uso de portas personalizadas é quando você usa um site no IIS, em vez de usar o site padrão. Se você alterar os números da porta padrão para o site padrão no IIS e outros aplicativos também usarem o site da Web padrão, eles provavelmente falharão.  
+ 客户端请求端口的默认值是 **80** （对于 HTTP 流量）和 **443** （对于 HTTPS 流量）。 仅在你不想使用这两个默认值时才更改它们。 使用自定义端口的典型情况是，你在 IIS 中使用自定义网站而不是默认网站。 如果更改 IIS 中的默认网站的默认端口号，而其他应用程序也使用此默认网站，则它们可能会失败。  
 
 > [!IMPORTANT]  
->  Não altere os números de porta no Configuration Manager sem entender as consequências. Exemplos:  
+>  不要在不了解后果的情况下更改 Configuration Manager 中的端口号。 例如：  
 >   
->  -   Se você alterar os números de porta para os serviços de solicitação do cliente como uma configuração de site e os clientes existentes não estiverem reconfigurados para usar os novos números de porta, esses clientes se tornarão não gerenciados.  
-> -   Antes de definir um número de porta não padrão, certifique-se de que os firewalls e todos os dispositivos de rede intermediária possam dar suporte a essa configuração e reconfigurá-los quando necessário. Se você gerenciar clientes na Internet e alterar o número da porta HTTPS padrão 443, os roteadores e firewalls da Internet poderão bloquear essa comunicação.  
+>  -   如果在站点配置中更改客户端请求服务的端口号，而且没有重新配置现有的客户端以使用新的端口号，则这些客户端将变为非管理的客户端。  
+> -   在配置非默认的端口号之前，请确保防火墙和所有介入性网络设备都能支持此配置，并在必要时对它们进行重新配置。 如果你将在 Internet 上管理客户端，并且更改默认的 HTTPS 端口号 443，则 Internet 上的路由器和防火墙可能会阻止此通信。  
 
- Para verificar se os clientes não se tornaram não gerenciados após a alteração dos números das portas de solicitação, os clientes deverão ser configurados para usar os novos números de portas de solicitação. Ao alterar as portas de solicitação em um site primário, quaisquer sites secundários vinculados herdarão automaticamente a mesma configuração de porta. Use o procedimento neste tópico para configurar as portas de solicitação no site primário.  
+ 为了确保在你更改请求端口号后客户端不会变为非管理的客户端，必须配置客户端以使用新的请求端口号。 在更改主站点上的请求端口时，任何连接的辅助站点均会自动继承相同的端口配置。 使用本主题中的过程来配置主站点上的请求端口。  
 
 > [!NOTE]  
->  Para saber mais sobre como configurar as portas de solicitação para clientes em computadores com Linux e UNIX, consulte [Configurar portas de solicitação do cliente para Linux e UNIX](../../../core/clients/deploy/deploy-clients-to-unix-and-linux-servers.md#BKMK_ConfigLnUClientCommuincations).  
+>  有关如何为运行 Linux 和 UNIX 的计算机上的客户端配置请求端口的信息，请参阅[为适用于 Linux 和 UNIX 的客户端配置请求端口](../../../core/clients/deploy/deploy-clients-to-unix-and-linux-servers.md#BKMK_ConfigLnUClientCommuincations)。  
 
- Quando o site do Configuration Manager for publicado no Active Directory Domain Services, as configurações de porta de site dos clientes (novos e existentes) que puderem acessar essas informações serão automaticamente definidas, e nenhuma outra ação será necessária. Os clientes que não podem acessar essas informações publicadas nos Serviços de Domínio do Active Directory incluem clientes de grupo de trabalho, clientes de outra floresta do Active Directory, clientes que são configurados somente para Internet e clientes que estão na Internet no momento. Se você alterar os números de porta padrão após a instalação desses clientes, reinstale-os e instale novos clientes usando um dos seguintes métodos:  
+ 当 Configuration Manager 站点发布到 Active Directory 域服务时，可以访问此信息的新客户端和现有客户端将自动配置为它们的站点端口设置，并且您无需采取其他操作。 无法访问发布到 Active Directory 域服务的此信息的客户端包括：工作组客户端、其他 Active Directory 林中的客户端、配置为仅通过 Internet 进行管理的客户端，以及目前位于 Internet 上的客户端。 如果在已安装这些客户端后更改默认端口号，请使用以下方法之一重新安装这些客户端和安装任何新的客户端：  
 
--   Reinstale os clientes usando o Assistente de Instalação por Push de Cliente. A instalação do cliente por push define automaticamente os clientes com a configuração da porta do site atual. Para saber mais sobre como usar o Assistente de Instalação por Push de Cliente, consulte [Como instalar clientes do Configuration Manager usando push de cliente](../../../core/clients/deploy/deploy-clients-to-windows-computers.md#BKMK_ClientPush).  
+-   使用“客户端请求安装向导”重新安装客户端。 客户端请求安装会自动使用当前的站点端口配置来配置客户端。 有关如何使用“客户端请求安装向导”的详细信息，请参阅[如何使用客户端请求安装 Configuration Manager 客户端](../../../core/clients/deploy/deploy-clients-to-windows-computers.md#BKMK_ClientPush)。  
 
--   Reinstale os clientes usando as propriedades de instalação CCMSetup.exe e client.msi de CCMHTTPPORT e CCMHTTPSPORT. Para obter mais informações sobre essas propriedades, consulte [Sobre as propriedades de instalação do cliente no System Center Configuration Manager](../../../core/clients/deploy/about-client-installation-properties.md).  
+-   使用 CCMSetup.exe 以及 CCMHTTPPORT 和 CCMHTTPSPORT 的 client.msi 安装属性来重新安装客户端。 有关这些属性的详细信息，请参阅[关于 System Center Configuration Manager 中的客户端安装属性](../../../core/clients/deploy/about-client-installation-properties.md)。  
 
--   Reinstale os clientes usando um método que pesquise propriedades de instalação do cliente do Configuration Manager nos Serviços de Domínio Active Directory. Para obter mais informações, consulte [Sobre as propriedades de instalação de cliente publicadas nos Serviços de Domínio do Active Directory no System Center Configuration Manager](../../../core/clients/deploy/about-client-installation-properties-published-to-active-directory-domain-services.md).  
+-   使用搜索 Active Directory 域服务以查找 Configuration Manager 客户端安装属性这一方法来重新安装客户端。 有关详细信息，请参阅[关于 System Center Configuration Manager 中的发布到 Active Directory 域服务的客户端安装属性](../../../core/clients/deploy/about-client-installation-properties-published-to-active-directory-domain-services.md)。  
 
- Para reconfigurar os números de porta nos clientes existentes, você também pode usar o script PORTSWITCH.VBS fornecido com a mídia de instalação na pasta SMSSETUP\Tools\PortConfiguration.  
+ 若要重新配置现有客户端的端口号，你也可以使用随安装媒体提供的且位于 SMSSETUP\Tools\PortConfiguration 文件夹中的脚本 PORTSWITCH.VBS。  
 
 > [!IMPORTANT]  
->  Em clientes existentes e novos que estão na Internet no momento, é necessário configurar os números de porta não padrão usando as propriedades client.msi do CCMSetup.exe do CCMHTTPPORT e do CCMHTTPSPORT.  
+>  对于当前在 Internet 上的现有客户端和新客户端，你必须使用 CCMHTTPPORT 和 CCMHTTPSPORT 的 CCMSetup.exe client.msi 属性来配置非默认端口号。  
 
- Após alterar as portas de solicitação no site, os novos clientes instalados por meio do método de instalação de cliente por push em todo site serão automaticamente configurados com os números de portas atuais para o site.  
+ 更改站点上的请求端口后，使用覆盖整个站点的客户端请求安装方法安装的新客户端将自动配置为站点的当前端口号。  
 
-#### <a name="to-configure-the-client-communication-port-numbers-for-a-site"></a>Para configurar os números de porta de comunicação do cliente para um site  
+#### <a name="to-configure-the-client-communication-port-numbers-for-a-site"></a>配置站点的客户端通信端口号  
 
-1.  No console do Configuration Manager, clique em **Administração**.  
+1.  在 Configuration Manager 控制台中，单击“管理” 。  
 
-2.  No espaço de trabalho **Administração** , expanda **Configuração de Site**, clique em **Sites**e selecione o site primário a ser configurado.  
+2.  在“管理”  工作区中，展开“站点配置” ，单击“站点” ，然后选择要配置的主站点。  
 
-3.  Na guia **Início** , clique em **Propriedades**e na guia **Portas** .  
+3.  在“主页”  选项卡上，单击“属性” ，再单击“端口”  选项卡。  
 
-4.  Selecione qualquer item e clique no ícone Propriedades para exibir a caixa de diálogo **Detalhes de Porta** .  
+4.  选择任意项，然后单击“属性”图标以显示“端口详细信息”  对话框。  
 
-5.  Na caixa de diálogo **Detalhes de Porta** , especifique o número da porta e a descrição para o item e clique em **OK**.  
+5.  在“端口详细信息”  对话框中，指定该项的端口号和描述，然后单击“确定” 。  
 
-6.  Selecione **Usar site personalizado** , se for usar o nome do site personalizado **SMSWeb** para sistemas de site que executam o IIS.  
+6.  若要将自定义网站名称 **SMSWeb** 用于运行 IIS 的站点系统，请选择“使用自定义网站”  。  
 
-7.  Clique em **OK** para fechar a caixa de diálogo de propriedades do site.  
+7.  单击“确定”  以关闭站点的属性对话框。  
 
- Repita esse procedimento para todos os sites primários da hierarquia.
-
+ 为层次结构中的所有主站点重复此过程。

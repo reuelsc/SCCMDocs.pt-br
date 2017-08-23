@@ -1,17 +1,16 @@
 ---
-title: "Dados de diagnóstico para 1511 | Microsoft Docs"
-description: "Saiba mais sobre os níveis de dados de diagnóstico e de uso que o System Center Configuration Manager versão 1511 coleta."
+title: "1511 诊断数据 | Microsoft Docs"
+description: "了解 System Center Configuration Manager 版本 1511 收集的诊断和使用情况数据的级别。"
 ms.custom: na
 ms.date: 12/29/2016
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
-ms.technology:
-- configmgr-other
+ms.technology: configmgr-other
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 9e614ae1-47d2-4a93-ba0a-89dc50d1e266
-caps.latest.revision: 4
+caps.latest.revision: "4"
 author: Brenduns
 ms.author: brenduns
 manager: angrobe
@@ -34,254 +33,252 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-ms.translationtype: Human Translation
-ms.sourcegitcommit: 34a4c3d0d641c4ab03e068c6dad78300057861bd
-ms.openlocfilehash: 4c7717e4f5a20c5c8d20fef21d0c67172b3198bd
-ms.contentlocale: pt-br
-ms.lasthandoff: 03/16/2017
-
+ms.openlocfilehash: 215ca2a10c50da08d2265ec0926c0310883588ba
+ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
+ms.translationtype: HT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 08/07/2017
 ---
-# <a name="levels-of-diagnostic-usage-data-collection-for-version-1511-of-system-center-configuration-manager"></a>Níveis da coleta de dados de diagnóstico e de uso da versão 1511 do System Center Configuration Manager
+# <a name="levels-of-diagnostic-usage-data-collection-for-version-1511-of-system-center-configuration-manager"></a>System Center Configuration Manager 版本 1511 的诊断使用情况数据收集的级别
 
-*Aplica-se a: System Center Configuration Manager (Branch Atual)*
+*适用范围：System Center Configuration Manager (Current Branch)*
 
-O System Center Configuration Manager versão 1511 coleta três níveis de dados de diagnóstico e de uso: **Básico**, **Avançado** e **Completo**. Por padrão, esse recurso é definido no nível Avançado. As seções a seguir fornecem detalhes adicionais sobre os dados coletados por cada nível.  
+System Center Configuration Manager 版本 1511 收集三个级别的诊断和使用情况数据：**基本**、**增强**和**完全**。 默认情况下，此功能设置为增强级别。 以下部分提供有关每个级别所收集数据的其他详细信息。  
 
 > [!IMPORTANT]  
->  O Configuration Manager não coleta códigos do site, nomes de site, endereços IP, nomes de usuário, nomes de computador, endereços físicos nem endereços de email nos níveis Básico ou Avançado. Qualquer coleta dessas informações no nível Completo não é proposital, ou seja, é potencialmente incluída nas informações de diagnóstico avançado como arquivos de log ou instantâneos de memória. A Microsoft não usará essas informações para identificá-lo, contatá-lo nem para desenvolver publicidade.  
+>  Configuration Manager 不会收集基本或增强级别的站点代码、站点名称、IP 地址、用户名、计算机名、物理地址或电子邮件地址。 在完全级别收集的信息没有目的性，即可能包括在日志文件或内存快照等高级诊断信息中。 Microsoft 不会使用此信息来识别你的身份、与你联系或进行广告宣传。  
 
-##  <a name="bkmk_change"></a> Como alterar o nível  
- Os administradores que têm um escopo administrativo baseado em função que inclui permissões **Modificar** na classe de objeto **Site** podem alterar o nível dos dados coletados nas configurações de Dados de Diagnóstico e de Uso no console do Configuration Manager.
+##  <a name="bkmk_change"></a> 如何更改级别  
+ 如果管理员具有基于角色的管理作用域，其中包括对**站点**对象类的**修改**权限，则其可以通过 Configuration Manager 控制台中的“诊断和使用数据”设置更改已收集数据的级别。
 
- Para fazer isso, no console, acesse a guia Backstage (a guia superior esquerda com a seta suspensa), selecione **Dados de Uso** e, em seguida, selecione o nível de dados que você deseja usar.  
+ 要执行此操作，请在控制台中，转到“后台”选项卡（左上角带下拉箭头的选项卡），选择“使用情况数据”，然后选择要使用的数据级别。  
 
 
-##  <a name="bkmk_level1"></a> Nível 1 — Básico  
- O nível Básico inclui dados sobre sua hierarquia, dados necessários para ajudar a melhorar sua experiência de instalação ou de atualização e dados que ajudam a determinar as atualizações do Configuration Manager aplicáveis à sua hierarquia.  
+##  <a name="bkmk_level1"></a> 级别 1 - 基本  
+ 基本级别包括层次结构相关数据、帮助改进安装或升级体验所需的数据，以及帮助确定哪些 Configuration Manager 更新适合你的层次结构的数据。  
 
- A partir da versão 1511 do System Center Configuration Manager, este nível inclui o seguinte:  
+ 从 System Center Configuration Manager 版本 1511 开始，此级别包括以下内容：  
 
 
--   Informações de configuração
-    - Build, tipo de instalação, pacotes de idiomas e recursos habilitados
+-   安装程序信息
+    - 内部版本、安装类型、语言包和启用的功能
 
-    - Status e erros de implantação de pacote de atualização  
+    - 更新包部署状态和错误  
 
--   Métricas de desempenho do banco de dados (informações de processamento de replicação, principais procedimentos armazenados do SQL Server por processador e uso de disco)  
+-   数据库性能指标（复制处理信息、按处理器和磁盘使用情况排列靠前的 SQL Server 存储过程）  
 
--   Configuração básica do banco de dados (processadores, configuração de cluster e configuração de exibições distribuídas)  
+-   基本数据库配置（处理器、群集配置和分布式视图配置）  
 
--   Esquema de banco de dados do Configuration Manager (hash de todas as definições de objeto)  
+-   Configuration Manager 数据库架构（所有对象定义的哈希）  
 
--   Contagem de versões de cliente do Configuration Manager e de versões do sistema operacional  
+-   Configuration Manager 客户端版本和操作系统版本的计数  
 
--   Contagem de sistemas operacionais em dispositivos gerenciados e políticas definidas pelo Exchange Connector  
+-   托管设备操作系统和 Exchange Connector 所设置策略的计数  
 
--   Contagem de idiomas e localidades do cliente
+-   客户端语言和区域设置计数
 
--   Contagem de dispositivos com Windows 10 por ramificação e compilação  
+-   Windows 10 设备（按分支和内部版本）计数  
 
--   Dados básicos da hierarquia de sites do Configuration Manager (lista, tipo, versão, status, contagem de clientes e fuso horário de sites)  
+-   基本 Configuration Manager 站点层次结构数据（站点列表、类型、版本、状态、客户端计数和时区）  
 
--   Informações básicas do servidor do sistema de sites (funções do sistema de sites usadas, status de Internet e SSL, sistema operacional, processadores e máquina virtual ou física)  
+-   基本站点系统服务器信息（使用的站点系统角色、Internet 和 SSL 状态、操作系统、处理器，以及物理计算机或虚拟机）  
 
--   Estatísticas de descoberta de usuário básicas (contagem de descoberta de usuário e tamanhos de grupo mínimo/máximo/médio)  
+-   基本用户发现统计信息（用户发现计数和最小/最大/平均组大小）  
 
--   Informações básicas do Endpoint Protection (versões de cliente de antimalware)  
+-   基本 Endpoint Protection 信息（反恶意软件客户端版本）  
 
--   Contagens básicas de tipo de implantação e de aplicativo (total de aplicativos, total de aplicativos com vários tipos de implantação, total de aplicativos com dependências, total de aplicativos substituídos e contagem de tecnologias de implantação em uso)  
+-   基本应用程序和部署类型计数（应用总数、包含多个部署类型的应用总数、包含依赖项的应用总数、被取代的应用总数和使用中的部署技术数）  
 
--   Contagens básicas de OSD (implantação de sistema operacional) (imagens)  
+-   基本操作系统部署 (OSD) 计数（图像）  
 
--   Tipos de ponto de distribuição e de ponto de gerenciamento e informações básicas de configuração (protegidas, pré-teste, PXE, multicast, estado de SSL, pontos de distribuição de recepção e de pares, habilitado para MDM, habilitado para SSL, etc.)  
+-   分发点和管理点类型以及基本配置信息（受保护、预留、PXE、多播、SSL 状态、请求/对等分发点、启用 MDM、启用 SSL 等。）  
 
--   Estatísticas de telemetria (quando executar, tempo de execução e erros)  
+-   遥测统计信息（运行时间、运行时和错误）  
 
-##  <a name="bkmk_level2"></a> Nível 2 - Avançado  
-O nível Avançado é o padrão após a conclusão da instalação. Esse nível inclui dados coletados no nível Básico, dados específicos ao recurso (frequência e duração de uso), configurações do cliente do Configuration Manager (nome do componente, estado e algumas configurações como intervalos de sondagem), bem como informações básicas sobre atualizações de software.  
+##  <a name="bkmk_level2"></a> 级别 2 - 增强  
+安装完成后，默认级别为增强级别。 此级别包括在基本级别收集的数据、特定于功能的数据（频率和持续使用时间）、Configuration Manager 客户端设置（组件名称、状态和轮询间隔等特定设置）和有关软件更新的基本信息。  
 
-Esse nível é recomendado porque fornece à Microsoft o mínimo de dados necessários para fazer melhorias úteis em versões futuras de produtos e serviços. Esse nível não coleta nomes de objeto (sites, usuários, computadores ou objetos), detalhes sobre objetos relacionados à segurança ou vulnerabilidades como contagens de sistemas que exigem atualizações de software.  
+此级别为 Microsoft 提供对将来版本的产品和服务进行有用改进所需的最小数据，因此是推荐的级别。 此级别不收集对象名称（站点、用户、计算机或对象）、有关安全相关对象的详细信息或需要软件更新的系统计数等漏洞。  
 
-A partir da versão 1511 do System Center Configuration Manager, este nível inclui o seguinte:  
+从 System Center Configuration Manager 版本 1511 开始，此级别包括以下内容：  
 
--   **Gerenciamento de aplicativos:**  
+-   **应用程序管理：**  
 
-    -   Informações básicas de uso/direcionamento para os tipos de implantação usados na organização (usuário versus dispositivo direcionado e obrigatório versus disponível)  
+    -   组织内所使用部署类型的基本使用情况/目标信息（用户与目标设备、所需设备与可用设备）  
 
-    -   Informações de implantação de aplicativo (instalação/desinstalação, exigência de aprovação e habilitação/desabilitação da interação do usuário)  
+    -   应用程序部署信息（安装/卸载、需要批准和已启用/禁用用户交互）  
 
-    -   Estatísticas de solicitação de aplicativo disponíveis  
+    -   可用应用程序请求统计信息  
 
-    -   Contagem de pacotes por tipo  
+    -   包（按类型）计数  
 
-    -   Contagem de aplicabilidade de aplicativo por sistema operacional  
+    -   应用程序适用性（按操作系统）计数  
 
-    -   Contagem de implantações de pacote/programa  
+    -   包/程序部署计数  
 
-    -   Contagem de ambientes do App-V e propriedades de implantação  
+    -   App-V 环境和部署属性计数  
 
-    -   Contagem de licenças de aplicativos do Windows 10 licenciadas  
+    -   Windows 10 授权应用程序许可证计数  
 
-    -   Número mínimo/máximo/médio de implantações de aplicativo por usuário/dispositivo  
+    -   每个用户/设备的应用程序部署的最大/最小/平均数目  
 
-    -   Tipo e duração da janela de manutenção  
+    -   维护时段类型和持续时间  
 
--   **Cliente:**  
+-   **客户端：**  
 
-    -   Lista/contagem de agentes cliente habilitados  
+    -   已启用客户端代理的列表/计数  
 
-    -   Contagem de instalações do cliente de cada tipo de local de origem  
+    -   从每个源位置类型进行的客户端安装计数  
 
-    -   Contagem de falhas de instalação do cliente  
+    -   客户端安装失败计数  
 
--   **Configurações de conformidade:**  
+-   **符合性设置：**  
 
-    -   Contagem de itens de configuração por tipo  
+    -   配置项目计数（按类型）  
 
-    -   Informações de linha de base de configuração básica (contagem, número de implantações e número de referências)  
+    -   基本配置基线信息（计数、部署数目和引用数目）  
 
-    -   Contagem de implantações que fazem referência a configurações internas (o valor da configuração não é capturado)  
+    -   引用内置设置（不捕获设置的值）的部署计数  
 
-    -   Contagem de regras e implantações criadas para as configurações personalizadas  
+    -   为自定义设置创建的规则和部署计数  
 
-    -   Contagem de modelos de protocolo SCEP implantados  
+    -   部署的简单证书注册协议模板计数  
 
--   **Conteúdo:**  
+-   **内容：**  
 
-    -   Contagem de limites por tipo  
+    -   边界（按类型）计数  
 
-    -   Informações de grupo de limites (contagem de limites e de sistemas de sites atribuídos a cada grupo de limites)  
+    -   边界组信息（分配给每个边界组的边界和站点系统的计数）  
 
-    -   Informações de grupo de pontos de distribuição (contagem de pacotes e pontos de distribuição atribuídos a cada grupo de pontos de distribuição)  
+    -   分发点组信息（分配给每个分发点组的包和分发点的计数）  
 
-    -   Informações de configuração de pontos de distribuição (uso do cache de ramificação e monitoramento do ponto de distribuição)  
+    -   分发点配置信息（分支缓存的使用和分发点监视）  
 
-    -   Informações de configuração do Gerenciador de Distribuição (threads, intervalo de repetição, número de repetições e configurações de pontos de distribuição de recepção)  
+    -   分发管理器配置信息（线程、重试延迟、重试次数和请求分发点设置）  
 
--   **Endpoint Protection:**  
+-   **Endpoint Protection：**  
 
-    -   Uso da política do Firewall do Windows e antimalware do Endpoint Protection (número de políticas exclusivas atribuídas ao grupo)<br /><br />Isso não inclui informações sobre as configurações incluídas na política.  
+    -   Endpoint Protection 反恶意软件和 Windows 防火墙策略的使用情况（分配给组的唯一策略数）<br /><br />这不包括有关策略所含设置的任何信息。  
 
-    -   Erros de implantação do Endpoint Protection (contagem de códigos de erro de implantação da política do Endpoint Protection)  
+    -   Endpoint Protection 部署错误（Endpoint Protection 策略部署错误代码计数）  
 
-    -   Contagem de coleções selecionadas a serem exibidas no painel do Endpoint Protection  
+    -   选择在 Endpoint Protection 仪表板中显示的集合数  
 
-    -   Contagem de alertas configurados para o recurso Endpoint Protection  
+    -   为 Endpoint Protection 功能配置的警报数  
 
--   **MAM (Gerenciamento de aplicativos móveis):**  
+-   **移动应用程序管理 (MAM)：**  
 
-    -   Contagem de aplicativos do Office habilitados para MAM, aplicativos de linha de negócios e políticas por sistema operacional  
+    -   启用了 MAM 的 Office 应用程序、业务线应用程序和策略计数（按操作系统）  
 
-    -   Contagem de implantações de aplicativo/política de MAM  
+    -   MAM 应用程序/策略部署的计数  
 
-    -   Contagem de regras criadas de acordo com a configuração de MAM  
+    -   创建的规则计数（按 MAM 设置）  
 
--   **MDM (Gerenciamento de dispositivo móvel):**  
+-   **移动设备管理 (MDM)：**  
 
-    -   Contagem de ações de dispositivo móvel emitidas: comandos bloquear, redefinição de PIN, apagar e desativar
+    -   已发出的移动设备操作计数：锁定、固定剩余部分、擦除和停用命令
 
-    -   Contagem de dispositivos móveis gerenciados pelo Configuration Manager e pelo Microsoft Intune e como eles foram registrados (em massa ou baseado no usuário)  
+    -   由 Configuration Manager 和 Microsoft Intune 托管的移动设备计数和这些设备的注册方式（批量或基于用户）  
 
-    -   Agendamento e estatísticas de sondagem de dispositivo móvel e duração de check-in de dispositivos móveis  
+    -   移动设备轮询计划和移动设备签入持续时间的统计信息  
 
-    -   Contagem de políticas de dispositivo móvel  
+    -   移动设备策略计数  
 
-    -   Contagem de usuários que têm vários dispositivos móveis registrados  
+    -   具有多个注册移动设备的用户计数  
 
--   **Solução de problemas do Microsoft Intune:**  
+-   **Microsoft Intune 故障排除：**  
 
-    -   Contagem e tamanho de estado, status, inventário, RDR, DDR, UDX, estado de Locatário, POL, LOG, Cert, CRP, Ressincronização, CFD, RDO, BEX, ISM e mensagens de conformidade baixadas do Microsoft Intune  
+    -   从 Microsoft Intune 下载的状况、状态、清单、RDR、DDR、UDX、租户状况、POL、LOG、证书、CRP、重新同步、CFD、RDO、BEX、ISM 和符合性消息的计数和大小  
 
-    -   Contagem e tamanho das ações de dispositivo (apagar, desativar, bloquear), telemetria e mensagens de dados replicadas para o Microsoft Intune  
+    -   复制到 Microsoft Intune 的设备操作（擦除、停用、锁定）、遥测和数据消息的计数和大小  
 
-    -   Estatísticas de sincronização de usuário completa e delta para o Microsoft Intune  
+    -   Microsoft Intune 的完全和增量用户同步统计信息  
 
--   **MDM (Gerenciamento de dispositivo móvel) local:**  
+-   **本地移动设备管理 (MDM)：**  
 
-    -   Estatísticas de êxito/falha de implantação para implantações locais de aplicativo de MDM  
+    -   本地 MDM 应用程序部署的部署成功/失败统计信息  
 
-    -   Contagem de perfis e pacotes de registro em massa do Windows 10  
+    -   Windows 10 批量注册包和配置文件计数  
 
--   **Implantação de sistema operacional:**  
+-   **操作系统部署：**  
 
-    -   Contagem de imagens de inicialização, drivers, pacotes de driver, pontos de distribuição habilitados para multicast, pontos de distribuição habilitados para PXE e sequências de tarefas  
+    -   启动映像、驱动程序、驱动程序包、启用多播的分发点、启用 PXE 的分发点以及任务序列的计数  
 
--   **Atualizações de software:**  
+-   **软件更新：**  
 
-    -   Número total/médio de coleções que têm implantações de atualização de software e número máximo/médio de atualizações implantadas  
+    -   具有软件更新部署的集合总数/平均数和已部署更新的最大数/平均数  
 
-    -   Número de regras de implantação automática vinculadas à sincronização  
+    -   与同步绑定的自动部署规则数  
 
-    -   Número de regras de implantação automática que criam ou adicionam atualizações a um grupo existente  
+    -   创建新的更新或将更新添加到现有组的自动部署规则数  
 
-    -   Deltas disponíveis e de data limite usados nas regras de implantação automática  
+    -   自动部署规则中使用的可用和截止时间增量  
 
-    -   Número médio e máximo de atribuições por atualização  
+    -   每个更新的平均和最大分配数  
 
-    -   Contagem de atualizações criadas e implantadas com o System Center Update Publisher  
+    -   使用 System Center Update Publisher 创建和部署的更新数  
 
-    -   Contagem de grupos de atualização e atribuições  
+    -   更新组和分配的计数  
 
-    -   Contagem de pacotes de atualização e o número mínimo/máximo/médio de pontos de distribuição direcionados com pacotes  
+    -   更新包计数和包的目标分发点的最大/最小/平均数  
 
-    -   Número de grupos de atualização e número mínimo/máximo/médio de atualizações por grupo  
+    -   更新组的数目和每个组的更新的最小/最大/平均数目  
 
-    -   Número de atualizações e percentual de atualizações implantadas, expiradas, substituídas, baixadas e que contêm EULAs  
+    -   更新数和已部署、已过期、被取代、已下载和包含 EULA 的更新所占百分比  
 
-    -   Códigos de erro de verificação de atualização e contagem de computadores  
+    -   更新扫描错误代码和计算机计数  
 
-    -   Avaliação da atualização de cliente e agendamentos de verificação  
+    -   客户端更新评估和扫描计划  
 
-    -   Agendamento de sincronização do ponto de atualização de software  
+    -   软件更新点同步计划  
 
-    -   Número de regras de implantação automática que têm várias implantações  
+    -   具有多个部署的自动部署规则数  
 
-    -   Configurações usadas para planos ativos de manutenção do Windows 10  
+    -   用于活动 Windows 10 服务计划的配置  
 
-    -   Versões de conteúdo do painel do Windows 10  
+    -   Windows 10 仪表板内容版本  
 
-    -   Contagem de clientes do Windows 10 que usam o Windows Update para Empresas  
+    -   使用面向企业的 Windows 更新的 Windows 10 客户端计数  
 
-    -   Estatísticas de aplicação de patch de cluster  
+    -   群集修补统计信息  
 
-    -   Contagem de atualizações do Office 365 implantadas  
+    -   已部署 Office 365 更新计数  
 
--   **Dados de desempenho/SQL:**  
+-   **SQL/性能数据：**  
 
-    -   Contagem das maiores tabelas de banco de dados  
+    -   最大数据库表计数  
 
-    -   Informações de réplica do SQL Always-On  
+    -   SQL 始终可用副本信息  
 
-    -   Contagem de coleções por tipo  
+    -   集合（按类型）计数  
 
-##  <a name="bkmk_level3"></a> Nível 3 - Completo  
-O nível Completo inclui todos os dados nos níveis Básico e Avançado. Também inclui informações adicionais sobre o Endpoint Protection, o percentual de conformidade da atualização e as informações de atualização de software. Esse nível também pode incluir informações de diagnóstico avançado, como arquivos do sistema e instantâneos de memória, que podem incluir informações pessoais que existiam na memória ou nos arquivos de log no momento da captura.  
+##  <a name="bkmk_level3"></a> 级别 3 - 完全  
+完全级别包括基本和增强级别的所有数据。 它还包括有关 Endpoint Protection、更新符合性百分比和软件更新信息的其他信息。 此级别还可包括系统文件和内存快照（可能包含捕获时存在于内存或日志文件中的个人信息）等高级诊断信息。  
 
-A partir da versão 1511 do System Center Configuration Manager, este nível inclui o seguinte:  
+从 System Center Configuration Manager 版本 1511 开始，此级别包括以下内容：  
 
--   Avaliação de coleta e estatísticas de atualização  
+-   集合评估与刷新统计信息  
 
--   Resumo de integridade do Endpoint Protection (incluindo contagem de clientes protegidos, em risco, desconhecidos e sem suporte)  
+-   Endpoint Protection 运行摘要（包括受保护、有风险、未知与不支持客户端的计数）  
 
--   Configuração da política do Endpoint Protection  
+-   Endpoint Protection 策略设置  
 
--   Informações de implantação de atualização de software (percentual de implantações direcionadas com o cliente versus hora UTC, obrigatório versus opcional versus silencioso e supressão de reinicialização)  
+-   软件更新部署信息（“针对客户端的部署的百分比与 UTC 时间”、“必需、可选与无提示”以及“重启抑制”）  
 
--   Conformidade geral de implantações de atualização de software  
+-   软件更新部署的总体符合性  
 
--   Informações de agendamento de avaliação da regra de implantação automática  
+-   自动部署规则评估计划信息  
 
--   Número de clientes que têm políticas de proteção de acesso à rede  
+-   包含网络访问保护策略的客户端数  
 
--   Contagens e códigos de erro de implantação da atualização de software  
+-   软件更新部署错误代码和计数  
 
--   Número mínimo/máximo/médio de clientes inativos em coleções de implantação de atualização de software  
+-   软件更新部署集合中停用客户端的最小/最大/平均数目  
 
--   Contagem de grupos que têm atualizações de software expiradas  
+-   包含已过期软件更新的组计数  
 
--   Número mínimo/máximo/médio de atualizações de software por pacote  
+-   每个包的软件更新的最小/最大/平均数目  
 
--   Percentuais de êxito de verificação da atualização de software  
+-   软件更新扫描成功百分比  
 
--   Número mínimo/máximo/médio de horas desde a última verificação de atualização de software  
-
+-   上次软件更新扫描后的最小/最大/平均小时数  

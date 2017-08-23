@@ -1,88 +1,84 @@
 ---
-title: "Métodos de registro de dispositivo para MDM híbrido | Microsoft Docs"
-description: "Métodos de registro de dispositivo para MDM híbrido."
+title: "混合 MDM 的设备注册方法 | Microsoft Docs"
+description: "混合 MDM 的设备注册方法。"
 ms.custom: na
 ms.date: 03/05/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
-ms.technology:
-- configmgr-hybrid
+ms.technology: configmgr-hybrid
 ms.tgt_pltfrm: na
 ms.topic: get-started-article
 ms.assetid: b81d06dc-3844-4117-9937-16732a227994
-caps.latest.revision: 9
-caps.handback.revision: 0
+caps.latest.revision: "9"
+caps.handback.revision: "0"
 author: Mtillman
 ms.author: mtillman
 manager: angrobe
-ms.translationtype: Human Translation
-ms.sourcegitcommit: 2c723fe7137a95df271c3612c88805efd8fb9a77
-ms.openlocfilehash: c38b3bae681821a886bfdab66d71cd6067adc425
-ms.contentlocale: pt-br
-ms.lasthandoff: 03/06/2017
-
-
+ms.openlocfilehash: e09e639e939b846cdc162681f9d7bd4c39cd6fbf
+ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
+ms.translationtype: HT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 08/07/2017
 ---
-# <a name="overview-of-device-enrollment-methods"></a>Visão geral dos métodos de registro de dispositivo
+# <a name="overview-of-device-enrollment-methods"></a>设备注册方法概述
 
-*Aplica-se a: System Center Configuration Manager (Branch Atual)*
+*适用范围：System Center Configuration Manager (Current Branch)*
 
-Após estender o Configuration Manager com o Intune, você pode registrar e gerenciar dispositivos corporativos ou conceder aos usuários permissão para registrar seus dispositivos pessoais. Você também pode gerenciar dispositivos corporativos com o Intune usando o Configuration Manager.
+使用 Intune 扩展 Configuration Manager 后，可注册和管理公司拥有的设备或授予用户注册其个人设备的权限。 还可以使用 Configuration Manager 通过 Intune 管理公司拥有的设备。
 
-A tabela a seguir mostra os métodos de registro com e seus recursos com suporte. Esses recursos incluem:
-- **Apagar** – redefinir o dispositivo para as configurações de fábrica, removendo todos os dados. [Desativar dispositivos](../deploy-use/wipe-lock-reset-devices.md)
-- **Afinidade** – associa dispositivos a usuários. Necessário para MAM (gerenciamento de aplicativo móvel) e acesso condicional aos dados da empresa. [Afinidade do usuário](../deploy-use/user-affinity-for-hybrid-managed-devices.md)
-- **Bloqueio** – impede os usuários de removerem o dispositivo do gerenciamento. Dispositivos iOS exigem o modo Supervisionado para o Bloqueio. [Bloqueio remoto](../deploy-use/wipe-lock-reset-devices.md#remote-lock)
+下表显示了注册方法及其支持的功能。 这些功能包括：
+- **擦除** - 恢复设备的出厂设置，删除所有数据。 [停用设备](../deploy-use/wipe-lock-reset-devices.md)
+- **相关性** - 将设备与用户相关联。 需要移动应用程序管理 (MAM) 和对公司数据的条件性访问。 [用户关联](../deploy-use/user-affinity-for-hybrid-managed-devices.md)
+- **锁定** - 防止用户从管理中移除设备。 iOS 设备的锁定需要为受监督模式。 [远程锁定](../deploy-use/wipe-lock-reset-devices.md#remote-lock)
 
-**Métodos de registro do iOS**
+**iOS 注册方法**
 
-| **Método** |    **Apagar** |    **Afinidade**    |    **Bloqueio** | **Detalhes** |
+| **方法** |  **擦除** |  **相关性**    |   **锁定** | **详细信息** |
 |:---:|:---:|:---:|:---:|:---:|
-|**[BYOD](#byod)** | Não|    Sim |    Não | [mais](../deploy-use/enable-platform-enrollment.md)|
-|**[DEM](#dem)**|    Não |Não |Não    | [mais](../deploy-use/enroll-devices-with-device-enrollment-manager.md)|
-|**[DEP](#dep)**|    Sim |    Opcional |    Opcional|[mais](../deploy-use/ios-device-enrollment-program-for-hybrid.md)|
-|**[USB-SA](#usb-sa)**|    Sim |    Opcional |    Não| [mais](../deploy-use/ios-hybrid-enrollment-using-apple-configurator.md)|
+|**[BYOD](#byod)** | 否|    是 |   否 | [更多](../deploy-use/enable-platform-enrollment.md)|
+|**[DEM](#dem)**|   否 |否 |否  | [更多](../deploy-use/enroll-devices-with-device-enrollment-manager.md)|
+|**[DEP](#dep)**|   是 |   可选 |  可选|[更多](../deploy-use/ios-device-enrollment-program-for-hybrid.md)|
+|**[USB-SA](#usb-sa)**| 是 |   可选 |  否| [更多](../deploy-use/ios-hybrid-enrollment-using-apple-configurator.md)|
 
-**Métodos de registro do Android e do Windows**
+**Windows 和 Android 的注册方法**
 
-| **Método** |    **Apagar** |    **Afinidade**    |    **Bloqueio** | **Detalhes**|
+| **方法** |  **擦除** |  **相关性**    |   **锁定** | **详细信息**|
 |:---:|:---:|:---:|:---:|:---:|:---:|
-|**[BYOD](#byod)** | Não|    Sim |    Não | [mais](../deploy-use/enroll-hybrid-windows.md)|
-|**[DEM](#dem)**|    Não |Não |Não    |[mais](../deploy-use/enroll-devices-with-device-enrollment-manager.md)|
+|**[BYOD](#byod)** | 否|    是 |   否 | [更多](../deploy-use/enroll-hybrid-windows.md)|
+|**[DEM](#dem)**|   否 |否 |否  |[更多](../deploy-use/enroll-devices-with-device-enrollment-manager.md)|
 
-Para ver uma série de perguntas que ajudarão você a encontrar o método certo, consulte [Escolher como registrar dispositivos](/intune/get-started/choose-how-to-enroll-devices1).
+关于可帮助用户找到正确方法的一系列问题，请参阅[选择如何注册设备](/intune/get-started/choose-how-to-enroll-devices1)。
 
 ## <a name="byod"></a>BYOD
-Usuários de BYOD ("Traga seu próprio dispositivo") instalam o aplicativo de Portal da Empresa e registram o dispositivo. Isso pode permitir que os usuários se conectem à rede da empresa, ingressando no domínio ou no Azure Active Directory. Habilitar o registro de BYOD é um pré-requisito para muitos cenários de COD para a maioria das plataformas. Consulte [Configurar MDM híbrido](../deploy-use/setup-hybrid-mdm.md). ([Voltar à tabela](#overview-of-device-enrollment-methods))
+“自带设备办公” (BYOD) 用户可安装公司门户应用并注册其设备。 这可以让用户连接到公司网络，加入域或 Azure Active Directory。 对于大多数平台，许多 COD 方案的先决条件之一都是要求启用 BYOD 注册。 请参阅[安装混合 MDM](../deploy-use/setup-hybrid-mdm.md)。 （[返回到表格](#overview-of-device-enrollment-methods)）
 
-## <a name="corporate-owned-devices"></a>Dispositivos corporativos
-CODs (dispositivos corporativos) podem ser gerenciados com o console do Configuration Manager. Dispositivos iOS podem ser registrados diretamente por meio das ferramentas fornecidas pela Apple. Todos os tipos de dispositivo podem ser registrados por um administrador ou gerente usando o gerenciador de registro do dispositivo. Dispositivos que têm um número IMEI também podem ser identificados e marcados como corporativos para habilitar cenários de COD.
+## <a name="corporate-owned-devices"></a>公司拥有的设备
+可通过 Configuration Manager 控制台管理公司拥有的设备 (COD)。 可直接通过 Apple 提供的工具注册 iOS 设备。 管理员或主管可使用设备注册管理器注册所有设备类型。 还可识别具有 IMEI 号码的设备并将其标记为“公司拥有”来启用 COD 方案。
 
-[Registrar dispositivos corporativos](../deploy-use/enroll-company-owned-devices.md)
+[注册公司拥有的设备](../deploy-use/enroll-company-owned-devices.md)
 
 ### <a name="dem"></a>DEM
-O gerenciador de registro de dispositivo é uma conta de usuário especial usada para registrar e gerenciar vários dispositivos corporativos. Os gerentes podem instalar o Portal da Empresa e registrar vários dispositivos sem usuário. Saiba mais sobre o [DEM](../deploy-use/enroll-devices-with-device-enrollment-manager.md). ([Voltar à tabela](#overview-of-device-enrollment-methods))
+设备注册管理器是用来注册和管理多个公司拥有的设备的特殊用户帐户。 此管理器可以安装公司门户和注册多个无用户设备。 详细了解 [DEM](../deploy-use/enroll-devices-with-device-enrollment-manager.md)。 （[返回到表格](#overview-of-device-enrollment-methods)）
 
 ### <a name="dep"></a>DEP
-O gerenciamento com o DEP (Programa de registro de dispositivos) da Apple permite criar e implantar políticas "por ondas de rádio" para dispositivos iOS adquiridos e gerenciados com o DEP. O dispositivo é registrado quando o usuário o ativa pela primeira vez e executa o Assistente de Configuração do iOS. Esse método dá suporte ao modo **iOS Supervisionado**, que por sua vez habilita:
-  -    Registro bloqueado
-  -    Acesso condicional
-  -    Detecção de jailbreak
-  -    Gerenciamento de aplicativos móveis
+Apple 设备注册计划 (DEP) 管理允许用户创建“无线”策略并将其部署到通过 DEP 购买和管理的 iOS 设备。 设备将在用户第一次打开设备并运行 iOS 设置助理时注册。 此方法支持“iOS 受监督”模式，该模式反过来可启用：
+  - 锁定的注册
+  - 条件性访问
+  - 破解检测
+  - 移动应用程序管理
 
-Saiba mais sobre o [DEP](../deploy-use/ios-device-enrollment-program-for-hybrid.md). ([Voltar à tabela](#overview-of-device-enrollment-methods))
+详细了解 [DEP](../deploy-use/ios-device-enrollment-program-for-hybrid.md)。 （[返回到表格](#overview-of-device-enrollment-methods)）
 
 ### <a name="usb-sa"></a>USB-SA
-Registro com Assistente de Configuração e conexão USB. O administrador cria uma política e a exporta para o Apple Configurator. Dispositivos corporativos conectados por USB são preparados com a política. O administrador deve registrar cada dispositivo manualmente. Os usuários recebem seus dispositivos e executam o Assistente de Configuração, registrando seu dispositivo. Esse método dá suporte ao modo **iOS Supervisionado**, que por sua vez habilita:
-  -    Acesso condicional
-  -    Detecção de jailbreak
-  -    Gerenciamento de aplicativos móveis
+通过 USB 连接的“设置助理注册”。 管理员创建策略并将其导出到 Apple Configurator。 使用策略准备好通过 USB 连接的公司拥有的设备。 管理员必须手动注册每个设备。 用户收到其设备并运行设置助理，便可注册其设备。 此方法支持“iOS 受监督”模式，该模式反过来可启用：
+  - 条件性访问
+  - 破解检测
+  - 移动应用程序管理
 
-Saiba mais sobre o [Registro com Assistente de Configuração com o Apple Configurator](../deploy-use/ios-hybrid-enrollment-using-apple-configurator.md). ([Voltar à tabela](#overview-of-device-enrollment-methods))
+详细了解[使用 Apple Configurator 进行设置助理注册](../deploy-use/ios-hybrid-enrollment-using-apple-configurator.md)。 （[返回到表格](#overview-of-device-enrollment-methods)）
 
-## <a name="mobile-device-management-with-exchange-activesync-and-configuration-manager"></a>Gerenciamento de dispositivo móvel usando o Exchange ActiveSync e o Configuration Manager
-Dispositivos móveis que não estão registrados, mas que se conectam ao EAS (Exchange ActiveSync), podem ser gerenciados pelo Intune usando a política de MDM do EAS. O Intune usa o Exchange Connector para se comunicar com o EAS, tanto localmente quanto hospedado na nuvem.
+## <a name="mobile-device-management-with-exchange-activesync-and-configuration-manager"></a>使用 Exchange ActiveSync 和 Configuration Manager 管理移动设备
+可以使用 EAS MDM 策略通过 Intune 管理未注册但连接到 Exchange ActiveSync (EAS) 的移动设备。 Intune 使用 Exchange Connector 与本地或云托管的 EAS 通信。
 
-[Gerenciamento de dispositivo móvel usando o Exchange ActiveSync e o Intune](../deploy-use/manage-mobile-devices-with-exchange-activesync.md)
-
+[使用 Exchange ActiveSync 和 Intune 管理移动设备](../deploy-use/manage-mobile-devices-with-exchange-activesync.md)

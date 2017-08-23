@@ -1,259 +1,255 @@
 ---
-title: "Conceitos básicos do gerenciamento de conteúdo | Microsoft Docs"
-description: "Use as ferramentas e opções no System Center Configuration Manager para gerenciar o conteúdo que você implanta."
+title: "内容管理基础知识 | Microsoft Docs"
+description: "在 System Center Configuration Manager 中使用工具和选项管理部署内容。"
 ms.custom: na
 ms.date: 05/04/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
-ms.technology:
-- configmgr-other
+ms.technology: configmgr-other
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: c201be2a-692c-4d67-ac95-0a3afa5320fe
-caps.latest.revision: 28
-caps.handback.revision: 0
+caps.latest.revision: "28"
+caps.handback.revision: "0"
 author: Brenduns
 ms.author: brenduns
 manager: angrobe
-ms.translationtype: Human Translation
-ms.sourcegitcommit: 212628639300e9c361f7cee61b3df6b1cb6874ce
 ms.openlocfilehash: f73dde64e0e8a0fc49f45b3afb3b8f00c926a820
-ms.contentlocale: pt-br
-ms.lasthandoff: 05/17/2017
-
-
+ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
+ms.translationtype: HT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 08/07/2017
 ---
-# <a name="fundamental-concepts-for-content-management-in-system-center-configuration-manager"></a>Conceitos fundamentais para o gerenciamento de conteúdo no System Center Configuration Manager
+# <a name="fundamental-concepts-for-content-management-in-system-center-configuration-manager"></a>System Center Configuration Manager 中内容管理的基本概念
 
-*Aplica-se a: System Center Configuration Manager (Branch Atual)*
+*适用范围：System Center Configuration Manager (Current Branch)*
 
-O System Center Configuration Manager dá suporte a um sistema robusto de ferramentas e opções para gerenciar o conteúdo que você implanta aplicativos, pacotes, atualizações de software e implantações de sistema operacional.  
+System Center Configuration Manager 支持工具和选项的一个可靠系统，用于管理部署为应用程序、包、软件更新和操作系统部署的内容。  
 
-O conteúdo que você implanta é armazenado em servidores de site e servidores do sistema de sites do ponto de distribuição. Esse conteúdo pode exigir uma grande quantidade de largura de banda de rede quando está sendo transferido entre os locais. Para planejar e usar com eficiência a infraestrutura de gerenciamento de conteúdo, recomendamos que você compreenda as opções e configurações disponíveis e considerar como usá-las para melhor se ajustarem ao seu ambiente de rede e às suas necessidades de implantação de conteúdo.  
+所部署的内容将同时存储在站点服务器和分发点站点系统服务器上。 在不同位置间进行传输时，此内容将需要大量的网络带宽。 为了有效地规划和使用内容管理基础结构，建议了解可用的选项和配置，然后考虑如何使用它们在最大限度上适应你的网络环境并满足内容部署需求。  
 
 > [!TIP]    
-> Você pode saber mais sobre o processo de distribuição de conteúdo e encontrar ajuda para diagnosticar e resolver problemas gerais relacionados a distribuição de conteúdo. Confira o artigo [Noções básicas e solução de problemas de distribuição de conteúdo do Microsoft Configuration Manager](https://support.microsoft.com/help/4000401/content-distribution-in-mcm) no site support.microsoft.com.
+> 可以详细了解内容分发流程，并获取有关如何诊断和解决常见内容分发问题的帮助。 请参阅 support.microsoft.com 上的[了解和排查 Microsoft Configuration Manager 中的内容分发问题](https://support.microsoft.com/help/4000401/content-distribution-in-mcm)。
 
-Veja a seguir os principais conceitos de gerenciamento de conteúdo. Quando um conceito requer informações adicionais ou complexas, são fornecidos links para direcioná-lo a esses detalhes.
+下面介绍了内容管理的重要概念。 当概念需要额外或复杂的信息时，将提供链接以将你转到这些详细信息。
 
-## <a name="accounts-used-for-content-management"></a>Contas usadas para gerenciamento de conteúdo  
- As contas a seguir podem ser usadas com o gerenciamento de conteúdo:  
+## <a name="accounts-used-for-content-management"></a>用于内容管理的帐户  
+ 以下帐户可用于内容管理：  
 
--   **Conta de acesso à rede**: usada pelos clientes para se conectar a uma distribuição ponto e acessar o conteúdo. Por padrão, a conta de computador será tentada primeiro.  
+-   **网络访问帐户**：由客户端用于连接到分发点和访问内容。 默认先尝试计算机帐户。  
 
-     Essa conta também é usada pelos pontos de distribuição de recepção para obter o conteúdo de um ponto de distribuição de origem em uma floresta remota.  
+     此帐户还由拉取分发点用于从远程林中的源分发点获取内容。  
 
--   **Conta de acesso ao pacote**: por padrão, o Configuration Manager concede acesso ao conteúdo em um ponto de distribuição a usuários e administradores de contas de acesso genérico. No entanto, você pode configurar permissões adicionais para restringir o acesso.   
+-   **包访问帐户**：默认情况下，Configuration Manager 向通用访问帐户“用户”和“管理员”授予访问分发点上的内容的权限。 但是，你可以配置其他权限来限制访问。   
 
--   **Conta de conexão multicast**: usada para implantações de sistema operacional.  
+-   **多播连接帐户**：用于操作系统部署。  
 
-Para obter mais informações sobre essas contas, consulte [Gerenciar contas para acessar conteúdo](../../../core/plan-design/hierarchy/manage-accounts-to-access-content.md).
+有关这些帐户的详细信息，请参阅[管理帐户以访问内容](../../../core/plan-design/hierarchy/manage-accounts-to-access-content.md)。
 
-## <a name="bandwidth-throttling-and-scheduling"></a>Limitação e agendamento de largura de banda  
- Tanto a limitação quanto o agendamento são opções para ajudar a controlar quando o conteúdo é distribuído por um servidor de site para pontos de distribuição. Isso é semelhante, mas não está diretamente relacionado a controles de largura de banda para replicação baseada em arquivo site a site.  
+## <a name="bandwidth-throttling-and-scheduling"></a>带宽限制和计划  
+ 限制和计划选项均可帮助你控制将内容从站点服务器分发到分发点的时间。 这类似于站点到站点基于文件的复制的带宽控制，但二者又没有直接关系。  
 
- Para obter mais informações, consulte [Gerenciar largura de banda de rede](/sccm/core/plan-design/hierarchy/manage-network-bandwidth).
+ 有关详细信息，请参阅[管理网络带宽](/sccm/core/plan-design/hierarchy/manage-network-bandwidth)。
 
-## <a name="binary-differential-replication"></a>Replicação diferencial binária  
- Um pré-requisito para pontos de distribuição, a BDR (replicação diferencial binária) que às vezes é conhecido como replicação delta, é automaticamente usado para reduzir o uso de largura de banda ao distribuir atualizações ao conteúdo implantado anteriormente para outros sites ou pontos de distribuição remotos.  
+## <a name="binary-differential-replication"></a>二进制差异复制  
+ 二进制差异复制 (BDR) 是分发点的必备条件，有时被称为增量复制。在将以前部署的内容的更新分发到其他站点或远程分发点时，将自动使用它来减少带宽占用量。  
 
- A BDR minimiza a largura de banda de rede utilizada para enviar atualizações para conteúdo distribuído, reenviando apenas o conteúdo novo ou alterado, em vez de enviar todo o conteúdo dos arquivos de origem sempre que uma alteração é feita nesses arquivos.  
+ BDR 只会发送新内容或已更改的内容，而不会在每次对文件进行更改时发送整个内容源文件集，从而可最大程度地减少用于为分发内容而发送更新的网络带宽。  
 
- Quando é usada a replicação diferencial binária, o Configuration Manager identifica as alterações que ocorrem nos arquivos de origem para cada conjunto do conteúdo que foi distribuído anteriormente.  
+ 如果使用二进制差异复制，Configuration Manager 将标识对以前已分发的每组内容的源文件所做的更改。  
 
--   Quando os arquivos no conteúdo de origem mudam, o Configuration Manager cria uma nova versão incremental do conjunto de conteúdo e replica apenas os arquivos alterados para os sites de destino e pontos de distribuição. Um arquivo é considerado alterado se ele foi renomeado ou movido, ou se o conteúdo do arquivo foi alterado. Por exemplo, se você substituir um único arquivo de driver de um pacote de implantação de sistema operacional que você tenha distribuído anteriormente para vários sites, apenas o arquivo de driver alterado será replicado para esses sites de destino.  
+-   源内容中的文件发生更改时，Configuration Manager 将创建内容集新的增量版本，并仅将更改的文件复制到目标站点和分发点。 如果将某文件重命名、移动或更改其内容，则该文件被视为已更改。 例如，你替换了以前分发到若干站点的操作系统部署包的单一驱动程序文件，则只会将更改的驱动程序文件复制到那些目标站点。  
 
--   O Configuration Manager dá suporte a até cinco versões incrementais de um conjunto de conteúdo antes de reenviar o todo o conjunto do conteúdo. Após a quinta atualização, a próxima alteração no conjunto de conteúdo faz com que o Configuration Manager crie uma nova versão do conjunto de conteúdo. O Configuration Manager distribui a nova versão do conteúdo definido para substituir o conjunto anterior e qualquer uma de suas versões incrementais. Depois que o novo conjunto de conteúdo é distribuído, alterações incrementais subsequentes aos arquivos de origem são novamente replicadas pela replicação diferencial binária.  
+-   在重新发送整个内容集之前，Configuration Manager 最多支持五个内容集增量版本。 第五次更新后，对内容集的下一次更改会使 Configuration Manager 创建新版本的内容集。 Configuration Manager 分发新版本的内容集以替换上一个内容集和其任何增量版本。 分发新的内容集后，对源文件进行的后续增量更改会再次通过二进制差异复制进行复制。  
 
 
-A BDR tem suporte entre cada site pai e filho de uma hierarquia. Em um site, a BDR tem suporte entre o servidor do site e seus pontos de distribuição normais. No entanto, os pontos de distribuição pull e os pontos de distribuição baseados em nuvem não dão suporte à replicação diferencial binária para a transferência de conteúdo. Os pontos de distribuição pull dão suporte a deltas de nível de arquivo, transferindo novos arquivos, mas não os blocos em um arquivo.
+支持在层次结构中的每个父站点和子站点之间进行 BDR。 在站点内，支持在站点服务器及其常规分发点之间进行 BDR。 但是，拉取分发点和基于云的分发点不支持通过二进制差异复制来传输内容。 拉取分发点支持文件级增量，传输新的文件，但不是文件内的块。
 
-Aplicativos sempre usam replicação diferencial binária. A replicação diferencial binária é opcional para pacotes e não é habilitada por padrão. Para usar replicação diferencial binária para pacotes, você deve habilitar esta funcionalidade para cada pacote. Para tanto, selecione a opção **Habilitar replicação diferencial binária** ao criar um novo pacote ou ao editar a guia **Fonte de Dados** das propriedades do pacote.  
+应用程序始终使用二进制差异复制。 对于包，二进制差异复制是可选的，默认情况下未启用。 若要为包使用二进制差异复制，你必须为每个包启用此功能。 为此，请在创建新包或编辑包属性的“数据源”  选项卡时选择“启用二进制差异复制”  选项。  
 
 ## <a name="branchcache"></a>BranchCache  
- Uma tecnologia do Windows que permite que os clientes que dão suporte ao BranchCache e baixaram uma implantação configurada para Branch Cache sirvam como uma fonte de conteúdo para outros clientes habilitados para BranchCache.  
+ 一项 Windows 技术，它使支持 BranchCache 且下载了为 BranchCache 配置的部署的客户端随后可充当其他启用了 BranchCache 的客户端的内容源。  
 
- Por exemplo, quando o primeiro computador cliente habilitado para BranchCache solicita conteúdo de um ponto de distribuição que executa o Windows Server 2012 e está configurado como servidor do BranchCache, o computador cliente baixa o conteúdo e o armazena em cache.  
+ 例如，当第一台 BranchCache 启用的客户端计算机从运行 Windows Server 2012 并且被配置为 BranchCache 服务器的分发点请求内容时，客户端计算机将下载此内容并对其进行缓存。  
 
--   Esse computador cliente então pode disponibilizar o conteúdo a outros clientes habilitados para Branch Cache na mesma sub-rede, que também armazena o conteúdo em cache.  
+-   然后，通过此客户端计算机，其他启用了 BranchCache 且同样缓存了该内容的客户端即可访问此内容。  
 
--   Dessa maneira, os clientes subsequentes na mesma sub-rede não precisam baixar conteúdo do ponto de distribuição, e o conteúdo é distribuído em vários clientes para transferências futuras.  
+-   这样，相同子网上的后续客户端不必从分发点下载内容，该内容将跨多个客户端进行分发以便将来传输。  
 
-## <a name="peer-cache"></a>Cache de Pares
-Começando da versão 1610, o cliente Cache de Pares ajuda você a gerenciar a implantação de conteúdo para clientes em locais remotos. O Cache de Pares é uma solução interna do Configuration Manager que habilita os clientes a compartilharem conteúdo com outros clientes diretamente do cache local.
+## <a name="peer-cache"></a>对等缓存
+从 1610 版起，可通过客户端“对等缓存”管理对远程客户端内容的部署。 对等缓存是内置 Configuration Manager 解决方案，使客户端能够直接从本地缓存将内容与其他客户端共享。
 
-Depois de implantar configurações do cliente que habilitam o Cache de Pares para uma coleção, os membros dessa coleção poderão atuar como uma fonte de conteúdo par para outros clientes no mesmo grupo de limites.
+将启用对等缓存的客户端设置部署到集合后，该集合的成员可以充当同一边界组中其他客户端的对等内容源。
 
-Para obter mais informações, consulte [Cache de pares para clientes do Configuration Manager](/sccm/core/plan-design/hierarchy/client-peer-cache).
-
-
-## <a name="windows-pe-peer-cache"></a>Cache de sistemas pares do Windows PE
-Ao implantar um novo sistema operacional no System Center Configuration Manager, os computadores que executam a sequência de tarefas podem usar o Cache Par do Windows PE para obter o conteúdo de um par local (uma fonte de cache par), em vez de baixar o conteúdo de um ponto de distribuição. Isso ajuda a minimizar o tráfego de WAN (rede de longa distância) em cenários de filial em que não há nenhum ponto de distribuição local.
-
-Para obter mais informações, consulte [Cache de pares do Windows PE](../../../osd/get-started/prepare-windows-pe-peer-cache-to-reduce-wan-traffic.md).
+有关详细信息，请参阅[用于 Configuration Manager 客户端的对等缓存](/sccm/core/plan-design/hierarchy/client-peer-cache)。
 
 
-## <a name="client-locations"></a>Locais do cliente  
- Estes são os locais dos quais os clientes acessam conteúdo:  
+## <a name="windows-pe-peer-cache"></a>Windows PE 对等缓存
+在 System Center Configuration Manager 中部署新的操作系统时，运行任务序列的计算机可使用 Windows PE 对等缓存从本地对等计算机（对等缓存源）中获取内容，而无需从分发点下载内容。 这有助于最大限度减小没有本地分发点的分支机构场景中的广域网 (WAN) 流量。
 
--   **Intranet** (local):  
-
-    -   Pontos de distribuição podem usar HTTP ou HTTPs.  
-
-    -   Apenas use um ponto de distribuição baseado em nuvem para fallback quando os pontos de distribuição locais estiverem indisponíveis.  
-
--   **Internet**:  
-
-    -   Requer que os pontos de distribuição aceitem HTTPS.  
-
-    -   Pode usar um ponto de distribuição baseado em nuvem para fallback.  
-
--   **Grupo de trabalho**:  
-
-    -   Requer que os pontos de distribuição aceitem HTTPS.  
-
-    -   Pode usar um ponto de distribuição baseado em nuvem para fallback.  
+有关详细信息，请参阅 [Windows PE 对等缓存](../../../osd/get-started/prepare-windows-pe-peer-cache-to-reduce-wan-traffic.md)。
 
 
+## <a name="client-locations"></a>客户端位置  
+ 客户端将访问以下位置中的内容：  
 
-## <a name="content-library"></a>Biblioteca de conteúdo  
- A biblioteca de conteúdo é o repositório de instância única de conteúdo que o Configuration Manager usa para reduzir o tamanho geral do corpo de conteúdo combinado que você distribui.  
+-   **Intranet** （本地）：  
 
-- Saiba mais sobre a [biblioteca de conteúdo](../../../core/plan-design/hierarchy/the-content-library.md).
-- Use a [ferramenta de limpeza da biblioteca de conteúdo](/sccm/core/plan-design/hierarchy/content-library-cleanup-tool) para remover o conteúdo que não está mais associado a um aplicativo.  
+    -   分发点可使用 HTTP 或 HTTPS。  
 
+    -   仅当本地分发点不可用时，才使用基于云的分发点进行回退。  
 
-## <a name="distribution-points"></a>Pontos de distribuição  
- O Configuration Manager usa pontos de distribuição para armazenar arquivos necessários para que o software seja executado em computadores cliente. Os clientes devem ter acesso a pelo menos um ponto de distribuição do qual poderão baixar os arquivos para o conteúdo que você implanta.  
+-   **Internet**：  
 
- O ponto de distribuição (não especializado) básico é conhecido como ponto de distribuição padrão. Há duas variações do ponto de distribuição padrão que recebem atenção especial:  
+    -   要求分发点接受 HTTPS。  
 
--   **Ponto de distribuição de pull**: uma variação de um ponto de distribuição em que o ponto de distribuição obtém conteúdo de outro ponto de distribuição (um ponto de distribuição de origem). Esse processo é semelhante a como os clientes baixam o conteúdo dos pontos de distribuição. Os pontos de distribuição de pull podem ajudar a evitar gargalos de largura de banda de rede que ocorrem quando o servidor do site deve distribuir conteúdo diretamente para cada ponto de distribuição.  [Usar um ponto de distribuição de pull com o System Center Configuration Manager](/sccm/core/plan-design/hierarchy/use-a-pull-distribution-point).
+    -   可使用基于云的分发点进行回退。  
 
--   **Ponto de distribuição baseado em nuvem**: uma variação de um ponto de distribuição instalado no Microsoft Azure. [Aprenda a usar um ponto de distribuição baseado em nuvem com o System Center Configuration Manager](../../../core/plan-design/hierarchy/use-a-cloud-based-distribution-point.md).  
+-   **工作组**：  
 
+    -   要求分发点接受 HTTPS。  
 
-Pontos de distribuição padrão dão suporte a uma variedade de configurações e recursos, como limitação e agendamento, PXE e Multicast, ou conteúdo de pré-teste.  
-
--   Você pode usar controles como **agendas** ou **limitação da largura de banda** para ajudar a controlar essa transferência.  
-
--   Você também pode usar outras opções, incluindo **conteúdo pré-teste** e **pontos de distribuição de pull**. Além disso, você pode aproveitar o **BranchCache** para reduzir a largura de banda de rede que é usada ao implantar conteúdo.  
-
--   Os pontos de distribuição dão suporte a configurações diferentes, como **[PXE](../../../osd/get-started/prepare-site-system-roles-for-operating-system-deployments.md#BKMK_PXEDistributionPoint)** e **[Multicast](../../../osd/get-started/prepare-site-system-roles-for-operating-system-deployments.md#BKMK_DPMulticast)** para implantações de sistema operacional ou configurações para dar suporte a **dispositivos móveis**.  
-
- Pontos de distribuição de pull em baseados em nuvem dão suporte a muitas dessas mesmas configurações, mas têm limitações específicas a cada variação de ponto de distribuição.  
-
-## <a name="distribution-point-groups"></a>Grupos de pontos de distribuição  
- Os grupos de pontos de distribuição são agrupamentos lógicos de pontos de distribuição que podem simplificar a distribuição de conteúdo.  
-
- Para obter mais informações, consulte [Gerenciar grupos de pontos de distribuição](../../../core/servers/deploy/configure/install-and-configure-distribution-points.md#bkmk_manage).
-
-## <a name="distribution-point-priority"></a>Prioridade de ponto de distribuição  
- O valor de prioridade do ponto de distribuição se baseia em quanto tempo demorou para transferir implantações anteriores para aquele ponto de distribuição.  
-
--   Este é um valor de ajuste automático atribuído a um ponto de distribuição que ajuda o Configuration Manager a transferir conteúdo para mais pontos de distribuição em um período de tempo menor.  
-
--   Quando se distribui conteúdo a vários pontos de distribuição ao mesmo tempo ou a um grupo de pontos de distribuição, o Configuration Manager envia o conteúdo ao ponto de distribuição com a prioridade mais alta antes de enviar este mesmo conteúdo a um ponto de distribuição com prioridade menor.  
-
--   Isso não substitui a prioridade de distribuição para pacotes, que continua sendo o fator decisivo na sequência de quando diferentes distribuições são transferidas.  
+    -   可使用基于云的分发点进行回退。  
 
 
-Por exemplo, se você distribuir conteúdo com prioridade de distribuição alta a um ponto de distribuição com uma prioridade de ponto de distribuição baixa, o pacote com prioridade de distribuição alta sempre será transferido antes de um pacote com prioridade de distribuição baixa. A prioridade de distribuição será aplicada mesmo que pacotes com prioridade mais baixa sejam distribuídos para pontos de distribuição que têm prioridades mais altas.
 
-A prioridade de distribuição alta do pacote garante que o Configuration Manager distribua esse conteúdo para os pontos de distribuição aplicáveis antes de quaisquer pacotes com prioridade mais baixa serem enviados.  
+## <a name="content-library"></a>内容库  
+ 内容库是内容的单实例存储，Configuration Manager 使用它来减少分发内容的组合正文的总体大小。  
+
+- 深入了解[内容库](../../../core/plan-design/hierarchy/the-content-library.md)。
+- 使用[内容库清理工具](/sccm/core/plan-design/hierarchy/content-library-cleanup-tool)删除不再与应用程序关联的内容。  
+
+
+## <a name="distribution-points"></a>分发点  
+ Configuration Manager 使用分发点存储在客户端计算机上运行软件所需的文件。 客户端必须至少可访问一个能用于下载所部属内容的文件的分发点。  
+
+ 基本（非专用）分发点通常称为标准分发点。 标准分发点有两种变体需要特别注意：  
+
+-   **拉取分发点**：分发点的一种变体，该分发点获取其他分发点（源分发点）中的内容。 此过程与客户端从分发点下载内容的方式类似。 在站点服务器必须将内容直接分发给每个分发点时，拉取分发点有助于避免可能出现的网络带宽瓶颈。  [结合使用请求分发点与 System Center Configuration Manager](/sccm/core/plan-design/hierarchy/use-a-pull-distribution-point)。
+
+-   **基于云的分发点**：安装在 Microsoft Azure 中的分发点的变体。 [了解如何将基于云的分发点与 System Center Configuration Manager 配合使用](../../../core/plan-design/hierarchy/use-a-cloud-based-distribution-point.md)。  
+
+
+标准分发点支持一系列配置和功能，例如限制和计划、PXE 和多播或者预留内容。  
+
+-   可使用“计划”或“带宽限制”等控件辅助控制此传输。  
+
+-   还可使用其他选项，例如“预留内容”和“拉取分发点”等。 此外，可利用 **BranchCache** 减少部署内容时使用的网络带宽量。  
+
+-   分发点支持针对操作系统部署的配置（如 **[PXE](../../../osd/get-started/prepare-site-system-roles-for-operating-system-deployments.md#BKMK_PXEDistributionPoint)** 和**[多播](../../../osd/get-started/prepare-site-system-roles-for-operating-system-deployments.md#BKMK_DPMulticast)**），或者支持转而支持**移动设备**的配置。  
+
+ 基于云的分发点和拉取分发点支持许多此类配置，但具有特定于各分发点变体的限制。  
+
+## <a name="distribution-point-groups"></a>分发点组  
+ 分发点组是指可简化内容分发的分发点的逻辑分组。  
+
+ 有关详细信息，请参阅[管理分发点组](../../../core/servers/deploy/configure/install-and-configure-distribution-points.md#bkmk_manage)。
+
+## <a name="distribution-point-priority"></a>分发点优先级  
+ 分发点优先级值取决于它将以前的部署传输到该分发点所花费的时间。  
+
+-   这是一个分配给分发点的自动调整值，可帮助 Configuration Manager 更快地将内容传输到更多分发点。  
+
+-   在将内容同时分发到多个分发点或分发到分发点组时，Configuration Manager 会将内容发送到优先级最高的分发点，之后再将该相同内容发送到优先级较低的分发点。  
+
+-   它不会替换包的分发优先级，后者仍然是决定不同分发传输时间顺序的决定性因素。  
+
+
+例如，你将具有高分发优先级的内容分发到具有低分发点优先级的分发点，则此高分发优先级包始终会在具有较低分发优先级的包之前传输。 即使具有较低分发优先级的包分发到具有较高分发点优先级的分发点，此分发优先级也适用。
+
+包的高分发优先级确保 Configuration Manager 在发送具有较低分发优先级的任何包之前将该内容分发到其适用的分发点。  
 
 > [!NOTE]  
->  Pontos de distribuição de recepção também usam um conceito de prioridade para ordenar a sequência dos seus pontos de distribuição de origem.  
+>  请求分发点也使用优先级的概念来对其源分发点的序列进行排序。  
 >   
->  -   A prioridade das transferências de conteúdo para o ponto de distribuição é diferente da usada pelos pontos de distribuição de recepção quando eles procuram conteúdo em um ponto de distribuição de origem.  
->  -   Para obter mais informações, consulte [Usar um ponto de distribuição de pull com o System Center Configuration Manager](/sccm/core/plan-design/hierarchy/use-a-pull-distribution-point).  
+>  -   针对分发点的内容传输的分发点优先级与请求分发点在从源分发点中搜索内容时使用的优先级不同。  
+>  -   有关详细信息，请参阅[将拉取分发点与 System Center Configuration Manager 配合使用](/sccm/core/plan-design/hierarchy/use-a-pull-distribution-point)。  
 
 
-## <a name="fallback"></a>Fallback  
- Começando da versão 1610, vários pontos mudaram na forma como os clientes encontram um ponto de distribuição que tem conteúdo, incluindo fallback. Use as seguintes informações que se aplicam à versão que você usa:
+## <a name="fallback"></a>回退  
+ 从 1610 版起，客户端查找带内容的分发点的方式已发生诸多变化，其中包括回退。 请使用以下适用于所用版本的信息：
 
-**Versão 1610 e posterior**   
-Clientes que não conseguirem localizar o conteúdo em um ponto de distribuição associado ao seu grupo de limite atual podem realizar fallback para usar locais de fonte de conteúdo associadas a grupos de limites vizinhos. Para ser usado para fallback, um grupo de limites vizinho deve ter uma relação definida com o grupo de limite atual do cliente. Essa relação inclui um tempo configurado que deve decorrer antes que um cliente que não consegue localizar o conteúdo localmente possa incluir fontes de conteúdo do grupo de limite de vizinho como parte de sua pesquisa.
+**1610 和更高版本**   
+对于无法从与其当前边界组关联的分发点找到内容的客户端，可进行回退，使用与临近边界组关联的内容源位置。 若要实现回退，临近边界组与客户端的当前边界组必须存在定义的关系。 此关系包含配置的时间，此时间后，无法在本地找到内容的客户端才可在搜索中包含来自临近边界组的内容源。
 
-Os conceitos de pontos de distribuição preferenciais não são mais usados e as configurações para **Permitir fallback para locais de origem de conteúdo** não estão mais disponíveis ou nem são impostas.
+不再使用首选分发点概念，且无法再使用或执行“允许回退内容源位置”设置。
 
-Para obter mais informações, consulte [Grupos de limites](/sccm/core/servers/deploy/configure/define-site-boundaries-and-boundary-groups#boundary-groups).
-
-
-**Versão 1511, 1602 e 1606**   
-Configurações de fallback estão relacionadas ao uso de **pontos de distribuição preferenciais** e aos locais de fonte de conteúdo que são usados por clientes.
-
--   Por padrão, os clientes só baixam conteúdo de um ponto de distribuição preferencial (associado a grupos de limites do cliente).  
-
--   No entanto, quando um ponto de distribuição é configurado com **Permitir que clientes usem esse sistema de sites como local de origem de fallback para conteúdo**, esse ponto de distribuição é oferecido somente como uma origem de conteúdo válida para qualquer cliente que não consiga obter uma implantação de um dos seus pontos de distribuição preferenciais.  
+有关详细信息，请参阅[边界组](/sccm/core/servers/deploy/configure/define-site-boundaries-and-boundary-groups#boundary-groups)。
 
 
-Para obter mais informações sobre os diferentes cenários de fallback e locais de conteúdo, veja [Cenários de local de fonte de conteúdo](../../../core/plan-design/hierarchy/content-source-location-scenarios.md). Para obter informações sobre grupos de limites, consulte [Grupos de limites para as versões 1511, 1602 e 1606](/sccm/core/servers/deploy/configure/boundary-groups-for-1511-1602-and-1606).
+**版本 1511、1602 和 1606**   
+回退设置与**首选分发点**的使用和客户端所用的内容源位置相关。
 
-## <a name="network-bandwidth"></a>Largura de banda da rede  
- Para ajudar a gerenciar a quantidade de largura de banda de rede usada quando você distribui conteúdo, use as seguintes opções:  
+-   默认情况下，客户端仅从首选分发点下载内容；首选分发点是指与客户端的边界组关联的分发点。  
 
--   **Conteúdo pré-teste**: um processo de transferência de conteúdo para um ponto de distribuição sem depender do Configuration Manager para distribuir o conteúdo em toda a rede.  
-
--   **Agendamento e limitação**: configurações que ajudam a controlar quando e como o conteúdo é distribuído aos pontos de distribuição.  
-
-Para obter mais informações, consulte [Gerenciar largura de banda de rede](/sccm/core/plan-design/hierarchy/manage-network-bandwidth).
-
-## <a name="network-connection-speed-to-content-source"></a>Velocidade de conexão de rede até a fonte de conteúdo  
-Começando da versão 1610, vários pontos mudaram na forma como os clientes encontram um ponto de distribuição que tem conteúdo, incluindo a velocidade de conexão de rede para uma fonte de conteúdo. Use as seguintes informações que se aplicam à versão que você usa:
-
-**Versão 1610 e posterior**   
-Velocidades de conexão de rede que definem um ponto de distribuição como **Rápido** ou **Lento** não são mais usadas. Em vez disso, cada sistema de sites associado a um grupo de limites é tratado da mesma forma.
-
-Para obter mais informações, consulte [Grupos de limites](/sccm/core/servers/deploy/configure/define-site-boundaries-and-boundary-groups#boundary-groups).
+-   但是，当分发点配置为“允许客户端使用此站点系统作为内容的回退源位置”时，该分发点仅可作为有效的内容源提供给任何无法从其首选分发点之一获取部署的客户端。  
 
 
-**Versão 1511, 1602 e 1606**   
- É possível configurar a velocidade de conexão de rede de cada ponto de distribuição em um grupo de limites:  
+若要了解其他内容位置和回退方案，请参阅[内容源位置方案](../../../core/plan-design/hierarchy/content-source-location-scenarios.md)。 有关边界组的信息，请参阅[1511、1602 和 1606 版的边界组](/sccm/core/servers/deploy/configure/boundary-groups-for-1511-1602-and-1606)。
 
--   Os clientes usam esse valor quando se conectam ao ponto de distribuição.
+## <a name="network-bandwidth"></a>网络带宽  
+ 可使用以下选项，帮助管理分发内容时所用的网络带宽量：  
 
--   Por padrão, a velocidade de conexão de rede é configurada como **Rápida**, mas também pode ser configurada como **Lenta**.  
+-   **预留内容**：此过程会将内容传输到分发点，而不依赖 Configuration Manager 通过网络分发内容。  
 
--   A **velocidade de conexão de rede** juntamente com a configuração de uma implantação determinam se um cliente pode baixar conteúdo de um ponto de distribuição quando o cliente está em um grupo de limites associado  
+-   **计划和限制**：此配置有助于控制将内容分发到分发点的时间和方式。  
 
-Para obter mais informações sobre os diferentes cenários de fallback e locais de conteúdo, veja [Cenários de local de fonte de conteúdo](../../../core/plan-design/hierarchy/content-source-location-scenarios.md). Para obter informações sobre grupos de limites, consulte [Grupos de limites para as versões 1511, 1602 e 1606](/sccm/core/servers/deploy/configure/boundary-groups-for-1511-1602-and-1606).
+有关详细信息，请参阅[管理网络带宽](/sccm/core/plan-design/hierarchy/manage-network-bandwidth)。
 
-## <a name="on-demand-content-distribution"></a>Distribuição de conteúdo sob demanda  
- A distribuição de conteúdo sob demanda é uma opção que você pode definir para aplicativos e pacotes (implantações) individuais para habilitar a distribuição de conteúdo sob demanda para pontos de distribuição preferenciais.  
+## <a name="network-connection-speed-to-content-source"></a>到内容源的网络连接速度  
+从 1610 版起，客户端查找带内容的分发点的方式已发生诸多变化，其中包括连到内容源的网络连接速度。 请使用以下适用于所用版本的信息：
 
--   Para habilitar isso para uma implantação, habilite **Distribuir o conteúdo deste pacote para pontos de distribuição preferenciais**.  
+**1610 和更高版本**   
+不再使用将分发点定义为“快”或“慢”的网络连接速度。 相反，与边界组关联的各站点系统都被视为相同的系统。
 
--   Quando essa opção é habilitada para uma implantação e um cliente tenta solicitar esse conteúdo, mas ele não está disponível em nenhum um dos pontos de distribuição preferenciais de clientes, o Configuration Manager distribui automaticamente esse conteúdo aos pontos de distribuição preferenciais de clientes.  
-
--   Embora isso acione o Configuration Manager para distribuir automaticamente o conteúdo para os pontos de distribuição preferenciais daqueles clientes, o cliente pode obter o conteúdo de outros pontos de distribuição antes dos pontos de distribuição preferenciais para o cliente receber a implantação. Quando isso ocorre, o conteúdo estará presente no ponto de distribuição para uso pelo próximo cliente que procura essa implantação.  
-
-Se você usar a versão 1610 ou posterior, consulte [Grupos de limites](/sccm/core/servers/deploy/configure/define-site-boundaries-and-boundary-groups#boundary-groups).
-Se você usar as versões 1511, 1602 ou 1606, veja [Cenários de localizações de fontes de conteúdo](../../../core/plan-design/hierarchy/content-source-location-scenarios.md) para obter informações sobre os diferentes cenários de fallback e localizações de conteúdo.  
+有关详细信息，请参阅[边界组](/sccm/core/servers/deploy/configure/define-site-boundaries-and-boundary-groups#boundary-groups)。
 
 
+**版本 1511、1602 和 1606**   
+ 你可以配置边界组中每个分发点的网络连接速度：  
 
-## <a name="package-transfer-manager"></a>Gerenciador de transferência de pacote  
- O Gerenciador de Transferência de Pacote é o componente do servidor do site que transfere o conteúdo para pontos de distribuição em outros computadores.  
+-   客户端在连接到分发点时使用此值。
 
- Saiba mais sobre o [Gerenciador de Transferência de Pacote](../../../core/plan-design/hierarchy/package-transfer-manager.md).  
+-   络连接速度默认配置为“快”，但也可将其设置为“慢”。  
 
-## <a name="preferred-distribution-point"></a>Ponto de distribuição preferencial  
- Um ponto de distribuição preferencial inclui qualquer ponto de distribuição associado aos grupos de limites atuais do cliente.  
+-   **网络连接速度**和部署配置决定了当客户端位于关联的边界组中时是否能从分发点下载内容  
 
- Você tem a opção de associar cada ponto de distribuição a um ou mais grupos de limites:  
+若要了解其他内容位置和回退方案，请参阅[内容源位置方案](../../../core/plan-design/hierarchy/content-source-location-scenarios.md)。 有关边界组的信息，请参阅[1511、1602 和 1606 版的边界组](/sccm/core/servers/deploy/configure/boundary-groups-for-1511-1602-and-1606)。
 
--   Essa associação ajuda o cliente a identificar pontos de distribuição dos quais ele pode baixar conteúdo.  
--   Por padrão, os clientes só podem baixar conteúdo de um ponto de distribuição preferencial.  
+## <a name="on-demand-content-distribution"></a>按需内容分发  
+ 按需内容分发是一个选项，可为单个应用程序和包（部署）设置该选项，用于启用针对首选分发点的按需内容分发。  
+
+-   若要为部署启用此选项，请启用“将此包的内容分发到首选分发点”。  
+
+-   为部署启用此选项后，如果客户端尝试请求该内容而该内容在任何客户端首选分发点上都不可用，Configuration Manager 会将该内容自动分发到客户端首选分发点。  
+
+-   尽管这会触发 Configuration Manager 将内容自动分发到客户端首选分发点，但客户端仍可在首选分发点接收到部署之前从其他分发点获取该内容。 若出现该情况，该内容将在该分发点上显示，供搜寻该部署的下一个客户端使用。  
+
+如果使用 1610 或更高版本，请参阅[边界组](/sccm/core/servers/deploy/configure/define-site-boundaries-and-boundary-groups#boundary-groups)。
+如果使用版本 1511、1602 或 1606，请参阅[内容源位置方案](../../../core/plan-design/hierarchy/content-source-location-scenarios.md)，了解其他内容位置和回退方案。  
 
 
-Para obter mais informações:
- - Se você usar a versão 1610 ou posterior, consulte [Grupos de limites](/sccm/core/servers/deploy/configure/define-site-boundaries-and-boundary-groups#boundary-groups).
- - Se você usar a versão 1511, 1602 ou 1606, veja [Cenários de locais de fonte de conteúdo](../../../core/plan-design/hierarchy/content-source-location-scenarios.md).
 
-## <a name="prestage-content"></a>Pré-configurar conteúdo  
- A pré-configuração de conteúdo é um processo de transferência de conteúdo para um ponto de distribuição sem depender do Configuration Manager para distribuir o conteúdo em toda a rede.  
+## <a name="package-transfer-manager"></a>包传输管理器  
+ 包传输管理器是一个站点服务器组件，该组件可将内容传输到其他计算机上的分发点。  
 
- Para obter mais informações, consulte [Gerenciar largura de banda de rede](/sccm/core/plan-design/hierarchy/manage-network-bandwidth).
+ 了解关于[包传输管理器](../../../core/plan-design/hierarchy/package-transfer-manager.md)的详细信息。  
 
+## <a name="preferred-distribution-point"></a>首选分发点  
+ 首选分发点包括与客户端的当前边界组关联的所有分发点。  
+
+ 你可以选择将每个分发点关联到一个或多个边界组：  
+
+-   这种关联帮助客户端标识它可从其中下载内容的分发点。  
+-   默认情况下，客户端只能从首选分发点下载内容。  
+
+
+更多相关信息：
+ - 如果使用 1610 或更高版本，请参阅[边界组](/sccm/core/servers/deploy/configure/define-site-boundaries-and-boundary-groups#boundary-groups)。
+ - 如果使用版本 1511、1602 或 1606，请参阅[内容源位置方案](../../../core/plan-design/hierarchy/content-source-location-scenarios.md)。
+
+## <a name="prestage-content"></a>预留内容  
+ 预留内容 - 此过程可将内容传输到分发点，而不依赖 Configuration Manager 通过网络分发内容。  
+
+ 有关详细信息，请参阅[管理网络带宽](/sccm/core/plan-design/hierarchy/manage-network-bandwidth)。

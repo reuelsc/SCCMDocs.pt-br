@@ -1,191 +1,183 @@
 ---
-title: "Criar perfis de conexão remota | Microsoft Docs"
-description: "Use perfis de conexão remota do System Center Configuration Manager para permitir que seus usuários se conectem remotamente a computadores de trabalho."
+title: "创建远程连接配置文件 | Microsoft Docs"
+description: "使用 System Center Configuration Manager 远程连接配置文件使用户可以远程连接到工作计算机。"
 ms.custom: na
 ms.date: 10/06/2016
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
-ms.technology:
-- configmgr-other
+ms.technology: configmgr-other
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 8c6eabc4-5dda-4682-b03e-3a450e6ef65a
-caps.latest.revision: 8
-caps.handback.revision: 0
+caps.latest.revision: "8"
+caps.handback.revision: "0"
 author: robstackmsft
 ms.author: robstack
 manager: angrobe
-translationtype: Human Translation
-ms.sourcegitcommit: f9e939d871e95a3248d8e5d96cb73063a81fd5cf
 ms.openlocfilehash: 72fc94c6449649656a7e8b81659c2b5cc2551107
-
-
+ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
+ms.translationtype: HT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 08/07/2017
 ---
+# <a name="remote-connection-profiles-in-system-center-configuration-manager"></a>System Center Configuration Manager 中的远程连接配置文件
 
-# <a name="remote-connection-profiles-in-system-center-configuration-manager"></a>Perfis de conexão remota no System Center Configuration Manager
+*适用范围：System Center Configuration Manager (Current Branch)*
 
-*Aplica-se a: System Center Configuration Manager (Branch Atual)*
+使用 System Center Configuration Manager 远程连接配置文件，允许用户在未连接到域时或者其个人计算机通过 Internet 连接时以远程方式连接到工作计算机。  
 
-Use os perfis de conexão remota do System Center Configuration Manager para permitir que seus usuários se conectem remotamente a computadores de trabalho quando não estiverem conectados ao domínio ou se seus computadores pessoais estiverem conectados via Internet.  
+ 用户可以从以下设备类型连接到其工作电脑：  
 
- Usuários podem se conectar ao seu computador de trabalho com os seguintes tipos de dispositivo:  
+-   运行 Microsoft Windows 的计算机  
 
--   Computadores que executam o Microsoft Windows  
+-   运行 iOS 的设备  
 
--   Dispositivos que executam o iOS  
+-   运行 Android 的设备  
 
--   Dispositivos que executam o Android  
+利用远程连接配置文件，你可以将远程桌面连接设置部署到 Configuration Manager 层次结构中的用户。 用户随后可使用公司门户，利用公司门户提供的远程桌面连接设置通过远程桌面访问他们的任何主要工作计算机。  
 
-Os perfis de conexão remota permitem que você implante configurações de Conexão de Área de Trabalho Remota para os usuários na hierarquia de seu Configuration Manager. Em seguida, os usuários podem usar o portal da empresa para acessar qualquer computador de trabalho primário através da Área de Trabalho Remota usando as configurações de Conexão de Área de Trabalho Remota fornecidas pelo portal da empresa.  
-
-O Microsoft Intune será necessário se você desejar que os usuários se conectem aos seus computadores de trabalho usando o portal da empresa. Se você não estiver usando o Intune, os usuários ainda poderão usar as informações do perfil de conexão remota para se conectarem aos seus computadores de trabalho usando a Área de Trabalho Remota por meio de uma conexão VPN.  
-
-> [!IMPORTANT]  
->  Quando você especifica configurações de perfil de conexão remota usando o console do Configuration Manager, elas são armazenadas na política local do computador cliente. Essas configurações podem substituir as configurações da Área de Trabalho Remota definidas por outro aplicativo. Além disso, se você usar a Política de Grupo do Windows para definir as configurações da Área de Trabalho Remota, as configurações especificadas na Política de Grupo substituirão as que estão definidas usando o Configuration Manager.  
-
- Quando você instalar o Configuration Manager, um novo grupo de segurança, **Conexão de PC Remota**, será criado. Esse grupo é preenchido quando você implanta um perfil de conexão remota contendo os usuários primários do computador no qual o perfil é implantado. Embora um administrador local possa adicionar nomes de usuário a esse grupo, esses usuários serão removidos do grupo quando os perfis de conexão remota implantados forem avaliados quanto à conformidade na próxima vez.  
-
- Se você adicionar manualmente um usuário a este grupo, o usuário poderá iniciar conexões remotas, mas as informações da conexão não serão publicadas no portal da empresa.  
-
- Se você remover manualmente do grupo um usuário adicionado pelo Configuration Manager, o Configuration Manager corrigirá automaticamente essa alteração adicionando o usuário novamente na próxima vez que o perfil de conexão remota for avaliado quanto à conformidade.  
+如果你希望用户使用公司门户连接到其工作电脑，则需要 Microsoft Intune。 如果你未使用 Intune，用户仍然能够使用远程连接配置文件中的信息，通过 VPN 连接使用远程桌面连接到其工作电脑。  
 
 > [!IMPORTANT]  
->  Se o relacionamento de afinidade de dispositivo de usuário entre um usuário e um dispositivo mudar (por exemplo, o computador ao qual um usuário se conecta deixar de ser um dispositivo primário do usuário), o Configuration Manager desabilitará o perfil de conexão remota e as configurações do Firewall do Windows para evitar conexões ao computador.  
+>  当你使用 Configuration Manager 控制台指定远程连接配置文件设置时，这些设置将存储在客户端计算机的本地策略中。 这些设置可能会替代另一个应用程序配置的远程桌面设置。 此外，如果你使用 Windows 组策略配置远程桌面设置，则组策略中指定的设置将会替代使用 Configuration Manager 配置的设置。  
 
-## <a name="prerequisites"></a>Pré-requisitos  
+ 在安装 Configuration Manager 时，将创建“远程电脑连接”新安全组。 当部署远程连接配置文件（其中包括你向其中部署配置文件的计算机的主要用户）时，将填充此组。 尽管本地管理员可向此组中添加用户名，但在下次评估已部署远程连接配置文件的符合性时，会将这些用户从组中删除。  
 
-### <a name="external-dependencies"></a>Dependências externas  
+ 如果你向此组中手动添加用户，用户可以启动远程连接，但不会在公司门户中发布连接信息。  
 
-|Dependência|Mais informações|  
+ 如果你从组中手动删除 Configuration Manager 已添加的用户，Configuration Manager 将通过在下次评估远程连接配置文件的符合性时重新添加该用户来自动修正此更改。  
+
+> [!IMPORTANT]  
+>  如果用户和设备之间的用户设备相关性发生更改（例如，用户连接到的计算机不再是用户的主要设备），Configuration Manager 将禁用远程连接配置文件和 Windows 防火墙设置以防止连接到该计算机。  
+
+## <a name="prerequisites"></a>先决条件  
+
+### <a name="external-dependencies"></a>外部依赖关系  
+
+|依赖关系|更多信息|  
 |----------------|----------------------|  
-|Servidor de Gateway de Área de Trabalho Remota.|Para permitir que os usuários se conectem à Internet fora do domínio da empresa, você deve instalar e configurar o servidor de Gateway de Área de Trabalho Remota.<br /><br /> Se as configurações de Área de Trabalho Remota ou de Serviços de Terminal forem gerenciadas por outras configurações de Política de Grupo ou aplicativo, os perfis de conexão remota poderão não funcionar corretamente. Quando você implanta perfis de conexão remota por meio do console do Configuration Manager, suas configurações correspondentes são armazenadas na política local do computador cliente. Essas configurações podem substituir as configurações da Área de Trabalho Remota definidas por outro aplicativo. Além disso, se você usar as configurações da Política de Grupo para definir as configurações da Área de Trabalho Remota, as configurações especificadas na Política de Grupo substituirão as definidas pelo Configuration Manager.<br /><br /> Para obter mais informações sobre como instalar e configurar o servidor de Gateway de Área de Trabalho Remota, consulte a documentação do Windows Server.|  
-|Se os computadores cliente executarem um firewall baseado em host, ele deverá habilitar o programa mstsc.exe.|Ao configurar um perfil de conexão remota, você deve habilitar a configuração **Permitir exceção do Firewall do Windows para conexões nos domínios do Windows e em redes privadas** . Quando essa configuração é habilitada, o Configuration Manager configura automaticamente o Firewall do Windows para habilitar o programa mstsc.exe. No entanto, se os computadores cliente executarem um firewall baseado em host diferente, configure manualmente essa dependência do firewall.<br /><br /> As configurações de Política de Grupo para definir o Firewall do Windows podem substituir a configuração definida no Configuration Manager. Se você usar uma Política de Grupo para configurar o Firewall do Windows, verifique se as configurações dessa política não bloqueiam o programa Mstsc.exe.|  
+|远程桌面网关服务器。|如果要允许用户从公司域的外部在 Internet 上连接，你必须安装和配置远程桌面网关服务器。<br /><br /> 如果远程桌面或终端服务设置由另一个应用程序或组策略设置管理，远程连接配置文件可能无法正常工作。 当你通过 Configuration Manager 控制台部署远程连接配置文件时，其设置将存储在客户端计算机的本地策略中。 这些设置可能会替代另一个应用程序配置的远程桌面设置。 此外，如果你使用组策略设置来配置远程桌面设置，则组策略设置中指定的设置将会替代 Configuration Manager 配置的设置。<br /><br /> 有关如何安装和配置远程桌面网关服务器的详细信息，请参阅 Windows Server 文档。|  
+|如果客户端计算机运行基于主机的防火墙，该防火墙必须启用 Mstsc.exe 程序。|在配置远程连接配置文件时，你必须启用“对 Windows 域和专用网络上的连接允许 Windows 防火墙例外”  设置。 启用了此设置后，Configuration Manager 将自动配置 Windows 防火墙以启用 Mstsc.exe 程序。 但是，如果客户端计算机运行其他基于主机的防火墙，你必须手动配置此防火墙依赖关系。<br /><br /> 用于配置 Windows 防火墙的组策略设置可能会覆盖在 Configuration Manager 中设置的配置。 如果使用组策略来配置 Windows 防火墙，请确保组策略设置不会阻止 Mstsc.exe 程序。|  
 
-### <a name="configuration-manager-dependencies"></a>Dependências do Configuration Manager  
+### <a name="configuration-manager-dependencies"></a>Configuration Manager 依赖关系  
 
-|Dependência|Mais informações|  
+|依赖关系|更多信息|  
 |----------------|----------------------|  
-|O Configuration Manager deve estar conectado ao Microsoft Intune (conhecido como uma configuração híbrida).|Para obter mais informações sobre como conectar o Configuration Manager ao Microsoft Intune, consulte Gerenciar dispositivos móveis com o Configuration Manager e o Microsoft Intune.|  
-|Para que um usuário possa se conectar a um computador de trabalho na rede da empresa, esse computador deve ser o dispositivo primário do usuário.|Para obter mais informações sobre afinidade de dispositivo de usuário, consulte [Vincular usuários e dispositivos com a afinidade de dispositivo de usuário](/sccm/apps/deploy-use/link-users-and-devices-with-user-device-affinity).|  
-|Permissões específicas de segurança devem ter sido concedidas para gerenciar os perfis de conexão remota.|A função de segurança de **Gerenciador de Configurações de Conformidade** inclui as permissões necessárias para gerenciar os perfis de conexão remota. Para obter mais informações, consulte <br />[Configurar administração baseada em funções](/sccm/core/servers/deploy/configure/configure-role-based-administration).|  
+|Configuration Manager 连接到 Microsoft Intune（称为混合配置）。|有关将 Configuration Manager 连接到 Microsoft Intune 的详细信息，请参阅“使用 Configuration Manager 和 Microsoft Intune 管理移动设备”。|  
+|为了使用户连接到公司网络上的工作计算机，该计算机必须是用户的主设备。|有关用户设备相关性的详细信息，请参阅[将用户和设备同用户设备相关性相链接](/sccm/apps/deploy-use/link-users-and-devices-with-user-device-affinity)。|  
+|必须授予特定的安全权限来管理远程连接配置文件。|“符合性设置管理员”  安全角色包括管理远程连接配置文件所需的权限。 有关详细信息，请参阅 <br />[配置基于角色的管理](/sccm/core/servers/deploy/configure/configure-role-based-administration)。|  
 
-## <a name="security-and-privacy-considerations-for-remote-connection-profiles"></a>Considerações de segurança e privacidade para perfis de conexão remota  
+## <a name="security-and-privacy-considerations-for-remote-connection-profiles"></a>远程连接配置文件的安全和隐私注意事项  
 
-### <a name="security-considerations"></a>Considerações sobre segurança  
+### <a name="security-considerations"></a>安全注意事项  
 
-|Prática recomendada de segurança|Mais informações|  
+|最佳安全方案|更多信息|  
 |----------------------------|----------------------|  
-|Especificar manualmente a afinidade de dispositivo de usuário, em vez de permitir que os usuários identifiquem o dispositivo principal. Além disso, não habilitar a configuração baseada em uso.|Devido ao fato de que você deve habilitar **Permitir que todos os usuários primários do computador de trabalho conectem-se remotamente** para poder implantar um perfil de conexão remota, sempre especifique manualmente a afinidade de dispositivo de usuário. Não considere as informações coletadas dos usuários ou do dispositivo para autorização. Se você implantar perfis de conexão remota, e um usuário administrativo confiável não especificar a afinidade de dispositivo de usuário, é possível que usuários não autorizados recebam privilégios elevados e sejam capazes de se conectar remotamente aos computadores.<br /><br /> Se você habilitar a configuração baseada no uso, essas informações serão coletadas por meio de mensagens de estado para as quais o Configuration Manager não oferece segurança. Para ajudar a reduzir essa ameaça, use o protocolo IPsec ou a assinatura do protocolo SMB entre os computadores cliente e o ponto de gerenciamento.|  
-|Restringir direitos do administrador local no computador do servidor do local.|Um usuário com direitos administrativos locais no servidor do site podem adicionar manualmente membros ao grupo de segurança Conexão de PC Remota que o Configuration Manager cria e mantém automaticamente. Isso poderá resultar na elevação de privilégios porque os membros adicionados a esse grupo recebem permissões de Área de Trabalho Remota.|  
+|手动指定用户设备相关性，而不是允许用户确定其主设备。 此外，不要启用基于使用情况的配置。|由于你必须启用“允许工作计算机的所有主要用户进行远程连接”  然后才能部署远程连接配置文件，因此请始终手动指定用户设备相关性。 不考虑从用户或从极可信赖的设备中收集的信息。 如果部署远程连接配置文件，并且受信任的管理用户未指定用户设备相关性，则未授权用户可能会收到提升的权限，然后能够远程连接到计算机。<br /><br /> 如果确实启用基于使用情况的配置，则会通过未受 Configuration Manager 保护的状态消息收集此信息。 为了帮助减轻此威胁，请在客户端计算机和管理点之间使用服务器消息块 (SMB) 签名或 Internet 协议安全性 (IPsec)。|  
+|限制站点服务器计算机上的本地管理员权限。|在站点服务器上具有本地管理权限的用户可向 Configuration Manager 自动创建和维护的“远程 PC 连接”安全组中手动添加成员。 由于添加到此组的成员会接收远程桌面权限，因此这可能会导致权限提升。|  
 
-### <a name="privacy-considerations"></a>Considerações sobre privacidade  
+### <a name="privacy-considerations"></a>隐私注意事项  
 
--   Se um usuário inicia uma conexão com um computador de trabalho do portal da empresa, um arquivo com extensão rdp ou .wsrdp é baixado e contém o nome do dispositivo e o nome do servidor de Gateway de Área de Trabalho Remota que é necessário para iniciar a sessão da Área de Trabalho Remota. A extensão do arquivo depende do sistema operacional do dispositivo. Por exemplo, os sistemas operacionais Windows 7 e Windows 8 usam um arquivo .rdp e o Windows 8.1 usa um arquivo .wsrdp.  
+-   如果用户从公司门户中发起与工作计算机的连接，则会下载一个扩展名为 .rdp 或 .wsrdp 的文件，其中包含发起“远程桌面”会话所需的设备名称和远程桌面网关服务器名称。 文件扩展名取决于设备的操作系统。 例如，Windows 7 和 Windows 8 操作系统使用 .rdp 文件，Windows 8.1 使用 .wsrdp 文件。  
 
--   O usuário pode optar por abrir ou salvar o arquivo .rdp. Se o usuário optar por abrir o arquivo .rdp, esse arquivo poderá ser armazenado no cache do navegador da Web, dependendo das configurações de retenção definidas para o navegador. Se o usuário optar por salvar o arquivo, o arquivo não será armazenado no cache do navegador. Ele será salvo até que o usuário o exclua manualmente.  
+-   用户可选择打开或保存 .rdp 文件。 如果用户选择打开 .rdp 文件，则文件可能存储在 Web 浏览器缓存中，具体情况视为浏览器配置的保留设置而定。 如果用户选择保存文件，则不会将文件存储在浏览器缓存中。 系统会保存文件，直至用户将其手动删除为止。  
 
--   O arquivo .wsrdp é baixado e salvo automaticamente localmente. Esse arquivo será substituído na próxima vez que o usuário executar uma sessão da Área de Trabalho Remota.  
+-   会自动下载并以本地方式保存 .wsrdp 文件。 用户下次运行“远程桌面”会话时，会覆盖此文件。  
 
--   Antes de configurar os perfis de conexão remota, considere seus requisitos de privacidade.  
+-   在配置远程连接配置文件之前，请考虑隐私要求。  
 
 
-## <a name="create-a-remote-connection-profile"></a>Criar um perfil de conexão remota
+## <a name="create-a-remote-connection-profile"></a>创建远程连接配置文件
 
-1.  No console do Configuration Manager, clique em **Ativos e Conformidade** > **Configurações de Conformidade** > **Perfis de Conexão Remota**.  
+1.  在 Configuration Manager 控制台中，单击“资产和符合性” > “符合性设置” > “远程连接配置文件”。  
 
-3.  Na guia **Início** , no grupo **Criar** , clique em **Criar Perfil de Conexão Remota**.  
+3.  在“主页”  选项卡上的“创建”  组中，单击“创建远程连接配置文件” 。  
 
-4.  Na página **Geral** do **Assistente para Criar Perfil de Conexão Remota**, especifique um nome e uma descrição opcional para o perfil usando, no máximo, 256 caracteres para cada um.  
+4.  在 **创建远程连接配置文件向导** 的“常规” 页上，使用最多 256 个字符为每个配置文件指定名称和可选描述。  
 
-5.  Na página de configurações **Perfil**, especifique as seguintes configurações para o perfil de conexão remota:  
+5.  在“配置文件”设置页面上，为远程连接配置文件指定以下设置：  
 
-    -   **Nome completo e porta do servidor de Gateway de Área de Trabalho Remota (opcional)** – Especifique o nome do Servidor de Gateway de Área de Trabalho Remota a ser usado para conexões.  
+    -   **远程桌面网关服务器的完整名称和端口(可选)** - 指定用于连接的远程桌面网关服务器的名称。  
 
         > [!NOTE]  
-        >  O Configuration Manager não dá suporte ao uso de nomes de domínio internacionalizados para especificar um servidor nesta caixa.  
+        >  Configuration Manager 不支持在此框中使用国际化域名指定服务器。  
         >   
-        >  O nome do servidor deverá ter, no máximo, 256 caracteres e poderá conter caracteres maiúsculos, minúsculos, numéricos, além dos caracteres **–** e **_** , separados por pontos.  
+        >  服务器名称的长度不能超过 256 个字符，可以包含用句点分隔的大写字符、小写字符、数字字符以及“–”  和“_”  字符。  
 
-    -   **Permitir conexões somente de computadores que executam a Área de Trabalho Remota com a Autenticação no Nível da Rede**  
+    -   **只允许通过网络级别身份验证运行远程桌面的计算机中的连接**  
 
-6.  selecione **Habilitado** ou **Desabilitado** para cada uma das configurações de conexão a seguir:  
+6.  为下列每个连接设置选择“已启用”  或“已禁用”  ：  
 
-    -   **Permitir conexões remotas para computadores de trabalho**  
+    -   **允许至工作计算机的远程连接**  
 
-    -   **Permitir que todos os usuários primários do computador de trabalho se conectem remotamente**  
+    -   **允许工作计算机的所有主要用户进行远程连接**  
 
-    -   **Permitir exceção de Firewall do Windows para conexões nos domínios do Windows e em redes privadas**  
+    -   **对 Windows 域和专用网络上的连接允许 Windows 防火墙例外**  
 
     > [!IMPORTANT]  
-    >  Todas as três configurações devem ser as mesmas para que você possa passar essa página do assistente.  
+    >  所有三个设置必须相同，然后你才能继续通过向导的此页。  
 
-7.  Na página **Resumo**, examine as ações a serem executadas e conclua o assistente.  
+7.  在“摘要”页上，查看要执行的操作，然后完成向导。  
 
- O novo perfil de conexão remota é exibido no nó **Perfis de Conexão Remota** no espaço de trabalho **Ativos e Conformidade** .  
+ 新的远程连接配置文件将显示在“资产和符合性”  工作区的“远程连接配置文件”  节点中。  
 
-Implantar um perfil de conexão remota  
+部署远程连接配置文件  
 
-1.  No console do Configuration Manager, clique em **Ativos e Conformidade** > **Configurações de Conformidade** > **Perfis de Conexão Remota**.  
+1.  在 Configuration Manager 控制台中，单击“资产和符合性” > “符合性设置” > “远程连接配置文件”。  
 
-3.  Na lista **Perfis de Conexão Remota** , selecione o perfil de conexão remota que você deseja implantar e, na guia **Início** do grupo **Implantação** , clique em **Implantar**.  
+3.  在“远程连接配置文件”  列表中，选择要部署的远程连接配置文件，然后，在“主页”  选项卡上的“部署”  组中单击“部署” 。  
 
-4.  Na caixa de diálogo **Implantar Perfil de Conexão Remota** , especifique as seguintes informações:  
+4.  在“部署远程连接配置文件”  对话框中，指定下列信息：  
 
-    -   **Coleção** - clique em **Procurar** para selecionar a coleção de dispositivos onde você deseja implantar o perfil de conexão remota.  
+    -   **集合** - 单击“浏览”  以选择要在其中部署远程连接配置文件的设备集合。  
 
-    -   **Corrigir regras não compatíveis quando suportadas** – habilite esta opção para corrigir automaticamente o perfil de conexão remota quando for considerado não compatível em um computador cliente, por exemplo, quando não estiver presente.  
+    -   **在支持时修正非符合性规则** - 启用此选项，以便在设备上发现远程连接配置文件不符合（例如，不存在时）时自动修正该配置文件。  
 
-    -   **Permitir correção fora da janela de manutenção** – se uma janela de manutenção tiver sido configurada para a coleção na qual você está implantando o perfil de conexão remota, habilite esta opção para permitir que o Configuration Manager corrija o perfil de conexão remota fora da janela de manutenção. Para obter mais informações sobre janelas de manutenção, consulte [Como usar janelas de manutenção](/sccm/core/clients/manage/collections/use-maintenance-windows).  
+    -   **允许维护时段外的修正** - 如果为你向其中部署远程连接配置文件的集合配置了维护时段，请启用此选项以让 Configuration Manager 在维护时段外修正远程连接配置文件。 有关维护时段的详细信息，请参阅[如何使用维护时段](/sccm/core/clients/manage/collections/use-maintenance-windows)。  
 
-    -   **Gerar um alerta** - habilite essa opção para configurar um alerta que será gerado se a conformidade do perfil de conexão remota for menor do que uma porcentagem especificada por uma data e hora determinadas. Você também pode especificar se deseja que um alerta seja enviado para o System Center Operations Manager.  
+    -   **生成警报** - 启用此选项以配置一个警报，如果在指定日期和时间之前远程连接配置文件符合性小于指定百分比，则生成该警报。 你也可以指定是否希望将警报发送到 System Center Operations Manager。  
 
-    -   **Especificar o agendamento da avaliação de conformidade para esta linha de base de configuração** - Especifique o agendamento pelo qual o perfil de conexão remota implantado é avaliado nos dispositivos. Você pode especificar um agendamento simples ou personalizado.  
+    -   **指定此配置基线的符合性评估计划** - 指定在设备上对部署的远程连接配置文件进行评估所依据的计划。 你可以指定简单计划或自定义计划。  
 
     > [!TIP]  
-    >  Se um dispositivo deixa a coleção à qual o perfil de conexão remota foi implantado, as configurações do perfil de conexão remota serão desabilitadas no dispositivo. No entanto, para que esse processo ocorra corretamente, você já deveria ter implantado pelo menos um item de configuração ou linha de base de configuração que contenha um item de configuração do seu site.  
+    >  如果设备离开向其中部署了远程连接配置文件的集合，则会在该设备上禁用远程连接配置文件设置。 但是，要使此进程正常发生，你必须已至少部署了一个配置项目或包含站点中的配置项目的配置基线。  
     >   
-    >  O perfil será avaliado pelos dispositivos quando o usuário fizer logon.  
+    >  当用户登录时，设备将评估配置文件。  
     >   
-    >  Se dois perfis de conexão remota forem implantados na mesma coleção de dispositivos, no qual em um perfil a opção **Corrigir regras não compatíveis quando suportadas** está marcada e no outro perfil a mesma opção não está marcada, e se os dois perfis de conexão remota contiverem configurações de conexão diferentes, então o perfil em que a opção não está marcada poderá substituir as configurações do outro perfil. O Configuration Manager não dá suporte a este tipo de implantação de perfil de conexão remota.  
+    >  如果两个远程连接配置文件部署到同一设备集合，在其中一个配置文件中选中“在支持时修正非符合性规则”  ，在另外一个配置文件中，取消选中相同的选项，并且两个远程连接配置文件包含不同的连接设置，则取消选中此选项的配置文件可能会替代另一个配置文件中的设置。 Configuration Manager 不支持这种类型的远程连接配置文件部署。  
 
-5.  Clique em **OK** para fechar a caixa de diálogo **Implantar Perfil de Conexão Remota** e criar a implantação.  
+5.  单击“确定”  关闭“部署远程连接配置文件”  对话框并创建部署。  
 
-## <a name="monitor-a-remote-connection-profile"></a>Monitorar um perfil de conexão remota  
+## <a name="monitor-a-remote-connection-profile"></a>监视远程连接配置文件  
 
-### <a name="view-compliance-results-in-the-configuration-manager-console"></a>Exibir resultados de conformidade no console do Configuration Manager  
+### <a name="view-compliance-results-in-the-configuration-manager-console"></a>在 Configuration Manager 控制台中查看符合性结果  
 
-1.  No console do Configuration Manager, clique em **Monitoramento** > **Implantações**.  
+1.  在 Configuration Manager 控制台中，单击“监视” > “部署”。  
 
-3.  Na lista **Implantações** , selecione a implantação do perfil de conexão remota para a qual deseja examinar as informações de conformidade.  
+3.  在“部署”  列表中，选择要查看其符合性信息的远程连接配置文件部署。  
 
-4.  Você pode examinar as informações de resumo sobre a conformidade da implantação do perfil de conexão remota na página principal. Para exibir informações mais detalhadas, selecione a implantação do perfil de conexão remota e, na guia **Início** do grupo **Implantação** , clique em **Exibir Status** para abrir a página **Status da Implantação** .  
+4.  你可以在主页上查看有关远程连接配置文件部署符合性的摘要信息。 若要查看更详细的信息，请选择远程连接配置文件部署，然后在“主页”  选项卡上的“部署”  组中，单击“查看状态”  以打开“部署状态”  页。  
 
-     A página **Status da Implantação** contém as seguintes guias:  
+     “部署状态”  页包含下列选项卡：  
 
-    -   **Compatível:** exibe a conformidade do perfil de conexão remota com base no número de ativos afetados. Você pode clicar duas vezes em uma regra para criar um nó temporário no nó **Usuários** do espaço de trabalho **Ativos e Conformidade** . Esse nó contém todos os dispositivos que são compatíveis com o perfil de conexão remota. O painel **Detalhes do Ativo** também exibe os dispositivos compatíveis com esse perfil. Clique duas vezes em um dispositivo na lista para exibir informações adicionais.  
+    -   **符合：** 显示基于受影响资产数量的远程连接配置文件的符合性。 你可以双击规则以在“资产和符合性”  工作区中的“用户”  节点下创建一个临时节点。 此节点包含符合远程连接配置文件的所有设备。 “资产详细信息”  窗格也显示符合此配置文件的设备。 双击列表中的设备以显示其他信息。  
 
         > [!IMPORTANT]  
-        >  O perfil de conexão remota não será avaliado se não for aplicável a um dispositivo cliente. No entanto, ele é retornado como compatível.  
+        >  如果某个远程连接配置文件在客户端设备上不适用，则不会评估该配置文件。 但是，它返回的状态为符合。  
 
-    -   **Erro:** exibe uma lista de todos os erros da implantação do perfil de conexão remota selecionado com base no número de ativos afetados. Você pode clicar duas vezes em uma regra para criar um nó temporário no nó **Usuários** do espaço de trabalho **Ativos e Conformidade** . Esse nó contém todos os dispositivos que geraram erros com esse perfil. Quando você seleciona um dispositivo, o painel **Detalhes do Ativo** exibe os dispositivos afetados pelo problema selecionado. Clique duas vezes em um dispositivo na lista para exibir informações adicionais sobre o problema.  
+    -   **错误：** 显示基于受影响资产数量的所选远程连接配置文件部署的所有错误的列表。 你可以双击规则以在“资产和符合性”  工作区的“用户”  节点下创建一个临时节点。 此节点包含对于此配置文件生成了错误的所有设备。 当你选择某台设备时，“资产详细信息”  窗格将显示受所选问题影响的设备。 双击列表中的设备以显示有关问题的其他信息。  
 
-    -   **Não Compatível:** exibe uma lista de todas as regras não compatíveis no perfil de conexão remota com base no número de ativos afetados. Você pode clicar duas vezes em uma regra para criar um nó temporário no nó **Usuários** do espaço de trabalho **Ativos e Conformidade** . Esse nó contém todos os dispositivos não compatíveis com esse perfil. Quando você seleciona um dispositivo, o painel **Detalhes do Ativo** exibe os dispositivos afetados pelo problema selecionado. Clique duas vezes em um dispositivo na lista para exibir informações adicionais sobre o problema.  
+    -   **不符合：** 显示基于受影响资产数量的远程连接配置文件内所有不符合规则的列表。 你可以双击规则以在“资产和符合性”  工作区的“用户”  节点下创建一个临时节点。 此节点包含不符合此配置文件的所有设备。 当你选择某台设备时，“资产详细信息”  窗格将显示受所选问题影响的设备。 双击列表中的设备以显示有关问题的其他信息。  
 
-    -   **Desconhecido:** exibe uma lista de todos os dispositivos que não relataram a conformidade para a implantação do perfil de conexão remota selecionado, junto com o status atual do cliente dos dispositivos.  
+    -   **未知：** 显示没有为所选远程连接配置文件部署报告符合性的所有设备的列表，以及设备的当前客户端状态。  
 
-5.  Na página **Status da Implantação** , você pode examinar informações detalhadas sobre a conformidade do perfil de conexão remota implantado. Um nó temporário é criado no nó **Implantações** , que ajuda você a localizar essas informações novamente com rapidez.  
+5.  在“部署状态”  页上，你可以查看有关所部署的远程连接配置文件的符合性的详细信息。 将在“部署”  节点下创建一个临时节点，该节点可帮助你快速再次找到此信息。  
 
-### <a name="view-compliance-results-with-reports"></a>Exibir resultados de conformidade com relatórios  
- O Configuration Manager inclui relatórios internos que podem ser usados para monitorar informações sobre perfis de conexão remota. Esses relatórios têm a categoria de relatório de **Gerenciamento de Conformidade e Configurações**.  
+### <a name="view-compliance-results-with-reports"></a>使用报表查看符合性结果  
+ Configuration Manager 中包括内置报表，可用于监视有关远程连接配置文件的信息。 这些报表的报表类别为“符合性和设置管理” 。  
 
 > [!IMPORTANT]  
->  Você deve usar um caractere curinga (%) ao utilizar os parâmetros **Filtro de dispositivo** e **Filtro de usuário** nos relatórios de configurações de conformidade.  
+>  在符合性设置报表中使用参数“设备筛选器”  和“用户筛选器”  时，你必须使用通配符 (%) 字符。  
 
- Para obter mais informações sobre como configurar relatórios no Configuration Manager, consulte [Relatórios no System Center Configuration Manager](/sccm/core/servers/manage/reporting).  
-
-
-
-<!--HONumber=Dec16_HO3-->
-
-
+ 有关如何在 Configuration Manager 中配置报表的详细信息，请参阅 [System Center Configuration Manager 中的报表](/sccm/core/servers/manage/reporting)。  

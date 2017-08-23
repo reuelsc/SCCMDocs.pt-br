@@ -1,196 +1,193 @@
 ---
-title: "Criar atualizações | Microsoft Docs"
-description: "Criar e agrupar atualizações de software com o System Center Updates Publisher"
+title: "创建更新 | Microsoft 文档"
+description: "使用 System Center Updates Publisher 创建和捆绑软件更新"
 ms.custom: na
 ms.date: 4/29/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
-ms.technology:
-- configmgr-other
+ms.technology: configmgr-other
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 46a1a8ac-126c-4ee6-ae09-32dfbdb83368
-caps.latest.revision: 1
+caps.latest.revision: "1"
 author: Brenduns
 ms.author: brenduns
 manager: angrobe
 robots: NOINDEX, NOFOLLOW
-ms.translationtype: Human Translation
-ms.sourcegitcommit: c8717925dba42451b1e241a7c2f59e43896d7d99
 ms.openlocfilehash: 98e490d7f5ca17dcf2a0aaa848f14e789f214123
-ms.contentlocale: pt-br
-ms.lasthandoff: 06/19/2017
-
+ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
+ms.translationtype: HT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 08/07/2017
 ---
-# <a name="create--software-updates-and-update-bundles-with-updates-publisher"></a>Criar atualizações de software e pacotes de atualização com o Updates Publisher
+# <a name="create--software-updates-and-update-bundles-with-updates-publisher"></a>使用 Updates Publisher 创建软件更新和更新捆绑包
 
-*Aplica-se ao: System Center Updates Publisher*
+*适用范围：System Center Updates Publisher*
 
-Com o Updates Publisher, você pode usar o assistente **Criar Atualização** para criar suas próprias atualizações, e o assistente **Criar Pacote** para criar pacotes de atualizações.
+在 Updates Publisher 中，可以使用“创建更新”向导来创建你自己的更新，并能使用“创建捆绑包”向导来创建更新捆绑包。
 
-Como esses dois assistentes têm um fluxo de trabalho semelhante, o procedimento para criar um pacote de atualização refere-se ao procedimento para criar atualizações, apenas com as diferenças relevantes detalhadas.
+由于这两个向导的工作流类似，因此更新捆绑包和更新的创建过程类似，只存在详述的相关区别。
 
-## <a name="use-the-create-update-wizard"></a>Usar o assistente para Criar Atualizações
-1.  No console, acesse o **Espaço de Trabalho de Atualizações** e, no painel **Introdução**, escolha **Atualização** na guia **Início** da faixa de opções. Isso abre o assistente para **Criar Atualização**.
+## <a name="use-the-create-update-wizard"></a>使用“创建更新”向导
+1.  在控制台中，转到“更新工作区”，然后在“入门”窗格中，从功能区的“开始”选项卡中选择“更新”。 此时，“创建更新”向导会打开。
 
-2.  Na página **Pacote**, use as seguintes informações para ajudar a configurar a atualização:
+2.  在“包”页面上，按以下说明操作来配置更新：
 
-    -   Escolha **Procurar** para localizar o pacote de atualização de software que você usará como uma origem do pacote. As origens válidas incluem arquivos .MSI, .MSP ou .EXE. O Updates Publisher requer acesso ao arquivo para criar um hash de arquivo. O hash e o nome do arquivo são usados nos metadados da atualização que você está criando.
+    -   选择“浏览”，查找将用作包源的软件更新包。 有效的包源包括 .MSI、.MSP 或 .EXE 文件。 更新发布服务器需要访问用来创建文件哈希的文件。 然后，哈希和文件名将用于要创建的更新的更新元数据。
 
-    -   Especifique o local de origem do conteúdo dessa atualização. Normalmente, esse é o local de onde os binários de atualização serão baixados durante a publicação para um servidor do WSUS.  Se a opção **Usar um local de origem para publicar o conteúdo de atualização de software** estiver selecionada, o caminho não será necessário.
+    -   指定此更新的内容源位置。 通常，这是将更新二进制文件从发布过程下载到 WSUS 服务器的位置。  如果选择“使用本地源发布软件更新内容”选项，则不需要该路径。
 
-        Posteriormente, quando a atualização for publicada em um servidor WSUS, o Updates Publisher baixará os binários da atualização no local de origem indicado.  Se nenhum caminho for fornecido, o Update Publisher pesquisará o [caminho de publicação da origem local](/sccm/sum/tools/updates-publisher-options#advanced) para os binários de atualização.
+        稍后，向 WSUS 服务器发布此更新时，更新发布服务器会从指示的源位置下载此更新的二进制文件。  如果不提供任何路径，则更新发布服务器将在[本地源发布路径](/sccm/sum/tools/updates-publisher-options#advanced)下搜索更新二进制文件。
 
-    -   Especifique o **Idioma binário** da atualização de software.
+    -   指定此软件更新的“二进制语言”。
 
-    -   Especifique os **Códigos de retorno em caso de êxito** e os **Códigos de reinicialização pendente em caso de êxito** da atualização. Separe vários códigos de retorno usando vírgulas. Use os códigos de retorno para determinar quando a instalação da atualização foi bem-sucedida e quando uma reinicialização é necessária.
+    -   指定此更新的“成功返回代码”和“成功挂起重启代码”。 使用逗号分隔多个返回代码。 可以使用返回代码确定更新成功安装时间和需要重启的时间。
 
-        -   Os arquivos do instalador e patches do Windows (arquivos .MSI e .MSP) definem automaticamente esses valores e não podem ser modificados.
+        -   Windows Installer 文件和修补程序（.MSI 和 .MSP 文件）自动设置这些值，无法进行修改。
 
-        -   Para atualizações em .EXE, os códigos padrão definidos pelo arquivo .EXE são usados se nenhum código de retorno for especificado.
+        -   对于 .EXE 更新，如果未指定返回代码，则使用 .EXE 文件定义的默认代码。
 
-    -   Especifique quaisquer argumentos de linha de comando exigidos para a instalação da atualização de software.
+    -   指定安装此软件更新所必需的任何命令行自变量。
 
-        -   Os arquivos do instalador e patches do Windows (arquivos .MSI e .MSP) definem automaticamente esses valores. Para esses tipos de arquivos os argumentos devem ser especificados como **\[nome\]=\[valor\]**. Além disso, todas as opções que começam com um **/** (como **/qn**) não têm suporte para atualizações de software .MSI ou .MSP.
+        -   Windows Installer 文件和修补程序（.MSI 和 .MSP 文件）自动设置这些值。 对于这些文件类型，必须将自变量指定为**\[名称\]=\[值\]**。 此外，.MSI 或 .MSP 软件更新不支持以**/**（如 **/qn**）开头的所有选项。
 
-        -   Para atualizações .EXE, todos os argumentos são válidos.
+        -   对于 .EXE 更新，所有自变量都有效。
 
-3.  Na página **Informações**, especifique os detalhes sobre a atualização que são incluídas quando a atualização for publicada ou exportada. Os detalhes incluem propriedades localizadas, como o nome das atualizações (título) e a descrição. Em seguida, especifique detalhes mais gerais, como a classificação, o fornecedor, o produto e onde aprender mais sobre a atualização.
+3.  在“信息”页中，指定发布或导出此更新时包含的更新详细信息。 详细信息包括更新名称（标题）和说明等本地化属性。 然后，指定其他常规详细信息，如分类、供应商、产品和更新详情介绍位置。
 
-     __Propriedades localizadas:__
+     本地化属性：
 
-    -   **Idioma**: selecione um idioma e especifique um título e uma descrição. Selecione outros idiomas, um por vez, e o próprio título e descrição de cada um deles.
+    -   语言：选择一种语言，并指定标题和说明。 然后，可以选择其他语言，一次选择一种，同时指定每种语言支持的标题和说明。
 
-    -   **Título**: insira o nome do banco de dados. Esse nome é exibido no Espaço de Trabalho de Atualizações do console Updates Publisher.
+    -   标题：输入此更新的名称。 此名称显示在 Updates Publisher 控制台的“更新工作区”中。
 
-    -   **Descrição**: uma descrição amigável da atualização. Você pode incluir o que a atualização instala e porque ou quando ela deve ser usada.
+    -   说明：此更新的易懂说明。 可以添加更新安装内容以及应使用此更新的原因和时间。
 
-     **Classificação:** as opções a seguir são descrições comuns para classificações diferentes.
+     分类：以下是不同分类的常见描述。
 
-    -   **Atualizar**: uma atualização para um aplicativo ou arquivo instalado no momento.
+    -   更新：当前安装的应用程序或文件的更新。
 
-    -   **Crítica**: uma atualização lançada em larga escala para um problema específico que soluciona um bug crítico não relacionado à segurança.
+    -   关键更新：为解决特定问题而广泛发布的更新，旨在修复与安全无关的关键 bug。
 
-    -   **Pacote de Recursos**: novos recursos de produtos que são distribuídos fora de um lançamento de produto e que normalmente são incluídos no próximo lançamento do produto completo.
+    -   功能包：不通过产品发布分发的新产品功能，通常包含在下一版完整发布的产品中。
 
-    -   **Segurança**: uma atualização lançada em larga escala para um problema específico a um produto relacionado à segurança.
+    -   安全更新程序：为解决与安全相关的产品专属问题而广泛发布的更新。
 
-    -   **Pacote Cumulativo de Atualizações**: um conjunto cumulativo de hotfixes reunidos para facilitar a implantação. Esses hotfixes podem incluir atualizações de segurança, atualizações críticas, atualizações e assim por diante. Um pacote cumulativo de atualizações geralmente aborda uma área específica, como segurança ou um recurso do produto.
+    -   更新汇总：一组累积的修补程序，它们打包在一起，以更便于部署。 这些修补程序可以包括安全更新、关键更新、其他更新等。 更新汇总通常解决特定领域的问题，如安全性或产品功能问题。
 
-    -   **Service Pack**: um conjunto cumulativo de hotfixes que são aplicados a um aplicativo. Esses hotfixes podem incluir atualizações de segurança, atualizações críticas, atualizações de software e assim por diante.
+    -   Service Pack：一组累积的修补程序，将应用于应用程序。 这些修补程序可以包括安全更新、关键更新、软件更新等。
 
-    -   **Ferramenta**: especificam uma ferramenta ou recurso que ajuda a concluir uma ou mais tarefas.
+    -   工具：指定有助于完成一项或多项任务的工具或功能。
 
-     -   **Driver**: uma atualização de um driver de software.
+     -   驱动程序：驱动程序软件更新。
 
-    **Fornecedor**: especifica um fornecedor para a atualização. Use a lista suspensa para usar valores de atualizações que estão no repositório. Quando você especifica um fornecedor, o assistente cria uma pasta com o nome desse fornecedor em **Todas as Atualizações de Software** no **Espaço de Trabalho de Atualizações**, caso essa pasta ainda não exista. Os nomes a seguir são nomes do WSUS (Windows Server Update Services) reservados que não podem ser inseridos para as atualizações criadas por você:
+    供应商：指定此更新的供应商。 可以使用下拉列表使用存储库中更新的值。 指定供应商时，向导会在“更新工作区”中的“所有软件更新”下创建与相应供应商同名的文件夹（如果文件夹尚不存在的话）。 下面介绍了不能为创建的更新输入的 Windows Server Update Services (WSUS) 保留名称：
  >*   Microsoft Corporation
  >*   Microsoft
- >*   Atualização
- >*   Atualização de Software
- >*   Ferramentas
- >*   Ferramenta
- >*   Crítico
- >*   Atualizações Críticas
- >*   Segurança
- >*   Atualizações de Segurança
- >*   Pacote de Recursos
- >*   Pacote Cumulativo de Atualizações
+ >*   更新
+ >*   软件更新
+ >*   工具
+ >*   工具
+ >*   严重
+ >*   关键更新
+ >*   安全
+ >*   安全更新
+ >*   功能包
+ >*   更新汇总
  >*   Service Pack
- >*   Driver
- >*   Atualização de Driver
- >*   Pacote
- >*   Atualização do Pacote
+ >*   驱动程序
+ >*   驱动程序更新
+ >*   捆绑包
+ >*   捆绑更新
 
-**Produto**: especifique o tipo de produto da atualização. Use a lista suspensa para usar valores de atualizações que estão no repositório. A mesma lista com os nomes reservados do WSUS que não podem ser usados para **Fornecedor**, não pode ser usada para **Produto**.
+产品：指定此更新适用的产品类型。 可以使用下拉列表使用存储库中更新的值。 不能用于“供应商”的同一 WSUS 保留名称列表也不能用于“产品”。
 
- **URL de informações adicionais**: especifique a URL onde você pode encontrar mais informações sobre essa atualização. Use letras minúsculas para **https** ou **http** quando inserir essa URL.
+ 更多信息 URL：指定详细介绍此更新的 URL。 输入此 URL 时，必须使用小写字母的 **https** 或 **http**。
 
-4.  Na página **Informações Opcionais**, configure os detalhes que fornecem mais informações sobre a atualização.
+4.  在“可选信息”页中，可以配置此更新的其他详细信息。
 
-    -   **ID do Boletim**: IDs de boletim são normalmente, mas nem sempre, oferecidas pelos fornecedores de atualização.
+    -   公告 ID：公告 ID 通常是（但并不一定）由更新供应商提供。
 
-    -   **ID do Artigo**: se um artigo de atualização de software estiver disponível, a ID do Artigo poderá ser útil para pessoas que buscam informações adicionais sobre a atualização.
+    -   文章 ID：如果软件更新文章已发布，配置“文章 ID”将对要了解此更新的其他信息的人员非常有用。
 
-    -   **IDs de CVE:** lista um ou mais identificadores de CVE (Vulnerabilidades e exposições comuns) que fornecem informações de segurança sobre a atualização ou pacote de atualizações. Ao listar mais de um, use um ponto e vírgula para separar os CVEs, como neste exemplo: *CVE1; CVE2.*
+    -   CVE ID：列出一个或多个通用漏洞披露 (CVE) 标识符，以提供有关此更新或更新捆绑包的安全信息。 列出多个标识符时，请使用分号分隔 CVE，如以下示例所示：*CVE1;CVE2*。
 
-    -   **URL de Suporte:** lista a URL que contém informações de suporte para esta atualização, se houver alguma disponível. Use letras minúsculas para **https** ou **http** quando inserir essa URL.
+    -   支持 URL：列出包含此更新的支持信息（若有）的 URL。 输入此 URL 时，必须使用小写字母的 **https** 或 **http**。
 
-    -   **Gravidade:** defina o nível de gravidade dessa atualização.
+    -   严重性：设置此更新的严重性级别。
 
-    -   **Impacto:** as opções a seguir podem ser usadas para especificar o impacto:
-        -   **Normal –** use para indicar que a atualização exige procedimentos de instalação típicos.
-        -   **Secundário –** use para indicar que a atualização exige procedimentos mínimos de instalação.
-        -   **Requer um tratamento exclusivo –** use para indicar que a atualização deve ser instalada sozinha, separada de outras atualizações.   <br /><br />
+    -   影响：以下选项可用于指定影响：
+        -   普通 - 使用该选项可指明此更新需要典型安装过程。
+        -   轻微 - 使用该选项可指明此更新需要最小安装过程。
+        -   需要排他处理 - 使用该选项可指明此更新必须通过其本身安装，且排斥其他任何更新。   <br /><br />
 
-    -   **Comportamento de Reinicialização:** use para fornecer informações sobre o comportamento de reinicialização das atualizações. Essa configuração não afeta o comportamento real da instalação da atualização.
+    -   重启行为：使用此选项可提供更新重启行为的相关信息。 此设置不影响更新安装的实际行为。
 
-        -   **Nunca reinicia**: o computador nunca executa uma reinicialização do sistema após a instalação da atualização de software.
-        -   **Sempre exige reinicialização**: o computador sempre executa uma reinicialização do sistema após a instalação da atualização de software.
-        -   **Pode solicitar reinicialização**: depois de instalar a atualização de software, o computador solicitará uma reinicialização do sistema somente se for necessário. O usuário tem a opção de adiar a reinicialização. Este é o valor padrão. <br /><br />
+        -   从不重启：计算机在安装此软件更新后从不执行系统重启。
+        -   始终要求重启：计算机在安装此软件更新后始终执行系统重启。
+        -   可以请求重启：在安装此软件更新后，计算机仅在有必要重启时才请求执行系统重启。 用户可以视需要推迟重启。 此为默认值。 <br /><br />
 
-5.  Na página **Pré-requisito**, especifique os pré-requisitos que devem ser instalados em um computador para que essa atualização possa ser instalada. Os pré-requisitos podem ser **detectoids** ou outras atualizações. Detectoids são regras de alto nível, como uma que exige que a CPU dos computadores seja um processador de 64 bits. Os detectoids também podem especificar as atualizações específicas que devem ser instaladas antes que essa atualização possa ser instalada.
+5.  在“先决条件”页，指定安装此更新前必须在计算机上安装的系统必备。 先决条件可以是 detectoids 或其他更新。 Detectoid 是诸如要求计算机 CPU 必须是 64 位处理器之类的简明规则。 Detectoid 还可以指定安装此更新前必须安装的特定更新。
 
-    -   Para obter o melhor desempenho, use detectoids em vez de criar *regras instaláveis* e *instaladas* que realizam a mesma verificação ou ação.
+    -   为了提升性能，可使用 Detectoid，而不用创建执行相同检查或操作的*可安装*和*已安装规则*。
 
-    Use a opção de pesquisa para encontrar **Atualizações de software e detectoids disponíveis** para ajudar você a encontrar atualizações ou detectoids específicos. Por exemplo, pesquise na **CPU** para localizar os detectoids que permitem a limitação da instalação com base na arquitetura de CPU específica.
+    使用“可用的软件更新和 Detectoid”搜索选项帮助你查找特定更新或 Detectoid。 例如，在 **CPU** 上搜索可限制为根据特定 CPU 体系结构进行安装的 Detectoid。
 
-    Você pode selecionar um ou mais itens por vez para adicioná-los como um pré-requisito. Ao adicionar os pré-requisitos, os detectoids selecionados são adicionados como um ou mais grupos. Para se qualificar para a instalação, um computador deve atender aos requisitos de pelo menos um membro de cada grupo configurado:
+    一次可以选择一项或多项，将其添加为先决条件。 添加先决条件时，选定的 Detectoid 作为一个或多个组进行添加。 计算机必须满足你配置的每个组中至少一个成员的要求，才符合安装条件：
 
- -   Quando você clica em **Adicionar Pré-requisito**, todos os itens que você selecionou são adicionados a grupos individuais e separados. Para se qualificar para essa atualização, um computador deve atender aos pré-requisitos desse grupo e passar os requisitos a todos os grupos adicionais configurados.
+ -   单击“添加先决条件”后，选择的所有项都会被单独添加到各个组中。 计算机必须满足此组中的先决条件，并通过已配置的其他任何组的要求验证，才符合此更新的安装条件。
 
- -   Quando você clica em **Adicionar Grupo**, todos os itens que você selecionou são adicionados a um único grupo. Para se qualificar para essa atualização, um computador deve atender a pelo menos um dos pré-requisitos desse grupo e passar os requisitos a todos os grupos adicionais configurados.
+ -   单击“添加组”后，选择的所有项都会被添加到一个组中。 计算机必须满足此组中的至少一个先决条件，并通过已配置的其他任何组的要求验证，才符合此更新的安装条件。
 
-6.  Na página **Substituição**, especifique as atualizações que são substituídas por essa atualização. Quando essa atualização for publicada, o Configuration Manager marcará cada atualização substituída como **Expirada**. Os clientes instalarão essa atualização em vez das atualizações substituídas.
+6.  在“取代”页，指定此更新替代（取代）的更新。 发布此更新后，Configuration Manager 会将所有被取代的更新标记为“已终止”。 然后，客户端会安装此更新来替代被取代的更新。
 
-7.  Na página **Aplicabilidade**, use o **Editor de Regras** para definir um conjunto de regras que determina se um dispositivo precisa dessa atualização. (Esta página é semelhante à página **Instaladas**, que vem logo em seguida.)
+7.  在“适用性”页中，使用“规则编辑器”定义一组用于确定设备是否需要此更新的规则。 （此页面类似于跟随其后的“已安装”页。）
 
-    Para adicionar uma nova regra, clique em ![Nova Regra](media/newrule.png). Isso abre a página Regra de Aplicabilidade, na qual é possível configurar regras.
+    若要添加新规则，请单击 ![新建规则](media/newrule.png)。 此时，“适用性规则”页会打开，可以在其中配置规则。
 
-    Entre os tipos de regras que você pode criar estão:
+    可以创建的规则类型包括：
 
-    -   **Arquivo** – use essa regra para exigir que um dispositivo tenha um arquivo com propriedades que atendam a um ou mais critérios especificados por você antes que essa atualização possa ser aplicada.
+    -   文件 - 使用此规则可要求设备必须包含属性符合你指定的一个或多个条件的文件，然后才能应用此更新。
 
-    -   **Registro –** use este tipo para especificar detalhes do registro que devem estar presentes para que um dispositivo se qualifique para instalar essa atualização.
+    -   注册表 - 使用此类型可指定必须有注册表详细信息，然后设备才符合此更新的安装条件。
 
-    -   **Sistema –** essa regra usa os detalhes do sistema para determinar a aplicabilidade. Você pode escolher entre a definição de uma versão do Windows, um idioma do Windows, a arquitetura do processador ou especificar uma consulta no WMI para identificar o sistema operacional dos dispositivos.
+    -   系统 - 此规则使用系统详细信息来确定适用性。 可以选择定义 Windows 版本、Windows 语言还是处理器体系结构，也可以指定 WMI 查询来标识设备操作系统。
 
-    -   **Windows Installer –** use esse tipo de regra para determinar a aplicabilidade com base em um .MSI instalado ou em um patch do Windows Installer (.MSP). Você também pode determinar se há recursos ou componentes específicos instalados como parte do requisito.
+    -   Windows Installer - 使用此规则类型可根据已安装的 .MSI 或 Windows Installer 修补程序 (.MSP) 确定适用性。 还可以确定是否已根据要求安装特定组件或功能。
 
         > [!IMPORTANT]  
-        > Em dispositivos gerenciados, o Windows Update Agent não pode detectar pacotes de instalação do Windows instalados por usuário. Ao usar esse tipo de regra, configure outras regras de aplicabilidade, como versões de arquivo ou valores de chave do Registro, para que o pacote do Windows Installer possa ser detectado corretamente, independentemente de ter base no usuário ou no sistema.
+        > 对于受管理设备，Windows 更新代理无法检测针对每个用户安装的 Windows Installer 包。 使用此规则类型时，请配置其他适用性规则（如文件版本或注册项值），以便能够正确地检测 Windows Installer 包，无论是针对每个用户安装，还是针对每个系统安装。
 
-    -   **Salvar regra –** Essa opção permite que você localize e use regras *criadas por você no Espaço de Trabalho de Regras*.
+    -   保存的规则 - 使用此选项，可以查找和使用*在“规则工作区”中创建的*规则。
 
-        Depois de criar uma regra, use os outros ícones para modificar a regra e, se houver várias regras, para definir relações entre essas regras.
+        创建规则后，可以使用其他图标修改规则，以定义这些规则之间的关系（如果有多个规则的话）。
 
-    Após a conclusão da criação e adição de regras, clique em **OK** na caixa de diálogo **Criar Conjunto de Regras** para salvar esse conjunto. Depois, crie uma **Nova** regra e adicione-a ao conjunto também.
+    创建和添加完规则后，单击“创建规则集”对话框中的“确定”，保存规则集。 然后，可以创建**新**规则，并将它添加到规则集中。
 
-    Quando você tiver várias regras ou conjuntos de regras para adicionar a uma atualização, use os operadores lógicos no **Editor de Regras** para determinar as condições entre as regras e ordem na qual são processadas.
+    若有多个规则或规则集需要添加到更新中，可以使用“规则编辑器”中的逻辑运算符，确定各规则的关系条件及其处理顺序。
 
-8.  Na página**Instaladas**, use o **Editor de Regras** para definir um conjunto de regras que determinam se um dispositivo já instalou a atualização que você está configurando. (Essa página é semelhante á página **Aplicabilidade**, que vem antes desta página.)
+8.  在“已安装”页中，使用“规则编辑器”定义一组规则，用于确定设备是否已安装要配置的更新。 （此页面类似于在它前面的“适用性”页。）
 
-    Esta página do assistente oferece suporte a regras de configuração com as mesmas opções e critérios que a página **Aplicabilidade**.
+    此向导页面支持使用“适用性”页面上的相同选项和条件配置规则。
 
-    Após a conclusão do assistente, a nova atualização é adicionada a um nó no **Espaço de Trabalho de Atualização** identificado pelo nome do **Fornecedor** e **Produto** usado para essa atualização.
+    向导完成后，新的更新会添加到“更新工作区”中的一个节点，该节点是通过对此更新使用的“供应商”和“产品”名称进行标识的。
 
-## <a name="use-the-create-bundle-wizard"></a>Usar o assistente para Criar Pacote
-Como o assistente usa o mesmo fluxo de trabalho que o [assistente para Criar Atualização](#use-the-create-update-wizard), use o fluxo de trabalho, mas observe as seguintes diferenças para pacotes:
+## <a name="use-the-create-bundle-wizard"></a>使用“创建捆绑包”向导
+由于此向导使用与[“创建更新”向导](#use-the-create-update-wizard)相同的工作流，因此工作流基本不变，但请注意“创建捆绑包”向导的以下区别：
 
-1.  Para iniciar o assistente, no console, acesse **Espaço de Trabalho de Atualizações** e selecione **Pacote** na guia **Início** da faixa de opções.
+1.  若要启动向导，在控制台中，转到“更新工作区”，然后从功能区的“开始”选项卡中选择“捆绑包”。
 
-2.  Diferentemente do assistente para Criar Atualização, não há uma página Pacote durante a criação de um pacote.
+2.  与“创建更新”向导不同，创建捆绑包时没有“包”页面。
 
-3.  Na página **Informações**, especifique os detalhes sobre o pacote de atualizações incluído quando a atualização for publicada ou exportada.
+3.  在“信息”页中，指定发布或导出此更新时包含的更新捆绑包详细信息。
 
-4.  Na página **Informações Opcionais**, configure os detalhes que fornecem mais informações sobre o pacote de atualizações. As opções disponíveis são as mesmas para a criação de uma atualização. No entanto, as opções de Impacto e Comportamento de Reinicialização não estão disponíveis, pois não se aplicam aos pacotes.
+4.  在“可选信息”页中，可以配置此更新捆绑包的其他详细信息。 可用选项与创建更新时相同。 不过，无法使用“影响”和“重启行为”选项，因为它们并不适用于捆绑包。
 
-5.  Na página **Pré-requisito**, especifique os pré-requisitos que devem ser instalados em um computador para que esse pacote possa ser instalado. Essas regras são as mesmas para as atualizações individuais.
+5.  在“先决条件”页中，指定安装此捆绑包前必须在计算机上安装的系统必备。 这些规则与安装各个更新时看到的规则相同。
 
-6.  Na página **Substituição**, especifique as atualizações que são substituídas por esse pacote. Essas regras são as mesmas para as atualizações individuais.
+6.  在“取代”页中，指定此更新捆绑包替代（取代）的更新。 这些规则与安装各个更新时看到的规则相同。
 
-7.  Na página **Membros**, selecione as atualizações para adicionar ao pacote de atualizações. Somente as atualizações criadas ou importadas no Updates Publisher estarão disponíveis.
+7.  在“成员”页中，选择要添加到更新捆绑包中的更新。 只能添加已创建或已导入 Updates Publisher 的更新。
 
-Após a conclusão do assistente, o novo pacote de atualizações é adicionado a um nó no **Espaço de Trabalho de Atualização** identificado pelo nome do **Fornecedor** usado para o pacote de atualizações.
-
+向导完成后，新的更新捆绑包会添加到“更新工作区”中由对此更新捆绑包使用的“供应商”名称标识的节点。

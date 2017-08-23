@@ -1,805 +1,799 @@
 ---
-title: "Pré-requisitos do site | Microsoft Docs"
-description: Saiba como configurar um computador Windows com um servidor de sistema de sites do System Center Configuration Manager.
+title: "站点先决条件 | Microsoft Docs"
+description: "了解如何将 Windows 计算机配置为 System Center Configuration Manager 站点系统服务器。"
 ms.custom: na
 ms.date: 1/17/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
-ms.technology:
-- configmgr-other
+ms.technology: configmgr-other
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 1392797b-76cb-46b4-a3e4-8f349ccaa078
-caps.latest.revision: 5
+caps.latest.revision: "5"
 author: Brenduns
 ms.author: brenduns
 manager: angrobe
-translationtype: Human Translation
-ms.sourcegitcommit: 42549b98dd7f418cc3f4543198aaeb90ea8a3efd
 ms.openlocfilehash: 0b1d2d619d6cdaf36cc22ef461ea1505b5cacc41
-
+ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
+ms.translationtype: HT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 08/07/2017
 ---
-# <a name="site-and-site-system-prerequisites-for-system-center-configuration-manager"></a>Pré-requisitos de site e do sistema de sites para o System Center Configuration Manager
+# <a name="site-and-site-system-prerequisites-for-system-center-configuration-manager"></a>System Center Configuration Manager 的站点和站点系统先决条件
 
-*Aplica-se a: System Center Configuration Manager (Branch Atual)*
-
-
- Computadores baseados em Windows exigem configurações específicas para dar suporte ao uso como servidores do sistema de sites do System Center Configuration Manager.  
+*适用范围：System Center Configuration Manager (Current Branch)*
 
 
- Para alguns produtos, como o WSUS (Windows Server Update Services) para o ponto de atualização de software, você precisa consultar essa documentação de produtos para identificar os pré-requisitos adicionais e as limitações de uso do produto. Somente as configurações que se aplicam diretamente ao uso com o Configuration Manager estão incluídas aqui.   
+ 基于 Windows 的计算机要求特定配置，以支持用作 System Center Configuration Manager 站点系统服务器。  
+
+
+ 对于某些产品，例如软件更新点的 Windows Server 更新服务 (WSUS)，需要参考产品文档来确定此产品适用的其他先决条件和限制。 此处仅包含直接应用于 Configuration Manager 的配置。   
 
 > [!NOTE]  
->  Em janeiro de 2016, o suporte expirou para o .NET Framework 4.0, 4.5 e 4.5.1. Para obter mais informações, consulte [Perguntas frequentes sobre a política do ciclo de vida de suporte do Microsoft .NET Framework](https://support.microsoft.com/gp/framework_faq?WT.mc_id=azurebg_email_Trans_943_NET452_Update) em support.microsoft.com.  
+>  2016 年 1 月，对 .NET Framework 4.0、4.5 和 4.5.1 的支持过期。 有关详细信息，请参阅 support.microsoft.com 处的 [Microsoft .NET Framework 支持生命周期策略常见问题解答](https://support.microsoft.com/gp/framework_faq?WT.mc_id=azurebg_email_Trans_943_NET452_Update)。  
 
-## <a name="a-namebkmkgeneralprerewqa-general-site-server-requirements-and-limitations"></a><a name="bkmk_generalprerewq"></a> Requisitos e limitações gerais do servidor do site
-**O seguinte se aplica a todos os servidores do sistema de sites:**
+## <a name="bkmk_generalprerewq"></a>常规站点服务器要求和限制
+**以下内容适用于所有站点系统服务器：**
 
--   Cada servidor do sistema de sites deve usar um sistema operacional de 64 bits. A única exceção é a função do sistema de sites do ponto de distribuição, que pode ser instalada em alguns sistemas operacionais de 32 bits.  
+-   每个站点系统服务器必须使用 64 位操作系统。 唯一的例外是分发点站点系统角色，它可以安装在某些 32 位操作系统上。  
 
--   Não há suporte para os sistemas de sites em instalações do Server Core de qualquer sistema operacional. Uma exceção a isso é que as instalações do Server Core têm suporte para a função do sistema de sites do ponto de distribuição, sem o suporte a multicast ou PXE.  
+-   在任意操作系统的 Server Core 安装上，站点系统不受支持。 对此情况的一个例外是分发点站点系统角色支持 Server Core 安装，无需 PXE 或多播支持。  
 
--   Depois que um servidor de sistema de sites é instalado, não há suporte para alterar:  
+-   安装站点系统服务器后，不支持进行更改：  
 
-    -   O nome de domínio do domínio em que o computador do sistema de sites está localizado (também chamado de uma **renomeação de domínio**).  
+    -   站点系统计算机所在域的域名（也称为**域重命名**）。  
 
-    -   A associação de domínio do computador.  
+    -   计算机的域成员身份。  
 
-    -   O nome do computador.  
+    -   计算机的名称。  
 
-  Se precisar alterar qualquer uma dessas, primeiro remova a função do sistema de sites do computador e reinstale a função após a conclusão da alteração. Se isso afetar o computador do servidor do site, será necessário desinstalar o site e reinstalá-lo depois que a alteração for concluída.  
+  如果必须更改其中的任何设置，必须首先从计算机中删除站点系统角色，然后在更改完成后再重新安装角色。 如果这会影响站点服务器计算机，则必须卸载站点，然后在更改完成后再重新安装站点。  
 
--   Não há suporte para as funções do sistema de sites em uma instância de um cluster do Windows Server. A única exceção é o servidor de banco de dados do site.  
+-   在 Windows Server 群集实例上，站点系统角色不受支持。 此情况的唯一例外是站点数据库服务器。  
 
--   Não há suporte para alterar as configurações de tipo de inicialização ou de “Fazer logon como” de qualquer serviço do Configuration Manager. Se você fizer isso, poderá impedir que serviços essenciais funcionem corretamente.  
+-   不支持更改任意 Configuration Manager 服务的启动类型或“登录身份”设置。 这样做可能会阻止关键服务正常运行。  
 
-##  <a name="a-namebkmk2012prereqa-prerequisites-for-windows-server-2012-and-later-operating-systems"></a><a name="bkmk_2012Prereq"></a> Pré-requisitos para o Windows Server 2012 e sistemas operacionais posteriores  
-###  <a name="a-namebkmk2012sspreqa-site-server-central-administration-site-and-primary-site"></a><a name="bkmk_2012sspreq"></a> Servidor do site: site primário e site de administração central  
-  **Funções e recursos do Windows Server:**  
+##  <a name="bkmk_2012Prereq"></a> Windows Server 2012 和更高版本操作系统的先决条件  
+###  <a name="bkmk_2012sspreq"></a>站点服务器：管理中心站点和主站点  
+  **Windows Server 角色和功能：**  
 
--   .NET Framework 3.5 SP1 (ou posterior)  
-
--   .NET Framework 4.5.2  
-
--   Compactação Diferencial Remota  
-
-**Windows ADK:**  
-
--   Antes de instalar ou atualizar um site de administração central ou site primário, você deve instalar a versão do ADK (Kit de Avaliação e Implantação) do Windows exigida pela versão do Configuration Manager que você está instalando ou atualizando.  
-
-    -   A versão 1511 do Configuration Manager exige a versão para Windows 10 RTM (10.0.10240) do Windows ADK.  
-
--   Para mais informações sobre esse requisito, consulte [Requisitos de infraestrutura para implantação do sistema operacional](/sccm/osd/plan-design/infrastructure-requirements-for-operating-system-deployment).  
-
-**Pacotes Redistribuíveis do Visual C++:**  
-
--   O Configuration Manager instala o Pacote Redistribuível do Microsoft Visual C++ 2013 em cada computador que instala um servidor do site.  
-
--   Os sites de administração central e os sites primários exigem as versões x86 e x64 do arquivo dos Pacotes Redistribuíveis aplicáveis.  
-
-###  <a name="a-namebkmk2012secpreqa-site-server-secondary-site"></a><a name="bkmk_2012secpreq"></a> Servidor do site: site secundário  
-**Funções e recursos do Windows Server:**  
-
--   .NET Framework 3.5 SP1 (ou posterior)  
+-   .NET Framework 3.5 SP1（或更高版本）  
 
 -   .NET Framework 4.5.2  
 
--   Compactação Diferencial Remota  
+-   远程差分压缩  
 
-**Pacotes Redistribuíveis do Visual C++:**  
+**Windows ADK：**  
 
--   O Configuration Manager instala o Pacote Redistribuível do Microsoft Visual C++ 2013 em cada computador que instala um servidor do site.  
+-   安装或升级管理中心站点或主站点之前，必须安装要安装或升级到的 Configuration Manager 版本所需的 Windows 评估和部署工具包 (ADK) 版本。  
 
--   Os sites secundários exigem somente a versão x64.  
+    -   1511 版本的 Configuration Manager 需要 Windows ADK 的 Windows 10 RTM (10.0.10240) 版本。  
 
-**Funções padrão do sistema de sites:**  
+-   有关此要求的详细信息，请参阅[操作系统部署的基础架构要求](/sccm/osd/plan-design/infrastructure-requirements-for-operating-system-deployment)。  
 
--   Por padrão, um site secundário instala um **ponto de gerenciamento** e um **ponto de distribuição**.  
+**Visual C++ Redistributable：**  
 
--   Certifique-se de que o servidor de site secundário atenda aos pré-requisitos para estas funções do sistema de sites.  
+-   Configuration Manager 在安装站点服务器的每台计算机上安装 Microsoft Visual C++ 2013 可再发行组件包。  
 
-###  <a name="a-namebkmk2012dbpreqa-database-server"></a><a name="bkmk_2012dbpreq"></a> Servidor de banco de dados  
-**Serviço Registro Remoto:**  
+-   管理中心站点和主站点需要适用的可再发行文件的 x86 和 x64 版本。  
 
--   Durante a instalação do site do Configuration Manager, você deve habilitar o serviço Registro remoto no computador que hospedará o banco de dados do site.  
+###  <a name="bkmk_2012secpreq"></a>站点服务器：辅助站点  
+**Windows Server 角色和功能：**  
 
-**SQL Server:**  
+-   .NET Framework 3.5 SP1（或更高版本）  
 
--   Antes de instalar um site de administração central ou site primário, você deve instalar uma versão com suporte do SQL Server a fim de hospedar o banco de dados do site.  
+-   .NET Framework 4.5.2  
 
--   Antes de instalar um site secundário, você pode instalar uma versão com suporte do SQL Server.  
+-   远程差分压缩  
 
--   Se você optar por fazer o Configuration Manager instalar o SQL Server Express como parte de uma instalação do site secundário, verifique se o computador atende aos requisitos para execução do SQL Server Express.  
+**Visual C++ Redistributable：**  
 
-###  <a name="a-namebkmk2012smsprovpreqa-sms-provider-server"></a><a name="bkmk_2012smsprovpreq"></a> Servidor do Provedor de SMS  
-**Windows ADK:**  
+-   Configuration Manager 在安装站点服务器的每台计算机上安装 Microsoft Visual C++ 2013 可再发行组件包。  
 
--   O computador no qual você instala uma instância do Provedor de SMS deve ter a versão exigida do Windows ADK exigida pela versão do Configuration Manager que você está instalando ou atualizando.  
+-   辅助站点仅需要 x64 版本。  
 
-    -   A versão 1511 do Configuration Manager exige a versão para Windows 10 RTM (10.0.10240) do Windows ADK.  
+**默认站点系统角色：**  
 
--   Para mais informações sobre esse requisito, consulte [Requisitos de infraestrutura para implantação do sistema operacional](/sccm/osd/plan-design/infrastructure-requirements-for-operating-system-deployment).  
+-   默认情况下，辅助站点将安装**管理点**和**分发点**。  
 
-###  <a name="a-namebkmk2012acwspreqa-application-catalog-website-point"></a><a name="bkmk_2012acwspreq"></a> Ponto de sites da Web do Catálogo de Aplicativos  
-**Funções e recursos do Windows Server:**  
+-   请确保辅助站点服务器满足这些站点系统角色的先决条件。  
 
--   .NET Framework 3.5 SP1 (ou posterior)  
+###  <a name="bkmk_2012dbpreq"></a>数据库服务器  
+**远程注册表服务：**  
 
--   .NET Framework 4.5.2:  
+-   在安装 Configuration Manager 站点的过程中，必须在托管站点数据库的计算机上启用远程注册表服务。  
+
+**SQL Server：**  
+
+-   在安装管理中心站点或主站点之前，必须要安装受支持的 SQL Server 版本以托管站点数据库。  
+
+-   在安装辅助站点之前，可以安装受支持的 SQL Server 版本。  
+
+-   如果选择让 Configuration Manager 将 SQL Server Express 作为辅助站点安装的一部分安装，请确保计算机满足运行 SQL Server Express 的要求。  
+
+###  <a name="bkmk_2012smsprovpreq"></a> SMS 提供程序服务器  
+**Windows ADK：**  
+
+-   安装 SMS 提供程序实例的计算机必须具备要安装或升级到的 Configuration Manager 版本所需的 Windows ADK 版本。  
+
+    -   1511 版本的 Configuration Manager 需要 Windows ADK 的 Windows 10 RTM (10.0.10240) 版本。  
+
+-   有关此要求的详细信息，请参阅[操作系统部署的基础架构要求](/sccm/osd/plan-design/infrastructure-requirements-for-operating-system-deployment)。  
+
+###  <a name="bkmk_2012acwspreq"></a>应用程序目录网站点  
+**Windows Server 角色和功能：**  
+
+-   .NET Framework 3.5 SP1（或更高版本）  
+
+-   .NET Framework 4.5.2：  
 
     -   ASP.NET 4.5  
 
-**Configuração do IIS:**  
+**IIS 配置：**  
 
--   Recursos HTTP comuns:  
+-   常见 HTTP 功能：  
 
-    -   Documento padrão  
+    -   默认文档  
 
-    -   Conteúdo Estático  
+    -   静态内容  
 
--   Desenvolvimento de aplicativos:  
+-   应用程序开发：  
 
-    -   ASP.NET 3.5 (e opções selecionadas automaticamente)  
+    -   ASP.NET 3.5（和自动选择的选项）  
 
-    -   ASP.NET 4.5 (e opções selecionadas automaticamente)  
+    -   ASP.NET 4.5（和自动选择的选项）  
 
-    -   Extensibilidade 3.5 do .NET  
+    -   .NET Extensibility 3.5  
 
-    -   Extensibilidade 4.5 do .NET  
+    -   .NET Extensibility 4.5  
 
--   Segurança:  
+-   安全性：  
 
-    -   Autenticação do Windows  
+    -   Windows 身份验证  
 
--   Compatibilidade do Gerenciamento do IIS 6:  
+-   IIS 6 管理兼容性：  
 
-    -   Compatibilidade de Metabase do IIS 6  
+    -   IIS 6 元数据库兼容性  
 
-###  <a name="a-namebkmk2012acwsitepreqa-application-catalog-web-service-point"></a><a name="bkmk_2012ACwsitepreq"></a> Ponto de serviços Web do Catálogo de Aplicativos  
-**Funções e recursos do Windows Server:**  
+###  <a name="bkmk_2012ACwsitepreq"></a>应用程序目录 Web 服务点  
+**Windows Server 角色和功能：**  
 
--   .NET Framework 3.5 SP1 (ou posterior)  
+-   .NET Framework 3.5 SP1（或更高版本）  
 
--   .NET Framework 4.5.2:  
+-   .NET Framework 4.5.2：  
 
-    -   ASP.NET 4.5:  
+    -   ASP.NET 4.5：  
 
-        -   Ativação HTTP (e opções selecionadas automaticamente)  
+        -   HTTP 激活（和自动选择的选项）  
 
-**Configuração do IIS:**  
+**IIS 配置：**  
 
--   Recursos HTTP comuns:  
+-   常见 HTTP 功能：  
 
-    -   Documento padrão  
+    -   默认文档  
 
--   Compatibilidade do Gerenciamento do IIS 6:  
+-   IIS 6 管理兼容性：  
 
-    -   Compatibilidade de Metabase do IIS 6  
+    -   IIS 6 元数据库兼容性  
 
--   Desenvolvimento de aplicativos:  
+-   应用程序开发：  
 
-    -   ASP.NET 3.5 (e opções selecionadas automaticamente)  
+    -   ASP.NET 3.5（和自动选择的选项）  
 
-    -   Extensibilidade 3.5 do .NET  
+    -   .NET Extensibility 3.5  
 
-    -   ASP.NET 4.5 (e opções selecionadas automaticamente)  
+    -   ASP.NET 4.5（和自动选择的选项）  
 
-    -   Extensibilidade 4.5 do .NET  
+    -   .NET Extensibility 4.5  
 
-**Memória do computador:**  
+**计算机内存：**  
 
--   O computador que hospeda esta função do sistema de sites deve ter, no mínimo, 5% da memória livre disponível dos computadores para habilitar a função do sistema de sites para processar solicitações.  
+-   托管此站点系统角色的计算机必须具有最少 5% 的计算机可用内存来启用站点系统角色以处理请求。  
 
--   Quando esta função do sistema de sites estiver colocalizada com outra função do sistema de sites que tenha este mesmo requisito, esse requisito de memória do computador não será aumentado, mas permanecerá em, no mínimo, 5%.  
+-   当此站点系统角色与具有该相同要求的另一站点系统角色并存时，对计算机的该内存要求将不会增加，而是保持为最少 5% 的值。  
 
-###  <a name="a-namebkmk2012aipreqa-asset-intelligence-synchronization-point"></a><a name="bkmk_2012AIpreq"></a> Ponto de sincronização do Asset Intelligence  
-**Funções e recursos do Windows Server:**  
+###  <a name="bkmk_2012AIpreq"></a>资产智能同步点  
+**Windows Server 角色和功能：**  
 
 -   .NET Framework 4.5.2  
 
-###  <a name="a-namebkmk2012crppreqa-certificate-registration-point"></a><a name="bkmk_2012crppreq"></a> Ponto de registro de certificado  
-**Funções e recursos do Windows Server:**  
+###  <a name="bkmk_2012crppreq"></a>证书注册点  
+**Windows Server 角色和功能：**  
 
--   .NET Framework 4.5.2:  
+-   .NET Framework 4.5.2：  
 
-    -   Ativação HTTP  
+    -   HTTP 激活  
 
-**Configuração do IIS:**  
+**IIS 配置：**  
 
--   Desenvolvimento de aplicativos:  
+-   应用程序开发：  
 
-    -   ASP.NET 3.5 (e opções selecionadas automaticamente)  
+    -   ASP.NET 3.5（和自动选择的选项）  
 
-    -   ASP.NET 4.5 (e opções selecionadas automaticamente)  
+    -   ASP.NET 4.5（和自动选择的选项）  
 
--   Compatibilidade do Gerenciamento do IIS 6:  
+-   IIS 6 管理兼容性：  
 
-    -   Compatibilidade de Metabase do IIS 6  
+    -   IIS 6 元数据库兼容性  
 
-    -   Compatibilidade de WMI do IIS 6  
+    -   IIS 6 WMI 兼容性  
 
-###  <a name="a-namebkmk2012dppreqa-distribution-point"></a><a name="bkmk_2012dppreq"></a> Ponto de distribuição  
-**Funções e recursos do Windows Server:**  
+###  <a name="bkmk_2012dppreq"></a>分发点  
+**Windows Server 角色和功能：**  
 
--   Compactação Diferencial Remota  
+-   远程差分压缩  
 
-**Configuração do IIS:**  
+**IIS 配置：**  
 
--   Desenvolvimento de aplicativos:  
+-   应用程序开发：  
 
-    -   Extensões ISAPI  
+    -   ISAPI 扩展  
 
--   Segurança:  
+-   安全性：  
 
-    -   Autenticação do Windows  
+    -   Windows 身份验证  
 
--   Compatibilidade do Gerenciamento do IIS 6:  
+-   IIS 6 管理兼容性：  
 
-    -   Compatibilidade de Metabase do IIS 6  
+    -   IIS 6 元数据库兼容性  
 
-    -   Compatibilidade de WMI do IIS 6  
+    -   IIS 6 WMI 兼容性  
 
-**PowerShell:**  
+**PowerShell：**  
 
--   No Windows Server 2012 ou posterior, o PowerShell 3.0 ou 4.0 é exigido antes da instalação do ponto de distribuição.  
+-   在安装分发点之前，需要在 Windows Server 2012 或更高版本上安装 PowerShell 3.0 或 4.0。  
 
-**Pacotes Redistribuíveis do Visual C++:**  
+**Visual C++ Redistributable：**  
 
--   O Configuration Manager instala o Pacote Redistribuível do Microsoft Visual C++ 2013 em cada computador que hospeda um ponto de distribuição.  
+-   Configuration Manager 在托管分发点的每台计算机上安装 Microsoft Visual C++ 2013 可再发行组件包。  
 
--   A versão instalada depende da plataforma do computador (x86 ou x64).  
+-   安装的版本取决于计算机平台（x86 或 x64）。  
 
-**Microsoft Azure:**  
+**Microsoft Azure：**  
 
--   Você pode usar um serviço de nuvem no Microsoft Azure para hospedar um ponto de distribuição.  
+-   可以使用 Microsoft Azure 中的云服务来托管分发点。  
 
-**Para dar suporte a PXE ou multicast:**  
+**支持 PXE 或多播：**  
 
--   Instale e configure a função de WDS (Serviços de Implantação do Windows) do Windows Server.  
+-   安装和配置 Windows 部署服务 (WDS) Windows Server 角色。  
 
     > [!NOTE]  
-    >  O WDS é instalado e configurado automaticamente quando você configura um ponto de distribuição, a fim de dar suporte a PXE ou multicast em um servidor que executa o Windows Server 2012 ou posterior.  
+    >  当配置分发点以在运行 Windows Server 2012 或更高版本的服务器上支持 PXE 或多播时，将自动安装和配置 WDS。  
 
 > [!NOTE]  
-> A função do sistema de sites do ponto de distribuição não exige o BITS (Serviço de Transferência Inteligente em Segundo Plano). Quando o BITS estiver configurado no computador do ponto de distribuição, o BITS no computador do ponto de distribuição não será usado para facilitar o download de conteúdo por clientes que usam o BITS.  
+> 分发点站点系统角色不需要后台智能传输服务 (BITS)。 在分发点计算机上配置 BITS 时，不使用分发点计算机上的 BITS 来辅助通过使用 BITS 的客户端下载内容。  
 
-###  <a name="a-namebkmk2012epppreqa-endpoint-protection-point"></a><a name="bkmk_2012EPPpreq"></a> Ponto do Endpoint Protection  
-**Funções e recursos do Windows Server:**  
+###  <a name="bkmk_2012EPPpreq"></a> Endpoint Protection 点  
+**Windows Server 角色和功能：**  
 
--   .NET Framework 3.5 SP1 (ou posterior)  
+-   .NET Framework 3.5 SP1（或更高版本）  
 
-###  <a name="a-namebkmk2012enrollpreqa-enrollment-point"></a><a name="bkmk_2012Enrollpreq"></a> Ponto de registro  
-**Funções e recursos do Windows Server:**  
+###  <a name="bkmk_2012Enrollpreq"></a>注册点  
+**Windows Server 角色和功能：**  
 
--   .NET Framework 3.5 (ou posterior)  
+-   .NET Framework 3.5（或更高版本）  
 
--   .NET Framework 4.5.2:  
+-   .NET Framework 4.5.2：  
 
-     Quando essa função do sistema de sites é instalada, o Configuration Manager instala automaticamente o .NET Framework 4.5.2. Esta instalação pode colocar o servidor em um estado de reinicialização pendente. Quando uma reinicialização fica pendente para o .NET Framework, os aplicativos .NET podem falhar até que o servidor seja reinicializado e a instalação seja concluída.  
+     此站点系统角色安装时，Configuration Manager 将自动安装 .NET Framework 4.5.2。 此安装可将服务器置于重启挂起状态。 当挂起对 .NET Framework 的重启时，在服务器重启和安装完成之前，.NET 应用程序可能失败。  
 
-    -   Ativação HTTP (e opções selecionadas automaticamente)  
+    -   HTTP 激活（和自动选择的选项）  
 
     -   ASP.NET 4.5  
 
 
-**Configuração do IIS:**  
+**IIS 配置：**  
 
--   Recursos HTTP comuns:  
+-   常见 HTTP 功能：  
 
-    -   Documento padrão  
+    -   默认文档  
 
--   Desenvolvimento de aplicativos:  
+-   应用程序开发：  
 
-    -   ASP.NET 3.5 (e opções selecionadas automaticamente)  
+    -   ASP.NET 3.5（和自动选择的选项）  
 
-    -   Extensibilidade 3.5 do .NET  
+    -   .NET Extensibility 3.5  
 
-    -   ASP.NET 4.5 (e opções selecionadas automaticamente)  
+    -   ASP.NET 4.5（和自动选择的选项）  
 
-    -   Extensibilidade 4.5 do .NET  
+    -   .NET Extensibility 4.5  
 
--   Compatibilidade do Gerenciamento do IIS 6:  
+-   IIS 6 管理兼容性：  
 
-    -   Compatibilidade de Metabase do IIS 6  
+    -   IIS 6 元数据库兼容性  
 
-**Memória do computador:**  
+**计算机内存：**  
 
--   O computador que hospeda esta função do sistema de sites deve ter, no mínimo, 5% da memória livre disponível dos computadores para habilitar a função do sistema de sites para processar solicitações.  
+-   托管此站点系统角色的计算机必须具有最少 5% 的计算机可用内存来启用站点系统角色以处理请求。  
 
--   Quando esta função do sistema de sites estiver colocalizada com outra função do sistema de sites que tenha este mesmo requisito, esse requisito de memória do computador não será aumentado, mas permanecerá em, no mínimo, 5%.  
+-   当此站点系统角色与具有该相同要求的另一站点系统角色并存时，对计算机的该内存要求将不会增加，而是保持为最少 5% 的值。  
 
-###  <a name="a-namebkmk2012enrollproxpreqa-enrollment-proxy-point"></a><a name="bkmk_2012EnrollProxpreq"></a> Ponto proxy do registro  
-**Funções e recursos do Windows Server:**  
+###  <a name="bkmk_2012EnrollProxpreq"></a>注册代理点  
+**Windows Server 角色和功能：**  
 
--   .NET Framework 3.5 (ou posterior)  
-
--   .NET Framework 4.5.2  
-
-     Quando essa função do sistema de sites é instalada, o Configuration Manager instala automaticamente o .NET Framework 4.5.2. Esta instalação pode colocar o servidor em um estado de reinicialização pendente. Quando uma reinicialização fica pendente para o .NET Framework, os aplicativos .NET podem falhar até que o servidor seja reinicializado e a instalação seja concluída.  
-
-**Configuração do IIS:**  
-
--   Recursos HTTP comuns:  
-
-    -   Documento padrão  
-
-    -   Conteúdo Estático  
-
--   Desenvolvimento de aplicativos:  
-
-    -   ASP.NET 3.5 (e opções selecionadas automaticamente)  
-
-    -   ASP.NET 4.5 (e opções selecionadas automaticamente)  
-
-    -   Extensibilidade 3.5 do .NET  
-
-    -   Extensibilidade 4.5 do .NET  
-
--   Segurança:  
-
-    -   Autenticação do Windows  
-
--   Compatibilidade do Gerenciamento do IIS 6:  
-
-    -   Compatibilidade de Metabase do IIS 6  
-
-**Memória do computador:**  
-
--   O computador que hospeda esta função do sistema de sites deve ter, no mínimo, 5% da memória livre disponível dos computadores para habilitar a função do sistema de sites para processar solicitações.  
-
--   Quando esta função do sistema de sites estiver colocalizada com outra função do sistema de sites que tenha este mesmo requisito, esse requisito de memória do computador não será aumentado, mas permanecerá em, no mínimo, 5%.  
-
-###  <a name="a-namebkmk2012fsppreqa-fallback-status-point"></a><a name="bkmk_2012FSPpreq"></a> Ponto de status de fallback  
-A configuração padrão do IIS é necessária com as seguintes adições:  
-
--   Compatibilidade do Gerenciamento do IIS 6:  
-
-    -   Compatibilidade de Metabase do IIS 6  
-
-###  <a name="a-namebkmk2012mppreqa-management-point"></a><a name="bkmk_2012MPpreq"></a> Ponto de gerenciamento  
-**Funções e recursos do Windows Server:**  
+-   .NET Framework 3.5（或更高版本）  
 
 -   .NET Framework 4.5.2  
 
--   Extensões de Servidor BITS (e opções selecionadas automaticamente) ou BITS (Serviço de Transferência Inteligente em Segundo Plano) (e opções selecionadas automaticamente)  
+     此站点系统角色安装时，Configuration Manager 将自动安装 .NET Framework 4.5.2。 此安装可将服务器置于重启挂起状态。 当挂起对 .NET Framework 的重启时，在服务器重启和安装完成之前，.NET 应用程序可能失败。  
 
-**Configuração do IIS:**  
+**IIS 配置：**  
 
--   Desenvolvimento de aplicativos:  
+-   常见 HTTP 功能：  
 
-    -   Extensões ISAPI  
+    -   默认文档  
 
--   Segurança:  
+    -   静态内容  
 
-    -   Autenticação do Windows  
+-   应用程序开发：  
 
--   Compatibilidade do Gerenciamento do IIS 6:  
+    -   ASP.NET 3.5（和自动选择的选项）  
 
-    -   Compatibilidade de Metabase do IIS 6  
+    -   ASP.NET 4.5（和自动选择的选项）  
 
-    -   Compatibilidade de WMI do IIS 6  
+    -   .NET Extensibility 3.5  
 
-###  <a name="a-namebkmk2012rspointa-reporting-services-point"></a><a name="bkmk_2012RSpoint"></a> Ponto do Reporting Services  
-**Funções e recursos do Windows Server:**  
+    -   .NET Extensibility 4.5  
 
--   .NET Framework 4.5.2  
+-   安全性：  
 
-**SQL Server Reporting Services:**  
+    -   Windows 身份验证  
 
--   Você deve instalar e configurar pelo menos uma instância do SQL Server para dar suporte ao SQL Server Reporting Services antes da instalação do ponto do Reporting Services.  
+-   IIS 6 管理兼容性：  
 
--   A instância usada para o SQL Server Reporting Services pode ser a mesma instância usada para o banco de dados do site.  
+    -   IIS 6 元数据库兼容性  
 
--   Além disso, a instância que você usar pode ser compartilhada com outros produtos do System Center, contanto que os outros produtos do System Center não tenham restrições para compartilhar a instância do SQL Server.  
+**计算机内存：**  
 
-###  <a name="a-namebkmkscppreqa-service-connection-point"></a><a name="bkmk_SCPpreq"></a> Ponto de conexão de serviço  
-**Funções e recursos do Windows Server:**  
+-   托管此站点系统角色的计算机必须具有最少 5% 的计算机可用内存来启用站点系统角色以处理请求。  
 
--   .NET Framework 4.5.2  
+-   当此站点系统角色与具有该相同要求的另一站点系统角色并存时，对计算机的该内存要求将不会增加，而是保持为最少 5% 的值。  
 
-     Quando essa função do sistema de sites é instalada, o Configuration Manager instala automaticamente o .NET Framework 4.5.2. Esta instalação pode colocar o servidor em um estado de reinicialização pendente. Quando uma reinicialização fica pendente para o .NET Framework, os aplicativos .NET podem falhar até que o servidor seja reinicializado e a instalação seja concluída.  
+###  <a name="bkmk_2012FSPpreq"></a>回退状态点  
+需要带有以下添加内容的默认 IIS 配置：  
 
-**Pacotes Redistribuíveis do Visual C++:**  
+-   IIS 6 管理兼容性：  
 
--   O Configuration Manager instala o Pacote Redistribuível do Microsoft Visual C++ 2013 em cada computador que hospeda um ponto de distribuição.  
+    -   IIS 6 元数据库兼容性  
 
--   A função do sistema de sites exige a versão x64.  
-
-###  <a name="a-namebkmk2012suppreqa-software-update-point"></a><a name="bkmk_2012SUPpreq"></a> Ponto de atualização de software  
-**Funções e recursos do Windows Server:**  
-
--   .NET Framework 3.5 SP1 (ou posterior)  
+###  <a name="bkmk_2012MPpreq"></a>管理点  
+**Windows Server 角色和功能：**  
 
 -   .NET Framework 4.5.2  
 
-A configuração padrão do IIS é necessária.
+-   BITS 服务器扩展（和自动选择的选项），或后台智能传输服务 (BITS)（和自动选择的选项）  
 
-**Windows Server Update Services:**  
+**IIS 配置：**  
 
--   Você deve instalar a função do Windows Server, Windows Server Update Services, em um computador antes de instalar um ponto de atualização de software.  
+-   应用程序开发：  
 
--   Para obter mais informações, consulte [Planejar atualizações de software no System Center Configuration Manager](../../../sum/plan-design/plan-for-software-updates.md).  
+    -   ISAPI 扩展  
 
-### <a name="state-migration-point"></a>Ponto de migração de estado  
-A configuração padrão do IIS é necessária.  
+-   安全性：  
 
-##  <a name="a-namebkmk2008a-prerequisites-for-windows-server-2008-r2-and-windows-server-2008"></a><a name="bkmk_2008"></a> Pré-requisitos para o Windows Server 2008 R2 e Windows Server 2008  
-Agora, o Windows Server 2008 e o Windows Server 2008 R2 estão em suporte estendido e não mais em suporte maintstream, conforme detalhado pelo [Ciclo de Vida do Suporte da Microsoft](https://support.microsoft.com/lifecycle). Para obter mais informações sobre o suporte futuro para esses sistemas operacionais como servidores do sistema de sites com o Configuration Manager, consulte [Recursos removidos e preteridos do System Center Configuration Manager](../../../core/plan-design/changes/removed-and-deprecated-features.md).  
+    -   Windows 身份验证  
 
-**O seguinte se aplica a todos os requisitos do .NET Framework:**  
+-   IIS 6 管理兼容性：  
 
--   Instale a versão completa do .NET Framework antes de instalar as funções do sistema de sites. Por exemplo, confira o [Microsoft .NET Framework 4 (Instalador autônomo)](http://go.microsoft.com/fwlink/p/?LinkId=193048). O .NET Framework 4 Client Profile é insuficiente para esse requisito.  
+    -   IIS 6 元数据库兼容性  
 
-**O seguinte se aplica a todos os requisitos de ativação do WCF (Windows Communication Foundation):**  
+    -   IIS 6 WMI 兼容性  
 
--   Você pode configurar a ativação do WCF como parte do recurso do Windows, .NET Framework, no servidor do sistema de sites. Por exemplo, no Windows Server 2008 R2, execute o **Assistente para Adicionar Recursos** para instalar recursos adicionais no servidor. Na página **Selecionar Recursos**, expanda **Recursos do NET Framework 3.5.1**, expanda **Ativação do WCF** e marque as caixas de seleção de **Ativação HTTP** e **Ativação não HTTP** para habilitar essas opções.  
-
-###  <a name="a-namebkmk2008sspreqa-site-server-central-administration-site-and-primary-site"></a><a name="bkmk_2008sspreq"></a> Servidor do site: site primário e site de administração central  
-**.NET Framework:**  
-
--   .NET Framework 3.5 SP1 (ou posterior)  
+###  <a name="bkmk_2012RSpoint"></a> Reporting Services 点  
+**Windows Server 角色和功能：**  
 
 -   .NET Framework 4.5.2  
 
-**Recurso do Windows:**  
+**SQL Server Reporting Services：**  
 
--   Compactação Diferencial Remota  
+-   必须安装并配置至少一个 SQL Server 实例以在安装 Reporting Services 点之前支持 SQL Server Reporting Services。  
 
-**Windows ADK:**  
+-   用于 SQL Server Reporting Services 的实例可以是用于站点数据库的同一实例。  
 
--   Antes de instalar ou atualizar um site de administração central ou site primário, você deve instalar a versão do Windows ADK exigida pela versão do Configuration Manager que você está instalando ou atualizando.  
+-   此外，只要其他 System Center 产品不具有对共享 SQL Server 实例的限制，则你使用的实例可与其他 System Center 产品共享。  
 
-    -   A versão 1511 do Configuration Manager exige a versão para Windows 10 RTM (10.0.10240) do Windows ADK.  
-
--   Para mais informações sobre esse requisito, consulte [Requisitos de infraestrutura para implantação do sistema operacional](/sccm/osd/plan-design/infrastructure-requirements-for-operating-system-deployment).  
-
-**Pacotes Redistribuíveis do Visual C++:**  
-
--   O Configuration Manager instala o Pacote Redistribuível do Microsoft Visual C++ 2013 em cada computador que instala um servidor do site.  
-
--   Os sites de administração central e os sites primários exigem as versões x86 e x64 do arquivo dos Pacotes Redistribuíveis aplicáveis.  
-
-###  <a name="a-namebkmk2008secpreqa-site-server-secondary-site"></a><a name="bkmk_2008secpreq"></a> Servidor do site: site secundário  
-**.NET Framework:**  
-
--   .NET Framework 3.5 SP1 (ou posterior)  
+###  <a name="bkmk_SCPpreq"></a>服务连接点  
+**Windows Server 角色和功能：**  
 
 -   .NET Framework 4.5.2  
 
-**Pacotes Redistribuíveis do Visual C++:**  
+     此站点系统角色安装时，Configuration Manager 将自动安装 .NET Framework 4.5.2。 此安装可将服务器置于重启挂起状态。 当挂起对 .NET Framework 的重启时，在服务器重启和安装完成之前，.NET 应用程序可能失败。  
 
--   O Configuration Manager instala o Pacote Redistribuível do Microsoft Visual C++ 2013 em cada computador que instala um servidor do site.  
+**Visual C++ Redistributable：**  
 
--   Os sites secundários exigem somente a versão x64.  
+-   Configuration Manager 在托管分发点的每台计算机上安装 Microsoft Visual C++ 2013 可再发行组件包。  
 
-**Funções padrão do sistema de sites:**  
+-   站点系统角色需要 x64 版本。  
 
--   Por padrão, um site secundário instala um **ponto de gerenciamento** e um **ponto de distribuição**.  
+###  <a name="bkmk_2012SUPpreq"></a>软件更新点  
+**Windows Server 角色和功能：**  
 
--   Certifique-se de que o servidor de site secundário atenda aos pré-requisitos para estas funções do sistema de sites.  
-
-###  <a name="a-namebkmk2008dbpreqa-database-server"></a><a name="bkmk_2008dbpreq"></a> Servidor de banco de dados  
-**Serviço Registro Remoto:**  
-
--   Durante a instalação do site do Configuration Manager, você deve habilitar o serviço Registro remoto no computador que hospedará o banco de dados do site.  
-
-**SQL Server:**  
-
--   Antes de instalar um site de administração central ou site primário, você deve instalar uma versão com suporte do SQL Server a fim de hospedar o banco de dados do site.  
-
--   Antes de instalar um site secundário, você pode instalar uma versão com suporte do SQL Server.  
-
--   Se você optar por fazer o Configuration Manager instalar o SQL Server Express como parte de uma instalação do site secundário, verifique se o computador atende aos requisitos para execução do SQL Server Express.  
-
-###  <a name="a-namebkmk2008smsprovpreqa-sms-provider-server"></a><a name="bkmk_2008smsprovpreq"></a> Servidor do Provedor de SMS  
-**Windows ADK:**  
-
--   O computador no qual você instala uma instância do Provedor de SMS deve ter a versão exigida do Windows ADK exigida pela versão do Configuration Manager que você está instalando ou atualizando.  
-
-    -   A versão 1511 do Configuration Manager exige a versão para Windows 10 RTM (10.0.10240) do Windows ADK.  
-
--   Para mais informações sobre esse requisito, consulte [Requisitos de infraestrutura para implantação do sistema operacional](/sccm/osd/plan-design/infrastructure-requirements-for-operating-system-deployment).  
-
-###  <a name="a-namebkmk2008acwspreqa-application-catalog-website-point"></a><a name="bkmk_2008acwspreq"></a> Ponto de sites da Web do Catálogo de Aplicativos  
-**.NET Framework:**  
+-   .NET Framework 3.5 SP1（或更高版本）  
 
 -   .NET Framework 4.5.2  
 
-**Configuração do IIS:**
+需要默认 IIS 配置。
 
-A configuração padrão do IIS é necessária com as seguintes adições:  
+**Windows Server 更新服务：**  
 
--   Recursos HTTP comuns:  
+-   安装软件更新点之前，必须在计算机上安装 Windows 服务器角色 Windows Server 更新服务。  
 
-    -   Conteúdo Estático  
+-   有关详细信息，请参阅 [System Center Configuration Manager 的软件更新计划](../../../sum/plan-design/plan-for-software-updates.md)。  
 
-    -   Documento padrão  
+### <a name="state-migration-point"></a>状态迁移点  
+需要默认 IIS 配置。  
 
--   Desenvolvimento de aplicativos:  
+##  <a name="bkmk_2008"></a> Windows Server 2008 R2 和 Windows Server 2008 的先决条件  
+如 [Microsoft 支持生命周期](https://support.microsoft.com/lifecycle)中的详细信息所述，Windows Server 2008 和 Windows Server 2008 R2 现处于外延支持，不再处于主流支持。 若要详细了解将来对这些操作系统作为具有 Configuration Manager 的站点系统服务器的支持，请参阅 [System Center Configuration Manager 的已删除和已弃用的功能](../../../core/plan-design/changes/removed-and-deprecated-features.md)。  
 
-    -   ASP.NET (e opções selecionadas automaticamente)  
+**下列内容适用于所有 .NET Framework 要求：**  
 
-         Em alguns cenários, como quando o IIS é instalado ou reconfigurado após a instalação do .NET Framework versão 4.5.2, você deve habilitar explicitamente o ASP.NET versão 4.5. Por exemplo, em um computador 64 bits que executa o .NET Framework versão 4.0.30319, execute o seguinte comando: **%windir%\Microsoft.NET\Framework64\v4.0.30319\aspnet_regiis.exe -i -enable**  
+-   在安装站点系统角色之前，安装完整版的 .NET Framework。 有关示例，请参阅 [Microsoft .NET Framework 4 （独立安装程序）](http://go.microsoft.com/fwlink/p/?LinkId=193048)。 .NET Framework 4 Client Profile 不足以满足这一要求。  
 
--   Segurança:  
+**下列内容适用于所有 Windows Communication Foundation (WCF) 激活要求：**  
 
-    -   Autenticação do Windows  
+-   可以在站点系统服务器上将 WCF 激活配置为 .NET Framework Windows 功能的一部分。 例如，在 Windows Server 2008 R2 上运行“添加功能向导”以在该服务器上安装其他功能。 在“选择功能”页上，依次展开“NET Framework 3.5.1 功能”、“WCF 激活”，然后选中“HTTP 激活”和“非 HTTP 激活”复选框来启用这些选项。  
 
--   Compatibilidade do Gerenciamento do IIS 6:  
+###  <a name="bkmk_2008sspreq"></a>站点服务器：管理中心站点和主站点  
+**.NET Framework：**  
 
-    -   Compatibilidade de Metabase do IIS 6  
-
-###  <a name="a-namebkmk2008acwsitepreqa-application-catalog-web-service-point"></a><a name="bkmk_2008ACwsitepreq"></a> Ponto de serviços Web do Catálogo de Aplicativos  
-**.NET Framework:**  
-
--   .NET Framework 3.5 SP1 (ou posterior)  
+-   .NET Framework 3.5 SP1（或更高版本）  
 
 -   .NET Framework 4.5.2  
 
-**Ativação do WCF (Windows Communication Foundation):**  
+**Windows 功能：**  
 
--   Ativação HTTP  
+-   远程差分压缩  
 
--   Ativação não HTTP  
+**Windows ADK：**  
 
-**Configuração do IIS:**
+-   安装或升级管理中心站点或主站点之前，必须安装正在安装或升级到的 Configuration Manager 版本所需的 Windows ADK 版本。  
 
-A configuração padrão do IIS é necessária com as seguintes adições:  
+    -   1511 版本的 Configuration Manager 需要 Windows ADK 的 Windows 10 RTM (10.0.10240) 版本。  
 
--   Desenvolvimento de aplicativos:  
+-   有关此要求的详细信息，请参阅[操作系统部署的基础架构要求](/sccm/osd/plan-design/infrastructure-requirements-for-operating-system-deployment)。  
 
-    -   ASP.NET (e opções selecionadas automaticamente)  
+**Visual C++ Redistributable：**  
 
-         Em alguns cenários, como quando o IIS é instalado ou reconfigurado após a instalação do .NET Framework versão 4.5.2, você deve habilitar explicitamente o ASP.NET versão 4.5. Por exemplo, em um computador 64 bits que executa o .NET Framework versão 4.0.30319, execute o seguinte comando: **%windir%\Microsoft.NET\Framework64\v4.0.30319\aspnet_regiis.exe -i -enable**  
+-   Configuration Manager 在安装站点服务器的每台计算机上安装 Microsoft Visual C++ 2013 可再发行组件包。  
 
--   Compatibilidade do Gerenciamento do IIS 6:  
+-   管理中心站点和主站点需要适用的可再发行文件的 x86 和 x64 版本。  
 
-    -   Compatibilidade de Metabase do IIS 6  
+###  <a name="bkmk_2008secpreq"></a>站点服务器：辅助站点  
+**.NET Framework：**  
 
-**Memória do computador:**  
-
--   O computador que hospeda esta função do sistema de sites deve ter, no mínimo, 5% da memória livre disponível dos computadores para habilitar a função do sistema de sites para processar solicitações.  
-
--   Quando esta função do sistema de sites estiver colocalizada com outra função do sistema de sites que tenha este mesmo requisito, esse requisito de memória do computador não será aumentado, mas permanecerá em, no mínimo, 5%.  
-
-###  <a name="a-namebkmk2008aipreqa-asset-intelligence-synchronization-point"></a><a name="bkmk_2008AIpreq"></a> Ponto de sincronização do Asset Intelligence  
-**.NET Framework:**  
+-   .NET Framework 3.5 SP1（或更高版本）  
 
 -   .NET Framework 4.5.2  
 
-###  <a name="a-namebkmk2008crppreqa-certificate-registration-point"></a><a name="bkmk_2008crppreq"></a> Ponto de registro de certificado  
-**.NET Framework:**  
+**Visual C++ Redistributable：**  
+
+-   Configuration Manager 在安装站点服务器的每台计算机上安装 Microsoft Visual C++ 2013 可再发行组件包。  
+
+-   辅助站点仅需要 x64 版本。  
+
+**默认站点系统角色：**  
+
+-   默认情况下，辅助站点将安装**管理点**和**分发点**。  
+
+-   请确保辅助站点服务器满足这些站点系统角色的先决条件。  
+
+###  <a name="bkmk_2008dbpreq"></a>数据库服务器  
+**远程注册表服务：**  
+
+-   在安装 Configuration Manager 站点的过程中，必须在托管站点数据库的计算机上启用远程注册表服务。  
+
+**SQL Server：**  
+
+-   在安装管理中心站点或主站点之前，必须要安装受支持的 SQL Server 版本以托管站点数据库。  
+
+-   在安装辅助站点之前，可以安装受支持的 SQL Server 版本。  
+
+-   如果选择让 Configuration Manager 将 SQL Server Express 作为辅助站点安装的一部分安装，请确保计算机满足运行 SQL Server Express 的要求。  
+
+###  <a name="bkmk_2008smsprovpreq"></a> SMS 提供程序服务器  
+**Windows ADK：**  
+
+-   安装 SMS 提供程序实例的计算机必须具备要安装或升级到的 Configuration Manager 版本所需的 Windows ADK 版本。  
+
+    -   1511 版本的 Configuration Manager 需要 Windows ADK 的 Windows 10 RTM (10.0.10240) 版本。  
+
+-   有关此要求的详细信息，请参阅[操作系统部署的基础架构要求](/sccm/osd/plan-design/infrastructure-requirements-for-operating-system-deployment)。  
+
+###  <a name="bkmk_2008acwspreq"></a>应用程序目录网站点  
+**.NET Framework：**  
 
 -   .NET Framework 4.5.2  
 
--   Ativação HTTP  
+**IIS 配置：**
 
-**Configuração do IIS:**
+需要带有以下添加内容的默认 IIS 配置：  
 
-A configuração padrão do IIS é necessária com as seguintes adições:  
+-   常见 HTTP 功能：  
 
--   Compatibilidade do Gerenciamento do IIS 6:  
+    -   静态内容  
 
-    -   Compatibilidade de Metabase do IIS 6  
+    -   默认文档  
 
-    -   Compatibilidade de WMI do IIS 6  
+-   应用程序开发：  
 
-###  <a name="a-namebkmk2008dppreqa-distribution-point"></a><a name="bkmk_2008dppreq"></a> Ponto de distribuição  
-**Configuração do IIS:**
+    -   ASP.NET（和自动选择的选项）  
 
-É possível usar a configuração padrão do IIS ou uma configuração personalizada. Para usar uma configuração personalizada do IIS, você deve habilitar as seguintes opções para o IIS:  
+         在某些情况下（如安装 .NET Framework 4.5.2 版本之后，安装或重新配置 IIS 时），必须显式启用 ASP.NET 4.5 版本。 例如，在运行 .NET Framework 版本 4.0.30319 的 64 位计算机上，运行以下命令：**%windir%\Microsoft.NET\Framework64\v4.0.30319\aspnet_regiis.exe -i -enable**  
 
--   Desenvolvimento de aplicativos:  
+-   安全性：  
 
-    -   Extensões ISAPI  
+    -   Windows 身份验证  
 
--   Segurança:  
+-   IIS 6 管理兼容性：  
 
-    -   Autenticação do Windows  
+    -   IIS 6 元数据库兼容性  
 
--   Compatibilidade do Gerenciamento do IIS 6:  
+###  <a name="bkmk_2008ACwsitepreq"></a>应用程序目录 Web 服务点  
+**.NET Framework：**  
 
-    -   Compatibilidade de Metabase do IIS 6  
+-   .NET Framework 3.5 SP1（或更高版本）  
 
-    -   Compatibilidade de WMI do IIS 6  
+-   .NET Framework 4.5.2  
 
-Ao usar uma configuração personalizada do IIS, é possível remover opções que não são necessárias, como as seguintes:  
+**Windows Communication Foundation (WCF) 激活：**  
 
--   Recursos HTTP comuns:  
+-   HTTP 激活  
 
-    -   Redirecionamento de HTTP  
+-   非 HTTP 激活  
 
--   Scripts de gerenciamento e ferramentas do IIS  
+**IIS 配置：**
 
-**Recurso do Windows:**  
+需要带有以下添加内容的默认 IIS 配置：  
 
--   Compactação Diferencial Remota  
+-   应用程序开发：  
 
-**Pacotes Redistribuíveis do Visual C++:**  
+    -   ASP.NET（和自动选择的选项）  
 
--   O Configuration Manager instala o Pacote Redistribuível do Microsoft Visual C++ 2013 em cada computador que hospeda um ponto de distribuição.  
+         在某些情况下（如安装 .NET Framework 4.5.2 版本之后，安装或重新配置 IIS 时），必须显式启用 ASP.NET 4.5 版本。 例如，在运行 .NET Framework 版本 4.0.30319 的 64 位计算机上，运行以下命令：**%windir%\Microsoft.NET\Framework64\v4.0.30319\aspnet_regiis.exe -i -enable**  
 
--   A versão instalada depende da plataforma do computador (x86 ou x64).  
+-   IIS 6 管理兼容性：  
 
-**Microsoft Azure:**  
+    -   IIS 6 元数据库兼容性  
 
--   Você pode usar um serviço de nuvem no Azure para hospedar um ponto de distribuição.  
+**计算机内存：**  
 
-**Para dar suporte a PXE ou multicast:**  
+-   托管此站点系统角色的计算机必须具有最少 5% 的计算机可用内存来启用站点系统角色以处理请求。  
 
--   Instale e configure a função de WDS (Serviços de Implantação do Windows) do Windows Server.  
+-   当此站点系统角色与具有该相同要求的另一站点系统角色并存时，对计算机的该内存要求将不会增加，而是保持为最少 5% 的值。  
+
+###  <a name="bkmk_2008AIpreq"></a>资产智能同步点  
+**.NET Framework：**  
+
+-   .NET Framework 4.5.2  
+
+###  <a name="bkmk_2008crppreq"></a>证书注册点  
+**.NET Framework：**  
+
+-   .NET Framework 4.5.2  
+
+-   HTTP 激活  
+
+**IIS 配置：**
+
+需要带有以下添加内容的默认 IIS 配置：  
+
+-   IIS 6 管理兼容性：  
+
+    -   IIS 6 元数据库兼容性  
+
+    -   IIS 6 WMI 兼容性  
+
+###  <a name="bkmk_2008dppreq"></a>分发点  
+**IIS 配置：**
+
+可使用默认 IIS 配置或自定义配置。 若要使用自定义 IIS 配置，必须启用 IIS 的以下选项：  
+
+-   应用程序开发：  
+
+    -   ISAPI 扩展  
+
+-   安全性：  
+
+    -   Windows 身份验证  
+
+-   IIS 6 管理兼容性：  
+
+    -   IIS 6 元数据库兼容性  
+
+    -   IIS 6 WMI 兼容性  
+
+使用自定义 IIS 配置时，可以删除不需要的选项，如下所示：  
+
+-   常见 HTTP 功能：  
+
+    -   HTTP 重定向  
+
+-   IIS 管理脚本和工具  
+
+**Windows 功能：**  
+
+-   远程差分压缩  
+
+**Visual C++ Redistributable：**  
+
+-   Configuration Manager 在托管分发点的每台计算机上安装 Microsoft Visual C++ 2013 可再发行组件包。  
+
+-   安装的版本取决于计算机平台（x86 或 x64）。  
+
+**Microsoft Azure：**  
+
+-   可以使用 Azure 中的云服务来托管分发点。  
+
+**支持 PXE 或多播：**  
+
+-   安装和配置 Windows 部署服务 (WDS) Windows Server 角色。  
 
     > [!NOTE]  
-    >  O WDS é instalado e configurado automaticamente quando você configura um ponto de distribuição, a fim de dar suporte a PXE ou multicast em um servidor que executa o Windows Server 2012 ou posterior.  
+    >  当配置分发点以在运行 Windows Server 2012 或更高版本的服务器上支持 PXE 或多播时，将自动安装和配置 WDS。  
 
 > [!NOTE]  
-> A função do sistema de sites do ponto de distribuição não exige o BITS (Serviço de Transferência Inteligente em Segundo Plano). Quando o BITS estiver configurado no computador do ponto de distribuição, o BITS no computador do ponto de distribuição não será usado para facilitar o download de conteúdo por clientes que usam o BITS.  
+> 分发点站点系统角色不需要后台智能传输服务 (BITS)。 在分发点计算机上配置 BITS 时，不使用分发点计算机上的 BITS 来辅助通过使用 BITS 的客户端下载内容。  
 
 
-###  <a name="a-namebkmk2008epppreqa-endpoint-protection-point"></a><a name="bkmk_2008EPPpreq"></a> Ponto do Endpoint Protection  
-**.NET Framework:**  
+###  <a name="bkmk_2008EPPpreq"></a> Endpoint Protection 点  
+**.NET Framework：**  
 
--   .NET Framework 3.5 SP1 (ou posterior)  
+-   .NET Framework 3.5 SP1（或更高版本）  
 
-###  <a name="a-namebkmk2008enrollpreqa-enrollment-point"></a><a name="bkmk_2008Enrollpreq"></a> Ponto de registro  
-**.NET Framework:**  
-
--   .NET Framework 4.5.2  
-
-     Quando essa função do sistema de sites for instalada, se o servidor ainda não tiver uma versão com suporte do .NET Framework instalada, o Configuration Manager instalará automaticamente o .NET Framework 4.5.2. Esta instalação pode colocar o servidor em um estado de reinicialização pendente. Quando uma reinicialização fica pendente para o .NET Framework, os aplicativos .NET podem falhar até que o servidor seja reinicializado e a instalação seja concluída.  
-
-**Ativação do WCF (Windows Communication Foundation):**  
-
--   Ativação HTTP  
-
--   Ativação não HTTP  
-
-**Configuração do IIS:**
-
-A configuração padrão do IIS é necessária com as seguintes adições:  
-
--   Desenvolvimento de aplicativos:  
-
-    -   ASP.NET (e opções selecionadas automaticamente)  
-
-         Em alguns cenários, como quando o IIS é instalado ou reconfigurado após a instalação do .NET Framework versão 4.5.2, você deve habilitar explicitamente o ASP.NET versão 4.5. Por exemplo, em um computador 64 bits que executa o .NET Framework versão 4.0.30319, execute o seguinte comando: **%windir%\Microsoft.NET\Framework64\v4.0.30319\aspnet_regiis.exe -i -enable**  
-
-**Memória do computador:**  
-
--   O computador que hospeda esta função do sistema de sites deve ter, no mínimo, 5% da memória livre disponível dos computadores para habilitar a função do sistema de sites para processar solicitações.  
-
--   Quando esta função do sistema de sites estiver colocalizada com outra função do sistema de sites que tenha este mesmo requisito, esse requisito de memória do computador não será aumentado, mas permanecerá em, no mínimo, 5%.  
-
-###  <a name="a-namebkmk2008enrollproxpreqa-enrollment-proxy-point"></a><a name="bkmk_2008EnrollProxpreq"></a> Ponto proxy do registro  
-**.NET Framework:**  
+###  <a name="bkmk_2008Enrollpreq"></a>注册点  
+**.NET Framework：**  
 
 -   .NET Framework 4.5.2  
 
-     Quando essa função do sistema de sites for instalada, se o servidor ainda não tiver uma versão com suporte do .NET Framework instalada, o Configuration Manager instalará automaticamente o .NET Framework 4.5.2. Esta instalação pode colocar o servidor em um estado de reinicialização pendente. Quando uma reinicialização fica pendente para o .NET Framework, os aplicativos .NET podem falhar até que o servidor seja reinicializado e a instalação seja concluída.  
+     安装此站点系统角色时，如果服务器未安装受支持的 .NET Framework 版本，Configuration Manager 将自动安装 .NET Framework 4.5.2。 此安装可将服务器置于重启挂起状态。 当挂起对 .NET Framework 的重启时，在服务器重启和安装完成之前，.NET 应用程序可能失败。  
 
-**Ativação do WCF (Windows Communication Foundation):**  
+**Windows Communication Foundation (WCF) 激活：**  
 
--   Ativação HTTP  
+-   HTTP 激活  
 
--   Ativação não HTTP  
+-   非 HTTP 激活  
 
-**Configuração do IIS:**
+**IIS 配置：**
 
-A configuração padrão do IIS é necessária com as seguintes adições:  
+需要带有以下添加内容的默认 IIS 配置：  
 
--   Desenvolvimento de aplicativos:  
+-   应用程序开发：  
 
-    -   ASP.NET (e opções selecionadas automaticamente)  
+    -   ASP.NET（和自动选择的选项）  
 
-         Em alguns cenários, como quando o IIS é instalado ou reconfigurado após a instalação do .NET Framework versão 4.5.2, você deve habilitar explicitamente o ASP.NET versão 4.5. Por exemplo, em um computador 64 bits que executa o .NET Framework versão 4.0.30319, execute o seguinte comando: **%windir%\Microsoft.NET\Framework64\v4.0.30319\aspnet_regiis.exe -i -enable**  
+         在某些情况下（如安装 .NET Framework 4.5.2 版本之后，安装或重新配置 IIS 时），必须显式启用 ASP.NET 4.5 版本。 例如，在运行 .NET Framework 版本 4.0.30319 的 64 位计算机上，运行以下命令：**%windir%\Microsoft.NET\Framework64\v4.0.30319\aspnet_regiis.exe -i -enable**  
 
-**Memória do computador:**  
+**计算机内存：**  
 
--   O computador que hospeda esta função do sistema de sites deve ter, no mínimo, 5% da memória livre disponível dos computadores para habilitar a função do sistema de sites para processar solicitações.  
+-   托管此站点系统角色的计算机必须具有最少 5% 的计算机可用内存来启用站点系统角色以处理请求。  
 
--   Quando esta função do sistema de sites estiver colocalizada com outra função do sistema de sites que tenha este mesmo requisito, esse requisito de memória do computador não será aumentado, mas permanecerá em, no mínimo, 5%.  
+-   当此站点系统角色与具有该相同要求的另一站点系统角色并存时，对计算机的该内存要求将不会增加，而是保持为最少 5% 的值。  
 
-###  <a name="a-namebkmk2008fsppreqa-fallback-status-point"></a><a name="bkmk_2008FSPpreq"></a> Ponto de status de fallback  
-**Configuração do IIS:**
-
-A configuração padrão do IIS é necessária com as seguintes adições:  
-
--   Compatibilidade do Gerenciamento do IIS 6:  
-
-    -   Compatibilidade de Metabase do IIS 6  
-
-###  <a name="a-namebkmk2008mppreqa-management-point"></a><a name="bkmk_2008MPpreq"></a> Ponto de gerenciamento  
-**.NET Framework:**  
+###  <a name="bkmk_2008EnrollProxpreq"></a>注册代理点  
+**.NET Framework：**  
 
 -   .NET Framework 4.5.2  
 
-**Configuração do IIS:**
+     安装此站点系统角色时，如果服务器未安装受支持的 .NET Framework 版本，Configuration Manager 将自动安装 .NET Framework 4.5.2。 此安装可将服务器置于重启挂起状态。 当挂起对 .NET Framework 的重启时，在服务器重启和安装完成之前，.NET 应用程序可能失败。  
 
-É possível usar a configuração padrão do IIS ou uma configuração personalizada. Cada ponto de gerenciamento habilitado para dar suporte a dispositivos móveis exige uma configuração do IIS adicional para o ASP.NET (e suas opções selecionadas automaticamente).
+**Windows Communication Foundation (WCF) 激活：**  
 
-Em alguns cenários, como quando o IIS é instalado ou reconfigurado após a instalação do .NET Framework versão 4.5.2, você deve habilitar explicitamente o ASP.NET versão 4.5. Por exemplo, em um computador 64 bits que executa o .NET Framework versão 4.0.30319, execute o seguinte comando: **%windir%\Microsoft.NET\Framework64\v4.0.30319\aspnet_regiis.exe -i -enable**  
+-   HTTP 激活  
 
+-   非 HTTP 激活  
 
-Para usar uma configuração personalizada do IIS, você deve habilitar as seguintes opções para o IIS:  
+**IIS 配置：**
 
--   Desenvolvimento de aplicativos:  
+需要带有以下添加内容的默认 IIS 配置：  
 
-    -   Extensões ISAPI  
+-   应用程序开发：  
 
--   Segurança:  
+    -   ASP.NET（和自动选择的选项）  
 
-    -   Autenticação do Windows  
+         在某些情况下（如安装 .NET Framework 4.5.2 版本之后，安装或重新配置 IIS 时），必须显式启用 ASP.NET 4.5 版本。 例如，在运行 .NET Framework 版本 4.0.30319 的 64 位计算机上，运行以下命令：**%windir%\Microsoft.NET\Framework64\v4.0.30319\aspnet_regiis.exe -i -enable**  
 
--   Compatibilidade do Gerenciamento do IIS 6:  
+**计算机内存：**  
 
-    -   Compatibilidade de Metabase do IIS 6  
+-   托管此站点系统角色的计算机必须具有最少 5% 的计算机可用内存来启用站点系统角色以处理请求。  
 
-    -   Compatibilidade de WMI do IIS 6  
+-   当此站点系统角色与具有该相同要求的另一站点系统角色并存时，对计算机的该内存要求将不会增加，而是保持为最少 5% 的值。  
 
+###  <a name="bkmk_2008FSPpreq"></a>回退状态点  
+**IIS 配置：**
 
-Ao usar uma configuração personalizada do IIS, é possível remover opções que não são necessárias, como as seguintes:  
+需要带有以下添加内容的默认 IIS 配置：  
 
--   Recursos HTTP comuns:  
+-   IIS 6 管理兼容性：  
 
-    -   Redirecionamento de HTTP  
+    -   IIS 6 元数据库兼容性  
 
--   Scripts de gerenciamento e ferramentas do IIS  
-
-**Recurso do Windows:**  
-
--   Extensões de Servidor BITS (e opções selecionadas automaticamente) ou BITS (Serviço de Transferência Inteligente em Segundo Plano) (e opções selecionadas automaticamente)  
-
-###  <a name="a-namebkmk2008rspointa-reporting-services-point"></a><a name="bkmk_2008RSpoint"></a> Ponto do Reporting Services  
-**.NET Framework:**  
+###  <a name="bkmk_2008MPpreq"></a>管理点  
+**.NET Framework：**  
 
 -   .NET Framework 4.5.2  
 
-**SQL Server Reporting Services:**  
+**IIS 配置：**
 
--   Você deve instalar e configurar pelo menos uma instância do SQL Server para dar suporte ao SQL Server Reporting Services antes da instalação do ponto do Reporting Services.  
+可使用默认 IIS 配置或自定义配置。 每个你启用以支持移动设备的管理点都需要 ASP.NET 的其他 IIS 配置（和其自动选择的选项）。
 
--   A instância usada para o SQL Server Reporting Services pode ser a mesma instância usada para o banco de dados do site.  
+在某些情况下（如安装 .NET Framework 4.5.2 版本之后，安装或重新配置 IIS 时），必须显式启用 ASP.NET 4.5 版本。 例如，在运行 .NET Framework 版本 4.0.30319 的 64 位计算机上，运行以下命令：**%windir%\Microsoft.NET\Framework64\v4.0.30319\aspnet_regiis.exe -i -enable**  
 
--   Além disso, a instância que você usar pode ser compartilhada com outros produtos do System Center, contanto que os outros produtos do System Center não tenham restrições para compartilhar a instância do SQL Server.  
 
-###  <a name="a-namebkmk2008scppreqa-service-connection-point"></a><a name="bkmk_2008SCPpreq"></a> Ponto de conexão de serviço  
-**.NET Framework:**  
+若要使用自定义 IIS 配置，必须启用 IIS 的以下选项：  
+
+-   应用程序开发：  
+
+    -   ISAPI 扩展  
+
+-   安全性：  
+
+    -   Windows 身份验证  
+
+-   IIS 6 管理兼容性：  
+
+    -   IIS 6 元数据库兼容性  
+
+    -   IIS 6 WMI 兼容性  
+
+
+使用自定义 IIS 配置时，可以删除不需要的选项，如下所示：  
+
+-   常见 HTTP 功能：  
+
+    -   HTTP 重定向  
+
+-   IIS 管理脚本和工具  
+
+**Windows 功能：**  
+
+-   BITS 服务器扩展（和自动选择的选项），或后台智能传输服务 (BITS)（和自动选择的选项）  
+
+###  <a name="bkmk_2008RSpoint"></a> Reporting Services 点  
+**.NET Framework：**  
 
 -   .NET Framework 4.5.2  
 
-     Quando essa função do sistema de sites for instalada, se o servidor ainda não tiver uma versão com suporte do .NET Framework instalada, o Configuration Manager instalará automaticamente o .NET Framework 4.5.2. Esta instalação pode colocar o servidor em um estado de reinicialização pendente. Quando uma reinicialização fica pendente para o .NET Framework, os aplicativos .NET podem falhar até que o servidor seja reinicializado e a instalação seja concluída.  
+**SQL Server Reporting Services：**  
 
-**Pacotes Redistribuíveis do Visual C++:**  
+-   必须安装并配置至少一个 SQL Server 实例以在安装 Reporting Services 点之前支持 SQL Server Reporting Services。  
 
--   O Configuration Manager instala o Pacote Redistribuível do Microsoft Visual C++ 2013 em cada computador que hospeda um ponto de distribuição.  
+-   用于 SQL Server Reporting Services 的实例可以是用于站点数据库的同一实例。  
 
--   A função do sistema de sites exige a versão x64.  
+-   此外，只要其他 System Center 产品不具有对共享 SQL Server 实例的限制，则你使用的实例可与其他 System Center 产品共享。  
 
-###  <a name="a-namebkmk2008suppreqa-software-update-point"></a><a name="bkmk_2008SUPpreq"></a> Ponto de atualização de software  
-**.NET Framework:**  
-
--   .NET Framework 3.5 SP1 (ou posterior)  
+###  <a name="bkmk_2008SCPpreq"></a>服务连接点  
+**.NET Framework：**  
 
 -   .NET Framework 4.5.2  
 
-**Configuração do IIS:**
+     安装此站点系统角色时，如果服务器未安装受支持的 .NET Framework 版本，Configuration Manager 将自动安装 .NET Framework 4.5.2。 此安装可将服务器置于重启挂起状态。 当挂起对 .NET Framework 的重启时，在服务器重启和安装完成之前，.NET 应用程序可能失败。  
 
-A configuração padrão do IIS é necessária.  
+**Visual C++ Redistributable：**  
 
-**Windows Server Update Services:**  
+-   Configuration Manager 在托管分发点的每台计算机上安装 Microsoft Visual C++ 2013 可再发行组件包。  
 
--   Você deve instalar a função do Windows Server, Windows Server Update Services, em um computador antes de instalar um ponto de atualização de software.  
+-   站点系统角色需要 x64 版本。  
 
--   Para obter mais informações, consulte [Planejar atualizações de software no System Center Configuration Manager](../../../sum/plan-design/plan-for-software-updates.md).
+###  <a name="bkmk_2008SUPpreq"></a>软件更新点  
+**.NET Framework：**  
 
-###  <a name="a-namebkmk2008smppreqa-state-migration-point"></a><a name="bkmk_2008SMPpreq"></a> Ponto de migração de estado  
-**Configuração do IIS:**
+-   .NET Framework 3.5 SP1（或更高版本）  
 
-A configuração padrão do IIS é necessária.  
+-   .NET Framework 4.5.2  
 
+**IIS 配置：**
 
+需要默认 IIS 配置。  
 
-<!--HONumber=Jan17_HO3-->
+**Windows Server 更新服务：**  
 
+-   安装软件更新点之前，必须在计算机上安装 Windows 服务器角色 Windows Server 更新服务。  
 
+-   有关详细信息，请参阅 [System Center Configuration Manager 的软件更新计划](../../../sum/plan-design/plan-for-software-updates.md)。
+
+###  <a name="bkmk_2008SMPpreq"></a>状态迁移点  
+**IIS 配置：**
+
+需要默认 IIS 配置。  

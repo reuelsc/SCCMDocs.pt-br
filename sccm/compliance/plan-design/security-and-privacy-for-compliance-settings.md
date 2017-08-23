@@ -1,50 +1,43 @@
 ---
-title: "Segurança e privacidade de configurações de conformidade | Microsoft Docs"
-description: "Saiba mais sobre as práticas recomendadas de segurança para as configurações de conformidade no System Center Configuration Manager."
+title: "符合性设置的安全和隐私 | Microsoft Docs"
+description: "了解 System Center Configuration Manager 中符合性设置的安全最佳方案。"
 ms.custom: na
 ms.date: 10/06/2016
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
-ms.technology:
-- configmgr-other
+ms.technology: configmgr-other
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 1c409244-6778-4970-a99c-d2508c9cf62b
-caps.latest.revision: 5
-caps.handback.revision: 0
+caps.latest.revision: "5"
+caps.handback.revision: "0"
 author: robstackmsft
 ms.author: robstack
 manager: angrobe
-translationtype: Human Translation
-ms.sourcegitcommit: f9e939d871e95a3248d8e5d96cb73063a81fd5cf
 ms.openlocfilehash: e7dc554ffcd23978eed44819b525f6cc239b2135
-
-
+ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
+ms.translationtype: HT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 08/07/2017
 ---
-# <a name="security-and-privacy-for-compliance-settings-in-system-center-configuration-manager"></a>Segurança e privacidade de configurações de conformidade no System Center Configuration Manager
+# <a name="security-and-privacy-for-compliance-settings-in-system-center-configuration-manager"></a>System Center Configuration Manager 中的符合性设置的安全和隐私
 
-*Aplica-se a: System Center Configuration Manager (Branch Atual)*
+*适用范围：System Center Configuration Manager (Current Branch)*
 
 
-## <a name="security-best-practices-for-compliance-settings"></a>Práticas recomendadas de segurança para configurações de conformidade  
+## <a name="security-best-practices-for-compliance-settings"></a>符合性设置的最佳安全方案  
 
-|Prática recomendada de segurança|Mais informações|  
+|最佳安全方案|更多信息|  
 |----------------------------|----------------------|  
-|Não monitore os dados confidenciais.|Para ajudar a evitar a divulgação de informações, não defina itens de configuração para monitorar informações potencialmente confidenciais.|  
-|Não configurar regras de conformidade que usam dados que podem ser modificados pelos usuários finais.|Se você criar uma regra de conformidade com base nos dados que os usuários podem modificar, como configurações de Registro para opções de configuração, os resultados de conformidade não serão confiáveis.|  
-|Importe pacotes de configuração do Microsoft System Center e outros dados de configuração de fontes externas somente se tiverem uma assinatura digital válida de um fornecedor confiável.|Os dados de configuração publicados podem ser assinados digitalmente para que você possa verificar a fonte de publicação e assegurar que os dados não foram violados. Se a verificação da assinatura digital falhar, você será avisado e solicitado a continuar com a importação. Não importe dados não assinados se não puder verificar a origem e a integridade dos dados.|  
-|Implementar controles de acesso para proteger computadores de referência.|Certifique-se de que, quando um usuário administrativo configurar um Registro ou definir uma configuração do sistema de arquivos acessando um computador de referência, o computador de referência não foi comprometido.|  
-|Proteger o canal de comunicação, quando você navegar para um computador de referência.|Para prevenir a violação de dados durante a transferência pela rede, use o protocolo IPsec ou SMB entre o computador que executa o console do Configuration Manager e o computador de referência.|  
-|Restrinja e monitore os usuários administrativos que recebem a função de segurança baseada em função do Gerenciador de Configurações de Conformidade.|Usuários administrativos que recebem a função de **Gerenciador de Configurações de Conformidade** podem implantar itens de configuração em todos os dispositivos e todos os usuários na hierarquia. Os itens de configuração podem ser muito eficientes e podem incluir, por exemplo, scripts e reconfiguração do Registro.|  
+|不监视敏感数据。|为了帮助避免信息泄露，不配置配置项目来监视潜在敏感信息。|  
+|不配置符合性规则，它使用可由最终用户修改的数据。|如果基于用户可以修改的数据（如配置选项的注册表设置）创建符合性规则，则符合性结果会不可靠。|  
+|仅当相应内容具有来自受信任发布者的有效数字签名时，才从外部源导入 Microsoft System Center 配置包和其他配置数据。|已发布的配置数据可以进行数字签名，以便你可以验证发布源并确保数据未被篡改。 如果数字签名验证检查失败，你将收到警告，并提示你继续导入。 如果你无法验证数据的来源和完整性，则不要导入未签名的数据。|  
+|实现访问控制来保护引用计算机。|确保当管理用户通过浏览到引用计算机来配置注册表或文件系统设置时，引用计算机未受侵害。|  
+|在浏览到引用的计算机时，确保信道安全。|为了防止数据在通过网络传输时被篡改，请在运行 Configuration Manager 控制台的计算机与引用计算机之间使用 Internet 协议安全性 (IPsec) 或服务器消息块 (SMB)。|  
+|限制和监视被授予基于符合性设置管理员角色的安全角色的管理用户。|被授予“合规性设置管理员”  角色的管理用户可以将配置项目部署到层次结构中的所有设备和所有用户。 配置项目可以非常强大，例如可以包括脚本和注册表重新配置。|  
 
-## <a name="privacy-information-for-compliance-settings"></a>Informações sobre privacidade para configurações de conformidade  
- Você pode usar as configurações de conformidade para avaliar se os dispositivos cliente são compatíveis com os itens de configuração implantados nas linhas de base de configuração. Algumas configurações podem ser corrigidas automaticamente se estiverem fora de conformidade. As informações de conformidade são enviadas para o servidor do site pelo ponto de gerenciamento e armazenadas no banco de dados do site. As informações são criptografadas quando os dispositivos as enviam para o ponto de gerenciamento, mas não são armazenadas em formato criptografado no banco de dados do site. As informações são retidas no banco de dados até que a tarefa de manutenção de site **Excluir Dados Antigos de Gerenciamento da Configuração** as exclua a cada 90 dias. Você pode configurar o intervalo de exclusão. As informações de conformidade não são enviadas à Microsoft.  
+## <a name="privacy-information-for-compliance-settings"></a>符合性设置的隐私信息  
+ 可以使用符合性设置评估客户端设备是否符合在配置基线中部署的配置项目。 某些设置可以在不符合要求时自动修正。 管理点会将符合性信息会发送到站点服务器，并存储在站点数据库中。 设备在将信息发送到管理点时会对其进行加密，但信息不会以加密格式存储在站点数据库中。 信息将保留在数据库中，直到每 90 天站点维护任务“删除过期的配置管理数据”  将其删除。 可以配置删除间隔。 符合性信息不会被发送到 Microsoft。  
 
- Por padrão, os dispositivos não avaliam as configurações de conformidade. Além disso, você deve configurar os itens de configuração e as linhas de base de configuração e implantá-los em dispositivos.  
-
-
-
-<!--HONumber=Dec16_HO3-->
-
-
+ 默认情况下，设备不评估符合性设置。 此外，必须对配置项目和配置基线进行配置，然后将它们部署到设备。  

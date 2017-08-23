@@ -1,53 +1,50 @@
 ---
-title: "Exibir dados de diagnóstico | Microsoft Docs"
-description: "Veja os dados de uso e de diagnóstico para confirmar se sua hierarquia do System Center Configuration Manager não contém nenhuma informação confidencial."
+title: "查看诊断数据 | Microsoft Docs"
+description: "查看诊断和使用情况数据，确保 System Center Configuration Manager 层次结构中未包含敏感信息。"
 ms.custom: na
 ms.date: 3/27/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
-ms.technology:
-- configmgr-other
+ms.technology: configmgr-other
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 594eb284-0d93-4c5d-9ae6-f0f71203682a
-caps.latest.revision: 8
+caps.latest.revision: "8"
 author: Brenduns
 ms.author: brenduns
 manager: angrobe
-ms.translationtype: Human Translation
-ms.sourcegitcommit: 199096db7a23fb14db98b95e75246ed254848ab7
 ms.openlocfilehash: 0932e2b2a4f3e13c35d6b7b0446083f1c233ce03
-ms.contentlocale: pt-br
-ms.lasthandoff: 05/17/2017
-
-
+ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
+ms.translationtype: HT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 08/07/2017
 ---
-# <a name="how-to-view-diagnostics-and-usage-data-for-system-center-configuration-manager"></a>Como exibir dados de diagnóstico e de dados do System Center Configuration Manager
+# <a name="how-to-view-diagnostics-and-usage-data-for-system-center-configuration-manager"></a>如何查看 System Center Configuration Manager 的诊断和使用情况数据
 
-*Aplica-se a: System Center Configuration Manager (Branch Atual)*
+*适用范围：System Center Configuration Manager (Current Branch)*
 
-Você pode exibir dados de uso e de diagnóstico da hierarquia do System Center Configuration Manager para verificar se nenhuma informação confidencial ou identificável foi incluída. Os dados de telemetria são resumidos e armazenados na tabela **TEL_TelemetryResults** do banco de dados do site e são formatados para ser úteis e eficientes de forma programática. Embora as opções a seguir forneçam uma exibição dos dados exatos enviados à Microsoft, elas não se destinam a serem usadas para outras finalidades, como análise de dados.  
+你可以查看 System Center Configuration Manager 层次结构中的诊断和使用情况数据，确保其中未包括敏感信息或身份信息。 遥测数据在站点数据库的 **TEL_TelemetryResults** 表中汇总并存储，并设置为可用于高效编程的格式。 尽管以下选项可让你查看究竟向 Microsoft 发送了哪些数据，但这些数据不会用于其他目的（如数据分析）。  
 
-Use o comando SQL a seguir para exibir o conteúdo desta tabela e mostrar os dados exatos que são enviados. (Também é possível exportar esses dados para um arquivo de texto):  
+使用以下 SQL 命令来查看此表的内容，并显示发送的确切数据。 （还可以将此数据导出到文本文件）：  
 
 -   **SELECT \* FROM TEL_TelemetryResults**  
 
 > [!NOTE]  
->  Antes de instalar a versão 1602, a tabela que armazena os dados telemétricos é **TelemetryResults**.  
+>  在安装 1602 版之前，存储遥测数据的表是 **TelemetryResults**。  
 
-Quando o ponto de conexão de serviço está no modo offline, é possível usar a ferramenta de conexão de serviço para exportar os dados atuais de diagnóstico e de uso para um arquivo CSV (valores separados por vírgula). Execute a ferramenta de conexão de serviço no ponto de conexão de serviço usando o parâmetro **-Export**.  
+当服务连接点处于脱机模式时，可以使用服务连接工具将当前诊断和使用情况数据导出到逗号分隔值 (CSV) 文件中。 使用 **-Export** 参数在服务连接点上运行服务连接工具。  
 
-##  <a name="bkmk_hashes"></a> Hashes unidirecionais  
-Alguns dados consistem em cadeias de caracteres alfanuméricos aleatórios. O Configuration Manager usa o algoritmo SHA-256, que usa hashes unidirecionais, para garantir que não coletamos dados potencialmente confidenciais. O algoritmo mantém os dados em um estado no qual eles ainda podem ser usados para fins de correlação e comparação. Por exemplo, em vez de coletar os nomes de tabelas no banco de dados do site, um hash unidirecional é capturado para cada nome de tabela. Isso garante que os nomes de tabela personalizados criados ou os complementos de produtos de outros usuários não estão visíveis. Em seguida, podemos executar o mesmo hash unidirecional dos nomes de tabela SQL fornecidos por padrão no produto e comparar os resultados das duas consultas para determinar o desvio de seu esquema de banco de dados em relação ao padrão do produto. Isso é usado para aperfeiçoar as atualizações que exigem alterações no esquema SQL.  
+##  <a name="bkmk_hashes"></a>单向哈希  
+某些数据包含由随机字母数字字符构成的字符串。 Configuration Manager 使用 SHA-256 算法（此算法使用单向哈希）来确保不会收集可能敏感的数据。 该算法让数据仍可用于关联和比较方面的用途。 例如，单向哈希是根据每个表名进行捕获，而不是在站点数据库中收集表的名称。 这可确保由用户或其他产品附加设备创建的任何自定义表名称不可见。 然后，对于在默认情况下随产品一起提供的 SQL 表名称，我们可以执行相同的单向哈希，并对比两个查询的结果，以确定数据库架构距离产品默认设置的偏差。 比较结果可用于改进需要更改 SQL 架构的更新。  
 
-Ao exibir os dados brutos, um valor com hash comum aparecerá em cada linha de dados. Essa é a ID da hierarquia. Esse valor com hash é usado para garantir que os dados são correlacionados com a mesma hierarquia sem identificar o cliente nem a origem.  
+查看原始数据时，每行数据中将显示一个常见哈希值。 这是层次结构 ID。 此哈希值用于在不识别客户或来源的情况下确保数据与同一层次结构关联。  
 
-#### <a name="to-see-how-the-one-way-hash-works"></a>Para ver como funciona o hash unidirecional  
+#### <a name="to-see-how-the-one-way-hash-works"></a>查看单向哈希的工作原理  
 
-1.  Obtenha a ID da hierarquia executando a seguinte instrução SQL do SQL Management Studio no banco de dados do Configuration Manager: **select [dbo].[fnGetHierarchyID]\(\)**  
+1.  通过在 SQL Management Studio 中针对 Configuration Manager 数据库运行以下 SQL 语句来获取层次结构 ID：**select [dbo].[fnGetHierarchyID]\(\)**  
 
-2.  Use o script do Windows PowerShell a seguir para executar o hash unidirecional do GUID obtido do banco de dados. Você pode comparar isso com a ID da hierarquia nos dados brutos para ver como podemos ocultar esses dados.  
+2.  使用以下 Windows PowerShell 脚本来执行从数据库中获取的 GUID 的单向哈希。 然后可以将此与原始数据中的层次结构 ID 比较，以了解我们如何掩蔽此数据。  
 
     ```  
     Param( [Parameter(Mandatory=$True)] [string]$value )  
@@ -68,4 +65,3 @@ Ao exibir os dados brutos, um valor com hash comum aparecerá em cada linha de d
     $result = [Convert]::ToBase64String($hashedBytes)    
     return $result   
     ```  
-

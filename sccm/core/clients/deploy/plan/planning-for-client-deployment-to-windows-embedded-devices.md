@@ -1,78 +1,75 @@
 ---
-title: "Planejando a implantação do cliente em dispositivos Windows Embedded | Microsoft Docs"
-description: "Planeje a implantação de cliente em dispositivos do Windows Embedded no System Center Configuration Manager."
+title: "规划 Windows Embedded 设备的客户端部署 | Microsoft Docs"
+description: "在 System Center Configuration Manager 中规划 Windows Embedded 设备的客户端部署。"
 ms.custom: na
 ms.date: 04/23/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
-ms.technology:
-- configmgr-client
+ms.technology: configmgr-client
 ms.tgt_pltfrm: na
 ms.topic: get-started-article
 ms.assetid: 038e61f9-f49d-41d1-9a9f-87bec9e00d5d
-caps.latest.revision: 7
-caps.handback.revision: 0
+caps.latest.revision: "7"
+caps.handback.revision: "0"
 author: robstackmsft
 ms.author: robstack
 manager: angrobe
-ms.translationtype: Human Translation
-ms.sourcegitcommit: 55c953f312a9fb31e7276dde2fdd59f8183b4e4d
-ms.openlocfilehash: 0f6a6719c4c9bc1e67be11adf5206a7672624fa0
-ms.contentlocale: pt-br
-ms.lasthandoff: 12/16/2016
-
-
+ms.openlocfilehash: f7ef476a2ebcf0161ebb70d8a3d95f77806aa05e
+ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
+ms.translationtype: HT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 08/07/2017
 ---
-# <a name="planning-for-client-deployment-to-windows-embedded-devices-in-system-center-configuration-manager"></a>Planejando a implantação de cliente em dispositivos do Windows Embedded no System Center Configuration Manager
+# <a name="planning-for-client-deployment-to-windows-embedded-devices-in-system-center-configuration-manager"></a>在 System Center Configuration Manager 中计划 Windows Embedded 设备的客户端部署
 
-*Aplica-se a: System Center Configuration Manager (Branch Atual)*
+*适用范围：System Center Configuration Manager (Current Branch)*
 
-<a name="BKMK_DeployClientEmbedded"></a> Se o dispositivo Windows Embedded não incluir o cliente do System Center Configuration Manager, você poderá usar algum dos métodos de instalação do cliente se o dispositivo atender às dependências necessárias. Se o dispositivo inserido der suporte a filtros de gravação, você deverá desabilitar esses filtros para poder instalar o cliente e reabilitá-los depois que o cliente for instalado e atribuído a um site.  
+<a name="BKMK_DeployClientEmbedded"></a>如果 Windows Embedded 设备不包括 System Center Configuration Manager 客户端，并且设备满足所需的依赖关系要求，则可以使用任何客户端安装方法。 如果嵌入式设备支持写入筛选器，则必须在安装客户端之前禁用这些筛选器，然后在安装客户端并将其分配给站点之后再次重新启用筛选器。  
 
- É importante lembrar que quando os filtros são desabilitados, os drivers de filtro não devem ser desabilitados. Normalmente, estes drivers são iniciados automaticamente quando o computador é iniciado. Desabilitar os drivers impedirá a instalação do cliente ou interferirá na orquestração de filtro de gravação que fará com que as operações de cliente falhem. Estes são os serviços associados a cada tipo de filtro de gravação que devem permanecer em execução:  
+ 请注意，当禁用筛选器时，不应禁用筛选器驱动程序。 启动计算机时，这些驱动程序通常都将自动启动。 禁用驱动程序将阻止客户端的安装，或者将干扰写入筛选器业务流程，从而导致客户端操作失败。 以下是与必须保持运行状态的每个写入筛选器类型相关联的服务：  
 
-|Tipo de filtro de gravação|Driver|Tipo|Descrição|  
+|写入筛选器类型|驱动程序|类型|描述|  
 |-----------------------|------------|----------|-----------------|  
-|EWF|EWF|Kernel|Implementa o redirecionamento de E/S de nível de setor nos volumes protegidos.|  
-|FBWF|FBWF|Sistema de arquivos|Implementa o redirecionamento de E/S de nível de arquivo nos volumes protegidos.|  
-|UWF|uwfreg|Kernel|Redirecionador de Registro UWF|  
-|UWF|uwfs|Sistema de arquivos|Redirecionador de arquivo UWF|  
-|UWF|uwfvol|Kernel|Gerenciador de volumes UWF|  
+|EWF|EWF|内核|在受保护的卷上实现扇区级别 I/O 重定向。|  
+|FBWF|FBWF|文件系统|在受保护的卷上实现文件级别 I/O 重定向。|  
+|UWF|uwfreg|内核|UWF 注册表重定向程序|  
+|UWF|uwfs|文件系统|UWF 文件重定向程序|  
+|UWF|uwfvol|内核|UWF 卷管理器|  
 
- Os filtros de gravação controlam como o sistema operacional mo dispositivo inserido é atualizado quando você faz alterações, como ao instalar um software. Quando filtros de gravação estão habilitados, em vez de fazer alterações diretamente no sistema operacional, essas alterações são redirecionadas para uma sobreposição temporária. Se as alterações forem gravadas somente na sobreposição, elas serão perdidas quando o dispositivo inserido for desligado. No entanto, se os filtros de gravação forem desabilitados temporariamente, as alterações poderão ser permanentes para que você não tenha de fazê-las novamente (ou reinstalar o software) sempre que o dispositivo inserido é reiniciado. Porém, a ação de desabilitar e reabilitar temporariamente os filtros de gravação requer uma ou mais reinicializações, de modo que você geralmente queira controlar quando isso acontece configurando janelas de manutenção para que as reinicializações ocorram fora do horário comercial.  
+ 写入筛选器控制在你进行更改时（如在安装软件时）如何更新嵌入式设备上的操作系统。 如果启用写入筛选器，则不会直接对操作系统进行更改，而是将这些更改重定向到临时覆盖区。 如果更改仅写入到覆盖区，则当嵌入式设备关闭时，更改将会丢失。 但是，如果临时禁用了写入筛选器，则可能会将更改设置为永久性更改，以便每次重启嵌入式设备时不必再进行更改（或重新安装软件）。 但是，临时禁用然后重新启用写入筛选器需要一次或多次重启，因此，你通常需要配置维护时段，使重启发生在工作时间之外，以控制其发生的时间。  
 
- É possível configurar opções para desabilitar e reabilitar automaticamente os filtros de gravação ao implantar software como aplicativos, sequências de tarefas, atualizações de software e o cliente do Endpoint Protection. A exceção é para as linhas de base de configuração com itens de configuração que usam a correção automática. Nesse cenário, a correção sempre ocorre na sobreposição para que ela esteja disponível somente até que o dispositivo seja reiniciado. A correção é aplicada novamente no próximo ciclo de avaliação, mas somente na sobreposição, que é apagada na reinicialização. Para forçar o Configuration Manager a confirmar as alterações de correção, é possível implantar a linha de base de configuração e outra implantação de software que dá suporte à confirmação da alteração assim que possível.  
+ 你可以将选项配置为在部署软件（如应用程序、任务序列、软件更新和 Endpoint Protection 客户端）时先自动禁用然后再重新启用写入筛选器。 具有使用自动修正的配置项目的配置基线是个例外。 在此情况下，始终在覆盖区进行修正，以便仅在重启设备之前可以使用它。 在下一个评估周期会再次应用修正，但只对覆盖区应用，重启时会清除覆盖区。 要强制 Configuration Manager 提交修正更改，你可以部署配置基线，然后部署支持尽快提交更改的另一个软件部署。  
 
- Se os filtros de gravação estiverem desabilitados, você poderá instalar o software em dispositivos Windows Embedded usando o Centro de Software. No entanto, se os filtros de gravação estiverem habilitados, ocorrerá falha na instalação e o Configuration Manager exibirá uma mensagem de erro informando que você não tem permissões suficientes para instalar o aplicativo.  
+ 如果禁用了写入筛选器，则可以使用软件中心在 Windows Embedded 设备上安装软件。 但是，如果启用了写入筛选器，则安装将失败，并且 Configuration Manager 会显示一条错误消息，表明你没有足够的权限安装应用程序。  
 
 > [!WARNING]  
->  Mesmo que você não selecione as opções do Configuration Manager para confirmar as alterações, elas poderão ser confirmadas se outra instalação de software ou alteração que confirme as alterações for feita. Nesse cenário, as alterações originais serão confirmadas além das novas alterações.  
+>  即使未选择 Configuration Manager 选项来提交更改，那么如果进行了提交更改的另一个软件安装或更改，则可能会提交更改。 在此情况下，将提交原始更改以及新更改。  
 
- Quando o Configuration Manager desabilita os filtros de gravação para tornar as alterações permanentes, somente os usuários com direitos administrativos locais podem fazer logon e usar o dispositivo inserido. Durante esse período, os usuários com direitos limitados são bloqueados e veem uma mensagem informando que o computador está indisponível pois está em manutenção. Isso ajuda a proteger o dispositivo enquanto ele está em um estado em que as alterações podem ser aplicadas permanentemente, e esse comportamento de bloqueio do modo de manutenção é outro motivo para configurar uma janela de manutenção por um período quando os usuários não fazem logon nesses dispositivos.  
+ 当 Configuration Manager 禁用写入筛选器以使更改为永久更改时，只有具有本地管理权限的用户才能登录和使用嵌入式设备。 在此期间，低权限用户会被锁在外面并看到一条消息，告知他们计算机由于正在维护而不可用。 这有助于保护处于可以永久应用更改的状态的设备，此维护模式锁定行为是针对用户无法登录这些设备的时间配置维护时段的另一个原因。  
 
- O Configuration Manager dá suporte ao gerenciamento dos seguintes tipos de filtros de gravação:  
+ Configuration Manager 支持管理下列类型的写入筛选器：  
 
--   FBWF (Filtro de Gravação Baseado em Arquivo) – Para mais informações, consulte [Filtro de Gravação Baseado em Arquivos](http://go.microsoft.com/fwlink/?LinkID=204717).  
+-   基于文件的写入筛选器 (FBWF) – 有关详细信息，请参阅[基于文件的写入筛选器](http://go.microsoft.com/fwlink/?LinkID=204717)。  
 
--   RAM de EWF (Filtro de Gravação Avançado) – Para mais informações, consulte [Filtro de Gravação Avançado](http://go.microsoft.com/fwlink/?LinkId=204718).  
+-   增强型写入筛选器 (EWF) RAM – 有关详细信息，请参阅[增强型写入筛选器](http://go.microsoft.com/fwlink/?LinkId=204718)。  
 
--   UWF (Filtro de Gravação Unificado) – Para mais informações, consulte [Filtro de Gravação Unificado](http://go.microsoft.com/fwlink/?LinkId=309236).  
+-   统一写入筛选器 (UWF) – 有关详细信息，请参阅[统一写入筛选器](http://go.microsoft.com/fwlink/?LinkId=309236)。  
 
- O Configuration Manager não dá suporte a operações do filtro de gravação quando o dispositivo Windows Embedded está no modo EWF RAM Reg.  
+ 当 Windows Embedded 设备处于 EWF RAM 注册模式时，Configuration Manager 不支持写入筛选器操作。  
 
 > [!IMPORTANT]  
->  Se tiver opção, use FBWF (filtros de gravação com base em arquivos) com o Configuration Manager para maior eficiência e escalabilidade mais alta.
+>  如果可以选择，请将基于文件的写入筛选器 (FBWF) 与 Configuration Manager 一起使用，以便提高效率和可伸缩性。
 >
-> **Somente para dispositivos que usam FBWF** ‑ defina as seguintes exceções para manter o estado do cliente e os dados do inventário entre as reinicializações do dispositivo:  
+> **对于仅使用 FBWF 的设备：**配置以下例外以在设备重启之间保留客户端状态和清单数据：  
 >   
 >  -   CCMINSTALLDIR\\*.sdf  
 > -   CCMINSTALLDIR\ServiceData  
 > -   HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\CCM\StateSystem  
 >   
->  Os dispositivos que executam o Windows Embedded 8.0 e posterior não dão suporte a exclusões que contêm caracteres curinga. Nesses dispositivos, você deve configurar individualmente as seguintes exclusões:  
+>  运行 Windows Embedded 8.0 和更高版本的设备不支持包含通配符的排除项。 在这些设备上，必须分别配置以下排除项：  
 >   
->  -   Todos os arquivos em CCMINSTALLDIR com a extensão .sdf normalmente:  
+>  -   CCMINSTALLDIR 中的所有文件都具有 .sdf 扩展名，通常为：  
 >   
 >     -   UserAffinityStore.sdf  
 >     -   InventoryStore.sdf  
@@ -82,32 +79,31 @@ ms.lasthandoff: 12/16/2016
 > -   CCMINSTALLDIR\ServiceData  
 > -   HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\CCM\StateSystem  
 >   
-> **Somente para dispositivos que usam FBWF e UWF**: quando os clientes em um grupo de trabalho usam certificados de autenticação para pontos de gerenciamento, você também deve excluir a chave privada para garantir que o cliente continue a se comunicar com o ponto de gerenciamento. Nesses dispositivos, configure as seguintes exceções:  
+> **对于仅使用 FBWF 和 UWF 的设备：**当工作组中的客户端使用证书向管理点进行身份验证时，还必须排除私钥以确保客户端继续与管理点通信。 在这些设备上配置以下例外：  
 >   
 >  -   c:\Windows\System32\Microsoft\Protect  
 > -   c:\ProgramData\Microsoft\Crypto  
 > -   HKEY_LOCAL_MACHINE\Software\Microsoft\SystemCertificates\SMS\Certificates  
 
- Para ver um exemplo da implantação e gerenciamento de dispositivos Windows Embedded habilitados para filtro de gravação no Configuration Manager, consulte [Cenário de exemplo para implantar e gerenciar os clientes do System Center Configuration Manager em dispositivos Windows Embedded](../../../../core/clients/deploy/example-scenario-for-deploying-and-managing-clients-on-windows-embedded-devices.md).  
+ 有关在 Configuration Manager 中部署和管理启用写入筛选器的 Windows Embedded 设备的示例场景，请参阅[在 Windows Embedded 设备上部署和管理 System Center Configuration Manager 客户端的示例场景](../../../../core/clients/deploy/example-scenario-for-deploying-and-managing-clients-on-windows-embedded-devices.md)。  
 
- Para obter mais informações sobre como compilar imagens para dispositivos Windows Embedded e configurar filtros de gravação, consulte a documentação do Windows Embedded ou entre em contato com o OEM.  
+ 有关如何生成 Windows Embedded 设备映像以及配置写入筛选器的详细信息，请参阅 Windows Embedded 文档或与你的 OEM 联系。  
 
 > [!NOTE]  
->  Quando você seleciona as plataformas aplicáveis para implantações de software e itens de configuração, elas exibem as famílias do Windows Embedded em vez de versões específicas. Use a lista a seguir para mapear a versão específica do Windows Embedded para as opções na caixa de listagem:  
+>  为软件部署和配置项目选择合适的平台时，这些内容会显示 Windows Embedded 系列，而不是特定版本。 请使用以下列表将特定版本的 Windows Embedded 映射到列表框中的选项：  
 >   
->  -   **sistemas operacionais inseridos baseados no Windows XP (32 bits)** inclui o seguinte:  
+>  -   “基于 Windows XP (32 位)的嵌入式操作系统” 包括以下各项：  
 >   
 >      -   Windows XP Embedded  
 >     -   Windows Embedded for Point of Service  
 >     -   Windows Embedded Standard 2009  
 >     -   Windows Embedded POSReady 2009  
-> -   **Sistemas operacionais inseridos baseados no Windows 7 (32 bits)** inclui o seguinte:  
+> -   “基于 Windows 7 (32 位)的嵌入式操作系统” 包括以下各项：  
 >   
->      -   Windows Embedded Standard 7 (32 bits)  
->     -   Windows Embedded POSReady 7 (32 bits)  
+>      -   Windows Embedded Standard 7（32 位）  
+>     -   Windows Embedded POSReady 7（32 位）  
 >     -   Windows ThinPC  
-> -   **Os sistemas operacionais inseridos baseados no Windows 7 (64 bits)** incluem o seguinte:  
+> -   “基于 Windows 7 (64 位) 的嵌入式操作系统” 包括以下各项：  
 >   
->      -   Windows Embedded Standard 7 (64 bits)  
->     -   Windows Embedded POSReady 7 (64 bits)
-
+>      -   Windows Embedded Standard 7（64 位）  
+>     -   Windows Embedded POSReady 7（64 位）

@@ -1,7 +1,6 @@
 ---
-
-title: "Manutenção das atualizações de software | Microsoft Docs"
-description: "Para manter as atualizações no Configuration Manager, você pode agendar a tarefa de limpeza do WSUS ou executá-la manualmente."
+title: "软件更新维护 | Microsoft Docs"
+description: "若要在 Configuration Manager 中维护更新，可以计划 WSUS 清理任务，也可以手动运行它。"
 keywords: 
 author: dougeby
 ms.author: dougeby
@@ -10,32 +9,24 @@ ms.date: 10/06/2016
 ms.topic: article
 ms.prod: configuration-manager
 ms.service: 
-ms.technology:
-- configmgr-sum
+ms.technology: configmgr-sum
 ms.assetid: 4b0e2e90-aac7-4d06-a707-512eee6e576c
-translationtype: Human Translation
-ms.sourcegitcommit: e6cf8c799b5be2f7dbb6fadadddf702ec974ae45
 ms.openlocfilehash: 1590c623f7bc2f42a8617f110de5321212732a03
-
-
-
+ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
+ms.translationtype: HT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 08/07/2017
 ---
-# <a name="software-updates-maintenance"></a>Manutenção de atualizações de software
+# <a name="software-updates-maintenance"></a>软件更新维护
 
-*Aplica-se a: System Center Configuration Manager (Branch Atual)*
+*适用范围：System Center Configuration Manager (Current Branch)*
 
-Você pode agendar e executar a tarefa de limpeza do WSUS do Configuration Manager ou executá-la manualmente nas propriedades do Componente de Ponto de Atualização de Software. Quando você seleciona para executar a tarefa de limpeza do WSUS, ela será executada na próxima sincronização de atualizações de software. As atualizações expiradas do software serão definidas com o status de recusadas no servidor WSUS, e o Windows Update Agent nos computadores não verificará mais essas atualizações de software. Por padrão, a tarefa de limpeza do WSUS é executada a cada 30 dias.  
+你可以从 Configuration Manager 控制台计划和运行 WSUS 清理任务，也可以从“软件更新点组件”属性中手动运行 WSUS 清理任务。 当你选择运行 WSUS 清理任务时，它将在下一次软件更新同步时运行。 过期的软件更新将设置为在 WSUS 服务器上被拒绝的状态，计算机上的 Windows 更新代理将不再扫描这些软件更新。 默认情况下，WSUS 清理任务作业每 30 天运行一次。  
 
-#### <a name="to-schedule-and-run-the-wsus-cleanup-job"></a>Para agendar e executar o trabalho de limpeza do WSUS  
+#### <a name="to-schedule-and-run-the-wsus-cleanup-job"></a>计划和运行 WSUS 清理作业  
 
-1.  No console do Configuration Manager, navegue até **Administração** > **Visão Geral** > **Configuração de Site** > **Sites**.  
+1.  在 Configuration Manager 控制台中，导航到“管理” > “概述” > “站点配置” > “站点”。  
 
-2.  Clique em **Configurar componentes do Site** no grupo **Configurações** e, em seguida, clique em **Ponto de atualização de Software** para abrir as propriedades do componente do Ponto de atualização de Software.  
+2.  单击“设置”  组中的  “配置站点组件”，然后单击“软件更新点”  以打开软件更新点组件属性。  
 
-3.  Clique na guia **Regras de substituição** , selecione **Executar o assistente de limpeza do WSUS**e, em seguida, clique em **OK**.
-
-
-
-<!--HONumber=Dec16_HO3-->
-
-
+3.  单击“取代规则”  选项卡，选择“运行 WSUS 清理向导” ，然后单击“确定” 。

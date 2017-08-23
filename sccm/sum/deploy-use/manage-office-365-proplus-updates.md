@@ -1,6 +1,6 @@
 ---
-title: "Gerenciar atualizações do Office 365 ProPlus | Microsoft Docs"
-description: "O Configuration Manager sincroniza a atualização de clientes do Office 365 do catálogo do WSUS para o servidor do site para disponibilizar as atualizações para implantar em clientes."
+title: "管理 Office 365 ProPlus 更新 | Microsoft Docs"
+description: "Configuration Manager 将 Office 365 客户端更新从 WSUS 目录同步到站点服务器，使更新可部署到客户端。"
 keywords: 
 author: dougeby
 ms.author: dougeby
@@ -9,172 +9,169 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: configuration-manager
 ms.service: 
-ms.technology:
-- configmgr-sum
+ms.technology: configmgr-sum
 ms.assetid: eac542eb-9aa1-4c63-b493-f80128e4e99b
-ms.translationtype: HT
-ms.sourcegitcommit: 5d696e3da187d47e0d41c02864d9b5267827e701
 ms.openlocfilehash: 902d7f7216ca7bb585afae587a6706e2332da9d3
-ms.contentlocale: pt-br
-ms.lasthandoff: 07/31/2017
-
+ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
+ms.translationtype: HT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 08/07/2017
 ---
+# <a name="manage-office-365-proplus-with-configuration-manager"></a>使用 Configuration Manager 管理 Office 365 ProPlus
 
-# <a name="manage-office-365-proplus-with-configuration-manager"></a>Gerenciar o Office 365 ProPlus com o Configuration Manager
+*适用范围：System Center Configuration Manager (Current Branch)*
 
-*Aplica-se a: System Center Configuration Manager (Branch Atual)*
+使用 Configuration Manager，可以通过下列方式管理 Office 365 专业增强版应用：
 
-O Configuration Manager permite gerenciar aplicativos do Office 365 ProPlus das seguintes maneiras:
+- [Office 365 客户端管理仪表板](#office-365-client-management-dashboard)：自 Configuration Manager 版本 1610 起，可以在 Office 365 客户端管理仪表板中查看 Office 365 客户端信息。    
 
-- [Painel de Gerenciamento de Clientes do Office 365](#office-365-client-management-dashboard): a partir do Configuration Manager versão 1610, você pode examinar as informações de clientes do Office 365 no painel de Gerenciamento de Clientes do Office 365.    
+- [部署 Office 365 应用](#deploy-office-365-apps)：自版本 1702 起，可以通过 Office 365 客户端管理仪表板启动 Office 365 安装程序，以简化首次 Office 365 应用安装。 该向导可让你配置 Office 365 安装设置、从 Office 内容交付网络 (CDN) 下载文件以及创建并部署脚本应用程序的内容。    
 
-- [Implantar aplicativos do Office 365](#deploy-office-365-apps): a partir da versão 1702, você pode iniciar o Instalador do Office 365 no painel de Gerenciamento de Clientes do Office 365 para facilitar a experiência inicial de instalação do aplicativo do Office 365. O assistente permite que você defina as configurações de instalação do Office 365, baixe arquivos das redes de distribuição de conteúdo (CDNs) do Office, e crie e implante um aplicativo de script com o conteúdo.    
+- [部署 Office 365 更新](#deploy-office-365-updates)：自 Configuration Manager 版本 1602 起，可以使用软件更新管理工作流管理 Office 365 客户端更新。 当 Microsoft 将新的 Office 365 客户端更新发布到 Office 内容交付网络 (CDN) 时，Microsoft 还会将更新包发布到 Windows Server 更新服务 (WSUS)。 将 Office 365 客户端更新从 WSUS 目录同步到站点服务器之后，更新可部署到客户端。    
 
-- [Implantar atualizações do Office 365](#deploy-office-365-updates): a partir do Configuration Manager versão 1602, você pode gerenciar atualizações de clientes do Office 365 usando o fluxo de trabalho do gerenciamento de atualizações de software. Quando a Microsoft publica uma nova atualização de cliente do Office 365 na Rede de Distribuição de Conteúdo do Office (CDN), a Microsoft também publica um pacote de atualização para o Windows Server Update Services (WSUS). Após o Configuration Manager sincronizar a atualização de clientes do Office 365 do catálogo do WSUS para o servidor do site, a atualização ficará disponível para implantar em clientes.    
+- [添加 Office 365 更新下载语言](#add-languages-for-office-365-update-downloads)：自 Configuration Manager 版本 1610 起，可以添加对 Configuration Manager 的支持，以下载 Office 365 支持的任意语言的更新，无论语言是否受 Configuration Manager 支持。  
 
-- [Adicionar idiomas para downloads de atualizações do Office 365](#add-languages-for-office-365-update-downloads): a partir do Configuration Manager versão 1610, você pode adicionar suporte do Configuration Manager para baixar atualizações de quaisquer idiomas compatíveis com o Office 365, independentemente de serem compatíveis com o Configuration Manager.  
-
-- [Alterar o canal de atualização](#change-the-update-channel-after-you-enable-office-365-clients-to-receive-updates-from-configuration-manager): use a política de grupo para distribuir uma alteração de valor da chave do registro para os clientes do Office 365 para alterar o canal de atualização.
+- [更改更新频道](#change-the-update-channel-after-you-enable-office-365-clients-to-receive-updates-from-configuration-manager)：可以使用组策略向 Office 365 客户端分发注册表项值更改，从而更改更新频道。
 
 
-## <a name="office-365-client-management-dashboard"></a>Painel de Gerenciamento de Clientes do Office 365  
-O painel de Gerenciamento de Clientes do Office 365 fornece gráficos com as seguintes informações:
+## <a name="office-365-client-management-dashboard"></a>Office 365 客户端管理仪表板  
+Office 365 客户端管理仪表板提供以下信息的相关图表：
 
-- Número de clientes do Office 365
-- Versões do cliente do Office 365
-- Idiomas do cliente do Office 365
-- Canais do cliente do Office 365     
-  Para mais informações, confira [Visão geral dos canais de atualização do Office 365 ProPlus](https://technet.microsoft.com/library/mt455210.aspx).
+- Office 365 客户端数
+- Office 365 客户端版本
+- Office 365 客户端语言
+- Office 365 客户端通道     
+  有关详细信息，请参阅 [Office 365 专业增强版的更新频道概述](https://technet.microsoft.com/library/mt455210.aspx)。
 
-Para exibir o painel de Gerenciamento de Clientes do Office 365, no console do Configuration Manager, vá até **Biblioteca de Software** > **Visão Geral** > **Gerenciamento de Clientes do Office 365**. Na parte superior do painel, use a configuração suspensa **Coleção** para filtrar os dados do painel por membros de uma coleção específica.
+若要在 Configuration Manager 控制台中查看 Office 365 客户端管理仪表板，请依次转到“软件库” > “概述” > “Office 365 客户端管理”。 在仪表板顶部，使用“集合”下拉列表设置按特定集合的成员筛选仪表板数据。
 
-### <a name="display-data-in-the-office-365-client-management-dashboard"></a>Dados de exibição no painel de Gerenciamento de Clientes do Office 365
-Os dados que são exibidos no painel de Gerenciamento de Clientes do Office 365 vêm de inventário de hardware. Habilite o inventário de hardware e selecione a classe de inventário de hardware **Configurações do Office 365 ProPlus** antes de os dados serem exibidos no painel de controle.
-#### <a name="to-display-data-in-the-office-365-client-management-dashboard"></a>Como exibir dados no painel de Gerenciamento de Clientes do Office 365
-1. Habilite o inventário de hardware se ele ainda não estiver habilitado. Para mais detalhes, consulte [Configurar inventário de hardware](\sccm\core\clients\manage\configure-hardware-inventory).
-2. No console do Configuration Manager, acesse **Administração** > **Configurações do Cliente** > **Configurações do Cliente Padrão**.  
-3. Na guia **Início** , no grupo **Propriedades** , clique em **Propriedades**.  
-4. No **configurações do cliente padrão** caixa de diálogo, clique em **inventário de Hardware**.  
-5. No **configurações do dispositivo** clique em **Definir Classes**.  
-6. Na caixa de diálogo **Classes de Inventário de Hardware**, selecione **Configurações do Office 365 ProPlus**.  
-7.  Clique em **OK** para salvar suas alterações e fechar o **Classes de inventário de Hardware** caixa de diálogo.  
-O painel de Gerenciamento de Clientes do Office 365 começará a exibir dados à medida que o inventário de hardware for relatado.
+### <a name="display-data-in-the-office-365-client-management-dashboard"></a>在 Office 365 客户端管理仪表板中显示数据
+Office 365 客户端管理仪表板中显示的数据来自硬件清单。 必须先启用硬件清单，并选择“Office 365 专业增强版配置”硬件清单类，然后仪表板中才能显示数据。
+#### <a name="to-display-data-in-the-office-365-client-management-dashboard"></a>若要在 Office 365 客户端管理仪表板中显示数据
+1. 启用硬件清单（如果尚未启用）。 有关详细信息，请参阅[配置硬件清单](\sccm\core\clients\manage\configure-hardware-inventory)。
+2. 在 Configuration Manager 控制台中，导航到“管理” > “客户端设置” > “默认客户端设置”。  
+3. 在“主页”选项卡上的“属性”组中，单击“属性”。  
+4. 在**默认客户端设置**对话框中，单击**硬件清单**。  
+5. 在**设备设置**列表中，单击**设置类**。  
+6. 在“硬件清单类”对话框中，选择“Office 365 ProPlus 配置”。  
+7.  单击**确定**以保存所做的更改并关闭**硬件清单类**对话框。  
+Office 365 客户端管理仪表板在硬件清单得到报告的同时开始显示数据。
 
-## <a name="deploy-office-365-apps"></a>Implantar aplicativos do Office 365  
-A partir da versão 1702, inicie o Instalador do Office 365 do painel de Gerenciamento de Clientes do Office 365 para a instalação inicial do Aplicativo do Office 365. O assistente permite que você defina as configurações de instalação do Office 365, baixe arquivos das redes de distribuição de conteúdo (CDNs) do Office, e crie e implante um aplicativo de script para os arquivos. Até que o Office 365 esteja instalado nos clientes, as atualizações do Office 365 não se aplicarão.
+## <a name="deploy-office-365-apps"></a>部署 Office 365 应用  
+自版本 1702 起，可以通过 Office 365 客户端管理仪表板启动 Office 365 安装程序，以执行首次 Office 365 应用安装。 该向导可让你配置 Office 365 安装设置、从 Office 内容交付网络 (CDN) 下载文件以及创建并部署文件的脚本应用程序。 只有在客户端上安装 Office 365 后，才能使用 Office 365 更新。
 
-Para versões anteriores do Configuration Manager, execute as seguintes etapas para instalar os aplicativos do Office 365 pela primeira vez em clientes:
-- Baixar a Ferramenta de Implantação do Office 365 (ODT)
-- Baixe os arquivos de origem de instalação do Office 365, incluindo todos os pacotes de idiomas de que você precisa.
-- Gere o Configuration.xml que especifica a versão e o canal corretos do Office.
-- Crie e implante um pacote herdado ou um aplicativo de script para os clientes para instalar os aplicativos do Office 365.
+对于旧版 Configuration Manager，必须按照以下步骤操作，才能在客户端上首次安装 Office 365 应用：
+- 下载 Office 365 部署工具 (ODT)
+- 下载 Office 365 安装源文件，包括需要的所有语言包。
+- 生成 Configuration.xml，以指定正确的 Office 版本和频道。
+- 创建和部署旧包或脚本应用，以便客户端可以安装 Office 365 应用。
 
-### <a name="requirements"></a>Requisitos
-- O computador que executa o Instalador do Office 365 deve ter acesso à Internet.  
-- O usuário que executa o Instalador do Office 365 deve ter acesso de **leitura** e **gravação** ao compartilhamento de local de conteúdo que é fornecido no assistente.
-- Se você receber um erro 404 download, copie os seguintes arquivos para a pasta %temp% do usuário:
+### <a name="requirements"></a>要求
+- 运行 Office 365 安装程序的计算机必须具有 Internet 访问权限。  
+- 运行 Office 365 安装程序的用户必须对向导中提供的文件位置共享具有**读取**和**写入**权限。
+- 如果收到 404 下载错误，将以下文件复制到用户的 %temp%文件夹中：
   - [releasehistory.xml](http://officecdn.microsoft.com/pr/wsus/releasehistory.cab)
   - [o365client_32bit.xml](http://officecdn.microsoft.com/pr/wsus/ofl.cab)  
 
 
-### <a name="to-deploy-office-365-apps-to-clients-from-the-office-365-client-management-dashboard"></a>Para implantar aplicativos do Office 365 a clientes a partir do painel de Gerenciamento de Clientes do Office 365
-1. No console do Configuration Manager, navegue até **Biblioteca de Software** > **Visão Geral** > **Gerenciamento de Cliente do Office 365**.
-2. Clique em **Office 365 Installer (Instalador do Office 365)** no painel superior direito. O Assistente de Instalação de Cliente do Office 365 é aberto.
-3. Na página **Configurações de Aplicativo**, forneça um nome e uma descrição para o aplicativo, insira o local de download para os arquivos e clique em **Avançar**. O local deve ser especificado como &#92;&#92;*servidor*&#92;*compartilhar*.
-4. Na página **Import Client Settings (Importar Configurações do Cliente)**, escolha se deseja importar as configurações do cliente do Office 365 de um arquivo de configuração XML existente ou especificar as configurações manualmente e clique em **Avançar**.  
+### <a name="to-deploy-office-365-apps-to-clients-from-the-office-365-client-management-dashboard"></a>从 Office 365 客户端管理仪表板将 Office 365 应用程序部署到客户端
+1. 在 Configuration Manager 控制台中，导航到“软件库” > “概述” > “Office 365 客户端管理”。
+2. 单击右上方窗格中的“Office 365 安装程序”。 将打开 Office 365 客户端安装向导。
+3. 在“应用程序设置”页上，提供应用的名称和说明，输入文件的下载位置，然后单击“下一步”。 必须将位置指定为 &#92;&#92;server&#92;share。
+4. 在“导入客户端设置”页上，选择是从现有的 XML 配置文件导入 Office 365 客户端设置还是手动指定设置，然后单击“下一步”。  
 
-    Quando você tiver um arquivo de configuração existente, insira o local do arquivo e vá para a etapa 7. Observe que o local deve ser especificado no formato &#92;&#92;*servidor*&#92;*compartilhamento*&#92;*nome do arquivo*.XML.
+    如果具有现有的配置文件，请输入文件的位置并跳到步骤 7。 请注意，必须采用 &#92;&#92;*server*&#92;*share*&#92;*filename*.XML 形式指定位置。
     > [!IMPORTANT]    
-    > O arquivo de configuração XML deve conter apenas [idiomas com suporte pelo cliente do Office 365 ProPlus](https://technet.microsoft.com/library/cc179219&#40;v=office.16&#41;.aspx).
+    > XML 配置文件必须仅包含 [Office 365 ProPlus 客户端支持的语言](https://technet.microsoft.com/library/cc179219&#40;v=office.16&#41;.aspx)。
 
-5. Na página **Client Products (Produtos do Cliente)**, selecione o pacote do Office 365 usado, selecione os aplicativos que deseja incluir, selecione quaisquer produtos Office adicionais que devem ser incluídos e clique em **Avançar**.
-6. Na página **Configurações do Cliente**, escolha as configurações a serem incluídas e clique em **Avançar**.
-7. Na página **Implantação**, escolha se deseja implantar o aplicativo e clique em **Avançar**.  
-Se você optar por não implantar o pacote no assistente, vá para a etapa 9.
-8. Configure o restante das páginas do assistente como você faria para uma implantação de aplicativo típica. Para obter detalhes, consulte [Create and deploy an application (Criar e implantar um aplicativo)](/sccm/apps/get-started/create-and-deploy-an-application).
-9. Conclua o assistente.
-10. Você pode implantar ou editar o aplicativo em **Biblioteca de Softwares** > **Visão Geral** > **Gerenciamento de Aplicativos** > **Aplicativos**.    
+5. 在“客户端产品”页上，依次选择使用的 Office 365 套件、想要包括的应用程序、应包括的任何其他 Office 产品，然后单击“下一步”。
+6. 在“客户端设置”页上，选择要包括的设置，然后单击“下一步”。
+7. 在“部署”页上，选择是否部署该应用程序，然后单击“下一步”。  
+如果选择不部署向导中的包，请跳到步骤 9。
+8. 像配置典型应用程序那样，配置该向导页的其余部分。 有关详细信息，请参阅[创建和部署应用程序](/sccm/apps/get-started/create-and-deploy-an-application)。
+9. 完成向导。
+10. 可以依次转到“软件库” > “概述” > “应用管理” > “应用”，部署或编辑应用。    
 
-Depois de criar e implantar os aplicativos do Office 365 usando o Instalador do Office 365, o Configuration Manager não gerenciará as atualizações do Office por padrão. Para permitir que os clientes do Office 365 recebam atualizações do Configuration Manager, veja [Implantar atualizações do Office 365 com o Configuration Manager](#deploy-office-365-updates-with-configuration-manager).
+使用 Office 365 安装程序创建和部署 Office 365 应用程序后，默认情况下，Configuration Manager 不会管理 Office 更新。 若要允许 Office 365 客户端从 Configuration Manager 接收更新，请参阅[使用 Configuration Manager 部署 Office 365 更新](#deploy-office-365-updates-with-configuration-manager)。
 
 >[!NOTE]
->Depois de implantar aplicativos do Office 365, você pode criar regras de implantação automática para manter os aplicativos. Para criar uma regra de implantação automática para aplicativos do Office 365, clique em **Criar um ADR** no painel de Gerenciamento de Clientes do Office 365 e selecione **Cliente do Office 365** quando escolher o produto. Para mais informações, confira [Automatically deploy software updates](/sccm/sum/deploy-use/automatically-deploy-software-updates) (Implantar atualizações de software automaticamente).
+>部署 Office 365 应用后，可以创建自动部署规则以维护该应用。 若要创建 Office 365 应用的自动部署规则，请单击 Office 365 客户端管理仪表板中的“创建 ADR”，然后在选择选择该产品时选择“Office 365 客户端”。 有关详细信息，请参阅[自动部署软件更新](/sccm/sum/deploy-use/automatically-deploy-software-updates)。
 
 
-## <a name="deploy-office-365-updates"></a>Implantar atualizações do Office 365
-Use as etapas a seguir para implantar atualizações do Office 365 com o Configuration Manager:
+## <a name="deploy-office-365-updates"></a>部署 Office 365 更新
+使用以下步骤通过 Configuration Manager 部署 Office 365 更新：
 
-1.  [Verifique os requisitos](https://technet.microsoft.com/library/mt628083.aspx) para usar o Configuration Manager para gerenciar atualizações de clientes do Office 365 na seção **Requisitos para usar o Configuration Manager para gerenciar atualizações de clientes do Office 365** do tópico.  
+1.  在本主题的**使用 Configuration Manager 管理 Office 365 客户端更新的要求**部分，验证使用 Configuration Manager 管理 Office 365 客户端更新的[要求](https://technet.microsoft.com/library/mt628083.aspx)。  
 
-2.  [Configure os pontos de atualização de software](../get-started/configure-classifications-and-products.md) para sincronizar as atualizações de clientes do Office 365. Defina as **atualizações** para a classificação e selecione o **cliente do Office 365**. Sincronize as atualizações de software depois de configurar os pontos de atualização de software para usar a classificação **Atualizações**.
-3.  Permita que os clientes do Office 365 recebam atualizações do Configuration Manager. É possível fazer isso usando configurações de cliente do Configuration Manager ou a política de grupo. Use um dos seguintes métodos para habilitar o cliente:   
+2.  [配置软件更新点](../get-started/configure-classifications-and-products.md)来同步 Office 365 客户端更新。 针对分类设置**更新**，并为产品选择 **Office 365 客户端**。 将软件更新点配置为使用“更新”分类后，同步软件更新。
+3.  使 Office 365 客户端可以从 Configuration Manager 接收更新。 为此，可使用 Configuration Manager 客户端设置或组策略。 使用下列方法之一启用客户端：   
 
-    **Método 1**: a partir do Configuration Manager versão 1606, é possível usar a configuração do cliente do Configuration Manager para gerenciar o agente cliente do Office 365. Depois de definir essa configuração e implantar as atualizações do Office 365, o agente cliente do Configuration Manager se comunica com o agente cliente do Office 365 para baixar atualizações do Office 365 de um ponto de distribuição e instalá-las. O Configuration Manager faz um inventário das configurações de cliente do Office 365 ProPlus.    
+    **方法 1**：自 Configuration Manager 版本 1606 起，可使用 Configuration Manager 客户端设置来管理 Office 365 客户端代理。 配置此设置和部署 Office 365 更新后，Configuration Manager 客户端代理将与 Office 365 客户端代理通信，从分发点下载 Office 365 更新并进行安装。 Configuration Manager 盘点了 Office 365 ProPlus 客户端设置的步骤。    
 
-      1.  No console do Configuration Manager, escolha **Administração** > **Visão Geral** > **Configurações do Cliente**.  
+      1.  在 Configuration Manager 控制台中，单击“管理” > “概述” > “客户端设置”。  
 
-      2.  Abra as configurações do dispositivo apropriado para habilitar o agente cliente. Para obter mais informações sobre configurações do cliente padrão e personalizadas, consulte [Como definir as configurações do cliente no System Center Configuration Manager](../../core/clients/deploy/configure-client-settings.md).  
+      2.  打开相应的设备设置以启用客户端代理。 有关默认客户端设置和自定义客户端设置的详细信息，请参阅[如何在 System Center Configuration Manager 中配置客户端设置](../../core/clients/deploy/configure-client-settings.md)。  
 
-      3.  Clique em **Atualizações de Software** e selecione **Sim** para a configuração **Habilitar o gerenciamento do Agente Cliente do Office 365**.  
+      3.  单击“软件更新”，并针对“启用 Office 365 客户端代理的管理”设置选择“是”。  
 
-    **Método 2**: [Permitir que os clientes do Office 365 recebam atualizações](https://technet.microsoft.com/library/mt628083.aspx#BKMK_EnableClient) do Configuration Manager usando a Ferramenta de Implantação do Office ou a Política de Grupo.  
+    **方法 2**：使用 Office 部署工具或组策略[将 Office 365 客户端启用为从 Configuration Manager 接收更新](https://technet.microsoft.com/library/mt628083.aspx#BKMK_EnableClient)。  
 
-4. [Implante as atualizações do Office 365](deploy-software-updates.md) nos clientes.   
+4. [将 Office 365 更新部署](deploy-software-updates.md)到客户端。   
 
 > [!Important]
-> Você deve baixar e implantar as atualizações nos mesmos idiomas configurados nos clientes do Office 365. Por exemplo, digamos que você tenha um cliente do Office 365 configurado com os idiomas en-us e de-de. No servidor do site, você baixa e implanta apenas conteúdo de en-us para uma atualização correspondente do Office 365. Quando o usuário inicia a instalação desta atualização do Centro de Software, a atualização travará durante o download do conteúdo.   
+> 必须下载并部署 Office 365 客户端上配置的语言的更新。 例如，假设 Office 365 客户端上配置的语言为 en-us 和 de-de。 在站点服务器上，对适用的 Office 365 更新只下载并部署 en-us 内容。 当用户通过软件中心启动安装以获取此更新时，此更新将在下载内容时挂起。   
 
-## <a name="restart-behavior-and-client-notifications-for-office-365-updates"></a>Comportamento de reinicialização e notificações do cliente para atualizações do Office 365
-Quando você implanta uma atualização em um cliente do Office 365, o comportamento de reinicialização e as notificações de cliente são diferentes dependendo da sua versão do Configuration Manager. A tabela a seguir fornece informações sobre a experiência do usuário final quando o cliente recebe uma atualização do Office 365:
+## <a name="restart-behavior-and-client-notifications-for-office-365-updates"></a>Office 365 更新的重启行为和客户端通知
+将更新部署到 Office 365 客户端时，重启行为和客户端通知会存在差异，具体取决于所拥有的 Configuration Manager 版本。 下表提供了有关客户端收到 Office 365 更新时的最终用户体验的信息：
 
-|Versão do Configuration Manager |Experiência do usuário final|  
+|Configuration Manager 版本 |结束用户体验|  
 |----------------|---------------------|
-|Antes do 1610|Um sinalizador de reinicialização é definido e a atualização é instalada após a reinicialização do computador.|
-|1610|Aplicativos do Office 365 são desligados sem aviso antes da instalação da atualização|
-|1610 com a atualização <br/>1702|Um sinalizador de reinicialização é definido e a atualização é instalada após a reinicialização do computador.|
-|1706|O cliente recebe notificações pop-up e no aplicativo, bem como uma caixa de diálogo de contagem regressiva, antes da instalação da atualização.|
+|1610 之前|设置重启标志，并在计算机重启后安装更新。|
+|1610|安装更新前，关闭 Office 365 应用且不发出警告|
+|包含更新的 1610 <br/>1702|设置重启标志，并在计算机重启后安装更新。|
+|1706|安装更新前，客户端收到弹出消息、应用内通知及倒计时对话框。|
 
 
-## <a name="add-languages-for-office-365-update-downloads"></a>Adicionar idiomas a downloads de atualização do Office 365
-A partir do Configuration Manager versão 1610, você pode adicionar suporte do Configuration Manager para baixar atualizações de quaisquer idiomas compatíveis com o Office 365, independentemente de serem compatíveis com o Configuration Manager.    
+## <a name="add-languages-for-office-365-update-downloads"></a>添加 Office 365 更新下载语言
+自 Configuration Manager 版本 1610 起，可以添加对 Configuration Manager 的支持，以下载 Office 365 支持的任意语言的更新，无论语言是否受 Configuration Manager 支持。    
 
 > [!IMPORTANT]  
-> A configuração de idiomas de atualização adicionais do Office 365 é aplicada a todo o site. Depois de adicionar os idiomas usando o procedimento a seguir, todas as atualizações do Office 365 serão baixadas nesses idiomas, bem como os idiomas que você selecionar na página **Seleção de idioma** nos assistentes Baixar atualizações de software ou Implantar atualizações de software.
+> 配置其他 Office 365 更新语言是网站范围的设置。 通过执行以下过程添加语言后，将下载这些语言的所有 Office 365 更新，以及在“下载软件更新”或“部署软件更新”向导中的“语言选择”页上选择的语言的所有 Office 365 更新。
 
-### <a name="to-add-support-to-download-updates-for-additional-languages"></a>Para adicionar suporte para baixar atualizações para outros idiomas
-Use o procedimento a seguir no ponto de atualização de software do site de administração central ou no site primário autônomo.
-1. Em um prompt de comando, digite *wbemtest* como administrador para abrir o Testador de Instrumentação de Gerenciamento do Windows.
-2. Clique em **Conectar**e, em seguida, digite *root\sms\site_&lt;siteCode&gt;*.
-3. Clique em **Consulta** e, em seguida, execute a seguinte consulta: *select &#42; from SMS_SCI_Component where componentname ="SMS_WSUS_CONFIGURATION_MANAGER"*  
-   ![Consulta WMI](..\media\1-wmiquery.png)
-4. No painel de resultados, clique duas vezes no objeto com o código de site para o site de administração central ou o site primário autônomo.
-5. Selecione a propriedade **Acessórios**, clique em **Editar propriedade** e, em seguida, clique em **Exibir incorporado**.
-![Editor de propriedades](..\media\2-propeditor.png)
-6. Começando no primeiro resultado de consulta, abra cada objeto até encontrar aquele com **AdditionalUpdateLanguagesForO365** na propriedade **PropertyName**.
-7. Selecione **Value2** e clique em **Editar propriedade**.  
-![Editar a propriedade Value2](..\media\3-queryresult.png)
-8. Adicione mais idiomas à propriedade **Value2** e clique em **Salvar propriedade**.  
-Por exemplo, pt-pt (para português - Portugal), af-za (para africâner - África do Sul), nn-no (para Norueguês (Nynorsk) - Noruega), etc.  
-![Adicionar idiomas no Editor de propriedades](..\media\4-props.png)  
-9. Clique em **Fechar**, em **Fechar**, em **Salvar propriedade**, em **Salvar objeto** (se você clicar em **Fechar** aqui, os valores serão descartados), em **Fechar** e em **Sair** para sair do Testador de Instrumentação de Gerenciamento do Windows.
-10. No console do Configuration Manager, vá para **Biblioteca de software** > **Visão geral** > **Gerenciamento de Clientes do Office 365** > **Atualizações do Office 365**.
-11. Agora, ao baixar as atualizações do Office 365, elas serão baixadas no idioma selecionado no assistente e configurou neste procedimento. Para verificar se as atualizações foram baixadas no idioma correto, vá para a origem do pacote para a atualização e procure por arquivos com o código de idioma no nome do arquivo.  
-![Nomes de arquivos com idiomas adicionais](..\media\5-verification.png)
+### <a name="to-add-support-to-download-updates-for-additional-languages"></a>添加支持以下载其他语言的更新
+对管理中心站点或独立主站点上的软件更新点执行以下过程。
+1. 从命令提示符处键入 wbemtest，以管理用户身份打开 Windows Management Instrumentation 测试器。
+2. 单击“连接”，然后键入 root\sms\site_&lt;siteCode&gt;。
+3. 单击“查询”，然后运行下列查询：select &#42; from SMS_SCI_Component where componentname ="SMS_WSUS_CONFIGURATION_MANAGER"  
+   ![WMI 查询](..\media\1-wmiquery.png)
+4. 在结果窗格中，双击具有管理中心站点或独立主站点的站点代码的对象。
+5. 选择“属性”属性，单击“编辑属性”，然后单击“查看嵌入项”。
+![属性编辑器](..\media\2-propeditor.png)
+6. 从第一个查询结果开始，打开每个对象，直到找到 **PropertyName** 属性为 **AdditionalUpdateLanguagesForO365** 的对象。
+7. 选择“Value2”，然后单击“编辑属性”。  
+![编辑 Value2 属性](..\media\3-queryresult.png)
+8. 向“Value2”属性添加其他语言，然后单击“保存属性”。  
+例如，pt-pt（葡萄牙语 - 葡萄牙）、af-za（南非荷兰语 - 南非），以及 nn-no（挪威尼诺斯克文 - 挪威）等等。  
+![在属性编辑器中添加语言](..\media\4-props.png)  
+9. 依次单击“关闭”、“关闭”、“保存属性”、“保存对象”（如果此时单击“关闭”，将放弃值）和“关闭”，再单击“退出”，退出 Windows Management Intstrumentation 测试器。
+10. 在 Configuration Manager 控制台中，转到“软件库” > “概述” > “Office 365 客户端管理” > “Office 365 更新”。
+11. 现在，如果下载 Office 365 更新，将下载在向导中选择的语言的更新，并在此过程中配置更新。 若要验证是否下载了正确语言的更新，请转到更新的包源，再查找文件名中包含语言代码的文件。  
+![使用其他语言的文件名](..\media\5-verification.png)
 
 
-## <a name="change-the-update-channel-after-you-enable-office-365-clients-to-receive-updates-from-configuration-manager"></a>Alterar o canal de atualização após habilitar os clientes do Office 365 para receber atualizações do Configuration Manager
-Para alterar o canal de atualização após habilitar os clientes do Office 365 para receber atualizações do Configuration Manager, use a política de grupo para distribuir uma alteração de valor da chave do registro para os clientes do Office 365. Altere a chave do registro **HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Office\ClickToRun\Configuration\CDNBaseUrl** para usar um dos seguintes valores:
+## <a name="change-the-update-channel-after-you-enable-office-365-clients-to-receive-updates-from-configuration-manager"></a>在使 Office 365 客户端可从 Configuration Manager 接收更新后更改更新频道
+若要在将 Office 365 客户端启用为从 Configuration Manager 接收更新后更改更新频道，请使用组策略向 Office 365 客户端分发注册表项值更改。 更改 **HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Office\ClickToRun\Configuration\CDNBaseUrl** 注册表项以使用以下值之一：
 
-- Canal atual:  
+- 当前频道：  
   **CDNBaseUrl** = http&#58;//officecdn.microsoft.com/pr/492350f6-3a01-4f97-b9c0-c7c6ddf67d60
 
-- Canal adiado:  
+- 延期频道：  
   **CDNBaseUrl** = http&#58;//officecdn.microsoft.com/pr/7ffbc6bf-bc32-4f92-8982-f9dd17fd3114
 
-- Primeira versão do canal atual:  
+- 当前频道的首次发布：  
   **CDNBaseUrl** = http&#58;//officecdn.microsoft.com/pr/64256afe-f5d9-4f86-8936-8840a6a4f5be
 
-- Primeira versão do canal adiado:  
+- 延期频道的首次发布：  
   **CDNBaseUrl** = http&#58;//officecdn.microsoft.com/pr/b8f9b850-328d-4355-9145-c59439a0c4cf
 
 
@@ -191,4 +188,3 @@ You can create an application just as you would with any other application in Co
 
 <!--- ## Next steps
 Use the Office 365 Client Management dashboard in Configuration Manager to review Office 365 client information and deploy Office 365 apps. For details, see [Manage Office 365 apps](manage-office-365-apps.md). --->
-

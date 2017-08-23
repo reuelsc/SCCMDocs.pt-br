@@ -1,105 +1,102 @@
 ---
-title: "Variáveis internas de sequência de tarefas | Microsoft Docs"
-description: "As variáveis internas da sequência de tarefas fornecem informações sobre o ambiente no qual a sequência de tarefas é executada e estão disponíveis durante toda a sequência de tarefas."
+title: "任务序列内置变量 | Microsoft Docs"
+description: "任务序列内置变量提供有关任务序列运行环境的信息，并且这些变量在整个任务序列期间均适用。"
 ms.custom: na
 ms.date: 03/26/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
-ms.technology:
-- configmgr-osd
+ms.technology: configmgr-osd
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 02bc6bd4-ca53-4e22-8b80-d8ee5fe72567
-caps.latest.revision: 15
-caps.handback.revision: 0
+caps.latest.revision: "15"
+caps.handback.revision: "0"
 author: Dougeby
 ms.author: dougeby
 manager: angrobe
-ms.translationtype: HT
-ms.sourcegitcommit: b7461f89f483314bd07248bbc9d5dde85ca6b6c2
 ms.openlocfilehash: 32b24b3637dfafe401ea1d9f51b3769aa749f544
-ms.contentlocale: pt-br
-ms.lasthandoff: 08/03/2017
-
+ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
+ms.translationtype: HT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 08/07/2017
 ---
-# <a name="task-sequence-built-in-variables-in-system-center-configuration-manager"></a>Variáveis internas de sequência de tarefas no System Center Configuration Manager
+# <a name="task-sequence-built-in-variables-in-system-center-configuration-manager"></a>ystem Center Configuration Manager 中的任务序列内置变量
 
-*Aplica-se a: System Center Configuration Manager (Branch Atual)*
+*适用范围：System Center Configuration Manager (Current Branch)*
 
 
- As variáveis internas da sequência de tarefas são fornecidas pelo System Center Configuration Manager. Variáveis internas fornecem informações sobre o ambiente em que a sequência de tarefas está executando e seus valores estão disponíveis em toda a sequência de tarefas. Normalmente, as variáveis internas são inicializadas antes de as etapas serem executadas na sequência de tarefas. Por exemplo, a variável interna **_SMSTSLogPath** é uma variável de ambiente que especifica o caminho que os componentes do Configuration Manager usam para gravar arquivos de log enquanto a sequência de tarefas é executada; qualquer etapa de sequência de tarefas pode acessar essa variável de ambiente. No entanto, algumas variáveis, como &#95;SMSTSCurrentActionName, são avaliadas antes de cada etapa. Os valores das variáveis internas são geralmente somente leitura. Os valores são lidos apenas para variáveis internas com um nome que começa com um sublinhado.  
+ System Center Configuration Manager 提供的任务序列内置变量。 内置变量提供有关任务序列的运行环境的信息，并且它们的值可在整个任务序列可用。 通常，在任务序列中运行步骤前初始化内置变量。 例如，内置变量 **_SMSTSLogPath** 是一个环境变量，指定任务序列运行时，Configuration Manager 组件用于写入日志文件的路径；任何任务序列步骤均可以访问此环境变量。 但是，有些变量（如 &#95;SMSTSCurrentActionName）在执行每个步骤前都要进行评估。 内置变量的值通常是只读的。 对于名称以下划线开头的内置变量，值是只读的。  
 
-## <a name="task-sequence-built-in-variable-list"></a>Lista de variáveis internas de sequência tarefa  
- A lista a seguir descreve as variáveis internas disponíveis no Configuration Manager:  
+## <a name="task-sequence-built-in-variable-list"></a>任务序列内置变量列表  
+ 下面的列表描述了 Configuration Manager 中可用的内置变量：  
 
-|Nome da variável interna|Descrição|  
+|内置变量名称|描述|  
 |-----------------------------|-----------------|  
-|_OSDDetectedWinDir|A partir do Configuration Manager versão 1602, a sequência de tarefas verifica o disco rígido do computador em busca de uma instalação de sistema operacional anterior quando o Windows PE é iniciado. O local da pasta do Windows é armazenado nessa variável. Você pode configurar sua sequência de tarefas para recuperar esse valor do ambiente e usá-lo a fim de especificar o mesmo local da pasta do Windows a ser usado para a nova instalação do sistema operacional.|  
-|_OSDDetectedWinDrive|A partir do Configuration Manager versão 1602, a sequência de tarefas verifica o disco rígido do computador em busca de uma instalação de sistema operacional anterior quando o Windows PE é iniciado.  O local do disco rígido onde o sistema operacional é instalado é armazenado nessa variável. Você pode configurar sua sequência de tarefas para recuperar esse valor do ambiente e usá-lo a fim de especificar o mesmo local de disco rígido a ser usado para o novo sistema operacional.|  
-|_SMSTSAdvertID|Armazena a ID exclusiva da atual implantação de sequência de tarefas em execução Ele usa o mesmo formato que uma ID de implantação de distribuição de software do Configuration Manager. Se a sequência de tarefas estiver sendo executada por meio de uma mídia autônoma, esta variável não será definida.<br /><br /> Exemplo:<br /><br /> **ABC20001**|  
-|_TSAppInstallStatus|a sequência de tarefa define a variável _TSAppInstallStatus de acordo com o status de instalação para o aplicativo durante a etapa da sequência de tarefa Instalar Aplicativo. A sequência de tarefas define a variável com um dos seguintes valores:<br /><br /> 1.  **Indefinido**: definido quando a etapa da sequência de tarefas Instalar Aplicativo não foi executada.<br />2.  **Erro**: definido quando, pelo menos, um aplicativo falhou devido a um erro durante a etapa da sequência de tarefas Instalar Aplicativo.<br />3.  **Aviso**: definido quando não ocorrem erros durante a etapa da sequência de tarefas Instalar Aplicativo, mas um ou mais aplicativos, ou uma dependência necessária, não foram instalados pois um requisito não foi atingido.<br />4.  **Êxito**: definido quando não houver nenhum erro ou aviso detectado durante a etapa da sequência de tarefas Instalar Aplicativo.|  
-|_SMSTSBootImageID|Armazenará a ID do pacote de imagem de inicialização do Configuration Manager se um pacote de imagem de inicialização estiver associado à sequência de tarefas atual em execução. A variável não será definida se nenhum pacote de imagem de inicialização do Configuration Manager estiver associado.<br /><br /> Exemplo:<br /><br /> **ABC00001**|  
-|_SMSTSBootUEFI|A sequência de tarefas define a variável SMSTSBootUEFI quando ela detecta um computador no modo UEFI.|  
-|_SMSTSClientGUID|Armazena o valor da GUID do cliente do Configuration Manager. Essa variável não é definida se estiver executando a sequência de tarefas de mídia autônoma.<br /><br /> Exemplo:<br /><br /> **0a1a9a4b-fc56-44f6-b7cd-c3f8ee37c04c**|  
-|_SMSTSCurrentActionName|Especifica o nome da etapa de sequência de tarefas em execução no momento. Essa variável é definida antes que o gerenciador de sequência de tarefas seja executado a cada etapa individual.<br /><br /> Exemplo:<br /><br /> **executar linha de comando**|  
-|_SMSTSDownloadOnDemand|Definido como **true** se a sequência de tarefas atual estiver em execução no modo de download sob demanda, o que significa que o gerenciador de sequência de tarefas baixa o conteúdo localmente apenas quando ele precisar acessar o conteúdo.|  
-|_SMSTSInWinPE|Essa variável é definida como **true** quando a etapa atual está sendo executado no ambiente do Windows PE e como **false** se não for. Você pode testar essa variável de sequência de tarefas para determinar o ambiente do sistema operacional atual.|  
-|_SMSTSLastActionRetCode|Armazena o código de retorno que foi retornado pela última ação que foi executada. Essa variável pode ser usada como uma condição para determinar se a próxima etapa é executada.<br /><br /> Exemplo:<br /><br /> **0**|  
-|_SMSTSLastActionSucceeded|A variável é definida como **true** se a última ação foi bem-sucedida e a **false** se a última ação falhou. Se a última ação foi ignorada porque a etapa foi desabilitada ou a condição associada é avaliada como **false**, essa variável não é redefinida, o que significa que ela ainda mantém o valor para a ação anterior.|  
-|_SMSTSLaunchMode|Especifica o método de inicialização de sequência de tarefas. A sequência de tarefas pode ter os seguintes valores:<br /><br /> -   **SMS** – especifica que a sequência de tarefas é iniciada usando o cliente do Configuration Manager.<br />-   **UFD** - Especifica que a sequência de tarefas é iniciada usando mídia USB e que a mídia USB foi criada no Windows XP/2003.<br />-   **UFD+FORMAT** - Especifica que a sequência de tarefas é iniciada usando mídia USB e que a mídia USB foi criada no Windows Vista ou posterior.<br />-   **CD** - Especifica que a sequência de tarefas é iniciada usando um CD.<br />-   **DVD** - Especifica que a sequência de tarefas é iniciada usando um DVD.<br />-   **PXE** - Especifica que a sequência de tarefas é iniciada do PXE.<br />-   **HD** – especifica que a sequência de tarefas foi iniciada de um disco rígido (somente mídia pré-configurada).|  
-|_SMSTSLogPath|Armazena o caminho completo do diretório de log. Isso pode ser usado para determinar quais ações são registradas. Esse valor não é definido quando um disco rígido não estiver disponível.|  
-|_SMSTSMachineName|Armazena e especifica o nome do computador. Armazena o nome do computador que usará a sequência de tarefas para registrar todas as mensagens de status. Para alterar o nome do computador no novo sistema operacional, use a variável **OSDComputerName** .<br /><br /> Exemplo:<br /><br /> **ABC**|  
-|_SMSTSMDataPath|Especifica o caminho definido pela variável SMSTSLocalDataDrive. Quando você define SMSTSLocalDataDrive antes do início da sequência de tarefas, como ao definir uma variável de coleta, o Configuration Manager define a variável _SMSTSMDataPath depois que a sequência de tarefas é iniciada.|  
-|_SMSTSMediaType|Especifica o tipo de mídia que é usada para iniciar a instalação. Exemplos de tipos de mídia são mídia de inicialização, mídia cheia, PXE e mídia pré-configurada.|  
-|_SMSTSMP|Armazena a URL ou endereço IP de um ponto de gerenciamento do Configuration Manager.|  
-|_SMSTSMPPort|Armazena o número da porta do ponto de gerenciamento de um ponto de gerenciamento do Configuration Manager.<br /><br /> Exemplo:<br /><br /> **80**|  
-|_SMSTSOrgName|Armazena o nome do título de identidade visual exibido na caixa de diálogo de interface de usuário da sequência de tarefas em andamento.<br /><br /> Exemplo:<br /><br /> **Empresa XYZ**|  
-|_SMSTSOSUpgradeActionReturnCode|Armazena o valor de código de saída retornado da Instalação para indicar êxito ou falha.  Essa variável é definida durante a etapa da sequência de tarefas Atualização do sistema operacional. Isso é útil com a opção de linha de comando /Compat da Instalação do Windows 10.<br /><br /> Exemplo:<br /><br /> Após a conclusão de /Compat, você pode executar ações nas etapas posteriores, dependendo do código de saída de falha ou êxito. Em caso de êxito, é possível iniciar a atualização. Ou você pode definir um marcador no ambiente (por exemplo, adicionar um arquivo ou definir uma chave do Registro), que pode ser usado para criar uma coleção de computadores que estão prontos para atualização ou que exigem uma ação antes de ser atualizados.|  
-|_SMSTSPackageID|Armazena a ID da atual sequência de tarefas em execução Esta ID usa o mesmo formato que uma ID de pacote de software do Configuration Manager.<br /><br /> Exemplo:<br /><br /> **HJT00001**|  
-|_SMSTSPackageName|Armazena o nome da sequência de tarefas atual em execução especificada pelo administrador do Configuration Manager quando ela é criada.<br /><br /> Exemplo:<br /><br /> **Implantar a sequência de tarefas do Windows 10**|  
-|_SMSTSSetupRollback|Especifica se a Instalação do sistema operacional executou uma operação de reversão. Os valores das variáveis podem ser **true** ou **false**.|  
-|_SMSTSRunFromDP|Definido como **true** se a sequência de tarefas atual estiver em execução no modo de execução do ponto de distribuição, o que significa que o gerenciador de sequência de tarefas obtém o pacote necessário para compartilhamentos de ponto de distribuição.|  
-|_SMSTSSiteCode|Especifica o código do site do Configuration Manager.<br /><br /> Exemplo:<br /><br /> **ABC**|  
-|_SMSTSType|Especifica o tipo da sequência de tarefas em execução atual. Ele pode ter os seguintes valores:<br /><br /> **1** - indica uma sequência de tarefas genéricas.<br /><br /> **2** - indica uma sequência de tarefas de implantação do sistema operacional.|  
-|_SMSTSTimezone|A variável _SMSTSTimezone armazena as informações de fuso horário no seguinte formato (sem espaços):<br /><br /> Diferença, DiferençaPadrão, DiferençaDoHorárioDeVerão, DataPadrão.wAno, wMês, wDiaDaSemana, wDia, wHora, wMinuto, wSegundo, wMilissegundos, DataDoHorárioDeVerão.wAno, wMês, wDiaDaSemana, wDia, wHora, wMinuto, wSegundo, wMilissegundos, NomePadrão, NomePadrão<br /><br /> Exemplo:<br /><br /> Para a hora do Leste dos Estados Unidos e Canadá, o valor seria **300,0,-60,0,11,0,1,2,0,0,0,0,3,0,2,2,0,0,0 hora oficial do Leste dos EUA, o horário de verão do Leste**|  
-|_SMSTSUseCRL|Especifica se a sequência de tarefas usa a lista de revogação de certificado ao usar um certificado Secure Socket Layer (SSL) para se comunicar com o ponto de gerenciamento.|  
-|_SMSTSUserStarted|Especifica se uma sequência de tarefas é iniciada por um usuário. Essa variável é definida somente se a sequência de tarefas é iniciada por meio do Centro de Software. Por exemplo, se **_SMSTSLaunchMode** está definido como **SMS**. A variável pode ter os seguintes valores:<br /><br /> -   **true** - Especifica que a sequência de tarefas é iniciada manualmente por um usuário por meio do Centro de Software.<br />-   **false** – especifica que a sequência de tarefas é iniciada automaticamente pelo agendador do Configuration Manager.|  
-|_SMSTSUseSSL|Especifica se a sequência de tarefas usa SSL para se comunicar com o ponto de gerenciamento do Configuration Manager. Se seu site estiver em execução no modo nativo, o valor é definido como **true**.|  
-|_SMSTSWTG|Especifica se o computador está executando como um dispositivo Windows To Go.|  
-|OSDPreserveDriveLetter|A partir do Configuration Manager versão 1606, essa variável de sequência de tarefas foi preterida. Durante uma implantação de sistema operacional, por padrão, a Instalação do Windows determina a melhor letra da unidade a ser usada (geralmente, C:). <br /><br />Em versões anteriores, a variável OSDPreverveDriveLetter determina se a sequência de tarefas usa ou não a letra da unidade capturada no arquivo WIM da imagem do sistema operacional ao aplicar essa imagem em um computador de destino. É possível definir o valor desta variável como **False** para usar o local especificado para a configuração **Destino** na etapa da sequência de tarefas **Aplicar Sistema Operacional** . Para obter mais informações, consulte [Apply Operating System Image](task-sequence-steps.md#BKMK_ApplyOperatingSystemImage).|  
-|OSDSetupAdditionalUpgradeOptions|Começando do Configuration Manager versão 1602, é possível usar essa variável para especificar opções adicionais para a atualização da Instalação do Windows.
-|SMSTSAssignmentsDownloadInterval|Use esta variável para especificar o número de segundos para aguardar antes que o cliente tente baixar a política desde a última tentativa (que não retornou nenhuma política). Por padrão, o cliente aguardará **0** segundos antes de tentar novamente.<br /><br /> Você pode definir essa variável usando um comando prestart da mídia ou PXE.|  
-|SMSTSAssignmentsDownloadRetry|Use esta variável para especificar o número de vezes que um cliente tentará baixar a política depois que nenhuma política foi encontrada na primeira tentativa. Por padrão, o cliente tentará novamente **0** vezes.<br /><br /> Você pode definir essa variável usando um comando prestart da mídia ou PXE.|  
-|SMSTSAssignUsersMode|Especifica como uma sequência de tarefas associa os usuários ao computador de destino. Defina a variável para um dos seguintes valores:<br /><br /> -   Automático: a sequência de tarefas cria uma relação entre os usuários especificados e o computador de destino quando implanta o sistema operacional no computador de destino.<br />-   Pendente: a sequência de tarefas cria uma relação entre o usuário especificado e o computador de destino, mas espera a aprovação do usuário administrativo antes que a relação seja definida.<br />-   Desabilitado: a sequência de tarefas não associa os usuários ao computador de destino quando implanta o sistema operacional.|  
-|SMSTSDownloadAbortCode|Essa variável contém o valor do código “anular” para a ferramenta de download de programa externo (especificado na variável SMSTSDownloadProgram). Se o programa retornar um código de erro igual ao valor da variável SMSTSDownloadAbortCode, o download do conteúdo falhará e nenhum outro método de download será tentado.
-|SMSTSDownloadProgram|Use essa variável para especificar um Provedor de Conteúdo Alternativo, um programa de download usado para baixar conteúdo em vez do programa de download padrão do Configuration Manager, para a sequência de tarefas. Como parte do processo de download do conteúdo, a sequência de tarefas verifica a variável para um programa de download especificado. Se especificado, a sequência de tarefas executa o programa para realizar o download.|  
-|SMSTSDownloadRetryCount|Use essa variável para especificar o número de vezes que o Configuration Manager tenta baixar conteúdo de um ponto de distribuição. Por padrão, o cliente tentará novamente **2** vezes.|  
-|SMSTSDownloadRetryDelay|Use essa variável para especificar o número de segundos que o Configuration Manager aguarda antes de tentar baixar conteúdo novamente de um ponto de distribuição. Por padrão, o cliente aguardará **15** segundos antes de tentar novamente.|  
-|SMSTSDriverReceiveTimeOut|Use essa variável para especificar o número de segundos antes do tempo limite de conexão para o servidor.|
-|SMSTSDriverRequestConnectTimeOut|Use essa variável para especificar o número de segundos de espera para a conexão do servidor HTTP ao solicitar o catálogo de drivers durante a etapa de sequência de tarefas do Driver de Aplicação Automática. Se a conexão demorar mais do que a configuração de tempo limite, a solicitação será cancelada. Por padrão, o limite é definido como 60 segundos.|  
-|SMSTSDriverRequestReceiveTimeOut|Use essa variável para especificar o número de segundos de espera por uma resposta para a solicitação de um catálogo de drivers durante a etapa de sequência de tarefas do Driver de Aplicação Automática. Se a conexão demorar mais do que a configuração de tempo limite, a solicitação será cancelada. Por padrão, o limite é definido como 480 segundos.|
-|SMSTSDriverRequestResolveTimeOut|Use essa variável para especificar o número de segundos de espera por uma resolução do nome de HTTP para a solicitação de um catálogo de drivers durante a etapa de sequência de tarefas do Driver de Aplicação Automática. Se a conexão demorar mais do que a configuração de tempo limite, a solicitação será cancelada. Por padrão, o limite é definido como 60 segundos.|
-|SMSTSDriverRequestSendTimeOut|Use essa variável para especificar o número de segundos a ser usado ao enviar a solicitação de um catálogo de drivers durante a etapa de sequência de tarefas do Driver de Aplicação Automática. Se a solicitação demorar mais do que a configuração de tempo limite, a solicitação será cancelada. Por padrão, o limite é definido como 60 segundos.|
-|SMSTSErrorDialogTimeout|Quando ocorre um erro em uma sequência de tarefas, é exibida uma caixa de diálogo que é automaticamente descartada após um número de segundos especificado por essa variável. Por padrão, a caixa de diálogo é automaticamente descartada após **900** segundos (15 minutos).|  
-| TSDisableProgressUI | Use essa variável para ocultar ou exibir o andamento da sequência de tarefas em diferentes seções da sequência de tarefas. | 
-|TSErrorOnWarning|Use essa variável para especificar se o mecanismo de sequência de tarefas considera um aviso detectado como um erro durante a etapa de sequência de tarefas de instalação do aplicativo. A sequência de tarefas define a variável _TSAppInstallStatus de acordo com o **Aviso** quando um ou mais aplicativos, ou uma dependência necessária, não foram instalados pois um requisito não foi atendido. Quando você define a variável TSErrorOnWarning como **True** e a variável _TSAppInstallStatus é definida como Aviso, ele será tratado como um erro. Um valor de **False** é o comportamento padrão.| 
-|SMSTSLanguageFolder|Use essa variável para alterar o idioma de exibição de uma imagem de inicialização neutra de idioma.|  
-|SMSTSLocalDataDrive|Especifica onde os arquivos temporários são armazenados no computador de destino enquanto a sequência de tarefas está em execução.<br /><br /> Essa variável deve ser definida antes do início da sequência de tarefas, como definindo uma variável de coleta. Depois de iniciada a sequência de tarefas, o Configuration Manager define a variável _SMSTSMDataPath depois que a sequência de tarefas é iniciada.|  
-|SMSTSMP|Use esta variável para especificar a URL ou endereço IP de um ponto de gerenciamento do Configuration Manager.|  
-|SMSTSMPListRequestTimeout|Use essa variável para especificar quantos milissegundos uma sequência de tarefas espera antes de tentar instalar novamente uma atualização de software ou aplicativo após uma falha ao recuperar a lista de ponto de gerenciamento dos serviços de localização. Por padrão, a sequência de tarefas espera 60.000 milissegundos (60 segundos) antes de tentar novamente a etapa e repetições até três vezes. Essa variável é aplicável somente às etapas da sequência de tarefas Instalar Aplicativo e Instalar Atualizações de Software.|  
-|SMSTSMPListRequestTimeoutEnabled|Use essa variável para permitir que solicitações MPList repetidas atualizem o cliente se este não estiver na intranet. <br />Por padrão, essa variável é definida como True. Quando os clientes estão na Internet, você pode definir essa variável como False para evitar atrasos desnecessários. Essa variável é aplicável somente às etapas da sequência de tarefas Instalar Aplicativo e Instalar Atualizações de Software.|  
-|SMSTSPeerDownload|Use essa variável para habilitar o cliente a usar o Cache de sistemas pares do Windows PE.<br /><br /> Exemplo:<br /><br /> SMSTSPeerDownload = **TRUE** habilita essa funcionalidade.|  
-|SMSTSPeerRequestPort|Use essa variável para o cache de pares do Windows PE para especificar uma porta de rede personalizada a ser usada para a difusão inicial quando as portas padrão configuradas nas Configurações do Cliente (8004) não forem usadas.|  
-|SMSTSPersistContent|Use essa variável para manter temporariamente o conteúdo no cache da sequência de tarefas.|  
-|SMSTSPostAction|Especifica um comando que é executado após a sequência de tarefas. Por exemplo, você pode usar essa variável para especificar um script que permite filtros de gravação em dispositivos inseridos depois que o a sequência de tarefas implanta um sistema operacional no dispositivo.|  
-|SMSTSPreferredAdvertID|Força uma implantação direcionada específica no computador de destino a ser executada. Isso pode ser definido por meio de um comando pré-início da mídia ou PXE. Se essa variável for definida, a sequência de tarefas substitui todas as implantações necessárias.|  
-|SMSTSPreserveContent|Essa variável sinaliza o conteúdo na sequência de tarefas a ser mantido no cache do cliente do Configuration Manager após a implantação. Isso é diferente de usar SMSTSPersistContent, que apenas preserva o conteúdo durante a sequência de tarefas e usa o cache da sequência de tarefas, e não o cache do cliente do Configuration Manager.<br /><br /> Exemplo:<br /><br /> SMSTSPreserveContent = **TRUE** habilita essa funcionalidade.|  
-|SMSTSRebootDelay|Especifica o número de segundos a esperar antes do computador ser reiniciado. O Gerenciador de sequência de tarefas exibirá uma caixa de diálogo de notificação antes da reinicialização, se essa variável não for definida como 0.<br /><br /> Exemplos:<br /><br /> **0**<br /><br /> **30**|  
-|SMSTSRebootMessage|Especifica a mensagem a ser exibida na caixa de diálogo de desligamento quando for solicitada uma reinicialização. Se essa variável não for definida, será exibida uma mensagem padrão.<br /><br /> Exemplo:<br /><br /> **Este computador está sendo reiniciado pelo Gerenciador de sequência de tarefas**.|  
-|SMSTSRebootRequested|Indica que uma reinicialização será solicitada após a etapa da sequência de tarefas atual ser concluída. Se uma reinicialização for necessária, basta definir essa variável como **true**, e o Gerenciador de sequência de tarefas reiniciará o computador após essa etapa de sequência de tarefas. A etapa de sequência de tarefas deve definir essa variável de sequência de tarefas se exigir a reinicialização para concluir a etapa de sequência de tarefas. Depois que o computador for reiniciado, a sequência de tarefas continuará sendo executada na próxima etapa de sequência de tarefas.|  
-|SMSTSRetryRequested|Solicita uma nova tentativa após a etapa atual ser concluída. Se essa variável de sequência de tarefas for definida, o **SMSTSRebootRequested** também deve ser definido como **true**. Depois que o computador for reiniciado, o Gerenciador de sequência de tarefas executará novamente a mesma etapa de sequência de tarefas.|  
-|SMSTSSoftwareUpdateScanTimeout| Possibilita controlar o tempo limite para a verificação de atualizações de software durante a etapa de sequência de tarefas [Instalar Atualizações de Software](task-sequence-steps.md#BKMK_InstallSoftwareUpdates). Por exemplo, você poderá aumentar o valor padrão se tiver muitas atualizações de software para instalar. O valor padrão é 30 minutos. |
-|SMSTSUDAUsers|Especifica o usuário principal do computador de destino. Especifique os usuários usando o seguinte formato. Separe vários usuários usando uma vírgula (,).<br /><br /> Exemplo:<br /><br /> **domínio\usuário1, domínio\usuário2, domínio\usuário3**<br /><br /> Para obter mais informações sobre como associar usuários ao computador de destino, consulte [Associate users with a destination computer (Associar usuários a um computador de destino)](../get-started/associate-users-with-a-destination-computer.md).|  
-|SMSTSWaitForSecondReboot|A partir da versão 1602 no Configuration Manager, essa variável opcional da sequência de tarefas está disponível para ajudar a controlar o comportamento do cliente quando uma instalação de atualização de software exige duas reinicializações. Essa variável deve ser definida antes da etapa [Instalar Atualizações de Software](task-sequence-steps.md#BKMK_InstallSoftwareUpdates) para evitar a falha da sequência de tarefas devido à segunda reinicialização depois da instalação de atualização de software.<br /><br /> Defina o valor de SMSTSWaitForSecondReboot em segundos para especificar por quanto tempo a sequência de tarefas é pausada durante a etapa Instalar Atualizações de Software quando o computador é reiniciado, a fim de permitir tempo suficiente caso haja uma segunda reinicialização. <br />Por exemplo, se você definir SMSTSWaitForSecondReboot para 600, a sequência de tarefas será pausada por 10 minutos após uma reinicialização antes da execução das etapas adicionais da sequência de tarefas. Isso é útil quando centenas de atualizações de software são instaladas em uma única etapa da sequência de tarefas Instalar Atualizações de Software.|  
-
+|_OSDDetectedWinDir|从 Configuration Manager 版本 1602 开始，在 Windows PE 启动时，任务序列会在计算机的硬盘驱动器上扫描是否以前已安装操作系统。 Windows 文件夹位置存储在此变量中。 你可以将任务序列配置为从环境中检索该值，并将其用于指定相同的 Windows 文件夹位置进行新的操作系统安装。|  
+|_OSDDetectedWinDrive|从 Configuration Manager 版本 1602 开始，在 Windows PE 启动时，任务序列会在计算机的硬盘驱动器上扫描是否以前已安装操作系统。  安装操作系统的硬盘驱动器位置存储在此变量中。 你可以将任务序列配置为从环境中检索该值，并将其用于指定相同的硬盘驱动器位置以供新的操作系统使用。|  
+|_SMSTSAdvertID|存储当前运行的任务序列部署的唯一 ID。 它使用与 Configuration Manager 软件分发部署 ID 相同的格式。 如果任务序列从独立的媒体运行，则此变量未定义。<br /><br /> 例如：<br /><br /> **ABC20001**|  
+|_TSAppInstallStatus|任务序列在“安装应用程序”任务序列步骤中随应用程序的安装状态一起设置 _TSAppInstallStatus 变量。 任务序列使用下列值之一设置该变量：<br /><br /> 1.**未定义**：在“安装应用程序”任务序列步骤未运行时设置。<br />2.**错误**：在至少一个应用程序由于“安装应用程序”任务序列步骤中出错而失败时设置。<br />3.**警告**：在“安装应用程序”任务序列步骤中未出错但一个或多个应用程序或必需的依赖关系由于不满足要求而未安装时设置。<br />4.**成功**：在“安装应用程序”任务序列步骤中未检测到错误或警告时设置。|  
+|_SMSTSBootImageID|如果某个启动映像包与当前运行的任务序列关联，则存储 Configuration Manager 启动映像包 ID。 如果不关联任何 Configuration Manager 启动映像包，则不设置此变量。<br /><br /> 例如：<br /><br /> **ABC00001**|  
+|_SMSTSBootUEFI|当任务序列检测到计算机处于 UEFI 模式时，它会设置 SMSTSBootUEFI 变量。|  
+|_SMSTSClientGUID|存储 Configuration Manager 客户端 GUID 的值。 如果从独立的媒体运行任务序列，则不设置此变量。<br /><br /> 例如：<br /><br /> **0a1a9a4b-fc56-44f6-b7cd-c3f8ee37c04c**|  
+|_SMSTSCurrentActionName|指定当前运行的任务序列步骤的名称。 此变量在任务序列管理器运行每个单独步骤前设置。<br /><br /> 例如：<br /><br /> **运行命令行**|  
+|_SMSTSDownloadOnDemand|如果当前任务序列正在按需下载模式下运行（意味着任务序列管理器仅在必须访问内容时本地下载内容），则设置为“true”  。|  
+|_SMSTSInWinPE|如果当前任务序列步骤正在 Windows PE 环境中运行，则此变量设置为“true”  ，否则设置为“false”  。 你可以测试此任务序列变量以确定当前的操作系统环境。|  
+|_SMSTSLastActionRetCode|存储由运行的上一操作返回的返回代码。 此变量可作为决定下一步是否运行的条件。<br /><br /> 例如：<br /><br /> **0**|  
+|_SMSTSLastActionSucceeded|如果上一操作成功，变量设置为“true”  ，如果上一操作失败，变量设置为“false”  。 如果由于步骤被禁用或关联的条件被评估为“false”而跳过上一操作，则此变量不会重置，这意味着仍保留之前操作的值 。|  
+|_SMSTSLaunchMode|指定任务序列启动方法。 任务序列可以有下列值：<br /><br /> -   **SMS** - 指定通过使用 Configuration Manager 客户端启动任务序列。<br />-   **UFD** - 指定通过使用 USB 媒体启动任务序列和在 Windows XP/2003 中创建的 USB 媒体。<br />-   **UFD+FORMAT** - 指定通过使用 USB 媒体启动任务序列和在 Windows Vista 以及更高版本中创建的 USB 媒体。<br />-   **CD** - 指定通过使用 CD 启动任务序列。<br />-   **DVD** - 指定通过使用 DVD 启动任务序列。<br />-   **PXE** - 指定从 PXE 启动任务序列。<br />-   **HD** - 指定从硬盘（仅预暂存媒体）启动任务序列。|  
+|_SMSTSLogPath|存储日志目录的完整路径。 可用于确定记录操作的位置。 如果没有硬盘驱动器可用，则不设置此值。|  
+|_SMSTSMachineName|存储并指定计算机名称。 存储任务序列将用于记录所有状态消息的计算机的名称。 要更改新操作系统中的计算机名称，请使用“OSDComputerName”  变量。<br /><br /> 例如：<br /><br /> **ABC**|  
+|_SMSTSMDataPath|指定由 SMSTSLocalDataDrive 变量定义的路径。 当在启动任务序列前定义 SMSTSLocalDataDrive 时，例如设置集合变量，启动任务序列后，Configuration Manager 将定义 _SMSTSMDataPath 变量。|  
+|_SMSTSMediaType|指定用于启动安装的媒体类型。 媒体类型示例有启动媒体、完全媒体、PXE 和预暂存媒体。|  
+|_SMSTSMP|存储 Configuration Manager 管理点的 URL 或 IP 地址。|  
+|_SMSTSMPPort|存储 Configuration Manager 管理点的管理点端口号。<br /><br /> 例如：<br /><br /> **80**|  
+|_SMSTSOrgName|存储在任务序列进度用户界面对话框中显示的品牌标题名称。<br /><br /> 例如：<br /><br /> **XYZ Organization**|  
+|_SMSTSOSUpgradeActionReturnCode|存储从安装程序返回的用于指示成功或失败的退出代码值。  此变量在任务序列步骤“操作系统升级”任务序列步骤过程中进行设置。 这可与 /Compat Windows 10 安装程序命令行选项结合使用。<br /><br /> 例如：<br /><br /> 在 /Compat 完成时，可以根据失败或成功退出代码在后续步骤中执行操作。 成功时，可以启动升级。 或者，可以在环境中设置一个标记（例如，添加文件或设置注册表项），该标记随后可以用于创建准备好进行升级或是在升级之前需要执行操作的计算机集合。|  
+|_SMSTSPackageID|存储当前运行的任务序列的 ID。 此 ID 使用与 Configuration Manager 软件包 ID 相同的格式。<br /><br /> 例如：<br /><br /> **HJT00001**|  
+|_SMSTSPackageName|存储当前运行的任务序列由 Configuration Manager 管理员在创建任务序列时指定的名称。<br /><br /> 例如：<br /><br /> **部署 Windows 10 任务序列**|  
+|_SMSTSSetupRollback|指定操作系统安装程序是否执行了回滚操作。 变量值可以为“true”  或“false” 。|  
+|_SMSTSRunFromDP|如果当前任务序列正在“从分发点运行”模式下运行（意味着任务序列管理器将从分发点获取所需的包共享），则此值设置为“true”  。|  
+|_SMSTSSiteCode|存储 Configuration Manager 站点的站点代码。<br /><br /> 例如：<br /><br /> **ABC**|  
+|_SMSTSType|指定当前运行的任务序列的类型。 可以有下列值：<br /><br /> **1** - 表示一般任务序列。<br /><br /> **2** - 表示操作系统部署任务序列。|  
+|_SMSTSTimezone|_SMSTSTimezone 变量用以下格式（不含空格）存储时区信息：<br /><br /> Bias, StandardBias, DaylightBias, StandardDate.wYear, wMonth, wDayOfWeek, wDay, wHour, wMinute, wSecond, wMilliseconds, DaylightDate.wYear, wMonth, wDayOfWeek, wDay, wHour, wMinute, wSecond, wMilliseconds, StandardName, DaylightName<br /><br /> 例如：<br /><br /> 对于美国东部和加拿大时间，值是 **300,0,-60,0,11,0,1,2,0,0,0,0,3,0,2,2,0,0,0, 东部标准时间, 东部白天时间**|  
+|_SMSTSUseCRL|指示当任务序列使用安全套接字层 (SSL) 证书与管理点通信时，任务序列是否使用证书吊销列表。|  
+|_SMSTSUserStarted|指定任务序列是否由用户启动。 仅当任务序列从软件中心启动时设置此变量。 例如，如果  “_SMSTSLaunchMode”设置为“SMS” 。 变量可以有下列值：<br /><br /> -   **true** - 指示任务序列通过用户从软件中心手动启动。<br />-   **false** - 指示任务序列由 Configuration Manager 计划程序自动启动。|  
+|_SMSTSUseSSL|指定任务序列是否使用 SSL 与 Configuration Manager 管理点通信。 如果你的站点在纯模式下运行，则将此值设置为“true” 。|  
+|_SMSTSWTG|指定计算机是否作为 Windows To Go 设备运行。|  
+|OSDPreserveDriveLetter|从 Configuration Manager 版本 1606 开始，已弃用此任务序列变量。 在操作系统部署期间，默认情况下，Windows 安装程序会确定要使用的最佳驱动器号（通常为 C:）。 <br /><br />在以前的版本中，OSDPreverveDriveLetter 变量决定当将此图像应用到目标计算机时，任务序列是否使用在操作系统映像 WIM 文件中捕获的驱动器号。 你可以将此变量的值设置为“False”  以使用为“应用操作系统”  任务序列步骤中的“目标”  设置指定的位置。 有关详细信息，请参阅 [Apply Operating System Image](task-sequence-steps.md#BKMK_ApplyOperatingSystemImage)。|  
+|OSDSetupAdditionalUpgradeOptions|从 Configuration Manager 版本 1602 开始，此变量可用于指定 Windows 安装程序升级的其他选项。
+|SMSTSAssignmentsDownloadInterval|使用此变量可指定客户端自上次尝试（未返回策略）下载策略到再次尝试之前所等待的秒数。 默认情况下，客户端将等待 **0** 秒，然后再重试。<br /><br /> 可以使用媒体或 PXE 中的预启动命令来设置此变量。|  
+|SMSTSAssignmentsDownloadRetry|此变量用于指定客户端在初次尝试下载策略而未找到策略之后将再次尝试下载该策略的次数。 默认情况下，客户端将重试 **0** 次。<br /><br /> 可以使用媒体或 PXE 中的预启动命令来设置此变量。|  
+|SMSTSAssignUsersMode|指定任务序列如何将用户与目标计算机关联。 将该变量设置为以下值之一。<br /><br /> -   自动：当任务序列将操作系统部署到目标计算机时，它会在指定的用户和目标计算机之间创建关系。<br />-   挂起：任务序列创建指定的用户和目标计算机之间的关系，但在设置关系前需等待来自管理用户的批准。<br />-   禁用：当任务序列部署操作系统时，它不会将用户与目标计算机关联。|  
+|SMSTSDownloadAbortCode|此变量包含（在 SMSTSDownloadProgram 变量中指定的）外部程序下载程序的中止代码值。 如果程序返回的错误代码等于 SMSTSDownloadAbortCode 变量的值，则内容下载失败，且未尝试其他下载方法。
+|SMSTSDownloadProgram|使用此变量为任务序列指定替换内容提供程序，即用于下载内容的下载程序（而非默认的 Configuration Manager 下载程序）。 作为内容下载过程的一部分，任务序列会检查此变量，以了解是否指定了下载程序。 如果已指定，则任务序列会运行指定的程序来执行下载。|  
+|SMSTSDownloadRetryCount|使用此变量来指定 Configuration Manager 尝试从分发点下载内容的次数。 默认情况下，客户端将重试 **2** 次。|  
+|SMSTSDownloadRetryDelay|使用此变量来指定 Configuration Manager 重新尝试从分发点下载内容前等待的秒数。 默认情况下，客户端将在重试之前等待 **15** 秒。|  
+|SMSTSDriverReceiveTimeOut|使用此变量指定到服务器的连接超时之前的秒数。|
+|SMSTSDriverRequestConnectTimeOut|在自动应用驱动程序任务序列步骤期间请求驱动程序目录时，使用此变量指定等待 HTTP 服务器连接的秒数。 如果连接时间超过超时设置，则取消该请求。 默认情况下，超时时间设置为 60 秒。|  
+|SMSTSDriverRequestReceiveTimeOut|在自动应用驱动程序任务序列步骤期间，使用此变量指定等待驱动程序目录响应的秒数。 如果连接时间超过超时设置，则取消该请求。 默认情况下，超时时间设置为 480 秒。|
+|SMSTSDriverRequestResolveTimeOut|在自动应用驱动程序任务序列步骤期间请求驱动程序目录时，使用此变量指定等待 HTTP 名称解析的秒数。 如果连接时间超过超时设置，则取消该请求。 默认情况下，超时时间设置为 60 秒。|
+|SMSTSDriverRequestSendTimeOut|在自动应用驱动程序任务序列步骤期间发送驱动程序目录请求时，使用此变量指定要使用的秒数。 如果该请求用时比超时设置更长，则取消该请求。 默认情况下，超时时间设置为 60 秒。|
+|SMSTSErrorDialogTimeout|当任务序列中发生错误时，显示对话框，在此变量指定的秒数后自动关闭。 默认情况下，该对话框将在 **900** 秒（15 分钟）后自动关闭。|  
+| TSDisableProgressUI | 使用此变量可以在任务序列的不同部分中隐藏或显示任务序列进度。 | 
+|TSErrorOnWarning|使用此变量指定任务序列引擎是否将应用程序安装任务序列步骤检测到的警告视为错误。 由于未满足要求而导致一个或多个应用程序或所需的依赖项未安装时，任务序列将 _TSAppInstallStatus 变量设置为 **Warning** 。 当你将 TSErrorOnWarning 变量设置为 **True** 且 _TSAppInstallStatus 变量设置为 Warning 时，它被视为错误。 值 **False** 是默认行为。| 
+|SMSTSLanguageFolder|使用此变量可更改语言中性启动映像的显示语言。|  
+|SMSTSLocalDataDrive|指定运行任务序列时临时文件保存在目标计算机的位置。<br /><br /> 此变量必须在任务序列开始前设置，例如通过设置集合变量。 任务序列启动后，Configuration Manager 定义 _SMSTSMDataPath 变量。|  
+|SMSTSMP|使用此变量指定 Configuration Manager 管理点的 URL 或 IP 地址。|  
+|SMSTSMPListRequestTimeout|使用此变量指定任务序列在利用定位服务检索管理点列表失败后重新尝试安装应用程序或软件更新前等待的毫秒数。 默认情况下，60,000 毫秒（60 秒）后，它重试此步骤，最多三次。 此变量仅适用于安装应用程序和安装软件更新任务序列步骤。|  
+|SMSTSMPListRequestTimeoutEnabled|使用此变量启用重复的 MPList 请求，以便在客户端不在 Intranet 上时刷新客户端。 <br />默认情况下，此变量设置为 True。 当客户端位于 Internet 上时，可以将此变量设置为 False 以避免不必要的延迟。 此变量仅适用于安装应用程序和安装软件更新任务序列步骤。|  
+|SMSTSPeerDownload|使用此变量可使客户端能够使用 Windows PE 对等缓存。<br /><br /> 例如：<br /><br /> SMSTSPeerDownload  = **TRUE** 可启用此功能。|  
+|SMSTSPeerRequestPort|将此变量用于 Windows PE 对等缓存可指定在不使用客户端设置中配置的默认端口 (8004) 时，要用于初始广播的自定义网络端口。|  
+|SMSTSPersistContent|使用此变量可临时将内容保存在任务序列缓存中。|  
+|SMSTSPostAction|指定任务序列完成后运行的命令。 例如，你可使用此变量指定任务序列将操作系统部署到设备后，在嵌入的设备上启用写筛选器的脚本。|  
+|SMSTSPreferredAdvertID|强制运行目标计算机上的特定目标部署。 可通过媒体或 PXE 的预启动命令对其进行设置。 如果设置此变量，则任务序列覆盖任何必需的部署。|  
+|SMSTSPreserveContent|此变量用于标志在部署后将保留在 Configuration Manager 客户端缓存中的任务序列内容。 这与使用 SMSTSPersisContent（仅任务序列持续期间保留内容）不同，并且使用任务序列缓存，而非 Configuration Manager 客户端缓存。<br /><br /> 例如：<br /><br /> SMSTSPreserveContent = **TRUE** 可启用此功能。|  
+|SMSTSRebootDelay|指定在计算机重新启动之前要等待多少秒。 如果此变量没有设置为 0，则任务序列管理器将在重新启动之前显示通知对话。<br /><br /> 例如：<br /><br /> **0**<br /><br /> **30**|  
+|SMSTSRebootMessage|指定需要重新启动时显示在关机对话框中的消息。 如果未设置此变量，则显示默认消息。<br /><br /> 例如：<br /><br /> **此计算机将由任务序列管理器重新启动**。|  
+|SMSTSRebootRequested|指示当前任务序列步骤完成后，请求重新启动。 如果需要重新启动，则仅将此变量设置为 **true**，任务序列管理器将在此任务序列步骤后重新启动计算机。 任务序列步骤必须设置此任务序列变量，如果其需要重新启动以完成任务序列步骤。 重新启动计算机后，任务序列将继续从下一个任务序列步骤运行。|  
+|SMSTSRetryRequested|在完成当前的任务序列步骤后，将请求重试。 如果设置任务序列变量， **SMSTSRebootRequested** 必须设置为 **true**。 重新启动计算机后，任务序列管理器将重新运行相同的任务序列步骤。|  
+|SMSTSSoftwareUpdateScanTimeout| 让你能够在执行[安装软件更新](task-sequence-steps.md#BKMK_InstallSoftwareUpdates)任务序列步骤期间控制软件更新扫描的超时。 例如，如果有大量要安装的软件更新，你可能会增加默认值。 默认值为 30 分钟。 |
+|SMSTSUDAUsers|指定目标计算机的主要用户。 通过使用以下格式指定用户。 使用逗号 (，) 分隔多个用户。<br /><br /> 例如：<br /><br /> **domain\user1、domain\user2、domain\user3**<br /><br /> 有关如何将用户与目标计算机关联的详细信息，请参阅[将用户与目标计算机关联](../get-started/associate-users-with-a-destination-computer.md)。|  
+|SMSTSWaitForSecondReboot|从 Configuration Manager 版本 1602 开始，可使用这一可选的任务序列变量在软件更新安装需要两次重启时帮助控制客户端行为。 必须在[安装软件更新](task-sequence-steps.md#BKMK_InstallSoftwareUpdates)步骤之前设置此变量，以防软件更新安装的第二次重启导致任务序列失败。<br /><br /> 设置 SMSTSWaitForSecondReboot 的值（以秒为单位），指定安装软件更新步骤期间，任务序列在计算机重启时的暂停时长，预留充足的时间，以防还有第二次重启。 <br />例如，将 SMSTSWaitForSecondReboot 设置为 600，即重启后任务序列将暂停 10 分钟，然后运行其他任务序列步骤。 当单个安装软件更新任务序列步骤中需安装数百个软件更新时，这一功能十分有用。|  

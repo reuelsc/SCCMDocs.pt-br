@@ -1,67 +1,60 @@
 ---
-title: Criar ambientes virtuais do App-V | Microsoft Docs
-description: Crie ambientes virtuais com o Microsoft Application Virtualization para que os aplicativos possam compartilhar dados entre si.
+title: "创建 App-V 虚拟环境 | Microsoft Docs"
+description: "使用 Microsoft Application Virtualization 创建虚拟环境，使应用可以相互共享数据。"
 ms.custom: na
 ms.date: 10/06/2016
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
-ms.technology:
-- configmgr-app
+ms.technology: configmgr-app
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: b6b86078-fcc4-46cf-87d6-4b52b914b712
-caps.latest.revision: 6
-caps.handback.revision: 0
+caps.latest.revision: "6"
+caps.handback.revision: "0"
 author: robstackmsft
 ms.author: robstack
 manager: angrobe
-translationtype: Human Translation
-ms.sourcegitcommit: aa9e87830a3a51b01fae29b564c9267ec930a60d
 ms.openlocfilehash: 377ed9732fb16b062f53e78504aea394acdb7462
-
-
+ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
+ms.translationtype: HT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 08/07/2017
 ---
-# <a name="create-app-v-virtual-environments-in-system-center-configuration-manager"></a>Criar ambientes virtuais App-V no System Center Configuration Manager
+# <a name="create-app-v-virtual-environments-in-system-center-configuration-manager"></a>在 System Center Configuration Manager 中创建 App-V 虚拟环境
 
-*Aplica-se a: System Center Configuration Manager (Branch Atual)*
+*适用范围：System Center Configuration Manager (Current Branch)*
 
-Em um ambiente virtual do Microsoft App-V (Application Virtualization) no System Center Configuration Manager (Configuration Manager), os aplicativos virtuais implantados podem compartilhar o mesmo sistema de arquivos e Registro em computadores clientes Windows. Ao contrário dos aplicativos virtuais padrão, esses aplicativos podem compartilhar dados entre si. Os ambientes virtuais são criados ou modificados em computadores cliente quando o aplicativo é instalado ou quando os clientes avaliam em seguida seus aplicativos instalados. Você pode ordenar esses aplicativos para que, caso vários aplicativos tentem modificar um sistema de arquivo ou um valor de Registro, o aplicativo de ordem superior tenha prioridade.  
+在 System Center Configuration Manager 中的 Microsoft Application Virtualization (App-V) 虚拟环境中，已部署的虚拟应用程序可在客户端 Windows 电脑上共享相同的文件系统和注册表。 与标准虚拟应用程序不同，这些应用程序可以相互共享数据。 在安装应用程序时，或者在客户端接下来评估已安装的应用程序时，会在客户端电脑上创建或修改虚拟环境。 可以对这些应用程序进行排序，以便在多个应用程序尝试修改一个文件系统或注册表值时，排在最前面的应用程序优先进行修改。  
 
 > [!IMPORTANT]  
->  Não confie em ambientes virtuais do App-V para fornecer proteção de segurança, como contra malware.  
+>  不要依靠 App-V 虚拟环境来提供安全保护（例如抵御恶意软件）。  
 
- Use o procedimento a seguir para criar um ambiente virtual do App-V no Configuration Manager.  
+ 使用下列过程在 Configuration Manager 中创建 App-V 虚拟环境。  
 
-## <a name="create-an-app-v-virtual-environment"></a>Criar um ambiente virtual do App-V  
+## <a name="create-an-app-v-virtual-environment"></a>创建 App-V 虚拟环境  
 
-1.  No console do Configuration Manager, escolha **Biblioteca de Software** > **Gerenciamento de Aplicativo** > **Ambientes Virtuais do App-V**.  
+1.  在 Configuration Manager 控制台中，选择“软件库” > “应用程序管理” > “App-V 虚拟环境”。  
 
-3.  Na guia **Início**, no grupo **Criar**, escolha **Criar Ambiente Virtual**.  
+3.  在“主页”选项卡的“创建”组中，选择“创建虚拟环境”。  
 
-4.  Na caixa de diálogo **Criar Ambiente Virtual**, insira as seguintes informações:  
+4.  在“创建虚拟环境”对话框中，输入下列信息：  
 
-    -   **Nome**.  Insira um nome exclusivo para o ambiente virtual (no máximo 128 caracteres).  
+    -   **名称**。  输入虚拟环境的唯一名称（最多 128 个字符）。  
 
-    -   **Descrição**. (Opcional) Insira uma descrição para o ambiente virtual.  
+    -   **说明**。 （可选）输入虚拟环境的说明。  
 
-5.  Para adicionar um novo tipo de implantação no ambiente virtual, escolha **Adicionar**. Você deve adicionar pelo menos um tipo de implantação.  
+5.  若要将新的部署类型添加到虚拟环境中，请选择“添加”。 必须添加至少一种部署类型。  
 
-6.  Na caixa de diálogo **Adicionar Aplicativos**, especifique o **Nome do grupo** (no máximo 128 caracteres). Você usará esse nome para referir-se ao grupo de aplicativos que adicionará ao ambiente virtual.  
+6.  在“添加应用程序”对话框中，指定**组名**（最多 128 个字符）。 用户可以使用此名称指代添加到虚拟环境的应用程序组。  
 
-7.  Escolha **Adicionar**, selecione os aplicativos do App-V 5 e os tipos de implantação que deseja adicionar ao grupo e, em seguida, escolha **OK**.  
+7.  选择“添加”，选择要添加到组中的 App-V 5 应用程序和部署类型，然后选择“确定”。  
 
-8.  Na caixa de diálogo **Adicionar Aplicativos**, você poderá selecionar **Aumentar Ordem** ou **Diminuir Ordem** para especificar qual aplicativo terá prioridade se diversos aplicativos tentarem modificar as configurações do sistema de arquivos ou do Registro no mesmo ambiente virtual.  
+8.  在“添加应用程序”对话框中，可以选择“升序”或“降序”，以设置在多个应用程序尝试修改同一个虚拟环境中的文件系统或注册表设置时哪个应用程序将优先进行修改。  
 
-9. Para retornar à caixa de diálogo **Criar Ambiente Virtual**, escolha **OK**.  
+9. 若要返回到“创建虚拟环境”对话框，请选择“确定”。  
 
-10. Ao terminar a adição de grupos, escolha **OK** para criar o ambiente virtual. O novo ambiente virtual é exibido no nó **Ambientes Virtuais do App-V** do console do Configuration Manager. Você pode monitorar o status dos seus ambientes virtuais usando o relatório Status do ambiente virtual do App-V.  
+10. 在完成添加组的操作后，选择“确定”以创建虚拟环境。 新的虚拟环境显示在 Configuration Manager 控制台的“App-V 虚拟环境”节点中。 可以使用“App-V 虚拟环境状态”报告来监视虚拟环境的状态。  
 
     > [!NOTE]  
-    >  O ambiente virtual será adicionado ou modificado nos computadores clientes quando o aplicativo for instalado ou quando o cliente fizer a próxima avaliação dos aplicativos instalados.  
-
-
-
-<!--HONumber=Dec16_HO3-->
-
-
+    >  在安装应用程序时，或者在客户端接下来评估已安装的应用程序时，会在客户端电脑上添加或修改虚拟环境。  

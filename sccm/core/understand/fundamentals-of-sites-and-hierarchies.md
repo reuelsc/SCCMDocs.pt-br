@@ -1,80 +1,73 @@
 ---
-title: "Conceitos básico de sites e hierarquias | Microsoft Docs"
-description: "Obtenha as informações de conceitos básicos sobre os sites e hierarquias do System Center Configuration Manager."
+title: "站点和层次结构基础知识 | Microsoft Docs"
+description: "获取有关 System Center Configuration Manager 站点和层次结构的基本信息。"
 ms.custom: na
 ms.date: 12/30/2016
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
-ms.technology:
-- configmgr-other
+ms.technology: configmgr-other
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 4db1e15f-e832-4cf9-be33-d3971e635a55
-caps.latest.revision: 6
+caps.latest.revision: "6"
 author: Brenduns
 ms.author: brenduns
 manager: angrobe
-translationtype: Human Translation
-ms.sourcegitcommit: 68527c0e82861106b7ec28b34bffa8fd74b2dd4a
 ms.openlocfilehash: f13f38be2a19ab8a1ead246e5272515dd0570984
-
-
+ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
+ms.translationtype: HT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 08/07/2017
 ---
-# <a name="fundamentals-of-sites-and-hierarchies-for-system-center-configuration-manager"></a>Conceitos básicos de sites e hierarquias do System Center Configuration Manager
+# <a name="fundamentals-of-sites-and-hierarchies-for-system-center-configuration-manager"></a>System Center Configuration Manager 的站点和层次结构基础知识
 
-*Aplica-se a: System Center Configuration Manager (Branch Atual)*
+*适用范围：System Center Configuration Manager (Current Branch)*
 
-Uma implantação do System Center Configuration Manager deve ser instalada em um domínio do Active Directory. A base desta implantação inclui um ou mais sites do Configuration Manager que formam uma hierarquia de sites. De um único site para uma hierarquia com vários sites, o tipo e o local dos sites instalados fornecem a capacidade de escalar verticalmente (expandir) sua implantação quando necessário, bem como fornecer serviços a usuários e dispositivos gerenciados.
+必须在 Active Directory 域中安装 System Center Configuration Manager 部署。 此部署的基础包括组成站点层次结构的一个或多个 Configuration Manager 站点。 从单站点到多站点层次结构，安装的站点类型和位置在必要时提供扩展（扩大）部署的能力，并向托管用户和设备提供重要服务。
 
-## <a name="hierarchies-of-sites"></a>Hierarquias de sites
-Quando você instala o System Center Configuration Manager pela primeira vez, o primeiro site do Configuration Manager instalado determina o escopo da hierarquia. O primeiro site do Configuration Manager é a base da qual você gerenciará dispositivos e usuários em sua empresa. Esse primeiro site deve ser um site de administração central ou um site primário autônomo.  
+## <a name="hierarchies-of-sites"></a>站点的层次结构
+首次安装 System Center Configuration Manager 时，安装的第一个 Configuration Manager 站点将确定层次结构的作用域。 将以第一个 Configuration Manager 为基础管理企业中的设备和用户。 此第一个站点必须为管理中心站点或独立主站点。  
 
- Um *site de administração central* é adequado para implantações de grande escala, fornece um ponto central de administração e fornece a flexibilidade para dar suporte a dispositivos distribuídos em uma infraestrutura de rede global. Depois de instalar um site de administração central, é necessário instalar um ou mais sites primários como sites filho. Essa configuração é necessária porque um site de administração central não oferece suporte direto ao gerenciamento de dispositivos, que é a função de um site primário. Um site de administração central dá suporte a diversos sites primários filho. Os sites primários filho são usados para gerenciar diretamente os dispositivos e controlar a largura de banda da rede quando os dispositivos gerenciados estão em diferentes localizações geográficas.  
+ *管理中心站点*适合大规模部署，并能集中管理和灵活地支持分布在全局网络基础架构中的设备。 安装管理中心站点后，将需要安装一个或多个主站点作为子站点。 此配置时必须的，因为管理中心站点不直接支持设备管理（这是主站点的功能）。 一个管理中心站点支持多个子主站点。 当托管设备处于不同地理位置时，可用这些子主站点直接管理设备和控制网络带宽。  
 
- Um *site primário autônomo* é adequado para implantações menores, podendo ser usado para gerenciar dispositivos sem ter que instalar sites adicionais. Embora um site primário autônomo possa limitar o tamanho da sua implantação, ele dá suporte a um cenário para posterior expansão da hierarquia através da instalação de um novo site de administração central. Com esse cenário de expansão de site, o site primário autônomo se torna um site primário filho e então, você pode instalar sites primários filho adicionais abaixo do novo site de administração central. Dessa forma, é possível expandir a implantação inicial para o futuro crescimento de sua empresa.  
+ *独立主站点*适合较小规模的部署，可用来管理设备而无需安装其他站点。 尽管独立主站点可以限制部署的大小，但它支持通过安装新的管理中心站点在稍后扩展层次结构的方案。 使用此站点扩展方案时，独立主站点将成为子主站点，你可以在新的管理中心站点下安装其他子主站点。 然后可以扩展初始部署以应对企业的未来增长。  
 
 > [!TIP]  
->  Um site primário autônomo e um site primário filho são na realidade do mesmo tipo: um site primário. A diferença no nome se baseia na relação de hierarquia que é criada quando você também usa um site de administração central. Essa relação de hierarquia também pode limitar a instalação de certas funções do sistema de sites que estendem a funcionalidade Configuration Manager. Essa limitação de funções ocorre porque determinadas funções do sistema de sites só podem ser instaladas no site de nível superior da hierarquia: um site de administração central ou um site primário autônomo.  
+>  独立主站点和子主站点实际上属于同一类型的站点：主站点。 名称差异基于某类层次结构关系，当你同时使用管理中心站点时会创建这一关系。 此层次结构关系还可能限制可扩展 Configuration Manager 功能的某些站点系统角色的安装。 角色的此限制出现的原因是，某些站点系统角色只能安装在层次结构的顶层站点上，即管理中心站点或独立主站点上。  
 
- Depois de instalar seu primeiro site, você poderá instalar sites adicionais. Se seu primeiro site foi um site de administração central, você poderá instalar um ou mais sites primários filho. Depois de instalar um site primário (autônomo ou primário filho), você pode instalar um ou mais sites secundários.  
+ 安装第一个站点后，即可安装其他站点。 如果第一个站点是管理中心站点，则可安装一个或多个子主站点。 安装主站点（独立主站点或子主站点）后，即可安装一个或多个辅助站点。  
 
- Um *site secundário* só pode ser instalado como um site filho abaixo de um site primário. Esse tipo de site estende o alcance de um site primário para gerenciamento de dispositivos em locais que têm uma conexão de rede lenta com o site primário. Embora o site secundário estenda o site primário, o site primário gerencia todos os clientes. O site secundário fornece suporte para dispositivos no local remoto. Ele oferece suporte através da compactação e gerenciamento da transferência de informações na rede que você envia (implanta) para clientes e que os clientes enviam de volta para o site.  
+ “辅助站点”只能作为子站点安装在主站点下。 此站点类型可对主站点进行扩展，使其可管理通过慢速网络连接到主站点的位置的设备。 即使辅助站点扩展主站点，主站点仍管理所有客户端。 辅助站点对位于远程位置的设备提供支持。 辅助站点提供此支持的方法是：通过对网络中发送（部署）到客户端的信息和客户端发送回站点的信息的传输进行压缩和管理。  
 
- Os diagramas a seguir mostram alguns exemplos de designs de site.  
+ 下图显示了一些示例站点设计。  
 
- ![Exemplos de hierarquia](media/Hierarchy_examples.png)  
+ ![层次结构示例](media/Hierarchy_examples.png)  
 
- Para mais informações, consulte os seguintes tópicos:  
+ 有关详细信息，请参阅下列主题：  
 
--   [Introduction to System Center Configuration Manager](../../core/understand/introduction.md)  
+-   [System Center Configuration Manager 简介](../../core/understand/introduction.md)  
 
--   [Criar uma hierarquia de sites para o System Center Configuration Manager](../../core/plan-design/hierarchy/design-a-hierarchy-of-sites.md)  
+-   [为 System Center Configuration Manager 设计站点层次结构](../../core/plan-design/hierarchy/design-a-hierarchy-of-sites.md)  
 
--   [Instalar sites do System Center Configuration Manager](/sccm/core/servers/deploy/install/installing-sites)  
+-   [安装 System Center Configuration Manager 站点](/sccm/core/servers/deploy/install/installing-sites)  
 
-## <a name="site-system-servers-and-site-system-roles"></a>Servidores do sistema de site e funções do sistema de site  
- Cada site do Configuration Manager instala *funções do sistema de sites* que dão suporte às operações de gerenciamento. As funções a seguir são instaladas por padrão quando você instala um site:
+## <a name="site-system-servers-and-site-system-roles"></a>站点系统服务器和站点系统角色  
+ 每个 Configuration Manager 站点都将安装支持管理操作的*站点系统角色*。 安装站点时，将默认安装以下角色：
 
--   A função de servidor de site é atribuída ao computador no qual você instala o site.
+-   将向安装站点的计算机分配站点服务器角色。
 
--   A função de servidor de banco de dados do site é atribuída ao SQL Server que hospeda o banco de dados do site.
+-   将向托管站点数据库的 SQL Server 分配站点数据库服务器角色。
 
-Outras funções do sistema de sites são opcionais e são usadas somente quando você quer usar a funcionalidade que esteja ativa em uma função do sistema de sites. Qualquer computador que hospede uma função do sistema de sites é conhecido como servidor do sistema de sites.  
+其他站点系统角色是可选的，仅在你希望使用站点系统角色中活动的功能时使用。 托管站点系统角色的任何计算机都称为站点系统服务器。  
 
- Para uma implantação menor do Configuration Manager, inicialmente, você pode executar todas as funções do sistema de sites diretamente no computador do servidor do site. Depois, conforme o ambiente gerenciado e as necessidades aumentam, é possível instalar servidores adicionais do sistema de sites para hospedar mais funções do sistema de sites, a fim de aprimorar a eficiência do site no fornecimento de serviços a mais dispositivos.  
+ 对于 Configuration Manager 的较小部署，可在站点服务器计算机上直接初始运行所有站点系统角色。 然后，随着管理的环境规模的扩大以及需求的增长，你可以相应安装更多站点系统服务器来托管增加的站点系统角色，以改进站点向更多设备提供服务的效率。  
 
- Para obter informações sobre como planejar diferentes funções do sistema de sites, consulte [Funções do sistema de sites](../../core/plan-design/hierarchy/plan-for-site-system-servers-and-site-system-roles.md#bkmk_planroles) em [Planejar servidores de sistema de sites e funções de sistema de sites no System Center Configuration Manager](../../core/plan-design/hierarchy/plan-for-site-system-servers-and-site-system-roles.md).
+ 有关不同的站点系统角色的信息，请参阅 [为 System Center Configuration Manager 规划站点系统服务器和站点系统角色](../../core/plan-design/hierarchy/plan-for-site-system-servers-and-site-system-roles.md)中的[站点系统角色](../../core/plan-design/hierarchy/plan-for-site-system-servers-and-site-system-roles.md#bkmk_planroles)。
 
-## <a name="publishing-site-information-to-active-directory-domain-services"></a>Publicando informações de sites nos Serviços de Domínio Active Directory  
- Para simplificar o gerenciamento do Configuration Manager, é possível estender o esquema do Active Directory para dar suporte aos detalhes usados pelo Configuration Manager e, assim, os sites publicam suas principais informações no AD DS (Active Directory Domain Services). Então, os computadores que você deseja gerenciar podem recuperar com segurança informações relacionadas ao site da fonte confiável do AD DS. As informações que os clientes podem recuperar identificam sites disponíveis, servidores do sistema de sites e os serviços que esses servidores do sistema de sites fornecem.  
+## <a name="publishing-site-information-to-active-directory-domain-services"></a>将站点信息发布到 Active Directory 域服务  
+ 为简化 Configuration Manager 的管理，可将 Active Directory 架构扩展为支持 Configuration Manager 所使用的详细信息，然后让站点将其关键信息发布到 Active Directory 域服务 (AD DS)。 然后，你想管理的计算机可从受信任的 AD DS 来源安全检索站点相关信息。 客户端可检索的信息将标识可用站点、站点系统服务器以及这些站点系统服务器提供的服务。  
 
- *A extensão do esquema do Active Directory* é feita apenas uma vez para cada floresta e pode ser feita antes ou depois da instalação do Configuration Manager.   Quando você estende o esquema, é necessário criar um novo contêiner do Active Directory chamado System Management em cada domínio. O contêiner contém um site do Configuration Manager para publicar dados para serem localizados por clientes. Para obter mais informações, consulte [Preparar o Active Directory para publicação de sites](../../core/plan-design/network/extend-the-active-directory-schema.md).  
+ *扩展 Active Directory 架构*对于每个林只执行一次，且可在 Configuration Manager 安装前和安装后执行。   扩展架构之后，必须在每个域中创建名为“系统管理”的新 Active Directory 容器。 此容器包含一个 Configuration Manager 站点，它会发布数据以供客户端查找。 有关详细信息，请参阅[为站点发布准备 Active Directory](../../core/plan-design/network/extend-the-active-directory-schema.md)。  
 
- *A publicação de dados do site* aprimora a segurança da hierarquia do Configuration Manager e reduz a sobrecarga administrativa, mas não é obrigatória para funcionalidades básicas do Configuration Manager.  
-
-
-
-<!--HONumber=Dec16_HO5-->
-
-
+ *发布站点数据*可提高 Configuration Manager 层次结构的安全性并减少管理开销，但不是基本 Configuration Manager 功能所必需的。  

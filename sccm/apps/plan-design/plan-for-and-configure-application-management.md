@@ -1,230 +1,226 @@
 ---
-title: Planejar e configurar o gerenciamento de aplicativos | Microsoft Docs
-description: "Implemente e configure as dependências necessárias para implantar aplicativos no System Center Configuration Manager."
+title: "规划和配置应用程序管理 | Microsoft Docs"
+description: "实现和配置用于在 System Center Configuration Manager 中部署应用程序的所需依赖关系。"
 ms.custom: na
 ms.date: 02/09/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
-ms.technology:
-- configmgr-app
+ms.technology: configmgr-app
 ms.tgt_pltfrm: na
 ms.topic: get-started-article
 ms.assetid: 2be84a1d-ebb9-47ae-8982-c66d5b92a52a
-caps.latest.revision: 13
+caps.latest.revision: "13"
 author: robstackmsft
 ms.author: robstack
 manager: angrobe
-ms.translationtype: Human Translation
-ms.sourcegitcommit: 1c43c4968f93985515249ddb117269f8ed61302a
 ms.openlocfilehash: 46cc3fcfd9516cf1c124e24b50d0aac0cb0025dc
-ms.contentlocale: pt-br
-ms.lasthandoff: 05/17/2017
-
-
+ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
+ms.translationtype: HT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 08/07/2017
 ---
-# <a name="plan-for-and-configure-application-management-in-system-center-configuration-manager"></a>Planejar e configurar o gerenciamento de aplicativos no System Center Configuration Manager
+# <a name="plan-for-and-configure-application-management-in-system-center-configuration-manager"></a>规划和配置 System Center Configuration Manager 中的应用程序管理
 
-*Aplica-se a: System Center Configuration Manager (Branch Atual)*
+*适用范围：System Center Configuration Manager (Current Branch)*
 
-Use as informações descritas neste artigo como auxílio para implantar as dependências necessárias para implantar aplicativos no System Center Configuration Manager.  
+使用本文中的信息可帮助实现用于在 System Center Configuration Manager 中部署应用程序的所需依赖关系。  
 
-## <a name="dependencies-external-to-configuration-manager"></a>Dependências externas ao Configuration Manager  
+## <a name="dependencies-external-to-configuration-manager"></a>Configuration Manager 的外部依赖关系  
 
-|Dependência|Mais informações|  
+|依赖关系|更多信息|  
 |------------------|----------------------|  
-|O IIS (Serviços de Informações da Internet) é necessário nos servidores do sistema de sites que executam o ponto de sites da Web e o ponto de serviço Web do catálogo de aplicativos, o ponto de gerenciamento e o ponto de distribuição.|Para saber mais sobre este requisito, veja [Configurações com suporte](../../core/plan-design/configs/supported-configurations.md).|  
-|Dispositivos móveis registrados pelo Configuration Manager|Quando você assinar o código de aplicativos para implantá-los nos dispositivos móveis, não use um certificado que tenha sido gerado usando um modelo de Versão 3 (**Windows Server 2008, Enterprise Edition**). Esse modelo de certificado cria um certificado não compatível com aplicativos do Configuration Manager para dispositivos móveis.<br /><br /> Se você usa os Serviços de Certificados do Active Directory para assinar o código de aplicativos para aplicativos de dispositivo móvel, não use um modelo de certificado de Versão 3.|  
-|Clientes deverão ser configurados para fazer auditoria de eventos de entrada, se você quiser criar automaticamente afinidades de dispositivo de usuário.|O cliente do Configuration Manager lê os eventos de logon do tipo **sucesso** do log de eventos de segurança de PCs para determinar afinidades de dispositivo de usuário automático.  Esses eventos são habilitados pelas duas políticas de auditoria seguintes: "<br>**Eventos de logon de conta de auditoria**<br>**Eventos de logon de auditoria**<br>Para criar automaticamente relacionamentos entre usuários e dispositivos, verifique se essas duas configurações estão habilitadas em computadores cliente. Você pode usar a política de grupo do Windows para definir essas configurações.|  
+|在运行应用程序目录网站点、应用程序目录 Web 服务点、管理点和分发点的站点系统服务器上，需要安装 Internet Information Services (IIS)。|有关此要求的详细信息，请参阅[支持的配置](../../core/plan-design/configs/supported-configurations.md)。|  
+|Configuration Manager 注册的移动设备|在对应用程序进行代码签名以将其部署到移动设备时，如果使用版本 3 模 (**Windows Server 2008, Enterprise Edition**) 生成了证书，请勿使用此证书。 此证书模板创建的证书与用于移动设备的 Configuration Manager 应用程序不兼容。<br /><br /> 如果使用 Active Directory 证书服务对移动设备应用程序进行代码签名，请勿使用版本 3 证书模板。|  
+|如果想自动创建用户设备相关性，必须将客户端配置为审核登录事件。|Configuration Manager 客户端从电脑的安全事件日志中读取类型为“成功”的登录事件，以确定自动的用户设备相关性。  通过以下两个审核策略，启用这些事件：<br>**审核帐户登录事件**<br>**审核登录事件**<br>若要自动在用户和设备之间创建关系，请确保在客户端计算机上启用这两个设置。 可以使用 Windows 组策略来配置这两个设置。|  
 
-## <a name="configuration-manager-dependencies"></a>Dependências do Configuration Manager   
+## <a name="configuration-manager-dependencies"></a>Configuration Manager 依赖关系   
 
-|Dependência|Mais informações|  
+|依赖关系|更多信息|  
 |------------------|----------------------|  
-|Ponto de gerenciamento|Os clientes entram em contato com um ponto de gerenciamento para baixar a política do cliente, para localizar conteúdo e para se conectar ao catálogo de aplicativos.<br /><br /> Se os clientes não podem acessar um ponto de gerenciamento, não podem usar o catálogo de aplicativos.|  
-|Ponto de distribuição|Para os aplicativos serem implantados nos clientes, tenha pelo menos um ponto de distribuição na hierarquia. Por padrão, o servidor do site possui uma função de site de ponto de distribuição habilitada durante uma instalação padrão. O número e a localização dos pontos de distribuição variam de acordo com os requisitos específicos de sua empresa.<br /><br /> Para saber mais sobre como instalar pontos de distribuição e gerenciar conteúdo, consulte [Gerenciar conteúdo e infraestrutura de conteúdo](../../core/servers/deploy/configure/manage-content-and-content-infrastructure.md).|  
-|Configurações do cliente|Muitas configurações do cliente controlam como os aplicativos são instalados no cliente e a experiência do usuário no cliente. Essas configurações do cliente incluem:<br /><br /><ul><li>Agente de Computador</li><li>Reinicialização do computador</li><li>Implantação de software</li><li>Afinidade de dispositivo e de usuário</li></ul> Para saber mais sobre essas configurações do cliente, consulte [Sobre as configurações do cliente](../../core/clients/deploy/about-client-settings.md).<br /><br /> Para saber como definir as configurações do cliente, consulte [Como definir as configurações do cliente](../../core/clients/deploy/configure-client-settings.md).|  
-|Para o catálogo de aplicativos:<br /><br /> Contas de usuário descobertas|O Configuration Manager deve primeiro descobrir usuários antes que possam exibir e solicitar aplicativos do Catálogo de Aplicativos. Para mais informações, consulte [Executar descoberta](/sccm/core/servers/deploy/configure/run-discovery).|  
-|Cliente App-V 4.6 SP1 ou posterior para executar aplicativos virtuais|Para poder criar aplicativos virtuais no Configuration Manager, os computadores cliente devem ter o cliente App-V 4.6 SP1 ou posterior instalado.<br /><br /> É necessário atualizar o cliente App-V com o hotfix descrito na Base de Dados de Conhecimento, [artigo 2645225](http://go.microsoft.com/fwlink/p/?LinkId=237322) antes de implantar aplicativos virtuais.|  
-|Ponto de serviços Web do Catálogo de Aplicativos|O ponto de serviços Web do catálogo de aplicativos é uma função de sistema de site que fornece informações sobre softwares disponíveis da Biblioteca de Software para os sites da Web do catálogo de aplicativos.<br /><br /> Para saber mais sobre como configurar esta função do sistema de sites, veja [Configurar a Central de Software e o Catálogo de Aplicativos (apenas para computadores Windows)](/sccm/apps/plan-design/plan-for-and-configure-application-management#configure-software-center-and-the-application-catalog-windows-pcs-only) neste artigo.|  
-|Ponto de sites da Web do catálogo de aplicativos|O ponto de sites da Web do catálogo de aplicativos é uma função de sistema de site que fornece aos usuários uma lista de softwares disponíveis.<br /><br /> Para saber mais sobre como configurar esta função do sistema de sites, veja [Configurar a Central de Software e o Catálogo de Aplicativos (apenas para computadores Windows)](/sccm/apps/plan-design/plan-for-and-configure-application-management#configure-software-center-and-the-application-catalog-windows-pcs-only) neste artigo.|  
-|Ponto do Reporting Services|Para poder usar os relatórios no Configuration Manager para gerenciamento de aplicativos, primeiro instale e configure um ponto do Reporting Services.<br /><br /> Para obter mais informações, consulte [Relatórios no System Center Configuration Manager](../../core/servers/manage/reporting.md).|  
-|Permissões de segurança para gerenciamento de aplicativos|Você deve ter as seguintes permissões de segurança para gerenciar aplicativos.<br /><br /> A função de segurança **Autor de Aplicativos** inclui as permissões listadas anteriormente que são necessárias para criar, alterar e desativar aplicativos no Configuration Manager.<br /><br /> **Para implantar aplicativos:**<br /><br /> A função de segurança **Gerenciador de Implantação de Aplicativos** inclui as permissões listadas anteriormente que são necessárias para implantar aplicativos no Configuration Manager.<br /><br /> A função de segurança do **Administrador de Aplicativos** tem todas as permissões de ambas as funções de segurança: **Autor de Aplicativos** e **Gerenciador de Implantação de Aplicativos**.<br /><br /> Para mais informações, consulte [Configurar administração baseada em funções](../../core/servers/deploy/configure/configure-role-based-administration.md).|  
+|管理点|客户端会与管理点联系，以下载客户端策略、查找内容和连接到应用程序目录。<br /><br /> 如果客户端无法访问管理点，则无法使用应用程序目录。|  
+|分发点|在可以将应用程序部署到客户端之前，层次结构中必须有至少一个分发点。 默认情况下，站点服务器在标准安装时启用分发点站点角色。 分发点的数量和位置将因企业的特定要求而异。<br /><br /> 若要深入了解如何安装分发点和管理内容，请参阅[管理内容和内容基础结构](../../core/servers/deploy/configure/manage-content-and-content-infrastructure.md)。|  
+|客户端设置|许多客户端设置都可以控制在客户端上安装应用程序的方式和用户在客户端上的体验。 这些客户端设置包括：<br /><br /><ul><li>计算机代理</li><li>计算机重新启动</li><li>软件部署</li><li>用户和设备相关性</li></ul> 有关这些客户端设置的详细信息，请参阅[关于客户端设置](../../core/clients/deploy/about-client-settings.md)。<br /><br /> 若要了解如何配置客户端设置，请参阅[如何配置客户端设置](../../core/clients/deploy/configure-client-settings.md)。|  
+|对于应用程序目录：<br /><br /> 发现的用户帐户|用户必须先被 Configuration Manager 发现，然后才能查看和请求应用程序目录中的应用程序。 有关详细信息，请参阅[运行发现](/sccm/core/servers/deploy/configure/run-discovery)。|  
+|必须安装 APP-V 4.6 SP1 或更高版本的客户端才能运行虚拟应用程序|为了能够在 Configuration Manager 中创建虚拟应用程序，客户端计算机必须安装 App-V 4.6 SP1 或更高版本的客户端。<br /><br /> 还必须使用在知识库[文章 2645225](http://go.microsoft.com/fwlink/p/?LinkId=237322) 中描述的修补程序来更新 App-V 客户端，才能部署虚拟应用程序。|  
+|应用程序目录 Web 服务点|应用程序目录 Web 服务点是站点系统角色，它向应用程序目录网站提供有关软件库中可用的软件的信息。<br /><br /> 若要深入了解如何配置此站点系统角色，请参阅本文中的[配置软件中心和应用程序目录（仅适用于 Windows 电脑）](/sccm/apps/plan-design/plan-for-and-configure-application-management#configure-software-center-and-the-application-catalog-windows-pcs-only)。|  
+|应用程序目录网站点|应用程序目录网站点是站点系统角色，它向用户提供可用软件的列表。<br /><br /> 若要深入了解如何配置此站点系统角色，请参阅本文中的[配置软件中心和应用程序目录（仅适用于 Windows 电脑）](/sccm/apps/plan-design/plan-for-and-configure-application-management#configure-software-center-and-the-application-catalog-windows-pcs-only)。|  
+|Reporting Services 点|为了能够使用 Configuration Manager 中的报表进行应用程序管理，必须首先安装和配置 Reporting Services 点。<br /><br /> 有关详细信息，请参阅 [System Center Configuration Manager 中的报表](../../core/servers/manage/reporting.md)。|  
+|应用程序管理的安全权限|必须具有以下安全权限才能管理应用程序。<br /><br /> “应用程序作者”安全角色包含前面列出的在 Configuration Manager 中创建、更改和停用应用程序所需的权限。<br /><br /> **若要部署应用程序，请执行以下操作：**<br /><br /> “应用程序部署管理员”安全角色包含前面列出的在 Configuration Manager 中部署应用程序所需的权限。<br /><br /> “应用程序管理员”安全角色具有“应用程序作者”和“应用程序部署管理员”安全角色中的所有权限。<br /><br /> 有关详细信息，请参阅[配置基于角色的管理](../../core/servers/deploy/configure/configure-role-based-administration.md)。|  
 
-##  <a name="configure-software-center-and-the-application-catalog-windows-pcs-only"></a>Configurar o Centro de Software e o Catálogo de Aplicativos (somente computadores com Windows)  
+##  <a name="configure-software-center-and-the-application-catalog-windows-pcs-only"></a>配置软件中心和应用程序目录（仅适用于 Windows PC）  
 
- No System Center Configuration Manager, agora você tem duas opções para que os usuários alterem configurações, procurem e instalem aplicativos:  
+ 在 System Center Configuration Manager 中，对于用户如何更改设置、浏览应用程序和安装应用程序，现在有两个选项：  
 
--   **O novo Centro de Software** – o novo Centro de Software tem uma aparência moderna. Os aplicativos que só eram exibidos no Catálogo de Aplicativos dependente do Silverlight (aplicativos disponíveis para o usuário) agora aparecem no Centro de Software sob a guia **Aplicativos**. O Catálogo de Aplicativos ainda pode ser acessado usando o link na guia **Status da Instalação** do Centro de Software.  
+-   **新的软件中心** - 新的软件中心具有新式外观。 并且本应仅出现在依赖于 Silverlight 的应用程序目录中的应用（用户可用的应用）现在将出现在“应用程序”选项卡下的软件中心。 应用程序目录仍然可以通过软件中心的“安装状态”选项卡下的链接进行访问。  
 
-     É possível configurar clientes para usar o novo Centro de Software habilitando a configuração do cliente **Agente de Computador** > **Usar o novo Centro de Software**.  
+     你可以通过启用客户端设置“计算机代理” **计算机代理** > **使用新的软件中心**。  
 
     > [!IMPORTANT]  
-    >  Embora não seja mais necessário conectar-se ao Catálogo de Aplicativos, você ainda deve configurar o ponto de sites da Web e o ponto de serviço Web do Catálogo de Aplicativos, conforme detalhado na próxima seção.  
+    >  虽然不再需要连接到应用程序目录，但仍必须配置应用程序目录网站点和应用程序目录 Web 服务点，该内容将在下一节中详细介绍。  
 
--   **O Centro de Software e o Catálogo de Aplicativos anteriores** - Por padrão, os usuários continuam se conectando à versão anterior do Centro de Software e conectando-se ao Catálogo de Aplicativos (navegador da Web habilitado para Silverlight necessário) para procurar os aplicativos disponíveis.  
+-   **以前的软件中心和应用程序目录** - 默认情况下，用户会继续连接到以前版本的软件中心并连接到应用程序目录（需要 Silverlight 启用的 Web 浏览器）来浏览可用的应用程序。  
 
- Qualquer que seja a versão que você optar por usar, o Centro de Software é instalado automaticamente durante a instalação do cliente do Configuration Manager em computadores com Windows.  
+ 无论你选择使用哪个版本，当你在 Windows 电脑上安装 Configuration Manager 客户端时，都会自动安装软件中心。  
 
     > [!TIP]  
-    >  A versão do Centro de Software vista pelos usuários baseia-se nas configurações do cliente do Configuration Manager. Isso fornece a flexibilidade para controlar a versão que é usada com base nas configurações personalizadas do cliente que são implantadas em uma coleção. 
+    >  用户看到的软件中心的版本取决于 Configuration Manager 客户端设置。 这样便能根据部署到集合的自定义客户端设置，灵活地控制使用哪个版本。 
 
     > [!IMPORTANT]
-    > Nos próximos meses, removeremos a versão anterior do Software Center e ela não estará mais disponível para uso.
-    > É possível configurar clientes para usar o novo Centro de Software habilitando a configuração do cliente **Agente de Computador** > **Usar o novo Centro de Software**. 
+    > 在未来几个月，我们将删除以前版本的软件中心，并且它将不再可用。
+    > 你可以通过启用客户端设置“计算机代理” **计算机代理** > **使用新的软件中心**。 
 
-## <a name="steps-to-install-and-configure-the-application-catalog-and-software-center"></a>Etapas para instalar e configurar o Catálogo de Aplicativos e o Centro de Software  
+## <a name="steps-to-install-and-configure-the-application-catalog-and-software-center"></a>安装和配置应用程序目录及软件中心的步骤  
 
 > [!IMPORTANT]  
->  Antes de executar essas etapas, verifique se você atendeu a todos os pré-requisitos listados anteriormente.  
+>  执行这些步骤以前，请确保已满足之前所列的所有先决条件。  
 
-|Etapas|Detalhes|Mais informações|  
+|步骤|详细信息|更多信息|  
 |-----------|-------------|----------------------|  
-|**Etapa 1:** Se for usar conexões HTTPS, verifique se você primeiro implantou um certificado do servidor Web nos servidores do sistema de sites.|Implante um certificado do servidor Web nos servidores do sistema de site que executarão o ponto de sites da Web do catálogo de aplicativos e ponto de serviços Web do catálogo de aplicativos.<br /><br /> Além disso, se você desejar que clientes usem o Catálogo de Aplicativos pela Internet, implante um certificado do servidor Web em ao menos um servidor do sistema de site do ponto de gerenciamento e configure-o para conexões de clientes pela Internet.|Para saber mais sobre requisitos de certificado, consulte [Requisitos de certificado PKI](../../core/plan-design/network/pki-certificate-requirements.md).|  
-|**Etapa 2:** Se usar um certificado PKI de cliente para conexões a pontos de gerenciamento, implante um certificado de autenticação de cliente nos computadores cliente.|Apesar de os clientes não usarem um certificado PKI de cliente para se conectarem ao Catálogo de Aplicativos, eles precisam se conectar ao ponto de gerenciamento para poderem usar o Catálogo de Aplicativos. Você deve implantar um certificado de autenticação de cliente em computadores cliente nos seguintes cenários:<br /><br /><ul><li>Todos os pontos de gerenciamento na intranet aceitam apenas conexões de clientes HTTPS.</li><li>Os clientes se conectarão ao catálogo de aplicativos pela Internet.</li></ul>|Para saber mais sobre requisitos de certificado, consulte [Requisitos de certificado PKI](../../core/plan-design/network/pki-certificate-requirements.md).|  
-|**Etapa 3:** Instale e configure o ponto de serviços Web do catálogo de aplicativos e o site do catálogo de aplicativos.|Você deve instalar as duas funções do sistema de site no mesmo site. Não é necessário instalá-las no mesmo servidor do sistema de site ou na mesma floresta do Active Directory. No entanto, o ponto de serviço Web do catálogo de aplicativos deve estar na mesma floresta que o banco de dados do site.|Para saber mais sobre o posicionamento de funções do sistema de sites, consulte [Planejamento para servidores de sistema de sites e funções de sistema de sites](../../core/plan-design/hierarchy/plan-for-site-system-servers-and-site-system-roles.md).<br /><br /> Para configurar o ponto de serviço Web e o ponto de sites da Web do Catálogo de Aplicativos, veja **Etapa 3: Instalar e configurar as funções do sistema de sites do Catálogo de Aplicativos**.|  
-|**Etapa 4:** Definir as configurações do cliente para o Catálogo de Aplicativos e o Centro de Software.|Defina as configurações do cliente padrão se você desejar que todos os usuários tenham a mesma configuração. Caso contrário, defina as configurações do cliente personalizadas para coleções específicas.|Para saber mais sobre configurações do cliente, consulte [Sobre as configurações do cliente](../../core/clients/deploy/about-client-settings.md).<br /><br /> Para saber mais sobre como definir estas configurações do cliente, veja **Etapa 4: Definir as configurações do cliente para o Catálogo de Aplicativos e o Centro de Software**.|  
-|**Etapa 5:** Verificar se o Catálogo de Aplicativos está funcionando.|Você pode usar o Catálogo de Aplicativos diretamente de um navegador ou do Centro de Software.|Veja **Etapa 5: Verificar se o Catálogo de Aplicativos está funcionando**.|  
+|**步骤 1：** 如果你将使用 HTTPS 连接，请确保已将 Web 服务器证书部署到站点系统服务器。|将 Web 服务器证书部署到将运行应用程序目录网站点和应用程序目录 Web 服务点的站点系统服务器。<br /><br /> 此外，如果希望客户端从 Internet 中使用应用程序目录，请将 Web 服务器证书部署到至少一个管理点站点系统服务器，并针对来自 Internet 的客户端连接对其进行配置。|有关证书要求的详细信息，请参阅 [PKI 证书要求](../../core/plan-design/network/pki-certificate-requirements.md)。|  
+|**步骤 2：** 如果你将使用客户端 PKI 证书连接到管理点，请将客户端身份验证证书部署到客户端计算机。|尽管客户端不使用客户端 PKI 证书来连接到应用程序目录，但它们必须连接到管理点，然后才能使用应用程序目录。 在以下情况下，你必须将客户端身份验证证书部署到客户端计算机：<br /><br /><ul><li>Intranet 中的所有管理点只接受 HTTPS 客户端连接。</li><li>客户端将从 Internet　连接到应用程序目录。</li></ul>|有关证书要求的详细信息，请参阅 [PKI 证书要求](../../core/plan-design/network/pki-certificate-requirements.md)。|  
+|**步骤 3：** 安装和配置应用程序目录 Web 服务点和应用程序目录网站。|必须将这两个站点系统角色安装在同一站点中。 你不必将它们安装在同一站点系统服务器上或安装在同一 Active Directory 林中。 但是，应用程序目录 Web 服务点必须位于站点数据库所在的林中。|有关站点系统角色布局的详细信息，请参阅[规划站点系统服务器和站点系统角色](../../core/plan-design/hierarchy/plan-for-site-system-servers-and-site-system-roles.md)。<br /><br /> 要配置应用程序目录 Web 服务点和应用程序目录网站点，请参阅**步骤 3：安装和配置应用程序目录站点系统角色**。|  
+|**步骤 4：** 为应用程序目录和软件中心配置客户端设置。|如果希望所有用户具有相同设置，请配置默认客户端设置。 否则，请为特定集合配置自定义客户端设置。|有关客户端设置的详细信息，请参阅[关于客户端设置](../../core/clients/deploy/about-client-settings.md)。<br /><br /> 若要详细了解如何配置这些客户端设置，请参阅**步骤 4：为应用程序目录和软件中心配置客户端设置**。|  
+|**步骤 5：** 验证应用程序目录是否可正常运行。|可以从浏览器或软件中心中直接使用应用程序目录。|请参阅**步骤 5：验证应用程序目录是否可正常运行**。|  
 
-## <a name="supplemental-procedures-to-install-and-configure-the-application-catalog-and-software-center"></a>Procedimentos complementares para instalar e configurar o catálogo de aplicativos e o Centro de Software  
- Use as seguintes informações quando as etapas descritas na tabela anterior exigirem procedimentos complementares.  
+## <a name="supplemental-procedures-to-install-and-configure-the-application-catalog-and-software-center"></a>用于安装和配置应用程序目录和软件中心的补充过程  
+ 如果上表中的步骤需要执行补充过程，请使用以下信息。  
 
-###  <a name="step-3-install-and-configure-the-application-catalog-site-system-roles"></a>Etapa 3: instalar e configurar as funções do sistema de site do catálogo de aplicativos  
- Esses procedimentos configuram as funções do sistema de site para o catálogo de aplicativos. Escolha um dos dois procedimentos a seguir dependendo se você instalará um novo servidor do sistema de sites ou se usará um servidor do sistema de sites existente:  
+###  <a name="step-3-install-and-configure-the-application-catalog-site-system-roles"></a>步骤 3：安装和配置应用程序目录站点系统角色  
+ 这些过程为应用程序目录配置站点系统角色。 请选择以下两个过程之一，具体取决于是安装新站点系统服务器还是使用现有站点系统服务器：  
 
 > [!NOTE]  
->  O catálogo de aplicativos não pode ser instalado em um site secundário ou um site de administração central.  
+>  应用程序目录不能安装在辅助站点或管理中心站点上。  
 
-####  <a name="to-install-and-configure-the-application-catalog-site-systems-new-site-system-server"></a>Para instalar e configurar os sistemas de site do catálogo de aplicativos: Novo servidor do sistema de site  
+####  <a name="to-install-and-configure-the-application-catalog-site-systems-new-site-system-server"></a>安装和配置应用程序目录站点系统：新建站点系统服务器  
 
-1.  No console do Configuration Manager, escolha **Administração** > **Configuração do Site** > **Funções de Servidores e Sistema de Site**.  
+1.  在 Configuration Manager 控制台中，选择“管理” > “站点配置” > “服务器和站点系统角色”。  
 
-3.  Na guia **Início**, no grupo **Criar**, escolha **Criar Servidor do Sistema de Site**.  
+3.  在“主页”选项卡上的“创建”组中，选择“创建站点系统服务器”。  
 
-4.  Na página **Geral**, especifique as configurações gerais para o sistema de site e, em seguida, escolha **Próximo**.  
-
-    > [!TIP]  
-    >  Se você deseja que computadores cliente usem o Catálogo de Aplicativos pela Internet, especifique o FQDN (nome de domínio totalmente qualificado) de Internet.  
-
-5.  Na página **Seleção de Função do Sistema**, selecione **Ponto de serviço Web do Catálogo de Aplicativos** e **Ponto de sites da Web do Catálogo de Aplicativos** na lista de funções disponíveis e escolha **Próximo**.  
-
-6.  Conclua o assistente.  
-
-####  <a name="to-install-and-configure-the-application-catalog-site-systems-existing-site-system-server"></a>Para instalar e configurar os sistemas de site do catálogo de aplicativos: Servidor do sistema de site existente  
-
-1.  No console do Configuration Manager, escolha **Administração** > **Configuração do Site** > **Funções de Servidores e Sistema de Site** e selecione o servidor a ser usado para o Catálogo de Aplicativos.  
-
-3.  Na guia **Início**, no grupo **Servidor**, clique em **Adicionar funções do sistema de sites**.  
-
-4.  Na página **Geral**, especifique as configurações gerais para o sistema de site e, em seguida, escolha **Próximo**.  
+4.  在“常规”页上，指定站点系统的常规设置，然后选择“下一步”。  
 
     > [!TIP]  
-    >  Se você deseja que computadores cliente usem o Catálogo de Aplicativos pela Internet, especifique o FQDN (nome de domínio totalmente qualificado) de Internet.  
+    >  如果希望客户端计算机通过 Internet 使用应用程序目录，请指定 Internet 完全限定的域名 (FQDN)。  
 
-5.  Na página **Seleção de Função do Sistema**, selecione **Ponto de serviço Web do Catálogo de Aplicativos** e **Ponto de sites da Web do Catálogo de Aplicativos** na lista de funções disponíveis e escolha **Próximo**.  
+5.  在“系统角色选择”页上，从可用角色列表选择“应用程序目录 Web 服务点”和“应用程序目录网站点”，然后选择“下一步”。  
 
-6.  Conclua o assistente.  
+6.  完成该向导。  
 
-7. Verifique a instalação dessas funções do sistema de site usando as mensagens de status e analisando os arquivos de log:  
+####  <a name="to-install-and-configure-the-application-catalog-site-systems-existing-site-system-server"></a>安装和配置应用程序目录站点系统：现有站点系统服务器  
 
-    Mensagens de status: Use os componentes **SMS_PORTALWEB_CONTROL_MANAGER** e **SMS_AWEBSVC_CONTROL_MANAGER**.  
+1.  在 Configuration Manager 控制台中，选择“管理” > “站点配置” > “服务器和站点系统角色”，然后选择要用于应用程序目录的服务器。  
 
-    Por exemplo, a ID do status **1015** para **SMS_PORTALWEB_CONTROL_MANAGER** confirma se o Gerenciador do Componente de Site instalou com êxito o ponto de sites da Web do Catálogo de Aplicativos.  
+3.  在“主页”选项卡上的“服务器”组中，选择“添加站点系统角色”。  
 
-    Arquivos de log: Procure **SMSAWEBSVCSetup.log** e **SMSPORTALWEBSetup.log**.  
+4.  在“常规”页上，指定站点系统的常规设置，然后选择“下一步”。  
 
-    Para obter mais informações, pesquise os arquivos de log **awebsvcMSI.log** e **portlwebMSI.log**.  
+    > [!TIP]  
+    >  如果希望客户端计算机通过 Internet 使用应用程序目录，请指定 Internet 完全限定的域名 (FQDN)。  
 
-###  <a name="step-4-configure-the-client-settings-for-the-application-catalog-and-software-center"></a>Etapa 4: definir as configurações do cliente para o Catálogo de Aplicativos e o Centro de Software  
- Esse procedimento define as configurações do cliente padrão para o catálogo de aplicativos e o Centro de Software que se aplicam a todos os dispositivos na hierarquia. Se você deseja que essas configurações se apliquem a somente alguns dispositivos, é possível criar uma configuração personalizada do cliente e implantá-la em uma coleção que tem os dispositivos que receberão configurações específicas. Para obter mais informações sobre como criar uma configuração de dispositivo personalizada, consulte a seção [Como criar e implantar configurações personalizadas de cliente](../../core/clients/deploy/configure-client-settings.md#create-and-deploy-custom-client-settings) no artigo [Como configurar configurações de cliente no System Center Configuration Manager](../../core/clients/deploy/configure-client-settings.md).  
+5.  在“系统角色选择”页上，从可用角色列表选择“应用程序目录 Web 服务点”和“应用程序目录网站点”，然后选择“下一步”。  
 
-1.  No console do Configuration Manager, escolha **Administração** > **Configurações do Cliente** > **Configurações do Cliente Padrão**.  
+6.  完成该向导。  
 
-3.  Na guia **Início**, no grupo **Propriedades**, clique em **Propriedades**.  
+7. 通过使用状态消息和查看日志文件来验证这些站点系统角色的安装：  
 
-4.  Analise e defina as configurações relacionadas a notificações de usuário, catálogo de aplicativos e Centro de Software. Por exemplo:  
+    状态消息：使用组件“SMS_PORTALWEB_CONTROL_MANAGER”  和“SMS_AWEBSVC_CONTROL_MANAGER” 。  
 
-    1.  Grupo**Agente de Computador** :  
+    例如，“SMS_PORTALWEB_CONTROL_MANAGER”的状态 ID“1015”确认站点组件管理器已成功安装在应用程序目录网站点上。  
 
-        -   **Ponto de sites da Web do Catálogo de Aplicativos padrão**  
+    日志文件：搜索 **SMSAWEBSVCSetup.log** 和 **SMSPORTALWEBSetup.log**。  
 
-        -   **Adicionar sites da Web do Catálogo de Aplicativos padrão à zona de sites confiáveis do Internet Explorer**  
+    有关详细信息，请搜索 **awebsvcMSI.log** 和 **portlwebMSI.log** 日志文件。  
 
-        -   **Nome da organização exibido no Centro de Software**  
+###  <a name="step-4-configure-the-client-settings-for-the-application-catalog-and-software-center"></a>步骤 4：为应用程序目录和软件中心配置客户端设置  
+ 此过程为应用程序目录和软件中心配置将适用于层次结构中的所有设备的默认客户端设置。 如果希望这些设置仅适用于某些设备，则可以创建自定义客户端设置并将其部署到一个集合，该集合中的设备具有特定设置。 若要深入了解如何创建自定义设备设置，请参阅[如何在 System Center Configuration Manager 中配置客户端设置](../../core/clients/deploy/configure-client-settings.md)一文中的[如何创建和部署自定义客户端设置](../../core/clients/deploy/configure-client-settings.md#create-and-deploy-custom-client-settings)部分。  
+
+1.  在 Configuration Manager 控制台中，选择“管理” > “客户端设置” > “默认客户端设置”。  
+
+3.  在“主页”选项卡上的“属性”组中，选择“属性”。  
+
+4.  查看并配置与用户通知、应用程序目录和软件中心相关的设置。 例如：  
+
+    1.  “计算机代理” 组：  
+
+        -   **默认应用程序目录网站点**  
+
+        -   **向 Internet Explorer 受信任的站点区域添加默认应用程序目录网站**  
+
+        -   **软件中心中显示的组织名称**  
 
             > [!TIP]  
-            >  Para especificar o nome da organização exibido no Catálogo de Aplicativos e configurar o tema do site, use a guia **Personalização** nas propriedades de sites da Web do Catálogo de Aplicativos.  
+            >  要指定显示在应用程序目录中的组织名称并配置网站主题，请使用应用程序目录网站属性上的“自定义”选项卡。  
 
-        -   **Usar o novo Centro de Software** -Definido como **Sim** se você desejar usar o novo Centro de Software, que permite aos usuários procurar e instalar aplicativos disponíveis sem a necessidade de acessar o Catálogo de Aplicativos (que exige um navegador da Web habilitado para Silverlight).  
+        -   **使用新的软件中心** - 借助新的软件中心，用户可以浏览和安装可用的应用而无需访问应用程序目录（需要 Silverlight 启用的 Web 浏览器），如果要使用新的软件中心，请设置为“是”。  
 
-        -   **Permissões de instalação**  
+        -   **安装权限**  
 
-        -   **Mostrar notificações para novas implantações**  
+        -   **显示关于新部署的通知**  
 
-    2.  Grupo**Gerenciamento de Energia** :  
+    2.  “电源管理” 组：  
 
-        -   **Permitir que os usuários excluam seu dispositivo do gerenciamento de energia**  
+        -   **允许用户从电源管理中排除其设备**  
 
-    3.  Grupo**Ferramentas Remotas** :  
+    3.  “远程工具” 组：  
 
-        -   **Os usuários podem alterar as configurações de política ou notificação no Centro de Software**  
+        -   **用户可以在软件中心内更改策略或通知设置**  
 
-    4.  Grupo**Afinidade de Usuário e Dispositivo** :  
+    4.  “用户和设备相关性” 组：  
 
-        -   **Permitir que os usuários definam seus dispositivos primários**  
+        -   **允许用户定义其主要设备**  
 
     > [!NOTE]  
-    >  Para saber mais sobre as configurações do cliente, consulte [Sobre configurações de cliente no System Center Configuration Manager](../../core/clients/deploy/about-client-settings.md).  
+    >  有关客户端设置的详细信息，请参阅[关于 System Center Configuration Manager 中的客户端设置](../../core/clients/deploy/about-client-settings.md)。  
 
-5.  Escolha **OK** para fechar a caixa de diálogo **Configurações do Cliente Padrão**.  
+5.  选择“确定”可关闭“默认客户端设置”对话框。  
 
- Os computadores cliente serão definidos com essas configurações durante o próximo download da política do cliente. Para iniciar a recuperação de política para um cliente individual, veja [Como gerenciar clientes](../../core/clients/manage/manage-clients.md).
+ 当客户端计算机下一次下载客户端策略时，将使用这些设置对它们进行配置。 若要为单个客户端启动策略检索，请参阅[如何管理客户端](../../core/clients/manage/manage-clients.md)。
 
-#### <a name="how-to-customize-software-center-branding"></a>Como personalizar a identidade visual do Centro de Software
+#### <a name="how-to-customize-software-center-branding"></a>如何自定义软件中心品牌
 
-A identidade visual personalizada do Centro de Software é aplicada de acordo com as regras a seguir:
+根据以下规则应用软件中心的自定义品牌：
 
-1. Se a função de servidor do site ponto de sites da Web do Catálogo de Aplicativos não estiver instalada, o Centro de Software exibirá o nome da organização especificado na configuração do cliente **Nome da organização** do **Agente de Computador** exibido no Centro de Software. Para ver instruções, consulte [How to configure client settings (Como definir as configurações do cliente)](https://docs.microsoft.com/en-us/sccm/core/clients/deploy/configure-client-settings).
-2. Se a função de servidor do site ponto de sites da Web do catálogo de aplicativos estiver instalada, o Centro de Software exibirá o nome da organização a e cor especificados nas propriedades da função de servidor do site ponto de sites da Web do catálogo de aplicativos. Para obter mais informações, consulte [Configuration options for Application Catalog website point (Opções de configuração do ponto de sites da Web do catálogo de aplicativos)](https://docs.microsoft.com/en-us/sccm/core/servers/deploy/configure/configuration-options-for-site-system-roles#BKMK_ApplicationCatalog_Website).
-3. Se uma assinatura do Microsoft Intune estiver configurada e conectada ao Configuration Manager, o Centro de Software exibirá o nome da organização, a cor e o logotipo da empresa especificados nas propriedades de assinatura do Intune. Para obter mais informações, consulte [Configuring the Microsoft Intune subscription](https://docs.microsoft.com/en-us/sccm/mdm/deploy-use/setup-hybrid-mdm#step-3-configure-intune-subscription).
+1. 如果未安装应用程序目录网站点站点服务器角色，则软件中心将显示“计算机代理”客户端设置（软件中心中显示的“组织名称”）中指定的组织名称。 有关说明，请参阅[如何配置客户端设置](https://docs.microsoft.com/en-us/sccm/core/clients/deploy/configure-client-settings)。
+2. 如果已安装应用程序目录网站点站点服务器角色，则软件中心将显示在应用程序目录网站点站点服务器角色属性中指定的组织名称和颜色。 有关详细信息，请参阅[应用程序目录网站点的配置选项](https://docs.microsoft.com/en-us/sccm/core/servers/deploy/configure/configuration-options-for-site-system-roles#BKMK_ApplicationCatalog_Website)。
+3. 如果已配置 Microsoft Intune 订阅且已连接到 Configuration Manager，则软件中心将显示 Intune 订阅属性中指定的组织名称、颜色和公司徽标。 有关详细信息，请参阅 [Configuring the Microsoft Intune subscription](https://docs.microsoft.com/en-us/sccm/mdm/deploy-use/setup-hybrid-mdm#step-3-configure-intune-subscription)。
 
 > [!IMPORTANT]  
->  A marca do Centro de Software é sincronizada com o serviço do Intune a cada 14 dias, portanto, pode haver um atraso antes que as alterações feitas no Intune sejam exibidas no Configuration Manager.
+>  软件中心品牌与 Intune 服务每 14 天同步一次，因此在 Intune 中所做的更改显示在 Configuration Manager 以前，可能会有延迟。
 
-###  <a name="step-5-verify-that-the-application-catalog-is-operational"></a>Etapa 5: Verificar se o Catálogo de Aplicativos está funcionando  
- Use os procedimentos a seguir para verificar se o catálogo de aplicativos está operacional. Você pode usar o Catálogo de Aplicativos diretamente de um navegador ou do Centro de Software.  
+###  <a name="step-5-verify-that-the-application-catalog-is-operational"></a>步骤 5：验证应用程序目录是否可正常运行  
+ 使用以下过程来验证应用程序目录是否可正常运行。 可以从浏览器或软件中心中直接使用应用程序目录。  
 
 > [!NOTE]  
->  O catálogo de aplicativos requer o Microsoft Silverlight, que é instalado automaticamente como um pré-requisito de cliente do Configuration Manager. Se você usa o catálogo de aplicativos diretamente de um navegador usando um computador que não tem o cliente do Configuration Manager instalado, verifique primeiramente se o Microsoft Silverlight está instalado no computador.  
+>  应用程序目录需要 Microsoft Silverlight，后者将为 Configuration Manager 客户端先决条件自动安装。 如果通过使用未安装 Configuration Manager 客户端的计算机从浏览器中直接使用应用程序目录，请首先验证计算机上是否安装了 Microsoft Silverlight。  
 
 > [!TIP]  
->  Os pré-requisitos ausentes correspondem aos motivos mais comuns do mau funcionamento do Catálogo de Aplicativos após a instalação. Confirme se os pré-requisitos de função do sistema de site para as funções do sistema de site do catálogo de aplicativos. Você pode fazer isso usando o artigo [Configurações com suporte](../../core/plan-design/configs/supported-configurations.md).  
+>  应用程序目录在安装后未正常运行的大多数典型原因都是未满足先决条件。 确认应用程序目录站点系统角色的站点系统角色先决条件。 可以使用[支持的配置](../../core/plan-design/configs/supported-configurations.md)一文实现此目标。  
 
 > [!NOTE]  
->  Se você entrar usando uma conta de Administrador de domínio, as mensagens de notificação do cliente do Configuration Manager (por exemplo, mensagens indicando que novos softwares estão disponíveis) não serão exibidas.  
+>  如果使用域管理员帐户登录，将不会显示来自于 Configuration Manager 客户端的通知消息（如指示新软件可用的消息）。  
 
-### <a name="to-use-the-application-catalog-directly-from-a-browser"></a>Para usar o Catálogo de Aplicativos diretamente de um navegador  
+### <a name="to-use-the-application-catalog-directly-from-a-browser"></a>从浏览器中直接使用应用程序目录  
 
--   No navegador, digite o endereço do site da Web do Catálogo de Aplicativos e confirme se a página da Web exibe estas três guias: **Catálogo de Aplicativos**, **Minhas Solicitações de Aplicativos**e **Meus Dispositivos**.  
+-   在浏览器中，输入应用程序目录网站的地址，并确认网页显示以下三个选项卡：“应用程序目录”、“我的应用程序请求”和“我的设备”。  
 
-     Selecione e use o endereço apropriado na lista a seguir para o Catálogo de Aplicativos, em que &lt;servidor&gt; é o nome do computador, FQDN da intranet ou FQDN da Internet:  
+     为应用程序目录选用以下列表中适当的地址，其中 &lt;server&gt; 是计算机名、Intranet FQDN 或 Internet FQDN：  
 
-    -   Conexões de cliente HTTPS e configurações padrão de função do sistema de sites: **https://&lt;servidor&gt;/CMApplicationCatalog**  
+    -   HTTPS 客户端连接和默认站点系统角色设置：**https://&lt;server&gt;/CMApplicationCatalog**  
 
-    -   Conexões de cliente HTTP e configurações padrão de função do sistema de sites: **http://&lt;servidor&gt;/CMApplicationCatalog**  
+    -   HTTP 客户端连接和默认站点系统角色设置：**http://&lt;server&gt;/CMApplicationCatalog**  
 
-    -   Conexões de cliente HTTPS e configurações personalizadas de função do sistema de sites: **https://&lt;servidor&gt;:&lt;porta&gt;/&lt;nome do aplicativo Web&gt;**  
+    -   HTTPS 客户端连接和自定义站点系统角色设置：**https://&lt;server&gt;:&lt;port&gt;/&lt;web application name&gt;**  
 
-    -   Conexões de cliente HTTP e configurações personalizadas de função do sistema de sites: **http://&lt;servidor&gt;:&lt;porta&gt;/&lt;nome do aplicativo Web&gt;**  
+    -   HTTP 客户端连接和自定义站点系统角色设置：**http://&lt;server&gt;:&lt;port&gt;/&lt;web application name&gt;**  
 
-### <a name="to-use-the-application-catalog-from-software-center-does-not-apply-to-the-new-version-of-software-center"></a>Para usar o Catálogo de Aplicativos do Centro de Software (não se aplica à nova versão do Centro de Software)  
+### <a name="to-use-the-application-catalog-from-software-center-does-not-apply-to-the-new-version-of-software-center"></a>从软件中心（不适用于新版本软件中心）使用应用程序目录  
 
-1.  Em um computador cliente, selecione **Iniciar** > **Todos os Programas** > **Microsoft System Center 2012** > **Configuration Manager** > **Centro de Software**.  
+1.  在客户端计算机上，选择“开始” > “所有程序” > “Microsoft System Center 2012” > “Configuration Manager” > “软件中心”。  
 
-2.  Se você configurou anteriormente um nome organizacional para o Software Center como uma configuração de cliente, confirme se isso é exibido conforme especificado.  
+2.  如果之前为软件中心配置了组织名称作为客户端设置，请确认此名称按指定方式显示。  
 
-3.  Selecione **Encontrar aplicativos adicionais no Catálogo de Aplicativos** e confirme se a página exibe estas três guias: **Catálogo de Aplicativos**, **Minhas Solicitações de Aplicativos**e **Meus Dispositivos**.  
+3.  选择“从应用程序目录中查找其他应用程序”，并确认页面显示以下三个选项卡：“应用程序目录”、“我的应用程序请求”和“我的设备”。  
 
 > [!WARNING]  
->  Após a instalação das funções do sistema de site do Catálogo de Aplicativos, você não verá imediatamente o Catálogo de Aplicativos ao clicar no link **Encontrar aplicativos adicionais no Catálogo de Aplicativos** do Centro de Software. O catálogo de aplicativos ficará disponível no Software Center quando o cliente fizer seus próximos downloads de sua política de cliente ou até 25 horas após a instalação das funções do sistema de site do catálogo de aplicativos.  
-
+>  安装了应用程序目录站点系统角色后，从软件中心选择“从应用程序目录中查找其他应用程序”链接时，将不会立即看到应用程序目录。 在客户端下一次下载其客户端策略后，或在安装了应用程序目录站点系统角色后最多 25 个小时内，将可以从软件中心中使用应用程序目录。  

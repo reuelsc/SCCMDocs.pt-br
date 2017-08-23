@@ -1,99 +1,96 @@
 ---
-title: "Assistente para serviços do Azure | Microsoft Docs"
-description: "Sobre o assistente para serviços do Azure para System Center Configuration Manager."
+title: "Azure 服务向导 | Microsoft Docs"
+description: "关于 System Center Configuration Manager 的 Azure 服务向导。"
 ms.custom: na
 ms.date: 7/31/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
-ms.technology:
-- configmgr-other
+ms.technology: configmgr-other
 ms.tgt_pltfrm: na
 ms.topic: get-started-article
 ms.assetid: a26a653e-17aa-43eb-ab36-0e36c7d29f49
-caps.latest.revision: 0
+caps.latest.revision: "0"
 author: Brenduns
 ms.author: brenduns
 manager: angrobe
-ms.translationtype: HT
-ms.sourcegitcommit: 0663ba84762c44a5c303562548499f195bae9e1c
 ms.openlocfilehash: 22203b358830903cf2e531c0532ae3111b8265fc
-ms.contentlocale: pt-br
-ms.lasthandoff: 08/01/2017
-
+ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
+ms.translationtype: HT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 08/07/2017
 ---
-# <a name="configure-azure-services-for-use-with-configuration-manager"></a>Configurar serviços do Azure para uso com o Configuration Manager
+# <a name="configure-azure-services-for-use-with-configuration-manager"></a>配置用于 Configuration Manager 的 Azure 服务
 
-*Aplica-se a: System Center Configuration Manager (Branch Atual)*
+*适用范围：System Center Configuration Manager (Current Branch)*
 
-A partir da versão 1706 do Branch Atual, o **Assistente para Serviços do Azure** é usado para simplificar o processo de configuração de serviços do Azure que você usa com o Configuration Manager.
+从 Current Branch 版本 1706 开始，“Azure 服务向导”可简化用于 Configuration Manager 的 Azure 服务的配置过程。
 
-Este assistente fornece uma experiência de configuração comum usando um **aplicativo Web do Azure** para fornecer detalhes de assinatura e configuração. O aplicativo Web substitui a necessidade de inserir essas mesmas informações cada vez que você configurar um novo componente ou serviço do Configuration Manager com o Azure.
+此向导使用 Azure Web 应用提供订阅和配置详细信息，从而提供通用配置体验。 每次设置新 Configuration Manager 组件或 Azure 服务时，Web 应用都会输入此相同的信息。
 
-Os serviços do Azure a seguir são configurados usando o Assistente para Configurar Serviços do Azure:
--   **Gerenciamento de Nuvem**   
-    [Permite que os clientes autentiquem usando o Azure Active Directory]() (Azure AD). Você também pode [configurar a Descoberta de Usuário do Azure AD](/sccm/core/servers/deploy/configure/configure-discovery-methods#azureaadisc).
--   **Conector do OMS**
-    [ Conecte-se ao OMS (Operations Manager Suite)](/sccm/core/clients/manage/sync-data-microsoft-operations-management-suite) e sincronize dados como coleções com o OMS Log Analytics.
--   **Upgrade Readiness**
-    [ Conecte-se ao Upgrade Readiness](/sccm/core/clients/manage/upgrade/upgrade-analytics) e exiba dados de compatibilidade de atualização do cliente.
--   **Windows Store para Empresas** Conecte-se ao repositório online do [Windows Store para Empresas](/sccm/apps/deploy-use/manage-apps-from-the-windows-store-for-business) e obtenha aplicativos para a sua organização que podem ser implantados com o Configuration Manager.
+使用“配置 Azure 服务”向导配置以下 Azure 服务：
+-   **云管理**   
+    [使用 Azure Active Directory (Azure AD) 支持客户端进行身份验证]()。 还可以[配置 Azure AD 用户发现](/sccm/core/servers/deploy/configure/configure-discovery-methods#azureaadisc)。
+-   **OMS 连接器**
+    [连接到 Operations Manager Suite](/sccm/core/clients/manage/sync-data-microsoft-operations-management-suite) (OMS)，并将集合等数据同步到 OMS Log Analytics。
+-   **升级就绪情况**
+    [连接到升级就绪情况](/sccm/core/clients/manage/upgrade/upgrade-analytics)并查看客户端升级兼容性数据。
+-   **适用于企业的 Windows 应用商店**连接到[适用于企业的 Windows 应用商店](/sccm/apps/deploy-use/manage-apps-from-the-windows-store-for-business)的在线商店，并为你的组织获取应用以通过 Configuration Manager 进行部署。
 
-Quando você usa o assistente para configurar um serviço, várias ações comuns ficam disponíveis.
-Elas incluem:
--   Configurar o ambiente do Azure: na página **Aplicativo** do assistente, selecione o **ambiente Azure** que você usa. Confira o conteúdo de cada serviço para saber se ele dá suporte apenas à nuvem pública do Azure, ou se ele pode dar suporte a uma nuvem privada.
--   Criar ou Importar um aplicativo de servidor: na página **Aplicativo** do assistente, você pode **Criar** e **Importar** aplicativos Web do Azure. As opções disponíveis dependem do serviço que você está configurando.  Além disso, alguns serviços podem exigir um aplicativo adicional. Por exemplo, um serviço também pode exigir um **aplicativo Cliente Nativo**.
-
-
-Para saber mais sobre os aplicativos Web do Azure, confira [Autenticação e autorização no serviço de aplicativo do Azure](/azure/app-service/app-service-authentication-overview) e [Visão geral de aplicativos Web](/azure/app-service-web/app-service-web-overview)
+使用向导配置服务时，可以使用几个常见的操作。
+其中包括:
+-   配置 Azure 环境：在向导的“应用”页中，选择所用的“Azure 环境”。 请参阅每个服务的内容，了解它是否仅支持 Azure 公有云或是否可以支持私有云。
+-   创建或导入服务器应用：在向导的“应用”页上，可以“创建”和“导入”Azure Web 应用。 可用选项取决于你配置的服务。  此外，某些服务可能需要更多的应用。 例如，服务可能还需要“本机客户端应用”。
 
 
-## <a name="webapp"></a> Criar o aplicativo Web do Azure para uso com o Configuration Manager
+有关 Azure Web 应用的信息，请参阅 [Azure 应用服务中的身份验证和授权](/azure/app-service/app-service-authentication-overview)和 [Web 应用概述](/azure/app-service-web/app-service-web-overview)
 
-O aplicativo Web de serviços do Azure conecta seu site do Configuration Manager ao Azure AD e é um pré-requisito para usar os serviços do Azure com sua infraestrutura. Para fazer isso:
 
-1.  No espaço de trabalho **Administração** do console do Configuration Manager, expanda **Serviços de Nuvem** e clique em **Serviços do Azure**.
-2.  Na guia **Página Inicial**, no grupo **Serviços do Azure**, clique em **Configurar os Serviços do Azure**.
-3.  Na página **Serviços do Azure** do Assistente de Serviços do Azure, selecione **Gerenciamento de Nuvem** para permitir que os clientes sejam autenticados com a hierarquia usando o Azure AD.
-4.  Na página **Geral** do assistente, especifique um nome e uma descrição para o serviço do Azure.
-5.  Na página **Aplicativo** do assistente, selecione o seu ambiente do Azure na lista, clique em **Procurar** para selecionar o *aplicativo Web* e o *aplicativo de Cliente Nativo* que serão usados para configurar o serviço do Azure.     
-    **Aplicativo Web:** Procurar abre a janela do Aplicativo de Servidor.    
-      Na janela do **aplicativo de servidor**, selecione o aplicativo de servidor que você deseja usar e depois clique em **OK**. Aplicativos de servidor são os aplicativos Web do Azure que contêm as configurações da sua conta do Azure, incluindo sua ID de locatário, ID de cliente e uma chave secreta para clientes.
-    Se você não tiver um aplicativo disponível, use um dos seguintes:
-        - **Criar**: Para criar um novo aplicativo de servidor, clique em **Criar**. Em seguida, forneça um nome amigável para o aplicativo, a URL da home page, o URI da ID do Aplicativo e o período de validade da Chave secreta. Por padrão, o período de validade da chave secreta é de um ano.
+## <a name="webapp"></a> 创建 Azure Web 应用以用于 Configuration Manager
 
-         Para continuar, agora alguém deve entrar no Azure para concluir a criação do aplicativo Web no Azure. A conta que você usa para entrar no Azure não precisa ser a mesma conta que executa o Assistente para Serviços do Azure. Depois de entrar no Azure, o Configuration Manager cria o aplicativo Web no Azure para você, incluindo a ID do Cliente e a chave secreta para uso com o aplicativo Web. Posteriormente, você pode exibi-las no portal do Azure.
+Azure 服务 Web 应用将 Configuration Manager 站点连接到 Azure AD，这也是将 Azure 服务与基础结构结合使用的先决条件。 要执行此操作：
 
-         Quando você usar Criar para configurar um aplicativo Web, o Configuration Manager pode criar o aplicativo Web para você no Azure AD.
-        - **Importar**: Para usar um aplicativo Web que já existe em sua assinatura do Azure, clique em **Importar**. Forneça um nome amigável para o aplicativo e o locatário e especifique a ID de locatário, ID do cliente e a chave secreta para o aplicativo Web do Azure que você deseja que o Configuration Manager use. Depois que você verificar as informações, clique em **OK** para continuar.
+1.  在 Configuration Manager 控制台的“管理”工作区中，展开“云服务”，然后单击“Azure 服务”。
+2.  在“主页”选项卡上的“Azure 服务”组中，单击“配置 Azure 服务”。
+3.  在 Azure 服务向导的“Azure 服务”页上，选择“云管理”以允许客户端使用 Azure AD 对层次结构进行身份验证。
+4.  在向导的“常规”页上，指定一个名称和 Azure 服务的说明。
+5.  在向导的“应用”页上，从列表中选择 Azure 环境，然后单击“浏览”以选择要用于配置 Azure 服务的“Web 应用”和“本机客户端应用”。     
+    **Web 应用：**浏览并打开“服务器应用”窗口。    
+      在“服务器应用”窗口中，选择要使用的服务器应用，然后单击“确定”。 服务器应用是包含 Azure 帐户配置的 Azure Web 应用，包括客户端的租户 ID、客户端 ID 和密钥。
+    如果没有可用的应用，请使用以下操作之一：
+        - **创建**：若要创建新的服务器应用，请单击“创建”。 接下来提供应用的友好名称、主页 URL、应用 ID URI 和密钥有效期。 默认情况下，密钥有效期为一年。
 
-          Essa opção não está disponível para todos os serviços que você pode configurar.
+         若要继续，现在必须登录到 Azure 以在 Azure 中完成 Web 应用的创建。 用于登录 Azure 的帐户不必与运行 Azure 服务向导的帐户相同。 登录 Azure 后，Configuration Manager 在 Azure 中为用户创建 Web 应用，包括用于 Web 应用的客户端 ID 和密钥。 之后，可在 Azure 门户中查看这些内容。
 
-   **Aplicativo Cliente Nativo:** Procurar abre a janela Aplicativo Cliente.  
-     Na janela do **Aplicativo Cliente**, selecione o aplicativo cliente que você deseja usar e depois clique em **OK**.
+         使用“创建”配置 Web 应用时，Configuration Manager 可以在 Azure AD 中为你创建 Web 应用。
+        - **导入**：若要使用 Azure 订阅中已存在的 Web 应用，请单击“导入”。 为应用和租户提供友好名称，然后为 Configuration Manager 要使用的 Azure Web 应用指定租户 ID、客户端 ID 和密钥。 验证此信息后，单击“确定”以继续。
 
-     Se você não tiver um aplicativo cliente disponível, use um dos seguintes:
-     - **Criar**: para criar um novo Aplicativo Cliente, clique em **Criar**. Depois, forneça um nome amigável para o aplicativo e a URL de Resposta.
+          此选项并非适用于你可能配置的所有服务。
 
-          Para continuar, agora alguém deve entrar no Azure para concluir a criação do aplicativo cliente no Azure. A conta que você usa para entrar no Azure não precisa ser a mesma conta que executa o Assistente para Serviços do Azure. Depois de entrar no Azure, o Configuration Manager cria o aplicativo cliente no Azure para você, incluindo a ID do Cliente para uso com o aplicativo Web. Posteriormente, você pode exibi-las no portal do Azure.
-          Quando você usar Criar para configurar o aplicativo, o Configuration Manager pode criar o aplicativo cliente nativo para você no Azure AD.
-     - **Importar**: para usar um aplicativo cliente que já existe em sua assinatura do Azure, clique em **Importar**. Forneça um nome amigável para o aplicativo e a ID do Cliente. Depois, clique em **OK** para continuar.
-           Essa opção não está disponível para todos os serviços que você pode configurar.
+   **本机客户端应用：**浏览并打开“客户端应用”窗口。  
+     在“客户端应用”窗口中，选择要使用的客户端应用，然后单击“确定”。
+
+     如果没有可用的客户端应用，请使用以下操作之一：
+     - **创建**：若要创建新的客户端应用，请单击“创建”。 接下来，提供应用的友好名称和回复 URL。
+
+          若要继续，现在必须登录到 Azure 以在 Azure 中完成客户端应用的创建。 用于登录 Azure 的帐户不必与运行 Azure 服务向导的帐户相同。 登录 Azure 后，Configuration Manager 在 Azure 中为用户创建本机客户端应用，包括用于 Web 应用的客户端 ID。 之后，可在 Azure 门户中查看这些内容。
+          使用“创建”配置应用时，Configuration Manager 可以在 Azure AD 中为你创建本机客户端应用。
+     - **导入**：若要使用 Azure 订阅中已存在的客户端应用，请单击“导入”。 为应用和客户端 ID 提供友好名称。 然后，单击“确定”继续。
+           此选项并非适用于你可能配置的所有服务。
 
   <!--  MOVE THIS AND STEP 6 TO configure Azure AD User Discover  content
        [!TIP]  
      When you use Import, the account you use to run the wizard must have the *Read directory data* application permission in the Azure portal. This is required to set the correct permissions for the App. When you use Create, Configuration Manager creates the app with the correct permissions. However, you still must give consent to the application in the Azure portal.   -->
 
 
-6.  Na página **Descoberta** do assistente, clique em **Ativar a Descoberta de Usuário do Azure Active Directory** e, em seguida, clique em **Configurações**.
-Na caixa de diálogo **Configurações de Descoberta de Usuário do Azure AD**, configure um agendamento para quando ocorrer a descoberta. Você também pode habilitar a descoberta delta que verifica apenas as contas novas ou alteradas no Azure AD. Saiba mais sobre [Descoberta de usuário do Azure AD](/sccm/core/servers/deploy/configure/about-discovery-methods#azureaddisc).
+6.  在向导的“发现”页上，单击“启用 Azure Active Directory 用户发现”，然后单击“设置”。
+在“Azure AD 用户发现设置”对话框中，配置出现发现的时间计划。 此外，还可以启用增量发现，用于仅查看 Azure AD 中新增或更改的帐户。 详细了解 [Azure AD 用户发现](/sccm/core/servers/deploy/configure/about-discovery-methods#azureaddisc)。
  
- 7. Conclua o assistente.
+ 7. 完成向导。
 
-Neste ponto, você se conectou a seu site do Configuration Manager para o Azure AD.
+此时，已将 Configuration Manager 站点连接到 Azure AD。
 
-## <a name="view-the-configuration-of-an-azure-service"></a>Exibir a configuração de um serviço do Azure
-Você pode exibir as propriedades de um serviço do Azure que você configurou para uso.
+## <a name="view-the-configuration-of-an-azure-service"></a>查看 Azure 服务的配置
+可以查看已配置进行使用的 Azure 服务的属性。
 
-No console, acesse **Administração** > **Visão geral** > **Serviços de Nuvem** > **Serviços do Azure**. Em seguida, escolha o serviço que você deseja exibir ou editar e clique em **Propriedades**.
-
+在控制台中，转到“管理” > “概述” > “云服务” > “Azure 服务”。 接下来，选择你想要查看或编辑的服务，然后单击“属性”。

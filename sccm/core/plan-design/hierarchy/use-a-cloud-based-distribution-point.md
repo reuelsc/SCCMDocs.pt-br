@@ -1,217 +1,213 @@
 ---
-title: "Ponto de distribuição baseado em nuvem | Microsoft Docs"
-description: "Saiba mais sobre as configurações e limitações para usar um ponto de distribuição baseado em nuvem com o System Center Configuration Manager."
+title: "基于云的分发点 | Microsoft Docs"
+description: "了解有关配合使用 System Center Configuration Manager 和基于云的分发点的配置和限制。"
 ms.custom: na
 ms.date: 3/27/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
-ms.technology:
-- configmgr-other
+ms.technology: configmgr-other
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 3cd9c725-6b42-427d-9191-86e67f84e48c
-caps.latest.revision: 9
+caps.latest.revision: "9"
 author: Brenduns
 ms.author: brenduns
 manager: angrobe
-ms.translationtype: Human Translation
-ms.sourcegitcommit: c6ee0ed635ab81b5e454e3cd85637ff3e20dbb34
 ms.openlocfilehash: 8caf3319d93b98680ed4a719a8db714c7e4e96ce
-ms.contentlocale: pt-br
-ms.lasthandoff: 06/08/2017
-
-
+ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
+ms.translationtype: HT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 08/07/2017
 ---
-# <a name="use-a-cloud-based-distribution-point-with-system-center-configuration-manager"></a>Use um ponto de distribuição baseado em nuvem com o System Center Configuration Manager
+# <a name="use-a-cloud-based-distribution-point-with-system-center-configuration-manager"></a>将基于云的分发点用于 System Center Configuration Manager
 
-*Aplica-se a: System Center Configuration Manager (Branch Atual)*
+*适用范围：System Center Configuration Manager (Current Branch)*
 
-Um ponto de distribuição baseado em nuvem é um ponto de distribuição do System Center Configuration Manager que é hospedado no Microsoft Azure. As informações a seguir têm o objetivo de ajudá-lo a saber mais sobre as configurações e limitações de uso de um ponto de distribuição baseado em nuvem.
+基于云的分发点是托管于 Microsoft Azure 中的 System Center Configuration Manager 分发点。 以下信息旨在帮助你了解有关使用基于云的分发点的配置和限制。
 
-Após instalar um site primário e quando estiver pronto para instalar um ponto de distribuição baseado em nuvem, confira [Instalar pontos de distribuição baseados em nuvem no Azure](../../../core/servers/deploy/configure/install-cloud-based-distribution-points-in-microsoft-azure.md).
-
-
-## <a name="plan-to-use-a-cloud-based-distribution-point"></a>Planejar o uso de ponto de distribuição baseado em nuvem
-Ao usar pontos de distribuição baseados em nuvem, você:  
-
--   **Define configurações do cliente** para permitir que usuários e dispositivos acessem o conteúdo.  
-
--   **Especifica um site primário para gerenciar a transferência de conteúdo** ao ponto de distribuição.  
-
--   **Especifica limites** para o volume de conteúdo que você deseja armazenar no ponto de distribuição e o volume de conteúdo que deseja permitir que os clientes transfiram do ponto de distribuição.  
+安装完成主站点并准备好安装基于云的分发点后，请参阅[在 Azure 中安装基于云的分发点](../../../core/servers/deploy/configure/install-cloud-based-distribution-points-in-microsoft-azure.md)。
 
 
-Com base nos limites configurados, o Configuration Manager pode acionar alertas que avisam quando o volume combinado de conteúdo que você armazenou no ponto de distribuição está próximo do volume de armazenamento especificado ou quando as transferências de dados pelos clientes estão próximas aos limites definidos.  
+## <a name="plan-to-use-a-cloud-based-distribution-point"></a>规划使用基于云的分发点
+当你使用基于云的分发点时，你应当：  
 
-Os pontos de distribuição baseado em nuvem dão suporte a vários recursos que também são oferecidos pelos pontos de distribuição local:  
+-   **配置客户端设置**以便用户和设备能够访问内容。  
 
--   Gerenciamento de pontos de distribuição com base em nuvem individualmente ou como membros de grupos de pontos de distribuição.  
+-   **指定主站点来管理内容**到分发点的传输。  
 
--   Uso de um ponto de distribuição com base em nuvem como local de conteúdo de fallback.  
-
--   Recebimento de suporte para clientes baseados na Internet e em intranet.  
-
-
-Pontos de distribuição com base em nuvem oferecem os seguintes benefícios adicionais:  
-
--   O conteúdo enviado a um ponto de distribuição baseado em nuvem é criptografado pelo Configuration Manager antes que o Configuration Manager o envie ao Azure.  
-
--   No Azure, você pode dimensionar manualmente o serviço de nuvem para atender a demandas de alteração de solicitação de conteúdo de clientes, sem a necessidade de instalar e provisionar pontos de distribuição adicionais.  
-
--   O ponto de distribuição com base em nuvem oferece suporte para o download de conteúdo por clientes configurados para o Windows BranchCache.  
+-   为想在分发点上存储的内容量**指定阈值**，以及为希望使客户端能够通过分发点传输的内容量指定阈值。  
 
 
-Os pontos de distribuição baseados em nuvem têm as seguintes limitações:  
+根据配置的阈值，当在分发点上存储的内容总量接近指定的存储量时，或者当客户端传输的数据量接近定义的阈值时，Configuration Manager 可能会发出警告性警报。  
 
--  Antes de usar a versão 1610 com o Hotfix KB4010155, você não pode usar um ponto de distribuição baseado em nuvem para hospedar pacotes de atualização de software. Esse problema foi corrigido a partir da versão 1702.  
+基于云的分发点支持多种功能，本地分发点也提供这些功能：  
 
--   Você não pode usar um ponto de distribuição com base em nuvem para PXE ou implantações habilitadas para multicast.  
+-   可以单独或者作为分发点组成员来管理基于云的分发点。  
 
--   Não é oferecido um ponto de distribuição baseado em nuvem aos clientes como local de conteúdo para uma sequência de tarefas implantada usando a opção de implantação **Baixar conteúdo localmente quando necessário, executando a sequência de tarefas**. No entanto, as sequências de tarefas implantadas com a opção de implantação **Baixar todo o conteúdo localmente antes de iniciar a sequência de tarefas** podem usar um ponto de distribuição baseado em nuvem como um local de conteúdo válido.  
+-   可以将基于云的分发点用作回退内容位置。  
 
--   Não oferecem suporte a pacotes executados no ponto de distribuição. Todo o conteúdo deve ser baixado pelo cliente e, depois, executado localmente.  
-
--   Não oferecem suporte a aplicativos de streaming usando o Application Virtualization ou programas semelhantes.  
-
--   Não oferecem suporte a conteúdo pré-configurado. O gerente de distribuição do site primário que gerencia o ponto de distribuição transfere todo o conteúdo para o ponto de distribuição.  
-
--   Os pontos de distribuição baseados em nuvem não podem ser configurados como pontos de distribuição de recepção.  
-
-##  <a name="BKMK_PrereqsCloudDP"></a> Pré-requisitos para pontos de distribuição baseados em nuvem  
- Estes são os pré-requisitos para o uso de pontos de distribuição baseados em nuvem:  
-
--   Uma assinatura do Azure (confira [Sobre assinaturas e certificados](#BKMK_CloudDPCerts) neste tópico).
-
--   Um certificado de gerenciamento de PKI (infraestrutura de chave pública) ou autoassinada para a comunicação de um servidor de site primário do Configuration Manager para o serviço de nuvem no Azure (confira [Sobre assinaturas e certificados](#BKMK_CloudDPCerts) neste tópico).
-
--   Um certificado de serviço (PKI) que os clientes do Configuration Manager usam para se conectar a pontos de distribuição baseados em nuvem e baixar conteúdo usando HTTPS.  
-
--  Um dispositivo ou usuário deve ter **Permitir Acesso a pontos de distribuição em nuvem** definido como **Sim** na configuração do cliente para **Serviços de Nuvem** para que um dispositivo ou usuário possa acessar o conteúdo de um ponto de distribuição baseado em nuvem. Por padrão, esse valor é definido como **Não**.  
-
--   Os clientes devem ser capazes de resolver o nome do serviço de nuvem, que requer um alias DNS (Sistema de Nomes de Domínio) e um registro CNAME em seu namespace de DNS.  
-
--   Os clientes devem ser capazes de acessar a Internet para usar o ponto de distribuição baseado em nuvem.  
-
-##  <a name="BKMK_CloudDPCost"></a> Custo da utilização de uma distribuição baseada em nuvem  
- Quando você usa um ponto de distribuição baseado em nuvem, planeje o custo de armazenamento de dados e das transferências de download que os clientes do Configuration Manager executarão.  
-
- O Configuration Manager inclui opções para ajudar a controlar os custos e monitorar o acesso a dados:  
-
--   Você pode controlar e monitorar a quantidade de conteúdo armazenado em um serviço de nuvem.  
-
--   Você pode configurar o Configuration Manager para alertá-lo quando os **limites** para downloads do cliente atingirem ou excederem o limite mensal.  
-
--   Além disso, você pode usar o cache de sistemas pares (Windows BranchCache) para reduzir o número de transferências de dados de pontos de distribuição baseados em nuvem por clientes. Por padrão, os clientes do Configuration Manager configurados para o BranchCache podem transferir conteúdo usando pontos de distribuição baseados em nuvem.  
+-   你获得 Intranet 客户端和基于 Internet 的客户端的支持。  
 
 
-**Opções:**  
+基于云的分发点提供下列其他好处：  
 
--   **Configurações do Cliente para Nuvem**: você controla o acesso a todos os pontos de distribuição baseados em nuvem em uma hierarquia usando as **Configurações do Cliente**.  
+-   发送给基于云的分发点的内容在 Configuration Manager 发送给 Azure 之前会由 Configuration Manager 进行加密。  
 
-     Nas **Configurações do Cliente**, a categoria **Configurações de Nuvem** dá suporte à configuração **Permitir acesso aos pontos de distribuição na nuvem**. Por padrão, essa configuração é definida como **Não**. Você pode habilitar essa configuração para usuários e dispositivos.  
+-   在 Azure 中，可以手动按比例缩放云服务，以满足客户端内容请求不断变化的需求，而不需要安装和设置其他分发点。  
 
--   **Limites para transferências de dados**: é possível configurar limites para o volume de dados que você deseja armazenar no ponto de distribuição e para o volume de dados que os clientes baixam do ponto de distribuição.  
+-   基于云的分发点支持针对 Windows BranchCache 配置的客户端下载内容。  
 
-     Os limites para pontos de distribuição baseados em nuvem incluem:  
 
-    -   **Limite de alerta de armazenamento**: Um limite de alerta de armazenamento define um limite superior no volume de dados ou conteúdo que você deseja armazenar no ponto de distribuição baseado em nuvem. O Configuration Manager pode gerar um alerta de aviso quando o espaço livre restante atinge o nível especificado.  
+基于云的分发点具有下列限制：  
 
-    -   **Limite de alerta de transferência**: Um limite de alerta de transferência ajuda a monitorar o volume de conteúdo que você transfere do ponto de distribuição para clientes num período de 30 dias. O limite de alerta de transferência monitora a transferência de dados dos 30 dias anteriores e pode emitir um alerta de aviso e um crítico quando as transferências atingem os valores definidos.  
+-  使用具有修补程序 KB4010155 的 1610 版之前，不能使用基于云的分发点来承载软件更新包。 从 1702 及更高版本开始，此问题已得到解决。  
+
+-   无法将基于云的分发点用于 PXE 或启用多播的部署。  
+
+-   不会向客户端提供基于云的分发点作为通过使用部署选项“需要时通过运行任务序列本地下载内容” 部署的任务序列的内容位置。 但是，通过使用部署选项“启动任务序列之前本地下载所有内容”  部署的任务序列可以将基于云的分发点用作有效的内容位置。  
+
+-   基于云的分发点不支持从分发点运行的包。 客户端必须下载然后在本地运行所有内容。  
+
+-   基于云的分发点不支持使用 Application Virtualization 或类似程序对应用程序进行流式处理。  
+
+-   基于云的分发点不支持预留的内容。 管理分发点的主站点的分发管理器将所有内容传输至分发点。  
+
+-   无法将基于云的分发点配置为请求分发点。  
+
+##  <a name="BKMK_PrereqsCloudDP"></a> 基于云的分发点的先决条件  
+ 基于云的分发点需要使用下列先决条件：  
+
+-   Azure 订阅（请参阅本主题中的[关于订阅和证书](#BKMK_CloudDPCerts)）。
+
+-   自签名或公钥基础结构 (PKI) 管理证书，用于从 Configuration Manager 主站点服务器到 Azure 中的云服务的通信（请参阅本主题中的[关于订阅和证书](#BKMK_CloudDPCerts)）。
+
+-   Configuration Manager 客户端连接到基于云的分发点并通过 HTTPS 从这些分发点下载内容所使用的服务证书 (PKI)。  
+
+-  在设备或用户可以从基于云的分发点访问内容之前，必须将“云服务”客户端设置中的“允许访问云分发点”设为“是”。 默认情况下，此值设为“否” 。  
+
+-   客户端必须能够解析云服务的名称，这需要 DNS 命名空间中的域名系统 (DNS) 别名和 CNAME 记录。  
+
+-   客户端必须能够访问 Internet 以使用基于云的分发点。  
+
+##  <a name="BKMK_CloudDPCost"></a> 使用基于云的分发的成本  
+ 当使用基于云的分发点时，请规划 Configuration Manager 客户端进行数据存储和下载传输的成本。  
+
+ Configuration Manager 包括用于帮助控制成本和监视数据访问的选项：  
+
+-   你可以控制和监视云服务中存储的内容量。  
+
+-   可将 Configuration Manager 配置为在客户端下载的“阈值”达到或超过每月限制时发出通知。  
+
+-   此外，可以使用对等缓存 (Windows BranchCache) 来帮助减少客户端进行的从基于云的分发点传输的数据量。 为 BranchCache 配置的 Configuration Manager 客户端可以使用基于云的分发点来传输内容。  
+
+
+**选项：**  
+
+-   **适用于云的客户端设置**：通过使用“客户端设置”来控制对层次结构中所有基于云的分发点的访问。  
+
+     在“客户端设置” 中，“云设置”  类别支持“允许访问云分发点” 设置。 默认情况下，此设置设为“否” 。 可以为用户和设备启用此设置。  
+
+-   **数据传输阈值**：可以为你想在分发点上存储的数据量配置阈值，以及为客户端从分发点下载的数据量配置阈值。  
+
+     基于云的分发点的阈值包括下列阈值：  
+
+    -   **存储警报阈值**：存储警报阈值为你想存储在基于云的分发点上的数据量或内容量设置上限。 Configuration Manager 可以在剩余可用空间达到指定的水平时生成警告性警报。  
+
+    -   **传输警报阈值**：传输警报阈值帮助你监视 30 天内从分发点传输到客户端的内容量。 传输警报阈值监视过去 30 天的数据传输量，并且在传输量达到定义的值时可能会发出警告性警报和关键警报。  
 
         > [!IMPORTANT]  
-        >  O Configuration Manager monitora a transferência de dados, mas não interrompe a transferência de dados que está além do limite de alerta de transferência especificado.  
+        >  Configuration Manager 监视数据传输，但在数据传输量超出指定的传输警报阈值时不会停止数据传输。  
 
- Você pode especificar limites para cada ponto de distribuição baseado em nuvem durante a instalação do ponto de distribuição, ou pode editar as propriedades de cada ponto de distribuição baseado em nuvem após ele ser instalado.  
+ 可以在安装分发点的过程中为每个基于云的分发点指定阈值，也可以在安装分发点后编辑每个基于云的分发点的属性。  
 
--   **Alertas**: é possível configurar o Configuration Manager para emitir alertas sobre transferências bidirecionais de dados em cada ponto de distribuição baseado em nuvem, de acordo com os limites de transferência de dados que você especificar. Esses alertas servem como auxílio no monitoramento de transferências de dados e podem ajudar a decidir quando parar o serviço de nuvem, ajustar o conteúdo armazenado no ponto de distribuição ou modificar quais clientes podem usar os pontos de distribuição baseados em nuvem.  
+-   **警报**：可以配置 Configuration Manager，让其根据指定的数据传输阈值发出与每个基于云的分发点接收和发送的数据有关的警报。 这些警报帮助监视数据传输，并可以帮助决定何时停止云服务、调整存储在分发点上的内容或者改变可以使用基于云的分发点的客户端。  
 
-     Em um ciclo por hora, o site primário que monitora o ponto de distribuição baseado em nuvem baixa dados de transação do Azure e os armazena em CloudDP-&lt;ServiceName\>.log no servidor do site. O Configuration Manager avalia estas informações em relação às cotas de armazenamento e transferência para cada ponto de distribuição baseado em nuvem. Quando a transferência de dados atingir ou exceder o volume especificado para avisos ou alertas críticos, o Configuration Manager gerará o alerta apropriado.  
+     在每小时周期中，监视基于云的分发点的主站点从 Azure 下载事务数据，并将其存储在站点服务器的 CloudDP-&lt;ServiceName\>.log 中。 Configuration Manager 会依据每个基于云的分发点的存储和传输配额评估此信息。 在数据传输量达到或超过为警告性警报或关键警报指定的数量时，Configuration Manager 会生成相应的警报。  
 
     > [!WARNING]  
-    >  Como as informações sobre transferências de dados são baixadas do Azure a cada hora, esse uso de dados pode exceder um limite de aviso ou crítico antes que o Configuration Manager possa acessar os dados e emitir um alerta.  
+    >  由于是每小时从 Azure 下载一次有关数据传输的信息，因此，在 Configuration Manager 可以访问此数据并发出警报之前，数据使用量可能已超过警告阈值或关键阈值。  
 
     > [!NOTE]  
-    >  Os alertas de um ponto de distribuição baseado em nuvem dependem de estatísticas de uso do Azure e podem levar 24 horas para ficar disponíveis. Para saber mais sobre Análise de Armazenamento do Azure, inclusive com que frequência o Azure atualiza as estatísticas de uso, confira [Análise de Armazenamento](http://go.microsoft.com/fwlink/p/?LinkID=275111) na Biblioteca MSDN.  
+    >  基于云的分发点的警报视 Azure 提供的使用量统计信息而定，且可能需要最多 24 小时才能变得可用。 有关 Azure Storage Analytics 的信息（包括 Azure 更新使用量统计信息的频率），请参阅 MSDN 库中的 [Storage Analytics](http://go.microsoft.com/fwlink/p/?LinkID=275111)（存储分析）。  
 
 
--   **Interromper ou iniciar o serviço de nuvem sob demanda**: é possível usar a opção de interromper ou iniciar o serviço de nuvem a qualquer momento, a fim de evitar que clientes usem o serviço continuamente. Quando você interrompe o serviço de nuvem, os clientes imediatamente são impedidos de baixar conteúdo adicional do serviço. Além disso, você pode reiniciar o serviço de nuvem para restaurar o acesso para clientes. Por exemplo, talvez você queira parar um serviço de nuvem quando os limites de dados são atingidos.  
+-   **按需停止或启动云服务**：可以随时使用此选项来停止云服务，以阻止客户端持续使用此服务。 停止云服务时，将立即阻止客户端通过此服务下载更多的内容。 此外，可以重新启动云服务以恢复客户端访问。 例如，你可能想在达到数据阈值时停止云服务。  
 
-     Quando você para um serviço de nuvem, ele não exclui o conteúdo do ponto de distribuição e não impede que o servidor de site transfira conteúdo adicional para o ponto de distribuição baseado em nuvem.  
+     在停止云服务时，云服务不会从分发点中删除内容，也不会阻止站点服务器将更多的内容传输到基于云的分发点。  
 
-     Para interromper um serviço de nuvem, no console do Configuration Manager, selecione o ponto de distribuição no nó **Pontos de Distribuição em Nuvem**, em **Serviços em Nuvem**, no espaço de trabalho **Administração**. Em seguida, escolha **Parar serviço** para interromper o serviço de nuvem que é executado no Azure.  
+     若要停止云服务，在 Configuration Manager 控制台中，在“管理”工作区中的“云服务”下的“云分发点”节点中选择分发点。 接着，选择“停止服务”以停止在 Azure 中运行的云服务。  
 
-##  <a name="BKMK_CloudDPCerts"></a> Sobre assinaturas e certificados para pontos de distribuição baseados em nuvem  
- Pontos de distribuição baseados em nuvem requerem certificados para habilitar o Configuration Manager a gerenciar o serviço de nuvem que hospeda o ponto de distribuição, e para os clientes acessarem o conteúdo do ponto de distribuição. As informações a seguir fornecem uma visão geral desses certificados. Para obter informações mais detalhadas, consulte [Requisitos de certificado PKI para o System Center Configuration Manager](../../../core/plan-design/network/pki-certificate-requirements.md).  
+##  <a name="BKMK_CloudDPCerts"></a> 关于基于云的分发点的订阅和证书  
+ 基于云的分发点需要证书，以使 Configuration Manager 能够管理承载分发点的云服务，以及让客户端访问分发点中的内容。 以下信息对这些证书进行了概述。 有关详细信息，请参阅 [System Center Configuration Manager 的 PKI 证书要求](../../../core/plan-design/network/pki-certificate-requirements.md)。  
 
- **Certificados**  
+ **证书**  
 
--   **Certificado de gerenciamento para comunicação do servidor do site com o ponto de distribuição**: o certificado de gerenciamento estabelece uma relação de confiança entre a API de gerenciamento do Azure e o Configuration Manager. Esta autenticação permite que o Configuration Manager chame a API do Azure quando você executa tarefas como implantação de conteúdo ou inicialização e interrupção do serviço de nuvem. Usando o Azure, você pode criar seus próprios certificados de gerenciamento, que podem ser certificados autoassinados ou certificados emitidos por uma CA (autoridade de certificação):  
+-   **站点服务器到分发点通信的管理证书**：管理证书将在 Azure 管理 API 和 Configuration Manager 之间建立信任关系。 当执行诸如部署内容或启动和停止云服务之类的任务时，此身份验证使 Configuration Manager 能够调用 Azure API。 通过使用 Azure，可以创建自己的管理证书，此证书可以是自签名的证书或证书颁发机构 (CA) 颁发的证书：  
 
-    -   Forneça o arquivo .cer do certificado de gerenciamento do Azure ao configurar o Azure para o Configuration Manager. O arquivo. cer contém a chave pública do certificado de gerenciamento. Você deve carregar esse certificado no Azure antes de instalar um ponto de distribuição baseado em nuvem. Este certificado permite que o Configuration Manager acesse a API do Azure.  
+    -   为 Configuration Manager 配置 Azure 时向 Azure 提供管理证书的 .cer 文件。 .cer 文件包含管理证书的公钥。 在安装基于云的分发点之前，必须将此证书上传到 Azure。 此证书使 Configuration Manager 能够访问 Azure API。  
 
-    -   Forneça o arquivo .pfx do certificado de gerenciamento ao Configuration Manager ao instalar um ponto de distribuição baseado em nuvem. O arquivo .pfx contém a chave privada do certificado de gerenciamento. O Configuration Manager armazena este certificado no banco de dados do site. Como o arquivo .pfx contém a chave privada, você deve fornecer a senha para importar esse arquivo de certificado para o banco de dados do Configuration Manager.  
+    -   安装基于云的分发点时向 Configuration Manager 提供管理证书的 .pfx 文件。 .pfx 文件包含管理证书的私钥。 Configuration Manager 将此证书存储在站点数据库中。 因为 .pfx 文件包含私钥，所以必须提供密码以将此证书文件导入到 Configuration Manager 数据库中。  
 
-    Se criar um certificado autoassinado, primeiro você deverá exportar o certificado como um arquivo .cer e, depois, exportá-lo novamente como um arquivo .pfx.  
+    如果创建自签名证书，则必须首先将证书导出为 .cer 文件，然后再次将其导出为 .pfx 文件。  
 
-    Opcionalmente, você pode especificar um arquivo de versão **.publishsettings** do Azure SDK 1.7. Para saber mais sobre arquivos .publishsettings, confira a documentação do Azure.  
+    （可选）可以指定 Azure SDK 1.7 中的版本 1 **.publishsettings** 文件。 有关 publishsettings 文件的信息，请参阅 Azure 文档。  
 
-    Para saber mais, confira [Como criar um certificado de gerenciamento](http://go.microsoft.com/fwlink/p/?LinkId=220281) e [Como adicionar um certificado de gerenciamento a uma assinatura do Azure](http://go.microsoft.com/fwlink/p/?LinkId=241722) na seção da plataforma do Azure da Biblioteca MSDN.  
+    有关详细信息，请参阅 MSDN 库的“Azure 平台”部分中的 [如何创建管理证书](http://go.microsoft.com/fwlink/p/?LinkId=220281)和[如何将管理证书添加到 Azure 订阅](http://go.microsoft.com/fwlink/p/?LinkId=241722)。  
 
--   **Certificado de serviço para comunicação do cliente com o ponto de distribuição**: o certificado de serviço do ponto de distribuição baseado em nuvem do Configuration Manager estabelece uma relação de confiança entre os clientes do Configuration Manager e esse ponto de distribuição, além de proteger os dados que os clientes baixam dele usando SSL por HTTPS.  
+-   **用于客户端到分发点通信的服务证书**：Configuration Manager 基于云的分发点服务证书会在 Configuration Manager 客户端和基于云的分发点之间建立信任，并保护客户端使用安全套接字层 (SSL) 通过 HTTPS 从分发点中下载的数据。  
 
     > [!IMPORTANT]  
-    >  O nome comum indicado na caixa de entidade do certificado de serviço deve ser exclusivo no seu domínio e não deve corresponder a nenhum dispositivo ingressado no domínio.  
+    >  服务证书的证书使用者框中的公用名在域中必须唯一，并且不与任何加入域的设备匹配。  
 
-   Para obter um exemplo de implantação deste certificado, confira a seção **Implantando o certificado de serviço em pontos de distribuição baseados em nuvem** no tópico [Exemplo passo a passo de implantação dos certificados PKI para o System Center Configuration Manager: Autoridade de certificação do Windows Server 2008](/sccm/core/plan-design/network/example-deployment-of-pki-certificates).  
+   有关此证书的示例部署，请参阅 [System Center Configuration Manager 的 PKI 证书的分步部署示例：Windows Server 2008 证书颁发机构](/sccm/core/plan-design/network/example-deployment-of-pki-certificates)主题中的**为基于云的分发点部署服务证书**部分。  
 
-##  <a name="bkmk_Tasks"></a> Tarefas comuns de gerenciamento para pontos de distribuição baseados em nuvem  
+##  <a name="bkmk_Tasks"></a> 基于云的分发点的常见管理任务  
 
--   **Comunicação do servidor do site com o ponto de distribuição baseado em nuvem**: quando instalar um ponto de distribuição baseado em nuvem, atribua um site primário para gerenciar a transferência de conteúdo para o serviço de nuvem. Essa ação equivale a instalar a função do sistema de site do ponto de distribuição em um site específico.  
+-   **站点服务器到基于云的分发点的通信**：安装基于云的分发点时，必须分配一个主站点以管理将内容传输到云服务的方式。 此操作等效于在特定站点上安装分发点站点系统角色。  
 
--   **Comunicação do cliente com o ponto de distribuição baseado em nuvem**: quando um dispositivo ou o usuário de um dispositivo estiver configurado com a opção de cliente que permite o uso de um ponto de distribuição baseado em nuvem, ele poderá receber esse ponto de distribuição como um local de conteúdo válido:  
+-   **客户端到基于云的分发点的通信**：为设备或设备的用户配置启用基于云的分发点的客户端设置时，设备可能会收到基于云的分发点作为有效的内容位置。  
 
-    -   O ponto de distribuição baseado em nuvem é considerado um ponto de distribuição remoto quando um cliente avalia os locais de conteúdo disponíveis.  
+    -   当客户端评估可用内容位置时，基于云的分发点被认为是远程分发点。  
 
-    -   Clientes na intranet só usam pontos de distribuição baseados em nuvem como uma opção de fallback se os pontos de distribuição no local de distribuição não estiverem disponíveis.  
+    -   只有当本地分发点不可用时，Intranet 上的客户端才会使用基于云的分发点作为回退选项。  
 
-    Mesmo que você instale pontos de distribuição baseados em nuvem em regiões específicas do Azure, os clientes que usam esses pontos de distribuição não reconhecem as regiões do Azure e selecionam de forma não determinística um ponto de distribuição baseado em nuvem.
+    即使在 Azure 的特定区域中安装基于云的分发点，使用基于云的分发点的客户端也不会知道 Azure 区域，并且会不确定地选择基于云的分发点。
 
-Isso significa que, se você instalar pontos de distribuição baseados em nuvem em várias regiões, e um cliente receber vários pontos de distribuição baseados em nuvem como locais de conteúdo, ele não poderá usar um ponto de distribuição de uma região do Azure igual à dele.  
+这意味着如果在多个区域中安装基于云的分发点，并且客户端接收多个基于云的分发点作为内容位置，则该客户端可能不会使用它所在 Azure 区域中的基于云的分发点。  
 
-Clientes que usam pontos de distribuição baseados em nuvem usam a sequência a seguir para solicitações de localização de conteúdo:  
+使用基于云的分发点的客户端使用下列顺序进行内容位置请求：  
 
-1.  Um cliente configurado para usar pontos de distribuição baseados em nuvem sempre tentará obter o conteúdo de um ponto de distribuição preferencial primeiro.  
+1.  配置为使用基于云的分发点的客户端始终尝试首先从首选分发点中获取内容。  
 
-2.  Quando um ponto de distribuição preferencial não estiver disponível, o cliente usará um ponto de distribuição remoto, se a implantação oferecer suporte a essa opção e se houver um ponto de distribuição remoto disponível.  
+2.  当首选分发点不可用时，如果部署支持此选项并且远程分发点可用，则客户端将使用远程分发点。  
 
-3.  Quando um ponto de distribuição preferencial ou remoto não está disponível, o cliente pode, então, retornar para obter o conteúdo de um ponto de distribuição baseado em nuvem.  
+3.  当首选分发点或远程分发点不可用时，则客户端可能会回退以从基于云的分发点中获取内容。  
 
 
 
-  Quando um cliente usa um ponto de distribuição baseado em nuvem como um local de conteúdo, ele se autentica para esse ponto de distribuição usando o token de acesso ao Configuration Manager. Se o cliente confiar no certificado do ponto de distribuição baseado em nuvem do Configuration Manager, ele poderá baixar o conteúdo solicitado.  
+  当客户端使用基于云的分发点作为内容位置时，客户端使用 Configuration Manager 访问令牌自行向基于云的分发点进行身份验证。 如果客户端信任 Configuration Manager 基于云的分发点证书，则客户端可以下载请求的内容。  
 
--   **Monitorar pontos de distribuição baseados em nuvem**: é possível monitorar o conteúdo que você implanta em cada ponto de distribuição baseado em nuvem, bem como monitorar o serviço de nuvem que hospeda o ponto de distribuição.  
+-   **监视基于云的分发点**：你可以监视你部署到每个基于云的分发点的内容，并且可以监视托管分发点的云服务。  
 
-    -   **Conteúdo**: você monitora o conteúdo que implanta em um ponto de distribuição baseado em nuvem da mesma maneira como implanta conteúdo em pontos de distribuição locais.  
+    -   **内容**：在监视部署到基于云的分发点的内容时，所用的方式与将内容部署到本地分发点的方式相同。  
 
-    -   **Serviço de nuvem**: o Configuration Manager verificará periodicamente o serviço do Azure e emitirá um alerta se o serviço não estiver ativo ou se houver problemas de assinatura ou de certificado. Também é possível ver detalhes sobre o ponto de distribuição no nó **Pontos de Distribuição de Nuvem** em **Serviços de Nuvem** no espaço de trabalho **Administração** do console do Configuration Manager. Nesse local, você exibe informações de alto nível sobre o ponto de distribuição. Você pode também selecionar um ponto de distribuição e editar as propriedades.  
+    -   **云服务**：Configuration Manager 会定期检查 Azure 服务，而且会在此服务处于不活动状态或者存在订阅或证书问题时发出警报。 还可以在 Configuration Manager 控制台的“管理”工作区中的“云服务”下的“云分发点”节点中，查看有关分发点的详细信息。 在这里，可查看有关分发点的高级信息。 还可以选择分发点，并编辑其属性。  
 
-    Quando você edita as propriedades de um ponto de distribuição baseado em nuvem, você pode:  
+    在编辑基于云的分发点的属性时，可以:  
 
-    -   Ajustar os limites de dados para armazenamento e alertas.  
+    -   调整用于存储和警报的数据阈值。  
 
-    -   Gerenciar conteúdo como faria em um ponto de distribuição local.  
+    -   管理内容，与对本地分发点执行的操作相同。  
 
-    Finalmente, para cada ponto de distribuição baseado em nuvem, é possível exibir, mas não editar, a ID da assinatura, o nome de serviço e outros detalhes relacionados que são especificados quando a distribuição baseada em nuvem é instalada.  
+    最后，对于每个基于云的分发点，可以查看（但不能编辑）订阅 ID、服务名称和在安装基于云的分发点时指定的其他相关详细信息。  
 
--   **Backup e recuperação de pontos de distribuição baseados em nuvem**: quando usar um ponto de distribuição baseado em nuvem em sua hierarquia, use as informações a seguir como auxílio para fazer backup ou recuperar o ponto de distribuição:  
+-   **备份和恢复基于云的分发点**：在层次结构中使用基于云的分发点时，请使用下列信息来帮助你规划分发点的备份或恢复：  
 
-    -   Quando você utiliza a tarefa de manutenção predefinida **Servidor do Site de Backup**, o Configuration Manager inclui automaticamente as configurações do ponto de distribuição baseado em nuvem.  
+    -   使用预定义“备份站点服务器”维护任务时，Configuration Manager 会自动包括基于云的分发点的配置。  
 
-    -   É prática recomendada fazer backup e salvar uma cópia dos certificados de gerenciamento e de serviço em uso com um ponto de distribuição baseado em nuvem. Se você restaurar o site primário do Configuration Manager que gerencia o ponto de distribuição baseado em nuvem para um computador diferente, reimporte os certificados para continuar a usá-los.  
+    -   最佳方案是，备份与基于云的分发点一起使用的管理证书和服务证书，并保存它们的副本。 如果将管理基于云的分发点的 Configuration Manager 主站点还原到另一台计算机，则必须重新导入证书才能继续使用这些证书。  
 
--   **Desinstalar um ponto de distribuição baseado em nuvem**: para desinstalar um ponto de distribuição baseado em nuvem, selecione o ponto de distribuição no console do Configuration Manager e selecione **Excluir**.  
+-   **卸载基于云的分发点**：若要卸载基于云的分发点，可在 Configuration Manager 控制台中选择该分发点，然后选择“删除”。  
 
-    Quando um ponto de distribuição baseado em nuvem é excluído de uma hierarquia, o Configuration Manager remove o conteúdo do serviço de nuvem no Azure.  
-
+    从层次结构中删除基于云的分发点时，Configuration Manager 会从 Azure 中的云服务中删除内容。  

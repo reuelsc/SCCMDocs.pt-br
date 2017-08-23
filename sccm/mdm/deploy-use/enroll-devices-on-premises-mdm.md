@@ -1,49 +1,44 @@
 ---
-
-title: Gerenciar dispositivos | Microsoft Docs
-description: "Conheça os métodos para registrar dispositivos para o gerenciamento de dispositivo móvel local no System Center Configuration Manager."
+title: "注册设备 | Microsoft Docs"
+description: "了解在 System Center Configuration Manager 中为本地移动设备管理注册设备的方法。"
 ms.custom: na
 ms.date: 03/05/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
-ms.technology:
-- configmgr-hybrid
+ms.technology: configmgr-hybrid
 ms.tgt_pltfrm: na
 ms.topic: get-started-article
 ms.assetid: b58472e3-31a5-4305-8eb6-2522befebe02
-caps.latest.revision: 6
+caps.latest.revision: "6"
 author: Mtillman
 ms.author: mtillman
 manager: angrobe
-ms.translationtype: Human Translation
-ms.sourcegitcommit: 3b1451edaed69a972551bd060293839aa11ec8b2
 ms.openlocfilehash: 4abaef35969ef1a5340ae8ca8aa5699cd3942642
-ms.contentlocale: pt-br
-ms.lasthandoff: 05/17/2017
-
-
+ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
+ms.translationtype: HT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 08/07/2017
 ---
-# <a name="enroll-devices-for-on-premises-mobile-device-management-in-system-center-configuration-manager"></a>Registrar dispositivos para o gerenciamento de dispositivo móvel local no System Center Configuration Manager
+# <a name="enroll-devices-for-on-premises-mobile-device-management-in-system-center-configuration-manager"></a>在 System Center Configuration Manager 中为本地移动设备管理注册设备
 
-*Aplica-se a: System Center Configuration Manager (Branch Atual)*
+*适用范围：System Center Configuration Manager (Current Branch)*
 
-Para gerenciar computadores e dispositivos com o Gerenciamento de Dispositivo Móvel Local do System Center Configuration Manager, os dispositivos precisam ser registrados para que o Configuration Manager possa se comunicar com os dispositivos para tarefas de gerenciamento. O Configuration Manager fornece dois métodos para o registro de dispositivos:  
+若要使用 System Center Configuration Manager 本地移动设备管理来管理计算机，需要注册设备，以便 Configuration Manager 能够与设备通信进行任务管理。 Configuration Manager 提供了两种注册设备的方法：  
 
--   **Registro de usuário** - Nesse método, os usuários iniciam o processo de registro em seus dispositivos. Para que o registro de usuário seja bem-sucedido, o dispositivo deve ter um certificado raiz confiável instalado e o usuário deve ser provisionado para registro pelo Configuration Manager.  Para registrar o dispositivo, basta que o usuário forneça as credenciais de trabalho e o dispositivo é registrado para ser gerenciado.  
+-   “用户注册” - 在这种方法中，用户启动其设备上的注册过程。 为了使用户注册成功，必须在设备上安装受信任的根证书且用户必须设置为由 Configuration Manager 进行注册。  若要注册设备，用户只需提供工作凭据，设备就被注册为可管理状态。  
 
-     Para mais informações, consulte [Como os usuários registram dispositivos com o Gerenciamento de Dispositivo Móvel Local no System Center Configuration Manager](../../mdm/deploy-use/user-enroll-devices-on-premises-mdm.md)  
+     有关详细信息，请参阅[用户如何在 System Center Configuration Manager 中向本地移动设备管理注册设备](../../mdm/deploy-use/user-enroll-devices-on-premises-mdm.md)  
 
--   **Registro em massa** - Nesse método, o usuário do dispositivo não é obrigado a iniciar o registro. Em vez disso, um pacote de registro em massa criado no Configuration Manager e é colocado no dispositivo e aberto. Quando aberto, o pacote fornece as informações necessárias para registrar o dispositivo.  
+-   “批量注册” - 这种方法中，设备用户不需要启动注册。 而是在 Configuration Manager 内创建批量注册程序包，然后将其放置到设备上并打开。 打开时，此包提供注册设备所需的信息。  
 
-     Para mais informações, consulte [Como registrar dispositivos em massa com o Gerenciamento de Dispositivo Móvel Local no System Center Configuration Manager](../../mdm/deploy-use/bulk-enroll-devices-on-premises-mdm.md)  
+     有关详细信息，请参阅[如何在 System Center Configuration Manager 中向本地移动设备管理批量注册设备](../../mdm/deploy-use/bulk-enroll-devices-on-premises-mdm.md)  
 
  > [!NOTE]  
->  O branch atual do Configuration Manager dá suporte ao registro no Gerenciamento de Dispositivo Móvel Local para dispositivos que executam os seguintes sistemas operacionais:  
+>  Configuration Manager 的 Current Branch 支持针对运行以下操作系统的设备的本地移动设备管理中的注册：  
 >   
->  -   Windows 10 Enterprise  
-> -   Windows 10 Pro  
-> -   Windows 10 Team 
-> -   Windows 10 Mobile  
-> -   Windows 10 Mobile Enterprise   
-
+>  -   Windows 10 企业版  
+> -   Windows 10 专业版  
+> -   Windows 10 协同版 
+> -   Windows 10 移动版  
+> -   Windows 10 移动企业版   

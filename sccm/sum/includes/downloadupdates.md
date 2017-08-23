@@ -1,86 +1,81 @@
-1.  No console do Configuration Manager, navegue até **Biblioteca de Software** > **Atualizações de Software**.  
+1.  在 Configuration Manager 控制台中，导航到“软件库” > “软件更新”。  
 
-2.  Escolha a atualização de software a ser baixada usando um dos métodos a seguir:  
+2.  使用以下方法之一选择要下载的软件更新：  
 
-    -   Selecione um ou mais grupos de atualização de software em **Grupos de Atualização de Software**e, na guia **Início** , no **Grupos de Atualização** , clique em **Baixar**.  
+    -   从“软件更新组” 中选择一个或多个软件更新组，然后，在“主页”  选项卡上的“更新组”  组中单击“下载” 。  
 
-    -   Selecione um ou mais grupos de atualização de software em **Grupos de Atualização de Software**e, na guia **Início** , no **Grupos de Atualização** , clique em **Baixar**.  
+    -   从“所有软件更新” 中选择一个或多个软件更新，然后，在“主页”  选项卡上的“更新”  组中单击“下载” 。  
 
         > [!NOTE]  
-        >  No nó **Todas as Atualizações de Software**, o Configuration Manager exibe somente atualizações de software com classificação **Crítico** e **Segurança** que foram liberadas nos últimos 30 dias.  
+        >  在“所有软件更新”节点上，Configuration Manager 只显示分类为“严重”和“安全”并且已在过去 30 天内发布的软件更新。  
 
         > [!TIP]  
-        >  Clique em **Adicionar Critérios** para filtrar as atualizações de software exibidas no nó **Todas as Atualizações de Software** , salve os critérios de pesquisa usados com frequência e gerencie as pesquisas salvas na guia **Pesquisar** .  
+        >  单击“添加条件”  以筛选在“所有软件更新”  节点中显示的软件更新，保存你经常使用的搜索条件，然后在“搜索”  选项卡上管理保存的搜索。  
 
-         O **Assistente para Baixar Atualizações de Software** será aberto.  
+         “下载软件更新向导”  将会打开。  
 
-3.  Na página **Pacote de Implantação** , defina as seguintes configurações:  
+3.  在“部署包”  页上配置下列设置：  
 
-    1.  **Selecionar pacote de implantação**: escolha esta configuração para selecionar um pacote de implantação existente para as atualizações do software na implantação.  
+    1.  “选择部署包”：选择此设置以为部署中的软件更新选择现有部署包。  
 
         > [!NOTE]  
-        >  As atualizações de software que já foram baixadas no pacote de implantação selecionado não serão baixadas novamente.  
+        >  将不会重新下载已经下载到所选部署包的软件更新。  
 
-    2.  **Criar um novo pacote de implantação**: selecione esta configuração para criar um novo pacote de implantação existente para as atualizações do software que estão na implantação. Defina as seguintes configurações:  
+    2.  “创建新部署包”：选择此设置以为部署中的软件更新创建新部署包。 配置下列设置：  
 
-        -   **Nome**: especifica o nome do pacote de implantação. O pacote deve ter um nome exclusivo que descreva resumidamente o conteúdo do pacote.  Ele é limitado a 50 caracteres.  
+        -   “名称”：指定部署包的名称。 此包必须具有简要描述包内容的唯一名称。  它被限制为不超过 50 个字符。  
 
-        -   **Descrição**: especifica a descrição do pacote de implantação. A descrição do pacote fornece informações sobre o conteúdo do pacote e limita-se a 127 caracteres.  
+        -   “描述”：指定部署包的描述。 包描述提供有关包内容的信息并且不超过 127 个字符。  
 
-        -   **Origem do pacote**: especifica o local dos arquivos de origem de atualização do software. Digite um caminho de rede para o local de origem, por exemplo, **\\\servidor\nome do compartilhamento\caminho**ou clique em **Procurar** para encontrar o local na rede. É necessário criar a pasta compartilhada para os arquivos de origem do pacote de implantação antes de ir para a próxima página.  
+        -   “包源”：指定软件更新源文件的位置。 键入源位置的网络路径，例如 **\\\server\sharename\path**，或单击“浏览”来查找网络位置。 在进入到下一页之前，必须为部署包源文件创建共享文件夹。  
 
             > [!NOTE]  
-            >  O local de origem do pacote de implantação especificado não poderá ser usado por outro pacote de implantação de software.  
+            >  其他软件部署包不能使用你指定的部署包源位置。  
 
             > [!IMPORTANT]  
-            >  A conta do computador Provedor de SMS e o usuário que estiver executando o assistente para baixar as atualizações de software deverão ter permissões NTFS de **Gravação** no local de download. É necessário restringir o acesso ao local de download com atenção, para reduzir o risco de ataques de adulteração nos arquivos de origem de atualização de software.  
+            >  SMS 提供程序计算机帐户和运行向导下载软件更新的用户都必须对下载位置具有“写” NTFS 权限。 你应该仔细限制对此下载位置的访问，以减少攻击者篡改软件更新源文件的风险。  
 
             > [!IMPORTANT]  
-            >  Será possível alterar o local de origem do pacote nas propriedades do pacote de implantação depois que o Configuration Manager criar o pacote de implantação. Mas ao fazer isso, é necessário primeiro copiar o conteúdo da fonte da origem do pacote para o seu novo local de origem.  
+            >  在 Configuration Manager 创建部署包之后，可在部署包属性中更改包源位置。 但是，如果你执行此操作，则必须首先将原始包源中的内容复制到新包源位置。  
 
-     Clique em **Avançar**.  
+     单击“下一步” 。  
 
-4.  Na página **Pontos de Distribuição**, especifique os pontos de distribuição ou os grupos de pontos de distribuição que vão hospedar os arquivos de atualização de software e clique em **Próximo**. Para obter mais informações sobre pontos de distribuição, consulte [Distribution point configurations](../../core/servers/deploy/configure/install-and-configure-distribution-points.md#bkmk_configs).  
+4.  在“分发点”页上，指定将承载软件更新文件的分发点或分发点组，然后单击“下一步”。 有关分发点的详细信息，请参阅 [Distribution point configurations](../../core/servers/deploy/configure/install-and-configure-distribution-points.md#bkmk_configs)。  
 
     > [!NOTE]  
-    >  A página de pontos de distribuição está disponível somente quando você cria um novo pacote de implantação de atualização de software.  
+    >  只有当你在创建新软件更新部署包时才能使用“分发点”页。  
 
-6.  Na página **Configurações de Distribuição**, especifique as seguintes configurações:  
+6.  在“分发设置”页上指定下列设置：  
 
-    -   **Prioridade de distribuição**: use essa configuração para especificar a prioridade de distribuição do pacote de implantação. A prioridade de distribuição se aplica quando o pacote de implantação é enviado aos pontos de distribuição nos sites filho. Os pacotes de implantação são enviados por ordem de prioridade: **Alta**, **Média**, ou **Baixa**. Pacotes com prioridades idênticas são enviados na ordem em que foram criados. Se não houver uma lista de pendências, o pacote será processado imediatamente, não importando qual seja a prioridade. Por padrão, os pacotes são enviados usando a prioridade **Média** .  
+    -   “分发优先级”：使用此设置以指定部署包的分发优先级。 将部署包发送到子站点中的分发点时，将应用分发优先级。 部署包按优先级顺序发送：“高” 、“中” 或“低” 。 具有相同优先级的包按照其创建顺序发送。 如果没有囤积，则将立即处理包，而不考虑其优先级。 默认情况下使用“中”  优先级发送包。  
 
-    -   **Distribuir o conteúdo deste pacote para os pontos de distribuição preferenciais**: use essa configuração se quiser habilitar distribuição de conteúdo sob demanda para pontos de distribuição preferenciais. Quando essa configuração está habilitada, o ponto de gerenciamento cria um gatilho para que o gerenciador de distribuição distribua o conteúdo a todos os pontos de distribuição preferenciais quando um cliente solicita o conteúdo para o pacote e o conteúdo não está disponível em nenhum ponto de distribuição preferencial. Para obter mais informações sobre os pontos de distribuição preferenciais e o conteúdo sob demanda, veja [Content source location scenarios](../../core/plan-design/hierarchy/content-source-location-scenarios.md).  
+    -   “将此包的内容分发到首选分发点”：使用此设置以启用对首选分发点的按需内容分发。 如果启用此设置，则管理点会为分发管理器创建一个触发器，以在客户端请求包内容以及内容在任何首选分发点上不可用时将内容分发给所有首选分发点。 有关首选分发点和按需内容的详细信息，请参阅 [Content source location scenarios](../../core/plan-design/hierarchy/content-source-location-scenarios.md)。  
 
-    -   **Configurações de pontos de distribuição em pré-teste**: use essa configuração para especificar como você quer distribuir conteúdo para os pontos de distribuição em pré-teste. Selecione uma das seguintes opções:  
+    -   “预留分发点设置”：使用此设置以指定希望将内容分发到预留分发点的方式。 选择下列选项之一：  
 
-        -   **Baixar conteúdo automaticamente quando pacotes forem atribuídos a pontos de distribuição**: use essa configuração para ignorar as configurações de pré-teste e distribuir conteúdo ao ponto de distribuição.  
+        -   “在将包分配到分发点时自动下载内容”：使用此设置以忽略预留设置，并将内容分发到分发点。  
 
-        -   **Baixar somente alterações de conteúdo para o ponto de distribuição**: use essa configuração para pré-teste do conteúdo inicial do ponto de distribuição e distribua as alterações de conteúdo ao ponto de distribuição.  
+        -   “仅下载对分发点所做的内容更改”：使用此设置以将初始内容预留到分发点，然后将内容更改分发到分发点。  
 
-        -   **Copiar manualmente o conteúdo deste pacote para o ponto de distribuição**: use essa configuração para sempre realizar o pré-teste do conteúdo no ponto de distribuição. Essa é a configuração padrão.  
+        -   “手动将此包中的内容复制到分发点”：使用此设置以始终在分发点上预留内容。 此为默认设置。  
 
-         Para obter mais informações sobre como realizar o pré-teste de conteúdos para os pontos de distribuição, consulte [Conteúdo de pré-teste](../../core/servers/deploy/configure/deploy-and-manage-content.md#bkmk_prestage).  
+         有关将内容预留到分发点的详细信息，请参阅[使用预留内容](../../core/servers/deploy/configure/deploy-and-manage-content.md#bkmk_prestage)。  
 
-     Clique em **Avançar**.  
+     单击“下一步” 。  
 
-6.  Na página **Local de Download**, especifique o local que o Configuration Manager usará para baixar os arquivos de origem de atualização de software. Conforme necessário, use as seguintes opções:  
+6.  在“下载位置”页上，指定 Configuration Manager 将用于下载软件更新源文件的位置。 根据需要，请使用下列选项：  
 
-    -   **Baixar atualizações de software da Internet**: selecione essa configuração para baixar as atualizações de software do local na Internet. Essa é a configuração padrão.  
+    -   “从 Internet 下载软件更新”：选择此设置以从 Internet 上的位置下载软件更新。 此为默认设置。  
 
-    -   **Baixar atualizações de software de um local na rede local**: selecione essa configuração para baixar atualizações de software de uma pasta local ou uma pasta de rede compartilhada. Use essa configuração quando o computador que executa o assistente não tiver acesso à Internet.  
+    -   “从本地网络上的位置下载软件更新”：选择此设置以从本地文件夹或共享的网络文件夹下载软件更新。 当运行向导的计算机无 Internet 访问权限时使用此设置。  
 
         > [!NOTE]  
-        >  Ao usar essa configuração, baixe as atualizações de software de qualquer computador com acesso à Internet e copie as atualizações de software em uma rede local que seja acessível do computador que executa o assistente.  
+        >  如果使用此设置，请从具有 Internet 访问权限的任何计算机中下载软件更新，然后将软件更新复制到可从运行向导的计算机中访问的本地网络上的某个位置。  
 
-     Clique em **Avançar**.  
+     单击“下一步” 。  
 
-7.  Na página **Seleção de Idioma**, especifique os idiomas para os quais as atualizações de software selecionadas devem ser baixadas e clique em **Próximo**. O Configuration Manager baixará as atualizações de software apenas se estiverem disponíveis nos idiomas selecionados. As atualizações de software que não são específicas a um idioma são sempre baixadas.  
+7.  在“语言选择”页上，为已选定要下载的软件更新指定语言，然后单击“下一步”。 Configuration Manager 只有在选择的语言中可用时，才可以下载软件更新。 始终会下载非特定于语言的软件更新。  
 
-8. Na página **Resumo**, verifique as configurações selecionadas no assistente e clique em **Próximo** para baixar as atualizações de software.  
+8. 在“摘要”页上，验证在向导中选择的设置，然后单击“下一步”以下载软件更新。  
 
-9. Na página **Conclusão**, verifique se as atualizações de software foram baixadas com êxito e clique em **Fechar**.  
-
-
-<!--HONumber=Jan17_HO4-->
-
-
+9. 在“完成”页上，验证软件更新是否已成功下载，然后单击“关闭”。  

@@ -1,120 +1,113 @@
 ---
-title: Criar e aplicar os planos de energia | Microsoft Docs
-description: Criar e aplicar planos de energia no System Center Configuration Manager.
+title: "创建并应用电源计划 | Microsoft Docs"
+description: "在 System Center Configuration Manager 中创建和应用电源计划。"
 ms.custom: na
 ms.date: 10/06/2016
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
-ms.technology:
-- configmgr-other
+ms.technology: configmgr-other
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 738eddaa-52e2-467f-b453-821ef2884d47
-caps.latest.revision: 6
-caps.handback.revision: 0
+caps.latest.revision: "6"
+caps.handback.revision: "0"
 author: robstackmsft
 ms.author: robstack
 manager: angrobe
-translationtype: Human Translation
-ms.sourcegitcommit: fc392e4440e84614f92218e9c7a09ec1c2c64f53
 ms.openlocfilehash: de81da31b524cebe8e820766a64ecc5fdb7e4771
-
-
+ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
+ms.translationtype: HT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 08/07/2017
 ---
-# <a name="how-to-create-and-apply-power-plans-in-system-center-configuration-manager"></a>Como criar e aplicar planos de energia no System Center Configuration Manager
+# <a name="how-to-create-and-apply-power-plans-in-system-center-configuration-manager"></a>如何在 System Center Configuration Manager 中创建并应用电源计划
 
-*Aplica-se a: System Center Configuration Manager (Branch Atual)*
+*适用范围：System Center Configuration Manager (Current Branch)*
 
-O gerenciamento de energia no System Center Configuration Manager permite que você aplique planos de energia fornecidos com o Configuration Manager a coleções de computadores em sua hierarquia ou crie seus próprios planos de energia personalizados. Use o procedimento descrito neste tópico para aplicar um plano de energia interno ou personalizado aos computadores.  
-
-> [!IMPORTANT]  
->  Só é possível aplicar os planos de energia do Configuration Manager a coleções de dispositivos.  
-
- Se um computador for membro de várias coleções, e a cada um for aplicável um plano de energia diferente, as seguintes ações serão executadas:  
-
--   Plano de energia: se vários valores para as configurações de energia forem aplicados a um computador, o valor menos restritivo será usado.  
-
--   Hora de ativação: se várias horas de ativação forem aplicadas a um computador desktop, a hora mais próxima à meia-noite será usada.  
-
- Use o relatório **Computadores com vários planos de energia** para exibir todos os computadores que têm vários planos de energia aplicados a eles. Isso pode ajudá-lo a descobrir os computadores que apresentam conflitos de energia. Para obter mais informações sobre relatórios de gerenciamento de energia, consulte [Como monitorar e planejar o gerenciamento de energia no System Center Configuration Manager](../../../../core/clients/manage/power/monitor-and-plan-for-power-management.md).  
+使用 System Center Configuration Manager 中的电源管理，可以将 Configuration Manager 提供的电源计划应用到层次结构中的计算机集合，或创建自己的自定义电源计划。 使用本主题中的过程，可将内置或自定义电源计划应用到计算机。  
 
 > [!IMPORTANT]  
->  As configurações de energia definidas usando a Política de Grupo do Windows substituirão as configurações definidas pelo gerenciamento de energia do Configuration Manager.  
+>  仅可将 Configuration Manager 电源计划应用于设备集合。  
 
- Use o procedimento a seguir para criar e aplicar um plano de energia do Configuration Manager.  
+ 如果某台计算机是多个集合的成员，且每个集合应用不同的电源计划，则应执行以下操作：  
 
-### <a name="to-create-and-apply-a-power-plan"></a>Para criar e aplicar um plano de energia  
+-   电源计划：如果对某计算机应用了电源设置的多个值，则使用限制最少的值。  
 
-1.  No console do Configuration Manager, clique em **Ativos e Conformidade**.  
+-   唤醒时间：如果将多个唤醒时间应用到台式计算机，则使用最接近午夜的时间。  
 
-2.  No espaço de trabalho **Ativos e Conformidade** , clique em **Coleções de Dispositivos**.  
+ 使用“具有多个电源计划的计算机”  报表显示应用多个电源计划的所有计算机。 这可以帮助发现存在电源冲突的计算机。 有关电源管理报告的详细信息，请参阅[如何在 System Center Configuration Manager 中监视和规划电源管理](../../../../core/clients/manage/power/monitor-and-plan-for-power-management.md)。  
 
-3.  Na lista **Coleções de Dispositivos** , clique na coleção à qual deseja aplicar as configurações de gerenciamento de energia e, na guia **Início** , no grupo **Propriedades** , clique em **Propriedades**.  
+> [!IMPORTANT]  
+>  使用 Windows 组策略配置的电源设置将替代由 Configuration Manager 电源管理配置的设置。  
 
-4.  Na guia **Gerenciamento de Energia** da caixa de diálogo *Propriedades\>***<Nome de Coleção**, selecione **Especificar configurações de gerenciamento de energia para esta coleção**.  
+ 使用下列过程来创建并应用 Configuration Manager 电源计划。  
+
+### <a name="to-create-and-apply-a-power-plan"></a>若要创建并应用电源计划  
+
+1.  在 Configuration Manager 控制台中，单击“资产和符合性” 。  
+
+2.  在“资产和符合性”  工作区中，单击“设备集合” 。  
+
+3.  在“设备集合”  列表中，单击要应用电源管理设置的集合，然后在“主页”  选项卡中，在“属性”  组中单击“属性” 。  
+
+4.  在<Collection Name\>“属性”对话框中的“电源管理”选项卡中，选择“为此集合指定电源管理设置”。  
 
     > [!NOTE]  
-    >  Você também pode clicar em **Procurar** e copiar as configurações do gerenciamento de energia de uma coleção selecionada para a coleção selecionada.  
+    >  还可以单击“浏览”  ，然后从所选集合中将电源管理设置复制到选择的集合。  
 
-5.  Nos campos **Início** e **Término** , especifique as horas de início e de término do horário de pico (ou comercial).  
+5.  在“开始”  和“结束”  字段中，指定高峰（营业）时间的开始时间和结束时间。  
 
-6.  Habilite a **Hora de ativação (computadores desktops)** para especificar uma hora em que um computador desktop sairá do modo de suspensão ou hibernação para instalar atualizações agendadas ou instalações de software.  
+6.  启用“唤醒时间（台式计算机）”  指定台式计算机从睡眠状态唤醒或从休眠状态唤醒以安装计划更新或软件安装的时间。  
 
     > [!IMPORTANT]  
-    >  O gerenciamento de energia usa o recurso de tempo de ativação interno do Windows para que os computadores saiam do modo de suspensão ou hibernação. As configurações da hora de ativação não são aplicadas a computadores portáteis, para evitar cenários em que possam ser ativados quando não estiverem conectados. O tempo de ativação é aleatório e os computadores serão ativados durante o período de uma hora a partir do horário de ativação especificado.  
+    >  电源管理使用内部 Windows 唤醒时间功能从从睡眠状态或休眠状态唤醒计算机。 唤醒时间设置不适用于便携式计算机，以防止其在未接通电源的情况下被唤醒。 随机选择唤醒时间，自指定唤醒时间后一小时将唤醒计算机。  
 
-7.  Se quiser configurar um plano de energia personalizado para o horário de pico (ou comercial), selecione **Horário de Pico Personalizado (ConfigMgr)** na lista suspensa **Plano do Horário de Pico** e clique em **Editar**. Se quiser configurar um plano de energia para o horário fora de pico (ou fora do horário comercial), selecione **Horário Fora de Pico Personalizado (ConfigMgr)** na lista suspensa **Plano do Horário Fora de Pico** e clique em **Editar**.  
-
-    > [!NOTE]  
-    >  Você pode usar o relatório **Atividade do computador** para ajudá-lo a decidir os agendamentos a ser usados para o horário de pico e fora de pico quando aplicar os planos de energia às coleções de computadores. Para mais informações, consulte [Como monitorar e planejar o gerenciamento de energia no System Center Configuration Manager](../../../../core/clients/manage/power/monitor-and-plan-for-power-management.md).  
-
-     Também é possível selecionar **Equilibrado (ConfigMgr)**, **Alto Desempenho (ConfigMgr)** e **Economia de Energia (ConfigMgr)**nos planos de energia internos e depois clicar em **Exibição** para exibir as propriedades de cada plano de energia.  
+7.  如果想要配置高峰（营业）时间的自定义电源计划，请从“高峰计划”  下拉列表中选择“自定义高峰 (ConfigMgr)”  ，然后单击“编辑” 。 如果想要配置非高峰（非营业）时间的电源计划，请从“非高峰计划”  下拉列表中选择“自定义非高峰 (ConfigMgr)”  ，然后单击“编辑” 。  
 
     > [!NOTE]  
-    >  Não é possível modificar os planos de energia internos.  
+    >  可以使用“计算机活动”  报表来帮助确定将电源计划应用于计算机集合时，高峰时间和非高峰时间要使用的计划。 有关详细信息，请参阅[如何在 System Center Configuration Manager 中监视和规划电源管理](../../../../core/clients/manage/power/monitor-and-plan-for-power-management.md)。  
 
-8.  Na caixa de diálogo *Propriedades\>***<nome do plano de energia**, defina as seguintes configurações:  
+     还可从“平衡 (ConfigMgr)” 、“高性能 (ConfigMgr)”  和“节能程序 (ConfigMgr)” 内置电源计划中选择，然后单击“视图”  以显示每个电源计划的属性。  
 
-    -   **Nome:** especifique um nome para esse plano de energia ou use o valor padrão fornecido.  
+    > [!NOTE]  
+    >  不能修改内置电源计划。  
 
-    -   **Descrição:**  especifique uma descrição para esse plano de energia ou use o valor padrão fornecido.  
+8.  在 <power plan name\>“属性”对话框中，配置以下设置：  
 
-    -   **Especificar as propriedades para este plano de energia:** configure as propriedades do plano de energia. Para desabilitar uma propriedade, desmarque a caixa de seleção. Para obter mais informações sobre as configurações disponíveis, veja [Available power management plan settings](#BKMK_Plans) neste tópico.  
+    -   **名称：** 指定此电源计划的名称或使用提供的默认值。  
+
+    -   **描述：**  指定此电源计划的描述或使用提供的默认值。  
+
+    -   **指定此电源计划的属性：** 配置电源计划属性。 要禁用某个属性，请清除其复选框。 有关可用设置的信息，请参阅本主题中的 [Available power management plan settings](#BKMK_Plans) 。  
 
         > [!IMPORTANT]  
-        >  As configurações habilitadas são aplicadas aos computadores quando o plano de energia é aplicado. Se você desmarcar uma caixa de seleção da configuração de energia, o valor no computador cliente não será alterado quando o plano de energia é aplicado. Desmarcar uma caixa de seleção não restaura a configuração de energia para seu valor anterior à aplicação de um plano de energia.  
+        >  应用电源计划后，已启用的设置会应用到计算机中。 如果清除电源设置复选框，应用电源计划后不会更改客户端计算机上的值。 清除复选框不会将电源设置还原到应用电源计划之前的值。  
 
-9. Clique em **OK** para fechar a caixa de diálogo *Propriedades\>***<nome do plano de energia**.  
+9. 单击“确定”可关闭<power plan name\>“属性”对话框。  
 
-10. Clique em **OK** para fechar a caixa de diálogo *Configurações\>***<Nome da Coleção** e aplicar o plano de energia.  
+10. 单击“确定”可关闭<Collection Name\>“设置”对话框，并应用电源计划。  
 
-##  <a name="a-namebkmkplansa-available-power-management-plan-settings"></a><a name="BKMK_Plans"></a> Available power management plan settings  
- A tabela a seguir lista as configurações de gerenciamento de energia disponíveis no Configuration Manager. Você pode definir configurações separadas para quando o computador estiver conectado ou funcionando com bateria. Dependendo da versão do Windows que você está usando, algumas configurações podem não ser configuráveis.  
+##  <a name="BKMK_Plans"></a> Available power management plan settings  
+ 下表列出了 Configuration Manager 中可用的电源管理设置。 可以为计算机接通电源时或使用电池电源供电时配置独立的设置。 根据使用的 Windows 版本，可能不能配置某些设置。  
 
 > [!NOTE]  
->  As configurações de energia que não forem definidas manterão seu valor atual nos computadores cliente.  
+>  未配置的电源设置将在客户端计算机上保留当前值。  
 
-|Nome|Descrição|  
+|Name|描述|  
 |----------|-----------------|  
-|**Desligar o monitor após (minutos)**|Especifica o período de tempo, em minutos, em que o computador deverá ficar inativo antes que a tela seja desligada. Especifique um valor de **0** se você não quiser que o gerenciamento de energia desligue a tela.|  
-|**Suspensão após (minutos)**|Especifica o período de tempo, em minutos, em que o computador deverá ficar inativo antes de entrar no modo de suspensão. Especifique um valor de **0** se não quiser que o gerenciamento de energia entre no modo de suspensão no computador.|  
-|**Exigir uma senha durante a ativação**|Um valor **Sim** ou **Não** especifica se uma senha é necessária para desbloquear o computador quando ele entra a ativação do modo de suspensão.|  
-|**Ação do botão de energia**|Especifica a ação executada quando o botão de energia do computador é pressionado. Especifica a ação que ocorre quando o usuário fecha a tampa de um computador portátil. Os valores possíveis são **Não fazer nada**, **Suspender**, **Hibernar** e **Desligar**.|  
-|**Botão de energia do menu Iniciar**|Especifica a ação que ocorre quando você pressiona o botão de energia do menu **Iniciar** do computador. Especifica a ação que ocorre quando o usuário fecha a tampa de um computador portátil. Os valores possíveis são **Suspender**, **Hibernar** e **Desligar**.|  
-|**Ação do botão Suspender**|Especifica a ação que ocorre quando você pressiona o botão **Suspensão** do computador. Especifica a ação que ocorre quando o usuário fecha a tampa de um computador portátil. Os valores possíveis são **Não fazer nada**, **Suspender**, **Hibernar** e **Desligar**.|  
-|**Ação de fechamento da tampa**|Especifica a ação que ocorre quando o usuário fecha a tampa de um computador portátil. Os valores possíveis são **Não fazer nada**, **Suspender**, **Hibernar** e **Desligar**.|  
-|**Desligar o disco rígido após (minutos)**|Especifica o período de tempo, em minutos, em que o disco rígido do computador deverá ficar inativo antes que ele seja desligado. Especifique um valor de **0** se você não quiser que o gerenciamento de energia desligue o disco rígido do computador.|  
-|**Hibernação após (minutos)**|Especifica o período de tempo, em minutos, em que o computador deverá ficar inativo antes de entrar no modo de hibernação. Especifique um valor de **0** se não quiser que o gerenciamento de energia entre no modo de hibernação no computador.|  
-|**Ação de bateria fraca**|Especifica a ação que ocorre quando a bateria do computador atinge o nível de notificação de bateria fraca especificado. Especifica a ação que ocorre quando o usuário fecha a tampa de um computador portátil. Os valores possíveis são **Não fazer nada**, **Suspender**, **Hibernar** e **Desligar**.|  
-|**Ação de bateria crítica**|Especifica a ação executada quando a bateria do computador atinge o nível de notificação de bateria crítica especificado. Especifica a ação que ocorre quando o usuário fecha a tampa de um computador portátil. Os valores possíveis incluem **Suspender**, **Hibernar** e **Desligar**.|  
-|**Permitir suspensão híbrida**|Selecionar o valor **On** ou **Off** especifica se o Windows salva um arquivo de hibernação quando entrando em suspensão, o que pode ser usado para restaurar o estado do computador em caso de perda de energia enquanto ele entrou em suspensão.<br /><br /> A suspensão híbrida foi projetada para computadores desktop e, por padrão, não está habilitada em computadores portáteis. Em computadores que executam o Windows 7, a habilitação da suspensão híbrida desabilita a funcionalidade de hibernação.|  
-|**Permitir estado de espera durante a ação de suspensão**|Selecionar o valor **On** ou **Off** permite que o computador esteja em espera, o que ainda consome alguns energia, mas permite que o computador seja ativado mais rapidamente. Se essa configuração for definida como **Desligado**, o computador poderá apenas hibernar ou ser desligado.|  
-|**Ociosidade necessária para suspensão (%)**|Especifica o percentual de tempo ocioso no tempo do processador do computador necessário para que o computador entre no modo de suspensão. Para computadores que executam o Windows 7, esse valor é sempre definido como **0**.|  
-|**Habilitar o temporizador de ativação do Windows para computadores desktop**|Selecionar o valor **Habilitar** ou **Desabilitar** pode habilitar o temporizador interno do Windows a ser usado pelo gerenciamento de energia para ativar um computador desktop. Quando um computador desktop é ativado usando o temporizador de ativação do Windows, ele permanecerá ativo por 10 minutos por padrão para permitir que computador tenha tempo para instalar quaisquer atualizações ou receber a política.<br /><br /> Não há suporte para temporizadores de ativação em computadores portáteis, para evitar cenários em que possam ser ativados quando não estiverem conectados.|  
-
-
-
-<!--HONumber=Dec16_HO3-->
-
-
+|**在此时间后关闭显示器（分钟）**|指定在关闭显示器前计算机必须处于非活动状态的总时间（以分钟为单位）。 如果不希望电源管理关闭显示器，请将值指定为“0”  。|  
+|**在此时间后进入睡眠状态（分钟）**|指定在进入睡眠状态前计算机必须处于非活动状态的总时间（以分钟为单位）。 如果不希望电源管理让计算机进入睡眠状态，请将值指定为“0”  。|  
+|**需要密码才能唤醒**|“是”或“否”值指定计算机从睡眠状态进入唤醒状态时，是否需要密码来解锁计算机。|  
+|**电源按钮操作**|指定按下计算机的电源按钮时执行的操作。 指定当用户合上便携式计算机的盖子时执行的操作。 可能的值有“不执行任何操作”、“睡眠”、“休眠”和“关闭”。|  
+|**开始菜单电源按钮**|指定当按下计算机的的“开始”  菜单电源按钮时进行的操作。 指定当用户合上便携式计算机的盖子时执行的操作。 可能的值有“睡眠”、“休眠”和“关闭”。|  
+|**睡眠按钮操作**|指定按下计算机的“睡眠”  按钮时执行的操作。 指定当用户合上便携式计算机的盖子时执行的操作。 可能的值有“不执行任何操作”、“睡眠”、“休眠”和“关闭”。|  
+|**合上盖子操作**|指定当用户合上便携式计算机的盖子时执行的操作。 可能的值有“不执行任何操作”、“睡眠”、“休眠”和“关闭”。|  
+|**在此时间后关闭硬盘（分钟）**|指定在关闭计算机硬盘前它必须处于非活动状态的总时间（以分钟为单位）。 如果不希望电源管理关闭计算机硬盘，请将值指定为“0”  。|  
+|**在此时间后进入休眠状态（分钟）**|指定在进入休眠状态前计算机必须处于非活动状态的总时间（以分钟为单位）。 如果不希望电源管理让计算机进入休眠状态，请将值指定为“0”  。|  
+|**电量不足的操作**|指定计算机的电池电量达到指定低电量通知级别时进行的操作。 指定当用户合上便携式计算机的盖子时执行的操作。 可能的值有“不执行任何操作”、“睡眠”、“休眠”和“关闭”。|  
+|**电量极低的操作**|指定计算机的电池电量达到指定极低电量通知级别时进行的操作。 指定当用户合上便携式计算机的盖子时执行的操作。 可能的值包括“睡眠”、“休眠”和“关闭”。|  
+|**允许混合睡眠**|选择“打开”或“关闭”值，指定在进入休眠状态时 Windows 是否保存休眠文件，该选项可用于在进入睡眠状态后发生断电时还原计算机的状态。<br /><br /> 混合睡眠专为台式计算机设计，默认情况下，便携式计算机不启用。 在运行 Windows 7 的计算机上，启用混合睡眠会禁用休眠功能。|  
+|**允许睡眠操作时进入待机状态**|选择“打开”或“关闭”值，使计算机处于待机状态，虽然仍会消耗一些电量，但计算机能够更快唤醒。 如果将此设置设置为“关闭” ，计算机只能进入休眠状态或关闭。|  
+|**进入睡眠状态所需的空闲时间百分比 (%)**|指定计算机进入睡眠状态所需的计算机处理器处于空闲状态的时间百分比。 对于运行 Windows 7 的计算机，此值始终设置为“0”。|  
+|**为台式计算机启用 Windows 唤醒计时器**|选择“启用”或“禁用”值，使内置 Windows 计时器可由电源管理用来唤醒台式计算机。 使用 Windows 唤醒计时器唤醒台式计算机时，默认情况下它将保持唤醒状态 10 分钟，以留出时间让计算机安装任何更新或接收策略。<br /><br /> 唤醒计时器不适用于便携式计算机，以防止其在未接通电源的情况下被唤醒。|  

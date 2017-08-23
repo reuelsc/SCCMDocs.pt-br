@@ -1,76 +1,73 @@
 ---
-title: "Políticas de conformidade de dispositivo | Microsoft Docs"
-description: "Saiba como gerenciar as políticas de conformidade no System Center Configuration Manager para tornar aos dispositivos compatíveis políticas de acesso condicional."
+title: "设备合规性策略 | Microsoft Docs"
+description: "了解如何在 System Center Configuration Manager 中管理合规性策略以使设备符合条件访问策略。"
 ms.custom: na
 ms.date: 03/05/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
-ms.technology:
-- configmgr-hybrid
+ms.technology: configmgr-hybrid
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: ad8fa94d-45bb-4c94-8d86-31234c5cf21c
-caps.latest.revision: 18
-caps.handback.revision: 0
+caps.latest.revision: "18"
+caps.handback.revision: "0"
 author: andredm7
 ms.author: andredm
 manager: angrobe
-ms.translationtype: Human Translation
-ms.sourcegitcommit: dab5da5a4b5dfb3606a8a6bd0c70a0b21923fff9
 ms.openlocfilehash: bcaa2a9b5474e06bf344dc4fd47dbb160ea36297
-ms.contentlocale: pt-br
-ms.lasthandoff: 05/17/2017
-
+ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
+ms.translationtype: HT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 08/07/2017
 ---
-# <a name="device-compliance-policies-in-system-center-configuration-manager"></a>Políticas de conformidade de dispositivo no System Center Configuration Manager
+# <a name="device-compliance-policies-in-system-center-configuration-manager"></a>System Center Configuration Manager 中的设备合规性策略
 
-*Aplica-se a: System Center Configuration Manager (Branch Atual)*
+*适用范围：System Center Configuration Manager (Current Branch)*
 
-As **políticas de conformidade** no System Center Configuration Manager definem as regras e configurações às quais um dispositivo deve obedecer para ser considerado compatível pelas políticas de acesso condicional. Você também pode usar as políticas de conformidade para monitorar e corrigir problemas com dispositivos, independentemente do acesso condicional.  
+System Center Configuration Manager 中的**合规性策略**定义设备必须遵从的规则和设置，以便被视为符合条件访问策略。 也可使用符合性策略来监视和修正独立于条件访问的设备符合性问题。  
 
 
 > [!IMPORTANT]  
->  Este artigo descreve as políticas de conformidade para dispositivos gerenciados pelo Microsoft Intune.    As políticas de conformidade para PCs gerenciados pelo System Center Configuration Manager são descritas em [Gerenciar o acesso aos serviços do O365 para PCs gerenciados pelo System Center Configuration Manager](../../protect/deploy-use/manage-access-to-o365-services-for-pcs-managed-by-sccm.md).  
+>  本文介绍了由 Microsoft Intune 管理的设备的合规性策略。    由 System Center Configuration Manager 管理的电脑的合规性策略在[管理对由 System Center Configuration Manager 管理的电脑的 O365 服务的访问](../../protect/deploy-use/manage-access-to-o365-services-for-pcs-managed-by-sccm.md)中进行了说明。  
 
- Essas regras incluem requisitos, como:  
+ 这些规则包括类似于下面这样的要求：  
 
--   PIN e senhas para acessar um dispositivo
+-   用于访问设备的 PIN 和密码
 
--   Criptografia dos dados armazenados no dispositivo
+-   存储在设备上的数据的加密
 
--   Se o dispositivo está desbloqueado ou com raiz  
+-   设备是否已越狱或取得 root 权限  
 
--   Se o email no dispositivo é gerenciado por uma política do Intune ou se o dispositivo é relatado como não íntegro pelo serviço de atestado de integridade de dispositivo do Windows.
--   Aplicativos que não podem ser instalados no dispositivo.
+-   设备上的电子邮件是否由 Intune 策略管理，或者设备是否被 Windows 设备运行状况证明服务报告为不正常。
+-   无法在设备上安装的应用。
 
 
- Implante políticas de conformidade em coleções de usuários. Quando uma política de conformidade é implantada para um usuário, todos os dispositivos de usuários são verificados quanto à conformidade.  
+ 将符合性策略部署到用户集合。 将合规性策略部署到用户后，会对所有用户设备检查合规性。  
 
- A tabela a seguir lista os tipos de dispositivos suportados pelas políticas de conformidade e como configurações não compatíveis são gerenciadas quando a política é usada com uma política de acesso condicional.  
+ 下表列出了合规性策略支持的设备类型，也列出了当该策略与条件访问策略一起使用时托管不符合合规性的设置的方式。  
 
-|Regra|Windows 8.1 e posterior|Windows Phone 8.1 e posterior|iOS 6.0 e posterior|Android 4.0 e posterior ou Samsung KNOX Standard 4.0 e posterior, Android for Work|  
+|规则|Windows 8.1 及更高版本|Windows Phone 8.1 及更高版本|iOS 6.0 及更高版本|Android 4.0 及更高版本、Samsung KNOX Standard 4.0 及更高版本、Android for Work|  
 |----------|---------------------------|---------------------------------|-----------------------|---------------------------|-----------------------------------------|  
-|**Configuração de senha ou PIN**|Corrigida|Corrigida|Corrigida|Em Quarentena|  
-|**Criptografia de dispositivo**|N/D|Corrigida|Corrigida (pela definição do PIN)|Em Quarentena<br>(Android for Work sempre criptografado)|  
-|**Dispositivo com jailbreak ou root**|N/D|N/D|Em Quarentena (não é uma configuração)|Em Quarentena (não é uma configuração)|  
-|**Perfil de email**|N/D|N/D|Em Quarentena|N/D|  
-|**Versão mínima do SO**|Em Quarentena|Em Quarentena|Em Quarentena|Em Quarentena|  
-|**Versão máxima do SO**|Em Quarentena|Em Quarentena|Em Quarentena|Em Quarentena|  
-|**Atestado de Integridade do Dispositivo (atualização 1602)**|A configuração não é aplicável ao Windows 8.1<br /><br /> O Windows 10 e o Windows 10 Mobile estão em quarentena.|N/D|N/D|N/D|  
-|**Aplicativos que não podem ser instalados**|N/D|N/D|Em Quarentena|Em Quarentena|
+|**PIN 或密码配置**|已修正|已修正|已修正|已隔离|  
+|**设备加密**|不适用|已修正|已修正（通过设置 PIN）|已隔离<br>（Android for Work 始终加密）|  
+|**已越狱或取得 root 权限的设备**|不适用|不适用|已隔离（非设置）|已隔离（非设置）|  
+|**电子邮件配置文件**|不适用|不适用|已隔离|不适用|  
+|**最低操作系统版本**|已隔离|已隔离|已隔离|已隔离|  
+|**最高操作系统版本**|已隔离|已隔离|已隔离|已隔离|  
+|**设备运行状况证明（1602 更新）**|设置不适用于 Windows 8.1<br /><br /> Windows 10 和 Windows 10 移动版已隔离。|不适用|不适用|不适用|  
+|**不能安装的应用**|不适用|不适用|已隔离|已隔离|
 
- **Corrigida** = A conformidade é imposta pelo sistema operacional do dispositivo (por exemplo, o usuário será forçado a definir um PIN).  Nunca há um caso em que a configuração será fora de conformidade.  
+ **修正** = 法规遵从性由设备操作系统强制执行（例如，强制用户设置 PIN）。  设置永远不会不符合要求。  
 
- **Em Quarentena** = O sistema operacional do dispositivo não impõe conformidade (por exemplo, dispositivos Android não forçam o usuário a criptografar o dispositivo).  Nesse caso:  
+ **已隔离** = 设备操作系统并不强制合规性（例如，Android 设备不强制用户加密设备）。  这种情况下：  
 
--   O dispositivo será bloqueado se o usuário for afetado pela política de acesso condicional.  
+-   如果条件访问策略将用户作为目标，则会阻止设备。  
 
--   O portal da empresa ou um portal da Web notificará o usuário sobre quaisquer problemas de conformidade.  
+-   公司门户或 Web 门户将通知用户任何合规性问题。  
 
 
-### <a name="next-steps"></a>Próximas etapas  
-[Criar e implantar uma política de conformidade de dispositivo](create-compliance-policy.md)
-### <a name="see-also"></a>Consulte também  
- [Gerenciar o acesso a serviços no System Center Configuration Manager](../../protect/deploy-use/manage-access-to-services.md)
-
+### <a name="next-steps"></a>后续步骤  
+[创建和部署设备合规性策略](create-compliance-policy.md)
+### <a name="see-also"></a>另请参阅  
+ [在 System Center Configuration Manager 中管理对服务的访问](../../protect/deploy-use/manage-access-to-services.md)

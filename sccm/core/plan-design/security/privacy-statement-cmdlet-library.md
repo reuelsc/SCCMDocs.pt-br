@@ -1,58 +1,51 @@
 ---
-title: "Política de privacidade do System Center Configuration Manager – Biblioteca de cmdlets do Configuration Manager | Microsoft Docs"
-description: "Saiba mais sobre como a Microsoft coleta e usa dados relacionados à biblioteca de cmdlets do System Center Configuration Manager."
+title: "System Center Configuration Manager 隐私声明 - Configuration Manager cmdlet 库 | Microsoft Docs"
+description: "了解 Microsoft 如何收集和使用与 System Center Configuration Manager cmdlet 库相关的数据。"
 ms.custom: na
 ms.date: 1/3/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
-ms.technology:
-- configmgr-other
+ms.technology: configmgr-other
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: bec00fb4-1ac0-4e49-b330-0871b3722459
-caps.latest.revision: 5
-caps.handback.revision: 0
+caps.latest.revision: "5"
+caps.handback.revision: "0"
 author: Brenduns
 ms.author: brenduns
 manager: angrobe
-translationtype: Human Translation
-ms.sourcegitcommit: 3d6799ad46e0fe69333aba0662f18c9153c17bda
 ms.openlocfilehash: 3936075555cc0bb370ea6e42c7e720b864d565f7
-
-
+ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
+ms.translationtype: HT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 08/07/2017
 ---
-# <a name="system-center-configuration-manager-privacy-statement---configuration-manager-cmdlet-library"></a>Política de privacidade do System Center Configuration Manager – Biblioteca de Cmdlets do Configuration Manager
+# <a name="system-center-configuration-manager-privacy-statement---configuration-manager-cmdlet-library"></a>System Center Configuration Manager 隐私声明 – Configuration Manager cmdlet 库
 
-*Aplica-se a: System Center Configuration Manager (Branch Atual)*
+*适用范围：System Center Configuration Manager (Current Branch)*
 
-Esta política de privacidade abrange os recursos para a Biblioteca de Cmdlets do System Center Configuration Manager.  
+本隐私声明涵盖 System Center Configuration Manager Cmdlet 库的功能。  
 
-## <a name="usage-data"></a>Dados de uso  
- **O que esse recurso faz:**   
-A biblioteca de cmdlets do System Center Configuration Manager permite que você gerencie uma hierarquia do Configuration Manager usando cmdlets e scripts do Windows PowerShell. A biblioteca de cmdlets coleta informações sobre como usar os cmdlets na biblioteca para identificar tendências e padrões de uso. A biblioteca de cmdlets também coleta os tipos e números de erros encontrados ao usar os cmdlets.  
+## <a name="usage-data"></a>使用情况数据  
+ **此功能的作用：**   
+System Center Configuration Manager cmdlet 库允许通过使用 Windows PowerShell cmdlet 和脚本来管理 Configuration Manager 层次结构。 Cmdlet 库收集有关如何使用库中的 cmdlet 来确定趋势和使用模式的信息。 Cmdlet 库还会收集使用 cmdlet 时遇到的错误类型和数目信息。  
 
- **Informações coletadas, processadas ou transmitidas:**   
-os dados de uso coletados incluem como iniciar, parar e encerrar cmdlets, a execução de cmdlets preteridos e métricas de atividades para operações do provedor de SMS (Systems Management Server) relacionadas aos cmdlets. Essas informações não são pessoalmente identificáveis.  As informações de erro coletadas incluem erros retornados pelo cmdlets e detalhes de erros para erros de exceção. Alguns relatórios de detalhes de erro inadvertidamente podem conter identificadores individuais, como um número de série para um dispositivo conectado ao computador. A biblioteca de cmdlets filtra e torna anônimas as informações nos relatórios de erro para remover identificadores individuais antes da transmissão à Microsoft.  
+ **收集、处理或传输的信息：**   
+收集的使用数据包括 cmdlet 的开始、停止和终止数据，弃用的 cmdlet 运行数据，以及与这些 cmdlet 相关的 Systems Management Server (SMS) 提供程序操作的活动指标。 此类信息不能确定个人身份。  收集的错误信息包括 cmdlet 返回的错误以及异常错误的详情。 某些错误详情报告可能无意中包含个人身份标识符，如连接到计算机的设备的序列号。 Cmdlet 库筛选并匿名化错误报告中的信息，以删除个人身份标识符，然后再将错误报告发送给 Microsoft。  
 
- **Uso das informações:**   
-usamos essas informações para melhorar a qualidade, a segurança e a integridade dos produtos e serviços que oferecemos.  
+ **信息的用途：**   
+我们利用此信息来提高所提供产品和服务的质量、安全性和完整性。  
 
- **Opção/controle:**   
-esse recurso de dados de uso é habilitado por padrão. A biblioteca de cmdlets do System Center Configuration Manager inclui duas chaves do Registro que controlam essa funcionalidade.  
+ **选择/控制：**   
+此“使用数据”功能默认处于启用状态。 System Center Configuration Manager cmdlet 库具有控制此功能的两个注册表项。  
 
- Para cancelar totalmente, você precisa definir esses dois valores de chave do Registro, um para cada um dos provedores de Rastreamento de Eventos para Windows (ETW):  
+ 若要完全退出，你需要设置这两个注册表项的值，每个值针对一个 Windows 事件跟踪 (ETW) 提供程序：  
 
--   HKLM\Software\Microsoft\ConfigMgr10\PowerShell\Microsoft.ConfigurationManagement.PowerShell.Provider:CeipLevel=0 (cancelamento de Dados de Uso para o provedor da unidade)  
+-   HKLM\Software\Microsoft\ConfigMgr10\PowerShell\Microsoft.ConfigurationManagement.PowerShell.Provider:CeipLevel=0（驱动提供程序“使用数据”功能的退出）  
 
--   HKLM\Software\Microsoft\ConfigMgr10\PowerShell\Microsoft.ConfigurationManagement.PowerShell.Cmdlets:CeipLevel=0 (cancelamento de Dados de Uso para cmdlets)  
+-   HKLM\Software\Microsoft\ConfigMgr10\PowerShell\Microsoft.ConfigurationManagement.PowerShell.Cmdlets:CeipLevel=0（cmdlet“使用数据”功能的退出）  
 
- Alterações nas configurações de Dados de Uso são específicas do computador em que foram feitas.  
+ “使用数据”设置的更改特定于在其中进行更改的计算机。  
 
- Para obter mais informações sobre como configurar os dados de uso (coleção), confira a [documentação da biblioteca de cmdlets do System Center Configuration Manager](https://technet.microsoft.com/en-us/library/dn958404.aspx).   
-
-
-
-<!--HONumber=Jan17_HO1-->
-
-
+ 有关如何配置使用数据（集合）的详细信息，请参阅 [System Center Configuration Manager Cmdlet 库文档](https://technet.microsoft.com/en-us/library/dn958404.aspx)。   

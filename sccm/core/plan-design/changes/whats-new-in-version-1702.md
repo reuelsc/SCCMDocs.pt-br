@@ -1,336 +1,333 @@
 ---
-title: "Nova versão 1702 | Microsoft Docs"
-description: "Veja os detalhes das alterações e os novos recursos introduzidos na versão 1702 do System Center Configuration Manager."
+title: "新版本 1702 |Microsoft Docs"
+description: "获取有关 System Center Configuration Manager 的 1702 版中引入的更改和新功能的详细信息。"
 ms.custom: na
 ms.date: 05/02/2017
 ms.reviewer: na
 ms.suite: na
-ms.technology:
-- configmgr-other
+ms.technology: configmgr-other
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 409e26e1-7716-4f1d-a0ee-34feabf20792
 author: Brenduns
 ms.author: brenduns
 manager: angrobe
-ms.translationtype: Human Translation
-ms.sourcegitcommit: f4cb711f369698fe8e045f8c83dd96ec6fb29d70
 ms.openlocfilehash: a2954b3c6f9a09b7246347e780c4cfc49ba39ca1
-ms.contentlocale: pt-br
-ms.lasthandoff: 05/17/2017
-
+ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
+ms.translationtype: HT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 08/07/2017
 ---
-# <a name="what39s-new-in-version-1702-of-system-center-configuration-manager"></a>Novidades da versão 1702 do System Center Configuration Manager
+# <a name="what39s-new-in-version-1702-of-system-center-configuration-manager"></a>System Center Configuration Manager 版本 1702 中的新增功能
 
-*Aplica-se a: System Center Configuration Manager (Branch Atual)*
+*适用范围：System Center Configuration Manager (Current Branch)*
 
-A atualização 1702 da ramificação atual do System Center Configuration Manager está disponível como uma atualização no console para sites instalados anteriormente que executam as versões 1602, 1606 ou 1610. Também está disponível como uma versão de linha de base que você pode usar ao instalar uma nova implantação.
+System Center Configuration Manager Current Branch 的更新 1702 作为控制台内更新提供，用于运行版本 1602, 1606 或 1610 的以前安装的站点。 安装新部署时，也可将其作为基准版本使用。
 
 > [!TIP]  
-> Para instalar um novo site, você deve usar uma versão de linha de base do Configuration Manager.  
->  Saiba mais sobre:    
->   - [Instalação de novos sites](https://technet.microsoft.com/library/mt590197.aspx)  
->   - [Instalação de atualizações em sites](https://technet.microsoft.com/library/mt607046.aspx)  
->   - [Versões de linha de base e atualização](/sccm/core/servers/manage/updates#a-namebkmkbaselinesa-baseline-and-update-versions)  
+> 若要安装新站点，必须使用 Configuration Manager 的基准版本。  
+>  了解详细信息：    
+>   - [安装新站点](https://technet.microsoft.com/library/mt590197.aspx)  
+>   - [在站点上安装更新](https://technet.microsoft.com/library/mt607046.aspx)  
+>   - [基准和更新版本](/sccm/core/servers/manage/updates#a-namebkmkbaselinesa-baseline-and-update-versions)  
 
-As seções a seguir fornecem detalhes sobre as alterações e novas funcionalidades introduzidas na versão 1702 do Configuration Manager.  
+以下各节提供有关 Configuration Manager 版本 1702 中引入的更改和新功能的详细信息。  
 
-## <a name="deprecated-features-and-operating-systems"></a>Sistemas operacionais e recursos preteridos
-Saiba mais sobre alterações de suporte antes de serem implementadas em [recursos removidos e preteridos](/sccm/core/plan-design/changes/removed-and-deprecated-features).
+## <a name="deprecated-features-and-operating-systems"></a>弃用的功能和操作系统
+在其施前，先在[删除和弃用的功能](/sccm/core/plan-design/changes/removed-and-deprecated-features)中了解有关支持更改的相关信息。
 
-A versão 1702 descarta o suporte para os seguintes produtos:
-- **SQL Server 2008 R2**, para servidores de banco de dados do site. A substituição de suporte foi [anunciada primeiro](/sccm/core/plan-design/changes/removed-and-deprecated-features#deprecated-support-for-sql-server-versions-as-a-site-database) em 10 de julho de 2015. Esta versão do SQL Server permanece com suporte quando você usa uma versão do Configuration Manager anterior à 1702.
-- **Windows Server 2008 R2**, para funções de servidores de sistema e a maioria das funções do sistema de sites. A substituição de suporte foi [anunciada primeiro](/sccm/core/plan-design/changes/removed-and-deprecated-features#deprecated-operating-systems) em 10 de julho de 2015. Esta versão do Windows permanece com suporte quando você usa uma versão do Configuration Manager anterior à 1702.  
-- **Windows Server 2008**, para funções de servidores de sistema e a maioria das funções do sistema de sites. A substituição de suporte foi [anunciada primeiro](/sccm/core/plan-design/changes/removed-and-deprecated-features#deprecated-operating-systems) em 10 de julho de 2015.
-- **Windows XP Embedded**, como um sistema operacional cliente. A substituição foi [anunciada primeiro](/sccm/core/plan-design/changes/removed-and-deprecated-features#deprecated-operating-systems) em 10 de julho de 2015. Esta versão do Windows permanece com suporte quando você usa uma versão do Configuration Manager anterior à 1702.
-
-
+版本 1702 删除了对以下产品的支持：
+- **SQL Server 2008 R2**，针对站点数据库服务器。 在 2015 年 7 月 10 日[首次公布](/sccm/core/plan-design/changes/removed-and-deprecated-features#deprecated-support-for-sql-server-versions-as-a-site-database)要弃用支持。 在使用版本 1702 以前的 Configuration Manager 的版本时，此版本的 SQL Server 仍受支持。
+- **Windows Server 2008 R2**，针对站点系统服务器和大部分站点系统角色。 在 2015 年 7 月 10 日[首先公布](/sccm/core/plan-design/changes/removed-and-deprecated-features#deprecated-operating-systems)要弃用支持。 在使用版本 1702 以前的 Configuration Manager 的版本时，此版本的 Windows 仍受支持。  
+- **Windows Server 2008**，针对站点系统服务器和大部分站点系统角色。 在 2015 年 7 月 10 日[首先公布](/sccm/core/plan-design/changes/removed-and-deprecated-features#deprecated-operating-systems)要弃用支持。
+- **Windows XP Embedded**，作为客户端操作系统。 在 2015 年 7 月 10 日[首先公布](/sccm/core/plan-design/changes/removed-and-deprecated-features#deprecated-operating-systems)要弃用。 在使用版本 1702 以前的 Configuration Manager 的版本时，此版本的 Windows 仍受支持。
 
 
-## <a name="site-infrastructure"></a>Infraestrutura do site
-
-### <a name="improvements-for-in-console-search"></a>Melhorias da pesquisa no console
-Veja a seguir as melhorias no uso de pesquisa no console do Configuration Manager:
- - **Caminho do Objeto:**  
-  Muitos objetos agora dão suporte a uma coluna chamada **Caminho do Objeto**.  Quando você pesquisar e incluir essa coluna nos resultados da exibição, poderá exibir o caminho para cada objeto. Por exemplo, se você executar uma pesquisa por aplicativos no nó Aplicativos e também pesquisar nos subnós, a coluna *Caminho do Objeto* no painel de resultados mostrará o caminho para cada objeto que é retornado.   
-
-- **Preservação do texto de pesquisa:**  
-  Quando você inserir texto na caixa de texto de pesquisa e alternar entre a pesquisa de um subdiretório e o nó atual, o texto digitado persistirá e permanecerá disponível para uma nova pesquisa, sem a necessidade de redigitá-lo.
-
-- **Preservação da sua decisão de pesquisar subnós:**  
- A opção selecionada para a pesquisa no *nó atual* ou em *todos os subnós* agora é mantida após alterar o nó no qual você está trabalhando. Esse novo comportamento significa que você não precisa redefinir constantemente essa decisão ao percorrer o console. Ao abrir o console, a opção padrão é pesquisar somente o nó atual.
 
 
-### <a name="send-feedback-from-the-configuration-manager-console"></a>Enviar comentários do console do Configuration Manager
+## <a name="site-infrastructure"></a>站点基础结构
 
- Você pode usar as opções de comentários no console para enviar comentários diretamente para a equipe de desenvolvimento.
+### <a name="improvements-for-in-console-search"></a>控制台中搜索功能的改进
+以下是对在 Configuration Manager 控制台中使用搜索所进行的改进：
+ - **对象路径：**  
+  现在，很多对象都支持名为**对象路径**的列。  当用户搜索并将此列包括在显示结果中时，可以查看每个对象的路径。 例如，如果在应用程序节点搜索应用，并且同时要搜索子节点，结果窗格中的*对象路径*列将向用户显示每个返回对象的路径。   
 
- Você pode encontrar a opção **Comentários**:
- -  Na faixa de opções, na extremidade esquerda da guia Página Inicial de cada nó.  
-    ![Faixa de opções](./media/feedback-home.png)
+- **保留搜索文本：**  
+  在搜索文本框中输入文本，然后在搜索子节点和搜索当前节点之间切换时，已键入的文本会保留，并且仍然可用于新搜索而无需重新输入。
 
- -  Ao clicar com o botão direito do mouse em qualquer objeto no console.   
-     ![Opção ao clicar com o botão direito do mouse](./media/feedback-option.png)   
-
- Escolher **Comentários** abre seu navegador para o site de comentários do [UserVoice do Configuration Manager](https://go.microsoft.com/fwlink/?linkid=617029).
-
-
-###  <a name="changes-for-updates-and-servicing"></a>Alterações em Atualizações e Manutenção
-Veja a seguir as alterações em Atualizações e Manutenção:
-
-- **Local do nó**   
-  Depois de instalar a versão 1702, o nó **Atualizações e manutenção** aparece como um nó de nível superior em **Administração**. Não é mais um nó filho abaixo de **Serviços de nuvem**.
-
-- **Novos estados de atualização**  
-  Quando você exibe as atualizações disponíveis no console, há dois novos estados:  
-  - **Disponível para instalação** - esta é uma atualização que foi baixado e está pronta para instalar.
-  - **Pronto para download** -essa atualização está disponível, mas não foi baixada. Você pode optar por baixar essa atualização, mas ela foi substituída por uma mais recente.
+- **保留搜索子节点的决策：**  
+ 现在，更改使用的节点时，会保留对搜索*当前节点*或*所有子节点*所选择的选项。 这一新特点意味着在控制台执行操作时无需不断重置此决策。 默认情况下，打开控制台选项时，将仅搜索当前节点。
 
 
-- **Opções de atualização mais simples**  
-  Na próxima vez que sua infraestrutura se qualificar para duas ou mais atualizações, somente a atualização mais recente será baixada. Por exemplo, se sua versão atual do site for duas ou mais antigas do que a versão mais recente disponível, somente a versão de atualização mais recente será baixada automaticamente.  
+### <a name="send-feedback-from-the-configuration-manager-console"></a>从 Configuration Manager 控制台发送反馈
 
-  Você pode escolher baixar e instalar as outras atualizações disponíveis, mesmo quando elas não são a versão mais atual. Se você baixar uma versão mais antiga, receberá um aviso de que a atualização foi substituída por uma mais recente. Para baixar uma atualização *Disponível para Download*, selecione a atualização no console e, em seguida, clique em **Baixar**.
+ 可以使用控制台内反馈选项将反馈直接发送到开发团队。
 
-- **Limpeza aprimorada de atualizações mais antigas**   
-  Adicionamos uma função de limpeza automática que exclui os downloads desnecessários da pasta 'EasySetupPayload' no servidor do site. Como isso é apresentado com a versão 1702, a limpeza começa a funcionar após a instalação de uma atualização subsequente como um pacote cumulativo de atualizações ou uma versão de atualização futura.  
+ 可在以下位置找到“反馈”选项：
+ -  在功能区中每个节点的“主页”选项卡的最左侧。  
+    ![功能区](./media/feedback-home.png)
 
+ -  右键单击控制台中的任何对象时。   
+     ![右键单击选项](./media/feedback-option.png)   
 
-### <a name="data-warehouse-service-point"></a>Ponto de serviço do Data Warehouse
- Use o ponto de serviço do Data Warehouse para armazenar e relatar dados históricos de longo prazo para sua implantação do Configuration Manager.
-
- O data warehouse dá suporte a até 2 TB de dados, com carimbos de data e hora para controle de alterações. O armazenamento dos dados é possibilitado por meio de sincronizações automatizadas do banco de dados de site do Configuration Manager para o banco de dados de data warehouse. Essas informações estarão acessíveis no seu ponto do Reporting Services.
-
- Para saber mais, veja o [Ponto de serviço do Data Warehouse](/sccm/core/servers/manage/data-warehouse).
+ 选择“反馈”将打开浏览器，并转到 [Configuration Manager UserVoice 反馈网站](https://go.microsoft.com/fwlink/?linkid=617029)。
 
 
-### <a name="peer-cache-improvements"></a>Aprimoramentos de cache de pares
- A partir da versão 1702, um computador de origem de cache de pares rejeitará uma solicitação de conteúdo quando o computador de origem do cache de pares atender a qualquer uma das seguintes condições:  
-  -  Está no modo de bateria fraca.
-  -  A carga de CPU excede 80% no momento em que o conteúdo é solicitado.
-  -  A E/S de disco tem um *AvgDiskQueueLength* que excede 10.
-  -  Não há mais conexões disponíveis para o computador.   
-Para saber mais, veja **Acesso limitado a uma origem de cache de pares** em [Cache de pares para clientes do Configuration Manager](/sccm/core/plan-design/hierarchy/client-peer-cache).   
+###  <a name="changes-for-updates-and-servicing"></a>更新和维护服务的更改
+以下是对更新和服务的更改：
 
-Além disso, três novos relatórios são adicionados ao seu ponto de relatório. Você pode usar esses relatórios para saber mais detalhes sobre solicitações de conteúdo rejeitadas, incluindo o limite de grupo, o computador e o conteúdo envolvidos. Consulte [Monitoramento](/sccm/core/plan-design/hierarchy/client-peer-cache#monitoring) no tópico de cache de pares.
+- **节点位置**   
+  安装版本 1702 后，**更新和服务**节点在**管理**下方作为顶级节点显示。 它不再是**云服务**下方的子节点。
 
-### <a name="content-library-cleanup-tool"></a>Ferramenta de limpeza da biblioteca de conteúdo
- Use a [ferramenta de limpeza da biblioteca de conteúdo](/sccm/core/plan-design/hierarchy/content-library-cleanup-tool) para remover o conteúdo de pontos de distribuição quando esse conteúdo não está mais associado a um aplicativo.
+- **新的更新状态**  
+  在控制台中查看可用更新时，将有两种新状态：  
+  - **可供安装** - 这是已下载并准备安装的更新。
+  - **准备下载** - 此更新可用，但尚未下载。 可选择下载此更新，但它已被较新的更新所取代。
 
 
-### <a name="use-the-oms-connector-with-the-azure-government-cloud"></a>Usar o conector do OMS com a nuvem Azure Governamental
-Você pode usar o conector do OMS para se conectar ao OMS Log Analytics na nuvem do Microsoft Azure Governamental. Isso exige a modificação de um arquivo de configuração antes de instalar o conector do OMS para que o conector possa trabalhar com a nuvem governamental. Para saber mais, veja [Usar o conector do OMS com a nuvem Azure Governamental](/sccm/core/clients/manage/sync-data-microsoft-operations-management-suite#fairfaxconfig).
+- **简化更新选项**  
+  下次当你的基础架构有资格下载两个或多个更新时，将仅下载最新更新。 例如，如果当前站点版本比最新可用版本低两个或更多版本，将仅自动下载最新版本的更新。  
 
-### <a name="software-update-points-are-added-to-boundary-groups"></a>Os pontos de atualização de software são adicionados aos grupos de limites
-A partir da versão 1702, os clientes usam grupos de limites para localizar um novo ponto de atualização de software, fazer fallback e localizar um novo ponto de atualização de software se o atual não estiver mais acessível. Você pode adicionar pontos de atualização de software individuais a grupos de limites diferentes para controlar quais servidores um cliente pode encontrar. Para saber mais, veja [pontos de atualização de software](/sccm/core/servers/deploy/configure/boundary-groups#software-update-points) no tópico [Configurando grupos de limites](/sccm/core/servers/deploy/configure/boundary-groups).
+  可选择下载并安装其他可用更新，即使它们不是最新版本。 如果下载了较旧的版本，你将收到此更新已由较新更新替换的警告。 若要下载可下载的更新，在控制台中选择更新，然后单击“下载”。
+
+- **针对较旧更新的清理功能得到改进**   
+  已添加自动清理功能，可从站点服务器上的“EasySetupPayload”文件夹中删除不需要的下载文件。 因为这是在版本 1702 中引入的，所以在安装后续更新后（如更新汇总或未来的更新版本）开始清理工作。  
+
+
+### <a name="data-warehouse-service-point"></a>数据仓库服务点
+ 使用数据仓库服务点存储和报告关于 Configuration Manager 部署的长期历史数据。
+
+ 数据仓库最多支持 2 TB 数据，且具有跟踪更改的时间戳。 通过从 Configuration Manager 站点数据库自动同步到数据仓库数据库可实现数据存储。 然后，可从 Reporting Services 点访问此信息。
+
+ 有关详细信息，请参阅[数据仓库服务点](/sccm/core/servers/manage/data-warehouse)。
+
+
+### <a name="peer-cache-improvements"></a>对等缓存功能改进
+ 从版本 1702 开始，当对等缓存源计算机满足以下任一条件时，将会拒绝对内容的请求：  
+  -  处于低电量模式。
+  -  请求内容时 CPU 负载超过 80%。
+  -  磁盘 I/O 的 AvgDiskQueueLength 超过 10。
+  -  该计算机没有其他可用连接。   
+有关详细信息，请参阅 [Configuration Manager 客户端的对等缓存](/sccm/core/plan-design/hierarchy/client-peer-cache)中的**对等缓存源的有限访问**。   
+
+此外，向你的报表点添加了三个新的报表。 可以使用这些报表了解有关被拒绝的内容请求的详细信息，其中包括边界组、计算机和所涉及的内容。 请参阅对等缓存主题中的[监视](/sccm/core/plan-design/hierarchy/client-peer-cache#monitoring)。
+
+### <a name="content-library-cleanup-tool"></a>内容库清理工具
+ 使用[内容库清理工具](/sccm/core/plan-design/hierarchy/content-library-cleanup-tool)从分发点删除与应用程序不再关联的内容。
+
+
+### <a name="use-the-oms-connector-with-the-azure-government-cloud"></a>将 OMS 连接器与 Azure Government 云结合使用
+可以使用 OMS 连接器连接到 Microsoft Azure Government 云中的 OMS Log Analytics。 这要求你在安装 OMS 连接器前修改配置文件，以将连接器与 Government 云结合使用。 有关详细信息，请参阅[将 OMS 连接器与 Azure Government 云结合使用](/sccm/core/clients/manage/sync-data-microsoft-operations-management-suite#fairfaxconfig)。
+
+### <a name="software-update-points-are-added-to-boundary-groups"></a>将软件更新点添加到边界组。
+从版本 1702 开始，客户端使用边界组查找新的软件更新点，并在其当前软件更新点不再可用时回退并查找新的软件更新点。 可以向不同的边界组添加各个软件更新点，以控制客户端可以找到哪些服务器。 有关详细信息，请参阅[配置边界组](/sccm/core/servers/deploy/configure/boundary-groups)主题中的[软件更新点](/sccm/core/servers/deploy/configure/boundary-groups#software-update-points)。
 
 
 <!-- ## Migration  -->
 
 <!-- ## Client management  -->
 
-## <a name="compliance-settings"></a>Configurações de conformidade
+## <a name="compliance-settings"></a>符合性设置
 
-### <a name="new-compliance-settings-for-ios"></a>Novas configurações de conformidade para iOS
+### <a name="new-compliance-settings-for-ios"></a>iOS 的新符合性设置
 
-Adicionamos várias novas configurações para dispositivos iOS para corresponderem aos disponíveis com o Microsoft Intune.
-Para obter uma lista de todas as configurações disponíveis, veja [Criar itens de configuração para dispositivos com iOS e Mac OS X gerenciados com o Intune](/sccm/mdm/deploy-use/create-configuration-items-for-ios-and-mac-os-x-devices-managed-without-the-client).
-
-
-## <a name="application-management"></a>Gerenciamento de aplicativos
-
-### <a name="improved-support-for-windows-store-for-business-apps"></a>Suporte aprimorado para aplicativos da Windows Store para Empresas
-
-Agora você pode implantar aplicativos licenciados online da Windows Store para Empresas para computadores com Windows 10 que você gerencia usando o cliente do Configuration Manager.
-Para saber mais, veja [Gerenciar aplicativos da Windows Store para Empresas](/sccm/apps/deploy-use/manage-apps-from-the-windows-store-for-business).
-
-### <a name="check-for-running-executable-files-before-installing-an-application"></a>Verificar se há arquivos executáveis antes de instalar um aplicativo
-
-Na caixa de diálogo **Propriedades** de um tipo de implantação, na guia **Comportamento de Instalação**, agora você pode especificar um ou mais arquivos executáveis que, se estiverem em execução, bloquearão a instalação do tipo de implantação. O usuário deve fechar o arquivo executável em execução (ou ele pode ser fechado automaticamente para implantações com a finalidade obrigatória) antes de o tipo de implantação poder ser instalado.
-
-Se o aplicativo tiver sido implantado como **Disponível** e um usuário final tentar instalar um aplicativo, será solicitado que ele feche todos os executáveis em execução especificados antes de prosseguir com a instalação.
-
-Se o aplicativo tiver sido implantado como **Necessário** e a opção **Fechar automaticamente todos os executáveis em execução especificados na guia de comportamento de instalação da caixa de diálogo de propriedades do tipo de implantação** estiver selecionada, ele verá uma caixa de diálogo informando que os executáveis especificados serão fechados automaticamente quando o prazo da instalação for atingido.
-
-### <a name="app-management-improvements-for-hybrid-mdm"></a>Melhorias de gerenciamento de aplicativo para MDM híbrido
-
-- [Implantar aplicativos iOS adquiridos por volume em coleções de dispositivos](#deploy-volume-purchased-ios-apps-to-device-collections)
-- [Suporte para o Volume Purchase Program do iOS para educação](#support-for-ios-volume-purchase-program-for-education)
-- [Suporte para vários tokens do Volume Purchase Program](#support-for-multiple-volume-purchase-program-tokens)
+我们为 iOS 设备添加了许多新的设置以匹配 Microsoft Intune 中可用的设置。
+有关所有可用设置的列表，请参阅[为使用 Intune 管理的 iOS 和 Mac OS X 设备创建配置项](/sccm/mdm/deploy-use/create-configuration-items-for-ios-and-mac-os-x-devices-managed-without-the-client)。
 
 
-## <a name="operating-system-deployment"></a>Implantação de sistema operacional
+## <a name="application-management"></a>应用程序管理
 
-### <a name="expire-stand-alone-media"></a>Expirar mídia autônoma
-Quando você cria mídia autônoma, há novas opções para definir datas de início e vencimento opcionais na mídia. Essas configurações estão desabilitadas por padrão. As datas são comparadas com a hora do sistema no computador antes de a mídia autônoma ser executada. Quando a hora do sistema for anterior à hora de início ou posterior à hora de expiração, a mídia autônoma não será iniciada. Essas opções também estão disponíveis usando o cmdlet New-CMStandaloneMedia PowerShell. Para obter detalhes, veja [Criar mídia autônoma](/sccm/osd/deploy-use/create-stand-alone-media).
+### <a name="improved-support-for-windows-store-for-business-apps"></a>提升了对适用于企业的 Windows 应用商店应用的支持
 
-### <a name="package-id-displayed-in-task-sequence-steps"></a>ID do pacote exibida nas etapas da sequência de tarefas
-Qualquer etapa de sequência da tarefa que faz referência a um pacote, pacote de driver, imagem do sistema operacional, imagem de inicialização ou pacote de atualização do sistema operacional agora exibirá a ID do pacote do objeto referenciado. Quando uma etapa de sequência de tarefas fizer referência a um aplicativo, ela exibirá a ID do objeto.
+现在，可以使用 Configuration Manager 客户端将联机许可应用从适用于企业的 Windows 应用商店部署到你所管理的 Windows 10 电脑 。
+有关详细信息，请参阅[管理来自适用于企业的 Windows 应用商店的应用](/sccm/apps/deploy-use/manage-apps-from-the-windows-store-for-business)。
 
-### <a name="support-for-additional-content-in-stand-alone-media"></a>Suporte para conteúdo adicional na mídia autônoma
-Agora há suporte para conteúdo adicional na mídia autônoma. Você pode selecionar pacotes adicionais, pacotes de driver e aplicativos para obter preparação na mídia junto com outros conteúdos referenciados na sequência de tarefas. Anteriormente, somente o conteúdo referenciado na sequência de tarefas era preparado na mídia autônoma. Para obter detalhes, veja [Criar mídia autônoma](/sccm/osd/deploy-use/create-stand-alone-media).
+### <a name="check-for-running-executable-files-before-installing-an-application"></a>在安装应用程序之前检查运行的可执行文件
 
-### <a name="hardware-inventory-collects-uefi-information"></a>O inventário de hardware coleta informações de UEFI
-Uma nova classe de inventário de hardware (**SMS_Firmware**) e a propriedade (**UEFI**) estão disponíveis para ajudá-lo a determinar se um computador é iniciado no modo UEFI. Quando um computador é iniciado no modo UEFI, a propriedade **UEFI** é definida como **TRUE**. Isso é habilitado no inventário de hardware por padrão. Para obter mais informações sobre o inventário de hardware, consulte [Como configurar o inventário de hardware](/sccm/core/clients/manage/inventory/configure-hardware-inventory).
+在部署类型的“属性”对话框的“安装行为”选项卡中，现在可以指定一个或多个可执行文件，如果运行此类文件，将阻止安装部署类型。 用户必须先关闭运行中的可执行文件（或者因为部署的特定要求而自动关闭），然后才能安装部署类型。
 
-### <a name="improvements-to-software-center-warning-messages-for-high-impact-task-sequences"></a>Aprimoramentos nas mensagens de aviso do Centro de Software para sequências de tarefas de alto impacto
-Esta versão inclui os seguintes aprimoramentos para mensagens de aviso do Centro de Software para sequências de tarefas de implantação de alto impacto:
+如果应用程序已部署为“可用”，最终用户尝试安装应用程序时，系统会提示其先关闭指定的任何运行中的可执行文件，然后才能继续安装。
 
-- Nas propriedades da sequência de tarefas, agora você pode configurar qualquer sequência de tarefas, incluindo sequências de tarefas que não do sistema operacional, como uma implantação de alto risco. Qualquer sequência de tarefas que atender a determinadas condições será automaticamente definida como de alto impacto. Para obter detalhes, consulte [Gerenciar implantações de alto risco](/sccm/protect/understand/settings-to-manage-high-risk-deployments).
-- Nas propriedades da sequência de tarefas, você pode optar por usar a mensagem de notificação padrão ou criar sua própria mensagem de notificação personalizada para implantações de alto impacto.
-- Nas propriedades da sequência de tarefas, você pode configurar as propriedades do Centro de Software, que incluem tornar uma reinicialização necessária, o tamanho do download da sequência de tarefas e o tempo de execução estimado.
-- A mensagem de implantação de alto impacto padrão para atualizações in-loco agora indicam que seus aplicativos, dados e configurações são migrados automaticamente. Anteriormente, a mensagem padrão para qualquer instalação do sistema operacional indicava que todos os aplicativos, dados e configurações seriam perdidos, o que não era verdade para uma atualização in-loco.
+如果应用程序已部署为“必需”，且已选择“自动关闭在‘部署类型属性’对话框中的‘安装行为’选项卡中指定的任何运行中的可执行文件”选项，他们将看到一个对话框，通知他们在应用程序安装截止时间到达时将自动关闭指定的可执行文件。
 
-Para obter detalhes, veja [Definir configurações da sequência de tarefas de alto impacto](/sccm/osd/deploy-use/manage-task-sequences-to-automate-tasks#set-a-task-sequence-as-a-high-impact-task-sequence)
+### <a name="app-management-improvements-for-hybrid-mdm"></a>针对混合 MDM 的应用管理改进
 
-### <a name="return-to-previous-page-when-a-task-sequence-fails"></a>Retornar à página anterior quando uma sequência de tarefas falhar
-Agora, você pode retornar à página anterior ao executar uma sequência de tarefas e ocorrer uma falha. Antes dessa versão, era necessário reiniciar a sequência de tarefas ao ocorrer uma falha. Por exemplo, você pode usar o botão **Anterior** nos seguintes cenários:
+- [将批量采购的 iOS 应用部署到设备集合](#deploy-volume-purchased-ios-apps-to-device-collections)
+- [支持 iOS Volume Purchase Program 教育版](#support-for-ios-volume-purchase-program-for-education)
+- [支持多个批量采购计划标记](#support-for-multiple-volume-purchase-program-tokens)
 
-- Quando um computador é iniciado no Windows PE, a caixa de diálogo de inicialização da sequência de tarefas pode ser exibida antes da sequência estar disponível. Ao clicar em Avançar nesse cenário, a página final da sequência de tarefas exibe uma mensagem informando que não há sequências de tarefas disponíveis. Agora, você pode clicar em **Anterior** para pesquisar novamente por sequências de tarefas disponíveis. Você pode repetir esse processo até que a sequência de tarefas esteja disponível.
-- Quando você executa uma sequência de tarefas, porém pacotes dependentes de conteúdo ainda não estão disponíveis nos pontos de distribuição, a sequência de tarefas falhará. Agora, você poderá distribuir o conteúdo ausente (se ainda não tiver sido distribuído) ou aguardar o conteúdo estar disponível nos pontos de distribuição e, em seguida, clicar em **Anterior** para que a pesquisa de sequência de tarefas pesquise novamente o conteúdo.
 
-### <a name="pre-cache-content-for-available-deployments-and-task-sequences"></a>Conteúdo de armazenamento prévio em cache para sequências de tarefas e implantações disponíveis
-A partir da versão 1702, para implantações disponíveis de sequências de tarefas, é possível optar por usar o conteúdo de armazenamento prévio em cache. O conteúdo de armazenamento prévio em cache oferece a opção de permitir que o cliente baixe apenas o conteúdo aplicável assim que receber a implantação. Portanto, quando o usuário clicar em **Instalar** no Centro de Software, o conteúdo estará pronto e a instalação iniciará rapidamente, pois o conteúdo está no disco rígido local. Para obter detalhes, veja [Configurar o conteúdo de armazenamento prévio em cache](/sccm/osd/deploy-use/create-a-task-sequence-to-upgrade-an-operating-system#configure-pre-cache-content).
+## <a name="operating-system-deployment"></a>操作系统部署
 
-### <a name="convert-from-bios-to-uefi-during-an-in-place-upgrade"></a>Converter de BIOS para UEFI durante uma atualização in-loco
-A Atualização do Windows 10 para Criadores apresenta uma ferramenta de conversão simples que automatiza o processo para reparticionar o disco rígido para hardware habilitado para UEFI e integra a ferramenta de conversão ao processo de atualização in-loco do Windows 7 para o Windows 10. Quando você combina essa ferramenta com a sequência de tarefas de atualização do sistema operacional e a ferramenta de OEM que converte o firmware do BIOS para UEFI, pode converter os computadores de BIOS para UEFI durante uma atualização in-loco para a Atualização do Windows 10 para Criadores. Para obter detalhes, consulte [Etapas de sequência de tarefas para gerenciar o BIOS para a conversão para UEFI](/sccm/osd/deploy-use/task-sequence-steps-to-manage-bios-to-uefi-conversion#convert-from-bios-to-uefi-during-an-in-place-upgrade).
+### <a name="expire-stand-alone-media"></a>对独立介质设置到期日期
+创建独立介质时，可使用新选项对介质设置可选开始日期和到期日期。 默认情况下，这些设置处于禁用状态。 独立介质运行前，该日期将与计算机上的系统时间进行比较。 如果系统时间早于开始时间或晚于过期时间，则独立介质不会启动。 也可通过使用 New-CMStandaloneMedia PowerShell cmdlet 启用这些选项。 有关详细信息，请参阅[创建独立介质](/sccm/osd/deploy-use/create-stand-alone-media)。
 
-### <a name="improvements-to-the-install-applications-task-sequence-step"></a>Melhorias na etapa da sequência de tarefas de Instalar Aplicações
-Esta versão introduziu os seguintes aprimoramentos:
-- Aumentou o número máximo de aplicativos que você pode instalar para 99 na etapa de sequência de tarefas **Instalar Aplicativos**. O número máximo anterior era de 9 aplicativos.
-- Ao adicionar aplicativos à etapa da sequência de tarefas **Instalar Aplicativos** no editor de sequência de tarefas, agora você pode selecionar vários aplicativos no painel **Selecionar aplicativo para instalar**.
+### <a name="package-id-displayed-in-task-sequence-steps"></a>在任务序列步骤中显示包 ID
+任何引用包、驱动程序包、操作系统映像、启动映像或操作系统升级包的任务序列步骤现在将显示引用对象的包 ID。 任务序列步骤引用应用程序时，将显示对象 ID。
 
-### <a name="improvements-to-the-auto-apply-driver-task-sequence"></a>Melhorias para a sequência de tarefas do Driver de aplicação automática
-Novas variáveis de sequência de tarefas estão agora disponíveis para configurar o valor de tempo limite na etapa de sequência de tarefas do Driver de aplicação automática ao fazer solicitações do catálogo HTTP. As seguintes variáveis e valores padrão (em segundos) estão disponíveis:
+### <a name="support-for-additional-content-in-stand-alone-media"></a>对独立介质中的其他内容的支持
+在独立介质中现在支持其他内容。 可选择将额外的包、驱动程序包和应用程序，以及任务序列中引用的其他内容暂存在介质中。 以前，仅任务序列中引用的内容才暂存在独立介质中。 有关详细信息，请参阅[创建独立介质](/sccm/osd/deploy-use/create-stand-alone-media)。
+
+### <a name="hardware-inventory-collects-uefi-information"></a>硬件清单将收集 UEFI 信息
+新的硬件清单类 (**SMS_Firmware**) 和属性 (**UEFI**) 可帮助确定是否以 UEFI 模式启动计算机。 如果以 UEFI 模式启动计算机，则 **UEFI** 属性设为 **TRUE**。 默认情况下，这在硬件清单中处于启用状态。 有关硬件清单的详细信息，请参阅[如何配置硬件清单](/sccm/core/clients/manage/inventory/configure-hardware-inventory)。
+
+### <a name="improvements-to-software-center-warning-messages-for-high-impact-task-sequences"></a>改进了高效任务序列的软件中心警告消息
+此版本对高效部署任务序列的软件中心警告消息进行了以下改进：
+
+- 在任务序列的属性中，现可将任何任务序列（包括非操作系统任务序列）配置为高风险部署。 任何符合特定条件的任务序列都将自动定义为“影响重大”。 有关详细信息，请参阅[管理高风险部署](/sccm/protect/understand/settings-to-manage-high-risk-deployments)。
+- 在任务序列的属性中，可以选择针对影响重大的部署，使用默认通知消息或创建自定义通知消息。
+- 在任务序列的属性中，可以配置软件中心属性，其中包括设置必要的重启、任务序列的下载大小和预计运行时间。
+- 对于就地升级，默认的重大影响部署消息指示你的应用、数据和设置将自动迁移。 以前，任何操作系统安装的默认消息均指示所有应用、数据和设置将丢失，但这样的消息实际上并不适用于就地升级。
+
+有关详细信息，请参阅[配置影响重大的任务序列设置](/sccm/osd/deploy-use/manage-task-sequences-to-automate-tasks#set-a-task-sequence-as-a-high-impact-task-sequence)
+
+### <a name="return-to-previous-page-when-a-task-sequence-fails"></a>任务序列失败时返回上一页
+现在，运行任务序列出现故障时，可以返回到上一页面。 在此版本之前，出现故障时必须重启任务序列。 例如，可在以下应用场景中使用“上一页”按钮：
+
+- 当计算机在 Windows PE 中启动时，任务序列可用之前可能会先显示任务序列启动对话框。 在此应用场景中单击“下一步”时，会显示任务序列的最后一页，同时显示一条消息告知无可用的任务序列。 现在，可单击“上一页”以再次搜索可用任务序列。 在出现可用任务序列之前，可重复此过程。
+- 运行任务序列但分发点上尚无可用从属内容包时，任务序列会失败。 现在，用户可以分发缺失的内容（如果尚未分发），或等待分发点上出现可用内容，然后单击“上一页”使任务序列再次搜索内容。
+
+### <a name="pre-cache-content-for-available-deployments-and-task-sequences"></a>为可用部署和任务序列预先缓存内容
+从版本 1702 开始，对于可用的部署和任务序列，可以选择使用预先缓存内容。 借助预先缓存内容，用户可选择允许客户端在收到部署后立即下载适用的内容。 因此，当用户在软件中心中单击“安装”时，内容便已就绪，并且安装可以快速启动，因为内容位于本地硬盘上。 有关详细信息，请参阅[配置预先缓存内容](/sccm/osd/deploy-use/create-a-task-sequence-to-upgrade-an-operating-system#configure-pre-cache-content)。
+
+### <a name="convert-from-bios-to-uefi-during-an-in-place-upgrade"></a>在就地升级过程中从 BIOS 转换到 UEFI
+Windows 10 创意者更新引入了一个简单的转换工具，可自动执行对用于启用 UEFI 的硬件的硬盘重新分区的过程，并将该转换工具集成到 Windows 7 到 Windows 10 的就地升级过程中。 将此工具与你的操作系统升级任务序列和将固件从 BIOS 转换到 UEFI 的 OCM 工具组合使用时，可以在 Windows 10 创意者更新的就地升级过程中将你的计算机从 BIOS 转换到 UEFI。 有关详细信息，请参阅[管理 BIOS 转换为 UEFI 所采用的任务序列步骤](/sccm/osd/deploy-use/task-sequence-steps-to-manage-bios-to-uefi-conversion#convert-from-bios-to-uefi-during-an-in-place-upgrade)。
+
+### <a name="improvements-to-the-install-applications-task-sequence-step"></a>对“安装应用程序任务”序列步骤的改进
+此版本引入了以下改进：
+- 在**安装应用程序**任务序列步骤中，将可安装的应用程序的最大数量增加到 99 个。 以前的最大数量为 9 个应用程序。
+- 在任务序列编辑器中向“安装应用程序”任务序列步骤添加应用程序时，现在可以从“选择要安装的应用程序”窗格中选择多个应用程序。
+
+### <a name="improvements-to-the-auto-apply-driver-task-sequence"></a>对“自动应用驱动程序”任务序列所做的改进
+在发出 HTTP 目录请求时，新任务序列变量现在可在“自动应用驱动程序”任务序列步骤中配置超时值。 下面是可用的变量和默认值（以秒为单位）：
    - SMSTSDriverRequestResolveTimeOut  
-     Padrão: 60
+     默认值：60
    - SMSTSDriverRequestConnectTimeOut  
-     Padrão: 60
+     默认值：60
    - SMSTSDriverRequestSendTimeOut  
-     Padrão: 60
+     默认值：60
    - SMSTSDriverRequestReceiveTimeOut  
-     Padrão: 480
+     默认值：480
 
-### <a name="windows-10-adk-tracked-by-build-version"></a>Windows 10 ADK controlado pela versão de build
-O Windows 10 ADK agora é controlado pela versão de build para garantir uma experiência com mais suporte ao personalizar imagens de inicialização do Windows 10. Por exemplo, se o site usa o Windows ADK para Windows 10, versão 1607, somente as imagens de inicialização com a versão 10.0.14393 poderão ser personalizadas no console. Para obter detalhes sobre como personalizar as versões WinPE, consulte [Personalizar imagens de inicialização](/sccm/osd/get-started/customize-boot-images).
+### <a name="windows-10-adk-tracked-by-build-version"></a>内部版本所跟踪的 Windows 10 ADK
+现在可通过内部版本号跟踪 Windows 10 ADK，确保自定义 Windows 10 启动映像时有更多受支持的体验。 例如，如果站点使用适用于 Windows 10 的 Windows ADK（版本 1607），那么控制台中仅可自定义版本号为 10.0.14393 的启动映像。 若要深入了解如何自定义 WinPE 版本，请参阅[自定义启动映像](/sccm/osd/get-started/customize-boot-images)。
 
-### <a name="default-boot-image-source-path-can-no-longer-be-changed"></a>O caminho de origem de imagem de inicialização padrão não pode ser alterado
-As imagens de inicialização padrão são gerenciadas pelo Configuration Manager e o caminho de origem da imagem de inicialização padrão não pode mais ser alterado no console do Configuration Manager ou ao usar o SDK do Configuration Manager. Você pode continuar a configurar um caminho de origem personalizado para imagens de inicialização personalizadas.
+### <a name="default-boot-image-source-path-can-no-longer-be-changed"></a>默认启动映像源路径无法再进行更改
+默认启动映像由 Configuration Manager 托管，并且无法再在 Configuration Manager 控制台中或通过使用 Configuration Manager SDK 更改默认启动映像源路径。 可继续为自定义启动映像配置自定义源路径。
 
-### <a name="default-boot-images-are-regenerated-after-upgrading-configuration-manager-to-a-new-version"></a>Imagens de inicialização padrão são geradas novamente após a atualização do Configuration Manager para uma nova versão
-A partir desta versão, quando você atualiza a versão do Windows ADK e usa as atualizações e instalações para instalar a versão mais recente do Configuration Manager, o Configuration Manager regenera as imagens de inicialização padrão. Inclui a nova versão da Janela PE do Windows ADK atualizado e a nova versão de personalizações, drivers e cliente, entre outros, do Configuration Manager. Imagens de inicialização personalizadas não são modificadas. Para mais detalhes, consulte [Gerenciar imagens de inicialização](/sccm/osd/get-started/manage-boot-images#BKMK_BootImageDefault).
+### <a name="default-boot-images-are-regenerated-after-upgrading-configuration-manager-to-a-new-version"></a>Configuration Manager 升级到新版本后将重新生成默认启动映像
+从此版本开始，如果升级 Windows ADK 版本，然后使用更新和服务安装 Configuration Manager 的最新版本，Configuration Manager 将重新生成默认启动映像。 这包括已更新的 Windows ADK 中的新 Window PE 版本、新版本的 Configuration Manager 客户端、驱动程序、自定义项等。不会修改自定义启动映像。 有关详细信息，请参阅[管理启动映像](/sccm/osd/get-started/manage-boot-images#BKMK_BootImageDefault)。
 
-## <a name="software-updates"></a>Atualizações de software
+## <a name="software-updates"></a>软件更新
 
-### <a name="deploy-office-365-apps-to-clients"></a>Implantar aplicativos do Office 365 em clientes
-A partir da versão 1702, no painel de gerenciamento de clientes do Office 365, é possível iniciar o Instalador do Office 365 que permite que você defina as configurações de instalação do Office 365, baixe arquivos de CDNs (Redes de Distribuição de Conteúdo) do Office e implante os arquivos como um aplicativo no Configuration Manager. Para saber mais, veja [Gerenciar atualizações do Office 365 ProPlus](/sccm/sum/deploy-use/manage-office-365-proplus-updates#deploy-office-365-apps).
+### <a name="deploy-office-365-apps-to-clients"></a>将 Office 365 应用部署到客户端
+从版本 1702 起，可以从 Office 365 客户端管理仪表板启动 Office 365 安装程序，此程序可用于配置 Office 365 安装设置、从 Office 内容传送网络 (CDN) 下载文件，以及将文件部署为 Configuration Manager 中的应用程序。 有关详细信息，请参阅[管理 Office 365 ProPlus 更新](/sccm/sum/deploy-use/manage-office-365-proplus-updates#deploy-office-365-apps)。
 
 > [!IMPORTANT]
-> O aplicativo do Office 365 que você cria e implanta usando o Assistente para aplicativo do Office 365 no Configuration Manager não é gerenciado automaticamente pelo Configuration Manager até que você habilite a configuração de agente de cliente de atualização **Habilitar o gerenciamento do cliente do Office 365 novamente**. Para obter detalhes, veja [Sobre configurações do cliente](/sccm/core/clients/deploy/about-client-settings).
+> 在 Configuration Manager 中使用 Office 365 应用程序向导创建和部署的 Office 365 应用不会由 Configuration Manager 自动管理，除非启用软件更新客户端代理设置“再次启用 Office 365 客户端管理”。 有关详细信息，请参阅[关于客户端设置](/sccm/core/clients/deploy/about-client-settings)。
 
-### <a name="manage-express-installation-files-for-windows-10-updates"></a>Gerenciar os arquivos de instalação expressa para atualizações do Windows 10
-A partir da versão 1702, o Configuration Manager oferece suporte a arquivos de instalação expressa para atualizações do Windows 10. Ao usar uma versão do Windows 10 com suporte, você poderá usar as definições do Configuration Manager para baixar somente as alterações entre a Atualização Cumulativa do Windows 10 do mês atual e a atualização do mês anterior. Sem os arquivos de instalação expressa, o Configuration Manager baixa a Atualização Cumulativa do Windows 10 (incluindo todas as atualizações dos meses anteriores) a cada mês. Usar arquivos de instalação expressa proporciona downloads menores e instalações mais rápidas nos clientes. Para obter detalhes, veja [Gerenciar os arquivos de instalação expressa para atualizações do Windows 10](/sccm/sum/deploy-use/manage-express-installation-files-for-windows-10-updates).
+### <a name="manage-express-installation-files-for-windows-10-updates"></a>管理 Windows 10 更新的快速安装文件
+从版本 1702 起，Configuration Manager 支持 Windows 10 更新的快速安装文件。 如果使用支持版本的 Windows 10，可通过 Configuration Manager 设置只下载本月的 Windows 10 累积更新和上月更新之间的更改。 在没有快速安装文件的情况下，Configuration Manager 每个月都会下载完整的 Windows 10 累积更新（包括先前月份的所有更新）。 使用快速安装文件，所需下载文件更小，在客户端上安装更快速。 有关详细信息，请参阅[管理 Windows 10 更新的快速安装文件](/sccm/sum/deploy-use/manage-express-installation-files-for-windows-10-updates)。
 
 
 <!-- ## Reporting  -->
 
 <!-- ## Inventory  -->
 
-## <a name="mobile-device-management"></a>Gerenciamento de dispositivos móveis
+## <a name="mobile-device-management"></a>移动设备管理
 
-### <a name="android-and-ios-versions-are-no-longer-targetable-in-creation-wizards-for-hybrid-mdm"></a>As versões do Android e iOS não precisam mais ser direcionadas nos assistentes de criação do MDM híbrido
+### <a name="android-and-ios-versions-are-no-longer-targetable-in-creation-wizards-for-hybrid-mdm"></a>在混合 MDM 的创建向导中，不再以 Android 和 iOS 版本为目标
 
-A partir da versão 1702 para MDM (gerenciamento de dispositivo móvel) híbrido, você não precisa mais indicar versões específicas do Android e do iOS ao criar novas políticas e perfis de dispositivos gerenciados pelo Intune. Em vez disso, escolha um dos seguintes tipos de dispositivo:
+从混合移动设备管理 (MDM) 的版本 1702 开始，创建用于 Intune 托管设备的新策略和配置文件时，不再需要将特定版本的 Android 和 iOS 作为目标。 转而选择下述某个设备类型：
 
 - Android
-- Samsung KNOX Standard 4.0 e superior
+- Samsung KNOX 标准版 4.0 及更高版本
 - iPhone
 - iPad
 
-Essa alteração afeta os assistentes de criação dos seguintes itens:
+此更改会影响以下项的创建向导：
 
-- Itens de configuração
-- Políticas de conformidade
-- Perfis de certificado
-- Perfis de email
-- Perfis de VPN
-- Perfis de Wi-Fi
+- 配置项目
+- 相容性策略
+- 证书配置文件
+- 电子邮件配置文件
+- VPN 配置文件
+- Wi-Fi 配置文件
 
-Com essa alteração, as implantações híbridas podem fornecer suporte com mais rapidez para novas versões do Android e do iOS sem precisar de uma nova versão ou extensão do Configuration Manager. Assim que uma nova versão passar a ter suporte no Intune autônomo, os usuários poderão atualizar seus dispositivos móveis para essa versão.
+由于此更改，混合部署可为 Android 和 iOS 新版本更快提供支持，无需新的 Configuration Manager 版本或扩展。 Intune 独立版中支持新版本后，用户就可将其移动设备升级到此版本。
 
-Para evitar problemas ao atualizar de versões anteriores do Configuration Manager, as versões dos sistemas operacionais móveis ainda estarão disponíveis nas páginas de propriedades desses itens. Se você ainda precisar direcionar a uma versão específica, crie o novo item e especifique a versão de destino na página de propriedades do item recém-criado.
+为防止从 Configuration Manager 先前版本升级时出现问题，移动操作系统版本仍在这些项的属性页中可用。 如果仍需以特定版本为目标，可创建新项，然后在新创建的项的属性页上指定目标版本。
 
-### <a name="android-for-work-support"></a>Suporte do Android for Work
-A partir da versão 1702, o gerenciamento híbrido de dispositivos móveis com o Microsoft Intune agora oferece suporte ao registro e ao gerenciamento de dispositivos do Android for Work. Orientação para dispositivo Android for Work gerenciado:
+### <a name="android-for-work-support"></a>Android for Work 支持
+从 1702 开始，Microsoft Intune 的混合移动设备管理现在支持 Android for Work 设备注册和管理。 托管的 Android for Work 设备指南：
 
-- [Registrar dispositivos Android for Work](/sccm/mdm/deploy-use/enroll-hybrid-android#enable-android-enrollment)
-- [Aprovar e implantar aplicativos do Android for Work](/sccm/mdm/deploy-use/creating-android-applications#approve-and-deploy-android-for-work-apps)
-- [Criar itens de configuração para o Android for Work](/sccm/mdm/deploy-use/create-configuration-items-for-android-and-samsung-knox-devices-managed-without-the-client#android-for-work-configuration-items)
-- [Limpeza seletiva em dispositivos Android for Work](/sccm/mdm/deploy-use/wipe-lock-reset-devices#selective-wipe)
-- [Perfis de email para Android for Work](/sccm/mdm/deploy-use/create-exchange-activesync-profiles)
-- [Políticas de conformidade para Android for Work](/sccm/mdm/deploy-use/create-compliance-policy)
+- [注册 Android for Work 设备](/sccm/mdm/deploy-use/enroll-hybrid-android#enable-android-enrollment)
+- [批准和部署 Android for Work 应用](/sccm/mdm/deploy-use/creating-android-applications#approve-and-deploy-android-for-work-apps)
+- [创建 Android for Work 配置项目](/sccm/mdm/deploy-use/create-configuration-items-for-android-and-samsung-knox-devices-managed-without-the-client#android-for-work-configuration-items)
+- [在 Android for Work 设备上执行选择性擦除](/sccm/mdm/deploy-use/wipe-lock-reset-devices#selective-wipe)
+- [Android for Work 的电子邮件配置文件](/sccm/mdm/deploy-use/create-exchange-activesync-profiles)
+- [Android for Work 的合规性策略](/sccm/mdm/deploy-use/create-compliance-policy)
 
 
-### <a name="deploy-volume-purchased-ios-apps-to-device-collections"></a>Implantar aplicativos iOS adquiridos por volume em coleções de dispositivos
+### <a name="deploy-volume-purchased-ios-apps-to-device-collections"></a>将批量采购的 iOS 应用部署到设备集合
 
-Agora você pode implantar aplicativos licenciados para dispositivos, bem como os usuários. Dependendo da capacidade dos aplicativos para dar suporte ao licenciamento de dispositivos, uma licença apropriada será solicitada quando você implantá-la, da seguinte maneira:
+现在可以将已授权的应用程序部署到设备以及用户。 根据应用对设备授权的支持能力，合适的许可证将在部署时按以下方式声明：
 
 |||||
 |-|-|-|-|
-|Versão do Configuration Manager|O aplicativo dá suporte ao licenciamento de dispositivos?|Tipo de coleção de implantação|Licença solicitada|
-|Anterior à versão 1702|Sim|usuário|Licença de usuário|
-|Anterior à versão 1702|Não|usuário|Licença de usuário|
-|Anterior à versão 1702|Sim|Dispositivo|Licença de usuário|
-|Anterior à versão 1702|Não|Dispositivo|Licença de usuário|
-|Versão 1702 e posterior|Sim|usuário|Licença de usuário|
-|Versão 1702 e posterior|Não|usuário|Licença de usuário|
-|Versão 1702 e posterior|Sim|Dispositivo|Licença de dispositivo|
-|Versão 1702 e posterior|Não|Dispositivo|Licença de usuário|
+|Configuration Manager 版本|应用是否支持设备授权？|部署集合类型|已声明的许可证|
+|早于 1702|是|用户|用户许可证|
+|早于 1702|否|用户|用户许可证|
+|早于 1702|是|设备|用户许可证|
+|早于 1702|否|设备|用户许可证|
+|1702 及更高版本|是|用户|用户许可证|
+|1702 及更高版本|否|用户|用户许可证|
+|1702 及更高版本|是|设备|设备许可证|
+|1702 及更高版本|否|设备|用户许可证|
 
-Para saber mais sobre aplicativos do iOS adquiridos por volume, veja [Gerenciar aplicativos iOS adquiridos por volume](/sccm/mdm/deploy-use/manage-volume-purchased-ios-apps).
+有关批量购买的 iOS 应用的详细信息，请参阅[管理批量购买的 iOS 应用](/sccm/mdm/deploy-use/manage-volume-purchased-ios-apps)。
 
-### <a name="support-for-ios-volume-purchase-program-for-education"></a>Suporte para o Volume Purchase Program do iOS para educação
+### <a name="support-for-ios-volume-purchase-program-for-education"></a>支持 iOS Volume Purchase Program 教育版
 
-Agora você também pode implantar e controlar aplicativos que você adquiriu do Volume Purchase Program for Education do iOS.
-Para saber mais sobre aplicativos do iOS adquiridos por volume, veja [Gerenciar aplicativos iOS adquiridos por volume](/sccm/mdm/deploy-use/manage-volume-purchased-ios-apps).
+此外，现在可以部署并跟踪你从 iOS Volume Purchase Program 教育版购买的应用。
+有关批量购买的 iOS 应用的详细信息，请参阅[管理批量购买的 iOS 应用](/sccm/mdm/deploy-use/manage-volume-purchased-ios-apps)。
 
-### <a name="support-for-multiple-volume-purchase-program-tokens"></a>Suporte para vários tokens do Volume Purchase Program
+### <a name="support-for-multiple-volume-purchase-program-tokens"></a>支持多个批量采购计划标记
 
-Agora você pode associar vários tokens de programa de compra por volume da Apple ao seu Configuration Manager.
-Para saber mais sobre aplicativos do iOS adquiridos por volume, veja [Gerenciar aplicativos iOS adquiridos por volume](/sccm/mdm/deploy-use/manage-volume-purchased-ios-apps).
+现在可以将多个 Apple 批量采购计划令牌与 Configuration Manager 相关联。
+有关批量购买的 iOS 应用的详细信息，请参阅[管理批量购买的 iOS 应用](/sccm/mdm/deploy-use/manage-volume-purchased-ios-apps)。
 
-### <a name="support-for-line-of-business-apps-in-windows-store-for-business"></a>Suporte para aplicativos de linha de negócios na Windows Store para Empresas
+### <a name="support-for-line-of-business-apps-in-windows-store-for-business"></a>对适用于企业的 Windows 应用商店中的业务线应用的支持
 
-Agora você pode sincronizar aplicativos personalizados de linha de negócios da Windows Store para Empresas.
+现在可以同步来自适用于企业的 Windows 应用商店的自定义业务线应用。
 
-### <a name="conditional-access-device-compliance-policy-improvements"></a>Aprimoramentos na política de conformidade de dispositivo de acesso condicional
+### <a name="conditional-access-device-compliance-policy-improvements"></a>条件性访问设备符合性策略改进
 
-Uma nova regra de política de conformidade do dispositivo está disponível para ajudar a bloquear o acesso a recursos corporativos que dão suporte ao acesso condicional, quando os usuários estão usando aplicativos que fazem parte de uma lista de aplicativos fora de conformidade. A lista de aplicativos fora de conformidade pode ser definida pelo administrador ao adicionar a nova regra de conformidade **Aplicativos que não podem ser instalados**. Essa regra exige que o administrador insira o **Nome do Aplicativo**, a **ID do Aplicativo** e o **Editor do Aplicativo** (opcional) ao adicionar um aplicativo à lista fora de conformidade. Essa configuração se aplica apenas a dispositivos iOS e Android.
+当用户使用非符合性应用列表中的应用时，新的设备符合性策略规则可用于帮助阻止对支持条件性访问的公司资源的访问。 当添加新的符合性规则“无法安装的应用”时，可由管理员定义非符合性应用列表。 将应用添加到非符合性列表时，此规则要求管理员输入“应用名称”、“应用 ID”和“应用发布者”（可选）。 此设置仅适用于 iOS 和 Android 设备。
 
-Além disso, isso ajuda as organizações a reduzir o vazamento de dados por aplicativos não seguros e evita o consumo de dados excessivo por determinados aplicativos.
+此外，这可帮助组织缓解使用不安全应用导致的数据泄漏，并防止通过某些应用过度使用数据。
 
-- Saiba mais [como as políticas de conformidade de dispositivo funcionam](/sccm/mdm/deploy-use/device-compliance-policies).
-- Saiba mais [como criar políticas de conformidade de dispositivo](/sccm/mdm/deploy-use/create-compliance-policy).
+- 深入了解[设备符合性策略的工作原理](/sccm/mdm/deploy-use/device-compliance-policies)。
+- 深入了解[如何创建设备符合性策略](/sccm/mdm/deploy-use/create-compliance-policy)。
 
-### <a name="new-mobile-threat-defense-monitoring-tools"></a>Novas ferramentas de monitoramento de defesa contra ameaças móveis
+### <a name="new-mobile-threat-defense-monitoring-tools"></a>新移动威胁防御监视工具
 
-A partir da versão 1702, você tem novas maneiras de monitorar o status de conformidade com seu provedor de serviços de defesa contra ameaças móveis.
+从版本 1702 开始，现在可以采用新的方法通过移动威胁防御服务提供程序来监视合规性状态。
 
-- Saiba mais em [Como monitorar a conformidade de Defesa contra Ameaças Móveis](https://docs.microsoft.com/sccm/mdm/deploy-use/monitor-mobile-threat-defense-compliance).
+- 了解[如何监视移动威胁防御合规性](https://docs.microsoft.com/sccm/mdm/deploy-use/monitor-mobile-threat-defense-compliance)的详细信息。
 
-## <a name="protect-devices"></a>Proteger dispositivos
+## <a name="protect-devices"></a>保护设备
 
-### <a name="detect-outdated-antimalware-client-versions"></a>Detectar versões desatualizadas do cliente antimalware
-A partir da versão 1702, você poderá configurar um alerta para garantir que os clientes do Endpoint Protection não estejam desatualizados. Para saber mais, veja [Alerta de cliente de malware desatualizado](/sccm/protect/deploy-use/endpoint-configure-alerts#detect-outdated-antimalware-client-versions).
+### <a name="detect-outdated-antimalware-client-versions"></a>检测过时的反恶意软件客户端版本
+从版本 1702 开始，可以配置警报，以确保 Endpoint Protection 客户端不会过时。 有关详细信息，请参阅[过时的恶意软件客户端警报](/sccm/protect/deploy-use/endpoint-configure-alerts#detect-outdated-antimalware-client-versions)。
 
-### <a name="device-health-attestation-updates"></a>Atualizações do atestado de integridade do dispositivo
-O serviço de atestado de integridade do dispositivo para clientes locais agora pode ser configurado e gerenciado do ponto de gerenciamento. Para saber mais, veja [Atestado de integridade](/sccm/core/servers/manage/health-attestation).
+### <a name="device-health-attestation-updates"></a>设备运行状况证明更新
+适用于本地客户端的设备运行状况证明服务现在可以从管理点进行配置和管理。 有关详细信息，请参阅[运行状况证明](/sccm/core/servers/manage/health-attestation)。
 
-### <a name="certificate-profiles-for-windows-hello-for-business"></a>Perfis de certificado para o Windows Hello para Empresas
+### <a name="certificate-profiles-for-windows-hello-for-business"></a>Windows Hello 企业版的证书配置文件
 
-Se você pretende armazenar perfis de certificado no contêiner de chaves do Windows Hello para Empresas, e o perfil de certificado usa o EKU de Logon de Cartão Inteligente, deverá configurar permissões para registro de chave para garantir que o certificado seja validado corretamente.
-Para saber mais, veja as [Configurações para Windows Hello para Empresas](/sccm/protect/deploy-use/windows-hello-for-business-settings).
+如果想要在 Windows Hello 企业版密钥容器中存储证书配置文件，而证书配置文件使用智能卡登录 EKU，则必须配置密钥注册的权限，以确保证书验证正确。
+有关详细信息，请参阅 [Windows Hello 企业版设置](/sccm/protect/deploy-use/windows-hello-for-business-settings)。
 
-### <a name="new-windows-hello-for-business-notification-for-end-users"></a>Nova notificação do Windows Hello para Empresas para usuários finais
-Uma nova notificação do Windows 10 informa aos usuários finais que eles devem executar ações adicionais para concluir a instalação do Windows Hello para Empresas (por exemplo, definir um PIN).
-
+### <a name="new-windows-hello-for-business-notification-for-end-users"></a>新的 Windows Hello 企业版最终用户通知
+新的 Windows 10 通知告知最终用户必须采取额外操作才能完成 Windows Hello 企业版安装（例如，设置 PIN）。

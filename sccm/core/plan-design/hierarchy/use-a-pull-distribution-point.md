@@ -1,116 +1,111 @@
 ---
-title: "Ponto de distribuição baseado em pull | Microsoft Docs"
-description: "Saiba mais sobre as configurações e limitações para usar um ponto de distribuição de recepção com o System Center Configuration Manager."
+title: "请求分发点 | Microsoft Docs"
+description: "了解通过 System Center Configuration Manager 使用请求分发点的配置和限制相关信息。"
 ms.custom: na
 ms.date: 2/14/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
-ms.technology:
-- configmgr-other
+ms.technology: configmgr-other
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 7d8f530b-1a39-4a9d-a2f0-675b516da7e4
-caps.latest.revision: 9
+caps.latest.revision: "9"
 author: Brenduns
 ms.author: brenduns
 manager: angrobe
-ms.translationtype: Human Translation
-ms.sourcegitcommit: 9b366262ae59a8cb57c0f1760b961194d17bcf52
 ms.openlocfilehash: db5039ff6cb93e3099b096196d49a1f06c315a6b
-ms.contentlocale: pt-br
-ms.lasthandoff: 05/17/2017
-
-
+ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
+ms.translationtype: HT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 08/07/2017
 ---
+# <a name="use-a-pull-distribution-point-with-system-center-configuration-manager"></a>将请求分发点用于 System Center Configuration Manager
 
-# <a name="use-a-pull-distribution-point-with-system-center-configuration-manager"></a>Use um ponto de distribuição de recepção baseado em nuvem com o System Center Configuration Manager
-
-*Aplica-se a: System Center Configuration Manager (Branch Atual)*
+*适用范围：System Center Configuration Manager (Current Branch)*
 
 
-Um ponto de distribuição de recepção para o System Center Configuration Manager é um ponto de distribuição padrão que obtém o conteúdo baixando-o de um local de origem, como um cliente, em vez de ter o conteúdo enviado a ele por push do servidor do site.  
+System Center Configuration Manager 的请求分发点是一个标准分发点，该分发点通过从源位置（例如客户端）下载来获取分发内容，而不是将内容从站点服务器推送到分发点来获取。  
 
- Quando você implanta conteúdo em um grande número de pontos de distribuição em um site, os pontos de distribuição de recepção podem ajudar a reduzir a carga de processamento no servidor do site e acelerar a transferência do conteúdo para cada ponto de distribuição. Para obter essa eficiência, é necessário descarregar o processo de transferência do conteúdo para cada ponto de distribuição do processo do gerenciador de distribuição no servidor do site.  
+ 如果将内容部署到一个站点上的大量分发点，则请求分发点可以帮助减少站点服务器上的处理负荷，并且可以有助于加快内容向每个分发点的传输速度。 此效率是通过从站点服务器上的分发管理器流程中卸载将内容传输到每个分发点的流程来实现的。  
 
--   Você pode configurar pontos de distribuição individuais para serem pontos de distribuição de recepção.  
+-   可以将单独的分发点配置为请求分发点。  
 
--   Para cada ponto de distribuição de recepção, você deve especificar um ou mais pontos de distribuição de origem dos quais seja possível obter as implantações (um ponto de distribuição de recepção pode obter conteúdo somente de um ponto de distribuição especificado como um ponto de distribuição de origem).  
+-   对于每个请求分发点，必须指定一个或多个源分发点，请求分发点可以从这些源分发点获取部署（请求分发点仅可从指定为源分发点的分发点获取内容）。  
 
--   Quando você distribui conteúdo a um ponto de distribuição de recepção, o servidor do site notifica o ponto de distribuição de recepção, o qual inicia o download (transferência) do conteúdo de um ponto de distribuição de origem. Um ponto de distribuição de recepção gerencia individualmente a transferência do conteúdo, baixando-o de um ponto de distribuição que já tem uma cópia do conteúdo.  
+-   将内容分发到请求分发点时，站点服务器会通知随后从源分发点中发起内容下载（传输）的请求分发点。 请求分发点会通过从已具有内容副本的分发点中下载内容来单独管理内容传输。  
 
-Os pontos de distribuição de recepção dão suporte às mesmas configurações e funcionalidades dos pontos de distribuição típicos do Configuration Manager. Por exemplo, um ponto de distribuição configurado como um ponto de distribuição de recepção oferece suporte ao uso de configurações multicast e PXE, à validação de conteúdo e à distribuição de conteúdo sob demanda. Um ponto de distribuição de recepção oferece suporte às comunicações HTTP ou HTTPS de clientes, às mesmas opções de certificados de outros pontos de distribuição e pode ser gerenciado individualmente ou como um membro de um grupo de pontos de distribuição.  
+请求分发点支持的配置和功能与典型的 Configuration Manager 分发点支持的配置和功能相同。 例如，配置为请求分发点的分发点支持使用多播和 PXE 配置、内容验证和按需内容分发。 请求分发点支持来自客户端的 HTTP 或 HTTPS 通信、支持与其他分发点相同的证书选项，并且可以单独管理或作为分发点组的成员来进行管理。  
 
 > [!IMPORTANT]
-> Embora um ponto de distribuição de recepção dê suporte à comunicação por meio dos protocolos HTTP e HTTPS, ao usar o Configuration Manager, você só poderá especificar pontos de distribuição de origem configurados para HTTP. É possível usar o SDK do Configuration Manager para especificar um ponto de distribuição de origem configurado para HTTPS.  
+> 尽管请求分发点支持通过 HTTP 和 HTTPS 的通信，但在使用 Configuration Manager 时，只能指定为 HTTP 配置的源分发点。 你可以使用 Configuration Manager SDK 来指定为 HTTPS 配置的源分发点。  
 
- **Veja a seguir a sequência de eventos que ocorre quando você distribui o conteúdo para um ponto de distribuição de recepção:**  
+ **在将内容分发到请求分发点时将按下列顺序发生事件：**  
 
--   Assim que o conteúdo é distribuído para um ponto de distribuição de recepção, o Gerenciador de Transferência de Pacote do servidor do site verifica o banco de dados do site para confirmar se o conteúdo está disponível em um ponto de distribuição de origem. Se não for possível confirmar se o conteúdo está em um ponto de distribuição de origem do ponto de distribuição de recepção, ele repetirá a verificação a cada 20 minutos até que o conteúdo esteja disponível.  
+-   将内容分发到请求分发点后，站点服务器上的包传输管理器将立即检查站点数据库，以确认内容在源分发点上是否可用。 如果它无法确认内容位于请求分发点的源分发点上，则会每隔 20 分钟重复检查一次，直至内容可用为止。  
 
--   Quando o Gerenciador de Transferência de Pacote confirma que o conteúdo está disponível, ele notifica o ponto de distribuição de recepção para que ele baixe o conteúdo. Quando o ponto de distribuição de recepção recebe a notificação ele tenta baixar o conteúdo dos seus pontos de distribuição de origem.  
+-   当包传输管理器确认内容可用后，它将通知请求分发点下载内容。 请求分发点收到此通知后，将尝试从其源分发点下载内容。  
 
--   Depois que o ponto de distribuição de recepção conclui o download do conteúdo, ele envia esse status a um ponto de gerenciamento. No entanto, se após 60 minutos esse status não tiver sido recebido, o Gerenciador de Transferência de Pacote será ativado e verificará se o ponto de distribuição de recepção baixou o conteúdo. Se o download do conteúdo estiver em andamento, o Gerenciador de Transferência de Pacote ficará suspenso por 60 minutos antes de repetir essa verificação. Esse ciclo continua até que o ponto de distribuição de recepção conclua a transferência de conteúdo.  
+-   请求分发点完成内容下载后，会将此状态提交到管理点。 但是，如果在 60 分钟后未收到此状态，则包传输管理器将唤醒，并与请求分发点核对以确认请求分发点是否已下载了内容。 如果内容下载正在进行，则包传输管理器将休眠 60 分钟，之后再次与请求分发点核对。 此循环将持续，直至请求分发点完成内容传输。  
 
-**Você pode configurar um ponto de distribuição de recepção** durante ou após a instalação ao editar as propriedades da função de sistema de sites do ponto de distribuição.  
+在安装分发点时或在安装分发点后，你可以通过编辑分发点站点系统角色的属性来**配置请求分发点** 。  
 
-**Você pode remover a configuração para ser um ponto de distribuição de recepção** ao editar as propriedades do ponto de distribuição. Quando você remove a configuração do ponto de distribuição de recepção, o ponto de distribuição retorna à operação normal, e o servidor do site gerencia as transferências de conteúdo futuras para ele.  
+通过编辑分发点属性，可以删除**要成为请求分发点的配置**。 删除请求分发点配置后，分发点将恢复正常操作，并且站点服务器将管理以后将内容传输到分发点的方式。  
 
-## <a name="limitations-for-pull-distribution-points"></a>Limitações dos pontos de distribuição de recepção  
+## <a name="limitations-for-pull-distribution-points"></a>请求分发点的限制  
 
--   Os pontos de distribuição baseados em nuvem não podem ser configurados como pontos de distribuição de recepção.  
+-   无法将基于云的分发点配置为请求分发点。  
 
--   Um ponto de distribuição em um servidor do site não pode ser configurado como um ponto de distribuição de recepção.  
+-   站点服务器上的分发点无法配置为请求分发点。  
 
--   **A definição do conteúdo de pré-configuração substitui a configuração do ponto de distribuição de recepção**. Um ponto de distribuição de recepção configurado para conteúdo de pré-teste aguarda o conteúdo. Ele não efetua pull do conteúdo do ponto de distribuição de origem e, assim como um ponto de distribuição padrão com definição de conteúdo pré-configurado, não recebe conteúdo do servidor do site.  
+-   **预留内容配置覆盖请求分发点配置**。 为预留内容配置的请求分发点将等待该内容。 它不会从源分发点中请求内容，并且，与具有预留内容配置的标准分发点相似，它也不会从站点服务器接收内容。  
 
--   **Um ponto de distribuição de recepção não usa configurações para limites de taxa** ao transferir conteúdo. Se você definir um ponto de distribuição instalado anteriormente como um ponto de distribuição de recepção, as configurações para limites de taxa serão salvas, mas não usadas. Se, mais tarde, você remover a configuração do ponto de distribuição de recepção, as configurações de limite de taxa serão implementadas conforme definido anteriormente.  
+-   请求分发点在传输内容时**不使用速率限制配置** 。 如果将以前安装的分发点配置为请求分发点，则会保存速率限制配置，但不使用此配置。 如果在以后删除请求分发点配置，则会实现以前配置的速率限制配置。  
 
     > [!NOTE]  
-    >  Quando um ponto de distribuição é configurado como ponto de distribuição de recepção, a guia **Limites de Taxa** não fica visível nas propriedades do ponto de distribuição.  
+    >  如果分发点配置为请求分发点，则在该分发点的属性中看不到“速率限制”  选项卡。  
 
--   Um ponto de distribuição de recepção não usa as **Configurações de repetição** para distribuição de conteúdo. As**Configurações de repetição** podem ser configuradas como parte das **Propriedades do Componente de Distribuição de Software** para cada site. Para exibir ou configurar essas propriedades, no espaço de trabalho **Administração** do console do Configuration Manager, expanda **Configuração do Site** e selecione **Sites**. Em seguida, no painel de resultados, selecione um site e, na guia **Início**, selecione **Configurar Componentes do Site**. Por fim, selecione **Distribuição de Software**.  
+-   请求分发点不会为内容分发使用“重试设置”  。 可以为每个站点将“重试设置” 配置为“软件分发组件属性”  的一部分。 若要查看或配置这些属性，请在 Configuration Manager 控制台的“管理”工作区中展开“站点配置”，然后选择“站点”。 接着，在结果窗格中选择站点，然后在“主页”选项卡上选择“配置站点组件”。 最后，选择“软件分发”。  
 
--   Para transferir conteúdo de um ponto de distribuição de origem em uma floresta remota, o computador que hospeda o ponto de distribuição de recepção deve ter um cliente do Configuration Manager instalado. Uma Conta de Acesso à Rede que pode acessar o ponto de distribuição de origem deve ser configurada para uso.  
+-   要从远程林内的源分发点中传输内容，则必须在承载请求分发点的计算机上安装 Configuration Manager 客户端。 必须配置为使用可以访问源分发点的网络访问帐户。  
 
--   Em um computador configurado como ponto de distribuição de recepção e que executa o cliente do Configuration Manager, a versão do cliente deve ser a mesma do site do Configuration Manager que instala esse ponto de distribuição de recepção. É exigido que o ponto de distribuição de recepção use o CCMFramework comum tanto ao ponto de distribuição de recepção quanto ao cliente do Configuration Manager.  
+-   在配置为请求分发点并运行 Configuration Manager 客户端的计算机上，该客户端的版本必须与安装请求分发点的 Configuration Manager 站点相同。 这是请求分发点使用请求分发点和 Configuration Manager 客户端共有的 CCMFramework 的一项要求。  
 
-## <a name="about-source-distribution-points"></a>Sobre os pontos de distribuição de origem  
- Ao configurar o ponto de distribuição de recepção, você deve especificar um ou mais pontos de distribuição de origem:  
+## <a name="about-source-distribution-points"></a>关于源分发点  
+ 配置请求分发点时，必须指定一个或多个源分发点：  
 
--   Somente os pontos de distribuição qualificados para serem pontos de distribuição de origem são exibidos.  
+-   系统仅显示有资格成为源分发点的分发点。  
 
--   Um ponto de distribuição de recepção pode ser especificado como um ponto de distribuição de origem para outro ponto de distribuição de recepção.  
+-   可以将请求分发点指定为另一个请求分发点的源分发点。  
 
--   Somente os pontos de distribuição que dão suporte a HTTP podem ser especificados como um ponto de distribuição de origem ao usar o Configuration Manager.  
+-   使用 Configuration Manager 时，只能将支持 HTTP 的分发点指定为源分发点。  
 
--   É possível usar o SDK do Configuration Manager para especificar um ponto de distribuição de origem configurado para HTTPS. Para usar um ponto de distribuição de origem configurado para HTTPS, o ponto de distribuição de recepção deve ser colocalizado em um computador que executa o cliente do Configuration Manager.  
+-   你可以使用 Configuration Manager SDK 来指定为 HTTPS 配置的源分发点。 若要使用为 HTTPS 配置的源分发点，请求分发点必须在运行 Configuration Manager 客户端的计算机上共存。  
 
-Pode ser atribuída uma prioridade a cada ponto de distribuição em uma lista de pontos de distribuição de origem dos pontos distribuição de recepção:  
+可为请求分发点源分发点列表上的每个分发点分配一个优先级：  
 
--   Você pode atribuir uma prioridade separada para cada ponto de distribuição de origem, ou atribuir vários pontos de distribuição de origem com a mesma prioridade.  
+-   你可以为每个源分发点分配单独的优先级，或将多个源分发点分配给同一优先级。  
 
--   A prioridade determina a ordem na qual o ponto de distribuição de recepção solicita o conteúdo dos seus pontos de distribuição de origem.  
+-   优先级确定请求分发点按什么顺序从其源分发点请求内容。  
 
--   Pontos de distribuição de recepção inicialmente entram em contato com um ponto de distribuição de origem com o menor valor de prioridade.  Se houverem vários pontos de distribuição de origem com a mesma prioridade, o ponto de distribuição de recepção seleciona um deles de forma não determinística.  
+-   请求分发点首先将与优先级值最低的源分发点联系。  如果有多个具有同一优先级的源分发点，请求分发点将非确定性地选择优先级相同的源分发点中的其中一个。  
 
--   Quando o conteúdo não está disponível em uma origem selecionada, o ponto de distribuição de recepção tenta baixar o conteúdo de outro ponto de distribuição com a mesma prioridade.  
+-   如果所选源上的内容不可用，则请求分发点随后将尝试从具有该相同优先级的另一个分发点下载内容。  
 
--   Se nenhum dos pontos de distribuição com determinada prioridade tiver o conteúdo, o ponto de distribuição de recepção tentará baixar o conteúdo de um ponto de distribuição com uma prioridade atribuída com o próximo valor mais alto, até que o conteúdo seja localizado ou o ponto de distribuição de recepção fique suspenso por 30 minutos antes de começar o processo novamente.  
+-   如果具有给定优先级的分发点都没有内容，则请求分发点将尝试从具有分配的下一个较大优先级值的分发点下载内容，直至找到内容或请求分发点在再次开始该过程之前休眠 30 分钟为止。  
 
-Quando um ponto de distribuição de recepção baixa conteúdo de um ponto de distribuição de origem, o ponto de distribuição de recepção é contado como um cliente na coluna **Cliente Acessado (Exclusivo)** do relatório **Resumo de uso do ponto de distribuição** .  
+当请求分发点从源分发点下载内容时，会将该请求分发点计为“分发点使用情况摘要”  报表中“已访问客户端(唯一)”  列中的一个客户端。  
 
- Por padrão, um ponto de distribuição de recepção usa sua **conta de computador** para transferir o conteúdo de um ponto de distribuição de origem. No entanto, quando o ponto de distribuição de recepção transfere o conteúdo de um ponto de distribuição de origem que está em uma floresta remota, o ponto de distribuição de recepção sempre usa a conta de acesso à rede. Esse processo exige que o computador tenha o cliente do Configuration Manager instalado e que uma conta de acesso à rede esteja configurada para uso e tenha acesso ao ponto de distribuição de origem.  
+ 默认情况下，请求分发点使用其 **计算机帐户** 从源分发点中传输内容。 但是，当请求分发点从远程林内的源分发点中传输内容时，请求分发点始终使用网络访问帐户。 此过程要求计算机安装 Configuration Manager 客户端，并且配置要使用网络访问帐户，使其能够访问源分发点。  
 
-## <a name="about-content-transfers"></a>Sobre as transferências de conteúdo  
- Para gerenciar a transferência de conteúdo, os pontos de distribuição de recepção usam o componente **CCMFramework** do software cliente do Configuration Manager.  
+## <a name="about-content-transfers"></a>关于内容传输  
+ 为了管理内容传输，请求分发点将使用 Configuration Manager 客户端软件的 **CCMFramework** 组件。  
 
--   Essa estrutura é instalada pelo **Pulldp.msi** quando você configura o ponto de distribuição para ser um ponto de distribuição por pull. A estrutura não exige o cliente do Configuration Manager.  
+-   此框架是在将分发点配置为请求分发点时由 **Pulldp.msi** 进行配置。 该框架不需要 Configuration Manager 客户端。  
 
--   Após a instalação do ponto de distribuição de recepção, o serviço CCMExec no computador do ponto de distribuição deve estar operacional para que esse ponto de distribuição funcione.  
+-   安装请求分发点后，分发点计算机上的 CCMExec 服务必须运行，以便请求分发点正常工作。  
 
--   Quando o ponto de distribuição de recepção transfere conteúdo, ele o faz usando o BITS ( **Serviço de Transferência Inteligente em Segundo Plano** ) e registra sua operação no **datatransferservice.log** e no **pulldp.log** do computador do ponto de distribuição.  
+-   请求分发点传输内容时，它会使用 **后台智能传输服务** (BITS) 传输内容，在分发点计算机上的 **datatransferservice.log** 和 **pulldp.log** 中记录其操作。  
 
-## <a name="see-also"></a>Consulte também  
- [Conceitos fundamentais para o gerenciamento de conteúdo no System Center Configuration Manager](/sccm/core/plan-design/hierarchy/fundamental-concepts-for-content-management)   
-
+## <a name="see-also"></a>另请参阅  
+ [System Center Configuration Manager 中内容管理的基础知识](/sccm/core/plan-design/hierarchy/fundamental-concepts-for-content-management)   

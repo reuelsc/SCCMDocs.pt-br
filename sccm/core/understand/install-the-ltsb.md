@@ -1,158 +1,154 @@
 ---
-title: "Instalar um site usando a mídia de linha de base 1606 | Microsoft Docs"
-description: Instalar ou atualizar para o LTSB para System Center Configuration Manager.
+title: "安装使用 1606 基线介质的站点 | Microsoft Docs"
+description: "安装或升级到 System Center Configuration Manager 的 LTSB。"
 ms.custom: na
 ms.date: 05/01/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
-ms.technology:
-- configmgr-other
+ms.technology: configmgr-other
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: f4f9a5fd-f573-4b99-ad93-b2c76812e922
-caps.latest.revision: 0
+caps.latest.revision: "0"
 author: Brenduns
 ms.author: brenduns
 manager: angrobe
-ms.translationtype: Human Translation
-ms.sourcegitcommit: 31819a1df4e63e1114682490a9b3c3b4e5c99cfa
 ms.openlocfilehash: 39653604ba5fd8e1fe9dd4d42889221d983f9bec
-ms.contentlocale: pt-br
-ms.lasthandoff: 05/17/2017
-
-
+ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
+ms.translationtype: HT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 08/07/2017
 ---
-# <a name="install-and-upgrade-with-the-version-1606-baseline-media-for-system-center-configuration-manager"></a>Instalar e atualizar com uma mídia de linha de base da versão 1606 para o System Center Configuration Manager
+# <a name="install-and-upgrade-with-the-version-1606-baseline-media-for-system-center-configuration-manager"></a>使用 1606 版基线介质安装或升级 System Center Configuration Manager
 
-*Aplica-se a: System Center Configuration Manager (Branch Atual), (Branch de Manutenção de Longo Prazo)*
+*适用范围：System Center Configuration Manager (Current Branch) 和 (Long-Term Servicing Branch)*
 
-Quando você executa a Configuração da mídia de linha de base da versão 1606 para o Configuration Manager, é possível instalar o Branch de Manutenção em Longo Prazo ou o Branch Atual do System Center Configuration Manager.
+运行 Configuration Manager 的版本 1606 基线媒体中的安装程序时，可以安装 System Center Configuration Manager 的 Long-Term Servicing Branch 或 Current branch 网站。
 
-A mídia de linha de base está disponível em DVD como parte da versão do Microsoft System Center 2016 ou do System Center Configuration Manager (Branch Atual e Branch de Manutenção em Longo Prazo 1606). Para saber mais sobre a mídia de linha de base, confira [Baseline and update versions](/sccm/core/servers/manage/updates#baseline-and-udpate-versions) (Versões de linha de base e atualização).
-
-
-Quando você usa a mídia de linha de base da versão 1606, o site que você instala ou para o qual atualiza é:
-- Um *site do Branch Atual* que é equivalente a um site que foi instalado pela primeira vez usando a mídia de linha de base da 1511 e então atualizado para a versão 1606 e com o pacote cumulativo de atualizações do hotfix da 1606 – KB3186654.
--    Um *site do LTSB* que é equivalente ao site do Branch Atual que executa a versão 1606 com o pacote cumulativo de atualizações do hotfix da 1606 – KB3186654. A mídia de linha de base já inclui o pacote cumulativo de atualizações do hotfix.  Mas o LTSB não dá suporte a todos os recursos ou funcionalidades disponíveis com o Branch Atual, conforme detalhado em [Introdução ao Branch de Manutenção em Longo Prazo do System Center Configuration Manager](introduction-to-the-ltsb.md).
-
-Se você não estiver familiarizado com os diferentes branches do System Center Configuration Manager, confira [Qual branch do Configuration Manager devo usar](which-branch-should-i-use.md).
+此基线介质以 DVD 形式提供，包含在 Microsoft System Center 2016 或 System Center Configuration Manager（Current Branch 和 Long-Term Servicing Branch 1606）版本中。 若要了解有关基线介质的信息，请参阅[基线和更新版本](/sccm/core/servers/manage/updates#baseline-and-udpate-versions)。
 
 
+如果使用 1606 版基线介质，安装（或升级到）的站点为：
+- Current Branch 站点，等效于先使用 1511 版基线介质安装，然后再更新为 1606 版和 1606 修补程序汇总 (KB3186654) 的站点。
+-   LTSB 站点，等效于运行 1606 版和 1606 修补程序汇总 (KB3186654) 的 Current Branch 站点。 基线介质已包括修补程序汇总。  但是，LTSB 不支持 Current Branch 中可用的所有功能，如 [System Center Configuration Manager 的 Long-Term Servicing Branch 简介](introduction-to-the-ltsb.md)中所述。
+
+如果不熟悉 System Center Configuration Manager 的不同分支，请参阅[应使用 Configuration Manager 的哪一个分支](which-branch-should-i-use.md)。
 
 
-## <a name="changes-to-setup-with-the-1606-baseline-media"></a>Alterações na instalação com a mídia de linha de base da 1606
-A mídia de linha de base da 1606 apresenta as seguintes alterações na Instalação do Configuration Manager.
 
-### <a name="branch-and-edition"></a>Branch e edição
-Quando você executar a Instalação, será apresentada uma página de licenciamento na qual é possível pode selecionar o branch do Configuration Manager que você deseja instalar. Você pode escolher o Branch Atual ou o LTSB como uma instalação licenciada ou pode escolher a Edição de Avaliação do Branch Atual como uma instalação não licenciada.
 
-Para mais informações, consulte [Licenciamento e branches do System Center Configuration Manager](learn-more-editions.md).
+## <a name="changes-to-setup-with-the-1606-baseline-media"></a>1606 基线介质中安装程序的更改
+1606 基线介质引入了对 Configuration Manager 的安装程序的以下更改。
 
-### <a name="software-assurance-expiration"></a>Término do Software Assurance
-Durante a Instalação, você tem a opção de inserir o valor da **Data de validade do Software Assurance**. Esse é um valor opcional que você pode especificar como um lembrete conveniente.
+### <a name="branch-and-edition"></a>分支和版本
+运行安装程序时，将出现一个许可页面，可以在该页面选择要安装的 Configuration Manager 分支。 可以选择 Current Branch 或 LTSB 作为许可安装，或选择 Current Branch 的评估版作为非许可安装。
+
+有关详细信息，请参阅 [System Center Configuration Manager 的许可和分支](learn-more-editions.md)。
+
+### <a name="software-assurance-expiration"></a>软件保障到期日期
+安装过程中，可以选择输入“软件保障到期日期”值。 这是一个可选值，可指定用于提醒。
 
 > [!NOTE]
-> A Microsoft não valida a data de validade inserida e não usará essa data para validação da licença.  No entanto, você pode usá-la como um lembrete da data de vencimento. Isso é útil porque o Configuration Manager verifica periodicamente se há novas atualizações de software oferecidas online. O status de licença do Software Assurance deve estar atualizado para que você esteja qualificado para usar essas atualizações adicionais.    
+> Microsoft 不会验证输入的到期日期，且不会将此日期用作许可证验证。  相反，可以使用该日期作为到期日期提醒。 这很有用，因为 Configuration Manager 定期检查在线提供的新软件更新，而软件保障许可证应为最新状态，以便有资格使用这些额外的更新。    
 
-- Você pode especificar o valor da data na página **Chave do Produto (Product Key)** do Assistente de Instalação ao executar a Instalação da mídia de linha de base da versão 1606 do System Center Configuration Manager.
-- Você também pode especificar essa data selecionando **Propriedades de Configurações de Hierarquia** > **Licenciamento** no console do Configuration Manager.
+- 从 System Center Configuration Manager 1606 版基线介质运行安装程序时，可以在安装向导的“产品密钥”页指定日期值。
+- 还可以通过在 Configuration Manager 控制台中选择“层次结构设置属性” > “许可”来指定此日期。
 
-Para obter mais informações, confira "Contratos do Software Assurance" em [Licenciamento e branches para o System Center Configuration Manager](learn-more-editions.md).
-
-
-### <a name="additional-pre-upgrade-configurations"></a>Configurações adicionais de pré-atualização
-Antes de iniciar uma atualização do System Center 2012 Configuration Manager para o LTSB, você deve realizar as etapas adicionais a seguir como parte da lista de verificação pré-atualização.  
-Desinstalar as funções do sistema de sites que não têm suporte pelo LTSB:
-- Ponto de sincronização do Asset Intelligence
-- Conector do Microsoft Intune
-- Pontos de distribuição baseados em nuvem
-
-Para mais informações, confira [Atualização para o System Center Configuration Manager](/sccm/core/servers/deploy/install/upgrade-to-configuration-manager).
+有关详细信息，请参阅 [System Center Configuration Manager 的许可和分支](learn-more-editions.md)中的“软件保障协议”。
 
 
-### <a name="new-scripted-installation-options"></a>Novas opções de instalação com scripts
-A mídia de linha de base da versão 1606 dá suporte a uma nova chave de arquivo de script autônomo para instalações com scripts de um novo site de nível superior. Isso se aplica à instalação de um novo site primário autônomo ou à adição de um site de administração central como parte de um cenário de expansão do site.
+### <a name="additional-pre-upgrade-configurations"></a>其他升级前的配置
+开始将 System Center 2012 Configuration Manager 升级到 LTSB 之前，作为升级前清单的一部分，必须执行以下附加步骤。  
+卸载 LTSB 不支持的站点系统角色：
+- 资产智能同步点
+- Microsoft Intune 连接器
+- 基于云的分发点
 
-Ao usar um script autônomo para instalar uma ramificação licenciada, é necessário adicionar a seção, os nomes de chave e valores a seguir na seção de Opções do seu script. Você não precisa usar esses valores para instalar com script a Edição de avaliação do Branch Atual:  
+有关详细信息，请参阅[升级到 System Center Configuration Manager](/sccm/core/servers/deploy/install/upgrade-to-configuration-manager)。
+
+
+### <a name="new-scripted-installation-options"></a>新的脚本化安装选项
+1606 版基线介质支持新的、无人参与的脚本文件密钥，该密钥用于新的顶层站点的脚本化安装。 此功能适用于安装新的独立主站点，或添加作为站点扩展方案一部分的管理中心站点。
+
+使用无人参与的脚本安装许可的分支时，必须向脚本的“选项”部分添加以下部分、密钥名称和值。 不需要使用这些值来编写 Current Branch 评估版的安装的脚本：  
 
  **SABranchOptions**
--     **Nome da chave: SAActive**
-  - Valores: 0 ou 1.  
-  - Detalhes: 0 instala uma Edição de Avaliação não licenciada do Branch Atual e 1 instala uma edição licenciada.   
+-   **密钥名称：SAActive**
+  - 值：0 或 1。  
+  - 详细信息：0 表示安装 Current Branch 的未经许可的评估版，1 表示安装许可的版本。   
 
 - **CurrentBranch**
-  - Valores: 0 ou 1.  
-  - Detalhes: 0 instala o Branch de Manutenção em Longo Prazo e 1 instala o Branch Atual.  
+  - 值：0 或 1。  
+  - 详细信息：0 表示安装 Long-Term Servicing Branch，1 表示安装 Current Branch。  
 
-Por exemplo, para instalar uma edição do Branch Atual, você usaria:
+例如，若要安装许可的 Current Branch.版本，请使用：
 
-  **Nome da chave: SABranchOptions**
+  **密钥名称：SABranchOptions**
    -    **SAActive = 1**
-   - **CurrentBranch = 1**
+   -  **= 1**
 
 
 > [!IMPORTANT]  
-> O **SABranchOptions** funciona apenas com a Instalação da mídia de linha de base. Ele não se aplica quando você executa a Instalação da pasta CD.Latest de um site instalado anteriormente usando a mídia de linha de base da versão 1606.
+> **SABranchOptions** 只适用于从基线介质运行安装程序。 它不适用于从站点（之前使用 1606 版基线介质安装的站点）CD.Latest 文件夹运行安装程序。
 >
-> O **SABranchOptions** não se aplica a atualizações com script do System Center 2012 Configuration Manager e sempre resulta no Branch Atual.
+> **SABranchOptions** 不适用于 System Center 2012 Configuration Manager 脚本化升级，始终出现在 Current Branch 中。
 
-Para mais informações, confira [Use a command line to install System Center Configuration Manager sites](/sccm/core/servers/deploy/install/use-a-command-line-to-install-sites) (Usar uma linha de comando para instalar sites do System Center Configuration Manager).
+有关详细信息，请参阅[使用命令行安装 System Center Configuration Manager 站点](/sccm/core/servers/deploy/install/use-a-command-line-to-install-sites)。
 
 
-## <a name="install-a-new-site"></a>Instalar um novo site
-Ao usar a mídia de linha de base da 1606 para instalar um novo site de qualquer um dos branches, use os procedimentos de planejamento, preparo e instalação de site documentados no tópico [Installing System Center Configuration Manager sites](/sccm/core/servers/deploy/install/installing-sites) (Instalando sites do System Center Configuration Manager) com a adição das seguintes considerações para a Instalação:
+## <a name="install-a-new-site"></a>安装新站点
+使用 1606 基线介质安装任一分支的新站点时，请使用[安装 System Center Configuration Manager 站点](/sccm/core/servers/deploy/install/installing-sites)主题中的站点规划、准备和安装过程，并考虑以下安装注意事项：
 
-- Durante a Instalação, você deve escolher o branch do Configuration Manager que deseja instalar e pode especificar os detalhes do contrato do Software Assurance.
-- Todos os sites na mesma hierarquia devem executar o mesmo branch. Não há suporte para ter uma hierarquia com uma combinação do LTSB e do Branch Atual em sites diferentes.
--    Nova instalação com scripts. Para obter mais informações, consulte "Novas opções de instalação com scripts" anteriormente neste artigo.
+- 在安装期间，必须选择想要安装的 Configuration Manager 分支，这样才能为软件保障协议指定详细信息。
+- 同一层次结构中的所有网站必须运行同一分支。 不支持在不同的站点具有混合使用 LTSB 和 Current Branch 的层次结构。
+-   新的脚本化安装。 有关详细信息，请参阅本文章前文中的“新的脚本化安装选项”。
 
-## <a name="expand-a-stand-alone-primary-site"></a>Expandir um site primário autônomo
-Você pode expandir um site primário autônomo que executa o LTSB.  O processo não é diferente daquele usado para um site de Branch Atual com uma limitação:
+## <a name="expand-a-stand-alone-primary-site"></a>扩展独立主站点
+可以扩展运行 LTSB 的独立主站点。  此过程与安装 Current Branch 站点的过程并无二致，但需注意一点：
 
-- Ao instalar o novo site de administração central, você deve usar a Instalação da mídia de origem original usada para instalar o site LTSB. Não há suporte para executar a Instalação da pasta CD.Latest para esse cenário.
+- 安装新管理中心站点时，必须使用用于安装 LTSB 站点的原始源介质中的安装程序。 不支持从此方案的 CD.Latest 文件夹运行安装程序。
 
-Para obter mais informações sobre a expansão de um site, confira "Expandir um site primário autônomo" em [Instalar um site usando o Assistente de Instalação](/sccm/core/servers/deploy/install/use-the-setup-wizard-to-install-sites).
+有关扩展站点的详细信息，请参阅[使用安装向导来安装站点](/sccm/core/servers/deploy/install/use-the-setup-wizard-to-install-sites)中的“扩展独立主站点”。
 
-## <a name="upgrade-from-system-center-2012-configuration-manager"></a>Atualizar do System Center 2012 Configuration Manager
-Ao atualizar do System Center 2012 Configuration Manager, use o planejamento, preparo e procedimentos de site conforme documentado no tópico [Atualização para o System Center Configuration Manager](/sccm/core/servers/deploy/install/upgrade-to-configuration-manager), mas com as seguintes alterações:
+## <a name="upgrade-from-system-center-2012-configuration-manager"></a>从 System Center 2012 Configuration Manager 升级
+若要从 System Center 2012 Configuration Manager 升级，请使用[升级到 System Center Configuration Manager](/sccm/core/servers/deploy/install/upgrade-to-configuration-manager) 主题中介绍的站点规划、准备和过程，但需要注意以下更改：
 
-**Atualização para o Branch Atual:**
-- Durante a Instalação, você deve escolher o Branch Atual e pode especificar detalhes para o contrato do Software Assurance.
--     Nova instalação com scripts. Para obter mais informações, consulte "Novas opções de instalação com scripts" anteriormente neste artigo.
+**升级到 Current Branch：**
+- 在安装期间，必须选择 Current Branch，这样才能为软件保障协议指定详细信息。
+-   新的脚本化安装。 有关详细信息，请参阅本文章前文中的“新的脚本化安装选项”。
 
-**Atualização para o LTSB:**  
-- Etapas adicionais para seguir na lista de verificação de pré-atualização.
-- Durante a Instalação, você deve escolher o LTSB e pode especificar detalhes para o contrato do Software Assurance.
-- Você pode atualizar apenas um site que executa o System Center 2012 Configuration Manager com Service Pack 2 ou o System Center 2012 R2 Configuration Manager com Service Pack 1.
+**升级到 LTSB：**  
+- 升级前清单中要遵循的附加步骤。
+- 在安装期间，必须选择 LTSB，这样才能为软件保障协议指定详细信息。
+- 只能升级可运行 System Center 2012 Configuration Manager Service Pack 2 或 System Center 2012 R2 Configuration Manager Service Pack 1 的站点。
 
-### <a name="in-place-upgrade-paths-for-the-1606-baseline-media"></a>Caminhos de atualização in-loco para a mídia de linha de base da 1606
-Você pode usar a mídia de linha de base da 1606 para atualizar o seguinte para uma edição licenciada do System Center Configuration Manager:
-- System Center 2012 Configuration Manager com Service Pack 2.
-- System Center 2012 R2 Configuration Manager com Service Pack 1.
+### <a name="in-place-upgrade-paths-for-the-1606-baseline-media"></a>1606 版基线介质的就地升级路径
+可以使用 1606 版基线介质将以下版本升级到 System Center Configuration Manager 的许可版本：
+- System Center 2012 Configuration Manager Service Pack 2。
+- System Center 2012 R2 Co。nfiguration Manager Service Pack 1。
 
-Você também pode usar essa mídia para atualizar uma Edição de Avaliação do Branch Atual não licenciada para uma versão totalmente licenciada do Branch Atual.
+此介质还可用于将 Current Branch 的未经许可评估版升级到完全许可版本。
 
-Esta mídia não dá suporte à atualização de:
-- Outras versões do System Center 2012 Configuration Manager.
-- Configuration Manager 2007 ou anterior.
-- Uma instalação de versão Release Candidate do System Center Configuration Manager.
+此介质不支持的升级：
+- System Center 2012 Configuration Manager 的其他版本。
+- Configuration Manager 2007 或早期版本。
+- System Center Configuration Manager 的候选发布版安装。
 
-## <a name="about-the-cdlatest-folder-and-the-ltsb"></a>Sobre a pasta CD.Latest e o LTSB
-A seguir estão as limitações para o uso da mídia que o Configuration Manager cria na pasta CD.Latest no servidor do site. Esses limites se aplicam a sites que executam o LTSB:
+## <a name="about-the-cdlatest-folder-and-the-ltsb"></a>关于 CD.Latest 文件夹和 LTSB
+Configuration Manager 在站点服务器上的 CD.Latest 文件夹中创建介质，以下是使用该介质的限制。 这些限制适用于运行 LTSB 的站点：
 
-A mídia na pasta CD.Latest tem suporte para:
-- Recuperação de site.
-- Manutenção do site.
-- Instalação de sites primários filho adicionais.
+CD.Latest 文件夹中的介质受以下内容支持：
+- 站点恢复。
+- 站点维护。
+- 安装其他子级主站点。
 
-A mídia na pasta CD.Latest não tem suporte para:  
-- Instalação de um site de administração central como parte de um cenário de expansão do site.
+CD.Latest 文件夹中的介质不受以下内容支持：  
+- 安装管理中心站点作为站点扩展方案的一部分。
 
-Para obter mais informações, veja [a pasta CD.Latest](/sccm/core/servers/manage/the-cd.latest-folder).
+有关详细信息，请参阅 [CD.Latest 文件夹](/sccm/core/servers/manage/the-cd.latest-folder)。
 
-## <a name="backup-recovery-and-site-maintenance-for-the-ltsb"></a>Backup, recuperação e manutenção do site para o LTSB
-Para fazer backup, recuperar ou executar a manutenção do site em um site que executa o LTSB, use as diretrizes e os procedimentos de [Backup e recuperação para o System Center Configuration Manager](/sccm/protect/understand/backup-and-recovery).  
+## <a name="backup-recovery-and-site-maintenance-for-the-ltsb"></a>LTSB 的备份、恢复和站点维护
+若要在运行 LTSB 的站点上进行备份、恢复或运行站点维护，请使用 [System Center Configuration Manager 的备份和恢复](/sccm/protect/understand/backup-and-recovery)中的指南和步骤。  
 
-Use a Instalação do Configuration Manager da pasta CD.Latest do backup do seu site do LTSB.
-
+使用 LTSB 站点备份 CD.Latest 文件夹中的 Configuration Manager 安装程序。

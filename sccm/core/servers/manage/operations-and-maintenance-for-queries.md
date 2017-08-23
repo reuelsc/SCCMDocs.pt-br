@@ -1,44 +1,37 @@
 ---
-title: "Operações e manutenção de consultas | Microsoft Docs"
-description: "Veja uma lista de tópicos sobre consultas no System Center Configuration Manager. O foco é a operação e a manutenção."
+title: "查询的操作和维护 | Microsoft Docs"
+description: "请参阅有关 System Center Configuration Manager 中的查询的主题列表。 重点是操作和维护。"
 ms.custom: na
 ms.date: 10/06/2016
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
-ms.technology:
-- configmgr-other
+ms.technology: configmgr-other
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: f050ee45-bcab-4a3b-9050-4952f5e2ec2e
-caps.latest.revision: 4
-caps.handback.revision: 0
+caps.latest.revision: "4"
+caps.handback.revision: "0"
 author: robstackmsft
 ms.author: robstack
 manager: angrobe
-translationtype: Human Translation
-ms.sourcegitcommit: 10b1010ccbf3889c58c55b87e70b354559243c90
 ms.openlocfilehash: 82648626882ddd23db0e40cfb18621a5953a1786
-
-
+ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
+ms.translationtype: HT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 08/07/2017
 ---
-# <a name="operations-and-maintenance-for-queries-in-system-center-configuration-manager"></a>Operações e manutenção de consultas no System Center Configuration Manager
+# <a name="operations-and-maintenance-for-queries-in-system-center-configuration-manager"></a>System Center Configuration Manager 中查询的操作和维护
 
-*Aplica-se a: System Center Configuration Manager (Branch Atual)*
+*适用范围：System Center Configuration Manager (Current Branch)*
 
-Use os tópicos a seguir nesta seção para obter informações sobre operações e manutenção de consultas no System Center Configuration Manager.  
+使用本节中的以下主题可了解有关 System Center Configuration Manager 中的查询的操作和维护信息。  
 
-## <a name="in-this-section"></a>Nesta seção  
+## <a name="in-this-section"></a>本节内容  
 
--   [Como criar consultas no System Center Configuration Manager](../../../core/servers/manage/create-queries.md)  
+-   [如何在 System Center Configuration Manager 中创建查询](../../../core/servers/manage/create-queries.md)  
 
--   [Como gerenciar consultas no System Center Configuration Manager](../../../core/servers/manage/manage-queries.md)  
+-   [如何在 System Center Configuration Manager 中管理查询](../../../core/servers/manage/manage-queries.md)  
 
-## <a name="see-also"></a>Consulte também  
- [Referência técnica de consultas no System Center Configuration Manager](../../../core/servers/manage/queries-technical-reference.md)
-
-
-
-<!--HONumber=Dec16_HO3-->
-
-
+## <a name="see-also"></a>另请参阅  
+ [System Center Configuration Manager 的查询技术参考](../../../core/servers/manage/queries-technical-reference.md)

@@ -1,58 +1,54 @@
 ---
-title: "Exibir inventário de software| Microsoft Docs | Gerenciador de Recursos"
-description: "Usar o Gerenciador de Recursos para exibir o inventário de software no System Center Configuration Manager."
+title: "查看软件清单 | Microsoft Docs | 资源浏览器"
+description: "使用资源浏览器查看 System Center Configuration Manager 中的软件清单。"
 ms.custom: na
 ms.date: 2/22/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
-ms.technology:
-- configmgr-other
+ms.technology: configmgr-other
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 4b7aa5f6-5ebd-49be-b7f3-4206caadc187
-caps.latest.revision: 5
-caps.handback.revision: 0
+caps.latest.revision: "5"
+caps.handback.revision: "0"
 author: andredm7
 ms.author: andredm
 manager: angrobe
-ms.translationtype: Human Translation
-ms.sourcegitcommit: 9206b82eca02877c30eebf146d42bcca7290eb42
-ms.openlocfilehash: 6189726bbcade8229e0b2e929ebedeefdbf266a4
-ms.contentlocale: pt-br
-ms.lasthandoff: 12/30/2016
-
-
+ms.openlocfilehash: b76bcf65c61b0a2690a468d375ac95b1334d5298
+ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
+ms.translationtype: HT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 08/07/2017
 ---
-# <a name="how-to-use-resource-explorer-to-view-software-inventory-in-system-center-configuration-manager"></a>Como usar o Gerenciador de Recursos para exibir o inventário de software no System Center Configuration Manager
+# <a name="how-to-use-resource-explorer-to-view-software-inventory-in-system-center-configuration-manager"></a>如何使用资源浏览器来查看 System Center Configuration Manager 中的软件清单
 
-*Aplica-se a: System Center Configuration Manager (Branch Atual)*
+*适用范围：System Center Configuration Manager (Current Branch)*
 
-Use o Gerenciador de Recursos no System Center Configuration Manager para exibir informações sobre o inventário de software que foi coletado dos computadores em sua hierarquia.  
+使用 System Center Configuration Manager 中的资源浏览器查看从层次结构中的计算机收集的软件清单的相关信息。  
 
 > [!NOTE]  
->  O Gerenciador de Recursos não exibirá dados de inventário até um ciclo de inventário de software tiver sido executado no cliente.  
+>  在客户端上运行软件清单周期后，资源浏览器才会显示清单数据。  
 
- O Gerenciador de Recursos fornece as seguintes informações de inventário de software:  
+ 资源浏览器提供下列软件清单信息：  
 
--   **Software**:  
+-   **软件**：  
 
-    -   **Arquivos Coletados** –arquivos que foram coletados durante o inventário de software.  
+    -   **收集的文件** - 在软件清单期间所收集的文件。  
 
-    -   **Detalhes do Arquivo** – arquivos que foram inventariados durante o inventário de software, mas que não estão associados a um fabricante nem a um produto específico.  
+    -   **文件详细信息** - 在软件清单期间清点的与特定产品或制造商无关的文件。  
 
-    -   **Última Verificação de Software** – data e hora do último inventário de software e da última coleta de arquivos no computador cliente.  
+    -   **上次软件扫描** - 客户端计算机上最后一次软件清单和文件收集的日期和时间。  
 
-    -   **Detalhes do Produto** – produtos de software que foram inventariados pelo inventário de software, agrupados por fabricante.  
+    -   **产品详细信息** - 由软件清单清点的按制造商分组的软件产品。  
 
-## <a name="to-run-resource-explorer-from-the-configuration-manager-console"></a>Para executar o Gerenciador de Recursos no console do Configuration Manager  
+## <a name="to-run-resource-explorer-from-the-configuration-manager-console"></a>若要从 Configuration Manager 控制台运行资源浏览器  
 
-1.  No console do Configuration Manager, escolha **Ativos e Conformidade**
+1.  在 Configuration Manager 控制台中，选择“资产和符合性”
 
-2.  No espaço de trabalho **Ativos e Conformidade**, escolha **Dispositivos** ou abra uma coleção que exibe os dispositivos.  
+2.  在“资产和符合性”工作区中，选择“设备”或打开显示设备的任何集合。  
 
-3.  Escolha o computador que contém o inventário que você deseja exibir e, em seguida, na guia **Início** > grupo **Dispositivos**, escolha **Iniciar** > **Gerenciador de Recursos**.
+3.  选择包含想要查看的清单的计算机，然后在“主页”选项卡 >“设备”组中，选择“启动” > “资源浏览器”。
 
-4.  É possível clicar com o botão direito do mouse em qualquer item do painel direito da janela do Gerenciador de Recursos e escolher **Propriedades** para exibir as informações de inventário coletadas em um formato mais legível.  
+4.  可以右键单击“资源浏览器”窗口右窗格中的任意项，然后选择“属性”，以可读性更强的格式查看收集的清单信息。  
  
-

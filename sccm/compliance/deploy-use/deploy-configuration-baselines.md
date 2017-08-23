@@ -1,65 +1,58 @@
 ---
-title: "Implantar linhas de base de configuração | Microsoft Docs"
-description: "Implante linhas de base de configuração para definir implantações da linha de base de configuração e para adicionar ou remover linhas de base de configuração de implantações."
+title: "部署配置基线 | Microsoft Docs"
+description: "部署配置基线以定义配置基线部署以及对部署添加或删除配置基线。"
 ms.custom: na
 ms.date: 10/06/2016
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
-ms.technology:
-- configmgr-other
+ms.technology: configmgr-other
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 9be8aaf3-075e-4acd-abd2-7459254e16e2
-caps.latest.revision: 7
-caps.handback.revision: 0
+caps.latest.revision: "7"
+caps.handback.revision: "0"
 author: robstackmsft
 ms.author: robstack
 manager: angrobe
-translationtype: Human Translation
-ms.sourcegitcommit: f9e939d871e95a3248d8e5d96cb73063a81fd5cf
 ms.openlocfilehash: 9c9e6b7780c7c10c20a60dbbbf506e916031eb88
-
-
+ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
+ms.translationtype: HT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 08/07/2017
 ---
-# <a name="how-to-deploy-configuration-baselines-in-system-center-configuration-manager"></a>Como implantar linhas de base de configuração no System Center Configuration Manager
+# <a name="how-to-deploy-configuration-baselines-in-system-center-configuration-manager"></a>如何在 System Center Configuration Manager 中部署配置基线
 
-*Aplica-se a: System Center Configuration Manager (Branch Atual)*
+*适用范围：System Center Configuration Manager (Current Branch)*
 
-As linhas de base de configuração no System Center Configuration Manager devem ser implantadas em uma ou mais coleções de usuários ou dispositivos antes que os dispositivos cliente nessas coleções possam avaliar sua própria conformidade com a linha de base de configuração.  
+必须首先将 System Center Configuration Manager 中的配置基线部署到一个或多个用户或设备集合，这些集合中的客户端设备才可以评估与配置基线的符合性。  
 
-Use a caixa de diálogo **Implantar Linhas de Base de Configuração** para definir implantações da linha de base de configuração, que inclui a adição ou remoção de linhas de base de configuração de implantações, além de especificar o agendamento da avaliação.  
+使用“部署配置基线”  对话框来定义配置基线部署，其中包括将配置基线添加到部署或从部署中删除配置基线以及指定评估计划。  
 
-## <a name="deploy-a-configuration-baseline"></a>Implantar uma linha de base de configuração  
+## <a name="deploy-a-configuration-baseline"></a>部署配置基线  
 
-1.  No console do Configuration Manager, clique em **Ativos e Conformidade** > **Configurações de Conformidade** > **Linhas de Base de Configuração**.  
+1.  在 Configuration Manager 控制台中，单击“资产和符合性” > “符合性设置” > “配置基线”。  
 
-3.  Na lista **Linhas de Base de Configuração** , selecione a linha de base de configuração que deseja implantar e, na guia **Início** , no grupo **Implantação** , clique em **Implantar**.  
+3.  在“配置基线”  列表中，选择要部署的配置基线，然后，在“主页”  选项卡上的“部署”  组中单击“部署” 。  
 
-4.  Na caixa de diálogo **Implantar Linhas de Base de Configuração** , selecione as linhas de base de configuração que deseja implantar na lista **Linhas de Base de Configuração Disponíveis** . Clique em **Adicionar** para adicioná-los à lista **Linhas de base de configuração selecionadas** .  
+4.  在“部署配置基线”  对话框中，在“可用配置基线”  列表中选择你想要部署的配置基线。 单击“添加”  以将它们添加到“所选配置基线”  列表。  
 
     > [!IMPORTANT]  
-    >  Se você alterar um item de configuração que foi adicionado a uma linha de base de configuração implantado, o item de configuração revisado não será avaliado quanto à conformidade até seu próximo horário de avaliação agendado.  
+    >  如果更改已添加到部署的配置基线的配置项目，则将配置基线的下一次计划评估时间才会对修改后的配置项目进行符合性评估。  
 
-5.  Especifique essas outras informações:  
+5.  指定以下附加信息：  
 
-    -   **Corrigir regras não compatíveis quando suportadas** – Corrige automaticamente quaisquer regras não compatíveis para o WMI (Instrumentação de Gerenciamento do Windows), o Registro, scripts e todas as configurações de dispositivos móveis registrados pelo Configuration Manager.  
+    -   **在支持时修正非符合性规则** – 自动修正 Windows Management Instrumentation (WMI)、注册表、脚本和 Configuration Manager 所注册移动设备的所有设置的任何非符合性规则。  
 
-    -   **Permitir correção fora da janela de manutenção** – Se uma janela de manutenção foi configurada para a coleção na qual você está implantando a linha de base de configuração, habilite esta opção para permitir que as configurações de conformidade corrijam o valor fora da janela de manutenção. Para obter mais informações sobre janelas de manutenção, consulte [Como usar janelas de manutenção](/sccm/core/clients/manage/collections/use-maintenance-windows).  
+    -   **允许维护时段外的修正** - 如果已为你向其部署配置基线的集合配置了维护时段，请启用此选项以让符合性设置在维护时段外修正值。 有关维护时段的详细信息，请参阅[如何使用维护时段](/sccm/core/clients/manage/collections/use-maintenance-windows)。  
 
-6.  **Gerar um alerta** – Configura um alerta que será gerado se a conformidade da linha de base de configuração for menor que um percentual especificado por uma data e hora determinadas. Você também pode especificar se deseja que um alerta seja enviado para o System Center Operations Manager.  
+6.  **生成警报** – 配置一个警报，如果在指定日期和时间之前配置基线符合性小于指定百分比，则生成该警报。 你也可以指定是否希望将警报发送到 System Center Operations Manager。  
 
-7.  **Coleção** - Clique em **Procurar** para selecionar a coleção na qual deseja implantar a linha de base de configuração.  
+7.  **集合** - 单击“浏览”  以选择要在其中部署配置基线的集合。  
 
-8.  **Especificar o agendamento de avaliação de conformidade para esta linha de base de configuração** especifica o agendamento pelo qual a linha de base de configuração implantada é avaliada nos computadores cliente. Pode ser um agendamento simples ou personalizado.  
+8.  **指定此配置基线的符合性评估计划** - 指定在客户端计算机上对部署的配置基线进行评估所依据的计划。 这可以是简单计划或自定义计划。  
 
     > [!NOTE]  
-    >  Se a linha de base de configuração for implantada em um computador, ela será avaliada quanto à conformidade no prazo de duas horas após a hora de início agendada. Se ela for implantada em um usuário, ela é avaliada quanto à conformidade quando o usuário fizer logon.  
+    >  如果将配置基线部署到计算机，则将在你计划的开始时间后两小时内对其进行符合性评估。 如果将配置基线部署到用户，则将在用户登录后对其进行符合性评估。  
 
-9. Clique em **OK** para fechar a caixa de diálogo **Implantar Linhas de Base de Configuração** e criar a implantação. Para obter mais informações sobre como monitorar a implantação, consulte [Monitorar configurações de conformidade](/sccm/compliance/deploy-use/monitor-compliance-settings).  
-
-
-
-<!--HONumber=Dec16_HO3-->
-
-
+9. 单击“确定”  关闭“部署配置基线”  对话框并创建部署。 有关如何监视部署的详细信息，请参阅[监视符合性设置](/sccm/compliance/deploy-use/monitor-compliance-settings)。  

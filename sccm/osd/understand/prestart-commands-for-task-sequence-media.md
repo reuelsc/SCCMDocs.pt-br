@@ -1,35 +1,34 @@
 ---
-title: "Comandos prestart para mídia de sequência de tarefas | Microsoft Docs"
-description: "Crie um script para usar o comando prestart, distribuir o conteúdo associado a esse comando e configurar o comando prestart na mídia."
+title: "任务序列媒体的预启动命令 | Microsoft Docs"
+description: "创建脚本以用于预启动命令，分发与预启动命令关联的内容，以及在媒体中配置预启动命令。"
 ms.custom: na
 ms.date: 10/06/2016
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
-ms.technology:
-- configmgr-osd
+ms.technology: configmgr-osd
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: ccc9f652-2953-4c38-8a90-c799484105ca
-caps.latest.revision: 6
-caps.handback.revision: 0
+caps.latest.revision: "6"
+caps.handback.revision: "0"
 author: Dougeby
 ms.author: dougeby
 manager: angrobe
-translationtype: Human Translation
-ms.sourcegitcommit: 74341fb60bf9ccbc8822e390bd34f9eda58b4bda
 ms.openlocfilehash: 1c396534425179c6828d48acc578295167c566be
-
-
+ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
+ms.translationtype: HT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 08/07/2017
 ---
-# <a name="prestart-commands-for-task-sequence-media-in-system-center-configuration-manager"></a>Comandos prestart para mídia de sequência de tarefas no System Center Configuration Manager
+# <a name="prestart-commands-for-task-sequence-media-in-system-center-configuration-manager"></a>System Center Configuration Manager 中任务序列媒体的预启动命令
 
-*Aplica-se a: System Center Configuration Manager (Branch Atual)*
+*适用范围：System Center Configuration Manager (Current Branch)*
 
-Você pode criar um comando prestart no System Center Configuration Manager para usar com a mídia de inicialização, a mídia autônoma e a mídia pré-configurada. O comando prestart é um script ou executável que é executado antes da seleção da sequência de tarefas e pode interagir com o usuário no Windows PE. O comando prestart pode solicitar informações a um usuário e salvá-lo no ambiente da sequência de tarefas ou consultar uma variável da sequência de tarefas para obter informações. Quando o computador de destino se inicializa, a linha de comando é executada antes de a política ser baixada do ponto de gerenciamento. Use os procedimentos a seguir para criar um script para usar o comando prestart, distribuir o conteúdo associado a esse comando e configurar o comando prestart na mídia.  
+可以在 System Center Configuration Manager 中创建一个预启动命令，用于启动媒体、独立媒体和预留媒体。 预启动命令是一个脚本或可执行文件，它在选择任务序列之前运行并且可以在 Windows PE 中与用户交互。 预启动命令可能会提示用户输入信息并将此信息保存在任务序列环境中，或者在任务序列变量中查询信息。 启动目标计算机后，会在从管理点下载策略之前运行命令行。 使用以下过程创建脚本以用于预启动命令，分发与预启动命令关联的内容，以及在媒体中配置预启动命令。  
 
-## <a name="create-a-script-file-to-use-for-the-prestart-command"></a>Criar um arquivo de script a ser usado para o Comando Prestart  
- As variáveis de sequência de tarefas podem ser lidas e gravadas usando o objeto COM do Microsoft.SMS.TSEnvironment enquanto a sequência de tarefas está em execução. O exemplo a seguir ilustra um arquivo de script do Visual Basic que consulta a variável da sequência de tarefas _SMSTSLogPath para obter o local do log atual. O script também define uma variável personalizada.  
+## <a name="create-a-script-file-to-use-for-the-prestart-command"></a>创建脚本文件以用于预启动命令  
+ 可以在运行任务序列时使用 Microsoft.SMS.TSEnvironment COM 对象读写任务序列变量。 以下示例说明了 Visual Basic 脚本文件，此脚本文件查询 _SMSTSLogPath 任务序列变量以获取当前日志位置。 该脚本还设置自定义变量。  
 
 ```  
 dim osd: set env = CreateObject("Microsoft.SMS.TSEnvironment")  
@@ -40,47 +39,41 @@ logPath = env("_SMSTSLogPath")
 env("MyCustomVariable") = "varname"  
 ```  
 
-## <a name="create-a-package-for-the-script-file-and-distribute-the-content"></a>Criar um pacote para o arquivo de script e distribuir o conteúdo  
- Depois de criar o script ou executável para o comando prestart, você deverá criar uma origem do pacote para hospedar os arquivos do script ou executável, criar um pacote para os arquivos (nenhum programa necessário) e distribuir o conteúdo para um ponto de distribuição.  
+## <a name="create-a-package-for-the-script-file-and-distribute-the-content"></a>创建脚本文件包并分发内容  
+ 为预启动命令创建脚本或可执行文件后，必须创建包源以为脚本或可执行文件承载文件，创建文件包（无需程序），然后将内容分发给分发点。  
 
- Para obter mais informações sobre a criação de pacotes, consulte [Pacotes e programas](../../apps/deploy-use/packages-and-programs.md).  
+ 有关创建包的详细信息，请参阅[包和程序](../../apps/deploy-use/packages-and-programs.md)。  
 
- Para obter mais informações sobre como distribuir conteúdo, consulte [Distribuir conteúdo](../../core/servers/deploy/configure/deploy-and-manage-content.md#bkmk_distribute).  
+ 有关分发内容的详细信息，请参阅[分发内容](../../core/servers/deploy/configure/deploy-and-manage-content.md#bkmk_distribute)。  
 
-## <a name="configure-the-prestart-command-in-media"></a>Configurar o comando prestart na mídia  
- Você pode configurar o comando prestart no Assistente para Criar Mídia de Sequência de Tarefas para mídia autônoma, mídia inicializável ou mídia em pré-teste. Para obter mais informações sobre os tipos de mídia, consulte [Criar mídia da sequência de tarefas](../deploy-use/create-task-sequence-media.md). Use o procedimento a seguir para criar um comando prestart na mídia.  
+## <a name="configure-the-prestart-command-in-media"></a>在媒体中配置预启动命令  
+ 可以在独立媒体、可启动媒体或预留媒体的创建任务序列媒体向导中配置一个预启动命令。 有关媒体类型的详细信息，请参阅[创建任务序列媒体](../deploy-use/create-task-sequence-media.md)。 使用以下过程在媒体中创建预启动命令。  
 
-#### <a name="to-create-a-prestart-command-in-media"></a>Para criar um comando prestart na mídia  
+#### <a name="to-create-a-prestart-command-in-media"></a>在媒体中创建预启动命令  
 
-1.  No console do Configuration Manager, clique em **Biblioteca de Software**.  
+1.  在 Configuration Manager 控制台中，单击“软件库” 。  
 
-2.  No espaço de trabalho **Biblioteca de Software** , expanda **Sistemas Operacionais**e clique em **Sequências de Tarefas**.  
+2.  在“软件库”工作区中，展开“操作系统”，然后单击“任务序列”。  
 
-3.  Na guia **Início** , no grupo **Criar** , clique em **Criar Mídia de Sequência de Tarefas** para iniciar o Assistente para Criar Mídia de Sequência de Tarefas.  
+3.  在“主页”  选项卡上的“创建”  组中，单击“创建任务序列媒体”  以启动创建任务序列媒体向导。  
 
-4.  Na página **Selecionar Tipo de Mídia** , selecione **Mídia autônoma**, **Mídia inicializável**ou **Mídia em pré-teste**e clique em **Próximo**.  
+4.  在“选择媒体类型”  页上，选择“独立媒体” 、“可启动媒体” 或“预留媒体” ，然后单击“下一步” 。  
 
-5.  Navegue até a página **Personalização** do assistente. Para obter mais informações sobre como configurar as outras páginas no assistente, consulte [Criar mídia da sequência de tarefas](../deploy-use/create-task-sequence-media.md).  
+5.  导航到向导的“自定义”  页面。 有关在向导中配置其他页面的详细信息，请参阅[创建任务序列媒体](../deploy-use/create-task-sequence-media.md)。  
 
-6.  Na página **Personalização** , especifique as informações a seguir e clique em **Próxima**.  
+6.  在“自定义”  页上，指定以下信息，然后单击“下一步” 。  
 
-    -   Selecione **Habilitar comando prestart**.  
+    -   选择“启用预启动命令” 。  
 
-    -   Na caixa de texto **Linha de comando** , insira o script ou executável que você criou para o comando prestart.  
+    -   在“命令行”  文本框中，输入为预启动命令创建的脚本或可执行文件。  
 
         > [!IMPORTANT]  
-        >  Use **cmd /C <comando prestart\>** para especificar o comando prestart. Por exemplo, se você usou TSScript.vbs como o nome do script do comando prestart, você inseriria **cmd /C TSScript.vbs** na linha de comando. Em que **cmd /C** abre uma nova janela do interpretador de comandos do Windows e usa a variável de ambiente Path para encontrar o script ou executável do comando prestart. Você também pode especificar o caminho completo do comando prestart, mas a letra da unidade pode ser diferente em computadores com configurações de unidade diferentes.  
+        >  使用 **cmd /C <预启动命令\>** 指定预启动命令。 例如，如果使用了 TSScript.vbs 作为预启动命令脚本的名称，你将为命令行输入 **cmd /C TSScript.vbs** 。 其中 **cmd /C** 会打开一个新的 Windows 命令解释器窗口，并使用路径环境变量查找预启动命令脚本或可执行文件。 也可以指定预启动命令的完整路径，但是在具有不同驱动器配置的计算机上，驱动器号可能不同。  
 
-    -   Selecione **Incluir arquivos para o comando prestart**.  
+    -   选择“包括预启动命令的文件” 。  
 
-    -   Clique em **Definir** para selecionar o pacote que está associado aos arquivos do comando prestart.  
+    -   单击“设置”  以选择与预启动命令文件关联的包。  
 
-    -   Clique em **Procurar** para selecionar o ponto de distribuição que hospeda o conteúdo para o comando prestart.  
+    -   单击“浏览”  以选择承载预启动命令内容的分发点。  
 
-7.  Conclua o assistente.  
-
-
-
-<!--HONumber=Dec16_HO3-->
-
-
+7.  完成向导。  

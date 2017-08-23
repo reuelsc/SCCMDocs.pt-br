@@ -1,6 +1,6 @@
 ---
-title: "Cenário: Endpoint Protection protege computadores contra malware | Microsoft Docs"
-description: Aprenda a implementar o Endpoint Protection no Configuration Manager para proteger computadores contra ataques de malware.
+title: "方案 - Endpoint Protection 保护计算机免受恶意软件侵害 | Microsoft Docs"
+description: "了解如何在 Configuration Manager 中实现 Endpoint Protection，使计算机免受恶意软件侵害。"
 ms.custom: na
 ms.date: 03/13/2017
 ms.prod: configuration-manager
@@ -10,71 +10,67 @@ ms.technology: configmgr-other
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 539c7a89-3c03-4571-9cb4-02d455064eeb
-caps.latest.revision: 8
+caps.latest.revision: "8"
 author: NathBarn
 ms.author: nathbarn
 manager: angrobe
-ms.translationtype: Human Translation
-ms.sourcegitcommit: af0aafb4b7209d840676d16723509f399c662aad
 ms.openlocfilehash: b98684d44874ff246e4d675039c6e443aee82a62
-ms.contentlocale: pt-br
-ms.lasthandoff: 05/17/2017
-
-
+ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
+ms.translationtype: HT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 08/07/2017
 ---
+# <a name="example-scenario-using-system-center-endpoint-protection-to-protect-computers-from-malware-in-system-center-configuration-manager"></a>示例方案：使用 System Center Endpoint Protection 来保护计算机在 System Center Configuration Manager 中免受恶意软件侵害
 
-# <a name="example-scenario-using-system-center-endpoint-protection-to-protect-computers-from-malware-in-system-center-configuration-manager"></a>Cenário de exemplo: usar o System Center Endpoint Protection para proteger os computadores contra malware no System Center Configuration Manager
+*适用范围：System Center Configuration Manager (Current Branch)*
 
-*Aplica-se a: System Center Configuration Manager (Branch Atual)*
+本主题通过提供示例方案，说明了如何在 Configuration Manager 中实施 Endpoint Protection 以保护组织中的计算机免遭恶意软件攻击。  
 
-Este tópico fornece um cenário de exemplo de como você pode implementar o Endpoint Protection no Configuration Manager para proteger computadores de uma organização contra ataques de malware.  
+ John 是 Woodgrove Bank 的 Configuration Manager 管理员。 该银行目前使用 System Center Endpoint Protection 来保护计算机免受恶意软件攻击。 此外，该银行使用 Windows 组策略来确保公司中的所有计算机上都启用了 Windows 防火墙，并确保在 Windows 防火墙阻止新程序时通知用户。  
 
- João é o administrador do Configuration Manager no Banco Woodgrove. O banco atualmente usa o System Center Endpoint Protection para proteger os computadores contra ataques de malware. Além disso, o banco usa a Política de Grupo do Windows para garantir que o Firewall do Windows esteja habilitado em todos os computadores da empresa e que os usuários sejam notificados quando o Firewall do Windows bloqueia um novo programa.  
+ John 已受命将 Woodgrove Bank 的反恶意软件升级到 System Center Endpoint Protection，以便银行可以利用最新的反恶意软件功能并能够从 Configuration Manager 控制台集中管理反恶意软件解决方案。 此实现具有下列要求：  
 
- João recebeu um pedido para atualizar o software antimalware do Banco Woodgrove para o System Center Endpoint Protection, para que o banco possa se beneficiar dos recursos antimalware mais recentes e possa gerenciar centralmente a solução antimalware do console do Configuration Manager. Essa implementação tem os seguintes requisitos:  
+-   使用 Configuration Manager 来管理组策略当前管理的 Windows 防火墙设置。  
 
--   Usar o Configuration Manager para gerenciar configurações do Firewall do Windows que atualmente são gerenciadas pela Política de Grupo.  
+-   使用 Configuration Manager 软件更新，将恶意软件定义下载到计算机。 如果软件更新不可用，例如，如果计算机未连接到公司网络，则计算机必须从 Microsoft 更新中下载定义更新。  
 
--   Usar as atualizações de software do Configuration Manager para baixar as definições de malware para computadores. Se as atualizações de software não estiverem disponíveis, por exemplo, se o computador não estiver conectado à rede corporativa, os computadores deverão baixar as atualizações de definição no Microsoft Update.  
+-   用户的计算机必须每天执行一次恶意软件快速扫描。 但是，服务器必须在每个星期六的凌晨 1 点（工作时间外）运行完全扫描。  
 
--   Os computadores dos usuários devem executar uma rápida verificação de malware diariamente. Os servidores, no entanto, devem executar uma verificação completa todos os sábados, fora do horário comercial, à 01:00h.  
+-   每次发生下列事件之一时，请发送电子邮件警报：  
 
--   Enviar um alerta por email sempre que ocorrer algum dos seguintes eventos:  
+    -   在任意计算机上检测到恶意软件  
 
-    -   Quando malware for detectado em qualquer computador  
+    -   在 5% 以上的计算机上检测到相同的恶意软件威胁  
 
-    -   Quando a mesma ameaça de malware for detectada em mais de 5% dos computadores  
+    -   在任意 24 小时内检测到相同恶意软件威胁的次数超过 5 次  
 
-    -   Quando a mesma ameaça de malware for detectada mais de cinco vezes em um período de 24 horas  
+    -   在任意 24 小时内检测到 3 种以上的不同类型的恶意软件  
 
-    -   Quando mais de três tipos diferentes de malware forem detectados em um período de 24 horas  
+-   卸载现有的反恶意软件解决方案。  
 
--   Desinstalar a solução antimalware existente.  
+ John 随后执行以下步骤来实现 Endpoint Protection：  
 
- João executa as seguintes etapas para implementar o Endpoint Protection:  
+##  <a name="steps-to-implement-endpoint-protection"></a>若要实现 Endpoint Protection 的步骤  
 
-##  <a name="steps-to-implement-endpoint-protection"></a>Etapas para implementar a proteção de ponto de extremidade  
-
-|Processar|Referência|  
+|过程|参考|  
 |-------------|---------------|  
-|João analisa as informações disponíveis sobre os conceitos básicos do Endpoint Protection no Configuration Manager.|Para obter uma visão geral sobre o Endpoint Protection, consulte [Endpoint Protection no System Center Configuration Manager](endpoint-protection.md).|  
-|João analisa e implementa os pré-requisitos necessários para usar o Endpoint Protection.|Para obter informações sobre os pré-requisitos do Endpoint Protection, consulte [Planejamento do Endpoint Protection](../plan-design/planning-for-endpoint-protection.md).|  
-|João instala a função de sistema de sites do Endpoint Protection em apenas um servidor de sistema de sites, no topo da hierarquia do Banco Woodgrove.|Para obter mais informações sobre como instalar a função de sistema de sites do Endpoint Protection, veja os "Pré-requisitos" em [Configurar o Endpoint Protection](configure-endpoint-protection.md).|  
-|João configura o Configuration Manager para usar um servidor SMTP para enviar alertas de email.<br /><br /> **Observação:** você precisará configurar um servidor SMTP somente se quiser ser notificado por email quando um alerta do Endpoint Protection for gerado.|Para obter mais informações, consulte [Configurar alertas no Endpoint Protection](endpoint-configure-alerts.md).|  
-|João cria uma coleção de dispositivos que contém todos os computadores e servidores para instalar o cliente do Endpoint Protection. Ele chama a coleção de **Todos os computadores protegidos pelo Endpoint Protection**.<br /><br /> **Dica:** você não pode configurar alertas para coleções de usuários.|Para obter mais informações sobre como criar coleções, consulte [Como criar coleções no System Center Configuration Manager](../../core/clients/manage/collections/create-collections.md)|  
-|Ele configura os seguintes alertas para a coleção: <br /><br />1) **Malware detectado**: João configura a severidade do alerta como **Crítico**. <br /><br />2) **O mesmo tipo de malware é detectado em vários computadores**: João configura a severidade do alerta como **Crítico** e especifica que o alerta será gerado quando mais de 5% dos computadores tiverem algum malware detectado. <br /><br />3) **O mesmo tipo de malware é detectado repetidamente dentro do intervalo especificado em um computador**: João configura a severidade do alerta como **Crítico** e especifica que o alerta será gerado quando um malware for detectado mais de 5 vezes em um período de 24 horas. <br /><br />4) **Vários tipos de malware são detectados no mesmo computador dentro do intervalo especificado**: João configura a severidade do alerta como **Crítico** e especifica que o alerta será gerado quando mais de 3 tipos de malware forem gerados em um período de 24 horas.<br /><br /> O valor da **Severidade do Alerta** indica o nível de alerta que será exibido no console do Configuration Manager e nos alertas que ele receber uma mensagem de email.<br /><br /> Ele também seleciona a opção **Exibir esta coleção no painel do Endpoint Protection** para que possa monitorar os alertas no console do Configuration Manager.|Veja a seção “Configurar alertas para o Endpoint Protection” em [Configurando o Endpoint Protection no System Center Configuration Manager](endpoint-configure-alerts.md).|  
-|João configura as atualizações de software do Configuration Manager para baixar e implantar atualizações de definição três vezes por dia usando uma regra de implantação automática.|Para obter mais informações, veja a seção "Usando as atualizações de Software do Configuration Manager para fornecer atualizações de definições" em [Usar atualizações de software do Configuration Manager para fornecer atualizações de definições](endpoint-definitions-configmgr.md).|  
-|João examina as configurações na política de antimalware padrão, que contém as configurações de segurança da Microsoft. Para os computadores executarem uma verificação rápida diária, ele altera as configurações a seguir:<br /><br /> 1) **Executar uma verificação rápida diária nos computadores cliente**: **Sim**.<br /><br /> 2) **Hora de agendamento da verificação rápida diária**:  **9:00 AM**.<br /><br /> João observa que as **atualizações distribuídas do Microsoft Update** são selecionadas por padrão como uma fonte de atualização de definição. Isso atende ao requisito de negócios de que os computadores baixem definições do Microsoft Update quando não puderem receber atualizações de software do Configuration Manager.|Consulte [Como criar e implantar políticas antimalware para o Endpoint Protection no System Center Configuration Manager](endpoint-antimalware-policies.md).|  
-|João cria uma coleção que contém apenas os servidores do Woodgrove Bank chamada **Servidores do Woodgrove Bank**.|Consulte [Como criar coleções no System Center Configuration Manager](../../core/clients/manage/collections/create-collections.md)|  
-|João cria uma política antimalware personalizada chamada **política de servidor do Woodgrove Bank**. Ele adiciona somente as configurações das **verificações agendadas** e faz as seguintes alterações:<br /><br /> **Tipo de varredura**:  **completa**<br /><br /> **Dia da varredura**:  **sábado**<br /><br /> **Horário da varredura**: **1:00**<br /><br /> **Executar uma verificação rápida diária nos computadores cliente**:  **Não**.|Consulte [Como criar e implantar políticas antimalware para o Endpoint Protection no System Center Configuration Manager](endpoint-antimalware-policies.md).|  
-|João implanta a política personalizada antimalware chamada **Política de Servidor do Woodgrove Bank** na coleção **Servidores do Woodgrove Bank** .|Veja "Para implantar uma política antimalware em computadores cliente" no tópico [Como criar e implantar políticas antimalware para o Endpoint Protection](endpoint-antimalware-policies.md).|  
-|João cria um novo conjunto de configurações personalizadas de dispositivo do cliente para o Endpoint Protection e o denomina **Configurações do Endpoint Protection do Banco Woodgrove**.<br /><br /> **Observação:** se você não quiser instalar e habilitar o Endpoint Protection em todos os clientes de sua hierarquia, verifique se as opções **Gerenciar cliente do Endpoint Protection nos computadores cliente** e **Instalar o cliente do Endpoint Protection nos computadores cliente** foram definidas como **Não** nas configurações padrão do cliente.|Para obter mais informações, consulte [Definir configurações personalizadas do cliente para o Endpoint Protection](endpoint-protection-configure-client.md).|  
-|Ele define as seguintes configurações para o Endpoint Protection:<br /><br /> **Gerenciar cliente do Endpoint Protection nos computadores cliente**:  **Sim**<br /><br /> A configuração e o valor garantem que qualquer cliente existente do Endpoint Protection que for instalado será gerenciado por Configuration Manager.<br /><br /> **Instalar o cliente do Endpoint Protection em computadores cliente**:  **Sim**.<br /><br /> **Remover automaticamente o software antimalware já instalado antes de instalar o Endpoint Protection**:  **Sim**.<br /><br /> A configuração e o valor atendem ao requisito de negócios de que o software antimalware existente seja removido antes que o Endpoint Protection seja instalado e habilitado.|Para obter mais informações, consulte [Definir configurações personalizadas do cliente para o Endpoint Protection](endpoint-protection-configure-client.md).|  
-|João implanta as **Configurações do Endpoint Protection do Banco Woodgrove** do cliente na coleção **Todos os computadores protegidos pelo Endpoint Protection**.|Consulte “Definir configurações personalizadas do cliente para o Endpoint Protection” em [Configurando o Endpoint Protection no Configuration Manager](endpoint-antimalware-policies.md).|  
-|João usa o assistente Criar Política de Firewall do Windows para criar uma política, definindo as seguintes configurações para o perfil de domínio:<br /><br /> 1) **Habilitar o Firewall do Windows**: **Sim**<br /><br /> 2)<br />                    **Notificar o usuário quando o Firewall do Windows bloquear um novo programa**: **Sim**|Consulte [Como criar e implantar políticas do Firewall do Windows para o Endpoint Protection no System Center Configuration Manager](../../protect/deploy-use/create-windows-firewall-policies.md)|  
-|João implanta a nova política de firewall na coleção **Todos os computadores protegidos pelo Endpoint Protection** que criou anteriormente.|Consulte "Para implantar uma política de Firewall do Windows" em [Como criar e implantar políticas do Firewall do Windows para o Endpoint Protection no System Center Configuration Manager](create-windows-firewall-policies.md)|  
-|João usa as tarefas de gerenciamento disponíveis para o Endpoint Protection para gerenciar políticas antimalware e do Firewall do Windows, executar varreduras sob demanda dos computadores quando necessário, forçar os computadores a baixarem as definições mais recentes e especificar uma ação adicional a ser tomada quando malware for detectado.|Consulte [Como gerenciar políticas antimalware e configurações de firewall para o Endpoint Protection no System Center Configuration Manager](endpoint-antimalware-firewall.md)|  
-|João usa os seguintes métodos para monitorar o status do Endpoint Protection e as ações tomadas pelo Endpoint Protection:<br /><br /> 1) Usando o nó **Status do Endpoint Protection** em **Segurança** no espaço de trabalho **Monitoramento**.<br /><br /> 2) Usar o nó o **Endpoint Protection** no espaço de trabalho **Ativos e Conformidade**.<br /><br /> 3) Usar os relatórios internos do Configuration Manager.|Consulte [Como monitorar o Endpoint Protection no System Center Configuration Manager](monitor-endpoint-protection.md)|  
+|John 查看 Configuration Manager 中 Endpoint Protection 的基本概念的可用信息。|有关 Endpoint Protection 的概述信息，请参阅 [System Center Configuration Manager 中的 Endpoint Protection](endpoint-protection.md)。|  
+|John 查看并实现使用 Endpoint Protection 所需的先决条件。|有关 Endpoint Protection 的先决条件的信息，请参阅[规划 Endpoint Protection](../plan-design/planning-for-endpoint-protection.md)。|  
+|John 仅在一个站点系统服务器上安装 Endpoint Protection 站点系统角色，该服务器位于 Woodgrove Bank 层次结构的顶部。|有关如何安装 Endpoint Protection 站点系统角色的详细信息，请参阅[配置 Endpoint Protection](configure-endpoint-protection.md) 中的“先决条件”。|  
+|John 配置 Configuration Manager 以使用 SMTP 服务器发送电子邮件警报。<br /><br /> **注意：**仅当希望在生成 Endpoint Protection 警报时收到电子邮件通知，才必须配置 SMTP 服务器。|有关详细信息，请参阅[在 Endpoint Protection 中配置警报](endpoint-configure-alerts.md)。|  
+|John 创建包含所有计算机和服务器的设备集合以安装 Endpoint Protection 客户端。 他将此集合命名为“受 Endpoint Protection 保护的所有计算机”。<br /><br /> **提示：**无法为用户集合配置警报。|有关如何创建集合的详细信息，请参阅[如何在 System Center Configuration Manager 中创建集合](../../core/clients/manage/collections/create-collections.md)|  
+|他配置集合的以下警报： <br /><br />1) **检测到恶意软件**：John 将警报严重性配置为**严重**。 <br /><br />2) **大量计算机上检测到相同类型的恶意软件**：John 将警报的严重性配置为**严重**并指定当 5%以上的计算机上检测到恶意软件时生成警报。 <br /><br />3) **在指定时间间隔内，计算机上反复检测到相同类型的恶意软件**：John 将警报的严重性配置为**严重**并指定当在 24 小时内检测到恶意软件 5 次以上时生成警报。 <br /><br />4) **在指定的时间间隔内，同一台计算机上检测到多种恶意软件**：John 将警报的严重性配置为**严重**并指定当 24 小时内检测到超过 3 种恶意软件时生成警报。<br /><br /> “警报严重性”的值指示将在 Configuration Manager 控制台和电子邮件中接收的警报中显示的警报级别。<br /><br /> 此外，他选择“在 Endpoint Protection 仪表板中查看此集合”选项，以便可在 Configuration Manager 控制台中监视警报。|请参阅[在 System Center Configuration Manager 中配置 Endpoint Protection](endpoint-configure-alerts.md) 中的“为 Endpoint Protection 配置警报”。|  
+|John 通过使用自动部署规则将 Configuration Manager 软件更新配置为每天下载和部署定义更新三次。|有关详细信息，请参阅[使用 Configuration Manager 软件更新来提供定义更新](endpoint-definitions-configmgr.md)中的“使用 Configuration Manager 软件更新来提供定义更新”部分。|  
+|John 检查默认反恶意软件策略中的设置，其中包含来自 Microsoft 推荐的安全设置。 对于每天执行一次快速扫描的计算机，他将更改以下设置：<br /><br /> 1) **在客户端计算机上运行每日快速扫描**：“是”。<br /><br /> 2) **每日快速扫描计划时间**：“上午 9:00”。<br /><br /> John 注意到“从 Microsoft 更新分发的更新”  默认选为了定义更新源。 这满足了计算机在无法接收 Configuration Manager 软件更新时从 Microsoft 更新下载定义的业务要求。|请参阅[如何在 System Center Configuration Manager 中为 Endpoint Protection 创建和部署反恶意软件策略](endpoint-antimalware-policies.md)。|  
+|John 创建一个集合，其中只含有名为“Woodgrove Bank 服务器” 的 Woodgrove Bank 服务器。|请参阅[如何在 System Center Configuration Manager 中创建集合](../../core/clients/manage/collections/create-collections.md)|  
+|John 创建一个名为“Woodgrove Bank 服务器策略” 的自定义反恶意软件策略。 他只添加“计划扫描”  设置，并进行以下更改：<br /><br /> ：  <br /><br /> ：  <br /><br /> ： **1：00 AM**<br /><br /> “在客户端计算机上运行每日快速扫描”:  。|请参阅[如何在 System Center Configuration Manager 中为 Endpoint Protection 创建和部署反恶意软件策略](endpoint-antimalware-policies.md)。|  
+|John 将“Woodgrove Bank 服务器策略”  自定义反恶意软件策略部署到“Woodgrove Bank 服务器”  集合。|请参阅[如何为 Endpoint Protection 创建和部署反恶意软件策略](endpoint-antimalware-policies.md)主题中的“将反恶意软件策略部署到客户端计算机”。|  
+|John 为 Endpoint Protection 创建一组新的自定义客户端设备设置，并将其命名为“Woodgrove Bank Endpoint Protection 设置”。<br /><br /> **注意：**如果不希望在层次结构中的所有客户端上安装并启用 Endpoint Protection，请确保在默认客户端设置中将选项“管理客户端计算机上的 Endpoint Protection 客户端”和“在客户端计算机上安装 Endpoint Protection 客户端”均配置为“否”。|有关详细信息，请参阅[为 Endpoint Protection 配置自定义客户端设置](endpoint-protection-configure-client.md)。|  
+|他为 Endpoint Protection 配置以下设置：<br /><br /> “管理客户端计算机上的 Endpoint Protection 客户端”:  <br /><br /> 此设置和值确保已安装的所有现有 Endpoint Protection 客户端将由 Configuration Manager 托管。<br /><br /> “在客户端计算机上安装 Endpoint Protection 客户端”:  。<br /><br /> “安装 Endpoint Protection 之前自动删除以前安装的反恶意软件”:  。<br /><br /> 此设置和值可满足在安装和启用 Endpoint Protection 前删除现有反恶意软件的业务要求。|有关详细信息，请参阅[为 Endpoint Protection 配置自定义客户端设置](endpoint-protection-configure-client.md)。|  
+|John 将“Woodgrove Bank Endpoint Protection 设置”客户端设置部署到“Endpoint Protection 保护的所有计算机”集合。|请参阅[在 Configuration Manager 中配置 Endpoint Protection](endpoint-antimalware-policies.md) 中的“为 Endpoint Protection 配置自定义客户端设置”。|  
+|John 使用“创建 Windows 防火墙策略向导”，通过为域配置文件配置以下设置来创建策略：<br /><br /> 1) **启用 Windows 防火墙**：“是”<br /><br /> 2)<br />                    ： |请参阅[如何在 System Center Configuration Manager 中为 Endpoint Protection 创建和部署 Windows 防火墙策略](../../protect/deploy-use/create-windows-firewall-policies.md)|  
+|John 将新的防火墙策略部署到先前创建的“Endpoint Protection 保护的所有计算机”集合。|请参阅[如何在 System Center Configuration Manager 中为 Endpoint Protection 创建和部署 Windows 防火墙策略](create-windows-firewall-policies.md)中的“部署 Windows 防火墙策略”|  
+|John 使用 Endpoint Protection 的可用管理任务来管理反恶意软件和 Windows 防火墙策略、在必要时执行计算机按需扫描、强制计算机下载最新的定义并指定当检测到恶意软件时采取的任何进一步操作。|请参阅[如何在 System Center Configuration Manager 中管理 Endpoint Protection 的反恶意软件策略和防火墙设置](endpoint-antimalware-firewall.md)|  
+|John 使用以下方法来监视 Endpoint Protection 的状态和 Endpoint Protection 采取的操作：<br /><br /> 1) 通过使用“监视”工作区中“安全性”下的“Endpoint Protection 状态”节点。<br /><br /> 2)通过使用“资产和符合性”工作区中的“Endpoint Protection”节点。<br /><br /> 3) 通过使用 Configuration Manager 内置报表。|请参阅[如何在 System Center Configuration Manager 中监视 Endpoint Protection](monitor-endpoint-protection.md)|  
 
- João relata uma implementação bem-sucedida do Endpoint Protection ao seu gerente e confirma que os computadores do Banco Woodgrove estão protegidos contra malware, de acordo com os requisitos de negócios que ele recebeu.
-
+ John 告知经理已成功实施 Endpoint Protection，并且根据指定的业务要求，确认 Woodgrove Bank 的计算机当前受到反恶意软件保护。

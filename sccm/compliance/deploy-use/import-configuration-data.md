@@ -1,67 +1,60 @@
 ---
-title: "Importar dados de configuração | Microsoft Docs"
-description: "Importe dados de configuração se tiver contido em um formato de arquivo de gabinete e atender ao esquema de Linguagem de Modelagem de Serviço com suporte."
+title: "导入配置数据 | Microsoft Docs"
+description: "如果配置数据为 cabinet 文件格式，并且符合受支持的服务建模语言架构，则将它导入。"
 ms.custom: na
 ms.date: 10/06/2016
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
-ms.technology:
-- configmgr-other
+ms.technology: configmgr-other
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 309b9a09-a611-4ba2-90ab-dde51582cf87
-caps.latest.revision: 6
-caps.handback.revision: 0
+caps.latest.revision: "6"
+caps.handback.revision: "0"
 author: robstackmsft
 ms.author: robstack
 manager: angrobe
-translationtype: Human Translation
-ms.sourcegitcommit: f9e939d871e95a3248d8e5d96cb73063a81fd5cf
 ms.openlocfilehash: 60d0642618a3074fc50a848f1189f4d6559ca916
-
-
+ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
+ms.translationtype: HT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 08/07/2017
 ---
-# <a name="import-configuration-data-with-system-center-configuration-manager"></a>Importar dados de configuração com o System Center Configuration Manager
+# <a name="import-configuration-data-with-system-center-configuration-manager"></a>使用 System Center Configuration Manager 导入配置数据
 
-*Aplica-se a: System Center Configuration Manager (Branch Atual)*
+*适用范围：System Center Configuration Manager (Current Branch)*
 
-Além de criar linhas de base de configuração e itens de configuração no console do System Center Configuration Manager, você poderá importar dados de configuração se eles estiverem em um formato de arquivo de gabinete (.cab) e seguirem o esquema SML (Linguagem de Modelagem de Serviço) com suporte. Você pode importar dados de configuração de:  
+除了在 System Center Configuration Manager 控制台中创建配置基线和配置项目之外，还可以导入配置数据（如果它采用 cabinet (.cab) 文件格式并符合受支持的服务建模语言 (SML) 架构）。 可从以下位置导入配置数据：  
 
--   Dados de configuração de prática recomendada (Pacotes de Configuração) baixados no site da Microsoft ou em outros sites de fornecedores de software.  
+-   从 Microsoft 或从其他软件供应商站点下载的最佳做法配置数据（配置包）。  
 
--   Dados de configuração exportados do System Center 2012 Configuration Manager e posterior.  
+-   从 System Center 2012 Configuration Manager 及更高版本导出的配置数据。  
 
--   Dados de configuração que foram criados externamente e que estão em conformidade com o esquema SML.  
+-   在外部创建且符合 SML 架构的配置数据。  
 
- Para obter um exemplo de Pacote de Configuração que vai ajudá-lo a gerenciar a conformidade de funções de servidor do site do System Center 2012 Configuration Manager, veja o [Pacote de Configuração do System Center 2012 Configuration Manager](http://www.microsoft.com/en-us/download/details.aspx?id=30710&WT.mc_id=rss_alldownloads_all).  
+ 有关可帮助你管理 System Center 2012 Configuration Manager 站点服务器角色的符合性的示例配置包，请参阅 [System Center 2012 Configuration Manager 配置包](http://www.microsoft.com/en-us/download/details.aspx?id=30710&WT.mc_id=rss_alldownloads_all)。  
 
-Quando você importa uma linha de base de configuração, alguns ou todos os itens de configuração que são referenciados na linha de base de configuração também podem ser incluídos no arquivo de gabinete. Durante o processo de importação, o Configuration Manager verifica se todos os itens de configuração que são referenciados na linha de base de configuração também estão incluídos no arquivo de gabinete ou se já existem no site do Configuration Manager. O processo de importação falhará se você tentar importar uma linha de base de configuração que faz referência aos dados de configuração que o Configuration Manager não pode localizar.  
+当导入配置基线时，配置基线中引用的部分或全部配置项目也可能包含在 CAB 文件中。 在导入过程中，Configuration Manager 会验证配置基线中引用的所有配置项目是否也包括在 Cabinet 文件中或在 Configuration Manager 站点中已存在。 如果尝试导入的配置基线引用了 Configuration Manager 无法找到的配置数据，导入过程会失败。  
 
-Entre outros cenários em que o processo de importação pode falhar estão os seguintes:  
+导入过程可能失败的其他情况包括：  
 
--   Os dados de configuração fazem referência a dados de configuração que o Configuration Manager não pode localizar, seja em seu banco de dados ou no próprio arquivo de gabinete.  
+-   配置数据引用了 Configuration Manager 在其数据库中或在 CAB 文件自身中找不到的配置数据。  
 
--   Os dados de configuração já estão presentes no banco de dados do Configuration Manager com o mesmo nome e a mesma versão de dados de configuração, mas a versão do conteúdo é diferente.  
+-   Configuration Manager 数据库中已存在一些具有相同名称和配置数据版本，但具有不同内容版本的配置数据。  
 
--   Os dados de configuração já estão presentes no banco de dados do Configuration Manager com a mesma versão do conteúdo, mas o cálculo de hash as identifica como sendo diferentes.  
+-   Configuration Manager 数据库中已存在具有相同内容版本的配置数据，但哈希计算将它识别为不同内容版本。  
 
--   Uma versão mais recente dos dados de configuração com o mesmo nome já está presente no banco de dados do Configuration Manager ou foi excluída dele recentemente.  
+-   在 Configuration Manager 数据库中已存在或最近已删除具有相同名称的配置数据的较新版本。  
 
--   Em uma hierarquia do Configuration Manager de vários sites, os dados de configuração foram originalmente importados de um site pai. É necessário atualizá-los no mesmo site e não em um site filho.  
+-   在多站点 Configuration Manager 层次结构中，配置数据最初是从父站点中导入的。 必须从同一站点而非一个子站点更新配置数据。  
 
-### <a name="import-configuration-data"></a>Importar dados de configuração  
+### <a name="import-configuration-data"></a>导入配置数据  
 
-1.  No console do Configuration Manager, clique em **Ativos e Conformidade** > **Itens de Configurações** ou **Linhas de Base de Configuração**
-2.  Na guia **Início**, no grupo **Criar**, clique em **Importar Dados de Configuração**.  
-3.  Na página **Selecionar Arquivos** do **Assistente para Importar dados de Configuração**, clique em **Adicionar**e, na caixa de diálogo **Abrir** , selecione os arquivos .cab que deseja importar.  
-4.  Marque a caixa de seleção **Criar uma nova cópia dos itens de configuração e das linhas de base de configuração importadas** se desejar que os dados de configuração importados sejam editáveis no console do Configuration Manager.  
-5.  Na página **Resumo**, examine as ações a serem executadas e conclua o assistente.  
+1.  在 Configuration Manager 控制台中，单击“资产和符合性” > “配置项目”或“配置基线”
+2.  在“主页”选项卡上的“创建”组中，单击“导入配置数据”。  
+3.  在“导入配置数据向导”  的“选择文件” 页上，单击“添加” ，然后在“打开”  对话框中，选择要导入的 .cab 文件。  
+4.  如果希望可以在 Configuration Manager 控制台中编辑导入的配置数据，请选中“**创建已导入配置基线和配置项目的新副本”**复选框。  
+5.  在“摘要”页上，查看将执行的操作，然后完成向导。  
 
-Os dados de configuração importados são exibidos no nó **Configurações de Conformidade** do espaço de trabalho **Ativos e Conformidade**.  
-
-
-
-<!--HONumber=Dec16_HO3-->
-
-
+导入的配置数据会显示在“资产和符合性”工作区的“符合性设置”节点中。  

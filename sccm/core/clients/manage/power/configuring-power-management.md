@@ -1,93 +1,86 @@
 ---
-title: Configurando o gerenciamento de energia | Microsoft Docs
-description: Configure o gerenciamento de energia no System Center Configuration Manager.
+title: "配置电源管理 | Microsoft Docs"
+description: "在 System Center Configuration Manager 中设置电源管理。"
 ms.custom: na
 ms.date: 10/06/2016
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
-ms.technology:
-- configmgr-other
+ms.technology: configmgr-other
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 435c923c-ea30-4dce-8afd-48962ed85502
-caps.latest.revision: 5
-caps.handback.revision: 0
+caps.latest.revision: "5"
+caps.handback.revision: "0"
 author: robstackmsft
 ms.author: robstack
 manager: angrobe
-translationtype: Human Translation
-ms.sourcegitcommit: 1a4a9da88caba55d9e340c7fb1f31f4e3b957f3e
 ms.openlocfilehash: e111ac2545dd9e0b96a50c10246bb75d286a737a
-
-
+ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
+ms.translationtype: HT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 08/07/2017
 ---
-# <a name="configuring-power-management-in-system-center-configuration-manager"></a>Configurando o gerenciamento de energia no System Center Configuration Manager
+# <a name="configuring-power-management-in-system-center-configuration-manager"></a>在 System Center Configuration Manager 中配置电源管理
 
-*Aplica-se a: System Center Configuration Manager (Branch Atual)*
+*适用范围：System Center Configuration Manager (Current Branch)*
 
-Para poder usar o gerenciamento de energia no System Center Configuration Manager, você precisará executar as etapas de configuração a seguir.  
+在 System Center Configuration Manager 中使用电源管理之前，必须执行下列配置步骤。  
 
-## <a name="enable-and-configure-power-management-client-settings"></a>Habilitar e definir as configurações do cliente de gerenciamento de energia  
- Este procedimento define as configurações de cliente padrão para o gerenciamento de energia e se aplica a todos os computadores em sua hierarquia. Se quiser que essas configurações se apliquem somente a alguns computadores, crie uma configuração personalizada do cliente de dispositivo e a atribua a uma coleção que contém os computadores nos quais deseja usar o gerenciamento de energia. Para obter mais informações sobre como criar configurações personalizadas de dispositivo, consulte [Como configurar as definições de cliente no System Center Configuration Manager](../../../../core/clients/deploy/configure-client-settings.md).  
+## <a name="enable-and-configure-power-management-client-settings"></a>启用和配置电源管理客户端设置  
+ 此过程配置电源管理的默认客户端设置，并应用于层次结构中的所有计算机。 如果希望这些设置仅应用于某些计算机，请创建一个自定义设备客户端设置，并将其分配给包含要使用电源管理的计算机的集合。 有关如何创建自定义设备设置的详细信息，请参阅[如何在 System Center Configuration Manager 中配置客户端设置](../../../../core/clients/deploy/configure-client-settings.md)。  
 
-#### <a name="to-enable-power-management-and-configure-client-settings"></a>Para habilitar o gerenciamento de energia e definir as configurações do cliente  
+#### <a name="to-enable-power-management-and-configure-client-settings"></a>如何启用电源管理并配置客户端设置  
 
-1.  No console do Configuration Manager, clique em **Administração**.  
+1.  在 Configuration Manager 控制台中，单击“管理” 。  
 
-2.  No espaço de trabalho **Administração** , clique em **Configurações do Cliente**.  
+2.  在“管理”  工作区中，单击“客户端设置” 。  
 
-3.  Clique em **Configurações do Cliente Padrão**.  
+3.  单击“默认客户端设置” 。  
 
-4.  Na guia **Início** , no grupo **Propriedades** , clique em **Propriedades**.  
+4.  在“主页”  选项卡上的“属性”  组中，单击“属性” 。  
 
-5.  Na caixa de diálogo **Configurações Padrão do Cliente** , clique em **Gerenciamento de Energia**.  
+5.  在“默认客户端设置”  对话框中，单击“电源管理” 。  
 
-6.  Defina o seguinte valor para as configurações do cliente de gerenciamento de energia:  
+6.  配置电源管理客户端设置的以下值：  
 
-    -   **Permitir o gerenciamento de energia de dispositivos** – Na lista suspensa, selecione **True** para habilitar o gerenciamento de energia.  
+    -   **允许的设备的电源管理** – 从下拉列表中，选择“真”  以启用电源管理。  
 
-7.  Defina as configurações do cliente necessárias. Para obter uma lista de configurações do cliente de gerenciamento de energia que podem ser definidas, veja a seção [Gerenciamento de Energia](../../../../core/clients/deploy/about-client-settings.md#power-management) no tópico [Sobre as configurações de cliente no System Center Configuration Manager](../../../../core/clients/deploy/about-client-settings.md).  
+7.  配置所需的客户端设置。 关于可以配置的电源管理客户端设置的列表，请参阅 [关于 System Center Configuration Manager 中的电源管理](../../../../core/clients/deploy/about-client-settings.md#power-management)主题中的[电源管理](../../../../core/clients/deploy/about-client-settings.md)部分。  
 
-8.  Clique em **OK** para fechar a caixa de diálogo **Configurações do Cliente Padrão** .  
+8.  单击“确定”  以关闭“默认客户端设置”  对话框。  
 
- Os computadores cliente serão definidos com essas configurações durante o próximo download da política do cliente. Para iniciar a recuperação de política para um cliente individual, veja [How to manage clients in System Center Configuration Manager](../../../../core/clients/manage/manage-clients.md).  
+ 当客户端计算机下一次下载客户端策略时，将使用这些设置对它们进行配置。 要为单个客户端启动策略检索，请参阅 [How to manage clients in System Center Configuration Manager](../../../../core/clients/manage/manage-clients.md)。  
 
-## <a name="exclude-computers-from-power-management"></a>Excluir computadores do gerenciamento de energia  
- Você pode impedir que as coleções de computadores recebam as configurações de gerenciamento de energia. Se um computador for membro de qualquer coleção que seja excluída das configurações de gerenciamento de energia, esse computador não aplicará as configurações de gerenciamento de energia mesmo que seja membro de outra coleção que aplica as configurações de gerenciamento de energia.  
+## <a name="exclude-computers-from-power-management"></a>从电源管理中排除计算机  
+ 你可以阻止计算机集合接收电源管理设置。 如果一台计算机是从电源管理设置中排除的任何集合的成员，该计算机将不会应用电源管理设置，即使它是应用电源管理设置的另一集合的成员。  
 
- Talvez você queira excluir computadores do gerenciamento de energia por qualquer um dos seguintes motivos:  
+ 你可能出于任何下列原因之一要从电源管理中排除计算机：  
 
--   Você tem um requisito de negócios para que computadores sejam ligados em todos os momentos.  
+-   你的业务要求需要始终开启计算机。  
 
--   Você criou uma coleção de controle de computadores nos quais você não deseja aplicar as configurações de gerenciamento de energia.  
+-   已创建不希望在其上应用电源管理设置的计算机的控制集合。  
 
--   Alguns de seus computadores não são capazes de aplicar as configurações de gerenciamento de energia.  
+-   某些计算机不能应用电源管理设置。  
 
--   Você deseja excluir os computadores que executam o Windows Server do gerenciamento de energia.  
+-   你想要从电源管理中排除运行 Windows Server 的计算机。  
 
 > [!NOTE]  
->  Se a opção **Permitir que os usuários excluam seu dispositivo do gerenciamento de energia** estiver definida nas configurações do cliente, os usuários poderão excluir seus próprios computadores do gerenciamento de energia usando o Centro de Software.  
+>  如果客户端设置中配置了“允许用户从电源管理中排除其设备”  选项，用户就可以使用软件中心从电源管理中排除自己的计算机。  
 
- Para descobrir os computadores que foram excluídos do gerenciamento de energia, execute o relatório **Computadores Excluídos**. Para obter mais informações sobre esse relatório, consulte [Computadores Excluídos](../../../../core/clients/manage/power/monitor-and-plan-for-power-management.md#BKMK_Excluded) no tópico [Como monitorar e planejar o gerenciamento de energia no System Center Configuration Manager](../../../../core/clients/manage/power/monitor-and-plan-for-power-management.md).  
+ 要了解已从电源管理中排除了哪些计算机，请运行“排除的计算机” 报表。 有关此报表的详细信息，请参阅[如何在 System Center Configuration Manager 中监视和规划电源管理](../../../../core/clients/manage/power/monitor-and-plan-for-power-management.md)主题中的[排除的计算机](../../../../core/clients/manage/power/monitor-and-plan-for-power-management.md#BKMK_Excluded)。  
 
 > [!IMPORTANT]  
->  As configurações de energia aplicadas aos computadores com o Windows XP ou Windows Server 2003 não são revertidas para seus valores originais, mesmo que você exclua o computador do gerenciamento de energia. Em versões posteriores do Windows, a exclusão de um computador do gerenciamento de energia faz com que todas as configurações de energia sejam revertidas para seus valores originais. Não é possível reverter as configurações de energia individuais para seus valores originais.  
+>  运行 Windows XP 或 Windows Server 2003 的计算机上应用的电源设置不会还原为初始值，即使从电源管理中排除该计算机。 在更高版本的 Windows 中，从电源管理中排除一台计算机会导致所有电源设置还原到其原始值。 无法将单个电源设置还原为其初始值。  
 
-#### <a name="to-exclude-a-collection-of-computers-from-power-management"></a>Para excluir uma coleção de computadores do gerenciamento de energia  
+#### <a name="to-exclude-a-collection-of-computers-from-power-management"></a>若要从电源管理中排除计算机集合  
 
-1.  No console do Configuration Manager, clique em **Ativos e Conformidade**.  
+1.  在 Configuration Manager 控制台中，单击“资产和符合性” 。  
 
-2.  No espaço de trabalho **Ativos e Conformidade** , clique em **Coleções de Dispositivos**.  
+2.  在“资产和符合性”  工作区中，单击“设备集合” 。  
 
-3.  Na lista **Coleções de Dispositivos** , selecione a coleção que deseja excluir do gerenciamento de energia e, na guia **Início** , no grupo **Propriedades** , clique em **Propriedades**.  
+3.  在“设备集合”  列表中，选择要从电源管理中排除的集合，然后，在“主页”  选项卡上的“属性”  组中单击“属性” 。  
 
-4.  Na guia **Gerenciamento de Energia** da caixa de diálogo *Propriedades\>***<nome da coleção**, selecione **Nunca aplicar configurações de gerenciamento de energia aos computadores desta coleção**.  
+4.  在 *<Collection Name\>*“属性”对话框的“电源管理”选项卡上，选择“永远不将电源管理设置应用于此集合中的计算机”。  
 
-5.  Clique em **OK** para fechar a caixa de diálogo *Propriedades\>***<Nome da Coleção** e salvar as configurações.  
-
-
-
-<!--HONumber=Dec16_HO3-->
-
-
+5.  单击“确定”以关闭 *<Collection Name\>*“属性”对话框并保存设置。  

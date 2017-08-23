@@ -1,96 +1,93 @@
 ---
-title: "Personalizar imagens de inicialização – Configuration Manager | Microsoft Docs"
-description: "Aprenda várias maneiras de usar o Configuration Manager ou a ferramenta de linha de comando DISM (Gerenciamento e Manutenção de Imagens de Implantação ) para personalizar uma imagem de inicialização."
+title: "自定义启动映像 - Configuration Manager | Microsoft Docs"
+description: "了解使用 Configuration Manager 或部署映像服务和管理 (DISM) 命令行工具自定义启动映像的几种方式。"
 ms.custom: na
 ms.date: 01/23/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
-ms.technology:
-- configmgr-osd
+ms.technology: configmgr-osd
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 9cbfc406-d009-446d-8fee-4938de48c919
-caps.latest.revision: 15
-caps.handback.revision: 0
+caps.latest.revision: "15"
+caps.handback.revision: "0"
 author: Dougeby
 ms.author: dougeby
 manager: angrobe
-ms.translationtype: Human Translation
-ms.sourcegitcommit: 89158debdf4c345a325feeb608db2215a88ed81b
 ms.openlocfilehash: ab2ecb64c9c80b4effed79ba08769c99473db0c4
-ms.contentlocale: pt-br
-ms.lasthandoff: 05/17/2017
-
-
+ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
+ms.translationtype: HT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 08/07/2017
 ---
-# <a name="customize-boot-images-with-system-center-configuration-manager"></a>Personalizar imagens de inicialização com o System Center Configuration Manager
+# <a name="customize-boot-images-with-system-center-configuration-manager"></a>使用 System Center Configuration Manager 自定义启动映像
 
-*Aplica-se a: System Center Configuration Manager (Branch Atual)*
+*适用范围：System Center Configuration Manager (Current Branch)*
 
-Cada versão do Configuration Manager dá suporte a uma versão específica do Windows ADK (Kit de Avaliação e Implantação do Windows). Você pode manter ou personalizar imagens de inicialização no console do Configuration Manager quando elas se baseiam em uma versão do Windows PE da versão com suporte no Windows ADK. Para personalizar outras imagens de inicialização, será necessário usar outro método, como a ferramenta de linha de comando Gerenciamento e Manutenção de Imagens de Implantação que faz parte do Windows AIK e do Windows ADK.  
+Configuration Manager 的每个版本都支持特定版本的 Windows 评估和部署工具包 (Windows ADK)。 如果启动映像基于来自受支持的 Windows ADK 版本中的 Windows PE 版本，则可以从 Configuration Manager 控制台中维护或自定义启动映像。 对于其他启动映像，你必须使用其他方法自定义它们，如使用 Windows AIK 和 Windows ADK 中的部署映像服务和管理 (DISM) 命令行工具。  
 
- Veja a seguir a versão com suporte do Windows ADK, a versão do Windows PE na qual se baseia a imagem de inicialização que pode ser personalizada no console do Configuration Manager e as versões do Windows PE nas quais se baseia a imagem de inicialização que pode ser personalizada usando o DISM e, em seguida, adicione a imagem ao Configuration Manager.  
+ 下面提供了受支持的 Windows ADK 版本、可在 Configuration Manager 控制台中自定义的启动映像所基于的 Windows PE 版本，以及可使用 DISM 自定义，然后将映像添加到 Configuration Manager 的启动映像所基于的 Windows PE 版本。  
 
--   **Versão do Windows ADK**  
+-   **Windows ADK 版本**  
 
-     Windows ADK para Windows 10  
+     适用于 Windows 10 的 Windows ADK  
 
--   **Versões do Windows PE para imagens de inicialização personalizáveis no console do Configuration Manager**  
+-   **可从 Configuration Manager 控制台中自定义的启动映像的 Windows PE 版本**  
 
      Windows PE 10  
 
--   **Versões do Windows PE com suporte para imagens de inicialização não personalizáveis no console do Configuration Manager**  
+-   **不可从 Configuration Manager 控制台中自定义的启动映像的 Windows PE 支持版本**  
 
-     Windows PE 3.1<sup>1</sup> e Windows PE 5  
+     Windows PE 3.1<sup>1</sup> 和 Windows PE 5  
 
-     <sup>1</sup> Só será possível adicionar uma imagem de inicialização ao Configuration Manager quando ela se basear no Windows PE 3.1. Instale o Suplemento do Windows AIK para Windows 7 SP1 a fim de atualizar o Windows AIK para Windows 7 (baseado no Windows PE 3) com o Suplemento do Windows AIK para Windows 7 SP1 (baseado no Windows PE 3.1). Você pode baixar o Suplemento do Windows AIK para Windows 7 SP1 do [Centro de Download da Microsoft](http://www.microsoft.com/download/details.aspx?id=5188).  
+     <sup>1</sup> 只有当启动映像基于 Windows PE 3.1 时才能将该映像添加到 Configuration Manager 中。 安装适用于 Windows 7 SP1 的 Windows AIK 补充，以使用适用于 Windows 7 SP1（基于 Windows PE 3.1）的 Windows AIK 补充升级适用于 Windows 7（基于 Windows PE 3）的 Windows AIK。 你可以从 [Microsoft 下载中心](http://www.microsoft.com/download/details.aspx?id=5188)下载适用于 Windows 7 SP1 的 Windows AIK 补充。  
 
-     Por exemplo, quando você tiver o Configuration Manager, será possível personalizar as imagens de inicialização do Windows ADK para Windows 10 (baseado no Windows PE 10) no console do Configuration Manager. No entanto, embora haja suporte para imagens de inicialização baseadas no Windows PE 5, você deverá personalizá-las em outro computador e usar a versão do DISM instalada com o Windows ADK para Windows 8. Em seguida, é possível adicionar a imagem de inicialização ao console do Configuration Manager.  
+     例如，如果具有 Configuration Manager，则可以利用 Configuration Manager 控制台自定义适用于 Windows 10 的 Windows ADK 中的启动映像（基于 Windows PE 10）。 但是，当支持基于 Windows PE 5 的启动映像时，你必须在不同的计算机中自定义它们，并使用随适用于 Windows 8 的 Windows ADK 一起安装的 DISM 版本。 然后，可以向 Configuration Manager 控制台添加启动映像。  
 
- Os procedimentos deste tópico demonstram como adicionar os componentes opcionais exigidos pelo Configuration Manager à imagem de inicialização usando os seguintes pacotes do Windows PE:  
+ 本主题中的过程演示如何使用以下 Windows PE 包将 Configuration Manager 所需的可选组件添加到启动映像中：  
 
--   **WinPE-WMI**: Adiciona o suporte para a WMI (Instrumentação de Gerenciamento do Windows).  
+-   **WinPE-WMI**：添加 Windows Management Instrumentation (WMI) 支持。  
 
--   **WinPE-Scripting**: Adiciona o suporte para o WSH (Windows Script Host).  
+-   **WinPE 脚本**：添加 Windows 脚本宿主 (WSH) 支持。  
 
--   **WinPE-WDS-Tools**: Instala as ferramentas dos Serviços de Implantação do Windows.  
+-   **WinPE WDS 工具**：安装 Windows 部署服务工具。  
 
- Existem outros pacotes do Windows PE disponíveis para você adicionar. Os recursos a seguir fornecem mais informações sobre os componentes opcionais que você pode adicionar à imagem de inicialização.  
+ 有可供添加的其他 Windows PE 程序包。 以下资源提供了有关可以添加到启动映像的可选组件的详细信息。  
 
--   Para o Windows PE 5, consulte [WinPE: Adicionar pacotes (Referência de Componentes Opcionais)](https://msdn.microsoft.com/library/windows/hardware/dn938382\(v=vs.85\).aspx)  
+-   对于 Windows PE 5，请参阅 [WinPE: Add packages (Optional Components Reference)（WinPE：添加包（可选组件参考））](https://msdn.microsoft.com/library/windows/hardware/dn938382\(v=vs.85\).aspx)  
 
--   Para Windows PE 3.1, consulte o tópico [Adicionar um pacote a uma imagem do Windows PE](http://technet.microsoft.com/library/dd799312\(v=WS.10\).aspx) biblioteca de documentação do TechNet do Windows 7.  
+-   对于 Windows PE 3.1，请参阅 Windows 7 TechNet 文档库中的 [将程序包添加到 Windows PE 映像中](http://technet.microsoft.com/library/dd799312\(v=WS.10\).aspx) 主题。  
 
 > [!NOTE]
->Ao inicializar no WinPE de uma imagem de inicialização personalizada que inclui ferramentas que você adicionou, é possível abrir um prompt de comando do WinPE e digitar o nome do arquivo da ferramenta para executá-la. O local dessas ferramentas é adicionado automaticamente à variável caminho. O prompt de comando somente poderá ser adicionado se a configuração **Habilitar suporte de comandos (somente teste)** for selecionada na guia **Personalização** nas propriedades da imagem de inicialização.
+>从包含所添加的工具的自定义启动映射启动到 WinPE 时，可以从 WinPE 打开命令提示符并输入工具的文件名以运行它。 这些工具的位置会自动添加到路径变量。 仅当在“自定义”选项卡上的启动映像属性中选择了“启用命令支持(仅限测试)”时，才能添加命令提示符。
 
-## <a name="customize-a-boot-image-that-uses-windows-pe-5"></a>Personalizar uma imagem de inicialização que usa o Windows PE 5  
- Para personalizar uma imagem de inicialização que usa o Windows PE 5, você deve instalar o Windows ADK e usar a ferramenta de linha de comando DISM para montar a imagem, adicionar componentes e drivers opcionais e confirmar as alterações feitas na imagem. Use o procedimento a seguir para personalizar a imagem de inicialização.  
+## <a name="customize-a-boot-image-that-uses-windows-pe-5"></a>自定义使用 Windows PE 5 的启动映像  
+ 要自定义使用 Windows PE 5 的启动映像，必须安装 Windows ADK、使用 DISM 命令行工具安装启动映像、添加可选组件和驱动程序，以及提交启动映像更改。 使用下列过程来自定义启动映像。  
 
-#### <a name="to-customize-a-boot-image-that-uses-windows-pe-5"></a>Para personalizar uma imagem de inicialização que usa o Windows PE 5  
+#### <a name="to-customize-a-boot-image-that-uses-windows-pe-5"></a>若要自定义使用 Windows PE 5 的启动映像  
 
-1.  Instale o Windows ADK em um computador que não tenha outra versão do Windows AIK ou do Windows ADK, nem nenhum componente do Configuration Manager instalados.  
+1.  在无其他 Windows AIK 或 Windows ADK 版本且未安装任何 Configuration Manager 组件的计算机上安装 Windows ADK。  
 
-2.  Baixe o Windows ADK para Windows 8.1 do [Centro de Download da Microsoft](http://www.microsoft.com/download/details.aspx?id=39982)  
+2.  请从 [Microsoft 下载中心](http://www.microsoft.com/download/details.aspx?id=39982)下载适用于 Windows 8.1 的 Windows ADK  
 
-3.  Copie a imagem de inicialização (wimpe.wim) da pasta de instalação do Windows ADK (por exemplo, <*Caminho de instalação*>\Windows Kits\\<*versão*>\Assessment and Deployment Kit\Windows Preinstallation Environment\\<*x86 ou amd64*>\\<*localidade*>) em uma pasta de destino no computador em que você deseja personalizar a imagem de inicialização. Esse procedimento usa C:\WinPEWAIK como o nome da pasta de destino.  
+3.  将启动映像 (wimpe.wim) 从 Windows ADK 安装文件夹（例如，<*安装路径*>\Windows Kits\\<版本>\Assessment and Deployment Kit\Windows Preinstallation Environment\\<x86 或 amd64>\\<区域设置>）复制到将自定义启动映像的计算机上的目标文件夹。 此过程使用 C:\WinPEWAIK 作为目标文件夹名称。  
 
-4.  Use o DISM para montar a imagem de inicialização em uma pasta local do Windows PE. Por exemplo, digite a seguinte linha de comando:  
+4.  使用 DISM 将启动映像安装到本地 Windows PE 文件夹。 例如，键入下列命令行：  
 
      **dism.exe /mount-wim /wimfile:C:\WinPEWAIK\winpe.wim /index:1 /mountdir:C:\WinPEMount**  
 
-     Onde C:\WinPEWAIK é a pasta que contém a imagem de inicialização e C:\WinPEMount é a pasta montada.  
+     其中 C:\WinPEWAIK 是包含启动映像的文件夹，C:\WinPEMount 是安装文件夹。  
 
     > [!NOTE]
-    >  Para obter mais informações sobre o DISM, consulte o tópico [DISM - Referência técnica do Gerenciamento e Manutenção de Imagens de Implantação](http://technet.microsoft.com/library/hh824821.aspx) na biblioteca de documentação técnica do TechNet do Windows 8.1 e do Windows 8.
+    >  有关 DISM 的详细信息，请参阅 Windows 8.1 和 Windows 8 TechNet 文档库中的 [DISM - Deployment Image Servicing and Management Technical Reference（DISM - 部署映像服务和管理技术参考）](http://technet.microsoft.com/library/hh824821.aspx) 主题。
 
-5.  Após montar a imagem de inicialização, use o DISM para adicionar componentes opcionais a ela. No Windows PE 5, os componentes opcionais de 64 bits estão localizados em <*Caminho instalação*>\Kits do Windows\8.1\Kit de Avaliação e Implantação\Ambiente de Pré-Instalação do Windows\amd64\WinPE_OCs.  
+5.  安装启动映像之后，请使用 DISM 将可选组件添加到启动映像中。 在 Windows PE 5 中，64 位可选组件位于 <*Installation path*>\Windows Kits\8.1\Assessment and Deployment Kit\Windows Preinstallation Environment\amd64\WinPE_OCs。  
 
     > [!NOTE]
-    >  Esse procedimento usa o seguinte local para os componentes opcionais: C:\Arquivos de Programas (x86)\Kits do Windows\8.1\Kit de Avaliação e Implantação\Ambiente de Pré-instalação do Windows\amd64\WinPE_OCs. O caminho usado poderá ser diferente dependendo da versão e das opções de instalação selecionadas para o Windows ADK.  
+    >  此过程将下列位置用于可选组件：C:\Program Files (x86)\Windows Kits\8.1\Assessment and Deployment Kit\Windows Preinstallation Environment\amd64\WinPE_OCs。 根据你为 Windows ADK 选择的版本和安装选项，你使用的路径可能不同。  
 
-     Digite o seguinte para instalar os componentes opcionais:  
+     键入下列命令以安装可选组件：  
 
      **dism.exe /image:C:\WinPEMount /add-package /packagepath:"C:\Program Files (x86)\Windows Kits\8.1\Assessment and Deployment Kit\Windows Preinstallation Environment\amd64\WinPE_OCs\winpe-wmi.cab"**  
 
@@ -100,15 +97,15 @@ Cada versão do Configuration Manager dá suporte a uma versão específica do W
 
      **dism.exe /image:C:\WinPEMount /add-package /packagepath:"C:\Program Files (x86)\Windows Kits\8.1\Assessment and Deployment Kit\Windows Preinstallation Environment\amd64\WinPE_OCs\WinPE-SecureStartup.cab"**  
 
-     **dism.exe /image:C:\WinPEMount /add-package /packagepath:"C:\Arquivos de Programas (x86)\Kits do Windows\8.1\Kit de Avaliação e Implantação\Ambiente de Pré-Instalação do Windows\amd64\WinPE_OCs\\** *<localidade\>* **\WinPE-SecureStartup_** *<localidade\>* **.cab"**  
+     **dism.exe /image:C:\WinPEMount /add-package /packagepath:"C:\Program Files (x86)\Windows Kits\8.1\Assessment and Deployment Kit\Windows Preinstallation Environment\amd64\WinPE_OCs\\** *<locale\>* **\WinPE-SecureStartup_** *<locale\>* **.cab"**  
 
-     **dism.exe /image:C:\WinPEMount /add-package /packagepath:"C:\Arquivos de Programas (x86)\Kits do Windows\8.1\Kit de Avaliação e Implantação\Ambiente de Pré-Instalação do Windows\amd64\WinPE_OCs\\** *<localidade\>* **\WinPE-WMI_** *<localidade\>* **.cab"**  
+     **dism.exe /image:C:\WinPEMount /add-package /packagepath:"C:\Program Files (x86)\Windows Kits\8.1\Assessment and Deployment Kit\Windows Preinstallation Environment\amd64\WinPE_OCs\\** *<locale\>* **\WinPE-WMI_** *<locale\>* **.cab"**  
 
-     **dism.exe /image:C:\WinPEMount /add-package /packagepath:"C:\Arquivos de Programas (x86)\Kits do Windows\8.1\Kit de Avaliação e Implantação\Ambiente de Pré-Instalação do Windows\amd64\WinPE_OCs\\** *<localidade\>* **\WinPE-Scripting** *<localidade\>* **.cab"**  
+     **dism.exe /image:C:\WinPEMount /add-package /packagepath:"C:\Program Files (x86)\Windows Kits\8.1\Assessment and Deployment Kit\Windows Preinstallation Environment\amd64\WinPE_OCs\\** *<locale\>* **\WinPE-Scripting** *<locale\>* **.cab"**  
 
-     **dism.exe /image:C:\WinPEMount /add-package /packagepath:"C:\Arquivos de Programas (x86)\Kits do Windows\8.1\Kit de Avaliação e Implantação\Ambiente de Pré-Instalação do Windows\amd64\WinPE_OCs\\** *<localidade\>* **\WinPE-WDS-Tools_** *<localidade\>* **.cab"**  
+     **dism.exe /image:C:\WinPEMount /add-package /packagepath:"C:\Program Files (x86)\Windows Kits\8.1\Assessment and Deployment Kit\Windows Preinstallation Environment\amd64\WinPE_OCs\\** *<locale\>* **\WinPE-WDS-Tools_** *<locale\>* **.cab"**  
 
-     Em que C:\WinPEMount é a pasta montada e localidade é a localidade dos componentes. Por exemplo, para a localidade **en-us** , você digitaria:  
+     其中 C:\WinPEMount 是装载的文件夹，区域设置是适用于组件的区域设置。 例如，对于 **en-us** 区域设置，你需要键入：  
 
      **dism.exe /image:C:\WinPEMount /add-package /packagepath:"C:\Program Files (x86)\Windows Kits\8.1\Assessment and Deployment Kit\Windows Preinstallation Environment\amd64\WinPE_OCs\en-us\WinPE-SecureStartup_en-us.cab"**  
 
@@ -119,100 +116,100 @@ Cada versão do Configuration Manager dá suporte a uma versão específica do W
      **dism.exe /image:C:\WinPEMount /add-package /packagepath:"C:\Program Files (x86)\Windows Kits\8.1\Assessment and Deployment Kit\Windows Preinstallation Environment\amd64\WinPE_OCs\en-us\WinPE-WDS-Tools_en-us.cab"**  
 
     > [!TIP]
-    >  Para obter mais informações sobre os componentes opcionais que você pode adicionar à imagem de inicialização, consulte o tópico [Referência de Componentes Opcionais do Windows PE](http://technet.microsoft.com/library/hh824926.aspx) na biblioteca de documentação do TechNet do Windows 8.1 e do Windows 8.  
+    >  有关可以添加到启动映像的可选组件的详细信息，请参阅 Windows 8.1 和 Windows 8 TechNet 文档库中的 [Windows PE 可选组件参考](http://technet.microsoft.com/library/hh824926.aspx) 主题。  
 
-6.  Use o DISM para adicionar drivers específicos à imagem de inicialização, quando necessário. Digite o seguinte para adicionar drivers à imagem de inicialização:  
+6.  需要时使用 DISM 将特定驱动程序添加到启动映像中。 请键入下列命令以将驱动程序添加到启动映像中：  
 
-     **dism.exe /image:C:\WinPEMount /add-driver /driver:&lt;** *caminho para o arquivo .inf do driver* **>**  
+     **dism.exe /image:C:\WinPEMount /add-driver /driver:&lt;** *path to driver .inf file* **>**  
 
-     Onde C:\WinPEMount é a pasta montada.  
+     其中 C:\WinPEMount 是安装文件夹。  
 
-7.  Digite o seguinte para desmontar o arquivo de imagem de inicialização e confirmar as alterações.  
+7.  键入以下命令以卸载启动映像文件并提交更改。  
 
      **dism.exe /unmount-wim /mountdir:C:\WinPEMount /commit**  
 
-     Onde C:\WinPEMount é a pasta montada.  
+     其中 C:\WinPEMount 是安装文件夹。  
 
-8.  Adicione a imagem de inicialização atualizada ao Configuration Manager a fim de disponibilizá-la para uso nas sequências de tarefas. Use as etapas a seguir para importar a imagem de inicialização atualizada:  
+8.  将更新的启动映像添加到 Configuration Manager，以使其在你的任务序列中可用。 使用下列步骤导入更新后的启动映像：  
 
-    1.  No console do Configuration Manager, clique em **Biblioteca de Software**.  
+    1.  在 Configuration Manager 控制台中，单击“软件库” 。  
 
-    2.  No espaço de trabalho **Biblioteca de Software** , expanda **Sistemas Operacionais**e clique em **Imagens de Inicialização**.  
+    2.  在“软件库”  工作区中，展开“操作系统” ，然后单击“启动映像包” 。  
 
-    3.  Na guia **Início** , no grupo **Criar** , clique em **Adicionar Imagem de Inicialização** para o Assistente para Adicionar Imagem de Inicialização.  
+    3.  在“主页”  选项卡上的“创建”  组中，单击“添加启动映像包”  以启动添加启动映像包向导。  
 
-    4.  Na página **Fonte de Dados** , especifique as seguintes opções e clique em **Próximo**.  
+    4.  在“数据源”  页上，指定以下选项，然后单击“下一步” 。  
 
-        -   Na caixa **Caminho** , especifique o caminho para o arquivo de imagem de inicialização atualizado. O caminho especificado deve ser um caminho de rede válido no formato UNC. Por exemplo: **\\\\<***nomedoservidor***>\\<***compartilhamento WinPEWAIK***>\winpe.wim**.  
+        -   在“路径”  框中，指定更新的启动映像文件的路径。 指定的路径必须是 UNC 格式的有效网络路径。 例如：**\\\\<**服务器名称**>\\<**WinPEWAIK 共享**>\winpe.wim**。  
 
-        -   Selecione a imagem de inicialização na lista suspensa **Imagem de Inicialização** . Se o arquivo WIM contiver várias imagens de inicialização, cada imagem será listada.  
+        -   从“启动映像”  下拉列表中选择启动映像。 如果 WIM 文件包含多个启动映像，则会列出每个映像。  
 
-    5.  Na página **Geral** , especifique as seguintes opções e clique em **Próximo**.  
+    5.  在“常规”  页上，指定以下选项，然后单击“下一步” 。  
 
-        -   Na caixa **Nome** , especifique um nome exclusivo para a imagem de inicialização.  
+        -   在“名称”  框中，为启动映像指定唯一名称。  
 
-        -   Na caixa **Versão** , especifique um número de versão para a imagem de inicialização.  
+        -   在“版本”  框中，为启动映像指定版本号。  
 
-        -   Na caixa **Comentário** , faça uma breve descrição de como a imagem de inicialização é usada.  
+        -   在“备注”  框中，指定有关启动映像使用方式的简要描述。  
 
-    6.  Conclua o assistente.  
+    6.  完成向导。  
 
-9. Você pode habilitar um shell de comando na imagem de inicialização para fins de depuração e solução de problemas no Windows PE. Use as etapas a seguir para habilitar o shell de comando.  
+9. 你可以在启动映像中启用命令解释器以在 Windows PE 中对其进行调试和疑难解答。 使用以下步骤启用命令解释器。  
 
-    1.  No console do Configuration Manager, clique em **Biblioteca de Software**.  
+    1.  在 Configuration Manager 控制台中，单击“软件库” 。  
 
-    2.  No espaço de trabalho **Biblioteca de Software** , expanda **Sistemas Operacionais**e clique em **Imagens de Inicialização**.  
+    2.  在“软件库”  工作区中，展开“操作系统” ，然后单击“启动映像包” 。  
 
-    3.  Localize a nova imagem de inicialização na lista e identifique a ID do pacote da imagem. Esse ID pode ser encontrado na coluna **ID da Imagem** correspondente à imagem de inicialização.  
+    3.  在列表中查找新启动映像，并标识该映像的程序包 ID。 你可以在启动映像的“映像 ID”  列中查找程序包 ID。  
 
-    4.  Em um prompt de comando, digite **wbemtest** para abrir o Testador de instrumentação de gerenciamento do Windows.  
+    4.  从命令提示符处键入 **wbemtest** 以打开 Windows Management Instrumentation 测试器。  
 
-    5.  Digite **\\\\<***Computador do Provedor de SMS***>\root\sms\site_<***códigodosite***>** em **Namespace** e clique em **Conectar**.  
+    5.  在“命名空间”中键入 **\\\\<**SMS 提供程序计算机**>\root\sms\site_<**站点代码**>**，然后单击“连接”。  
 
-    6.  Clique em **Abrir Instância**, digite **sms_bootimagepackage.packageID="<packageID\>"** e clique em **OK**. Para packageID, insira o valor identificado na etapa 3.  
+    6.  单击“打开实例”，键入 **sms_bootimagepackage.packageID="<packageID\>"**，然后单击“确定”。 对于 packageID，请输入在步骤 3 中标识的值。  
 
-    7.  Clique em **Atualizar Objeto**e, em seguida, clique em **EnableLabShell** no painel **Propriedades** .  
+    7.  单击“刷新对象” ，然后在“属性”  窗格中单击“EnableLabShell”  。  
 
-    8.  Clique em **Editar propriedade**, altere o valor para **TRUE**e clique em **Salvar propriedade**.  
+    8.  单击“编辑属性” ，将值改为 **TRUE**，然后单击“保存属性” 。  
 
-    9. Clique em **Salvar objeto**e saia do Testador de instrumentação de gerenciamento do Windows.  
+    9. 单击“保存对象” ，然后退出 Windows Management Instrumentation 测试器。  
 
-10. Você deve distribuir a imagem de inicialização para pontos de distribuição, grupos de pontos de distribuição ou coleções associadas a grupos de pontos de distribuição antes de usá-la em uma sequência de tarefas. Use as etapas a seguir para distribuir a imagem de inicialização.  
+10. 但是，你必须将启动映像分发到分发点、分发点组或与分发点组关联的集合，然后才能在任务序列中使用该启动映像。 使用以下步骤分发启动映像。  
 
-    1.  No console do Configuration Manager, clique em **Biblioteca de Software**.  
+    1.  在 Configuration Manager 控制台中，单击“软件库” 。  
 
-    2.  No espaço de trabalho **Biblioteca de Software** , expanda **Sistemas Operacionais**e clique em **Imagens de Inicialização**.  
+    2.  在“软件库”  工作区中，展开“操作系统” ，然后单击“启动映像包” 。  
 
-    3.  Clique na imagem de inicialização identificada na etapa 3.  
+    3.  单击在步骤 3 中标识的启动映像。  
 
-    4.  Na guia **Início** , no grupo **Implantação** , clique em **Atualizar Pontos de Distribuição**.  
+    4.  在“主页”  选项卡上的“部署”  组中，单击“更新分发点” 。  
 
-## <a name="customize-a-boot-image-that-uses-windows-pe-31"></a>Personalizar uma imagem de inicialização que usa o Windows PE 3.1  
- Para personalizar uma imagem de inicialização que usa o WinPE 3.1, você deve instalar o Windows AIK, instalar o suplemento do Windows AIK para Windows 7 SP1 e usar a ferramenta de linha de comando DISM para montar a imagem, adicionar os componentes e drivers opcionais e confirmar as alterações na imagem de inicialização. Use o procedimento a seguir para personalizar a imagem de inicialização.  
+## <a name="customize-a-boot-image-that-uses-windows-pe-31"></a>自定义使用 Windows PE 3.1 的启动映像  
+ 要自定义使用 WinPE 3.1 的启动映像，你必须安装 Windows AIK、安装适用于 Windows 7 SP1 的 Windows AIK 补充，使用 DISM 命令行工具安装启动映像、添加其他组件和驱动程序，以及提交启动映像更改。 使用下列过程来自定义启动映像。  
 
-#### <a name="to-customize-a-boot-image-that-uses-windows-pe-31"></a>Para personalizar uma imagem de inicialização que usa o Windows PE 3.1  
+#### <a name="to-customize-a-boot-image-that-uses-windows-pe-31"></a>自定义使用 Windows PE 3.1 的启动映像  
 
-1.  Instale o Windows AIK em um computador que não tenha outra versão do Windows AIK ou do Windows ADK, nem nenhum componente do Configuration Manager instalados. Baixe o Windows AIK do [Centro de Download da Microsoft](http://www.microsoft.com/download/details.aspx?id=5753).  
+1.  在无其他 Windows AIK 或 Windows ADK 版本且未安装任何 Configuration Manager 组件的计算机上安装 Windows AIK。 请从 [Microsoft 下载中心](http://www.microsoft.com/download/details.aspx?id=5753)下载 Windows AIK。  
 
-2.  Instale o Suplemento do Windows AIK para Windows 7 com SP1 no computador descrito na etapa 1. Baixe o Suplemento do Windows AIK para Windows 7 SP1 do [Centro de Download da Microsoft](http://www.microsoft.com/download/details.aspx?id=5188).  
+2.  在步骤 1 中的计算机上安装适用于带 SP1 的 Windows 7 的 Windows AIK 补充程序。 从 [Microsoft 下载中心](http://www.microsoft.com/download/details.aspx?id=5188)下载适用于 Windows 7 SP1 的 Windows AIK 补充程序。  
 
-3.  Copie a imagem de inicialização (wimpe.wim) da pasta de instalação do Windows AIK (por exemplo, <*Caminho de instalação*>\Windows AIK\Tools\PETools\amd64\\) em uma pasta no computador em que você personalizará a imagem de inicialização. Esse procedimento usa C:\WinPEWAIK como o nome da pasta.  
+3.  将启动映像 (wimpe.wim) 从 Windows AIK 安装文件夹（例如，<*InstallationPath*>\Windows AIK\Tools\PETools\amd64\\）复制到将自定义启动映像的计算机上的文件夹。 此过程使用 C:\WinPEWAIK 作为文件夹名称。  
 
-4.  Use o DISM para montar a imagem de inicialização em uma pasta local do Windows PE. Por exemplo, digite a seguinte linha de comando:  
+4.  使用 DISM 将启动映像安装到本地 Windows PE 文件夹。 例如，键入下列命令行：  
 
      **dism.exe /mount-wim /wimfile:C:\WinPEWAIK\winpe.wim /index:1 /mountdir:C:\WinPEMount**  
 
-     Onde C:\WinPEWAIK é a pasta que contém a imagem de inicialização e C:\WinPEMount é a pasta montada.  
+     其中 C:\WinPEWAIK 是包含启动映像的文件夹，C:\WinPEMount 是安装文件夹。  
 
     > [!NOTE]
-    >  Para obter mais informações sobre o DISM, consulte o tópico [Referência técnica do Gerenciamento e Manutenção de Imagens de Implantação](http://technet.microsoft.com/library/dd744256\(v=ws.10\).aspx) na biblioteca de documentação do TechNet do Windows 7.  
+    >  有关 DISM 的详细信息，请参阅 Windows 7 TechNet 文档库中的[部署映像服务和管理技术参考](http://technet.microsoft.com/library/dd744256\(v=ws.10\).aspx)主题。  
 
-5.  Após montar a imagem de inicialização, use o DISM para adicionar componentes opcionais a ela. No Windows PE 3.1, por exemplo, os componentes opcionais estão localizados em <*Caminho de instalação*>\Windows AIK\Tools\PETools\amd64\WinPE_FPs\\.  
+5.  安装启动映像之后，请使用 DISM 将可选组件添加到启动映像中。 例如，在 Windows PE 3.1 中，可选组件位于安装路径 <*InstallationPath*>\Windows AIK\Tools\PETools\amd64\WinPE_FPs\\中。  
 
     > [!NOTE]
-    >  Esse procedimento usa o seguinte local para os componentes opcionais: C:\Arquivos de Programas\Windows AIK\Tools\PETools\amd64\WinPE_FPs. O caminho que você usará poderá ser diferente dependendo da versão e das opções de instalação selecionadas para o Windows AIK.  
+    >  此过程将下列位置用于可选组件：C:\Program Files\Windows AIK\Tools\PETools\amd64\WinPE_FPs。 根据你为 Windows AIK 选择的版本和安装选项，你使用的路径可能不同。  
 
-     Digite o seguinte para instalar os componentes opcionais:  
+     键入下列命令以安装可选组件：  
 
      **dism.exe /image:C:\WinPEMount /add-package /packagepath:"C:\Program Files\Windows AIK\Tools\PETools\amd64\WinPE_FPs\winpe-wmi.cab"**  
 
@@ -220,13 +217,13 @@ Cada versão do Configuration Manager dá suporte a uma versão específica do W
 
      **dism.exe /image:C:\WinPEMount /add-package /packagepath:"C:\Program Files\Windows AIK\Tools\PETools\amd64\WinPE_FPs\winpe-wds-tools.cab"**  
 
-     **dism.exe /image:C:\WinPEMount /add-package /packagepath:"C:\Arquivos de Programas\Windows AIK\Tools\PETools\amd64\WinPE_FPs\\** *<localidade\>* **\winpe-wmi_** *<localidade\>* **.cab"**  
+     **dism.exe /image:C:\WinPEMount /add-package /packagepath:"C:\Program Files\Windows AIK\Tools\PETools\amd64\WinPE_FPs\\** *<locale\>* **\winpe-wmi_** *<locale\>* **.cab"**  
 
-     **dism.exe /image:C:\WinPEMount /add-package /packagepath:"C:\Arquivos de Programas\Windows AIK\Tools\PETools\amd64\WinPE_FPs\\** *<localidade\>* **\winpe-scripting_** *<localidade\>* **.cab"**  
+     **dism.exe /image:C:\WinPEMount /add-package /packagepath:"C:\Program Files\Windows AIK\Tools\PETools\amd64\WinPE_FPs\\** *<locale\>* **\winpe-scripting_** *<locale\>* **.cab"**  
 
-     **dism.exe /image:C:\WinPEMount /add-package /packagepath:"C:\Arquivos de Programas\Windows AIK\Tools\PETools\amd64\WinPE_FPs\\** *<localidade\>* **\winpe-wds-tools_** *<localidade\>* **.cab"**  
+     **dism.exe /image:C:\WinPEMount /add-package /packagepath:"C:\Program Files\Windows AIK\Tools\PETools\amd64\WinPE_FPs\\** *<locale\>* **\winpe-wds-tools_** *<locale\>* **.cab"**  
 
-     Em que C:\WinPEMount é a pasta montada e localidade é a localidade dos componentes. Por exemplo, para a localidade **en-us** , você digitaria:  
+     其中 C:\WinPEMount 是装载的文件夹，区域设置是适用于组件的区域设置。 例如，对于 **en-us** 区域设置，你需要键入：  
 
      **dism.exe /image:C:\WinPEMount /add-package /packagepath:"C:\Program Files\Windows AIK\Tools\PETools\amd64\WinPE_FPs\en-us\winpe-wmi_en-us.cab"**  
 
@@ -235,71 +232,70 @@ Cada versão do Configuration Manager dá suporte a uma versão específica do W
      **dism.exe /image:C:\WinPEMount /add-package /packagepath:"C:\Program Files\Windows AIK\Tools\PETools\amd64\WinPE_FPs\en-us\winpe-wds-tools_en-us.cab"**  
 
     > [!TIP]
-    >  Para obter mais informações sobre os diferentes pacotes que podem ser adicionados à imagem de inicialização, consulte o tópico [Adicionar um pacote a uma imagem do Windows PE](http://technet.microsoft.com/library/dd799312\(v=WS.10\).aspx) na biblioteca de documentação do TechNet do Windows 7.  
+    >  有关可以添加到启动映像的不同程序包的详细信息，请参阅 Windows 7 TechNet 文档库中的[将包添加到 Windows PE 映像中](http://technet.microsoft.com/library/dd799312\(v=WS.10\).aspx)主题。  
 
-6.  Use o DISM para adicionar drivers específicos à imagem de inicialização, quando necessário. Digite o seguinte para adicionar drivers à imagem de inicialização, se necessário:  
+6.  需要时使用 DISM 将特定驱动程序添加到启动映像中。 如果需要，请键入下列命令以将驱动程序添加到启动映像中：  
 
-     **dism.exe /image:C:\WinPEMount /add-driver /driver:&lt;** *caminho para o arquivo .inf do driver* **>**  
+     **dism.exe /image:C:\WinPEMount /add-driver /driver:&lt;** *path to driver .inf file* **>**  
 
-     Onde C:\WinPEMount é a pasta montada.  
+     其中 C:\WinPEMount 是安装文件夹。  
 
-7.  Digite o seguinte para desmontar o arquivo de imagem de inicialização e confirmar as alterações.  
+7.  键入以下命令以卸载启动映像文件并提交更改。  
 
      **dism.exe /unmount-wim /mountdir:C:\WinPEMount /commit**  
 
-     Onde C:\WinPEMount é a pasta montada.  
+     其中 C:\WinPEMount 是安装文件夹。  
 
-8.  Adicione a imagem de inicialização atualizada ao Configuration Manager a fim de disponibilizá-la para uso nas sequências de tarefas. Use as etapas a seguir para importar a imagem de inicialização atualizada:  
+8.  将更新的启动映像添加到 Configuration Manager，以使其在你的任务序列中可用。 使用下列步骤导入更新后的启动映像：  
 
-    1.  No console do Configuration Manager, clique em **Biblioteca de Software**.  
+    1.  在 Configuration Manager 控制台中，单击“软件库” 。  
 
-    2.  No espaço de trabalho **Biblioteca de Software** , expanda **Sistemas Operacionais**e clique em **Imagens de Inicialização**.  
+    2.  在“软件库”  工作区中，展开“操作系统” ，然后单击“启动映像包” 。  
 
-    3.  Na guia **Início** , no grupo **Criar** , clique em **Adicionar Imagem de Inicialização** para o Assistente para Adicionar Imagem de Inicialização.  
+    3.  在“主页”  选项卡上的“创建”  组中，单击“添加启动映像包”  以启动添加启动映像包向导。  
 
-    4.  Na página **Fonte de Dados** , especifique as seguintes opções e clique em **Próximo**.  
+    4.  在“数据源”  页上，指定以下选项，然后单击“下一步” 。  
 
-        -   Na caixa **Caminho** , especifique o caminho para o arquivo de imagem de inicialização atualizado. O caminho especificado deve ser um caminho de rede válido no formato UNC. Por exemplo: **\\\\<***nomedoservidor***>\\<***compartilhamento WinPEWAIK***>\winpe.wim**.  
+        -   在“路径”  框中，指定更新的启动映像文件的路径。 指定的路径必须是 UNC 格式的有效网络路径。 例如：**\\\\<**服务器名称**>\\<**WinPEWAIK 共享**>\winpe.wim**。  
 
-        -   Selecione a imagem de inicialização na lista suspensa **Imagem de Inicialização** . Se o arquivo WIM contiver várias imagens de inicialização, cada imagem será listada.  
+        -   从“启动映像”  下拉列表中选择启动映像。 如果 WIM 文件包含多个启动映像，则会列出每个映像。  
 
-    5.  Na página **Geral** , especifique as seguintes opções e clique em **Próximo**.  
+    5.  在“常规”  页上，指定以下选项，然后单击“下一步” 。  
 
-        -   Na caixa **Nome** , especifique um nome exclusivo para a imagem de inicialização.  
+        -   在“名称”  框中，为启动映像指定唯一名称。  
 
-        -   Na caixa **Versão** , especifique um número de versão para a imagem de inicialização.  
+        -   在“版本”  框中，为启动映像指定版本号。  
 
-        -   Na caixa **Comentário** , faça uma breve descrição de como a imagem de inicialização é usada.  
+        -   在“备注”  框中，指定有关启动映像使用方式的简要描述。  
 
-    6.  Conclua o assistente.  
+    6.  完成向导。  
 
-9. Você pode habilitar um shell de comando na imagem de inicialização para fins de depuração e solução de problemas no Windows PE. Use as etapas a seguir para habilitar o shell de comando.  
+9. 你可以在启动映像中启用命令解释器以在 Windows PE 中对其进行调试和疑难解答。 使用以下步骤启用命令解释器。  
 
-    1.  No console do Configuration Manager, clique em **Biblioteca de Software**.  
+    1.  在 Configuration Manager 控制台中，单击“软件库” 。  
 
-    2.  No espaço de trabalho **Biblioteca de Software** , expanda **Sistemas Operacionais**e clique em **Imagens de Inicialização**.  
+    2.  在“软件库”  工作区中，展开“操作系统” ，然后单击“启动映像包” 。  
 
-    3.  Localize a nova imagem de inicialização na lista e identifique a ID do pacote da imagem. Esse ID pode ser encontrado na coluna **ID da Imagem** correspondente à imagem de inicialização.  
+    3.  在列表中查找新启动映像，并标识该映像的程序包 ID。 你可以在启动映像的“映像 ID”  列中查找程序包 ID。  
 
-    4.  Em um prompt de comando, digite **wbemtest** para abrir o Testador de instrumentação de gerenciamento do Windows.  
+    4.  从命令提示符处键入 **wbemtest** 以打开 Windows Management Instrumentation 测试器。  
 
-    5.  Digite **\\\\<***Computador do Provedor de SMS***>\root\sms\site_<***códigodosite***>** em **Namespace** e clique em **Conectar**.  
+    5.  在“命名空间”中键入 **\\\\<**SMS 提供程序计算机**>\root\sms\site_<**站点代码**>**，然后单击“连接”。  
 
-    6.  Clique em **Abrir Instância**, digite **sms_bootimagepackage.packageID="<packageID\>"** e clique em **OK**. Para packageID, insira o valor identificado na etapa 3.  
+    6.  单击“打开实例”，键入 **sms_bootimagepackage.packageID="<packageID\>"**，然后单击“确定”。 对于 packageID，请输入在步骤 3 中标识的值。  
 
-    7.  Clique em **Atualizar Objeto**e, em seguida, clique em **EnableLabShell** no painel **Propriedades** .  
+    7.  单击“刷新对象” ，然后在“属性”  窗格中单击“EnableLabShell”  。  
 
-    8.  Clique em **Editar propriedade**, altere o valor para **TRUE**e clique em **Salvar propriedade**.  
+    8.  单击“编辑属性” ，将值改为 **TRUE**，然后单击“保存属性” 。  
 
-    9. Clique em **Salvar objeto**e saia do Testador de instrumentação de gerenciamento do Windows.  
+    9. 单击“保存对象” ，然后退出 Windows Management Instrumentation 测试器。  
 
-10. Você deve distribuir a imagem de inicialização para pontos de distribuição, grupos de pontos de distribuição ou coleções associadas a grupos de pontos de distribuição antes de usá-la em uma sequência de tarefas. Use as etapas a seguir para distribuir a imagem de inicialização.  
+10. 但是，你必须将启动映像分发到分发点、分发点组或与分发点组关联的集合，然后才能在任务序列中使用该启动映像。 使用以下步骤分发启动映像。  
 
-    1.  No console do Configuration Manager, clique em **Biblioteca de Software**.  
+    1.  在 Configuration Manager 控制台中，单击“软件库” 。  
 
-    2.  No espaço de trabalho **Biblioteca de Software** , expanda **Sistemas Operacionais**e clique em **Imagens de Inicialização**.  
+    2.  在“软件库”  工作区中，展开“操作系统” ，然后单击“启动映像包” 。  
 
-    3.  Clique na imagem de inicialização identificada na etapa 3.  
+    3.  单击在步骤 3 中标识的启动映像。  
 
-    4.  Na guia **Início** , no grupo **Implantação** , clique em **Atualizar Pontos de Distribuição**.  
-
+    4.  在“主页”  选项卡上的“部署”  组中，单击“更新分发点” 。  

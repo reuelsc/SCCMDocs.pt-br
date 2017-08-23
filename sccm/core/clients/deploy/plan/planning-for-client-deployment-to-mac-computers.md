@@ -1,114 +1,110 @@
 ---
-title: "Planejando a implantação do cliente em computadores Mac | Microsoft Docs"
-description: "Planeje a implantação de cliente em computadores Mac no System Center Configuration Manager."
+title: "规划 Mac 计算机的客户端部署 | Microsoft Docs"
+description: "在 System Center Configuration Manager 中规划 Mac 计算机的客户端部署。"
 ms.custom: na
 ms.date: 04/23/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
-ms.technology:
-- configmgr-client
+ms.technology: configmgr-client
 ms.tgt_pltfrm: na
 ms.topic: get-started-article
 ms.assetid: 8d15ae3f-de42-461f-a907-c43873da22d2
-caps.latest.revision: 6
-caps.handback.revision: 0
+caps.latest.revision: "6"
+caps.handback.revision: "0"
 author: robstackmsft
 ms.author: robstack
 manager: angrobe
-ms.translationtype: Human Translation
-ms.sourcegitcommit: 55c953f312a9fb31e7276dde2fdd59f8183b4e4d
-ms.openlocfilehash: d8ccfee895f5fd3649fb4bef4a62fd790cce7ea8
-ms.contentlocale: pt-br
-ms.lasthandoff: 12/16/2016
-
-
+ms.openlocfilehash: 75bddb41d4d1cf209fa7595c52b5a6aa831ba3dd
+ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
+ms.translationtype: HT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 08/07/2017
 ---
-# <a name="planning-for-client-deployment-to-mac-computers-in-system-center-configuration-manager"></a>Planejando a implantação de cliente em computadores Mac no System Center Configuration Manager
+# <a name="planning-for-client-deployment-to-mac-computers-in-system-center-configuration-manager"></a>在 System Center Configuration Manager 中规划 Mac 计算机的客户端部署
 
-*Aplica-se a: System Center Configuration Manager (Branch Atual)*
+*适用范围：System Center Configuration Manager (Current Branch)*
 
-Você pode instalar o cliente do Configuration Manager em computadores Mac que executam o sistema operacional Mac OS X e usam os seguintes recursos de gerenciamento:  
+可以在运行 Mac OS X 操作系统并使用以下管理功能的 Mac 计算机上安装 Configuration Manager 客户端：  
 
--   **Inventário de hardware**  
+-   **硬件清单**  
 
-     Você pode usar o inventário de hardware do Configuration Manager para coletar informações sobre o hardware e os aplicativos instalados em computadores Mac. Essas informações podem ser exibidas no Gerenciador de Recursos no console do Configuration Manager e usadas para criar coleções, consultas e relatórios. Para mais informações, consulte [Como usar o Gerenciador de Recursos para exibir o inventário de hardware no System Center Configuration Manager](../../../../core/clients/manage/inventory/use-resource-explorer-to-view-hardware-inventory.md).  
+     可使用 Configuration Manager 硬件清单收集关于 Mac 计算机上的硬件和所安装的应用程序的信息。 然后可以在 Configuration Manager 控制台内的资源浏览器中查看此信息，并且可以使用此信息创建集合、查询和报表。 有关详细信息，请参阅[如何使用资源浏览器查看 System Center Configuration Manager 中的硬件清单](../../../../core/clients/manage/inventory/use-resource-explorer-to-view-hardware-inventory.md)。  
 
-     O Configuration Manager coleta as seguintes informações de hardware de computadores Mac:  
+     Configuration Manager 从 Mac 计算机中收集下列硬件信息：  
 
-    -   Processador  
+    -   处理器  
 
-    -   Sistema de computador  
+    -   计算机系统  
 
-    -   Unidade de disco  
+    -   磁盘驱动器  
 
-    -   Partição de disco  
+    -   磁盘分区  
 
-    -   Adaptador de rede  
+    -   网络适配器  
 
-    -   Sistema operacional  
+    -   操作系统  
 
-    -   Serviço  
+    -   服务  
 
-    -   Processar  
+    -   过程  
 
-    -   Software instalado  
+    -   已安装的软件  
 
-    -   Produto do sistema de computador  
+    -   计算机系统产品  
 
-    -   Controlador USB  
+    -   USB 控制器  
 
-    -   Dispositivo USB  
+    -   USB 设备  
 
-    -   Unidade de CD-ROM  
+    -   CDROM 驱动器  
 
-    -   Controlador de vídeo  
+    -   视频控制器  
 
-    -   Monitor de mesa  
+    -   桌面监视器  
 
-    -   Bateria portátil  
+    -   便携式电池  
 
-    -   Memória física  
+    -   物理内存  
 
-    -   Impressora  
+    -   打印机  
 
     > [!IMPORTANT]  
-    >  Você não pode estender as informações do hardware que são coletadas de computadores Mac durante o inventário de hardware.  
+    >  在硬件清点过程中，你无法扩展从 Mac 计算机收集的硬件信息。  
 
--   **Configurações de conformidade**  
+-   **符合性设置**  
 
-     Você pode usar as configurações de conformidade do Configuration Manager para exibir a conformidade e corrigir configurações de preferência do Mac OS X (.plist). Por exemplo, você pode impor configurações para a home page no navegador da Web Safari ou verificar se o firewall da Apple está habilitado. Você também pode usar scripts de shell para monitorar e corrigir as configurações no MAC OS X.  
+     可以使用 Configuration Manager 符合性设置查看 Mac OS X 首选项 (.plist) 设置的符合性以及修正这些设置。 例如，你可以在 Safari Web 浏览器中强制主页设置，或者确保启用 Apple 防火墙。 也可以使用外壳脚本在 MAC OS X 中监视和修正设置。  
 
--   **Gerenciamento de aplicativo**  
+-   **应用程序管理**  
 
-     O Configuration Manager pode implantar o software em computadores Mac. Você pode implantar os seguintes formatos de software em computadores Mac:  
+     Configuration Manager 可以将软件部署到 Mac 计算机。 你可以将以下软件格式部署到 Mac 计算机：  
 
-    -   Imagem de disco da Apple (.DMG)  
+    -   Apple 磁盘映像 (.DMG)  
 
-    -   Arquivo do pacote meta (.mpkg)  
+    -   元包文件 (.MPKG)  
 
-    -   Pacote do Mac OS X Installer (.PKG)  
+    -   Mac OS X 安装程序包 (.PKG)  
 
-    -   Aplicativo do Mac OS X (.APP)  
+    -   Mac OS X 应用程序 (.APP)  
 
- Ao instalar o cliente do Configuration Manager em computadores Mac, você não pode usar os recursos de gerenciamento a seguir com suporte pelo cliente do Configuration Manager em computadores Windows:  
+ 在 Mac 计算机上安装 Configuration Manager 客户端时，无法使用基于 Windows 的计算机上 Configuration Manager 客户端支持的以下管理功能：  
 
--   Instalação do cliente por push  
+-   客户端请求安装  
 
--   Implantação de sistema operacional  
+-   操作系统部署  
 
--   Atualizações de software  
+-   软件更新  
 
     > [!NOTE]  
-    >  Você pode usar o gerenciamento de aplicativos do Configuration Manager para implantar atualizações de software necessárias do Mac OS X em computadores Mac. Além disso, você pode usar as configurações de conformidade para verificar se os computadores têm as atualizações de software necessárias.  
+    >  可以使用 Configuration Manager 应用程序管理将所需的 Mac OS X 软件更新部署到 Mac 计算机。 此外，可以使用符合性设置来确保计算机具有任何所需的软件更新。  
 
--   Janelas de manutenção  
+-   维护时段  
 
--   Controle remoto  
+-   远程控制  
 
--   Gerenciamento de Energia  
+-   电源管理  
 
--   Correção e verificação de cliente do status do cliente  
+-   客户端状态客户端检查和修正  
 
- Para obter mais informações sobre como instalar e configurar o cliente do Configuration Manager no Mac, consulte [Como implantar clientes em Macs no System Center Configuration Manager](../../../../core/clients/deploy/deploy-clients-to-macs.md).
-
+ 有关如何安装和配置 Configuration Manager Mac 客户端的详细信息，请参阅[如何在 System Center Configuration Manager 中将客户端部署到 Mac](../../../../core/clients/deploy/deploy-clients-to-macs.md)。

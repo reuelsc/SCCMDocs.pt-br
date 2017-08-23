@@ -1,117 +1,113 @@
 ---
-title: Configurar o status do cliente | Microsoft Docs
-description: "Selecione as configurações do status do cliente no System Center Configuration Manager."
+title: "配置客户端状态 | Microsoft Docs"
+description: "在 System Center Configuration Manager 中选择客户端状态设置。"
 ms.custom: na
 ms.date: 04/23/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
-ms.technology:
-- configmgr-client
+ms.technology: configmgr-client
 ms.tgt_pltfrm: na
 ms.topic: get-started-article
 ms.assetid: a2275ba2-c83d-43e7-90ed-418963a707fe
-caps.latest.revision: 6
-caps.handback.revision: 0
+caps.latest.revision: "6"
+caps.handback.revision: "0"
 author: robstackmsft
 ms.author: robstack
 manager: angrobe
-ms.translationtype: Human Translation
-ms.sourcegitcommit: 55c953f312a9fb31e7276dde2fdd59f8183b4e4d
-ms.openlocfilehash: 22cc286baa72d3e356a07b91ee0a1be646fa8a9e
-ms.contentlocale: pt-br
-ms.lasthandoff: 12/16/2016
-
-
+ms.openlocfilehash: 060d63ab8bce9c3bb39d2db404580b9f59416d33
+ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
+ms.translationtype: HT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 08/07/2017
 ---
-# <a name="how-to-configure-client-status-in-system-center-configuration-manager"></a>Como configurar o status do cliente no System Center Configuration Manager
+# <a name="how-to-configure-client-status-in-system-center-configuration-manager"></a>如何在 System Center Configuration Manager 中配置客户端状态
 
-*Aplica-se a: System Center Configuration Manager (Branch Atual)*
+*适用范围：System Center Configuration Manager (Current Branch)*
 
-Para monitorar o status do cliente do System Center Configuration Manager e corrigir os problemas encontrados, configure seu site para especificar os parâmetros que são usados para marcar clientes como inativos e configurar opções para alertá-los se a sua atividade ficar abaixo do limite especificado. Você também pode desabilitar os computadores de consertar automaticamente os problemas que o status do cliente localizar.  
+在可以监视 System Center Configuration Manager 客户端状态和修正所发现的问题之前，必须配置站点，以指定用于将客户端标记为不活动的参数，以及配置选项以便在客户端的活动程度低于指定的阈值时向你发出警报。 还可以禁止计算机自动修正客户端状态发现的任何问题。  
 
-##  <a name="BKMK_1"></a> Para configurar o status do cliente  
+##  <a name="BKMK_1"></a>配置客户端状态  
 
-1.  No console do Configuration Manager, clique em **Monitoramento**.  
+1.  在 Configuration Manager 控制台中，单击“监视” 。  
 
-2.  No espaço de trabalho **Monitoramento** , clique em **Status do Cliente**, na guia **Início** , no grupo **Status do Cliente** , clique em **Configurações de Status do Cliente**.  
+2.  在“监视”  工作区中，单击“客户端状态” ，然后，在“主页”  选项卡中，在“客户端状态”  组中单击“客户端状态设置” 。  
 
-3.  Na caixa de diálogo **Propriedades das Configurações de Status dos Clientes** , especifique os valores a seguir para determinar a atividade do cliente:  
-
-    > [!NOTE]  
-    >  Se nenhuma das configurações forem atendidas, o cliente será marcado como inativo.  
-
-    -   **Solicitações da política do cliente nos seguintes dias:** Especifique o número de dias desde o dia em que um cliente solicitou a política. O valor padrão é **7** dias.  
-
-    -   **Descoberta de pulsação durante os dias seguintes:** Especifique o número de dias desde o dia em que o computador cliente enviou um registro de descoberta de pulsação ao banco de dados do site. O valor padrão é **7** dias.  
-
-    -   **Inventário de hardware durante os dias seguintes:** Especifique o número de dias desde o dia em que o computador cliente enviou um registro de inventário de hardware ao banco de dados do site. O valor padrão é **7** dias.  
-
-    -   **Inventário de software durante os dias seguintes:** Especifique o número de dias desde o dia em que o computador cliente enviou um registro de inventário de software ao banco de dados do site. O valor padrão é **7** dias.  
-
-    -   **Mensagens de status durante os seguintes dias:** Especifique o número de dias desde o dia em que o computador cliente enviou mensagens de status ao banco de dados do site. O valor padrão é **7** dias.  
-
-4.  Na caixa de diálogo **Propriedades das Configurações de Status dos Clientes** , especifique o valor a seguir para determinar por quanto tempo o histórico de status do cliente deve ser mantido:  
-
-    -   **Manter o histórico de status do cliente durante o seguinte número de dias:** Especifique por quanto tempo deseja que o histórico de status do cliente permaneça no banco de dados do site. O valor padrão é **31** dias.  
-
-5.  Clique em **OK** para salvar as propriedades e fechar a caixa de diálogo **Propriedades das Configurações de Status dos Clientes** .  
-
-##  <a name="BKMK_Schedule"></a> Para configurar o agendamento do status do cliente  
-
-1.  No console do Configuration Manager, clique em **Monitoramento**.  
-
-2.  No espaço de trabalho **Monitoramento** , clique em **Status do Cliente**, na guia **Início** , no grupo **Status do Cliente** , clique em **Agendar Atualização de Status do Cliente**.  
-
-3.  Na caixa de diálogo **Agendar Atualização de Status do Cliente** , configure o intervalo no qual deseja que o status do cliente seja atualizado e então clique em OK.  
+3.  在“客户端状态设置属性”  对话框中，指定下列值以确定客户端活动程度：  
 
     > [!NOTE]  
-    >  Quando você altera o agendamento das atualizações de status do cliente, a atualização não entrará em efeito até a próxima atualização de status do cliente agendada (do agendamento configurado anteriormente).  
+    >  如果不符合任何设置，则将客户端标记为不活动。  
 
-##  <a name="BKMK_2"></a> Para configurar alertas de status do cliente  
+    -   **以下几天的客户端策略请求:** 指定自客户端请求策略以来的天数。 默认值为 **7** 天。  
 
-1.  No console do Configuration Manager, clique em **Ativos e Conformidade**.  
+    -   **以下几天的检测信号发现:** 指定自客户端计算机将检测信号发现记录发送到站点数据库以来的天数。 默认值为 **7** 天。  
 
-2.  No espaço de trabalho **Ativos e Conformidade** , clique em **Coleções de Dispositivos**.  
+    -   **以下几天的硬件清单:** 指定自客户端计算机将硬件清单记录发送到站点数据库以来的天数。 默认值为 **7** 天。  
 
-3.  Na lista **Coleções de Dispositivos** , selecione a coleção para a qual deseja configurar alertas e, então, na guia **Início** , no grupo **Propriedades** , clique em **Propriedades**.  
+    -   **以下几天的软件清单:** 指定自客户端计算机将软件清单记录发送到站点数据库以来的天数。 默认值为 **7** 天。  
+
+    -   **以下几天的状态消息:** 指定自客户端计算机将状态消息发送到站点数据库以来的天数。 默认值为 **7** 天。  
+
+4.  在“客户端状态设置属性”  对话框中，指定下列值以确定将客户端状态历史记录数据保留多长时间：  
+
+    -   **保留以下几天的客户端状态历史记录:** 指定要将客户端状态历史记录在站点数据库中保留多长时间。 默认值为 **31** 天。  
+
+5.  单击“确定”  以保存属性和关闭“客户端状态设置属性”  对话框。  
+
+##  <a name="BKMK_Schedule"></a>配置客户端状态的计划  
+
+1.  在 Configuration Manager 控制台中，单击“监视” 。  
+
+2.  在“监视”  工作区中，单击“客户端状态” ，然后，在“主页”  选项卡中，在“客户端状态”  组中单击“计划客户端状态更新” 。  
+
+3.  在“计划客户端状态更新”  对话框中，配置所要的客户端状态更新间隔，然后单击“确定”。  
 
     > [!NOTE]  
-    >  Você não pode configurar alertas para coleções de usuário.  
+    >  如果更改客户端状态更新的计划，则此更新将在下一次计划的客户端状态更新（对于以前配置的计划而言）之后才会生效。  
 
-4.  Na guia **Alertas** da caixa de diálogo *&lt;Nome da Coleção\>***Propriedades**, clique em **Adicionar**.  
+##  <a name="BKMK_2"></a>配置客户端状态的警报  
+
+1.  在 Configuration Manager 控制台中，单击“资产和符合性” 。  
+
+2.  在“资产和符合性”  工作区中，单击“设备集合” 。  
+
+3.  在“设备集合”  列表中，选择要为其配置警报的集合，然后，在“主页”  选项卡中，在“属性”  组中单击“属性” 。  
 
     > [!NOTE]  
-    >  A guia **Alertas** torna-se visível somente se a função de segurança com a qual você está associado tiver permissões para alertas.  
+    >  无法为用户集合配置警报。  
 
-5.  Na caixa de diálogo **Adicionar Novas Alertas da Coleção** , escolha os alertas que você deseja que sejam gerados quando os limites de status do cliente ficarem abaixo de um valor específico, então clique em **OK**.  
+4.  在“&lt;集合名称\>”的“属性”对话框的“警报”选项卡上，单击“添加”。  
 
-6.  Na lista **Condições** da guia **Alertas** , selecione cada alerta de status do cliente e então especifique as informações a seguir.  
+    > [!NOTE]  
+    >  仅在与你关联的安全角色具有警报的权限时，“警报”  选项卡才可见。  
 
-    -   **Nome do Alerta** – Aceite o nome padrão ou insira um novo nome para o alerta.  
+5.  在“添加新的集合警报”  对话框中，选择要在客户端状态阈值低于特定值时生成的警报，然后单击“确定” 。  
 
-    -   **Severidade do Alerta** – Na lista suspensa, escolha o nível de alerta que será exibido no console do Configuration Manager.  
+6.  在“警报”  选项卡的“条件”  列表中，选择每个客户端状态警报，然后指定下列信息。  
 
-    -   **Gerar alerta** – Especifique o percentual de limite para o alerta.  
+    -   **警报名称** - 接受默认名称，或者输入新的警报名称。  
 
-7.  Clique em **OK** para fechar a caixa de diálogo *&lt;Nome da Coleção\>***Propriedades**.  
+    -   **警报严重性** – 从下拉列表中，选择将显示在 Configuration Manager 控制台中的警报级别。  
 
-##  <a name="BKMK_3"></a> Para excluir computadores de correção automática  
+    -   **引发警报** - 指定警报的阈值百分比。  
 
-1.  Abra o editor do registro no computador cliente para o qual você deseja desabilitar a correção automática.  
+7.  单击“确定”关闭“&lt;集合名称\>”的“属性”对话框。  
+
+##  <a name="BKMK_3"></a>禁止计算机自动修正问题  
+
+1.  在要禁止其自动修正问题的客户端计算机上打开注册表编辑器。  
 
     > [!WARNING]  
-    >  Se você usar o Editor de Registro incorretamente, poderá causar sérios problemas e possivelmente precisará reinstalar o sistema operacional. A Microsoft não garante que você conseguirá resolver os problemas resultantes do uso incorreto do Editor do Registro. Use o Editor do Registro por sua conta e risco.  
+    >  如果不正确地使用注册表编辑器，可能导致严重问题，或许需要您重新安装操作系统。 Microsoft 不保证能够解决因注册表编辑器使用不当而导致的问题。 使用注册表编辑器的风险由您自己承担。  
 
-2.  Navegue até **HKEY_LOCAL_MACHINE\Software\Microsoft\CCM\CcmEval\NotifyOnly**.  
+2.  导航到“HKEY_LOCAL_MACHINE\Software\Microsoft\CCM\CcmEval\NotifyOnly” 。  
 
-3.  Digite um dos seguintes valores para essa chave do Registro:  
+3.  为此注册表项输入下列值之一：  
 
-    -   **Verdadeiro** – O computador cliente não corrigirá automaticamente qualquer problema que for encontrado. No entanto, você ainda será alertado no espaço de trabalho de **Monitoramento** sobre quaisquer problemas com esse cliente.  
+    -   **True** - 客户端计算机不会自动修正发现的任何问题。 但是，你在“监视”  工作区中仍会收到与此客户端相关的任何问题的警报。  
 
-    -   **Falso** – O computador cliente corrigirá automaticamente os problemas quando forem localizados e você será alertado no espaço de trabalho de **Monitoramento**. Essa é a configuração padrão.  
+    -   **False** – 客户端计算机将自动修正发现的问题并且将在“监视”工作区中发出警报。 此为默认设置。  
 
-4.  Feche o editor do Registro.  
+4.  关闭注册表编辑器。  
 
- Você também pode instalar clientes usando a propriedade de instalação CCMSetup **NotifyOnly** para excluí-los da correção automática. Para obter mais informações sobre essa propriedade de instalação do cliente, consulte [Sobre as propriedades de instalação do cliente no System Center Configuration Manager](../../../core/clients/deploy/about-client-installation-properties.md).  
-
+ 还可以使用 CCMSetup **NotifyOnly** 安装属性来安装客户端，以禁止它们自动修正问题。 有关此客户端安装属性的详细信息，请参阅[关于 System Center Configuration Manager 中的客户端安装属性](../../../core/clients/deploy/about-client-installation-properties.md)。  

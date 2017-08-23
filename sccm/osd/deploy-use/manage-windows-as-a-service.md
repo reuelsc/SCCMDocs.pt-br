@@ -1,285 +1,281 @@
 ---
-title: "Gerenciar o Windows como serviço – Configuration Manager | Microsoft Docs"
-description: "Exibir o estado do Windows como serviço usando o Configuration Manager, criar planos de manutenção para formar anéis de implantação e exibir alertas quando os clientes do Windows 10 estiverem próximos do fim do suporte."
+title: "管理 Windows 即服务 - Configuration Manager | Microsoft Docs"
+description: "使用 Configuration Manager 查看 Windows 即服务的状态，创建服务计划以形成部署环，以及在 Windows 10 客户端即将结束支持时查看警报。"
 ms.custom: na
 ms.date: 03/26/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
-ms.technology:
-- configmgr-osd
+ms.technology: configmgr-osd
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: da1e687b-28f6-43c4-b14a-ff2b76e60d24
-caps.latest.revision: 26
+caps.latest.revision: "26"
 author: Dougeby
 ms.author: dougeby
 manager: angrobe
-ms.translationtype: Human Translation
-ms.sourcegitcommit: 690d03d9c8c49a815bd318df549d7401a855bc5d
 ms.openlocfilehash: 2c2c0f81736c1b00ea487ae1261803a8105bb5e4
-ms.contentlocale: pt-br
-ms.lasthandoff: 05/17/2017
-
-
+ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
+ms.translationtype: HT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 08/07/2017
 ---
-# <a name="manage-windows-as-a-service-using-system-center-configuration-manager"></a>Gerenciar o Windows como um serviço usando o System Center Configuration Manager
+# <a name="manage-windows-as-a-service-using-system-center-configuration-manager"></a>使用 System Center Configuration Manager 将 Windows 作为服务进行管理
 
-*Aplica-se a: System Center Configuration Manager (Branch Atual)*
-
-
- No System Center Configuration Manager, é possível exibir o estado do Windows como serviço em seu ambiente, criar planos de serviço para formar anéis de implantação e garantir que os sistemas com o branch atual do Windows 10 permaneçam atualizados quando novos builds forem lançados. Além disso, é possível exibir alertas quando os clientes do Windows 10 estiverem próximos do fim do suporte para o build do CB (Branch Atual) ou do CBB (Branch Atual para Negócios).  
-
- Para obter mais informações sobre opções de serviço do Windows 10, veja  [Opções para atualizações de serviço do Windows 10](https://technet.microsoft.com/library/mt598226\(v=vs.85\).aspx).  
-
- Use as seguintes seções para gerenciar o Windows como serviço.
-
-##  <a name="BKMK_Prerequisites"></a> Pré-requisitos  
- Para ver os dados no painel de serviço do Windows 10, faça o seguinte:  
-
--   Computadores Windows 10 devem usar as atualizações de software do Configuration Manager com o WSUS (Windows Server Update Services) para o gerenciamento de atualização de software. Quando os computadores usarem o Windows Update for Business (ou Windows Insiders) para o gerenciamento de atualização de software, o computador não será avaliado nos planos de serviço do Windows 10. Para obter mais informações, consulte [Integration with Windows Update for Business in Windows 10](../../sum/deploy-use/integrate-windows-update-for-business-windows-10.md).  
-
--   O WSUS 4.0 com o [hotfix 3095113](https://support.microsoft.com/kb/3095113) deve ser instalado em seus pontos de atualização de software e servidores do site. Isso adiciona a classificação de atualização de software **Atualizações** . Para obter mais informações, consulte [Pré-requisitos para atualizações de software](../../sum/plan-design/prerequisites-for-software-updates.md).  
-
--   O WSUS 4.0 com o [hotfix 3159706](https://support.microsoft.com/kb/3159706) deve estar instalado em seus pontos de atualização de software e servidores de sites para atualizar computadores para a Atualização de Aniversário do Windows 10, bem como para versões posteriores. Há etapas manuais descritas no artigo de suporte que você precisa seguir para instalar esse hotfix. Para obter mais informações, consulte o [Blog do Enterprise Mobility & Security](https://blogs.technet.microsoft.com/enterprisemobility/2016/08/05/update-your-configmgr-1606-sup-servers-to-deploy-the-windows-10-anniversary-update/).
-
--   Habilite a Descoberta de Pulsação. Os dados exibidos no painel de serviço do Windows 10 são encontrados por meio da descoberta. Para obter mais informações, consulte [Configure Heartbeat Discovery](../../core/servers/deploy/configure/configure-discovery-methods.md#a-namebkmkconfighbdisca-configure-heartbeat-discovery).  
-
-     As seguintes informações de branch e build do Windows 10 são descobertas e armazenadas em um dos seguintes atributos:  
-
-    -   **Ramificação de Preparação do Sistema Operacional**: especifica o branch do sistema operacional. Por exemplo, **0** = CB (não adiar upgrades) **1** = CBB (adiar atualizações), **2** = LTSB (Branch de Manutenção em Longo Prazo)
-
-    -   **Compilação do Sistema Operacional**: especifica o build do sistema operacional. Por exemplo, **10.0.10240** (RTM) ou **10.0.10586** (versão 1511)  
-
--   O ponto de conexão de serviço deve ser instalado e configurado no modo **Online, conexão persistente** para que seja possível ver os dados no painel de serviço do Windows 10. Quando estiver no modo offline, você não verá as atualizações de dados no painel até receber atualizações de serviço do Configuration Manager.   
-     Para obter mais informações, consulte [Sobre o ponto de conexão de serviço](../../core/servers/deploy/configure/about-the-service-connection-point.md).  
+*适用范围：System Center Configuration Manager (Current Branch)*
 
 
--   O Internet Explorer 9 ou posterior deve estar instalado no computador que executa o console do Configuration Manager.  
+ 在 System Center Configuration Manager 中，可以查看环境中 Windows 作为服务的状态、创建服务计划以形成部署环并确保 Windows 10 当前分支系统在新版本发布时及时更新，以及在 Windows 10 客户端即将结束对其 Current Branch (CB) 或 Current Branch for Business (CBB) 版本的支持时查看警报。  
 
--   As atualizações de software devem ser configuradas e sincronizadas. É necessário selecionar a classificação **Atualizações** e sincronizar as atualizações de software antes as atualizações de recursos do Windows 10 fiquem disponíveis no console do Configuration Manager. Para obter mais informações, consulte [Preparar-se para o gerenciamento de atualização de software](../../sum/get-started/prepare-for-software-updates-management.md).  
+ 有关 Windows 10 维护服务选项的详细信息，请参阅  [用于更新和升级的 Windows 10 维护服务选项](https://technet.microsoft.com/library/mt598226\(v=vs.85\).aspx)。  
 
-##  <a name="BKMK_ServicingDashboard"></a> Painel de serviço do Windows 10  
- O painel de serviço do Windows 10 fornece informações sobre os computadores Windows 10 em seu ambiente, os planos de serviço ativos, as informações de conformidade e assim por diante. Os dados contidos no painel de serviço do Windows 10 dependem da instalação do Ponto de Conexão de Serviço. O painel contém os seguintes blocos:  
+ 使用以下部分将 Windows 作为服务进行管理。
 
--   **Bloco Uso do Windows 10**: fornece uma divisão dos builds públicos do Windows 10. Os builds do Windows Insiders são listados como **outros** , bem como quaisquer builds que ainda não são conhecidos para seu site. O ponto de conexão de serviço baixará os metadados que informam sobre os builds do Windows e, em seguida, esses dados são comparados com os dados de descoberta.  
+##  <a name="BKMK_Prerequisites"></a> 先决条件  
+ 要在 Windows 10 维护服务仪表板中查看数据，必须执行以下操作：  
 
--   **Bloco Anéis do Windows 10**: fornece uma divisão do Windows 10 por branch e estado de preparação. O segmento LTSB conterá todas as versões de LTSB (enquanto o primeiro bloco divide as versões específicas). Por exemplo, Windows 10 LTSB 2015. O segmento **Pronto para Liberação** corresponde ao CB e o segmento **Pronto para Negócios** refere-se ao CBB.  
+-   Windows 10 计算机必须搭配使用 Configuration Manager 软件更新和 Windows Server Update Services (WSUS) 以进行软件更新管理。 当计算机使用适用于企业的 Windows 更新（或 Windows 预览体验）进行软件更新管理时，将不在 Windows 10 维护服务计划中评估计算机。 有关详细信息，请参阅 [Integration with Windows Update for Business in Windows 10](../../sum/deploy-use/integrate-windows-update-for-business-windows-10.md)。  
 
--   **Bloco Criar Plano de Serviço**: fornece uma maneira rápida de criar um plano de serviço. Você especifica o nome, a coleção (exibe apenas as dez primeiras coleções por tamanho, em ordem crescente), o pacote de implantação (exibe apenas os dez primeiros pacotes por pacotes modificados mais recentemente) e o estado de preparação. Valores padrão são usados para as outras configurações. Clique em **Configurações Avançadas** para iniciar o assistente de Criação do Plano de Serviço, em que é possível configurar todas as configurações do plano de serviço.  
+-   必须在软件更新点和站点服务器上安装具有 [修补程序 3095113](https://support.microsoft.com/kb/3095113) 的 WSUS 4.0。 这将添加“升级”软件更新分类。 有关详细信息，请参阅[软件更新的先决条件](../../sum/plan-design/prerequisites-for-software-updates.md)。  
 
--   **Bloco Expirado**: exibe o percentual de dispositivos que estão em um build do Windows 10 cuja vida útil já expirou. O Configuration Manager determina o percentual dos metadados baixados pelo Ponto de Conexão de Serviço e o compara com os dados de descoberta. Um build cuja vida útil já expirou não recebe mais atualizações cumulativas mensais, que incluem atualizações de segurança. Os computadores nessa categoria devem ser atualizados para a próxima versão de build. O Configuration Manager arredonda para o próximo número inteiro. Por exemplo, se você tiver 10.000 computadores e apenas um em um build expirado, o bloco exibirá 1%.  
+-   必须在软件更新点和站点服务器上安装带有[修补程序 3159706](https://support.microsoft.com/kb/3159706) 的 WSUS 4.0，才能将计算机升级到 Windows 10 周年更新以及后续版本。 支持文章中描述有手动操作步骤，必须按照这些步骤安装此修补程序。 有关详细信息，请参阅 [Enterprise Mobility and Security Blog](https://blogs.technet.microsoft.com/enterprisemobility/2016/08/05/update-your-configmgr-1606-sup-servers-to-deploy-the-windows-10-anniversary-update/)（企业移动性和安全性博客）。
 
--   **Bloco Expira em breve**: exibe o percentual de computadores que estão em um build cujo fim da vida útil está próximo (em aproximadamente quatro meses), semelhante ao bloco **Expirado** . O Configuration Manager arredonda para o próximo número inteiro.  
+-   启用检测信号发现。 可使用发现找到 Windows 10 维护仪表板中显示的数据。 有关详细信息，请参阅 [Configure Heartbeat Discovery](../../core/servers/deploy/configure/configure-discovery-methods.md#a-namebkmkconfighbdisca-configure-heartbeat-discovery)。  
 
--   **Bloco Alertas**: exibe os alertas ativos.  
+     可在以下属性中发现和存储下面的 Windows 10 分支和生成信息：  
 
--   **Bloco Monitoramento do Plano de Serviço**: exibe os planos de serviço criados e um gráfico da conformidade para cada um. Isso fornece uma visão geral rápida do estado atual das implantações de plano de serviço. Se um anel de implantação anterior atender às suas expectativas quanto à conformidade, será possível selecionar um plano de serviço posterior (anel de implantação) e clicar em **Implantar Agora** , em vez de aguardar até que as regras do plano de serviço sejam disparadas automaticamente.  
+    -   **操作系统准备情况分支**：指定操作系统分支。 例如，**0** = CB（不推迟升级），**1** = CBB（推迟升级），**2** = Long Term Servicing Branch (LTSB)
 
--   O **bloco Builds do Windows 10**: exibe uma linha do tempo fixa da imagem que fornece uma visão geral das compilações do Windows 10 atualmente liberadas e fornece uma ideia geral de quando as compilações farão a transição para estados diferentes.  
+    -   **操作系统内部版本**：指定操作系统内部版本。 例如，**10.0.10240** (RTM) 或 **10.0.10586**（版本 1511）  
+
+-   必须安装服务连接点并将其配置为“联机，持续连接”  模式，才能在 Windows 10 维护服务仪表板上查看数据。 处于离线模式时，在获取 Configuration Manager 服务更新之前，不会在仪表板中看到数据更新。   
+     有关详细信息，请参阅[关于服务连接点](../../core/servers/deploy/configure/about-the-service-connection-point.md)。  
+
+
+-   必须在运行 Configuration Manager 控制台的计算机上安装 Internet Explorer 9 或更高版本。  
+
+-   必须配置和同步软件更新。 必须先选择“升级”分类并同步软件更新，才能在 Configuration Manager 控制台中使用 Windows 10 功能升级。 有关详细信息，请参阅[准备软件更新管理](../../sum/get-started/prepare-for-software-updates-management.md)。  
+
+##  <a name="BKMK_ServicingDashboard"></a> Windows 10 维护服务仪表板  
+ Windows 10 维护服务仪表板提供了有关环境中的 Windows 10 计算机和活动维护服务计划的信息以及符合性信息等。 Windows 10 维护服务仪表板中的数据依赖于安装服务连接点。 该仪表板具有以下磁贴：  
+
+-   **“Windows 10 使用情况”磁贴**：提供 Windows 10 公共内部版本的细分。 将 Windows 预览体验内部版本和对你的站点为未知的任何内部版本列为 **其他** 。 服务连接点将下载告知其 Windows 内部版本的元数据，然后将此数据与发现数据进行比较。  
+
+-   **“Windows 10 环”磁贴**：按分支和就绪状态提供 Windows 10 的细分。 LTSB 段将全部为 LTSB 版本（而第一个磁贴将分解特定版本。 例如，Windows 10 LTSB 2015）。 “可以发布”  段对应于 CB，而“可用于业务”  段为 CBB。  
+
+-   **“创建服务计划”磁贴**：提供创建维护服务计划的快速方法。 指定名称、集合（仅显示从小到大的前 10 个集合）、部署包（仅显示最近修改的前 10 个包）和就绪状态。 其他设置使用默认值。 单击“高级设置”  以启动“创建维护服务计划向导”，可在该向导中配置所有服务计划设置。  
+
+-   **“已过期”磁贴**：显示运行已超过其使用期限的 Windows 10 版本的设备的百分比。 Configuration Manager 从服务连接点下载的元数据确定百分比，并将其与发现数据比较。 超过其使用期限的内部版本将不再接收月度累计更新（包括安全更新）。 应将此类别中的计算机升级到下一个内部版本。 Configuration Manager 将进一成为整数。 例如，如果你有 10,000 台计算机而只有一台运行已过期的内部版本，则该磁贴将显示 1%。  
+
+-   **“即将过期”磁贴**：显示运行接近使用期限（将在约四个月内过期）的内部版本的计算机的百分比，与“已过期”  磁贴类似。 Configuration Manager 将进一成为整数。  
+
+-   **“警报”磁贴**：显示活动警报。  
+
+-   **“服务计划监视”磁贴**：显示已创建的维护服务计划，以及每个计划的符合性图表。 它能够提供维护服务计划部署当前状态的简要概述。 如果较早的部署环满足你对符合性的期望，则可以选择较晚的维护服务计划（部署环）然后单击“立即部署”  ，而不必等待自动触发维护服务计划规则。  
+
+-   **“Windows 10 内部版本”磁贴**：显示固定的映像时间线，它提供当前发布的 Windows 10 内部版本的概述，以及内部版本将转换为各状态的大致时间。  
 
 > [!IMPORTANT]  
->  As informações mostradas no painel de serviço do Windows 10 (como o ciclo de vida do suporte para versões do Windows 10) são fornecidas para sua conveniência e somente para uso interno em sua empresa. Você não deve depender exclusivamente dessas informações para confirmar a conformidade da atualização. Certifique-se de verificar a precisão das informações fornecidas a você.  
+>  Windows 10 维护服务仪表板中显示的信息（例如 Windows 10 版本的支持使用期限）是出于方便考虑而提供的，仅供公司内部使用。 不应仅依赖此信息来确认更新符合性。 请务必验证所提供信息的准确性。  
 
-## <a name="servicing-plan-workflow"></a>Fluxo de trabalho do plano de serviço  
- Os planos de serviço do Windows 10 no Configuration Manager são muito parecidos com as regras de implantação automática das atualizações de software. Você cria um plano de serviço com os seguintes critérios avaliados pelo Configuration Manager:  
+## <a name="servicing-plan-workflow"></a>维护服务计划工作流  
+ Configuration Manager 中的 Windows 10 维护服务计划非常类似于软件更新的自动部署规则。 可使用以下 Configuration Manager 评估的条件创建维护服务计划：  
 
--   **Classificação Atualizações**: somente as atualizações que estão na classificação **Atualizações** são avaliadas.  
+-   **升级分类**：仅限评估“升级”分类中的更新。  
 
--   **Estado de preparação**: o estado de preparação definido no plano de serviço é comparado com o estado de preparação da atualização. Os metadados da atualização são recuperados quando o ponto de conexão de serviço verifica se há atualizações.  
+-   **就绪状态**：将比较维护服务计划中定义的就绪状态与升级的就绪状态。 服务连接点检查更新时，将检索升级的元数据。  
 
--   **Adiamento de tempo**: o número de dias especificados para **Por quantos dias você gostaria de aguardar após a publicação pela Microsoft de uma nova atualização antes de implantá-la em seu ambiente** no plano de serviço. O Configuration Manager avalia se é necessário incluir uma atualização na implantação, caso a data atual seja posterior à data de lançamento, além do número configurado de dias.  
+-   **时间延迟**：在维护服务计划中，你为“Microsoft 发布新升级后，你希望等待多少天再在新环境中进行部署”  指定的天数。 如果当前日期晚于发布日期加上配置的天数，Configuration Manager 将评估是否在部署中包括升级。  
 
- Quando uma atualização atende aos critérios, o plano de serviço adiciona a atualização ao pacote de implantação, distribui o pacote para os pontos de distribuição e implanta a atualização na coleção com base nas configurações definidas no plano de serviço.  É possível monitorar as implantações no bloco Monitoramento do Plano de Serviço no Painel de Serviço do Windows 10. Para obter mais informações, consulte [Implantar atualizações de software](../../sum/deploy-use/monitor-software-updates.md).  
+ 当升级符合条件时，维护服务计划会将升级添加到部署包并将包分发到分发点，然后基于在维护服务计划中配置的设置将升级部署到集合。  你可以在 Windows 10 维护服务仪表板上的“服务计划监视”磁贴中监视部署。 有关详细信息，请参阅[监视软件更新](../../sum/deploy-use/monitor-software-updates.md)。  
 
-##  <a name="BKMK_ServicingPlan"></a> Plano de serviço do Windows 10  
- Durante a implantação do Windows 10 CB, é possível criar um ou mais planos de serviço para definir os anéis de implantação que você deseja ter em seu ambiente e, em seguida, monitorá-los no painel de serviço do Windows 10.   
-Os planos de manutenção usam apenas a classificação de atualizações de software **Atualizações** , e não as atualizações cumulativas para o Windows 10. Para essas atualizações, você ainda precisará implantar com o fluxo de trabalho das atualizações de software.  A experiência do usuário final com um plano de serviço é a mesma quando comparado às atualizações de software, incluindo as configurações definidas no plano de serviço.  
-
-> [!NOTE]  
->  É possível usar uma sequência de tarefas para implantar uma atualização para cada build do Windows 10, mas isso exige mais trabalho manual. Você precisaria importar os arquivos de origem atualizados como um pacote de atualização do sistema operacional e depois criar e implantar a sequência de tarefas no conjunto apropriado de computadores. No entanto, uma sequência de tarefas fornece opções personalizadas adicionais, como ações pré e pós-implantação.  
-
- É possível criar um plano de serviço básico no painel de serviço do Windows 10. Depois de especificar o nome, a coleção (exibe apenas as dez primeiras coleções por tamanho, em ordem crescente), o pacote de implantação (exibe apenas os dez primeiros pacotes começando pelos pacotes modificados mais recentemente) e o estado de preparação, o Configuration Manager cria o plano de serviço com valores padrão para as outras configurações. Também é possível iniciar o assistente de Criação do Plano de Serviço para definir todas as configurações. Use o procedimento a seguir para criar um plano de serviço usando o assistente de Criação do Plano de Serviço.  
+##  <a name="BKMK_ServicingPlan"></a> Windows 10 维护服务计划  
+ 部署 Windows 10 CB 时，可以创建一个或多个维护服务计划，以定义你的环境中所需的部署环，然后在 Windows 10 维护服务仪表板中监视它们。   
+维护服务计划仅使用“升级”软件更新分类，而不使用 Windows 10 的累积更新。 这些更新将仍需要使用软件更新工作流进行部署。  维修服务计划的最终用户体验与软件更新体验相同，包括你在维护服务计划中配置的设置。  
 
 > [!NOTE]  
->  A partir da versão 1602 do Configuration Manager, você pode gerenciar o comportamento das implantações de alto risco. Uma implantação de alto risco é uma implantação que é instalada automaticamente e que tem o potencial de causar resultados indesejados. Por exemplo, uma sequência de tarefas que tenha uma finalidade **Obrigatória** que implanta o Windows 10 é considerada uma implantação de alto risco. Para obter mais informações, consulte [Configurações para gerenciar implantações de alto risco](../../protect/understand/settings-to-manage-high-risk-deployments.md).  
+>  可以使用任务序列来为每个 Windows 10 内部版本部署升级，但这样做需要进行更多手动操作。 你需要将更新的源文件作为操作系统升级包导入，然后创建任务序列并将其部署到适当计算机组。 但是，任务序列提供其他自定义选项，如部署前和部署后操作。  
 
-#### <a name="to-create-a-windows-10-servicing-plan"></a>Para criar um plano de serviço do Windows 10  
+ 可以从 Windows 10 维护服务仪表板创建基本维护服务计划。 指定名称、集合（仅显示从小到大的前 10 个集合）、部署包（仅显示最近修改的前 10 个包）和准备情况状态后，Configuration Manager 将使用其他设置的默认值创建维护服务计划。 也可以启动“创建维护服务计划向导”来配置所有设置。 使用“创建使用维护服务计划向导”，通过以下过程创建维护服务计划。  
 
-1.  No console do Configuration Manager, clique em **Biblioteca de Software**.  
+> [!NOTE]  
+>  从 Configuration Manager 版本 1602 开始，可以管理高风险部署的行为。 高风险部署是自动安装、可能产生意外结果的部署。 例如，其用途为 **必需** 部署 Windows 10 的任务序列被认为是高风险部署。 有关详细信息，请参阅[用于管理高风险部署的设置](../../protect/understand/settings-to-manage-high-risk-deployments.md)。  
 
-2.  No espaço de trabalho Biblioteca de Software, expanda **Serviço do Windows 10**e clique em **Planos de Serviço**.  
+#### <a name="to-create-a-windows-10-servicing-plan"></a>创建 Windows 10 维护服务计划  
 
-3.  Na guia **Início** , no grupo **Criar** , clique em **Criar Plano de Serviço**. O assistente de Criação do Plano de Serviço é aberto.  
+1.  在 Configuration Manager 控制台中，单击“软件库” 。  
 
-4.  Na página **Geral** , defina as seguintes configurações:  
+2.  在“软件库”工作区中，展开“Windows 10 维护服务” ，然后单击“维护服务计划” 。  
 
-    -   **Nome**: especifique o nome para o plano de serviço. O nome deve ser exclusivo, deve ajudar a descrever a finalidade da regra e diferenciá-la de outras no site do Configuration Manager.  
+3.  在“主页”  选项卡上的“创建”  组中，单击“创建维护服务计划” 。 将打开“创建维护服务计划向导”。  
 
-    -   **Descrição:**especifique uma descrição para o plano de serviço. A descrição deve fornecer uma visão geral do plano de serviço e qualquer outra informação relevante que ajude a identificá-lo e diferenciá-lo de outros planos no site do Configuration Manager. O campo de descrição é opcional, tem um limite de 256 caracteres e um valor em branco por padrão.  
+4.  在“常规”  页上，配置下列设置：  
 
-5.  Na página Plano de Serviço, defina as seguintes configurações:  
+    -   **名称**：指定维护服务计划的名称。 此名称必须唯一并且有助于描述规则的目的，并且应与 Configuration Manager 站点中的其他名称区分开来。  
 
-    -   **Coleção de Destino**: especifica a coleção de destino a ser usada para o plano de serviço. Os membros da coleção recebem as atualizações do Windows 10 definidas no plano de serviço.  
+    -   **描述**：指定维护服务计划的描述。 描述应概述维护服务计划和任何其他相关信息，帮助在 Configuration Manager 站点内的其他项中标识和区分该计划。 描述字段是可选字段，最多不超过 256 个字符，默认情况下具有空白值。  
+
+5.  在“维护服务计划”页上，配置下列设置：  
+
+    -   **目标集合**：指定要用于维护服务计划的目标集合。 集合的成员将接收维护服务计划中定义的 Windows 10 升级。  
 
         > [!NOTE]  
-        >  A partir da versão 1602 do Configuration Manager, quando você fizer uma implantação de alto risco, como um plano de manutenção, a janela **Selecionar Coleção** exibirá apenas as coleções personalizadas que atendem às configurações de verificação da implantação que são definidas nas propriedades do site.
+        >  从 Configuration Manager 版本 1602 开始，部署高风险部署（例如维护服务计划）时，“选择集合”窗口中将仅显示满足站点属性中配置的部署验证设置的自定义集合。
         >    
-        > As implantações de alto risco sempre estão limitadas às coleções personalizadas criadas e à coleção interna de **Computadores desconhecidos** . Ao criar uma implantação de alto risco, não é possível selecionar uma coleção interna como **Todos os Sistemas**. Desmarque **Ocultar coleções com uma contagem de membros maior que a configuração de tamanho mínimo do site** para ver todas as coleções personalizadas que contêm menos clientes do que o tamanho máximo configurado. Para obter mais informações, consulte [Configurações para gerenciar implantações de alto risco](../../protect/understand/settings-to-manage-high-risk-deployments.md).  
+        > 高风险部署始终局限于自定义集合、你所创建的集合和内置“未知计算机”  集合。 创建高风险部署时，无法选择“所有系统”等内置集合。 取消选中“隐藏成员数大于站点最低大小配置的集合”以查看所含客户端少于配置的最大大小的全部自定义集合。 有关详细信息，请参阅[用于管理高风险部署的设置](../../protect/understand/settings-to-manage-high-risk-deployments.md)。  
         >  
-        > As configurações de verificação de implantação baseiam-se na associação atual da coleção. Depois de implantar o plano de manutenção, a associação à coleção não será reavaliada quanto às configurações de implantação de alto risco.  
+        > 部署验证设置基于集合的当前成员身份。 部署维护服务计划后，不会重新评估高风险部署设置的集合成员身份。  
         >  
-        > Por exemplo, suponhamos que você defina **Tamanho padrão** como 100 e o **Tamanho máximo** como 1000. Ao criar uma implantação de alto risco, a janela **Selecionar coleção** exibirá somente as coleções que contêm menos de 100 clientes. Se você desmarcar a definição **Ocultar coleções com uma contagem de membro maior que a configuração de tamanho mínimo do site**, a janela exibirá coleções que contêm menos de 1000 clientes.  
+        > 例如，假设将“默认大小”设置为 100，将“最大大小”设置为 1000。 当创建高风险部署时，“选择集合”窗口将仅显示其客户端少于 100 个的集合。 如果清除“隐藏成员数大于站点最低大小配置的集合”设置，则该窗口将显示其客户端少于 1000 个的集合。  
         >
-        > Ao selecionar uma coleção que contém uma função de site, o seguinte se aplica:    
+        > 选择包含站点角色的集合时，以下情况适用：    
         >   
-        >    - Se a coleção contiver um servidor do sistema de sites e nas configurações de verificação de implantação você configurar para coleções de bloco com servidores do sistema de sites, ocorrerá um erro e não será possível continuar.    
-        >    - Se a coleção contiver um servidor do sistema de sites e nas configurações de verificação de implantação for configurada a opção para avisar se as coleções que têm servidores do sistema de sites, se a coleção exceder o valor do tamanho padrão ou se a coleção contiver um servidor, o Assistente de Implantação de Software exibirá um aviso de alto risco. Você deve concordar em criar uma implantação de alto risco e uma mensagem de status de auditoria é criada.  
+        >    - 如果集合包含站点系统服务器，而你在部署验证设置中配置为阻止具有站点系统服务器的集合，则将出现错误且无法继续操作。    
+        >    - 如果集合包含站点系统服务器，而你在部署验证设置中配置为在集合具有站点系统服务器、超过默认大小值或包含服务器时发出警告，则部署软件向导将显示高风险警告。 你必须同意创建高风险部署，这时将创建审核状态消息。  
 
-6.  Na página Anel de Implantação, defina as seguintes configurações:  
+6.  在“部署环”页上配置下列设置：  
 
-    -   **Especificar o estado de preparação do Windows ao qual este plano de serviço deve ser aplicado**: selecione um dos seguintes:  
+    -   **指定此服务维护服务计划将应用到的 Windows 就绪状态**：选择下列项之一：  
 
-        -   **Pronto para Liberação (Branch Atual)**: no modelo de serviço CB, as atualizações de recursos estão disponíveis assim que são lançadas pela Microsoft.
+        -   **可以发布 (Current Branch)**：在 CB 服务模型中，功能更新在 Microsoft 发布后便可使用。
 
-        -   **Pronto para Negócios (Branch Atual para Negócios)**: o branch de manutenção CBB normalmente é usado para a implantação ampla. Os clientes do Windows 10 no branch de manutenção do CBB recebem a mesma compilação do Windows 10 que aqueles no branch de manutenção do CB, mas em um momento posterior.
+        -   **可用于业务 (Current Branch for Business)**：CBB 服务分支通常用于广泛部署。 CBB 服务分支中的 Windows 10 客户端会收到与 CB 服务分支中相同的 Windows 10 内部版本，只是时间稍晚。
 
-        Para saber mais sobre manutenção de ramificações e quais opções são melhores para você, veja [Manutenção de ramificações](https://technet.microsoft.com/itpro/windows/manage/waas-overview#servicing-branches).
+        有关维护分支和最适合你的选项的详细信息，请参阅[维护分支](https://technet.microsoft.com/itpro/windows/manage/waas-overview#servicing-branches)。
 
-    -   **Por quantos dias você gostaria de aguardar após a publicação pela Microsoft de uma nova atualização antes de implantá-la em seu ambiente**: o Configuration Manager avalia se inclui uma atualização na implantação, caso a data atual seja posterior à data de lançamento, somada ao número de dias que você definir para essa configuração.
+    -   **Microsoft 发布新升级后，希望等待多少天再在新环境中进行部署**：如果当前日期晚于发布日期加上为此设置配置的天数，Configuration Manager 将评估是否将升级包含在部署中。
 
-    -   Em uma versão anterior à 1602 do Configuration Manager, clique em **Visualizar** para exibir as atualizações do Windows 10 associadas ao estado de preparação.  
+    -   在 Configuration Manager 版本 1602 之前，单击“预览”可查看与准备情况状态关联的 Windows 10 更新。  
 
-    Para obter mais informações, consulte [Branches de manutenção](https://technet.microsoft.com/itpro/windows/manage/waas-overview#servicing-branches).
-7.  A partir da versão 1602 do Configuration Manager, na página Atualizações, configure os critérios de pesquisa para filtrar as atualizações que serão adicionadas ao plano de serviço. Somente as atualizações que atendem aos critérios especificados serão adicionadas à implantação associada.  
+    有关详细信息，请参阅[服务分支](https://technet.microsoft.com/itpro/windows/manage/waas-overview#servicing-branches)。
+7.  从 Configuration Manager 版本 1602 开始，在“升级”页面上配置搜索条件可筛选将添加到服务计划的升级。 只有满足指定条件的升级项才会添加到关联部署中。  
 
-     Clique em **Visualizar** para exibir as atualizações que atendem aos critérios especificados.  
+     单击“预览”可查看符合指定条件的升级。  
 
-8.  Na página Agendamento da Implantação, defina as seguintes configurações:  
+8.  在“部署计划”页上配置下列设置：  
 
-    -   **Avaliação do agendamento**: especifique se o Configuration Manager avalia o tempo disponível e os prazos de instalação usando UTC ou a hora local do computador que executa o console do Configuration Manager.  
+    -   计划评估：指定 Configuration Manager 是使用 UTC 还是使用运行 Configuration Manager 控制台的计算机的本地时间来计算可用的时间和安装截止时间。  
 
         > [!NOTE]  
-        >  Quando você seleciona a hora local e seleciona **O mais breve possível** para o **Tempo disponível do software** ou o **Prazo de instalação**, a hora atual no computador que executa o console do Configuration Manager é usada para avaliar quando as atualizações estarão disponíveis ou quando serão instaladas em um cliente. Se o cliente estiver em um fuso horário diferente, essas ações ocorrerão quando o tempo do cliente atingir o tempo de avaliação.  
+        >  选择本地时间，并为“软件可用时间”或“安装截止时间”选择“尽快”时，将使用运行 Configuration Manager 控制台的计算机上的当前时间来计算更新可用的时间或在客户端上安装更新的时间。 如果客户端位于其他时区，当客户端的时间达到评估时间时将发生这些操作。  
 
-    -   **Tempo disponível do software**: selecione uma das configurações a seguir para especificar quando as atualizações de software estão disponíveis aos clientes:  
+    -   软件可用时间：选择以下设置之一以指定向客户端提供软件更新的时间：  
 
-        -   **O mais breve possível**: selecione essa configuração para disponibilizar as atualizações de software incluídas na implantação aos computadores cliente o mais breve possível. Quando você cria a implantação com essa configuração selecionada, o Configuration Manager atualiza a política de cliente. Então, no próximo ciclo de sondagem da política do cliente, os clientes ficam informados da implantação e podem obter as atualizações disponíveis para instalação.  
+        -   尽快：选择此设置以尽快向客户端计算机提供部署中所包括的软件更新。 创建部署并选择此设置后，Configuration Manager 将更新客户端策略。 然后在下一个客户端策略轮询周期，客户端将注意部署并且可以获得可安装的更新。  
 
-        -   **Horário específico**: selecione essa configuração para disponibilizar as atualizações de software incluídas na implantação aos computadores cliente, em uma data e hora específica. Quando você cria a implantação com essa configuração habilitada, o Configuration Manager atualiza a política de cliente. Em seguida, no próximo ciclo de sondagem de política do cliente, os clientes são informados da implantação. No entanto, as atualizações de software na implantação não estão disponíveis para instalação até após a data e hora configuradas.  
+        -   特定时间：选择此设置以在特定日期和时间向客户端计算机提供部署中所包括的软件更新。 创建部署并启用此设置后，Configuration Manager 将更新客户端策略。 然后在下一个客户端策略轮询周期，客户端将注意部署。 但是，直到过了配置的日期和时间，才可以安装部署中的软件更新。  
 
-    -   **Prazo de instalação**: selecione uma das seguintes configurações para especificar o prazo de instalação das atualizações de software na implantação:  
+    -   安装截止时间：选择以下设置之一以指定部署中的软件更新的安装截止时间：  
 
-        -   **O mais breve possível**: selecione essa configuração para instalar automaticamente as atualizações de software na implantação o mais breve possível.  
+        -   尽快：选择此设置以尽快自动安装部署中的软件更新。  
 
-        -   **Horário específico**: selecione essa configuração para instalar automaticamente as atualizações de software na implantação, em uma data e hora específica. O Configuration Manager determina o prazo para instalar as atualizações de software, adicionando o intervalo **Horário específico** configurado para o **Tempo disponível do software**.  
+        -   特定时间：选择此设置以在特定日期和时间自动安装部署中的软件更新。 通过将已配置的“特定时间”间隔添加到“软件可用时间”，Configuration Manager 可确定安装软件更新的截止时间。  
 
             > [!NOTE]  
-            >  O prazo real da instalação é o prazo exibido, mais um período de tempo aleatório de até 2 horas. Isso reduz o impacto potencial de todos os computadores cliente na coleção de destino que está instalando as atualizações na implantação ao mesmo tempo.  
+            >  实际安装截止时间是显示的截止时间加上随机的一段时间（最多为 2 小时）。 这可以减少目标集合中同时在部署中安装软件更新的所有客户端计算机的潜在影响。  
             >   
-            >  É possível definir a configuração do cliente **Agente de Computador** , **Desativar data limite aleatória** , para desabilitar o atraso de aleatoriedade da instalação das atualizações necessárias. Para obter mais informações, consulte [Computer Agent](../../core/clients/deploy/about-client-settings.md#computer-agent).  
+            >  你可以配置“计算机代理”  客户端设置，“禁用截止时间随机化”  ，以对所需的更新禁用安装随机化延迟。 有关详细信息，请参阅 [Computer Agent](../../core/clients/deploy/about-client-settings.md#computer-agent)。  
 
-9. Na página Experiência do Usuário, defina as seguintes configurações:  
+9. 在“用户体验”页上，请配置下列设置：  
 
-    -   **Notificações de usuário**: especifique se deseja exibir a notificação das atualizações no Centro de Software no computador cliente no **Tempo disponível do software** configurado e se deseja exibir as notificações de usuário nos computadores cliente.  
+    -   **用户通知**：指定是否于配置的“软件可用时间”  在客户端计算机上的软件中心中显示更新通知，以及是否在客户端计算机上显示用户通知。  
 
-    -   **Comportamento da data limite**: especifique o comportamento que deve ocorrer na data limite da implantação de atualização. Especifique se deseja instalar as atualizações na implantação. Especifique também se o sistema deve ser reiniciado após a instalação da atualização, independentemente de uma janela de manutenção configurada. Para obter mais informações sobre janelas de manutenção, consulte [Como usar janelas de manutenção](../../core/clients/manage/collections/use-maintenance-windows.md).  
+    -   **截止时间行为**：指定到达更新部署的截止时间时要发生的行为。 指定是否在部署中安装更新。 另外，指定是否在安装更新后执行系统重启而不考虑配置的维护时段。 有关维护时段的详细信息，请参阅[如何使用维护时段](../../core/clients/manage/collections/use-maintenance-windows.md)。  
 
-    -   **Comportamento de reinicialização do dispositivo**: especifique se uma reinicialização do sistema em servidores e estações de trabalho deve ser suprimida depois que as atualizações são instaladas e se uma reinicialização do sistema é necessária para concluir a instalação.  
+    -   **设备重新启动行为**：指定安装更新后是否在服务器和工作站上抑制系统重启，以及是否需要重启系统以完成安装。  
 
-    -   **Manuseio de filtro de gravação para dispositivos Windows Embedded**: ao implantar atualizações em dispositivos Windows Embedded com filtro de gravação habilitado, é possível especificar que a atualização seja instalada na sobreposição temporária e que as alterações sejam confirmadas mais tarde, na data limite da instalação ou durante uma janela de manutenção. Ao confirmar as alterações na data limite da instalação ou durante uma janela de manutenção, é necessário reinicializar. Dessa forma, as alterações permanecem no dispositivo.  
-
-        > [!NOTE]  
-        >  Ao implantar uma atualização em um dispositivo Windows Embedded, verifique se o dispositivo é membro de uma coleção com uma janela de manutenção configurada.  
-
-10. Na página do Pacote de Implantação, selecione um pacote de implantação existente ou configure as seguintes definições para criar um novo pacote de implantação:  
-
-    1.  **Nome**: especifique o nome do pacote de implantação. Deve ser um nome exclusivo que descreva o conteúdo do pacote. Ele é limitado a 50 caracteres.  
-
-    2.  **Descrição**: especifique uma descrição que forneça informações sobre o pacote de implantação. A descrição é limitada a 127 caracteres.  
-
-    3.  **Origem do pacote**: especifica o local dos arquivos de origem de atualização do software.  Digite um caminho de rede para o local de origem, por exemplo, **\\\servidor\nome do compartilhamento\caminho**ou clique em **Procurar** para encontrar o local na rede. É necessário criar a pasta compartilhada para os arquivos de origem do pacote de implantação antes de ir para a próxima página.  
+    -   **Windows Embedded 设备的写入筛选器处理**：将更新部署到启用了写入筛选器的 Windows Embedded 设备时，你可以指定将更新安装在临时覆盖区上并稍后提交更改，或者在安装截止时或在维护时段内提交更改。 如果在安装截止时或在维护时段内提交更改，则需要重新启动，而且更改将保留在设备上。  
 
         > [!NOTE]  
-        >  O local de origem do pacote de implantação especificado não poderá ser usado por outro pacote de implantação de software.  
+        >  将更新部署到 Windows Embedded 设备时，确保设备是配置了维护时段的集合的成员。  
+
+10. 在“部署包”页上，选择现有部署包，或者配置以下设置以创建新部署包：  
+
+    1.  名称：指定部署包的名称。 这必须是描述包内容的唯一名称。 它被限制为不超过 50 个字符。  
+
+    2.  说明：指定提供有关该部署包的信息的说明。 该说明仅限于 127 个字符。  
+
+    3.  包源：指定软件更新源文件的位置。  键入源位置的网络路径，例如 **\\\server\sharename\path**，或单击“浏览”来查找网络位置。 在进入到下一页之前，必须为部署包源文件创建共享文件夹。  
+
+        > [!NOTE]  
+        >  其他软件部署包不能使用你指定的部署包源位置。  
 
         > [!IMPORTANT]  
-        >  A conta do computador Provedor de SMS e o usuário que estiver executando o assistente para baixar as atualizações de software deverão ter permissões NTFS de **Gravação** no local de download. É necessário restringir o acesso ao local de download com atenção, para reduzir o risco de ataques de adulteração nos arquivos de origem de atualização de software.  
+        >  SMS 提供程序计算机帐户和运行向导下载软件更新的用户都必须对下载位置具有“写” NTFS 权限。 你应该仔细限制对此下载位置的访问，以减少攻击者篡改软件更新源文件的风险。  
 
         > [!IMPORTANT]  
-        >  Será possível alterar o local de origem do pacote nas propriedades do pacote de implantação depois que o Configuration Manager criar o pacote de implantação. Mas ao fazer isso, é necessário primeiro copiar o conteúdo da fonte da origem do pacote para o seu novo local de origem.  
+        >  在 Configuration Manager 创建部署包之后，可在部署包属性中更改包源位置。 但是，如果你执行此操作，则必须首先将原始包源中的内容复制到新包源位置。  
 
-    4.  **Prioridade de envio**: especifique a prioridade de envio do pacote de implantação. O Configuration Manager usa a prioridade de envio do pacote de implantação quando envia o pacote para pontos de distribuição. Os pacotes de implantação são enviados por ordem de prioridade: Alta, Média, ou Baixa. Pacotes com prioridades idênticas são enviados na ordem em que foram criados. Se não houver uma lista de pendências, o pacote será processado imediatamente, não importando qual seja a prioridade.  
+    4.  发送优先级：指定部署包的发送优先级。 Configuration Manager 在将包发送到分发点时将使用部署包的发送优先级。 部署包按优先级顺序发送：高、中或低。 具有相同优先级的包按照其创建顺序发送。 如果没有囤积，则将立即处理包，而不考虑其优先级。  
 
-11. Na página Pontos de Distribuição, especifique os pontos de distribuição ou grupos de pontos de distribuição que hospedarão os arquivos de atualização. Para obter mais informações sobre pontos de distribuição, consulte [Configurar um ponto de distribuição](/sccm/core/servers/deploy/configure/install-and-configure-distribution-points#bkmk_configs).
+11. 在“分发点”页上，指定将承载更新文件的分发点或分发点组。 有关分发点的详细信息，请参阅[配置分发点](/sccm/core/servers/deploy/configure/install-and-configure-distribution-points#bkmk_configs)。
 
     > [!NOTE]  
-    >  A página está disponível somente quando você cria um novo pacote de implantação de atualização de software.  
+    >  只有当你在创建新的软件更新部署包时才能使用本页。  
 
-12. Na página Local de Download, especifique se deseja baixar os arquivos de atualização da Internet ou de sua rede local. Defina as seguintes configurações:  
+12. 在“下载位置”页上，指定是从 Internet 还是从本地网络下载更新文件。 配置下列设置：  
 
-    -   **Baixar atualizações de software da Internet**: selecione essa configuração para baixar as atualizações de um local específico na Internet. Essa configuração é habilitada por padrão.  
+    -   **从 Internet 下载软件更新**：选择此设置以从 Internet 上的指定位置下载更新。 默认情况下将启用此设置。  
 
-    -   **Baixar atualizações de software de um local na rede local**: selecione essa configuração para baixar as atualizações de um diretório local ou de uma pasta compartilhada. Essa configuração é útil quando o computador que executa o assistente não tem acesso à Internet. Qualquer computador com acesso à Internet pode baixar preliminarmente as atualizações e armazená-las em um local na rede local que é acessível pelo computador que executa o assistente.  
+    -   **从本地网络上的位置下载软件更新**：选择此设置以从本地目录或共享的文件夹下载更新。 当运行向导的计算机无法访问 Internet 时，此设置很有用。 能够访问 Internet 的任何计算机可以先下载更新，然后将它们存储在可从运行向导的计算机中访问的本地网络上的某个位置。  
 
-13. Na página Seleção de Idioma, selecione os idiomas nos quais as atualizações selecionadas serão baixadas. As atualizações só serão baixadas se estiverem disponíveis nos idiomas selecionados. Atualizações não específicas do idioma são sempre baixadas. Por padrão, o assistente seleciona os idiomas que você configurou nas propriedades de ponto de atualização de software. Pelo menos um idioma deve ser selecionado para ir para a próxima página. Ao selecionar apenas os idiomas sem suporte de uma atualização, o download da atualização falhará.  
+13. 在“语言选择”页上，为已选定要下载的更新选择语言。 只有在提供了与所选语言对应的更新时才下载更新。 始终会下载非特定于语言的更新。 默认情况下，向导会选择你已在软件更新点的属性中配置的语言。 在继续进入下一页之前，必须选择至少一种语言。 如果仅选择更新不支持的语言，则更新的下载将会失败。  
 
-14. Na página Resumo, examine as configurações e clique em **Avançar** para criar o plano de serviço.  
+14. 在“摘要”页上查看设置，然后单击“下一步”  以创建维护服务计划。  
 
- Depois de concluir o assistente, o plano de serviço será executado. Isso adicionará as atualizações que atendem aos critérios especificados a um grupo de atualização de software, baixará as atualizações na biblioteca de conteúdo no servidor do site, distribuirá as atualizações aos pontos de distribuição configurados e implantará o grupo de atualizações de software nos clientes da coleção de destino.  
+ 完成向导后，将会运行维护服务计划。 它会将符合指定条件的更新添加到软件更新组中、将更新下载到站点服务器上的内容库、将更新分发到已配置的分发点，然后将软件更新组部署到目标集合中的客户端。  
 
-##  <a name="BKMK_ModifyServicingPlan"></a> Modificar um plano de serviço  
-Depois de criar um plano de serviço básico no painel de serviço do Windows 10 ou precisar alterar as configurações de um plano de serviço existente, é possível ir para as propriedades do plano de serviço.
+##  <a name="BKMK_ModifyServicingPlan"></a> 修改维护服务计划  
+从 Windows 10 维护服务仪表板创建基本维护服务计划后，或需要更改现有维护服务计划的设置时，可以转到维护服务计划属性。
 
 > [!NOTE]
-> Você pode definir configurações nas propriedades do plano de manutenção que não estão disponíveis no assistente ao criar o plano de manutenção. O assistente usa as configurações padrão para as configurações do seguintes itens: baixar as configurações, configurações de implantação e alertas.  
+> 创建维护服务计划时，可在向导中不可用的维护计划的属性中配置设置。 向导对以下设置使用默认设置：下载设置、部署设置和警报。  
 
-Use o procedimento a seguir para modificar as propriedades de um plano de serviço.  
+使用以下过程来修改维护服务计划的属性。  
 
-#### <a name="to-modify-the-properties-of-a-servicing-plan"></a>Para modificar as propriedades de um plano de serviço  
+#### <a name="to-modify-the-properties-of-a-servicing-plan"></a>修改维护服务计划的属性  
 
-1.  No console do Configuration Manager, clique em **Biblioteca de Software**.  
+1.  在 Configuration Manager 控制台中，单击“软件库” 。  
 
-2.  No espaço de trabalho Biblioteca de Software, expanda **Serviço do Windows 10**, clique em **Planos de Serviço**e selecione o plano de serviço que deseja modificar.  
+2.  在“软件库”工作区中，展开“Windows 10 维护服务” ，单击“维护服务计划” ，然后选择要修改的维护服务计划。  
 
-3.  Na guia **Início** , clique em **Propriedades** para abrir as propriedades do plano de serviço selecionado.
+3.  在“主页”  选项卡上，单击“属性”  以打开所选维护服务计划的属性。
 
-    As seguintes configurações estão disponíveis nas propriedades de plano de manutenção, que não foram configuradas no assistente:
+    以下设置可在向导中未配置的维护服务计划属性中使用：
 
-    **Configurações de Implantação**: na guia Configurações de Implantação, defina as seguintes configurações:  
+    **部署设置**：在“部署设置”选项卡上，配置以下设置：  
 
-    -   **Tipo de implantação**: especifique o tipo de implantação para a implantação de atualização do software. Selecione **Necessário** para criar uma implantação de atualização de software obrigatória na qual as atualizações de software são instaladas automaticamente em clientes antes do prazo de uma instalação configurada. Selecione **Disponível** para criar uma implantação de atualização de software opcional que esteja disponível para que os usuários instalem do Centro de Software.  
+    -   “部署类型”：指定软件更新部署的部署类型。 选择“必需”以创建强制性软件更新部署，部署会在配置的安装截止时间之前在客户端上自动安装软件更新。 选择“可用”以创建可供用户从软件中心中安装的可选软件更新部署。  
 
         > [!IMPORTANT]  
-        >  Depois de criar a implantação de atualização de software, você não poderá alterar o tipo de implantação.  
+        >  创建软件更新部署之后，你稍后无法更改部署的类型。  
 
         > [!NOTE]  
-        >  Um grupo de atualização de software implantado como **Obrigatório** será baixado em segundo plano e atenderá às configurações do BITS, se configurado.  
-        > No entanto, os grupos de atualização de software implantados como **Disponíveis** serão baixados em primeiro plano e ignorarão as configurações de BITS.  
+        >  部署为“所需”的软件更新组将在后台下载，并且享有 BITS 设置（如果配置）。  
+        > 但是，部署为“可用”的软件更新组将在前台下载，并且将忽略 BITS 设置。  
 
-    -   **Usar Wake-on-LAN para ativar clientes para implantações obrigatórias**: especifique se o Wake on LAN deve ser habilitado no prazo para enviar pacotes de ativação para os computadores que exigem uma ou mais atualizações de software na implantação. Todos os computadores que estão no modo de suspensão no momento da instalação serão ativados para que a instalação da atualização de software seja iniciada. Clientes que estão no modo de suspensão e que não necessitam de atualizações de software na implantação não são iniciados. Por padrão, essa configuração não está habilitada e está disponível somente quando **Tipo de implantação** está definido como **Necessário**.  
+    -   “使用 LAN 唤醒来唤醒所需部署的客户端”：指定在截止时间是否启用 LAN 唤醒，以将唤醒数据包发送到需要部署中的一个或多个软件更新的计算机。 在安装截止时间处于睡眠模式的任何计算机将被唤醒，以便软件更新安装可以启动。 处于睡眠模式且不需要部署中的任何软件更新的客户端不会启动。 默认情况下，此设置未启用，并且只有将“部署类型”设置为“必需”时才可用。  
 
         > [!WARNING]  
-        >  Para usar essa opção, os computadores e as redes devem ser configurados para Wake on LAN.  
+        >  必须针对“LAN 唤醒”配置计算机和网络，然后才能使用此选项。  
 
-    -   **Nível de detalhe**: especifique o nível de detalhe para as mensagens de estado que são relatadas pelos computadores cliente.  
+    -   “详细信息级别”：指定客户端计算机报告的状态消息的详细信息级别。  
 
-    **Configurações de Download**: na guia Configurações de Download, defina as seguintes configurações:  
+    **下载设置**：在“下载设置”选项卡上，配置以下设置：  
 
-    - Especifique se o cliente irá baixar e instalar as atualizações de software quando estiver conectado a uma rede lenta ou usando um local de conteúdos de fallback.  
+    - 指定当客户端连接到慢速网络或正在使用回退内容位置时是否将下载和安装软件更新。  
 
-    - Especifique se o cliente deve baixar e instalar as atualizações de software por meio de um ponto de distribuição de fallback quando o conteúdo das atualizações de software não está disponível ou de um ponto de distribuição preferencial.  
+    - 指定当软件更新的内容在首选分发点上不可用时客户端是否下载和安装回退分发点中的软件更新。  
 
-    -   **Permitir que os clientes compartilhem conteúdo com outros clientes na mesma sub-rede**: especifique se deseja habilitar o uso do BranchCache para downloads de conteúdo. Para obter mais informações sobre o BranchCache, consulte [Fundamental concepts for content management (Conceitos fundamentais para o gerenciamento de conteúdo)](../../core/plan-design/hierarchy/fundamental-concepts-for-content-management.md#branchcache).  
+    -   **允许客户端与同一子网上的其他客户端共享内容**：指定是否为内容下载启用 BranchCache。 有关 BranchCache 的详细信息，请参阅[内容管理的基本概念](../../core/plan-design/hierarchy/fundamental-concepts-for-content-management.md#branchcache)。  
 
-    -   Especifique se os clientes deverão baixar as atualizações de software do Microsoft Update se elas não estiverem disponíveis nos pontos de distribuição.
+    -   指定在分发点上没有软件更新的情况下是否让客户端从 Microsoft 更新下载软件更新。
         > [!IMPORTANT]
-        > Não use essa configuração para atualizações de serviço do Windows 10. O Configuration Manager (pelo menos até a versão 1610) não baixará as atualizações de serviço do Windows 10 do Microsoft Update.
+        > 不要将此设置用于 Windows 10 维护服务更新。 Configuration Manager（至少到版本 1610）将无法从 Microsoft 更新下载 Windows 10 维护服务更新。
 
-    -   Especifique se os clientes têm permissão para baixar após o prazo de uma instalação quando usam conexão de Internet limitada. Provedores de Internet ocasionalmente cobram por quantidade de dados que você envia e recebe quando está em uma conexão de Internet limitada.   
+    -   指定是否允许客户端在安装截止日期之后下载内容（如果客户端使用按流量计费的 Internet 连接）。 Internet 提供商有时根据你在按流量计费的 Internet 连接上发送和接收的数据量计费。   
 
-    **Alertas**: na guia Alertas, configure como o Configuration Manager e o System Center Operations Manager gerarão alertas para essa implantação. Você só pode configurar alertas quando o **Tipo de implantação** está definido como **Obrigatório** na página Configurações de Implantação.  
+    **警报**：在“警报”选项卡上，配置 Configuration Manager 和 System Center Operations Manager 为此部署生成警报的方式。 只有在“部署设置”页上将“部署类型”  设置为“必需”  时，才可以配置警报。  
 
     > [!NOTE]  
-    >  Você pode verificar os alertas de atualizações de software recentes no nó **Atualizações de Software** no espaço de trabalho **Biblioteca de Software** .  
-
+    >  你可以从“软件库”  工作区的“软件更新”  节点中查看最新软件更新警报。  

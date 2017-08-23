@@ -1,55 +1,51 @@
 ---
-title: "Exibir inventário de hardware| Microsoft Docs | Gerenciador de Recursos"
-description: "Usar o Gerenciador de Recursos para exibir o inventário de hardware no System Center Configuration Manager."
+title: "查看硬件清单 | Microsoft Docs | 资源浏览器"
+description: "使用资源浏览器查看 System Center Configuration Manager 中的硬件清单。"
 ms.custom: na
 ms.date: 01/03/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
-ms.technology:
-- configmgr-other
+ms.technology: configmgr-other
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 375912f5-436d-4315-bdbe-d77afee6c9f3
-caps.latest.revision: 7
+caps.latest.revision: "7"
 author: andredm7
 ms.author: andredm
 manager: angrobe
-ms.translationtype: Human Translation
-ms.sourcegitcommit: 9c5d1e48b76392beaf54b5377c69b648537e86f8
 ms.openlocfilehash: e39fa60a5d215fa1b0a98d4463058497e63a4d4f
-ms.contentlocale: pt-br
-ms.lasthandoff: 05/29/2017
-
-
+ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
+ms.translationtype: HT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 08/07/2017
 ---
-# <a name="how-to-use-resource-explorer-to-view-hardware-inventory-in-system-center-configuration-manager"></a>Como usar o Gerenciador de Recursos para exibir o inventário de hardware no System Center Configuration Manager
+# <a name="how-to-use-resource-explorer-to-view-hardware-inventory-in-system-center-configuration-manager"></a>如何使用资源浏览器来查看 System Center Configuration Manager 中的硬件清单
 
-*Aplica-se a: System Center Configuration Manager (Branch Atual)*
+*适用范围：System Center Configuration Manager (Current Branch)*
 
-Use o Gerenciador de Recursos no System Center Configuration Manager para exibir informações sobre o inventário de hardware que foi coletado dos clientes em sua hierarquia.  
+使用 System Center Configuration Manager 中的资源浏览器查看从层次结构中的客户端收集的硬件清单的相关信息。  
 
 > [!NOTE]  
->  Gerenciador de recursos não exibirá nenhum inventário dados até que um ciclo de inventário de hardware tenha executado no cliente que você estão se conectando.  
+>  资源浏览器不会显示数据的硬件清单周期已在运行之前客户端上您要连接到任何库存量。  
 
- O Gerenciador de Recursos contém as seguintes seções relacionadas ao inventário de hardware:  
+ 资源浏览器具有与硬件清单相关的以下部分：  
 
--   **Hardware** – contém o inventário de hardware mais recente coletado do dispositivo cliente especificado.  **Status da Estação de Trabalho** contém a hora e data em que o dispositivo executou um inventário de hardware pela última vez.  
+-   **硬件** - 包含从指定客户端设备收集的最新的硬件清单。  **工作站状态**具有设备上次执行硬件清单的日期和时间。  
 
--   **Histórico de Hardware** – contém um histórico de itens inventariados que foram alterados desde a execução do último inventário de hardware. Cada item contém um nó **Atual** e um ou mais nós de *<data\>*. É possível comparar as informações do nó atual com um dos nós históricos para descobrir itens que foram alterados.  
+-   **硬件历史记录** - 包含自上次执行硬件清单以来已更改的清单项的历史记录。 每项都包含一个“当前”节点以及一个或多个 *<date\>* 节点。 可以将当前节点中的信息与某个历史节点相比较，以查找已更改的项。  
 
     > [!NOTE]  
-    >  O Configuration Manager retém o histórico de inventário de hardware para o número de dias que você especificar na tarefa de manutenção do site **Excluir históricos de inventários antigos**  
+    >  Configuration Manager 会按“删除过期的清单历史记录”站点维护任务中指定的天数保留硬件清单历史记录  
 
 > [!NOTE]  
->  Para obter informações sobre como exibir o inventário de hardware de clientes que executam Linux e UNIX, veja [Como monitorar clientes para servidores Linux e UNIX no System Center Configuration Manager](../../../../core/clients/manage/monitor-clients-for-linux-and-unix-servers.md).  
+>  若要了解如何在运行 Linux 和 UNIX 的客户端查看硬件清单，请参阅 [如何在 System Center Configuration Manager 中监视 Linux 和 UNIX 服务器的客户端](../../../../core/clients/manage/monitor-clients-for-linux-and-unix-servers.md)。  
 
-### <a name="how-to-run-resource-explorer-from-the-configuration-manager-console"></a>Como executar o Gerenciador de Recursos no console do Configuration Manager  
+### <a name="how-to-run-resource-explorer-from-the-configuration-manager-console"></a>如何从 Configuration Manager 控制台运行资源浏览器  
 
-1.  No console do Configuration Manager, escolha **Ativos e Conformidade** > **Dispositivos** ou abra uma coleção que exibe os dispositivos.  
+1.  在 Configuration Manager 控制台中，选择“资产和符合性” > “设备”，或打开显示设备的任何集合。  
 
-3.  Escolha o computador que contém o inventário que você deseja exibir e, em seguida, na guia **Início** > grupo **Dispositivos**, escolha **Iniciar** >  **Gerenciador de Recursos**.   
+3.  选择包含想要查看的清单的计算机，然后在“主页”选项卡 >“设备”组中，选择“启动” >  “资源浏览器”。   
 
-4.  Clique com o botão direito do mouse em qualquer item do painel direito da janela **Gerenciador de Recursos** e escolha **Propriedades** para abrir a caixa de diálogo *Propriedades do <nome do item\>***** para exibir as informações de inventário coletadas em um formato mais legível.  
-
+4.  右键单击“资源浏览器”窗口右窗格中的任意项，然后选择“属性”以打开 *<item name\>*“属性”对话框，以可读性更强的格式查看收集的清单信息。  
 

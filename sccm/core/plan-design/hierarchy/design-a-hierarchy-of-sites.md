@@ -1,191 +1,187 @@
 ---
-title: "Projetar uma hierarquia de site – Configuration Manager | Microsoft Docs"
-description: "Compreenda as topologias disponíveis e as opções de gerenciamento para o System Center Configuration Manager para poder planejar a hierarquia do site."
+title: "设计站点层次结构 - Configuration Manager | Microsoft Docs"
+description: "了解 System Center Configuration Manager 的可用拓扑和管理选项以便你可以规划站点层次结构。"
 ms.custom: na
 ms.date: 6/16/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
-ms.technology:
-- configmgr-other
+ms.technology: configmgr-other
 ms.tgt_pltfrm: na
 ms.topic: get-started-article
 ms.assetid: 07ce872e-1558-42ad-b5ad-582c5b1bdbb4
-caps.latest.revision: 22
-caps.handback.revision: 0
+caps.latest.revision: "22"
+caps.handback.revision: "0"
 author: Brenduns
 ms.author: brenduns
 manager: angrobe
-ms.translationtype: Human Translation
-ms.sourcegitcommit: db673277d1cc2d24e8dba2439b2b1891c883ebd0
 ms.openlocfilehash: 4710b1b89eb50cb7bcf4c4ee50c12a96b6561bc9
-ms.contentlocale: pt-br
-ms.lasthandoff: 06/16/2017
-
-
+ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
+ms.translationtype: HT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 08/07/2017
 ---
-# <a name="design-a-hierarchy-of-sites-for-system-center-configuration-manager"></a>Criar uma hierarquia de sites para o System Center Configuration Manager
+# <a name="design-a-hierarchy-of-sites-for-system-center-configuration-manager"></a>设计 System Center Configuration Manager 的站点层次结构
 
-*Aplica-se a: System Center Configuration Manager (Branch Atual)*
+*适用范围：System Center Configuration Manager (Current Branch)*
 
-Antes de instalar o primeiro site de uma nova hierarquia do System Center Configuration Manager, é uma boa ideia compreender as topologias disponíveis para o Configuration Manager, os tipos de sites disponíveis e suas relações entre si e o escopo do gerenciamento que cada tipo de site fornece.
-Em seguida, após considerar as opções de gerenciamento de conteúdo que podem reduzir o número de sites que precisa instalar, você pode planejar uma topologia que atenda de maneira eficaz suas necessidades de negócios atuais e, posteriormente, possa ser expandida para gerenciar o crescimento futuro.  
+安装新的 System Center Configuration Manager 层次结构的第一个站点前，最好先了解 Configuration Manager 的可用拓扑、可用站点的类型及其彼此之间的关系以及每个站点类型提供的管理范围。
+然后，在考虑了可减少需安装的站点数的内容管理选项后，可以计划能够高效地为当前业务需求提供服务，并且可之后进行拓展以满足将来增长的需求的拓扑。  
 
 > [!NOTE]
-> Ao planejar uma nova instalação do Configuration Manager, esteja atento às [notas de versão]( /sccm/core/servers/deploy/install/release-notes) que detalham problemas atuais nas versões ativas. As notas de versão se aplicam a todas as ramificações do Configuration Manager.  No entanto, ao usar a [Ramificação do Technical Preview]( /sccm/core/get-started/technical-preview), você encontrará problemas específicos apenas a essa ramificação na documentação de cada versão do Technical Preview.  
+> 在计划安装新的 Configuration Manager 时，请熟悉[发行说明]( /sccm/core/servers/deploy/install/release-notes)，其中详细说明了活动版本中的当前问题。 此发行说明适用于 Configuration Manager 的所有分支。  但是，在使用[Technical Preview 分支]( /sccm/core/get-started/technical-preview)时，你将在每个版本的 Technical Preview 文档中发现仅针对该分支的问题。  
 
-##  <a name="bkmk_topology"></a> Topologia de hierarquia  
- Intervalo de topologias de hierarquia de um único site primário autônomo para um grupo de sites primários e secundários conectados com um site de administração central no site de nível superior (camada superior) da hierarquia.   O principal orientador do tipo e quantidade de sites que você usa em uma hierarquia é normalmente a quantidade e tipo de dispositivos aos quais você deve dar suporte, conforme o seguinte:   
+##  <a name="bkmk_topology"></a>层次结构拓扑  
+ 层次结构拓扑的范围从单一独立主站点一直到一组连接的主要和辅助站点，该组站点在层次结构顶级（顶层）站点处具有管理中心站点。   在层次结构中所用的站点类型和计数的关键驱动程序通常是你必须支持的设备的类型和数量，如下所示：   
 
- **Site primário autônomo:** use um site primário autônomo quando um único site primário puder dar suporte ao gerenciamento de todos os seus dispositivos e usuários (consulte [Números de tamanho e escala](/sccm/core/plan-design/configs/size-and-scale-numbers)). Essa topologia também é bem-sucedida quando as diferentes localizações geográficas de sua empresa podem ser atendidas com êxito por um único site primário.  Para ajudar a gerenciar o tráfego de rede, você pode usar pontos de gerenciamento preferenciais e uma infraestrutura de conteúdo cuidadosamente planejada (consulte [Conceitos fundamentais para o gerenciamento de conteúdo no System Center Configuration Manager](../../../core/plan-design/hierarchy/fundamental-concepts-for-content-management.md)).  
+ **独立主站点：**在单一主站点可支持所有设备和用户的管理时，使用独立主站点（请参阅[调整大小和扩展数量](/sccm/core/plan-design/configs/size-and-scale-numbers)）。 如果不同的地理位置可由单一主站点成功地提供服务，则该拓扑也成功。  若要帮助管理网络流量，可以使用首选的管理点和精心规划的内容基础结构（请参阅 [System Center Configuration Manager 中内容管理的基本概念](../../../core/plan-design/hierarchy/fundamental-concepts-for-content-management.md)）。  
 
- Benefícios dessa topologia incluem:  
+ 此拓扑的好处包括：  
 
--   Simplifica a sobrecarga administrativa.  
+-   简化管理开销。  
 
--   Simplifica a atribuição e detecção de recursos e serviços disponíveis de site do cliente.  
+-   简化可用资源和服务的客户端站点分配和发现。  
 
--   Elimina a possível latência que é introduzida pela replicação de banco de dados entre sites.
+-   消除站点之间的数据库复制可能引起的延迟。
 
--   Opção para expandir uma hierarquia primária autônoma em uma hierarquia maior com um site de administração central. Isso permite que você instale novos sites primários para expandir a escala de sua implantação.  
+-   此选项可以将独立的主层次结构扩展到更大的具有管理中心站点的层次结构。 这使你随后能够安装新主站点以扩展部署的规模。  
 
 
-**Site de administração central com um ou mais sites primários filho:** use essa topologia quando precisar de mais de um site primário para dar suporte ao gerenciamento de todos os seus dispositivos e usuários.  É necessário quando você precisa usar mais de um único site primário. Benefícios dessa topologia incluem:  
+**带有一个或多个子主站点的管理中心站点：**在你需要多个主站点支持所有设备和用户的管理时，使用此拓扑。  当需要使用多于一个主站点时需要。 此拓扑的好处包括：  
 
 
--   Dá suporte para até 25 sites primários que permite que você estenda a escala de sua hierarquia.  
+-   最多支持 25 个主站点，这样能够扩展层次结构的规模。  
 
--   Você sempre usará o site de administração central (a menos que reinstale seus sites). Essa é uma opção permanente. Não é possível desanexar um site filho primário para torná-lo um site primário autônomo.
+-   将始终使用管理中心站点（除非重新安装站点）。 这是永久性选项。 不能分离子主站点而将其变为独立主站点。
 
- As seções a seguir podem ajudar você a entender quando usar um site específico ou a opção de gerenciamento de conteúdo no lugar de um site adicional.  
+ 下列部分可帮助你理解何时使用特定站点或内容管理选项来替代其他站点。  
 
-##  <a name="BKMK_ChooseCAS"></a> Determinar quando usar um site de administração central  
- Use um site de administração central para definir configurações em toda a hierarquia e monitorar todos os sites e objetos na hierarquia. Esse tipo de site não gerencia clientes diretamente, mas coordena a replicação de dados entre sites, o que inclui a configuração de sites e clientes em toda a hierarquia.  
+##  <a name="BKMK_ChooseCAS"></a>确定何时使用管理中心站点  
+ 使用管理中心站点配置层次结构范围设置，以及监视层次结构中的所有站点和对象。 此站点类型不直接管理客户端，但它可协调站点间数据复制，其中包括整个层次结构中的站点和客户端的配置。  
 
-**As informações a seguir podem ajudar você a decidir quando instalar um site de administração central:**  
+**以下信息可帮助你决定何时安装管理中心站点：**  
 
--   O site da administração central é o site de nível superior em uma hierarquia.  
+-   管理中心站点是层次结构中的顶层站点。  
 
--   Ao configurar uma hierarquia que tem mais de um site primário, você deve instalar um site de administração central. Se você precisar imediatamente de dois ou mais sites primários, instale primeiro o site de administração central. Quando você já tiver um site primário e quiser instalar um site de administração central, deverá [expandir o site primário autônomo](/sccm/core/servers/deploy/install/prerequisites-for-installing-sites#bkmk_expand) para instalar o site de administração central. 
+-   在配置具有多个主站点的层次结构时，必须安装管理中心站点。 如果你立即需要两个或多个主站点，请先安装管理中心站点。 如果你已有主站点并想随后安装管理中心站点，则必须扩展独立主站点[](/sccm/core/servers/deploy/install/prerequisites-for-installing-sites#bkmk_expand)，以安装管理中心站点。 
 
--   O site de administração central oferece suporte a apenas sites primários como sites filho.  
+-   管理中心站点仅支持使用主站点作为子站点。  
 
--   O site de administração central não pode ter clientes atribuídos a ele.  
+-   无法为管理中心站点分配客户端。  
 
--   O site de administração central não dá suporte para funções de sistema de sites que dão suporte diretamente para clientes, como pontos de gerenciamento e pontos de distribuição.  
+-   管理中心站点不支持直接支持客户端（例如管理点和分发点）的站点系统角色。  
 
--   Você pode gerenciar todos os clientes na hierarquia e executar as tarefas de gerenciamento de site em qualquer site filho ao usar o console do Configuration Manager que está conectado ao site de administração central. Isso pode incluir a instalação de pontos de gerenciamento ou outras funções do sistema de sites em sites filho primários ou secundários.  
+-   在使用连接到管理中心站点的 Configuration Manager 控制台时，你可以管理层次结构中的所有客户端，并为任何子站点执行站点管理任务。 这可能包括在子级主站点或辅助站点安装管理点或其他站点系统角色。  
 
--   Ao usar um site de administração central, ele é o único lugar no qual é possível exibir dados de site de todos os sites em sua hierarquia. Esses dados incluem informações como dados de inventário e mensagens de status.  
+-   在使用管理中心站点时，只能在管理中心站点中看到层次结构中所有站点的站点数据。 此数据包括诸如清单数据和状态消息等信息。  
 
--   Você pode configurar operações de descoberta em toda a hierarquia no site de administração central ao atribuir métodos de descoberta a serem executados em sites individuais.  
+-   你可以从管理中心站点中通过将发现方法指派在单独的站点上运行，从而配置整个层次结构中的发现操作。  
 
--   Você pode gerenciar a segurança em toda hierarquia ao atribuir diferentes funções de segurança, escopos de segurança e coleções a diferentes usuários administrativos. Essas configurações se aplicam a cada site na hierarquia.  
+-   你可以通过将不同的安全角色、安全作用域和集合分配给不同的管理用户来管理整个层次结构中的安全性。 这些配置在层次结构中的每个站点上适用。  
 
--   Você pode configurar a replicação de arquivo e a de banco de dados para controlar a comunicação entre sites na hierarquia. Isso inclui o agendamento de replicação de banco de dados para dados de site e o gerenciamento de largura de banda para a transferência de dados baseados em arquivo entre sites.  
+-   你可以配置文件复制和数据库复制来控制层次结构中站点之间的通信。 这包括计划站点数据的数据库复制，以及管理用于站点之间基于文件的数据传输的带宽。  
 
-##  <a name="BKMK_ChoosePriimary"></a> Determinar quando usar um site primário  
- Use sites primários para gerenciar clientes. É possível instalar um site primário como um site primário filho abaixo do site de administração central ou como o primeiro site de uma nova hierarquia. Um site primário que é instalado como o primeiro site de uma hierarquia cria um site primário autônomo. Ambos os sites primários filho e os sites primários autônomos oferecem suporte a sites secundários como sites filho do site primário.  
+##  <a name="BKMK_ChoosePriimary"></a>确定何时使用主站点  
+ 使用主站点来管理客户端。 你可以在管理中心站点下面安装主站点以作为子主站点，也可以作为新层次结构的第一个站点。 安装为层次结构的第一个站点的主站点将创建独立主站点。 子主站点和独立主站点均支持辅助站点作为主站点的子站点。  
 
- Considere usar um site primário para qualquer um dos seguintes motivos:  
+ 出于以下任何原因而考虑使用主站点：  
 
--   Para gerenciar usuários e dispositivos.  
+-   要管理设备和用户。  
 
--   Para aumentar o número de dispositivos que você pode gerenciar com uma única hierarquia.  
+-   要增加设备的数目，你可以使用单一层次结构进行管理。  
 
--   Para fornecer um ponto adicional de conectividade para administração de sua implantação.  
+-   要为部署管理提供其他连接点。  
 
--   Para atender aos requisitos de gerenciamento organizacional. Por exemplo, pode ser necessário instalar um site primário em uma localização remota para gerenciar a transferência de conteúdo de implantação pela rede de largura de banda baixa. No entanto, com o System Center Configuration Manager você pode usar opções para restringir o uso de largura de banda de rede ao transferir dados para um ponto de distribuição. Essa capacidade de gerenciamento de conteúdo pode substituir a necessidade de instalar sites adicionais.  
+-   满足组织的管理要求。 例如，你可以在远程位置安装主站点来管理低带宽网络上的部署内容传输。 但是，利用 System Center Configuration Manager，你可以使用选项来限制将数据传输到分发点时的网络带宽使用量。 借助此内容管理功能，便不再需要安装其他站点。  
 
 
-**As informações a seguir podem ajudar você a decidir quando instalar um site primário:**  
+**以下信息帮助你决定何时安装主站点：**  
 
--   Um site primário pode ser um site primário autônomo ou um site primário filho em uma hierarquia maior. Quando um site primário é membro de uma hierarquia com um site de administração central, os sites usam a replicação de banco de dados para replicar dados entre os sites. Recomenda-se instalar um site primário autônomo somente se você precisa oferecer suporte a mais clientes e dispositivos que um único site primário pode dar suporte.  Depois de instalar um site primário autônomo, você pode expandi-lo para relatar para um novo site de administração central para escalar verticalmente sua implantação.  
+-   主站点可以是独立主站点或较大层次结构中的子主站点。 如果主站点是包含管理中心站点的层次结构的成员，则站点将使用数据库复制在站点之间复制数据。 除非你需要支持的客户端和设备数大于单一主站点可支持的数目，否则，请考虑安装独立主站点。  安装独立主站点后，可以将其扩展到可向新管理中心站点报告以扩展部署。  
 
--   Um site primário oferece suporte a somente um site de administração central como um site pai.  
+-   主站点仅支持使用管理中心站点作为父站点。  
 
--   Um site primário dá suporte somente a sites secundários como sites filho e também pode dar suporte a vários sites filho secundários.  
+-   主站点仅支持使用辅助站点作为子站点，并且还可以支持多个辅助子站点。  
 
--   Os sites primários são responsáveis pelo processamento de todos os dados do cliente em seus clientes atribuídos.  
+-   主站点负责处理为其分配的客户端中的所有客户端数据。  
 
--   Sites primários usam a replicação de banco de dados para se comunicar diretamente com seu site de administração central (o que é configurado automaticamente quando um novo site é instalado).  
+-   主站点使用数据库复制与其管理中心站点（在安装新站点时会自动配置）直接通信。  
 
-##  <a name="BKMK_ChooseSecondary"></a> Determinar quando usar um site secundário  
- Use sites secundários para gerenciar a transferência de dados de cliente e conteúdo de implantação em redes de baixa largura de banda.  
+##  <a name="BKMK_ChooseSecondary"></a>确定何时使用辅助站点  
+ 使用辅助站点管理跨低带宽网络的部署内容和客户端数据传输。  
 
- Gerencie um site secundário de um site de administração central ou do site primário pai direto do site secundário. Os sites secundários devem ser anexados ao site primário, e você não pode movê-los para um site pai diferente sem desinstalá-los, e depois reinstalá-los como um site filho abaixo do novo site primário.
+ 你可从管理中心站点或辅助站点的直接父主站点管理辅助站点。 辅助站点必须连接到主站点，并且你无法在不卸载这些辅助站点的情况下将它们移至不同的父站点，然后在新的主站点下将它们作为子站点重新安装。
 
-No entanto, você pode rotear o conteúdo entre dois sites secundários pares para ajudar a gerenciar a replicação baseada em arquivos de conteúdo de implantação. Para transferir os dados do cliente para um site primário, o site secundário usa replicação baseada em arquivo. Um site secundário também usa replicação de banco de dados para se comunicar com seu site primário pai.  
+但是，你可以在两个对等辅助站点之间进行内容路由，以便于管理部署内容的基于文件的复制。 为将客户端数据传输到主站点，辅助站点将使用基于文件的复制。 辅助站点还使用数据库复制与其父主站点进行通信。  
 
- Considere instalar um site secundário se alguma das seguintes condições se aplicar:  
+ 如果满足下列任何条件，请考虑安装辅助站点：  
 
--   Você não precisa de um ponto local de conectividade para um usuário administrativo.  
+-   管理用户不需要本地连接点时。  
 
--   Você deve gerenciar a transferência de conteúdo de implantação para sites inferiores na hierarquia.  
+-   必须管理指向层次结构中较低级别站点的部署内容的传输时。  
 
--   Você deve gerenciar informações de cliente que são enviadas para sites mais altos na hierarquia.  
+-   必须管理发送到层次结构中较高级别站点的客户端信息时。  
 
- Se não desejar instalar um site secundário e tiver clientes em locais remotos, considere usar o Windows BranchCache ou instalar pontos de distribuição que está habilitado para controle da largura de banda e agendamento. Você pode usar essas opções de gerenciamento de conteúdo com ou sem sites secundários, e eles podem ajudá-lo a reduzir o número de sites e servidores que você deve instalar. Para obter informações sobre opções de gerenciamento de conteúdo no Configuration Manager, consulte [Determinar quando usar as opções de gerenciamento de conteúdo](#BKMK_ChooseSecondaryorDP).  
+ 如果不希望安装辅助站点，并具有位于远程位置的客户端，请考虑使用 Windows BranchCache 或安装已为带宽控制和计划而启用的分发点。 可以使用以下具有或不具有辅助站点的内容管理选项，并且它们可以帮助减少必须安装的站点和服务器数量。 有关 Configuration Manager 中内容管理选项的信息，请参阅[确定何时使用内容管理选项](#BKMK_ChooseSecondaryorDP)。  
 
 
-**As informações a seguir podem ajudar você a decidir quando instalar um site secundário:**  
+**以下信息帮助你决定何时安装辅助站点：**  
 
--   Os sites secundários instalam automaticamente o SQL Server Express durante a instalação do site se uma instância local do SQL Server não estiver disponível.  
+-   如果 SQL Server 的本地实例不可用，则在站点安装过程中，辅助站点将自动安装 SQL Server Express。  
 
--   A instalação do site secundário é iniciada no console do Configuration Manager, em vez de executar a Instalação diretamente em um computador.  
+-   从 Configuration Manager 控制台启动辅助站点安装，而不是直接在计算机上运行安装程序。  
 
--   Os sites secundários usam um subconjunto das informações do banco de dados do site, o que reduz a quantidade de dados replicados pela replicação de banco de dados entre o site pai primário e site secundário.  
+-   辅助站点使用站点数据库中信息的子集，其减少了父主站点和辅助站点间数据库复制时产生的复制数据量。  
 
--   Os sites secundários oferecem suporte ao roteamento de conteúdo baseado em arquivo para outros sites secundários que têm um site primário pai em comum.  
+-   辅助站点支持将基于文件的内容路由至具有公用父主站点的其他辅助站点。  
 
--   As instalações do site secundário implantam automaticamente um ponto de gerenciamento e um ponto de distribuição que estão localizados no servidor do site secundário.  
+-   辅助站点安装将自动部署位于辅助站点服务器的管理点和分发点。  
 
-##  <a name="BKMK_ChooseSecondaryorDP"></a> Determinar quando usar as opções de gerenciamento de conteúdo  
- Se você tiver clientes em locais de rede remotos, considere usar uma ou mais opções de gerenciamento de conteúdo em vez de um site primário ou secundário. Geralmente, você pode remover a necessidade de instalar um site quando você usa o Windows BranchCache, configurar pontos de distribuição para controle de largura de banda ou copiar manualmente conteúdo para pontos de distribuição (conteúdo de pré-teste).  
+##  <a name="BKMK_ChooseSecondaryorDP"></a>确定何时使用内容管理选项  
+ 如果你具有设在远程网络位置的客户端，请考虑使用一个或多个内容管理选项而非一个主站点或辅助站点。 当你使用 Windows BranchCache、配置带宽控制分发点或手动将内容复制到分发点（预留内容）时，通常可以消除安装另一站点的需要。  
 
 
-**Considere a implantação de um ponto de distribuição em vez de instalar outro site se alguma das seguintes condições se aplicar:**  
+**如果满足下列任何条件，请考虑部署分发点（而非安装另一站点）：**  
 
--   Sua largura de banda de rede é suficiente para computadores cliente no local remoto para se comunicar com um ponto de gerenciamento para baixar política de cliente e enviar inventário, status do relatório e informações de descoberta.  
+-   对于远程位置的客户端计算机，你的网络带宽已足够与管理点进行通信以下载客户端策略、发送清单、报告状态和发现信息。  
 
--   O BITS (Serviço de Transferência Inteligente de Plano de Fundo) não fornece controle de largura de banda suficiente para suas necessidades de rede.  
+-   后台智能传输服务 (BITS) 提供的带宽控制不足以满足你的网络要求。  
 
- Para obter mais informações sobre as opções de gerenciamento de conteúdo do Configuration Manager, consulte [Conceitos fundamentais para o gerenciamento de conteúdo no System Center Configuration Manager](../../../core/plan-design/hierarchy/fundamental-concepts-for-content-management.md).  
+ 有关 Configuration Manager 中内容管理选项的详细信息，请参阅 [System Center Configuration Manager 中内容管理的基本概念](../../../core/plan-design/hierarchy/fundamental-concepts-for-content-management.md)。  
 
-##  <a name="bkmk_beyond"></a> Além da topologia de hierarquia  
- Além de uma topologia de hierarquia inicial, considere quais serviços ou funcionalidades estarão disponíveis em sites diferentes da hierarquia (funções do sistema de sites) e como as funcionalidades e configurações que afetam toda a hierarquia serão gerenciadas na sua infraestrutura. As considerações comuns a seguir são abordadas em tópicos separados. Elas são importantes porque podem influenciar ou ser influenciadas pelo seu design de hierarquia:  
+##  <a name="bkmk_beyond"></a>除层次结构拓扑之外  
+ 除了初始层次结构拓扑外，还需考虑不同站点的哪些服务或功能将可用（站点系统角色），以及如何在基础结构中管理层次结构范围的配置和功能。 以下常见的注意事项会在单独主题中进行介绍。 这些注意事项很重要，因为它们可影响层次结构设计或受层次结构设计影响：  
 
--   Quando estiver se preparando para [Gerenciar computadores e dispositivos com o System Center Configuration Manager](/sccm/core/clients/manage/manage-clients), considere se os dispositivos que você gerencia estão locais, na nuvem ou incluem dispositivos de usuários (BYOD).  Além disso, considere como você gerenciará dispositivos que têm suporte de diversas opções de gerenciamento, como computadores com Windows 10, que podem ser gerenciados diretamente pelo Configuration Manager ou por meio da integração com o Microsoft Intune.  
+-   当你准备[使用 System Center Configuration Manager 管理计算机和设备](/sccm/core/clients/manage/manage-clients)时，请考虑所管理的设备是在本地，在云中还是包括用户拥有的设备 (BYOD)。  此外，请考虑如何管理多个管理选项支持的设备，例如可以直接通过 Configuration Manager 或通过与 Microsoft Intune 进行集成管理的 Windows 10 计算机。  
 
--   Compreenda como a infraestrutura de rede disponível pode afetar o fluxo de dados entre locais remotos (consulte [Preparar o ambiente de rede para o System Center Configuration Manager](/sccm/core/plan-design/network/configure-firewalls-ports-domains)). Considere também onde os usuários e dispositivos que você gerencia estão localizados geograficamente e se eles acessam sua infraestrutura por meio do domínio corporativo ou da Internet.  
+-   了解可用网络基础结构可能会影响远程位置之间数据流的方式（请参阅[为 System Center Configuration Manager 准备网络环境](/sccm/core/plan-design/network/configure-firewalls-ports-domains)）。 同时考虑所管理的用户和设备的地理位置，以及它们是通过公司的域还是从 Internet 访问你的基础结构。  
 
--   Planeje uma infraestrutura de conteúdo que distribua com eficiência as informações que você implantar (arquivos e aplicativos) nos dispositivos gerenciados (consulte [Gerenciar conteúdo e infraestrutura de conteúdo no System Center Configuration Manager](../../../core/servers/deploy/configure/manage-content-and-content-infrastructure.md)).  
+-   规划用于将部署的信息（文件和应用）高效分发到所管理的设备的内容基础结构（请参阅 [System Center Configuration Manager 管理内容和内容基础结构](../../../core/servers/deploy/configure/manage-content-and-content-infrastructure.md)）。  
 
--   Determine quais [recursos e funcionalidades do System Center Configuration Manager](../../../core/plan-design/changes/features-and-capabilities.md) você planeja usar, as funções do sistema de sites ou infraestrutura do Windows que eles precisam e em quais sites, em uma hierarquia de vários sites, você poderá implantá-los para o uso mais eficiente de seus recursos de rede e de servidor.  
+-   确定计划使用的 [System Center Configuration Manager 的特性和功能](../../../core/plan-design/changes/features-and-capabilities.md)、站点系统角色或角色需要的 Windows 基础结构以及可能会选择在多站点层次结构中的哪些站点对它们进行部署以最有效地使用你的网络和服务器资源。  
 
--   Considere a segurança de dados e dispositivos, incluindo o uso de uma PKI. Consulte [Requisitos de certificado PKI para o System Center Configuration Manager](../../../core/plan-design/network/pki-certificate-requirements.md).  
+-   请考虑数据和设备的安全，包括对 PKI 的使用。 请参阅 [System Center Configuration Manager 的 PKI 证书要求](../../../core/plan-design/network/pki-certificate-requirements.md)。  
 
 
-**Examine os seguintes recursos para ver configurações específicas de sites:**  
+**查看以下用于站点特定配置的资源：**  
 
--   [Planejar o Provedor de SMS para o System Center Configuration Manager](../../../core/plan-design/hierarchy/plan-for-the-sms-provider.md)  
+-   [为 System Center Configuration Manager 规划 SMS 提供程序](../../../core/plan-design/hierarchy/plan-for-the-sms-provider.md)  
 
--   [Planejar o banco de dados do site para o System Center Configuration Manager](../../../core/plan-design/hierarchy/plan-for-the-site-database.md)  
+-   [为 System Center Configuration Manager 规划站点数据库](../../../core/plan-design/hierarchy/plan-for-the-site-database.md)  
 
--   [Plano para funções e servidores do sistema de sites para o System Center Configuration Manager](../../../core/plan-design/hierarchy/plan-for-site-system-servers-and-site-system-roles.md)  
+-   [为 System Center Configuration Manager 规划站点系统服务器和站点系统角色](../../../core/plan-design/hierarchy/plan-for-site-system-servers-and-site-system-roles.md)  
 
--   [Planejar a segurança no System Center Configuration Manager](../../../core/plan-design/security/plan-for-security.md)  
+-   [规划 System Center Configuration Manager 中的安全性](../../../core/plan-design/security/plan-for-security.md)  
 
--   [Managing network bandwidth](../../../core/plan-design/hierarchy/manage-network-bandwidth.md) ao implantar conteúdo em um site  
+-   当在站点内部署内容时，则为[Managing network bandwidth](../../../core/plan-design/hierarchy/manage-network-bandwidth.md) 。  
 
 
-**Considere as configurações que estendem sites e hierarquias:**  
+**考虑跨站点和层次结构的配置：**  
 
--   [Opções de alta disponibilidade para o System Center Configuration Manager](/sccm/protect/understand/high-availability-options) para sites e hierarquias
+-   用于站点和层次结构的 [System Center Configuration Manager 高可用性选项](/sccm/protect/understand/high-availability-options)
 
--   [Estender o esquema do Active Directory para o System Center Configuration Manager](../../../core/plan-design/network/extend-the-active-directory-schema.md) e configurar os sites para [publicar dados do site para o System Center Configuration Manager](../../../core/servers/deploy/configure/publish-site-data.md)  
+-   [扩展 System Center Configuration Manager 的 Active Directory 架构](../../../core/plan-design/network/extend-the-active-directory-schema.md)，然后将所有站点配置为[发布 System Center Configuration Manager 的站点数据](../../../core/servers/deploy/configure/publish-site-data.md)  
 
--   [Transferência de dados entre sites no System Center Configuration Manager](../../../core/servers/manage/data-transfers-between-sites.md)  
+-   [System Center Configuration Manager 中的站点间数据传输](../../../core/servers/manage/data-transfers-between-sites.md)  
 
--   [Fundamentos de administração baseada em funções para o System Center Configuration Manager](../../../core/understand/fundamentals-of-role-based-administration.md)
-
+-   [System Center Configuration Manager 的基于角色的管理基础](../../../core/understand/fundamentals-of-role-based-administration.md)

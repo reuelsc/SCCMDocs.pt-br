@@ -1,269 +1,266 @@
 ---
-title: Funcionalidades no Technical Preview 1606 do Configuration Manager
-description: "Saiba mais sobre os recursos disponíveis no Technical Preview do System Center Configuration Manager, versão 1606."
+title: "Technical Preview 1606 Configuration Manager 中的功能"
+description: "了解 System Center Configuration Manager Technical Preview 中的可用功能，1606 版。"
 ms.custom: na
 ms.date: 01/23/2017
 ms.prod: configuration-manager
-ms.technology:
-- configmgr-other
+ms.technology: configmgr-other
 ms.reviewer: na
 ms.suite: na
 ms.tgt_pltfrm: na
 ms.topic: get-started-article
 ms.assetid: 134a2f60-811e-4dc9-a8f5-1ce0018c5c12
-caps.latest.revision: 31
+caps.latest.revision: "31"
 author: Brenduns
 ms.author: brenduns
 manager: angrobe
-ms.translationtype: Human Translation
-ms.sourcegitcommit: 5d08d1f9ccd995d544c3c21c4af52ede73343077
-ms.openlocfilehash: a84d3ab55066d26c3199ea374d8beb472d66f43f
-ms.contentlocale: pt-br
-ms.lasthandoff: 01/24/2017
-
+ms.openlocfilehash: 08747ca981f6697e2bd621afe5df0e3bd06b332d
+ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
+ms.translationtype: HT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 08/07/2017
 ---
-# <a name="capabilities-in-technical-preview-1606-for-system-center-configuration-manager"></a>Funcionalidades no Technical Preview 1606 do System Center Configuration Manager
+# <a name="capabilities-in-technical-preview-1606-for-system-center-configuration-manager"></a>System Center Configuration Manager Technical Preview 版本 1606 中的功能
 
-*Aplica-se a: System Center Configuration Manager (Technical Preview)*
+*适用范围：System Center Configuration Manager (Technical Preview)*
 
-Este artigo apresenta os recursos disponíveis no Technical Preview do System Center Configuration Manager, versão 1606. Você pode instalar esta versão para atualizar e adicionar novas funcionalidades ao seu site do Configuration Manager Technical Preview.      Antes de instalar esta versão do technical preview, consulte o tópico introdutório, [Technical Preview do System Center Configuration Manager](../../core/get-started/technical-preview.md), para se familiarizar com os requisitos e limitações gerais de uso de um technical preview, como atualizar entre versões e como fornecer comentários sobre os recursos em um technical preview.    
+本文介绍了 System Center Configuration Manager Technical Preview 版本 1606 中的可用功能。 可以安装此版本以更新 Configuration Manager Technical Preview 站点的功能并向其添加新功能。      在安装此版本的 Technical Preview 前，请查看介绍性主题 [System Center Configuration Manager Technical Preview](../../core/get-started/technical-preview.md)，以熟悉使用 Technical Preview 的常规要求和限制、如何在版本之间进行更新，以及如何提供关于 Technical Preview 中的功能的反馈。    
 
-**Problemas conhecidos nesse Technical Preview:**  
-*  Quando você atualizar do Technical Preview 1604 para o 1605 e, em seguida, para a versão 1606, a atualização poderá falhar e um erro semelhante ao seguinte será registrado no **cmupdate.log**:
+**此 Technical Preview 中的已知问题：**  
+*  当从技术预览版 1604 更新到 1605 ，然后再更新到 1606 时，更新可能会失败，并且会在 **cmupdate.log** 中记录一个类似于以下的错误：
 
        ERROR: Failed to execute SQL Server command:  ~ ~-- Create site boundary group ~IF  dbo.fnIsCasOrStandalonePrimary() = 1 ~BEGIN ~   PRINT N'Create site boundary group during upgrade' ~   EXEC dbo.spBuildDefaultBoundaryGroups @UserName = N'SYSTEM' ~END          
 
-    Se isso ocorrer, no nó **Atualizações e Manutenção**, clique em **Verificar se há atualizações** e, em seguida, **Tente novamente** realizar a instalação da atualização.
+    如果发生这种情况，请在“更新与维护服务”节点中单击“检查更新”，然后单击“重试”，以重试更新安装。
     ***
 
-**Veja a seguir os novos recursos que você pode experimentar nesta versão.**  
+**以下是可以试用的此版本的新功能。**  
 
-## <a name="dmp_category"></a> Categorizar automaticamente dispositivos em coleções
-Você pode criar categorias de dispositivos, que podem ser usadas para colocar automaticamente os dispositivos em coleções de dispositivos ao usar o Configuration Manager com o Microsoft Intune. Os usuários devem, então, escolher uma categoria de dispositivo ao registrar um dispositivo no Intune. Além disso, você pode alterar a categoria de um dispositivo do console do Configuration Manager.
+## <a name="dmp_category"></a>自动将设备分类到集合
+可创建设备类别，可将其用于配合使用 Microsoft Intune 和 Configuration Manager 时自动在设备集合中放置设备。 然后要求用户在 Intune 中注册设备时选择某个设备类别。 此外，还可以从 Configuration Manager 控制台中更改设备的类别。
 
-**Importante:** essa funcionalidade funciona com a versão de **junho de 2016** do Microsoft Intune. Verifique se você atualizou para essa versão antes de experimentar esses procedimentos.
+**重要提示：**此功能适用于 **2016 年 6** 月版本的 Microsoft Intune。 试用这些过程前，请确保已更新到此版本。
 
-### <a name="try-it-out"></a>Experimente!
+### <a name="try-it-out"></a>试试看！
 
-### <a name="create-a-set-of-device-categories"></a>Criar um conjunto de categorias de dispositivo
-1.  No espaço de trabalho **Ativos e Conformidade** do console do Configuration Manager, expanda **Visão Geral** e clique em **Coleções de Dispositivos**.
-2.  Na guia **Início**, no grupo **Categorias**, clique em **Gerenciar Categorias de Dispositivo**.
-3.  Na caixa de diálogo **Gerenciar Categorias de Dispositivo**, você pode criar, editar ou remover categorias. Tente criar uma nova categoria.
+### <a name="create-a-set-of-device-categories"></a>创建一组设备类别
+1.  在 Configuration Manager 控制台的“资产和符合性”工作区中，展开“概述”，然后单击“设备集合”。
+2.  在“主页”选项卡上的“类别” 组中，单击“管理设备类别”。
+3.  在“管理设备类别”对话框中，可以创建、编辑或删除类别。 尝试创建新类别。
 
-### <a name="associate-a-collection-with-a-device-category"></a>Associar uma coleção a uma categoria de dispositivos
-Quando você associa uma coleção a uma categoria de dispositivos, todos os dispositivos na categoria especificada serão adicionados à coleção.
-1.  Na caixa de diálogo **Propriedades** de uma coleção de dispositivos, clique em **Adicionar Regra** > **Regra de Categoria de Dispositivo**.
-2.  Na caixa de diálogo **Create Device Category Membership Rule (Criar Regra de Associação de Categoria de Dispositivos)**, selecione a categoria que será aplicada a todos os dispositivos na coleção.
-3.  Feche a caixa de diálogo **Create Device Category Membership Rule (Criar Regra de Associação de Categoria de Dispositivos)** e a caixa de diálogo de propriedades da coleção.
+### <a name="associate-a-collection-with-a-device-category"></a>将集合与设备类别相关联
+将集合与设备类别关联后，指定的分类中的所有设备都会添加到该集合。
+1.  在设备集合的“属性”对话框中，单击“添加规则” > “设备类别规则”。
+2.  在“创建设备类别成员身份规则”对话框中，选择将应用到集合中所有设备的类别。
+3.  关闭“创建设备类别成员身份规则”对话框和集合属性对话框。
 
-### <a name="change-the-category-of-a-device"></a>Alterar a categoria de um dispositivo
-1.  No espaço de trabalho **Ativos e Conformidade** do console do Configuration Manager, expanda **Visão Geral** e clique em **Dispositivos**.
-2.  Selecione um dispositivo na lista **Dispositivos** e, na guia **Início**, no grupo **Dispositivo**, clique em **Alterar Categoria**.
-3.  Na caixa de diálogo **Editar Categoria de Dispositivo**, selecione a categoria a ser aplicada a esse dispositivo e clique em **OK**.
+### <a name="change-the-category-of-a-device"></a>更改设备的类别
+1.  在 Configuration Manager 控制台的“资产和符合性”工作区中，展开“概述”，然后单击“设备”。
+2.  从“设备”列表选择一个设备，然后在“主页”选项卡上的“设备”组中，单击“更改类别”。
+3.  在“编辑设备类别”对话框框中，选择将应用于此设备的类别，然后单击“确定”。
 
-## <a name="dmp_grace"></a> Período de cortesia para imposição de implantações de atualizações de software e aplicativos obrigatórios
+## <a name="dmp_grace"></a>所需的应用程序和软件更新部署的强制宽限期
 
-Em alguns casos, talvez você queira conceder aos usuários mais tempo instalar as atualizações de software ou as implantações de aplicativo obrigatórias além dos prazos configurados. Isso normalmente pode ser necessário quando um computador ficou desligado por um período estendido e precisa reinstalar uma grande quantidade de implantações de atualização ou aplicativo.
-Por exemplo, se um usuário final acabou de voltar de férias, eles terá que aguardar um longo período enquanto as implantações de aplicativo atrasadas são instaladas.
-Para ajudar a resolver esse problema, agora você pode definir um período de carência para a imposição implantando configurações de cliente do Configuration Manager para uma coleção.
+在某些情况下，可能会希望为用户提供更多时间（超出所配置的任何截止时间）来安装所需的应用程序部署或软件更新。 通常，当一台计算机关闭的时间过长和计算机需要安装大量应用程序或更新部署时，会需要执行这种操作。
+例如，如果最终用户刚从假期返回，则他们可能需要等待很长时间，因为安装的应用程序部署已过期。
+为了帮助解决此问题，现在可通过将 Configuration Manager 客户端设置部署到集合来定义强制的宽限期。
 
-### <a name="try-it-out"></a>Experimente!
+### <a name="try-it-out"></a>试试看！
 
-Para configurar o período de carência, execute as seguintes ações:
+若要配置宽限期，请执行以下操作：
 
-1.  Na página **Agente de Computador** das configurações do cliente, configure a nova propriedade **Período de carência para a imposição após a data limite da implantação (horas):** com um valor entre **1** e **120** horas.
-2.  Em uma nova implantação de aplicativo obrigatória ou nas propriedades de uma implantação existente, na página **Agendamento**, marque a caixa de seleção **Delay enforcement of this deployment according to user preferences (Atrasar a imposição dessa implantação de acordo com as preferências do usuário)** até o período de carência definido nas configurações do cliente.
-Todas as implantações que têm essa caixa de seleção marcada e que são destinadas a dispositivos nos quais você também implantou as configurações do cliente usarão o período de carência de imposição.
+1.  在客户端设置的“计算机代理”页上，将“部署截止时间后强制的宽限期(小时)”这一新属性的值配置为介于 **1** 和 **120** 小时之间。
+2.  在新的所需应用程序部署中，或在现有部署属性中，在“计划”页上，选中复选框“根据用户首选项延迟此部署的强制执行”，延迟时间以客户端设置中定义的宽限期为依据。
+选中了此复选框的所有部署，以及针对其中部署了客户端设置的设备的所有部署，都将使用此强制的宽限期。
 
-Se você configurar um período de carência para a imposição e marcar a caixa de seleção, quando o prazo da instalação do aplicativo for atingido, ele será instalado na primeira janela fora do horário comercial que o usuário configurou até esse período de carência. No entanto, o usuário ainda poderá abrir o Centro de Software e instalar o aplicativo a qualquer momento que desejar. Depois que o período de carência expirar, a imposição retorna ao comportamento normal para implantações atrasadas.
-Opções semelhantes foram adicionadas ao assistente de implantação de atualizações de software, ao assistente de regras de implantação automática e páginas de propriedades.
+如果配置强制宽限期，并选中该复选框，则当到达应用程序安装截止时间后，将在用户按照宽限期配置的第一个非业务窗口中安装该应用程序。 但是，用户仍可打开软件中心并在任何所需时间安装该应用程序。 一旦过了宽限期，对于未完成的部署，强制将恢复为正常行为。
+已将类似的选项添加到软件更新部署向导、自动部署规则向导和属性页中。
 
-##  <a name="dmp_devg"></a> Uso do Configuration Manager como um instalador gerenciado com o Device Guard
+##  <a name="dmp_devg"></a>通过 Device Guard 将 Configuration Manager 用作托管的安装程序
 
-O Device Guard é um recurso do Windows 10 que usa recursos de hardware e software para controlar rigorosamente o que pode ser executado no dispositivo.
+“设备保护”是 Windows 10 的一种功能，它使用硬件和软件功能严格控制什么可以在设备上运行。
 
-Você pode ler uma visão geral detalhada do que o Device Guard faz e como ele funciona [nesse artigo do Technet](https://technet.microsoft.com/itpro/windows/whats-new/device-guard-overview).
+有关“设备保护”的功能和工作方式的详细概述请参阅[此 Technet 文章](https://technet.microsoft.com/itpro/windows/whats-new/device-guard-overview)。
 
-Nessa versão, o Configuration Manager pode interoperar com o Device Guard e o [Windows AppLocker](https://technet.microsoft.com/library/dd723678(v=ws.10).aspx) para que os arquivos DLL e executáveis implantados com o Configuration Manager sejam automaticamente confiáveis uma vez que eles vêm de um Instalador Gerenciado, o que significa que eles poderão ser executados no dispositivo de destino e outro software não poderá ser executado a menos que tenha autorização explícita para ser executado por outras regras do AppLocker.  
+在此版本中，Configuration Manager 可与“设备保护”和 [Windows AppLocker](https://technet.microsoft.com/library/dd723678(v=ws.10).aspx) 进行互操作，以便当通过 Configuration Manager 部署的可执行文件和 DLL 文件从托管安装程序到来时自动变为受信任，这意味着将允许它们在目标设备上运行，而其他软件将不允许运行，除非由其他 AppLocker 规则明确允许运行。  
 
-No momento, essa funcionalidade não é configurável do console do Configuration Manager. Para configurar a política é necessário que você configure uma chave do Registro em cada cliente e configure serviços do Windows no cliente.
-Após fazer isso, configure o arquivo de política do AppLocker. Depois de configurar o arquivo de política, você pode implantá-lo em qualquer dispositivo de cliente compatível.
-
-
-Como todas as políticas do AppLocker, as políticas com regras do Instalador Gerenciado podem ser executadas em dois modos:
-
-- Modo de auditoria – os aplicativos não têm a execução impedida, mas quaisquer aplicativos que seriam bloqueados são relatados em um arquivo de log (isso terá suporte em uma versão posterior do Configuration Manager).
-- Imposição habilitada – os aplicativos têm a execução bloqueada.
-
-É possível encontrar mais informações sobre como usar o Device Guard com o Configuration Manager no [Enterprise Mobility and Security blog](https://blogs.technet.microsoft.com/enterprisemobility/2016/06/20/configmgr-as-a-managed-installer-with-win10) (Blog de Enterprise Mobility and Security).
-
-Leitura adicional:
-
-- [Introdução ao Device Guard](https://technet.microsoft.com/itpro/windows/keep-secure/introduction-to-device-guard-virtualization-based-security-and-code-integrity-policies)
-- [Conformidade e certificação do Device Guard](https://technet.microsoft.com/itpro/windows/keep-secure/device-guard-certification-and-compliance)
-- [Guia de implantação do Device Guard](https://technet.microsoft.com/itpro/windows/keep-secure/device-guard-deployment-guide)
-
- ##  <a name="dmp_onprem"></a> Múltiplos pontos de gerenciamento para Gerenciamento de Dispositivo Móvel Local  
- Com o Technical Preview 1606, o MDM (Gerenciamento de Dispositivo Móvel) local dá suporte a um nova funcionalidade na Atualização de Aniversário do Windows 10 que configura automaticamente um dispositivo registrado para ter mais de um ponto de gerenciamento de dispositivos disponível para uso. Essa funcionalidade permite que o dispositivo realize o fallback para outro ponto de gerenciamento de dispositivos quando o que ele usa normalmente não estiver disponível. Essa funcionalidade funciona apenas para computadores com a Atualização de Aniversário do Windows 10 instalada.  
-
-### <a name="try-it-out"></a>Experimente!  
-
-1.  Instale mais de um ponto de gerenciamento de dispositivos na sua hierarquia.  
-
-2.  Registre um dispositivo com a Atualização de Aniversário do Windows 10 para o gerenciamento de dispositivo móvel local.  
-
-Para obter informações sobre como preparar seu site e registrar dispositivos para o gerenciamento de dispositivo móvel local, confira [Gerenciar dispositivos móveis com a infraestrutura local no System Center Configuration Manager](../../mdm/understand/manage-mobile-devices-with-on-premises-infrastructure.md).  
-
-## <a name="cloud_proxy"></a>Serviço de Proxy de Nuvem para o gerenciamento de clientes na Internet
-
-O Serviço de Proxy de Nuvem fornece uma maneira simples de gerenciar clientes do Configuration Manager na Internet. O serviço, que é implantado no Microsoft Azure e requer uma assinatura do Azure, conecta-se à sua infraestrutura do Configuration Manager local usando uma nova função chamada de ponto do conector de proxy de nuvem. Após ser completamente implantado e configurado, os clientes poderão acessar funções do sistema de sites do Configuration Manager locais independentemente de se eles estão conectados à rede privada interna ou na Internet.
-
-Use o console do Configuration Manager para implantar o serviço no Azure, adicione a função de ponto do conector de proxy de nuvem e configure as funções do sistema de sites para permitir o tráfego de proxy de nuvem. No momento, o Serviço de Proxy de Nuvem dá suporte apenas às funções de ponto de gerenciamento, ponto de distribuição e ponto de atualização de software.
-
-Os certificados de cliente e os certificados SSL são necessários para autenticar computadores e criptografar comunicações entre diferentes camadas do serviço. Normalmente, os computadores cliente recebem um certificado do cliente por meio da aplicação de política de grupo. Para criptografar o tráfego entre clientes e o servidor do sistema de sites hospedando as funções, você precisa criar um certificado SSL personalizado por meio da AC. Além desses dois tipos de certificados, você também precisa configurar um certificado de gerenciamento no Azure que permita que o Configuration Manager implante o Serviço de Proxy de Rede.  
-
-### <a name="requirements-for-cloud-proxy-service-in-tp-1606"></a>Requisitos para o Serviço de Proxy de Nuvem na TP 1606
-- Computadores cliente e o servidor do sistema de sites que está executando o ponto do conector de proxy de nuvem.
-- Certificados SSL personalizados da AC interna – usado para criptografar a comunicação de computadores cliente e autenticar a identidade do Serviço de Proxy de Cliente.
-- Assinatura do Azure para serviços de nuvem.
-- Certificado de gerenciamento do Azure – usado para autenticar o Configuration Manager com o Azure.
-
-### <a name="limitations-of-cloud-proxy-service-in-tp-1606"></a>Limitações do Serviço de Proxy de Nuvem na TP 1606
-
-- Dá suporte apenas às funções de ponto de gerenciamento, ponto de distribuição e ponto de atualização de software.
-- Não há suporte para políticas de usuário.
-- Não pode ser usado com o [gerenciamento de dispositivo móvel local](../../mdm/understand/manage-mobile-devices-with-on-premises-infrastructure.md) no Configuration Manager.
-- Tem suporte apenas na plataforma de nuvem pública do Azure.
+目前，无法从 Configuration Manager 控制台中配置此功能。 若要配置该策略，需要在每个客户端上配置注册表项并在客户端上配置 Windows 服务。
+完成此操作后，请配置 AppLocker 策略文件。 配置策略文件后，可以将其部署到任何兼容的客户端设备。
 
 
-### <a name="try-it-out"></a>Experimente!
+与所有 AppLocker 策略一样，托管安装程序规则的策略可以两种模式运行：
 
-O processo de implantação do Serviço de Proxy de Nuvem inclui as seguintes etapas:
+- 审核模式 - 不会阻止应用程序运行，如果有阻止的应用程序，会在日志文件中报告（以后的一个更高版本的 Configuration Manager 将支持此功能）。
+- 启用强制 – 阻止应用程序运行。
 
-1. Criar e emitir um certificado SSL personalizado para o Serviço de Proxy de Nuvem.
-1. Exportar a raiz do certificado do cliente.
-2. Carregar o certificado de gerenciamento no Azure.
-3. Configure o Serviço de Proxy de Nuvem no console do Configuration Manager.
-4. Configurar o site primário para usar a autenticação de certificado do cliente.
-5. Adicionar o ponto do conector de proxy de nuvem ao seu site.
-6. Configurar as funções do sistema de sites para aceitar o tráfego de proxy de nuvem.
+有关如何结合使用 Configuration Manager 和设备保护的详细信息，请参阅[企业移动性和安全性博客](https://blogs.technet.microsoft.com/enterprisemobility/2016/06/20/configmgr-as-a-managed-installer-with-win10)。
 
-As seções a seguir fornecem mais informações para concluir essas etapas.
+延伸阅读：
 
-#### <a name="create-a-custom-ssl-certificate"></a>Criar um certificado SSL personalizado
+- [设备保护简介](https://technet.microsoft.com/itpro/windows/keep-secure/introduction-to-device-guard-virtualization-based-security-and-code-integrity-policies)
+- [设备保护认证和符合性](https://technet.microsoft.com/itpro/windows/keep-secure/device-guard-certification-and-compliance)
+- [设备保护部署指南](https://technet.microsoft.com/itpro/windows/keep-secure/device-guard-deployment-guide)
 
-Você pode criar um certificado SSL personalizado para o Serviço de Proxy de Nuvem da mesma maneira que faria para um ponto de distribuição baseado em nuvem. Siga as instruções para [Implantando o certificado de serviço em pontos de distribuição baseados em nuvem](/sccm/core/plan-design/network/example-deployment-of-pki-certificates#BKMK_clouddp2008_cm2012), mas faça estas ações de forma diferente:
+ ##  <a name="dmp_onprem"></a>本地移动设备管理的多个设备管理点  
+ 借助 Technical Preview 1606，本地移动设备管理 (MDM) 可支持Windows 10 周年更新中的新功能，该功能会自动将已注册设备配置为具有多个可供使用的设备管理点。 此功能允许设备在其正常使用的设备管理点不可用时回退到另一个设备管理点。 此功能仅适用于安装了 Windows 10 周年更新的电脑。  
 
-* Ao configurar o novo modelo de certificado, conceda permissões de **Leitura** e **Registro** para o grupo de segurança que você configurou para os servidores do Configuration Manager.
+### <a name="try-it-out"></a>试试看！  
 
-#### <a name="export-the-client-certificates-root"></a>Exportar a raiz do certificado do cliente
+1.  在层次结构中安装多个设备管理点。  
 
-A maneira mais fácil de exportar a raiz dos certificados de cliente usados na rede é abrir um certificado do cliente em um dos computadores ingressados no domínio que tenha um e copiá-lo.
+2.  注册 Windows 10 周年更新设备以实现本地移动设备管理。  
+
+有关如何准备站点和注册设备以实现本地移动设备管理，请参阅[使用 System Center Configuration Manager 中的本地基础结构管理移动设备](../../mdm/understand/manage-mobile-devices-with-on-premises-infrastructure.md)。  
+
+## <a name="cloud_proxy"></a>用于管理 Internet 上客户端的云代理服务
+
+云代理服务提供一种简单方法来管理 Internet 上的 Configuration Manager 客户端。 该服务部署到 Microsoft Azure 且需要 Azure 订阅，它使用名为云代理连接点的新角色连接到本地 Configuration Manager 基础结构。 服务完全部署并配置好后，客户端可以访问本地 Configuration Manager 站点系统角色，而不管它们是连接到内部专用网络还是 Internet 上。
+
+使用 Configuration Manager 控制台将服务部署到 Azure，添加云代理连接器点角色，并配置站点系统角色以允许云代理通信。 云代理服务目前只支持管理点、分发点和软件更新点角色。
+
+需要用客户端证书和安全套接字层 (SSL) 证书来进行计算机身份验证和加密不同服务层之间的通信。 通常，客户端计算机通过组策略实施接收客户端证书。 若要加密客户端和托管角色的站点系统服务器之间的通信，需要从 CA 创建自定义 SSL 证书。 除了这两种证书类型，还需要对 Azure 设置管理证书以允许 Configuration Manager 部署云代理服务。  
+
+### <a name="requirements-for-cloud-proxy-service-in-tp-1606"></a>TP 1606 中云代理服务的要求
+- 运行云代理连接器点的客户端计算机和站点系统服务器。
+- 内部 CA 自定义 SSL 证书 - 用来加密来自客户端计算机的通信和对云代理服务器的标识进行身份验证。
+- 云服务的 Azure 订阅。
+- Azure 管理证书 - 用于通过 Azure 对 Configuration Manager 进行身份验证。
+
+### <a name="limitations-of-cloud-proxy-service-in-tp-1606"></a>TP 1606 中云代理服务的限制
+
+- 只支持管理点、分发点和软件更新点角色。
+- 不支持用户策略。
+- 不能用于 Configuration Manager 中的[本地移动设备管理](../../mdm/understand/manage-mobile-devices-with-on-premises-infrastructure.md) 。
+- 仅通过 Azure 公有云平台进行支持。
+
+
+### <a name="try-it-out"></a>试试看！
+
+云代理服务部署过程包括以下步骤：
+
+1. 创建和颁发云代理服务的自定义 SSL 证书。
+1. 导出客户端证书的根。
+2. 将管理证书上传到 Azure。
+3. 在 Configuration Manager 控制台中设置云代理服务。
+4. 配置主站点以使用客户端证书身份验证。
+5. 将云代理连接点添加到网站。
+6. 配置站点系统角色，以接受云代理通信。
+
+以下部分会介绍有关完成这些步骤的详细信息。
+
+#### <a name="create-a-custom-ssl-certificate"></a>创建自定义 SSL 证书
+
+采用针对基于云的分发点的同一方法，为云代理服务创建自定义 SSL 证书。 按照[为基于云的分发点部署服务证书](/sccm/core/plan-design/network/example-deployment-of-pki-certificates#BKMK_clouddp2008_cm2012)中的说明，但以不同方式执行以下操作：
+
+* 在设置新证书模板时，向为 Configuration Manager 服务器设置的安全组提供**读取**和**注册**权限。
+
+#### <a name="export-the-client-certificates-root"></a>导出客户端证书的根
+
+导出网络上所用的客户端证书根的最简捷的方法就是打开已加入域且有客户端证书的一台计算机上的客户端证书并进行复制。
 
 >[!NOTE]
->Os certificados de cliente são necessários em qualquer computador que você desejar gerenciar com o Serviço de Proxy de Nuvem e no servidor do sistema de sites que hospeda o ponto do conector de proxy de nuvem. Se você precisar adicionar um certificado do cliente a qualquer uma desses computadores, confira [Implantando o certificado do cliente para computadores Windows](/sccm/core/plan-design/network/example-deployment-of-pki-certificates#BKMK_clouddp2008_cm2012).
+>希望通过云代理服务管理的计算机以及托管云代理连接点的站点系统服务器都需要客户端证书。 如果需要将客户端证书添加到任何这类计算机上，请参阅[为 Windows 计算机部署客户端证书](/sccm/core/plan-design/network/example-deployment-of-pki-certificates#BKMK_clouddp2008_cm2012)。
 
-1. Na janela Executar, digite **mmc** e pressione Executar.
-2. No menu Arquivo no console de gerenciamento, clique em **Adicionar/Remover Snap-ins...**.
-3. Na caixa de diálogo Adicionar ou Remover Snap-ins, clique em **Certificados**, clique em **Adicionar >**, **Conta de computador**, **Avançar**, **Computador local** e em **Concluir**. Clique em **OK** para fechar a caixa de diálogo.
-4. Vá para **Certificados > Pessoal > Certificados**.
-5. Clique duas vezes no certificado para autenticação do cliente no computador, clique na guia Caminho de Certificação e clique duas vezes na autoridade raiz (na parte superior do caminho).
-6.  Clique na guia Detalhes e clique em **Copiar para Arquivo...**.
-7. Conclua o Assistente de Exportação de Certificado usando o formato de certificado padrão. Verifique a nota do nome e local do certificado raiz que você criar. Você precisará dele para configurar o Serviço de Proxy de Nuvem em uma etapa posterior.
+1. 在“运行”窗口中，键入 **mmc**，然后按“Return”。
+2. 在管理控制台中的“文件”菜单上，单击“添加/删除管理单元...”。
+3. 在“添加或删除管理单元”对话框中，单击“证书”，单击“添加”>，单击“计算机帐户”，单击“下一步”，单击“本地计算机”，然后单击“完成”。 单击“确定”  关闭对话框。
+4. 转到“证书”>“个人”>“证书”。
+5. 双击计算机上用于客户端身份验证的证书，单击“证书路径”选项卡，然后双击根颁发机构（位于路径顶部）。
+6.  单击“详细信息”选项卡，然后单击“复制到文件...”。
+7. 使用默认证书格式完成证书导出向导。 记下创建的根证书的名称和位置。 将需要在后面的一个步骤中使用它来配置云代理服务。
 
-#### <a name="upload-the-management-certificate-to-azure"></a>Carregar o certificado de gerenciamento no Azure
+#### <a name="upload-the-management-certificate-to-azure"></a>将管理证书上传到 Azure
 
-Um certificado de gerenciamento do Azure é necessário para o Configuration Manager acessar a API do Azure e configurar o Serviço de Proxy de Nuvem. Para obter mais informações e instruções sobre como carregar um certificado de gerenciamento, consulte os artigos a seguir na documentação do Azure:
-- [Visão geral sobre certificados para os Serviços de Nuvem do Azure](https://azure.microsoft.com/documentation/articles/cloud-services-certs-create/)
-- [Carregar um Certificado de Gerenciamento de API do Gerenciamento do Azure](https://azure.microsoft.com/documentation/articles/azure-api-management-certs/).
+Configuration Manager 需要 Azure 管理证书来访问 Azure API 和配置云代理服务。 有关如何上传管理证书的详细信息和说明，请参阅 Azure 文档中的以下文章：
+- [Azure 云服务证书概述](https://azure.microsoft.com/documentation/articles/cloud-services-certs-create/)
+- [上传 Azure Management API 管理证书](https://azure.microsoft.com/documentation/articles/azure-api-management-certs/)。
 
-Certifique-se de copiar a ID da assinatura associada ao certificado de gerenciamento. Você precisará dela para configurar o Serviço de Proxy de Nuvem no console do Configuration Manager.
+请确保复制与管理证书关联的订阅 ID。 需要使用此 ID 在 Configuration Manager 控制台中配置云代理服务。
 
-#### <a name="set-up-cloud-proxy-service"></a>Configurar o Serviço de Proxy de Nuvem
+#### <a name="set-up-cloud-proxy-service"></a>设置云代理服务
 
-1. No console do Configuration Manager, vá para **Administração > Serviços de Nuvem > Serviço de Proxy de Nuvem**.
-2. Clique em **Criar Serviço de Proxy de Nuvem**.
-3. No Assistente para Criar Serviço de Proxy de Nuvem, insira a ID da sua assinatura do Azure (copiado do portal de gerenciamento do Azure), clique em Procurar e selecione o arquivo de certificado que você usou para carregar como um certificado de gerenciamento do Azure. Clique em **Avançar**. Aguarde alguns minutos para o console para se conectar ao Azure.
-4. Preencha os detalhes adicionais no assistente:
-    - Especifique a chave privada (arquivo .pfx) que você exportou do certificado SSL personalizado.
-    - Especifique o certificado raiz exportado do certificado do cliente.
-    - Especifique o mesmo FQDN de nome de serviço que você usou ao criar o novo modelo de certificado.
-    - Desmarque a caixa ao lado de **Verificar Revogação de Certificado do Cliente** (a menos que você esteja publicando publicamente suas informações de CRL).
-    - Clique em **Avançar** quando terminar.
-5. Examine as configurações e clique em **Avançar**. O Configuration Manager começa a configurar o serviço. Quando o assistente é concluído, você pode clicar em **Fechar**, no entanto, levará de 5 a 15 minutos para provisionar o serviço completamente no Azure. Verifique a coluna **Status** para o Serviço de Proxy de Nuvem recém-configurado para determinar quando o serviço está pronto.
+1. 在 Configuration Manager 控制台中转到“管理”>“云服务”>“云代理服务”。
+2. 单击“创建云代理服务”。
+3. 在“创建云代理服务”向导中，输入 Azure 订阅 ID（从 Azure 管理门户复制），单击“浏览”，并选择要上传为 Azure 管理证书的证书文件。 单击“下一步” 。 请花费少许时间，等待控制台连接 Azure。
+4. 在向导中填写其他详细信息：
+    - 指定从自定义 SSL 证书中导出的私钥（.pfx 文件）。
+    - 指定从客户端证书导出的根证书。
+    - 指定创建新证书模板时使用的同一服务名称 FQDN。
+    - 清除“验证客户端证书吊销”旁边的复选框（除非要公开发布 CRL 信息）。
+    - 完成后单击“下一步”。
+5. 检查设置，然后单击“下一步”。 Configuration Manager 开始设置服务。 向导完成后，可单击“关闭”，但需花费 5 到 15 分钟时间在 Azure 中完整配置该服务。 检查新设置的云代理服务的“状态”，以确定服务是否已设置完毕。
 
-#### <a name="configure-primary-site-for-client-certification-authentication"></a>Configurar um site primário para a autenticação de certificação de cliente
+#### <a name="configure-primary-site-for-client-certification-authentication"></a>配置客户端证书身份验证的主站点
 
-1. No console do Configuration Manager, vá para **Administração > Configuração de Site > Sites**.
-2. Selecione o site primário para os clientes que você deseja gerenciar através do Serviço de Proxy de Nuvem e clique em **Propriedades**.
-3. Na guia Client Computer Communications (Comunicações de Computador Cliente) da folha de propriedades do site primário, selecione a caixa ao lado de **Use PKI client certificate (client authentication) when available (Usar o certificado do cliente PKI (autenticação de cliente) quando disponível)**.
-4. Certifique-se de desmarcar a caixa ao lado de **Os clientes verificam a CRL (lista de certificados revogados) para sistemas de sites**. Essa opção seria necessária apenas se você estivesse publicando publicamente sua CRL.
-5. Clique em **OK**.
+1. 在 Configuration Manager 控制台中，转到“管理”>“站点配置”>“站点”。
+2. 选择希望通过云代理服务管理的客户端的主站点，并单击“属性”。
+3. 在主站点属性表的“客户端计算机通信”选项卡上，选中“在可用时使用 PKI 客户端证书（客户端身份验证）”旁边的复选框。
+4. 请确保清除“客户端检查站点系统的证书吊销列表 (CRL)”旁边的复选框。 仅当公开发布 CRL 时才需选择此选项。
+5. 单击" **确定**"。
 
-#### <a name="add-the-cloud-proxy-connector-point"></a>Adicionar o ponto do conector de proxy de nuvem
+#### <a name="add-the-cloud-proxy-connector-point"></a>添加云代理连接点
 
-O ponto do conector de proxy de nuvem é uma nova função de sistema de sites para se comunicar com o Serviço de Proxy de Nuvem. Para adicionar o ponto do conector de proxy de nuvem, siga as instruções em [Add site system roles for System Center Configuration Manager](../../core/servers/deploy/configure/add-site-system-roles.md) (Adicionar funções do sistema de sites para o System Center Configuration Manager).
+云代理连接点是一种新站点系统角色，用于与云代理服务进行通信。 若要添加云代理连接点，请按照[添加 System Center Configuration Manager 的站点系统角色](../../core/servers/deploy/configure/add-site-system-roles.md)中的说明操作。
 
-#### <a name="configure-roles-for-cloud-proxy-traffic"></a>Configurar funções para tráfego de proxy na nuvem
+#### <a name="configure-roles-for-cloud-proxy-traffic"></a>配置用于云代理通信的角色
 
-A etapa final na configuração do Serviço de Proxy de Nuvem é configurar as funções do sistema de sites para aceitar o tráfego de proxy de nuvem. Para o Tech Preview 1606, apenas as funções de ponto de gerenciamento, ponto de distribuição e ponto de atualização de software têm suporte para o Serviço de Proxy de Nuvem. Você deve configurar cada função separadamente.
+设置云代理服务的最后一步是配置站点系统角色以接受云代理通信。 对于 Tech Preview 1606，云代理服务只支持管理点、分发点和软件更新点角色。 必须分别配置每个角色。
 
-1. No console do Configuration Manager, vá para **Administração > Configuração de Site > Funções de Servidores e Sistema de Site**.
-2. Clique no servidor de sistema de sites para a função que você deseja configurar para o tráfego de proxy de nuvem.
-3. Clique na função e clique em **Propriedades**.
-4. Na folha Propriedades de função, em Conexões de Cliente, escolha **HTTPS**, marque a caixa ao lado de **Permitir tráfego do Proxy de Nuvem do Configuration Manager** e clique em **OK**. Repita essas etapas para as funções restantes.
+1. 在 Configuration Manager 控制台中，转到“管理”>“站点配置”>“服务器和站点系统角色”。
+2. 单击要配置的云代理通信的角色的站点系统服务器。
+3. 单击“角色”，然后单击“属性” 。
+4. 在角色属性表中的“客户端连接”下，选择“HTTPS”，选中“允许 Configuration Manager 云代理通信”旁边的复选框，然后单击“确定”。 为其余角色重复这些步骤。
 
-#### <a name="check-status-on-a-client-on-the-internet"></a>Verificar o status em um cliente na Internet
+#### <a name="check-status-on-a-client-on-the-internet"></a>检查 Internet 上客户端的状态
 
-Depois que o serviço e as funções forem completamente configurados, os clientes internos obterão o local do Serviço de Proxy de Nuvem na próxima solicitação de local. Os clientes com informações de local atualizadas podem se comunicar com o Configuration Manager na Internet. O ciclo de sondagem para solicitações de localização é a cada 24 horas. Se você não quiser aguardar a solicitação de local normalmente agendada, force a solicitação reiniciando o serviço de Host de Agente do SMS (ccmexec.exe) no computador.
+对服务和角色进行完全配置后，内部客户端会在下一次位置请求时获取云代理服务的位置。 然后，带有已更新的位置信息的客户端便可在 Internet 上与 Configuration Manager 进行通信。 位置请求的轮询周期为 24 小时。 如果不想等待按正常计划执行的位置请求，可以通过重新启动计算机上的 SMS 代理主机服务 (ccmexec.exe) 强制执行该请求。
 
-Depois que os clientes tiverem as novas informações de local do Serviço de Proxy de Nuvem, tente verificar o status dos clientes que não estão mais na rede privada interna, mas têm acesso à Internet. Você também pode monitorar o tráfego no Serviço de Proxy de Nuvem acessando **Administração > Serviços de Nuvem > Serviço de Proxy de Nuvem**, selecionando serviço no painel de lista e exibindo as informações de tráfego no painel de detalhes.   
+客户端拥有云代理服务的新位置信息后，请尝试检查已不在内部专用网络上但具有 Internet 访问权限的客户端的状态。 还可以通过后列方式监视云代理服务通信：转到“管理”>“云服务”>“云代理服务”，在列表窗格中选择服务，然后查看详细信息窗格中的通信信息。   
 
-## <a name="manage_o365"></a>Gerenciamento do agente cliente do Office 365 no Configuration Manager  
+## <a name="manage_o365"></a>在 Configuration Manager 中管理 Office 365 客户端代理  
 
-A partir do Technical Preview 1606, você pode usar uma configuração de agente cliente do Configuration Manager em vez da política de grupo para habilitar os clientes do Office 365 para receber atualizações do Configuration Manager. Depois de definir essa configuração e implantar as atualizações do Office 365, o agente cliente do Configuration Manager se comunica com o agente cliente do Office 365 para baixar atualizações do Office 365 de um ponto de distribuição e instalá-las. O Configuration Manager também faz o inventário da configuração do agente cliente.
+从 Technical Preview 1606 开始，可以使用 Configuration Manager 客户端代理设置而非组策略，来使 Office 365 客户端接收来自 Configuration Manager 的更新。 配置此设置和部署 Office 365 更新后，Configuration Manager 客户端代理将与 Office 365 客户端代理通信，从分发点下载 Office 365 更新并进行安装。 Configuration Manager 还会获取客户端代理设置的清单。
 
-Para mais informações, confira [Manage Office 365 ProPlus updates](https://technet.microsoft.com/library/mt741983.aspx) (Gerenciar atualizações do Office 365 ProPlus).
+有关详细信息，请参阅[管理 Office 365 ProPlus 更新](https://technet.microsoft.com/library/mt741983.aspx)。
 
-### <a name="set-the-configuration-manager-client-setting-to-manage-the-office-365-client-agent"></a>Defina uma configuração de cliente do Configuration Manager para gerenciar o agente cliente do Office 365
-1.  No console do Configuration Manager, escolha **Administração** > **Visão Geral** > **Configurações do Cliente**.
-2. Abra as configurações do dispositivo apropriado para habilitar o agente cliente. Para obter mais informações sobre configurações do cliente padrão e personalizadas, consulte [Como definir as configurações do cliente no System Center Configuration Manager](../../core/clients/deploy/configure-client-settings.md).
-3. Clique em **Atualizações de Software** e selecione **Sim** para a configuração **Habilitar o gerenciamento do Agente Cliente do Office 365**.  
-
-
-## <a name="osdpreservedriveletter"></a>A variável de sequência de tarefas OSDPreserveDriveLetter foi preterida
-A variável OSDPreserveDriveLetter determina se a sequência de tarefas usa ou não a letra da unidade capturada no arquivo WIM da imagem do sistema operacional ao aplicar essa imagem a um computador de destino.
-- Essa variável de sequência de tarefas foi preterida no Technical Preview 1606.
-
-Durante uma implantação de sistema operacional, por padrão, a Instalação do Windows agora determina a melhor letra da unidade a ser usada (geralmente, C:). Se desejar especificar o uso de uma unidade diferente, mude o local na etapa da sequência de tarefas Aplicar Sistema Operacional. Vá para a configuração **Selecione o local onde deseja aplicar este sistema operacional**, selecione **Letra da unidade lógica específica** e escolha a unidade que deseja usar. Deve haver uma unidade atribuída com a letra escolhida no computador de destino. 
-
-## <a name="updatesandservicing"></a>Alterações no nó Atualizações e Manutenção
-Com o Technical Preview 1606, foram introduzidas várias ações que se aplicam às Atualizações e Manutenção no console do Configuration Manager:
-- **Alteração de nome de nó:**
-
-    No espaço de trabalho **Monitoramento**, o nó **Status de Manutenção do Site** foi renomeado para **Status de Serviço e Atualizações**.
-- **Mais status da instalação:**
-
-    Quando você exibe o status da instalação da atualização para um site, agora o console mostra detalhes separados para as seguintes ações:
-    - **Baixar** (isso se aplica somente ao site de nível superior em que a função do sistema de sites do ponto de conexão de serviço está instalado)
-    - **Replicação**
-    - **Verificação de pré-requisitos**
-    - **Instalação**
-
-  Além disso, agora há informações mais detalhadas para cada etapa, incluindo qual arquivo de log você pode exibir para obter mais informações.  
--   **Nova opção para repetir as falhas de pré-requisito:**
-
-    Nos espaços de trabalho **Administração** e **Monitoramento**, o nó **Atualizações e Manutenção** inclui um novo botão na Faixa de opções chamado **	Ignorar avisos de pré-requisito**.
-
-    Ao instalar atualizações sem usar a opção de Ignorar avisos de pré-requisito (de dentro do Assistente de Atualizações), e a instalação da atualização for interrompida com um estado de **Prereq warning (Aviso de pré-requisito)**, você poderá selecionar **Ignorar avisos de pré-requisito** na faixa de opções para disparar uma continuação automática da instalação da atualização que ignora os avisos de pré-requisito.  
+### <a name="set-the-configuration-manager-client-setting-to-manage-the-office-365-client-agent"></a>设置 Configuration Manager 客户端设置以管理 Office 365 客户端代理
+1.  在 Configuration Manager 控制台中，单击“管理” > “概述” > “客户端设置”。
+2. 打开相应的设备设置以启用客户端代理。 有关默认客户端设置和自定义客户端设置的详细信息，请参阅[如何在 System Center Configuration Manager 中配置客户端设置](../../core/clients/deploy/configure-client-settings.md)。
+3. 单击“软件更新”，并针对“启用 Office 365 客户端代理的管理”设置选择“是”。  
 
 
+## <a name="osdpreservedriveletter"></a>已弃用 OSDPreserveDriveLetter 任务序列变量
+OSDPreserveDriveLetter 任务序列变量决定当将此图像应用到目标计算机时，任务序列是否使用在操作系统映像 WIM 文件中捕获的驱动器号。
+- Technical Preview 1606 中已弃用此任务序列变量。
 
-- **Exibição mais clara das atualizações:**
+现在，在操作系统部署期间，默认情况下，Windows 安装程序会确定要使用的最佳驱动器号（通常为 C:）。 如果想要指定使用另一个驱动器，可以在“应用操作系统”任务序列步骤中更改位置。 转到“选择要应用此操作系统的位置”设置，选择“特定逻辑驱动器号”，然后选择要使用的驱动器。 目标计算机上必须存在分配有该号的驱动器。 
 
-    Ao ver o nó **Atualizações e Manutenção**, agora você pode visualizar apenas as atualizações instaladas mais recentemente e quaisquer atualizações que estejam disponíveis para instalação. Para exibir atualizações instaladas anteriormente, clique no novo botão **Histórico**, que aparece na faixa de opções.  
+## <a name="updatesandservicing"></a>更新和服务节点的更改
+Technical Preview 1606 版中做了几处更改，适用于 Configuration Manager 控制台中的更新与服务：
+- **节点名称更改：**
 
--   **Opção renomeada para pré-produção:**
+    在“监视”工作区中，已将“站点服务状态”节点重命名为“更新和服务状态”。
+- **更多安装状态：**
 
-    No nó Atualizações e Manutenção, o botão chamado **Client options (Opções do cliente)** agora foi renomeado para **Promover o Cliente de Pré-produção**.
+    查看站点的更新安装状态时，控制台现在会显示以下操作的单独详细信息：
+    - **下载**（这仅适用于在其中安装服务连接点站点系统角色的顶层站点）
+    - **复制**
+    - **先决条件检查**
+    - **安装**
 
+  此外，现在对于每个步骤有更详细的信息，包括可以在哪个日志文件查看更多信息。  
+-   **用于重试先决条件失败的新选项：**
+
+    在“管理”和“监视”这两个工作区中，“更新和服务”节点都在功能区上包含了一个名为“忽略先决条件警告”的新按钮。
+
+    如果安装更新时不使用“忽略先决条件警告”选项（从更新向导中），更新安装会中止并出现“先决条件警告”状态，那么之后可以在功能区选择“忽略先决条件警告”来触发更新的自动继续安装，而忽略先决条件警告。  
+
+
+
+- **更清楚的更新视图：**
+
+    查看“更新和服务”节点时，现在仅能看到最近安装的更新以及任何可供安装的新更新。 若要查看以前安装的更新，请单击功能区中新的“历史记录”按钮。  
+
+-   **重命名的预生产选项：**
+
+    在“更新和服务”节点中，名为“客户端选项”的按钮现重命名为“提升预生产客户端”。

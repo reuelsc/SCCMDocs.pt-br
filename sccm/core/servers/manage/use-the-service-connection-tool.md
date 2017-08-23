@@ -1,166 +1,162 @@
 ---
-title: "Ferramenta de conexão de serviço | Microsoft Docs"
-description: "Saiba mais sobre esta ferramenta que permite que você se conecte ao serviço de nuvem do Configuration Manager para carregar manualmente as informações de uso."
+title: "服务连接工具 | Microsoft Docs"
+description: "了解该工具使你能够连接到 Configuration Manager 云服务以手动上传使用情况信息。"
 ms.custom: na
 ms.date: 4/7/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
-ms.technology:
-- configmgr-other
+ms.technology: configmgr-other
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 6e4964c5-43cb-4372-9a89-b62ae6a4775c
-caps.latest.revision: 11
+caps.latest.revision: "11"
 author: Brenduns
 ms.author: brenduns
 manager: angrobe
-ms.translationtype: Human Translation
-ms.sourcegitcommit: 32f7fc4ef9c8e8d3c2ec8eeaf9a3174bad992ffb
 ms.openlocfilehash: 0da80521bf223a765c3731f8ad59623d85a4c9fa
-ms.contentlocale: pt-br
-ms.lasthandoff: 05/17/2017
-
-
+ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
+ms.translationtype: HT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 08/07/2017
 ---
-# <a name="use-the-service-connection-tool-for-system-center-configuration-manager"></a>Usar a ferramenta de conexão de serviço do System Center Configuration Manager
+# <a name="use-the-service-connection-tool-for-system-center-configuration-manager"></a>使用适用于 System Center Configuration Manager 的服务连接工具
 
-*Aplica-se a: System Center Configuration Manager (Branch Atual)*
+*适用范围：System Center Configuration Manager (Current Branch)*
 
-Use a **ferramenta de conexão de serviço** quando o ponto de conexão de serviço estiver no modo offline ou quando os servidores do sistema de site do Configuration Manager não estiverem conectados à Internet. A ferramenta pode ajudá-lo a manter o site atualizado com as atualizações mais recentes do Configuration Manager.  
+当服务连接点处于脱机模式，或当 Configuration Manager 站点系统服务器未连接到 Internet 时，请使用**服务连接工具**。 该工具有助于随时更新网站的 Configuration Manager 最新更新。  
 
-Quando executada, a ferramenta permite que você se conecte manualmente ao serviço de nuvem do Configuration Manager para carregar as informações de uso da sua hierarquia e baixar atualizações. Carregar dados de uso é necessário para permitir que o serviço de nuvem forneça as atualizações corretas para sua implantação.  
+运行时，该工具手动连接到 Configuration Manager 云服务，以上传层次结构的使用情况信息并下载更新。 必须上载使用情况数据才能启用云服务以为你的部署提供正确的更新。  
 
-## <a name="prerequisites-for-using-the-service-connection-tool"></a>Pré-requisitos para usar a ferramenta de conexão de serviço
-A seguir estão os pré-requisitos e problemas conhecidos.
+## <a name="prerequisites-for-using-the-service-connection-tool"></a>使用服务连接工具的先决条件
+以下为先决条件和已知问题。
 
-**Pré-requisitos:**
+**先决条件：**
 
--   Você tem um ponto de conexão de serviço instalado e ele está definido como **Offline, conexão sob demanda**.  
+-   已安装服务连接点，并将它设置为“脱机，按需连接”。  
 
--   A ferramenta deve ser executada em um prompt de comando.  
+-   该工具必须从命令提示符中运行。  
 
--   Cada computador no qual a ferramenta é executada (o computador de ponto de conexão de serviço e o computador conectado à Internet) deve ser um sistema x64 (64 bits) e ter os seguintes itens instalados:  
+-   运行该工具的每个计算机（服务连接点计算机以及连接到 Internet 的计算机）必须是 x64 位系统并且必需安装以下软件：  
 
-    -   Os arquivos x86 e x64 dos **Pacotes Redistribuíveis do Visual C++** .   Por padrão, o Configuration Manager instala a versão x64 no computador que hospeda o ponto de conexão de serviço.  
+    -   **Visual C++ Redistributable** x86 和 x64 文件。   默认情况下，Configuration Manager 在托管服务连接点的计算机上安装 x64 版本。  
 
-         Para baixar uma cópia dos arquivos do Visual C++, visite [Pacotes Redistribuíveis do Visual C++ para Visual Studio 2013](http://www.microsoft.com/download/details.aspx?id=40784) no Centro de Download da Microsoft.  
+         若要下载 Visual C++ 文件的副本，请访问 Microsoft 下载中心的 [Visual C++ Redistributable Packages for Visual Studio 2013](http://www.microsoft.com/download/details.aspx?id=40784) 。  
 
-    -   .NET Framework 4.5.2 ou posteriores.  
+    -   .NET Framework 4.5.2 或更高版本。  
 
--   A conta usada para executar a ferramenta deve ter:
-    -   Permissões de**Administrador local** no computador que hospeda o ponto de conexão de serviço (no qual a ferramenta é executada).
-    -   Permissões de**Leitura** para o banco de dados do site.  
-
-
-
--   Você precisará de uma unidade USB com espaço livre suficiente para armazenar os arquivos e as atualizações ou outro método para transferir arquivos entre o computador do ponto de conexão de serviço e o computador que tem acesso à Internet. (Este cenário pressupõe que seu site e os computadores gerenciados não têm conexão direta com a Internet).  
+-   用于运行工具的帐户必须：
+    -   在承载服务连接点的计算机上（工具在此计算机上运行）具有**本地管理员** 权限。
+    -   具有对站点数据库的**读取** 权限。  
 
 
 
-## <a name="use-the-service-connection-tool"></a>Usar a ferramenta de conexão de serviço  
-
- Você pode encontrar a ferramenta de conexão de serviço (**serviceconnectiontool.exe**) na mídia de instalação do Configuration Manager, na pasta **%path%\smssetup\tools\ServiceConnectionTool**. Sempre use a ferramenta de conexão de serviço que corresponde à versão do Configuration Manager que você usa.
+-   你将需要具有可存储文件和更新的足够可用空间的 U 盘，或需要另一种方法以在服务连接点计算机与有权访问 Internet 的计算机之间传输文件。 （此方案假设你的站点和托管计算机未直接连接到 Internet。）  
 
 
- Neste procedimento, os exemplos de linha de comando usam os seguintes nomes de arquivo e locais de pasta (você não precisa usar estes caminhos e nomes de arquivos e pode usar alternativas que correspondem ao seu ambiente e preferências):  
 
--   O caminho para um cartão USB no qual os dados são armazenados para transferência entre servidores: **D:\USB\\**  
+## <a name="use-the-service-connection-tool"></a>使用服务连接工具  
 
--   O nome do arquivo .cab que contém dados exportados do seu site: **UsageData.cab**  
+ 可以在 **%path%/smssetup/tools/ServiceConnectionTool** 文件夹中的 Configuration Manager 安装媒体中找到服务连接工具 (**serviceconnectiontool.exe**)。 始终使用与所用的 Configuration Manager 版本匹配的服务连接工具。
 
--   O nome da pasta vazia na qual as atualizações baixadas do Configuration Manager serão armazenadas para transferência entre servidores: **UpdatePacks**  
 
-No computador que hospeda o ponto de conexão de serviço:  
+ 在此过程中，命令行示例使用了以下文件名和文件夹位置（你不需要使用这些路径和文件名，可以改为使用与你的环境和首选项匹配的其他选择）：  
 
--   Abra um prompt de comando com privilégios administrativos e altere os diretórios para o local que contém **serviceconnectiontool.exe**.  
+-   用于存储数据以在服务器之间进行传输的 USB 记忆棒的路径：**D:\USB\\**  
 
-     Por padrão, você pode encontrar essa ferramenta na mídia de instalação do Configuration Manager, na pasta **%path%\smssetup\tools\ServiceConnectionTool**. Todos os arquivos nessa pasta devem estar na mesma pasta para a ferramenta de conexão de serviço funcionar.  
+-   包含从你的站点导出的数据的 .cab 文件的名称：**UsageData.cab**  
 
-Quando você executa o comando a seguir, a ferramenta prepara um arquivo .cab que contém informações de uso e as copia para um local especificado por você. Os dados no arquivo .cab se baseiam no nível dos dados de uso do diagnóstico que seu site está configurado para coletar. (consulte [Dados de diagnóstico e de uso para o System Center Configuration Manager](../../../core/plan-design/diagnostics/diagnostics-and-usage-data.md)).  Execute o seguinte comando para criar o arquivo .cab:  
+-   用于存储 Configuration Manager 的已下载更新以在服务器之间进行传输的空文件夹的名称： **UpdatePacks**  
+
+在承载服务连接点的计算机上：  
+
+-   使用管理特权打开命令提示符，然后将目录更改为包含 **serviceconnectiontool.exe**的位置。  
+
+     默认情况下，你可以在 **%path%\smssetup\tools\ServiceConnectionTool** 文件夹中的 Configuration Manager 安装媒体中找到此工具。 此文件夹中的所有文件必须位于同一个文件夹中，这样服务连接工具才能工作。  
+
+运行以下命令时，该工具会准备包含使用情况信息的 .cab 文件并将它复制到你指定的位置。 .cab 文件中的数据基于站点配置为收集的诊断使用情况数据的级别。 （请参阅 [System Center Configuration Manager 的诊断和使用情况数据](../../../core/plan-design/diagnostics/diagnostics-and-usage-data.md)）。  运行以下命令以创建 .cab 文件：  
 
 -   **serviceconnectiontool.exe -prepare -usagedatadest D:\USB\UsageData.cab**  
 
-Você também precisará copiar a pasta ServiceConnectionTool com todo seu conteúdo para a unidade USB ou, de alguma forma, disponibilizá-lo no computador que usará para as etapas 3 e 4.  
+你还需要将 ServiceConnectionTool 文件夹及其所有内容复制到 U 盘中，或者采用其他方法使它在步骤 3 和 4 即将使用的计算机上可用。  
 
-### <a name="overview"></a>Visão geral
-**Há três etapas principais para usar a ferramenta de conexão de serviço:**  
+### <a name="overview"></a>概述
+**使用服务连接工具主要有三个步骤：**  
 
-1.  **Preparação**: esta etapa deve ser executada no computador que hospeda o ponto de conexão de serviço. Ao ser executada, a ferramenta coloca os dados de uso em um arquivo .cab e os armazena em uma unidade USB (ou em algum local de transferência alternativo que você especificar).  
+1.  **准备**：此步骤在托管服务连接点的计算机上运行。 工具运行时，将使用情况数据放入 .cab 文件中并将其存储在 U 盘上（或指定的替代传输位置）。  
 
-2.  **Conexão**: nesta etapa, a ferramenta será executada em um computador remoto que se conecta à Internet para carregar dados de uso e baixar atualizações.  
+2.  **连接**：此步骤中，在连接到 Internet 的远程计算机上运行该工具，以便上传使用情况数据和后续下载更新。  
 
-3.  **Importação**: esta etapa deve ser executada no computador que hospeda o ponto de conexão de serviço. Ao ser executada, a ferramenta importará as atualizações baixadas e as adicionará ao site, assim, elas poderão ser exibidas e instaladas por meio do console do Configuration Manager.  
+3.  **导入**：此步骤在托管服务连接点的计算机上运行。 工具运行时，导入下载的内容并将其添加到站点，然后你就可以从 Configuration Manager 控制台查看和安装这些更新。  
 
-A partir da versão 1606, ao se conectar à Microsoft, você pode carregar vários arquivos .cab ao mesmo tempo (cada um de uma hierarquia diferente) e especificar um servidor proxy e um usuário para o servidor proxy.   
+从版本 1606 开始，当连接到 Microsoft 时，可以一次性上传多个 .cab 文件（每个文件来自不同的层次结构），并指定代理服务器和代理服务器的用户。   
 
-**Para carregar vários arquivos .cab:**
- -  Coloque cada arquivo .cab que exportar de hierarquias separadas na mesma pasta. O nome de cada arquivo deve ser exclusivo e você pode renomeá-los manualmente se necessário.
- -  Depois, quando executar o comando para carregar dados para a Microsoft, especifique a pasta que contém os arquivos .cab. (Antes da atualização 1606, você só podia carregar dados de uma hierarquia por vez e a ferramenta exigia que você especificasse o nome do arquivo .cab na pasta.)
- -  Posteriormente, quando você executar a tarefa de importação no ponto de conexão de serviço de uma hierarquia, a ferramenta importará automaticamente somente os dados daquela hierarquia.  
+**若要上传多个 .cab 文件，请执行以下操作：**
+ -  将从独立的层次结构中导出的每个 .cab 文件放在同一文件夹中。 每个文件的名称必须是唯一的，如有必要，可以手动重命名。
+ -  然后，当运行命令将数据上传到 Microsoft 时，指定包含 .cab 文件的文件夹。 （在更新 1606 之前，每次仅可以从一个层次结构上传数据，并且此工具需要你指定文件夹中的 .cab 文件的名称。）
+ -  然后，在层次结构的服务连接点上运行导入任务时，此工具仅自动导入该层次结构的数据。  
 
-**Para especificar um servidor proxy:**  
-Você pode usar os seguintes parâmetros opcionais para especificar um servidor proxy (mais informações sobre como usar esses parâmetros estão disponíveis na seção Parâmetros de linha de comando neste tópico):
-  - **-proxyserveruri [FQDN_do_servidor_proxy]**  Use este parâmetro para especificar o servidor proxy a ser usado para esta conexão.
-  -  **-proxyusername [nome de usuário]**  Use este parâmetro quando precisar especificar um usuário para o servidor proxy.
+**若要指定代理服务器，请执行以下操作：**  
+可以使用以下可选参数来指定代理服务器（有关使用这些参数的详细信息可在本主题的命令行参数部分中找到）：
+  - **-proxyserveruri [FQDN_of_proxy_sever]**  使用此参数指定要用于此连接的代理服务器。
+  -  **-proxyusername [username]**  当必须为代理服务器指定用户时，请使用此参数。
 
 
 
-### <a name="to-use-the-service-connection-tool"></a>Para usar a ferramenta de conexão de serviço  
+### <a name="to-use-the-service-connection-tool"></a>若要使用服务连接点工具  
 
-1.  No computador que hospeda o ponto de conexão de serviço:  
+1.  在承载服务连接点的计算机上：  
 
-    -   Abra um prompt de comando com privilégios administrativos e altere os diretórios para o local que contém **serviceconnectiontool.exe**.   
+    -   使用管理特权打开命令提示符，然后将目录更改为包含 **serviceconnectiontool.exe**的位置。   
 
-2.  Execute o comando a seguir para que a ferramenta prepare um arquivo .cab que contém informações de uso e copiá-las para um local especificado por você:  
+2.  运行以下命令以使工具准备包含使用情况信息的 .cab 文件并将其复制到指定的位置：  
 
     -   **serviceconnectiontool.exe -prepare -usagedatadest D:\USB\UsageData.cab**  
 
-    Se for carregar arquivos .cab de mais de uma hierarquia ao mesmo tempo, cada arquivo .cab na pasta deverá ter um nome exclusivo. Você pode renomear manualmente os arquivos que adicionar à pasta.
+    如果同时上传多个层次结构中的 .cab 文件，则文件夹中的每个 .cab 文件的必须具有一个唯一的名称。 你可以手动重命名添加到该文件夹的文件。
 
-    Se quiser exibir as informações de uso coletadas para serem carregadas para o serviço de nuvem do Configuration Manager, execute o seguinte comando para exportar os mesmos dados como um arquivo .csv que você pode exibir usando um aplicativo como o Excel:  
+    如果你想要查看收集并上传到 Configuration Manager 云服务的使用情况信息，请运行以下命令将相同的数据以 .csv 文件导出，然后可以使用像 Excel 之类的应用程序查看该文件：  
 
     -   **serviceconnectiontool.exe -export -dest D:\USB\UsageData.csv**  
 
-3.  Após a conclusão da etapa de preparação, mova a unidade USB (ou transfira os dados exportados por outro método) para um computador que tenha acesso à Internet.  
+3.  完成准备步骤后，将 U 盘移动到（或通过另一种方法将导出的数据传输到）有权访问 Internet 的计算机。  
 
-4.  No computador com acesso à Internet, abra um prompt de comando com privilégios administrativos e altere os diretórios para o local que contenha uma cópia da ferramenta  **serviceconnectiontool.exe** e os arquivos adicionais dessa pasta.  
+4.  在可访问 Internet 的计算机上，使用管理特权打开命令提示符，然后将目录更改为包含工具  **serviceconnectiontool.exe** 的副本以及该文件夹中其他文件的位置。  
 
-5.  Execute o seguinte comando para iniciar o upload de informações de uso e o download de atualizações para o Configuration Manager:  
+5.  运行以下命令以开始上载使用情况信息和下载 Configuration Manager 更新：  
 
     -   **serviceconnectiontool.exe -connect -usagedatasrc D:\USB -updatepackdest D:\USB\UpdatePacks**
 
-    Para obter mais exemplos dessa linha de comando, consulte a seção [Opções de linha de comando](../../../core/servers/manage/use-the-service-connection-tool.md#bkmk_cmd) mais adiante neste tópico.
+    有关此命令行的更多示例，请参阅本主题后的[命令行选项](../../../core/servers/manage/use-the-service-connection-tool.md#bkmk_cmd)部分。
 
     > [!NOTE]  
-    >  Ao executar a linha de comando para se conectar ao serviço de nuvem do Configuration Manager, pode ocorrer um erro semelhante ao seguinte:  
+    >  运行该命令行以连接到 Configuration Manager 云服务时，可能会发生如下错误：  
     >   
-    >  -   Exceção sem tratamento: System.UnauthorizedAccessException:  
+    >  -   未经处理的异常：System.UnauthorizedAccessException：  
     >   
-    >      O acesso ao caminho “C:\  
-    >     Users\br\AppData\Local\Temp\extractmanifestcab\95F8A562.sql” foi negado.  
+    >      对路径“C:\  
+    >     Users\br\AppData\Local\Temp\extractmanifestcab\95F8A562.sql”的访问被拒绝。  
     >   
-    > Esse erro pode ser ignorado e você pode fechar a janela de erro e continuar.  
+    > 你可以直接忽略此错误并关闭错误窗口，然后继续。  
 
-6.  Após a conclusão do download das atualizações para o Configuration Manager, mova a unidade USB (ou transfira os dados exportados por outro método) para o computador que hospeda o ponto de conexão de serviço.  
+6.  下载完 Configuration Manager 的更新后，将 U 盘移动到（或通过另一种方法将导出的数据传输到）承载服务连接点的计算机上。  
 
-7.  No computador que hospeda o ponto de conexão de serviço, abra um prompt de comando com privilégios administrativos, altere os diretórios para o local que contém **serviceconnectiontool.exe**e execute o seguinte comando:  
+7.  在承载服务连接点的计算机上，使用管理特权打开命令提示符，将目录更改为包含 **serviceconnectiontool.exe**的位置，然后运行以下命令：  
 
     -   **serviceconnectiontool.exe -import -updatepacksrc D:\USB\UpdatePacks**  
 
-8.  Após a conclusão da importação, você pode fechar o prompt de comando. (Apenas atualizações da hierarquia aplicável são importadas).  
+8.  导入完成后，可以关闭命令提示符。 （仅导入适用的层次结构的更新）。  
 
-9. Abra o console do Configuration Manager e navegue até **Administração** > **Atualizações e Manutenção**. As atualizações que foram importadas estão disponíveis agora para instalação. (Antes da versão 1702, Atualizações e Manutenção ficava em **Administração** > **Serviços de Nuvem**.)
+9. 打开 Configuration Manager 控制台并导航到“管理” > “更新和服务”。 现在即可安装之前导入的更新。 （在版本 1702 之前，“更新和服务”在“管理” > “云服务”下。）
 
- Para obter informações sobre a instalação de atualizações, consulte [Install in-console updates for System Center Configuration Manager](../../../core/servers/manage/install-in-console-updates.md) (Instalar atualizações no console para o System Center Configuration Manager).  
+ 有关安装更新的信息，请参阅[安装 System Center Configuration Manager 在控制台的更新](../../../core/servers/manage/install-in-console-updates.md)。  
 
-## <a name="bkmk_cmd"></a> Opções de linha de comando  
- Para exibir informações de ajuda para a ferramenta de ponto de conexão de serviço, abra um prompt de comando para a pasta que contém a ferramenta e execute o comando:  **serviceconnectiontool.exe**.  
+## <a name="bkmk_cmd"></a> 命令行选项  
+ 若要查看服务连接点工具的帮助信息，请打开包含该工具的文件夹的命令提示符并运行命令：  **serviceconnectiontool.exe**。  
 
-|Opções de linha de comando|Detalhes|  
+|命令行选项|详细信息|  
 |---------------------------|-------------|  
-|**-prepare -usagedatadest [unidade:][caminho][nome do arquivo.cab]**|Este comando armazena dados de uso atual em um arquivo .cab.<br /><br /> Execute-o como **administrador local** no servidor que hospeda o ponto de conexão de serviço.<br /><br /> Exemplo:   **-prepare -usagedatadest D:\USB\Usagedata.cab**|    
-|**-connect -usagedatasrc [unidade:][caminho] -updatepackdest [unidade:][caminho] -proxyserveruri [FQDN do servidor proxy] -proxyusername [nome de usuário]** <br /> <br /> Se usar uma versão do Configuration Manager anterior à 1606, você deverá especificar o nome do arquivo .cab e não será possível usar as opções de um servidor proxy.  Os parâmetros de comando com suporte são: <br /> **-connect -usagedatasrc [unidade:][caminho][nome de arquivo] -updatepackdest [unidade:][caminho]** |Esse comando conecta ao serviço de nuvem do Configuration Manager para carregar os arquivos .cab de dados de uso do local especificado e para baixar conteúdo do console e pacotes de atualização disponíveis. As opções para servidores proxy são opcionais.<br /><br /> Execute o comando como **administrador local** em um computador que possa se conectar à Internet.<br /><br /> Exemplo para se conectar sem um servidor proxy: **-connect -usagedatasrc D:\USB\ -updatepackdest D:\USB\UpdatePacks** <br /><br /> Exemplo para se conectar quando estiver usando um servidor proxy: **-connect -usagedatasrc D:\USB\Usagedata.cab -updatepackdest D:\USB\UpdatePacks -proxyserveruri itgproxy.redmond.corp.microsoft.com -proxyusername Meg** <br /><br /> Se usar uma versão anterior à 1606, você deverá especificar um nome de arquivo para o arquivo .cab e não poderá especificar um servidor proxy. Use a seguinte linha de comando de exemplo: **-connect -usagedatasrc D:\USB\Usagedata.cab -updatepackdest D:\USB\UpdatePacks**|      
-|**-import -updatepacksrc [unidade:][caminho]**|Este comando importa os pacotes de atualização e o conteúdo do console que você baixou anteriormente no seu console do Configuration Manager.<br /><br /> Execute-o como **administrador local** no servidor que hospeda o ponto de conexão de serviço.<br /><br /> Exemplo:  **-import -updatepacksrc D:\USB\UpdatePacks**|  
-|**-export -dest [unidade:][caminho][nome do arquivo.csv]**|Este comando exporta os dados de uso para um arquivo .csv, que você poderá visualizar posteriormente.<br /><br /> Execute-o como **administrador local** no servidor que hospeda o ponto de conexão de serviço.<br /><br /> Exemplo: **-export -dest D:\USB\usagedata.csv**|  
-
+|**-prepare -usagedatadest [drive:][path][filename.cab]**|此命令会将当前的使用情况数据存储于 .cab 文件中。<br /><br /> 在承载服务连接点的服务器上以 **本地管理员** 身份运行此命令。<br /><br /> 示例：   **-prepare -usagedatadest D:\USB\Usagedata.cab**|    
+|**-connect -usagedatasrc [drive:][path] -updatepackdest [drive:][path] -proxyserveruri [FQDN of proxy server] -proxyusername [username]** <br /> <br /> 如果使用 1606 之前的 Configuration Manager 版本，则必须指定 .cab 文件的名称，并且不能使用代理服务器的选项。  支持的命令参数是： <br /> **-connect -usagedatasrc [drive:][path][filename] -updatepackdest [drive:][path]** |此命令连接到 Configuration Manager 云服务以从指定位置上传使用情况数据 .cab 文件并下载可用的更新包和控制台内容。 代理服务器的选项是可选选项。<br /><br /> 在可连接到 Internet 的计算机上以 **本地管理员** 身份运行此命令。<br /><br /> 连接时不使用代理服务器的示例： **-connect -usagedatasrc D:\USB\ -updatepackdest D:\USB\UpdatePacks** <br /><br /> 连接时使用代理服务器的示例： **-connect -usagedatasrc D:\USB\Usagedata.cab -updatepackdest D:\USB\UpdatePacks -proxyserveruri itgproxy.redmond.corp.microsoft.com -proxyusername Meg** <br /><br /> 如果使用 1606 之前的版本，则必须为 .cab 文件指定文件名称，并且不能指定代理服务器。 使用以下示例命令行： **-connect -usagedatasrc D:\USB\Usagedata.cab -updatepackdest D:\USB\UpdatePacks**|      
+|**-import -updatepacksrc [drive:][path]**|此命令会将之前下载的更新包和控制台内容导入到 Configuration Manager 控制台中。<br /><br /> 在承载服务连接点的服务器上以 **本地管理员** 身份运行此命令。<br /><br /> 示例：  **-import -updatepacksrc D:\USB\UpdatePacks**|  
+|**-export -dest [drive:][path][filename.csv]**|此命令会将使用情况数据导出为 .csv 文件，然后你可以进行查看。<br /><br /> 在承载服务连接点的服务器上以 **本地管理员** 身份运行此命令。<br /><br /> 示例： **-export -dest D:\USB\usagedata.csv**|  

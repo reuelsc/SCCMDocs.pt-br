@@ -1,75 +1,68 @@
 ---
-title: "Suporte para virtualização | Microsoft Docs"
-description: "Conheça os requisitos para instalar as funções de cliente e do sistema de sites do System Center Configuration Manager em um ambiente de virtualização."
+title: "虚拟化环境的支持 | Microsoft Docs"
+description: "获取在虚拟化环境中安装 System Center Configuration Manager 客户端和站点系统的要求"
 ms.custom: na
 ms.date: 1/12/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
-ms.technology:
-- configmgr-other
+ms.technology: configmgr-other
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 1098e8c5-9676-4c2b-841b-ec88bd04e495
-caps.latest.revision: 6
+caps.latest.revision: "6"
 author: Brenduns
 ms.author: brenduns
 manager: angrobe
-translationtype: Human Translation
-ms.sourcegitcommit: 10192da2633555ab3bae60dbb1156d1926f9a4a0
 ms.openlocfilehash: b49bd179da850cee35b2487a353bb1788df03d58
-
-
+ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
+ms.translationtype: HT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 08/07/2017
 ---
-# <a name="support-for-virtualization-environments-for-system-center-configuration-manager"></a>Suporte para ambientes de virtualização do System Center Configuration Manager
+# <a name="support-for-virtualization-environments-for-system-center-configuration-manager"></a>对 System Center Configuration Manager 的虚拟化环境的支持
 
-*Aplica-se a: System Center Configuration Manager (Branch Atual)*
+*适用范围：System Center Configuration Manager (Current Branch)*
 
-O Configuration Manager dá suporte à instalação de funções de cliente e do sistema de sites em sistemas operacionais com suporte que são executados como uma máquina virtual nos ambientes de virtualização listados neste artigo. Este suporte existe mesmo quando não há suporte para o host da máquina virtual (ambiente de virtualização) como um cliente ou servidor do site.  
+Configuration Manager 支持在受支持的操作系统上安装客户端和站点系统角色，这些受支持的操作系统在本文中列出的虚拟化环境中作为虚拟机运行。 甚至当虚拟机主机（虚拟化环境）不被支持作为客户端或站点服务器时，这种支持仍然存在。  
 
- Por exemplo, se você usar o Microsoft Hyper-V Server 2012 para hospedar uma máquina virtual que executa o Windows Server 2012, será possível instalar as funções do cliente ou do sistema de sites na máquina virtual (Windows Server 2012), mas não no host (Microsoft Hyper-V Server 2012).  
+ 例如，如果使用 Microsoft Hyper-V Server 2012 托管运行 Windows Server 2012 的虚拟机，则可在虚拟机 (Windows Server 2012) 上安装客户端或站点系统角色，但不是在主机 (Microsoft Hyper-V Server 2012) 上。  
 
-|Ambiente de virtualização|  
+|虚拟化环境|  
 |--------------------------------|  
 |Windows Server 2008 R2|  
 |Microsoft Hyper-V Server 2008 R2|  
 |Windows Server 2012|  
 |Microsoft Hyper-V Server 2012|  
 |Windows Server 2012 R2|
-|Windows Server 2016 <sup>(consulte a *observação 1*)</sup>|
-|Microsoft Hyper-V Server 2016 <sup>(consulte a *observação 1*)|
--  *Observação 1*: o Configuration Manager não dá suporte à [virtualização aninhada](https://technet.microsoft.com/windows-server-docs/compute/hyper-v/what-s-new-in-hyper-v-on-windows#a-namebkmknestedanested-virtualization-new), que é uma novidade no Windows Server 2016.
+|Windows Server 2016 <sup>（见注释 1）</sup>|
+|Microsoft Hyper-V Server 2016 <sup>（见注释 1）|
+-  注释 1：Configuration Manager 不支持[嵌套虚拟化](https://technet.microsoft.com/windows-server-docs/compute/hyper-v/what-s-new-in-hyper-v-on-windows#a-namebkmknestedanested-virtualization-new)，这是 Windows Server 2016 的新增功能。
 
 
- Cada computador virtual usado deve atender ou exceder aos mesmos requisitos de hardware e software que seriam usados para um computador físico do Configuration Manager.  
+ 使用的每台虚拟计算机必须满足或超过将用于物理 Configuration Manager 计算机的相同硬件和软件要求。  
 
- É possível validar se seu ambiente de virtualização tem suporte no Configuration Manager por meio do Programa de Validação de Virtualização de Servidores e de seu Assistente da Política de Suporte do Programa Virtualização online. Para obter mais informações sobre o Programa de Validação de Virtualização de Servidores, consulte [Programa de Validação do Windows Server Virtualization](https://www.windowsservercatalog.com/svvp.aspx).  
+ 通过使用服务器虚拟化验证计划和其在线的虚拟化计划支持策略向导，可以验证虚拟化环境是否支持 Configuration Manager。 有关服务器虚拟化验证计划的详细信息，请参阅 [Windows Server 虚拟化验证计划](https://www.windowsservercatalog.com/svvp.aspx)。  
 
 > [!NOTE]  
->  O Configuration Manager não dá suporte a sistemas operacionais convidados com Virtual PC ou Servidor Virtual que são executados em computadores Mac.  
+>  Configuration Manager 不支持在 Mac 计算机上运行的虚拟 PC 或虚拟服务器来宾操作系统。  
 
-O Configuration Manager não pode gerenciar máquinas virtuais, a menos que elas estejam online. Uma imagem de máquina virtual offline não pode ser atualizada nem o inventário pode ser coletado por meio do cliente do Configuration Manager no computador host.  
+Configuration Manager 无法管理虚拟机，除非虚拟机处于联机状态。 不能更新脱机虚拟机映像，也不能使用主计算机上的 Configuration Manager 客户端收集清单。  
 
-Nenhuma consideração especial é fornecida para máquinas virtuais. Por exemplo, o Configuration Manager poderá não determinar se uma atualização deve ser aplicada novamente a uma imagem de máquina virtual se a máquina virtual tiver sido interrompida e reiniciada sem salvar o estado da máquina virtual à qual a atualização foi aplicada.  
+未提供虚拟机的特别注意事项。 例如，如果停止并重新启动了虚拟机，但是没有保存应用更新的虚拟机状态，则 Configuration Manager 可能无法确定是否需要将更新重新应用到虚拟机映像。  
 
-##  <a name="a-namebkmkazurea-microsoft-azure-virtual-machines"></a><a name="bkmk_Azure"></a> Máquinas virtuais do Microsoft Azure  
- O Configuration Manager pode ser executado em máquinas virtuais no Azure da mesma forma que é executado localmente dentro da rede corporativa física. Você pode usar o Configuration Manager com as máquinas virtuais do Azure nos seguintes cenários:  
+##  <a name="bkmk_Azure"></a> Microsoft Azure 虚拟机  
+ Configuration Manager 可在 Azure 中的虚拟机上运行，正如在实体公司网络中本地运行一样。 可以在以下方案中将 Configuration Manager 与 Azure 虚拟机配合使用：  
 
--   **Cenário 1:** é possível executar o Configuration Manager em uma máquina virtual do Azure e usá-lo para gerenciar os clientes instalados em outras máquinas virtuais do Azure.  
+-   **方案 1：**可以在 Azure 虚拟机上运行 Configuration Manager，并使用它管理安装在其他 Azure 虚拟机上的客户端。  
 
--   **Cenário 2:** é possível executar o Configuration Manager em uma máquina virtual do Azure e usá-lo para gerenciar clientes que não estão sendo executados no Azure.  
+-   **方案 2：**可以在 Azure 虚拟机上运行 Configuration Manager，并使用它管理不在 Azure 上运行的客户端。  
 
--   **Cenário 3:** é possível executar diferentes funções do sistema de sites do Configuration Manager em máquinas virtuais do Azure durante a execução de outras funções em sua rede corporativa física (com conectividade de rede apropriada para comunicações).  
+-   **方案 3：**可以在 Azure 虚拟机上运行不同的 Configuration Manager 站点系统角色，同时在物理公司网络（具有用于通信的相应网络连接）中运行其他角色。  
 
-Os mesmos requisitos do System Center Configuration Manager para redes, configurações com suporte e requisitos de hardware que se aplicam ao instalar o Configuration Manager localmente em sua rede corporativa física também se aplicam à instalação em máquinas virtuais do Azure.  
+如果网络 System Center Configuration Manager 要求以及支持的配置和硬件要求适用于在物理公司网络中安装本地 Configuration Manager，则这些要求也适用于在 Azure 虚拟机中进行安装。  
 
-Para mais informações, consulte [Configuration Manager no Azure – Perguntas frequentes](/sccm/core/understand/configuration-manager-on-azure).
+有关详细信息，请参阅 [Azure 上的 Configuration Manager - 常见问题解答](/sccm/core/understand/configuration-manager-on-azure)。
 
 > [!IMPORTANT]  
->  Os sites e os clientes do Configuration Manager executados em máquinas virtuais do Azure estão sujeitos aos mesmos requisitos de licença que as instalações locais.  
-
-
-
-<!--HONumber=Jan17_HO2-->
-
-
+>  Configuration Manager 站点和在 Azure 虚拟机中运行的客户端与本地安装遵循相同的许可证要求。  

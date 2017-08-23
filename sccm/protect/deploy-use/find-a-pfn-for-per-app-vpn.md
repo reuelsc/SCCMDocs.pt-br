@@ -1,52 +1,50 @@
 ---
-title: "Encontrar um PFN (Nome de Família de Pacotes) para VPN por aplicativo | Microsoft Docs"
-description: "Saiba mais sobre as duas formas de localizar um nome de família de pacotes para que você possa configurar uma VPN por aplicativo."
+title: "查找每应用 VPN 的包系列名称 (PFN) | Microsoft Docs"
+description: "了解两种查找包系列名称的方式，以便可以配置每应用 VPN。"
 ms.custom: na
 ms.date: 10/06/2016
 ms.reviewer: na
 ms.suite: na
 ms.prod: configuration-manager
-ms.technology:
-- configmgr-other
+ms.technology: configmgr-other
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 47118499-3d26-4c25-bfde-b129de7eaa59
-caps.latest.revision: 3
+caps.latest.revision: "3"
 author: Nbigman
 ms.author: nbigman
 manager: angrobe
-ms.translationtype: Human Translation
-ms.sourcegitcommit: bff083fe279cd6b36a58305a5f16051ea241151e
 ms.openlocfilehash: ce50645155ecb14a82d8b982aa69c0f87dd15fbf
-ms.contentlocale: pt-br
-ms.lasthandoff: 12/16/2016
-
+ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
+ms.translationtype: HT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 08/07/2017
 ---
-# <a name="find-a-package-family-name-pfn-for-per-app-vpn"></a>Localizar um nome da família de pacotes (PFN) para VPN por aplicativo
+# <a name="find-a-package-family-name-pfn-for-per-app-vpn"></a>查找每应用 VPN 的包系列名称 (PFN)
 
-*Aplica-se a: System Center Configuration Manager (Branch Atual)*
+*适用范围：System Center Configuration Manager (Current Branch)*
 
 
-Há duas maneiras de localizar um PFN para que você possa configurar uma VPN por aplicativo.
+有两种查找 PFN 的方式，以便可以配置每应用 VPN。
 
-## <a name="find-a-pfn-for-an-app-thats-installed-on-a-windows-10-computer"></a>Localizar um PFN para um aplicativo que é instalado em um computador Windows 10
+## <a name="find-a-pfn-for-an-app-thats-installed-on-a-windows-10-computer"></a>为安装在 Windows 10 计算机上的应用查找 PFN
 
-Se o aplicativo com o qual você está trabalhando já estiver instalado em um computador Windows 10, use o cmdlet [Get-AppxPackage](https://technet.microsoft.com/library/hh856044.aspx) do PowerShell para obter o PFN.
+如果要使用的应用已安装在 Windows 10 计算机中，可使用 [Get-AppxPackage](https://technet.microsoft.com/library/hh856044.aspx) PowerShell cmdlet 获取 PFN。
 
-A sintaxe de Get-AppxPackage é:
+Get-appxpackage 的语法是：
 
 ` Parameter Set: __AllParameterSets`
 ` Get-AppxPackage [[-Name] <String> ] [[-Publisher] <String> ] [-AllUsers] [-User <String> ] [ <CommonParameters>]`
 
 > [!NOTE]
-> Talvez você precise executar o PowerShell como administrador para recuperar o PFN
+> 可能需要以管理员身份运行 PowerShell 才能检索 PFN
 
-Por exemplo, para obter informações sobre todos os aplicativos universais instalados no computador, use `Get-AppxPackage`.
+例如，若要获取有关计算机上安装的所有通用应用的信息，可使用 `Get-AppxPackage`。
 
-Para obter informações sobre um aplicativo cujo nome você conhece no todo ou parte, use `Get-AppxPackage *<app_name>`. Observe o uso do caractere curinga, que é especialmente útil se você não tem certeza do nome completo do aplicativo. Por exemplo, para obter as informações sobre o OneNote, use `Get-AppxPackage *OneNote`.
+若要获得知道其名称或部分名称的应用的信息，可使用 `Get-AppxPackage *<app_name>`。 记下通配符的使用方法，这在不确定应用的完整名称时特别有用。 例如，若要获得 OneNote 的信息，可使用 `Get-AppxPackage *OneNote`。
 
 
-Eis aqui as informações recuperadas do OneNote:
+下面是检索到的 OneNote 的信息：
 
 `Name                   : Microsoft.Office.OneNote`
 
@@ -72,14 +70,14 @@ Eis aqui as informações recuperadas do OneNote:
 
 
 
-## <a name="find-a-pfn-if-the-app-is-not-installed-on-a-computer"></a>Localizar um PFN se o aplicativo não estiver instalado em um computador
+## <a name="find-a-pfn-if-the-app-is-not-installed-on-a-computer"></a>如果计算机上未安装此应用，查找 PFN
 
-1.  Vá para https://www.microsoft.com/en-us/store/apps
-2.  Insira o nome do aplicativo na barra de pesquisa. Em nosso exemplo, procure o OneNote.
-3.  Clique no link do aplicativo. Observe que a URL que você acessa tem uma série de letras no final. Em nosso exemplo, a URL tem esta aparência: `https://www.microsoft.com/en-us/store/apps/onenote/9wzdncrfhvjl`
-4.  Em uma guia diferente, cole o seguinte URL, `https://bspmts.mp.microsoft.com/v1/public/catalog/Retail/Products/<app id>/applockerdata`, substituindo `<app id>` pela ID do aplicativo obtida no https://www.microsoft.com/en-us/store/apps – aquela série de letras no final da URL na etapa 3. Em nosso exemplo, o exemplo do OneNote, você deve colar: `https://bspmts.mp.microsoft.com/v1/public/catalog/Retail/Products/9wzdncrfhvjl/applockerdata`.
+1.  转到 https://www.microsoft.com/zh-cn/store/apps
+2.  在搜索栏中输入应用的名称。 在本示例中，搜索 OneNote。
+3.  单击应用的链接。 请注意，访问的 URL 末尾有一串字母。 在本示例中，URL 如下所示：`https://www.microsoft.com/en-us/store/apps/onenote/9wzdncrfhvjl`
+4.  在不同的选项卡上，粘贴以下 URL，`https://bspmts.mp.microsoft.com/v1/public/catalog/Retail/Products/<app id>/applockerdata`，将 `<app id>` 替换为从 https://www.microsoft.com/zh-cn/store/apps 获取的应用 ID，即步骤 3 中 URL 末尾的一串字母。 在本示例（OneNote 的示例）中，将粘贴：`https://bspmts.mp.microsoft.com/v1/public/catalog/Retail/Products/9wzdncrfhvjl/applockerdata`。
 
-No Microsoft Edge, as informações que você deseja são exibidas; no Internet Explorer, clique em **Abrir** para ver as informações. O valor do PFN é fornecido na primeira linha. Esta é a aparência dos resultados para o nosso exemplo:
+在 Microsoft Edge 中，将显示所需信息；在 Internet Explorer 中，单击“打开”，查看信息。 第一行提供 PFN 值。 本示例的结果如下所示：
 
 
 `{`
@@ -88,4 +86,3 @@ No Microsoft Edge, as informações que você deseja são exibidas; no Internet 
 `  "windowsPhoneLegacyId": "ca05b3ab-f157-450c-8c49-a1f127f5e71d",`
 `  "publisherCertificateName": "CN=Microsoft Corporation, O=Microsoft Corporation, L=Redmond, S=Washington, C=US"`
 `}`
-

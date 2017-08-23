@@ -1,115 +1,111 @@
 ---
-title: "Tarefas comuns de gerenciamento de conformidade para dispositivos gerenciados pelo cliente – Configuration Manager | Microsoft Docs"
-description: "Saiba mais sobre as configurações de conformidade do System Center Configuration Manager trabalhando em alguns cenários comuns."
+title: "客户端托管的设备的常见符合性管理任务 - Configuration Manager | Microsoft Docs"
+description: "通过完成一些常见方案，了解 System Center Configuration Manager 符合性设置。"
 ms.custom: na
 ms.date: 10/06/2016
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
-ms.technology:
-- configmgr-other
+ms.technology: configmgr-other
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 4e345791-74db-41ad-b472-024ce6521daf
-caps.latest.revision: 8
+caps.latest.revision: "8"
 author: robstackmsft
 ms.author: robstack
 manager: angrobe
-ms.translationtype: Human Translation
-ms.sourcegitcommit: 991eff171dce95590a7f050e0d3b07f98c0224b3
 ms.openlocfilehash: 2012ab5e55da8d707fd668e0163b42fe7d56c72f
-ms.contentlocale: pt-br
-ms.lasthandoff: 05/17/2017
-
-
+ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
+ms.translationtype: HT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 08/07/2017
 ---
-# <a name="common-tasks-for-managing-compliance-on-devices-with-the-system-center-configuration-manager-client"></a>Tarefas comuns para gerenciar a conformidade em dispositivos com o cliente do System Center Configuration Manager
+# <a name="common-tasks-for-managing-compliance-on-devices-with-the-system-center-configuration-manager-client"></a>使用 System Center Configuration Manager 客户端在设备上管理符合性的常见任务
 
-*Aplica-se a: System Center Configuration Manager (Branch Atual)*
+*适用范围：System Center Configuration Manager (Current Branch)*
 
-Os cenários neste tópico oferecem uma introdução ao uso das configurações de conformidade do System Center Configuration Manager, apresentando alguns cenários comuns que podem ser encontrados.  
+本主题中的方案通过演示你可能遇到的一些常见情景介绍如何使用 System Center Configuration Manager 符合性设置。  
 
- Se você já está familiarizado com as configurações de conformidade, pode encontrar a documentação detalhada sobre todos os recursos que você usa na seção [Itens de configuração para dispositivos gerenciados com o cliente do System Center Configuration Manager](../../compliance/deploy-use/configuration-items-for-devices-managed-with-the-client.md).  
+ 如果你已熟悉符合性设置，有关所有可用功能的详细文档，可参阅[使用 System Center Configuration Manager 客户端管理的设备的配置项目](../../compliance/deploy-use/configuration-items-for-devices-managed-with-the-client.md)部分。  
 
- Antes de começar, leia a [Introdução às configurações de conformidade](../../compliance/get-started/get-started-with-compliance-settings.md) para aprender algumas noções básicas sobre as configurações de conformidade e [Planejar e definir as configurações de conformidade](../../compliance/plan-design/plan-for-and-configure-compliance-settings.md) para implementar os pré-requisitos necessários.  
+ 在开始之前，请阅读[符合性设置入门](../../compliance/get-started/get-started-with-compliance-settings.md)以了解有关符合性设置的一些基础知识，另请阅读[规划和配置符合性设置](../../compliance/plan-design/plan-for-and-configure-compliance-settings.md)来实施任何必要的先决条件。  
 
-## <a name="general-information-for-each-scenario"></a>Informações gerais para cada cenário  
- Em cada cenário, você criará um item de configuração que executa uma tarefa específica. Para abrir o Assistente de Criação de Item de Configuração, use as seguintes etapas:  
+## <a name="general-information-for-each-scenario"></a>每个方案的一般信息  
+ 在每个方案中，将创建可执行特定任务的配置项目。 打开“创建配置项目向导”，使用以下步骤：  
 
-1.  No console do Configuration Manager, clique em **Ativos e Conformidade** > **Configurações de Conformidade** > **Itens de Configuração**.  
+1.  在 Configuration Manager 控制台中，单击“资产和符合性” > “符合性设置” > “配置项目”。  
 
-3.  Na guia **Início** , no grupo **Criar** , clique em **Criar Item de Configuração**.  
+3.  在“主页”  选项卡上的“创建”  组中，单击“创建配置项目” 。  
 
-4.  Na guia **Geral** do Assistente de Criação de Item de Configuração, conforme mostrado abaixo, especifique um nome e uma descrição para o item de configuração e escolha o tipo de item de configuração apropriado para cada cenário descrito neste tópico.  
+4.  在“创建配置项目”向导的“常规”  选项卡上（如下所示），指定配置项目的名称和说明，然后选择本主题中的每个方案的相应配置项目类型。  
 
-     ![Mostra a página geral do assistente Criar item de configuração.](/sccm/compliance/plan-design/media/Compliance-Settings-Wizard---1.png)  
+     ![将显示“创建配置项目向导”的常规页。](/sccm/compliance/plan-design/media/Compliance-Settings-Wizard---1.png)  
 
-## <a name="scenarios-for-windows-10-devices-managed-with-the-configuration-manager-client"></a>Cenários para dispositivos Windows 10 gerenciados com o cliente do Configuration Manager  
+## <a name="scenarios-for-windows-10-devices-managed-with-the-configuration-manager-client"></a>使用 Configuration Manager 客户端管理的 Windows 10 设备的方案  
 
-### <a name="scenario-disable-the-use-of-bluetooth-on-windows-10-devices"></a>Cenário: desabilitar o uso do Bluetooth em dispositivos Windows 10  
- Nesse cenário, seu departamento de segurança identificou a funcionalidade Bluetooth em dispositivos como um meio que pode ser usado para transmitir informações corporativas confidenciais para fora da empresa. Recentemente, você atualizou todos os seus computadores para o Windows 10 e optou por desabilitar a funcionalidade Bluetooth nesses dispositivos.  
+### <a name="scenario-disable-the-use-of-bluetooth-on-windows-10-devices"></a>方案：在 Windows 10 设备上禁用蓝牙  
+ 在此方案中，安全部门已将设备上的蓝牙功能识别为可用于在公司外传输敏感企业信息的一种手段。 你最近已将所有的 PC 都升级到了 Windows 10 并决定禁用这些设备上的蓝牙功能。  
 
-1.  Na página **Geral** do Assistente de Criação de Item de Configuração, selecione o tipo de item de configuração **Windows 10** e clique em **Avançar**.  
+1.  在“创建配置项目”向导的“常规”  页上，选择  “Windows 10”配置项目类型，然后单击“下一步” 。  
 
-2.  Na página **Plataformas com Suporte** do assistente, selecione todas as plataformas Windows 10.  
+2.  在向导的“支持的平台”  页上，选择所有 Windows 10 平台。  
 
-3.  Na página **Configurações do Dispositivo** , selecione **Dispositivo**e clique em **Avançar**.  
+3.  在“设备设置”  页上，选择“设备” ，然后单击“下一步” 。  
 
-4.  Na página **Dispositivo** , selecione **Proibido** como o valor para **Bluetooth**.  
+4.  在“设备”  页上，选择“禁止”  作为 “蓝牙”的值。  
 
-5.  Selecione **Corrigir configurações não compatíveis** para garantir que a alteração será aplicada a todos os dispositivos Windows 10.  
+5.  选择“修正非符合性设置”  以确保更改被应用到所有 Windows 10 设备上。  
 
-6.  Conclua o assistente para criar o item de configuração.  
+6.  完成向导以创建配置项目。  
 
- Agora você pode usar as informações do tópico [Tarefas comuns para criar e implantar linhas de base de configuração com o System Center Configuration Manager](../../compliance/plan-design/common-tasks-for-creating-and-deploying-configuration-baselines.md) para ajudar a implantar nos dispositivos a configuração que você criou.  
+ 现在便可以通过[使用 System Center Configuration Manager 创建和部署配置基线的常见任务](../../compliance/plan-design/common-tasks-for-creating-and-deploying-configuration-baselines.md)主题中的信息将创建的配置部署到设备。  
 
-## <a name="scenarios-for-windows-desktop-and-server-computers-managed-with-the-configuration-manager-client"></a>Cenários para computadores desktop e de servidor com Windows gerenciados com o cliente do Configuration Manager  
- Em computadores Mac que executam o cliente do Configuration Manager, você tem duas opções para avaliar a conformidade:  
+## <a name="scenarios-for-windows-desktop-and-server-computers-managed-with-the-configuration-manager-client"></a>使用 Configuration Manager 客户端管理的 Windows 台式机和服务器计算机的方案  
+ 在运行 Configuration Manager 客户端的 Mac 计算机上，有两种评估符合性的选项：  
 
--   Avalie um arquivo de preferências (plist) do Mac OS X.  
+-   评估 Mac OS X 首选项 (plist) 文件。  
 
--   Use um script personalizado e avalie os resultados retornados pelo script.  
+-   使用自定义脚本并评估由该脚本返回的结果。  
 
- Para mais informações, consulte [Como criar itens de configuração para dispositivos Mac OS X gerenciados com o cliente do System Center Configuration Manager](../../compliance/deploy-use/create-configuration-items-for-mac-os-x-devices-managed-with-the-client.md).  
+ 有关详细信息，请参阅[如何为 System Center Configuration Manager 客户端管理的Mac OS X 设备创建配置项目](../../compliance/deploy-use/create-configuration-items-for-mac-os-x-devices-managed-with-the-client.md)。  
 
-### <a name="scenario-remediate-an-incorrect-registry-value-on-windows-desktop-computers"></a>Cenário: corrigir um valor do Registro incorreto em computadores desktop com Windows  
- Nesse cenário, você descobre que um importante aplicativo de linha de negócios não está sendo executando corretamente em alguns computadores gerenciados que executam o Windows 8.1. Após uma investigação, você descobre que isso ocorre porque uma chave do Registro chamada **HKEY_LOCAL_MACHINE\SOFTWARE\Woodgrove\LOB App\Configuration\Configuration1** foi definida como um valor de **0** em alguns computadores. Para que o aplicativo de linha de negócios seja executado com êxito, esse valor deve ser definido como **1**.  
+### <a name="scenario-remediate-an-incorrect-registry-value-on-windows-desktop-computers"></a>方案：修正 Windows 台式计算机上的不正确的注册表值  
+ 在此方案中，你将发现重要的业务线应用在你管理的运行 Windows 8.1 的某些计算机上未正确运行。 经过调查发现，这是因为某些计算机上名为“HKEY_LOCAL_MACHINE\SOFTWARE\Woodgrove\LOB App\Configuration\Configuration1”  的注册表值已被设置为了“0”  。 若想成功运行业务线应用，必须将该值设置为“1” 。  
 
- Neste procedimento, você criará um item de configuração que monitora e que corrige automaticamente quaisquer valores da chave do Registro incorretos encontrados.  
+ 在此过程中，你需要创建一个配置项目，它会监视并自动修正发现的任何错误的注册表项值。  
 
-1.  Na página **Geral** do Assistente de Criação de Item de Configuração, selecione o tipo de item de configuração **Servidores e Desktops Windows (personalizado)** e clique em **Avançar**.  
+1.  在“创建配置项目”向导的“常规”  页上，选择  “Windows 台式机和服务器(自定义)”配置项目类型，然后单击 “下一步”。  
 
-2.  Na página **Plataformas com Suporte** do assistente, selecione **Windows 8.1** (para garantir que o item de configuração se aplica somente aos computadores afetados).  
+2.  在向导的“支持的平台”  页上，选择“Windows 8.1”  （以确保配置项目仅应用于受影响的计算机）。  
 
-3.  Na página **Configurações** , clique em **Novo** para criar uma nova configuração.  
+3.  在“设置”  页上，单击“新建”  创建新的设置。  
 
-4.  Na guia **Geral** da caixa de diálogo **Criar Configuração** , configure o seguinte:  
+4.  在“创建设置”  对话框的“常规”  选项卡上，配置以下信息：  
 
-    -   **Nome** > **Configuração de exemplo**  
+    -   **名称** > **示例设置**  
 
-    -   **Tipo de configuração** > **Valor do Registro**  
+    -   **设置类型** > **注册表值**  
 
-    -   **Tipo de dados** > **Inteiro** (já que o valor contém apenas um número)  
+    -   **数据类型** > **整数** （因为该值仅包含一个数字）  
 
     -   **Hive** > **HKEY_LOCAL_MACHINE**  
 
-    -   **Chave** > **SOFTWARE\Woodgrove\LOB App\Configuration\Configuration1**  
+    -   **密钥** > **SOFTWARE\Woodgrove\LOB App\Configuration\Configuration1**  
 
-    -   **Valor** > **1** (o valor necessário)  
+    -   **值** > **1** （必需值）  
 
-5.  Na guia **Regras de Conformidade** da caixa de diálogo **Criar Configuração** , clique em **Novo**e, na caixa de diálogo **Criar Regra** , configure o seguinte:  
+5.  在  “创建设置”对话框的“符合性规则”  选项卡上，单击“新建” ，然后在“创建规则”  对话框中，配置以下信息：  
 
-    -   **Nome** > **Regra de Exemplo**  
+    -   **名称** > **规则示例**  
 
-    -   **Configuração selecionada** – Verifique se a configuração selecionada é **Configuração de exemplo**.  
+    -   **所选设置** – 验证所选设置是否为“示例设置” 。  
 
-    -   **Tipo de regra** > **Valor**  
+    -   **规则类型** > **值**  
 
-    -   **A configuração deve ser compatível com a regra a seguir** – Verifique se o nome da configuração está correto e configure a opção para especificar que o valor da configuração deve ser igual a **1**.  
+    -   **设置必须符合以下规则** – 验证设置名称是否正确，并配置选项以指定设置值必须等于“1” 。  
 
-    -   **Corrigir regras não compatíveis quando suportadas** – Marque esta caixa para garantir que o Configuration Manager redefinirá o valor da chave do Registro para o valor correto se ela estiver incorreta.  
+    -   **修正非符合性规则(如果支持)** – 勾选此框，以确保 Configuration Manager 在注册表项值不正确时将其重置为正确的值。  
 
-6.  Conclua o assistente para criar o item de configuração.  
+6.  完成向导以创建配置项目。  
 
- Agora você pode usar as informações do tópico [Tarefas comuns para criar e implantar linhas de base de configuração](../../compliance/plan-design/common-tasks-for-creating-and-deploying-configuration-baselines.md) para ajudar a implantar nos dispositivos a configuração que você criou.  
-
+ 现在可以使用[用于创建和部署配置基线的常见任务](../../compliance/plan-design/common-tasks-for-creating-and-deploying-configuration-baselines.md)主题中的信息将创建的配置部署到设备。  

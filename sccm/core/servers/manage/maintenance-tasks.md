@@ -1,144 +1,140 @@
 ---
-title: "Tarefas de manutenção | Microsoft Docs"
-description: "Compreenda quais tarefas de manutenção executar para sites e hierarquias do Configuration Manager e quando executá-las."
+title: "维护任务 | Microsoft Docs"
+description: "了解针对 Configuration Manager 站点和层次结构执行的维护任务以及何时执行它们。"
 ms.custom: na
 ms.date: 10/06/2016
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
-ms.technology:
-- configmgr-other
+ms.technology: configmgr-other
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 625bb787-6d16-47a0-8b0f-b129cd909ca3
-caps.latest.revision: 7
-caps.handback.revision: 0
+caps.latest.revision: "7"
+caps.handback.revision: "0"
 author: Brenduns
 ms.author: brenduns
 manager: angrobe
-ms.translationtype: Human Translation
-ms.sourcegitcommit: 3b56e84cbe9785e280fb02ede6644a8ed2769586
 ms.openlocfilehash: 90b6e4434abc5573a364c769bd835e08e5dff16d
-ms.contentlocale: pt-br
-ms.lasthandoff: 05/17/2017
-
-
+ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
+ms.translationtype: HT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 08/07/2017
 ---
-# <a name="maintenance-tasks-for-system-center-configuration-manager"></a>Tarefas de manutenção do System Center Configuration Manager
+# <a name="maintenance-tasks-for-system-center-configuration-manager"></a>System Center Configuration Manager 的维护任务
 
-*Aplica-se a: System Center Configuration Manager (Branch Atual)*
+*适用范围：System Center Configuration Manager (Current Branch)*
 
-Os sites e hierarquias do System Center Configuration Manager exigem manutenção e monitoramento regulares para prestar serviços de forma eficaz e contínua. A manutenção regular garante que o hardware, o software e o banco de dados do Configuration Manager continuem a funcionar de forma correta e eficiente. O desempenho otimizado reduz muito o risco de falha.  
+System Center Configuration Manager 站点和层次结构需要定期维护和监视以有效和连续提供服务。 通过定期维护，可确保硬件、软件和 Configuration Manager 数据库继续正常有效运行。 最佳性能大大降低了出现故障的风险。  
 
- Para configurar Alertas e usar o Sistema de Status para monitorar a integridade do Configuration Manager, consulte [Usar alertas e o sistema de status para o System Center Configuration Manager](../../../core/servers/manage/use-alerts-and-the-status-system.md).  
+ 若要设置警报并使用状态系统监视 Configuration Manager 的运行状况，请参阅[使用 System Center Configuration Manager 的警报和状态系统](../../../core/servers/manage/use-alerts-and-the-status-system.md)。  
 
--   [Tarefas de manutenção](#bkmk_MTs)  
+-   [维护任务](#bkmk_MTs)  
 
-##  <a name="bkmk_MTs"></a> Tarefas de manutenção  
- A manutenção regular é importante para garantir operações de site corretas. Mantenha um log de manutenção para documentar as datas da manutenção, quem fez a manutenção e quaisquer comentários relacionados à manutenção sobre as tarefas.  
+##  <a name="bkmk_MTs"></a>维护任务  
+ 定期维护对于确保正确的站点操作非常重要。 保留维护日志，以记录维护日期、执行者以及任务的维护相关备注。  
 
-### <a name="when-to-do-common-maintenance-tasks"></a>Quando realizar tarefas de manutenção comuns  
- Para manter seu site, considere a manutenção diária ou semanal. Algumas tarefas podem exigir uma agenda diferente. A manutenção comum pode incluir tarefas internas de manutenção e outras tarefas, como manutenção da conta, para manter a conformidade com as políticas de sua empresa.  
+### <a name="when-to-do-common-maintenance-tasks"></a>何时执行常见维护任务  
+ 请考虑每日或每周维护一次站点。 某些任务可能需要不同的计划。 常见维护可包括内置维护任务和其他任务（如帐户维护），以保证公司策略的符合性。  
 
- Use as informações a seguir como um guia para ajudá-lo a planejar quando executar tarefas de manutenção diferentes. Use essas listas como ponto de partida e adicione tarefas que você possa precisar.  
+ 使用下列信息作为指南，帮助计划执行不同维护任务的时间。 以这些列表为起点，然后添加可能需要的任务。  
 
-**Tarefas diárias**   
-Veja abaixo as tarefas de manutenção que você pode considerar para uma agenda diária:  
+**每日任务**   
+可能要考虑的每日维护任务如下：  
 
--   Verificar se as tarefas de manutenção predefinidas que estão agendadas para execução diária estão sendo executadas com êxito.  
+-   检查计划每日运行的预定义维护任务是否成功运行。  
 
--   Verificar o status do banco de dados do Configuration Manager.  
+-   检查 Configuration Manager 数据库状态。  
 
--   Verificar o status do servidor de site.  
+-   检查站点服务器状态。  
 
--   Verificar se há lista de pendências do arquivo nas caixas de entrada do sistema de sites do Configuration Manager.  
+-   检查 Configuration Manager 站点系统收件箱是否存在文件积压。  
 
--   Verificar o status dos sistemas de site.  
+-   检查站点系统状态。  
 
--   Verificar os logs de evento do sistema operacional em sistemas de site.  
+-   检查站点系统上的操作系统事件日志。  
 
--   Verificar o log de erros do SQL Server no computador de banco de dados do site.  
+-   检查站点数据库计算机上的 SQL Server 错误日志。  
 
--   Verificar o desempenho do sistema.  
+-   检查系统性能。  
 
--   Verificar alertas do Configuration Manager.  
+-   检查 Configuration Manager 警报。  
 
-**Tarefas semanais**   
-Veja abaixo as tarefas de manutenção que você pode considerar para uma agenda semanal:  
+**每周任务**   
+可能要考虑的每周维护任务如下：  
 
--   Verificar se as tarefas de manutenção predefinidas que estão agendadas para execução semanal estão sendo executadas com êxito.  
+-   检查计划每周运行的预定义维护任务是否成功运行。  
 
--   Excluir arquivos desnecessários dos sistemas de site.  
+-   从站点系统中删除不必要的文件。  
 
--   Produzir e distribuir relatórios do usuário final, se necessário.  
+-   制作并分发最终用户报告（如果需要）。  
 
--   Fazer backup de logs de eventos de aplicativo, segurança e sistema e limpá-los.  
+-   备份应用程序、安全和系统事件日志并将其清除。  
 
--   Verificar o tamanho do banco de dados do site e verificar se há espaço em disco suficiente disponível no servidor de banco de dados do site para que o banco de dados possa aumentar.  
+-   检查站点数据库大小，并检查站点数据库服务器上是否有足够的可用磁盘空间，以便站点数据库可以增大。  
 
--   Executar a manutenção do banco de dados do SQL Server no banco de dados do site conforme o plano de manutenção do SQL Server.  
+-   按照 SQL Server 维护计划，对站点数据库执行 SQL Server 数据库维护。  
 
--   Verificar o espaço em disco disponível em todos os sistemas de site.  
+-   检查所有站点系统上的可用磁盘空间。  
 
--   Executar ferramentas de desfragmentação de disco em todos os sistemas de site.  
+-   在所有站点系统上运行磁盘碎片整理工具。  
 
-**Tarefas Periódicas**   
-Algumas tarefas que não exigem manutenção diária ou semanal são importantes para garantir a integridade geral do site. Essas tarefas também garantem que os planos de recuperação de desastres e de segurança estão atualizados. Os itens a seguir são tarefas de manutenção que você pode considerar para um agendamento mais periódico do que tarefas diárias ou semanais:  
+**定期任务**   
+某些任务无需每天或每周维护，但对确保站点总体运行状况非常重要。 这些任务还可确保安全和灾难恢复计划保持最新。 可能要考虑的更定期维护任务（比每日或每周任务更频繁）如下：  
 
--   Alterar contas e senhas, se necessário, de acordo com o plano de segurança.  
+-   如有必要，按照安全计划更改帐户和密码。  
 
--   Examinar o plano de manutenção para verificar se as tarefas de manutenção estão agendadas corretamente e de forma eficaz, dependendo das definições do site.  
+-   查看维护计划，检查是否根据配置的站点设置正确有效地安排了所计划的维护任务。  
 
--   Examinar o design de hierarquia do Configuration Manager de acordo com qualquer alteração necessária.  
+-   查看所有必需更改的 Configuration Manager 层次结构设计。  
 
--   Verificar o desempenho da rede para garantir que não foram feitas alterações que afetam as operações do site.  
+-   检查网络性能，确保未进行影响站点操作的更改。  
 
--   Verificar se as configurações do Active Directory que afetam as operações do site não foram alteradas. Por exemplo, verificar se as sub-redes atribuídas a sites do Active Directory e usadas ​​como limites para o site do Configuration Manager não foram alteradas.  
+-   检查是否未更改影响站点操作的 Active Directory 设置。 例如，检查是否未更改分配给 Active Directory 站点并用作 Configuration Manager 站点边界的子网。  
 
--   Revisar seu plano de recuperação de desastres quanto às alterações necessárias.  
+-   查看灾难恢复计划是否有任何必需的更改。  
 
--   Executar uma recuperação de site de acordo com o plano de recuperação de desastres em um laboratório de teste usando uma cópia do backup mais recente que a tarefa de manutenção Servidor do Site de Backup criou.
+-   通过“备份站点服务器”维护任务所创建的最新备份的备份副本，在测试实验室中按照灾难恢复计划执行站点恢复。
 
--   Verificar o hardware quanto a quaisquer erros ou atualizações de hardware disponíveis.  
+-   检查硬件是否有任何错误，或者是否有可用的硬件更新。  
 
--   Verificar a integridade geral do site.  
+-   检查站点的总体健康状况。  
 
-###  <a name="BKMK_UseMTs"></a> Manter a integridade operacional do banco de dados do site  
- Enquanto o site e a hierarquia do Configuration Manager executam as tarefas que você agenda e configura, os componentes do site adicionam dados continuamente ao banco de dados do Configuration Manager. À medida que o volume de dados aumenta, o desempenho do banco de dados e o espaço livre de armazenamento no banco de dados diminuem. Você pode configurar tarefas de manutenção do site para remover dados antigos que não precisa mais.  
+###  <a name="BKMK_UseMTs"></a>维护站点数据库的操作运行状况  
+ 当 Configuration Manager 站点和层次结构执行所计划和设置的任务时，站点组件会向 Configuration Manager 数据库持续添加数据。 随着数据量增大，数据库性能和数据库中的可用存储空间将降低。 可设置站点维护任务，使其删除不再需要的过时数据。  
 
- O Configuration Manager fornece tarefas de manutenção predefinidas que você pode usar para manter a integridade do banco de dados do Configuration Manager. Nem todas as tarefas de manutenção estão disponíveis em cada site, por padrão. Várias tarefas estão habilitadas, ao passo que outras não e todas dão suporte a uma agenda que você pode configurar.  
+ Configuration Manager 提供预定义的维护任务，你可以使用这些任务维护 Configuration Manager 数据库的健康状况。 默认情况下，并非所有维护任务在每个站点都可用。 仅启用部分任务，但所有任务均支持你可设置的计划。  
 
- A maioria das tarefas de manutenção remove periodicamente dados desatualizados do banco de dados do Configuration Manager. A redução do tamanho do banco de dados pela remoção de dados desnecessários melhora o desempenho e a integridade do banco de dados, o que aumenta a eficácia do local e da hierarquia. Outras tarefas, como **Recompilar Índices**, ajudam a manter a eficiência do banco de dados. Outras tarefas, como a tarefa de **Servidor do Site de Backup**, ajudam você a se preparar para a recuperação de desastres.  
+ 大多数维护任务定期从 Configuration Manager 数据库中删除过期数据。 通过删除不必要的数据降低数据库大小可以提高数据库的性能和完整性，从而提高站点和层次结构的效率。 其他任务（如**重建索引**）有助于维护数据库效率。 其他任务（如**备份站点服务器**任务）可帮助准备灾难恢复。  
 
 > [!IMPORTANT]  
->  Ao planejar a agenda de qualquer tarefa que exclui dados, considere o uso desses dados na hierarquia. Quando uma tarefa que exclui dados é executada em um site, a informação é removida do banco de dados do Configuration Manager e essa alteração é replicada em todos os sites na hierarquia. Essa exclusão pode afetar outras tarefas que dependem de dados. Por exemplo, no site de administração central, você pode configurar a Descoberta para ser executada uma vez por mês para identificar computadores não cliente. Você planeja instalar o cliente do Configuration Manager nesses computadores dentro de duas semanas após sua descoberta. No entanto, em um site na hierarquia, um administrador configura a tarefa Excluir Dados Antigos de Descoberta para ser executado a cada sete dias. O resultado é que sete dias após os computadores não cliente serem descobertos, eles são excluídos do banco de dados do Configuration Manager. De volta no site de administração central, prepare-se para instalar por push o cliente do Configuration Manager nesses novos computadores no dia 10. No entanto, como a tarefa Excluir Dados Antigos de Descoberta foi executada recentemente e excluiu dados de sete dias ou mais, os computadores recém-descobertos não estão mais disponíveis no banco de dados.  
+>  规划删除数据的任何任务的计划时，请考虑在整个层次结构中使用该数据的情况。 在站点中运行删除数据的任务时，会从 Configuration Manager 数据库中删除信息，这会更改复制到层次结构中的所有站点的内容。 此删除操作可能会影响依赖该数据的其他任务。 例如，在管理中心站点，可将“发现”设置为每月运行一次以识别非客户端计算机。 你计划在发现的两周内将 Configuration Manager 客户端安装到这些计算机。 但是，在层次结构的某个站点中，管理员将“删除过期的发现数据”任务设置为每 7 天运行一次。 结果是，在发现非客户端计算机的 7 天后，将从 Configuration Manager 数据库中删除它们。 你可以返回管理中心站点，并准备在第 10 天将 Configuration Manager 客户端请求安装到这些新计算机上。 然而，因为最近运行了“删除过期的发现数据”任务并且删除了已存在七天或更长时间的数据，所以最近发现的计算机在数据库中不再可用。  
 
-Depois de instalar um site do Configuration Manager, analise as tarefas de manutenção disponíveis e habilite aquelas de que suas operações precisam. Examine a agenda padrão de cada tarefa e, quando necessário, configure a agenda para ajustar a tarefa de manutenção à sua hierarquia e ao seu ambiente. Embora o agendamento padrão de cada tarefa deva atender à maioria dos ambientes, monitore o desempenho de seus sites e do banco de dados e ajuste as tarefas para aumentar a eficiência de suas implantações. Planeje rever periodicamente o site e o desempenho do banco de dados e reconfigurar tarefas de manutenção e suas agendas para manter essa eficiência.  
+在安装 Configuration Manager 站点之后，请查看可用的维护任务，并且启用操作所需的那些任务。 查看每项任务的默认计划，并在需要时设置计划进行维护任务的细微调整，使其适合你的层次结构和环境。 虽然每项任务的默认计划应适合大多数环境，但是，请监视站点和数据库的性能，且需细微调整任务以提高部署效率。 计划定期查看站点和数据库性能，并重新配置维护任务及其计划以维护该效率。  
 
-#### <a name="set-up-maintenance-tasks"></a>Configurar tarefas de manutenção  
- Cada site do Configuration Manager dá suporte a tarefas de manutenção que ajudam a manter a eficiência operacional do banco de dados do site. Por padrão, várias tarefas de manutenção estão habilitadas em cada site e agendamentos independentes oferecer suporte a todas as tarefas. As tarefas de manutenção são definidas individualmente para cada site e aplicam-se ao banco de dados nesse site. No entanto, algumas tarefas, como **Excluir Dados Antigos de Descoberta**, afetam as informações que estão disponíveis em todos os sites em uma hierarquia.  
+#### <a name="set-up-maintenance-tasks"></a>设置维护任务  
+ 每个 Configuration Manager 站点都支持帮助维护站点数据库的运营效率的维护任务。 默认情况下，在每个站点中，启用了几项维护任务和所有任务都支持独立的日程安排。 为每个站点单独设置维护任务，并应用于该站点的数据库。 但是，某些任务（如**删除过期的发现数据**）会影响层次结构的所有站点中的可用信息。  
 
- Somente as tarefas de manutenção que podem ser configuradas em um site são exibidas no console do Configuration Manager. Para obter uma lista completa de tarefas de manutenção por tipo de site, consulte [Referência para tarefas de manutenção do System Center Configuration Manager](../../../core/servers/manage/reference-for-maintenance-tasks.md).  
+ Configuration Manager 控制台中仅显示可在站点中设置的维护任务。 有关按站点类型划分的维护任务的完整列表，请参阅 [System Center Configuration Manager 维护任务参考](../../../core/servers/manage/reference-for-maintenance-tasks.md)。  
 
- Use o procedimento a seguir para ajudá-lo a definir as configurações comuns de tarefas de manutenção.  
+ 使用以下过程帮助设置维护任务的常见设置。  
 
-###### <a name="to-set-up-maintenance-tasks-for-configuration-manager"></a>Para configurar tarefas de manutenção para o Configuration Manager  
+###### <a name="to-set-up-maintenance-tasks-for-configuration-manager"></a>设置 Configuration Manager 的维护任务  
 
-1.  No console do Configuration Manager, acesse **Administração** > **Configuração do Site** >**Sites**.  
+1.  在 Configuration Manager 控制台中，转到“管理” > “站点配置” >“站点”。  
 
-2.  Escolha o site que tem a tarefa de manutenção que você deseja configurar.  
+2.  选择包含要设置的维护任务的站点。  
 
-3.  Na guia **Início**, no grupo **Configurações**, escolha **Manutenção do Site** e escolha a tarefa de manutenção que deseja configurar.  
+3.  在“主页”选项卡的“设置”组中，选择“站点维护”，然后选择要设置的维护任务。  
 
     > [!TIP]  
-    >  Somente as tarefas disponíveis no site selecionado são exibidas.  
+    >  仅显示所选站点中可用的任务。  
 
-4.  Para configurar a tarefa, escolha **Editar**, certifique-se de que a caixa de seleção **Habilitar esta tarefa** esteja marcada e configure uma agenda para a execução da tarefa. Se a tarefa também exclui dados antigos, configure a idade dos dados que serão excluídos do banco de dados quando a tarefa é executada. Escolha **OK** para fechar as **Propriedades** da tarefa.  
+4.  若要设置任务，请选择“编辑”，确保选中“启用此任务”复选框并设置任务运行时间安排。 如果此任务还会删除过期的数据，请设置在任务运行时要从数据库中删除的数据的期限。 选择“确定”以关闭“属性”任务。  
 
     > [!NOTE]  
-    >  Para **Excluir Mensagens de Status Antigas**, configure a idade dos dados a serem excluídos quando configurar as regras de filtro de status.  
+    >  对于“删除过期的状态消息”，需在设置状态筛选规则时设置要删除的数据的期限。  
 
-5.  Para habilitar ou desabilitar a tarefa sem editar suas propriedades, escolha o botão **Habilitar** ou **Desabilitar**. O botão rótulo se altera dependendo da configuração atual da tarefa.  
+5.  若要启用或禁用该任务，而不编辑任务属性，请选择“启用”或“禁用”按钮。 具体取决于任务的当前配置的按钮标签更改。  
 
-6.  Quando tiver terminado de configurar as tarefas de manutenção, escolha **OK** para concluir o procedimento.
-
+6.  完成维护任务的配置后，选择“确定”完成该过程。

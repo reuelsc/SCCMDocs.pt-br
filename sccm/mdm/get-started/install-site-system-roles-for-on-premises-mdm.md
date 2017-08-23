@@ -1,76 +1,72 @@
 ---
-title: "Instalar funções para o MDM local – Configuration Manager | Microsoft Docs"
-description: "Instalar funções do sistema de sites para o gerenciamento de dispositivo móvel local no System Center Configuration Manager."
+title: "为本地 MDM 安装角色 - Configuration Manager | Microsoft Docs"
+description: "在 System Center Configuration Manager 中为本地移动设备管理安装站点系统角色。"
 ms.custom: na
 ms.date: 03/05/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
-ms.technology:
-- configmgr-hybrid
+ms.technology: configmgr-hybrid
 ms.tgt_pltfrm: na
 ms.topic: get-started-article
 ms.assetid: c3cf9f64-c2b9-4ace-9527-2aba6d4eef04
-caps.latest.revision: 9
+caps.latest.revision: "9"
 author: Mtillman
 ms.author: mtillman
 manager: angrobe
-ms.translationtype: Human Translation
-ms.sourcegitcommit: 3743c80b0c2b5142f3a537ba3855ffd14794d42b
-ms.openlocfilehash: 916b971f851f968f6534ac834bd3182cc61614aa
-ms.contentlocale: pt-br
-ms.lasthandoff: 01/24/2017
-
-
+ms.openlocfilehash: 4913606e2f8a36e0004f711b24ecd836d0485124
+ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
+ms.translationtype: HT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 08/07/2017
 ---
-# <a name="install-site-system-roles-for-on-premises-mobile-device-management-in-system-center-configuration-manager"></a>Instalar funções do sistema de site para o gerenciamento de dispositivo móvel local no System Center Configuration Manager
+# <a name="install-site-system-roles-for-on-premises-mobile-device-management-in-system-center-configuration-manager"></a>在 System Center Configuration Manager 中为本地移动设备管理安装站点系统角色
 
-*Aplica-se a: System Center Configuration Manager (Branch Atual)*
+*适用范围：System Center Configuration Manager (Current Branch)*
 
-O Gerenciamento de Dispositivo Móvel Local do System Center Configuration Manager exige as seguintes funções de sistema de sites na sua infraestrutura do site do Configuration Manager:  
+本地移动设备管理上的 System Center Configuration Manager 需要 Configuration Manager 站点基础结构中的下列站点系统角色：  
 
--   Ponto de registro  
+-   注册点  
 
--   Ponto proxy do registro  
+-   注册代理点  
 
--   Ponto de distribuição  
+-   分发点  
 
--   Ponto de gerenciamento de dispositivo  
+-   设备管理点  
 
--   Ponto de Conexão de Serviço  
+-   服务连接点  
 
- Se você estiver adicionando o Gerenciamento de Dispositivo Móvel Local à sua organização que tem a maioria dos computadores e dispositivos gerenciados usando o software cliente do Configuration Manager, você poderá ter a maioria das funções de sistema de sites já instaladas como parte de sua infraestrutura existente. Caso contrário, consulte [Adicionar funções do sistema de sites para o System Center Configuration Manager](../../core/servers/deploy/configure/add-site-system-roles.md) para obter informações completas sobre como adicioná-los ao seu site.  
-
-> [!NOTE]  
->  Se você usar réplicas de banco de dados com a função de sistema de site do ponto de gerenciamento do dispositivo, os dispositivos recém-registrados inicialmente falharão ao se conectarem com o ponto de gerenciamento do dispositivo até que a réplica do banco de dados sincronize com eles. Essa falha de conexão ocorre porque a réplica de banco de dados não tem as informações necessárias sobre o dispositivo recém-registrado para estabelecer uma conexão bem-sucedida. As réplicas sincronizam a cada 5 minutos, portanto os dispositivos não conseguirão se conectar nos primeiros 5 minutos após o registro (geralmente 2 tentativas de conexão). Depois disso, o dispositivo se conectará com êxito.  
-
- Se você estiver usando funções de sistema de site existentes ou adicionando novas, você deverá configurá-las para serem usadas para gerenciar os dispositivos modernos. Siga as etapas abaixo para configurar o ponto de distribuição e o ponto de gerenciamento de dispositivo para funcionar corretamente com o Gerenciamento de Dispositivo Móvel Local:  
+ 如果组织中的大多数电脑和设备都是使用 Configuration Manager 客户端软件进行管理的，则向组织添加本地移动设备管理时，可能要求现有的基础结构中已安装大多数站点系统角色。 如果没有，请参阅[为 System Center Configuration Manager 添加站点系统角色](../../core/servers/deploy/configure/add-site-system-roles.md)，了解如何向站点添加站点系统角色的完整信息。  
 
 > [!NOTE]  
->  O branch atual do Configuration Manager só dá suporte para conexões de intranet de dispositivos para os pontos de distribuição e pontos de gerenciamento de dispositivo para Gerenciamento de Dispositivo Móvel Local. No entanto, se você também estiver gerenciando computadores Mac OS X, esses clientes exigirão conexões com a Internet para essas funções de sistema de sites. Nesse caso, quando você configura as propriedades do ponto de distribuição e o ponto de gerenciamento do dispositivo, você deve usar a configuração **Permitir conexões de intranet e Internet** como alternativa.  
+>  如果你以设备管理点站点系统角色使用数据库副本，那么新注册的设备最初无法连接到设备管理点，直到数据库副本与之同步。 此连接失败的原因是数据库副本没有建立成功连接所需的新注册设备的信息。 副本每 5 分钟同步一次，因此设备在注册之后的最初 5 分钟将无法连接（通常尝试 2 次连接），在此之后设备将成功连接。  
 
-### <a name="to-configure-site-system-roles-to-manage-modern-devices"></a>Para configurar as funções de sistema de site para gerenciar dispositivos modernos:  
+ 无论使用现有站点系统角色还是添加新角色，你都必须将其配置用于管理新式设备。 按照下列步骤配置分发点和设备管理点，使它们在本地移动设备管理上正常工作：  
 
-1.  No console do Configuration Manager, clique em **Administração** > **Visão Geral** > **Configuração do Site** > **Funções de Servidores e Sistema de Sites**.  
+> [!NOTE]  
+>  Configuration Manager 的 Current Branch 仅支持从设备到分发点和设备管理点的 Intranet 连接，以便进行本地移动设备管理。 但是，如果你还管理着 Mac OS X 计算机，则这些客户端将需要通过 Internet 连接到这些站点系统角色。 在这种情况下，配置分发点和设备管理点的属性时应改用“允许 Intranet 和 Internet 连接”设置。  
 
-2.  Selecione o servidor sistema de sites com ponto de distribuição ou o ponto de gerenciamento de dispositivo que deseja configurar, abra as propriedades para o **Sistema de Sites** e verifique se ele tem um FQDN especificado. Clique em **OK**.  
+### <a name="to-configure-site-system-roles-to-manage-modern-devices"></a>若要配置站点系统角色以管理新式设备：  
 
-3.  Abra as propriedades para a função de sistema de sites do ponto de distribuição. Na guia geral, verifique se o **HTTPS** foi selecionado e selecione **Permitir somente conexões da intranet**.  
+1.  在 Configuration Manager 控制台中，单击“管理” > “概述” > “站点配置” > “服务器和站点系统角色”。  
 
-     Se você também estiver gerenciando computadores Mac separadamente com o cliente do Configuration Manager, use **Permitir conexões de intranet e Internet** como alternativa.  
+2.  选择具有想要配置的分发点或设备管理点的站点系统服务器，打开“站点系统”的属性并确保其已指定 FQDN。 单击" **确定**"。  
+
+3.  打开分发点站点系统角色的属性。 在“常规”选项卡上，确保选中“HTTPS”，并选择“仅允许 Intranet 连接”。  
+
+     如果还通过 Configuration Manager 客户端单独管理着 Mac 计算机，请改用“允许 Intranet 和 Internet 连接”。  
 
     > [!NOTE]  
-    >  Os pontos de distribuição configurados para conexões de intranet exigem limites de site a serem configurados para eles. O branch atual do Configuration Manager só dá suporte a limites de intervalo IPv4 para o Gerenciamento de Dispositivo Móvel Local. Para obter mais informações sobre como configurar limites de site, consulte [Definir limites de site e grupos de limites para o System Center Configuration Manager](../../core/servers/deploy/configure/define-site-boundaries-and-boundary-groups.md).  
+    >  为 Intranet 连接配置的分发点需要为其配置站点边界。 Configuration Manager 的 Current Branch 仅支持用于本地移动设备管理的 IPv4 范围边界。 有关配置站点边界的详细信息，请参阅[为 System Center Configuration Manager 定义站点边界和边界组](../../core/servers/deploy/configure/define-site-boundaries-and-boundary-groups.md)。  
 
-4.  Clique na caixa de seleção próxima da opção **Permitir que os dispositivos móveis sejam conectados neste ponto de distribuição** e clique em **OK**.  
+4.  单击“允许移动设备连接到此分发点”旁边的复选框，然后单击“确定”。  
 
-5.  Abra as propriedades para a função de sistema de sites do ponto de gerenciamento. Na guia geral, verifique se o **HTTPS** foi selecionado e selecione **Permitir somente conexões da intranet**.  
+5.  打开管理点站点系统角色的属性。 在“常规”选项卡上，确保选中“HTTPS”，并选择“仅允许 Intranet 连接”。  
 
-     Se você também estiver gerenciando computadores Mac separadamente com o cliente do Configuration Manager, use **Permitir conexões de intranet e Internet** como alternativa.  
+     如果还通过 Configuration Manager 客户端单独管理着 Mac 计算机，请改用“允许 Intranet 和 Internet 连接”。  
 
-6.  Clique na caixa de seleção próxima da opção **Permitir que dispositivos móveis e computadores Mac usem este ponto de gerenciamento**. Clique em **OK**.  
+6.  单击“允许移动设备和 Mac 计算机使用此管理点”旁的复选框。 单击" **确定**"。  
 
-     Ele transforma, efetivamente, o ponto de gerenciamento em um ponto de gerenciamento do dispositivo.  
+     这会将该管理点有效地变为设备管理点。  
 
- Depois que as funções do sistema de sites foram adicionadas e configuradas para gerenciar dispositivos modernos, você precisará, então, configurar os servidores que hospedam as funções como pontos de extremidade confiáveis para registrar e se comunicar com os dispositivos gerenciados. Consulte [Configurar certificados para comunicações confiáveis do Gerenciamento de Dispositivo Móvel Local no System Center Configuration Manager](../../mdm/get-started/set-up-certificates-on-premises-mdm.md) para obter mais informações.  
-
+ 添加站点系统角色并将其配置用于管理新式设备后，需要将承载该角色的服务器配置为受信任终结点，以便注册托管设备并与之通信。 有关详细信息，请参阅 [为 System Center Configuration Manager 中的本地移动设备管理的受信任通信设置证书](../../mdm/get-started/set-up-certificates-on-premises-mdm.md)。  

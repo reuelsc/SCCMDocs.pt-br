@@ -1,418 +1,414 @@
 ---
-title: "Criar itens de configuração para dispositivos com iOS e Mac OS X gerenciados com o Intune | Microsoft Docs"
-description: "Use o item de configuração do iOS e Mac OS X do System Center Configuration Manager para gerenciar as configurações de dispositivos iOS e Mac OS X."
+title: "为使用 Intune 管理的 iOS 和 Mac OS X 设备创建配置项 | Microsoft Docs"
+description: "使用 System Center Configuration Manager iOS 和 Mac OS X 配置项管理 iOS and Mac OS X 设备的设置。"
 ms.custom: na
 ms.date: 03/28/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
-ms.technology:
-- configmgr-hybrid
+ms.technology: configmgr-hybrid
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 613a48ac-c55d-4c4a-94ea-d3747a1b10cb
-caps.latest.revision: 15
-caps.handback.revision: 0
+caps.latest.revision: "15"
+caps.handback.revision: "0"
 author: robstackmsft
 ms.author: robstack
 manager: angrobe
-ms.translationtype: Human Translation
-ms.sourcegitcommit: dab5da5a4b5dfb3606a8a6bd0c70a0b21923fff9
 ms.openlocfilehash: 6e2cb628217598480973d4f728a9e0a7cd5873e7
-ms.contentlocale: pt-br
-ms.lasthandoff: 05/17/2017
-
-
+ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
+ms.translationtype: HT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 08/07/2017
 ---
-# <a name="how-to-create-configuration-items-for-ios-and-mac-os-x-devices-managed-with-intune"></a>Como criar itens de configuração para dispositivos com iOS e Mac OS X gerenciados com o Intune
-Use o item de configuração **iOS e Mac OS X** do System Center Configuration Manager para gerenciar as configurações para dispositivos iOS e Mac OS X que estão registrados no Microsoft Intune ou são gerenciados localmente pelo Configuration Manager.  
+# <a name="how-to-create-configuration-items-for-ios-and-mac-os-x-devices-managed-with-intune"></a>如何为使用 Intune 管理的 iOS 和 Mac OS X 设备创建配置项
+使用 System Center Configuration Manager **iOS 和 Mac OS X** 配置项目为已在 Microsoft Intune 中注册或通过 Configuration Manager 进行本地管理的 iOS 和 Mac OS X 的设备管理设置。  
   
-### <a name="to-create-an-ios-and-mac-os-x-configuration-item"></a>Para criar um item de configuração do iOS e Mac OS X  
+### <a name="to-create-an-ios-and-mac-os-x-configuration-item"></a>若要创建 iOS 和 Mac OS X 配置项目  
   
-1.  No console do Configuration Manager, clique em **Ativos e conformidade**.  
+1.  在 Configuration Manager 控制台中单击“资产和符合性”。  
   
-2.  No espaço de trabalho **Ativos e Conformidade** , expanda **Configurações de Conformidade**e clique em **Itens de Configuração**.  
+2.  在“资产和符合性”  工作区中，展开“符合性设置” ，然后单击“配置项目” 。  
   
-3.  Na guia **Início** , no grupo **Criar** , clique em **Criar Item de Configuração**.  
+3.  在“主页”  选项卡上的“创建”  组中，单击“创建配置项目” 。  
   
-4.  Na página **Geral** do **Assistente para Criar Item de Configuração**, especifique um nome e uma descrição opcional para o item de configuração.  
+4.  在“创建配置项目向导”  的“常规” 页面上，指定配置项目的名称和可选描述。  
   
-5.  Em **Especificar o tipo de item de configuração que deseja criar**, selecione **iOS e Mac OS X**.  
+5.  在“指定要创建的配置项目的类型” 下，选择“iOS 和 Mac OS X” 。  
   
-6.  Se você criar e atribuir categorias, clique em **Categorias** para ajudá-lo a pesquisar e filtrar itens de configuração no console do Configuration Manager.  
+6.  如果创建并分配类别以帮助在 Configuration Manager 控制台中搜索和筛选配置项目，请单击“类别”。  
   
-7.  Na página **Plataformas com Suporte** do assistente, selecione as plataformas específicas do iOS ou Mac OS X que avaliarão o item de configuração.  
+7.  在向导的“支持的平台”  页面上，选择将评估配置项目的特定 iOS 或 Mac OS X 平台。  
   
-8.  Na página **Configurações do Dispositivo** do assistente, selecione o grupo de configurações que deseja configurar. Veja [Referência de configurações do item de configuração para iOS e Mac OS X](#BKMK_Setref) neste tópico para obter detalhes e clique **Avançar**.  
-  
-    > [!TIP]  
-    >  Se a configuração desejada não estiver na lista, marque a **caixa de seleção Definir configurações adicionais que não estão nos grupos de configuração padrão**.  
-  
-9. Em cada página de configurações, defina as configurações necessárias e se deseja corrigi-las quando não forem compatíveis nos dispositivos (quando houver suporte para essa opção).  
-  
-10. Para cada grupo de configurações, você também pode configurar a severidade que será relatada quando um item de configuração for considerado não compatível de:  
-  
-    -   **Nenhum** – dispositivos que não cumprem essa regra de conformidade não relatam uma severidade de falha em relatórios do Configuration Manager.  
-  
-    -   **Informações** – dispositivos que não cumprem essa regra de conformidade relatam uma severidade de falha de **Informações** em relatórios do Configuration Manager.  
-  
-    -   **Aviso** – dispositivos que não cumprem essa regra de conformidade relatam uma severidade de falha de **Aviso** em relatórios do Configuration Manager.  
-  
-    -   **Crítico** – dispositivos que não cumprem essa regra de conformidade relatam uma severidade de falha de **Crítico** em relatórios do Configuration Manager.  
-  
-    -   **Crítico com evento** – dispositivos que não cumprem essa regra de conformidade relatam uma severidade de falha de **Crítico com evento** em relatórios do Configuration Manager. Este nível de severidade também é registrado como um evento do Windows no log de eventos do aplicativo.  
-  
-11. Na página **Aplicabilidade da Plataforma** do assistente, examine as configurações que não são compatíveis com as plataformas com suporte selecionadas anteriormente. Você pode voltar e remover essas configurações ou pode continuar.  
+8.  在向导的“设备设置”  页面上，选择要配置的设置组。 请参阅本主题中的 [iOS 和 Mac OS X 配置项目设置参考](#BKMK_Setref) 以了解详细信息，然后单击“下一步” 。  
   
     > [!TIP]  
-    >  As configurações sem suporte não são avaliadas quanto à conformidade.  
+    >  如果所需设置未列出，请选中“配置默认设置组以外的其他设置” 复选框。  
   
-12. Conclua o assistente.  
+9. 在每个设置页面上，配置所需设置，以及是否要在它们在设备上不符合要求时修正它们（如果支持这样做）。  
   
- Você pode exibir o novo item de configuração no nó **Itens de Configuração** do espaço de trabalho **Ativos e Conformidade** .  
+10. 对于每个设置组，还可以配置在发现配置项目不符合要求时将要报告的严重性：  
   
-##  <a name="ios-and-mac-os-x-configuration-item-settings-reference"></a>Referência de configurações do item de configuração para iOS e Mac OS X  
+    -   **不报告** - 对于 Configuration Manager 报表，不符合此合规性规则的设备不报告故障严重性。  
   
-###  <a name="password"></a>Senha  
+    -   **信息** - 对于 Configuration Manager 报表，不符合此合规性规则的设备将报告“信息”这一故障严重性。  
   
-|Nome da configuração|Detalhes|  
+    -   **警告** - 对于 Configuration Manager 报表，不符合此合规性规则的设备将报告“警告”这一故障严重性。  
+  
+    -   **严重** - 对于 Configuration Manager 报表，不符合此合规性规则的设备将报告“严重”这一故障严重性。  
+  
+    -   **事件严重** - 对于 Configuration Manager 报表，不符合此合规性规则的设备将报告“严重”这一故障严重性。 应用程序事件日志中也会以 Windows 事件的形式记录此严重性级别。  
+  
+11. 在向导的“平台适用性”  页面上，查看任何与先前选择的受支持平台不兼容的设置。 你可以返回并删除这些设置，也可以继续。  
+  
+    > [!TIP]  
+    >  不会对不受支持的设置评估符合性。  
+  
+12. 完成向导。  
+  
+ 可以在“资产和符合性”  工作区的“配置项目”  节点中查看新配置项目。  
+  
+##  <a name="ios-and-mac-os-x-configuration-item-settings-reference"></a>iOS 和 Mac OS X 配置项目设置参考  
+  
+###  <a name="password"></a>Password  
+  
+|设置名|详细信息|  
 |------------------|-------------|  
-|**Exigir configurações de senha em dispositivos móveis**|Requer uma senha nos dispositivos com suporte.|  
-|**Comprimento mínimo da senha (caracteres)**|O comprimento mínimo da senha.|  
-|**Validade da senha em dias**|O número de dias antes que uma senha precise ser alterada.|  
-|**Número de senhas lembradas**|Impede a reutilização de senhas usadas anteriormente.|  
-|**Número de tentativas de logon com falha antes de o dispositivo ser apagado**|Apaga o dispositivo se houver falha neste número de tentativas de logon.<br /><br /> (somente iOS)|  
-|**Complexidade da senha**|Escolha se é possível especificar um PIN como “1234” ou se é necessário fornecer uma senha forte.| 
-|**Permitir senha simples**|Permita senha simples, como **0000** e **1234**.|
-|**Impressão digital de desbloqueio**|Permite o uso de uma impressão digital para desbloquear o dispositivo.|
-|**Modificação de senha** (somente supervisionado)|Permita que a senha do dispositivo seja adicionada, alterada ou removida.|
+|**移动设备上需要密码设置**|支持的设备上需要密码。|  
+|**最短密码长度（字符）**|密码的最短长度。|  
+|**密码过期天数**|必须更改密码前的天数。|  
+|**记住的密码数**|防止重复使用以前用过的密码。|  
+|**擦除设备前的失败登录尝试次数**|如果此数目的登录尝试均失败，则擦除该设备。<br /><br /> （仅限 iOS）|  
+|**密码复杂性**|选择是否可以指定一个如“1234”的 PIN，或是否必须提供一个强密码。| 
+|**允许简单密码**|允许简单密码，如 **0000** 和 **1234**。|
+|**解锁指纹**|允许使用指纹解锁设备。|
+|**修改密码**(仅限监控模式)|允许添加、更改或删除设备密码。|
   
-###  <a name="device"></a>Dispositivo  
- Essas configurações se aplicam a dispositivos iOS e Mac OS X.  
+###  <a name="device"></a>设备  
+ 这些设置适用于 iOS 和 Mac OS X 设备。  
   
-|Nome da configuração|Detalhes|  
+|设置名|详细信息|  
 |------------------|-------------|  
-|**Adicionar amigos do Game Center**|Permite adicionar amigos no aplicativo Game Center.|
-|**Discagem de voz**|Permite o uso do recurso de discagem de voz no dispositivo.|  
-|**Assistente de voz**|Permite o uso de um aplicativo de assistência de voz como o Siri.|  
-|**Assistente de voz quando bloqueado**|Permite o uso de um aplicativo de assistência de voz como o Siri quando o dispositivo estiver bloqueado.|  
-|**Captura de tela**|Permite tirar uma captura de tela da tela do dispositivo.|  
-|**Cliente de chat com vídeo**|Permite o uso de aplicativos de chat com vídeo, como o Facetime.|  
-|**Jogo para vários participantes**|Permite jogar com outros jogadores na Internet.|  
-|**Software de carteira pessoal quando bloqueado**|Permite o uso de software de carteira pessoal como o Passbook.|  
-|**Envio de dados de diagnóstico**|Permita o envio de arquivos de log do aplicativo.|  
-|**Notificações da central de ações**|Permita que o usuário acesse a exibição de notificações sem desbloquear o dispositivo.|
-|**Apple Music** (somente supervisionado)|Permita o uso do aplicativo Apple Music.|
-|**Podcasts** (somente supervisionado)|Permita o uso do aplicativo Podcasts.|
-|**Aplicativo de mensagens** (somente supervisionado)|Permita o uso do aplicativo de mensagens para enviar mensagens de texto.|
-|**Modificação de papel de parede** (somente supervisionado)|Permita que o usuário altere o papel de parede do dispositivo.|
-|**Pesquisa de definição de palavra** (somente supervisionado)|Permita o recurso do iOS que deixa você realçar uma palavra e pesquisar sua definição.|
-|**Detecção de pulso para Apple Watches emparelhados**|Quando habilitada, o Apple Watch não exibirá notificações quando não estiver sendo usado.|
-|**Filtro de profanidade da Siri** (somente supervisionado)|Impede que a Siri dite ou fale palavrões.|
-|**Modificação do nome do dispositivo** (somente supervisionado)|Permita que o usuário altere o nome do dispositivo.|
-|**Modificação das configurações de envio de diagnósticos** (somente supervisionado)|Permita ou bloqueie a habilidade do dispositivo enviar dados de diagnóstico para a Apple.|
-|**Game Center** (somente supervisionado)|Permita o uso do aplicativo Game Center.|
-|**iTunes Radio** (somente supervisionado)|Permita o uso do aplicativo iTunes Radio.|
-|**Apple News** (somente supervisionado)|Permita o uso do aplicativo Apple News.|
-|**Emparelhamento do Apple Watch** (somente supervisionado)|Permita que o dispositivo emparelhe com um Apple Watch.|
-|**Correção automática** (somente supervisionado)|Permite que o dispositivo corrija automaticamente palavras incorretas.|
-|**Modificação de Bluetooth** (somente supervisionado)|Permita que o usuário altere as configurações de Bluetooth no dispositivo.|
-|**Alterações nas configurações de uso de dados para celular do aplicativo** (somente supervisionado)|Permita ao usuário controlar quais aplicativos podem usar dados de celular.|
-|**Atalhos de teclado** (somente supervisionado)|Permita o uso de atalhos de teclado.|
-|**Teclados preditivos** (somente supervisionado)|Permita o uso de teclados preditivos que sugerem palavras que o usuário pode querer.|
-|**Verificação ortográfica do teclado** (somente supervisionado)|Permite o verificador de ortografia do dispositivo.|
-|**Modificação das configurações de notificação** (somente supervisionado)|Permita que o usuário altere as configurações de notificação do dispositivo.|
-|**Retornar resultados da Internet em pesquisa de Destaque** (somente supervisionado)|Permita que a pesquisa de Destaque conecte-se à Internet para fornecer mais resultados.|
-|**Usar Siri para consultar o conteúdo da Internet gerado pelo usuário** (somente supervisionado)|Permita que a Siri acesse sites da Web para responder perguntas.|
+|**添加游戏中心好友**|允许在游戏中心应用中添加好友。|
+|**语音拨号**|允许在设备上使用语音拨号功能。|  
+|**语音助手**|允许使用 Siri 等语音助手应用。|  
+|**锁定时允许语音助手**|允许在设备锁定时使用 Siri 等语音助手应用。|  
+|**屏幕捕获**|允许捕获设备显示的屏幕截图。|  
+|**视频聊天客户端**|允许使用 Facetime 等视频聊天应用。|  
+|**多玩家游戏**|允许在 Internet 上与其他玩家进行游戏。|  
+|**锁定时允许个人钱包软件**|允许使用 Passbook 等个人钱包软件。|  
+|**诊断数据提交**|允许提交应用日志文件。|  
+|**操作中心通知**|允许用户不解锁设备而访问通知视图。|
+|**Apple Music**(仅限监控模式)|允许使用 Apple Music 应用。|
+|**播客**(仅限监控模式)|允许使用播客应用。|
+|**“邮件”应用**(仅限监控模式)|允许使用“邮件”应用发送短信。|
+|**修改墙纸**(仅限监控模式)|允许用户更改设备墙纸。|
+|**查找词语定义**(仅限监控模式)|允许使用 iOS 功能，该功能允许你突出显示一个词语并查找其定义。|
+|**已配对 Apple Watch 的手腕感应**|启用后，Apple Watch 不会在没有佩戴时显示通知。|
+|**Siri 猥亵语言过滤器**(仅限监控模式)|阻止 Siri 讲述猥亵语言。|
+|**修改设备名称**(仅限监控模式)|允许用户更改设备的名称。|
+|**修改诊断提交设置**(仅限监控模式)|允许或阻止设备向 Apple 提交诊断数据。|
+|**Game Center**(仅限监控模式)|允许使用 Game Center 应用。|
+|**iTunes Radio** (仅限监控模式)|允许使用 iTunes Radio 应用。|
+|**Apple 新闻**(仅限监控模式)|允许使用 Apple 新闻应用。|
+|**Apple Watch 配对**(仅限监控模式)|允许设备与 Apple Watch 配对。|
+|**自动更正**(仅限监控模式)|允许设备自动更正拼写错误的单词。|
+|**修改蓝牙**(仅限监控模式)|允许用户更改设备上的蓝牙设置。|
+|**更改应用的移动电话网络数据使用情况设置**(仅限监控模式)|允许用户控制允许哪些应用使用移动电话网络数据。|
+|**键盘快捷方式**(仅限监控模式)|允许使用键盘快捷方式。|
+|**输入预测**(仅限监控模式)|允许使用建议用户可能所需单词的输入预测。|
+|**键盘拼写检查**(仅限监控模式)|允许设备拼写检查器。|
+|**修改通知设置**(仅限监控模式)|允许用户更改设备通知设置。|
+|**使用 Spotlight 搜索从 Internet 返回结果**(仅限监控模式)|允许 Spotlight 搜索连接到 Internet 以提供更多的结果。|
+|**使用 Siri 从 Internet 查询用户生成的内容**(仅限监控模式)|允许 Siri 访问网站以回答问题。|
 
   
-###  <a name="store"></a>Repositório  
- Estas configurações se aplicam apenas a dispositivos iOS.  
+###  <a name="store"></a>存储  
+ 这些设置仅适用于 iOS 设备。  
   
-|Nome da configuração|Detalhes|  
+|设置名|详细信息|  
 |------------------|-------------|  
-|**Armazenamento de aplicativos**|Permite o acesso a loja de aplicativos no dispositivo.|  
-|**Digite uma senha para acessar o armazenamento de aplicativos**|Os usuários devem digitar uma senha para acessar a loja de aplicativos.|  
-|**Compras no aplicativo**|Permite que os usuários façam compras no aplicativo.|
-|**Instalação de aplicativos usando somente o Apple Configurator e o iTunes** (somente supervisionado)|Habilita ou desabilita a Loja de Aplicativos da tela inicial do dispositivo. Os usuários ainda podem usar o iTunes ou a ferramenta Apple Configurator para instalar e atualizar aplicativos.|
-|**Acesso à iBooks Store** (somente supervisionado)|Permita que o usuário procure e compre livros da iBooks Store.|
-|**Downloads automáticos de aplicativo** (somente supervisionados)|Permita que aplicativos adquiridos em outros dispositivos sejam baixados automaticamente para esse dispositivo. Essa configuração não afeta as atualizações do aplicativo.|
+|**应用商店**|允许在设备上访问应用商店。|  
+|**输入密码以访问应用商店**|用户必须输入密码以访问应用商店。|  
+|**应用内购买**|允许用户进行应用内购买。|
+|**只使用 Apple Configurator 和 iTunes 安装应用**(仅限监控模式)|从设备主屏幕启用或禁用 App Store。 用户仍然可以使用 iTunes 或 Apple Configurator 工具来安装和更新应用。|
+|**访问 iBooks 商店**(仅限监控模式)|允许用户从 iBooks 商店浏览和购买书籍。|
+|**自动下载应用**(仅限监控模式)|允许在其他设备上购买的应用自动下载到此设备。 此设置不会影响应用更新。|
 
   
-###  <a name="browser"></a>Navegador  
- Estas configurações se aplicam apenas a dispositivos iOS.  
+###  <a name="browser"></a>浏览器  
+ 这些设置仅适用于 iOS 设备。  
   
-|Nome da configuração|Detalhes|  
+|设置名|详细信息|  
 |------------------|-------------|  
-|**Navegador padrão**|O usuário pode alterar o navegador de Internet padrão.|  
-|**Preenchimento automático**|O usuário pode alterar as configurações de preenchimento automático no navegador.|  
-|**Script ativo**|O navegador pode executar scripts, como scripts do ActiveX.|  
-|**Bloqueador de pop-up**|Habilita ou desabilita o bloqueador de pop-ups do navegador.|  
-|**Cookies**|Permita que os cookies sejam salvos no dispositivo.|  
-|**Aviso de fraude**|Habilite ou desabilite avisos de sites fraudulentos potenciais.|  
+|**默认浏览器**|用户可以更改默认 Internet 浏览器。|  
+|**自动填充**|用户可以更改浏览器中的自动完成设置。|  
+|**活动脚本**|浏览器可以运行脚本，如 Active X 脚本。|  
+|**弹出窗口阻止程序**|启用或禁用浏览器弹出窗口阻止程序。|  
+|**Cookie**|允许在设备上保存 Cookie。|  
+|**欺诈警告**|启用或禁用对潜在欺诈网站的警告。|  
   
-###  <a name="content-rating"></a>Classificação de conteúdo  
- Estas configurações se aplicam apenas a dispositivos iOS.  
+###  <a name="content-rating"></a>内容分级  
+ 这些设置仅适用于 iOS 设备。  
   
-|Nome da configuração|Detalhes|  
+|设置名|详细信息|  
 |------------------|-------------|  
-|**Conteúdo explícito na loja de mídia**|Especifique se deseja permitir que conteúdo somente para adultos seja acessado da loja de aplicativos.|  
-|**Região de classificações**|Especifica o país para o qual você deseja aplicar restrições de classificações.|  
-|**Classificação de filme**|Especifique a classificação máxima de conteúdo de filme que deseja permitir.|  
-|**Classificação de programa de TV**|Especifique a classificação máxima de programa de TV que deseja permitir.|  
-|**Classificação de aplicativo**|Especifique a classificação máxima de conteúdo de aplicativo que deseja permitir.| 
-|**Conteúdo da iBook Store sinalizado como 'Erotismo'** (apenas supervisionado)|Permita que o usuário baixe livros com a categoria "Erotismo".| 
+|**媒体商店中的成人内容**|指定是否允许从应用商店访问成人内容。|  
+|**分级区域**|指定需应用分级限制的国家/地区。|  
+|**电影分级**|指定要允许的电影内容的最高评级。|  
+|**电视节目分级**|指定要允许的电视节目内容的最高评级。|  
+|**应用分级**|指定要允许的应用内容的最高评级。| 
+|**iBook 商店中标记为“成人作品”的内容**(仅限监控模式)|允许用户下载“成人作品”类别的书籍。| 
   
 > [!NOTE]  
->  As classificações que podem ser selecionadas podem variar de acordo com a **Região de classificações** selecionada.  
+>  可选分级因所选的“分级区域”  而异。  
   
-###  <a name="cloud"></a>Nuvem  
- Estas configurações se aplicam apenas a dispositivos iOS.  
+###  <a name="cloud"></a>云  
+ 这些设置仅适用于 iOS 设备。  
   
-|Nome da configuração|Detalhes|  
+|设置名|详细信息|  
 |------------------|-------------|  
-|**Backup na nuvem**|Permita o backup em um serviço de nuvem como o iCloud.|  
-|**Backup criptografado**|Permita que o backup em um serviço de nuvem seja criptografado.|  
-|**Sincronização de documentos**|Permita a sincronização de documentos em um serviço de nuvem.|  
-|**Sincronização de fotos**|Permita a sincronização de fotos em um serviço de nuvem.| 
-|**Biblioteca de Fotos do iCloud**|Se for definido como **Não**, desabilitará o uso da biblioteca de fotos do iCloud, o que permite aos usuários armazenar fotos e vídeos na nuvem. As fotos que não forem totalmente baixadas na biblioteca de fotos do iCloud para o dispositivo serão removidas do dispositivo se essa opção for definida como **Não**.|
-|**Compartilhamento de Fotos do iCloud**|Defina como **Não** para desabilitar o Compartilhamento de Fotos do iCloud no dispositivo.|
-|**Entrega para continuar atividades em outro dispositivo**|Permita que o usuário continue, em outro dispositivo iOS ou Mac OS X, o trabalho iniciado em um dispositivo iOS.|
-|**Sincronizar dados de aplicativos gerenciados para iCloud**|Permita que os aplicativos que você gerencia com o Intune sincronizem dados com a conta do iCloud do usuário.|
+|**云备份**|允许备份到 iCloud 等云服务。|  
+|**加密备份**|允许加密向云服务的备份。|  
+|**文档同步**|允许文档同步到云服务。|  
+|**照片同步**|允许照片同步到云服务。| 
+|**iCloud 照片库**|如果设置为“否”，则禁止使用允许用户将照片和视频存储在云中的 iCloud 照片库。 如果设置为“否”，则从 iCloud 照片库未完全下载到设备的任何照片将从设备中删除。|
+|**iCloud 照片共享**|设置为“否”以禁用设备上的 iCloud 照片共享。|
+|**提交以继续其他设备上的活动**|允许用户继续在其他 iOS 或 Mac OS X 设备上的 iOS 设备上启动的工作。|
+|**将数据从托管应用同步到 iCloud**|允许你使用 Intune 管理的应用将数据同步到用户的 iCloud 帐户。|
 
   
-###  <a name="security"></a>Segurança  
- Estas configurações se aplicam apenas a dispositivos iOS.  
+###  <a name="security"></a>安全  
+ 这些设置仅适用于 iOS 设备。  
   
-|Nome da configuração|Detalhes|  
+|设置名|详细信息|  
 |------------------|-------------|  
-|**Câmera**|Permita o uso da câmera do dispositivo.| 
-|**Confiar em novos autores de aplicativos empresariais**|Permita que o usuário opte por confiar em aplicativos que não foram baixados da loja de aplicativos.| 
+|**照相机**|允许使用设备的照相机。| 
+|**信任新的企业应用作者**|允许用户选择信任未从应用商店下载的应用。| 
   
-###  <a name="roaming"></a>Roaming  
- Estas configurações se aplicam apenas a dispositivos iOS.  
+###  <a name="roaming"></a>漫游  
+ 这些设置仅适用于 iOS 设备。  
   
-|Nome da configuração|Detalhes|  
+|设置名|详细信息|  
 |------------------|-------------|  
-|**Roaming de voz**|Permite chamadas de voz durante o roaming.|  
-|**Sincronização automática durante o roaming**|Permite a sincronização automática do dispositivo durante o roaming.|  
-|**Roaming de dados**|Permita o roaming entre redes durante o acesso de dados.|  
+|**语音漫游**|允许在漫游时进行语音呼叫。|  
+|**漫游时自动同步**|允许在漫游时自动同步设备。|  
+|**数据漫游**|允许在访问数据时进行网络之间的漫游。|  
   
-###  <a name="system-security"></a>Segurança do sistema  
- Estas configurações se aplicam apenas a dispositivos iOS.  
+###  <a name="system-security"></a>系统安全  
+ 这些设置仅适用于 iOS 设备。  
   
-|Nome da configuração|Detalhes|  
+|设置名|详细信息|  
 |------------------|-------------|  
-|**Usuário deve aceitar certificados TLS não confiáveis**|Se **Permitido**, permite que o usuário aceite estes certificados. Se **Proibido**, rejeita automaticamente os certificados não confiáveis.|
-|**Permitir Bloqueio de Ativação (somente modo supervisionado)**|Use esta configuração para habilitar o Bloqueio de Ativação do iOS nos dispositivos iOS **supervisionados** que você gerencia. Para obter mais informações sobre o Bloqueio de Ativação, consulte [Manage iOS Activation Lock with System Center Configuration Manager](../../mdm/deploy-use/manage-ios-activation-lock.md) (Gerenciar o Bloqueio de Ativação do iOS com o System Center Configuration Manager).
-|**Centro de controle na tela de bloqueio**|Controla se o aplicativo do centro de controle pode ser acessado quando o dispositivo estiver bloqueado.|  
-|**Exibição de notificação na tela de bloqueio**|Controla se as notificações podem ser exibidas quando o dispositivo estiver bloqueado.|  
-|**Exibição atual da tela de bloqueio**|Controla se a exibição Atual pode ser vista quando o dispositivo estiver bloqueado.|  
-|**Modificar configurações da conta** (somente supervisionado)|Permita que o usuário altere as configurações de conta, como configurações de email.|
-|**Fazer alterações nas configurações do aplicativo Encontrar Meus Amigos** (somente supervisionado)|Permita que o usuário altere as configurações para o aplicativo Encontrar Meus Amigos.|
-|**Usar o emparelhamento de host para controlar os dispositivos com os quais um dispositivo iOS pode ser emparelhado** (somente supervisionado)|Permita que o emparelhamento do host deixe o administrador controlar com quais dispositivos um dispositivo iOS pode emparelhar.|
-|**Apagar todo o conteúdo e as configurações** (somente supervisionado)|Permita o uso da opção de apagar todo o conteúdo e as configurações no dispositivo.|
-|**Configurar restrições no dispositivo** (somente supervisionado)|Permita que o usuário configure as restrições de dispositivo (controles dos pais) no dispositivo.|
-|**Instalar perfis de configuração e certificados** (somente supervisionado)|Permita que o usuário instale perfis de configuração e certificados.|
-|**Senha para solicitações de saída do AirPlay**|Exigir uma senha de emparelhamento quando o usuário usar AirPlay para transmitir o conteúdo para outros dispositivos da Apple.|
+|**要接受不受信任的 TLS 证书的用户**|如果为“已允许” ，则使用户接受这些证书。 如果为“已禁止” ，则自动拒绝不受信任的证书。|
+|**允许激活锁定（仅限受监督模式）**|使用此设置可在你管理的**受监督的** iOS 设备上启用 iOS 激活锁定。 有关激活锁定的详细信息，请参阅[使用 System Center Configuration Manager 管理 iOS 激活锁定](../../mdm/deploy-use/manage-ios-activation-lock.md)。
+|**锁屏控制中心**|控制设备锁定时是否可以访问控制中心应用。|  
+|**锁屏通知视图**|控制设备锁定时是否可以查看通知。|  
+|**锁屏今日视图**|控制设备锁定时是否可以看到今日视图。|  
+|**修改帐户设置**(仅限监控模式)|允许用户更改电子邮件配置等帐户设置。|
+|**更改“查找我的好友”应用设置**(仅限监控模式)|允许用户更改“查找我的好友”应用的设置。|
+|**使用主机配对控制 iOS 设备可配对的设备**(仅限监控模式)|允许主机配对以允许管理员控制 iOS 设备可以配对的设备。|
+|**清除所有内容和设置**(仅限监控模式)|允许用户使用清除设备上的所有内容和设置的选项。|
+|**配置设备上的限制**(仅限监控模式)|允许用户在设备上配置设备限制（家长控制）。|
+|**安装配置文件和证书**(仅限监控模式)|允许用户安装配置配置文件和证书。|
+|**AirPlay 传出请求的密码**|当用户使用 AirPlay 将内容流式传输到其他 Apple 设备时，需要配对密码。|
   
-###  <a name="data-protection"></a>Proteção de dados  
- Estas configurações se aplicam apenas a dispositivos iOS.  
+###  <a name="data-protection"></a>数据保护  
+ 这些设置仅适用于 iOS 设备。  
   
-|Nome da configuração|Detalhes|  
+|设置名|详细信息|  
 |------------------|-------------|  
-|**Abrir documentos em aplicativos gerenciados em outros aplicativos não gerenciados**|Para uso com aplicativos gerenciados pelas políticas de gerenciamento de aplicativos do Configuration Manager.|  
-|**Abrir documentos em aplicativos não gerenciados em outros aplicativos gerenciados**|Para uso com aplicativos gerenciados pelas políticas de gerenciamento de aplicativos do Configuration Manager.| 
-|**Tratar o AirDrop como um destino não gerenciado** (somente supervisionado)|Impede que os aplicativos gerenciados sejam capazes de enviar dados. Airdrop.|
-|**AirDrop** (somente supervisionado)|Permita o uso do recurso AirDrop para trocar conteúdo com dispositivos próximos.|
+|**在其他非托管的应用中打开托管应用中的文档**|用于由 Configuration Manager 应用程序管理策略托管的应用。|  
+|**在其他托管的应用中打开非托管应用中的文档**|用于由 Configuration Manager 应用程序管理策略托管的应用。| 
+|**将 AirDrop 视为非托管目标**(仅限监控模式)|停止托管的应用能够通过 Airdrop 数据发送。|
+|**AirDrop**(仅限监控模式)|允许使用 AirDrop 功能与附近的设备交换内容。|
   
-###  <a name="compliant-and-noncompliant-apps-ios"></a>Aplicativos compatíveis e não compatíveis (iOS)  
- Permite especificar uma lista de aplicativos do iOS que são compatíveis ou não compatíveis em sua empresa. Em seguida, você pode usar os relatórios para exibir os dispositivos que contêm aplicativos não compatíveis instalados e o usuário associado.  
+###  <a name="compliant-and-noncompliant-apps-ios"></a>符合和不符合的应用 (iOS)  
+ 使你能够指定公司中符合和不符合的 iOS 应用的列表。 然后可使用报表来显示安装了不符合应用的设备和关联的用户。  
   
- Não é possível especificar aplicativos compatíveis e não compatíveis no mesmo item de configuração.  
+ 不能在同一配置项目中同时指定符合和不符合应用。  
   
-#### <a name="to-specify-the-compliant-or-noncompliant-apps-list"></a>Para especificar a lista de aplicativos compatíveis ou não compatíveis  
+#### <a name="to-specify-the-compliant-or-noncompliant-apps-list"></a>指定符合和不符合应用列表  
   
-1.  Na página **Aplicativos Compatíveis e Não Compatíveis (iOS)** , especifique as seguintes informações:  
+1.  在  “符合和不符合应用 (iOS)”页上，指定以下信息：  
   
-    -   **Lista de aplicativos não compatíveis**: escolha essa opção se desejar especificar uma lista de aplicativos que serão relatados como não compatíveis se forem instalados pelos usuários.  
+    -   **不符合应用列表** - 如果想要指定将报告为不符合应用（如果用户安装）的应用的列表，则选择此选项。  
   
-    -   **Lista de aplicativos compatíveis**: escolha essa opção se desejar especificar uma lista de aplicativos que os usuários têm permissão para instalar. Todos os outros aplicativos instalados serão relatados como não compatíveis.  
+    -   **符合应用列表** - 如果想要指定允许用户安装的应用的列表，则选择此选项。 安装的任何其他应用将报告为不相容。  
   
-    -   **Adicionar** – adiciona um aplicativo à lista selecionada. Especifique um nome da sua preferência, opcionalmente o editor do aplicativo, e a URL para o aplicativo na loja de aplicativos.  
+    -   **添加** - 将应用添加到选定的列表。 在应用商店中指定你选择的名称（可选择使用应用发布者）和应用的 URL。  
   
-         Para especificar a URL, na iTunes App Store, procure o aplicativo que deseja usar.  
+         若要从 iTunes 应用商店指定 URL，请搜索想要使用的应用。  
   
-         Abra a página do aplicativo e copie a URL para a área de transferência. Agora você pode usar essa URL na lista de aplicativos compatíveis ou incompatíveis.  
+         打开应用页面，并将该 URL 复制到剪贴板。 你现在可以在符合或不符合要求的应用列表中使用这个 URL。  
   
-         **Exemplo:** pesquise o aplicativo **Microsoft Word para iPad** na loja. A URL usada será **https://itunes.apple.com/us/app/microsoft-word-for-ipad/id586447913?mt=8**.  
+         “示例：” 在应用商店中搜索“”  应用。 你使用的 URL 将为 **https://itunes.apple.com/us/app/microsoft-word-for-ipad/id586447913?mt=8**。  
   
-    -   **Editar** – permite editar o nome, o fornecedor e a URL do aplicativo selecionado.  
+    -   **编辑** - 允许你编辑选定应用的名称、发布者和 URL。  
   
-    -   **Remover** – exclui o aplicativo selecionado da lista.  
+    -   **删除** - 从列表中删除选定的应用。  
   
-    -   **Importar** – importa uma lista dos aplicativos que você especificou em um arquivo de valores separados por vírgulas. Use o formato, nome do aplicativo, editor e a URL do aplicativo no arquivo.  
+    -   **导入** - 导入你已在逗号分隔值文件中指定的应用列表。 在文件中使用格式、应用程序名称、发布者和应用 URL。  
   
-2.  Quando tiver terminado, clique em **Avançar**.  
+2.  完成后单击“下一步” 。  
   
- Você pode usar um dos seguintes relatórios para monitorar aplicativos compatíveis e não compatíveis:  
+ 你可以使用以下任一报表监视相容和不相容的应用：  
   
--   **Lista e dispositivos de aplicativos não compatíveis para um usuário especificado** – Exibe informações sobre usuários e dispositivos que têm aplicativos instalados que não são compatíveis com uma política especificada.  
+-   **指定用户的不符合应用和设备的列表** - 显示有关安装了不符合指定策略的应用的用户和设备信息。  
   
--   **Resumo de usuários que têm aplicativos não compatíveis** – Exibe informações sobre usuários que têm aplicativos instalados que não são compatíveis com uma política especificada.  
+-   **具有不符合应用的用户摘要** - 显示有关安装了不符合指定策略的应用的用户信息。  
   
- Para obter informações sobre como usar relatórios, consulte [Relatórios no System Center Configuration Manager](../../core/servers/manage/reporting.md).  
+ 有关如何使用报表的详细信息，请参阅 [System Center Configuration Manager 中的报表](../../core/servers/manage/reporting.md)。  
   
-###  <a name="compliant-and-noncompliant-apps-mac-os-x"></a>Aplicativos compatíveis e não compatíveis (Mac OS X)  
- Permite especificar uma lista de aplicativos do Mac OS X que são compatíveis ou não compatíveis em sua empresa. Em seguida, você pode usar os relatórios para exibir os dispositivos que contêm aplicativos não compatíveis instalados e o usuário associado.  
+###  <a name="compliant-and-noncompliant-apps-mac-os-x"></a>符合和不符合的应用 (Mac OS X)  
+ 允许你指定公司里符合或不符合 Mac OS X 应用的列表。 然后可使用报表来显示安装了不符合应用的设备和关联的用户。  
   
- Não é possível especificar aplicativos compatíveis e não compatíveis no mesmo item de configuração.  
+ 不能在同一配置项目中同时指定符合和不符合应用。  
   
-#### <a name="to-specify-the-compliant-or-noncompliant-apps-list"></a>Para especificar a lista de aplicativos compatíveis ou não compatíveis  
+#### <a name="to-specify-the-compliant-or-noncompliant-apps-list"></a>指定符合和不符合应用列表  
   
-1.  Na página **Aplicativos Compatíveis e Não Compatíveis (Mac OS X)** , especifique as seguintes informações:  
+1.  在“符合和不符合的应用 (Mac OS X)”  页面上，指定以下信息：  
   
-    -   **Lista de aplicativos não compatíveis**: escolha essa opção se desejar especificar uma lista de aplicativos que serão relatados como não compatíveis se forem instalados pelos usuários.  
+    -   **不符合应用列表** - 如果想要指定将报告为不符合应用（如果用户安装）的应用的列表，则选择此选项。  
   
-    -   **Lista de aplicativos compatíveis**: escolha essa opção se desejar especificar uma lista de aplicativos que os usuários têm permissão para instalar. Todos os outros aplicativos instalados serão relatados como não compatíveis.  
+    -   **符合应用列表** - 如果想要指定允许用户安装的应用的列表，则选择此选项。 安装的任何其他应用将报告为不相容。  
   
-    -   **Adicionar** – adiciona um aplicativo à lista selecionada. Especifique um nome de sua preferência, opcionalmente, o fornecedor do aplicativo e a ID do pacote do aplicativo.  
+    -   **添加** - 将应用添加到选定的列表。 指定你选择的名称（可为应用发布者）和应用的捆绑 ID。  
   
         > [!TIP]  
-        >  Para localizar a ID do pacote de um aplicativo, use as seguintes etapas em um computador Mac que tem o aplicativo instalado:  
+        >  若要查找应用的捆绑 ID，请在已安装此应用的 Mac 计算机上执行以下步骤：  
         >   
-        >  1.  Abra a pasta na qual o aplicativo está instalado (por exemplo, **/Aplicativos**)  
-        > 2.  Selecione o pacote *<Nome do Aplicativo\>***.app** e escolha **Mostrar Conteúdo do Pacote**  
-        > 3.  Abra o arquivo **Info.plist**  
-        > 4.  Verifique o valor associado à chave **CFBundleIdentifier**  
+        >  1.  打开安装应用的文件夹（例如，“/Applications” ）  
+        > 2.  选择 *<应用名称\>*.app 捆绑，然后选择“显示包内容”  
+        > 3.  打开“Info.plist”  文件  
+        > 4.  检查与“”   
         >   
-        >  O formato para a ID do Pacote é **com.contoso.nomeaplicativo**  
+        >  捆绑 ID 的格式为“com.contoso.appname”   
   
-    -   **Editar** – permite editar o nome, o fornecedor e a ID do pacote do aplicativo selecionado.  
+    -   **编辑** - 允许你编辑所选应用的名称、发布者和捆绑 ID。  
   
-    -   **Remover** – exclui o aplicativo selecionado da lista.  
+    -   **删除** - 从列表中删除选定的应用。  
   
-    -   **Importar** – importa uma lista dos aplicativos que você especificou em um arquivo de valores separados por vírgulas. Use o formato, nome do aplicativo, fornecedor e ID de lote de aplicativo encontrados no arquivo.  
+    -   **导入** - 导入你已在逗号分隔值文件中指定的应用列表。 在文件中使用格式、应用名称、发布者和应用捆绑 ID。  
   
-2.  Quando tiver terminado, clique em **Avançar**.  
+2.  完成后单击“下一步” 。  
   
- Você pode usar um dos seguintes relatórios para monitorar aplicativos compatíveis e não compatíveis:  
+ 你可以使用以下任一报表监视相容和不相容的应用：  
   
--   **Lista e dispositivos de aplicativos não compatíveis para um usuário especificado** – Exibe informações sobre usuários e dispositivos que têm aplicativos instalados que não são compatíveis com uma política especificada.  
+-   **指定用户的不符合应用和设备的列表** - 显示有关安装了不符合指定策略的应用的用户和设备信息。  
   
--   **Resumo de usuários que têm aplicativos não compatíveis** – Exibe informações sobre usuários que têm aplicativos instalados que não são compatíveis com uma política especificada.  
+-   **具有不符合应用的用户摘要** - 显示有关安装了不符合指定策略的应用的用户信息。  
   
- Para obter informações sobre como usar relatórios, consulte [Relatórios no System Center Configuration Manager](../../core/servers/manage/reporting.md).  
+ 有关如何使用报表的详细信息，请参阅 [System Center Configuration Manager 中的报表](../../core/servers/manage/reporting.md)。  
   
-### <a name="ios-and-mac-os-x-custom-profile-settings"></a>Configurações de perfil personalizado para iOS e Mac OS X  
- Use **Perfis Personalizados do iOS e Mac OS X** para implantar as configurações criadas com a [ferramenta Apple Configurator](https://itunes.apple.com/us/app/apple-configurator-2/id1037126344?mt=12) em dispositivos iOS e Mac OS X. Essa ferramenta permite que você crie várias configurações que controlam a operação desses dispositivos e as exporte para um perfil de configuração. Em seguida, você poderá importar este perfil de configuração para um perfil personalizado do iOS e Mac OS X e implantar as configurações em usuários e dispositivos em sua organização.  
+### <a name="ios-and-mac-os-x-custom-profile-settings"></a>iOS 和 Mac OS X 自定义配置文件设置  
+ 使用“iOS 和 Mac OS X 自定义配置文件设置”  将你借助 [Apple 配置器工具](https://itunes.apple.com/us/app/apple-configurator-2/id1037126344?mt=12) 创建的设置部署到 iOS 和 Mac OS X 设备。 使用此工具可以创建控制这些设备的操作的许多设置，并将其导出到配置的配置文件中。 然后可将此配置的配置文件导入到 iOS 和 Mac OS X 自定义配置文件，并将这些设置部署到组织中的用户和设备。  
   
 > [!NOTE]  
->  Verifique se as configurações exportadas da ferramenta Apple Configurator são compatíveis com a versão do iOS ou Mac OS X nos dispositivos nos quais você implantar o perfil. Para obter informações sobre como as incompatibilidades de configuração são resolvidas, procure a Referência de Perfil de Configuração e a Referência de Protocolo de Gerenciamento de Dispositivos Móveis no site do [Desenvolvedor Apple](https://developer.apple.com/) .  
+>  确保在要部署配置文件的设备上从 Apple 配置器工具导出的设置与 iOS 或 Mac OS X 版本兼容。 有关如何解析不兼容的设置的信息，可搜索 [Apple 开发人员](https://developer.apple.com/) 网站上的配置的配置文件参考和移动设备管理协议参考。  
   
-#### <a name="to-create-an-ios-and-mac-os-x-custom-profile"></a>Para criar um perfil personalizado do iOS e Mac OS X  
+#### <a name="to-create-an-ios-and-mac-os-x-custom-profile"></a>若要创建 iOS 和 Mac OS X 自定义配置文件  
   
-1.  Na página **Definir configurações de perfil personalizado do iOS e Mac OS X** do **Assistente para Criar Item de Configuração**, especifique as seguintes informações:  
+1.  在“创建配置项目向导”  的“配置 iOS 和 Mac OS X 自定义配置文件设置” 页面上，指定以下信息：  
   
-    -   **Nome do perfil de configuração personalizado (exibido a usuários)** – Forneça um nome para a política que será exibida no dispositivo e nos relatórios do Configuration Manager.  
+    -   **自定义配置文件名称（向用户显示）**- 提供策略的名称，该名称将显示在设备上以及 Configuration Manager 报表中。  
   
-    -   **Importar** – escolha um arquivo que você exportou da ferramenta Apple Configurator.  
+    -   **导入** - 选择一个从 Apple 配置器工具导出的文件。  
   
-    -   **Detalhes do perfil de configuração** – exibe o arquivo que você importou.  
+    -   **配置文件详细信息** - 显示导入的文件。  
   
-    -   **Corrigir configurações não compatíveis** -  
+    -   **修正不符合要求的设置** -  
   
-         Selecione se deseja corrigir configurações não compatíveis (quando houver suporte).  
+         选择是否要修正不符合要求的配置设置（如果支持）。  
   
-    -   **Severidade de não conformidade dos relatórios** – especifique o nível de severidade que será relatado se esta política de conformidade for avaliada como não compatível. Os níveis de severidade disponíveis são os seguintes:  
+    -   **报表的不符合性严重性** - 指定此合规性策略被评估为不符合时报告的严重性级别。 可用的严重性级别如下：  
   
         > [!NOTE]  
-        >  Quando um dispositivo Mac OS X está no modo de Suspensão, as políticas e os perfis não podem ser entregues nem inventariados. Como resultado, o console do Configuration Manager pode exibir temporariamente o status de configurações de Política, até a próxima vez que o dispositivo sair do modo de Suspensão.  
+        >  当 Mac OS X 设备处于休眠模式时，策略和配置文件无法被传递，也无法列出它们的清单。 因此在下一次从休眠模式中唤醒设备之前，Configuration Manager 控制台可能会暂时显示状态“策略设置错误”。  
   
-        -   **Nenhum** dispositivos que não cumprem essa regra de conformidade não relatam uma severidade de falha em relatórios do Configuration Manager.  
+        -   **不报告** 对于 Configuration Manager 报表，不符合此合规性规则的设备不报告故障严重性。  
   
-        -   **Informações** dispositivos que não cumprem essa regra de conformidade relatam uma severidade de falha de **Informações** em relatórios do Configuration Manager.  
+        -   **信息** 对于 Configuration Manager 报表，不符合此合规性规则的设备将报告“信息”这一故障严重性。  
   
-        -   **Aviso** dispositivos que não cumprem essa regra de conformidade relatam uma severidade de falha de **Aviso** em relatórios do Configuration Manager.  
+        -   **警告** 对于 Configuration Manager 报表，不符合此合规性规则的设备将报告“警告”这一故障严重性。  
   
-        -   **Crítico** dispositivos que não cumprem essa regra de conformidade relatam uma severidade de falha de **Crítico** em relatórios do Configuration Manager.  
+        -   **严重** 对于 Configuration Manager 报表，不符合此合规性规则的设备将报告“严重”这一故障严重性。  
   
-        -   **Crítico com evento** dispositivos que não cumprem essa regra de conformidade relatam uma severidade de falha de **Crítico com evento** em relatórios do Configuration Manager. Este nível de severidade também é registrado como um evento do Windows no log de eventos do aplicativo.  
+        -   **事件严重** 对于 Configuration Manager 报表，不符合此合规性规则的设备将报告“严重”这一故障严重性。 应用程序事件日志中也会以 Windows 事件的形式记录此严重性级别。  
   
-#### <a name="how-to-create-a-configuration-profile-file"></a>Como criar um arquivo de perfil de configuração  
- Você pode criar o arquivo de perfil de configuração usado pela política personalizada de duas maneiras:  
+#### <a name="how-to-create-a-configuration-profile-file"></a>如何创建配置文件  
+ 可以通过以下两种方法创建用于自定义策略的配置文件：  
   
--   Exporte o arquivo (com a extensão **.mobileconfig**) da ferramenta Apple Configurator.  
+-   从 Apple 配置器工具中导出文件（扩展名为“.mobileconfig” ）。  
   
--   Crie o arquivo você mesmo usando o esquema apropriado da [Referência de Chave de Perfil de Configuração da Apple](https://developer.apple.com/library/ios/featuredarticles/iPhoneConfigurationProfileRef/Introduction/Introduction.html).  
+-   使用 [Apple 配置文件键引用](https://developer.apple.com/library/ios/featuredarticles/iPhoneConfigurationProfileRef/Introduction/Introduction.html)中的相应架构自行创作文件。  
   
-###  <a name="kiosk-mode-ios"></a>Modo de quiosque (iOS)  
- O modo de quiosque permite bloquear um dispositivo para permitir que somente alguns recursos funcionem. Por exemplo, você pode permitir que um dispositivo execute apenas um aplicativo gerenciado que você especificar ou pode desabilitar os botões de volume em um dispositivo. Essas configurações podem ser usadas para um modelo de demonstração de um dispositivo ou um dispositivo que é dedicado a apenas uma função, como um dispositivo de ponto de venda.  
+###  <a name="kiosk-mode-ios"></a>展台模式 (iOS)  
+ 展台模式可让你锁定设备以只允许某些功能工作。 例如，你可以让设备只运行一个指定的托管应用，也可以禁用设备上的音量按钮。 这些设置可用于设备的演示模型，也可用于专门执行一个功能的设备（如销售点设备）。  
   
-#### <a name="to-configure-kiosk-mode-for-ios-devices"></a>Para configurar o modo de quiosque para dispositivos iOS  
+#### <a name="to-configure-kiosk-mode-for-ios-devices"></a>若要为 iOS 设备配置展台模式  
   
-1.  Na página **Definir configurações do modo de quiosque para dispositivos iOS** do **Assistente para Criar Item de Configuração**, especifique as seguintes informações:  
+1.  在“创建配置项目向导”  的“创建适用于 iOS 设备的展台模式” 页上，指定以下信息：  
   
-    -   **Selecionar Aplicativo** – escolha o aplicativo que terá permissão para ser executado quando o dispositivo estiver no modo de quiosque. Nenhum outro aplicativo poderá ser executado no dispositivo. Escolha:  
+    -   **选择应用** - 选择允许在设备处于展台模式时运行的应用。 不允许在设备上运行其他应用。 选择：  
   
-        -   **Aplicativo Gerenciado** – Clique em Procurar e selecione um aplicativo gerenciado.  
+        -   “托管应用” – 单击“浏览”，然后选择托管应用。  
   
-        -   **Aplicativo da Loja** – Especifique a URL para um aplicativo na loja de aplicativos e clique em **Obter a ID do aplicativo** para preencher o campo **ID de aplicativo** .  
+        -   “应用商店应用” – 指定应用商店中应用的 URL，然后单击“获取应用 ID”  以填充“应用 ID”  字段。  
   
-         Para encontrar a URL do aplicativo:  
+         查找的应用 URL 的方法：  
   
-        -   Usando um mecanismo de pesquisa, encontre o aplicativo que você deseja usar na iTunes App Store e abra a página do aplicativo.  
+        -   使用搜索引擎，查找你想在 iTunes 应用商店中使用的应用并打开该应用的页面。  
   
-        -   Copie a URL da página e use-a como a URL para especificar o aplicativo que você deseja executar no modo de quiosque.  
+        -   复制页面 URL 并将此用作指定需在展台模式中运行的应用的 URL。  
   
-        -   **Exemplo:** procure **Microsoft Word para iPad**. A URL usada será **https://itunes.apple.com/us/app/microsoft-word-for-ipad/id586447913?mt=8**.  
+        -   “示例：” 搜索“” 。 你使用的 URL 将为 **https://itunes.apple.com/us/app/microsoft-word-for-ipad/id586447913?mt=8**。  
   
-    -   **Toque** – habilita ou desabilita a tela touch no dispositivo.  
+    -   **触控** - 启用或禁用设备上的触摸屏。  
   
-    -   **Rotação da tela** – habilita ou desabilita a alteração da orientação da tela quando você gira o dispositivo.  
+    -   **屏幕旋转** - 启用或禁用在旋转设备时更改屏幕方向。  
   
-    -   **Botões de volume** – habilita ou desabilita o uso dos botões de volume no dispositivo.  
+    -   **音量按钮** - 启用或禁用设备上的音量按钮。  
   
-    -   **Botão de toque** – habilita ou desabilita o botão toque (mudo) no dispositivo.  
+    -   **响铃开关** - 启用或禁用设备上的响铃（静音）开关。  
   
-    -   **Botão de suspensão e ativação da tela** – habilita ou desabilita o botão de ativação e suspensão da tela no dispositivo.  
+    -   **屏幕睡眠和唤醒按钮** - 启用或禁用设备上的屏幕睡眠唤醒按钮。  
   
-    -   **Bloqueio automático** – habilita ou desabilita o bloqueio automático do dispositivo.  
+    -   **自动锁定** - 启用或禁用设备的自动锁定。  
   
-    -   **Áudio mono** – habilita ou desabilita a configuração de acessibilidade **Áudio mono**.  
+    -   **单声道音频** - 启用或禁用辅助功能设置“单声道音频”。  
   
-    -   **Comando de voz** – habilita ou desabilita a configuração de acessibilidade **VoiceOver** que lê em voz alta o texto na tela do dispositivo.  
+    -   **语音朗读** - 启用或禁用辅助功能设置“语音朗读”，它能朗读设备上显示的文本。  
   
-    -   **Ajustes do comando de voz** – habilita ou desabilita os ajustes do comando de voz que permitem ajustar a função VoiceOver (por exemplo, a velocidade em que o texto na tela é lido em voz alta).  
+    -   **语音朗读调整** - 启用或禁用语音朗读调整，它可让你调整 VoiceOver 功能（例如，屏幕上文本的朗读速度）。  
   
-    -   **Zoom** – habilita ou desabilita a opção de acessibilidade **Zoom**, que permite usar o toque para ampliar a tela do dispositivo de acessibilidade.  
+    -   **缩放** - 启用或禁用“缩放”辅助功能设置，它可让你通过触摸来缩放设备显示。  
   
-    -   **Ajustes de zoom** – habilita ou desabilita os ajustes de zoom que permitem ajustar a função de zoom.  
+    -   **缩放调整** - 启用或禁用可让你调整缩放功能的缩放调整。  
   
-    -   **Inverter cores** – habilita ou desabilita a opção de acessibilidade **Inverter Cores** que ajusta a exibição para ajudar os usuários com deficiências visuais.  
+    -   **反转颜色** - 启用或禁用“反转颜色”辅助功能设置，它可调整显示效果以帮助有视觉障碍的用户。  
   
-    -   **Ajustes de cores invertidas** – habilita ou desabilita ajustes de cores invertidas, que permitem ajustar a função de cores invertidas.  
+    -   **反转颜色调整** - 启用或禁用可让你调整反转颜色功能的反转颜色调整。  
   
-    -   **Toque assistencial** – habilita ou desabilita a opção de acessibilidade **Toque Assistencial**, que ajuda os usuários a executar gestos na tela que podem ser difíceis de executar.  
+    -   **辅助触点** - 启用或禁用“辅助触点”辅助功能设置，它可帮助用户执行可能难以执行的屏幕手势。  
   
-    -   **Ajuste do toque assistencial** – habilita ou desabilita os ajustes de toque assistencial, que permitem ajustar a função de toque assistencial.  
+    -   **辅助触点调整** - 启用或禁用可让你调整辅助触点功能的辅助触点调整。  
   
-    -   **Seleção de fala** – habilita ou desabilita as configurações de acessibilidade **Seleção de Fala**, que podem ler em voz alta o texto que você selecionar.  
+    -   **朗读所选项** - 启用或禁用“朗读所选项”辅助功能设置，它可朗读你选择的文本。  
   
-    -   **Corrigir configurações não compatíveis** – escolha se deseja corrigir configurações não compatíveis (quando houver suporte).  
+    -   **修正非符合性设置** - 选择是否要修正不符合要求的配置设置（如果支持）。  
   
-    -   **Severidade de não conformidade dos relatórios** – especifique o nível de severidade que será relatado se esta política de conformidade for avaliada como não compatível. Os níveis de severidade disponíveis são:  
+    -   **报表的不符合性严重性** - 指定此合规性策略被评估为不符合时报告的严重性级别。 可用的严重性级别包括：  
   
-        -   **Nenhum** dispositivos que não cumprem essa regra de conformidade não relatam uma severidade de falha em relatórios do Configuration Manager.  
+        -   **不报告** 对于 Configuration Manager 报表，不符合此合规性规则的设备不报告故障严重性。  
   
-        -   **Informações** dispositivos que não cumprem essa regra de conformidade relatam uma severidade de falha de **Informações** em relatórios do Configuration Manager.  
+        -   **信息** 对于 Configuration Manager 报表，不符合此合规性规则的设备将报告“信息”这一故障严重性。  
   
-        -   **Aviso** dispositivos que não cumprem essa regra de conformidade relatam uma severidade de falha de **Aviso** em relatórios do Configuration Manager.  
+        -   **警告** 对于 Configuration Manager 报表，不符合此合规性规则的设备将报告“警告”这一故障严重性。  
   
-        -   **Crítico** dispositivos que não cumprem essa regra de conformidade relatam uma severidade de falha de **Crítico** em relatórios do Configuration Manager.  
+        -   **严重** 对于 Configuration Manager 报表，不符合此合规性规则的设备将报告“严重”这一故障严重性。  
   
-        -   **Crítico com evento** dispositivos que não cumprem essa regra de conformidade relatam uma severidade de falha de **Crítico com evento** em relatórios do Configuration Manager. Este nível de severidade também é registrado como um evento do Windows no log de eventos do aplicativo.  
+        -   **事件严重** 对于 Configuration Manager 报表，不符合此合规性规则的设备将报告“严重”这一故障严重性。 应用程序事件日志中也会以 Windows 事件的形式记录此严重性级别。  
   
-## <a name="see-also"></a>Consulte também  
- [Itens de configuração de dispositivos gerenciados sem o cliente do System Center Configuration Manager](../../compliance/deploy-use/configuration-items-for-devices-managed-without-the-client.md)
-
+## <a name="see-also"></a>另请参阅  
+ [未使用 System Center Configuration Manager 客户端管理的设备的配置项目](../../compliance/deploy-use/configuration-items-for-devices-managed-without-the-client.md)

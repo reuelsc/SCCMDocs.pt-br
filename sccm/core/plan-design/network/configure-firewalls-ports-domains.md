@@ -1,39 +1,35 @@
 ---
-title: "Firewalls e domínios | Microsoft Docs"
-description: "Configure firewalls, portas e domínios para preparar-se para comunicações do System Center Configuration Manager."
+title: "防火墙和域 | Microsoft Docs"
+description: "设置防火墙、端口和域以准备 System Center Configuration Manager 通信。"
 ms.custom: na
 ms.date: 2/6/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
-ms.technology:
-- configmgr-other
+ms.technology: configmgr-other
 ms.tgt_pltfrm: na
 ms.topic: get-started-article
 ms.assetid: d6993bba-f6bd-4639-adbf-efc1c638b2f3
-caps.latest.revision: 15
-caps.handback.revision: 0
+caps.latest.revision: "15"
+caps.handback.revision: "0"
 author: Brenduns
 ms.author: brenduns
 manager: angrobe
-ms.translationtype: Human Translation
-ms.sourcegitcommit: bd20983eeca47bdd63e0385440e6c8d64901b902
 ms.openlocfilehash: 4a2a8f96a900a2c4959ae3ff59232771ece95991
-ms.contentlocale: pt-br
-ms.lasthandoff: 05/17/2017
-
-
+ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
+ms.translationtype: HT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 08/07/2017
 ---
-# <a name="set-up-firewalls-ports-and-domains-for-system-center-configuration-manager"></a>Configurar firewalls, portas e domínios para o System Center Configuration Manager
+# <a name="set-up-firewalls-ports-and-domains-for-system-center-configuration-manager"></a>为 System Center Configuration Manager 设置防火墙、端口和域
 
-*Aplica-se a: System Center Configuration Manager (Branch Atual)*
+*适用范围：System Center Configuration Manager (Current Branch)*
 
-Para preparar sua rede para dar suporte ao System Center Configuration Manager, planeje a configuração da infraestrutura, como firewalls, para passar as comunicações usadas pelo Configuration Manager.  
+若要准备网络以支持 System Center Configuration Manager，请计划设置基础结构（如防火墙）以传递 Configuration Manager 所使用的通信。  
 
-|Consideração|Detalhes|  
+|注意事项|详细信息|  
 |-------------------|-------------|  
-|**Portas e protocolos** usados por diferentes recursos do Configuration Manager. Algumas portas são necessárias, enquanto **domínios e serviços** podem ser personalizados.|A maioria das comunicações do Configuration Manager usa portas comuns, como a porta 80 para HTTP ou 443 para comunicação HTTPS. Entretanto, [algumas funções do sistema de sites dão suporte ao uso de sites personalizados](/sccm/core/plan-design/network/websites-for-site-system-servers) e portas personalizadas.<br /><br /> **Antes de implantar o Configuration Manager**, identifique as portas que você planeja usar e configure os firewalls de acordo.<br /><br /> Mais tarde, **se você precisar alterar uma porta** após instalar o Configuration Manager, não se esqueça de atualizar os firewalls nos dispositivos e na rede, além de alterar a configuração da porta de dentro do Configuration Manager.<br /><br /> Para obter mais informações, consulte: </br>- [Como configurar as portas de comunicação do cliente](../../../core/clients/deploy/configure-client-communication-ports.md) </br>- [Portas usadas no Configuration Manager](../../../core/plan-design/hierarchy/ports.md) </br>- [Requisitos de acesso à Internet para o ponto de conexão de serviço](/sccm/core/servers/deploy/configure/about-the-service-connection-point#bkmk_urls)|  
-|**Domínios e serviços** que clientes e servidores de sites talvez precisem acessar.|Os recursos do Configuration Manager podem exigir que clientes e servidores do site tenham acesso a serviços e domínios específicos na Internet, como o Windowsudpate.microsoft.com ou o serviço Microsoft Intune.<br /><br /> Se você usa o Microsoft Intune para gerenciar dispositivos móveis, também deve configurar o acesso a [portas e domínios exigidos pelo Intune](https://docs.microsoft.com/en-us/intune/get-started/network-infrastructure-requirements-for-microsoft-intune)|  
-|**Servidores proxy** para servidores de sistema de sites e para comunicações do cliente. Você pode especificar servidores proxy separados para clientes e servidores de sistema de sites diferentes.|Como essas configurações são feitas quando você instala uma função de sistema de sites ou cliente, você só precisar tomar conhecimento das configurações do servidor proxy para referência futura ao configurar funções de sistemas de sites e clientes.<br /><br /> Se você não tiver certeza se sua implantação precisará usar servidores proxy, examine [Suporte ao servidor proxy no System Center Configuration Manager](../../../core/plan-design/network/proxy-server-support.md) para saber mais sobre as funções de sistemas de sites e ações de cliente que podem usar um servidor proxy.|   
+|不同的 Configuration Manager 功能所使用的**端口和协议**。 某些端口是必需的，而其他的**域和服务**则可以自定义。|大多数 Configuration Manager 通信使用常见的端口，比如用于 HTTP 通信的端口 80 或用于 HTTPS 通信的端口 443。 但是，[某些站点系统角色支持使用自定义网站](/sccm/core/plan-design/network/websites-for-site-system-servers)和自定义端口。<br /><br /> **部署 Configuration Manager 之前**，请确定计划使用的端口并相应地设置防火墙。<br /><br /> 安装 Configuration Manager 后，**如果需要更改端口**，请勿忘记更新设备和网络上的防火墙，以及从 Configuration Manager 中更改端口的配置。<br /><br /> 有关详细信息，请参阅： </br>- [如何配置客户端通信端口](../../../core/clients/deploy/configure-client-communication-ports.md) </br>- [Configuration Manager 中使用的端口](../../../core/plan-design/hierarchy/ports.md) </br>- [服务连接点的 Internet 访问要求](/sccm/core/servers/deploy/configure/about-the-service-connection-point#bkmk_urls)|  
+|站点服务器和客户端可能需要使用的**域和服务**。|Configuration Manager 功能可能需要站点服务器和客户端有权访问 Internet 上的特定服务和域，如 Windowsudpate.microsoft.com 或 Microsoft Intune 服务。<br /><br /> 如果将使用 Microsoft Intune 管理移动设备，那么还必须设置对 [Intune 所需的端口和域](https://docs.microsoft.com/en-us/intune/get-started/network-infrastructure-requirements-for-microsoft-intune)的访问权限。|  
+|用于站点系统服务器和用于客户端通信的**代理服务器** 。 你可以对不同的站点系统服务器和客户端指定单独的代理服务器。|因为这些配置是在安装站点系统角色或客户端时所做的，因此只需注意代理服务器配置，以供将来配置站点系统角色和客户端时参考。<br /><br /> 如果不能确定你的部署是否将需要使用代理服务器，请查看 [System Center Configuration Manager 中的代理服务器支持](../../../core/plan-design/network/proxy-server-support.md)以了解可以使用代理服务器的站点系统角色和客户端操作的相关信息。|   
 |  
-

@@ -1,41 +1,37 @@
 ---
-title: Monitorar clientes | Microsoft Docs
-description: Saiba como monitorar e gerenciar clientes no System Center Configuration Manager.
+title: "监视客户端 | Microsoft Docs"
+description: "了解如何在 System Center Configuration Manager 中监视和管理客户端。"
 ms.custom: na
 ms.date: 04/23/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
-ms.technology:
-- configmgr-client
+ms.technology: configmgr-client
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 110b65b3-2202-466f-bb5d-e5ee282506fc
-caps.latest.revision: 5
+caps.latest.revision: "5"
 author: robstackmsft
 ms.author: robstack
 manager: angrobe
-ms.translationtype: Human Translation
-ms.sourcegitcommit: 593fbd0587d54490246f48ae54f666bac6b7830d
-ms.openlocfilehash: dbdc74cc2f94553745eb50aeadf6d33a54064c6b
-ms.contentlocale: pt-br
-ms.lasthandoff: 12/16/2016
-
-
+ms.openlocfilehash: 828f615e14b2ad40108d0c7afdc050c7d17d4038
+ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
+ms.translationtype: HT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 08/07/2017
 ---
-# <a name="monitor-and-manage-clients-in-system-center-configuration-manager"></a>Como monitorar e gerenciar clientes no System Center Configuration Manager
+# <a name="monitor-and-manage-clients-in-system-center-configuration-manager"></a>在 System Center Configuration Manager 中监视和管理客户端
 
-*Aplica-se a: System Center Configuration Manager (Branch Atual)*
+*适用范围：System Center Configuration Manager (Current Branch)*
 
-O System Center Configuration Manager (também conhecido como ConfigMgr ou SCCM) fornece várias maneiras de monitorar e gerenciar o software cliente após sua implantação nos computadores e dispositivos de sua organização.  É possível monitorar os clientes para verificar seu status e, em alguns casos, o Configuration Manager pode executar a correção automática (ou correções) com base no problema detectado. O console do Configuration Manager também fornece maneiras para gerenciar clientes para dispositivos individuais ou coleções de dispositivos.  
+一旦客户端软件被部署到组织的计算机和设备，System Center Configuration Manager（也称为 ConfigMgr 或 SCCM）就会提供多种方式来监视和管理它。  可以监视客户端以检查其状态，在某些情况下，Configuration Manager 可以基于检测到的问题执行自动修正（或修补程序）。 Configuration Manager 控制台还提供管理个人设备或设备集合的客户端的方法。  
 
- Com as informações contidas nos seguintes tópicos a seguir, saiba como monitorar e gerenciar clientes, bem como obter detalhes adicionais para o monitoramento e gerenciamento de clientes para servidores Linux e UNIX:  
+ 凭借以下主题中的信息，学习如何监视和管理客户端同时获取监视和管理 Linux 和 UNIX 服务器的客户端的更多详情：  
 
--   [Como monitorar clientes no System Center Configuration Manager](../../../core/clients/manage/monitor-clients.md)  
+-   [如何在 System Center Configuration Manager 中监视客户端](../../../core/clients/manage/monitor-clients.md)  
 
--   [Como monitorar clientes para servidores Linux e UNIX no System Center Configuration Manager](../../../core/clients/manage/monitor-clients-for-linux-and-unix-servers.md)  
+-   [如何在 System Center Configuration Manager 中监视 Linux 和 UNIX 服务器的客户端](../../../core/clients/manage/monitor-clients-for-linux-and-unix-servers.md)  
 
--   [Como gerenciar clientes no System Center Configuration Manager](../../../core/clients/manage/manage-clients.md)  
+-   [如何在 System Center Configuration Manager 中管理客户端](../../../core/clients/manage/manage-clients.md)  
 
--   [Como gerenciar clientes para servidores Linux e UNIX no System Center Configuration Manager](../../../core/clients/manage/manage-clients-for-linux-and-unix-servers.md)  
-
+-   [如何在 System Center Configuration Manager 中管理 Linux 和 UNIX 服务器的客户端](../../../core/clients/manage/manage-clients-for-linux-and-unix-servers.md)  

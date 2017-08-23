@@ -1,140 +1,133 @@
 ---
-title: "Introdução à implantação de sistema operacional | Microsoft Docs"
-description: Entenda os conceitos antes de implantar sistemas operacionais no ambiente do seu Configuration Manager.
+title: "操作系统部署简介 | Microsoft Docs"
+description: "请在 Configuration Manager 环境中部署操作系统之前，了解一些概念。"
 ms.custom: na
 ms.date: 10/06/2016
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
-ms.technology:
-- configmgr-osd
+ms.technology: configmgr-osd
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: d9a1c545-8301-492c-832f-2c108ff93c77
-caps.latest.revision: 12
+caps.latest.revision: "12"
 author: Dougeby
 ms.author: dougeby
 manager: angrobe
-translationtype: Human Translation
-ms.sourcegitcommit: 55a9f1caedcfa810e9a97e43626e4cf5fdbcfa0d
 ms.openlocfilehash: 2baa6b7dbd66ab41bc9b67e8f43c313be233153c
-
-
+ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
+ms.translationtype: HT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 08/07/2017
 ---
-# <a name="introduction-to-operating-system-deployment-in-system-center-configuration-manager"></a>Introdução à implantação de sistema operacional no System Center Configuration Manager
+# <a name="introduction-to-operating-system-deployment-in-system-center-configuration-manager"></a>System Center Configuration Manager 中的操作系统部署简介
 
-*Aplica-se a: System Center Configuration Manager (Branch Atual)*
+*适用范围：System Center Configuration Manager (Current Branch)*
 
-É possível usar o Configuration Manager para implantar sistemas operacionais de inúmeras maneiras diferentes. Use as informações desta seção para entender como implantar sistemas operacionais e automatizar tarefas. 
+可以通过不同方式使用 Configuration Manager 部署操作系统。 通过本节中的信息了解如何部署操作系统和自动执行任务。 
 
-##  <a name="a-namebkmkosdeploymentprocessa-the-operating-system-deployment-process"></a><a name="BKMK_OSDeploymentProcess"></a> O processo de implantação de sistema operacional  
- O Configuration Manager fornece diversos métodos que podem ser usados para implantar um sistema operacional. Existem várias ações que devem ser tomadas, independentemente do método de implantação utilizado:  
+##  <a name="BKMK_OSDeploymentProcess"></a> 操作系统部署过程  
+ Configuration Manager 提供可用于部署操作系统的一些方法。 无论使用哪种部署方法，都必须执行一些操作：  
 
--   Identifique os drivers de dispositivo Windows necessários para iniciar a imagem de inicialização ou instalar a imagem do sistema operacional que deve ser implantada.  
+-   标识要开始启动映像或安装操作系统映像（必须部署的）所必需的 Windows 设备驱动程序。  
 
--   Identifique a imagem de inicialização que deseja usar para iniciar o computador de destino.  
+-   确定想要用来启动目标计算机的启动映像。  
 
--   Use uma sequência de tarefas para capturar uma imagem do sistema operacional que deseja implantar. Como alternativa, é possível usar uma imagem do sistema operacional padrão.  
+-   使用任务序列捕获将要部署的操作系统的映像。 或者，你可以使用默认的操作系统映像。  
 
--   Distribuir a imagem de inicialização, a imagem do sistema operacional e qualquer conteúdo relacionado a um ponto de distribuição.  
+-   将启动映像、操作系统映像包以及任何相关内容分发至分发点。  
 
--   Crie uma sequência de tarefas com as etapas para implantar a imagem de inicialização e a imagem do sistema operacional.  
+-   创建任务序列，该序列带有部署启动映像和操作系统映像的步骤。  
 
--   Implante a sequência de tarefas em uma coleção de computadores.  
+-   将任务序列部署到计算机集合。  
 
--   Monitore a implantação.  
+-   监视部署。  
 
-##  <a name="a-namebkmkosdscenariosa-operating-system-deployment-scenarios"></a><a name="BKMK_OSDScenarios"></a> Cenários de implantação de sistema operacional  
- Há vários cenários de implantação de sistema operacional no Configuration Manager que podem ser escolhidos, dependendo de seu ambiente e da finalidade da instalação do sistema operacional.  Por exemplo, é possível particionar e formatar um computador existente com uma nova versão do Windows ou atualizar o Windows para a versão mais recente. Para ajudá-lo a determinar o método de implantação que atende às suas necessidades, examine [Scenarios to deploy enterprise operating systems (Cenários para implantar sistemas operacionais corporativos)](../deploy-use/scenarios-to-deploy-enterprise-operating-systems.md).  É possível escolher um dos seguintes cenários de implantação de sistema operacional:  
+##  <a name="BKMK_OSDScenarios"></a> 操作系统部署方案  
+ Configuration Manager 中有许多可供选择的操作系统部署方案，具体取决于你的环境和操作系统的安装目的。  例如，你可以使用新版本的 Windows 对现有计算机进行分区和格式化，或将 Windows 升级到最新版本。 为帮助确定所需的部署方法，请查看[部署企业操作系统的方案](../deploy-use/scenarios-to-deploy-enterprise-operating-systems.md)。  你可以从以下操作系统部署方案中进行选择：  
 
--   [Atualizar o Windows para a versão mais recente](../deploy-use/upgrade-windows-to-the-latest-version.md)  
+-   [将 Windows 升级到最新版本](../deploy-use/upgrade-windows-to-the-latest-version.md)  
 
--   [Atualizar um computador existente com uma nova versão do Windows](../deploy-use/refresh-an-existing-computer-with-a-new-version-of-windows.md)  
+-   [使用新版的 Windows 刷新现有的计算机](../deploy-use/refresh-an-existing-computer-with-a-new-version-of-windows.md)  
 
--   [Instalar uma nova versão do Windows em um novo computador (sem sistema operacional)](../deploy-use/install-new-windows-version-new-computer-bare-metal.md)  
+-   [在新计算机（裸机）上安装新版的 Windows](../deploy-use/install-new-windows-version-new-computer-bare-metal.md)  
 
--   [Substituir um computador existente e transferir configurações](../deploy-use/replace-an-existing-computer-and-transfer-settings.md)  
+-   [替换现有计算机和传输设置](../deploy-use/replace-an-existing-computer-and-transfer-settings.md)  
 
-##  <a name="a-namebkmkosdmethodsa-methods-to-deploy-operating-systems"></a><a name="BKMK_OSDMethods"></a> Métodos para implantar sistemas operacionais  
- Existem vários métodos que podem ser usados para implantar sistemas operacionais em computadores cliente do Configuration Manager.  
+##  <a name="BKMK_OSDMethods"></a> 用于部署操作系统的方法  
+ 可以使用一些方法将操作系统部署到 Configuration Manager 客户端计算机。  
 
--   **Implantações iniciadas pelo PXE**: as implantações iniciadas pelo PXE permitem que computadores cliente solicitem uma implantação por meio da rede. Nesse método de implantação, a imagem do sistema operacional e uma imagem de inicialização do Windows PE são enviadas a um ponto de distribuição configurado para aceitar solicitações de inicialização PXE. Para obter mais informações, consulte [Use o PXE para implantar o Windows pela rede com o System Center Configuration Manager](../deploy-use/use-pxe-to-deploy-windows-over-the-network.md).  
+-   **PXE 启动部署**：PXE 启动部署允许客户端计算机通过网络请求部署。 在此部署方法中，操作系统映像包和 Windows PE 启动映像会发送到配置为接受 PXE 启动请求的分发点。 有关详细信息，请参阅[使用 PXE 与 System Center Configuration Manager 一起通过网络部署 Windows](../deploy-use/use-pxe-to-deploy-windows-over-the-network.md)。  
 
--   **Disponibilizar sistemas operacionais no Centro de Software**: é possível implantar um sistema operacional e disponibilizá-lo no Centro de Software. Os clientes do Configuration Manager podem iniciar a instalação do sistema operacional no Centro de Software. Para mais informações, consulte [Replace an existing computer and transfer settings (Substituir um computador existente e transferir configurações)](../deploy-use/replace-an-existing-computer-and-transfer-settings.md).  
+-   **使操作系统在软件中心中可用**：可以部署操作系统，并使其在软件中心中可用。 Configuration Manager 客户端可以从软件中心启动操作系统安装。 有关详细信息，请参阅[替换现有计算机和传输设置](../deploy-use/replace-an-existing-computer-and-transfer-settings.md)。  
 
--   **Implantações multicast**: as implantações multicast conservam a largura de banda da rede enviando simultaneamente dados a vários clientes, em vez de enviar uma cópia dos dados a cada cliente por uma conexão separada. Nesse método de implantação, a imagem do sistema operacional é enviada para um ponto de distribuição. Isso, por sua vez, implanta a imagem quando os computadores cliente solicitam a implantação. Para mais informações, consulte [Usar o multicast para implantar o Windows pela rede](../deploy-use/use-multicast-to-deploy-windows-over-the-network.md).  
+-   **多播部署**：多播部署通过将数据并行发送到多个客户端，而不是通过单独连接向每个客户端发送数据副本，从而节省网络带宽。 在此部署方法中，操作系统映像包将发送到分发点。 这反过来会在客户端计算机请求部署时部署映像。 有关详细信息，请参阅[使用多播通过网络部署 Windows](../deploy-use/use-multicast-to-deploy-windows-over-the-network.md)。  
 
--   **Implantações de mídia inicializável**: as implantações de mídia inicializável permitem implantar o sistema operacional quando o computador de destino é iniciado. Quando o computador de destino é iniciado, ele se conecta à rede e recupera a sequência de tarefas, a imagem do sistema operacional e qualquer outro conteúdo necessário da rede. Como esse conteúdo não está incluído na mídia, você pode atualizar o conteúdo sem precisar recriar a mídia. Para obter mais informações, consulte [Criar mídia inicializável](../deploy-use/create-bootable-media.md).  
+-   **可启动媒体部署**：可启动媒体部署允许在目标计算机启动时部署操作系统。 在目标计算机启动时，它从网络中检索任务序列、操作系统映像包和任何其他必需的内容。 由于媒体上未包括该内容，因此，你无需重新创建媒体就能更新内容。 有关详细信息，请参阅[创建可启动媒体](../deploy-use/create-bootable-media.md)。  
 
--   **Implantações de mídia autônoma**: as implantações de mídia autônoma permitem implantar sistemas operacionais com as seguintes condições:  
+-   **独立媒体部署**：独立媒体部署允许在下列情况下部署操作系统：  
 
-    -   Em ambientes onde não é prático copiar uma imagem do sistema operacional ou outros pacotes grandes através da rede.  
+    -   在通过网络复制操作系统映像包或其他大型包并不实际可行的环境中。  
 
-    -   Em ambientes sem conectividade de rede ou conectividade de rede de baixa largura de banda.  
+    -   在无网络连接或具有低带宽网络连接的环境中。  
 
-     Para obter mais informações, consulte [Criar mídia autônoma](../deploy-use/create-stand-alone-media.md).  
+     有关详细信息，请参阅[创建独立媒体](../deploy-use/create-stand-alone-media.md)。  
 
--   **Implantações de mídia pré-configurada**: as implantações de mídia pré-configurada permitem implantar um sistema operacional em um computador que não está totalmente provisionado. A mídia pré-configurada é um arquivo em formato WIM (Windows Imaging) que pode ser instalado em um computador sem sistema operacional pelo fabricante ou em um centro de preparo corporativo que não está conectado ao ambiente do Configuration Manager.  
+-   **预留媒体部署**：预留媒体部署允许将操作系统部署到未完全设置的计算机。 预留媒体是 Windows 映像格式 (WIM) 文件，可以由制造商安装在裸机上，也可以安装在未连接到 Configuration Manager 环境的企业暂存中心。  
 
-     Posteriormente, no ambiente do Configuration Manager, o computador será iniciado usando a imagem de inicialização fornecida pela mídia e será conectado ao ponto de gerenciamento do site para as sequências de tarefas disponíveis que concluem o processo de download. Esse método de implantação pode reduzir o tráfego de rede, pois a imagem de inicialização e a imagem do sistema operacional já estão no computador de destino. É possível especificar aplicativos, pacotes e pacotes de driver para incluir na mídia pré-configurada. Para mais informações, consulte [Criar mídia pré-configurada](../deploy-use/create-prestaged-media.md).  
+     随后在 Configuration Manager 环境中，计算机使用媒体提供的启动映像启动，然后连接到站点管理点以执行完成下载过程的可用任务序列。 此部署方法可以减少网络流量，因为启动映像和操作系统映像包已在目标计算机上。 你可以指定要包含在预留媒体中的应用程序、包和驱动程序包。 有关详细信息，请参阅[创建预留媒体](../deploy-use/create-prestaged-media.md)。  
 
-##  <a name="a-namebkmkbootimagesa-boot-images"></a><a name="BKMK_BootImages"></a> Imagens de inicialização  
- Uma imagem de inicialização no Configuration Manager é uma imagem do WinPE (Windows PE) usada durante uma implantação de sistema operacional. Imagens de inicialização são usadas para iniciar um computador no WinPE, que é um sistema operacional mínimo com componentes e serviços limitados que preparam o computador de destino para a instalação do Windows. O Configuration Manager fornece duas imagens de inicialização: uma para dar suporte a plataformas x86 e outra para dar suporte a plataformas x64. Elas são consideradas imagens de inicialização padrão. Imagens de inicialização criadas e adicionadas ao Configuration Manager são consideradas imagens personalizadas. Imagens de inicialização padrão podem ser substituídas automaticamente com a atualização do Configuration Manager. Para obter mais informações sobre imagens de inicialização, consulte [Gerenciar imagens de inicialização](../get-started/manage-boot-images.md).  
+##  <a name="BKMK_BootImages"></a> 启动映像  
+ Configuration Manager 中的启动映像是在操作系统部署过程中使用的 Windows PE (WinPE) 映像。 启动映像用于在 WinPE 中启动计算机，它是用于准备在目标计算机上安装 Windows 的有限组件和服务的最精简操作系统。 Configuration Manager 提供两个启动映像：一个用于支持 x86 平台，另一个用于支持 x64 平台。 这些视为默认启动映像。 创建并添加到 Configuration Manager 的启动映像被视为自定义映像。 更新 Configuration Manager 时，会自动替换默认启动映像。 有关启动映像的详细信息，请参阅[管理启动映像](../get-started/manage-boot-images.md)。  
 
-##  <a name="a-namebkmkosimagesa-operating--system-images"></a><a name="BKMK_OSImages"></a> Imagens do sistema operacional  
- As imagens do sistema operacional no Configuration Manager são armazenadas em arquivos de formato WIM (Windows Imaging) e representam uma coleção compactada de arquivos e pastas de referência necessários para instalar e configurar com êxito um sistema operacional em um computador. Para todos os cenários de implantação de sistema operacional, você deve selecionar uma imagem do sistema operacional. É possível usar a imagem do sistema operacional padrão ou compilar a imagem do sistema operacional de um computador de referência configurado. Para obter mais informações, consulte [Gerenciar imagens do sistema operacional](../get-started/manage-operating-system-images.md).  
+##  <a name="BKMK_OSImages"></a> 操作系统映像  
+ Configuration Manager 中的操作系统映像以 Windows 映像 (WIM) 文件格式存储，代表在计算机上成功安装和配置操作系统所需的引用文件和文件夹的压缩集合。 对于所有操作系统部署方案，必须选择操作系统映像。 你可以使用默认操作系统映像或从你配置的引用计算机生成操作系统映像。 有关详细信息，请参阅[管理操作系统映像](../get-started/manage-operating-system-images.md)。  
 
-##  <a name="a-namebkmkosupgradepackagesa-operating-system-upgrade-packages"></a><a name="BKMK_OSUpgradePackages"></a> Pacotes de atualização de sistema operacional  
- Pacotes de atualização do sistema operacional são usados para atualizar um sistema operacional e são implantações de sistema operacional iniciadas pela instalação. Pacotes de atualização do sistema operacional são importados para o Configuration Manager de um DVD ou um arquivo ISO montado. Para obter mais informações, consulte [Gerenciar pacotes de atualização do sistema operacional](../get-started/manage-operating-system-upgrade-packages.md).  
+##  <a name="BKMK_OSUpgradePackages"></a> 操作系统升级包  
+ 操作系统升级包用于升级操作系统，并且是安装程序启动的操作系统部署。 从 DVD 或已安装的 ISO 文件将操作系统升级包导入 Configuration Manager。 有关详细信息，请参阅[管理操作系统升级包](../get-started/manage-operating-system-upgrade-packages.md)。  
 
-##  <a name="a-namebkmkosdmediaa-media-to-deploy-operating-systems"></a><a name="BKMK_OSDMedia"></a> Mídia usada para implantar sistemas operacionais  
- Você pode criar vários tipos de mídia que pode ser usados para implantar sistemas operacionais. Isso inclui capturar mídia usada para capturar imagens do sistema operacional e mídia autônoma, em pré-teste e inicializável usada para implantar um sistema operacional. Com o uso da mídia, é possível implantar sistemas operacionais em computadores que não têm uma conexão de rede ou que têm uma conexão de baixa largura de banda no site do Configuration Manager. Para obter mais informações sobre como usar a mídia, consulte [Create task sequence media (Criar mídia de sequência de tarefas)](../deploy-use/create-task-sequence-media.md).  
+##  <a name="BKMK_OSDMedia"></a> 用于部署操作系统的媒体  
+ 你可以创建若干种可用于部署操作系统的媒体。 这包括捕获用于捕获操作系统映像的媒体，以及捕获用于部署操作系统的独立、预留和可启动媒体。 通过使用媒体，可以在没有网络连接或者使用低带宽连接连接到 Configuration Manager 站点的计算机上部署操作系统。 有关如何使用媒体的详细信息，请参阅[创建任务序列媒体](../deploy-use/create-task-sequence-media.md)。  
 
-##  <a name="a-namebkmkdevicedriversa-device-drivers"></a><a name="BKMK_DeviceDrivers"></a> Drivers de dispositivo  
- É possível instalar drivers de dispositivo em computadores de destino sem incluí-los na imagem do sistema operacional que está sendo implantada. O Configuration Manager fornece um catálogo de drivers que contém referências a todos os drivers de dispositivos importados para o Configuration Manager. O catálogo de drivers está localizado no espaço de trabalho **Biblioteca de Software** e consiste em dois nós: **Drivers** e **Pacotes de Driver**. O nó **Drivers** lista todos os drivers que você importou no catálogo de drivers. Você pode usar esse nó para descobrir os detalhes sobre cada driver importado, para alterar a qual pacote de driver ou imagem de inicialização um driver pertence, para habilitar ou desabilitar um driver e muito mais. Para mais informações, consulte [Manage drivers (Gerenciar drivers)](../get-started/manage-drivers.md).  
+##  <a name="BKMK_DeviceDrivers"></a> 设备驱动程序  
+ 你可以在目标计算机上安装设备驱动程序，而不将它们包含在正在部署的操作系统映像中。 Configuration Manager 提供包含对导入 Configuration Manager 的所有设备驱动程序的引用的驱动程序目录。 此驱动程序目录位于“软件库”  工作区中并且包含以下两个节点：“驱动程序”  和“驱动程序包” 。 “驱动程序”  节点列出了已导入到驱动程序目录的所有驱动程序。 你可以使用此节点发现关于每个导入的驱动程序的详细信息，更改驱动程序所属的驱动程序包或启动映像，启用或禁用驱动程序，以及执行其他操作。 有关详细信息，请参阅[管理驱动程序](../get-started/manage-drivers.md)。  
 
-##  <a name="a-namebkmkosduserstatea-save-and-restore-user-state"></a><a name="BKMK_OSDUserState"></a> Salvar e restaurar o estado do usuário  
- Ao implantar sistemas operacionais, você pode salvar o estado do usuário do computador de destino, implantar o sistema operacional e restaurar o estado do usuário após a implantação de sistemas operacionais. Geralmente, esse processo é usado ao instalar o sistema operacional em um computador cliente do Configuration Manager.  
+##  <a name="BKMK_OSDUserState"></a> 保存并还原用户状态  
+ 部署操作系统时，你可以保存目标计算机中的用户状态，部署操作系统，然后在部署操作系统之后还原用户状态。 此过程通常在 Configuration Manager 客户端计算机上安装操作系统时使用。  
 
- As informações de estado do usuário são capturadas e restauradas usando sequências de tarefas. Quando as informações de estado do usuário são capturadas, elas podem ser armazenadas de uma das seguintes maneiras:  
+ 用户状态信息是使用任务序列捕获和还原的。 捕获用户状态信息后，可以使用下列方法之一存储信息：  
 
--   Você pode armazenar os dados de estado do usuário remotamente, configurando um ponto de migração de estado. A sequência de tarefas de captura envia os dados para o ponto de migração de estado. Em seguida, após a implantação do sistema operacional, a sequência de tarefas de restauração recupera os dados e restaura o estado do usuário no computador de destino.  
+-   你可以通过配置状态迁移点以远程存储用户状态数据。 捕获任务序列将数据发送到状态迁移点。 然后，在部署操作系统之后，还原任务序列检索数据并在目标计算机上还原用户状态。  
 
--   Você pode armazenar os dados de estado do usuário localmente em um local específico. Nesse cenário, a sequência de tarefas de captura copia os dados do usuário para um local específico no computador de destino. Em seguida, após a implantação do sistema operacional, a sequência de tarefas de restauração recupera os dados do usuário desse local.  
+-   你可以以本地方式将用户状态数据存储到特定位置。 在此方案中，捕获任务序列将用户数据复制到目标计算机上的特定位置。 然后，在部署操作系统之后，还原任务序列从该位置检索用户数据。  
 
--   Você pode especificar links físicos que podem ser usados para restaurar os dados do usuário para o local original. Nesse cenário, os dados de estado do usuário permanecem na unidade quando o sistema operacional antigo é removido. Em seguida, após a implantação do sistema operacional, a sequência de tarefas de restauração usa os links físicos para restaurar os dados de estado do usuário para o local original.  
+-   你可以指定可用于将用户数据还原到其原始位置的硬链接。 在此方案中，删除旧操作系统时，用户状态数据会保留在驱动器上。 然后，在部署操作系统之后，还原任务序列使用硬链接将用户状态数据还原到其原始位置。  
 
- Para obter mais informações, consulte [Manage user state (Gerenciar o estado do usuário)](../get-started/manage-user-state.md).  
+ 有关详细信息，请参阅[管理用户状态](../get-started/manage-user-state.md)。  
 
-##  <a name="a-namebkmkunknowncomputera-deploy-to-unknown-computers"></a><a name="BKMK_UnknownComputer"></a> Implantar em computadores desconhecidos  
- É possível implantar um sistema operacional em computadores não gerenciados pelo Configuration Manager. Não há registro desses computadores no banco de dados do Configuration Manager. Esses computadores são chamados de computadores desconhecidos. Computadores desconhecidos incluem:  
+##  <a name="BKMK_UnknownComputer"></a> 部署到未知计算机  
+ 可以将操作系统部署到不由 Configuration Manager 管理的计算机。 Configuration Manager 数据库中没有这些计算机的记录。 这些计算机称为未知计算机。 未知计算机包括下列各项：  
 
--   Um computador no qual o cliente do Configuration Manager não está instalado  
+-   未安装 Configuration Manager 客户端的计算机  
 
--   Um computador que não foi importado para o Configuration Manager  
+-   未导入到 Configuration Manager 中的计算机  
 
--   Um computador não descoberto pelo Configuration Manager  
+-   未被 Configuration Manager 发现的计算机  
 
- Para obter mais informações, consulte [Preparar implantações de computador desconhecido](../get-started/prepare-for-unknown-computer-deployments.md).  
+ 有关详细信息，请参阅[准备未知计算机部署](../get-started/prepare-for-unknown-computer-deployments.md)。  
 
-##  <a name="a-namebkmkudaa-associate-users-with-a-computer"></a><a name="BKMK_UDA"></a> Associar usuários a um computador  
- Ao implantar um sistema operacional, você pode associar usuários ao computador de destino para dar suporte a ações de afinidade de dispositivo de usuário. Quando você associa um usuário ao computador de destino, o usuário administrativo pode, mais tarde, realizar ações em qualquer computador associado a esse usuário, como implantar um aplicativo no computador de um usuário específico. No entanto, ao implantar um sistema operacional, você não pode implantá-lo no computador de um usuário específico. Para mais informações, consulte [Associar usuários a um computador de destino](../get-started/associate-users-with-a-destination-computer.md).  
+##  <a name="BKMK_UDA"></a> 将用户与计算机关联  
+ 部署操作系统时，可以将用户与目标计算机关联，以支持用户设备关联操作。 将用户与目标计算机关联时，管理用户稍后可以对与该用户关联的任何计算机执行操作，如将应用程序部署到特定用户的计算机。 但是，在部署操作系统时，你无法将操作系统部署到特定用户的计算机。 有关详细信息，请参阅[将用户与目标计算机相关联](../get-started/associate-users-with-a-destination-computer.md)。  
 
-##  <a name="a-namebkmktasksequencesa-use-task-sequences-to-automate-steps"></a><a name="BKMK_TaskSequences"></a> Usar sequências de tarefas para automatizar etapas  
- É possível criar sequências de tarefas para executar uma variedade de tarefas no ambiente do Configuration Manager. As ações da sequência de tarefas são definidas nas etapas individuais da sequência. Quando a sequência de tarefas é executada, as ações de cada etapa são executadas no nível de linha de comando sem exigir intervenção do usuário. É possível usar sequências de tarefas para o seguinte:  
+##  <a name="BKMK_TaskSequences"></a> 使用任务序列自动执行步骤  
+ 可创建任务序列在 Configuration Manager 环境中执行各种任务。 序列的各个步骤中定义了任务序列的操作。 运行任务序列时，系统在命令行级别执行每个步骤的操作，无需用户干预。 可以针对以下情况使用任务序列：  
 
--   [Criar uma sequência de tarefas para instalar um sistema operacional](../deploy-use/create-a-task-sequence-to-install-an-operating-system.md)  
+-   [创建用于安装操作系统的任务序列](../deploy-use/create-a-task-sequence-to-install-an-operating-system.md)  
 
--   [Criar uma sequência de tarefas para implantações que não são de sistema operacional](../deploy-use/create-a-task-sequence-for-non-operating-system-deployments.md)  
+-   [创建用于非操作系统部署的任务序列](../deploy-use/create-a-task-sequence-for-non-operating-system-deployments.md)  
 
--   [Criar uma sequência de tarefas para capturar um sistema operacional](../deploy-use/create-a-task-sequence-to-capture-an-operating-system.md)  
+-   [创建用于捕获操作系统的任务序列](../deploy-use/create-a-task-sequence-to-capture-an-operating-system.md)  
 
--   [Criar uma sequência de tarefas para capturar e restaurar o estado do usuário](../deploy-use/create-a-task-sequence-to-capture-and-restore-user-state.md)  
+-   [创建用于捕获和还原用户状态的任务序列](../deploy-use/create-a-task-sequence-to-capture-and-restore-user-state.md)  
 
--   [Criar uma sequência de tarefas personalizada](../deploy-use/create-a-custom-task-sequence.md)  
-
-
-
-<!--HONumber=Dec16_HO3-->
-
-
+-   [创建自定义任务序列](../deploy-use/create-a-custom-task-sequence.md)  

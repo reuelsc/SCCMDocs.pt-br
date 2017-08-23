@@ -1,57 +1,54 @@
 ---
-title: "Versões do Branch Atual | Microsoft Docs"
-description: "Examine o histórico de versões do System Center Configuration Manager e saiba mais sobre as fases de serviço oferecidas."
+title: "Current Branch 版本 | Microsoft Docs"
+description: "查看 System Center Configuration Manager 的版本历史记录，并了解有关提供的各个服务阶段。"
 ms.custom: na
 ms.date: 7/31/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
-ms.technology:
-- configmgr-other
+ms.technology: configmgr-other
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 35b5baec-d313-46aa-9d14-c443aa0d6c09
-caps.latest.revision: 8
+caps.latest.revision: "8"
 author: Brenduns
 ms.author: brenduns
 manager: angrobe
 robots: noindex,nofollow
-ms.translationtype: HT
-ms.sourcegitcommit: 5d696e3da187d47e0d41c02864d9b5267827e701
 ms.openlocfilehash: 1c02d2c51964fed960ffab42175762c1b04e6445
-ms.contentlocale: pt-br
-ms.lasthandoff: 07/31/2017
-
+ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
+ms.translationtype: HT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 08/07/2017
 ---
-# <a name="support-for-system-center-configuration-manager-current-branch-versions"></a>Suporte para versões do branch atual do System Center Configuration Manager
+# <a name="support-for-system-center-configuration-manager-current-branch-versions"></a>对 System Center Configuration Manager Current Branch 版本的支持
 
-*Aplica-se a: System Center Configuration Manager (Branch Atual)*
+*适用范围：System Center Configuration Manager (Current Branch)*
 
-A Microsoft planeja lançar atualizações para o branch atual do System Center Configuration Manager algumas vezes por ano. Cada versão de atualização permanece com suporte por 12 meses a partir da data de lançamento da disponibilidade geral (GA). O suporte técnico será fornecido por 12 meses. No entanto, nossa estrutura de suporte agora é dinâmica, evoluindo em duas fases de manutenção distintas que dependem da disponibilidade da última versão do branch atual.  
+Microsoft 计划每年发布几次 System Center Configuration Manager Current Branch 的更新。 对于每个更新版本，仍为自其通用版本 (GA) 发布日期起 12 个月内受支持。 我们会在这 12 个月内始终提供技术支持。 但是，我们的支持结构现在是动态的，会发展为两个不同的服务阶段，具体取决于最新 Current Branch 版本的可用性。  
 
--   Fase de manutenção das Atualizações Críticas e de Segurança – Ao executar a versão do branch atual mais recente do Configuration Manager, você recebe as Atualizações Críticas e de Segurança.  
+-   安全更新和关键更新服务阶段 - 运行最新 Current Branch 版本的 Configuration Manager 时，你会收到安全更新和关键更新。  
 
--   Fase de manutenção das Atualizações de Segurança (somente) – Após o lançamento de uma nova versão de branch atual, o suporte será reduzido a somente atualizações de Segurança pelo restante dos 12 meses do ciclo de vida de suporte (mostrado na Figura 1).  
+-   安全更新（仅限）服务阶段 - 发布新的 Current Branch 版本之后，对较旧分支的支持会减少为仅在 12 个月支持生命周期的剩余时间内提供安全更新（如图 1 所示）。  
 
  ![CM&#95;Servicing&#95;support&#95;timeline](../../../core/servers/manage/media/CM_Servicing_support_timeline.png "CM_Servicing_support_timeline")  
-Figura 1. Exemplo de sobreposição de ciclo de versão para o suporte à manutenção do branch atual.
+图 1. Current Branch 服务支持发布周期重叠示例。
 
 > [!NOTE]  
->  A versão de branch atual mais recente sempre estará na fase de manutenção de Atualizações Críticas e de Segurança. Isso significa que, se você encontrar um defeito de código que requer uma atualização crítica, deverá ter a versão de branch atual mais recente instalada para receber uma correção. Todas as outras versões de branch atuais com suporte só estão qualificadas a receber atualizações de segurança. O suporte encerra-se por completo após o ciclo de vida de 12 meses para uma versão de branch atual expirada. Nesse momento, os clientes devem atualizar para uma versão de branch atual com suporte.  
+>  最新 Current Branch 版本始终处于安全更新和关键更新服务阶段。 这意味着如果遇到需要关键更新的代码缺陷，则必须安装最新 Current Branch 版本才会接收修补程序。 所有其他受支持的 Current Branch 版本仅有资格接收安全更新。 所有支持都会在 Current Branch 版本的 12 个月生命周期过期之后结束。 那时客户必须更新到受支持的 Current Branch 版本。  
 
- **Histórico de Versão**  
+ **版本历史记录**  
 
-|Versão|Data de Disponibilidade|Data de Término do Suporte|  
+|版本|可用日期|支持结束日期|  
 |-------------|-----------------------|----------------------|  
-|1706|31 de julho de 2017|31 de julho de 2018|
-|1702|27 de março de 2017|27 de março de 2018|
-|1610|18 de novembro de 2016|18 de novembro de 2017|
-|1606|22 de julho de 2016| 22 de julho de 2017|
-|1602|11 de março de 2016|11 de março de 2017|
-|1511|8 de dezembro de 2015|8 de dezembro de 2016|  
+|1706|2017 年 7 月 31 日|2018 年 7 月 31 日|
+|1702|2017 年 3 月 27 日|2018 年 3 月 27 日|
+|1610|2016 年 11 月 18 日|2017 年 11 月 18 日|
+|1606|2016 年 7 月 22 日| 2017 年 7 月 22 日|
+|1602|2016 年 3 月 11 日|2017 年 3 月 11 日|
+|1511|2015 年 12 月 8 日|2016 年 12 月 8 日|  
 
 
 
 
-Para obter informações sobre os números de versão e a disponibilidade como uma atualização no console ou uma linha de base, consulte [Versões de linha de base e atualização](/sccm/core/servers/manage/updates#a-namebkmkbaselinesa-baseline-and-update-versions).
-
+有关作为控制台中更新或基准的版本号和可用性的信息，请参阅[基准和更新版本](/sccm/core/servers/manage/updates#a-namebkmkbaselinesa-baseline-and-update-versions)。

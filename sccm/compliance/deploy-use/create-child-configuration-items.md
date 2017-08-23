@@ -1,51 +1,44 @@
 ---
-title: "Criar itens de configuração filhos | Microsoft Docs"
-description: "Crie itens de configuração filho no System Center Configuration Manager."
+title: "创建子配置项目 | Microsoft Docs"
+description: "在 System Center Configuration Manager 中创建子配置项目。"
 ms.custom: na
 ms.date: 10/06/2016
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
-ms.technology:
-- configmgr-other
+ms.technology: configmgr-other
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 113984fa-6150-41a1-89ed-d2a83b979732
-caps.latest.revision: 5
-caps.handback.revision: 0
+caps.latest.revision: "5"
+caps.handback.revision: "0"
 author: robstackmsft
 ms.author: robstack
 manager: angrobe
-translationtype: Human Translation
-ms.sourcegitcommit: f9e939d871e95a3248d8e5d96cb73063a81fd5cf
 ms.openlocfilehash: 33d4a2d5a09af74e1d76ac9b34a42b749f5bf7ef
-
-
+ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
+ms.translationtype: HT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 08/07/2017
 ---
-# <a name="how-to-create-child-configuration-items-in-system-center-configuration-manager"></a>Como criar itens de configuração filho no System Center Configuration Manager
+# <a name="how-to-create-child-configuration-items-in-system-center-configuration-manager"></a>如何在 System Center Configuration Manager 中创建子配置项目
 
-*Aplica-se a: System Center Configuration Manager (Branch Atual)*
+*适用范围：System Center Configuration Manager (Current Branch)*
 
-Os itens de configuração filho no System Center Configuration Manager são cópias dos itens de configuração que mantêm uma relação com o item de configuração original, portanto, eles herdam a configuração original do item de configuração pai.  
+System Center Configuration Manager 中的子配置项目是与原始配置项目保持关系的配置项目的副本，因为它们从父配置项目继承原始配置。  
 
-Quando você vê as propriedades de um item de configuração filho no console do Configuration Manager, não é possível editar os objetos herdados e as configurações com seus critérios de validação. No entanto, você pode adicionar e editar critérios de validação adicionais para o item de configuração filho e também pode adicionar novos objetos e configurações a ele.
-A finalidade comum para criar e editar um item de configuração filho é refinar o item de configuração original para atender às suas necessidades comerciais.  
+在 Configuration Manager 控制台中查看子配置项目的属性时，无法通过所继承的对象和设置的验证条件对其进行编辑。 但是，您可以将其他验证条件添加到子配置项目并进行编辑，也可以向子配置项目添加新的对象和设置。
+创建和编辑子配置项目的通常目的在于完善原始配置项目以满足业务要求。  
 
 > [!NOTE]  
->  Só é possível criar itens de configuração filho por meio de itens de configuração do tipo **Windows Desktops e Servers (personalizados)**.  
+>  只能从类型为“Windows 台式机和服务器(自定义)” 的配置项目创建子配置项目。  
 
-## <a name="to-create-a-child-configuration-item"></a>Para criar um item de configuração filho  
+## <a name="to-create-a-child-configuration-item"></a>创建子配置项目  
 
-1.  No console do Configuration Manager, clique em **Ativos e Conformidade** > **Configurações de Conformidade** > **Itens de Configuração**.  
+1.  在 Configuration Manager 控制台中，单击“资产和符合性” > “符合性设置” > “配置项目”。  
 
-3.  Na lista **Itens de Configuração** , selecione o item de configuração para o qual deseja criar um item de configuração filho e, na guia **Início** , no grupo **Item de Configuração** , clique em **Criar Item de Configuração Filho**.  
+3.  在“配置项目”  列表中，选择要为其创建子配置项目的配置项目，然后在“主页”  选项卡上的“配置项目”  组中，单击“创建子配置项目” 。  
 
-4.  Na página **Geral** do **Assistente para Criar Item de Configuração Filho**, você pode escolher uma revisão específica do item de configuração pai a ser usada para criar o filho. As outras etapas deste assistente são idênticas às que você usaria para criar um item de configuração padrão. Para mais informações, consulte [Como criar itens de configuração personalizados para computadores desktop e de servidor com Windows](../../compliance/deploy-use/create-custom-configuration-items-for-windows-desktop-and-server-computers-managed-with-the-client.md).  
+4.  在“创建子配置项目向导”  的“常规” 页上，可以选择要用于创建子级的父配置项目的特定修订版本。 此向导中的其他步骤与用于创建标准配置项目的步骤相同。 有关详细信息，请参阅 [How to create custom configuration items for Windows desktop and server computers](../../compliance/deploy-use/create-custom-configuration-items-for-windows-desktop-and-server-computers-managed-with-the-client.md)（如何为 Windows 台式机和服务器计算机创建自定义配置项目）。  
 
-5.  Conclua o assistente. O novo item de configuração filho é exibido na lista **Itens de Configuração** .  
-
-
-
-<!--HONumber=Dec16_HO3-->
-
-
+5.  完成向导。 新的子配置项目会显示在“配置项目”  列表中。  

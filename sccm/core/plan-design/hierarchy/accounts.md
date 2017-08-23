@@ -1,349 +1,345 @@
 ---
-title: Contas usadas pelo Configuration Manager | Microsoft Docs
-description: Identifique e gerencie grupos e contas do Windows no System Center Configuration Manager.
+title: "Configuration Manager 使用的帐户 | Microsoft Docs"
+description: "在 System Center Configuration Manager 中标识和管理 Windows 组和帐户。"
 ms.custom: na
 ms.date: 2/9/2016
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
-ms.technology:
-- configmgr-other
+ms.technology: configmgr-other
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 72d7b174-f015-498f-a0a7-2161b9929198
-caps.latest.revision: 7
-caps.handback.revision: 0
+caps.latest.revision: "7"
+caps.handback.revision: "0"
 author: Brenduns
 ms.author: brenduns
 manager: angrobe
-ms.translationtype: Human Translation
-ms.sourcegitcommit: 72263ec5e7104924a1ca46dc2000be9f8568599f
 ms.openlocfilehash: a776667cc9f24bd4a468afea76e466c34ce66864
-ms.contentlocale: pt-br
-ms.lasthandoff: 05/17/2017
-
-
+ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
+ms.translationtype: HT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 08/07/2017
 ---
-# <a name="accounts-used-in-system-center-configuration-manager"></a>Contas usadas no System Center Configuration Manager
+# <a name="accounts-used-in-system-center-configuration-manager"></a>System Center Configuration Manager 中使用的帐户
 
-*Aplica-se a: System Center Configuration Manager (Branch Atual)*
+*适用范围：System Center Configuration Manager (Current Branch)*
 
-Use as seguintes informações para identificar os grupos e as contas do Windows usados no System Center Configuration Manager, como são usados e quais são os requisitos.  
+可以使用以下信息确定 System Center Configuration Manager 中使用的 Windows 组和帐户、它们的使用方式以及任何要求。  
 
-## <a name="windows-groups-that-configuration-manager-creates-and-uses"></a>Grupos do Windows que o Configuration Manager cria e usa  
- O Configuration Manager cria e, em muitos casos, mantém automaticamente os seguintes grupos do Windows.  
+## <a name="windows-groups-that-configuration-manager-creates-and-uses"></a>Configuration Manager 创建和使用的 Windows 组  
+ Configuration Manager 会自动创建并在许多情况下自动维护以下 Windows 组。  
 
 > [!NOTE]  
->  Quando o Configuration Manager cria um grupo em um computador que é membro do domínio, trata-se de um grupo de segurança local. Quando o computador é um controlador de domínio, trata-se de um grupo de domínio local compartilhado entre todos os controladores de domínio no domínio.  
+>  当 Configuration Manager 在作为域成员的计算机上创建组时，该组为本地安全组。 如果计算机是域控制器，则该组是在域中的所有域控制器之间共享的域本地组。  
 
 
 ### <a name="configmgrcollectedfilesaccess"></a>ConfigMgr_CollectedFilesAccess  
-O Configuration Manager usa esse grupo para conceder acesso para exibir arquivos coletados pelo inventário de software.  
+Configuration Manager 使用此组来授予查看软件清单所收集的文件的访问权限。  
 
-A tabela a seguir lista os detalhes adicionais desse grupo:  
+下表列出了此组的其他详细信息：  
 
-|Detalhes|Mais informações|  
+|详情|更多信息|  
 |------------|----------------------|  
-|Tipo e local|Esse é um grupo de segurança local criado no servidor do site primário.<br /><br /> Quando um site é desinstalado, esse grupo não é removido automaticamente. Ele deve ser excluído manualmente.|  
-|Associação|O Configuration Manager gerencia automaticamente a associação ao grupo. A associação inclui usuários administrativos que recebem a permissão **Exibir Arquivos Coletados** para o objeto protegível **Coleção** de uma função de segurança atribuída.|  
-|Permissões|Por padrão, este grupo tem a permissão **Read** para a seguinte pasta no servidor do site: **%path%\Microsoft Configuration Manager\sinv.box\FileCol**.|  
+|类型和位置|此组是在主站点服务器上创建的本地安全组。<br /><br /> 卸载站点时，不会自动删除此组。 必须手动将其删除。|  
+|Membership|Configuration Manager 自动管理组成员身份。 成员身份管理用户，这些管理用户被授予对分配的安全角色中“集合”  安全对象的“查看收集的文件”  权限。|  
+|权限|默认情况下，此组对站点服务器上的以下文件夹具有 **Read** 权限： **%path%\Microsoft Configuration Manager\sinv.box\FileCol**。|  
 
 ### <a name="configmgrdviewaccess"></a>ConfigMgr_DViewAccess  
- Esse grupo é um grupo de segurança local criado no servidor de banco de dados do site ou no servidor de réplica de banco de dados pelo Configuration Manager. Ele não está sendo usado, mas está reservado para uso futuro.  
+ 此组是由 Configuration Manager 在站点数据库服务器或数据库副本服务器上创建的本地安全组。 当前不使用该组，但将其保留以供将来使用。  
 
-### <a name="configmgr-remote-control-users"></a>Usuários de Controle Remoto do ConfigMgr  
- As ferramentas remotas do Configuration Manager usam esse grupo para armazenar as contas e os grupos configurados na lista de Visualizadores Permitidos, atribuídos a cada cliente.  
+### <a name="configmgr-remote-control-users"></a>ConfigMgr 远程控制用户  
+ Configuration Manager 远程工具使用此组将设置的帐户和组存储在分配到每个客户端的“允许的查看者”列表中。  
 
- A tabela a seguir lista os detalhes adicionais desse grupo:  
+ 下表列出了此组的其他详细信息：  
 
-|Detalhes|Mais informações|  
+|详情|更多信息|  
 |------------|----------------------|  
-|Tipo e local|Esse é um grupo de segurança local criado no cliente do Configuration Manager quando o cliente recebe uma política que habilita as ferramentas remotas.<br /><br /> Depois de desabilitar as ferramentas remotas para um cliente, esse grupo não é removido automaticamente. Ele deve ser excluído manualmente de cada computador cliente.|  
-|Associação|Por padrão, não existem membros nesse grupo. Ao adicionar usuários à lista Visualizadores Permitidos, eles são adicionados automaticamente a esse grupo.<br /><br /> Você pode usar a lista Visualizadores Permitidos para gerenciar a associação desse grupo em vez de adicionar usuários ou grupos diretamente a ele.<br /><br /> Além de ser visualizador permitido, um usuário administrativo deve ter a permissão **Controle Remoto** para o objeto **Coleção**. É possível atribuir essa permissão usando a função de segurança Operador de Ferramentas Remoto.|  
-|Permissões|Por padrão, esse grupo não tem permissões para qualquer local no computador. Ele é usado apenas para armazenar a lista de Visualizadores Permitidos.|  
+|类型和位置|此组是在客户端接收启用远程工具的策略时在 Configuration Manager 客户端上创建的本地安全组。<br /><br /> 为客户端禁用远程工具后，不会自动删除此组。 必须从每个客户端计算机中手动将其删除。|  
+|Membership|默认情况下，此组中没有成员。 当你将用户添加到“允许的查看者”列表时，会将这些用户自动添加到此组中。<br /><br /> 可以使用“允许的查看者”列表来管理此组的成员身份，而不是将用户或组直接添加到此组。<br /><br /> 除了作为允许的查看者外，管理用户还必须具有“集合”对象的“远程控制”权限。 你可以通过使用“远程工具操作人员”安全角色来分配此权限。|  
+|权限|默认情况下，此组无权访问计算机上的任何位置。 它仅用于保留“允许的查看者”列表。|  
 
-### <a name="sms-admins"></a>Administradores de SMS  
- O Configuration Manager usa esse grupo para conceder acesso ao Provedor de SMS por meio do WMI (Windows Management Instrumentation). O acesso ao Provedor de SMS é necessário para exibir e alterar objetos no console do Configuration Manager.  
+### <a name="sms-admins"></a>SMS 管理员  
+ Configuration Manager 通过 Windows Management Instrumentation (WMI) 使用此组授予对 SMS 提供程序的访问权限。 需要 SMS 提供程序的访问权限才能在 Configuration Manager 控制台中查看和更改对象。  
 
 > [!NOTE]  
->  A configuração da administração baseada em funções de um usuário administrativo determina quais objetos eles podem exibir e gerenciar quando usam o console do Configuration Manager.  
+>  管理用户的基于角色的管理配置确定他们在使用 Configuration Manager 控制台时可查看和管理哪些对象。  
 
- A tabela a seguir lista os detalhes adicionais desse grupo:  
+ 下表列出了此组的其他详细信息：  
 
-|Detalhes|Mais informações|  
+|详情|更多信息|  
 |------------|----------------------|  
-|Tipo e local|Esse é um grupo de segurança local criado em cada computador que possui um Provedor de SMS.<br /><br /> Quando um site é desinstalado, esse grupo não é removido automaticamente. Ele deve ser excluído manualmente.|  
-|Associação|O Configuration Manager gerencia automaticamente a associação ao grupo. Por padrão, cada usuário administrativo em uma hierarquia e a conta de computador do servidor do site são membros do grupo Administradores de SMS em cada computador do Provedor de SMS de um site.|  
-|Permissões|Os direitos e as permissões de administradores de SMS são definidos no snap-in do MMC do Controle WMI. Por padrão, o grupo de Administradores de SMS recebe **Enable Account** e **Remote Enable** sobre o namespace Raiz\SMS. Os Usuários Autenticados têm as permissões **Execute Methods**, **Provider Write**e **Enable Account**.<br /><br /> Os usuários administrativos que usarão um console remoto do Configuration Manager também precisam de permissões DCOM para Ativação Remota no computador do servidor do site e no computador do Provedor de SMS. É uma prática recomendada conceder esses direitos a Administradores de SMS para simplificar a administração em vez de conceder esses direitos diretamente a usuários ou grupos. Para obter mais informações, consulte a seção [Configure DCOM permissions for remote Configuration Manager consoles](../../../core/servers/manage/modify-your-infrastructure.md#BKMK_ConfigDCOMforRemoteConsole) no tópico [Modify your System Center Configuration Manager infrastructure](../../../core/servers/manage/modify-your-infrastructure.md) .|  
+|类型和位置|此组是在具有 SMS 提供程序的每台计算机上创建的本地安全组。<br /><br /> 卸载站点时，不会自动删除此组。 必须手动将其删除。|  
+|Membership|Configuration Manager 自动管理组成员身份。 默认情况下，层次结构中的每个管理用户以及站点服务器计算机帐户是站点中每台 SMS 提供程序计算机上的“SMS 管理员”组的成员。|  
+|权限|在 WMI 控制 MMC 管理单元中设置 SMS 管理员权限。 默认情况下，授予 SMS 管理员组对 Root\SMS 命名空间的 **Enable Account** 和 **Remote Enable** 权限。 经过身份验证的用户具有**执行方法**、**提供程序写入**和**启用帐户**权限。<br /><br /> 使用远程 Configuration Manager 控制台的管理员用户均需要同时对站点服务器计算机和 SMS 提供程序计算机拥有“远程激活 DCOM”权限。 最佳方案是将这些权限授予“SMS 管理员”以简化管理，而不是将这些权限直接授予用户或组。 有关详细信息，请参阅 [Configure DCOM permissions for remote Configuration Manager consoles](../../../core/servers/manage/modify-your-infrastructure.md#BKMK_ConfigDCOMforRemoteConsole) 主题中的 [Modify your System Center Configuration Manager infrastructure](../../../core/servers/manage/modify-your-infrastructure.md) 部分。|  
 
 ### <a name="smssitesystemtositeserverconnectionmpltsitecode"></a>SMS_SiteSystemToSiteServerConnection_MP_&lt;sitecode\>  
- Os pontos de gerenciamento do Configuration Manager que são remotos com relação ao servidor do site usam esse grupo para conexão com o banco de dados do site. Esse grupo fornece a um ponto de gerenciamento acesso a pastas da caixa de entrada no servidor do site e ao banco de dados do site.  
+ 远离站点服务器的 Configuration Manager 管理点使用此组来连接到站点数据库。 此组向管理点提供对站点服务器上的收件箱文件夹和站点数据库的访问权限。  
 
- A tabela a seguir lista os detalhes adicionais desse grupo:  
+ 下表列出了此组的其他详细信息：  
 
-|Detalhes|Mais informações|  
+|详情|更多信息|  
 |------------|----------------------|  
-|Tipo e local|Esse é um grupo de segurança local criado em cada computador que possui um Provedor de SMS.<br /><br /> Quando um site é desinstalado, esse grupo não é removido automaticamente. Ele deve ser excluído manualmente.|  
-|Associação|O Configuration Manager gerencia automaticamente a associação ao grupo. Por padrão, a associação inclui as contas de computadores remotos que têm um ponto de gerenciamento para o site.|  
-|Permissões|Por padrão, esse grupo tem as permissões **Ler**, **Ler e executar** e **Listar conteúdo da pasta** para a pasta **%path%\Microsoft Configuration Manager\inboxes** no servidor do site. Esse grupo tem a permissão adicional **Write** para subpastas abaixo da pasta **inboxes** nas quais o ponto de gerenciamento grava dados do cliente.|  
+|类型和位置|此组是在具有 SMS 提供程序的每台计算机上创建的本地安全组。<br /><br /> 卸载站点时，不会自动删除此组。 必须手动将其删除。|  
+|Membership|Configuration Manager 自动管理组成员身份。 默认情况下，成员身份包括具有站点管理点的远程计算机的计算机帐户。|  
+|权限|默认情况下，此组对站点服务器上的 **%path%\Microsoft Configuration Manager\inboxes** 文件夹具有“读取”、“读取和执行”和“列出文件夹内容”权限。 此组对管理点向其中写入客户端数据的 **Write** 下的子文件夹具有额外的 **inboxes** 权限。|  
 
 ### <a name="smssitesystemtositeserverconnectionsmsprovltsitecode"></a>SMS_SiteSystemToSiteServerConnection_SMSProv_&lt;sitecode\>  
- Os computadores do Provedor de SMS do Configuration Manager que são remotos com relação ao servidor do site usam esse grupo para conexão com o servidor do site.  
+ 远离站点服务器的 Configuration Manager SMS 提供程序计算机使用此组来连接到站点服务器。  
 
- A tabela a seguir lista os detalhes adicionais desse grupo:  
+ 下表列出了此组的其他详细信息：  
 
-|Detalhes|Mais informações|  
+|详情|更多信息|  
 |------------|----------------------|  
-|Tipo e local|Esse é um grupo de segurança local criado no servidor do site.<br /><br /> Quando um site é desinstalado, esse grupo não é removido automaticamente. Ele deve ser excluído manualmente.|  
-|Associação|O Configuration Manager gerencia automaticamente a associação ao grupo. Por padrão, a associação inclui a conta de computador ou a conta de usuário do domínio que é usada para conexão ao servidor do site por meio de cada computador remoto que tem um Provedor de SMS instalado para o site.|  
-|Permissões|Por padrão, esse grupo tem as permissões **Ler**, **Ler e executar** e **Listar conteúdo da pasta** para a pasta **%path%\Microsoft Configuration Manager\inboxes** no servidor do site. Esse grupo tem a permissão adicional **Gravação** ou as permissões de **Gravação** e **Modificação** para subpastas abaixo da pasta **inboxes** às quais o Provedor de SMS precisa de acesso.<br /><br /> Esse grupo também tem as permissões **Ler**, **Ler e executar**, **Listar conteúdo da pasta**, **Gravar** e **Modificar** para as pastas abaixo de **%path%\Microsoft Configuration Manager\OSD\boot** e a permissão **Ler** para as pastas abaixo de **%path%\Microsoft Configuration Manager\OSD\Bin** no servidor do site.|  
+|类型和位置|此组是在站点服务器上创建的本地安全组。<br /><br /> 卸载站点时，不会自动删除此组。 必须手动将其删除。|  
+|Membership|Configuration Manager 自动管理组成员身份。 默认情况下，成员身份包括用于从为站点安装了 SMS 提供程序的每台远程计算机连接到站点服务器的计算机帐户或域用户帐户。|  
+|权限|默认情况下，此组对站点服务器上的 **%path%\Microsoft Configuration Manager\inboxes** 文件夹具有“读取”、“读取和执行”和“列出文件夹内容”权限。 对 **inboxes** 下 SMS 提供程序需要访问的子文件夹来说，此组具有额外权限 **Write** 或者“写入”和“修改”权限。<br /><br /> 此组还对 **%path%\Microsoft Configuration Manager\OSD\boot** 下的文件夹具有“读取”、“读取和执行”、“列出文件夹内容”、“写入”和“修改”权限，并对站点服务器上 **%path%\Microsoft Configuration Manager\OSD\Bin** 下的文件夹具有“读取”权限。|  
 
 ### <a name="smssitesystemtositeserverconnectionstatltsitecode"></a>SMS_SiteSystemToSiteServerConnection_Stat_&lt;sitecode\>  
- O Gerenciador de Expedição de Arquivo nos computadores do sistema de site remoto do Configuration Manager usa este grupo para se conectar ao servidor do site.  
+ Configuration Manager 远程站点系统计算机上的文件分派管理器使用此组来连接到站点服务器。  
 
- A tabela a seguir lista os detalhes adicionais desse grupo:  
+ 下表列出了此组的其他详细信息：  
 
-|Detalhes|Mais informações|  
+|详情|更多信息|  
 |------------|----------------------|  
-|Tipo e local|Esse é um grupo de segurança local criado no servidor do site.<br /><br /> Quando um site é desinstalado, esse grupo não é removido automaticamente. Ele deve ser excluído manualmente.|  
-|Associação|O Configuration Manager gerencia automaticamente a associação ao grupo. Por padrão, a associação inclui a conta de computador ou a conta de usuário do domínio usada para conexão ao servidor do site por meio de cada computador do sistema de site remoto que executa o Gerenciador de Expedição de Arquivos.|  
-|Permissões|Por padrão, esse grupo tem as permissões **Ler**, **Ler e executar** e **Listar conteúdo da pasta** para a pasta **%path%\Microsoft Configuration Manager\inboxes** e subpastas abaixo desse local no servidor do site. Esse grupo tem as permissões adicionais **Gravar** e **Modificar** para a pasta **%path%\Microsoft Configuration Manager\inboxes\statmgr.box** no servidor do site.|  
+|类型和位置|此组是在站点服务器上创建的本地安全组。<br /><br /> 卸载站点时，不会自动删除此组。 必须手动将其删除。|  
+|Membership|Configuration Manager 自动管理组成员身份。 默认情况下，成员身份包括用于从运行文件分派管理器的每台远程站点系统计算机连接到站点服务器的计算机帐户或域用户帐户。|  
+|权限|默认情况下，此组对站点服务器上的 **%path%\Microsoft Configuration Manager\inboxes** 文件夹和该位置下的子文件夹具有“读取”、“读取和执行”和“列出文件夹内容”权限。 此组具有对站点服务器上 **%path%\Microsoft Configuration Manager\inboxes\statmgr.box** 文件夹的额外权限（“写入”和“修改”）。|  
 
 ### <a name="smssitetositeconnectionltsitecode"></a>SMS_SiteToSiteConnection_&lt;sitecode\>  
- O Configuration Manager usa esse grupo para permitir a replicação baseada em arquivos entre sites em uma hierarquia. Para cada site remoto que transfere arquivos diretamente para esse site, esse grupo tem contas configuradas como uma **Conta de Replicação de Arquivo**.  
+ Configuration Manager 使用此组在层次结构中的站点之间实现基于文件的复制。 对于将文件直接传输到此站点的每个远程站点，此组包含设为“文件复制帐户”的帐户。  
 
- A tabela a seguir lista os detalhes adicionais desse grupo:  
+ 下表列出了此组的其他详细信息：  
 
-|Detalhes|Mais informações|  
+|详情|更多信息|  
 |------------|----------------------|  
-|Tipo e local|Esse é um grupo de segurança local criado no servidor do site.|  
-|Associação|Quando você instala um novo site como filho de outro site, o Configuration Manager adiciona automaticamente a conta de computador do novo site ao grupo no servidor do site pai. O Configuration Manager também adiciona a conta do computador do site pai ao grupo no novo servidor do site. Se outra conta for especificada para transferências baseadas em arquivo, adicione essa conta a esse grupo no servidor do site de destino.<br /><br /> Quando um site é desinstalado, esse grupo não é removido automaticamente. Ele deve ser excluído manualmente.|  
-|Permissões|Por padrão, esse grupo tem **controle total** na pasta **%path%\Microsoft Configuration Manager\inboxes\despoolr.box\receive** .|  
+|类型和位置|此组是在站点服务器上创建的本地安全组。|  
+|Membership|安装新站点作为另一个站点的子站点时，Configuration Manager 会自动将新站点的计算机帐户添加到父站点服务器上的组。 Configuration Manager 还会将父站点计算机帐户添加到新站点服务器上的组中。 如果为基于文件的传输指定另一个帐户，请将此帐户添加到目标站点服务器上的此组。<br /><br /> 卸载站点时，不会自动删除此组。 必须手动将其删除。|  
+|权限|默认情况下，此组具有对 **%path%\Microsoft Configuration Manager\inboxes\despoolr.box\receive** 文件夹的“完全控制”  权限。|  
 
-## <a name="accounts-that-configuration-manager-uses"></a>Contas que o Configuration Manager usa  
- É possível configurar as seguintes contas para o Configuration Manager.  
+## <a name="accounts-that-configuration-manager-uses"></a>Configuration Manager 使用的帐户  
+ 可以为 Configuration Manager 设置下列帐户。  
 
-### <a name="active-directory-group-discovery-account"></a>Conta de Descoberta de Grupos do Active Directory  
- A **Conta de Descoberta de Grupos do Active Directory** é usada para descobrir grupos de segurança locais, globais e universais, a associação nesses grupos e a associação em grupos de distribuição dos locais especificados no Active Directory Domain Services. Grupos de distribuição não são descobertos como recursos de grupo.  
+### <a name="active-directory-group-discovery-account"></a>Active Directory 组发现帐户  
+ **Active Directory 组发现帐户**用于发现本地、全局和通用安全组、这些组内的成员身份，以及 Active directory 域服务中指定位置的通讯组内的成员身份。 不会以组资源的形式发现通讯组。  
 
- Essa conta pode ser uma conta de computador do servidor do site que executa a descoberta, ou uma conta de usuário do Windows. Deve ter permissão de acesso **Ler** nos locais do Active Directory especificados para descoberta.  
+ 此帐户可以是运行发现的站点服务器的计算机帐户，或者是 Windows 用户帐户。 它必须对为发现指定的 Active Directory 位置具有“读取”  访问权限。  
 
-### <a name="active-directory-system-discovery-account"></a>Conta de Descoberta de Sistemas do Active Directory  
- A **Conta de Descoberta de Sistemas do Active Directory** é usada para descobrir computadores nos locais especificados em Serviços de Domínio Active Directory.  
+### <a name="active-directory-system-discovery-account"></a>Active Directory 系统发现帐户  
+ **Active Directory 系统发现帐户** 用于从 Active Directory 域服务中的指定位置发现计算机。  
 
- Essa conta pode ser uma conta de computador do servidor do site que executa a descoberta, ou uma conta de usuário do Windows. Deve ter permissão de acesso **Ler** nos locais do Active Directory especificados para descoberta.  
+ 此帐户可以是运行发现的站点服务器的计算机帐户，或者是 Windows 用户帐户。 它必须对为发现指定的 Active Directory 位置具有“读取”  访问权限。  
 
-### <a name="active-directory-user-discovery-account"></a>Conta de Descoberta de Usuários do Active Directory  
- A **Conta de Descoberta de Usuários do Active Directory** é usada para descobrir contas de usuário nos locais especificados em Serviços de Domínio Active Directory.  
+### <a name="active-directory-user-discovery-account"></a>Active Directory 用户发现帐户  
+ **Active Directory 用户发现帐户** 用于从 Active Directory 域服务中的指定位置发现用户帐户。  
 
- Essa conta pode ser uma conta de computador do servidor do site que executa a descoberta, ou uma conta de usuário do Windows. Deve ter permissão de acesso **Ler** nos locais do Active Directory especificados para descoberta.  
+ 此帐户可以是运行发现的站点服务器的计算机帐户，或者是 Windows 用户帐户。 它必须对为发现指定的 Active Directory 位置具有“读取”  访问权限。  
 
-### <a name="active-directory-forest-account"></a>Conta da Floresta do Active Directory  
- A **Conta de Floresta do Active Directory** é usada para descobrir a infraestrutura de rede em florestas do Active Directory. Os sites de administração central e sites primários também o usam para publicar dados do site no Active Directory Domain Services para uma floresta.  
-
-> [!NOTE]  
->  Sites secundários usam sempre a conta de computador do servidor do site secundário para publicar no Active Directory.  
+### <a name="active-directory-forest-account"></a>Active Directory 林帐户  
+ **Active Directory 林帐户**用于发现 Active Directory 林中的网络基础结构。 管理中心站点和主站点也用它来将站点数据发布到林的 Active Directory 域服务。  
 
 > [!NOTE]  
->  A Conta da Floresta do Active Directory deve ser uma conta global para descobrir e publicar em florestas não confiáveis. Se você não usar a conta de computador do servidor do site, será possível selecionar somente uma conta global.  
+>  辅助站点始终使用辅助站点服务器计算机帐户来发布到 Active Directory。  
 
- Essa conta deve ter a permissão **Ler** em cada floresta do Active Directory de onde você deseja descobrir a infraestrutura de rede.  
+> [!NOTE]  
+>  Active Directory 林帐户必须是全局帐户才能发现和发布到不受信任林。 如果不使用站点服务器的计算机帐户，则只能选择全局帐户。  
 
- Essa conta deve ter a permissão **Controle Total** no contêiner Gerenciamento do Sistema e todos os seus objetos filho em cada floresta do Active Directory onde você deseja publicar dados do site.  
+ 此帐户必须对要在其中发现网络基础结构的每个 Active Directory 林具有“读取”  权限。  
 
-### <a name="asset-intelligence-synchronization-point-proxy-server-account"></a>Conta do Servidor Proxy do Ponto de Sincronização do Asset Intelligence  
- O ponto de sincronização do Asset Intelligence usa a **Conta do Servidor Proxy do Ponto de Sincronização do Asset Intelligence** para acessar a Internet através de um servidor proxy ou de firewall que exige acesso autenticado.  
+ 此帐户必须对要在其中发布站点数据的每个 Active Directory 林中的“系统管理”容器及其所有子对象具有“完全控制”  权限。  
 
-> [!IMPORTANT]  
->  Especifique uma conta que tenha menos permissões possíveis para o firewall ou servidor proxy necessário.  
-
-### <a name="certificate-registration-point-account"></a>Conta do ponto de registro de certificado  
- A **Conta do Ponto de Registro de Certificado** conecta o ponto de registro do certificado ao banco de dados do Configuration Manager. A conta de computador do servidor de ponto de registro de certificado é usada por padrão, porém, você pode em vez disso configurar uma conta de usuário. Você deve especificar uma conta de usuário sempre que o ponto de registro de certificado estiver em um domínio não confiável do servidor do site. Essa conta requer acesso somente de **Leitura** ao banco de dados do site, pois operações de gravação são administradas pelo sistema de mensagem de estado.  
-
-### <a name="capture-operating-system-image-account"></a>Capturar Conta de Imagem do Sistema Operacional  
- O Configuration Manager usa a **Conta Capturar Imagem do Sistema Operacional** para acessar a pasta na qual as imagens capturadas são armazenadas quando você implanta sistemas operacionais. Essa conta será necessária se você adicionar a etapa **Capturar Imagem do Sistema Operacional** a uma sequência de tarefas.  
-
- A conta deve ter permissões de **Leitura** e **Gravação** no compartilhamento de rede onde a imagem capturada é armazenada.  
-
- Se a senha da conta for alterada no Windows, você deverá atualizar a sequência das tarefas com a nova senha. O cliente do Configuration Manager receberá a nova senha quando baixar a política do cliente.  
-
- Se você usar essa conta, poderá criar uma conta de usuário de domínio com permissões mínimas para acessar os recursos de rede necessários e usá-los em todas as contas de sequência de tarefas.  
+### <a name="asset-intelligence-synchronization-point-proxy-server-account"></a>资产智能同步点代理服务器帐户  
+ 资产智能同步点使用**资产智能同步点代理服务器帐户**通过需要对访问进行身份验证的代理服务器或防火墙访问 Internet。  
 
 > [!IMPORTANT]  
->  Não atribua permissões de logon interativo a essa conta.  
+>  为所需的代理服务器或防火墙指定具有可能最低的权限的帐户。  
+
+### <a name="certificate-registration-point-account"></a>证书注册点帐户  
+ **证书注册点帐户**将证书注册点连接到 Configuration Manager 数据库。 默认情况下，会使用证书注册点服务器的计算机帐户，但是可以改为设置用户帐户。 每当证书注册点在站点服务器的不受信任的域中时，都必须指定用户帐户。 此帐户只需要站点数据库的“读取”权限，因为写入任务由状态消息系统处理。  
+
+### <a name="capture-operating-system-image-account"></a>捕获操作系统映像包帐户  
+ Configuration Manager 使用**捕获操作系统映像帐户**来访问在部署操作系统时用于存储捕获映像的文件夹。 如果将“捕获操作系统映像包”  步骤添加到任务序列中，则需要此帐户。  
+
+ 此帐户对存储捕获映像的网络共享必须具有“读取”  和“写入”  权限。  
+
+ 如果在 Windows 中更改帐户的密码，则必须使用新密码更新任务序列。 Configuration Manager 客户端在下次下载客户端策略时将接收新密码。  
+
+ 如果使用此帐户，则可以创建一个具有访问所需网络资源的最低权限的域用户帐户，并将其用于所有任务序列帐户。  
+
+> [!IMPORTANT]  
+>  请勿向此帐户分配交互式登录权限。  
 >   
->  Não use a Conta de Acesso à Rede para essa conta.  
+>  请勿将网络访问帐户用于此帐户。  
 
-### <a name="client-push-installation-account"></a>Conta de Instalação do Cliente por Push  
- A **Conta de Instalação do Cliente por Push** será usada para conexão com os computadores e instalação do software cliente do Configuration Manager se você implantar clientes usando instalação do cliente por push. Se essa conta não for especificada, a conta do servidor do site será usada para tentar instalar o software do cliente.  
+### <a name="client-push-installation-account"></a>客户端请求安装帐户  
+ 如果使用客户端请求安装来部署客户端，则可以使用**客户端请求安装帐户**连接到计算机并安装 Configuration Manager 客户端软件。 如果未指定此帐户，则站点服务器帐户用于尝试安装客户端软件。  
 
- Essa conta deve ser membro do grupo local de **Administradores** nos computadores em que o software cliente do Configuration Manager será instalado. Essa conta não exige direitos de **Administrador de Domínio**.  
+ 在要安装 Configuration Manager 客户端软件的计算机上，此帐户必须为本地“管理员”组的成员。 此帐户不需要**域管理员**权限。  
 
- Você pode especificar uma ou mais Contas de Instalação do Cliente por Push, as quais o Configuration Manager tentará sucessivamente até obter êxito.  
+ 可以指定一个或多个客户端请求安装帐户，而 Configuration Manager 会尝试这些帐户直到成功为止。  
 
 > [!TIP]  
->  Para coordenar mais eficazmente as atualizações de conta em grandes implantações do Active Directory, crie uma nova conta com um nome diferente e adicione a nova conta à lista de Contas de Instalação do Cliente por Push no Configuration Manager. Permita tempo suficiente para que o Active Directory Domain Services replique a nova conta, e depois remova a conta antiga do Configuration Manager e do Active Directory Domain Services.  
+>  要更有效地在大型 Active Directory 部署中协调帐户更新，请使用不同的名称创建一个新帐户，然后将新帐户添加到 Configuration Manager 内客户端请求安装帐户的列表中。 请留出足够的时间让 Active Directory 域服务复制新帐户，然后从 Configuration Manager 和 Active Directory 域服务中删除旧帐户。  
 
 > [!IMPORTANT]  
->  Não conceda a essa conta o direito de fazer logon localmente.  
+>  不要向此帐户授予本地登录的权限。  
 
-### <a name="enrollment-point-connection-account"></a>Conta de Conexão do Ponto de Registro  
- A **Conta de Conexão do Ponto de Registro** conecta o ponto de registro ao banco de dados do Configuration Manager. A conta de computador do ponto de registro é usada por padrão, mas você pode configurar uma conta de usuário, em vez disso. Você deve especificar uma conta de usuário sempre que o ponto de registro estiver em um domínio não confiável do servidor do site. Essa conta requer acesso de **Leitura** e **Gravação** ao banco de dados do site.  
+### <a name="enrollment-point-connection-account"></a>注册点连接帐户  
+ **注册点连接帐户**将注册点连接到 Configuration Manager 站点数据库。 默认情况下，会使用注册点的计算机帐户，但是可以改为设置用户帐户。 每当注册点在站点服务器的不受信任的域中时，都必须指定用户帐户。 此帐户需要站点数据库的“读取”和“写入”权限。  
 
-### <a name="exchange-server-connection-account"></a>Conta de Conexão do Exchange Server  
- A **Conta de Conexão do Exchange Server** conecta o servidor do site ao computador do Exchange Server especificado para encontrar e gerenciar dispositivos móveis que se conectam ao Exchange Server. Essa conta requer cmdlets do Exchange PowerShell que fornecem as permissões necessárias para o computador do Exchange Server. Para obter mais informações sobre os cmdlets, veja [Gerenciar dispositivos móveis com o System Center Configuration Manager e o Exchange](../../../mdm/deploy-use/manage-mobile-devices-with-exchange-activesync.md).  
+### <a name="exchange-server-connection-account"></a>Exchange Server 连接帐户  
+ **Exchange Server 连接帐户** 将站点服务器连接到指定的 Exchange Server 计算机以查找和管理连接到 Exchange Server 的移动设备。 此帐户需要 Exchange PowerShell cmdlet 以提供对 Exchange Server 计算机的所需权限。 有关 cmdlet 的详细信息，请参阅[使用 System Center Configuration Manager 和 Exchange 管理移动设备](../../../mdm/deploy-use/manage-mobile-devices-with-exchange-activesync.md)。  
 
-### <a name="exchange-server-connector-proxy-server-account"></a>Conta de Servidor Proxy do Conector do Exchange Server  
- O conector do Exchange Server usa a **Conta de Servidor Proxy do Conector do Exchange Server** para acessar a Internet através de um servidor proxy ou de firewall que requer acesso autenticado.  
-
-> [!IMPORTANT]  
->  Especifique uma conta que tenha menos permissões possíveis para o firewall ou servidor proxy necessário.  
-
-### <a name="management-point-connection-account"></a>Conta de conexão do ponto de gerenciamento  
- A **Conta de Conexão do Ponto de Gerenciamento** é usada para conectar o ponto de gerenciamento ao banco de dados do site do Configuration Manager para que ele possa enviar e recuperar informações para os clientes. A conta de computador do ponto de gerenciamento é usada por padrão, mas você pode configurar uma conta de usuário, em vez disso. Você deve especificar uma conta de usuário sempre que o ponto de gerenciamento estiver em um domínio não confiável do servidor do site.  
-
- Crie a conta com direitos limitados, a conta local no computador que executa o Microsoft SQL Server.  
+### <a name="exchange-server-connector-proxy-server-account"></a>Exchange Server 连接器代理服务器帐户  
+ Exchange Server 连接器使用 **Exchange Server 连接器代理服务器帐户**通过需要对访问进行身份验证的代理服务器或防火墙访问 Internet。  
 
 > [!IMPORTANT]  
->  Não conceda direitos de logon interativo a essa conta.  
+>  为所需的代理服务器或防火墙指定具有可能最低的权限的帐户。  
 
-### <a name="multicast-connection-account"></a>Conta de Conexão Multicast  
- Os pontos de distribuição configurados para multicast usam a **Conta de Conexão Multicast** para ler as informações do banco de dados do site. Por padrão, a conta do computador do ponto de distribuição é usada, mas você pode configurar uma conta de usuário, em vez disso. Você deve especificar uma conta de usuário sempre que o banco de dados do site estiver em uma floresta não confiável. Por exemplo, se o seu centro de dados tiver uma rede de perímetro em uma floresta diferente do servidor e do banco de dados do site, você poderá usar essa conta para ler as informações multicast do banco de dados do site.  
+### <a name="management-point-connection-account"></a>管理点连接帐户  
+ **管理点连接帐户**用于将管理点连接到 Configuration Manager 站点数据库，以便它可以发送和检索客户端的信息。 默认情况下，会使用管理点的计算机帐户，但是可以改为设置用户帐户。 每当管理点在站点服务器的不受信任的域中时，都必须指定用户帐户。  
 
- Se você criar essa conta, crie-a com direitos limitados, a conta local no computador que executa o Microsoft SQL Server.  
+ 在运行 Microsoft SQL Server 的计算机上将此帐户创建为低权限本地帐户。  
 
 > [!IMPORTANT]  
->  Não conceda direitos de logon interativo a essa conta.  
+>  不要向此帐户授予交互式登录的权限。  
 
-### <a name="network-access-account"></a>Conta de Acesso à Rede  
- Os computadores cliente usam a **Conta de Acesso à Rede** quando não podem usar a conta do computador local para acessar conteúdo em pontos de distribuição. Por exemplo, isso se aplica a clientes do grupo de trabalho e computadores de domínios não confiáveis. Essa conta também pode ser usada durante a implantação do sistema operacional quando o computador que está instalando o sistema operacional ainda não tem uma conta de computador no domínio.  
+### <a name="multicast-connection-account"></a>多播连接帐户  
+ 为多播设置的分发点使用**多播连接帐户**从站点数据库中读取信息。 默认情况下，会使用分发点的计算机帐户，但是可以改为设置用户帐户。 每当站点数据库在不受信任的林中时，都必须指定用户帐户。 例如，数据中心具有非站点服务器和站点数据库的林中的外围网络，则可以使用此帐户从站点数据库中读取多播信息。  
+
+ 如果创建此帐户，请在运行 Microsoft SQL Server 的计算机上将此帐户创建为低权限本地帐户。  
+
+> [!IMPORTANT]  
+>  不要向此帐户授予交互式登录的权限。  
+
+### <a name="network-access-account"></a>网络访问帐户  
+ 客户端计算机无法使用其本地计算机帐户访问分发点上的内容时，它们则会使用**网络访问帐户**。 例如，这适用于来自不受信任的域中的工作组客户端和计算机。 当安装操作系统的计算机在域上还没有计算机帐户时，也可能会在操作系统部署过程中使用此帐户。  
 
 > [!NOTE]  
->  A Conta de Acesso à Rede nunca é usada com contexto de segurança para executar programas, instalar atualizações de software nem executar sequências de tarefas. Ela é usada somente para acessar recursos na rede.  
+>  决不会将网络访问帐户用作安全性上下文来运行程序、安装软件更新或运行任务序列。 它仅用于访问网络上的资源。  
 
- Conceda a essa conta as permissões mínimas adequadas sobre o conteúdo que o cliente necessita para acessar o software. A conta deve ter o direito de **Acesso a este computador pela rede** no ponto de distribuição ou em outro servidor que contém o conteúdo do pacote. Você pode configurar até 10 contas de acesso de rede por site.  
+ 授予此帐户对内容的最低合适权限，客户端需要此权限来访问软件。 在具有包内容的分发点或其他服务器上，帐户必须具有“从网络访问此计算机”  权限。 每个站点最多可以配置 10 个网络访问帐户。  
 
 > [!WARNING]  
->  Quando Configuration Manager tenta usar a conta computername$ para baixar conteúdo e falha, ele tenta automaticamente a Conta de Acesso à Rede novamente, mesmo que já tenha tentado e falhado.  
+>  当 Configuration Manager 尝试使用计算机名$ 帐户下载内容并失败时，它会自动重试网络访问帐户，即使以前尝试并失败过。  
 
- Crie a conta em qualquer domínio que forneça o acesso necessário aos recursos. A conta de acesso à rede deve incluir sempre um nome de domínio. Não há suporte para segurança de passagem para essa conta. Se houver pontos de distribuição em vários domínios, crie a conta em um domínio confiável.  
-
-> [!TIP]  
->  Para evitar bloqueios de conta, não altere a senha em uma conta de acesso à rede existente. Em vez disso, crie uma nova conta e configure-a no Configuration Manager. Quando tiver passado tempo suficiente para que todos os clientes recebam os detalhes da nova conta, remova a conta antiga das pastas de rede compartilhadas e exclua-a.  
-
-> [!IMPORTANT]  
->  Não conceda direitos de logon interativo a essa conta.
->   
->  Não conceda a essa conta o direito de ingressar computadores ao domínio. Se tiver de adicionar computadores ao domínio durante uma sequência de tarefas, use a Conta de Adição de Domínio do Editor de Sequência de Tarefas.  
-
-### <a name="package-access-account"></a>Conta de Acesso ao Pacote  
- Uma **Conta de Acesso ao Pacote** permite configurar permissões NTFS para especificar usuários e grupos de usuários que podem acessar uma pasta de pacote nos pontos de distribuição. Por padrão, o Configuration Manager concede acesso somente a contas de **Usuários** e **Administradores** genéricas. Você pode controlar o acesso a computadores cliente usando contas ou grupos do Windows adicionais. Os dispositivos móveis sempre recuperam o conteúdo do pacote anonimamente e, portanto, não usam as Contas de Acesso ao Pacote.  
-
- Por padrão, quando o Configuration Manager cria o compartilhamento de pacotes em um ponto de distribuição, ele concede acesso de **Leitura** ao grupo local de **Usuários** e **Controle Total** ao grupo local de **Administradores**. As permissões reais necessárias dependerão do pacote. Se houver clientes em grupos de trabalho ou em florestas não confiáveis, os clientes usarão a Conta de Acesso à Rede para acessar o conteúdo do pacote. Verifique se a Conta de Acesso à Rede tem permissões para o pacote usando as Contas de Acesso ao Pacote definidas.  
-
- Use contas em um domínio que possa acessar os pontos de distribuição. Se você criar ou alterar a conta após a criação do pacote, deverá redistribuir o pacote. A atualização do pacote não altera as permissões de NTFS no pacote.  
-
- Não é necessário adicionar a Conta de Acesso à Rede como uma Conta de Acesso de Pacote, pois a associação do grupo Usuários a adiciona automaticamente. Restringir a Conta de Acesso de Pacote somente à Conta de Acesso à Rede não impede que clientes acessem o pacote.  
-
-### <a name="reporting-services-point-account"></a>Conta do ponto do Reporting Services  
- O SQL Server Reporting Services usa a **Conta do Ponto do Reporting Services** para recuperar os dados para relatórios do Configuration Manager do banco de dados do site. A conta e senha de usuário do Windows especificadas serão criptografadas e armazenadas no banco de dados do SQL Server Reporting Services.  
-
-### <a name="remote-tools-permitted-viewer-accounts"></a>Contas do visualizador permitidas em ferramentas remotas  
- As contas que você especificar como **Visualizadores permitidos** para controle remoto representam uma lista de usuários que podem usar a funcionalidade de ferramentas remotas em clientes.  
-
-### <a name="site-system-installation-account"></a>Conta de instalação do sistema de site  
- O servidor do site usa a **Conta de Instalação de Sistema de Site** para instalar, reinstalar, desinstalar e configurar sistemas de site. Se você configurar o sistema de sites para exigir que o servidor do site inicie conexões a esse sistema, o Configuration Manager também usará essa conta para efetuar pull de dados do computador do sistema do sites, após esta e outras funções do sistema do sites forem instaladas. Cada sistema de site pode ter uma Conta de Instalação de Sistema de Site diferente, mas é possível configurar somente uma para gerenciar todas as funções nesse sistema de site.  
-
- Essa conta requer permissões administrativas locais nos sistemas dos sites que forem instalados e configurados por administradores. Além disso, essa conta precisa ter **Acesso a este computador pela rede** na política de segurança nos sistemas dos sites que forem instalados e configurados por administradores.  
+ 在任何域中创建将提供资源的所需访问权限的帐户。 网络访问帐户必须始终包含一个域名。 此帐户不支持传递安全性。 如果在多个域中具有分发点，请在受信任的域中创建帐户。  
 
 > [!TIP]  
->  Se você tiver muitos controladores de domínio e estas contas forem usadas em vários domínios, verifique se as contas foram replicadas antes de configurar o sistema do site.  
+>  为了避免帐户锁定，请不要对现有网络访问帐户更改密码。 而是在 Configuration Manager 中创建新帐户并设置此新帐户。 在经过足够的时间让所有客户端接收新帐户详细信息之后，请从网络共享文件夹中移除旧帐户并删除该帐户。  
+
+> [!IMPORTANT]  
+>  不要向此帐户授予交互式登录的权限。
 >   
->  Quando você especifica uma conta local em cada sistema de site a ser gerenciado, esta configuração é mais segura do que se usar contas de domínio, porque ela limita os danos de invasores podem fazer se a conta for comprometida. No entanto, as contas de domínio são mais fáceis de gerenciar. Considere as compensações entre segurança e administração eficaz.  
+>  不要授予此帐户将计算机加入到域的权限。 如果在任务序列过程中必须将计算机加入到域中，请使用任务序列编辑器域加入帐户。  
 
-### <a name="smtp-server-connection-account"></a>Conta de conexão do servidor SMTP  
- O servidor do site usa a **Conta de Conexão do Servidor SMTP** para enviar alertas de email quando o servidor SMTP requer acesso autenticado.  
+### <a name="package-access-account"></a>包访问帐户  
+ 利用**包访问帐户**，可以设置 NTFS 权限，该权限用于指定可以访问分发点上的包文件夹的用户和用户组。 默认情况下，Configuration Manager 仅向通用访问帐户“用户”和“管理员”授予访问权限。 可以通过使用其他的 Windows 帐户或组来控制客户端计算机的访问权限。 移动设备始终会匿名检索包内容，所以这些设备不使用包访问帐户。  
+
+ 默认情况下，当 Configuration Manager 在分发点上创建包共享时，它会授予对本地“用户”组的“读取”权限以及对本地“管理”组的“完全控制”权限。 所需的实际权限取决于包。 如果你的客户端在工作组或不受信任的林中，则那些客户端会使用网络访问帐户访问包内容。 请使用定义的包访问帐户来确保网络访问帐户具有对包的权限。  
+
+ 在域中使用可以访问分发点的帐户。 如果在创建包之后创建或更改帐户，则必须重新分发包。 更新包不会更改对包的 NTFS 权限。  
+
+ 不必将网络访问帐户添加为包访问帐户，因为用户组的成员身份会自动添加它。 将包访问帐户限制为网络访问帐户不会阻止客户端访问包。  
+
+### <a name="reporting-services-point-account"></a>Reporting Services 点帐户  
+ SQL Server Reporting Services 使用 **Reporting Services 点帐户**从站点数据库中检索 Configuration Manager 报表的数据。 你指定的 Windows 用户帐户和密码经过加密，并存储在 SQL Server Reporting Services 数据库中。  
+
+### <a name="remote-tools-permitted-viewer-accounts"></a>远程工具“允许的查看者”帐户  
+ 你为远程控制指定的“允许的查看者”  帐户是一系列获准在客户端上使用远程工具功能的用户。  
+
+### <a name="site-system-installation-account"></a>站点系统安装帐户  
+ 站点服务器使用**站点系统安装帐户**安装、重新安装、卸载和设置站点系统。 如果将站点系统设置为要求站点服务器启动到此站点系统的连接，则在安装站点系统和任何站点系统角色之后，Configuration Manager 还会使用此帐户从站点系统计算机中提取数据。 每个站点系统都可能具有不同的站点系统安装帐户，但是，只能设置一个站点系统安装帐户来管理该站点系统上的所有站点系统角色。  
+
+ 对于管理员将安装和设置的站点系统，此帐户需要具有这些系统上的本地管理权限。 此外，此帐户还要求在这些系统上的安全策略中指定“从网络访问此计算机”。  
+
+> [!TIP]  
+>  如果有多个域控制器，而且将跨域使用这些帐户，请在设置站点系统之前检查确认已复制这些帐户。  
+>   
+>  在指定位于要管理的每个站点系统上的本地帐户时，该配置比使用域帐户更安全，因为它在此帐户受到侵害时限制了攻击者可能造成的损害。 但是，域帐户更易于管理。 所以需就安全管理和有效管理进行权衡与协调。  
+
+### <a name="smtp-server-connection-account"></a>SMTP 服务器连接帐户  
+ 当 SMTP 服务器需要对访问进行身份验证时，站点服务器使用 **SMTP 服务器连接帐户**来发送电子邮件警报。  
 
 > [!IMPORTANT]  
->  Especifique uma conta que tenha o mínimo possível de permissões para enviar emails.  
+>  指定具有可能最低的权限的帐户来发送电子邮件。  
 
-### <a name="software-update-point-connection-account"></a>Conta da conexão do ponto de atualização do software  
- O servidor do site usa a **Conta de Conexão do Ponto de Atualização de Software** para os dois serviços de atualizações de software a seguir:  
+### <a name="software-update-point-connection-account"></a>软件更新点连接帐户  
+ 站点服务器将**软件更新点连接帐户**用于下列两项软件更新服务：  
 
--   O Configuration Manager do WSUS, que define configurações como de upstream, classificações e definições de produto.  
+-   Windows Server Update Services (WSUS) Configuration Manager，用于设置诸如产品定义、分类和上游设置等设置。  
 
--   Gerenciador de Sincronização do WSUS, que requer a sincronização para um servidor do WSUS upstream ou o Microsoft Update.  
+-   WSUS Synchronization Manager，它请求同步到上游 WSUS 服务器或 Microsoft 更新。  
 
-A Conta de Instalação de Sistema de Site pode instalar componentes para atualizações de software, mas não pode executar funções específicas de atualizações de software no ponto de atualização de software. Se não é possível utilizar a conta do computador do servidor do site para essa funcionalidade, porque o ponto de atualização de software está em uma floresta não confiável, você deve especificar essa conta além da Conta de Instalação de Sistema de Site.  
+站点系统安装帐户可以安装软件更新的组件，但无法在软件更新点上执行特定于软件更新的功能。 如果因为软件更新点在不受信任的林中而无法将站点服务器计算机帐户用于该功能，则除了指定站点系统安装帐户之外，还必须指定此帐户。  
 
-Essa conta deve ser de um administrador local no computador onde o WSUS está instalado. Ele também deve fazer parte do grupo local de Administradores do WSUS.  
+此帐户必须是安装 WSUS 的计算机上的本地管理员。 它还必须属于本地 WSUS 管理员组。  
 
-### <a name="software-update-point-proxy-server-account"></a>Conta do servidor proxy do ponto de atualização do software  
- O ponto de atualização de software usa a **Conta do Servidor Proxy do Ponto de Atualização de Software** para acessar a Internet através de um servidor proxy ou de firewall que requer acesso autenticado.  
+### <a name="software-update-point-proxy-server-account"></a>软件更新点代理服务器帐户  
+ 软件更新点使用**软件更新点代理服务器帐户**通过需要对访问进行身份验证的代理服务器或防火墙访问 Internet。  
 
 > [!IMPORTANT]  
->  Especifique uma conta que tenha menos permissões possíveis para o firewall ou servidor proxy necessário.  
+>  为所需的代理服务器或防火墙指定具有可能最低的权限的帐户。  
 
-### <a name="source-site-account"></a>Conta do site de origem  
- O processo de migração usa a **Conta do Site de Origem** para acessar o Provedor de SMS do site de origem. Essa conta requer permissão de **Ler** para os objetos do site no site de origem para reunir dados para tarefas de migração.  
+### <a name="source-site-account"></a>源站点帐户  
+ 迁移过程使用**源站点帐户**来访问源站点的 SMS 提供程序。 此帐户需要源站点中的站点对象的“读取”  权限来收集迁移作业的数据。  
 
- Se você atualizar pontos de distribuição ou sites secundários do Configuration Manager 2007 que têm pontos de distribuição colocalizados para pontos de distribuição do System Center Configuration Manager, essa conta também deverá ter permissões de **Excluir** para a classe do **Site** para remover com êxito o ponto de distribuição do site do Configuration Manager 2007 durante a atualização.  
+ 如果将 Configuration Manager 2007 分发点或具有共存分发点的辅助站点升级到 System Center Configuration Manager 分发点，则此帐户必须也具有“站点”类的“删除”权限才能在升级过程中从 Configuration Manager 2007 站点成功删除分发点。  
 
 > [!NOTE]  
->  A Conta de Site de Origem e a Conta de Banco de Dados do Site de Origem são identificadas como **Gerenciador de Migração** no nó **Contas** do espaço de trabalho **Administração** no console do Configuration Manager.  
+>  源站点帐户和源站点数据库帐户均在 Configuration Manager 控制台“管理”工作区的“帐户”的节点中被标识为“迁移管理器”。  
 
-### <a name="source-site-database-account"></a>Conta do banco de dados do site de origem  
- O processo de migração usa a **Conta do Banco de Dados do Site de Origem** para acessar o banco de dados do SQL Server do site de origem. Para reunir dados do banco de dados do SQL Server do site de origem, a Conta de Banco de Dados do Site de origem deve ter permissões de **Ler** e **Executar** para o banco de dados do SQL Server do site de origem.  
-
-> [!NOTE]  
->  Se você usar a conta do computador do System Center Configuration Manager, verifique se as condições a seguir são verdadeiras para essa conta:  
->   
-> -   É um membro do grupo de segurança **Distributed COM – Usuários** no domínio no qual o site do Configuration Manager 2007 reside.  
-> -   Ele é um membro do grupo de segurança **Administradores de SMS** .  
-> -   Ele tem a permissão de **Leitura** para todos os objetos do Configuration Manager 2007.  
+### <a name="source-site-database-account"></a>源站点数据库帐户  
+ 迁移过程使用**源站点数据库帐户**来访问源站点的 SQL Server 数据库。 若要从源站点的 SQL Server 数据库中收集数据，源站点数据库帐户必须具有源站点 SQL Server 数据库的“读取”和“执行”权限。  
 
 > [!NOTE]  
->  A Conta de Site de Origem e a Conta de Banco de Dados do Site de Origem são identificadas como **Gerenciador de Migração** no nó **Contas** do espaço de trabalho **Administração** no console do Configuration Manager.  
+>  如果使用 System Center Configuration Manager 计算机帐户，请确保此帐户符合下列所有条件：  
+>   
+> -   它是 Configuration Manager 2007 站点所在的域中的“Distributed COM Users”安全组的成员。  
+> -   它是“SMS 管理员”  安全组的成员。  
+> -   它具有对所有 Configuration Manager 2007 对象的“读取”权限。  
 
-### <a name="task-sequence-editor-domain-joining-account"></a>Conta de junção de domínio de editor de sequência de tarefas  
- A **Conta de Junção de Domínio de Editor de Sequência de Tarefas** é usada em uma sequência de tarefas para ingressar um novo computador de imagem em um domínio. Essa conta é necessária se você adicionar a etapa **Ingressar no Domínio ou Grupo de Trabalho** a uma sequência de tarefas e selecionar **Ingressar em um domínio**. Essa conta também pode ser configurada se você adicionar a etapa **Aplicar Configurações de Rede** a uma sequência de tarefas, mas isso não é necessário.  
+> [!NOTE]  
+>  源站点帐户和源站点数据库帐户均在 Configuration Manager 控制台“管理”工作区的“帐户”的节点中被标识为“迁移管理器”。  
 
- Essa conta requer o direito de **Ingresso no domínio** no domínio em que o computador será ingressado.  
+### <a name="task-sequence-editor-domain-joining-account"></a>任务序列编辑器域加入帐户  
+ 在任务序列中，使用 **任务序列编辑器域加入帐户** 将最近映像化的计算机加入到域。 如果将“加入域或工作组”  步骤添加到任务序列，然后选择“加入域” ，则需要此帐户。 如果将“应用网络设置”步骤添加到任务序列，则也可以设置此帐户，但这不是必需的。  
+
+ 此帐户需要获得计算机将加入的域中的“域加入”  权限。  
 
 > [!TIP]  
->  Se você precisar dessa conta para suas sequências de tarefas, poderá criar uma conta de usuário de domínio com permissões mínimas para acessar os recursos de rede necessários e usá-los em todas as contas da sequência de tarefas.  
+>  如果需要将此帐户用于任务序列，则可以创建一个具有访问所需网络资源的最低权限的域用户帐户，并将其用于所有任务序列帐户。  
 
 > [!IMPORTANT]  
->  Não atribua permissões de logon interativo a essa conta.  
+>  请勿向此帐户分配交互式登录权限。  
 >   
->  Não use a Conta de Acesso à Rede para essa conta.  
+>  请勿将网络访问帐户用于此帐户。  
 
-### <a name="task-sequence-editor-network-folder-connection-account"></a>Conta de conexão de pasta de rede do editor de sequência de tarefas  
- Uma sequência de tarefas usa a **Conta de Conexão de Pasta de Rede do Editor de Sequência de Tarefas** para conectar-se a uma pasta compartilhada na rede. Essa conta é necessária se você adicionar a etapa **Conectar à Pasta de Rede** a uma sequência de tarefas.  
+### <a name="task-sequence-editor-network-folder-connection-account"></a>任务序列编辑器网络文件夹连接帐户  
+ 任务序列使用**任务序列编辑器网络文件夹连接帐户**来连接到网络上的共享文件夹。 如果将“连接到网络文件夹”  步骤添加到任务序列中，则需要此帐户。  
 
- Essa conta requer permissões para acessar a pasta compartilhada especificada. Ela também deve ser uma conta de domínio.  
+ 此帐户需要具有访问指定共享文件夹的权限。 它必须是域帐户。  
 
 > [!TIP]  
->  Se você precisar dessa conta para suas sequências de tarefas, poderá criar uma conta de usuário de domínio com permissões mínimas para acessar os recursos de rede necessários e usá-los em todas as contas da sequência de tarefas.  
+>  如果需要将此帐户用于任务序列，则可以创建一个具有访问所需网络资源的最低权限的域用户帐户，并将其用于所有任务序列帐户。  
 
 > [!IMPORTANT]  
->  Não atribua permissões de logon interativo a essa conta.  
+>  请勿向此帐户分配交互式登录权限。  
 >   
->  Não use a Conta de Acesso à Rede para essa conta.  
+>  请勿将网络访问帐户用于此帐户。  
 
-### <a name="task-sequence-run-as-account"></a>Conta Executar como sequência de tarefas  
- A **Conta Executar como Sequência de Tarefa** é usada para executar linhas de comando em sequências de tarefas e usar credenciais diferentes da conta do sistema local. Essa conta é necessária se você adicionar a etapa **Executar Linha de Comando** a uma sequência de tarefas, mas não desejar que ela execute com permissões da conta do Sistema Local no computador gerenciado.  
+### <a name="task-sequence-run-as-account"></a>任务序列运行方式帐户  
+ **任务序列运行方式帐户** 用于在任务序列中运行命令行，而且使用不同于本地系统帐户的凭据。 如果将“运行命令行”步骤添加到任务序列，但不希望任务序列在托管计算机上使用本地系统帐户权限来运行，则需要此帐户。  
 
- Configure a conta para ter as permissões mínimas necessárias para executar a linha de comando especificada na sequência de tarefas. A conta requer direitos de entrada interativos e geralmente requer a capacidade de instalar software e acessar recursos da rede.  
+ 设置此帐户，使其具有运行在任务序列中指定的命令行所需的最低权限。 此帐户需要交互式登录权限，而且它通常需要安装软件和访问网络资源的能力。  
 
 > [!IMPORTANT]  
->  Não use a Conta de Acesso à Rede para essa conta.  
+>  请勿将网络访问帐户用于此帐户。  
 >   
->  Nunca faça da conta um administrador de domínio.  
+>  切勿将此帐户设为域管理员。  
 >   
->  Nunca configure perfis móveis para esta conta. Quando a sequência de tarefas for executada, ela baixará o perfil móvel da conta. Isso deixará o perfil vulnerável a acesso no computador local.  
+>  切勿为此帐户设置漫游配置文件。 任务序列运行时，它将为该帐户下载漫游配置文件。 这会导致该配置文件在本地计算机上面临易被访问的风险。  
 >   
->  Limite o escopo da conta. Por exemplo, crie Contas Executar como Sequência de Tarefas diferente para cada sequência de tarefas; desse modo, se uma conta for comprometida, somente os computadores cliente aos quais a conta tem acesso ficarão comprometidos.  
+>  要限制此帐户的作用域。 例如，为每个任务序列创建不同的任务序列运行方式帐户，以便在某个帐户受到侵害时，只会损害该帐户能够访问的客户端计算机。  
 >   
->  Se a linha de comando exigir acesso administrativo no computador, considere a criação de uma conta de administrador local exclusivamente para a Conta Executar como Sequência de Tarefas em todos os computadores que executarão a sequência de tarefas. Exclua a conta assim que ela não for mais necessária.  
-
+>  如果命令行需要计算机上的管理权限，请考虑在所有将运行任务序列的计算机上为任务序列运行方式帐户单独创建一个本地管理员帐户。 不再需要该帐户时请立即将其删除。  

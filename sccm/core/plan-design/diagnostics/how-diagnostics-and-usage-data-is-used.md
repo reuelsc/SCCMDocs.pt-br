@@ -1,61 +1,54 @@
 ---
-title: "Uso dos dados de diagnóstico | Microsoft Docs"
-description: "Saiba mais sobre como a Microsoft usa os dados de diagnóstico e de uso que o System Center Configuration Manager coleta."
+title: "诊断数据的使用 | Microsoft Docs"
+description: "了解 Microsoft 如何使用 System Center Configuration Manager 收集的诊断和使用情况数据。"
 ms.custom: na
 ms.date: 12/29/2016
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
-ms.technology:
-- configmgr-other
+ms.technology: configmgr-other
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: a8021bc8-2799-41f4-83c2-e27d1242028c
-caps.latest.revision: 5
+caps.latest.revision: "5"
 author: Brenduns
 ms.author: brenduns
 manager: angrobe
-translationtype: Human Translation
-ms.sourcegitcommit: 24a233516058e645df2a43623855665b97b041b0
 ms.openlocfilehash: 9864f6ba7b9a2211c99b1a5d9ebd582e01ccfeb6
-
-
+ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
+ms.translationtype: HT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 08/07/2017
 ---
-# <a name="how-diagnostics-and-usage-data-is-used-for-system-center-configuration-manager"></a>Como os dados de diagnóstico e de uso são usados para o System Center Configuration Manager
+# <a name="how-diagnostics-and-usage-data-is-used-for-system-center-configuration-manager"></a>如何将诊断和使用情况数据用于 System Center Configuration Manager
 
-*Aplica-se a: System Center Configuration Manager (Branch Atual)*
+*适用范围：System Center Configuration Manager (Current Branch)*
 
-Os dados de diagnóstico e uso coletados pelo System Center Configuration Manager fornecem à Microsoft comentários quase imediatos sobre como o produto está funcionando e são usados para ajustar atualizações futuras. Também podemos ver os dados de configuração, o que nos ajuda a projetar e testar as configurações que estão em produção. Por exemplo:  
+System Center Configuration Manager 收集的诊断和使用数据为 Microsoft 提供有关产品使用情况的近乎即时的反馈，并可用于调整将来的更新。 我们也能查看配置数据，这些数据可帮助我们设计并测试生产中的配置。 例如：  
 
--   As versões do Windows Server que são usadas pelos servidores do site  
+-   站点服务器使用的 Windows Server 版本  
 
--   Os pacotes de idiomas instalados  
+-   已安装的语言包  
 
--   O delta do esquema do SQL em relação ao padrão do produto  
+-   SQL 架构针对产品默认值的增量  
 
-Esses dados ajudam a equipe de engenharia a planejar testes futuros para garantir a melhor experiência para as configurações mais comuns. Como as atualizações do Configuration Manager são lançadas em um ritmo mais rápido (para dar um suporte melhor às tecnologias móveis como o Windows 10 e o Microsoft Intune), esses dados são cruciais para se ajustar e se adaptar rapidamente.  
+此数据帮助工程团队计划将来的测试，以确保在最常见的配置下获得最佳体验。 由于将以更快频率发布 Configuration Manager 更新（以便更好地支持 Windows 10 和 Microsoft Intune 等快速发展的技术），因此，此数据对于快速调整和适应至关重要。  
 
-Igualmente importante é como os dados de diagnóstico e de uso não são usados. A Microsoft não usa esses dados para:  
+同样重要的一点是，了解诊断和使用数据不适用于哪些方面。 Microsoft 不会将此数据用于以下方面：  
 
--   Auditorias de licenciamento, como comparação de uso do cliente em relação a contratos de licença  
+-   许可审核，例如按照许可协议比较客户使用情况  
 
--   Auditoria de produtos sem suporte  
+-   不支持的产品的审核  
 
--   Anúncios com base nos dados disponíveis, como uso de recursos ou localização geográfica (fuso horário)  
+-   基于功能使用情况或地理位置（时区）等可用数据进行广告宣传  
 
-##  <a name="a-namebkmkimprovea-examples-of-how-diagnostics-and-usage-data-improves-the-product"></a><a name="bkmk_improve"></a> Exemplos de como os dados de diagnóstico e de uso aprimoram o produto  
-A Microsoft usa os dados disponíveis para melhorar o produto. A seguir estão alguns exemplos:  
+##  <a name="bkmk_improve"></a> 诊断和使用数据如何改进产品的示例  
+Microsoft 使用可用数据来改进产品。 以下是几个示例：  
 
--   **Suporte revisado para sistemas operacionais de servidor antigos:**  
+-   **修订了对较旧服务器操作系统的支持：**  
 
-     O suporte inicial oferecido pelo branch atual do System Center Configuration Manager limitou a linha do tempo de suporte para o Windows Server 2008 R2. Depois de examinar os dados de uso de clientes que tinham atualizado para o branch atual do Configuration Manager, identificamos a necessidade de revisar e estender essa linha do tempo para dar suporte aos clientes que ainda usam esse sistema operacional de servidor para hospedar servidores de site e funções do sistema de sites.  
+     System Center Configuration Manager Current Branch 提供的初始支持对 Windows Server 2008 R2 的支持时间线加以限制。 检查已升级到 Configuration Manager Current Branch 的客户的使用数据之后，我们发现需要修订和扩展此时间线，以支持仍使用此服务器操作系统托管站点服务器和站点系统角色的客户。  
 
--   **Aprimoramento das verificações de pré-requisito:**  
+-   **改进了先决条件检查：**  
 
-     Com base nos dados de uso, aprimoramos as verificações de pré-requisito para instalação de uma atualização a fim de remover regras obsoletas, considerar casos adicionais e, em alguns casos, autocorrigir alguns problemas.  
-
-
-
-<!--HONumber=Dec16_HO5-->
-
-
+     基于使用数据，我们改进了先决条件检查以便安装更新，从而删除过时的规则、负责处理其他情况以及在某些情况下自动修正某些问题。  

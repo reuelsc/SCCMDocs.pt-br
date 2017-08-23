@@ -1,141 +1,138 @@
 ---
-title: "Gerenciar atualizações | Microsoft Docs"
-description: "Gerencie as atualizações implantadas e criadas com o System Center Updates Publisher"
+title: "管理更新 | Microsoft Docs"
+description: "管理使用 System Center Updates Publisher 部署和创建的更新"
 ms.custom: na
 ms.date: 4/29/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
-ms.technology:
-- configmgr-other
+ms.technology: configmgr-other
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: cd64994c-b426-4465-96cd-54b0edc2778d
-caps.latest.revision: 1
+caps.latest.revision: "1"
 author: Brenduns
 ms.author: brenduns
 manager: angrobe
 robots: NOINDEX, NOFOLLOW
-ms.translationtype: Human Translation
-ms.sourcegitcommit: 90775fcf2549080a43e9c1606caa79d9eb90a89c
 ms.openlocfilehash: 1d6c3b1db14867bdbc5cae8ded099d9024a79549
-ms.contentlocale: pt-br
-ms.lasthandoff: 05/17/2017
-
+ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
+ms.translationtype: HT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 08/07/2017
 ---
-# <a name="manage-software-updates-in-updates-publisher"></a>Gerenciar atualizações de software no Updates Publisher
+# <a name="manage-software-updates-in-updates-publisher"></a>管理 Updates Publisher 中的软件更新
 
-*Aplica-se ao: System Center Updates Publisher*     
+*适用范围：System Center Updates Publisher*     
 
-No System Center Updates Publisher, use o **Espaço de Trabalho de Atualizações** para gerenciar atualizações de software e pacotes que você importou para o repositório.  
+在 System Center Updates Publisher 中，可以使用“更新工作区”管理已导入存储库中的软件更新和捆绑包。  
 
-As tarefas de gerenciamento incluem duplicação, edição e expiração ou reativação de atualizações e pacotes, e atribuição de atualizações e pacotes às publicações. Você também pode exportar catálogos personalizados para uso com outras instalações do Updates Publisher.
+管理任务包括复制、编辑和终止或重新激活更新和捆绑包，以及将更新和捆绑包分配给发布项。 此外，还可以导出自定义目录，以供其他 Updates Publisher 安装项使用。
 
-Para obter atualizações que você pode gerenciar:
--  [Adicione um catálogo de atualizações](/sccm/sum/tools/updates-publisher-catalogs#add-software-update-catalogs) à sua instalação do Updates Publisher
--  [Importe](/sccm/sum/tools/updates-publisher-catalogs#import-updates) as atualizações desse catálogo para seu repositório.
+若要获取可以管理的更新，请执行以下操作：
+-  [将更新目录添加](/sccm/sum/tools/updates-publisher-catalogs#add-software-update-catalogs)到 Updates Publisher 安装项中
+-  将目录中的更新[导入](/sccm/sum/tools/updates-publisher-catalogs#import-updates)存储库中。
 
-Você também pode [criar suas próprias atualizações](/sccm/sum/tools/create-updates-with-updates-publisher).
+还可以[创建你自己的更新](/sccm/sum/tools/create-updates-with-updates-publisher)。
 
 
 
-## <a name="create-a-duplicate-of-an-update"></a>Criar uma duplicata de uma atualização
-Você pode criar duplicatas, ou cópias, de atualizações que estão no repositório. Depois, você pode modificar a cópia em vez de modificar a atualização original. Não é possível criar cópias dos pacotes de atualização.
+## <a name="create-a-duplicate-of-an-update"></a>创建更新副本
+可以创建存储库中更新的副本。 然后，可以修改副本，而不用修改原始更新。 无法创建更新捆绑包的副本。
 
-Para criar uma cópia, selecione uma atualização no **Espaço de Trabalho de Atualizações** e depois escolha **Duplicar**. A cópia da atualização aparece no mesmo local no Espaço de Trabalho de Atualizações com *Cópia de* adicionado ao seu nome.
+若要创建副本，请在“更新工作区”中依次选择更新和“复制”。 更新的副本与其在“更新工作区”中的同一位置处显示，但名称中添加了“(副本)”一词。
 
-Uma nova cópia criada por você tem um status de **Não expirada**, mas, caso contrário, retém as configurações do original.
+虽然新建的副本处于“未终止”状态，但保留了原始更新的设置。
 
-## <a name="edit-updates-and-bundles"></a>Editar atualizações e pacotes
-Você pode selecionar atualizações e pacotes que estão em seu repositório para modificá-los.
+## <a name="edit-updates-and-bundles"></a>编辑更新和捆绑包
+可以选择存储库中的更新和捆绑包进行修改。
 
-No **Espaço de Trabalho de Atualizações**, selecione uma atualização ou pacote e selecione **Editar** na guia **Início** para abrir o assistente para edição. Cada atualização e pacote possui assistentes separados, porém bem relacionados que apresentam as mesmas opções que os assistentes [Criar Atualização](/sccm/sum/tools/create-updates-with-updates-publisher#the-create-update-wizard) ou [Criar Pacote](/sccm/sum/tools/create-updates-with-updates-publisher#the-create-bundle-wizard).
+在“更新工作区”中，选择更新或捆绑包，然后在“开始”选项卡中选择“编辑”，打开编辑向导。 虽然更新和捆绑包各自有向导，但它们密切相关，显示[“创建更新”](/sccm/sum/tools/create-updates-with-updates-publisher#the-create-update-wizard)或[“创建捆绑包”](/sccm/sum/tools/create-updates-with-updates-publisher#the-create-bundle-wizard)向导中的相同选项。
 
-Durante a edição, você pode alterar todos os detalhes disponíveis sobre a atualização ou pacote para que possa ser usado em seu ambiente. Por exemplo, você pode editar as regras de aplicabilidade ou precedência ou alterar o idioma. Você também pode alterar o produto e o fornecedor para mover a atualização ou agrupar para uma pasta personalizada, a fim de agrupar as atualizações para seu próprio uso.
+编辑时，可以更改与更新或捆绑包相关的任意可用详细信息，以便能够在环境中使用。 例如，可以编辑适用性或优先规则，也可以更改语言。 还可以更改产品和供应商，将更新或捆绑包移到自定义文件夹中，从而对更新进行分组，以供你自己使用。
 
-## <a name="assign-updates-and-bundles-to-a-publication"></a>Atribuir pacotes e atualizações a uma publicação
-Você pode selecionar as atualizações e pacotes no **Espaço de Trabalho de Atualizações** e, em seguida, escolher **Atribuir** na guia **Início** da faixa de opções para adicioná-las a uma publicação. Isso inicia o assistente **Atribuir Atualizações de Software**.
--  Consulte [Publicar atualizações e pacotes](#publish-updates-and-bundles-from-the-updates-workspace) para obter informações sobre como selecionar e publicar atualizações e pacotes como uma única tarefa.
--  Confira [Gerenciar publicações](/sccm/sum/tools/updates-publisher-publications) para obter informações sobre como gerenciar grupos de atualizações e pacotes como um único objeto. Depois de atribuir atualizações a uma publicação, você pode gerenciar essa publicação, que, por sua vez, incluirá todas as suas atualizações atribuídas.
+## <a name="assign-updates-and-bundles-to-a-publication"></a>将更新和捆绑包分配给发布项
+可以在“更新工作区”中选择更新和捆绑包，然后从功能区的“开始”选项卡中选择“分配”，将其添加到发布项中。 这会启动“分配软件更新”向导。
+-  请参阅[发布更新和捆绑包](#publish-updates-and-bundles-from-the-updates-workspace)，了解如何选择更新和捆绑包，并将其作为一个任务进行发布。
+-  若要了解如何将各组更新和捆绑包作为一个对象进行管理，请参阅[管理发布项](/sccm/sum/tools/updates-publisher-publications)。 将更新分配给发布项后，可以管理相应的发布项，继而会覆盖所有已分配更新。
 
-Ao atribuir atualizações a uma publicação:
+将更新和捆绑包分配给发布项后：
 
--   Você pode incluir atualizações e pacotes expirados e não expirados na mesma publicação.
+-   可以在同一发布项中添加已终止和未终止的更新和捆绑包。
 
--   Especifique o tipo de publicação:
+-   指定发布项类型：
 
-    -   **Conteúdo Completo** – Isso publica todo o conteúdo da atualização no servidor WSUS. Isso inclui os metadados e os binários de atualização.
+    -   **完整内容** - 这会将更新的完整内容发布到 WSUS 服务器。 包括元数据和更新二进制文件。
 
-    -   **Somente metadados** – Isso publica apenas os metadados; os binários de atualização não são publicados. Você pode escolher essa opção quando quiser coletar dados de conformidade.
+    -   **仅元数据** - 仅发布元数据；不发布更新二进制文件。 如果要收集符合性数据，可以选择此选项。
 
-    -   **Automático** – Esse modo só estará disponível quando você conectar o Updates Publisher ao Configuration Manager (consulte a opção [Servidor do ConfigMgr](/sccm/sum/tools/updates-publisher-options#configmgr-server).)
+    -   **自动** - 只有在已连接 Updates Publisher 和 Configuration Manager 时，此模式才可用（请参阅 [ConfigMgr 服务器](/sccm/sum/tools/updates-publisher-options#configmgr-server)选项。）
 
-    Com esse tipo, o Updates Publisher consulta o Configuration Manager para determinar se as atualizações ou pacotes devem ser publicados com conteúdo completo ou somente metadados. O conteúdo completo de uma atualização é publicado somente quando a atualização atinge o **Limite de contagem de solicitação do cliente** e **Limite de tamanho de origem do pacote**, que são especificados na página de opções do Updates Publisher do **Servidor do ConfigMgr**.
+    使用此类型，Updates Publisher 可以查询 Configuration Manager，以确定应发布更新或捆绑包的完整内容还是仅元数据。 仅当更新满足 Updates Publisher 选项的“ConfigMgr 服务器”页中指定的“请求客户端计数阈值”和“包源大小阈值”时，才会发布更新的完整内容。
 
--   Selecione uma publicação:
+-   选择发布项：
 
-    -   Use **Atribuir a atualização de software para publicações existentes** quando você já tiver criado uma publicação que deseja usar. Essa opção não está disponível até que exista pelo menos uma publicação.
+    -   如果已创建要使用的发布项，请使用“将软件更新分配给现有发布项”。 只有在至少有一个发布项时，此选项才可用。
 
-    -   Use **Atribuir a atualização de software para uma nova publicação** quando você não tiver uma publicação adequada. Isso criará uma nova publicação com o nome especificado por você.
+    -   如果没有合适的发布项，请使用“将软件更新分配给新发布项”。 这会创建采用你指定的名称的新发布项。
 
-Depois de atribuir atualizações a uma publicação, use o **Espaço de Trabalho de Publicação** para [publicar](/sccm/sum/tools/updates-publisher-publications#publish-pubilcations) ou [exportar](/sccm/sum/tools/updates-publisher-publications#export-a-pubilcation) a publicação como um grupo.
+将更新分配给发布项后，可以使用“发布项工作区”将发布项作为组进行[发布](/sccm/sum/tools/updates-publisher-publications#publish-pubilcations)或[导出](/sccm/sum/tools/updates-publisher-publications#export-a-pubilcation)。
 
-## <a name="publish-updates-and-bundles-from-the-updates-workspace"></a>Publicar atualizações e pacotes do Espaço de Trabalho de Atualizações
-Quando você publica atualizações e pacotes, o Updates Publisher adiciona informações sobre essas atualizações e pacotes (metadados) e, possivelmente, os binários para as atualizações (conteúdo completo) para um servidor de atualização para implantação em dispositivos.
+## <a name="publish-updates-and-bundles-from-the-updates-workspace"></a>在“更新工作区”中发布更新和捆绑包
+发布更新和捆绑包时，Updates Publisher 会向更新服务器添加这些更新和捆绑包的相关信息（元数据），可能还会添加更新的二进制文件（完整内容），以供部署到设备。
 
-Antes de você ter a opção de publicar, é necessário configurar a opção [Servidor de Atualização](/sccm/sum/tools/updates-publisher-options#update-server) para o Updates Publisher. Para abrir essa opção de configuração, acesse **Espaço de Trabalho de Atualizações** &gt; **Visão geral** e selecione **Configurar WSUS e Certificado de Assinatura.** Você também pode acessar a página do Servidor de Atualização nas opções do Updates Publisher.
+必须先为 Updates Publisher 配置[“更新服务器”](/sccm/sum/tools/updates-publisher-options#update-server)选项，然后才能进行发布。 若要打开此配置选项，请依次转到“更新工作区”&gt;“概述”，然后选择“配置 WSUS 和签名证书”。 还可以转到 Updates Publisher 选项的“更新服务器”页。
 
-Há duas maneiras de publicar pacotes e atualizações:
--   Diretamente do Espaço de Trabalho de Atualizações. (Consulte o procedimento a seguir, *Para publicar atualizações e pacotes*.)
--   Como uma [publicação](/sccm/sum/tools/updates-publisher-publications#publish-pubilcations) do Espaço de Trabalho de Publicações.  
+发布更新和捆绑包的方法有两种：
+-   直接在“更新工作区”中发布。 （请参阅以下过程*如何发布更新和捆绑包*。）
+-   作为[发布项](/sccm/sum/tools/updates-publisher-publications#publish-pubilcations)在“发布项工作区”中发布。  
 
 > [!NOTE]   
-> O Updates Publisher só pode publicar atualizações com 375 megabytes (MB) ou menos de tamanho.
+> Updates Publisher 只能发布大小不超过 375 MB 的更新。
 
-### <a name="to-publish-updates-and-bundles"></a>Para publicar atualizações e pacotes
-1.  Acesse **Espaço de Trabalho de Atualizações** e selecione uma ou mais atualizações e pacotes que você deseja publicar. Em seguida, escolha **Publicar** na guia **Início** da faixa de opções.
+### <a name="to-publish-updates-and-bundles"></a>如何发布更新和捆绑包
+1.  转到“更新工作区”，并选择一个或多个要发布的更新和捆绑包。 然后，从功能区的“开始”选项卡中，选择“发布”
 
-2.  Na página **Selecionar** do assistente **Publicar**, selecione como você deseja publicar as atualizações. As opções são as mesmas para [atribuição de atualizações](#assign-updates-and-bundles-to-a-publication): **Conteúdo Completo**, **Somente metadados** ou **Automáticas**.
+2.  在“发布”向导的“选择”页中，选择所需的更新发布方式。 选项与[分配更新](#assign-updates-and-bundles-to-a-publication)时相同：“完整内容”、“仅元数据”或“自动”。
 
-    Também é possível escolher assinar todas as atualizações com um novo certificado de publicação.
+    还可以选择使用新发布证书对所有更新进行签名。
 
-3.  Conclua o assistente.
+3.  完成向导。
 
-Se a publicação falhar, você receberá um link para o arquivo UpdatesPublisher.log que pode fornecer mais informações.
+如果发布失败，将会看到指向 UpdatesPublisher.log 文件的链接，其中介绍了详细信息。
 
-## <a name="export-updates"></a>Exportar atualizações
-Você pode exportar atualizações e pacotes de seu repositório do Updates Publisher para criar um catálogo de atualizações personalizadas. Em seguida, você pode [adicionar](/sccm/sum/tools/updates-publisher-catalogs#add-software-update-catalogs) e depois [importar](/sccm/sum/tools/updates-publisher-catalogs#mport-updates) esse catálogo para outra instância do Updates Publisher. (Você também pode [exportar atualizações como uma publicação](/sccm/sum/tools/updates-publisher-publications##export-a-publication).)
+## <a name="export-updates"></a>导出更新
+可以导出 Updates Publisher 存储库中的更新和捆绑包，从而创建自定义更新目录。 然后，可以[添加](/sccm/sum/tools/updates-publisher-catalogs#add-software-update-catalogs)目录，并将其[导入](/sccm/sum/tools/updates-publisher-catalogs#mport-updates)其他 Updates Publisher 实例。 （还可以[将更新导出为发布项](/sccm/sum/tools/updates-publisher-publications##export-a-publication)。）
 
-Para exportar diretamente, acesse o **Espaço de Trabalho de Atualizações** > **Todas as Atualizações de Software** e selecione um ou mais pacotes e atualizações. Não é possível exportar uma pasta de fornecedor ou de produto, mas você pode selecionar uma pasta e, depois, selecionar as atualizações dessa pasta para exportação.
+若要直接导出，请依次转到“更新工作区” > “所有软件更新”，然后选择一个或多个更新和捆绑包。 无法导出供应商或产品文件夹，但可以选择一个文件夹，然后选择导出其中的更新。
 
-Com uma ou mais atualizações selecionadas, escolha **Exportar** na guia **Início** da faixa de opções e forneça um caminho e nome de arquivo para a exportação do catálogo.
+对于选定的一个或多个更新，请从功能区的“开始”选项卡中选择“导出”，然后提供目录导出的路径和文件名。
 
-Você terá a opção de exportar (incluir) atualizações de software dependentes.
+可以视需要导出（添加）从属软件更新。
 
-## <a name="delete-updates-and-bundles"></a>Excluir atualizações e pacotes
-Você pode excluir atualizações e pacotes de atualizações para removê-los do repositório do Updates Publisher.
+## <a name="delete-updates-and-bundles"></a>删除更新和捆绑包
+可以从 Updates Publisher 存储库中删除更新和更新捆绑包。
 
-Acesse o **Espaço de Trabalho de Atualizações** > **Todas as Atualizações de Software** e selecione uma ou mais atualizações individuais. Escolha **Excluir** na guia **Início** da faixa de opções.
+依次转到“更新工作区” > “所有软件更新”，并单独选择一个或多个更新。 然后，从功能区的“开始”选项卡中，选择“删除”。
 
--   Se a seleção contiver apenas atualizações ou pacotes que não foram publicados ou que expiraram, você receberá uma solicitação para confirmar a exclusão antes da remoção.
+-   如果只选择了尚未发布或已终止的更新或捆绑包，需要在删除之前确认删除。
 
--   Se a seleção incluir uma atualização ou um pacote que tenha sido publicado e ainda não expirou, você receberá um aviso. Você deve [expirar](/sccm/sum/tools/updates-publisher-pubilcations#expire-or-reactivate-updates-and-bundles) essas atualizações e, em seguida, publicar essa alteração antes de excluí-las do repositório.  
+-   如果选择的更新或捆绑包已发布且尚未终止，则会看到警告。 应先[终止](/sccm/sum/tools/updates-publisher-pubilcations#expire-or-reactivate-updates-and-bundles)这些更新并发布更改，然后才能将更新从存储库中删除。  
 
-Se você excluir uma atualização ou pacote de um fornecedor e, depois, importar novamente esse catálogo, essa atualização será restaurada para seu repositório.
+如果在删除供应商提供的更新或捆绑包后又重新导入相应目录，更新会还原到存储库中。
 
-## <a name="manage-vendor-and-product-folders"></a>Gerenciar pastas de fornecedor e de produto
-Para exibir uma lista de fornecedores, e produtos para cada fornecedor para o qual você importou ou criou atualizações, acesse **Espaço de Trabalho de Atualizações** > **Visão geral** > **Todas as Atualizações de Software**.
+## <a name="manage-vendor-and-product-folders"></a>管理供应商和产品文件夹
+若要查看已导入或创建的更新的供应商和产品列表，请依次转到“更新工作区” > “概述” > “所有软件更新”。
 
-Pastas de fornecedores e produtos são criadas automaticamente pelo Updates Publisher quando você usa um assistente para importar ou criar uma atualização de software ou pacote. Você também pode criar essas pastas manualmente.
+使用向导导入或创建软件更新或捆绑包时，Updates Publisher 会自动创建供应商和产品文件夹。 也可以手动创建这些文件夹。
 
--   Para criar uma pasta de fornecedor, no painel de navegação do **Espaço de Trabalho de Atualizações**, clique com o botão direito em **Todas as Atualizações de Software** e escolha **Criar Fornecedor**.
+-   若要创建供应商文件夹，请在“更新工作区”的导航窗格中右键单击“所有软件更新”，然后选择“创建供应商”。
 
--   Para criar uma pasta de produto em uma pasta de fornecedor, clique na pasta de fornecedor e escolha **Criar Produto**.
+-   若要在供应商文件夹下创建产品文件夹，请右键单击供应商文件夹，然后选择“创建产品”。
 
-Além de criar pastas, você pode renomear ou excluir qualquer pasta de fornecedor ou produto no repositório. Para fazer isso, clique com o botão direito na pasta e escolha a opção desejada, **Renomear** ou **Excluir**. A exclusão de uma pasta remove todas as atualizações e pacotes nessa pasta e suas pastas de produto respectivas do repositório do Updates Publisher.
+除了能够创建文件夹之外，还可以重命名或删除存储库中的任意供应商或产品文件夹。 为此，请右键单击文件夹，然后选择所需的选项（“重命名”或“删除”）。 删除文件夹同时也会从 Updates Publisher 存储库中删除此文件夹及其产品文件夹中的所有更新和捆绑包。
 
-Você pode mover as atualizações entre fornecedores e pastas do produto, incluindo para pastas que você criar. Para mover uma atualização ou pacote para uma nova pasta, selecione e **Edite** a atualização ou pacote. Em seguida, na página **Informações** do assistente para Editar Atualização, reatribua o fornecedor e o produto. Quando o assistente para **Editar Atualização** for concluído, a alteração se aplicará e a atualização será transferida para a nova pasta.
+可以在供应商和产品文件夹（包括你创建的文件夹）之间移动更新。 若要将更新或捆绑包移到新文件夹中，必须选择并**编辑**更新或捆绑包。 然后，可以在“编辑更新”向导的“信息”页中重新分配供应商和产品。 “编辑更新”向导完成后，更改会得到应用，更新也会移到新文件夹中。
 
-## <a name="view-the-xml-of-an-update-or-bundle"></a>Exibir o XML de uma atualização ou pacote
-Você pode selecionar uma única atualização ou pacote no **Espaço de Trabalho de Atualizações** e, em seguida, escolher **Exibir** XML para exibir a estrutura em XML da atualização. Não há opções para editar a estrutura em XML diretamente.
-
+## <a name="view-the-xml-of-an-update-or-bundle"></a>查看更新或捆绑包的 XML
+可以在“更新工作区”中选择一个更新或捆绑包，然后选择“查看 XML”，查看更新的 XML 结构。 没有可直接编辑 XML 结构的选项。

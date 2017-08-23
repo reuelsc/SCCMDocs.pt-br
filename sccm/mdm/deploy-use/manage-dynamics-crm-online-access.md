@@ -1,103 +1,100 @@
 ---
-title: Gerenciar o acesso ao Dynamics CRM Online | Microsoft Docs
-description: Saiba como controlar o acesso ao Microsoft Dynamics CRM Online de dispositivos iOS e Android com acesso condicional do Microsoft Intune.
+title: "管理 Dynamics CRM Online 访问权限 | Microsoft Docs"
+description: "了解如何使用 Microsoft Intune 条件访问从 iOS 和 Android 设备控制对 Microsoft Dynamics CRM Online 的访问。"
 ms.custom: na
 ms.date: 03/05/2017
 ms.reviewer: na
 ms.prod: configuration-manager
-ms.technology:
-- configmgr-hybrid
+ms.technology: configmgr-hybrid
 ms.suite: na
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 2bfc4c51-b25c-4c70-b81e-8a3b6ddf02c8
-caps.latest.revision: 5
+caps.latest.revision: "5"
 author: andredm7
 ms.author: andredm
 manager: angrobe
-ms.translationtype: Human Translation
-ms.sourcegitcommit: 2c723fe7137a95df271c3612c88805efd8fb9a77
-ms.openlocfilehash: 1579062f4ebfe2b59a81042a77bbc23387e9b058
-ms.contentlocale: pt-br
-ms.lasthandoff: 03/06/2017
-
+ms.openlocfilehash: bd00f12ae3bc14a34d24c22c3d5277d275d51e85
+ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
+ms.translationtype: HT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 08/07/2017
 ---
-# <a name="manage-dynamics-crm-online-access-in-system-center-configuration-manager"></a>Gerenciar o acesso ao Dynamics CRM Online no System Center Configuration Manager
+# <a name="manage-dynamics-crm-online-access-in-system-center-configuration-manager"></a>在 System Center Configuration Manager 中管理 Dynamics CRM Online 访问
 
-*Aplica-se a: System Center Configuration Manager (Branch Atual)*
+*适用范围：System Center Configuration Manager (Current Branch)*
 
-Você pode controlar o acesso ao Microsoft Dynamics CRM Online de dispositivos iOS e Android com acesso condicional do Microsoft Intune.  O acesso condicional do Intune tem dois componentes:
-* [Política de conformidade do dispositivo](../../protect/deploy-use/device-compliance-policies.md) que o dispositivo deve cumprir para ser considerado compatível.
-* [Política de acesso condicional](../../protect/deploy-use/manage-access-to-services.md) na qual você especifica as condições que o dispositivo deve atender para acessar o serviço.
+可使用 Microsoft Intune 条件访问从 iOS 和 Android 设备控制对 Microsoft Dynamics CRM Online 的访问。  Intune 条件访问有两个组件：
+* [设备合规性策略](../../protect/deploy-use/device-compliance-policies.md)，设备必须符合该策略才会被视为合规。
+* [条件访问策略](../../protect/deploy-use/manage-access-to-services.md)在其中指定设备必须满足才可访问服务的条件。
 
-Para saber mais sobre como funciona o acesso condicional, leia o artigo [Gerenciar o acesso a serviços](../../protect/deploy-use/manage-access-to-services.md).
+若要深入了解条件访问的工作原理，请参阅文章[管理对服务的访问](../../protect/deploy-use/manage-access-to-services.md)。
 
 
-Quando determinado usuário tentar usar o aplicativo Dynamics CRM em seu dispositivo, a seguinte avaliação ocorrerá:
+目标用户尝试在其设备上使用 Dynamics CRM 应用时，将评估以下方面：
 
-![O diagrama mostra os pontos de decisão usados para determinar se um dispositivo tem acesso permitido a um serviço ou está bloqueado](media/mdm-ca-dynamics-crm-flow-diagram.png)
+![图表显示了决策点，用于确定是允许还是阻止设备访问服务](media/mdm-ca-dynamics-crm-flow-diagram.png)
 
-O dispositivo que precisa acessar o Dynamics CRM Online deve:
-* Ser um dispositivo **Android** ou **iOS**.
-* Ser **registrado** no Microsoft Intune.
-* Ser **compatível** com qualquer política de conformidade do Microsoft Intune implantada.
+需要访问 Dynamics CRM Online 的设备必须：
+* 是 **Android** 或 **iOS** 设备。
+* 已向 Microsoft Intune **注册**。
+* **符合**任何已部署的 Microsoft Intune 合规性策略。
 
-O estado do dispositivo é armazenado no Azure Active Directory que concede ou bloqueia o acesso, com base nas condições que você especifica.
+基于指定的条件，设备状态存储在可授予或阻止访问的 Azure Active Directory 中。
 
-Se uma condição não for atendida, o usuário receberá uma das seguintes mensagens de erro ao fazer logon:
-* Se o dispositivo não estiver registrado no Microsoft Intune ou não estiver registrado no Azure Active Directory, será exibida uma mensagem com instruções sobre como instalar o aplicativo do portal da empresa e registrá-lo.
-* Se o dispositivo não for compatível, será exibida uma mensagem que direciona o usuário ao site do Portal da Empresa do Microsoft Intune ou ao aplicativo Portal da Empresa, em que ele pode encontrar informações sobre o problema e como corrigi-lo.
+如果不满足条件，则用户将在登录时看到以下消息的其中一条：
+* 如果设备未向 Microsoft Intune 注册，或未在 Azure Active Directory 中注册，则会显示一条消息，说明如何安装公司门户应用并进行注册。
+* 如果设备不合规，则会显示一条消息，将用户定向到 Microsoft Intune 公司门户网站或公司门户应用，用户可在其中找到有关该问题及其修正方式的信息。
 
-## <a name="configure-conditional-access-for-dynamics-crm-online"></a>Configurar o acesso condicional do Dynamics CRM Online  
-### <a name="step-1-configure-active-directory-security-groups"></a>Etapa 1: Configurar grupos de segurança do Active Directory
+## <a name="configure-conditional-access-for-dynamics-crm-online"></a>为 Dynamics CRM Online 配置条件访问  
+### <a name="step-1-configure-active-directory-security-groups"></a>步骤 1：配置 Active Directory 安全组
 
-Antes de começar, configure os grupos de segurança do Active Directory do Azure para a política de acesso condicional. Você pode configurar esses grupos no **Centro de administração do Office 365**. Esses grupos serão usado para o destino ou usuários isentos da política. Quando um usuário é afetado por uma política, cada dispositivo que ele usa deve ser compatível para que possa acessar os recursos.
+在开始之前，针对条件访问策略配置 Azure Active Directory 安全组。 可在 **Office 365 管理中心**中配置这些组。 这些组用于从策略中确定目标用户或免除用户。 如果将某个用户设定为策略的目标，则其使用的每个设备必须合规才能访问资源。
 
-Você pode especificar dois tipos de grupo para a política do Dynamics CRM:
-* **Grupos de destino** – Contém grupos de usuários aos quais a política será aplicada.
-* **Grupos isentos** – Contém grupos de usuários isentos da política.
+可指定两种组类型用于 Dynamics CRM 策略：
+* **目标组** - 包含将应用策略的用户组。
+* **免除组** - 包含从策略中免除的用户的组。
 
-Se um usuário estiver nos dois grupos, ele ficará isento da política.
+如果用户位于两个组中，则会将其从策略中免除。
 
-### <a name="step-2-configure-and-deploy-a-compliance-policy"></a>Etapa 2: Configurar e implantar uma política de conformidade
-[Crie e implante](../../protect/deploy-use/device-compliance-policies.md) uma política de conformidade para todos os dispositivos que serão afetados pela política. Esses seriam todos os dispositivos usados pelos usuários nos grupos de destino.
+### <a name="step-2-configure-and-deploy-a-compliance-policy"></a>步骤 2：配置和部署合规性策略
+对所有会受此策略影响的设备[创建和部署](../../protect/deploy-use/device-compliance-policies.md)合规性策略。 这些设备将是目标组中的用户使用的所有设备。
 
 > [!NOTE]
-> Enquanto as políticas de conformidade são implantadas em grupos do Microsoft Intune, as políticas de acesso condicional são destinadas a grupos de segurança do Azure Active Directory.
+> 将合规性策略部署到 Microsoft Intune 组，而条件访问策略以 Azure Active Directory 安全组为目标。
 
 > [!IMPORTANT]
-> Se você não tiver implantado uma política de conformidade, os dispositivos serão tratados como compatíveis.
+> 如果尚未部署合规性策略，则设备将被视为符合。
 
-Quando estiver pronto, continue na Etapa 3.
-### <a name="step-3-configure-the-dynamics-crm-policy"></a>Etapa 3: Configurar a política do Dynamics CRM
-Em seguida, configure a política para exigir que somente dispositivos gerenciados e compatíveis possam acessar o Dynamics CRM. Essa política será armazenada no Active Directory do Azure.
+准备就绪后，继续执行步骤 3。
+### <a name="step-3-configure-the-dynamics-crm-policy"></a>步骤 3：配置 Dynamics CRM 策略
+接下来，配置策略，要求仅托管和合规设备可访问 Dynamics CRM。 此策略会存储在 Azure Active Directory 中。
 
-1.  No Console de administração do Microsoft Intune, escolha **Política > Acesso Condicional > Política do Dynamics CRM Online**.
+1.  在 Microsoft Intune 管理控制台中，选择“策略”>“条件访问”>“Dynamics CRM Online 策略”。
 
-     ![Captura de tela da página de política de acesso condicional do Dynamics CRM Online](media/mdm-ca-dynamics-crm-policy-configuration.png)
+     ![Dynamics CRM Online 条件性访问策略页的屏幕快照](media/mdm-ca-dynamics-crm-policy-configuration.png)
 
-2.  Selecione **Habilitar a política de acesso condicional**.
-3.  Em **Acesso do aplicativo**, você pode optar por aplicar a política de acesso condicional a:
+2.  选择“启用条件访问”策略。
+3.  在“应用程序访问”下，可以选择将条件访问策略应用到：
   * **iOS**
-  * **Android**
-4.  Em **Grupos de Destino**, escolha **Modificar** para selecionar os grupos de segurança do Azure Active Directory aos quais a política será aplicada. Você pode escolher aplicar isso a todos os usuários ou apenas a um grupo seleto de usuários.
-5.  Opcionalmente, em **Grupos Isentos**, escolha em **Modificar** para selecionar os grupos de segurança do Azure Active Directory que são isentos dessa política.
-6.  Quando terminar, escolha **Salvar**.
+  * **Outlook Web Access (OWA)**
+4.  在“目标组”下，选择“修改”，选择将应用策略的 Azure Active Directory 安全组。 你可以选择将其应用于所有用户或仅针对特定用户组。
+5.  在“免除组”下，可以选择“修改”，选择从此策略中免除的 Azure Active Directory 安全组。
+6.  完成后，选择“保存”。
 
-Você configurou o acesso condicional para o Dynamics CRM. Você não precisa implantar a política de acesso condicional, ele entra em vigor imediatamente.
-##  <a name="monitor-the-compliance-and-conditional-access-policies"></a>Monitorar a conformidade e políticas de acesso condicional
+现已为 Dynamics CRM 配置了条件访问。 不需要部署条件访问策略，它将立即生效。
+##  <a name="monitor-the-compliance-and-conditional-access-policies"></a>监视遵从性和条件性访问策略
 
-No espaço de trabalho **Grupos**, você pode exibir o status de acesso condicional de seus dispositivos.
+在“组”工作区中，可以查看设备的条件访问状态。
 
-Selecione qualquer grupo de dispositivos móveis e, na guia **Dispositivos** , selecione um dos seguintes **Filtros**:
-* **Dispositivos que não estão registrados no AAD** – esses dispositivos estão bloqueados do Dynamics CRM.
-* **Dispositivos que não são compatíveis** – esses dispositivos estão bloqueados do Dynamics CRM.
-* **Dispositivos que estão registrados no AAD e são compatíveis** – esses dispositivos podem acessar o Dynamics CRM.
+选择任何移动设备组，然后在“设备”选项卡上，选择以下“筛选器”之一：
+* **未向 AAD 注册的设备** - 从 Dynamics CRM 阻止这些设备。
+* **不合规的设备** - 从 Dynamics CRM 阻止这些设备。
+* **已向 AAD 注册的合规设备** - 这些设备可以访问 Dynamics CRM。
 
-###  <a name="see-also"></a>Consulte também
-[Gerenciar acesso ao email](../../protect/deploy-use/manage-email-access.md)
+###  <a name="see-also"></a>另请参阅
+[管理对电子邮件的访问](../../protect/deploy-use/manage-email-access.md)
 
-[Gerenciar acesso ao SharePoint Online](../../protect/deploy-use/manage-sharepoint-online-access.md)
+[管理对 SharePoint Online 的访问](../../protect/deploy-use/manage-sharepoint-online-access.md)
 
-[Gerenciar acesso ao Skype for Business Online](../../protect/deploy-use/manage-skype-for-business-online-access.md)
-
+[管理对 Skype for Business Online 的访问](../../protect/deploy-use/manage-skype-for-business-online-access.md)

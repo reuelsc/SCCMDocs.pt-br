@@ -1,280 +1,276 @@
 ---
-title: "Gerenciar drivers – Configuration Manager | Microsoft Docs"
-description: "Use o catálogo de drivers do Configuration Manager para importar drivers de dispositivo, drivers de grupo em pacotes e distribuir esses pacotes aos pontos de distribuição."
+title: "管理驱动程序 - Configuration Manager | Microsoft Docs"
+description: "使用 Configuration Manager 驱动程序目录导入设备驱动程序、在包中为驱动程序分组，然后这些将包分发到各个分发点。"
 ms.custom: na
 ms.date: 01/27/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
-ms.technology:
-- configmgr-osd
+ms.technology: configmgr-osd
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 84802d55-112e-4f7f-9a48-74a80d91a0f4
-caps.latest.revision: 10
-caps.handback.revision: 0
+caps.latest.revision: "10"
+caps.handback.revision: "0"
 author: Dougeby
 ms.author: dougeby
 manager: angrobe
-ms.translationtype: Human Translation
-ms.sourcegitcommit: 89158debdf4c345a325feeb608db2215a88ed81b
 ms.openlocfilehash: 87ab9925717a307cbda3cea1f2e470ae012fa067
-ms.contentlocale: pt-br
-ms.lasthandoff: 05/17/2017
-
-
+ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
+ms.translationtype: HT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 08/07/2017
 ---
-# <a name="manage-drivers-in-system-center-configuration-manager"></a>Gerenciar drivers no System Center Configuration Manager
+# <a name="manage-drivers-in-system-center-configuration-manager"></a>在 System Center Configuration Manager 中管理驱动程序
 
-*Aplica-se a: System Center Configuration Manager (Branch Atual)*
+*适用范围：System Center Configuration Manager (Current Branch)*
 
-O System Center Configuration Manager fornece um catálogo de drivers que pode ser usado para gerenciar os drivers de dispositivos do Windows no ambiente do Configuration Manager. É possível usar o catálogo de drivers para importar drivers de dispositivo no Configuration Manager, para agrupá-los em pacotes e para distribuir esses pacotes em pontos de distribuição, dos quais é possível acessá-los ao implantar um sistema operacional. Drivers de dispositivo podem ser acessados quando você instala o sistema operacional integral no computador de destino e quando instala o Windows PE usando uma imagem de inicialização. Os drivers de dispositivo do Windows consistem em um arquivo INF (arquivo de informações) de instalação e arquivos adicionais necessários para dar suporte ao dispositivo. Quando um sistema operacional é implantado, o Configuration Manager obtém as informações de hardware e plataforma para o dispositivo por meio de seu arquivo INF. Use o seguinte para gerenciar drivers em seu ambiente do Configuration Manager.
+System Center Configuration Manager 提供了驱动程序目录，可用于管理 Configuration Manager 环境中的 Windows 设备驱动程序。 可以使用此驱动程序目录将设备驱动程序导入到 Configuration Manager，将它们按包分组，以及将这些包分发到分发点，以便在部署操作系统时可以访问这些包。 当在目标计算机上安装完整的操作系统时，以及在使用启动映像来安装 Windows PE 时，可以使用设备驱动程序。 Windows 设备驱动程序由安装信息文件 (INF) 文件和支持设备所需的任何其他文件组成。 在部署操作系统时，Configuration Manager 将从其 INF 文件中获得设备的硬件和平台信息。 使用以下方法来管理 Configuration Manager 环境中的驱动程序。
 
-##  <a name="BKMK_DriverCategories"></a> Categorias de driver de dispositivo  
- Quando você importa drivers de dispositivo, é possível atribuir os drivers de dispositivo a uma categoria. Categorias de driver de dispositivo ajudam a agrupar drivers de dispositivo de uso similar no catálogo de driver. Por exemplo, você pode atribuir todos os drivers de dispositivo do adaptador de rede a uma categoria específica. Em seguida, ao criar uma sequência de tarefas que inclua a etapa [Auto Apply Drivers](../understand/task-sequence-steps.md#BKMK_AutoApplyDrivers) , é possível especificar uma categoria específica de drivers de dispositivo. O Configuration Manager faz a varredura do hardware e seleciona os drivers aplicáveis dessa categoria a serem preparados no sistema para uso da Instalação do Windows.  
+##  <a name="BKMK_DriverCategories"></a> 设备驱动程序类别  
+ 在导入设备驱动程序时，可以将设备驱动程序分配到某个类别。 借助设备驱动程序类别，可以在驱动程序目录中将要使用的相似设备驱动程序组合在一起。 例如，可以将所有网络适配器设备驱动程序分配到特定的类别。 然后，在创建包含 [Auto Apply Drivers](../understand/task-sequence-steps.md#BKMK_AutoApplyDrivers) 步骤的任务序列时，可以指定设备驱动程序的特定类别。 Configuration Manager 随后会扫描硬件，从该类别中选择适用的驱动程序以暂存在系统上，以供 Windows 安装程序使用。  
 
-##  <a name="BKMK_ManagingDriverPackages"></a> Pacotes de driver  
- É possível agrupar drivers de dispositivo semelhantes em pacotes para ajudar a simplificar as implantações de sistema operacional. Por exemplo, você pode decidir criar um pacote de driver para cada fabricante de computador na rede. É possível criar um pacote de driver durante a importação de drivers no catálogo de drivers diretamente no nó **Pacotes de Driver** . Depois de criado, o pacote de driver deverá ser distribuído para pontos de distribuição, de onde os computadores cliente do Configuration Manager podem instalar os drivers conforme forem necessários. Considere o seguinte:  
+##  <a name="BKMK_ManagingDriverPackages"></a> 驱动程序包  
+ 你可以将类似的设备驱动程序分组到包中，以帮助简化操作系统部署。 例如，你可以决定为你网络中的每个计算机制造商创建一个驱动程序包。 在将驱动程序直接导入到“驱动程序包”  节点中的驱动程序目录时，可以创建一个驱动程序包。 在创建驱动程序包之后，必须将其分发到 Configuration Manager 客户端计算机可以从中安装必需的驱动程序的分发点。 请考虑下列各项：  
 
--   Quando você cria um pacote de driver, o local de origem do pacote deve apontar para um compartilhamento de rede vazio, não usado por outro pacote de driver, e o Provedor de SMS deve ter as permissões de Leitura e Gravação para esse local.  
+-   在创建驱动程序包时，包的源位置必须指向其他驱动程序包并未使用的空的网络共享，而且 SMS 提供程序必须具有该位置的读取和写入权限。  
 
--   Quando você adiciona drivers de dispositivo em um pacote de driver, o Configuration Manager copia o driver de dispositivo para o local de origem do pacote de driver. Você pode adicionar a um pacote de driver apenas drivers de dispositivo que foram importados e que estão habilitados no catálogo de driver.  
+-   将设备驱动程序添加到驱动程序包时，Configuration Manager 会将设备驱动程序复制到驱动程序包的源位置。 只能将已导入的和在驱动程序目录中启用的设备驱动程序添加到驱动程序包。  
 
--   Para copiar um subconjunto dos drivers de dispositivo de um pacote de driver existente, crie um novo pacote de driver, adicione o subconjunto de drivers de dispositivo ao novo pacote e distribua o novo pacote em um ponto de distribuição.  
+-   要想从现有的驱动程序包中复制部分设备驱动程序，请创建一个新的驱动程序包，将部分设备驱动程序添加到新包中，然后将新包分发到分发点。  
 
- Use as seções a seguir para criar e gerenciar pacotes de driver.  
+ 使用下列部分来创建和管理驱动程序包。  
 
-###  <a name="CreatingDriverPackages"></a> Criar um pacote de driver  
- Use o procedimento a seguir para criar um novo pacote de driver.  
+###  <a name="CreatingDriverPackages"></a> 创建驱动程序包  
+ 使用下列过程来创建新的驱动程序包。  
 
 > [!IMPORTANT]  
->  Para criar um pacote de driver, é necessário ter uma pasta de rede vazia, que não seja usada por outro pacote de driver. Na maioria dos casos, é necessário criar uma nova pasta antes de iniciar este procedimento.  
+>  要创建驱动程序包，你必须有未由另一个驱动程序包使用的空网络文件夹。 大多数情况下，你必须在开始此过程之前创建新的文件夹。  
 
 > [!NOTE]  
->  Ao usar sequências de tarefas para instalar drivers, crie pacotes de driver que contêm menos de 500 drivers de dispositivo.  
+>  当使用任务序列安装驱动程序时，请创建包含不超过 500 个设备驱动程序的的驱动程序包。  
 
- Use o procedimento a seguir para criar um pacote de driver.  
+ 使用下列过程来创建驱动程序包。  
 
-#### <a name="to-create-a-driver-package"></a>Para criar um pacote de driver  
+#### <a name="to-create-a-driver-package"></a>创建驱动程序包  
 
-1.  No console do Configuration Manager, clique em **Biblioteca de Software**.  
+1.  在 Configuration Manager 控制台中，单击“软件库” 。  
 
-2.  No espaço de trabalho **Biblioteca de Software** , expanda **Sistemas Operacionais**e clique em **Pacotes de Driver**.  
+2.  在“软件库”  工作区中，展开“操作系统” ，然后单击“驱动程序包” 。  
 
-3.  Na guia **Início** , no grupo **Criar** , clique em **Criar Pacote de Driver**.  
+3.  在“主页”  选项卡上的“创建”  组中，单击“创建驱动程序包” 。  
 
-4.  Na caixa **Nome** , especifique um nome descritivo para o pacote de driver.  
+4.  在“名称”  框中，指定驱动程序包的描述性名称。  
 
-5.  Na caixa **Comentário** , insira uma descrição opcional para o pacote de driver. Verifique se a descrição fornece informações sobre o conteúdo ou a finalidade do pacote de driver.  
+5.  在“备注”  框中，输入驱动程序包的可选描述。 确保该描述提供有关驱动程序包的内容或用途的信息。  
 
-6.  Na caixa **Caminho** , especifique uma pasta de origem para o pacote de driver. Digite o caminho para a pasta de origem no formato UNC (convenção de nomenclatura universal). Cada pacote de driver deve usar uma pasta exclusiva.  
+6.  在“路径”  框中，指定驱动程序包的空源文件夹。 以通用命名约定 (UNC) 格式输入源文件夹的路径。 每个驱动程序包必须使用唯一的文件夹。  
 
     > [!IMPORTANT]  
-    >  A conta do servidor do site deve ter permissões de **Leitura** e **Gravação** para a pasta de origem especificada.  
+    >  站点服务器帐户必须具有对指定源文件夹的“读取”  和  “写入”权限。  
 
- O novo pacote de driver não contém drivers. A próxima etapa é adicionar drivers ao pacote.  
+ 新驱动程序包不包含任何驱动程序。 下一步是向包中添加驱动程序。  
 
- Se o nó **Pacotes de Driver** contiver diversos pacotes, você poderá adicionar pastas ao nó para separar os pacotes em grupos lógicos.  
+ 如果“驱动程序包”  节点包含若干包，你可以向节点中添加文件夹将包分隔为逻辑组。  
 
-###  <a name="BKMK_PackageActions"></a> Ações adicionais para pacotes de driver  
- Você pode executar ações adicionais para gerenciar pacotes de driver ao selecionar um ou mais pacotes de driver do nó **Pacotes de Driver** . Essas ações incluem:  
+###  <a name="BKMK_PackageActions"></a> 驱动程序包的其他操作  
+ 如果从“驱动程序包”  节点中选择一个或多个驱动程序包，你可以执行其他操作来管理驱动程序包。 这些操作包括下列各项：  
 
-|Ação|Descrição|  
+|操作|说明|  
 |------------|-----------------|  
-|**Criar Arquivo de Conteúdo de Pré-Teste**|Cria arquivos que possam ser usados para importar conteúdo e seus metadados associados manualmente. Usar o conteúdo de pré-teste quando a largura de banda de rede for baixa entre o servidor do site e os pontos de distribuição em que o pacote de driver está armazenado.|  
-|**Excluir**|Remove o pacote de driver a partir do **Pacotes de Driver** .|  
-|**Distribuir Conteúdo**|Distribui o pacote de driver aos pontos de distribuição, grupos do ponto de distribuição e aos grupos do ponto de distribuição associados a coleções.|  
-|**Gerenciar Contas de Acesso**|Adiciona, modifica ou remove contas de acesso do pacote de driver.<br /><br /> Para obter mais informações sobre contas de acesso de pacote, consulte [Contas usadas no Configuration Manager](../../core/plan-design/hierarchy/accounts.md).|  
-|**Moverr**|Move pacote de driver para outra pasta do nó **Pacotes de Driver** .|  
-|**Atualizar Pontos de Distribuição**|Atualiza o pacote de driver de dispositivo em todos os pontos de distribuição onde o pacote é armazenado. Essa ação copia somente o conteúdo alterado desde a última vez que ele foi distribuído.|  
-|**Propriedades**|Abre a caixa de diálogo **Propriedades** , onde é possível verificar e alterar as propriedades e o conteúdo do driver de dispositivo. Por exemplo, é possível alterar o nome e a descrição do driver de dispositivo, habilitá-lo e especificar as plataformas em que o driver de dispositivo pode ser executado.|  
+|**创建预留内容文件**|创建可用于手动导入内容及其关联元数据的文件。 如果站点服务器和存储驱动程序包的分发点之间的网络带宽较低，请使用预留内容。|  
+|**删除**|从“驱动程序包”  节点中删除驱动程序包。|  
+|**分发内容**|将驱动程序包分发到与分发点、分发点组以及与集合关联的分发点组。|  
+|**管理访问帐户**|添加、修改或删除驱动程序包的访问帐户。<br /><br /> 有关包访问帐户的详细信息，请参阅 [Configuration Manager 中使用的帐户](../../core/plan-design/hierarchy/accounts.md)。|  
+|**移动**|将驱动程序包移动到“驱动程序包”  节点中的另一个文件夹。|  
+|**更新分发点**|更新存储包的所有分发点上的设备驱动程序包。 此操作只会复制在上次分发点之后已更改的内容。|  
+|**Properties**|打开“属性”  对话框，你可以在其中查看和更改设备驱动程序的内容及属性。 例如，可以更改设备驱动程序的名称和描述，启用设备驱动程序，以及指定设备驱动程序可以在哪些平台上运行。|  
 
-##  <a name="BKMK_DeviceDrivers"></a> Drivers de dispositivo  
- É possível instalar drivers de dispositivo em computadores de destino sem incluí-los na imagem do sistema operacional que está sendo implantada. O Configuration Manager fornece um catálogo de drivers que contém referências a todos os drivers de dispositivos importados para o Configuration Manager. O catálogo de drivers está localizado no espaço de trabalho **Biblioteca de Software** e consiste em dois nós: **Drivers** e **Pacotes de Driver**. O nó **Drivers** lista todos os drivers que você importou no catálogo de drivers. Use esse nó para descobrir os detalhes sobre cada driver importado, modificar os drivers em um pacote de driver ou em uma imagem de inicialização, habilitar ou desabilitar um driver e assim por diante.  
+##  <a name="BKMK_DeviceDrivers"></a> 设备驱动程序  
+ 你可以在目标计算机上安装设备驱动程序，而不将它们包含在正在部署的操作系统映像中。 Configuration Manager 提供包含对导入 Configuration Manager 的所有设备驱动程序的引用的驱动程序目录。 此驱动程序目录位于“软件库”  工作区中并且包含以下两个节点：“驱动程序”  和“驱动程序包” 。 “驱动程序”  节点列出了已导入到驱动程序目录的所有驱动程序。 使用此节点发现关于每个导入的驱动程序的详细信息，修改驱动程序包中或启动映像包中的驱动程序，启用或禁用驱动程序，以及执行其他操作。  
 
-###  <a name="BKMK_ImportDrivers"></a> Importar drivers de dispositivo para o catálogo de drivers  
- Você deve importar drivers de dispositivo no catálogo de drivers para poder usá-los quando implantar um sistema operacional. Para melhor gerenciar seus drivers de dispositivos, importe somente aqueles drivers de dispositivos que pretende instalar como parte da implantação de seu sistema operacional. No entanto, você também pode armazenar várias versões de drivers de dispositivo no catálogo de drivers, de modo a facilitar a atualização dos drivers de dispositivo existentes, quando os requisitos de dispositivo de hardware mudarem em sua rede.  
+###  <a name="BKMK_ImportDrivers"></a> 将设备驱动程序导入驱动程序目录  
+ 必须将设备驱动程序导入到驱动程序目录，然后才能在部署操作系统时使用它们。 为了更好地管理设备驱动程序，请仅导入你计划作为操作系统部署的一部分安装的那些设备驱动程序。 但是，也可以在驱动程序目录中存储设备驱动程序的多个版本，以便在网络上的硬件设备要求改变时轻松升级现有的设备驱动程序。  
 
- Como parte do processo de importação do driver de dispositivo, o Configuration Manager lê as informações do provedor, da classe, da versão, da assinatura, do hardware e da plataforma com suporte associadas ao dispositivo. Por padrão, o driver é nomeado após o primeiro dispositivo de hardware que ele suporta; no entanto, é possível renomeá-lo posteriormente. A lista de plataformas com suporte baseia-se nas informações do arquivo INF do driver. Como a precisão dessas informações pode variar, verifique manualmente se há suporte para o driver de dispositivo após ele ser importado para o catálogo de drivers.  
+ 在设备驱动程序的导入过程中， Configuration Manager 将读取提供程序、类、版本、签名、支持的硬件以及与设备关联的支持的平台信息。 默认情况下，驱动程序按照它支持的第一个硬件设备命名；不过，你可以稍后重命名设备驱动程序。 支持的平台列表以驱动程序的 INF 文件中的信息为基础。 由于此信息的准确性可能有所不同，因此请在将支持的设备驱动程序导入驱动程序目录后对其进行手动验证。  
 
- Depois de importar drivers de dispositivo para o catálogo, é possível adicioná-los aos pacotes de driver ou aos pacotes de imagens de inicialização.  
+ 在将设备驱动程序导入目录之后，你可以将设备驱动程序添加到驱动程序包或启动映像包。  
 
 > [!IMPORTANT]  
->  Não é possível importar drivers de dispositivo diretamente para uma subpasta do nó **Drivers** . Para importar um driver de dispositivo para uma subpasta, importe primeiro o dispositivo para o nó **Drivers** e mova o driver para a subpasta.  
+>  你无法将设备驱动程序直接导入“驱动程序”  节点的子文件夹。 要将设备驱动程序导入子文件夹，请首先将设备驱动程序导入“驱动程序”  节点，然后将驱动程序移动到该子文件夹。  
 
- Use o procedimento a seguir para importar drivers de dispositivo do Windows.  
+ 使用下列过程来导入 Windows 设备驱动程序。  
 
-#### <a name="to-import-windows-device-drivers-into-the-driver-catalog"></a>Para importar drivers de dispositivo do Windows para o catálogo de drivers  
+#### <a name="to-import-windows-device-drivers-into-the-driver-catalog"></a>将 Windows 设备驱动程序导入驱动程序目录  
 
-1.  No console do Configuration Manager, clique em **Biblioteca de Software**.  
+1.  在 Configuration Manager 控制台中，单击“软件库” 。  
 
-2.  No espaço de trabalho **Biblioteca de Software** , expanda **Sistemas Operacionais**e clique em **Drivers**.  
+2.  在“软件库”  工作区中，展开“操作系统” ，然后单击“驱动程序” 。  
 
-3.  Na guia **Início** , no grupo **Criar** , clique em **Importar Driver** para iniciar o **Assistente de Importação de Novo Driver**.  
+3.  在“主页”  选项卡上的“创建”  组中，单击“导入驱动程序”  以启动“导入新的驱动程序向导” 。  
 
-4.  Na página **Localizar Driver** , especifique as seguintes opções e clique em **Próximo**:  
+4.  在“定位驱动程序”  页上，指定以下选项，然后单击“下一步” ：  
 
-    -   **Importe todos os drivers no seguinte caminho de rede (UNC)**: Para importar todos os drivers de dispositivo contidos em uma determinada pasta, especifique o caminho de rede para a pasta do driver de dispositivo. Por exemplo:  **\\\servername\folder**.  
+    -   **导入下列网络路径(UNC)中的所有驱动程序**：要导入特定文件夹中包含的所有设备驱动程序，请指定设备驱动程序文件夹的网络路径。 例如：  **\\\servername\folder**。  
 
         > [!NOTE]  
-        >  O processo para importar todos os drivers poderá levar algum tempo se houver muitas pastas e muitos arquivos de driver (.inf).  
+        >  如果存在大量文件夹和大量驱动程序文件 (.inf)，则导入所有驱动程序的过程可能需要一些时间。  
 
-    -   **Importar um driver específico**: para importar um determinado driver de uma pasta, especifique o caminho de rede (UNC) para o arquivo .INF do driver de dispositivo do Windows ou o arquivo Txtsetup.oem de armazenamento em massa do driver.  
+    -   **导入特定驱动程序**：要导入文件夹中的特定驱动程序，请指定 Windows 设备驱动程序 .INF 的网络路径 (UNC) 或驱动程序的大容量存储 Txtsetup.oem 文件。  
 
-    -   **Especificar a opção para drivers duplicados**: selecione como você deseja que o Configuration Manager gerencie as categorias de driver quando um driver de dispositivo duplicado for importado.  
+    -   **针对重复驱动程序指定选项**：选择要导入重复的设备驱动程序时希望 Configuration Manager 如何管理驱动程序类别。  
 
     > [!IMPORTANT]  
-    >  Ao importar drivers, o servidor do site deve ter permissão de **Leitura** para a pasta; caso contrário, a importação falhará.  
+    >  在导入驱动程序时，站点服务器必须具有对该文件夹的“读取”  权限，否则导入将失败。  
 
-5.  Na página **Detalhes do Driver** , especifique as seguintes opções e clique em **Próximo**:  
+5.  在“驱动程序详细信息”  页上，指定以下选项，然后单击“下一步” ：  
 
-    -   **Ocultar drivers que não estão em uma classe de armazen. ou de rede (para imagens de inic.)**: use esta configuração para exibir somente os drivers de armazenamento e de rede e para ocultar outros drivers que geralmente não são necessários para as imagens de inicialização, como um driver de vídeo ou de modem.  
+    -   **（对于启动映像）隐藏不属于存储或网络类的驱动程序**：使用此设置可以仅显示存储和网络驱动程序，并隐藏启动映像通常不需要的其他驱动程序（如视频驱动程序或调制解调器驱动程序）。  
 
-    -   **Ocultar drivers que não são assinados digitalmente**: use esta configuração para ocultar drivers que não são assinados digitalmente.  
+    -   **隐藏未进行数字签名的驱动程序**：使用此设置可隐藏未进行数字签名的驱动程序。  
 
-    -   Na lista de drivers, selecione os drivers que deseja importar para o catálogo de drivers.  
+    -   在驱动程序列表中，选择要导入驱动程序目录的驱动程序。  
 
-    -   **Habilitar estes drivers e permitir que os computadores os instalem**: selecione esta configuração para permitir que computadores instalem os drivers de dispositivo. Por padrão, essa caixa de seleção é marcada.  
+    -   **启用这些驱动程序并允许计算机安装**：选择此设置以让计算机安装设备驱动程序。 默认情况下已选中此复选框。  
 
         > [!IMPORTANT]  
-        >  Se um driver de dispositivo estiver causando um problema ou se você desejar suspender a instalação de um driver de dispositivo, você poderá desabilitar o driver de dispositivo desmarcando a caixa **Habilitar estes drivers e permitir que os computadores os instalem** . Você também pode desabilitar drivers após eles serem importados.  
+        >  如果设备驱动程序导致问题或者你希望暂停设备驱动程序的安装，你可以通过清除“启用这些驱动程序并允许计算机安装”  复选框来禁用设备驱动程序。 你也可以在导入驱动程序后将其禁用。  
 
-    -   Para atribuir os drivers de dispositivo a uma categoria administrativa para fins de filtragem, como as "Desktops" ou "Notebooks", clique em **Categorias** e selecione uma categoria existente ou crie uma nova. Você também pode usar a atribuição de categoria para configurar os drivers de dispositivo que serão aplicados à implantação pela etapa da sequência de tarefas [Auto Apply Drivers](../understand/task-sequence-steps.md#BKMK_AutoApplyDrivers) .  
+    -   要将设备驱动程序分配到管理类别（例如“台式机”或“笔记本”类别）以供筛选之用，请单击“类别”  并选择现有类别或创建新类别。 你也可以使用类别分配，通过“自动应用驱动程序” [Auto Apply Drivers](../understand/task-sequence-steps.md#BKMK_AutoApplyDrivers) 任务序列步骤来配置应用于部署的设备驱动程序。  
 
-6.  Na página **Adicionar Driver aos Pacotes** , escolha se deseja adicionar os drivers a um pacote e clique em **Avançar**. Considere o seguinte para adicionar os drivers a um pacote:  
+6.  在“将驱动程序添加到包”  页面上，选择是否要将驱动程序添加到包，然后单击“下一步” 。 将驱动程序添加到包时请考虑以下事项：  
 
-    -   Selecione os pacotes de driver usados para distribuir os drivers de dispositivo.  
+    -   选择用于分发设备驱动程序的驱动程序包。  
 
-         Opcionalmente, clique em **Novo Pacote** para criar um novo pacote de driver. Ao criar um novo pacote de driver, é necessário fornecer um compartilhamento de rede que não esteja sendo usado por outros pacotes de driver.  
+         （可选）单击“新建包”  以创建新的驱动程序包。 在创建新驱动程序包时，你必须提供未由其他驱动程序包使用的网络共享。  
 
-    -   Se o pacote já foi distribuído para os pontos de distribuição, clique em **Sim** na caixa de diálogo para atualizar as imagens de inicialização nos pontos de distribuição. Não é possível usar drivers de dispositivo até que eles sejam distribuídos aos pontos de distribuição. Se você clicar em **Não**, será necessário executar a ação **Atualizar Ponto de Distribuição** antes que a imagem de inicialização contenha os drivers atualizados. Se o pacote de driver nunca foi distribuído, você deve clicar em **Distribuir Conteúdo** no nó **Pacotes de Driver** .  
+    -   如果已将包分发到分发点，请单击对话框中的“是”  以更新分发点上的启动映像。 在将设备驱动程序分发到分发点之前，将无法使用这些驱动程序。 如果单击“否” ，则必须运行“更新分发点”  操作，启动映像才会包含已更新的驱动程序。 如果从未分发驱动程序包，则必须单击“驱动程序包”  节点中的  “分发内容”。  
 
-7.  Na página **Adicionar Driver às Imagens de Inicialização** , escolha se deseja adicionar os drivers de dispositivo às imagens de inicialização existentes e clique em **Avançar**. Se você selecionar uma imagem de inicialização, considere o seguinte:  
+7.  在“将驱动程序添加到启动映像”  页面上，选择是否将设备驱动程序添加到现有的启动映像，然后单击“下一步” 。 如果选择启动映像，请考虑以下事项：  
 
     > [!NOTE]  
-    >  Como melhor prática, adicione somente drivers de dispositivo de rede e de armazenamento em massa às imagens de inicialização para cenários de implantação de sistema operacional.  
+    >  操作系统部署方案的最佳做法是，仅将大容量存储器和网络设备驱动程序添加到启动映像。  
 
-    -   Clique em **Sim** na caixa de diálogo para atualizar as imagens de inicialização nos pontos de distribuição. Não é possível usar drivers de dispositivo até que eles sejam distribuídos aos pontos de distribuição. Se você clicar em **Não**, será necessário executar a ação **Atualizar Ponto de Distribuição** antes que a imagem de inicialização contenha os drivers atualizados. Se o pacote de driver nunca foi distribuído, você deve clicar em **Distribuir Conteúdo** no nó **Pacotes de Driver** .  
+    -   单击对话框中的“是”  以更新分发点上的启动映像。 在将设备驱动程序分发到分发点之前，将无法使用这些驱动程序。 如果单击“否” ，则必须运行“更新分发点”  操作，启动映像才会包含已更新的驱动程序。 如果从未分发驱动程序包，则必须单击“驱动程序包”  节点中的  “分发内容”。  
 
-    -   O Configuration Manager avisará se a arquitetura de um ou mais drivers não corresponder à arquitetura das imagens de inicialização selecionadas. Se elas não corresponderem, clique em **OK** e volte para a página **Detalhes do Driver** para desmarcar os drivers que não correspondem à arquitetura da imagem de inicialização selecionada. Por exemplo, se você selecionar uma imagem de inicialização em base em x64 e x86, todos os drivers devem dar suporte a ambas as arquiteturas. Se você selecionar uma imagem de inicialização com base em x64, todos os drivers devem dar suporte à arquitetura x64.  
-
-        > [!NOTE]  
-        >  -   A arquitetura é baseada na arquitetura relatada no .INF do fabricante.  
-        > -   Se um driver relatar que dá suporte a ambas as arquiteturas, você poderá importá-lo para qualquer uma das duas imagens de inicialização.  
-
-    -   O Configuration Manager avisará se você adicionar drivers de dispositivo que não são drivers de rede ou de armazenamento a uma imagem de inicialização, pois, na maioria dos casos, eles não são necessários para a imagem de inicialização. Clique em **Sim** para adicionar os drivers à imagem de inicialização ou em **Não** para voltar e modificar sua seleção de driver.  
-
-    -   O Configuration Manager avisará se um ou mais dos drivers selecionados não estiverem assinados digitalmente de maneira correta. Clique em **Sim** para continuar e clique em **Não** para voltar e fazer alterações em sua seleção de driver.  
-
-8.  Conclua o assistente.  
-
-###  <a name="BKMK_ModifyDriverPackage"></a> Gerenciar drivers de dispositivo em um pacote de driver  
- Use os procedimentos a seguir para modificar pacotes de driver e imagens de inicialização. Para adicionar ou remover drivers de dispositivo, localize os drivers no nó **Drivers** e edite os pacotes ou as imagens de inicialização aos quais os drivers selecionados estão associados.  
-
-#### <a name="to-modify-the-device-drivers-in-a-driver-package"></a>Para modificar os drivers de dispositivo em um pacote de driver  
-
-1.  No console do Configuration Manager, clique em **Biblioteca de Software**.  
-
-2.  No espaço de trabalho **Biblioteca de Software** , expanda **Sistemas Operacionais**e clique em **Drivers**.  
-
-3.  No nó **Drivers** , selecione os drivers de dispositivo que deseja adicionar ao pacote de driver.  
-
-4.  Na guia **Início** , no grupo **Driver** , clique em **Editar**e em **Pacotes de Driver**.  
-
-5.  Para adicionar um driver de dispositivo, marque a caixa de seleção dos pacotes de driver aos quais deseja adicionar os drivers de dispositivo. Para remover um driver de dispositivo, desmarque a caixa de seleção dos pacotes de driver dos quais deseja remover o driver de dispositivo.  
-
-     Se estiver adicionado drivers de dispositivo associados a pacotes de driver, você poderá opcionalmente criar um novo pacote, clicando em **Novo Pacote**, o que abrirá a caixa de diálogo **Novo Pacote de Driver** .  
-
-6.  Se o pacote já foi distribuído para os pontos de distribuição, clique em **Sim** na caixa de diálogo para atualizar as imagens de inicialização nos pontos de distribuição. Não é possível usar drivers de dispositivo até que eles sejam distribuídos aos pontos de distribuição. Se você clicar em **Não**, será necessário executar a ação **Atualizar Ponto de Distribuição** antes que a imagem de inicialização contenha os drivers atualizados. Se o pacote de driver nunca foi distribuído, você deve clicar em **Distribuir Conteúdo** no nó **Pacotes de Driver** . Antes que os drivers estejam disponíveis, é necessário atualizar o pacote de driver nos pontos de distribuição.  
-
-     Clique em **OK**.  
-
-###  <a name="BKMK_ManageDriversBootImage"></a> Gerenciar drivers de dispositivo em uma imagem de inicialização  
- É possível adicionar, a imagens de inicialização, drivers de dispositivo do Windows que foram importados no catálogo de driver. Ao adicionar drivers de dispositivo a uma imagem de inicialização, use as seguintes diretrizes:  
-
--   Adicione somente drivers de dispositivo de armazenamento em massa e adaptador de rede a imagens de inicialização, pois outros tipos de drivers geralmente não são necessários. Drivers não obrigatórios aumentam o tamanho das imagens de inicialização desnecessariamente.  
-
--   Adicione somente drivers de dispositivo para o Windows 10 a uma imagem de inicialização, pois a versão necessária do Windows PE baseia-se no Windows 10.  
-
--   Verifique se está usando o driver de dispositivo correto para a arquitetura da imagem de inicialização.  Não adicione um driver de dispositivo x86 a uma imagem de inicialização x64.  
-
- Use o procedimento a seguir para adicionar ou remover drivers de dispositivo em uma imagem de inicialização.  
-
-#### <a name="to-modify-the--device-drivers-associated-with-a-boot-image"></a>Para modificar drivers de dispositivo associados a uma imagem de inicialização  
-
-1.  No console do Configuration Manager, clique em **Biblioteca de Software**.  
-
-2.  No espaço de trabalho **Biblioteca de Software** , expanda **Sistemas Operacionais**e clique em **Drivers**.  
-
-3.  No nó **Drivers** , selecione os drivers de dispositivo que deseja adicionar ao pacote de driver.  
-
-4.  Na guia **Início** , no grupo **Driver** , clique em **Editar**e em **Imagens de Inicialização**.  
-
-5.  Para adicionar um driver de dispositivo, marque a caixa de seleção da imagem de inicialização à qual deseja adicionar os drivers de dispositivo. Para remover um driver de dispositivo, desmarque a caixa de seleção da imagem de inicialização da qual deseja remover o driver de dispositivo.  
-
-6.  Caso não deseje atualizar os pontos de distribuição onde a imagem de inicialização está armazenada, desmarque a caixa de seleção **Atualizar pontos de distribuição ao terminar** . Por padrão, os pontos de distribuição são atualizados quando a imagem de inicialização é atualizada.  
-
-     Clique em **OK** e considere o seguinte:  
-
-    -   Clique em **Sim** na caixa de diálogo para atualizar as imagens de inicialização nos pontos de distribuição. Não é possível usar drivers de dispositivo até que eles sejam distribuídos aos pontos de distribuição. Se você clicar em **Não**, será necessário executar a ação **Atualizar Ponto de Distribuição** antes que a imagem de inicialização contenha os drivers atualizados. Se o pacote de driver nunca foi distribuído, você deve clicar em **Distribuir Conteúdo** no nó **Pacotes de Driver** .  
-
-    -   O Configuration Manager avisará se a arquitetura de um ou mais drivers não corresponder à arquitetura das imagens de inicialização selecionadas. Se elas não corresponderem, clique em **OK** e volte para a página **Detalhes do Driver** para desmarcar os drivers que não correspondem à arquitetura da imagem de inicialização selecionada. Por exemplo, se você selecionar uma imagem de inicialização em base em x64 e x86, todos os drivers devem dar suporte a ambas as arquiteturas. Se você selecionar uma imagem de inicialização com base em x64, todos os drivers devem dar suporte à arquitetura x64.  
+    -   如果一个或多个驱动程序的体系结构与所选的启动映像的体系结构不匹配，则 Configuration Manager 会发出警告。 如果不匹配，请单击“确定”  并返回到  “驱动程序详细信息”页，取消选择与所选启动映像的体系结构不匹配的驱动程序。 例如，如果选择 x64 和 x86 启动映像，则所有驱动程序必须支持这两种体系结构。 如果选择 x64 启动映像，则所有驱动程序必须支持 x64 体系结构。  
 
         > [!NOTE]  
-        >  -   A arquitetura é baseada na arquitetura relatada no .INF do fabricante.  
-        > -   Se um driver relatar que dá suporte a ambas as arquiteturas, você poderá importá-lo para qualquer uma das duas imagens de inicialização.  
+        >  -   该体系结构以制造商提供的 .INF 中所报告的体系结构为基础。  
+        > -   如果驱动程序报告称它支持两种体系结构，则可以将其导入到任一启动映像。  
 
-    -   O Configuration Manager avisará se você adicionar drivers de dispositivo que não são drivers de rede ou de armazenamento a uma imagem de inicialização, pois, na maioria dos casos, eles não são necessários para a imagem de inicialização. Clique em **Sim** para adicionar os drivers à imagem de inicialização ou em **Não** para voltar e modificar sua seleção de driver.  
+    -   如果将不是网络或存储器驱动程序的设备驱动程序添加到启动映像，则 Configuration Manager 会发出警告，因启动映像通常不需要这些驱动程序。 单击  “是”以将驱动程序添加到启动映像，或单击“否”  返回并修改驱动程序选择。  
 
-    -   O Configuration Manager avisará se um ou mais dos drivers selecionados não estiverem assinados digitalmente de maneira correta. Clique em **Sim** para continuar e clique em **Não** para voltar e fazer alterações em sua seleção de driver.  
+    -   如果一个或多个选定的驱动程序未正确进行数字签名，则 Configuration Manager 会发出警告。 单击“是”  继续，单击“否”  返回并对驱动程序选项进行更改。  
 
-7.  Clique em **OK**.  
+8.  完成向导。  
 
-###  <a name="BKMK_DriverActions"></a> Ações adicionais para drivers de dispositivo  
- Você pode executar ações adicionais para gerenciar drivers de dispositivo ao selecionar um ou mais drivers de dispositivo do nó **Drivers** . Essas ações incluem:  
+###  <a name="BKMK_ModifyDriverPackage"></a> 管理驱动程序包中的设备驱动程序  
+ 使用下列过程来修改驱动程序包和启动映像。 要添加或删除设备驱动程序，请在“驱动程序”  节点中找到驱动程序，然后编辑所选驱动程序与之关联的包或启动映像。  
 
-|Ação|Descrição|  
+#### <a name="to-modify-the-device-drivers-in-a-driver-package"></a>若要更改驱动程序包中的设备驱动程序  
+
+1.  在 Configuration Manager 控制台中，单击“软件库” 。  
+
+2.  在“软件库”  工作区中，展开“操作系统” ，然后单击“驱动程序” 。  
+
+3.  在“驱动程序”  节点中，选择要添加到驱动程序包的设备驱动程序。  
+
+4.  在“主页”  选项卡上的“驱动程序”  组中，单击“编辑” ，然后单击“驱动程序包” 。  
+
+5.  要添加设备驱动程序，请选中要向其中添加设备驱动程序的驱动程序包的复选框。 要删除设备驱动程序，请清除要从中删除设备驱动程序的驱动程序包的复选框。  
+
+     如果要添加与驱动程序包关联的设备驱动程序，你可以根据需要通过单击“新建包” 打开“新建驱动程序包”  对话框来创建新包。  
+
+6.  如果已将包分发到分发点，请单击对话框中的“是”  以更新分发点上的启动映像。 在将设备驱动程序分发到分发点之前，将无法使用这些驱动程序。 如果单击“否” ，则必须运行“更新分发点”  操作，启动映像才会包含已更新的驱动程序。 如果从未分发驱动程序包，则必须单击“驱动程序包”  节点中的  “分发内容”。 必须在分发点上更新驱动程序包，才能使用其中的驱动程序。  
+
+     单击" **确定**"。  
+
+###  <a name="BKMK_ManageDriversBootImage"></a> 管理启动映像中的设备驱动程序  
+ 可以将已导入到驱动程序目录的 Windows 设备驱动程序添加到启动映像。 在将设备驱动程序添加到启动映像时，请使用以下准则：  
+
+-   仅将大容量存储和网络适配器设备驱动程序添加到启动映像，因为通常并不需要其他类型的驱动程序。 不需要的驱动程序会不必要地增加启动映像的大小。  
+
+-   仅将适用于 Windows 10 的设备驱动程序添加到启动映像，因为所需的 Windows PE 版本基于 Windows 10。  
+
+-   确保使用与启动映像的体系结构相符的正确设备驱动程序。  请勿将 x86 设备驱动程序添加到 x64 启动映像。  
+
+ 使用下列过程来添加或删除启动映像中的设备驱动程序。  
+
+#### <a name="to-modify-the--device-drivers-associated-with-a-boot-image"></a>若要修改与启动映像关联的设备驱动程序  
+
+1.  在 Configuration Manager 控制台中，单击“软件库” 。  
+
+2.  在“软件库”  工作区中，展开“操作系统” ，然后单击“驱动程序” 。  
+
+3.  在“驱动程序”  节点中，选择要添加到驱动程序包的设备驱动程序。  
+
+4.  在“主页”  选项卡上的“驱动程序”  组中，单击“编辑” ，然后单击“启动映像包” 。  
+
+5.  要添加设备驱动程序，请选中要向其中添加设备驱动程序的启动映像的复选框。 要删除设备驱动程序，请清除要从中删除设备驱动程序的启动映像的复选框。  
+
+6.  如果不希望更新存储启动映像的分发点，请清除“完成后更新分发点”  复选框。 默认情况下，会在更新启动映像后更新分发点。  
+
+     单击“确定”  并考虑以下事项：  
+
+    -   单击对话框中的“是”  以更新分发点上的启动映像。 在将设备驱动程序分发到分发点之前，将无法使用这些驱动程序。 如果单击“否” ，则必须运行“更新分发点”  操作，启动映像才会包含已更新的驱动程序。 如果从未分发驱动程序包，则必须单击“驱动程序包”  节点中的  “分发内容”。  
+
+    -   如果一个或多个驱动程序的体系结构与所选的启动映像的体系结构不匹配，则 Configuration Manager 会发出警告。 如果不匹配，请单击“确定”  并返回到  “驱动程序详细信息”页，取消选择与所选启动映像的体系结构不匹配的驱动程序。 例如，如果选择 x64 和 x86 启动映像，则所有驱动程序必须支持这两种体系结构。 如果选择 x64 启动映像，则所有驱动程序必须支持 x64 体系结构。  
+
+        > [!NOTE]  
+        >  -   该体系结构以制造商提供的 .INF 中所报告的体系结构为基础。  
+        > -   如果驱动程序报告称它支持两种体系结构，则可以将其导入到任一启动映像。  
+
+    -   如果将不是网络或存储器驱动程序的设备驱动程序添加到启动映像，则 Configuration Manager 会发出警告，因启动映像通常不需要这些驱动程序。 单击  “是”以将驱动程序添加到启动映像，或单击“否”  返回并修改驱动程序选择。  
+
+    -   如果一个或多个选定的驱动程序未正确进行数字签名，则 Configuration Manager 会发出警告。 单击“是”  继续，单击“否”  返回并对驱动程序选项进行更改。  
+
+7.  单击" **确定**"。  
+
+###  <a name="BKMK_DriverActions"></a> 设备驱动程序的其他操作  
+ 如果从“驱动程序”  节点中选择一个或多个设备驱动程序，你可以执行其他操作来管理设备驱动程序。 这些操作包括下列各项：  
+
+|操作|说明|  
 |------------|-----------------|  
-|**Categorizar**|Limpa, gerencia ou define uma categoria administrativa para os drivers de dispositivo selecionados.|  
-|**Excluir**|Removes o driver de dispositivo do nó **Drivers** e também remove o driver dos pontos de distribuição associados.|  
-|**Desabilitar**|Proíbe o driver de dispositivo de ser instalado. É possível desabilitar drivers de dispositivo temporariamente para que os computadores cliente e as sequências de tarefas do Configuration Manager não possam instalá-los durante a implantação de sistemas operacionais. **Observação:**  a ação Desabilitar apenas impede os drivers de serem instalados usando a etapa da sequência de tarefas Driver de Aplicação Automática.|  
-|**Habilitar**|Permite que computadores cliente e sequências de tarefas do Configuration Manager instalem o driver de dispositivo durante a implantação do sistema operacional.|  
-|**Moverr**|Move o driver de dispositivo para outra pasta do nó **Drivers** .|  
-|**Propriedades**|Abre a caixa de diálogo **Propriedades** , onde é possível verificar e alterar as propriedades do driver de dispositivo. Por exemplo, é possível alterar o nome e a descrição do driver de dispositivo, ativá-lo e especificar as plataformas em que o driver de dispositivo pode ser executado.|  
+|**分类**|清除、管理或为所选设备驱动程序设置管理类别。|  
+|**删除**|从“驱动程序”  节点中删除设备驱动程序，并还会从关联的分发点中删除驱动程序。|  
+|**禁用**|禁止安装设备驱动程序。 可暂时禁用设备驱动程序，使 Configuration Manager 客户端计算机和任务序列在部署操作系统时无法安装这些设备驱动程序。 **注意：**  “禁用”操作只阻止驱动程序使用“自动应用驱动程序”任务序列步骤进行安装。|  
+|**启用**|让 Configuration Manager 客户端计算机和任务序列在部署操作系统时安装设备驱动程序。|  
+|**移动**|将设备驱动程序移动到“驱动程序”  节点中的另一个文件夹。|  
+|**Properties**|打开“属性”  对话框，你可以在其中查看和更改设备驱动程序的属性。 例如，可以更改设备驱动程序的名称和描述，启用设备驱动程序，以及指定设备驱动程序可以在哪些平台上运行。|  
 
-##  <a name="BKMK_TSDrivers"></a> Usar sequências de tarefas para instalar drivers de dispositivo  
- Use sequências de tarefas para automatizar a forma como o sistema operacional é implantado. Cada etapa na sequência de tarefas pode executar uma ação específica, como instalar um driver de dispositivo. Ao implantar sistemas operacionais, você pode usar as duas etapas de sequência de tarefas a seguir para instalar os drivers de dispositivo:  
+##  <a name="BKMK_TSDrivers"></a> 使用任务序列安装设备驱动程序  
+ 任务序列可用于自动执行部署操作系统的过程。 任务序列中的每个步骤都能执行特定的操作，例如安装设备驱动程序。 在部署操作系统时，可以使用以下两个任务序列步骤来安装设备驱动程序：  
 
--   [Auto Apply Drivers](../understand/task-sequence-steps.md#BKMK_AutoApplyDrivers): essa etapa permite que você combine automaticamente e instale drivers de dispositivo como parte de uma implantação de sistema operacional. Você pode configurar a etapa de sequência de tarefas para instalar somente o driver mais compatível com cada dispositivo de hardware detectado ou especificar que a etapa de sequência de tarefas instale todos os drivers compatíveis com cada dispositivo de hardware detectado, e então deixar que a Instalação do Windows escolha o melhor driver. Além disso, pode especificar uma categoria de drivers de dispositivo para limitar os drivers disponíveis para essa etapa.  
+-   [Auto Apply Drivers](../understand/task-sequence-steps.md#BKMK_AutoApplyDrivers)：此步骤能让你自动匹配和安装作为操作系统部署一部分的设备驱动程序。 可以将此任务序列步骤配置为对于检测到的每个硬件设备仅安装最匹配的驱动程序，或者指定此任务序列步骤为检测到的每个硬件设备安装所有兼容的驱动程序，然后让 Windows 安装程序选择最佳的驱动程序。 此外，可以指定设备驱动程序的类别，以限制可用于此步骤的驱动程序。  
 
--   [Apply Driver Package](../understand/task-sequence-steps.md#BKMK_ApplyDriverPackage): essa etapa permite disponibilizar para a Instalação do Windows todos os drivers de dispositivo de um pacote de driver específico. Nos pacotes de driver especificados, a instalação do Windows busca drivers de dispositivo que são necessários. Ao criar a mídia autônoma, é necessário usar esta etapa para instalar drivers de dispositivo.  
+-   [Apply Driver Package](../understand/task-sequence-steps.md#BKMK_ApplyDriverPackage)此步骤能让你将特定的驱动程序包中的所有设备驱动程序都提供给 Windows 安装程序使用。 在指定的驱动程序包中，Windows 安装程序会搜索所需的设备驱动程序。 创建独立媒体时，必须使用此步骤安装设备驱动程序。  
 
- Ao usar essas etapas de sequência de tarefas, você também pode especificar como os drivers de dispositivo são instalados no computador onde o sistema operacional está sendo implantado. Para obter mais informações, consulte [Gerenciar sequências de tarefas para automatizar tarefas](../deploy-use/manage-task-sequences-to-automate-tasks.md).  
+ 在使用这两个任务序列步骤时，还可以指定如何在部署操作系统的计算机上安装设备驱动程序。 有关详细信息，请参阅[管理任务序列以自动执行任务](../deploy-use/manage-task-sequences-to-automate-tasks.md)。  
 
-##  <a name="BKMK_InstallingDeviceDiriversTS"></a> Usar sequências de tarefas para instalar drivers de dispositivo em computadores  
- Use o procedimento a seguir para instalar drivers de dispositivo como parte da implantação de sistema operacional.  
+##  <a name="BKMK_InstallingDeviceDiriversTS"></a> 使用任务序列在计算机上安装设备驱动程序  
+ 使用下列过程在操作系统部署期间安装设备驱动程序。  
 
-#### <a name="use-a-task-sequence-to-install-device-drivers"></a>Usar uma sequência de tarefas para instalar drivers de dispositivo  
+#### <a name="use-a-task-sequence-to-install-device-drivers"></a>使用任务序列安装设备驱动程序  
 
-1.  No console do Configuration Manager, clique em **Biblioteca de Software**.  
+1.  在 Configuration Manager 控制台中，单击“软件库” 。  
 
-2.  No espaço de trabalho **Biblioteca de Software** , expanda **Sistemas Operacionais**e clique em **Sequências de Tarefas**.  
+2.  在“软件库”  工作区中，展开“操作系统” ，然后单击“任务序列” 。  
 
-3.  No nó **Sequências de Tarefas** , selecione a sequência de tarefas que você deseja modificar para instalar o driver de dispositivo e clique em **Editar**.  
+3.  在“任务序列”  节点中，选择为了安装设备驱动程序而要修改的任务序列，然后单击“编辑” 。  
 
-4.  Mova para o local em que deseja adicionar as etapas do **Driver** , clique em **Adicionar**e selecione **Drivers**.  
+4.  移到要添加“驱动程序”  步骤的位置，单击“添加” ，然后选择“驱动程序” 。  
 
-5.  Adicione a etapa **Drivers de aplicação automática** se deseja que a sequência de tarefas instale todos os drivers de dispositivo ou categorias específicas que estão especificadas. Especifique as opções da etapa na guia **Propriedades** e quaisquer condições da etapa na guia **Opções** .  
+5.  如果希望任务序列安装所有设备驱动程序或者指定的特定类别，则添加“自动应用驱动程序”  步骤。 在“属性”  选项卡上指定步骤的选项，以及在“选项”  选项卡上指定步骤的任何条件。  
 
-     Adicione a etapa **Aplicar pacote de driver** se desejar que a sequência de tarefas instale somente aqueles drivers de dispositivos do pacote especificado. Especifique as opções da etapa na guia **Propriedades** e quaisquer condições da etapa na guia **Opções** .  
+     如果希望任务序列只安装指定包中的那些设备驱动程序，则添加“应用驱动程序包”  步骤。 在“属性”  选项卡上指定步骤的选项，以及在“选项”  选项卡上指定步骤的任何条件。  
 
     > [!IMPORTANT]  
-    >  Também é possível selecionar **Desabilitar esta etapa** na guia **Opções** para desabilitar a etapa a fim de solucionar problemas na sequência de tarefas.  
+    >  你可以在“选项”  选项卡上选择“禁用此步骤”  ，以禁用此步骤，从而解决任务序列的问题。  
 
-6.  Clique em **OK** para salvar a sequência de tarefas.  
+6.  单击“确定”  以保存任务序列。  
 
- Para obter mais informações sobre como criar uma sequência de tarefas para instalar um sistema operacional, consulte [Create a task sequence to install an operating system (Criar uma sequência de tarefas para instalar um sistema operacional)](../deploy-use/create-a-task-sequence-to-install-an-operating-system.md).  
+ 有关创建用于安装操作系统的任务序列的详细信息，请参阅[创建用于安装操作系统的任务序列](../deploy-use/create-a-task-sequence-to-install-an-operating-system.md)。  
 
-##  <a name="BKMK_DriverReports"></a> Relatórios de gerenciamento de drivers  
- Na categoria de relatórios **Gerenciamento de driver** , vários relatórios podem ser usados para determinar informações gerais sobre os drivers de dispositivo no catálogo de driver. Para obter mais informações sobre relatórios, consulte [Relatórios](../../core/servers/manage/reporting.md).
-
+##  <a name="BKMK_DriverReports"></a> 驱动程序管理报表  
+ 通过使用“驱动程序管理”  报表类别中的几个报表，可以确定有关驱动程序目录中的设备驱动程序的常规信息。 有关报表的详细信息，请参阅[报表](../../core/servers/manage/reporting.md)。

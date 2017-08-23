@@ -1,798 +1,791 @@
 ---
-title: "Lista de relatórios | Microsoft Docs"
-description: "Veja uma lista de relatórios que são fornecidos com o Configuration Manager. Os relatórios aparecem em várias categorias."
+title: "报表列表 | Microsoft Docs"
+description: "查看 Configuration Manager 提供的报表列表。 报表分为各种类别。"
 ms.custom: na
 ms.date: 10/06/2016
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
-ms.technology:
-- configmgr-other
+ms.technology: configmgr-other
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: b7332ed3-8003-454b-bb12-1fdf8721425c
-caps.latest.revision: 10
-caps.handback.revision: 0
+caps.latest.revision: "10"
+caps.handback.revision: "0"
 author: Dougeby
 ms.author: dougeby
 manager: angrobe
-translationtype: Human Translation
-ms.sourcegitcommit: 10b1010ccbf3889c58c55b87e70b354559243c90
 ms.openlocfilehash: 1480c38a6a3afef76b2e8759eaafd47d28f978f4
-
-
+ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
+ms.translationtype: HT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 08/07/2017
 ---
-# <a name="list-of-reports-in-system-center-configuration-manager"></a>Lista de relatórios no System Center Configuration Manager
+# <a name="list-of-reports-in-system-center-configuration-manager"></a>System Center Configuration Manager 中的报表列表
 
-*Aplica-se a: System Center Configuration Manager (Branch Atual)*
+*适用范围：System Center Configuration Manager (Current Branch)*
 
-Vários relatórios internos são fornecidos com o System Center Configuration Manager, que abrangem muitas das tarefas de relatório que você pode desejar executar. Você também pode usar as instruções SQL nestes relatórios para ajudá-lo a escrever seus próprios relatórios. Use as informações contidas neste tópico para saber mais sobre os relatórios fornecidos com o Configuration Manager.  
+System Center Configuration Manager 提供许多内置报表，其中包含可能需要执行的许多报告任务。 你也可以在这些报表中使用 SQL 语句，以帮助编制自己的报表。 请参见本主题中的信息，了解 Configuration Manager 提供的报表。  
 
-## <a name="list-of-built-in-configuration-manager-reports"></a>Lista de relatórios internos do Configuration Manager  
- Os relatórios a seguir estão incluídos no Configuration Manager. Os relatórios aparecem em várias categorias.  
+## <a name="list-of-built-in-configuration-manager-reports"></a>Configuration Manager 内置报表列表  
+ Configuration Manager 包括以下报表。 报表分为各种类别。  
 
-### <a name="administrative-security"></a>Segurança administrativa  
- Os relatórios a seguir são listados na categoria **Segurança administrativa** .  
+### <a name="administrative-security"></a>管理安全  
+ 以下报表在“管理安全”  类别下列出。  
 
-|Nome do relatório|Descrição|  
+|报告名称|描述|  
 |-----------------|-----------------|  
-|**Log de atividade de administração**|Exibe um registro das alterações administrativas feitas para usuários administrativos, funções de segurança, escopos de segurança e coleções.|  
-|**Atribuições de segurança de usuários administrativos**|Exibe os usuários administrativos, suas funções de segurança associadas e os escopos de segurança associados a cada função de segurança de cada usuário.|  
-|**Objetos protegidos por um único escopo de segurança**|Exibe os objetos que são protegidos por um escopo de segurança especificado e que são atribuídos a somente esse escopo de segurança. Este relatório não exibe os objetos associados a mais de um escopo de segurança.|  
-|**Segurança para um objeto específico ou vários objetos do Configuration Manager**|Exibe os objetos protegíveis, os escopos de segurança associados aos objetos e quais usuários administrativos têm direitos aos objetos.|  
-|**Resumo das funções de segurança**|Exibe as funções de segurança e os administradores do Configuration Manager associados a cada função.|  
-|**Resumo dos escopos de segurança**|Exibe os escopos de segurança, os usuários administrativos do Configuration Manager e os grupos de segurança associados a cada escopo.|  
+|**管理活动日志**|显示对管理用户、安全角色、安全作用域和集合所做的管理更改的记录。|  
+|**管理用户安全分配**|显示管理用户、这些用户的关联安全角色，以及与每个用户的每个安全角色关联的安全作用域。|  
+|**受单一安全作用域保护的对象**|显示受指定安全作用域保护的对象和仅分配到该安全作用域的对象。 此报表不显示与多个安全作用域关联的对象。|  
+|**特定或多个 Configuration Manager 对象的安全性**|显示安全对象、与这些对象关联的安全作用域，以及对对象拥有权限的管理用户。|  
+|**安全角色摘要**|显示安全角色以及与每个角色关联的 Configuration Manager 管理员。|  
+|**安全作用域摘要**|显示安全作用域以及与每个作用域关联的 Configuration Manager 管理用户和安全组。|  
 
-### <a name="alerts"></a>Alertas  
+### <a name="alerts"></a>警报  
 
-|Nome do relatório|Descrição|  
+|报告名称|描述|  
 |-----------------|-----------------|  
-|**Scorecard de alerta**|Exibe um resumo de todos os alertas adiados que foram gerados entre as datas de início e de término especificadas.|  
-|**Alertas Gerados com Mais Frequência**|Exibe um resumo dos alertas que foram gerados com mais frequência a partir da data de hoje até a data especificada para a área de recurso especificada.|  
+|**警报记分卡**|显示在指定的开始和完成日期之间生成的所有已推迟警报的摘要。|  
+|**最常生成的警报**|显示指定功能区域中指定日期到今天之间最常生成的警报的摘要。|  
 
-### <a name="asset-intelligence"></a>Asset Intelligence  
+### <a name="asset-intelligence"></a>资产智能  
 
-|Nome do relatório|Descrição|  
+|报告名称|描述|  
 |-----------------|-----------------|  
-|**Hardware 01A – Resumo dos computadores em uma coleção específica**|Exibe uma exibição de resumo do Asset Intelligence de computadores em uma coleção especificada.|  
-|**Hardware 03A – Usuários primários de computador**|Exibe os usuários e a contagem de computadores em que eles são o usuário primário.|  
-|**Hardware 03B – Computadores para um usuário de console primário específico**|Exibe todos os computadores dos quais um usuário especificado é o usuário primário do console.|  
-|**Hardware 04A – Computadores com vários usuários (compartilhados)**|Exibe os computadores que não têm um usuário primário, pois nenhum usuário tem uma % de tempo de logon no console maior que 66%.|  
-|**Hardware 05A – Usuários do console em um computador específico**|Exibe todos os usuários do console em um computador especificado.|  
-|**Hardware 06A – Computadores para os quais não foi possível determinar os usuários do console**|Ajuda os usuários administrativos a identificar os computadores que precisam ter o registro em log de segurança ativado.|  
-|**Hardware 07A – Dispositivos USB por fabricante**|Exibe os dispositivos USB, agrupados por fabricante.|  
-|**Hardware 07B – Dispositivos USB por fabricante e descrição**|Exibe os dispositivos USB, agrupados por fabricante e descrição.|  
-|**Hardware 07C – Computadores com um dispositivo USB específico**|Exibe todos os computadores com um dispositivo USB especificado.|  
-|**Hardware 07D – Dispositivos USB em um computador específico**|Exibe todos os dispositivos USB em um computador especificado.|  
-|**Hardware 08A – Hardware que não está pronto para uma atualização de software**|Exibe o hardware que não atende aos requisitos mínimos de hardware.|  
-|**Hardware 09A – Pesquisar computadores**|Exibe um resumo do gerenciador de ativos de computadores que correspondem a filtros de palavra-chave no nome do computador, site do Configuration Manager, domínio, principal usuário do console, sistema operacional, fabricante ou modelo.|  
-|**Hardware 10A – Computadores em uma coleção especificada que foi alterada durante um período especificado**|Exibe uma lista de computadores em uma coleção especificada em que uma classe de hardware foi alterada durante um período de tempo especificado.|  
-|**Hardware 10B – Alterações em um computador especificado em um determinado período**|Exibe as classes que foram alteradas em um computador especificado em um período de tempo especificado.|  
-|**Licença 01A – Razão de Licença por Volume da Microsoft para declarações de licença da Microsoft**|Exibe um inventário de todos os títulos de software da Microsoft disponíveis no programa de Licenciamento por Volume da Microsoft.|  
-|**Licença 01B – Item de razão de Licença por Volume da Microsoft por canal de vendas**|Identifica e exibe o canal de vendas para o software de Licença por Volume da Microsoft inventariado.|  
-|**Licença 01C – Computadores com um item de razão específico de Licença por Volume da Microsoft e canal de vendas**|Identifica e exibe os computadores que têm um item especificado de razão de Licença por Volume da Microsoft.|  
-|**License 01D – Produtos de razão de Licença por Volume da Microsoft em um computador específico**|Identifica e exibe todos os itens de razão de Licença por Volume da Microsoft em um computador especificado.|  
-|**Licença 02A – Contagem de licenças perto do vencimento por intervalos de tempo**|Exibe uma contagem de licenças perto do vencimento por um intervalo de tempo especificado. Os produtos exibidos são aqueles que têm suas licenças gerenciadas pelo Serviço de Licenciamento de Software.|  
-|**Licença 02B – Computadores com licenças perto do vencimento**|Exibe os computadores especificados com licenças perto do vencimento|  
-|**Licença 02C – Informações de licença em um computador específico**|Exibe os produtos em um computador especificado que têm suas licenças gerenciadas pelo Serviço de Licenciamento de Software.|  
-|**Licença 03A – Contagem de licenças por status de licença**|Exibe os produtos, por status de licença, que têm suas licenças gerenciadas pelo Serviço de Licenciamento de Software.|  
-|**Licença 03B – Computadores com um status de licença específico**|Exibe os produtos com um status de licença especificado, cujas licenças são gerenciadas pelo Serviço de Licenciamento de Software.|  
-|**Licença 04A – Contagem de produtos gerenciados pelo licenciamento de software**|Exibe uma contagem dos produtos que têm suas licenças gerenciadas pelo Serviço de Licenciamento de Software.|  
-|**Licença 04B – Computadores com um Produto Específico Gerenciado por Serviço de Licenciamento de Software**|Exibe os computadores, gerenciados pelo Serviço de Licenciamento de Software, que contêm um produto especificado.|  
-|**Licença 05A – Computadores que fornecem Serviço de Gerenciamento de Chaves**|Exibe os computadores que atuam como Servidores de Gerenciamento de Chaves.|  
-|**Licença 06A – Contagens de processador de produtos licenciados por processador**|Exibe o número de processadores em computadores que usam os produtos da Microsoft que dão suporte ao licenciamento por processador.|  
-|**Licença 06B – Computadores com um produto específico que dá suporte ao licenciamento por processador**|Exibe uma lista de computadores em que um produto da Microsoft especificado que dá suporte ao licenciamento por processador está instalado.|  
-|**Licença 14A – Relatório de reconciliação de Licenciamento por Volume da Microsoft**|Exibe a reconciliação de licenças de software adquiridas por meio do Contrato de Licença por Volume da Microsoft e a contagem real de inventário.|  
-|**Licença 14B – Lista de inventário de software da Microsoft não encontrado no MVLS**|Este relatório exibe os títulos de software da Microsoft em uso que não são encontrados no Contrato de Licença por Volume da Microsoft.|  
-|**Licença 15A – Relatório de reconciliação de licença geral**|Exibe a reconciliação de licenças de software geral adquiridas e a contagem real de inventário.|  
-|**Licença 15B – Relatório de reconciliação de licença geral por computador**|Exibe os computadores que instalaram o produto licenciado com uma versão especificada.|  
-|**Software 01A – Resumo de software instalado em uma coleção específica**|Exibe um resumo do software instalado ordenado pelo número de instâncias encontradas no inventário.|  
-|**Software 02A – Famílias de produtos para uma coleção específica**|Exibe as famílias de produtos e a contagem de software na família para uma coleção especificada.|  
-|**Software 02B – Categorias de produtos para uma família de produtos específica**|Exibe as categorias de produtos em uma família de produto especificada e a contagem de software na categoria.|  
-|**Software 02C – Software em uma família e categoria de produtos específicas**|Exibe todo o software que está na família e categoria de produtos especificadas.|  
-|**Software 02D – Computadores com software específico instalado**|Exibe todos os computadores com o software especificado instalado.|  
-|**Software 02E – Software instalado em um computador específico**|Exibe todo o software instalado em um computador especificado.|  
-|**Software 03A – Software não categorizado**|Exibe o software que é categorizado como desconhecido ou sem nenhuma categorização.|  
-|**Software 04A – Software configurado para execução automática nos computadores**|Exibe uma lista de software configurado para execução automática nos computadores.|  
-|**Software 04B – Computadores com software específico configurado para execução automática**|Exibe todos os computadores com o software especificado configurado para execução automática.|  
-|**Software 04C – Software configurado para execução automática em um computador específico**|Exibe o software instalado configurado para execução automática em um computador especificado.|  
-|**Software 05A – Objetos Auxiliares de Navegador**|Exibe os Objetos Auxiliares de Navegador instalados nos computadores em uma coleção especificada.|  
-|**Software 05B – Computadores com um Objeto Auxiliar de Navegador específico**|Exibe todos os computadores com um Objeto Auxiliar de Navegador especificado.|  
-|**Software 05C – Objetos Auxiliares de Navegador em um computador específico**|Exibe todos os Objetos Auxiliares de Navegador no computador especificado.|  
-|**Software 06A – Pesquisar software instalado**|Este relatório fornece um resumo do software instalado, ordenado pelo número de instâncias com base em critérios de pesquisa para o nome do produto, fornecedor ou versão.|  
-|**Software 06B – Software por nome do produto**|Exibe um resumo do software instalado, ordenado pelo número de instâncias com base em um nome de produto especificado.|  
-|**Software 07A – Programas executáveis usados recentemente pela contagem de computadores**|Exibe os programas executáveis que foram usados recentemente com uma contagem de computadores nos quais eles foram usados. A medição de software deve estar habilitada para este site para a exibição deste relatório.|  
-|**Software 07B – Computadores que usaram recentemente um programa executável especificado**|Exibe os computadores nos quais um programa executável especificado foi usado recentemente ao habilitar a configuração do cliente de medição de software.|  
-|**Software 07C – Programas executáveis usados recentemente em um computador especificado**|Exibe os arquivos executáveis que foram usados recentemente em um computador especificado ao habilitar a configuração do cliente de medição de software.|  
-|**Software 08A – Programas executáveis usados recentemente pela contagem de usuários**|Exibe os programas executáveis que foram usados recentemente com uma contagem de usuários que os usaram mais recentemente ao habilitar o configuração do cliente de medição de software.|  
-|**Software 08B – Usuários que usaram recentemente um programa executável especificado**|Exibe os usuários que usaram mais recentemente um programa executável especificado ao habilitar a configuração do cliente de medição de software.|  
-|**Software 08C – Programas executáveis usados recentemente por um usuário especificado**|Exibe os programas executáveis que foram usados recentemente por um usuário especificado ao habilitar a configuração do cliente de medição de software.|  
-|**Software 09A – Software usado raramente**|Exibe os títulos de software que não foram usados durante um período de tempo especificado.|  
-|**Software 09B – Computadores com software usado raramente instalado**|Exibe os computadores que têm o software instalado que não foi usado por um período de tempo especificado. O período de tempo especificado se baseia no valor especificado no relatório “Software 09A - Software usado raramente”.|  
-|**Software 10A – Títulos de software com vários rótulos personalizados específicos definidos**|Exibe os títulos de software com base na correspondência de todos os critérios de rótulo personalizado especificados. Até três rótulos personalizados podem ser selecionados para refinar a pesquisa de um título de software.|  
-|**Software 10B – Computadores com um título de software com rótulo personalizado específico instalado**|Exibe todos os computadores nesta coleção que têm o título de software com rótulo personalizado especificado instalado.|  
-|**Software 11A – Títulos de software com um rótulo personalizado específico definido**|Exibe os títulos de software com base na correspondência de pelo menos um dos critérios de rótulo personalizado especificados.|  
-|**Software 12A – Títulos de software sem um rótulo personalizado**|Exibe todos os títulos de software que não têm um rótulo personalizado definido.|  
-|**Software 14A – Pesquisar software habilitado para marca de identificação de software**|Exibe uma contagem de software instalado com uma marca de identificação de software habilitada.|  
-|**Software 14B – Computadores com software habilitado para marca de identificação de software específico instalado**|Exibe todos os computadores que instalaram o software com uma marca de identificação de software especificado habilitada.|  
-|**Software 14C – Software habilitado para marca de identificação de software instalado em um computador específico**|Exibe todo o software instalado com uma marca de identificação de software especificado habilitada em um computador especificado.|  
+|**硬件 01A - 特定集合中的计算机摘要**|显示所指定集合中计算机的“资产智能”摘要视图。|  
+|**硬件 03A - 计算机主要用户**|显示用户以及这些用户在其上为主要用户的计算机的计数。|  
+|**硬件 03B - 特定主控制台用户的计算机**|显示指定用户为其主控制台用户的所有计算机。|  
+|**硬件 04A - 具有多个用户（共享）的计算机**|显示由于没有一个用户的控制台登录时间百分比超过 66% 而没有主用户的计算机。|  
+|**硬件 05A - 特定计算机上的控制台用户**|显示指定计算机上的所有控制台用户。|  
+|**硬件 06A - 无法确定其控制台用户的计算机**|帮助管理用户识别需要开启安全日志记录的计算机。|  
+|**硬件 07A - 按制造商列出的 USB 设备**|显示按制造商分组的 USB 设备。|  
+|**硬件 07B - 按制造商和描述列出的 USB 设备**|显示按制造商和描述分组的 USB 设备。|  
+|**硬件 07C - 具有特定 USB 设备的计算机**|显示具有指定 USB 设备的所有计算机。|  
+|**硬件 07D - 特定计算机上的 USB 设备**|显示指定计算机上的所有 USB 设备。|  
+|**硬件 08A - 尚未就绪进行软件升级的硬件**|显示不满足最低硬件要求的硬件。|  
+|**硬件 09A - 搜索计算机**|显示与关键字筛选器中的计算机名称、Configuration Manager 站点、域、前几位控制台用户、操作系统、制造商或型号相匹配的计算机的资产管理员摘要。|  
+|**硬件 10A - 指定集合内在指定时间范围内已更改的计算机**|显示指定集合内其硬件类在指定时间范围内已更改的计算机的列表。|  
+|**硬件 10B - 指定时间范围内指定计算机上的更改**|显示指定时间范围内在指定计算机上已更改的类。|  
+|**许可证 01A - Microsoft 许可证声明的 Microsoft 批量许可证分类帐**|显示在 Microsoft 批量许可计划中可用的所有 Microsoft 软件标题的清单。|  
+|**许可证 01B - 按销售渠道列出的 Microsoft 批量许可证分类帐项目**|标识并显示列出清单的  Microsoft 批量许可证软件的销售渠道。|  
+|**许可证 01C - 具有特定 Microsoft 批量许可证分类帐项目和销售渠道的计算机**|标识并显示具有 Microsoft 批量许可证分类帐中指定项目的计算机。|  
+|**许可证 01D - 特定计算机上的 Microsoft 批量许可证分类帐产品**|标识并显示指定计算机上的所有 Microsoft 批量许可证分类帐项目。|  
+|**许可证 02A - 按时间范围列出的即将过期的许可证计数**|显示按指定时间范围列出的即将过期的许可证计数。 显示的产品为由软件授权服务管理其许可证的产品。|  
+|**许可证 02B - 许可证即将过期的计算机**|显示许可证即将过期的指定计算机。|  
+|**许可证 02C - 特定计算机上的许可证信息**|显示指定计算机上由软件授权服务管理其许可证的产品。|  
+|**许可证 03A - 按许可证状态列出的许可证计数**|显示按许可证状态列出的由软件授权服务管理其许可证的产品。|  
+|**许可证 03B - 处于特定许可证状态的计算机**|显示处于特定许可证状态的由软件授权服务管理其许可证的产品。|  
+|**许可证 04A - 由软件授权管理的产品计数**|显示由软件授权服务管理其许可证的产品计数。|  
+|**许可证 04B - 具有由软件授权服务管理的特定产品的计算机**|显示由软件授权服务管理的包含指定产品的计算机。|  
+|**许可证 05A - 提供密钥管理服务的计算机**|显示用作密钥管理服务器的计算机。|  
+|**许可证 06A - 每处理器许可产品的处理器计数**|显示使用支持每处理器授权的 Microsoft 产品的计算机上的处理器数目。|  
+|**许可证 06B - 具有支持每处理器许可的特定产品的计算机**|显示安装有支持每处理器授权的指定 Microsoft 产品的计算机的列表。|  
+|**许可证 14A - Microsoft 批量许可对帐报表**|显示通过 Microsoft 批量许可协议购买的软件许可证数与实际库存计数的对帐。|  
+|**许可证 14B - 未在 MVLS 中找到的 Microsoft 软件清单的列表**|此报表显示使用的但未在 Microsoft 批量许可协议中找到的 Microsoft 软件标题。|  
+|**许可证 15A - 常规许可证对帐报表**|显示购买的常规软件许可证数与实际库存计数的对帐。|  
+|**许可证 15B - 按计算机列出的常规许可证对帐报表**|显示安装指定版本的许可产品的计算机。|  
+|**软件 01A - 特定集合中的已安装软件摘要**|显示按清单中找到的实例数目排序的已安装软件的摘要。|  
+|**软件 02A - 特定集合的产品系列**|显示指定集合的产品系列以及这些系列中的软件计数。|  
+|**软件 02B - 特定产品系列的产品类别**|显示指定产品系列中的产品类别以及这些类别中的软件计数。|  
+|**软件 02C - 特定产品系列和类别中的软件**|显示特定产品系列和类别中的所有软件。|  
+|**软件 02D - 安装有特定软件的计算机**|显示安装有指定软件的所有计算机。|  
+|**软件 02E - 特定计算机上的已安装软件**|显示指定计算机上安装的所有软件。|  
+|**软件 03A - 未分类的软件**|显示未被分类为未知或未分类的软件。|  
+|**软件 04A - 配置为在计算机上自动运行的软件**|显示配置为在计算机上自动运行的软件的列表。|  
+|**软件 04B - 具有配置为在计算机上自动运行的特定软件的计算机**|显示具有配置为在计算机上自动运行的指定软件的所有计算机。|  
+|**软件 04C - 配置为在特定计算机上自动运行的软件**|显示配置为在指定计算机上自动运行的已安装软件。|  
+|**软件 05A - 浏览器帮助程序对象**|显示指定集合中的计算机上安装的浏览器帮助程序对象。|  
+|**软件 05B - 具有特定浏览器帮助程序对象的计算机**|显示具有特定浏览器帮助程序对象的所有计算机。|  
+|**软件 05C - 特定计算机上的浏览器帮助程序对象**|显示特定计算机上的所有浏览器帮助程序对象。|  
+|**软件 06A - 已安装软件的搜索结果**|此报表提供按基于产品名称、发布者或版本搜索条件搜索到的实例数目排序的已安装软件的摘要。|  
+|**软件 06B - 按产品名称列出的软件**|显示按基于指定产品名称的实例数目排序的已安装软件的摘要。|  
+|**软件 07A - 按计算机计数列出的最近使用过的可执行程序**|显示最近使用过的可执行程序，以及曾使用过这些程序的计算机计数。 必须为此站点启用软件计数才能查看此报表。|  
+|**软件 07B - 最近使用过指定的可执行程序的计算机**|当启用软件计数客户端设置时，显示最近使用过指定可执行程序的计算机。|  
+|**软件 07C - 指定计算机上最近使用过的可执行程序**|当启用软件计数客户端设置时，显示最近在指定计算机上使用过的可执行文件。|  
+|**软件 08A - 按用户计数列出的最近使用过的可执行程序**|当启用软件计数客户端设置时，显示最近使用过的可执行程序以及最近使用过这些程序的用户计数。|  
+|**软件 08B - 最近使用过指定可执行程序的用户**|当启用软件计数客户端设置时，显示最近使用过指定可执行程序的用户。|  
+|**软件 08C - 指定用户最近使用过的可执行程序**|当启用软件计数客户端设置时，显示指定用户最近使用过的可执行程序。|  
+|**软件 09A - 不常用软件**|显示在指定时间段内未使用的软件标题。|  
+|**软件 09B - 安装有不常用软件的计算机**|显示安装了在指定时间段内未使用的软件的计算机。 指定的时间段基于“软件 09A - 不常用软件”报表中指定的值。|  
+|**软件 10A - 定义了多个特定自定义标签的软件标题**|显示与所有指定自定义标签条件匹配的软件标题。 最多可选择三个自定义标签以完善软件标题搜索。|  
+|**软件 10B - 安装有特定自定义标签软件标题的计算机**|显示此集合中安装了具有指定自定义标签的软件标题的所有计算机。|  
+|**软件 11A - 定义了特定自定义标签的软件标题**|显示与至少一个指定自定义标签条件匹配的软件标题。|  
+|**软件 12A - 没有自定义标签的软件标题**|显示未定义自定义标签的所有软件标题。|  
+|**软件 14A - 启用了软件标识标记的软件的搜索结果**|显示启用了软件标识标志的已安装软件的计数。|  
+|**软件 14B - 安装有启用了特定软件标识标记的软件的计算机**|显示安装有启用了指定软件标识标志的软件的所有计算机。|  
+|**软件 14C - 特定计算机上已安装的启用了软件标识标记的软件**|显示在指定计算机上启用了指定软件标识标志的所有已安装软件。|  
 
-### <a name="client-push"></a>Push do cliente  
+### <a name="client-push"></a>客户端推送  
 
-|Nome do relatório|Descrição|  
+|报告名称|描述|  
 |-----------------|-----------------|  
-|**Detalhes do status da instalação por push de cliente**|Exibe informações sobre o processo de instalação do cliente por push para todos os sites.|  
-|**Detalhes do status de instalação por push do cliente para um site especificado**|Exibe informações sobre o processo de instalação do cliente por push para um site especificado.|  
-|**Resumo do status da instalação por push do cliente**|Exibe uma exibição resumida do status de instalação do cliente por push para todos os sites.|  
-|**Resumo do status da instalação por push do cliente para um site especificado**|Exibe uma exibição resumida do status de instalação do cliente por push para um site especificado.|  
+|**客户端请求安装状态详细信息**|显示有关所有站点的客户端推送安装进程的详细信息。|  
+|**指定站点的客户端请求安装状态详细信息**|显示有关指定站点的客户端推送安装进程的详细信息。|  
+|**客户端请求安装状态摘要**|显示所有站点的客户端推送安装状态的摘要视图。|  
+|**指定站点的客户端请求安装状态摘要**|显示指定站点的客户端推送安装状态的摘要视图。|  
 
-### <a name="client-status"></a>Status do cliente  
+### <a name="client-status"></a>客户端状态  
 
-|Nome do relatório|Descrição|  
+|报告名称|描述|  
 |-----------------|-----------------|  
-|**Detalhes da correção do cliente**|Exibe os detalhes das ações de correção do cliente para uma coleção especificada.|  
-|**Resumo da correção do cliente**|Exibe um resumo das ações de correção do cliente para uma coleção especificada.|  
-|**Histórico do status do cliente**|Exibe uma exibição histórica do status geral do cliente no site.|  
-|**Resumo do status do cliente**|Exibe os resultados da verificação de cliente de clientes ativos para uma determinada coleção.|  
-|**Hora do cliente para solicitar política**|Exibe o percentual de clientes que solicitaram a política pelo menos uma vez nos últimos 30 dias. Cada dia representa um percentual do total de clientes que solicitaram a política desde o primeiro dia no ciclo.|  
-|**Detalhes de clientes com falha na verificação de cliente**|Exibe detalhes sobre os clientes com falha na verificação de cliente para uma coleção especificada.|  
-|**Detalhes de clientes inativos**|Exibe uma lista detalhada de clientes inativos para uma determinada coleção.|  
+|**客户端修正详细信息**|显示指定集合的客户端修正操作的详细信息。|  
+|**客户端修正摘要**|显示指定集合的客户端修正操作的摘要。|  
+|**客户端状态历史记录**|显示站点中总体客户端状态的历史视图。|  
+|**客户端状态摘要**|显示给定集合的活动客户端的客户端检查结果。|  
+|**客户端请求策略的时间**|显示在过去的 30 天内至少请求一次策略的客户端的百分比。 每天都会呈现自周期的第一天起请求过策略的总客户端数的百分比。|  
+|**未通过客户端检查的客户端详细信息**|显示有关指定集合的未通过客户端检查的客户端的详细信息。|  
+|**非活动客户端的详细信息**|显示给定集合的非活动客户端的详细列表。|  
 
-### <a name="company-resource-access"></a>Acesso de recursos da empresa  
+### <a name="company-resource-access"></a>公司资源访问  
 
-|Nome do relatório|Descrição|  
+|报告名称|描述|  
 |-----------------|-----------------|  
-|**Histórico de emissão de certificado**|Exibe o histórico de certificados que foram emitidos pelo ponto de registro de certificado para usuários e dispositivos para o intervalo de datas especificado.|  
-|**Lista de ativos por status de emissão de certificado**|Exibe os dispositivos ou usuários em um estado de emissão do certificado especificado após a avaliação de um perfil de certificado especificado.|  
-|**Lista os ativos com certificados que estão se aproximando da expiração**|Exibe os dispositivos ou usuários com certificados que expiram na data especificada ou antes dela.|  
+|**证书颁发历史记录**|显示指定日期范围证书注册点颁发给用户和设备的证书的历史记录。|  
+|**按证书颁发状态列出的资产的列表**|显示按照指定证书配置文件的评估处于指定证书颁发状态的设备或用户。|  
+|**证书即将过期的资产列表**|显示证书在指定日期或早于指定日期到期的设备或用户。|  
 
-### <a name="compliance-and-settings-management"></a>Gerenciamento de Conformidade e Configurações  
+### <a name="compliance-and-settings-management"></a>符合性和设置管理  
 
-|Nome do relatório|Descrição|  
+|报告名称|描述|  
 |-----------------|-----------------|  
-|**Histórico de conformidade de uma linha de base de configuração**|Exibe o histórico das alterações em conformidade de uma linha de base de configuração para o intervalo de datas especificado.|  
-|**Histórico de conformidade de um item de configuração**|Exibe o histórico das alterações em conformidade de um item de configuração para o intervalo de datas especificado.|  
-|**Detalhes das regras compatíveis de itens de configuração em uma linha de base de configuração para um ativo**|Exibe informações sobre as regras foram avaliadas como compatíveis para um item de configuração especificado, para um dispositivo ou usuário especificado.|  
-|**Detalhes das regras conflitantes dos itens de configuração em uma linha de base de configuração para um ativo**|Exibe informações sobre as regras em um item de configuração que foi implantado em um usuário ou dispositivo especificado que entram em conflito com outras regras contidas no mesmo ou em outro item de configuração implantado.|  
-|**Detalhes de erros de itens de configuração em uma linha de base de configuração para um ativo**|Exibe informações sobre os erros gerados por um item de configuração especificado para um dispositivo ou usuário especificado.|  
-|**Detalhes de regras não compatíveis de itens de configuração em uma linha de base de configuração para um ativo**|Exibe informações sobre as regras que foram avaliadas como não compatíveis para um item de configuração especificado, para um dispositivo ou usuário especificado.|  
-|**Detalhes das regras corrigidas de itens de configuração em uma linha de base de configuração para um ativo**|Exibe informações sobre as regras que foram corrigidas por um item de configuração especificado para um dispositivo ou usuário especificado.|  
-|**Lista de ativos por estado de conformidade para um item de configuração em uma linha de base de configuração**|Exibe os dispositivos ou usuários em um estado de conformidade especificado após a avaliação de um item de configuração especificado.|  
-|**Lista de ativos por estado de conformidade para uma linha de base de configuração**|Exibe os dispositivos ou usuários em um estado de conformidade especificado após a avaliação de uma linha de base de configuração especificada.|  
-|**Lista de regras conflitantes com uma regra especificada para um ativo**|Exibe uma lista de regras que entram em conflito com uma regra especificada para um item de configuração implantado em um dispositivo especificado.|  
-|**Lista de ativos desconhecidos para uma linha de base de configuração**|Exibe uma lista de dispositivos ou usuários que ainda não relataram dados de conformidade para uma linha de base de configuração especificada.|  
-|**Lista de ativos desconhecidos para um item de configuração**|Exibe uma lista de dispositivos ou usuários que ainda não relataram dados de conformidade para um item de configuração especificado.|  
-|**Resumo de regras e erros de itens de configuração em uma linha de base de configuração para um ativo**|Exibe um resumo do estado de conformidade de regras e de quaisquer erros de configuração para um item de configuração especificado implantado em um dispositivo ou usuário especificado.|  
-|**Conformidade de resumo por linha de base de configuração**|Exibe um resumo da conformidade geral das linhas de base de configuração implantadas na hierarquia.|  
-|**Conformidade de resumo por itens de configuração para uma linha de base de configuração**|Exibe um resumo da conformidade de itens de configuração em uma linha de base de configuração especificada.|  
-|**Resumo da conformidade por políticas de configuração**|Exibe um resumo da conformidade das políticas de configuração.|  
-|**Conformidade de resumo de uma linha de base de configuração para uma coleção**|Exibe um resumo da conformidade geral de uma linha de base de configuração especificada implantada em uma coleção especificada.|  
-|**Lista de Aplicativos e Dispositivos não compatíveis com um usuário específico**|Exibe informações sobre usuários e dispositivos que têm aplicativos instalados que não são compatíveis com uma política especificada.|  
-|**Resumo de Usuários com Aplicativos Não Compatíveis**|Exibe informações sobre os usuários que têm aplicativos instalados que não são compatíveis com uma política especificada.|  
-|**Aceitação dos Termos e Condições**|Exibe itens de Termos e Condições e a versão aceita por usuário.|  
+|**配置基线的符合性历史记录**|显示符合指定日期范围的配置基线的更改历史记录。|  
+|**配置项目的符合性历史记录**|显示符合指定日期范围的配置项目的更改历史记录。|  
+|**资产配置基线中配置项目的符合规则详细信息**|显示有关评估为符合指定设备或用户的指定配置项目的规则的信息。|  
+|**资产配置基线中配置项目的冲突规则详细信息**|显示配置项目中已部署到指定用户或设备，但与同一个或另一个已部署配置项目中包含的其他规则相冲突的规则的相关信息。|  
+|**资产配置基线中配置项目的错误详细信息**|显示有关指定设备或用户的指定配置项目生成的错误的信息。|  
+|**资产配置基线中配置项目的不符合规则详细信息**|显示有关评估为不符合指定设备或用户的指定配置项目的规则的信息。|  
+|**资产配置基线中配置项目的修正规则详细信息**|显示有关指定设备或用户的指定配置项目修正的规则的信息。|  
+|**按配置基线中配置项目的符合性状态列出的资产列表**|显示按照指定配置项目的评估处于指定符合性状态的设备或用户。|  
+|**按配置基线的符合性状态列出的资产列表**|显示按照指定配置基线的评估处于指定符合性状态的设备或用户。|  
+|**与资产的指定规则相冲突的规则的列表**|显示与部署到指定设备的配置项目的指定规则相冲突的规则的列表。|  
+|**配置基线的未知资产列表**|显示尚未针对指定配置基线报告任何符合性数据的设备或用户的列表。|  
+|**配置项目的未知资产列表**|显示尚未针对指定配置项目报告任何符合性数据的设备或用户的列表。|  
+|**资产配置基线中配置项目的规则和错误摘要**|显示规则的符合性状态以及部署到指定设备或用户的指定配置项目的任何设置错误的摘要。|  
+|**按配置基线列出的符合性摘要**|显示层次结构中已部署配置基线的总体符合性摘要。|  
+|**按配置基线的配置项目列出的符合性摘要**|显示指定配置基线中配置项目符合性摘要。|  
+|**按配置策略列出的符合性摘要**|显示配置策略的符合性摘要。|  
+|**集合的配置基线的符合性摘要**|显示部署到指定集合的指定配置基线的总体符合性摘要。|  
+|**指定用户的不合规应用和设备的列表**|显示有关安装了不符合指定策略的应用的用户和设备信息。|  
+|**具有不合规应用的用户的摘要**|显示有关安装了不符合指定策略的应用的用户信息。|  
+|**接受条款和条件**|显示条款和条件项目以及每个用户已接受的版本。|  
 
-### <a name="device-management"></a>Gerenciamento de Dispositivo  
+### <a name="device-management"></a>设备管理  
 
-|Nome do relatório|Descrição|  
+|报告名称|描述|  
 |-----------------|-----------------|  
-|**Todos os clientes de dispositivo móvel**|Exibe informações sobre todos os clientes de dispositivos móveis. Os dispositivos gerenciados pelo conector do Exchange Server não são incluídos.|  
-|**Problemas de certificado em dispositivos móveis gerenciados pelo cliente do Configuration Manager para Windows CE e que não estão íntegros**|Exibe informações detalhadas sobre problemas de certificado em dispositivos móveis gerenciados pelo cliente do Configuration Manager para Windows CE.|  
-|**Falha de implantação de cliente para dispositivos móveis gerenciados pelo cliente do Configuration Manager para Windows CE**|Exibe informações detalhadas sobre falha de implantação para dispositivos móveis gerenciados pelo cliente do Configuration Manager para Windows CE.|  
-|**Detalhes do status de implantação de cliente para dispositivos móveis gerenciados pelo cliente do Configuration Manager para Windows CE**|Exibe informações sobre o status de dispositivos móveis gerenciados pelo cliente do Configuration Manager para Windows CE.|  
-|**Êxito de implantação do cliente para dispositivos móveis gerenciados pelo cliente do Configuration Manager para Windows CE**|Exibe informações detalhadas sobre o êxito de implantação para dispositivos móveis gerenciados pelo cliente do Configuration Manager para Windows CE.|  
-|**Problemas de comunicação em dispositivos móveis gerenciados pelo cliente do Configuration Manager para Windows CE e que não estão íntegros**|Este relatório contém informações detalhadas sobre problemas de comunicação em dispositivos móveis gerenciados pelo cliente do Configuration Manager para Windows CE.|  
-|**Status de conformidade dos dispositivos móveis gerenciados pelo conector do Exchange Server**|Exibe um resumo do status da conformidade com a política de caixa de correio do Exchange ActiveSync padrão para os dispositivos móveis gerenciados pelo conector do Exchange Server.|  
-|**Contagem de dispositivos móveis por configurações de exibição**|Este relatório exibe o número de dispositivos móveis por configurações de exibição.|  
-|**Contagem de dispositivos móveis por sistema operacional**|Exibe o número de dispositivos móveis por sistema operacional.|  
-|**Contagem de dispositivos móveis por memória de programa**|Exibe o número de dispositivos móveis por memória de programa.|  
-|**Contagem de dispositivos móveis por configurações de memória de armazenamento**|Contagem de dispositivos móveis por configurações de memória de armazenamento|  
-|**Informações de integridade para dispositivos móveis gerenciados pelo cliente do Configuration Manager para Windows CE**|Exibe informações de integridade detalhadas para dispositivos móveis gerenciados pelo cliente do Configuration Manager para Windows CE.|  
-|**Resumo de integridade para dispositivos móveis gerenciados pelo cliente do Configuration Manager para Windows CE**|Exibe informações de integridade resumidas para dispositivos móveis gerenciados pelo cliente do Configuration Manager para Windows CE.|  
-|**Dispositivos móveis inativos gerenciados pelo conector do Exchange Server**|Exibe os dispositivos móveis gerenciados pelo conector do Exchange Server que não se conectaram ao Exchange Server em um número de dias especificado.|  
-|**Lista de Dispositivos registrados por usuário no Microsoft Intune**|Exibe todos os dispositivos que um usuário registrou no Microsoft Intune.|  
-|**Lista de dispositivos por Estado de Acesso Condicional**|Exibe informações sobre a conformidade atual e o estado de acesso condicional de dispositivos. Você pode usar este relatório com políticas de acesso condicional. Esse relatório está disponível a partir versão 1602 do Configuration Manager.|  
-|**Conformidade de Acesso Condicional para Usuário**|Fornece informações detalhadas de conformidade de acesso condicional para um usuário específico, incluindo o nome do dispositivo e plataforma, se o dispositivo estiver em conformidade, e quando o dispositivo foi avaliado pela última vez. Esse relatório está disponível a partir versão 1602 do Configuration Manager.|  
-|**Problemas de cliente local em dispositivos móveis gerenciados pelo cliente do Configuration Manager para Windows CE e que não estão íntegros**|Este relatório contém informações detalhadas sobre problemas de cliente local em dispositivos móveis gerenciados pelo cliente do Configuration Manager para Windows CE.|  
-|**Informações de cliente de dispositivo móvel**|Exibe informações sobre os dispositivos móveis que têm o cliente do Configuration Manager instalado. Você pode usar este relatório para verificar quais dispositivos móveis podem se comunicar com êxito com um ponto de gerenciamento.|  
-|**Detalhes de conformidade de dispositivo móvel para o conector do Exchange Server**|Exibe os detalhes de conformidade do dispositivo móvel para uma política de caixa de correio do Exchange ActiveSync padrão configurada por meio do conector do Exchange Server.|  
-|**Dispositivos móveis por sistema operacional**|Exibe os dispositivos móveis por sistema operacional.|  
-|**Dispositivos móveis desbloqueados ou com raiz**|Exibe os dispositivos móveis com jailbroken ou com raiz.|  
-|**Dispositivos móveis que estão sem gerenciamento porque estão inscritos mas não foram atribuídos a um site**|Exibe os dispositivos móveis que concluíram o registro no Configuration Manager e que têm um certificado, mas que não concluíram a atribuição de site.|  
-|**Dispositivos móveis com uma quantidade específica de memória de programa livre**|Exibe todos os dispositivos móveis com sua quantidade especificada de memória de programa livre.|  
-|**Dispositivos móveis com uma quantidade específica de memória de armazenamento removível livre**|Exibe todos os dispositivos móveis com a quantidade especificada de memória removível livre.|  
-|**Dispositivos móveis com problemas de renovação de certificado**|Exibe os dispositivos móveis registrados que não renovaram seu certificado. Se o certificado não for renovado antes do período de vencimento, os dispositivos móveis não serão mais gerenciados.|  
-|**Dispositivos móveis com pouca memória de programa livre (menos do que o especificado em KB livre)**|Exibe os dispositivos móveis para os quais a memória de programa é menor do que um tamanho especificado em KB.|  
-|**Dispositivos móveis com pouca memória de armazenamento removível livre (menos do que o especificado em KB livre)**|Exibe os dispositivos móveis para os quais a memória de armazenamento removível é menor do que um tamanho especificado em KB.|  
-|**Número de dispositivos registrados por usuário no Windows Intune**|Este relatório mostra os usuários habilitados para a assinatura do Microsoft Intune e o número total de dispositivos registrados para cada usuário.|  
-|**Solicitação de apagamento pendente para dispositivos móveis**|Exibe as solicitações de apagamento pendentes para dispositivos móveis.|  
-|**Dispositivos móveis inscritos recentemente e atribuídos**|Exibe os dispositivos móveis que concluíram com êxito a inscrição no Configuration Manager e a atribuição de site recentemente.|  
-|**Dispositivos móveis recentemente apagados**|Exibe a lista de dispositivos móveis que foram apagados recentemente com êxito.|  
-|**Resumo das configurações para dispositivos móveis gerenciados pelo conector do Exchange Server**|Exibe o número de dispositivos móveis que se aplicam às configurações para cada política de caixa de correio do Exchange ActiveSync padrão gerenciada pelo conector do Exchange Server.|  
-|**Status Detalhado das Chaves de Sideload do Windows RT**|Exibe informações de status detalhadas de uma chave de sideload do Windows RT especificada.|  
-|**Resumo das Chaves de Sideload do Windows RT**|Exibe o status das chaves de sideload do Windows RT.|  
+|**所有移动设备客户端**|显示有关所有移动设备客户端的信息。 不包括由 Exchange Server 连接器管理的设备。|  
+|**由适用于 Windows CE 的 Configuration Manager 客户端管理且运行不正常的移动设备上的证书问题**|显示有关由适用于 Windows CE 的 Configuration Manager 客户端管理的移动设备上的证书问题的详细信息。|  
+|**由适用于 Windows CE 的 Configuration Manager 客户端管理的移动设备的客户端部署失败情况**|显示有关由适用于 Windows CE 的 Configuration Manager 客户端管理的移动设备的部署失败情况的详细信息。|  
+|**由适用于 Windows CE 的 Configuration Manager 客户端管理的移动设备的客户端部署状态详细信息**|显示有关由适用于 Windows CE 的 Configuration Manager 客户端管理的移动设备的状态的信息。|  
+|**由适用于 Windows CE 的 Configuration Manager 客户端管理的移动设备的客户端部署成功情况**|显示有关由适用于 Windows CE 的 Configuration Manager 客户端管理的移动设备的部署成功情况的详细信息。|  
+|**由适用于 Windows CE 的 Configuration Manager 客户端管理且运行不正常的移动设备上的通信问题**|此报告包含有关由适用于 Windows CE 的 Configuration Manager 客户端管理的移动设备上的通信问题的详细信息。|  
+|**Exchange Server 连接器管理的移动设备的符合性状态**|显示 Exchange Server 连接器管理的移动设备默认 Exchange ActiveSync 邮箱策略的符合性状态摘要。|  
+|**按显示器配置列出的移动设备计数**|此报表显示按显示设置列出的移动设备数量。|  
+|**按操作系统列出的移动设备计数**|显示按操作系统列出的移动设备数量。|  
+|**按程序内存列出的移动设备计数**|显示按程序内存列出的移动设备数量。|  
+|**按存储内存配置列出的移动设备计数**|按存储内存配置列出的移动设备计数|  
+|**由适用于 Windows CE 的 Configuration Manager 客户端管理的移动设备的运行状况信息**|显示由适用于 Windows CE 的 Configuration Manager 客户端管理的移动设备的运行状况的详细信息。|  
+|**由适用于 Windows CE 的 Configuration Manager 客户端管理的移动设备的运行状况摘要**|显示由适用于 Windows CE 的 Configuration Manager 客户端管理的移动设备的运行状况摘要信息。|  
+|**由 Exchange Server 连接器管理的非活动移动设备**|显示由 Exchange Server 连接器管理并在指定天数内未连接到 Exchange Server 的移动设备。|  
+|**每用户在 Microsoft Intune 中注册的设备列表**|显示用户已向 Microsoft Intune 注册的所有设备。|  
+|**按条件性访问状态列出的设备列表**|显示有关设备的当前符合性和条件性访问状态的信息。 此报表可与条件性访问策略使用。 在 Configuration Manager 的版本 1602 中开始提供此报表。|  
+|**用户的条件性访问符合性**|为特定用户提供详细条件性访问合规性信息，包括设备名称和平台、设备是否合规以及上次评估设备的时间。 在 Configuration Manager 的版本 1602 中开始提供此报表。|  
+|**由适用于 Windows CE 的 Configuration Manager 客户端管理且运行不正常的移动设备上的本地客户端问题**|此报告包含有关由适用于 Windows CE 的 Configuration Manager 客户端管理的移动设备上的本地客户端问题的详细信息。|  
+|**移动设备客户端信息**|显示有关安装有 Configuration Manager 客户端的移动设备的信息。 可以使用此报表来验证哪些移动设备可成功与管理点通信。|  
+|**Exchange Server 连接器的移动设备符合性详细信息**|显示通过使用 Exchange Server 连接器配置的默认 Exchange ActiveSync 邮箱策略的移动设备符合性详细信息。|  
+|**按操作系统列出的移动设备**|显示按操作系统列出的移动设备。|  
+|**已越狱或取得 root 权限的移动设备**|显示已越狱或取得 root 权限的移动设备。|  
+|**由于已注册但未能分配到站点而处于非托管状态的移动设备**|显示已完成 Configuration Manager 注册且具有证书但未能完成站点分配的移动设备。|  
+|**具有特定可用程序内存量的移动设备**|显示具有指定可用程序内存量的所有移动设备。|  
+|**具有特定可用可移动存储内存量的移动设备**|显示具有指定可用可移动存储内存量的所有移动设备。|  
+|**有证书续订问题的移动设备**|显示无法续订证书的已注册移动设备。 如果在过期之前未续订证书，则移动设备将处于非管理状态。|  
+|**可用程序内存不足（少于指定的可用 KB）的移动设备**|显示程序内存低于指定大小（以 KB 为单位）的移动设备。|  
+|**可用可移动存储内存不足（少于指定的可用 KB）的移动设备**|显示可移动存储内存低于指定大小（以 KB 为单位）的移动设备。|  
+|**每用户在 Microsoft Intune 中注册的设备数量**|此报表显示已启用 Microsoft Intune 订阅的用户和每个用户注册的设备总数。|  
+|**移动设备的挂起擦除请求**|显示移动设备处于挂起状态的擦除请求。|  
+|**最近注册和分配的移动设备**|显示近期已向 Configuration Manager 注册并成功分配给站点的移动设备。|  
+|**最近擦除的移动设备**|显示了最近成功擦除的移动设备的列表。|  
+|**由 Exchange Server 连接器管理的移动设备的设置摘要**|显示为由 Exchange Server 连接器管理的每个默认 Exchange ActiveSync 邮箱策略应用设置的移动设备的数目。|  
+|**Windows RT 旁加载密钥详细状态**|显示指定 Windows RT 旁加载密钥的详细状态信息。|  
+|**Windows RT 旁加载密钥摘要**|显示 Windows RT 旁加载密钥的状态。|  
 
-### <a name="driver-management"></a>Gerenciamento de drivers  
+### <a name="driver-management"></a>驱动程序管理  
 
-|Nome do relatório|Descrição|  
+|报告名称|描述|  
 |-----------------|-----------------|  
-|**Todos os drivers**|Exibe uma lista de todos os drivers.|  
-|**Todos os drivers de uma plataforma específica**|Exibe todos os drivers de uma plataforma específica.|  
-|**Todos os drivers em uma imagem de inicialização específica**|Exibe todos os drivers em uma imagem de inicialização especificada.|  
-|**Todos os drivers em uma categoria específica**|Exibe todos os drivers em uma categoria especificada.|  
-|**Todos os drivers em um pacote específico**|Exibe todos os drivers em um pacote especificado.|  
-|**Categorias de um driver específico**|Exibe as categorias de um driver especificado.|  
-|**Computadores que não instalaram drivers para uma coleção específica**|Exibe os computadores que não instalaram drivers para uma coleção especificada.|  
-|**Relatório de correspondência de catálogo de driver para uma coleção específica**|Exibe o catálogo de drivers que correspondem ao relatório para uma coleção especificada.|  
-|**Relatório de correspondência de catálogo de driver para um computador específico**|Exibe o catálogo de drivers que correspondem ao relatório para um computador especificado.|  
-|**Relatório de correspondência de catálogo de driver para um dispositivo específico em um computador específico**|Exibe o catálogo de drivers que correspondem ao relatório para um dispositivo especificado em um computador especificado.|  
-|**Relatório de correspondência de catálogo de driver para computadores em uma coleção específica com um dispositivo específico**|Exibe o catálogo de drivers que correspondem ao relatório para computadores em uma coleção especificada com um dispositivo especificado.|  
-|**Drivers que não foram instalados em um computador específico**|Exibe os drivers que não foram instalados em um computador especificado.|  
-|**Plataformas com suporte para um Driver específico**|Exibe as plataformas com suporte de um driver especificado.|  
+|**所有驱动程序**|显示所有驱动程序列表。|  
+|**特定平台的所有驱动程序**|显示指定平台的所有驱动程序。|  
+|**特定启动映像中的所有驱动程序**|显示指定启动映像包中的所有驱动程序。|  
+|**特定类别中的所有驱动程序**|显示指定类别中的所有驱动程序。|  
+|**特定包中的所有驱动程序**|显示指定包中的所有驱动程序。|  
+|**特定驱动程序的类别**|显示指定驱动程序的类别。|  
+|**无法为特定集合安装驱动程序的计算机**|显示无法为指定集合安装驱动程序的计算机。|  
+|**特定集合的驱动程序目录匹配报表**|显示指定集合的驱动程序目录匹配报表。|  
+|**特定计算机的驱动程序目录匹配报表**|显示指定计算机的驱动程序目录匹配报表。|  
+|**特定计算机上特定设备的驱动程序目录匹配报表**|显示指定计算机上指定设备的驱动程序目录匹配报表。|  
+|**特定集合中使用特定设备的计算机的驱动程序目录匹配报表**|显示指定集合中使用指定设备的计算机的驱动程序目录匹配报表。|  
+|**在特定计算机上无法安装的驱动程序**|显示无法在指定计算机上安装的驱动程序。|  
+|**特定驱动程序的支持平台**|显示指定驱动程序的支持平台。|  
 
 ### <a name="endpoint-protection"></a>Endpoint Protection  
 
-|Nome do relatório|Descrição|  
+|报告名称|描述|  
 |-----------------|-----------------|  
-|**Relatório de atividade antimalware**|Exibe uma visão geral da atividade de antimalware.|  
-|**Status e histórico geral antimalware**|Exibe o histórico e status geral de antimalware.|  
-|**Detalhes de malware do computador**|Exibe detalhes sobre um computador especificado e a lista de malware encontrado nele.|  
-|**Computadores infectados**|Exibe uma lista de computadores com uma ameaça especificada detectada.|  
-|**Usuários principais por ameaças**|Exibe a lista de usuários com o maior número de ameaças detectadas.|  
-|**Lista de ameaças do usuário**|Exibe a lista de ameaças encontradas para uma conta de usuário especificada.|  
+|**反恶意软件活动报告**|显示反恶意软件活动的概述。|  
+|**反恶意软件总体状态和历史记录**|显示反恶意软件总体状态和历史记录。|  
+|**计算机恶意软件详细信息**|显示有关指定计算机的详细信息以及在其中找到的恶意软件的列表。|  
+|**受感染的计算机**|显示检测到指定威胁的计算机的列表。|  
+|**按威胁列出的位居前列的用户**|显示检测到最多威胁的用户的列表。|  
+|**用户威胁列表**|显示为指定用户帐户找到的威胁列表。|  
 
-### <a name="hardware---cd-rom"></a>Hardware – CD-ROM  
+### <a name="hardware---cd-rom"></a>硬件 - CD-ROM  
 
-|Nome do relatório|Descrição|  
+|报告名称|描述|  
 |-----------------|-----------------|  
-|**Informações de CD-ROM para um computador específico**|Exibe informações sobre as unidades de CD-ROM em um computador especificado.|  
-|**Computadores para um fabricante de CD-ROM específico**|Exibe uma lista de computadores que contêm uma unidade de CD-ROM produzida por um fabricante específico.|  
-|**Contar unidades de CD-ROM por fabricante**|Exibe o número de unidades de CD-ROM inventariadas por fabricante.|  
-|**Histórico – Histórico de CD-ROM para um computador específico**|Exibe o histórico de inventário das unidades de CD-ROM em um computador especificado.|  
+|**特定计算机的 CD-ROM 信息**|显示有关指定计算机上的 CD-ROM 驱动器的信息。|  
+|**具有由特定制造商生产的 CD-ROM 的计算机**|显示具有由你指定的制造商生产的 CD-ROM 驱动器的计算机的列表。|  
+|**统计每个制造商生产的 CD-ROM 驱动器**|显示按制造商列出清单的 CD-ROM 驱动器数。|  
+|**历史记录 - 特定计算机的 CD-ROM 历史记录**|显示指定计算机上的 CD-ROM 驱动器的清单历史记录。|  
 
-### <a name="hardware---disk"></a>Hardware – Disco  
+### <a name="hardware---disk"></a>硬件 - 磁盘  
 
-|Nome do relatório|Descrição|  
+|报告名称|描述|  
 |-----------------|-----------------|  
-|**Computadores com um tamanho de disco rígido específico**|Exibe uma lista de computadores com discos rígidos de um tamanho especificado.|  
-|**Computadores com pouco espaço livre em disco (menos do que o % livre especificado)**|Exibe uma lista de computadores em uma coleção especificada que têm menos do que o espaço livre em disco especificado.|  
-|**Computadores com pouco espaço livre em disco (menos do que o especificado em MB livres)**|Exibe uma lista de computadores e discos que não têm espaço suficiente. A quantidade de espaço livre para a verificação é especificada em MB.|  
-|**Contar configurações de disco físico**|Exibe o número de discos rígidos inventariados por capacidade de disco.|  
-|**Informações de disco para um computador específico – Discos lógicos**|Exibe informações de resumo sobre os discos lógicos em um computador especificado.|  
-|**Informações de disco para um computador específico – Partições**|Exibe informações de resumo sobre as partições de disco em um computador especificado.|  
-|**Informações de disco para um computador específico – Discos físicos**|Exibe informações de resumo sobre os discos físicos em um computador especificado.|  
-|**Histórico – Histórico do espaço em disco lógico para um computador específico**|Exibe o histórico de inventário de unidades de disco lógico em um computador especificado.|  
+|**具有特定硬盘大小的计算机**|显示具有指定硬盘大小的计算机的列表。|  
+|**可用磁盘空间不足的计算机（小于指定的可用空间百分比）**|显示指定集合中磁盘空间小于指定可用磁盘空间的计算机的列表。|  
+|**可用磁盘空间不足的计算机（小于指定的可用空间 MB）**|显示磁盘空间不足的计算机和磁盘列表。 将以 MB 为单位指定要检查的可用空间量。|  
+|**统计物理磁盘配置**|显示按磁盘容量列出清单的硬盘数。|  
+|**特定计算机的磁盘信息 - 逻辑磁盘**|显示有关指定计算机上的逻辑磁盘的摘要信息。|  
+|**特定计算机的磁盘信息 - 分区**|显示有关指定计算机上的磁盘分区的摘要信息。|  
+|**特定计算机的磁盘信息 - 物理磁盘**|显示有关指定计算机上的物理磁盘的摘要信息。|  
+|**历史记录 - 特定计算机的逻辑磁盘空间历史记录**|显示指定计算机上的逻辑磁盘驱动器的清单历史记录。|  
 
-### <a name="hardware---general"></a>Hardware – Geral  
+### <a name="hardware---general"></a>硬件 - 常规  
 
-|Nome do relatório|Descrição|  
+|报告名称|描述|  
 |-----------------|-----------------|  
-|**Informações de um computador específico**|Exibe informações de resumo de um computador especificado.|  
-|**Computadores em um grupo de trabalho ou domínio específico**|Exibe uma lista de computadores em um grupo de trabalho ou domínio especificado.|  
-|**Classes de inventário atribuídas a uma coleção específica**|Exibe as classes de inventário atribuídas a uma coleção especificada.|  
-|**Classes de inventário habilitadas em um computador específico**|Exibe as classes de inventário habilitadas em um computador especificado.|  
+|**特定计算机的计算机信息**|显示指定计算机的摘要信息。|  
+|**特定工作组或域中的计算机**|显示指定工作组或域中的计算机的列表。|  
+|**分配给特定集合的清单类**|显示分配给指定集合的清单类。|  
+|**特定计算机上启用的清单类**|显示指定计算机上启用的清单类。|  
 
-### <a name="hardware---memory"></a>Hardware – Memória  
+### <a name="hardware---memory"></a>硬件 - 内存  
 
-|Nome do relatório|Descrição|  
+|报告名称|描述|  
 |-----------------|-----------------|  
-|**Computadores em que a memória física foi alterada**|Exibe uma lista de computadores em que a quantidade de RAM foi alterada desde o último ciclo de inventário.|  
-|**Computadores com uma quantidade específica de memória**|Exibe uma lista de computadores que têm uma quantidade especificada de RAM (Memória Física Total arredondada para a MB mais próxima).|  
-|**Computadores com pouca memória (menos ou o mesmo que o especificado em MB)**|Exibe uma lista de computadores com memória insuficiente. A quantidade de memória para a verificação é especificada em MB.|  
-|**Contar configurações de memória**|Exibe o número de computadores inventariados por quantidade de RAM.|  
-|**Informações de memória para um computador específico**|Exibe informações de resumo sobre a memória em um computador especificado.|  
+|**物理内存已更改的计算机**|显示上次清单周期之后 RAM 量发生更改的计算机的列表。|  
+|**具有特定内存量的计算机**|显示具有指定 RAM 量（总物理内存四舍五入到最接近的 MB）的计算机的列表。|  
+|**内存不足（少于或等于指定的 MB）的计算机**|显示内存不足的计算机的列表。 将以 MB 为单位指定要检查的内存量。|  
+|**统计内存配置**|显示按 RAM 量列出清单的计算机数目。|  
+|**特定计算机的内存信息**|显示有关指定计算机上的内存的摘要信息。|  
 
-### <a name="hardware---modem"></a>Hardware – Modem  
+### <a name="hardware---modem"></a>硬件 - 调制解调器  
 
-|Nome do relatório|Descrição|  
+|报告名称|描述|  
 |-----------------|-----------------|  
-|**Computadores para um fabricante de modem específico**|Exibe uma lista de computadores que contêm um modem produzido por um fabricante especificado.|  
-|**Contar modems por fabricante**|Exibe o número de modems inventariados para cada fabricante de modem.|  
-|**Informações de modem para um computador específico**|Exibe informações de resumo sobre o modem em um computador especificado.|  
+|**具有由特定制造商生产的调制解调器的计算机**|显示具有由指定制造商生产的调制解调器的计算机列表。|  
+|**按制造商统计调制解调器**|显示每个调制解调器制造商已列出清单的调制解调器数。|  
+|**特定计算机的调制解调器信息**|显示指定计算机上的调制解调器的摘要信息。|  
 
-### <a name="hardware---network-adapter"></a>Hardware – Adaptador de rede  
+### <a name="hardware---network-adapter"></a>硬件 - 网络适配器  
 
-|Nome do relatório|Descrição|  
+|报告名称|描述|  
 |-----------------|-----------------|  
-|**Computadores com um adaptador de rede específico**|Exibe uma lista de computadores que contêm um adaptador de rede especificado.|  
-|**Contar adaptadores de rede por tipo**|Exibe o número de placas de adaptadores de rede inventariadas de cada tipo.|  
-|**Informações de adaptador de rede para um computador específico**|Exibe informações sobre os adaptadores de rede instalados em um computador especificado.|  
+|**具有特定网络适配器的计算机**|显示具有指定网络适配器的计算机的列表。|  
+|**按类型统计网络适配器**|显示每种类型已列出清单的网络适配器卡的数目。|  
+|**特定计算机的网络适配器信息**|显示有关指定计算机上安装的网络适配器的信息。|  
 
-### <a name="hardware---processor"></a>Hardware – Processador  
+### <a name="hardware---processor"></a>硬件 - 处理器  
 
-|Nome do relatório|Descrição|  
+|报告名称|描述|  
 |-----------------|-----------------|  
-|**Computadores para uma velocidade de processador especificada**|Exibe uma lista de computadores que contêm um processador de uma velocidade especificada.|  
-|**Computadores com processadores rápidos (velocidade de clock igual ou maior que a especificada)**|Exibe uma lista de computadores que têm processadores com uma velocidade mais rápida do que a velocidade especificada.|  
-|**Computadores com processadores lentos (velocidade de clock igual ou menor que a especificada)**|Exibe uma lista de computadores com processadores que são executados em uma velocidade de clock especificada ou em uma velocidade de clock mais lenta do que a especificada.|  
-|**Contar velocidades de processador**|Exibe o número de computadores inventariados por velocidade do processador.|  
-|**Informações de processador para um computador específico**|Exibe informações sobre os processadores instalados em um computador especificado.|  
+|**具有特定处理器速度的计算机**|显示具有指定速度处理器的计算机的列表。|  
+|**处理器速度较快（大于或等于指定的时钟速度）的计算机**|显示具有速度快于指定速度的处理器的计算机的列表。|  
+|**处理器速度较慢（小于或等于指定的时钟速度）的计算机**|显示其处理器以指定时钟速度或更慢速度运行的计算机的列表。|  
+|**统计处理器速度**|显示按处理器速度列出清单的计算机数。|  
+|**特定计算机的处理器信息**|显示有关指定计算机上安装的处理器信息。|  
 
-### <a name="hardware---scsi"></a>Hardware – SCSI  
+### <a name="hardware---scsi"></a>硬件 - SCSI  
 
-|Nome do relatório|Descrição|  
+|报告名称|描述|  
 |-----------------|-----------------|  
-|**Computadores com um tipo de placa SCSI específico**|Exibe uma lista de computadores que contêm uma placa SCSI especificada instalada.|  
-|**Contar tipos de placa SCSI**|Exibe o número de placas SCSI inventariadas por tipo de placa.|  
-|**Informações de placa SCSI para um computador específico**|Exibe informações sobre as placas SCSI instaladas em um computador especificado.|  
+|**具有特定 SCSI 卡类型的计算机**|显示安装有指定 SCSI 卡的计算机的列表。|  
+|**统计 SCSI 卡类型**|显示按卡类型列出清单的 SCSI 卡数量。|  
+|**特定计算机的 SCSI 卡信息**|显示有关指定计算机上安装的 SCSI 卡的信息。|  
 
-### <a name="hardware---sound-card"></a>Hardware – Placa de som  
+### <a name="hardware---sound-card"></a>硬件 – 声卡  
 
-|Nome do relatório|Descrição|  
+|报告名称|描述|  
 |-----------------|-----------------|  
-|**Computadores com uma placa de som específica**|Exibe uma lista de computadores que contêm uma placa de som especificada.|  
-|**Contar placas de som**|Exibe o número de computadores inventariados por cada tipo de placa de som.|  
-|**Informações de placa de som para um computador específico**|Exibe informações de resumo sobre as placas de som em um computador especificado.|  
+|**具有特定声卡的计算机**|显示具有指定声卡的计算机的列表。|  
+|**统计声卡**|显示按声卡类型列出清单的计算机数。|  
+|**特定计算机的声卡信息**|显示有关指定计算机上的声卡的摘要信息。|  
 
-### <a name="hardware---video-card"></a>Hardware – Placa de vídeo  
+### <a name="hardware---video-card"></a>硬件 - 视频卡  
 
-|Nome do relatório|Descrição|  
+|报告名称|描述|  
 |-----------------|-----------------|  
-|**Computadores com uma placa de vídeo específica**|Exibe uma lista de computadores que contêm uma placa de vídeo especificada.|  
-|**Contar placas de vídeo por tipo**|Exibe uma lista de todas as placas de vídeo instaladas em computadores com o número de cada tipo de placa de vídeo.|  
-|**Informações de placa de vídeo para um computador específico**|Exibe informações de resumo sobre as placas de vídeo instaladas em um computador especificado.|  
+|**具有特定视频卡的计算机**|显示具有指定视频卡的计算机的列表。|  
+|**按类型统计视频卡**|显示计算机上安装的所有视频卡，以及每种视频卡的数量的列表。|  
+|**特定计算机的视频卡信息**|显示有关指定计算机上安装的视频卡的摘要信息。|  
 
-### <a name="migration"></a>Migração  
+### <a name="migration"></a>迁移  
 
-|Nome do relatório|Descrição|  
+|报告名称|描述|  
 |-----------------|-----------------|  
-|**Clientes na lista de exclusões**|Exibe os clientes excluídos da migração.|  
-|**Dependência em uma coleção do Configuration Manager**|Exibe os objetos que dependem de uma coleção da hierarquia de origem.|  
-|**Propriedades do trabalho de migração**|Este relatório mostra o conteúdo do trabalho de migração especificado.|  
-|**Trabalhos de migração**|Este relatório mostra a lista de trabalhos de migração.|  
-|**Objetos que não foram migrados**|Exibe uma lista de objetos que falharam em migrar durante a última tentativa.|  
+|**排除列表中的客户端**|显示从迁移中排除的客户端。|  
+|**Configuration Manager 集合的依赖关系**|显示依赖于源层次结构集合的对象。|  
+|**迁移作业属性**|此报表显示指定迁移作业的内容。|  
+|**迁移作业**|此报表显示迁移作业的列表。|  
+|**未能迁移的对象**|显示在最后一次尝试期间未能迁移的对象的列表。|  
 
-### <a name="network"></a>Rede  
+### <a name="network"></a>网络  
 
-|Nome do relatório|Descrição|  
+|报告名称|描述|  
 |-----------------|-----------------|  
-|**Contar endereços IP por sub-rede**|Exibe o número de endereços IP inventariados para cada sub-rede IP.|  
-|**IP – Todas as sub-redes por máscara de sub-rede**|Exibe uma lista de sub-redes IP e máscaras de sub-rede.|  
-|**IP – Computadores em uma sub-rede específica**|Exibe uma lista de computadores e informações de IP para uma sub-rede IP especificada.|  
-|**IP – Informações para um computador específico**|Exibe informações de resumo sobre IP em um computador especificado.|  
-|**IP – Informações para um endereço IP específico**|Exibe informações de resumo sobre um endereço IP especificado.|  
-|**MAC – Computadores para um endereço MAC específico**|Exibe o nome do computador e o endereço IP dos computadores que têm o endereço MAC especificado.|  
+|**按子网统计 IP 地址**|显示对每个 IP 子网列出清单的 IP 地址的数量。|  
+|**IP - 按子网掩码列出的所有子网**|显示 IP 子网和子网掩码的列表。|  
+|**IP - 特定子网中的计算机**|显示指定 IP 子网的计算机和 IP 信息列表。|  
+|**IP - 特定计算机的信息**|显示有关指定计算机上的 IP 的摘要信息。|  
+|**IP - 特定 IP 地址的信息**|显示有关指定 IP 地址的摘要信息。|  
+|**MAC - 特定 MAC 地址的计算机**|显示具有指定 MAC 地址的计算机的名称和 IP 地址。|  
 
-### <a name="network-access-protection"></a>Proteção de Acesso à Rede  
+### <a name="network-access-protection"></a>网络访问保护  
 
-|Nome do relatório|Descrição|  
+|报告名称|描述|  
 |-----------------|-----------------|  
-|**Comparação de atualizações de software instaladas por implantações de atualização de software e correções de NAP.**|Exibe um resumo de comparação das atualizações de software instaladas por implantações de atualização de software e atualizações de NAP.|  
-|**Frequência com que um computador esteve em correção durante um período especificado**|Este relatório exibe a frequência com que um computador foi corrigido em um período especificado.|  
-|**Lista de computadores que instalaram uma atualização de software específica por meio da correção durante um determinado período**|Exibe os computadores que instalaram uma atualização de software especificada por meio de correções durante um período de tempo especificado (dias).|  
-|**Lista de computadores que seriam não compatíveis com base nas atualizações de software selecionadas**|Exibe cada computador que não seria compatível com base nas atualizações de software selecionadas.|  
-|**Lista de computadores em que o serviço NAP não pôde ser detectado**|Exibe uma lista de computadores em que não foi possível detectar o serviço NAP.|  
-|**Lista de computadores qualificados para NAP**|Exibe uma lista de computadores em que o serviço NAP não está em execução ou cujo estado é desconhecido.|  
-|**Lista de políticas de Proteção de Acesso à Rede**|Exibe as políticas de Proteção de Acesso à Rede com suas datas de efetivação.|  
-|**Lista de computadores não compatíveis na correção do último intervalo de sondagem**|Exibe a lista de computadores não compatíveis na correção com suas últimas horas de avaliação conhecidas.|  
-|**Lista de computadores não compatíveis em correção em um período especificado**|Exibe a lista dos computadores não compatíveis na correção em um período de tempo especificado.|  
-|**Lista de falhas de correção para um período especificado**|Exibe uma lista de falhas de correção em um número de dias especificado.|  
-|**Lista de atualizações de software instaladas por meio da correção**|Exibe as atualizações de software instaladas por meio de correção em um período especificado.|  
-|**Resumo dos computadores não compatíveis na correção do último intervalo de sondagem**|Exibe um resumo dos computadores não compatíveis na correção do último intervalo de sondagem.|  
-|**Resumo dos computadores não compatíveis na correção em um período especificado**|Exibe um resumo dos computadores não compatíveis na correção em um período de tempo especificado.|  
+|**通过软件更新部署和 NAP 修正安装的软件更新的比较**|显示通过软件更新部署和 NAP 修正安装的软件更新的比较摘要。|  
+|**指定时间段内计算机进行修正的频率**|此报表显示在指定时间段内对计算机进行修正的频率。|  
+|**指定时间段内通过修正安装了特定软件更新的计算机列表**|显示指定时间段（天）内通过修正安装了指定软件更新的计算机。|  
+|**基于所选软件更新不符合的计算机列表**|显示基于所选软件更新属于不符合计算机的每台计算机。|  
+|**无法检测到 NAP 服务的计算机的列表**|显示无法检测到 NAP 服务的计算机的列表。|  
+|**适合进行 NAP 的计算机的列表**|显示 NAP 服务未运行或处于未知状态的计算机列表。|  
+|**网络访问保护策略列表**|显示网络访问保护策略及其生效日期。|  
+|**自上一个轮询间隔以来进行修正的不符合计算机列表**|显示进行修正的不符合计算机及其上次已知评估时间的列表。|  
+|**指定时间段内进行修正的不符合计算机列表**|显示在指定的时间段内进行修正的不符合计算机的列表。|  
+|**指定时间段内的修正失败列表**|显示指定天数内修正失败的列表。|  
+|**通过修正安装的软件更新列表**|显示指定时间段内通过修正安装的软件更新。|  
+|**自上一个轮询间隔以来进行修正的不符合计算机摘要**|显示自上一个轮询间隔以来进行修正的不符合计算机的摘要。|  
+|**指定时间段内进行修正的不符合计算机摘要**|显示在指定的时间段内进行修正的不符合计算机的摘要。|  
 
-### <a name="operating-system"></a>Sistema operacional  
+### <a name="operating-system"></a>操作系统  
 
-|Nome do relatório|Descrição|  
+|报告名称|描述|  
 |-----------------|-----------------|  
-|**Histórico de versão do sistema operacional do computador**|Exibe o histórico de inventário do sistema operacional em um computador especificado.|  
-|**Computadores com um sistema operacional específico**|Exibe os computadores com um sistema operacional especificado.|  
-|**Computadores com um sistema operacional e um service pack específicos**|Exibe os computadores com um sistema operacional e service pack especificados.|  
-|**Contar versões de sistema operacional**|Exibe o número de computadores inventariados por sistema operacional.|  
-|**Contar sistemas operacionais e service packs**|Exibe o número de computadores inventariados por sistema operacional e combinações de service pack.|  
-|**Serviços – Computadores executando um serviço específico**|Exibe uma lista de computadores que executam um serviço especificado.|  
-|**Serviços – Computadores executando o Servidor de Acesso Remoto**|Exibe uma lista de computadores que executam o Servidor de Acesso Remoto.|  
-|**Serviços – Informações de serviços para um computador específico**|Exibe informações de resumo sobre os serviços em um computador especificado.|  
-|**Computadores com Windows Server**|Exibe uma lista de computadores que executam sistemas operacionais Windows Server.|  
+|**计算机操作系统版本历史记录**|显示指定计算机上的操作系统的清单历史记录。|  
+|**具有特定操作系统的计算机**|显示具有指定操作系统的计算机。|  
+|**具有特定操作系统和 Service Pack 的计算机**|显示具有指定操作系统和 Service Pack 的计算机。|  
+|**统计操作系统版本**|显示按操作系统列出清单的计算机数。|  
+|**统计操作系统和 Service Pack**|显示按操作系统和 Service Pack 组合列出清单的计算机数量。|  
+|**服务 - 运行特定服务的计算机**|显示运行指定服务的计算机的列表。|  
+|**服务 - 运行远程访问服务器的计算机**|显示运行远程访问服务器的计算机的列表。|  
+|**服务 - 特定计算机的服务信息**|显示有关指定计算机上的服务的摘要信息。|  
+|**Windows Server 计算机**|显示运行 Windows Server 操作系统的计算机的列表。|  
 
-### <a name="out-of-band-management"></a>Gerenciamento fora da banda  
+### <a name="out-of-band-management"></a>带外管理  
 
-|Nome do relatório|Descrição|  
+|报告名称|描述|  
 |-----------------|-----------------|  
-|**Computadores com controladores de gerenciamento fora de banda**|Exibe uma lista de computadores que têm controladores de gerenciamento fora de banda.|  
-|**Atividade do console de gerenciamento fora de banda**|Exibe uma lista de mensagens de status que identificam a atividade do console de gerenciamento fora de banda.|  
-|**Status do provisionamento de gerenciamento fora de banda do cliente**|Exibe uma lista de computadores que foram provisionados para o gerenciamento fora de banda.|  
+|**具有带外管理控制器的计算机**|显示具有带外管理控制器的计算机的列表。|  
+|**带外管理控制台活动**|显示识别带外管理控制台活动的状态消息的列表。|  
+|**客户端带外管理预配的状态**|显示已为带外管理设置的计算机的列表。|  
 
-### <a name="power-management"></a>Gerenciamento de energia  
+### <a name="power-management"></a>电源管理  
 
-|Nome do relatório|Descrição|  
+|报告名称|描述|  
 |-----------------|-----------------|  
-|**Gerenciamento de energia – Atividade do computador**|Exibe um gráfico mostrando a atividade do monitor, computador e usuário para uma coleção específica em um período de tempo especificado.|  
-|**Gerenciamento de energia – Atividade do computador por computador**|Exibe um gráfico mostrando a atividade do monitor, computador e usuário para um computador especificado em uma data especificada.|  
-|**Gerenciamento de energia – Detalhes da atividade do computador**|Exibe uma lista dos recursos de suspensão e ativação de computadores na coleção especificada em uma data e hora especificadas.|  
-|**Gerenciamento de energia – Detalhes do computador**|Exibe informações detalhadas sobre os recursos de energia, configurações de energia e planos de energia aplicados a um computador especificado.|  
-|**Gerenciamento de energia – O computador não está relatando detalhes**|Exibe uma lista de computadores que não relataram nenhuma atividade de energia em uma data e hora especificadas.|  
-|**Gerenciamento de energia – Computadores excluídos**|Exibe uma lista de computadores excluídos do plano de energia.|  
-|**Gerenciamento de energia – Computadores com vários planos de energia**|Exibe uma lista de computadores que têm várias configurações de energia conflitantes aplicadas.|  
-|**Gerenciamento de energia – Consumo de energia**|Exibe o consumo de energia mensal total (em kWh) para uma coleção especificada em um período de tempo especificado.|  
-|**Gerenciamento de energia – Consumo de energia por dia**|Exibe o consumo de energia total (em kWh) para uma coleção especificada nos últimos 31 dias.|  
-|**Gerenciamento de energia – Custo de energia**|Exibe o custo de consumo de energia mensal total para uma coleção especificada em um período de tempo especificado.|  
-|**Gerenciamento de energia – Custo de energia por dia**|Exibe o custo de consumo de energia total para uma coleção especificada nos últimos 31 dias.|  
-|**Gerenciamento de energia – Impacto ambiental**|Exibe um gráfico mostrando as emissões de dióxido de carbono (CO2) geradas por uma coleção especificada em um período de tempo especificado.|  
-|**Gerenciamento de energia – Impacto ambiental por dia**|Exibe um gráfico mostrando as emissões de CO2 geradas por uma coleção especificada nos últimos 31 dias.|  
-|**Gerenciamento de energia – Detalhes do computador com insônia**|Exibe informações detalhadas sobre computadores que não foram suspensos ou que não hibernaram em um período de tempo especificado.|  
-|**Gerenciamento de energia – Relatório de insônia**|Exibe uma lista das causas comuns que impediram os computadores de serem suspensos ou de hibernarem e o número de computadores que foram afetados por cada causa em um período de tempo especificado.|  
-|**Gerenciamento de energia – Recursos de energia**|Exibe os recursos de gerenciamento de energia de computadores na coleção especificada.|  
-|**Gerenciamento de energia – Configurações de energia**|Exibe uma lista agregada de configurações de energia usadas por computadores em uma coleção especificada.|  
-|**Gerenciamento de energia – Detalhes de configurações de energia**|Usado para exibir mais informações sobre os computadores que foram especificados no relatório **Gerenciamento de energia – Configurações de energia**.|  
+|**电源管理 - 计算机活动**|显示一个图形，该图形显示指定集合在指定时间段内的监视器、计算机和用户活动。|  
+|**电源管理 - 按计算机列出的计算机活动**|显示一个图形，该图形显示指定计算机在指定日期的监视器、计算机和用户活动。|  
+|**电源管理 - 计算机活动详细信息**|显示指定集合中的计算机在指定日期和时间的睡眠和唤醒功能的列表。|  
+|**电源管理 - 计算机详细信息**|显示有关应用到指定计算机的电源功能、电源设置和电源计划的详细信息。|  
+|**电源管理 - 未报告的计算机的详细信息**|显示在指定日期和时间未报告任何电源活动的计算机的列表。|  
+|**电源管理 - 排除的计算机**|显示从电源计划中排除的计算机的列表。|  
+|**电源管理 - 有多个电源计划的计算机**|显示应用了多个冲突的电源设置的计算机的列表。|  
+|**电源管理 - 能耗**|显示指定集合在指定时间段内的每月总能耗（以 kWh 为单位）。|  
+|**电源管理 - 每日能耗**|显示指定集合在过去 31 天内的总能耗（以 kWh 为单位）。|  
+|**电源管理 - 能源成本**|显示指定集合在指定时间段内的每月总能耗成本。|  
+|**电源管理 - 每日能源成本**|显示指定集合在过去 31 天内的总能耗成本。|  
+|**电源管理 - 环境影响**|显示一个图形，该图形显示指定集合在指定时间段内产生的二氧化碳 (CO2) 排放量。|  
+|**电源管理 - 每日环境影响**|显示一个图形，该图形显示指定集合在过去 31 天内产生的 CO2 排放量。|  
+|**电源管理 - 失眠计算机详细信息**|显示有关在指定时间段内未睡眠或未休眠的计算机的详细信息。|  
+|**电源管理 - 失眠报表**|显示一个列表，该列表列出了阻止计算机睡眠或休眠的常见原因以及指定时间段内受每种原因影响的计算机数量。|  
+|**电源管理 - 电源功能**|显示指定集合中的计算机的电源管理功能。|  
+|**电源管理 - 电源设置**|显示指定集合中的计算机所使用的电源设置的聚合列表。|  
+|**电源管理 - 电源设置详细信息**|用于显示在“电源管理 - 电源设置”报表中指定的计算机的更多信息。|  
 
-### <a name="replication-traffic"></a>Tráfego de replicação  
+### <a name="replication-traffic"></a>复制流量  
 
-|Nome do relatório|Descrição|  
+|报告名称|描述|  
 |-----------------|-----------------|  
-|**Tráfego de Replicação de Dados Globais por Link (gráfico de linhas)**|Exibe o tráfego total de replicação de dados globais em um link especificado para um número de dias especificado.|  
-|**Tráfego de Replicação de Dados Globais por Link (gráfico de pizza)**|Exibe o tráfego total de replicação de dados globais em um link especificado para um número de dias especificado.|  
-|**Tráfego de Replicação de Hierarquia por Link**|Exibe o tráfego de replicação total para cada link na hierarquia em um número de dias especificado.|  
-|**Tráfego dos Dez Principais Grupos de Replicação de Hierarquia por Link (gráfico de pizza)**|Exibe o tráfego de replicação para os dez principais grupos de replicação em toda a hierarquia identificada pelo link.|  
-|**Tráfego de Replicação do Link**|Exibe o tráfego de replicação total para todos os dados em um número de dias especificado.|  
-|**Tráfego do grupo de replicação por link**|Exibe o tráfego de rede do grupo de replicação em um link de replicação de banco de dados especificado em um número de dias especificado.|  
-|**Tráfego de Replicação de Dados de Site por Link (gráfico de linhas)**|Exibe o tráfego total de replicação de dados do site em um link especificado para um número de dias especificado.|  
-|**Tráfego de Replicação de Dados de Site por Link (gráfico de pizza)**|Exibe o tráfego total de replicação de dados do site em um link especificado para um número de dias especificado.|  
-|**Tráfego de Replicação de Hierarquia Total (gráfico de linhas)**|Exibe a replicação de dados globais e do site de agregação de hierarquia para cada direção de cada link para um número de dias especificado.|  
-|**Tráfego de Replicação de Hierarquia Total (gráfico de pizza)**|Exibe a replicação de dados globais e do site de agregação de hierarquia para cada direção de cada link para um número de dias especificado.|  
+|**按链接列出的全局数据复制流量（折线图）**|显示指定天数内指定链接上的全局数据复制总流量。|  
+|**按链接列出的全局数据复制流量（饼图）**|显示指定天数内指定链接上的全局数据复制总流量。|  
+|**按链接列出的层次结构复制流量**|显示指定天数内层次结构中的每个链接的复制总流量。|  
+|**按链接列出的层次结构前十个复制组流量（饼图）**|显示由链接标识的整个层次结构中前十个复制组的复制流量。|  
+|**链接复制流量**|显示指定天数内所有数据的复制总流量。|  
+|**按链接列出的复制组流量**|显示指定天数内指定数据库复制链接上的复制组网络流量。|  
+|**按链接列出的站点数据复制流量（折线图）**|显示指定天数内指定链接上的站点数据复制总流量。|  
+|**按链接列出的站点数据复制流量（饼图）**|显示指定天数内指定链接上的站点数据复制总流量。|  
+|**层次结构复制总流量（折线图）**|显示指定天数内每个链接的每个方向的层次结构聚合全局和站点数据复制。|  
+|**层次结构复制总流量（饼图）**|显示指定天数内每个链接的每个方向的层次结构聚合全局和站点数据复制。|  
 
-### <a name="site---client-information"></a>Site – Informações do cliente  
+### <a name="site---client-information"></a>站点 - 客户端信息  
 
-|Nome do relatório|Descrição|  
+|报告名称|描述|  
 |-----------------|-----------------|  
-|**Relatório de status detalhado de atribuição do cliente**|Exibe informações detalhadas sobre o status de atribuição do cliente.|  
-|**Detalhes de falha na atribuição do cliente**|Exibe informações detalhadas sobre falhas de atribuição do cliente.|  
-|**Detalhes do status de atribuição do cliente**|Exibe informações de visão geral sobre o status de atribuição do cliente.|  
-|**Detalhes de êxito de atribuição do cliente**|Exibe informações detalhadas sobre clientes atribuídos com êxito.|  
-|**Relatório de falha de implantação do cliente**|Exibe informações detalhadas para clientes com falha na implantação.|  
-|**Detalhes do status de implantação cliente**|Exibe informações de resumo do status das instalações de cliente.|  
-|**Relatório de êxito de implantação cliente**|Exibe informações detalhadas para clientes com êxito na implantação.|  
-|**Clientes sem capacidade de comunicação HTTPS**|Exibe informações detalhadas sobre cada cliente no site que executou a HTTPS Communication Readiness Tool e relatou como não tendo capacidade de se comunicar por HTTPS.|  
-|**Computadores atribuídos, mas não instalados para um determinado site**|Exibe uma lista de computadores que foram atribuídos a um site especificado, mas que não estão relatando para esse site.|  
-|**Computadores com uma versão cliente do Configuration Manager específica**|Exibe uma lista de computadores que estão executando uma versão especificada do software cliente do Configuration Manager.|  
-|**Contagem de clientes e protocolo usado para comunicação**|Exibe um resumo dos métodos de comunicação usado pelos clientes (HTTP ou HTTPS).|  
-|**Contagem de clientes atribuídos e instalados para cada site**|Exibe o número de computadores atribuídos e instalados para cada site. Os clientes com um local de rede associado a vários sites são contados somente como instalados se eles estiverem relatando a esse site.|  
-|**Contagem de clientes capazes de comunicação HTTPS**|Exibe informações detalhadas sobre cada cliente no site que executou a HTTPS Communication Readiness Tool e relatou como tendo capacidade ou não de se comunicar por HTTPS.|  
-|**Contagem de clientes para cada site**|Exibe o número de clientes do Configuration Manager instalados por código do site.|  
-|**Contagem de clientes do Configuration Manager por versões do cliente**|Exibe o número de computadores descobertos pela versão do cliente do Configuration Manager.|  
-|**Detalhes do problema relatados para um ponto de status de fallback para uma coleção especificada**|Exibe informações detalhadas sobre os problemas relatados por clientes em uma coleção especificada se eles tiverem recebido um ponto de status de fallback.|  
-|**Detalhes dos problemas relatados para o ponto de status de fallback para um site especificado**|Exibe informações detalhadas sobre os problemas relatados pelos clientes em um site especificado se eles tiverem recebido um ponto de status de fallback.|  
-|**Resumo dos problemas relatados ao ponto de status de fallback**|Exibe informações sobre todos os problemas relatados pelos clientes se eles tiverem recebido um ponto de status de fallback.|  
-|**Resumo dos problemas relatados para o ponto de status de fallback para uma coleção específica**|Exibe informações de resumo sobre os problemas relatados por clientes em uma coleção especificada se eles tiverem recebido um ponto de status de fallback.|  
+|**客户端分配详细状态报表**|显示有关客户端分配状态的详细信息。|  
+|**客户端分配失败详细信息**|显示有关客户端分配失败的详细信息。|  
+|**客户端分配状态详细信息**|显示有关客户端分配状态的概述信息。|  
+|**客户端分配成功详细信息**|显示有关已成功分配的客户端的详细信息。|  
+|**客户端部署失败报表**|显示部署失败的客户端的详细信息。|  
+|**客户端部署状态详细信息**|显示客户端安装状态的摘要信息。|  
+|**客户端部署成功报表**|显示已成功部署的客户端的详细信息。|  
+|**不能进行 HTTPS 通信的客户端**|显示与站点中运行了 HTTPS Communication Readiness Tool 并且报告不支持通过 HTTPS 通信的每个客户端有关的详细信息。|  
+|**已为特定站点分配但是没有为其安装的计算机**|显示已分配到指定站点但尚未向该站点报告的计算机的列表。|  
+|**具有特定 Configuration Manager 客户端版本的计算机**|显示运行指定版本 Configuration Manager 客户端软件的计算机的列表。|  
+|**用于通信的客户端和协议计数**|显示客户端所使用通信方法（HTTP 或 HTTPS）的摘要。|  
+|**为每个站点分配并安装的客户端的计数**|显示为每个站点分配并安装的计算机数。 只有向该站点报告后，才会将具有与多个站点关联的网络位置的客户端统计为已安装。|  
+|**支持 HTTPS 通信的客户端计数**|显示与站点中运行了 HTTPS Communication Readiness Tool 并且报告为支持或不支持通过 HTTPS 通信的每个客户端有关的详细信息。|  
+|**每个站点的客户端计数**|显示按站点代码安装的 Configuration Manager 客户端数量。|  
+|**按客户端版本列出的 Configuration Manager 客户端计数**|显示 Configuration Manager 客户端版本发现的计算机数量。|  
+|**针对指定集合向回退状态点报告的问题详细信息**|显示指定集合中分配有回退状态点的客户端所报告的问题的详细信息。|  
+|**针对指定站点向回退状态点报告的问题详细信息**|显示指定站点中分配有回退状态点的客户端所报告的问题的详细信息。|  
+|**向回退状态点报告的问题的摘要**|显示分配有回退状态点的客户端所报告的所有问题的信息。|  
+|**针对特定集合向回退状态点报告的问题摘要**|显示指定集合中分配有回退状态点的客户端所报告的问题的摘要。|  
 
-### <a name="site---discovery-and-inventory-information"></a>Site – Informações de Descoberta e Inventário  
+### <a name="site---discovery-and-inventory-information"></a>站点 - 发现和清单信息  
 
-|Nome do relatório|Descrição|  
+|报告名称|描述|  
 |-----------------|-----------------|  
-|**Clientes que não relataram recentemente (em um número de dias especificado)**|Exibe uma lista de clientes que não relataram dados de descoberta, inventário de hardware ou inventário de software em um número de dias especificado.|  
-|**Computadores descobertos por um site específico**|Exibe uma lista de todos os computadores descobertos por um site especificado e a data da descoberta mais recente.|  
-|**Computadores descobertos recentemente pelo método de descoberta**|Exibe uma lista de computadores que foram descobertos em um número de dias especificado e lista os agentes que os descobriram. Um computador pode aparecer mais de uma vez na lista se tiver sido descoberto por vários agentes.|  
-|**Computadores não descobertos recentemente (em um número especificado de dias)**|Exibe uma lista de computadores que não foram descobertos recentemente, e exibe o número de dias desde dua descoberta.|  
-|**Computadores não inventariados recentemente (em um número especificado de dias)**|Exibe uma lista de computadores que não foram inventariados recentemente, e exibe as últimas horas em que foram inventariados.|  
-|**Computadores que podem compartilhar o mesmo identificador exclusivo do Configuration Manager**|Exibe uma lista de computadores que tiveram seus nomes alterados. Uma alteração no nome é um possível sintoma de que um computador compartilha um Identificador Exclusivo do Configuration Manager com outro computador.|  
-|**Computadores com endereços MAC duplicados**|Exibe os computadores que compartilham um endereço MAC.|  
-|**Contar computadores em domínios de recursos ou grupos de trabalho**|Exibe o número de computadores em cada domínio de recurso ou grupo de trabalho.|  
-|**Informações de descoberta para um computador específico**|Exibe uma lista de agentes e sites que descobriram um computador especificado.|  
-|**Datas de inventário para um computador específico**|Exibe a data e hora da última execução do inventário em um computador especificado.|  
+|**近期未报告的客户端（在指定的天数内）**|显示在指定天数内尚未报告发现数据、硬件清单或软件清单的客户端的列表。|  
+|**由特定站点发现的计算机**|显示由指定站点发现的所有计算机以及最近发现日期的列表。|  
+|**发现方法最近发现的计算机**|显示在指定天数内发现的计算机列表，并列出发现这些计算机的代理。 如果多个代理发现同一台计算机，则此计算机可能在列表中出现多次。|  
+|**近期未发现的计算机（在指定天数内）**|显示近期未发现的计算机的列表，并显示自发现这些计算机后的天数。|  
+|**近期未列出清单的计算机（在指定天数内）**|显示近期未列出清单的计算机的列表，并显示上次列出清单的时间。|  
+|**可能共享同一 Configuration Manager 唯一标识符的计算机**|显示已更改名称的计算机的列表。 名称更改可能表示某台计算机与其他计算机共享 Configuration Manager 唯一标识符。|  
+|**具有重复 MAC 地址的计算机**|显示共享 MAC 地址的计算机。|  
+|**统计在资源域或工作组中的计算机**|显示在每个资源域或工作组中的计算机数。|  
+|**特定计算机的发现信息**|显示发现指定计算机的代理和站点的列表。|  
+|**特定计算机的清单日期**|显示在指定计算机上最近运行清单的日期和时间。|  
 
-### <a name="site---general"></a>Site – Geral  
+### <a name="site---general"></a>站点 - 常规  
 
-|Nome do relatório|Descrição|  
+|报告名称|描述|  
 |-----------------|-----------------|  
-|**Computadores em um site específico**|Exibe uma lista de computadores cliente em um site especificado.|  
-|**Status do site para a hierarquia**|Exibe a lista de sites na hierarquia com a versão do site e informações de status do site.|  
-|**Status da atualização do Configuration Manager na hierarquia**|Exibe informações sobre as atualizações do site do Configuration Manager para a hierarquia.|  
+|**特定站点中的计算机**|显示指定站点中的客户端计算机的列表。|  
+|**层次结构的站点状态**|显示层次结构中具有站点版本和站点状态信息的站点的列表。|  
+|**层次结构内 Configuration Manager 更新的状态**|显示有关层次结构的 Configuration Manager 站点更新的信息。|  
 
-### <a name="site---server-information"></a>Site – Informações do servidor  
+### <a name="site---server-information"></a>站点 - 服务器信息  
 
-|Nome do relatório|Descrição|  
+|报告名称|描述|  
 |-----------------|-----------------|  
-|**Funções do sistema de sites e servidores do sistema de sites para um site específico**|Exibe uma lista de servidor do sistema de sites e suas funções do sistema de sites para um site especificado.|  
+|**特定站点的站点系统角色和站点系统服务器**|显示指定站点的站点系统服务器及其站点系统角色的列表。|  
 
-### <a name="software---companies-and-products"></a>Software – Empresas e Produtos  
+### <a name="software---companies-and-products"></a>软件 - 公司和产品  
 
-|Nome do relatório|Descrição|  
+|报告名称|描述|  
 |-----------------|-----------------|  
-|**Todos os produtos inventariados para uma empresa de software específica**|Exibe uma lista dos produtos e versões de software inventariados de uma empresa de software especificada.|  
-|**Todas as empresas de software**|Exibe uma lista de todas as empresas que fabricam software inventariado.|  
-|**Todos os aplicativos do Windows**|Exibe um resumo dos aplicativos do Windows instalados, ordenados pelo número de instância com base em critérios de pesquisa para o nome do aplicativo, arquitetura ou fornecedor.|  
-|**Computadores com um produto específico**|Exibe uma lista dos computadores nos quais um produto especificado é inventariado, bem como as versões desse produto.|  
-|**Computadores com um nome e versão de produto específicos**|Exibe uma lista dos computadores nos quais uma versão especificada de um produto é inventariada.|  
-|**Computadores com software específico registrado em Adicionar ou Remover Programas**|Exibe um resumo de todos os computadores com software especificado registrado em Adicionar ou Remover Programas ou Programas e Recursos.|  
-|**Contar todos os produtos e versões inventariados**|Exibe uma lista de produtos e versões de software inventariados e o número de computadores em que cada um está instalado.|  
-|**Contagem de produtos inventariados e versões de um produto específico**|Exibe uma lista das versões inventariadas de um produto especificado e o número de computadores em que cada um está instalado.|  
-|**Contagem de todas as instâncias de software registradas com Adicionar ou Remover Programas**|Exibe um resumo de todas as instâncias de software instaladas e registradas com Adicionar ou Remover Programas ou Programas e Recursos em computadores na coleção especificada.|  
-|**Contagem de instâncias de software específico registradas com Adicionar ou Remover Programas**|Exibe uma contagem de instâncias de pacotes de software especificados instalados e registrados com Adicionar ou Remover Programas ou Programas e Recursos.|  
-|**Instalações dos aplicativos do Windows especificados**|Este relatório lista todos os computadores com um aplicativo do Windows especificado.|  
-|**Produtos em um computador específico**|Exibe um resumo dos produtos de software inventariados e seus fabricantes em um computador especificado.|  
-|**Software registrado em Adicionar ou Remover Programas em um computador específico**|Exibe um resumo do software instalado em um computador especificado que é registrado em Adicionar ou Remover Programas ou Programas e Recursos.|  
-|**Aplicativos Windows instalados para o usuário especificado**|Exibe todos os aplicativos do Windows instalados para o usuário especificado|  
+|**特定软件公司的所有清单产品**|显示指定软件公司的清单软件产品和版本的列表。|  
+|**所有软件公司**|显示制造清单软件的所有公司列表。|  
+|**所有的 Windows 应用**|显示按基于应用程序名称、体系结构或发布者搜索条件搜索到的实例数排序的已安装 Windows 应用的摘要。|  
+|**具有特定产品的计算机**|显示按指定产品列出清单的计算机以及产品版本的列表。|  
+|**具有特定产品名称和版本的计算机**|显示按指定版本的产品列出清单的计算机的列表。|  
+|**在“添加或删除程序”中注册了特定软件的计算机**|显示在“添加或删除程序”或“程序和功能”中注册了指定软件的所有计算机的摘要。|  
+|**统计所有清单产品和版本**|显示清单软件产品和版本以及每个产品所安装到的计算机数量的列表。|  
+|**统计特定产品的清单产品和版本**|显示指定产品的清单版本以及每个产品所安装到的计算机数量的列表。|  
+|**统计使用“添加或删除程序”注册的软件的所有实例**|显示使用指定集合中计算机上的“添加或删除程序”或“程序和功能”安装并注册的所有软件实例的摘要。|  
+|**统计使用“添加或删除程序”注册的特定软件的实例**|显示在“添加或删除程序”或“程序和功能”中安装并注册的指定软件包的实例计数。|  
+|**指定 Windows 应用的安装**|此报表列出具有指定 Windows 应用的所有计算机。|  
+|**特定计算机上的产品**|显示指定计算机上清单软件产品及其制造商的摘要。|  
+|**在特定计算机上的“添加或删除程序”中注册的软件**|显示指定计算机上安装的并在“添加/删除程序”或“程序和功能”中注册的软件的摘要。|  
+|**安装到指定用户的 Windows 应用**|显示所有安装到指定用户的 Windows 应用|  
 
-### <a name="software---files"></a>Software – Arquivos  
+### <a name="software---files"></a>软件 - 文件  
 
-|Nome do relatório|Descrição|  
+|报告名称|描述|  
 |-----------------|-----------------|  
-|**Todos os arquivos inventariados para um produto específico**|Exiba um resumo dos arquivos inventariados associados a um produto de software especificado.|  
-|**Todos os arquivos inventariados em um computador específico**|Exiba um resumo de todos os arquivos inventariados em um computador especificado.|  
-|**Comparar inventário de software em dois computadores**|Exibe as diferenças entre os inventários de software relatados para dois computadores especificados.|  
-|**Computadores com um arquivo específico**|Exibe uma lista de computadores que coletaram inventário de software para um nome de arquivo especificado. Um computador pode aparecer mais de uma vez na lista se contiver várias cópias do arquivo.|  
-|**Contagem de computadores com um nome de arquivo específico**|Exibe o número de computadores que coletaram o inventário de software para um arquivo especificado.|  
+|**特定产品的所有清单文件**|显示与指定软件产品相关联的清单文件的摘要。|  
+|**特定计算机上的所有清单文件**|显示特定计算机上的所有清单文件的摘要。|  
+|**比较两台计算机上的软件清单**|显示向两台指定计算机报告的软件清单之间的差异。|  
+|**具有特定文件的计算机**|显示已针对指定文件名收集软件清单的计算机的列表。 如果一台计算机包含该文件的多个副本，它可能会在列表中出现多次。|  
+|**统计具有指定文件名的计算机**|显示已针对指定文件收集软件清单的计算机的数量。|  
 
-### <a name="software-distribution---application-monitoring"></a>Distribuição de software – Monitoramento de aplicativos  
+### <a name="software-distribution---application-monitoring"></a>软件分发 - 应用程序监视  
 
-|Nome do relatório|Descrição|  
+|报告名称|描述|  
 |-----------------|-----------------|  
-|**Todas as implantações de aplicativo (avançadas)**|Exibe informações de resumo detalhadas de todas as implantações de aplicativo.|  
-|**Todas as implantações de aplicativo (básico)**|Exibe informações de resumo de todas as implantações de aplicativo.|  
-|**Conformidade de aplicativo**|Exibe as informações de conformidade do aplicativo especificado na coleção especificada.|  
-|**Implantações de aplicativos por ativo**|Exibe os aplicativos implantados em um dispositivo ou usuário especificado.|  
-|**Erros de infraestrutura de aplicativos**|Exibe os erros de infraestrutura do aplicativo.  Isso inclui erros internos de infraestrutura, bem como erros resultantes de regras de requisitos inválidas.|  
-|**Status detalhado do uso do aplicativo**|Exibe detalhes de uso de aplicativos instalados.|  
-|**Status do resumo de uso do aplicativo**|Exibe um resumo de uso dos aplicativos instalados.|  
-|**Implantações de sequência de tarefas que contêm aplicativo**|Exibe as implantações de sequência de tarefas que instalam um aplicativo especificado.|  
-|**Solicitações de usuário para aplicativo do Android**|Exibe os usuários que solicitaram a instalação de um aplicativo do Android.|  
-|**Aplicativos iOS com implantações com falha (aplicativo já instalado)**|Exibe informações de conformidade para o aplicativo do iOS selecionado, implantado como um “Pacote do aplicativo para iOS da Loja de Aplicativos”, que foi associado a uma política de gerenciamento de aplicativos móveis. Esse relatório é usado para exibir usuários e dispositivos para os quais o aplicativo falhou ao ser instalado por ter sido já instalado manualmente pelo usuário.|  
+|**所有应用程序部署（高级）**|显示有关所有应用程序部署的详细摘要信息。|  
+|**所有应用程序部署（基本）**|显示有关所有应用程序部署的摘要信息。|  
+|**应用程序符合性**|显示指定集合中指定应用程序的符合性信息。|  
+|**应用程序部署（按资产）**|显示部署到指定设备或用户的应用程序。|  
+|**应用程序基础结构错误**|显示应用程序基础结构错误。  其中可能包括内部基础结构错误，以及无效要求规则所导致的错误。|  
+|**应用程序使用情况详细状态**|显示已安装应用程序的使用情况详细信息。|  
+|**应用程序使用情况摘要状态**|显示已安装应用程序的使用情况摘要信息。|  
+|**包含应用程序的任务序列部署**|显示安装指定应用程序的任务序列部署。|  
+|**Android 应用程序的用户请求**|显示请求安装 Android 应用程序的用户。|  
+|**部署失败的 iOS 应用（应用已安装）**|显示部署为与移动应用程序管理策略相关联的“应用商店中的 iOS 应用包”的所选 iOS 应用的符合性信息。 此报表用来显示应用安装失败的用户和设备，因为该应用之前已由用户手动安装了。|  
 
-### <a name="software-distribution---collections"></a>Distribuição de software – Coleções  
+### <a name="software-distribution---collections"></a>软件分发 - 集合  
 
-|Nome do relatório|Descrição|  
+|报告名称|描述|  
 |-----------------|-----------------|  
-|**Todas as coleções**|Exibe todas as coleções na hierarquia.|  
-|**Todos os recursos em uma coleção específica**|Exibe todos os recursos em uma coleção especificada.|  
-|**Janelas de manutenção disponíveis para um cliente especificado**|Exibe todas as janelas de manutenção aplicáveis ao cliente especificado.|  
+|**所有集合**|显示层次结构中的所有集合。|  
+|**特定集合中的所有资源**|显示指定集合中的所有资源。|  
+|**可用于指定客户端的维护时段**|显示适用于指定客户端的所有维护时段。|  
 
-### <a name="software-distribution---content"></a>Distribuição de software – Conteúdo  
+### <a name="software-distribution---content"></a>软件分发 - 内容  
 
-|Nome do relatório|Descrição|  
+|报告名称|描述|  
 |-----------------|-----------------|  
-|**Todas as distribuições de conteúdo ativas**|Exibe todos os pontos de distribuição nos quais o conteúdo está sendo atualmente instalado ou removido.|  
-|**Todo o conteúdo**|Exibe todos os aplicativos e pacotes em um site.|  
-|**Todo o conteúdo em um ponto de distribuição específico**|Exibe todo o conteúdo atualmente instalado em um ponto de distribuição especificado.|  
-|**Todos os pontos de distribuição**|Exibe informações sobre os pontos de distribuição para cada site.|  
-|**Todas as mensagens de status de um pacote específico em um ponto de distribuição específico**|Exibe todas as mensagens de status de um pacote especificado em um ponto de distribuição especificado.|  
-|**Status de distribuição de conteúdo do aplicativo**|Exibe informações sobre o status de distribuição de conteúdo do aplicativo.|  
-|**Aplicativos direcionados ao grupo de pontos de distribuição**|Exibe informações sobre o conteúdo do aplicativo que foi implantado em um grupo de pontos de distribuição especificado.|  
-|**Aplicativos fora de sincronização em um grupo de pontos de distribuição especificado**|Exibe os aplicativos para os quais os arquivos de conteúdo associados não foram atualizados com a versão mais recente em um grupo de pontos de distribuição especificado.|  
-|**Grupo de pontos de distribuição**|Exibe informações sobre um grupo de pontos de distribuição especificado.|  
-|**Resumo do uso do ponto de distribuição**|Exibe o resumo de uso de ponto de distribuição para cada ponto de distribuição.|  
-|**Status de distribuição do pacote especificado**|Exibe o status de distribuição para o conteúdo de pacote especificado em cada ponto de distribuição.|  
-|**Pacotes direcionados a um grupo de pontos de distribuição**|Exibe informações sobre os pacotes destinados a um grupo de pontos de distribuição especificado.|  
-|**Pacotes fora de sincronização em um grupo de pontos de distribuição especificado**|Exibe os pacotes para os quais os arquivos de conteúdo associados não foram atualizados com a versão mais recente em um grupo de pontos de distribuição especificado.|  
+|**所有活动内容分发**|显示当前正在安装或删除内容的所有分发点。|  
+|**所有内容**|显示站点中的所有应用程序和包。|  
+|**特定分发点上的所有内容**|显示当前安装在指定分发点上的所有内容。|  
+|**所有分发点**|显示有关每个站点的分发点信息。|  
+|**特定分发点上特定包的所有状态消息**|显示指定分发点上指定包的所有状态消息。|  
+|**应用程序内容分发状态**|显示有关应用程序内容分发状态的信息。|  
+|**针对分发点组的应用程序**|显示有关已部署到指定分发点组的应用程序内容的信息。|  
+|**在指定分发点组上未同步的应用程序**|显示在指定分发点组上相关内容文件尚未更新为最新版本的应用程序。|  
+|**分发点组**|显示有关指定分发点组的信息。|  
+|**分发点使用情况摘要**|显示每个分发点的分发点使用情况摘要。|  
+|**指定包的分发状态**|显示每个分发点上指定包内容的分发状态。|  
+|**针对分发点组的包**|显示有关针对指定分发点组的包的信息。|  
+|**在指定分发点组上未同步的包**|显示在指定分发点组上相关内容文件尚未更新为最新版本的包。|  
 
-### <a name="software-distribution---package-and-program-deployment"></a>Distribuição de software – Implantação de pacote e programa  
+### <a name="software-distribution---package-and-program-deployment"></a>软件分发 - 包和程序部署  
 
-|Nome do relatório|Descrição|  
+|报告名称|描述|  
 |-----------------|-----------------|  
-|**Todas as implantações de um pacote e programa especificados**|Exibe informações sobre todas as implantações de um pacote e programa especificado.|  
-|**Todas as implantações de pacote e programa**|Exibe todas as implantações de pacote e programa neste site.|  
-|**Todas as implantações do pacote e do programa para uma coleção especificada**|Exibe todas as implantações de pacote e programa em uma coleção especificada.|  
-|**Todas as implantações do pacote e do programa de um computador especificado**|Exibe todas as implantações de pacote e programa que se aplicam a um computador especificado.|  
-|**Todas as implantações do pacote e do programa para um usuário especificado**|Exibe todas as implantações de pacote e programa em um usuário especificado.|  
+|**指定包和程序的所有部署**|显示有关指定包和程序的所有部署的信息。|  
+|**所有包和程序部署**|显示此站点中的所有包和程序部署。|  
+|**对指定集合进行的所有包和程序部署**|显示对指定集合进行的所有包和程序部署。|  
+|**对指定计算机进行的所有包和程序部署**|显示应用于指定计算机的所有包和程序部署。|  
+|**对指定用户进行的所有包和程序部署**|显示对指定用户进行的所有包和程序部署。|  
 
-### <a name="software-distribution---package-and-program-deployment-status"></a>Distribuição de software – Status de implantação de pacote e programa  
+### <a name="software-distribution---package-and-program-deployment-status"></a>软件分发 - 包和程序部署状态  
 
-|Nome do relatório|Descrição|  
+|报告名称|描述|  
 |-----------------|-----------------|  
-|**Todas as implantações de pacote de recursos do sistema e programa com status**|Exibe todas as implantações de pacote e programa para o site com um status de resumo de cada implantação.|  
-|**Todos os recursos de sistema para uma implantação de pacote e programa especificada em um determinado estado**|Exibe uma lista de recursos que estão em um estado especificado para uma implantação de pacote e programa especificada.|  
-|**Gráfico – Status de conclusão da implantação de pacote e programa por hora**|Exibe o percentual de computadores que instalaram com êxito o pacote a cada hora desde a criação da implantação do pacote e programa. Ele pode ser usado para rastrear o tempo médio para uma implantação de pacote e programa.|  
-|**Status da implantação de pacote e programa para um cliente e implantação especificados**|Exibe as mensagens de status relatadas para um computador especificado e a implantação de pacote e programa.|  
-|**Status de uma implantação de pacote e programa especificada**|Exibe o resumo do status de uma implantação de pacote e programa especificada.|  
+|**所有系统资源包和程序部署及其状态**|显示站点的所有包和程序部署以及每个部署的摘要状态。|  
+|**指定状态下指定包和程序部署的所有系统资源**|显示处于指定包和程序部署的指定状态下的资源的列表。|  
+|**图表 - 每小时的包和程序部署完成状态**|显示自创建包和程序部署以来每小时成功安装包的计算机的百分比。 它可以用于跟踪包和程序部署的平均时间。|  
+|**指定客户端和部署的包和程序部署状态**|显示针对指定计算机以及包和程序部署报告的状态消息。|  
+|**指定包和程序部署的状态**|显示指定包和程序部署的状态摘要。|  
 
-### <a name="software-metering"></a>Medição de software  
+### <a name="software-metering"></a>软件计数  
 
-|Nome do relatório|Descrição|  
+|报告名称|描述|  
 |-----------------|-----------------|  
-|**Todas as regras de medição de software aplicadas ao site**|Exibe uma lista de todas as regras de medição de software no site.|  
-|**Computadores que têm um programa medido instalado mas não executaram o programa desde uma data especificada**|Exibe todos os computadores que têm um aplicativo medido especificado instalado, conforme relatado pelo inventário de software, mas que não executaram o programa desde uma data específica.|  
-|**Computadores que executaram um programa de software medido específico**|Exibe uma lista de computadores que executaram programas que correspondem à regra de medição de software especificada no mês e ano especificados.|  
-|**Uso simultâneo de todos os programas de software medidos**|Exibe o número máximo de usuários que executaram simultaneamente cada programa de software medido durante o mês e ano especificados.|  
-|**Análise de tendência de uso simultâneo de um programa de software medido especificado**|Exibe o número máximo de usuários que executaram simultaneamente o programa de software medido especificado durante cada mês do ano passado.|  
-|**Instalar a base para todos os programas de software medidos**|Exibe o número de computadores que contêm programas de software medidos instalados, conforme relatado pelo inventário de software. Este relatório exige que o inventário de software seja coletado nos computadores medidos.|  
-|**Progresso do resumo da medição de software**|Exibe a hora em que os dados de medição resumidos mais recentemente foram processados no servidor do site.  Somente os dados de medição processados antes destas datas serão refletidos nos relatórios de medição de software.|  
-|**Resumo de uso de hora do dia para um programa de software medido específico**|Exibe o número médio de usos de um programa específico nos últimos 90 dias, dividido por dia e hora.|  
-|**Uso total para todos os programas de software medidos**|Exibe o número de usuários que executaram programas que correspondem a cada regra de medição de software localmente ou usando os Serviços de Terminal no mês e ano especificados.|  
-|**Uso total para todos os programas de software medidos em Windows Terminal Servers**|Exibe o número de usuários que executaram programas que correspondem a cada regra de medição de software usando os Serviços de Terminal no mês e ano especificados.|  
-|**Análise de tendência de uso total para um programa de software medido específico**|Exibe o número de usuários que executaram programas que correspondem à regra de medição de software especificada localmente ou usando os Serviços de Terminal durante cada mês do ano passado.|  
-|**Análise de tendência de uso total de um programa de software medido específico em Windows Terminal Servers**|Exibe o número de usuários que executaram programas que correspondem à regra de medição de software especificada usando os Serviços de Terminal durante cada mês do ano passado.|  
-|**Usuários que executaram um programa de software medido específico**|Exibe uma lista de usuários que executaram programas que correspondem à regra de medição de software especificada no mês e ano especificados.|  
+|**应用于此站点的所有软件计数规则**|显示此站点的所有软件计数规则的列表。|  
+|**已安装计数程序但在指定日期后尚未运行此程序的计算机**|显示所有按照软件清单的报告已安装指定计数程序但在指定的日期后尚未运行此程序的计算机。|  
+|**已运行特定计数软件程序的计算机**|显示在指定的月份和年份中运行与指定软件计数规则相匹配的程序的计算机列表。|  
+|**所有计数软件程序的并发使用情况**|显示在指定的月份和年份中并发运行每个计数软件程序的最大用户数。|  
+|**特定计数软件程序的并发使用趋势分析**|显示在过去一年中并发运行每个指定计数软件程序的最大用户数。|  
+|**所有计数软件程序的安装基础**|显示按照软件清单的报告已安装计数软件程序的计算机数量。 此报表要求将软件清单收集到计数计算机上。|  
+|**软件计数汇总进度**|显示站点服务器上最近处理汇总计数数据的时间。  仅这些日期之前处理的计数数据才会反映在软件计数报表中。|  
+|**特定计数软件程序的每日使用时间摘要**|显示过去 90 天中特殊程序的平均使用数，按小时和天数细分。|  
+|**所有计数软件程序的总体使用情况**|显示在指定的月份和年份中本地运行与每个软件计数规则相匹配的程序或使用终端服务运行程序的用户数。|  
+|**Windows 终端服务器上所有计数软件程序的总体使用情况**|显示在指定的月份和年份中使用终端服务运行与每个软件计数规则相匹配的程序的用户数。|  
+|**特定计数软件程序的总体使用趋势分析**|显示过去一年中每个月在本地运行与指定软件计数规则相匹配的程序或使用终端服务运行程序的用户数。|  
+|**Windows 终端服务器上特定计数软件程序的总体使用趋势分析**|显示在过去一年中每个月使用终端服务运行与指定软件计数规则相匹配的程序的用户数。|  
+|**已运行特定计数软件程序的用户**|显示在指定的月份和年份中运行与指定软件计数规则相匹配的程序的用户列表。|  
 
-### <a name="software-updates---a-compliance"></a>Atualizações de software – A Conformidade  
+### <a name="software-updates---a-compliance"></a>软件更新 - A 符合性  
 
-|Nome do relatório|Descrição|  
+|报告名称|描述|  
 |-----------------|-----------------|  
-|**Conformidade 1 – Conformidade geral**|Exibe os dados de conformidade geral de um grupo de atualização de software.|  
-|**Conformidade 2 – Atualização de software específica**|Exibe os dados de conformidade para uma atualização de software especificada.|  
-|**Conformidade 3 – Grupo de atualização (por atualização)**|Exibe os dados de conformidade das atualizações de software definidas em um grupo de atualização de software.|  
-|**Conformidade 4 – Atualizações por fornecedor, mês e ano**|Exibe os dados de conformidade para atualizações de software liberadas por um fornecedor durante um mês e ano especificados.|  
-|**Conformidade 5 – Computador específico**|Este relatório retorna os dados de conformidade de atualização de software para um computador especificado.  Para limitar a quantidade de informações retornadas, é possível especificar a classificação da atualização de fornecedor e software.|  
-|**Conformidade 6 – Estados de atualização de software específicos (secundários)**|Exibe a contagem e o percentual de computadores em cada estado de conformidade para a atualização de software especificada.|  
-|**Conformidade 7 – Computadores em um estado de conformidade específico para um grupo de atualizações (secundários)**|Exibe todos os computadores em uma coleção que têm um estado de conformidade geral especificado em relação a um grupo de atualização de software.|  
-|**Conformidade 8 – Computadores em um estado de conformidade específico para uma atualização (secundários)**|Exibe todos os computadores em uma coleção que têm um estado de conformidade especificado para uma atualização de software.|  
+|**符合性 1 - 总体符合性**|显示软件更新组的总体符合性数据。|  
+|**符合性 2 - 特定软件更新**|显示指定软件更新的符合性数据。|  
+|**符合性 3 - 更新组（按更新）**|显示软件更新组中定义的软件更新的符合性数据。|  
+|**符合性 4 - 按供应商/月份/年份列出的更新**|显示供应商在指定年份和月份发布的软件更新的符合性数据。|  
+|**符合性 5 - 特定计算机**|此报表返回指定计算机的软件更新符合性数据。  为限制返回的信息量，可以指定供应商和软件更新分类。|  
+|**符合性 6 - 特定软件更新状态（辅助）**|显示针对指定软件更新处于每个符合性状态的计算机的计数和百分比。|  
+|**符合性 7 - 针对更新组处于特定符合性状态的计算机（辅助）**|显示集合中针对软件更新组具有指定总体符合性状态的所有计算机。|  
+|**符合性 8 - 针对更新处于特定符合性状态的计算机（辅助）**|显示集合中针对软件更新具有指定符合性状态的所有计算机。|  
 
-### <a name="software-updates---b-deployment-management"></a>Atualizações de software – B Gerenciamento de implantação  
+### <a name="software-updates---b-deployment-management"></a>软件更新 - B 部署管理  
 
-|Nome do relatório|Descrição|  
+|报告名称|描述|  
 |-----------------|-----------------|  
-|**Gerenciamento 1 – Implantações de um grupo de atualização**|Exibe todas as implantações que contêm todas as atualizações de software definidas em um grupo de atualização de software especificado.|  
-|**Gerenciamento 2 – Atualizações necessárias, mas não implantadas**|Exibe todas as atualizações de software específicas do fornecedor que foram detectadas como obrigatórias nos clientes, mas que não foram implantadas em uma coleção especificada.|  
-|**Gerenciamento 3 – Atualizações em uma implantação**|Exibe as atualizações de software contidas em uma implantação especificada.|  
-|**Gerenciamento 4 – Implantações destinadas a uma coleção**|Exibe todas as implantações de atualização de software destinadas a uma coleção especificada.|  
-|**Gerenciamento 5 – Implantações destinadas a um computador**|Exibe todas as implantações de atualização de software implantadas em um computador especificado.|  
-|**Gerenciamento 6 – Implantações que contêm uma atualização específica**|Exibe todas as implantações que contêm uma atualização de software especificada e a coleção de destino associada para a implantação.|  
-|**Gerenciamento 7 – Atualizações em uma implantação com conteúdo ausente**|Exibe as atualizações de software em uma implantação especificada que não têm todo o conteúdo associado recuperado, impedindo que os clientes instalem a atualização e atinjam 100% de conformidade para a implantação.|  
-|**Gerenciamento 8 – Computadores com conteúdo ausente (secundário)**|Exibe todos os computadores que exigem uma atualização de software especificada contida em uma implantação especificada que não é provisionada em um ponto de distribuição.|  
+|**管理 1 - 更新组的部署**|显示包含在指定更新组中定义的所有软件更新的所有部署。|  
+|**管理 2 - 需要更新但未部署**|显示已检测到为客户端必需但未部署到指定集合的所有供应商特定的软件更新。|  
+|**管理 3 - 部署中的更新**|显示指定部署中包含的软件更新。|  
+|**管理 4 - 针对某个集合的部署**|显示针对指定集合的所有软件更新部署。|  
+|**管理 5 - 针对某台计算机的部署**|显示部署到指定计算机的所有软件更新部署。|  
+|**管理 6 - 包含特定更新的部署**|显示包含指定软件更新的所有部署以及部署的关联目标集合。|  
+|**管理 7 - 缺少内容的部署中的更新**|显示指定部署中检索不到所有关联内容的软件更新，这使得客户端无法安装更新并达到部署的 100% 符合性。|  
+|**管理 8 - 缺少内容的计算机（辅助）**|显示需要分发点上未提供的指定部署中包含的指定软件更新的所有计算机。|  
 
-### <a name="software-updates---c-deployment-states"></a>Atualizações de software – C Estados de implantação  
+### <a name="software-updates---c-deployment-states"></a>软件更新 - C 部署状态  
 
-|Nome do relatório|Descrição|  
+|报告名称|描述|  
 |-----------------|-----------------|  
-|**Estados 1 – Estados de imposição para uma implantação**|Exibe os estados de imposição de uma implantação de atualização de software especificada, que geralmente é a segunda fase da avaliação de uma implantação.|  
-|**Estados 2 – Estados de avaliação para uma implantação**|Exibe o estado de avaliação para uma implantação de atualização de software especificada, que geralmente é a primeira fase da avaliação de uma implantação.|  
-|**Estados 3 – Estados para uma implantação e computador**|Exibe os estados de todas as atualizações de software na implantação especificada para um computador especificado.|  
-|**Estados 4 – Computadores em um estado específico para uma implantação (secundários)**|Exibe todos os computadores em um estado especificado para uma implantação de atualização de software.|  
-|**Estados 5 – Estados para uma atualização em uma implantação (secundários)**|Exibe um resumo dos estados de uma atualização de software especificada definidos como destino por uma implantação especificada.|  
-|**Estados 6 – Computadores em um estado de imposição específico para uma atualização (secundários)**|Exibe todos os computadores em um estado de imposição especificado para uma atualização de software especificada.|  
+|**状态 1 - 部署的强制状态**|显示指定软件更新部署的强制状态，这通常是部署评估的第二阶段。|  
+|**状态 2 - 部署的评估状态**|显示指定软件更新部署的评估状态，这通常是部署评估的第一阶段。|  
+|**状态 3 - 部署和计算机的状态**|显示指定计算机的指定部署中所有软件更新的状态。|  
+|**状态 4 - 处于部署的某种特定状态下的计算机（辅助）**|显示处于软件更新部署的某种指定状态下的所有计算机。|  
+|**状态 5 - 部署中更新的状态（辅助）**|显示指定部署所针对的指定软件更新的状态摘要。|  
+|**状态 6 - 处于更新的特定强制状态下的计算机（辅助）**|显示处于指定软件更新的指定强制状态下的所有计算机。|  
 
-### <a name="software-updates---d-scan"></a>Atualizações de software – D Verificação  
+### <a name="software-updates---d-scan"></a>软件更新 - D 扫描  
 
-|Nome do relatório|Descrição|  
+|报告名称|描述|  
 |-----------------|-----------------|  
-|**Verificação 1 – Estados da última verificação por coleção**|Exibe a contagem de computadores para uma coleção especificada em cada estado de verificação de conformidade retornado pelos clientes durante a última verificação de conformidade.|  
-|**Verificação 2 – Estados da última verificação por site**|Exibe a contagem de computadores atribuídos a um site especificado em cada estado de verificação de conformidade retornado pelos clientes durante a última verificação de conformidade.|  
-|**Verificação 3 – Clientes de uma coleção que relataram um estado específico (secundários)**|Exibe todos os computadores de uma coleção especificada e um estado de verificação de conformidade especificado durante sua última verificação de conformidade.|  
-|**Verificação 4 – Clientes de um site que relataram um estado específico (secundários)**|Exibe todos os computadores atribuídos a um site especificado com um estado de verificação de conformidade especificado durante sua última verificação de conformidade.|  
+|**扫描 1 - 按集合列出的上次扫描状态**|显示处于上次符合性扫描期间客户端返回的每种符合性扫描状态下的特定集合的计算机计数。|  
+|**扫描 2 - 按站点列出的上次扫描状态**|显示分配到处于上次符合性扫描期间客户端返回的每种符合性扫描状态下的特定站点的计算机计数。|  
+|**扫描 3 - 报告特定状态的集合的客户端（辅助）**|显示在上次符合性扫描期间指定集合和指定符合性扫描状态的所有计算机。|  
+|**扫描 4 - 报告特定状态的站点的客户端（辅助）**|显示分配到在上次符合性扫描期间具有指定符合性扫描状态的指定站点的所有计算机。|  
 
-### <a name="software-updates---e-troubleshooting"></a>Atualizações de software – E Solução de problemas  
+### <a name="software-updates---e-troubleshooting"></a>软件更新 - E 疑难解答  
 
-|Nome do relatório|Descrição|  
+|报告名称|描述|  
 |-----------------|-----------------|  
-|**Solução de problemas 1 – Erros de verificação**|Exibe os erros de verificação no site e uma contagem de computadores que apresentaram cada erro.|  
-|**Solução de problemas 2 – Erros de implantação**|Exibe os erros de implantação no site e uma contagem de computadores que apresentaram cada erro.|  
-|**Solução de problemas 3 – Computadores que apresentaram falha com um erro de verificação específico (secundários)**|Exibe uma lista dos computadores que falharam em uma verificação devido a um erro especificado.|  
-|**Solução de problemas 4 – Computadores que apresentaram falha com um erro de implantação específico (secundários)**|Exibe uma lista dos computadores nos quais ocorreu uma falha na implantação de atualização devido a um erro especificado.|  
+|**疑难解答 1 - 扫描错误**|显示站点上的扫描错误以及遇到各个错误的计算机的计数。|  
+|**疑难解答 2 - 部署错误**|显示站点上的部署错误以及遇到各个错误的计算机的计数。|  
+|**疑难解答 3 - 由于特定扫描错误而失败的计算机（辅助）**|显示由于指定错误而扫描失败的计算机列表。|  
+|**疑难解答 4 - 由于特定部署错误而失败的计算机（辅助）**|显示由于指定错误导致部署更新失败的计算机列表。|  
 
-### <a name="state-migration"></a>Migração de estado  
+### <a name="state-migration"></a>状态迁移  
 
-|Nome do relatório|Descrição|  
+|报告名称|描述|  
 |-----------------|-----------------|  
-|**Informações de migração de estado para um computador de origem específico**|Exibe informações de migração de estado de um computador especificado.|  
-|**Informações de migração de estado para um ponto de migração de estado específico**|Exibe informações de migração de estado de um ponto de migração de estado especificado.|  
-|**Pontos de migração de estado para um site específico**|Exibe os pontos de migração de estado de um site especificado.|  
+|**特定源计算机的状态迁移信息**|显示指定计算机的状态迁移信息。|  
+|**特定状态迁移点的状态迁移信息**|显示指定状态迁移点的状态迁移信息。|  
+|**特定站点的状态迁移点**|显示指定站点的状态迁移点。|  
 
-### <a name="status-messages"></a>Mensagens de status  
+### <a name="status-messages"></a>状态消息  
 
-|Nome do relatório|Descrição|  
+|报告名称|描述|  
 |-----------------|-----------------|  
-|**Todas as mensagens para uma ID de mensagem específica**|Exibe uma lista de mensagens de status que têm uma ID de mensagem especificada.|  
-|**Clientes que relatam erros nas últimas 12 horas para um site específico**|Exibe uma lista de computadores e componentes que relataram erros nas últimas 12 horas e o número de erros relatados.|  
-|**Mensagens de componente nas últimas 12 horas**|Exibe uma lista de mensagens do componente das últimas 12 horas para um código do site, computador e componente especificados.|  
-|**Mensagens de componente na última hora**|Exibe uma lista das mensagens de status criadas na última hora por um componente especificado em um computador especificado em um site do Configuration Manager especificado.|  
-|**Contar mensagens de componente na última hora de um site específico**|Exibe o número de mensagens de status por componente e severidade relatados na última hora em um site especificado.|  
-|**Contar erros nas últimas 12 horas**|Exibe o número de mensagens de status de erro de componente de servidor nas últimas 12 horas.|  
-|**Erros fatais (por componente)**|Exibe uma lista de computadores que relataram erros fatais por componente.|  
-|**Erros fatais (por nome do computador)**|Exibe uma lista dos computadores que relataram erros fatais por nome do computador.|  
-|**Últimas 1.000 mensagens para um computador específico (Erros e Avisos)**|Exibe um resumo das últimas 1.000 mensagens de status de erro e aviso de componente para um computador especificado.|  
-|**Últimas 1.000 mensagens para um computador específico (Erros, Avisos e Informações)**|Exibe um resumo das últimas 1.000 mensagens de status de erro, aviso e informativo de componente para um computador especificado.|  
-|**Últimas 1.000 mensagens para um computador específico (Erros)**|Exibe um resumo das últimas 1.000 mensagens de status de erro de componente de servidor para um computador especificado.|  
-|**Últimas 1.000 mensagens para um componente de servidor específico**|Exibe um resumo das 1.000 mensagens de status mais recentes para um componente de servidor especificado.|  
+|**指定消息 ID 的所有消息**|显示具有指定消息 ID 的状态消息列表。|  
+|**最近 12 个小时内报告特定站点错误的客户端**|显示最近 12 个小时内报告错误的计算机和组件以及所报告的错误数的列表。|  
+|**最近 12 个小时内的组件消息**|显示最近 12 个小时内指定站点代码、计算机和组件的组件消息列表。|  
+|**最近一小时内的组件消息**|显示指定 Configuration Manager 站点中指定计算机上的指定组件在最近一个小时内创建的状态消息列表。|  
+|**统计特定站点最近一小时内的组件消息**|显示按指定站点最近一小时内报告的组件和严重性列出的状态消息数。|  
+|**统计最近 12 小时内的错误**|显示最近 12 小时内的服务器组件错误状态消息数。|  
+|**严重错误（按组件列出）**|显示按组件列出的报告严重错误的计算机列表。|  
+|**严重错误（按计算机名列出）**|显示按计算机名列出的报告严重错误的计算机列表。|  
+|**特定计算机的最后 1000 条消息（错误和警告）**|显示指定计算机的最后 1000 条错误和警告组件状态消息的摘要。|  
+|**特定计算机的最后 1000 条消息（错误、警告和信息）**|显示指定计算机的最后 1000 条错误、警告、信息组件状态消息的摘要。|  
+|**特定计算机的最后 1000 条消息（错误）**|显示指定计算机的最后 1000 条错误服务器组件状态消息的摘要。|  
+|**特定服务器组件的最后 1000 条消息**|显示指定服务器组件的最近 1000 条状态消息的摘要。|  
 
-### <a name="status-messages---audit"></a>Mensagens de status – Auditoria  
+### <a name="status-messages---audit"></a>状态消息 - 审核  
 
-|Nome do relatório|Descrição|  
+|报告名称|描述|  
 |-----------------|-----------------|  
-|**Todas as mensagens de auditoria para um usuário específico**|Exibe um resumo de todas as mensagens de status de auditoria para um usuário especificado. As mensagens de auditoria descrevem as ações realizadas no console do Configuration Manager que adicionam, modificam ou excluem objetos no Configuration Manager.|  
-|**Controle remoto – Todos os computadores controlados por controle remoto por um usuário específico**|Exibe um resumo das mensagens de status que indicam o controle remoto de computadores cliente por um usuário especificado.|  
-|**Controle remoto – Todas as informações de controle remoto**|Exibe um resumo das mensagens de status relacionadas ao controle remoto de computadores cliente.|  
+|**特定用户的所有审核消息**|显示指定用户的所有审核消息摘要。 审核消息描述 Configuration Manager 控制台中执行的操作，即在 Configuration Manager 中添加、修改或删除对象。|  
+|**远程控制 - 由特定用户远程控制的所有计算机**|显示表明指定用户对客户端计算机进行远程控制的状态消息摘要。|  
+|**远程控制 - 所有远程控制信息**|显示与客户端计算机的远程控制相关的状态消息的摘要。|  
 
-### <a name="task-sequence---deployment-status"></a>Sequência de tarefas – Status da implantação  
+### <a name="task-sequence---deployment-status"></a>任务序列 - 部署状态  
 
-|Nome do relatório|Descrição|  
+|报告名称|描述|  
 |-----------------|-----------------|  
-|**Todos os recursos do sistema de uma implantação de sequência de tarefas em um estado específico**|Exibe uma lista dos computadores de destino para a implantação de sequência de tarefas especificada em um estado de implantação especificado.|  
-|**Todos os recursos de sistema para uma implantação de sequência de tarefas que está em um estado específico e que está disponível para computadores desconhecidos**|Exibe uma lista dos computadores de destino para a implantação de sequência de tarefas especificada no estado de implantação especificado.|  
-|**Contagem dos recursos de sistema que têm implantações de sequência de tarefas atribuídas mas ainda não executadas**|Exibe o número de computadores que aceitaram sequências de tarefas, mas que não executaram a sequência de tarefas.|  
-|**Histórico de uma implantação de sequência de tarefas em um computador**|Exibe o status de cada etapa da implantação de sequência de tarefas especificada no computador de destino especificado. Se nenhum registro for retornado, a sequência de tarefas não foi iniciada no computador.|  
-|**Lista de computadores que excederam um período de tempo específico para executar uma implantação de sequência de tarefas**|Exibe a lista de computadores de destino que excederam o período de tempo especificado para executar uma sequência de tarefas.|  
-|**Tempo de execução para uma implantação de sequência de tarefas específica em um computador de destino específico**|Exibe o tempo total necessário para concluir com êxito uma sequência de tarefas especificada em um computador especificado.|  
-|**Tempo de execução para cada etapa de uma implantação de sequência de tarefas em um computador de destino específico**|Exibe o tempo necessário para concluir cada etapa da implantação de sequência de tarefas especificada no computador de destino especificado.|  
-|**Status de uma implantação de sequência de tarefas específica para um computador específico**|Exibe o resumo do status de uma implantação de sequência de tarefas especificada em um computador especificado.|  
-|**Status de uma implantação de sequência de tarefas em um computador de destino desconhecido**|Exibe o status da implantação de sequência de tarefas especificada no computador de destino desconhecido especificado.|  
-|**Resumo do status de uma implantação de sequência de tarefas específica**|Exibe um resumo do status de todos os recursos que foram definidos como destino por uma implantação.|  
-|**Resumo do status de uma implantação de sequência de tarefas específica disponível para computadores desconhecidos**|Exibe o resumo do status de todos os recursos que foram definidos como destino por uma implantação especificada que estão disponíveis para uma coleção que contém computadores desconhecidos.|  
+|**处于特定状态的任务序列部署的所有系统资源**|显示处于指定部署状态的指定任务序列部署的目标计算机列表。|  
+|**处于特定状态并且可用于未知计算机的任务序列部署的所有系统资源**|显示处于指定部署状态的指定任务序列部署的目标计算机列表。|  
+|**已分配任务序列部署但尚未运行的系统资源计数**|显示已接受任务序列，但尚未运行任务序列的计算机数。|  
+|**计算机上任务序列部署的历史记录**|显示指定目标计算机上指定任务序列部署的每个步骤的状态。 如果未返回任何记录，则表示尚未在计算机上启动任务序列。|  
+|**超过运行任务序列部署的特定时长的计算机列表**|显示超出运行任务序列的指定时间长度的目标计算机的列表。|  
+|**特定目标计算机上特定任务序列部署的运行时间**|显示在指定计算机上成功完成指定任务序列所花费的总时间。|  
+|**特定目标计算机上任务序列部署的每个步骤的运行时间**|显示在指定目标计算机上完成指定任务序列部署的每个步骤所花费的时间。|  
+|**特定计算机的特定任务序列部署的状态**|显示指定计算机上指定任务序列部署的状态摘要。|  
+|**未知目标计算机上任务序列部署的状态**|显示指定未知目标计算机上指定任务序列部署的状态。|  
+|**特定任务序列部署的状态摘要**|显示部署针对的所有资源的状态摘要。|  
+|**未知计算机可用的特定任务序列部署的状态摘要**|显示对包含未知计算机的集合可用的指定部署所针对的所有资源的状态摘要。|  
 
-### <a name="task-sequence---deployments"></a>Sequência de tarefas – Implantações  
+### <a name="task-sequence---deployments"></a>任务序列 - 部署  
 
-|Nome do relatório|Descrição|  
+|报告名称|描述|  
 |-----------------|-----------------|  
-|**Todos os recursos do sistema atualmente em um grupo ou fase específica de uma implantação específica de sequência de tarefas**|Exibe uma lista de computadores que estão sendo atualmente executados em um grupo ou fase especificada de uma implantação de sequência de tarefas especificada.|  
-|**Todos os recursos do sistema em que uma implantação de sequência de tarefas falhou em um grupo ou fase específica**|Exibe uma lista de computadores que falharam em um grupo/fase especificada da implantação de sequência de tarefas especificada.|  
-|**Todas as implantações de sequência de tarefas**|Exibe detalhes de todas as implantações de sequência de tarefas iniciadas no site atual.|  
-|**Todas as implantações de sequência de tarefas disponíveis para computadores desconhecidos**|Exibe detalhes de todas as implantações iniciadas no site e implantadas em coleções que contêm computadores desconhecidos.|  
-|**Contagem de falhas em cada fase ou grupo de uma sequência de tarefas específica**|Exibe o número de falhas em cada fase ou grupo da sequência de tarefas especificada.|  
-|**Contagem de falhas em cada fase ou grupo de uma implantação de sequência de tarefas específica**|Exibe o número de falhas em cada fase ou grupo da implantação de sequência de tarefas especificada.|  
-|**Status de implantação de todas as implantações de sequência de tarefas**|Exibe o progresso geral de todas as implantações de sequência de tarefas.|  
-|**Progresso de uma sequência de tarefas em execução**|Exibe o progresso da sequência de tarefas especificada.|  
-|**Progresso de uma implantação de sequência de tarefas em execução**|Exibe as informações de resumo para a implantação de sequência de tarefas especificada.|  
-|**Progresso de todas as implantações para uma sequência de tarefas específicas**|Exibe o progresso de todas as implantações da sequência de tarefas especificada.|  
-|**Relatório de resumo para uma implantação de sequência de tarefas**|Exibe as informações de resumo para a implantação de sequência de tarefas especificada.|  
+|**特定任务序列部署的特定组或阶段中当前存在的所有系统资源**|显示在指定任务序列部署的指定组或阶段中当前正在运行的计算机的列表。|  
+|**任务序列部署在特定组或阶段中失败的所有系统资源**|显示在指定任务序列部署的指定组或阶段中失败的计算机的列表。|  
+|**所有任务序列部署**|显示从当前站点发起的所有任务序列部署的详细信息。|  
+|**可用于未知计算机的所有任务序列部署**|显示从站点发起并部署到包含未知计算机的集合的所有任务序列部署的详细信息。|  
+|**特定任务序列的每个阶段或组中的失败计数**|显示指定任务序列的每个阶段或组中的失败次数。|  
+|**特定任务序列部署的每个阶段或组中的失败计数**|显示指定任务序列部署的每个阶段或组中的失败次数。|  
+|**所有任务序列部署的部署状态**|显示所有任务序列部署的总体进度。|  
+|**正在运行的任务序列的进度**|显示指定任务序列的进度。|  
+|**正在运行的任务序列部署的进度**|显示指定任务序列部署的摘要信息。|  
+|**特定任务序列的所有部署的进度**|显示指定任务序列的所有部署的进度。|  
+|**任务序列部署的摘要报表**|显示指定任务序列部署的摘要信息。|  
 
-### <a name="task-sequence---progress"></a>Sequência de tarefas – Progresso  
+### <a name="task-sequence---progress"></a>任务序列 - 进度  
 
-|Nome do relatório|Descrição|  
+|报告名称|描述|  
 |-----------------|-----------------|  
-|**Gráfico – Progresso semanal de uma sequência de tarefas**|Exibe o progresso semanal de uma sequência de tarefas, a partir da data de implantação.|  
-|**Progresso de uma sequência de tarefas**|Exibe o progresso da sequência de tarefas especificada.|  
-|**Progresso de todas as sequências de tarefas**|Exibe um resumo do progresso de todas as sequências de tarefas.|  
-|**Progresso de sequências de tarefas para implantações de sistema operacional**|Exibe o progresso de todas as sequências de tarefas que implantam sistemas operacionais.|  
-|**Status de todos os computadores desconhecidos**|Exibe uma lista de computadores que eram desconhecidos no momento em que executaram uma implantação de sequência de tarefas e se agora eles são computadores conhecidos.|  
+|**图表 - 任务序列的每周进度**|显示自部署日期起该任务序列的每周进度。|  
+|**任务序列的进度**|显示指定任务序列的进度。|  
+|**所有任务序列的进度**|显示所有任务序列的进度的摘要。|  
+|**操作系统部署的任务序列的进度**|显示部署操作系统的所有任务序列的进度。|  
+|**所有未知计算机的状态**|显示在运行任务序列部署时处于未知状态的所有计算机以及它们现在是否为已知计算机的列表。|  
 
-### <a name="task-sequences---references"></a>Sequências de tarefas – Referências  
+### <a name="task-sequences---references"></a>任务序列 - 引用  
 
-|Nome do relatório|Descrição|  
+|报告名称|描述|  
 |-----------------|-----------------|  
-|**Conteúdo referenciado por uma sequência de tarefas específica**|Exibe o conteúdo referenciado por uma sequência de tarefas especificada.|  
+|**特定任务序列引用的内容**|显示指定任务序列引用的内容。|  
 
-### <a name="upgrade-assessment"></a>Avaliação de atualização  
+### <a name="upgrade-assessment"></a>升级评估  
 
-|Nome do relatório|Descrição|  
+|报告名称|描述|  
 |-----------------|-----------------|  
-|**Status do aplicativo de um computador específico**|Exibe a compatibilidade de aplicativos instalados em um computador para um sistema operacional especificado.|  
-|**Status do aplicativo de computadores em uma coleção específica**|Exibe o status geral de computadores em uma coleção para permitir avaliá-los quanto à atualização para um sistema operacional específico com base nos aplicativos em cada computador. Use este relatório para determinar quais computadores têm aplicativos compatíveis antes de implantar um sistema operacional.|  
-|**Resumo do status do aplicativo**|Exibe um resumo do status do aplicativo para um sistema operacional especificado. Use este relatório para determinar a compatibilidade do aplicativo antes de implantar um sistema operacional.|  
-|**Computadores com um aplicativo específico instalado**|Exibe os computadores com um aplicativo especificado instalado.|  
-|**Computadores com um dispositivo de hardware específico**|Exibe os computadores que contêm um dispositivo de hardware específico.|  
-|**Status do dispositivo de hardware para um computador específico**|Exibe o status de compatibilidade de dispositivos de hardware para um sistema operacional especificado encontrados em um computador especificado.|  
-|**Status do dispositivo de hardware para computadores em uma coleção específica**|Exibe o status geral dos dispositivos de hardware para um sistema operacional especificado de computadores em uma coleção especificada. Use este relatório para determinar a compatibilidade de hardware antes de implantar um sistema operacional.|  
-|**Resumo do status do dispositivo de hardware**|Exibe um resumo do status do dispositivo de hardware de um sistema operacional especificado. Você pode usar este relatório para determinar a compatibilidade de dispositivos de hardware antes de implantar um sistema operacional.|  
-|**Requisitos de hardware do sistema operacional**|Exibe os critérios de hardware mínimos e recomendados para sistemas operacionais.|  
-|**Status dos requisitos do sistema operacional para computadores em uma coleção específica**|Exibe o status dos requisitos de sistema operacional para o sistema operacional especificado para computadores em uma coleção especificada. Use este relatório para determinar se um computador atende aos requisitos de sistema operacional especificados quanto à velocidade de processador da CPU, tamanho da memória e espaço em disco rígido.|  
-|**Resumo de avaliação de atualização**|Exibe o resumo da avaliação da atualização. Você pode usar este relatório para avaliar o status geral da compatibilidade de atualização.|  
+|**特定计算机的应用程序状态**|显示计算机上安装的应用程序对于指定操作系统的兼容性。|  
+|**特定集合中的计算机的应用程序状态**|显示集合中的计算机的总体状态，以让你能够根据每台计算机上的应用程序来评估将它们升级到指定操作系统的可行性。 在部署操作系统之前，可使用此报表确定来哪些计算机具有兼容的应用程序。|  
+|**应用程序状态摘要**|显示指定操作系统的应用程序状态的摘要。 在部署操作系统之前，可使用此报表来确定应用程序兼容性。|  
+|**安装有特定应用程序的计算机**|显示安装有指定应用程序的计算机。|  
+|**具有特定硬盘设备的计算机**|显示具有特定硬件设备的计算机。|  
+|**特定计算机的硬件设备状态**|显示在指定计算机中找到的指定操作系统的硬件设备的兼容性状态。|  
+|**特定集合中的计算机的硬件设备状态**|显示指定集合中的计算机的指定操作系统的硬件设备的总体状态。 在部署操作系统之前，可使用此报表来确定硬件兼容性。|  
+|**硬件设备状态摘要**|显示指定操作系统的硬件设备状态的摘要。 在部署操作系统之前，可使用此报表来确定硬件设备兼容性。|  
+|**操作系统的硬件要求**|显示操作系统的最低和推荐的硬件条件。|  
+|**特定集合中的计算机的操作系统要求状态**|显示指定集合中的计算机的指定操作系统要求的状态。 此报表用于确定计算机是否符合指定的操作系统对 CPU 处理器速度、内存大小和硬盘空间的要求。|  
+|**升级评估摘要**|显示升级评估摘要。 此报表可用于评估升级兼容性的总体状态。|  
 
-### <a name="user---device-affinity"></a>Usuário – Afinidade do dispositivo  
+### <a name="user---device-affinity"></a>用户 - 设备相关性  
 
-|Nome do relatório|Descrição|  
+|报告名称|描述|  
 |-----------------|-----------------|  
-|**Associações de afinidade de dispositivo de usuário pendentes por coleção**|Este relatório mostra todas as atribuições de afinidade de dispositivo de usuário pendentes com base nos dados de uso, para membros de uma coleção.|  
-|**Associações de afinidade de dispositivo de usuário por coleção**|Exibe todas as associações de dispositivo do usuário para a coleção especificada e agrupa os resultados por tipo de coleção (por exemplo, usuário ou dispositivo).|  
+|**按集合列出的挂起用户设备相关性关联**|此报表基于使用数据显示集合成员的所有挂起用户设备相关性分配。|  
+|**按集合列出的用户设备相关性关联**|显示指定集合的所有用户设备关联，并按集合类型（例如用户或设备）对结果进行分组。|  
 
-### <a name="user-data-and-profiles-health"></a>Integridade de dados e perfis do usuário  
+### <a name="user-data-and-profiles-health"></a>用户数据和配置文件运行状况  
 
-|Nome do relatório|Descrição|  
+|报告名称|描述|  
 |-----------------|-----------------|  
-|**Relatório de integridade de Redirecionamento de Pasta – Detalhes**|Exibe os detalhes do estado de integridade para redirecionamento de pasta por cada uma das pastas redirecionadas de um determinado usuário.|  
-|**Relatório de Integridade de Perfis do Usuário de Roaming – Detalhes**|Exibe detalhes do estado de integridade do perfil de usuário móvel para um usuário especificado.|  
-|**Relatório de integridade de dados e perfis do usuário – Detalhes**|Exibe os detalhes do erro ou do aviso para redirecionamento de pasta ou perfil de usuário móvel durante uma busca detalhada da contagem do relatório de resumo.|  
-|**Relatório de integridade de dados e perfis do usuário – Resumo**|Exibe o resumo dos estados de integridade para redirecionamento de pasta e perfis de usuário móvel.|  
+|**文件夹重定向运行状况报表 - 详细信息**|按照给定用户的每个重定向文件夹显示文件夹重定向运行状况状态的详细信息。|  
+|**漫游用户配置文件运行状况报表 - 详细信息**|显示指定用户的漫游用户配置文件的运行状况状态的详细信息。|  
+|**用户数据和配置文件运行状况报表 - 详细信息**|显示在向下钻取到摘要报表中的计数时有关文件夹重定向或漫游用户配置文件的错误或警告的详细信息。|  
+|**用户数据和配置文件运行状况报表 - 摘要**|显示文件夹重定向和漫游用户配置文件的运行状况状态的摘要。|  
 
-### <a name="users"></a>Usuários  
+### <a name="users"></a>用户  
 
-|Nome do relatório|Descrição|  
+|报告名称|描述|  
 |-----------------|-----------------|  
-|**Computadores para um nome de usuário específico**|Exibe uma lista de computadores que foram usados por um usuário especificado.|  
-|**Contar usuários por domínio**|Exibe o número de usuários em cada domínio.|  
-|**Usuários em um domínio específico**|Exibe uma lista de usuários e seus computadores em um domínio especificado.|  
+|**特定用户名的计算机**|显示指定用户使用的计算机的列表。|  
+|**按域统计用户**|显示每个域中的用户数。|  
+|**特定域中的用户**|显示指定域中的用户及其计算机的列表。|  
 
-### <a name="virtual-applications"></a>Aplicativos virtuais  
+### <a name="virtual-applications"></a>虚拟应用程序  
 
-|Nome do relatório|Descrição|  
+|报告名称|描述|  
 |-----------------|-----------------|  
-|**Resultados do Ambiente Virtual do App-V**|Exibe informações sobre um ambiente virtual especificado em um estado especificado para uma coleção especificada.|  
-|**Resultados do Ambiente Virtual do App-V para o Ativo**|Exibe informações sobre um ambiente virtual especificado para um ativo especificado e quaisquer tipos de implantação para o ambiente virtual especificado.|  
-|**Status do Ambiente Virtual do App-V**|Exibe as informações de conformidade de um ambiente virtual especificado para uma coleção especificada.|  
-|**Computadores com um aplicativo virtual específico**|Exibe um resumo de computadores que contêm o atalho de aplicativos do App-V especificado, criado pelo Sequenciador de Gerenciamento de Virtualização de Aplicativo.|  
-|**Computadores com um pacote de aplicativos virtuais específico**|Exibe um resumo de computadores que contêm o pacote de aplicativos do App-V especificado.|  
-|**Contagem de todas as instâncias de pacotes de aplicativos virtuais**|Exiba uma contagem de pacotes de aplicativos do App-V detectados.|  
-|**Contagem de todas as instâncias de aplicativos virtuais**|Exiba uma contagem de aplicativos do App-V detectados.|  
+|**APP-V 虚拟环境结果**|显示有关对于指定的集合处于指定状态的指定虚拟环境的信息。|  
+|**资产的 App-V 虚拟环境结果**|显示有关指定资产的指定虚拟环境以及指定虚拟环境的任何部署类型的信息。|  
+|**App-V 虚拟环境状态**|显示指定集合的指定虚拟环境的符合性信息。|  
+|**具有特定虚拟应用程序的计算机**|显示具有使用 Application Virtualization Management Sequencer 创建的指定 App-V 应用程序快捷方式的计算机的摘要。|  
+|**具有特定虚拟应用程序包的计算机**|显示具有指定 App-V 应用程序包的计算机的摘要。|  
+|**虚拟应用程序包的所有实例计数**|显示检测到的 App-V 应用程序包的计数。|  
+|**虚拟应用程序的所有实例计数**|显示检测到的 App-V 应用程序的计数。|  
 
-### <a name="wake-on-lan"></a>Wake On LAN  
+### <a name="wake-on-lan"></a>LAN 唤醒  
 
-|Nome do relatório|Descrição|  
+|报告名称|描述|  
 |-----------------|-----------------|  
-|**Todos os computadores destinados à atividade de Wake On LAN**|Exibe uma lista de computadores que foram destinados para a atividade de Wake On LAN durante uma implantação do tipo especificado.|  
-|**Todos os objetos com atividade de ativação pendente**|Exibe os objetos que estão agendados para ativação.|  
-|**Todos os sites habilitados para Wake On LAN**|Exibe uma lista de todos os sites na hierarquia que estão habilitados para Wake On LAN.|  
-|**Erros recebidos durante o envio de pacotes de ativação por um período definido**|Exibe os erros recebidos durante o envio de pacotes de ativação aos computadores por um período definido.|  
-|**Histórico de atividades de Wake On LAN**|Exibe um histórico da atividade de ativação ocorrida desde um determinado período.|  
-|**Detalhes do Estado da Implantação do Proxy de Ativação**|Exibe informações sobre o status da implantação do Proxy de ativação para cada dispositivo em uma coleção especificada.|  
-|**Resumo do estado da implantação do proxy de ativação**|Exibe um resumo do status da implantação do proxy de ativação para uma coleção especificada.|  
-
-
-
-<!--HONumber=Dec16_HO3-->
-
-
+|**设为 LAN 唤醒活动目标的所有计算机**|显示在部署你指定的类型期间已设为 LAN 唤醒活动目标的计算机列表。|  
+|**等待唤醒活动的所有对象**|显示已计划唤醒的对象。|  
+|**启用了 LAN 唤醒的所有站点**|显示层次结构中启用了 LAN 唤醒的所有站点的列表。|  
+|**在定义的时间段发送唤醒数据包时收到错误**|显示在定义的时间段发送唤醒数据包到计算机时收到的错误。|  
+|**LAN 唤醒活动的历史记录**|显示自某个时间段起发生的唤醒活动的历史记录。|  
+|**唤醒代理部署状态详细信息**|显示有关指定集合中每台设备的唤醒代理的部署状态信息。|  
+|**唤醒代理部署状态摘要**|显示指定集合中唤醒代理的部署状态摘要。|  

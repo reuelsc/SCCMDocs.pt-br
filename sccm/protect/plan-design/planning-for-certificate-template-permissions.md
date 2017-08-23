@@ -1,67 +1,63 @@
 ---
-title: "Planejando permissões de modelo de certificado | Microsoft Docs"
-description: "Saiba mais sobre o planejamento das permissões que você precisa para configurar os modelos de certificado que o System Center Configuration Manager usa."
+title: "规划证书模板权限 | Microsoft Docs"
+description: "了解如何规划配置 System Center Configuration Manager 使用的证书模板所需的权限。"
 ms.custom: na
 ms.date: 10/06/2016
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
-ms.technology:
-- configmgr-other
+ms.technology: configmgr-other
 ms.tgt_pltfrm: na
 ms.topic: get-started-article
 ms.assetid: eab0e09d-b09e-4c14-ab14-c5f87472522e
-caps.latest.revision: 5
-caps.handback.revision: 0
+caps.latest.revision: "5"
+caps.handback.revision: "0"
 author: arob98
 ms.author: angrobe
 manager: angrobe
-ms.translationtype: Human Translation
-ms.sourcegitcommit: dab5da5a4b5dfb3606a8a6bd0c70a0b21923fff9
 ms.openlocfilehash: 832be8c9fda727804f57e83768cd8799db722c67
-ms.contentlocale: pt-br
-ms.lasthandoff: 05/17/2017
-
-
+ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
+ms.translationtype: HT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 08/07/2017
 ---
-# <a name="planning-for-certificate-template-permissions-for-certificate-profiles-in-system-center-configuration-manager"></a>Planejando permissões de modelo de certificado para perfis de certificado no System Center Configuration Manager
+# <a name="planning-for-certificate-template-permissions-for-certificate-profiles-in-system-center-configuration-manager"></a>在 System Center Configuration Manager 中规划证书配置文件的证书模板权限
 
-*Aplica-se a: System Center Configuration Manager (Branch Atual)*
+*适用范围：System Center Configuration Manager (Current Branch)*
 
 
-As informações a seguir podem ajudar a planejar como configurar permissões para os modelos de certificado que o System Center Configuration Manager usa quando você implanta perfis de certificado.  
+下列信息可帮助规划如何为 System Center Configuration Manager 在你部署证书配置文件时使用的证书模板配置权限。  
 
-## <a name="default-security-permissions-and-considerations"></a>Considerações e permissões de segurança padrão  
- As permissões de segurança padrão necessárias para os modelos de certificado que o System Center Configuration Manager usará ao solicitar certificados para os usuários e dispositivos são as seguintes:  
+## <a name="default-security-permissions-and-considerations"></a>默认安全权限和注意事项  
+ System Center Configuration Manager 将用于为用户和设备请求证书的证书模板所需的默认安全权限如下：  
 
--   Leitura e Registro para a conta usada pelo pool de aplicativos do Serviço de Registro de Dispositivo de Rede  
+-   “读取”和“注册”（针对网络设备注册服务应用程序池使用的帐户）  
 
--   Leitura para a conta que executa o console do System Center Configuration Manager  
+-   “读取”（针对运行 System Center Configuration Manager 控制台的帐户）  
 
- Para saber mais sobre estas permissões de segurança, veja [Configuração de infraestrutura de certificado](../deploy-use/certificate-infrastructure.md).  
+ 有关这些安全权限的详细信息，请参阅[配置证书基础结构](../deploy-use/certificate-infrastructure.md)。  
 
- Quando você utiliza essa configuração padrão, os usuários e os dispositivos não podem solicitar diretamente certificados dos modelos de certificado, e todas as solicitações devem ser iniciadas pelo Serviço de Registro de Dispositivo de Rede. Essa é uma restrição importante, pois esses modelos de certificado devem ser configurados com **Fornecer na solicitação** para a Entidade do certificado, o que significa que existe um risco de representação se um usuário não autorizado ou um dispositivo comprometido solicitar um certificado. Na configuração padrão, o Serviço de Registro de Dispositivo de Rede deve iniciar essa solicitação. No entanto, esse risco de representação permanece se o serviço que executa o Serviço de Registro de Dispositivo de Rede está comprometido. Para evitar esse risco, siga todas as práticas recomendadas de segurança para o Serviço de Registro de Dispositivo de Rede e o computador que executa esse serviço de função.  
+ 当你使用此默认配置时，用户和设备无法通过证书模板直接请求证书，所有请求必须由网络设备注册服务发起。 此限制非常重要，因为对于证书使用者，这些证书模板必须配置为包含“在请求中提供”  ，这意味着，如果恶意用户或泄露的设备请求了证书，则存在假冒的风险。 在默认配置中，网络设备注册服务必须发起此类请求。 但是，如果运行网络设备注册服务的服务已泄露，则这种假冒风险仍然存在。 为了帮助避免这种风险，请为网络设备注册服务和运行此角色服务的计算机遵循所有最佳安全方案。  
 
- Se as permissões de segurança padrão não atenderem a seus requisitos de negócios, você terá outra opção para configurar as permissões de segurança nos modelos de certificado: é possível adicionar permissões de Leitura e Registro para usuários e computadores.  
+ 如果默认安全权限无法满足你的业务要求，你可以选择使用其他方法配置证书模板的安全权限：你可以为用户和计算机添加读取和注册权限。  
 
-## <a name="adding-read-and-enroll-permissions-for-users-and-computers"></a>Adicionando permissões de Leitura e Registro para usuários e computadores  
- Este procedimento poderá ser adequado se uma equipe diferente gerenciar sua equipe de infraestrutura de AC (autoridade de certificação) e desejar que o System Center Configuration Manager verifique se os usuários têm uma conta válida do Active Directory Domain Services antes de enviar a eles um perfil de certificado para solicitar um certificado de usuário. Para essa configuração, você deve especificar um ou mais grupos de segurança que contenham os usuários e conceder a esses grupos permissões de Leitura e Registro nos modelos de certificado. Nesse cenário, o administrador de autoridade de certificação gerencia o controle de segurança.  
+## <a name="adding-read-and-enroll-permissions-for-users-and-computers"></a>为用户和计算机添加“读取”和“注册”权限  
+ 如果一个独立团队管理你的证书颁发机构 (CA) 基础结构团队，并且该独立团队希望 System Center Configuration Manager 在向用户发送证书配置文件来请求用户证书之前验证用户是否具有有效的 Active Directory 域服务帐户，则可能适合为用户和计算机添加“读取”和“注册”权限。 对于此配置，你必须指定包含用户的一个或多个安全组，然后向那些组授予对证书模板的“读取”和“注册”权限。 在这种情况下，CA 管理员将管理安全控制。  
 
- Da mesma forma, você pode especificar um ou mais grupos que contenham contas de computador e conceder a esses grupos permissões de Leitura e Registro nos modelos de certificado. Se você implantar um perfil de certificado de computador em um computador que seja membro do domínio, a conta desse computador deverá receber permissões de Leitura e Registro. Essas permissões não serão necessárias se o computador não for membro do domínioâ€”, por exemplo, se ele for um computador de grupo de trabalho ou um dispositivo móvel pessoal.  
+ 你可以同样指定包含计算机帐户的一个或多个安全组，并授予这些组对证书模板的“读取”和“注册”权限。 如果将计算机证书配置文件部署到是域成员的计算机，则必须为该计算机的计算机帐户授予“读取”和“注册”权限。 如果计算机不是域成员（例如，它是工作组计算机或个人移动设备），则无需这些权限。  
 
- Embora essa configuração use um controle de segurança adicional, ela não é uma prática recomendada. O motivo disso é que os usuários ou os proprietários especificados dos dispositivos podem solicitar certificados de maneira independente do System Center Configuration Manager e fornecer valores para a Entidade do certificado que podem ser usados para representar outro usuário ou dispositivo.  
+ 尽管此配置使用额外的安全控制，但这不是推荐的最佳做法。 因为指定的用户或设备的所有者可独立于 System Center Configuration Manager 请求证书，并为证书“使用者”提供可能用于假冒另一个用户或设备的值。  
 
- Além disso, se você especificar que as contas não podem ser autenticadas no momento da solicitação do certificado, a solicitação falhará por padrão. Por exemplo, a solicitação de certificado falhará se o servidor que estiver executando o Serviço de Registro de Dispositivo de Rede estiver em uma floresta do Active Directory não confiável para a floresta que contém o servidor do sistema de site do ponto de registro de certificado. Você poderá configurar o ponto de registro de certificado para continuar se não for possível autenticar uma conta porque não há resposta de um controlador de domínio. No entanto, essa não é uma prática recomendada de segurança.  
+ 此外，如果你指定无法在进行证书请求时进行验证的帐户，则默认情况下证书请求将失败。 例如，运行网络设备注册服务的服务器位于包含证书注册点站点系统服务器的林不信任的 Active Directory 林中，则证书请求将失败。 你可以将证书注册点配置为在帐户由于域控制器无响应而无法进行验证的情况下继续。 但是，这不是一种最佳安全做法。  
 
- Observe que, se o ponto de registro de certificado estiver configurado para verificar permissões de conta e um controlador de domínio estiver disponível e rejeitar a solicitação de autenticação (por exemplo, a conta está bloqueada ou foi excluída), ocorrerá falha na solicitação de registro de certificado.  
+ 请注意，如果证书注册点配置为检查是否有帐户权限以及域控制器是否可用，并且拒绝身份验证请求（例如，帐户被锁定或已删除），则证书注册请求将失败。  
 
-#### <a name="to-check-for-read-and-enroll-permissions-for-users-and-domain-member-computers"></a>Para verificar as permissões de Leitura e Registro dos usuários e dos computadores membros do domínio  
+#### <a name="to-check-for-read-and-enroll-permissions-for-users-and-domain-member-computers"></a>检查用户和域成员计算机的“读取”和“注册”权限  
 
-1.  No servidor do sistema de sites que hospeda o ponto de registro de certificado, crie a seguinte chave do Registro DWORD para que ela tenha o valor de 0: HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\SCCM\CRP\SkipTemplateCheck  
+1.  在承载证书注册点的站点系统服务器上，创建下列 DWORD 注册表项以具有值 0：HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\SCCM\CRP\SkipTemplateCheck  
 
-2.  Se não for possível autenticar uma conta porque não há resposta de um controlador de domínio, e você desejar ignorar a verificação de permissão:  
+2.  如果帐户由于域控制器无响应而无法进行验证，并且你要绕过权限检查：  
 
-    -   No servidor do sistema de sites que hospeda o ponto de registro de certificado, crie a seguinte chave do Registro DWORD para que ela tenha o valor de 1: HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\SCCM\CRP\SkipTemplateCheckOnlyIfAccountAccessDenied  
+    -   在承载证书注册点的站点系统服务器上，创建下列 DWORD 注册表项以具有值 1：HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\SCCM\CRP\SkipTemplateCheckOnlyIfAccountAccessDenied  
 
-3.  Na autoridade de certificação emissora, na guia **Segurança** , nas propriedades do modelo de certificado, adicione um ou mais grupos de segurança para conceder permissões de Leitura e Registro às contas de usuário ou dispositivo.  
-
+3.  在颁发 CA 的证书模板属性内的“安全”  选项卡上，添加一个或多个安全组以向用户或设备帐户授予“读取”和“注册”权限。  

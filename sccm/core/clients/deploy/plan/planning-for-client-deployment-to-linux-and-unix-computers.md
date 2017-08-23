@@ -1,314 +1,310 @@
 ---
-title: "Planejando a implantação do cliente em computadores Linux e UNIX | Microsoft Docs"
-description: "Planeje a implantação de cliente em computadores Linux e UNIX | System Center Configuration Manager."
+title: "规划将客户端部署到 Linux 和 UNIX 计算机 | Microsoft Docs"
+description: "在 System Center Configuration Manager 中规划 Linux 和 UNIX 计算机的客户端部署。"
 ms.custom: na
 ms.date: 04/23/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
-ms.technology:
-- configmgr-client
+ms.technology: configmgr-client
 ms.tgt_pltfrm: na
 ms.topic: get-started-article
 ms.assetid: 44153689-70e8-42ad-9ae8-17ae35f6a2e3
-caps.latest.revision: 9
-caps.handback.revision: 0
+caps.latest.revision: "9"
+caps.handback.revision: "0"
 author: robstackmsft
 ms.author: robstack
 manager: angrobe
-ms.translationtype: Human Translation
-ms.sourcegitcommit: 55c953f312a9fb31e7276dde2fdd59f8183b4e4d
-ms.openlocfilehash: dad941d5984fc7e0b43954b14c3966bb2632ad05
-ms.contentlocale: pt-br
-ms.lasthandoff: 12/16/2016
-
-
+ms.openlocfilehash: 367ffb919a1adb9a0530f7357a0fcf1e6636af08
+ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
+ms.translationtype: HT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 08/07/2017
 ---
-# <a name="planning-for-client-deployment-to-linux-and-unix-computers-in-system-center-configuration-manager"></a>Planejando a implantação de cliente em computadores Linux e UNIX no System Center Configuration Manager
+# <a name="planning-for-client-deployment-to-linux-and-unix-computers-in-system-center-configuration-manager"></a>在 System Center Configuration Manager 中规划 Linux 和 UNIX 计算机的客户端部署
 
-*Aplica-se a: System Center Configuration Manager (Branch Atual)*
+*适用范围：System Center Configuration Manager (Current Branch)*
 
-Você pode instalar o cliente do System Center Configuration Manager em computadores que executam Linux ou UNIX. Esse cliente é designado para servidores que funcionam como um computador de grupo de trabalho, e os clientes não oferecem suporte à interação com usuários conectados. Após você instalar o software cliente e o cliente estabelecer a comunicação com o site do Configuration Manager, você gerenciará o cliente usando o console e relatórios do Configuration Manager.  
+可以在运行 Linux 或 UNIX 的计算机上安装 System Center Configuration Manager 客户端。 此客户端适用于作为工作组计算机运行的服务器，并且不支持与登录用户交互。 安装客户端软件后，客户端将与 Configuration Manager 站点建立通信，可以使用 Configuration Manager 控制台和报表管理客户端。  
 
 > [!NOTE]  
->  O cliente do Configuration Manager para computadores Linux e UNIX não dá suporte aos seguintes recursos de gerenciamento:  
+>  Linux 和 UNIX 计算机的 Configuration Manager 客户端不支持以下管理功能：  
 >   
->  -   Instalação do cliente por push  
-> -   Implantação de sistema operacional  
-> -   Implantação de aplicativos; em vez disso, distribua software usando pacotes e programas.  
-> -   Inventário de software  
-> -   Atualizações de software  
-> -   Configurações de conformidade  
-> -   Controle remoto  
-> -   Gerenciamento de Energia  
-> -   Correção e verificação de cliente do status do cliente  
-> -   Gerenciamento de clientes baseado na Internet  
+>  -   客户端请求安装  
+> -   操作系统部署  
+> -   应用程序部署；改用包和程序来部署软件。  
+> -   软件清单  
+> -   软件更新  
+> -   符合性设置  
+> -   远程控制  
+> -   电源管理  
+> -   客户端状态客户端检查和修正  
+> -   基于 Internet 的客户端管理  
 
- Para obter informações sobre as distribuições do Linux e UNIX com suporte e o hardware necessário para dar suporte ao cliente para Linux e UNIX, consulte a seção [Recommended hardware for System Center Configuration Manager](../../../../core/plan-design/configs/recommended-hardware.md) (Hardware recomendado para o System Center Configuration Manager).  
+ 有关受支持的 Linux 和 UNIX 分发版和支持适用于 Linux 和 UNIX 的客户端所需的硬件的信息，请参阅[用于 System Center Configuration Manager 的推荐硬件](../../../../core/plan-design/configs/recommended-hardware.md)。  
 
- Use as informações neste artigo para ajudá-lo a planejar a implantação do cliente do Configuration Manager para Linux e UNIX.  
+ 使用本文中的信息来帮助规划要部署适用于 Linux 和 UNIX 的 Configuration Manager 客户端。  
 
-##  <a name="BKMK_ClientDeployPrereqforLnU"></a> Pré-requisitos para implantação do cliente em servidores Linux e UNIX  
- Use as informações a seguir para determinar os pré-requisitos, para que você deve ter êxito em vigor instalar o cliente para Linux e UNIX.  
+##  <a name="BKMK_ClientDeployPrereqforLnU"></a>客户端部署到 Linux 和 UNIX 服务器的必备条件  
+ 使用以下信息来确定您必须具有到成功的必备组件安装适用于 Linux 和 UNIX 的客户端。  
 
-###  <a name="BKMK_ClientDeployExternalforLnU"></a> Dependências externas ao Configuration Manager:  
- As tabelas a seguir descrevem os sistemas operacionais UNIX e Linux necessários, bem como as dependências de pacotes.  
+###  <a name="BKMK_ClientDeployExternalforLnU"></a> Configuration Manager 的外部依赖关系：  
+ 下表描述了所需的 UNIX 和 Linux 操作系统和程序包依赖关系。  
 
- **Red Hat Enterprise Linux ES versão 4**  
+ **Red Hat Enterprise Linux ES 版本 4**  
 
-|Pacote necessário|Descrição|Versão mínima|  
+|所需程序包|描述|最低版本|  
 |----------------------|-----------------|---------------------|  
-|glibc|Bibliotecas C padrão|2.3.4-2|  
-|Openssl|Bibliotecas OpenSSL; Protocolo de Comunicações de Rede Seguras|0.9.7a-43.1|  
-|PAM|Módulos de Autenticação Conectáveis|0.77-65.1|  
+|glibc|C 标准库|2.3.4-2|  
+|Openssl|OpenSSL 库；安全网络通信协议|0.9.7a-43.1|  
+|PAM|可插入身份验证模块|0.77-65.1|  
 
- **Red Hat Enterprise Linux Server versão 5.1 (Tikanga)**  
+ **Red Hat Enterprise Linux Server 版本 5.1 (Tikanga)**  
 
-|Pacote necessário|Descrição|Versão mínima|  
+|所需程序包|描述|最低版本|  
 |----------------------|-----------------|---------------------|  
-|glibc|Bibliotecas C padrão|2.5-12|  
-|Openssl|Bibliotecas OpenSSL; Protocolo de Comunicações de Rede Seguras|0.9.8b-8.3.el5|  
-|PAM|Módulos de Autenticação Conectáveis|0.99.6.2-3.14.el5|  
+|glibc|C 标准库|2.5-12|  
+|Openssl|OpenSSL 库；安全网络通信协议|0.9.8b-8.3.el5|  
+|PAM|可插入身份验证模块|0.99.6.2-3.14.el5|  
 
- **Red Hat Enterprise Linux Server versão 6**  
+ **Red Hat Enterprise Linux Server 版本 6**  
 
-|Pacote necessário|Descrição|Versão mínima|  
+|所需程序包|描述|最低版本|  
 |----------------------|-----------------|---------------------|  
-|glibc|Bibliotecas C padrão|2.12-1.7|  
-|Openssl|Bibliotecas OpenSSL; Protocolo de Comunicações de Rede Seguras|1.0.0-4|  
-|PAM|Módulos de Autenticação Conectáveis|1.1.1-4|  
+|glibc|C 标准库|2.12-1.7|  
+|Openssl|OpenSSL 库；安全网络通信协议|1.0.0-4|  
+|PAM|可插入身份验证模块|1.1.1-4|  
 
  **Solaris 9 SPARC**  
 
-|Pacote necessário|Descrição|Versão mínima|  
+|所需程序包|描述|最低版本|  
 |----------------------|-----------------|---------------------|  
-|Patch do sistema operacional necessários|Vazamento de memória do PAM|112960-48|  
+|所需的操作系统修补程序|PAM 内存泄漏|112960-48|  
 |SUNWlibC|Sun Workshop Compilers Bundled libC (sparc)|5.9,REV=2002.03.18|  
-|SUNWlibms|Desenvolvedor agrupados compartilhado forte libm (sparc)|5.9,REV=2001.12.10|  
-|Openssl|SMCosslg (sparc)<br /><br /> A Sun não oferece uma versão do OpenSSL para Solaris 9 SPARC. Há uma versão disponível do Sunfreeware.|0.9.7g|  
-|PAM|Módulos de Autenticação Conectáveis<br /><br /> SUNWcsl, Solaris de núcleo (compartilhado bibliotecas) (sparc)|11.9.0,REV=2002.04.06.15.27|  
+|SUNWlibms|Forte 开发人员捆绑在一起共享 libm (sparc)|5.9,REV=2001.12.10|  
+|Openssl|SMCosslg (sparc)<br /><br /> Sun 未提供适用于 Solaris 9 SPARC 的 OpenSSL 版本。 可以从 Sunfreeware 中获得某个版本。|0.9.7g|  
+|PAM|可插入身份验证模块<br /><br /> SUNWcsl，Core Solaris (共享的 Libs) (sparc)|11.9.0,REV=2002.04.06.15.27|  
 
  **Solaris 10 SPARC**  
 
-|Pacote necessário|Descrição|Versão mínima|  
+|所需程序包|描述|最低版本|  
 |----------------------|-----------------|---------------------|  
-|Patch do sistema operacional necessários|Vazamento de memória do PAM|117463-05|  
+|所需的操作系统修补程序|PAM 内存泄漏|117463-05|  
 |SUNWlibC|Sun Workshop Compilers Bundled libC (sparc)|5.10, REV=2004.12.22|  
 |SUNWlibms|Math & Microtasking Libraries (Usr) (sparc)|5.10, REV=2004.11.23|  
 |SUNWlibmsr|Math & Microtasking Libraries (Root) (sparc)|5.10, REV=2004.11.23|  
 |SUNWcslr|Core Solaris Libraries (Root) (sparc)|11.10.0, REV=2005.01.21.15.53|  
 |SUNWcsl|Core Solaris Libraries (Root) (sparc)|11.10.0, REV=2005.01.21.15.53|  
-|Openssl|SUNopenssl-librararies (Usr)<br /><br /> O Sun fornece as bibliotecas OpenSSL para Solaris 10 SPARC. Elas estão incluídas no sistema operacional.|11.10.0,REV=2005.01.21.15.53|  
-|PAM|Módulos de Autenticação Conectáveis<br /><br /> SUNWcsr, Core Solaris, (Root) (sparc)|11.10.0, REV=2005.01.21.15.53|  
+|Openssl|SUNopenssl-librararies (Usr)<br /><br /> Sun 为 Solaris 10 SPARC 提供了 OpenSSL 库。 它们与操作系统捆绑在一起。|11.10.0,REV=2005.01.21.15.53|  
+|PAM|可插入身份验证模块<br /><br /> SUNWcsr、Core Solaris，(Root) (sparc)|11.10.0, REV=2005.01.21.15.53|  
 
  **Solaris 10 x86**  
 
-|Pacote necessário|Descrição|Versão mínima|  
+|所需程序包|描述|最低版本|  
 |----------------------|-----------------|---------------------|  
-|Patch do sistema operacional necessários|Vazamento de memória do PAM|117464-04|  
-|SUNWlibC|Sun Workshop compiladores agrupados libC (i386)|5.10,REV=2004.12.20|  
+|所需的操作系统修补程序|PAM 内存泄漏|117464-04|  
+|SUNWlibC|Sun 研讨会编译器捆绑 libC (i386)|5.10,REV=2004.12.20|  
 |SUNWlibmsr|Math & Microtasking Libraries (Root) (i386)|5.10, REV=2004.12.18|  
-|SUNWcsl|Principais Solaris, (bibliotecas compartilhadas) (i386)|11.10.0, REV=2005.01.21.16.34|  
-|SUNWcslr|Bibliotecas do Solaris principal (raiz) (i386)|11.10.0, REV=2005.01.21.16.34|  
-|Openssl|Bibliotecas de SUNWopenssl; Bibliotecas OpenSSL (Usr) (i386)|11.10.0, REV=2005.01.21.16.34|  
-|PAM|Módulos de Autenticação Conectáveis<br /><br /> Pacotes SUNWcsr Core Solaris, (Root)(i386)|11.10.0, REV=2005.01.21.16.34|  
+|SUNWcsl|核心 Solaris，(共享 Libs) (i386)|11.10.0,REV=2005.01.21.16.34|  
+|SUNWcslr|Core Solaris 库 (根) (i386)|11.10.0, REV=2005.01.21.16.34|  
+|Openssl|SUNWopenssl 库 ；OpenSSL 库 (用户) (i386)|11.10.0, REV=2005.01.21.16.34|  
+|PAM|可插入身份验证模块<br /><br /> SUNWcsr 核心 Solaris，(Root)(i386)|11.10.0,REV=2005.01.21.16.34|  
 
  **Solaris 11 SPARC**  
 
-|Pacote necessário|Descrição|Versão mínima|  
+|所需程序包|描述|最低版本|  
 |----------------------|-----------------|---------------------|  
 |SUNWlibC|Sun Workshop Compilers Bundled libC|5.11, REV=2011.04.11|  
 |SUNWlibmsr|Math & Microtasking Libraries (Root)|5.11, REV=2011.04.11|  
 |SUNWcslr|Core Solaris Libraries (Root)|11.11, REV=2009.11.11|  
-|SUNWcsl|Core Solaris, (Shared Libs)|11.11, REV=2009.11.11|  
+|SUNWcsl|Core Solaris（共享库）|11.11, REV=2009.11.11|  
 |SUNWcsr|Core Solaris, (Root)|11.11, REV=2009.11.11|  
 |SUNWopenssl-libraries|OpenSSL Libraries (Usr)|11.11.0,REV=2010.05.25.01.00|  
 
  **Solaris 11 x86**  
 
-|Pacote necessário|Descrição|Versão mínima|  
+|所需程序包|描述|最低版本|  
 |----------------|-----------|---------------|  
 |SUNWlibC|Sun Workshop Compilers Bundled libC|5.11, REV=2011.04.11|  
 |SUNWlibmsr|Math & Microtasking Libraries (Root)|5.11, REV=2011.04.11|  
 |SUNWcslr|Core Solaris Libraries (Root)|11.11, REV=2009.11.11|  
-|SUNWcsl|Core Solaris, (Shared Libs)|11.11, REV=2009.11.11|  
+|SUNWcsl|Core Solaris（共享库）|11.11, REV=2009.11.11|  
 |SUNWcsr|Core Solaris, (Root)|11.11, REV=2009.11.11|  
 |SUNWopenssl-libraries|OpenSSL Libraries (Usr)|11.11.0,REV=2010.05.25.01.00|  
 
  **SUSE Linux Enterprise Server 9 (i586)**  
 
-|Pacote necessário|Descrição|Versão mínima|  
+|所需程序包|描述|最低版本|  
 |----------------------|-----------------|---------------------|  
 |Service Pack 4|SUSE Linux Enterprise Server 9||  
-|OS Patch lib gcc-41.rpm|Biblioteca compartilhada padrão|41-4.1.2_20070115-0.6|  
-|OS Patch lib stdc++-41.rpm|Biblioteca compartilhada padrão|41-4.1.2_20070115-0.6|  
-|Openssl|Bibliotecas OpenSSL; Protocolo de Comunicações de Rede Seguras|0.9.7d-15.35|  
-|PAM|Módulos de Autenticação Conectáveis|0.77-221-11|  
+|OS Patch lib gcc-41.rpm|标准共享库|41-4.1.2_20070115-0.6|  
+|OS Patch lib stdc++-41.rpm|标准共享库|41-4.1.2_20070115-0.6|  
+|Openssl|OpenSSL 库；安全网络通信协议|0.9.7d-15.35|  
+|PAM|可插入身份验证模块|0.77-221-11|  
 
  **SUSE Linux Enterprise Server 10 SP1 (i586)**  
 
-|Pacote necessário|Descrição|Versão mínima|  
+|所需程序包|描述|最低版本|  
 |----------------------|-----------------|---------------------|  
-|glibc-2,4-31,30|Biblioteca compartilhada padrão C|2,4-31,30|  
-|Openssl|Bibliotecas OpenSSL; Protocolo de Comunicações de Rede Seguras|0.9.8a-18.15|  
-|PAM|Módulos de Autenticação Conectáveis|0.99.6.3-28.8|  
+|glibc-2.4-31.30|C 标准共享库|2.4-31.30|  
+|Openssl|OpenSSL 库；安全网络通信协议|0.9.8a-18.15|  
+|PAM|可插入身份验证模块|0.99.6.3-28.8|  
 
  **SUSE Linux Enterprise Server 11 (i586)**  
 
-|Pacote necessário|Descrição|Versão mínima|  
+|所需程序包|描述|最低版本|  
 |----------------------|-----------------|---------------------|  
-|glibc-2.9-13.2|Biblioteca compartilhada padrão C|2.9-13.2|  
-|PAM|Módulos de Autenticação Conectáveis|pam-1.0.2-20.1|  
+|glibc-2.9-13.2|C 标准共享库|2.9-13.2|  
+|PAM|可插入身份验证模块|pam-1.0.2-20.1|  
 
- **Universal Linux (pacote Debian) Debian, Ubuntu Server**  
+ **通用 Linux（Debian 包）Debian，Ubuntu Server**  
 
-|Pacote necessário|Descrição|Versão mínima|  
+|所需程序包|描述|最低版本|  
 |----------------------|-----------------|---------------------|  
-|libc6|Biblioteca compartilhada padrão C|2.3.6|  
-|Openssl|Bibliotecas OpenSSL; Protocolo de Comunicações de Rede Seguras|0.9.8 ou 1.0|  
-|PAM|Módulos de Autenticação Conectáveis|0.79-3|  
+|libc6|C 标准共享库|2.3.6|  
+|Openssl|OpenSSL 库；安全网络通信协议|0.9.8 或 1.0|  
+|PAM|可插入身份验证模块|0.79-3|  
 
- **Universal Linux (pacote RPM) CentOS, Oracle Linux**  
+ **通用 Linux（RPM 包）CentOS，Oracle Linux**  
 
-|Pacote necessário|Descrição|Versão mínima|  
+|所需程序包|描述|最低版本|  
 |----------------------|-----------------|---------------------|  
-|glibc|Biblioteca compartilhada padrão C|2.5-12|  
-|Openssl|Bibliotecas OpenSSL; Protocolo de Comunicações de Rede Seguras|0.9.8 ou 1.0|  
-|PAM|Módulos de Autenticação Conectáveis|0.99.6.2-3.14|  
+|glibc|C 标准共享库|2.5-12|  
+|Openssl|OpenSSL 库；安全网络通信协议|0.9.8 或 1.0|  
+|PAM|可插入身份验证模块|0.99.6.2-3.14|  
 
  **IBM AIX 5L 5.3**  
 
-|Pacote necessário|Descrição|Versão mínima|  
+|所需程序包|描述|最低版本|  
 |----------------------|-----------------|---------------------|  
-|Versão do SO|Versão do sistema operacional|AIX 5.3, Technology Level 6, Service Pack 5|  
-|xlC.rte|Tempo de execução XL C/C++|9.0.0.2|  
-|openssl.base|Bibliotecas OpenSSL; Protocolo de Comunicações de Rede Seguras|0.9.8.4|  
+|操作系统版本|操作系统的版本|AIX 5.3，Technology Level 6，Service Pack 5|  
+|xlC.rte|XL C/C++ Runtime|9.0.0.2|  
+|openssl.base|OpenSSL 库；安全网络通信协议|0.9.8.4|  
 
  **IBM AIX 6.1**  
 
-|Pacote necessário|Descrição|Versão mínima|  
+|所需程序包|描述|最低版本|  
 |----------------------|-----------------|---------------------|  
-|Versão do SO|Versão do sistema operacional|AIX 6.1, qualquer Nível de Tecnologia e Service Pack|  
-|xlC.rte|Tempo de execução XL C/C++|9.0.0.5|  
-|OpenSSL/openssl.base|Bibliotecas OpenSSL; Protocolo de Comunicações de Rede Seguras|0.9.8.4|  
+|操作系统版本|操作系统的版本|AIX 6.1、任何 Technology Level 和 Service Pack|  
+|xlC.rte|XL C/C++ Runtime|9.0.0.5|  
+|OpenSSL/openssl.base|OpenSSL 库；安全网络通信协议|0.9.8.4|  
 
  **IBM AIX 7.1 (Power)**  
 
-|Pacote necessário|Descrição|Versão mínima|  
+|所需程序包|描述|最低版本|  
 |----------------------|-----------------|---------------------|  
-|Versão do SO|Versão do sistema operacional|AIX 7.1, qualquer Nível de Tecnologia e Service Pack|  
-|xlC.rte|Tempo de execução XL C/C++||  
-|OpenSSL/openssl.base|Bibliotecas OpenSSL; Protocolo de Comunicações de Rede Seguras||  
+|操作系统版本|操作系统的版本|AIX 7.1、任何 Technology Level 和 Service Pack|  
+|xlC.rte|XL C/C++ Runtime||  
+|OpenSSL/openssl.base|OpenSSL 库；安全网络通信协议||  
 
  **HP-UX 11i v2 IA 64**  
 
-|Pacote necessário|Descrição|Versão mínima|  
+|所需程序包|描述|最低版本|  
 |----------------------|-----------------|---------------------|  
-|HPUXBaseOS|Sistema operacional base|B.11.23|  
-|HPUXBaseAux|Auxiliar do sistema operacional base HP-UX|B.11.23.0706|  
-|HPUXBaseAux.openssl|Bibliotecas OpenSSL; Protocolo de Comunicações de Rede Seguras|A.00.09.07l.003|  
-|PAM|Módulos de Autenticação Conectáveis|No HP-UX, o PAM faz parte dos componentes centrais do sistema operacional. Não há outras dependências.|  
+|HPUXBaseOS|基操作系统|B.11.23|  
+|HPUXBaseAux|HP-UX 基操作系统辅助|B.11.23.0706|  
+|HPUXBaseAux.openssl|OpenSSL 库；安全网络通信协议|A.00.09.07l.003|  
+|PAM|可插入身份验证模块|在 HP-UX 上，PAM 是核心操作系统组件的一部分。 没有其它依赖关系。|  
 
  **HP-UX 11i v2 PA-RISC**  
 
-|Pacote necessário|Descrição|Versão mínima|  
+|所需程序包|描述|最低版本|  
 |----------------------|-----------------|---------------------|  
-|HPUX11i-OE|Ambiente operacional HP-UX Foundation|B.11.23.0706|  
-|OS-Core.MinimumRuntime.CORE-SHLIBS|Bibliotecas de ferramentas de desenvolvimento compatíveis|B.11.23|  
-|HPUXBaseAux|Auxiliar do sistema operacional base HP-UX|B.11.23.0706|  
-|HPUXBaseAux.openssl|Bibliotecas OpenSSL; Protocolo de Comunicações de Rede Seguras|A.00.09.071.003|  
-|PAM|Módulos de Autenticação Conectáveis|No HP-UX, o PAM faz parte dos componentes centrais do sistema operacional. Não há outras dependências.|  
+|HPUX11i-OE|HP-UX 基础操作环境|B.11.23.0706|  
+|OS-Core.MinimumRuntime.CORE-SHLIBS|兼容开发工具库|B.11.23|  
+|HPUXBaseAux|HP-UX 基操作系统辅助|B.11.23.0706|  
+|HPUXBaseAux.openssl|OpenSSL 库；安全网络通信协议|A.00.09.071.003|  
+|PAM|可插入身份验证模块|在 HP-UX 上，PAM 是核心操作系统组件的一部分。 没有其它依赖关系。|  
 
  **HP-UX 11i v3 PA-RISC**  
 
-|Pacote necessário|Descrição|Versão mínima|  
+|所需程序包|描述|最低版本|  
 |----------------------|-----------------|---------------------|  
-|HPUX11i-OE|Ambiente operacional HP-UX Foundation|B.11.31.0709|  
-|OS-Core.MinimumRuntime.CORE2-SHLIBS|Bibliotecas específicas de emuladores IA|B.11.31|  
-|openssl/Openssl.openssl|Bibliotecas OpenSSL; Protocolo de Comunicações de Rede Seguras|A.00.09.08d.002|  
-|PAM|Módulos de Autenticação Conectáveis|No HP-UX, o PAM faz parte dos componentes centrais do sistema operacional. Não há outras dependências.|  
+|HPUX11i-OE|HP-UX 基础操作环境|B.11.31.0709|  
+|OS-Core.MinimumRuntime.CORE2-SHLIBS|特定 IA 仿真器库|B.11.31|  
+|openssl/Openssl.openssl|OpenSSL 库；安全网络通信协议|A.00.09.08d.002|  
+|PAM|可插入身份验证模块|在 HP-UX 上，PAM 是核心操作系统组件的一部分。 没有其它依赖关系。|  
 
  **HP-UX 11i v3 IA64**  
 
-|Pacote necessário|Descrição|Versão mínima|  
+|所需程序包|描述|最低版本|  
 |----------------------|-----------------|---------------------|  
-|HPUX11i-OE|Ambiente operacional HP-UX Foundation|B.11.31.0709|  
-|OS-Core.MinimumRuntime.CORE-SHLIBS|Bibliotecas específicas de desenvolvimento IA|B.11.31|  
-|SysMgmtMin|Ferramentas de Implantação de Softwares Mínimos|B.11.31.0709|  
-|SysMgmtMin.openssl|Bibliotecas OpenSSL; Protocolo de Comunicações de Rede Seguras|A.00.09.08d.002|  
-|PAM|Módulos de Autenticação Conectáveis|No HP-UX, o PAM faz parte dos componentes centrais do sistema operacional. Não há outras dependências.|  
+|HPUX11i-OE|HP-UX 基础操作环境|B.11.31.0709|  
+|OS-Core.MinimumRuntime.CORE-SHLIBS|特定 IA 开发库|B.11.31|  
+|SysMgmtMin|最低软件部署工具|B.11.31.0709|  
+|SysMgmtMin.openssl|OpenSSL 库；安全网络通信协议|A.00.09.08d.002|  
+|PAM|可插入身份验证模块|在 HP-UX 上，PAM 是核心操作系统组件的一部分。 没有其它依赖关系。|  
 
- **Dependências do Configuration Manager:** a tabela a seguir lista as funções de sistema de sites que dão suporte a clientes Linux e UNIX. Para obter mais informações sobre essas funções de sistema de sites, consulte [Adicionar as funções do sistema de sites para os clientes do System Center Configuration Manager](../../../../core/clients/deploy/plan/determine-the-site-system-roles-for-clients.md).  
+ **Configuration Manager 依赖项：**下表列出了支持 Linux 和 UNIX 的客户端的站点系统角色。 有关这些站点系统角色的详细信息，请参阅[为 System Center Configuration Manager 客户端确定站点系统角色](../../../../core/clients/deploy/plan/determine-the-site-system-roles-for-clients.md)。  
 
-|Sistemas de site do Configuration Manager|Mais informações|  
+|Configuration Manager 站点系统|更多信息|  
 |---------------------------------------|----------------------|  
-|Ponto de gerenciamento|Embora o ponto de gerenciamento não seja necessário para instalar um cliente do Configuration Manager para Linux e UNIX, será necessário ter um ponto de gerenciamento para transferir informações entre os computadores cliente e os servidores do Configuration Manager. Sem um ponto de gerenciamento não é possível gerenciar computadores cliente.|  
-|Ponto de distribuição|O ponto de distribuição não é necessário para instalar um cliente do Configuration Manager para Linux e UNIX. No entanto, a função de sistema de site é necessária se você implantar o software em servidores Linux e UNIX.<br /><br /> Uma vez que o cliente do Configuration Manager para Linux e UNIX não dá suporte a comunicações que utilizam o SMB, os pontos de distribuição que você usar com o cliente devem dar suporte à comunicação HTTP ou HTTPS.|  
-|Ponto de status de fallback|O ponto de status de fallback não é necessário para instalar um cliente do Configuration Manager para Linux e UNIX. No entanto, o ponto de status de fallback habilita os computadores no site do Configuration Manager a enviar mensagens de estado quando não puderem se comunicar com um ponto de gerenciamento. Cliente também pode enviar seu status de instalação para o ponto de status de fallback.|  
+|管理点|尽管安装适用于 Linux 和 UNIX 的 Configuration Manager 客户端不需要管理点，但必须拥有管理点才能在客户端计算机和 Configuration Manager 服务器之间传输信息。 没有管理点，就无法管理客户端计算机。|  
+|分发点|安装适用于 Linux 和 UNIX 的 Configuration Manager 客户端不需要分发点。 但是，站点系统角色时的要求在将软件部署到 Linux 和 UNIX 服务器。<br /><br /> 因为适用于 Linux 和 UNIX 的 Configuration Manager 客户端不支持使用 SMB 的通信，与客户端一起使用的分发点必须支持 HTTP 或 HTTPS 通信。|  
+|回退状态点|安装适用于 Linux 和 UNIX 的 Configuration Manager 客户端不需要回退状态点。 然而，当 Configuration Manager 站点中的计算机不能与管理点通信时，回退状态点可使这些计算机发送状态消息。 客户端还可以向回退状态点发送其安装状态。|  
 
- **Requisitos de firewall**: Certifique-se de que firewalls não bloqueie as comunicações entre as portas que você especificar como as portas de solicitação de cliente. O cliente para Linux e UNIX se comunica diretamente com os pontos de gerenciamento, pontos de distribuição e pontos de status de fallback.  
+ **防火墙要求**:确保防火墙不会在您指定为客户端请求端口的端口中阻止通信。 适用于 Linux 和 UNIX 的客户端直接与管理点、分发点以及回退状态点进行通信。  
 
- Para obter informações sobre portas de solicitação e de comunicação do cliente, consulte  [Configurar o cliente para Linux e UNIX para localizar pontos de gerenciamento](../../../../core/clients/deploy/deploy-clients-to-unix-and-linux-servers.md#BKMK_ConfigClientMP).  
+ 有关客户端通信和请求端口的详细信息，请参阅  [配置适用于 Linux 和 UNIX 的客户端以查找管理点](../../../../core/clients/deploy/deploy-clients-to-unix-and-linux-servers.md#BKMK_ConfigClientMP)。  
 
-##  <a name="BKMK_PlanningforCommunicationsforLnU"></a> Planejamento da comunicação entre florestas com relações de confiança para servidores Linux e UNIX  
- Os servidores Linux e UNIX que você gerenciada com o Configuration Manager funcionam como clientes de grupo de trabalho e requerem configurações semelhantes às de clientes baseados no Windows que estão em um grupo de trabalho. Para obter informações sobre comunicações de computadores que estão em grupos de trabalho, consulte a seção [Comunicações entre florestas do Active Directory](../../../../core/plan-design/hierarchy/communications-between-endpoints.md#Plan_Com_X-Forest) no tópico [Comunicação entre pontos de extremidade no System Center Configuration Manager](../../../../core/plan-design/hierarchy/communications-between-endpoints.md) tópico.  
+##  <a name="BKMK_PlanningforCommunicationsforLnU"></a>为 Linux 和 UNIX 服务器规划跨林信任的通信  
+ 使用 Configuration Manager 管理的 Linux 和 UNIX 服务器作为工作组客户端运行并且需要与工作组中基于 Windows 的客户端相似的配置。 有关来自工作组中的计算机的通信的信息，请参阅 [System Center Configuration Manager 中终结点之间的通信](../../../../core/plan-design/hierarchy/communications-between-endpoints.md)主题中的[跨 Active Directory 林的通信](../../../../core/plan-design/hierarchy/communications-between-endpoints.md#Plan_Com_X-Forest)部分。  
 
-###  <a name="BKMK_ServiceLocationforLnU"></a> Local do serviço pelo cliente para Linux e UNIX  
- A tarefa de localizar um servidor de sistema de site que fornece o serviço aos clientes é conhecida como serviço local. Ao contrário de um cliente baseado em Windows, o cliente para Linux e UNIX não usar o Active Directory local de serviço. Além disso, o cliente do Configuration Manager para Linux e UNIX não dá suporte a uma propriedade de cliente que especifica o sufixo de domínio de um ponto de gerenciamento. Em vez disso, o cliente aprende sobre servidores de sistema de site adicionais que fornecem serviços aos clientes de um ponto de gerenciamento conhecidos que você atribuir ao instalar o software cliente.  
+###  <a name="BKMK_ServiceLocationforLnU"></a>适用于 Linux 和 UNIX 客户端的服务位置  
+ 查找为客户端提供服务的站点系统服务器的任务称为服务位置。 与不同的是基于 Windows 的客户端，适用于 Linux 和 UNIX 客户端不使用 Active Directory 用于服务定位。 此外，适用于 Linux 和 UNIX 的 Configuration Manager 客户端不支持指定管理点的域后缀的客户端属性。 相反，客户端了解到关于从已知的管理点时安装客户端软件分配给客户端提供服务的其他站点系统服务器。  
 
- Para obter mais informações sobre a localização de serviço, consulte a seção [Local do serviço e como os clientes determinam seu ponto de gerenciamento atribuído](../../../../core/plan-design/hierarchy/understand-how-clients-find-site-resources-and-services.md#BKMK_Plan_Service_Location) no tópico [Entender como os clientes encontram serviços e recursos do site para o System Center Configuration Manager](../../../../core/plan-design/hierarchy/understand-how-clients-find-site-resources-and-services.md).  
+ 有关服务定位的详细信息，请参阅[了解客户端如何查找 System Center Configuration Manager 的站点资源和服务](../../../../core/plan-design/hierarchy/understand-how-clients-find-site-resources-and-services.md)中的[服务定位和客户端如何确定向其分配的管理点](../../../../core/plan-design/hierarchy/understand-how-clients-find-site-resources-and-services.md#BKMK_Plan_Service_Location)。  
 
-##  <a name="BKMK_SecurityforLnU"></a> Planejamento de segurança e certificados para servidores Linux e UNIX  
- Para ter uma comunicação segura e autenticada com sites do Configuration Manager, o cliente do Configuration Manager para Linux e UNIX usa o mesmo modelo de comunicação que o cliente do Configuration Manager para Windows.  
+##  <a name="BKMK_SecurityforLnU"></a>规划 Linux 和 UNIX 服务器的安全性和证书  
+ 为了与 Configuration Manager 站点进行安全且通过身份验证的通信，适用于 Linux 和 UNIX 的 Configuration Manager 客户端使用与适用于 Windows 的 Configuration Manager 客户端相同的模型进行通信。  
 
- Quando instala o cliente Linux e UNIX, você pode atribuir ao cliente um certificado PKI que permite a ele usar HTTPS para se comunicar com sites do Configuration Manager. Se você não atribuir um certificado PKI, o cliente cria um certificado auto-assinado e se comunica somente por HTTP.  
+ 安装 Linux 和 UNIX 客户端时，可以向客户端分配 PKI 证书，使它能够使用 HTTPS 与 Configuration Manager 站点进行通信。 如果未分配的 PKI 证书，客户端创建自签名的证书和仅通过 HTTP 进行通信。  
 
- Os clientes que recebem um certificado PKI ao instalar usam HTTPS para se comunicar com pontos de gerenciamento. Quando um cliente não consegue localizar um ponto de gerenciamento que oferece suporte a HTTPS, ele voltará para usar HTTP com o certificado PKI fornecido.  
+ 在安装时提供的 PKI 证书的客户端使用 HTTPS 与管理点进行通信。 客户端找不到支持 HTTPS 的管理点时，它会回退到 HTTP 使用所提供的 PKI 证书。  
 
- Quando um cliente Linux ou UNIX usa um certificado PKI não é preciso aprová-las. Quando um cliente usar um certificado autoassinado, examine as configurações de hierarquia para aprovação do cliente no console do Configuration Manager. Se o método de aprovação do cliente não é **Aprovar automaticamente todos os computadores (não recomendados)**, você deve aprovar manualmente o cliente.  
+ 在 Linux 或 UNIX 的客户端使用 PKI 证书时您不需要批准它们。 当客户端使用自签名证书时，请在 Configuration Manager 控制台中查看客户端批准的层次结构设置。 如果客户端批准方法不是 **自动批准所有计算机 (不推荐)**, ，您必须手动都批准客户端。  
 
- Para obter mais informações sobre como aprovar manualmente o cliente, consulte a seção [Gerenciar clientes do nó de dispositivos](../../../../core/clients/manage/manage-clients.md#BKMK_ManagingClients_DevicesNode) no tópico [Como gerenciar clientes no System Center Configuration Manager](../../../../core/clients/manage/manage-clients.md).  
+ 有关如何手动批准客户端的详细信息，请参阅[如何在 System Center Configuration Manager 中管理客户端](../../../../core/clients/manage/manage-clients.md)主题中的[从设备节点管理客户端](../../../../core/clients/manage/manage-clients.md#BKMK_ManagingClients_DevicesNode)部分。  
 
- Para obter informações sobre como usar certificados no Configuration Manager, consulte [Requisitos de certificado PKI para o System Center Configuration Manager](../../../../core/plan-design/network/pki-certificate-requirements.md).  
+ 有关如何在 Configuration Manager 使用证书的信息，请参阅 [System Center Configuration Manager 的 PKI 证书要求](../../../../core/plan-design/network/pki-certificate-requirements.md)。  
 
-###  <a name="BKMK_AboutCertsforLnU"></a> Sobre certificados para uso por servidores Linux e UNIX  
- O cliente do Configuration Manager para Linux e UNIX usa um certificado autoassinado ou um certificado PKI X.509, assim como clientes baseados em Windows. Não há nenhuma alteração nos requisitos de PKI para sistemas de sites do Configuration Manager quando você gerencia clientes Linux e UNIX.  
+###  <a name="BKMK_AboutCertsforLnU"></a>关于 Linux 和 UNIX 服务器使用的证书  
+ 适用于 Linux 和 UNIX 的 Configuration Manager 客户端使用与基于 Windows 的客户端相同的自签名证书或 X.509 PKI 证书。 管理 Linux 和 UNIX 客户端时，Configuration Manager 站点系统的 PKI 要求没有任何更改。  
 
- Os certificados que você usa para clientes Linux e UNIX que se comunicam com sistemas de sites do Configuration Manager devem estar em um formato PKCS nº 12 (Padrão de certificado de chave pública) e é necessário saber a senha para que você possa especificá-la para o cliente ao especificar o certificado PKI.  
+ 用于与 Configuration Manager 站点系统通信的 Linux 和 UNIX 客户端的证书必须为公钥证书标准 (PKCS#12) 格式，并且必须知道密码，以便在指定 PKI 证书时可以将它指定给客户端。  
 
- O cliente do Configuration Manager para Linux e UNIX dá suporte a um único certificado PKI e não dá suporte a vários certificados. Portanto, os critérios de seleção de certificado que você configurar para um site do Configuration Manager não se aplicam.  
+ 适用于 Linux 和 UNIX 的 Configuration Manager 客户端支持单个 PKI 证书，不支持多个证书。 因此，为 Configuration Manager 站点配置的证书选择条件不适用。  
 
-###  <a name="BKMK_ConfigCertsforLnU"></a> Configuração de certificados para servidores Linux e UNIX  
- Para configurar um cliente do Configuration Manager para servidores Linux e UNIX para usar comunicações HTTPS, você deve configurar o cliente para usar um certificado PKI no momento em que você instalar o cliente. Não é possível provisionar um certificado antes da instalação do software cliente.  
+###  <a name="BKMK_ConfigCertsforLnU"></a>为 Linux 和 UNIX 服务器配置证书  
+ 若要将适用于 Linux 和 UNIX 服务器的 Configuration Manager 客户端配置为使用 HTTPS 通信，必须在安装该客户端时将其配置为使用 PKI 证书。 无法设置之前的客户端软件安装的证书。  
 
- Quando você instala um cliente que usa um certificado PKI, use o parâmetro de linha de comando **- /usepkicert** para especificar o local e o nome de um arquivo PKCS #12 que contém o certificado PKI. Além disso, você deve usar o parâmetro de linha de comando **- certpw** para especificar a senha do certificado.  
+ 在安装时使用 PKI 证书的客户端，您使用命令行参数 **-UsePKICert** 指定位置和包含 PKI 证书的 PKCS #12 文件的名称。 此外，您必须使用命令行参数 **-certpw** 来指定证书的密码。  
 
- Se você não especificar **- /usepkicert**, o cliente gera um certificado auto-assinado e tenta se comunicar com servidores do sistema de site usando apenas HTTP.  
+ 如果未指定 **-UsePKICert**, ，客户端生成自签名的证书并尝试通过仅使用 HTTP 与站点系统服务器进行通信。  
 
-##  <a name="BKMK_NoSHA-256"></a> Sobre sistemas operacionais Linux e UNIX que não dão suporte a SHA-256  
- Os seguintes sistemas operacionais Linux e UNIX que têm suporte como clientes para o Configuration Manager foram lançados com versões do OpenSSL que não dão suporte a SHA-256:  
+##  <a name="BKMK_NoSHA-256"></a>关于不支持 SHA-256 的 Linux 和 UNIX 操作系统  
+ 作为 Configuration Manager 客户端受到支持的以下 Linux 和 UNIX 操作系统发布了不支持 SHA-256 的 OpenSSL 版本：  
 
--   Versão do Red Hat Enterprise Linux 4 (x86/x64)  
+-   Red Hat Enterprise Linux 版本 4 (x86/x64)  
 
--   Versão Solaris 9 (SPARC) e Solaris 10 (SPARC/x86)  
+-   Solaris 版本 9 (SPARC) 和 Solaris 版本 10 (SPARC/x86)  
 
--   SUSE Linux Enterprise Server versão 9 (x86)  
+-   SUSE Linux Enterprise Server 版本 9 (x86)  
 
--   Versão de HP-UX 11iv2 (PA-RISH/IA64)  
+-   版本 HP-UX 11iv2 (PA-RISH/IA64)  
 
- Para gerenciar esses sistemas operacionais com Configuration Manager, você precisa instalar o cliente do Configuration Manager para Linux e UNIX com uma opção de linha de comando que instrui o cliente a ignorar a validação do SHA-256. Os clientes do Configuration Manager que são executados nessas versões de sistema operacional operam em um modo menos seguro que os clientes que dão suporte a SHA-256. Este modo menos seguro de operação tem o seguinte comportamento:  
+ 若要使用 Configuration Manager 管理这些操作系统，必须使用使客户端跳过 SHA-256 验证的命令行开关安装适用于 Linux 和 UNIX 的 Configuration Manager 客户端。 在这些操作系统版本上运行的 Configuration Manager 客户端在安全级别低于支持 SHA-256 的客户端的模式下运行。 这种运行较不安全的模式具有以下行为：  
 
--   Os clientes não validar a assinatura de servidor de site associada à política solicitam um ponto de gerenciamento.  
+-   客户端不会验证与它们从管理点请求的策略关联的站点服务器签名。  
 
--   Os clientes não validam o hash para pacotes que eles baixam do ponto de distribuição.  
+-   客户端不会验证它们从分发点下载的包的哈希值。  
 
 > [!IMPORTANT]  
->  O **ignoreSHA256validation** opção permite que você execute o cliente para computadores Linux e UNIX em um modo menos seguro. Isso é destinado ao uso em plataformas mais antigas que não inclui suporte para SHA-256. Isso é uma substituição de segurança e não é recomendado pela Microsoft, mas há suporte para uso em um ambiente de datacenter segura e confiável.  
+>  **IgnoreSHA256validation** 选项允许您在较不安全模式下运行 Linux 和 UNIX 计算机的客户端。 这旨在用于在不包括支持 sha-256 的较旧平台上使用。 这是安全覆盖并不建议使用由 Microsoft，但支持在安全和受信任的数据中心环境中使用。  
 
- Quando o cliente do Configuration Manager para Linux e UNIX é instalado, o script de instalação verifica a versão do sistema operacional. Por padrão, se a versão do sistema operacional for identificada como tendo sido lançada sem uma versão do OpenSSL que dá suporte a SHA-256, a instalação do cliente do Configuration Manager falhará.  
+ 当安装适用于 Linux 和 UNIX 的 Configuration Manager 客户端时，安装脚本会检查操作系统版本。 默认情况下，如果操作系统版本被标识为未发布支持 SHA-256 的 OpenSSL 版本，则无法安装 Configuration Manager 客户端。  
 
- Para instalar o cliente do Configuration Manager em sistemas operacionais Linux e UNIX que não foram lançados com uma versão do OpenSSL que dá suporte a SHA-256, você precisa usar a opção de linha de comando de instalação **ignoreSHA256validation**. Quando você usar essa opção de linha de comando em um sistema de operacional Linux ou UNIX aplicável, o cliente do Configuration Manager ignorará a validação do SHA-256 e, após a instalação, o cliente não usará SHA-256 para assinar os dados que envia a sistemas de sites usando HTTP. Para obter informações sobre como configurar clientes Linux e UNIX para usar certificados, consulte [Planning for Security and Certificates for Linux and UNIX Servers](#BKMK_SecurityforLnU) neste tópico. Para obter informações sobre a necessidade de SHA-256, consulte a seção [Configurar assinatura e criptografia](../../../../core/plan-design/security/configure-security.md#BKMK_ConfigureSigningEncryption) no tópico [Configurar a segurança no System Center Configuration Manager](../../../../core/plan-design/security/configure-security.md).  
+ 若要在未发布支持 SHA-256 的 OpenSSL 版本的 Linux 和 UNIX 操作系统上安装 Configuration Manager 客户端，必须使用安装命令行开关 **ignoreSHA256validation**。 当在适当的 Linux 或 UNIX 操作系统上使用此命令行选项时，Configuration Manager 客户端将跳过 SHA-256 验证，并且在安装完成后，客户端将不会使用 SHA-256 来对它通过使用 HTTP 提交到站点系统的数据进行签名。 有关将 Linux 和 UNIX 客户端配置为使用证书的详细信息，请参阅本主题中的 [Planning for Security and Certificates for Linux and UNIX Servers](#BKMK_SecurityforLnU) 。 有关需要 SHA-256 的信息，请参阅[配置 System Center Configuration Manager 中的安全](../../../../core/plan-design/security/configure-security.md)主题中的[配置签名和加密](../../../../core/plan-design/security/configure-security.md#BKMK_ConfigureSigningEncryption)。  
 
 > [!NOTE]  
->  A opção de linha de comando **ignoreSHA256validation** é ignorada em computadores que executam uma versão do Linux e UNIX lançado com versões do OpenSSL que dão suporte a SHA-256.  
-
+>  命令行选项 **ignoreSHA256validation** 忽略使用支持 sha-256 的 OpenSSL 版本运行 Linux 和 UNIX 发布的版本的计算机上。  

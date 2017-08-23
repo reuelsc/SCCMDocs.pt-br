@@ -1,77 +1,70 @@
 ---
-title: "Criar mídia de sequência de tarefas com o System Center Configuration Manager | Microsoft Docs"
-description: "Crie mídia de sequência de tarefas, como um CD, para implantar um sistema operacional em um computador de destino em seu ambiente do Configuration Manager."
+title: "使用 System Center Configuration Manager 创建任务序列媒体 | Microsoft Docs"
+description: "创建任务序列媒体（如 CD）以将操作系统部署到 Configuration Manager 环境中的目标计算机。"
 ms.custom: na
 ms.date: 10/06/2016
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
-ms.technology:
-- configmgr-osd
+ms.technology: configmgr-osd
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 90498b4b-6a9b-43cd-b465-1d6c9a52df1c
-caps.latest.revision: 8
-caps.handback.revision: 0
+caps.latest.revision: "8"
+caps.handback.revision: "0"
 author: Dougeby
 ms.author: dougeby
 manager: angrobe
-translationtype: Human Translation
-ms.sourcegitcommit: 74341fb60bf9ccbc8822e390bd34f9eda58b4bda
 ms.openlocfilehash: bd5448d70c2d465347de840cb197d4c33075c90a
-
-
+ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
+ms.translationtype: HT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 08/07/2017
 ---
-# <a name="create-task-sequence-media-with-system-center-configuration-manager"></a>Criar mídia de sequência de tarefas com o System Center Configuration Manager
+# <a name="create-task-sequence-media-with-system-center-configuration-manager"></a>使用 System Center Configuration Manager 创建任务序列媒体
 
-*Aplica-se a: System Center Configuration Manager (Branch Atual)*
+*适用范围：System Center Configuration Manager (Current Branch)*
 
-Você pode usar mídia para capturar uma imagem de sistema operacional de um computador de referência ou implantar um sistema operacional em um computador de destino em seu ambiente do System Center Configuration Manager. A mídia que você criar pode ser um conjunto de CD, DVD ou uma unidade flash USB.  
+可以使用媒体从引用计算机中捕获操作系统映像，或者将操作系统部署到 System Center Configuration Manager 环境中的目标计算机。 你创建的媒体可以是 CD、DVD 集或者 USB 闪存驱动器。  
 
- A mídia é usada muitas vezes para implantar sistemas operacionais em computadores de destino que não têm uma conexão de rede ou que têm uma conexão de baixa largura de banda em seu local do Configuration Manager. No entanto, a mídia de implantação também é usada para iniciar a implantação do sistema operacional fora de um sistema operacional Windows. Esse segundo uso de mídia de implantação é importante às vezes, quando não há sistema operacional no computador de destino, o sistema operacional está em um estado não operacional ou o usuário administrativo deseja fazer a repartição do disco rígido no computador de destino.  
+ 媒体的主要用途是，在没有网络连接或者使用低带宽连接来连接到 Configuration Manager 站点的目标计算机上部署操作系统。 但是，部署媒体也用于在现有 Windows 操作系统之外启动操作系统部署。 部署媒体的这个第二用途在以下情况下很重要：目标计算机上没有操作系统，操作系统处于不工作的状态，或者管理用户想将目标计算机上的硬盘重新分区。  
 
- A mídia de implantação inclui mídia inicializável, mídia autônoma e mídia em pré-teste. O conteúdo da mídia de implantação varia, dependendo do tipo de mídia que você usar. Por exemplo, mídia autônoma contém a sequência de tarefas que implanta o sistema operacional, enquanto outros tipos de mídia recuperam sequências de tarefas do ponto de gerenciamento.  
-
-> [!IMPORTANT]  
->  Para criar uma mídia de sequência de tarefas, é preciso ser um administrador no computador no qual você executa o console do Configuration Manager. Se você não for um administrador, serão solicitadas as credenciais de administrador quando você iniciar o assistente para Criar Mídia de Sequência de Tarefas.  
-
-##  <a name="a-namebkmkplancapturemediaa-capture-media-for-operating-system-images"></a><a name="BKMK_PlanCaptureMedia"></a> Mídia de captura para imagens do sistema operacional  
- Mídia de captura permite que você capture uma imagem do sistema operacional de um computador de referência. A mídia de captura contém a imagem de inicialização que inicia o computador de referência e a sequência de tarefas que captura a imagem do sistema operacional. Para obter informações sobre como criar mídia de captura, consulte [Create capture media with System Center Configuration Manager](create-capture-media.md) (Criar mídia de captura com o System Center Configuration Manager).  
-
-##  <a name="a-namebkmkplanbootablemediaa-bootable-media-operating-system-deployments"></a><a name="BKMK_PlanBootableMedia"></a> Implantações de sistema operacional com mídia inicializável  
- A mídia inicializável contém somente a imagem de inicialização, [comandos prestart](../understand/prestart-commands-for-task-sequence-media.md) opcionais e seus arquivos necessários, bem como binários do Configuration Manager. Quando o computador de destino é iniciado, conecta-se à rede e recupera a sequência de tarefas, a imagem do sistema operacional e qualquer outro conteúdo necessário da rede. Como a sequência de tarefa não está na mídia, você pode alterar a sequência de tarefas ou o conteúdo sem precisar recriar a mídia.  
+ 部署媒体包括可启动媒体、独立媒体和预留媒体。 部署媒体的内容因你使用的媒体类型而异。 例如，独立媒体包含用于部署操作系统的任务序列，而其他类型的媒体从管理点检索任务序列。  
 
 > [!IMPORTANT]  
->  Os pacotes em mídia inicializável não são criptografados. O usuário administrativo deve tomar as medidas de segurança apropriadas, como adicionar uma senha à mídia, verificar se o conteúdo do pacote está protegido contra usuários não autorizados.  
+>  若要创建任务序列媒体，必须是从中运行 Configuration Manager 控制台的计算机上的管理员。 如果你不是管理员，则系统会在你启动创建任务序列媒体向导时提示提供管理员凭据。  
 
- Para obter informações sobre como criar a mídia inicializável, veja [Criar mídia inicializável](create-bootable-media.md).  
+##  <a name="BKMK_PlanCaptureMedia"></a>操作系统映像的捕获媒体  
+ 捕获媒体可让你从引用计算机中捕获操作系统映像。 捕获媒体包含用于启动引用计算机的启动映像，以及用于捕获操作系统映像的任务序列。 有关如何创建捕获媒体的信息，请参阅[使用 System Center Configuration Manager 创建捕获媒体](create-capture-media.md)。  
 
-##  <a name="a-namebkmkplanprestagedmediaa-prestaged-media-operating-system-deployments"></a><a name="BKMK_PlanPrestagedMedia"></a> Implantações de sistema operacional com mídia pré-configurada  
- Mídia pré-testada permite que você pré-teste a mídia inicializável e uma imagem de sistema operacional em um disco rígido para o processo de provisionamento. A mídia pré-testada é um arquivo em formato WIM (Windows Imaging) que pode ser instalado em um computador bare-metal pelo fabricante ou em um centro de preparo corporativo que não está conectado ao ambiente do Configuration Manager.  
-
- A mídia em pré-teste contém a imagem de inicialização usada para iniciar o computador de destino e a imagem do sistema operacional aplicada ao computador de destino. Também é possível especificar aplicativos, pacotes e pacotes de driver para incluir como parte da mídia pré-configurada. A sequência de tarefas que implanta o sistema operacional não está incluída na mídia. Ao implantar uma sequência de tarefas que utiliza a mídia pré-configurada, o cliente primeiro verifica se há conteúdo válido no cache local da sequência de tarefas e, caso o conteúdo não possa ser localizado ou não foi revisado, o cliente baixa o conteúdo do ponto de distribuição.  
-
- A mídia pré-testada é aplicada à unidade de disco rígido de um novo computador antes do computador ser enviado ao usuário final. Quando o computador inicia pela primeira vez, após a mídia pré-testada ter sido aplicada, o computador inicia o Windows PE e conecta-se a um ponto de gerenciamento para localizar a sequência de tarefas que conclui o processo de implantação do sistema operacional.  
+##  <a name="BKMK_PlanBootableMedia"></a>可启动媒体操作系统部署  
+ 可启动媒体仅包含启动映像、可选的 [预启动命令](../understand/prestart-commands-for-task-sequence-media.md) 及其必需的文件和 Configuration Manager 二进制文件。 在目标计算机启动时，它连接到网络，并从网络中检索任务序列、操作系统映像和任何其他必需的内容。 由于任务序列不在媒体上，因此，你无需重新创建媒体就能更改任务序列或内容。  
 
 > [!IMPORTANT]  
->  Os pacotes em mídia pré-testada não são criptografados. O usuário administrativo deve tomar as medidas de segurança apropriadas, como adicionar uma senha à mídia, verificar se o conteúdo do pacote está protegido contra usuários não autorizados.  
+>  可启动媒体上的包并未加密。 管理用户必须采取适当的安全措施（例如向媒体添加密码），以确保未经授权的用户不能访问包内容。  
 
- Para obter informações sobre como criar uma mídia pré-configurada, consulte [Criar mídia pré-configurada](create-prestaged-media.md).  
+ 有关如何创建可启动媒体的信息，请参阅[创建可启动媒体](create-bootable-media.md)。  
 
-##  <a name="a-namebkmkplanstandalonemediaa-stand-alone-media-operating-system-deployments"></a><a name="BKMK_PlanStandaloneMedia"></a> Implantações de sistema operacional com mídia autônoma  
- Mídia autônoma contém tudo o que é necessário para implantar o sistema operacional. Isso inclui a sequência de tarefas e qualquer outro conteúdo necessário. Como tudo o que é necessário para implantar o sistema operacional é armazenado na mídia autônoma, o espaço em disco necessário para mídia autônoma é significativamente maior do que o espaço em disco necessário para outros tipos de mídia.  
+##  <a name="BKMK_PlanPrestagedMedia"></a>预留媒体操作系统部署  
+ 利用预留媒体，你可以在执行设置过程之前将可启动媒体和操作系统映像预留到硬盘上。 预留媒体是 Windows 映像格式 (WIM) 文件，可以由制造商安装在裸机上，也可以安装在未连接到 Configuration Manager 环境的企业暂存中心。  
 
- Para mais informações sobre como criar mídia autônoma, consulte [Criar mídia autônoma](create-stand-alone-media.md).  
+ 预留媒体包含用于启动目标计算机的启动映像，以及应用到目标计算机的操作系统映像。 你还可以指定要作为预留媒体的一部分包含的应用程序、包和驱动程序包。 此媒体不包含用于部署操作系统的任务序列。 在部署使用预留媒体的任务序列时，客户端会首先检查本地任务序列缓存以查找有效的内容，如果无法找到内容或内容已被修改，则客户端会从分发点下载内容。  
 
-## <a name="media-considerations-when-using-site-systems-configured-for-https"></a>Considerações sobre mídia ao usar sistemas de sites configurados para HTTPS  
- Quando seu ponto de gerenciamento e pontos de distribuição são configurados para usar comunicação HTTPS, você deve criar mídia de inicialização e mídia em pré-teste no site primário, não no site de administração central. Além disso, considere o seguinte para ajudá-lo a determinar se deseja configurar a mídia como dinâmica ou com base no site:  
+ 在将新计算机发送给最终用户之前，预留媒体将应用到此计算机的硬盘驱动器。 在应用预留媒体后第一次启动计算机时，计算机会启动 Windows PE 并连接到管理点，以查找将完成操作系统部署过程的任务序列。  
 
--   Para configurar a mídia como mídia dinâmica, todos os sites primários devem ter autoridade de certificação raiz do site por meio do qual você criou a mídia. Você pode importar a autoridade de certificação raiz para todos os sites primários na sua hierarquia.  
+> [!IMPORTANT]  
+>  预留媒体上的包并未加密。 管理用户必须采取适当的安全措施（例如向媒体添加密码），以确保未经授权的用户不能访问包内容。  
 
--   Quando sites primários na hierarquia do Configuration Manager usam autoridades de certificação raízes diferentes, você deve usar mídia baseada em site em cada site.  
+ 有关如何创建预留媒体的信息，请参阅[创建预留媒体](create-prestaged-media.md)。  
 
+##  <a name="BKMK_PlanStandaloneMedia"></a>独立媒体操作系统部署  
+ 独立媒体包含部署操作系统所需的所有内容。 这包括任务序列和所需的任何其他内容。 由于部署操作系统所需的所有内容均存储在独立媒体上，因此，独立媒体所需的磁盘空间将显著大于其他类型的媒体所需的磁盘空间。  
 
+ 有关如何创建独立媒体的信息，请参阅[创建独立媒体](create-stand-alone-media.md)。  
 
-<!--HONumber=Dec16_HO3-->
+## <a name="media-considerations-when-using-site-systems-configured-for-https"></a>在使用为 HTTPS 配置的站点系统时的媒体注意事项  
+ 在将管理点和分发点均配置为使用 HTTPS 通信时，必须在主站点而不是管理中心站点上创建启动媒体和预留媒体。 此外，还要考虑下列两点，以帮助你确定是将媒体配置为动态还是配置为基于站点：  
 
+-   若要将媒体配置为动态媒体，则所有主站点均必须具有你从中创建了媒体的站点的根 CA。 可以将根 CA 导入到层次结构中的所有主站点。  
 
+-   在 Configuration Manager 层次结构中的主站点使用不同的根 CA 时，必须在每个站点使用基于站点的媒体。  

@@ -1,85 +1,81 @@
 ---
-title: Monitorar perfis de certificado | Microsoft Docs
-description: Saiba como monitorar o status de conformidade de perfis de certificado do System Center Configuration Manager.
+title: "监视证书配置文件 | Microsoft Docs"
+description: "了解如何监视 System Center Configuration Manager 证书配置文件的符合性状态。"
 ms.custom: na
 ms.date: 10/06/2016
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
-ms.technology:
-- configmgr-other
+ms.technology: configmgr-other
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 98feaa06-64b1-4e86-a122-93017c97cd4f
-caps.latest.revision: 7
-caps.handback.revision: 0
+caps.latest.revision: "7"
+caps.handback.revision: "0"
 author: arob98
 ms.author: angrobe
 manager: angrobe
-ms.translationtype: Human Translation
-ms.sourcegitcommit: 8a5dc7361da34f3e6b926acd35c72c0c0767ce70
-ms.openlocfilehash: 74a0a4274965891869caf838550cd9465b46fd51
-ms.contentlocale: pt-br
-ms.lasthandoff: 12/30/2016
-
-
+ms.openlocfilehash: 84e275fa5b17bc703da22fb686ef9050d17e557f
+ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
+ms.translationtype: HT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 08/07/2017
 ---
-# <a name="how-to-monitor-certificate-profiles-in-system-center-configuration-manager"></a>Como monitorar perfis de certificado no System Center Configuration Manager
+# <a name="how-to-monitor-certificate-profiles-in-system-center-configuration-manager"></a>如何在 System Center Configuration Manager 中监视证书配置文件
 
-*Aplica-se a: System Center Configuration Manager (Branch Atual)*
+*适用范围：System Center Configuration Manager (Current Branch)*
 
 
-##  <a name="view-compliance-results-in-the-configuration-manager-console"></a>Exibir Resultados de conformidade no Console do Configuration Manager  
+##  <a name="view-compliance-results-in-the-configuration-manager-console"></a>在 Configuration Manager 控制台中查看符合性结果  
 
-Para monitorar a conformidade de certificado SCEP, não use o console, em vez disso, use [relatórios](#view-compliance-results-by-using-reports). 
+要监视 SCEP 证书符合性，请不要使用控制台，而是使用[报表](#view-compliance-results-by-using-reports)。 
 
-1.  No console do Configuration Manager, escolha **Monitoramento**>  **Implantações**.  
+1.  在 Configuration Manager 控制台中，选择“监视”>  “部署”。  
 
-3.  Selecione a implantação do perfil de certificado de interesse.  
+3.  选择所需的证书配置文件部署。  
 
-4.  Examine o resumo das informações de conformidade do certificado na página principal. Para informações mais detalhadas, selecione o perfil de certificado e, em seguida, na guia **Início**, no grupo **Implantação**, escolha **Exibir Status** para abrir a página **Status da Implantação**.  
+4.  查看主页上的证书符合性信息汇总。 有关详细信息，请选择证书配置文件，然后在“主页”选项卡上的“部署”组中，选择“查看状态”以打开“部署状态”页。  
 
-     A página **Status da Implantação** contém as seguintes guias:  
+     “部署状态”  页包含下列选项卡：  
 
-    -   **Compatível**: exibe a conformidade do perfil de certificado com base no número de ativos afetados. Você pode clicar duas vezes em uma regra para criar um nó temporário no nó **Usuários** do espaço de trabalho **Ativos e Conformidade** . Esse nó contém todos os usuários que são compatíveis com o perfil de certificado. O painel **Detalhes do Ativo** também exibe os usuários que são compatíveis com esse perfil. Clique duas vezes em um usuário na lista para obter mais informações.  
+    -   **符合**：显示基于受影响资产数量的证书配置文件的符合性。 你可以双击规则以在“资产和符合性”  工作区中的“用户”  节点下创建一个临时节点。 此节点包含符合此证书配置文件的所有用户。 “资产详细信息”  窗格也显示符合此配置文件的用户。 双击列表中的用户可查看详细信息。  
 
         > [!IMPORTANT]  
-        >  O perfil de certificado não será avaliado se não for aplicável a um dispositivo cliente. No entanto, ele é retornado como compatível.  
+        >  如果某个证书配置文件在客户端设备上不适用，则不会评估该配置文件。 但是，它返回的状态为符合。  
 
-    -   **Erro**: exibe uma lista de todos os erros da implantação do perfil de certificado selecionado com base no número de ativos afetados. Você pode clicar duas vezes em uma regra para criar um nó temporário no nó **Usuários** do espaço de trabalho **Ativos e Conformidade** . Esse nó contém todos os usuários que geraram erros com esse perfil. Quando você seleciona um usuário, o painel **Detalhes do Ativo** exibe os usuários afetados pelo problema selecionado. Clique duas vezes para exibir um usuário da lista para obter mais informações.  
+    -   **错误**：显示基于受影响资产数量的所选证书配置文件部署的所有错误的列表。 你可以双击规则以在“资产和符合性”  工作区的“用户”  节点下创建一个临时节点。 此节点包含对于此配置文件生成了错误的所有用户。 当你选择某个用户时，“资产详细信息”  窗格将显示受所选问题影响的用户。 双击列表中的用户以显示详细信息。  
 
-    -   **Não Compatível**: exibe uma lista de todas as regras não compatíveis no perfil de certificado com base no número de ativos afetados. Você pode clicar duas vezes em uma regra para criar um nó temporário no nó **Usuários** do espaço de trabalho **Ativos e Conformidade** . Esse nó contém todos os usuários que não são compatíveis com esse perfil. Quando você seleciona um usuário, o painel **Detalhes do Ativo** exibe os usuários afetados pelo problema selecionado. Clique duas vezes em um usuário na lista para exibir mais informações sobre o problema.  
+    -   **不符合**：显示基于受影响资产数量的证书配置文件内所有不符合规则的列表。 你可以双击规则以在“资产和符合性”  工作区的“用户”  节点下创建一个临时节点。 此节点包含不符合此配置文件的所有用户。 当你选择某个用户时，“资产详细信息”  窗格将显示受所选问题影响的用户。 双击列表中的用户以显示有关问题的进一步信息。  
 
-    -   **Desconhecido**: exibe uma lista de todos os usuários que não relataram a conformidade para a implantação do perfil de certificado selecionado, junto com o status atual do cliente dos dispositivos.  
+    -   **未知**：显示没有为所选证书配置文件部署报告符合性的所有用户的列表，以及设备的当前客户端状态。  
 
-5.  Na página **Status da Implantação**, examine informações detalhadas sobre a conformidade do perfil de certificado implantado. Um nó temporário é criado no nó **Implantações** , que ajuda você a localizar essas informações novamente com rapidez.  
+5.  在“部署状态”页上，可以查看有关所部署的证书配置文件的符合性的详细信息。 将在“部署”  节点下创建一个临时节点，该节点可帮助你快速再次找到此信息。  
 
-     O status de registro do certificado é exibido como um número. Use a tabela a seguir para entender o que significa cada número:  
+     证书的注册状态显示为数字。 使用下表了解每个数字的含意：  
 
-    |Status do registro|Descrição|  
+    |注册状态|描述|  
     |-----------------------|-----------------|  
-    |0x00000001|O registro foi bem-sucedido, e o certificado foi emitido.|  
-    |0x00000002|A solicitação foi enviada, e o registro está pendente, ou a solicitação foi emitida fora da banda.|  
-    |0x00000004|O registro deve ser adiado.|  
-    |0x00000010|Ocorreu um erro.|  
-    |0x00000020|O status do registro é desconhecido.|  
-    |0x00000040|As informações de status foram ignoradas. Isso pode ocorrer se uma autoridade de certificação HYPERLINK "http://msdn.microsoft.com/en-us/windows/ms721572" \l "_security_certification_authority_gly" não for válida ou não tiver sido selecionada para o monitoramento.|  
-    |0x00000100|O registro foi negado.|  
+    |0x00000001|注册成功，并已颁发证书。|  
+    |0x00000002|已提交请求并且正在等待注册，或者已在带外发出请求。|  
+    |0x00000004|注册必须被推迟。|  
+    |0x00000010|出现了错误。|  
+    |0x00000020|注册状态未知。|  
+    |0x00000040|已跳过状态信息。 如果 HYPERLINK "http://msdn.microsoft.com/en-us/windows/ms721572" \l "_security_certification_authority_gly" 证书颁发机构无效或者尚未选中进行监视，便会出现此问题。|  
+    |0x00000100|注册被拒绝。|  
 
-##  <a name="view-compliance-results-by-using-reports"></a>Exibir resultados de conformidade por meio de relatórios
+##  <a name="view-compliance-results-by-using-reports"></a>使用报表来查看符合性结果
 
- As configurações de conformidade do System Center Configuration Manager incluem relatórios internos que podem ser usados para monitorar informações sobre perfis de certificado. Esses relatórios têm a categoria de relatório de **Gerenciamento de Conformidade e Configurações**.  
+ System Center Configuration Manager 中的符合性设置包括内置报表，你可以使用这些报表监视有关证书配置文件的信息。 这些报表的报表类别为“符合性和设置管理” 。  
 
 > [!IMPORTANT]  
->  Você deve usar um caractere curinga (%) ao utilizar os parâmetros **Filtro de dispositivo** e **Filtro de usuário** nos relatórios de configurações de conformidade.  
+>  在符合性设置报表中使用参数“设备筛选器”  和“用户筛选器”  时，你必须使用通配符 (%) 字符。  
 
-Para monitorar a conformidade de certificado SCEP, use os relatórios de certificado localizados no nó de relatório **Acesso a Recursos da Empresa**:  
+要监视 SCEP 证书符合性，使用位于报表节点“公司资源访问”下的这些证书报表：  
 
- -   Histórico de emissão de certificado  
- -   Lista de ativos com certificados perto do vencimento  
- -   Lista de ativos por status de emissão de certificado  
+ -   证书颁发历史记录  
+ -   证书即将到期的资产列表  
+ -   按证书颁发状态列出的资产的列表  
 
 
 
- Para obter mais informações sobre como configurar relatórios no System Center Configuration Manager, consulte [Relatórios no System Center Configuration Manager](../../core/servers/manage/reporting.md).  
-
+ 有关如何在 System Center Configuration Manager 中配置报表的详细信息，请参阅 [System Center Configuration Manager 中的报表](../../core/servers/manage/reporting.md)。  

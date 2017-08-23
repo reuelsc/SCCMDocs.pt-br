@@ -1,55 +1,51 @@
 ---
-title: "MDM (gerenciamento de dispositivo móvel) local | Microsoft Docs"
-description: "Conheça o Gerenciamento de Dispositivo Móvel Local, uma solução de gerenciamento de dispositivos no System Center Configuration Manager."
+title: "本地移动设备管理 (MDM) | Microsoft Docs"
+description: "了解本地移动设备管理 - System Center Configuration Manager 中的设备管理解决方案。"
 ms.custom: na
 ms.date: 03/05/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
-ms.technology:
-- configmgr-hybrid
+ms.technology: configmgr-hybrid
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 497c05c7-fe9f-4b88-983b-1c5b3d59308e
-caps.latest.revision: 8
+caps.latest.revision: "8"
 author: Mtillman
 ms.author: mtillman
 manager: angrobe
-ms.translationtype: Human Translation
-ms.sourcegitcommit: 0d6479bcc134103e6005159a8ea295a5f359a436
-ms.openlocfilehash: cbd33bf3cf7d623d9ba7a657d4ca7d746d7e79da
-ms.contentlocale: pt-br
-ms.lasthandoff: 12/16/2016
-
-
+ms.openlocfilehash: 7b96c4d4d87aa150eacc5d7d20710f5d2199e48a
+ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
+ms.translationtype: HT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 08/07/2017
 ---
-# <a name="on-premises-mobile-device-management-mdm-in-system-center-configuration-manager"></a>MDM (Gerenciamento de Dispositivo Móvel) Local no System Center Configuration Manager
+# <a name="on-premises-mobile-device-management-mdm-in-system-center-configuration-manager"></a>System Center Configuration Manager 中的本地移动设备管理 (MDM)
 
-*Aplica-se a: System Center Configuration Manager (Branch Atual)*
+*适用范围：System Center Configuration Manager (Current Branch)*
 
-O Gerenciamento de Dispositivo Móvel Local do System Center Configuration Manager é uma solução de gerenciamento de dispositivos que utiliza os recursos internos de gerenciamento dos sistemas operacionais dos dispositivos (baseados no padrão OMA DM ou Gerenciamento de Dispositivo da Open Mobile Alliance) e usa infraestrutura do Configuration Manager da empresa para gerenciar e manter os dispositivos. O Gerenciamento de Dispositivo Móvel Local exige o Microsoft Intune para configurar a capacidade de gerenciamento, mas só é necessário para a assinatura (e, às vezes, para ajudar a notificar os dispositivos a fazerem check-in para alterações de política), contudo ele não é usado para gerenciar os dispositivos ou armazenar dados sobre eles.  
+System Center Configuration Manager 本地移动设备管理是一个设备管理解决方案，它在使用企业的 Configuration Manager 基础结构管理和维护设备时，（基于开放移动联盟设备管理或 OMA DM 标准）需要依赖设备操作系统的内置管理功能。 本地移动设备管理要求 Microsoft Intune 设置管理功能，但仅在订阅（有时帮助通知设备签入更改的策略）时需要，而不用于管理设备或存储有关这些设备的数据。  
 
- ![Conceitual local](media/On-premises-conceptual.png)  
+ ![本地概念](media/On-premises-conceptual.png)  
 
- O Gerenciamento de Dispositivo Móvel Local é diferente do Microsoft Intune, que também utiliza os recursos internos do OMA DM, mas em que todas as funções de gerenciamento são entregues por meio de serviços de nuvem.  O Gerenciamento de Dispositivo Móvel Local também é diferente da solução de gerenciamento baseada em cliente tradicionalmente oferecida pelo Configuration Manager, em que ele utiliza uma infraestrutura corporativa semelhante, mas não usa um software cliente instalado separadamente nos computadores e dispositivos que ele gerencia.  
+ 本地移动设备管理不同于 Microsoft Intune，后者还依赖于内置的 OMA DM 功能，但所有管理功能都通过云服务提供。  本地移动设备管理也不同于基于客户端的管理解决方案（过去由 Configuration Manager 提供），因为它依赖类似于企业的基础结构而不是使用其管理的计算机和设备上独立安装的客户端软件。  
 
- A tabela abaixo lista as vantagens e desvantagens do Gerenciamento de Dispositivo Móvel Local em comparação com o gerenciamento tradicional baseado em cliente:  
+ 下表列出了本地移动设备管理与传统基于客户端管理相比的优缺点：  
 
-|Vantagens|Desvantagens|  
+|优点|缺点|  
 |----------------|-------------------|  
-|**Infraestrutura simplificada** - Menos funções do sistema de sites são necessárias.<br /><br /> **Manutenção mais fácil** – Como a funcionalidade de gerenciamento é inserida no sistema operacional do dispositivo, novas versões do software cliente não são necessárias quando novos recursos de gerenciamento são introduzidos no sistema do Configuration Manager.<br /><br /> **Local** - Todo o gerenciamento e todos os dados são mantidos localmente.|**Menos funcionalidades de gerenciamento de clientes** - Nenhuma orquestração, medição de software, integração de terceiros, sequenciamento de tarefas ou suporte do centro de software.<br /><br /> **Suporte de dispositivo limitado** – Atualmente, o Gerenciador de Dispositivo Móvel Local dá suporte apenas a dispositivos que executam o Windows 10 e Windows 10 Mobile.|  
+|**简化了基础结构** - 需要的站点系统角色更少。<br /><br /> **更易于维护** - 由于管理功能是内置于设备操作系统的，因此当向 Configuration Manager 系统引入新的管理功能时将不再需要新版本的客户端软件。<br /><br /> **本地** - 所有管理和数据均保留在本地。|**客户端管理功能更少** - 没有业务流程、软件计数、第三方集成、任务序列或软件中心支持。<br /><br /> **设备支持有限** - 当前本地移动设备管理仅支持运行 Windows 10 和 Windows 10 移动版的设备。|  
 
- Os seguintes tópicos fornecem informações que podem ser usadas para planejar, preparar e registrar dispositivos para o Gerenciamento de Dispositivo Móvel Local:  
+ 以下主题提供的信息可用于本地移动设备管理规划、准备和注册设备：  
 
--   [Planejar o Gerenciamento de Dispositivo Móvel Local no System Center Configuration Manager](../plan-design/plan-on-premises-mdm.md)  
+-   [在 System Center Configuration Manager 中规划本地移动设备管理](../plan-design/plan-on-premises-mdm.md)  
 
-     Saiba mais sobre o que deve ser considerado ao configurar a infraestrutura do Configuration Manager e planejar o registro de dispositivo no Gerenciamento de Dispositivo Móvel Local.  
+     了解在本地移动设备管理中设置 Configuration Manager 基础结构和规划设备注册时需要考虑的事项。  
 
--   [Etapas de preparação para o Gerenciamento de Dispositivo Móvel Local no System Center Configuration Manager](../get-started/preparation-steps-for-on-premises-mdm.md)  
+-   [用于 System Center Configuration Manager 中本地移动设备管理的准备步骤](../get-started/preparation-steps-for-on-premises-mdm.md)  
 
-     Saiba mais sobre como preparar o sistema do Configuration Manager para o Gerenciamento de Dispositivo Móvel Local configurando a assinatura do Microsoft Intune, configurando certificados, instalando funções do sistema de sites e configurando o registro do dispositivo.  
+     了解如何通过设置 Microsoft Intune 订阅、设置证书、安装站点系统角色和设置设备注册为本地移动设备管理准备 Configuration Manager 系统。  
 
--   [Registrar dispositivos para o gerenciamento de dispositivo móvel local no System Center Configuration Manager](../deploy-use/enroll-devices-on-premises-mdm.md)  
+-   [在 System Center Configuration Manager 中为本地移动设备管理注册设备](../deploy-use/enroll-devices-on-premises-mdm.md)  
 
-     Saiba mais sobre como o registro ocorre, como os usuários podem registrar seus próprios dispositivos e como registrar dispositivos em massa com um pacote de registro.  
-
+     了解如何进行注册、用户如何注册其自己的设备，以及如何使用注册包批量注册设备。  

@@ -1,56 +1,52 @@
 ---
-title: "Usar mídia inicializável para implantar o Windows na rede | Microsoft Docs"
-description: "Use implantações de mídia inicializável no System Center Configuration Manager para implantar o sistema operacional quando o computador de destino iniciar."
+title: "使用可启动媒体通过网络部署 Windows | Microsoft Docs"
+description: "使用 System Center Configuration Manager 中的可启动媒体在启动目标计算机时部署操作系统。"
 ms.custom: na
 ms.date: 6/16/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
-ms.technology:
-- configmgr-osd
+ms.technology: configmgr-osd
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 999b5409-7e72-48d2-8554-4d44427ce383
-caps.latest.revision: 5
+caps.latest.revision: "5"
 author: mattbriggs
 ms.author: mattbriggs
 manager: angrobe
-ms.translationtype: Human Translation
-ms.sourcegitcommit: f4c46bfab9b40b29654f4e883817a5508ab25b74
 ms.openlocfilehash: 9b20e5e2a66d92038033e816e6fc701581c48a7f
-ms.contentlocale: pt-br
-ms.lasthandoff: 06/28/2017
-
-
+ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
+ms.translationtype: HT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 08/07/2017
 ---
-# <a name="use-bootable-media-to-deploy-windows-over-the-network-with-system-center-configuration-manager"></a>Use a mídia inicializável para implantar o Windows na rede com o System Center Configuration Manager
+# <a name="use-bootable-media-to-deploy-windows-over-the-network-with-system-center-configuration-manager"></a>使用可启动媒体与 System Center Configuration Manager 一起通过网络部署 Windows
 
-*Aplica-se a: System Center Configuration Manager (Branch Atual)*
+*适用范围：System Center Configuration Manager (Current Branch)*
 
-Você pode implantar o sistema operacional quando o computador de destino for iniciado usando uma implantação de mídia inicializável. A mídia contém um ponteiro para a sequência de tarefas, a imagem do sistema operacional e outro conteúdo necessário da rede. Quando o computador de destino é iniciado, o computador recupera os itens mencionados no ponteiro. Com a mídia inicializável livre de conteúdo, você pode atualizar o destino sem a necessidade de substituí-lo na mídia.
+可以在使用可启动媒体部署启动目标计算机时部署操作系统。 媒体包含指向任务序列的指针、操作系统映像和来自网络的其他所需内容。 当目标计算机启动时，计算机会检索到指针所引用的项。 使用没有内容的可启动媒体可以更新目标，无需在媒体中进行替换。
 
-Você pode implantar sistemas operacionais na rede usando multicast nos seguintes cenários de implantação de sistema operacional:
+通过在以下操作系统部署方案中使用多播，可以通过网络部署操作系统：
 
--   [Atualizar um computador existente com uma nova versão do Windows](refresh-an-existing-computer-with-a-new-version-of-windows.md)
+-   [使用新版的 Windows 刷新现有的计算机](refresh-an-existing-computer-with-a-new-version-of-windows.md)
 
--   [Instalar uma nova versão do Windows em um novo computador (sem sistema operacional)](install-new-windows-version-new-computer-bare-metal.md)  
+-   [在新计算机（裸机）上安装新版的 Windows](install-new-windows-version-new-computer-bare-metal.md)  
 
--   [Substituir um computador existente e transferir configurações](replace-an-existing-computer-and-transfer-settings.md)  
+-   [替换现有计算机和传输设置](replace-an-existing-computer-and-transfer-settings.md)  
 
-Conclua as etapas em um dos cenários de implantação de sistema operacional e, então, use as seções a seguir para utilizar a mídia inicializável para implantar o sistema operacional.  
+完成其中一个操作系统部署方案中的步骤，然后运行以下部分来使用可启动媒体部署操作系统。  
 
-## <a name="configure-deployment-settings"></a>Definir configurações de implantação  
-Ao usar a mídia inicializável para iniciar o processo de implantação de sistema operacional, configure a implantação para tornar o sistema operacional disponível para a mídia. Você pode definir essa opção na página **Configurações de implantação** do Assistente de implantação de Software ou na guia **Configurações de implantação** nas propriedades de implantação. Para a configuração **Tornar disponível para o seguinte** , defina uma das seguintes opções:
+## <a name="configure-deployment-settings"></a>配置部署设置  
+当你使用可启动媒体来启动操作系统部署过程时，配置该部署才能使操作系统对媒体可用。 可以在“部署软件向导”的“部署设置”页或部署属性的“部署设置”选项卡上设置这一选项。 对于“可用于以下项目”  设置，请配置下述内容之一：
 
--   Clientes do Configuration Manager, mídia e PXE
+-   Configuration Manager 客户端、媒体和 PXE
 
--   Somente mídia e PXE
+-   仅媒体和 PXE
 
--   Somente mídia e PXE (oculto)
+-   仅媒体和 PXE（隐藏）
 
-## <a name="create-the-bootable-media"></a>Criar uma mídia inicializável
-Você pode especificar se a mídia inicializável é uma unidade flash USB ou um conjunto de CD/DVD. O computador que inicia a mídia deve dar suporte à opção que você escolher como uma unidade inicializável. Para obter mais informações, consulte [Criar mídia inicializável](create-bootable-media.md).  
+## <a name="create-the-bootable-media"></a>创建可启动媒体
+你可以指定可启动媒体是 U 盘还是 CD/DVD 设备。 启动媒体的计算机必须支持选为可启动驱动器的选项。 有关详细信息，请参阅[创建可启动媒体](create-bootable-media.md)。  
 
-##  <a name="BKMK_Deploy"></a> Instalar o sistema operacional por meio de uma mídia inicializável  
-Insira a mídia inicializável em uma unidade inicializável no computador e ligue-a para instalar o sistema operacional.
-
+##  <a name="BKMK_Deploy"></a> 从可启动媒体安装操作系统  
+在计算机的可启动驱动器中插入可启动媒体，然后再启动它以安装操作系统。

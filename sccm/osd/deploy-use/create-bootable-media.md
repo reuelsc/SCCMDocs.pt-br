@@ -1,160 +1,156 @@
 ---
-title: "Criar mídia inicializável – Configuration Manager | Microsoft Docs"
-description: "Mídias inicializáveis no Configuration Manager facilitam a instalação de uma nova versão do Windows ou substituir um computador e transferir as configurações."
+title: "创建可启动介质 - Configuration Manager | Microsoft Docs"
+description: "Configuration Manager 中的可启动媒体有助于更轻松地安装新版本的 Windows 或替换计算机和传输设置。"
 ms.custom: na
 ms.date: 01/23/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
-ms.technology:
-- configmgr-osd
+ms.technology: configmgr-osd
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: ead79e64-1b63-4d0d-8bd5-addff8919820
-caps.latest.revision: 11
-caps.handback.revision: 0
+caps.latest.revision: "11"
+caps.handback.revision: "0"
 author: Dougeby
 ms.author: dougeby
 manager: angrobe
-ms.translationtype: Human Translation
-ms.sourcegitcommit: 89158debdf4c345a325feeb608db2215a88ed81b
 ms.openlocfilehash: 9032698fa12bf453041ea06bf330d3b4687c2a97
-ms.contentlocale: pt-br
-ms.lasthandoff: 05/17/2017
-
-
+ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
+ms.translationtype: HT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 08/07/2017
 ---
-# <a name="create-bootable-media-with-system-center-configuration-manager"></a>Criar uma mídia inicializável com o System Center Configuration Manager
+# <a name="create-bootable-media-with-system-center-configuration-manager"></a>使用 System Center Configuration Manager 创建可启动媒体
 
-*Aplica-se a: System Center Configuration Manager (Branch Atual)*
+*适用范围：System Center Configuration Manager (Current Branch)*
 
-Mídias inicializáveis no Configuration Manager contém a imagem de inicialização, comandos prestart opcionais e arquivos associados, além dos arquivos do Configuration Manager. Use mídia pré-testada para os seguintes cenários de implantação de sistema operacional:  
+Configuration Manager 中的可启动媒体包含启动映像、可选的预启动命令和关联的文件，以及 Configuration Manager 文件。 为以下操作系统部署方案使用预留媒体：  
 
--   [Instalar uma nova versão do Windows em um novo computador (sem sistema operacional)](install-new-windows-version-new-computer-bare-metal.md)  
+-   [在新计算机（裸机）上安装新版的 Windows](install-new-windows-version-new-computer-bare-metal.md)  
 
--   [Substituir um computador existente e transferir configurações](replace-an-existing-computer-and-transfer-settings.md)  
+-   [替换现有计算机和传输设置](replace-an-existing-computer-and-transfer-settings.md)  
 
-##  <a name="BKMK_CreateBootableMedia"></a> Criar mídia inicializável  
- Quando você inicializa a mídia inicializável, o computador de destino é iniciado, conecta-se à rede e recupera a sequência de tarefas especificada, a imagem do sistema operacional e qualquer outro conteúdo necessário da rede. Como a sequência de tarefa não está na mídia, você pode alterar a sequência de tarefas ou o conteúdo sem precisar recriar a mídia. Os pacotes em mídia inicializável não são criptografados. Você deve tomar as medidas de segurança apropriadas, como adicionar uma senha à mídia, para verificar se o conteúdo do pacote está protegido contra usuários não autorizados.  
+##  <a name="BKMK_CreateBootableMedia"></a> 创建可启动媒体  
+ 当你启动至可启动媒体时，目标计算机会启动、连接到网络，并从网络中检索指定任务序列、操作系统映像和任何其他必需的内容。 由于任务序列不在媒体上，因此，你无需重新创建媒体就能更改任务序列或内容。 可启动媒体上的包并未加密。 必须采取适当的安全措施（例如向媒体添加密码），以确保未经授权的用户不能访问包内容。  
 
- Antes de criar mídia inicializável usando o Assistente para Criar Mídia de Sequência de Tarefas, verifique se as seguintes condições foram atendidas:  
+ 在使用“创建任务序列媒体向导”创建可启动媒体之前，请确保满足以下所有条件：  
 
-|Tarefa|Descrição|  
+|任务|描述|  
 |----------|-----------------|  
-|Imagem de inicialização|Considere o seguinte sobre a imagem de inicialização que você usará na sequência de tarefas para implantar o sistema operacional:<br /><br /> -   A arquitetura da imagem de inicialização deve ser apropriada para a arquitetura do computador de destino. Por exemplo, um computador de destino x64 pode iniciar e executar uma imagem de inicialização x86 ou x64. No entanto, um computador de destino x86 pode iniciar e executar apenas uma imagem de inicialização x86.<br />-   Verifique se a imagem de inicialização contém os drivers de rede e armazenamento em massa necessários para provisionar o computador de destino.|  
-|Criar uma sequência de tarefas para implantar um sistema operacional|Como parte da mídia inicializável, você deve especificar a sequência de tarefas para implantar o sistema operacional. Para ver as etapas para criar uma nova sequência de tarefas, consulte [Criar uma sequência de tarefas para instalar um sistema operacional](../deploy-use/create-a-task-sequence-to-install-an-operating-system.md).|  
-|Distribuir todo o conteúdo associado à sequência de tarefas|Você deve distribuir todo o conteúdo exigido pela sequência de tarefas para pelo menos um ponto de distribuição. Isso inclui a imagem de inicialização e outros arquivos de pré-inicialização associados. O assistente reúne as informações do ponto de distribuição quando ele cria a mídia inicializável. Você deve ter direitos de acesso de **Leitura** à biblioteca de conteúdo no ponto de distribuição.  Para obter detalhes, consulte [Sobre a biblioteca de conteúdo](../../core/plan-design/hierarchy/the-content-library.md).|  
-|Preparar a unidade USB removível|Para uma unidade USB removível:<br /><br /> Se você pretende usar uma unidade USB removível, a unidade USB deve ser conectada ao computador no qual o assistente é executado e a unidade USB deve ser detectável pelo Windows como um dispositivo de remoção. O assistente grava diretamente na unidade USB ao criar a mídia. A mídia autônoma usa um sistema de arquivos FAT32. Não é possível criar uma mídia autônoma em uma unidade flash USB cujo conteúdo contém um arquivo de tamanho superior a 4 GB.|  
-|Criar uma pasta de saída|Para um conjunto de CD/DVD:<br /><br /> Para executar o Assistente para Criar Mídia de Sequência de Tarefas para criar mídia para um conjunto de CD ou DVD, é preciso criar uma pasta para os arquivos de saída criados pelo assistente. A mídia criada para um conjunto de CD ou DVD é gravada como arquivos .iso diretamente na pasta.|  
+|启动映像|请考虑以下将用于在任务序列中部署操作系统的启动映像的相关事项：<br /><br /> -   启动映像的体系结构必须适合于目标计算机的体系结构。 例如，x64 目标计算机可启动和运行 x86 或 x64 启动映像。 但是，x86 目标计算机只能启动和运行 x86 启动映像。<br />-   确保启动映像包含预配目标计算机所需的网络和大容量存储驱动程序。|  
+|创建用于部署操作系统的任务序列|作为可启动媒体的一部分，必须指定用于部署操作系统的任务序列。 有关创建新任务序列的步骤，请参阅 [Create a task sequence to install an operating system](../deploy-use/create-a-task-sequence-to-install-an-operating-system.md)（创建用于安装操作系统的任务序列）。|  
+|分发与任务序列关联的所有内容|必须将任务序列所需的所有内容至少分发到一个分发点。 这包括启动映像和其他相关联的预启动文件。 向导在创建可启动媒体时从分发点中收集信息。 必须具有对该分发点上的内容库的 **读取** 访问权限。  有关详细信息，请参阅[关于内容库](../../core/plan-design/hierarchy/the-content-library.md)。|  
+|准备可移动的 USB 驱动器|对于可移动的 USB 驱动器：<br /><br /> 如果你要使用可移动的 USB 驱动器，该 USB 驱动器必须连接到运行向导的计算机，并且 USB 驱动器必须可被 Windows 检测为可移动设备。 向导将在创建媒体时直接写入 USB 驱动器。 独立媒体使用 FAT32 文件系统。 如果独立媒体的内容包含超过 4 GB 大小的文件，则无法在 USB 闪存驱动器上创建独立媒体。|  
+|创建一个输出文件夹|对于 CD/DVD 集：<br /><br /> 在运行创建任务序列媒体向导以便为 CD 或 DVD 集创建媒体之前，你必须为向导创建的输出文件创建一个文件夹。 为 CD 或 DVD 集创建的媒体将以 .iso 文件形式直接写入该文件夹。|  
 
- Use o procedimento a seguir para criar mídia inicializável.  
+ 使用以下过程来创建可启动媒体。  
 
-### <a name="to-create-bootable-media"></a>Para criar mídia inicializável  
+### <a name="to-create-bootable-media"></a>创建可启动媒体  
 
-1.  No console do Configuration Manager, clique em **Biblioteca de Software**.  
+1.  在 Configuration Manager 控制台中，单击“软件库” 。  
 
-2.  No espaço de trabalho **Biblioteca de Software** , expanda **Sistemas Operacionais**e clique em **Sequências de Tarefas**.  
+2.  在“软件库”工作区中，展开“操作系统”，然后单击“任务序列”。  
 
-3.  Na guia **Início** , no grupo **Criar** , clique em **Criar Mídia de Sequência de Tarefas** para iniciar o Assistente para Criar Mídia de Sequência de Tarefas.  
+3.  在“主页”选项卡上的“创建”组中，单击“创建任务序列媒体”，以启动创建任务序列媒体向导。  
 
-4.  Na página **Selecionar o Tipo de Mídia** , especifique as opções a seguir e clique em **Próximo**.  
+4.  在“选择媒体类型”  页上，指定以下选项，然后单击“下一步” 。  
 
-    -   Selecione **Mídia inicializável**.  
+    -   选择“可启动媒体” 。  
 
-    -   Opcionalmente, se você quiser permitir que o sistema operacional seja implantado sem a necessidade de entrada do usuário, selecione **Permitir implantação autônoma do sistema operacional**.  
+    -   （可选）如果你希望仅允许部署操作系统而不需要用户输入，请选择“允许无人参与的操作系统部署” 。  
 
         > [!IMPORTANT]  
-        >  Quando você seleciona essa opção, o usuário não precisa inserir informações de configuração de rede nem sequências de tarefas opcionais. No entanto, ainda será solicitada ao usuário uma senha, se a mídia estiver configurada para proteção por senha.  
+        >  如果选择此选项，则不会提示用户输入网络配置信息或可选的任务序列。 但是，如果针对密码保护配置了媒体，则仍会提示用户输入密码。  
 
-5.  Na página **Gerenciamento de Mídia** , especifique uma das seguintes opções e clique em **Próximo**.  
+5.  在“媒体管理”  页上，指定以下选项之一，然后单击“下一步” 。  
 
-    -   Selecione **Mídia dinâmica** se quiser permitir que um ponto de gerenciamento redirecione a mídia para outro ponto de gerenciamento, baseado no local do cliente nos limites do site.  
+    -   如果要允许管理点根据客户端在站点边界中的位置将媒体重定向到另一个管理点，请选择“动态媒体”  。  
 
-    -   Selecione **Mídia de site** se quiser que a mídia tenha contato apenas com o ponto de gerenciamento especificado.  
+    -   如果希望媒体仅与指定的管理点联系，请选择“基于站点的媒体”  。  
 
-6.  Na página **Tipo de Mídia** , especifique se a mídia é uma unidade flash ou um conjunto de CD/DVD e clique em configurar o seguinte:  
+6.  在“媒体类型”  页上，指定媒体是闪存驱动器还是 CD/DVD 集，然后单击进行以下配置：  
 
     > [!IMPORTANT]  
-    >  A mídia autônoma usa um sistema de arquivos FAT32. Não é possível criar uma mídia autônoma em uma unidade flash USB cujo conteúdo contém um arquivo de tamanho superior a 4 GB.  
+    >  独立媒体使用 FAT32 文件系统。 如果独立媒体的内容包含超过 4 GB 大小的文件，则无法在 USB 闪存驱动器上创建独立媒体。  
 
-    -   Se você selecionar a **Unidade flash USB**, especifique a unidade na qual deseja armazenar o conteúdo.  
+    -   如果选择“USB 闪存驱动器”，则指定要在其中存储内容的驱动器。  
 
-    -   Caso selecione **Conjunto de CD/DVD**, especifique a capacidade da mídia, o nome e o caminho dos arquivos de saída. O assistente grava os arquivos de saída nesse local. Por exemplo: **\\\nomedoservidor\pasta\arquivodesaida.iso**  
+    -   如果选择“CD/DVD 集”，请指定媒体的容量以及输出文件的名称和路径。 向导会将输出文件写入到此位置。 例如：**\\\servername\folder\outputfile.iso**  
 
-         Se a capacidade da mídia for muito pequena para armazenar todo o conteúdo, vários arquivos são criados e você deve armazenar o conteúdo em vários CDs ou DVDs. Se várias mídias forem necessárias, o Configuration Manager adicionará um número de sequência ao nome de cada arquivo de saída criado. Além disso, se você implantar um aplicativo juntamente com o sistema operacional e o aplicativo não couber em uma única mídia, o Configuration Manager armazenará o aplicativo em várias mídias. Quando a mídia autônoma é executada, o Configuration Manager solicita ao usuário a próxima mídia, na qual o aplicativo está armazenado.  
-
-        > [!IMPORTANT]  
-        >  Se você selecionar uma imagem .iso existente, o Assistente de Mídia de Sequência de Tarefas excluirá essa imagem da unidade ou do compartilhamento assim que você prosseguir para a próxima página do assistente. A imagem existente será excluída mesmo se você cancelar o assistente.  
-
-     Clique em **Avançar**.  
-
-7.  Na página **Segurança** , especifique as opções a seguir e clique em **Próximo**.  
-
-    -   Marque a caixa de seleção **Habilitar suporte a computadores desconhecidos** para permitir que a mídia implante um sistema operacional em um computador não gerenciado pelo Configuration Manager. Não há registro desses computadores no banco de dados do Configuration Manager.  
-
-         Computadores desconhecidos incluem:  
-
-        -   Um computador no qual o cliente do Configuration Manager não está instalado  
-
-        -   Um computador que não foi importado para o Configuration Manager  
-
-        -   Um computador não descoberto pelo Configuration Manager  
-
-    -   Marque a caixa de seleção **Proteger mídia com senha** e digite uma senha forte como auxílio para proteger a mídia contra o acesso não autorizado. Quando você especificar uma senha, o usuário deverá fornecer essa senha para usar a mídia inicializável.  
+         如果媒体的容量太小，无法存储整个内容，则会创建多个文件，从而必须将内容存储在多张 CD 或 DVD 上。 当需要多个媒体时，Configuration Manager 会在创建的每个输出文件的名称中添加序号。 此外，如果将应用程序与操作系统一起部署，而单个媒体无法容纳应用程序，则 Configuration Manager 会将应用程序存储到多个媒体中。 在运行独立媒体时，Configuration Manager 会提示用户提供下一个存储了应用程序的媒体。  
 
         > [!IMPORTANT]  
-        >  Como prática recomendada de segurança, atribua sempre uma senha para ajudar a proteger a mídia inicializável.  
+        >  如果选择现有的 .iso 映像，任务序列媒体向导将在你进入向导的下一页后立即从驱动器或共享中删除该映像。 即使随后取消该向导，也会删除这个现有的映像。  
 
-    -   Para comunicações HTTP, selecione **Criar certificado de mídia autoassinado**e especifique as datas de início e vencimento do certificado.  
+     单击“下一步” 。  
 
-    -   Para comunicações HTTPS, selecione **Importar certificado PKI**e especifique o certificado a ser importado e a respectiva senha.  
+7.  在“安全”  页上，指定以下选项，然后单击“下一步” 。  
 
-         Para obter mais informações sobre o certificado de cliente que é usado para imagens de inicialização, consulte [Requisitos do certificado PKI](../../core/plan-design/network/pki-certificate-requirements.md).  
+    -   选中“启用未知计算机支持”复选框，使媒体能够将操作系统部署到不是由 Configuration Manager 托管的计算机。 Configuration Manager 数据库中没有这些计算机的记录。  
 
-    -   **Afinidade de Dispositivo de Usuário**: para dar suporte ao gerenciamento centrado no usuário no Configuration Manager, especifique como você quer que a mídia associe usuários ao computador de destino. Para obter mais informações sobre como a implantação de sistema operacional dá suporte à afinidade de dispositivo de usuário, consulte [Associar usuários a um computador de destino](../get-started/associate-users-with-a-destination-computer.md).  
+         未知计算机包括下列各项：  
 
-        -   Especifique **Permitir afinidade de dispositivo de usuário com aprovação automática** se você quiser que a mídia associe automaticamente os usuários ao computador de destino. Essa funcionalidade é baseada nas ações da sequência de tarefas que implanta o sistema operacional. Nesse cenário, a sequência de tarefas cria uma relação entre os usuários especificados e o computador de destino quando implanta o sistema operacional no computador de destino.  
+        -   未安装 Configuration Manager 客户端的计算机  
 
-        -   Especifique **Permitir afinidade de dispositivo de usuário pendente de aprovação de administrador** se você quiser que a mídia associe os usuários ao computador de destino após a aprovação ser concedida. Essa funcionalidade é baseada no escopo da sequência de tarefas que implanta o sistema operacional.  Neste cenário, a sequência de tarefas cria uma relação entre os usuários especificados e o computador de destino, mas aguarda a aprovação de um usuário administrativo antes da implantação do sistema operacional.  
+        -   未导入到 Configuration Manager 中的计算机  
 
-        -   Especifique **Não permitir afinidade de dispositivo de usuário** se você quiser que a mídia associe os usuários ao computador de destino. Neste cenário, a sequência de tarefas não associa os usuários ao computador de destino quando implanta o sistema operacional.  
+        -   未被 Configuration Manager 发现的计算机  
 
-8.  Na página **Imagem de inicialização** , especifique as opções a seguir e clique em **Próximo**.  
+    -   选中“使用密码保护媒体”  复选框，并输入强密码来帮助防止未经授权访问媒体。 如果指定密码，则用户必须提供该密码才能使用可启动媒体。  
+
+        > [!IMPORTANT]  
+        >  作为最佳安全方案，请始终分配密码来帮助保护可启动媒体。  
+
+    -   对于 HTTP 通信，选择“创建自签名媒体证书” ，然后指定该证书的开始日期和到期日期。  
+
+    -   对于 HTTPS 通信，选择“导入 PKI 证书” ，然后指定要导入的证书及其密码。  
+
+         有关用于启动映像的此客户端证书的详细信息，请参阅 [PKI 证书要求](../../core/plan-design/network/pki-certificate-requirements.md)。  
+
+    -   **用户设备相关性**：若要在 Configuration Manager 中支持以用户为中心的管理，请指定希望媒体如何将用户与目标计算机相关联。 有关操作系统部署如何支持用户设备相关性的详细信息，请参阅[如何将用户与目标计算机相关联](../get-started/associate-users-with-a-destination-computer.md)。  
+
+        -   如果你希望媒体自动将用户与目标计算机关联，请指定“通过自动批准允许用户设备相关性”  。 此功能以部署操作系统的任务序列的操作为基础。 在此方案中，当任务序列将操作系统部署到目标计算机时，它会在指定的用户和目标计算机之间创建关系。  
+
+        -   如果希望媒体获得批准后将用户与目标计算机关联，请指定“允许用户设备相关性挂起管理员批准”  。 此功能以部署操作系统的任务序列的作用域为基础。  在此方案中，任务序列在指定用户和目标计算机之间创建关系，但在部署操作系统之前等待管理用户的批准。  
+
+        -   如果不希望媒体将用户与目标计算机关联，请指定“不允许用户设备相关性”  。 在此方案中，当任务序列部署操作系统时，它不会将用户与目标计算机关联。  
+
+8.  在“启动映像包”  页上，指定以下选项，然后单击“下一步” 。  
 
     > [!IMPORTANT]  
-    >  A arquitetura da imagem de inicialização distribuída deve ser apropriada para a arquitetura do computador de destino. Por exemplo, um computador de destino x64 pode iniciar e executar uma imagem de inicialização x86 ou x64. No entanto, um computador de destino x86 pode iniciar e executar apenas uma imagem de inicialização x86.  
+    >  分发的启动映像的体系结构必须适合于目标计算机的体系结构。 例如，x64 目标计算机可启动和运行 x86 或 x64 启动映像。 但是，x86 目标计算机只能启动和运行 x86 启动映像。  
 
-    -   Na caixa **Imagem de inicialização** , especifique a imagem de inicialização para iniciar o computador de destino.  
+    -   在“启动映像包”  框中，指定用于启动目标计算机的启动映像。  
 
-    -   Na caixa **Ponto de distribuição** , especifique o ponto de distribuição onde a imagem de inicialização reside. O assistente recupera a imagem de inicialização do ponto de distribuição e a grava na mídia.  
+    -   在“分发点”  框中，指定启动映像所在的分发点。 向导将从分发点中检索启动映像并将其写入媒体。  
 
         > [!NOTE]  
-        >  É necessário ter direitos de acesso de **Leitura** à biblioteca de conteúdo no ponto de distribuição.  
+        >  必须具有对分发点上的内容库的“读取”  访问权限。  
 
-    -   Se você criar uma mídia inicializável baseada em site na página **Gerenciamento de Mídia** do assistente, especifique um ponto de gerenciamento de um site primário na caixa **Ponto de gerenciamento** .  
+    -   如果在向导的“媒体管理”  页上创建基于站点的可启动媒体，请从“管理点”  框中的主站点指定管理点。  
 
-    -   Se você criar uma mídia inicializável dinâmica na página **Gerenciamento de Mídia** do assistente, especifique os pontos de gerenciamento do site primário a serem usados e uma ordem de prioridade para as comunicações iniciais em **Pontos de gerenciamento associados**.  
+    -   如果在向导的“媒体管理”  页上创建动态可启动媒体，请在“关联的管理点” 中指定要使用的主站点管理点以及初始通信的优先级顺序。  
 
-9. Na página **Personalização** , especifique as seguintes opções e clique em **Próximo**.  
+9. 在“自定义”  页上，指定以下选项，然后单击“下一步” 。  
 
-    -   Especifique as variáveis que a sequência de tarefas usa para implantar o sistema operacional.  
+    -   指定任务序列用于部署操作系统的变量。  
 
-    -   Especifique os comandos prestart que deseja executar antes de executar a sequência de tarefas. Os comandos prestart são um script ou um executável que podem interagir com o usuário no Windows PE antes da execução da sequência de tarefas para instalar o sistema operacional. Para mais informações, consulte [Comandos prestart para mídia de sequência de tarefas](../understand/prestart-commands-for-task-sequence-media.md).  
+    -   指定想要在运行任务序列之前运行的任何预启动命令。 预启动命令是一个脚本或可执行文件，它可以在任务序列运行以安装操作系统之前在 Windows PE 中与用户交互。 有关详细信息，请参阅[任务序列媒体的预启动命令](../understand/prestart-commands-for-task-sequence-media.md)。  
 
         > [!TIP]  
-        >  Durante a criação de mídia de sequência de tarefas, a sequência de tarefas grava a ID do pacote e a linha de comando prestart, que inclui o valor de quaisquer variáveis de sequência de tarefas, no arquivo de log CreateTSMedia.log no computador que executa o console do Configuration Manager. Você poderá analisar esse arquivo de log para verificar o valor das variáveis de sequência de tarefas.  
+        >  在任务序列媒体创建过程中，任务序列会将包 ID 和预启动命令行（包括任何任务序列变量的值）写入到运行 Configuration Manager 控制台的计算机上的 CreateTSMedia.log 日志文件。 你可以查看此日志文件以验证任务序列变量的值。  
 
-         Opcionalmente, marque a caixa de seleção **Arquivos no comando prestart** para incluir quaisquer arquivos necessários no comando prestart.  
+         根据需要选中“包括预启动命令的文件”  复选框，以包括预启动命令所需的任何文件。  
 
-10. Conclua o assistente.  
+10. 完成向导。  
 
-## <a name="create-bootable-media-on-a-usb-drive-from-a-network-share"></a>Criar uma mídia inicializável em uma unidade USB de um compartilhamento de rede
-As informações nesta seção ajudam a criar mídia inicializável em uma unidade flash USB quando a unidade flash não está conectada ao computador que executa o console do Configuration Manager. Para criar a mídia inicializável na unidade USB, você pode criar uma mídia de inicialização de sequência de tarefas, montar o ISO e transferir os arquivos do ISO para a unidade USB.
+## <a name="create-bootable-media-on-a-usb-drive-from-a-network-share"></a>在 USB 驱动器上从网络共享创建可启动媒体
+当闪存驱动器未连接到运行 Configuration Manager 控制台的计算机时，可借助此部分信息在闪存驱动器上创建可启动媒体。 若要在 USB 驱动器上创建可启动媒体，可创建任务序列启动媒体、装载 ISO 并将文件从 ISO 传输到 USB 驱动器。
 
-1. [Criar a mídia de inicialização de sequência de tarefas](#to-create-task-boobable-media). Na página **Tipo de mídia**, selecione **Conjunto de CD/DVD**. O assistente grava os arquivos de saída no local que você especificar. Por exemplo: **\\\nomedoservidor\pasta\arquivodesaida.iso**.  
-2. Preparar a unidade USB removível. A unidade deve estar formatada, vazia e inicializável.
-3. Monte o ISO do local de compartilhamento e transfira os arquivos do ISO para a unidade USB.
+1. [创建任务序列启动媒体](#to-create-task-boobable-media)。 在“媒体类型”页上，选择“CD/DVD 集”。 向导会将输出文件写入到指定位置。 例如：**\\\servername\folder\outputfile.iso**。  
+2. 准备可移动的 USB 驱动器。 该驱动器必须经过格式化处理并且为可启动的空驱动器。
+3. 从共享位置装载 ISO，并将文件从 ISO 传输到 USB 驱动器。
 
-## <a name="next-steps"></a>Próximas etapas  
-[Use a mídia inicializável para implantar o Windows na rede](use-bootable-media-to-deploy-windows-over-the-network.md)  
-
+## <a name="next-steps"></a>后续步骤  
+[使用可启动媒体通过网络部署 Windows](use-bootable-media-to-deploy-windows-over-the-network.md)  

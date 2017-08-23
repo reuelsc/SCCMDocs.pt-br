@@ -1,143 +1,139 @@
 ---
-title: Desinstalar sites | Microsoft Docs
-description: Use esses detalhes como um guia para desinstalar um site do System Center Configuration Manager.
+title: "卸载站点 | Microsoft Docs"
+description: "卸载 System Center Configuration Manager 站点时，请使用这些详细信息作为指南。"
 ms.custom: na
 ms.date: 10/06/2016
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
-ms.technology:
-- configmgr-other
+ms.technology: configmgr-other
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: d466edd2-97f0-44c1-a73e-d71abbdbf4a8
-caps.latest.revision: 6
-caps.handback.revision: 0
+caps.latest.revision: "6"
+caps.handback.revision: "0"
 author: Brenduns
 ms.author: brenduns
 manager: angrobe
-ms.translationtype: Human Translation
-ms.sourcegitcommit: b4c4fc305adbb4acd5bb4941b856a6a4aa648d0f
 ms.openlocfilehash: 6ad06753dc0e1d0958f7131afbf3ecb75eecb2e3
-ms.contentlocale: pt-br
-ms.lasthandoff: 05/17/2017
-
-
+ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
+ms.translationtype: HT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 08/07/2017
 ---
-# <a name="uninstall-sites-and-hierarchies-in-system-center-configuration-manager"></a>Desinstalar sites e hierarquias no System Center Configuration Manager
+# <a name="uninstall-sites-and-hierarchies-in-system-center-configuration-manager"></a>在 System Center Configuration Manager 中卸载站点和层次结构
 
-*Aplica-se a: System Center Configuration Manager (Branch Atual)*
+*适用范围：System Center Configuration Manager (Current Branch)*
 
-Use os detalhes a seguir como um guia se você precisar desinstalar um site do System Center Configuration Manager.  
+如果需要卸载 System Center Configuration Manager 站点，请使用以下详细信息作为指南。  
 
-Para desativar uma hierarquia com vários sites, a sequência de remoção é importante. Inicie a desinstalação dos sites na parte inferior da hierarquia e depois passe para a parte superior:  
+要取消标记具有多个站点的层次结构，删除的顺序非常重要。 从卸载层次结构底部的站点开始，然后向上移动：  
 
-1.  Remova os sites secundários anexados aos sites primários.  
-2.  Remova os sites primários.
-3.  Depois que todos os sites primários são removidos, é possível desinstalar o site de administração central.  
+1.  删除连接到主站点的辅助站点。  
+2.  删除主站点。
+3.  删除所有主站点之后，即可以卸载管理中心站点。  
 
 
-##  <a name="BKMK_RemoveSecondarysite"></a> Remover um site secundário de uma hierarquia  
-Você não pode mover um site secundário ou reatribuir um site secundário a um novo site primário pai. Para ser removido da hierarquia, um site secundário deve ser excluído de seu site pai direto. Use o Assistente para Excluir Site Secundário do console do Configuration Manager para remover um site secundário. Ao remover um site secundário, você deve escolher se deseja excluí-lo ou desinstalá-lo:  
+##  <a name="BKMK_RemoveSecondarysite"></a> 从层次结构中删除辅助站点  
+无法移动辅助站点或将辅助站点重新分配到新的父主站点。 若要从层次结构中删除，必须将辅助站点从其直接父站点中删除。 在 Configuration Manager 控制台中使用删除辅助站点向导来删除辅助站点。 在删除辅助站点时，必须选择要将其删除还是卸载：  
 
--   **Desinstalar o site secundário**. Use esta opção para remover um site secundário funcional que está acessível pela rede. Essa opção desinstala o Configuration Manager do servidor do site secundário e, em seguida, exclui todas as informações sobre o site e seus recursos da hierarquia de sites do Configuration Manager. Se o Configuration Manager instalou o SQL Server Express como parte da instalação do site secundário, o Configuration Manager desinstalará o SQL Express quando desinstalar o site secundário. Se o SQL Server Express foi instalado antes do site secundário, o Configuration Manager não desinstalará o SQL Server Express.  
+-   **卸载辅助站点**。 使用此选项以删除可从网络中访问的正常运行的辅助站点。 此选项从辅助站点服务器中卸载 Configuration Manager，然后从 Configuration Manager 站点层次结构中删除站点及其资源的所有相关信息。 如果 Configuration Manager 在辅助站点安装过程中安装了 SQL Server Express，则 Configuration Manager 将在卸载辅助站点时卸载 SQL Express。 如果 SQL Server Express 是在安装辅助站点之前安装的，则 Configuration Manager 不会卸载 SQL Server Express。  
 
--   **Excluir o site secundário**. Use essa opção se uma das seguintes opções for verdadeira:  
+-   **删除辅助站点**。 如果满足以下条件之一，则使用此选项：  
 
-    -   Falha na instalação de um site secundário  
-    -   O site secundário continua a ser exibido no console do Configuration Manager após desinstalá-lo
+    -   辅助站点安装失败  
+    -   辅助站点在卸载之后仍然显示在 Configuration Manager 控制台中
 
-    Essa opção exclui todas as informações sobre o site e seus recursos da hierarquia do Configuration Manager, mas deixa o Configuration Manager instalado no servidor do site secundário.  
+    此选项将从 Configuration Manager 层次结构中删除有关站点及其资源的所有信息，但保留安装在辅助站点服务器上的 Configuration Manager。  
 
     > [!NOTE]  
-    >  Você também pode usar a Ferramenta de Manutenção de Hierarquia e a opção **/DELSITE** para excluir um site secundário. Para obter mais informações, consulte [Ferramenta de Manutenção de Hierarquia (Preinst.exe) para o System Center Configuration Manager](../../../../core/servers/manage/hierarchy-maintenance-tool-preinst.exe.md).  
+    >  也可使用层次结构维护工具和 **/DELSITE** 选项来删除辅助站点。 有关详细信息，请参阅 [System Center Configuration Manager 的层次结构维护工具 (Preinst.exe)](../../../../core/servers/manage/hierarchy-maintenance-tool-preinst.exe.md)。  
 
-#### <a name="to-uninstall-or-delete-a-secondary-site"></a>Para desinstalar ou excluir um site secundário  
+#### <a name="to-uninstall-or-delete-a-secondary-site"></a>卸载或删除辅助站点  
 
-1.  Verifique se o usuário administrativo que executa a Instalação tem os seguintes direitos de segurança:  
+1.  验证运行安装程序的管理用户是否具有以下安全权限：  
 
-    -   Direitos administrativos no computador do site secundário  
-    -   Direitos do Administrador Local no servidor de banco de dados do site remoto para o site primário, se ele for remoto  
-    -   Função de segurança de Administrador de Infraestrutura ou de Administrador Completo no site primário pai  
-    -   Direitos Sysadmin no banco de dados de site do site secundário  
+    -   辅助站点计算机上的管理权限  
+    -   主站点（如果为远程）的远程站点数据库服务器上的本地管理员权限  
+    -   父主站点上的“基础结构管理员”或“完全权限管理员”安全角色  
+    -   辅助站点的站点数据库上的 Sysadmin 权限  
 
-2.  No console do Configuration Manager, selecione **Administração**.  
-3.  No espaço de trabalho **Administração**, expanda **Configuração do Site** e selecione **Sites**.  
-4.  Selecione o servidor do site secundário que deseja remover.  
-5.  Na guia **Início**, no grupo **Site**, selecione **Excluir**.  
-6.  Na página **Geral** , selecione desinstalar ou excluir o site secundário e clique em **Avançar**.  
-7.  Na página **Resumo**, verifique as configurações e selecione **Avançar**.  
-8.  Na página **Conclusão**, selecione **Fechar** para sair do assistente.  
+2.  在 Configuration Manager 控制台中，选择“管理”。  
+3.  在“管理”工作区中，展开“站点配置”，然后选择“站点”。  
+4.  选择要删除的辅助站点服务器。  
+5.  在“主页”选项卡上的“站点”组中，选择“删除”。  
+6.  在“常规”  页上，选择是卸载还是删除辅助站点，然后单击“下一步” 。  
+7.  在“摘要”页上验证设置，然后选择“下一步”。  
+8.  在“完成”页上，选择“关闭”退出向导。  
 
-##  <a name="BKMK_UninstallPrimary"></a> Desinstalar um site primário  
-Você pode executar a Instalação do Configuration Manager para desinstalar um site primário que não tem um site secundário associado. Para desinstalar um site primário, considere o seguinte:  
+##  <a name="BKMK_UninstallPrimary"></a> 卸载主站点  
+可以运行 Configuration Manager 安装程序来卸载没有关联辅助站点的主站点。 在卸载主站点之前，请考虑下列事项：  
 
--   Quando clientes do Configuration Manager estão dentro dos limites configurados no site, e o site primário é parte de uma hierarquia do Configuration Manager, considere adicionar os limites a um site primário diferente na hierarquia antes de desinstalar o site primário.  
--   Quando o servidor do site primário não está mais disponível, você deve usar a Ferramenta de Manutenção de Hierarquia no site de administração central para excluir o site primário do banco de dados do site. Para obter mais informações, consulte [Ferramenta de Manutenção de Hierarquia (Preinst.exe) para o System Center Configuration Manager](../../../../core/servers/manage/hierarchy-maintenance-tool-preinst.exe.md).  
+-   如果 Configuration Manager 客户端位于站点上配置的边界内，并且主站点是 Configuration Manager 层次结构的一部分，请考虑在卸载主站点之前将边界添加到层次结构中的另一个主站点。  
+-   如果主站点服务器不再可用，你必须使用管理中心站点上的层次结构维护工具来从站点数据库中删除主站点。 有关详细信息，请参阅 [System Center Configuration Manager 的层次结构维护工具 (Preinst.exe)](../../../../core/servers/manage/hierarchy-maintenance-tool-preinst.exe.md)。  
 
-Use o procedimento a seguir para desinstalar um site primário.  
+使用下列过程来卸载主站点。  
 
-#### <a name="to-uninstall-a-primary-site"></a>Para desinstalar um site primário  
+#### <a name="to-uninstall-a-primary-site"></a>要卸载主站点  
 
-1.  Verifique se o usuário administrativo que executa a Instalação tem os seguintes direitos de segurança:  
+1.  验证运行安装程序的管理用户是否具有以下安全权限：  
 
-    -   Direitos de Administrador Local no servidor do site de administração central  
-    -   Direitos do Administrador Local no servidor de banco de dados do site remoto para o site de administração central, se for remoto
-    -   Direitos sysadmin no banco de dados do site do site de administração central  
-    -   Direitos de Administrador Local no computador do site primário  
-    -   Direitos do Administrador Local no servidor de banco de dados do site remoto para o site primário, se ele for remoto  
-    -   Um nome de usuário associado à função de segurança do Administrador de Infraestrutura ou de Administrador Completo no site de administração central  
+    -   管理中心站点服务器上的本地管理员权限  
+    -   管理中心站点（如果为远程）的远程站点数据库服务器上的本地管理员权限
+    -   管理中心站点的站点数据库的 Sysadmin 权限  
+    -   主站点计算机上的本地管理员权限  
+    -   主站点（如果为远程）的远程站点数据库服务器上的本地管理员权限  
+    -   管理中心站点上与“基础结构管理员”或“完全权限管理员”安全角色关联的用户名  
 
-2.  Inicie a Instalação do Configuration Manager no servidor do site primário usando um dos seguintes métodos:  
+2.  通过使用以下方法之一在主站点服务器上启动 Configuration Manager 安装程序：  
 
-    -   Em **Iniciar**, selecione **Instalação do Configuration Manager**.  
-    -   Abra o Setup.exe de &lt;*ConfigMgrInstallationMedia*>\SMSSETUP\BIN\X64.  
-    -   Abra o Setup.exe de &lt;*ConfigMgrInstallationPath*>\BIN\X64.  
+    -   在“开始”上，选择“Configuration Manager 安装程序”。  
+    -   打开 &lt;*ConfigMgrInstallationMedia*>\SMSSETUP\BIN\X64 中的 Setup.exe。  
+    -   打开 &lt;*ConfigMgrInstallationPath*>\BIN\X64 中的 Setup.exe。  
 
-3.  Na página **Antes de Começar** escolha **Avançar**.  
-4.  Na página **Guia de Introdução**, selecione **Desinstalar um site do Configuration Manager** e selecione **Avançar**.  
-5.  Em **Desinstalar o Site do Configuration Manager**, especifique se deseja remover o banco de dados do site do servidor do site primário e se deseja remover o console do Configuration Manager. Por padrão, a Instalação remove os dois itens.  
-
-    > [!IMPORTANT]  
-    >  Quando um site secundário é conectado a um site primário, você deve remover o site secundário para poder desinstalar o site primário.  
-
-6.  Selecione **Sim** para confirmar a desinstalação do site primário do Configuration Manager.  
-
-##  <a name="BKMK_UninstallPrimaryDistViews"></a> Desinstalar um site primário configurado com exibições distribuídas  
- Para desinstalar um site filho primário que tem exibições distribuídas configuradas ativadas para seu link de replicação para o site de administração central, você deve desligar as exibições distribuídas na hierarquia. Use as informações a seguir para desligar exibições distribuídas antes de desinstalar um site primário.  
-
-#### <a name="to-uninstall-a-primary-site-that-is-configured-with-distributed-views"></a>Para desinstalar um site primário configurado com exibições distribuídas  
-
-1.  Para desinstalar qualquer site primário, você deve desligar as exibições distribuídas em cada link na hierarquia entre o site de administração central e um site primário.  
-2.  Depois de desligar as exibições distribuídas em cada link, confirme se os dados do site primário concluem a reinicialização no site de administração central. Para monitorar a inicialização de dados, no console do Configuration Manager, no espaço de trabalho **Monitoramento**, exiba o link no nó **Replicação de Banco de Dados**.  
-3.  Após os dados reinicializarem com êxito com o site de administração central, você pode desinstalar o site primário. Para desinstalar um site primário, consulte [Desinstalar um site primário](#BKMK_UninstallPrimary).  
-4.  Quando o site primário é completamente desinstalado, você pode reconfigurar exibições distribuídas em links para sites primários.  
+3.  在“开始之前”页面上，选择“下一步”。  
+4.  在“入门”页上，选择“卸载 Configuration Manager 站点”，然后选择“下一步”。  
+5.  在“卸载 Configuration Manager 站点”中，指定是否从主站点服务器中删除站点数据库，以及是否删除 Configuration Manager 控制台。 默认情况下，安装程序会删除这两项。  
 
     > [!IMPORTANT]  
-    >  Se você desinstalar o site primário antes de desligar as exibições distribuídas em cada site ou antes que os dados do site primário reinicializem com êxito no site de administração central, a replicação de dados entre os sites primários e o site de administração central pode falhar. Nesse cenário, você deve desligar as exibições distribuídas de cada link em sua hierarquia de sites e então, após os dados reinicializarem com êxito no site de administração central, você pode reconfigurar as exibições distribuídas.  
+    >  如果辅助站点附加到主站点，则你必须删除辅助站点，然后才能卸载主站点。  
 
-##  <a name="BKMK_UninstallCAS"></a> Desinstalar o site de administração central  
- É possível executar o programa de Instalação do Configuration Manager para desinstalar um site de administração central que não tem sites primários filho. Use o procedimento a seguir para desinstalar um site de administração central.  
+6.  选择“是”以确认卸载 Configuration Manager 主站点。  
 
-#### <a name="to-uninstall-a-central-administration-site"></a>Para desinstalar um site de administração central  
+##  <a name="BKMK_UninstallPrimaryDistViews"></a> 卸载配置有分布式视图的主站点  
+ 针对为指向管理中心站点的复制链接打开了分布式视图的子主站点，在卸载此类子主站点之前，必须在层次结构中关闭分布式视图。 使用以下信息在卸载主站点之前关闭分布式视图。  
 
-1.  Verifique se o usuário administrativo que executa a Instalação tem os seguintes direitos de segurança:  
+#### <a name="to-uninstall-a-primary-site-that-is-configured-with-distributed-views"></a>要卸载配置为具有分布式视图的主站点  
 
-    -   Direitos de Administrador Local no servidor do site de administração central  
-    -   Direitos de administrador local no servidor de banco de dados do site para o site de administração central, se o servidor de banco de dados do site não estiver instalado no servidor de site 
-
-2.  Inicie a Instalação do Configuration Manager no servidor do site central usando um dos seguintes métodos:  
-
-    -   Em **Iniciar**, clique em **Instalação do Configuration Manager**.  
-    -   Abra o Setup.exe de &lt;*ConfigMgrInstallationMedia*>\SMSSETUP\BIN\X64.  
-    -   Abra o Setup.exe de &lt;*ConfigMgrInstallationPath*>\BIN\X64.  
-
-3.  Na página **Antes de Começar** escolha **Avançar**.  
-4.  Na página **Guia de Introdução**, selecione **Desinstalar um site do Configuration Manager** e selecione **Avançar**.  
-5.  Em **Desinstalar o Site do Configuration Manager**, especifique se deseja remover o banco de dados do site do servidor de site de administração central e se deseja remover o console do Configuration Manager. Por padrão, a Instalação remove os dois itens.  
+1.  在卸载任何主站点之前，必须在管理中心站点和主站点之间的层次结构的每个链接上关闭分布式视图。  
+2.  在每个链接上关闭分布式视图之后，请确认主站点中的数据在管理中心站点上完成重新初始化。 若要监视数据的初始化，请在 Configuration Manager 控制台的“监视”工作区中，查看“数据库复制”节点上的链接。  
+3.  在数据使用管理中心站点成功重新初始化后，你可以卸载主站点。 若要卸载主站点，请参阅[卸载主站点](#BKMK_UninstallPrimary)。  
+4.  成功卸载主站点后，可以在指向主站点的链接上重新配置分布式视图。  
 
     > [!IMPORTANT]  
-    >  Quando houver um site primário conectado ao site de administração central, você deve desinstalar o site primário para poder desinstalar o site de administração central.  
+    >  如果在卸载主站点后才在每个站点上关闭分布式视图，或者之后才在管理中心站点上成功重新初始化数据，则主站点和管理中心站点之间的数据复制可能会失败。 在这种情况下，必须为站点层次结构中的每个链接关闭分布式视图，然后，在数据使用管理中心站点成功重新初始化后，你可以重新配置分布式视图。  
 
-6.  Selecione **Sim** para confirmar a desinstalação do site de administração central do Configuration Manager.  
+##  <a name="BKMK_UninstallCAS"></a> 卸载管理中心站点  
+ 可以运行 Configuration Manager 安装程序卸载没有子主站点的管理中心站点。 使用以下过程来卸载管理中心站点。  
 
+#### <a name="to-uninstall-a-central-administration-site"></a>要卸载管理中心站点  
+
+1.  验证运行安装程序的管理用户是否具有以下安全权限：  
+
+    -   管理中心站点服务器上的本地管理员权限  
+    -   管理中心站点的站点数据库服务器上的本地管理员权限（如果站点数据库服务器未安装在站点服务器上） 
+
+2.  通过使用以下方法之一在管理中心站点服务器上启动 Configuration Manager 安装程序：  
+
+    -   在“开始” 上，单击“Configuration Manager 安装程序” 。  
+    -   打开 &lt;*ConfigMgrInstallationMedia*>\SMSSETUP\BIN\X64 中的 Setup.exe。  
+    -   打开 &lt;*ConfigMgrInstallationPath*>\BIN\X64 中的 Setup.exe。  
+
+3.  在“开始之前”页面上，选择“下一步”。  
+4.  在“入门”页上，选择“卸载 Configuration Manager 站点”，然后选择“下一步”。  
+5.  在“卸载 Configuration Manager 站点”中，指定是否从管理中心站点服务器中删除站点数据库，以及是否删除 Configuration Manager 控制台。 默认情况下，安装程序会删除这两项。  
+
+    > [!IMPORTANT]  
+    >  在主站点连接到管理中心站点时，若要卸载管理中心站点，必须先卸载主站点。  
+
+6.  选择“是”以确认卸载 Configuration Manager 管理中心站点。  

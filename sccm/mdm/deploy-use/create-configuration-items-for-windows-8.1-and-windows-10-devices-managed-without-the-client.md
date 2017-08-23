@@ -1,417 +1,415 @@
 ---
-title: "Criar itens de configuração para dispositivos Windows 8.1 e Windows 10 gerenciados com o Intune | Microsoft Docs"
-description: "Use o item de configuração do Windows 10 do System Center Configuration Manager para gerenciar as configurações de computadores Windows 10."
+title: "为使用 Intune 管理的 Windows 8.1 和 Windows 10 设备创建配置项 | Microsoft Docs"
+description: "使用 System Center Configuration Manager Windows 10 配置项目，管理 Windows 10 计算机的设置。"
 ms.custom: na
 ms.date: 07/31/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
-ms.technology:
-- configmgr-hybrid
+ms.technology: configmgr-hybrid
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 23e1e4dc-623a-4521-ad04-ae9482927097
-caps.latest.revision: 20
-caps.handback.revision: 0
+caps.latest.revision: "20"
+caps.handback.revision: "0"
 author: robstackmsft
 ms.author: robstack
 manager: angrobe
-ms.translationtype: HT
-ms.sourcegitcommit: 3c75c1647954d6507f9e28495810ef8c55e42cda
 ms.openlocfilehash: cbfc5f178e72b40526a4cb540f962a3b82203699
-ms.contentlocale: pt-br
-ms.lasthandoff: 07/29/2017
-
+ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
+ms.translationtype: HT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 08/07/2017
 ---
-# <a name="how-to-create-configuration-items-for-windows-81-and-windows-10-devices-managed-without-the-system-center-configuration-manager-client"></a>Como criar itens de configuração para dispositivos Windows 8.1 e Windows 10 gerenciados sem o cliente do System Center Configuration Manager
+# <a name="how-to-create-configuration-items-for-windows-81-and-windows-10-devices-managed-without-the-system-center-configuration-manager-client"></a>如何为没使用 System Center Configuration Manager 客户端管理的 Windows 8.1 和 Windows 10 设备创建配置项目
 
   
- Use o item de configuração do **Windows 8.1 e Windows 10** do System Center Configuration Manager para gerenciar as configurações para dispositivos Windows 8.1 e Windows 10 que estão registrados no Microsoft Intune ou são gerenciados localmente pelo Configuration Manager.  
+ 使用 System Center Configuration Manager **Windows 8.1 和 Windows 10** 配置项管理在 Microsoft Intune 中注册的或由 Configuration Manager 本地托管的 Windows 8.1 和 Windows 10 设备的设置。  
   
-### <a name="to-create-a-windows-81-and-windows-10-configuration-item"></a>Para criar um item de configuração do Windows 8.1 e Windows 10  
+### <a name="to-create-a-windows-81-and-windows-10-configuration-item"></a>若要创建 Windows 8.1 和 Windows 10 配置项目  
   
-1.  No console do Configuration Manager, clique em **Ativos e conformidade**.  
+1.  在 Configuration Manager 控制台中单击“资产和符合性”。  
   
-2.  No espaço de trabalho **Ativos e Conformidade** , expanda **Configurações de Conformidade**e clique em **Itens de Configuração**.  
+2.  在“资产和符合性”  工作区中，展开“符合性设置” ，然后单击“配置项目” 。  
   
-3.  Na guia **Início** , no grupo **Criar** , clique em **Criar Item de Configuração**.  
+3.  在“主页”  选项卡上的“创建”  组中，单击“创建配置项目” 。  
   
-4.  Na página **Geral** do **Assistente para Criar Item de Configuração**, especifique um nome e uma descrição opcional para o item de configuração.  
+4.  在“创建配置项目向导”  的“常规” 页面上，指定配置项目的名称和可选描述。  
   
-5.  Em **Especificar o tipo de item de configuração que deseja criar**, selecione **Windows 8.1 e Windows 10**.  
+5.  在“指定要创建的配置项目类型” 下，选择“Windows 8.1 和 Windows 10” 。  
   
-6.  Se você criar e atribuir categorias, clique em **Categorias** para ajudá-lo a pesquisar e filtrar itens de configuração no console do Configuration Manager.  
+6.  如果创建并分配类别以帮助在 Configuration Manager 控制台中搜索和筛选配置项目，请单击“类别”。  
   
-7.  Na página **Plataformas com Suporte** do assistente, selecione as plataformas específicas do Windows que avaliará o item de configuração.  
+7.  在向导的“支持的平台”页上，选择用于评估配置项目的特定 Windows 平台。  
   
-8.  Na página **Configurações do Dispositivo** do assistente, selecione o grupo de configurações que deseja configurar. Veja [Referência de configurações do item de configuração do Windows 8.1 e Windows 10](#BKMK_Setref) neste tópico para obter detalhes e clique **Avançar**.  
-  
-    > [!TIP]  
-    >  Se a configuração desejada não estiver na lista, marque a **caixa de seleção Definir configurações adicionais que não estão nos grupos de configuração padrão**.  
-  
-9. Em cada página de configurações, defina as configurações necessárias e se deseja corrigi-las quando não forem compatíveis nos dispositivos (quando houver suporte para essa opção).  
-  
-10. Para cada grupo de configurações, você também pode configurar a gravidade relatada quando um item de configuração for considerado não compatível de:  
-  
-    -   **Nenhum** – dispositivos que não cumprem essa regra de conformidade não relatam uma severidade de falha em relatórios do Configuration Manager.  
-  
-    -   **Informações** – dispositivos que não cumprem essa regra de conformidade relatam uma severidade de falha de **Informações** em relatórios do Configuration Manager.  
-  
-    -   **Aviso** – dispositivos que não cumprem essa regra de conformidade relatam uma severidade de falha de **Aviso** em relatórios do Configuration Manager.  
-  
-    -   **Crítico** – dispositivos que não cumprem essa regra de conformidade relatam uma severidade de falha de **Crítico** em relatórios do Configuration Manager.  
-  
-    -   **Crítico com evento** – dispositivos que não cumprem essa regra de conformidade relatam uma severidade de falha de **Crítico com evento** em relatórios do Configuration Manager. Este nível de severidade também é registrado como um evento do Windows no log de eventos do aplicativo.  
-  
-11. Na página **Aplicabilidade da Plataforma** do assistente, examine as configurações que não são compatíveis com as plataformas com suporte selecionadas anteriormente. Você pode voltar e remover essas configurações ou pode continuar.  
+8.  在向导的“设备设置”  页面上，选择要配置的设置组。 请参阅本主题中的 [Windows 8.1 和 Windows 10 配置项目设置参考](#BKMK_Setref) 以了解详细信息，然后单击“下一步” 。  
   
     > [!TIP]  
-    >  As configurações sem suporte não são avaliadas quanto à conformidade.  
+    >  如果所需设置未列出，请选中“配置默认设置组以外的其他设置” 复选框。  
   
-12. Conclua o assistente.  
+9. 在每个设置页面上，配置所需设置，以及是否要在它们在设备上不符合要求时修正它们（如果支持这样做）。  
   
- Você pode exibir o novo item de configuração no nó **Itens de Configuração** do espaço de trabalho **Ativos e Conformidade** .  
+10. 对于每个设置组，还可以配置在发现配置项目不符合要求时报告的严重性：  
   
-##  <a name="windows-81-and-windows-10-configuration-item-settings-reference"></a>Referência de configurações do item de configuração do Windows 8.1 e Windows 10  
+    -   **不报告** - 对于 Configuration Manager 报表，不符合此合规性规则的设备不报告故障严重性。  
   
-### <a name="password"></a>Senha  
- Essas configurações são destinadas somente a dispositivos que executam o Windows 10 e posteriores.  
+    -   **信息** - 对于 Configuration Manager 报表，不符合此合规性规则的设备将报告“信息”这一故障严重性。  
   
-|Configuração|Detalhes|  
+    -   **警告** - 对于 Configuration Manager 报表，不符合此合规性规则的设备将报告“警告”这一故障严重性。  
+  
+    -   **严重** - 对于 Configuration Manager 报表，不符合此合规性规则的设备将报告“严重”这一故障严重性。  
+  
+    -   **事件严重** - 对于 Configuration Manager 报表，不符合此合规性规则的设备将报告“严重”这一故障严重性。 应用程序事件日志中也会以 Windows 事件的形式记录此严重性级别。  
+  
+11. 在向导的“平台适用性”  页面上，查看任何与先前选择的受支持平台不兼容的设置。 你可以返回并删除这些设置，也可以继续。  
+  
+    > [!TIP]  
+    >  不会对不受支持的设置评估符合性。  
+  
+12. 完成向导。  
+  
+ 可以在“资产和符合性”  工作区的“配置项目”  节点中查看新配置项目。  
+  
+##  <a name="windows-81-and-windows-10-configuration-item-settings-reference"></a>Windows 8.1 和 Windows 10 配置项目设置参考  
+  
+### <a name="password"></a>Password  
+ 这些设置仅适用于运行 Windows 10 和更高版本的设备。  
+  
+|设置|详细信息|  
 |-------------|-------------|  
-|**Exigir configurações de senha em dispositivos**|Requer uma senha nos dispositivos com suporte.|  
-|**Comprimento mínimo da senha (caracteres)**|O comprimento mínimo da senha.|  
-|**Validade da senha em dias**|O número de dias antes que uma senha precise ser alterada.|  
-|**Número de senhas lembradas**|Impede a reutilização de senhas usadas anteriormente.|  
-|**Número de tentativas de logon com falha antes de o dispositivo ser apagado**|Apaga o dispositivo se houver falha neste número de tentativas de logon.|  
-|**Tempo ocioso antes que o dispositivo móvel seja bloqueado**|Especifique o período de tempo que um dispositivo pode ficar ocioso (sem entrada do usuário) antes de ser bloqueado.|  
-|**Complexidade da senha**|Escolha se é possível especificar um PIN como “1234” ou se é necessário fornecer uma senha forte.|  
-|**Qualidade da senha**|Selecione o nível necessário de complexidade de senha e também se dispositivos biométricos podem ser usados.|  
-|**Enviar PIN de recuperação de senha ao Exchange Server**|-|
-|**Criptografia de dispositivo**|Habilite a criptografia em dispositivos de destino.|  
+|**设备上需要密码设置**|支持的设备上需要密码。|  
+|**最短密码长度（字符）**|密码的最短长度。|  
+|**密码过期天数**|必须更改密码前的天数。|  
+|**记住的密码数**|防止重复使用以前用过的密码。|  
+|**擦除设备前的失败登录尝试次数**|如果此数目的登录尝试均失败，则擦除该设备。|  
+|**锁定设备前的空闲时间**|指定设备在锁定之前可以处于空闲（无用户输入）的时间量。|  
+|**密码复杂性**|选择是否可以指定一个如“1234”的 PIN，或是否必须提供一个强密码。|  
+|**密码质量**|选择所需的密码复杂性级别以及是否可以使用生物识别设备。|  
+|**将密码恢复 PIN 发送到 Exchange Server**|-|
+|**设备加密**|在目标设备上启用加密。|  
   
-###  <a name="device"></a>Dispositivo  
+###  <a name="device"></a>设备  
   
-|Nome da configuração|Detalhes|  
+|设置名|详细信息|  
 |------------------|-------------|  
-|**Captura de tela**|Permite tirar uma captura de tela da tela do dispositivo.<br /><br /> (somente Windows 10)|  
-|**Envio de dados de diagnóstico**|Permita o envio de arquivos de log do aplicativo.<br /><br /> (somente Windows 8.1)|  
-|**Envio de dados de diagnóstico (Windows 10)**|Permita o envio de arquivos de log do aplicativo.<br /><br /> (somente Windows 10)|  
-|**Localização geográfica**|Permita que o dispositivo use informações de serviços de localização.<br /><br /> (somente Windows 10)|  
-|**Copiar e colar**|Use copiar e colar para transferir dados entre aplicativos.<br /><br /> (somente Windows 10)|
-|**Redefinição de fábrica**|Permite que o usuário final redefina o dispositivo para suas configurações iniciais.<br /><br /> (somente Windows 10)|  
-|**Bluetooth**|Permita o uso da funcionalidade Bluetooth dos dispositivos.|  
-|**Modo detectável do Bluetooth**|Permitir que o dispositivo seja descoberto por outros dispositivos Bluetooth.<br /><br /> (somente Windows 10)|  
-|**Anúncios do Bluetooth**|Permita o uso de anúncio de Bluetooth.<br /><br /> (somente Windows 10)|  
-|**Gravação de voz**|Permitir o uso dos recursos de gravação de voz do dispositivo.<br /><br /> (somente Windows 10)|
-|**Cortana**|Permite o uso do assistente de voz Cortana.<br /><br /> (somente Windows 10)|
-|**Notificações da central de ações**|Habilitar ou desabilitar o painel de notificações no Windows 10. <br /><br /> (somente Windows 10)|
-|**Modificação das configurações de região (somente desktop)**|Impede que o usuário final altere as configurações de região no dispositivo.|
-|**Modificação das configurações de energia e suspensão (somente desktop)**|Impede que o usuário final altere as configurações de energia e suspensão no dispositivo.|
-|**Modificação das configurações de idioma (somente desktop)**|Impede que o usuário altere as configurações de idioma no dispositivo.|
-|**Modificação do horário do sistema**|Impede que o usuário final altere a data e hora do dispositivo.|
-|**Modificação do nome do dispositivo**|Impede que o usuário final altere o nome do dispositivo.|
+|**屏幕捕获**|允许捕获设备显示的屏幕截图。<br /><br /> （仅 Windows 10）|  
+|**诊断数据提交**|允许提交应用日志文件。<br /><br /> （仅 Windows 8.1）|  
+|**诊断数据提交 (Windows 10)**|允许提交应用日志文件。<br /><br /> （仅 Windows 10）|  
+|**地理位置**|允许设备使用位置服务信息。<br /><br /> （仅 Windows 10）|  
+|**复制和粘贴**|使用复制和粘贴在应用之间传输数据。<br /><br /> （仅 Windows 10）|
+|**恢复出厂设置**|允许最终用户将设备重置为初始设置。<br /><br /> （仅 Windows 10）|  
+|**蓝牙**|允许使用设备的蓝牙功能。|  
+|**蓝牙可发现模式**|允许其他蓝牙设备发现此设备。<br /><br /> （仅 Windows 10）|  
+|**蓝牙广告**|允许使用蓝牙广告。<br /><br /> （仅 Windows 10）|  
+|**语音录制**|允许使用设备的语音录制功能。<br /><br /> （仅 Windows 10）|
+|**Cortana**|允许使用 Cortana 语音助手。<br /><br /> （仅 Windows 10）|
+|**操作中心通知**|在 Windows 10 中启用或禁用通知窗格。 <br /><br /> （仅 Windows 10）|
+|**修改区域设置(仅限桌面设备)**|防止最终用户更改设备上的区域设置。|
+|**电源和睡眠设置修改（仅限桌面设备）**|防止最终用户更改设备上的电源和睡眠设置。|
+|**语言设置修改（仅限桌面设备）**|防止用户更改设备上的语言设置。|
+|**系统时间修改**|防止最终用户更改设备日期和时间。|
+|**设备名称修改**|防止最终用户更改设备名称。|
   
-### <a name="email-management"></a>Gerenciamento de email  
- Essas configurações são destinadas a dispositivos que executam o Windows 8.1 e o Windows 10.  
+### <a name="email-management"></a>电子邮件管理  
+ 这些设置适用于运行 Windows 8.1 和 Windows 10 的设备。  
   
-|Configuração|Detalhes|  
+|设置|详细信息|  
 |-------------|-------------|  
-|**Email POP e IMAP**|Permite a conexão a contas de email que usam os padrões POP e IMAP.|  
-|**Tempo máximo para manter o email**|A duração de tempo que o email será mantido antes de ser excluído do servidor.|  
-|**Formatos de mensagens permitidos**|Especifique se os emails do usuário podem ser em HTML ou somente em texto sem formatação.|  
-|**Tamanho máximo de email de texto sem formatação (baixado automaticamente)**|Controla o tamanho máximo de emails com texto sem formatação quando baixados automaticamente.|  
-|**Tamanho máximo para email HTML (baixado automaticamente)**|Controla o tamanho máximo de emails em HTML quando baixados automaticamente.|  
-|**Tamanho máximo de um anexo (baixado automaticamente)**|Configura o tamanho máximo do email baixado automaticamente.|  
-|**Sincronização de calendário**|Permita a sincronização de calendários com o dispositivo.|  
-|**Conta de email personalizada**|Permita o uso de uma conta que não seja da Microsoft no dispositivo.|  
-|**Tornar a Conta da Microsoft opcional no aplicativo de email do Windows**|Configure essa definição para remover o requisito de uma conta da Microsoft no Windows Mail.|  
+|**POP 和 IMAP 电子邮件**|允许连接到使用 POP 和 IMAP 标准的电子邮件帐户。|  
+|**保留电子邮件的最长时间**|电子邮件从服务器中删除之前可保留的时间长度。|  
+|**允许的消息格式**|指定用户电子邮件是否可以是 HTML 或仅是纯文本。|  
+|**（自动下载）纯文本电子邮件的最大大小**|控制自动下载的纯文本电子邮件的最大大小。|  
+|**（自动下载）HTML 电子邮件的最大大小**|控制自动下载的 HTML 电子邮件的最大大小。|  
+|**（自动下载）附件的最大大小**|配置自动下载的最大大小的电子邮件。|  
+|**日历同步**|允许将日历同步到设备。|  
+|**自定义电子邮件帐户**|允许在设备上使用非 Microsoft 帐户。|  
+|**在 Windows Mail 应用中将 Microsoft 帐户设为可选**|配置此项可在 Windows Mail 中删除对 Microsoft 帐户的要求。|  
   
-### <a name="store"></a>Repositório  
- Essas configurações são destinadas somente a dispositivos que executam o Windows 10 e posteriores.  
+### <a name="store"></a>存储  
+ 这些设置仅适用于运行 Windows 10 和更高版本的设备。  
   
-|Configuração|Detalhes|  
+|设置|详细信息|  
 |-------------|-------------|  
-|**Armazenamento de aplicativos**|Permite o acesso a loja de aplicativos no dispositivo.|  
-|**Digite uma senha para acessar o armazenamento de aplicativos**|Os usuários devem digitar uma senha para acessar a loja de aplicativos.|  
-|**Compras no aplicativo**|Permite que os usuários façam compras no aplicativo.|
-|**Atualização automática de aplicativos da store**|Permite que aplicativos instalados da Windows Store sejam atualizados automaticamente.|
-|**Usar somente armazenamento particular**|Habilite esta opção para permitir que somente os usuários finais façam download de aplicativos de seu repositório particular.|
-|**Inicialização de aplicativo proveniente do armazenamento**|Usado para desabilitar todos os aplicativos que foram previamente instalados no dispositivo ou baixados da Windows Store.|
+|**应用商店**|允许在设备上访问应用商店。|  
+|**输入密码以访问应用商店**|用户必须输入密码以访问应用商店。|  
+|**应用内购买**|允许用户进行应用内购买。|
+|**自动更新来自应用商店的应用**|允许自动更新从 Windows 应用商店安装的应用。|
+|**仅使用专用应用商店**|启用此选项后，仅允许最终用户从专用应用商店下载应用。|
+|**启动来自应用商店的应用**|用于禁用设备上预先安装或从 Windows 应用商店下载的所有应用。|
   
-### <a name="browser"></a>Navegador  
- Essas configurações são destinadas a dispositivos que executam o Windows 8.1 e o Windows 10.  
+### <a name="browser"></a>浏览器  
+ 这些设置适用于运行 Windows 8.1 和 Windows 10 的设备。  
   
-|Configuração|Detalhes|  
+|设置|详细信息|  
 |-------------|-------------|  
-|**Permitir navegador da Web**|Permita o uso do navegador da Web no dispositivo.|  
-|**Preenchimento automático**|O usuário pode alterar as configurações de preenchimento automático no navegador.|  
-|**Script ativo**|O navegador pode executar scripts, como scripts do ActiveX.|  
-|**Plug-ins**|O usuário pode adicionar plug-ins ao Internet Explorer.|  
-|**Bloqueador de pop-up**|Habilita ou desabilita o bloqueador de pop-ups do navegador.|  
-|**Cookies**|Permita que os cookies sejam salvos no dispositivo.|  
-|**Aviso de fraude**|Habilite ou desabilite avisos de sites fraudulentos potenciais.|  
+|**允许使用 Web 浏览器**|允许在设备上使用 Web 浏览器。|  
+|**自动填充**|用户可以更改浏览器中的自动完成设置。|  
+|**活动脚本**|浏览器可以运行脚本，如 Active X 脚本。|  
+|**插件**|用户可以向 Internet Explorer 添加插件。|  
+|**弹出窗口阻止程序**|启用或禁用浏览器弹出窗口阻止程序。|  
+|**Cookie**|允许在设备上保存 Cookie。|  
+|**欺诈警告**|启用或禁用对潜在欺诈网站的警告。|  
   
 ###  <a name="internet-explorer"></a>Internet Explorer  
- Essas configurações são destinadas a dispositivos que executam o Windows 8.1 e o Windows 10.  
+ 这些设置适用于运行 Windows 8.1 和 Windows 10 的设备。  
   
-|Nome da configuração|Detalhes|  
+|设置名|详细信息|  
 |------------------|-------------|  
-|**Sempre enviar cabeçalho Não Acompanhar**|Impede que as informações de navegação sejam enviadas para sites de terceiros.|  
-|**Zona de segurança da Intranet**|Atribua um nível de segurança à zona de segurança da Intranet.|  
-|**Nível de segurança para a zona da Internet**|Configure o nível de segurança para a zona da Internet.|  
-|**Nível de segurança para zona da intranet**|Configure o nível de segurança para a zona da intranet.|  
-|**Nível de segurança para a zona de sites confiáveis**|Configure o nível de segurança para a zona de sites confiáveis.|  
-|**Nível de segurança para a zona de sites restritos**|Configure o nível de segurança para a zona de sites restritos.|  
-|**Namespaces para a zona da intranet**|Configure sites que são adicionados ou removidos da zona da intranet.|  
-|**Ir para um site da intranet por uma entrada de palavra única**|Habilita ou desabilita a configuração que permite que o Internet Explorer acesse automaticamente um site de Intranet se um nome de site válido for inserido sem um HTTP precedente:|  
-|**Opção de menu do Modo Empresarial**|Permita que os usuários ativem e desativem o modo Empresarial no menu **Ferramentas** do Internet Explorer.|  
-|**Local do relatório de registro em log (URL)**|Especifique uma URL na qual os sites visitados serão registrados quando o Modo Empresarial estiver ativo.|  
-|**Local da lista do site do modo Empresarial (URL)**|Especifique o local da lista de sites que usam o Modo Empresarial quando ele estiver ativo.|  
+|**始终发送“不跟踪”标题**|防止浏览信息被发送到第三方站点。|  
+|**Intranet 安全区域**|将安全级别分配给 Intranet 安全区域。|  
+|**Internet 区域的安全级别**|配置 Internet 区域的安全级别。|  
+|**Intranet 区域的安全级别**|配置 Intranet 区域的安全级别。|  
+|**受信任的站点区域的安全级别**|配置受信任的站点区域的安全级别。|  
+|**受限制的站点区域的安全级别**|配置受限制的站点区域的安全级别。|  
+|**Intranet 区域的命名空间**|配置 Intranet 区域中添加或删除的网站。|  
+|**转至 Intranet 站点以获取单字条目**|启用或禁用以下设置：如果输入的有效站点名称前没有“HTTP:”，则允许 Internet Explorer 自动转至 Intranet 站点|  
+|**企业模式菜单选项**|允许用户从 Internet Explorer 的“工具”  菜单中激活和停用企业模式。|  
+|**记录报告位置 (URL)**|指定启用企业模式时登录的受访网站的 URL。|  
+|**企业模式站点列表位置 (URL)**|指定使用企业模式（已启用）的网站列表的位置。|  
   
-###  <a name="cloud"></a>Nuvem  
- Essas configurações são destinadas a dispositivos que executam o Windows 8.1 e o Windows 10.  
+###  <a name="cloud"></a>云  
+ 这些设置适用于运行 Windows 8.1 和 Windows 10 的设备。  
   
-|Nome da configuração|Detalhes|Windows 8.1|Windows 10|  
+|设置名|详细信息|Windows 8.1|Windows 10|  
 |------------------|-------------|-----------------|----------------|  
-|**Sincronização de configurações**|Permite a sincronização de configurações entre dispositivos.|Sim|Sim|  
-|**Sincronização de credenciais**|Permite a sincronização de credenciais entre dispositivos.|Sim|Sim|  
-|**Conta da Microsoft**|Permita o uso de uma conta da Microsoft no dispositivo.|Sim|Sim|  
-|**Sincronização de configurações em conexões medidas**|Permita que as configurações sejam sincronizadas durante a medição da conexão com a Internet.|Sim|Sim|  
+|**设置同步**|允许设备之间的设置同步。|是|是|  
+|**凭据同步**|允许设备之间的凭据同步。|是|是|  
+|**Microsoft 帐户**|允许在设备上使用 Microsoft 帐户。|是|是|  
+|**通过按流量计费的连接进行设置同步**|允许在 Internet 连接按流量计费时进行设置同步。|是|是|  
   
-###  <a name="security"></a>Segurança  
+###  <a name="security"></a>安全  
   
-|Nome da configuração|Detalhes|  
+|设置名|详细信息|  
 |------------------|-------------|  
-|**Instalação de arquivo não assinado**|Permite o carregamento de arquivos não assinados.<br /><br /> (somente Windows 10)|  
-|**Aplicativos não assinados**|Permite o carregamento de aplicativos não assinados.<br /><br /> (somente Windows 10)|  
-|**Mensagens SMS e MMS**|Permita mensagens SMS e MMS do dispositivo.<br /><br /> (somente Windows 10)|  
-|**Armazenamento removível**|Permita o uso de armazenamento removível, como um cartão SD, no dispositivo.<br /><br /> (somente Windows 10)|  
-|**Câmera**|Permita o uso da câmera do dispositivo.<br /><br /> (somente Windows 10)|  
-|**Comunicação a curta distância (NFC)**|Permita a comunicação usando a NFC no dispositivo.<br /><br /> (somente Windows 10)|  
-|**Modo AntiTheft**|Controla se o modo AntiTheft do Windows 10 é habilitado.<br /><br /> (somente Windows 10)|  
-|**Permitir conexão USB**|Permite que os dispositivos se conectem a esse dispositivo usando uma conexão USB.<br /><br /> (somente Windows 10)|
-|**Arquivo de perfil**|Provisiona um perfil de VPN para dispositivos com Windows RT.<br /><br /> somente Windows 8.1)|  
-|**Nome do perfil**|Provisiona um perfil de VPN para dispositivos com Windows RT.<br /><br /> somente Windows 8.1)|  
-|**Perfil de todos os usuários**|Provisiona um perfil de VPN para dispositivos com Windows RT.<br /><br /> somente Windows 8.1)|  
+|**未签名的文件安装**|允许加载未签名的文件。<br /><br /> （仅 Windows 10）|  
+|**未签名的应用程序**|允许加载未签名的应用。<br /><br /> （仅 Windows 10）|  
+|**SMS 和 MMS 消息**|允许设备中的 SMS 和 MMS 消息。<br /><br /> （仅 Windows 10）|  
+|**可移动存储**|允许在设备上使用可移动存储，如 SD 卡。<br /><br /> （仅 Windows 10）|  
+|**照相机**|允许使用设备的照相机。<br /><br /> （仅 Windows 10）|  
+|**近场通信 (NFC)**|允许在设备上使用 NFC 进行通信。<br /><br /> （仅 Windows 10）|  
+|**防盗模式**|控制是否启用 Windows 10 防盗模式。<br /><br /> （仅 Windows 10）|  
+|**允许使用 USB 连接**|允许设备使用 USB 连接来连接到此设备。<br /><br /> （仅 Windows 10）|
+|**配置文件**|为 Windows RT 设备预配 VPN 配置文件。<br /><br /> 仅 Windows 8.1）|  
+|**配置文件名称**|为 Windows RT 设备预配 VPN 配置文件。<br /><br /> 仅 Windows 8.1）|  
+|**所有用户的配置文件**|为 Windows RT 设备预配 VPN 配置文件。<br /><br /> 仅 Windows 8.1）|  
   
-###  <a name="peak-synchronization"></a>Sincronização em horário de pico  
- Essas configurações são destinadas somente a dispositivos que executam o Windows 10 e posteriores.  
+###  <a name="peak-synchronization"></a>峰值同步  
+ 这些设置仅适用于运行 Windows 10 和更高版本的设备。  
   
-|Nome da configuração|Detalhes|  
+|设置名|详细信息|  
 |------------------|-------------|  
-|**Especificar o horário de pico**|Configure o horário de pico para sincronização de dispositivo móvel.|  
-|**Frequência de sincronização no horário de pico**|Configure com que frequência a sincronização ocorrerá durante os horários de pico que você configurou.|  
-|**Frequência de sincronização fora do horário de pico**|Configure com que frequência a sincronização ocorrerá fora dos horários de pico que você configurou.|  
+|**指定高峰时段**|配置移动设备同步的峰值时间|  
+|**峰值同步频率**|配置在配置的峰值时间期间进行同步的频率。|  
+|**非峰值同步频率**|配置在配置的峰值时间之外进行同步的频率。|  
   
-###  <a name="roaming"></a>Roaming  
+###  <a name="roaming"></a>漫游  
   
-|Nome da configuração|Detalhes|  
+|设置名|详细信息|  
 |------------------|-------------|  
-|**Gerenciamento de dispositivos durante roaming**|Permite que o dispositivo seja gerenciado pelo Configuration Manager durante o roaming.<br /><br /> (somente Windows 10)|  
-|**Download de software durante roaming**|Permite o download de aplicativos e software durante o roaming.<br /><br /> (somente Windows 10)|  
-|**Download de emails durante roaming**|Permite downloads de email durante o roaming.<br /><br /> (somente Windows 10)|  
-|**Roaming de dados**|Permita o roaming entre redes durante o acesso de dados.| 
-|**VPN por celular**|Permite que o dispositivo acesse as conexões VPN enquanto estão conectados a uma rede de celular.<br /><br /> (somente Windows 10)|
-|**Roaming de VPN no celular**|Permite que o dispositivo acesse as conexões VPN enquanto estão em roaming em uma rede de celular.<br /><br /> (somente Windows 10)| 
+|**漫游时的设备管理**|允许设备在漫游时由 Configuration Manager 管理。<br /><br /> （仅 Windows 10）|  
+|**漫游时的软件下载**|允许在漫游时下载应用和软件。<br /><br /> （仅 Windows 10）|  
+|**漫游时的电子邮件下载**|允许在漫游时下载电子邮件。<br /><br /> （仅 Windows 10）|  
+|**数据漫游**|允许在访问数据时进行网络之间的漫游。| 
+|**通过移动电话网络使用 VPN**|允许设备连接到移动电话网络时访问 VPN 连接。<br /><br /> （仅 Windows 10）|
+|**通过在移动电话网络中漫游时使用 VPN**|允许设备在移动电话网络中漫游时访问 VPN 连接。<br /><br /> （仅 Windows 10）| 
   
-###  <a name="encryption"></a>Criptografia  
+###  <a name="encryption"></a>加密  
   
-|Nome da configuração|Detalhes|  
+|设置名|详细信息|  
 |------------------|-------------|  
-|**Criptografia de cartão de memória**|Requer que todos os cartões de armazenamento usados com o dispositivo sejam criptografados.<br /><br /> (somente Windows 10)|  
-|**Criptografia de arquivo no dispositivo**|Exige que os arquivos no dispositivo sejam criptografados.|  
-|**Exigir assinatura de email**|Exige que os emails sejam assinados antes de ser enviados.|  
-|**Algoritmo de assinatura**|Selecione o algoritmo de assinatura para os emails assinados.|  
-|**Exigir criptografia de email**|Exige que os emails sejam criptografados antes de ser enviados.|  
-|**Algoritmo de criptografia**|Selecione o algoritmo para criptografar emails.|  
+|**存储卡加密**|要求对设备使用的任何存储卡进行加密。<br /><br /> （仅 Windows 10）|  
+|**设备上的文件加密**|要求对设备上的文件进行加密。|  
+|**需要电子邮件签名**|发送电子邮件前需对电子邮件签名。|  
+|**签名算法**|选择已签名电子邮件的签名算法。|  
+|**需要电子邮件加密**|发送电子邮件前需对电子邮件进行加密。|  
+|**加密算法**|选择算法以加密电子邮件。|  
   
-###  <a name="wireless-communications"></a>Comunicações sem fio  
- Essas configurações são destinadas somente a dispositivos que executam o Windows 10 e posteriores.  
+###  <a name="wireless-communications"></a>无线通信  
+ 这些设置仅适用于运行 Windows 10 和更高版本的设备。  
   
-|Nome da configuração|Detalhes|  
+|设置名|详细信息|  
 |------------------|-------------|  
-|**Conexão de rede sem fio**|Habilite ou desabilite a funcionalidade de Wi-Fi dos dispositivos.|  
-|**Compartilhamento da Internet por Wi-Fi**|Permite que os usuários usem seus dispositivos como um ponto de acesso móvel.|  
-|**Descarregar dados para Wi-Fi quando possível**|Configure essa opção para usar a conexão Wi-Fi no dispositivo quando possível.|  
-|**Relatórios de ponto de acesso Wi-Fi**|-|  
-|**Configuração manual de Wi-Fi**|-|  
+|**无线网络连接**|启用或禁用设备的 Wi-fi 功能。|  
+|**Wi-Fi Tethering**|使用户可以将自己的设备用作移动热点。|  
+|**可能时，将数据卸载到 Wi-fi**|配置此选项可在可能时在设备上使用 Wi-Fi 连接。|  
+|**Wi-Fi 热点报告**|-|  
+|**手动 Wi-Fi 配置**|-|  
   
-#### <a name="to-configure-a-wireless-network-connection"></a>Para configurar uma conexão de rede sem fio  
+#### <a name="to-configure-a-wireless-network-connection"></a>配置无线网络连接  
   
-1.  Na página **Definir configurações de comunicação sem fio de dispositivos móveis** clique em **Adicionar**.  
+1.  在“配置移动设备无线通信设置”  页上，单击“添加” 。  
   
-2.  Na caixa de diálogo **Conexão de Rede Sem Fio**, especifique as seguintes informações sobre a conexão sem fio provisionada nos dispositivos móveis:  
+2.  在“无线网络连接”对话框中，在移动设备上指定有关要设置的无线连接的以下信息：  
   
-|Configuração|Mais informações|  
+|设置|更多信息|  
 |-------------|----------------------|  
-|**Nome da rede (SSID)**|Insira o nome da rede Wi-Fi.|  
-|**Conexão de rede**|Escolha **Internet** ou **Trabalho**.|  
-|**Autenticação**|Escolha o método de autenticação para a conexão sem fio do:<br /><br /> - **Aberto**<br /><br /> - **Compartilhado**<br /><br /> - **WPA**<br /><br /> - **WPA-PSK**<br /><br /> - **WPA2**<br /><br /> - **WPA2-PSK**|  
-|**Criptografia de dados**|Escolha o método de criptografia usado por esta conexão. Os valores que podem ser selecionados são diferentes dependendo do método de **Autenticação** selecionado:<br /><br /> - **Desabilitado**<br /><br /> - **WEP**<br /><br /> - **TKIP**<br /><br /> - **AES**|  
-|**Índice de chave**|Selecione um índice de chave de **1** a **4** que será usado com uma configuração de **Criptografia de dados** de **WEP**.|  
-|**Esta rede se conecta à Internet**|Selecione esta opção se desejar fornecer configurações de proxy que permitem que dispositivos móveis em uma conexão sem fio se conectem à Internet.|  
-|**Configurações do servidor proxy**|Especifique, conforme necessário, as configurações de **Servidor** e **Porta** para **HTTP**, **WAP** e **Soquetes**.|  
-|**Habilitar acesso à rede 802.1X**|Selecione esta opção se desejar proteger a conexão com a especificação de um tipo de EAP.|  
-|**Tipo de EAP**|Escolha o tipo de EAP a ser usado do:<br /><br /> - **PEAP**<br> - **Cartão inteligente ou certificado**|  
+|**网络名称 (SSID)**|输入 Wi-Fi 网络的名称。|  
+|**网络连接**|从“Internet”  或“工作” 中选择。|  
+|**身份验证**|从以下各项选择无线连接的身份验证方法：<br /><br /> - **打开**<br /><br /> - **共享**<br /><br /> - **WPA**<br /><br /> - **WPA-PSK**<br /><br /> - **WPA2**<br /><br /> - **WPA2-PSK**|  
+|**数据加密**|选择此连接使用的加密方法。 根据所选“身份验证”方法，可选取的值有所不同：<br /><br /> - **已禁用**<br /><br /> - **WEP**<br /><br /> - **TKIP**<br /><br /> - **AES**|  
+|**密钥索引**|选择“1”到“4”的要与“WEP”的“数据加密”设置一起使用的密钥索引。|  
+|**此网络连接到 Internet**|如果要提供使通过无线连接的移动设备连接到 Internet 的代理设置，请选择此选项。|  
+|**代理服务器设置**|根据需要为“HTTP”  、“WAP”  和“套接字” 指定“服务器”  和“端口” 设置。|  
+|**启用 802.1X 网络访问**|如果要通过指定一种 EAP 类型来保护连接，请选择此选项。|  
+|**EAP 类型**|选择要使用的 EAP 类型：<br /><br /> - **PEAP**<br> - **智能卡或证书**|  
   
   
   
-### <a name="certificates"></a>Certificados  
- Permite importar certificados a serem instalados em dispositivos móveis.  
+### <a name="certificates"></a>证书  
+ 让你导入证书以安装在移动设备上。  
   
- Clique em **Importação**e especifique os seguintes valores:  
+ 单击“导入” ，然后指定以下值：  
   
--   **Arquivo de certificado** – Clique em Procurar e selecione o arquivo de certificado com a extensão **.cer** que deseja importar.  
+-   “证书文件” – 单击“浏览”，然后选择要导入的扩展名为“”  的证书文件。  
   
--   **Repositório de destino** – Escolha um ou mais repositórios de destino nos quais o certificado importado será adicionado ao dispositivo móvel de:  
+-   “目标存储区” – 选择导入的证书从其添加到移动设备的一个或多个目标存储区：  
   
-    -   **Root**  
+    -   **根**  
   
-    -   **AC**  
+    -   **CA**  
   
-    -   **Normal**  
+    -   **普通**  
   
-    -   **Com privilégios**  
+    -   **特权**  
   
     -   **SPC**  
   
-    -   **Par**  
+    -   **对等**  
   
--   **Função** – Se **SPC** (Certificado do Fornecedor de Software) estiver selecionado como o repositório de destino, escolha a função que será associada ao certificado por meio de:  
+-   “角色” – 如果选择“SPC”（软件发布服务器证书）作为目标存储区，则选择以下与证书关联的角色：  
   
-    -   **Operador Móvel**  
+    -   **移动运营商**  
   
-    -   **Gerenciador**  
+    -   **管理员**  
   
-    -   **Usuário autenticado**  
+    -   **通过身份验证的用户**  
   
-    -   **Administrador de TI**  
+    -   **IT 管理员**  
   
-    -   **Usuário não autenticado**  
+    -   **未通过身份验证的用户**  
   
-    -   **Servidor de provisionamento confiável**  
+    -   **受信任的设置服务器**  
   
-### <a name="system-security"></a>Segurança do sistema  
+### <a name="system-security"></a>系统安全  
   
-|Configuração|Detalhes|  
+|设置|详细信息|  
 |-------------|-------------|  
-|**Controle de conta de usuário**|Habilita ou desabilita o Controle de Conta de Usuário do Windows no dispositivo.|  
-|**Firewall da rede**|Habilita ou desabilita o Firewall do Windows.<br /><br /> (somente Windows 8.1)|  
-|**Atualizações (Windows 8.1 e anterior)**|Escolha como as atualizações de software do Windows são baixadas nos computadores. Por exemplo, é possível baixar automaticamente as atualizações, mas permitir que o usuário escolha quando instalá-las.|  
-|**Classificação mínima de atualizações**|Escolha a classificação mínima das atualizações baixadas nos computadores com Windows: **Nenhuma**, **Importante**ou **Recomendada**.|  
-|**Atualizações (Windows 10)**|Escolha como as atualizações de software do Windows são baixadas nos computadores. Por exemplo, é possível baixar automaticamente as atualizações, mas permitir que o usuário escolha quando instalá-las.<br /><br /> (somente Windows 10)|  
-|**Dia de instalação**|Escolha o dia de instalação das atualizações.<br /><br /> (somente Windows 10)|  
-|**Hora de instalação**|Escolha a hora de instalação das atualizações.<br /><br /> (somente Windows 10)|  
-|**SmartScreen**|Habilite ou desabilite a Tela Inteligente do Windows.|  
-|**Proteção contra vírus**|Selecione esta opção para garantir que o software antivírus está instalado no dispositivo.|  
-|**As assinaturas de proteção contra vírus estão atualizadas**|Selecione esta opção para garantir que os arquivos de assinatura de antivírus estão atualizados.|  
-|**Recursos de pré-lançamento**|Permite que a Microsoft implante configurações e recursos de pré-lançamento no dispositivo.<br /><br /> (somente Windows 10)|  
-|**Instalação manual de certificado raiz**|(somente Windows 10)| 
-|**Permitir cancelamento de registro manual**|Permite que o usuário cancelar seu próprio registro de gerenciamento por uma solução MDM.| 
+|**用户帐户控制**|启用或禁用设备上的 Windows 用户帐户控制。|  
+|**网络防火墙**|启用或禁用 Windows 防火墙。<br /><br /> （仅 Windows 8.1）|  
+|**更新（Windows 8.1 及更早版本）**|选择将 Windows 软件更新下载至计算机的方式。 例如，可以自动下载更新，但让用户选择何时进行安装。|  
+|**更新的最小分类**|选择要下载到 Windows 计算机的更新的最小分类：“无”、“重要”或“推荐”。|  
+|**更新 (Windows 10)**|选择将 Windows 软件更新下载至计算机的方式。 例如，可以自动下载更新，但让用户选择何时进行安装。<br /><br /> （仅 Windows 10）|  
+|**安装日期**|选择安装更新的日期。<br /><br /> （仅 Windows 10）|  
+|**安装时间**|选择安装更新的时间。<br /><br /> （仅 Windows 10）|  
+|**SmartScreen**|启用或禁用 Windows 智能屏幕。|  
+|**病毒保护**|选择此选项以确保设备上已安装防病毒软件。|  
+|**病毒保护签名为最新**|选择此选项以确保防病毒签名文件已是最新版本。|  
+|**预发行功能**|允许 Microsoft 将预发行设置和功能部署到设备。<br /><br /> （仅 Windows 10）|  
+|**手动安装根证书**|（仅 Windows 10）| 
+|**允许手动取消注册**|允许用户通过 MDM 解决方案从管理中取消注册。| 
   
-###  <a name="windows-server-work-folders"></a>Pastas de Trabalho do Windows Server  
- Essas configurações são destinadas a dispositivos que executam o Windows 8.1 e o Windows 10.  
+###  <a name="windows-server-work-folders"></a>Windows Server 工作文件夹  
+ 这些设置适用于运行 Windows 8.1 和 Windows 10 的设备。  
   
-|Nome da configuração|Detalhes|  
+|设置名|详细信息|  
 |------------------|-------------|  
-|**URL de pastas de trabalho**|Configura o local de uma pasta de trabalho do Windows Server com as qual os usuários podem se conectar por meio de seus dispositivos.|  
+|**工作文件夹 URL**|配置用户可从自己的设备连接的 Windows Server 工作文件夹的位置。|  
   
-### <a name="allowed-and-blocked-apps-windows-phone-only"></a>Aplicativos permitidos e bloqueados (somente no Windows Phone)  
- Permite especificar uma lista de aplicativos gerenciados pelo Intune que são compatíveis ou não compatíveis em sua empresa. O Windows Phone pode permitir ou bloquear a instalação desses aplicativos.  
+### <a name="allowed-and-blocked-apps-windows-phone-only"></a>允许的应用和阻止的应用（仅限 Windows Phone）  
+ 使你能够指定公司中符合或不符合的 Intune 托管应用的列表。 Windows Phone 可以允许或阻止这些应用的安装。  
   
- Não é possível especificar aplicativos compatíveis e não compatíveis no mesmo item de configuração.  
+ 不能在同一配置项目中同时指定符合和不符合应用。  
   
-#### <a name="to-specify-apps-that-are-allowed-or-blocked"></a>Para especificar os aplicativos que serão permitidos ou bloqueados  
+#### <a name="to-specify-apps-that-are-allowed-or-blocked"></a>指定允许或阻止的应用  
   
-Na página **Lista de Aplicativos Permitidos e Bloqueados**, especifique as seguintes informações:  
+在“允许的和阻止的应用列表”页上，指定以下信息：  
   
-|Configuração|Mais informações|  
+|设置|更多信息|  
     |-------------|----------------------|  
-    |**Lista de aplicativos bloqueados**|Escolha essa opção se quiser especificar uma lista de aplicativos que os usuários não têm permissão para instalar.|  
-    |**Lista de aplicativos permitidos**|Selecione esta opção se desejar especificar uma lista de aplicativos que os usuários têm permissão para instalar. Qualquer outro aplicativo será impedido de ser instalado.|  
-    |**Adicionar**|Adiciona um aplicativo à lista selecionada. Especifique um nome da sua preferência, opcionalmente o editor do aplicativo, e a URL para o aplicativo na loja de aplicativos.<br /><br /> Para especificar a URL, na Windows Store, procure o aplicativo que você quer usar.<br /><br /> Abra a página do aplicativo e copie a URL para a área de transferência. Agora você pode usar isso como a URL em uma lista de aplicativos permitidos ou bloqueados.<br /><br /> **Exemplo:** pesquise o aplicativo **Skype** na loja. A URL usada é **http://www.windowsphone.com/store/app/skype/c3f8e570-68b3-4d6a-bdbb-c0a3f4360a51**.|  
-    |**Editarar**|Permite editar o nome, editor e a URL do aplicativo selecionado.|  
-    |**Removerr**|Exclui o aplicativo selecionado da lista.|  
-    |**Importarar**|Importa uma lista dos aplicativos que você especificou em um arquivo de valores separados por vírgulas. Use o formato, nome do aplicativo, editor e a URL do aplicativo no arquivo.|  
+    |**阻止的应用列表**|如果想要指定不允许用户安装的应用的列表，则选择此选项。|  
+    |**允许的应用列表**|如果想要指定允许用户安装的应用的列表，则选择此选项。 阻止安装任何其他应用。|  
+    |**添加**|将应用添加到选定的列表。 在应用商店中指定你选择的名称（可选择使用应用发布者）和应用的 URL。<br /><br /> 若要从 Windows 应用商店指定 URL，请搜索想要使用的应用。<br /><br /> 打开应用页面，并将该 URL 复制到剪贴板。 你现在可以在允许的或阻止的应用列表中将它用作 URL。<br /><br /> **示例：** 在应用商店中搜索 **Skype** 应用。 你使用的 URL 是 http://www.windowsphone.com/store/app/skype/c3f8e570-68b3-4d6a-bdbb-c0a3f4360a51。|  
+    |**编辑**|允许你编辑选定应用的名称、发布者和 URL。|  
+    |**移除**|从列表中删除选定的应用。|  
+    |**导入**|导入你已在逗号分隔值文件中指定的应用列表。 在文件中使用格式、应用程序名称、发布者和应用 URL。|  
   
-### <a name="windows-10-team"></a>Windows 10 Team  
- Essas configurações são destinadas somente a dispositivos que executam o Windows 10 Team.  
+### <a name="windows-10-team"></a>Windows 10 协同版  
+ 这些设置仅适用于运行 Windows 10 协同版的设备。  
   
-|Nome da configuração|Detalhes|  
+|设置名|详细信息|  
 |------------------|-------------|  
-|**Permitir que a tela seja ativada automaticamente quando sensores detectarem alguém na sala**|Permite que o dispositivo seja ativado automaticamente quando o sensor detectar a alguém na sala.|  
-|**PIN exigido para projeção sem fio**|Especifica se você deve inserir um PIN antes de poder usar os recursos de projeção sem fio do dispositivo.|  
-|**Janela de Manutenção**|Configura a o intervalo em que atualizações podem ocorrer no dispositivo. Você pode configurar a hora de início do intervalo e sua duração (de 1 a 5 horas).|
-|**Azure Operational Insights**|O Azure Operational Insights, parte do pacote Microsoft Operations Manager coleta, armazena e analisa os dados de arquivo de log de dispositivos do Windows 10 Team.<br>Para conectar-se ao Azure Operational Insights, especifique uma ID de Espaço de Trabalho e uma Chave de Espaço de Trabalho.| 
-|**Projeção sem fio Miracast**|Habilite esta opção se você quiser permitir que o dispositivo Windows 10 Team use dispositivos habilitados para Miracast para o projeto.<br>Se você habilitar essa opção, em **Escolher canal Miracast**, selecione o canal do Miracast usado para o conteúdo do projeto.|
-|**Informações sobre a reunião exibidas na tela de boas-vindas**|Se você habilitar essa opção, escolha as informações que serão exibidas no bloco **Reuniões** da tela de **Boas-Vindas**. Você pode:<br><br>- **Mostrar somente organizador e hora**<br>- **Mostrar organizador, hora e entidade (a entidade é oculta para reuniões particulares)**|
-|**URL da imagem de tela de fundo da tela de bloqueio**|Use essa configuração para exibir um plano de fundo personalizado na tela **Boas-Vindas** dos dispositivos com Windows 10 Team a partir da URL especificada.<br>A imagem deve estar no formato PNG, e a URL deve começar com **https://**.| 
+|**传感器检测到房间内有人时允许屏幕自动唤醒**|允许设备在其传感器检测到房间内有人时自动唤醒。|  
+|**无线投影需要 PIN**|指定是否必须先输入 PIN，然后才能使用设备的无线投影功能。|  
+|**维护时段**|配置可以对设备进行更新的时段。 可以配置该时段的开始时间和持续时间（1-5 小时）。|
+|**Azure Operational Insights**|Azure Operational Insights 是 Microsoft Operations Manager 套件的一部分，用于收集、存储和分析来自 Windows 10 Team 设备的日志文件数据。<br>要连接到 Azure Operational insights，必须指定工作区 ID 和工作区密钥。| 
+|**Miracast 无线投影**|如果想让 Windows 10 Team 设备使用已启用 Miracast 的设备进行投影，请启用此选项。<br>若要启用此选项，请从“选择 Miracast 频道”中选择用于投影内容的 Miracast 频道。|
+|**显示在“欢迎”屏幕上的会议信息**|如果启用此选项，则可以选择在“欢迎”屏幕的“会议”磁贴上显示的信息。 你可以：<br><br>- “仅显示组织者和时间”<br>- “显示组织者、时间和主题(私人会议隐藏主题)”|
+|**锁屏背景图像 URL**|使用此设置可以从你指定的 URL 的 Windows 10 Team 设备的“欢迎”屏幕上显示自定义背景。<br>图像必须为 PNG 格式，且 URL 必须以 **https://** 开头。| 
   
-### <a name="windows-information-protection"></a>Windows Information Protection  
+### <a name="windows-information-protection"></a>Windows 信息保护  
 
-Com o aumento do uso de dispositivos de funcionário dentro da empresa, aumenta também o risco de vazamentos acidentais de dados por meio de aplicativos e serviços, como email, mídia social e nuvem pública, que estão fora do controle da empresa. Por exemplo, quando um funcionário envia as imagens mais recentes de engenharia da sua conta de email pessoal, copia e cola informações do produto em um tweet ou salva um relatório de vendas em andamento no armazenamento de nuvem pública.
+随着企业中员工拥有的设备的增加，通过应用和服务（例如电子邮件、社交媒体和公有云，但这是不受企业的控制的）产生意外的数据泄漏的风险也不断增加。 例如，当员工通过他们的个人电子邮件帐户发送最新的工程图、复制产品信息并粘贴到推文中，或将正在处理的销售报表保存到其公有云存储时。
 
-A WIP (Proteção de Informações do Windows) ajuda a proteger contra possíveis vazamentos de dados sem interferir de outras formas na experiência do funcionário. A WIP também ajuda a proteger dados e aplicativos corporativos contra vazamento acidental de dados em dispositivos corporativos e dispositivos pessoais que os funcionários levam para o trabalho, sem a necessidade de que sejam feitas alterações em seu ambiente ou em outros aplicativos.
+Windows 信息保护 (WIP) 帮助防范此可能的数据泄漏而不会妨碍员工的使用体验。 WIP 还可帮助防止企业拥有的设备和员工带去工作的个人设备上的企业应用和数据发生意外的数据泄漏，且无需更改环境或其他应用。
 
- Os itens de configuração da WIP do Configuration Manager gerenciam a lista de aplicativos protegidos pela WIP, os locais de rede corporativa, o nível de proteção e as configurações de criptografia.
+ Configuration Manager WIP 配置项设置管理受 EDP、企业网络位置、保护级别和加密设置保护的应用列表。
 
-Para obter informações sobre como configurar a proteção de dados empresariais com o Configuration Manager, consulte [Proteger os dados da empresa usando a WIP (Proteção de Informações do Windows)](https://technet.microsoft.com/itpro/windows/keep-secure/protect-enterprise-data-using-wip).
+有关如何使用 Configuration Manager 配置企业数据保护的信息，请参阅[Protect your enterprise data using Windows Information Protection (WIP)](https://technet.microsoft.com/itpro/windows/keep-secure/protect-enterprise-data-using-wip)（使用 Windows 信息保护 (WIP) 保护企业数据）。
 
 
 ### <a name="microsoft-edge"></a>Microsoft Edge  
-Essas configurações são destinadas a dispositivos que executam o Windows 10 e posteriores.  
+这些设置适用于运行 Windows 10 及更高版本的设备。  
   
-|Nome da configuração|Detalhes|  
+|设置名|详细信息|  
 |------------------|-------------| 
-|Microsoft Edge|Permita o uso do navegador da Web Edge no dispositivo.| 
-|**Permitir sugestões de pesquisa na barra de endereços**|Permite que o mecanismo de pesquisa sugira sites à medida que você digita as frases da pesquisa.|  
-|**Permitir envio de tráfego de intranet no Internet Explorer**||  
-|**Permitir Não Rastrear**|Não rastreia informações de sites quando você não quer que rastreiem sua visita a um site.|  
-|**Habilitar SmartScreen**|Use o SmartScreen para verificar se os arquivos que os usuários baixam não contêm código mal-intencionado.|  
-|**Permitir pop-ups**|Permita ou desabilite os pop-ups do navegador.|  
-|**Permitir cookies**|Permita ou desabilite cookies.|  
-|**Permitir Preenchimento Automático**|Permita o uso do recurso Autopreenchimento do navegador Edge.|  
-|**Permitir Gerenciador de Senhas**|Permita o uso do recurso gerenciador de senha do navegador Edge.|  
-|**Local da lista de sites do Modo Empresarial**|Especifica onde encontrar a lista de sites que abre no modo Empresarial. Os usuários não podem editar essa lista.|
-|**Bloquear o acesso à página about:flags**|Impeça o usuário final de acessar a página about:flags no Edge que contém configurações experimentais e de desenvolvedor.|
-|**Substituição de prompt SmartScreen**|Permitir que o usuário final ignore os avisos de filtro SmartScreen sobre sites mal-intencionados.|
-|**Substituição de prompt SmartScreen para arquivos**|Permitir que o usuário final ignore os avisos de filtro SmartScreen sobre o download de arquivos mal-intencionados.|
-|**Endereço IP do localhost WebRTC**|Bloqueie a exibição do endereço IP do localhost dos usuários ao fazer chamadas telefônicas usando a protocolo RTC da Web.|
-|**Mecanismo de pesquisa padrão**|Especifique o mecanismo de pesquisa padrão a ser usado. Os usuários finais podem alterar esse valor a qualquer momento.|
-|**URL de XML OpenSearch**|Você pode usar um arquivo XML de OpenSearch para criar um serviço de pesquisa para o Microsoft Edge.<br>Para obter mais detalhes, confira [OpenSearch](https://msdn.microsoft.com/library/windows/desktop/dd940337).|
-|**Home pages (somente desktop)**|Adicione uma lista de sites que você deseja usar como home pages no navegador Edge (somente no desktop).|  
+|Microsoft Edge|允许在设备上使用 Edge Web 浏览器。| 
+|**允许在地址栏中显示搜索建议**|使搜索引擎能够在输入搜索短语时搜索建议站点。|  
+|**允许将 Intranet 流量发送到 Internet Explorer**||  
+|**允许使用 Do Not Track**|Do Not Track 会告知网站你不希望它们跟踪你对站点的访问。|  
+|**启用 SmartScreen**|使用 SmartScreen 检查用户下载的文件是否不包含恶意代码。|  
+|**允许弹出窗口**|允许或禁用浏览器弹出窗口。|  
+|**允许使用 Cookie**|允许或禁用 Cookie。|  
+|**允许自动填充**|允许使用 Edge 浏览器的自动填充功能。|  
+|**允许使用密码管理器**|允许使用 Edge 浏览器的密码管理器功能。|  
+|**企业模式站点列表位置**|指定在哪里可以找到你想使用企业模式打开的网站的列表。 用户无法编辑此列表。|
+|**阻止关于标志的访问**|防止最终用户在包含开发者和实验设置的 Edge 中访问 about:flags 页。|
+|**SmartScreen 提示重写**|允许最终用户绕过有关潜在恶意网站的 SmartScreen 筛选器警告。|
+|**文件的 SmartScreen 提示替代**|允许最终用户绕过有关下载潜在恶意文件的 SmartScreen 筛选器警告。|
+|**WebRTC localhost IP 地址**|使用 Web RTC 协议进行电话呼叫时，阻止显示用户 localhost IP 地址。|
+|**默认搜索引擎**|指定要使用的默认搜索引擎。 最终用户可以随时更改此值。|
+|**OpenSearch XML URL**|可以使用 OpenSearch XML 文件创建 Microsoft Edge 的搜索服务。<br>有关更多详细信息，请参阅 [OpenSearch](https://msdn.microsoft.com/library/windows/desktop/dd940337)。|
+|**主页(仅限桌面)**|添加你想要用作 Edge 浏览器主页的站点的列表（仅限桌面设备）。|  
 
 
 ### <a name="windows-defender"></a>Windows Defender
-Essas configurações são destinadas a dispositivos que executam o Windows 10 e posteriores.
+这些设置适用于运行 Windows 10 及更高版本的设备。
  
-|Nome da configuração|Detalhes|  
+|设置名|详细信息|  
 |------------------|-------------|  
-|**Permitir monitoramento em tempo real**|Habilita a verificação em tempo real de malware, spyware e outros softwares indesejados.|
-|**Permitir o monitoramento de comportamento**|Permite que o Defender verifique se há certos padrões conhecidos de atividade suspeita nos dispositivos.|
-|**Habilitar o Sistema de Inspeção de Rede**|O NIS (Sistema de Inspeção de Rede) ajuda a proteger dispositivos contra explorações baseadas em rede usando as assinaturas de vulnerabilidades conhecidas do Microsoft Endpoint Protection Center para ajudar a detectar e bloquear tráfego mal-intencionado.|
-|**Verificar todos os downloads**|Controla se o Defender examina todos os arquivos baixados da Internet.|
-|**Permitir a verificação de script**|Permite que o Defender verifique os scripts que são usados no Internet Explorer.|
-|**Monitorar a atividade de arquivo e programa**|Permite que o Defender monitore a atividade de arquivos e programas em dispositivos.
-|**Dias para acompanhar malwares resolvidos**|Permite que o Defender continue acompanhando malwares resolvidos durante o número de dias especificado, para que você possa verificar manualmente os dispositivos afetados previamente. Se você definir o número de dias como 0, o malware permanecerá na pasta Quarentena e não será removido automaticamente.|
-|**Permitir acesso à interface de usuário do cliente**|Controla se a interface de usuário do Windows Defender fica oculta dos usuários.<br>Quando essa configuração for alterada, ele entrará em vigor na próxima vez que o computador do usuário for reiniciado.|
-|**Agendar uma verificação do sistema**|Permite o agendamento de uma verificação completa ou rápida do sistema, que ocorre regularmente no dia e hora selecionados.|
-|**Agendar uma verificação rápida diária**|Permite o agendamento de uma verificação rápida que ocorre diariamente no momento selecionado
-|**Limitar o uso da CPU durante uma verificação**|Permite a limitação da quantidade de CPU que as verificações têm permissão para usar (de 1 a 100).|
-|**Verificar arquivos mortos**|Permite que o Defender examine arquivos mortos armazenados, como arquivos .zip ou .cab.|
-|**Verificar mensagens de email**|Permite que o Defender verifique mensagens de email assim que elas chegam no dispositivo.|
-|**Verificar unidades removíveis**|Permite que o Defender verifique unidades removíveis, como cartões USB.|
-|**Verificar unidades mapeadas**|Permite que o Defender verifique arquivos nas unidades de rede mapeadas.<br>Se os arquivos na unidade forem somente leitura, o Defender não poderá remover qualquer malware encontrado neles.|
-|**Verificar arquivos abertos em pastas de rede compartilhadas**|Permite que o Defender verifique arquivos em unidades de rede compartilhadas (por exemplo, aquelas acessadas de um caminho UNC)<br>Se os arquivos na unidade forem somente leitura, o Defender não poderá remover qualquer malware encontrado neles.|
-|**Intervalo de atualização de assinatura**|Especifica o intervalo de verificação usado pelo Defender para procurar novos arquivos de assinatura.
-|**Permitir proteção da nuvem**|Permite ou bloqueia o Microsoft Active Protection Service de receber informações sobre a atividade de malware de dispositivos gerenciados. Essas informações são usadas para aprimorar o serviço no futuro.|
-|**Solicitar aos usuários o envio de amostras**|Controla se os arquivos que podem exigir mais análise para determinar se são mal-intencionados são enviados automaticamente à Microsoft.|
-|**Detecção de aplicativos potencialmente indesejados**|Proteger os dispositivos de área de trabalho do Windows registrados contra a execução de software classificado pelo Windows Defender como potencialmente indesejados. Você pode se proteger contra a execução desses aplicativos, ou usar o modo de auditoria para informar quando um aplicativo potencialmente indesejado for instalado.|
-|**Exclusões de arquivos e pastas**|Adicione um ou mais arquivos e pastas como C:\Path ou %ProgramFiles%\Path\filename.exe à lista de exclusões. Esses arquivos e pastas não serão incluídos em verificações em tempo real ou programadas.|
-|**Exclusões de extensão de arquivo**|Adicione uma ou mais extensões de arquivo, como jpg ou txt, à lista de exclusões. Qualquer arquivo com essas extensões não serão incluídos em verificações em tempo real ou programadas.|
-|**Exclusões de processo**|Adiciona um ou mais processos do tipo .exe, .com ou .scr à lista de exclusões. Esses processos não estão incluídos em verificações em tempo real ou programadas.|
+|**允许实时监视**|启用对恶意软件、间谍软件和其他不需要的软件的实时扫描。|
+|**允许行为监视**|允许 Defender 在设备上检查是否有某些已知模式的可疑活动。|
+|**启用网络检查系统**|网络检查系统 (NIS) 通过使用来自 Microsoft Endpoint Protection 中心的已知漏洞签名来帮助检测和阻止恶意流量，从而帮助保护设备免受基于网络的攻击。|
+|**扫描所有下载**|控制 Defender 是否扫描从 Internet 下载的所有文件。|
+|**允许脚本扫描**|允许 Defender 扫描 Internet Explorer 中使用的脚本。|
+|**监视文件和程序活动**|允许 Defender 在设备上监视文件和程序活动。
+|**跟踪已解决的恶意软件的天数**|允许 Defender 按指定的天数继续跟踪已解决的恶意软件，以便可以手动检查之前受影响的设备。 如果将天数设置为 0，恶意软件会保留在隔离文件夹中，并且不会自动将其删除。|
+|**允许客户端 UI 访问**|控制 Windows Defender 用户界面是否对用户隐藏。<br>此设置更改后，在下次重新启动用户的电脑时才会生效。|
+|**计划系统扫描**|允许在选择的日期和时间计划定期进行完全或快速系统扫描。|
+|**计划每日一次快速扫描**|允许在选择的时间计划每日进行一次快速扫描
+|**限制扫描期间 CPU 使用率**|允许限制允许扫描使用的 CPU 数量（从 1 到 100）。|
+|**扫描存档文件**|允许 Defender 扫描存档的文件，如 .zip 或 .cab 文件。|
+|**扫描电子邮件**|允许 Defender 扫描抵达设备的电子邮件。|
+|**扫描可移动驱动器**|允许 Defender 扫描可移动驱动器，如 U 盘。|
+|**扫描映射驱动器**|允许 Defender 扫描映射的网络驱动器上的文件。<br>如果驱动器上的文件是只读的，则 Defender 无法删除在其中找到的任何恶意软件。|
+|**扫描从网络共享文件夹打开的文件**|允许 Defender 扫描共享网络驱动器上的文件（例如，从 UNC 路径获取的文件）<br>如果驱动器上的文件是只读的，则 Defender 无法删除在其中找到的任何恶意软件。|
+|**签名更新间隔**|指定 Defender 检查新签名文件的时间间隔。
+|**允许云保护**|允许或阻止 Microsoft Active Protection Service 从你管理的设备接收有关恶意软件活动的信息。 此信息用于在将来改进服务。|
+|**提示用户提交示例**|控制是否将可能要求进行进一步分析的文件自动发送至 Microsoft，以确定它们是否为恶意文件。|
+|**可能不需要的应用程序检测**|阻止注册的 Windows 桌面设备运行 Windows Defender 分类为可能不需要的软件。 安装可能有害的应用程序时，可以阻止其运行，也可使用审核模式进行报告。|
+|**文件和文件夹排除**|将一个或多个文件和文件夹（如 C:\Path 或 %ProgramFiles%\Path\filename.exe）添加到排除列表。 这些文件和文件夹不包括在任何实时或计划的扫描中。|
+|**文件扩展名排除**|向排除列表添加一个或多个如 jpg 或 txt 等文件拓展名。 任何具有这些扩展名的文件都不包括在任何实时或计划的扫描中。|
+|**过程排除**|将一个或多个类型为 .exe、.com 或 .scr 的进程添加到排除列表。 这些进程不包括在任何实时或计划的扫描中。|
 
   
-## <a name="see-also"></a>Consulte também  
- [Itens de configuração de dispositivos gerenciados sem o cliente do System Center Configuration Manager](../../compliance/deploy-use/configuration-items-for-devices-managed-without-the-client.md)
+## <a name="see-also"></a>另请参阅  
+ [未使用 System Center Configuration Manager 客户端管理的设备的配置项目](../../compliance/deploy-use/configuration-items-for-devices-managed-without-the-client.md)

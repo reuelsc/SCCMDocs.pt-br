@@ -1,115 +1,108 @@
 ---
-title: "Estratégia da hierarquia de origem | Microsoft Docs"
-description: "Configure uma hierarquia de origem e colete dados de um site de origem antes de configurar um trabalho de migração do System Center Configuration Manager."
+title: "源层次结构策略 | Microsoft Docs"
+description: "在配置 System Center Configuration Manager 迁移作业之前，请先配置源层次结构并从源站点中收集数据。"
 ms.custom: na
 ms.date: 1/3/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
-ms.technology:
-- configmgr-other
+ms.technology: configmgr-other
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 4800a800-66c8-4c35-aebe-e413a23790c1
-caps.latest.revision: 6
-caps.handback.revision: 0
+caps.latest.revision: "6"
+caps.handback.revision: "0"
 author: Brenduns
 ms.author: brenduns
 manager: angrobe
-translationtype: Human Translation
-ms.sourcegitcommit: cb5f7bf52a53935ca61b0e1b66822919b17d33e2
 ms.openlocfilehash: 0619de32f859f512ee1c9f5a9c83ef8d04a256ca
-
-
+ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
+ms.translationtype: HT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 08/07/2017
 ---
-# <a name="plan-a-source-hierarchy-strategy-in-system-center-configuration-manager"></a>Planejar uma estratégia de hierarquia de origem no System Center Configuration Manager
+# <a name="plan-a-source-hierarchy-strategy-in-system-center-configuration-manager"></a>在 System Center Configuration Manager 中规划源层次结构策略
 
-*Aplica-se a: System Center Configuration Manager (Branch Atual)*
+*适用范围：System Center Configuration Manager (Current Branch)*
 
-Antes de configurar um trabalho de migração no ambiente do System Center Configuration Manager, é necessário configurar uma hierarquia de origem e coletar dados de pelo menos um site de origem nessa hierarquia. Use as seções a seguir para ajudá-lo a se planejar para configurar as hierarquias de origem, configurar os sites de origem e determinar como o Configuration Manager coleta as informações de sites de origem na hierarquia de origem. 
+在 System Center Configuration Manager 环境中设置迁移作业之前，必须配置源层次结构，并从该层次结构内的至少一个源站点中收集数据。 使用以下部分来帮助规划配置源层次结构、配置源站点，并确定 Configuration Manager 从源层次结构内的源站点中收集信息的方式。 
 
-##  <a name="a-namebkmksourcehierarchiesa-source-hierarchies"></a><a name="BKMK_Source_Hierarchies"></a> Hierarquias de origem  
-A hierarquia de origem é uma hierarquia do Configuration Manager que contém dados que você deseja migrar. Ao configurar uma hierarquia de migração e especificar a hierarquia de origem, você especifica o site de nível superior da hierarquia da origem. Este site também é chamado de site de origem. Os sites adicionais dos quais você pode migrar os dados na hierarquia de origem também são chamados de sites de origem.  
+##  <a name="BKMK_Source_Hierarchies"></a> 源层次结构  
+源层次结构是 Configuration Manager 层次结构，其中包含要迁移的数据。 在设置迁移并指定源层次结构时，将指定源层次结构的顶层站点。 此站点也称为源站点。 源层次结构内你可从中迁移数据的其他站点也称为源站点。  
 
--   Ao configurar um trabalho de migração para migrar dados de uma hierarquia de origem do Configuration Manager 2007, você o configura para migrar dados de um ou mais sites de origem na hierarquia de origem.  
+-   在设置迁移作业以从 Configuration Manager 2007 源层次结构迁移数据时，将其配置为从源层次结构中的一个或多个特定源站点迁移数据。  
 
--   Ao configurar um trabalho de migração para migrar dados de uma hierarquia de origem que execute o System Center 2012 Configuration Manager ou posterior, basta especificar o site de nível superior.  
+-   在设置迁移作业以从运行 System Center 2012 Configuration Manager 或更高版本的源层次结构迁移数据时，只需指定顶层站点。  
 
-Você pode configurar apenas uma hierarquia de origem por vez.  
+一次只能设置一个源层次结构。  
 
--   Se você configurar uma nova hierarquia de origem, essa hierarquia se tornará automaticamente a hierarquia de origem atual que substitui a hierarquia de origem anterior.  
+-   如果设置新的源层次结构，该层次结构将自动成为当前源层次结构，替代以前的源层次结构。  
 
--   Ao configurar uma hierarquia de origem, você deve especificar o site de nível superior da hierarquia de origem e especificar as credenciais do Configuration Manager a serem usadas para se conectar ao Provedor de SMS e ao banco de dados do site desse site de origem.  
+-   在设置源层次结构时，必须指定源层次结构的顶层站点，并指定供 Configuration Manager 用以连接到 SMS 提供程序和源站点的站点数据库的凭据。  
 
--   O Configuration Manager usa essas credenciais para executar a coleta de dados, a fim de recuperar informações sobre os objetos e os pontos de distribuição do site de origem.  
+-   Configuration Manager 使用这些凭据来运行数据收集以从源站点中检索有关对象和分发点的信息。  
 
--   Como parte do processo de coleta de dados, sites filho na hierarquia de origem são identificados.  
+-   在数据收集过程中，将确定源层次结构中的子站点。  
 
--   Se a hierarquia de origem for uma hierarquia do Configuration Manager 2007, você poderá configurar sites adicionais como sites de origem, com credenciais separadas para cada site de origem.  
+-   如果源层次结构是 Configuration Manager 2007 层次结构，则可以随后将那些附加站点设置为源站点，每个源站点有单独的凭据。  
 
-Apesar de você poder configurar várias hierarquias de origem sucessivamente, a migração estará ativa somente para uma hierarquia de origem de cada vez.  
+尽管可连续设置多个源层次结构，但一次只有一个源层次结构的迁移可处于活动状态。  
 
--   Se você configurar uma hierarquia de origem adicional antes de concluir a migração da hierarquia de origem atual, o Configuration Manager cancelará os trabalhos de migração ativos e adiará todos os trabalhos de migração agendados para a hierarquia de origem atual.  
+-   如果在完成从当前源层次结构中进行的迁移之前设置其他源层次结构，Configuration Manager 将为当前源层次结构取消任何活动的迁移作业，并推迟任何计划的迁移作业。  
 
--   A hierarquia de origem configurada recentemente se torna a hierarquia de origem atual e a hierarquia de origem original agora está inativa.  
+-   新配置的源层次结构随后将成为当前源层次结构，原始源层次结构现在处于非活动状态。  
 
--   Você pode configurar credenciais de conexão, sites de origem adicionais e trabalhos de migração para a nova hierarquia de origem.  
+-   可随后为新源层次结构设置连接凭据、其他源站点和迁移作业。  
 
-Se você restaurar uma hierarquia de origem inativa e não tiver usado **Limpar Dados de Migração** anteriormente, você pode exibir os trabalhos de migração configurados anteriormente para essa hierarquia de origem. No entanto, para poder continuar a migração dessa hierarquia, é necessário reconfigurar as credenciais para se conectar aos sites de origem aplicáveis na hierarquia e reagendar os trabalhos de migração que não foram concluídos.  
+如果还原非活动源层次结构，并且之前未使用过“清理迁移数据”，则可以查看该源层次结构的以前配置的迁移作业。 但是，你必须重新配置凭据以连接到层次结构中的适用源站点，然后重新计划任何未完成的迁移作业，然后才能继续从该层次结构中进行迁移。  
 
 > [!CAUTION]  
->  Se você migrar os dados de uma única hierarquia de origem, cada hierarquia de origem adicional deverá conter um conjunto exclusivo de códigos do site.  
+>  如果从超过一个源层次结构中迁移数据，则每个额外的源层次结构都必须包含一组唯一的站点代码。  
 
-Para obter mais informações sobre como configurar uma hierarquia de origem, consulte [Configurando hierarquias de origem e sites de origem para migração para o System Center Configuration Manager](../../core/migration/configuring-source-hierarchies-and-source-sites-for-migration.md)  
+有关配置源层次结构的详细信息，请参阅[配置源层次结构和源站点以迁移到 System Center Configuration Manager](../../core/migration/configuring-source-hierarchies-and-source-sites-for-migration.md)  
 
-##  <a name="a-namebkmksourcesitesa-source-sites"></a><a name="BKMK_Source_Sites"></a> Sites de origem  
- Os sites de origem são sites na hierarquia de origem que possuem os dados que você deseja migrar. O site de nível superior da hierarquia da origem é sempre o primeiro site de origem. Quando a migração coleta os dados do primeiro site de origem de uma nova hierarquia de origem, ela descobre informações sobre os sites adicionais nessa hierarquia.  
+##  <a name="BKMK_Source_Sites"></a> 源站点  
+ 源站点是源层次结构中具有要迁移的数据的站点。 源层次结构的顶层站点始终是第一个源站点。 当迁移从新源层次结构的第一个源站点中收集数据时，它将发现有关该层次结构中的其他站点的信息。  
 
- Concluída a coleta de dados para o site de origem inicial, as ações a serem tomadas dependerão da versão do produto da hierarquia de origem.  
+ 初始源站点的数据收集完成后，你接下来进行的操作取决于源层次结构的产品版本。  
 
-### <a name="source-sites-that-run-configuration-manager-2007-sp2"></a>Sites de origem que executam o Gerenciador de Configurações 2007 SP2  
- Após a coleta de dados do site de origem inicial da hierarquia do Configuration Manager 2007 SP2, não é necessário configurar os sites de origem adicionais para poder criar os trabalhos de migração. No entanto, para poder migrar dados de sites adicionais, é necessário configurar os sites adicionais como sites de origem e o System Center Configuration Manager coletar com êxito os dados daqueles sites.  
+### <a name="source-sites-that-run-configuration-manager-2007-sp2"></a>运行 Configuration Manager 2007 SP2 的源站点  
+ 从 Configuration Manager 2007 SP2 层次结构的初始源站点中收集数据后，不必在创建迁移作业之前设置其他源站点。 但是，必须将其他站点设置为源站点，并且 System Center Configuration Manager 必须成功从这些站点中收集数据，然后才能从其他站点中迁移数据。  
 
- Para coletar os dados de sites adicionais, você deve configurar cada site como site de origem. Para tanto, é necessário especificar as credenciais de conexão do System Center Configuration Manager ao Provedor de SMS e ao banco de dados de cada site de origem. Depois de você configurar as credenciais para um site de origem, o processo de coleta de dados para esse site é iniciado.  
+ 要从其他站点中收集数据，请单独将每个站点设置为源站点。 这需要为 System Center Configuration Manager 指定凭据以连接到每个源站点的 SMS 提供程序和站点数据库。 为源站点设置凭据之后，该站点的数据收集过程将开始。  
 
- Ao configurar sites de origem adicionais em uma hierarquia de origem do Configuration Manager 2007 SP2, é necessário configurar os sites de origem de cima para baixo, o que significa que os sites na parte inferior da camada serão configurados por último. A qualquer momento é possível configurar os sites de origem em uma ramificação da hierarquia, mas para isso é preciso configurar um site como site de origem antes de configurar seus sites filho como sites de origem.  
-
-> [!NOTE]  
->  Há suporte para migração somente para sites primários em uma hierarquia do Configuration Manager 2007 SP2.  
-
-### <a name="source-sites-that-run-system-center-2012-configuration-manager-or-later"></a>Sites de origem que executam o System Center 2012 Configuration Manager ou posterior  
- Após a coleta de dados do site de origem inicial da hierarquia do System Center 2012 Configuration Manager ou posterior, não é necessário configurar sites de origem adicionais nessa hierarquia de origem. Isso ocorre porque, diferentemente do Configuration Manager 2007, estas versões do Configuration Manager usam um banco de dados compartilhado e este banco de dados permite que você identifique e migre todos os objetos disponíveis do site de origem inicial.  
-
- Ao configurar as contas de acesso para coletar dados, talvez você precise ao **Provedor de SMS do Site de Origem** o acesso a vários computadores na hierarquia de origem. Isso pode ser necessário quando o site de origem dá suporte a várias instâncias do provedor de SMS, cada um em um computador diferente. Quando a coleta de dados é iniciada, o site de nível superior da hierarquia de destino entra em contato com o site de nível superior da hierarquia de origem para identificar o local do Provedor de SMS para esse site. Somente a primeira instância do Provedor de SMS é identificada. Se o processo de coleta de dados não puder acessar o Provedor de SMS no local identificado, o processo falhará e não tentará se conectar aos computadores adicionais que executam uma instância do Provedor de SMS para esse site.  
-
-##  <a name="a-namebkmkdatagatheringa-data-gathering"></a><a name="BKMK_Data_Gathering"></a> Coleta de dados  
- Imediatamente após você especificar a hierarquia de origem, configurar as credenciais para cada site de origem adicional em uma hierarquia de origem ou compartilhar os pontos de distribuição para um site de origem, o Configuration Manager iniciará a coleta de dados do site de origem.  
-
- O processo de coleta de dados se repete em um agendamento simples para manter a sincronização com todas as alterações nos dados no site de origem. Por padrão, o processo se repete a cada quatro horas. É possível alterar o agendamento para esse ciclo editando as **Propriedades** do site de origem. O processo inicial de coleta de dados deve examinar todos os objetos no banco de dados do Configuration Manager, o que pode demorar muito até a sua conclusão. Os processos de coleta de dados subsequentes identificam apenas as alterações nos dados e requerem menos tempo para sua conclusão.  
-
- Para coletar dados, o site de nível superior na hierarquia de destino conecta-se ao Provedor de SMS e ao banco de dados do site de origem para recuperar uma lista de objetos e pontos de distribuição. Essas conexões usam as contas de acesso do site de origem. Para obter informações sobre as configurações necessárias para a coleta de dados, consulte [Pré-requisitos para a migração no System Center Configuration Manager](../../core/migration/prerequisites-for-migration.md).  
-
- Você pode iniciar e interromper o processo de coleta de dados usando **Coletar Dados Agora** e **Parar Coleta de Dados** no console do Configuration Manager.  
-
- Após usar **Parar Coleta de Dados** para um site de origem, seja por qual motivo for, será necessário reconfigurar as credenciais para o site antes de poder coletar dados dele novamente. Até que você reconfigure o site de origem, o Configuration Manager não poderá identificar novos objetos nem alterações em objetos migrados anteriormente nesse site.  
+ 在 Configuration Manager 2007 SP2 源层次结构中设置其他源站点时，必须按自上而下的顺序设置源站点，这意味着将最后设置底层站点。 可随时在层次结构的分支中配置源站点，但在将某个站点的任何子站点设置为源站点之前，必须将该站点设置为源站点。  
 
 > [!NOTE]  
->  Para poder expandir um site primário autônomo em uma hierarquia com um site de administração central, você deverá interromper toda a coleta de dados. Você pode reconfigurar a coleta de dados após a conclusão da expansão do site.  
+>  对于迁移，只支持 Configuration Manager 2007 SP2 层次结构中的主站点。  
 
-### <a name="gather-data-now"></a>Coletar Dados Agora  
- Após a execução do processo inicial de coleta de dados para o site, esse processo se repete para identificar os objetos que foram atualizados desde o último ciclo de coleta de dados. Você também pode usar a ação **Coletar Dados Agora** no console do Configuration Manager para iniciar imediatamente o processo e redefinir a hora de início do próximo ciclo.  
+### <a name="source-sites-that-run-system-center-2012-configuration-manager-or-later"></a>运行 System Center 2012 Configuration Manager 或更高版本的源站点  
+ 从 System Center 2012 Configuration Manager 或其后的层次结构的初始源站点中收集数据后，不必设置其他源站点以从源层次结构中配置额外源站点。 这是因为不同于 Configuration Manager 2007，Configuration Manager 的这些版本使用共享数据库，通过共享数据库可确定初始源站点中的所有可用对象并随后将其迁移。  
 
- Concluído com êxito o processo de coleta de dados para o site de origem, você pode compartilhar os pontos de distribuição do site de origem e configurar os trabalhos de migração de dados do site. A coleta de dados é um processo de repetição na migração, que continua até você alterar a hierarquia de origem ou usar **Parar Coleta de Dados** para finalizar o processo de coleta de dados para o site.  
+ 在设置访问帐户以收集数据时，可能需要向“源站点 SMS 提供程序帐户”授予对源层次结构中的多台计算机的访问权限。 当源站点支持 SMS 提供程序的多个实例，且每个实例位于不同的计算机上时，可能需要此权限。 当数据收集开始时，目标层次结构的顶层站点将与源层次结构中的顶层站点联系，以确定该站点的 SMS 提供程序的位置。 只会确定 SMS 提供程序的第一个实例。 如果数据收集过程无法访问它确定的位置处的 SMS 提供程序，则该过程将失败，并且不会尝试连接到运行该站点的 SMS 提供程序实例的其他计算机。  
 
-### <a name="stop-gathering-data"></a>Parar Coleta de Dados  
- Você pode usar **Parar Coleta de Dados** para finalizar o processo de coleta de dados para um site de origem quando você não deseja mais que o Configuration Manager identifique objetos novos e alterados desse site. Essa ação também impede que o Configuration Manager ofereça a clientes na hierarquia de destino algum ponto de distribuição compartilhado da origem como local de conteúdo para o conteúdo que você migrou.  
+##  <a name="BKMK_Data_Gathering"></a> 数据收集  
+ 在指定源层次结构之后，立即为源层次结构中的每个其他源站点设置凭据，或共享源站点的分发点，Configuration Manager 将开始从该源站点中收集数据。  
 
- Para interromper a coleta de dados de cada site de origem, é necessário executar **Parar Coleta de Dados** nos sites de origem da camada inferior e repetir o processo em cada site pai. O site de nível superior da hierarquia de origem deve ser o último site em que a coleta de dados seja interrompida. É necessário interromper a coleta de dados em todo site filho para poder executar essa ação em um site pai. Normalmente, você interrompe a coleta de dados somente quando está pronto para concluir o processo de migração.  
+ 数据收集过程随后将按简单的计划重复运行，以便与源站点中的任何数据更改保持同步。 默认情况下，该过程每隔四小时重复一次。 可通过编辑源站点的“属性”来更改此周期的计划。 初始数据收集过程必须审阅 Configuration Manager 数据库中的所有对象，并且可能需要较长时间才能完成。 后续的数据收集过程只确定数据更改，完成操作所需的时间较短。  
 
- Após interromper a coleta de dados para um site de origem, as informações de objetos e coleções desse site coletadas anteriormente permanecem disponíveis para uso quando você configurar novos trabalhos de migração. No entanto, você não vê novos objetos ou novas coleções, nem alterações feitas em objetos existentes. Ao reconfigurar o site de origem e iniciar novamente a coleta de dados, você verá as informações e o status de objetos migrados anteriormente.  
+ 为了收集数据，目标层次结构中的顶层站点将连接到源站点的 SMS 提供程序和站点数据库，以检索对象和分发点的列表。 这些连接使用源站点访问帐户。 有关用于收集数据的所需配置的信息，请参阅 [System Center Configuration Manager 中迁移的先决条件](../../core/migration/prerequisites-for-migration.md)。  
 
+ 可以通过使用 Configuration Manager 控制台中的“立即收集数据”和“停止收集数据”来开始或停止数据收集进程。  
 
+ 在出于任何原因为源站点使用“停止收集数据”后，必须为站点重新配置凭据，然后才能再次从该站点收集数据。 在重新配置源站点之前，Configuration Manager 将无法确定新对象或对该站点上以前迁移的对象所做的更改。  
 
-<!--HONumber=Jan17_HO1-->
+> [!NOTE]  
+>  在将独立主站点扩展为包含管理中心站点的层次结构之前，必须停止所有数据收集操作。 可在站点扩展完成之后重新配置数据收集。  
 
+### <a name="gather-data-now"></a>控制台中的“立即收集数据”  
+ 为站点运行初始数据收集过程后，此过程将重复运行以确定自上次数据收集周期以来已更新的对象。 也可以使用 Configuration Manager 控制台中的“立即收集数据”操作立即开始该进程并重新设置下一个周期的开始时间。  
 
+ 源站点的数据收集过程成功完成后，你可以共享源站点中的分发点，并配置迁移作业以从该站点中迁移数据。 对于迁移而言，数据收集是一个重复进行的过程，并将持续运行，直至更改源层次结构或使用“停止收集数据”来结束该站点的数据收集过程为止。  
+
+### <a name="stop-gathering-data"></a>和“停止收集数据”  
+ 当你不再想要 Configuration Manager 来确定来自该站点的新的或已更改的对象，则可以使用“停止收集数据”来结束源站点的数据收集过程。 此操作还可防止 Configuration Manager 向目标层次结构中的客户端提供源中的任何共享分发点作为已迁移内容的内容位置。  
+
+ 要停止从每个源站点中收集数据，必须在底层源站点上运行“停止收集数据”，然后在每个父站点上重复该过程。 源层次结构的顶层站点必须是你执行停止收集数据操作的最后一个站点。 你必须在每个子站点上停止数据收集，之后在父站点上执行此操作。 通常，你只有在准备完成迁移过程时才停止收集数据。  
+
+ 为源站点停止收集数据后，之前从该站点中收集的有关对象和集合的信息仍然可在设置新迁移作业时使用。 但是，你不会看到任何新对象或集合，也不会看到之前对现有对象所做的更改。 如果重新配置源站点并再次开始收集数据，你将看到有关以前迁移的对象的信息和状态。  

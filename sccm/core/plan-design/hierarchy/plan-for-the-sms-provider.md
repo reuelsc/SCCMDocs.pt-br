@@ -1,205 +1,201 @@
 ---
-title: Planejar o provedor de SMS | Microsoft Docs
-description: "Saiba mais sobre como o Provedor de SMS ajuda você a gerenciar o System Center Configuration Manager."
+title: "规划 SMS 提供程序 | Microsoft Docs"
+description: "了解 SMS 提供程序如何帮助你管理 System Center Configuration Manager。"
 ms.custom: na
 ms.date: 2/7/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
-ms.technology:
-- configmgr-other
+ms.technology: configmgr-other
 ms.tgt_pltfrm: na
 ms.topic: get-started-article
 ms.assetid: 5d5d6273-0d8a-43c7-865a-cdb1736dcae3
-caps.latest.revision: 8
+caps.latest.revision: "8"
 author: Brenduns
 ms.author: brenduns
 manager: angrobe
-ms.translationtype: Human Translation
-ms.sourcegitcommit: 11ac851696ce52642412ca29e4873679d50cf398
 ms.openlocfilehash: 547dc39d5659c7c2e6f1ca670caddc127dbf22c4
-ms.contentlocale: pt-br
-ms.lasthandoff: 05/17/2017
-
-
+ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
+ms.translationtype: HT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 08/07/2017
 ---
-# <a name="plan-for-the-sms-provider-for-system-center-configuration-manager"></a>Planejar o Provedor de SMS para o System Center Configuration Manager
+# <a name="plan-for-the-sms-provider-for-system-center-configuration-manager"></a>为 System Center Configuration Manager 规划 SMS 提供程序
 
-*Aplica-se a: System Center Configuration Manager (Branch Atual)*
+*适用范围：System Center Configuration Manager (Current Branch)*
 
-Para gerenciar o System Center Configuration Manager, você usa um console do Configuration Manager que se conecta a uma instância do **Provedor de SMS**. Por padrão, um provedor de SMS é instalado no servidor de sites ao instalar em um site de administração central ou site primário. 
-
-
-##  <a name="BKMK_PlanSMSProv"></a> Sobre o provedor de SMS  
- O Provedor de SMS é um provedor de WMI (Instrumentação de Gerenciamento do Windows) que atribui acesso de **leitura** e **gravação** ao banco de dados do Configuration Manager em um site:  
-
--   Cada site de administração central e cada site primário exigem, pelo menos, um provedor de SMS. Você pode instalar provedores adicionais conforme necessário.  
--   O grupo **Administradores de SMS** fornece acesso ao provedor de SMS. O Configuration Manager cria automaticamente este grupo de segurança no servidor de sites e em cada computador em que for instalada uma instância do Provedor de SMS.  
-
--   Sites secundários não dão suporte para o Provedor de SMS.  
+若要管理 System Center Configuration Manager，可使用连接到 **SMS 提供程序**的实例的 Configuration Manager 控制台。 默认情况下，当安装管理中心站点或主站点时，SMS 提供程序会安装在站点服务器上。 
 
 
-Usuários administrativos do Configuration Manager usam um provedor de SMS para acessar as informações armazenadas no banco de dados. Para fazer isso, os administradores podem usar o console do Configuration Manager, o Gerenciador de Recursos, ferramentas e scripts personalizados. O Provedor de SMS não interage com os clientes do Configuration Manager. Quando um console do Configuration Manager se conecta a um site, o console do Configuration Manager solicita que o WMI no servidor do site localize uma instância do Provedor de SMS para ele usar.  
+##  <a name="BKMK_PlanSMSProv"></a> 关于 SMS 提供程序  
+ SMS 提供程序是 Windows Management Instrumentation (WMI) 提供程序，它分配对站点中 Configuration Manager 数据库的“读取”和“写入”访问权限：  
 
- O Provedor de SMS ajuda a reforçar a segurança do Configuration Manager. Retorna apenas informações que o usuário administrativo que está executando o console do Configuration Manager tem autorização para exibir.  
+-   每个管理中心站点和主站点上都必须至少具有一个 SMS 提供程序。 你可以根据需要安装其他提供程序。  
+-   “SMS 管理员”安全组提供对 SMS 提供程序的访问权限。 Configuration Manager 在站点服务器和安装了 SMS 提供程序实例的每台计算机上自动创建此组。  
+
+-   辅助站点不支持 SMS 提供程序。  
+
+
+Configuration Manager 管理用户使用 SMS 提供程序访问存储在数据库中的信息。 若要执行此操作，管理员可使用 Configuration Manager 控制台、资源浏览器、工具和自定义脚本。 SMS 提供程序不与 Configuration Manager 客户端交互。 当 Configuration Manager 控制台连接至站点时，Configuration Manager 控制台会查询站点服务器上的 WMI 以查找要使用的 SMS 提供程序的实例。  
+
+ SMS 提供程序帮助强制实施 Configuration Manager 安全性。 它仅返回正在运行 Configuration Manager 控制台的管理用户有权查看的信息。  
 
 > [!IMPORTANT]  
->  Quando os computadores que contêm um Provedor de SMS de um site estão offline, os consoles do Configuration Manager não conseguem se conectar ao banco de dados desse site.  
+>  当承载站点的 SMS 提供程序的每台计算机都脱机时，Configuration Manager 控制台无法连接到该站点的数据库。  
 
- Para obter mais informações sobre como gerenciar o provedor de SMS, veja [Manage the SMS Provider](../../../core/servers/manage/modify-your-infrastructure.md#BKMK_ManageSMSprovider) em [Modify your System Center Configuration Manager infrastructure](../../../core/servers/manage/modify-your-infrastructure.md).  
+ 若要了解如何管理 SMS 提供程序，请参阅 [Modify your System Center Configuration Manager infrastructure](../../../core/servers/manage/modify-your-infrastructure.md#BKMK_ManageSMSprovider) 中的 [Manage the SMS Provider](../../../core/servers/manage/modify-your-infrastructure.md)。  
 
-## <a name="prerequisites-to-install-the-sms-provider"></a>Pré-requisitos para instalar o provedor de SMS  
+## <a name="prerequisites-to-install-the-sms-provider"></a>要安装 SMS 提供程序的先决条件  
 
- Para dar suporte ao provedor de SMS:  
+ 支持 SMS 提供程序：  
 
--   o computador deve estar em um domínio que tenha uma relação de confiança bidirecional com o servidor de sites e com os sistemas de site do banco de dados do site.  
+-   计算机必须在具有站点服务器和站点数据库站点系统双向信任关系的域中。  
 
--   o computador não pode ter uma função do sistema de um site diferente.  
+-   计算机不能具有不同站点中的站点系统角色。  
 
--   o computador não pode ter um Provedor de SMS de qualquer site.  
+-   计算机不能具有任何站点中的 SMS 提供程序。  
 
--   o computador deve executar um sistema operacional que seja compatível com um servidor de site.  
+-   计算机必须运行站点服务器支持的操作系统。  
 
--   O computador deve ter pelo menos 650 MB de espaço livre em disco para dar suporte aos componentes do Windows ADK (Kit de Implantação Automatizada do Windows) instalados com o Provedor de SMS. Para obter mais informações sobre o Windows ADK e o provedor de SMS, veja [Requisitos de implantação do sistema operacional para o Provedor de SMS](#BKMK_WAIKforSMSProv) neste tópico.  
+-   计算机至少必须有 650 MB 的可用磁盘空间，以支持与 SMS 提供程序一起安装的 Windows 自动部署工具包 (Windows ADK) 组件。 有关 Windows ADK 和 SMS 提供程序的详细信息，请参阅本主题中的 [针对 SMS 提供程序的操作系统部署要求](#BKMK_WAIKforSMSProv) 。  
 
-##  <a name="bkmk_location"></a> Locais do Provedor de SMS  
- Ao instalar um site, o primeiro provedor de SMS para o site é instalado automaticamente. Você pode especificar qualquer um dos seguintes locais com suporte para o Provedor de SMS:  
+##  <a name="bkmk_location"></a> SMS 提供程序位置  
+ 安装站点时，会为站点自动安装第一个 SMS 提供程序。 你可以为 SMS 提供程序指定以下任何支持的位置：  
 
--   o computador do servidor do site  
+-   站点服务器计算机  
 
--   o computador do banco de dados do site  
+-   站点数据库计算机  
 
--   um computador de classe de servidor que não tenha Provedor de SMS ou função de sistema de um site diferente  
-
-
-Para exibir os locais de cada Provedor de SMS instalado em um local, veja a guia **Geral** da caixa de diálogo **Propriedades** do site.  
-
- Cada Provedor de SMS oferece suporte a conexões simultâneas de várias solicitações. As únicas limitações a essas conexões são o número de conexões de servidores disponíveis no computador do Provedor de SMS e os recursos disponíveis no computador do Provedor de SMS para atendimento às solicitações de conexão.  
-
- Depois que um site é instalado, você pode executar a Instalação no servidor do site novamente para alterar a localização de um Provedor de SMS existente ou para instalar Provedores de SMS adicionais no site. Em um computador é possível instalar apenas um Provedor de SMS, e um computador não pode instalar Provedores de SMS de mais de um site.  
-
- Use o seguinte para identificar as vantagens e desvantagens de instalar um Provedor de SMS em cada local com suporte:  
-
- **Servidor do site do Configuration Manager**  
-
--   **Vantagens:**  
-
-    -   O Provedor de SMS não usa os recursos de sistema do computador do banco de dados do site.  
-
-    -   Esse local pode proporcionar um desempenho melhor do que um Provedor de SMS localizado em um computador diferente do servidor do site ou no computador do banco de dados do site.  
-
--   **Desvantagens:**  
-
-    -   O Provedor de SMS usa recursos de sistema e de rede que poderiam ser dedicados a operações de servidor do site.  
+-   未承载 SMS 提供程序的服务器类计算机，或者不同站点中的站点系统角色  
 
 
-**SQL Server que hospeda o banco de dados do site**  
+要查看站点中安装的每个 SMS 提供程序的位置，请选择站点“属性”对话框的“常规”选项卡。  
 
--   **Vantagens:**  
+ 每个 SMS 提供程序支持多个请求中的同时连接。 对这些连接的仅有的限制是 SMS 提供程序计算机上可用的服务器连接数目，以及满足连接请求的 SMS 提供程序计算机上可用资源。  
 
-    -   O Provedor de SMS não usa recursos do sistema de site no servidor do site.  
+ 安装站点后，你可以在站点服务器上重新运行安装程序，以更改现有 SMS 提供程序的位置，或者在该站点上安装其他 SMS 提供程序。 你只能在计算机上安装一个 SMS 提供程序，并且计算机无法从多个站点中安装 SMS 提供程序。  
 
-    -   Esse local pode fornecer o melhor desempenho dos três locais, se houver recursos suficientes do servidor.  
+ 使用以下信息确定在每个支持的位置上安装 SMS 提供程序的优缺点：  
 
--   **Desvantagens:**  
+ **Configuration Manager 站点服务器**  
 
-    -   O Provedor de SMS usa recursos de sistema e de rede que poderiam ser dedicados a operações de banco de dados do site.  
+-   **优点：**  
 
-    -   Não é possível usar esse local quando o banco de dados do site está hospedado em uma instância clusterizada do SQL Server.  
+    -   SMS 提供程序不使用站点数据库计算机的系统资源。  
 
+    -   与位于除站点服务器或站点数据库计算机之外的其他计算机上的 SMS 提供程序相比，此位置提供的性能更佳。  
 
-**Computador diferente do servidor do site ou computador do banco de dados do site**  
+-   **缺点：**  
 
--   **Vantagens:**  
-
-    -   O Provedor de SMS não usa o servidor do site ou recursos do computador do banco de dados do site.  
-
-    -   Esse tipo de local permite que você implante Provedores de SMS adicionais para fornecer alta disponibilidade para conexões.  
-
--   **Desvantagens:**  
-
-    -   O desempenho do Provedor de SMS pode ser reduzido em razão do tráfego de rede adicional necessário para a coordenação com o servidor de sites e com o computador do banco de dados do site.  
-
-    -   Esse servidor deve estar sempre acessível ao computador do banco de dados do site e a todos os computadores com o console do Configuration Manager instalado.  
-
-    -   Esse local pode usar recursos de sistema que seriam dedicados a outros serviços.  
-
-##  <a name="BKMK_SMSProvLanguages"></a> Sobre idiomas do Provedor de SMS  
- O Provedor de SMS funciona independentemente do idioma de exibição do computador onde ele está instalado.  
-
- Quando um usuário administrativo ou um processo do Configuration Manager solicita dados usando o Provedor de SMS, o Provedor de SMS tenta retornar os dados em um formato que corresponda ao idioma do sistema operacional do computador solicitante.
-
-A maneira que ele tenta corresponder o idioma é um pouco indireta. O Provedor de SMS não converte as informações de um idioma para outro. Em vez disso, quando os dados são retornados para exibição no console do Configuration Manager, o idioma de exibição dos dados depende da origem do objeto e do tipo de armazenamento.  
-
- Quando os dados de um objeto são armazenados no banco de dados, os idiomas disponíveis dependem do seguinte:  
-
--   Os objetos que o Configuration Manager cria são armazenados no banco de dados usando suporte para vários idiomas. O objeto é armazenado usando os idiomas configurados no local onde ele é criado quando se executa a Instalação. Esses objetos são exibidos no console do Configuration Manager no idioma de exibição do computador solicitante, quando o idioma está disponível para o objeto. Se o objeto não puder ser exibido no idioma de exibição do computador solicitante, ele será exibido no idioma padrão, que é o inglês.  
-
--   O objeto que um usuário administrativo cria é armazenado no banco de dados usando o idioma utilizado para se criar esse objeto. Esses objetos são exibidos no console do Configuration Manager no mesmo idioma. Eles não podem ser convertidos pelo Provedor de SMS e não possuem várias opções de idioma.  
-
-##  <a name="BKMK_MultiSMSProv"></a> Use vários Provedores de SMS  
- Após a instalação de um site, você pode instalar Provedores de SMS adicionais nele. Para instalar Provedores de SMS adicionais, execute a Instalação do Configuration Manager no servidor do site. Considere a instalação de Provedores de SMS adicionais quando qualquer uma das seguintes situações for verdadeira:  
-
--   você terá um grande número de usuários administrativos que, ao mesmo tempo, executam um console do Configuration Manager e se conectam a um site.  
-
--   você usará o SDK do Configuration Manager ou outros produtos que podem apresentar chamadas frequentes ao Provedor de SMS.  
-
--   você quer garantir alta disponibilidade para o Provedor de SMS.  
+    -   SMS 提供程序使用可以专门用于站点服务器操作的系统和网络资源。  
 
 
-Quando vários Provedores de SMS estão instalados em um site e uma solicitação de conexão é feita, o site, de forma não determinística, atribui a cada nova solicitação de conexão o uso de um Provedor de SMS instalado. Não é possível especificar o local do Provedor de SMS a ser usado em uma sessão de conexão específica.  
+**承载站点数据库的 SQL Server**  
 
-> [!NOTE]  
->  Considere as vantagens e desvantagens de cada local de provedor de SMS. Equilibre essas considerações com as informações que você não pode controlar, que são os provedores de SMS usados para cada nova conexão.  
+-   **优点：**  
 
-Por exemplo, quando você conecta um console do Configuration Manager pela primeira vez a um site, a conexão solicita ao WMI no servidor de sites para identificar uma instância do Provedor de SMS que o console usará. Essa instância específica do Provedor de SMS continua em uso pelo console do Configuration Manager até que a sessão do console do Configuration Manager termine. Se a sessão terminar devido ao computador do Provedor de SMS ficar indisponível na rede, quando você se conectar novamente ao console do Configuration Manager o site simplesmente atribuirá uma instância do Provedor de SMS à nova sessão de conexão. É possível ser atribuído ao mesmo computador do Provedor de SMS que não está disponível. Se isso ocorrer, tente reconectar o console do Configuration Manager até que seja atribuído um computador disponível do Provedor de SMS.  
+    -   SMS 提供程序不使用站点服务器上的站点系统资源。  
 
-##  <a name="BKMK_AboutSMSAdmins"></a> Sobre o grupo de administradores de SMS  
- Use o grupo de administradores de SMS para fornecer acesso de usuário administrativo ao Provedor de SMS. O grupo é criado automaticamente no servidor do site quando o site é instalado, bem como em cada computador que instala um Provedor de SMS. Informações adicionais sobre o grupo de administradores de SMS:  
+    -   如果有足够的服务器资源可用，则在这三个位置当中，此位置可以提供最佳性能。  
 
--   quando o computador é um servidor membro, o grupo de administradores de SMS é criado como um grupo local.  
+-   **缺点：**  
 
--   quando o computador é um controlador de domínio, o grupo de administradores de SMS é criado como um grupo local de domínio.  
+    -   SMS 提供程序使用可以专门用于站点数据库操作的系统和网络资源。  
 
--   quando o Provedor de SMS é desinstalado de um computador, o grupo de administradores de SMS não é removido do computador.  
+    -   当站点数据库托管于 SQL Server 的群集实例上时，不能使用此位置。  
 
 
-Para que um usuário possa fazer uma conexão bem-sucedida a um Provedor de SMS, sua conta de usuário deve ser um membro do grupo de administradores de SMS. Cada usuário administrativo que você configura no console do Configuration Manager é automaticamente adicionado ao grupo de administradores de SMS em cada servidor do site e a cada computador Provedor de SMS na hierarquia. Quando você exclui um usuário administrativo do console do Configuration Manager, esse usuário é removido do grupo de administradores de SMS em cada servidor do site e de cada computador do Provedor de SMS na hierarquia.  
+**站点服务器或站点数据库计算机之外的计算机**  
 
-Depois que o usuário faz uma conexão bem-sucedida com o Provedor de SMS, a administração baseada em funções determina quais recursos do Configuration Manager o usuário poderá acessar ou gerenciar.  
+-   **优点：**  
 
-É possível exibir e configurar os direitos e as permissões do grupo de Administradores de SMS usando o snap-in do MMC do Controle WMI. Por padrão, a opção **Todos** tem as permissões **Executar Métodos**, **Gravação do Provedor**e **Habilitar Conta** . Quando um usuário se conecta ao Provedor de SMS, é concedido a ele acesso aos dados do banco de dados do site com base em seus direitos de segurança administrativa baseados em função definidos no console do Configuration Manager. O grupo de administradores de SMS recebe explicitamente as permissões **Habilitar conta** e **Habilitação remota** no namespace **Root\SMS**.  
+    -   SMS 提供程序不使用站点服务器或站点数据库计算机资源。  
+
+    -   此类型的位置允许你部署其他 SMS 提供程序，以为连接提供高可用性。  
+
+-   **缺点：**  
+
+    -   由于与站点服务器和站点数据库计算机协调需要额外的网络活动，因此 SMS 提供程序的性能可能会降低。  
+
+    -   此服务器必须始终可供站点数据库计算机以及安装了 Configuration Manager 控制台的所有计算机访问。  
+
+    -   此位置可以使用以其他方式专供其他服务使用的系统资源。  
+
+##  <a name="BKMK_SMSProvLanguages"></a> 关于 SMS 提供程序语言  
+ SMS 提供程序的操作与安装它的计算机的显示语言无关。  
+
+ 当管理用户或 Configuration Manager 使用 SMS 提供程序处理请求数据时，SMS 提供程序尝试返回格式与请求计算机的操作系统语言匹配的数据。
+
+它尝试匹配语言的方式颇为间接。 SMS 提供程序未将信息从一种语言翻译成另一种语言。 相反，在 Configuration Manager 控制台中返回要显示的数据时，数据的显示语言取决于对象的源和存储类型。  
+
+ 当对象的数据存储在数据库中时，将能够使用的语言取决于下列各项：  
+
+-   系统使用多语言支持将 Configuration Manager 创建的对象存储在数据库中。 系统使用运行安装程序时创建对象所在的站点中配置的语言存储对象。 如果请求计算机的显示语言可用于对象，则在 Configuration Manager 控制台中以该语言显示这些对象。 如果无法用请求计算机的显示语言来显示对象，则以默认语言（英文）显示该对象。  
+
+-   系统使用用于创建对象的语言在数据库中存储管理用户创建的对象。 这些对象以此相同的语言在 Configuration Manager 控制台中显示。 它们无法被 SMS 提供程序转换，并且没有多语言选项。  
+
+##  <a name="BKMK_MultiSMSProv"></a> 使用多个 SMS 提供程序  
+ 站点完成安装后，你可以为站点安装其他 SMS 提供程序。 要安装其他 SMS 提供程序，请在站点服务器上运行 Configuration Manager 安装程序。 如果满足以下任一条件，请考虑安装其他 SMS 提供程序：  
+
+-   将会有许多管理用户在运行 Configuration Manager 控制台的同时连接到站点。  
+
+-   你将使用可能引入 SMS 提供程序频繁调用的 Configuration Manager SDK 或其他产品。  
+
+-   你想要确保 SMS 提供程序的高可用性。  
+
+
+在站点上安装多个 SMS 提供程序并且进行连接请求时，站点随机分配每个新连接请求以使用安装的 SMS 提供程序。 你无法指定要用于特定连接会话的 SMS 提供程序位置。  
 
 > [!NOTE]  
->  Cada usuário administrativo que usa um console remoto do Configuration Manager requer permissões DCOM de ativação remota no computador do servidor do site e no computador Provedor de SMS. Embora você possa conceder esses direitos a qualquer usuário ou grupo, como prática recomendada, atribua-os ao grupo de administradores de SMS para simplificar a administração. Para obter mais informações, consulte a seção [Configure DCOM permissions for remote Configuration Manager consoles](../../../core/servers/manage/modify-your-infrastructure.md#BKMK_ConfigDCOMforRemoteConsole) no tópico [Modify your System Center Configuration Manager infrastructure](../../../core/servers/manage/modify-your-infrastructure.md) .  
+>  请考虑每个 SMS 提供程序位置的优缺点。 由于你无法控制哪个 SMS 提供程序用于每个新连接，请在这些因素中做出权衡。  
+
+例如，首次将 Configuration Manager 控制台连接至站点时，连接会查询站点服务器上的 WMI 以查找控制台将使用的 SMS 提供程序的实例。 在 Configuration Manager 控制台会话结束之前，Configuration Manager 控制台仍使用 SMS 提供程序的此特定实例。 如果会话由于 SMS 提供程序计算机在网络上变得不可用而终止，那么在重新连接 Configuration Manager 控制台时，站点会重复识别要连接到的 SMS 提供程序的实例的任务。 可以分配给不可用的同一 SMS 提供程序计算机。 如果出现这种情况，则在分配可用的 SMS 提供程序计算机之前，可以尝试重新连接 Configuration Manager 控制台。  
+
+##  <a name="BKMK_AboutSMSAdmins"></a> 关于 SMS 管理员组  
+ 你可以使用“SMS 管理员”组为管理用户提供 SMS 提供程序访问权限。 安装站点时会在站点服务器上自动创建此组，并且会在安装 SMS 提供程序的每台计算机上自动创建此组。 以下是关于“SMS 管理员”组的其他信息：  
+
+-   当计算机为成员服务器时，会作为本地组来创建 SMS 管理员组。  
+
+-   当计算机为域控制器时，会作为域本地组来创建 SMS 管理员组。  
+
+-   从计算机中卸载 SMS 提供程序时，不会从计算机中删除 SMS 管理员组。  
 
 
-##  <a name="BKMK_SMSProvNamespace"></a> Sobre o namespace do Provedor de SMS  
-A estrutura do Provedor de SMS é definida pelo esquema WMI. Namespaces do esquema descrevem a localização dos dados do Configuration Manager dentro do esquema Provedor de SMS. A tabela a seguir contém alguns namespaces comuns usados pelo Provedor de SMS.  
+在用户成功连接到 SMS 提供程序之前，其用户帐户必须是“SMS 管理员”组的成员。 在 Configuration Manager 控制台中配置的每个管理用户都会自动添加到每个站点服务器上的“SMS 管理员”组中，以及层次结构内的每个 SMS 提供程序计算机中。 从 Configuration Manager 控制台中删除管理用户时，会从每个站点服务器上的“SMS 管理员”组中以及层次结构中的每个 SMS 提供程序计算机上删除该用户。  
 
-|espaço de nome|Descrição|  
+当用户成功连接到 SMS 提供程序之后，基于角色的管理会确定用户可以访问或管理的 Configuration Manager 资源。  
+
+你可以使用 WMI 控件 MMC 管理单元来查看和配置 SMS 管理员组权限。 默认情况下，“Everyone”  具有“执行方法” 、“提供程序写入” 和“启用帐户”  权限。 当用户连接到 SMS 提供程序之后，会根据 Configuration Manager 控制台中定义的基于角色的管理安全权限向用户授予对站点数据库中的数据的访问权限。 SMS 管理员组被明确授予对 **Root\SMS** 命名空间的“启用帐户”和“远程启用”权限。  
+
+> [!NOTE]  
+>  使用远程 Configuration Manager 控制台的每个管理用户需要站点服务器计算机和 SMS 提供程序计算机上的“远程激活”DCOM 权限。 虽然可以将这些权限授予任何用户或组，但建议将这些权限授予“SMS 管理员”组以简化管理。 有关详细信息，请参阅 [Configure DCOM permissions for remote Configuration Manager consoles](../../../core/servers/manage/modify-your-infrastructure.md#BKMK_ConfigDCOMforRemoteConsole) 主题中的 [Modify your System Center Configuration Manager infrastructure](../../../core/servers/manage/modify-your-infrastructure.md) 部分。  
+
+
+##  <a name="BKMK_SMSProvNamespace"></a> 关于 SMS 提供程序命名空间  
+SMS 提供程序的结构由 WMI 架构来定义。 架构命名空间描述 SMS 提供程序架构内 Configuration Manager 数据的位置。 下表包含 SMS 提供程序使用的一些常见命名空间。  
+
+|Namespace|描述|  
 |---------------|-----------------|  
-|Root\SMS\site_*&lt;código do site\>*|O Provedor de SMS, que é muito utilizado pelo console do Configuration Manager, Gerenciador de Recursos, ferramentas do Configuration Manager e scripts.|  
-|Root\SMS\SMS_ProviderLocation|A localização dos computadores do Provedor de SMS para um site.|  
-|Root\cimv2|O local de inventário para obter informações de namespace do WMI durante o inventário de hardware e software.|  
-|Root\CCM|Dados do cliente e políticas de configuração do cliente do Configuration Manager.|  
-|root\CIMv2\SMS|A localização de classes de relatório de inventário que são coletadas pelo agente do cliente de inventário. Essas configurações são compiladas pelos clientes durante a avaliação de políticas do computador e são baseadas nas definições de configuração do cliente para o computador.|  
+|Root\SMS\site_*&lt;site code\>*|Configuration Manager 控制台、资源浏览器、Configuration Manager 工具和脚本广泛使用的 SMS 提供程序。|  
+|Root\SMS\SMS_ProviderLocation|站点的 SMS 提供程序计算机的位置。|  
+|Root\CIMv2|清点硬件和软件期间针对 WMI 命名空间信息清点的位置。|  
+|Root\CCM|Configuration Manager 客户端配置策略和客户端数据。|  
+|root\CIMv2\SMS|清单客户端代理收集的清单报告类别的位置。 这些设置由客户端在计算机策略评估期间编译，而且基于计算机的客户端设置的配置。|  
 
-##  <a name="BKMK_WAIKforSMSProv"></a> Requisitos de implantação do sistema operacional para o Provedor de SMS  
-O computador no qual você instala uma instância do Provedor de SMS deve ter a versão obrigatória do Windows ADK exigida pela versão do Configuration Manager que você está usando.  
+##  <a name="BKMK_WAIKforSMSProv"></a> 针对 SMS 提供程序的操作系统部署要求  
+安装 SMS 提供程序实例的计算机必须具备使用的 Configuration Manager 版本所需的 Windows ADK 版本。  
 
- -   Por exemplo, a versão 1511 do Configuration Manager exige a versão Windows 10 RTM (10.0.10240) do Windows ADK.  
+ -   例如，1511 版本的 Configuration Manager 需要 Windows ADK 的 Windows 10 RTM (10.0.10240) 版本。  
 
- -   Para mais informações sobre esse requisito, consulte [Requisitos de infraestrutura para implantação do sistema operacional](/sccm/osd/plan-design/infrastructure-requirements-for-operating-system-deployment).  
+ -   有关此要求的详细信息，请参阅[操作系统部署的基础架构要求](/sccm/osd/plan-design/infrastructure-requirements-for-operating-system-deployment)。  
 
-Ao gerenciar implantações do sistema operacional, o Windows ADK permite que o Provedor de SMS conclua diversas tarefas, inclusive:  
+在管理操作系统部署时，Windows ADK 允许 SMS 提供程序完成不同的任务，比如：  
 
--   Exibir detalhes do arquivo WIM.  
+-   查看 WIM 文件详细信息。  
 
--   Adicionar arquivos de driver a imagens de inicialização existentes.  
+-   将驱动程序文件添加到现有的启动映像中。  
 
--   Criar arquivos .ISO de inicialização.  
+-   创建启动 .ISO 文件。  
 
 
-A instalação do Windows ADK pode exigir até 650 MB de espaço livre em disco em cada computador que instalar o Provedor de SMS. A alta demanda de espaço em disco é necessária para que o Configuration Manager instale imagens de inicialização do Windows PE.  
-
+在安装 SMS 提供程序的每台计算机上，安装 Windows ADK 可能需要最多 650 MB 的可用磁盘空间。 Configuration Manager 需要如此高的磁盘空间来安装 Windows PE 启动映像。  

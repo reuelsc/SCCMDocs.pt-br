@@ -1,134 +1,131 @@
 ---
-title: "Criar uma sequência de tarefas para atualizar um sistema operacional | Microsoft Docs"
-description: "Sequências de tarefas no System Center Configuration Manager podem atualizar automaticamente um sistema operacional do Windows 7 ou posterior para o Windows 10."
+title: "创建用于升级操作系统的任务序列 | Microsoft Docs"
+description: "System Center Configuration Manager 中的任务序列可自动将操作系统从 Windows 7 或更高版本升级到 Windows 10。"
 ms.custom: na
 ms.date: 10/06/2016
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
-ms.technology:
-- configmgr-osd
+ms.technology: configmgr-osd
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 7591e386-a9ab-4640-8643-332dce5aa006
-caps.latest.revision: 12
+caps.latest.revision: "12"
 author: Dougeby
 ms.author: dougeby
 manager: angrobe
-ms.translationtype: HT
-ms.sourcegitcommit: 1035dbbf944a3a467d637a4a948a75b0946eb711
 ms.openlocfilehash: 4a3c69edc85a4ea7501510b6b3f12c72ad3a24ff
-ms.contentlocale: pt-br
-ms.lasthandoff: 07/11/2017
-
+ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
+ms.translationtype: HT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 08/07/2017
 ---
-# <a name="create-a-task-sequence-to-upgrade-an-operating-system-in-system-center-configuration-manager"></a>Crie uma sequência de tarefas para atualizar um sistema operacional no System Center Configuration Manager
+# <a name="create-a-task-sequence-to-upgrade-an-operating-system-in-system-center-configuration-manager"></a>创建任务序列来升级 System Center Configuration Manager 中的操作系统
 
-*Aplica-se a: System Center Configuration Manager (Branch Atual)*
+*适用范围：System Center Configuration Manager (Current Branch)*
 
-Use sequências de tarefas no System Center Configuration Manager para atualizar automaticamente um sistema operacional do Windows 7 ou posterior para o Windows 10 ou Windows Server 2012 ou posterior para Windows Server 2016 em um computador de destino. Você cria uma sequência de tarefas que faz referência à imagem do sistema operacional que você deseja instalar no computador de destino e qualquer outro conteúdo adicional, como aplicativos ou atualizações de software que você deseja instalar. A sequência de tarefas para atualizar um sistema operacional faz parte do cenário [Atualizar o Windows para a versão mais recente](upgrade-windows-to-the-latest-version.md).  
+在 System Center Configuration Manager 中使用任务序列，自动在目标计算机上将操作系统从 Windows 7 或更高版本升级到 Windows 10，或从 Windows Server 2012 或更高版本升级到 Windows Server 2016。 你创建一个任务序列，该任务序列引用要安装在目标计算机上的操作系统映像，以及要安装的任何其他附加内容（例如应用程序或软件更新）。 用于升级操作系统的任务序列属于[将 Windows 升级到最新版本](upgrade-windows-to-the-latest-version.md)方案的一部分。  
 
-##  <a name="BKMK_UpgradeOS"></a> Criar uma sequência de tarefas para atualizar um sistema operacional  
- Para atualizar o sistema operacional em computadores, você pode criar uma sequência de tarefas e selecionar a opção **Atualizar um sistema operacional do pacote de atualização** no assistente Criar Sequência de Tarefas. O assistente adicionará as etapas para atualizar o sistema operacional, aplicar atualizações de software e instalar aplicativos. Antes de criar a sequência de tarefas, o seguinte deve estar disponível:    
+##  <a name="BKMK_UpgradeOS"></a>创建用于升级操作系统的任务序列  
+ 若要升级计算机上的操作系统，可以创建一个任务序列，并在“创建任务序列向导”中选择“通过升级包升级操作系统”。 该向导将添加一些步骤，用于升级操作系统、应用软件更新和安装应用程序。 在创建任务序列之前，必须部署以下内容：    
 
--   **Necessária**  
+-   **必需**  
 
-     - O [pacote de atualização do sistema operacional](../get-started/manage-operating-system-upgrade-packages.md) deve estar disponível no console do Configuration Manager.
-     - Ao atualizar para o Windows Server 2016, você deve selecionar a configuração **Ignorar quaisquer mensagens descartáveis de compatibilidade** na etapa da sequência de tarefas Atualizar Sistema Operacional ou a atualização falhará.
+     - [操作系统升级包](../get-started/manage-operating-system-upgrade-packages.md)必须在 Configuration Manager 控制台中可用。
+     - 升级到 Windows Server 2016 时，必须在“升级操作系统任务序列步骤”中选择“忽略任何可拒绝的兼容性消息”设置，否则升级将失败。
 
--   **Necessário (se usado)**  
+-   **必需（若使用）**  
 
-    -   As [atualizações de software](../../sum/get-started/synchronize-software-updates.md) devem estar sincronizadas no console do Configuration Manager.  
+    -   必须在 Configuration Manager 控制台中同步[软件更新](../../sum/get-started/synchronize-software-updates.md)。  
 
-    -   Os [aplicativos](../../apps/deploy-use/create-applications.md) devem ser adicionados ao console do Configuration Manager.  
+    -   必须将[应用程序](../../apps/deploy-use/create-applications.md)添加到 Configuration Manager 控制台。  
 
-#### <a name="to-create-a-task-sequence-that-upgrades-an-operating-system"></a>Para criar uma sequência de tarefas que atualiza um sistema operacional  
+#### <a name="to-create-a-task-sequence-that-upgrades-an-operating-system"></a>创建可升级操作系统的任务序列  
 
-1.  No console do Configuration Manager, clique em **Biblioteca de Software**.  
+1.  在 Configuration Manager 控制台中，单击“软件库” 。  
 
-2.  No espaço de trabalho **Biblioteca de Software** , expanda **Sistemas Operacionais**e clique em **Sequências de Tarefas**.  
+2.  在“软件库”  工作区中，展开“操作系统” ，然后单击“任务序列” 。  
 
-3.  Na guia **Início** , no grupo **Criar** , clique em **Criar Sequência de Tarefas** para iniciar o Assistente para Criar Sequência de Tarefas.  
+3.  在“主页”  选项卡上的“创建”  组中，单击“创建任务序列”  以启动创建任务序列向导。  
 
-4.  Na página **Criar uma nova sequência de tarefas** , clique em **Atualizar um sistema operacional do pacote de atualização**e, em seguida, clique em **Avançar**.  
+4.  在“创建新的任务序列”  页上，单击“从升级包升级操作系统” ，然后单击“下一步” 。  
 
-5.  Na página **Informações da Sequência de Tarefas** , especifique as seguintes configurações e clique em **Próximo**.  
+5.  在“任务序列信息”  页上，指定以下设置，然后单击“下一步” 。  
 
-    -   **Nome da sequência de tarefas**: especifique um nome que identifique a sequência de tarefas.  
+    -   **任务序列名称**：指定用于标识任务序列的名称。  
 
-    -   **Descrição**: especifique uma descrição da tarefa executada pela sequência de tarefas.  
+    -   “说明”：指定任务序列所执行的任务的描述。  
 
-6.  Na página **Atualizar o sistema operacional Windows** , especifique as seguintes configurações e, em seguida, clique em **Avançar**.  
+6.  在“升级 Windows 操作系统”  页上，指定以下设置，然后单击“下一步” 。  
 
-    -   **Atualizar pacote**: especifique o pacote de atualização que contenha os arquivos de origem de atualização do sistema operacional. Você pode verificar se você selecionou o pacote de atualização correto examinando as informações no painel **Propriedades** . Para obter mais informações, consulte [Gerenciar pacotes de atualização do sistema operacional](../get-started/manage-operating-system-upgrade-packages.md).  
+    -   “升级包”：指定包含操作系统升级源文件的升级包。 你可以通过查看“属性”  窗格中的信息来验证你是否选择了正确的升级包。 有关详细信息，请参阅[管理操作系统升级包](../get-started/manage-operating-system-upgrade-packages.md)。  
 
-    -   **Índice de edição**: se houver vários índices de edição do sistema operacional disponíveis no pacote, selecione o índice de edição desejado. Por padrão, o primeiro item é selecionado.  
+    -   “版本索引”：如果包中有多个操作系统版本索引可用，请选择所需的版本索引。 默认情况下，选择第一项。  
 
-    -   **Chave do produto (Product Key)**: especifique a chave do produto (Product Key) do sistema operacional Windows que será instalada. Você pode especificar as chaves de licença de volume codificadas e as chaves do produto padrão. Se você usar uma chave de produto sem codificação, cada grupo de cinco caracteres deverá ser separado por um traço (-). Por exemplo: *XXXXX-XXXXX-XXXXX-XXXXX-XXXXX*. Quando a atualização é para uma edição de licença de volume, a chave do produto não é necessária. Você só precisa de uma chave do produto quando a atualização é para uma edição de varejo do Windows.  
+    -   “产品秘钥”：指定要安装的 Windows 操作系统的产品密钥。 你可以指定编码的批量许可证密钥和标准产品密钥。 如果使用非编码的产品密钥，则必须通过短划线 (-) 分隔每组 5 个字符。 例如： *XXXXX-XXXXX-XXXXX-XXXXX-XXXXX*。 当对批量许可证版本进行升级时，不需要产品密钥。 仅对零售 Windows 版本进行升级时，才需要产品密钥。  
 
-    -   **Ignorar mensagens descartáveis de compatibilidade**: selecione essa opção se você estiver atualizando para o Windows Server 2016. Se você não selecionar essa configuração, a sequência de tarefas não conseguirá ser concluída porque a Instalação do Windows estará aguardando que o usuário clique em **Confirmar** em uma caixa de diálogo de compatibilidade de aplicativo do Windows.   
+    -   **忽略任何可拒绝的兼容性消息**：如果要升级到 Windows Server 2016，请选择此设置。 如果不选择此设置，则任务序列无法完成，因为 Windows 安装程序正等待用户在“Windows 应用兼容性”对话框上单击“确认”。   
 
-7.  Na página **Incluir Atualizações** , especifique se deseja instalar as atualizações de software necessárias, todas as atualizações ou nenhuma e clique em **Próximo**. Se optar pela instalação das atualizações de software, o Configuration Manager instalará somente aquelas que fizerem parte das coleções das quais o computador de destino é membro.  
+7.  在“包括更新”  页上，指定是安装必需的软件更新、所有软件更新还是不安装软件更新，然后单击“下一步” 。 如果指定要安装软件更新，Configuration Manager 将只会安装以包含目标计算机的集合为目标的那些软件更新。  
 
-8.  Na página **Instalar Aplicativos** , especifique os aplicativos a instalar no computador de destino e clique em **Próximo**. Se você especificar vários aplicativos, será possível também definir a continuação da sequência de tarefas em caso de falha na instalação de algum aplicativo.  
+8.  在“安装应用程序”  页上，指定要安装在目标计算机上的应用程序，然后单击“下一步” 。 如果指定多个应用程序，你也可以指定任务序列在特定应用程序的安装失败时继续进行。  
 
-9. Conclua o assistente.  
+9. 完成向导。  
 
 
 
-## <a name="configure-pre-cache-content"></a>Configurar o conteúdo de armazenamento prévio em cache
-A partir da versão 1702, para implantações disponíveis de sequências de tarefas, é possível optar por usar o recurso de armazenamento prévio em cache para que os clientes baixem apenas o conteúdo relevante antes de um usuário instalá-lo.
+## <a name="configure-pre-cache-content"></a>配置预先缓存内容
+从版本 1702 开始，对于任务序列的可用部署，可选择使用预先缓存功能，让客户端在用户安装内容之前仅下载相关内容。
 > [!TIP]  
-> Apresentado com a versão 1702, o pré-cache é um recurso de pré-lançamento. Para habilitá-lo, confira [Use pre-release features from updates](/sccm/core/servers/manage/pre-release-features) (Usar recursos de pré-lançamento de atualizações).
+> 在 1702 版本中引入，预先缓存是一项预发行功能。 若要启用此功能，请参阅[使用更新中的预发行功能](/sccm/core/servers/manage/pre-release-features)。
 
-Por exemplo, digamos que você deseja implantar uma sequência de tarefas de atualização in-loco do Windows 10, deseja apenas uma sequência de tarefas para todos os usuários e tem várias arquiteturas e/ou idiomas. Antes da versão 1702, se você criar uma implantação disponível e, em seguida, o usuário clicar em **Instalar** no Centro de Software, o conteúdo será baixado neste momento. Isso acrescenta um tempo antes que a instalação esteja pronta para iniciar. Além disso, todo o conteúdo referenciado na sequência de tarefas é baixado. Isso inclui o pacote de atualização do sistema operacional para todas as arquiteturas e idiomas. Se cada um tiver aproximadamente 3 GB de tamanho, o pacote de download poderá ser bastante grande.
+例如，假设要部署 Windows 10 就地升级任务序列，只想为所有用户提供单个任务序列，并且具有多个体系结构和/或语言。 在版本 1702 之前，如果创建可用部署，然后用户在软件中心中单击“安装”，则将在此时下载内容。 这在安装准备启动之前增加了额外时间。 另外，将下载任务序列中引用的所有内容。 这包括所有语言和体系结构的操作系统升级包。 如果每个包大小都约为 3 GB，则下载包可能会很大。
 
-O conteúdo de armazenamento prévio em cache oferece a opção de permitir que o cliente baixe apenas o conteúdo aplicável assim que receber a implantação. Portanto, quando o usuário clicar em **Instalar** no Centro de Software, o conteúdo estará pronto e a instalação iniciará rapidamente, pois o conteúdo está no disco rígido local.
+借助预先缓存内容，用户可选择允许客户端在收到部署后立即下载适用的内容。 因此，当用户在软件中心中单击“安装”时，内容便已就绪，并且安装可以快速启动，因为内容位于本地硬盘上。
 
-### <a name="to-configure-the-pre-cache-feature"></a>Para configurar o recurso de armazenamento prévio em cache
+### <a name="to-configure-the-pre-cache-feature"></a>配置预先缓存功能
 
-1. Crie pacotes de atualização de sistema operacional para arquiteturas e idiomas específicos. Especifique a arquitetura e o idioma na guia **Fonte de Dados** do pacote. Para o idioma, use a conversão decimal (por exemplo, 1033 é o decimal para inglês e 0x0409 é o equivalente hexadecimal). Para ver mais detalhes, veja [Criar uma sequência de tarefas para atualizar um sistema operacional](/sccm/osd/deploy-use/create-a-task-sequence-to-upgrade-an-operating-system).
+1. 为特定体系结构和语言创建操作系统升级包。 在包的“数据源”选项卡上指定体系结构和语言。 对于语言，使用十进制转换（例如，英语的十进制为 1033，其十六进制等效项是 0x0409）。 有关详细信息，请参阅[创建用于升级操作系统的任务序列](/sccm/osd/deploy-use/create-a-task-sequence-to-upgrade-an-operating-system)。
 
-    Os valores de arquitetura e idioma são usados para corresponder condições de etapa de sequência de tarefas que você criará na próxima etapa para determinar se o pacote de atualização do sistema operacional deve ser previamente armazenado em cache.
-2. Crie uma sequência de tarefas com etapas condicionais para diferentes idiomas e arquiteturas. Por exemplo, para a versão em inglês, você pode criar uma etapa com o seguinte:
+    体系结构和语言值用于匹配将在下一步中创建的任务序列步骤条件，以确定是否应预先缓存操作系统升级包。
+2. 为不同的语言和体系结构创建具有条件步骤的任务序列。 例如，对于英语版本，可创建如下所示的步骤：
 
-    ![Propriedades de armazenamento prévio em cache](../media/precacheproperties2.png)
+    ![预先缓存属性](../media/precacheproperties2.png)
 
-    ![Opções de armazenamento prévio em cache](../media/precacheoptions2.png)  
+    ![预先缓存选项](../media/precacheoptions2.png)  
 
-3. Implantar a sequência de tarefas. Para o recurso de armazenamento prévio em cache, configure o seguinte:
-    - Na guia **Geral**, selecione **Conteúdo previamente baixado para esta sequência de tarefas**.
-    - Na guia **Configurações de implantação**, configure a sequência de tarefas com **Disponível** para **Finalidade**. Se você criar uma implantação **Obrigatória**, a funcionalidade de armazenamento prévio em cache não funcionará.
-    - Na guia **Agendamento**, para a configuração **Agendar quando essa implantação estará disponível**, escolha uma hora futura que conceda aos clientes tempo suficiente para armazenar previamente em cache o conteúdo para a implantação disponibilizada para os usuários. Por exemplo, você pode definir o tempo disponível para 3 horas no futuro para oferecer tempo suficiente para o conteúdo ser previamente armazenado em cache.  
-    - Na guia **Pontos de Distribuição**, defina as configurações **Opções de implantação**. Se o conteúdo não tiver sido armazenado previamente em cache em um cliente antes de um usuário iniciar a instalação, essas configurações serão usadas.
-
-
-### <a name="user-experience"></a>Experiência do usuário
-- Quando o cliente receber a política de implantação, ele começará a armazenar previamente o conteúdo em cache. Isso inclui todo o conteúdo referenciado (todos os demais tipos de pacote) e somente o pacote atualização do sistema operacional que corresponder ao cliente, com base nas condições que você definir na sequência de tarefas.
-- Quando a implantação for disponibilizada para os usuários (a configuração na guia **Agendamento** da implantação), uma notificação será exibida para informar os usuários sobre a nova implantação e ela ficará visível no Centro de Software. O usuário poderá acessar o Centro de Software e clicar em **Instalar** para iniciar a instalação.
-- Se o conteúdo não tiver sido armazenado previamente em cache em sua totalidade, ele usará as configurações especificadas na guia **Opções de Implantação** da implantação. É recomendável que haja tempo suficiente desde que a implantação é criada até o momento em que ela se fica disponível para os usuários, a fim de conceder aos clientes tempo suficiente para armazenar previamente o conteúdo em cache.
+3. 部署任务序列。 对于预先缓存功能，请配置以下各项：
+    - 在“常规”选项卡上，选择“此任务序列的预下载内容”。
+    - 在“部署设置”选项卡上，配置任务序列，将“目的”配置为“可用”。 如果创建**所需**部署，预先缓存功能将不起作用。
+    - 在“计划”选项卡上，对于“当此部署可用时进行计划”设置，选择将来的某一时间，以便在部署对用户可用之前为客户端提供足够的时间来预先缓存内容。 例如，可将可用时间设置为未来 3 小时，以便有足够的时间来预先缓存内容。  
+    - 在“分发点”选项卡上，配置“部署选项”设置。 如果用户开始安装之前，该内容未预先缓存到客户端，则使用这些设置。
 
 
+### <a name="user-experience"></a>用户体验
+- 客户端收到部署策略时，将开始预先缓存内容。 这包括所有引用的内容（任何其他包类型），并且仅包括基于任务序列中设置的条件匹配客户端的操作系统升级包。
+- 部署对用户可用时（部署的“计划”选项卡上的设置），将显示一条通知，告知用户有关新部署的信息以及该部署在软件中心中可见。 用户可转到软件中心并单击“安装”以开始安装。
+- 如果内容未完全预先缓存，则它将使用部署的“部署选项”选项卡上指定的设置。 建议在创建部署和用户可使用部署之间保留足够的时间，以允许客户端预先缓存内容。
 
-## <a name="download-package-content-task-sequence-step"></a>Baixar etapa de sequência de tarefas do conteúdo do pacote  
- A etapa [Baixar Conteúdo do Pacote](../understand/task-sequence-steps.md#BKMK_DownloadPackageContent) pode ser usada antes da etapa **Atualizar o Sistema Operacional** nos seguintes cenários:  
 
--   Use uma sequência de tarefas de atualização única que possa funcionar com plataformas x86 e x64. Para fazer isso, inclua duas etapas **Baixar Conteúdo do Pacote** no grupo **Preparar para Atualização** com condições para detectar a arquitetura do cliente e baixar apenas o Pacote de atualização do sistema operacional apropriado. Configure cada etapa **Baixar Conteúdo do Pacote** para usar a mesma variável e use a variável para o caminho de mídia na etapa **Atualizar Sistema Operacional** .  
 
--   Para baixar um pacote de drivers aplicáveis dinamicamente, use duas etapas **Baixar Conteúdo do Pacote** com condições para detectar o tipo de hardware apropriado para cada pacote de drivers. Configure cada etapa **Baixar Conteúdo do Pacote** para usar a mesma variável e use a variável para o valor **Conteúdo de Teste** na seção de drivers da etapa **Atualizar Sistema Operacional** .  
+## <a name="download-package-content-task-sequence-step"></a>下载包内容的任务序列步骤  
+ 在以下方案中，可先使用[下载包内容](../understand/task-sequence-steps.md#BKMK_DownloadPackageContent)步骤，再使用升级操作系统步骤：  
+
+-   你想要使用可用于 x86 和 x64 平台的单一升级任务序列。 为了实现这一目的，在“升级准备”  组中包括两个“下载包内容”  步骤，以及检测客户端体系结构的条件和仅下载相应操作系统升级包的条件。 将每个“下载包内容”步骤配置为使用相同的变量，并将该变量用于“升级操作系统”步骤的媒体路径。  
+
+-   若要动态下载适用的驱动程序包，请使用两个“下载包内容”步骤以及检测每个驱动程序包的相应硬件类型的条件。 将每个“下载包内容”  步骤配置为使用相同的变量，并将该变量用于“升级操作系统”  步骤的驱动程序部分中的“分步内容”  值。  
 
    > [!NOTE]
-   > Quando há mais de um pacote, o Configuration Manager adiciona um sufixo numérico ao nome da variável. Por exemplo, se você especificar uma variável de %mycontent% como uma variável personalizada, essa será a raiz de onde todo o conteúdo referenciado está armazenado (que podem ser vários pacotes). Quando você faz referência à variável em uma etapa posterior, como Atualizar Sistema Operacional, ele é usado com um sufixo numérico. Neste exemplo, %mycontent01% ou %mycontent02%, em que o número corresponde à ordem na qual o pacote está listado nesta etapa.
+   > 当有多个包时，Configuration Manager 会向变量名称中添加数字后缀。 例如，如果指定变量 %mycontent% 作为自定义变量，它就是用于存储所有引用内容（可以是多个包）的根目录。 当引用子序列步骤中的变量时（如升级操作系统），会为该变量添加数字后缀。 在本例中，%mycontent01% 或 %mycontent02%，其中的数字对应于包在此步骤中列出的顺序。
 
-## <a name="optional-post-processing-task-sequence-steps"></a>Etapas opcionais de sequência de tarefas de pós-processamento  
- Depois de criar a sequência de tarefas, você pode configurar edições adicionais como etapas para desinstalar aplicativos com problemas de compatibilidade conhecidos ou adicionar ações de pós-processamento para execução depois que o computador for reiniciado e a atualização do Windows 10 for bem-sucedida. Adicione estas etapas adicionais no grupo de pós-processamento da sequência de tarefas.  
+## <a name="optional-post-processing-task-sequence-steps"></a>可选的后续处理任务序列步骤  
+ 创建任务序列后，你可以添加其他步骤以卸载具有已知兼容性问题的应用程序，也可以添加要在重启电脑并成功升级到 Windows 10 后运行的后续处理操作。 在任务序列的后续处理组中添加这些附加步骤。  
 
 > [!NOTE]  
->  Como esta sequência de tarefas não é linear, existem condições nas etapas que podem afetar os resultados da sequência de tarefas, dependendo se ela atualizar o computador cliente com êxito ou se tiver de reverter o computador cliente para a versão do sistema operacional original.  
+>  由于此任务序列不是线性的，因此，针对步骤的某些条件可能对任务序列的结果产生影响，具体取决于是否成功升级客户端计算机，或者是否必须将客户端计算机回滚到开始升级的操作系统版本。  
 
-## <a name="optional-rollback-task-sequence-steps"></a>Etapas de sequência de tarefas de reversão opcional  
- Quando algo dá errado com o processo de atualização depois que o computador for reiniciado, a instalação vai reverter a atualização para o sistema operacional anterior e a sequência de tarefas continuará com as etapas no grupo de reversão. Depois de criar a sequência de tarefas, você pode adicionar etapas opcionais para o grupo de reversão.  
+## <a name="optional-rollback-task-sequence-steps"></a>可选的回滚任务序列步骤  
+ 当重启计算机后升级过程出现问题时，安装程序会此升级回滚到以前的操作系统，并且任务序列将继续执行回滚组中的任何步骤。 创建任务序列后，你可以将可选步骤添加到回滚组。  
 
-## <a name="folder-and-files-removed-after-computer-restart"></a>Pasta e arquivos removidos após o computador reiniciar  
- Quando a sequência de tarefas para atualizar um sistema operacional para Windows 10 e todas as outras etapas da sequência de tarefas forem concluídas, os scripts de pós-processamento e reversão não são removidos quando o computador for reiniciado.  Esses arquivos de script não contêm informações confidenciais.  
-
+## <a name="folder-and-files-removed-after-computer-restart"></a>重启计算机后删除文件夹和文件  
+ 用于将操作系统升级到 Windows 10 的任务序列和任务序列中的所有其他步骤完成后，重启计算机后将删除后处理和回滚脚本。  这些脚本文件不包含敏感信息。  

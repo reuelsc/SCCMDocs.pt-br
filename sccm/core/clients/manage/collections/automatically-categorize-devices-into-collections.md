@@ -1,60 +1,57 @@
 ---
-title: "Categorizar automaticamente dispositivos em coleções | Microsoft Docs"
-description: "Categorize os dispositivos em coleções com o System Center Configuration Manager."
+title: "自动将设备分类到集合 | Microsoft Docs"
+description: "使用 System Center Configuration Manager 自动将设备分类到集合。"
 ms.custom: na
 ms.date: 04/23/2016
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
-ms.technology:
-- configmgr-other
+ms.technology: configmgr-other
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 98b038b4-1a13-4228-bdb8-a12194e32b0e
-caps.latest.revision: 5
+caps.latest.revision: "5"
 author: robstackmsft
 ms.author: robstack
 manager: angrobe
-ms.translationtype: Human Translation
-ms.sourcegitcommit: 05c27c7aa36e0b4236867766dab36125c31467b3
-ms.openlocfilehash: b1bac05e9335dd757b8f499f97daea24e0f4acbd
-ms.contentlocale: pt-br
-ms.lasthandoff: 01/03/2017
-
+ms.openlocfilehash: d1b79fb091a6ae4b967d63843ae7b45a0cbeb555
+ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
+ms.translationtype: HT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 08/07/2017
 ---
-# <a name="automatically-categorize-devices-into-collections-with-system-center-configuration-manager"></a>Categorizar dispositivos em coleções automaticamente com o System Center Configuration Manager
+# <a name="automatically-categorize-devices-into-collections-with-system-center-configuration-manager"></a>使用 System Center Configuration Manager 自动将设备分类到集合
 
-*Aplica-se a: System Center Configuration Manager (Branch Atual)*
+*适用范围：System Center Configuration Manager (Current Branch)*
 
-Você pode criar categorias de dispositivos, que podem ser usadas para colocar automaticamente os dispositivos em coleções de dispositivos ao usar o Configuration Manager com o Microsoft Intune. Em seguida, os usuários devem escolher uma categoria de dispositivo ao registrar um dispositivo no Intune. É possível alterar uma categoria de dispositivo no console do Configuration Manager.
+可创建设备类别，可将其用于配合使用 Microsoft Intune 和 Configuration Manager 时自动在设备集合中放置设备。 然后用户在 Intune 中注册设备时需要选择某个设备类别。 可从 Configuration Manager 控制台中更改设备类别。
 
 > [!IMPORTANT]  
-    >  Essa funcionalidade funciona com a versão de **junho de 2016** e posterior do Microsoft Intune. Verifique se você atualizou para essa versão antes de experimentar esses procedimentos.
+    >  此功能适用于 **2016 年 6 月**及以后版本的 Microsoft Intune。 试用这些过程前，请确保已更新到此版本。
 
-## <a name="create-device-categories"></a>Criar categorias de dispositivos
+## <a name="create-device-categories"></a>创建设备类别
 
-1.  Acesse **Ativos e Conformidade** > **Visão Geral** > **Coleções de Dispositivos**.
-2.  Na guia **Início**, no grupo **Coleções de Dispositivos**, escolha **Gerenciar Categorias de Dispositivo**.
-3.  Crie, edite ou remova categorias.
+1.  转到“资产和符合性” > “概述” > “设备集合”。
+2.  在“主页”选项卡上的“设备集合”组中，选择“管理设备类别”。
+3.  创建、编辑或删除类别。
 
-## <a name="associate-a-collection-with-a-device-category"></a>Associar uma coleção a uma categoria de dispositivos
+## <a name="associate-a-collection-with-a-device-category"></a>将集合与设备类别相关联
 
-Quando você associar uma coleção a uma categoria de dispositivo, todos os dispositivos dessa categoria serão adicionados à coleção. Não é possível adicionar uma regra de categoria de dispositivo a uma coleção interna como **Todos os Sistemas**.
+将集合与设备类别关联后，该类别中的所有设备都会添加到该集合。 无法将设备类别规则添加到内置集合（如“所有系统”）。
 
-1.  Na guia **Regras de Associação** da caixa de diálogo **Propriedades** de uma coleção de dispositivos, escolha **Adicionar Regra** > **Regra de Categoria de Dispositivo**.
-2.  Na caixa de diálogo **Selecionar Categorias de Dispositivos**, selecione uma ou mais categorias de dispositivos que será aplicada a todos os dispositivos na coleção.
+1.  在设备集合“属性”对话框的“成员身份规则”选项卡上，选择“添加规则” > “设备类别规则”。
+2.  在“选择设备类别”对话框中，选择一个或多个设备类别，所选类别将应用到集合中的所有设备。
 
-## <a name="change-the-category-of-a-device"></a>Alterar a categoria de um dispositivo
+## <a name="change-the-category-of-a-device"></a>更改设备的类别
 
-1.  Em **Ativos e Conformidade** > **Visão Geral** > **Dispositivos**, selecione um dispositivo na lista **Dispositivos**.
-2.  Na guia **Início**, no grupo **Dispositivo**, escolha **Alterar Categoria**.
-3.  Escolha uma categoria e, em seguida, **OK**.
+1.  在“资产和符合性” > “概述” > “设备”中，从“设备”列表中选择一个设备。
+2.  在“主页”选项卡的“设备”组中，选择“更改类别”。
+3.  选择一个类别，然后选择“确定”。
 
-## <a name="view-which-category-a-device-belongs-to"></a>Exibir a qual categoria um dispositivo pertence
+## <a name="view-which-category-a-device-belongs-to"></a>查看设备所属的类别
 
-Em **Ativos e Conformidade** > **Visão Geral** > **Dispositivos**, na lista **Dispositivos**, a categoria é exibida na coluna **Categoria de Dispositivo**.
+在“资产和符合性” > “概述” > “设备”中的“设备”列表中，此类别在“设备类别”列中显示。
 
-Se a coluna **Categoria do Dispositivo** não for exibida, clique com o botão direito do mouse no título de uma das colunas na lista **Dispositivos** (como **Nome**) e selecione **Categoria do Dispositivo**.
+如果“设备类别” 列未显示，请在“设备”列（如“名称”）中右键单击其中一个列标题，然后选择“设备类别”。
 
-Se você atribuir um dispositivo a uma categoria e depois excluir a categoria, o relatório **Lista de Dispositivos registrados por usuário no Microsoft Intune** exibirá um GUID na coluna **Categoria do Dispositivo**, em vez de um nome de categoria.
-
+如果将某个设备分配到某个类别，随后又删除该类别，则“按用户在 Microsoft Intune 中注册的设备的列表”报表将在“设备类别”列显示 GUID，而不显示类别名称。

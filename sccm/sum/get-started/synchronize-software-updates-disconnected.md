@@ -1,7 +1,6 @@
 ---
-
-title: "Sincronizar atualizações sem conexão de Internet – Configuration Manager | Microsoft Docs"
-description: "Execute a sincronização de atualizações de software no ponto de atualização de software superior que está desconectado da Internet."
+title: "不使用 Internet 连接同步更新 - Configuration Manager | Microsoft Docs"
+description: "在断开 Internet 连接的顶层软件更新点上运行软件更新同步。"
 keywords: 
 author: dougeby
 ms.author: dougeby
@@ -10,104 +9,98 @@ ms.date: 01/23/2017
 ms.topic: article
 ms.prod: configuration-manager
 ms.service: 
-ms.technology:
-- configmgr-sum
+ms.technology: configmgr-sum
 ms.assetid: 1a997c30-8e71-4be5-89ee-41efb2c8d199
-ms.translationtype: Human Translation
-ms.sourcegitcommit: 89158debdf4c345a325feeb608db2215a88ed81b
 ms.openlocfilehash: fd9c1e9418ff1956c6ef98753e23a293440179be
-ms.contentlocale: pt-br
-ms.lasthandoff: 05/17/2017
-
-
-
+ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
+ms.translationtype: HT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 08/07/2017
 ---
+# <a name="synchronize-software-updates-from-a-disconnected-software-update-point"></a>从断开连接的软件更新点中同步软件更新  
 
-# <a name="synchronize-software-updates-from-a-disconnected-software-update-point"></a>Sincronizar atualizações de software por meio de um ponto de atualização de software desconectado  
+*适用范围：System Center Configuration Manager (Current Branch)*
 
-*Aplica-se a: System Center Configuration Manager (Branch Atual)*
+ 如果顶层站点上的软件更新点从 Internet 断开连接，你必须使用 WSUSUtil 工具的导出和导入功能来同步软件更新元数据。 可以选择不属于 Configuration Manager 层次结构的现有 WSUS 服务器作为同步源。 本主题提供有关如何使用 WSUSUtil 工具的导出和导入功能的信息。  
 
- Quando o ponto de atualização de software no site de nível superior está desconectado da Internet, você deve usar as funções de exportar e importar da ferramenta WSUSUtil para sincronizar os metadados de atualizações de software. É possível escolher um servidor WSUS existente que não está em sua hierarquia do Configuration Manager como a origem de sincronização. Este tópico fornece informações sobre como usar as funções de exportar e importar da ferramenta WSUSUtil.  
+ 要导出和导入软件更新元数据，你必须从指定导出服务器上的 WSUS 数据库中导出软件更新元数据，接着将本地存储的许可条款文件复制到断开连接的软件更新点，然后将软件更新元数据导入断开连接的软件更新点上的 WSUS 数据库。  
 
- Para exportar e importar metadados de atualizações de software, você deve exportar os metadados de atualizações de software do banco de dados do WSUS em um servidor de exportação especificado, copiar os arquivos de termos de licença armazenados localmente para o ponto de atualização de software desconectado e importar os metadados de atualizações de software no banco de dados do WSUS no ponto de atualização de software desconectado.  
+ 使用下表来确定要在其中导出软件更新元数据的导出服务器。  
 
- Use a tabela a seguir para identificar o servidor de exportação para o qual os metadados de atualizações de software devem ser exportados.  
-
-|Ponto de atualização de software|Origem da atualização upstream para pontos de atualização de software conectados|Servidor de exportação para um ponto de atualização de software desconectado|  
+|软件更新点|连接的软件更新点的上游更新源|断开连接的软件更新点的导出服务器|  
 |---------------------------|-----------------------------------------------------------------|------------------------------------------------------------|  
-|Site de administração central|Microsoft Update (Internet)<br /><br /> Servidor do WSUS existente|Escolha um servidor do WSUS que está sincronizado com o Microsoft Update usando as classificações, os produtos e os idiomas da atualização de software que você necessita em seu ambiente do Configuration Manager.|  
-|Site primário autônomo|Microsoft Update (Internet)<br /><br /> Servidor do WSUS existente|Escolha um servidor do WSUS que está sincronizado com o Microsoft Update usando as classificações, os produtos e os idiomas da atualização de software que você necessita em seu ambiente do Configuration Manager.|  
+|管理中心站点|Microsoft 更新 (Internet)<br /><br /> 现有 WSUS 服务器|通过使用 Configuration Manager 环境中所需的软件更新分类、产品和语言选择与 Microsoft 更新同步的 WSUS 服务器。|  
+|独立主站点|Microsoft 更新 (Internet)<br /><br /> 现有 WSUS 服务器|通过使用 Configuration Manager 环境中所需的软件更新分类、产品和语言选择与 Microsoft 更新同步的 WSUS 服务器。|  
 
- Para poder iniciar o processo de exportação, verifique se a sincronização de atualizações de software está concluída no servidor de exportação selecionado para garantir que os metadados de atualizações de software mais recentes sejam sincronizados. Para verificar se a sincronização de atualizações de software foi concluída com êxito, use o procedimento a seguir.  
+ 在开始导出过程之前，请验证软件更新同步是否已在所选导出服务器上完成，以确保同步最新的软件更新元数据。 要验证软件更新同步是否已成功完成，请使用下列过程。  
 
-#### <a name="to-verify-that-software-updates-synchronization-has-completed-successfully-on-the-export-server"></a>Para verificar se a sincronização de atualizações de software foi concluída com êxito no servidor de exportação  
+#### <a name="to-verify-that-software-updates-synchronization-has-completed-successfully-on-the-export-server"></a>验证软件更新同步是否已在导出服务器上成功完成  
 
-1.  Abra o console de Administração do WSUS e conecte-se ao banco de dados do WSUS no servidor de exportação.  
+1.  在导出服务器上打开 WSUS 管理控制台并连接到 WSUS 数据库。  
 
-2.  No console de Administração do WSUS, clique em **Sincronizações**. Uma lista de tentativas de sincronização de atualizações de software são exibidas no painel de resultados.  
+2.  在 WSUS 管理控制台中，单击“同步” 。 软件更新同步尝试的列表将显示在结果窗格中。  
 
-3.  No painel de resultados, encontre a tentativa mais recente de sincronização de atualizações de software e verifique se ela foi concluída com êxito.  
+3.  在结果窗格中，找到最新的软件更新同步尝试并验证该尝试是否已成功完成。  
 
 > [!IMPORTANT]  
->  A ferramenta WSUSUtil deve ser executada localmente no servidor de exportação para exportar os metadados de atualizações de software e deve ser também executada no servidor do ponto de atualização de software desconectado para importar os metadados de atualizações de software. Além disso, o usuário que executa a ferramenta WSUSUtil deve ser um membro do grupo local de administradores em cada servidor.  
+>  WSUSUtil 工具必须以本地方式在导出服务器上运行才能导出软件更新元数据，并且它还必须在断开连接的软件更新点服务器上运行才能导入软件更新元数据。 此外，运行 WSUSUtil 工具的用户必须是每个服务器上的本地管理员组的成员。  
 
-## <a name="export-process-for-software-updates"></a>Processo de exportação para atualizações de software  
- O processo de exportação para atualizações de software consiste em duas etapas principais: copiar os arquivos de termos de licença armazenados localmente para o ponto de atualização de software desconectado e exportar os metadados de atualizações de software do banco de dados do WSUS no servidor de exportação.  
+## <a name="export-process-for-software-updates"></a>软件更新的导出过程  
+ 软件更新导出过程包括两个主要步骤：将本地存储的许可条款文件复制到断开连接的软件更新点，以及从导出服务器上的 WSUS 数据库中导出软件更新元数据。  
 
- Use o procedimento a seguir para copiar os metadados de termos de licença locais para o ponto de atualização de software desconectado.  
+ 使用下列过程将本地许可条款元数据复制到断开连接的软件更新点。  
 
-#### <a name="to-copy-local-files-from-the-export-server-to-the-disconnected-software-update-point-server"></a>Para copiar arquivos locais do servidor de exportação para o servidor de ponto de atualização de software desconectado  
+#### <a name="to-copy-local-files-from-the-export-server-to-the-disconnected-software-update-point-server"></a>将本地文件从导出服务器复制到断开连接的软件更新点服务器  
 
-1.  No servidor de exportação, navegue até a pasta onde as atualizações de software e os termos de licença para as atualizações de software estão armazenados. Por padrão, o servidor do WSUS armazena os arquivos em <*WSUSInstallationDrive*>\WSUS\WSUSContent\\, em que *WSUSInstallationDrive* é a unidade em que o WSUS está instalado.  
+1.  在导出服务器上，导航到存储软件更新和软件更新许可条款的文件夹。 默认情况下，WSUS 服务器将文件存储在 <*WSUSInstallationDrive*>\WSUS\WSUSContent\\ 下，其中 *WSUSInstallationDrive* 是安装了 WSUS 的驱动器。  
 
-2.  Copie todos os arquivos e pastas desse local na pasta WSUSContent no servidor de ponto de atualização de software desconectado.  
+2.  将所有文件和文件夹从此位置复制到断开连接的软件更新点服务器上的 WSUSContent 文件夹。  
 
- Use o procedimento a seguir para exportar os metadados de atualizações de software do banco de dados do WSUS no servidor de exportação.  
+ 使用下列过程从导出服务器上的 WSUS 数据库中导出软件更新元数据。  
 
-#### <a name="to-export-software-updates-metadata-from-the-wsus-database-on-the-export-server"></a>Para exportar os metadados de atualizações de software do banco de dados do WSUS no servidor de exportação  
+#### <a name="to-export-software-updates-metadata-from-the-wsus-database-on-the-export-server"></a>从导出服务器上的 WSUS 数据库中导出软件更新元数据  
 
-1.  No prompt de comando do servidor de exportação, navegue até a pasta que contém WSUSutil.exe. Por padrão, a ferramenta está localizada em %*ProgramFiles*%\Update Services\Tools. Por exemplo, se a ferramenta estiver localizada no local padrão, digite **cd %ProgramFiles%\Update Services\Tools**.  
+1.  在导出服务器上的命令提示符处，导航到包含 WSUSutil.exe 的文件夹。 默认情况下，该工具位于 %*ProgramFiles*%\Update Services\Tools。 例如，如果该工具位于默认位置中，则键入 **cd %ProgramFiles%\Update Services\Tools**。  
 
-2.  Digite o seguinte para exportar os metadados de atualizações de software para um arquivo de pacote:  
+2.  键入下列命令以将软件更新元数据导出为一个包文件：  
 
      **wsusutil.exe export**  *packagename*  *logfile*  
 
-     Por exemplo:  
+     例如：  
 
      **wsusutil.exe export export.cab export.log**  
 
-     O formato pode ser resumido da seguinte maneira: o WSUSutil.exe é seguido da opção de exportação, do nome do arquivo .cab de exportação que é criado durante a operação de exportação e do nome de um arquivo de log. O WSUSutil.exe exporta os metadados do servidor de exportação e cria um arquivo de log da operação.  
+     此格式可以汇总为如下：WSUSutil.exe 后跟导出选项、在导出操作过程中创建的导出 .cab 文件的名称，以及日志文件的名称。 WSUSutil.exe 从导出服务器中导出元数据，并创建操作的日志文件。  
 
     > [!NOTE]  
-    >  O pacote (arquivo. cab) e o nome do arquivo de log devem ser exclusivos na pasta atual.  
+    >  包（.cab 文件）和日志文件名称在当前文件夹中必须唯一。  
 
-3.  Transfira o pacote de exportação para a pasta que contém o WSUSutil.exe no servidor do WSUS de importação.  
+3.  将导出包移动到导入 WSUS 服务器上包含 WSUSutil.exe 的文件夹。  
 
     > [!NOTE]  
-    >  Se você transferir o pacote para essa pasta, a experiência de importação poderá ser mais fácil. Você pode transferir o pacote para qualquer local que seja acessível para o servidor de importação e especifique o local ao executar o WSUSutil.exe.  
+    >  如果将包移动到此文件夹，导入体验可能会更加轻松。 你可以将包移动到导入服务器可访问的任何位置，然后在运行 WSUSutil.exe 时指定该位置。  
 
-## <a name="import-software-updates-metadata"></a>Importar metadados de atualizações de software  
- Use o procedimento a seguir para importar os metadados de atualizações de software do servidor de exportação para o ponto de atualização de software desconectado.  
+## <a name="import-software-updates-metadata"></a>导入软件更新元数据  
+ 使用下列过程将软件更新元数据从导出服务器导入到断开连接的软件更新点。  
 
 > [!IMPORTANT]  
->  Nunca importe dados exportados de uma fonte não confiável. Se você importa o conteúdo de uma fonte não confiável, isso pode comprometer a segurança de seu servidor do WSUS.  
+>  决不要导入从你不信任的源中导出的任何数据。 如果导入你不信任的源中的内容，将可能会危害 WSUS 服务器的安全性。  
 
-#### <a name="to-import-metadata-to-the-database-of-the-import-server"></a>Para importar metadados para o banco de dados do servidor de importação  
+#### <a name="to-import-metadata-to-the-database-of-the-import-server"></a>将元数据导入到导入服务器的数据库  
 
-1.  No prompt de comando do servidor do WSUS de importação, navegue até a pasta que contém WSUSutil.exe. Por padrão, a ferramenta está localizada em %*ProgramFiles*%\Update Services\Tools.  
+1.  在导入 WSUS 服务器上的命令提示符下，导航到包含 WSUSutil.exe 的文件夹。 默认情况下，该工具位于 %*ProgramFiles*%\Update Services\Tools。  
 
-2.  Digite o seguinte:  
+2.  键入下列命令：  
 
      **wsusutil.exe import**  *packagename*  *logfile*  
 
-     Por exemplo:  
+     例如：  
 
      **wsusutil.exe import export.cab import.log**  
 
-     O formato pode ser resumido da seguinte maneira: o WSUSutil.exe é seguido do comando de importação, do nome do arquivo de pacote (.cab) criado durante a operação de exportação, do caminho do arquivo de pacote, caso ele esteja em uma pasta diferente, e do nome de um arquivo de log. O WSUSutil.exe importa os metadados do servidor de exportação e cria um arquivo de log da operação.  
+     此格式可以汇总为如下：WSUSutil.exe 后跟导入命令、在导出操作过程中创建的包文件 (.cab) 的名称、包文件的路径（如果该文件位于其他文件夹中），以及日志文件的名称。 WSUSutil.exe 从导出服务器中导入元数据，并创建操作的日志文件。  
 
-## <a name="next-steps"></a>Próximas etapas
-Depois de sincronizar as atualizações de software pela primeira vez ou depois que houver novas classificações ou produtos disponíveis, você deverá [configurar as novas classificações e produtos](configure-classifications-and-products.md) para sincronizar atualizações de software com os novos critérios.
+## <a name="next-steps"></a>后续步骤
+在首次同步软件更新后，或有新的可用分类或产品时，必须[配置新的分类和产品](configure-classifications-and-products.md)以便通过新条件同步软件更新。
 
-Depois de sincronizar as atualizações de software com os critérios de que você precisa, [gerencie as configurações de atualizações de software](manage-settings-for-software-updates.md).  
-
+通过所需的条件同步软件更新后，[管理软件更新的设置](manage-settings-for-software-updates.md)。  

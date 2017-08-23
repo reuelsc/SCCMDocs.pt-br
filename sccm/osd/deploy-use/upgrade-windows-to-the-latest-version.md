@@ -1,94 +1,91 @@
 ---
-title: "Atualizar o Windows para a versão mais recente | Microsoft Docs"
-description: Aprenda a usar o Configuration Manager para atualizar um sistema operacional do Windows 7 ou posterior para o Windows 10.
+title: "将 Windows 升级到最新版本 | Microsoft Docs"
+description: "了解如何使用 Configuration Manager 将操作系统从 Windows 7 或更高版本升级到 Windows 10。"
 ms.custom: na
 ms.date: 02/06/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
-ms.technology:
-- configmgr-osd
+ms.technology: configmgr-osd
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: c21eec87-ad1c-4465-8e45-5feb60b92707
-caps.latest.revision: 13
+caps.latest.revision: "13"
 author: Dougeby
 ms.author: dougeby
 manager: angrobe
-ms.translationtype: HT
-ms.sourcegitcommit: 1035dbbf944a3a467d637a4a948a75b0946eb711
 ms.openlocfilehash: 026d61113a918e43ac4395ef092b1931f33f16d3
-ms.contentlocale: pt-br
-ms.lasthandoff: 07/11/2017
-
+ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
+ms.translationtype: HT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 08/07/2017
 ---
-# <a name="upgrade-windows-to-the-latest-version-with-system-center-configuration-manager"></a>Atualizar o Windows para a versão mais recente com o System Center Configuration Manager
+# <a name="upgrade-windows-to-the-latest-version-with-system-center-configuration-manager"></a>使用 System Center Configuration Manager 将 Windows 升级到最新版本
 
-*Aplica-se a: System Center Configuration Manager (Branch Atual)*
+*适用范围：System Center Configuration Manager (Current Branch)*
 
-Este tópico fornece as etapas no System Center Configuration Manager para atualizar um sistema operacional em um computador com Windows 7 ou posterior para o Windows 10 ou do Windows Server 2012 para o Windows Server 2016, em um computador de destino. É possível escolher entre diferentes métodos de implantação, como mídia autônoma ou o Centro de Software. O cenário de atualização in-loco:  
+本主题提供了在 System Center Configuration Manager 中将目标计算机的操作系统从 Windows 7 或更高版本升级到 Windows 10，或从 Windows Server 2012 升级到 Windows Server 2016 的步骤。 你可以在不同的部署方法（如独立媒体或软件中心）中进行选择。 就地升级方案：  
 
--   Atualiza o sistema operacional em computadores que, atualmente, executam o:
-    - Windows 7, Windows 8 ou Windows 8.1. Também é possível fazer atualizações de build a build do Windows 10. Por exemplo, é possível atualizar o Windows 10 RTM para o Windows 10, versão 1511.  
-    - Windows Server 2012. Também é possível fazer atualizações de build a build do Windows Server 2016. Para obter mais detalhes sobre caminhos de atualização, confira [Caminhos de atualização com suporte](https://docs.microsoft.com/windows-server/get-started/supported-upgrade-paths#upgrading-previous-retail-versions-of-windows-server-to-windows-server-2016).    
+-   升级当前运行以下系统版本的计算机的操作系统：
+    - Windows 7、Windows 8 或 Windows 8.1。 你还可以执行 Windows 10 内部版本的升级。 例如，你可以将 Windows 10 RTM 升级到版本为 1511 的 Windows 10。  
+    - Windows Server 2012。 还可以执行 Windows Server 2016 内部版本的升级。 有关支持的升级路径的详细信息，请参阅[支持的升级路径](https://docs.microsoft.com/windows-server/get-started/supported-upgrade-paths#upgrading-previous-retail-versions-of-windows-server-to-windows-server-2016)。    
 
--   Mantém os aplicativos, as configurações e os dados do usuário no computador.  
+-   保留计算机上的应用程序、设置和用户数据。  
 
--   Não tem dependências externas, como o Windows ADK.  
+-   没有 Windows ADK 等外部依赖关系。  
 
--   É mais rápido e mais resiliente do que as implantações tradicionais de sistema operacional.  
+-   比传统操作系统部署更快、更具弹性。  
 
- Use as etapas a seguir para implantar sistemas operacionais na rede usando uma sequência de tarefas.  
+ 根据以下部分，使用任务序列通过网络部署操作系统。  
 
-##  <a name="BKMK_Plan"></a> Planoo  
+##  <a name="BKMK_Plan"></a> 计划  
 
--   **Examine as limitações da sequência de tarefas para atualizar um sistema operacional**  
+-   **查看用于升级操作系统的任务序列的限制。**  
 
-     Examine os seguintes requisitos e limitações para a sequência de tarefas atualizar um sistema operacional, a fim de verificar se ela atende às suas necessidades:  
+     查看使用任务序列升级操作系统时的要求和限制以确保其满足你的需要：  
 
-    -   Você deve adicionar apenas as etapas da sequência de tarefas relacionadas à tarefa principal de implantação de sistemas operacionais e de configuração de computadores após a instalação da imagem. Isso inclui as etapas que instalam pacotes, aplicativos ou atualizações e as etapas que executam linhas de comando, o PowerShell ou que definem variáveis dinâmicas.  
+    -   在安装映像后，应仅添加与部署操作系统和配置计算机核心任务相关的任务序列步骤。 这包括安装包、应用程序或更新的步骤，以及运行命令行、PowerShell 或设置动态变量的步骤。  
 
-    -   Examine os drivers e os aplicativos que estão instalados nos computadores para garantir que eles são compatíveis com o Windows 10 antes de implantar a sequência de tarefas de atualização.  
+    -   在部署升级任务序列前查看安装在计算机中的驱动程序和应用程序以确保它们与 Windows 10 兼容。  
 
-    -   As seguintes tarefas não são compatíveis com a atualização in-loco e exigem o uso de implantações tradicionais de sistema operacional:  
+    -   以下任务与就地升级不兼容，需要使用传统操作系统部署：  
 
-        -   Alterar a associação de domínio de computadores ou atualizar os Administradores Locais.  
+        -   更改计算机域成员身份或更新本地管理员。  
 
-        -   Implementar uma alteração fundamental no computador, incluindo o particionamento de disco, uma alteração de uma arquitetura do x86 para x64, a implementação da UEFI ou a modificação do idioma do sistema operacional base.  
+        -   在计算机上实现基础更改，包括磁盘分区、将 x86 体系结构更改为 x64 体系结构、实现 UEFI 或修改操作系统基本语言。  
 
-        -   Tenha requisitos personalizados, incluindo o uso de uma imagem de base personalizada, com criptografia de disco de terceiros ou solicite operações offline do WinPE.<sup></sup>  
+        -   拥有自定义要求（包括使用自定义基本映像、使用第三方<sup></sup> 磁盘加密），或要求 WinPE 脱机操作。  
 
--   **Planejar e implementar requisitos de infraestrutura**  
+-   **规划和实现基础结构要求**  
 
-     Os únicos pré-requisitos para o cenário de atualização são que você tenha um ponto de distribuição disponível para o pacote de atualização de sistema operacional e quaisquer outros pacotes incluídos na sequência de tarefas. Para mais informações, consulte [Instalar ou modificar um ponto de distribuição](../../core/servers/deploy/configure/install-and-configure-distribution-points.md).
+     此升级方案的唯一先决条件是具有可用于操作系统升级包和任务序列中包含的其他任何包的分发点。 有关详细信息，请参阅[安装或修改分发点](../../core/servers/deploy/configure/install-and-configure-distribution-points.md)。
 
-##  <a name="BKMK_Configure"></a> Configurar  
+##  <a name="BKMK_Configure"></a> 配置  
 
-1.  **Preparar o pacote de atualização de sistema operacional**  
+1.  **准备操作系统升级包**  
 
-     O pacote de atualização do Windows 10 contém os arquivos de origem necessários para atualizar o sistema operacional no computador de destino. Este pacote de atualização deve ter a mesma edição, arquitetura e linguagem que as dos clientes que receberão a atualização.  Para obter mais informações, consulte [Gerenciar pacotes de atualização do sistema operacional](../get-started/manage-operating-system-upgrade-packages.md).  
+     Windows 10 升级包包含在目标计算机上升级操作系统所必需的源文件。 此升级包的版本、体系结构和语言必须与将升级的客户端的相同。  有关详细信息，请参阅[管理操作系统升级包](../get-started/manage-operating-system-upgrade-packages.md)。  
 
-2.  **Criar uma sequência de tarefas para atualizar o sistema operacional**  
+2.  **创建用于升级操作系统的任务序列**  
 
-     Normalmente, você usará as etapas em [Criar uma sequência de tarefas para atualizar um sistema operacional](create-a-task-sequence-to-upgrade-an-operating-system.md) para automatizar a atualização do sistema operacional.  
+     使用[创建用于升级操作系统的任务序列](create-a-task-sequence-to-upgrade-an-operating-system.md)中的步骤自动升级操作系统。  
 
     > [!IMPORTANT]
-    > Ao usar mídia autônoma, você deve incluir uma imagem de inicialização na sequência de tarefas para que ela fique disponível no Assistente para Mídia de Sequência de Tarefas.
+    > 使用独立媒体时，必须在任务序列中包括启动映像，以供“任务序列媒体向导”使用。
 
     > [!NOTE]  
-    > Normalmente, você usará as etapas em [Criar uma sequência de tarefas para atualizar um sistema operacional](create-a-task-sequence-to-upgrade-an-operating-system.md) para criar uma sequência de tarefas para atualizar um sistema operacional para o Windows 10. A sequência de tarefas inclui a etapa Atualizar Sistema Operacional, bem como etapas recomendadas adicionais e os grupos para lidar com o processo de atualização ponta a ponta. No entanto, é possível criar uma sequência de tarefas personalizada e adicionar a etapa [Atualizar Sistema Operacional](../understand/task-sequence-steps.md#BKMK_UpgradeOS) da sequência de tarefas para atualizar o sistema operacional. Essa é a única etapa necessária para atualizar o sistema operacional para o Windows 10. Se você escolher esse método, adicione também a etapa [Reiniciar Computador](../understand/task-sequence-steps.md#a-namebkmkrestartcomputera-restart-computer) após a etapa Atualizar Sistema Operacional para concluir a atualização. Certifique-se de usar a configuração **Sistema operacional padrão instalado atualmente** para reiniciar o computador no sistema operacional instalado e não no Windows PE.  
+    > 通常，将使用[创建用于升级操作系统的任务序列](create-a-task-sequence-to-upgrade-an-operating-system.md)中的步骤来创建任务序列，将操作系统升级到 Windows 10。 任务序列包括升级操作系统步骤以及用于处理端到端升级过程的其他建议步骤和组。 但是，可以创建自定义任务序列并添加 [升级操作系统](../understand/task-sequence-steps.md#BKMK_UpgradeOS)任务序列步骤以升级操作系统。 这是将操作系统升级到 Windows 10 所需的唯一步骤。 如果选择此方法，还要在升级操作系统步骤后添加[重启计算机](../understand/task-sequence-steps.md#a-namebkmkrestartcomputera-restart-computer)步骤来完成升级。 请务必使用“当前安装的默认操作系统”设置，将计算机重启到已安装的操作系统而不是 Windows PE。  
 
-##  <a name="BKMK_Deploy"></a> Implantar  
+##  <a name="BKMK_Deploy"></a> 部署  
 
--   Use um dos seguintes métodos de implantação para implantar o sistema operacional:  
+-   使用下列部署方法之一部署操作系统：  
 
-    -   [Usar o Centro de Software para implantar o Windows pela rede](use-software-center-to-deploy-windows-over-the-network.md)  
+    -   [使用软件中心通过网络部署 Windows](use-software-center-to-deploy-windows-over-the-network.md)  
 
-    -   [Usar a mídia autônoma para implantar o Windows sem uso da rede](use-stand-alone-media-to-deploy-windows-without-using-the-network.md)  
+    -   [使用独立媒体部署 Windows，而不使用网络](use-stand-alone-media-to-deploy-windows-without-using-the-network.md)  
 
-## <a name="monitor"></a>Monitor  
+## <a name="monitor"></a>监视器  
 
--   **Monitorar a implantação da sequência de tarefas**  
+-   **监视任务序列部署**  
 
-     Para monitorar a implantação da sequência de tarefas para atualizar o sistema operacional, consulte [Monitorar implantações do sistema operacional](monitor-operating-system-deployments.md).  
-
+     若要监视任务序列部署以升级操作系统，请参阅[监视操作系统部署](monitor-operating-system-deployments.md)。  

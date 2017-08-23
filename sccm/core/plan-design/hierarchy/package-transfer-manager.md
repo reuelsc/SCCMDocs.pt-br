@@ -1,92 +1,89 @@
 ---
-title: "Gerenciador de Transferência de Pacote | Microsoft Docs"
-description: "Entenda como Gerenciador de Transferência de Pacotes no System Center Configuration Manager transfere o conteúdo de um servidor do site para pontos de distribuição."
+title: "包传输管理器 | Microsoft Docs"
+description: "了解 System Center Configuration Manager 中的包传输管理器如何将内容从站点服务器传输到远程分发点。"
 ms.custom: na
 ms.date: 2/8/2017
 ms.reviewer: na
 ms.suite: na
 ms.prod: configuration-manager
-ms.technology:
-- configmgr-other
+ms.technology: configmgr-other
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 3359f254-dd48-42b7-9eab-c92a3417e3fb
-caps.latest.revision: 3
+caps.latest.revision: "3"
 author: Brenduns
 ms.author: brenduns
 manager: angrobe
-ms.translationtype: Human Translation
-ms.sourcegitcommit: 099345d59891841a336cbada896ec349751fecd3
 ms.openlocfilehash: 54e54409a1792c7e28620a5e3cea3e8d8695c7d4
-ms.contentlocale: pt-br
-ms.lasthandoff: 05/17/2017
-
+ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
+ms.translationtype: HT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 08/07/2017
 ---
-# <a name="package-transfer-manager-in-system-center-configuration-manager"></a>Gerenciador de Transferência de Pacotes no System Center Configuration Manager
+# <a name="package-transfer-manager-in-system-center-configuration-manager"></a>System Center Configuration Manager 中的包传输管理器
 
-*Aplica-se a: System Center Configuration Manager (Branch Atual)*
+*适用范围：System Center Configuration Manager (Current Branch)*
 
-Em um site do System Center Configuration Manager, o Gerenciador de Transferência de Pacote é um componente do SMS_Executive que gerencia a transferência de conteúdo de um computador do servidor de sites para pontos de distribuição remotos em um site. (Um ponto de distribuição remoto é um que não está localizado no computador servidor do site.) O Gerenciador de Transferência de Pacote não dá suporte a configurações realizadas pelo administrador, mas a compreensão de como ele funciona pode ajudar a planejar a infraestrutura de gerenciamento de conteúdo. Também pode ajudar a resolver problemas com a distribuição de conteúdo.
+在 System Center Configuration Manager 站点中，包传输管理器是 SMS_Executive 服务的组件，用于管理将内容从站点服务器计算机传输到站点内远程分发点。 （远程分发点是不位于站点服务器计算机上的分发点。）包传输管理器不支持由管理员配置，但了解它的工作方式有助于规划内容管理基础结构。 还能帮助解决内容分发方面的问题。
 
 
-Ao distribuir conteúdo a um ou mais pontos de distribuição remotos em um site, o **Gerenciador de distribuição** cria um trabalho de transferência de conteúdo. Em seguida, ele notifica o Gerenciador de Transferência de Pacote nos servidores de sites primário e secundário para transferir o conteúdo para os pontos de distribuição remotos.
+将内容分发到站点上的一个或多个远程分发点时，“分发管理器”创建内容传输作业。 然后，它会通知主站点和辅助站点服务器上的包传输管理器将内容传输到远程分发点。
 
- O Gerenciador de Transferência de Pacote registra suas ações no arquivo **pkgxfermgr.log** no servidor do site. O arquivo de log é o único local em que você pode exibir as atividades desse gerenciador.  
+ 包传输管理器会在站点服务器上的“pkgxfermgr.log”  文件中记录其操作。 你只能在此日志文件中查看包传输管理器的活动。  
 
 > [!NOTE]  
->  Nas versões anteriores do Configuration Manager, o Gerenciador de Distribuição gerencia a transferência de conteúdo para um ponto de distribuição remoto. O Gerenciador de Distribuição também gerencia a transferência de conteúdo entre sites. Com o System Center Configuration Manager, o Gerenciador de distribuição continua a gerenciar a transferência de conteúdo entre os dois sites. Entretanto, o Gerenciador de Transferência de Pacote agora gerencia a transferência de conteúdo para uma grande quantidade de pontos de distribuição. Isso ajuda a aumentar o desempenho geral da implantação de conteúdo entre sites e nos pontos de distribuição de um site.  
+>  在 Configuration Manager 的以前版本中，分发管理器管理将内容传输至远程分发点。 分发管理器还管理站点间的内容传输。 借助 System Center Configuration Manager，分发管理器将继续管理两个站点间的内容传输。 但是，包传输管理器现在可管理向大量分发点传输内容。 这有助于提高在站点之间部署内容以及将内容部署到站点内的分发点的整体性能。  
 
-Para transferir conteúdo para um ponto de distribuição padrão, o Gerenciador de Transferência de Pacote utiliza o mesmo procedimento usado pelo Gerenciador de Distribuição nas versões anteriores do Configuration Manager. Ou seja, ele gerencia ativamente a transferência de arquivos para cada ponto de distribuição remoto. No entanto, para distribuir conteúdo para um ponto de distribuição de recepção, o Gerenciador de Transferência de Pacote notifica esse ponto de distribuição de que há conteúdo disponível. Em seguida, o ponto de distribuição de recepção assume o processo de transferência.  
+为了将内容传输到独立的分发点，包传输管理器会像分发管理器在以前的 Configuration Manager 版本中那样运行。 即，对到每个远程分发点的文件传输进行主动管理。 但是，为了将内容分发到请求分发点，包传输管理器会通知请求分发点内容可用。 请求分发点随后接管传输过程。  
 
-As informações a seguir descrevem como o Gerenciador de Transferência de Pacote administra a transferência de conteúdo para os pontos de distribuição padrão e para pontos de distribuição de recepção:
-1.  **O usuário administrativo implanta o conteúdo em um ou mais pontos de distribuição de um site.**  
+下列信息描述了包传输管理器如何管理将内容传输至标准分发点以及配置为请求分发点的分发点的方式：
+1.  **管理员将内容部署到站点中的一个或多个分发点。**  
 
-    -   **Ponto de distribuição padrão:** o Gerenciador de Distribuição cria um trabalho de transferência de conteúdo para esse conteúdo.  
+    -   **标准分发点：**分发管理器为该内容创建内容传输作业。  
 
-    -   **Ponto de distribuição de recepção:** o Gerenciador de Distribuição cria um trabalho de transferência de conteúdo para esse conteúdo.  
+    -   **请求分发点：**分发管理器为该内容创建内容传输作业。  
 
-2.  **O Gerenciador de Distribuição executa verificações preliminares.**  
+2.  **分发管理器运行初步检查。**  
 
-    -   **Ponto de distribuição padrão:** o Gerenciador de Distribuição executa uma verificação básica para confirmar se cada ponto de distribuição está pronto para receber o conteúdo. Após essa verificação, o Gerenciador de Distribuição notifica o Gerenciador de Transferência de Pacote para que ele inicie a transferência do conteúdo para o ponto de distribuição.  
+    -   **标准分发点：**分发管理器运行基本检查，以确认每个分发点都可以接收内容。 在进行此检查后，分发管理器将通知包传输管理器开始将内容传输至该分发点。  
 
-    -   **Ponto de distribuição de recepção**: o Gerenciador de Distribuição inicia o Gerenciador de Transferência de Pacote, o qual, por sua vez, notifica o ponto de distribuição de recepção de que há um novo trabalho de transferência de conteúdo. O Gerenciador de Distribuição não verifica o status dos pontos de distribuição remotos que são de recepção, porque cada ponto de distribuição de recepção gerencia suas próprias transferências de conteúdo.  
+    -   **请求分发点：**分发管理器将启动包传输管理器，然后，包传输管理器会通知请求分发点有新的内容传输作业。 分发管理器不会检查本身为请求分发点的远程分发点的状态，因为每个请求分发点将管理其自己的内容传输。  
 
-3.  **O Gerenciador de Transferência de Pacote se prepara para transferir o conteúdo.**  
+3.  **包传输管理器准备传输内容。**  
 
-    -   **Ponto de distribuição padrão**: o Gerenciador de Transferência de Pacote examina o repositório de conteúdo de instância única de cada ponto de distribuição remoto especificado. A finalidade é identificar todos os arquivos que já estão no ponto de distribuição. Em seguida, o Gerenciador de Transferência de Pacote colocará na fila para transferência apenas os arquivos que ainda não estão presentes.  
-
-        > [!NOTE]  
-        >  Para copiar cada arquivo na distribuição para o ponto de distribuição, mesmo se os arquivos já estiverem presentes no repositório de instância única do ponto de distribuição, use a ação **Redistribuir** para o conteúdo.  
-
-    -   **Ponto de distribuição de recepção**: para cada ponto de distribuição de recepção na distribuição, o Gerenciador de Transferência de Pacote verifica os respectivos pontos de distribuição de origem para confirmar se o conteúdo está disponível.  
-
-        -   Quando o conteúdo está disponível, o Gerenciador de Transferência de Pacote envia a notificação para esse ponto de distribuição de recepção. A notificação direciona o ponto de distribuição para iniciar o processo de transferência do conteúdo. A notificação inclui nome e tamanho de arquivos, atributos e valores de hash.  
-
-        -   Quando o conteúdo ainda não está disponível, o Gerenciador de Transferência de Pacote não envia uma notificação para o ponto de distribuição. Em vez disso, ele repete a verificação a cada 20 minutos até que o conteúdo esteja disponível. Em seguida, quando o conteúdo está disponível, o Gerenciador de Transferência de Pacote envia a notificação para esse ponto de distribuição de recepção.  
+    -   **标准分发点：**包传输管理器将检查每个指定远程分发点的单一实例内容存储。 目的是标识已经在该分发点上的任何文件。 然后，包传输管理器会进行排队以仅传输还不存在的那些文件。  
 
         > [!NOTE]  
-        >  Para que o ponto de distribuição de recepção copie cada arquivo na distribuição para o ponto de distribuição, mesmo que os arquivos já estejam presentes no repositório de instância única do ponto de distribuição de recepção, use a ação **Redistribuir** para o conteúdo.  
+        >  若要将分发中的每个文件复制到分发点（即使该分发点的单一实例存储中已经存在这些文件也不例外），对内容使用“重新分发”操作。  
 
-4.  **O conteúdo começa a ser transferido.**  
+    -   **请求分发点：**对于分发中的每个请求分发点，包传输管理器会检查请求分发点的源分发点以确认是否有内容可用。  
 
-    -   **Ponto de distribuição padrão:** o Gerenciador de Transferência de Pacote copia os arquivos para cada ponto de distribuição remoto. Durante a transferência para um ponto de distribuição padrão:  
+        -   当至少一个源分发点有可用内容时，包传输管理器会向该请求分发点发送通知。 该通知指示分发点开始传输内容。 此通知包括文件名和大小、属性和哈希值。  
 
-        -   Por padrão, o Gerenciador de Transferência de Pacote pode processar simultaneamente três pacotes exclusivos e distribuí-los para cinco pontos de distribuição em paralelo. Coletivamente, eles são chamados de **Configurações de distribuição simultânea**. Para configurar a distribuição simultânea, nas **Propriedades do componente de distribuição de software** de cada site, vá para a guia **Geral**.  
-
-        -   O Gerenciador de Transferência de Pacote usa as configurações de agendamento e largura de banda de rede de cada ponto de distribuição ao transferir conteúdo para esse ponto de distribuição. Para definir essas configurações, nas **Propriedades** de cada ponto de distribuição remoto, vá para as guias **Agendamento** e **Limites de taxa**. Para mais informações, consulte [Gerenciar conteúdo e infraestrutura de conteúdo do System Center Configuration Manager](../../../core/servers/deploy/configure/manage-content-and-content-infrastructure.md).  
-
-    -   **Ponto de distribuição de recepção:** quando um ponto de distribuição de recepção recebe um arquivo de notificação, ele inicia o processo de transferência do conteúdo. O processo de transferência é executado de forma independente em cada ponto de distribuição de recepção:  
-
-        1.   O ponto de distribuição de recepção identifica os arquivos da distribuição de conteúdo ainda não existentes em seu repositório de instância única e prepara-se para baixar esse conteúdo de um de seus pontos de distribuição de origem.  
-
-        2.   Em seguida, o ponto de distribuição de recepção verifica cada um de seus pontos de distribuição de origem, por ordem, até localizar um com o conteúdo disponível. Quando identifica um ponto de distribuição de origem com o conteúdo, o ponto de distribuição de recepção inicia o download desse conteúdo.  
+        -   如果尚未提供内容，则包传输管理器不会向分发点发送通知。 而是会每 20 分钟重复进行一次检查，直到有可用的内容为止。 然后，当有可用的内容时，包传输管理器会向该请求分发点发送通知。  
 
         > [!NOTE]  
-        >  O ponto de distribuição de recepção utiliza o mesmo processo usado pelos clientes do Configuration Manager para baixar conteúdo. Para a transferência de conteúdo pelo ponto de distribuição de recepção, as configurações de transferência simultânea não são usadas. As opções de agendamento e limitação que você configurar para pontos de distribuição padrão também não são usadas.  
+        >  为使请求分发点将分发中的每个文件复制到分发点（即使该请求分发点的单一实例存储中已经存在这些文件也不例外），对内容使用“重新分发”操作。  
 
-5.  **A transferência do conteúdo é concluída.**  
+4.  **此时内容将开始传输。**  
 
-    -   **Ponto de distribuição padrão**: quando o Gerenciador de Transferência de Pacote conclui a transferência dos arquivos para cada ponto de distribuição remoto designado, ele verifica o hash do conteúdo no ponto de distribuição. Em seguida, notifica o Gerenciador de Distribuição de que a distribuição foi concluída.  
+    -   **标准分发点：**包传输管理器会将文件复制到每个远程分发点。 在传输至标准分发点期间：  
 
-    -   **Ponto de distribuição de recepção**: após baixar o conteúdo, o ponto de distribuição de recepção verifica o hash do conteúdo. Em seguida, ele envia uma mensagem de status para o ponto de gerenciamento de site para indicar êxito. Se, após 60 minutos esse status não for recebido, o Gerenciador de Transferência de Pacote é ativado novamente. Ele verifica com o ponto de distribuição de recepção para confirmar se o conteúdo foi baixado. Se o download do conteúdo estiver em andamento, o Gerenciador de Transferência de Pacote ficará suspenso por 60 minutos, até repetir essa verificação. Esse ciclo continua até que o ponto de distribuição de recepção conclua a transferência de conteúdo.  
+        -   默认情况下，包传输管理器可以同时处理三个唯一的包，并且可以并行将其分发给五个分发点。 这些设置统称为“并发分发设置”。 若要设置并发分发，请在每个站点的“软件分发组件属性”中转至“常规”选项卡。  
 
+        -   将内容传输至每个分发点时，包传输管理器使用该分发点的计划和网络带宽配置。 若要配置这些设置，可在每个远程分发点的“属性”中，转到“计划”和“速率限制”选项卡。 有关详细信息，请参阅[管理 System Center Configuration Manager 的内容和内容基础结构](../../../core/servers/deploy/configure/manage-content-and-content-infrastructure.md)。  
+
+    -   **请求分发点：**当请求分发点收到通知文件时，分发点将开始内容传输过程。 此传输过程在每个请求分发点上独立运行：  
+
+        1.   请求分发将标识在其单一实例存储中还没有的内容分发中的文件，并准备从其源分发点之一中下载该内容。  
+
+        2.   然后，该请求分发点会按顺序检查其每个源分发点，直到找到具有可用内容的源分发点为止。 当请求分发点标识具有内容的源分发点时，它将开始下载该内容。  
+
+        > [!NOTE]  
+        >  请求分发点下载内容的过程与 Configuration Manager 客户端使用的过程相同。 对于请求分发点的内容传输，不会使用并行传输设置。 也不会使用为标准分发点配置的计划和限制选项。  
+
+5.  **内容传输完成。**  
+
+    -   **标准分发点：**当包传输管理器将文件传输到每个指定的远程分发点后，它将验证分发点上内容的哈希。 然后通知分发管理器分发已完成。  
+
+    -   **请求分发点：**在请求分发点完成内容下载后，该分发点会验证内容的哈希。 然后将状态消息提交至站点管理点以指明成功。 如果 60 分钟后未收到此状态，会再次唤醒包传输管理器。 它会检查请求分发点以确认请求分发点是否已下载内容。 如果内容下载正在进行，则包传输管理器将再休眠 60 分钟，之后再次与请求分发点核对。 此循环将持续，直至请求分发点完成内容传输。  

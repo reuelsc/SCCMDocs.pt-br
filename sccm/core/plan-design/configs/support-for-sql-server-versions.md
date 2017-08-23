@@ -1,117 +1,115 @@
 ---
-title: "Versões do SQL Server com suporte | Microsoft Docs"
-description: "Obtenha os requisitos de configuração e versão do SQL Server para hospedar um banco de dados de site do System Center Configuration Manager."
+title: "支持的 SQL Server 版本 | Microsoft Docs"
+description: "获取托管 System Center Configuration Manager 站点数据库的 SQL Server 版本和配置要求。"
 ms.custom: na
 ms.date: 05/10/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
-ms.technology:
-- configmgr-other
+ms.technology: configmgr-other
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 35e237b6-9f7b-4189-90e7-8eca92ae7d3d
-caps.latest.revision: 21
+caps.latest.revision: "21"
 author: Brenduns
 ms.author: brenduns
 manager: angrobe
-ms.translationtype: HT
-ms.sourcegitcommit: ef42d1483053e9a6c502f4ebcae5a231aa6ba727
 ms.openlocfilehash: b35e45b9514297e2f9ce405a3244462ed735f39f
-ms.contentlocale: pt-br
-ms.lasthandoff: 07/26/2017
-
+ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
+ms.translationtype: HT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 08/07/2017
 ---
-# <a name="supported-sql-server-versions-for-system-center-configuration-manager"></a>Versões do SQL Server com suporte no System Center Configuration Manager
+# <a name="supported-sql-server-versions-for-system-center-configuration-manager"></a>System Center Configuration Manager 支持的 SQL Server 版本
 
-*Aplica-se a: System Center Configuration Manager (Branch Atual)*
+*适用范围：System Center Configuration Manager (Current Branch)*
 
-Cada site do System Center Configuration Manager exige uma configuração e versão do SQL Server com suporte para hospedar o banco de dados do site.  
+每个 System Center Configuration Manager 站点都需要受支持的 SQL Server 版本和配置来托管站点数据库。  
 
-##  <a name="bkmk_Instances"></a> Instâncias e locais do SQL Server  
- **Site de administração central e sites primários:**  
-O banco de dados do site deve usar uma instalação completa do SQL Server.  
+##  <a name="bkmk_Instances"></a> SQL Server 实例和位置  
+ **管理中心站点和主站点：**  
+站点数据库必须使用 SQL Server 的完整安装。  
 
- O SQL Server pode estar localizado:  
+ SQL Server 可位于以下位置：  
 
--   No computador do servidor do site.  
--   Em um computador remoto do servidor do site.  
+-   站点服务器计算机。  
+-   远离站点服务器的计算机。  
 
-Há suporte para as seguintes instâncias:  
+支持以下实例：  
 
--   A instância padrão ou nomeada do SQL Server.  
--   Configurações com várias instâncias.  
--   Um cluster do SQL Server. Consulte [Usar um cluster do SQL Server para o banco de dados do site do System Center Configuration Manager](../../../core/servers/deploy/configure/use-a-sql-server-cluster-for-the-site-database.md).
--   Um grupo de disponibilidade AlwaysOn do SQL Server. Essa opção exige o Configuration Manager versão 1602 ou posterior. Para obter detalhes, consulte [AlwaysOn do SQL Server para um banco de dados do site altamente disponível do System Center Configuration Manager](../../../core/servers/deploy/configure/sql-server-alwayson-for-a-highly-available-site-database.md).
-
-
- **Sites secundários:**  
- O banco de dados do site pode usar a instância padrão de uma instalação completa do SQL Server ou SQL Server Express.  
-
- O SQL Server deve estar localizado no computador do servidor do site.  
-
- **Limitações ao suporte**   
- As configurações a seguir não têm suporte:
- -   Um cluster do SQL Server em uma configuração de cluster de NLB (Balanceamento de Carga de Rede)
- -   Um cluster do SQL Server em um CSV (Volume Compartilhado Clusterizado)
- -   Tecnologia de espelhamento de banco de dados do SQL Server e replicação ponto a ponto
-
-Há suporte para a replicação transacional do SQL Server apenas para replicar objetos para os pontos de gerenciamento que são configurados para usar [réplicas de banco de dados](https://technet.microsoft.com/library/mt608546.aspx).  
-
-##  <a name="bkmk_SQLVersions"></a> Versões compatíveis do Microsoft SQL Server  
- Em uma hierarquia com vários sites, diferentes sites podem usar diferentes versões do SQL Server para hospedar o banco de dados do site, desde que o seguinte seja verdadeiro:
- -  O Configuration Manager dá suporte à versão do SQL Server que você usa.
- -  As versões do SQL Server que você usa ainda têm suporte da Microsoft.
- -  O SQL Server oferece suporte à replicação entre as duas versões do SQL Server.  Por exemplo, o [SQL Server não oferece suporte à replicação entre o SQL Server 2008 R2 e o SQL Server 2016](https://docs.microsoft.com/sql/relational-databases/replication/deprecated-features-in-sql-server-replication).
+-   SQL Server 的默认或已命名实例。  
+-   多个实例配置。  
+-   SQL Server 群集。 请参阅[使用 SQL Server 群集托管站点数据库](../../../core/servers/deploy/configure/use-a-sql-server-cluster-for-the-site-database.md)。
+-   SQL Server AlwaysOn 可用性组。 此选项需要 Configuration Manager 1602 版或更高版本。 有关详细信息，请参阅[通过 SQL Server AlwaysOn 实现适用于 System Center Configuration Manager 的高可用性站点数据库](../../../core/servers/deploy/configure/sql-server-alwayson-for-a-highly-available-site-database.md)。
 
 
+ **辅助站点：**  
+ 站点数据库可使用完整安装的 SQL Server 或 SQL Server Express 的默认实例。  
 
- A mesmo que especificado o contrário, as versões do SQL Server a seguir têm suporte com todas as versões ativas do no System Center Configuration Manager. Se for adicionado suporte para uma nova versão ou service pack do SQL Server, a versão do Configuration Manager que adiciona esse suporte será observada. Da mesma forma, se o suporte for preterido, procure os detalhes sobre as versões afetadas do Configuration Manager.   
+ SQL Server 必须位于站点服务器计算机上。  
 
-Suporte para um service pack específico do SQL Server inclui atualizações cumulativas para esse service pack, a menos que uma atualização cumulativa não tenha compatibilidade com versões anteriores dessa versão do service pack básico. Quando não houver versão de service pack, o suporte será feito para essa versão do SQL Server sem service pack. No futuro, se um service pack for lançado para essa versão, uma instrução de suporte separada será declarada antes dessa nova versão do service pack ter suporte.
+ **支持限制**   
+ 不支持下列配置：
+ -   网络负载均衡 (NLB) 群集配置中的 SQL Server 群集
+ -   群集共享卷 (CSV) 上的 SQL Server 群集
+ -   SQL Server 数据库镜像技术和对等复制
+
+SQL Server 事务复制仅支持将对象复制到配置为使用[数据库副本](https://technet.microsoft.com/library/mt608546.aspx)的管理点。  
+
+##  <a name="bkmk_SQLVersions"></a> 支持的 SQL Server 版本  
+ 在含有多个网站的层次结构中，只要满足以下条件，各个网站就可以使用不同版本的 SQL Server 托管网站数据库：
+ -  Configuration Manager 支持你使用的 SQL Server 版本。
+ -  Microsoft 仍支持你使用的 SQL Server 版本。
+ -  SQL Server 支持在两个 SQL Server 版本之间进行复制。  例如，[SQL Server 不支持在 SQL Server 2008 R2 和 SQL Server 2016 之间进行复制](https://docs.microsoft.com/sql/relational-databases/replication/deprecated-features-in-sql-server-replication)。
+
+
+
+ 除非另行指定，System Center Configuration Manager 的所有活动版本均支持以下版本的 SQL Server。 如果支持新的 SQL Server 版本或添加 Service Pack，则将显示添加该支持的 Configuration Manager 版本。 同样，如果弃用支持，则查找有关受影响的 Configuration Manager 版本的详细信息。   
+
+对特定 SQL Server Service Pack 的支持包括该 Service Pack 的累积更新，除非累积更新中断该基本 Service Pack 版本的向后兼容性。 如果没有另行说明 Service Pack 版本，则支持是针对不带 Service Pack 的 SQL Server 版本。 将来，如果针对该版本发布 Service Pack，单独的支持声明将在支持该新的 Service Pack 版本前宣布。
 
 
 > [!IMPORTANT]  
->  Ao usar o SQL Server Standard para o banco de dados no site de administração central, você limita o número total de clientes para o qual a hierarquia pode dar suporte. Consulte [Números de tamanho e escala](../../../core/plan-design/configs/size-and-scale-numbers.md).
+>  为管理中心站点上的数据库使用 SQL Server Standard 时，会限制层次结构可支持的客户端总数。 请参阅[调整大小和扩展数量](../../../core/plan-design/configs/size-and-scale-numbers.md)。
 
-### <a name="sql-server-2016-sp1-standard-enterprise"></a>SQL Server 2016 SP1: Standard, Enterprise  
-Você pode usar essa versão do SQL Server sem uma versão de atualização cumulativa mínima para o seguinte:  
+### <a name="sql-server-2016-sp1-standard-enterprise"></a>SQL Server 2016 SP1：标准版、企业版  
+可将此版本的 SQL Server 与以下产品的非最低累计更新版本一起使用：  
 
--   Um site de administração central  
--   Um site primário  
--   Um site secundário  
+-   管理中心站点  
+-   主站点  
+-   辅助站点  
 
-### <a name="sql-server-2016-standard-enterprise"></a>SQL Server 2016: Standard, Enterprise  
-Você pode usar essa versão do SQL Server sem uma versão de atualização cumulativa mínima para o seguinte:  
+### <a name="sql-server-2016-standard-enterprise"></a>SQL Server 2016：标准版、企业版  
+可将此版本的 SQL Server 与以下产品的非最低累计更新版本一起使用：  
 
--   Um site de administração central  
--   Um site primário  
--   Um site secundário  
-
-
-### <a name="sql-server-2014-sp2-standard-enterprise"></a>SQL Server 2014 SP2: Standard, Enterprise  
-Você pode usar essa versão do SQL Server sem uma versão de atualização cumulativa mínima para o seguinte:  
-
--   Um site de administração central  
--   Um site primário  
--   Um site secundário
+-   管理中心站点  
+-   主站点  
+-   辅助站点  
 
 
+### <a name="sql-server-2014-sp2-standard-enterprise"></a>SQL Server 2014 SP2：标准版、企业版  
+可将此版本的 SQL Server 与以下产品的非最低累计更新版本一起使用：  
 
-### <a name="sql-server-2014-sp1-standard-enterprise"></a>SQL Server 2014 SP1: Standard, Enterprise  
- Você pode usar essa versão do SQL Server sem uma versão de atualização cumulativa mínima para o seguinte:  
-
--   Um site de administração central  
--   Um site primário  
--   Um site secundário
+-   管理中心站点  
+-   主站点  
+-   辅助站点
 
 
-### <a name="sql-server-2012-sp3-standard-enterprise"></a>SQL Server 2012 SP3: Standard, Enterprise  
- Você pode usar essa versão do SQL Server sem uma versão de atualização cumulativa mínima para o seguinte:  
 
--   Um site de administração central  
--   Um site primário  
--   Um site secundário  
+### <a name="sql-server-2014-sp1-standard-enterprise"></a>SQL Server 2014 SP1：标准版、企业版  
+ 可将此版本的 SQL Server 与以下产品的非最低累计更新版本一起使用：  
+
+-   管理中心站点  
+-   主站点  
+-   辅助站点
+
+
+### <a name="sql-server-2012-sp3-standard-enterprise"></a>SQL Server 2012 SP3：标准版、企业版  
+ 可将此版本的 SQL Server 与以下产品的非最低累计更新版本一起使用：  
+
+-   管理中心站点  
+-   主站点  
+-   辅助站点  
 
 <!-- Support for this service pack version has been dropped by Microsoft    
 ### SQL Server 2012 SP2: Standard, Enterprise   
@@ -122,42 +120,42 @@ Você pode usar essa versão do SQL Server sem uma versão de atualização cumu
 -   A secondary site  
 -->
 
-### <a name="sql-server-2008-r2-sp3-standard-enterprise-datacenter"></a>SQL Server 2008 R2 SP3: Standard, Enterprise, Datacenter     
-  Não há suporte para esta versão do SQL Server [a partir da versão 1702](/sccm/core/plan-design/changes/removed-and-deprecated-features#deprecated-support-for-sql-server-versions-as-a-site-database).  
- Esta versão do SQL Server permanece com suporte quando você usa uma versão do Configuration Manager antes da 1702.
+### <a name="sql-server-2008-r2-sp3-standard-enterprise-datacenter"></a>SQL Server 2008 R2 SP3：标准版、企业版、数据中心版     
+  [从版本 1702 开始](/sccm/core/plan-design/changes/removed-and-deprecated-features#deprecated-support-for-sql-server-versions-as-a-site-database)，不支持此版本的 SQL Server。  
+ 在使用 1702 之前版本的 Configuration Manager 时，此版本的 SQL Server 仍受支持。
 
-Quando houver suporte pela sua versão do Configuration Manager, você poderá usar essa versão do SQL Server sem uma versão de atualização cumulativa mínima para o seguinte:  
+当受到你的 Configuration Manager 版本的支持时，可将此版本的 SQL Server 与以下产品的非最低累积更新版本一起使用：  
 
--   Um site de administração central  
--   Um site primário
--   Um site secundário
+-   管理中心站点  
+-   主站点
+-   辅助站点
 
 
 
 ### <a name="sql-server-2016-express-sp1"></a>SQL Server 2016 Express SP1  
-Você pode usar essa versão do SQL Server sem uma versão de atualização cumulativa mínima para o seguinte:
--   Um site secundário
+可将此版本的 SQL Server 与以下产品的非最低累计更新版本一起使用：
+-   辅助站点
 
 ### <a name="sql-server-2016-express"></a>SQL Server 2016 Express
-Você pode usar essa versão do SQL Server sem uma versão de atualização cumulativa mínima para o seguinte:
--   Um site secundário
+可将此版本的 SQL Server 与以下产品的非最低累计更新版本一起使用：
+-   辅助站点
 
 
 ### <a name="sql-server-2014-express-sp2"></a>SQL Server 2014 Express SP2   
-Você pode usar essa versão do SQL Server sem uma versão de atualização cumulativa mínima para o seguinte:  
+可将此版本的 SQL Server 与以下产品的非最低累计更新版本一起使用：  
 
--   Um site secundário  
+-   辅助站点  
 
 
 ### <a name="sql-server-2014-express-sp1"></a>SQL Server 2014 Express SP1   
- Você pode usar essa versão do SQL Server sem uma versão de atualização cumulativa mínima para o seguinte:  
+ 可将此版本的 SQL Server 与以下产品的非最低累计更新版本一起使用：  
 
--   Um site secundário  
+-   辅助站点  
 
 ### <a name="sql-server-2012-express-sp3"></a>SQL Server 2012 Express SP3  
-Você pode usar essa versão do SQL Server sem uma versão de atualização cumulativa mínima para o seguinte:  
+可将此版本的 SQL Server 与以下产品的非最低累计更新版本一起使用：  
 
--   Um site secundário  
+-   辅助站点  
 
 <!-- Support for this service pack version has been dropped by Microsoft   
 ### SQL Server 2012 Express SP2   
@@ -167,99 +165,98 @@ Você pode usar essa versão do SQL Server sem uma versão de atualização cumu
 -->
 
 
-##  <a name="bkmk_SQLConfig"></a> Configurações necessárias para o SQL Server  
- Os itens a seguir são necessários para todas as instalações do SQL Server usadas para um banco de dados do site (incluindo o SQL Server Express). Quando o Configuration Manager instala o SQL Server Express como parte de uma instalação de site secundário, essas configurações são criadas automaticamente para você.  
+##  <a name="bkmk_SQLConfig"></a> SQL Server 所需的配置  
+ 用于站点数据库（包括 SQL Server Express）的 SQL Server 的所有安装都需要以下内容。 Configuration Manager 将 SQL Server Express 作为辅助站点安装的一部分进行安装时，将为你自动创建这些配置。  
 
- **Versão da arquitetura do SQL Server:**  
- O Configuration Manager requer uma versão de 64 bits do SQL Server para hospedar o banco de dados do site.  
+ **SQL Server 体系结构版本：**  
+ Configuration Manager 需要 64 位版本的 SQL Server 以托管站点数据库。  
 
- **Agrupamento de banco de dados:**  
- Em cada site, a instância do SQL Server que é usada para o site e o banco de dados do site devem usar o seguinte agrupamento: **SQL_Latin1_General_CP1_CI_AS**.  
+ **数据库排序规则：**  
+ 在每个站点上，用于站点和站点数据库的 SQL Server 实例必须使用以下排序规则： **SQL_Latin1_General_CP1_CI_AS**。  
 
- O Configuration Manager dá suporte a duas exceções a este agrupamento para atender aos padrões definidos no GB18030 para uso na China. para obter mais informações, consulte, [Suporte internacional no System Center Configuration Manager](../../../core/plan-design/hierarchy/international-support.md).  
+ Configuration Manager 支持对此排序规则的两种例外情况，以满足在 GB18030 中定义的标准，以便在中国使用。 有关详细信息，请参阅 [System Center Configuration Manager 的国际支持](../../../core/plan-design/hierarchy/international-support.md)。  
 
- **Recursos do SQL Server:**  
- Somente o recurso **Serviços de Mecanismo de Banco de Dados** é necessário para cada servidor do site.  
+ **SQL Server 功能：**  
+ 仅“数据库引擎服务”  功能是每个站点服务器所必需的。  
 
- A replicação de banco de dados do Configuration Manager não exige o recurso **replicação do SQL Server**. No entanto, essa configuração do SQL Server será necessária se você usar [réplicas de banco de dados para pontos de gerenciamento do System Center Configuration Manager](../../../core/servers/deploy/configure/database-replicas-for-management-points.md).  
+ Configuration Manager 数据库复制不需要“SQL Server 复制”功能。 但是，如果要使用 [System Center Configuration Manager 管理点的数据库副本](../../../core/servers/deploy/configure/database-replicas-for-management-points.md)，则需进行此 SQL Server 配置。  
 
- **Autenticação do Windows:**  
- O Configuration Manager exige que a **Autenticação do Windows** valide as conexões com o banco de dados.  
+ **Windows 身份验证：**  
+ Configuration Manager 需要“Windows 身份验证”来验证与数据库的连接。  
 
- **Instância do SQL Server:**  
- Você deve usar uma instância dedicada do SQL Server para cada site. Isso pode ser uma **instância nomeada** ou uma **instância padrão**.  
+ **SQL Server 实例：**  
+ 必须为每个站点使用专用的 SQL Server 实例。 可以为 **命名实例** 或 **默认实例**。  
 
- **Memória do SQL Server:**  
- Reserve memória para o SQL Server usando o SQL Server Management Studio e definindo a configuração **Memória mínima do servidor** em **Opções de Memória do Servidor**. Para obter mais informações sobre como definir uma quantidade fixa de memória, veja [Como: definir uma quantidade fixa de memória (SQL Server Management Studio)](http://go.microsoft.com/fwlink/p/?LinkId=233759).  
+ **SQL Server 内存：**  
+ 通过使用 SQL Server Management Studio 和设置“服务器内存选项”下的“最小服务器内存”设置来保留 SQL Server 的内存。 有关如何设置固定的内存量的详细信息，请参阅 [如何：设置固定的内存量 (SQL Server Management Studio)](http://go.microsoft.com/fwlink/p/?LinkId=233759)。  
 
--   **Para um servidor de banco de dados instalado no mesmo computador que o servidor do site:** limite a memória do SQL Server a 50% a 80% da memória do sistema endereçável disponível.  
+-   **对于与站点服务器安装在同一台计算机上的数据库服务器：**将 SQL Server 的内存限制为可用可寻址系统内存的 50% 到 80%。  
 
--   **Para um servidor de banco de dados dedicado (remoto do servidor do site):** limite a memória do SQL Server a 80% a 90% da memória do sistema endereçável disponível.  
+-   **对于专用的数据库服务器（远离站点服务器）：**将 SQL Server 的内存限制为可用可寻址系统内存的 80% 到 90%。  
 
--   **Para a reserva de memória para o pool de buffers de cada instância do SQL Server em uso:**  
+-   **对于使用中的每个 SQL Server 实例的缓冲池内存预留：**  
 
-    -   Para um site de administração central: defina um mínimo de 8 GB (gigabytes).  
-    -   Para um site primário: defina um mínimo de 8 GB (gigabytes).  
-    -   Para um site secundário: defina um mínimo de 4 GB (gigabytes).  
+    -   对于管理中心站点：设置至少 8 千兆字节 (GB)。  
+    -   对于主站点：设置至少 8 千兆字节 (GB)。  
+    -   对于辅助站点：设置至少 4 千兆字节 (GB)。  
 
-**Gatilhos aninhados de SQL:**  
- A opção[Gatilhos aninhados de SQL](http://go.microsoft.com/fwlink/?LinkId=528802) deve estar habilitada.  
+**SQL 嵌套触发器：**  
+ 必须启用[SQL 嵌套触发器](http://go.microsoft.com/fwlink/?LinkId=528802) 。  
 
- **Integração de CLR do SQL Server**  
-  O banco de dados do site exige que o CLR (common language runtime) do SQL Server seja habilitado. Isso é habilitado automaticamente quando o Configuration Manager é instalado. Para saber mais sobre o CLR, confira [Introdução à integração do SQL Server CLR](https://msdn.microsoft.com/library/ms254498\(v=vs.110\).aspx).  
+ **SQL Server CLR 集成**  
+  站点数据库要求启用 SQL Server 公共语言运行时 (CLR)。 这在 Configuration Manager 安装时会自动启用。 有关 CLR 的详细信息，请参阅 [SQL Server CLR 集成简介](https://msdn.microsoft.com/library/ms254498\(v=vs.110\).aspx)  
 
-##  <a name="bkmk_optional"></a> Configurações opcionais para o SQL Server  
- As configurações a seguir são opcionais para cada banco de dados que usa uma instalação completa do SQL Server.  
+##  <a name="bkmk_optional"></a> SQL Server 可选配置  
+ 以下配置对使用完整 SQL Server 安装的每个数据库是可选的。  
 
- **Serviço SQL Server:**  
- Você pode configurar o serviço do SQL Server para execução usando:  
+ **SQL Server 服务：**  
+ 你可以将 SQL Server 服务配置为使用以下账户运行：  
 
--   A conta de **usuário local do domínio**:  
+-   **域本地用户**帐户：  
 
-    -   Essa é uma prática recomendada e pode exigir o registro manual do SPN (nome da entidade de serviço) da conta.  
+    -   这是最佳做法，并且可能要求你手动注册该帐户的服务主体名称 (SPN)。  
 
--   A conta **sistema local** do computador que executa o SQL Server:  
+-   运行 SQL Server 的计算机的**本地系统**帐户：  
 
-    -   Use a conta do sistema local para simplificar o processo de configuração.  
-    -   Ao usar a conta do sistema local, o Configuration Manager registra automaticamente o SPN para o serviço SQL Server.  
-    -   Lembre-se de que usar a conta do sistema local para o serviço SQL Server não é uma melhor prática do SQL Server.  
+    -   使用本地系统帐户简化配置过程。  
+    -   使用本地系统帐户时，Configuration Manager 将自动注册 SQL Server 服务的 SPN。  
+    -   请注意，为 SQL Server 服务使用本地系统帐户不是 SQL Server 最佳做法。  
 
-Quando o computador que executa o SQL Server não usa a conta sistema local para executar o serviço SQL Server, é necessário configurar o SPN da conta que executa o serviço SQL Server no Active Directory Domain Services. (Quando a conta do sistema for usada, o SPN será registrado automaticamente para você.)
+运行 SQL Server 的计算机不使用其本地系统帐户运行 SQL Server 服务时，必须配置帐户的 SPN，该帐户在 Active Directory 域服务中运行 SQL Server 服务。 （使用系统帐户时，将为你自动注册 SPN。）
 
-Para obter informações sobre SPNs para o banco de dados do site, consulte [Gerenciar o SPN para o servidor de banco de dados do site](../../../core/servers/manage/modify-your-infrastructure.md#bkmk_SPN) no tópico [Modificar a infraestrutura do System Center Configuration Manager](../../../core/servers/manage/modify-your-infrastructure.md).  
+有关站点数据库 SPN 的信息，请参阅[修改 System Center Configuration Manager 基础结构](../../../core/servers/manage/modify-your-infrastructure.md)主题中的[管理站点数据库服务器的 SPN](../../../core/servers/manage/modify-your-infrastructure.md#bkmk_SPN)。  
 
-Para obter informações sobre como alterar a conta usada pelo serviço SQL Server, consulte [Como alterar a conta de inicialização do serviço do SQL Server (SQL Server Configuration Manager)](http://go.microsoft.com/fwlink/p/?LinkId=237661).  
+有关如何更改 SQL Server 服务所使用帐户的信息，请参阅[如何：为 SQL Server（SQL Server 配置管理器）更改服务启动帐户](http://go.microsoft.com/fwlink/p/?LinkId=237661)。  
 
-**SQL Server Reporting Services:**  
-O SQL Server Reporting Services é necessário para a instalação de um ponto do Reporting Services que permite a execução de relatórios.  
+**SQL Server Reporting Services：**  
+SQL Server Reporting Services 是安装可运行报表的 Reporting Services 点的必需条件。  
 
 > [!IMPORTANT]  
-> Após a atualização do SQL Server de uma versão anterior, você poderá ver o seguinte erro: *Construtor de Relatórios não existe*.    
-> Para resolver esse erro, é necessário reinstalar a função do sistema de sites do ponto do Reporting Services.
+> 将以前版本的 SQL Server 升级后，可能会看到以下错误：“报表生成器不存在”。    
+> 要修复此错误，必须重新安装 Reporting Services 点站点系统角色。
 
-**Portas do SQL Server:**  
-Para a comunicação com o mecanismo de banco de dados do SQL Server e para a replicação entre sites, é possível usar as configurações de porta padrão do SQL Server ou especificar portas personalizadas:  
+**SQL Server 端口：**  
+对于与 SQL Server 数据库引擎的通信和站点间复制，可以使用默认的 SQL Server 端口配置，也可以指定自定义端口：  
 
--   A **comunicação entre sites** usa o SQL Server Service Broker, que usa a porta TCP 4022 por padrão.  
--   A **comunicação intrassite** entre o mecanismo de banco de dados do SQL Server e as várias funções do sistema de sites do Configuration Manager usa a porta TCP 1433 por padrão. As seguintes funções do sistema de site se comunicam diretamente com o banco de dados do SQL Server:  
+-   **站点间通信**使用 SQL Server Service Broker，它默认使用端口 TCP 4022。  
+-   SQL Server 数据库引擎与各种 Configuration Manager 站点系统角色之间的**站点内通信**默认使用端口 TCP 1433。 下列站点系统角色直接与 SQL Server 数据库进行通信：  
 
-    -   Ponto de gerenciamento  
-    -   Computador do Provedor de SMS  
-    -   Ponto do Reporting Services  
-    -   Servidor do site  
+    -   管理点  
+    -   SMS 提供程序计算机  
+    -   Reporting Services 点  
+    -   站点服务器  
 
-Quando um computador que executa o SQL Server hospeda um banco de dados de mais de um site, cada banco de dados deve usar uma instância separada do SQL Server. Além disso, cada instância deve ser configurada para usar um conjunto exclusivo de portas.  
+运行 SQL Server 的计算机托管多个站点中的数据库时，每个数据库必须使用独立的 SQL Server 实例。 此外，每个实例必须配置为使用一组唯一的端口。  
 
 > [!WARNING]  
->  O Configuration Manager não dá suporte a portas dinâmicas. Como as instâncias nomeadas do SQL Server por padrão usam as portas dinâmicas para fazer conexões com o mecanismo de banco de dados, ao usar uma instância nomeada, configure manualmente a porta estática que deseja usar para a comunicação entre sites.  
+>  Configuration Manager 不支持动态端口。 由于 SQL Server 命名实例默认情况下使用动态端口来连接到数据库引擎，因此，在使用命名实例时，必须手动配置要用于站点内通信的静态端口。  
 
-Se você tiver um firewall habilitado no computador com o SQL Server, verifique se ele está configurado para permitir as portas usadas por sua implantação e em todos os locais na rede entre os computadores que se comunicam com o SQL Server.  
+如果在运行 SQL Server 的计算机上启用防火墙，请确保将防火墙配置为不阻止你的部署使用的端口，以及位于与 SQL Server 通信的计算机之间的网络上任何位置处的端口。  
 
-Para obter um exemplo de como configurar o SQL Server para usar uma porta específica, veja [Como: configurar um servidor para escutar em uma porta TCP específica (SQL Server Configuration Manager)](http://go.microsoft.com/fwlink/p/?LinkID=226349) na biblioteca do TechNet do SQL Server.  
+有关演示如何将 SQL Server 配置为使用指定的端口的示例，请参阅 SQL Server TechNet 库中的 [如何：将服务器配置为侦听特定的 TCP 端口 (SQL Server Configuration Manager)](http://go.microsoft.com/fwlink/p/?LinkID=226349) 。  
 
-## <a name="upgrade-options-for-sql-server"></a>Opções de atualização para o SQL Server
-Se você precisa atualizar sua versão do SQL Server, recomendamos os seguintes métodos, do mais fácil para o mais complexo.
-1. [Atualização do SQL Server no local](/sccm/core/servers/manage/upgrade-on-premises-infrastructure#a-namebkmksupconfigupgradedbsrva-upgrade-sql-server-on-the-site-database-server) (recomendado).
-2. Instale uma nova versão do SQL Server em um novo computador e, em seguida, [use a opção de mover o banco de dados](/sccm/core/servers/manage/modify-your-infrastructure#a-namebkmkdbconfiga-modify-the-site-database-configuration) da instalação do Configuration Manager para apontar o servidor do site para o novo SQL Server.
-3. Use [backup e recuperação](/sccm/protect/understand/backup-and-recovery).
-
+## <a name="upgrade-options-for-sql-server"></a>SQL Server 的升级选项
+如果需要升级 SQL Server 版本，建议采用以下由易到难的方法。
+1. [就地升级 SQL Server](/sccm/core/servers/manage/upgrade-on-premises-infrastructure#a-namebkmksupconfigupgradedbsrva-upgrade-sql-server-on-the-site-database-server)（推荐）。
+2. 在新计算机上安装新版本的 SQL Server，然后使用 Configuration Manager 设置的[数据库移动选项](/sccm/core/servers/manage/modify-your-infrastructure#a-namebkmkdbconfiga-modify-the-site-database-configuration)将站点服务器指向新的 SQL Server。
+3. 使用[备份和恢复](/sccm/protect/understand/backup-and-recovery)。

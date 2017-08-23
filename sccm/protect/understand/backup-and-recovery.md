@@ -1,211 +1,207 @@
 ---
-title: Sites de backup | Microsoft Docs
-description: Saiba como fazer o backup seus sites antes de falha ou perda de dados no System Center Configuration Manager.
+title: "备份站点 | Microsoft 文档"
+description: "在 System Center Configuration Manager 中出现故障或数据丢失之前备份站点。"
 ms.custom: na
 ms.date: 6/5/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
-ms.technology:
-- configmgr-other
+ms.technology: configmgr-other
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: f7832d83-9ae2-4530-8a77-790e0845e12f
-caps.latest.revision: 22
+caps.latest.revision: "22"
 author: Brenduns
 ms.author: brenduns
 manager: angrobe
-ms.translationtype: Human Translation
-ms.sourcegitcommit: f7cd9c71287d62c9f5d36e2f032bc2a6065572ae
 ms.openlocfilehash: 7deb00d4b67eabf3238907b337a9d0367c3d99cc
-ms.contentlocale: pt-br
-ms.lasthandoff: 06/06/2017
-
+ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
+ms.translationtype: HT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 08/07/2017
 ---
+# <a name="back-up-a-configuration-manager-site"></a>备份 Configuration Manager 站点
 
-# <a name="back-up-a-configuration-manager-site"></a>Fazer backup de um site do Configuration Manager
+*适用范围：System Center Configuration Manager (Current Branch)*
 
-*Aplica-se a: System Center Configuration Manager (Branch Atual)*
+准备备份和恢复方法，以避免数据丢失。 对于 Configuration Manager 站点，备份和恢复方法可有助于更快地恢复站点和层次结构，并最大程度降低数据丢失的风险。  
 
-Prepare abordagens de backup e recuperação para evitar perda de dados. Para sites do Configuration Manager uma abordagem de backup e recuperação pode ajudá-lo a recuperar sites e hierarquias mais rapidamente e com o mínimo de perda de dados.  
+本主题中介绍的内容可帮助你备份站点。 要恢复站点，请参阅 [Configuration Manager 的恢复](/sccm/protect/understand/recover-sites)。  
 
-As seções neste tópico podem ajudá-lo a fazer backup de seus sites. Para recuperar um site, veja [Recuperação para o Configuration Manager](/sccm/protect/understand/recover-sites).  
+## <a name="considerations-before-creating-a-backup"></a>创建备份之前的注意事项  
+-   如果你使用 SQL Server AlwaysOn 可用性组来承载站点数据库：按照[准备使用 SQL Server Always On](/sccm/core/servers/deploy/configure/sql-server-alwayson-for-a-highly-available-site-database#changes-for-site-backup) 中的说明修改你的备份和恢复计划。
 
-## <a name="considerations-before-creating-a-backup"></a>Considerações antes de criar um backup  
--   **Se você usar um grupo de disponibilidade do AlwaysOn do SQL Server para hospedar o banco de dados do site:** modifique seu backup e os planos de recuperação conforme descrito em [Preparar para usar o AlwaysOn do SQL Server](/sccm/core/servers/deploy/configure/sql-server-alwayson-for-a-highly-available-site-database#changes-for-site-backup).
+-   Configuration Manager 可以从 Configuration Manager 备份维护任务或从使用另一个进程创建的站点数据库备份来恢复站点数据库。   
 
--   O Configuration Manager pode recuperar o banco de dados do site por meio da tarefa de manutenção de backup do Configuration Manager ou de um backup do banco de dados do site criado com outro processo.   
+    例如，可以通过作为 Microsoft SQL Server 维护计划一部分创建的备份来还原站点数据库。 你还可以使用通过使用 Data Protection Manager 创建的备份来备份站点数据库 (DPM)。
 
-    Por exemplo, é possível restaurar o banco de dados do site por um backup criado como parte de um plano de manutenção do Microsoft SQL Server. Você também pode usar um backup que é criado usando o Data Protection Manager para fazer backup de seu banco de dados do site (DPM).
+####  <a name="using-data-protection-manager-to-back-up-your-site-database"></a>使用 Data Protection Manager 来备份站点数据库
+你可以使用 System Center 2012 Data Protection Manager (DPM) 来备份站点数据库。
 
-####  <a name="using-data-protection-manager-to-back-up-your-site-database"></a>Usando o Data Protection Manager para fazer backup do banco de dados do site
-Você pode usar o System Center 2012 Data Protection Manager (DPM) para fazer backup do banco de dados do site.
-
-É necessário criar um novo grupo de proteção no DPM para o computador do banco de dados do site. Na página **Selecionar Membros do Grupo** do Assistente para Criar Novo Grupo de Proteção, selecione o serviço SMS Writer na lista de fontes de dados e selecione o banco de dados do site como membro apropriado. Para obter mais informações sobre como usar o DPM para fazer backup do banco de dados do site, consulte a [Biblioteca de Documentação do Data Protection Manager](http://go.microsoft.com/fwlink/?LinkId=272772) no TechNet.  
+你可以在 DPM 中为站点数据库计算机创建一个新保护组。 在创建新保护组向导的“选择组成员”页上，从数据源列表中选择 SMS 编写器服务，然后选择站点数据库作为适当的成员。 有关使用 DPM 来备份站点数据库的详细信息，请参阅 TechNet 上的 [Data Protection Manager Documentation Library（Data Protection Manager 文档库）](http://go.microsoft.com/fwlink/?LinkId=272772)。  
 
 > [!IMPORTANT]  
->  O Configuration Manager não dá suporte ao backup do DPM para um cluster do SQL Server que usa uma instância nomeada, mas dá suporte ao backup do DPM em um cluster do SQL Server que usa a instância padrão do SQL Server.  
+>  Configuration Manager 不支持对使用命名实例的 SQL Server 群集进行 DPM 备份，但支持对使用默认 SQL Server 实例的 SQL Server 群集进行 DPM 备份。  
 
- Depois de restaurar o banco de dados do site, siga as etapas da Instalação para recuperar o site. Selecione a opção de recuperação **Usar um banco de dados do site recuperado manualmente** para usar o banco de dados do site recuperado com o uso do Data Protection Manager.  
+ 还原站点数据库之后，请按照安装程序中的步骤进行操作以恢复站点。 选择“使用已手动恢复的站点数据库”恢复选项以使用通过 Data Protection Manager 恢复的站点数据库。  
 
-## <a name="backup-maintenance-task"></a>Tarefa de manutenção de backup
-É possível automatizar o backup de sites do Configuration Manager agendando a tarefa de manutenção Servidor do Site de Backup predefinida. Essa tarefa:
+## <a name="backup-maintenance-task"></a>备份维护任务
+可以通过计划预定义的备份站点服务器维护任务来自动完成 Configuration Manager 站点的备份。 此任务包括：
 
--   É executada conforme um agendamento
--   Faz backup do banco de dados do site
--   Faz backup de chaves específicas do Registro
--   Faz backup de arquivos e pastas específicas
--   Faz backup da [pasta CD.Latest](/sccm/core/servers/manage/the-cd.latest-folder)   
+-   按计划运行
+-   备份站点数据库
+-   备份特定注册表项
+-   备份特定文件夹和文件
+-   备份 [CD.Latest 文件夹](/sccm/core/servers/manage/the-cd.latest-folder)   
 
-Planeje executar a tarefa padrão de backup do site, no mínimo, a cada 5 dias. Isso ocorre porque o Configuration Manager usa um *Período de retenção do controle de alterações do SQL Server* de 5 dias.  (Veja [Período de retenção do controle de alterações do SQL Server](/sccm/protect/understand/recover-sites#bkmk_SQLretention) no tópico Recuperar sites).
+计划至少每 5 天运行一次默认站点备份任务。 这是因为 Configuration Manager 使用为期 5 天的 SQL Server 更改跟踪保持期。  （请参阅“恢复站点”主题中的 [SQL Server 更改跟踪保持期](/sccm/protect/understand/recover-sites#bkmk_SQLretention)。）
 
-Para simplificar o processo de backup, é possível criar o arquivo **AfterBackup.bat** para executar ações pós-backup automaticamente depois de executar a tarefa de manutenção de backup com êxito. O arquivo AfterBackup.bat é normalmente é usado para arquivar o instantâneo de backup em um local seguro. Também é possível usar o arquivo AfterBackup.bat para copiar arquivos para a pasta de backup e iniciar outras tarefas de backup complementares.  
+若要简化备份过程，可以创建 **AfterBackup.bat** 文件以在备份维护任务成功运行后自动执行备份后操作。 AfterBackup.bat 文件通常用于将备份快照存档到安全位置。 也可以使用 AfterBackup.bat 文件将文件复制到备份文件夹并启动其他补充备份任务。  
 
-É possível fazer backup de um site de administração central e de um site primário, mas não há suporte de backup para sites secundários ou servidores de sistema de site.
+你可以备份管理中心站点和主站点，但不支持备份辅助站点或站点系统服务器。
 
-Quando o serviço de backup do Configuration Manager é executado, ele segue as instruções definidas no arquivo de controle de backup (**&lt;PastaDeInstalaçãoDoConfigMgr\>\Inboxes\Smsbkup.box\Smsbkup.ctl**). É possível modificar o arquivo de controle de backup para alterar o comportamento do serviço de backup.  
+当 Configuration Manager 备份服务运行时，它将按照备份控制文件 (**&lt;ConfigMgrInstallationFolder\>\Inboxes\Smsbkup.box\Smsbkup.ctl**) 中定义的指令进行操作。 你可以修改备份控制文件来更改备份服务的行为。  
 
-As informações de status de backup do site são gravadas no arquivo **Smsbkup.log** . O arquivo é criado na pasta de destino especificada nas propriedades da tarefa de manutenção Servidor do Site de Backup.  
+站点备份状态信息将写入 **Smsbkup.log** 文件。 将在备份站点服务器维护任务属性内指定的目标文件夹中创建此文件。  
 
-#### <a name="to-enable-the-site-backup-maintenance-task"></a>Para habilitar a tarefa de manutenção de backup do site  
+#### <a name="to-enable-the-site-backup-maintenance-task"></a>启用站点备份维护任务  
 
-1.  No console do Configuration Manager, abra **Administração** > **Configuração do Site** > **Sites**.  
+1.  在 Configuration Manager 控制台中，依次打开“管理” > “站点配置” > “站点”。  
 
-2.  Selecione o site no qual deseja habilitar a tarefa de manutenção de backup do site.  
+2.  选择要在其中启用站点备份维护任务的站点。  
 
-3.  Na guia **Início**, no grupo **Configurações**, escolha **Tarefas de Manutenção do Site**.  
+3.  在“主页”选项卡上的“设置”组中，选择“站点维护任务”。  
 
-4.  Escolha **Servidor do Site de Backup**  >  **Editar**.  
+4.  选择“备份站点服务器”  >  “编辑”。  
 
-5.  Escolha **Habilitar esta tarefa** > **Definir Caminhos** para especificar o destino do backup. Você tem as seguintes opções:  
+5.  选择“启用此任务” > “设置路径”以指定备份目标。 有下列选项：  
 
     > [!IMPORTANT]  
-    >  Para ajudar a evitar a violação dos arquivos de backup, armazene os arquivos em um local seguro. O caminho de backup mais seguro é uma unidade local, para que possibilite definir permissões do sistema de arquivos NTFS na pasta. O Configuration Manager não criptografa os dados de backup armazenados no caminho do backup.  
+    >  为了帮助防止篡改备份文件，请将文件存储在安全的位置。 最安全的备份路径是本地驱动器，因此你可以在文件夹上设置 NTFS 文件系统权限。 Configuration Manager 不会对备份路径中存储的备份数据进行加密。  
 
-    -   **Unidade local no servidor do site para dados e banco de dados do site**: especifica que os arquivos de backup do site e do banco de dados do site são armazenados no caminho especificado na unidade de disco local do servidor do site. É necessário criar a pasta local para poder executar a tarefa de backup. A conta Sistema Local no servidor do site deve ter permissões de **Gravação** no sistema de arquivos NTFS para a pasta local do backup do servidor do site. A conta Sistema Local no computador que está executando o SQL Server deve ter permissões de **Gravação** NTFS para a pasta do backup do banco de dados do site.  
+    -   站点服务器上用于站点数据和数据库的本地驱动器：指定将站点和站点数据库的备份文件存储在站点服务器本地磁盘驱动器上的指定路径中。 你必须在备份任务运行之前创建本地文件夹。 站点服务器上的本地系统帐户必须具有站点服务器备份的本地文件夹的**“写入”**NTFS 文件系统权限。 运行 SQL Server 的计算机上的本地系统帐户必须具有站点数据库备份文件夹的**“写入”**NTFS 权限。  
 
-    -   **Caminho de rede (nome UNC) para dados e banco de dados do site**: especifica que os arquivos de backup do site e do banco de dados do site são armazenados no caminho UNC especificado. É necessário criar o compartilhamento para poder executar a tarefa de backup. A conta de computador do servidor do site e a conta de computador do SQL Server, se o SQL Server estiver instalado em outro computador, devem ter permissões de **Gravação** NTFS e compartilhar permissões para a pasta de rede compartilhada.  
+    -   站点数据和数据库的网络路径（UNC 名称）：指定将站点和站点数据库的备份文件存储在指定 UNC 路径中。 你必须在备份任务运行之前创建共享。 站点服务器的计算机帐户以及 SQL Server 的计算机帐户（如果 SQL Server 安装在另一台计算机上）必须具有共享网络文件夹的“写入”NTFS 和共享权限。  
 
-    -   **Unidades locais no servidor do site e no SQL Server**: especifica que os arquivos de backup do site são armazenados no caminho especificado na unidade local do servidor do site e que os arquivos de backup do banco de dados do site são armazenados no caminho especificado na unidade local do servidor de banco de dados do site. É necessário criar as pastas locais para poder executar a tarefa de backup. A conta de computador do servidor do site deve ter permissões de **Gravação** NTFS para a pasta criada no servidor do site. A conta de computador do SQL Server deve ter permissões de **Gravação** NTFS para a pasta criada no servidor de banco de dados do site. Essa opção está disponível somente quando o banco de dados do site não está instalado no servidor do site.  
+    -   **站点服务器和 SQL Server 上的本地驱动器**：指定将站点的备份文件存储在站点服务器本地驱动器上的指定路径中，并将站点数据库的备份文件存储在站点数据库服务器本地驱动器上的指定路径中。 你必须在备份任务运行之前创建本地文件夹。 站点服务器的计算机帐户必须具有你在站点服务器上创建的文件夹的“写入”NTFS 权限。 SQL Server 的计算机帐户必须具有你在站点数据库服务器上创建的文件夹的“写入”NTFS 权限。 只有在站点服务器未安装站点数据库时，此选项才可用。  
 
     > [!NOTE]  
-    >   A opção de navegar até o destino do backup está disponível somente quando o caminho UNC do destino do backup é especificado.
+    >   只有在你指定备份目标的 UNC 路径时，用于浏览到备份目标的选项才可用。
 
-    > O nome da pasta ou do compartilhamento usado como destino do backup não oferece suporte ao uso de caracteres Unicode.  
+    > 用于备份目标的文件夹名称或共享名称不支持使用 Unicode 字符。  
 
-6.  Configure um agendamento para a tarefa de backup do site. Como prática recomendada, considere agendar a execução do backup para fora do horário de trabalho ativo. Se houver uma hierarquia, considere agendar a execução para no mínimo duas vezes por semana para garantir a máximo retenção de dados em caso de falha do site.  
+6.  为站点备份任务配置计划。 作为最佳方案，请考虑活动工作时间外的备份计划。 如果有层次结构，请考虑使用一周至少运行两次的计划，以确保在出现站点故障时保留最大量的数据。  
 
-    Ao executar o console do Configuration Manager no mesmo servidor do site em que o backup está sendo configurado, a tarefa de manutenção Servidor do Site de Backup usa a hora local para o agendamento. Quando o console do Configuration Manager é executado em um computador remoto do site que está sendo configurado para backup, a tarefa de manutenção Servidor do Site de Backup usa o horário UTC para o agendamento.  
+    如果在为备份配置的同一站点服务器上运行 Configuration Manager 控制台，则备份站点服务器维护任务将为计划使用本地时间。 如果 Configuration Manager 控制台从为备份配置的站点的远程计算机中运行，则备份站点服务器维护任务为计划使用 UTC。  
 
-7.  Escolha se um alerta deve ser criado caso a tarefa de backup do site falhe, clique em **OK** e em **OK** novamente. Quando selecionado, o Configuration Manager cria um alerta crítico para a falha do backup, que pode ser visto no nó **Alertas** do espaço de trabalho **Monitoramento**.  
+7.  选择在站点备份任务失败时是否创建警报，单击“确定”，然后单击“确定”。 如果选择，则 Configuration Manager 将为备份失败创建关键警报，可以在“监视”工作区的“警报”节点中查看该警报。  
 
- Em seguida, verifique se a tarefa de manutenção Servidor do Site de Backup está em execução para garantir que os backups estão sendo criadas.  
+ 接下来，验证备份站点服务器维护任务是否正在运行，以确保正在创建备份。  
 
-#### <a name="to-verify-that-the-backup-site-server-maintenance-task-is-running"></a>Para verificar se a tarefa de manutenção Servidor do Site de Backup está em execução  
-Verifique se a tarefa de manutenção Site de Backup está em execução conferindo o seguinte:  
+#### <a name="to-verify-that-the-backup-site-server-maintenance-task-is-running"></a>验证备份站点服务器维护任务是否正在运行  
+通过查看下列任何信息来验证站点备份维护任务是否正在运行：  
 
--   Confira o carimbo de data/hora dos arquivos na pasta de destino do backup que a tarefa criou. Verifique se o carimbo de data/hora foi atualizado com uma hora que coincida com a hora em que a tarefa foi agendada para ser executada pela última vez.  
+-   检查该任务创建的备份目标文件夹中的文件上的时间戳。 验证是否已使用与上次计划运行该任务的时间匹配的时间更新了该时间戳。  
 
--   No nó **Status do Componente** do espaço de trabalho **Monitoramento** , confira as mensagens de status de SMS_SITE_BACKUP. Quando o backup do site for concluído com êxito, você verá a mensagem ID 5035, que indica que o backup do site foi concluído sem erros.  
+-   在“监视”工作区的“组件状态”节点中，查看 SMS_SITE_BACKUP 的状态消息。 如果站点备份成功完成，你将看到消息 ID 5035，指示站点备份已成功完成，且未出现任何错误。  
 
--   Quando a tarefa de manutenção Servidor do Site de Backup estiver configurada para criar um alerta em caso de falha do backup, é possível verificar as falhas de backup no nó **Alertas** do espaço de trabalho **Monitoramento** .  
+-   如果将备份站点服务器维护任务配置为在备份失败的情况下创建警报，你可以检查“监视”工作区中的“警报”节点来了解备份失败情况。  
 
--   Em &lt;*PastaDeInstalaçãoDoConfigMgr*>\Logs, verifique se há avisos e erros em Smsbkup.log. Quando o backup do site for concluído com êxito, você verá `Backup completed` com um carimbo de data e hora e a ID de mensagem `STATMSG: ID=5035`.  
+-   在 &lt;*ConfigMgrInstallationFolder*>\Logs 中，查看 Smsbkup.log 以了解警告和错误。 站点备份成功完成后，你将看到`Backup completed`，时间戳和消息 ID 为 `STATMSG: ID=5035`。  
 
     > [!TIP]  
-    >  Quando a tarefa de manutenção de backup falha, é possível reiniciá-la interrompendo e reiniciando o serviço SMS_SITE_BACKUP.  
+    >  如果备份维护任务失败，你可以通过停止并重启 SMS_SITE_BACKUP 服务来重启备份任务。  
 
-## <a name="archive-the-backup-snapshot"></a>Arquivar o instantâneo de backup  
-A primeira vez que a tarefa de manutenção Servidor do Site de Backup é executada, um instantâneo de backup é criado, e você pode usá-lo para recuperar o servidor do site em caso de falha. Quando a tarefa de backup é executada novamente durante ciclos subsequentes, é criado um novo instantâneo de backup que substitui o instantâneo anterior. Consequentemente, o site fica com apenas um instantâneo de backup e não há como recuperar um instantâneo de backup anterior.  
+## <a name="archive-the-backup-snapshot"></a>存档备份快照  
+备份站点服务器维护任务第一次运行时将创建一个备份快照，你可以使用该快照在出现故障时恢复站点服务器。 当备份任务在后续周期中再次运行时，它将创建新备份快照，该快照将覆盖以前的快照。 因此，站点只有一个备份快照，并且你无法检索以前的备份快照。  
 
-Como prática recomendada, mantenha diversos arquivos de instantâneo de backup, pelos seguintes motivos:  
+作为最佳方案，请保留备份快照的多个存档，原因如下：  
 
--   É comum que a mídia de backup falhe, seja extraviada ou contenha apenas um backup parcial. Recuperar um site primário autônomo com falha de um backup mais antigo é melhor do que recuperar sem qualquer backup. Para um servidor de site em uma hierarquia, o backup deve estar no período de retenção do controle de alterações do SQL Server, ou o backup não será necessário.  
+-   备份媒体经常会出现故障、位置不正确或仅包含部分备份。 从较旧的备份恢复出现故障的独立主站点比在没有任何备份的情况下进行恢复要好。 对于层次结构中的站点服务器，备份必须位于 SQL Server 更改跟踪保持期内，或者不需要备份。  
 
--   Uma corrupção no site pode não ser detectada durante vários ciclos de backup. Pode ser necessário usar um instantâneo de backup anterior à corrupção do site. Isso se aplica a um site primário autônomo e a sites em uma hierarquia em que o backup está no período de retenção do controle de alterações do SQL Server.  
+-   对于若干备份周期，可能检测不到站点中的损坏。 可能必须使用获取自站点损坏之前的备份快照。 这适用于独立主站点以及层次结构中备份处于 SQL Server 更改跟踪保持期内的站点。  
 
--   O site poderá não ter nenhum instantâneo de backup, se, por exemplo, a tarefa de manutenção de servidor do site de backup falhar. Como a tarefa de backup remove o instantâneo de backup anterior antes de começar a fazer o backup dos dados atuais, não haverá um instantâneo de backup válido.  
+-   举例来说，如果备份站点服务器维护任务失败，站点将可能根本没有任何备份快照。 由于备份任务会在其开始备份当前数据之前删除以前的备份快照，因此将不具备有效的备份快照。  
 
-## <a name="using-the-afterbackupbat-file"></a>Usando o arquivo AfterBackup.bat  
-Após o backup bem-sucedido do site, a tarefa do Servidor do Site de Backup tentará executar automaticamente um arquivo chamado AfterBackup.bat. Você deve criar manualmente o arquivo AfterBackup.bat em &lt;*PastaDeInstalaçãoDoConfigMgr*>\Inboxes\Smsbkup. Se existir um arquivo AfterBackup.bat e ele estiver armazenado na pasta correta, ele será executado automaticamente depois que a tarefa de backup for concluída.
+## <a name="using-the-afterbackupbat-file"></a>使用 AfterBackup.bat 文件  
+成功备份站点之后，备份站点服务器任务会自动尝试运行一个名为 AfterBackup.bat 的文件。 必须在 &lt;*ConfigMgrInstallationFolder*>\Inboxes\Smsbkup 中手动创建 AfterBackup.bat 文件。 如果 AfterBackup.bat 文件存在并存储在正确的文件夹中，则该文件将在备份任务完成后自动运行。
 
-O arquivo AfterBackup.bat permite arquivar o instantâneo de backup no final de cada operação de backup, e executa automaticamente outras tarefas pós-backup que não fazem parte da tarefa de manutenção do servidor do site de backup. O arquivo AfterBackup.bat integra o arquivo e as operações de backup, garantindo assim que cada novo instantâneo de backup seja arquivado.
+AfterBackup.bat 文件使你能够在每个备份操作结束时将备份快照存档，并自动执行不属于备份站点服务器维护任务一部分的其他备份后任务。 AfterBackup.bat 文件将存档和备份操作结合，从而确保将每个新备份快照存档。
 
-Quando o arquivo AfterBackup.bat não está presente, a tarefa de backup a ignora sem efeito sobre a operação de backup. Para verificar se a tarefa de backup do site executou com sucesso o arquivo AfterBackup.bat, consulte o nó **Status do Componente** no espaço de trabalho **Monitoramento** e verifique as mensagens de status de SMS_SITE_BACKUP. Quando a tarefa inicia com êxito o arquivo de comando AfterBackup.bat, você vê uma mensagem ID 5040.  
+如果 AfterBackup.bat 文件不存在，备份任务将跳过该文件，不会对备份操作产生影响。 要验证站点备份任务是否成功运行了 AfterBackup.bat 文件，请查看“监视”工作区的“组件状态”节点，并查看 SMS_SITE_BACKUP 的状态消息。 如果任务成功启动了 AfterBackup.bat 命令文件，你将看到消息 ID 5040。  
 
 > [!TIP]  
->  Para criar o arquivo AfterBackup.bat para arquivar os arquivos de backup do servidor do site, você deve usar uma ferramenta de comando de cópia, como o [Robocopy](http://go.microsoft.com/fwlink/p/?LinkId=228408), no arquivo em lotes. Por exemplo, você pode criar o arquivo AfterBackup.bat, e na primeira linha, adicionar algo semelhante a: `Robocopy E:\ConfigMgr_Backup \\ServerName\ShareName\ConfigMgr_Backup /MIR`  
+>  要创建 AfterBackup.bat 文件以将站点服务器备份文件存档，必须在该批处理文件中使用复制命令工具，例如 [Robocopy](http://go.microsoft.com/fwlink/p/?LinkId=228408)。 例如，你可以创建 AfterBackup.bat 文件，并在第一行上添加以下类似内容：`Robocopy E:\ConfigMgr_Backup \\ServerName\ShareName\ConfigMgr_Backup /MIR`  
 
- Embora o uso pretendido do AfterBackup.bat seja arquivar instantâneos de backup, você pode criar um arquivo AfterBackup.bat para executar tarefas adicionais ao final de cada operação de backup.  
+ 尽管 AfterBackup.bat 的预期用途是将备份快照存档，但你可以创建 AfterBackup.bat 文件以在每个备份操作结束时执行其他任务。  
 
-##  <a name="supplemental-backup-tasks"></a>Tarefas de backup complementares  
-A tarefa de manutenção do servidor do site de backup fornece um instantâneo de backup para os arquivos do servidor do site e banco de dados do site, mas há outros itens sem backup que você deve considerar ao criar a estratégia de backup. Use as seções a seguir para ajudá-lo a concluir sua estratégia de backup do Configuration Manager.  
+##  <a name="supplemental-backup-tasks"></a>补充备份任务  
+备份站点服务器维护任务提供站点服务器文件和站点数据库的备份快照，但会存在一些你在创建备份策略时必须考虑的其他未备份项目。 使用下列部分来帮助完成 Configuration Manager 备份策略。  
 
-### <a name="back-up-custom-reporting-services-reports"></a>Fazer backup de relatórios personalizados do Reporting Services  
-Quando você modifica ou cria relatórios personalizados do Reporting Services, criar backup para os arquivos de banco de dados do servidor é uma parte importante de sua estratégia de backup. O backup do servidor de relatórios deve incluir backup dos arquivos de origem para relatórios e modelos, chaves de criptografia, montagens ou extensões personalizadas, arquivos de configuração personalizados, visualizações do SQL Server usadas em relatórios personalizados, procedimentos de armazenamento personalizados, e assim por diante.  
+### <a name="back-up-custom-reporting-services-reports"></a>备份自定义 Reporting Services 报表  
+如果修改了预定义或已创建自定义 Reporting Services 报表，则为报表服务器数据库文件创建备份是备份策略的一个重要部分。 报表服务器备份必须包括报表和模型的源文件、加密密钥、自定义程序集或扩展、配置文件、自定义报表中使用的自定义 SQL Server 视图、自定义存储过程等的备份。  
 
 > [!IMPORTANT]  
->  Quando o Configuration Manager é atualizado para uma versão mais recente, os relatórios predefinidos podem ser substituídos por novos relatórios. Se modificar um relatório predefinido, faça backup do relatório e restaure-o no Reporting Services.  
+>  将 Configuration Manager 升级到较新版本时，预定义的报表可能被新报表覆盖。 如果修改预定义报表，请备份该报表，然后在 Reporting Services 中将其还原。  
 
- Para obter mais informações sobre como fazer backup de relatórios personalizados no Reporting Services, veja [Operações de backup e restauração para uma instalação do Reporting Services](https://technet.microsoft.com/library/ms155814\(v=sql.120\).aspx) nos Manuais Online do SQL Server 2014.  
+ 有关在 Reporting Services 中备份自定义报表的详细信息，请参阅 SQL Server 2014 联机丛书中的 [Reporting Services 安装的备份和还原操作](https://technet.microsoft.com/library/ms155814\(v=sql.120\).aspx) 。  
 
-### <a name="back-up-content-files"></a>Fazer backup de arquivos de conteúdo  
-A biblioteca de conteúdo no Configuration Manager é o local que armazena todos os arquivos de conteúdo para atualizações de software, aplicativos, implantação de sistema operacional e assim por diante. A biblioteca de conteúdo está localizada no servidor do site e em cada ponto de distribuição. A tarefa de manutenção do servidor do site de backup não inclui um backup para a biblioteca de conteúdo ou para os diretórios de origem do pacote. Quando um servidor do site falha, as informações sobre os arquivos da biblioteca de conteúdo são restauradas no banco de dados do site, mas você deve restaurar a biblioteca de conteúdo e os diretórios de origem do pacote no servidor do site.  
+### <a name="back-up-content-files"></a>备份内容文件  
+Configuration Manager 中的内容库是存储软件更新、应用程序、操作系统部署等的所有内容文件的位置。 内容库位于站点服务器和每个分发点上。 “备份站点服务器”维护任务不包含内容库或包源文件的备份。 在站点服务器失败时，有关内容库文件的信息会被还原到站点数据库，但你必须还原站点服务器上的内容库和包源文件。  
 
--   **Biblioteca de conteúdo**: a biblioteca de conteúdo deve ser restaurada antes de redistribuir o conteúdo nos pontos de distribuição. Quando você começa a redistribuição do conteúdo, o Configuration Manager copia os arquivos da biblioteca de conteúdo no servidor do site para os pontos de distribuição. A biblioteca de conteúdo do servidor do site está na pasta SCCMContentLib, que normalmente fica localizada na unidade com mais espaço livre em disco quando o site foi instalado.  
+-   内容库：必须还原内容库，然后才能将内容重新分发到分发点。 当开始执行内容重分发时，Configuration Manager 会将文件从站点服务器上的内容库复制到分发点。 站点服务器的内容库位于 SCCMContentLib 文件夹中，该文件夹通常位于安装站点时可用磁盘空间最多的驱动器上。  
 
--   **Arquivos de origem do pacote**: os arquivos de origem do pacote devem ser restaurados antes de atualizar o conteúdo nos pontos de distribuição. Quando você inicia uma atualização de conteúdo, o Configuration Manager copia arquivos novos ou modificados da origem do pacote na biblioteca de conteúdo, que por sua vez, copia os arquivos nos pontos de distribuição associados. É possível executar a seguinte consulta no SQL Server para encontrar o local de origem do pacote de todos os pacotes e aplicativos: `SELECT * FROM v_Package`. É possível identificar o site de origem do pacote observando os três primeiros caracteres da ID do pacote. Por exemplo, se a ID do pacote for CEN00001, o código do site de origem será CEN. Ao restaurar os arquivos de origem do pacote, eles devem ser restaurados no mesmo local em que estavam antes da falha.  
+-   包源文件：必须还原包源文件，然后才能更新分发点上的内容。 当开始进行内容更新时，Configuration Manager 会将新文件或修改的文件从包源复制到内容库，后者依次将这些文件复制到关联的分发点。 你可以在 SQL Server 中运行以下查询来查找所有包和应用程序的包源位置：`SELECT * FROM v_Package`。 你可以通过查看包 ID 的前三个字符来确定包源站点。 例如，如果包 ID 为 CEN00001，则源站点的站点代码为 CEN。 在还原包源文件时，必须将它们还原到发生故障之前所在的同一位置。  
 
- Certifique-se de incluir a biblioteca de conteúdo e os diretórios de origem do pacote em seu backup de sistema de arquivos para o servidor do site.  
+ 验证是否在站点服务器的文件系统备份中包括了内容库和包源位置。  
 
-### <a name="back-up-custom-software-updates"></a>Fazer backup de atualizações de software personalizadas  
- O System Center Updates Publisher 2011 é uma ferramenta autônoma que permite que você publique atualizações de software personalizadas no WSUS (Windows Server Update Services), sincronize-as com o Configuration Manager, avalie a conformidade das atualizações de software e implante-as nos clientes. O Updates Publisher usa um banco de dados local para seu repositório de atualização de software. Quando você usa o Updates Publisher para gerenciar atualizações de software personalizadas, determine se você deverá incluir o banco de dados do Updates Publisher em seu plano de backup. Para obter mais informações sobre o Updates Publisher, consulte [System Center Updates Publisher 2011](http://go.microsoft.com/fwlink/p/?LinkId=228726) na biblioteca do System Center TechCenter.  
+### <a name="back-up-custom-software-updates"></a>备份自定义软件更新  
+ System Center Updates Publisher 2011 是一种独立工具，通过该工具可将自定义软件更新发布到 Windows Server Update Services (WSUS)、将软件更新同步到 Configuration Manager、评估软件更新符合性，并将自定义软件更新部署到客户端。 Updates Publisher 为其软件更新存储库使用本地数据库。 使用 Updates Publisher 管理自定义软件更新时，请确定是否应在备份计划中包括 Updates Publisher 数据库。 有关 Updates Publisher 的详细信息，请参阅 System Center TechCenter 库中的 [System Center Updates Publisher 2011](http://go.microsoft.com/fwlink/p/?LinkId=228726) 。  
 
- Use o procedimento a seguir para fazer backup do banco de dados do Updates Publisher.  
+ 使用下列过程来备份 Updates Publisher 数据库。  
 
-#### <a name="to-back-up-the-updates-publisher-2011-database"></a>Para fazer o backup do banco de dados do Updates Publisher 2011  
+#### <a name="to-back-up-the-updates-publisher-2011-database"></a>备份 Updates Publisher 2011 数据库  
 
-1.  No computador que executa o Updates Publisher, navegue até o arquivo de banco de dados do Updates Publisher (Scupdb.sdf) em %*USERPROFILE*%\AppData\Local\Microsoft\System Center Updates Publisher 2011\5.00.1727.0000\\. Há um arquivo de banco de dados diferente para cada usuário que executa o Updates Publisher.  
+1.  在运行 Updates Publisher 的计算机上，浏览到 %*USERPROFILE*%\AppData\Local\Microsoft\System Center Updates Publisher 2011\5.00.1727.0000\\ 中的 Updates Publisher 数据库文件 (Scupdb.sdf)。 每个运行 Updates Publisher 的用户有不同的数据库文件。  
 
-2.  Copie o arquivo do banco de dados no destino de backup. Por exemplo, se o seu destino de backup for E:\ConfigMgr_Backup, você poderá copiar o arquivo de banco de dados do Updates Publisher para E:\ConfigMgr_Backup\SCUP2011.  
+2.  将数据库文件复制到备份目标。 例如，如果备份目标为 E:\ConfigMgr_Backup，则可将 Updates Publisher 数据库文件复制到 E:\ConfigMgr_Backup\SCUP2011。  
 
     > [!TIP]  
-    >  Quando há mais de um arquivo de banco de dados em um computador, considere armazenar o arquivo em uma subpasta que indique o perfil do usuário associado ao arquivo de banco de dados. Por exemplo, pode haver um arquivo de banco de dados em E:\ConfigMgr_Backup\SCUP2011\User1 e outro em E:\ConfigMgr_Backup\SCUP2011\User2.  
+    >  如果计算机上有多个数据库文件，请考虑将文件存储在子文件夹中，该子文件夹指示与数据库文件关联的用户配置文件。 例如，你可能在 E:\ConfigMgr_Backup\SCUP2011\User1 中有一个数据库文件，并在 E:\ConfigMgr_Backup\SCUP2011\User2 中有另一个数据库文件。  
 
-## <a name="user-state-migration-data"></a>Dados de migração de estado do usuário  
-Você pode usar as sequências da tarefas do Configuration Manager para capturar e restaurar dados de estado do usuário em cenários de implantação de sistema operacional no qual você deseja manter o estado do usuário do sistema operacional atual. As pastas que armazenam os dados do estado do usuário são listadas nas propriedades do ponto de migração de estado. Esses dados de migração de estado do usuário não ganham backup como parte da tarefa de manutenção de backup do servidor do site. Como parte do plano de backup, você deve fazer backup manualmente das pastas especificadas para armazenar os dados de migração do estado do usuário.   
+## <a name="user-state-migration-data"></a>用户状态迁移数据  
+在希望保留当前操作系统的用户状态的操作系统部署方案中，可以使用 Configuration Manager 任务序列来捕获和还原用户状态数据。 状态迁移点的属性中列出了存储用户状态数据的文件夹。 在站点服务器备份维护任务中，不会备份此用户状态迁移数据。 作为备份计划的一部分，你必须手动备份指定用于存储用户状态迁移数据的文件夹。   
 
-### <a name="to-determine-the-folders-used-to-store-user-state-migration-data"></a>Para determinar as pastas usadas para armazenar dados de migração de estado do usuário  
+### <a name="to-determine-the-folders-used-to-store-user-state-migration-data"></a>确定用于存储用户状态迁移数据的文件夹  
 
-1.  No console do Configuration Manager, clique em **Administração**.  
+1.  在 Configuration Manager 控制台中，单击“管理”。  
 
-2.  No espaço de trabalho **Administração**, expanda **Configuração de Site** e escolha **Funções de Servidores e Sistema de Site**.  
+2.  在“管理”工作区中，展开“站点配置”，并选择“服务器和站点系统角色”。  
 
-3.  Selecione o sistema de sites que hospeda a função de migração de estado e escolha **Ponto de migração de estado** em **Funções do Sistema de Sites**.  
-
-
-4.  Na guia **Função do Site** , no grupo **Propriedades** , clique em **Propriedades**.  
-5.  As pastas que armazenam os dados de migração de estado do usuário estão listadas na seção **Detalhes da Pasta** na guia **Geral** .  
+3.  选择承载状态迁移角色的站点系统，然后在“站点系统角色”中选择“状态迁移点”。  
 
 
+4.  在“站点角色”选项卡上的“属性”组中，单击“属性”。  
+5.  “常规”选项卡上的“文件夹详细信息”部分中列出了存储用户状态迁移数据的文件夹。  
 
-## <a name="about-the-sms-writer-service"></a>Sobre o serviço SMS Writer  
-O SMS Writer é um serviço que interage com o VSS (Serviço de Cópias de Sombra de Volume) durante o processo de backup. O serviço SMS Writer deve estar em execução para o backup do site do Configuration Manager para ser concluído com êxito.  
 
-### <a name="purpose"></a>Finalidade  
-O SMS Writer registra-se no serviço VSS e se associa às suas interfaces e eventos. Quando o VSS transmite eventos ou envia notificações específicas para o SMS Writer, o SMS Writer responde à notificação e executa a ação apropriada. O SMS Writer lê o arquivo de controle de backup (smsbkup.ctl), localizado em &lt;*Caminho de Instalação do ConfigMgr*>\inboxes\smsbkup.box, e determina os arquivos e os dados que devem ser armazenados em backup. O SMS Writer cria metadados, que consistem em vários componentes, com base nessas informações e em dados específicos da chave e das subchaves de registro de SMS. O serviço envia os metadados ao VSS quando solicitado. Em seguida, o VSS envia os metadados ao aplicativo solicitante, o Gerenciador de Backup do Configuration Manager. O Gerenciador de Backup seleciona os dados que passam por backup e envia esses dados ao SMS Writer via VSS. O SMS Writer executa as etapas apropriadas para se preparar para o backup. Quando o VSS está pronto para capturar o instantâneo, ele envia um evento, o SMS Writer interrompe todos os serviços do Configuration Manager e assegura que as atividades do Configuration Manager sejam congeladas enquanto o instantâneo é criado. Depois que o instantâneo é concluído, o SMS Writer reinicia os serviços e as atividades.  
 
-O serviço SMS Writer é instalado automaticamente. Ele deve estar em execução quando o aplicativo VSS solicitar um backup ou uma restauração.  
+## <a name="about-the-sms-writer-service"></a>关于 SMS 编写器服务  
+SMS 编写器是一项服务，该服务在备份过程中与卷影复制服务 (VSS) 交互。 SMS 编写器服务必须正在运行，Configuration Manager 站点备份才能成功完成。  
 
-### <a name="writer-id"></a>ID do gravador  
-A ID do gravador do SMS Writer é: 03ba67dd-dc6d-4729-a038-251f7018463b.  
+### <a name="purpose"></a>目的  
+SMS 编写器向 VSS 服务注册，并绑定到其接口和事件。 当 VSS 广播事件时，或者，如果它将特定通知发送到 SMS 编写器，SMS 编写器将响应通知并执行适当的操作。 SMS 编写器可读取位于 &lt;*ConfigMgr Installation Path*>\inboxes\smsbkup.box 中的备份控制文件 (smsbkup.ctl)，并确定要备份的文件和数据。 SMS 编写器根据此信息以及 SMS 注册表项和子项中的特定数据生成由不同部分组成的元数据。 当请求元数据时，它将元数据发送到 VSS。 然后，VSS 将元数据发送到请求应用程序，即 Configuration Manager 备份管理器。 备份管理器选择备份的数据并通过 VSS 将此数据发送到 SMS 编写器。 SMS 编写器执行适当的步骤来为备份做好准备。 稍后，当 VSS 准备获取快照时，它将发送事件，SMS 编写器停止所有 Configuration Manager 服务，并确保在创建快照时 Configuration Manager 活动已冻结。 完成快照后，SMS 编写器重启服务和活动。  
 
-### <a name="permissions"></a>Permissões  
-O serviço SMS Writer deve ser executado pela conta Sistema Local.  
+将自动安装 SMS 编写器服务。 当 VSS 应用程序请求备份或还原时，该服务必须正在运行。  
 
-### <a name="volume-shadow-copy-service"></a>Serviço de Cópias de Sombra de Volume  
-O VSS é um conjunto de APIs COM que implementa uma estrutura para permitir a execução de backups de volume enquanto os aplicativos de um sistema continuam a ser gravados nos volumes. O VSS fornece uma interface consistente que permite a coordenação entre os aplicativos do usuário que atualizam dados em disco (o serviço SMS Writer) e aqueles que fazem backup dos aplicativos (o serviço Gerenciador de Backup). Para saber mais, veja o tópico [Serviço de Cópias de Sombra de Volume](http://go.microsoft.com/fwlink/p/?LinkId=241968) no Windows Server TechCenter.  
+### <a name="writer-id"></a>编写器 ID  
+SMS 编写器的编写器 ID 为：03ba67dd-dc6d-4729-a038-251f7018463b。  
 
-## <a name="next-steps"></a>Próximas etapas
-Depois de criar um backup, pratique a [recuperação de site](/sccm/protect/understand/recover-sites) com esse backup. Isso pode ajudá-lo a se familiarizar com o processo de recuperação antes de precisar confiar nele e pode ajudar a confirmar que o backup foi bem-sucedido para a finalidade pretendida.  
+### <a name="permissions"></a>权限  
+SMS 编写器服务必须采用本地系统帐户运行。  
 
+### <a name="volume-shadow-copy-service"></a>卷影复制服务  
+VSS 是一组 COM API，它实现一个框架，以允许在系统上的应用程序继续写入卷时执行所有卷备份。 VSS 提供一个一致的接口，在用于更新磁盘上的数据的用户应用程序（SMS 编写器服务）和用于备份应用程序的用户应用程序（备份管理器服务）之间实现协作。 有关详细信息，请参阅 Windows Server TechCenter 中的[卷影复制服务](http://go.microsoft.com/fwlink/p/?LinkId=241968)主题。  
+
+## <a name="next-steps"></a>后续步骤
+创建备份后，使用该备份练习[站点恢复](/sccm/protect/understand/recover-sites)。 这可以帮助你在需要基于备份执行恢复操作之前熟悉恢复过程，并有助于确认备份是否可成功实现其预期目的。  

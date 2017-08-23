@@ -1,93 +1,89 @@
 ---
-title: Configurar o registro de dispositivo | Microsoft Docs
-description: "Conceda permissão aos usuários para registrarem seus dispositivos para o Gerenciamento de Dispositivo Móvel Local no System Center Configuration Manager."
+title: "设置设备注册 | Microsoft Docs"
+description: "对用户授予在 System Center Configuration Manager 中向本地移动设备管理注册设备的权限。"
 ms.custom: na
 ms.date: 03/05/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
-ms.technology:
-- configmgr-hybrid
+ms.technology: configmgr-hybrid
 ms.tgt_pltfrm: na
 ms.topic: get-started-article
 ms.assetid: 9ffaea91-1379-4b86-9953-b25e152f56a9
-caps.latest.revision: 10
+caps.latest.revision: "10"
 author: Mtillman
 ms.author: mtillman
 manager: angrobe
-ms.translationtype: Human Translation
-ms.sourcegitcommit: 2c723fe7137a95df271c3612c88805efd8fb9a77
-ms.openlocfilehash: 1b32d755e23e1b1db2162bb117f45791a95b139b
-ms.contentlocale: pt-br
-ms.lasthandoff: 03/06/2017
-
-
+ms.openlocfilehash: 16d4106d486d821b7ce92a1de65ebb04469d18de
+ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
+ms.translationtype: HT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 08/07/2017
 ---
-# <a name="set-up-device-enrollment-for-on-premises-mobile-device-management-in-system-center-configuration-manager"></a>Configurar o registro de dispositivo para o gerenciamento de dispositivo móvel local no System Center Configuration Manager
+# <a name="set-up-device-enrollment-for-on-premises-mobile-device-management-in-system-center-configuration-manager"></a>为 System Center Configuration Manager 中的本地移动设备管理设置设备注册
 
-*Aplica-se a: System Center Configuration Manager (Branch Atual)*
+*适用范围：System Center Configuration Manager (Current Branch)*
 
-Permitir que os usuários registrem seus próprios dispositivos no Gerenciamento de Dispositivo Móvel Local do System Center Configuration Manager requer conceder a eles permissão para fazer isso. Para conceder aos usuários permissão para registrar dispositivos, execute as tarefas a seguir.
+要使用户可向 System Center Configuration Manager 本地移动设备管理注册设备，需要授予其执行此操作的权限。 若要向用户授予注册设备的权限，请执行以下任务。
 
--   [Crie um perfil de registro que permite que os usuários registrem os dispositivos modernos](#bkmk_createProf)  
+-   [创建允许用户注册新式设备的注册配置文件](#bkmk_createProf)  
 
--   [Configurar definições de cliente adicionais para dispositivos registrados](#bkmk_addClient)  
+-   [为注册的设备设置其他客户端设置](#bkmk_addClient)  
 
--   [Permitir que os usuários recebam o perfil de registro de dispositivo moderno](#bkmk_enableUsers)  
+-   [使用户能够接收新式设备注册配置文件](#bkmk_enableUsers)  
 
--   [Armazenar o certificado raiz em dispositivos que serão registrados](#bkmk_storeCert)  
+-   [在要注册的设备上存储根证书](#bkmk_storeCert)  
 
-##  <a name="bkmk_createProf"></a> Crie um perfil de registro que permite que os usuários registrem os dispositivos modernos  
- Para enviar as configurações necessárias por push para permitir que os usuários registrem os dispositivos modernos, você pode adicionar um novo perfil de registro para as configurações padrão, que é aplicado em todos os usuários descobertos no site do Configuration Manager.  
+##  <a name="bkmk_createProf"></a> 创建允许用户注册新式设备的注册配置文件  
+ 为了推送允许用户注册新式设备所需的设置，可以向默认客户端设置添加新的注册配置文件，该配置文件适用于 Configuration Manager 站点中发现的所有用户。  
 
-1.  No console do Configuration Manager, clique em **Administração** > **Visão Geral** > **Configurações do Cliente**, abra **Configurações do Cliente Padrão** e selecione **Registro**.  
+1.  在 Configuration Manager 控制台中，单击“管理” > “概述” > “客户端设置”，打开“默认客户端设置”并选择“注册”。  
 
-2.  Em Configurações do Dispositivo, especifique o intervalo de sondagem para dispositivos modernos.  
+2.  在“设备设置”下，为新式设备指定轮询间隔。  
 
-3.  Em Configurações de Usuário, selecione **Sim** para **Permitir que os usuários registrem os dispositivos modernos**.  
+3.  在“用户设置”下，为“允许用户注册新式设备”  选择“是” 。  
 
-4.  Ao lado do **Perfil de registro de dispositivo moderno**, clique em **Definir perfil...** e em **Criar...**  
+4.  在“新式设备注册配置文件”旁，单击“设置配置文件…”，然后单击“创建…”  
 
-5.  Em Criar Perfil de Registro, digite um nome para o perfil de registro e escolha o código do site de gerenciamento que deseja que os usuários com o perfil de registro usem. Clique em **OK** várias vezes para sair da página Configurações Padrão.  
+5.  在“创建注册配置文件”中，键入注册配置文件的名称，然后选择你希望具有该注册配置文件的用户使用的管理站点代码。 单击“确定”  数次以退出“默认设置”页。  
 
 > [!NOTE]  
->  Se você deseja implantar o perfil de registro para um subconjunto de usuários descobertos, você pode usar uma coleção de usuários e criar configurações personalizadas para implantar nessa coleção. Para obter informações sobre como criar configurações personalizadas do cliente, veja [How to configure client settings in System Center Configuration Manager](../../core/clients/deploy/configure-client-settings.md)  
+>  如果你希望将注册配置文件部署到的已发现用户的子集，则可以使用用户集合，并创建要部署到该集合的自定义客户端设置。 有关创建自定义客户端设置的信息，请参阅 [How to configure client settings in System Center Configuration Manager](../../core/clients/deploy/configure-client-settings.md)  
 
-##  <a name="bkmk_addClient"></a> Configurar definições de cliente adicionais para dispositivos registrados  
- Além de configurar o perfil de registro para dispositivos modernos, você pode configurar definições de cliente adicionais para configurar dispositivos quando eles estiverem registrados.  Para obter informações sobre como definir configurações do cliente, veja [Como definir as configurações do cliente no System Center Configuration Manager](../../core/clients/deploy/configure-client-settings.md).  
+##  <a name="bkmk_addClient"></a> 为注册的设备设置其他客户端设置  
+ 除了为新式设备设置注册配置文件之外，还可以设置其他客户端设置以便在注册设备时配置它们。  有关设置客户端设置的信息，请参阅[如何在 System Center Configuration Manager 中配置客户端设置](../../core/clients/deploy/configure-client-settings.md)。  
 
- Nem todas as configurações do cliente estão disponíveis para o Gerenciamento de Dispositivo Móvel Local. O branch atual do Configuration Manager dá suporte às seguintes configurações de cliente para o Gerenciamento de Dispositivo Móvel Local:  
+ 并非所有客户端设置都对本地移动设备管理可用。 Configuration Manager 的 current branch 支持以下用于本地移动设备管理的客户端设置：  
 
--   Registro: essas configurações especificam o perfil de registro de dispositivos gerenciados. Para obter mais informações sobre como configurar um perfil de registro, consulte [Criar um perfil de registro que permite que os usuários registrem os dispositivos modernos](#bkmk_createProf).  
+-   注册 - 这些设置为托管设备设置注册配置文件。 有关如何设置注册配置文件的详细信息，请参阅 [创建允许用户注册新式设备的注册配置文件](#bkmk_createProf)。  
 
--   Política do cliente: essas configurações especificam a frequência para baixar a política do cliente no dispositivo. Você também pode habilitar as configurações para segmentar usuários com a sondagem da política. Para obter mais informações sobre as configurações de políticas do cliente, consulte [Sobre as configurações do cliente no System Center Configuration Manager](../../core/clients/deploy/about-client-settings.md).  
+-   客户端策略 - 这些设置指定将客户端策略下载到设备的频率。 还可以启用设置以便使用策略轮询确定目标用户。 有关客户端策略设置的详细信息，请参阅[关于 System Center Configuration Manager 中的客户端设置](../../core/clients/deploy/about-client-settings.md)中的“客户端策略”部分。  
 
--   Implantação de software: essa configuração define o intervalo para avaliar os dispositivos do cliente para implantações de software. Para obter mais informações sobre as configurações de implantação de software, consulte a seção Implantação de Software em [Sobre as configurações do cliente no System Center Configuration Manager](../../core/clients/deploy/about-client-settings.md)  
+-   软件部署 - 此设置可设置为软件部署评估客户端设备的间隔。 有关软件部署设置的详细信息，请参阅[关于 System Center Configuration Manager 中的客户端设置](../../core/clients/deploy/about-client-settings.md)中的“软件部署”部分  
 
     > [!NOTE]  
-    >  Para o Gerenciamento de Dispositivo Móvel Local, as configurações de implantação de software podem ser usadas somente como configurações padrão do cliente. As configurações de implantação de software não podem ser usadas com configurações personalizadas do cliente no branch atual do Configuration Manager.  
+    >  对于本地移动设备管理，软件部署设置只能用作默认客户端设置。 在 Configuration Manager 的 current branch 中，软件部署设置不能与自定义客户端设置一起使用。  
 
-##  <a name="bkmk_enableUsers"></a> Permitir que os usuários recebam o perfil de registro de dispositivo moderno  
- Para que os usuários recebam as configurações do cliente modificadas com o perfil de registro para o Gerenciamento de Dispositivo Móvel Local, eles devem ser descobertos por meio do método de descoberta do Active Directory. Para se certificar de que todas as pessoas que precisam do perfil de registro vão obtê-lo, execute a descoberta de usuários do Active Directory. Para obter instruções sobre como descobrir usuários, veja [Run discovery for System Center Configuration Manager](../../core/servers/deploy/configure/run-discovery.md).  
+##  <a name="bkmk_enableUsers"></a> 使用户能够接收新式设备注册配置文件  
+ 为使用户接收具有本地移动设备管理的注册配置文件的已修改客户端设置，必须通过 Active Directory 发现方法发现它们。 为了确保需要注册配置文件的每个人能够获得它，请运行对 Active Directory 用户运行发现。 有关如何发现用户的说明，请参阅 [Run discovery for System Center Configuration Manager](../../core/servers/deploy/configure/run-discovery.md)。  
 
-##  <a name="bkmk_storeCert"></a> Armazenar o certificado raiz em dispositivos que serão registrados  
- Os usuários com dispositivos que ingressaram no domínio provavelmente já terão o certificado raiz necessário para a comunicação confiável com os servidores que hospedam as funções do sistema de site porque a raiz foi emitida como parte do processo de domínio associado com o Active Directory. Os computadores e dispositivos móveis não associados ao domínio terão o certificado raiz instalado manualmente no dispositivo para permitir que o registro ocorra. Esses dispositivos não terão o certificado raiz necessário automaticamente.  
+##  <a name="bkmk_storeCert"></a> 在要注册的设备上存储根证书  
+ 由于根是作为域加入过程的一部分与 Active Directory 一起颁发的，所以使用已加入域的设备的用户将很可能已具有所需根证书，能够与站点系统角色的宿主服务器进行受信任的通信。 未加入域的计算机和移动设备将需要在设备上手动安装的根证书才能进行注册。 这些设备将不自动具有所需根证书。  
 
- O arquivo de certificado exportado deve ser fornecido para o dispositivo para instalação manual. Isso pode ser feito usando email, OneDrive, cartão SD, pen drive USB ou qualquer método que funcione melhor para suas necessidades.  
+ 必须向设备提供导出的证书文件才能进行手动安装。 可使用电子邮件、OneDrive、SD 卡、USB 拇指驱动器或最能满足你的需求的任何方法完成此操作。  
 
- O certificado raiz que você deseja usar nos dispositivos é aquele que você exportou em [Exportar o certificado com a mesma raiz do certificado do servidor Web](../../mdm/get-started/set-up-certificates-on-premises-mdm.md#bkmk_exportCert).  
+ 你想要在设备上使用的根证书是在[导出根与 Web 服务器证书的根相同的证书](../../mdm/get-started/set-up-certificates-on-premises-mdm.md#bkmk_exportCert)中导出的。  
 
-1.  No dispositivo a ser registrado, localize o arquivo do certificado raiz e clique duas vezes nele.  
+1.  在要注册的设备上，找到并双击该根证书文件。  
 
-2.  Na janela Certificado, clique em **Instalar Certificado...**  
+2.  在“证书”窗口中，单击“安装证书...”  
 
-3.  No Assistente para Importação de Certificados, selecione o **Computador Local**e clique em **Avançar**.  
+3.  在“证书导入向导”中，选择“本地计算机” 并单击“下一步” 。  
 
-4.  Na janela Controle de Conta de Usuário, clique em **Sim**.  
+4.  在“用户帐户控制”窗口中，选择“是” 。  
 
-5.  Selecione **Colocar todos os certificados no repositório a seguir**e clique em **Procurar**.  
+5.  选择“将所有的证书放入下列存储” ，然后单击“浏览” 。  
 
-6.  Clique em **Autoridades de Certificação Raiz Confiáveis**, clique em **OK**e, em seguida, clique em **Avançar**.  
+6.  依次单击“受信任的根证书颁发机构” 和“确定” ，然后单击“下一步” 。  
 
-7.  Clique em **Finalizar**.  
-
+7.  单击 **“完成”**。  

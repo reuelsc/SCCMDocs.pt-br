@@ -1,40 +1,37 @@
 ---
-title: "Verificar uma configuração de MDM usando o System Center Configuration Manager | Microsoft Docs"
-description: "Verifique uma configuração de MDM usando o System Center Configuration Manager."
+title: "使用 System Center Configuration Manager 验证 MDM 配置 | Microsoft Docs"
+description: "使用 System Center Configuration Manager 验证 MDM 配置。"
 ms.custom: na
 ms.date: 03/05/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
-ms.technology:
-- configmgr-hybrid
+ms.technology: configmgr-hybrid
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 94ecfada-97d9-4d5f-bb04-63550dda5f47
-caps.latest.revision: 18
-caps.handback.revision: 0
+caps.latest.revision: "18"
+caps.handback.revision: "0"
 author: mtillman
 ms.author: mtillman
 manager: angrobe
-ms.translationtype: Human Translation
-ms.sourcegitcommit: 2c723fe7137a95df271c3612c88805efd8fb9a77
 ms.openlocfilehash: ad4b923bd6d3e8acfe799a4ebe2adec737939d75
-ms.contentlocale: pt-br
-ms.lasthandoff: 05/17/2017
-
+ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
+ms.translationtype: HT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 08/07/2017
 ---
-# <a name="verify-mdm-configuration-with-system-center-configuration-manager"></a>Verificar uma configuração de MDM com o System Center Configuration Manager
+# <a name="verify-mdm-configuration-with-system-center-configuration-manager"></a>使用 System Center Configuration Manager 验证 MDM 配置
 
-*Aplica-se a: System Center Configuration Manager (Branch Atual)*
+*适用范围：System Center Configuration Manager (Current Branch)*
 
-Você pode verificar determinados componentes do gerenciamento de dispositivo examinando os seguintes arquivos de log:
+可以通过检查以下日志文件来验证某些设备管理组件：
 
--   Verifique o Cloudusersync.log para ver se as contas de usuário foram sincronizadas com êxito.
+-   检查 Cloudusersync.log 以验证用户帐户是否已成功同步。
 
--   Verifique o Sitecomp.log para ver se o ponto de conexão de serviço foi criado com êxito.
+-   检查 Sitecomp.log 以验证是否已成功创建服务连接点。
 
-Examine os [Arquivos de log no System Center Configuration Manager](../../core/plan-design/hierarchy/log-files.md#a-namebkmkfunctionlogsa-log-files-for-configuration-manager-functionality) para saber mais sobre esses arquivos de log específicos e como exibi-los.
+有关这些特定日志文件和查看方式的详细信息，请参阅 [System Center Configuration Manager 中的日志文件](../../core/plan-design/hierarchy/log-files.md#a-namebkmkfunctionlogsa-log-files-for-configuration-manager-functionality)。
 
 > [!div class="button"]
-[< Etapa anterior](set-up-additional-management.md)
-
+[< 上一步](set-up-additional-management.md)

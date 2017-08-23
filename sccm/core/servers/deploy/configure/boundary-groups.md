@@ -1,363 +1,360 @@
 ---
-title: Definir grupos de limites | Microsoft Docs
-description: Entenda os grupos de limites que vinculam os clientes a sistemas de site no System Center Configuration Manager.
+title: "定义边界组 | Microsoft Docs"
+description: "了解将客户端链接到 System Center Configuration Manager 中的站点系统的边界组。"
 ms.custom: na
 ms.date: 7/31/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
-ms.technology:
-- configmgr-other
+ms.technology: configmgr-other
 ms.tgt_pltfrm: na
 ms.topic: get-started-article
 ms.assetid: 5db2926f-f03e-49c7-b44b-e89b1a5a6779
-caps.latest.revision: 10
+caps.latest.revision: "10"
 author: Brenduns
 ms.author: brenduns
 manager: angrobe
-ms.translationtype: HT
-ms.sourcegitcommit: 3c75c1647954d6507f9e28495810ef8c55e42cda
 ms.openlocfilehash: 5debc6559f4b1c213e8ca513d685941c9e669063
-ms.contentlocale: pt-br
-ms.lasthandoff: 07/29/2017
-
+ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
+ms.translationtype: HT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 08/07/2017
 ---
-# <a name="configure-boundary-groups-for-system-center-configuration-manager"></a>Configurar grupos de limites para o System Center Configuration Manager
+# <a name="configure-boundary-groups-for-system-center-configuration-manager"></a>配置 System Center Configuration Manager 的边界组
 
 
-*Aplica-se a: System Center Configuration Manager (Branch Atual)*
+*适用范围：System Center Configuration Manager (Current Branch)*
 
-Você usa grupos de limites no System Center Configuration Manager para agrupar de logicamente locais de rede ([limites](/sccm/core/servers/deploy/configure/boundaries)) relacionados para facilitar o gerenciamento da infraestrutura de rede. É necessário atribuir limites a grupos de limites para poder usar o grupo de limites.
+使用 System Center Configuration Manager 中的边界组以逻辑方式对相关的网络位置（[边界](/sccm/core/servers/deploy/configure/boundaries)）进行分组，以便可以更轻松的管理你的基础结构。 必须将边界分配给边界组，然后才能使用边界组。
 
-Por padrão, o Configuration Manager cria um grupo de limites de site padrão em cada site.
+默认情况下，Configuration Manager 在每个站点创建默认站点边界组。
 
 > [!IMPORTANT]  
->  **As informações nesta seção de Grupos de limites e suas seções filho se aplicam à versão 1610 ou posterior.** Este conteúdo foi revisado para ser específico para alterações de design introduzidas para grupos de limites com esta versão de atualização.
+>  **边界组部分及其子部分中的信息适用于 1610 版本或更高版本。** 已将此内容修订为特定于此更新版本边界组所引入的设计更改。
 >
-> **Se você usar versões anteriores à 1610**, veja [Grupos de limites para as versões 1511, 1602 e 1606 do System Center Configuration Manager](/sccm/core/servers/deploy/configure/boundary-groups-for-1511-1602-and-1606) para saber mais sobre como usar e configurar os grupos de limites com essas versões do produto.
+> **如果使用 1610 之前的版本**，请参阅 [1511、1602 和 1606 版 System Center Configuration Manager 的边界组](/sccm/core/servers/deploy/configure/boundary-groups-for-1511-1602-and-1606)，了解如何使用和配置这些产品版本的边界组。
 
-Para configurar grupos de limites, associa limites (locais de rede) e funções do sistema de sites, como pontos de distribuição, ao grupo de limites. Isso ajuda a associar os clientes aos servidores do sistema de sites como pontos de distribuição que estão localizados próximos aos clientes na rede.
+若要配置边界组，可以将边界（网络位置）和站点系统角色（如分发点）关联到边界组。 这样做有助于将客户端关联到站点系统服务器，如位于网络上的客户端附近的分布点。
 
-Quando você atribui o mesmo limite a vários grupos de limites e atribuir os mesmos servidores de sistema de sites, como pontos de distribuição, a vários grupos de limites, aumenta a disponibilidade dos sistemas de sites para uma ampla variedade de locais de rede.
+当你将相同边界分配到多个边界组并将同一站点系统服务器（如分发点）分配到多个边界组时，会使站点系统可用性增加到更广泛的网络位置。
 
-Os clientes usam grupos de limites para:  
+客户端使用边界组来执行以下操作：  
 
--   Atribuição automática de site  
--   Para localizar um servidor de sistema de sites que pode fornecer um serviço, incluindo:
-    - Pontos de distribuição para o local do conteúdo
-    -   Pontos de atualização de software (a partir da versão 1702)
-    - Pontos de migração de estado
-    - Pontos de gerenciamento preferenciais (se você usar pontos de gerenciamento preferenciais, deverá habilitar essa opção para a hierarquia, e não de dentro da configuração do grupo de limites. Veja [Para habilitar o uso de pontos de gerenciamento preferenciais](#to-enable-use-of-preferred-management-points) neste tópico).
+-   自动站点分配  
+-   查找可以提供包括以下某种服务的站点系统服务器：
+    - 内容位置的的分发点
+    -   软件更新点（从版本 1702 开始）
+    - 状态迁移点
+    - 首选管理点（若要使用首选管理点，则必须为层次结构启用此选项，但不是从边界组配置中启用。 请参阅本主题中的[启用对首选管理点的使用](#to-enable-use-of-preferred-management-points)。）
 
-##  <a name="boundary-groups-and-relationships"></a>Grupos de limites e relações
-Para cada grupo de limites na sua hierarquia, você pode atribuir:
+##  <a name="boundary-groups-and-relationships"></a>边界组和关系
+对于层次结构中的每个边界组，你可以分配：
 
--  Um ou mais limites. Quando um cliente está em um local de rede que é definido como um limite atribuído a um grupo de limites específico, que é chamado de grupo de limites **atual**. Um cliente pode ter mais de um grupo de limites atual.
-- Uma ou mais funções do sistema de sites.  Os clientes podem sempre usar funções de sistema de sites associadas ao seu grupo de limite atual. Dependendo das configurações adicionais, eles poderão usar funções de sistema de sites em grupos de limites adicionais.  
+-  一个或多个边界。 当网络位置上定义为边界的客户端分配给一个被称为**当前**边界组的特定边界组。 一个客户端可具有多个当前边界组。
+- 一个或多个站点系统角色。  客户端始终可以使用与它们当前边界组关联的站点系统角色。 根据其他配置，它们可能可以使用附加边界组中的站点系统角色。  
 
-Para cada grupo de limites que você criar, você pode configurar um link unidirecional para outro grupo de limites. O link é chamado de uma **relação**. Os grupos de limites aos quais você vincula são chamados de grupos de limites **vizinhos**. Um grupo de limites pode ter várias relações, cada uma com um grupo de limites vizinho específico.
+对于你创建的每个边界组，你可以配置指向另一个边界组的单向链接。 此链接称为**关系**。 链接的边界组称为**邻居**边界组。 边界组可以具有多个关系，每个关系都有特定的邻居边界组。
 
-A configuração de cada relação determina quando um cliente que não consegue localizar que um servidor de sistema de sites disponível no seu grupo de limite atual pode começar a procurar um grupo de limites vizinho para localizar um sistema de site disponível. Essa pesquisa de grupos adicionais é chamada de **fallback**.
+每个关系的配置确定未能在当前边界组中找到可用的站点系统服务器的客户端何时可以开始搜索邻居边界组以查找可用的站点系统。 对其他组的这一搜索称为**回退**。
 
-## <a name="fallback"></a>Fallback
-Para evitar problemas para clientes quando eles não conseguem encontrar um sistema de sites disponível no seu grupo de limites atual, você deverá definir relações entre grupos de limites que definem o comportamento de fallback. O fallback permite que um cliente expanda sua pesquisa para grupos de limites adicionais para localizar um sistema de sites disponível.
+## <a name="fallback"></a>回退
+若要防止客户端在其当前边界组中找不到可用站点系统时出现问题，请定义用于定义回退行为的边界组之间的关系。 回退允许客户端将搜索范围扩展到附加的边界组，以查找可用的站点系统。
 
-As relações são configuradas na guia **Relações** das propriedades do grupo de limites. Quando você configura uma relação, define um link para um grupo de limites vizinho. Para cada tipo de função de sistema de site que tem suporte, você pode definir parâmetros de configuração independentes para fallback para esse grupo de limites vizinho. Por exemplo, quando você configura uma relação com um grupo de limites específico, pode definir fallback para pontos de distribuição ocorrerem após 20 minutos em vez do padrão de 120. Veja [Exemplo de como usar grupos de limites](#example-of-using-boundary-groups) para obter um exemplo mais amplo.
+关系在边界组属性“关系”选项卡上配置。 在配置关系时，你将定义指向邻居边界组的链接。 对于受支持的每种类型的站点系统角色，你可以配置独立设置以回退到该邻居边界组。 例如，在配置特定边界组的关系时，你可以设置分发点的回退在 20 分钟后发生而不是默认的 120 分钟。 有关更广泛的示例，请参阅[使用边界组的示例](#example-of-using-boundary-groups)。
 
-Se um cliente não conseguir localizar uma função de sistema de site disponível no seu grupo de limites atual, o cliente usará o tempo do fallback em minutos para determinar depois de quanto tempo ele pode começar a procurar um sistema de sites disponível que está associado com esse grupo de limites vizinho.  
+如果客户端无法在其当前的边界组中查找可用的站点系统角色，客户端将使用以分钟为单位的回退时间以确定多长时间后可以开始搜索与该邻居边界组相关联的可用站点系统。  
 
-Quando um cliente não consegue localizar um sistema de sites disponível e começa a pesquisar locais de grupos de limites vizinhos, ele aumenta o pool de sistemas de sites disponíveis que pode usar de maneira que seja definida pela sua configuração de grupos de limites e suas relações.
+当客户端找不到可用的站点系统并开始从邻居边界组中搜索位置时，它会增加可用站点系统池，此系统池可通过由你的边界组的配置和它们之间关系定义的方式使用。
 
-- Um grupo de limites pode ter mais de uma relação. Com múltiplos relacionamentos você pode configurar o fallback para cada tipo de sistema de site para vizinhos diferentes para que ele ocorra após períodos de tempo diferentes.    
-- Os clientes realizam o fallback apenas para um grupo de limites que seja um vizinho de seu gripo de limites atual.
-- Quando um cliente é um membro de vários grupos de limites, o grupo de limite atual é definido como uma união de todos os grupos de limites do cliente. Esse cliente pode, então, realizar o fallback para vizinhos de qualquer um desses grupos de limites original.
+- 一个边界组可具有多个关系。 通过多个关系，你可以将不同邻居的各个类型的站点系统配置为在不同的时间段后回退。    
+- 客户端仅回退到是其当前边界组的直接邻居的边界组。
+- 当某个客户端是多个边界组的成员时，此当前边界组即被定义为所有客户端的边界组的联合。 然后该客户端可以回退到任何这些原始边界组的邻居边界组。
 
-### <a name="the-default-site-boundary-group"></a>O grupo de limite do site padrão
-Além dos grupos de limites que você criar, cada site tem um grupo de limites de site padrão criado pelo Configuration Manager. Esse grupo é denominado ***Default-Site-Boundary-Group&lt;sitecode>***. Por exemplo, o grupo para o site ABC seria nomeado *Default-Site-Boundary-Group&lt;ABC>.*
+### <a name="the-default-site-boundary-group"></a>默认站点边界组
+除了所创建的边界组，每个站点还具有 Configuration Manager 创建的默认站点边界组。 此组命名为 ***Default-Site-Boundary-Group&lt;sitecode>***。 例如，站点 ABC 的组将被命名为 *Default-Site-Boundary-Group&lt;ABC>。*
 
-Para cada grupo de limites que você criar, o Configuration Manager criará automaticamente um link implícito para cada grupo de limites de site padrão na hierarquia.
--   O link implícito é uma opção de fallback padrão de um grupo de limites atual para o grupo de limites padrão de sites que é tem um tempo de fallback padrão de 120 minutos.
--   Os clientes que não estão em um limite associado a um grupo de limites na sua hierarquia usam o grupo de limites de site padrão do seu site atribuído para identificar as funções de sistema de site válidas que podem usar.
+对于你创建的每个边界组，Configuration Manager 自动在层次结构中创建指向每个默认站点边界组的隐式链接。
+-   隐式链接是一个默认回退选项，从当前边界组到站点默认边界组，默认回退时间为 120 分钟。
+-   不在与层次结构中任何边界组关联的边界上的客户端使用分配站点中的默认站点边界组来识别它们可以使用的有效站点系统角色。
 
-Para gerenciar o fallback para o grupo de limites do site padrão:
-- Você pode ir para as propriedades do grupo de limites de sites padrão e alterar os valores na guia **Comportamento Padrão**. As alterações feitas aqui se aplicam a *todos* os links implícitos para esse grupo de limites. Essas configurações poderão ser substituídas quando você configurar o link explícito para esse grupo de limites de site padrão de outro grupo de limites.
-- Você pode ir para as propriedades de um grupo de limites que você criou e alterar os valores para o link explícito que vai para um grupo de limites de site padrão. Quando você define um novo tempo em minutos para realizar ou bloquear o fallback, essa alteração afeta somente o link que você está configurando. As configurações do link explícito substituem as da guia **Comportamento Padrão** do grupo de limites de site padrão.
-
-
-## <a name="site-assignment"></a>Atribuição de site  
- É possível configurar cada grupo de limites com um site atribuído para clientes.  
-
--   Um cliente recém-instalado que usa a atribuição automática de site ingressa no site atribuído de um grupo de limites que contém o local de rede atual do cliente.  
--   Depois de atribuir a um site, um cliente não altera a atribuição de site quando altera o local de rede. Por exemplo, se o cliente usa o perfil móvel em um novo local de rede que está representado por um limite em um grupo de limites com uma atribuição de site diferente, o site atribuído do cliente permanece inalterado.  
--   Quando a Descoberta de Sistemas do Active Directory encontra um novo recurso, as informações de rede para o recurso descoberto são avaliadas com os limites em grupos de limites. Esse processo associa o novo recurso a um site atribuído para uso do método de instalação do cliente por push.  
--   Quando um limite é um membro de vários grupos de limites que têm diferentes locais atribuídos, os clientes selecionarão aleatoriamente um desses sites.  
--   As alterações em um site atribuído de grupos de limite somente se aplicam a novas ações de atribuição de site. Os clientes atribuídos previamente a um site não reavaliam sua atribuição de site com base nas alterações da configuração de um grupo de limites (ou ao seu próprio local de rede).  
-
-Para obter informações sobre a atribuição de site de cliente, consulte [Usando atribuição de site automática para computadores](../../../../core/clients/deploy/assign-clients-to-a-site.md#BKMK_AutomaticAssignment) em [Como atribuir clientes a um site no System Center Configuration Manager](../../../../core/clients/deploy/assign-clients-to-a-site.md).  
-
-## <a name="distribution-points"></a>Pontos de distribuição
-
-Quando um cliente solicita o local do ponto de distribuição, o Configuration Manager envia ao cliente uma lista que inclui os sistemas de site do tipo apropriado que estão associados a cada grupo de limites que inclui o local de rede atual dos clientes:
-
--   **Durante a distribuição de software**, os clientes solicitam um local para o conteúdo de implantação que está disponível em um ponto de distribuição ou outra fonte de conteúdo válido (como um cliente configurado para cache de pares).
-
--   **Durante a implantação de sistema operacional**, os clientes solicitam um local para enviar ou receber suas informações de migração de estado.  
-
-Durante a implantação de conteúdo, se um cliente solicitar conteúdo que não está disponível de uma fonte no seu grupo de limites atual, o cliente continuará a solicitar esse conteúdo tentando diferentes fontes de conteúdo no seu grupo de limites atual até que o período de fallback para o grupo de limites vizinho ou grupo de limites de site padrão seja atingido. Se o cliente ainda não tiver encontrado o conteúdo, expandirá a pesquisa de fontes de conteúdo para incluir os grupos de limites vizinhos.
-
-No entanto, se o conteúdo for distribuído sob demanda e não estiver disponível em um ponto de distribuição quando solicitado por um cliente, o processo para transferir o conteúdo para esse ponto de distribuição iniciará, e é possível que o cliente encontre esse servidor como uma fonte de conteúdo antes de fazer fallback para usar um grupo de limites vizinho.
-
-## <a name="software-update-points"></a>Pontos de atualização de software
-A partir da versão 1702, os clientes usam grupos de limites para localizar um novo ponto de atualização de software. Você pode adicionar pontos de atualização de software individuais a grupos de limites diferentes para controlar quais servidores um cliente pode encontrar.
-
-Se você atualizar de uma versão anterior à 1702, todos os pontos de atualização de software existentes serão adicionados ao grupo de limites de site padrão em cada site. Isso mantém o comportamento anterior à atualização onde os clientes selecionam um ponto de atualização de software do conjunto de pontos de atualização de software disponíveis que você configurou para a hierarquia.  Esse comportamento é mantido até que você escolha adicionar pontos de atualização de software individuais a grupos de limites diferentes para seleção controlada e comportamento de fallback.
-
-Se você instalar um novo site que executa a versão 1702 ou posterior, os pontos de atualização de software não serão adicionados ao grupo de limites de site padrão. Atribua pontos de atualização de software a um grupo de limites para que os clientes possam localizar e usá-los.
-
-### <a name="fallback-for-software-update-points"></a>Fallback para pontos de atualização de software
-O fallback para pontos de atualização de software é configurado como outras funções de sistema de site, mas tem as seguintes ressalvas:
-- **Os novos clientes usam os grupos de limites para selecionar pontos de atualização de software.** Depois de instalar a versão 1702, os novos clientes que você instalar selecionarão um ponto de atualização de software dos que estiverem associados aos grupos de limites que você configurou. Isso substitui o comportamento anterior em que os clientes selecionavam um ponto de atualização de software aleatoriamente de uma lista dos que compartilham a floresta de clientes.
-
-- **Os clientes continuam a usar um último ponto de atualização de software válido até fazerem fallback para localizar um novo.** Os clientes que já têm um ponto de atualização de software continuarão a usar o ponto de atualização de software até esse servidor não poder ser alcançado.  Isso inclui o uso contínuo de um ponto de atualização de software que não está associado ao grupo de limite atual do cliente.
-
-  O uso contínuo de um ponto de atualização de software existente, mesmo quando o servidor não estiver no grupo de limite atual do cliente, é intencional. Isso ocorre porque uma alteração do ponto de atualização de software pode resultar em um grande uso de largura de banda de rede à medida que o cliente sincroniza dados com o novo ponto de atualização de software. O atraso na transição pode ajudar a evitar a saturação de sua rede se todos os clientes mudarem para um novo ponto de atualização de software ao mesmo tempo.
-
-- **Um cliente sempre tenta acessar seu último ponto de atualização de software válido por 120 minutos antes de iniciar o fallback.** Depois de 120 minutos, se o cliente não tiver estabelecido contato, ele começará o fallback. Quando o fallback começa, o cliente recebe uma lista de todos os pontos de atualização de software do grupo de limites atual. Pontos de atualização de software adicionais de grupos de limites vizinhos e de grupo de limites padrão do site estão disponíveis com base nas configurações de fallback.
-
-### <a name="fallback-configurations-for-software-update-points"></a>Configurações de fallback para pontos de atualização de software
-#### <a name="beginning-with-version-1706"></a>A partir da versão 1706   
-Você pode configurar **Tempos de Fallback (em minutos)** para pontos de atualização de software como menos de 120 minutos. No entanto, o cliente ainda deve tentar acessar o seu ponto de atualização de software original por 120 minutos antes de expandir a pesquisa para outros servidores. Como os tempos de fallback de grupo de limites começam quando o cliente falha pela primeira vez em acessar o servidor original, quaisquer grupos de limites configurados para menos de 120 minutos são fornecidos ao cliente quando ele expande sua pesquisa após a falha em acessar o servidor original por 120 minutos.
-
-Configure **Nunca realizar fallback** para bloquear o fallback de um ponto de atualização de software para um grupo de limites vizinho.
-
-Após não conseguir acessar o servidor original durante duas horas, o cliente usa um ciclo mais curto para estabelecer uma conexão com um novo ponto de atualização de software. Isso permite que o cliente pesquise rapidamente a lista crescente de possíveis pontos de atualização de software.
-
- -  **Exemplo de fallback:**  
-    O grupo de limites atual de um cliente tem fallback para pontos de atualização de software configurado como *10* minutos para o grupo de limites *A*, e *130* minutos para o grupo de limites *B*. Quando o cliente falha em acessar seu último ponto de atualização de software válido:
-    -   O cliente tenta acessar somente seu servidor original nos próximos 120 minutos.  Após 10 minutos, os pontos de atualização de software do grupo de limites A são adicionados ao pool de servidores disponíveis. No entanto, o cliente não pode tentar contatá-los, ou qualquer outro servidor, até que o período inicial de 120 minutos para reconexão com o servidor original tenha passado.
-    -   Depois de tentar localizar o ponto de atualização de software original por 120 minutos, o cliente pode expandir sua pesquisa. Nesse momento, os servidores no grupo de limites atual do cliente, e quaisquer grupos de limites vizinhos configuradas para 120 minutos ou menos, são adicionados ao pool de pontos de atualização de software disponíveis. Isso inclui os servidores no grupo de limites A, que foram adicionados anteriormente ao pool de servidores disponíveis.
-    -       Após mais 10 minutos (130 minutos de tempo total após a primeira falha do cliente em acessar seu último ponto de atualização de software válido), o cliente expande a pesquisa a fim de incluir os pontos de atualização de software do grupo de limites B.  
-
-#### <a name="prior-to-version-1706"></a>Antes da versão 1706
-Antes da versão 1706, as configurações de fallbacks para pontos de atualização de software não dão suporte a um tempo configurável em minutos. Em vez disso, o comportamento de fallback é limitado ao seguinte:
-
-  - **Tempos de fallback (em minutos):** esta opção está desabilitada para pontos de atualização de software e não pode ser configurada. Está definido como 120 minutos.
-  -     **Nunca realizar fallback:** você poderá bloquear o fallback para um ponto de atualização de software para um grupo de limites vizinho quando usar essa configuração.
-
-Quando um cliente que já tiver um ponto de atualização de software não conseguir localizá-lo, o cliente poderá então realizar fallback para localizar outro. Ao usar o fallback, o cliente recebe uma lista de todos os pontos de atualização de software do grupo de limites atual. Se ele não conseguir localizar um servidor disponível para 120 minutos, fará o fallback para seus grupos de limites vizinhos e o grupo de limites de sites padrão. O fallback para ambos os grupos de limites acontece ao mesmo tempo porque o tempo de fallback dos pontos de atualização de software para grupos de vizinho é definido como 120 minutos e não pode ser alterado. Esse tempo de 120 minutos também é o período padrão de fallback para o grupo de limites de site padrão. Quando um cliente faz fallback para um grupo de site padrão vizinho e padrão, o cliente tentará contatar os pontos de atualização de software do grupo de limites de vizinho antes de tentar usar um do grupo de limites do site padrão.
-
-### <a name="manually-switch-to-a-new-software-update-point"></a>Mudar manualmente para um novo ponto de atualização de software
-Além de usar o fallback, você pode usar *Notificação do Cliente* para forçar manualmente um dispositivo a alternar para um novo ponto de atualização de software.
-
-Quando você alternar para um novo servidor, os dispositivos usam fallback para localizar esse novo servidor. Portanto, examine as configurações de seu grupo de limites e certifique-se de que seus pontos de atualização de software estejam nos grupos de limites corretos antes de iniciar esta alteração.
-
-Para saber mais, confira [Mudar manualmente clientes para um novo ponto de atualização de software](/sccm/sum/plan-design/plan-for-software-updates#manually-switch-clients-to-a-new-software-update-point).
+管理默认站点边界组的回退：
+- 你可以转到站点默认边界组的属性并更改“默认行为”选项卡上的值。 将在此处所做的更改应用到*所有*指向此边界组的隐式链接。 在你从另一个边界组配置显式链接到此默认站点边界组时，可以覆盖这些设置。
+- 你可以转至你创建的边界组属性并更改将转到默认站点边界组的显式链接的值。 为回退或块回退设置以分钟为单位的新的时间时，所做的更改会影响你正在配置的链接。 显式链接的配置会覆盖默认站点边界组“默认行为”选项卡上的配置。
 
 
-## <a name="preferred-management-points"></a>Pontos de gerenciamento preferenciais
+## <a name="site-assignment"></a>站点分配  
+ 你可以使用客户端的分配的站点配置每个边界组。  
 
- Os pontos de gerenciamento preferenciais permitem que um cliente identifique um ponto de gerenciamento associado ao local de rede (limite) atual.  
+-   使用自动站点分配的新安装的客户端将加入包含客户端当前网络位置的边界组的分配的站点。  
+-   分配到站点后，当更改其网络位置时，客户端不会更改其站点分配。 例如，客户端漫游到由具有不同站点分配的边界组中的某个边界表示的新网络位置，则该客户端的分配的站点保持不变。  
+-   当 Active Directory 系统发现发现新资源时，将依据边界组的边界对所发现的资源的网络信息进行评估。 此过程将新资源与分配的站点关联，以供客户端请求安装方法使用。  
+-   当边界是多个边界组（这些边界组具有不同的分配的站点）的成员时，客户端会随机选择其中一个站点。  
+-   对分配了边界组的站点的更改仅适用于新的站点分配操作。 以前分配给站点的客户端不会根据对边界组的配置（或它们自身网络位置）的更改重新评估其站点分配。  
 
--   Um cliente tenta usar um ponto de gerenciamento preferencial de seu site atribuído antes de usar um ponto de gerenciamento de seu site atribuído que não está configurado como preferencial.  
--   Para usar esta opção, é necessário habilitá-la para a hierarquia e, em seguida, configurar grupos de limite em sites primários individuais para incluir os pontos de gerenciamento que devem ser associados aos limites associados desse grupo de limites.  
--   Quando os pontos de gerenciamento preferenciais são configurados e um cliente organiza sua lista de pontos de gerenciamento, o cliente coloca os pontos de gerenciamento preferenciais na parte superior de sua lista de pontos de gerenciamento atribuídos (que inclui todos os pontos de gerenciamento do site atribuído do cliente).  
+有关客户端站点分配的详细信息，请参阅[如何在 System Center Configuration Manager 中将客户端分配到一个站点](../../../../core/clients/deploy/assign-clients-to-a-site.md)中的[对计算机使用自动站点分配](../../../../core/clients/deploy/assign-clients-to-a-site.md#BKMK_AutomaticAssignment)。  
+
+## <a name="distribution-points"></a>分发点
+
+当客户端请求分发点的位置时，Configuration Manager 会向客户端发送一个列表，其中包含与包含客户端当前网络位置的每个边界组相关联的适当类型的站点系统：
+
+-   **在软件分发期间**，客户端请求从一个分发点或其他有效的内容源提供的部署内容的位置（如配置为对等缓存的客户端）。
+
+-   **在操作系统部署期间**，客户端请求用以发送或接收其状态迁移信息的位置。  
+
+在内容部署期间，如果客户端请求当前边界组的源中不可用的内容，客户端将继续尝试请求当前边界组中不同内容源的内容，直到到达邻居边界组或默认站点边界组的回退时间。 如果客户端尚未找到内容，它将会扩展其内容源的搜索范围，以包括邻居边界组。
+
+但是，如果内容按需分发并且在客户端请求时的分发点上不可用，将内容传输到该分发点的过程将开始，并且客户端可能会在回退使用邻居边界组之前找到作为内容源的服务器。
+
+## <a name="software-update-points"></a>软件更新点
+从版本 1702 开始，客户端使用边界组查找新的软件更新点。 可以向不同的边界组添加各个软件更新点，以控制客户端可以找到哪些服务器。
+
+如果更新 1702 之前的版本，则所有现有的软件更新点将被添加到每个站点上的默认站点边界组。 这将保持更新前行为，其中客户端从为层次结构配置的可用软件更新点的池中更新点。  将保持此行为直到你为控制选择和回退行为选择将单个软件更新点添加到不同的边界组。
+
+如果安装可运行版本 1702 或更高版本的新站点，则不会将软件更新点添加到默认站点边界组。 将软件更新点分配给边界组，以便客户端可以查找并使用它们。
+
+### <a name="fallback-for-software-update-points"></a>软件更新点的回退
+软件更新点的回退配置和其他站点系统角色一样，但有以下注意事项：
+- **新的客户端使用边界组来选择软件更新点。** 安装版本 1702 后，安装的新客户端从与那些与已配置的边界组关联的点中选择软件更新点。 这将替代以前的行为，即客户端从共享客户端林的软件更新点列表中随机选取一个。
+
+- **客户端继续使用上次已知良好的软件更新点，直到它们回退并找到新的软件更新点。** 已具有软件更新点的客户端继续使用该软件更新点，直到不能访问该服务器。  这包括继续使用不与客户端当前边界组关联的软件更新点。
+
+  即使该服务器不在客户端的当前边界组中，仍继续使用现有软件更新点是有意而为之。 原因在于软件更新点的更改可导致网络带宽的大量使用，因为客户端会与新软件更新点同步数据。 过渡延迟有助于在所有客户端同时切换到新软件更新点时避免网络饱和。
+
+- 在开始回退之前，客户端在 120 分钟内始终尝试连接其上次已知良好的软件更新点。 120 分钟后，如果客户端未建立联系，那么它将开始回退。 开始回退时，客户端从其当前边界组中接收所有软件更新点的列表。 可根据回退配置使用来自相邻边界组和站点默认边界组的其他软件更新点。
+
+### <a name="fallback-configurations-for-software-update-points"></a>软件更新点的回退配置
+#### <a name="beginning-with-version-1706"></a>从版本 1706年开始   
+可以将软件更新点的“回退时间(分钟)”配置为小于 120 分钟。 但是，客户端仍必须尝试连接其原始软件更新点达 120 分钟，然后再将其搜索范围扩展到其他服务器。 因为当客户端首次无法连接其原始服务器时，边界组回退开始计时，如果由于在 120 分钟内未能连接到其原始服务器，导致边界组开始扩大其搜索范围时，配置为小于 120 分钟的任何边界组都会提供给客户端。
+
+可以配置“永不回退”以阻止软件更新点回退到相邻边界组。
+
+如果在两个小时内无法连接到其原始服务器，则客户端使用更短循环建立到新的软件更新点的连接。 这使客户端能够快速搜索潜在软件更新点的扩展列表。
+
+ -  **回退示例：**  
+    客户端的当前边界组对软件更新点的回退设置：边界组 A 配置为 10 分钟，将边界组 B 配置为 130 分钟。当客户端无法连接其上次已知良好的软件更新点时：
+    -   客户端尝试在接下来的 120 分钟内仅连接其原始服务器。  10 分钟后，边界组 A 的软件更新点会添加到可用服务器池中。 但是，在与原始服务器重新连接的初始 120 分钟未消耗完之前，客户端无法尝试连接到它们或任何其他服务器。
+    -   尝试查找原始软件更新点 120 分钟后，客户端可能会扩展其搜索范围。 此时，客户端当前边界组中的服务器和配置为 120 分钟或更短时间的任何相邻边界组会添加到软件更新点可用池中。 这包括边界组 A 中先前添加到可用服务器池的服务器。
+    -       再过 10 分钟后（客户端首次连接上次已知良好的软件更新点失败后的总时间为 130 分钟），客户端扩展搜索范围，以包括边界组 B 的软件更新点。  
+
+#### <a name="prior-to-version-1706"></a>1706 之前的版本
+对于 1706 之前的版本，软件更新点的回退配置不支持以分钟为单位的可配置时间。 相反，回退行为仅限于以下选项：
+
+  - **回退时间（以分钟为单位）：**此选项针对软件更新点显示为灰色，并且无法配置。 它被设置为 120 分钟。
+  -     **永不回退：**当使用此配置时，你可以阻止软件更新点回退到邻居边界组。
+
+如果已有软件更新点的客户端无法进行访问，则客户端将回退来查找另一个。 使用回退时，客户端将从其当前边界组中接收所有软件更新点的列表。 如果在 120 分钟内没有找到可用服务器，它将回退到其邻居边界组和默认站点边界组。 回退到这两个边界组将同时发生，因为软件更新点回退到邻居组的时间设置为 120 分钟，不能更改。 此外，120 分钟是用于回退到默认站点边界组的默认时间。 当客户端回退到邻居边界组和默认站点边界组时，客户端会尝试联系邻居边界组中的软件更新点，然后尝试使用默认站点边界组中的一个软件更新点。
+
+### <a name="manually-switch-to-a-new-software-update-point"></a>手动切换到新的软件更新点
+除了使用回退之外，还可以使用“客户端通知”手动强制设备切换到新的软件更新点。
+
+切换到新服务器时，设备使用回退来查找新的服务器。 因此，请检查你的边界组配置，并在确保软件更新点位于正确的边界组后，再开始进行此更改。
+
+有关详细信息，请参阅[将客户端手动切换到新的软件更新点](/sccm/sum/plan-design/plan-for-software-updates#manually-switch-clients-to-a-new-software-update-point)。
+
+
+## <a name="preferred-management-points"></a>首选管理点
+
+ 首选管理点使客户端能够识别与当前网络位置（边界）关联的管理点。  
+
+-   客户端先尝试使用分配的站点中的首选管理点，然后再使用分配的站点中未配置为首选的管理点。  
+-   若要使用此选项，必须为层次结构启用该选项，然后将各主站点的边界组配置为包括应与边界组的关联边界相关联的管理点。  
+-   配置了首选管理点后，客户端在组织其管理点列表时将首选管理点放置于其分配的管理点列表（其中包括该客户端的所分配站点中的所有管理点）的顶部。  
 
 > [!NOTE]  
->  Quando um cliente realiza roaming (o que significa alterar seus locais de rede, como quando um laptop passa para um local de escritório remoto), ele pode usar um ponto de gerenciamento (ou ponto de gerenciamento proxy) do site local em seu novo local antes de tentar usar um ponto de gerenciamento do seu site atribuído (que inclui os pontos de gerenciamento preferenciais).  Consulte [Entender como os clientes encontram serviços e recursos do site para o System Center Configuration Manager](../../../../core/plan-design/hierarchy/understand-how-clients-find-site-resources-and-services.md) para obter mais informações.  
+>  当客户端漫游时（这意味着更改其网络位置，例如，便携式计算机前往远程办公地点时），在尝试使用其分配的站点中的管理点（其中包括首选管理点）之前，它可能会使用来自其新位置的本地站点中的管理点（或代理管理点）。  有关详细信息，请参阅[了解客户端如何查找 System Center Configuration Manager 的站点资源和服务](../../../../core/plan-design/hierarchy/understand-how-clients-find-site-resources-and-services.md)。  
 
-### <a name="overlapping-boundaries"></a>Sobreposição de limites  
- O Configuration Manager dá suporte à sobreposição de configurações de limite para o local do conteúdo:  
+### <a name="overlapping-boundaries"></a>重叠边界  
+ Configuration Manager 对于内容位置支持重叠边界配置：  
 
--   **Quando um cliente solicita conteúdo** e o local de rede do cliente pertence a vários grupos de limites, o Configuration Manager envia ao cliente uma lista de todos os pontos de distribuição que têm o conteúdo.  
--   **Quando um cliente solicita a um servidor o envio ou recebimento de suas informações de migração de estado**, e o local de rede do cliente pertence a vários grupos de limites, o Configuration Manager envia ao cliente uma lista de todos os pontos de migração de estado associados a um grupo de limites que inclui o local de rede atual do cliente.  
+-   **当客户端请求内容**，并且客户端网络位置属于多个边界组时，Configuration Manager 将向客户端发送具有内容的所有分发点的列表。  
+-   **当客户端请求服务器发送或接收其状态迁移信息**，并且客户端网络位置属于多个边界组时，Configuration Manager 将向客户端发送与包括客户端当前网络位置的边界组关联的所有状态迁移点的列表。  
 
-Esse comportamento permite que o cliente selecione o servidor mais próximo do qual transferir o conteúdo ou as informações de migração de estado.  
+此行为使客户端能够选择从中传输内容或站点迁移信息的最近的服务器。  
 
 
 
-## <a name="example-of-using-boundary-groups"></a>Exemplo de como usar grupos de limites
-O exemplo a seguir usa uma pesquisa de cliente por conteúdo de um ponto de distribuição. Este exemplo pode ser aplicado para outras funções de sistema de site que usam grupos de limites. No entanto, como se aplica a pontos de atualização de software, tenha em mente que os pontos de atualização de software não dão suporte à configuração de um tempo em minutos para fallback para um grupo de vizinho e sempre usam um período de 120 minutos.
+## <a name="example-of-using-boundary-groups"></a>使用边界组的示例
+以下示例使用客户端从分发点进行内容搜索。 此示例可以应用于使用边界组的其他站点系统角色。 但是，在应用于软件更新点时，请记住，软件更新点不支持以分钟为单位配置回退到邻居组的时间，并且始终使用 120 分钟的时间段。
 
-Você cria três grupos de limites que não compartilham limites ou servidores de sistemas de sites:
--   Grupo BG_A com os pontos de distribuição DP_A1 e DP_A2 associados ao grupo
--   Grupo BG_B com os pontos de distribuição DP_B1 e DP_B2 associados ao grupo
--   Grupo BG_C com os pontos de distribuição DP_C1 e DP_C2 associados ao grupo
+创建三个边界组，使其不共享边界或站点系统服务器：
+-   组 BG_A，包含与该组关联的 DP_A1 和 DP_A2 分发点
+-   组 BG_B，包含与该组关联的 DP_B1 和 DP_B2 分发点
+-   组 BG_C，包含与该组关联的 DP_C1 和 DP_C2 分发点
 
-Você adiciona os locais de rede dos seus clientes como limites apenas para o grupo BG_A e, em seguida, configura relações daquele grupo de limites para os outros dois grupos de limites:
--   Você configura os pontos de distribuição para o primeiro grupo *vizinho* (BG_B) a ser usado depois de 10 minutos. Esse grupo contém os pontos de distribuição DP_B1 e DP_B2. Ambos estão bem conectadas aos primeiros locais de limite dos grupos.
--   Você configura o segundo grupo *vizinho* (BG_C) a ser usado depois de 20 minutos. Esse grupo contém os pontos de distribuição DP_C1 e DP_C2. Ambos estão em uma WAN dos outros dois grupos de limites.
--   Você também adiciona um ponto de distribuição que está localizado no servidor de site ao grupo de limites de site padrão dos sites. Esse é o local de fonte de conteúdo de menor preferência, mas está localizado centralmente para todos os seus grupos de limites.
+将客户端网络位置作为边界添加到仅 BG_A 边界组中，然后配置从该边界组到其他两个边界组的关系：
+-   配置第一个邻居组 (BG_B) 的分发点，使其 10 分钟后使用。 此组包含分发点 DP_B1 和 DP_B2。 这两个分发点都很好地连接到第一组边界位置。
+-   配置第二个邻居组 (BG_C)，使其 20 分钟后使用。 此组包含分发点 DP_C1 和 DP_C2。 这两个分发点都从其他两个边界组跨越 WAN。
+-   此外，还需将位于站点服务器上的其他分发点添加到站点的默认站点边界组。 这是你最不希望的内容源位置，但它位于所有边界组的中心位置。
 
-    Exemplo de grupos de limites e tempos de fallback:
+    边界组和回退时间的示例：
 
      ![BG_Fallack](media/BG_Fallback.png)
 
 
-Com essa configuração:
--   O cliente inicia a pesquisa de conteúdo dos pontos de distribuição em seu grupo de limites *atual* (BG_A), pesquisando cada ponto de distribuição por dois minutos antes de alternar para o próximo ponto de distribuição no grupo de limites. O pool de clientes dos locais de fonte de conteúdo válidos incluem o DP_A1 e o DP_A2.
--   Se o cliente não conseguir localizar o conteúdo de seu grupo de limites *atual* depois de pesquisar por 10 minutos, ele adicionará os pontos de distribuição do grupo de limites BG_B à sua pesquisa. Então, ele continua a pesquisar o conteúdo de um ponto de distribuição em seu pool combinado de pontos de distribuição que agora inclui os dos grupos de limites BG_A e BG_B. O cliente continua a entrar em contato com cada ponto de distribuição por dois minutos antes de mudar para o próximo ponto de distribuição de seu pool. O pool de clientes dos locais de fonte de conteúdo válidos incluem DP_A1, DP_A2, DP_B1 e DP_B2.
--   Depois de mais 10 minutos (total de 20 minutos), se o cliente ainda não encontra um ponto de distribuição com o conteúdo, ele expande seu pool de pontos de distribuição disponíveis para os pontos do segundo grupo *vizinho*, o grupo de limites BG_C. O cliente agora tem 6 pontos de distribuição para pesquisar (DP_A1, DP_A2, DP_B2, DP_B2, DP_C1 e DP_C2) e continua a mudar para um novo ponto de distribuição a cada dois minutos até que o conteúdo seja encontrado.
--   Se o cliente não tiver encontrado conteúdo depois de um total de 120 minutos, ele realizará o fallback para incluir o *grupo de limites de site padrão* como parte de sua pesquisa contínua. Agora o pool de pontos de distribuição inclui todos os pontos de distribuição dos três grupos de limites configurados e o ponto de distribuição final localizado no computador do servidor do site.  O cliente continua, então, a pesquisa do conteúdo, alterando os pontos de distribuição a cada dois minutos até que o conteúdo seja encontrado.
+使用该配置：
+-   客户端开始从其当前边界组 (BG_A) 中的分发点搜索内容，对每个分发点进行为时两分钟的搜索，然后再切换到边界组中的下一个分发点。 有效的内容源位置的客户端池包括 DP_A1 和 DP_A2。
+-   如果在搜索 10 分钟之后客户端无法从其当前边界组找到内容，然后，它将向它的搜索添加 BG_B 边界组中的分发点。 然后它将继续从其组合的分发点池中的分发点搜索内容，该池现在包含来自 BG_A 和 BG_B 边界组的分发点。 客户端继续对每个分发点进行为时两分钟的联系，然后再从其池切换到下一个分发点。 有效的内容源位置的客户端池包括 DP_A1、DP_A2、DP_B1 和 DP_B2。
+-   再过 10 分钟（20 分钟）后，如果客户端仍未找到分发点的内容，它将扩展其可用分发点池，以便包含来自第二个邻居组（边界组 BG_C）的分发点。 现在，客户端具有 6 个要搜索的分发点（DP_A1、DP_A2、DP_B2、DP_B2、DP_C1 和 DP_C2），并继续每隔两分钟切换到新的分发点直到找到内容。
+-   如果客户端在总共 120 分钟后还未找到内容，则它将回退，以将默认站点边界组纳入其继续搜索的一部分。 现在，分发点池包括来自这三个已配置的边界组的所有分发点，并且最后一个分发点位于站点服务器计算机上。  然后，客户端继续执行对内容的搜索，并每隔两分钟对分发点进行更改直到找到内容。
 
-Ao configurar os diferentes grupos vizinhos para estarem disponíveis em momentos diferentes, você controla quando pontos de distribuição específicos são adicionados como um local de fonte de conteúdo e quando, ou se, o cliente usa o fallback para o grupo de limites de site padrão como uma rede de segurança para o conteúdo que não está disponível em nenhum outro local.
-
-
+通过将不同的邻居组配置为在不同的时间可用，可以控制将特定分发点添加为内容源位置的时间，以及客户端将默认站点边界组的回退用作从任何其他位置不可用的内容的安全网络的时间或设想。
 
 
 
 
-### <a name="update-existing-boundary-groups-to-the-new-model"></a>Atualizar grupos de limites existentes para o novo modelo
-Quando você atualiza para a versão anterior à 1610, as configurações a seguir são feitas automaticamente. Elas devem garantir que o comportamento de fallback atual permaneça disponível, até que você configure novos grupos de limites e relações.
-
--   Um grupo de limites de site padrão é criado para cada site primário, o nome é ***Default-Site-Boundary-Group&lt;sitecode>.***
-  - Os pontos de distribuição com *Permitir local de origem de fallback para conteúdo* marcado e os pontos de migração de estado como sites primários são adicionados ao grupo de limites *Default-Site-Boundary-Group&lt;sitecode>* desse site.
-  - A partir da versão 1702, os pontos de atualização de software são adicionados a *Default-Site-Boundary-Group&lt;sitecode>* de cada site.
--   É feita uma cópia de cada grupo de limites existente que inclui um servidor do site configurado com uma conexão lenta. O nome do novo grupo é ***&lt;nome do grupo de limites original>-&lt;ID do grupo de limites original>***:  
-    -   Os sistemas de sites que têm uma conexão rápida são deixados no grupo de limites original.
-    -   Uma cópia dos sistemas de sites (pontos de distribuição, pontos de gerenciamento) que têm uma conexão lenta é adicionada à cópia do grupo de limites. Os sistemas de sites originais configurados como lentos permanecem no grupo de limites original para compatibilidade com versões anteriores, mas não são usados desse grupo de limites.
-    - Esta cópia do grupo de limites não tem limites associados a ela. No entanto, um link de fallback é criado entre o grupo original e a nova cópia de grupo de limites que tem o tempo de fallback definido como zero.  
 
 
-- **Específico para sites secundários:**
-  - Um grupo de limites será criado se um site secundário tiver pelo menos um ponto de distribuição com *Permitir local de origem de fallback para conteúdo* marcado ou um ponto de migração de estado. O nome do grupo de limites é ***Secondary-Site-Neighbor--Tmp&lt;Sitecode>.***
-  - Todos os pontos de distribuição com *Permitir local de origem de fallback para conteúdo* marcado e pontos de migração de estado são adicionados a esse grupo de limites de site secundário recém-criado.
-  - Um link de fallback é criado entre o grupo de limites original e o grupo de limites vizinho recém-criado e o tempo de fallback é definido como zero.
+### <a name="update-existing-boundary-groups-to-the-new-model"></a>将现有边界组更新到新模型
+更新到 1610 之前的版本时，将自动进行以下配置。 这些配置旨在确保当前的回退行为保持可用，直到配置了新边界组和关系。
+
+-   将为每个主站点创建默认站点边界组，其名称为 ***Default-Site-Boundary-Group&lt;sitecode>***。
+  - 主站点中选中“允许内容源位置回退”的分发点以及状态迁移点将添加到该站点的 *Default-Site-Boundary-Group&lt;sitecode>* 边界组。
+  - 从版本 1702 开始，将软件更新点添加到每个站点 *Default-Site-Boundary-Group&lt;sitecode>*。
+-   副本由每个现有的边界组组成，这些边界组包含配置为慢速连接的站点服务器。 新组的名称为 ***&lt;original boundary group name>-&lt;original boundary group ID>***：  
+    -   包含快速连接的站点系统会保留在原始边界组中。
+    -   对于包含慢速连接的站点系统（分发点、管理点），其副本将添加到边界组的副本中。 配置为慢速的原始站点系统仍处于其原始边界组中，以便保持向后兼容性，但不从这些边界组使用它。
+    - 此边界组副本不具有与之相关联的边界。 但是，已在原始组和将回退时间设置为 0 的新边界组副本之间创建回退链接。  
 
 
- A tabela a seguir identifica o novo comportamento de fallback que você pode esperar da combinação das configurações de ponto a distribuição e as configurações de implantação originais:
+- **特定于辅助站点：**
+  - 如果辅助站点中至少有一个分发点选中“允许内容源位置回退”或者至少有一个状态迁移点，则创建边界组。 该边界组的名称为 ***Secondary-Site-Neighbor--Tmp&lt;Sitecode>***。
+  - 所有选中“允许内容源位置回退”的分发点以及状态迁移点将添加到这一新建的辅助站点边界组。
+  - 已在原始边界组和新建的邻居边界组之间创建回退链接，回退时间设置为 0。
 
-A configuração de implantação original para "Não executar programa" na rede lenta  |A configuração do ponto de distribuição original para “Allow client to use a fallback source location for content” (Permitir que o cliente use um local de fonte de fallback para o conteúdo)  |Novo comportamento de fallback  
+
+ 下表列出了可从原始部署设置和分发点配置组合期望的新回退行为：
+
+慢速网络中“不运行程序”的原始部署配置  |“允许客户端使用内容的回退源位置”的原始分发点配置  |新的回退行为  
 ---------|---------|---------
-Selecionada     |  Selecionada    |  **Sem fallback** – usar apenas os pontos de distribuição no grupo de limites atual       
-Selecionada     |  Não selecionada|  **Sem fallback** – usar apenas os pontos de distribuição no grupo de limites atual       
-Não selecionada |  Não selecionada|  **Fallback para o vizinho** – usar os pontos de distribuição no grupo de limites atual e, em seguida, adicionar os pontos de distribuição do grupo de limite vizinho. A menos que um link explícito para o grupo de limites de site padrão esteja configurado, os clientes não realizarão o fallback para esse grupo.    
-Não selecionada | Selecionada     |   **Fallback normal** – usar pontos de distribuição no grupo de limites atual, em seguida, os dos grupos de limites vizinho e padrão de site
+选定     |  选定    |  **没有回退** - 仅使用当前边界组中的分发点       
+选定     |  未选定|  **没有回退** - 仅使用当前边界组中的分发点       
+未选定 |  未选定|  **回退到邻居** - 使用当前边界组中的分发点，然后添加邻居边界组中的分发点。 除非已配置到默认站点边界组的显式链接，否则客户端将不会回退到该组。    
+未选定 | 选定     |   **正常回退** - 使用当前边界组中的分发点，然后使用来自邻居和站点默认边界组的分发点
 
- Todas as outras configurações de implantação resultam em **Fallback normal**.  
-
-
+ 所有其他的部署配置会导致**正常回退**。  
 
 
-## <a name="changes-from-prior-versions-for-ui-and-behavior-for-content-locations"></a>Alterações de versões anteriores para a interface do usuário e comportamento para locais de conteúdo
-A seguir estão as principais alterações de grupos de limites e como os clientes encontram conteúdo. Essas alterações são introduzidas com a versão 1610. Muitas dessas alterações e conceitos funcionam em conjunto.
 
 
--   **As configurações para rápido ou lento foram removidas:** você não configura mais pontos de distribuição individuais para serem rápidos ou lentos.  Em vez disso, cada sistema de sites associado a um grupo de limites é tratado da mesma forma. Por causa dessa alteração, as guias **Referências** das propriedades do grupo de limites não dão mais suporte à configuração de Rápido ou Lento.
--   **Novo grupo de limites padrão em cada site:** cada site primário tem um novo grupo de limites padrão chamado ***Default-Site-Boundary-Group&lt;sitecode>***.  Quando um cliente não está em um local de rede que é atribuído a um grupo de limites, o cliente usará os sistemas de sites associados ao grupo padrão do seu site atribuído. Planeje usar esse grupo de limites como uma substituição para o conceito de local de conteúdo de fallback.      
- -  **'Allow fallback source locations for content' (Permitir locais de origem de fallback para conteúdo)** foi removido: você não configura mais explicitamente um ponto de distribuição para ser usado para o fallback e as opções essa configuração foram removidos da interface do usuário.
-
-    Além disso, o resultado da configuração **Permitir que os clientes usem um local de origem de fallback para o conteúdo** em um tipo de implantação para aplicativos foi alterado. Essa configuração em um tipo de implantação agora permite que um cliente use o grupo de limites de site padrão como um local de fonte de conteúdo.
-
- -  **Relações de grupos de limites:** cada grupo de limites pode ser vinculado a um ou mais grupos de limites adicionais. Esses links formam relações que são configuradas na nova guia de propriedades de grupo limites chamada **Relações**:
-    -   Cada grupo de limites ao qual o cliente está associado diretamente é chamado de grupo de limites **atual**.  
-    -   Qualquer grupo de limites que um cliente possa usar devido a uma associação entre o grupo de limites *atual* desse cliente e outro grupo é chamado de grupo de limites **vizinho**.
-    -  A guia **Relações** é o local em que você adiciona grupos de limites que podem ser usados como um grupo de limites *vizinho*. Você também pode configurar um tempo em minutos que determina quando um cliente que não consegue localizar o conteúdo de um ponto de distribuição no grupo *atual* começará a pesquisar locais de conteúdo daqueles grupos de limites *vizinhos*.
-
-        Quando você adicionar ou alterar uma configuração de grupo de limites, terá a opção de bloquear o fallback para aquele grupo de limites específico daquele grupo atual que está sendo configurado.
-
-    Para usar a nova configuração, você define associações explícitas (links) de um grupo de limites para outro e configura todos os pontos de distribuição nesse grupo associado com o mesmo tempo em minutos. O tempo que você configurar determina quando um cliente que não consegue localizar uma fonte de conteúdo de seu grupo de limites *atual* pode começar a pesquisar fontes de conteúdo desse grupo de limites vizinho.
-
-    Além dos grupos de limites configurados explicitamente, cada grupo de limite tem um link implícito para o grupo de limites de site padrão. Este link se torna ativo após 120 minutos, momento em que o grupo de limites de site padrão se torna um grupo de limites vizinho, o que permite que os clientes usem os pontos de distribuição associados a aquele grupo de limites como locais de fonte de conteúdo.
-
-    Esse comportamento substitui o que anteriormente era chamado de fallback de conteúdo.  Você pode substituir esse comportamento padrão de 120 minutos associando explicitamente o grupo de limites de site padrão a um grupo *atual* e definindo um tempo específico em minutos ou bloqueando totalmente o fallback para impedir seu uso.
+## <a name="changes-from-prior-versions-for-ui-and-behavior-for-content-locations"></a>对早期版本 UI 和内容位置行为做出的更改
+以下是对边界组以及客户端查找内容的方式的关键更改。 在版本 1610 中引入了这些更改。 这些更改许多都和概念协同工作。
 
 
--   **Os clientes tentam obter o conteúdo de cada ponto de distribuição por até dois minutos:** quando um cliente pesquisa um local de fonte de conteúdo, ele tenta acessar cada ponto de distribuição por dois minutos antes de tentar outro ponto de distribuição. Essa é uma alteração de versões anteriores em que os clientes tentavam se conectar a um ponto de distribuição por até duas horas.
+-   **已删除对于快速或慢速的配置：**不再将单独的分发点配置为快速或慢速。  相反，每个与边界组相关联的站点系统都将视为相同的系统。 由于有此更改，边界组属性的“引用”选项卡不再支持快速或慢速的配置。
+-   **每个站点的新默认边界组：**每个主站点都具有一个名为 ***Default-Site-Boundary-Group&lt;sitecode>*** 的新默认边界组。  当客户端不在分配给边界组的网络位置时，该客户端将从其指定的站点使用与默认组相关联的站点系统。 计划使用此边界组作为回退内容位置概念的替换。      
+ -  已删除**“允许使用内容的回退源位置”**：无法再将分发点显式配置为用于回退，并且已从用户界面中删除设置此操作的选项。
 
-    - O primeiro ponto de distribuição que um cliente tenta usar é selecionado aleatoriamente do pool de pontos de distribuição disponíveis no grupo (ou grupos) de limites *atual* do cliente.
+    此外，已更改应用程序部署类型上的**允许客户端使用内容的回退源位置**的设置结果。 部署类型上的此设置现在允许客户端使用默认站点边界组作为内容源位置。
 
-    - Após dois minutos, se o cliente não encontrou o conteúdo, ele muda para um novo ponto de distribuição e tenta obter o conteúdo daquele servidor. Esse processo se repete a cada dois minutos até que o cliente localize o conteúdo ou atinja o último servidor em seu pool.
+ -  **边界组关系：**每个边界组都可链接到一个或多个其他的边界组。 这些链接就会形成关系，并在名为“关系”的新边界组属性选项卡上进行配置：
+    -   客户端直接与之关联的每个边界组都称为**当前**边界组。  
+    -   由于客户端的“当前”边界组和另一个组之间存在关联，客户端可以使用的任何边界组都称为**邻居**边界组。
+    -  它位于添加可用作“邻居”边界组的边界组“关系”选项卡中。 还可以配置时间（分钟），用于确定在当前组中无法从分发点找到内容的客户端开始从这些邻居边界组搜索内容位置的时间。
 
-    - Se um cliente não conseguir encontrar um local de fonte de conteúdo válido de seu pool *atual* antes do período de fallback para um grupo de limites *vizinho*, ele adicionará os pontos de distribuição daquele grupo *vizinho* ao final de sua lista atual e pesquisará o grupo de locais de fonte de conteúdo expandido que inclui os pontos de distribuição dos dois grupos de limites.
+        添加或更改边界组配置时，可以选择阻止从当前正在配置的组中回退到该特定的边界组。
+
+    若要使用新配置，可定义从一个边界组到另一个边界组的显式关联（链接），并在相同的时间（分钟）内配置该关联组中的所有分发点。 配置的时间可确定未能从其当前边界组找到内容源的客户端可以开始从该邻居边界组搜索内容源的时间。
+
+    除了显式配置的边界组外，每个边界组都具有指向默认站点边界组的隐式链接。 此链接在 120 分钟后变为活动状态，在这段时间，默认站点边界组成为一个邻居边界组，它允许客户端使用与该边界组相关联的分发点作为内容源位置。
+
+    此行为替换以前称为内容回退的行为。  可以通过将默认站点边界组显式关联到当前组，并设置特定的时间（分钟），或完全阻止回退以防使用，来替代此 120 分钟的默认行为。
+
+
+-   **客户端尝试从每个分发点获取高达 2 分钟的内容：**客户端搜索内容源位置时，它将尝试对每个分发点进行 2 分钟的访问，然后再尝试访问另一个分发点。 这是对以前版本的一个更改，在以前版本中，客户端尝试连接到分发点的时间高达 2 小时。
+
+    - 客户端尝试使用的第一个分发点是从客户端的当前边界组（或组）中的可用分发点池中随机选择的。
+
+    - 两分钟后，如果客户端找不到内容，它将切换到新的分发点并尝试从该服务器获取内容。 每隔两分钟重复此过程，直到客户端找到内容或到达其池中的最后一个服务器。
+
+    - 如果在到达*邻居*边界组的回退时间前，客户端无法从其*当前*池找到有效的内容源位置，则客户端将向其当前列表的末尾添加*邻居*组中的分发点，然后搜索包括来自两个边界组的分发点的扩展组的源位置。
 
         > [!TIP]  
-        > Quando você cria um link explícito do grupo de limites atual para o grupo de limites de site padrão e define um tempo de fallback menor do que o tempo de fallback de um link para um grupo de limites vizinho, os clientes começam a pesquisar os locais de origem do grupo de limites de site padrão antes de incluir o grupo vizinho.
+        > 创建从当前边界组到默认站点边界组的显式链接，并定义比链接到邻居边界组的回退时间更少的回退时间时，客户端将在包括邻居组之前从默认站点边界组开始搜索源位置。
 
-    - Quando o cliente falha em obter o conteúdo do último servidor no pool, ele inicia o processo novamente.
-
-
-## <a name="procedures-for-boundary-groups"></a>Procedimentos para grupos de limites
-Os procedimentos a seguir se aplicam à versão 1610 ou posterior. Se você usa a versão anterior à 1610, veja os procedimentos em [Grupos de limites para as versões 1511, 1602 e 1606 do System Center Configuration Manager](/sccm/core/servers/deploy/configure/boundary-groups-for-1511-1602-and-1606).
+    - 客户端无法从池中的最后一个服务器获取内容时，它将再次开始该过程。
 
 
-### <a name="to-create-a-boundary-group"></a>Para criar um grupo de limites  
-1.  No console do Configuration Manager, clique em **Administração** > **Configuração da Hierarquia** >  **Grupos de Limites**.  
-
-2.  Na guia **Início** , no grupo **Criar** , clique em **Criar Grupo de Limites**.  
-
-3.  Na caixa de diálogo **Criar Grupo de Limites** , selecione a guia **Geral** e especifique um **Nome** para esse grupo de limites.  
-
-4.  Clique em **OK** para salvar o novo grupo de limites.  
+## <a name="procedures-for-boundary-groups"></a>边界组的过程
+以下过程适用于 1610 或更高版本。 如果使用 1610 之前的版本，请参阅 [1511、1602 和 1606 版 System Center Configuration Manager 的边界组](/sccm/core/servers/deploy/configure/boundary-groups-for-1511-1602-and-1606)中的过程。
 
 
-### <a name="to-configure-a-boundary-group"></a>Para configurar um grupo de limites  
- 1.  No console do Configuration Manager, clique em **Administração** > **Configuração da Hierarquia** >  **Grupos de Limites**.  
+### <a name="to-create-a-boundary-group"></a>创建边界组  
+1.  在 Configuration Manager 控制台中，单击“管理” > “层次结构尊重” >  “边界组”。  
 
- 2.  Selecione o grupo de limites que você deseja modificar.  
+2.  在“主页”  选项卡上的“创建”  组中，单击“创建边界组” 。  
 
- 3.  Na guia **Início** , no grupo **Propriedades** , clique em **Propriedades**.  
+3.  在“创建边界组”  对话框中，选择“常规”  选项卡，并为此边界组指定“名称”  。  
 
- 4.  Na caixa de diálogo **Propriedades** para o grupo de limites, selecione a guia **Geral** para modificar os limites que são membros desse grupo de limites:  
+4.  单击“确定”  保存新边界组。  
 
-     -   Para adicionar limites, clique em **Adicionar**, marque a caixa de seleção para um ou mais limites e clique em **OK**.  
 
-     -   Para remover limites, selecione o limite e clique em **Remover**.  
+### <a name="to-configure-a-boundary-group"></a>配置边界组  
+ 1.  在 Configuration Manager 控制台中，单击“管理” > “层次结构尊重” >  “边界组”。  
 
- 5.  Selecione a guia **Referências** para modificar a atribuição de site e a configuração do servidor do sistema de sites associado:  
+ 2.  选择要修改的边界组。  
 
-     -   Para habilitar esse grupo de limites para uso de clientes para atribuição de site, marque a caixa de seleção **Utilize este grupo de limites para a atribuição de site**e selecione a caixa suspensa **Site Atribuído** .  
+ 3.  在“主页”  选项卡上的“属性”  组中，单击“属性” 。  
 
-     -   Para configurar quais servidores do sistema de sites disponíveis estão associados a este grupo de limites:  
+ 4.  在边界组的“属性”  对话框中，选择“常规”  选项卡以修改作为此边界组成员的边界：  
 
-     1.  Clique em **Adicionar**e marque a caixa de seleção para um ou mais servidores. Os servidores são adicionados como servidores do sistema de sites associados a este grupo de limite. Somente os servidores que têm suporte para a função do sistema de sites instalada neles estão disponíveis.  
+     -   要添加边界，请单击“添加” ，选中一个或多个边界的复选框，并单击“确定” 。  
 
-         > [!NOTE]  
-         >  É possível selecionar qualquer combinação de sistemas de sites disponíveis de qualquer site na hierarquia. Os sistemas de site selecionados são listados na guia **Sistemas de Site** nas propriedades de cada limite membro desse grupo de limites.  
+     -   要删除边界，请选择边界并单击“删除” 。  
 
-     2.  Para remover um servidor deste grupo de limites, selecione o servidor e clique em **Remover**.  
+ 5.  选择“引用”  选项卡以修改站点分配和关联的站点系统服务器配置：  
+
+     -   要启用此边界组以供站点分配的客户端使用，请选中“将此边界组用于站点分配” 复选框，然后从“分配的站点”  下拉框中选择一个站点。  
+
+     -   配置与此边界组关联的可用站点系统服务器：  
+
+     1.  单击“添加” ，然后选中一个或多个服务器的复选框。 将服务器添加为此边界组的关联站点系统服务器。 仅在其上安装有受支持的站点系统角色的服务器可用。  
 
          > [!NOTE]  
-         >  Para interromper o uso deste grupo de limites para a associação de sistemas de sites, você deve remover todos os servidores listados como servidores do sistema de sites associados.  
+         >  你可从层次结构中的任何站点选择可用站点系统的任意组合。 所选的站点系统列在作为此边界组成员的每个边界的属性中的“站点系统”  选项卡上。  
 
- 6.  Selecione a guia **Relacionamentos** para configurar o comportamento de fallback:  
+     2.  要从此边界组中删除服务器，请选择该服务器，然后单击“删除” 。  
 
-     - Clique em **Adicionar** e selecione o grupo de limites que deseja configurar.
+         > [!NOTE]  
+         >  要停止为关联的站点系统使用此边界组，则必须删除列为关联站点系统服务器的所有服务器。  
 
-     - Defina um tempo de fallback para os pontos de distribuição. Após esse período, os clientes no grupo de limites para o qual você está configurando os relacionamentos poderão começar a pesquisar conteúdo dos pontos de distribuição do grupo de limites sendo adicionado.
+ 6.  选择“关系”选项卡可配置回退行为：  
 
-     - Para evitar o fallback para um grupo de limites específico, incluindo o *grupo de limites de site padrão* que é configurado por padrão, selecione o grupo de limites e, em seguida, marque a caixa de seleção **Never fallback (Nunca realizar fallback)**.   
+     - 单击“添加”，然后选择要配置的边界组。
 
- 7.  Clique em **OK** para fechar as propriedades do grupo de limites e salvar a configuração.  
+     - 设置分发点的回退时间。 在此时间段之后，边界组中正在配置关系的客户端将能够开始从正在添加的边界组中的分发点搜索内容。
 
-#### <a name="to-associate-a-site-systme-server-with-a-boundary-group"></a>Para associar um servidor de sistema de sites a um grupo de limites  
- 1.  No console do Configuration Manager, clique em **Administração** > **Configuração da Hierarquia** >  **Grupos de Limites**.  
+     - 若要阻止回退到特定边界组（包括默认配置的*默认站点边界组*），请选择该边界组，然后勾选“从不回退”复选框。   
 
- 2.  Selecione o grupo de limites que você deseja modificar.  
+ 7.  单击“确定”  关闭边界组属性并保存配置。  
 
- 3.  Na guia **Início** , no grupo **Propriedades** , clique em **Propriedades**.  
+#### <a name="to-associate-a-site-systme-server-with-a-boundary-group"></a>将站点系统服务器与边界组关联  
+ 1.  在 Configuration Manager 控制台中，单击“管理” > “层次结构尊重” >  “边界组”。  
 
- 4.  Na caixa de diálogo **Propriedades** para o grupo de limites, selecione a guia **Referências** .  
+ 2.  选择要修改的边界组。  
 
- 5.  Em **Selecionar servidores do sistema de sites**clique em **Adicionar**, marque a caixa de seleção para os servidores do sistema de site que deseja associar a esse grupo de limites e clique em **OK**.  
+ 3.  在“主页”  选项卡上的“属性”  组中，单击“属性” 。  
 
- 6.  Clique em **OK** para fechar a caixa de diálogo e salvar a configuração do grupo de limites.  
+ 4.  在边界组的“属性”  对话框中，选择“引用”  选项卡。  
+
+ 5.  在“选择站点系统服务器” 下，单击“添加” ，选中要与此边界组关联的站点系统服务器的复选框，然后单击“确定” 。  
+
+ 6.  单击“确定”  关闭对话框并保存边界组配置。  
 
 
-#### <a name="to-configure-a-fallback-site-for-automatic-site-assignment"></a>Para configurar um local de fallback para atribuição automática de site  
+#### <a name="to-configure-a-fallback-site-for-automatic-site-assignment"></a>为自动站点分配配置回退站点  
 
-  1.  No console do Configuration Manager, clique em **Administração** > **Configuração do Site** >  **Sites**.  
+  1.  在 Configuration Manager 控制台中，单击“管理” > “站点配置” >  “站点”。  
 
-  2.  Na guia **Início** , no grupo **Sites** , clique em **Configurações da Hierarquia**.  
+  2.  在“主页”  选项卡上的“站点”  组中，单击“层次结构设置” 。  
 
-  3.  Na guia **Geral** , marque a caixa de seleção **Usar um local de fallback**e selecione um local na lista suspensa **Local de fallback** .  
+  3.  在“常规”  选项卡上，选中“使用回退站点” 复选框，然后从“回退站点”  下拉列表中选择一个站点。  
 
-  4.  Clique em **OK** para salvar a configuração.  
+  4.  单击“确定”  保存配置。  
 
-#### <a name="to-enable-use-of-preferred-management-points"></a>para habilitar o uso de pontos de gerenciamento preferenciais  
+#### <a name="to-enable-use-of-preferred-management-points"></a>若要启用对首选管理点的使用  
 
- 1.  No console do Configuration Manager, clique em **Administração** > **Configuração do Site** > **Sites** e, na guia **Início**, selecione **Configurações da Hierarquia**.  
+ 1.  在 Configuration Manager 控制台中，单击“管理” > “站点配置” > “站点”，然后在“主页”选项卡上选择“层次结构设置”。  
 
- 2.  Na guia **Geral** das Configurações da Hierarquia, selecione **Os clientes preferem usar os pontos de gerenciamento especificados nos grupos de limite**.  
+ 2.  在“层次结构设置”的“常规”  选项卡上，选择“客户端首选使用边界组中指定的管理点” 。  
 
- 3.  Clique em **OK** para fechar a caixa de diálogo e salvar a configuração.  
-
+ 3.  单击“确定”  关闭对话框并保存配置。  

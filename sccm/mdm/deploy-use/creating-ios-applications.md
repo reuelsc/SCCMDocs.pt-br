@@ -1,57 +1,53 @@
 ---
-title: Criar aplicativos iOS | Microsoft Docs
-description: "Consulte quais considerações você deverá levar em conta ao criar e implantar aplicativos para dispositivos iOS."
+title: "创建 iOS 应用程序 | Microsoft Docs"
+description: "请参阅创建和部署适用于 iOS 设备的应用程序时必须考虑的注意事项。"
 ms.custom: na
 ms.date: 03/05/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
-ms.technology:
-- configmgr-hybrid
+ms.technology: configmgr-hybrid
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: ff633013-5313-4cd3-949c-56d45e777280
-caps.latest.revision: 10
+caps.latest.revision: "10"
 author: robstackmsft
 ms.author: robstack
 manager: angrobe
-ms.translationtype: Human Translation
-ms.sourcegitcommit: 2c723fe7137a95df271c3612c88805efd8fb9a77
-ms.openlocfilehash: 22bfae0509a5ce0b52763ea3eda7b8d6891431ed
-ms.contentlocale: pt-br
-ms.lasthandoff: 03/06/2017
-
-
+ms.openlocfilehash: 349fcf335e7faddbcbd2ffe0ece7e711465f28df
+ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
+ms.translationtype: HT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 08/07/2017
 ---
-# <a name="create-ios-applications-with-system-center-configuration-manager"></a>Criar aplicativos iOS com o System Center Configuration Manager
+# <a name="create-ios-applications-with-system-center-configuration-manager"></a>使用 System Center Configuration Manager 创建 iOS 应用程序
 
-*Aplica-se a: System Center Configuration Manager (Branch Atual)*
+*适用范围：System Center Configuration Manager (Current Branch)*
 
-Um aplicativo do System Center Configuration Manager tem um ou mais tipos de implantação que abrangem os arquivos de instalação e as informações necessárias para implantar o software em um dispositivo. Um tipo de implantação também tem regras que especificam quando e como o software é implantado.  
+System Center Configuration Manager 应用程序具有一个或多个部署类型，这些是将软件部署到设备所需的安装文件和信息。 部署类型还具有指定软件的部署时间和方法的规则。  
 
- Você pode criar aplicativos com os seguintes métodos:  
+ 可以使用下列方法创建应用程序：  
 
--   Crie automaticamente os aplicativos e tipos de implantação, lendo os arquivos de instalação do aplicativo.  
+-   通过读取应用程序安装文件来自动创建应用程序和部署类型。  
 
--   Crie manualmente o aplicativo e adicione tipos de implantação posteriormente.  
+-   手动创建应用程序并稍后添加部署类型。  
 
--   Importe um aplicativo de um arquivo.  
+-   从文件导入应用程序。  
 
-Veja [Iniciar o assistente para criar aplicativo](../../apps/deploy-use/create-applications.md#start-the-create-application-wizard) e conheça as etapas necessárias para criar os aplicativos do Configuration Manager e os tipos de implantação. Além disso, lembre-se das seguintes considerações ao criar e implantar aplicativos para dispositivos iOS.  
+请参阅[启动创建应用程序向导](../../apps/deploy-use/create-applications.md#start-the-create-application-wizard)，了解创建 Configuration Manager 应用程序和部署类型所需的步骤。 此外，创建和部署适用于 iOS 设备的应用程序时，请记住以下注意事项。  
 
-## <a name="general-considerations"></a>Considerações gerais  
- O Configuration Manager dá suporte à implantação dos seguintes tipos de aplicativo:  
+## <a name="general-considerations"></a>一般注意事项  
+ Configuration Manager 支持以下应用类型的部署：  
 
-|Tipo de dispositivo|Arquivos com suporte|  
+|设备类型|受支持的文件|  
 |-----------------|---------------------|  
-|iOS|*.ipa<br /><br /> No System Center Configuration Manager, não é necessário especificar um arquivo (.plist) de lista de propriedade ao importar um aplicativo iOS.|  
+|iOS|*.ipa<br /><br /> 在 System Center Configuration Manager 中，不需要在导入 iOS 应用时指定属性列表 (.plist) 文件。|  
 
- Há suporte para as seguintes ações de implantação:  
+ 支持以下部署操作：  
 
-|Tipo de dispositivo|Ações com suporte|  
+|设备类型|支持的操作|  
 |-----------------|-----------------------|  
-|iOS|**Disponível**, **Necessário**. O usuário deve concordar com a instalação e com a desinstalação.
+|iOS|**可用**、**必需**。 用户必须同意安装和卸载。
 
 > [!IMPORTANT]  
->  No momento, os usuários finais não conseguem instalar aplicativos corporativos do aplicativo de Portal da Empresa do Microsoft Intune para iOS. Isso ocorre porque há restrições colocadas em aplicativos que são publicados na iOS App Store (consulte Diretrizes de análise da App Store, seção 2). Os usuários podem instalar aplicativos corporativos (incluindo aplicativos gerenciados da App Store e pacotes de aplicativos de linha de negócios) navegando até o Portal da Web do Intune no dispositivo deles (portal.manage.microsoft.com). Para obter mais informações sobre os recursos de gerenciamento móvel que são habilitados pelo aplicativo do Portal da Empresa do Intune, consulte [Recursos de gerenciamento de dispositivo registrado do Microsoft Intune](https://technet.microsoft.com/library/dn600287.aspx).  
-
+>  目前，最终用户无法从 iOS 的 Microsoft Intune 公司门户应用程序中安装公司应用程序。 这是由于 iOS 应用商店中发布的应用受到限制（请参阅应用商店查看准则，第 2 部分）。 用户可通过浏览到 Intune Web 门户 (portal.manage.microsoft.com) 在其设备上安装企业应用（包括托管的应用商店应用和业务线应用包）。 若要深入了解由 Intune 公司门户应用启用的移动管理功能，请参阅 [Enrolled device management capabilities in Microsoft Intune](https://technet.microsoft.com/library/dn600287.aspx)（Microsoft Intune 中的注册设备管理功能）。  

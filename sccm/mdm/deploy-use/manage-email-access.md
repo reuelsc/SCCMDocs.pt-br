@@ -1,365 +1,361 @@
 ---
-title: Gerenciar o acesso ao email | Microsoft Docs
-description: Saiba como usar o acesso condicional do System Center Configuration Manager para gerenciar o acesso ao email do Exchange.
+title: "管理电子邮件访问 | Microsoft Docs"
+description: "了解如何使用 System Center Configuration Manager 条件访问管理对 Exchange 电子邮件的访问。"
 ms.custom: na
 ms.date: 03/05/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
-ms.technology:
-- configmgr-hybrid
+ms.technology: configmgr-hybrid
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: fa648e73-5fb8-4818-ab57-7466ffaf888e
-caps.latest.revision: 24
+caps.latest.revision: "24"
 author: andredm7
 ms.author: andredm
 manager: angrobe
-ms.translationtype: Human Translation
-ms.sourcegitcommit: 2c723fe7137a95df271c3612c88805efd8fb9a77
-ms.openlocfilehash: a7b74ba1d16216983251d19adfa4b78a7e0b66e4
-ms.contentlocale: pt-br
-ms.lasthandoff: 03/06/2017
-
-
+ms.openlocfilehash: a5c2a8912cd2ef95a778b81d0b7f1f98315b8413
+ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
+ms.translationtype: HT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 08/07/2017
 ---
-# <a name="manage-email-access-in-system-center-configuration-manager"></a>Gerenciar acesso a email no System Center Configuration Manager
+# <a name="manage-email-access-in-system-center-configuration-manager"></a>在 System Center Configuration Manager 中管理对电子邮件的访问
 
-*Aplica-se a: System Center Configuration Manager (Branch Atual)*
+*适用范围：System Center Configuration Manager (Current Branch)*
 
-Use o acesso condicional do System Center Configuration Manager para gerenciar o acesso ao email do Exchange com base nas condições especificadas.  
+根据指定的条件，使用 System Center Configuration Manager 条件访问管理对 Exchange 电子邮件的访问。  
 
-Você pode gerenciar o acesso a:  
+你可以管理对以下内容的访问权限：  
 
--   Microsoft Exchange Local  
+-   Microsoft Exchange 内部部署  
 
 -   Microsoft Exchange Online  
 
--   Exchange Online dedicado
+-   Exchange Online Dedicated
 
-Você pode controlar o acesso ao Exchange Online e Exchange Local do cliente de email internos nas seguintes plataformas:  
+你可以从以下平台上的内置电子邮件客户端控制对 Exchange Online 和 Exchange 内部部署的访问：  
 
--   Android 4.0 e posterior, Samsung KNOX Standard 4.0 e posterior  
+-   Android 4.0 及更高版本、Samsung KNOX 标准版 4.0 及更高版本  
 
--   iOS 7.1 e posterior  
+-   iOS 7.1 及更高版本  
 
--   Windows Phone 8.1 e posterior  
+-   Windows Phone 8.1 及更高版本  
 
--   Aplicativo de email no Windows 8.1 e posterior
+-   Windows 8.1 和更高版本上的邮件应用程序
 
-Os aplicativos de área de trabalho do Office podem acessar o Exchange Online em computadores que executam:  
+Office 桌面应用程序可以访问运行以下系统的电脑上的 Exchange Online：  
 
--   Área de trabalho do Office 2013 e posterior com [autenticação moderna](https://support.office.com/en-US/article/Using-Office-365-modern-authentication-with-Office-clients-776c0036-66fd-41cb-8928-5495c0f9168a) habilitada.  
+-   已启用 [新式身份验证](https://support.office.com/en-US/article/Using-Office-365-modern-authentication-with-Office-clients-776c0036-66fd-41cb-8928-5495c0f9168a) 的 Office 桌面 2013及更高版本。  
 
--   Windows 7.0 ou Windows 8.1  
+-   Windows 7.0 或 Windows 8.1  
 
 > [!NOTE]  
->  Os computadores devem ser ingressados no domínio ou ser compatíveis com as políticas definidas no Intune.  
+>  电脑应已加入域或符合 Intune 中设置的策略。  
 
 
-## <a name="device-requirements"></a>Requisitos do dispositivo
- Se você configurar o acesso condicional, antes que um usuário possa se conectar ao seu email, o dispositivo que ele usa deve:  
+## <a name="device-requirements"></a>设备要求
+ 如果在用户可以连接到其电子邮件之前配置条件访问，那么他们使用的设备必须：  
 
--   Estar registrado no Intune ou em um PC ingressado no domínio.  
+-   已向 Intune 注册或是已加入域的电脑。  
 
--   Registre o dispositivo no Azure Active Directory (isso ocorrerá automaticamente quando o dispositivo for registrado com o Intune (somente para o Exchange Online). Além disso, a ID do cliente do Exchange ActiveSync deve estar registrada no Azure Active Directory (não se aplica a dispositivos Windows e Windows Phone conectados ao Exchange local).  
+-   在 Azure Active Directory 中注册设备（设备在注册 Intune 时会自动发生此情况（仅限 Exchange Online））。 此外，必须已向 Azure Active Directory 注册客户端 Exchange ActiveSync ID（不适用于连接到 Exchange 内部部署的 Windows 和 Windows Phone 设备）。  
 
-     Para um PC integrado ao domínio, você deve configurá-lo para se registrar automaticamente ao Active Directory do Azure.  A seção**Acesso condicional para PCs** no tópico [Gerenciar o acesso a serviços no System Center Configuration Manager](../../protect/deploy-use/manage-access-to-services.md) lista o conjunto completo de requisitos para habilitar o acesso condicional para PCs.  
+     对于加入域的 PC，必须将它设置为自动向 Azure Active Directory 注册。  [在 System Center Configuration Manager 中管理对服务的访问](../../protect/deploy-use/manage-access-to-services.md)主题中的**针对 PC 的条件性访问**部分列出了为 PC 启用条件性访问的完整要求集。  
 
--   Ser compatível com todas as políticas de conformidade do Configuration Manager implantadas nesse dispositivo  
+-   符合任何部署到该设备的 Configuration Manager 符合性策略  
 
- Se uma condição para o acesso condicional não for atendida, o usuário receberá uma das seguintes mensagens ao fazer logon:  
+ 如果不满足某个条件性访问条件，则用户会在登录时看到以下消息的其中一条：  
 
--   Se o dispositivo não estiver registrado no Intune nem no Azure Active Directory, será exibida uma mensagem com instruções de como instalar o aplicativo do portal da empresa, registrar o dispositivo e (para dispositivos Android e iOS) ativar o email, que associa a ID do Exchange ActiveSync do dispositivo ao registro do dispositivo no Azure Active Directory.  
+-   如果未向 Intune 注册设备，或未在 Azure Active Directory 中注册，则显示一条消息，说明如何安装公司门户应用及注册设备，对于 Android 和 iOS 设备，还将说明如何激活电子邮件（这可将设备的 Exchange ActiveSync ID 与 Azure Active Directory 中的设备记录相关联）。  
 
--   Se o dispositivo não for compatível, será exibida uma mensagem direcionando o usuário para o portal da Web do Intune, no qual ele poderá encontrar informações sobre o problema e como corrigi-lo.  
+-   如果设备不合规，则显示一条消息，将用户定向到 Intune Web 门户，用户可在该门户中找到有关问题及其解决方式的信息。  
 
-**Para dispositivos móveis:**
+**对于移动设备：**
 
-Você pode restringir o acesso ao **OWA (Outlook Web Access)** no Exchange Online quando o acesso é feito por meio de um navegador em dispositivos **iOS** e **Android** .  O acesso será permitido somente de navegadores com suporte em dispositivos compatíveis:
+当使用 **iOS** 和 **Android** 设备的浏览器访问时，可以阻止对 Exchange Online 上的 **Outlook Web Access (OWA)** 的访问。  只允许在合规设备上使用受支持的浏览器进行访问：
 
 * Safari (iOS)
 * Chrome (Android)
-* Navegador gerenciado (iOS e Android)
+* Managed Browser（iOS 和 Android）
 
-Navegadores sem suporte serão bloqueados. Não há suporte para aplicativos do OWA para iOS e Android.  Eles devem ser bloqueados por meio de regras de declarações do ADFS:
-* Configure as regras de declarações do ADFS para bloquear protocolos de autenticação não moderna. Instruções detalhadas são fornecidas no cenário 3 - [Bloquear todo o acesso ao O365, exceto aplicativos baseados em navegador](https://technet.microsoft.com/library/dn592182.aspx).
+将阻止不支持的浏览器。不支持适用于 iOS 和 Android 的 OWA 应用程序。  将通过 ADFS 声明规则对其进行阻止：
+* 安装 ADFS 声明规则以阻止非新式验证协议。 方案 3 中提供了详细说明 - [阻止除基于浏览器的应用程序之外的所有其他应用程序访问 O365](https://technet.microsoft.com/library/dn592182.aspx)。
 
- **Para PCs:**  
+ **对于 PC：**  
 
--   Se o requisito de política de acesso condicional for permitir qualquer dispositivo **ingressado no domínio** ou **compatível**, será exibida uma mensagem com instruções sobre como registrá-lo. Se o PC não atender a nenhum dos requisitos, será solicitado que o usuário registre o dispositivo no Intune.  
+-   如果条件访问策略要求是允许“已加入域”  或“合规” ，则会显示一条消息，其中包含有关如何注册设备的说明。 如果电脑不满足任一要求，则系统会要求用户向 Intune 注册设备。  
 
--   Se o requisito de política de acesso condicional for configurado para permitir apenas dispositivos Windows ingressados no domínio, o dispositivo será bloqueado e será exibida uma mensagem para o usuário entrar em contato com o administrador de TI.  
+-   如果条件访问策略要求设置为只允许加入域的 Windows 设备，则会阻止设备并显示一条与 IT 管理员联系的消息。  
 
- Você pode bloquear o acesso ao email do Exchange a partir do cliente de email Exchange ActiveSync interno aos dispositivos das seguintes plataformas:  
+ 在以下平台上，你可以从设备内置 Exchange ActiveSync 电子邮件客户端阻止对 Exchange 电子邮件的访问：  
 
--   Android 4.0 e posterior, Samsung KNOX Standard 4.0 e posterior  
+-   Android 4.0 及更高版本、Samsung KNOX 标准版 4.0 及更高版本  
 
--   iOS 7.1 e posterior  
+-   iOS 7.1 及更高版本  
 
--   Windows Phone 8.1 e posterior  
+-   Windows Phone 8.1 及更高版本  
 
--   O aplicativo **Mail** no Windows 8.1 e posterior  
+-   Windows 8.1 及更高版本上的 **“邮件”** 应用程序  
 
- O aplicativo Outlook para iOS e Android, e o Outlook 2013 para desktop só têm suporte para o Exchange Online.  
+ Exchange Online 仅支持适用于 iOS 和 Android 的 Outlook 应用以及 Outlook 桌面 2013 和更高版本。  
 
- O **conector do Exchange Local** entre o Configuration Manager e o Exchange é necessário para que o acesso condicional funcione.  
+ 运行条件性访问需要 Configuration Manager 和 Exchange 之间的**本地 Exchange Connector**。  
 
- É possível configurar uma política de acesso condicional para o Exchange Local no console do Configuration Manager. Ao configurar uma política de acesso condicional para o Exchange Online, é possível começar o processo no console do Configuration Manager, que inicia o console do Intune no qual você pode concluir o processo.  
+ 可从 Configuration Manager 控制台为 Exchange 内部部署配置条件访问策略。 为 Exchange Online 配置条件访问策略时，可以在 Configuration Manager 控制台中开始此过程，这将启动 Intune 控制台，可在其中完成该过程。  
 
-## <a name="configure-conditional-access"></a>Configurar o acesso condicional
-### <a name="step-1-evaluate-the-effect-of-the-conditional-access-policy"></a>Etapa 1: Avaliar o efeito da política de acesso condicional  
- Depois de configurar o **conector do Exchange Local**, você pode usar o relatório **Lista de dispositivos por Estado de Acesso Condicional** do Configuration Manager para identificar os dispositivos que serão impedidos de acessar o Exchange após a configuração da política de acesso condicional. Este relatório também exige:  
+## <a name="configure-conditional-access"></a>配置条件访问
+### <a name="step-1-evaluate-the-effect-of-the-conditional-access-policy"></a>步骤 1：评估条件访问策略的影响  
+ 在配置**本地 Exchange Connector** 之后，可以使用 Configuration Manager **按条件访问状态的设备列表**报表确定在配置了条件访问策略后要阻止访问 Exchange 的设备。 此报表还要求：  
 
--   Uma assinatura do Intune  
+-   订阅 Intune  
 
--   O ponto de conexão do serviço deve ser configurado e implantado  
+-   应配置和部署服务连接点  
 
- Nos parâmetros do relatório, selecione o grupo do Intune que deseja avaliar e, se necessário, as plataformas de dispositivo às quais a política se aplicará.  
+ 在报表参数中，选择想要评估的 Intune 组，并在必要时选择策略将应用到的设备平台。  
 
- Para obter mais informações sobre como executar relatórios, consulte [Relatórios no System Center Configuration Manager](../../core/servers/manage/reporting.md).  
+ 有关如何运行报表的详细信息，请参阅 [System Center Configuration Manager 中的报表](../../core/servers/manage/reporting.md)。  
 
- Depois de executar o relatório, examine essas quatro colunas para determinar se um usuário será bloqueado:  
+ 运行报表后，检查以下四列以确定是否将阻止用户：  
 
--   **Canal de gerenciamento** – indica se o dispositivo é gerenciado pelo Intune, pelo Exchange ActiveSync ou por ambos.  
+-   **管理通道** – 指示设备是否由 Intune、Exchange ActiveSync 或二者同时进行管理。  
 
--   **Registrado no AAD** – indica se o dispositivo está registrado no Azure Active Directory (conhecido como Workplace Join).  
+-   **已向 AAD 注册** – 指示是否已向 Azure Active Directory 注册设备（称为“工作区加入”）。  
 
--   **Compatível** – indica se o dispositivo é compatível com as políticas de conformidade que você implantou.  
+-   **合规** – 指示设备是否符合部署的任何合规性策略。  
 
--   **EAS ativado** – dispositivos iOS e Android precisam ter sua ID do Exchange ActiveSync associada ao registro do dispositivo no Azure Active Directory. Isso acontece quando o usuário clica no link **Ativar Email** no email de quarentena.  
+-   **已激活 EAS** – iOS 和 Android 设备需要具有与 Azure Active Directory 中的设备注册记录相关联的 Exchange ActiveSync ID。 当用户单击隔离电子邮件中的“激活电子邮件”  链接时，将发生这种情况。  
 
     > [!NOTE]  
-    >  Dispositivos Windows Phone sempre exibem um valor nesta coluna.  
+    >  Windows Phone 设备始终在此列中显示一个值。  
 
- Os dispositivos que fazem parte de um grupo de destino serão impedidos de acessar o Exchange, a menos que os valores na coluna correspondam aos valores listados na seguinte tabela:  
+ 对于属于目标组或集合的设备，将阻止其访问 Exchange，除非列值与下表中列出的值匹配：  
 
-|Canal de gerenciamento|Registrado no AAD|compatível|EAS ativado|Ação resultante|  
+|管理通道|已向 ADD 注册|合规|已激活 EAS|产生的操作|  
 |------------------------|--------------------|---------------|-------------------|----------------------|  
-|**Gerenciado pelo Microsoft Intune e pelo Exchange ActiveSync**|Sim|Sim|**Sim** ou **Não** é exibido|Acesso ao email permitido|  
-|Qualquer outro valor|Não|Não|Nenhum valor é exibido|Acesso ao email bloqueado|  
+|**由 Microsoft Intune 和 Exchange ActiveSync 管理**|是|是|显示“是” 或“否” |允许电子邮件访问|  
+|任何其他值|否|否|不显示任何值|阻止电子邮件访问|  
 
- Você pode exportar o conteúdo do relatório e usar a coluna **Endereço de email** para ajudar a informar os usuários de que eles serão bloqueados.  
+ 你可以导出报表的内容，并使用 **“电子邮件地址”** 列来帮助你通知用户他们将被阻止。  
 
-### <a name="step-2-configure-user-groups-or-collections-for-the-conditional-access-policy"></a>Etapa 2: Configurar grupos de usuários ou coleções para a política de acesso condicional  
- Direcione as políticas de acesso condicional a diferentes grupos ou coleções de usuários de acordo com os tipos de política. Esses grupos contêm os usuários que serão afetados ou que ficarão isentos da política. Quando um usuário é afetado por uma política, cada dispositivo que ele usa deve ser compatível para que possa acessar o email.  
+### <a name="step-2-configure-user-groups-or-collections-for-the-conditional-access-policy"></a>步骤 2：为条件性访问策略配置用户组或集合  
+ 将条件性访问策略的目标设定为不同的用户组或集合，具体取决于策略类型。 这些组包含将作为目标的用户，或从策略中免除的用户。 如果将某个用户设定为策略的目标，则其使用的每个设备必须合规才能访问电子邮件。  
 
--   **Para a política do Exchange Online** – destinada a grupos de usuários de segurança do Azure Active Directory. Você pode configurar esses grupos no **Centro de administração do Office 365**ou no **Portal de conta do Intune**.  
+-   **对于 Exchange Online 策略** – 针对 Azure Active Directory 安全用户组。 你可以在 **“Office 365 管理中心”**，或 **“Intune 帐户门户”**中配置这些组。  
 
--   **Para a política do Exchange Local** – para coleções de usuários do Configuration Manager. É possível configurá-las no espaço de trabalho **Ativos e Conformidade** .  
+-   **对于 Exchange 內部部署策略** – 针对 Configuration Manager 用户集合。 你可以在“资产和符合性”  工作区中进行配置。  
 
- Você pode especificar dois tipos de grupo em cada política:  
+ 你可以在每个策略中指定两种组类型：  
 
--   **Grupos de destino** – grupos ou coleções de usuários aos quais a política é aplicada  
+-   **目标组** – 策略应用到的用户组或集合  
 
--   **Grupos isentos** – grupos ou coleções de usuários isentos da política (opcional)  
+-   **豁免组** – 不受策略约束的用户组或集合（可选）  
 
- Se um usuário estiver nas duas, ele ficará isento da política.  
+ 如果用户位于两个组中，则会将其从策略中免除。  
 
- Somente os grupos ou coleções que são destinados pela política de acesso condicional são avaliados para o acesso ao Exchange.  
+ 仅会对条件性访问策略面向的组或集合评估 Exchange 访问权限。  
 
-### <a name="step-3-configure-and-deploy-a-compliance-policy"></a>Etapa 3: Configurar e implantar uma política de conformidade  
- Certifique-se de que você criou e implantou uma política de conformidade para todos os dispositivos aos quais a política de acesso condicional do Exchange será direcionada.  
+### <a name="step-3-configure-and-deploy-a-compliance-policy"></a>步骤 3：配置和部署符合性策略  
+ 确保你已创建合规性策略并将其部署到设定为 Exchange 条件访问策略的目标的所有设备。  
 
- Para obter detalhes sobre como configurar a política de conformidade, consulte [Gerenciar políticas de conformidade do dispositivo no System Center Configuration Manager](device-compliance-policies.md).  
+ 有关如何配置合规性策略的详细信息，请参阅[管理 System Center Configuration Manager 中的设备合规性策略](device-compliance-policies.md)。  
 
 > [!IMPORTANT]  
->  Se você habilitar a política de acesso condicional do Exchange sem ter antes implantado uma política de conformidade, todos os dispositivos de destino terão o acesso permitido.  
+>  如果你尚未部署合规性策略，但是启用了 Exchange 条件访问策略，则将允许设定为目标的所有设备进行访问。  
 
- Quando estiver pronto, continue para a **Etapa 4**.  
+ 准备就绪后，继续 **步骤 4**。  
 
-### <a name="step-4-configure-the-conditional-access-policy"></a>Etapa 4: Configurar a política de acesso condicional  
+### <a name="step-4-configure-the-conditional-access-policy"></a>步骤 4：配置条件访问策略  
 
-#### <a name="for-exchange-online-and-tenants-in-the-new-exchange-online-dedicated-environment"></a>Para p Exchange Online (e locatários no novo ambiente do Exchange Online dedicado)
+#### <a name="for-exchange-online-and-tenants-in-the-new-exchange-online-dedicated-environment"></a>对于 Exchange Online（和新 Exchange Online Dedicated 环境中的租户）
 
 >[!NOTE]
->Você também pode criar a política de acesso condicional no console de gerenciamento do Azure AD. O console de gerenciamento do Azure AD permite que você crie políticas de acesso condicional no dispositivo do Intune (chamada de política de acesso condicional baseada em dispositivos no Azure AD), além de outras políticas de acesso condicional, como a autenticação multifator. Você também pode definir políticas de acesso condicional para aplicativos corporativos de terceiros com suporte pelo Azure AD, como o Salesforce e o Box. Para obter mais detalhes, consulte [Como definir a política de acesso condicional com base no dispositivo do Azure Active Directory para controle de acesso dos aplicativos conectados no Azure Active Directory](https://azure.microsoft.com/en-us/documentation/articles/active-directory-conditional-access-policy-connected-applications/).
+>此外，还可在 Azure AD 管理控制台中创建条件访问策略。 除多重身份验证之类的其他条件访问策略之外，Azure AD 管理控制台还允许创建 Intune 设备条件访问策略（在 Azure AD 中称为基于设备的条件访问策略）。 还可为第三方企业应用（如 Azure AD 支持的 Salesforce 和 Box）设置条件访问策略。 有关详细信息，请参阅[如何设置基于 Azure Active Directory 设备的条件访问策略，用于控制对 Azure Active Directory 连接的应用程序的访问](https://azure.microsoft.com/en-us/documentation/articles/active-directory-conditional-access-policy-connected-applications/)。
 
- As políticas de acesso condicional usam o seguinte fluxo para o Exchange Online para decidir se devem permitir ou bloquear os dispositivos.  
+ Exchange Online 的条件访问策略使用下面的流来评估是允许还是阻止设备。  
 
  ![ConditionalAccess8&#45;1](media/ConditionalAccess8-1.png)  
 
- Para acessar o email, o dispositivo deve:  
+ 若要访问电子邮件，设备必须：  
 
--   Registrar com o Intune  
+-   注册 Intune  
 
--   Os PCs devem estar ingressados no domínio ou ser registrados e compatíveis com as políticas definidas no Intune.  
+-   电脑必须已加入域或已注册，并且符合在 Intune 中设置的策略。  
 
--   Registre o dispositivo no Azure Active Directory (isso ocorre automaticamente quando o dispositivo é registrado no Intune).  
+-   在 Azure Active Directory 中注册设备（向 Intune 注册设备时会自动发生此情况）。  
 
-     Para PCs ingressados no domínio, você deve configurá-lo para [registrar o dispositivo automaticamente](https://azure.microsoft.com/en-us/documentation/articles/active-directory-conditional-access-automatic-device-registration/) com o Active Directory do Azure.  
+     对于加入域的电脑，必须将它设置为 [自动向 Azure Active Directory 注册设备](https://azure.microsoft.com/en-us/documentation/articles/active-directory-conditional-access-automatic-device-registration/) 。  
 
--   Ter ativado o email, que associa a ID do Exchange ActiveSync do dispositivo ao registro do dispositivo no Azure Active Directory (aplica-se somente a dispositivos iOS e Android).  
+-   已激活电子邮件，这会将设备的 Exchange ActiveSync ID 与 Azure Active Directory 中的设备记录相关联（仅适用于 iOS 和 Android 设备）。  
 
--   Ser compatível com todas as políticas de conformidade implantadas  
+-   符合任何已部署的符合性策略  
 
- O estado do dispositivo é armazenado no Azure Active Directory, que concede ou bloqueia o acesso ao email, com base nas condições avaliadas.  
+ 根据评估的条件，设备状态存储在可授予或阻止对电子邮件的访问权限的 Azure Active Directory 中。  
 
- Se uma condição não for atendida, o usuário receberá uma das seguintes mensagens de erro ao fazer logon:  
+ 如果不满足条件，则用户将在登录时看到以下消息的其中一条：  
 
--   Se o dispositivo não estiver registrado no Azure Active Directory, será exibida uma mensagem com instruções sobre como instalar o aplicativo do portal da empresa e registrar  
+-   如果未注册设备，或未在 Azure Active Directory 中注册，则会显示一条消息，说明有关如何安装公司门户应用和进行注册  
 
--   Se o dispositivo não for compatível, será exibida uma mensagem que direciona o usuário ao site do Portal da Empresa do Intune ou ao aplicativo Portal da Empresa, no qual ele pode encontrar informações sobre o problema e como corrigi-lo.  
+-   如果设备不合规，则会显示一条消息，将用户定向到 Intune 公司门户网站或公司门户应用，用户可在其中找到有关该问题及其修正方式的信息。  
 
--   Para um PC:  
+-   对于 PC：  
 
-    -   Se a política estiver definida para exigir o ingresso no domínio e o PC não tiver ingressado no domínio, uma mensagem será exibida para que o usuário entre em contato com o administrador de TI.  
+    -   如果策略设置为要求加入域，而 PC 未加入域，则会显示一条与 IT 管理员联系的消息。  
 
-    -   Se a política estiver definida para exigir ingresso no domínio ou compatibilidade e o PC não atender a nenhum dos dois requisitos, será exibida uma mensagem com instruções sobre como instalar o aplicativo do portal da empresa e realizar o registro.  
+    -   如果策略设置要求加入域或合规，而 PC 不符合任一要求，则会显示一条消息，其中包含有关如何安装公司门户应用和注册的说明。  
 
- A mensagem é exibida no dispositivo para usuários e locatários do Exchange Online no novo ambiente dedicado do Exchange Online, e é entregue à caixa de entrada de email dos usuários para dispositivos Exchange locais e dispositivos herdados do Exchange Online dedicado.  
-
-> [!NOTE]  
->  As regras de acesso condicional do Configuration Manager substituem, permitem, bloqueiam e colocam em quarentena regras que são definidas no console de administração do Exchange Online.  
+ 消息将在新 Exchange Online Dedicated 环境中 Exchange Online 用户和租户的设备上显示，并且被传送到 Exchange 本地设备和 Exchange Online Dedicated 旧设备的用户电子邮件收件箱。  
 
 > [!NOTE]  
->  A política de acesso condicional deve ser configurada no console do Intune. As etapas a seguir começam pelo acesso do console do Intune por meio do Configuration Manager. Se você receber uma solicitação, faça logon usando as mesmas credenciais que foram usadas para configurar o ponto de conexão do serviço entre o Intune e o Configuration Manager.  
+>  Configuration Manager 条件访问规则可替代、允许、阻止和隔离在 Exchange Online 管理控制台中定义的规则。  
 
-##### <a name="to-enable-the-exchange-online-policy"></a>Para habilitar a política do Exchange Online  
+> [!NOTE]  
+>  必须在 Intune 控制台中配置条件访问策略。 以下步骤首先通过 Configuration Manager 访问 Intune 控制台。 如果出现提示，请使用在 Configuration Manager 与 Intune 之间设置服务连接点时所用的相同凭据登录。  
 
-1.  No console do Configuration Manager, clique em **Ativos e Conformidade**.  
+##### <a name="to-enable-the-exchange-online-policy"></a>若要启用 Exchange Online 策略  
 
-2.  Expanda **Configurações de conformidade**, expanda **Acesso condicional**e clique em **Exchange Online**.  
+1.  在 Configuration Manager 控制台中，单击“资产和符合性” 。  
 
-3.  Na guia **Início** , no grupo **Links** , clique em **Configurar Política de Acesso Condicional no Console do Intune**. Talvez seja necessário fornecer o nome de usuário e a senha da conta usada para conectar o Configuration Manager a qualquer administrador global do serviço do Intune.  
+2.  展开“符合性设置” ，展开“条件性访问” ，然后单击“Exchange Online” 。  
 
-     O console de administração do Intune é aberto.  
+3.  在“主页”  选项卡的“链接”  组，单击“在 Intune 控制台中配置条件性访问策略” 。 可能需要提供用于将 Configuration Manager 与 Intune 服务的任何全局管理员相连接的帐户的用户名和密码。  
 
-4.  No console do [Console de administração do Microsoft Intune](https://manage.microsoft.com), clique em **Política** > **Acesso condicional** > **Exchange Online Política**.  
+     随即将打开 Intune 管理控制台。  
+
+4.  在 [icrosoft Intune 管理控制台](https://manage.microsoft.com)中，单击 **策略** > **条件访问** > **Exchange Online 策略**。  
 
      ![HybridOnlineSetupIntune](media/HybridOnlineSetupIntune.png)  
 
-5.  Na página **Política do Exchange Online** , selecione **Habilitar política de acesso condicional para o Exchange Online**. Se você marcar essa opção, o dispositivo deverá ser compatível. Se essa opção não estiver marcada, o acesso condicional não será aplicado.  
+5.  在“Exchange Online 策略”  页面上，选择“启用 Exchange Online 的条件访问策略” 。 如果选中此项，则设备必须合规。 如果未选中此项，则不会应用条件访问。  
 
     > [!NOTE]  
-    >  Se você habilitar a política do Exchange Online sem ter antes implantado uma política de conformidade, todos os dispositivos de destino serão relatados como compatíveis.  
+    >  如果你尚未部署合规性策略，但是启用了 Exchange Online 策略，则设定为目标的所有设备都被报告为合规。  
     >   
-    >  Independentemente do estado de conformidade, todos os usuários aos quais a política se destina precisarão registrar seus dispositivos no Intune.  
+    >  无论符合性状态如何，策略的所有目标用户都需要向 Intune 注册其设备。  
 
-6.  Em **Acesso do aplicativo**, para o Outlook e outros aplicativos que usam autenticação moderna, você pode optar por restringir o acesso apenas aos dispositivos compatíveis para cada plataforma.  Os dispositivos Windows devem estar ingressados no domínio ou então devem ser compatíveis e estar registrados no Intune.  
+6.  在使用新式验证的 Outlook 和其他应用的“应用程序访问”下，可选择将访问仅限为对每个平台合规的设备。  Windows 设备必须已加入域或在 Intune 中注册并且符合。  
 
     > [!TIP]  
-    >  **Autenticação moderna** traz a entrada baseada no ADAL (Active Directory Authentication Library) para clientes Office.  
+    >  “新式验证” 允许基于 Active Directory 身份验证库 (ADAL) 登录到 Office 客户端。  
     >   
-    >  -   A autenticação com base em ADAL permite que os clientes Office participem de autenticação baseada em navegador (também conhecida como autenticação passiva).  Para autenticar, o usuário é direcionado a uma página da Web de entrada.  
-    > -   Esse novo método de entrada permite novos cenários, como acesso condicional, com base em **conformidade do dispositivo** e se a **autenticação multifator** foi executada.  
+    >  -   基于 ADAL 的身份验证使 Office 客户端能够实现基于浏览器的身份验证（也称为被动身份验证）。  为了进行身份验证，用户将被导向登录网页。  
+    > -   这种全新的登录方法实现了新的方案，如基于“设备符合性”  以及“多重身份验证”  执行情况的条件访问。  
     >   
-    >  Esse [artigo](https://support.office.com/en-US/article/How-modern-authentication-works-for-Office-2013-and-Office-2016-client-apps-e4c45989-4b1a-462e-a81b-2a13191cf517) traz informações mais detalhadas sobre como funciona a autenticação moderna.  
+    >  有关新式身份验证工作原理的更多详细信息，请参阅本 [文章](https://support.office.com/en-US/article/How-modern-authentication-works-for-Office-2013-and-Office-2016-client-apps-e4c45989-4b1a-462e-a81b-2a13191cf517) 。  
 
-     Usando o Exchange Online com o Configuration Manager e o Intune, você pode gerenciar dispositivos móveis com acesso condicional e computadores desktop. Os PCs devem estar ingressados no domínio ou então devem ser compatíveis e estar registrados no Intune. Você pode definir os seguintes requisitos:  
+     通过将 Exchange Online 与 Configuration Manager 和 Intune 配合使用，不仅可以使用条件访问管理移动设备，而且还可以管理台式计算机。 PC 必须已加入域或在 Intune 中注册并且合规。 可以设置以下要求：  
 
-    -   **Os dispositivos devem estar ingressados no domínio ou ser compatíveis.** Os PCs devem estar ingressados no domínio ou ser compatíveis com as políticas. Se um PC não atender a esses requisitos, será solicitado que o usuário registre o dispositivo no Intune.  
+    -   **设备必须已加入域或必须是合规的。** PC 必须已加入域或符合策略。 如果电脑不满足任一要求，则系统会提示用户向 Intune 注册设备。  
 
-    -   **Os dispositivos devem estar ingressados no domínio.** Os PCs devem estar ingressados no domínio para acessar o Exchange Online. Se um PC não estiver ingressado no domínio, o acesso ao email será bloqueado e será solicitado que o usuário entre em contato com o administrador de TI.  
+    -   **设备必须已加入域。** PC 必须加入域才能访问 Exchange Online。 如果 PC 未加入域，则系统会阻止对电子邮件的访问，并且提示用户与 IT 管理员联系。  
 
-    -   **Os dispositivos devem ser compatíveis.** Os PCs devem ser compatíveis e estar registrados no Intune. Se um PC não estiver registrado, será exibida uma mensagem com instruções sobre como registrá-lo.  
+    -   **设备必须是合规的。** 电脑必须在 Intune 中注册并且合规。 如果 PC 未注册，则会显示一条消息，其中包含有关如何注册的说明。  
 
-7.  Em **OWA (Outlook Web Access)**, você pode optar por permitir o acesso somente ao Exchange Online por meio dos navegadores com suporte: Safari (iOS) e Chrome (Android). O acesso de outros navegadores será bloqueado. As mesmas restrições de plataforma selecionadas para Acesso do aplicativo para o Outlook também se aplicarão aqui.
+7.  在 **Outlook web access (OWA)**下，可以选择只允许通过受支持的浏览器访问 Exchange Online：Safari (iOS) 和 Chrome (Android)。 将阻止来自其他浏览器的访问。 你为 Outlook 应用程序访问选择的平台限制在此处同样适用。
 
-    Em dispositivos **Android** , os usuários devem habilitar o acesso do navegador.  Para fazer isso, o usuário final deve habilitar a opção "Habilitar o Acesso do Navegador" no dispositivo registrado, da seguinte maneira:
-     1. Inicie o **aplicativo do Portal da Empresa**.
-     2. Vá para a página **Configurações** por meio dos três pontos (...) ou do botão de menu do hardware.
-      3.    Pressione o botão **Habilitar o Acesso do Navegador** .
-      4.    No navegador Chrome, saia do Office 365 e reinicie o Chrome.
+    在 **Android** 设备上，用户必须启用浏览器访问。  若要执行此操作，最终用户必须在注册的设备上启用“启用浏览器访问”选项，如下所示：
+     1. 启动“公司门户应用”。
+     2. 从三个点 (…) 或硬件菜单按钮转到“设置”页。
+      3.    按“启用浏览器访问”按钮。
+      4.    在 Chrome 浏览器中注销 Office 365 并重新启动 Chrome。
 
-     Em plataformas **iOS e Android** , para identificar o dispositivo que é usado para acessar o serviço, o Azure Active Directory emitirá um certificado de TLS (protocolo TLS) para o dispositivo.  O dispositivo exibe o certificado com um prompt para que o usuário final selecione o certificado, conforme mostrado nas capturas de tela abaixo. O usuário final deve selecionar este certificado antes que possa continuar usando o navegador.
+     在 **iOS 和 Android** 平台上，为了识别用于访问服务的设备，Azure Active Directory 将向该设备颁发一个传输层安全性 (TLS) 证书。  该设备在显示证书时会出现提示，让最终用户选择证书，如以下屏幕截图所示。 最终用户必须选择此证书后，才能继续使用该浏览器。
 
-     **iOS**
+     **Android**
 
-     ![captura de tela do prompt do certificado em um ipad](media/mdm-browser-ca-ios-cert-prompt_v2.png)
+     ![ipad 上证书提示的屏幕截图](media/mdm-browser-ca-ios-cert-prompt_v2.png)
 
-    **Android**
+    **Outlook Web Access (OWA)**
 
-    ![captura de tela do prompt do certificado em um dispositivo Android](media/mdm-browser-ca-android-cert-prompt.png)
+    ![Android 设备上证书提示的屏幕截图](media/mdm-browser-ca-android-cert-prompt.png)
 
-7.  Para**aplicativos de email do Exchange ActiveSync**, você poderá optar por bloquear o acesso de email ao Exchange Online se o dispositivo não for compatível e selecionar se deseja permitir ou bloquear o acesso ao email quando o Intune não puder gerenciar o dispositivo.  
+7.  对于**Exchange ActiveSync 邮件应用**，可以选择在设备不合规时阻止电子邮件访问 Exchange Online，并选择在 Intune 无法管理设备时是允许还是阻止访问电子邮件。  
 
-8.  Em **Grupos de destino**, selecione os grupos de segurança de usuários do Active Directory aos quais a política será aplicada.  
+8.  在 **“目标组”**下，选择策略将应用到的 Active Directory 安全用户组。  
 
     > [!NOTE]  
-    >  Para usuários que estão nos grupos de destino, as políticas do Intune substituirão as regras e políticas do Exchange.  
+    >  对于目标组中的用户，Intune 策略将替换 Exchange 规则和策略。  
     >   
-    >  Só serão impostas pelo Exchange as regras de permissão, bloqueio e quarentena e as políticas do Exchange se:  
+    >  出现以下情况时，Exchange 将仅强制执行 Exchange 允许、阻止和隔离规则及 Exchange 策略：  
     >   
-    >  -   O usuário não estiver licenciado para o Intune.  
-    > -   O usuário estiver licenciado para o Intune, mas ele não pertencer a nenhum grupo de segurança direcionado na política de acesso condicional.  
+    >  -   用户未获 Intune 授权。  
+    > -   用户已获 Intune 授权，但不属于条件访问策略所针对的任何安全组。  
 
-9. Em **Grupos isentos**, selecione os grupos de segurança de usuários do Active Directory que serão isentos desta política. Se um usuário estiver nos grupos afetados e nos grupos isentos, ele ficará isento da política e terá acesso ao email dele.  
+9. 在 **“免除组”**下，选择将会从此策略中免除的 Active Directory 安全用户组。 如果用户同时处于目标组和免除组中，则用户会从策略中免除，可以访问其电子邮件。  
 
-10. Ao terminar, clique em **Salvar**.  
+10. 完成后，单击“保存” 。  
 
--   Você não precisa implantar a política de acesso condicional; ela entra em vigor imediatamente.  
+-   不需要部署条件访问策略；它将立即生效。  
 
--   Depois que um usuário cria uma conta de email, o dispositivo é bloqueado imediatamente.  
+-   用户创建电子邮件帐户后，设备将立即被阻止。  
 
--   Se um usuário bloqueado registrar o dispositivo no Intune (ou solucionar a incompatibilidade), o acesso ao email será desbloqueado em 2 minutos.  
+-   如果被阻止的用户向 Intune 注册设备（或修正不合规性），则将在 2 分钟内解除对电子邮件访问的阻止。  
 
--   Se o usuário cancelar o registro de seu dispositivo, o email será bloqueado após cerca de 6 horas.  
+-   如果用户取消对其设备的注册，电子邮件将会在大约 6 小时后被阻止。  
 
-### <a name="for-exchange-on-premises-and-tenants-in-the-legacy-exchange-online-dedicated-environment"></a>Para o Exchange local (e locatários no ambiente herdado do Exchange Online dedicado)  
- O seguinte fluxo é usado pelas políticas de acesso condicional para o Exchange local e locatários no ambiente herdado do Exchange Online dedicado para decidir entre permitir ou bloquear dispositivos.  
+### <a name="for-exchange-on-premises-and-tenants-in-the-legacy-exchange-online-dedicated-environment"></a>对于 Exchange 内部部署（和旧 Exchange Online Dedicated 环境中的租户）  
+ 针对 Exchange 内部部署和旧 Exchange Online Dedicated 环境中的租户的条件访问策略使用下面的流来评估是允许还是阻止设备。  
 
  ![ConditionalAccess8&#45;2](media/ConditionalAccess8-2.png)  
 
-##### <a name="to-enable-the-exchange-on-premises-policy"></a>Para habilitar a política do Exchange no Local  
+##### <a name="to-enable-the-exchange-on-premises-policy"></a>若要启用 Exchange 内部部署策略  
 
-1.  No console do Configuration Manager, clique em **Ativos e Conformidade**.  
+1.  在 Configuration Manager 控制台中，单击“资产和符合性” 。  
 
-2.  Expanda **Configurações de conformidade**, expanda **Acesso condicional**e clique em **Exchange no Local**.  
+2.  展开“符合性设置” ，展开“条件性访问” ，然后单击“本地 Exchange” 。  
 
-3.  Na guia **Início** , no grupo **Exchange no Local** , clique em **Configurar Política de Acesso Condicional**.  
+3.  在“主页”  选项卡的“本地 Exchange”  组中，单击“配置条件性访问策略” 。  
 
-4.  **A partir da versão 1602 do Configuration Manager**, na página **Geral** do **Assistente de Configuração de Política de Acesso Condicional**, especifique se você deseja substituir a regra padrão do Exchange Active Sync. Clique essa opção se você quiser que os dispositivos registrados e compatíveis sempre tenham acesso ao email, mesmo quando a regra padrão for definida como quarentena ou bloquear o acesso.  
+4.  **从 Configuration Manager 1602 版开始**，在“配置条件访问策略向导”的“常规”页上指定是否希望覆盖 Exchange Active Sync 默认规则。 如果你希望即使在默认规则设置为隔离或阻止访问时，已注册且合规的设备也始终有权访问电子邮件，请单击此选项。  
 
     > [!NOTE]  
-    >  Há um problema com a substituição padrão para dispositivos Android. Se a regra de acesso padrão do Exchange Server estiver definida como **Bloquear** , e a política de acesso condicional do Exchange estiver habilitada com a opção de substituição de regra padrão, os dispositivos Android dos usuários de destino não poderão ser desbloqueados, mesmo depois que os dispositivos estiverem registrados e compatíveis com o Intune.  Para solucionar esse problema, defina a regra de acesso padrão do Exchange como **Quarentena**. O dispositivo não obtém o acesso ao Exchange por padrão, e o administrador pode receber um relatório do Exchange Server na lista de dispositivos que estão sendo colocados em quarentena.  
+    >  Android 设备的默认覆盖存在问题。 如果 Exchange 服务器的默认访问规则设置为“阻止”，启用了 Exchange 条件访问策略且设置了默认规则覆盖选项，则即使在目标用户的 Android 设备注册 Intune 且合规后，也可能不会解除阻止该设备。  若要解决此问题，请将 Exchange 默认访问规则设置为“隔离”。 设备默认无法访问 Exchange，管理员可从 Exchange 服务器获取有关隔离设备列表的报告。  
 
-     Se não tiver configurado uma conta de email de notificação durante a configuração do Exchange Connector, você verá um aviso nessa página e o botão **Avançar** estará desabilitado.  Antes de prosseguir, primeiro você deve definir as configurações de email de notificação no Exchange Connector e depois voltar para o **Assistente de Configuração de Política de Acesso Condicional** para concluir o processo.  
+     如果设置 Exchange 连接器时未设置通知电子邮件帐户，你将在本页上看到一个警告，且“下一步”按钮处于禁用状态。  必须先在 Exchange Connector 中配置通知电子邮件设置，然后返回“配置条件访问策略向导”完成该过程，才能继续操作。  
 
      ![HybridCondAccessWiz1](media/HybridCondAccessWiz1.PNG)  
 
-     Clique em **Avançar**.  
+     单击“下一步” 。  
 
-5.  Na página **Coleções de Destino** , adicione uma ou mais coleções de usuários. Para acessar o Exchange, os usuários nessas coleções devem registrar seus dispositivos no Intune e também ser compatíveis com as políticas de conformidade implantadas.  
+5.  在“目标集合”  页面中，添加一个或多个用户集合。 若要访问 Exchange，则这些集合中的用户必须向 Intune 注册他们的设备，并且这些设备需符合部署的任何符合性策略。  
 
      ![HybridCondAccessWiz2](media/HybridCondAccessWiz2.PNG)  
 
-     Clique em **Avançar**.  
+     单击“下一步” 。  
 
-6.  Na página **Coleções Isentas** , adicione todas as coleções de usuário que deseja isentar da política de acesso condicional. Os usuários nesses grupos não precisam registrar seus dispositivos no Intune e não precisam ser compatíveis com as políticas de conformidade implantadas para acessar o Exchange.  
+6.  在“免除集合”  页面中，添加任何想从条件性访问策略中免除的用户集合。 对于这些组中的用户，无需向 Intune 注册其设备，这些设备也无需为了访问 Exchange 而符合任何部署的符合性策略。  
 
      ![HybridCondAccessWiz3](media/HybridCondAccessWiz3.png)  
 
-     Se um usuário aparecer nas listas de destino e isenta, ele ficará isento da política de acesso condicional.  
+     如果用户同时处于目标列表和免除列表，则会从条件性访问策略中免除。  
 
-     Clique em **Avançar**.  
+     单击“下一步” 。  
 
-7.  Na página **Editar Notificação do Usuário**, configure o email enviado aos usuários pelo Intune com instruções de como desbloquear seus dispositivos (além do email enviado pelo Exchange).  
+7.  在“编辑用户通知”页面上，配置 Intune 向用户发送的说明如何取消阻止他们的设备的电子邮件（包括 Exchange 发送的电子邮件）。  
 
-     Você pode editar a mensagem padrão e usar marcas HTML para formatar como o texto é exibido. Você também pode enviar um email com antecedência para seus funcionários, notificando sobre as alterações futuras e fornecendo instruções sobre como registrar seus dispositivos.  
+     你可以编辑默认消息，还可使用 HTML 标记来设置文本的显示格式。 还可以提前向员工发送电子邮件，以便通知他们即将进行的更改，并为他们提供有关注册其设备的说明。  
 
      ![HybridCondAccessWiz4](media/HybridCondAccessWiz4.PNG)  
 
     > [!NOTE]  
-    >  Como o email de notificação do Intune que contém instruções de correção é entregue à caixa de correio do Exchange do usuário, se o dispositivo do usuário for bloqueado antes dele receber a mensagem de email, ele pode usar um dispositivo desbloqueado ou outro método para acessar o Exchange e exibir a mensagem.  
+    >  由于已将包含修正说明的 Intune 通知电子邮件发送到用户的 Exchange 邮箱，因此，如果用户的设备在接收电子邮件消息之前被阻止，则用户可以使用取消阻止的设备或其他方法来访问 Exchange 并查看该消息。  
 
     > [!NOTE]  
-    >  Para que o Exchange possa enviar o email de notificação, você deve configurar a conta que será usada para enviar o email de notificação. Faça isso ao configurar as propriedades do conector do Exchange Server.  
+    >  若要让 Exchange 能够发送通知电子邮件，你必须配置将用于发送通知电子邮件的帐户。 配置 Exchange Server 连接器属性时执行此操作。  
     >   
-    >  Para obter mais detalhes, consulte [Gerenciar dispositivos móveis com o System Center Configuration Manager e o Exchange](../../mdm/deploy-use/manage-mobile-devices-with-exchange-activesync.md).  
+    >  有关详细信息，请参阅[使用 System Center Configuration Manager 和 Exchange 管理移动设备](../../mdm/deploy-use/manage-mobile-devices-with-exchange-activesync.md)。  
 
-     Clique em **Avançar**.  
+     单击“下一步” 。  
 
-8.  Na página  **Resumo** , examine as configurações e conclua o assistente.  
+8.  在“摘要”   页面上查看设置，然后完成向导。  
 
--   Você não precisa implantar a política de acesso condicional, ele entra em vigor imediatamente.  
+-   不需要部署条件访问策略，它将立即生效。  
 
--   Depois que um usuário configura um perfil do Exchange ActiveSync, pode levar de 1 a 3 horas para o dispositivo ser bloqueado (se ele não é gerenciado pelo Intune).  
+-   用户设置 Exchange ActiveSync 配置文件后，可能需要 1-3 小时设备才会被阻止（如果它不由 Intune 管理）。  
 
--   Se um usuário bloqueado registrar o dispositivo no Intune (ou solucionar a incompatibilidade), o acesso ao email será desbloqueado em 2 minutos.  
+-   如果被阻止的用户随后向 Intune 注册设备（或修正不合规性），则将在 2 分钟内解除对电子邮件访问的阻止。  
 
--   Se o usuário cancelar o registro no Intune, poderá levar de 1 a 3 horas para o dispositivo ser bloqueado.  
+-   如果用户从 Intune 中取消注册，可能需要 1-3 小时设备才会被阻止。  
 
-### <a name="see-also"></a>Consulte também  
- [Gerenciar o acesso a serviços no System Center Configuration Manager](../../protect/deploy-use/manage-access-to-services.md)
-
+### <a name="see-also"></a>另请参阅  
+ [在 System Center Configuration Manager 中管理对服务的访问](../../protect/deploy-use/manage-access-to-services.md)

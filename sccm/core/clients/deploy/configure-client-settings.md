@@ -1,83 +1,81 @@
 ---
-title: "Definir as configurações do cliente | Microsoft Docs"
-description: "Selecione as configurações do cliente no System Center Configuration Manager."
+title: "配置客户端设置 | Microsoft Docs"
+description: "选择 System Center Configuration Manager 中的客户端设置。"
 ms.custom: na
 ms.date: 04/23/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
-ms.technology:
-- configmgr-client
+ms.technology: configmgr-client
 ms.tgt_pltfrm: na
 ms.topic: get-started-article
 ms.assetid: 95e9858a-bad4-4651-9e61-2e31dc5050fa
-caps.latest.revision: 5
+caps.latest.revision: "5"
 author: robstackmsft
 ms.author: robstack
 manager: angrobe
-ms.translationtype: Human Translation
-ms.sourcegitcommit: 809c7938968b4a6efce6ef37fe7b7baf2c9dd3e7
-ms.openlocfilehash: 77e17786302c885052c8861107a49ff826accb65
-ms.contentlocale: pt-br
-ms.lasthandoff: 12/16/2016
-
+ms.openlocfilehash: 478d562bfb7fdb3921a4278741ff096e81e6092a
+ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
+ms.translationtype: HT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 08/07/2017
 ---
-# <a name="how-to-configure-client-settings-in-system-center-configuration-manager"></a>Como definir as configurações do cliente no System Center Configuration Manager
+# <a name="how-to-configure-client-settings-in-system-center-configuration-manager"></a>如何在 System Center Configuration Manager 中配置客户端设置
 
-*Aplica-se a: System Center Configuration Manager (Branch Atual)*
+*适用范围：System Center Configuration Manager (Current Branch)*
 
-Gerencie todas as configurações de cliente no System Center Configuration Manager em **Administração** > **Configurações do Cliente**. Modifique as configurações padrão quando quiser definir as configurações para todos os usuários e dispositivos na hierarquia que não possuírem configurações personalizadas aplicadas. Se você quiser aplicar configurações diferentes a apenas alguns usuários ou dispositivos, crie configurações personalizadas e implante-as às coleções.  
+可以从“管理” > “客户端设置”管理 System Center Configuration Manager 中的所有客户端设置。 如果要为层次结构中未应用任何自定义设置的所有用户和设备配置设置，请修改默认设置。 如果要将不同设置仅应用于某些用户或设备，请创建自定义设置并将它们部署到集合。  
 
-Para obter informações sobre cada configuração, consulte [Sobre configurações de cliente no System Center Configuration Manager](../../../core/clients/deploy/about-client-settings.md).
+有关每种客户端设置的详细信息，请参阅[关于 System Center Configuration Manager 中的客户端设置](../../../core/clients/deploy/about-client-settings.md)。
 
 > [!NOTE]  
->  É possível também usar itens de configuração para gerenciar clientes para avaliar, acompanhar e corrigir a conformidade de configuração de dispositivos. Para mais informações, consulte [Garantir a conformidade do dispositivo com o System Center Configuration Manager](../../../compliance/understand/ensure-device-compliance.md).  
+>  你还可以使用配置项目来管理客户端，以便评估、跟踪和修正设备的配置符合性。 有关详细信息，请参阅[使用 System Center Configuration Manager 确保设备的合规性](../../../compliance/understand/ensure-device-compliance.md)。  
 
-##  <a name="configure-the-default-client-settings"></a>Definir as configurações padrão do cliente    
+##  <a name="configure-the-default-client-settings"></a>配置默认客户端设置    
 
-1.  No console do Configuration Manager, escolha **Administração** > **Configurações do Cliente** > **Configurações do Cliente Padrão**.  
+1.  在 Configuration Manager 控制台中，选择“管理” > “客户端设置” > “默认客户端设置”。  
 
-3.  Na guia **Início**, escolha **Propriedades**.  
+3.  在“主页”选项卡上，选择“属性”。  
 
-4.  Exiba e defina as configurações do cliente para cada grupo de configurações no painel de navegação.  
+4.  在导航窗格中查看和配置每个设置组的客户端设置。  
 
- Os computadores cliente serão definidos com essas configurações durante o próximo download da política do cliente. Para iniciar a recuperação de política para um único cliente, consulte [Iniciar recuperação de política de um cliente do Configuration Manager](../../../core/clients/manage/manage-clients.md#BKMK_PolicyRetrieval) em [Como gerenciar clientes no System Center Configuration Manager](../../../core/clients/manage/manage-clients.md).  
+ 当客户端计算机下一次下载客户端策略时，将使用这些设置对它们进行配置。 若要为单一客户端启动策略检索，请参阅[如何管理 System Center Configuration Manager 中的客户端](../../../core/clients/manage/manage-clients.md)中的[为 Configuration Manager 客户端启动策略检索](../../../core/clients/manage/manage-clients.md#BKMK_PolicyRetrieval)。  
 
-##  <a name="create-and-deploy-custom-client-settings"></a>Criar e implantar configurações personalizadas do cliente  
-Ao implantar essas configurações personalizadas, elas substituirão as configurações do cliente padrão. Para começar esse procedimento, verifique se você tem uma coleção que contenha os usuários ou os dispositivos que requerem essas configurações personalizadas do cliente.  
+##  <a name="create-and-deploy-custom-client-settings"></a>创建和部署自定义客户端设置  
+部署这些自定义设置后，它们将覆盖默认客户端设置。 在开始此过程之前，请确保有一个集合，其中包含需要这些自定义客户端设置的用户或设备。  
 
-1.  No console do Configuration Manager, escolha **Administração** > **Configurações do Cliente**.  
+1.  在 Configuration Manager 控制台中，选择“管理” > “客户端设置”。  
 
-3.  Na guia **Início**, no grupo **Criar**, escolha **Criar Configurações Personalizadas do Cliente** e escolha entre:  
+3.  在“主页”选项卡上的“创建”组中，选择“创建自定义客户端设备设置”，然后选择以下任意选项：  
 
-    -   **Criar configurações personalizadas do dispositivo do cliente**  
+    -   **创建自定义客户端设备设置**  
 
-    -   **Criar configurações personalizadas do usuário**  
+    -   **创建自定义客户端用户设置**  
 
-4.  Especifique um nome exclusivo e uma descrição opcional.  
+4.  指定唯一名称和选项说明。  
 
-5.  Marque uma ou mais caixas de seleção que exibem um grupo de configurações.  
+5.  选择显示一组设置的一个或多个复选框。  
 
-6.  Clique em cada grupo de configurações no painel de navegação e defina as configurações disponíveis, depois clique em **OK**.   
+6.  从导航窗格中选择每组设置，然后配置可用设置，再单击“确定”。   
 
-8.  Selecione a configuração personalizada do cliente que você criou. Na guia **Início**, no grupo **Configurações do Cliente**, escolha **Implantar**.  
+8.  选择创建的自定义客户端设置。 在“主页”选项卡上的“客户端设置”组中，选择“部署”。  
 
-9. Na caixa de diálogo **Selecionar Coleção**, selecione a coleção apropriada e escolha **OK**. Você pode verificar a coleção selecionada se clicar na guia **Implantações** do painel de detalhes.  
+9. 在“选择集合”对话框中，选择合适的集合，然后选择“确定”。 如果在详细信息窗格中单击“部署”  选项卡，你可以验证所选的集合。  
 
-10. Exiba a ordem da configuração personalizada do cliente que você acabou de criar. Quando você tem várias configurações personalizadas do cliente, elas são aplicadas de acordo com o número da ordem. Se houver qualquer conflito, a configuração com o menor número de ordem substituirá as demais. Para alterar o número da ordem, na guia **Início**, no grupo **Configurações do Cliente**, escolha **Mover Item para Cima** ou **Mover Item para Baixo**.  
+10. 查看刚刚创建的自定义客户端设置的顺序。 如果有多个自定义客户端设置，则会依据其序号应用这些设置。 如果存在任何冲突，则具有最低序号的设置优先于其他设置。 若要更改序号，请在“主页”选项卡上的“客户端设置”组中选择“上移项目”或“下移项目”。  
 
- Os computadores cliente serão definidos com essas configurações durante o próximo download da política do cliente. Para iniciar a recuperação de política para um único cliente, consulte [Iniciar recuperação de política de um cliente do Configuration Manager](../../../core/clients/manage/manage-clients.md#BKMK_PolicyRetrieval) em [Como gerenciar clientes no System Center Configuration Manager](../../../core/clients/manage/manage-clients.md).  
+ 当客户端计算机下一次下载客户端策略时，将使用这些设置对它们进行配置。 若要为单一客户端启动策略检索，请参阅[如何管理 System Center Configuration Manager 中的客户端](../../../core/clients/manage/manage-clients.md)中的[为 Configuration Manager 客户端启动策略检索](../../../core/clients/manage/manage-clients.md#BKMK_PolicyRetrieval)。  
 
-##  <a name="view-client-settings"></a>Exibir configurações do cliente  
- Quando várias configurações de cliente foram implantadas no mesmo dispositivo, usuário ou grupo de usuários, a atribuição de propriedades e combinação das configurações podem ser complexas. Para exibir as configurações do cliente:  
+##  <a name="view-client-settings"></a>查看客户端设置  
+ 如果已将多个客户端设置部署到同一设备、用户或用户组，则设置的优先顺序和组合可能会很复杂。 查看客户端设置：  
 
-1.  No console do Configuration Manager, clique em **Ativos e Conformidade** > **Dispositivos** > **Usuários** ou **Coleções do Usuário**.  
+1.  在 Configuration Manager 控制台中，依次选择“资产和符合性” > “设备” > “用户”或“用户集合”。  
 
-3.  Selecione um dispositivo, usuário ou grupo de usuários no grupo **Configurações do Cliente** , selecione **Configurações do Cliente Resultante**.  
+3.  在“客户端设置”  组中选择设备、用户或用户组，选择“产生的客户端设置” 。  
 
-4.  Selecione uma configuração de cliente no painel esquerdo, e as configurações serão exibidas. Nesse modo, as configurações são somente leitura. 
+4.  从左边窗格中选择一个客户端设置，然后设置将会显示。 在此视图中，设置是只读的。 
 
     > [!NOTE]  
-    >  Para exibir as configurações do cliente, você deve ter acesso de leitura às Configurações do Cliente.  
+    >  若要查看客户端设置，必须对“客户端设置”具有读取权限。  
 
     
