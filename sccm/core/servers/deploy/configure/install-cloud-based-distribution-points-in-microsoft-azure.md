@@ -1,6 +1,6 @@
 ---
-title: "安装基于云的分发点 | Microsoft Docs"
-description: "了解在 Microsoft Azure 中，开始使用基于云的分发点需要执行的操作。"
+title: "Instalar pontos de distribuição baseados em nuvem | Microsoft Docs"
+description: "Saiba o que você precisa fazer para começar a usar os pontos de distribuição baseados em nuvem no Microsoft Azure."
 ms.custom: na
 ms.date: 2/8/2017
 ms.prod: configuration-manager
@@ -17,116 +17,116 @@ manager: angrobe
 ms.openlocfilehash: 39b35cccf78bba4e69a7de0ca3a5a8dc516201e3
 ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
 ms.translationtype: HT
-ms.contentlocale: zh-CN
+ms.contentlocale: pt-BR
 ms.lasthandoff: 08/07/2017
 ---
-# <a name="install-cloud-based-distribution-points-in-microsoft-azure-for-system-center-configuration-manager"></a>在 Microsoft Azure 中安装 System Center Configuration Manager 基于云的分发点
+# <a name="install-cloud-based-distribution-points-in-microsoft-azure-for-system-center-configuration-manager"></a>Instalar pontos de distribuição baseados em nuvem no Microsoft Azure para o System Center Configuration Manager
 
-*适用范围：System Center Configuration Manager (Current Branch)*
+*Aplica-se a: System Center Configuration Manager (Branch Atual)*
 
-可以在 Microsoft Azure 中安装 System Center Configuration Manager 基于云的分发点。 如果不熟悉基于云的分发点，继续操作前请先参阅[使用基于云的分发点](../../../../core/plan-design/hierarchy/use-a-cloud-based-distribution-point.md)。
+É possível instalar pontos de distribuição baseados em nuvem do System Center Configuration Manager no Microsoft Azure. Se você não estiver familiarizado com pontos de distribuição baseados em nuvem, consulte [Usar um ponto de distribuição baseado em nuvem](../../../../core/plan-design/hierarchy/use-a-cloud-based-distribution-point.md) antes de continuar.
 
- 开始安装前，请确保具有必需的证书文件：  
+ Antes de iniciar a instalação, certifique-se de ter os arquivos de certificado necessários:  
 
--   已导出为 .cer 文件和 .pfx 文件的 Microsoft Azure 管理证书。  
+-   Um certificado de gerenciamento do Microsoft Azure exportado para um arquivo .cer e um arquivo .pfx.  
 
--   已导出到 .pfx 文件的 Configuration Manager 基于云的分发点服务证书。  
+-   Um certificado de serviço de ponto de distribuição baseado em nuvem do Configuration Manager exportado para um arquivo .pfx.  
 
     > [!TIP]
-    >   有关这些证书的详细信息，请参阅 [System Center Configuration Manager 的 PKI 证书要求](../../../../core/plan-design/network/pki-certificate-requirements.md)主题中有关基于云的分发点部分。 有关基于云的分发点服务证书的部署示例，请参阅 [System Center Configuration Manager PKI 证书的分步部署示例：Windows Server 2008 证书认证](/sccm/core/plan-design/network/example-deployment-of-pki-certificates)中的“部署基于云的分发点服务证书”。  
+    >   Para obter mais informações sobre esses certificados, consulte a seção de pontos de distribuição baseados em nuvem no tópico [Requisitos de certificado PKI para o System Center Configuration Manager](../../../../core/plan-design/network/pki-certificate-requirements.md). Para ver um exemplo de implantação do certificado de serviço do ponto de distribuição baseado em nuvem, consulte a seção “Implantando o certificado de serviço em pontos de distribuição baseados em nuvem” em [Exemplo de implantação passo a passo dos certificados PKI para o System Center Configuration Manager: Autoridade de Certificação do Windows Server 2008](/sccm/core/plan-design/network/example-deployment-of-pki-certificates).  
 
 
- 安装基于云的分发点后，Azure 将自动为服务生成 GUID，并将其附加到 **cloudapp.net** 的 DNS 后缀上。 使用此 GUID 时，必须配置带 DNS 别名的 DNS（CNAME 记录）。 由此，你可将在 Configuration Manager 基于云的分发点服务证书中定义的服务名称映射到自动生成的 GUID。  
+ Depois de instalar o ponto de distribuição baseado em nuvem, o Azure gera automaticamente um GUID para o serviço e acrescenta isso ao sufixo DNS do **cloudapp.net**. Usando esse GUID, você deve configurar o DNS com um alias DNS (registro CNAME). Isso permite mapear o nome do serviço que você define no certificado de serviço de ponto de distribuição baseado em nuvem do Configuration Manager para o GUID gerado automaticamente.  
 
- 如果使用代理 Web 服务器，你可能必须配置代理设置以实现与承载分发点的云服务的通信。  
+ Se você usa um servidor proxy da Web, talvez seja necessário definir as configurações de proxy para habilitar a comunicação com o serviço de nuvem que hospeda o ponto de distribuição.  
 
-##  <a name="BKMK_ConfigWindowsAzureandInstallDP"></a>设置 Azure 并安装的基于云的分发点  
- 使用以下过程设置 Azure 以支持分发点，然后在 Configuration Manager 中安装基于云的分发点。  
+##  <a name="BKMK_ConfigWindowsAzureandInstallDP"></a> Configurar o Azure e instalar pontos de distribuição baseados em nuvem  
+ Use os procedimentos a seguir para configurar o Azure para dar suporte a pontos de distribuição e depois instale o ponto de distribuição baseado em nuvem no Configuration Manager.  
 
-### <a name="to-set-up-a-cloud-service-in-azure-for-a-distribution-point"></a>在 Azure 中为分发点设置云服务  
+### <a name="to-set-up-a-cloud-service-in-azure-for-a-distribution-point"></a>Para configurar um serviço de nuvem no Azure para um ponto de distribuição  
 
-1.  打开 Web 浏览器，转到 Azure 门户（网址为 https://manage.windowsazure.com），并访问你的帐户。  
+1.  Abra um navegador da Web no Portal do Azure, em https://manage.windowsazure.com e acesse sua conta.  
 
-2.  单击“托管服务、存储帐户和 CDN”，然后选择“管理证书”。  
+2.  Clique em **Serviços Hospedados, Contas de Armazenamento e CDN** e selecione **Certificados de Gerenciamento**.  
 
-3.  右键单击你的订阅，然后选择“添加证书” 。  
+3.  Clique com o botão direito em sua assinatura e selecione **Adicionar Certificado**.  
 
-4.  对于“证书文件”，请指定 .cer 文件并单击“确定”；其中该文件包含要用于此云服务的已导出 Azure 管理证书。  
+4.  Para o **Arquivo de certificado**, especifique o arquivo .cer que contém o certificado de gerenciamento do Azure exportado para usar nesse serviço de nuvem e clique em **OK**.  
 
-管理证书随即加载到 Azure 中，此时即可安装基于云的分发点。  
+O certificado de gerenciamento é carregado no Azure e agora você pode instalar um ponto de distribuição baseado em nuvem.  
 
-### <a name="to-install-a-cloud-based-distribution-point-for-configuration-manager"></a>为 Configuration Manager 安装基于云的分发点  
+### <a name="to-install-a-cloud-based-distribution-point-for-configuration-manager"></a>Para instalar um ponto de distribuição baseado em nuvem para o Configuration Manager  
 
-1.  完成前面过程中的步骤，在 Azure 中使用管理证书设置云服务。  
+1.  Conclua as etapas no procedimento anterior para configurar um serviço de nuvem no Azure com um certificado de gerenciamento.  
 
-2.  在 Configuration Manager 控制台的“管理”工作区中，展开“云服务”，然后选择“云分发点”。 在“主页”选项卡上，单击“创建云分发点”。  
+2.  No espaço de trabalho **Administração** do console do Configuration Manager, expanda **Serviços de Nuvem** e selecione **Pontos de Distribuição de Nuvem**. Na guia **Início**, clique em **Criar Ponto de Distribuição de Nuvem**.  
 
-3.  在创建云分发点向导的“常规”页上，设置以下各项：  
+3.  Na página **Geral** do Assistente para Criar Ponto de Distribuição na Nuvem, configure o seguinte:  
 
-    -   指定 Azure 帐户的“订阅 ID”。  
+    -   Especifique a **ID da Assinatura** de sua conta do Azure.  
 
         > [!TIP]  
-        >  可在 Azure 门户中找到 Azure 订阅 ID。  
+        >  Você pode localizar sua ID de assinatura do Azure no Portal do Azure.  
 
-    -   指定“管理证书” 。 单击“浏览”指定 .pfx 文件，然后输入证书密码；其中该文件包含已导出的 Azure 管理证书。 （可选）可指定 Azure SDK 1.7 中的版本 1 .publishsettings 文件。  
+    -   Especifique o **Certificado de gerenciamento**. Clique em **Procurar** para especificar o arquivo .pfx que contém o certificado de gerenciamento do Azure exportado e digite a senha do certificado. Opcionalmente, você pode especificar um arquivo .publishsettings de versão 1 do Azure SDK 1.7.  
 
-4.  单击“下一步” 。 Configuration Manager 将连接到 Azure 以验证管理证书。  
+4.  Clique em **Avançar**. O Configuration Manager se conecta ao Azure para validar o certificado de gerenciamento.  
 
-5.  在“设置”页上，完成以下设置，然后单击“下一步”：  
+5.  Na página **Configurações**, especifique o seguinte e clique em **Próximo**:  
 
-    -   对于“区域”，选择要在其中创建承载此分发点的云服务的 Azure 区域。  
+    -   Para a **Região**, selecione a região do Azure em que deseja criar o serviço de nuvem que hospeda esse ponto de distribuição.  
 
-    -   对于“证书文件”，请指定 .pfx 文件（其中包含已导出的 Configuration Manager 基于云的分发点服务）。 然后输入密码。  
+    -   Para o **Arquivo de certificado**, especifique o arquivo .pfx que contém o certificado exportado do serviço de ponto de distribuição baseado em nuvem do Configuration Manager. Digite a senha.  
 
         > [!NOTE]  
-        >  将在“服务 FQDN”框中自动填写证书使用者名称。 多数情况下，无需编辑该名称。 在测试环境中使用通配证书的情况除外。 例如，该情况下可能未指定主机名，因此具有相同 DNS 后缀的多台计算机均可使用该证书。 此情况下，证书使用者具有类似于 **CN=\*.contoso.com** 的值，并且 Configuration Manager 将显示消息指示必须指定正确的 FQDN。 单击“确定”  关闭消息，然后在 DNS 后缀前输入特定名称以提供完整的 FQDN。 例如，可以添加 **clouddp1** 以指定 **clouddp1.contoso.com**的完整服务 FQDN。 域中的服务 FQDN 必须唯一，且与所有加入域的设备均不匹配。  
+        >  A caixa **FQDN do Serviço** é automaticamente preenchida do nome da entidade do certificado. Na maioria dos casos, você não precisa editá-lo. A exceção é se você estiver usando um certificado curinga em um ambiente de teste. Por exemplo, neste caso você pode não especificar o nome do host, para que vários computadores que têm o mesmo sufixo DNS possam usar o certificado. Nesse cenário, a entidade do certificado contém um valor similar ao **CN=\*.contoso.com** e o Configuration Manager exibe uma mensagem que você deve especificar o FQDN correto. Clique em **OK** para fechar a mensagem e digite um nome específico antes do sufixo DNS para fornecer o FQDN completo. Por exemplo, você pode adicionar **clouddp1** para especificar o FQDN do serviço completo do **clouddp1.contoso.com**. O FQDN do Serviço deve ser exclusivo no domínio e não coincidir com qualquer dispositivo ingressado no domínio.  
         >   
-        >  仅支持在测试环境中使用通配证书。  
+        >  Os certificados com caracteres curinga têm suporte somente para ambientes de teste.  
 
-6.  在“警报”页上，设置存储配额、传输配额以及希望 Configuration Manager 在达到这些配额的百分之几时生成警报。 然后单击 **“下一步”**。  
+6.  Na página **Alertas**, configure as cotas de armazenamento, cotas de transferência e com qual percentual dessas cotas que você deseja que o Configuration Manager gere alertas. Clique em **Avançar**.  
 
-7.  完成向导。  
+7.  Conclua o assistente.  
 
-向导将为基于云的分发点创建一个新的托管服务。 关闭向导后，可在 Configuration Manager 控制台中监视基于云的分发点的安装进度。 还可监视主站点服务器上的 **CloudMgr.log** 文件。 可在 Azure 门户中监视云服务的预配情况。  
+O assistente cria um novo serviço hospedado para o ponto de distribuição baseado em nuvem. Após fechar o assistente, você pode monitorar o progresso da instalação do ponto de distribuição baseado em nuvem no console do Configuration Manager. Você também pode monitorar o arquivo **CloudMgr.log** no servidor do site primário. Você pode monitorar o provisionamento do serviço de nuvem no Portal do Azure.  
 
 > [!NOTE]  
->  在 Azure 中设置新的分发点最多可能需要 30 分钟。 以下消息将在 **CloudMgr.log** 文件中重复出现，直到预配了存储帐户为止：**Waiting for check if container exists。Will check again in 10 seconds**（正在等待检查容器是否存在。将在 10 秒内再次检查）。 然后将创建并配置服务。  
+>  Pode levar até 30 minutos para provisionar um novo ponto de distribuição no Azure. A seguinte mensagem é repetida no arquivo **CloudMgr.log** até que a conta de armazenamento esteja provisionada: **Aguardando a verificação da existência do contêiner. Verificará novamente em 10 segundos**. Em seguida, o serviço é criado e configurado.  
 
- 你可以通过使用以下方法来确定基于云的分发点安装已完成：  
+ Você pode identificar se a instalação do ponto de distribuição baseado em nuvem foi concluída, usando os seguintes métodos:  
 
--   在 Azure 门户中，基于云的分发点的“部署”显示“就绪”状态。  
+-   No Portal do Azure, a **Implantação** do ponto de distribuição baseado em nuvem exibe um status de **Pronta**.  
 
--   在 Configuration Manager 控制台中，访问“层次结构”工作区 >“层次结构配置”>“云”节点，可发现基于云的分发点显示“就绪”状态。  
+-   No console do Configuration Manager, no espaço de trabalho **Administração**, **Configuração da Hierarquia**, no nó **Nuvem**, o ponto de distribuição baseado em nuvem exibe o status de **Pronto**.  
 
--   Configuration Manager 显示 SMS_CLOUD_SERVICES_MANAGER 组件的状态消息 ID **9409** 。  
+-   O Configuration Manager exibe uma mensagem de status com a ID **9409** para o componente SMS_CLOUD_SERVICES_MANAGER.  
 
-##  <a name="BKMK_ConfigDNSforCloudDPs"></a>为基于云的分发点设置名称解析  
- 客户端必须能够将基于云的分发点的名称解析为 Azure 管理的 IP 地址，然后才能访问基于云的分发点。 客户端分两个阶段执行此操作：  
+##  <a name="BKMK_ConfigDNSforCloudDPs"></a> Configurar a resolução de nomes para pontos de distribuição baseados em nuvem  
+ Antes de os clientes acessarem o ponto de distribuição baseado em nuvem, eles devem ser capazes de resolver o nome desse ponto de distribuição baseado em nuvem para um endereço IP gerenciado pelo Azure. Os clientes fazem isso em duas etapas:  
 
-1.  客户端会将随 Configuration Manager 基于云的分发点服务证书一起提供的服务名称映射到 Azure 服务 FQDN。 此 FQDN 包含 GUID 和 **cloudapp.net**的 DNS 后缀。 GUID 是在安装基于云的分发点之后自动生成的。 若要在 Azure 门户中查看完整 FQDN，可参考云服务仪表板中的“站点 URL”。 站点 URL 的示例为“http://d1594d4527614a09b934d470.cloudapp.net” 。  
+1.  Eles mapeiam o nome do serviço fornecido com o certificado de serviço do ponto de distribuição baseado em nuvem do Configuration Manager para o FQDN de serviço do Azure. Esse FQDN contém um GUID e o sufixo DNS de **cloudapp.net**. O GUID é gerado automaticamente após a instalação do ponto de distribuição baseado em nuvem. Você pode ver o FQDN completo no Portal do Azure consultando a **URL DO SITE** no painel do serviço de nuvem. Uma URL do site de exemplo é **http://d1594d4527614a09b934d470.cloudapp.net**.  
 
-2.  客户端将 Azure 服务 FQDN 解析为 Azure 分配的 IP 地址。 此 IP 地址还可通过 Azure 门户的云服务仪表板查看，并命名为“公共虚拟 IP 地址(VIP)”。  
+2.  Eles resolvem o FQDN de serviço do Azure para o endereço IP que o Azure aloca. Esse endereço IP também pode ser identificado no painel do serviço de nuvem no Portal do Azure, com o nome de **VIP (ENDEREÇO IP VIRTUAL PÚBLICO)**.  
 
-若要将随 Configuration Manager 基于云的分发点服务证书一起提供的服务名称（如 **clouddp1.contoso.com**）映射到 Azure 服务 FQDN（如 **d1594d4527614a09b934d470.cloudapp.net**），Internet 上的 DNS 服务器必须具有 DNS 别名（CNAME 记录）。 然后，客户端可通过 Internet 上的 DNS 服务器将 Azure 服务 FQDN 解析为 IP 地址。  
+Para mapear o nome do serviço fornecido com o certificado de serviço do ponto de distribuição baseado em nuvem do Configuration Manager (por exemplo, **clouddp1.contoso.com**) para seu FQDN de serviço do Azure (por exemplo, **d1594d4527614a09b934d470.cloudapp.net**), os servidores DNS na Internet devem ter um alias DNS (registro CNAME). Em seguida, os clientes podem resolver o FQDN de serviço do Azure para o endereço IP usando servidores DNS na Internet.  
 
-##  <a name="BKMK_ConfigProxyforCloud"></a>为管理云服务的主站点设置代理设置  
- 将云服务与 Configuration Manager 结合使用时，管理基于云的分发点的主站点必须能够连接到 Azure 门户。 该站点使用主站点计算机的**系统**帐户进行连接。 此连接通过使用默认 Web 浏览器在主站点服务器计算机上进行。  
+##  <a name="BKMK_ConfigProxyforCloud"></a> Definir configurações de proxy para sites primários que gerenciam serviços de nuvem  
+ Ao usar serviços de nuvem com o Configuration Manager, o site primário que gerencia o ponto de distribuição baseado em nuvem deve ter a capacidade de se conectar ao Portal do Azure. O site se conecta usando a conta **Sistema** do computador do site primário. Essa conexão é feita usando o navegador da Web padrão no computador do servidor do site primário.  
 
- 在管理基于云的分发点的主站点服务器上，可能必须设置代理设置，才可使主站点访问 Internet 和 Azure。  
+ No servidor do site primário que gerencia o ponto de distribuição baseado em nuvem, talvez seja necessário definir as configurações de proxy para habilitar o site primário a acessar a Internet e o Azure.  
 
- 在 Configuration Manager 控制台中使用下列过程为主站点服务器设置代理设置。  
+ Use o procedimento a seguir para definir as configurações de proxy para o servidor do site primário no console do Configuration Manager.  
 
 > [!TIP]  
->  通过“添加站点系统角色向导”在主站点服务器上安装新站点系统角色时，也可设置代理服务器。  
+>  Você também pode configurar o servidor proxy quando instalar novas funções do sistema de sites no servidor do site primário usando o **Assistente para Adicionar Funções do Sistema de Site**.  
 
-#### <a name="to-set-up-proxy-settings-for-the-primary-site-server"></a>为主站点服务器设置代理设置  
+#### <a name="to-set-up-proxy-settings-for-the-primary-site-server"></a>Para definir as configurações de proxy para o servidor do site primário  
 
-1.  在 Configuration Manager 控制台中，单击“管理” 。  
+1.  No console do Configuration Manager, clique em **Administração**.  
 
-2.  在“管理”  工作区中，展开“站点配置” ，并单击“服务器和站点系统角色” 。 然后选择用于管理基于云的分发点的主站点服务器。  
+2.  No espaço de trabalho **Administração** , expanda **Configuração de Site**e clique em **Funções de Servidores e Sistema de Site**. Selecione o servidor do site primário que gerencia o ponto de distribuição baseado em nuvem.  
 
-3.  在详细信息窗格中，右键单击“站点系统” ，然后单击“属性” 。  
+3.  No painel de detalhes, clique com o botão direito em **Sistema de Site**e clique em **Propriedades**.  
 
-4.  在“站点系统属性”中，选择“代理”选项卡，然后设置此主站点服务器的代理设置。  
+4.  Em **Propriedades do Sistema de Sites**, selecione a guia **Proxy** e defina as configurações de proxy para esse servidor do site primário.  
 
-5.  单击“确定”以保存设置。  
+5.  Clique em **OK** para salvar as configurações.  

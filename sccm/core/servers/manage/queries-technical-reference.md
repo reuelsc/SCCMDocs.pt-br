@@ -1,6 +1,6 @@
 ---
-title: "查询技术参考 | Microsoft Docs"
-description: "请参阅主题列表，以帮助使用查询来检索你的站点中资源的相关信息。"
+title: "Referência técnica de consultas | Microsoft Docs"
+description: "Consulte uma lista de tópicos para ajudar a usar consultas para recuperar informações sobre os recursos do seu site."
 ms.custom: na
 ms.date: 10/06/2016
 ms.prod: configuration-manager
@@ -17,20 +17,20 @@ manager: angrobe
 ms.openlocfilehash: 44f454d2f7c9d317d1ad99ba724931b4631bd11e
 ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
 ms.translationtype: HT
-ms.contentlocale: zh-CN
+ms.contentlocale: pt-BR
 ms.lasthandoff: 08/07/2017
 ---
-# <a name="queries-technical-reference-for-system-center-configuration-manager"></a>System Center Configuration Manager 中查询的技术参考
+# <a name="queries-technical-reference-for-system-center-configuration-manager"></a>Referência técnica de consultas no System Center Configuration Manager
 
-*适用范围：System Center Configuration Manager (Current Branch)*
+*Aplica-se a: System Center Configuration Manager (Branch Atual)*
 
-System Center Configuration Manager 中的查询可根据指定条件从站点数据库中返回信息。 你可以使用查询来检索站点内资源或清单数据和状态消息的相关信息。  
+As consultas no System Center Configuration Manager permitem retornar informações do banco de dados do site com base nos critérios que você especificar. Você pode usar consultas para recuperar informações sobre recursos no seu site ou sobre mensagens de status e dados de inventário.  
 
-## <a name="topics-about-using-queries-in-configuration-manager"></a>有关在 Configuration Manager 中使用查询的主题  
- 请使用下列主题来帮助在 Configuration Manager 中使用查询：  
+## <a name="topics-about-using-queries-in-configuration-manager"></a>Tópicos sobre como usar consultas no Configuration Manager  
+ Use os tópicos a seguir para ajudar a usar consultas no Configuration Manager:  
 
--   [System Center Configuration Manager 中的查询简介](../../../core/servers/manage/introduction-to-queries.md)  
+-   [Introdução a consultas no System Center Configuration Manager](../../../core/servers/manage/introduction-to-queries.md)  
 
--   [System Center Configuration Manager 中查询的操作和维护](../../../core/servers/manage/operations-and-maintenance-for-queries.md)  
+-   [Operações e manutenção de consultas no System Center Configuration Manager](../../../core/servers/manage/operations-and-maintenance-for-queries.md)  
 
--   [System Center Configuration Manager 中查询的安全和隐私](../../../core/servers/manage/security-and-privacy-for-queries.md)  
+-   [Segurança e privacidade de consultas no System Center Configuration Manager](../../../core/servers/manage/security-and-privacy-for-queries.md)  

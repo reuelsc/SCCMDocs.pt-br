@@ -6,22 +6,20 @@ ms.date: 4/29/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
-ms.technology:
-- configmgr-other
+ms.technology: configmgr-other
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: a7f91e63-4750-402e-9970-dd14be7f76a3
-caps.latest.revision: 1
+caps.latest.revision: "1"
 author: Brenduns
 ms.author: brenduns
 manager: angrobe
 robots: NOINDEX, NOFOLLOW
-ms.translationtype: Human Translation
-ms.sourcegitcommit: 31819a1df4e63e1114682490a9b3c3b4e5c99cfa
 ms.openlocfilehash: c43af95a539a9284e4e49822b284783e02f9fa21
-ms.contentlocale: pt-br
-ms.lasthandoff: 05/17/2017
-
+ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
+ms.translationtype: HT
+ms.contentlocale: pt-BR
+ms.lasthandoff: 08/07/2017
 ---
 # <a name="manage-certificates-and-security-for-updates-publisher"></a>Gerenciar certificados e segurança para o Updates Publisher
 
@@ -101,4 +99,3 @@ Os procedimentos a seguir fornecem as etapas básicas que podem ser usadas para 
 3.  Expanda a configuração da política selecionada na árvore do console, expanda **Configuração do Computador**, expanda **Modelos Administrativos**, expanda **Componentes do Windows**e clique em **Windows Update**.
 
 4.  No painel de resultados, clique com o botão direito em **Permitir conteúdo assinado do local de serviço de atualização da Microsoft na intranet** , clique em **Propriedades**, clique em **Habilitado**e clique em **OK**.
-

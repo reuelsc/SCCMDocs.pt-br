@@ -1,6 +1,6 @@
 ---
-title: "发布和 Active Directory 架构 | Microsoft Docs"
-description: "为 System Center Configuration Manager 扩展 Active Directory 架构，以简化部署和配置客户端的过程。"
+title: "Publicação e o esquema do Active Directory | Microsoft Docs"
+description: Estenda o esquema do Active Directory para o System Center Configuration Manager para simplificar o processo de implantar e configurar clientes.
 ms.custom: na
 ms.date: 2/6/2017
 ms.prod: configuration-manager
@@ -18,94 +18,94 @@ manager: angrobe
 ms.openlocfilehash: 58beef440db8e019a06ce7c4c8eaabc8e85ce954
 ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
 ms.translationtype: HT
-ms.contentlocale: zh-CN
+ms.contentlocale: pt-BR
 ms.lasthandoff: 08/07/2017
 ---
-# <a name="prepare-active-directory-for-site-publishing"></a>为站点发布准备 Active Directory
+# <a name="prepare-active-directory-for-site-publishing"></a>Preparar o Active Directory para publicação de sites
 
-*适用范围：System Center Configuration Manager (Current Branch)*
+*Aplica-se a: System Center Configuration Manager (Branch Atual)*
 
-为 System Center Configuration Manager 扩展 Active Directory 架构时，向 Configuration Manager 站点所使用的 Active Directory 引入新结构，以便将关键信息发布在客户端可以轻松访问的安全位置。  
+Ao estender o esquema do Active Directory para o System Center Configuration Manager, você introduz novas estruturas para o Active Directory usadas pelos sites do Configuration Manager para publicar informações chave em um local seguro onde os clientes podem acessá-las facilmente.  
 
-建议使用具有扩展的 Active Directory 架构的 Configuration Manager 来管理本地客户端。 扩展架构可以简化部署和设置客户端的过程。 扩展架构还可让客户端高效查找资源，如不同 Configuration Manager 站点系统角色提供的内容服务器和其他服务。  
+É recomendável usar o Configuration Manager com um esquema do Active Directory estendido ao gerenciar clientes locais. Um esquema estendido pode simplificar o processo de implantação e configuração de clientes. Um esquema estendido também permite que os clientes localizem com eficiência recursos como servidores de conteúdo e serviços adicionais, que fornecem diferentes funções do sistema de sites do Configuration Manager.  
 
--   如果不熟悉提供 Configuration Manager 部署的扩展架构，可参阅 [System Center Configuration Manager 的架构扩展](../../../core/plan-design/network/schema-extensions.md)帮助你做出这一决定。  
+-   Se você não estiver familiarizado com qual esquema estendido fornece uma implantação do Configuration Manager, leia [Extensões de esquema para o System Center Configuration Manager](../../../core/plan-design/network/schema-extensions.md) para ajudá-lo a tomar essa decisão.  
 
--   不使用扩展的架构时，可以设置其他方法（例如 DNS 和 WINS）来查找服务和站点系统服务器。 这些服务定位方法需要附加配置，不是客户端进行服务定位的首选方法。 若要了解详细信息，请阅读[了解客户端如何查找 System Center Configuration Manager 的站点资源和服务](../../../core/plan-design/hierarchy/understand-how-clients-find-site-resources-and-services.md)。  
+-   Quando você não usa um esquema estendido, pode configurar outros métodos, como DNS e WINS, para localizar servidores do sistema de sites e serviços. Esses métodos de localização de serviço necessitam configurações adicionais e não são o método que os clientes preferem para local do serviço. Para saber mais sobre isso, leia [Entender como os clientes encontram serviços e recursos do site para o System Center Configuration Manager](../../../core/plan-design/hierarchy/understand-how-clients-find-site-resources-and-services.md).  
 
--   如果已为 Configuration Manager 2007 或 System Center 2012 Configuration Manager 扩展了 Active Directory 架构，则不需要执行其他操作。 架构扩展不变，并已就位。  
+-   Se o esquema do Active Directory tiver sido estendido para o Configuration Manager 2007 ou o System Center 2012 Configuration Manager, você não precisará fazer mais nada. As extensões de esquema permanecerão inalteradas e já estarão em vigor.  
 
-扩展架构是用于任何林的一次性操作。 若要进行扩展并使用扩展的 Active Directory 架构，请遵循以下步骤：  
+Estender o esquema é uma ação única para qualquer floresta. Para estender e, em seguida, usar o esquema estendido do Active Directory, siga estas etapas:  
 
-## <a name="step-1-extend-the-schema"></a>步骤 1。 扩展架构  
-为 Configuration Manager 扩展架构：  
+## <a name="step-1-extend-the-schema"></a>Etapa 1. Estender o esquema  
+Para estender o esquema do Configuration Manager:  
 
--   使用属于“架构管理员”安全组成员的帐户。  
+-   Use uma conta que seja membro do grupo de segurança Administradores de Esquema.  
 
--   登录架构主域控制器。  
+-   Esteja conectado ao controlador de domínio mestre do esquema.  
 
--   运行 **Extadsch.exe** 工具，或将 LDIFDE 命令行实用程序用于 **ConfigMgr_ad_schema.ldf** 文件。 工具和文件均位于 Configuration Manager 安装媒体上的 **SMSSETUP\BIN\X64** 文件夹中。  
+-   Execute a ferramenta **Extadsch.exe** ou use o utilitário de linha de comando LDIFDE com o arquivo **ConfigMgr_ad_schema.ldf** . A ferramenta e o arquivo estão na pasta **SMSSETUP\BIN\X64** na mídia de instalação do Configuration Manager.  
 
-#### <a name="option-a-use-extadschexe"></a>选项 A：使用 Extadsch.exe  
+#### <a name="option-a-use-extadschexe"></a>Opção A: usar Extadsch.exe  
 
-1.  运行 **extadsch.exe** ，将新类和属性添加到 Active Directory 架构。  
+1.  Execute **extadsch.exe** para adicionar as novas classes e atributos ao esquema do Active Directory.  
 
     > [!TIP]  
-    >  从命令行运行此工具，以便在它运行时查看反馈。  
+    >  Execute essa ferramenta em uma linha de comando para exibir comentários enquanto ela é executada.  
 
-2.  通过查看系统驱动器根目录中的 extadsch.log，验证架构扩展是否成功。  
+2.  Verifique se a extensão do esquema foi realizada com sucesso analisando extadsch.log na raiz da unidade do sistema.  
 
-#### <a name="option-b-use-the-ldif-file"></a>选项 B：使用 LDIF 文件  
+#### <a name="option-b-use-the-ldif-file"></a>A opção B: usar o arquivo LDIF  
 
-1.  编辑 **ConfigMgr_ad_schema.ldf** 文件以定义你希望扩展的 Active Directory 根域：  
+1.  Edite o arquivo **ConfigMgr_ad_schema.ldf** para definir o domínio raiz do Active Directory que deseja estender:  
 
-    -   将该文件中文本“DC=x”的所有实例替换为要扩展的域的完整名称。  
+    -   Substitua todas as instâncias do texto **DC=x** no arquivo pelo nome completo do domínio a estender.  
 
-    -   例如，如果要扩展的域的完整名称为 widgets.microsoft.com，则将文件中 DC=x 的所有实例更改为 **DC=widgets, DC=microsoft, DC=com**。  
+    -   Por exemplo, se o nome completo do domínio a ser estendido for widgets.microsoft.com, altere todas as instâncias de DC=x no arquivo para **DC=widgets, DC=microsoft, DC=com**.  
 
-2.  使用 LDIFDE 命令行实用工具将“ConfigMgr_ad_schema.ldf”文件的内容导入 Active Directory 域服务：  
+2.  Use o utilitário de linha de comando LDIFDE para importar o conteúdo do arquivo **ConfigMgr_ad_schema.ldf** para o Active Directory Domain Services:  
 
-    -   例如，下列命令行会将架构扩展导入 Active Directory 域服务，启用详细日志记录，并在导入过程中创建一个日志文件：**ldifde -i -f ConfigMgr_ad_schema.ldf -v -j &lt;location to store log file\>**。  
+    -   Por exemplo, a seguinte linha de comando importará as extensões do esquema para o Active Directory Domain Services, ativará o registro em log detalhado e criará um arquivo de log durante o processo de importação: **ldifde -i -f ConfigMgr_ad_schema.ldf -v -j &lt;local para armazenar o arquivo de log\>**.  
 
-3.  通过查看上一步中使用的命令行所创建的日志文件，可以验证架构扩展是否成功。  
+3.  Para verificar se a extensão do esquema foi bem-sucedida, analise um arquivo de log criado pela linha de comando na etapa anterior.  
 
-## <a name="step-2--create-the-system-management-container-and-grant-sites-permissions-to-the-container"></a>步骤 2。  创建系统管理容器，并向该容器授予站点权限  
- 扩展架构之后，必须在 Active Directory 域服务 (AD DS) 中创建名为“系统管理”的容器：  
+## <a name="step-2--create-the-system-management-container-and-grant-sites-permissions-to-the-container"></a>Etapa 2.  Criar contêiner do System Management e conceder permissões de sites para o contêiner  
+ Depois de estender o esquema, você deve criar um repositório denominado **System Management** nos AD DS (Active Directory Domain Services):  
 
--   在具有将向 Active Directory 发布数据的主站点或辅助站点的每个域中创建一次此容器。  
+-   Crie esse contêiner uma vez em cada domínio que tenha um site primário ou secundário que publicará dados no Active Directory.  
 
--   对于每个容器，向发布数据到域的每个主站点和辅助站点服务器的计算机帐户授予权限。 每个帐户都需要对容器具有“完全控制”权限，并且高级权限“应用到”等于“这个对象及全部后代”。  
+-   Para cada contêiner, conceda permissões para a conta de computador de cada servidor de site primário e secundário que publicará dados nesse domínio. Cada conta deve ter **Controle Total** sobre o contêiner, com a permissão avançada **Aplicar em** igual a **Este objeto e todos os descendentes**.  
 
-#### <a name="to-add-the-container"></a>若要添加容器  
+#### <a name="to-add-the-container"></a>Para adicionar o contêiner  
 
-1.  使用对 Active Directory 域服务中“系统”容器具有“创建所有子对象”权限的帐户。  
+1.  Use uma conta que tenha a permissão **Criar Todos os Objetos Filho** no contêiner do **Sistema** nos Serviços de Domínio do Active Directory.  
 
-2.  运行“ADSI 编辑器”(adsiedit.msc)，并连接到站点服务器的域。  
+2.  Execute o **Editor ADSI** (adsiedit.msc) e conecte-se ao domínio do servidor do site.  
 
-3.  创建容器：  
+3.  Crie o contêiner:  
 
-    -   展开“域”&lt;计算机完全限定的域名\>，展开&lt;可分辨名称\>，右键单击“CN=System”，选择“新建”，然后选择“对象”。  
+    -   Expanda o &lt;nome de domínio totalmente qualificado do computador\> do **Domínio**, expanda o &lt;nome diferenciado\>, clique com o botão direito do mouse em **CN=System**, clique em **Novo** e em **Objeto**.  
 
-    -   在“创建对象”对话框中，选择“容器”，然后选择“下一步”。  
+    -   Na caixa de diálogo **Criar Objeto**, selecione **Contêiner** e clique em **Avançar**.  
 
-    -   在“值”框中，输入“系统管理”，然后选择“下一步”。  
+    -   Na caixa **Valor**, digite **System Management** e clique em **Avançar**.  
 
-4.  分配权限：  
+4.  Atribuir permissões:  
 
     > [!NOTE]  
-    >  如果有需要，可以使用 Active Directory 用户和计算机管理工具 (dsa.msc) 等其他工具向容器添加权限。  
+    >  se preferir, você pode usar outras ferramentas, como a ferramenta administrativa Computadores e Usuários do Active Directory (dsa.msc) para adicionar permissões ao contêiner.  
 
-    -   右键单击“CN=System Management”，然后选择“属性”。  
+    -   Clique com o botão direito do mouse em **CN=System Management** e clique em **Propriedades**.  
 
-    -   选择“安全”选项卡，选择“添加”，然后添加具有“完全控制”权限的站点服务器计算机帐户。  
+    -   Selecione a guia **Segurança**, clique em **Adicionar** e, em seguida, adicione a conta de computador do servidor de sites com permissão **Controle Total**.  
 
-    -   选择“高级”，选择站点服务器的计算机帐户，然后选择“编辑”。  
+    -   Clique em **Avançado**, selecione a conta de computador do servidor de sites e clique em **Editar**.  
 
-    -   在“应用到”列表中，选择“这个对象及全部后代”。  
+    -   Na lista **Aplicar em**, selecione **Este objeto e todos os descendentes**.  
 
-5.  选择“确定”关闭控制台并保存配置。  
+5.  Clique em **OK** para fechar o console e salvar a configuração.  
 
-## <a name="step-3-set-up-sites-to-publish-to-active-directory-domain-services"></a>步骤 3。 设置站点以发布到 Active Directory 域服务  
- 设置容器并授予权限，并且安装 Configuration Manager 主站点后，可以设置该站点以将数据发布到 Active Directory。  
+## <a name="step-3-set-up-sites-to-publish-to-active-directory-domain-services"></a>Etapa 3. Configurar sites para publicarem no Active Directory Domain Services  
+ Depois que o repositório estiver configurado, as permissões tiverem sido concedidas e você tiver instalado um site primário do Configuration Manager, é possível configurar esse site para publicar dados no Active Directory.  
 
- 有关发布的详细信息，请参阅[发布 System Center Configuration Manager 的站点数据](../../../core/servers/deploy/configure/publish-site-data.md)。  
+ Para saber mais sobre a publicação, veja [Publicar dados do site para o System Center Configuration Manager](../../../core/servers/deploy/configure/publish-site-data.md).  

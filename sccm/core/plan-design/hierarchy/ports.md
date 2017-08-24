@@ -1,6 +1,6 @@
 ---
-title: "Configuration Manager 使用的端口 | Microsoft Docs"
-description: "了解有关 System Center Configuration Manager 用于连接的必需的和可自定义端口。"
+title: Portas usadas pelo Configuration Manager | Microsoft Docs
+description: "Saiba mais sobre as portas necessárias e personalizáveis que o System Center Configuration Manager usa para conexões."
 ms.custom: na
 ms.date: 3/20/2017
 ms.prod: configuration-manager
@@ -18,702 +18,702 @@ manager: angrobe
 ms.openlocfilehash: 78caa69e10f5d386daab1e61e484d4d134469708
 ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
 ms.translationtype: HT
-ms.contentlocale: zh-CN
+ms.contentlocale: pt-BR
 ms.lasthandoff: 08/07/2017
 ---
-# <a name="ports-used-in-system-center-configuration-manager"></a>System Center Configuration Manager 中使用的端口
+# <a name="ports-used-in-system-center-configuration-manager"></a>Portas usadas no System Center Configuration Manager
 
-*适用范围：System Center Configuration Manager (Current Branch)*
+*Aplica-se a: System Center Configuration Manager (Branch Atual)*
 
-System Center Configuration Manager 是分布式客户端/服务器系统。 Configuration Manager 的分布式性质意味着可在站点服务器、站点系统和客户端之间建立连接。 某些连接使用不可配置的端口，而某些连接支持指定的自定义端口。 如果使用防火墙、路由器、代理服务器或 IPsec 等任何端口筛选技术，必须验证所需的端口是否可用。  
+O System Center Configuration Manager é um sistema cliente/servidor distribuído. A natureza distribuída do Configuration Manager significa que as conexões podem ser estabelecidas entre os servidores de site, sistemas de sites e clientes. Algumas conexões usam portas que não são configuráveis e algumas dão suporte a portas personalizadas que você especifica. Verifique se as portas necessárias estão disponíveis, se você usar tecnologia de filtragem de porta, como firewalls, roteadores, servidores proxy ou IPsec.  
 
 > [!NOTE]  
->  如果通过 SSL 桥接支持基于 Internet 的客户端，则除了满足端口要求，可能还必须允许某些 HTTP 谓词和标头遍历防火墙。   
+>  Se houver suporte a clientes baseados na Internet usando a ponte SSL, além dos requisitos de porta, você também deverá permitir alguns verbos e cabeçalhos HTTP para percorrer seu firewall.   
 
- 下面的端口列表由 Configuration Manager 使用，但不包括标准 Windows 服务的信息（例如 Active Directory 域服务或 Kerberos 身份验证的组策略设置）。 有关 Windows Server 服务和端口的信息，请参阅 [Windows 服务器系统的服务概述和网络端口要求](http://go.microsoft.com/fwlink/p/?LinkID=123652)。  
+ As listagens de portas a seguir são usadas pelo Configuration Manager e não incluem informações para serviços padrão do Windows, como configurações da Política de Grupo para Active Directory Domain Services ou autenticação Kerberos. Para obter informações sobre serviços e portas do Windows Server, consulte [Visão geral de serviços e requisitos de porta de rede para o sistema do Windows Server](http://go.microsoft.com/fwlink/p/?LinkID=123652).  
 
-##  <a name="BKMK_ConfigurablePorts"></a> 你可以配置的端口：  
- Configuration Manager 可用于为以下通信类型配置端口：  
+##  <a name="BKMK_ConfigurablePorts"></a> Portas que você pode configurar  
+ O Configuration Manager permite que você configure as portas para os seguintes tipos de comunicação:  
 
--   应用程序目录网站点到应用程序目录 Web 服务点  
+-   Ponto de sites da Web do catálogo de aplicativos com o ponto de serviços Web do catálogo de aplicativos  
 
--   注册代理点到注册点  
+-   Ponto proxy do registro com o ponto de registro  
 
--   运行 IIS 的客户端到站点系统  
+-   Cliente para sistemas de sites que executam o IIS  
 
--   客户端到 Internet（作为代理服务器设置）  
+-   Cliente com Internet (como configurações do servidor proxy)  
 
--   软件更新点到 Internet（作为代理服务器设置）  
+-   Ponto de atualização de software com Internet (como configurações do servidor proxy)  
 
--   软件更新点到 WSUS 服务器  
+-   Ponto de atualização de software com o servidor WSUS  
 
--   站点服务器到站点数据库服务器  
+-   Servidor do site com o servidor de banco de dados do site  
 
--   Reporting Services 点  
+-   Pontos do Reporting Services  
 
     > [!NOTE]  
-    >  在 SQL Server Reporting Services 中，配置用于 Reporting Services 点站点系统角色的端口。 之后，Configuration Manager 会在与 Reporting Services 点通信时使用这些端口。 请务必查看为 IPsec 策略或为配置防火墙定义 IP 筛选器信息的端口。  
+    >  As portas em uso para a função do sistema de sites do ponto do Reporting Services são configuradas no SQL Server Reporting Services. Essas portas são usadas pelo Configuration Manager durante comunicações com o ponto do Reporting Services. Lembre-se de verificar essas portas que definem as informações de filtro IP para políticas IPsec ou para configurar firewalls.  
 
-默认情况下，客户端到站点系统通信所用的 HTTP 端口是端口 80，默认的 HTTPS 端口是 443。 在安装期间或在 Configuration Manager 站点的“站点属性”中，可更改通过 HTTP 或 HTTPS 进行客户端到站点系统通信的端口。  
+Por padrão, a porta HTTP usada para comunicação do cliente com o sistema de sites é a porta 80 e a porta HTTPS padrão é 443. As portas para comunicação do cliente para o sistema de sites por HTTP ou HTTPS podem ser alteradas durante a instalação ou nas propriedades do site do Configuration Manager.  
 
-在 SQL Server Reporting Services 中，配置用于 Reporting Services 点站点系统角色的端口。 之后，Configuration Manager 会在与 Reporting Services 点通信时使用这些端口。 请务必查看为 IPsec 策略或为配置防火墙定义 IP 筛选器信息时所用的端口。  
+As portas em uso para a função do sistema de sites do ponto do Reporting Services são configuradas no SQL Server Reporting Services. Essas portas são usadas pelo Configuration Manager durante comunicações com o ponto do Reporting Services. Lembre-se de verificar essas portas quando estiver definindo as informações de filtro IP para políticas IPsec ou para configurar firewalls.  
 
-##  <a name="BKMK_NonConfigurablePorts"></a> 不可配置的端口  
-Configuration Manager 不允许您为以下通信类型配置端口：  
+##  <a name="BKMK_NonConfigurablePorts"></a> Portas não configuráveis  
+O Configuration Manager não permite que você configure as portas para os seguintes tipos de comunicação:  
 
--   站点到站点  
+-   Site a site  
 
--   站点服务器到站点系统  
+-   Servidor do site com o sistema de site  
 
--   Configuration Manager 控制台到 SMS 提供程序  
+-   Console do Configuration Manager para Provedor de SMS  
 
--   Configuration Manager 控制台到 Internet  
+-   Console do Configuration Manager para a Internet  
 
--   与云服务的连接，例如 Microsoft Intune 和基于云的分发点  
+-   Conexões com serviços de nuvem, como o Microsoft Intune e pontos de distribuição baseados em nuvem  
 
-##  <a name="BKMK_CommunicationPorts"></a> Configuration Manager 客户端和站点系统使用的端口  
-下列章节详述了 Configuration Manager 中用于通信的端口。 章节标题中的箭头表示通信的方向：  
+##  <a name="BKMK_CommunicationPorts"></a> Portas usadas por sistemas de site e clientes do Gerenciador de Configurações  
+As seções a seguir detalham as portas usadas para comunicação no Configuration Manager. As setas no título da seção representam a direção da comunicação:  
 
--   -- > 表明一台计算机发起通信，另一台计算机始终响应  
+-   – > indica que um computador inicia a comunicação e o outro computador sempre responde  
 
--   &lt; -- > 表明任一计算机均可发起通信  
+-   &lt; – > indica que qualquer computador pode iniciar a comunicação  
 
-###  <a name="BKMK_PortsAI"></a>资产智能同步点 -- > Microsoft  
+###  <a name="BKMK_PortsAI"></a> Ponto de sincronização do Asset Intelligence – > Microsoft  
 
-|描述|UDP|TCP|  
+|Descrição|UDP|TCP|  
 |-----------------|---------|---------|  
-|安全超文本传输协议 (HTTPS)|--|443|  
+|Protocolo S-HTTP (HTTPS)|--|443|  
 
-###  <a name="BKMK_PortsAI-to-SQL"></a> 资产智能同步点 -- > SQL Server  
+###  <a name="BKMK_PortsAI-to-SQL"></a> Ponto de sincronização do Asset Intelligence – > SQL Server  
 
-|描述|UDP|TCP|  
+|Descrição|UDP|TCP|  
 |-----------------|---------|---------|  
-|SQL over TCP|--|1433（请参阅备注 2 **可用的备用端口**）|  
+|SQL sobre TCP|--|1433 (Consulte a observação 2, **Porta alternativa disponível**)|  
 
-###  <a name="BKMK_PortsAppCatalogService-SQL"></a> 应用程序目录 Web 服务点 -- > SQL Server  
+###  <a name="BKMK_PortsAppCatalogService-SQL"></a> Ponto de serviços Web do catálogo de aplicativos – > SQL Server  
 
-|描述|UDP|TCP|  
+|Descrição|UDP|TCP|  
 |-----------------|---------|---------|  
-|SQL over TCP|--|1433（请参阅备注 2 **可用的备用端口**）|  
+|SQL sobre TCP|--|1433 (Consulte a observação 2, **Porta alternativa disponível**)|  
 
-###  <a name="BKMK_PortsAppCatalogWebSitePoint_AppCatalogWebServicePoint"></a> 应用程序目录网站点 -- > 应用程序目录 Web 服务点  
+###  <a name="BKMK_PortsAppCatalogWebSitePoint_AppCatalogWebServicePoint"></a> Ponto de sites da Web do catálogo de aplicativos – > Ponto de serviços Web do catálogo de aplicativos  
 
-|描述|UDP|TCP|  
+|Descrição|UDP|TCP|  
 |-----------------|---------|---------|  
-|超文本传输协议 (HTTP)|--|80（请参阅备注 2 **可用的备用端口**）|  
-|安全超文本传输协议 (HTTPS)|--|443（请参阅备注 2 **可用的备用端口**）|  
+|Protocolo HTTP|--|80 (Consulte a observação 2, **Porta alternativa disponível**)|  
+|Protocolo S-HTTP (HTTPS)|--|443 (Consulte a observação 2, **Porta alternativa disponível**)|  
 
-###  <a name="BKMK_PortsClient-AppCatalogWebsitePoint"></a> 客户端 -- > 应用程序目录网站点  
+###  <a name="BKMK_PortsClient-AppCatalogWebsitePoint"></a> Cliente – > Ponto de sites da Web do catálogo de aplicativos  
 
-|描述|UDP|TCP|  
+|Descrição|UDP|TCP|  
 |-----------------|---------|---------|  
-|超文本传输协议 (HTTP)|--|80（请参阅备注 2 **可用的备用端口**）|  
-|安全超文本传输协议 (HTTPS)|--|443（请参阅备注 2 **可用的备用端口**）|  
+|Protocolo HTTP|--|80 (Consulte a observação 2, **Porta alternativa disponível**)|  
+|Protocolo S-HTTP (HTTPS)|--|443 (Consulte a observação 2, **Porta alternativa disponível**)|  
 
-###  <a name="BKMK_PortsClient-ClientWakeUp"></a> 客户端 -- &gt; 客户端  
- 除了使用下表中列出的端口，唤醒代理还使用 Internet 控制消息协议 (ICMP) 来回显示为唤醒代理配置客户端时彼此间发送的请求消息。
+###  <a name="BKMK_PortsClient-ClientWakeUp"></a> Cliente -- &gt; Cliente  
+ Além das portas relacionadas listadas na tabela a seguir, o proxy de ativação também utiliza mensagens de solicitação de eco do protocolo ICMP de um cliente para outro quando estão configurados com o proxy de ativação.
 
-此通信用于确认网络上的另一台客户端计算机是否处于唤醒状态。 ICMP 有时称为 TCP/IP ping 命令。 ICMP 没有 UDP 或 TCP 协议号，因此未在下表中列出。 但是，这些客户端计算机或者子网中的介入性网络设备上的任何基于主机的防火墙都必须允许 ICMP 流量，以便成功进行唤醒代理通信。  
+Essa comunicação é usada para confirmar se o outro computador cliente está ativo na rede. O ICMP é, por vezes, referido como comandos ping TCP/IP. O ICMP não tem um número de protocolo UDP ou TCP, portanto, não está listado na tabela a seguir. No entanto, todos os firewalls baseados em host nesses computadores cliente ou dispositivos de rede de intervenção dentro da sub-rede devem permitir o tráfego de ICMP para que a comunicação de proxy de ativação tenha êxito.  
 
-|描述|UDP|TCP|  
+|Descrição|UDP|TCP|  
 |-----------------|---------|---------|  
-|LAN 唤醒|9（请参阅备注 2 **可用的备用端口**）|--|  
-|唤醒代理|25536（请参阅备注 2 **可用的备用端口**）|--|  
+|Wake On LAN|9 (Consulte a observação 2, **Porta alternativa disponível**)|--|  
+|Proxy de ativação|25536 (Consulte a observação 2, **Porta alternativa disponível**)|--|  
 
-###  <a name="BKMK_PortsClient-PolicyModule"></a> 客户端 -- &gt; Configuration Manager 策略模块（网络设备注册服务）  
+###  <a name="BKMK_PortsClient-PolicyModule"></a> Cliente -- &gt; Módulo de política do Configuration Manager (Serviço de Registro de Dispositivo de Rede)  
 
-|描述|UDP|TCP|  
+|Descrição|UDP|TCP|  
 |-----------------|---------|---------|  
-|超文本传输协议 (HTTP)||80|  
-|安全超文本传输协议 (HTTPS)|--|443|  
+|Protocolo HTTP||80|  
+|Protocolo S-HTTP (HTTPS)|--|443|  
 
-###  <a name="BKMK_PortsClient-CloudDP"></a> 客户端 -- > 基于云的分发点  
+###  <a name="BKMK_PortsClient-CloudDP"></a> Cliente – > Ponto de distribuição baseado em nuvem  
 
-|描述|UDP|TCP|  
+|Descrição|UDP|TCP|  
 |-----------------|---------|---------|  
-|安全超文本传输协议 (HTTPS)|--|443|  
+|Protocolo S-HTTP (HTTPS)|--|443|  
 
-###  <a name="BKMK_PortsClient-DP"></a> 客户端 -- > 分发点  
+###  <a name="BKMK_PortsClient-DP"></a> Cliente – > Ponto de distribuição  
 
-|描述|UDP|TCP|  
+|Descrição|UDP|TCP|  
 |-----------------|---------|---------|  
-|超文本传输协议 (HTTP)|--|80（请参阅备注 2 **可用的备用端口**）|  
-|安全超文本传输协议 (HTTPS)|--|443（请参阅备注 2 **可用的备用端口**）|  
+|Protocolo HTTP|--|80 (Consulte a observação 2, **Porta alternativa disponível**)|  
+|Protocolo S-HTTP (HTTPS)|--|443 (Consulte a observação 2, **Porta alternativa disponível**)|  
 
-###  <a name="BKMK_PortsClient-DP2"></a> 客户端 -- > 配置进行多播的分发点  
+###  <a name="BKMK_PortsClient-DP2"></a> Cliente – > Ponto de distribuição configurado para multicast  
 
-|描述|UDP|TCP|  
+|Descrição|UDP|TCP|  
 |-----------------|---------|---------|  
-|服务器消息块 (SMB)|--|445|  
-|多播协议|63000-64000|--|  
+|Protocolo SMB|--|445|  
+|Protocolo de multicast|63000-64000|--|  
 
-###  <a name="BKMK_PortsClient-DP3"></a> 客户端 -- > 为 PXE 配置的分发点  
+###  <a name="BKMK_PortsClient-DP3"></a> Cliente – > Ponto de distribuição configurado para PXE  
 
-|描述|UDP|TCP|  
+|Descrição|UDP|TCP|  
 |-----------------|---------|---------|  
-|动态主机配置协议 (DHCP)|67 和 68|--|  
-|普通文件传输协议 (TFTP)|69（请参阅备注 4 **普通文件传输协议 (TFTP) 后台程序**）|--|  
-|启动信息协商层 (BINL)|4011|--|  
+|Protocolo DHCP|67 e 68|--|  
+|Protocolo TFTP|69 (Consulte a observação 4, **TFTP (Trivial FTP) Daemon**)|--|  
+|BINL (Boot Information Negotiation Layer)|4011|--|  
 
-###  <a name="BKMK_PortsClient-FSP"></a> 客户端 -- > 回退状态点  
+###  <a name="BKMK_PortsClient-FSP"></a> Cliente – > Ponto de status de fallback  
 
-|描述|UDP|TCP|  
+|Descrição|UDP|TCP|  
 |-----------------|---------|---------|  
-|超文本传输协议 (HTTP)|--|80（请参阅备注 2 **可用的备用端口**）|  
+|Protocolo HTTP|--|80 (Consulte a observação 2, **Porta alternativa disponível**)|  
 
-###  <a name="BKMK_PortsClient-GCDC"></a> 客户端 -- > 全局编录域控制器  
- 如果 Configuration Manager 客户端是工作组计算机或者配置为仅限 Internet 通信，则该客户端不会联系全局目录服务器。  
+###  <a name="BKMK_PortsClient-GCDC"></a> Cliente – > Controlador de domínio de catálogo global  
+ Clientes do Configuration Manager não entram em contato com servidores de catálogo global quando eles estão em um computador de grupo de trabalho ou configurados para comunicação somente via Internet.  
 
-|描述|UDP|TCP|  
+|Descrição|UDP|TCP|  
 |-----------------|---------|---------|  
-|全局编录 LDAP|--|3268|  
-|全局编录 LDAP SSL|--|3269|  
+|LDAP de catálogo global|--|3268|  
+|LDAP SSL de catálogo global|--|3269|  
 
-###  <a name="BKMK_PortsClient-MP"></a> 客户端 -- > 管理点  
+###  <a name="BKMK_PortsClient-MP"></a> Cliente – > Ponto de gerenciamento  
 
-|描述|UDP|TCP|  
+|Descrição|UDP|TCP|  
 |-----------------|---------|---------|  
-|客户端通知（在回退到 HTTP 或 HTTPS 之前的默认通信）|--|10123（请参阅备注 2 **可用的备用端口**）|  
-|超文本传输协议 (HTTP)|--|80（请参阅备注 2 **可用的备用端口**）|  
-|安全超文本传输协议 (HTTPS)|--|443（请参阅备注 2 **可用的备用端口**）|  
+|Notificação do cliente (comunicação padrão antes de retornar para HTTP ou HTTPS)|--|10123 (Consulte a observação 2, **Porta alternativa disponível**)|  
+|Protocolo HTTP|--|80 (Consulte a observação 2, **Porta alternativa disponível**)|  
+|Protocolo S-HTTP (HTTPS)|--|443 (Consulte a observação 2, **Porta alternativa disponível**)|  
 
-###  <a name="BKMK_PortsClient-SUP"></a> 客户端 -- > 软件更新点  
+###  <a name="BKMK_PortsClient-SUP"></a> Cliente – > Ponto de atualização de software  
 
-|描述|UDP|TCP|  
+|Descrição|UDP|TCP|  
 |-----------------|---------|---------|  
-|超文本传输协议 (HTTP)|--|80 或 8530（请参阅备注 3 **Windows Server Update Services**）|  
-|安全超文本传输协议 (HTTPS)|--|443 或 8531（请参阅备注 3 **Windows Server Update Services**）|  
+|Protocolo HTTP|--|80 ou 8530 (Consulte a observação 3, **Windows Server Update Services**)|  
+|Protocolo S-HTTP (HTTPS)|--|443 ou 8531 (Consulte a observação 3, **Windows Server Update Services**)|  
 
-###  <a name="BKMK_PortsClient-SMP"></a> 客户端 -- > 状态迁移点  
+###  <a name="BKMK_PortsClient-SMP"></a> Cliente – > Ponto de migração de estado  
 
-|描述|UDP|TCP|  
+|Descrição|UDP|TCP|  
 |-----------------|---------|---------|  
-|超文本传输协议 (HTTP)|--|80（请参阅备注 2 **可用的备用端口**）|  
-|安全超文本传输协议 (HTTPS)|--|443（请参阅备注 2 **可用的备用端口**）|  
-|服务器消息块 (SMB)|--|445|  
+|Protocolo HTTP|--|80 (Consulte a observação 2, **Porta alternativa disponível**)|  
+|Protocolo S-HTTP (HTTPS)|--|443 (Consulte a observação 2, **Porta alternativa disponível**)|  
+|Protocolo SMB|--|445|  
 
-###  <a name="BKMK_PortsConsole-Client"></a> Configuration Manager 控制台 -- > 客户端  
+###  <a name="BKMK_PortsConsole-Client"></a> Console do Configuration Manager – > Cliente  
 
-|描述|UDP|TCP|  
+|Descrição|UDP|TCP|  
 |-----------------|---------|---------|  
-|远程控制（控制）|--|2701|  
-|远程辅助（RDP 和 RTC）|--|3389|  
+|Controle remoto (controle)|--|2701|  
+|Assistência remota (RDP e RTC)|--|3389|  
 
-###  <a name="BKMK_PortsConsole-Internet"></a> Configuration Manager 控制台 -- > Internet  
+###  <a name="BKMK_PortsConsole-Internet"></a> Console do Configuration Manager – > Internet  
 
-|描述|UDP|TCP|  
+|Descrição|UDP|TCP|  
 |-----------------|---------|---------|  
-|超文本传输协议 (HTTP)|--|80|  
+|Protocolo HTTP|--|80|  
 
-###  <a name="BKMK_PortsConsole-RSP"></a> Configuration Manager 控制台 -- > Reporting Services 点  
+###  <a name="BKMK_PortsConsole-RSP"></a> Console do Configuration Manager – > Ponto do Reporting Services  
 
 
-|描述|UDP|TCP|
+|Descrição|UDP|TCP|
 |-----------------|---------|---------|   
-|超文本传输协议 (HTTP)|--|80（请参阅备注 2 **可用的备用端口**）|  
-|安全超文本传输协议 (HTTPS)|--|443（请参阅备注 2 **可用的备用端口**）|  
+|Protocolo HTTP|--|80 (Consulte a observação 2, **Porta alternativa disponível**)|  
+|Protocolo S-HTTP (HTTPS)|--|443 (Consulte a observação 2, **Porta alternativa disponível**)|  
 
-###  <a name="BKMK_PortsConsole-Site"></a> Configuration Manager 控制台 -- > 站点服务器  
+###  <a name="BKMK_PortsConsole-Site"></a> Console do Configuration Manager – > Servidor do site  
 
-|描述|UDP|TCP|  
+|Descrição|UDP|TCP|  
 |-----------------|---------|---------|  
-|RPC（最初连接到 WMI，以找到提供程序系统）|--|135|  
+|RPC (conexão inicial com o WMI para localizar o sistema do provedor)|--|135|  
 
-###  <a name="BKMK_PortsConsole-Provider"></a> Configuration Manager 控制台 -- > SMS 提供程序  
+###  <a name="BKMK_PortsConsole-Provider"></a> Console do Configuration Manager – > Provedor de SMS  
 
-|描述|UDP|TCP|  
+|Descrição|UDP|TCP|  
 |-----------------|---------|---------|  
-|RPC 终结点映射程序|135|135|  
-|RPC|--|动态（请参阅备注 6 **动态端口**）|  
+|Mapeador de ponto de extremidade RPC|135|135|  
+|RPC|--|DINÂMICO (consulte a nota 6, **Portas dinâmicas**)|  
 
-###  <a name="BKMK_PortsCertificateRegistationPoint_PolicyModule"></a> Configuration Manager 策略模块（网络设备注册服务）-- > 证书注册点  
+###  <a name="BKMK_PortsCertificateRegistationPoint_PolicyModule"></a> Módulo de política do Configuration Manager (Serviço de Registro de Dispositivo de Rede) – > Ponto de registro de certificado  
 
-|描述|UDP|TCP|  
+|Descrição|UDP|TCP|  
 |-----------------|---------|---------|  
-|安全超文本传输协议 (HTTPS)|--|443（请参阅备注 2 **可用的备用端口**）|  
+|Protocolo S-HTTP (HTTPS)|--|443 (Consulte a observação 2, **Porta alternativa disponível**)|  
 
-###  <a name="BKMK_PortsDist_MP"></a> 分发点 -- > 管理点  
- 在以下情况中，分发点向管理点通信：  
+###  <a name="BKMK_PortsDist_MP"></a> Ponto de distribuição – > Ponto de gerenciamento  
+ Um ponto de distribuição se comunica com o ponto de gerenciamento nos seguintes cenários:  
 
--   报告预留内容的状态  
+-   Para relatar o status do conteúdo pré-teste  
 
--   报告使用情况摘要数据  
+-   Para relatar dados de resumo de uso  
 
--   报告内容验证  
+-   Para relatar a validação de conteúdo  
 
--   报告包下载的状态（拉取分发点）
+-   Para relatar o status dos downloads de pacote (ponto de distribuição pull)
 
-|描述|UDP|TCP|  
+|Descrição|UDP|TCP|  
 |-----------------|---------|---------|  
-|超文本传输协议 (HTTP)|--|80（请参阅备注 2 **可用的备用端口**）|  
-|安全超文本传输协议 (HTTPS)|--|443（请参阅备注 2 **可用的备用端口**）|  
+|Protocolo HTTP|--|80 (Consulte a observação 2, **Porta alternativa disponível**)|  
+|Protocolo S-HTTP (HTTPS)|--|443 (Consulte a observação 2, **Porta alternativa disponível**)|  
 
-###  <a name="BKMK_PortsEndpointProtection_Internet"></a>Endpoint Protection 点 -- > Internet  
+###  <a name="BKMK_PortsEndpointProtection_Internet"></a> Ponto do Endpoint Protection – > Internet  
 
-|描述|UDP|TCP|  
+|Descrição|UDP|TCP|  
 |-----------------|---------|---------|  
-|超文本传输协议 (HTTP)|--|80|  
+|Protocolo HTTP|--|80|  
 
-###  <a name="BKMK_PortsEP-to-SQL"></a> Endpoint Protection 点 -- > SQL Server  
+###  <a name="BKMK_PortsEP-to-SQL"></a> Ponto do Endpoint Protection – > SQL Server  
 
-|描述|UDP|TCP|  
+|Descrição|UDP|TCP|  
 |-----------------|---------|---------|  
-|SQL over TCP|--|1433（请参阅备注 2 **可用的备用端口**）|  
+|SQL sobre TCP|--|1433 (Consulte a observação 2, **Porta alternativa disponível**)|  
 
-###  <a name="BKMK_PortsEnrollmentProxyEnrollmentPoint"></a> 注册代理点 -- > 注册点  
+###  <a name="BKMK_PortsEnrollmentProxyEnrollmentPoint"></a> Ponto proxy do registro – > Ponto de registro  
 
-|描述|UDP|TCP|  
+|Descrição|UDP|TCP|  
 |-----------------|---------|---------|  
-|安全超文本传输协议 (HTTPS)|--|443（请参阅备注 2 **可用的备用端口**）|  
+|Protocolo S-HTTP (HTTPS)|--|443 (Consulte a observação 2, **Porta alternativa disponível**)|  
 
-###  <a name="BKMK_PortsEnrollmentEnrollmentSQL"></a> 注册点 -- > SQL Server  
+###  <a name="BKMK_PortsEnrollmentEnrollmentSQL"></a> Ponto de registro – > SQL Server  
 
-|描述|UDP|TCP|  
+|Descrição|UDP|TCP|  
 |-----------------|---------|---------|  
-|SQL over TCP|--|1433（请参阅备注 2 **可用的备用端口**）|  
+|SQL sobre TCP|--|1433 (Consulte a observação 2, **Porta alternativa disponível**)|  
 
-###  <a name="BKMK_PortsExchangeConnectorHosted"></a> Exchange Server 连接器 -- &gt; Exchange Online  
+###  <a name="BKMK_PortsExchangeConnectorHosted"></a> Conector do Exchange Server -- &gt; Exchange Online  
 
-|描述|UDP|TCP|  
+|Descrição|UDP|TCP|  
 |-----------------|---------|---------|  
-|通过 HTTPS 进行的 Windows 远程管理|--|5986|  
+|Gerenciamento Remoto do Windows via HTTPS|--|5986|  
 
-###  <a name="BKMK_PortsExchangeConnectorOnPrem"></a> Exchange Server 连接器 -- > 本地 Exchange Server  
+###  <a name="BKMK_PortsExchangeConnectorOnPrem"></a> Conector do Exchange Server – > Exchange Server local  
 
-|描述|UDP|TCP|  
+|Descrição|UDP|TCP|  
 |-----------------|---------|---------|  
-|通过 HTTP 进行的 Windows 远程管理|--|5985|  
+|Gerenciamento Remoto do Windows via HTTP|--|5985|  
 
-###  <a name="BKMK_PortsMacEnrollmentProxyPoint"></a> Mac 计算机 -- > 注册代理点  
+###  <a name="BKMK_PortsMacEnrollmentProxyPoint"></a> Computador Mac – > Ponto proxy do registro  
 
-|描述|UDP|TCP|  
+|Descrição|UDP|TCP|  
 |-----------------|---------|---------|  
-|安全超文本传输协议 (HTTPS)|--|443|  
+|Protocolo S-HTTP (HTTPS)|--|443|  
 
-###  <a name="BKMK_PortsMP-DC"></a> 管理点 -- > 域控制器  
+###  <a name="BKMK_PortsMP-DC"></a> Ponto de gerenciamento – > Controlador de domínio  
 
-|描述|UDP|TCP|  
+|Descrição|UDP|TCP|  
 |-----------------|---------|---------|  
-|轻型目录访问协议 (LDAP)|--|389|  
-|LDAP（安全套接字层 [SSL] 连接）|636|636|  
-|全局编录 LDAP|--|3268|  
-|全局编录 LDAP SSL|--|3269|  
-|RPC 终结点映射程序|135|135|  
-|RPC|--|动态（请参阅备注 6 **动态端口**）|  
+|Protocolo LDAP|--|389|  
+|LDAP (conexão com protocolo SSL)|636|636|  
+|LDAP de catálogo global|--|3268|  
+|LDAP SSL de catálogo global|--|3269|  
+|Mapeador de ponto de extremidade RPC|135|135|  
+|RPC|--|DINÂMICO (consulte a nota 6, **Portas dinâmicas**)|  
 
-###  <a name="BKMK_PortsMP-Site"></a> 管理点 &lt; -- > 站点服务器  
- （请参阅备注 5 **站点服务器和站点系统之间的通信**）  
+###  <a name="BKMK_PortsMP-Site"></a> Ponto de gerenciamento &lt; – > Servidor do site  
+ (Consulte a observação 5, **Comunicação entre o servidor do site e sistemas de site**)  
 
-|描述|UDP|TCP|  
+|Descrição|UDP|TCP|  
 |-----------------|---------|---------|  
-|RPC 终结点映射程序|--|135|  
-|RPC|--|动态（请参阅备注 6 **动态端口**）|  
-|服务器消息块 (SMB)|--|445|  
+|Mapeador de ponto de extremidade RPC|--|135|  
+|RPC|--|DINÂMICO (consulte a nota 6, **Portas dinâmicas**)|  
+|Protocolo SMB|--|445|  
 
-###  <a name="BKMK_PortsMP-SQL"></a> 管理点 -- > SQL Server  
+###  <a name="BKMK_PortsMP-SQL"></a> Ponto de gerenciamento – > SQL Server  
 
-|描述|UDP|TCP|  
+|Descrição|UDP|TCP|  
 |-----------------|---------|---------|  
-|SQL over TCP|--|1433（请参阅备注 2 **可用的备用端口**）|  
+|SQL sobre TCP|--|1433 (Consulte a observação 2, **Porta alternativa disponível**)|  
 
-###  <a name="BKMK_PortsMobileDeviceClient-EnrollmentProxyPoint"></a> 移动设备 -- > 注册代理点  
+###  <a name="BKMK_PortsMobileDeviceClient-EnrollmentProxyPoint"></a> Dispositivo móvel – > Ponto proxy do registro  
 
-|描述|UDP|TCP|  
+|Descrição|UDP|TCP|  
 |-----------------|---------|---------|  
-|安全超文本传输协议 (HTTPS)|--|443|  
+|Protocolo S-HTTP (HTTPS)|--|443|  
 
-###  <a name="BKMK_PortsMobileDeviceClient-WindowsIntune"></a> 移动设备 -- > Microsoft Intune  
+###  <a name="BKMK_PortsMobileDeviceClient-WindowsIntune"></a> Dispositivo móvel – > Microsoft Intune  
 
-|描述|UDP|TCP|  
+|Descrição|UDP|TCP|  
 |-----------------|---------|---------|  
-|安全超文本传输协议 (HTTPS)|--|443|  
+|Protocolo S-HTTP (HTTPS)|--|443|  
 
-###  <a name="BKMK_PortsRSP-SQL"></a> Reporting Services 点 -- > SQL Server  
+###  <a name="BKMK_PortsRSP-SQL"></a> Ponto do Reporting Services – > SQL Server  
 
-|描述|UDP|TCP|  
+|Descrição|UDP|TCP|  
 |-----------------|---------|---------|  
-|SQL over TCP|--|1433（请参阅备注 2 **可用的备用端口**）|  
+|SQL sobre TCP|--|1433 (Consulte a observação 2, **Porta alternativa disponível**)|  
 
-###  <a name="BKMK_PortsIntuneConnector-WindowsIntune"></a> 服务连接点 -- > Microsoft Intune  
+###  <a name="BKMK_PortsIntuneConnector-WindowsIntune"></a> Ponto de conexão de serviço – > Microsoft Intune  
 
-|描述|UDP|TCP|  
+|Descrição|UDP|TCP|  
 |-----------------|---------|---------|  
-|安全超文本传输协议 (HTTPS)|--|443|
-有关详细信息，请参阅服务连接点的 [Internet 访问要求](/sccm/core/servers/deploy/configure/about-the-service-connection-point#bkmk_urls)。
+|Protocolo S-HTTP (HTTPS)|--|443|
+Para obter mais informações, consulte [Requisitos de acesso à Internet](/sccm/core/servers/deploy/configure/about-the-service-connection-point#bkmk_urls) para o ponto de conexão de serviço.
 
-###  <a name="BKMK_PortsAppCatalogWebServicePoint_SiteServer"></a> 站点服务器 &lt; -- > 应用程序目录 Web 服务点  
+###  <a name="BKMK_PortsAppCatalogWebServicePoint_SiteServer"></a> Servidor do site &lt; – > Ponto de serviços Web do catálogo de aplicativos  
 
-|描述|UDP|TCP|  
+|Descrição|UDP|TCP|  
 |-----------------|---------|---------|  
-|服务器消息块 (SMB)|--|445|  
-|RPC 终结点映射程序|135|135|  
-|RPC|--|动态（请参阅备注 6 **动态端口**）|  
+|Protocolo SMB|--|445|  
+|Mapeador de ponto de extremidade RPC|135|135|  
+|RPC|--|DINÂMICO (consulte a nota 6, **Portas dinâmicas**)|  
 
-###  <a name="BKMK_PortsAppCatalogWebSitePoint_SiteServer"></a> 站点服务器 &lt; -- > 应用程序目录网站点  
+###  <a name="BKMK_PortsAppCatalogWebSitePoint_SiteServer"></a> Servidor do site &lt; – > Ponto de sites da Web do catálogo de aplicativos  
 
-|描述|UDP|TCP|  
+|Descrição|UDP|TCP|  
 |-----------------|---------|---------|  
-|服务器消息块 (SMB)|--|445|  
-|RPC 终结点映射程序|135|135|  
-|RPC|--|动态（请参阅备注 6 **动态端口**）|  
+|Protocolo SMB|--|445|  
+|Mapeador de ponto de extremidade RPC|135|135|  
+|RPC|--|DINÂMICO (consulte a nota 6, **Portas dinâmicas**)|  
 
-###  <a name="BKMK_PortsSite-AISP"></a> 站点服务器&lt; -- > 资产智能同步点  
+###  <a name="BKMK_PortsSite-AISP"></a> Servidor do site &lt; – > Ponto de sincronização do Asset Intelligence  
 
-|描述|UDP|TCP|  
+|Descrição|UDP|TCP|  
 |-----------------|---------|---------|  
-|服务器消息块 (SMB)|--|445|  
-|RPC 终结点映射程序|135|135|  
-|RPC|--|动态（请参阅备注 6 **动态端口**）|  
+|Protocolo SMB|--|445|  
+|Mapeador de ponto de extremidade RPC|135|135|  
+|RPC|--|DINÂMICO (consulte a nota 6, **Portas dinâmicas**)|  
 
-###  <a name="BKMK_PortsSite-Client"></a> 站点服务器 -- > 客户端  
+###  <a name="BKMK_PortsSite-Client"></a> Servidor do site – > Cliente  
 
-|描述|UDP|TCP|  
+|Descrição|UDP|TCP|  
 |-----------------|---------|---------|  
-|LAN 唤醒|9（请参阅备注 2 **可用的备用端口**）|--|  
+|Wake On LAN|9 (Consulte a observação 2, **Porta alternativa disponível**)|--|  
 
-###  <a name="BKMK_PortsSiteServer-CloudDP"></a> 站点服务器 -- > 基于云的分发点  
+###  <a name="BKMK_PortsSiteServer-CloudDP"></a> Servidor do site – > Ponto de distribuição baseado em nuvem  
 
-|描述|UDP|TCP|  
+|Descrição|UDP|TCP|  
 |-----------------|---------|---------|  
-|安全超文本传输协议 (HTTPS)|--|443|  
+|Protocolo S-HTTP (HTTPS)|--|443|  
 
-###  <a name="BKMK_PortsSite-DP"></a> 站点服务器 -- > 分发点  
- （请参阅备注 5 **站点服务器和站点系统之间的通信**）  
+###  <a name="BKMK_PortsSite-DP"></a> Servidor do site – > Ponto de distribuição  
+ (Consulte a observação 5, **Comunicação entre o servidor do site e sistemas de site**)  
 
-|描述|UDP|TCP|  
+|Descrição|UDP|TCP|  
 |-----------------|---------|---------|  
-|服务器消息块 (SMB)|--|445|  
-|RPC 终结点映射程序|135|135|  
-|RPC|--|动态（请参阅备注 6 **动态端口**）|  
+|Protocolo SMB|--|445|  
+|Mapeador de ponto de extremidade RPC|135|135|  
+|RPC|--|DINÂMICO (consulte a nota 6, **Portas dinâmicas**)|  
 
-###  <a name="BKMK_PortsSite-DC"></a> 站点服务器 -- > 域控制器  
+###  <a name="BKMK_PortsSite-DC"></a> Servidor do site – > Controlador de domínio  
 
-|描述|UDP|TCP|  
+|Descrição|UDP|TCP|  
 |-----------------|---------|---------|  
-|轻型目录访问协议 (LDAP)|--|389|  
-|LDAP（安全套接字层 [SSL] 连接）|636|636|  
-|全局编录 LDAP|--|3268|  
-|全局编录 LDAP SSL|--|3269|  
-|RPC 终结点映射程序|135|135|  
-|RPC|--|动态（请参阅备注 6 **动态端口**）|  
+|Protocolo LDAP|--|389|  
+|LDAP (conexão com protocolo SSL)|636|636|  
+|LDAP de catálogo global|--|3268|  
+|LDAP SSL de catálogo global|--|3269|  
+|Mapeador de ponto de extremidade RPC|135|135|  
+|RPC|--|DINÂMICO (consulte a nota 6, **Portas dinâmicas**)|  
 
-###  <a name="BKMK_PortsCertificateRegistrationPoint_SiteServer"></a> 站点服务器 &lt; -- > 证书注册点  
+###  <a name="BKMK_PortsCertificateRegistrationPoint_SiteServer"></a> Servidor do site &lt; – > Ponto de registro de certificado  
 
-|描述|UDP|TCP|  
+|Descrição|UDP|TCP|  
 |-----------------|---------|---------|  
-|服务器消息块 (SMB)|--|445|  
-|RPC 终结点映射程序|135|135|  
-|RPC|--|动态（请参阅备注 6 **动态端口**）|  
+|Protocolo SMB|--|445|  
+|Mapeador de ponto de extremidade RPC|135|135|  
+|RPC|--|DINÂMICO (consulte a nota 6, **Portas dinâmicas**)|  
 
-###  <a name="BKMK_PortsEndpointProtection_SiteServer"></a>站点服务器&lt; -- > Endpoint Protection 点  
+###  <a name="BKMK_PortsEndpointProtection_SiteServer"></a> Servidor do site &lt; – > Ponto do Endpoint Protection  
 
-|描述|UDP|TCP|  
+|Descrição|UDP|TCP|  
 |-----------------|---------|---------|  
-|服务器消息块 (SMB)|--|445|  
-|RPC 终结点映射程序|135|135|  
-|RPC|--|动态（请参阅备注 6 **动态端口**）|  
+|Protocolo SMB|--|445|  
+|Mapeador de ponto de extremidade RPC|135|135|  
+|RPC|--|DINÂMICO (consulte a nota 6, **Portas dinâmicas**)|  
 
-###  <a name="BKMK_EnrollmentPoint_SiteServer"></a> 站点服务器 &lt; -- > 注册点  
+###  <a name="BKMK_EnrollmentPoint_SiteServer"></a> Servidor do site &lt; – > Ponto de registro  
 
-|描述|UDP|TCP|  
+|Descrição|UDP|TCP|  
 |-----------------|---------|---------|  
-|服务器消息块 (SMB)|--|445|  
-|RPC 终结点映射程序|135|135|  
-|RPC|--|动态（请参阅备注 6 **动态端口**）|  
+|Protocolo SMB|--|445|  
+|Mapeador de ponto de extremidade RPC|135|135|  
+|RPC|--|DINÂMICO (consulte a nota 6, **Portas dinâmicas**)|  
 
-###  <a name="BKMK_EnrollmentProxyPoint_SiteServer"></a> 站点服务器 &lt; -- > 注册代理点  
+###  <a name="BKMK_EnrollmentProxyPoint_SiteServer"></a> Servidor do site &lt; – > Ponto proxy do registro  
 
-|描述|UDP|TCP|  
+|Descrição|UDP|TCP|  
 |-----------------|---------|---------|  
-|服务器消息块 (SMB)|--|445|  
-|RPC 终结点映射程序|135|135|  
-|RPC|--|动态（请参阅备注 6 **动态端口**）|  
+|Protocolo SMB|--|445|  
+|Mapeador de ponto de extremidade RPC|135|135|  
+|RPC|--|DINÂMICO (consulte a nota 6, **Portas dinâmicas**)|  
 
-###  <a name="BKMK_PortsSite-FSP"></a> 站点服务器 &lt; -- > 回退状态点  
- （请参阅备注 5 **站点服务器和站点系统之间的通信**）  
+###  <a name="BKMK_PortsSite-FSP"></a> Servidor do site &lt; – > Ponto de status de fallback  
+ (Consulte a observação 5, **Comunicação entre o servidor do site e sistemas de site**)  
 
-|描述|UDP|TCP|  
+|Descrição|UDP|TCP|  
 |-----------------|---------|---------|  
-|服务器消息块 (SMB)|--|445|  
-|RPC 终结点映射程序|135|135|  
-|RPC|--|动态（请参阅备注 6 **动态端口**）|  
+|Protocolo SMB|--|445|  
+|Mapeador de ponto de extremidade RPC|135|135|  
+|RPC|--|DINÂMICO (consulte a nota 6, **Portas dinâmicas**)|  
 
-###  <a name="BKMK_PortSite-Internet"></a> 站点服务器 -- > Internet  
+###  <a name="BKMK_PortSite-Internet"></a> Servidor do site – > Internet  
 
-|描述|UDP|TCP|  
+|Descrição|UDP|TCP|  
 |-----------------|---------|---------|  
-|超文本传输协议 (HTTP)|--|80（请参阅备注 1 **代理服务器端口**）|  
+|Protocolo HTTP|--|80 (Consulte a observação 1, **Porta do servidor proxy**)|  
 
-###  <a name="BKMK_PortsIssuingCA_SiteServer"></a> 站点服务器 &lt; -- > 证书颁发机构 (CA)  
- 当你使用证书注册点部署证书配置文件时，将使用此通信。 层次结构中的每个站点服务器均不使用该通信。 而仅用于层次结构顶部的站点服务器。  
+###  <a name="BKMK_PortsIssuingCA_SiteServer"></a> Servidor do site &lt; – > AC (Autoridade de Certificação) Emissora  
+ Essa comunicação é usada quando você implanta perfis de certificado usando o ponto de registro de certificado. A comunicação não é usada para cada servidor do site na hierarquia. Em vez disso, ela é usada somente para o servidor do site na parte superior da hierarquia.  
 
-|描述|UDP|TCP|  
+|Descrição|UDP|TCP|  
 |-----------------|---------|---------|  
-|RPC 终结点映射程序|135|135|  
-|RPC (DCOM)|--|动态（请参阅备注 6 **动态端口**）|  
+|Mapeador de ponto de extremidade RPC|135|135|  
+|RPC (DCOM)|--|DINÂMICO (consulte a nota 6, **Portas dinâmicas**)|  
 
-###  <a name="BKMK_PortsSite-RSP"></a> 站点服务器 &lt; -- > Reporting Services 点  
- （请参阅备注 5 **站点服务器和站点系统之间的通信**）  
+###  <a name="BKMK_PortsSite-RSP"></a> Servidor do site &lt; – > Ponto do Reporting Services  
+ (Consulte a observação 5, **Comunicação entre o servidor do site e sistemas de site**)  
 
-|描述|UDP|TCP|  
+|Descrição|UDP|TCP|  
 |-----------------|---------|---------|  
-|服务器消息块 (SMB)|--|445|  
-|RPC 终结点映射程序|135|135|  
-|RPC|--|动态（请参阅备注 6 **动态端口**）|  
+|Protocolo SMB|--|445|  
+|Mapeador de ponto de extremidade RPC|135|135|  
+|RPC|--|DINÂMICO (consulte a nota 6, **Portas dinâmicas**)|  
 
-###  <a name="BKMK_PortsSite-Site"></a> 站点服务器 &lt; -- > 站点服务器  
+###  <a name="BKMK_PortsSite-Site"></a> Servidor do site &lt; – > Servidor do site  
 
-|描述|UDP|TCP|  
+|Descrição|UDP|TCP|  
 |-----------------|---------|---------|  
-|服务器消息块 (SMB)|--|445|  
+|Protocolo SMB|--|445|  
 
-###  <a name="BKMK_PortsSite-SQL"></a> 站点服务器 -- > SQL Server  
+###  <a name="BKMK_PortsSite-SQL"></a> Servidor do site – > SQL Server  
 
-|描述|UDP|TCP|  
+|Descrição|UDP|TCP|  
 |-----------------|---------|---------|  
-|SQL over TCP|--|1433（请参阅备注 2 **可用的备用端口**）|  
+|SQL sobre TCP|--|1433 (Consulte a observação 2, **Porta alternativa disponível**)|  
 
- 安装使用远程 SQL Server 托管站点数据库的站点期间，必须在站点服务器和 SQL Server 之间打开以下端口：  
+ Durante a instalação de um site que usa o SQL Server remoto para hospedar o banco de dados do site, é necessário abrir as seguintes portas entre o servidor do site e o SQL Server:  
 
-|描述|UDP|TCP|  
+|Descrição|UDP|TCP|  
 |-----------------|---------|---------|  
-|服务器消息块 (SMB)|--|445|  
-|RPC 终结点映射程序|135|135|  
-|RPC|--|动态（请参阅备注 6 **动态端口**）|  
+|Protocolo SMB|--|445|  
+|Mapeador de ponto de extremidade RPC|135|135|  
+|RPC|--|DINÂMICO (consulte a nota 6, **Portas dinâmicas**)|  
 
-###  <a name="BKMK_PortsSite-Provider"></a> 站点服务器 -- > SMS 提供程序  
+###  <a name="BKMK_PortsSite-Provider"></a> Servidor do site – > Provedor de SMS  
 
-|描述|UDP|TCP|  
+|Descrição|UDP|TCP|  
 |-----------------|---------|---------|  
-|服务器消息块 (SMB)|--|445|  
-|RPC 终结点映射程序|135|135|  
-|RPC|--|动态（请参阅备注 6 **动态端口**）|  
+|Protocolo SMB|--|445|  
+|Mapeador de ponto de extremidade RPC|135|135|  
+|RPC|--|DINÂMICO (consulte a nota 6, **Portas dinâmicas**)|  
 
-###  <a name="BKMK_PortsSite-SUP"></a> 站点服务器 &lt; -- > 软件更新点  
- （请参阅备注 5 **站点服务器和站点系统之间的通信**）  
+###  <a name="BKMK_PortsSite-SUP"></a> Servidor do site &lt; – > Ponto de atualização de software  
+ (Consulte a observação 5, **Comunicação entre o servidor do site e sistemas de site**)  
 
-|描述|UDP|TCP|  
+|Descrição|UDP|TCP|  
 |-----------------|---------|---------|  
-|服务器消息块 (SMB)|--|445|  
-|超文本传输协议 (HTTP)|--|80 或 8530（请参阅备注 3 **Windows Server Update Services**）|  
-|安全超文本传输协议 (HTTPS)|--|443 或 8531（请参阅备注 3 **Windows Server Update Services**）|  
+|Protocolo SMB|--|445|  
+|Protocolo HTTP|--|80 ou 8530 (Consulte a observação 3, **Windows Server Update Services**)|  
+|Protocolo S-HTTP (HTTPS)|--|443 ou 8531 (Consulte a observação 3, **Windows Server Update Services**)|  
 
-###  <a name="BKMK_PortsSite-SMP"></a> 站点服务器 &lt; -- > 状态迁移点  
- （请参阅备注 5 **站点服务器和站点系统之间的通信**）  
+###  <a name="BKMK_PortsSite-SMP"></a> Servidor do site &lt; – > Ponto de migração de estado  
+ (Consulte a observação 5, **Comunicação entre o servidor do site e sistemas de site**)  
 
-|描述|UDP|TCP|  
+|Descrição|UDP|TCP|  
 |-----------------|---------|---------|  
-|服务器消息块 (SMB)|--|445|  
-|RPC 终结点映射程序|135|135|  
+|Protocolo SMB|--|445|  
+|Mapeador de ponto de extremidade RPC|135|135|  
 
-###  <a name="BKMK_PortsProvider-SQL"></a> SMS 提供程序 -- &gt; SQL Server  
+###  <a name="BKMK_PortsProvider-SQL"></a> Provedor de SMS -- &gt; SQL Server  
 
-|描述|UDP|TCP|  
+|Descrição|UDP|TCP|  
 |-----------------|---------|---------|  
-|SQL over TCP|--|1433（请参阅备注 2 **可用的备用端口**）|  
+|SQL sobre TCP|--|1433 (Consulte a observação 2, **Porta alternativa disponível**)|  
 
-###  <a name="BKMK_PortsSUP-Internet"></a> 软件更新点 -- > Internet  
+###  <a name="BKMK_PortsSUP-Internet"></a> Ponto de atualização de software – > Internet  
 
-|描述|UDP|TCP|  
+|Descrição|UDP|TCP|  
 |-----------------|---------|---------|  
-|超文本传输协议 (HTTP)|--|80（请参阅备注 1 **代理服务器端口**）|  
+|Protocolo HTTP|--|80 (Consulte a observação 1, **Porta do servidor proxy**)|  
 
-###  <a name="BKMK_PortsSUP-WSUS"></a> 软件更新点 -- > 上游 WSUS 服务器  
+###  <a name="BKMK_PortsSUP-WSUS"></a> Ponto de atualização de software – > Servidor upstream do WSUS  
 
-|描述|UDP|TCP|  
+|Descrição|UDP|TCP|  
 |-----------------|---------|---------|  
-|超文本传输协议 (HTTP)|--|80 或 8530（请参阅备注 3 **Windows Server Update Services**）|  
-|安全超文本传输协议 (HTTPS)|--|443 或 8531（请参阅备注 3 **Windows Server Update Services**）|  
+|Protocolo HTTP|--|80 ou 8530 (Consulte a observação 3, **Windows Server Update Services**)|  
+|Protocolo S-HTTP (HTTPS)|--|443 ou 8531 (Consulte a observação 3, **Windows Server Update Services**)|  
 
-###  <a name="BKMK_PortsSQL-SQL"></a> SQL Server --&gt; SQL Server  
- 需要一个站点中的 SQL Server 直接与其父或子站点的 SQL Server 通信，才可进行站点间的数据库复制。  
+###  <a name="BKMK_PortsSQL-SQL"></a> SQL Server -- &gt; SQL Server  
+ A replicação de banco de dados entre sites requer o SQL Server em um site para se comunicar diretamente com o SQL Server no seu site pai ou filho.  
 
-|描述|UDP|TCP|  
+|Descrição|UDP|TCP|  
 |-----------------|---------|---------|  
-|SQL Server 服务|--|1433（请参阅备注 2 **可用的备用端口**）|  
-|SQL Server Service Broker|--|4022（请参阅备注 2 **可用的备用端口**）|  
+|Serviço SQL Server|--|1433 (Consulte a observação 2, **Porta alternativa disponível**)|  
+|SQL Server Service Broker|--|4022 (Consulte a observação 2, **Porta alternativa disponível**)|  
 
 > [!TIP]  
->  Configuration Manager 不需要使用端口 UDP 1434 的 SQL Server Browser。  
+>  O Configuration Manager não exige o SQL Server Browser, que usa a porta UDP 1434.  
 
-###  <a name="BKMK_PortsStateMigrationPoint-to-SQL"></a> 状态迁移点 -- > SQL Server  
+###  <a name="BKMK_PortsStateMigrationPoint-to-SQL"></a> Ponto de migração de estado – > SQL Server  
 
-|描述|UDP|TCP|  
+|Descrição|UDP|TCP|  
 |-----------------|---------|---------|  
-|SQL over TCP|--|1433（请参阅备注 2 **可用的备用端口**）|  
+|SQL sobre TCP|--|1433 (Consulte a observação 2, **Porta alternativa disponível**)|  
 
 
 
-###  <a name="BKMY_PortNotes"></a> 有关 Configuration Manager 客户端和站点系统使用的端口的备注  
+###  <a name="BKMY_PortNotes"></a> Observações de portas usadas por clientes do Gerenciador de Configurações e sistemas de site  
 
-1.  **代理服务器端口**：此端口不可配置，但可通过配置的代理服务器进行路由。  
+1.  **Porta do servidor proxy**: esta porta não pode ser configurada, mas pode ser roteada por meio de um servidor proxy configurado.  
 
-2.  **可用的备用端口**：可在 Configuration Manager 中为此值定义备用端口。 如果定义了自定义端口，则为 IPsec 策略或为配置防火墙定义 IP 筛选器信息时将替代该自定义端口。  
+2.  **Porta alternativa disponível**: uma porta alternativa pode ser definida dentro do Configuration Manager para esse valor. Se tiver sido definida uma porta personalizada, substitua essa porta personalizada ao definir as informações de filtro IP para políticas IPsec ou para configurar firewalls.  
 
-3.  **Windows Server Update Services (WSUS)**：可以安装 WSUS 以使用端口 80/443 或端口 8530/8531 进行客户端通信。 在 Windows Server 2012 或 Windows Server 2016 中运行 WSUS 时，WSUS 被默认配置为针对 HTTP 使用端口 8530，针对 HTTPS 使用端口 8531。  
+3.  **Windows Server Update Services (WSUS)**: o WSUS pode ser instalado para usar portas 80/443 ou portas 8530/8531 para comunicação de cliente. Ao executar o WSUS no Windows Server 2012 ou Windows Server 2016, o WSUS é configurado por padrão para usar a porta 8530 para HTTP e a porta 8531 para HTTPS.  
 
-     安装后，可更改端口。 不必在整个站点层次结构中使用相同的端口号。  
+     Após a instalação, a porta pode ser alterada. Não é necessário usar o mesmo número de porta em toda a hierarquia do site.  
 
-    -   如果 HTTP 端口为 80，则 HTTPS 端口必须为 443。  
+    -   Se a porta HTTP for 80, a porta HTTPS deverá ser 443.  
 
-    -   如果 HTTP 端口为其他端口，则 HTTPS 端口号必须大于等于 1，例如 8530 和 8531。   
+    -   Se a porta HTTP for outro número, a porta HTTPS deverá ser 1 número acima, por exemplo, 8530 e 8531.   
 
     > [!NOTE]  
-    >  在配置使用 HTTPS 的软件更新点时，还必须打开 HTTP 端口。 未加密的数据（如特定更新的 EULA）使用 HTTP 端口。  
+    >  Ao configurar o ponto de atualização de software para usar HTTPS, a porta HTTP deve também ser aberta. Dados não criptografados, como o EULA para atualizações específicas, usam a porta HTTP.  
 
-4.  **普通文件传输协议 (TFTP) 后台程序**：普通文件传输协议 (TFTP) 后台程序系统服务不需要用户名或密码，而且它是 Windows 部署服务 (WDS) 不可或缺的一部分。 普通文件传输协议后台程序服务支持下列 RFC 定义的 TFTP 协议：  
+4.  **TFTP (Trivial FTP) Daemon**: o serviço do sistema TFTP (Trivial FTP) Daemon não requer um nome de usuário ou senha e é parte integral do WDS (Windows Deployment Services). O serviço Trivial FTP Daemon implementa o suporte ao protocolo TFTP definido pelos seguintes RFCs:  
 
-    -   RFC 350：TFTP  
+    -   RFC 350: TFTP  
 
-    -   RFC 2347：选项扩展  
+    -   RFC 2347: Opções de extensão  
 
-    -   RFC 2348：块大小选项  
+    -   RFC 2348: Opções de tamanho de bloco  
 
-    -   RFC 2349：超时间隔和传输大小选项  
+    -   RFC 2349: Opções de intervalo de tempo limite e de tamanho da transferência  
 
-     普通文件传输协议为支持无盘启动环境而设计。 TFTP 后台程序侦听 UDP 端口 69，但从动态分配的高端口响应。 因此，启用此端口将允许 TFTP 服务接收传入的 TFTP 请求，但不允许所选服务器响应这些请求。 除非 TFTP 服务器配置为从端口 69 响应，否则所选服务器无法响应入站 TFTP 请求。  
+     O Protocolo TFTP é projetado para oferecer suporte a ambientes de inicialização sem disco. O TFTP Daemons escuta na porta UDP 69, mas responde de uma porta alta alocada dinamicamente. Portanto, a habilitação dessa porta permite que o serviço TFTP receba solicitações TFTP de entrada, mas não permite que o servidor selecionado responda a essas solicitações. Não é possível habilitar o servidor selecionado para responder às solicitações TFTP de entrada a menos que o servidor TFTP esteja configurado para responder à porta 69.  
 
-5.  **站点服务器和站点系统之间的通信**：默认情况下，站点服务器和站点系统之间的通信是双向的。 站点服务器启动通信以配置站点系统，然后大部分站点系统连接回站点服务器以发送状态信息。 Reporting Services 点和分发点不会发送状态信息。 如果在安装站点系统后选择站点系统属性页上的“要求站点服务器启动到此站点系统的连接” ，则该系统不会启动与站点服务器的通信。 相反，站点服务器会启动通信，并使用站点系统安装帐户执行站点系统服务器的身份验证。  
+5.  **Comunicação entre o servidor do site e os sistemas de sites**: por padrão, a comunicação entre o servidor do site e os sistemas de site é bidirecional. O servidor do site inicia a comunicação para configurar o sistema de site, e então a maior parte dos sistemas de site se conecta de volta ao servidor do site para enviar informações de status. Pontos do Reporting Services e pontos de distribuição não enviam informações de status. Se você selecionar **Exigir que o servidor do site inicie conexões com este sistema de site** nas propriedades do sistema de sites depois que o sistema de sites tiver sido instalado, ele não iniciará a comunicação com o servidor. Em vez disso, o servidor do site iniciará a comunicação e utilizará a conta de instalação do sistema de sites para se autenticar no servidor do sistema de site.  
 
-6.  **动态端口**：动态端口（也称为临时端口）使用操作系统版本定义的一系列端口号。 有关默认端口范围的详细信息，请参阅 [Service overview and network port requirements for Windows（Windows 的服务概述和网络端口要求）](http://go.microsoft.com/fwlink/p/?LinkId=317965)。  
+6.  **Portas dinâmicas**: as portas dinâmicas (também conhecidas como portas efêmeras) usam um intervalo de número de porta definido pela versão do sistema operacional. Para obter mais informações sobre os intervalos de porta padrão, consulte [Visão geral do serviço e requisitos de porta de rede para o Windows](http://go.microsoft.com/fwlink/p/?LinkId=317965).  
 
-##  <a name="BKMK_AdditionalPorts"></a> 其他端口列表  
- 下列部分提供了有关 Configuration Manager 使用的端口的其他信息。  
+##  <a name="BKMK_AdditionalPorts"></a> Listas de portas adicionais  
+ As seções a seguir fornecem informações adicionais sobre as portas usadas pelo Configuration Manager.  
 
-###  <a name="BKMK_ClientShares"></a> 客户端到服务器共享  
- 客户端在连接到 UNC 共享时使用服务器消息块 (SMB)。 例如：  
+###  <a name="BKMK_ClientShares"></a> Compartilhamentos de cliente para servidor  
+ Os clientes usam o protocolo SMB sempre que se conectam aos compartilhamentos UNC. Por exemplo:  
 
--   指定了 CCMSetup.exe **/source:** 命令行属性的手动客户端安装  
+-   Instalação manual do cliente que especifica a propriedade da linha de comando CCMSetup.exe **/source:**  
 
--   从 UNC 路径下载定义文件的 Endpoint Protection 客户端
+-   Clientes do Endpoint Protection que baixam arquivos de definição de um caminho UNC
 
-|描述|UDP|TCP|  
+|Descrição|UDP|TCP|  
 |-----------------|---------|---------|  
-|服务器消息块 (SMB)|--|445|  
+|Protocolo SMB|--|445|  
 
-###  <a name="BKMK_SQLPorts"></a> 与 Microsoft SQL Server 的连接  
- 对于与 SQL Server 数据库引擎的通信和站点间复制，可以使用默认的 SQL Server 端口，也可以指定自定义端口：  
+###  <a name="BKMK_SQLPorts"></a> Conexões com o Microsoft SQL Server  
+ Para fazer comunicação com o mecanismo de banco de dados do SQL Server e para fazer a replicação entre sites, é possível usar a porta do SQL Server padrão ou especificar portas personalizadas:  
 
--   站点间通信使用：  
+-   Uso de comunicações entre sites:  
 
-    -   SQL Server Service Broker，默认为端口 TCP 4022。  
+    -   SQL Server Service Broker, que usa como padrão a porta TCP 4022.  
 
-    -   SQL Server 服务，默认为端口 TCP 1433。  
+    -   Serviço SQL Server, que usa como padrão a porta TCP 1433.  
 
--   SQL Server 数据库引擎与各种 Configuration Manager 站点系统角色之间的“站点内通信”默认使用端口 TCP 1433。  
+-   A comunicação entre sites entre o mecanismo de banco de dados do SQL Server e várias funções do sistema de sites do Configuration Manager padroniza a porta TCP 1433.  
 
-- Configuration Manager 使用相同的端口和协议与承载站点数据库的每个 SQL 可用性组副本进行通信，就像该副本是独立的 SQL Server 实例。
+- O Configuration Manager usará as mesmas portas e protocolos para se comunicar com cada réplica do Grupo de Disponibilidade do SQL que hospeda o banco de dados do site como se a réplica for uma instância autônoma do SQL Server.
 
-使用 Azure 且站点数据库位于内部或外部负载均衡器后面时，在每个副本上配置以下防火墙异常，并为以下端口添加负载均衡规则：
- - SQL over TCP: TCP 1433
+Quando você usar o Azure e o banco de dados do site estiver atrás de um balanceador de carga interno ou externo, configure as seguintes exceções de firewall em cada réplica e adicione regras de balanceamento de carga para as seguintes portas:
+ - SQL sobre TCP: TCP 1433
  - SQL Server Service Broker: TCP 4022
- - 服务器消息块 (SMB): TCP 445
- - RPC 终结点映射程序: TCP 135
+ - Protocolo SMB: TCP 445
+ - Mapeador de ponto de extremidade RPC: TCP 135
 
 > [!WARNING]  
->  Configuration Manager 不支持动态端口。 由于 SQL Server 命名实例默认情况下使用动态端口来连接到数据库引擎，因此，在使用命名实例时，必须手动配置要用于站点内通信的静态端口。  
+>  O Configuration Manager não dá suporte a portas dinâmicas. Como as instâncias nomeadas do SQL Server por padrão usam as portas dinâmicas para fazer conexões com o mecanismo de banco de dados, ao usar uma instância nomeada, configure manualmente a porta estática que deseja usar para a comunicação entre sites.  
 
- 下列站点系统角色直接与 SQL Server 数据库进行通信：  
+ As seguintes funções do sistema de site se comunicam diretamente com o banco de dados do SQL Server:  
 
--   应用程序目录 Web 服务点  
+-   Ponto de serviços Web do Catálogo de Aplicativos  
 
--   证书注册点角色  
+-   Função de ponto de registro de certificado  
 
--   注册点角色  
+-   Função de ponto de registro  
 
--   管理点  
+-   Ponto de gerenciamento  
 
--   站点服务器  
+-   Servidor do site  
 
--   Reporting Services 点  
+-   Ponto do Reporting Services  
 
--   SMS 提供程序  
+-   Provedor de SMS  
 
--   SQL Server --> SQL Server  
+-   SQL Server -- > SQL Server  
 
-在 SQL Server 承载多个站点中的数据库时，每个数据库都必须使用独立的 SQL Server 实例，而且必须用一组独特的端口来配置每个实例。  
+Quando um SQL Server hospeda bancos de dados de mais de um site, cada banco de dados deve usar uma instância separada do SQL Server, e cada instância deve ser configurada com um conjunto de portas exclusivo.  
 
-如果在 SQL Server 计算机上启用了防火墙，请确保将它配置为允许部署使用端口。 还要在与 SQL Server 通信的计算机之间的网络上，将其他位置的防火墙配置为允许使用这些相同的端口。  
+Se você tiver um firewall habilitado no computador do SQL Server, certifique-se de que ele esteja configurado para permitir as portas em uso por sua implantação. Também configure firewalls em locais adicionais na rede entre computadores que se comunicam com o SQL Server para permitir as mesmas portas.  
 
-有关演示如何将 SQL Server 配置为使用指定的端口的示例，请参阅 SQL Server TechNet 库中的 [如何：将服务器配置为侦听特定的 TCP 端口 (SQL Server Configuration Manager)](http://go.microsoft.com/fwlink/p/?LinkID=226349) 。  
-
-
-### <a name="bkmk_discovery"></a>发现和发布
-使用下列端口发现和发布站点信息：
- - 轻型目录访问协议 (LDAP)：389
- - LDAP（安全套接字层 [SSL] 连接）：636
+Para obter um exemplo de como configurar o SQL Server para usar uma porta específica, veja [Como: configurar um servidor para escutar em uma porta TCP específica (SQL Server Configuration Manager)](http://go.microsoft.com/fwlink/p/?LinkID=226349) na biblioteca do TechNet do SQL Server.  
 
 
- - 全局编录 LDAP：3268
- - 全局编录 LDAP SSL：3269
+### <a name="bkmk_discovery"> </a> Descoberta e publicação
+As seguintes portas são usadas para descoberta e publicação de informações do site:
+ - Protocolo LDAP: 389
+ - LDAP (conexão com protocolo SSL): 636
 
 
- - RPC 端点映射程序：135
- - RPC：动态分配的高 TCP 端口
+ - LDAP de catálogo global: 3268
+ - LDAP SSL de catálogo global: 3269
 
 
- - TCP：1024: 5000
- - TCP：49152: 65535
+ - Mapeador de ponto de extremidade RPC: 135
+ - RPC: portas TCP altas alocadas dinamicamente
 
 
-###  <a name="BKMK_External"></a> Configuration Manager 建立的外部连接  
- Configuration Manager 客户端或站点系统可以建立下列外部连接：  
+ - TCP: 1024: 5000
+ - TCP: 49152: 65535
 
--   [资产智能同步点 -- &gt; Microsoft](#BKMK_PortsAI)  
 
--   [Endpoint Protection 点 -- &gt; Internet](#BKMK_PortsEndpointProtection_Internet)  
+###  <a name="BKMK_External"></a> Conexões externas feitas pelo Gerenciador de Configurações  
+ Clientes do Configuration Manager ou sistemas de sites podem fazer as seguintes conexões externas:  
 
--   [客户端 -- &gt; 全局编录域控制器](#BKMK_PortsClient-GCDC)  
+-   [Ponto de sincronização do Asset Intelligence – &gt; Microsoft](#BKMK_PortsAI)  
 
--   [Configuration Manager 控制台 -- &gt; Internet](#BKMK_PortsConsole-Internet)  
+-   [Ponto do Endpoint Protection – &gt; Internet](#BKMK_PortsEndpointProtection_Internet)  
 
--   [管理点 -- &gt; 域控制器](#BKMK_PortsMP-DC)  
+-   [Cliente – &gt; Controlador de domínio de catálogo global](#BKMK_PortsClient-GCDC)  
 
--   [站点服务器 -- &gt; 域控制器](#BKMK_PortsSite-DC)  
+-   [Console do Configuration Manager – &gt; Internet](#BKMK_PortsConsole-Internet)  
 
--   [站点服务器 &lt; -- &gt; 证书颁发机构 (CA)](#BKMK_PortsIssuingCA_SiteServer)  
+-   [Ponto de gerenciamento – &gt; Controlador de domínio](#BKMK_PortsMP-DC)  
 
--   [软件更新点 -- &gt; Internet](#BKMK_PortsSUP-Internet)  
+-   [Servidor do site – &gt; Controlador de domínio](#BKMK_PortsSite-DC)  
 
--   [软件更新点 -- &gt; 上游 WSUS 服务器](#BKMK_PortsSUP-WSUS)  
+-   [Servidor do site &lt; -- &gt; AC (Autoridade de Certificação) Emissora](#BKMK_PortsIssuingCA_SiteServer)  
 
--   [服务连接点 -- &gt; Microsoft Intune](#BKMK_PortsIntuneConnector-WindowsIntune)  
+-   [Ponto de atualização de software – &gt; Internet](#BKMK_PortsSUP-Internet)  
 
-###  <a name="BKMK_IBCMports"></a> 支持基于 Internet 的客户端的站点系统的安装要求  
- 支持基于 Internet 的客户端的管理点和分发点、软件更新点以及回退状态点均使用下列端口进行安装和修复：  
+-   [Ponto de atualização de software – &gt; Servidor upstream do WSUS](#BKMK_PortsSUP-WSUS)  
 
--   站点服务器 --> 站点系统：RPC 端点映射程序使用 UDP 和 TCP 端口 135。  
+-   [Ponto de conexão de serviço – &gt; Microsoft Intune](#BKMK_PortsIntuneConnector-WindowsIntune)  
 
--   站点服务器--> 站点系统：RPC 动态 TCP 端口  
+###  <a name="BKMK_IBCMports"></a> Requisitos de instalação para sistemas de site que oferecem suporte a clientes baseados na Internet  
+ Os pontos de gerenciamento e os pontos de distribuição que dão suporte a clientes baseados em Internet, o ponto de atualização de software e o ponto de status de fallback usam as seguintes portas para instalação e reparo:  
 
--   站点服务器 &lt; --> 站点系统：服务器消息块 (SMB) 使用 TCP 端口 445
+-   Servidor do site –> sistema de sites: mapeador de ponto de extremidade RPC usando UDP e porta TCP 135.  
 
-分发点上的应用程序和包安装需要下列 RPC 端口：  
+-   Servidor do site –> sistema de sites: portas TCP dinâmicas de RPC  
 
--   站点服务器 --> 分发点：RPC 端点映射程序使用 UDP 和 TCP 端口 135
+-   Servidor do site &lt; –> sistema de sites: protocolo SMB usando porta TCP 445
 
--   站点服务器--> 分发点：RPC 动态 TCP 端口  
+Instalações de aplicativos e pacotes nos pontos de distribuição requerem as seguintes portas RPC:  
 
-使用 IPsec 帮助确保站点服务器和站点系统之间的通信安全。 如果必须限制针对 RPC 使用的动态端口，则可以使用 Microsoft RPC 配置工具 (rpccfg.exe) 为这些 RPC 数据包配置有限的端口范围。 有关 RPC 配置工具的详细信息，请参阅 [如何配置 RPC 以使用特定端口以及如何使用 IPsec 来帮助保护这些端口](http://go.microsoft.com/fwlink/p/?LinkId=124096)。  
+-   Servidor do site –> ponto de distribuição: mapeador de ponto de extremidade RPC usando UDP e porta TCP 135
+
+-   Servidor do site –> ponto de distribuição: portas TCP dinâmicas de RPC  
+
+Use o IPsec para ajudar a proteger o tráfego entre o servidor do site e os sistemas de site. Se for preciso restringir as portas dinâmicas usadas com RPC, você pode usar a ferramenta de configuração Microsoft RPC (rpccfg.exe) para configurar um intervalo restrito de portas para esses pacotes RPC. Para obter mais informações sobre a ferramenta de configuração RPC, consulte [Como configurar o RPC para usar determinadas portas e como ajudar a proteger essas portas usando o IPsec](http://go.microsoft.com/fwlink/p/?LinkId=124096).  
 
 > [!IMPORTANT]  
->  在安装这些站点系统之前，请确保站点系统服务器上正在运行远程注册表服务；如果站点系统位于不同的 Active Directory 林中且不具有信任关系，则另请确保指定了站点系统安装帐户。  
+>  Para poder instalar esses sistemas de sites, verifique se o serviço de Registro remoto está sendo executado no servidor de sistema de sites e se você especificou uma conta de instalação de sistema de site, caso esse sistema esteja em uma floresta do Active Directory diferente, sem relação de confiança.  
 
-###  <a name="BKMK_PortsClientInstall"></a> Configuration Manager 客户端安装使用的端口  
-安装客户端期间使用的端口取决于客户端部署方法。 有关各客户端部署方法所用端口的列表，请参阅 **System Center Configuration Manager 中客户端的 Windows 防火墙和端口设置**主题中的 [Configuration Manager 客户端部署期间使用的端口](../../../core/clients/deploy/windows-firewall-and-port-settings-for-clients.md)。 有关如何为客户端安装和安装后通信配置客户端上的 Windows 防火墙的信息，请参阅 [System Center Configuration Manager 中客户端的 Windows 防火墙和端口设置](../../../core/clients/deploy/windows-firewall-and-port-settings-for-clients.md)。  
+###  <a name="BKMK_PortsClientInstall"></a> Portas usadas pela instalação do cliente do Gerenciador de Configurações  
+As portas usadas durante a instalação do cliente dependem do método de implantação do cliente. Para obter uma lista de portas para cada método de implantação do cliente, consulte **Portas usadas durante a implantação do cliente do Configuration Manager** no tópico [Configurações do Firewall do Windows e de porta para computadores cliente no System Center Configuration Manager](../../../core/clients/deploy/windows-firewall-and-port-settings-for-clients.md). Para obter informações sobre como configurar o Firewall do Windows no cliente para instalação de cliente e comunicação pós-instalação, consulte [Firewall do Windows e configurações de porta para clientes no System Center Configuration Manager](../../../core/clients/deploy/windows-firewall-and-port-settings-for-clients.md).  
 
-###  <a name="BKMK_MigrationPorts"></a> 迁移使用的端口  
-运行“迁移”的站点服务器使用多个端口连接到源层次结构中的适用站点，以便收集源站点 SQL Server 数据库中的数据并共享分发点。  
+###  <a name="BKMK_MigrationPorts"></a> Portas usadas pela migração  
+O servidor do site que executa a migração usa várias portas para se conectar a sites aplicáveis na hierarquia de origem para coletar dados do banco de dados do SQL Server dos sites de origem e para compartilhar pontos de distribuição.  
 
- 有关这些端口的信息，请参阅 [System Center Configuration Manager 中迁移的先决条件](../../../core/migration/prerequisites-for-migration.md)主题中的[迁移的所需配置](../../../core/migration/prerequisites-for-migration.md#BKMK_Required_Configurations)部分。  
+ Para obter informações sobre essas portas, confira a seção [Configurações necessárias para a migração](../../../core/migration/prerequisites-for-migration.md#BKMK_Required_Configurations) no tópico [Pré-requisitos da migração para o System Center Configuration Manager](../../../core/migration/prerequisites-for-migration.md).  
 
-###  <a name="BKMK_ServerPorts"></a> Windows Server 使用的端口  
- 下表列出了 Windows Server 使用的一些关键端口及其各自的功能。 有关 Windows Server 服务和网络端口要求的更完整的列表，请参阅 [Windows 服务器系统的服务概述和网络端口要求](http://go.microsoft.com/fwlink/p/?LinkID=123652)。  
+###  <a name="BKMK_ServerPorts"></a> Portas usadas pelo Windows Server  
+ A tabela a seguir lista algumas das principais portas usadas pelo Windows Server juntamente com suas respectivas funções. Para obter uma lista completa dos serviços do Windows Server e requisitos de portas de rede, consulte [Visão geral de serviços e requisitos de porta de rede para o sistema do Windows Server](http://go.microsoft.com/fwlink/p/?LinkID=123652).  
 
-|描述|UDP|TCP|  
+|Descrição|UDP|TCP|  
 |-----------------|---------|---------|  
-|域名系统 (DNS)|53|53|  
-|动态主机配置协议 (DHCP)|67 和 68|--|  
-|NetBIOS 名称解析|137|--|  
-|NetBIOS 数据报服务|138|--|  
-|NetBIOS 会话服务|--|139|  
+|DNS (Sistema de Nomes de Domínio)|53|53|  
+|Protocolo DHCP|67 e 68|--|  
+|Resolução de nomes NetBIOS|137|--|  
+|Serviço de datagrama NetBIOS|138|--|  
+|Serviço de sessão NetBIOS|--|139|  

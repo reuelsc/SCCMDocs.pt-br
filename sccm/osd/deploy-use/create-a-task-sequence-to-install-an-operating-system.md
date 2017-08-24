@@ -1,6 +1,6 @@
 ---
-title: "创建用于安装操作系统的任务序列 | Microsoft Docs"
-description: "在 System Center Configuration Manager 中使用任务序列，自动在目标计算机上安装操作系统映像和其他内容。"
+title: "Criar uma sequência de tarefas para instalar um sistema operacional | Microsoft Docs"
+description: "Use sequências de tarefas no System Center Configuration Manager para instalar automaticamente uma imagem do sistema operacional e outros tipos de conteúdo em um computador de destino."
 ms.custom: na
 ms.date: 10/06/2016
 ms.prod: configuration-manager
@@ -17,141 +17,141 @@ manager: angrobe
 ms.openlocfilehash: 41aa6cf69a746f0ab67d804f1ee0c70db05d65ee
 ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
 ms.translationtype: HT
-ms.contentlocale: zh-CN
+ms.contentlocale: pt-BR
 ms.lasthandoff: 08/07/2017
 ---
-# <a name="create-a-task-sequence-to-install-an-operating-system-in-system-center-configuration-manager"></a>在 System Center Configuration Manager 中创建用于安装操作系统的任务序列
+# <a name="create-a-task-sequence-to-install-an-operating-system-in-system-center-configuration-manager"></a>Criar uma sequência de tarefas para instalar um sistema operacional no System Center Configuration Manager
 
-*适用范围：System Center Configuration Manager (Current Branch)*
+*Aplica-se a: System Center Configuration Manager (Branch Atual)*
 
-在 System Center Configuration Manager 中使用任务序列，自动在目标计算机上安装操作系统映像。 创建一个任务序列，该任务序列引用用于启动目标计算机的启动映像、要安装在目标计算机上的操作系统映像以及要安装的任何其他附加内容（例如其他应用程序或软件更新）。 然后将任务序列部署到包含目标计算机的集合。  
+Use sequências de tarefas no System Center Configuration Manager para instalar automaticamente uma imagem do sistema operacional em um computador de destino. Você cria uma sequência de tarefas que faz referência a uma imagem de inicialização usada para iniciar o computador de destino, a imagem do sistema operacional que deseja instalar no computador de destino e qualquer outro conteúdo adicional, como outros aplicativos ou atualizações de software, que deseja instalar. Em seguida, você implanta a sequência de tarefas em uma coleção que contém o computador de destino.  
 
-##  <a name="BKMK_InstallOS"></a> 创建用于安装操作系统的任务序列  
- 有大量方案可用于将操作系统部署到环境中的计算机。 在大多数情况下，将创建任务序列并在“创建任务序列向导”中选择 **安装现有映像包** 来安装操作系统、迁移用户设置、应用软件更新和安装应用程序。 在创建任务序列以安装操作系统之前，以下方面必须已到位：   
+##  <a name="BKMK_InstallOS"></a> Criar uma sequência de tarefas para instalar um sistema operacional  
+ Há muitos cenários para implantar um sistema operacional em computadores em seu ambiente. Na maioria dos casos, você vai criar uma sequência de tarefas e selecionar **instalar um pacote de imagem existente** no assistente Criar Sequência de Tarefas para instalar o sistema operacional, migrar as configurações do usuário, aplicar atualizações de software e instalar aplicativos. Antes de criar uma sequência de tarefas para instalar um sistema operacional, o seguinte deve estar disponível:   
 
--   **必需**  
+-   **Necessária**  
 
-    -   [启动映像](../get-started/manage-boot-images.md)在 Configuration Manager 控制台中必须可用。  
+    -   A [imagem de inicialização](../get-started/manage-boot-images.md) deve estar disponível no console do Configuration Manager.  
 
-    -   [操作系统映像](../get-started/manage-operating-system-images.md)在 Configuration Manager 控制台中必须可用。  
+    -   Uma [imagem do sistema operacional](../get-started/manage-operating-system-images.md) deve estar disponível no console do Configuration Manager.  
 
--   **必需（若使用）**  
+-   **Necessário (se usado)**  
 
-    -   必须在 Configuration Manager 控制台中同步[软件更新](../../sum/get-started/synchronize-software-updates.md)。  
+    -   As [atualizações de software](../../sum/get-started/synchronize-software-updates.md) devem estar sincronizadas no console do Configuration Manager.  
 
-    -   必须将[应用程序](../../apps/deploy-use/create-applications.md)添加到 Configuration Manager 控制台。  
+    -   Os [aplicativos](../../apps/deploy-use/create-applications.md) devem ser adicionados ao console do Configuration Manager.  
 
-#### <a name="to-create-a-task-sequence-that-installs-an-operating-system"></a>若要创建用于安装操作系统的任务序列  
+#### <a name="to-create-a-task-sequence-that-installs-an-operating-system"></a>Para criar uma sequência de tarefas que instala um sistema operacional  
 
-1.  在 Configuration Manager 控制台中，单击“软件库” 。  
+1.  No console do Configuration Manager, clique em **Biblioteca de Software**.  
 
-2.  在“软件库”  工作区中，展开“操作系统” ，然后单击“任务序列” 。  
+2.  No espaço de trabalho **Biblioteca de Software** , expanda **Sistemas Operacionais**e clique em **Sequências de Tarefas**.  
 
-3.  在“主页”  选项卡上的“创建”  组中，单击“创建任务序列”  以启动创建任务序列向导。  
+3.  Na guia **Início** , no grupo **Criar** , clique em **Criar Sequência de Tarefas** para iniciar o Assistente para Criar Sequência de Tarefas.  
 
-4.  在“创建新的任务序列”  页上，单击“安装现有的映像包” ，然后单击“下一步” 。  
+4.  Na página **Criar uma nova sequência de tarefas** , clique em **Instalar um pacote de imagem existente**e em **Próximo**.  
 
-5.  在“任务序列信息”  页上，指定以下设置，然后单击“下一步” 。  
+5.  Na página **Informações da Sequência de Tarefas** , especifique as seguintes configurações e clique em **Próximo**.  
 
-    -   **任务序列名称**：指定用于标识任务序列的名称。  
+    -   **Nome da sequência de tarefas**: especifique um nome que identifique a sequência de tarefas.  
 
-    -   **描述**：指定任务序列所执行的任务的描述。  
+    -   **Descrição**: especifique uma descrição da tarefa executada pela sequência de tarefas.  
 
-    -   **启动映像包**：指定用于在目标计算机上安装操作系统的启动映像。 启动映像包含用于安装操作系统的 Windows PE 的某个版本，以及任何其他所需的设备驱动程序。 有关信息，请参阅[管理启动映像](../get-started/manage-boot-images.md)。  
-
-        > [!IMPORTANT]  
-        >  启动映像的体系结构必须与目标计算机的硬件体系结构兼容。  
-
-6.  在“安装 Windows”  页上，指定以下设置，然后单击“下一步” 。  
-
-    -   **映像包**：指定包含要安装的操作系统映像的包。 有关详细信息，请参阅[管理操作系统映像](../get-started/manage-operating-system-images.md)。  
-
-    -   **映像**：如果操作系统映像包有多个映像，请指定要安装的操作系统映像的索引。  
-
-    -   **对安装操作系统的目标计算机进行分区和格式化**：指定是否希望任务序列在安装操作系统之前对目标计算机进行分区和格式化。  
-
-    -   **产品密钥**：指定要安装的 Windows 操作系统的产品密钥。 你可以指定编码的批量许可证密钥和标准产品密钥。 如果使用非编码的产品密钥，则必须通过短划线 (-) 分隔每组 5 个字符。 例如： *XXXXX-XXXXX-XXXXX-XXXXX-XXXXX*  
-
-    -   “服务器授权模式”：指定服务器许可证为“每客户” , 或未指定许可证。 如果服务器许可证为“每服务器” ，则还需指定服务器连接的最大数量。  
-
-    -   指定如何处理在部署操作系统映像时使用的管理员帐户。  
-
-        -   **禁用本地管理员帐户**：指定在部署操作系统映像时是否禁用本地管理员帐户。  
-
-        -   **始终使用同一管理员密码**：指定是否为部署操作系统映像的所有计算机上的本地管理员帐户使用同一密码。  
-
-7.  在“配置网络”  页上，指定以下设置，然后单击“下一步” 。  
-
-    -   “加入工作组”：指定是否将目标计算机添加到工作组。  
-
-    -   “加入域”：指定是否将目标计算机添加到域。 在“域” 中，指定域的名称。  
+    -   **Imagem de inicialização**: especifique a imagem de inicialização que instala o sistema operacional no computador de destino. A imagem de inicialização contém uma versão do Windows PE que é usada para instalar o sistema operacional, assim como quaisquer drivers de dispositivos adicionais necessários. Para obter informações, consulte [Gerenciar imagens de inicialização](../get-started/manage-boot-images.md).  
 
         > [!IMPORTANT]  
-        >  你可以浏览以查找本地林中的域，但对于远程林则必须指定域名。  
+        >  A arquitetura da imagem de inicialização deve ser compatível com a arquitetura de hardware do computador de destino.  
 
-         你还可以指定组织单位 (OU)。 这是一项可选设置，用于指定在其中创建计算机帐户的 OU 的 LDAP X.500 可分辨名称（如果尚未存在）。  
+6.  Na página **Instalar Windows** , especifique as seguintes configurações e clique em **Próximo**.  
 
-    -   “帐户”：指定具有加入指定域的权限的帐户的用户名和密码。 例如： *domain\user* 或 *%variable%*。  
+    -   **Pacote da imagem**: especifique o pacote que contém a imagem do sistema operacional para instalação. Para obter mais informações, consulte [Gerenciar imagens do sistema operacional](../get-started/manage-operating-system-images.md).  
+
+    -   **Imagem**: se o pacote de imagens do sistema operacional contém várias imagens, especifique o índice da imagem do sistema operacional para instalação.  
+
+    -   **Particionar e formatar o computador de destino instalando o sistema operacional**: especifique se você deseja que a sequência de tarefas particione e formate o computador de destino antes da instalação do sistema operacional.  
+
+    -   **Chave do produto**: especifique a chave do produto do sistema operacional Windows a instalar. Você pode especificar as chaves de licença de volume codificadas e as chaves do produto padrão. Se você usar uma chave de produto sem codificação, cada grupo de 5 caracteres deverá ser separado por um traço (-). Por exemplo: *XXXXX-XXXXX-XXXXX-XXXXX-XXXXX*  
+
+    -   **Modo de licenciamento do servidor**: especifique se a licença do servidor é **Por estação**, **Por servidor**ou se nenhuma licença está especificada. Se a licença do servidor for **Por servidor**, especifique também o número máximo de conexões de servidor.  
+
+    -   Especifique como lidar com a conta de administrador usada quando a imagem de sistema operacional é implantada.  
+
+        -   **Desabilitar a conta de administrador local**: especifique se a conta de administrador local deve ser desabilitada quando a imagem de sistema operacional for implantada.  
+
+        -   **Sempre usar a mesma senha de administrador**: especifique se a mesma senha deve ser usada para a conta do administrador local em todos os computadores nos quais a imagem do sistema operacional será implantada.  
+
+7.  Na página **Configurar a Rede** , especifique as seguintes configurações e clique em **Próximo**.  
+
+    -   **Ingressar no grupo de trabalho**: especifique se deseja adicionar o computador de destino a um grupo de trabalho.  
+
+    -   **Ingressar em um domínio**: especifique se deseja adicionar o computador de destino a um domínio. Em **Domínio**, especifique o nome do domínio.  
 
         > [!IMPORTANT]  
-        >  如果打算迁移域设置或工作组设置，你必须输入适当的域凭据。  
+        >  Você pode localizar os domínios na floresta local, mas, para tanto, é necessário especificar o nome de domínio para uma floresta remota.  
 
-8.  在“安装 Configuration Manager”页上，指定要安装到目标计算机上的 Configuration Manager 客户端包，然后单击“下一步”。  
+         Você também pode especificar uma UO (unidade organizacional). Essa configuração opcional especifica o nome diferenciado do LDAP X.500 da UO na qual a conta do computador será criada, se ela ainda não existir.  
 
-9. 在“状态迁移”  页上，指定以下信息，然后单击“下一步” 。  
+    -   **Conta**: especifique o nome de usuário e senha para a conta que tenha permissões para ingressar no domínio especificado. Por exemplo: *domain\user* ou *%variable%*.  
 
-    -   **捕获用户设置**：指定任务序列是否捕获用户状态。 有关如何捕获和还原用户状态的详细信息，请参阅[管理用户状态](../get-started/manage-user-state.md)。  
+        > [!IMPORTANT]  
+        >  Você deve inserir as credenciais de domínio adequadas se planeja migrar as configurações de domínio ou as configurações do grupo de trabalho.  
 
-    -   **捕获网络设置**：指定任务序列是否从目标计算机中捕获网络设置。 除了捕获网络适配器设置外，你还可以捕获域或工作组的成员身份。  
+8.  Na página **Instalar o Configuration Manager**, especifique o pacote do cliente do Configuration Manager para instalar no computador de destino e clique em **Próximo**.  
 
-    -   **捕获 Microsoft Windows 设置**：指定任务序列是否在安装操作系统映像之前从目标计算机中捕获 Windows 设置。 你可以捕获计算机名、注册的用户和组织名称以及时区设置。  
+9. Na página **Migração de Estado** , especifique as seguintes informações e clique em **Próximo**.  
 
-10. 在“包括更新”  页上，指定是安装必需的软件更新、所有软件更新还是不安装软件更新，然后单击“下一步” 。 如果指定要安装软件更新，Configuration Manager 将只会安装以包含目标计算机的集合为目标的那些软件更新。  
+    -   **Capturar configurações do usuário**: especifique se a sequência de tarefas deve capturar o estado do usuário. Para obter mais informações sobre como capturar e restaurar o estado do usuário, consulte [Gerenciar o estado do usuário](../get-started/manage-user-state.md).  
 
-11. 在“安装应用程序”  页上，指定要安装在目标计算机上的应用程序，然后单击“下一步” 。 如果指定多个应用程序，你也可以指定任务序列在特定应用程序的安装失败时继续进行。  
+    -   **Capturar configurações da rede**: especifique se a sequência de tarefas deve capturar as configurações da rede do computador de destino. Você pode capturar a associação do domínio ou grupo de trabalho além das configurações de adaptador de rede.  
 
-12. 完成向导。  
+    -   **Capturar configurações do Microsoft Windows**:  especifique se a sequência de tarefas deve capturar as configurações do Windows do computador de destino antes de instalar a imagem do sistema operacional. Você pode capturar o nome do computador, nome de usuário e organização registrados e as configurações de fuso horário.  
 
- 你现在可以将任务序列部署到计算机集合。  有关详细信息，请参阅 [Deploy a task sequence](manage-task-sequences-to-automate-tasks.md#BKMK_DeployTS)。  
+10. Na página **Incluir Atualizações** , especifique se deseja instalar as atualizações de software necessárias, todas as atualizações ou nenhuma e clique em **Próximo**. Se optar pela instalação das atualizações de software, o Configuration Manager instalará somente aquelas que fizerem parte das coleções das quais o computador de destino é membro.  
 
-##  <a name="BKMK_InstallExistingOSImageTSExample"></a> 安装现有操作系统映像的示例任务序列  
- 使用下表作为您创建任务序列以部署使用现有操作系统映像的操作系统时的指导。 该表将帮助您决定任务序列步骤的常规顺序，以及如何将这些任务序列步骤组织并构建成逻辑组。 您创建的任务序列可能与此示例有所不同并可包含更多或更少的任务序列步骤和组。  
+11. Na página **Instalar Aplicativos** , especifique os aplicativos a instalar no computador de destino e clique em **Próximo**. Se você especificar vários aplicativos, será possível também definir a continuação da sequência de tarefas em caso de falha na instalação de algum aplicativo.  
+
+12. Conclua o assistente.  
+
+ Agora é possível implantar a sequência de tarefas em uma coleção de computadores.  Para obter mais informações, consulte [Deploy a task sequence](manage-task-sequences-to-automate-tasks.md#BKMK_DeployTS).  
+
+##  <a name="BKMK_InstallExistingOSImageTSExample"></a> Exemplo de sequência de tarefas para instalar uma imagem do sistema operacional existente  
+ Use a tabela a seguir como guia ao criar uma sequência de tarefas que implanta um sistema operacional usando uma imagem do sistema operacional existente. A tabela ajudarão você a decidir a seqüência geral de etapas da sequência de tarefas e como organizar e estruturar as etapas da sequência de tarefas em grupos lógicos. A sequência de tarefas que você criar este exemplo pode variar e pode conter mais ou menos grupos e etapas de sequência de tarefas.  
 
 > [!IMPORTANT]  
->  必须始终使用创建任务序列向导来创建此任务序列。  
+>  Você sempre deve usar o Assistente para criar sequência de tarefas para criar essa sequência de tarefas.  
 
- 当您使用创建任务序列向导创建此新任务序列的任务序列步骤名称一些是不同于什么比它们是什么如果已将这些任务序列步骤手动添加到现有任务序列。 下表显示了命名差异：  
+ Quando você usar o Assistente para criar sequência de tarefas para criar essa nova sequência de tarefas, alguns dos nomes de etapa de sequência de tarefas são diferentes do que de que eles seriam se você adicionou manualmente essas etapas de sequência de tarefas para uma sequência de tarefas existente. A tabela a seguir exibe as diferenças de nomenclatura:  
 
-|创建任务序列向导任务序列步骤名称|相当的任务序列编辑器步骤名称|  
+|Criar o nome da etapa de sequência de tarefas do Assistente de sequência de tarefas|Nome da etapa equivalente Editor de sequência de tarefas|  
 |---------------------------------------------------------|-----------------------------------------------|  
-|请求用户状态存储|请求状态存储|  
-|捕获用户文件和设置|捕获用户状态|  
-|发布用户状态存储|发布状态存储|  
-|在 Windows PE 中重新启动|重新启动到 Windows PE 或硬盘|  
-|对磁盘 0 分区|格式化磁盘并分区|  
-|还原用户文件和设置|还原用户状态|  
+|Armazenamento de estado do usuário de solicitação|Solicitar Armazenamento de Estado|  
+|Capturar configurações e arquivos do usuário|Capturar Estado do Usuário|  
+|Armazenamento de estado do usuário de versão|Liberar Armazenamento de Estado|  
+|Reiniciar no Windows PE|Reinicialize no Windows PE ou o disco rígido|  
+|Particionar Disco 0|Formatar e Particionar Disco|  
+|Restaurar configurações e arquivos do usuário|Restaurar Estado do Usuário|  
 
-|任务序列组或步骤|描述|  
+|Grupo de sequências de tarefas ou etapa|Descrição|  
 |---------------------------------|-----------------|  
-|捕获文件和设置 - **（新建任务序列组）**|创建任务序列组。 任务序列组将保留在一起以更好地组织和错误控制类似的任务序列步骤。<br /><br /> 此组包含从引用计算机操作系统捕获文件和设置所需的步骤。|  
-|捕获 Windows 设置|使用此任务序列步骤来标识要从引用计算机捕获的 Microsoft Windows 设置。 您可以捕获计算机名称、用户和组织信息以及时区设置。|  
-|捕获网络设置|使用此任务序列步骤来从引用计算机捕获网络设置。 您可以捕获引用计算机和网络适配器设置信息的域或工作组成员身份。|  
-|捕获用户文件和设置 - **（新建任务序列子组）**|创建任务序列组内的一个任务序列组。 此子组包含捕获用户状态数据所需的步骤。 类似于的初始组添加时，此子组操作可使类似的任务序列步骤一起为更好地组织和错误控制。|  
-|请求用户状态存储|使用此任务序列步骤来请求访问状态迁移点存储用户状态数据的位置。 您可以将此任务序列步骤配置为捕获或还原用户状态信息。|  
-|捕获用户文件和设置|使用此任务序列步骤以使用用户状态迁移工具 (USMT) 来捕获用户状态和设置从引用计算机将接收与此任务步骤关联的任务序列。 您可以捕获标准选项或通过配置名选项来捕获。|  
-|发布用户状态存储|使用此任务序列步骤通知状态迁移点捕获或还原操作完毕。|  
-|安装操作系统 - **（新建任务序列组）**|创建另一个任务序列子组。 此子组包含安装和配置 Windows PE 环境所需的步骤。|  
-|在 Windows PE 中重新启动|使用此任务序列步骤来指定接收此任务序列的目标计算机的重新启动选项。 此步骤中将显示一条消息指向指示计算机将重新启动，以便才能继续安装的用户。<br /><br /> 此步骤使用只读 **_SMSTSInWinPE** 任务序列变量。 如果相关联的值等于 **false** 任务序列步骤将继续。|  
-|对磁盘 0 分区|此任务序列步骤指定目标计算机上的硬盘进行格式化所需的操作。 默认磁盘编号为 **0**。<br /><br /> 此步骤使用只读的 **_SMSTSClientCache** 任务序列变量。 如果 Configuration Manager 客户端缓存不存在，则会运行此步骤。|  
-|应用操作系统|使用此任务序列步骤安装到目标计算机上的操作系统映像。 此步骤首先删除目标计算机上相应的顺序磁盘卷上的所有文件（特定于 Configuration Manager 的控制文件除外），然后将 WIM 文件中包含的所有卷映像应用到该顺序磁盘卷。 您可以指定 **sysprep** 答案文件，还将配置的磁盘分区用于安装。|  
-|应用 Windows 设置|使用此任务序列步骤配置目标计算机的 Windows 设置配置信息。 可应用的 Windows 设置包括用户和组织信息、产品或许可密钥信息、时区，以及本地管理员密码。|  
-|应用网络设置|使用此任务序列步骤来指定为目标计算机的网络或工作组配置信息。 此外可以指定计算机使用 DHCP 服务器是否可以静态地分配的 IP 地址信息。|  
-|应用设备驱动程序|使用此任务序列步骤作为操作系统部署的一部分安装驱动程序。 你可以通过选择“考虑所有类别的驱动程序”  允许 Windows 安装程序搜索所有现有的驱动程序类别；或者选择“将驱动程序匹配限制为仅考虑所选类别的驱动程序” 以限制 Windows 安装程序搜索的驱动程序类别。<br /><br /> 此步骤使用只读 **_SMSTSMediaType** 任务序列变量。 此任务序列步骤仅当运行该变量的值不等于 **FullMedia**。|  
-|应用驱动程序包|使用此任务序列步骤以使驱动程序包中所有设备驱动程序可用于使用 Windows 安装程序。|  
-|设置操作系统 - **（新建任务序列组）**|创建另一个任务序列子组。 此子组包含设置已安装操作系统所需的步骤。|  
-|安装 Windows 和 ConfigMgr|使用此任务序列步骤安装 Configuration Manager 客户端软件。 Configuration Manager 安装和注册 Configuration Manager 客户端 GUID。 你可以在“安装属性”  窗口中分配必要的安装参数。|  
-|安装更新|使用此任务序列步骤指定如何在目标计算机上安装软件更新。 在运行此任务序列步骤时，才会评估目标计算机是否有适用的软件更新。 此时，会与其他 Configuration Manager 托管客户端一样，评估目标计算机是否有合适的软件更新。<br /><br /> 此步骤使用只读 **_SMSTSMediaType** 任务序列变量。 此任务序列步骤仅在变量的值不等于 **FullMedia**时运行。|  
-|还原用户文件和设置 - **（新建任务序列子组）**|创建另一个任务序列子组。 此子组包含还原用户文件和设置所需的步骤。|  
-|请求用户状态存储|使用此任务序列步骤来请求访问状态迁移点存储用户状态数据的位置。|  
-|还原用户文件和设置|使用此任务序列步骤来启动用户状态迁移工具 (USMT) 将用户状态和设置还原到目标计算机。|  
-|发布用户状态存储|使用此任务序列步骤通知状态迁移点不再需要用户状态数据。|  
+|Captura de arquivos e configurações - **(novo grupo de sequências de tarefas)**|Crie um grupo de sequências de tarefas. Um grupo de sequências de tarefas mantém etapas da sequência de tarefas semelhantes juntas para melhor organização e controle de erro.<br /><br /> Esse grupo contém as etapas necessárias para capturar os arquivos e configurações do sistema operacional de um computador de referência.|  
+|Capturar Configurações do Windows|Use essa etapa de sequência de tarefas para identificar as configurações do Microsoft Windows para capturar do computador de referência. Você pode capturar o nome do computador, usuário e informações organizacionais e as configurações de fuso horário.|  
+|Capturar configurações da rede|Use essa etapa de sequência de tarefas para capturar as configurações de rede do computador de referência. Você pode capturar a associação de domínio ou grupo de trabalho do computador de referência e obter informações sobre configuração de adaptador de rede.|  
+|Capturar arquivos de usuário e configurações - **(nova tarefa sequência subgrupo)**|Crie um grupo de sequências de tarefas dentro de um grupo de sequências de tarefas. Esse subgrupo contém as etapas necessárias para capturar dados de estado do usuário. Semelhante para o grupo inicial que você adicionou, esse subgrupo mantém controlam semelhante etapas da sequência de tarefas para o erro e melhor organização.|  
+|Armazenamento de estado do usuário de solicitação|Use essa etapa de sequência de tarefas para solicitar acesso a um ponto de migração de estado onde os dados de estado do usuário são armazenados. Você pode configurar essa etapa de sequência de tarefas para capturar ou restaurar as informações de estado do usuário.|  
+|Capturar Arquivos e Configurações do Usuário|Use essa etapa de sequência de tarefas para usar o User State Migration Tool (USMT) para capturar o estado do usuário e configurações do computador de referência que receberão a sequência de tarefas associada a essa etapa da tarefa. Você pode capturar as opções padrão ou configurar opções capturar.|  
+|Armazenamento de estado do usuário de versão|Use essa etapa de sequência de tarefas para notificar o estado do ponto de migração que a ação de captura ou restauração foi concluída.|  
+|Instalar o sistema operacional - **(novo grupo de sequências de tarefas)**|Crie outro grupo de subpropriedades de sequência de tarefas. Esse subgrupo contém as etapas necessárias para instalar e configurar o ambiente do Windows PE.|  
+|Reiniciar no Windows PE|Use essa etapa de sequência de tarefas para especificar as opções de reinicialização do computador de destino que recebe essa sequência de tarefas. Esta etapa exibirá uma mensagem para o usuário indicando que o computador será reiniciado para que a instalação possa continuar.<br /><br /> Esta etapa usa a variável de sequência de tarefas **_SMSTSInWinPE** de somente leitura. Se o valor for igual a **false** continua a etapa de sequência de tarefas.|  
+|Particionar disco 0|Esta etapa especifica as ações necessárias para formatar o disco rígido no computador de destino. O número de disco padrão é **0**.<br /><br /> Esta etapa usa a variável de sequência de tarefas **_SMSTSClientCache** de somente leitura. Esta etapa será executada se o cache do cliente do Configuration Manager não existir.|  
+|Aplicar Sistema Operacional|Use essa etapa de sequência de tarefas para instalar a imagem do sistema operacional no computador de destino. Essa etapa se aplica a todas as imagens de volume contidas no arquivo WIM para o volume de disco sequencial correspondente no computador de destino após o primeiro excluir todos os arquivos no volume (com exceção de arquivos de controle específicos do Configuration Manager). Você pode especificar um **sysprep** arquivo de resposta e também configurar a partição de disco é usada para a instalação.|  
+|Aplicar as Configurações do Windows|Use essa etapa de sequência de tarefas para configurar as informações de configuração de configurações do Windows no computador de destino. Você pode aplicar as configurações do windows são usuários e informações organizacionais, informações de chave de produto ou licença, fuso horário e a senha de administrador local.|  
+|Aplicar Configurações de Rede|Use essa etapa de sequência de tarefas para especificar as informações de configuração de rede ou grupo de trabalho do computador de destino. Você também pode especificar se o computador usa um servidor DHCP ou você pode atribuir estaticamente as informações de endereço IP.|  
+|Aplicar Drivers de Dispositivo|Use essa etapa de sequência de tarefas para instalar drivers como parte da implantação do sistema operacional. Você pode permitir que a Instalação do Windows pesquise todas as categorias de driver existentes selecionando a opção **Considerar drivers de todas as categorias** ou limitar quais categorias de driver de Instalação do Windows pesquisarão ao selecionar a opção **Limitar a correspondência de driver para considerar somente os drivers em categorias selecionadas**.<br /><br /> Esta etapa usa somente leitura **_SMSTSMediaType** variável de sequência de tarefas. Essa etapa de sequência de tarefas é executado somente se o valor da variável não é igual a **FullMedia**.|  
+|Aplicar pacote de driver|Use essa etapa de sequência de tarefas para disponibilizar todos os drivers de dispositivo em um pacote de driver para uso pela instalação do Windows.|  
+|Configurar o sistema operacional - **(novo grupo de sequências de tarefas)**|Crie outro grupo de subpropriedades de sequência de tarefas. Esse subgrupo contém as etapas necessárias para configurar o sistema operacional instalado.|  
+|Instalar Windows e ConfigMgr|Use essa etapa de sequência de tarefas para instalar o software cliente do Configuration Manager. O Configuration Manager instala e registra o GUID do cliente do Configuration Manager. Você pode atribuir os parâmetros necessários para a instalação na janela **Propriedades de instalação** .|  
+|Instalar atualizações|Use esta etapa de sequência de tarefas para especificar como as atualizações de software serão instaladas no computador de destino. O computador de destino não é avaliado para atualizações de software aplicáveis até que essa etapa de sequência de tarefas seja executada. Nesse momento, o computador de destino é avaliado para atualizações de software semelhantes a qualquer outro cliente gerenciado do Configuration Manager.<br /><br /> Esta etapa usa a variável de sequência de tarefas **_SMSTSMediaType** somente leitura. Essa etapa de sequência de tarefas será executada somente se o valor da variável não for igual a **FullMedia**.|  
+|Restaurar Arquivos e Configurações do Usuário - **(Novo Subgrupo de Sequência de Tarefas)**|Crie outro grupo de subpropriedades de sequência de tarefas. Esse subgrupo contém as etapas necessárias para restaurar os arquivos de usuário e configurações.|  
+|Solicitar Armazenamento de Estado do Usuário|Use essa etapa de sequência de tarefas para solicitar acesso a um ponto de migração de estado onde os dados de estado do usuário são armazenados.|  
+|Restaurar Arquivos e Configurações do Usuário|Use essa etapa de sequência de tarefas para iniciar o User State Migration Tool (USMT) para restaurar o estado do usuário e configurações para um computador de destino.|  
+|Armazenamento de estado do usuário de versão|Use essa etapa da sequência de tarefas para notificar o ponto de migração de estado que os dados do estado do usuário não são mais necessários.|  

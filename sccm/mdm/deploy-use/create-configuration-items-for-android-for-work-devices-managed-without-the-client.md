@@ -1,5 +1,5 @@
 ---
-title: "如何为使用 Intune 管理的 Android for Work 设备创建配置项"
+title: "Como criar itens de configuração para dispositivos com Android for Work gerenciados com o Intune"
 ms.custom: na
 ms.date: 2017-07-31
 ms.prod: configuration-manager
@@ -34,89 +34,89 @@ translation.priority.ht:
 ms.openlocfilehash: 87b34f0a3cce87f6e2ba813957a69b743648c1ca
 ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
 ms.translationtype: HT
-ms.contentlocale: zh-CN
+ms.contentlocale: pt-BR
 ms.lasthandoff: 08/07/2017
 ---
-# <a name="how-to-create-configuration-items-for-android-for-work-devices-managed-with-intune"></a>如何为使用 Intune 管理的 Android for Work 设备创建配置项
+# <a name="how-to-create-configuration-items-for-android-for-work-devices-managed-with-intune"></a>Como criar itens de configuração para dispositivos com Android for Work gerenciados com o Intune
 
- 使用 System Center Configuration Manager **Android for Work** 配置项目管理在 Microsoft Intune 中注册或者由 Configuration Manager 进行本地管理的 Android for Work 设备的设置。  
+ Use o item de configuração **Android for Work** do System Center Configuration Manager para gerenciar configurações para dispositivos do Android for Work que estão registrados no Microsoft Intune ou são gerenciados localmente pelo Configuration Manager.  
 
-### <a name="to-create-an-android-for-work-configuration-item"></a>创建 Android for Work 配置项目  
+### <a name="to-create-an-android-for-work-configuration-item"></a>Para criar um item de configuração para o Android for Work  
 
-1.  在 Configuration Manager 控制台中，单击“资产和符合性”。  
+1.  No console do Configuration Manager, clique em **Ativos e conformidade**.  
 
-2.  在“资产和符合性”  工作区中，展开“符合性设置” ，然后单击“配置项目” 。  
+2.  No espaço de trabalho **Ativos e Conformidade** , expanda **Configurações de Conformidade**e clique em **Itens de Configuração**.  
 
-3.  在“主页”  选项卡上的“创建”  组中，单击“创建配置项目” 。  
+3.  Na guia **Início** , no grupo **Criar** , clique em **Criar Item de Configuração**.  
 
-4.  在“创建配置项目向导”  的“常规” 页面上，指定配置项目的名称和可选描述。  
+4.  Na página **Geral** do **Assistente para Criar Item de Configuração**, especifique um nome e uma descrição opcional para o item de configuração.  
 
-5.  在“指定要创建的配置项目类型” 下，选择“Android for Work” 。  
+5.  Em **Especificar o tipo de item de configuração que deseja criar**, selecione **Android for Work**.  
 
-6.  如果创建并分配类别以帮助在 Configuration Manager 控制台中搜索和筛选配置项目，请选择“类别”。  
+6.  Escolha **Categorias** se você criar e atribuir categorias para ajudá-lo a pesquisar e filtrar os itens de configuração no console do Configuration Manager.  
 
-  单击“下一步” 。
+  Clique em **Avançar**.
 
-7.  在向导的“设备设置”页上，选择要配置的设置组。 若要了解详细信息，请参阅 [Android for Work 配置项目设置](#android-for-work-configuration-item-settings-reference)，然后单击“下一步”。  
+7.  Na página **Configurações do Dispositivo** do assistente, selecione os grupos de configurações que você quer configurar. Confira [Configurações de item de configuração do Android for Work](#android-for-work-configuration-item-settings-reference) para obter detalhes, e clique em **Avançar**.  
 
   > [!TIP]  
-  >  如果所需设置未列出，请选中“配置默认设置组以外的其他设置” 复选框。  
+  >  Se a configuração desejada não estiver na lista, marque a **caixa de seleção Definir configurações adicionais que não estão nos grupos de configuração padrão**.  
 
-9. 在每个设置页面上，配置所需设置，以及是否要在它们在设备上不符合要求时修正它们（如果支持这样做）。  
+9. Em cada página de configurações, defina as configurações necessárias e se deseja corrigi-las quando não forem compatíveis nos dispositivos (quando houver suporte para essa opção).  
 
-10. 对于每个设置组，还可以配置在发现配置项目不符合要求时将要报告的严重性：  
+10. Para cada grupo de configurações, você também pode configurar a severidade que será relatada quando um item de configuração for considerado não compatível de:  
 
-    -   **不报告** - 对于 Configuration Manager 报表，不符合此合规性规则的设备不报告故障严重性。  
+    -   **Nenhum** – dispositivos que não cumprem essa regra de conformidade não relatam uma severidade de falha em relatórios do Configuration Manager.  
 
-    -   **信息** - 对于 Configuration Manager 报表，不符合此合规性规则的设备将报告“信息”这一故障严重性。  
+    -   **Informações** – dispositivos que não cumprem essa regra de conformidade relatam uma severidade de falha de **Informações** em relatórios do Configuration Manager.  
 
-    -   **警告** - 对于 Configuration Manager 报表，不符合此合规性规则的设备将报告“警告”这一故障严重性。  
+    -   **Aviso** – dispositivos que não cumprem essa regra de conformidade relatam uma severidade de falha de **Aviso** em relatórios do Configuration Manager.  
 
-    -   **严重** - 对于 Configuration Manager 报表，不符合此合规性规则的设备将报告“严重”这一故障严重性。  
+    -   **Crítico** – dispositivos que não cumprem essa regra de conformidade relatam uma severidade de falha de **Crítico** em relatórios do Configuration Manager.  
 
-    -   **事件严重** - 对于 Configuration Manager 报表，不符合此合规性规则的设备将报告“严重”这一故障严重性。 应用程序事件日志中也会以 Windows 事件的形式记录此严重性级别。  
+    -   **Crítico com evento** – dispositivos que não cumprem essa regra de conformidade relatam uma severidade de falha de **Crítico com evento** em relatórios do Configuration Manager. Este nível de severidade também é registrado como um evento do Windows no log de eventos do aplicativo.  
 
-11. 在向导的“平台适用性”  页面上，查看任何与先前选择的受支持平台不兼容的设置。 你可以返回并删除这些设置，也可以继续。  
+11. Na página **Aplicabilidade da Plataforma** do assistente, examine as configurações que não são compatíveis com as plataformas com suporte selecionadas anteriormente. Você pode voltar e remover essas configurações ou pode continuar.  
 
     > [!TIP]  
-    >  不会对不受支持的设置评估符合性。  
+    >  As configurações sem suporte não são avaliadas quanto à conformidade.  
 
-12. 完成向导。  
+12. Conclua o assistente.  
 
- 可以在“资产和符合性”  工作区的“配置项目”  节点中查看新配置项目。  
+ Você pode exibir o novo item de configuração no nó **Itens de Configuração** do espaço de trabalho **Ativos e Conformidade** .  
 
-##  <a name="android-for-work-configuration-item-settings-reference"></a>Android for Work 配置项目设置参考  
+##  <a name="android-for-work-configuration-item-settings-reference"></a>Referência de configurações do item de configuração do Android for Work  
 
-### <a name="password"></a>Password  
+### <a name="password"></a>Senha  
 
-|设置|详细信息|  
+|Configuração|Detalhes|  
 |-------------|-------------|  
-|**设备上需要密码设置**|支持的设备上需要密码。|  
-|**最短密码长度（字符）**|密码的最短长度。|  
-|**密码过期天数**|必须更改密码前的天数。|  
-|**记住的密码数**|防止重复使用最近用过的密码。|  
-|**擦除设备前的失败登录尝试次数**|如果此数目的登录尝试均失败，则擦除该设备。|  
-|**锁定设备前的空闲时间**|在设备锁定之前选择设备未使用的时间量。|
-|**密码质量**|选择所需的密码复杂性级别以及是否可以使用生物识别设备。|  
-|**允许 Smart Lock 和其他信任代理**|让你控制兼容的 Android 设备上的 Smart Lock 功能。 如果设备处于可信位置（例如当它连接到特定蓝牙设备时，或者在 NFC 标记附近时），则此手机功能（有时称为信任代理）使你可以禁用或绕过设备锁屏界面密码。 可以使用此设置防止最终用户配置 Smart Lock。|
-|**解锁指纹**|&nbsp;|
+|**Exigir configurações de senha em dispositivos**|Requer uma senha nos dispositivos com suporte.|  
+|**Comprimento mínimo da senha (caracteres)**|O comprimento mínimo da senha.|  
+|**Validade da senha em dias**|O número de dias antes que uma senha precise ser alterada.|  
+|**Número de senhas lembradas**|Impede a reutilização de senhas usadas recentes.|  
+|**Número de tentativas de logon com falha antes de o dispositivo ser apagado**|Apaga o dispositivo se houver falha neste número de tentativas de logon.|  
+|**Tempo ocioso antes que o dispositivo móvel seja bloqueado**|Selecione a quantidade de tempo durante o qual o dispositivo fica inutilizado de ser bloqueado.|
+|**Qualidade da senha**|Selecione o nível necessário de complexidade de senha e também se dispositivos biométricos podem ser usados.|  
+|**Permitir Smart Lock e outros agentes de confiança**|Permite controlar o recurso Smart Lock em dispositivos Android compatíveis. Essa capacidade do telefone, às vezes conhecida como agentes de confiança, permite desabilitar ou ignorar a senha da tela de bloqueio do dispositivo se o dispositivo estiver em um local confiável, como quando ele está conectado a um dispositivo Bluetooth específico, ou quando ele está perto de uma marca NFC. Você pode usar essa configuração para impedir que usuários finais configurem o Smart Lock.|
+|**Impressão digital de desbloqueio**|&nbsp;|
 
-###  <a name="work-profile"></a>工作配置文件  
- 这些设置仅适用于 Samsung KNOX 设备。  
+###  <a name="work-profile"></a>Perfil de trabalho  
+ Estas configurações se aplicam apenas a dispositivos Samsung KNOX.  
 
-|设置名|详细信息|  
+|Nome da configuração|Detalhes|  
 |------------------|-------------|  
-|**允许在工作和个人配置文件之间共享数据**|选择：<br>- **未配置**<br>- 默认共享限制<br>- 工作配置文件中的应用可以处理来自个人配置文件的请求<br>- 个人配置文件中的应用可以处理来自工作配置文件的请求<br><br>（另请参阅使用自定义 URI 进行[复制-粘贴设置](#copy-paste-configuration-item-settings)）|  
-|**在设备处于锁定状态时隐藏工作配置文件通知 (Android 6.0 +)**||
-|**设置默认应用程序权限策略 (Android 6.0 +)**|选择：<br>- **未配置**<br>- **始终提示**<br>- **自动授予**<br>- **自动拒绝**|
+|**Permitir o compartilhamento de dados entre perfis pessoais e de trabalho**|Escolha:<br>- **Não configurado**<br>- **Restrições de compartilhamento padrão**<br>- **Os aplicativos no perfil de trabalho podem lidar com solicitações de perfil pessoal**<br>- **Os aplicativos no perfil pessoal podem lidar com solicitações de perfil de trabalho**<br><br>(Confira também [Configurações de copiar e colar](#copy-paste-configuration-item-settings) usando o URI personalizado)|  
+|**Ocultar notificações de perfil de trabalho quando o dispositivo estiver bloqueado (Android 6.0 e posteriores)**||
+|**Definir política de permissão do aplicativo padrão (Android 6.0 e posteriores)**|Escolha:<br>- **Não configurado**<br>- **Sempre solicitar**<br>- **Concessão automática**<br>- **Negação automática**|
 
-### <a name="copy-paste-configuration-item-settings"></a>复制-粘贴配置项目设置
-没有任何“允许工作和个人配置文件间的数据共享”选项可阻止复制-粘贴行为。 使用可配置为阻止复制-粘贴的自定义设置。 这可以通过自定义 URI 来设置。
+### <a name="copy-paste-configuration-item-settings"></a>Copiar e colar definições de item de configuração
+Nenhuma das opções **Permitir compartilhamento de dados entre perfis pessoais e de trabalho** impede o comportamento de copiar e colar. Use uma configuração personalizada que pode ser configurada para impedir ações de copiar e colar. Isso pode ser definido por meio do URI personalizado.
 
 - OMA-URI: ./Vendor/MSFT/WorkProfile/DisallowCrossProfileCopyPaste
-- 值类型：布尔
+- Tipo de valor: Booliano
 
-设置 DisallowCrossProfileCopyPaste，以确实阻止 Android for Work 个人和工作配置文件之间的复制粘贴行为。
+A definição de DisallowCrossProfileCopyPaste como true impede o comportamento de copiar e colar entre perfis de trabalho e pessoal do Android for Work.
 
-## <a name="see-also"></a>另请参阅  
- [未使用 System Center Configuration Manager 客户端管理的设备的配置项目](../../compliance/deploy-use/configuration-items-for-devices-managed-without-the-client.md)
+## <a name="see-also"></a>Consulte também  
+ [Itens de configuração de dispositivos gerenciados sem o cliente do System Center Configuration Manager](../../compliance/deploy-use/configuration-items-for-devices-managed-without-the-client.md)

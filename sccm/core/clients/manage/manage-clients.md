@@ -1,6 +1,6 @@
 ---
-title: "管理客户端 | Microsoft Docs"
-description: "了解如何在 System Center Configuration Manager 中管理客户端。"
+title: Gerenciar clientes | Microsoft Docs
+description: Saiba como gerenciar clientes no System Center Configuration Manager.
 ms.custom: na
 ms.date: 04/23/2017
 ms.prod: configuration-manager
@@ -17,201 +17,201 @@ manager: angrobe
 ms.openlocfilehash: 3a86924b2e5db3ac16eeda78b95ae6747ffd656f
 ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
 ms.translationtype: HT
-ms.contentlocale: zh-CN
+ms.contentlocale: pt-BR
 ms.lasthandoff: 08/07/2017
 ---
-# <a name="how-to-manage-clients-in-system-center-configuration-manager"></a>如何在 System Center Configuration Manager 中管理客户端
+# <a name="how-to-manage-clients-in-system-center-configuration-manager"></a>Como gerenciar clientes no System Center Configuration Manager
 
-*适用范围：System Center Configuration Manager (Current Branch)*
+*Aplica-se a: System Center Configuration Manager (Branch Atual)*
 
-安装了 System Center Configuration Manager 客户端并将其成功分配到 Configuration Manager 站点后，将在“设备”节点的“资产和符合性”工作区中，以及在“设备集合”节点的一个或多个集合中看到该设备。 选择设备或集合时，可执行管理操作。 但是，也可以使用其他方式管理客户端，这可能涉及控制台中的其他工作区或不使用 Configuration Manager 控制台的任务。  
+Quando um cliente do System Center Configuration Manager for instalado e atribuído com êxito a um site do Configuration Manager, você verá o dispositivo no espaço de trabalho **Ativos e Conformidade** no nó **Dispositivos** e em uma ou mais coleções no nó **Coleções de Dispositivos**. Quando você seleciona o dispositivo ou uma coleção, pode executar operações de gerenciamento. No entanto, também há outras maneiras de gerenciar o cliente, as quais podem envolver outros espaços de trabalho no console ou tarefas que não usam o console do Configuration Manager.  
 
 > [!NOTE]  
->  Configuration Manager 客户端可能已安装但未显示在 Configuration Manager 控制台中。 如果尚未将客户端成功分配到站点，或者必须刷新控制台或集合成员身份已更新，则可能发生此情况。  
+>  Um cliente do Configuration Manager pode estar instalado e não ser exibido no console do Configuration Manager. Isso poderá acontecer se o cliente ainda não tiver sido atribuído a um site com êxito ou se o console precisar ser atualizado ou uma associação de coleção atualizada.  
 >   
->  此外，在未安装 Configuration Manager 客户端时，设备也可能显示在控制台中。 如果发现了设备，但未安装和分配 Configuration Manager 客户端，则可能发生此情况。 通过使用 Exchange Server 连接器管理的移动设备，以及通过 Microsoft Intune 注册的设备不会安装 Configuration Manager 客户端。  
+>  Além disso, um dispositivo também pode ser exibido no console quando o cliente do Configuration Manager não estiver instalado. Isso poderá acontecer se o dispositivo for descoberto, mas o cliente do Configuration Manager não estiver instalado e atribuído. Os dispositivos móveis que são gerenciados usando o conector do Exchange Server e os dispositivos que são registrados pelo Microsoft Intune, não instalam o cliente do Configuration Manager.  
 >   
->  使用 Configuration Manager 控制台中的“客户端”列来确定是否安装了 Configuration Manager 客户端，以便可以从 Configuration Manager 控制台对其进行管理。  
+>  Use a coluna **Cliente** no console do Configuration Manager para determinar se o cliente do Configuration Manager está instalado, para que você possa gerenciá-lo do console do Configuration Manager.  
 
-##  <a name="BKMK_ManagingClients_DevicesNode"></a> 通过“设备”节点管理客户端  
+##  <a name="BKMK_ManagingClients_DevicesNode"></a> Gerenciar clientes no nó Dispositivos  
 
-请注意：其中某些选项可能不可用，具体取决于设备类型。  
+Observe que, dependendo do tipo de dispositivo, algumas dessas opções poderão não estar disponíveis.  
 
-1.  在 Configuration Manager 控制台中，选择“资产和符合性” >  “设备”。  
+1.  No console do Configuration Manager, escolha **Ativos e Conformidade** >  **Dispositivos**.  
 
-3.  选择一台或多台设备，然后从功能区中选择或通过右键单击设备来选择其中一个客户端管理任务：  
+3.  Selecione um ou mais dispositivos e depois selecione uma das tarefas de gerenciamento de cliente na faixa de opções ou clique com o botão direito do mouse no dispositivo:  
 
-    -   **管理用户设备相关性信息**  
+    -   **Gerenciar informações de afinidade do dispositivo do usuário**  
 
-         配置用户和设备之间的关联，以便高效地向用户部署软件。  
+         Configure as associações entre usuários e dispositivos para que você possa implantar o software para os usuários de forma eficiente.  
 
-         请参阅[在 System Center Configuration Manager 中将用户和设备与用户设备相关性相链接](../../../apps/deploy-use/link-users-and-devices-with-user-device-affinity.md)  
+         Consulte [Vincular usuários e dispositivos com a afinidade de dispositivo de usuário no System Center Configuration Manager](../../../apps/deploy-use/link-users-and-devices-with-user-device-affinity.md)  
 
-    -   **将设备添加到新集合或现有集合**  
+    -   **Adicionar o dispositivo a uma coleção nova ou existente**  
 
-         使用直接规则向集合添加设备。  
+         Adicione o dispositivo a uma coleção com uma regra direta.  
          
-    -   **通过使用客户端请求向导来安装和重新安装客户端**  
+    -   **Instalar e reinstalar o cliente usando o Assistente de Push de Cliente**  
 
-         安装和重新安装 Configuration Manager 客户端，以便对其进行修复或者在运行 Windows 的计算机上对其进行重新配置。 包括站点配置选项以及为客户端请求安装设置的 client.msi 属性。  
+         Instale e reinstale o cliente do Configuration Manager para repará-lo ou reconfigurá-lo em computadores que executam o Windows. Inclui opções de configuração do site e as propriedades de client.msi definidas para instalação do cliente por push.  
 
         > [!TIP]  
-        >  可通过多种不同的方式来安装（和重新安装）Configuration Manager 客户端。 尽管客户端请求向导提供一种方便的客户端安装方法（因为你可从控制台中运行它），但此方法有许多依赖关系，并且不适合于所有环境。 有关依赖关系的详细信息，请参阅[在 System Center Configuration Manager 中将客户端部署到 Windows 计算机的先决条件](../../../core/clients/deploy/prerequisites-for-deploying-clients-to-windows-computers.md)。 有关其他客户端安装方法的详细信息，请参阅 [System Center Configuration Manager 中的客户端安装方法](../../../core/clients/deploy/plan/client-installation-methods.md)。  
+        >  Há várias maneiras diferentes de instalar (e reinstalar) o cliente do Configuration Manager. Embora o Assistente de Push de Cliente ofereça um método de instalação de cliente conveniente, pois é possível executá-lo do console, esse método tem muitas dependências e não é adequado para todos os ambientes. Para obter mais informações sobre as dependências, consulte [Pré-requisitos para a implantação de clientes em computadores com Windows no System Center Configuration Manager](../../../core/clients/deploy/prerequisites-for-deploying-clients-to-windows-computers.md). Para obter mais informações sobre outros métodos de instalação de cliente, consulte [Métodos de instalação do cliente no System Center Configuration Manager](../../../core/clients/deploy/plan/client-installation-methods.md).  
 
-         请参阅 [如何使用客户端请求安装 Configuration Manager 客户端](../../../core/clients/deploy/deploy-clients-to-windows-computers.md#BKMK_ClientPush)。  
+         Consulte [Como instalar clientes do Configuration Manager usando push de cliente](../../../core/clients/deploy/deploy-clients-to-windows-computers.md#BKMK_ClientPush).  
 
-    -   **重新分配站点**  
+    -   **Transferir Site**  
 
-         将一个或多个客户端（包括被管理的移动设备）重新分配到层次结构中的另一个主站点。 可以单独重新分配客户端，也可以选择多个客户端并成批重新分配到新站点。  
+         Transfira um ou mais clientes, incluindo dispositivos móveis gerenciados, para outro site primário na hierarquia. Os clientes podem ser reatribuídos individualmente ou podem ser selecionados várias vezes e reatribuídos em massa a um novo site.  
 
-    -   **以远程方式管理客户端**  
+    -   **Administrar o cliente remotamente**  
 
-         你可以运行资源浏览器来查看 Windows 客户端中的硬件和软件清单信息，并通过使用远程控制、远程协助或远程桌面对其进行远程管理。  
+         Você pode executar o Gerenciador de Recursos para ver as informações de inventário de hardware e de software de um cliente do Windows e administrá-lo remotamente usando o Controle Remoto, a Assistência Remota ou a Área de Trabalho Remota.  
 
-         请参阅[如何使用资源浏览器来查看 System Center Configuration Manager 中的硬件清单](../../../core/clients/manage/inventory/use-resource-explorer-to-view-hardware-inventory.md)和[如何使用资源浏览器来查看 System Center Configuration Manager 中的软件清单](../../../core/clients/manage/inventory/use-resource-explorer-to-view-software-inventory.md)。  
+         Consulte [Como usar o Gerenciador de Recursos para exibir o inventário de hardware no System Center Configuration Manager](../../../core/clients/manage/inventory/use-resource-explorer-to-view-hardware-inventory.md) e [Como usar o Gerenciador de Recursos para exibir o inventário de software no System Center Configuration Manager](../../../core/clients/manage/inventory/use-resource-explorer-to-view-software-inventory.md).  
 
-         请参阅[如何使用 System Center Configuration Manager 远程管理 Windows 客户端计算机](../../../core/clients/manage/remote-control/remotely-administer-a-windows-client-computer.md)。  
+         Consulte [Como administrar remotamente um computador cliente com Windows usando o System Center Configuration Manager](../../../core/clients/manage/remote-control/remotely-administer-a-windows-client-computer.md).  
 
-    -   **批准客户端**  
+    -   **Aprovar um cliente**  
 
-         客户端使用 HTTP 和自签名证书与站点系统通信时，必须批准这些客户端以将其标识为受信任计算机。 默认情况下，站点配置会自动批准同一 Active Directory 林和受信任林中的客户端，这样你就不必手动批准每个客户端。 但是，你必须手动批准你信任的工作组计算机以及你信任但未获批准的任何其他计算机。  
-
-        > [!WARNING]  
-        >  尽管某些管理功能可能适合于未批准的客户端，但 Configuration Manager 不支持这种情况。  
-
-         不必批准始终使用 HTTPS 与站点系统通信的客户端，或在通过 HTTP 与站点系统通信时使用 PKI 证书的客户端。 这些客户端通过使用 PKI 证书建立信任。  
-
-    -   **阻止或解除阻止客户端**  
-
-         阻止不再信任的客户端，以防止该客户端接收客户端策略并防止 Configuration Manager 站点系统与之通信。  
+         Quando o cliente se comunica com o sistema de sites usando HTTP e um certificado autoassinado, é necessário aprovar esses clientes para identificá-los como computadores confiáveis. Por padrão, a configuração do site aprova automaticamente clientes da mesma floresta e de florestas confiáveis do Active Directory, para que você não precise aprovar cada cliente manualmente. No entanto, é necessário aprovar manualmente computadores do grupo de trabalho confiáveis e outros computadores nos quais você confia, mas não estão aprovados.  
 
         > [!WARNING]  
-        >  阻止客户端的操作只会阻止从客户端到 Configuration Manager 站点系统的通信，而不会阻止与其他设备的通信。 此外，当客户端通过使用 HTTP（而不是 HTTPS）与站点系统通信时，还有一些安全限制。  
+        >  Embora algumas funções de gerenciamento possam funcionar para clientes não aprovados, não há suporte para esse cenário no Configuration Manager.  
 
-         可取消阻止已阻止的客户端。 但是，如果你在阻止了为 AMT 设置的基于 Intel AMT 的计算机后取消阻止该计算机，你必须执行其他步骤，然后才能再次在带外管理该计算机。  
+         Não é necessário aprovar clientes que sempre se comunicam com sistemas de sites usando HTTPS ou clientes que usam um certificado PKI ao se comunicarem com sistemas de sites usando HTTP. Esses clientes estabelecem uma relação de confiança usando os certificados PKI.  
 
-         请参阅[确定是否在 System Center Configuration Manager 中阻止客户端](../../../core/clients/deploy/plan/determine-whether-to-block-clients.md)。  
+    -   **Bloquear ou desbloquear um cliente**  
 
-    -   **清除所需的 PXE 部署**  
-
-         为计算机重新部署所需的 PXE 部署。  
-
-         请参阅[使用 PXE 与 System Center Configuration Manager 一起通过网络部署 Windows](../../../osd/deploy-use/use-pxe-to-deploy-windows-over-the-network.md)。  
-
-    -   **管理客户端属性**  
-
-         查看发现数据和针对客户端的部署。 也可以配置任务序列用于将操作系统部署到设备的变量。  
-
-    -   **删除客户端**  
+         Bloqueie um cliente no qual você não confia mais, para que ele não receba a política de cliente e para impedir que sistemas de sites do Configuration Manager se comuniquem com ele.  
 
         > [!WARNING]  
-        >  如果要卸载 Configuration Manager 客户端或将其从集合中移除，请不要删除客户端。  
+        >  Bloquear um cliente impede apenas a comunicação dele com os sistemas de sites do Configuration Manager, e não a comunicação dele com outros dispositivos. Além disso, quando o cliente se comunica com sistemas de site usando HTTP em vez de HTTPS, há algumas limitações de segurança.  
 
-         “删除”操作会从 Configuration Manager 数据库手动删除客户端记录，除非用于故障排除方案，否则通常不应使用此操作。 如果删除客户端记录，而客户端仍处于已安装状态并与 Configuration Manager 通信，则检测信号发现会重新创建客户端记录，并且该记录会重新出现在 Configuration Manager 控制台中，尽管客户端历史记录和任何以前的关联将丢失。  
+         Você pode desbloquear um cliente bloqueado. No entanto, se você desbloquear um computador baseado em Intel AMT que estava provisionado para AMT ao ser bloqueado, será necessário executar etapas adicionais para poder gerenciar esse computador novamente fora da banda.  
+
+         Consulte [Determinar o bloqueio de clientes no System Center Configuration Manager](../../../core/clients/deploy/plan/determine-whether-to-block-clients.md).  
+
+    -   **Limpar implantação PXE necessária**  
+
+         Reimplante as implantações PXE necessárias para o computador.  
+
+         Consulte [Use o PXE para implantar o Windows pela rede com o System Center Configuration Manager](../../../osd/deploy-use/use-pxe-to-deploy-windows-over-the-network.md).  
+
+    -   **Gerenciar as propriedades do cliente**  
+
+         Exiba os dados de descoberta e as implantações direcionadas ao cliente. Você também pode configurar variáveis que as sequências de tarefa usam para implantar um sistema operacional no dispositivo.  
+
+    -   **Excluir o cliente**  
+
+        > [!WARNING]  
+        >  Não exclua um cliente se você quiser desinstalar o cliente do Configuration Manager ou removê-lo de uma coleção.  
+
+         A ação **Excluir** exclui manualmente o registro do cliente do banco de dados do Configuration Manager e, geralmente, você não deve usar essa ação exceto em cenários de solução de problemas. Se você excluir o registro do cliente e o cliente ainda estiver instalado e se comunicando com o Configuration Manager, a Descoberta de Pulsação recriará esse registro e ele reaparecerá no console do Configuration Manager, embora o histórico do cliente e suas associações anteriores sejam perdidas.  
 
         > [!NOTE]  
-        >  删除通过 Configuration Manager 注册的移动设备客户端时，此操作还会吊销颁发给移动设备的 PKI 证书，并且管理点随后会拒绝此证书（即使 IIS 未检查 CRL）。 在删除这些客户端时，不会吊销移动设备旧客户端上的证书。  
+        >  Quando você exclui um cliente de dispositivo móvel registrado pelo Configuration Manager, essa ação também revoga o certificado PKI enviado ao dispositivo móvel e o certificado é rejeitado pelo ponto de gerenciamento, mesmo que o IIS não verifique a CRL. Certificados de clientes herdados de dispositivos móveis não são revogados quando esses clientes são excluídos.  
 
-         要卸载客户端，请参阅 [卸载 Configuration Manager 客户端](#BKMK_UninstalClient)。  
+         Para desinstalar o cliente, consulte [Desinstalar o cliente do Configuration Manager](#BKMK_UninstalClient).  
 
-         要将客户端分配到一个新的主站点，请参阅[如何在 System Center Configuration Manager 中将客户端分配到一个站点](../../../core/clients/deploy/assign-clients-to-a-site.md)。  
+         Para atribuir o cliente a um novo site primário, consulte [Como atribuir clientes a um site no System Center Configuration Manager](../../../core/clients/deploy/assign-clients-to-a-site.md).  
 
-         要从集合中删除客户端，请重新配置集合属性。 请参阅[如何在 System Center Configuration Manager 中管理集合](../../../core/clients/manage/collections/manage-collections.md)。  
+         Para remover o cliente de uma coleção, reconfigure as propriedades da coleção. Consulte [Como gerenciar coleções no System Center Configuration Manager](../../../core/clients/manage/collections/manage-collections.md).  
 
-    -   **擦除移动设备**  
+    -   **Apagar um dispositivo móvel**  
 
-         你可以擦除支持擦除命令的移动设备。  
+         Você pode apagar os dispositivos móveis que oferecem suporte ao comando de apagamento.  
 
-         此操作会永久删除移动设备上的所有数据，包括个人设置和个人数据。 通常，此操作会将移动设备重置回出厂默认值。 移动设备不再受信任（例如，丢失或被盗）时将其擦除。  
+         Essa ação remove permanentemente todos os dados do dispositivo móvel, que incluem dados e configurações pessoais. Geralmente, essa ação restaura os padrões de fábrica do dispositivo móvel. Apague um dispositivo móvel quando ele não for mais confiável, por exemplo, se ele for perdido ou roubado.  
 
         > [!TIP]  
-        >  请检查制造商的文档以了解有关移动设备如何处理远程擦除命令的详细信息。  
+        >  Consulte a documentação do fabricante para obter mais informações sobre como o dispositivo móvel processa um comando de apagamento remoto.  
 
-         移动设备收到擦除命令之前通常会有延迟：  
+         Geralmente há um atraso até que o dispositivo móvel receba o comando de apagamento:  
 
-        -   如果移动设备是通过 Configuration Manager 或 Microsoft Intune 注册的，则客户端会在下载客户端策略时收到命令。  
+        -   Se o dispositivo móvel for registrado pelo Configuration Manager ou pelo Microsoft Intune, o cliente receberá o comando quando baixar a política do cliente.  
 
-        -   如果通过 Exchange Server 连接器管理移动设备，则移动设备会在其与 Exchange 同步时收到命令。  
+        -   Se o dispositivo móvel for gerenciado pelo conector do Exchange Server, ele receberá o comando quando fizer a sincronização com o Exchange.  
 
-         可使用“擦除状态” 列来监视设备何时收到擦除命令。 设备将擦除确认发送到 Configuration Manager 之前，可以取消擦除命令。  
+         Você pode usar a coluna **Apagar Status** para monitorar quando o dispositivo receberá o comando de apagamento. Até que o dispositivo envie um confirmação de apagamento ao Configuration Manager, você poderá cancelar o comando de apagamento.  
 
-    -   **停用移动设备**  
+    -   **Desativar um dispositivo móvel**  
 
-         只有通过 Intune 或本地移动设备管理注册的移动设备才支持“停用”选项。  
+         Há suporte para a opção **Desativar** somente em dispositivos móveis registrados pelo Intune ou pelo Gerenciamento de Dispositivo Móvel local.  
 
-         有关详细信息，请参阅 [使用 System Center Configuration Manager 的远程擦除、远程锁定或密码重置功能帮助保护数据](../../../mdm/deploy-use/wipe-lock-reset-devices.md)。  
+         Para obter mais informações, veja [Ajude a proteger seus dados com apagamento remoto, bloqueio remoto ou redefinição de senha usando o System Center Configuration Manager](../../../mdm/deploy-use/wipe-lock-reset-devices.md).  
 
-    -   **更改设备的所有权**  
+    -   **Alterar a propriedade de um dispositivo**  
 
-         如果设备未加入域并且未安装 Configuration Manager 客户端，则可以将设备的所有权更改为“公司”或“个人”。  
+         Você poderá alterar a propriedade dos dispositivos para **Empresa** ou **Pessoal** se um dispositivo não estiver associado ao domínio e não tiver o cliente do Configuration Manager instalado.  
 
-         可在应用程序要求中使用此值来控制部署，以及控制从用户设备中收集的清单数量。  
+         É possível usar esse valor nos requisitos de aplicativo para controlar as implantações e para controlar quanto inventário é coletado dos dispositivos dos usuários.  
 
-        可能需要右键单击任意列标题并选择“设备所有者”列，将此列添加到视图中。
+        Talvez seja necessário adicionar a coluna **Proprietário do Dispositivo** à exibição clicando com o botão direito do mouse em qualquer título de coluna e selecionando-a.
 
-         有关详细信息，请参阅[使用 System Center Configuration Manager 和 Microsoft Intune 的混合移动设备管理 (MDM)](../../../mdm/understand/hybrid-mobile-device-management.md)。  
+         Para obter mais informações, consulte [Hybrid mobile device management (MDM) with System Center Configuration Manager and Microsoft Intune](../../../mdm/understand/hybrid-mobile-device-management.md) (MDM [gerenciamento de dispositivo móvel] híbrido com o System Center Configuration Manager e o Microsoft Intune).  
 
-##  <a name="BKMK_ManagingClients_DeviceCollectionsNode"></a> 通过“设备集合”节点管理客户端  
-  可在“设备”节点中的单台设备或多台设备上执行的许多任务也可在集合上执行。 这会将操作自动应用于集合中的所有合格设备。 请注意：这会生成大量网络数据包，并增加站点服务器上的 CPU 使用率。  
+##  <a name="BKMK_ManagingClients_DeviceCollectionsNode"></a> Gerenciar clientes no nó Coleções de Dispositivos  
+  Muitas das tarefas que você pode executar em um único dispositivo ou em vários dispositivos no nó **Dispositivos** podem ser realizadas em coleções. Isso aplica automaticamente a operação a todos os dispositivos qualificados da coleção. Observe que isso gera muitos pacotes de rede e aumenta o uso da CPU no servidor do site.  
 
-  在执行集合级别客户端管理任务之前，请考虑集合中有多少设备、这些设备是否通过低带宽网络连接进行连接，以及对于所有设备任务将花费多长时间完成。 开始后，无法从控制台中停止任务。  
+  Para poder realizar tarefas de gerenciamento de cliente no nível da coleção, considere a quantidade de dispositivos existentes na coleção, se eles estão conectados por conexões de rede de baixa largura de banda e quanto tempo a tarefa levará para ser concluída em todos os dispositivos. Uma vez iniciada, você não pode interromper a tarefa do console.  
 
-#### <a name="to-manage-clients-from-the-device-collections-node"></a>通过“设备集合”节点管理客户端  
+#### <a name="to-manage-clients-from-the-device-collections-node"></a>Para gerenciar clientes no nó Coleções de Dispositivos  
 
-1.  在 Configuration Manager 控制台中，选择“资产和符合性” > “设备集合”。  
+1.  No console do Configuration Manager, escolha **Ativos e Conformidade** > **Coleções de Dispositivos**.  
 
-3.  选择一个集合，然后从功能区中选择或通过右键单击集合来选择下列客户端管理任务之一。 这些客户端管理任务只能在集合级别执行。  
+3.  Selecione uma coleção e depois uma das tarefas de gerenciamento de cliente a seguir na faixa de opções ou clique com o botão direito do mouse na coleção. Essas tarefas de gerenciamento do cliente podem ser executadas *somente* no nível da coleção.  
 
-    -   **扫描计算机以查找恶意软件并下载反恶意软件定义文件。**  
+    -   **Verifique a existência de malwares nos computadores e baixe arquivos de definição de antimalware.**  
 
-         请参阅 [System Center Configuration Manager 中的 Endpoint Protection](../../../protect/deploy-use/endpoint-protection.md)。  
+         Consulte [Endpoint Protection no System Center Configuration Manager](../../../protect/deploy-use/endpoint-protection.md).  
 
-    -   **部署软件、配置基线和任务序列。**  
+    -   **Implante o software, as linhas de base de configuração e as sequências de tarefas.**  
 
-         请参阅：  
+         Consulte:  
 
-        -   [在 System Center Configuration Manager 中部署软件更新](../../../sum/deploy-use/deploy-software-updates.md)  
+        -   [Implantar atualizações de software no System Center Configuration Manager](../../../sum/deploy-use/deploy-software-updates.md)  
 
-        -   [在 System Center Configuration Manager 中规划和配置符合性设置](../../../compliance/plan-design/plan-for-and-configure-compliance-settings.md)  
+        -   [Planejar e definir configurações de conformidade no System Center Configuration Manager](../../../compliance/plan-design/plan-for-and-configure-compliance-settings.md)  
 
-    -   **配置电源管理设置。**  
+    -   **Definir configurações de gerenciamento de energia.**  
 
-         请参阅[如何在 System Center Configuration Manager 中创建并应用电源计划](../../../core/clients/manage/power/create-and-apply-power-plans.md)。 电源计划只能用于运行 Windows 的计算机。  
+         Consulte [Como criar e aplicar planos de energia no System Center Configuration Manager](../../../core/clients/manage/power/create-and-apply-power-plans.md). Planos de energia podem ser usados somente em computadores que executam o Windows.  
 
-    -   **通知计算机尽快下载策略。**  
+    -   **Notifique os computadores para que baixem a política assim que possível.**  
 
-         使用客户端通知来通知所选 Windows 客户端，在客户端策略轮询间隔外尽快下载计算机策略。  
+         Use a notificação de cliente para informar aos clientes do Windows selecionados para baixar a política de computador assim que possível, fora do intervalo de sondagem da política do cliente.  
 
-         客户端通知任务显示在“监视”  工作区的“客户端操作”  节点中。  
+         As tarefas de notificação de cliente são exibidas no nó **Operações Cliente** , no espaço de trabalho **Monitoramento** .  
 
-##  <a name="BKMK_ClientCache"></a> 为 Configuration Manager 客户端配置客户端缓存  
-客户端缓存会存储客户端安装应用程序和程序时的临时文件。 软件更新也使用客户端缓存，但软件更新不受配置的缓存大小所限，并且将始终尝试下载到缓存。 可在手动安装 Configuration Manager 客户端时、使用客户端请求安装时或在安装客户端之后配置客户端缓存设置，例如大小和位置。
+##  <a name="BKMK_ClientCache"></a> Configurar o cache de cliente para clientes do Configuration Manager  
+O cache do cliente armazena arquivos temporários para quando os clientes instalam aplicativos e programas. As atualizações de software também usam cache de cliente, mas não são restritas pelo tamanho do cache configurado e sempre tentam baixar no cache. É possível definir as configurações do cache de cliente, como tamanho e local, quando você instala o cliente do Configuration Manager manualmente, quando usa a instalação do cliente por push ou após o cliente ser instalado.
 
-自 Configuration Manager 1606 版开始，可使用 Configuration Manager 控制台中的客户端设置来指定缓存文件夹大小。   
+A partir da versão 1606 do Configuration Manager, você pode especificar o tamanho da pasta de cache usando as configurações do cliente no console do Configuration Manager.   
 
- Configuration Manager 客户端缓存的默认位置为 %*windir*%\ccmcache，默认磁盘空间为 5120 MB。  
+ O local padrão para o cache de cliente do Configuration Manager é %*windir*%\ccmcache e espaço em disco padrão é 5120 MB.  
 
 > [!IMPORTANT]  
->  不要对用于客户端缓存的文件夹进行加密。 Configuration Manager 无法将内容下载到加密的文件夹。  
+>  Não criptografe a pasta usada para o cache do cliente. O Configuration Manager não pode baixar o conteúdo em uma pasta criptografada.  
 
-### <a name="about-client-cache"></a>关于客户端缓存  
+### <a name="about-client-cache"></a>Sobre o cache do cliente  
 
-Configuration Manager 客户端会在接收部署之后立即下载所需软件的内容，但会等到部署计划时间之后才会运行。 在计划的时间，Configuration Manager 客户端将检查以确定缓存中是否有内容。 如果内容位于缓存中且版本正确，则客户端会使用该缓存内容。 如果内容的所需版本已更改或者已将内容删除以便为另一个包腾出空间，则会将内容再次下载到缓存。  
+O cliente do Configuration Manager baixa o conteúdo do software necessário logo após receber a implantação, mas aguarda para executá-lo até o horário agendado para a implantação. No horário agendado, o cliente do Configuration Manager verifica se o conteúdo está disponível no cache. Se o conteúdo estiver no cache e for a versão correta, o cliente usará seu conteúdo armazenado em cache. Quando a versão necessária do conteúdo foi alterada ou se o conteúdo foi excluído para ceder espaço a outro pacote, o conteúdo será baixado no cache novamente.  
 
-如果客户端尝试下载的程序或应用程序内容大小超出缓存的大小，则部署将因缓存大小不足而失败，并且 Configuration Manager 将生成状态消息 ID 10050。 如果以后增加了缓存大小，则会出现以下结果：  
+Se o cliente tentar baixar conteúdo de um programa ou aplicativo que seja maior que o tamanho do cache, a implantação falhará devido ao tamanho do cache insuficiente e o Configuration Manager gerará a ID de mensagem de status 10050. Se o tamanho do cache for aumentado posteriormente, o resultado será:  
 
--   对于所需程序：客户端不会自动重试下载内容。 你必须将包和程序重新部署到客户端。  
--   对于所需应用程序：客户端会在下载其客户端策略时自动重试下载内容。  
+-   Para um programa necessário: O cliente não tenta automaticamente baixar o conteúdo novamente. Você deve reimplantar o pacote e o programa no cliente.  
+-   Para um aplicativo necessário: o cliente automaticamente tentará baixar o conteúdo novamente quando baixar sua política de cliente.  
 
-如果客户端尝试下载的包小于缓存大小，但缓存已满，则所有必需的部署将在下载超时之前或达到缓存空间失败的重试限制之前一直重试，直至缓存空间可用。 如果稍后增加了缓存大小，则 Configuration Manager 客户端将尝试在下一次重试间隔期间再次下载该包。 客户端将每隔四小时尝试下载内容一次，直至尝试 18 次为止。  
+Se o cliente tenta baixar um pacote menor em tamanho do que o cache, mas o cache já estiver cheio, todas as implantações necessárias continuam tentando fazê-lo até que o espaço do cache esteja disponível, até que o download atinja o tempo limite ou até que o limite de repetição chegue para a falha de espaço no cache. Se o tamanho do cache for aumentado posteriormente, o cliente do Configuration Manager tentará baixar o pacote novamente durante o próximo intervalo de repetição. O cliente tenta baixar o conteúdo a cada quatro horas por 18 vezes.  
 
-在客户端使用了缓存的内容后，将不会自动删除该内容，但会将其在缓存中保留至少一天。 如果将包属性配置为包含将内容保留在客户端缓存中的选项，则客户端不会自动从缓存中删除包内容。 如果客户端缓存空间由最近 24 小时内下载的包占用，并且客户端必须下载新包，你可以增加客户端缓存大小，或选择删除选项以删除保留的缓存内容。  
+O conteúdo armazenado em cache não é excluído automaticamente e permanece no cache por no mínimo um dia após o cliente usar esse conteúdo. Se você configura as propriedades do pacote com a opção para persistir o conteúdo no cache do cliente, o cliente não exclui automaticamente o conteúdo do pacote do cache. Se o espaço do cache do cliente é usado por pacotes que foram baixados nas últimas 24 horas e o cliente precisa baixar novos pacotes, você pode aumentar o tamanho do cache do cliente ou escolher a opção de excluir para remover o conteúdo do cache persistente.  
 
- 使用以下过程在手动客户端安装过程中或在安装客户端之后配置客户端缓存。  
+ Use os procedimentos a seguir para configurar o cache do cliente durante a instalação manual do cliente ou após a sua instalação.  
 
-### <a name="to-configure-the-client-cache-when-you-install-clients-by-using-manual-client-installation"></a>在使用手动客户端安装来安装客户端时配置客户端缓存  
+### <a name="to-configure-the-client-cache-when-you-install-clients-by-using-manual-client-installation"></a>Para configurar o cache do cliente para a instalação manual do cliente  
 
-从安装源位置运行 CCMSetup.exe 命令，并指定所需的以下属性，用空格分隔：  
+Execute o comando CCMSetup.exe por meio do local de origem da instalação e especifique as seguintes propriedades que precisar, separadas por espaço:  
 
    -   DISABLECACHEOPT  
 
@@ -222,17 +222,17 @@ Configuration Manager 客户端会在接收部署之后立即下载所需软件�
     -   SMSCACHESIZE  
 
         > [!NOTE]
-        > 对于版本 1606，请使用 Configuration Manager 控制台中“客户端设置”的可用缓存大小设置而不是 SMSCACHESIZE。 有关详细信息，请参阅[客户端缓存设置](../../../core/clients/deploy/about-client-settings.md#client-cache-settings)。
+        > Para a versão 1606, use as configurações de tamanho de cache disponíveis em **Configurações do Cliente** no console do Configuration Manager em vez de SMSCACHESIZE. Para obter mais informações, consulte [Configurações do Cache do Cliente](../../../core/clients/deploy/about-client-settings.md#client-cache-settings).
 
-有关如何使用 CCMSetup.exe 的这些命令行属性的详细信息，请参阅[关于 System Center Configuration Manager 中的客户端安装属性](../../../core/clients/deploy/about-client-installation-properties.md)。  
+Para obter mais informações sobre como usar essas propriedades de linha de comando para CCMSetup.exe, consulte [Sobre as propriedades de instalação do cliente no System Center Configuration Manager](../../../core/clients/deploy/about-client-installation-properties.md).  
 
-### <a name="to-configure-the-client-cache-folder-when-you-install-clients-by-using-client-push-installation"></a>在使用客户端请求安装来安装客户端时配置客户端缓存文件夹  
+### <a name="to-configure-the-client-cache-folder-when-you-install-clients-by-using-client-push-installation"></a>Para configurar o cache do cliente para a instalação do cliente por push  
 
-1.  在 Configuration Manager 控制台中，单击“管理” > “站点配置” > “站点”。  
+1.  No console do Configuration Manager, escolha **Administração** > **Configuração de Site** > **Sites**.  
 
-3.  选择相应站点，然后在“主页”选项卡上的“设置”组中，选择“客户端安装设置” > “安装属性”选项卡。  
+3.  Selecione o site apropriado e, na guia **Início**, no grupo **Configurações**, escolha **Configurações de Instalação do Site** > **guia Propriedades da Instalação**.  
 
-5.  指定以下属性，并使用空格分隔：  
+5.  Especifique as propriedades a seguir, separadas por espaços:  
 
     -   DISABLECACHEOPT  
 
@@ -243,125 +243,125 @@ Configuration Manager 客户端会在接收部署之后立即下载所需软件�
     -   SMSCACHESIZE  
 
         > [!NOTE]
-        > 对于版本 1606，请使用 Configuration Manager 控制台中“客户端设置”的可用缓存大小设置而不是 SMSCACHESIZE。 有关详细信息，请参阅[客户端缓存设置](../../../core/clients/deploy/about-client-settings.md#client-cache-settings)。
+        > Para a versão 1606, use as configurações de tamanho de cache disponíveis em **Configurações do Cliente** no console do Configuration Manager em vez de SMSCACHESIZE. Para obter mais informações, consulte [Configurações do Cache do Cliente](../../../core/clients/deploy/about-client-settings.md#client-cache-settings).
 
-       有关如何使用 CCMSetup.exe 的这些命令行属性的详细信息，请参阅[关于 System Center Configuration Manager 中的客户端安装属性](../../../core/clients/deploy/about-client-installation-properties.md)。  
+       Para obter mais informações sobre como usar essas propriedades de linha de comando para CCMSetup.exe, consulte [Sobre as propriedades de instalação do cliente no System Center Configuration Manager](../../../core/clients/deploy/about-client-installation-properties.md).  
 
-### <a name="to-configure-the-client-cache-folder-on-the-client-computer"></a>在客户端计算机上配置客户端缓存文件夹  
+### <a name="to-configure-the-client-cache-folder-on-the-client-computer"></a>Para configurar a pasta de cache do cliente no computador do cliente  
 
-1.  在客户端计算机上的控制面板中，导航到“Configuration Manager” ，然后双击以打开属性。  
+1.  No computador cliente, navegue até o **Configuration Manager** no Painel de Controle e clique duas vezes para abrir as propriedades.  
 
-2.  在“缓存”选项卡上，设置空间和位置属性。 默认位置为 *%windir%*\ccmcache。  
+2.  Na guia **Cache**, defina as propriedades de espaço e local. O local padrão é *%windir%*\ccmcache.  
 
-5.  若要删除缓存文件夹中的文件，请选择“删除文件”。  
+5.  Para excluir os arquivos na pasta de cache, escolha **Excluir Arquivos**.  
 
     > [!NOTE]
     > 
-    > 缓存文件夹是常规的 Windows 文件夹，因此可使用脚本、实用工具或 PowerShell cmdlet `Remove-Item` 自动删除文件夹内容。 
+    > O cache é uma pasta regular do Windows, portanto você pode automatizar a exclusão do conteúdo da pasta usando um script, um utilitário ou com o cmdlet do PowerShell `Remove-Item`. 
 
 
-### <a name="to-configure-client-cache-size-in-client-settings"></a>在客户端设置中配置客户端缓存大小
+### <a name="to-configure-client-cache-size-in-client-settings"></a>Para configurar o tamanho do cache do cliente nas Configurações do Cliente
 
-从版本 1606 开始，可以在无需重新安装客户端的情况下调整客户端缓存文件夹的大小。 若要执行此操作，请在 Configuration Manager 控制台中使用客户端设置配置客户端缓存大小。  
+A partir da versão 1606, você pode ajustar o tamanho da pasta de cache do cliente sem precisar reinstalar o cliente. Para fazer isso, configure o tamanho do cache do cliente no console do Configuration Manager usando as Configurações do Cliente.  
 
-1. 在 Configuration Manager 控制台中，转到“管理” > “客户端设置”。
+1. No console do Configuration Manager, vá até **Administração** > **Configurações do Cliente**.
 
-2. 双击“默认客户端设置”。
-  还可以创建自定义客户端设置，以便更有选择性地应用缓存大小。 有关默认客户端设置和自定义客户端设置的详细信息，请参阅[如何在 System Center Configuration Manager 中配置客户端设置](../../../core/clients/deploy/configure-client-settings.md)。
+2. Clique duas vezes em **Configurações do Cliente Padrão**.
+  Você também pode criar configurações personalizadas para aplicar o tamanho do cache de forma mais seletiva. Para obter mais informações sobre configurações do cliente padrão e personalizadas, consulte [Como definir as configurações do cliente no System Center Configuration Manager](../../../core/clients/deploy/configure-client-settings.md).
 
- 3. 选择“客户端缓存设置”，并针对“配置客户端缓存大小”选择“是”，然后选择使用“MB”或“磁盘设置的百分比”。 缓存可调整为任何小于最大缓存的大小。
+ 3. Escolha **Configurações de Cache do Cliente** e escolha **Sim** para **Configurar o tamanho do cache do cliente** e use **MB** ou as **configurações de percentual do disco**. O cache é ajustado para o tamanho que for menor.
 
-     在下载下一个客户端策略时，Configuration Manager 客户端将使用这些设置配置缓存大小。
+     O cliente do Configuration Manager configurará o tamanho do cache com essas configurações quando a próxima política de cliente for baixada.
 
-##  <a name="BKMK_UninstalClient"></a> 卸载 Configuration Manager 客户端  
- 可通过将 **CCMSetup.exe** 与 **/Uninstall** 属性一起使用从计算机卸载 Windows Configuration Manager 客户端软件。 在单独的计算机上从命令提示符运行 CCMSetup.exe，或部署包和程序为计算机集合卸载客户端。  
+##  <a name="BKMK_UninstalClient"></a> Desinstalar o cliente do Configuration Manager  
+ É possível desinstalar o software cliente do Windows Configuration Manager de um computador usando o **CCMSetup.exe** com a propriedade **/Uninstall**. Execute o CCMSetup.exe em um computador individual por meio do prompt de comando ou implante um pacote ou programa para desinstalar o cliente para a coleção de computadores.  
 
 > [!WARNING]  
->  无法从移动设备中卸载 Configuration Manager 客户端。 如果必须从移动设备中删除 Configuration Manager 客户端，则必须擦除设备，从而删除移动设备上的所有数据。  
+>  Não é possível desinstalar o cliente do Configuration Manager usando um dispositivo móvel. Se precisar remover o cliente do Configuration Manager de um dispositivo móvel, você precisará apagar o dispositivo, o que excluirá todos os dados no dispositivo móvel.  
 
-#### <a name="to-uninstall-the-configuration-manager-client-from-the-command-prompt"></a>通过命令提示符卸载 Configuration Manager 客户端  
+#### <a name="to-uninstall-the-configuration-manager-client-from-the-command-prompt"></a>Para desinstalar o cliente do Configuration Manager do prompt de comando  
 
-1.  打开 Windows 命令提示符，并将文件夹更改到 CCMSetup.exe 所在的位置。  
+1.  Abra um prompt de comando do Windows e altere a pasta para o local em que o CCMSetup.exe está localizado.  
 
-2.  键入 **Ccmsetup.exe /uninstall**，然后按   
+2.  Digite **Ccmsetup.exe /uninstall**e pressione **Enter**.  
 
 > [!NOTE]  
->  卸载过程不会在屏幕上显示结果。 要验证客户端卸载是否成功，请检查客户端计算机上 *%windir%\ ccmsetup* 文件夹中的日志文件 **CCMSetup.log**。  
+>  O processo de desinstalação não exibe nenhum resultado na tela. Para verificar se a desinstalação do cliente foi bem-sucedida, examine o arquivo de log **CCMSetup.log** na pasta *%windir%\ ccmsetup* no computador cliente.  
 
-##  <a name="BKMK_ConflictingRecords"></a> 为 Configuration Manager 客户端管理冲突的记录  
- Configuration Manager 使用硬件 ID 来尝试标识可能重复的客户端，并发出有关冲突的记录的警报。 例如，若重新安装计算机，则硬件 ID 将相同，但 Configuration Manager 使用的 GUID 可能已更改。  
+##  <a name="BKMK_ConflictingRecords"></a> Gerenciar registros conflitantes de clientes do Configuration Manager  
+ O Configuration Manager usa a ID de hardware para tentar identificar clientes que possam ser duplicatas e alertar você quando houver registros conflitantes. Por exemplo, se você reinstalar um computador, a ID de hardware será a mesma, mas o GUID usado pelo Configuration Manager poderá ser alterado.  
 
- Configuration Manager 能够通过使用计算机帐户的 Windows 身份验证或来自受信任来源的 PKI 证书解决冲突时，会自动解决冲突。 但是，Configuration Manager 无法解决冲突时，它将使用层次结构设置，该设置会在检测到重复的硬件 ID 时自动合并记录（默认设置），或允许你决定何时合并、阻止或创建新客户端记录。 如果决定手动管理重复记录，则必须在 Configuration Manager 控制台中手动解决冲突的记录。  
-
-
-#### <a name="to-change-the-hierarchy-setting-for-managing-conflicting-records"></a>更改用于管理冲突的记录的层次结构设置  
-
-1.  在 Configuration Manager 控制台中，选择“管理” > “站点配置” > “站点” > “层次结构设置”
-2.  在“客户端批准和冲突的记录”选项卡上，选择“自动解决冲突的记录”或“手动解决冲突的记录”。  
-
-#### <a name="to-manually-resolve-conflicting-records"></a>手动解决冲突的记录  
-
-1.  在 Configuration Manager 控制台中，选择“监视” > “系统状态” > “冲突的记录”。  
-
-3.  选择一个或多个冲突的记录，然后选择“冲突的记录”。  
-
-4.  选择以下选项之一：  
-
-    -   选择“合并”以合并新检测到的记录和现有客户端记录。  
-
-    -   选择“新建” 为冲突的客户端记录创建新记录。  
-
-    -   选择“阻止” 为冲突的客户端记录创建新记录，但将其标记为已阻止。  
-
-## <a name="manage-duplicate-hardware-identifiers"></a>管理重复的硬件标识符
-从 Configuration Manager 版本 1610 开始，可以提供 Configuration Manager 为实现 PXE 启动和客户端注册而将忽略的硬件 ID 列表。 这可以帮助解决两个常见问题。
-
-1. 许多新设备（如 Surface Pro 3）不包含板载以太网端口。 为部署操作系统，通常会使用 USB 转以太网适配器来建立有线连接。 但是，出于成本和一般可用性的考虑，这些适配器通常会共享使用。 由于此适配器的 MAC 地址用于标识设备，因此在每次部署之间若无额外的管理员操作，重用适配器就会出现问题。 从版本 1610 开始，可排除此适配器的 MAC 地址，以便在此种情况下重复使用该适配器。
-2. 虽然 SMBIOS ID 应该是唯一的硬件标识符，但是某些特殊硬件设备自身具有重复 ID。 尽管不像上述的 USB 转以太网适配器情景那样普遍，但是硬件 ID 列表也可用于解决此问题。
-
-#### <a name="to-add-hardware-identifiers-for-configuration-manager-to-ignore"></a>添加 Configuration Manager 要忽略的硬件标识符  
-1. 在 Configuration Manager 控制台中，转到“管理” > “概述” > “站点配置” > “站点”。
-2. 在“主页”选项卡上的“站点”组中，选择“层次结构设置”。
-3. 在“客户端批准和冲突的记录”选项卡上的“复制硬件标识符”部分，选择“添加”以添加新的硬件标识符。
-
-##  <a name="BKMK_PolicyRetrieval"></a> 为 Configuration Manager 客户端启动策略检索  
- Windows Configuration Manager 客户端按配置为客户端设置的计划下载其客户端策略。 然而，有时可能需要从客户端启动临时策略检索，例如，进行故障排除或测试时。  
-
-可使用以下方法启动策略检索：
+ Quando o Configuration Manager pode solucionar um conflito usando a autenticação do Windows da conta de computador ou um certificado PKI de origem confiável, o conflito é solucionado automaticamente. No entanto, quando o Configuration Manager não pode resolver o conflito, ele usa uma configuração de hierarquia que mescla automaticamente os registros quando detecta IDs de hardware duplicadas (a configuração padrão) ou permite que você decida quando mesclar, bloquear ou criar novos registros de clientes. Se você decidir gerenciar manualmente registros duplicados, será necessário solucionar manualmente os registros conflitantes usando o console do Configuration Manager.  
 
 
-- [客户端通知](#initiate-client-policy-retrieval-using-client-notification) 
-- [客户端上的“操作”选项卡](#manually-initiate-client-policy-retrieval-on-the-actions-tab-of-the-configuration-manager-client)
-- [脚本](#manually-initiate-client-policy-retrieval-by-script)
+#### <a name="to-change-the-hierarchy-setting-for-managing-conflicting-records"></a>Para alterar a configuração de hierarquia para gerenciar registros conflitantes  
+
+1.  No console do Configuration Manager, escolha **Administração** > **Configuração de Site** > **Sites** > **Configurações da Hierarquia**
+2.  Na guia **Aprovação de Cliente e Registros de Conflitos**, escolha **Resolver automaticamente registros em conflito** ou **Resolver manualmente registros em conflito**.  
+
+#### <a name="to-manually-resolve-conflicting-records"></a>Para resolver manualmente registros conflitantes  
+
+1.  No console do Configuration Manager, escolha **Monitoramento** > **Status do Sistema** > **Registros Conflitantes**.  
+
+3.  Selecione um ou mais registros conflitantes e escolha **Registro Conflitante**.  
+
+4.  Selecione uma das seguintes opções:  
+
+    -   **Mesclar** para combinar o registro recém-detectado com o registro de cliente existente.  
+
+    -   **Novo** para criar um novo registro para o registro conflitante de cliente.  
+
+    -   **Bloquear** para criar um novo registro para o registro conflitante de cliente, mas o marca como bloqueado.  
+
+## <a name="manage-duplicate-hardware-identifiers"></a>Gerenciar identificadores de hardware duplicados
+Começando do Configuration Manager versão 1610, é possível fornecer uma lista de IDs de hardware que será ignorada pelo Configuration Manager, para fins de registro de cliente e de inicialização PXE. Há dois problemas comuns que esse procedimento ajuda a resolver.
+
+1. Muitos novos dispositivos, como o Surface Pro 3, não incluem uma porta Ethernet integrada. Um adaptador USB para Ethernet é geralmente usado para estabelecer uma conexão com fio para a implantação do sistema operacional. No entanto, eles costumam ser adaptadores compartilhados devido ao custo e à usabilidade geral. Como o endereço MAC do adaptador é usado para identificar o dispositivo, reutilizar o adaptador se torna problemático sem ações de administrador adicionais entre cada implantação. A partir da versão 1610, você pode excluir o endereço MAC desse adaptador para que ele possa ser reutilizado nesse cenário.
+2. Embora o esperado é que a ID do SMBIOS seja um identificador de hardware exclusivo, alguns dispositivos de hardware de especialidade são criados com IDs duplicadas. Embora não seja tão comum quanto o cenário do adaptador USB para Ethernet acima, a lista de IDs de hardware pode ser usada para tratar desse problema também.
+
+#### <a name="to-add-hardware-identifiers-for-configuration-manager-to-ignore"></a>Para adicionar identificadores de hardware a serem ignorados pelo Configuration Manager  
+1. No console do Configuration Manager, vá para **Administração** > **Visão Geral** > **Configuração de Site** > **Sites**.
+2. Na guia **Início**, no grupo **Sites**, escolha **Configurações da Hierarquia**.
+3. Na guia **Aprovação de Cliente e Registros de Conflitos**, escolha **Adicionar** na seção **Identificadores de Hardware Duplicados** para adicionar novos identificadores de hardware.
+
+##  <a name="BKMK_PolicyRetrieval"></a> Iniciar a recuperação de política para um cliente do Configuration Manager  
+ Um cliente do Windows Configuration Manager baixa sua política de cliente segundo um cronograma que você define como uma configuração do cliente. No entanto, pode haver situações em que você quer iniciar a recuperação da política ad hoc do cliente, por exemplo, para solução de problemas ou teste.  
+
+Você pode iniciar a política de recuperação usando:
+
+
+- [Notificação de cliente](#initiate-client-policy-retrieval-using-client-notification) 
+- [A guia **Ações** no cliente](#manually-initiate-client-policy-retrieval-on-the-actions-tab-of-the-configuration-manager-client)
+- [Um script](#manually-initiate-client-policy-retrieval-by-script)
 
 > [!NOTE]  
 >   
->  有关运行 Linux 和 UNIX 的客户端的策略检索的信息，请参阅 [Computer policy for Linux and UNIX servers](../../../core/clients/manage/manage-clients-for-linux-and-unix-servers.md#BKMK_PolicyforLnU)。  
+>  Para obter informações sobre a recuperação da política para clientes que executam Linux e UNIX, consulte a seção [Computer policy for Linux and UNIX servers](../../../core/clients/manage/manage-clients-for-linux-and-unix-servers.md#BKMK_PolicyforLnU).  
 
-#### <a name="initiate-client-policy-retrieval-using-client-notification"></a>使用客户端通知启动客户端策略检索  
+#### <a name="initiate-client-policy-retrieval-using-client-notification"></a>Iniciar a recuperação da política do cliente usando a notificação de cliente  
 
-1.  在 Configuration Manager 控制台中，选择“资产和符合性” > “设备集合”。  
+1.  No console do Configuration Manager, escolha **Ativos e Conformidade** > **Coleções de Dispositivos**.  
 
-3.  选择包含要下载策略的计算机的设备集合。 在“主页”选项卡上的“集合”组中，选择“客户端通知” > “下载计算机策略”。  
+3.  Selecione a coleção de dispositivos que contém os computadores que você deseja baixar a política. Na guia **Início**, no grupo **Coleções**, escolha **Notificação de Cliente** > **Baixar Política do Computador**.  
 
     > [!NOTE]  
-    >  你也可以使用客户端通知为显示在“设备”  节点下的临时集合节点中的一台或多台所选设备启动策略检索。  
+    >  É possível também usar a notificação de cliente para iniciar a recuperação de política para um ou mais dos dispositivos selecionados que são exibidos em um nó da coleção temporária no nó **Dispositivos** .  
 
-#### <a name="manually-initiate-client-policy-retrieval-on-the-actions-tab-of-the-configuration-manager-client"></a>使用 Configuration Manager 客户端上的“操作”选项卡手动启动客户端策略检索  
+#### <a name="manually-initiate-client-policy-retrieval-on-the-actions-tab-of-the-configuration-manager-client"></a>Iniciar manualmente a recuperação da política do cliente na guia Ações do cliente do Configuration Manager  
 
-1.  在计算机的控制面板中选择“Configuration Manager”  。  
+1.  Selecione **Configuration Manager** no Painel de Controle do computador.  
 
-2.  在“操作”选项卡上，选择“计算机策略检索和评估周期”以启动计算机策略，然后选择“立即运行”。  
+2.  Na guia **Ações**, escolha **Ciclo de Recuperação e Avaliação de Política de Computador** para iniciar a política do computador e escolha **Executar Agora**.  
 
-4.  选择“确定”，确认提示。  
+4.  Escolha **OK** para confirmar o prompt.  
 
-5.  为所需的任何其他操作（例如用户客户端设置的“用户策略检索和评估周期”）重复步骤 3 和 4。  
+5.  Repita as etapas 3 e 4 para quaisquer outras ações necessárias, como **Ciclo de Recuperação e Avaliação de Diretiva de Usuário** para as configurações do cliente do usuário.  
 
-#### <a name="manually-initiate-client-policy-retrieval-by-script"></a>使用脚本手动启动客户端策略检索  
+#### <a name="manually-initiate-client-policy-retrieval-by-script"></a>Iniciar manualmente a recuperação da política do cliente por script  
 
-1.  打开文本编辑器，例如记事本。  
+1.  Abra um editor de texto, como o Bloco de Notas.  
 
-2.  将以下内容复制并粘贴到文件中：  
+2.  Copie e insira o seguinte no arquivo:  
 
     ```  
     on error resume next  
@@ -398,12 +398,12 @@ Configuration Manager 客户端会在接收部署之后立即下载所需软件�
     set oCPAppletMgr=nothing  
     ```  
 
-3.  以 .vbs 扩展名保存文件。  
+3.  Salve o arquivo com uma extensão .vbs.  
 
-4.  在客户端计算机上，使用下列方法之一运行该文件：  
+4.  No computador cliente, execute o arquivo usando um dos seguintes métodos:  
 
-    -   使用 Windows 资源管理器导航到该文件，然后双击脚本文件。  
+    -   Navegue até o arquivo usando o Windows Explorer e clique duas vezes no arquivo de script.  
 
-    -   打开命令提示符，然后键入：**cscript &lt;path\filename.vbs>**。  
+    -   Abra um prompt de comando e digite: **cscript &lt;caminho\nomearquivo.vbs>**.  
 
-5.  在“Windows 脚本宿主”对话框中，选择“确定”。  
+5.  Escolha **OK** na caixa de diálogo **Windows Script Host**.  

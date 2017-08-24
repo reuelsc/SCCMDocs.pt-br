@@ -1,6 +1,6 @@
 ---
-title: "简介 | Microsoft Docs"
-description: "获取基本信息，作为对 System Center Configuration Manager 的简介。"
+title: "Introdução | Microsoft Docs"
+description: "Veja informações básicas em uma introdução ao System Center Configuration Manager."
 ms.custom: na
 ms.date: 10/06/2016
 ms.prod: configuration-manager
@@ -17,204 +17,204 @@ manager: angrobe
 ms.openlocfilehash: 76f907b17df0dd2f102e34ca3cfb3ffc813c0004
 ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
 ms.translationtype: HT
-ms.contentlocale: zh-CN
+ms.contentlocale: pt-BR
 ms.lasthandoff: 08/07/2017
 ---
-# <a name="introduction-to-system-center-configuration-manager"></a>System Center Configuration Manager 简介
+# <a name="introduction-to-system-center-configuration-manager"></a>Introduction to System Center Configuration Manager
 
-*适用范围：System Center Configuration Manager (Current Branch)*
+*Aplica-se a: System Center Configuration Manager (Branch Atual)*
 
-System Center Configuration Manager 作为 Microsoft System Center 管理解决方案套件中的一种产品，有助于在本地和云中管理设备和用户。  
+Um produto no pacote de soluções de gerenciamento do Microsoft System Center, o System Center Configuration Manager, pode ajudá-lo a gerenciar dispositivos e usuários localmente e na nuvem.  
 
-**使用 Configuration Manager 有助于：**   
--   减少手动任务并让你专注处理高价值项目，从而提高 IT 工作效率和效率。  
--   最大程度实现硬件和软件投资。  
--   在适当时间提供正确的软件，从而提高用户的工作效率。  
+**Você pode usar o Configuration Manager para ajudá-lo:**   
+-   A aumentar a eficiência e a produtividade de TI, reduzindo as tarefas manuais e permitindo que você se concentre em projetos de alto valor.  
+-   A maximizar os investimentos em hardware e software.  
+-   A capacitar a produtividade do usuário ao fornecer o software certo no momento certo.  
 
-**Configuration Manager 可实现以下各项，帮助提供更有效的 IT 服务：**  
+**Configuration Manager ajuda a fornecer serviços de TI mais eficientes ao habilitar:**  
 
--   安全和可伸缩的软件部署。  
--   符合性设置管理。  
--   服务器、台式计算机、笔记本电脑和移动设备的全面资产管理。  
+-   Implantação segura e escalonável de software.  
+-   Gerenciamento de configurações de conformidade.  
+-   O gerenciamento abrangente de ativos de servidores, computadores desktops, laptops e dispositivos móveis.  
 
-**Configuration Manager 扩展现有的 Microsoft 技术和解决方案并与之协同工作。**  
+**O Configuration Manager estende e trabalha com suas tecnologias e soluções existentes da Microsoft.**  
 
-例如，Configuration Manager 可与以下各项集成：  
+Por exemplo, o Configuration Manager se integra com:  
 
--   Microsoft Intune，管理各种移动设备平台。  
--   Windows Server 更新服务 (WSUS)，管理软件更新。  
--   证书服务。  
--   Exchange Server 和 Exchange Online。  
--   Windows 组策略。
--   DNS。   
--   Windows 自动部署工具包 (Windows ADK) 和用户状态迁移工具 (USMT)。  
--   Windows 部署服务 (WDS)。  
--   远程桌面和远程协助。  
+-   O Microsoft Intune para gerenciar uma ampla variedade de plataformas de dispositivos móveis.  
+-   O WSUS (Windows Server Update Services) para gerenciar atualizações de software.  
+-   Os Serviços de Certificados.  
+-   O Exchange Server e Exchange Online.  
+-   A Política de Grupo do Windows.
+-   DNS.   
+-   Windows ADK (Kit de Avaliação e Implantação do Windows) e USMT (Ferramenta de Migração do Usuário).  
+-   WDS (Serviços de Implantação do Windows).  
+-   Área de Trabalho Remota e Assistência Remota.  
 
-Configuration Manager 也可使用：  
+O Configuration Manager também usa:  
 
--   Active Directory 域服务来获得安全性、服务定位和配置，并使用它来发现要管理的用户和设备。  
--   Microsoft SQL Server 作为分布式变更管理数据库，并与 SQL Server Reporting Services (SSRS) 集成以生成报表来监视和跟踪管理活动。  
--   站点系统角色，可扩展管理功能并使用 Internet Information Services (IIS) 的 Web 服务。
--   后台智能传输服务 (BITS) 和 BranchCache 来帮助管理可用的网络带宽。  
+-   Os Serviços de Domínio do Active Directory para segurança, localização de serviço, configuração e para descobrir os usuários e dispositivos que deseja gerenciar.  
+-   O Microsoft SQL Server como um banco de dados distribuído de gerenciamento de alterações. E integra-se ao SSRS (SQL Server Reporting Services) para produzir relatórios para monitorar e acompanhar as atividades de gerenciamento.  
+-   As funções do sistema de sites que estendem a funcionalidade de gerenciamento e usam os serviços Web do IIS (Serviços de Informações da Internet).
+-   O BITS (Serviço de Transferência Inteligente em Segundo Plano) e o BranchCache podem ajudar a gerenciar a largura de banda da rede disponível.  
 
-若要成功使用 Configuration Manager，必须首先全面规划和测试管理功能，之后才在生产环境中使用 Configuration Manager。 Configuration Manager 是一款功能强大的管理应用程序，可能会潜在地影响组织中的每台计算机。 如果在部署和管理 Configuration Manager 时经过了仔细规划并考虑了业务要求，Configuration Manager 可降低管理开销和总拥有成本。  
+Para ter êxito com o Configuration Manager, é necessário primeiro planejar e testar a fundo os recursos de gerenciamento para usar o Configuration Manager em um ambiente de produção. Como um aplicativo de gerenciamento avançado, o Configuration Manager tem potencial de afetar todos os computadores da organização. Quando você implanta e gerencia o Configuration Manager com planejamento criterioso e levando em consideração os requisitos de negócios, o Configuration Manager pode reduzir a sobrecarga administrativa e o custo total de propriedade.  
 
-请参阅以下主题以及本主题中的其他部分来详细了解 Configuration Manager。  
+Use os seguintes tópicos e seções adicionais neste tópico para saber mais sobre o Configuration Manager.  
 
 
-**本文档库中的相关主题：**  
+**Tópicos relacionados na biblioteca de documentação:**  
 
--   [System Center Configuration Manager 的特性和功能](../../core/plan-design/changes/features-and-capabilities.md)  
--   [为 System Center Configuration Manager 选择设备管理解决方案](../../core/plan-design/choose-a-device-management-solution.md)  
--   [自 System Center 2012 Configuration Manager 以来 System Center Configuration Manager 中更改的内容](../../core/plan-design/changes/what-has-changed-from-configuration-manager-2012.md)
--   [System Center Configuration Manager 基础知识](../../core/understand/fundamentals.md)  
--   [通过构建自己的实验室环境来评估 System Center Configuration Manager](/sccm/core/get-started/set-up-your-lab)
--   [查找使用 System Center Configuration Manager 的帮助](../../core/understand/find-help.md)  
--   [System Center Configuration Manager 中已删除和已弃用的功能](../../core/plan-design/changes/removed-and-deprecated-features.md)  
+-   [Recursos e funcionalidades do System Center Configuration Manager](../../core/plan-design/changes/features-and-capabilities.md)  
+-   [Escolher uma solução de gerenciamento de dispositivo para o System Center Configuration Manager](../../core/plan-design/choose-a-device-management-solution.md)  
+-   [O que mudou no System Center Configuration Manager do System Center 2012 Configuration Manager](../../core/plan-design/changes/what-has-changed-from-configuration-manager-2012.md)
+-   [Conceitos básicos do System Center Configuration Manager](../../core/understand/fundamentals.md)  
+-   [Avaliar o System Center Configuration Manager compilando seu próprio ambiente de laboratório](/sccm/core/get-started/set-up-your-lab)
+-   [Encontrar ajuda para usar o System Center Configuration Manager](../../core/understand/find-help.md)  
+-   [Recursos removidos e preteridos do System Center Configuration Manager](../../core/plan-design/changes/removed-and-deprecated-features.md)  
 
-##  <a name="BKMK_Console"></a> Configuration Manager 控制台  
- 安装 Configuration Manager 后，使用 Configuration Manager 控制台来配置站点和客户端，以及运行和监视管理任务。 此控制台是主要管理位置，并允许你管理多个站点。  
+##  <a name="BKMK_Console"></a> O console do Configuration Manager  
+ Feita a instalação do Configuration Manager, use o console do Configuration Manager para configurar sites e clientes e para executar e monitorar tarefas de gerenciamento. Esse console é o principal ponto de administração e permite que você gerencie vários sites.  
 
- 你可以使用控制台来运行对特定客户端管理任务提供支持的辅助控制台，如：  
+ Você pode usar o console para executar consoles secundários que dão suporte a tarefas específicas de gerenciamento de clientes, como:  
 
--   **资源浏览器**，用于查看硬件和软件清单信息。  
--   **远程控制**，用于远程连接到客户端计算机以执行故障排除任务。  
+-   **Gerenciador de Recursos**, para exibir informações de inventário de hardware e de software.  
+-   **Controle remoto**, para se conectar remotamente a um computador cliente para executar tarefas de solução de problemas.  
 
-可在其他计算机上安装 Configuration Manager 控制台，并且通过使用基于 Configuration Manager 角色的管理，限制访问并限制管理用户可以在控制台中看到的内容。  
+Você pode instalar o console do Configuration Manager em computadores adicionais, bem como restringir o acesso e limitar o que os usuários administrativos podem ver no console usando a administração baseada em funções do Configuration Manager.  
 
-有关详细信息，请参阅[安装 System Center Configuration Manager 控制台](../../core/servers/deploy/install/install-consoles.md)。
+Para obter mais informações, veja [Instalar consoles do System Center Configuration Manager](../../core/servers/deploy/install/install-consoles.md).
 
-##  <a name="BKMK_ApplicationCatalog"></a> 应用程序目录、软件中心和公司门户  
- **应用程序目录** 是一个网站，用户可在其中浏览并请求适用于基于 Windows 的电脑的软件。 要使用应用程序目录，你必须为站点安装应用程序目录 Web 服务点和应用程序目录网站点。  
+##  <a name="BKMK_ApplicationCatalog"></a> Catálogo de aplicativos, Central de software e Portal da empresa  
+ O **Catálogo de Aplicativos** é um site em que usuários podem procurar e solicitar software para seus PCs baseados no Windows. Para usar o catálogo de aplicativos, é necessário instalar o ponto de serviços Web do catálogo de aplicativos e o ponto de sites da Web do catálogo de aplicativos para o site.  
 
- **软件中心**是在基于 Windows 的计算机上安装 Configuration Manager 客户端时所安装的一个应用程序。 用户运行此应用程序来请求软件，并管理 Configuration Manager 为其部署的软件。 软件中心使用户能够执行下列操作：  
+ O**Centro de Software** é um aplicativo que é instalado quando o cliente do Configuration Manager é instalado em computadores baseados no Windows. Os usuários executam esse aplicativo para solicitar softwares e gerenciar o software que o Configuration Manager implanta neles. O Centro de Software permite que os usuários façam o seguinte:  
 
--   从应用程序目录中浏览和安装软件。  
--   查看其软件请求历史记录。  
--   配置 Configuration Manager 在设备上安装软件的时间。  
--   配置远程控制的访问权限设置（如果管理用户启用了远程控制）。  
+-   Procurem e instalem software do catálogo de aplicativos.  
+-   Exibam seu histórico de solicitação de software.  
+-   Configurem quando o Configuration Manager pode instalar software em seus dispositivos.  
+-   Definam as configurações de acesso para controle remoto, se um usuário administrativo está habilitado para o controle remoto.  
 
-**公司门户**是一个应用或网站，提供与应用程序目录类似的功能，但适用于通过 Microsoft Intune 注册的移动设备。  
+O **Portal da Empresa** é um aplicativo ou site que fornece funções semelhantes às do Catálogo de Aplicativos, mas para dispositivos móveis registrados pelo Microsoft Intune.  
 
-有关详细信息，请参阅 [System Center Configuration Manager 中的应用程序管理入门](../../apps/understand/introduction-to-application-management.md)。  
+Para obter mais informações, veja [Introdução ao gerenciamento de aplicativos no System Center Configuration Manager](../../apps/understand/introduction-to-application-management.md).  
 
-###  <a name="BKMK_Client"></a> Configuration Manager 属性（在 Windows 电脑上）  
- 在 Windows 计算机上安装 Configuration Manager 客户端时，将在控制面板中安装 Configuration Manager。 通常，不必配置此应用程序，因为客户端配置是在 Configuration Manager 控制台中执行的。 此应用程序可帮助管理用户和技术支持排除个别客户端的问题。  
+###  <a name="BKMK_Client"></a> Propriedades do Configuration Manager (em computadores Windows)  
+ Quando o cliente do Configuration Manager é instalado em computadores Windows, o Configuration Manager é instalado no Painel de Controle. Normalmente, não é necessário configurar esse aplicativo porque a configuração do cliente é executada no console do Configuration Manager. Esse aplicativo ajuda os usuários administrativos e o suporte técnico a solucionar problemas com clientes individuais.  
 
- 有关客户端部署的详细信息，请参阅 [System Center Configuration Manager 中的客户端安装方法](../../core/clients/deploy/plan/client-installation-methods.md)。  
+ Para obter mais informações sobre a implantação de cliente, consulte [Métodos de instalação do cliente no System Center Configuration Manager](../../core/clients/deploy/plan/client-installation-methods.md).  
 
-##  <a name="BKMK_ExampleScenarios"></a> Configuration Manager 的示例方案  
- 以下示例方案演示名为 Trey Research 的公司如何使用 System Center Configuration Manager 来使用户：  
+##  <a name="BKMK_ExampleScenarios"></a> Cenários de exemplo para o Configuration Manager  
+ Os cenários de exemplo a seguir demonstram como uma empresa chamada Trey Research usa o System Center Configuration Manager para capacitar os usuários a:  
 
--   工作效率更高。  
--   统一设备的符合性管理以获得更流畅的管理体验。
--   简化设备管理以降低 IT 运营成本。  
+-   Serem mais produtivos.  
+-   Unificarem o gerenciamento de conformidade de dispositivos para uma experiência de administração mais simples.
+-   Simplificarem o gerenciamento de dispositivo para reduzir os custos operacionais de TI.  
 
-在所有方案中，Adam 是 Configuration Manager 的主要管理员。  
+Em todos os cenários, Anibal é o administrador principal do Configuration Manager.  
 
-###  <a name="BKMK_ScenarioEmpower"></a>示例方案：通过确保从任何设备访问应用程序来提高用户的工作效率  
- Trey Research 希望确保员工能够尽可能高效地访问所需的应用程序。 Adam 将这些公司要求映射到以下方案：  
+###  <a name="BKMK_ScenarioEmpower"></a> Cenário de exemplo: capacitar os usuários ao garantir acesso a aplicativos de qualquer dispositivo  
+ A Trey Research deseja garantir que os funcionários tenham acesso aos aplicativos que eles necessitam da forma mais eficiente possível. Anibal mapeia esses requisitos da empresa para os seguintes cenários:  
 
-|要求|当前客户端管理状态|将来的客户端管理状态|  
+|Requisito|Estado atual de gerenciamento de clientes|Estado futuro de gerenciamento de clientes|  
 |-----------------|-------------------------------------|------------------------------------|  
-|新员工从第一天起就能高效工作。|员工加入公司时，必须在第一次登录后等待安装应用程序。|员工加入公司时，在登录后应用程序已安装就绪，可供使用。|  
-|员工可快速轻松地请求其他所需的软件。|员工需要其他应用程序时，向技术支持提交票证。 然后通常需要两天时间，等待票证得到处理并安装应用程序。|员工需要其他应用程序时，可从网站中请求这些应用程序。 如果没有许可限制，则会立即安装应用程序。 如果有许可限制，则用户必须首先请求批准，然后才能安装应用程序。<br /><br /> 网站仅向用户显示允许他们安装的应用程序。|  
-|如果员工的移动设备符合所监视和实施的安全策略，则员工可以在工作中使用这些设备。<br /><br /> 这些策略包括强制实施强密码、处于非活动状态一段时间后锁定设备，以及远程擦除丢失或被盗设备。|员工将其移动设备连接到 Exchange Server 来获得电子邮件服务。 但很少有报告来确认这些设备符合默认 Exchange ActiveSync 邮箱策略中的安全策略。 除非 IT 确认符合策略，否则个人使用移动设备存在会被禁止的风险。|IT 组织可报告移动设备与必需设置的安全符合性。 这种确认使用户能够继续在工作中使用其移动设备。 用户可在其移动设备丢失或被盗时远程擦除移动设备，并且支持人员可擦除报告为丢失或被盗的任何用户的移动设备。<br /><br /> 在 PKI 环境提供移动设备注册以实现额外的安全性和控制。|  
-|员工即使不在办公桌前也可高效工作。|员工不在办公桌前并且没有便携计算机时，无法使用公司范围内可用的网亭计算机来访问其应用程序。|员工可使用网亭计算机来访问其应用程序和数据。|  
-|通常，业务连续性优先于安装所需的应用程序和软件更新。|在白天安装所需的应用程序和软件更新，并频繁打断用户的工作，因为用户的计算机在安装期间速度会慢，或者会重启。|用户可配置其工作时间以防止在用户使用计算机时安装所需的软件。|  
+|Os novos funcionários podem trabalhar com eficiência desde o início.|Quando os funcionários entram na empresa precisam esperar os aplicativos serem instalados depois de conectarem-se pela primeira vez.|Quando os funcionários entram na empresa, eles se conectam e seus aplicativos são instalados e estão prontos para o uso.|  
+|Os funcionários podem solicitar software adicional que precisam com rapidez e facilidade.|Quando os funcionários precisam de aplicativos adicionais, registram um tíquete de suporte técnico. Em seguida, normalmente aguardam dois dias para que o tíquete seja processado e os aplicativos sejam instalados.|Quando os funcionários precisam de aplicativos adicionais, eles podem solicitá-los de um site. Eles serão instalados imediatamente se não houver restrições de licenciamento. Se há restrições de licença, os usuários devem primeiro solicitar uma aprovação para que possam instalar o aplicativo.<br /><br /> O site mostra aos usuários apenas os aplicativos que eles têm permissão para instalar.|  
+|Os funcionários podem usar seus dispositivos móveis no trabalho se os dispositivos estão em conformidade com as políticas de segurança que são monitoradas e aplicadas.<br /><br /> Essas políticas incluem imposição de uma senha forte, bloqueio de um dispositivo depois de um período de inatividade e apagamento remoto dos dispositivos perdidos ou roubados.|Os funcionários conectam seus dispositivos móveis ao Exchange Server para o serviço de email. Mas há relatórios limitados para confirmar se estão em conformidade com as políticas de segurança nas políticas de caixa de correio padrão do Exchange ActiveSync. O uso pessoal de dispositivos móveis corre o risco de ser proibido a menos que a equipe de TI possa confirmar a adesão à política.|A organização de TI pode relatar a conformidade de segurança do dispositivo móvel com as configurações necessárias. Essa confirmação permite que os usuários continuem a usar seus dispositivos móveis no trabalho. Os usuários podem apagar remotamente seus dispositivos móveis em caso de perda ou roubo e o suporte técnico pode apagar o dispositivo móvel de qualquer usuário que for reportado como perdido ou roubado.<br /><br /> Fornecem o registro do dispositivo móvel em um ambiente de PKI para controle e segurança adicionais.|  
+|Os funcionários poderão ser produtivos mesmo se não estiverem em suas mesas.|Quando os funcionários não estiverem em suas mesas e não possuírem computadores portáteis, não poderão acessar seus aplicativos usando computadores de quiosques disponíveis pela empresa.|Os funcionários podem usar os quiosques de informática para acessar seus aplicativos e dados.|  
+|Geralmente, a continuidade de negócios tem prioridade sobre a instalação de aplicativos necessários e de atualizações de software.|Os aplicativos e as atualizações de software que necessitam de instalação durante o dia e frequentemente interrompem usuários do trabalho porque seus computadores ficam mais lentos e são reiniciados durante a instalação.|Os usuários podem configurar suas horas de trabalho para evitar que o software necessário seja instalado enquanto eles estão usando seus computadores.|  
 
- 为了满足要求，Adam 使用以下 Configuration Manager 管理功能和配置选项：  
+ Para atender aos requisitos, Anibal usa estes recursos de gerenciamento e opções de configuração do Configuration Manager:  
 
--   应用程序管理  
--   移动设备管理  
+-   Gerenciamento de aplicativos  
+-   Gerenciamento de dispositivos móveis  
 
-他通过使用下表中的配置步骤来实施这些项目：  
+Ele implementa esses itens usando as etapas de configuração na tabela a seguir:  
 
-|配置步骤|结果|  
+|Etapas de configuração|Resultado|  
 |-------------------------|-------------|  
-|Adam 确保新用户具有 Active Directory 用户帐户，并在 Configuration Manager 中为这些用户创建基于查询的新集合。 然后，他通过创建将用户帐户映射到这些用户将使用的主计算机的文件，为他们定义用户设备相关性，然后将此文件导入 Configuration Manager。<br /><br /> 已在 Configuration Manager 中创建新用户必须具有的应用程序。 然后，他将目的为“必需”的应用程序部署到包含新用户的集合。|由于存在用户设备相关性信息，因此在用户登录前，应用程序会安装在每个用户的一台或多台主计算机上。<br /><br /> 用户成功登录后，应用程序立即可供使用。|  
-|Adam 安装和配置应用程序目录站点系统角色，以便用户可以浏览要安装的应用程序。 他创建目的为“可用”的应用程序部署，然后将这些应用程序部署到包含新用户的集合。<br /><br /> 对于许可证数量受限的应用程序，Adam 将这些应用程序配置为要求批准。|用户现在可以使用应用程序目录浏览允许他们安装的应用程序。 然后，用户可以立即安装应用程序，或者请求批准并返回应用程序目录，以在技术支持批准其请求后安装这些应用程序。|  
-|Adam 在 Configuration Manager 中创建 Exchange Server 连接器，以管理连接至公司的本地 Exchange Server 的移动设备。 他使用安全设置来配置此连接器，这些安全设置包括要求强密码以及在一段不活动期后锁定移动设备。<br /><br /> 为了对运行 Windows Phone 8、Windows RT 以及 iOS 的设备进行额外的管理，Adam 获取了 Microsoft Intune 订阅。 然后安装了服务连接点站点系统角色。 对于这些设备，该移动设备管理解决方案为公司提供了更大的管理支持。 这包括使应用程序可供用户安装在这些设备上以及广泛的设置管理。 此外，通过使用由 Intune 自动创建和部署的 PKI 证书，确保移动设备连接安全。<br /><br /> 通过配置服务连接点和订阅使用 Configuration Manager 后，Adam 给拥有这些移动设备的用户发送了一封电子邮件，请他们单击链接以开始注册流程。<br /><br /> 对于通过 Microsoft Intune 注册的移动设备，Adam 使用符合性设置来配置这些移动设备的安全设置。 这些设置包括要求设置强密码以及在一段不活动期后锁定移动设备。|借助这两个移动设备管理解决方案，IT 组织现在可以提供关于正在公司网络上使用的移动设备的报表信息，以及它们与配置的安全设置的符合性。<br /><br /> 用户会获得演示，了解在其移动设备丢失或被盗时如何使用应用程序目录或公司门户远程擦除移动设备。 支持人员还会获得指引，了解如何通过使用 Configuration Manager 控制台为用户远程擦除移动设备。<br /><br /> 此外，对于通过 Microsoft Intune 注册的移动设备，Adam 现在可以为用户部署要安装的移动应用程序、收集这些设备的更多清单数据以及凭借能够访问更多的设置而对这些设备进行更好的管理控制。|  
-|Trey Research 拥有一些供办事处的来访员工使用的网亭计算机。 员工希望无论自己在何处登录，都可以使用其应用程序。 但是，Adam 不希望在每台计算机上均以本地方式安装所有应用程序。<br /><br /> 为此，Adam 创建了具有两种部署类型的必需的应用程序：<br /><br /> **第一种：**应用程序的本地完全安装，这类应用程序必须仅安装在用户的主要设备上。<br /><br /> **第二种：**应用程序的虚拟版本，这类应用程序不得安装在用户的主要设备上。|来访员工登录网亭计算机时，会在网亭计算机的桌面上见到以图标形式显示的他们所必需的应用程序。 运行应用程序时，它会以虚拟应用程序的形式进行流式处理。 因此，他们可以与坐在自己的台式机前工作一样高效。|  
-|Adam 使用户了解到他们可以在软件中心配置自己的工作时间，并可选择选项以防在此期间以及计算机处于演示模式下时进行软件部署活动。|由于用户可以控制 Configuration Manager 将软件部署到其计算机上的时间，因此用户在其工作日中能始终更为高效。|  
+|Aníbal verifica se os novos usuários têm contas de usuário no Active Directory e cria uma nova coleção baseada em consultas no Configuration Manager para esses usuários. Em seguida, ele define a afinidade de dispositivo de usuário para esses usuários criando um arquivo que mapeia as contas de usuário para os computadores primários que eles usarão e importa esse arquivo no Configuration Manager.<br /><br /> Os aplicativos que os novos usuários devem ter já estão criados no Configuration Manager. Então ele implanta esses aplicativos que têm a finalidade de Necessário na coleção que contém os novos usuários.|Por conta das informações de afinidade de dispositivo de usuário, os aplicativos são instalados em cada computador (ou computadores) primário do usuário antes que ele se conecte.<br /><br /> Os aplicativos estão prontos para uso assim que o usuário se conectar com êxito.|  
+|Anibal instala e configura as funções do sistema de site do catálogo de aplicativos para que os usuários possam procurar aplicativos a serem instalados. Ele cria implantações de aplicativos que têm a finalidade de Disponível e implanta esses aplicativos na coleção que contém os novos usuários.<br /><br /> Para os aplicativos que possuem um número restrito de licenças, Anibal configura esses aplicativos para solicitarem aprovação.|Agora os usuários podem usar o Catálogo de Aplicativos para procurar os aplicativos que eles têm permissão para instalar. Os usuários podem instalar os aplicativos imediatamente ou solicitar aprovação e retornar para o Catálogo de Aplicativos para instalá-los depois que o suporte técnico tiver aprovado a solicitação.|  
+|Anibal cria um conector do Exchange Server no Configuration Manager para gerenciar os dispositivos móveis que se conectam ao Exchange Server local da empresa. Ele define esse conector com configurações de segurança que incluem o requisito para uma senha forte e bloqueia o dispositivo móvel após um período de inatividade.<br /><br /> Para gerenciamento adicional de dispositivos que executam o Windows Phone 8, Windows RT e iOS, Aníbal obtém uma assinatura do Microsoft Intune. Em seguida, ele instala a função do sistema de sites do ponto de conexão de serviço. Essa solução de gerenciamento de dispositivo móvel dá à empresa maior suporte para gerenciamento desses dispositivos. Isso inclui disponibilizar aplicativos para que os usuários instalem nesses dispositivos e amplo gerenciamento de configurações. Além disso, as conexões de dispositivo móvel são protegidas usando certificados PKI criados e implantados automaticamente pelo Intune.<br /><br /> Depois de configurar o ponto de conexão de serviço e a assinatura para serem usados com o Configuration Manager, Aníbal envia uma mensagem de email aos usuários que têm esses dispositivos móveis para que eles cliquem em um link para iniciar o processo de registro.<br /><br /> Para que os dispositivos móveis sejam registrados pelo Microsoft Intune, Anibal usa configurações de conformidade para definir configurações de segurança para esses dispositivos móveis. Essas configurações incluem o requisito para definir uma senha forte e bloqueiam o dispositivo móvel após um período de inatividade.|Com essas duas soluções de gerenciamento de dispositivo móvel, agora a organização de TI pode fornecer informações de relatórios sobre os dispositivos móveis em uso na rede da empresa e sua conformidade com as configurações de segurança definidas.<br /><br /> Os usuários veem como apagar remotamente o dispositivo móvel usando o Catálogo de Aplicativos ou o Portal da Empresa caso o dispositivo móvel seja perdido ou roubado. O suporte técnico também é instruído sobre como apagar remotamente um dispositivo móvel do usuário utilizando o console do Configuration Manager.<br /><br /> Além disso, para dispositivos móveis registrados pelo Microsoft Intune, agora Anibal pode implantar aplicativos móveis para que os usuários possam instalar, coletar mais dados de inventário desses dispositivos e ter melhor controle de gerenciamento sobre os dispositivos por poderem acessar mais configurações.|  
+|A Trey Research tem vários computadores de quiosque que são usados por funcionários que visitam o escritório. Os funcionários desejam que seus aplicativos estejam disponíveis sempre que eles se conectarem. No entanto, Aníbal não quer instalar localmente todos os aplicativos em cada computador.<br /><br /> Para isso, Anibal cria os aplicativos necessários que têm dois tipos de implantação:<br /><br /> **O primeiro:** uma instalação completa local do aplicativo que tem o requisito de só poder ser instalado em um dispositivo primário do usuário.<br /><br /> **O segundo:** uma versão virtual do aplicativo que tem o requisito de não poder ser instalado no dispositivo primário do usuário.|Quando funcionários visitantes se conectam em um computador de quiosque, eles veem os aplicativos de que precisam exibidos como ícones na área de trabalho do computador de quiosque. Quando eles executam o aplicativo, ele é transmitido como um aplicativo virtual. Dessa forma, eles poderão ser tão produtivos como se estivessem usando sua área de trabalho.|  
+|Aníbal permite que os usuários saibam que eles podem configurar seu horário comercial no Centro de Software e seleciona opções para impedir atividades de implantação de software durante este período e quando o computador está em modo de apresentação.|Como os usuários podem controlar quando o Configuration Manager implanta software nos computadores, os usuários permanecem mais produtivos durante o dia de trabalho.|  
 
- 通过确保从任何设备均可访问应用程序，这些配置步骤和结果使 Trey Research 成功使其员工具有更高的生产力。  
+ Essas etapas de configuração e esses resultados permitem que a Trey Research dê poderes a seus funcionários com êxito, garantindo o acesso a aplicativos de qualquer dispositivo.  
 
-###  <a name="BKMK_ScenarioUnify"></a> 示例方案：统一设备的符合性管理  
- Trey Research 希望获得统一的客户端管理解决方案，该方案确保其计算机运行自动保持更新的防病毒软件。 即：  
+###  <a name="BKMK_ScenarioUnify"></a> Cenário de exemplo: unificar o gerenciamento de conformidade de dispositivos  
+ A Trey Research quer uma solução de gerenciamento de clientes unificada que garante que os computadores executem software antivírus que seja atualizado automaticamente. Ou seja:  
 
--   Windows 防火墙已启用。  
--   已安装关键软件更新。  
--   已设置特定的注册表项。  
--   托管的移动设备无法安装或运行未签名的应用程序。  
+-   O Firewall do Windows está habilitado.  
+-   Atualizações críticas de software estão instaladas.  
+-   Chaves específicas do Registro estão definidas.  
+-   Os dispositivos móveis gerenciados não podem instalar nem executar aplicativos não assinados.  
 
-该公司还希望将此保护扩展到 Internet，以保护从 Intranet 移至 Internet 的便携式计算机。  
+A empresa também quer expandir essa proteção para a Internet para laptops que se movem da intranet para a Internet.  
 
-Adam 将这些公司要求映射到以下方案：  
+Anibal mapeia esses requisitos da empresa para os seguintes cenários:  
 
-|要求|当前客户端管理状态|将来的客户端管理状态|  
+|Requisito|Estado atual de gerenciamento de clientes|Estado futuro de gerenciamento de clientes|  
 |-----------------|-------------------------------------|------------------------------------|  
-|在所有计算机上运行具有最新定义文件的防恶意软件并启用 Windows 防火墙。|不同计算机运行不同的反恶意软件解决方案，这些解决方案并非始终保持最新。 尽管在默认情况下已启用 Windows 防火墙，但用户有时会将其禁用。<br /><br /> 如果在用户计算机上检测到恶意软件，则将要求他们与技术支持联系。|在所有计算机上运行相同的防恶意软件解决方案，该解决方案会自动下载最新的定义更新文件，并在用户将 Windows 防火墙禁用时自动将其重新启用。<br /><br /> 如果检测到恶意软件，则将自动通过电子邮件通知技术支持。|  
-|在关键软件更新发布的首个月内，在所有计算机上安装这些关键的软件更新。|尽管在计算机上已安装软件更新，但许多计算机不会自动安装关键软件更新，而会直到关键软件更新已发布两个月或三个月后才安装。 这将使这些计算机在此期间内容易受到攻击。<br /><br /> 对于未安装关键软件更新的计算机，技术支持首先会发出要求用户安装更新的电子邮件。 对于仍然不符合规定的计算机，工程师会远程连接到这些计算机并手动安装缺失的软件更新。|在指定月份将当前符合率提升到 95% 以上，而不用发出电子邮件或要求技术支持手动安装这些更新。|  
-|定期检查特定应用程序的安全设置并在必要时进行修正。|计算机运行依赖于计算机的组成员身份的复杂启动脚本，以重置特定应用程序的注册表值。<br /><br /> 由于这些脚本仅在启动时运行并且有些计算机会持续数日保持开启状态，因此技术支持无法及时检查是否存在配置漂移。|注册表值会接受检查并自动修正，而不依赖计算机组成员身份或重启计算机。|  
-|移动设备无法安装或运行不安全的应用程序。|要求用户不通过 Internet 下载和运行可能不安全的应用程序。 但是没有落实用于监视或强制实施该要求的控制措施。|使用 Microsoft Intune 或 Configuration Manager 管理的移动设备会自动防止安装或运行未签名的应用程序。|  
-|必须保持从 Intranet 移至 Internet 的便携式计算机的安全。|对于外出的用户，他们常常无法每天都通过 VPN 连接进行连接。 这会导致这些笔记本电脑不符合安全要求。|Internet 连接会是便携式计算机保持符合安全要求的全部要求。 用户不必登录或使用 VPN 连接。|  
+|Todos os computadores executam software antimalware que possui arquivos de definição atualizados e habilitam o Firewall do Windows.|Computadores diferentes executam soluções antimalware diferentes que nem sempre são mantidas atualizadas. Embora o Firewall do Windows esteja habilitado por padrão, os usuários às vezes o desabilitam.<br /><br /> Os usuários devem entrar em contato com o suporte técnico se for detectado malware em seu computador.|Todos os computadores executam a mesma solução antimalware que baixa automaticamente os arquivos mais recentes de atualização da definição e reabilita automaticamente o Firewall do Windows se os usuários o desabilitarem.<br /><br /> O suporte técnico será notificado automaticamente por email se for detectado malware.|  
+|Todos os computadores instalam atualizações de software críticas no primeiro mês de lançamento.|Embora as atualizações de software sejam instaladas em computadores, muitos computadores não instalam automaticamente as atualizações de software críticas até dois ou três meses após o lançamento. Isso os deixa vulneráveis a ataques durante esse período.<br /><br /> Para os computadores que não instalam as atualizações de software críticas, o suporte técnico primeiro envia mensagens de email para que os usuários instalem as atualizações. Para computadores que permanecem não compatíveis, os engenheiros se conectam remotamente a esses computadores e instalam manualmente as atualizações de software que faltam.|A taxa de conformidade atual no mês especificado é melhorada para mais de 95% sem enviar mensagens de email nem solicitar que o suporte técnico as instale manualmente.|  
+|As configurações de segurança para aplicativos específicos serão verificadas e corrigidas regularmente se for necessário.|Os computadores executam scripts de inicialização complexos que dependem da associação ao grupo do computador para redefinir valores do Registro para aplicativos específicos.<br /><br /> Como esses scripts são executados somente na inicialização e alguns computadores são deixados ligados por vários dias, o suporte técnico não pode verificar se há descompasso na configuração em tempo adequado.|Os valores do Registro são verificados e corrigidos automaticamente sem depender da associação ao grupo do computador ou reiniciar o computador.|  
+|Os dispositivos móveis não podem instalar nem executar aplicativos não seguros.|Os usuários são solicitados a não baixar e executar aplicativos potencialmente não seguros da Internet. Mas não há controles em vigor para monitorar ou aplicar isso.|Os dispositivos móveis gerenciados com o Microsoft Intune ou com o Configuration Manager impedem automaticamente que aplicativos não assinados sejam instalados ou executados.|  
+|Laptops que se movem da intranet para a Internet devem ser mantidos seguros.|Para usuários que viajam, eles frequentemente não podem se conectar pela conexão VPN diariamente. Esses laptops ficam fora de conformidade com os requisitos de segurança.|Uma conexão com a Internet é tudo o que é necessário para que os laptops sejam mantidos em conformidade com requisitos de segurança. Os usuários não precisam se conectar ou usar a conexão VPN.|  
 
- 为了满足要求，Adam 使用以下 Configuration Manager 管理功能和配置选项：  
+ Para atender aos requisitos, Anibal usa estes recursos de gerenciamento e opções de configuração do Configuration Manager:  
 
 -   Endpoint Protection  
--   软件更新  
--   符合性设置  
--   移动设备管理  
--   基于 Internet 的客户端管理  
+-   Atualizações de software  
+-   Configurações de conformidade  
+-   Gerenciamento de dispositivos móveis  
+-   Gerenciamento de clientes baseado na Internet  
 
-他通过使用下表中的配置步骤来实施这些项目：  
+Ele implementa esses itens usando as etapas de configuração na tabela a seguir:  
 
-|配置步骤|结果|  
+|Etapas de configuração|Resultado|  
 |-------------------------|-------------|  
-|Adam 配置 Endpoint Protection。 启用客户端设置以卸载其他反恶意软件解决方案，并启用 Windows 防火墙。 他配置自动部署规则，以便计算机定期检查和安装最新的定义更新。|单一的防恶意软件解决方案有助于以最小的管理开销保护所有的计算机。 由于检测到反恶意软件时会自动通过电子邮件通知技术支持，因此可以快速解决问题。 这有助于防止其他计算机遭受攻击。|  
-|为了便于提升符合率，Adam 运用自动部署规则，定义服务器的维护时段，并且调查为休眠的计算机使用 LAN 唤醒的优点和缺点。|关键软件更新的符合性提高，而用户或技术支持手动安装软件更新的要求降低。|  
-|Adam 使用符合性设置来检查是否存在指定的应用程序。 检测到应用程序后，配置项目随即会检查注册表值并在注册表值不符时自动对其进行修正。|通过使用部署到所有计算机并且每日均会执行符合性检查的配置项目和配置基线，不再需要依赖计算机成员身份和计算机重启的单独脚本。|  
-|Adam 为已注册的移动设备使用符合性设置并配置 Exchange Server 连接器，从而禁止在移动设备上安装和运行未签名的应用程序。|由于禁止未签名的应用程序，移动设备会自动防范可能有害的应用程序。|  
-|Adam 确保站点系统服务器和计算机均具有 Configuration Manager 针对 HTTPS 连接而要求的 PKI 证书。 然后安装外围网络中的附加站点系统角色，这些角色接受来自 Internet 的客户端连接。|Configuration Manager 将继续自动管理从 Intranet 移至 Internet 的计算机（当这些计算机具有 Internet 连接时）。 这些计算机并不依赖用户登录他们的计算机或连接至 VPN。<br /><br /> 这些计算机会继续在防恶意软件和 Windows 防火墙、软件更新以及配置项目方面得到管理。 结果，符合性级别将自动提升。|  
+|Aníbal configura o Endpoint Protection. Ele habilita a configuração do cliente para desinstalar outras soluções antimalware e habilita o Firewall do Windows. Ele configura as regras de implantação automática para que os computadores verifiquem e instalem as atualizações de definições mais recentes regularmente.|A solução antimalware única ajuda a proteger todos os computadores usando a sobrecarga administrativa mínima. Como o suporte técnico é notificado automaticamente por mensagem de email se for detectado antimalware, os problemas podem ser resolvidos rapidamente. Isso ajuda a impedir ataques em outros computadores.|  
+|Para ajudar a aumentar as taxas de conformidade, Aníbal usa regras de implantação automática, define janelas de manutenção para servidores e investiga as vantagens e desvantagens de usar Wake on LAN para computadores que hibernam.|A conformidade com atualizações de software críticas aumenta e reduz o requisito para que os usuários ou o suporte técnico instale atualizações de software manualmente.|  
+|Anibal usa configurações de conformidade para verificar a presença de aplicativos especificados. Quando os aplicativos são detectados, os itens de configuração verificam os valores do Registro e os corrigem automaticamente se estiverem fora de conformidade.|Ao usar itens de configuração e linhas de base de configuração que são implantadas em todos os computadores e verificar a conformidade todos os dias, não é mais necessário que você separe os scripts que dependem da associação de computador e as reinicializações do computador.|  
+|Anibal usa configurações de conformidade para dispositivos móveis registrados e configura o conector do Exchange Server para impedir que os aplicativos não assinados de sejam instalados e executados em dispositivos móveis.|Como os aplicativos não assinados são proibidos, os dispositivos móveis são protegidos automaticamente contra aplicativos potencialmente prejudiciais.|  
+|Aníbal verifica se os computadores e servidores do sistema de sites têm certificados PKI que o Configuration Manager exige para conexões HTTPS. Em seguida, ele instala funções adicionais do sistema de sites na rede de perímetro que aceitam conexões de cliente da Internet.|Os computadores que se movem da intranet para a Internet automaticamente continuam sendo gerenciados pelo Configuration Manager quando eles têm uma conexão com a Internet. Esses computadores não dependem de usuários se conectando ao computador ou à conexão VPN.<br /><br /> Esses computadores continuam a ser gerenciados para antimalware e Firewall do Windows, atualizações de software e itens de configuração. Como resultado, os níveis de conformidade aumentarão automaticamente.|  
 
- 这些配置步骤和结果导致 Trey Research 公司成功统一了设备的符合性管理。  
+ Essas etapas de configuração e os resultados têm como efeito a unificação com êxito pela Trey Research do gerenciamento de conformidade de dispositivos.  
 
-###  <a name="BKMK_ScenarioSimplify"></a> 示例方案：简化设备的客户端管理  
- Trey Research 希望所有新计算机均能自动安装他们公司的运行 Windows 7 的基本计算机映像。 在这些计算机上安装操作系统映像后，必须就用户安装的附加软件对计算机进行管理和监视。 如果计算机上存储着高度机密的信息，则必须对该类计算机实施比其他计算机具有更多限制的管理策略。 例如，技术支持工程师不得远程连接到这类计算机，必须使用 BitLocker PIN 条目才能重启，并且仅限本地管理员才能安装软件。  
+###  <a name="BKMK_ScenarioSimplify"></a> Cenário de exemplo: simplificar o gerenciamento de clientes para os dispositivos  
+ A Trey Research quer que todos os computadores novos instalem automaticamente a imagem de computador base da empresa, que executa o Windows 7. Depois que a imagem do sistema operacional for instalada nesses computadores, eles devem ser gerenciados e monitorados quanto ao software adicional instalado pelos usuários. Os computadores que armazenam informações altamente confidenciais requerem políticas de gerenciamento mais restritivas do que os outros computadores. Por exemplo, os engenheiros de suporte técnico não devem se conectar a eles remotamente, a entrada de PIN do BitLocker deve ser usada para reinicializações, e apenas os administradores locais podem instalar software.  
 
- Adam 将这些公司要求映射到以下方案：  
+ Anibal mapeia esses requisitos da empresa para os seguintes cenários:  
 
-|要求|当前客户端管理状态|将来的客户端管理状态|  
+|Requisito|Estado atual de gerenciamento de clientes|Estado futuro de gerenciamento de clientes|  
 |-----------------|-------------------------------------|------------------------------------|  
-|新计算机已安装 Windows 7。|技术支持为用户安装和配置了 Windows 7，然后将计算机发往用户各自的位置。|新计算机会直接发往最终目的地，接入网络，并自动安装和配置 Windows 7。|  
-|必须管理和监视计算机。 这包括收集有助于确定许可要求的硬件和软件清单数据。|通过使用自动客户端请求安装来部署 Configuration Manager 客户端。 技术支持将调查安装故障以及未在预期时间发送清单数据的客户端。<br /><br /> 故障频发，因为未满足安装依赖性以及客户端上的 WMI 损坏。|从计算机中收集的客户端安装和清单数据更为可靠，仅需较少的技术支持干预。 报表将针对许可证信息展示软件的使用情况。|  
-|有些计算机必须具有更为严格的管理策略。|由于存在更为严格的管理策略，因此目前不通过 Configuration Manager 来管理这些计算机。|通过使用 Configuration Manager 来管理这些计算机以应对异常情况，无需额外的管理开销。|  
+|Novos computadores são instalados com o Windows 7.|O suporte técnico instala e configura o Windows 7 para os usuários e envia o computador ao respectivo local.|Os novos computadores seguem diretamente para o destino final, são conectados à rede e instalam e configuram o Windows 7 automaticamente.|  
+|Os computadores devem ser gerenciados e monitorados. Isso inclui a coleta de dados de inventário de hardware e software para ajudar a determinar os requisitos de licenciamento.|O cliente do Configuration Manager é implantado usando a instalação automática do cliente por push. O suporte técnico investiga falhas de instalação e clientes que não enviam dados de inventário quando deveriam.<br /><br /> As falhas são frequentes devido às dependências de instalação que não são atendidas e à corrupção do WMI no cliente.|A instalação do cliente e os dados de inventário coletados de computadores são mais confiáveis e requerem menos intervenção do suporte técnico. Os relatórios mostram o uso de software para obter informações de licença.|  
+|Alguns computadores precisam ter políticas de gerenciamento mais rigorosas.|Em consequência das políticas de gerenciamento mais rigorosas, esses computadores não são gerenciados pelo Configuration Manager no momento.|Esses computadores são gerenciados usando o Configuration Manager para acomodar as exceções sem sobrecarga administrativa adicional.|  
 
- 为了满足要求，Adam 使用以下 Configuration Manager 管理功能和配置选项：  
+ Para atender aos requisitos, Anibal usa estes recursos de gerenciamento e opções de configuração do Configuration Manager:  
 
--   操作系统部署  
--   客户端部署和客户端状态  
--   符合性设置  
--   客户端设置  
--   清单方法和资产智能  
--   基于角色的管理  
+-   Implantação de sistema operacional  
+-   Implantação do cliente e status do cliente  
+-   Configurações de conformidade  
+-   Configurações do cliente  
+-   Métodos de inventário e Asset Intelligence  
+-   Administração baseada em funções  
 
-他通过使用下表中的配置步骤来实施这些项目：  
+Ele implementa esses itens usando as etapas de configuração na tabela a seguir:  
 
-|配置步骤|结果|  
+|Etapas de configuração|Resultado|  
 |-------------------------|-------------|  
-|Adam 从装有 Windows 7 并按公司规范配置的计算机中捕获操作系统映像。 然后，通过使用未知的计算机支持和 PXE，他将操作系统部署到新的计算机。 他还将 Configuration Manager 客户端作为操作系统部署的一部分进行安装。|无需技术支持工程师的干预，新的计算机能够更快速地启动并正常运行。|  
-|Adam 配置自动站点范围的客户端请求安装，在所发现的任何计算机上安装 Configuration Manager 客户端。 这确保未利用客户端映像化的任何计算机仍然安装客户端，使计算机受 Configuration Manager 管理。<br /><br /> Adam 配置客户端状态，以自动修正所发现的任何客户端问题。 他还配置客户端设置以启用对所需清单数据的收集，以及配置资产智能。|与等待 Configuration Manager 发现计算机，然后尝试在计算机上安装客户端源文件相比，将客户端与操作系统一起安装更为快速和可靠。 但是，通过启用自动客户端请求选项，为已安装操作系统的计算机提供备用方法，以在计算机连接到网络时安装客户端。<br /><br /> 客户端设置确保客户端定期向站点发送其清单信息。 除了客户端状态测试之外，这有助于在最大程度减少技术支持干预的情况下让客户端保持运行。 例如，会检测并自动修正 WMI 损坏。<br /><br /> 资产智能报表帮助监视软件的使用情况和许可证。|  
-|Adam 为必须具有更严格策略设置的计算机创建集合。 然后为此集合创建自定义客户端设备设置，包括禁用远程控制、启用 BitLocker PIN 输入和仅允许本地管理员安装软件。<br /><br /> Adam 配置基于角色的管理，这样一来，技术支持工程师无法查看此计算机集合。 这有助于确保不会意外地将这些计算机作为标准计算机进行管理。|这些计算机现在由 Configuration Manager 管理，但具有无需新站点的特定设置。<br /><br /> 技术支持工程师无法查看这些计算机的集合。 这有助于降低向这些计算机发送适用于标准计算机的部署和脚本的可能性。|  
+|Aníbal captura uma imagem do sistema operacional de um computador com o Windows 7 instalado e configurado com as especificações da empresa. Em seguida, ele implanta o sistema operacional nos novos computadores usando o PXE e o suporte de um computador desconhecido. E também instala o cliente do Configuration Manager como parte da implantação do sistema operacional.|Novos computadores estão em funcionamento mais rapidamente sem a intervenção do suporte técnico.|  
+|Anibal configura a instalação automática do cliente por push em todo o site para instalar o cliente do Configuration Manager em qualquer computador que estiver descoberto. Isso garante que os computadores que ainda não tiveram a imagem gerada pelo cliente instalem o cliente para que o computador seja gerenciado pelo Configuration Manager.<br /><br /> Anibal configura o status de cliente para corrigir automaticamente os problemas do cliente que estão descobertos. Ele configura também as configurações do cliente que habilitam a coleção necessária de dados do inventário e configura o Asset Intelligence.|Instalar o cliente com o sistema operacional é mais rápido e mais confiável do que esperar que o Configuration Manager descubra o computador e, então, tente instalar os arquivos de origem do cliente nele. No entanto, ao deixar a opção de push de cliente automático habilitada, você fornece um método de backup para um computador, que já tem o sistema operacional instalado, instalar o cliente quando é conectado a uma rede.<br /><br /> As configurações do cliente garantem que os clientes enviem suas informações de inventário para o site regularmente. Isso, além dos testes de status do cliente, ajuda a manter o cliente executando com intervenções mínimas do suporte técnico. Por exemplo, as corrupções do WMI são detectadas e corrigidas automaticamente.<br /><br /> Os relatórios do Asset Intelligence ajudam a monitorar o uso de software e licenças.|  
+|Aníbal cria uma coleção para os computadores que devem ter configurações de política mais rigorosas. Em seguida, ele cria uma configuração de dispositivo de cliente personalizada para essa coleção, que desabilita o controle remoto, permite a entrada de PIN do BitLocker e permite que somente administradores locais instalem software.<br /><br /> Aníbal configura a administração baseada em função para que os engenheiros do suporte técnico não vejam essa coleção de computadores. Isso ajuda a garantir que esses computadores não sejam acidentalmente gerenciados como computadores padrão.|Agora, esses computadores são gerenciados pelo Configuration Manager, mas com configurações específicas que não exigem um novo site.<br /><br /> A coleção desses computadores não fica visível aos engenheiros do suporte técnico. Isso ajuda a reduzir a possibilidade de envio acidental a esses computadores de implantações e scripts que são para computadores padrão.|  
 
- 这些配置步骤和结果导致 Trey Research 成功简化了设备的客户端管理。  
+ Essas etapas de configuração e os resultados têm como efeito a simplificação com êxito pela Trey Research do gerenciamento de clientes de dispositivos.  
 
-##  <a name="BKMK_NextSteps"></a> 后续步骤  
- 在安装 Configuration Manager 之前，可以熟悉特定于 Configuration Manager 的一些基本概念和术语。  
+##  <a name="BKMK_NextSteps"></a> Próximas etapas  
+ Antes de instalar o Configuration Manager, familiarize-se com alguns termos e conceitos básicos específicos do Configuration Manager.  
 
--   如果已熟悉 System Center 2012 Configuration Manager，请参阅[自 System Center 2012 Configuration Manager 以来 System Center Configuration Manager 中更改的内容](../../core/plan-design/changes/what-has-changed-from-configuration-manager-2012.md)了解新功能。  
--   有关 System Center Configuration Manager 的高级技术概述，请参阅 [System Center Configuration Manager 基础知识](../../core/understand/fundamentals.md)。  
+-   Se estiver familiarizado com o System Center 2012 Configuration Manager, consulte [O que mudou no System Center Configuration Manager do System Center 2012 Configuration Manager](../../core/plan-design/changes/what-has-changed-from-configuration-manager-2012.md) para entender os novos recursos.  
+-   Para ter uma visão geral técnica do System Center Configuration Manager, consulte [Aspectos fundamentais do System Center Configuration Manager](../../core/understand/fundamentals.md).  
 
-熟悉了基本概念后，使用 System Center Configuration Manager 文档帮助成功部署和使用 Configuration Manager。  
+Quando estiver familiarizado com os conceitos básicos, use a documentação do System Center Configuration Manager para ajudá-lo a implantar e usar com êxito o Configuration Manager.  

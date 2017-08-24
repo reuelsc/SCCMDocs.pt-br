@@ -1,6 +1,6 @@
 ---
-title: "数据传输 | Microsoft Docs"
-description: "了解 Configuration Manager 如何在站点之间移动数据，并了解如何管理网络上的数据传输。"
+title: "Transferências de dados | Microsoft Docs"
+description: "Saiba como o Configuration Manager move dados entre sites e como é possível gerenciar a transferência de dados pela rede."
 ms.custom: na
 ms.date: 10/06/2016
 ms.prod: configuration-manager
@@ -17,190 +17,190 @@ manager: angrobe
 ms.openlocfilehash: bf0fdc8d4b4a72760b2cfb91231378a17df01594
 ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
 ms.translationtype: HT
-ms.contentlocale: zh-CN
+ms.contentlocale: pt-BR
 ms.lasthandoff: 08/07/2017
 ---
-# <a name="data-transfers-between-sites-in-system-center-configuration-manager"></a>System Center Configuration Manager 中的站点间数据传输
+# <a name="data-transfers-between-sites-in-system-center-configuration-manager"></a>Transferência de dados entre sites no System Center Configuration Manager
 
-*适用范围：System Center Configuration Manager (Current Branch)*
+*Aplica-se a: System Center Configuration Manager (Branch Atual)*
 
-System Center Configuration Manager 使用**基于文件的复制**和**数据库复制**在站点之间传输不同类型的信息。 了解 Configuration Manager 如何在站点之间移动数据，并了解如何管理网络上的数据传输。  
+O System Center Configuration Manager usa a **replicação baseada em arquivo** e **replicação de banco de dados** para transferir diferentes tipos de informações entre sites. Saiba como o Configuration Manager move dados entre sites e como é possível gerenciar a transferência de dados pela rede.  
 
 
 ## <a name="bkmk_fileroute"></a> File-based replication  
-Configuration Manager 使用基于文件的复制在层次结构中的站点之间传输基于文件的数据。 此数据包括：要部署到子站点中的分发点的应用程序和包，以及传输到父站点（然后进行处理）的未处理发现数据记录。  
+O Configuration Manager usa a replicação baseada em arquivo para transferir dados baseados em arquivo entre sites em sua hierarquia. Esses dados incluem aplicativos e pacotes que você deseja implantar em pontos de distribuição em sites filho e os registros de dados de descoberta não processados que são transferidos para sites pai e, então, processados.  
 
-站点之间基于文件的通信通过 TCP/IP 端口 445 使用**服务器消息块** (SMB) 协议。 可指定带宽限制和脉冲模式来控制在网络上传输的数据量，并使用计划控制何时在网络上发送数据。  
+A comunicação baseada em arquivo entre sites usa o protocolo **SMB** na porta TCP/IP 445. É possível especificar a limitação da largura de banda e o modo de pulso para controlar a quantidade de dados transferidos pela rede e é possível usar agendamentos para controlar quando enviar os dados pela rede.  
 
-### <a name="bkmk_routes"></a> 文件复制路由  
-下列信息有助于你设置和使用文件复制路由。  
+### <a name="bkmk_routes"></a> Rotas de replicação de arquivo  
+As informações a seguir podem ajudar você a configurar e usar as rotas de replicação de arquivo.  
 
-#### <a name="file-replication-route"></a>文件复制路由
+#### <a name="file-replication-route"></a>Rota de replicação de arquivo
 
-每个文件复制路由都确定可将基于文件的数据传输到其中的目标站点。 每个站点都支持到特定目标站点的单一文件复制路由。  
+Cada rota de replicação de arquivo identifica um site de destino para o qual os dados baseados em arquivo podem ser transferidos. Cada site dá suporte a uma rota de replicação de arquivo para um site de destino específico.  
 
-可以为文件复制路由更改以下设置：  
+Você pode alterar as seguintes configurações para rotas de replicação de arquivo:  
 
--  **文件复制帐户**。 此帐户连接目标站点，并将数据写入该站点的 **SMS_Site** 共享。 写入到此共享的数据由接收站点处理。 默认情况下，将站点添加到层次结构后，Configuration Manager 会将新站点的站点服务器计算机帐户指定为该站点的“文件复制帐户”。 此帐户随后将被添加到目标站点的 **SMS_SiteToSiteConnection_&lt;Sitecode\>** 组，该组是对 SMS_Site 共享授予访问权限的计算机上的一个本地组。 你可以将此帐户更改为 Windows 用户帐户。 如果更改帐户，请确保将新帐户添加到目标站点的 **SMS_SiteToSiteConnection_&lt;Sitecode\>** 组。  
+-  **Conta de replicação de arquivo**. Essa conta se conectar ao site de destino e grava dados no compartilhamento **SMS_Site** desse site. Os dados gravados nesse compartilhamento são processados pelo site de recebimento. Por padrão, quando um site é adicionado à hierarquia, o Configuration Manager atribui a conta do computador dos novos servidores do sistema de sites como os sites Conta de Replicação de Arquivo. Esta conta é adicionada ao grupo **SMS_SiteToSiteConnection_&lt;Sitecode\>** do site de destino, um grupo local no computador que concede acesso ao compartilhamento do SMS_Site. Você pode alterar essa conta para ser uma conta de usuário do Windows. Se você alterar a conta, certifique-se de adicionar a nova conta ao grupo **SMS_SiteToSiteConnection_&lt;Sitecode\>** do site de destino.  
 
     > [!NOTE]  
-    >  辅助站点始终使用辅助站点服务器的计算机帐户作为“文件复制帐户” 。  
+    >  Os sites secundários sempre usam a conta do computador do servidor do site secundário como a **Conta de Replicação de Arquivo**.  
 
--  **计划**。 可以为每个文件复制路由设置计划，限制可将数据传输到目标站点时的日期和时间的类型。  
--  **速率限制**。 可以为每个文件复制路由指定速率限制，控制站点在将数据传输到目标站点时使用的网络带宽：  
+-  **Agendamento**. Você pode configurar o agendamento para cada rota de replicação de arquivo para restringir o tipo de dado e a hora em que os dados podem ser transferidos para o site de destino.  
+-  **Limites de taxa**. Você pode especificar os limites de taxa para cada rota de replicação de arquivo para controlar a largura de banda da rede usada quando o site transfere os dados ao site de destino:  
 
-    -  使用“脉冲模式”  来指定发送到目标站点的数据块的大小。 也可以指定发送各个数据块之间的时间延迟。 如果必须在连接目标站点的极低带宽网络上发送数据，请使用此选项。 例如，你可能有每五秒发送 1 KB 数据（而不是每三秒发送 1 KB）的约束，而不管某个给定时间的链接速度或其使用率如何。
-    -  使用“限制为按小时指定的最大传输速率”  ，让站点仅使用你指定的时间百分比将数据发送到目标站点。 如果使用此选项，Configuration Manager 将不会确定网络可用带宽，而是将它可发送数据的时间划分为时间片段。 然后在一个短时间段内发送数据，之后的几个时间段则不发送数据。 例如，如果最大速率设置为 **50%**，Configuration Manager 传输数据一段时间后，在相同的时间内不发送任何数据。 不会管理实际数据量大小或数据块大小。 而只会管理发送数据期间的时间量。  
+    -  Use o **Modo de pulso** para especificar o tamanho dos blocos de dados que são enviados ao site de destino. Você também pode especificar um retardo de tempo entre o envio de cada bloco de dados. Use essa opção quando você deve enviar dados através de uma conexão de rede com largura de banda bem baixa ao site de destino. Por exemplo, você pode ter restrições para enviar 1 KB de dados a cada cinco segundos, mas não 1 KB a cada três segundos, independentemente da velocidade do link ou seu uso em um determinado tempo.
+    -  Use **Limitado às taxas de transferência máximas especificadas por hora** para que um site envie dados para o site de destino usando somente a porcentagem de tempo que você especificar. Ao usar essa opção, o Configuration Manager não identifica a largura de banda disponível da rede, mas, em vez disso, ele divide o tempo em que pode enviar dados em períodos de tempo. Os dados são enviados em um curto bloco de tempo, que é seguido por blocos de tempo quando os dados não são enviados. Por exemplo, se a taxa máxima está definida como **50%**, o Configuration Manager transmite dados por um período de tempo seguido de igual período quando nenhum dado é enviado. A quantidade de tamanho real de dados ou o tamanho do bloco de dados não é gerenciado. Em vez disso, somente a quantidade de tempo durante a qual os dados são enviados é gerenciada.  
 
         > [!CAUTION]  
-        > 默认情况下，站点可使用最多三个“并发发送”  来将数据传输到目标站点。 如果为文件复制路由启用速率限制，则用于将数据发送到该站点的“并发发送”  数限制为 1。 即使“限制可用带宽(%)”  设置为“100%” ，这一点也适用。 例如，如果为发送程序使用默认设置，则此设置会将传输到目标站点时的速率减少到默认能力的三分之一。  
+        > Por padrão, um site pode usar até três **envios simultâneos** para transferir dados a um site de destino. Ao habilitar limites de taxa a uma rota de replicação de arquivo, os **envios simultâneos** para envio de dados para aquele site são limitados a um. Isso se aplica mesmo se o **Limite da largura de banda disponível (%)** está definido como **100%**. Por exemplo, se você usa as configurações padrão para o remetente, isso reduz a taxa de transferência para o site de destino para um terço da capacidade padrão.  
 
--  你可以在两个辅助站点之间配置文件复制路由，以在这些站点之间传输基于文件的内容。  
+-  Você pode configurar uma rota de replicação de arquivo entre dois sites secundários para o conteúdo baseado em arquivo de rota entre esses sites.  
 
-若要管理文件复制路由，请在“管理”工作区中展开“层次结构配置”节点，并选择“文件复制”。  
+Para gerenciar uma rota de replicação de arquivo, no espaço de trabalho **Administração**, expanda o nó **Configuração da Hierarquia** e selecione **Replicação de Arquivo**.  
 
-#### <a name="sender"></a>发送程序
+#### <a name="sender"></a>Remetente
 
-每个站点均具有一个发送程序。 发送程序管理从一个站点到一个目标站点的网络连接，并且还可以同时与多个站点建立连接。 为连接到站点，发送程序使用指向站点的文件复制路由来标识要用于建立网络连接的帐户。 发送程序还使用此帐户将数据写入目标站点的 SMS_Site 共享。  
+Cada site tem um remetente. O remetente gerencia a conexão de rede de um site para um site de destino, e pode estabelecer conexões com vários sites ao mesmo tempo. Para conectar a um site, o remetente usa a rota de replicação de arquivos até o site para identificar a conta a ser usada para estabelecer a conexão de rede. O remetente também usa essa conta para gravar dados no compartilhamento SMS_Site do site de destino.  
 
-默认情况下，发送程序通过使用多个“并发发送” （通常指线程）将数据写到目标站点。 每个并发发送或线程可以将基于文件的不同对象传输到目标站点。 默认情况下，如果发送程序开始发送对象，则发送程序会持续写入该对象的数据块直到整个对象发送完毕。 在该对象的所有数据均已发送完毕后，即可在该线程上开始发送新的对象。  
+Por padrão, o remetente grava dados em um site de destino, utilizando vários **envios simultâneos**, geralmente referidos como thread. Cada envio simultâneo, ou thread, pode transferir um objeto diferente com base em arquivo para o site de destino. Por padrão, quando o remetente começa a enviar um objeto, continua a gravar blocos de dados para esse objeto até que todo o objeto seja enviado. Depois que todos os dados do objeto foram enviados, um novo objeto pode começar a ser enviado nesse segmento.  
 
-可以为发送程序更改下列设置：  
+É possível alterar as seguintes configurações para um remetente:  
 
--  **最大并发发送数**。 默认情况下，每个站点使用五个并发发送，且当其将数据发送至任何一个目标站点时均有三个可用。 提高此数字时，可增加站点之间的数据吞吐量，因为 Configuration Manager 可同时传输更多文件。 提高此数字还会提高对站点之间的网络带宽的要求。  
+-  **Máximo de envios simultâneos**. Por padrão, cada site usa cinco envios simultâneos, com três disponíveis para uso quando são enviados dados para qualquer site de destino. Quando você aumenta esse número, pode aumentar a taxa de transferência de dados entre os sites, pois o Configuration Manager pode transferir mais arquivos ao mesmo tempo. O aumento desse número também aumenta a demanda de largura de banda de rede entre os sites.  
 
--  **重试设置**。 默认情况下，每个站点对问题连接重试两次，并在连接尝试之间延迟一分钟。 可以修改站点所做的连接尝试数和尝试之间的等待时长。  
+-  **Configurações de repetição**. Por padrão, cada site repete um problema de conexão duas vezes com um atraso de um minuto entre as tentativas de conexão. Você pode modificar o número de tentativas de conexão que o site faz e o tempo de espera entre as tentativas.  
 
-若要管理站点的发送程序，请在“管理”工作区中展开“站点配置”节点，选择“站点”节点，然后针对要管理的站点单击“属性”。 选择“发送程序”选项卡以更改发送程序设置。  
+Para gerenciar o remetente de um site, no espaço de trabalho **Administração**, expanda o nó **Configuração do Site**, selecione o nó **Sites** e selecione **Propriedades** para o site que deseja gerenciar. Selecione a guia **Remetente** para alterar as configurações de remetente.  
 
 ## <a name="bkmk_dbrep"></a> Database replication  
-Configuration Manager 数据库复制使用 SQL Server 传输数据，并将站点数据库中所做的更改与存储在层次结构中其他站点上的数据库中的信息合并在一起。 请注意有关数据库复制的以下几点：
+A replicação de banco de dados do Configuration Manager usa o SQL Server para transferir dados e mesclar as alterações feitas em um banco de dados do site com as informações armazenadas no banco de dados em outros sites na hierarquia. Observe o seguinte sobre a replicação de banco de dados:
 
--  所有站点共享相同的信息。  
--  在层次结构中安装站点时，将在新站点及其指定的父站点之间自动建立数据库复制。  
--  当站点安装完成后，数据库复制将自动开始。  
+-  Todos os sites compartilham as mesmas informações.  
+-  Quando você instala um site em uma hierarquia, a replicação de banco de dados é estabelecida automaticamente entre o novo site e seu site pai designado.  
+-  Quando termina a instalação do site, a replicação de banco de dados é iniciada automaticamente.  
 
-向层次结构添加新站点时，Configuration Manager 会在该新站点创建通用数据库。 接下来，父站点将在其数据库中创建相关数据的快照，然后通过基于文件的复制将该快照传输到新站点。 然后，新站点使用 SQL Server 成批复制程序 (BCP) 将信息加载到其 Configuration Manager 数据库的本地副本。 在快照加载后，每个站点均会与其他站点执行数据库复制。  
+Quando você adiciona um novo site a uma hierarquia, o Configuration Manager cria um banco de dados genérico no novo site. Em seguida, o site pai cria um instantâneo dos dados relevantes em seu banco de dados e, em seguida, transfere o instantâneo para o novo site com uma replicação baseada em arquivo. O novo site usa um BCP (Programa de Cópia em Massa) do SQL Server para carregar as informações em sua cópia local do banco de dados do Configuration Manager. Depois que o instantâneo é carregado, cada site realiza replicação de banco de dados com o outro site.  
 
-为在站点之间复制数据，Configuration Manager 会使用其自己的数据库复制服务。 数据库复制服务使用 SQL Server 更改跟踪来监视本地站点数据库的更改，然后使用 SQL Server Service Broker (SSB) 将更改复制到其他站点。 默认情况下，此过程使用 TCP/IP 端口 4022。  
+Para replicar dados entre sites, o Configuration Manager usa seu próprio serviço de replicação de banco de dados. O serviço de replicação de banco de dados usa o controle de alterações do SQL Server para monitorar o banco de dados do site local quanto a alterações e, depois, replica essas alterações em outros sites, usando um SQL SSB (Server Service Broker). Por padrão, esse processo usa a porta TCP/IP 4022.  
 
-Configuration Manager 将由数据库复制造成的重复数据划分到不同复制组。 请注意有关复制组的以下几点：
+O Configuration Manager agrupa os dados que replica pela replicação de banco de dados em grupos de replicação diferentes. Observe o seguinte sobre grupos de replicação:
 
--  每个复制组具有单独而固定的复制计划，该计划将确定将组中的数据更改复制到其他站点的频率。  
+-  Cada grupo de replicação tem uma agenda de replicação fixa, separada, que determina com que frequência as alterações de dados do grupo são replicadas em outros sites.  
 
-     例如，对基于角色的管理配置的更改会快速复制到其他站点，以确保尽快实施这些更改。 同时，优先级较低的配置更改（如请求安装新辅助站点），复制的紧迫性会少些。 新站点请求可能需要几分钟才能达到目标主站点。  
+     Por exemplo, uma alteração em uma configuração de administração baseada em função é replicada rapidamente em outros sites para assegurar que essas alterações sejam aplicadas o mais cedo possível. Enquanto isso, uma alteração de configuração de prioridade mais baixa, como uma solicitação para instalar um novo site secundário, é replicada com menos urgência. Pode levar vários minutos para que uma solicitação do novo site chegue ao site primário de destino.  
 
--   对于数据库复制，可以修改以下设置：  
+-   Você pode modificar as seguintes configurações da replicação de banco de dados:  
 
-    -  **数据库复制链接**。 控制特定流量何时遍历网络。  
-    -  **分布式视图**。 是复制链接的更改设置，能够在管理中心站点针对选定站点数据发出请求，以从子主站点的数据库中直接访问该站点数据。  
-    -  **计划**。 指定使用复制链接的情形并指定复制不同类型的站点数据的情形。  
-    -  **摘要**。 针对遍历复制链接的网络流量更改数据摘要设置。 默认情况下，摘要每 15 分钟发生一次，且在报表中用于数据库复制。  
-    -  **数据库复制阈值**。 定义将链接报告为降级或失败的情形。 还可以配置 Configuration Manager 在何时发出有关复制链接处于降级或失败状态的警报。  
+    -  **Links de replicação de banco de dados**. Controle quando o tráfego específico percorre a rede.  
+    -  **Exibições distribuídas**. Altere as configurações para os links de replicação pelos quais as solicitações feitas em um site de administração central para os dados do site selecionado podem acessar os dados desse site diretamente do banco de dados no site primário filho.  
+    -  **Agendas**. Especifique quando um link de replicação é usado e quando os diferentes tipos de dados do site são replicados.  
+    -  **Resumo**. Altere as configurações de resumo de dados sobre o tráfico de rede que percorre os links de replicação. O resumo ocorre a cada 15 minutos, por padrão, e é usado em relatórios para replicação de banco de dados.  
+    -  **Limites de replicação de banco de dados**. Defina quando os links são relatados como degradados ou com falha. Você também pode configurar quando o Configuration Manager emite alertas sobre links de replicação degradados ou com falha.  
 
-Configuration Manager 将数据库复制所复制的数据分为**全局数据**或**站点数据**两类。 当发生数据库复制时，将跨数据库复制链接来传输全局数据和站点数据的更改。 全局数据可复制到父站点或子站点。 站点数据仅复制到父站点。 第三类数据类型（本地数据）不会复制到其他任何站点。 本地数据是指其他站点不需要的信息。 请注意有关数据类型的以下几点：  
+O Configuration Manager classifica os dados replicados por replicação do banco de dados como **dados globais** ou **dados do site**. Quando a replicação do banco de dados ocorre, alterações em dados globais e dados do site são transferidas pelo link de replicação de banco de dados. Os dados globais podem replicar em um site pai ou filho. Os dados do site replicam apenas para um site pai. Um terceiro tipo de dados, dados locais, não são replicados em outros sites. Dados locais são informações não exigidas pelos outros sites. Observe o seguinte sobre os tipos de dados:  
 
--  **全局数据**。 全局数据指将复制到整个层次结构中所有站点的由管理员创建的对象（虽然辅助站点仅接收作为全局代理数据的全局数据子集）。 全局数据包括：软件部署、软件更新、集合定义和基于角色的管理安全作用域。 管理员在管理中心站点和主站点创建全局数据。  
--  **站点数据**。 站点数据是指 Configuration Manager 主站点和向主站点报告的客户端创建的操作信息。 站点数据复制到管理中心站点，但不复制到其他主站点。 站点数据包括硬件清单数据、状态消息、警报和基于查询的集合的结果。 站点数据仅在管理中心站点和它源自的主站点中可见。 站点数据仅可在创建它们的主站上修改。  
+-  **Dados globais**. Dados globais referem-se a objetos criados pelo administrador que são replicados em todos os sites, em toda a hierarquia, embora sites secundários recebam apenas um subconjunto dos dados globais, como dados de proxy global. Os dados globais incluem implantações e atualizações de software, definições de coleção e escopos de segurança de administração baseada em funções. Os administradores podem criar dados globais em sites de administração central e primários.  
+-  **Dados do site**. Os dados de site referem-se a informações operacionais criadas pelos sites primários do Configuration Manager e pelos clientes que relatam aos sites primários. Os dados do site replicam para o site de administração central, mas não para outros sites primários. Os dados do site abrangem dados de inventário de hardware, mensagens de estado, alertas e resultados de coleções com base em consulta. Os dados de site são visíveis somente no site de administração central e no site primário do qual os dados são originários. Dados do site podem ser modificados apenas no site primário em que foram criados.  
 
-     所有站点数据均复制到管理中心站点。 管理中心站点为整个站点层次结构执行管理和报告任务。  
+     Todos os dados do site replicam para o site de administração central. O site de administração central executa a administração e relatórios para a hierarquia do site todo.  
 
-以下部分详细介绍在管理数据库复制方面可更改的设置。  
+As seções a seguir detalham as configurações que você pode alterar para gerenciar a replicação de banco de dados.  
 
-### <a name="bkmk_Dblinks"></a> 数据库复制链接  
-在层次结构中安装新站点时，Configuration Manager 将自动在父站点和新站点之间创建数据库复制链接。 将创建单个链接来连接两个站点。  
+### <a name="bkmk_Dblinks"></a> links de replicação de banco de dados  
+Quando você instala um novo site em uma hierarquia, o Configuration Manager cria um link de replicação de banco de dados entre o site pai e o novo site. É criado um link único para conectar os dois sites.  
 
-可更改每个数据库复制链接的设置，帮助你控制跨复制链接的数据传输。 每个复制链接均支持单独的配置。 对数据库复制链接的控制包括以下各项：  
+Você pode alterar as configurações para cada link de replicação de banco de dados para ajudá-lo a controlar a transferência de dados pelo link de replicação. Cada link de replicação oferece suporte a configurações separadas. Os controles de links de replicação de banco de dados incluem o seguinte:  
 
--  阻止将选定站点数据从主站点复制到管理中心站点，使管理中心站点能从主站点数据库中直接访问此数据。  
--  计划将选定站点数据从子主站点传输到管理中心站点。
--  定义用于确定数据库复制链接处于降级状态或已失败的设置。
--  指定何时针对失败的复制链接发出警报。
--  指定 Configuration Manager 对使用复制链接的复制流量的相关数据进行汇总的频率。 此数据在报表中使用。
+-  Parar a replicação de dados de sites selecionados por meio de um site primário para o site de administração central, portanto o site de administração central pode acessar esses dados diretamente do banco de dados do site primário.  
+-  Agendar os dados de sites selecionados para transferir de um site primário filho para o site de administração central.
+-  Definir as configurações que determinam quando um link de replicação de banco de dados tem um estado degradado ou com falha.
+-  Especificar quando gerar alertas para um link de replicação com falha.
+-  Especifique com que frequência o Configuration Manager resume dados sobre o tráfego de replicação que utiliza o link de replicação. Esses dados são usados em relatórios.
 
-若要配置数据库复制链接，可在 Configuration Manager 控制台的“数据库复制”节点上编辑该链接的属性。 此节点同时出现在“监视”工作区中和“管理”工作区中的“层次结构配置”节点下。 你可以从复制链接的父站点或子站点中编辑复制链接。  
-
-> [!TIP]  
-> 你可以编辑任一工作区内“数据库复制”  节点中的数据库复制链接。 但是，如果使用“监视”工作区内的“数据库复制”节点，也可以查看复制链接的数据库复制状态，并且可以访问复制链接分析器工具以帮助你调查数据库复制的问题。  
-
-有关如何配置复制链接的信息，请参阅 [站点数据库复制控件](#BKMK_DBRepControls)。 有关如何监视复制的详细信息，请参阅 [System Center Configuration Manager 中的监视层次结构和复制基础结构](../../../core/servers/manage/monitor-hierarchy-and-replication-infrastructure.md)主题中的[如何监视数据库复制链接和复制状态](../../../core/servers/manage/monitor-hierarchy-and-replication-infrastructure.md#BKMK_MonitorRepLinksAndStatuss)。  
-
-使用下列部分中的信息帮助你规划数据库复制链接。  
-
-### <a name="bkmk_distviews"></a> 分布式视图  
-借助分布式视图，能够在管理中心站点针对选定站点数据发出请求，以从子主站点的数据库中直接访问该站点数据。 直接访问无需再从主站点将该站点数据复制到管理中心站点。 由于每个复制链接均与其他复制链接无关，因此可仅在所选的复制链接上启用分布式视图。 不能在主站点和辅助站点之间使用分布式视图。  
-
-分布式视图可以提供以下好处：  
-
--  降低 CPU 负载以在管理中心站点和主站点上处理数据库更改
--  降低跨网络传输到管理中心站点的数据量
--  改善托管管理中心站点数据库的 SQL Server 性能
--  减少管理中心站点上数据库所用的磁盘空间
-
-当主站点在网络上临近管理中心站点且两个站点始终启动并始终相连时，考虑使用分布式视图。 这是因为分布式视图会将站点间选定数据的复制替换为每个站点上 SQL Server 之间的直接连接。 每次在管理中心站点上请求此数据时均会建立直接连接。 通常，运行报表或查询时，或在资源浏览器中查看信息时，可能会通过对集合（其中含有基于站点数据的规则）进行集合评估，针对分布式视图启用数据请求。  
-
-默认情况下，每个复制链接均已关闭分布式视图。 打开复制链接的分布式视图时，选择不会跨该链接复制到管理中心站点的站点数据。 管理中心站点会从共享该链接的子主站点数据库直接访问此数据。 你可以为分布式视图配置以下类型的站点数据：  
-
--  来自客户端的硬件清单数据
--  来自客户端的软件清单和计数数据
--  来自客户端、主站点和所有辅助站点的状态消息
-
-在操作上，分布式视图对于在 Configuration Manager 控制台或报表中查看数据的管理用户不可见。 当对分布式视图的已启用数据发出请求时，托管管理中心站点数据库的 SQL Server 会直接访问子主站点的 SQL Server 以检索信息。 例如，你在管理中心站点上使用 Configuration Manager 控制台来请求关于两个站点的硬件清单的信息，并且仅有一个站点已对分布式视图启用硬件清单。 从管理中心站点的数据库中会检索未为分布式视图配置的站点的客户端清单信息。 从子主站点的数据库中会访问已为分布式视图配置的站点的客户端清单信息。 此信息将出现在 Configuration Manager 控制台或报表中，但不标识信息源。  
-
-只要复制链接具有一类已对分布式视图启用的数据，子主站点就不会将该数据复制到管理中心站点。 关闭某类数据的分布式视图后，子主站点会立即恢复将该数据复制到管理中心站点，并将其作为普通数据复制的一部分。 但是，必须先在主站点和管理中心站点之间将包含此数据的复制组重新初始化，管理中心站点上才会提供此数据。 与此类似，卸载已启用分布式视图的主站点后，管理中心站点必须先完成其数据的重新初始化，然后才能在管理中心站点上访问已对分布式视图启用的数据。  
-
-> [!IMPORTANT]  
-> 在站点层次结构中的任何复制链接上使用分布式视图时，必须先关闭所有复制链接的分布式视图，才能卸载任何主站点。 有关详细信息，请参阅 [Uninstall a primary site that is configured with distributed views](../../../core/servers/deploy/install/uninstall-sites-and-hierarchies.md#BKMK_UninstallPrimaryDistViews)。  
-
-#### <a name="prerequisites-and-limitations-for-distributed-views"></a>分布式视图的先决条件和限制  
-
--  只能在管理中心站点和主站点之间的复制链接上使用分布式视图。
-- 管理中心站点必须使用 SQL Server 的企业版。 主站点没有此要求。
--  管理中心站点仅可以安装一个 SMS 提供程序实例，并且该实例必须安装在站点数据库服务器上。 这是支持 Kerberos 身份验证所必需的，这样，管理中心站点上的 SQL Server 才能访问子主站点上的 SQL Server。 对于子主站点上的 SMS 提供程序没有任何限制。
--  管理中心站点仅可以安装一个 SQL Server Reporting Services 点，并且它必须位于站点数据库服务器上。 这是支持 Kerberos 身份验证所必需的，这样，管理中心站点上的 SQL Server 才能访问子主站点上的 SQL Server。
--  SQL Server 群集上无法承载站点数据库。
--  SQL Server AlwaysOn 可用性组无法托管站点数据库。
--  管理中心站点中数据库服务器的计算机帐户需要对主站点的站点数据库具有“读取”权限。
-
-> [!IMPORTANT]  
->  对于数据库复制链接而言，分布式视图和数据复制时间计划是相互排斥的设置。  
-
-### <a name="BKMK_schedules"></a> 针对数据库复制链接上站点数据的计划传输  
-为了帮助你控制用于从子主站点将站点数据复制到其管理中心站点的网络带宽，你可以计划复制链接的使用时间，指定复制不同类型站点数据的时间。 你可以控制主站点复制状态消息、清单和计数数据的时间。 辅助站点中的数据库复制链接不支持站点数据计划。 无法计划全局数据传输。  
-
-配置数据库复制链接计划时，你可以限制从主站点至管理中心站点的所选站点数据的传输，并且可以配置复制不同类型站点数据的不同时间。  
-
-> [!IMPORTANT]  
-> 对于数据库复制链接而言，分布式视图和数据复制时间计划是相互排斥的配置。  
-
-### <a name="BKMK_SummarizeDBReplication"></a> 数据库复制流量汇总  
-每个站点会定期汇总关于遍历站点数据库复制链接的网络流量的数据。 汇总数据用于数据库复制报表。 复制链接上的两个站点都汇总遍历复制链接的网络流量 数据汇总由承载站点数据库的 SQL Server 来执行。 进行数据汇总后，此信息会作为全局数据复制到其他站点。  
-
-默认情况下，汇总每 15 分钟发生一次。 若要修改网络流量汇总的频率，可在数据库复制链接属性中编辑“摘要间隔”。 汇总频率会影响你在报表中查看的关于数据库复制的信息。 间隔可选择在 5 分钟到 60 分钟之间。 如果增加汇总频率，会增加复制链接上每个站点中 SQL Server 的处理负荷。  
-
-### <a name="BKMK_DBRepThresholds"></a>数据库复制阈值  
-数据库复制阈值定义将数据库复制链接状态报告为降级或失败的时间。 默认情况下，如果任何一个复制组在 12 次连续尝试期间无法完成复制，则将链接设置为降级状态。 如果任何一个复制组在 24 次连续尝试期间无法完成复制，则将链接设置为失败状态。  
-
-可以指定自定义值，以微调 Configuration Manager 将复制链接报告为降级或失败的时间。 通过调整 Configuration Manager 报告数据库复制链接的每个状态的时间，可以帮助你准确地监视所有数据库复制链接的数据库复制健康状况。  
-
-由于一个或少数复制组可能无法复制，而其他复制组可以继续成功复制，因此在首次报告降级状态时，请计划查看复制链接的复制状态。 如果特定复制组定期出现延迟，并且其延迟未显示问题，或者如果站点之间的网络链接具有低可用带宽，请考虑修改链接的降级或失败状态的值并重试这些值。 如果在将链接设置为降级或失败之前增加重试次数，则可以消除已知问题的假警告，这样，你就可以更加准确地跟踪链接的状态。  
-
-还应该考虑每个复制组的复制同步间隔，了解该组复制发生的频率。 若要查看复制组的“同步间隔”，请在“监视”工作区的“数据库复制”节点上，选择复制链接的“复制详细信息”选项卡。  
-
-若要深入了解如何监视复制，包括如何查看复制状态，请参阅 [System Center Configuration Manager 中的监视层次结构和复制基础结构](../../../core/servers/manage/monitor-hierarchy-and-replication-infrastructure.md)主题中的[如何监视数据库复制链接和复制状态](../../../core/servers/manage/monitor-hierarchy-and-replication-infrastructure.md#BKMK_MonitorRepLinksAndStatuss)。  
-
-有关配置数据库复制阈值的信息，请参阅[站点数据库复制控件](#BKMK_DBRepControls)。  
-
-## <a name="BKMK_DBRepControls"></a> 站点数据库复制控件  
-可更改每个站点数据库的设置，帮助你控制用于数据库复制的网络带宽。 这些设置仅适用于在其中配置设置的站点数据库。 站点通过数据库将任何数据复制到任何其他站点时，会始终使用这些设置。  
-
-以下是可以为每个站点数据库修改的复制控件：  
-
--  更改 SSB 端口。  
--  配置在复制失败触发站点重新初始化其站点数据库副本之前等待的时间段。  
--  配置站点数据库以对其通过数据库复制所复制的数据进行压缩。 只会为站点之间的传输压缩数据，而不会为任一站点上站点数据库中的存储压缩数据。  
-
-若要更改站点数据库复制控件的设置，请在 Configuration Manager 控制台中的“数据库复制”节点上，编辑该站点数据库的属性。 此节点出现在“管理”  工作区中的“层次结构配置”  节点下面，也出现在“监视工作区” 中。 若要编辑站点数据库的属性，请选择站点之间的复制链接，然后打开“父数据库属性”或“子数据库属性”。  
+Para configurar um link de replicação de banco de dados, no console do Configuration Manager, no nó **Replicação de Banco de Dados**, edite as propriedades do link. Esse nó aparece no espaço de trabalho **Monitoramento** e no espaço de trabalho **Administração**, no nó **Configuração da Hierarquia**. Você pode editar um link de replicação do pai site ou do site filho do link de replicação.  
 
 > [!TIP]  
-> 你可以配置任一工作区内“数据库复制”  节点中的数据库复制控件。 但是，如果使用“监视”工作区内的“数据库复制”节点，也可以查看复制链接的数据库复制状态，并且可以访问复制链接分析器工具以帮助你调查复制问题。  
+> Você pode editar links de replicação de banco de dados no nó **Replicação do Banco de Dados** em qualquer um dos espaços de trabalho. No entanto, quando você usa o nó **Replicação do Banco de Dados** no espaço de trabalho **Monitoramento** também pode exibir o status de replicação de banco de dados dos links de replicação e acessar a ferramenta Replication Link Analyzer para ajudar a investigar problemas com a replicação.  
+
+Para obter informações sobre como configurar os links de replicação, consulte [Controles de replicação de banco de dados do site](#BKMK_DBRepControls). Para obter mais informações sobre como monitorar a replicação, consulte a [Como monitorar o status de replicação e links de replicação de banco de dados](../../../core/servers/manage/monitor-hierarchy-and-replication-infrastructure.md#BKMK_MonitorRepLinksAndStatuss) no tópico [Monitorar a infraestrutura de hierarquia e de replicação no System Center Configuration Manager](../../../core/servers/manage/monitor-hierarchy-and-replication-infrastructure.md).  
+
+Use as informações nas seções a seguir para ajudá-lo a planejar links de replicação de banco de dados.  
+
+### <a name="bkmk_distviews"></a> exibições distribuídas  
+Por meio das exibições distribuídas, as solicitações feitas em um site de administração central para acesso a dados de site selecionados acessam esses dados diretamente do banco de dados em um site primário filho. O acesso direto substitui a necessidade de replicar os dados do site por meio do site primário para o site de administração central. Como cada link de replicação é independente de outros links de replicação, você pode usar exibições distribuídas apenas nos links de replicação que escolher. Não é possível usar exibições distribuídas entre um site primário e um secundário.  
+
+Exibições distribuídas podem fornecer os seguintes benefícios:  
+
+-  Reduzir a carga de CPU para processar alterações de banco de dados no site da administração central e sites primários
+-  Reduzir a quantidade de dados transferidos pela rede para o site de administração central
+-  Melhorar o desempenho do SQL Server que hospeda o banco de dados de sites de administração central
+-  Reduzir o espaço em disco usado pelo banco de dados no site da administração central
+
+Considere o uso de exibições distribuídas quando um site primário está nas proximidades do site de administração central na rede e os dois sites estão sempre ativados e sempre conectados. Isso porque exibições distribuídas substituem a replicação dos dados selecionados entre os sites com conexões diretas entre os SQL Servers em cada local. Uma conexão direta acontece cada vez que uma solicitação de dados é feita no site da administração central. Geralmente, solicitações de dados que possam ser habilitadas para exibições distribuídas são feitas quando você executa relatórios ou consultas, visualiza informações no Gerenciador de Recursos e pela avaliação de coleções que incluem regras baseadas nos dados do site.  
+
+Por padrão, as exibições distribuídas estão desligadas para cada link de replicação. Quando você ativa as exibições distribuídas de um link de replicação, seleciona os dados de site que não serão replicadas para o site de administração central por meio desse link. O site de administração central acessa esses dados diretamente do banco de dados do site primário filho que compartilha o link. Você pode configurar os seguintes tipos de dados do site para exibições distribuídas:  
+
+-  Dados de inventário de hardware de clientes
+-  Inventário e medição de software de dados de clientes
+-  Mensagens de status de clientes, o site primário e todos os sites secundários
+
+Operacionalmente, exibições distribuídas são invisíveis para um usuário administrativo que visualiza os dados no console do Configuration Manager ou em relatórios. Quando é feita uma solicitação de dados habilitados para exibições distribuídas, o SQL Server que hospeda o banco de dados do site de administração central acessa diretamente o SQL Server do site primário filho para recuperar as informações. Por exemplo, você usa um console do Configuration Manager no site de administração central para solicitar informações sobre o inventário de hardware por meio de dois sites, e apenas um site tem inventário de hardware habilitado para uma exibição distribuída. As informações de inventário para clientes daquele site que não estão configuradas para exibições distribuídas são recuperadas do banco de dados no site de administração central. As informações de inventário para clientes do site que estão configuradas para exibições distribuídas são acessadas por meio do banco de dados no site primário filho. Essas informações aparecem no console do Configuration Manager ou em um relatório sem identificar a origem.  
+
+Enquanto um link de replicação tiver um tipo de dados habilitado para exibições distribuídas, o site primário filho não replicará os dados no site de administração central. Assim que você desliga as exibições distribuídas de um tipo de dados, o site primário filho retoma a replicação desses dados no site de administração central como parte da replicação de dados normal. No entanto, para que esses dados estejam disponíveis no site de administração central, os grupos de replicação que os têm devem reinicializar entre o site primário e o site de administração central. Da mesma forma, depois de desinstalar um site primário com visões distribuídas ativadas, o site de administração central deve completar a reinicialização dos seus dados para acessar dados habilitados para visões distribuídas no site de administração central.  
+
+> [!IMPORTANT]  
+> Quando você usa exibições distribuídas em qualquer link de replicação na hierarquia do site, deve desligar exibições distribuídas para todos os links de replicação para desinstalar qualquer site primário. Para obter mais informações, consulte [Uninstall a primary site that is configured with distributed views](../../../core/servers/deploy/install/uninstall-sites-and-hierarchies.md#BKMK_UninstallPrimaryDistViews).  
+
+#### <a name="prerequisites-and-limitations-for-distributed-views"></a>Pré-requisitos e limitações para exibições distribuídas  
+
+-  Você pode usar exibições distribuídas apenas nos links de replicação entre um site de administração central e um site primário.
+- O site de administração central deve usar uma edição Enterprise do SQL Server. O site primário não tem esse requisito.
+-  O site de administração central pode ter apenas uma instância do Provedor de SMS instalado, e essa instância deve ser instalada no servidor de banco de dados do site. Isso é necessário para dar suporte à autenticação Kerberos necessária para que o SQL Server no site de administração central possa acessar o SQL Server no site primário filho. Não há limitações de Provedor de SMS no site primário filho.
+-  O site de administração central pode ter apenas um ponto do SQL Server Reporting Services instalado, e deve estar localizado no servidor de banco de dados do site. Isso é necessário para dar suporte à autenticação Kerberos necessária para habilitar o SQL Server no site de administração central para acessar o SQL Server no site primário filho.
+-  O banco de dados do site não pode ser hospedado em um cluster do SQL Server.
+-  O banco de dados do site não pode ser hospedado em um grupo de disponibilidade do AlwaysOn do SQL Server.
+-  A conta de computador do servidor de banco de dados do site de administração central requer permissões de Leitura para o banco de dados do site primário.
+
+> [!IMPORTANT]  
+>  Visões e agendamentos distribuídos para quando os dados puderem ser replicados são configurações mutuamente exclusivas para um vínculo de replicação de banco de dados.  
+
+### <a name="BKMK_schedules"></a> Agendar transferências de dados do site em links de replicação de banco de dados  
+Para ajudá-lo a controlar a largura de banda de rede que é usada para replicar dados do site de um site primário filho para o seu site de administração central, você pode agendar o uso de um vínculo de replicação e especificar quando se dará a replicação dos diferentes tipos de dados do site. Você pode controlar quando o site primário replica as mensagens de status, inventário e dados de medição. Vínculos de replicação de banco de dados de sites secundários não oferecem suporte a agendamentos de dados do site. A transferência de dados globais não pode ser agendada.  
+
+Quando você configurar um agendamento de vínculo de replicação de banco de dados, você pode restringir a transferência de dados do site selecionado do site primário para o site de administração central, e pode configurar diferentes horários para replicar diferentes tipos de dados do site.  
+
+> [!IMPORTANT]  
+> Visões e agendamentos distribuídos para quando os dados puderem ser replicados são configurações mutuamente exclusivas para um vínculo de replicação de banco de dados.  
+
+### <a name="BKMK_SummarizeDBReplication"></a> Resumo do tráfego de replicação de banco de dados  
+Periodicamente, cada site resume dados de tráfego de rede que percorrem links de replicação de banco de dados para o site. Os dados resumidos são usados em relatórios para replicação de banco de dados. Ambos os sites em um vínculo de replicação resumem o tráfego de rede que atravessa o vínculo de replicação. O resumo dos dados é executado pelo SQL Server que hospeda o banco de dados do site. Após os dados serem resumidos, as informações serão replicadas para outros sites como dados globais.  
+
+Por padrão, o resumo ocorre a cada 15 minutos. Para modificar a frequência de resumo do tráfego de rede, nas propriedades do link de replicação de banco de dados, edite o **Intervalo de resumo**. A frequência do resumo afeta as informações exibidas nos relatórios sobre a replicação de banco de dados. Você pode escolher um intervalo de entre 5 minutos e 60 minutos. Quando você aumenta a frequência do resumo, aumenta a carga de processamento no SQL Server em cada site no vínculo de replicação.  
+
+### <a name="BKMK_DBRepThresholds"></a> Limites de replicação de banco de dados  
+Limites de replicação de banco de dados definem quando o status de um vínculo de replicação de banco de dados é informado degradado ou com falha. Por padrão, um link é definido para o status degradado quando qualquer grupo de replicação falha ao concluir a replicação para um período de 12 tentativas consecutivas. O link é definido para o status com falha quando algum grupo de replicação não consegue replicar após 24 tentativas consecutivas.  
+
+É possível especificar valores personalizados para ajuste quando o Configuration Manager informa que um link de replicação está degradado ou com falha. O ajuste de quando o Configuration Manager relata cada status dos seus vínculos de replicação de banco de dados pode ajudar a monitorar com precisão a integridade da replicação de banco de dados por meio dos vínculos de replicação de banco de dados.  
+
+Como é possível que um ou alguns grupos de replicação não repliquem enquanto outros grupos de replicação continuam a replicar com êxito, planeje examinar o status de replicação de um link de replicação quando ele informar pela primeira vez um status degradado. Se houver atrasos recorrentes para grupos de replicação específicos e esse atraso não apresentar problema, ou onde o link de rede entre os sites tiver baixa largura de banda disponível, considere modificar os valores de repetição para os status degradado ou com falha do link. Ao aumentar o número de tentativas antes que o link seja definido como degradado ou com falha, você pode eliminar falsos alertas para problemas conhecidos e acompanhar o status do link de forma mais precisa.  
+
+Além disso, considere o intervalo de sincronização da replicação para cada grupo de replicação para entender com que frequência a replicação do grupo ocorre. Para exibir o **Intervalo de Sincronização** para grupos de replicação, no espaço de trabalho **Monitoramento**, no nó **Replicação de Banco de Dados**, selecione a guia **Detalhe da Replicação** de um link de replicação.  
+
+Para obter mais informações sobre como monitorar a replicação de banco de dados, incluindo como exibir o status da replicação, consulte a [Como monitorar o status de replicação e links de replicação de banco de dados](../../../core/servers/manage/monitor-hierarchy-and-replication-infrastructure.md#BKMK_MonitorRepLinksAndStatuss) no tópico [Monitorar a infraestrutura de hierarquia e de replicação no System Center Configuration Manager](../../../core/servers/manage/monitor-hierarchy-and-replication-infrastructure.md).  
+
+Para obter informações sobre como configurar os limites de replicação do banco de dados, consulte [Controles de replicação de banco de dados do site](#BKMK_DBRepControls).  
+
+## <a name="BKMK_DBRepControls"></a> Controles de replicação de banco de dados do site  
+Você pode alterar as configurações para cada banco de dados do site para ajudá-lo a controlar a largura de banda de rede usada para replicação de banco de dados. As configurações se aplicam somente ao banco de dados do site em que você definir as configurações. As configurações são sempre usadas quando o site replica quaisquer dados por replicação de banco de dados para qualquer outro site.  
+
+Os itens a seguir são controles de replicação que você pode modificar para cada banco de dados de site:  
+
+-  Alterar a porta SSB.  
+-  Configurar o período de tempo de espera antes que as falhas de replicação acionem o site para reinicializar sua cópia de banco de dados do site.  
+-  Configurar um banco de dados do site para compactar os dados que ele replica pela replicação de banco de dados. Os dados são compactados apenas para a transferência entre sites, e não para o armazenamento no banco de dados do site em qualquer um dos sites.  
+
+Para alterar as configurações para os controles de replicação para um banco de dados de site, no console do Configuration Manager, no nó **Replicação de Banco de Dados**, edite as propriedades do banco de dados de site. Esse nó aparece no nó **Configuração da Hierarquia** , no espaço de trabalho **Administração** , e também é exibido no **Espaço de Trabalho de Monitoramento**. Para editar as propriedades do banco de dados do site, selecione o vínculo de replicação entre sites e depois abra **Propriedades de Banco de Dados Pai** ou **Propriedades de Banco de Dados Filho**.  
+
+> [!TIP]  
+> Você pode configurar controles de replicação de banco de dados no nó **Replicação do Banco de Dados** em qualquer um dos espaços de trabalho. No entanto, quando você usa o nó **Replicação do Banco de Dados** no espaço de trabalho **Monitoramento** você também pode exibir o status de replicação de banco de dados de um vínculo de replicação e acessar a ferramenta Replication Link Analyzer para ajudar a investigar problemas com a replicação.  

@@ -1,6 +1,6 @@
 ---
-title: "Endpoint Protection 恶意软件定义 | Microsoft Docs"
-description: "了解如何配置 Configuration Manager 软件更新以将定义更新交付到客户端计算机。"
+title: "Definições de malware do Endpoint Protection | Microsoft Docs"
+description: "Saiba como configurar as atualizações do software do Configuration Manager para fornecer atualizações de definição para os computadores cliente."
 ms.custom: na
 ms.date: 02/14/2017
 ms.prod: configuration-manager
@@ -17,102 +17,102 @@ manager: angrobe
 ms.openlocfilehash: ca40c2c745ea516b56b637249b892cd44e570a9d
 ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
 ms.translationtype: HT
-ms.contentlocale: zh-CN
+ms.contentlocale: pt-BR
 ms.lasthandoff: 08/07/2017
 ---
-#  <a name="using-configuration-manager-software-updates-to-deliver-definition-updates"></a>使用 Configuration Manager 软件更新将定义更新交付
+#  <a name="using-configuration-manager-software-updates-to-deliver-definition-updates"></a>Usando as atualizações de Software do Configuration Manager para fornecer atualizações de definições
 
-*适用范围：System Center Configuration Manager (Current Branch)*
+*Aplica-se a: System Center Configuration Manager (Branch Atual)*
 
 
- 可以配置 Configuration Manager 软件更新以将定义更新交付到客户端计算机。 可通过配置自动部署规则完成此操作。 在开始创建自动部署规则之前，请确保你已配置了 Configuration Manager 软件更新。 有关详细信息，请参阅 [System Center Configuration Manager 中的软件更新简介](/sccm/sum/understand/software-updates-introduction)。
+ Você pode configurar as atualizações do software do Configuration Manager para fornecer atualizações de definição para os computadores cliente. Isso é feito ao configurar regras de implantação automática. Antes de começar a criar regras de implantação automática, verifique se você configurou as atualizações de software do Configuration Manager. Para mais informações, consulte [Introdução às atualizações de software no System Center Configuration Manager](/sccm/sum/understand/software-updates-introduction).
 
 > [!NOTE]
->  此过程仅用于必须专门为 Endpoint Protection 配置的项。 有关创建自动部署规则向导的详细信息，请参阅[自动部署规则更新](/sccm/sum/deploy-use/automatically-deploy-software-updates)。
+>  Esse procedimento é somente para os itens que devem ser configurados especificamente para o Endpoint Protection. Para obter mais informações sobre o Assistente para Criar Regra de Implantação Automática, consulte [Implantar atualizações de software automaticamente](/sccm/sum/deploy-use/automatically-deploy-software-updates).
 
-## <a name="to-configure-an-automatic-deployment-rule-to-deliver-definition-updates"></a>若要配置自动部署规则以提供定义更新
+## <a name="to-configure-an-automatic-deployment-rule-to-deliver-definition-updates"></a>Para configurar uma regra de implantação automática para fornecer atualizações de definições
 
-1.  在 Configuration Manager 控制台中，单击“软件库” 。
+1.  No console do Configuration Manager, clique em **Biblioteca de Software**.
 
-2.  在“软件库”  工作区中，展开“软件更新” ，然后单击“自动部署规则” 。
+2.  No espaço de trabalho **Biblioteca de Software** , expanda **Atualizações de Software**e clique em **Regras de Implantação Automática**.
 
-3.  在“主页”  选项卡上的“创建”  组中，单击“创建自动部署规则” 。
+3.  Na guia **Início** , no grupo **Criar** , clique em **Criar Regra de Implantação Automática**.
 
-4.  在“创建自动部署规则向导”  的“常规” 页上，指定下列信息：
+4.  Na página **Geral** do **Assistente para Criar Regra de Implantação Automática**, especifique as seguintes informações:
 
-    -   “名称”：输入自动部署规则的唯一名称。
+    -   **Nome**: digite um nome exclusivo para a regra de implantação automática.
 
-    -   **集合**：选择你想要将定义更新部署到的客户端计算机的集合。
-
-        > [!NOTE]
-        >  不能将定义更新部署到用户集合。
-
-5.  单击“添加到现有软件更新组” 。
-
-6.  确保选中“运行此规则后启用部署”   复选框，然后单击“下一步” 。
-
-7.  在向导的“部署设置”  页上的“详细信息级别”  列表中，选择“最小” ，然后单击“下一步” 。
-
-    > [!NOTE]
-    >  在“详细信息级别”列表中，选择“最小”（不带 Service Pack 的 Configuration Manager）或“仅错误消息”(Configuration Manager)。 这将减少定义部署返回的状态消息数。 此配置有助于降低 Configuration Manager 服务器上的 CPU 处理使用率。
-
-8.  在“属性筛选器”  列表中，选择“更新分类”  复选框。
-
-9. 在“搜索条件”列表中，单击“<要查找的项\>”。 然后，在“搜索条件”  对话框中的“指定要搜索的值”  列表中，选择“定义更新” 。
-
-10. 单击“确定”  以关闭“搜索条件”  对话框。
-
-11. 在“属性筛选器”  列表中，选择“产品”  复选框。
-
-12. 在“搜索条件”列表中，单击“<要查找的项\>”。 然后，在“搜索条件”  对话框中的“指定要搜索的值”  列表中，选择适用于 Windows 8.1 及更早版本的“Forefront Endpoint Protection 2010”  或适用于 Windows 10 及更高版本的“Windows Defender”  。
-
-13. 单击“确定”  以关闭“搜索条件”  对话框，然后单击“下一步” 。
-
-14. 在“属性筛选器”  列表中，选择“被取代”  复选框。
-
-15. 在“搜索条件”列表中，单击“<要查找的项\>”。 然后，在“搜索条件”  对话框中的“指定要搜索的值”  列表中，选择“否” 。
-
-16. 单击“确定”  以关闭“搜索条件”  对话框，然后单击“下一步” 。
-
-17. 在向导的“评估计划”  页中，选择“启用规则以按计划运行” ，然后配置下载定义更新所依据的计划。 至少将规则设置为在每个软件更新点同步之后运行两个小时。 单击“下一步” 。
-
-18. 在向导的“部署计划”  页上配置下列设置：
-
-    -   “时间根据”：如果希望层次结构中的所有客户端同时安装最新定义，则选择“”  。 实际安装时间将在两小时时段内有所变化。 此设置是建议的最佳方案。
-
-    -   **软件可用时间**：指定可用于由此规则创建的部署的时间。 指定的时间必须至少为自动部署规则运行之后的一小时。 这有助于确保有足够时间将内容复制到层次结构中的分发点。 一些定义更新还可能包括反恶意软件引擎更新，这些更新可能要花更长时间才能到达分发点。
-
-    -   **安装截止时间**：选择“尽快” 。
+    -   **Coleção**: selecione a coleção de computadores cliente na qual você deseja implantar atualizações de definições.
 
         > [!NOTE]
-        >  软件更新截止时间在两小时时间段内变化，以防止所有客户端在同一时间请求更新。
+        >  Você não pode implantar atualizações de definições em uma coleção de usuários.
 
-19. 单击“下一步” 。
+5.  Clique em **Adicionar a um Grupo de Atualizações de Software existente**.
 
-20. 在向导的“用户体验”  页上，在“用户通知”  列表中，选择“在软件中心和所有通知中隐藏” 。   这可确保以无提示方式安装定义更新。 单击“下一步” 。
+6.  Verifique se a caixa de seleção  **Habilitar a implantação após esta regra ser executada** está marcada e clique em **Avançar**.
 
-21. 在向导的“警报”  页中，你无需配置任何警报。 Configuration Manager 中的 Endpoint Protection 会生成任何可能需要的警报。 单击“下一步” 。
-
-22. 在向导的“下载设置”  页中，选择必要的软件更新下载行为，然后单击“下一步” 。
-
-23. 在向导的“部署包”  页中，选择现有部署包或创建新的部署包，以包含与规则关联的软件更新文件。
+7.  Na página **Configurações de Implantação** do assistente, na lista **Nível de detalhe** , selecione **Mínimo**e clique em **Avançar**.
 
     > [!NOTE]
-    >  考虑将定义更新放置在不包含其他软件更新的包中。 此策略可保持定义更新包的大小较小，从而使其可以更快复制到分发点。
+    >  Na lista **Nível de detalhe**, selecione **Mínimo** (Configuration Manager sem Service Pack) ou **Somente mensagens de erro** (Configuration Manager). Isso reduzirá o número de mensagens de estado retornado pela implantação de definição. Essa configuração ajuda a reduzir o uso de processamento da CPU nos servidores do Configuration Manager.
 
-24. 在向导的“分发点”  页中，选择此包的内容将被复制到的一个或多个分发点，然后单击“下一步” 。
+8.  Na lista **Filtros de propriedade** , marque a caixa de seleção **Classificação da Atualização** .
 
-25. 在向导的“下载位置”  页中，选择“从 Internet 下载软件更新” ，然后单击“下一步” 。
+9. Na lista **Critérios de pesquisa**, clique em **<itens para localizar\>**. Na caixa de diálogo **Critérios de Pesquisa** , na lista **Especificar o valor de pesquisa** , selecione **Atualizações de Definições**.
 
-26. 在向导的“语言选择”  页中，选择要下载的更新的每个语言版本，然后单击“下一步” 。
+10. Clique em **OK** para fechar a caixa de diálogo **Critérios de Pesquisa** .
 
-27. 完成“创建自动部署规则向导”。
+11. Na lista **Filtros de propriedade** , marque a caixa de seleção **Produto** .
 
-28. 验证新规则显示在Configuration Manager 控制台的“自动部署规则”节点中。
+12. Na lista **Critérios de pesquisa**, clique em **<itens para localizar\>**. Na caixa de diálogo **Critérios de Pesquisa** , na lista **Especificar o valor de pesquisa** , selecione **Forefront Endpoint Protection 2010** para Windows 8.1 e versões anteriores ou **Windows Defender** para Windows 10 e versões posteriores.
+
+13. Clique em **OK** para fechar a caixa de diálogo **Critérios de Pesquisa** e clique em **Avançar**.
+
+14. Na lista **Filtros de propriedade** , marque a caixa de seleção **Substituído** .
+
+15. Na lista **Critérios de pesquisa**, clique em **<itens para localizar\>**. Na caixa de diálogo **Critérios de Pesquisa** , na lista **Especificar o valor de pesquisa** , selecione **Não**.
+
+16. Clique em **OK** para fechar a caixa de diálogo **Critérios de Pesquisa** e clique em **Avançar**.
+
+17. Na página **Agendamento de Avaliação** do assistente, selecione **Habilitar a execução da regra em um agendamento**e configure o agendamento no qual deseja baixar atualizações de definições. No mínimo, defina que a regra seja executada duas horas depois de cada sincronização de ponto de atualização de software. Clique em **Avançar**.
+
+18. Na página **Agendamento da Implantação** , defina as seguintes configurações:
+
+    -   **Tempo base em**: selecione **UTC** se desejar que todos os clientes na hierarquia instalem as definições mais recentes ao mesmo tempo. O tempo de instalação real varia em uma janela de duas horas. Essa configuração é uma prática recomendada.
+
+    -   **Tempo disponível do software**: especifique o tempo disponível para a implantação criada por essa regra. A hora especificada deve ser pelo menos uma hora depois que a regra de implantação automática é executada. Isso ajuda a garantir que o conteúdo tenha tempo suficiente para replicar os pontos de distribuição na hierarquia. Algumas atualizações de definições também podem incluir atualizações de mecanismos antimalware, as quais podem levar mais tempo para alcançar os pontos de distribuição.
+
+    -   **Prazo de instalação**: selecione **O mais breve possível**.
+
+        > [!NOTE]
+        >  Os prazos de atualização de software variam durante um período de duas horas para impedir que todos os clientes solicitem uma atualização ao mesmo tempo.
+
+19. Clique em **Avançar**.
+
+20. Na página **Experiência do Usuário** do assistente, na lista **Notificações do usuário** , selecione **Ocultar no Centro de Software e todas as notificações**.   Isso garante que as atualizações de definições instalem silenciosamente. Clique em **Avançar**.
+
+21. Na página **Alertas** do assistente, você não precisa configurar nenhum alerta. O Endpoint Protection no Configuration Manager gera todos os alertas que podem ser necessários. Clique em **Avançar**.
+
+22. Na página **Configurações de Download** do assistente, selecione o comportamento de download das atualizações de software necessárias e clique em **Avançar**.
+
+23. Na página **Pacote de Implantação** do assistente, selecione um pacote de implantação existente ou crie um novo pacote de implantação para conter os arquivos de atualização de software associados à regra.
+
+    > [!NOTE]
+    >  Considere colocar as atualizações de definições em um pacote que não contenha outras atualizações de software. Essa estratégia mantém o tamanho do pacote de atualização de definição menor, o que permite que ele seja replicado para os pontos de distribuição mais rapidamente.
+
+24. Na página **Pontos de Distribuição** do assistente, selecione um ou mais pontos de distribuição para os quais o conteúdo do pacote serão copiados e clique em **Avançar**.
+
+25. Na página **Local de Download** do assistente, selecione **Baixar atualizações de software da Internet**e clique em **Avançar**.
+
+26. Na página **Seleção do Idioma** do assistente, selecione cada versão do idioma das atualizações a serem baixadas e clique em **Avançar**.
+
+27. Conclua o Assistente para Criar de Regra de Implantação Automática.
+
+28. Verifique se a nova regra é exibida no nó **Regras de Implantação Automática** do console do Configuration Manager.
 
 
 > [!div class="button"]
-[下一步 >](endpoint-antimalware-policies.md)
+[Próxima etapa >](endpoint-antimalware-policies.md)
 
 > [!div class="button"]
-[返回 >](endpoint-configure-alerts.md)
+[Voltar >](endpoint-configure-alerts.md)

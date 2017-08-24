@@ -1,6 +1,6 @@
 ---
-title: "使用 System Center Configuration Manager 验证 MDM 配置 | Microsoft Docs"
-description: "使用 System Center Configuration Manager 验证 MDM 配置。"
+title: "Verificar uma configuração de MDM usando o System Center Configuration Manager | Microsoft Docs"
+description: "Verifique uma configuração de MDM usando o System Center Configuration Manager."
 ms.custom: na
 ms.date: 03/05/2017
 ms.prod: configuration-manager
@@ -18,20 +18,20 @@ manager: angrobe
 ms.openlocfilehash: ad4b923bd6d3e8acfe799a4ebe2adec737939d75
 ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
 ms.translationtype: HT
-ms.contentlocale: zh-CN
+ms.contentlocale: pt-BR
 ms.lasthandoff: 08/07/2017
 ---
-# <a name="verify-mdm-configuration-with-system-center-configuration-manager"></a>使用 System Center Configuration Manager 验证 MDM 配置
+# <a name="verify-mdm-configuration-with-system-center-configuration-manager"></a>Verificar uma configuração de MDM com o System Center Configuration Manager
 
-*适用范围：System Center Configuration Manager (Current Branch)*
+*Aplica-se a: System Center Configuration Manager (Branch Atual)*
 
-可以通过检查以下日志文件来验证某些设备管理组件：
+Você pode verificar determinados componentes do gerenciamento de dispositivo examinando os seguintes arquivos de log:
 
--   检查 Cloudusersync.log 以验证用户帐户是否已成功同步。
+-   Verifique o Cloudusersync.log para ver se as contas de usuário foram sincronizadas com êxito.
 
--   检查 Sitecomp.log 以验证是否已成功创建服务连接点。
+-   Verifique o Sitecomp.log para ver se o ponto de conexão de serviço foi criado com êxito.
 
-有关这些特定日志文件和查看方式的详细信息，请参阅 [System Center Configuration Manager 中的日志文件](../../core/plan-design/hierarchy/log-files.md#a-namebkmkfunctionlogsa-log-files-for-configuration-manager-functionality)。
+Examine os [Arquivos de log no System Center Configuration Manager](../../core/plan-design/hierarchy/log-files.md#a-namebkmkfunctionlogsa-log-files-for-configuration-manager-functionality) para saber mais sobre esses arquivos de log específicos e como exibi-los.
 
 > [!div class="button"]
-[< 上一步](set-up-additional-management.md)
+[< Etapa anterior](set-up-additional-management.md)

@@ -1,6 +1,6 @@
 ---
-title: "将 Long-Term Servicing Branch 升级到 Current Branch | Microsoft Docs"
-description: "了解如何将 Long-Term Servicing Branch 站点转换为 Current Branch 站点。"
+title: "Atualizar a ramificação de manutenção de longo prazo para a ramificação atual | Microsoft Docs"
+description: "Saiba como converter um site do Branch de Manutenção em Longo Prazo em um site do Branch Atual."
 ms.custom: na
 ms.date: 2/8/2017
 ms.prod: configuration-manager
@@ -17,38 +17,38 @@ manager: angrobe
 ms.openlocfilehash: 6e7edc85630d22c5bbba1ff66bd1199903db76db
 ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
 ms.translationtype: HT
-ms.contentlocale: zh-CN
+ms.contentlocale: pt-BR
 ms.lasthandoff: 08/07/2017
 ---
-# <a name="upgrade-the-long-term-servicing-branch-to-the-current-branch"></a>将 Long-Term Servicing Branch 升级到 Current Branch
+# <a name="upgrade-the-long-term-servicing-branch-to-the-current-branch"></a>Atualizar a ramificação de manutenção de longo prazo para a ramificação atual
 
-*适用范围：System Center Configuration Manager (Long-Term Servicing Branch)*
+*Aplica-se a: System Center Configuration Manager (Branch de Manutenção em Longo Prazo)*
 
-请参阅本主题以了解如何将运行 Configuration Manager 的 Long-Term Servicing Branch (LTSB) 的站点和层次结构升级（转换）为 Current Branch。
+Use este tópico para saber como atualizar (converter) um site e uma hierarquia que executa o LTSB (Branch de Manutenção em Longo Prazo) do Configuration Manager para o Branch Atual.
 
-如果具有授予 Current Branch 使用权的当前软件保障协议（或类似的许可权），则可以将安装从 LTSB 转换到 Current Branch。  这是一种单向转换，因为不支持将 Current Branch 站点转换为 LTSB。
+Quando você tiver um contrato do Software Assurance (ou direitos de licenciamento semelhantes) que concede a você direitos de uso do Branch Atual, será possível converter a sua instalação do LTSB no Branch Atual.  Essa é uma conversão unidirecional, pois não há suporte para converter um site da Ramificação Atual para LTSB.
 
-如果拥有多个站点，则只需转换层次结构的顶层站点。 在转换顶层站点后：
-- 子主站点也会自动进行转换。
--   必须从 Configuration Manager 控制台中手动更新辅助站点。
+Se você tiver vários sites, só precisará converter o site da camada superior da sua hierarquia. Depois que o site da camada superior for convertido:
+- Os sites primários filho serão convertidos automaticamente.
+-   Será necessário atualizar manualmente os sites secundários de dentro do console do Configuration Manager.
 
-## <a name="run-setup-to-convert-the-long-term-servicing-branch"></a>运行安装程序转换 Long-Term Servicing Branch
-在层次结构的顶层站点上，可以从合格的基线媒体运行 Configuration Manager 安装程序并选择“站点维护”。  然后当授权页出现时，为 Current Branch 选择选项并完成向导。
+## <a name="run-setup-to-convert-the-long-term-servicing-branch"></a>Executar a configuração para converter a Ramificação de Manutenção de Longo Prazo
+No site de camada superior da sua hierarquia, é possível executar a instalação do Configuration Manager na mídia de linha de base de qualificação e selecionar **Manutenção do site**.  Em seguida, quando a página de licenciamento aparecer, selecione a opção para a Ramificação Atual e conclua o assistente.
 
-站点转换为 Current Branch 后，可以使用以前不可用的功能。
+Quando o seu site for convertido para a Ramificação Atual, os recursos anteriormente indisponíveis estarão disponíveis para uso.
 
 > [!NOTE]  
-> 合格的基线媒体是具有等于或高于 LTSB 安装版本的媒体。
+> A mídia de linha de base de qualificação é uma mídia que tem uma versão igual ou posterior à da sua instalação LTSB.
 
-例如：因为 LTSB 基于版本 1606，因此不能使用基线 1511 媒体将其转换为 Current Branch。 而是需要从用于安装 LTSB 站点的相同的基线媒体 1606 版本中运行安装程序，然后为 Current Branch 选择授权选项。  或者，如果已发布了 Current Branch 更高的基线版本，则可以从该基线媒体运行安装程序。
+Por exemplo, como o LTSB se baseia na versão 1606, você não pode usar a mídia 1511 de linha de base para converter no Branch Atual. Em vez disso, execute a instalação com a mesma mídia de linha de base versão 1606 usada para instalar o site LTSB e escolha a opção de licenciamento para a Ramificação Atual.  Como alternativa, se uma linha de base mais recente da Ramificação Atual tiver sido lançada, é possível executar a instalação dessa mídia de linha de base.
 
-关于基线版本的列表，请参阅 **Configuration Manager 的更新**中的[基线和更新版本](/sccm/core/servers/manage/updates)。
+Para ver uma lista de versões de linha de base, consulte **Versões de linha de base e atualização** em [Updates for Configuration Manager (Atualizações para o Configuration Manager)](/sccm/core/servers/manage/updates).
 
-## <a name="use-the-configuration-manager-console-to-convert-the-long-term-servicing-branch"></a>使用 Configuration Manager 控制台转换 Long-Term Servicing Branch
-如果站点运行 LTSB，则可以使用 Configuration Manager 控制台中的以下选项将站点转换为 Current Branch：
+## <a name="use-the-configuration-manager-console-to-convert-the-long-term-servicing-branch"></a>Usar o console do Configuration Manager para converter a ramificação de manutenção de longo prazo
+Se seu site executar o LTSB, será possível usar a opção a seguir no console do Configuration Manager para converter no Branch Atual:
 
- 1. 在控制台中，转到“管理” > “站点配置” > “站点”，然后打开“层次结构设置”。  
+ 1. No console, vá para **Administração** > **Configuração do Site** > **Sites** e abra **Configurações da Hierarquia**.  
 
- 2. 选择选项将站点转换为 Current Branch，然后选择“应用”。  
+ 2. Selecione a opção de converter para a Ramificação Atual e, em seguida, clique em **Aplicar**.  
 
-站点转换为 Current Branch 后，可以使用以前不可用的功能。
+Quando o seu site for convertido para a Ramificação Atual, os recursos anteriormente indisponíveis estarão disponíveis para uso.

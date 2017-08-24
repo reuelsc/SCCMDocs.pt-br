@@ -1,6 +1,6 @@
 ---
-title: "迁移操作 | Microsoft Docs"
-description: "创建并运行作业，将数据和客户端迁移到 System Center Configuration Manager。"
+title: "Operações de migração | Microsoft Docs"
+description: Criar e executar trabalhos para migrar dados e clientes para o System Center Configuration Manager.
 ms.custom: na
 ms.date: 12/30/2016
 ms.prod: configuration-manager
@@ -17,223 +17,223 @@ manager: angrobe
 ms.openlocfilehash: fb8a292c4fecbe5744e2cd09bc1442fab11046bc
 ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
 ms.translationtype: HT
-ms.contentlocale: zh-CN
+ms.contentlocale: pt-BR
 ms.lasthandoff: 08/07/2017
 ---
-# <a name="operations-for-migrating-to-system-center-configuration-manager"></a>用于迁移到 System Center Configuration Manager 的操作
+# <a name="operations-for-migrating-to-system-center-configuration-manager"></a>Operações de migração para o System Center Configuration Manager
 
-*适用范围：System Center Configuration Manager (Current Branch)*
+*Aplica-se a: System Center Configuration Manager (Branch Atual)*
 
-对于 System Center Configuration Manager 中的迁移，在从支持的源层次结构中的源站点成功收集数据后，即可迁移数据和客户端。 使用下列部分中的信息来创建和运行迁移作业以便迁移数据和客户端，并随后完成迁移过程。  
+Para migração no System Center Configuration Manager, é possível migrar dados e clientes após coletar com êxito os dados do site de origem em uma hierarquia de origem com suporte. Use as informações nas seções a seguir para criar e executar trabalhos de migração para migrar dados e clientes e, em seguida, concluir o processo de migração.  
 
--   [创建和编辑迁移作业](#Create_Edit_migration_Jobs)  
+-   [Criar e editar trabalhos de migração](#Create_Edit_migration_Jobs)  
 
--   [运行迁移作业](#Run_Migration_Jobs)  
+-   [Executar trabalhos de migração](#Run_Migration_Jobs)  
 
--   [升级或重新分配共享分发点](#BKMK_ProcUpgrdSS)  
+-   [Atualizar ou reatribuir um ponto de distribuição compartilhado](#BKMK_ProcUpgrdSS)  
 
--   [在“迁移”工作区中监视迁移活动](#Monitor_MIgration)  
+-   [Monitorar a atividade de migração no espaço de trabalho Migração](#Monitor_MIgration)  
 
--   [迁移客户端](#BKMK_MigrateClients)  
+-   [Migrar clientes](#BKMK_MigrateClients)  
 
--   [完成迁移](#Complete_Migration)  
+-   [Concluir a migração](#Complete_Migration)  
 
-##  <a name="Create_Edit_migration_Jobs"></a> 创建和编辑迁移作业  
- 使用以下过程来创建数据迁移作业、编辑基于集合的迁移作业的排除列表、设置共享的分发点，以及编辑迁移作业计划。  
+##  <a name="Create_Edit_migration_Jobs"></a> Criar e editar trabalhos de migração  
+ Use os procedimentos a seguir para criar trabalhos de migração de dados, editar a lista de exclusões de trabalhos de migração baseados em coleção, configurar pontos de distribuição compartilhados e editar agendamentos de trabalhos de migração.  
 
 > [!NOTE]  
->  以下用于创建按集合进行迁移的迁移作业的过程仅适用于运行 Configuration Manager 2007 的受支持版本的源层次结构。 从 System Center 2012 Configuration Manager 或 System Center Configuration Manager 源层次结构中迁移时，基于集合的迁移作业类型不可用。  
+>  O procedimento a seguir usado para criar um trabalho de migração que migra por coleções aplica-se somente às hierarquias de origem que executam uma versão com suporte do Configuration Manager 2007. O tipo de trabalho de migração baseado em coleção não está disponível quando você migra de uma hierarquia de origem do System Center 2012 Configuration Manager ou do System Center Configuration Manager.  
 
-#### <a name="create-a-migration-job-to-migrate-by-collections"></a>创建迁移作业以按集合进行迁移  
+#### <a name="create-a-migration-job-to-migrate-by-collections"></a>Criar um trabalho de migração para migrar por coleções  
 
-1.  在 Configuration Manager 控制台中，选择“管理”。  
+1.  No console do Configuration Manager, escolha **Administração**.  
 
-2.  在“管理”工作区中，展开“迁移”，然后选择“迁移作业”。  
+2.  No espaço de trabalho **Administração**, expanda **Migração** e, em seguida, escolha **Trabalhos de Migração**.  
 
-3.  在“主页”选项卡上的“创建”组中，选择“创建迁移作业”。  
+3.  Na guia **Início**, no grupo **Criar**, escolha **Criar Trabalho de Migração**.  
 
-4.  在创建迁移作业向导的“常规”页上，设置以下各项，然后选择“确定”：  
+4.  Na página **Geral** do Assistente para Criar Trabalho de Migração, configure o seguinte e, em seguida, escolha **OK**:  
 
-    -   指定迁移作业的名称。  
+    -   Especifique um nome para o trabalho de migração.  
 
-    -   在“作业类型”  下拉列表中，选择“集合迁移” 。  
+    -   Na lista suspensa **Tipo de Trabalho** , selecione **Migração da coleção**.  
 
-5.  在“选择集合”页上，设置以下各项，然后选择“下一步”：  
+5.  Na página **Selecionar Coleções**, configure o seguinte e, em seguida, escolha **Avançar**:  
 
-    -   选择要迁移的集合。  
+    -   Selecione as coleções que você deseja migrar.  
 
-    -   如果要仅迁移集合，而不迁移与这些集合关联的对象，请取消选中“迁移与指定集合关联的对象”。 如果取消选中此选项，则不会在此作业中迁移关联的对象，因此你可跳过步骤 6 和 7。  
+    -   Se deseja migrar somente as coleções e não os objetos associados a elas, desmarque **Migrar objetos associados com as coleções especificadas**. Ao desmarcar essa opção, nenhum objeto associado será migrado nesse trabalho e você pode pular as etapas 6 e 7.  
 
-6.  在“选择对象”页上，取消选中你不希望迁移的任何对象类型或特定可用对象。 默认情况下，所有关联的对象类型和可用对象都处于选定状态。 选择“下一步”。  
+6.  Na página **Selecionar Objetos**, desmarque os tipos de objeto ou objetos disponíveis específicos que você não deseja migrar. Por padrão, todos os tipos de objeto associado e objetos disponíveis são selecionados. Escolha **Próxima**.  
 
-7.  在“内容所有权”页上，将每个列出的源站点中的内容的所有权分配给目标层次结构中的站点，然后选择“下一步”。  
+7.  Na página **Propriedade do Conteúdo**, atribua a propriedade de conteúdo de cada site de origem listado a um site na hierarquia de destino e, em seguida, escolha **Avançar**.  
 
-8.  在“安全作用域”页上，选择一个或多个基于角色的管理安全作用域，以分配给要在此迁移作业中迁移的对象，然后选择“下一步”。  
+8.  Na página **Escopo de Segurança**, selecione um ou mais escopos de segurança de administração baseada em funções para atribuir aos objetos a serem migrados nesse trabalho e, em seguida escolha **Avançar**.  
 
-9. 在“集合限制”页上，设置目标层次结构中的集合以限制每个列出的集合的作用域，然后选择“下一步”。 如果未列出集合，请选择“下一步”。  
+9. Na página **Limitação de Coleção**, configure uma coleção da hierarquia de destino para limitar o escopo de cada coleção listada e, em seguida, escolha **Avançar**. Se não houver coleções listadas, escolha **Avançar**.  
 
-10. 在“站点代码替换”页上，分配目标层次结构中的一个站点代码以替换每个列出的集合的 Configuration Manager 2007 站点代码，然后选择“下一步”。 如果未列出集合，请选择“下一步”。  
+10. Na página **Substituição de Código do Site**, atribua um código do site da hierarquia de destino para substituir o código do site do Configuration Manager 2007 em cada coleção listada e, em seguida, escolha **Avançar**. Se não houver coleções listadas, escolha **Avançar**.  
 
-11. 在“查看信息”页上，选择“保存到文件”保存显示的信息，供以后查看。 当你准备好继续时，选择“下一步”。  
+11. Na página **Informações de Análise**, escolha **Salvar em Arquivo** para salvar as informações exibidas para visualizações futuras. Quando estiver pronto para continuar, escolha **Avançar**.  
 
-12. 在“设置”页上，设置迁移作业的运行时间，并选择此迁移作业所需的任何其他设置，然后选择“下一步”。  
+12. Na página **Configurações**, defina quando o trabalho de migração será executado, escolha as configurações adicionais que você necessita para esse trabalho de migração e, em seguida escolha **Avançar**.  
 
-13. 确认设置并完成向导。  
+13. Confirme as configurações e conclua o assistente.  
 
-#### <a name="create-a-migration-job-to-migrate-by-objects"></a>创建迁移作业以按对象进行迁移  
+#### <a name="create-a-migration-job-to-migrate-by-objects"></a>Criar um trabalho de migração para migrar por objetos  
 
-1.  在 Configuration Manager 控制台中，选择“管理”。  
+1.  No console do Configuration Manager, escolha **Administração**.  
 
-2.  在“管理”工作区中，展开“迁移”，然后选择“迁移作业”。  
+2.  No espaço de trabalho **Administração**, expanda **Migração** e, em seguida, escolha **Trabalhos de Migração**.  
 
-3.  在“主页”选项卡上的“创建”组中，选择“创建迁移作业”。  
+3.  Na guia **Início**, no grupo **Criar**, escolha **Criar Trabalho de Migração**.  
 
-4.  在创建迁移作业向导的“常规”页上，设置以下各项，然后单击“下一步”：  
+4.  Na página **Geral** do Assistente para Criar Trabalho de Migração, configure o seguinte e, em seguida, escolha **Avançar**:  
 
-    -   指定迁移作业的名称。  
+    -   Especifique um nome para o trabalho de migração.  
 
-    -   在“作业类型”  下拉列表中，选择“对象迁移” 。  
+    -   Na lista suspensa **Tipo de Trabalho** , selecione **Migração de objeto**.  
 
-5.  在“选择对象”  页上，选择要迁移的对象类型。 默认情况下，会为所选的每种对象类型选择所有可用对象。  
+5.  Na página **Selecionar Objetos** , selecione os tipos de objeto que você deseja migrar. Por padrão, todos os objetos disponíveis estarão selecionados para cada tipo de objeto que você escolher.  
 
-6.  在“内容所有权”页上，将每个列出的源站点中的内容的所有权分配给目标层次结构中的站点，然后选择“下一步”。 如果未列出源站点，请选择“下一步”。  
+6.  Na página **Propriedade do Conteúdo**, atribua a propriedade de conteúdo de cada site de origem listado a um site na hierarquia de destino e, em seguida, escolha **Avançar**. Se não houver sites de origem listados, escolha **Avançar**.  
 
-7.  在“安全作用域”页上，选择一个或多个基于角色的管理安全作用域，以分配给此迁移作业中的对象，然后选择“下一步”。  
+7.  Na página **Escopo de Segurança**, selecione um ou mais escopos de segurança de administração baseada em funções para atribuir aos objetos nesse trabalho de migração e, em seguida, escolha **Avançar**.  
 
-8.  在“查看信息”页上，选择“保存到文件”保存显示的信息，供以后查看。 当你准备好继续时，选择“下一步”。  
+8.  Na página **Informações de Análise**, escolha **Salvar em Arquivo** para salvar as informações exibidas para visualizações futuras. Quando estiver pronto para continuar, escolha **Avançar**.  
 
-9. 在“设置”页上，设置迁移作业的运行时间，并选择此迁移作业所需的任何其他设置。 然后选择“下一步”。  
+9. Na página **Configurações**, defina quando o trabalho de migração será executado e escolha as configurações adicionais que você necessita para esse trabalho de migração. Em seguida, escolha **Avançar**.  
 
-10. 确认设置并完成向导。  
+10. Confirme as configurações e conclua o assistente.  
 
-#### <a name="create-a-migration-job-to-migrate-changed-objects"></a>创建迁移作业以迁移更改的对象  
+#### <a name="create-a-migration-job-to-migrate-changed-objects"></a>Criar um trabalho de migração para migrar objetos alterados  
 
-1.  在 Configuration Manager 控制台中，选择“管理”。  
+1.  No console do Configuration Manager, escolha **Administração**.  
 
-2.  在“管理”工作区中，展开“迁移”，然后选择“迁移作业”。  
+2.  No espaço de trabalho **Administração**, expanda **Migração** e, em seguida, escolha **Trabalhos de Migração**.  
 
-3.  在“主页”选项卡上的“创建”组中，选择“创建迁移作业”。  
+3.  Na guia **Início**, no grupo **Criar**, escolha **Criar Trabalho de Migração**.  
 
-4.  在创建迁移作业向导的“常规”页上，设置以下各项，然后选择“下一步”：  
+4.  Na página **Geral** do Assistente para Criar Trabalho de Migração, configure o seguinte e, em seguida, escolha **Avançar**:  
 
-    -   指定迁移作业的名称。  
+    -   Especifique um nome para o trabalho de migração.  
 
-    -   在“作业类型”下拉列表中，选择“迁移之后修改的对象”。  
+    -   Na lista suspensa **Tipo de Trabalho**, selecione **Objetos modificados após a migração**.  
 
-5.  在“选择对象”  页上，选择要迁移的对象类型。 默认情况下，会为所选的每种对象类型选择所有可用对象。  
+5.  Na página **Selecionar Objetos** , selecione os tipos de objeto que você deseja migrar. Por padrão, todos os objetos disponíveis estarão selecionados para cada tipo de objeto que você escolher.  
 
-6.  在“内容所有权”页上，将每个列出的源站点中的内容的所有权分配给目标层次结构中的站点，然后选择“下一步”。 如果未列出源站点，请选择“下一步”。  
+6.  Na página **Propriedade do Conteúdo**, atribua a propriedade de conteúdo de cada site de origem listado a um site na hierarquia de destino e, em seguida, escolha **Avançar**. Se não houver sites de origem listados, escolha **Avançar**.  
 
-7.  在“安全作用域”页上，选择一个或多个基于角色的管理安全作用域，以分配给此迁移作业中的对象，然后选择“下一步”。  
+7.  Na página **Escopo de Segurança**, selecione um ou mais escopos de segurança de administração baseada em funções para atribuir aos objetos nesse trabalho de migração e, em seguida, escolha **Avançar**.  
 
-8.  在“查看信息”页上，选择“保存到文件”保存显示的信息，供以后查看。 当你准备好继续时，选择“下一步”。  
+8.  Na página **Informações de Análise**, escolha **Salvar em Arquivo** para salvar as informações exibidas para visualizações futuras. Quando estiver pronto para continuar, escolha **Avançar**.  
 
-9. 在“设置”页上，设置迁移作业的运行时间，并选择此迁移作业需要的任何其他设置。 与其他迁移作业类型不同，此迁移作业必须覆盖 System Center Configuration Manager 数据库中以前迁移的对象。 选择“下一步”。  
+9. Na página **Configurações**, defina quando o trabalho de migração será executado e escolha as configurações adicionais que você precisa para esse trabalho de migração. Ao contrário dos outros tipos de trabalho de migração, esse trabalho de migração deve substituir os objetos migrados anteriormente no banco de dados do System Center Configuration Manager. Escolha **Próxima**.  
 
-10. 确认设置，然后完成向导。  
+10. Confirme as configurações e, em seguida, conclua o assistente.  
 
-###  <a name="BKMK_Modify_Exclusion_List"></a>修改迁移的排除列表  
+###  <a name="BKMK_Modify_Exclusion_List"></a> Modificar a lista de exclusões para migração  
 
-1.  在 Configuration Manager 控制台中，选择“管理”。  
+1.  No console do Configuration Manager, escolha **Administração**.  
 
-2.  在“管理”工作区中，选择“迁移”以访问排除列表。 你也可以从“源层次结构”  或“迁移作业”  节点中访问排除列表。  
+2.  No espaço de trabalho **Administração**, escolha **Migração** para obter acesso à lista de exclusões. É possível também acessar a lista de exclusão do nó **Hierarquia de Origem** ou **Trabalhos de Migração** .  
 
-3.  在“主页”选项卡上的“迁移”组中，选择“编辑排除列表”。  
+3.  Na guia **Início**, no grupo **Migração**, escolha **Editar Lista de Exclusões**.  
 
-4.  在“编辑排除列表”对话框中，选择要从排除列表中删除的已排除对象，然后选择“删除”。  
+4.  Na caixa de diálogo **Editar Lista de Exclusões**, selecione o objeto excluído a ser removido da lista de exclusões e, em seguida, escolha **Remover**.  
 
-5.  选择“确定”保存更改并完成编辑。 要取消当前更改并还原所有已删除的对象，请选择“取消”，然后选择“否”。 这将取消对象的删除，并关闭“编辑排除列表”  对话框。  
+5.  Escolha **OK** para salvar as alterações e concluir a edição. Para cancelar as alterações atuais e restaurar todos os objetos que foram removidos, escolha **Cancelar** e, em seguida, escolha **Não**. Isso cancelará a remoção dos objetos e fechará a caixa de diálogo **Editar Lista de Exclusões** .  
 
-#### <a name="share-distribution-points-from-the-source-hierarchy"></a>从源层次结构中共享分发点  
+#### <a name="share-distribution-points-from-the-source-hierarchy"></a>Compartilhar os pontos de distribuição da hierarquia de origem  
 
-1.  在 Configuration Manager 控制台中，选择“管理”。  
+1.  No console do Configuration Manager, escolha **Administração**.  
 
-2.  在“管理”工作区中，展开“迁移”，选择“源层次结构”，然后选择要设置的源站点。  
+2.  No espaço de trabalho **Administração**, expanda **Migração**, escolha **Hierarquia de Origem** e selecione o site de origem que você deseja configurar.  
 
-3.  在“主页”选项卡上的“源站点”组中，选择“配置”。  
+3.  Na guia **Início**, no grupo **Site de Origem**, escolha **Configurar**.  
 
-4.  在“源站点凭据”对话框上，选择“为源站点服务器启用分发点共享”，然后选择“确定”。  
+4.  Na caixa de diálogo **Credenciais do Site de Origem**, selecione **Habilitar o compartilhamento de ponto de distribuição para o servidor do site de origem** e, em seguida, escolha **OK**.  
 
-5.  数据收集完成时，选择“关闭”。  
+5.  Após a conclusão da coleta de dados, escolha **Fechar**.  
 
-#### <a name="change-the-schedule-of-a-migration-job"></a>更改迁移作业的计划  
+#### <a name="change-the-schedule-of-a-migration-job"></a>Alterar o agendamento de um trabalho de migração  
 
-1.  在 Configuration Manager 控制台中，选择“管理”。  
+1.  No console do Configuration Manager, escolha **Administração**.  
 
-2.  在“管理”工作区中，展开“迁移”，然后选择“迁移作业”。  
+2.  No espaço de trabalho **Administração**, expanda **Migração** e, em seguida, escolha **Trabalhos de Migração**.  
 
-3.  选择要更改的迁移作业。 在“主页”选项卡上的“属性”组中，选择“属性”。  
+3.  Escolha o trabalho de migração que você deseja alterar. Na guia **Início**, no grupo **Propriedades**, clique em **Propriedades**.  
 
-4.  在迁移作业的属性中，选择“设置”选项卡，更改迁移作业的运行时间，然后选择“确定”。  
+4.  Nas propriedades do trabalho de migração, selecione a guia **Configurações**, altere a hora de execução do trabalho de migração e, em seguida, escolha **OK**.  
 
-##  <a name="Run_Migration_Jobs"></a> 运行迁移作业  
- 使用以下过程来运行尚未启动的迁移作业。  
+##  <a name="Run_Migration_Jobs"></a> Executar trabalhos de migração  
+ Use o procedimento a seguir para executar um trabalho de migração que ainda não foi iniciado.  
 
 
-1.  在 Configuration Manager 控制台中，选择“管理”。  
+1.  No console do Configuration Manager, escolha **Administração**.  
 
-2.  在“管理”工作区中，展开“迁移”，然后选择“迁移作业”。  
+2.  No espaço de trabalho **Administração**, expanda **Migração** e, em seguida, escolha **Trabalhos de Migração**.  
 
-3.  选择要运行的迁移作业。 在“主页”选项卡上的“迁移作业”组中，选择“启动”。  
+3.  Escolha o trabalho de migração que você deseja executar. Na guia **Início**, no grupo **Trabalho de Migração**, escolha **Iniciar**.  
 
-4.  选择“是”以启动迁移作业。  
+4.  Escolha **Sim** para iniciar o trabalho de migração.  
 
-##  <a name="BKMK_ProcUpgrdSS"></a> 升级或重新分配共享分发点  
- 可以升级从 Configuration Manager 2007 源站点中共享的受支持的分发点（或重新分配从 System Center Configuration Manager 源站点中共享的受支持的分发点）以成为目标层次结构中的分发点。  
+##  <a name="BKMK_ProcUpgrdSS"></a> Atualizar ou reatribuir um ponto de distribuição compartilhado  
+ É possível atualizar um ponto de distribuição com suporte compartilhado de um site de origem do Configuration Manager 2007 (ou transferir um ponto de distribuição com suporte compartilhado de um site de origem do System Center Configuration Manager) para ser um ponto de distribuição na hierarquia de destino.  
 
 > [!IMPORTANT]  
->  升级 Configuration Manager 2007 分支分发点之前，必须从分支分发点计算机中卸载 Configuration Manager 2007 客户端软件。 如果 Configuration Manager 2007 客户端软件是在尝试升级分发点时安装的，则升级将失败，并且将从计算机中删除以前部署到分支分发点的内容。  
+>  Para poder atualizar um ponto de distribuição secundário do Configuration Manager 2007, é necessário desinstalar o software cliente do Configuration Manager 2007 de um computador com ponto de distribuição secundário. Se o software cliente do Configuration Manager 2007 estiver instalado quando você tentar atualizar o ponto de distribuição, ocorrerá falha na atualização e o conteúdo anteriormente implantado no ponto de distribuição secundário será removido do computador.  
 
 > [!CAUTION]  
->  当你升级或重新分配共享的分发点时，将从源站点中删除分发点站点系统角色和站点系统计算机，并将其作为分发点添加到所选目标层次结构中的站点。  
+>  Ao atualizar ou transferir um ponto de distribuição compartilhado, a função do sistema de sites do ponto de distribuição e o computador do sistema de sites serão removidos do site de origem e adicionados como um ponto de distribuição ao site na hierarquia de destino que você selecionar.  
 
-#### <a name="upgrade-or-reassign-a-shared-distribution-point"></a>升级或重新分配共享分发点  
+#### <a name="upgrade-or-reassign-a-shared-distribution-point"></a>Atualizar ou reatribuir um ponto de distribuição compartilhado  
 
-1.  在 Configuration Manager 控制台中，选择“管理”。  
+1.  No console do Configuration Manager, escolha **Administração**.  
 
-2.  在“管理”工作区中，展开“迁移”，然后选择“源层次结构”。  
+2.  No espaço de trabalho **Administração**, expanda **Migração** e, em seguida, escolha **Hierarquia de Origem**.  
 
-3.  选择拥有要升级的分发点的站点，选择“共享的分发点”选项卡，并选择要升级或重新分配的合格分发点。  
+3.  Selecione o site que tem o ponto de distribuição que você deseja atualizar, escolha a guia **Pontos de Distribuição Compartilhados** e selecione o ponto de distribuição qualificado para ser atualizado ou transferido.  
 
-4.  在“分发点”选项卡上的“分发点”组中，选择“重新分配”。  
+4.  Na guia **Ponto de Distribuição**, no grupo **Ponto de Distribuição**, escolha **Transferir**.  
 
-5.  在“重新分配共享分发点向导”中指定设置，与为目标层次结构安装新分发点一样，但增加了以下步骤：  
+5.  Especifique as configurações no Assistente para Transferir Ponto de Distribuição Compartilhado como se você estivesse instalando um novo ponto de distribuição para a hierarquia de destino, com as seguintes adições:  
 
-    -   在“内容转换”页上，查看有关转换现有内容所需空间的指导。 然后，在向导的“驱动器设置”页上，确保所选分发点计算机的驱动器具有所需的可用磁盘空间量。  
+    -   Na página **Conversão de Conteúdo**, examine as diretrizes sobre o espaço necessário para converter o conteúdo existente. Em seguida, na página **Configurações de Unidade** do assistente, verifique se a unidade do computador do ponto de distribuição selecionado tem a quantidade necessária de espaço livre em disco.  
 
-6.  确认设置，然后完成向导。  
+6.  Confirme as configurações e, em seguida, conclua o assistente.  
 
-##  <a name="Monitor_MIgration"></a> 在“迁移”工作区中监视迁移活动  
- 使用 Configuration Manager 控制台监视迁移。  
+##  <a name="Monitor_MIgration"></a> Monitorar a atividade de migração no espaço de trabalho Migração  
+ Usar o console do Configuration Manager para monitorar a migração.  
 
-1.  在 Configuration Manager 控制台中，选择“管理”。  
+1.  No console do Configuration Manager, escolha **Administração**.  
 
-2.  在“管理”工作区中，展开“迁移”，然后选择“迁移作业”。  
+2.  No espaço de trabalho **Administração**, expanda **Migração** e, em seguida, escolha **Trabalhos de Migração**.  
 
-3.  选择要监视的迁移作业。  
+3.  Escolha o trabalho de migração que você deseja monitorar.  
 
-4.  在“摘要”  和“作业对象” 选项卡上查看有关所选迁移作业的详细信息和状态。  
+4.  Exiba os detalhes e o status do trabalho de migração selecionado nas guias **Resumo** e **Objetos no Trabalho**.  
 
-##  <a name="BKMK_MigrateClients"></a> 迁移客户端  
- 在层次结构之间迁移客户端数据之后，但在完成迁移之前，计划将客户端迁移到目标层次结构。 层次结构之间客户端的迁移涉及从分配给源层次结构的计算机中卸载 Configuration Manager 客户端软件，然后从目标层次结构中安装 Configuration Manager 客户端软件。 在从目标层次结构中安装客户端时，还会将客户端分配给该层次结构中的主站点。 有关迁移客户端的详细信息，请参阅[在 System Center Configuration Manager 中规划客户端迁移策略](../../core/migration/planning-a-client-migration-strategy.md)。  
+##  <a name="BKMK_MigrateClients"></a> Migrar clientes  
+ Após a migração de dados dos clientes entre hierarquias, mas antes de completar a migração, planeje a migração de clientes para a hierarquia de destino. A migração de clientes entre hierarquias envolve desinstalar o software cliente do Configuration Manager dos computadores atribuídos à hierarquia de origem e instalar o software cliente do Configuration Manager da hierarquia de destino. Ao instalar o cliente da hierarquia de destino, você também atribui o cliente a um site primário naquela hierarquia. Para saber mais sobre a migração de clientes, consulte [Planejando a estratégia de migração de cliente no System Center Configuration Manager](../../core/migration/planning-a-client-migration-strategy.md).  
 
-##  <a name="Complete_Migration"></a> 完成迁移  
- 使用此过程来完成从源层次结构进行的迁移。  
+##  <a name="Complete_Migration"></a> Concluir a migração  
+ Use este procedimento para concluir a migração da hierarquia de origem.  
 
-1.  在 Configuration Manager 控制台中，选择“管理”。  
+1.  No console do Configuration Manager, escolha **Administração**.  
 
-2.  在“管理”工作区中，展开“迁移”，然后选择“源层次结构”。  
+2.  No espaço de trabalho **Administração**, expanda **Migração** e, em seguida, escolha **Hierarquia de Origem**.  
 
-3.  对于Configuration Manager 2007 源层次结构，选择位于源层次结构底部级别的源站点。 对于 System Center 2012 Configuration Manager 或 System Center Configuration Manager 源层次结构，选择可用源站点。  
+3.  Para hierarquias de origem do Configuration Manager 2007, selecione um site de origem que esteja no nível inferior da hierarquia de origem. Para uma hierarquia de origem do System Center 2012 Configuration Manager ou do System Center Configuration Manager, selecione o sites de origem disponível.  
 
-4.  在“主页”选项卡上的“清除”组中，选择“停止收集数据”。  
+4.  Na guia **Início**, no grupo **Limpar**, escolha **Parar Coleta de Dados**.  
 
-5.  选择“是”确认操作。  
+5.  Escolha **Sim** para confirmar a ação.  
 
-6.  对于Configuration Manager 2007 源层次结构，请在继续下一步之前重复执行步骤 3、4 和 5。 在层次结构中的每个位置执行这些步骤（从层次结构的底层到顶层）。 对于 System Center 2012 Configuration Manager 或 System Center Configuration Manager 源层次结构，继续下一步。  
+6.  Para uma hierarquia de origem do Configuration Manager 2007, antes de continuar para a próxima etapa, repita as etapas 3, 4 e 5. Realize estas etapas em cada site na hierarquia, da parte inferior da hierarquia até a parte superior. Para uma hierarquia de origem do System Center 2012 Configuration Manager ou do System Center Configuration Manager, selecione a próxima etapa.  
 
-7.  在“主页”选项卡上的“清除”组中，选择“清理迁移数据”。  
+7.  Na guia **Início**, no grupo **Limpar**, escolha **Limpar Dados de Migração**.  
 
-8.  在“清理迁移数据”对话框上，从“源层次结构”下拉列表中选择源层次结构的顶层站点的站点代码和站点服务器，然后选择“确定”。  
+8.  Na caixa de diálogo **Limpar Dados de Migração**, na lista suspensa **Hierarquia de origem**, selecione o código do site e o servidor do site no site de nível superior da hierarquia de origem e, em seguida, escolha **OK**.  
 
-9. 选择“是”完成源层次结构的迁移过程。  
+9. Escolha **Sim** para concluir o processo de migração para a hierarquia de origem.  

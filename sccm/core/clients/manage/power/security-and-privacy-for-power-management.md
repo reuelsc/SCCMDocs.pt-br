@@ -1,6 +1,6 @@
 ---
-title: "电源管理的安全和隐私 | Microsoft Docs"
-description: "获取 System Center Configuration Manager 中电源管理的安全和隐私信息。"
+title: "Segurança e privacidade para gerenciamento de energia | Microsoft Docs"
+description: "Obtenha as informações de segurança e privacidade do gerenciamento de energia no System Center Configuration Manager."
 ms.custom: na
 ms.date: 04/23/2017
 ms.prod: configuration-manager
@@ -18,21 +18,21 @@ manager: angrobe
 ms.openlocfilehash: 94d5418c364c318dba92dc9f9066f54d1130aa34
 ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
 ms.translationtype: HT
-ms.contentlocale: zh-CN
+ms.contentlocale: pt-BR
 ms.lasthandoff: 08/07/2017
 ---
-# <a name="security-and-privacy-for-power-management-in-system-center-configuration-manager"></a>System Center Configuration Manager 中电源管理的安全和隐私
+# <a name="security-and-privacy-for-power-management-in-system-center-configuration-manager"></a>Segurança e privacidade do gerenciamento de energia no System Center Configuration Manager
 
-*适用范围：System Center Configuration Manager (Current Branch)*
+*Aplica-se a: System Center Configuration Manager (Branch Atual)*
 
-本部分包含 System Center Configuration Manager 中电源管理的安全和隐私信息。  
+Esta seção contém as informações de segurança e privacidade do gerenciamento de energia no System Center Configuration Manager.  
 
-## <a name="security-best-practices-for-power-management"></a>电源管理的最佳安全方案  
- 电源管理没有相关的最佳安全方案。  
+## <a name="security-best-practices-for-power-management"></a>Práticas recomendadas de segurança para o gerenciamento de conteúdo  
+ Não há práticas recomendadas relacionadas à segurança para o gerenciamento de energia.  
 
-## <a name="privacy-information-for-power-management"></a>电源管理的隐私信息  
- 电源管理利用 Windows 中的内置功能在营业时间和非营业时间监视电源使用情况并将电源设置应用于计算机。 Configuration Manager 收集计算机的电源使用情况信息，其中包括用户使用计算机时间的相关数据。 虽然 Configuration Manager 监视集合而不是每台计算机的电源使用情况，但集合可以只包含一台计算机。 默认情况下不启用电源管理，必须由管理员配置。  
+## <a name="privacy-information-for-power-management"></a>Informações sobre privacidade para o gerenciamento de conteúdo  
+ O gerenciamento de energia usa recursos que são integrados ao Windows para monitorar o consumo de energia e aplicar as configurações de energia a computadores durante o horário comercial e fora dele. O Configuration Manager coleta informações de consumo de energia de computadores, o que inclui dados sobre o período em que um usuário está usando um computador. Embora o Configuration Manager monitore o consumo de energia para uma coleção em vez de para cada computador, uma coleção pode conter apenas um computador. Por padrão, o gerenciamento de energia não está habilitado e deve ser configurado por um administrador.  
 
- 电源使用情况信息存储在 Configuration Manager 数据库中，不会发送给 Microsoft。 详细信息在数据库中保留 31 天，摘要信息保留 13 个月。 不能配置删除时间间隔。  
+ As informações de consumo de energia são armazenadas no banco de dados do Configuration Manager e não são enviadas à Microsoft. As informações detalhadas são mantidas no banco de dados durante 31 dias e as informações resumidas são mantidas por 13 meses. Não é possível configurar o intervalo de exclusão.  
 
- 在配置电源管理之前，请考虑隐私要求。  
+ Antes de configurar o gerenciamento de energia, considere seus requisitos de privacidade.  

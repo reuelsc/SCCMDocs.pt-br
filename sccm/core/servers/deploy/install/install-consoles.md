@@ -1,6 +1,6 @@
 ---
-title: "安装控制台 | Microsoft Docs"
-description: "阅读安装 Configuration Manager 控制台以连接到管理中心站点或主站点的信息。"
+title: Instalar console | Microsoft Docs
+description: "Leia sobre a instalação do console do Configuration Manager para se conectar a um site de administração central ou um site primário."
 ms.custom: na
 ms.date: 1/3/2017
 ms.prod: configuration-manager
@@ -17,80 +17,80 @@ manager: angrobe
 ms.openlocfilehash: 88ecbc48fd03ce988f04408d0378844cbed1de2b
 ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
 ms.translationtype: HT
-ms.contentlocale: zh-CN
+ms.contentlocale: pt-BR
 ms.lasthandoff: 08/07/2017
 ---
-# <a name="install-the-system-center-configuration-manager-console"></a>安装 System Center Configuration Manager 控制台
+# <a name="install-the-system-center-configuration-manager-console"></a>Instalar o console do System Center Configuration Manager
 
-*适用范围：System Center Configuration Manager (Current Branch)*
+*Aplica-se a: System Center Configuration Manager (Branch Atual)*
 
-管理员使用 System Center Configuration Manager 控制台管理 Configuration Manager 环境。 每个 Configuration Manager 控制台可以连接到管理中心站点或主站点。 但是，无法将 Configuration Manager 控制台连接到辅助站点。
+Os administradores usam o console do System Center Configuration Manager para gerenciar o ambiente do Configuration Manager. Cada console do Configuration Manager pode se conectar a um site de administração central ou a um site primário. Você não pode conectar um console do Configuration Manager a um site secundário.
 
 > [!NOTE]  
->  运行控制台的管理员可以看到哪些对象取决于他们的用户帐户所分配到的权限。 有关基于角色的管理的详细信息，请参阅 [System Center Configuration Manager 的基于角色的管理基础](../../../../core/understand/fundamentals-of-role-based-administration.md)。  
+>  Os objetos que um administrador que executa o console vê depende das permissões atribuídas à sua conta de usuário. Para obter mais informações sobre administração baseada em funções, veja [Fundamentals of role-based administration for System Center Configuration Manager (Conceitos básicos de administração baseada em funções do System Center Configuration Manager)](../../../../core/understand/fundamentals-of-role-based-administration.md).  
 
- 可在站点服务器安装期间通过安装向导安装 Configuration Manager 控制台，或者可以运行使用安装向导的独立安装应用程序。  
+ Você pode instalar o console do Configuration Manager durante a instalação do servidor do site por meio do Assistente de Instalação ou pode executar um aplicativo de instalação autônomo que usa o Assistente de Instalação.  
 
- 请按照以下过程使用独立应用程序安装 Configuration Manager 控制台。  
+ Use o procedimento a seguir para instalar um console do Configuration Manager usando o aplicativo autônomo.  
 
-## <a name="to-install-the-configuration-manager-console-by-using-the-setup-wizard"></a>始终使用安装向导安装 Configuration Manager 控制台  
+## <a name="to-install-the-configuration-manager-console-by-using-the-setup-wizard"></a>Para instalar o console do Configuration Manager usando o Assistente de Instalação  
 
-1.  验证满足这些要求：  
+1.  Verifique se você atende a esses requisitos:  
 
-    -  具有将在其中运行控制台的计算机上的**本地管理员**权限。  
+    -  Você tem direitos de **Administrador Local** no computador no qual o console será executado.  
 
-    -   具有 Configuration Manager 控制台安装文件位置的**读取**权限。  
+    -   Você tem permissão de **Leitura** para o local dos arquivos de instalação do console do Configuration Manager.  
 
-2.  请转到以下位置之一：  
+2.  Vá até um destes locais:  
 
-    -   在站点服务器上，转到 **<*Configuration Manager 站点服务器安装路径*>\Tools\ConsoleSetup**。  
+    -   No servidor do site, vá para **<*Caminho de instalação do servidor do site do Configuration Manager*> \Tools\ConsoleSetup**.  
 
-    -   从 Configuration Manager 源媒体中，浏览到 **<*Configuration Manager 源文件*>\Smssetup\Bin\I386**。  
+    -   Da mídia de origem do Configuration Manager, vá para **<*Arquivos de origem do Configuration Manager*>\Smssetup\Bin\I386**.  
 
     > [!TIP]  
-    >  最佳做法是，从站点服务器而不是从 System Center Configuration Manager 安装媒体启动 Configuration Manager 控制台安装。 站点服务器安装方法会将 Configuration Manager 控制台安装文件和站点的支持语言包复制到 **Tools\ConsoleSetup** 子文件夹中。 从安装媒体中安装 Configuration Manager 控制台始终会安装英文版，与站点服务器上支持的语言或在计算机上运行的操作系统的语言设置无关。 你可以根据需要将 **ConsoleSetup** 文件夹复制到替代位置以启动安装。
+    >  Como uma melhor prática, inicie a instalação do console do Configuration Manager de um servidor do site em vez de iniciar com a mídia de instalação do System Center Configuration Manager. O método de instalação do servidor do site copia os arquivos de instalação do console do Configuration Manager e os pacotes de idioma com suporte do site para a subpasta **Tools\ConsoleSetup**. A instalação do console do Configuration Manager da mídia de instalação sempre instalará a versão em inglês, independentemente dos idiomas com suporte no servidor do site ou das configurações de idioma do sistema operacional executado no computador. Opcionalmente, você pode copiar a pasta **ConsoleSetup** para um local alternativo para iniciar a instalação.
 
-3.  若要打开 Configuration Manager 控制台安装向导，请双击“consolesetup.exe”。  
+3.  Para abrir o Assistente de Instalação do Console do Configuration Manager, clique duas vezes em **consolesetup.exe**.  
 
     > [!IMPORTANT]  
-    >  请始终使用 consoleSetup.exe 来安装 Configuration Manager 控制台。 虽然可以通过运行 AdminConsole.msi 来安装 Configuration Manager 控制台，但此方法不会运行先决条件或依赖关系检查，因此可能不会正确进行安装。  
+    >  Sempre instale o console do Configuration Manager usando consolesetup.exe. Embora o console do Configuration Manager possa ser instalado executando adminconsole.msi, esse método não executa verificações de pré-requisito nem de dependência e a instalação poderá não ser realizada corretamente.  
 
-4.  在向导中，选择“下一步”。  
+4.  No assistente, selecione **Avançar**.  
 
-5.  在“站点服务器”页面上，输入 Configuration Manager 控制台将连接的站点服务器的完全限定域名 (FQDN)。  
+5.  Na página **Servidor do Site**, insira o FQDN (nome de domínio totalmente qualificado) do servidor do site ao qual o console do Configuration Manager se conectará.  
 
-6.  在“安装文件夹”页面上，输入 Configuration Manager 控制台的安装文件夹。 文件夹路径不得包含尾随空格或 Unicode 字符。  
+6.  Na página **Pasta de Instalação**, insira a pasta de instalação para o console do Configuration Manager. O caminho da pasta não deve conter espaços à direita ou caracteres Unicode.  
 
-7.  在“客户体验改善计划”页上，选择是否参加客户体验改善计划 (CEIP)。  
+7.  Na página **Programa de Aperfeiçoamento da Experiência do Usuário**, selecione se deseja ingressar no programa.  
 
-8.  在“准备安装”页面上，选择“安装”以安装 Configuration Manager 控制台。  
+8.  Na página **Pronto para Instalar**, selecione **Instalar** para instalar o console do Configuration Manager.  
 
-## <a name="to-install-the-configuration-manager-console-from-a-command-prompt"></a>从命令提示符安装 Configuration Manager 控制台  
+## <a name="to-install-the-configuration-manager-console-from-a-command-prompt"></a>Para instalar o console do Configuration Manager de um prompt de comando  
 
-1.  在安装 Configuration Manager 控制台的服务器上，打开命令提示符窗口并转到以下位置之一：  
+1.  No servidor do qual você instala do console do Configuration Manager, abra uma janela do Prompt de Comando e vá para um dos locais a seguir:  
 
-    -   **<*Configuration Manager 站点服务器安装路径*>\Tools\ConsoleSetup**  
+    -   **<*Caminho de instalação do servidor de site do Configuration Manager*>\Tools\ConsoleSetup**  
 
-    -   **<*Configuration Manager 安装媒体*>\SMSSETUP\BIN\I386**  
+    -   **<*Mídia de instalação do Configuration Manager*>\SMSSETUP\BIN\I386**  
 
     > [!TIP]  
-    >  从命令提示符中安装 Configuration Manager 控制台时，会始终安装英文版，与在计算机上运行的操作系统的语言设置无关。 若要以非英语语言安装 Configuration Manager 控制台，则必须[使用安装向导安装 Configuration Manager 控制台](#to-install-the-configuration-manager-console-by-using-the-setup-wizard)。  
+    >  Ao instalar o console do Configuration Manager de um prompt de comando, a versão em inglês é sempre instalada, independentemente da configuração de idioma do sistema operacional em execução no computador. Para instalar o console do Configuration Manager em um idioma diferente do inglês, você deve [instalar o console do Configuration Manager usando o Assistente de Instalação](#to-install-the-configuration-manager-console-by-using-the-setup-wizard).  
 
-2.  在命令提示符处，键入“consolesetup.exe”。 从以下命令行选项中进行选择。  
+2.  No prompt de comando, digite **consolesetup.exe**. Escolha entre as seguintes opções de linha de comando.  
 
-|  命令行选项     | 描述     |
+|  Opção de linha de comando     | Descrição     |
   | :------------- | :------------- |
-  |/q|以无人参与的方式安装 Configuration Manager 控制台。 使用此选项时，需要 **EnableSQM**、 **TargetDir**和 **DefaultSiteServerName** 选项。|  
-  |/uninstall|卸载 Configuration Manager 控制台。 与 **/q** 选项配合使用时，必须首先指定此选项。|  
-  |LangPackDir|指定包含语言文件的文件夹的路径。 你可以使用 **安装程序下载程序** 下载语言文件。 如果未使用此选项，则安装程序会在当前文件夹中查找语言文件夹。 如果未找到语言文件夹，则安装程序仅继续安装英文版。 有关详细信息，请参阅[安装程序下载程序](setup-downloader.md)。|  
-  |TargetDir|指定安装文件夹以安装 Configuration Manager 控制台。 当你使用 **/q** 选项时，需要此选项。|  
-  |EnableSQM|指定是否要加入客户体验改善计划 (CEIP)。 使用 **1** 的值加入 CEIP，使用 **0** 的值不加入计划。 当你使用 **/q** 选项时，需要此选项。|  
-  |DefaultSiteServerName|指定打开控制台时控制台所连接到的站点服务器的 FQDN。 当你使用 **/q** 选项时，需要此选项。|  
+  |/q|Instala o console do Configuration Manager autônomo. As opções **EnableSQM**, **TargetDir**e **DefaultSiteServerName** são necessárias ao usar essa opção.|  
+  |/uninstall|Desinstala o console do Configuration Manager. Você deve especificar essa opção primeiro ao usá-la com a opção **/q** .|  
+  |LangPackDir|Especifica o caminho para a pasta que contém os arquivos de idioma. Você pode usar o **Downloader de Instalação** para baixar os arquivos de idioma. Se você não usar esta opção, o programa de instalação procurará a pasta de idioma na pasta atual. Se a pasta de idioma não for encontrada, o programa de instalação continuará instalando somente o idioma inglês. Para obter mais informações, consulte [Downloader de Instalação](setup-downloader.md).|  
+  |TargetDir|Especifica a pasta de instalação para instalar o console do Configuration Manager. Essa opção é necessária ao usar a opção **/q** .|  
+  |EnableSQM|Especifica se deve associar-se o CEIP (Programa de Aperfeiçoamento da experiência do Usuário). Use um valor de **1** para ingressar no Programa de Aperfeiçoamento da Experiência do Usuário e um valor de **0** para não ingressar no programa. Essa opção é necessária ao usar a opção **/q** .|  
+  |DefaultSiteServerName|Especifica o FQDN do servidor do site ao qual o console se conecta quando ele é aberto. Essa opção é necessária ao usar a opção **/q** .|  
 
 
-  **示例：**
+  **Exemplos:**
 
-  -  c**onsolesetup.exe /q TargetDir="D:\Program Files\ConfigMgr" EnableSQM=1 DefaultSiteServerName=MyServer.Contoso.com**  
+  -  **consolesetup.exe /q TargetDir="D:\Program Files\ConfigMgr" EnableSQM=1 DefaultSiteServerName=MyServer.Contoso.com**  
 
   -  **consolesetup.exe /q LangPackDir=C:\Downloads\ConfigMgr TargetDir="D:\Program Files\ConfigMgr" Console EnableSQM=1 DefaultSiteServerName=MyServer.Contoso.com**  
 

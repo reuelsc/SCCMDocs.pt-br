@@ -1,6 +1,6 @@
 ---
-title: "System Center Configuration Manager 版本 1602 中的新功能 | Microsoft Docs"
-description: "获取有关 System Center Configuration Manager 的 1602 版中引入的更改和新功能的详细信息。"
+title: "Novidades no System Center Configuration Manager versão 1602 | Microsoft Docs"
+description: "Veja os detalhes das alterações e os novos recursos introduzidos na versão 1602 do System Center Configuration Manager."
 ms.custom: na
 ms.date: 12/30/2016
 ms.reviewer: na
@@ -18,71 +18,71 @@ robots: noindex,nofollow
 ms.openlocfilehash: 9a548f43625a907173e7b967d26356bd80f1c5d9
 ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
 ms.translationtype: HT
-ms.contentlocale: zh-CN
+ms.contentlocale: pt-BR
 ms.lasthandoff: 08/07/2017
 ---
-# <a name="what39s-new-in-version-1602-of-system-center-configuration-manager"></a>System Center Configuration Manager 版本 1602 中的新增功能
+# <a name="what39s-new-in-version-1602-of-system-center-configuration-manager"></a>Novidades da versão 1602 do System Center Configuration Manager
 
-*适用范围：System Center Configuration Manager (Current Branch)*
+*Aplica-se a: System Center Configuration Manager (Branch Atual)*
 
 
-System Center Configuration Manager 的更新 1602 作为控制台内部更新提供，用于以前安装的、运行版本 1511 的站点。 版本 1511 是用于安装新 Configuration Manager 站点的初始基准版本。  
+A atualização 1602 do System Center Configuration Manager está disponível apenas como uma atualização no console para sites instalados anteriormente que executam a versão 1511. A versão 1511 é a versão de linha de base inicial usada para instalar novos sites do Configuration Manager.  
 
 
 > [!TIP]  
->  了解详细信息：  
+>  Saiba mais sobre:  
 >   
->   -   [安装新站点](/sccm/core/servers/deploy/install)（使用基准版本，如 1511）  
->   -   [在站点上安装更新](/sccm/core/servers/manage/updates)（如更新 1602）  
+>   -   [Instalação de novos sites](/sccm/core/servers/deploy/install) (usando uma versão de linha de base como a 1511)  
+>   -   [Instalação de atualizações em sites](/sccm/core/servers/manage/updates) (como a atualização 1602)  
 
- 以下各节提供有关 Configuration Manager 版本 1602 中引入的更改和新功能的详细信息。  
+ As seções a seguir fornecem detalhes sobre as alterações e novas funcionalidades introduzidas na versão 1602 do Configuration Manager.  
 
-## <a name="site-infrastructure"></a>站点基础结构  
+## <a name="site-infrastructure"></a>Infraestrutura do site  
 
-###  <a name="bkmk_UpgradeOS"></a>就地升级运行 Windows Server 2008 R2 的站点服务器的操作系统  
- 运行版本 1602 或更高版本的 Configuration Manager 站点支持站点服务器的操作系统从 Windows Server 2008 R2 就地升级到 Windows Server 2012 R2。  
+###  <a name="bkmk_UpgradeOS"></a> Atualização in-loco do sistema operacional dos servidores do site que executam o Windows Server 2008 R2  
+ Os sites do Configuration Manager que executam a versão 1602 ou posterior dão suporte à atualização in-loco do sistema operacional dos servidores do site do Windows Server 2008 R2 para o Windows Server 2012 R2.  
 
 > [!WARNING]  
->  升级到 Windows Server 2012 R2 之前，必须从服务器中卸载 WSUS 3.2。  
+>  Antes de atualizar para o Windows Server 2012 R2, é necessário desinstalar o WSUS 3.2 do servidor.  
 >   
->  有关此关键步骤的信息，请参阅 Windows Server 文档中 [Windows Server 更新服务概述](https://technet.microsoft.com/library/hh852345.aspx)中的“新增和更改的功能”部分。  
+>  Para obter informações sobre essa etapa crítica, consulte a seção “Funcionalidade nova e alterada” em [Visão geral do Windows Server Update Services](https://technet.microsoft.com/library/hh852345.aspx) na documentação do Windows Server.  
 
- 若要升级服务器，请使用 Windows Server 2012 R2 升级过程。 升级后不需要运行 Configuration Manager 站点服务器还原。 有关升级过程，请参阅 Windows Server 文档中的 [Windows Server 2012 R2 的升级选项](https://technet.microsoft.com/library/dn303416.aspx)。  
+ Para atualizar um servidor, use os procedimentos de atualização do Windows Server 2012 R2. Não é necessário executar uma restauração do servidor do site do Configuration Manager após a atualização. Para obter os procedimentos de atualização, consulte [Opções de atualização para o Windows Server 2012 R2](https://technet.microsoft.com/library/dn303416.aspx) na documentação do Windows Server.  
 
-###  <a name="bkmk_AOAG"></a> SQL Server AlwaysOn 可用性组  
- 使用 SQL Server AlwaysOn 可用性组，以承载主站点和管理中心站点上的站点数据库作为高可用性和灾难恢复解决方案。  
+###  <a name="bkmk_AOAG"></a> Grupos de disponibilidade AlwaysOn do SQL Server  
+ Use grupos de disponibilidade AlwaysOn do SQL Server para hospedar o banco de dados do site em sites primários e o site de administração central como uma solução de alta disponibilidade e recuperação de desastre.  
 
- 有关详细信息，请参阅[通过 SQL Server AlwaysOn 实现适用于 System Center Configuration Manager 的高可用性站点数据库](../../../core/servers/deploy/configure/sql-server-alwayson-for-a-highly-available-site-database.md)。  
+ Para obter detalhes, consulte [AlwaysOn do SQL Server para um banco de dados do site altamente disponível do System Center Configuration Manager](../../../core/servers/deploy/configure/sql-server-alwayson-for-a-highly-available-site-database.md).  
 
-## <a name="operating-system-deployment"></a>操作系统部署  
+## <a name="operating-system-deployment"></a>Implantação de sistema operacional  
 
-### <a name="windows-10-servicing"></a>Windows 10 维护服务  
- Configuration Manager 1602 版新增了以下 Windows 10 维护服务的改进功能：  
+### <a name="windows-10-servicing"></a>Serviço do Windows 10  
+ Os seguintes aprimoramentos para a manutenção do Windows 10 foram adicionados na versão 1602 do Configuration Manager:  
 
--   为维护服务计划提供了新筛选器选项，可用于筛选“语言”、“必需”和“标题”。 只有满足指定条件的升级项才会添加到关联部署中。  
+-   Novas opções de filtro estão disponíveis para planos de manutenção que permitem filtrar por **Idioma**, **Obrigatório** e **Título**. Somente as atualizações que atendem aos critérios especificados serão adicionadas à implantação associada.  
 
--   对软件更新同步选择“升级”时，将会显示警告。 此警告将说明：必须首先具有适用于 Windows Server Update Services (WSUS) 4.0 的[修补程序 3095113](https://support.microsoft.com/kb/3095113)，而后同步软件才能成功更新以及 Windows 10 维护服务才能正常工作。 从警告消息中可以转到关联的知识库文章。  
+-   Ao selecionar a classificação **Atualizações** para a sincronização das atualizações de software, um aviso é exibido. Esse aviso informa que o [hotfix 3095113](https://support.microsoft.com/kb/3095113) para o WSUS (Windows Server Update Services) 4.0 é necessário para que seja possível sincronizar com êxito as atualizações de software e para o funcionamento correto do Serviço do Windows 10. Na mensagem de aviso, é possível acessar o artigo da base de dados de conhecimento associado.  
 
--   可用的 Windows 10 升级现在仅显示在 Configuration Manager 控制台的“Windows 10 维护服务” \ “所有 Windows 10 更新”节点中。 这些更新不再显示在控制台的“软件更新” \ “所有软件更新”节点中。  
+-   As atualizações do Windows 10 disponíveis agora são exibidas apenas no nó **Manutenção do Windows 10** \ **Todas as Atualizações do Windows 10** do console do Configuration Manager. Essas atualizações não são mais exibidas no nó **Atualizações de Software** \ **Todas as Atualizações de Software** do console.  
 
--   维护服务计划被视为高风险部署，“选择集合”窗口将仅显示满足在站点属性中配置的部署验证设置的自定义集合。 有关详细信息，请参阅 [Settings to manage high-risk deployments for System Center Configuration Manager](../../../protect/understand/settings-to-manage-high-risk-deployments.md)。  
+-   Um plano de manutenção é considerado uma implantação de alto risco, e a janela **Selecionar Coleção** exibe apenas as coleções personalizadas que atendem às definições de verificação da implantação que são configuradas nas propriedades do site. Para obter mais informações, consulte [Settings to manage high-risk deployments for System Center Configuration Manager](../../../protect/understand/settings-to-manage-high-risk-deployments.md).  
 
--   现在 Windows 10 升级包的用户将收到一条消息，告知他们正在升级操作系统。  
+-   Agora os usuários que iniciam um pacote de Atualização do Windows 10 recebem uma mensagem informando que seus sistemas operacionais serão atualizados.  
 
-## <a name="application-management"></a>应用程序管理  
+## <a name="application-management"></a>Gerenciamento de aplicativos  
 
-### <a name="ios-app-configuration-policies"></a>iOS 应用配置策略  
- 使用 Configuration Manager 应用配置策略可提供用户在运行 iOS 应用时可能需要的设置。 例如，应用可能要求用户指定自定义端口号、语言、安全性设置或品牌设置（如公司徽标）。 如果输入的这些设置不正确，可能会加重支持人员的负担并降低新应用的采用率。  
+### <a name="ios-app-configuration-policies"></a>Políticas de configuração de aplicativo iOS  
+ Use políticas de configuração de aplicativo do Configuration Manager para fornecer configurações que possam ser necessárias quando o usuário executar um aplicativo iOS. Por exemplo, um aplicativo pode exigir que o usuário especifique o número da porta, idiomas, configurações de segurança ou de identidade visual (como um logotipo da empresa) personalizado. Se essas configurações forem inseridas incorretamente, isso poderá aumentar a carga do suporte técnico e também reduzir a adoção de novos aplicativos.  
 
- 通过让你在运行应用之前将策略中的这些设置部署给用户，应用配置策略可消除此类问题。 随后这些设置会自动提供，用户无需执行任何操作。 有关详细信息，请参阅[在 System Center Configuration Manager 中使用应用配置策略配置 iOS 应用](../../../apps/deploy-use/configure-ios-apps-with-app-configuration-policies.md)。  
+ As políticas de configuração de aplicativo podem ajudar a eliminar esses problemas, permitindo que você implante essas configurações para os usuários em uma política, antes que eles executem o aplicativo. As configurações são então fornecidas automaticamente e o usuário não precisa executar nenhuma ação. Para obter detalhes, consulte [Configurar aplicativos iOS com políticas de configuração de aplicativos no System Center Configuration Manager](../../../apps/deploy-use/configure-ios-apps-with-app-configuration-policies.md).  
 
 ### <a name="manage-volume-purchased-ios-apps"></a>Manage volume-purchased iOS apps  
- Configuration Manager 可帮助部署和管理从 Apple Volume-Purchase Program (VPP) 中批量购买的应用。 Configuration Manager 从应用商店中导入许可证信息，然后跟踪用户使用的许可证数量。  
+ O Configuration Manager pode ajudá-lo a implantar e gerenciar aplicativos adquiridos por volume por meio do Apple VPP (Volume Purchase Program). O Configuration Manager importa as informações de licença da loja de aplicativos e controla quantas licenças foram utilizadas.  
 
- 有关详细信息，请参阅[使用 System Center Configuration Manager 管理批量购买的 iOS 应用](../../../apps/deploy-use/manage-volume-purchased-ios-apps.md)。  
+ Para obter detalhes, consulte [Gerenciar aplicativos iOS adquiridos por volume com o System Center Configuration Manager](../../../apps/deploy-use/manage-volume-purchased-ios-apps.md).  
 
-### <a name="automatic-creation-of-office-mobile-apps"></a>自动创建 Office 移动应用  
- 从版本 1511 升级到版本 1602 时，Configuration Manager 将自动创建适用于 Android 和 iOS 的以下 Microsoft Office 移动应用：  
+### <a name="automatic-creation-of-office-mobile-apps"></a>Criação automática de aplicativos móveis do Office  
+ Quando você atualiza da versão 1511 para a 1602, o Configuration Manager cria automaticamente os seguintes aplicativos móveis do Microsoft Office para Android e iOS:  
 
 -   Microsoft Word  
 
@@ -92,130 +92,130 @@ System Center Configuration Manager 的更新 1602 作为控制台内部更新�
 
 -   Microsoft OneDrive  
 
--   Microsoft OneNote（仅限 iOS）  
+-   Microsoft OneNote (apenas iOS)  
 
 -   Microsoft Outlook  
 
-可在 Configuration Manage 控制台的“应用程序”节点中找到这些应用。  
+Você encontrará esses aplicativos no nó **Aplicativos** do console do Configuration Manager.  
 
- 关于部署应用程序的详细信息，请参阅[如何使用 System Center Configuration Manager 部署应用程序](../../../apps/deploy-use/deploy-applications.md)。  
+ Para mais informações sobre a implantação de aplicativos, confira [Como implantar aplicativos com o System Center Configuration Manager](../../../apps/deploy-use/deploy-applications.md).  
 
-## <a name="software-updates"></a>软件更新  
+## <a name="software-updates"></a>Atualizações de software  
 
-### <a name="manage-office-365-client-updates"></a>管理 Office 365 客户端更新  
- System Center Configuration Manager 现在能够通过使用软件更新管理工作流来管理 Office 365 客户端更新。 有关详细信息，请参阅[使用 System Center Configuration Manager 管理 Office 365 ProPlus 更新](/sccm/sum/deploy-use/manage-office-365-proplus-updates)。  
+### <a name="manage-office-365-client-updates"></a>Gerenciar atualizações do cliente do Office 365  
+ O System Center Configuration Manager tem a capacidade de gerenciar atualizações de cliente do Office 365 usando o fluxo de trabalho de gerenciamento de atualizações de software. Para obter mais informações, consulte [Gerenciar atualizações do Office 365 ProPlus com o System Center Configuration Manager](/sccm/sum/deploy-use/manage-office-365-proplus-updates).  
 
-## <a name="compliance-settings"></a>符合性设置  
+## <a name="compliance-settings"></a>Configurações de conformidade  
 
-### <a name="compliance-settings-for-devices-running-windows-10-team"></a>运行 Windows 10 Team 的设备的符合性设置  
- 新设置已添加到 **Windows 8.1 和 Windows 10** 配置项中。 这些设置有助于控制运行 Windows 10 Team 的设备，如 Surface Hub 设备。  
+### <a name="compliance-settings-for-devices-running-windows-10-team"></a>Configurações de conformidade para dispositivos que executam o Windows 10 Team  
+ Foram adicionadas novas configurações ao item de configuração do **Windows 8.1 e Windows 10**. Essas configurações ajudam você a controlar os dispositivos que executam o Windows 10 Team, como um dispositivo Surface Hub.  
 
- 有关详细信息，请参阅[如何为没使用 System Center Configuration Manager 客户端管理的 Windows 8.1 和 Windows 10 设备创建配置项目](../../../compliance/deploy-use/create-configuration-items-for-windows-8.1-and-windows-10-devices-managed-without-the-client.md)。  
+ Para obter detalhes, consulte [Como criar itens de configuração para dispositivos Windows 8.1 e Windows 10 gerenciados sem o cliente do System Center Configuration Manager](../../../compliance/deploy-use/create-configuration-items-for-windows-8.1-and-windows-10-devices-managed-without-the-client.md).  
 
-### <a name="kiosk-mode-settings-for-android-samsung-knox-standard-devices"></a>Android Samsung KNOX 标准版设备的展台模式设置  
- 展台模式允许锁定设备以便只允许某些功能工作。 例如，可以让设备只运行一个指定的托管应用，也可以禁用设备上的音量按钮。 这些设置可用于设备的演示模型，也可用于专门执行一个功能的设备（如销售点设备）。 在 Configuration Manager 中，现可指定 Samsung KNOX 标准版设备的展台模式设置。  
+### <a name="kiosk-mode-settings-for-android-samsung-knox-standard-devices"></a>Configurações do modo de quiosque para dispositivos Android Samsung KNOX Standard  
+ O modo de quiosque permite bloquear um dispositivo para que somente determinados recursos funcionem. Por exemplo, você pode permitir que um dispositivo execute apenas um aplicativo gerenciado especificado ou desabilitar os botões de volume em um dispositivo. Essas configurações podem ser usadas para um modelo de demonstração de um dispositivo ou para um dispositivo dedicado a executar apenas uma função, como um dispositivo de ponto de venda. No Configuration Manager, agora é possível especificar as configurações do modo de quiosque para dispositivos Samsung KNOX Standard.  
 
- 有关详细信息，请参阅[如何为未使用 System Center Configuration Manager 客户端管理的 Android 和 Samsung KNOX 标准版设备创建配置项目](../../../compliance/deploy-use/create-configuration-items-for-android-and-samsung-knox-devices-managed-without-the-client.md)。  
+ Para obter detalhes, consulte [Como criar itens de configuração para dispositivos Android e Samsung KNOX Standard gerenciados sem o cliente do System Center Configuration Manager](../../../compliance/deploy-use/create-configuration-items-for-android-and-samsung-knox-devices-managed-without-the-client.md).  
 
-## <a name="conditional-access"></a>条件性访问  
+## <a name="conditional-access"></a>Acesso condicional  
 
-### <a name="conditional-access-for-pcs-managed-by-system-center-configuration-manager"></a>对由 System Center Configuration Manager 管理的电脑进行条件访问  
- 此版本之前，若要配置电脑的条件访问，则该电脑必须已在 Intune 中注册或为已加入域。 从 1602 更新开始，支持对由 System Center Configuration Manager 管理的电脑进行条件访问。 对于由 System Center Configuration Manager 管理的电脑，可将对 Exchange Online 和 SharePoint Online 的访问限制为仅限符合你设置的合规性策略的设备。  
+### <a name="conditional-access-for-pcs-managed-by-system-center-configuration-manager"></a>Acesso condicional para PCs gerenciados pelo System Center Configuration Manager  
+ Antes dessa versão, para configurar o acesso adicional em um computador, ele precisava estar registrado no Intune ou ser um computador ingressado em domínio. A partir da atualização 1602, há suporte para o acesso condicional em computadores gerenciados pelo System Center Configuration Manager. Para computadores gerenciados pelo System Center Configuration Manager, é possível restringir o acesso ao Exchange Online e ao SharePoint Online apenas a dispositivos que estão em conformidade com as políticas de conformidade definidas.  
 
- 有关详细信息，请参阅[管理对由 System Center Configuration Manager 管理的电脑的 O365 服务的访问](../../../protect/deploy-use/manage-access-to-o365-services-for-pcs-managed-by-sccm.md)。  
+ Para obter detalhes, consulte [Gerenciar o acesso aos serviços do O365 para PCs gerenciados pelo System Center Configuration Manager](../../../protect/deploy-use/manage-access-to-o365-services-for-pcs-managed-by-sccm.md).  
 
-### <a name="restricting-access-based-on-the-health-of-devices"></a>基于设备的运行状况限制访问  
- 现可根据运行状况证明服务所报告的设备的运行状况来限制对电子邮件和 0ffice 365 服务的访问。 此外，设备健康状况报告还包括由 Intune 管理的设备。  
+### <a name="restricting-access-based-on-the-health-of-devices"></a>Restringindo o acesso com base na integridade dos dispositivos  
+ Agora é possível restringir o acesso ao email e aos serviços do Office 365 com base na integridade dos dispositivos, conforme relatado pelo Serviço de Atestado de Integridade. Além disso, os dispositivos gerenciados pelo Intune são incluídos nos relatórios de integridade do dispositivo.  
 
- Configuration Manager 控制台中添加了新的合规性规则，该规则允许根据设备的运行状况状态指定应允许还是阻止访问设备。 有关运行状况证明服务及如何在 Intune 中报告设备的运行状况的详细信息，请参阅 [System Center Configuration Manager 的运行状况证明](../../../core/servers/manage/health-attestation.md)。  
+ O console do Configuration Manager conta com uma nova regra de conformidade que permite especificar se os dispositivos devem ter o acesso permitido ou bloqueado com base em seu status de integridade. Para obter detalhes sobre o Serviço de Atestado de Integridade e como a integridade dos dispositivos é relatada no Intune, consulte [Atestado de integridade do System Center Configuration Manager](../../../core/servers/manage/health-attestation.md).  
 
-### <a name="new-compliance-policy-rules"></a>新的合规性策略  
- 为对更高的安全性要求提供支持，已添加自动更新和要求使用密码解锁设备等新的合规性策略规则。
+### <a name="new-compliance-policy-rules"></a>Novas regras de política de conformidade  
+ Novas regras de política de conformidade, como atualizações automáticas e a exigência de uma senha para desbloquear dispositivos, foram adicionadas para dar suporte a melhores requisitos de segurança.
 
- 有关详细信息，请参阅 [System Center Configuration Manager 中的设备合规性策略](../../../protect/deploy-use/device-compliance-policies.md)。  
+ Para obter mais detalhes, consulte [Políticas de conformidade do dispositivo no System Center Configuration Manager](../../../protect/deploy-use/device-compliance-policies.md).  
 
-### <a name="make-sure-enrolled-and-compliant-devices-always-have-access-to-exchange-on-premises"></a>确保已注册且合规的设备始终有权访问 Exchange 内部部署  
- 选中以下选项时，允许已在 Intune 中注册且符合合规性策略的设备访问 Exchange 内部部署：**默认规则覆盖 - 始终允许已注册 Intune 且合规的设备访问 Exchange 内部部署**。 Exchange 内部部署的“配置条件访问策略向导”的“常规页面”提供了此规则。
+### <a name="make-sure-enrolled-and-compliant-devices-always-have-access-to-exchange-on-premises"></a>Verificar se os dispositivos registrados e em conformidade sempre têm acesso ao Exchange no Local  
+ Ao marcar a seguinte opção, os dispositivos que estão registrados no Intune e que estão em conformidade com as políticas de conformidade têm permissão para acessar o Exchange no Local: **Substituição de regra padrão – sempre permitir que dispositivos registrados e em conformidade acessem o Exchange no Local:**. Essa regra está disponível na **página Geral** do **Assistente de Configuração de Política de Acesso Condicional** do Exchange no local.
 
- 此规则将覆盖“默认规则”，这意味着，即使将“默认规则”设置为隔离或阻止访问，已注册并符合要求的设备也仍然能够访问内部部署的 Exchange。 当你希望已注册且合规的设备始终可通过内部部署的 Exchange 访问电子邮件时，使用该设置。   
+ Essa regra substitui a regra padrão, o que significa que mesmo que você defina a regra padrão para bloquear o acesso ou colocar em quarentena, os dispositivos registrados e em conformidade ainda poderão acessar o Exchange no Local. Use essa configuração quando desejar que dispositivos registrados e compatíveis sempre tenham acesso ao email por meio do Exchange no local.   
 
- 有关详细的演练，请参阅[在 System Center Configuration Manager 中管理对电子邮件的访问](../../../protect/deploy-use/manage-email-access.md)。  
+ Para ver um passo a passo detalhado, consulte [Gerenciar acesso a email no System Center Configuration Manager](../../../protect/deploy-use/manage-email-access.md).  
 
-## <a name="client-management"></a>客户端管理  
+## <a name="client-management"></a>Gerenciamento de cliente  
 
-### <a name="client-online-status"></a>客户端联机状态  
- 提供了用于监视计算机是否处于联机状态的客户端的新状态。 如果计算机连接到其已分配的管理点，则将其视为联机。 为指示计算机处于联机状态，客户端将向管理点发送类似 ping 的消息。 如果管理点在 5 分钟后未收到消息，则将客户端视为处于脱机状态。  
+### <a name="client-online-status"></a>Status online do cliente  
+ Um novo status para clientes está disponível para monitoramento, esteja o computador online ou não. Um computador será considerado online se estiver conectado ao seu ponto de gerenciamento atribuído. Para indicar se o computado está online, o cliente envia mensagens como ping ao ponto de gerenciamento. Se o ponto de gerenciamento não receber uma mensagem depois de 5 minutos, o cliente será considerado offline.  
 
- 有关详细信息，请参阅[如何在 System Center Configuration Manager 中监视客户端](../../../core/clients/manage/monitor-clients.md)。  
+ Para obter detalhes, consulte [Como monitorar clientes no System Center Configuration Manager](../../../core/clients/manage/monitor-clients.md).  
 
-### <a name="refresh-pc-machine-and-user-policy-from-software-center"></a>从软件中心刷新 PC 计算机和用户策略  
- 已将新选项“同步策略”添加到软件中心的“选项” > “计算机维护”页面，该操作可让电脑刷新其 Configuration Manager 计算机和用户策略。  
+### <a name="refresh-pc-machine-and-user-policy-from-software-center"></a>Atualizar a política de computador e de usuário do computador no Centro de Software  
+ Uma nova opção, **Política de Sincronização**, foi adicionada à página **Opções** > **Manutenção do Computador** do Centro de Software, o que faz com que o computador atualize sua política de computador e de usuário do Configuration Manager.  
 
-### <a name="software-center-branding-changes"></a>软件中心品牌更改  
- 你可以更改软件中心内显示的颜色、组织名称和图标。 根据以下规则应用这些设置：  
+### <a name="software-center-branding-changes"></a>Alterações de identidade visual do Centro de Software  
+ É possível alterar a cor, o nome da organização e o ícone exibidos no Centro de Software. Essas configurações são aplicadas de acordo com as seguintes regras:  
 
-- 如果未安装应用程序目录网站点站点服务器角色，则软件中心将显示“计算机代理”客户端设置中指定的组织名称，称为“软件中心中显示的组织名称”。  
+- Se a função de servidor do site do ponto de sites da Web do Catálogo de Aplicativos não estiver instalada, o Centro de Software exibirá o nome da organização especificado na configuração do cliente **Agente de Computador** chamada **Nome da organização exibido no Centro de Software**.  
 
-- 如果已安装应用程序目录网站点站点服务器角色，则软件中心将显示在应用程序目录网站点站点服务器角色属性中指定的组织名称和颜色。  
+- Se a função de servidor do site do ponto de sites da Web do Catálogo de Aplicativos estiver instalada, o Centro de Software exibirá o nome da organização e a cor especificados nas propriedades da função de servidor do site do ponto de sites da Web do Catálogo de Aplicativos.  
 
-- 如果已配置 Microsoft Intune 订阅并将其连接到 Configuration Manager 环境，则软件中心将显示 Intune 订阅属性中指定的组织名称、颜色和公司徽标。  
+- Se uma assinatura do Microsoft Intune estiver configurada e conectada ao ambiente do Configuration Manager, o Centro de Software exibirá o nome da organização, a cor e o logotipo da empresa especificados nas propriedades da assinatura do Intune.  
 
-### <a name="health-attestation"></a>运行状况证明  
- 管理员可以在 Configuration Manager 控制台中查看 Windows 10 设备运行状况证明的状态。 此功能适用于 Configuration Manager 和带 Microsoft Intune 的 Configuration Manager。 设备运行状况证明让管理员能够确保客户端计算机启用以下可信 BIOS、TPM 和启动软件配置：  
+### <a name="health-attestation"></a>Atestado de integridade  
+ Os administradores podem exibir o status do Atestado de Integridade do Dispositivo com Windows 10 no console do Configuration Manager. Isso está disponível para o Configuration Manager, bem como para o Configuration Manager com o Microsoft Intune. O atestado de integridade do dispositivo permite que o administrador garanta que os computadores cliente tenham as seguintes configurações confiáveis de BIOS, TPM e software de inicialização habilitadas:  
 
--   开机初期启动的反恶意软件  
+-   Antimalware de inicialização antecipada  
 
 -   BitLocker  
 
--   安全启动  
+-   Inicialização Segura  
 
--   代码完整性  
+-   Integridade do código  
 
-有关详细信息，请参阅 [System Center Configuration Manager 的运行状况证明](../../../core/servers/manage/health-attestation.md)。  
+Para obter detalhes, consulte [Atestado de integridade do System Center Configuration Manager](../../../core/servers/manage/health-attestation.md).  
 
-### <a name="improvements-to-endpoint-protection-antimalware-settings"></a>Endpoint Protection 反恶意软件设置的改进  
- 在 1602 中，我们在 Windows Defender 的 Endpoint Protection 反恶意软件策略中添加了以下新设置：  
+### <a name="improvements-to-endpoint-protection-antimalware-settings"></a>Aprimoramentos nas configurações de antimalware do Endpoint Protection  
+ A versão 1602 adiciona as seguintes novas configurações na política antimalware do Endpoint Protection para o Windows Defender:  
 
--   实时保护：在下载时和安装前阻止可能不需要的应用程序。  
+-   Proteção em tempo real: bloqueie aplicativos potencialmente indesejados durante o download, antes da instalação.  
 
--   扫描设置：在完全扫描期间扫描映射的网络驱动器。  
+-   Configurações de verificação: verifique as unidades de rede mapeadas durante uma verificação completa.  
 
--   自动示例文件提交配置：  
+-   Configurações de envio automático de arquivo de exemplo:  
 
-     反恶意软件引擎可能会请求将文件示例发送到 Microsoft 供进一步分析。 默认情况下，发送此类示例之前将始终给出提示。 管理员现在可以管理以下设置以配置此行为：  
+     O mecanismo antimalware pode solicitar que amostras de arquivo sejam enviadas à Microsoft para análise posterior. Por padrão, ele solicitará sempre antes de enviar esses exemplos. Os administradores agora podem gerenciar as configurações a seguir para configurar esse comportamento:  
 
-    -   高级：启动自动示例文件提交以帮助 Microsoft 确定某些检测到的项目是否恶意。  
+    -   Avançado: habilite o envio automático de arquivo de exemplo para ajudar a Microsoft a determinar se determinados itens detectados são mal-intencionados.  
 
-    -   高级：允许用户修改自动示例文件提交设置。  
+    -   Avançado: permita que os usuários modifiquem as configurações de envio automático de arquivo de exemplo.  
 
-    此外，在 Endpoint Protection 反恶意软件政策的“排除设置”部分中，现有“排除文件和文件夹”设置现在允许设备排除。  
+    Além disso, na seção “Configurações de exclusão” da política antimalware do Endpoint Protection, a configuração existente **Excluir arquivos e pastas** agora permite exclusões de dispositivo.  
 
-有关详细信息，请参阅[如何在 System Center Configuration Manager 中为 Endpoint Protection 创建和部署反恶意软件策略](../../../protect/deploy-use/endpoint-antimalware-policies.md)。  
+Para obter detalhes, consulte [Como criar e implantar políticas antimalware para o Endpoint Protection no System Center Configuration Manager](../../../protect/deploy-use/endpoint-antimalware-policies.md).  
 
-## <a name="mobile-device-management"></a>移动设备管理  
+## <a name="mobile-device-management"></a>Gerenciamento de dispositivos móveis  
 
-### <a name="ios-activation-lock"></a>iOS 激活锁定  
- Configuration Manager 可以帮助管理 iOS 激活锁定，这是适用于 iOS 7.1 及更高版本设备的“查找我的 iPhone”应用的功能。 当设备上使用了“查到我的 iPhone”应用时，激活锁定自动启用。 启用后，任何人都必须先输入用户的 Apple ID 和密码，然后才能执行以下操作：  
+### <a name="ios-activation-lock"></a>Bloqueio de Ativação do iOS  
+ O Configuration Manager pode ajudar a gerenciar o Bloqueio de Ativação do iOS, um recurso do aplicativo Buscar meu iPhone para dispositivos iOS 7.1 e posteriores. O Bloqueio de Ativação é habilitado automaticamente quando o aplicativo Buscar meu iPhone for usado em um dispositivo. Depois que ele for habilitado, a ID da Apple e a senha do usuário deverão ser inseridas antes que qualquer pessoa possa:  
 
--   关闭“查找我的 iPhone”。  
+-   Desligar a opção Localizar Meu iPhone.  
 
--   擦除设备。  
+-   Apagar o dispositivo.  
 
--   重新激活设备。  
+-   Reativar o dispositivo.  
 
-Configuration Manager 可以请求运行 iOS 7.1 和更高版本的已监管设备和非监管设备的激活锁定状态。 对于监管设备而言，Configuration Manager 可以检索绕过激活锁定代码并将其直接发布到设备。  
+O Configuration Manager pode solicitar o status do Bloqueio de Ativação de dispositivos supervisionados e não supervisionados que executam o iOS 7.1 e posterior. Para dispositivos supervisionados, o Configuration Manager pode recuperar o código de bypass de Bloqueio de Ativação e emiti-lo diretamente para o dispositivo.  
 
- 有关详细信息，请参阅[通过 System Center Configuration Manager 中的绕过激活锁定帮助保护 iOS 设备](/sccm/mdm/deploy-use/manage-ios-activation-lock)。  
+ Para obter detalhes, consulte [Ajudar a proteger dispositivos iOS com bypass de Bloqueio de Ativação no System Center Configuration Manager](/sccm/mdm/deploy-use/manage-ios-activation-lock).  
 
-### <a name="monitor-terms-and-conditions-deployments"></a>监控条款和条件部署  
- 你可以在 Configuration Manager 控制台中监视条款和条件部署。  
+### <a name="monitor-terms-and-conditions-deployments"></a>Monitorar implantações de termos e condições  
+ Você pode monitorar implantações de termos e condições no console do Configuration Manager.  
 
- 从部署的列表中选择部署的条款和条件。 摘要区域显示以下统计信息：  
+ Selecione a implantação de termos e condições na lista de implantações. A área de resumo mostra as seguintes estatísticas:  
 
--   **合规**：用户已接受最新版本的条款和条件。  
+-   **Em conformidade**: usuários que aceitaram a última versão dos termos e condições.  
 
--   **错误**  
+-   **Erro**  
 
--   **不合规**：用户已接受某版本的条款和条件，但未接受最新版本。  
+-   **Fora de conformidade**: usuários que aceitaram uma versão dos termos e condições, mas não a última versão.  
 
--   **未知**：用户从未接受条款和条件，包括不具有已注册设备的用户。  
+-   **Desconhecido**: usuários que nunca aceitaram os termos e condições, incluindo aqueles sem um dispositivo registrado.  

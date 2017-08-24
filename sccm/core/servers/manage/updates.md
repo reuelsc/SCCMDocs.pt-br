@@ -1,6 +1,6 @@
 ---
-title: "更新 | Microsoft Docs"
-description: "了解称为**更新与维护服务**的控制台中服务方法，该方法可轻松找到并安装建议的更新。"
+title: "Atualizações | Microsoft Docs"
+description: "Saiba mais sobre um método de serviço no console chamado **Atualizações e Manutenção** que facilita a localização e a instalação das atualizações recomendadas."
 ms.custom: na
 ms.date: 07/31/2017
 ms.prod: configuration-manager
@@ -18,133 +18,133 @@ manager: angrobe
 ms.openlocfilehash: d46aca88111d4ee0e96b75ca5a3ec57aa4274d6d
 ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
 ms.translationtype: HT
-ms.contentlocale: zh-CN
+ms.contentlocale: pt-BR
 ms.lasthandoff: 08/07/2017
 ---
-# <a name="updates-for-system-center-configuration-manager"></a>System Center Configuration Manager 的更新
+# <a name="updates-for-system-center-configuration-manager"></a>Atualizações para o System Center Configuration Manager
 
-*适用范围：System Center Configuration Manager (Current Branch)*
+*Aplica-se a: System Center Configuration Manager (Branch Atual)*
 
-System Center Configuration Manager 使用称为“更新和服务”的控制台中服务方法。 通过此控制台中方法，可轻松找到并安装 Configuration Manager 基础结构的建议更新。 控制台中服务由带外更新补充，例如适用于需要解决其环境特定问题的客户的修补程序。  
+O System Center Configuration Manager usa um método de serviço no console chamado **Atualizações e Manutenção**. Esse método no console facilita a localização e instalação de atualizações recomendadas para sua infraestrutura do Configuration Manager. O serviço no console é complementado por atualizações fora da banda, como hotfixes, destinadas a clientes que precisam resolver problemas possivelmente específicos de seus ambientes.  
 
 > [!TIP]  
-> 管理 System Center Configuration Manager 站点和层次结构基础结构时，术语“升级”“更新”和“安装”用于描述三种不同概念。 若要了解每个术语的使用方法，请参阅[有关升级、更新和安装](/sccm/core/understand/upgrade-update-install)。
+> Ao gerenciar a infraestrutura do site e da hierarquia do System Center Configuration Manager, os termos *upgrade*, *atualização* e *instalação* são usados para descrever três conceitos separados. Para saber como cada termo é usado, consulte [About upgrade, update, and install](/sccm/core/understand/upgrade-update-install) (Sobre upgrade, atualização e instalação).
 
 
- **以下主题可帮助了解如何为 System Center Configuration Manager 查找和安装不同更新类型：**  
+ **Os tópicos a seguir podem ajudá-lo a entender como encontrar e instalar os diferentes tipos de atualizações para o System Center Configuration Manager:**  
 
--   [为 System Center Configuration Manager 安装控制台中更新](../../../core/servers/manage/install-in-console-updates.md)  
+-   [Install in-console updates for System Center Configuration Manager (Instalar atualizações no console para o System Center Configuration Manager)](../../../core/servers/manage/install-in-console-updates.md)  
 
--   [使用适用于 System Center Configuration Manager 的服务连接工具](../../../core/servers/manage/use-the-service-connection-tool.md)  
+-   [Usar a Ferramenta de Conexão de Serviço do System Center Configuration Manager](../../../core/servers/manage/use-the-service-connection-tool.md)  
 
--   [使用更新注册工具将修补程序导入 System Center Configuration Manager](../../../core/servers/manage/use-the-update-registration-tool-to-import-hotfixes.md)  
+-   [Usar a Ferramenta de Registro de Atualização para importar hotfixes para o System Center Configuration Manager](../../../core/servers/manage/use-the-update-registration-tool-to-import-hotfixes.md)  
 
--   [使用修补程序安装程序为 System Center Configuration Manager 安装更新](../../../core/servers/manage/use-the-hotfix-installer-to-install-updates.md)  
-
-
-如果使用 Technical Preview 分支，请参阅[System Center Configuration Manager Technical Preview](/sccm/core/get-started/technical-preview) 了解特定于该分支的其他信息。
+-   [Usar o Instalador de Hotfix para instalar atualizações do System Center Configuration Manager](../../../core/servers/manage/use-the-hotfix-installer-to-install-updates.md)  
 
 
-##  <a name="bkmk_Baselines"></a> 基准和更新版本  
- System Center Configuration Manager Current Branch 的初始版本为版本 1511，即基准版本。 更高基线版本包括版本 1606 和 1702：
+Se você usa o branch do Technical Preview, consulte [Technical Preview do System Center Configuration Manager](/sccm/core/get-started/technical-preview) para obter informações adicionais específicas do branch.
 
--   在新的层次结构中安装新站点时，请使用最新的基准版本。  
 
--   使用基准版本从 System Center 2012 Configuration Manager 升级。 升级到 System Center Configuration Manager 后，无需再使用基准版本来保持最新状态，而只需使用[控制台中更新](/sccm/core/servers/manage/install-in-console-updates)更新到最新版本。  
+##  <a name="bkmk_Baselines"></a> Versões de linha de base e atualização  
+ A primeira versão da ramificação atual do System Center Configuration Manager era a versão 1511, que foi a versão de linha de base. As versões mais recentes de linha de base incluem a versão 1606 e 1702:
 
--   我们会定期发布其他基准版本。 使用最新基准版本安装新的层次结构时，应避免安装过期版本的 Configuration Manager，然后再次升级基础结构以使其保持最新状态。  
+-   Use a versão de linha de base mais recente ao instalar um novo site em uma nova hierarquia.  
 
-安装基准版本之后，其他版本的 Configuration Manager 都可用作控制台中更新。 控制台中更新可将你的基础结构更新为最新版本的 Configuration Manager。  
+-   Use uma versão de linha de base para atualizar o System Center 2012 Configuration Manager. Depois de atualizar para o System Center Configuration Manager, você não pode mais usar versões de linha de base para manter-se atualizado, e deve usar apenas [atualizações no console](/sccm/core/servers/manage/install-in-console-updates) para atualizar para a versão mais recente.  
 
--   请安装控制台中更新来更新顶层站点的版本。  
+-   Versões de linha de base adicionais são lançadas periodicamente. Quando você usa a versão de linha de base mais recente para instalar uma nova hierarquia, evita a instalação de uma versão desatualizada do Configuration Manager, seguida por uma atualização adicional de sua infraestrutura para atualizá-la.  
 
--   在管理中心站点上安装的更新会自动安装到子主站点，除非主站点中配置的维护窗口阻止。  
+Depois de instalar uma versão de linha de base, versões adicionais do Configuration Manager estarão disponíveis como atualizações no console. As atualizações no console atualizam a infraestrutura para a versão mais recente do Configuration Manager.  
 
--   手动在控制台中将辅助站点更新到新的更新版本。  
+-   Instale as atualizações no console para atualizar a versão do site de nível superior.  
 
-安装更新时，更新会将该版本的安装文件存储在站点服务器上名为 CD.Latest 的文件夹中。 有关这些文件的详细信息，请参阅 [System Center Configuration Manager 的 CD.Latest 文件夹](../../../core/servers/manage/the-cd.latest-folder.md)。  
+-   As atualizações instaladas no site de administração central são instaladas automaticamente nos sites primários filhos, a não ser que sejam bloqueadas por uma janela de manutenção configurada no site primário.  
 
--   可以使用 CD.Latest 文件夹中的文件来进行站点恢复，以及在不再运行基准版本的层次结构中安装其他站点。  
+-   Atualize manualmente os sites secundários para uma nova versão de atualização usando o console.  
 
--   不能使用 CD.Latest 中的安装文件来安装新层次结构的首个站点，或从 System Center 2012 Configuration Manager 升级站点。  
+Ao instalar uma atualização, ela armazena os arquivos de instalação dessa versão no servidor do site em uma pasta chamada CD.Mais recente. Para saber mais sobre esses arquivos, confira [A pasta CD.Latest para o System Center Configuration Manager](../../../core/servers/manage/the-cd.latest-folder.md).  
 
-Configuration Manager 的某些更新可用作现有基础结构的控制台中更新版本，以及新的基准版本。  
+-   Use os arquivos na pasta CD.Mais recente durante a recuperação de site e para instalar sites adicionais em uma hierarquia que não execute mais uma versão de linha de base.  
 
-以下版本的 Configuration Manager 可用作基准和/或更新：  
+-   Você não pode usar os arquivos de instalação da CD.Mais recente para instalar o primeiro site de uma nova hierarquia ou para atualizar um site do System Center 2012 Configuration Manager.  
 
-|版本 |可用日期|[支持结束日期](/sccm/core/servers/manage/current-branch-versions-supported) |Baseline|控制台中更新|  
+Algumas atualizações do Configuration Manager estão disponíveis como uma versão de atualização no console para a infraestrutura existente e como uma nova versão de linha de base.  
+
+As seguintes versões do Configuration Manager estão disponíveis como uma linha de base e/ou uma atualização:  
+
+|Versão |Data de disponibilidade|[Data de término do suporte](/sccm/core/servers/manage/current-branch-versions-supported) |Linha de base|Atualização no console|  
 |-------------|-----------|------------|--------------|------------------------|  
-|[1706](/sccm/core/plan-design/changes/whats-new-in-version-1706)<br /><br /> 5.00.8540.1000|2017 年 7 月 31 日|2018 年 7 月 31 日|否|是|
-|[1702](/sccm/core/plan-design/changes/whats-new-in-version-1702)<br /><br /> 5.00.8498.1000|2017 年 3 月 27 日| 2018 年 3 月 27 日|是|是|
-|[1610](/sccm/core/plan-design/changes/whats-new-in-version-1610)<br /><br /> 5.00.8458.1000|2016 年 11 月 18 日| 2017 年 11 月 18 日|否|是|
-|[1606](/sccm/core/plan-design/changes/whats-new-in-version-1606)<br /><br /> 5.00.8412.1000|2016 年 7 月 22 日| 2017 年 7 月 22 日|否|是|
-|[1606](/sccm/core/plan-design/changes/whats-new-in-version-1606) 和 1606 修补程序汇总 (KB3186654) </br></br>5.00.8412.1307（注释 1） |2016 年 10 月 12 日| 2017 年 10 月 12 日|是|否|
-| 1602<br /><br /> 5.00.8355.1000|2016 年 3 月 11 日| 2017 年 3 月 11 日|否|是| 
-| 1511 <br /><br /> 5.00.8325.1000|2015 年 12 月 8 日| 2016 年 12 月 8 日|是|否|  
+|[1706](/sccm/core/plan-design/changes/whats-new-in-version-1706)<br /><br /> 5.00.8540.1000|31 de julho de 2017|31 de julho de 2018|Não|Sim|
+|[1702](/sccm/core/plan-design/changes/whats-new-in-version-1702)<br /><br /> 5.00.8498.1000|27 de março de 2017| 27 de março de 2018|Sim|Sim|
+|[1610](/sccm/core/plan-design/changes/whats-new-in-version-1610)<br /><br /> 5.00.8458.1000|18 de novembro de 2016| 18 de novembro de 2017|Não|Sim|
+|[1606](/sccm/core/plan-design/changes/whats-new-in-version-1606)<br /><br /> 5.00.8412.1000|22 de julho de 2016| 22 de julho de 2017|Não|Sim|
+|[1606](/sccm/core/plan-design/changes/whats-new-in-version-1606) com o pacote cumulativo de atualizações do hotfix 1606 (KB3186654) </br></br>5.00.8412.1307 *(Observação 1)* |12 de outubro de 2016| 12 de outubro de 2017|Sim|Não|
+| 1602<br /><br /> 5.00.8355.1000|11 de março de 2016| 11 de março de 2017|Não|Sim| 
+| 1511 <br /><br /> 5.00.8325.1000|8 de dezembro de 2015| 8 de dezembro de 2016|Sim|Não|  
 
 
-（注释 1）1606 和 1702 基线介质作为 Microsoft System Center 2016 或 System Center Configuration Manager（Current Branch 和 Long-Term Servicing Branch）版的一部分在[批量许可服务中心](https://www.microsoft.com/Licensing/servicecenter/Downloads/DownloadsAndKeys.aspx) (VLSC) 上提供。 例如，在 VLSC 上，可以搜索 System Center Config Mgr（Current Branch 和 LTSB），会返回 1606 和 1702 版本基线介质并且可供下载。
+*(Observação 1)* A mídia de linha de base 1606 e 1702 está disponível como parte das versões do Microsoft System Center 2016 ou do System Center Configuration Manager (Branch Atual e Branch de Manutenção de Longo Prazo) no VLSC [(Volume License Service Center)](https://www.microsoft.com/Licensing/servicecenter/Downloads/DownloadsAndKeys.aspx). Por exemplo, no VLSC você pode pesquisar por *System Center Config Mgr (branch atual e LTSB)*, e a mídia de linha de base versão 1606 e 1702 retornam e ficam disponível para download.
 
-若要检查 Configuration Manager 站点的版本，请在控制台中，转至控制台左上角的 **“关于 System Center Configuration Manager”** ，新站点和控制台版本将会显示在那里。  
+Para verificar a versão do site do Configuration Manager, no console vá para **Sobre o System Center Configuration Manager** no canto superior esquerdo do console onde é exibida a versão do novo site e do console.  
 
-##  <a name="bkmk_inconsole"></a> 控制台中更新和服务  
- 使用 System Center Configuration Manager 的生产就绪型安装（也称为当前分支）时，通过“更新和维护服务”渠道可提供安装的大部分更新。 此方法标识、下载并提供适用于你当前基础结构版本和配置的更新，并且仅包含 Microsoft 针对所有客户建议的更新。   
- 其中包括:  
+##  <a name="bkmk_inconsole"></a> Atualizações e serviços no console  
+ Ao usar uma instalação pronta para produção do System Center Configuration Manager, também conhecida como o branch atual, a maioria das atualizações para instalar ficam disponíveis usando o canal Atualizações e Manutenção. Esse método identifica, baixa e disponibiliza as atualizações que se aplicam à versão atual e à configuração da sua infraestrutura e inclui apenas as atualizações que a Microsoft recomenda para todos os clientes.   
+ Elas incluem:  
 
--   新版本，如版本 1610、1702 或 1706。  
+-   Novas versões, como a versão 1610, 1702 ou 1706.  
 
--   更新，包括当前版本的新功能。
+-   Atualizações, que incluem novos recursos para a versão atual.
 
--   修补程序，适用于你的 Configuration Manager 版本，所有客户都应安装。
+-   Hotfixes, para a sua versão do Configuration Manager e que todos os clientes devem instalar.
 
-控制台中更新可提供更强的稳定性并解决常见的问题。 它们可替代早期产品版本的更新类型，如服务包、累积更新、适用于所有客户的修补程序以及 Extension for Microsoft Intune。 这些更新可应用于以下一种或多种设备：  
+As atualizações no console oferecem maior estabilidade e resolvem os problemas comuns. Elas substituem os tipos de atualização das versões anteriores do produto por service packs, atualizações cumulativas e hotfixes que se aplicam a todos os clientes e à extensão do Microsoft Intune. Essas atualizações podem ser aplicadas a um ou mais dos itens a seguir:  
 
--   主站点和管理中心站点服务器  
+-   Servidores do site primário e de administração central  
 
--   站点系统角色和站点系统服务器  
+-   Servidores do sistema de site e funções do sistema de site  
 
--   SMS 提供程序的实例  
+-   Instâncias do provedor de SMS  
 
--   Configuration Manager 控制台  
+-   Consoles do Configuration Manager  
 
--   Configuration Manager 客户端  
+-   Clientes do Configuration Manager  
 
-将服务连接点站点系统角色与 Microsoft 云服务和下载中心同步时，Configuration Manager 会发现新的更新：  
+O Configuration Manager descobre novas atualizações quando você sincroniza a função do sistema de sites do ponto de conexão de serviço com o centro de download e serviço de nuvem da Microsoft:  
 
--   当服务连接点处于联机模式时，站点将每天与 Microsoft 同步，以自动确定适用于你的基础结构的新更新。  若要下载更新和用于更新的 redist 文件，则承载服务连接点站点系统角色的计算机使用**系统**上下文访问以下 Internet 位置：go.microsoft.com 和 download.microsoft.com。 有关服务连接点连接到的其他位置的信息，请参阅[关于 System Center Configuration Manager 中的服务连接点](../../../core/servers/deploy/configure/about-the-service-connection-point.md)中的 [Internet 访问要求](../../../core/servers/deploy/configure/about-the-service-connection-point.md#bkmk_urls)。  
+-   Quando o ponto de conexão de serviço está no modo online, o site sincroniza-se com a Microsoft diariamente para identificar automaticamente as novas atualizações que se aplicam à infraestrutura.  Para baixar atualizações e arquivos redist para atualizações, o computador que hospeda a função do sistema de sites do ponto de conexão de serviço usa o contexto **Sistema** para acessar os seguintes locais da Internet: go.microsoft.com e Microsoft.com. Para obter informações sobre outros locais aos quais o ponto de conexão de serviço se conecta, consulte [Requisitos de acesso de Internet](../../../core/servers/deploy/configure/about-the-service-connection-point.md#bkmk_urls) em [Sobre o ponto de conexão de serviço no System Center Configuration Manager](../../../core/servers/deploy/configure/about-the-service-connection-point.md).  
 
--   当服务连接点处于脱机模式时，请使用服务连接工具手动与 Microsoft 云同步。 有关详细信息，请参阅 [Use the Service Connection Tool for System Center Configuration Manager](../../../core/servers/manage/use-the-service-connection-tool.md)。  
+-   Quando o ponto de conexão de serviço estiver no modo offline, use a ferramenta de conexão de serviço para sincronizar-se manualmente com a nuvem da Microsoft. Para obter mais informações, consulte [Usar a Ferramenta de Conexão de Serviço do System Center Configuration Manager](../../../core/servers/manage/use-the-service-connection-tool.md)  
 
--   凭借控制台中更新，无需再单独查找和安装单个更新、服务包和新功能。  
+-   As atualizações no console substituem a necessidade de localizar e instalar atualizações, service packs e novos recursos individuais de forma independente.  
 
--   只安装选择的控制台中更新，并且安装某些更新时，可以选择要启用和使用的各个功能。 有关详细信息，请参阅[启用更新中的可选功能](../../../core/servers/manage/install-in-console-updates.md#bkmk_options)。  
+-   Você instala somente as atualizações no console que escolhe e ao instalar algumas atualizações, você pode selecionar os recursos individuais que deseja habilitar e usar. Para obter mais informações, consulte [Enable optional features from updates (Habilitar recursos opcionais de atualizações)](../../../core/servers/manage/install-in-console-updates.md#bkmk_options).  
 
-安装控制台中更新时：  
+Ao instalar uma atualização no console:  
 
--   它将自动运行先决条件检查。 也可以先运行此检查，再开始安装。  
+-   Ele executa automaticamente uma verificação de pré-requisitos. Você também pode executar essa verificação antes de iniciar a instalação.  
 
--   它自动在管理中心站点（如果有）和主站点上安装。 可以通过使用[站点服务器的服务时段](../../../core/servers/manage/service-windows.md)控制允许每个主站点服务器更新其基础结构的时间。  
+-   Ele instala no site de administração central (se houver) e nos sites primários automaticamente. É possível controlar quando cada servidor do site primário tem permissão para atualizar sua infraestrutura usando [Service windows for site servers](../../../core/servers/manage/service-windows.md) (Períodos de serviço para servidores do site).  
 
--   站点服务器更新后，受影响的所有站点系统角色 （包括 SMS 提供程序的实例）会自动更新。 站点安装更新后，Configuration Manager 控制台还会提示控制台用户更新控制台。  
+-   Depois que um servidor do site é atualizado, todas as funções do sistema de site afetadas (incluindo as instâncias do Provedor de SMS) são atualizadas automaticamente. Os consoles do Configuration Manager também solicitam que o usuário do console atualize o console depois que o site instala a atualização.  
 
--   如果更新包括 Configuration Manager 客户端，还会提供在预生产中测试更新或立即将更新应用到所有客户端的选项。  
+-   Se uma atualização incluir o cliente do Configuration Manager, você terá a opção de testar a atualização em pré-produção ou aplicar a atualização a todos os clientes imediatamente.  
 
--   更新主站点后，辅助站点不会自动更新。 而必须启动辅助站点更新。  
+-   Depois que um site primário é atualizado, os sites secundários não são atualizados automaticamente. Você deve iniciar a atualização de site secundário.  
 
 > [!NOTE]  
->  System Center Configuration Manager (Current Branch) 的生产版本、Long-Term Servicing Branch 和 Technical Preview for System Center Configuration Manager 是不同的版本。 因此，适用于一个分支的更新无法作为其他分支的控制台中更新。 有关可用分支的详细信息，请参阅[我应使用 Configuration Manager 的哪一个分支？](/sccm/core/understand/which-branch-should-i-use)
+>  A versão de produção do System Center Configuration Manager (Branch Atual), o Branch de Manutenção de Longo Prazo e o Technical Preview do System Center Configuration Manager são versões diferentes. Portanto, as atualizações que se aplicam a uma ramificação não estão disponíveis como atualizações no console para outras ramificações. Para saber mais sobre as ramificações disponíveis, confira [Qual ramificação do Configuration Manager devo usar?](/sccm/core/understand/which-branch-should-i-use)
 
-##  <a name="bkmk_outofband"></a> 带外修补程序  
-一些修补程序在发布时的可用性受到限制，用于解决特定的问题，或者虽然适用于所有客户，但不能使用控制台中方法进行安装。 这些修补程序在带外提供，Microsoft 云服务不会发现。  
+##  <a name="bkmk_outofband"></a> Hotfixes fora da banda  
+Alguns hotfixes são lançados com disponibilidade limitada para resolver problemas específicos ou são aplicáveis a todos os clientes, mas não podem ser instalados usando o método no console. Essas correções são entregues fora de banda e não são descobertas do serviço de nuvem da Microsoft.  
 
-通常情况下，可从 Microsoft 客户支持服务、知识库文章或 [System Center Configuration Manager 团队博客](https://blogs.technet.microsoft.com/configmgrteam)了解带外修补程序，以寻求修复或解决 Configuration Manager 部署问题的方法。  
+Geralmente, você sabe mais sobre os hotfixes fora de banda por meio dos serviços de atendimento ao cliente da Microsoft, de um artigo da base de dados de conhecimento ou do [System Center Configuration Manager Team Blog](https://blogs.technet.microsoft.com/configmgrteam) (Blog da Equipe do System Center Configuration Manager) quando procura corrigir ou solucionar um problema na implantação do Configuration Manager.  
 
-请使用以下两种方法中的一种手动安装这些修补程序：  
+Instale essas correções manualmente, usando um destes dois métodos:  
 
--   **更新注册工具：**使用此工具，可手动将修补程序导入 Configuration Manager 控制台，然后可以根据需要在控制台中安装自动发现的控制台中更新。 此方法适用于使用以下文件名结构的更新： **.update.exe**.  此类修补程序的完整文件名类似于：**&lt;产品\>-&lt;产品版本\>-&lt;知识库文章 ID\>-ConfigMgr.Update.exe**。  
+-   **Ferramenta de Registro de Atualização:** essa ferramenta importa o hotfix manualmente para o seu console do Configuration Manager, que você poderá usar para instalar a atualização da mesma forma que faria com as atualizações no console descobertas automaticamente. Esse método é usado para as atualizações que usam a seguinte estrutura de nome de arquivo: **.update.exe**.  O nome de arquivo completo para esse tipo de hotfix é semelhante a: **&lt;Produto\>-&lt;versão do produto\>-&lt;ID do artigo da base de dados\>-ConfigMgr.Update.exe**.  
 
-     有关详细信息，请参阅[使用更新注册工具将修补程序导入 System Center Configuration Manager](../../../core/servers/manage/use-the-update-registration-tool-to-import-hotfixes.md)。  
+     Para obter mais informações, consulte [Usar a Ferramenta de Registro de Atualização para importar hotfixes para o System Center Configuration Manager](../../../core/servers/manage/use-the-update-registration-tool-to-import-hotfixes.md).  
 
--   **修补程序安装工具：** 此工具用于手动安装无法使用控制台中方法安装的修补程序。 此方法用于使用如下文件名结构的修补程序：**&lt;产品\>-&lt;产品版本\>-&lt;知识库文章 ID\>-&lt;平台\>-&lt;语言\>.exe**。
+-   **Instalador de hotfix:** essa ferramenta é usada para instalar manualmente um hotfix que não pode ser instalado usando o método no console. Esse método é usado para correções que usam a seguinte estrutura de nome de arquivo: **&lt;Produto\>-&lt;versão do produto\>-&lt;ID do artigo da base de dados\>-&lt;plataforma\>-&lt;idioma\>.exe**.
 
-     有关详细信息，请参阅[使用修补程序安装程序为 System Center Configuration Manager 安装更新](../../../core/servers/manage/use-the-hotfix-installer-to-install-updates.md)。
+     Para obter mais informações, consulte [Usar o Instalador do Hotfix para instalar atualizações do System Center Configuration Manager](../../../core/servers/manage/use-the-hotfix-installer-to-install-updates.md).

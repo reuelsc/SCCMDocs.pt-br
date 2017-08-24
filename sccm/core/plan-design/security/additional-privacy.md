@@ -1,6 +1,6 @@
 ---
-title: "System Center Configuration Manager 隐私声明 - 其他信息 | Microsoft Docs"
-description: "了解 Microsoft 如何收集和使用来自 System Center Configuration Manager 部署的数据。"
+title: "Política de privacidade do System Center Configuration Manager – Informações adicionais | Microsoft Docs"
+description: "Saiba como a Microsoft coleta e usa dados de uma implantação do System Center Configuration Manager."
 ms.custom: na
 ms.date: 12/30/2016
 ms.prod: configuration-manager
@@ -37,78 +37,78 @@ translation.priority.ht:
 ms.openlocfilehash: ef7b3656f9b4a31e07227aa4e864448d0dd1fcdc
 ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
 ms.translationtype: HT
-ms.contentlocale: zh-CN
+ms.contentlocale: pt-BR
 ms.lasthandoff: 08/07/2017
 ---
-# <a name="additional-information-about-privacy-for-system-center-configuration-manager"></a>关于 System Center Configuration Manager 隐私的其他信息
+# <a name="additional-information-about-privacy-for-system-center-configuration-manager"></a>Mais informações sobre privacidade no System Center Configuration Manager
 
-*适用范围：System Center Configuration Manager (Current Branch)*
-
-
-## <a name="updates-and-servicing"></a>更新和服务
-System Center Configuration Manager 引入了新更新模型，有助于你将当前的 Configuration Manager 部署保持为最新更新和功能。 安装后，此功能将在管理员选择的站点服务器上添加称作服务连接点的新站点系统角色。 有关收集的信息内容及其使用方式详情，请参阅本文中的“使用情况数据”部分。
+*Aplica-se a: System Center Configuration Manager (Branch Atual)*
 
 
-## <a name="usage-data"></a>使用情况数据
-System Center Configuration Manager 收集有关自身的诊断和使用情况数据，Microsoft 使用这些数据改进将来版本的安装体验、质量和安全性。
-诊断和使用情况数据可用于每个 System Center Configuration Manager 层次结构。 它包含在每个主站点和管理中心站点每周运行一次的 SQL Server 查询。 层次结构使用管理中心站点时，主站点中的数据随后会复制到该站点。 在层次机构的顶层站点上，服务连接点在检查更新时提交此信息。 如果服务连接点处于脱机模式下，则将使用服务连接工具传输信息。
-
-Configuration Manager 仅从站点 SQL Server 数据库收集数据，而不会直接从客户端或站点服务器收集数据。
-
-管理员可以通过转到 Configuration Manager 控制台的“使用情况数据”部分更改收集数据的级别。
-
-有关详细信息，请参阅[System Center Configuration Manager 的诊断和使用情况数据](http://go.microsoft.com/fwlink/?LinkID=626566)文章中有关使用情况数据级别和设置的“了解详情”一文。
+## <a name="updates-and-servicing"></a>Atualizações e serviços
+O System Center Configuration Manager apresenta um novo modelo de atualização que ajuda a manter sua implantação do Configuration Manager atualizada com os recursos e atualizações mais recentes. Quando instalado, esse recurso adiciona uma nova função do sistema de sites chamada ponto de conexão de serviço a um servidor do site da escolha do administrador. Para obter detalhes sobre as informações coletadas e como elas são usadas, consulte a seção Dados de uso neste artigo.
 
 
-## <a name="customer-experience-improvement-program"></a>客户体验改善计划
-客户体验改善计划 (CEIP) 从 Configuration Manager 管理控制台中收集有关你的硬件配置以及你使用软件和服务的方式的基本信息，以便确定趋势和使用模式。 CEIP 还收集你遇到的错误的类型和编号、软件和硬件性能以及服务的速度。 我们不会收集你的姓名、地址或其他联系信息。 不从客户端计算机中收集任何 CEIP 数据。
+## <a name="usage-data"></a>Dados de uso
+O System Center Configuration Manager coleta dados de diagnóstico e de uso sobre si mesmo, que a Microsoft usa para melhorar a experiência de instalação, a qualidade e a segurança de versões futuras.
+Os dados de diagnóstico e de uso são habilitados para cada hierarquia do System Center Configuration Manager. Eles consistem em consultas do SQL Server que são executadas semanalmente em cada site primário e no site de administração central. Quando a hierarquia usa um site de administração central, os dados dos sites primários são replicados nesse site. No site de nível superior da hierarquia, o ponto de conexão de serviço envia essas informações quando verifica se há atualizações. Se o ponto de conexão de serviço estiver no modo offline, as informações serão transferidas por meio da ferramenta de conexão de serviço.
 
-我们使用此信息来提高 Microsoft 软件和服务的质量、可靠性和性能。
+O Configuration Manager coleta dados apenas do banco de dados SQL Server do site e não coleta dados diretamente de clientes ou de servidores do site.
 
-有关 CEIP 收集、处理或传输的信息的详情，请参阅 [CEIP 隐私声明](http://go.microsoft.com/fwlink/?LinkID=525211)。
+Os administradores podem alterar o nível dos dados coletados acessando a seção **Dados de Uso** do console do Configuration Manager.
 
-## <a name="operations-management-suite-connector"></a>Operations Management Suite 连接器
-Microsoft Operations Management Suite 连接器可将数据（如集合）从 System Center Configuration Manager 同步到 Microsoft Operations Management Suite。 管理员配置此功能后，Microsoft Azure 订阅 ID 和密钥会存储在 Configuration Manager 数据库中。 Azure Active Directory 客户端密钥和 Microsoft Operations Management Suite 工作区共享的密钥均存储在本地 System Center Configuration Manager 数据库中。 System Center Configuration Manager 和 Microsoft Operations Management Suite 之间的所有通信都使用 HTTPS。 除随机化遥测数据之外，不会向 Microsoft 提供有关集合的任何其他信息。 有关 Microsoft Operations Management Suite 收集的信息的详细信息，请参阅 [Log Analytics 数据安全](http://go.microsoft.com/fwlink/?LinkId=823545)。
+Para obter mais informações, consulte os artigos “Saiba mais” sobre as Configurações e os níveis de uso de dados no artigo [Dados de diagnóstico e de uso do System Center Configuration Manager](http://go.microsoft.com/fwlink/?LinkID=626566).
 
-## <a name="asset-intelligence"></a>资产智能
-资产智能使 IT 管理员能够定义、跟踪和主动管理与配置标准的符合性。 对部署以及物理和虚拟应用程序的使用进行计量和报告可帮助组织做出更明智的软件许可业务决策，并保持与许可协议的相容性。 从 Configuration Manager 客户端收集使用数据之后，管理员可以使用不同的功能来查看数据，包括集合、查询和报告。
 
-在每次同步过程中，将从 Microsoft 下载已知软件的目录。 IT 管理员可以选择向 Microsoft 发送以下相关信息：在其组织中发现的要进行研究以及添加到目录中的未分类软件标题。 在上传此信息之前，对话框会显示要上传的数据。 无法取消上载的数据。 资产智能不会向 Microsoft 发送关于用户和计算机或许可证使用的信息。
+## <a name="customer-experience-improvement-program"></a>Programa de Aperfeiçoamento da Experiência do Usuário
+O Programa de Aperfeiçoamento da Experiência do Usuário coleta informações básicas do console do Configuration Manager sobre sua configuração de hardware e como você usa nosso software e nossos serviços para identificar tendências e padrões de uso. O Programa de Aperfeiçoamento da Experiência do Usuário também coleta o tipo e o número de erros encontrados, o desempenho de software e hardware, bem como a velocidade dos serviços. Não coletamos seu nome, endereço nem outras informações de contato. Nenhum dado do CEIP é coletado dos computadores cliente.
 
-上载软件标题后，Microsoft 研究员会对此资料进行标识和分类，然后向使用此功能的所有其他客户以及目录的其他消费者提供该资料。 任何已上传的软件标题都将公开。 应用程序及其分类会成为目录的一部分，然后可供目录的其他用户下载。 在配置资产智能数据收集以及确定是否将信息提交给 Microsoft 之前，请考虑组织的隐私要求。
+Utilizamos essas informações para melhorar a qualidade, a confiabilidade e o desempenho dos softwares e serviços da Microsoft.
 
-System Center Configuration Manager 中的资产智能默认不启用。 上载未分类的标题决不会自动发生，系统并不打算自动进行此任务。 你必须手动选择并批准上载每个软件标题。
+Para saber mais sobre as informações coletadas, processadas ou transmitidas pelo Programa de Aperfeiçoamento da Experiência do Usuário, consulte a [Política de privacidade do Programa de Aperfeiçoamento da Experiência do Usuário](http://go.microsoft.com/fwlink/?LinkID=525211).
+
+## <a name="operations-management-suite-connector"></a>Operations Management Suite Connector
+O Microsoft Operations Management Suite Connector sincroniza dados, como coleções, do System Center Configuration Manager para o Microsoft Operations Management Suite. A chave secreta e a ID da assinatura do Microsoft Azure são armazenadas no banco de dados do Configuration Manager quando um administrador configura o recurso. O segredo do cliente do Azure Active Directory e a chave compartilhada do espaço de trabalho do Microsoft Operations Management Suite são armazenados no banco de dados local do System Center Configuration Manager. Todas as comunicações entre o System Center Configuration Manager e o Microsoft Operations Management Suite usam HTTPS. Nenhuma outra informação é fornecida à Microsoft sobre as coleções além de dados telemétricos aleatórios. Para obter detalhes sobre as informações coletadas pelo Microsoft Operations Management Suite, consulte [Log analytics security](http://go.microsoft.com/fwlink/?LinkId=823545) (Segurança do Log Analytics).
+
+## <a name="asset-intelligence"></a>Asset Intelligence
+O Asset Intelligence permite que os administradores de TI definam, acompanhem e gerenciem de modo proativo a conformidade com os padrões de configuração. Obter medições e relatórios sobre a implantação e o uso de aplicações físicas e virtuais ajudas as organizações a tomarem decisões comerciais melhores sobre licenciamento de software e manterem a conformidade com os contratos de licenciamento. Após a coleta de dados de uso dos clientes do Configuration Manager, os administradores podem usar diferentes recursos para exibir os dados, incluindo coleções, consultas e relatórios.
+
+Durante cada sincronização, um catálogo de softwares conhecidos é baixado da Microsoft. Os administradores de TI podem optar por enviar informações à Microsoft sobre títulos de software não categorizados descobertos em suas organizações para serem pesquisados e adicionados ao catálogo. Antes de carregar essas informações, uma caixa de diálogo mostra os dados que serão carregados. Os dados carregados não podem ser cancelados. O Asset Intelligence não envia informações sobre os usuários e os computadores ou o uso da licença para a Microsoft.
+
+Após o upload de um título de software, os pesquisadores da Microsoft identificam, categorizam e disponibilizam esse conhecimento para todos os outros clientes que usam esse recurso e outros consumidores do catálogo. Qualquer título de software carregado se torna público. O aplicativo e sua categorização se tornam parte do catálogo e, em seguida, podem ser baixados para outros consumidores do catálogo. Antes de configurar a coleta de dados do Asset Intelligence e optar por enviar informações à Microsoft, considere os requisitos de privacidade da sua organização.
+
+O Asset Intelligence não está habilitado no System Center Configuration Manager por padrão. O carregamento de títulos não categorizados nunca ocorre automaticamente e o sistema não foi projetado para a automatização dessa tarefa. Você deve selecionar e aprovar manualmente o carregamento de cada título de software.
 
 ## <a name="endpoint-protection"></a>Endpoint Protection
-Microsoft Cloud Protection Service，以前称作 Microsoft Active Protection Service 或 MAPS。
-适用的产品：System Center Configuration Manager 的 System Center Endpoint Protection 和 Endpoint Protection 功能（用于管理 System Center Endpoint Protection 和 Windows Defender for Windows 10）。 用于 Linux 的 System Center Endpoint Protection 和用于 Mac 的 System Center Endpoint Protection 还未实现此功能。
+Anteriormente, o Microsoft Cloud Protection Service era conhecido como Microsoft Active Protection Service ou MAPS.
+Os produtos aplicáveis são o System Center Endpoint Protection e o recurso Endpoint Protection do System Center Configuration Manager (para gerenciar o System Center Endpoint Protection e o Windows Defender para Windows 10). Este recurso não está implementado para o System Center Endpoint Protection para Linux ou o System Center Endpoint Protection para Mac.
 
-Microsoft Cloud Protection Service 反恶意软件社区是一个包括 System Center Endpoint Protection 用户的自愿性全球在线社区。 加入 Microsoft Cloud Protection Service 时，System Center Endpoint Protection 会自动向 Microsoft 发送信息。 Microsoft 使用信息来确定调查潜在威胁的软件，并帮助提高 System Center Endpoint Protection 的效率。 此社区帮助阻止新的恶意软件感染的传播。 如果 Microsoft Cloud Protection Service 报告中包括有关恶意软件或 Endpoint Protection 客户端可删除的有害软件的详细信息，Microsoft Cloud Protection Service 将下载最新的签名来解决此问题。 Microsoft Cloud Protection Service 还可发现“误报”（即最初被确定为恶意软件，但结果并非如此）并解决这些误报问题。
+A comunidade antimalware do Microsoft Active Protection Service é uma comunidade online internacional voluntária que inclui usuários do System Center Endpoint Protection. Quando você ingressa no Microsoft Cloud Protection Service, o System Center Endpoint Protection envia informações à Microsoft automaticamente. A Microsoft usa as informações para determinar o software a fim de investigar possíveis ameaças e ajudar a melhorar a eficácia do System Center Endpoint Protection. Essa comunidade ajuda a parar a disseminação de novas infecções por software mal-intencionado. Se um relatório do Microsoft Cloud Protection Service incluir detalhes sobre malware ou software potencialmente não desejado que o cliente do Endpoint Protection pode remover, o Microsoft Cloud Protection Service baixará a última assinatura para resolver o problema. O Microsoft Cloud Protection Service também pode encontrar "falsos positivos" (quando algo identificado originalmente como malware na verdade não é) e corrigi-los.
 
-Microsoft Cloud Protection Service 报告中包含有关可疑恶意软件的信息，例如文件名、加密哈希、供应商、大小和日期戳。 此外，Microsoft Cloud Protection Service 可能会收集完整的 URL 以指明文件的来源。 这些 URL 有时可能包含个人信息，例如窗体中输入的搜索词或数据。 报告中可能还包括 Endpoint Protection 通知存在有害软件时你采取的操作。 Microsoft Cloud Protection Service 报告中包含此信息有助于 Microsoft 评估 Endpoint Protection 检测并删除恶意软件和有害软件的有效性，以及识别新的恶意软件。
+Os relatórios do Microsoft Cloud Protection Service incluem informações sobre possíveis arquivos de malware, como nomes de arquivos, hash criptográfico, fornecedor, tamanho e carimbos de data. Além disso, o Microsoft Cloud Protection Service pode coletar URLs completas para indicar a origem do arquivo. Essas URLs podem, ocasionalmente, conter informações pessoais, como termos de pesquisa ou dados inseridos em formulários. Os relatórios também podem incluir ações que você executou quando o Endpoint Protection o notificou sobre um software indesejado. Os relatórios do Microsoft Cloud Protection Service incluem essas informações para ajudar a Microsoft a medir a eficácia com que o Endpoint Protection detecta e remove malwares e softwares potencialmente indesejados e tenta identificar novos malwares.
 
-如果有基本或高级的成员资格，则可以加入 Microsoft Cloud Protection Service。 基本成员报告中包含上述信息。 高级成员报告更加全面，可能包括有关 Endpoint Protection 检测到的软件的其他详细信息，例如此类软件的位置、文件名、软件操作方式以及软件影响计算机的方式。 这些报告以及来自其他加入 Microsoft Cloud Protection Service 的 Endpoint Protection 用户的报告有助于 Microsoft 研究人员更快地发现新威胁。 之后，将为符合分析条件的程序创建恶意软件定义，而更新后的定义将通过 Microsoft 更新提供给所有用户。
+É possível ingressar no Microsoft Cloud Protection Service se você tem uma associação básica ou avançada. Os relatórios de membros básicos contêm as informações descritas anteriormente. Os relatórios de membros avançados são mais abrangentes e podem incluir detalhes adicionais sobre o software detectado pelo Endpoint Protection, como a localização desse software, nomes de arquivo, como o software opera e como ele afetou o computador. Esses relatórios e os relatórios de outros usuários do Endpoint Protection que participam do Microsoft Cloud Protection Service ajudam os pesquisadores da Microsoft a descobrir novas ameaças com mais rapidez. Em seguida, são criadas definições de malware para programas que atendam aos critérios de análise, e as definições atualizadas são disponibilizadas a todos os usuários por meio do Microsoft Update.
 
-为了帮助检测和修复某些种类的恶意软件感染，产品会定期向 Microsoft Cloud Protection Service 发送有关用户的电脑安全状态的信息。 此信息包括有关用户的电脑的安全设置信息以及日志文件，描述在电脑启动时所加载的驱动程序和其他软件。
-还会发送一个专门识别用户电脑的数字。 Microsoft Cloud Protection Service 可能还会收集潜在恶意软件文件连接到的 IP 地址。
+Para ajudar a detectar e corrigir alguns tipos de infecções de malware, o produto envia regularmente ao Microsoft Cloud Protection Service informações sobre o estado de segurança do computador. Essas informações incluem informações sobre as configurações de segurança do computador e arquivos de log que descrevem os drivers e outros softwares que são carregados durante a inicialização do computador.
+Um número que identifica o PC de forma exclusiva também é enviado. Além disso, o Microsoft Cloud Protection Service pode coletar os endereços IP a que os possíveis arquivos de malware se conectam.
 
-Microsoft Cloud Protection Service 报告可用于改进 Microsoft 软件和服务。 这些报告还可用于进行统计或其他测试或分析目的，以及用于生成定义。 只有根据业务需要必须使用报告的 Microsoft 员工、承包商、合作伙伴和供应商才有权访问这些报告。
+Os relatórios do Microsoft Cloud Protection Service são usados para aprimorar softwares e serviços da Microsoft. Os relatórios também podem ser usados para fins estatísticos ou outros relacionados a teste ou análise, e para gerar definições. Somente funcionários, prestadores de serviços, parceiros e fornecedores da Microsoft que têm uma necessidade comercial de usar os relatórios podem acessá-los.
 
-Microsoft Cloud Protection Service 不会有意收集个人信息。 就算 Microsoft Cloud Protection Service 收集到任何个人信息，Microsoft 也不会使用该信息来识别用户的身份或与用户联系。
+O Microsoft Cloud Protection Service não coleta informações pessoais intencionalmente. Quando o Microsoft Cloud Protection Service coleta informações pessoais, a Microsoft não utiliza essas informações para identificar ou entrar em contato com você.
 
-有关可在产品文档中找到的收集数据的其他详细信息，请参阅 [System Center Configuration Manager 中的 Endpoint Protection](http://go.microsoft.com/fwlink/?LinkId=823547)。
+Encontre detalhes adicionais sobre os dados coletados na documentação do produto em [Endpoint Protection no System Center Configuration Manager](http://go.microsoft.com/fwlink/?LinkId=823547).
 
-## <a name="site-hierarchy--geographical-view-with-bing-maps"></a>站点层次结构 - 包含 Bing 地图的地理视图
-站点层次结构 - 地理视图允许用户使用 Microsoft Bing 地图提供的地图查看 Configuration Manager 物理服务器拓扑。 为了启用此功能，会将你提供的位置信息从服务器发送到 Bing 地图 Web 服务。
+## <a name="site-hierarchy--geographical-view-with-bing-maps"></a>Hierarquia do Site – Exibição Geográfica com Bing Maps
+Hierarquia do Site – A Exibição Geográfica permite o uso de mapas fornecidos pelo Microsoft Bing Mapas para exibir a topologia de servidor físico do Configuration Manager. Para habilitar esse recurso, as informações de local fornecidas são enviadas de seu servidor ao serviço Web Bing Mapas.
 
-Microsoft 使用该信息来运行和改进 Microsoft Bing 地图以及其他 Microsoft 站点和服务。 有关详细信息，请参阅 [Microsoft 隐私声明](http://go.microsoft.com/fwlink/?LinkId=823548)。
-你可以选择不为站点层次结构使用地理视图。 “层次结构图表”视图允许你查看层次结构，且不使用 Bing 地图服务。
+A Microsoft usa as informações para operar e aprimorar o Microsoft Bing Maps e outros sites e serviços da Microsoft. Para obter mais informações, consulte a [Política de Privacidade da Microsoft](http://go.microsoft.com/fwlink/?LinkId=823548).
+Você pode optar por não usar a Exibição Geográfica para a Hierarquia do Site. A exibição Diagrama Hierárquico permite visualizar a hierarquia e não usa o serviço Bing Mapas.
 
-## <a name="microsoft-intune-subscription"></a>Microsoft Intune 订阅
-购买了 Microsoft Intune 订阅的客户可以使用 Configuration Manager 管理其通过 Microsoft Intune 连接的移动设备。 [Microsoft Online Services 隐私声明](http://go.microsoft.com/fwlink/?LinkId=262214)适用于 Microsoft Online Services，包括 Microsoft Intune。 如果客户已拥有 Microsoft Intune 订阅，[Microsoft Online Services 隐私声明](http://go.microsoft.com/fwlink/?LinkId=262214)应配合本隐私声明释读。
+## <a name="microsoft-intune-subscription"></a>Assinatura do Microsoft Intune
+Clientes que adquiriram uma assinatura do Microsoft Intune podem usar o Configuration Manager para gerenciar seus dispositivos móveis que se conectaram por meio do Microsoft Intune. A [Política de Privacidade do Microsoft Online Services](http://go.microsoft.com/fwlink/?LinkId=262214) se aplica aos serviços online da Microsoft, que incluem o Microsoft Intune. Se os clientes tiverem uma assinatura do Microsoft Intune, a [Política de Privacidade do Microsoft Online Services](http://go.microsoft.com/fwlink/?LinkId=262214) deverá ser lida em conjunto com esta política de privacidade.
 
-与 Microsoft Intune 之间的所有通信都使用 HTTPS。 若要配置 Microsoft Intune 订阅以及下载配置 iOS 支持所需的证书签名请求 (CSR)，管理员必须使用其组织帐户和密码登录到 Microsoft Intune。 这些凭据未存储在 Configuration Manager 内。 与 Microsoft Intune 之间的所有其他通信都使用 Microsoft Intune 自动生成的 PKI 证书进行身份验证。
+Todas as comunicações com o Microsoft Intune usam HTTPS. Para configurar a assinatura do Microsoft Intune e baixar a CSR (Solicitação de Assinatura de Certificado) necessária para configurar o suporte para iOS, um administrador deve se conectar ao Microsoft Intune usando uma conta organizacional e a senha. Essas credenciais mão são armazenadas no Configuration Manager. Todas as outras comunicações com o Microsoft Intune são autenticadas usando certificados PKI gerados automaticamente pelo Microsoft Intune.
 
-为了管理连接到 Microsoft Intune 的设备，会将某些信息发送到 Microsoft Intune 以及从 Microsoft Intune 接收某些信息。 此信息包括分配给服务的所有用户的用户主体名称 (UPN)，以及 Microsoft Intune 托管的那些设备的设备清单信息。 分配给 Manage.Microsoft.com 分发点的内容的元数据（例如应用程序名称、发布者和版本）会发送到 Microsoft Intune。 分配给 Manage.Microsoft.com 分发点的实际二进制内容在上传到 Microsoft Intune 之前会被加密。
+Para gerenciar dispositivos conectados ao Microsoft Intune, algumas informações são enviadas e recebidas do Microsoft Intune. Essas informações incluem o nome UPN de todos os usuários atribuídos ao serviço e informações de inventário de dispositivo dos dispositivos gerenciados pelo Microsoft Intune. Os metadados, como o nome do aplicativo, o editor e a versão, do conteúdo atribuído aos pontos de distribuição Manage.Microsoft.com são enviados ao Microsoft Intune. O conteúdo binário real atribuído a um ponto de distribuição Manage.Microsoft.com é criptografado antes de ser carregado no Microsoft Intune.
 
-默认情况下未配置此功能。 管理员控制传输到 Manage.Microsoft.com 分发点的内容以及分配给服务的用户。 随时可以删除此功能。
+Esse recurso não está configurado por padrão. Os administradores controlam o conteúdo transferido para o ponto de distribuição Manage.Microsoft.com e os usuários atribuídos ao serviço. O recurso pode ser removido a qualquer momento.

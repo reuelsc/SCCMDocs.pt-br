@@ -1,6 +1,6 @@
 ---
-title: CEIP | Microsoft Docs
-description: "了解 System Center Configuration Manager 的客户体验改善计划设置。"
+title: "Programa de Aperfeiçoamento da Experiência do Usuário | Microsoft Docs"
+description: "Saiba mais sobre as configurações do Programa de Aperfeiçoamento da Experiência do Usuário do System Center Configuration Manager."
 ms.custom: na
 ms.date: 12/29/2016
 ms.prod: configuration-manager
@@ -17,19 +17,19 @@ manager: angrobe
 ms.openlocfilehash: dddb6d960269a0d7655597cd9a1ccb31b382853c
 ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
 ms.translationtype: HT
-ms.contentlocale: zh-CN
+ms.contentlocale: pt-BR
 ms.lasthandoff: 08/07/2017
 ---
-# <a name="customer-experience-improvement-program-ceip-for-system-center-configuration-manager"></a>System Center Configuration Manager 的客户体验改善计划 (CEIP)
+# <a name="customer-experience-improvement-program-ceip-for-system-center-configuration-manager"></a>CEIP (Programa de Aperfeiçoamento da Experiência do Usuário) do System Center Configuration Manager
 
-*适用范围：System Center Configuration Manager (Current Branch)*
+*Aplica-se a: System Center Configuration Manager (Branch Atual)*
 
-在 System Center Configuration Manager 控制台的安装过程中，可以选择参与**客户体验改善计划** (CEIP)。 尽管 CEIP 在默认情况下处于关闭状态，但如果之前已启用，则它将保持启用状态。  
+Durante a instalação do console do System Center Configuration Manager, você pode optar por participar no **Programa de Aperfeiçoamento da Experiência do Usuário**. Embora o Programa de Aperfeiçoamento da Experiência do Usuário esteja desativado por padrão, se foi habilitado anteriormente, permanecerá habilitado.  
 
--   CEIP 独立于 [System Center Configuration Manager 的诊断和使用情况数据](../../../core/plan-design/diagnostics/diagnostics-and-usage-data.md)。  
+-   O Programa de Aperfeiçoamento da Experiência do Usuário é diferente dos [Dados de diagnóstico e de uso do System Center Configuration Manager](../../../core/plan-design/diagnostics/diagnostics-and-usage-data.md).  
 
--   CEIP 基于控制台，可以收集用户界面中每个元素的选择次数等数据。  
+-   O Programa de Aperfeiçoamento da Experiência do Usuário é por cada console e coleta dados como o número de vezes que cada elemento é selecionado na interface do usuário.  
 
--   在线阅读 [CEIP 隐私声明](https://www.microsoft.com/products/ceip/en-us/privacypolicy.mspx)。  
+-   Leia a [Política de privacidade do Programa de Aperfeiçoamento da Experiência do Usuário](https://www.microsoft.com/products/ceip/en-us/privacypolicy.mspx) online.  
 
-可在安装控制台时更改 CEIP 设置。 在控制台中，转到“控制台的 Backstage”选项卡（左上角带下拉箭头的选项卡），并选择“客户体验改善计划”以更改设置。  
+É possível alterar as configurações do Programa de Aperfeiçoamento da Experiência do Usuário por instalação do console. No console, vá para a guia backstage do console (a guia superior esquerda com a seta suspensa) e selecione **Programa de Aperfeiçoamento da Experiência do Usuário** para alterar as configurações.  

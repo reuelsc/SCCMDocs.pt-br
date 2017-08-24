@@ -1,6 +1,6 @@
 ---
-title: "在 Internet 上管理客户端 - Configuration Manager | Microsoft Docs"
-description: "了解如何通过云管理网关和 Configuration Manager 中的基于 Internet 的客户端管理来管理客户端。"
+title: "Gerenciar clientes na Internet – Configuration Manager | Microsoft Docs"
+description: Saiba como gerenciar clientes com o gateway de gerenciamento da nuvem e gerenciamento de clientes baseado na Internet no Configuration Manager.
 ms.date: 04/23/2017
 ms.prod: configuration-manager
 ms.technology: configmgr-client
@@ -11,61 +11,61 @@ manager: angrobe
 ms.openlocfilehash: 1b6752be448e1062c97a3225db4fa8af9f4832a6
 ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
 ms.translationtype: HT
-ms.contentlocale: zh-CN
+ms.contentlocale: pt-BR
 ms.lasthandoff: 08/07/2017
 ---
-# <a name="manage-clients-on-the-internet-with-configuration-manager"></a>在 Internet 上使用 Configuration Manager 管理客户端
+# <a name="manage-clients-on-the-internet-with-configuration-manager"></a>Gerenciar clientes na Internet com o Configuration Manager
 
-*适用范围：System Center Configuration Manager (Current Branch)*
+*Aplica-se a: System Center Configuration Manager (Branch Atual)*
 
-通常，Configuration Manager 中受管理的多数计算机和服务器与执行管理功能的站点系统服务器物理上位于同一内部专用或公司网络中。 但如果客户端计算机连接到了 Internet，则可在公司网络外部对其进行管理，无需通过虚拟专用网络连接客户端，到达站点系统服务器。
+Normalmente, no Configuration Manager, a maioria dos computadores e servidores gerenciados está fisicamente na mesma rede privada ou corporativa interna que os servidores do sistema de sites que executam funções de gerenciamento. No entanto, você poderá gerenciar computadores cliente fora da rede corporativa se eles estiverem conectados à Internet sem a necessidade de os clientes se conectarem por meio de redes virtuais privadas para acessar os servidores do sistema de sites.
 
-Configuration Manager 提供两种方法来管理连接了 Internet 的客户端：
+O Configuration Manager fornece duas maneiras para gerenciar clientes conectados à Internet:
 
--   云管理网关
+-   Gateway de gerenciamento de nuvem
 
--   基于 Internet 的客户端管理
+-   Gerenciamento de clientes baseado na Internet
 
-## <a name="cloud-management-gateway"></a>云管理网关
+## <a name="cloud-management-gateway"></a>Gateway de gerenciamento de nuvem
 
-从 1610 版本起，Configuration Manager 引入了云管理网关。 通过这一新方法可结合使用部署到 Microsoft Azure 的云服务和与该服务通信的新站点系统角色来管理基于 Internet 的客户端。 然后客户端可使用该服务与 Configuration Manager 通信。
+Começando da versão 1610, o Configuration Manager introduz o gateway de gerenciamento de nuvem. Esse novo método fornece uma maneira de gerenciar clientes baseados na Internet usando uma combinação de um serviço de nuvem implantado no Microsoft Azure e uma nova função do sistema de sites que se comunica com o serviço. Em seguida, os clientes usam o serviço para se comunicarem com o Configuration Manager.
 
-优点：
+Vantagens:
 
--   无需额外的基础结构投资。
+-   Nenhum investimento adicional em infraestrutura necessário.
 
--   不会将本地基础结构公开至 Internet。
+-   Não expõe a infraestrutura local à Internet.
 
--   运行服务的云虚拟机由 Azure 完全管理且免维护。
+-   As máquinas virtuais em nuvem que executam o serviço são totalmente gerenciadas pelo Azure e não precisam de nenhuma manutenção.
 
--   可轻松在 Configuration Manager 控制台中进行设置和配置。
+-   Facilmente instalado e configurado no console do Configuration Manager.
 
-缺点：
+Desvantagens:
 
--   云订阅费用。
+-   Custo da assinatura na nuvem.
 
--   通过云服务发送的管理数据。
+-   Dados de gerenciamento enviados por meio do serviço de nuvem.
 
-有关详细信息，请参阅[规划云管理网关](plan-cloud-management-gateway.md)。
+Para obter mais informações, consulte [Planejar o gateway de gerenciamento de nuvem](plan-cloud-management-gateway.md).
 
-## <a name="internet-based-client-management"></a>基于 Internet 的客户端管理
+## <a name="internet-based-client-management"></a>Gerenciamento de clientes baseado na Internet
 
-此方法依赖于面向 Internet 的站点系统服务器，为了进行管理，客户端会与该服务器通信。 此方法要求配置客户端和站点系统服务器，实现基于 Internet 的管理。
+Esse método se baseia nos servidores do sistema de sites para a Internet com os quais os clientes se comunicam para fins de gerenciamento. Esse método exige que os clientes e os servidores do sistema de sites sejam configurados para o gerenciamento baseado na Internet.
 
-优点：
+Vantagens:
 
--   无云服务依赖关系。
+-   Sem dependência do serviço de nuvem.
 
--   无与云订阅关联的费用。
+-   Sem custos adicionais associados a uma assinatura na nuvem.
 
--   可完全控制提供服务的服务器和角色。
+-   Controle total dos servidores e das funções que fornecem o serviço.
 
-缺点：
+Desvantagens:
 
--   需要额外的基础结构投资。
+-   Exige investimentos adicionais em infraestrutura.
 
--   额外基础结构的日常管理费用和运营费用。
+-   Sobrecarga e custos operacionais de uma infraestrutura adicional.
 
--   必须向 Internet 公开基础结构。
+-   A infraestrutura deve ser exposta à Internet.
 
-有关详细信息，请参阅[规划基于 Internet 的客户端管理](plan-internet-based-client-management.md)。
+Para obter mais informações, consulte [Planejar o gerenciamento de clientes baseado na Internet](plan-internet-based-client-management.md).

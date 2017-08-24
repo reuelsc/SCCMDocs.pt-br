@@ -1,6 +1,6 @@
 ---
-title: "如何创建 SCEP 证书配置文件 | Microsoft Docs"
-description: "了解如何在 System Center Configuration Manager 中使用证书配置文件为受管理设备预配所需的证书。"
+title: Como criar perfis de certificado SCEP | Microsoft Docs
+description: "Saiba como usar perfis de certificado para provisionar dispositivos gerenciados com os certificados necessários no System Center Configuration Manager."
 ms.custom: na
 ms.date: 03/28/2017
 ms.prod: configuration-manager
@@ -18,178 +18,178 @@ manager: angrobe
 ms.openlocfilehash: 1e00804d27ecef2aadd8bfa395db1919c46243ee
 ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
 ms.translationtype: HT
-ms.contentlocale: zh-CN
+ms.contentlocale: pt-BR
 ms.lasthandoff: 08/07/2017
 ---
-# <a name="create-certificate-profiles"></a>创建证书配置文件
+# <a name="create-certificate-profiles"></a>Criar perfis de certificado
 
-*适用范围：System Center Configuration Manager (Current Branch)*
-
-
-使用 Configuration Manager (SCCM) 中的证书配置文件，为受管理设备预配访问公司资源所需的证书。 创建证书配置文件前，请按照 [Set up certificate infrastructure for System Center Configuration Manager](certificate-infrastructure.md)（设置 System Center Configuration Manager 的证书基础结构）中所述的内容设置证书基础结构。  
-
-本主题介绍如何创建受信任的根和 SCEP 证书配置文件。 若要创建 PFX 证书配置文件，请参阅 [Create PFX certificate profiles](../../protect/deploy-use/create-pfx-certificate-profiles.md)（创建 PFX 证书配置文件）。
-
-创建证书配置文件：
-
-1.  启动“创建证书配置文件向导”。
-1.  提供有关证书的一般信息。
-1.  配置受信任证书颁发机构 (CA) 的证书。  
-1.  配置 SCEP 证书信息（仅针对 SCEP 证书）。  
-1.  为证书配置文件指定支持的平台。
+*Aplica-se a: System Center Configuration Manager (Branch Atual)*
 
 
-## <a name="start-the-create-certificate-profile-wizard"></a>启动“创建证书配置文件向导”  
+Use perfis de certificado no SCCM (Configuration Manager) para provisionar dispositivos gerenciados com os certificados necessários para acessar recursos da empresa. Antes de criar perfis de certificado, defina a infraestrutura do certificado conforme descrito em [Configurar a infraestrutura de certificados para o System Center Configuration Manager](certificate-infrastructure.md).  
 
-1.  在 System Center Configuration Manager 控制台中，单击“资产和符合性”。  
+Este tópico descreve como criar perfis de certificado SCEP e de raiz confiável. Se você quiser criar perfis de certificado PFX, consulte [Criar perfis de certificado PFX](../../protect/deploy-use/create-pfx-certificate-profiles.md).
 
-2.  在“资产和符合性”  工作区中，展开“符合性设置” ，展开“公司资源访问” ，然后单击“证书配置文件” 。  
+Para criar um perfil de certificado:
 
-3.  在“主页”  选项卡上的“创建”  组中，单击“创建证书配置文件” 。  
-
-## <a name="provide-general-information-about-the-certificate-profile"></a>提供有关证书配置文件的一般信息  
-
-在“创建证书配置文件向导”的“常规”  页上，指定下列信息：  
-
--   **名称**：输入证书配置文件的唯一名称。 最多可以使用 256 个字符。  
-
--   **说明**：提供对证书配置文件进行概述，以及可帮助在 System Center Configuration Manager 控制台中识别该证书配置文件的其他相关信息的描述。 最多可以使用 256 个字符。  
-
--   **指定想要创建的证书配置文件类型**：选择下列证书配置文件类型之一：  
-
--   **受信任的 CA 证书**：如果要部署受信任的根证书颁发机构 (CA) 或中间 CA 证书以在用户或设备必须验证另一台设备时形成证书信任链，请选择此证书配置文件类型。 例如，设备可能是远程身份验证拨入用户服务 (RADIUS) 服务器或虚拟专用网 (VPN) 服务器。 你还必须配置受信任的 CA 证书配置文件，然后才能创建 SCEP 证书配置文件。 在这种情况下，受信任的 CA 证书必须是将向用户或设备颁发证书的 CA 的受信任的根证书。  
-
--   **简单证书注册协议 (SCEP) 设置**：如果要通过使用简单证书注册协议和网络设备注册服务角色服务为用户或设备请求证书，请选择此证书配置文件类型。
-
--   **个人信息交换 PKCS #12 (PFX) 设置 - 导入**：选择此项可导入 PFX 证书。 若要了解有关 PFX 证书创建的详细信息，请参阅[导入 PFX 证书配置文件](/sccm/mdm/deploy-use/import-pfx-certificate-profiles.md)。
-
--   **个人信息交换 PKCS #12 (PFX) 设置 - 创建**：选择此项可使用证书颁发机构处理 PFX 证书。 若要了解有关 PFX 证书创建的详细信息，请参阅 [Create PFX certificate profiles](/sccm/mdm/deploy-use/create-pfx-certificate-profiles.md)（创建 PFX 证书配置文件）。
+1.  Inicie o Assistente para Criar Perfil de Certificado.
+1.  Forneça informações gerais sobre o perfil de certificado.
+1.  Configure um certificado de AC (autoridade de certificado) confiável.  
+1.  Configure as informações de certificado SCEP (somente para certificados SCEP).  
+1.  Especifique as plataformas com suporte para o perfil de certificado.
 
 
-## <a name="configure-a-trusted-ca-certificate"></a>配置受信任的 CA 证书  
+## <a name="start-the-create-certificate-profile-wizard"></a>Iniciar o Assistente para Criar Perfil de Certificado  
+
+1.  No console do System Center Configuration Manager, clique em **Ativos e Conformidade**.  
+
+2.  No espaço de trabalho **Ativos e Conformidade** , expanda **Configurações de Conformidade**, expanda **Acesso ao Recurso da Empresa**e clique em **Perfis de Certificado**.  
+
+3.  Na guia **Início** , no grupo **Criar** , clique em **Criar Perfil Certificado**.  
+
+## <a name="provide-general-information-about-the-certificate-profile"></a>Fornecer informações gerais sobre o perfil de certificado  
+
+Na página **Geral** do Assistente para Criar Perfil de Certificado, especifique as seguintes informações:  
+
+-   **Nome**: insira um nome exclusivo para o perfil de certificado. Você pode usar no máximo 256 caracteres.  
+
+-   **Descrição**: forneça uma descrição que ofereça uma visão geral do perfil de certificado e outras informações relevantes que ajudem a identificá-lo no console do System Center Configuration Manager. Você pode usar no máximo 256 caracteres.  
+
+-   **Especifique o tipo de perfil de certificado que deseja criar**: escolha um dos seguintes tipos de perfil de certificado:  
+
+-   **Certificado de AC confiável**: selecione este tipo de perfil de certificado se desejar implantar uma AC (autoridade de certificação) raiz confiável ou intermediar o certificado da AC para formar uma cadeia de confiança de certificados para quando o usuário, ou dispositivo, precisar autenticar outro dispositivo. Por exemplo, o dispositivo pode ser um servidor RADIUS ou VPN (rede virtual privada). Você também deve configurar um perfil de certificado de autoridade de certificação confiável antes de criar um perfil de certificado SCEP. Neste caso, o certificado de autoridade de certificação confiável tem que ser o certificado confiável raiz da AC que emitirá o certificado para o usuário ou dispositivo.  
+
+-   **Configurações do protocolo SCEP**: selecione este tipo de perfil de certificado se desejar solicitar um certificado para um usuário ou dispositivo usando o protocolo SCEP e o serviço de função de Serviço de Registro de Dispositivo de Rede.
+
+-   **Troca de Informações Pessoais – Configurações PKCS #12 (PFX) – Importar**: selecione esta opção para importar um certificado PFX. Para saber mais sobre a criação de certificado PFX, confira [Importar perfis de certificado PFX](/sccm/mdm/deploy-use/import-pfx-certificate-profiles.md).
+
+-   **Troca de Informações Pessoais – Configurações PKCS #12 (PFX) – Criar**: selecione isso para processar certificados PFX usando uma autoridade de certificação. Para saber mais sobre a criação de certificado PFX, consulte [Criar perfis de certificado PFX](/sccm/mdm/deploy-use/create-pfx-certificate-profiles.md).
+
+
+## <a name="configure-a-trusted-ca-certificate"></a>Configurar um certificado de Autoridade de Certificação confiável  
 
 > [!IMPORTANT]  
->  你至少必须配置一个受信任的 CA 证书配置文件，然后才能创建 SCEP 证书配置文件。    
+>  Você deve configurar pelo menos um perfil de certificado de autoridade de certificação confiável antes de criar um perfil de certificado SCEP.    
 >  
->  如果在部署证书后更改这些值中的任何一个值，则需要请求新的证书：
->  -  密钥存储提供
->  -  证书模板名称
->  -  证书类型
->  -  使用者名称格式
->  -  使用者可选名称
->  -  证书有效期
->  -  密钥用法
->  -  密钥大小
->  -  扩展密钥用法
->  -  根 CA 证书
+>  Se você alterar qualquer um desses valores depois que o certificado for implantado, um novo certificado será solicitado:
+>  -  Provedor de armazenamento de chaves
+>  -  Nome do modelo de certificado
+>  -  Tipo de certificado
+>  -  Formato de nome de entidade
+>  -  Nome alternativo da entidade
+>  -  Período de validade do certificado
+>  -  Uso de chave
+>  -  Tamanho da chave
+>  -  Uso estendido de chave
+>  -  Certificado de AC raiz
 
-1.  在“创建证书配置文件向导”的“受信任的 CA 证书”  页上，指定下列信息：  
+1.  Na página **Certificado da AC Confiável** do Assistente para Criar Perfil de Certificado, especifique as seguintes informações:  
 
- -   **证书文件**：单击“导入”  ，然后浏览到要使用的证书文件。  
+ -   **Arquivo de certificado**: clique em **Importar** e procure o arquivo de certificado que deseja usar.  
 
- -   **目标存储区**：对于具有多个证书存储区的设备，选择存储证书的位置。 对于仅有一个存储区的设备，则忽略此设置。  
+ -   **Armazenamento de destino**: para dispositivos que contêm mais de um repositório de certificados, selecione o local em que o certificado será armazenado. Para dispositivos que têm apenas um repositório, esta configuração será ignorada.  
 
-2.  使用“证书指纹”  值来验证是否导入了正确的证书。  
+2.  Use o valor da **Impressão digital do certificado** para verificar se importou o certificado correto.  
 
 
-## <a name="configure-scep-certificate-information-only-for-scep-certificates"></a>配置 SCEP 证书信息（仅针对 SCEP 证书）  
+## <a name="configure-scep-certificate-information-only-for-scep-certificates"></a>Configurar as informações de certificado SCEP (somente para certificados SCEP)  
 
-1.  在“创建证书配置文件向导”的“SCEP 服务器”  页上，指定将通过 SCEP 颁发证书的 NDES 服务器的 URL。 你可以选择基于证书注册点站点系统服务器的配置自动分配 NDES URL，也可以手动添加 URL。  
+1.  Na página **Servidores SCEP** do assistente Criar Perfil de Certificado, especifique as URLs para os Servidores NDES que emitirão certificados por meio do SCEP. Você pode optar por atribuir automaticamente uma URL de NDES com base na configuração do servidor do sistema de site do ponto de registro de certificado ou adicionar as URLs manualmente.  
 
-2.  完成“创建证书配置文件向导”的“SCEP 注册”页。
+2.  Preencha a página **Registro do SCEP** do Assistente para Criar Perfil de Certificado.
 
- -  **重试**：指定设备向运行网络设备注册服务的服务器自动重试证书请求的次数。 此设置支持 CA 管理程序在证书请求被接受之前必须对其进行批准的方案。 此设置通常用于安全性很高的环境或者你有独立颁发 CA（而不是企业 CA）的情况。 你还可以将此设置用于测试用的，以便能够在颁发 CA 处理证书请求之前检查证书请求选项。 将此设置与“重试延迟(分钟)”  设置一起使用。  
+ -  **Repetições**: especifique o número de vezes que o dispositivo tenta novamente, de modo automático, solicitar o certificado ao servidor que executa o Serviço de Registro de Dispositivo de Rede. Esta configuração oferece suporte ao cenário em que o gerenciador da AC deve aprovar uma solicitação de certificado antes que ela seja aceita. Esta configuração é normalmente usada em ambientes de alta segurança ou caso tenha uma AC emissora autônoma, ao invés de uma AC corporativa. Você também pode usar essa configuração para fins de teste, a fim de inspecionar as opções de solicitação de certificado antes que os processos da AC emissora processe a solicitação de certificado. Use essa configuração com a **Intervalo entre tentativas (minutos)** .  
 
- -   **重试延迟(分钟)**：在颁发 CA 处理证书请求之前，指定在使用 CA 管理程序批准时每次注册尝试之间的间隔（以分钟为单位）。 如果将管理程序批准用于测试目的，你将可能需要指定一个较低的值，以便在批准证书请求之后你不会等待很长时间来让设备重试请求。 但是，如果在生产网络上使用管理程序批准，你将可能需要指定较高的值，以便为 CA 管理员留出足够的时间来检查以及批准或拒绝待定审批。  
+ -   **Intervalo entre repetições (minutos)**: especifique o intervalo, em minutos, entre cada tentativa de registro ao usar uma aprovação de gerenciador de AC antes que a AC emissora processe a solicitação de certificado. Se for usar a aprovação de gerenciador para fins de teste, provavelmente vai preferir especificar um valor baixo para não ter que ficar esperando muito tempo até que o dispositivo tente solicitar o certificado novamente depois que você aprovou a solicitação. No entanto, se for usar a aprovação de gerenciador em uma rede de produção, provavelmente vai preferir especificar um valor alto para dar tempo suficiente ao administrador da AC para que verifique e aprove ou recuse as aprovações pendentes.  
 
- -   **续订阈值(%)**：指定设备请求证书续订之前剩余的证书有效期限的百分比。  
+ -   **Limite de renovação (%)**: especifique o percentual do tempo de vida do certificado restante antes da renovação das solicitações de dispositivo do certificado.  
 
- -   **密钥存储提供程序(KSP)**：指定将存储证书密钥的位置。 可以选择下列值之一：  
+ -   **KSP (Provedor de Armazenamento de Chave)**: especifique o local em que a chave do certificado será armazenada. Escolha um destes valores:  
 
-   -   **安装到受信任的平台模块(TPM) (如果存在)**：将密钥安装到 TPM。 如果 TPM 不存在，则该密钥将安装到软件密钥的存储提供程序。  
+   -   **Instalar no TPM (Trusted Platform Module) se houver**: instala a chave no TPM. Se o TPM não estiver presente, a chave será instalada no provedor de armazenamento para a chave de software.  
 
-   -   **安装到受信任的平台模块(TPM)，否则失败**：将密钥安装到 TPM。 如果 TPM 模块不存在，则安装将失败。  
+   -   **Instalar no TPM (Trusted Platform Module); caso contrário, falha**: instala a chave no TPM. Se o módulo TPM não estiver presente, a instalação falhará.  
 
-   -   **安装到 Windows Hello 企业版，否则安装将失败**：此选项可用于 Windows 10 桌面和移动设备。 此选项将密钥注册到 **Windows Hello 企业版**，如 [System Center Configuration Manager 中的 Windows Hello 企业版设置](../../protect/deploy-use/windows-hello-for-business-settings.md)中所述。 此选项还可用于在向这些设备颁发证书前的注册期间“要求多重身份验证”  。 请参阅 [使用多重身份验证保护 Windows 设备](https://technet.microsoft.com/library/dn889751.aspx) 以获取详细信息。
+   -   **Instalar no Windows Hello para Empresas; caso contrário, falha**: esta opção está disponível para dispositivos Windows 10 Desktop e Mobile. Registra a chave no **Windows Hello para Empresas**, descrita nas configurações do [Windows Hello para Empresas no System Center Configuration Manager](../../protect/deploy-use/windows-hello-for-business-settings.md). Essa opção também permite que você **exija o Multi-Factor Authentication** durante o registro de dispositivos antes de emitir certificados para esses dispositivos. Veja a seção [Proteger dispositivos Windows com o Multi-Factor Authentication](https://technet.microsoft.com/library/dn889751.aspx) para obter mais informações.
 
    > [!NOTE]  
    > 
-   > 当用户创建 Windows Hello 企业版 PIN 时，Windows 会发送通知，Configuration Manager 会侦听该通知。 这使 Configuration Manager 可以快速了解哪些用户创建了 Windows Hello PIN。 如果 Windows Hello 在证书配置文件中用作密钥存储提供程序，则 Configuration Manager 随后还可以向这些用户颁发新证书。  
+   > Quando um usuário cria um PIN do Windows Hello para Empresas, o Windows envia uma notificação que o Configuration Manager escuta. Isso permite que o Configuration Manager reconheça rapidamente quais usuários criaram um PIN do Windows Hello para Empresas. O Configuration Manager também poderá emitir novos certificados para esses usuários se o Windows Hello for usado como o Provedor de Armazenamento de Chaves em um perfil de certificado.  
 
-   -   **安装到软件密钥存储提供程序**：将密钥安装到软件密钥的存储提供程序。  
+   -   **Instalar o Provedor de Armazenamento de Chaves de Software**: instala a chave no provedor de armazenamento para a chave de software.  
 
- -   **用于证书注册的设备**：如果将证书配置文件部署到用户集合，请选择是仅允许在用户的主要设备上注册证书，还是在用户登录到的所有设备上注册证书。 如果将证书配置文件部署到设备集合，请选择是仅为设备的主要用户注册证书，还是为登录到该设备的所有用户注册证书。  
+ -   **Dispositivos para registro de certificado**: se o perfil de certificado for implantado em uma coleção de usuários, escolha se deseja permitir o registro do certificado apenas no dispositivo primário do usuário ou em todos os dispositivos em que o usuário fizer logon. Se o perfil de certificado for implantado em uma coleção de dispositivos, escolha permitir se o registro do certificado é feito apenas pelo usuário primário do dispositivo ou por todos os usuários que fazem logon nele.  
 
-3.  在“创建证书配置文件向导”的“证书属性”  页上，指定下列信息：  
+3.  Na página **Propriedades do Certificado** do Assistente para Criar Perfil de Certificado, especifique as seguintes informações:  
 
- -   **证书模板名称**：单击“浏览”  选择网络设备注册服务配置为使用并且已添加到颁发 CA 的证书模板的名称。 若要成功浏览到证书模板，用于运行 System Center Configuration Manager 控制台的用户帐户必须对证书模板具有“读取”权限。 或者，如果你无法使用“浏览” ，请键入证书模板的名称。  
+ -   **Nome do modelo de certificado**: clique em **Procurar** para selecionar o nome de um modelo de certificado que o Serviço de Registro de Dispositivo de Rede está configurado para usar e que foi adicionado a uma AC emissora. Para procurar pelos modelos de certificado, a conta de usuário que você estiver usando para executar o console do System Center Configuration Manager deve ter permissão de Leitura para o modelo de certificado. Alternativamente, se não puder usar **Procurar**, digite o nome do modelo de certificado.  
 
  > [!IMPORTANT]
  >   
- >  如果证书模板名称包含非 ASCII 字符（例如中文字母中的字符），则将不部署证书。 为了确保部署证书，你必须首先针对 CA 创建证书模板副本，并使用 ASCII 字符重命名副本。  
+ >  Se o nome do modelo de certificado contiver caracteres não ASCII (ex.: caracteres do alfabeto chinês), o certificado não será implantado. Para garantir que o certificado será implantado, primeiro crie uma cópia do modelo do certificado na AC e renomeie a cópia usando caracteres ASCII.  
 
-   根据你是浏览到证书模板还是键入证书名称，请注意以下事项：  
+   Observe o seguinte, dependendo se você navega até o modelo de certificado ou digita o nome do certificado:  
 
- -   如果你通过浏览来选择证书模板名称，则页面上的某些字段会依据证书模板自动填充。 在某些情况下，除非选择其他证书模板，否则你无法更改这些值。  
+ -   Se você navega para selecionar o nome do modelo de certificado, alguns campos da página são automaticamente populados por meio do modelo de certificado. Em alguns casos, você não pode alterar esses valores, a menos que escolha um modelo de certificado diferente.  
 
- -   如果你键入证书模板的名称，请确保该名称与运行网络设备注册服务的服务器的注册表中所列证书模板名称之一完全匹配。 确保指定证书模板名称，而不是证书模板显示名称。  
+ -   Caso digite o nome do modelo de certificado, certifique-se de que o nome corresponda exatamente com um dos modelos de certificado relacionados no registro do servidor executando o Serviço de Registro de Dispositivo de Rede. Certifique-se de especificar o nome do modelo de certificado e não o nome para exibição do modelo de certificado.  
 
-   若要查找证书模板的名称，请浏览到以下项：HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Cryptography\MSCEP。 你将看到作为 **EncryptionTemplate**、 **GeneralPurposeTemplate**和 **SignatureTemplate**的值而列出的证书模板。 默认情况下，所有三个证书模板的值为“IPSECIntermediateOffline” ，映射为模板显示名称“IPSec (脱机请求)” 。  
+   Para localizar os nomes dos modelos de certificado, navegue até a seguinte chave: HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Cryptography\MSCEP. Você verá os modelos de certificado listados como os valores para **EncryptionTemplate**, **GeneralPurposeTemplate**e **SignatureTemplate**. Por padrão, o valor para todos os modelos de certificado é **IPSECIntermediateOffline**, que mapeia até o nome de exibição do modelo do **IPSec (solicitação offline)**.  
 
    > [!WARNING]  
    > 
-   >  由于在键入证书模板名称（而不是浏览）时 System Center Configuration Manager 无法验证证书模板的内容，因此可能会选择到证书模板不支持的选项，从而导致证书请求失败。 如果发生这种情况，你将在 CPR.log 文件中看到 w3wp.exe 的错误消息，指出模板名称位于证书签名请求 (CSR) 中，并且质询不匹配。  
+   >  Como o System Center Configuration Manager não pode verificar o conteúdo do modelo de certificado quando você digita o nome do modelo de certificado, em vez de procurar por ele, selecione as opções às quais o modelo de certificado não dá suporte e que acarretarão uma falha na solicitação de certificado. Quando isso acontece, uma mensagem de erro é exibida para o w3wp.exe no arquivo CPR.log informando que o nome do modelo no CSR não corresponde com o desafio.  
    >   
-   >  如果键入为“GeneralPurposeTemplate”  值指定的证书模板的名称，你必须为此证书配置文件选择“密钥加密”  和“数字签名”  选项。 但是，如果要仅在此证书配置文件中启用“密钥加密”  选项，请为“EncryptionTemplate”  项指定证书模板名称。 同样，如果要仅在此证书配置文件中启用“数字签名”  选项，请为“SignatureTemplate”  项指定证书模板名称。  
+   >  Ao digitar o nome do modelo do certificado especificado para o valor de **GeneralPurposeTemplate** , você deve selecionar a **Codificação de chave** e as opções de **Assinatura digital** para este perfil de certificado. No entanto, se deseja habilitar apenas a opção **Codificação de chave** neste perfil de certificado, especifique o nome do modelo de certificado para a chave **EncryptionTemplate** . Do mesmo modo, se deseja habilitar apenas a opção **Assinatura digital** neste perfil de certificado, especifique o nome do modelo de certificado para a chave **SignatureTemplate** .  
 
- -   **证书类型**：选择是将证书部署到设备还是用户。  
- -   **使用者名称格式**：从列表中选择 System Center Configuration Manager 自动在证书请求中创建使用者名称的方式。 如果证书用于用户，还可包含使用者名称中的用户电子邮件地址。 
+ -   **Tipo de certificado**: selecione se o certificado será implantado em um dispositivo ou usuário.  
+ -   **Formato de nome da entidade**: na lista, selecione o modo como o System Center Configuration Manager cria automaticamente o nome da entidade na solicitação de certificado. Se o certificado for para um usuário, você também pode incluir o endereço de email do usuário no nome da entidade. 
     
    > [!NOTE]  
    > 
-   > 选择“IMEI 号码”或“序列号”，可以区分同一用户拥有的不同设备。 例如，这些设备可以共享公用名，但不可共享 IMEI 号码或序列号。 如果设备不报告 IMEI 号码或序列号，则使用公用名颁发证书。
+   > Selecionar o **Número IMEI** ou o **Número de série** permite diferenciar dispositivos diferentes que pertencem ao mesmo usuário. Por exemplo, esses dispositivos podem compartilhar um nome comum, mas não o número IMEI ou o número de série. Se o dispositivo não relatar um IMEI ou um número de série, o certificado será emitido com o nome comum.
 
- -   **使用者可选名称**：指定 System Center Configuration Manager 在证书请求中为使用者可选名称 (SAN) 自动创建值的方式。 例如，你选择了用户证书类型，则可以在使用者可选名称中包括用户主体名称 (UPN)。  如果将使用客户端证书向网络策略服务器进行验证，则必须将使用者可选名称设置为 UPN。  
+ -   **Nome alternativo da entidade**: especifique como o System Center Configuration Manager criará automaticamente os valores para o SAN (nome alternativo da entidade) na solicitação de certificado. Se tiver selecionado um tipo de certificado de usuário, por exemplo, você pode incluir o UPN no nome alternativo da entidade.  Se o certificado do cliente for usado para autenticar em um Servidor de Políticas de Rede, você deve definir o nome alternativo da entidade como o UPN.  
 
    > [!NOTE]  
-   >  - iOS 设备在 SCEP 证书中支持有限的使用者名称格式和使用者可选名称。 如果指定的格式不受支持，则不会在 iOS 设备上注册证书。 当配置要部署到 iOS 设备的 SCEP 证书配置文件时，请为“使用者名称格式”  以及“DNS 名称” 、“电子邮件地址” 或“使用者可选名称”  的“UPN”  使用“公用名” 。  
+   >  - Dispositivos iOS oferecem suporte a formatos de nome de entidade limitados e a nomes alternativos de entidade em certificados SCEP. Se você especificar um formato sem suporte, os certificados não serão registrados em dispositivos iOS. Ao configurar um perfil de certificado SCEP para ser implantado em dispositivos iOS, use o **nome Comum** para o **Formato do nome da entidade**e o **nome DNS**, o **endereço de email** ou o **UPN** para o **Nome alternativo da entidade**.  
 
- -   **证书有效期**：如果对发证 CA 运行允许自定义有效期的 certutil - setreg Policy\EditFlags +EDITF_ATTRIBUTEENDDATE 命令，则可以指定证书过期之前剩余的时间量。 有关此命令的详细信息，请参阅主题 [Certificate infrastructure in System Center Configuration Manager](../../protect/deploy-use/certificate-infrastructure.md)（System Center Configuration Manager 中的证书基础结构）。  
+ -   **Período de validade do certificado**: se você executou o comando certutil - setreg Policy\EditFlags +EDITF_ATTRIBUTEENDDATE na AC emissora, o que permite um período de validade personalizado, pode especificar a quantidade de tempo restante antes que o certificado expire. Para obter mais informações sobre esse comando, consulte o tópico [Infraestrutura de certificado no System Center Configuration Manager](../../protect/deploy-use/certificate-infrastructure.md).  
 
-   你可以指定比指定证书模板中的有效期小的值，但不能指定较大的值。 例如，证书模板中的证书有效期为 2 年，则你可以指定值 1 年，但不能指定值 5 年。 该值还必须小于发证 CA 证书的剩余有效期。  
+   Você pode especificar um valor inferior ao período de validade do modelo de certificado especificado, mas não superior. Por exemplo, se o período de validade do certificado em um modelo de certificado for de dois anos, você pode especificar um valor de um ano, mas não de cinco anos. O valor também tem que ser inferior ao período de validade restante do certificado da AC emissora.  
 
- -   **密钥使用情况**：指定证书的密钥使用情况选项。 可从以下选项中进行选择：  
+ -   **Uso de chave**: especifique opções de uso de chave para o certificado. Você pode escolher entre as seguintes opções:  
 
-        -   **密钥加密**：仅在密钥加密时允许交换密钥。  
+        -   **Codificação de chave**: permitir a troca de chaves apenas quando a chave é criptografada.  
 
-        -   **数字签名**：仅在数字签名帮助保护密钥时允许交换密钥。  
+        -   **Assinatura digital**: permita a troca de chaves apenas quando uma assinatura digital ajudar a proteger a chave.  
 
-   如果通过使用“浏览” 选择了证书模板，你可能无法更改这些设置，除非选择其他证书模板。  
+   Se você selecionou um modelo de certificado usando **Procurar**, talvez não seja possível alterar essas definições a não ser que você selecione um modelo de certificado diferente.  
 
-   你选择的证书模板必须配置有以上一个或两个密钥用法选项。 否则，你将在证书注册点日志文件“Crp.log”  中看到“CSR 和质询中的密钥用法不匹配” 消息。  
-
-
-   -   **密钥大小(位)**：选择以位为单位的密钥大小。  
-
-   -   **扩展密钥用法**：单击“选择”为证书的预期目的添加值。 大多数情况下，证书将需要“客户端身份验证”  以便用户或设备能够向服务器进行验证。 但，你可以根据需要添加任何其他密钥用法。  
+   O modelo de certificado selecionado por você deve ser configurado com uma ou ambas as opções acima de uso da chave. Se não for assim, você verá a mensagem **Uso da chave no CSR não corresponde ao desafio** no arquivo de log do ponto de registro de certificado, **Crp.log**.  
 
 
-   -   **哈希算法**：选择要与此证书一起使用的可用哈希算法类型之一。 选择连接设备支持的最高级别安全性。  
+   -   **Tamanho da chave (bits)**: selecione o tamanho da chave em bits.  
+
+   -   **Uso estendido de chave**: clique em **Selecionar** para adicionar valores para a finalidade desejada do certificado. Na maioria dos casos, o certificado exigirá **Autenticação de cliente** para que o usuário ou dispositivo possa autenticar-se em um servidor. No entanto, você pode adicionar outros usos da chave conforme necessário.  
+
+
+   -   **Algoritmo de hash**: selecione um dos tipos de algoritmo de hash disponíveis a ser usado com esse certificado. Selecione o nível mais alto de segurança que dá suporte aos dispositivos de conexão.  
 
    > [!NOTE]  
    > 
-   >  **SHA-2** 支持 SHA-256、SHA-384 和 SHA-512。 **SHA-3** 仅支持 SHA-3。  
+   >  O**SHA-2** dá suporte ao SHA-256, SHA-384 e SHA-512. O**SHA-3** dá suporte apenas ao SHA-3.  
 
-   -   **根 CA 证书**：单击“选择”  以选择之前配置并部署到用户或设备的根 CA 证书配置文件。 此 CA 证书必须是将颁发在此证书配置文件中配置的证书的 CA 的根证书。  
+   -   **Certificado da CA raiz**: clique em **Selecionar** para escolher um perfil de certificado de AC raiz configurado anteriormente e implantado no usuário ou dispositivo. Esse certificado AC deve ser o certificado raiz da AC que emite o certificado que você está configurando nesse perfil de certificado.  
 
    > [!IMPORTANT]  
-   >  如果指定未部署到用户或设备的根 CA 证书，System Center Configuration Manager 将不会发起在此证书配置文件中配置的证书请求。  
+   >  Se você especificar um certificado de AC raiz que não está implantado no usuário ou no dispositivo, o System Center Configuration Manager não iniciará a solicitação de certificado que você está configurando nesse perfil de certificado.  
 
 
-##  <a name="specify-supported-platforms-for-the-certificate-profile"></a>为证书配置文件指定支持的平台  
+##  <a name="specify-supported-platforms-for-the-certificate-profile"></a>Especificar as plataformas com suporte para o perfil de certificado  
 
-1. 在“创建证书配置文件向导”的“支持的平台”  页上，选择将在其中安装证书配置文件的操作系统。 或者，单击“全选”  以将证书配置文件安装到所有可用操作系统。
-2. 查看向导的“摘要”页面，并选择“完成”。 
+1. Na página **Plataformas com suporte** do Assistente para Criar Perfil de Certificado, selecione os sistemas operacionais nos quais deseja instalar o perfil de certificado. Ou, clique em **Selecionar Tudo** para instalar o perfil de certificado em todos os sistemas operacionais disponíveis.
+2. Examine a página **Resumo** do assistente e escolha **Concluir**. 
  
  
-新的证书配置文件会显示在“资产和符合性”工作区的“证书配置文件”节点中，并已准备好部署到用户或设备，如 [How to deploy profiles in System Center Configuration Manager](deploy-wifi-vpn-email-cert-profiles.md)（如何在 System Center Configuration Manager 中部署配置文件）中所述。  
+O novo perfil de certificado aparece no nó **Perfis de Certificado** no espaço de trabalho **Ativos e Conformidade** e está pronto para ser implantado nos usuários ou dispositivos, conforme descrito em [Como implantar perfis no System Center Configuration Manager](deploy-wifi-vpn-email-cert-profiles.md).  

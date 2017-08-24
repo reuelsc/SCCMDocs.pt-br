@@ -1,6 +1,6 @@
 ---
-title: "Wi-Fi 和 VPN 配置文件先决条件 | Microsoft Docs"
-description: "了解管理 System Center Configuration Manager 中的证书配置文件、Wi-Fi 配置文件和 VPN 配置文件所需的安全权限。"
+title: "Pré-requisitos do perfil de VPN e Wi-Fi | Microsoft Docs"
+description: "Saiba mais sobre as permissões de segurança necessárias para gerenciar perfis de certificado, Wi-Fi e VPN no System Center Configuration Manager."
 ms.custom: na
 ms.date: 11/23/2016
 ms.prod: configuration-manager
@@ -18,35 +18,35 @@ manager: angrobe
 ms.openlocfilehash: 309b0363f9b3ec4a31b8323b9e64c9f73060c281
 ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
 ms.translationtype: HT
-ms.contentlocale: zh-CN
+ms.contentlocale: pt-BR
 ms.lasthandoff: 08/07/2017
 ---
-# <a name="prerequisites-for-wi-fi-and-vpn-profiles-in-system-center-configuration-manager"></a>System Center Configuration Manager 中 Wi-Fi 和 VPN 配置文件的先决条件
+# <a name="prerequisites-for-wi-fi-and-vpn-profiles-in-system-center-configuration-manager"></a>Pré-requisitos para perfis Wi-Fi e VPN no System Center Configuration Manager
 
-*适用范围：System Center Configuration Manager (Current Branch)*
+*Aplica-se a: System Center Configuration Manager (Branch Atual)*
 
-System Center Configuration Manager 中的 Wi-Fi 和 VPN 配置文件仅在产品内有依赖关系。  
+Perfis Wi-Fi e VPN no System Center Configuration Manager têm dependências somente dentro do produto.  
 
- 你必须具有下列安全权限才能管理公司资源访问设置，例如证书配置文件、Wi-Fi 配置文件和 VPN 配置文件：  
+ Você deve ter as seguintes permissões de segurança para gerenciar as configurações de acesso aos recursos da empresa, como perfis de certificado, perfis Wi-Fi e perfis VPN:  
 
--   若要查看和管理 Wi-Fi 配置文件的警报和报表：需要对“警报”对象的“创建”、“删除”、“修改”、“修改报表”、“读取”和“运行报表”权限。  
+-   Para exibir e gerenciar alertas e relatórios para Wi-Fi e perfis: **Criar**, **Excluir**, **Modificar**, **Modificar Relatório**, **Ler**e **Executar Relatório** para o objeto **Alertas**.  
 
--   若要创建和管理证书配置文件：需要“证书配置文件” 对象的“创作策略” 、“修改报表” 、“读取”  和“运行报表”  权限。  
+-   Para criar e gerenciar perfis de certificado: **Criar Política**, **Modificar Relatório**, **Ler**e **Executar Relatório** para o objeto **Perfil de Certificado** .  
 
--   若要管理 Wi-Fi、证书和 VPN 配置文件部署：需要对“集合” 对象的“部署配置策略” 、“修改客户端状态警报” 、“读取”  和“读取资源”  。  
+-   Para gerenciar implantações de perfil Wi-Fi, de certificado e VPN: **Implantar Políticas de Configuração**, **Modificar Alerta de Status do Cliente**, **Ler**e **Ler Recurso** para o objeto **Coleção** .  
 
--   若要管理所有配置策略：需要对“配置策略” 对象的“创建” 、“删除” 、“修改” 、“读取”  和“设置安全作用域”  权限。  
+-   Para gerenciar todas as políticas de configuração: **Criar**, **Excluir**, **Modificar**, **Ler**e **Definir Escopo de Segurança** para o objeto **Política de Configuração** .  
 
--   若要运行与 Wi-Fi 和 VPN 配置文件相关的查询：需要对“查询”对象的“读取”权限。  
+-   Para executar consultas relacionadas aos perfis Wi-Fi e VPN: permissão para **Ler** o objeto **Consulta**.  
 
--   若要在 System Center Configuration Manager 控制台中查看 Wi-Fi 和 VPN 配置文件信息：需要对“站点”对象的“读取”权限。  
+-   Para exibir as informações de perfis Wi-Fi e VPN no console do System Center Configuration Manager: permissão para **Ler** o objeto **Site**.  
 
--   若要查看 Wi-Fi 和 VPN 配置文件的状态消息：需要对“状态消息”对象的“读取”权限。  
+-   Para exibir mensagens de status para perfis Wi-Fi e VPN: permissão para **Ler** o objeto **Mensagens de Status**.  
 
--   若要创建和修改受信任的 CA 证书配置文件：需要对“受信任的 CA 证书配置文件” 对象的“创作策略” 、“修改报表” 、“读取”  和“运行报表”  权限。  
+-   Para criar e modificar o perfil de certificado de autoridade de certificação confiável: **Criar Política**, **Modificar Relatório**, **Ler**e **Executar Relatório** para o objeto **Perfil Certificado de Autoridade de Certificação Confiável** .  
 
--   若要创建和管理 VPN 配置文件：需要对“VPN 配置文件” 对象的“创作策略” 、“修改报表” 、“读取”  和“运行报表”  权限。  
+-   Para criar e gerenciar perfis VPN: permissões para **Criar Política**, **Modificar Relatório**, **Ler**e **Executar Relatório** para o objeto **Perfil VPN** .  
 
--   若要创建和管理 Wi-Fi 配置文件：需要对“Wi-Fi 配置文件” 对象的“创作策略” 、“修改报表” 、“读取”  和“运行报表”  权限。  
+-   Para criar e gerenciar perfis Wi-Fi: permissões para **Criar Política**, **Modificar Relatório**, **Ler**e **Executar Relatório** para o objeto **Perfil Wi-Fi** .  
 
- **公司资源访问管理器**安全角色包括在 System Center Configuration Manager 中管理 Wi-Fi 配置文件所需的这些权限。 有关详细信息，请参阅[在 System Center Configuration Manager 中配置安全性](../../core/plan-design/security/configure-security.md)。
+ A função de segurança do **Gerente de Acesso de Recurso da Empresa** inclui essas permissões que são necessárias para gerenciar os perfis Wi-Fi no System Center Configuration Manager. Para mais informações, consulte [Configurar segurança no System Center Configuration Manager](../../core/plan-design/security/configure-security.md).

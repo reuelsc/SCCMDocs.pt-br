@@ -1,6 +1,6 @@
 ---
-title: "监视 Linux/UNIX 客户端 - Configuration Manager | Microsoft Docs"
-description: "在 System Center Configuration Manager 中监视 Linux 和 UNIX 服务器上的客户端。"
+title: "Monitorar clientes Linux/UNIX – Configuration Manager | Microsoft Docs"
+description: Monitore clientes em servidores Linux e UNIX no System Center Configuration Manager.
 ms.custom: na
 ms.date: 08/04/2017
 ms.prod: configuration-manager
@@ -17,38 +17,38 @@ manager: angrobe
 ms.openlocfilehash: 62843bd544217734c4566d656a7c3a35bd5613cb
 ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
 ms.translationtype: HT
-ms.contentlocale: zh-CN
+ms.contentlocale: pt-BR
 ms.lasthandoff: 08/07/2017
 ---
-# <a name="how-to-monitor-clients-for-linux-and-unix-servers-in-system-center-configuration-manager"></a>如何在 System Center Configuration Manager 中监视 Linux 和 UNIX 服务器的客户端
+# <a name="how-to-monitor-clients-for-linux-and-unix-servers-in-system-center-configuration-manager"></a>Como monitorar clientes para servidores Linux e UNIX no System Center Configuration Manager
 
-*适用范围：System Center Configuration Manager (Current Branch)*
+*Aplica-se a: System Center Configuration Manager (Branch Atual)*
 
-可以使用查看基于 Windows 的客户端的信息的相同方法在 System Center Configuration Manager 控制台中查看来自于 Linux 和 UNIX 服务器的信息。  
+Você pode exibir informações de servidores Linux e UNIX no console do System Center Configuration Manager usando os mesmos métodos que você pode usar para exibir informações de clientes baseados em Windows.  
 
- 可以查看的信息包括:  
+ As informações que você pode exibir incluem:  
 
--   客户端的状态详细信息（在 Configuration Manager 控制台仪表板中）  
+-   Detalhes sobre o status de clientes nos painéis do console do Configuration Manager  
 
--   默认 Configuration Manager 报表中有关客户端的详细信息  
+-   Detalhes sobre os clientes nos relatórios padrão do Configuration Manager  
 
--   资源浏览器中的清单详细信息  
+-   Detalhes sobre inventário no Gerenciador de Recursos  
 
- 以下各节描述了如何从资源浏览器和报表中获取这些详细信息。  
+ As seções a seguir descrevem como obter esses detalhes do gerenciador de recursos, bem como relatórios.  
 
-##  <a name="BKMK_UseResourceExpforLnU"></a> 使用资源浏览器查看适用于 Linux 和 UNIX 服务器的清单  
+##  <a name="BKMK_UseResourceExpforLnU"></a> Usar o gerenciador de recursos para exibir o inventário de servidores Linux e UNIX  
 
- 在 Configuration Manager 客户端向 Configuration Manager 站点提交硬件清单后，可以使用资源浏览器查看此信息。 适用于 Linux 和 UNIX 的 Configuration Manager 客户端不会向资源浏览器添加新的清单类或视图。 Linux 和 UNIX 清单数据映射到现有的 WMI 类。 可以使用资源浏览器在基于 Windows 的分类中查看 Linux 和 UNIX 服务器的详细清单信息。  
+ Após um cliente do Configuration Manager enviar o inventário de hardware para o site do Configuration Manager, você pode usar o Gerenciador de Recursos para exibir essas informações. O cliente do Configuration Manager para Linux e UNIX não adiciona novas classes ou exibições de inventário ao Gerenciador de Recursos. Os dados de inventário Linux e UNIX mapeiam para classes WMI existentes. Você pode exibir os detalhes sobre inventário de seus servidores Linux e UNIX nas classificações de baseadas em Windows usando o Gerenciador de Recursos.  
 
- 例如，可以收集在 Linux 和 UNIX 服务器上找到的所有以本机方式安装的程序的列表。 以本机方式安装的程序的示例包括 Linux 中的 **.rpms** 或 Solaris 中的 **.pkgs** 。 在 Linux 或 UNIX 客户端提交清单后，可以在 Configuration Manager 控制台内资源浏览器中查看所有以本机方式安装的 Linux 或 UNIX 程序列表。  
+ Por exemplo, você pode coletar a lista de todos os programas nativos instalados encontrados nos servidores Linux e UNIX. Entre os exemplos de programas nativos instalados estão o **.rpms** no Linux ou o **.pkgs** no Solaris. Após o inventário ser enviado por um cliente Linux ou UNIX, você pode exibir a lista de todos os programas nativos Linux ou UNIX instalados no Gerenciador de Recursos no console do Configuration Manager.  
 
- 有关如何使用资源浏览器的信息，请参阅[如何使用资源浏览器在 System Center Configuration Manager 中查看硬件清单](../../../core/clients/manage/inventory/use-resource-explorer-to-view-hardware-inventory.md)。  
+ Para obter informações sobre como usar o Gerenciador de Recursos, consulte [Como usar o Gerenciador de Recursos para exibir o inventário de hardware no System Center Configuration Manager](../../../core/clients/manage/inventory/use-resource-explorer-to-view-hardware-inventory.md).  
 
-##  <a name="BKMK_UseReportsforLnU"></a> 如何使用报表来查看 Linux 和 UNIX 服务器的信息  
- Configuration Manager 的报表包括来自 Linux 和 UNIX 服务器的信息以及来自基于 Windows 的计算机的信息。 无需其他配置就可将 Linux 和 UNIX 数据集成到报表中。  
+##  <a name="BKMK_UseReportsforLnU"></a> Como usar relatórios para exibir informações para servidores Linux e UNIX  
+ Os relatórios do Configuration Manager incluem informações de servidores Linux e UNIX, juntamente com informações de computadores baseados no Windows. Nenhuma configuração adicional é necessária para integrar os dados do Linux e UNIX aos relatórios.  
 
- 例如，如果运行名为“操作系统版本计数”的报表，该报表会显示不同操作系统的列表和运行每个操作系统的客户端数目。 报表基于运行于不同操作系统的不同 Configuration Manager 客户端所发送的硬件清单信息。  
+ Por exemplo, se você executar o relatório chamado Contagem de Versões do Sistema Operacional, ele exibirá a lista de diferentes sistemas operacionais e o número de clientes que executando cada sistema operacional. O relatório se baseia nas informações do inventário de hardware que foram enviadas por diferentes clientes do Configuration Manager que executam diferentes sistemas operacionais.  
 
- 还可以创建特定于 Linux 和 UNIX 服务器数据的自定义报表。 硬件清单类“操作系统”  的“标题”  属性的是一个有用的属性，可用于在报表查询中标识特定的操作系统。  
+ Também é possível criar relatórios personalizados específicos para os dados dos servidores Linux e UNIX. A propriedade **Legenda** da classe de inventário de hardware **Sistema Operacional** é um atributo útil que você pode usar para identificar sistemas operacionais específicos na consulta do relatório.  
 
- 有关 Configuration Manager 中报表的信息，请参阅 [System Center Configuration Manager 中的报表](../../../core/servers/manage/reporting.md)。  
+ Para obter informações sobre os relatórios no Configuration Manager, consulte [Relatórios no System Center Configuration Manager](../../../core/servers/manage/reporting.md).  

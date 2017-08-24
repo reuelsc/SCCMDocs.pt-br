@@ -1,6 +1,6 @@
 ---
-title: "配置 Endpoint Protection | Microsoft Docs"
-description: "了解如何将 Configuration Manager 设置为更新和分发 Windows Defender 的恶意软件定义。"
+title: Configurar o Endpoint Protection | Microsoft Docs
+description: "Saiba como configurar o Configuration Manager para atualizar e distribuir as definições de malware do Windows Defender."
 ms.custom: na
 ms.date: 02/14/2017
 ms.prod: configuration-manager
@@ -17,28 +17,28 @@ manager: angrobe
 ms.openlocfilehash: 6917644d6719a1ca636713aa5aebf277927123c8
 ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
 ms.translationtype: HT
-ms.contentlocale: zh-CN
+ms.contentlocale: pt-BR
 ms.lasthandoff: 08/07/2017
 ---
-# <a name="configure-endpoint-protection"></a>配置 Endpoint Protection
+# <a name="configure-endpoint-protection"></a>Configurar Endpoint Protection
 
-*适用范围：System Center Configuration Manager (Current Branch)*
+*Aplica-se a: System Center Configuration Manager (Branch Atual)*
 
-必须先执行本主题中详细介绍的配置步骤，然后才能使用 Endpoint Protection 管理 Configuration Manager 客户端计算机上的安全和恶意软件。  
+Antes de usar o Endpoint Protection para gerenciar a segurança e malware em computadores cliente do Configuration Manager, você deve executar as etapas de configuração detalhadas neste tópico.  
 
-## <a name="how-to-configure-endpoint-protection-in-configuration-manager"></a>如何在 Configuration Manager 中配置 Endpoint Protection  
- Configuration Manager 中的 Endpoint Protection 具有外部依赖关系和产品内依赖关系。  
+## <a name="how-to-configure-endpoint-protection-in-configuration-manager"></a>Como configurar o Endpoint Protection no Configuration Manager  
+ O Endpoint Protection no Configuration Manager tem dependências externas e dependências dentro do produto.  
 
-### <a name="steps-to-configure-endpoint-protection-in-configuration-manager"></a>在 Configuration Manager 中配置 Endpoint Protection 的步骤  
- 使用下表来了解有关如何配置 Endpoint Protection 的步骤、详情及更多信息。  
+### <a name="steps-to-configure-endpoint-protection-in-configuration-manager"></a>Etapas para configurar o Endpoint Protection no Configuration Manager  
+ Use a tabela a seguir que contém etapas, detalhes e mais informações sobre como configurar o Endpoint Protection.  
 
 > [!IMPORTANT]  
->  如果管理 Windows 10 计算机的 Endpoint Protection，则必须配置 Configuration Manager 以更新和分发 Windows Defender 的恶意软件定义。 虽然 Windows 10 中包含了 Windows Defender，但仍然必须安装 SCEPInstall，并且仍然需要自定义 Endpoint Protection 的客户端设置（下面的**步骤 5**）  
+>  Se você gerencia o endpoint protection para computadores Windows 10, configure o Configuration Manager para atualizar e distribuir as definições de malware para o Windows Defender. O Windows Defender está incluído no Windows 10, mas o SCEPInstall ainda deve ser instalado e as configurações de cliente personalizadas para o Endpoint Protection (**Etapa 5** abaixo) ainda são necessárias.  
 
-|步骤|详细信息|  
+|Etapas|Detalhes|  
 |-----------|-------------|  
-|**步骤 1：**[创建 Endpoint Protection 点站点系统角色](endpoint-protection-site-role.md)|必须先安装 Endpoint Protection 点站点系统角色，然后才能使用 Endpoint Protection。 必须将其仅安装在一个站点系统服务器上，并且必须将其安装在管理中心站点或独立主站点上层次结构的顶部。 |  
-|**步骤 2：**[为 Endpoint Protection 配置警报](endpoint-configure-alerts.md)|当特定事件发生（如恶意软件感染）时，警报将通知管理员。 警报显示在“监视”  工作区的“警报”  节点中，或（可选）可通过电子邮件发送至指定用户。 |  
-|**步骤 3：**[为 Endpoint Protection 客户端配置定义更新源](endpoint-definition-updates.md)|可以将 Endpoint Protection 配置为使用各种源来下载定义更新。 |  
-|**步骤 4：**[配置默认反恶意软件策略并创建自定义反恶意软件策略](endpoint-antimalware-policies.md)|在安装 Endpoint Protection 客户端时，将应用默认反恶意软件策略。 在部署客户端的 60 分钟内将默认应用已部署的任何自定义策略。 请确保在部署 Endpoint Protection 客户端之前已配置了反恶意软件策略。 |  
-|**步骤 5：**[为 Endpoint Protection 配置自定义客户端设置](endpoint-protection-configure-client.md)|使用自定义客户端设置为层次结构中计算机的集合配置 Endpoint Protection 设置。<br /><br /> 注意：除非确定要将这些设置应用于层次结构中的所有计算机，否则请不要配置默认 Endpoint Protection 客户端设置。 |  
+|**Etapa 1:** [Criar uma função do sistema de sites do ponto do Endpoint Protection](endpoint-protection-site-role.md)|A função do sistema de sites do ponto do Endpoint Protection deve ser instalada antes que você possa usar o Endpoint Protection. Ela deve estar instalada em apenas um servidor do sistema de sites e deve estar instalada no topo da hierarquia em um site de administração central ou em um site primário autônomo. |  
+|**Etapa 2:** [Configurar alertas para o Endpoint Protection](endpoint-configure-alerts.md)|Os alertas informam o administrador quando eventos específicos ocorrem, como no caso de uma infecção por malware. Os alertas são exibidos no nó **Alertas** do espaço de trabalho **Monitoramento** ou, como opção, podem ser enviados por email para usuários especificados. |  
+|**Etapa 3:** [Configurar atualizações de definição para o Endpoint Protection](endpoint-definition-updates.md)|O Endpoint Protection pode ser configurado para usar várias origens para baixar atualizações de definições. |  
+|**Etapa 4:** [Configurar a política antimalware padrão e criar políticas antimalware personalizadas](endpoint-antimalware-policies.md)|A política antimalware padrão é aplicada quando o cliente do Endpoint Protection está instalado. As políticas personalizadas que você implantou são aplicadas por padrão até 60 minutos após a implantação do cliente. Verifique se você configurou políticas antimalware antes de implantar o cliente Endpoint Protection. |  
+|**Etapa 5:** [Definir configurações personalizadas do cliente para o Endpoint Protection](endpoint-protection-configure-client.md)|Use configurações personalizadas do cliente para definir as configurações do Endpoint Protection para coleções de computadores em sua hierarquia.<br /><br /> Observações: não defina as configurações do cliente padrão do Endpoint Protection, a menos que tenha certeza de que deseja aplicá-las a todos os computadores na hierarquia. |  

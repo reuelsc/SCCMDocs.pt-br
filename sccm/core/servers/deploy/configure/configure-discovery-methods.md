@@ -1,6 +1,6 @@
 ---
-title: "配置发现 | Microsoft Docs"
-description: "配置发现方法，以在 Configuration Manager 站点运行，从而找到可以从网络基础结构和 Active Directory 管理的资源。"
+title: Configurar a descoberta | Microsoft Docs
+description: "Configure métodos de descoberta para serem executados em um site do Configuration Manager para encontrar recursos que você pode gerenciar usando sua infraestrutura de rede e o Active Directory."
 ms.custom: na
 ms.date: 7/31/2017
 ms.prod: configuration-manager
@@ -17,450 +17,450 @@ manager: angrobe
 ms.openlocfilehash: 34a539ceaea6b070f81a28d2c0a9ce388e26cfeb
 ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
 ms.translationtype: HT
-ms.contentlocale: zh-CN
+ms.contentlocale: pt-BR
 ms.lasthandoff: 08/07/2017
 ---
-# <a name="configure-discovery-methods-for-system-center-configuration-manager"></a>配置 System Center Configuration Manager 的发现方法
+# <a name="configure-discovery-methods-for-system-center-configuration-manager"></a>Configurar métodos de descoberta para o System Center Configuration Manager
 
-*适用范围：System Center Configuration Manager (Current Branch)*
+*Aplica-se a: System Center Configuration Manager (Branch Atual)*
 
 
-配置发现方法，以在 System Center Configuration Manager site 站点运行，从而找到可以从网络基础结构和 Active Directory 管理的资源。 这需要启用要用于搜索环境的每种方法并进行配置。 （也可通过使用与启用相同的过程来禁用某种方法。）其中两个例外情况是检测信号发现和服务器发现：  
+Configure métodos de descoberta para serem executados em um site do System Center Configuration Manager para encontrar recursos que você pode gerenciar usando sua infraestrutura de rede e o Active Directory. É necessário que você habilite e configure cada método que quiser usar para pesquisar em seu ambiente. (Também é possível desabilitar um método usando o mesmo procedimento usado para habilitá-lo).  As únicas exceções são a Descoberta de Pulsação e a Descoberta de Servidor:  
 
--   默认情况下，安装 Configuration Manager 主站点时，检测信号已处于启用状态，并配置为按基本计划运行。 保持检测信号发现为启用状态是个好办法，因为此方法可确保设备的发现数据记录 (DDR) 保持最新。 有关检测信号发现的详细信息，请参阅[关于检测信号发现](../../../../core/servers/deploy/configure/about-discovery-methods.md#bkmk_aboutHeartbeat)。  
+-   Por padrão, a Descoberta de Pulsação já está habilitada quando você instala um site primário do Configuration Manager, e está configurada para ser executada segundo um cronograma básico. Convém manter a Descoberta de Pulsação habilitada, pois ela garante que os DDRs (registros de dados de descobertas) dos dispositivos fiquem atualizados. Para saber mais sobre a Descoberta de Pulsação, consulte [Sobre a Descoberta de Pulsação](../../../../core/servers/deploy/configure/about-discovery-methods.md#bkmk_aboutHeartbeat).  
 
--   服务器发现是一种自动发现方法，用于查找用作站点系统的计算机。 不能对其进行配置或将其禁用。  
+-   A Descoberta de Servidor é um método de descoberta automática que localiza os computadores que você utiliza como sistemas de sites. Você não pode configurar ou desabilitá-la.  
 
-**启用可配置的发现方法：**  
+**Para habilitar um método de descoberta configurável:**  
  > [!NOTE]  
- > 以下信息不适用于 Azure Active Directory 用户发现。 请参阅本主题后续部分的[配置 Azure AD 用户发现](#azureaadisc)。
+ > As informações a seguir não se aplicam à Descoberta de Usuário do Azure Active Directory. Em vez disso, confira [Configurar a Descoberta de Usuário do Azure AD](#azureaadisc) mais adiante neste tópico.
 
-1.  在 Configuration Manager 控制台中，依次选择“管理” > “层次结构配置”，然后选择“发现方法”。  
+1.  No console do Configuration Manager, escolha **Administração** > **Configuração da Hierarquia** e escolha **Métodos de Descoberta**.  
 
-2.  为要在其中启用发现的站点选择发现方法。  
+2.  Selecione o método de descoberta para o site em que deseja habilitar a descoberta.  
 
-3.  在“主页”选项卡上的“属性”组中，选择“属性”，然后在“常规”选项卡上，选中“启用&lt;发现方法\>”复选框。  
+3.  Na guia **Início**, no grupo **Propriedades**, escolha **Propriedades** e, na guia **Geral**, marque a caixa **Habilitar&lt;método de descoberta\>**.  
 
-     如果此复选框已处于选中状态，可以通过取消选中复选框来禁用发现方法。  
+     Se essa caixa já estiver marcada, desabilite o método de descoberta desmarcando-a.  
 
-4.  选择“确定”保存配置。  
+4.  Clique em **OK** para salvar a configuração.  
 
 
-##  <a name="BKMK_ConfigADForestDisc"></a>配置 Active Directory 林发现  
-若要完成 Active Directory 林发现的配置，必须在两个位置中配置设置：  
+##  <a name="BKMK_ConfigADForestDisc"></a> Configurar a Descoberta de Florestas do Active Directory  
+Para concluir a configuração de descoberta de florestas do Active Directory, é necessário definir as configurações em dois locais:  
 
--   在“发现方法”节点中，可以：
+-   No nó **Métodos de Descoberta**, você pode:
 
-    - 启用此发现方法。
-    - 设置轮询计划。
-    - 选择发现是否为其发现的 Active Directory 站点和子网自动创建边界。  
+    - Habilitar este método de descoberta.
+    - Definir um agendamento para a sondagem.
+    - Selecionar se a descoberta criará automaticamente os limites para os sites do Active Directory e as sub-redes que ela descobre.  
 
--   在“Active Directory 林”节点中，可以：
+-   No nó **Florestas do Active Directory**, você pode:
 
-    - 添加想要发现的林。
-    - 启用对该林中 Active Directory 站点和子网的发现。
-    - 将启用 Configuration Manager 站点的设置配置为将其站点信息发布到林。
-    - 为每个林分配一个帐户以用作 Active Directory 林帐户。  
+    - Adicionar florestas que você deseja descobrir.
+    - Habilitar a descoberta de sites do Active Directory e sub-redes na floresta.
+    - Definir as configurações que permitem aos sites do Configuration Manager publicar as informações do site na floresta.
+    - Atribuir uma conta a ser usada como a Conta de Floresta do Active Directory para cada floresta.  
 
-使用以下过程来启用 Active Directory 林发现，并配置单独的林以用于 Active Directory 林发现。  
+Use os procedimentos a seguir para habilitar a descoberta de florestas do Active Directory e para configurar florestas individuais a serem usadas com a Descoberta de Florestas do Active Directory.  
 
-#### <a name="to-enable-active-directory-forest-discovery"></a>启用 Active Directory 林发现  
+#### <a name="to-enable-active-directory-forest-discovery"></a>Para habilitar a descoberta de florestas do Active Directory  
 
-1.  在 Configuration Manager 控制台中，依次选择“管理” > “层次结构配置”，然后选择“发现方法”。  
+1.  No console do Configuration Manager, escolha **Administração** > **Configuração da Hierarquia** e escolha **Métodos de Descoberta**.  
 
-2.  为要在其中配置发现的站点选择“Active Directory 林发现”方法。  
+2.  Selecione o método de descoberta de floretas do Active Directory para o site em que deseja configurar a descoberta.  
 
-3.  在“主页”选项卡上的“属性”组中，选择“属性”。  
+3.  Na guia **Início**, no grupo **Propriedades**, clique em **Propriedades**.  
 
-4.  在“常规”选项卡上，选中复选框以启用发现。 或者可以立即配置发现，然后稍后返回以启用发现。  
+4.  Na guia **Geral**, marque a caixa para habilitar a descoberta. Ou você pode configurar a descoberta agora e voltar para habilitá-la posteriormente.  
 
-5.  指定为发现的位置创建站点边界的选项。  
+5.  Especifique opções para criar limites de site para locais descobertos.  
 
-6.  指定有关发现何时运行的计划。  
+6.  Especifique um agendamento para quando a descoberta for executada.  
 
-7.  完成为此站点配置 Active Directory 林发现的操作后，选择“确定”保存配置。  
+7.  Quando você concluir a configuração da descoberta de florestas do Active Directory para esse site, escolha **OK** para salvar a configuração.  
 
-#### <a name="to-configure-a-forest-for-active-directory-forest-discovery"></a>为 Active Directory 林发现配置林  
+#### <a name="to-configure-a-forest-for-active-directory-forest-discovery"></a>Para configurar uma floresta para descoberta de florestas do Active Directory  
 
-1.  在“管理”工作区中，选择“Active Directory 林”。 如果 Active Directory 林发现之前已运行，你将在结果窗格中看到每个发现的林。 当 Active Directory 林发现运行时，将发现本地林和任何受信任林。 只有不受信任的林才必须手动添加。  
+1.  No espaço de trabalho de **Administração**, escolha **Florestas do Active Directory**. Se uma descoberta de florestas do Active Directory tiver sido executada anteriormente, você verá cada floresta descoberta no painel de resultados. A floresta local e quaisquer florestas confiáveis são detectadas quando a descoberta de florestas do Active Directory é executada. Somente as florestas não confiáveis devem ser adicionadas manualmente.  
 
-    -   若要配置先前发现的林，请在结果窗格中选择林。 然后在“主页”选项卡上的“属性”组中，选择“属性”以打开林属性。 继续执行步骤 3。  
+    -   Para configurar uma floresta descoberta anteriormente, selecione-a no painel de resultados. Na guia **Início**, no grupo **Propriedades**, escolha **Propriedades** para abrir as propriedades da floresta. Continue na etapa 3.  
 
-    -   若要配置未列出的新林，请在“主页”选项卡上的“创建”组中选择“添加林”以打开“添加林”对话框。 继续执行步骤 3。  
+    -   Para configurar uma nova floresta que não esteja listada: na guia **Início**, no grupo **Criar**, escolha **Adicionar Floresta** para abrir a caixa de diálogo **Adicionar Florestas**. Continue na etapa 3.  
 
-2.  在“常规”选项卡上，为要发现的林完成配置，并指定“Active Directory 林帐户”。  
-
-    > [!NOTE]  
-    >  Active Directory 林发现需要全局帐户才能发现和发布到不受信任林。 如果不使用站点服务器的计算机帐户，则只能选择全局帐户。  
-
-3.  如果打算允许站点将站点数据发布到此林，请在“发布”选项卡上完成用于发布到此林的配置。  
+2.  Na guia **Geral**, complete as configurações da floresta que você deseja descobrir e especifique a **Conta da Floresta do Active Directory**.  
 
     > [!NOTE]  
-    >  如果允许站点发布到林，则必须为 Configuration Manager 扩展该林的 Active Directory 架构。 Active Directory 林帐户必须对该林中的“系统”容器拥有“完全控制”权限。  
+    >  A descoberta de florestas do Active Directory requer uma conta global para descobrir e publicar em florestas não confiáveis. Se você não usar a conta de computador do servidor do site, será possível selecionar somente uma conta global.  
 
-4.  完成配置此林以用于 Active Directory 林发现的操作后，选择“确定”保存配置。  
+3.  Se você pretende permitir que os sites publiquem dados nessa floresta, na guia **Publicação** conclua as configurações para que seja possível fazer publicações nessa floresta.  
 
-##  <a name="BKMK_ConfigADDiscGeneral"></a>为计算机、用户或组配置 Active Directory 发现  
- 使用下列部分中的信息来配置计算机、用户或组的发现。 将使用这些发现方法：  
+    > [!NOTE]  
+    >  Se você permitir que sites publiquem em uma floresta, deve estender o esquema do Active Directory dessa floresta para o Configuration Manager. A conta de floresta do Active Directory deve ter permissões de controle total ao contêiner do sistema nessa floresta.  
 
--   Active Directory 组发现  
+4.  Ao concluir a configuração da floresta a ser usada com a descoberta de florestas do Active Directory, escolha **OK** para salvá-la.  
 
--   Active Directory 系统发现  
+##  <a name="BKMK_ConfigADDiscGeneral"></a> Configurar a Descoberta do Active Directory para computadores, usuários ou grupos  
+ Use as informações das seções a seguir para configurar a descoberta de computadores, usuários ou grupos. Você usará estes métodos de descoberta:  
 
--   Active Directory 用户发现  
+-   Descoberta de grupos do Active Directory  
+
+-   Descoberta de sistemas do Active Directory  
+
+-   Descoberta de Usuário do Active Directory  
 
 > [!NOTE]  
->  本部分中的信息不适用于 Active Directory 林发现。  
+>  As informações nesta seção não se aplicam à descoberta de florestas do Active Directory.  
 
- 尽管每种发现方法都相互独立，但它们共用类似的选项。 有关这些配置选项的详细信息，请参阅[组、系统和用户发现的共享选项](../../../../core/servers/deploy/configure/about-discovery-methods.md#bkmk_shared)。  
+ Embora cada um desses métodos de descoberta seja independente dos outros, eles compartilham opções semelhantes. Para obter mais informações sobre essas opções de configuração, consulte [Shared options for Group, System, and User discovery](../../../../core/servers/deploy/configure/about-discovery-methods.md#bkmk_shared) (Opções compartilhadas para a descoberta de grupo, sistema e usuário).  
 
 > [!WARNING]  
->  每种发现方法进行的 Active Directory 轮询可能会产生大量的网络流量。 请考虑将每种发现方法安排为在此网络流量不会对企业的网络使用造成负面影响时运行。  
+>  A sondagem do Active Directory por cada um desses métodos de descoberta pode gerar tráfego de rede significativo. Considere agendar cada um dos métodos de descoberta para que eles sejam executados um de cada vez, quando esse tráfego de rede não afetar de forma adversa os usos corporativos da sua rede.  
 
-#### <a name="to-configure-active-directory-group-discovery"></a>配置 Active Directory 组发现  
+#### <a name="to-configure-active-directory-group-discovery"></a>Para configurar a descoberta de grupos do Active Directory  
 
-1.  在 Configuration Manager 控制台中，依次选择“管理” > “层次结构配置”，然后选择“发现方法”。  
+1.  No console do Configuration Manager, escolha **Administração** > **Configuração da Hierarquia** e escolha **Métodos de Descoberta**.  
 
-2.  为要在其中配置发现的站点选择“Active Directory 组发现”方法。  
+2.  Escolha o método **Descoberta de grupos do Active Directory** para o site em que deseja configurar a descoberta.  
 
-3.  在“主页”选项卡上的“属性”组中，选择“属性”。  
+3.  Na guia **Início**, no grupo **Propriedades**, clique em **Propriedades**.  
 
-4.  在“常规”选项卡上，选中复选框以启用发现。 或者可以立即配置发现，然后稍后返回以启用发现。  
+4.  Na guia **Geral**, marque a caixa para habilitar a descoberta. Ou você pode configurar a descoberta agora e voltar para habilitá-la posteriormente.  
 
-5.  选择“添加”以配置发现作用域，选择“组”或“位置”，并在“添加组”或“添加 Active Directory 位置”对话框中完成以下配置：  
+5.  Escolha **Adicionar** para configurar um escopo de descoberta, escolha **Grupos** ou **Local** e conclua as configurações a seguir na caixa de diálogo **Adicionar Grupos**ou **Adicionar Local do Active Directory**:  
 
-    1.  为此发现作用域指定“名称”  。  
+    1.  Especifique um **nome** para esse escopo de descoberta.  
 
-    2.  指定要搜索的“Active Directory 域”  或“位置”  ：  
+    2.  Especifique um **Domínio do Active Directory** ou **Local** para pesquisa:  
 
-        -   如果选择了“组”，请指定要发现的一个或多个 Active Directory 组。  
+        -   Se você tiver escolhido **Grupos**, especifique um ou mais grupos do Active Directory para descoberta.  
 
-        -   如果选择了“位置”，请指定 Active Directory 容器作为要发现的位置。 你也可以为此位置启用对 Active Directory 子容器的递归搜索。  
+        -   Se você tiver escolhido **Local**, especifique um contêiner do Active Directory como um local a ser descoberto. Você também pode habilitar uma pesquisa recursiva de contêineres filho do Active Directory para esse local.  
 
-    3.  指定用于搜索此发现作用域的“Active Directory 组发现帐户”  。  
+    3.  Especifique a **Conta de descoberta de grupos do Active Directory** usada para pesquisar esse escopo de descoberta.  
 
-    4.  选择“确定”保存发现作用域配置。  
+    4.  Escolha **OK** para salvar a configuração do escopo de descoberta.  
 
-6.  为要定义的每个其他发现作用域重复步骤 6。  
+6.  Repita a etapa 6 para cada escopo de descoberta adicional que desejar definir.  
 
-7.  在“轮询计划”  选项卡上，配置完整发现轮询计划和增量发现。  
+7.  Na guia **Agendamento de Sondagem** , configure o agendamento de sondagem de descoberta completa e a descoberta de deltas.  
 
-8.  （可选）在“选项”选项卡上，可以配置选项以从发现中筛选出或排除过期计算机记录，并发现通讯组的成员身份。  
+8.  Opcionalmente, na guia **Opção**, você pode configurar opções para filtrar, ou excluir, registros de computadores obsoletos da descoberta e para descobrir a associação dos grupos de distribuição.  
 
     > [!NOTE]  
-    >  默认情况下，Active Directory 组发现只会发现安全组的成员身份。  
+    >  Por padrão, a descoberta de grupos do Active Directory descobre apenas a associação de grupos de segurança.  
 
-9. 完成为此站点配置 Active Directory 组发现的操作后，选择“确定”保存配置。  
+9. Quando concluir a configuração da descoberta de grupos do Active Directory para esse site, escolha **OK** para salvá-la.  
 
-#### <a name="to-configure-active-directory-system-discovery"></a>配置 Active Directory 系统发现  
+#### <a name="to-configure-active-directory-system-discovery"></a>Para configurar a descoberta de sistemas do Active Directory  
 
-1.  在 Configuration Manager 控制台中，依次选择“管理” > “层次结构配置”，然后选择“发现方法”。  
+1.  No console do Configuration Manager, escolha **Administração** > **Configuração da Hierarquia** e escolha **Métodos de Descoberta**.  
 
-2.  为要在其中配置发现的站点选择方法。  
+2.  Selecione o método para o site em que deseja configurar a descoberta.  
 
-3.  在“主页”选项卡上的“属性”组中，选择“属性”。  
+3.  Na guia **Início**, no grupo **Propriedades**, clique em **Propriedades**.  
 
-4.  在“常规”选项卡上，选中复选框以启用发现。 或者可以立即配置发现，然后稍后返回以启用发现。  
+4.  Na guia **Geral**, marque a caixa para habilitar a descoberta. Ou você pode configurar a descoberta agora e voltar para habilitá-la posteriormente.  
 
-5.  选择“新建”图标![新建图标](media/Disc_new_Icon.gif)以指定新的 Active Directory 容器。 在“Active Directory 容器”对话框框中，完成以下配置：  
+5.  Escolha o ícone **Novo** ![ícone Novo](media/Disc_new_Icon.gif) para especificar um novo contêiner do Active Directory. Na caixa de diálogo **Contêiner do Active Directory**, conclua as configurações a seguir:  
 
-    1.  指定要搜索的一个或多个位置。  
+    1.  Especifique um ou mais locais para pesquisa.  
 
-    2.  对于每个位置，指定更改搜索行为的选项。  
+    2.  Em cada local, especifique opções que mudam o comportamento da pesquisa.  
 
-    3.  对于每个位置，指定要用作“Active Directory 发现帐户” 的帐户。  
+    3.  Em cada local, especifique a conta a ser usada como a **Conta de descoberta do Active Directory**.  
 
         > [!TIP]  
-        >  对于指定的每个位置，你可以配置一组发现选项和唯一的 Active Directory 发现帐户。  
+        >  Em cada local especificado, você pode configurar um conjunto de opções de descoberta e uma única conta de descoberta do Active Directory.  
 
-    4.  选择“确定”保存 Active Directory 容器配置。  
+    4.  Escolha **OK** para salvar a configuração do contêiner do Active Directory.  
 
-6.  在“轮询计划”  选项卡上，配置完整发现轮询计划和增量发现。  
+6.  Na guia **Agendamento de Sondagem** , configure o agendamento de sondagem de descoberta completa e a descoberta de deltas.  
 
-7.  （可选）在“Active Directory 属性”  选项卡上，你可以为要发现的计算机配置其他 Active Directory 属性。 还会列出默认对象属性。  
+7.  Opcionalmente, na guia **Atributos do Active Directory** , você pode configurar atributos adicionais do Active Directory para computadores que você deseja descobrir. Os atributos de objeto padrão também são listados.  
 
-8.  （可选）在“选项”选项卡上，可以配置选项以从发现中筛选出或排除过期计算机记录。  
+8.  Opcionalmente, na guia **Opção**, você pode configurar opções para filtrar, ou excluir, registros de computadores obsoletos da descoberta.  
 
-9. 完成为此站点配置 Active Directory 系统发现的操作后，选择“确定”保存配置。  
+9. Quando concluir a configuração da Descoberta de Sistemas do Active Directory para esse site, escolha **OK** para salvá-la.  
 
-#### <a name="to-configure-active-directory-user-discovery"></a>配置 Active Directory 用户发现  
+#### <a name="to-configure-active-directory-user-discovery"></a>Para configurar a descoberta de usuários do Active Directory  
 
-1.  在 Configuration Manager 控制台中，依次选择“管理” > “层次结构配置”，然后选择“发现方法”。  
+1.  No console do Configuration Manager, escolha **Administração** > **Configuração da Hierarquia** e escolha **Métodos de Descoberta**.  
 
-2.  为要在其中配置发现的站点选择“Active Directory 用户发现”方法。  
+2.  Escolha o método **Descoberta de Usuários do Active Directory** para o site em que deseja configurar a descoberta.  
 
-3.  在“主页”选项卡上的“属性”组中，选择“属性”。  
+3.  Na guia **Início**, no grupo **Propriedades**, clique em **Propriedades**.  
 
-4.  在“常规”选项卡上，选中复选框以启用发现。 或者可以立即配置发现，然后稍后返回以启用发现。  
+4.  Na guia **Geral**, marque a caixa para habilitar a descoberta. Ou você pode configurar a descoberta agora e voltar para habilitá-la posteriormente.  
 
-5.  选择“新建”图标![新建图标](media/Disc_new_Icon.gif)以指定新的 Active Directory 容器。 在“Active Directory 容器”对话框框中，完成以下配置：  
+5.  Escolha o ícone **Novo** ![ícone Novo](media/Disc_new_Icon.gif) para especificar um novo contêiner do Active Directory. Na caixa de diálogo **Contêiner do Active Directory**, conclua as configurações a seguir:  
 
-    1.  指定要搜索的一个或多个位置。  
+    1.  Especifique um ou mais locais para pesquisa.  
 
-    2.  对于每个位置，指定更改搜索行为的选项。  
+    2.  Em cada local, especifique opções que mudam o comportamento da pesquisa.  
 
-    3.  对于每个位置，指定要用作“Active Directory 发现帐户” 的帐户。  
+    3.  Em cada local, especifique a conta a ser usada como a **Conta de descoberta do Active Directory**.  
 
         > [!NOTE]  
-        >  对于指定的每个位置，你可以配置一组唯一的发现选项和唯一的 Active Directory 发现帐户。  
+        >  Em cada local especificado, você pode configurar um único conjunto de opções de descoberta e uma única conta de descoberta do Active Directory.  
 
-    4.  选择“确定”保存 Active Directory 容器配置。  
+    4.  Escolha **OK** para salvar a configuração do contêiner do Active Directory.  
 
-6.  在“轮询计划”  选项卡上，配置完整发现轮询计划和增量发现。  
+6.  Na guia **Agendamento de Sondagem** , configure o agendamento de sondagem de descoberta completa e a descoberta de deltas.  
 
-7.  （可选）在“Active Directory 属性”  选项卡上，你可以为要发现的计算机配置其他 Active Directory 属性。 还会列出默认对象属性。  
+7.  Opcionalmente, na guia **Atributos do Active Directory** , você pode configurar atributos adicionais do Active Directory para computadores que você deseja descobrir. Os atributos de objeto padrão também são listados.  
 
-8.  完成为此站点配置 Active Directory 用户发现的操作后，选择“确定”保存配置。  
+8.  Quando concluir a configuração da Descoberta de Usuários do Active Directory para esse site, escolha **OK** para salvá-la.  
 
-## <a name="azureaadisc"></a>配置 Azure AD 用户发现
-从版本 1706 开始，可在将 Configuration Manager 连接到 [Azure 订阅和 Azure Active Directory](/sccm/core/servers/deploy/configure/azure-services-wizard) 时配置 Azure Active Directory 用户发现。
+## <a name="azureaadisc"></a> Configurar a Descoberta de Usuário do Azure AD
+A partir da versão 1706, você pode configurar a Descoberta de Usuário do Azure Active Directory quando você conecta o Configuration Manager à sua [assinatura do Azure e ao Azure Active Directory](/sccm/core/servers/deploy/configure/azure-services-wizard).
 
-将 Azure AD 用户发现配置为云管理的一部分。 主题“配置 Azure 服务以用于 Configuration Manager”的[创建 Azure Web 应用以用于 Configuration Manager](/sccm/core/servers/deploy/configure/Azure-services-wizard#webapp) 中详细介绍了执行此操作的过程。
-
-
+A Descoberta de Usuários do Azure AD está configurada como parte do *Gerenciamento de Nuvem*. O procedimento para fazer isso é detalhado na em [Criar o aplicativo Web do Azure para uso com o Configuration Manager](/sccm/core/servers/deploy/configure/Azure-services-wizard#webapp) no tópico *Configurar serviços do Azure para uso com o Configuration Manager*.
 
 
-##  <a name="BKMK_ConfigHBDisc"></a>配置检测信号发现  
- 默认情况下，检测信号发现在安装 Configuration Manager 主站点时启用。 因此，若不想使用每隔 7 天的默认设置，只需配置有关客户端将检测信号发现数据记录发送到管理点的频率的计划。  
 
-> [!NOTE]  
->  如果在同一站点上同时启用了“清除安装标志”  客户端请求安装和站点维护任务，请将检测信号发现的计划设置为小于“清除安装标志”  站点维护任务的“客户端重新发现期间”  。 有关站点维护任务的详细信息，请参阅 [System Center Configuration Manager 的维护任务](../../../../core/servers/manage/maintenance-tasks.md)。  
 
-#### <a name="to-configure-the-heartbeat-discovery-schedule"></a>配置检测信号发现计划  
-
-1.  在 Configuration Manager 控制台中，依次选择“管理” > “层次结构配置”，然后选择“发现方法”。  
-
-2.  为要在其中配置检测信号发现的站点选择“检测信号发现”。  
-
-3.  在“主页”选项卡上的“属性”组中，选择“属性”。  
-
-4.  配置客户端提交检测信号发现数据记录的频率，然后选择“确定”保存配置。  
-
-##  <a name="BKMK_ConfigNetworkDisc"></a>配置网络发现  
- 使用下列部分中的信息来帮助你配置网络发现。  
-
-###  <a name="BKMK_AboutConfigNetworkDisc"></a>关于配置网络发现  
- 在配置网络发现之前，你必须了解以下各项：  
-
--   网络发现的可用级别  
-
--   可用的网络发现选项  
-
--   在网络上限制网络发现  
-
-有关详细信息，请参阅[关于网络发现](../../../../core/servers/deploy/configure/about-discovery-methods.md#bkmk_aboutNetwork)。  
-
- 下列部分提供有关网络发现的常见配置的信息。 你可以配置其中一个或多个配置以在同一发现轮次中使用。 如果使用多个配置，你必须规划可能影响发现结果的交互。  
-
- 例如，可能会希望发现使用特定 SNMP 共同体名称的所有简单网络管理协议 (SNMP) 设备。 此外，对于同一发现轮次，你可以禁用针对特定子网的发现。 当发现运行时，网络发现不会发现你已禁用的子网上具有指定共同体名称的 SNMP 设备。  
-
-####  <a name="BKMK_DetermineNetTopology"></a>确定网络拓扑  
- 你可以使用仅拓扑发现来映射你的网络。 这种类型的发现不会发现潜在客户端。 仅拓扑网络发现依赖于 SNMP。  
-
- 映射网络拓扑时，必须在“网络发现属性”对话框中的“SNMP”选项卡上配置“最大跃点数”。 只需一些跃点，便可以帮助控制运行发现时使用的网络带宽。 在发现网络的更多内容时，可以增加跃点数以更好地了解网络拓扑。  
-
- 了解网络拓扑后，可以配置网络发现的其他属性， 以在使用可用配置限制网络发现能够搜索的网络段时发现潜在的客户端及其操作系统。  
-
-####  <a name="BKMK_LimitBySubnet"></a>使用子网限制搜索  
- 可以将网络发现配置为在发现运行期间搜索特定子网。 默认情况下，网络发现会搜索运行发现的服务器的子网。 配置和启用的任何其他子网仅适用于 SNMP 和动态主机配置协议 (DHCP) 搜索选项。 当网络发现搜索域时，子网配置未对其进行限制。  
-
- 如果你在“网络发现属性”  对话框中的“子网”  选项卡上指定一个或多个子网，则仅搜索标记为“已启用”  的子网。  
-
- 禁用子网后，会从发现中排除此子网，并且以下条件适用：  
-
--   不在子网上运行基于 SNMP 的查询。  
-
--   DHCP 服务器未以位于子网上的资源的列表形式予以回复。  
-
--   基于域的查询可以发现位于子网上的资源。  
-
-####  <a name="BKMK_SearchByDomain"></a>搜索特定域  
- 可以将网络发现配置为在发现运行期间搜索特定域或一组域。 默认情况下，网络发现会搜索运行发现的服务器的本地域。  
-
- 如果你在“网络发现属性”  对话框中的“域”  选项卡上指定一个或多个域，则仅搜索标记为“已启用”  的域。  
-
- 禁用域后，会从发现中排除此域，并且以下条件适用：  
-
--   网络发现不查询该域中的域控制器。  
-
--   基于 SNMP 的查询仍然可以在域中的子网上运行。  
-
--   DHCP 服务器仍然能够以位于域中的资源的列表形式予以回复。  
-
-####  <a name="BKMK_LimitBySNMPname"></a>使用 SNMP 共同体名称限制搜索  
- 可以将网络发现配置为在发现运行期间搜索特定 SNMP 共同体或一组共同体。 默认情况下，为使用配置了“公共”  共同体名称。  
-
- 网络发现使用共同体名称来获得对路由器（SNMP 设备）的访问权。 路由器可以向网络发现提供有关链接到第一个路由器的其他路由器和子网的信息。  
+##  <a name="BKMK_ConfigHBDisc"></a> Configurar a Descoberta de Pulsação  
+ Por padrão, a Descoberta de Pulsação é habilitada quando você instala um site primário do Configuration Manager. Consequentemente, você precisa configurar somente o cronograma da frequência com que os clientes enviam os registro dos dados de descoberta da Descoberta de Pulsação para um ponto de gerenciamento quando não quiser que eles usem o valor padrão de sete dias.  
 
 > [!NOTE]  
->  SNMP 共同体名称类似于密码。 网络发现只能从已指定共同体名称的 SNMP 设备中获得信息。 每个 SNMP 设备均可以拥有自己的共同体名称，但是同一个共同体名称通常会由几个设备共享。 此外，大多数 SNMP 设备都有默认的“公共” 共同体名称。 但某些组织会删除其设备的“公共”共同体名称以作为安全措施。  
+>  Se a instalação de push de cliente e a tarefa de manutenção de site para **Limpar Sinalizador de Instalação** forem habilitadas ao mesmo tempo, defina o agendamento da descoberta de pulsação para ser menor do que o **Período de Redescoberta de Cliente** da tarefa de manutenção de site **Limpar Sinalizador de Instalação** . Para obter mais informações sobre as tarefas de manutenção de sites, consulte [Tarefas de manutenção do System Center Configuration Manager](../../../../core/servers/manage/maintenance-tasks.md).  
 
- 如果“网络发现属性”对话框中的“SNMP”选项卡上显示了多个 SNMP 共同体，则网络发现按照共同体的显示顺序搜索共同体。 为了帮助最大程度降低因使用不同名称尝试连接设备所产生的网络流量，请确保最频繁使用的名称位于列表的顶部。  
+#### <a name="to-configure-the-heartbeat-discovery-schedule"></a>Para configurar o agendamento de descoberta de pulsação  
+
+1.  No console do Configuration Manager, escolha **Administração** > **Configuração da Hierarquia** e escolha **Métodos de Descoberta**.  
+
+2.  Escolha **Descoberta de Pulsação** para o site em que deseja configurar a descoberta de pulsação.  
+
+3.  Na guia **Início**, no grupo **Propriedades**, clique em **Propriedades**.  
+
+4.  Configure a frequência com que os clientes enviam registros de dados de Descoberta de pulsação e escolha **OK** para salvar a configuração.  
+
+##  <a name="BKMK_ConfigNetworkDisc"></a> Configurar a Descoberta de Rede  
+ Use as informações contidas nas seções a seguir para ajudá-lo a configurar a descoberta de rede.  
+
+###  <a name="BKMK_AboutConfigNetworkDisc"></a> Sobre a configuração de Descoberta de Rede  
+ Antes de configurar a descoberta de rede, é necessário saber o seguinte:  
+
+-   Níveis disponíveis de descoberta de rede  
+
+-   Opções de descoberta de rede disponíveis  
+
+-   Limitação de descoberta de rede na rede  
+
+Para saber mais, consulte [Sobre a Descoberta de Rede](../../../../core/servers/deploy/configure/about-discovery-methods.md#bkmk_aboutNetwork).  
+
+ As seções a seguir fornecem informações sobre configurações comuns de descoberta de rede. Você pode configurar uma ou mais dessas configurações para uso durante a execução da mesma descoberta. Se você usar várias configurações, será necessário planejar as interações que possam afetar os resultados da descoberta.  
+
+ Por exemplo, talvez você queira descobrir todos os dispositivos SNMP (Simple Network Management Protocol) que usam um nome de comunidade SNMP específico. Além disso, para a execução da mesma descoberta, você poderá desabilitar a descoberta em uma sub-rede específica. Quando a descoberta for executada, a descoberta de rede não descobrirá dispositivos SNMP com o nome de comunidade especificado na sub-rede desabilitada.  
+
+####  <a name="BKMK_DetermineNetTopology"></a> Determinar a topologia de rede  
+ Você pode usar uma descoberta somente de topologia para mapear sua rede. Esse tipo de descoberta não descobre clientes potenciais. A Descoberta de Rede somente de topologia depende do SNMP.  
+
+ Ao mapear a topologia de rede, você deve configurar o **Máximo de saltos** na guia **SNMP** na caixa de diálogo **Propriedades da Descoberta e Rede**. Apenas alguns saltos podem ajudar a controlar a largura de banda de rede é usada quando a descoberta é executada. À medida que você descobre mais sobre a rede, pode aumentar o número de saltos para ter um entendimento melhor da topologia de rede.  
+
+ Depois de entender a topologia de rede, você poderá configurar propriedades adicionais para que a Descoberta de Rede descubra clientes potenciais e seus sistemas operacionais enquanto você está usando configurações disponíveis para limitar os segmentos de rede que a Descoberta de Rede pode pesquisar.  
+
+####  <a name="BKMK_LimitBySubnet"></a> Limitar pesquisas usando sub-redes  
+ Você pode configurar a Descoberta de Rede para pesquisar sub-redes específicas durante uma descoberta. Por padrão, a Descoberta de Rede pesquisa a sub-rede do servidor que executa a descoberta. Todas as sub-redes adicionais que você configurar e ativar aplicam-se somente às opções de pesquisa de SNMP e de DHCP (Dynamic Host Configuration Protocol). Quando a Descoberta de Rede pesquisa domínios, ela não é limitada por configurações de sub-redes.  
+
+ Se você especificar uma ou mais sub-redes na guia **Sub-redes** na caixa de diálogo **Propriedades da Descoberta de Rede** , somente as sub-redes marcadas como **Habilitadas** serão pesquisadas.  
+
+ Quando você desabilita uma sub-rede, ela é excluída da descoberta e as seguintes condições são aplicáveis:  
+
+-   As consultas baseadas em SNMP não são executadas na sub-rede.  
+
+-   Os servidores DHCP não respondem com uma lista de recursos localizados na sub-rede.  
+
+-   As consultas baseadas em domínio podem descobrir recursos que estão localizados na sub-rede.  
+
+####  <a name="BKMK_SearchByDomain"></a> Pesquisar um domínio específico  
+ Você pode configurar uma Descoberta de Rede para pesquisar um domínio específico ou um conjunto de domínios durante uma descoberta. Por padrão, a Descoberta de Rede pesquisa o domínio do servidor que executa a descoberta.  
+
+ Se você especificar um ou mais domínios na guia **Domínio** na caixa de diálogo **Propriedades da Descoberta de Rede** , somente os domínios marcados como **Habilitados** serão pesquisados.  
+
+ Quando você desabilita um domínio, ele é excluído da descoberta e as seguintes condições são aplicáveis:  
+
+-   A Descoberta de Rede não consulta controladores de domínio nesse domínio.  
+
+-   Ainda é possível executar consultas baseadas em SNMP em sub-redes no domínio.  
+
+-   Os servidores DHCP ainda podem responder com uma lista de recursos localizados no domínio.  
+
+####  <a name="BKMK_LimitBySNMPname"></a> Limitar pesquisas usando nomes de comunidade SNMP  
+ Configure uma Descoberta de Rede para pesquisar uma comunidade SNMP específica ou um conjunto de comunidades durante uma descoberta. Por padrão, o nome da comunidade de **pública** está configurado para uso.  
+
+ A Descoberta de Rede usa nomes de comunidades para obter acesso aos roteadores que são dispositivos SNMP. Um roteador pode fornecer à Descoberta de Rede informações sobre outros roteadores e sub-redes que estejam vinculados ao primeiro roteador.  
 
 > [!NOTE]  
->  除了使用 SNMP 共同体名称之外，还可以指定特定 SNMP 设备的 IP 地址或可解析名称。 可使用“网络发现属性”对话框的“SNMP 设备”选项卡来执行此操作。  
+>  Os nomes de comunidades SNMP se parecem com senhas. A Descoberta de Rede pode obter informações somente de um dispositivo SNMP para o qual você especificou um nome de comunidade. Cada dispositivo SNMP pode ter seu próprio nome de comunidade, mas, geralmente, o mesmo nome de comunidade é compartilhado entre vários dispositivos. Além disso, a maioria dos dispositivos SNMP têm um nome de comunidade padrão de **pública**. Mas algumas organizações excluem o nome da comunidade **Pública** de seus dispositivos como uma precaução de segurança.  
 
-####  <a name="BKMK_SearchByDHCP"></a>搜索特定的 DHCP 服务器  
- 可以将网络发现配置为使用特定 DHCP 服务器或多个服务器在发现运行期间发现 DHCP 客户端。  
-
- 网络发现搜索你在“网络发现属性”  对话框中的“DHCP”  选项卡上指定的每个 DHCP 服务器。 如果正在运行发现的服务器从 DHCP 服务器中租赁其 IP 地址，则可以通过选中“包括要将站点服务器配置为使用的 DHCP 服务器”复选框将发现配置为搜索该 DHCP 服务器。  
+ Se várias comunidades SNMP forem exibidas na guia **SNMP** na caixa de diálogo **Propriedades da Descoberta de Rede**, a Descoberta de Rede pesquisará essas comunidades na ordem em que são exibidas. Para ajudar a minimizar o tráfego de rede gerado pelas tentativas de contatar um dispositivo usando nomes diferentes, verifique se os nomes usados com mais frequência estão no topo da lista.  
 
 > [!NOTE]  
->  为了在网络发现中成功配置 DHCP 服务器，你的环境必须支持 IPv4。 你无法将网络发现配置为使用本机 IPv6 环境中的 DHCP 服务器。  
+>  Além de usar o nome da comunidade SNMP, você pode especificar o endereço IP ou o nome que pode ser resolvido de um dispositivo SNMP específico. Isso é feito na guia **Dispositivos SNMP** na caixa de diálogo **Propriedades de Descoberta de Rede**.  
 
-###  <a name="BKMK_HowToConfigNetDisc"></a>如何配置网络发现  
- 使用以下过程首先仅发现网络拓扑，然后使用一个或多个可用的网络发现选项将网络发现配置为发现潜在客户端。  
+####  <a name="BKMK_SearchByDHCP"></a> Pesquisar um servidor DHCP específico  
+ Você pode configurar a Descoberta de Rede para usar um servidor SNMP específico ou vários servidores para descobrir clientes DHCP durante uma descoberta.  
 
-##### <a name="to-determine-your-network-topology"></a>确定网络拓扑  
+ A Descoberta de Rede pesquisa cada servidor DHCP especificado na guia **DHCP** na caixa de diálogo **Propriedades da Descoberta de Rede** . Se o servidor que executa a descoberta conceder seu endereço IP de um servidor DHCP, você poderá configurar a descoberta para pesquisa esse servidor marcando a caixa **Incluir o servidor DHCP que o servidor do site está configurado para usar**.  
 
-1.  在 Configuration Manager 控制台中，依次选择“管理” > “层次结构配置”，然后选择“发现方法”。  
+> [!NOTE]  
+>  Para configurar um servidor DHCP com êxito na Descoberta de Rede, o ambiente deve oferecer suporte a IPv4. Não é possível configurar a Descoberta de Rede para usar um servidor DHCP em um ambiente IPv6 nativo.  
 
-2.  为想要在其中运行网络发现的站点选择“网络发现”。  
+###  <a name="BKMK_HowToConfigNetDisc"></a> Como configurar a Descoberta de Rede  
+ Use os procedimentos a seguir para descobrir primeiro somente a topologia de rede e, em seguida, configurar a Descoberta de Rede para descobrir clientes potenciais usando uma ou mais das opções disponíveis da Descoberta de Rede.  
 
-3.  在“主页”选项卡上的“属性”组中，选择“属性”。  
+##### <a name="to-determine-your-network-topology"></a>Para determinar a topologia de rede  
 
-    -   在“常规”选项卡上，选中“启用网络发现”复选框，然后从“发现类型”选项中选择“拓扑”。  
+1.  No console do Configuration Manager, escolha **Administração** > **Configuração da Hierarquia** e escolha **Métodos de Descoberta**.  
 
-    -   在“子网”选项卡上，选中“搜索本地子网”复选框。  
+2.  Escolha **Descoberta de Rede** para o site onde deseja executar a Descoberta de Rede.  
+
+3.  Na guia **Início**, no grupo **Propriedades**, clique em **Propriedades**.  
+
+    -   Na guia **Geral**, marque a caixa **Habilitar descoberta de rede** e escolha **Topologia** nas opções **Tipo de descoberta**.  
+
+    -   Na guia **Sub-redes**, marque a caixa **Pesquisar sub-redes locais**.  
 
         > [!TIP]  
-        >  如果知道构成网络的特定子网，则可以取消选中“搜索本地子网”复选框并使用“新建”图标![新建图标](media/Disc_new_Icon.gif)来添加要搜索的特定子网。 对于大型网络，通常最好一次仅搜索一两个子网，以最大程度降低网络带宽使用量。  
+        >  Caso conheça as sub-redes específicas que constituem sua rede, você pode desmarcar a caixa **Pesquisar sub-redes locais** e usar o ícone **Novo** ![Ícone Novo](media/Disc_new_Icon.gif) para adicionar as sub-redes específicas que deseja pesquisar. Para sub-redes grandes, geralmente é melhor pesquisar somente uma ou duas sub-redes por vez para minimizar o uso de largura de banda de rede.  
 
-    -   在“域”选项卡上，选中“搜索本地域”复选框。  
+    -   Na guia **Domínios**, marque a caixa **Pesquisar domínio local**.  
 
-    -   在“SNMP”  选项卡上，使用“最大跃点数”  下拉列表指定在映射拓扑过程中网络发现可以接受的路由器跃点数。  
+    -   Na guia **SNMP** , use a lista suspensa **Máximo de saltos** para especificar quantos saltos do roteador a Descoberta de Rede pode captar ao mapear sua topologia.  
 
         > [!TIP]  
-        >  首次映射网络拓扑时，请仅配置少量路由器跃点以最大程度降低网络带宽使用量。  
+        >  Ao mapear a topologia de rede pela primeira vez, configure poucos saltos do roteador para minimizar o uso de largura de banda de rede.  
 
-4.  在“计划”选项卡上，选择“新建”图标![新建图标](media/Disc_new_Icon.gif)以设置用于运行网络发现的计划。  
-
-    > [!NOTE]  
-    >  你无法将不同的发现配置分配给单独的网络发现计划。 每次运行网络发现时，它都使用当前发现配置。  
-
-5.  选择“确定”以接受配置。 网络发现将按计划的时间运行。  
-
-##### <a name="to-configure-network-discovery"></a>配置网络发现  
-
-1.  在 Configuration Manager 控制台中，依次选择“管理” > “层次结构配置”，然后选择“发现方法”。  
-
-2.  为想要在其中运行网络发现的站点选择“网络发现”。  
-
-3.  在“主页”选项卡上的“属性”组中，选择“属性”。  
-
-4.  在“常规”选项卡上，选中“启用网络发现”复选框，然后从“发现类型”选项中选择想要运行的发现的类型。  
-
-5.  若要将发现配置为搜索子网，请选择“子网”选项卡，然后配置以下一个或多个选项：  
-
-    -   若要在运行发现的计算机的本地子网上运行发现，请选中“搜索本地子网”复选框。  
-
-    -   若要搜索特定子网，请确保该子网在“要搜索的子网”中列出，并且其“搜索”值必须为“已启用”：  
-
-        1.  如果未列出子网，请选择“新建”图标![新建图标](media/Disc_new_Icon.gif)。 在“新建子网分配”对话框中，输入“子网”和“掩码”信息，然后选择“确定”。 默认情况下，为搜索启用了新子网。  
-
-        2.  若要更改所列子网的“搜索”值，请选择子网，然后选择“切换”图标以在“已禁用”和“已启用”之间切换。  
-
-6.  若要将发现配置为搜索域，请选择“域”选项卡，然后配置以下一个或多个选项：  
-
-    -   若要在运行发现的计算机的域上运行发现，请选中“搜索本地域”复选框。  
-
-    -   若要搜索特定域，请确保该域在“域”中列出，并且其“搜索”值必须为“已启用”：  
-
-        1.  如果未列出域，请选择“新建”图标![新建图标](media/Disc_new_Icon.gif)。 在“域属性”对话框中，输入**域**信息，然后选择“确定”。 默认情况下，为搜索启用了新域。  
-
-        2.  若要更改所列域的“搜索”值，请选择域，然后选择“切换”图标以在“已禁用”和“已启用”之间切换。  
-
-7.  若要将发现配置为搜索 SNMP 设备的特定 SNMP 共同体名称，请选择“SNMP”选项卡，然后配置以下一个或多个选项：  
-
-    -   要将 SNMP 共同体名称添加到“SNMP 共同体名称”列表中，选择“新建”图标![新建图标](media/Disc_new_Icon.gif)。 在“新建 SNMP 共同体名称”对话框中，指定 SNMP 共同体的**名称**，然后选择“确定”。  
-
-    -   若要删除 SNMP 共同体名称，请选择共同体名称，然后选择“删除”图标![删除图标](media/Disc_delete_Icon.gif)。  
-
-    -   若要调整 SNMP 共同体名称的搜索顺序，请选择共同体名称，然后选择“上移项目”图标![上移项目](media/Disc_moveUp_Icon.gif)，或“下移项目”图标![下移项目](media/Disc_moveDown_Icon.gif)。 当运行发现时，会按照从上向下的顺序搜索共同体名称。 请记住下列几点。
-
-        > [!NOTE]  
-        >  网络发现使用 SNMP 共同体名称来获得对路由器（SNMP 设备）的访问权。 路由器可以通知网络发现有关链接到第一个路由器的其他路由器和子网的信息。  
-
-        -   SNMP 共同体名称类似于密码。  
-
-        -   网络发现只能从已指定共同体名称的 SNMP 设备中获得信息。  
-
-        -   每个 SNMP 设备均可以拥有自己的共同体名称，但是同一个共同体名称通常会由几个设备共享。  
-
-        -   大多数 SNMP 设备都有默认的**公共**共同体名称。 如果不知道任何其他共同体名称，则可以使用此名称。 但是，某些组织将删除其设备的“公共”  共同体名称以作为安全措施。  
-
-8.  若要配置供 SNMP 搜索使用的最大路由器跃点数，请选择“SNMP”选项卡，然后从“最大跃点数”下拉列表中选择跃点数。  
-
-9. 要配置 SNMP 设备，选择“SNMP 设备”选项卡。 如果未列出设备，请选择“新建”图标![新建图标](media/Disc_new_Icon.gif)。 在“新建 SNMP 设备”对话框中，指定 SNMP 设备的 IP 地址或设备名称，然后选择“确定”。  
+4.  Na guia **Agendamento**, escolha o ícone **Novo** ![Ícone Novo](media/Disc_new_Icon.gif) para definir um cronograma para executar a Descoberta de Rede.  
 
     > [!NOTE]  
-    >  如果指定设备名称，则 Configuration Manager 必须能够将 NetBIOS 名称解析为 IP 地址。  
+    >  Não é possível atribuir uma configuração de descoberta diferente para separar agendamentos de Descoberta de Rede. Cada vez que a Descoberta de Rede é executada, ela usa a configuração de descoberta atual.  
 
-10. 若要将发现配置为查询 DHCP 客户端的特定 DHCP 服务器，请单击“DHCP”选项卡，然后配置以下一个或多个选项：  
+5.  Escolha **OK** para aceitar as configurações. A Descoberta de Rede é executada no horário agendado.  
 
-    -   若要在运行发现的计算机上查询 DHCP 服务器，请选中“始终使用站点服务器的 DHCP 服务器”复选框。  
+##### <a name="to-configure-network-discovery"></a>Para configurar a Descoberta de Rede  
+
+1.  No console do Configuration Manager, escolha **Administração** > **Configuração da Hierarquia** e escolha **Métodos de Descoberta**.  
+
+2.  Escolha **Descoberta de Rede** para o site onde deseja executar a Descoberta de Rede.  
+
+3.  Na guia **Início**, no grupo **Propriedades**, clique em **Propriedades**.  
+
+4.  Na guia **Geral**, marque a caixa **Habilitar descoberta de rede** e selecione o tipo de descoberta que deseja executar nas opções **Tipo de descoberta**.  
+
+5.  Para configurar a descoberta para pesquisar sub-redes, escolha a guia **Sub-redes** e configure uma ou mais das seguinte opções:  
+
+    -   Para executar a descoberta em sub-redes locais no computador que executa a descoberta, marque a caixa **Pesquisar sub-redes locais**.  
+
+    -   Para pesquisar uma sub-rede específica, ela deve estar listada em **Sub-redes a serem pesquisadas** e ter um valor de **Pesquisa** de **Habilitado**:  
+
+        1.  Se a sub-rede não estiver listada, escolha o ícone **Novo** ![Ícone Novo](media/Disc_new_Icon.gif). Na caixa de diálogo **Nova Atribuição de Sub-rede**, insira as informações da **Sub-rede** e da **Máscara** e escolha **OK**. Por padrão, uma nova sub-rede está habilitada para pesquisa.  
+
+        2.  Para alterar o valor de **Pesquisa** de uma sub-rede listada, selecione-a e escolha o ícone **Ativar/Desativar** para alternar o valor entre **Desabilitado** e **Habilitado**.  
+
+6.  Para configurar a descoberta para pesquisar domínios, escolha a guia **Domínios** e configure uma ou mais das seguinte opções:  
+
+    -   Para executar a descoberta no domínio do computador que executa a descoberta, marque a caixa **Pesquisar domínio local**.  
+
+    -   Para pesquisar um domínio específico, ele deve estar listado em **Domínios** e ter um valor de **Pesquisa** de **Habilitado**:  
+
+        1.  Se o domínio não estiver listado, escolha o ícone **Novo** ![Ícone Novo](media/Disc_new_Icon.gif). Na caixa de diálogo **Propriedades de Domínio**, insira as informações do **Domínio** e, em seguida, escolha **OK**. Por padrão, um novo domínio está habilitado para pesquisa.  
+
+        2.  Para alterar o valor de **Pesquisa** de um domínio listado, selecione-o e escolha o ícone **Ativar/Desativar** para alternar o valor entre **Desabilitado** e **Habilitado**.  
+
+7.  Para configurar a descoberta para pesquisar nomes específicos de comunidade SNMP, escolha a guia **SNMP** e configure uma ou mais das seguinte opções:  
+
+    -   Para adicionar um nome de comunidade SNMP à lista de **Nomes de Comunidades SNMP**, escolha o ícone **Novo** ![ícone Novo](media/Disc_new_Icon.gif). Na caixa de diálogo **Novo Nome de Comunidade SNMP**, especifique o **Nome** da comunidade SNMP e, em seguida, escolha **OK**.  
+
+    -   Para remover o nome de uma comunidade SNMP, selecione o nome da comunidade e escolha o ícone **Excluir** ![Ícone Excluir](media/Disc_delete_Icon.gif).  
+
+    -   Para ajustar a ordem de pesquisa de nomes de comunidades SNMP, selecione o nome da comunidade e escolha o ícone **Mover Item para Cima** ![Ícone Mover para cima](media/Disc_moveUp_Icon.gif) ou no ícone **Mover Item para Baixo** ![Ícone Mover para baixo](media/Disc_moveDown_Icon.gif). Quando a descoberta é executada, os nomes de comunidades são pesquisados em uma ordem de cima para baixo. Lembre-se dos pontos a seguir.
 
         > [!NOTE]  
-        >  为了使用此选项，服务器必须从 DHCP 服务器租赁其 IP 地址，并且不能使用静态 IP 地址。  
+        >  A Descoberta de Rede usa nomes de comunidades SNMP para obter acesso aos roteadores que são dispositivos SNMP. Um roteador pode informar à Descoberta de Rede sobre outros roteadores e sub-redes vinculados ao primeiro roteador.  
 
-    -   要查询特定的 DHCP 服务器，选择“新建”图标![新建图标](media/Disc_new_Icon.gif)。 在“新建 DHCP 服务器”对话框中指定 DHCP 服务器的 IP 地址或服务器名称，然后选择“确定”。  
+        -   Os nomes de comunidades SNMP se parecem com senhas.  
 
-        > [!NOTE]  
-        >  如果指定服务器名称，则 Configuration Manager 必须能够将 NetBIOS 名称解析为 IP 地址。  
+        -   A Descoberta de Rede pode obter informações somente de um dispositivo SNMP para o qual você especificou um nome de comunidade.  
 
-11. 若要配置发现运行的时间，请选择“计划”选项卡，然后选择“新建”图标![新建图标](media/Disc_new_Icon.gif)以设置用于运行网络发现的计划。  
+        -   Cada dispositivo SNMP pode ter seu próprio nome de comunidade, mas, geralmente, o mesmo nome de comunidade é compartilhado entre vários dispositivos.  
 
-     可以配置多个重复计划以及多个无重复计划。  
+        -   A maioria dos dispositivos SNMP têm um nome de comunidade padrão de **Pública**. Você pode usá-lo se não souber nenhum outro nome de comunidade. No entanto, algumas organizações excluem o nome da comunidade **Pública** de seus dispositivos como uma precaução de segurança.  
+
+8.  Para configurar o número máximo de saltos do roteador para uso por pesquisas SNMP, escolha a guia **SNMP** e selecione o número de saltos na lista suspensa **Máximo de saltos**.  
+
+9. Para configurar um dispositivo SNMP, escolha a guia **Dispositivos SNMP**. Se o dispositivo não estiver listado, escolha o ícone **Novo** ![Ícone Novo](media/Disc_new_Icon.gif). Na caixa de diálogo **Novo Dispositivo SNMP**, especifique o endereço IP ou o nome do dispositivo SNMP e escolha **OK**.  
 
     > [!NOTE]  
-    >  如果“计划”选项卡上同时显示多个计划，则所有计划均会根据在配置时该计划中指示的时间运行网络发现。 循环计划也是如此。  
+    >  Se você especificar o nome de um dispositivo, o Configuration Manager deverá ser capaz de resolver o nome NetBIOS de um endereço IP.  
 
-12. 选择“确定”保存配置。  
+10. Para configurar a descoberta para consultar servidores DHCP específicos para clientes DHCP, escolha a guia **DHCP** e configure uma ou mais das seguinte opções:  
 
-###  <a name="BKMK_HowToVerifyNetDisc"></a>如何验证网络发现是否已完成  
- 完成网络发现所需的时间可能因多种因素而异。 这些因素可能包括以下一项或多项：  
+    -   Para consultar o servidor DHCP no computador que está executando a descoberta, marque a caixa **Sempre usar o servidor DHCP do servidor do site**.  
 
--   你的网络规模  
+        > [!NOTE]  
+        >  Para usar esta opção, o servidor deve conceder seu endereço IP de um servidor DHCP e não pode usar um endereço IP estático.  
 
--   你的网络拓扑  
+    -   Para consultar um servidor DHCP específico, escolha o ícone **Novo** ![ícone Novo](media/Disc_new_Icon.gif). Na caixa de diálogo **Novo Servidor DHCP**, especifique o endereço IP ou o nome de servidor do servidor DHCP e escolha **OK**.  
 
--   为在网络中查找路由器而配置的最大跃点数  
+        > [!NOTE]  
+        >  Se você especificar o nome de um servidor, o Configuration Manager deverá ser capaz de resolver o nome NetBIOS de um endereço IP.  
 
--   正在运行的发现的类型  
+11. Para configurar quando a descoberta é executada, escolha a guia **Agendamento** e escolha o ícone **Novo** ![Ícone Novo](media/Disc_new_Icon.gif) para definir um cronograma segundo o qual executar a Descoberta de Rede.  
 
-因为网络发现不会在发现完成时创建消息来通知你，所以你可以使用以下过程来验证是否完成了发现。  
+     Você pode configurar vários agendamentos e vários agendamentos sem recorrência.  
 
-##### <a name="to-verify-that-network-discovery-has-finished"></a>验证是否完成了网络发现  
+    > [!NOTE]  
+    >  Se vários agendamentos forem exibidos na guia **Agendamento** ao mesmo tempo, todos os agendamentos resultarão em uma execução da Descoberta de Rede, já que ela está configurada no período indicado no agendamento. Isso também é verdadeiro para agendamentos recorrentes.  
 
-1.  在 Configuration Manager 控制台中，选择“监视”。  
+12. Escolha **OK** para salvar as configurações.  
 
-2.  在“监视”工作区中，展开“系统状态”，然后选择“状态消息查询”。  
+###  <a name="BKMK_HowToVerifyNetDisc"></a> Como verificar se a Descoberta de Rede foi concluída  
+ O tempo de que a Descoberta de Rede precisa para ser concluída pode variar dependendo de uma série de fatores. Esses fatores podem incluir um ou mais destes itens:  
 
-3.  选择“所有状态消息”。  
+-   O tamanho da rede  
 
-4.  在“主页”选项卡上的“状态消息查询”组中，选择“显示消息”。  
+-   A topologia da rede  
 
-5.  在“选择日期和时间”下拉列表中，选择一个说明多久之前启动发现的值，然后选择“确定”以打开“Configuration Manager 状态消息查看器”。  
+-   O número máximo de saltos que estão configurados para localizar roteadores na rede  
+
+-   O tipo de descoberta que está sendo executado  
+
+Como a Descoberta de Rede não cria mensagens para alertar quando a descoberta está concluída, você pode usar o seguinte procedimento para verificar quando ela está concluída.  
+
+##### <a name="to-verify-that-network-discovery-has-finished"></a>Para verificar se a Descoberta de Rede foi concluída  
+
+1.  No console do Configuration Manager, escolha **Monitoramento**.  
+
+2.  No espaço de trabalho **Monitoramento**, expanda **Status do Sistema** e escolha **Consultas de Mensagens de Status**.  
+
+3.  Escolha **Todas as Mensagens de Status**.  
+
+4.  Na guia **Início**, no grupo **Consultas de Mensagens de Status**, escolha **Mostrar Mensagens**.  
+
+5.  Na lista suspensa **Selecionar data e hora**, selecione um valor que inclui há quanto tempo a descoberta foi iniciada, e escolha **OK** para abrir o **Visualizador de Mensagens de Status do Configuration Manager**.  
 
     > [!TIP]  
-    >  你也可以使用“指定日期和时间”  选项选择运行发现的指定日期和时间。 当你在指定日期运行网络发现并且想要仅检索该日期中的消息时，此选项很有用。  
+    >  Você também pode usar a opção **Especificar data e hora** para selecionar a data e a hora em que você executou a descoberta. Essa opção é útil quando a descoberta de rede foi executada em uma determinada data e você deseja recuperar mensagens somente dessa data.  
 
-6.  要验证网络发现是否已经完成，请搜索具有以下详细信息的状态消息：  
+6.  Para validar a conclusão da descoberta de rede, procure uma mensagem de status com os seguintes detalhes:  
 
-    -   消息 ID： **502**  
+    -   ID da mensagem: **502**  
 
-    -   组件： **SMS_NETWORK_DISCOVERY**  
+    -   Componente: **SMS_NETWORK_DISCOVERY**  
 
-    -   描述： **此组件已停止**  
+    -   Descrição: **Este componente parou**  
 
-    如果不存在此状态消息，则网络发现尚未完成。  
+    Caso essa mensagem de status não esteja presente, a descoberta de rede ainda não foi concluída.  
 
-7.  要验证网络发现的启动时间，请搜索具有以下详细信息的状态消息：  
+7.  Para validar quando foi iniciada a descoberta de rede, procure a mensagem de status com os seguintes detalhes:  
 
-    -   消息 ID： **500**  
+    -   ID da mensagem: **500**  
 
-    -   组件： **SMS_NETWORK_DISCOVERY**  
+    -   Componente: **SMS_NETWORK_DISCOVERY**  
 
-    -   描述： **此组件已启动**  
+    -   Descrição: **Este componente foi iniciado**  
 
-    此信息验证是否已启动网络发现。 如果没有此信息，请重新计划网络发现。  
+    Essa informação verifica se a descoberta de rede foi iniciada. Se essa informação não estiver presente, reagende a descoberta de rede.  

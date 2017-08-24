@@ -1,6 +1,6 @@
 ---
-title: "部署内容 | Microsoft Docs"
-description: "为 System Center Configuration Manager 安装分发点之后，下面介绍如何开始将内容部署到它们。"
+title: "Implantar conteúdo | Microsoft Docs"
+description: "Depois de instalar os pontos de distribuição para o System Center Configuration Manager, eis como você pode começar a implantar o conteúdo para eles."
 ms.custom: na
 ms.date: 10/06/2016
 ms.prod: configuration-manager
@@ -17,499 +17,499 @@ manager: angrobe
 ms.openlocfilehash: 36b08285ef78d0acb9ba9c44abe2d57e311d44b3
 ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
 ms.translationtype: HT
-ms.contentlocale: zh-CN
+ms.contentlocale: pt-BR
 ms.lasthandoff: 08/07/2017
 ---
-# <a name="deploy-and-manage-content-for-system-center-configuration-manager"></a>为 System Center Configuration Manager 部署和管理内容
+# <a name="deploy-and-manage-content-for-system-center-configuration-manager"></a>Implantar e gerenciar o conteúdo para o System Center Configuration Manager
 
-*适用范围：System Center Configuration Manager (Current Branch)*
+*Aplica-se a: System Center Configuration Manager (Branch Atual)*
 
-为 System Center Configuration Manager 安装分发点之后，可以开始将内容部署到它们。 通常，内容会在网络上传输到分发点，但是可以通过其他选项使内容到达分发点。 内容传输到分发点之后，可以在分发点上更新、重新分发、删除和验证该内容。  
+Depois de instalar os pontos de distribuição para o System Center Configuration Manager, você pode começar a implantar o conteúdo para eles. Normalmente, o conteúdo é transferido para os pontos de distribuição pela rede, mas há outras opções para levar o conteúdo para os pontos de distribuição. Depois que o conteúdo é transferido para um ponto de distribuição, você pode atualizar, redistribuir, remover e validar esse conteúdo nos pontos de distribuição.  
 
-##  <a name="bkmk_distribute"></a>分发内容  
- 通常会将内容分发到分发点，以便客户端计算机可以使用。 （对特定部署使用按需内容分发时例外。）分发内容时，Configuration Manager 将内容文件存储在包中，然后将包分发到分发点。 可以分发的内容类型包括：  
+##  <a name="bkmk_distribute"></a> Distribuir conteúdo  
+ Em geral, você distribui o conteúdo para pontos de distribuição para que ele esteja disponível para computadores cliente. (A exceção é quando você usa distribuição de conteúdo sob demanda para uma implantação específica.)  Ao distribuir conteúdo, o Configuration Manager armazena os arquivos de conteúdo em um pacote e depois distribui o pacote para o ponto de distribuição. Os tipos de conteúdo que você pode distribuir incluem:  
 
--   应用程序部署类型  
+-   Tipos de implantação de aplicativos  
 
--   包  
+-   Pacotes  
 
--   部署包  
+-   Pacotes de implantação  
 
--   驱动程序包  
+-   Pacotes de driver  
 
--   操作系统映像  
+-   Imagens do sistema operacional  
 
--   操作系统安装程序  
+-   Instaladores de sistema operacional  
 
--   启动映像  
+-   Imagens de inicialização  
 
--   任务序列  
+-   Sequências de tarefas  
 
-在创建包含源文件的包时（例如应用程序部署类型或部署包），在其上创建包的站点成为包内容源的站点所有者。 Configuration Manager 将源文件从你为对象指定的源文件路径复制到拥有包内容源的站点服务器上的内容库。  然后，Configuration Manager 将信息复制到其他站点。 （有关此方面的详细信息，请参阅[内容库](../../../../core/plan-design/hierarchy/the-content-library.md)。）  
+Ao criar um pacote que contém arquivos de origem, como um tipo de implantação do aplicativo ou um pacote de implantação, o site no qual o pacote é criado se torna o proprietário do site para a fonte de conteúdo do pacote. O Configuration Manager copia os arquivos de origem do caminho do arquivo de origem especificado para o objeto na biblioteca de conteúdo no servidor do site que tem a fonte de conteúdo do pacote.  Em seguida, o Configuration Manager replica as informações para sites adicionais. (Confira [A biblioteca de conteúdo](../../../../core/plan-design/hierarchy/the-content-library.md) para obter mais informações sobre isso.)  
 
-使用下列过程将内容分发到分发点。  
+Use o procedimento a seguir para distribuir o conteúdo para pontos de distribuição.  
 
-#### <a name="to-distribute-content-on-distribution-points"></a>在分发点上分发内容  
+#### <a name="to-distribute-content-on-distribution-points"></a>Para distribuir conteúdo em pontos de distribuição  
 
-1.  在 Configuration Manager 控制台中，单击“软件库” 。  
+1.  No console do Configuration Manager, clique em **Biblioteca de Software**.  
 
-2.  在“软件库”  工作区中，针对要分发的内容的类型选择以下步骤之一：  
+2.  No espaço de trabalho **Biblioteca de Software** , selecione uma das seguintes etapas para o tipo de conteúdo que você quer distribuir:  
 
-    -   **应用程序**：展开“应用程序管理” > “应用程序”，然后选择要分发的应用程序。  
+    -   **Aplicativos**: expanda **Gerenciamento de Aplicativos** > **Aplicativos** e selecione os aplicativos que você quer distribuir.  
 
-    -   **包**：展开“应用程序管理” >  “包”，然后选择要分发的包。  
+    -   **Pacotes**: expanda **Gerenciamento de Aplicativos** >  **Pacotes** e selecione os pacotes que você quer distribuir.  
 
-    -   **部署包**：展开“软件更新” >  “部署包”，然后选择要分发的部署包。  
+    -   **Pacotes de Implantação**: expanda **Atualizações do Software** >  **Pacotes de Implantação** e selecione os pacotes de implantação que você quer distribuir.  
 
-    -   **驱动程序包**：展开“操作系统” >  “驱动程序包”，然后选择要分发的驱动程序包。  
+    -   **Pacotes de Driver**: expanda **Sistemas Operacionais** >  **Pacotes de Driver** e selecione os pacotes de driver que você quer distribuir.  
 
-    -   **操作系统映像**：展开“操作系统” >  “操作系统映像”，然后选择要分发的操作系统映像。  
+    -   **Imagens do Sistema Operacional**: expanda **Sistemas Operacionais** >  **Imagens do Sistema Operacional** e selecione as imagens do sistema operacional que você quer distribuir.  
 
-    -   **操作系统安装程序**：展开“操作系统” > “操作系统安装程序”，然后选择要分发的操作系统安装程序。  
+    -   **Instaladores do Sistema Operacional**: expanda **Sistemas Operacionais** > **Instaladores do Sistema Operacional** e selecione os instaladores do sistema operacional que deseja distribuir.  
 
-    -   **启动映像**：展开“操作系统” >  “启动映像”，然后选择要分发的启动映像。  
+    -   **Imagens de Inicialização**: expanda **Sistemas Operacionais** >  **Imagens de Inicialização** e selecione as imagens de inicialização que deseja distribuir.  
 
-    -   **任务序列**：展开“操作系统” >  “任务序列”，然后选择要分发的任务序列。 尽管任务序列不包含内容，但它们有所分发的关联内容依赖关系。  
-
-        > [!NOTE]  
-        >  如果修改任务序列，你必须重新分发内容。  
-
-3.  在“主页”  选项卡上的“部署”  组中，单击“分发内容” 。 分发内容向导将打开。  
-
-4.  在“常规”页上，验证所列出的内容是你想要分发的内容，选择你是否想要 Configuration Manager 检测与所选内容关联的内容依赖项并将依赖项添加到分发，然后单击“下一步”。  
-
-    > [!NOTE]  
-    >  你可以选择仅为应用程序内容类型配置“检测关联内容依赖项并将其添加到分发”  设置。 Configuration Manager 会自动为任务序列配置此设置，并且不能修改此设置。  
-
-5.  在“内容”  选项卡（如果已经显示）上，验证列出的内容是否为要分发的内容，然后单击“下一步” 。  
-
-    > [!NOTE]  
-    >  只有在向导的“常规”  页上选择了“检测关联的内容依赖关系并将其添加到此分发中”  设置后，才会显示“内容”  页。  
-
-6.  在“内容目标”  页上，单击“添加” ，选择以下其中一项，然后执行相关的步骤：  
-
-    -   **集合**：选择“用户集合”  或“设备集合” ，单击与一个或多个分发点组关联的集合，然后单击“确定” 。  
+    -   **Sequência de Tarefas**: expanda **Sistemas Operacionais** >  **Sequências de Tarefas** e selecione a sequência de tarefas que deseja distribuir. Embora as sequências de tarefas não tenham o conteúdo, elas têm dependências de conteúdo associadas que são distribuídas.  
 
         > [!NOTE]  
-        >  仅显示与分发点组关联的集合。 有关将集合与分发点组进行关联的详细信息，请参阅[为 System Center Configuration Manager 安装和配置分发点](../../../../core/servers/deploy/configure/install-and-configure-distribution-points.md)主题中的[管理分发点组](../../../../core/servers/deploy/configure/install-and-configure-distribution-points.md#bkmk_manage)。  
+        >  Se você modificar a sequência de tarefas, deverá redistribuir o conteúdo.  
 
-    -   **分发点**：选择现有分发点，然后单击“确定” 。 未显示以前接收内容的分发点。  
+3.  Na guia **Início** , no grupo **Implantação** , clique em **Distribuir Conteúdo**. O Assistente para Distribuir Conteúdo é aberto.  
 
-    -   **分发点组**：选择现有分发点组，然后单击“确定” 。 未显示以前接收内容的分发点组。  
-
-    添加完内容目标时，单击“下一步” 。  
-
-7.  在“摘要”  页上，先查看分发设置，然后再继续。 要将内容分发到所选目标，请单击“下一步” 。  
-
-8.  “进度”  页会显示分发进度。  
-
-9. “确认”  页显示是否已成功将内容分配到分发点。 要监视内容分发，请参阅[使用 System Center Configuration Manager 监视分发的内容](../../../../core/servers/deploy/configure/monitor-content-you-have-distributed.md)。  
-
-##  <a name="bkmk_prestage"></a>使用预安排内容  
- 你可以预留应用程序和包类型的内容文件：  
-
--   在 Configuration Manager 控制台中，选择需要的内容，然后使用“创建预留的内容文件向导”创建压缩的预安排内容文件，其中包含所选内容的文件和关联的元数据。  
-
--   然后，你可以在站点服务器、辅助站点或分发点中手动导入内容。  
-
--   在站点服务器上导入预留内容文件时，会将内容文件添加到站点服务器上的内容库，然后在站点服务器数据库中注册内容文件。  
-
--   在分发点上导入预留内容文件时，会将内容文件添加到分发点上的内容库，并且向站点服务器发送状态消息，以通知站点内容在分发点上可用。  
-
-**预安排内容的限制和注意事项：**  
-
--   **当分发点位于站点服务器上时**，请不要为预安排内容启用分发点。 请改用[如何在站点服务器上的分发点上预留内容](#bkmk_dpsiteserver)中的过程。  
-
--   **当分发点被配置为请求分发点时**，请不要为预安排内容启用分发点。 分发点的预留内容配置替代请求分发点配置。 为预留内容配置的请求分发点不从源分发点中请求内容，也不从站点服务器中接收内容。  
-
--   **必须先在分发点上创建内容库，然后才能将内容预留到分发点**。 将内容预留到分发点之前，至少在网络上分发一次内容。  
-
--   **预留具有长包源路径（例如超过 140 个字符）的包的内容时**，提取内容命令行工具可能无法将该包的内容成功提取到内容库中。  
-
-有关何时预安排内容文件的信息，请参阅[管理用于内容管理的网络带宽](/sccm/core/plan-design/hierarchy/manage-network-bandwidth)主题中的*预安排内容*。  
-
-使用下列部分来预留内容。  
-
-###  <a name="BKMK_CreatePrestagedContentFile"></a>步骤 1：创建预留的内容文件  
- 你可以创建压缩的预安排内容文件，其中包含在 Configuration Manager 控制台中选择的内容的文件和关联的元数据。 使用以下过程创建预留的内容文件。  
-
-##### <a name="to-create-a-prestaged-content-file"></a>创建预留的内容文件  
-
-1.  在 Configuration Manager 控制台中，单击“软件库” 。  
-
-2.  在“软件库”  工作区中，针对要预留的内容的类型选择以下步骤之一：  
-
-    -   **应用程序**：展开“应用程序管理” ，单击“应用程序” ，然后选择要预留的应用程序。  
-
-    -   **包**：展开“应用程序管理” ，单击“包” ，然后选择要预留的包。  
-
-    -   **驱动程序包**：展开“操作系统” ，单击“驱动程序包” ，然后选择要预留的驱动程序包。  
-
-    -   **操作系统映像**：展开“操作系统” ，单击“操作系统映像包” ，然后选择要预留的操作系统映像包。  
-
-    -   **操作系统安装程序**：展开“操作系统” ，单击“操作系统安装程序” ，然后选择要预留的操作系统安装程序。  
-
-    -   **启动映像**：展开“操作系统” ，单击“启动映像包” ，然后选择要预留的启动映像。  
-
-    -   **任务序列**：展开“操作系统” ，单击“任务序列” ，然后选择要预留的任务序列。  
-
-3.  在“主页”  选项卡上的“部署”  组中，单击“创建预留的内容文件” 。 创建预留内容文件向导将会打开。  
+4.  Na página **Geral**, verifique se o conteúdo listado é o conteúdo que você quer distribuir, escolha se você quer que o Configuration Manager detecte as dependências de conteúdo associadas ao conteúdo selecionado, adicione as dependências à distribuição e clique em **Próximo**.  
 
     > [!NOTE]  
-    >  **对于应用程序：**在“主页”选项卡上的“应用程序”组中，单击“创建预留的内容文件”。  
+    >  Você tem a opção de definir a configuração **Detectar dependências de conteúdo associadas e adicioná-las a esta distribuição** somente para o tipo de conteúdo do aplicativo. O Configuration Manager define automaticamente esta configuração para sequências de tarefas e ela não pode ser modificada.  
+
+5.  Na guia **Conteúdo** , se exibida, verifique se o conteúdo listado é o conteúdo que você quer distribuir e clique em **Próximo**.  
+
+    > [!NOTE]  
+    >  A página **Conteúdo** só é exibida quando a configuração **Detectar dependências de conteúdo associado e adicioná-las a essa distribuição** é selecionada na página **Geral** do assistente.  
+
+6.  Na página **Destino do Conteúdo** , clique em **Adicionar**, escolha uma destas opções e siga a etapa associada:  
+
+    -   **Coleções**: selecione **Coleções de Usuários** ou **Coleções de Dispositivos**, clique na coleção associada a um ou mais grupos de pontos de distribuição, e clique em **OK**.  
+
+        > [!NOTE]  
+        >  Somente as coleções associadas a um grupo de pontos de distribuição são exibidas. Para mais informações sobre como associar coleções a grupos de pontos de distribuição, confira [Manage distribution point groups](../../../../core/servers/deploy/configure/install-and-configure-distribution-points.md#bkmk_manage) (Gerenciar grupos de pontos de distribuição) no tópico [Install and configure distribution points for System Center Configuration Manager](../../../../core/servers/deploy/configure/install-and-configure-distribution-points.md) (Instalar e configurar pontos de distribuição para o System Center Configuration Manager).  
+
+    -   **Ponto de Distribuição**: selecione um ponto de distribuição existente e clique em **OK**. Os pontos de distribuição que já receberam o conteúdo não são exibidos.  
+
+    -   **Grupo de Pontos de Distribuição**: selecione um grupo de pontos de distribuição existente e clique em **OK**. Os grupos de pontos de distribuição que já receberam o conteúdo não são exibidos.  
+
+    Ao terminar de adicionar destinos de conteúdo, clique em **Próximo**.  
+
+7.  Na página **Resumo** , verifique as configurações de distribuição antes de prosseguir. Para distribuir o conteúdo aos destinos selecionados, clique em **Próximo**.  
+
+8.  A página **Andamento** exibe o andamento da distribuição.  
+
+9. A página **Confirmação** mostra se o conteúdo foi atribuído com êxito aos pontos. Para monitorar a distribuição de conteúdo, confira [Monitorar o conteúdo que você distribuiu com o System Center Configuration Manager](../../../../core/servers/deploy/configure/monitor-content-you-have-distributed.md).  
+
+##  <a name="bkmk_prestage"></a> Usar conteúdo pré-teste  
+ Você pode pré-configurar os arquivos de conteúdo para aplicativos e tipos de pacote:  
+
+-   No console do Configuration Manager, você seleciona o conteúdo de que precisa e usa o **Assistente para Criar Arquivo de Conteúdo Pré-Teste** para criar um arquivo de conteúdo pré-teste e compactado que contenha arquivos e metadados associados ao conteúdo selecionado.  
+
+-   Você pode importar manualmente o conteúdo em um servidor de site, site secundário ou ponto de distribuição.  
+
+-   Quando você importa o arquivo de conteúdo de pré-teste em um servidor do site, os arquivos de conteúdo são adicionados à biblioteca de conteúdo no servidor do site, e em seguida registrados no banco de dados do servidor do site.  
+
+-   Quando você importa o arquivo de conteúdo de pré-teste em um ponto de distribuição, os arquivos de conteúdo são adicionados à biblioteca de conteúdo no ponto de distribuição, e uma mensagem de status é enviada ao servidor do site informando que o conteúdo está disponível no ponto de distribuição.  
+
+**Limitações e considerações para o conteúdo pré-teste:**  
+
+-   **Quando o ponto de distribuição estiver localizado no servidor do site**, não habilite o ponto de distribuição para conteúdo pré-teste. Em vez disso, use o procedimento em [Como pré-testar conteúdo no ponto de distribuição em um servidor do site](#bkmk_dpsiteserver).  
+
+-   **Quando o ponto de distribuição estiver configurado como ponto de distribuição de recepção**, não habilite o ponto de distribuição para conteúdo pré-teste. A configuração do conteúdo de pré-teste para um ponto de distribuição substitui a configuração do ponto de distribuição de recepção. Um ponto de distribuição de recepção configurado para conteúdo de pré-teste não extrai conteúdo de ponto de distribuição de origem e não recebe conteúdo do servidor do site.  
+
+-   **Para você poder pré-configurar conteúdo para o ponto de distribuição, a biblioteca de conteúdo deve ser criada no ponto de distribuição**. Distribua conteúdo pela rede ao menos uma vez antes de pré-configurar conteúdo para o ponto de distribuição.  
+
+-   **Quando você pré-configura conteúdo para um pacote com um longo caminho de origem** (por exemplo, mais de 140 caracteres), a ferramenta de linha de comando Extrair Conteúdo pode falhar em extrair com sucesso, para a biblioteca de conteúdo, o conteúdo daquele pacote.  
+
+Para informações sobre quando pré-configurar os arquivos de conteúdo, confira *Conteúdo pré-teste* no tópico [Gerenciar a largura de banda de rede para o gerenciamento de conteúdo](/sccm/core/plan-design/hierarchy/manage-network-bandwidth).  
+
+Use as seções a seguir para pré-configurar o conteúdo.  
+
+###  <a name="BKMK_CreatePrestagedContentFile"></a> Etapa 1: Criar um arquivo de conteúdo pré-teste  
+ Você pode criar um arquivo de conteúdo pré-teste, compactado, que contenha os arquivos e metadados associados para o conteúdo selecionado no console do Configuration Manager. Use o procedimento a seguir para criar um arquivo de conteúdo de pré-teste.  
+
+##### <a name="to-create-a-prestaged-content-file"></a>Para criar um arquivo de conteúdo de pré-teste  
+
+1.  No console do Configuration Manager, clique em **Biblioteca de Software**.  
+
+2.  No espaço de trabalho **Biblioteca de Software** , selecione uma das seguintes etapas para o tipo de conteúdo que você quer pré-configurar:  
+
+    -   **Aplicativos**: Expanda **Gerenciamento de Aplicativos**, clique em **Aplicativos**, e selecione os aplicativos que você quer pré-configurar.  
+
+    -   **Pacotes**: Expanda **Gerenciamento de Aplicativos**, clique em **Pacotes**, e selecione os pacotes que você quer pré-configurar.  
+
+    -   **Pacotes de Driver**: Expanda **Sistemas Operacionais**, clique em **Pacotes de Driver**, e selecione os pacotes de driver que você quer pré-configurar.  
+
+    -   **Imagens do Sistema Operacional**: Expanda **Sistemas Operacionais**, clique em **Imagens do Sistema Operacional**, e selecione as imagens do sistema operacional que você quer pré-configurar.  
+
+    -   **Instaladores de Sistema Operacional**: Expanda **Sistemas Operacionais**, clique em **Instaladores de Sistema Operacional**, e selecione os instaladores de sistema operacional que você quer pré-configurar.  
+
+    -   **Imagens de Inicialização**: Expanda **Sistemas Operacionais**, clique em **Imagens de Inicialização**, e selecione as imagens de inicialização que você quer pré-configurar.  
+
+    -   **Sequências de Tarefas**: expanda **Sistemas Operacionais**, clique em **Sequências de Tarefas**e selecione a sequência de tarefas que você quer criar um pré-teste.  
+
+3.  Na guia **Início** , no grupo **Implantação** , clique em **Criar Arquivo de Conteúdo de Pré-Teste**. O Assistente para Criar Arquivo de Conteúdo de Pré-Teste é aberto.  
+
+    > [!NOTE]  
+    >  **Para aplicativos:** na guia **Início**, no grupo **Aplicativo**, clique em **Criar Arquivo de Conteúdo Pré-teste**.  
     >   
-    >  **对于包：**在“主页”选项卡上的 &lt;PackageName> 组中，单击“创建预留的内容文件”。  
+    >  **Para pacotes:** na guia **Início**, no grupo &lt;*NomedoPacote*>, clique em **Criar Arquivo de Conteúdo Pré-teste**.  
 
-4.  在“常规”  页上，单击“浏览” ，选择预留的内容文件的位置，指定文件的名称，然后单击“保存” 。 你在主站点服务器、辅助站点服务器或分发点上使用此预留内容文件以导入内容和元数据。  
+4.  Na página **Geral** , clique em **Procurar**, escolha o local para o arquivo de conteúdo de pré-teste, determine um nome para o arquivo e clique em **Salvar**. Use esse arquivo de conteúdo de pré-teste em servidores de site primário, servidores de site secundário ou pontos de distribuição, para importar o conteúdo e os metadados.  
 
-5.  对于应用程序，选择“导出所有依赖项”，以使 Configuration Manager 检测与应用程序关联的依赖项并将其添加到预安排内容文件。 默认情况下选择了此设置。  
+5.  Para aplicativos, selecione **Exportar todas as dependências** para que o Configuration Manager detecte e adicione as dependências associadas ao aplicativo ao arquivo de conteúdo pré-teste. Por padrão, essa configuração está selecionada.  
 
-6.  在“管理员备注” 中，输入关于预留的内容文件的可选备注，然后单击“下一步” 。  
+6.  Em **Comentários do administrador**, insira comentários opcionais sobre o arquivo de conteúdo de pré-teste e clique em **Próximo**.  
 
-7.  在“内容”  页上，验证列出的内容是否为想要添加到预留内容文件中的内容，然后单击“下一步” 。  
+7.  Na página **Conteúdo** , verifique se o conteúdo listado é o conteúdo que você quer adicionar ao arquivo de conteúdo de pré-teste e clique em **Próximo**.  
 
-8.  在“内容位置”  页上，为预留的内容文件指定要从中检索内容文件的分发点。 你可以选择多个分发点以检索内容。 内容位置部分中列出了分发点。 “内容”  列显示在每个分发点上可用的所选包或应用程序的数量。 Configuration Manager 从列表中的第一个分发点开始检索所选内容，然后在列表中向下移动以检索预安排内容文件所需的其余内容。 单击“上移”  或“下移”  ，以更改分发点的优先级顺序。 如果列表中的分发点不包含所有所选内容，则必须将包含内容的分发点添加到列表中，或者退出向导，将内容至少分发到一个分发点，然后重启向导。  
+8.  Na página **Locais de Conteúdo** , especifique os pontos de distribuição dos quais você quer recuperar os arquivos de conteúdo para o arquivo de conteúdo de pré-teste. Você pode selecionar mais de um ponto de distribuição para recuperar o conteúdo. Os pontos de distribuição são listados na seção Locais de conteúdo. A coluna **Conteúdo** exibe quantos dos pacotes ou aplicativos selecionados estão disponíveis em cada ponto de distribuição. O Configuration Manager começa pelo primeiro ponto de distribuição na lista para recuperar o conteúdo selecionado e depois segue para baixo na lista, a fim de recuperar o conteúdo restante necessário para o arquivo de conteúdo pré-teste. Clique em **Mover para Cima** ou **Mover para Baixo** para alterar a ordem de prioridade dos pontos de distribuição. Quando os pontos de distribuição da lista não contêm todo o conteúdo selecionado, você deve adicionar à lista pontos de distribuição que têm o conteúdo ou sair do assistente, distribuir o conteúdo por pelo menos um ponto de distribuição e reiniciar o assistente.  
 
-9. 在“摘要”  页上，确认详细信息。 你可以返回到以前的页面并进行更改。 单击“下一步”  创建预留的内容文件。  
+9. Na página **Resumo** , confirme os detalhes. Você pode voltar às páginas anteriores e fazer alterações. Clique em **Próximo** para criar o arquivo de conteúdo de pré-teste.  
 
-10. “进度”  页显示要添加到预留的内容文件中的内容。  
+10. A página **Andamento** exibe o conteúdo que está sendo adicionado ao arquivo de conteúdo de pré-teste.  
 
-11. 在“完成”  页上，验证是否已成功创建了预留的内容文件，然后单击“关闭” 。  
+11. Na página **Conclusão** , verifique se o arquivo de conteúdo pré-configurado foi criado com sucesso, e clique em **Fechar**.  
 
-###  <a name="BKMK_AssignContentToDistributionPoint"></a>步骤 2：将内容分配到分发点  
- 预留内容文件后，请将内容分配到分发点。  
+###  <a name="BKMK_AssignContentToDistributionPoint"></a> Etapa 2: Atribuir o conteúdo a pontos de distribuição  
+ Depois que você pré-configurar o arquivo de conteúdo, atribua o conteúdo a pontos de distribuição.  
 
 > [!NOTE]  
->  如果使用预留的内容文件在站点服务器上恢复内容库，并且不必在分发点上预留内容文件，则可以跳过此过程。  
+>  Quando você usa um arquivo de conteúdo pré-configurado para recuperar a biblioteca de conteúdo em um servidor do site, e não precisa pré-configurar arquivos de conteúdo em um ponto de distribuição, você pode ignorar esse procedimento.  
 
- 使用以下过程将预留的内容文件中的内容分配给分发点。  
+ Use o procedimento a seguir para atribuir o conteúdo do arquivo de conteúdo pré-configurado a pontos de distribuição.  
 
 > [!IMPORTANT]  
->  验证想要预留的分发点是否被配置为预留分发点，或者是否已使用网络将内容分发给这些分发点。  
+>  Verifique se os pontos de distribuição que você quer pré-configurar são configurados como pontos de distribuição pré-testados ou se o conteúdo é distribuído para os pontos de distribuição usando a rede.  
 
-##### <a name="to-assign-the-content-to-distribution-points"></a>将内容分配到分发点  
+##### <a name="to-assign-the-content-to-distribution-points"></a>Para atribuir o conteúdo a pontos de distribuição  
 
-1.  在 Configuration Manager 控制台中，单击“软件库” 。  
+1.  No console do Configuration Manager, clique em **Biblioteca de Software**.  
 
-2.  在“软件库”  工作区中，针对创建预留内容文件时选择的内容的类型选择以下步骤之一：  
+2.  No espaço de trabalho **Biblioteca de Software** , selecione uma das seguintes etapas para o tipo de conteúdo que você quer selecionar ao criar arquivo de conteúdo pré-configurado:  
 
-    -   **应用程序**：展开“应用程序管理” ，单击“应用程序” ，然后选择预留的应用程序。  
+    -   **Aplicativos**: Expanda **Gerenciamento de Aplicativo**, clique em **Aplicativos**, e selecione os aplicativos pré-configurados.  
 
-    -   **包**：展开“应用程序管理” ，单击“包” ，然后选择预留的包。  
+    -   **Pacotes**: Expanda **Gerenciamento de Aplicativo**, clique em **Pacotes**, e selecione os pacotes pré-configurados.  
 
-    -   **部署包**：展开“软件更新” ，单击“部署包” ，然后选择预留的部署包。  
+    -   **Pacotes de Implantação**: Expanda **Atualizações do Software**, clique em **Pacotes de Implantação**, e selecione os pacotes de implantação pré-configurados.  
 
-    -   **驱动程序包**：展开“操作系统” ，单击“驱动程序包” ，然后选择预留的驱动程序包。  
+    -   **Pacotes de Driver**: Expanda **Sistemas Operacionais**, clique em **Pacotes de Driver**, e selecione os pacotes de driver pré-configurados.  
 
-    -   **操作系统映像**：展开“操作系统” ，单击“操作系统映像包” ，然后选择预留的操作系统映像包。  
+    -   **Imagens do Sistema Operacional**: Expanda **Sistemas Operacionais**, clique em **Imagens do Sistema Operacional**, e selecione as imagens do sistema operacional pré-configuradas.  
 
-    -   **操作系统安装程序**：展开“操作系统” ，单击“操作系统安装程序” ，然后选择预留的操作系统安装程序。  
+    -   **Instaladores de Sistema Operacional**: Expanda **Sistemas Operacionais**, clique em **Instaladores de Sistema Operacional**, e selecione os instaladores de sistema operacional pré-configurados.  
 
-    -   **启动映像**：展开“操作系统” ，单击“启动映像包” ，然后选择预留的启动映像。  
+    -   **Imagens de Inicialização**: Expanda **Sistemas Operacionais**, clique em **Imagens de Inicialização**, e selecione as imagens de inicialização pré-configuradas.  
 
-3.  在“主页”  选项卡上的“部署”  组中，单击“分发内容” 。 分发内容向导将打开。  
+3.  Na guia **Início** , no grupo **Implantação** , clique em **Distribuir Conteúdo**. O Assistente para Distribuir Conteúdo é aberto.  
 
-4.  在“常规”页上，验证所列出的内容是你预留的内容，选择你是否想要 Configuration Manager 检查与所选内容关联的内容依赖项并将依赖项添加到分发，然后单击“下一步”。  
-
-    > [!NOTE]  
-    >  你可以选择仅为应用程序内容类型配置“检测关联内容依赖项并将其添加到分发”  设置。 Configuration Manager 会自动为任务序列配置此设置，并且不能修改此设置。  
-
-5.  在“内容”  页（如果已经显示）上，验证列出的内容是否为想要分发的内容，然后单击“下一步” 。  
+4.  Na página **Geral**, verifique se o conteúdo listado é o conteúdo que você pré-configurou e escolha se você quer que o Configuration Manager detecte as dependências de conteúdo associadas ao conteúdo selecionado, adicione as dependências à distribuição e clique em **Próximo**.  
 
     > [!NOTE]  
-    >  只有在向导的“常规”  页上选择了“检测关联的内容依赖关系并将其添加到此分发中”  设置后，才会显示“内容”  页。  
+    >  Você tem a opção de definir a configuração **Detectar dependências de conteúdo associadas e adicioná-las a esta distribuição** somente para o tipo de conteúdo do aplicativo. O Configuration Manager define automaticamente esta configuração para sequências de tarefas e ela não pode ser modificada.  
 
-6.  在“内容目标”  页上，单击“添加” ，选择包含要预留的分发点的以下其中一项，然后执行相关的步骤：  
+5.  Na página **Conteúdo** , verifique se o conteúdo listado é o conteúdo que você quer distribuir e clique em **Próximo**.  
 
-    -   **集合**：选择“用户集合”  或“设备集合” ，单击与一个或多个分发点组关联的集合，然后单击“确定” 。  
+    > [!NOTE]  
+    >  A página **Conteúdo** só é exibida quando a configuração **Detectar dependências de conteúdo associado e adicioná-las a essa distribuição** é selecionada na página **Geral** do assistente.  
+
+6.  Na página **Destino de Conteúdo** , clique em **Adicionar**, escolha uma das seguintes opções que inclui os pontos de distribuição a serem pré-configurados e siga a etapa associada:  
+
+    -   **Coleções**: selecione **Coleções de Usuários** ou **Coleções de Dispositivos**, clique na coleção associada a um ou mais grupos de pontos de distribuição, e clique em **OK**.  
 
         > [!NOTE]  
-        >  仅显示与分发点组关联的集合。  有关详细信息，请参阅[为 System Center Configuration Manager 安装和配置分发点](../../../../core/servers/deploy/configure/install-and-configure-distribution-points.md)主题中的[管理分发点组](../../../../core/servers/deploy/configure/install-and-configure-distribution-points.md#bkmk_manage)。  
+        >  Somente as coleções associadas a um grupo de pontos de distribuição são exibidas.  Para mais informações, confira [Manage distribution point groups](../../../../core/servers/deploy/configure/install-and-configure-distribution-points.md#bkmk_manage) (Gerenciar grupos de pontos de distribuição) no tópico [Install and configure distribution points for System Center Configuration Manager](../../../../core/servers/deploy/configure/install-and-configure-distribution-points.md) (Instalar e configurar pontos de distribuição para o System Center Configuration Manager).  
 
-    -   **分发点**：选择现有分发点，然后单击“确定” 。 未显示以前接收内容的分发点。  
+    -   **Ponto de Distribuição**: selecione um ponto de distribuição existente e clique em **OK**. Os pontos de distribuição que já receberam o conteúdo não são exibidos.  
 
-    -   **分发点组**：选择现有分发点组，然后单击“确定” 。 未显示以前接收内容的分发点组。  
+    -   **Grupo de Pontos de Distribuição**: selecione um grupo de pontos de distribuição existente e clique em **OK**. Os grupos de pontos de distribuição que já receberam o conteúdo não são exibidos.  
 
-    添加完内容目标时，单击“下一步” 。  
+    Ao terminar de adicionar destinos de conteúdo, clique em **Próximo**.  
 
-7.  在“摘要”  页上，先查看分发设置，然后再继续。 要将内容分发到所选目标，请单击“下一步” 。  
+7.  Na página **Resumo** , verifique as configurações de distribuição antes de prosseguir. Para distribuir o conteúdo aos destinos selecionados, clique em **Próximo**.  
 
-8.  “进度”  页会显示分发进度。  
+8.  A página **Andamento** exibe o andamento da distribuição.  
 
-9. “确认”  页显示是否已成功将内容分配到分发点。 要监视内容分发，请参阅[使用 System Center Configuration Manager 监视分发的内容](../../../../core/servers/deploy/configure/monitor-content-you-have-distributed.md)。  
+9. A página **Confirmação** mostra se o conteúdo foi atribuído com êxito aos pontos de distribuição. Para monitorar a distribuição de conteúdo, confira [Monitorar o conteúdo que você distribuiu com o System Center Configuration Manager](../../../../core/servers/deploy/configure/monitor-content-you-have-distributed.md).  
 
-###  <a name="BKMK_ExportContentFromPrestagedContentFile"></a>步骤 3：从预留内容文件中提取内容  
- 创建预留内容文件并将内容分配到分发点之后，你可以将内容文件提取到站点服务器或分发点上的内容库。 通常，你已将预留内容文件复制到便携式驱动器（例如 USB 驱动器）或将内容刻录到媒体（例如 DVD），并使其在需要内容的站点服务器或分发点的位置中可用。  
+###  <a name="BKMK_ExportContentFromPrestagedContentFile"></a> Etapa 3: Extrair o conteúdo do arquivo de conteúdo pré-teste  
+ Após criar o arquivo de conteúdo de pré-teste e atribuir o conteúdo a pontos de distribuição, você pode extrair os arquivos de conteúdo para a biblioteca de conteúdo em um servidor do site ou ponto de distribuição. Normalmente, você já copiou o arquivo de conteúdo de pré-teste em uma unidade portátil, como uma unidade USB, ou gravou o conteúdo em uma mídia, como um DVD, e já o tem disponível no local do servidor do site ou no ponto de distribuição que requer o conteúdo.  
 
- 使用以下过程，通过“提取内容”命令行工具从预留内容文件中手动导出内容文件。  
+ Use o procedimento a seguir para exportar manualmente os arquivos de conteúdo do arquivo de conteúdo de pré-teste usando a ferramenta de linha de comando Extrair Conteúdo.  
 
 > [!IMPORTANT]  
->  当你运行“提取内容”命令行工具时，该工具将在创建预留内容文件时创建一个临时文件。 然后，将文件复制到目标文件夹并删除临时文件。 你必须有足够的磁盘空间来容纳此临时文件，否则过程将失败。 将在以下位置中创建临时文件：  
+>  Ao executar a ferramenta de linha de comando Extrair Conteúdo, ela cria um arquivo temporário enquanto cria o arquivo de conteúdo de pré-teste. Em seguida, o arquivo é copiado na pasta de destino e o arquivo temporário é excluído. Você deve ter espaço suficiente em disco para o arquivo temporário para que o processo não falhe. O arquivo temporário é criado no seguinte local:  
 >   
->  -   将在你指定为预留内容文件的目标文件夹的同一文件夹中创建临时文件。  
+>  -   O arquivo temporário é criado na mesma pasta que você especifica como a pasta de destino para o arquivo de conteúdo de pré-teste.  
 
 > [!IMPORTANT]  
->  运行“提取内容”命令行工具的用户在你从中提取预安排内容的计算机上必须有**管理员**权限。  
+>  O usuário que executa a ferramenta de linha de comando Extrair Conteúdo deve ter direitos de **Administrador** no computador do qual você está extraindo o conteúdo pré-teste.  
 
-##### <a name="to-extract-the-content-files-from-the-prestaged-content-file"></a>从预留内容文件中提取内容文件  
+##### <a name="to-extract-the-content-files-from-the-prestaged-content-file"></a>Para extrair os arquivos de conteúdo do arquivo de conteúdo de pré-teste  
 
-1.  将预留内容文件复制到你要从中提取内容的计算机。  
+1.  Copie o arquivo de conteúdo de pré-teste no computador do qual você deseja extrair o conteúdo.  
 
-2.  将“提取内容”命令行工具从 &lt;Configuration Manager 安装路径>\bin\\&lt;平台> 复制到你要从中提取预安排内容文件的计算机。  
+2.  Copie a ferramenta de linha de comando Extrair Conteúdo do &lt;*ConfigMgrInstallationPath*>\bin\\&lt;*plataforma*> para o computador do qual você deseja extrair o arquivo de conteúdo pré-teste.  
 
-3.  打开命令提示符，并导航到预留内容文件和“提取内容”工具的文件夹位置。  
+3.  Abra o prompt de comando e navegue até a pasta local do arquivo de conteúdo de pré-teste e da ferramenta Extrair Conteúdo.  
 
     > [!NOTE]  
-    >  你可以在站点服务器、辅助站点服务器或分发点上提取一个或多个预留内容文件。  
+    >  Você pode extrair um ou mais arquivos de conteúdo de pré-teste em um site de servidor, servidor do site secundário ou ponto de distribuição.  
 
-4.  键入 **extractcontent /P:**&lt;预留文件位置>**\\**&lt;预留文件名> **/S** 以导入单一文件。  
+4.  Digite **extractcontent /P:**&lt;*PrestagedFileLocation*>**\\**&lt;*PrestagedFileName*> **/S** para importar um único arquivo.  
 
-     键入 **extractcontent /P:**&lt;预留文件位置> **/S** 以导入指定文件夹中的所有预留文件。  
+     Digite **extractcontent /P:**&lt;*PrestagedFileLocation*> **/S** para importar todos os arquivos pré-configurados na pasta especificada.  
 
-     例如，键入 **extractcontent /P:D:\PrestagedFiles\MyPrestagedFile.pkgx /S** ，其中 `D:\PrestagedFiles\` 是预留文件位置，`MyPrestagedFile.pkgx` 是预留文件名称，`/S` 告知 Configuration Manager 仅提取比当前位于分发点上的内容文件新的内容文件。  
+     Por exemplo, digite **extractcontent /P:D:\PrestagedFiles\MyPrestagedFile.pkgx /S** em que `D:\PrestagedFiles\` é o PrestagedFileLocation, `MyPrestagedFile.pkgx` é o nome do arquivo pré-teste e o `/S` informa ao Configuration Manager para extrair somente arquivos de conteúdo que são mais novos do que os que estão atualmente no ponto de distribuição.  
 
-     在站点服务器上提取预留内容文件时，会将内容文件添加到站点服务器上的内容库，然后在站点服务器数据库中注册内容可用性。 在分发点上导出预留内容文件时，会将内容文件添加到分发点上的内容库，并且分发点将向父主站点服务器发送状态消息，然后在站点数据库中注册内容可用性。  
+     Quando você extrai o arquivo de conteúdo de pré-teste em um servidor do site, os arquivos de conteúdo são adicionados à biblioteca de conteúdo no servidor do site, e em seguida a disponibilidade do conteúdo é registrada no banco de dados do servidor do site. Ao exportar o arquivo de conteúdo de pré-teste em um ponto de distribuição, os arquivos de conteúdo são adicionados à biblioteca de conteúdo no ponto de distribuição, o ponto de distribuição envia uma mensagem de status ao servidor do site primário pai, e em seguida a disponibilidade do conteúdo é registrada no banco de dados do site.  
 
     > [!IMPORTANT]  
-    >  在以下方案中，当内容更新为新版本时，你必须更新从预留内容文件中提取的内容：  
+    >  No cenário a seguir, você deve atualizar o conteúdo que você extraiu do arquivo de conteúdo de pré-teste quando o conteúdo é atualizado para uma nova versão:  
     >   
-    >  1.  你为包的版本 1 创建预留内容文件。  
-    >  2.  你使用版本 2 更新包的源文件。  
-    >  3.  你在分发点上提取预留内容文件（包的版本 1）。  
+    >  1.  Você cria um arquivo de conteúdo de pré-teste para a versão 1 de um pacote.  
+    >  2.  Você atualiza os arquivos de origem para o pacote com a versão 2.  
+    >  3.  Você extrai o arquivo de conteúdo de pré-teste (versão 1 do pacote) em um ponto de distribuição.  
     >   
-    > Configuration Manager 不会自动将包版本 2 分发到分发点。 你必须创建包含新文件版本的新预留内容文件，然后提取内容，更新分发点以分发已更改的文件，或者重新分发包中的所有文件。  
+    > O Configuration Manager não distribui automaticamente a versão 2 do pacote para o ponto de distribuição. Você deve criar um arquivo de conteúdo de pré-teste que contém a nova versão do arquivo e, em seguida, extrair o conteúdo, atualizar o ponto de distribuição para distribuir os arquivos que foram alterados ou redistribuir todos os arquivos no pacote.  
 
-###  <a name="bkmk_dpsiteserver"></a>如何在站点服务器上的分发点上预留内容  
- 当在站点服务器上安装分发点时，必须使用以下过程来成功预留内容。 这是因为内容库中已存在这些内容文件。  
+###  <a name="bkmk_dpsiteserver"></a> Como pré-testar conteúdo no ponto de distribuição em um servidor do site  
+ Quando houver um ponto de distribuição instalado em um servidor do site, use o procedimento a seguir para pré-configurar com êxito o conteúdo. Isso ocorre porque os arquivos de conteúdo já estão na biblioteca de conteúdo.  
 
- 如果没有为预安排内容启用分发点，或者如果分发点不在站点服务器上，请参阅本主题中的[使用预安排内容](#bkmk_prestage)部分。  
+ Quando o ponto de distribuição não estiver habilitado para pré-configurar o conteúdo, ou quando o ponto de distribuição não estiver localizado em um servidor do site, confira a seção [Usar conteúdo pré-teste](#bkmk_prestage) nesse tópico.  
 
-##### <a name="to-prestage-content-on-distribution-points-located-on-a-site-server"></a>在位于站点服务器上的分发点上预留内容  
+##### <a name="to-prestage-content-on-distribution-points-located-on-a-site-server"></a>Para pré-configurar conteúdo nos pontos de distribuição localizados em um servidor do site  
 
-1.  使用以下步骤确认没有为预留的内容启用分发点。  
+1.  Siga as seguintes etapas para verificar se o ponto de distribuição não está habilitado para o conteúdo pré-configurado.  
 
-    1.  在 Configuration Manager 控制台中，单击“管理” 。  
+    1.  No console do Configuration Manager, clique em **Administração**.  
 
-    2.  在“管理”  工作区中，单击“分发点” ，然后选择位于站点服务器上的分发点。  
+    2.  No espaço de trabalho **Administração** , clique em **Pontos de Distribuição**, e então selecione o ponto de distribuição localizado no servidor do site.  
 
-    3.  在“主页”  选项卡上的“属性”  组中，单击“属性” 。  
+    3.  Na guia **Início** , no grupo **Propriedades** , clique em **Propriedades**.  
 
-    4.  在“常规”  选项卡上，确认未选中“为预留的内容启用此分发点”  复选框。  
+    4.  Na guia **Geral** , verifique se a caixa de seleção **Habilitar este ponto de distribuição para conteúdo pré-configurado** não está selecionada.  
 
-2.  通过使用本主题中的[步骤 1：创建预安排内容文件](#BKMK_CreatePrestagedContentFile)部分，创建预安排内容文件。  
+2.  Crie o arquivo de conteúdo pré-testado usando a seção [Etapa 1: Criar um arquivo de conteúdo pré-teste](#BKMK_CreatePrestagedContentFile) nesse tópico.  
 
-3.  通过使用本主题中的[步骤 2：将内容分配到分发点](#BKMK_AssignContentToDistributionPoint)部分，将内容分配到分发点。  
+3.  Atribua o conteúdo ao ponto de distribuição usando a seção [Etapa 2: Atribuir o conteúdo a pontos de distribuição](#BKMK_AssignContentToDistributionPoint) neste tópico.  
 
-4.  在站点服务器上，通过使用本主题中的[步骤 3：从预安排内容文件中提取内容](#BKMK_ExportContentFromPrestagedContentFile)部分，从预安排内容文件中提取内容。  
+4.  No servidor do site, extraia o conteúdo do arquivo de conteúdo pré-teste usando a seção [Etapa 3: Extrair o conteúdo do arquivo de conteúdo pré-teste](#BKMK_ExportContentFromPrestagedContentFile) neste tópico.  
 
     > [!NOTE]  
-    >  如果分发点位于辅助站点上，则等待至少 10 分钟，然后使用连接到父主站点的 Configuration Manager 控制台将内容分配到辅助站点上的分发点。  
+    >  Quando o ponto de distribuição estiver em um site secundário, aguarde pelo menos 10 minutos e, então, usando um console do Configuration Manager que está conectado a um site primário pai, atribua o conteúdo ao ponto de distribuição no site secundário.  
 
-##  <a name="bkmk_manage"></a>管理已分发的内容  
- 你具有以下用于管理内容的选项：  
- - [更新内容](#update-content)
- - [重新分发内容](#redistribute-content)
- - [删除内容](#remove-content)
- - [验证内容](#validate-content)
+##  <a name="bkmk_manage"></a> Gerenciar o conteúdo que você distribuiu  
+ Você tem as seguintes opções para gerenciar o conteúdo:  
+ - [Atualizar conteúdo](#update-content)
+ - [Redistribuir o conteúdo](#redistribute-content)
+ - [Remover conteúdo](#remove-content)
+ - [Validar o conteúdo](#validate-content)
 
-### <a name="update-content"></a>更新内容
-当通过添加新文件或使用较新版本替换现有文件更新了部署的源文件位置时，可以使用“更新分发点”或“更新内容”操作更新分发点上的内容文件：  
--   内容文件将从源文件路径复制到拥有包内容源的站点上的内容库  
--   包版本将递增  
--   站点服务器上和分发点上内容库的每个实例仅更新已更改的文件  
+### <a name="update-content"></a>Atualizar conteúdo
+Quando o local do arquivo de origem para uma implantação é atualizado adicionando novos arquivos ou substitui arquivos existentes pode uma versão mais nova, é possível atualizar os arquivos de conteúdo em pontos de distribuição usando a ação **Atualizar Pontos de Distribuição** ou **Atualizar Conteúdo**:  
+-   Os arquivos de conteúdo são copiados do caminho do arquivo de origem para a biblioteca de conteúdo no site que tem a fonte de conteúdo do pacote  
+-   A versão do pacote é incrementada  
+-   Cada instância da biblioteca de conteúdo em servidores do site e no ponto de distribuição é atualizada apenas com os arquivos alterados  
 
 > [!WARNING]  
->  应用程序的包版本始终为 1。 当你更新应用程序部署类型的内容时，Configuration Manager 将为该部署类型创建新的内容 ID，并且包将引用该新内容 ID。  
+>  A versão do pacote de aplicativos é sempre 1. Ao atualizar o conteúdo para um tipo de implantação de aplicativo, o Configuration Manager cria uma nova ID de conteúdo para o tipo de implantação e o pacote faz referência à nova ID de conteúdo.  
 
-#### <a name="to-update-content-on-distribution-points"></a>更新分发点上的内容  
+#### <a name="to-update-content-on-distribution-points"></a>Para atualizar conteúdo em pontos de distribuição  
 
-1.  在 Configuration Manager 控制台中，单击“软件库” 。  
+1.  No console do Configuration Manager, clique em **Biblioteca de Software**.  
 
-2.  在“软件库”  工作区中，针对要分发的内容的类型选择以下步骤之一：  
+2.  No espaço de trabalho **Biblioteca de Software** , selecione uma das seguintes etapas para o tipo de conteúdo que você quer distribuir:  
 
-    -   **应用程序**：展开“应用程序管理” > “应用程序”，然后选择要分发的应用程序。 单击“部署类型”  选项卡，然后选择要更新的部署类型。  
+    -   **Aplicativos**: expanda **Gerenciamento de Aplicativos** > **Aplicativos** e selecione os aplicativos que você quer distribuir. Clique na guia **Tipos de Implantação** e selecione o tipo de implantação que você quer atualizar.  
 
-    -   **包**：展开“应用程序管理” > “包”，然后选择要更新的包。  
+    -   **Pacotes**: expanda **Gerenciamento de Aplicativos** > **Pacotes** e selecione os pacotes que deseja atualizar.  
 
-    -   **部署包**：展开“软件更新” > “部署包”，然后选择要更新的部署包。  
+    -   **Pacotes de Implantação**: expanda **Atualizações do Software** > **Pacotes de Implantação** e selecione os pacotes de implantação que deseja atualizar.  
 
-    -   **驱动程序包**：展开“操作系统” > “驱动程序包”，然后选择要更新的驱动程序包。  
+    -   **Pacotes de Driver**: expanda **Sistemas Operacionais** > **Pacotes de Driver** e selecione os pacotes de driver que deseja atualizar.  
 
-    -   **操作系统映像**：展开“操作系统” > “操作系统映像”，然后选择要更新的操作系统映像。  
+    -   **Imagens do Sistema Operacional**: expanda **Sistemas Operacionais** > **Imagens do Sistema Operacional** e selecione as imagens do sistema operacional que deseja atualizar.  
 
-    -   **操作系统安装程序**：展开“操作系统” > “操作系统安装程序”，然后选择要更新的操作系统安装程序。  
+    -   **Instaladores do Sistema Operacional**: expanda **Sistemas Operacionais** > **Instaladores do Sistema Operacional** e selecione os instaladores do sistema operacional que deseja atualizar.  
 
-    -   **启动映像**：展开“操作系统” >  “启动映像”，然后选择要更新的启动映像。  
+    -   **Imagens de Inicialização**: expanda **Sistemas Operacionais** >  **Imagens de Inicialização** e selecione as imagens de inicialização que deseja atualizar.  
 
-3.  在“主页”  选项卡上的“部署”  组中，单击“更新分发点” ，然后单击“确定”  确认你要更新内容。  
-
-    > [!NOTE]  
-    >  要更新应用程序的内容，请单击“部署类型”  选项卡，右键单击部署类型，单击“更新内容” ，然后单击“确定”  确认你要刷新内容。  
+3.  Na guia **Início** , no grupo **Implantação** , clique em **Atualizar Pontos de Distribuição**e em **OK** para confirmar que você quer atualizar o conteúdo.  
 
     > [!NOTE]  
-    >  在更新启动映像的内容时，管理分发点向导将打开。 查看“摘要”  页上的信息，然后完成向导以更新内容。  
+    >  Para atualizar o conteúdo de aplicativos, clique na guia **Tipos de Implantação** , clique com o botão direito no tipo de implantação, clique em **Atualizar Conteúdo**e em **OK** para confirmar que você quer atualizar o conteúdo.  
 
-### <a name="redistribute-content"></a>重新分发内容
-你可以重新分发包以将包中的所有内容文件复制到分发点或分发点组，从而覆盖现有文件。  
+    > [!NOTE]  
+    >  Quando você atualiza o conteúdo de imagens de inicialização, o Assistente para Gerenciar Pontos de Distribuição é aberto. Revise as informações na página **Resumo** e conclua o assistente para atualizar o conteúdo.  
 
- 使用此操作来修复包中的内容文件或在初始分发失败时重新发送内容。 可通过以下项目重新分发包：  
+### <a name="redistribute-content"></a>Redistribuir o conteúdo
+Você pode redistribuir um pacote para copiar todos os arquivos de conteúdo do pacote para pontos de distribuição ou grupos de pontos de distribuição e, assim, substituir os arquivos existentes.  
 
--   包属性  
--   分发点属性  
--   分发点组属性。  
+ Use essa operação para reparar arquivos de conteúdo do pacote ou reenviar o conteúdo quando a distribuição inicial falha. Você pode redistribuir um pacote de:  
+
+-   Propriedades do pacote  
+-   Propriedades do ponto de distribuição  
+-   Propriedades do grupo de pontos de distribuição.  
 
 
-#### <a name="to-redistribute-content-from-package-properties"></a>从包属性中重新分发内容  
+#### <a name="to-redistribute-content-from-package-properties"></a>Para redistribuir o conteúdo nas propriedades do pacote  
 
-1.  在 Configuration Manager 控制台中，单击“软件库” 。  
+1.  No console do Configuration Manager, clique em **Biblioteca de Software**.  
 
-2.  在“软件库”  工作区中，针对要分发的内容的类型选择以下步骤之一：  
+2.  No espaço de trabalho **Biblioteca de Software** , selecione uma das seguintes etapas para o tipo de conteúdo que você quer distribuir:  
 
-    -   **应用程序**：展开“应用程序管理” >  “应用程序”，然后选择要重新分发的应用程序。  
+    -   **Aplicativos**: expanda **Gerenciamento de Aplicativos** >  **Aplicativos** e selecione o aplicativo que deseja redistribuir.  
 
-    -   **包**：展开“应用程序管理” > “包”，然后选择要重新分发的包。  
+    -   **Pacotes**: expanda **Gerenciamento de Aplicativos** > **Pacotes** e selecione o pacote que deseja redistribuir.  
 
-    -   **部署包**：展开“软件更新” >  “部署包”，然后选择要重新分发的部署包。  
+    -   **Pacotes de Implantação**: expanda **Atualizações do Software** >  **Pacotes de Implantação** e selecione o pacote de implantação que deseja redistribuir.  
 
-    -   **驱动程序包**：展开“操作系统” > “驱动程序包”，然后选择要重新分发的驱动程序包。  
+    -   **Pacotes de Driver**: expanda **Sistemas Operacionais** > **Pacotes de Driver** e selecione o pacote de driver que deseja redistribuir.  
 
-    -   **操作系统映像**：展开“操作系统” > “操作系统映像”，然后选择要重新分发的操作系统映像。  
+    -   **Imagens do Sistema Operacional**: expanda **Sistemas Operacionais** > **Imagens do Sistema Operacional** e selecione a imagem do sistema operacional que deseja redistribuir.  
 
-    -   **操作系统安装程序**：展开“操作系统” > “操作系统安装程序”，然后选择要重新分发的操作系统安装程序。  
+    -   **Instaladores do Sistema Operacional**: expanda **Sistemas Operacionais** > **Instaladores do Sistema Operacional** e selecione o instalador do sistema operacional que deseja redistribuir.  
 
-    -   **启动映像**：展开“操作系统” >  “启动映像”，然后选择要重新分发的启动映像。  
+    -   **Imagens de Inicialização**: expanda **Sistemas Operacionais** >  **Imagens de Inicialização** e selecione a imagem de inicialização que deseja redistribuir.  
 
-3.  在“主页”  选项卡上的“属性”  组中，单击“属性” 。  
+3.  Na guia **Início** , no grupo **Propriedades** , clique em **Propriedades**.  
 
-4.  单击“内容位置”  选项卡，选择要在其中重新分发内容的分发点或分发点组，单击“重新分发” ，然后单击“确定” 。  
+4.  Clique na guia **Locais de Conteúdo** , selecione o ponto de distribuição ou grupo de pontos de distribuição nos quais você quer redistribuir o conteúdo, clique em **Redistribuir**, e depois clique em **OK**.  
 
-#### <a name="to-redistribute-content-from-distribution-point-properties"></a>从分发点属性重新分发内容  
+#### <a name="to-redistribute-content-from-distribution-point-properties"></a>Para redistribuir o conteúdo das propriedades do ponto de distribuição  
 
-1.  在 Configuration Manager 控制台中，单击“管理” 。  
+1.  No console do Configuration Manager, clique em **Administração**.  
 
-2.  在“管理”  工作区中，单击“分发点” ，然后选择要在其中重新分发内容的分发点。  
+2.  No espaço de trabalho **Administração** , clique em **Pontos de Distribuição**, depois selecione o ponto de distribuição no qual você quer redistribuir o conteúdo.  
 
-3.  在“主页”  选项卡上的“属性”  组中，单击“属性” 。  
+3.  Na guia **Início** , no grupo **Propriedades** , clique em **Propriedades**.  
 
-4.  单击“内容”  选项卡，选择要重新分发的内容，单击“重新分发” ，然后单击“确定” 。  
+4.  Clique na guia **Conteúdo** , selecione o conteúdo a ser redistribuído, clique em **Redistribuir**, e depois clique em **OK**.  
 
-#### <a name="to-redistribute-content-from-distribution-point-group-properties"></a>从分发点组属性中重新分发内容  
+#### <a name="to-redistribute-content-from-distribution-point-group-properties"></a>Para redistribuir o conteúdo das propriedades do grupo de pontos de distribuição  
 
-1.  在 Configuration Manager 控制台中，单击“管理” 。  
+1.  No console do Configuration Manager, clique em **Administração**.  
 
-2.  在“管理”  工作区中，单击“分发点组” ，然后选择要在其中重新分发内容的分发点组。  
+2.  No espaço de trabalho **Administração** , clique em **Grupos de Pontos de Distribuição**, depois selecione o grupo de pontos de distribuição no qual você quer redistribuir o conteúdo.  
 
-3.  在“主页”  选项卡上的“属性”  组中，单击“属性” 。  
+3.  Na guia **Início** , no grupo **Propriedades** , clique em **Propriedades**.  
 
-4.  单击“内容”  选项卡，选择要重新分发的内容，单击“重新分发” ，然后单击“确定” 。  
+4.  Clique na guia **Conteúdo** , selecione o conteúdo a ser redistribuído, clique em **Redistribuir**, e depois clique em **OK**.  
 
     > [!IMPORTANT]  
-    >  包中的内容会重新分发到分发点组内的所有分发点。  
+    >  O conteúdo do pacote é redistribuído para todos os pontos de distribuição do grupo.  
 
 
-#### <a name="use-the-sdk-to-force-replication-of-content"></a>使用 SDK 强制复制内容
-可以使用 Configuration Manager SDK 的 **RetryContentReplication** Windows Management Instrumentation (WMI) 类方法强制分发管理器将内容从源位置复制到内容库中。  
+#### <a name="use-the-sdk-to-force-replication-of-content"></a>Usar o SDK para forçar a replicação de conteúdo
+Você pode usar o método de classe do WMI (Instrumentação de Gerenciamento do Windows) **RetryContentReplication** do SDK do Configuration Manager para forçar o Gerenciador de Distribuição a copiar conteúdo do local de origem para a biblioteca de conteúdo.  
 
-仅在正常的内容复制出现问题（通常使用控制台的监视节点来确认）之后必须重新分发内容时，使用此方法强制进行复制。   
+Somente use esse método para forçar a replicação quando precisar redistribuir o conteúdo após haver problemas com a replicação de conteúdo normal (normalmente confirmada pelo uso do nó Monitoramento do console).   
 
-有关此 SDK 选项的详细信息，请参阅 MSDN.Microsoft.com 上的 [RetryContentReplication Method in Class SMS_CM_UpdatePackages](https://msdn.microsoft.com/library/mt762092(CMSDK.16).aspx)（SMS_CM_UpdatePackages 类中的 RetryContentReplication 方法）。
+Para obter mais informações sobre essa opção de SDK, consulte [RetryContentReplication Method in Class SMS_CM_UpdatePackages](https://msdn.microsoft.com/library/mt762092(CMSDK.16).aspx) (Método RetryContentReplication na classe SMS_CM_UpdatePackages) no MSDN.Microsoft.com.
 
-### <a name="remove-content"></a>删除内容
-不再需要分发点上的内容时，可以删除分发点上的内容文件。  
+### <a name="remove-content"></a>Remover conteúdo
+Quando você não precisa mais de conteúdo em seus pontos de distribuição, pode remover os arquivos de conteúdo desses pontos.  
 
--   包属性  
--   分发点属性  
--   分发点组属性。  
+-   Propriedades do pacote  
+-   Propriedades do ponto de distribuição  
+-   Propriedades do grupo de pontos de distribuição.  
 
-但是，如果内容与分发到相同分发点上的另一个包关联，则无法删除此内容。  
+Porém, quando o conteúdo é associado a outro pacote que foi distribuído para o mesmo ponto de distribuição, não é possível remover o conteúdo.  
 
-#### <a name="to-remove-package-content-files-from-distribution-points"></a>从分发点中删除包内容文件  
+#### <a name="to-remove-package-content-files-from-distribution-points"></a>Para remover arquivos de conteúdo de pacote de pontos de distribuição  
 
-1.  在 Configuration Manager 控制台中，单击“软件库” 。  
+1.  No console do Configuration Manager, clique em **Biblioteca de Software**.  
 
-2.  在“软件库”  工作区中，针对要删除的内容的类型选择以下步骤之一：  
+2.  No espaço de trabalho **Biblioteca de Software** , selecione uma das seguintes etapas para o tipo de conteúdo que você quer excluir:  
 
-    -   **应用程序**：展开“应用程序管理” > “应用程序”，然后选择要删除的应用程序。  
+    -   **Aplicativos**: expanda **Gerenciamento de Aplicativos** > **Aplicativos** e selecione o aplicativo que deseja remover.  
 
-    -   **包**：展开“应用程序管理” > “包”，然后选择要删除的包。  
+    -   **Pacotes**: expanda **Gerenciamento de Aplicativos** > **Pacotes** e selecione o pacote que deseja remover.  
 
-    -   **部署包**：展开“软件更新” > “部署包”，然后选择要删除的部署包。  
+    -   **Pacotes de Implantação**: expanda **Atualizações do Software** > **Pacotes de Implantação** e selecione o pacote de implantação que deseja remover.  
 
-    -   **驱动程序包**：展开“操作系统” > “驱动程序包”，然后选择要删除的驱动程序包。  
+    -   **Pacotes de Driver**: expanda **Sistemas Operacionais** > **Pacotes de Driver** e selecione o pacote de driver que deseja remover.  
 
-    -   **操作系统映像**：展开“操作系统” > “操作系统映像”，然后选择要删除的操作系统映像。  
+    -   **Imagens do Sistema Operacional**: expanda **Sistemas Operacionais** > **Imagens do Sistema Operacional** e selecione a imagem do sistema operacional que deseja remover.  
 
-    -   **操作系统安装程序**：展开“操作系统” > “操作系统安装程序”，然后选择要删除的操作系统安装程序。  
+    -   **Instaladores do Sistema Operacional**: expanda **Sistemas Operacionais** > **Instaladores do Sistema Operacional** e selecione o instalador do sistema operacional que deseja remover.  
 
-    -   **启动映像**：展开“操作系统” > “启动映像”，然后选择要删除的启动映像。  
+    -   **Imagens de Inicialização**: expanda **Sistemas Operacionais** > **Imagens de Inicialização** e selecione a imagem de inicialização que deseja remover.  
 
-3.  在“主页”  选项卡上的“属性”  组中，单击“属性” 。  
+3.  Na guia **Início** , no grupo **Propriedades** , clique em **Propriedades**.  
 
-4.  单击“内容位置”  选项卡，选择要从其中删除内容的分发点或分发点组，单击“删除” ，然后单击“确定” 。  
+4.  Clique na guia **Locais de Conteúdo** , selecione o ponto de distribuição ou grupo de pontos de distribuição dos quais você quer remover o conteúdo, clique em **Remover**, e depois clique em **OK**.  
 
-#### <a name="to-remove-package-content-from-distribution-point-properties"></a>从分发点属性中删除包内容  
+#### <a name="to-remove-package-content-from-distribution-point-properties"></a>Para remover o conteúdo do pacote das propriedades do ponto de distribuição  
 
-1.  在 Configuration Manager 控制台中，单击“管理” 。  
+1.  No console do Configuration Manager, clique em **Administração**.  
 
-2.  在“管理”  工作区中，单击“分发点” ，然后选择要在其中删除内容的分发点。  
+2.  No espaço de trabalho **Administração** , clique em **Pontos de Distribuição**, depois selecione o ponto de distribuição no qual você quer excluir o conteúdo.  
 
-3.  在“主页”  选项卡上的“属性”  组中，单击“属性” 。  
+3.  Na guia **Início** , no grupo **Propriedades** , clique em **Propriedades**.  
 
-4.  单击“内容”  选项卡，选择要删除的内容，单击“删除” ，然后单击“确定” 。  
+4.  Clique na guia **Conteúdo** , selecione o conteúdo a ser removido, clique em **Remover**, e depois clique em **OK**.  
 
-#### <a name="to-remove-content-from-distribution-point-group-properties"></a>从分发点组属性中删除内容  
+#### <a name="to-remove-content-from-distribution-point-group-properties"></a>Para remover o conteúdo das propriedades do grupo de pontos de distribuição  
 
-1.  在 Configuration Manager 控制台中，单击“管理” 。  
+1.  No console do Configuration Manager, clique em **Administração**.  
 
-2.  在“管理”  工作区中，单击“分发点组” ，然后选择要在其中删除内容的分发点组。  
+2.  No espaço de trabalho **Administração** , clique em **Grupos de Pontos de Distribuição**, depois selecione o grupo de pontos de distribuição do qual você quer remover o conteúdo.  
 
-3.  在“主页”  选项卡上的“属性”  组中，单击“属性” 。  
+3.  Na guia **Início** , no grupo **Propriedades** , clique em **Propriedades**.  
 
-4.  单击“内容”  选项卡，选择要删除的内容，单击“删除” ，然后单击“确定” 。  
-
-
-### <a name="validate-content"></a>验证内容
-内容验证过程验证分发点上内容文件的完整性。 你可以按计划启用内容验证，或者可以从分发点和包的属性中手动启动内容验证。  
-
- 当内容验证过程开始时，Configuration Manager 将验证分发点上的内容文件，且如果文件哈希并非分发点上的文件所需的，则 Configuration Manager 将创建一个可在“监视”工作区查看的状态消息。  
-
- 有关配置内容验证计划的详细信息，请参阅[为 System Center Configuration Manager 安装和配置分发点](../../../../core/servers/deploy/configure/install-and-configure-distribution-points.md)主题中的[分发点配置](../../../../core/servers/deploy/configure/install-and-configure-distribution-points.md#bkmk_configs)。  
+4.  Clique na guia **Conteúdo** , selecione o conteúdo a ser removido, clique em **Remover**, e depois clique em **OK**.  
 
 
-#### <a name="to-initiate-content-validation-for-all-content-on-a-distribution-point"></a>启动对分发点上所有内容的内容验证  
+### <a name="validate-content"></a>Validar o conteúdo
+O processo de validação de conteúdo verifica a integridade dos arquivos de conteúdo nos pontos de distribuição. É possível habilitar a validação de conteúdo em um agendamento ou então iniciar manualmente a validação de conteúdo a partir das propriedades dos pontos de distribuição e pacotes.  
 
-1.  在 Configuration Manager 控制台中，单击“管理” 。  
+ Quando o processo de validação de conteúdo começa, o Configuration Manager verifica os arquivos de conteúdo em pontos de distribuição e, se o hash do arquivo não é esperado para os arquivos no ponto de distribuição, o Configuration Manager cria uma mensagem de status que você pode examinar no espaço de trabalho **Monitoramento**.  
 
-2.  在“管理”  工作区中，单击“分发点” ，然后选择要在其中验证内容的分发点。  
+ Para mais informações sobre como configurar o agendamento de validação de conteúdo, confira [Distribution point configurations](../../../../core/servers/deploy/configure/install-and-configure-distribution-points.md#bkmk_configs) (Configurações do ponto de distribuição) no tópico [Install and configure distribution points for System Center Configuration Manager](../../../../core/servers/deploy/configure/install-and-configure-distribution-points.md) (Instalar e configurar pontos de distribuição para o System Center Configuration Manager).  
 
-3.  在“主页”  选项卡上的“属性”  组中，单击“属性” 。  
 
-4.  在“内容”  选项卡上，选择要在其中验证内容的包，单击“验证” ，单击“确定” ，然后单击“确定” 。 内容验证过程将针对分发点上的包启动。  
+#### <a name="to-initiate-content-validation-for-all-content-on-a-distribution-point"></a>Para iniciar a validação de conteúdo de todo o conteúdo em um ponto de distribuição  
 
-5.  要查看内容验证过程的结果，请在“监视”  工作区中展开“分发状态” ，并单击“内容状态”  节点。 将显示每种包类型（例如，应用程序、软件更新包以及启动映像）的内容。 有关监视内容状态的详细信息，请参阅[使用 System Center Configuration Manager 监视分发的内容](../../../../core/servers/deploy/configure/monitor-content-you-have-distributed.md)。  
+1.  No console do Configuration Manager, clique em **Administração**.  
 
-#### <a name="to-initiate-content-validation-for-a-package"></a>针对某个包启动内容验证  
+2.  No espaço de trabalho **Administração** , clique em **Pontos de Distribuição**e selecione o ponto de distribuição no qual você quer validar o conteúdo.  
 
-1.  在 Configuration Manager 控制台中，单击“软件库” 。  
+3.  Na guia **Início** , no grupo **Propriedades** , clique em **Propriedades**.  
 
-2.  在“软件库”  工作区中，针对要验证的内容的类型选择以下步骤之一：  
+4.  Na guia **Conteúdo** , selecione o pacote no qual você quer validar o conteúdo, clique em **Validar**, **OK**e em **OK**. O processo de validação de conteúdo é iniciado para o pacote no ponto de distribuição.  
 
-    -   **应用程序**：展开“应用程序管理” > “应用程序”，然后选择要验证的应用程序。  
+5.  Para exibir os resultados do processo de validação de conteúdo, no espaço de trabalho **Monitoramento** , expanda **Status da Distribuição**e clique no nó **Status do Conteúdo** . O conteúdo de cada tipo de pacote (por exemplo, aplicativo, pacote de atualização de software e imagem de inicialização) é exibido. Para mais informações sobre o monitoramento do status do conteúdo, confira [Monitorar o conteúdo que você distribuiu com o System Center Configuration Manager](../../../../core/servers/deploy/configure/monitor-content-you-have-distributed.md).  
 
-    -   **包**：展开“应用程序管理” > “包”，然后选择要验证的包。  
+#### <a name="to-initiate-content-validation-for-a-package"></a>Para iniciar a validação de conteúdo para um pacote  
 
-    -   **部署包**：展开“软件更新” > “部署包”，然后选择要验证的部署包。  
+1.  No console do Configuration Manager, clique em **Biblioteca de Software**.  
 
-    -   **驱动程序包**：展开“操作系统” > “驱动程序包”，然后选择要验证的驱动程序包。  
+2.  No espaço de trabalho **Biblioteca de Software** , selecione uma das seguintes etapas para o tipo de conteúdo que você quer validar:  
 
-    -   **操作系统映像**：展开“操作系统” > “操作系统映像”，然后选择要验证的操作系统映像。  
+    -   **Aplicativos**: expanda **Gerenciamento de Aplicativos** > **Aplicativos** e selecione o aplicativo que deseja validar.  
 
-    -   **操作系统安装程序**：展开“操作系统” >  “操作系统安装程序”，然后选择要验证的操作系统安装程序。  
+    -   **Pacotes**: expanda **Gerenciamento de Aplicativos** > **Pacotes** e selecione o pacote que deseja validar.  
 
-    -   **启动映像**：展开“操作系统” > “启动映像”，然后选择要预留的启动映像。  
+    -   **Pacotes de Implantação**: expanda **Atualizações do Software** > **Pacotes de Implantação** e selecione o pacote de implantação que deseja validar.  
 
-3.  在“主页”  选项卡上的“属性”  组中，单击“属性” 。  
+    -   **Pacotes de Driver**: expanda **Sistemas Operacionais** > **Pacotes de Driver** e selecione o pacote de driver que deseja validar.  
 
-4.  在“内容位置”  选项卡上，选择要在其中验证内容的分发点或分发点组，单击“验证” ，单击“确定” ，然后单击“确定” 。 内容验证过程将针对所选分发点或分发点组上的内容启动。  
+    -   **Imagens do Sistema Operacional**: expanda **Sistemas Operacionais** > **Imagens do Sistema Operacional** e selecione a imagem do sistema operacional que deseja validar.  
 
-5.  要查看内容验证过程的结果，请在“监视”  工作区中展开“分发状态” ，并单击“内容状态”  节点。 将显示每种包类型（例如，应用程序、软件更新包以及启动映像）的内容。 有关监视内容状态的详细信息，请参阅[使用 System Center Configuration Manager 监视分发的内容](../../../../core/servers/deploy/configure/monitor-content-you-have-distributed.md)。  
+    -   **Instaladores do Sistema Operacional**: expanda **Sistemas Operacionais** >  **Instaladores do Sistema Operacional** e selecione o instalador do sistema operacional que deseja validar.  
+
+    -   **Imagens de Inicialização**: expanda **Sistemas Operacionais** > **Imagens de Inicialização** e selecione a imagem de inicialização que deseja pré-configurar.  
+
+3.  Na guia **Início** , no grupo **Propriedades** , clique em **Propriedades**.  
+
+4.  Na guia **Locais de Conteúdo** , selecione o ponto de distribuição ou grupo de pontos de distribuição no qual você quer validar o conteúdo, clique em **Validar**, **OK**e em **OK**. O processo de validação de conteúdo é iniciado para o conteúdo no ponto de distribuição ou grupo de pontos de distribuição selecionado.  
+
+5.  Para exibir os resultados do processo de validação de conteúdo, no espaço de trabalho **Monitoramento** , expanda **Status da Distribuição**e clique no nó **Status do Conteúdo** . O conteúdo de cada tipo de pacote (por exemplo, aplicativo, pacote de atualização de software e imagem de inicialização) é exibido. Para mais informações sobre o monitoramento do status do conteúdo, confira [Monitorar o conteúdo que você distribuiu com o System Center Configuration Manager](../../../../core/servers/deploy/configure/monitor-content-you-have-distributed.md).  

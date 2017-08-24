@@ -1,6 +1,6 @@
 ---
-title: "准备 Windows Server | Microsoft Docs"
-description: "确保计算机满足用作 System Center Configuration Manager 的站点服务器或站点系统服务器的先决条件。"
+title: Preparar Servidores Windows | Microsoft Docs
+description: "Verifique se um computador atende aos pré-requisitos para uso como um servidor do site ou um servidor de sistema de sites para o System Center Configuration Manager."
 ms.custom: na
 ms.date: 2/14/2017
 ms.prod: configuration-manager
@@ -18,124 +18,124 @@ manager: angrobe
 ms.openlocfilehash: 9b97dedb5d2be0bd2e47260033e6e4361467dc4e
 ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
 ms.translationtype: HT
-ms.contentlocale: zh-CN
+ms.contentlocale: pt-BR
 ms.lasthandoff: 08/07/2017
 ---
-# <a name="prepare-windows-servers-to-support-system-center-configuration-manager"></a>准备 Windows Server 以支持 System Center Configuration Manager
+# <a name="prepare-windows-servers-to-support-system-center-configuration-manager"></a>Preparar Servidores Windows para dar suporte ao System Center Configuration Manager
 
-*适用范围：System Center Configuration Manager (Current Branch)*
+*Aplica-se a: System Center Configuration Manager (Branch Atual)*
 
-在将一台 Windows 计算机作为用于 System Center Configuration Manager 的站点系统服务器使用之前，该计算机必须满足作为站点服务器或站点系统服务器使用的先决条件。  
+Antes de você usar um computador Windows como servidor de sistema de sites para o System Center Configuration Manager, o computador deve atender aos pré-requisitos para o uso pretendido como servidor de site ou servidor de sistema de sites.  
 
--   这些先决条件通常包括一个或多个 Windows 功能或角色，通过使用计算机服务器管理器启用它们。  
+-   Esses pré-requisitos geralmente incluem um ou mais recursos ou funções do Windows, habilitados usando o Gerenciador do Servidor dos computadores.  
 
--   因为在不同的操作系统中启用 Windows 功能和角色的方法是不同的，请参考适用于自己操作系统的文档以获取关于如何设置所用操作系统的详细信息。  
+-   Como o método para permitir que funções e recursos do Windows é diferente entre os sistemas operacionais, confira a documentação do sistema operacional para obter informações detalhadas sobre como configurar o sistema operacional que você usa.  
 
-本文中的信息概述了支持 System Center Configuration Manager 站点系统所需的 Windows 配置类型。 有关特定站点系统角色配置的详细信息，请参阅[站点和站点系统先决条件](/sccm/core/plan-design/configs/site-and-site-system-prerequisites)。
+As informações neste artigo fornecem uma visão geral dos tipos de configurações do Windows que são necessárias para dar suporte a sistemas de sites do Configuration Manager. Para obter detalhes de configuração para funções específicas do sistema de sites, confira [Pré-requisitos de site e sistema de sites](/sccm/core/plan-design/configs/site-and-site-system-prerequisites).
 
-##  <a name="BKMK_WinFeatures"></a>Windows 功能和角色  
- 在计算机上设置 Windows 功能和角色时，可能需要重新启动计算机以完成该配置。 因此，一个不错的做法是，安装 Configuration Manager 站点或站点系统服务器之前，先确定要承载特定站点系统角色的计算机。
-### <a name="features"></a>功能  
- 以下 Windows 功能是某些站点系统服务器必需的，且应在该计算机上安装站点系统角色之前进行设置。  
+##  <a name="BKMK_WinFeatures"></a> Recursos e funções do Windows  
+ Ao configurar funções e recursos do Windows em um computador, pode ser necessário reiniciar o computador para concluir a configuração. Portanto, é uma boa ideia identificar computadores que hospedarão funções do sistema de site específicas antes de instalar um site do Configuration Manager ou servidor de sistema de site.
+### <a name="features"></a>Recursos  
+ Os recursos do Windows a seguir são necessários em determinados servidores de sistema de sites e devem ser configurados antes de instalar uma função de sistema de sites no computador.  
 
--   **NET Framework**：包括  
+-   **.NET Framework**: incluindo  
 
     -   ASP.NET  
-    -   HTTP 激活  
-    -   非 HTTP 激活  
-    -   Windows Communication Foundation (WCF) 服务  
+    -   Ativação HTTP  
+    -   Ativação não HTTP  
+    -   Serviços do WCF (Windows Communication Foundation)  
 
-    不同的站点系统角色需要不同版本的 .NET Framework。  
+    As funções do sistema de site diferentes exigem versões diferentes do .NET Framework.  
 
-    由于.NET Framework 4.0 和更高版本不是向后兼容，无法替换 3.5 及更早版本，在不同的版本被列为必需时，计划在同一台计算机上启用每个版本。  
+    Como o .NET Framework 4.0 e posteriores não são compatíveis para substituir as versões 3.5 e anteriores, quando diferentes versões são listadas como necessárias, é preciso planejar para habilitar cada versão no mesmo computador.  
 
--   后台智能传输服务 **BITS**：管理点需要 BITS（和自动选择的选项）来支持与托管设备之间的通信。  
+-   **BITS (Serviço de Transferência Inteligente em Segundo Plano)**: os pontos de gerenciamento exigem o BITS (e as opções selecionadas automaticamente) para permitir a comunicação com dispositivos gerenciados.  
 
--   **BranchCache**：可以通过 BranchCache 来设置分发点以支持使用 BranchCache 的客户端。  
+-   **BranchCache**: os pontos de distribuição podem ser configurados com o BranchCache para dar suporte a clientes que usam o BranchCache.  
 
--   **重复数据删除**：可以使用重复数据删除设置分发点并从中获益。  
+-   **Eliminação de Duplicação de Dados**: os pontos de distribuição podem ser configurados com a eliminação de duplicação de dados e se beneficiar desse recurso.  
 
--   远程差分压缩 **RDC**：每个托管站点服务器或分发点的计算机都需要 RDC。   
-    RDC 用于生成包签名和执行签名比较。  
+-   **RDC (Compactação Diferencial Remota)**: cada computador que hospeda um servidor de sites ou ponto de distribuição requer RDC.   
+    A RDC é usada para gerar assinaturas de pacote e fazer comparações de assinatura.  
 
-### <a name="roles"></a>角色  
- 需要以下 Windows 角色来支持特定功能（例如软件更新和操作系统部署），而最常见的站点系统角色需要 IIS。  
+### <a name="roles"></a>Funções  
+ as seguintes funções do Windows são necessárias para dar suporte a funcionalidades específicas, como atualizações de software e implantações de sistema operacional, enquanto o IIS é necessário para as funções mais comuns do sistema de sites.  
 
- -   **网络设备注册服务**（在 Active Directory 证书服务之下）：此 Windows 角色是在 Configuration Manager 中使用证书配置文件的先决条件。  
+ -   **Serviço de Registro de Dispositivo de Rede** (em Serviços de Certificados do Active Directory): essa função do Windows é um pré-requisito para usar os Perfis de Certificado no Configuration Manager.  
 
- -   **Web 服务器 IIS**：包括：  
-    -   常见 HTTP 功能 >  
-        -   HTTP 重定向  
-    -   应用程序开发 >  
-        -   .NET 扩展性  
+ -   **Servidor Web (IIS)**: incluindo:  
+    -   Recursos HTTP Comuns >  
+        -   Redirecionamento de HTTP  
+    -   Desenvolvimento de Aplicativos >  
+        -   Extensibilidade .NET  
         -   ASP.NET  
-        -   ISAPI 扩展  
-        -   ISAPI 筛选器  
-    -   管理工具 >  
-        -   IIS 6 管理兼容性  
-        -   IIS 6 元数据库兼容性  
-        -   IIS 6 Windows Management Instrumentation (WMI) 兼容性  
-    -   安全 >  
-        -   请求筛选  
-        -   Windows 身份验证  
+        -   Extensões ISAPI  
+        -   Filtros ISAPI  
+    -   Ferramentas de Gerenciamento >  
+        -   Compatibilidade de gerenciamento do IIS 6  
+        -   Compatibilidade de Metabase do IIS 6  
+        -   Compatibilidade do WMI (Instrumentação de Gerenciamento do Windows) do IIS 6  
+    -   Segurança >  
+        -   Filtragem de Solicitações  
+        -   Autenticação do Windows  
 
- 下列站点系统角色使用一个或多个列出的 IIS 配置：  
-    -   应用程序目录 Web 服务点  
-    -   应用程序目录网站点  
-    -   分发点  
-    -   注册点  
-    -   注册代理点  
-    -   回退状态点  
-    -   管理点  
-    -   软件更新点  
-    -   状态迁移点     
+ As seguintes funções de sistema de sites usam uma ou mais das configurações do IIS listadas:  
+    -   Ponto de serviços Web do Catálogo de Aplicativos  
+    -   Ponto de sites da Web do catálogo de aplicativos  
+    -   Ponto de distribuição  
+    -   Ponto de registro  
+    -   Ponto proxy do registro  
+    -   Ponto de status de fallback  
+    -   Ponto de gerenciamento  
+    -   Ponto de atualização de software  
+    -   Ponto de migração de estado     
 
-    需要的最低 IIS 版本为随站点服务器的操作系统一起提供的版本。  
+    A versão mínima do IIS necessária é a versão fornecida com o sistema operacional do servidor do site.  
 
-    除了这些 IIS 配置之外，可能还需要设置[分发点的 IIS 请求筛选](#BKMK_IISFiltering)。  
+    Além dessas configurações do IIS, você talvez precise configurar [Filtragem de Solicitações do IIS para pontos de distribuição](#BKMK_IISFiltering).  
 
--   **Windows 部署服务**：此角色用于操作系统部署。  
--   **Windows Server 更新服务**：部署软件更新时将需要此角色。  
+-   **Serviços de Implantação do Windows**: essa função é usada com a Implantação de Sistema Operacional.  
+-   **Windows Server Update Services**: essa função é necessária quando você implanta atualizações de software.  
 
-##  <a name="BKMK_IISFiltering"></a>分发点的 IIS 请求筛选  
- 默认情况下，IIS 使用请求筛选来阻止 HTTP 或 HTTPS 通信访问多个文件扩展名和文件夹位置。 在分发点上，这会阻止客户端下载含有被阻止的扩展名或文件夹位置的包。  
+##  <a name="BKMK_IISFiltering"></a> Filtragem de Solicitações do IIS para pontos de distribuição  
+ Por padrão, o IIS usa a Filtragem de Solicitações para bloquear o acesso de várias extensões de nome de arquivo e de locais de pasta por comunicação HTTP ou HTTPS. Em um ponto de distribuição, isso impede que os clientes baixem os pacotes que têm extensões ou locais de pasta bloqueados.  
 
- 如果包源文件含有在 IIS 中被请求筛选配置阻止的扩展名，则必须将请求筛选设置为不阻止这些扩展名。 这可通过在你的分发点计算机上的 IIS 管理器中 [编辑请求筛选功能](https://technet.microsoft.com/library/hh831621.aspx) 来完成。  
+ Quando os arquivos de origem do pacote têm extensões bloqueadas no IIS pela sua configuração de Filtragem de Solicitações, é necessário configurar a Filtragem de Solicitações para permiti-las. Isso é feito [editando o recurso Filtragem de Solicitações](https://technet.microsoft.com/library/hh831621.aspx) no Gerenciador do IIS nos computadores do ponto de distribuição.  
 
- 此外，Configuration Manager 将下列文件扩展名用于包和应用程序。 请确保请求筛选配置不会阻止以下文件扩展名：  
+ Além disso, as seguintes extensões de nome de arquivo são usadas pelo Configuration Manager para pacotes e aplicativos. Verifique se suas configurações da Filtragem de Solicitações não bloqueiam estas extensões de arquivo:  
 
 -   .PCK  
 -   .PKG  
 -   .STA  
 -   .TAR  
 
-例如，软件部署的源文件可能包含名为 **bin** 的文件夹，或者包含具有 **.mdb** 文件扩展名的文件。  
+Por exemplo, arquivos de origem para uma implantação de software podem incluir uma pasta chamada **bin** ou ter um arquivo com a extensão de nome de arquivo **.mdb**.  
 
--   默认情况下，IIS 请求筛选会阻止对这些元素的访问（**bin** 作为隐藏段被阻止，**.mdb** 作为文件扩展名被阻止）。  
+-   Por padrão, a Filtragem de Solicitações do IIS bloqueia o acesso a esses elementos (**bin** é bloqueado como um segmento oculto e **.mdb** é bloqueado como uma extensão de nome de arquivo).  
 
--   在分发点上使用默认的 IIS 配置时，使用 BITS 的客户端不能从分发点下载此软件部署，并指示它们正在等待内容。  
+-   Quando você usa a configuração padrão do IIS em um ponto de distribuição, os clientes que usam BITS falham ao baixar essa implantação de software do ponto de distribuição e indicam que estão aguardando conteúdo.  
 
--   若要允许客户端下载此内容，请在每个适用的分发点上编辑 IIS 管理器中的“请求筛选”，以允许访问所部署的包和应用程序中的文件扩展名和文件夹。  
+-   Para permitir que os clientes baixem esse conteúdo, em cada ponto de distribuição aplicável, edite **Filtragem de Solicitações** no Gerenciador do IIS para permitir o acesso a extensões de arquivos e pastas que estão em pacotes e aplicativos que você implanta.  
 
 > [!IMPORTANT]  
->  对请求筛选器进行编辑会增大计算机的受攻击面。  
+>  As edições feitas no Filtro de Solicitações podem aumentar a superfície de ataque do computador.  
 >   
->  -   在服务器级别所做的编辑适用于服务器上的所有网站。  
-> -   对单独的网站进行的编辑仅适用于该网站。  
+>  -   As edições feitas no nível do servidor aplicam-se a todos os sites no servidor.  
+> -   As edições feitas em sites individuais aplicam-se apenas ao site.  
 >   
->  最佳安全方案是在专用 Web 服务器上运行 Configuration Manager。 如果必须在 Web 服务器上运行其他应用程序，请使用 Configuration Manager 的自定义网站。 有关详细信息，请参阅 [System Center Configuration Manager 中的站点系统服务器网站](../../../core/plan-design/network/websites-for-site-system-servers.md)。  
+>  A prática recomendada de segurança é executar o Configuration Manager em um servidor Web dedicado. Se precisar executar outros aplicativos no servidor Web, use um site da Web personalizado para o Configuration Manager. Para obter informações, consulte [Sites para servidores de sistema de sites no System Center Configuration Manager](../../../core/plan-design/network/websites-for-site-system-servers.md).  
 
-## <a name="http-verbs"></a>HTTP 谓词
-**管理点：**若要确保客户端与管理点通信成功，请确保管理点服务器允许使用以下 HTTP 谓词：  
+## <a name="http-verbs"></a>Verbos HTTP
+**Pontos de gerenciamento:** para garantir que os clientes possam se comunicar com êxito com um ponto de gerenciamento, no servidor de ponto de gerenciamento, verifique se os seguintes verbos HTTP são permitidos:  
  - GET
  - POST
  - CCM_POST
  - HEAD
  - PROPFIND
 
-**分发点：**分发点需要以下 HTTP 谓词：
+**Pontos de distribuição:** pontos de distribuição requerem os seguintes verbos HTTP como permitidos:
  - GET
  - HEAD
  - PROPFIND
 
-有关如何配置请求筛选的信息，请参阅 TechNet 上的[IIS 中的配置请求筛选](https://technet.microsoft.com/library/hh831621.aspx#Verbs)或适用于托管管理点的 Windows Server 版本的类似文档。
+Para saber mais sobre como configurar a filtragem de solicitações, confira [Configurar filtragem de solicitações no IIS](https://technet.microsoft.com/library/hh831621.aspx#Verbs) no TechNet ou a documentação semelhante que se aplica à versão do Windows Server que hospeda o ponto de gerenciamento.

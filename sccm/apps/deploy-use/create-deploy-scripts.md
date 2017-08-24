@@ -1,6 +1,6 @@
 ---
-title: "使用 Configuration Manager 创建和运行脚本 | Microsoft Docs"
-description: "使用 Configuration Manager 在客户端设备上创建和运行脚本。"
+title: Criar e executar scripts com o Configuration Manager | Microsoft Docs
+description: Criar e executar scripts em dispositivos cliente com o Configuration Manager.
 ms.custom: na
 ms.date: 08/09/2017
 ms.prod: configuration-manager
@@ -18,101 +18,101 @@ manager: angrobe
 ms.openlocfilehash: ed84f7900eee5c04728d0e4d1b46027c36327bec
 ms.sourcegitcommit: b41d3e5c7f0c87f9af29e02de3e6cc9301eeafc4
 ms.translationtype: HT
-ms.contentlocale: zh-CN
+ms.contentlocale: pt-BR
 ms.lasthandoff: 08/11/2017
 ---
-# <a name="create-and-run-powershell-scripts-from-the-configuration-manager-console"></a>从 Configuration Manager 控制台创建并运行 PowerShell 脚本
+# <a name="create-and-run-powershell-scripts-from-the-configuration-manager-console"></a>Criar e executar scripts do PowerShell do console do Configuration Manager
 
-*适用范围：System Center Configuration Manager (Current Branch)*
+*Aplica-se a: System Center Configuration Manager (Branch Atual)*
 
-在 Configuration Manager 中，除了使用软件包和程序部署脚本之外，还可以使用以下功能执行下面的各项操作：
+No Configuration Manager, além de usar pacotes e programas para implantar scripts, você pode usar a seguinte funcionalidade para executar as seguintes ações:
 
-- 将 PowerShell 脚本导入到 Configuration Manager
-- 从 Configuration Manager 控制台编辑脚本（仅针对未签名的脚本）
-- 将脚本标记为“已批准”或“已拒绝”，以提高安全性
-- 在 Windows 客户端 PC 和本地托管的 Windows PC 的集合上运行脚本。 不过，你不需要部署脚本，它们可以在客户端设备上近乎实时地运行。
-- 在 Configuration Manager 控制台中检查脚本返回的结果。
+- Importar scripts do PowerShell no Configuration Manager
+- Editar os scripts no console do Configuration Manager (apenas para scripts não assinados)
+- Marcar scripts como aprovados ou negados, a fim de melhorar a segurança
+- Execute scripts em coleções de computadores de cliente com Windows e em computadores com Windows gerenciados localmente. Você não implanta os scripts, em vez disso, eles são executados quase em tempo real nos dispositivos cliente.
+- Examine os resultados retornados pelo script no console do Configuration Manager.
 
 >[!TIP]
->在该 Configuration Manager 版本中，脚本是预发布功能。 要启用脚本，请参阅 [System Center Configuration Manager 中的预发布功能](/sccm/core/servers/manage/pre-release-features)。
+>Nesta versão do Configuration Manager, os scripts são um recurso de pré-lançamento. Para habilitar os scripts, confira [Recursos de pré-lançamento no System Center Configuration Manager](/sccm/core/servers/manage/pre-release-features).
 
-## <a name="prerequisites"></a>先决条件
+## <a name="prerequisites"></a>Pré-requisitos
 
-要运行 PowerShell 脚本，客户端必须运行 PowerShell 3.0 或更高版本。 但是，如果运行的脚本包含 PowerShell 较高版本的功能，则运行该脚本的客户端必须运行该版本。
+Para executar scripts do PowerShell, o cliente deve executar o PowerShell versão 3.0 ou posterior. No entanto, se um script executado contiver funcionalidades de uma versão posterior do PowerShell, o cliente no qual você executa o script deve estar executando essa versão.
 
-Configuration Manager 客户端必须从版本 1706 运行客户端，否则稍后才能运行脚本。
+Clientes do Configuration Manager devem estar executando o cliente da versão 1706 ou posterior para executar scripts.
 
-要使用这些脚本，你必须是相应 Configuration Manager 安全角色的成员。
+Para usar scripts, você deve ser membro da função de segurança apropriada do Configuration Manager.
 
-- 导入并编写脚本 - 对于“符合性设置管理员”安全角色中的“SMS 脚本”，你的帐户必须具有“创建”权限。
-- 批准或拒绝脚本 - 对于“符合性设置管理员”安全角色中的“SMS 脚本”，你的帐户必须具有“批准”权限。
-- 运行脚本 - 对于“符合性设置管理员”安全角色中的“集合”，你的帐户必须具有“运行脚本”权限。
+- Para importar e criar scripts – sua conta deve ter permissões de **Criação** para **Scripts de SMS** na função de segurança **Gerenciador de Configurações de Conformidade**.
+- Para aprovar ou negar scripts – sua conta deve ter permissões de **Aprovação** para **Scripts de SMS** na função de segurança **Gerenciador de Configurações de Conformidade**.
+- Para executar scripts – sua conta deve ter permissões de **Execução de Script** para **Coleções** na função de segurança **Gerenciador de Configurações de Conformidade**.
 
-有关 Configuration Manager 安全角色的详细信息，请参阅[基于角色的管理基础](/sccm/core/understand/fundamentals-of-role-based-administration)。
+Para saber mais sobre as funções de segurança do Configuration Manager, confira [Conceitos básicos da administração baseada em funções para o System Center Configuration Manager](/sccm/core/understand/fundamentals-of-role-based-administration).
 
-默认情况下，用户不能批准他们创建的脚本。 由于这些脚本功能非常强大、用途多样，并且可以部署到多个设备，因此你可以将脚本创建者和脚本批准者之间的角色相互分开。 这些角色可以额外提升安全级别，避免在没有监督的情况下运行脚本。 你可以关闭此辅助批准，方便进行测试。
+Por padrão, os usuários não podem aprovar um script que criaram. Como os scripts são poderosos, versáteis e podem ser implantados em vários dispositivos, você pode separar as funções entre a pessoa que cria o script, e a pessoa que aprova o script. Essas funções proporcionam um nível a mais de segurança contra a execução de um script sem supervisão. Você pode desativar esta aprovação secundária, para facilitar o teste.
 
-## <a name="allow-users-to-approve-their-own-scripts"></a>允许用户批准他们自己的脚本
+## <a name="allow-users-to-approve-their-own-scripts"></a>Permitir que os usuários aprovem seus próprios scripts
 
-1. 在 Configuration Manager 控制台中，单击“管理” 。
-2. 在“管理”工作区中，展开“站点配置”，然后单击“站点”。
-3. 在站点列表中，选择你的站点，然后在“主页”选项卡的“站点”组中，单击“层次结构设置”。
-4. 在“层次结构设置属性”对话框的“常规”选项卡中，清除“不允许脚本创建者批准他们自己的脚本”复选框。
+1. No console do Configuration Manager, clique em **Administração**.
+2. No espaço de trabalho **Administração** , expanda **Configuração do Site**e clique em **Sites**.
+3. Na lista de sites, escolha seu site e, depois, na guia **Início**, no grupo **Sites**, clique em **Configurações de Hierarquia**.
+4. Na guia **Geral** da caixa de diálogo **Propriedades das Configurações de Hierarquia**, desmarque a caixa de seleção **Não permitir que os autores de script aprovem seus próprios scripts**.
 
-## <a name="import-and-edit-a-script"></a>导入和编辑脚本
+## <a name="import-and-edit-a-script"></a>Importar e editar um script
 
-1. 在 Configuration Manager 控制台中，单击“软件库”。
-2. 在“软件库”工作区中，单击“脚本”。
-3. 在“主页”选项卡的“创建”组中，单击“创建脚本”。
-4. 在“创建脚本”向导的“脚本”页上，配置以下设置：
-    - 脚本名称 - 输入脚本的名称。 虽然可以创建具有相同名称的多个脚本，但使用重复名称会让你难以在 Configuration Manager 控制台中查找所需的脚本。
-    - 脚本语言 - 目前，仅支持 PowerShell 脚本。
-    - 导入 - 将 PowerShell 脚本导入到控制台。 该脚本将在“脚本”字段中显示。
-    - 清除 - 从“脚本”字段中删除当前脚本。
-    - 脚本 - 显示当前导入的脚本。 你可以在此字段中根据需要编辑脚本。
-5. 完成向导。 新脚本将显示在“脚本”列表，且状态显示为“正等待审批”。 在客户端设备上运行此脚本之前，必须先批准它。
+1. No console do Configuration Manager, clique em **Biblioteca de Software**.
+2. No espaço de trabalho **Biblioteca de Software**, clique em **Scripts**.
+3. Na guia **Início**, no grupo **Criar**, clique em **Criar Script**.
+4. Na página **Script** do assistente para Criar **Script**, configure o seguinte:
+    - **Nome do Script** - insira um nome para o script. Embora você possa criar vários scripts com o mesmo nome, o uso de nomes duplicados dificultará mais a localização do script necessário no console do Configuration Manager.
+    - **Linguagem do script** – Atualmente, apenas scripts do PowerShell têm suporte.
+    - **Importar** - importe um script do PowerShell no console. O script é exibido no campo **Script**.
+    - **Limpar** – Remove o script atual do campo Script.
+    - **Script** - exibe o script importado no momento. Edite o script neste campo conforme o necessário.
+5. Conclua o assistente. O novo script é exibido na lista **Script** com um status de **Aguardando aprovação**. Antes de executar esse script em dispositivos cliente, você deve aprová-lo.
 
-### <a name="script-examples"></a>脚本示例
+### <a name="script-examples"></a>Exemplos de script
 
-以下示例对你希望用于此功能的脚本进行了说明。
+Aqui estão alguns exemplos que ilustram os scripts que talvez você queira usar com esse recurso.
 
-#### <a name="create-a-folder"></a>创建一个文件夹
+#### <a name="create-a-folder"></a>Criar uma pasta
 
-New-Item "c:\scripts" - 键入文件名称 
+*New-Item "c:\scripts" – digite o nome da pasta* 
  
  
-#### <a name="create-a-file"></a>创建文件
+#### <a name="create-a-file"></a>Criar um arquivo
 
-New-Item c:\scripts\new_file.txt - 键入文件名称
+*New-Item c:\scripts\new_file.txt – digite o nome do arquivo*
 
 
-## <a name="approve-or-deny-a-script"></a>批准或拒绝脚本
+## <a name="approve-or-deny-a-script"></a>Aprovar ou negar um script
 
-在可以运行脚本之前，必须先通过审批。 批准脚本：
+Antes de poder executar um script, ele deve ser aprovado. Para aprovar um script:
 
-1. 在 Configuration Manager 控制台中，单击“软件库”。
-2. 在“软件库”工作区中，单击“脚本”。
-3. 在“脚本”列表中，选择想要批准或拒绝的脚本，然后在“主页”选项卡“脚本”组中，单击“批准/拒绝”。
-4. 在“批准或拒绝脚本”对话框中，“批准”或“拒绝”脚本，并根据需要输入有关你决定的批注。 如果拒绝脚本，它将无法在客户端设备上运行。
-5. 完成向导。 在“脚本”列表中可以看到“批准状态”列中发生的变化，具体要取决于你执行的操作。
+1. No console do Configuration Manager, clique em **Biblioteca de Software**.
+2. No espaço de trabalho **Biblioteca de Software**, clique em **Scripts**.
+3. Na lista **Script**, escolha o script que você quer aprovar ou negar e, na guia **Início**, no grupo **Script**, clique em **Aprovar/Negar**.
+4. Na caixa de diálogo **Aprovar ou negar script**, **Aprove** ou **Negue** o script e, opcionalmente, insira um comentário sobre a sua decisão. Se você negar um script, ele não poderá ser executado em dispositivos cliente.
+5. Conclua o assistente. Na lista **Script**, você verá a coluna **Estado de Aprovação** mudar dependendo da ação executada.
 
-## <a name="run-a-script"></a>运行脚本
-脚本经批准后，就可以在你选择的集合上运行了。
+## <a name="run-a-script"></a>Executar um script
+Após a aprovação de um script, ele poderá ser executado em uma coleção que você escolher.
 
-1. 在 Configuration Manager 控制台中，单击“资产和符合性”。
-2. 在“资产和符合性”工作区中，单击“设备集合”。
-3. 在“设备集合”列表中，单击要在其中运行脚本的设备集合。
-4. 在“主页”选项卡的“所有系统”组中，单击“运行脚本”。
-5. 在“运行脚本”向导的“脚本”页，从列表中选择一个脚本。 仅显示已批准的脚本。
-6. 单击“下一步”，然后完成向导。
+1. No console do Configuration Manager, clique em **Ativos e Conformidade**.
+2. No espaço de trabalho Ativos e Conformidade, clique em **Coleções de Dispositivos**.
+3. Na lista **Coleções de Dispositivos**, clique na coleção de dispositivos na qual você deseja executar o script.
+4. Na guia **Início**, no grupo **Todos os Sistemas**, clique em **Executar Script**.
+5. Na página **Script** do assistente **Executar Script**, escolha um script na lista. Somente scripts aprovados são exibidos.
+6. Clique em **Avançar** e conclua o assistente.
 
 >[!IMPORTANT]
->该脚本的给定运行时间为一小时。 如果它在此时间段内没有运行（如电脑已关闭的情况），则必须再次运行它。
+>O script recebe um período de uma hora para execução. Se ele não for executado (por exemplo, se o computador for desligado) nesse período, você deverá executá-lo novamente.
 
-## <a name="next-steps"></a>后续步骤
+## <a name="next-steps"></a>Próximas etapas
 
-在客户端设备中运行脚本后，使用此过程来监视操作成功与否。
+Depois de executar um script nos dispositivos cliente, use este procedimento para monitorar o sucesso da operação.
 
-1. 在 Configuration Manager 控制台中，单击“监视”。
-2. 在“监视”工作区中，单击“脚本状态”。
-3. 在“脚本状态”列表中，可以查看在客户端设备上运行的每个脚本的结果。 脚本退出代码为“0”通常表示脚本已成功运行。
+1. No console do Configuration Manager, clique em **Monitoramento**.
+2. No espaço de trabalho **Monitoramento**, clique em **Status do Script**.
+3. Na lista **Status do Script**, veja os resultados de cada script executado em dispositivos cliente. Um código de saída do script de **0** geralmente indica que o script foi executado com êxito.

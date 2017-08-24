@@ -1,6 +1,6 @@
 ---
-title: "自定义数据库文件位置 | Microsoft Docs"
-description: "了解如何为 SQL Server 数据库文件指定自定义位置。"
+title: "Localizações de arquivos de banco de dados personalizadas | Microsoft Docs"
+description: Saiba como especificar locais personalizados para arquivos de banco de dados do SQL Server.
 ms.custom: na
 ms.date: 10/06/2016
 ms.reviewer: na
@@ -17,28 +17,28 @@ manager: angrobe
 ms.openlocfilehash: cfac2c03c1b71b40c68d8acd5fbd96c5e98caaa9
 ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
 ms.translationtype: HT
-ms.contentlocale: zh-CN
+ms.contentlocale: pt-BR
 ms.lasthandoff: 08/07/2017
 ---
-# <a name="custom-locations-for-system-center-configuration-manager-site-database-files"></a>System Center Configuration Manager 站点数据库文件的自定义位置
+# <a name="custom-locations-for-system-center-configuration-manager-site-database-files"></a>Locais personalizados para os arquivos do banco de dados do site do System Center Configuration Manager
 
-*适用范围：System Center Configuration Manager (Current Branch)*
+*Aplica-se a: System Center Configuration Manager (Branch Atual)*
 
- System Center Configuration Manager 支持 SQL Server 数据库文件的自定义位置。  
+ O System Center Configuration Manager dá suporte a locais personalizados para arquivos de banco de dados do SQL Server.  
 
 > [!NOTE]  
->  使用 SQL Server 群集时，用于指定非默认文件位置的选项不可用。  
+>  A opção de especificar locais de arquivo não padrão não está disponível quando você usa um cluster do SQL Server.  
 
- 在新的主站点或管理中心站点的**安装过程中**，你可以：  
+ **Durante a instalação** de um novo site primário ou site de administração central, você pode:  
 
--   **指定站点数据库的非默认文件位置**：然后 Configuration Manager 安装程序会创建使用这些位置的站点数据库。  
+-   **Especificar locais de arquivo não padrão para o banco de dados do site**: a instalação do Configuration Manager cria o banco de dados do site usando esses locais.  
 
--   **指定使用预创建的 SQL Server 数据库，该库使用自定义文件位置**：然后 Configuration Manager 安装程序使用该预创建的数据库及其预配置的文件位置。  
+-   **Especificar o uso de um banco de dados do SQL Server criado previamente que usa locais de arquivo personalizados**: a instalação do Configuration Manager usa esse banco de dados criado previamente e seus locais de arquivos pré-configurados.  
 
-**安装之后**，可以更改站点数据库文件的位置。 这需要你停止该站点并在 SQL Server 中编辑文件位置：  
+**Após a instalação** você pode alterar o local dos arquivos de banco de dados do site. Isso exige que você pare o site e edite o local do arquivo no SQL Server:  
 
--   在 Configuration Manager 站点服务器上，停止 **SMS_Executive** 服务。  
+-   No servidor do site do Configuration Manager pare o serviço **SMS_Executive**.  
 
--   请使用适用于你的 SQL Server 版本的文档，了解如何移动用户数据库。 例如，如果使用 SQL Server 2014，请参阅 TechNet 上的 [移动用户数据库](https://technet.microsoft.com/library/ms345483\(v=sql.120\).aspx) 。  
+-   Siga a documentação para a versão do SQL Server que você usa para orientá-lo sobre como mover um banco de dados de usuário. Por exemplo, se você usa o SQL Server 2014, consulte [Mover bancos de dados de usuário](https://technet.microsoft.com/library/ms345483\(v=sql.120\).aspx) no TechNet.  
 
--   完成数据库文件移动后，在 Configuration Manager 站点服务器上重启 **SMS_Executive** 服务。  
+-   Depois de completar a movimentação de arquivos de banco de dados, reinicie o serviço **SMS_Executive** no servidor de sites do Configuration Manager.  

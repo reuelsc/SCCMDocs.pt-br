@@ -1,6 +1,6 @@
 ---
-title: "安装 Updates Publisher | Microsoft Docs"
-description: "在环境中安装 System Center Updates Publisher"
+title: Instalar o Updates Publisher | Microsoft Docs
+description: Instalar o System Center Updates Publisher em seu ambiente
 ms.custom: na
 ms.date: 07/03/2017
 ms.prod: configuration-manager
@@ -18,106 +18,106 @@ robots: NOINDEX, NOFOLLOW
 ms.openlocfilehash: 5c95a8b99b91531773392a77d25377465079b070
 ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
 ms.translationtype: HT
-ms.contentlocale: zh-CN
+ms.contentlocale: pt-BR
 ms.lasthandoff: 08/07/2017
 ---
-# <a name="install-updates-publisher"></a>安装 Updates Publisher
+# <a name="install-updates-publisher"></a>Instalar o Updates Publisher
 
-*适用范围：System Center Updates Publisher*
+*Aplica-se ao: System Center Updates Publisher*
 
-本主题介绍了如何获取、安装和设置 Updates Publisher，以便在环境中使用。
-
-
-## <a name="prerequisites-and-limitations"></a>先决条件和限制
-下面各部分详细介绍了 Updates Publisher 的安装和使用要求，以及使用限制或已知问题。
-
-### <a name="operating-systems"></a>操作系统
-在以下版本的 64 位操作系统上安装和运行 Updates Publisher。 没有最低累积更新或 Service Pack 要求。
-
--   Windows Server 2016（Standard、Datacenter）
--   Windows Server 2012 R2（Standard、Datacenter）
--   Windows 10（专业版、教育版、专业教育版、企业版）
--   Windows 8.1（专业版、企业版）
-
-### <a name="prerequisites"></a>先决条件
-运行 Updates Publisher 的计算机必须满足以下要求：
-
--   **64 位操作系统**：安装 Updates Publisher 的计算机必须运行 64 位操作系统。
--   **WSUS 4.0 或更高版本**：
-    -   为了满足此要求，在 Windows Server 上，安装默认的管理控制台。
-    -   对于 Windows 10 和 Windows 8.1，安装[适用于 Windows 操作系统的远程服务器管理工具 (RSAT)](https://support.microsoft.com/help/2693643/remote-server-administration-tools-rsat-for-windows-operating-systems)。 这会安装使用 Updates Publisher 所必需的支持（*API 和 PowerShell cmdlet* 以及*用户界面管理控制台*）。
--   **权限**：
-    -   安装：本地管理员
-    -   大多数操作：本地用户
-    -   发布或涉及 WSUS 的操作：WSUS 服务器上 WSUS 管理员组的成员。
-
-### <a name="supported-languages"></a>支持的语言
-虽然 Updates Publisher 目前只有英文版，但也可以管理其他语言的更新。 语言支持因任务（如发布、创建或编辑更新）而异。
-
-导出或发布更新时，Updates Publisher 会根据安装 Updates Publisher 的计算机的区域设置显示软件更新的标题和说明。
-
-例如，假设创建的软件更新具有英语和西班牙语标题。
-
--   如果在默认区域设置为英语的计算机上创建此更新，那么标题和说明会以英语显示。
--   然后，如果将此更新导出或发布到区域设置为西班牙语的计算机上，那么相应计算机会以西班牙语显示标题和说明。
-
-### <a name="publishing"></a>发布
-发布软件更新时，可以指定软件更新二进制文件的语言。 还可以为二进制文件指定中性语言。 支持以下语言：
-
--   阿拉伯语
--   中文（香港特别行政区）
--   和 SharePoint 2010 显示的“中文(繁体)”
--   中文（简体）
--   捷克语
--   丹麦语
--   荷兰语
--   英语
--   芬兰语
--   法语
--   德语
--   希腊语
--   希伯来语
--   匈牙利语
--   意大利语
--   日语
--   朝鲜语
--   挪威语
--   波兰语
--   葡萄牙语
--   葡萄牙语（巴西）
--   俄语
--   西班牙语
--   瑞典语
--   土耳其语
-
-### <a name="software-update-titles-and-descriptions"></a>软件更新标题和说明
-软件更新的标题和说明支持以下语言。
-
--   和 SharePoint 2010 显示的“中文(繁体)”
--   中文（简体）
--   英语
--   法语
--   德语
--   意大利语
--   日语
--   朝鲜语
--   葡萄牙语（巴西）
--   俄语
--   西班牙语
+As informações neste tópico podem ajudar você a obter, instalar e configurar o Updates Publisher para uso em seu ambiente.
 
 
+## <a name="prerequisites-and-limitations"></a>Pré-requisitos e limitações
+As seções a seguir detalham os requisitos de instalação e uso do Updates Publisher, e as limitações ou problemas conhecidos de seu uso.
 
-## <a name="install-updates-publisher"></a>安装 Updates Publisher
-从 [Microsoft 下载中心](https://go.microsoft.com/fwlink/?linkid=847967)获取用于安装 System Center Updates Publisher 的 **UpdatesPubliser.msi**。
+### <a name="operating-systems"></a>Sistemas operacionais
+Instale e execute o Updates Publisher em uma edição de 64 bits dos sistemas operacionais a seguir. Não há requisitos mínimos de service pack ou pacote cumulativo de atualizações.
 
-若要安装 Updates Publisher，在满足*先决条件*的计算机上运行 **UpdatesPublisher.msi**。 安装程序会创建以下文件夹，以包含运行 Updates Publisher 所必需的文件：*&lt;path&gt;\Program Files\Microsoft\UpdatesPublisher*。
+-   Windows Server 2016 (Standard, Datacenter)
+-   Windows Server 2012 R2 (Standard, Datacenter)
+-   Windows 10 (Pro, Education, Pro Education, Enterprise)
+-   Windows 8.1 (Professional, Enterprise)
 
-因为此文件夹包含使用 Updates Publisher 所必需的全部文件，所以可以将此文件夹及其内容复制到新的位置或计算机中，然后从相应位置使用 Updates Publisher。 不过，新的位置或计算机必须满足运行 Updates Publisher 的先决条件。
+### <a name="prerequisites"></a>Pré-requisitos
+Os itens a seguir são necessários no computador que executa o Updates Publisher.
 
-安装完成后，运行“UpdatesPublisher”文件夹中的 **UpdatesPublisher.exe**，启动 Updates Publisher。
+-   **Sistema operacional de 64 bits**: o computador no qual você instala o Updates Publisher deve executar um sistema operacional de 64 bits.
+-   **WSUS 4.0 ou posterior**:
+    -   No Windows Server, instale o Console de Administração padrão para atender a esse requisito.
+    -   Para Windows 10 e Windows 8.1, instale [RSAT (Ferramentas de Administração de Servidor Remoto) para sistemas operacionais Windows](https://support.microsoft.com/help/2693643/remote-server-administration-tools-rsat-for-windows-operating-systems). Isso instala o suporte necessário para usar o Updates Publisher (*cmdlets do PowerShell e API*, e *Console de Gerenciamento de Interface do Usuário*).
+-   **Permissões**:
+    -   Instalação: administrador local
+    -   A maioria das operações: usuário local
+    -   Publicação, ou operações que envolvem o WSUS: membro do grupo de administradores de WSUS no servidor do WSUS.
 
-## <a name="next-steps"></a>后续步骤
- 安装 Updates Publisher 后，我们建议为 Updates Publisher [配置选项](updates-publisher-options.md)。 必须先配置一些选项，然后才能使用 Updates Publisher 的一些功能。
+### <a name="supported-languages"></a>Idiomas com suporte
+O Updates Publisher está disponível somente em inglês, mas pode gerenciar atualizações para outros idiomas. O suporte ao idioma depende da tarefa, como publicação, criação ou edição das atualizações.
 
- 不过，如果要使用默认功能，并且不打算将更新部署到更新服务器或受管理设备，可以直接跳到[管理软件更新目录](updates-publisher-catalogs.md)或[创建软件更新](create-updates-with-updates-publisher.md)，创建你自己的更新目录。
+Ao exportar ou publicar atualizações, o Updates Publisher exibe o título e a descrição da atualização de software com base na localidade do computador onde o Updates Publisher está instalado.
+
+Por exemplo, crie uma atualização de software que tem um título em inglês e espanhol.
+
+-   Se você criar a atualização em um computador cuja localidade é inglês, por padrão, você verá o título e a descrição em inglês.
+-   Se, em seguida, você exportar ou publicar essa atualização em um computador cuja localidade é o espanhol, você verá o título e a descrição em espanhol nesse computador.
+
+### <a name="publishing"></a>Publicando
+Quando você publica atualizações de software, pode especificar o idioma do arquivo binário de atualização de software. Você também pode especificar que a localidade do binário é neutra. Os idiomas a seguir têm suporte:
+
+-   Árabe
+-   Chinês (RAE de Hong Kong)
+-   Chinês (tradicional)
+-   Chinês (simplificado)
+-   Tcheco
+-   Dinamarquês
+-   Holandês
+-   Inglês
+-   Finlandês
+-   Francês
+-   Alemão
+-   Grego
+-   Hebraico
+-   Húngaro
+-   Italiano
+-   Japonês
+-   Coreano
+-   Norueguês
+-   Polonês
+-   Português
+-   Português (Brasil)
+-   Russo
+-   Espanhol
+-   Sueco
+-   Turco
+
+### <a name="software-update-titles-and-descriptions"></a>Descrições e títulos de atualização de software
+Os idiomas a seguir têm suporte para títulos e descrições de atualização de software.
+
+-   Chinês (tradicional)
+-   Chinês (simplificado)
+-   Inglês
+-   Francês
+-   Alemão
+-   Italiano
+-   Japonês
+-   Coreano
+-   Português (Brasil)
+-   Russo
+-   Espanhol
+
+
+
+## <a name="install-updates-publisher"></a>Instalar o Updates Publisher
+Obtenha o **UpdatesPubliser.msi** para a instalação do System Center Updates Publisher no [Centro de Download da Microsoft](https://go.microsoft.com/fwlink/?linkid=847967).
+
+Para instalar o Updates Publisher, execute **UpdatesPublisher.msi** em um computador que atenda aos *pré-requisitos*. O instalador cria a pasta a seguir para conter os arquivos necessários para executar o Updates Publisher: *&lt;caminho&gt;\Arquivos de Programas\Microsoft\UpdatesPublisher*.
+
+Como essa pasta contém todos os arquivos necessários para usar o Updates Publisher, você pode copiar a pasta e seu conteúdo para um novo local ou outro computador, e usar o Updates Publisher nesse local. No entanto, o novo local ou computador deve atender aos pré-requisitos para execução do Updates Publisher.
+
+Após a conclusão da instalação, execute **UpdatesPublisher.exe** na pasta *UpdatesPublisher* para iniciar o Updates Publisher.
+
+## <a name="next-steps"></a>Próximas etapas
+ Depois de instalar o Updates Publisher, recomendamos que você [configure as opções](updates-publisher-options.md) para o Updates Publisher. Você deve configurar algumas opções antes de poder usar alguns recursos do Updates Publisher.
+
+ No entanto, se você quiser usar os padrões e não planeja implantar atualizações em um servidor de atualização ou em dispositivos gerenciados, acesse diretamente [Gerenciar catálogos de atualização de software](updates-publisher-catalogs.md) ou [Criar atualizações de software](create-updates-with-updates-publisher.md) e crie catálogos de atualização de sua preferência.
 

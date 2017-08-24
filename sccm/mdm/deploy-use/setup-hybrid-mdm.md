@@ -1,6 +1,6 @@
 ---
-title: "设置混合 MDM | Microsoft Docs"
-description: "使用 Configuration Manager 和 Intune 设置混合设备注册。"
+title: "Configure o MDM híbrido | Microsoft Docs"
+description: "Configure o registro de dispositivo híbrido com o Configuration Manager e o Intune."
 ms.custom: na
 ms.date: 03/05/2017
 ms.prod: configuration-manager
@@ -18,33 +18,33 @@ manager: angrobe
 ms.openlocfilehash: c494fcc38955571c06507278a1ae88e5777b5708
 ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
 ms.translationtype: HT
-ms.contentlocale: zh-CN
+ms.contentlocale: pt-BR
 ms.lasthandoff: 08/07/2017
 ---
-# <a name="setup-hybrid-mobile-device-management-mdm-with-system-center-configuration-manager-and-microsoft-intune"></a>使用 System Center Configuration Manager 和 Microsoft Intune 设置混合移动设备管理 (MDM)
+# <a name="setup-hybrid-mobile-device-management-mdm-with-system-center-configuration-manager-and-microsoft-intune"></a>Configurar o MDM (gerenciamento de dispositivo móvel) híbrido com o System Center Configuration Manager e com o Microsoft Intune
 
-*适用范围：System Center Configuration Manager (Current Branch)*
+*Aplica-se a: System Center Configuration Manager (Branch Atual)*
 
 
-必须先向 Intune 注册 iOS、Windows 和 Android 设备，然后才能使用 Configuration Manager 管理它们。 按照以下步骤可使用 Intune，通过 Configuration Manager 设置混合设备注册。 通过完成以下步骤，你会为用户启用“自带设备办公”(BYOD) 注册。 这些步骤也是[注册 BYOD设备](enroll-hybrid-ios-mac.md)和[注册公司拥有的设备](enroll-company-owned-devices.md)的先决条件。
+Antes de poder gerenciar dispositivos iOS, Windows e Android com o Configuration Manager, eles devem ser registrados com o Intune. Use as etapas a seguir para configurar o registro de dispositivo híbrido com o Configuration Manager usando o Intune. Ao concluir as etapas a seguir, você habilitará o registro de BYOD (“traga seu próprio dispositivo”) para seus usuários. Essas etapas também são pré-requisitos para [registrar dispositivos BYOD](enroll-hybrid-ios-mac.md) e [registrar dispositivos da empresa](enroll-company-owned-devices.md).
 
- |步骤|详细信息|  
+ |Etapas|Detalhes|  
  |-----------|-------------|  
- |**步骤 1：**[创建 MDM 集合](create-mdm-collection.md)|创建 Configuration Manager 用户集合，其中的用户的设备可以进行注册|  
- |**步骤 2：**[域名要求](confirm-dns.md)|确认组织的域名服务 (DNS) 和 Active Directory 用户管理满足 MDM 要求|
- |**步骤 3：**[配置 Intune 订阅](configure-intune-subscription.md)|Intune 服务使你可以通过 Internet 管理设备。|  
- |**步骤 4：**[添加条款和条件](terms-and-conditions.md)| 创建用户必须同意才能使用公司门户应用的条款和条件|
- |**步骤 5：**[创建服务连接点](create-service-connection-point.md)|服务连接点将设置和软件部署信息发送到 Configuration Manager，并从移动设备中检索状态和清单消息。 |  
- |**步骤 6：**[启用平台注册](enable-platform-enrollment.md)|针对 iOS 和 Windows 设备的 MDM 注册需要执行附加步骤，以便在服务与设备之间进行通信。 Android 不需要附加配置。|  
- |**步骤 7：**[设置附加管理](set-up-additional-management.md)|（可选）为已注册的设备设置配置项目和条件访问|
- |**步骤 8：**[验证 MDM 配置](verify-mdm-configuration.md)|查看日志文件，以确认服务连接点已成功创建并且用户帐户在进行同步。|
+ |**Etapa 1:** [criar uma coleção de MDM](create-mdm-collection.md)|Crie uma coleção de usuários do Configuration Manager com os usuários cujos dispositivos podem ser registrados|  
+ |**Etapa 2:** [requisitos de nome de domínio](confirm-dns.md)|Confirme se o gerenciamento de usuários do Active Directory e o DNS (Serviço de Nomes de Domínio) da sua organização atendem aos requisitos de MDM|
+ |**Etapa 3:** [configurar a assinatura do Intune](configure-intune-subscription.md)|O serviço Intune permite gerenciar dispositivos pela Internet.|  
+ |**Etapa 4:** [adicionar termos e condições](terms-and-conditions.md)| Crie termos e condições com os quais os usuários devem concordar antes de poderem usar o aplicativo do Portal da Empresa|
+ |**Etapa 5:** [criar um ponto de conexão de serviço](create-service-connection-point.md)|O ponto de conexão de serviço envia as configurações e informações da implantação de software para o Configuration Manager e recupera mensagens de status e inventário dos dispositivos móveis. |  
+ |**Etapa 6:** [habilitar o registro de plataforma](enable-platform-enrollment.md)|O registro do MDM para dispositivos iOS e Windows exige etapas adicionais para a comunicação entre o serviço e os dispositivos. O Android não exige nenhuma configuração adicional.|  
+ |**Etapa 7:** [configurar gerenciamento adicional](set-up-additional-management.md)|(Opcional) Configure o acesso condicional e itens de configuração para dispositivos registrados|
+ |**Etapa 8:** [verificar a configuração do MDM](verify-mdm-configuration.md)|Veja os arquivos de log para confirmar que o ponto de conexão de serviço foi criado com êxito e as contas de usuário estão sincronizando.|
 
-需要 Intune 而不使用 Configuration Manager？
+Procurando o Intune sem o Configuration Manager?
 > [!div class="button"]
-[查看 Intune 文档 >](https://docs.microsoft.com/intune/deploy-use/enroll-devices-in-microsoft-intune)
+[Exibir documentos do Intune >](https://docs.microsoft.com/intune/deploy-use/enroll-devices-in-microsoft-intune)
 
 
-## <a name="enroll-devices"></a>注册设备
-完成混合部署后，可以在 Configuration Manager 中通过多种方式注册设备：
-- **公司拥有的 (COD) 设备：**有关用于注册公司拥有的设备的不同平台特定方法的指导，请参阅[注册公司拥有的设备](enroll-company-owned-devices.md)。
-- **用户拥有的 (BYOD) 设备：**有关注册用户拥有的设备的方法的指导，请参阅[注册用户拥有的 (BYOD) 设备](enroll-hybrid-ios-mac.md)。
+## <a name="enroll-devices"></a>Registrar dispositivos
+Após a conclusão da configuração híbrida, os dispositivos podem ser registrados no Configuration Manager de várias maneiras:
+- **Dispositivos da empresa (COD):** [Registrar dispositivos da empresa](enroll-company-owned-devices.md) fornece orientação sobre diferentes formas específicas à plataforma para registrar dispositivos da empresa.
+- **Dispositivos do usuário (BYOD):** [registrar dispositivos do usuário (BYOD)](enroll-hybrid-ios-mac.md) fornece orientação sobre como registrar dispositivos de propriedade do usuário.

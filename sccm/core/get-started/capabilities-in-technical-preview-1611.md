@@ -1,6 +1,6 @@
 ---
-title: "Technical Preview 1611 Configuration Manager 中的功能"
-description: "了解 System Center Configuration Manager Technical Preview 1611 版中的可用功能。"
+title: Funcionalidades no Technical Preview 1611 do Configuration Manager
+description: "Saiba mais sobre os recursos disponíveis no Technical Preview do System Center Configuration Manager, versão 1611."
 ms.custom: na
 ms.date: 01/23/2017
 ms.reviewer: na
@@ -17,61 +17,61 @@ manager: angrobe
 ms.openlocfilehash: 5e77ebbfd3f3d573d903fe58024a22feb9884e4a
 ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
 ms.translationtype: HT
-ms.contentlocale: zh-CN
+ms.contentlocale: pt-BR
 ms.lasthandoff: 08/07/2017
 ---
-# <a name="capabilities-in-technical-preview-1611-for-system-center-configuration-manager"></a>System Center Configuration Manager Technical Preview 1611 版中的功能
+# <a name="capabilities-in-technical-preview-1611-for-system-center-configuration-manager"></a>Funcionalidades do Technical Preview 1611 do System Center Configuration Manager
 
-*适用范围：System Center Configuration Manager (Technical Preview)*
-
-
-
-本文介绍了 System Center Configuration Manager Technical Preview 1611 版中的可用功能。 可以安装此版本以更新 Configuration Manager Technical Preview 站点的功能并向其添加新功能。 在安装此版本的 Technical Preview 前，请查看介绍性主题 [System Center Configuration Manager Technical Preview](../../core/get-started/technical-preview.md)，以熟悉使用 Technical Preview 的常规要求和限制、如何在版本之间进行更新，以及如何提供关于 Technical Preview 中的功能的反馈。    
-
-**此 Technical Preview 中的已知问题：**   
-- ***先决条件状态***：安装版本 1611 时，先决条件的整体状态可能显示为已通过并出现警告，但不会列出导致警告的先决条件。 这可能是由以下两个先决条件引起的：
-  - SQL 索引创建内存选项
-  - 检查受支持的 SQL Server 版本  
-
- 由于这些只是警告，因此可以忽略。
-
-- ***PowerShell***：从 Configuration Manager 控制台连接到 Windows PowerShell 时，可能会收到以下错误： **Microsoft.ConfigurationManagement.PowerShell.Types.ps1xml 未进行数字签名**。  
-
-   可通过使用版本 1610 中的已签名版本替换某些文件来解决此问题。 从版本 1610 安装中的“&lt;安装目录>\AdminConsole\bin”**\**文件夹复制所有具有以下扩展名的文件：**.psd1**、**.ps1xml** 和 **.psm1**。 将这些文件粘贴到 Technical Preview 1611 安装中的“&lt;安装目录>\AdminConsole\bin”**\**文件夹，覆盖 1611 版本的文件。
+*Aplica-se a: System Center Configuration Manager (Technical Preview)*
 
 
-**以下是可以试用的此版本的新功能。**  
 
-## <a name="pre-cache-content-for-available-deployments-and-task-sequences"></a>为可用部署和任务序列预先缓存内容
-在此技术预览中，对于可用的部署和任务序列，可选择使用预先缓存功能，让客户端在用户安装内容之前仅下载相关内容。
+Este artigo apresenta os recursos disponíveis no Technical Preview do System Center Configuration Manager, versão 1611. Você pode instalar esta versão para atualizar e adicionar novas funcionalidades ao seu site do Configuration Manager Technical Preview. Antes de instalar esta versão do technical preview, consulte o tópico introdutório, [Technical Preview do System Center Configuration Manager](../../core/get-started/technical-preview.md), para se familiarizar com os requisitos e limitações gerais de uso de um technical preview, como atualizar entre versões e como fornecer comentários sobre os recursos em um technical preview.    
 
-例如，假设要部署 Windows 10 就地升级任务序列，只想为所有用户提供单个任务序列，并且具有多个体系结构和/或语言。 在 Current Branch 中，如果创建可用部署，然后用户在软件中心中单击“安装”，则将在此时下载内容。 这在安装准备启动之前增加了额外时间。 或者，如果在 Current Branch 中创建可用的任务序列部署，则将下载任务序列中引用的所有内容。 这包括所有语言和体系结构的操作系统升级包。 如果每个包大小都约为 3 GB，则下载包可能会很大。
+**Problemas conhecidos nesse Technical Preview:**   
+- ***Status de pré-requisito***: quando você instala a versão 1611, o status geral de pré-requisitos pode ser mostrado como aprovado com avisos, mas não listará quais pré-requisitos causaram os avisos. Isso pode ser provocado pelos dois pré-requisitos a seguir:
+  - Opções de Memória de Criação de Índice do SQL
+  - Verifica se há suporte para a versão do SQL Server  
 
-借助预先缓存内容功能，用户可选择允许客户端在收到部署后立即下载适用的内容。 因此，当用户在软件中心中单击“安装”时，内容便已就绪，并且安装可以快速启动，因为内容位于本地硬盘上。
+ Como esses são apenas avisos, eles podem ser ignorados.
 
-### <a name="to-configure-the-pre-cache-feature"></a>配置预先缓存功能
+- ***PowerShell***: ao conectar-se ao Windows PowerShell no console do Configuration Manager, você poderá receber o seguinte erro: **Microsoft.ConfigurationManagement.PowerShell.Types.ps1xml não é assinado digitalmente**.  
 
-1. 为特定体系结构和语言创建操作系统升级包。 在包的“数据源”选项卡上指定体系结构和语言。 对于语言，使用十进制转换（例如，英语的十进制为 1033，其十六进制等效项是 0x0409）。 有关详细信息，请参阅[创建用于升级操作系统的任务序列](/sccm/osd/deploy-use/create-a-task-sequence-to-upgrade-an-operating-system)。
-
-    体系结构和语言值用于匹配将在下一步中创建的任务序列步骤条件，以确定是否应预先缓存操作系统升级包。
-2. 为不同的语言和体系结构创建具有条件步骤的任务序列。 例如，对于英语版本，可创建如下所示的步骤：
-
-    ![预先缓存属性](media/precacheproperties2.png)
-
-    ![预先缓存选项](media/precacheoptions2.png)  
-
-3. 部署任务序列。 对于预先缓存功能，请配置以下各项：
-    - 在“常规”选项卡上，选择“此任务序列的预下载内容”。
-    - 在“部署设置”选项卡上，配置任务序列，将“目的”配置为“可用”。 如果创建**所需**部署，预先缓存功能将不起作用。
-    - 在“计划”选项卡上，对于“当此部署可用时进行计划”设置，选择将来的某一时间，以便在部署对用户可用之前为客户端提供足够的时间来预先缓存内容。 例如，可将可用时间设置为未来 3 小时，以便有足够的时间来预先缓存内容。  
-    - 在“分发点”选项卡上，配置“部署选项”设置。 如果用户开始安装之前，该内容未预先缓存到客户端，则使用这些设置。
+   Você pode resolver esse problema substituindo alguns arquivos por versões assinadas da versão 1610. Copie todos os arquivos com as seguintes extensões da pasta **&lt;diretório de instalação>\AdminConsole\bin\** na sua instalação da versão 1610: **.psd1**, **.ps1xml** e **.psm1**. Cole esses arquivos na pasta **&lt;diretório de instalação>\AdminConsole\bin\** da sua instalação do Technical Preview 1611, substituindo a versão 1611 dos arquivos.
 
 
-### <a name="user-experience"></a>用户体验
-- 客户端收到部署策略时，将开始预先缓存内容。 这包括所有引用的内容（任何其他包类型），并且仅包括基于任务序列中设置的条件匹配客户端的操作系统升级包。
-- 部署对用户可用时（部署的“计划”选项卡上的设置），将显示一条通知，告知用户有关新部署的信息以及该部署在软件中心中可见。 用户可转到软件中心并单击“安装”以开始安装。
-- 如果内容未完全预先缓存，则它将使用部署的“部署选项”选项卡上指定的设置。 建议在创建部署和用户可使用部署之间保留足够的时间，以允许客户端预先缓存内容。
+**Veja a seguir os novos recursos que você pode experimentar nesta versão.**  
+
+## <a name="pre-cache-content-for-available-deployments-and-task-sequences"></a>Conteúdo de armazenamento prévio em cache para sequências de tarefas e implantações disponíveis
+Nesta visualização técnica, para sequências de tarefas e implantações disponíveis, você pode optar por usar o recurso de armazenamento prévio em cache para que os clientes baixem apenas conteúdo relevante antes de um usuário instalar o conteúdo.
+
+Por exemplo, digamos que você deseja implantar uma sequência de tarefas de atualização in-loco do Windows 10, deseja apenas uma sequência de tarefas para todos os usuários e tem várias arquiteturas e/ou idiomas. No Branch Atual, se você criar uma implantação disponível e, em seguida, o usuário clicar em **Instalar** no Centro de Software, o conteúdo será baixado neste momento. Isso acrescenta um tempo antes que a instalação esteja pronta para iniciar. Como alternativa, no Branch Atual, se você criar uma implantação de sequência de tarefas disponível, todo o conteúdo referenciado na sequência de tarefas será baixado. Isso inclui o pacote de atualização do sistema operacional para todas as arquiteturas e idiomas. Se cada um tiver aproximadamente 3 GB de tamanho, o pacote de download poderá ser bastante grande.
+
+O recurso de conteúdo de armazenamento prévio em cache oferece a opção de permitir que o cliente baixe apenas o conteúdo aplicável assim que receber a implantação. Portanto, quando o usuário clicar em **Instalar** no Centro de Software, o conteúdo estará pronto e a instalação iniciará rapidamente, pois o conteúdo está no disco rígido local.
+
+### <a name="to-configure-the-pre-cache-feature"></a>Para configurar o recurso de armazenamento prévio em cache
+
+1. Crie pacotes de atualização de sistema operacional para arquiteturas e idiomas específicos. Especifique a arquitetura e o idioma na guia **Fonte de Dados** do pacote. Para o idioma, use a conversão decimal (por exemplo, 1033 é o decimal para inglês e 0x0409 é o equivalente hexadecimal). Para ver mais detalhes, veja [Criar uma sequência de tarefas para atualizar um sistema operacional](/sccm/osd/deploy-use/create-a-task-sequence-to-upgrade-an-operating-system).
+
+    Os valores de arquitetura e idioma são usados para corresponder condições de etapa de sequência de tarefas que você criará na próxima etapa para determinar se o pacote de atualização do sistema operacional deve ser previamente armazenado em cache.
+2. Crie uma sequência de tarefas com etapas condicionais para diferentes idiomas e arquiteturas. Por exemplo, para a versão em inglês, você pode criar uma etapa com o seguinte:
+
+    ![Propriedades de armazenamento prévio em cache](media/precacheproperties2.png)
+
+    ![Opções de armazenamento prévio em cache](media/precacheoptions2.png)  
+
+3. Implantar a sequência de tarefas. Para o recurso de armazenamento prévio em cache, configure o seguinte:
+    - Na guia **Geral**, selecione **Conteúdo previamente baixado para esta sequência de tarefas**.
+    - Na guia **Configurações de implantação**, configure a sequência de tarefas com **Disponível** para **Finalidade**. Se você criar uma implantação **Obrigatória**, a funcionalidade de armazenamento prévio em cache não funcionará.
+    - Na guia **Agendamento**, para a configuração **Agendar quando essa implantação estará disponível**, escolha uma hora futura que conceda aos clientes tempo suficiente para armazenar previamente em cache o conteúdo para a implantação disponibilizada para os usuários. Por exemplo, você pode definir o tempo disponível para 3 horas no futuro para oferecer tempo suficiente para o conteúdo ser previamente armazenado em cache.  
+    - Na guia **Pontos de Distribuição**, defina as configurações **Opções de implantação**. Se o conteúdo não tiver sido armazenado previamente em cache em um cliente antes de um usuário iniciar a instalação, essas configurações serão usadas.
 
 
-## <a name="see-also"></a>另请参阅
-[System Center Configuration Manager Technical Preview](../../core/get-started/technical-preview.md)
+### <a name="user-experience"></a>Experiência do usuário
+- Quando o cliente receber a política de implantação, ele começará a armazenar previamente o conteúdo em cache. Isso inclui todo o conteúdo referenciado (todos os demais tipos de pacote) e somente o pacote atualização do sistema operacional que corresponder ao cliente, com base nas condições que você definir na sequência de tarefas.
+- Quando a implantação for disponibilizada para os usuários (a configuração na guia **Agendamento** da implantação), uma notificação será exibida para informar os usuários sobre a nova implantação e ela ficará visível no Centro de Software. O usuário poderá acessar o Centro de Software e clicar em **Instalar** para iniciar a instalação.
+- Se o conteúdo não tiver sido armazenado previamente em cache em sua totalidade, ele usará as configurações especificadas na guia **Opções de Implantação** da implantação. É recomendável que haja tempo suficiente desde que a implantação é criada até o momento em que ela se fica disponível para os usuários, a fim de conceder aos clientes tempo suficiente para armazenar previamente o conteúdo em cache.
+
+
+## <a name="see-also"></a>Consulte também
+[Technical Preview do System Center Configuration Manager](../../core/get-started/technical-preview.md)

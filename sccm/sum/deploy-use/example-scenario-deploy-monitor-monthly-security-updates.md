@@ -1,6 +1,6 @@
 ---
-title: "部署和监视安全软件更新的示例方案 | Microsoft Docs"
-description: "请使用此示例方案以了解如何在 Configuration Manager 中使用软件更新以部署和监视 Microsoft 每月发布的安全软件更新。"
+title: "Cenário de exemplo para implantar e monitorar as atualizações de software de segurança | Microsoft Docs"
+description: "Use este cenário de exemplo de como usar atualizações de software no Configuration Manager para implantar e monitorar as atualizações de software de segurança que a Microsoft lança mensalmente."
 keywords: 
 author: dougeby
 ms.author: dougeby
@@ -14,79 +14,79 @@ ms.assetid: c32f757a-02da-43f2-b055-5cfd097d8c43
 ms.openlocfilehash: 0e6e2b3a9455bb6eda437eb1325aaaadb3d83420
 ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
 ms.translationtype: HT
-ms.contentlocale: zh-CN
+ms.contentlocale: pt-BR
 ms.lasthandoff: 08/07/2017
 ---
-# <a name="example-scenario-for-using-system-center-configuration-manager-to-deploy-and-monitor-the-security-software-updates-released-monthly-by-microsoft"></a>使用 System Center Configuration Manager 部署和监视 Microsoft 每月发布的安全软件更新的示例方案
+# <a name="example-scenario-for-using-system-center-configuration-manager-to-deploy-and-monitor-the-security-software-updates-released-monthly-by-microsoft"></a>Exemplo de cenário de uso do System Center Configuration Manager para implantar e monitorar as atualizações de software de segurança liberadas mensalmente pela Microsoft
 
-*适用范围：System Center Configuration Manager (Current Branch)*
+*Aplica-se a: System Center Configuration Manager (Branch Atual)*
 
-本主题提供一个示例方案，以说明如何在 System Center Configuration Manager 中使用软件更新来部署和监视 Microsoft 每月发布的安全软件更新。  
+Este tópico fornece um cenário de exemplo de como usar atualizações de software no System Center Configuration Manager para implantar e monitorar as atualizações de software de segurança que a Microsoft lança mensalmente.  
 
- 在此方案中，John 是 Woodgrove Bank 的 Configuration Manager 管理员。 John 需要创建一个具有以下条件和要求的软件更新部署策略：  
+ Neste cenário, João é o administrador do Configuration Manager no Banco Woodgrove. João precisa criar uma estratégia de implantação de atualização de software com as condições e os requisitos a seguir:  
 
--   Microsoft 在每月的第二个星期二发布安全软件更新，而一周后将会出现活跃的软件更新部署活动。 此事件通常称为“周二补丁日”。  
+-   A implantação de atualização de software ativo ocorre uma vez por semana, após a Microsoft lançar as atualizações de software de segurança na segunda terça-feira de cada mês. Esse evento é normalmente conhecido como "Patch Tuesday".  
 
--   在分发点上下载并暂存软件更新。 然后，在部分客户端中测试部署，之后 John 在生产环境中全面部署软件更新。  
+-   Atualizações de software são baixadas e testadas nos pontos de distribuição. Então, uma implantação é testada em uma sub-rede de clientes antes de João implementar integralmente as atualizações de software em seu ambiente de produção.  
 
--   John 必须能够按月或按年监视软件更新的符合性。  
+-   João poderá monitorar a conformidade das atualizações de software mensalmente ou anualmente.  
 
- 此方案假定已经实施了软件更新点基础结构。 请使用以下信息在 Configuration Manager 中规划和配置软件更新。  
+ Este cenário pressupõe que a infraestrutura do ponto de atualização de software já foi implementada. Use as informações na tabela a seguir para planejar e configurar as atualizações de software no Configuration Manager.  
 
-|过程|参考|  
+|Processar|Referência|  
 |-------------|---------------|  
-|查看软件更新的关键概念。|[软件更新简介](../understand/software-updates-introduction.md)|  
-|规划软件更新。 此信息帮助你制定计划以全面考虑容量问题，以及确定软件更新点基础结构、软件更新点的安装、同步设置和软件更新的客户端设置。|[规划软件更新](../plan-design/plan-for-software-updates.md)|  
-|配置软件更新。 此信息帮助你在层次结构中安装和配置软件更新点，并帮助你配置和同步软件更新。<br /><br /> 在此方案中，John 将软件更新同步计划配置为在每月的第二个星期三执行，以确保他可以检索 Microsoft 发布的最新安全软件更新。|[同步软件更新](../get-started/synchronize-software-updates.md)|  
+|Rever os conceitos principais para atualizações de software.|[Introdução às atualizações de software](../understand/software-updates-introduction.md)|  
+|Planejar atualizações de software. Essas informações ajudam a planejar considerações quanto à capacidade e a determinar a infraestrutura do ponto de atualização de software, a instalação do ponto de atualização de software, as configurações de sincronização e as configurações de cliente para atualizações de software.|[Planejar atualizações de software](../plan-design/plan-for-software-updates.md)|  
+|Configurar as atualizações de software. Essas informações ajudam a instalar e configurar os pontos de atualização de software em sua hierarquia e a configurar e sincronizar as atualizações de software.<br /><br /> Neste cenário, João configura o agendamento da sincronização de atualizações de software para ocorrer na segunda quarta-feira de cada mês, garantindo assim recuperar as atualizações mais recentes de software de segurança da Microsoft.|[Sincronizar atualizações de software](../get-started/synchronize-software-updates.md)|  
 
- 本主题中的下列部分提供了有助于在组织中部署和监视 Configuration Manager 安全软件更新的示例步骤。
+ As seções a seguir, neste tópico, fornecem como exemplo etapas para ajudá-lo a implantar e monitorar as atualizações de software de segurança do Configuration Manager em sua organização.
 
-##  <a name="BKMK_Step1"></a>步骤 1：为每年的符合性创建软件更新组  
- John 创建一个软件更新组，可用于监视他在 2016 年发布的所有安全软件更新的符合性。 他执行下表中的步骤。  
+##  <a name="BKMK_Step1"></a> Etapa 1: Criar um grupo de atualização de software para fins de conformidade anual  
+ João cria um grupo de atualização de software que pode ser usado para monitorar a conformidade de todas as atualizações de software de segurança lançadas em 2016. Ele executa as etapas da tabela a seguir.  
 
-|过程|参考|  
+|Processar|Referência|  
 |-------------|---------------|  
-|John 从 Configuration Manager 控制台中的“所有软件更新”节点中添加条件，以仅显示满足以下条件的于 2015 年发布或修订的安全软件更新：<br /><br /><ul><li>**条件**：发布或修订日期</li><li>**条件**：大于或等于特定日期<br />“值”：1/1/2015</li><li>“条件”：更新分类<br />**值**：安全更新</li><li>**条件**：已过期 <br />**值**：否</li></ul>|无更多信息|
-|John 将所有经过筛选的软件更新添加到一个具有以下要求的新的软件更新组中：<br /><br /><ul><li>“名称”：符合性组 - Microsoft 安全更新2015</li><li>**描述**：软件更新|[将软件更新添加到更新组](add-software-updates-to-an-update-group.md)|  
+|No nó **Todas as Atualizações de Software** do console do Configuration Manager, João adiciona critérios para exibir somente as atualizações de software de segurança liberadas ou revisadas no ano de 2015 que atendem aos seguintes critérios:<br /><br /><ul><li>**Critérios**: Data de lançamento ou revisão</li><li>**Condição**: é maior ou igual à data específica<br />**Valor**: 1/1/2015</li><li>**Critérios**: classificação da atualização<br />**Valor**: Atualizações de Segurança</li><li>**Critérios**: Expirado <br />**Valor**: Não</li></ul>|Nenhuma informação adicional|
+|João adiciona todas as atualizações de software filtradas a um novo grupo de atualização de software com os seguintes requisitos:<br /><br /><ul><li>**Nome**: Grupo de Conformidade - Atualizações de Segurança da Microsoft 2015</li><li>**Descrição**: Atualizações de software|[Adicionar atualizações de software a um grupo de atualização](add-software-updates-to-an-update-group.md)|  
 
-##  <a name="BKMK_Step2"></a>步骤 2：为当月创建自动部署规则  
- John 为 Microsoft 在当月发布的安全软件更新创建自动部署规则。 他执行下表中的步骤。  
+##  <a name="BKMK_Step2"></a> Etapa 2: Criar uma regra de implantação automática para o mês atual  
+ João cria uma regra de implantação automática para as atualizações de software de segurança lançadas pela Microsoft para o mês vigente. Ele executa as etapas da tabela a seguir.  
 
-|过程|参考|  
+|Processar|Referência|  
 |-------------|---------------|  
-|John 创建具有以下要求的自动部署规则：<br /><br /><ol><li>在“常规”  选项卡上，John 进行以下配置：<br /> <ul><li>将名称指定为“每月安全更新”。</li><li>选择一个包含有限客户端的测试集合。</li><li>选择“创建新的软件更新组”。</li><li>确保未选中“运行此规则后启用部署”。</li></ul></li><li>在“部署设置”  选项卡上，John 选择默认设置。</li><li>在“软件更新”页上，John 配置以下属性筛选器和搜索条件：<br /><ul><li>发布或修订日期 **最近 1 个月**。</li><li>更新分类 **安全更新**。</li></ul></li><li>在“评估”页上，John 使此规则能够按照为每**月**的**第二个星期二**制定的计划运行。 John 还确认了将同步计划设置为在每**月**的**第二个星期三**运行。</li><li>John 使用“部署计划”、“用户体验”、“警报”和“下载设置”页上的默认设置。</li><li>在“部署包”页上，John 指定新的部署包。</li><li>John 使用“下载位置”和“语言选择”页上的默认设置。</li></ol>|[自动部署软件更新](automatically-deploy-software-updates.md)|  
+|João cria uma regra de implantação automática com os seguintes requisitos:<br /><br /><ol><li>Na guia **Geral** , João configura o seguinte:<br /> <ul><li>Especifica o nome **Atualizações de Segurança Mensais**.</li><li>Seleciona um conjunto de teste com clientes limitados.</li><li>Seleciona **Criar um novo grupo de atualização de software**.</li><li>Verifica se **Habilitar a implantação após esta regra ser executada** não está selecionado.</li></ul></li><li>Na guia **Configurações de implantação** , João seleciona as configurações padrão.</li><li>Na página **Atualizações de software**, João configura os seguintes filtros de propriedade e critérios de pesquisa:<br /><ul><li>Data de lançamento ou revisão **Último mês**.</li><li>Classificação da atualização **Atualizações de segurança**.</li></ul></li><li>Na página **Avaliação**, João habilita a regra para execução em um agendamento para a **segunda quinta-feira** de cada **mês**. João também verifica que seu agendamento da sincronização está definido para execução na **segunda quarta-feira** de cada **mês**.</li><li>João usa as configurações padrão nas páginas de Agendamento de implantação, Experiência do usuário, Alertas e Configurações de download.</li><li>Na página do **Pacote de Implantação**, João especifica um novo pacote de implantação.</li><li>João usa as configurações padrão nas páginas de Local de download e Seleção de idioma.</li></ol>|[Implantar atualizações de software automaticamente](automatically-deploy-software-updates.md)|  
 
-##  <a name="BKMK_Step3"></a>步骤 3：验证软件更新是否做好部署准备  
- 在每月的第二个星期二，John 都会验证软件更新是否做好部署准备。 他将执行以下步骤。  
+##  <a name="BKMK_Step3"></a> Etapa 3: Verificar se as atualizações de software estão prontas para ser implantadas  
+ Na segunda quinta-feira de cada mês, João verifica se as atualizações de software estão prontas para ser implantadas. Ele executa a etapa a seguir.  
 
-|过程|参考|  
+|Processar|Referência|  
 |-------------|---------------|  
-|John 验证软件更新同步是否已成功完成。|[软件更新同步状态](monitor-software-updates.md#BKMK_SUSyncStatus)|  
+|João verifica se a sincronização de atualizações de software foi concluída com êxito.|[Status da sincronização de atualizações de software](monitor-software-updates.md#BKMK_SUSyncStatus)|  
 
-##  <a name="BKMK_Step4"></a> 步骤 4：部署软件更新组  
- 在 John 确认软件更新已做好部署准备后，他部署软件更新。 他执行下表中的步骤。  
+##  <a name="BKMK_Step4"></a> Etapa 4: Implantar o grupo de atualização de software  
+ Depois que João verifica que as atualizações de software estão prontas para ser implantadas, ele implanta as atualizações. Ele executa as etapas da tabela a seguir.  
 
-|过程|参考|  
+|Processar|Referência|  
 |-------------|---------------|  
-|John 为新的软件更新组创建两个测试部署。 他为每个部署设想以下环境：<br /><br /> **工作站测试部署**：对于工作站测试部署，John 有以下考虑：<br /><br /><ul><li>指定一个包含了部分工作站客户端的部署集合，以验证部署。</li><li>配置适用于他的环境中的工作站客户端的部署设置。</li></ul><br />**服务器测试部署**：对于服务器测试部署，John 有以下考虑：<br /><br /><ul><li>指定一个包含了部分服务器客户端的部署集合，以验证部署。</li><li>配置适用于他的环境中的服务器客户端的部署设置。</li></ul>|[部署软件更新](deploy-software-updates.md)|  
-|John 验证测试部署是否已成功部署。|[软件更新部署状态](monitor-software-updates.md#BKMK_SUDeployStatus)|  
-|John 利用包含其生产工作站和服务器的新集合更新这两个部署。|无更多信息|  
+|João cria duas implantações de teste para o novo grupo de atualização de software. Ele considera os ambientes a seguir para cada implantação:<br /><br /> **Implantação de teste da estação de trabalho**: John considera o seguinte para a implantação de teste da estação de trabalho:<br /><br /><ul><li>Especifica uma coleção de implantação que contém um subconjunto de clientes da estação de trabalho para verificar a implantação.</li><li>Define as configurações de implantação apropriadas para os clientes da estação de trabalho em seu ambiente.</li></ul><br />**Implantação de teste do servidor**: John considera o seguinte para a implantação de teste do servidor:<br /><br /><ul><li>Especifica uma coleção de implantação que contém um subconjunto de clientes de servidor para verificar a implantação.</li><li>Define as configurações de implantação apropriadas para os clientes de servidor em seu ambiente.</li></ul>|[Implantar atualizações de software](deploy-software-updates.md)|  
+|João verifica se as implantações de teste obtiveram êxito.|[Status de implantação de atualizações de software](monitor-software-updates.md#BKMK_SUDeployStatus)|  
+|João atualiza as duas implantações com novas coleções que incluem seus servidores e estações de trabalho de produção.|Nenhuma informação adicional|  
 
-##  <a name="BKMK_Step5"></a>步骤 5：监视所部署的软件更新的符合性  
- John 监视其软件更新部署的符合性。 他执行下表中的步骤。  
+##  <a name="BKMK_Step5"></a> Etapa 5: Monitorar a conformidade das atualizações de software implantadas  
+ João monitora a conformidade de suas implantações de atualização de software. Ele executa a etapa da tabela a seguir.  
 
-|过程|参考|  
+|Processar|Referência|  
 |-------------|---------------|  
-|John 在 Configuration Manager 控制台中监视软件更新部署状态，并检查通过该控制台提供的软件更新部署报表。|[在 System Center Configuration Manager 中监视软件更新](../../sum/deploy-use/monitor-software-updates.md)|  
+|João monitora o status da implantação de atualizações de software no console do Configuration Manager e verifica os relatórios de implantação de atualização de software disponíveis no console.|[Monitorar atualizações de software no System Center Configuration Manager](../../sum/deploy-use/monitor-software-updates.md)|  
 
-##  <a name="BKMK_Step6"></a>步骤 6：将每月的软件更新添加到每年更新组  
- John 将每月软件更新组中的软件更新添加到每年软件更新组。 他执行下表中的步骤。  
+##  <a name="BKMK_Step6"></a> Etapa 6: Adicionar atualizações de software mensais ao grupo de atualização anual  
+ João adiciona as atualizações de software do grupo de atualização de software mensal ao grupo de atualização de software anual. Ele executa a etapa da tabela a seguir.  
 
-|过程|参考|  
+|Processar|Referência|  
 |-------------|---------------|  
-|John 选择每月软件更新组中的软件更新，然后将它们添加到他为每年符合性创建的软件更新组。 他跟踪软件更新符合性，并创建用于管理的不同报表。|[将软件更新添加到已部署的更新组中](add-software-updates-to-an-update-group.md)|  
+|João seleciona as atualizações de software do grupo de atualização mensal e adiciona as atualizações de software ao grupo de atualização que ele criou para fins de conformidade anual. Para viabilizar o gerenciamento, ele controla a conformidade da atualização de software e cria vários relatórios.|[Adicionar atualizações de software a um grupo de atualização implantado](add-software-updates-to-an-update-group.md)|  
 
-John 已成功完成每月的安全软件更新部署。 他继续监视和报告软件更新符合性，以确保其环境中的客户端处于可接受的符合性级别内。  
+João concluiu com êxito sua implantação mensal de atualizações de software de segurança. Ele continuará monitorando e documentando a conformidade das atualizações de software para assegurar que os clientes em seu ambiente estejam dentro dos níveis de conformidade aceitáveis.  
 
-##  <a name="BKMK_MonthlyProcess"></a>每月定期进行的软件更新部署过程  
- 在 John 部署软件更新的第一个月之后，他执行步骤三到步骤六，以部署 Microsoft 发布的每月安全软件更新。  
+##  <a name="BKMK_MonthlyProcess"></a> Processo mensal recorrente para implantar atualizações de software  
+ Depois do primeiro mês em que implantou as atualizações de software, João executa as etapas de três a seis para implantar as atualizações de software de segurança lançadas mensalmente pela Microsoft.  

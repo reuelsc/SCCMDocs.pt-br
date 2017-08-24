@@ -1,6 +1,6 @@
 ---
-title: "自定义操作系统映像 - Configuration Manager | Microsoft Docs"
-description: "使用捕获和生成任务序列、手动配置或这两者的组合来自定义操作系统映像。"
+title: "Personalizar imagens do sistema operacional – Configuration Manager | Microsoft Docs"
+description: "Use sequências de tarefas de captura e montagem, a configuração manual ou uma combinação de ambos para personalizar uma imagem do sistema operacional."
 ms.custom: na
 ms.date: 01/23/2017
 ms.prod: configuration-manager
@@ -18,121 +18,121 @@ manager: angrobe
 ms.openlocfilehash: 485cb3ca4988f983c1ec71b6c8daf136571bf0ea
 ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
 ms.translationtype: HT
-ms.contentlocale: zh-CN
+ms.contentlocale: pt-BR
 ms.lasthandoff: 08/07/2017
 ---
-# <a name="customize-operating-system-images-with-system-center-configuration-manager"></a>使用 System Center Configuration Manager 自定义操作系统映像
+# <a name="customize-operating-system-images-with-system-center-configuration-manager"></a>Personalizar imagens do sistema operacional com o System Center Configuration Manager
 
-*适用范围：System Center Configuration Manager (Current Branch)*
+*Aplica-se a: System Center Configuration Manager (Branch Atual)*
 
-System Center Configuration Manager 中的操作系统映像是 WIM 文件，并且表示在计算机上成功安装和配置操作系统所需的参考文件和文件夹的压缩集合。 自定义操作系统映像是通过一台引用计算机构建和捕获的。在该计算机上，你配置了所有必需的操作系统文件、支持文件、软件更新、工具和其他软件应用。 由你决定将引用计算机手动配置到何种程度。 你可以通过使用构建和捕获任务序列完全自动完成配置引用计算机的过程，可以手动配置引用计算机的某些方面然后使用任务序列自动完成其余配置，或者可以在不使用任务序列的情况下手动配置引用计算机。 使用以下部分自定义操作系统。
+As imagens do sistema operacional no System Center Configuration Manager são arquivos WIM e representam uma coleção compactada de arquivos e pastas de referência necessários para instalar e configurar com êxito um sistema operacional em um computador. Uma imagem personalizada do sistema operacional é compilada e capturada de um computador de referência configurado com todos os arquivos do sistema operacional, os arquivos de suporte, as atualizações de software, as ferramentas e os outros aplicativos de software. A proporção de configuração manual do computador de referência fica a seu critério. É possível automatizar completamente a configuração do computador de referência usando uma sequência de tarefas de criação e captura, configurar manualmente certos aspectos do computador de referência e depois automatizar o restante usando sequências de tarefas, ou ainda configurar manualmente o computador de referência sem usar sequências de tarefas. Use as seções a seguir para personalizar um sistema operacional.
 
-##  <a name="BKMK_PrepareReferenceComputer"></a>准备引用计算机  
- 在你使用从引用计算机捕获操作系统映像之前，有一些事项需要注意。  
+##  <a name="BKMK_PrepareReferenceComputer"></a> Preparar o computador de referência  
+ Há várias coisas a ser consideradas antes de capturar uma imagem do sistema operacional de um computador de referência.  
 
-###  <a name="BKMK_RefComputerDecide"></a>在自动或手动配置之间作出决定  
- 下面概述了引用计算机的自动和手动配置的优点和缺点。  
+###  <a name="BKMK_RefComputerDecide"></a> Decidir entre uma configuração manual ou automatizada  
+ Veja a seguir as vantagens e desvantagens de configurações automatizada e manual do computador de referência.  
 
-#### <a name="automated-configuration"></a>自动配置  
- **优点**  
+#### <a name="automated-configuration"></a>Configuração automatizada  
+ **Vantagens**  
 
--   配置可完全无人参与，因而不需要管理员或用户存在。  
+-   A configuração pode ser completamente autônoma, o que elimina a necessidade da presença de um administrador ou usuário.  
 
--   你可以重用任务序列来信心十足地重复配置其他引用计算机。  
+-   É possível reutilizar a sequência de tarefas para repetir a configuração de computadores de referência adicionais com um alto nível de segurança.  
 
--   你可以修改任务序列来适用引用计算机中的差异，而不必重新创建整个任务序列。  
+-   É possível modificar a sequência de tarefas para acomodar diferenças em computadores de referência sem precisar recriar a sequência de tarefas inteira.  
 
- **缺点**  
+ **Desvantagens**  
 
--   创建任务序列的初始操作可能要花费很长时间来创建和测试。  
+-   A ação inicial de criar uma sequência de tarefas pode levar muito tempo para ser criada e testada.  
 
--   如果引用计算机要求发生很大变化，则可能要花费很长时间来重建和重新测试任务序列。  
+-   Se os requisitos do computador de referência mudarem significativamente, poderá demorar bastante até criar e testar a sequência de tarefas novamente.  
 
-#### <a name="manual-configuration"></a>手动配置  
- **优点**  
+#### <a name="manual-configuration"></a>Configuração manual  
+ **Vantagens**  
 
--   你不必创建任务序列或花时间来对任务序列进行测试和故障诊断。  
+-   Não é preciso criar uma sequência de tarefas nem perder tempo para testar e solucionar os problemas da sequência de tarefas.  
 
--   你可以直接从 CD 中安装，而不必将所有软件包（包括 Windows 本身）放在 Configuration Manager 包中。  
+-   É possível instalar diretamente dos CDs sem colocar todos os pacotes de software (incluindo o próprio Windows) em um pacote do Configuration Manager.  
 
- **缺点**  
+ **Desvantagens**  
 
--   引用计算机配置的准确性取决于配置计算机的管理员或用户。  
+-   A precisão da configuração do computador de referência depende do administrador ou do usuário que configura o computador.  
 
--   你仍然必须验证和测试已正确配置的引用计算机。  
+-   Ainda é preciso verificar e testar se o computador de referência está configurado corretamente.  
 
--   你无法重用配置方法。  
+-   Não é possível reutilizar o método de configuração.  
 
--   需要有人员主动参与整个过程。  
+-   Exige que uma pessoa esteja ativamente envolvida em todo o processo.  
 
-###  <a name="BKMK_RefComputerConsiderations"></a>引用计算机的注意事项  
- 下面列出了在配置引用计算机时要考虑的基本项目。  
+###  <a name="BKMK_RefComputerConsiderations"></a> Considerações para o computador de referência  
+ A lista a seguir relaciona os itens básicos que devem ser considerados ao se configurar um computador de referência.  
 
--   **要部署的操作系统**  
+-   **Sistema operacional a implantar**  
 
-     必须使用你打算部署到目标计算机的操作系统安装引用计算机。 有关可以部署的操作系统的详细信息，请参阅[操作系统部署的基础结构要求](../plan-design/infrastructure-requirements-for-operating-system-deployment.md)。  
+     É preciso instalar o computador de referência com o sistema operacional que você pretende implantar nos computadores de destino. Para obter mais informações sobre os sistemas operacionais que podem ser implantados, consulte [Requisitos de infraestrutura para implantação do sistema operacional](../plan-design/infrastructure-requirements-for-operating-system-deployment.md).  
 
--   **适当的 Service Pack**  
+-   **Service pack apropriado**  
 
-     必须使用你打算部署到目标计算机的操作系统安装引用计算机。  
+     É preciso instalar o computador de referência com o sistema operacional que você pretende implantar nos computadores de destino.  
 
--   **适当的软件更新**  
+-   **Atualizações de software apropriadas**  
 
-     安装要包括在从引用计算机中捕获的操作系统映像中的所有软件应用程序。 你也可以在将捕获的操作系统映像部署到目标计算机时安装软件应用程序。  
+     Instale todos os aplicativos de software que deseja incluir na imagem do sistema operacional capturada do computador de referência. Também é possível instalar aplicativos de software ao implantar a imagem capturada do sistema operacional nos computadores de destino.  
 
--   **工作组成员身份**  
+-   **Associação a grupo de trabalho**  
 
-     必须将引用计算机配置为工作组的成员。  
+     O computador de referência deve ser configurado como membro de um grupo de trabalho.  
 
 -   **Sysprep**  
 
-     系统准备 (Sysprep) 工具是你可随其他部署工具一起使用以将 Windows 操作系统安装到新硬件上的一种技术。 Sysprep 通过将计算机配置为在计算机重启时创建新的计算机安全标识符 (SID) 来准备计算机以进行磁盘映像或交付给客户。 此外，Sysprep 还会清理不得复制到目标计算机的特定于用户和计算机的设置及数据。  
+     A ferramenta de Preparação do Sistema (Sysprep) é uma tecnologia que pode ser usada com outras ferramentas de implantação para instalar sistemas operacionais Windows em um novo hardware. O Sysprep prepara um computador para a geração de imagens de disco ou entrega a um cliente, configurando-o para criar um novo SID (identificador de segurança do computador) quando ele for reiniciado. Além disso, o Sysprep limpa configurações e dados específicos do usuário e do computador que não devem ser copiados em um computador de destino.  
 
-     你可以通过运行下列命令来对引用计算机手动执行 Sysprep 操作：  
+     É possível, com o uso do Sysprep, preparar o sistema manualmente no computador de referência executando o seguinte comando:  
 
      `Sysprep /quiet /generalize /reboot`  
 
-     /generalize 选项指示 Sysprep 从 Windows 安装中删除特定于系统的数据。 特定于系统的信息包括事件日志、唯一安全 ID (SID) 和其他唯一性信息。 删除唯一系统信息后，计算机将重启。  
+     A opção /generalize instrui o Sysprep a remover dados específicos do sistema da instalação do Windows. Informações específicas do sistema incluem logs de eventos, SIDs (IDs de de segurança exclusivas) e outras informações exclusivas. Após as informações exclusivas do sistema serem removidas, o computador é reiniciado.  
 
-     你可以使用“准备 Windows 以便捕获” [Prepare Windows for Capture](../understand/task-sequence-steps.md#BKMK_PrepareWindowsforCapture) 任务序列步骤或捕获媒体来自动完成 Sysprep。  
+     É possível automatizar a preparação do sistema usando a sequência de tarefas [Prepare Windows for Capture](../understand/task-sequence-steps.md#BKMK_PrepareWindowsforCapture) ou a mídia de captura.  
 
     > [!IMPORTANT]  
-    >  “准备 Windows 以便捕获” [Prepare Windows for Capture](../understand/task-sequence-steps.md#BKMK_PrepareWindowsforCapture) 任务序列步骤会在 Sysprep 运行之前尝试将引用计算机上的本地管理员密码重置为空白值。 如果启用了本地安全策略“密码必须满足复杂性要求”  ，则此任务序列步骤将无法重置管理员密码。 在这种情况下，请在运行任务序列之前禁用此策略。  
+    >  A etapa da sequência de tarefas [Prepare Windows for Capture](../understand/task-sequence-steps.md#BKMK_PrepareWindowsforCapture) tenta redefinir a senha de administrador local no computador de referência para um valor em branco antes da execução da ferramenta Sysprep. Se a política de segurança local **A senha deve satisfazer a requisitos de complexidade** estiver habilitada, essa etapa da sequência de tarefas não conseguirá redefinir a senha de administrador. Nesse cenário, desabilite essa política antes de executar a sequência de tarefas.  
 
-     有关 Sysprep 的详细信息，请参阅 [System Preparation (Sysprep) Technical Reference（系统准备 (Sysprep) 概述技术参考）](http://go.microsoft.com/fwlink/?LinkId=280286)。  
+     Para obter mais informações sobre o Sysprep, consulte [Referência Técnica da Preparação do Sistema (Sysprep)](http://go.microsoft.com/fwlink/?LinkId=280286).  
 
--   **迁移安装方案所需的适当工具和脚本**  
+-   **Ferramentas apropriadas e scripts necessários para atenuar problemas nos cenários de instalação**  
 
-     迁移安装方案所需的适当工具和脚本  
+     Ferramentas apropriadas e scripts necessários para reduzir problemas de instalação  
 
--   **适当桌面自定义，如墙纸、品牌和默认用户配置文件**  
+-   **Personalização apropriada da área de trabalho, como papel de parede, identidade visual e perfil do usuário padrão**  
 
-     你可以使用要在从引用计算机中捕获操作系统映像时包括的桌面自定义属性来配置引用计算机。 桌面属性包括墙纸、组织外观方案和标准默认用户配置文件。  
+     É possível configurar o computador de referência com as propriedades de personalização de área de trabalho que você deseja incluir ao capturar a imagem do sistema operacional do computador de referência. As propriedades da área de trabalho incluem papel de parede, identidade visual organizacional e um perfil de usuário padrão.  
 
-##  <a name="BKMK_ManuallyBuildReference"></a>手动构建引用计算机  
- 使用以下过程来手动构建引用计算机。  
+##  <a name="BKMK_ManuallyBuildReference"></a> Criar um computador de referência manualmente  
+ Use o procedimento a seguir para criar manualmente um computador de referência.  
 
 > [!NOTE]  
->  当手动构建引用计算机时，你可以通过使用捕获媒体来捕获操作系统映像。 有关详细信息，请参阅[创建捕获媒体](../deploy-use/create-capture-media.md)。  
+>  Quando cria manualmente o computador de referência, você pode capturar a imagem do sistema operacional usando mídia de captura. Para obter mais informações, consulte [Criar mídia de captura](../deploy-use/create-capture-media.md).  
 
-#### <a name="to-manually-build-the-reference-computer"></a>若要手动构建引用计算机  
+#### <a name="to-manually-build-the-reference-computer"></a>Para criar o computador de referência manualmente  
 
-1.  确定要用作引用计算机的计算机。  
+1.  Identifique o computador a ser usado como computador de referência.  
 
-2.  配置具有适当操作系统以及创建要部署的操作系统映像所需的任何其他软件的引用计算机。  
+2.  Configure o computador de referência com o sistema operacional apropriado e qualquer outro software necessário para criar a imagem do sistema operacional que deseja implantar.  
 
     > [!WARNING]  
-    >  至少要安装适当的操作系统和服务包、支持驱动程序、以及必需的软件更新。  
+    >  No mínimo, instale o sistema operacional e o service pack apropriado, drivers de suporte e atualizações de software necessárias.  
 
-3.  将引用计算机配置为工作组的成员。  
+3.  Configure o computador de referência para ser membro de um grupo de trabalho.  
 
-4.  重置引用计算机上的本地管理员密码以使密码值为空白。  
+4.  Redefina a senha de administrador local no computador de referência de forma que o valor da senha fique em branco.  
 
-5.  通过使用以下命令来运行 Sysprep：  **sysprep /quiet /generalize /reboot**。 /generalize 选项指示 Sysprep 从 Windows 安装中删除特定于系统的数据。 特定于系统的信息包括事件日志、唯一安全 ID (SID) 和其他唯一性信息。 删除唯一系统信息后，计算机将重启。  
+5.  Execute o Sysprep usando o comando:  **sysprep /quiet /generalize /reboot**. A opção /generalize instrui o Sysprep a remover dados específicos do sistema da instalação do Windows. Informações específicas do sistema incluem logs de eventos, SIDs (IDs de de segurança exclusivas) e outras informações exclusivas. Após as informações exclusivas do sistema serem removidas, o computador é reiniciado.  
 
- 引用计算机准备就绪之后，使用任务序列从引用计算机捕获操作系统映像。  有关详细步骤，请参阅 [从现有引用计算机中捕获操作系统映像](../deploy-use/create-a-task-sequence-to-capture-an-operating-system.md#BKMK_CaptureExistingRefComputer)。  
+ Depois que o computador de referência estiver pronto, use uma sequência de tarefas para capturar a imagem do sistema operacional do computador de referência.  Para obter etapas detalhadas, veja [Capturar uma imagem do sistema operacional de um computador de referência existente](../deploy-use/create-a-task-sequence-to-capture-an-operating-system.md#BKMK_CaptureExistingRefComputer).  
 
-##  <a name="BKMK_UseTSToBuildReference"></a>使用任务序列构建引用计算机  
- 你可以通过使用任务序列自动执行创建引用计算机的过程以部署操作系统、驱动程序、应用程序等。  使用以下步骤构建引用计算机，然后从引用计算机捕获操作系统映像。  
+##  <a name="BKMK_UseTSToBuildReference"></a> Use uma sequência de tarefas para criar um computador de referência  
+ É possível automatizar o processo para criar um computador de referência usando uma sequência de tarefas para implantar o sistema operacional, drivers, aplicativos e assim por diante.  Use as etapas a seguir para compilar o computador de referência e capturar a imagem do sistema operacional do computador de referência.  
 
--   使用任务序列构建和捕获引用计算机中的操作系统映像。  有关详细步骤，请参阅 [使用任务序列来构建和捕获引用计算机](../deploy-use/create-a-task-sequence-to-capture-an-operating-system.md#BKMK_BuildCaptureTS)。  
+-   Use uma sequência de tarefas para compilar e capturar a imagem do sistema operacional do computador de referência.  Para obter etapas detalhadas, consulte [Use uma sequência de tarefas para criar e capturar um computador de referência](../deploy-use/create-a-task-sequence-to-capture-an-operating-system.md#BKMK_BuildCaptureTS).  

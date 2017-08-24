@@ -1,6 +1,6 @@
 ---
-title: "Technical Preview 1604 Configuration Manager 中的功能"
-description: "了解 System Center Configuration Manager Technical Preview 1604 版中的可用功能。"
+title: Funcionalidades no Technical Preview 1604 do Configuration Manager
+description: "Saiba mais sobre os recursos disponíveis no Technical Preview do System Center Configuration Manager, versão 1604."
 ms.custom: na
 ms.date: 01/23/2017
 ms.prod: configuration-manager
@@ -18,155 +18,155 @@ robots: noindex,nofollow
 ms.openlocfilehash: 26b0d8ea7b3e841c48945df55f8860394a98a29f
 ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
 ms.translationtype: HT
-ms.contentlocale: zh-CN
+ms.contentlocale: pt-BR
 ms.lasthandoff: 08/07/2017
 ---
-# <a name="capabilities-in-technical-preview-1604-for-system-center-configuration-manager"></a>System Center Configuration Manager Technical Preview 1604 版中的功能
+# <a name="capabilities-in-technical-preview-1604-for-system-center-configuration-manager"></a>Funcionalidades no Technical Preview 1604 do System Center Configuration Manager
 
-*适用范围：System Center Configuration Manager (Technical Preview)*
+*Aplica-se a: System Center Configuration Manager (Technical Preview)*
 
-本文介绍 System Center Configuration Manager Technical Preview 1604 版中的可用功能。 可以安装此版本以更新 Configuration Manager Technical Preview 站点的功能并向其添加新功能。      在安装此版本的 Technical Preview 前，请查看介绍性主题 [System Center Configuration Manager Technical Preview](../../core/get-started/technical-preview.md)，以熟悉使用 Technical Preview 的常规要求和限制、如何在版本之间进行更新，以及如何提供关于 Technical Preview 中的功能的反馈。  
+Este artigo apresenta os recursos disponíveis no Technical Preview do System Center Configuration Manager, versão 1604. Você pode instalar esta versão para atualizar e adicionar novas funcionalidades ao seu site do Configuration Manager Technical Preview.      Antes de instalar esta versão do technical preview, consulte o tópico introdutório, [Technical Preview do System Center Configuration Manager](../../core/get-started/technical-preview.md), para se familiarizar com os requisitos e limitações gerais de uso de um technical preview, como atualizar entre versões e como fornecer comentários sobre os recursos em um technical preview.  
 
- 以下是可以试用的此版本的新功能。  
+ Veja a seguir os novos recursos que você pode experimentar nesta versão.  
 
-##  <a name="BKMK_WindowsVPP"></a>管理从适用于企业的 Windows 应用商店批量采购的应用  
- 在[适用于企业的 Windows 应用商店](https://www.microsoft.com/en-us/business-store)中可以为组织查找并采购应用（单个或批量）。 通过将应用商店连接到 Configuration Manager，可从 Configuration Manager 控制台管理批量采购的应用，例如：  
+##  <a name="BKMK_WindowsVPP"></a> Gerenciar aplicativos adquiridos por volume da Windows Store para Empresas  
+ Na [Windows Store para Empresas](https://www.microsoft.com/en-us/business-store), é possível encontrar e adquirir aplicativos para sua organização, individualmente ou por volume. Ao conectar a loja ao Configuration Manager, é possível gerenciar aplicativos adquiridos por volume no console do Configuration Manager, por exemplo:  
 
--   可以将采购的应用列表与 Configuration Manager 同步  
+-   É possível sincronizar a lista de aplicativos adquiridos com o Configuration Manager  
 
--   同步的应用会出现在 Configuration Manager 控制台中，可以如同任何其他应用一样部署这些应用  
+-   Os aplicativos que são sincronizados aparecem no console do Configuration Manager e você pode implantá-los como qualquer outro aplicativo  
 
--   可以跟踪可用的许可证数，以及在 Configuration Manager 控制台中使用的许可证数  
+-   É possível acompanhar quantas licenças estão disponíveis e quantas estão sendo usadas no console do Configuration Manager  
 
-### <a name="try-it-out"></a>试试看！  
+### <a name="try-it-out"></a>Experimente!  
 
-##### <a name="scenario-1-set-up-windows-store-for-business-synchronization"></a>方案 1：设置适用于企业的 Windows 应用商店同步  
+##### <a name="scenario-1-set-up-windows-store-for-business-synchronization"></a>Cenário 1: Configurar a sincronização da Windows Store para Empresas  
 
-1.  在 Azure Active Directory 中，将 Configuration Manager 注册为“Web 应用程序和/或 Web API”管理工具。 这会为你提供以后将需要的客户端 ID。  
+1.  No Azure Active Directory, registre o Configuration Manager como uma ferramenta de gerenciamento de "Aplicativo Web e/ou API da Web". Isso fornecerá uma ID de cliente que você precisará mais tarde.  
 
-    1.  在 [https://manage.windowsazure.com](https://manage.windowsazure.com) 的 **Active Directory** 节点中，选择“Azure Active Directory”，然后单击“应用程序” > “添加”。  
+    1.  No nó **Active Directory** de [https://manage.windowsazure.com](https://manage.windowsazure.com), selecione seu Azure Active Directory e clique em **Aplicativos** > **Adicionar**.  
 
-    2.  单击“添加我的组织正在开发的应用程序”。  
+    2.  Clique em **Adicionar um aplicativo que minha organização esteja desenvolvendo**.  
 
-    3.  为应用程序输入名称，选择“Web 应用程序”和/或“Web API”，然后单击“下一步”箭头。  
+    3.  Insira um nome para o aplicativo, selecione **Aplicativo Web** e/ou **API da Web** e clique na seta Avançar.  
 
-    4.  为**登录 URL**和**应用 ID URI** 输入相同 URL。  该 URL 可以是任何内容，无需解析为实际地址。 例如，可以输入 **https://&lt;yourdomain\>/sccm**。  
+    4.  Insira a mesma URL para **URL de Entrada** e **URI da ID do Aplicativo**.  A URL pode ser qualquer uma e não precisa ser resolvida para um endereço real. Por exemplo, você pode inserir **https://&lt;seudomínio\>/sccm**.  
 
-    5.  完成向导。  
+    5.  Conclua o assistente.  
 
-2.  在 Azure Active Directory 中，为已注册的管理工具创建客户端密钥。  
+2.  No Azure Active Directory, crie uma chave de cliente para a ferramenta de gerenciamento registrada.  
 
-    1.  突出显示刚创建的应用程序，然后单击“配置”。  
+    1.  Realce o aplicativo que você acabou de criar e clique em **Configurar**.  
 
-    2.  在“密钥”下，从列表中选择持续时间，然后单击“保存”。  这创建新客户端密钥。  成功将适用于企业的 Windows 应用商店载入到 Configuration Manager 之前，请勿导航离开此页面。  
+    2.  Em **Chaves**, escolha uma duração na lista e clique em **Salvar**.  Isso criará uma nova chave de cliente.  Não saia dessa página até que você tenha carregado com êxito a Windows Store para Empresas no Configuration Manager.  
 
-3.  在适用于企业的 Windows 应用商店中，将 Configuration Manager 配置为存储管理工具。  
+3.  Na Windows Store para Empresas, configure o Configuration Manager como a ferramenta de gerenciamento da loja.  
 
-    1.  打开 [https://businessstore.microsoft.com/zh-cn/managementtools](https://businessstore.microsoft.com/en-us/managementtools)，在出现提示时进行登录。  
+    1.  Abra [https://businessstore.microsoft.com/en-us/managementtools](https://businessstore.microsoft.com/en-us/managementtools) e se conecte, se solicitado.  
 
-    2.  接受使用条款（如果需要）。  
+    2.  Aceite os termos de uso, se necessário.  
 
-    3.  在“管理工具”下，单击“添加管理工具”。  
+    3.  Em **Ferramentas de Gerenciamento**, clique em **Adicionar uma ferramenta de gerenciamento**.  
 
-    4.  在“按名称搜索工具”中，键入以前在 AAD 中创建的应用程序的名称，然后单击“添加”。  
+    4.  Em **Pesquisar a ferramenta por nome**, digite o nome do aplicativo que você criou anteriormente no AAD e clique em **Adicionar**.  
 
-    5.  在刚导入的应用程序旁单击“激活”。  
+    5.  Clique em **Ativar** ao lado do aplicativo que você acabou de importar.  
 
-    6.  在“显示脱机许可的应用”向导中，如果要允许采购脱机许可的应用程序，则单击“是”。  
+    6.  No assistente **Exibir Aplicativos Licenciados Offline**, clique em **Sim** se quiser permitir que aplicativos licenciados offline sejam comprados.  
 
-4.  从适用于企业的 Windows 应用商店采购至少一个应用。  
+4.  Compre pelo menos um aplicativo da Windows Store para Empresas.  
 
-5.  在 Configuration Manager 控制台的“管理”工作区中，展开“云服务”，然后单击“适用于企业的 Windows 应用商店”。  
+5.  No espaço de trabalho **Administração** do console do Configuration Manager, expanda **Serviços de Nuvem** e clique em **Windows Store para Empresas**.  
 
-6.  在“主页”选项卡上的“创建”组中，单击“添加适用于企业的 Windows 应用商店帐户”。  
+6.  Na guia **Início**, no grupo **Criar**, clique em **Adicionar Conta da Windows Store para Empresas**.  
 
-7.  从 Azure Active Directory 添加租户 ID、客户端 ID 和客户端密钥，然后完成向导。  
+7.  Adicione a ID de locatário, a id de cliente e a chave de cliente do Azure Active Directory e conclua o assistente.  
 
-8.  完成之后，会在 Configuration Manager 控制台中“适用于企业的 Windows 应用商店帐户”列表中看到配置的帐户。  
+8.  Quando terminar, você verá a conta configurada na lista **Contas da Windows Store para Empresas** no console do Configuration Manager.  
 
-##### <a name="scenario-2-create-and-deploy-a-configuration-manager-application-from-a-windows-store-for-business-offline-licensed-app"></a>方案 2：从适用于企业的 Windows 应用商店离线授权的应用创建和部署 Configuration Manager 应用程序  
+##### <a name="scenario-2-create-and-deploy-a-configuration-manager-application-from-a-windows-store-for-business-offline-licensed-app"></a>Cenário 2: Criar e implantar um aplicativo do Configuration Manager por meio de um aplicativo licenciado offline da Windows Store para Empresas  
 
-1.  在 Configuration Manager 控制台的“软件库”工作区中，展开“应用程序管理”，然后单击“应用商店应用的许可证信息”。  
+1.  No espaço de trabalho **Biblioteca de Software** do console do Configuration Manager, expanda **Gerenciamento de Aplicativos** e clique em **Informações sobre Licença para Aplicativos da Loja**.  
 
-2.  **从适用于企业的 Windows 应用商店购买的应用**列表显示了从存储区同步的应用列表。 选择要部署的应用，然后在“主页”选项卡的“创建”组中，单击“创建应用程序”。  
+2.  A lista **Aplicativos comprados na Windows Store para Empresas** mostra uma lista de aplicativos que foram sincronizados da loja. Escolha o aplicativo que deseja implantar e, na guia **Início**, no grupo **Criar**, clique em **Criar Aplicativo**.  
 
-3.  将创建包含适用于企业的 Windows 应用商店应用的 Configuration Manager 应用程序。 然后，可以像对任何其他 Configuration Manager 应用程序一样部署并监视此应用程序。  
+3.  É criado um aplicativo do Configuration Manager contendo o aplicativo da Windows Store para Empresas. Em seguida, é possível implantar e monitorar o aplicativo, como você faria com qualquer outro aplicativo do Configuration Manager.  
 
-##  <a name="BKMK_PFW"></a> 对 Microsoft Passport for Work 管理的改进  
- 现在可以将 Passport for Work 策略部署到由 Configuration Manager客户端管理的已加入域的 Windows 10 设备。  
+##  <a name="BKMK_PFW"></a> Melhorias no gerenciamento do Microsoft Passport for Work  
+ Agora, é possível implantar políticas do Passport for Work em dispositivos Windows 10 ingressados no domínio e gerenciados pelo cliente do Configuration Manager.  
 
-##  <a name="bkmk_switchsup"></a>供客户端切换到新软件更新点的选项  
- 在 1604 Technical Preview 中，可以启用 Configuration Manager 供客户端在活动软件更新点出现问题时切换到新软件更新点的选项。 对于此选项，必须在主站点上有多个软件更新点可用。 在设备集合上启用此选项，在启用之后，当集合中的客户端未能成功连接到活动的软件更新点时，将在下一次扫描时查找另一个软件更新点。 根据 WSUS 配置设置（更新分类、产品等），切换到新的软件更新点将会产生额外的网络流量。 因此，应仅当需要时才使用此选项。  
+##  <a name="bkmk_switchsup"></a> Opção para clientes alternarem para um novo ponto de atualização de software  
+ No Technical Preview 1604, você pode habilitar a opção para clientes do Configuration Manager mudarem para um novo ponto de atualização de software quando houver problemas com o ponto de atualização de software ativo. Para essa opção, você deve ter vários pontos de atualização de software disponíveis em um site primário. Habilite essa opção em uma coleção de dispositivos e, uma vez habilitada, os clientes na coleção procurarão por outro ponto de atualização de software na próxima verificação, quando o cliente não conseguir se conectar com êxito ao ponto de atualização de software ativo. Dependendo de suas definições de configuração do WSUS (classificações de atualização, produtos etc.), mudar para um novo ponto de atualização de software gerará tráfego de rede adicional. Portanto, você deve usar essa opção apenas quando for necessário.  
 
-#### <a name="to-enable-the-option-to-switch-software-update-points"></a>启用切换软件更新点的选项  
+#### <a name="to-enable-the-option-to-switch-software-update-points"></a>Para habilitar a opção de alternar pontos de atualização de software  
 
-1.  在 Configuration Manager 控制台中，转到“资产和符合性”>“概览”>“设备集合”。  
+1.  No console do Configuration Manager, vá até **Ativos e Conformidade > Visão Geral > Coleções de Dispositivos**.  
 
-2.  在“主页”选项卡上的“集合”组中，单击“客户端通知”，然后单击“切换到下一个软件更新点”。  
+2.  Na guia **Início** , no grupo **Coleção** , clique em **Notificação do Cliente**e em **Alternar para o próximo ponto de atualização de software**.  
 
 > [!NOTE]  
->  此选项只在具有多个软件更新点的站点上可用。  
+>  Essa opção só está disponível em sites que possuem vários pontos de atualização de software.  
 
-##  <a name="bkmk_peercache"></a>用于管理客户端缓存设置和客户端对等缓存的客户端设置  
- 技术预览版 1604 引入了影响客户端缓存使用的两个新设备客户端设置。 这两个设置可以单独使用，但是在用于客户端设置的同一个属性表中配置，可结合使用以帮助管理将内容部署到远程位置的客户端。  
+##  <a name="bkmk_peercache"></a> Definições do cliente para gerenciar Configurações de Cache do Cliente e Cache de Mesmo Nível do cliente  
+ A versão de visualização 1604 introduz duas novas configurações de cliente de dispositivo que afetam o uso de um cache do cliente. Ambas podem ser usadas individualmente, mas são configuradas na mesma folha de propriedades para configurações do cliente e se combinam para ajudar você a gerenciar a implantação de conteúdo em seus clientes em locais remotos.  
 
--   第一个设置是**客户端对等缓存**，这是内置 Configuration Manager 解决方案，供客户端用于直接从本地缓存将内容与其他客户端共享。 若要使对等缓存客户端可以共享内容，它们必须是相同边界组的成员。 对等缓存不会代替其他解决方案（如 BranchCache）的使用，而是并行工作以便提供更多选项，用于扩展传统内容部署解决方案（如分发点）。  
+-   A primeira é o **Cache Par do cliente**, uma solução interna do Configuration Manager para clientes compartilharem conteúdo com outros clientes diretamente do cache local. Para clientes do Cache de Mesmo Nível compartilharem conteúdo, eles devem ser membros do mesmo grupo de limites. O Cache Par não substitui o uso de outras soluções como o BranchCache, mas trabalha lado a lado para fornecer a você mais opções para estender as soluções tradicionais de implantação de conteúdo, como os pontos de distribuição.  
 
-     将启用对等缓存的客户端设置部署到集合后，该集合的成员可以充当其边界组中其他客户端的对等内容源。  充当对等内容源的客户端将提交一份可用内容列表，即缓存到其管理点的内容的列表。 然后，当该边界组中的下一个客户端请求该内容时，该对等缓存源将作为潜在内容源提供，同时提供所有配置为快速的分发点。 客户端从此内容源的组合池中选择一个随机内容源。 当边界组中没有快速分发点或对等缓存源时，客户端将只能从配置为慢速的分发点查找内容。  
+     Depois de implantar configurações do cliente que habilitam o Cache Par para uma coleção, os membros dessa coleção podem atuar como uma fonte de conteúdo par para outros clientes em seu grupo de limites.  O cliente que opera como fonte de conteúdo par enviará uma lista do conteúdo disponível que ele armazenou em cache para seu ponto de gerenciamento. Depois, quando o próximo cliente do grupo de limites solicitar o conteúdo, a fonte de cache par será oferecida como uma fonte de conteúdo potencial em conjunto com todos os pontos de distribuição que estiverem configurados para serem rápidos. O cliente seleciona uma fonte de conteúdo aleatória desse pool combinado de fontes de conteúdo. Os clientes buscarão conteúdo de um ponto de distribuição configurado para ser lento apenas quando não houver pontos de distribuição rápidos ou fontes de cache par presentes no grupo de limites.  
 
--   第二个新设置使用户能够在客户端上**管理缓存的大小**。 可以将缓存设置为具有以兆字节 (MB) 表示时的最大大小，以及以客户端驱动器空间的百分比表示时的最大大小。  客户端会强制执行先达到的设置值。  
+-   A segunda nova configuração permite que você **gerencie o tamanho do cache** nos clientes. Você pode configurar o cache para ter um tamanho máximo em megabytes e um tamanho máximo como um percentual do espaço na unidade do cliente.  O cliente impõe a configuração que for atingida primeiro.  
 
-为了帮助了解客户端对等缓存的使用，可以查看“客户端数据源”仪表板。 在控制台中，转到“监视”>“客户端状态”>“客户端数据源”。 在此处可以选择要应用于仪表板的时间段。 然后在显示中，可以选择要查看其信息的边界组或包。 查看信息时，可以将鼠标悬停在表面上方，以查看有关不同内容或策略源的更多详细信息。  
+Para ajudar você a entender o uso do Cache Par do cliente, exiba o painel **Fontes de Dados do Cliente**. No console, vá para **Monitoramento > Status do Cliente > Fontes de Dados do Cliente**. Aqui você pode escolher um período de tempo para aplicar ao painel. Em seguida, na exibição, escolha o grupo de limites ou o pacote do qual quer ver informações. Ao exibir as informações, você pode passar o mouse sobre a superfície para ver mais detalhes sobre conteúdo ou as origens da política.  
 
- 还可以使用新报表“客户端数据源 - 摘要”查看每个边界组的客户端数据源摘要。   
-**有关使用对等缓存的要求：**  
+ Também é possível usar um novo relatório, **Fontes de Dados do Cliente — Resumo**, para exibir um resumo das fontes de dados do cliente de cada grupo de limites.   
+**Requisitos para usar o Cache Par:**  
 
--   必须使用对每个客户端上的缓存文件夹具有**完全控制**的**网络访问帐户**来配置站点。 默认情况下，这是 **%windir%\ccmcache**  
+-   É necessário configurar seu site com uma **Conta de Acesso à Rede** que tenha **Controle Total** da pasta de cache em cada cliente. Por padrão, a pasta é **%windir%\ccmcache**  
 
--   仅当是相同边界组的成员时，客户端才能使用对等缓存传输内容。  
+-   Os clientes poderão transferir conteúdo usando o Cache de Mesmo Nível apenas quando eles forem membros do mesmo grupo de limites.  
 
-#### <a name="to-configure-client-peer-cache-client-settings"></a>配置客户端对等缓存客户端设置  
+#### <a name="to-configure-client-peer-cache-client-settings"></a>Para definir as configurações do cliente do Cache Par  
 
-1.  两种设置均在同一客户端设置页上进行配置。 在 Configuration Manager 控制台中，转到“管理”>“客户端设置”，然后打开要使用的设备客户端设置对象。 还可以修改默认客户端设置对象。  
+1.  As configurações são definidas na mesma página de configurações do cliente. No console do Configuration Manager, vá até **Administração > Configurações do Cliente** e abra o objeto de configurações do cliente do dispositivo que deseja usar. Também é possível alterar o objeto de Configurações Padrão do Cliente.  
 
-2.  从可用设置的列表中，选择“客户端缓存设置”。  
+2.  Na lista de configurações disponíveis, selecione **Configurações de Cache do Cliente**.  
 
-3.  若要管理缓存的大小，请将“配置客户端缓存大小”设置为“是”。 然后可同时以兆字节和客户端驱动器空间的百分比这两种形式配置最大缓存大小。  
+3.  Para gerenciar o tamanho do cache, defina **Configurar o tamanho do cache do cliente** como **Sim**. Em seguida, configure o tamanho máximo do cache tanto em megabytes e quanto em um percentual do espaço da unidade do cliente.  
 
-4.  要使客户端能够参与客户端对等缓存，请将“在完整操作系统中启用 Configuration Manager 客户端以共享内容”设置为“是”。 然后可以配置客户端使用的端口，包括将采用 HTTP 还是 HTTPS。  
+4.  Para habilitar os clientes a participarem o Cache Par de clientes, defina **Habilitar cliente do Configuration Manager em um SO completo para compartilhar conteúdo** como **Sim**. Em seguida, você pode configurar as portas usadas pelos clientes, incluindo se elas serão HTTP ou HTTPS.  
 
-### <a name="try-it-out"></a>试试看！  
- 尝试完成下面的任务，然后使用本主题顶部附近的反馈信息，让我们知道它的工作方式：  
+### <a name="try-it-out"></a>Experimente!  
+ Tente concluir as seguintes tarefas e depois use as informações dos comentários perto da parte superior deste tópico para nos contar como foi:  
 
-1.  修改客户端设置以指定客户端缓存的新大小，然后在客户端上确认此设置。  
+1.  Modifique as configurações de cliente para especificar um novo tamanho para o cache do cliente e confirme essa configuração em um cliente.  
 
-2.  使用客户端设置来配置多个使用对等缓存的客户端  
+2.  Use as configurações de cliente para configurar vários clientes para usar o Cache Par  
 
-3.  将内容部署到客户端，以便一些或大部分客户端通过使用对等缓存从其他客户端获取该内容。  可以通过查看新仪表板确认使用的内容源。  
+3.  Implante conteúdo nos clientes de modo que alguns, ou a maioria dos clientes, o obtenham de outro cliente usando o Cache Par.  Você pode confirmar a fonte do conteúdo usada exibindo o novo painel.  
 
     > [!NOTE]  
-    >  若要使用技术预览版和单个分发点完成此任务，请将该分发点配置为对所有客户端的网络位置是慢速的。 然后将内容分发给单个客户端。  该客户端获取内容之后，可以将内容分发给其他客户端，这些客户端应首先查找本地对等方以用作内容源，然后再从客户端位置被视为慢速的分发点。  
+    >  Para concluir essa tarefa com a visualização técnica e um único ponto de distribuição, configure o ponto de distribuição para ser lento para o local de rede de todos os seus clientes. Em seguida, distribua o conteúdo para um único cliente.  Depois que esse cliente estiver com o conteúdo, distribua o conteúdo aos clientes adicionais que devem localizar pares locais para usar como uma fonte de conteúdo antes de usar o ponto de distribuição que é considerado lento no local do cliente.  
 
-##  <a name="bkmk_passport"></a>支持将 Passport for Work 作为 KSP  
- System Center Configuration Manager 允许集成 Microsoft Passport for Work，它是使用 Active Directory 或 Azure Active Directory 帐户取代密码、智能卡或虚拟智能卡进行登录的一种替代方法。  
-通过 Passport，你可以使用“用户手势”取代密码进行登录。 用户手势可以是简单 PIN、Windows Hello 等生物识别身份验证或指纹读取器等外部设备。  
+##  <a name="bkmk_passport"></a> Suporte ao Passport for Work como um KSP  
+ O System Center Configuration Manager permite a integração ao Microsoft Passport for Work, que é um método de entrada alternativo que usa o Active Directory ou uma conta do Azure Active Directory para substituir uma senha, um cartão inteligente ou um cartão inteligente virtual.  
+O Passport permite que você use um gesto de usuário para logon, em vez de uma senha. Um gesto do usuário pode ser um PIN simples, uma autenticação biométrica, como o Windows Hello, ou um dispositivo externo, como um leitor de impressão digital.  
 
--   可以使用 Configuration Manager 控制用户可以用于以及不能用于登录的手势，并配置 PIN 复杂性要求。  
+-   Você pode usar o Configuration Manager para controlar quais gestos os usuários podem e não podem usar no logon e para configurar os requisitos de complexidade do PIN.  
 
--   可在 Passport for Work 密钥存储提供程序 (KSP) 中存储身份验证证书。  
+-   Você pode armazenar certificados de autenticação no Passport for Work para o KPS (provedor de armazenamento de chaves).  
 
-当用户创建 Passport PIN 时，Windows 会发送通知，Configuration Manager 会侦听该通知。  这使 Configuration Manager 可以快速了解哪些用户创建了 Passport PIN。 如果 Passport 在证书配置文件中用作密钥存储提供程序，则 Configuration Manager 随后还可以向这些用户颁发新证书。  
+Quando um usuário cria um PIN do Passport, o Windows envia uma notificação que o Configuration Manager escuta.  Isso permite que o Configuration Manager reconheça rapidamente quais usuários criaram um PIN do Passport. O Configuration Manager também poderá emitir novos certificados para esses usuários se o Passport for usado como o Provedor de Armazenamento de Chaves em um perfil de certificado.  
 
-##  <a name="bkmk_onpremdha"></a>本地设备运行状况证明  
- Windows 10 设备的运行状况证明现在可以配置为使用本地基础结构进行通信。  管理员可以指定是通过云还是本地资源进行报告。  如果为运行状况证明报告选择“本地”，则可以为服务指定 URI。 这使无法进行 Internet 访问的客户端电脑可以启用和管理使用运行状况证明的设备。  
+##  <a name="bkmk_onpremdha"></a> Atestado de integridade do dispositivo local  
+ O atestado de integridade para dispositivos Windows 10 agora podem ser configurados para comunicação usando a infraestrutura local.  Os administradores podem especificar se o relatório é gerado pelos recursos locais ou na nuvem.  Se **local** for escolhido para o relatório de atestado de integridade, um URI poderá ser especificado para o dispositivo. Isso permite que os PCs cliente sem acesso à Internet habilitem e gerenciem dispositivos usando o atestado de integridade.  
 
-#### <a name="enable-health-attestation-for-on-premises-devices"></a>为本地设备启用运行状况证明  
+#### <a name="enable-health-attestation-for-on-premises-devices"></a>Habilitar atestado de integridade para dispositivos no local  
 
-1.  在 Configuration Manager 控制台中，导航到“管理” > “概述” > “客户端设置”，然后将“使用本地运行状况证明服务”设置为“是”。  
+1.  No console do Configuration Manager, navegue para **Administração** > **Visão Geral** > **Configurações do cliente**e defina **Usar Serviço de Atestado de Integridade local** como **Sim**.  
 
-2.  指定**本地运行状况证明服务 URL**，然后单击“确定”。  
+2.  Especifique a **URL do Serviço de Atestado de Integridade local**e clique em **OK**.  
 
-若要进行尝试，请使用客户端代理设置配置本地运行状况证明服务。  
+Para testar, configure o Serviço de Atesto de Integridade local usando as configurações do agente cliente.  
 
-##  <a name="BKMK_Smart"></a>适用于 Android 设备的 SmartLock 设置  
- 一个新设置“允许 SmartLock 和其他信任代理”已添加到“Android 和 Samsung KNOX”配置项目，这使用户可以在兼容的 Android 设备上控制 SmartLock 功能。 如果设备处于可信位置（例如当它连接到特定蓝牙设备时，或者在 NFC 标记附近时），则此手机功能（有时称为信任代理）使你可以禁用或绕过设备锁屏界面密码。 可以使用此设置防止最终用户配置 SmartLock。  
+##  <a name="BKMK_Smart"></a> Configuração do SmartLock para dispositivos Android  
+ Uma nova configuração, **Permitir SmartLock e outros agentes de confiança**, foi adicionada ao item de configuração **Android e Samsung KNOX**, que permite controlar o recurso SmartLock em dispositivos Android compatíveis. Essa capacidade do telefone, às vezes conhecida como agentes de confiança, permite desabilitar ou ignorar a senha da tela de bloqueio do dispositivo se o dispositivo estiver em um local confiável, como quando ele está conectado a um dispositivo Bluetooth específico, ou quando ele está perto de uma marca NFC. Você pode usar essa configuração para impedir que os usuários finais configurem o SmartLock.  

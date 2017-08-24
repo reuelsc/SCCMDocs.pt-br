@@ -1,6 +1,6 @@
 ---
-title: "流程图 - 更新复制 | Microsoft Docs"
-description: "查看所选控制台内更新通过其向其他站点安装副本的过程。"
+title: "Fluxograma — atualizar replicação | Microsoft Docs"
+description: "Consulte o processo pelo qual uma atualização no console selecionado para instalar é replicada para outros sites."
 ms.custom: na
 ms.date: 10/06/2016
 ms.prod: configuration-manager
@@ -17,13 +17,13 @@ manager: angrobe
 ms.openlocfilehash: cefde9fa6894e39715257f0453ccfe160a55919e
 ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
 ms.translationtype: HT
-ms.contentlocale: zh-CN
+ms.contentlocale: pt-BR
 ms.lasthandoff: 08/07/2017
 ---
-# <a name="flowchart---update-replication-for-system-center-configuration-manager"></a>流程图 - 更新 System Center Configuration Manager 的副本
+# <a name="flowchart---update-replication-for-system-center-configuration-manager"></a>Fluxograma — Replicação de atualização para o System Center Configuration Manager
 
-*适用范围：System Center Configuration Manager (Current Branch)*
+*Aplica-se a: System Center Configuration Manager (Branch Atual)*
 
-这些数据流显示所选控制台内更新通过其向其他站点安装副本的过程。 这些流程还显示提取更新，以运行先决条件检查和在管理中心站点和主站点安装更新的过程。  
+Esses fluxos de dados exibem o processo pelo qual uma atualização no console selecionado para instalar é replicada para outros sites. Esses fluxos também exibem o processo de extração da atualização para executar verificações de pré-requisitos e instalar atualizações em um site de administração central e em sites primários.  
 
- ![流程图 - 复制更新](media/Flowchart---Replicate-updates.png)  
+ ![Fluxograma ‑ Replicar atualizações](media/Flowchart---Replicate-updates.png)  

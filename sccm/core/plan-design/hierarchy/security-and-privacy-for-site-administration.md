@@ -1,6 +1,6 @@
 ---
-title: "站点管理安全和隐私 | Microsoft Docs"
-description: "优化 System Center Configuration Manager 中站点管理的安全和隐私。"
+title: "Segurança e privacidade da administração de site | Microsoft Docs"
+description: "Otimize a segurança e a privacidade para administração de site no System Center Configuration Manager."
 ms.custom: na
 ms.date: 3/1/2017
 ms.prod: configuration-manager
@@ -17,53 +17,53 @@ manager: angrobe
 ms.openlocfilehash: a60b8c103a303dcae0bd66f3060d5a8f17d1cef9
 ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
 ms.translationtype: HT
-ms.contentlocale: zh-CN
+ms.contentlocale: pt-BR
 ms.lasthandoff: 08/07/2017
 ---
-# <a name="security-and-privacy-for-site-administration-in-system-center-configuration-manager"></a>System Center Configuration Manager 中站点管理的安全和隐私
+# <a name="security-and-privacy-for-site-administration-in-system-center-configuration-manager"></a>Segurança e privacidade para administração de site no System Center Configuration Manager
 
-*适用范围：System Center Configuration Manager (Current Branch)*
+*Aplica-se a: System Center Configuration Manager (Branch Atual)*
 
-本主题介绍了 System Center Configuration Manager 站点和层次结构的安全和隐私信息。
+Este tópico contém informações de segurança e privacidade para a hierarquia e sites do System Center Configuration Manager.
 
-##  <a name="BKMK_Security_Sites"></a>站点管理的最佳安全做法  
- 使用下列最佳安全做法，帮助保护 System Center Configuration Manager 站点和层次结构的安全。  
+##  <a name="BKMK_Security_Sites"></a> Práticas recomendadas de segurança para administração de site  
+ Use as práticas recomendadas de segurança a seguir para ajudar a proteger a hierarquia e os sites do System Center Configuration Manager.  
 
- **仅从受信任源中运行安装程序，并保护安装程序介质和站点服务器之间信道的安全。**  
+ **Executar a instalação somente de uma fonte confiável e proteger o canal de comunicação entre a mídia de instalação e o servidor do site.**  
 
- 为帮助防止某人篡改源文件，请从受信任源中运行安装程序。 如果将文件存储在网络上，请保护网络位置的安全。  
+ Para ajudar a evitar que alguém viole os arquivos de origem, execute a instalação de uma fonte confiável. Se você armazenar arquivos na rede, proteja o local de rede.  
 
- 如果确实要从网络位置运行安装程序，则为了在通过网络传输文件时防止攻击者篡改文件，请在安装程序文件的源位置和站点服务器之间使用 IPsec 或服务器消息块 (SMB) 签名。  
+ Se você executar a instalação de um local de rede, para ajudar a evitar que um invasor viole os arquivos enquanto eles são transmitidos pela rede, use a assinatura IPsec ou do protocolo SMB entre o local de origem dos arquivos de instalação e o servidor do site.  
 
- 此外，如果使用安装程序下载程序来下载安装程序所需的文件，请确保还要保护存储这些文件的位置的安全，并在运行安装程序时保护此位置的信道的安全。  
+ Além disso, se você usar o Downloader de Instalação para baixar os arquivos solicitados pela instalação, assegure também a proteção do local na qual esses arquivos são armazenados e proteja o canal de comunicação desse local ao executar a instalação.  
 
- **为 System Center Configuration Manager 扩展 Active Directory 架构，并将站点发布到 Active Directory 域服务。**  
+ **Estenda o esquema do Active Directory para o System Center Configuration Manager e publique sites no Active Directory Domain Services.**  
 
- 运行 System Center Configuration Manager 时无需架构扩展，但这些扩展的确会创建更安全的环境，因为 Configuration Manager 客户端和站点服务器可从受信任源中检索信息。  
+ Não é exigido que as extensões do esquema executem o System Center Configuration Manager, mas elas criam um ambiente mais seguro, pois os clientes Configuration Manager e servidores do site podem recuperar informações de uma fonte confiável.  
 
- 如果客户端位于不受信任域中，请在客户端的域中部署下列站点系统角色：  
+ Se os clientes estiverem em um domínio não confiável, implante as seguintes funções do sistema de sites nos domínios dos clientes:  
 
--   管理点  
+-   Ponto de gerenciamento  
 
--   分发点  
+-   Ponto de distribuição  
 
--   应用程序目录网站点  
-
-> [!NOTE]  
->  Configuration Manager 的受信任域需要 Kerberos 身份验证。 这意味着如果客户端所在的林与站点服务器的林没有双向林信任，则会将这些客户端视为不受信任的域。 外部信任不足以实现此目的。  
-
- **使用 IPsec 来保护站点系统服务器和站点之间的通信的安全。**  
-
- 尽管 Configuration Manager 确实会保护站点服务器和运行 SQL Server 的计算机之间的通信安全，但不会保护站点系统角色和 SQL Server 之间的通信安全。 对于站点内通信，只能针对 HTTPS 配置某些站点系统（注册点和应用程序目录 Web 服务点）。  
-
- 如果不使用其他控制来保护这些服务器到服务器通道的安全，攻击者将能对站点系统发起各种欺骗和中间人攻击。 在无法使用 IPsec 时使用 SMB 签名。  
+-   Ponto de sites da Web do catálogo de aplicativos  
 
 > [!NOTE]  
->  特别重要的一点是要保护站点服务器和包源服务器之间的信道的安全。 此通信使用 SMB。 如果无法使用 IPsec 来保护此通信的安全，请使用 SMB 签名来确保在客户端下载并运行文件之前文件未被篡改。  
+>  Um domínio confiável do Configuration Manager requer a autenticação Kerberos. Isso significa que se os clientes estiverem em outra floresta que não tenha uma relação de confiança bidirecional com a floresta do servidor do site, considera-se que esses clientes estão em domínio não confiável. Uma relação de confiança externa não é suficiente para essa finalidade.  
 
- **不要更改 Configuration Manager 为站点系统通信创建和管理的安全组。**  
+ **Usar o IPsec para proteger as comunicações entre os servidores do sistema de site e sites.**  
 
- 安全组：  
+ Embora o Configuration Manager proteja a comunicação entre o servidor do site e o computador que executa o SQL Server, o Configuration Manager não protege as comunicações entre funções do sistema de sites e o SQL Server. Somente alguns sistemas de site (o ponto de registro e o ponto de serviços Web do catálogo de aplicativos) podem ser configurados para HTTPS para comunicação intrassite.  
+
+ Se você não usar controles adicionais para proteger esses canais de servidor para servidor, os invasores poderão usar vários ataques de falsificação e intermediários. Usar a assinatura SMB quando você não pode usar o IPsec.  
+
+> [!NOTE]  
+>  É particularmente importante proteger o canal de comunicação entre o servidor do site e o servidor de origem do pacote. Essa comunicação usa SMB. Se você não pode usar o IPsec para proteger essa comunicação, use a assinatura SMB para assegurar que os arquivos não sejam violados antes de os clientes baixarem e executarem os arquivos.  
+
+ **Não altere os grupos de segurança que o Configuration Manager cria e gerencia para comunicação do sistema de sites.**  
+
+ Grupos de segurança:  
 
 -   **SMS_SiteSystemToSiteServerConnection_MP_&lt;SiteCode\>**  
 
@@ -71,212 +71,212 @@ ms.lasthandoff: 08/07/2017
 
 -   **SMS_SiteSystemToSiteServerConnection_Stat_&lt;SiteCode\>**  
 
-Configuration Manager 自动创建和管理这些安全组。 这包括在删除站点系统角色时删除计算机帐户。  
+O Configuration Manager cria e gerencia automaticamente esses grupos de segurança. Isso inclui remover contas de computador quando uma função do sistema do site é removida.  
 
-为了确保服务连续性和最小特权，请不要手动编辑这些组。  
+Para garantir a continuidade do serviço e o mínimo de privilégios, não edite manualmente esses grupos.  
 
-**如果客户端无法查询全局编录服务器来查找 Configuration Manager 信息，请管理受信任的根密钥设置过程。**  
+**Se os clientes não puderem consultar o servidor de catálogo global para obter informações do Configuration Manager, gerencie o processo de provisionamento da chave de raiz confiável.**  
 
-如果客户端无法查询全局编录来查找 Configuration Manager 信息，则它们必须依赖于受信任的根密钥来验证有效的管理点。 受信任的根密钥存储在客户端注册表中，并且可通过使用组策略或手动配置进行设置。  
+Se os clientes não puderem consultar o catálogo global para obter informações do Configuration Manager, eles deverão confiar na chave de raiz confiável para autenticar pontos de gerenciamento válidos. A chave de raiz confiável é armazenada no Registro do cliente e pode ser definida usando a política de grupo ou configuração manual.  
 
-如果客户端在首次联系管理点时没有受信任的根密钥的副本，它将信任与之通信的第一个管理点。 为了降低攻击者将客户端错误定向到未授权管理点的风险，你可以使用受信任的根密钥来预先设置客户端。 有关详细信息，请参阅[规划受信任的根密钥](../../../core/plan-design/security/plan-for-security.md#BKMK_PlanningForRTK)。  
+Se o cliente não tiver uma cópia da chave de raiz confiável antes de contatar um ponto de gerenciamento pela primeira vez, ele confiará no primeiro ponto de gerenciamento com o qual ele se comunica. Para reduzir o risco de um invasor direcionar clientes para um ponto de gerenciamento não autorizado, você pode pré-provisionar os clientes com a chave de raiz confiável. Para obter mais informações, consulte [Planejando a chave de raiz confiável](../../../core/plan-design/security/plan-for-security.md#BKMK_PlanningForRTK).  
 
-**使用非默认端口号。**  
+**Usar números de porta não padrão.**  
 
-使用非默认端口号可提高安全性，因为这样使攻击者更难探测环境以准备发起攻击。 如果决定使用非默认端口，请在安装 Configuration Manager 之前规划这些端口，并在层次结构中的所有站点上一致地使用它们。 例如，可在客户端请求端口和 LAN 唤醒中使用非默认端口号。  
+Usar números de porta não padrão pode fornecer segurança adicional, pois eles dificultam a exploração do ambiente por invasores na preparação de um ataque. Se você decidir usar portas não padrão, planeje-as antes de instalar o Configuration Manager e use-as consistentemente em todos os sites na hierarquia. Portas de solicitação do cliente e o Wake on LAN são exemplos de onde você pode usar números de porta não padrão.  
 
-**在站点系统上使用角色分隔。**  
+**Usar a separação de funções nos sistemas de site.**  
 
-尽管你可以在单一计算机上安装所有站点系统角色，但这种做法在生产网络上很少用，原因是它会创建单一故障点。  
+Embora você possa instalar todas as funções do sistema de site em um único computador, essa prática raramente é usada em redes de produção, pois ela cria um único ponto de falha.  
 
-**减小攻击面。**  
+**Reduzir o perfil de ataque.**  
 
-通过将每个站点系统角色隔离在不同服务器上，可降低利用单个站点系统中的漏洞攻击不同站点系统的几率。 许多站点系统角色都需要在站点系统上安装 Internet Information Services (IIS)，而这会增大攻击面。 如果必须合并站点系统角色以减少硬件支出，请将 IIS 站点系统角色仅与需要 IIS 的其他站点系统角色合并。  
+Isolar cada função do sistema de sites em um servidor diferente reduz a chance de que um ataque a vulnerabilidades em um sistema de sites seja usado contra um sistema de sites diferente. Muitas funções do sistema de sites requerem a instalação do IIS (Serviços de Informações da Internet) no sistema de sites e isso aumenta a superfície de ataque. Se você precisar combinar funções do sistema de site para reduzir as despesas de hardware, combine funções do sistema de site do IIS somente a outras funções do sistema de site que requer o IIS.  
 
 > [!IMPORTANT]  
->  回退状态点角色是一个例外。 由于此站点系统角色接受未经身份验证的客户端数据，因此建议决不要将回退状态点角色分配给任何其他 Configuration Manager 站点系统角色。  
+>  A função do ponto de status de fallback é uma exceção. Como essa função do sistema de sites aceita dados não autenticados de clientes, é recomendável que você nunca atribua a função de ponto de status de fallback a nenhuma outra função do sistema de sites do Configuration Manager.  
 
 
-**遵循 Windows Server 的最佳安全方案，并在所有站点系统上运行安全配置向导。**  
+**Siga as práticas recomendadas de segurança para o Windows Server e execute o Assistente de Configuração de Segurança em todos os sistemas de site.**  
 
-安全配置向导 (SCW) 帮助你创建可应用于网络上的任何服务器的安全策略。 安装 System Center Configuration Manager 模板后，SCW 可识别 Configuration Manager 站点系统角色、服务、端口和应用程序。 然后，它允许 Configuration Manager 所需的通信并阻止不必要的通信。  
+O SCW (Assistente de Configuração de Segurança) ajuda a criar uma política de segurança que você pode aplicar a qualquer servidor em sua rede. Depois de instalar o modelo do System Center Configuration Manager, o SCW reconhece aplicativos, portas, serviços e funções do sistema de sites do Configuration Manager. Ele permite então a comunicação necessária para o Configuration Manager e bloqueia a comunicação não exigida.  
 
-安全配置向导包含在可从 Microsoft 下载中心下载的 System Center 2012 Configuration Manager 工具包中：[System Center 2012 — Configuration Manager Component Add-ons and Extensions](http://go.microsoft.com/fwlink/p/?LinkId=251931)（System Center 2012 - Configuration Manager 组件加载项和扩展）。  
+O Assistente de Configuração de Segurança está incluído no kit de ferramentas do System Center 2012 Configuration Manager, que pode ser baixado do Centro de Download da Microsoft: [System Center 2012 – Configuration Manager Component Add-ons and Extensions](http://go.microsoft.com/fwlink/p/?LinkId=251931) (System Center 2012 – Complementos e extensões do componente do Configuration Manager).  
 
-**为站点系统配置静态 IP 地址。**  
+**Configurar endereços IP estáticos para sistemas de site.**  
 
-静态 IP 地址可以更轻松地抵御名称解析攻击。  
+Os endereços IP estáticos são mais fáceis de proteger contra ataques de resolução de nomes.  
 
-静态 IP 地址也可简化 IPsec 的配置。 保护 Configuration Manager 中站点系统间通信安全的最佳安全做法是使用 IPsec。  
+Endereços IP estáticos também facilitam a configuração do IPsec. Usar o IPsec é uma prática recomendada de segurança para proteger a comunicação entre os sistemas de sites no Configuration Manager.  
 
-**不要在站点系统服务器上安装其他应用程序。**  
+**Não instale outros aplicativos em servidores do sistema de site.**  
 
-如果在站点系统服务器上安装其他应用程序，将会增大 Configuration Manager 的攻击面并增加出现不兼容性问题的风险。  
+Ao instalar outros aplicativos em servidores do sistema de sites, você aumenta a superfície de ataque para o Configuration Manager e corre o risco de problemas de incompatibilidade.  
 
-**要求签名并启用加密作为站点选项。**  
+**Exigir assinatura e habilitar a criptografia como uma opção do site.**  
 
-为站点启用签名和加密选项。 确保所有客户端均可支持 SHA-256 哈希算法，然后启用“需要 SHA-256”选项。  
+Habilite as opções de assinatura e criptografia para o site. Verifique se todos os clientes podem dar suporte ao algoritmo de hash SHA-256 e habilite a opção **Exigir SHA-256**.  
 
-**限制和监视 Configuration Manager 管理用户，并使用基于角色的管理向这些用户授予他们所需的最低权限。**  
+**Restrinja e monitore usuários administrativos do Configuration Manager e use a administração baseada em funções para conceder a esses usuários as permissões mínimas que eles exigem.**  
 
-仅向信任的用户授予 Configuration Manager 的管理访问权限，然后通过使用内置安全角色或通过自定义安全角色，向他们授予最低权限。 如果管理用户可创建、修改并部署应用程序、任务序列、软件更新、配置项目和配置基线，则他们可能会潜在地控制 Configuration Manager 层次结构中的设备。  
+Conceda acesso administrativo ao Configuration Manager somente a usuários em que você confia e conceda a eles permissões mínimas usando as funções de segurança internas ou personalizando as funções de segurança. Os usuários administrativos que podem criar, modificar e implantar aplicativos, sequência de tarefas, atualizações de software, itens de configuração e linhas de base de configuração podem potencialmente controlar dispositivos na hierarquia do Configuration Manager.  
 
-定期审核管理用户分配及其授权级别以验证所需的更改。  
+Periodicamente, audite atribuições do usuário administrativo e seu nível de autorização para verificar as alterações necessárias.  
 
-有关配置基于角色的管理的详细信息，请参阅 [Configure role-based administration for System Center Configuration Manager](../../../core/servers/deploy/configure/configure-role-based-administration.md)。  
+Para obter mais informações sobre a configuração da administração baseada em funções, consulte [Configure role-based administration for System Center Configuration Manager](../../../core/servers/deploy/configure/configure-role-based-administration.md).  
 
-**在备份和还原时保护 Configuration Manager 备份和信道的安全。**  
+**Proteja backups do Configuration Manager e o canal de comunicação ao fazer backup e restaurar.**  
 
-备份 Configuration Manager 时，此信息包括攻击者可用于假冒的证书和其他敏感数据。  
+Quando você faz backup do Configuration Manager, essas informações incluem certificados e outros dados confidenciais que podem ser usados por um invasor para representação.  
 
-在通过网络传输此数据时使用 SMB 签名或 IPsec，并保护备份位置的安全。  
+Use a assinatura SMB ou IPsec ao transferir esses dados pela rede e proteja o local do backup.  
 
-**每当将对象从 Configuration Manager 控制台导入或导出到网络位置时，请保护该位置和网络通道的安全。**  
+**Sempre que você exportar ou importar objetos do console do Configuration Manager para um local da rede, proteja o local e o canal de rede.**  
 
-限制可访问网络文件夹的人员。  
+Restrinja quem pode acessar a pasta de rede.  
 
-在网络位置和站点服务器之间，以及运行 Configuration Manager 控制台的计算机和站点服务器之间使用 SMB 签名或 IPsec，防止攻击者篡改导出的数据。 使用 IPsec 对网络上的数据进行加密以防止信息泄漏。  
+Use a assinatura do protocolo SMB ou IPsec entre o local de rede e o servidor do site e entre o computador que executa o console do Configuration Manager e o servidor do site para evitar que um invasor viole os dados exportados. Use IPsec para criptografar os dados na rede e para evitar a divulgação de informações.  
 
-**如果站点系统未正确卸载或者停止正常工作且无法还原，请从其他 Configuration Manager 服务器中手动删除此服务器的 Configuration Manager 证书。**  
+**Se um sistema de sites não for desinstalado corretamente ou interromper o funcionamento e não puder ser restaurado, remova manualmente os certificados do Configuration Manager deste servidor e de outros servidores do Configuration Manager.**  
 
-若要删除最初使用站点系统和站点系统角色建立的 PeerTrust，则手动删除适用于其他站点系统服务器上“受信任人”证书存储中的故障服务器的 Configuration Manager 证书。 如果改变服务器的用途而不对其进行重新格式化，则这一点特别重要。  
+Para remover o PeerTrust que foi originalmente estabelecido com o sistema de sites e as funções do sistema de sites, remova manualmente os certificados do Configuration Manager do servidor com falha no repositório de certificados **Pessoas Confiáveis** em outros servidores do sistema de sites. Isso é particularmente importante se você redefinir o servidor sem reformatá-lo.  
 
-有关这些证书的详细信息，请参阅 [System Center Configuration Manager 的加密控件技术参考](../../../protect/deploy-use/cryptographic-controls-technical-reference.md)中的**服务器通信的加密控制**部分。  
+Para obter mais informações sobre estes certificados, veja a seção **Controles de criptografia para a comunicação do servidor** na [Referência técnica para controles de criptografia usados no System Center Configuration Manager](../../../protect/deploy-use/cryptographic-controls-technical-reference.md).  
 
-**不要配置基于 Internet 的站点系统来桥接外围网络和 Intranet。**  
+**Não configurar os sistemas de site baseados na Internet site para conectar a rede de perímetro e a intranet.**  
 
-不要将站点系统服务器配置为多宿主，防止它们连接到外围网络和 Intranet。 尽管这种配置允许基于 Internet 的站点系统接受来自 Internet 和 Intranet 的客户端连接，但它会消除外围网络和 Intranet 之间的安全边界。  
+Não configure servidores do sistema de sites para serem de hospedagem múltipla, assim eles se conectam à rede de perímetro e à intranet. Embora essa configuração permita que sistemas de site baseados na Internet aceitem conexões do cliente da Internet e da intranet, ela elimina um limite de segurança entre a rede de perímetro e a intranet.  
 
-**如果站点系统服务器位于不受信任网络（例如外围网络）上，请配置站点服务器以发起与站点系统的连接。**  
+**Se o servidor do sistema de site estiver em uma rede não confiável (como uma rede de perímetro), configure o servidor do site para iniciar conexões para o sistema de site.**  
 
-默认情况下，站点系统发起与站点服务器的连接来传输数据，如果发起的连接是从不受信任网络到受信任网络的连接，则这可能会带来安全风险。 当站点系统接受来自 Internet 的连接或位于不受信任的林中时，请配置站点系统选项“要求站点服务器启动到此站点系统的连接”  ，以便在安装站点系统和任何站点系统角色之后，所有连接均从受信任网络中发起。  
+Por padrão, os sistemas de site iniciam conexões para o servidor do site para transferir dados, o que pode ser um risco à segurança quando a inicialização da conexão se origina de uma rede não confiável para uma rede confiável. Quando os sistemas de site aceitam conexões da Internet ou residem em uma floresta não confiável, configure a opção do sistema de site **Exigir que o servidor do site inicie conexões com este sistema de site** para que, depois da instalação do sistema de site e de quaisquer funções do sistema de site, todas as conexões sejam iniciadas da rede confiável.  
 
-**如果为基于 Internet 的客户端管理使用 Web 代理服务器，请通过使用终止操作并进行身份验证来使用到 SSL 的 SSL 桥接。**  
+**Se você usar um servidor proxy da Web para gerenciamento de clientes baseado na Internet, use a ponte SSL para SSL, usando a terminação com autenticação.**  
 
- 如果在代理 Web 服务器上配置 SSL 终止，则在将来自 Internet 的数据包转发到内部网络之前，会对该数据进行检测。 代理 Web 服务器将对来自客户端的连接进行验证，将其终止，然后建立一个新的经身份验证的连接，连接到基于 Internet 的站点系统。  
+ Quando você configura a terminação SSL no servidor proxy da Web, os pacotes da Internet estão sujeitos à inspeção antes de serem encaminhados à rede interna. O servidor proxy da Web autentica a conexão do cliente, termina a conexão e depois abre uma nova conexão autenticada com os sistemas de área baseados na Internet.  
 
- Configuration Manager 客户端计算机使用代理 Web 服务器连接到基于 Internet 的站点系统时，客户端标识（客户端 GUID）将安全地包含在数据包负载中，以便管理点不会将代理 Web 服务器视为客户端。 如果代理 Web 服务器无法支持 SSL 桥接的要求，则也支持 SSL 隧道。 这是一项安全性较差的选项，因为来自 Internet 的 SSL 数据包会在不终止的情况下转发到站点系统，因此无法检测其是否包含恶意内容。  
+ Quando os computadores cliente do Configuration Manager usam um servidor Web proxy para se conectar a sistemas de sites baseados na Internet, a identidade do cliente (GUID do cliente) fica protegida na carga do pacote para que o ponto de gerenciamento não considere o servidor Web proxy como o cliente. Se o servidor proxy da Web não oferecer suporte aos requisitos para a ponte SSL, o túnel SSL terá suporte. Essa é uma opção menos segura, pois os pacotes de SSL da Internet são encaminhados para os sistemas de site sem terminação SSL, para que não possam ser inspecionados quanto a conteúdo mal-intencionado.  
 
- 如果你的代理 Web 服务器无法支持 SSL 桥接的要求，你可以使用 SSL 隧道。 但是，这是一项安全性较差的选项，因为来自 Internet 的 SSL 数据包会在不终止的情况下转发到站点系统，因此无法检测其是否包含恶意内容。  
+ Se o servidor proxy da Web não oferecer suporte os requisitos para a ponte SSL, você poderá usar o túnel SSL. No entanto, essa é uma opção menos segura, pois os pacotes de SSL da Internet são encaminhados para os sistemas de site sem terminação SSL, para que não possam ser inspecionados quanto a conteúdo mal-intencionado.  
 
 > [!WARNING]  
->  通过 Configuration Manager 注册的移动设备无法使用 SSL 桥接，并且必须仅使用 SSL 隧道。  
+>  Os dispositivos móveis que são registrados pelo Configuration Manager não podem usar a ponte SSL e devem usar somente o túnel SSL.  
 
-**将站点配置为唤醒计算机以安装软件时所要使用的配置。**  
+**As configurações a serem usadas se você definir o site para ativar computadores para instalar o software.**  
 
--   如果使用传统的唤醒数据包，请使用单播，而不是子网导向型广播。  
+-   Se você usar pacotes de inicialização tradicionais, use unicast em vez de transmissões direcionadas por sub-rede.  
 
--   如果必须使用子网导向型广播，请配置路由器，仅允许来自站点服务器且位于非默认端口号上的 IP 导向型广播。  
+-   Se você tiver de usar transmissões direcionadas por sub-rede, configure roteadores para permitir transmissões direcionadas por IP somente do servidor do site e somente em um número da porta não padrão.  
 
-若要深入了解不同的 LAN 唤醒技术，请参阅[规划如何在 System Center Configuration Manager 中唤醒客户端](../../../core/clients/deploy/plan/plan-wake-up-clients.md)。
+Para obter mais informações sobre as diferentes tecnologias Wake On LAN, consulte [Planejar a ativação de clientes no System Center Configuration Manager](../../../core/clients/deploy/plan/plan-wake-up-clients.md).
 
-**如果使用电子邮件通知，请配置对 SMTP 邮件服务器的身份验证访问权限。**  
+**Se você usa notificação por email, configure o acesso autenticado para o servidor de email SMTP.**  
 
-请尽可能使用支持身份验证访问的邮件服务器，并使用站点服务器计算机帐户进行身份验证。 如果必须指定用于身份验证的用户帐户，请使用具有最低权限的帐户。  
+Sempre que possível, use um servidor de email que dê suporte ao acesso autenticado e use a conta de computador do servidor do site para autenticação. Se for necessário especificar uma conta de usuário para autenticação, use uma conta que tenha o mínimo de privilégios.  
 
-##  <a name="BKMK_Security_SiteServer"></a>站点服务器的最佳安全做法  
- 使用下列最佳安全做法，帮助保护 Configuration Manager 站点服务器的安全。  
+##  <a name="BKMK_Security_SiteServer"></a> Práticas recomendadas de segurança para o servidor do site  
+ Use as práticas recomendadas de segurança a seguir para ajudar a proteger o servidor do site do Configuration Manager.  
 
- **在成员服务器而不是域控制器上安装 Configuration Manager。**  
+ **Instale o Configuration Manager em um servidor membro em vez de em um controlador de domínio.**  
 
- Configuration Manager 站点服务器和站点系统不需要安装在域控制器上。 域控制器没有除域服务器之外的本地安全帐户管理 (SAM) 数据库。 在成员服务器上安装 Configuration Manager 时，可在本地 SAM 数据库而不是域数据库中维护 Configuration Manager 帐户。  
+ Os sistemas de sites e o servidor do site do Configuration Manager não precisam da instalação em um controlador de domínio. Controladores de domínio não têm outro banco de dados SAM (Gerenciamento de Contas de Segurança) local além do banco de dados do domínio. Ao instalar o Configuration Manager em um servidor membro, você poderá manter as contas do Configuration Manager no banco de dados SAM local, em vez de manter no banco de dados do domínio.  
 
- 这种做法还减小了域控制器的攻击面。  
+ Essa prática também reduz a superfície sujeita a ataques nos controladores de domínio.  
 
- **避免通过网络将文件复制到辅助站点服务器，以安装辅助站点。**  
+ **Instale sites secundários, evitando copiar os arquivos no servidor do site secundário pela rede.**  
 
- 运行安装程序并创建辅助站点时，请不要选择用于将文件从父站点复制到辅助站点的选项，也不要使用网络源位置。 通过网络复制文件时，熟练的攻击者可能会劫持辅助站点安装包，并在安装文件之前篡改文件，但确定攻击时间并不容易。 通过在传输文件时使用 IPsec 或 SMB，可以减轻此攻击。  
+ Ao executar a instalação e criar um site secundário, não selecione a opção para copiar os arquivos do site pai no site secundário e não use um local de origem na rede. Quando você copia arquivos pela rede, algum invasor habilidoso pode invadir o pacote de instalação do site secundário e adulterar os arquivos antes de serem instalados, apesar de que seria difícil cronometrar esse ataque. Esse ataque pode ser reduzido com o uso de IPsec ou SMB quando você transferir os arquivos.  
 
- 在辅助站点服务器上，请将源文件从媒体文件夹复制到本地文件夹，而不是通过网络复制文件。 然后，运行安装程序创建辅助站点时，请在“安装源文件” 页选择“使用辅助站点计算机上以下位置中的源文件(最安全)” ，并指定此文件夹。  
+ Em vez de copiar os arquivos pela rede, no servidor do site secundário, copie os arquivos de origem da pasta de mídia para uma pasta local. Depois, ao executar a instalação para criar um site secundário, na página **Arquivos de Origem de Instalação**, selecione **Usar os arquivos de origem no seguinte local no computador do site secundário (mais seguro)**e especifique essa pasta.  
 
- 有关详细信息，请参阅[使用安装向导安装站点](../../../core/servers/deploy/install/use-the-setup-wizard-to-install-sites.md)主题中的[安装辅助站点](../../../core/servers/deploy/install/use-the-setup-wizard-to-install-sites.md#bkmk_secondary)。  
+ Para obter mais informações, consulte [Install a secondary site](../../../core/servers/deploy/install/use-the-setup-wizard-to-install-sites.md#bkmk_secondary) (Instalar um site secundário) no tópico [Install System Center Configuration Manager sites](../../../core/servers/deploy/install/use-the-setup-wizard-to-install-sites.md) (Instalar sites do System Center Configuration Manager).  
 
-##  <a name="BKMK_Security_SQLServer"></a>SQL Server 的最佳安全做法  
- Configuration Manager 使用 SQL Server 作为后端数据库。 如果数据库被泄露，则攻击者可以绕过 Configuration Manager，直接访问 SQL Server，通过 Configuration Manager 启动攻击。 请将对 SQL Server 的攻击视为高风险并进行相应缓解。  
+##  <a name="BKMK_Security_SQLServer"></a> Práticas recomendadas de segurança para o SQL Server  
+ O Configuration Manager usa o SQL Server como banco de dados back-end. Se o banco de dados estiver comprometido, os invasores poderão ignorar o Configuration Manager e acessar diretamente o SQL Server para iniciar ataques por meio do Configuration Manager. Considere os ataques contra o SQL Server como de risco muito alto e atenue adequadamente.  
 
- 使用下列最佳安全做法，帮助保护 Configuration Manager SQL Server 的安全。  
+ Use as práticas recomendadas de segurança a seguir para ajudar a proteger SQL Server para o Configuration Manager.  
 
- **不要使用 Configuration Manager 站点数据库服务器来运行其他 SQL Server 应用程序。**  
+ **Não use o servidor de banco de dados do site do Configuration Manager para executar outros aplicativos do SQL Server.**  
 
- 提高对 Configuration Manager 站点数据库服务器的访问权限时，这会增加 Configuration Manager 数据的风险。 如果 Configuration Manager 站点数据库遭到泄露，还会危及同一 SQL Server 计算机上的其他应用程序。  
+ Quando você aumenta o acesso ao servidor de banco de dados do site do Configuration Manager, isso aumenta o risco aos dados do Configuration Manager. Se o banco de dados do site do Configuration Manager estiver comprometido, outros aplicativos no mesmo computador SQL Server também serão colocados em risco.  
 
- **将 SQL Server 配置为使用 Windows 身份验证。**  
+ **Configurar o SQL Server para usar autenticação do Windows.**  
 
- 虽然 Configuration Manager 使用 Windows 帐户和 Windows 身份验证来访问站点数据库，但仍然可以将 SQL Server 配置为使用 SQL Server 混合模式。 SQL Server 混合模式允许其他 SQL 登录名访问数据库，这不必要且增大了攻击面。  
+ Embora o Configuration Manager acesse o banco de dados do site usando uma conta do Windows e autenticação do Windows, ainda é possível configurar o SQL Server para usar o modo misto do SQL Server. O modo misto do SQL Server permite que entradas adicionais do SQL acessem o banco de dados, o que não é necessário e aumenta a superfície sujeita a ataques.  
 
- **请采取其他步骤，以确保使用 SQL Server Express 的辅助站点具有最新的软件更新。**  
+ **Adote medidas adicionais para garantir que os sites secundários que usam o SQL Server Express tenham as últimas atualizações de software.**  
 
- 安装主站点时，Configuration Manager 从 Microsoft 下载中心下载 SQL Server Express，并将文件复制到主站点服务器。 安装辅助站点并选择安装 SQL Server Express 的选项时，Configuration Manager 会安装以前下载的版本，且不会检查是否有新版本可用。 为确保辅助站点具有最新版本，请执行以下任务之一：  
+ Quando você instala um site primário, o Configuration Manager baixa o SQL Server Express do Centro de Download da Microsoft e copia os arquivos no servidor do site primário. Quando você instala um site secundário e seleciona a opção que instala o SQL Server Express, o Configuration Manager instala a versão baixada anteriormente e não verifica se há novas versões disponíveis. Para garantir que o site secundário tenha as versões mais recentes, execute uma das tarefas a seguir:  
 
--   安装辅助站点后，在辅助站点服务器上运行 Windows 更新。  
+-   Depois que o site secundário tiver sido instalado, execute o Windows Update no servidor do site secundário.  
 
--   安装辅助站点之前，请在将运行辅助站点服务器的计算机上手动安装 SQL Server Express，并确保安装最新版本和任何软件更新。 然后安装辅助站点，并选择选项以使用现有 SQL Server 实例。  
+-   Antes de instalar o site secundário, instale manualmente o SQL Server Express no computador que irá executar o servidor do site secundário e verifique se você instalou a versão mais recente, bem como as atualizações de software. Em seguida, instale o site secundário e selecione a opção de usar uma instância existente do SQL Server.  
 
-针对这些站点以及所安装的所有 SQL Server 版本定期运行 Windows 更新，以确保它们具有最新的软件更新。  
+Periodicamente, execute o Windows Update para esses sites e para todas as versões instaladas do SQL Server para garantir que eles tenham as últimas atualizações de software.  
 
-**执行 SQL Server 的最佳方案。**  
+**Siga as práticas recomendadas para o SQL Server.**  
 
-确定并执行 SQL Server 版本的最佳方案。 但是，请考虑 Configuration Manager 的以下要求：  
+Identifique e siga as práticas recomendadas para a sua versão do SQL Server. No entanto, leve em consideração os seguintes requisitos do Configuration Manager:  
 
--   站点服务器的计算机帐户必须是运行 SQL Server 的计算机上“管理员”组的成员。 如果遵循 SQL Server 的“显式预配管理员主体”建议，则在站点服务器上运行安装程序时所用的帐户必须隶属于 SQL 用户组。  
+-   A conta de computador do servidor do site deve ser um membro do grupo de Administradores no computador que executa o SQL Server. Se você seguir a recomendação do SQL Server de "provisionar entidades de segurança do administrador explicitamente", a conta que usar para executar a instalação no servidor do site deverá ser um membro do grupo de usuários do SQL.  
 
--   如果使用域用户帐户安装 SQL Server，请确保针对发布到 Active Directory 域服务的服务主体名称 (SPN) 配置站点服务器计算机帐户。 如果没有 SPN，Kerberos 身份验证和 Configuration Manager 安装程序都将失败。  
+-   Se você instalar o SQL Server usando uma conta de usuário de domínio, verifique se a conta de computador do servidor do site está configurada para um SPN (Nome da Entidade de Serviço), que é publicado em Serviços de Domínio Active Directory . Sem o SPN, a autenticação Kerberos e a instalação do Configuration Manager falham.  
 
-##  <a name="BKMK_Security_IIS"></a>运行 IIS 的站点系统的最佳安全做法  
-Configuration Manager 中的一些站点系统角色需要 IIS。 通过保护 IIS 安全的过程，Configuration Manager 可正确运行并减小安全攻击的风险。 若可行，请将需要 IIS 的服务器的数量降至最低。 例如，请仅运行支持客户端群所需数目的管理点，并针对基于 Internet 的客户端管理考虑高可用性和网络隔离。  
+##  <a name="BKMK_Security_IIS"></a> Práticas recomendadas de segurança para os sistemas de sites que executam IIS  
+Várias funções do sistema de sites no Configuration Manager requerem o IIS. O processo de proteção do IIS permite que o Configuration Manager opere corretamente e reduz o risco de ataques à segurança. Quando for viável, minimize o número de servidores que requerem IIS. Por exemplo, execute apenas o número de pontos de gerenciamento que você precisa para dar suporte à sua base de clientes, levando em consideração a alta disponibilidade e o isolamento da rede para o gerenciamento de clientes baseado na Internet.  
 
- 使用下列最佳安全方案来帮助你保护运行 IIS 的站点系统的安全。  
+ Use as práticas recomendadas de segurança a seguir para proteger os sistemas de site que executam IIS.  
 
- **禁用不必要的 IIS 功能。**  
+ **Desabilite as funções do IIS de que você não precisa.**  
 
- 仅针对你安装的站点系统角色安装最少的 IIS 功能。 有关详细信息，请参阅[站点和站点系统先决条件](../../../core/plan-design/configs/site-and-site-system-prerequisites.md)。  
+ Instale o mínimo de recursos do IIS para a função do sistema de site que você instalar. Para obter mais informações, consulte [Site and site system prerequisites](../../../core/plan-design/configs/site-and-site-system-prerequisites.md) (Pré-requisitos de site e sistema de sites).  
 
- **配置需要 HTTPS 的站点系统角色。**  
+ **Configure as funções do sistema de site para exigir HTTPS.**  
 
- 当客户端使用 HTTP 而不是使用 HTTPS 连接到站点系统时，它们使用 Windows 身份验证，这可能会回退为使用 NTLM 身份验证而不是 Kerberos 身份验证。 当使用 NTLM 身份验证时，客户端可能会连接到恶意服务器。  
+ Quando os clientes se conectam a um sistema de site usando HTTP, em vez de HTTPS, eles usam a autenticação do Windows, que pode voltar a usar a autenticação NTLM em vez da autenticação Kerberos. Quando a autenticação NTLM é usada, os clientes podem se conectar a um servidor não autorizado.  
 
- 分发点可能是此最佳安全方案的例外，因为为 HTTPS 配置分发点后，包访问帐户不工作。 包访问帐户为内容提供授权，以便你可以限制能够访问内容的用户。 有关详细信息，请参阅[内容管理的最佳安全做法](../../../core/plan-design/hierarchy/security-and-privacy-for-content-management.md#BKMK_Security_ContentManagement)。  
+ A exceção a essa prática recomendada de segurança podem ser os pontos de distribuição, pois as contas de acesso ao pacote não funcionam quando o ponto de distribuição está configurado para HTTPS. As contas de acesso ao pacote fornecem autorização para acesso ao conteúdo, de modo que você pode restringir quais usuários podem acessar o conteúdo. Para obter mais informações, consulte [Melhores práticas de segurança para gerenciamento de conteúdo](../../../core/plan-design/hierarchy/security-and-privacy-for-content-management.md#BKMK_Security_ContentManagement).  
 
-**在 IIS 中为站点系统角色配置证书信任列表 (CTL)。**  
+**Configure uma CTL (Lista de Certificados Confiáveis) no IIS para as funções do sistema de sites.**  
 
-站点系统角色：  
+Funções do sistema de sites:  
 
--   配置用于 HTTPS 的分发点  
+-   Um ponto de distribuição configurado para HTTPS  
 
--   配置用于 HTTPS 且启用以支持移动设备的管理点
+-   Um ponto de gerenciamento configurado para HTTPS e habilitado para dar suporte a dispositivos móveis
 
-证书信任列表 (CTL) 是受信任的根证书颁发机构的定义列表。 将 CTL 与组策略和公钥基础结构 (PKI) 部署一起使用时，CTL 可用于补充网络上配置的受信任的现有根证书颁发机构，例如随附 Microsoft Windows 自动安装或通过 Windows 企业根证书颁发机构添加的项目。 但在 IIS 中配置 CTL 时，它会定义受信任的根证书颁发机构的子集。  
+Uma CTL é uma lista definida de autoridades de certificação confiáveis. Quando você usa uma CTL com Política de Grupo e implantação de PKI (infraestrutura de chave pública), uma CTL permite complementar as autoridades de certificação confiáveis ​​existentes configuradas na rede, como aquelas instaladas automaticamente com o Microsoft Windows ou adicionadas por meio de autoridades de certificação raiz corporativas do Windows. No entanto, quando uma CTL é configurada no IIS, ela define um subconjunto dessas autoridades de certificação confiáveis.  
 
-利用此子集，你可以加强控制安全性，因为 CTL 将接受的客户端证书仅局限于 CTL 中所列证书颁发机构颁发的证书。 例如，Windows 附带了许多已知的第三方证书颁发机构证书，如 VeriSign 和 Thawte。
+Esse subconjunto fornece mais controle sobre a segurança, pois a CTL restringe os certificados de cliente aceitos para somente aqueles emitidos a partir da lista de autoridades de certificação na CTL. Por exemplo, o Windows vem com um número de certificados de autoridades de certificação de terceiros bem conhecidas, como VeriSign e Thawte.
 
-默认情况下运行 IIS 的计算机信任链接到这些已知证书颁发机构的证书。 如果没有为列出的站点系统角色配置 IIS 和 CTL，则若设备具有从这些证书颁发机构中颁发的证书，就会将其接受作为有效的 Configuration Manager 客户端。 如果配置 IIS 和不包括这些证书颁发机构的 CTL，并且证书已链接至这些证书机构，则会拒绝客户端连接。 但是，为使列出的站点系统角色接受 Configuration Manager 客户端，必须与指定 Configuration Manager 客户端使用的证书颁发机构的 CTL 一起配置 IIS。  
+Por padrão, computadores que executam o IIS confiam em certificados vinculados a essas autoridades de certificação bem conhecidas. Quando você não configurar o IIS com uma CTL para as funções do sistema de sites listadas, todo dispositivo que tenha um certificado do cliente emitido por essas autoridades de certificação será aceito como um cliente válido do Configuration Manager. Se você configurar o IIS com uma CTL que não inclua essas autoridades de certificação, as conexões do cliente serão recusadas ​​se o certificado for vinculado a essas autoridades de certificação. Entretanto, para que os clientes do Configuration Manager sejam aceitos para as funções do sistema de sites listadas, será necessário configurar o IIS com uma CTL que especifique as autoridades de certificação usadas pelos clientes do Configuration Manager.  
 
 > [!NOTE]  
->  只要列出的站点系统角色要求在 IIS 中配置 CTL。 在客户端计算机连接到 HTTPS 管理点时，Configuration Manager 用于管理点的证书颁发者列表为这些计算机提供了相同的功能。  
+>  Somente as funções de sistema de sites listadas requerem que você configure uma CTL no IIS. A lista de emissores de certificado que o Configuration Manager usa para pontos de gerenciamento fornece a mesma funcionalidade aos computadores cliente quando eles se conectam a pontos de gerenciamento de HTTPS.  
 
-有关如何在 IIS 中配置受信任的证书颁发机构的详细信息，请参阅 IIS 文档。  
+Para obter mais informações sobre como configurar uma lista de autoridades de certificação confiáveis ​​no IIS, consulte a documentação do IIS.  
 
-**不要将站点服务器放在带有 IIS 的计算机上。**  
+**Não coloque o servidor do site em um computador com IIS.**  
 
-角色分离有助于减小攻击配置文件以及提高可恢复性。 此外，站点服务器的计算机帐户通常对所有站点系统角色具有管理权限（如果使用客户端请求安装，则可能对 Configuration Manager 客户端具有管理权限）。  
+A separação de funções ajuda a reduzir o perfil de ataque e a aumentar a capacidade de recuperação. Além disso, a conta de computador do servidor do site geralmente tem privilégios administrativos em todas as funções do sistema de sites (e, possivelmente, em clientes do Configuration Manager, caso você use a instalação do cliente por push).  
 
-**对 Configuration Manager 使用专用 IIS 服务器。**  
+**Use servidores IIS dedicados para o Configuration Manager.**  
 
-虽然可以在 Configuration Manager 也使用的 IIS 服务器上托管多个基于 Web 的应用程序，但此做法可能会大大增加攻击面。 配置不良的应用程序可能允许攻击者获取 Configuration Manager 站点系统的控制权，这可能允许攻击者获取层次结构的控制权。  
+Embora seja possível hospedar vários aplicativos baseados na Web nos servidores IIS usados pelo Configuration Manager, essa prática pode aumentar significativamente a superfície sujeita a ataques. Aplicativos mal configurados podem permitir que um invasor obtenha o controle de um sistema de sites do Configuration Manager, o que poderia permitir que ele também obtivesse o controle da hierarquia.  
 
-如果必须在 Configuration Manager 站点系统上运行其他基于 Web 的应用程序，请为 Configuration Manager 站点系统创建自定义的网站。  
+Se você precisar executar outros aplicativos baseados na Web em sistemas de sites do Configuration Manager, crie um site personalizado para os sistemas de sites do Configuration Manager.  
 
-**使用自定义网站。**  
+**Use um site personalizado.**  
 
-对于运行 IIS 的站点系统，可将 Configuration Manager 配置为使用自定义网站，而不使用 IIS 的默认网站。 如果必须在站点系统上运行其他 Web 应用程序，请使用自定义网站。 此设置是站点范围设置，而不是特定站点系统的设置。  
+Para sistemas de sites que executam o IIS, você pode configurar o Configuration Manager para usar um site personalizado em vez do site padrão do IIS. Se for necessário executar outros aplicativos Web no sistema de site, você deverá usar um site da Web personalizado. Essa configuração abrange todo o site, em vez de apenas um sistema de sites específico.  
 
-除了提供附加安全性外，如果在站点系统上运行其他 Web 应用程序，则必须使用自定义网站。  
+Além de fornecer segurança adicional, você deverá usar um site da Web personalizado se executar outros aplicativos Web no sistema de sites.  
 
-**如果在安装了任何分发点角色之后从默认网站切换到自定义网站，请删除默认虚拟目录。**  
+**Se você alternar do site da Web padrão para um site da Web personalizado depois que todas as funções do ponto de distribuição forem instaladas, remova os diretórios virtuais padrão.**  
 
-从使用默认网站更改为使用自定义网站时，Configuration Manager 不会删除旧虚拟目录。 删除 Configuration Manager 最初在默认网站下创建的虚拟目录。  
+Quando você alterna do site da Web padrão para um site da Web personalizado, o Configuration Manager não remove diretórios virtuais antigos. Remova os diretórios virtuais que o Configuration Manager criou originalmente no site padrão.  
 
-例如，以下是要为分发点删除的虚拟目录：  
+Por exemplo, os diretórios virtuais a serem removidos de um ponto de distribuição são os seguintes:  
 
 -   SMS_DP_SMSPKG$  
 
@@ -286,81 +286,81 @@ Configuration Manager 中的一些站点系统角色需要 IIS。 通过保护 I
 
 -   NOCERT_SMS_DP_SMSSIG$  
 
-**执行 IIS 服务器的最佳方案。**  
+**Siga as práticas recomendadas para o Servidor IIS.**  
 
-确定并执行 IIS 服务器版本的最佳方案。 但是，请考虑 Configuration Manager 对特定站点系统角色的任何要求。 有关详细信息，请参阅[站点和站点系统先决条件](../../../core/plan-design/configs/site-and-site-system-prerequisites.md)。  
+Identifique e siga as práticas recomendadas para a sua versão do Servidor IIS. No entanto, leve em consideração todos os requisitos do Configuration Manager para funções específicas do sistema de sites. Para obter mais informações, consulte [Site and site system prerequisites](../../../core/plan-design/configs/site-and-site-system-prerequisites.md) (Pré-requisitos de site e sistema de sites).  
 
-##  <a name="BKMK_Security_ManagementPoint"></a>管理点的最佳安全做法  
- 管理点是设备与 Configuration Manager 之间的主要接口。 请将对管理点以及运行它的服务器的攻击视为高风险并进行相应缓解。 应用所有适当的最佳安全方案并监视异常活动。  
+##  <a name="BKMK_Security_ManagementPoint"></a> Práticas recomendadas de segurança para o ponto de gerenciamento  
+ Os pontos de gerenciamento são a principal interface entre dispositivos e o Configuration Manager. Considere os ataques contra o ponto de gerenciamento e o servidor em que ele é executado de risco muito elevado e atenue adequadamente. Aplique todas as práticas recomendadas de segurança apropriadas e monitore atividades incomuns.  
 
- 使用下列最佳安全做法，帮助保护 Configuration Manager 中管理点的安全。  
+ Use as práticas recomendadas de segurança a seguir para ajudar a proteger um ponto de gerenciamento no Configuration Manager.  
 
-**在管理点上安装 Configuration Manager 客户端时，请将其分配给该管理点的站点。**  
+**Ao instalar um cliente do Configuration Manager em um ponto de gerenciamento, atribua-o ao site desse ponto de gerenciamento.**  
 
- 请避免出现以下情况：将管理点站点系统上的 Configuration Manager 客户端分配给该管理点站点之外的其他站点。  
+ Evite o cenário em que um cliente do Configuration Manager que está em um sistema de sites do ponto de gerenciamento é atribuído a outro site além daquele do ponto de gerenciamento.  
 
- 如果从早期版本迁移到 System Center Configuration Manager，请尽快将管理点上的客户端软件迁移到 System Center Configuration Manager。  
+ Se você migrar de uma versão anterior para o System Center Configuration Manager, migre o software cliente no ponto de gerenciamento para o System Center Configuration Manager assim que possível.  
 
-##  <a name="BKMK_Security_FSP"></a>回退状态点的最佳安全做法  
- 如果在 Configuration Manager 中安装回退状态点，请使用下列最佳安全做法。  
+##  <a name="BKMK_Security_FSP"></a> Práticas recomendadas de segurança para o ponto de status de fallback  
+ Use as práticas recomendadas de segurança a seguir ao instalar um ponto de status de fallback no Configuration Manager.  
 
- 有关安装回退状态点时的安全注意事项的详细信息，请参阅 [Determine Whether You Require a Fallback Status Point](../../../core/clients/deploy/plan/determine-the-site-system-roles-for-clients.md#determine-if-you-need-a-fallback-status-point)。  
+ Para obter mais informações sobre considerações de segurança ao instalar um ponto de status de fallback, consulte [Determine Whether You Require a Fallback Status Point](../../../core/clients/deploy/plan/determine-the-site-system-roles-for-clients.md#determine-if-you-need-a-fallback-status-point).  
 
 
-**不要在站点系统上运行其他站点系统角色，也不要在域控制器上安装回退状态点。**  
+**Não execute outras funções do sistema de sites no sistema de sites e não instale o ponto de fallback de status em um controlador de domínio.**  
 
- 因为回退状态点旨在从任何计算机中接受未经过身份验证的通信，所以与其他站点系统角色一起或者在域控制器上运行此站点系统角色会大大增加对该服务器的风险。  
+ Como o ponto de status de fallback é projetado para aceitar comunicação não autenticada de qualquer computador, a execução dessa função do sistema de site com outras funções do sistema de site ou em um controlador de domínio aumenta consideravelmente o risco a esse servidor.  
 
-**如果将 PKI 证书用于 Configuration Manager 中的客户端通信，请在安装客户端之前安装回退状态点。**  
+**Quando usar certificados PKI para comunicação do cliente no Configuration Manager, instale o ponto de status de fallback antes de instalar os clientes.**  
 
- 如果 Configuration Manager 站点系统不接受 HTTP 客户端通信，则由于与 PKI 相关的证书问题的缘故，你可能不知道客户端不受管理。 但是，如果向客户端分配了回退状态点，则该状态点将报告这些证书问题。  
+ Se os sistemas de sites do Configuration Manager não aceitarem a comunicação de cliente HTTP, você poderá não saber que os clientes não são gerenciados devido a problemas de certificado relacionados à PKI. No entanto, se os clientes forem atribuídos a um ponto de status de fallback, esses problemas de certificado são relatados pelo ponto de status de fallback.  
 
- 出于安全原因，无法在安装客户端后向其分配回退状态点。 而只能在客户端安装期间分配此角色。  
+ Por motivos de segurança, não é possível atribuir um ponto de status de fallback a clientes após a instalação deles. Em vez disso, você pode atribuir essa função somente durante a instalação do cliente.  
 
-**避免在外围网络中使用回退状态点。**  
+**Evite usar o ponto de status de fallback na rede de perímetro.**  
 
- 回退状态点设计为可以接受来自任何客户端的数据。 虽然外围网络中的回退状态点可以帮助你解决基于 Internet 的客户端的问题，但必须在下列两者之间取得平衡：解决问题的好处，以及在可公开访问的网络中接受未经身份验证的数据的站点系统所面临的风险。  
+ Por design, o ponto de status de fallback aceita dados de qualquer cliente. Embora um ponto de status de fallback na rede de perímetro possa ajudar a solucionar problemas de clientes baseados na Internet, balanceie os benefícios da solução de problemas com o risco de um sistema de site que aceita dados não autenticados em uma rede acessível publicamente.  
 
- 如果一定要在外围网络或任何不受信任的网络中安装回退状态点，请配置站点服务器来启动数据传输，而不是使用允许回退状态点启动到站点服务器的连接这一默认设置。  
+ Se você instalar o ponto de status de fallback na rede de perímetro ou em qualquer rede não confiável, configure o servidor do site para iniciar as transferências de dados, em vez de usar a configuração padrão, que permite que o ponto de status de fallback inicie uma conexão com o servidor do site.  
 
-##  <a name="BKMK_SecurityIssues_Clients"></a>站点管理的安全问题  
- 查看以下有关 Configuration Manager 的安全问题：  
+##  <a name="BKMK_SecurityIssues_Clients"></a> Problemas de segurança para a administração do site  
+ Reveja os problemas de segurança a seguir para o Configuration Manager:  
 
--   Configuration Manager 不会防范使用 Configuration Manager 来攻击网络的获授权的管理用户。 未获授权的管理用户严重威胁安全险，而且可能会发动包括以下策略多种攻击：  
+-   O Configuration Manager não tem defesa contra um usuário administrativo autorizado que usa o Configuration Manager para atacar a rede. Usuários administrativos não autorizados são um alto risco à segurança e podem iniciar vários ataques, que incluem as seguintes estratégias:  
 
-    -   使用软件部署，在企业中的每台 Configuration Manager 客户端计算机上自动安装和运行恶意软件。  
+    -   Usar a implantação de software para instalar e executar automaticamente softwares mal-intencionados em cada computador cliente do Configuration Manager na empresa.  
 
-    -   使用远程控制功能，在无客户端权限的情况下远程控制 Configuration Manager 客户端。  
+    -   Usar o controle remoto para assumir o controle remoto de um cliente do Configuration Manager sem a permissão dele.  
 
-    -   配置快速轮询间隔和数量极大的清单，对客户端和服务器发动拒绝服务攻击。  
+    -   Configurar intervalos de sondagem rápidos e grandes quantidades de inventário para criar ataques de negação de serviço a clientes e servidores.  
 
-    -   使用层次结构中的一个站点将数据写入到另一个站点的 Active Directory 数据中。  
+    -   Usar um único site na hierarquia para gravar dados em dados do Active Directory de outro site.  
 
-    站点层次结构是安全边界。 站点仅被视为管理边界。  
+    A hierarquia do site é o limite de segurança. Considere os sites como limites de gerenciamento apenas.  
 
-    审核管理用户的所有活动，并定期查看审核日志。 录用前，要求所有 Configuration Manager 管理用户接受背景调查，并且要求定期复查（列为录用条件）。  
+    Audite todas as atividades do usuário administrativo e examine rotineiramente os logs de auditoria. Exija que todos os usuários administrativos do Configuration Manager passem por uma verificação em segundo plano antes de serem contratados e exija novas verificações periódicas como uma condição para sua admissão.  
 
--   如果注册点受到侵害，攻击者可能会获得身份验证证书，并且可能会偷窃注册了移动设备的用户的凭据。  
+-   Se o ponto de registro estiver comprometido, um invasor poderá obter certificados de autenticação e roubar as credenciais de usuários que registram seus dispositivos móveis.  
 
-    注册点与证书颁发机构通信，而且可以创建、修改和删除 Active Directory 对象。 切勿在外围网络中安装注册点，并始终监视异常的活动。  
+    O ponto de registro se comunica com uma autoridade de certificação e pode criar, modificar e excluir objetos do Active Directory. Nunca instale o ponto de registro na rede de perímetro e sempre monitore a atividade incomum.  
 
--   如果允许使用用户策略来进行基于 Internet 的客户端管理，或者在用户位于 Internet 上时为他们配置应用程序目录网站点，则会增大受攻击面。  
+-   Se você permitir políticas de usuários para o gerenciamento de clientes baseado na Internet ou configurar o ponto de sites da Web do catálogo de aplicativos em usuários quando eles estiverem na Internet, você aumentará seu perfil de ataque.  
 
-    除了使用 PKI 证书进行客户端到服务器的连接之外，这些配置还需要 Windows 身份验证，而这可能会回退到使用 NTLM 身份验证而不是 Kerberos。 NTLM 身份验证容易受到假冒和重播攻击。 为了成功对 Internet 上的用户进行身份验证，必须允许从基于 Internet 的站点系统服务器到域控制器的连接。  
+    Além de usar certificados PKI para conexões de cliente para servidor, essas configurações requerem a autenticação do Windows, que pode retornar ao uso da autenticação NTLM em vez da Kerberos. A autenticação NTLM é vulnerável a ataques de repetição e de representação. Para autenticar com êxito um usuário na Internet, permita uma conexão a partir do servidor do sistema de site baseado na Internet com um controlador de domínio.  
 
--   站点系统服务器上需要 Admin$ 共享。  
+-   O compartilhamento Admin$ é necessário em servidores do sistema de site.  
 
-    Configuration Manager 站点服务器使用 Admin$ 共享来连接到站点系统，以及在其上执行服务操作。 请勿禁用或删除 Admin$ 共享。  
+    O servidor de sites do Configuration Manager utiliza o compartilhamento Admin$ para se conectar aos sistemas de sites e executar operações de serviço neles. Não desative ou remova o compartilhamento Admin$.  
 
--   Configuration Manager 使用名称解析服务连接到其他计算机，而此类服务难以抵御各种安全攻击，例如欺骗、篡改、否认、信息泄露、拒绝服务和特权提升。  
+-   O Configuration Manager usa serviços de resolução de nomes para se conectar a outros computadores e é difícil proteger esses arquivos contra ataques de segurança, como falsificação, adulteração, repúdio, divulgação de informações confidenciais, negação de serviço e elevação de privilégio.  
 
-    为你用于名称解析的 DNS 和 WINS 版本找出任何最佳安全方案，然后按其进行。  
+    Identifique e siga as práticas recomendadas de segurança para a versão do DNS e do WINS usada para a resolução de nomes.  
 
-##  <a name="BKMK_Privacy_Cliients"></a>有关发现的隐私信息  
- 发现会创建网络资源的记录，并将它们存储在 System Center Configuration Manager 数据库中。 发现数据记录包含各种计算机信息，例如 IP 地址、操作系统和计算机名称。 也可以配置 Active Directory 发现方法，以发现存储在 Active Directory 域服务中的任何信息。  
+##  <a name="BKMK_Privacy_Cliients"></a> Informações de privacidade para descoberta  
+ A descoberta cria registros para recursos de rede e os armazena no banco de dados do System Center Configuration Manager. Registros de dados de descobertas contêm informações do computador, como endereços IP, sistemas operacionais e nomes do computador. Os métodos de descoberta do Active Directory também podem ser configurados para descobrir quaisquer informações armazenadas nos Serviços de Domínio Active Directory.  
 
- 默认情况下启用的唯一发现方法是检测信号发现方法，但该方法只能发现安装了 System Center Configuration Manager 客户端软件的计算机。  
+ O único método de descoberta habilitado por padrão é a descoberta de pulsação, mas esse método somente descobre computadores que já têm o software cliente do System Center Configuration Manager instalado.  
 
- 发现信息不会发送给 Microsoft。 而是存储在 Configuration Manager 数据库中。 信息保留在该数据库中，而“删除过期的发现数据”站点维护任务每 90 天就会删除一次这些信息。  
+ As informações de descoberta não são enviadas à Microsoft. Em vez disso, elas são armazenadas no banco de dados do Configuration Manager. As informações são retidas no banco de dados até que sejam excluídas a cada 90 dias pela tarefa de manutenção de site **Excluir Dados Antigos de Descoberta**.  
 
- 在配置其他发现方法或扩展 Active Directory 发现之前，请考虑隐私要求。  
+ Para configurar métodos de descoberta adicionais ou estender a descoberta do Active Directory, considere seus requisitos de privacidade.  

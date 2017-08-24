@@ -1,6 +1,6 @@
 ---
-title: "硬件清单安全和隐私 | Microsoft Docs"
-description: "获取 System Center Configuration Manager 中硬件清单的安全和隐私信息。"
+title: "Privacidade de segurança do inventário de hardware | Microsoft Docs"
+description: "Obtenha as informações de segurança e privacidade do inventário de hardware no System Center Configuration Manager."
 ms.custom: na
 ms.date: 2/22/2017
 ms.prod: configuration-manager
@@ -17,41 +17,41 @@ manager: angrobe
 ms.openlocfilehash: ec182ec3102e0f4ae8bcf3d1ef843b25510b6ce6
 ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
 ms.translationtype: HT
-ms.contentlocale: zh-CN
+ms.contentlocale: pt-BR
 ms.lasthandoff: 08/07/2017
 ---
-# <a name="security-and-privacy-for-hardware-inventory-in-system-center-configuration-manager"></a>System Center Configuration Manager 中硬件清单的安全和隐私
+# <a name="security-and-privacy-for-hardware-inventory-in-system-center-configuration-manager"></a>Segurança e privacidade do inventário de hardware no System Center Configuration Manager
 
-*适用范围：System Center Configuration Manager (Current Branch)*
+*Aplica-se a: System Center Configuration Manager (Branch Atual)*
 
-此主题包含 System Center Configuration Manager 中硬件清单的安全和隐私信息。  
+Este tópico contém as informações de segurança e privacidade do inventário de hardware no System Center Configuration Manager.  
 
-##  <a name="BKMK_Security_HardwareInventory"></a> 硬件清单的最佳安全方案  
- 从客户端收集硬件清单数据时使用下列最佳安全方案：  
+##  <a name="BKMK_Security_HardwareInventory"></a> Práticas recomendadas de segurança para o inventário de hardware  
+ Use as seguintes práticas recomendadas de segurança quando coletar dados de inventário de hardware de clientes:  
 
-|最佳安全方案|更多信息|  
+|Prática recomendada de segurança|Mais informações|  
 |----------------------------|----------------------|  
-|签名和加密清单数据|当客户端使用 HTTPS 与管理点通信时，他们发送的所有数据都使用 SSL 进行加密。 但是，当客户端计算机使用 HTTP 与内部网上的管理点通信时，客户端清单数据和收集的文件可以在未签名和未加密的状态下发送。 请确保将该站点配置为要求签名和使用加密。 此外，如果客户端可以支持 sha-256 的算法，选择需要 sha-256 选项。|  
-|不会收集 IDMIF 和 NOIDMIF 文件在高安全性环境中|IDMIF 和 NOIDMIF 文件集合可用于扩展硬件清单收集。 如有必要，Configuration Manager 创建新表或修改 Configuration Manager 数据库中现有的表，以容纳 IDMIF 和 NOIDMIF 文件中的属性。 但是，Configuration Manager 不会验证 IDMIF 和 NOIDMIF 文件，因此可以使用这些文件来更改不希望更改的表。 无效数据可以覆盖有效数据。 此外，可以添加大量数据，但处理此数据可能会导致所有 Configuration Manager 功能出现延迟。 若要降低这些风险，请将硬件清单客户端设置“收集 MIF 文件”  配置为“无” 。|  
+|Assinar e criptografar dados de inventário|Quando os clientes se comunicam com pontos de gerenciamento usando HTTPS, todos os dados que eles enviam são criptografados por meio do SSL. No entanto, quando os computadores cliente usam o HTTP para se comunicarem com pontos de gerenciamento na intranet, os dados de inventário do cliente e os arquivos coletados podem ser enviados sem assinatura e sem criptografia. Certifique-se de que o site está configurado para exigir assinatura e usar criptografia. Além disso, se os clientes podem suportar o algoritmo SHA-256, selecione a opção de exigir SHA-256.|  
+|Não coletar arquivos IDMIF e NOIDMIF em ambientes de alta segurança|Você pode usar a coleção de arquivos IDMIF e NOIDMIF para estender o inventário de hardware. Quando necessário, o Configuration Manager cria novas tabelas ou modifica as tabelas existentes no banco de dados do Configuration Manager para acomodar as propriedades nos arquivos IDMIF e NOIDMIF. No entanto, o Configuration Manager não valida arquivos IDMIF e NOIDMIF, esses arquivos podem ser usado para alterar as tabelas que você deseja não alteradas. Dados válidos poderão ser substituídos pelos dados inválidos. Além disso, grandes volumes de dados pode ser adicionadas e o processamento desses dados pode causar atrasos em todas as funções do Configuration Manager. Para atenuar esses riscos, configure o cliente de inventário de hardware definindo a opção **Coletar arquivos MIF** como **Nenhum**.|  
 
-### <a name="security-issues-for-hardware-inventory"></a>硬件清单的安全问题  
- 收集清单会暴露潜在的漏洞。 攻击者可以执行以下操作：  
+### <a name="security-issues-for-hardware-inventory"></a>Problemas de segurança para o inventário de hardware  
+ A coleta de inventários expõe vulnerabilidades potenciais. Os invasores podem fazer o seguinte:  
 
--   发送无效数据，即使禁用了软件清单客户端设置并启用文件收集，管理点也会接受这些数据。  
+-   Enviar dados inválidos, que serão aceitos pelo ponto de gerenciamento, mesmo quando a configuração do cliente de inventário de software estiver desabilitada e a coleção de arquivos não estiver habilitada.  
 
--   在一个或多个文件中发送超大量数据，这可能导致拒绝服务。  
+-   Enviar quantidades de dados excessivamente grandes em um único arquivo e em vários arquivos, o que pode causar uma negação de serviço.  
 
--   在将清单信息传输到 Configuration Manager 时访问清单信息。  
+-   Acessar informações de inventário quando forem transferidas para o Configuration Manager.  
 
- 由于具有本地管理权限的用户可以发送任何信息作为清单数据，因此请不要认为 Configuration Manager 收集的清单数据具有权威性。  
+ Como um usuário com privilégios administrativos locais pode enviar todas as informações como dados de inventário, não considere autoritativos os dados de inventário que são coletados pelo Configuration Manager.  
 
- 默认情况下，客户端设置中启用了硬件清单。  
+ O inventário de hardware é habilitado por padrão como uma configuração do cliente.  
 
-##  <a name="BKMK_Privacy_HardwareInventory"></a> 硬件清单的隐私信息  
- 硬件清单允许检索 Configuration Manager 客户端上注册表和 WMI 中存储的任何信息。 软件清单允许您发现具有指定类型的所有文件或从客户端收集任何指定的文件。 通过扩展硬件和软件清单并添加新的许可证管理功能，资产智能增强了清单功能。  
+##  <a name="BKMK_Privacy_HardwareInventory"></a> Informações sobre privacidade para o inventário de hardware  
+ O inventário de hardware permite que você recupere todas as informações armazenadas no Registro e no WMI em clientes do Configuration Manager. O inventário de software permite descobrir todos os arquivos de um tipo especificado ou coletar todos os arquivos especificados de clientes. O Asset Intelligence aprimora os recursos de inventário estendendo o inventário de hardware e software e adicionando novas funcionalidades de gerenciamento de licenças.  
 
- 默认情况下，客户端设置中启用了硬件清单，并且收集的 WMI 信息由你选择的选项确定。 默认情况下，软件清单处于启用状态，但默认情况下不收集文件。 尽管你可以选择启用硬件清单报告类，但资产智能数据集合会自动启用。  
+ O inventário de hardware é habilitado por padrão como uma configuração do cliente, e as informações do WMI coletadas são determinadas pelas opções que você selecionar. O inventário de software é habilitado por padrão, mas arquivos não são coletados por padrão. A coleta de dados do Asset Intelligence é habilitada automaticamente; mesmo assim, é possível selecionar as classes de relatório de inventário de hardware a ser habilitadas.  
 
- 清单信息不会发送到 Microsoft。 清单信息存储在 Configuration Manager 数据库中。 当客户端使用 HTTPS 来连接到管理点时，它们向站点发送的清单数据在传输过程中是加密的。 如果客户端使用 HTTP 来连接到管理点，你可以选择启用清单加密。 清单数据不会以加密格式存储在数据库中。 信息将保留在数据库中，直到每 90 天后被站点维护任务“删除过期的清单历史”  或“删除过期的收集文件”  。 可以配置删除间隔。  
+ As informações de inventário não são enviadas à Microsoft. As informações de inventário são armazenadas no banco de dados do Configuration Manager. Quando os clientes usam HTTPS para se conectarem a pontos de gerenciamento, os dados de inventário que enviam para o site são criptografados durante a transferência. Se os clientes usarem HTTP para se conectar a pontos de gerenciamento, você terá a opção de habilitar a criptografia de inventário. Os dados de inventário não são armazenados em formato criptografado no banco de dados. As informações são mantidas no banco de dados até que sejam excluídas pelas tarefas de manutenção do site **Excluir Histórico de Inventário Antigo** ou **Excluir Arquivos Coletados Antigos** a cada 90 dias. Você pode configurar o intervalo de exclusão.  
 
- 在配置硬件清单、软件清单、文件收集或资产智能数据集合前，请考虑你的隐私要求。  
+ Antes de configurar o inventário de hardware, o inventário de software, a coleta de arquivos ou a coleta de dados do Asset Intelligence, considere seus requisitos de privacidade.  

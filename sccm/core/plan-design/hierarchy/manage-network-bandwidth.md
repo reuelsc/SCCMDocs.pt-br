@@ -1,6 +1,6 @@
 ---
-title: "管理用于内容的网络带宽 | Microsoft Docs"
-description: "配置 System Center Configuration Manager 的计划、限制和预安排内容。"
+title: "Gerenciar o conteúdo da largura de banda da rede | Microsoft Docs"
+description: "Defina o agendamento, a limitação e o pré-teste de conteúdo para o System Center Configuration Manager."
 ms.custom: na
 ms.date: 2/6/2017
 ms.prod: configuration-manager
@@ -18,58 +18,58 @@ manager: angrobe
 ms.openlocfilehash: d9dff97126c34a726677de60dd7647370c553b6e
 ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
 ms.translationtype: HT
-ms.contentlocale: zh-CN
+ms.contentlocale: pt-BR
 ms.lasthandoff: 08/07/2017
 ---
-# <a name="manage-network-bandwidth-for-content"></a>管理用于内容的网络带宽
-为帮助管理用于 System Center Configuration Manager 内容管理过程的网络带宽，可以使用内置控件进行计划和限制。 也可以使用预留内容。 以下几部分详细说明了这些选项。
+# <a name="manage-network-bandwidth-for-content"></a>Gerenciar largura de banda de rede para o conteúdo
+Para ajudar a gerenciar a largura de banda de rede usada no processo de gerenciamento de conteúdo do System Center Configuration Manager, você pode usar controles internos para agendamento e limitação. Você também pode usar conteúdo pré-testado. As seções a seguir descrevem essas opções mais detalhadamente.
 
-##  <a name="BKMK_PlanningForThrottling"></a>计划和限制  
+##  <a name="BKMK_PlanningForThrottling"></a>Agendamento e limitação  
 
- 创建包、更改内容的源路径或者更新分发点上的内容时，文件会从源路径复制到站点服务器上的内容库中。 然后，会从站点服务器上的内容库中将内容复制到分发点上的内容库中。 如果已更新内容源文件并分发源文件，则 Configuration Manager 仅检索新文件或更新的文件，然后将其发送到分发点。
+ Ao criar um pacote, altere o caminho de origem do conteúdo ou atualize o conteúdo no ponto de distribuição; os arquivos são copiados do caminho de origem para a biblioteca de conteúdo no servidor do site. Em seguida, o conteúdo é copiado da biblioteca de conteúdo no servidor do site para a biblioteca de conteúdo nos pontos de distribuição. Quando os arquivos de origem do conteúdo são atualizados e os arquivos de origem já foram distribuídos, o Configuration Manager recupera somente os arquivos novos ou atualizados e os envia ao ponto de distribuição.
 
- 可以为站点对站点的通信以及站点服务器与远程分发点之间的通信使用计划和限制控件。 如果设置计划和限制控件后，网络带宽仍受到限制，可以考虑在分发点上预留内容。  
+ Você pode usar controles de agendamento e limitação para comunicação de site a site e para comunicação entre um servidor de sites e um ponto de distribuição remoto. Se a largura de banda estiver limitada mesmo após configurar os controles de agendamento e limitação, considere pré-configurar o conteúdo no ponto de distribuição.  
 
- 在 Configuration Manager 中，可以针对远程分发点设置计划并指定限制设置，以确定执行内容分发的时间和方式。 每个远程分发点都可以具有不同的配置，以帮助解决站点服务器到远程分发点的网络带宽限制。 用于计划和限制远程分发点的控件类似于标准发送程序地址的设置。 在这种情况下，由名为“包传输管理器”的新组件使用这些设置。
+ No Configuration Manager, você pode configurar um agendamento e definir configurações de limitação específicas em pontos de distribuição remotos que determinam quando e como a distribuição do conteúdo é realizada. Cada ponto de distribuição remoto pode ter configurações diferentes que ajudam a tratar limitações de largura de banda de rede do servidor do site para o ponto de distribuição remoto. Os controles de agendamento e limitação para pontos de distribuição remotos são semelhantes às configurações de um endereço de remetente padrão. Nesse caso, as configurações são usadas por um novo componente chamado Gerenciador de Transferência de Pacote.
 
- 包传输管理器将站点服务器（主站点或辅助站点）中的内容分发到站点系统上安装的分发点。 对于未在站点服务器上的分发点，在“速率限制”选项卡上指定限制设置，在“计划”选项卡上指定计划设置。 时间设置是基于发送站点所在时区，而不是分发点的时区。  
+ O Gerenciador de Transferência de Pacote distribui o conteúdo de um servidor do site, como um site primário ou secundário, para um ponto de distribuição instalado em um sistema de site. As configurações de limitação são definidas na guia **Limites de taxa** e as configurações de agendamento são definidas na guia **Agendamento** para um ponto de distribuição que não está em um servidor de sites. As configurações de hora são baseadas no fuso horário do site de envio, não do ponto de distribuição.  
 
 > [!IMPORTANT]  
->  仅在未在站点服务器上安装的分发点的属性中显示“速率限制”  和“计划”  选项卡。  
+>  As guias **Limites de Taxa** e **Agendamento** são exibidas somente nas propriedades de pontos de distribuição que não estão instalados em um servidor do site.  
 
-有关详细信息，请参阅[为 System Center Configuration Manager 安装和配置分发点](/sccm/core/servers/deploy/configure/install-and-configure-distribution-points)。  
+Para saber mais, veja [Instalar e configurar pontos de distribuição para o System Center Configuration Manager](/sccm/core/servers/deploy/configure/install-and-configure-distribution-points).  
 
-##  <a name="BKMK_PrestagingContent"></a>预安排内容  
- 可以预留内容，以便在分发内容之前将内容文件添加到站点服务器或分发点上的内容库。 由于内容文件已在内容库中，因此，当分发内容时，不会通过网络传输内容文件。 你可以预留应用程序和包类型的内容文件。  
+##  <a name="BKMK_PrestagingContent"></a>Conteúdo pré-teste  
+ Você pode pré-testar o conteúdo para adicionar os arquivos de conteúdo à biblioteca de conteúdo em um servidor de sites ou ponto de distribuição antes de distribuir o conteúdo. Como os arquivos de conteúdo já estão na biblioteca de conteúdo, eles não são transferidos pela rede durante a distribuição. Você pode pré-configurar arquivos de conteúdo para aplicativos e pacotes.  
 
-在 Configuration Manager 控制台中，选择想要预留的内容，然后使用“创建预留内容文件向导”。 这会创建压缩的预留内容文件，该文件包含内容的文件和关联元数据。 然后，你可以在站点服务器或分发点中手动导入内容。 请注意以下几点：  
+No console do Configuration Manager, selecione o conteúdo que você deseja pré-testar e, em seguida, use o **Assistente para Criar Arquivo de Conteúdo de Pré-Teste**. Isso cria um arquivo de conteúdo compactado e pré-testado, que contém os arquivos, as metadados associados ao conteúdo. Em seguida, você pode importar manualmente o conteúdo em um servidor do site ou ponto de distribuição. Observe o seguinte:  
 
--   在站点服务器上导入预留内容文件时，会将内容文件添加到站点服务器上的内容库，然后在站点服务器数据库中注册内容文件。  
+-   Quando você importa o arquivo de conteúdo de pré-teste em um servidor do site, os arquivos de conteúdo são adicionados à biblioteca de conteúdo no servidor do site, e em seguida registrados no banco de dados do servidor do site.  
 
--   在分发点上导入预留内容文件时，内容文件添加到分发点上的内容库。 会向站点服务器发送一条状态消息，通知站点内容在分发点上可用。  
+-   Quando você importa o arquivo de conteúdo pré-testado no ponto de distribuição, os arquivos de conteúdo são adicionados à biblioteca de conteúdo no ponto de distribuição. Uma mensagem de status é enviada ao servidor de sites informando que o conteúdo está disponível no ponto de distribuição.  
 
-你可以根据需要将分发点配置为 **预留** 分发点以帮助管理内容分发。 然后，分发内容时可以选择是否希望执行以下操作：  
+Opcionalmente, você pode configurar o ponto de distribuição como **pré-testado** para ajudar a gerenciar a distribuição de conteúdo. Então, ao distribuir conteúdo, você pode escolher se deseja:  
 
--   始终在分发点上预留内容。  
+-   Sempre pré-testar o conteúdo no ponto de distribuição.  
 
--   预留包的初始内容，然后在有内容更新时使用标准内容分发流程。  
+-   Pré-testar o conteúdo inicial para o pacote e, então, usar o processo de distribuição de conteúdo padrão quando houver atualizações para o conteúdo.  
 
--   对包中的内容始终使用标准内容分发流程。  
+-   Sempre usar o processo de distribuição de conteúdo padrão para o conteúdo no pacote.  
 
-###  <a name="BKMK_DetermineToPrestageContent"></a>确定是否预留内容  
- 考虑在下列情况下为应用程序和包预留内容：  
+###  <a name="BKMK_DetermineToPrestageContent"></a>Determinar se deseja pré-testar o conteúdo  
+ Considere a pré-configuração do conteúdo para aplicativos e pacotes nos seguintes cenários:  
 
--   **解决从站点服务器到分发点的网络带宽限制问题。** 如果计划和限制仍不足以解决带宽问题，请考虑在分发点上预留内容。 每个分发点都具有“为预留内容启用此分发点”设置，可在分发点属性中选择此设置。 如果你启用此选项，则会将分发点标识为预留的分发点，并且你可以选择如何按包来管理内容。  
+-   **Para lidar com o problema de largura de banda de rede limitada do servidor de sites ao ponto de distribuição.** Se o agendamento e a limitação não são suficientes para atender às suas preocupações sobre largura de banda, considere pré-testar o conteúdo no ponto de distribuição. Cada ponto de distribuição tem a configuração **Habilitar este ponto de distribuição para conteúdo pré-configurado** que você pode definir nas propriedades do ponto de distribuição. Quando você habilita essa opção, o ponto de distribuição é identificado como um ponto de distribuição pré-configurado, e você pode escolher como gerenciar o conteúdo por pacote.  
 
-    应用程序、包、驱动程序包、启动映像、操作系统安装程序和映像的属性中提供下列设置。 通过这些设置，可选择如何在标识为预留的远程分发点上管理内容分发：  
+    As seguintes configurações estão disponíveis nas propriedades de um aplicativo, pacote, pacote de driver, imagem de inicialização, instalador do sistema operacional e imagem. Essas configurações possibilitam escolher como a distribuição de conteúdo é gerenciada em pontos de distribuição remotos que são identificados como pré-testados:  
 
-    -   **在将包分配到分发点时自动下载内容**：如果包较小，并且计划和限制设置为内容分发提供了足够的控制，请使用此选项。  
+    -   **Baixar conteúdo automaticamente quando pacotes forem atribuídos a pontos de distribuição**: use esta opção quando tiver pacotes menores, e as configurações de agendamento e limitação fornecerem controle suficiente para distribuição do conteúdo.  
 
-    -   **仅下载对分发点所做的内容更改**：如果预期包中内容的未来更新通常比初始包小，请使用此选项。 例如，可以预留 Microsoft Office 等应用程序，因为初始包大小超过 700 MB 并且太大而无法通过网络发送。 但是，对此包的内容更新可能小于 10 MB 并且容许通过网络进行分发。 另一个示例可能是驱动程序包，其中初始包较大，但逐渐添加到包中的驱动程序可能较小。  
+    -   **Baixar somente alterações de conteúdo para o ponto de distribuição**: use essa opção quando você espera que futuras atualizações ao conteúdo do pacote sejam menores em geral. Por exemplo, você pode pré-testar um aplicativo como o Microsoft Office, já que o tamanho inicial do pacote é maior que 700 MB e é muito grande para ser enviado pela rede. No entanto, as atualizações de conteúdo nesse pacote podem ser inferiores a 10 MB e são aceitáveis para distribuição pela rede. Outro exemplo pode ser pacotes de driver em que o tamanho inicial do pacote é grande, mas adições de driver incrementais ao pacote podem ser pequenas.  
 
-    -   **手动将此包中的内容复制到分发点**：如果具有较大的包（其中包含诸如操作系统之类的内容），并且决不想使用网络将内容分发到分发点，请使用此选项。 如果选择此选项，则必须在分发点上预留内容。  
+    -   **Copiar manualmente o conteúdo deste pacote para o ponto de distribuição**: use esta opção no caso de pacotes grandes, com conteúdo como um sistema operacional, e quando você nunca desejar usar a rede para distribuir o conteúdo para o ponto de distribuição. Ao selecionar essa opção, você deve pré-configurar o conteúdo no ponto de distribuição.  
 
     > [!IMPORTANT]  
-    >  前面的选项适用于单个包，并且仅在分发点被标识为预留时使用。 未被标识为预留的分发点将忽略这些设置。 在此情况下，内容始终通过网络从站点服务器分发到分发点。  
+    >  As opções anteriores são aplicáveis por pacote e são usadas somente quando um ponto de distribuição é identificado como pré-testado. Os pontos de distribuição que não foram identificados como pré-configurados ignoram essas configurações. Nesse caso, o conteúdo será sempre distribuído do servidor do site para os pontos de distribuição pela rede.  
 
--   **在站点服务器上还原内容库。** 当站点服务器失败时，关于内容库中所包含的包和应用程序的信息会在还原过程中还原到站点数据库，但在此过程中不会还原内容库文件。 如果没有用于还原内容库的文件系统备份，可以从包含必须具有的包和应用程序的其他站点来创建预留的内容文件。 然后在还原的站点服务器上提取预留的内容文件。 有关站点服务器备份和恢复的详细信息，请参阅 [System Center Configuration Manager 的备份和恢复](/sccm/protect/understand/backup-and-recovery)。  
+-   **Para restaurar a biblioteca de conteúdo em um servidor de sites.** quando ocorre falha em um servidor do site, as informações sobre pacotes e aplicativos contidas na biblioteca de conteúdo são restauradas para o banco de dados do site como parte do processo de restauração, mas os arquivos dessa biblioteca não são restaurados como parte do processo. Se você não tiver um backup do sistema de arquivos para restaurar a biblioteca de conteúdo, é possível criar um arquivo de conteúdo pré-testado de outro site que contenha os pacotes e aplicativos que você precisa ter. Você pode, então, extrair o arquivo de conteúdo pré-testado no servidor de sites recuperado. Para saber mais sobre backup e recuperação do servidor de sites, veja [Backup e recuperação para o System Center Configuration Manager](/sccm/protect/understand/backup-and-recovery).  

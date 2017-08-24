@@ -1,6 +1,6 @@
 ---
-title: "维护任务参考 | Microsoft Docs"
-description: "阅读每个 System Center Configuration Manager 站点维护任务的详细信息，以及是否默认启用这些任务。"
+title: "Referência para tarefas de manutenção | Microsoft Docs"
+description: "Leia detalhes para cada uma das tarefas de manutenção de site do System Center Configuration Manager e se essas tarefas são habilitadas por padrão."
 ms.custom: na
 ms.date: 3/8/2017
 ms.prod: configuration-manager
@@ -18,293 +18,293 @@ manager: angrobe
 ms.openlocfilehash: a2d4420c2274a9b1ceb47ffd267849fdb5a55a61
 ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
 ms.translationtype: HT
-ms.contentlocale: zh-CN
+ms.contentlocale: pt-BR
 ms.lasthandoff: 08/07/2017
 ---
-# <a name="reference-for-maintenance-tasks-for-system-center-configuration-manager"></a>System Center Configuration Manager 维护任务参考
+# <a name="reference-for-maintenance-tasks-for-system-center-configuration-manager"></a>Referência para tarefas de manutenção do System Center Configuration Manager
 
-*适用范围：System Center Configuration Manager (Current Branch)*
+*Aplica-se a: System Center Configuration Manager (Branch Atual)*
 
-本主题列出了每个 System Center Configuration Manager 站点维护任务的详细信息，并指定可使用任务的站点类型。 每个条目还指示默认情况下启用还是未启用任务。 有关规划和配置站点来运行维护任务的信息，请参阅 [System Center Configuration Manager 的维护任务](../../../core/servers/manage/maintenance-tasks.md)。  
+Este tópico lista detalhes de cada uma das tarefas de manutenção de site do System Center Configuration Manager e em quais tipos de site a tarefa está disponível. Cada entrada também indica se a tarefa é habilitada ou não por padrão. Para saber mais sobre como planejar e configurar sites para executar tarefas de manutenção, veja [Tarefas de manutenção do System Center Configuration Manager](../../../core/servers/manage/maintenance-tasks.md).  
 
-**备份站点服务器**：使用此任务准备恢复关键数据。 可以为关键信息创建备份，用于还原站点和 Configuration Manager 数据库。 有关详细信息，请参阅 [System Center Configuration Manager 的备份和恢复](../../../protect/understand/backup-and-recovery.md)。  
+**Servidor do Site de Backup**: use esta tarefa para preparar para a recuperação de dados críticos. Você pode criar um backup de suas informações críticas para restaurar um site e o banco de dados do Configuration Manager. Para obter mais informações, consulte [Backup e recuperação para o System Center Configuration Manager](../../../protect/understand/backup-and-recovery.md).  
 
--   **管理中心站点**：已启用    
--   **主站点**：未启用    
--   辅助站点：不可用  
+-   **Site de administração central**: habilitado    
+-   **Site primário**: não habilitado    
+-   Site secundário: indisponível  
 
-**通过清单信息检查应用程序标题**：使用此任务保持在软件清单中报告的软件标题与资产智能目录中的软件标题的一致性。 有关详细信息，请参阅 [System Center Configuration Manager 中的资产智能简介](../../../core/clients/manage/asset-intelligence/introduction-to-asset-intelligence.md)。  
+**Verificar Título do Aplicativo com as Informações de Inventário**: use essa tarefa para manter a consistência entre os títulos de software informados no inventário de software e títulos de software no catálogo do Asset Intelligence. Para obter mais informações, consulte [Introdução ao Asset Intelligence no System Center Configuration Manager](../../../core/clients/manage/asset-intelligence/introduction-to-asset-intelligence.md).  
 
--   **管理中心站点**：已启用    
--   **主站点**：已启用    
--   辅助站点：不可用  
+-   **Site de administração central**: habilitado    
+-   **Site primário**: habilitado    
+-   Site secundário: indisponível  
 
-**清除安装标志**：使用此任务删除“客户端重新发现”期间不提交检测信号发现记录的客户端的安装标志。 安装的标记阻止向可能具有活动 Configuration Manager 客户端的计算机进行自动客户端请求安装。  
+**Limpar Sinalizador de Instalação**: use essa tarefa para remover o sinalizador de instalação de clientes que não enviam um registro de Descoberta de pulsação durante o período de **Redescoberta de Cliente**. O sinalizador instalado impede a instalação automática do cliente por push em um computador que possa ter um cliente do Configuration Manager ativo.  
 
--   管理中心站点：不可用    
--   **主站点**：未启用    
--   辅助站点：不可用  
+-   Site de administração central: indisponível    
+-   **Site primário**: não habilitado    
+-   Site secundário: indisponível  
 
-**删除过期的应用程序请求数据**：使用此任务从数据库中删除过期的应用程序请求。 有关应用程序请求的详细信息，请参阅[通过 System Center Configuration Manager 创建和部署应用程序](/sccm/apps/get-started/create-and-deploy-an-application)。  
+**Excluir Dados Antigos de Solicitação de Aplicativo**: use essa tarefa para excluir do banco de dados as solicitações de aplicativos antigas. Para obter mais informações sobre solicitações do aplicativo, consulte [Criar e implantar um aplicativo com o System Center Configuration Manager](/sccm/apps/get-started/create-and-deploy-an-application).  
 
--   管理中心站点：不可用
--   **主站点**：已启用    
--   辅助站点：不可用  
+-   Site de administração central: indisponível
+-   **Site primário**: habilitado    
+-   Site secundário: indisponível  
 
-**删除旧的客户端下载历史记录**：使用此任务可删除有关客户端使用的下载源的历史数据。 下载源信息用于填充[客户端数据源仪表板](/sccm/core/servers/deploy/configure/monitor-content-you-have-distributed#client-data-sources-dashboard)。  
--  管理中心站点 - 不可用
--    **主站点** - 已启用
--  辅助站点 - 不可用
+**Excluir Histórico de Download de Cliente Antigo**: use esta tarefa para excluir os dados históricos sobre a fonte de download usada pelos clientes. As informações de fonte baixadas são usadas para preencher o [painel de Fontes de Dados do Cliente](/sccm/core/servers/deploy/configure/monitor-content-you-have-distributed#client-data-sources-dashboard).  
+-  Site de administração central – indisponível
+-    **Site primário** – habilitado
+-  Site secundário - não disponível
 
-**删除过期的客户端操作**：使用此任务从站点数据库中删除客户端操作的所有过期数据。 例如，其中包括过期或到期的客户端通知数据（例如下载计算机或用户策略的请求）和 Endpoint Protection 数据（例如客户端的管理用户运行扫描或下载更新定义的请求）。
+**Excluir Operações Antigas do Cliente**: use essa tarefa para excluir todos os dados antigos de operações do cliente do banco de dados do site. Isso inclui, por exemplo, dados de notificações do cliente antigas ou expiradas (como solicitações de download do computador ou políticas do usuário) e do Endpoint Protection (como solicitações de um usuário administrativo para os clientes executarem uma varredura ou baixar definições atualizadas).
 
--   **管理中心站点**：已启用    
--   **主站点**：已启用    
--   辅助站点：不可用  
+-   **Site de administração central**: habilitado    
+-   **Site primário**: habilitado    
+-   Site secundário: indisponível  
 
-**删除过期的客户端状态历史记录**：使用此任务删除有关客户端通知所记录的、指定时间以前的客户端联机状态的历史记录信息。 有关客户端通知的详细信息，请参阅[如何在 System Center Configuration Manager 中监视客户端](../../../core/clients/manage/monitor-clients.md)。  
+**Excluir Histórico de Presença de Cliente Antigo**: use essa tarefa para excluir informações de histórico sobre o status online de clientes (gravadas pela notificação do cliente) que sejam mais antigas que a hora especificada. Para obter mais informações sobre notificações do cliente, veja [Como monitorar clientes no System Center Configuration Manager](../../../core/clients/manage/monitor-clients.md).  
 
--   **管理中心站点**：已启用   
--   **主站点**：已启用    
--   辅助站点：不可用  
+-   **Site de administração central**: habilitado   
+-   **Site primário**: habilitado    
+-   Site secundário: indisponível  
 
-**删除旧的云管理网关通信数据**：使用此任务可从站点数据库删除所有关于通过[云管理网关](/sccm/core/clients/manage/plan-cloud-management-gateway)传递的旧的通信数据。 例如，这包括关于请求数、请求总字节数、总响应字节数、失败请求数和最大并发请求数的数据。  
-- **管理中心站点** - 已启用
-- **主站点** - 已启用
-- 辅助站点 - 不可用
+**Excluir Dados de Tráfego Antigos do Gateway de Gerenciamento de Nuvem**: use esta tarefa para excluir todos os dados antigos de tráfego que passam pelo [gateway de gerenciamento de nuvem](/sccm/core/clients/manage/plan-cloud-management-gateway) do banco de dados do site. Por exemplo, isso inclui dados sobre o número de solicitações, total de bytes de solicitação, total de bytes de resposta, número de solicitações com falha e número máximo de solicitações simultâneas.  
+- **Site de administração central** – habilitado
+- **Site primário** – habilitado
+- Site secundário - não disponível
 
 
-**删除过期的收集文件**：使用此任务从数据库中删除有关收集的文件的过期信息。 此任务还从所选站点内的站点服务器文件夹结构中删除收集的文件。 默认情况下，会在站点服务器上的 **Inboxes\sinv.box\FileCol** 目录中存储收集的文件的五个最新副本。 有关详细信息，请参阅 [System Center Configuration Manager 中的软件清单简介](/sccm/core/clients/manage/inventory/introduction-to-software-inventory)。  
+**Excluir Arquivos Antigos Coletados**: use essa tarefa para excluir informações antigas sobre arquivos coletados do banco de dados. Essa tarefa também exclui os arquivos coletados da estrutura de pasta do servidor do site no site selecionado. Por padrão, as cinco cópias mais recentes de arquivos coletados são armazenadas no servidor de sites no diretório **Inboxes\sinv.box\FileCol**. Para obter mais informações, consulte [Introdução ao inventário se software no System Center Configuration Manager](/sccm/core/clients/manage/inventory/introduction-to-software-inventory).  
 
--   管理中心站点：不可用    
--   **主站点**：已启用    
--   辅助站点：不可用  
+-   Site de administração central: indisponível    
+-   **Site primário**: habilitado    
+-   Site secundário: indisponível  
 
-**删除过期的计算机关联数据**：使用此任务从数据库中删除过期的操作系统部署计算机关联数据。 此信息用作完成用户状态还原的一部分。 有关计算机关联的详细信息，请参阅[在 System Center Configuration Manager 中管理用户状态](../../../osd/get-started/manage-user-state.md)。  
+**Excluir Dados Antigos de Associação do Computador**: use essa tarefa para excluir dados antigos de associação do computador de Implantação do sistema operacional do banco de dados. Essas informações são usadas como parte da conclusão das restaurações de estado do usuário. Para obter mais informações sobre associações de computador, consulte [Gerenciar estado do usuário no System Center Configuration Manager](../../../osd/get-started/manage-user-state.md).  
 
--   管理中心站点：不可用    
--   **主站点**：已启用    
--   辅助站点：不可用  
+-   Site de administração central: indisponível    
+-   **Site primário**: habilitado    
+-   Site secundário: indisponível  
 
-**删除过期的删除检测数据**：使用此任务从数据库中删除通过提取视图创建的过期数据。 默认情况下，禁用提取视图。 只能通过使用 Configuration Manager SDK 启用它们。 除非启用提取视图，否则没有可供此任务删除的数据。  
+**Excluir Dados Antigos de Detecção de Exclusão**: use essa tarefa para excluir dados antigos do banco de dados que foram criados pelas Exibições de Extração. Por padrão, as Exibições de Extração estão desabilitadas. Só é possível habilitá-las usando o SDK do Configuration Manager. A menos que as Exibições de Extração sejam habilitadas, não há nenhum dado para esta tarefa excluir.  
 
--   **管理中心站点**：已启用    
--   **主站点**：已启用    
--   辅助站点：不可用  
+-   **Site de administração central**: habilitado    
+-   **Site primário**: habilitado    
+-   Site secundário: indisponível  
 
-**删除过期的设备擦除记录**：使用此任务从数据库中删除有关移动设备擦除操作的过期数据。 有关擦除移动设备的信息，请参阅[使用 System Center Configuration Manager 通过远程擦除、锁定或密码重置功能帮助保护数据](/sccm/mdm/deploy-use/wipe-lock-reset-devices)。  
+**Excluir Registro Antigo de Apagamento de Dispositivo**: use essa tarefa para excluir dados antigos sobre ações de limpeza de dispositivos móveis do banco de dados. Para saber mais sobre como apagar dispositivos móveis, veja [Proteger seus dados com apagamento, bloqueio ou redefinição de senha remotos usando o System Center Configuration Manager](/sccm/mdm/deploy-use/wipe-lock-reset-devices).  
 
--   管理中心站点：不可用    
--   **主站点**：已启用    
--   辅助站点：不可用  
+-   Site de administração central: indisponível    
+-   **Site primário**: habilitado    
+-   Site secundário: indisponível  
 
-**删除由 Exchange Server 连接器管理的过期设备**：使用此任务删除有关使用 Exchange Server 连接器管理的移动设备的过期数据。 将依据在 Exchange Server 连接器属性的“发现”选项卡上为“忽略非活动天数超过以下值的移动设备”选项配置的间隔删除此数据。 有关详细信息，请参阅[使用 System Center Configuration Manager 和 Exchange 管理移动设备](../../../mdm/deploy-use/manage-mobile-devices-with-exchange-activesync.md)。  
+**Excluir Dispositivos Antigos Gerenciados pelo Conector do Exchange Server**: use essa tarefa para excluir dados antigos sobre dispositivos móveis gerenciados usando o conector do Exchange Server. Esses dados são excluídos de acordo com o intervalo configurado na opção **Ignorar dispositivos móveis que estejam inativos por mais de () dias** na guia **Descoberta** das propriedades do conector do Exchange Server. Para obter mais informações, consulte [Gerenciar dispositivos móveis com o System Center Configuration Manager e o Exchange](../../../mdm/deploy-use/manage-mobile-devices-with-exchange-activesync.md).  
 
--   管理中心站点：不可用   
--   **主站点**：已启用    
--   辅助站点：不可用  
+-   Site de administração central: indisponível   
+-   **Site primário**: habilitado    
+-   Site secundário: indisponível  
 
-**删除过期的发现数据**：使用此任务从数据库中删除过期的发现数据。 此数据可能包括利用检测信号发现、网络发现和 Active Directory 域服务发现方法（系统、用户和组）生成的记录。 在某个站点运行此任务时，将删除与此站点关联的数据，而这些更改将复制到其他站点。 有关发现的信息，请参阅 [Run discovery for System Center Configuration Manager](../../../core/servers/deploy/configure/run-discovery.md)。  
+**Excluir Dados Antigos de Descoberta**: use essa tarefa para excluir dados de descoberta antigos do banco de dados. Esses dados podem incluir registros resultantes dos métodos de descoberta de pulsação, descoberta de rede e descoberta do Active Directory Domain Services (Sistema, Usuário e Grupo). Quando essa tarefa é executada em um site, os dados associados a esse site são excluídos, e essas alterações são replicadas em outros sites. Para obter mais informações sobre Descoberta, consulte [Run discovery for System Center Configuration Manager](../../../core/servers/deploy/configure/run-discovery.md).  
 
--   管理中心站点：不可用    
--   **主站点**：已启用    
--   辅助站点：不可用  
+-   Site de administração central: indisponível    
+-   **Site primário**: habilitado    
+-   Site secundário: indisponível  
 
-**删除过期的分发点使用数据**：使用此任务从数据库中删除存储时间比指定时间长的分发点的过期数据。  
+**Excluir Dados de Uso do Ponto de Distribuição Antigo**: use essa tarefa para excluir dados antigos de pontos de distribuição que foram armazenados além do tempo especificado do banco de dados.  
 
--   **管理中心站点**：已启用    
--   **主站点**：已启用    
--   辅助站点：不可用  
+-   **Site de administração central**: habilitado    
+-   **Site primário**: habilitado    
+-   Site secundário: indisponível  
 
-**删除过期的 Endpoint Protection 运行状况状态历史数据**：使用此任务从数据库中删除 Endpoint Protection 的过期状态信息。 有关 Endpoint Protection 状态信息的详细信息，请参阅[如何在 System Center Configuration Manager 中监视 Endpoint Protection](../../../protect/deploy-use/monitor-endpoint-protection.md)。  
+**Excluir Dados Antigos do Histórico de Status de Integridade do Endpoint Protection**: use essa tarefa para excluir do banco de dados informações de status antigas do Endpoint Protection. Para saber mais sobre as informações de status do Endpoint Protection, consulte [Como monitorar o Endpoint Protection no System Center Configuration Manager](../../../protect/deploy-use/monitor-endpoint-protection.md).  
 
--   管理中心站点：不可用    
--   **主站点**：已启用    
--   辅助站点：不可用  
+-   Site de administração central: indisponível    
+-   **Site primário**: habilitado    
+-   Site secundário: indisponível  
 
-**删除过期的已注册设备**：从 1602 的更新开始，默认禁用此任务。 可使用此任务从站点数据库中删除有关未在指定时间内向该站点报告任何信息的移动设备的过期数据。
+**Excluir Dispositivos Registrados Antigos**: começando pela atualização para 1602, essa tarefa é desabilitada por padrão. Você pode usar esta tarefa para excluir do banco de dados os dados antigos sobre dispositivos móveis registrados que não relataram informações ao site por um tempo especificado.
 
-此任务适用于通过 Microsoft Intune（混合）或 Configuration Manager 本地移动设备管理注册的设备。 有关使用 Configuration Manager 或 Intune 注册的设备的操作系统信息，请参阅 [System Center Configuration Manager 客户端和设备支持的操作系统](../../../core/plan-design/configs/supported-operating-systems-for-clients-and-devices.md)中的 [Microsoft Intune 注册的移动设备](../../../core/plan-design/configs/supported-operating-systems-for-clients-and-devices.md#mobile-devices-enrolled-by-microsoft-intune)部分。
+Essa tarefa aplica-se a dispositivos registrados pelo Microsoft Intune (híbrido) ou registrados no gerenciamento de dispositivo móvel local do Configuration Manager. Para saber mais sobre os sistemas operacionais de dispositivos que são registrados pelo Configuration Manager ou pelo Intune, veja a seção [Dispositivos móveis registrados pelo Microsoft Intune](../../../core/plan-design/configs/supported-operating-systems-for-clients-and-devices.md#mobile-devices-enrolled-by-microsoft-intune) em [Sistemas operacionais com suporte para clientes e dispositivos para o System Center Configuration Manager](../../../core/plan-design/configs/supported-operating-systems-for-clients-and-devices.md).
 
--   管理中心站点：不可用    
--   **主站点**：未启用    
--   辅助站点：不可用  
+-   Site de administração central: indisponível    
+-   **Site primário**: não habilitado    
+-   Site secundário: indisponível  
 
-**删除过期的清单历史记录**：使用此任务从数据库中删除存储时间比指定时间长的清单数据。 有关清单历史记录的信息，请参阅[如何使用资源浏览器来查看 System Center Configuration Manager 中的硬件清单](../../../core/clients/manage/inventory/use-resource-explorer-to-view-hardware-inventory.md)。  
+**Excluir Histórico Antigo de Inventário**: use essa tarefa para excluir dados de inventário que foram armazenados além do tempo especificado do banco de dados. Para obter informações sobre o histórico de inventário, consulte [Como usar o Gerenciador de Recursos para ver o inventário de hardware no System Center Configuration Manager](../../../core/clients/manage/inventory/use-resource-explorer-to-view-hardware-inventory.md).  
 
--   管理中心站点：不可用    
--   **主站点**：已启用    
--   辅助站点：不可用  
+-   Site de administração central: indisponível    
+-   **Site primário**: habilitado    
+-   Site secundário: indisponível  
 
-**删除过期的日志数据**：使用此任务从数据库中删除用于故障排除的过期日志数据。 此数据与 Configuration Manager 组件操作无关。  
+**Excluir Dados Antigos de Log**: use essa tarefa para excluir dados antigos de log que são usados para solução de problemas do banco de dados. Esses dados não estão relacionados às operações de componente do Configuration Manager.  
 
 > [!IMPORTANT]  
-> 默认情况下，此任务每天将在每个站点运行。 在管理中心站点和主站点，此任务会删除存在时间大于 30 天的数据。 在辅助站点使用 SQL Server Express 时，请确保此任务每天都运行并删除已 7 天不活动的数据。  
+> Por padrão, esta tarefa é executada diariamente em cada site. Em um site de administração central e sites primários, a tarefa exclui dados com mais de 30 dias. Ao usar o SQL Server Express em um site secundário, certifique-se que esta tarefa seja executada diariamente e exclua os dados que ficaram inativos por 7 dias.  
 
--   **管理中心站点**：已启用    
--   **主站点**：已启用    
--   **辅助站点**：已启用  
+-   **Site de administração central**: habilitado    
+-   **Site primário**: habilitado    
+-   **Site secundário**: habilitado  
 
-**删除过期的通知任务历史记录**：使用此任务从站点数据库中删除指定时间内未更新的有关客户端通知任务的信息。 有关客户端通知的详细信息，请参阅 [System Center Configuration Manager 的客户端部署任务](../../../core/clients/manage/monitor-clients.md)。  
+**Excluir Histórico de Tarefa de Notificação Antigo**: use essa tarefa para excluir informações sobre tarefas de notificação de clientes do banco de dados do site quando elas não tiverem sido atualizadas por um período determinado. Para saber mais sobre notificações do cliente, veja [Tarefas de implantação de cliente do System Center Configuration Manager](../../../core/clients/manage/monitor-clients.md).  
 
--   管理中心站点：不可用    
--   **主站点**：已启用    
--   辅助站点：不可用  
+-   Site de administração central: indisponível    
+-   **Site primário**: habilitado    
+-   Site secundário: indisponível  
 
-**删除过期的复制摘要数据**：使用此任务从站点数据库中删除指定时间内未更新的过期的复制摘要数据。 有关详细信息，请参阅 [How to monitor database replication links and replication status](../../../core/servers/manage/monitor-hierarchy-and-replication-infrastructure.md#BKMK_MonitorRepLinksAndStatuss) 主题中的 [Monitor hierarchy and replication infrastructure in System Center Configuration Manager](../../../core/servers/manage/monitor-hierarchy-and-replication-infrastructure.md) 部分。  
+**Excluir Dados de Resumo de Replicação Antigos**: use essa tarefa para excluir dados de resumo de replicação antigos do banco de dados do site quando eles não tiverem sido atualizados por um período determinado. Para obter mais informações, consulte a seção [How to monitor database replication links and replication status](../../../core/servers/manage/monitor-hierarchy-and-replication-infrastructure.md#BKMK_MonitorRepLinksAndStatuss) no tópico [Monitor hierarchy and replication infrastructure in System Center Configuration Manager](../../../core/servers/manage/monitor-hierarchy-and-replication-infrastructure.md) .  
 
--   **管理中心站点**：已启用    
--   **主站点**：已启用    
--   **辅助站点**：已启用  
+-   **Site de administração central**: habilitado    
+-   **Site primário**: habilitado    
+-   **Site secundário**: habilitado  
 
-**删除过期的密码记录**：在层次结构的顶层站点中使用此任务删除有关 Android 和 Windows Phone 设备的密码重置的过期数据。 密码重置数据已加密，但包含设备的 PIN。 默认情况下启用此任务，并删除超过 1 天的数据。  
+**Excluir Registros de Senha Antigos**: use essa tarefa no site de nível superior da sua hierarquia para excluir dados antigos sobre Redefinições de Senha para dispositivos Android e Windows Phone. Os dados da Redefinição de Senha são criptografados, mas incluem o PIN de dispositivos. Por padrão, essa tarefa é habilitada e exclui dados com mais de um dia.  
 
--   **管理中心站点**：已启用    
--   **主站点**：已启用    
--   辅助站点：不可用  
+-   **Site de administração central**: habilitado    
+-   **Site primário**: habilitado    
+-   Site secundário: indisponível  
 
-**删除过期的复制跟踪数据**：使用此任务从数据库中删除关于 Configuration Manager 站点之间的数据库复制的过期数据。 在更改此维护任务的配置时，配置将应用到层次结构中的每个合适的站点。 有关详细信息，请参阅 [How to monitor database replication links and replication status](../../../core/servers/manage/monitor-hierarchy-and-replication-infrastructure.md#BKMK_MonitorRepLinksAndStatuss) 主题中的 [Monitor hierarchy and replication infrastructure in System Center Configuration Manager](../../../core/servers/manage/monitor-hierarchy-and-replication-infrastructure.md) 部分。  
+**Excluir Dados Antigos de Controle de Replicação**: use esta tarefa para excluir dados antigos sobre replicação de banco de dados entre sites do Configuration Manager do banco de dados. Quando você altera a configuração dessa tarefa de manutenção, a configuração se aplica a cada site aplicável na hierarquia. Para obter mais informações, consulte a seção [How to monitor database replication links and replication status](../../../core/servers/manage/monitor-hierarchy-and-replication-infrastructure.md#BKMK_MonitorRepLinksAndStatuss) no tópico [Monitor hierarchy and replication infrastructure in System Center Configuration Manager](../../../core/servers/manage/monitor-hierarchy-and-replication-infrastructure.md) .  
 
--   **管理中心站点**：已启用    
--   **主站点**：已启用    
--   **辅助站点**：已启用  
+-   **Site de administração central**: habilitado    
+-   **Site primário**: habilitado    
+-   **Site secundário**: habilitado  
 
-**删除过期的软件计数数据**：使用此任务从数据库中删除存储时间比指定时间长的软件计数过期数据。 有关详细信息，请参阅 [System Center Configuration Manager 中的软件计数](../../../apps/deploy-use/monitor-app-usage-with-software-metering.md)。  
+**Excluir Dados Antigos de Medição de Software**: use essa tarefa para excluir do banco de dados informações antigas de medição de software armazenadas além do tempo especificado. Para obter mais informações, consulte [Medição de software no System Center Configuration Manager](../../../apps/deploy-use/monitor-app-usage-with-software-metering.md).  
 
--   管理中心站点：不可用    
--   **主站点**：已启用    
--   辅助站点：不可用  
+-   Site de administração central: indisponível    
+-   **Site primário**: habilitado    
+-   Site secundário: indisponível  
 
-**删除过期的软件计数摘要数据**：使用此任务从数据库中删除存储时间比指定时间长的软件计数的过期摘要数据。 有关详细信息，请参阅 [System Center Configuration Manager 中的软件计数](../../../apps/deploy-use/monitor-app-usage-with-software-metering.md)。  
+**Excluir Dados Antigos de Resumo de Medição de Software**: use essa tarefa para excluir do banco de dados informações de resumo antigas de medição de software armazenadas além do tempo especificado. Para obter mais informações, consulte [Medição de software no System Center Configuration Manager](../../../apps/deploy-use/monitor-app-usage-with-software-metering.md).  
 
--   管理中心站点：不可用    
--   **主站点**：已启用    
--   辅助站点：不可用  
+-   Site de administração central: indisponível    
+-   **Site primário**: habilitado    
+-   Site secundário: indisponível  
 
-**删除过期的状态消息**：使用此任务从数据库中删除在状态筛选规则中配置的过期状态消息数据。 有关信息，请参阅[使用 System Center Configuration Manager 的警报和状态系统](../../../core/servers/manage/use-alerts-and-the-status-system.md)主题中的“监视 Configuration Manager 的状态系统”部分。  
+**Excluir Mensagens Antigas de Status**: use essa tarefa para excluir dados antigos de mensagem de status, conforme configurado nas regras de filtro de status do banco de dados. Para saber mais, veja a seção “Monitorar o sistema de status do Configuration Manager” no tópico [Usar alertas e o sistema de status para o System Center Configuration Manager](../../../core/servers/manage/use-alerts-and-the-status-system.md).  
 
--   **管理中心站点**：已启用    
--   **主站点**：已启用    
--   辅助站点：不可用  
+-   **Site de administração central**: habilitado    
+-   **Site primário**: habilitado    
+-   Site secundário: indisponível  
 
-**删除过期的威胁数据**：使用此任务从数据库中删除存储时间比指定时间长的过期 Endpoint Protection 威胁数据。 有关 Endpoint Protection 的信息，请参阅 [System Center Configuration Manager 中的 Endpoint Protection](../../../protect/deploy-use/endpoint-protection.md)。  
+**Excluir Dados Antigos de Ameaça**: use essa tarefa para excluir dados antigos sobre ameaças ao Endpoint Protection que tenham sido armazenados além do tempo especificado. Para obter informações sobre o Endpoint Protection, consulte [Endpoint Protection no System Center Configuration Manager](../../../protect/deploy-use/endpoint-protection.md).  
 
--   管理中心站点：不可用    
--   **主站点**：已启用    
--   辅助站点：不可用  
+-   Site de administração central: indisponível    
+-   **Site primário**: habilitado    
+-   Site secundário: indisponível  
 
-**删除过期的未知计算机**：使用此任务从站点数据库中删除指定时间内未更新的有关未知计算机的信息。 有关详细信息，请参阅[在 System Center Configuration Manager 中准备未知计算机部署](../../../osd/get-started/prepare-for-unknown-computer-deployments.md)。  
+**Excluir Computadores Desconhecidos Antigos**: use essa tarefa para excluir informações sobre computadores desconhecidos do banco de dados do site quando elas não tiverem sido atualizadas por um período especificado. Para obter mais informações, consulte [Preparar implantações de computador desconhecido no System Center Configuration Manager](../../../osd/get-started/prepare-for-unknown-computer-deployments.md).  
 
--   管理中心站点：不可用    
--   **主站点**：已启用    
--   辅助站点：不可用  
+-   Site de administração central: indisponível    
+-   **Site primário**: habilitado    
+-   Site secundário: indisponível  
 
-**删除过期的用户设备相关性数据**：使用此任务从数据库中删除过期的用户设备相关性数据。 有关详细信息，请参阅[在 System Center Configuration Manager 中将用户和设备与用户设备相关性相链接](../../../apps/deploy-use/link-users-and-devices-with-user-device-affinity.md)。  
+**Excluir Dados Antigos de Afinidade de Dispositivo de Usuário**: use essa tarefa para excluir dados antigos de Afinidade de Dispositivo de Usuário do banco de dados. Para obter mais informações, consulte [Vincular usuários e dispositivos com a afinidade de dispositivo de usuário no System Center Configuration Manager](../../../apps/deploy-use/link-users-and-devices-with-user-device-affinity.md).  
 
--   管理中心站点：不可用    
--   **主站点**：已启用    
--   辅助站点：不可用  
+-   Site de administração central: indisponível    
+-   **Site primário**: habilitado    
+-   Site secundário: indisponível  
 
-**删除过期 MDM 批量注册包记录**：注册证书过期后使用此任务删除旧的批量注册证书和对应的配置文件。 有关详细信息，请参阅[创建证书配置文件](/sccm/protect/deploy-use/create-certificate-profiles)。
--   **管理中心站点**：已启用
--   **主站点**：已启用
--   辅助站点：不可用
+**Excluir registros de pacotes de registro em massa MDM expirados**: use esta tarefa para excluir certificados de registro em massa antigos e perfis correspondentes depois que o certificado de registro expirar. Para obter mais informações, consulte [Criar perfis de certificado](/sccm/protect/deploy-use/create-certificate-profiles).
+-   **Site de administração central**: habilitado
+-   **Site primário**: habilitado
+-   Site secundário: indisponível
 
-**删除非活动的客户端发现数据**：使用此任务从数据库中删除非活动的客户端发现数据。 当客户端标记为过时并且由针对客户端状态所做的配置进行标记时，会将客户端标记为不活动。
+**Excluir Dados de Descoberta de Cliente Inativo**: use essa tarefa para excluir dados de descoberta de clientes inativos do banco de dados. Os clientes são marcados como inativos quando são sinalizados como obsoletos e por configurações feitas no status do cliente.
 
-此任务仅针对作为 Configuration Manager 客户端的资源运行。 它不同于删除任何过期的发现数据记录的“删除过期的发现数据”任务。 在站点运行此任务时，它会从层次结构内所有站点的数据库中删除数据。 有关详细信息，请参阅 [How to configure client status in System Center Configuration Manager](../../../core/clients/deploy/configure-client-status.md)。  
-
-> [!IMPORTANT]  
-> 启用此任务时，请将此任务配置为按大于“检测信号发现”计划的间隔运行。 这允许活动客户端发送“检测信号发现”记录，以将其客户端记录标记为活动状态，从而阻止此任务删除它们。  
-
--   管理中心站点：不可用    
--   **主站点**：未启用    
--   辅助站点：不可用  
-
-**删除过时的警报**：使用此任务从数据库中删除存储时间比指定时间长的过期警报。 有关详细信息，请参阅 [Use alerts and the status system for System Center Configuration Manager](../../../core/servers/manage/use-alerts-and-the-status-system.md)。  
-
--   **管理中心站点**：已启用    
--   **主站点**：已启用    
--   辅助站点：不可用  
-
-**删除过时的客户端发现数据**：使用此任务从数据库中删除过时的客户端记录。 标记为过时的记录通常会被同一客户端的较新记录所取代。 较新记录将成为客户端的当前记录。 有关发现的信息，请参阅 [Run discovery for System Center Configuration Manager](../../../core/servers/deploy/configure/run-discovery.md)。  
+Esta tarefa só opera em recursos que são clientes do Configuration Manager. É diferente da tarefa **Excluir Dados Antigos de Descoberta**, que exclui qualquer registro de dados de descoberta antigo. Quando esta tarefa é executada em um site, remove os dados do banco de dados em todos os sites em uma hierarquia. Para obter mais informações, consulte [How to configure client status in System Center Configuration Manager](../../../core/clients/deploy/configure-client-status.md).  
 
 > [!IMPORTANT]  
-> 启用此任务时，请将此任务配置为按大于“检测信号发现”计划的间隔运行。 这允许客户端发送“检测信号发现”记录以正确设置过时的状态。  
+> Quando habilitada, configure essa tarefa para ser executada em intervalos superiores aos do agendamento de **Descoberta de Pulsação**. Isso permite que os clientes ativos enviem um registro de Descoberta de Pulsação para marcar o registro do cliente como ativo, de forma que a tarefa não o exclua.  
 
--   管理中心站点：不可用    
--   **主站点**：未启用    
--   辅助站点：不可用  
+-   Site de administração central: indisponível    
+-   **Site primário**: não habilitado    
+-   Site secundário: indisponível  
 
-**删除过时的林发现站点和子网**：使用此任务删除在最近 30 天内 Active Directory 林发现方法尚未发现的 Active Directory 站点、子网和域的数据。 此任务删除发现数据，但不影响利用此发现数据创建的边界。 有关详细信息，请参阅 [Run discovery for System Center Configuration Manager](../../../core/servers/deploy/configure/run-discovery.md)。  
+**Excluir Alertas Obsoletos**: use essa tarefa para excluir do banco de dados alertas expirados armazenados além do tempo especificado. Para obter mais informações, consulte [Use alerts and the status system for System Center Configuration Manager](../../../core/servers/manage/use-alerts-and-the-status-system.md).  
 
--   **管理中心站点**：已启用    
--   **主站点**：已启用    
--   辅助站点：不可用  
+-   **Site de administração central**: habilitado    
+-   **Site primário**: habilitado    
+-   Site secundário: indisponível  
 
-**删除孤立客户端部署状态记录**：使用此任务可定期清除包含客户端部署状态信息的表。 此任务将清除与已过时或已解除授权的设备关联的记录。  
--   **管理中心站点**：已启用    
--   **主站点**：已启用    
--   辅助站点：不可用
+**Excluir Dados de Descoberta de Cliente Obsoleto**: use essa tarefa para excluir do banco de dados registros de cliente obsoletos. Um registro que está marcado como obsoleto geralmente foi substituído por um novo registro para o mesmo cliente. O registro mais recente torna-se o registro atual do cliente. Para obter mais informações sobre Descoberta, consulte [Run discovery for System Center Configuration Manager](../../../core/servers/deploy/configure/run-discovery.md).  
 
-**删除未使用的应用程序修订版本**：使用此任务删除不再被引用的应用程序修订版本。 有关详细信息，请参阅[如何在 System Center Configuration Manager 中修订和取代应用程序](../../../apps/deploy-use/revise-and-supersede-applications.md)。  
+> [!IMPORTANT]  
+> Quando habilitada, configure essa tarefa para ser executada em intervalos superiores aos do agendamento de Descoberta de Pulsação. Isso permite que o cliente envie um registro de descoberta de pulsação que define o status obsoleto corretamente.  
 
--   管理中心站点：不可用    
--   **主站点**：已启用    
--   辅助站点：不可用  
+-   Site de administração central: indisponível    
+-   **Site primário**: não habilitado    
+-   Site secundário: indisponível  
 
-**评估集合成员**：将集合成员身份评估配置为站点组件。 有关站点组件的信息，请参阅 [Site components for System Center Configuration Manager](../../../core/servers/deploy/configure/site-components.md)。  
+**Excluir Sites e Sub-redes de Descoberta de Floresta Obsoleta**: use essa tarefa para excluir dados sobre sites, sub-redes e domínios do Active Directory que não foram descobertos pelo método de descoberta de florestas do Active Directory nos últimos 30 dias. Isso remove os dados de descoberta, mas não afeta os limites criados por meio desses dados de descoberta. Para obter mais informações, consulte [Run discovery for System Center Configuration Manager](../../../core/servers/deploy/configure/run-discovery.md).  
 
--   管理中心站点：不可用    
--   **主站点**：已启用    
--   辅助站点：不可用  
+-   **Site de administração central**: habilitado    
+-   **Site primário**: habilitado    
+-   Site secundário: indisponível  
 
-**监视键**：使用此任务监视 Configuration Manager 数据库主键的完整性。 主键是一列或多列的组合，它在 Microsoft SQL Server 数据库表中唯一地标识一行，并将它与任何其他行区分开来。  
+**Excluir Registros Órfãos de Estado de Implantação de Cliente**: use esta tarefa para limpar periodicamente a tabela que contém informações sobre o estado de implantação do cliente. Essa tarefa limpará registros associados a dispositivos obsoletos ou encerrados.  
+-   **Site de administração central**: habilitado    
+-   **Site primário**: habilitado    
+-   Site secundário: indisponível
 
--   **管理中心站点**：已启用    
--   **主站点**：已启用    
--   辅助站点：不可用  
+**Excluir Revisões Não Usadas de Aplicativo**: use essa tarefa para excluir revisões de aplicativos que não são mais referenciadas. Para mais informações, consulte [Como revisar e substituir aplicativos no System Center Configuration Manager](../../../apps/deploy-use/revise-and-supersede-applications.md).  
 
-**重建索引**：使用此任务重建 Configuration Manager 数据库索引。 索引是一种数据库结构，它在数据库表之上创建，以加快数据检索速度。 例如，搜索经过索引的列通常比搜索未经索引的列更快。
+-   Site de administração central: indisponível    
+-   **Site primário**: habilitado    
+-   Site secundário: indisponível  
 
-为了改善性能，Configuration Manager 数据库索引会频繁更新，以便与存储在数据库中不断变化的数据保持同步。 此任务在数据库列上创建唯一性至少达到 50% 的索引，删除唯一性低于 50% 的列索引，以及重建所有符合数据唯一性条件的现有索引。  
+**Avaliar Membros da Coleção**: configure a Avaliação de associação da coleção como um componente do site. Para obter mais informações sobre os componentes do site consulte [Site components for System Center Configuration Manager](../../../core/servers/deploy/configure/site-components.md).  
 
--   **管理中心站点**：未启用    
--   **主站点**：未启用    
--   **辅助站点**：未启用  
+-   Site de administração central: indisponível    
+-   **Site primário**: habilitado    
+-   Site secundário: indisponível  
 
-**汇总已安装软件的数据**：使用此任务将来自多个记录的已安装软件的数据汇总成一个总记录。 数据汇总可以压缩存储在 Configuration Manager 数据库中的数据量。 有关详细信息，请参阅 [System Center Configuration Manager 中的软件清单简介](../../clients/manage/inventory\introduction-to-software-inventory.md)。  
+**Monitorar chaves**: use esta tarefa para monitorar a integridade das chaves primárias do banco de dados do Configuration Manager. Uma chave primária é uma coluna ou combinação de colunas que identifica exclusivamente uma linha e a distingue de qualquer outra linha em uma tabela de banco de dados do Microsoft SQL Server.  
 
--   管理中心站点：不可用    
--   **主站点**：已启用    
--   辅助站点：不可用  
+-   **Site de administração central**: habilitado    
+-   **Site primário**: habilitado    
+-   Site secundário: indisponível  
 
-**汇总软件计数文件使用数据**：使用此任务将软件计数文件使用情况的多个记录的数据汇总到一个总记录中。 数据汇总可以压缩存储在 Configuration Manager 数据库中的数据量。
+**Reconstruir índices**: use essa tarefa para recriar os índices do banco de dados do Configuration Manager. Um índice é uma estrutura de banco de dados criada em uma tabela de banco de dados para acelerar a recuperação de dados. Por exemplo, pesquisar uma coluna indexada muitas vezes é mais rápido do que pesquisar uma coluna que não está indexada.
 
-可配合使用此任务与“汇总软件计数每月使用数据”任务，以便汇总软件计数数据以及节省 Configuration Manager 数据库中的磁盘空间。 有关详细信息，请参阅 [System Center Configuration Manager 中的软件计数](../../../apps/deploy-use/monitor-app-usage-with-software-metering.md)。  
+Para melhorar o desempenho, os índices do banco de dados do Configuration Manager são frequentemente atualizados para permanecerem sincronizados com os dados que são armazenados no banco de dados. Essa tarefa cria índices em colunas de banco de dados que são pelo menos 50 por cento exclusivas, elimina índices em colunas que são exclusivas em menos 50 por cento e reconstrói todos os índices existentes que atendem aos critérios de exclusividade dos dados.  
 
--   管理中心站点：不可用    
--   **主站点**：已启用    
--   辅助站点：不可用  
+-   **Site de administração central**: não habilitado    
+-   **Site primário**: não habilitado    
+-   **Site secundário**: não habilitado  
 
-**汇总软件计数每月使用数据**：使用此任务将软件计数每月使用情况的多个记录的数据汇总到一个总记录中。 数据汇总可以压缩存储在 Configuration Manager 数据库中的数据量。
+**Resumir dados de software instalado**: use essa tarefa para resumir os dados do software instalado de vários registros em um registro geral. O resumo de dados pode compactar a quantidade de dados armazenados no banco de dados do Configuration Manager. Para obter mais informações, consulte [Introdução ao inventário se software no System Center Configuration Manager](../../clients/manage/inventory\introduction-to-software-inventory.md).  
 
-可配合使用此任务与“汇总软件计数文件使用数据”任务，以便汇总软件计数数据以及节省 Configuration Manager 数据库中的空间。 有关详细信息，请参阅 [System Center Configuration Manager 中的软件计数](../../../apps/deploy-use/monitor-app-usage-with-software-metering.md)。  
+-   Site de administração central: indisponível    
+-   **Site primário**: habilitado    
+-   Site secundário: indisponível  
 
--   管理中心站点：不可用    
--   **主站点**：已启用    
--   辅助站点：不可用  
+**Resumir Dados de Uso de Arquivo de Medição de Software**: use essa tarefa para resumir os dados de vários registros para uso de arquivo de medição de software em um registro geral. O resumo de dados pode compactar a quantidade de dados armazenados no banco de dados do Configuration Manager.
 
-**更新应用程序的可用目标**：使用此任务使 Configuration Manager 重新计算将策略和应用程序部署到集合中的资源的映射。 将策略或应用程序部署到集合时，Configuration Manager 将在部署的对象和集合成员之间创建初始映射。
+É possível usar esta tarefa com a tarefa **Resumir Dados de Uso Mensal de Medição de Software** para resumir dados de medição de software e para conservar o espaço em disco no banco de dados do Configuration Manager. Para obter mais informações, consulte [Medição de software no System Center Configuration Manager](../../../apps/deploy-use/monitor-app-usage-with-software-metering.md).  
 
-这些映射存储在表中供快速引用。 当集合成员身份更改时，将更新这些存储的映射以反映这些更改。 但是，这些映射有可能未能同步。 例如，如果站点无法正确处理一个通知文件，那么在对映射的更改中可能无法反映此更改。 此任务可以基于当前的集合成员身份刷新映射。  
+-   Site de administração central: indisponível    
+-   **Site primário**: habilitado    
+-   Site secundário: indisponível  
 
--   管理中心站点：不可用    
--   **主站点**：已启用    
--   辅助站点：不可用  
+**Resumir Dados de Uso Mensal de Medição de Software**: use essa tarefa para resumir os dados de vários registros de uso mensal de medição de software em um registro geral. O resumo de dados pode compactar a quantidade de dados armazenados no banco de dados do Configuration Manager.
 
-**更新应用程序目录表**：使用此任务将应用程序目录网站数据库缓存与最新的应用程序信息进行同步。 在更改此维护任务的配置时，配置将应用到层次结构中的所有主站点。  
+É possível usar esta tarefa com a tarefa **Resumir Dados de Uso de Arquivo de Medição de Software** para resumir dados de medição de software e para conservar o espaço no banco de dados do Configuration Manager. Para obter mais informações, consulte [Medição de software no System Center Configuration Manager](../../../apps/deploy-use/monitor-app-usage-with-software-metering.md).  
 
--   管理中心站点：不可用    
--   **主站点**：已启用    
--   辅助站点：不可用  
+-   Site de administração central: indisponível    
+-   **Site primário**: habilitado    
+-   Site secundário: indisponível  
+
+**Atualizar a Segmentação do Aplicativo Disponível**: use essa tarefa para que o Configuration Manager recalcule o mapeamento das implantações de aplicativo e política para recursos em coleções. Ao implantar políticas ou aplicativos em uma coleção, o Configuration Manager cria um mapeamento inicial entre os objetos implantados e os membros da coleção.
+
+Esses mapeamentos são armazenados em uma tabela para referência rápida. Quando uma associação de coleções é alterada, esses mapeamentos armazenados são atualizados para que reflitam essas mudanças. No entanto, é possível que esses mapeamentos fiquem fora de sincronia. Por exemplo, se o site não processar corretamente um arquivo de notificação, essa mudança pode não ser refletida em uma alteração nos mapeamentos. Essa tarefa atualiza esse mapeamento com base na associação de coleção atual.  
+
+-   Site de administração central: indisponível    
+-   **Site primário**: habilitado    
+-   Site secundário: indisponível  
+
+**Atualizar Tabelas do Catálogo de Aplicativos**: use essa tarefa para sincronizar o cache de banco de dados do site do Catálogo de Aplicativos com as informações mais recentes do aplicativo. Quando você altera a configuração dessa tarefa de manutenção, a configuração se aplica a todo site primário na hierarquia.  
+
+-   Site de administração central: indisponível    
+-   **Site primário**: habilitado    
+-   Site secundário: indisponível  

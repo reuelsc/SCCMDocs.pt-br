@@ -1,6 +1,6 @@
 ---
-title: "部署 Wi-Fi、VPN、电子邮件和证书配置文件 | Microsoft Docs"
-description: "了解如何在 System Center Configuration Manager 中部署 Wi-Fi、VPN、电子邮件和证书配置文件。"
+title: Implantar perfis de Wi-Fi, VPN, email e certificado | Microsoft Docs
+description: Saiba como implantar perfis Wi-Fi, VPN, de email e de certificado no System Center Configuration Manager.
 ms.custom: na
 ms.date: 10/06/2016
 ms.prod: configuration-manager
@@ -17,58 +17,58 @@ manager: angrobe
 ms.openlocfilehash: 70372d5df13034b48f3e43b766776442f1be5823
 ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
 ms.translationtype: HT
-ms.contentlocale: zh-CN
+ms.contentlocale: pt-BR
 ms.lasthandoff: 08/07/2017
 ---
-# <a name="deploy-profiles-in-system-center-configuration-manager"></a>在 System Center Configuration Manager 中部署配置文件
+# <a name="deploy-profiles-in-system-center-configuration-manager"></a>Implantar perfis no System Center Configuration Manager
 
-*适用范围：System Center Configuration Manager (Current Branch)*
+*Aplica-se a: System Center Configuration Manager (Branch Atual)*
 
-必须将配置文件部署到一个或多个集合，然后才能使用这些配置文件。  
+Os perfis deverão ser implantados em uma ou mais coleções para poderem ser usados.  
 
- 使用“部署 Wi-fi 配置文件”、“部署 VPN 配置文件”、“部署 Exchange ActiveSync 配置文件”或“部署证书配置文件”对话框可配置这些配置文件的部署。 在配置过程中，你可以定义将向其中部署配置文件的集合，以及指定对配置文件的符合性进行评估的频率。  
+ Use a caixa de diálogo **Implantar Perfil Wi-Fi**, **Implantar Perfil VPN**, **Implantar Perfil do Exchange ActiveSync** ou **Implantar Perfil de Certificado** para configurar a implantação desses perfis. Como parte da configuração, defina a coleção na qual o perfil deverá ser implantado e especifique com que frequência esse perfil será avaliado quanto à sua conformidade.  
 
 > [!NOTE]  
->  如果部署多个公司资源访问配置文件到同一个用户时，会出现下列行为：  
+>  Se você implantar vários perfis de acesso aos recursos da empresa para o mesmo usuário, ocorrerá o seguinte comportamento:  
 >   
->  -   如果冲突的设置中包含一个可选值，则它将不会发送到设备。  
-> -   如果冲突设置包含必需的值，则默认值将发送到设备。 如果没有默认值，则整个公司资源访问配置文件将失败。 例如，如果你将两个电子邮件配置文件部署到同一用户并且为“Exchange ActiveSync 主机”  或“电子邮件地址”  指定的值不同，则这两个电子邮件配置文件将失败，因为它们是强制设置。  
+>  -   Se uma configuração conflitante contiver um valor opcional, ele não será enviado para o dispositivo.  
+> -   Se uma configuração conflitante contiver um valor obrigatório, o valor padrão será enviado para o dispositivo. Se não houver nenhum valor padrão, o perfil de acesso de recursos de toda a empresa falhará. Por exemplo, se você implantar dois perfis de email para o mesmo usuário e os valores especificados para **Host do Exchange ActiveSync** ou **Endereço de Email** forem diferentes, ambos os perfis de email falharão, pois essas são configurações obrigatórias.  
 
-> -   你必须首先配置基础结构并创建证书配置文件，然后才能部署证书配置文件。 有关详细信息，请参阅下列主题：  
+> -   Antes de implantar perfis de certificado, primeiro você deve configurar a infraestrutura e criar perfis de certificado. Para mais informações, consulte os seguintes tópicos:  
 >   
->  -   [在 System Center Configuration Manager 中配置证书基础结构](certificate-infrastructure.md)  
-> -   [如何在 System Center Configuration Manager 中创建证书配置文件](create-certificate-profiles.md)    
+>  -   [Configurando infraestrutura de certificado no System Center Configuration Manager](certificate-infrastructure.md)  
+> -   [Como criar perfis de certificado no System Center Configuration Manager](create-certificate-profiles.md)    
 
 > [!IMPORTANT]  
->  删除 VPN 配置文件部署时，不会从客户端设备中将其删除。 如果要从设备中删除配置文件，你必须将其手动删除。
+>  Quando uma implantação do perfil VPN é removida, ele não é removido dos dispositivos cliente. Se quiser remover o perfil dos dispositivos, você deverá removê-lo manualmente.
 >   
 
-## <a name="deploying--profiles"></a>部署配置文件  
+## <a name="deploying--profiles"></a>Implantando perfis  
 
 
-1.  在 System Center Configuration Manager 控制台中，选择“资产和符合性”。  
+1.  No console do System Center Configuration Manager, escolha **Ativos e Conformidade**.  
 
-2.  在“资产和符合性” 工作区中，展开“符合性设置”，展开“公司资源访问”，然后选择合适的配置文件类型，如“Wi-Fi 配置文件”。  
+2.  No espaço de trabalho **Ativos e Conformidade**, expanda **Configurações de Conformidade**, **Acesso aos Recursos da Empresa** e escolha o tipo de perfil apropriado, como **Perfis Wi-Fi**.  
 
-3.  在配置文件列表中，选择要部署的配置文件，然后在“主页”选项卡上的“部署”组中单击“部署”。  
+3.  Na lista de perfis, selecione o perfil que você deseja implantar e, na guia **Início**, no grupo **Implantação**, clique em **Implantar**.  
 
-4.  在部署配置文件对话框中，指定下列信息：  
+4.  Na caixa de diálogo para implantar perfil, especifique as seguintes informações:  
 
-    -   **集合** - 单击“浏览”以选择要在其中部署配置文件的集合。  
+    -   **Coleção** – Clique em **Procurar** para selecionar a coleção de usuários na qual você deseja implantar o perfil.  
 
-    -   **生成警报** - 启用此选项以配置一个警报，如果在指定日期和时间之前配置文件符合性小于指定百分比，则生成该警报。 你也可以指定是否希望将警报发送到 System Center Operations Manager。  
+    -   **Gerar um alerta** – Habilite esta opção para configurar um alerta que será gerado se a conformidade do perfil for menor do que um percentual especificado por uma data e uma hora determinadas. Você também pode especificar se deseja que um alerta seja enviado para o System Center Operations Manager.  
 
-    -   -   **随机延迟(小时)**：（仅适用于包含简单证书注册协议设置的证书配置文件）指定一个延迟时段以避免对网络设备注册服务进行过度处理。 默认值为 **64** 小时。  
+    -   -   **Atraso aleatório (horas)**: (somente para perfis de certificado que contêm as configurações do protocolo SCEP) – Especifica uma janela de atraso para evitar o processamento excessivo no Serviço de Registro de Dispositivo de Rede. O valor padrão é **64** horas.  
 
-    -   **指定此 <type> 配置文件的符合性评估计划** - 指定在客户端计算机上对部署的配置文件进行评估所依据的计划。 该计划可以是简单计划或自定义计划。  
+    -   **Especificar o agendamento de avaliação de conformidade para este perfil <type>** – Especifique o agendamento com base no qual o perfil implantado será avaliado nos computadores cliente. O agendamento poderá ser simples ou personalizado.  
 
         > [!NOTE]  
-        >  当用户登录时，客户端计算机将评估配置文件。  
+        >  O perfil será avaliado por computadores cliente quando o usuário fizer logon.  
 
-5.  单击“确定”关闭对话框并创建部署。
+5.  Clique em **OK** para fechar a caixa de diálogo e criar a implantação.
 
-### <a name="see-also"></a>另请参阅  
+### <a name="see-also"></a>Consulte também  
 
-[如何在 System Center Configuration Manager 中监视 Wi-Fi、VPN 和电子邮件配置文件](monitor-wifi-email-vpn-profiles.md)
+[Como monitorar perfis Wi-Fi, VPN e de email no System Center Configuration Manager](monitor-wifi-email-vpn-profiles.md)
 
-[如何在 System Center Configuration Manager 中监视证书配置文件](monitor-certificate-profiles.md)
+[Como monitorar perfis de certificado no System Center Configuration Manager](monitor-certificate-profiles.md)

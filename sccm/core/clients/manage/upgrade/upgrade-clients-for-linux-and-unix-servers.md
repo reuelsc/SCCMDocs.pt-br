@@ -1,6 +1,6 @@
 ---
 itle: 'Upgrade clients | Microsoft Docs | Linux UNIX '
-description: "在 System Center Configuration Manager 中升级 Linux 或 UNIX 服务器上的客户端。"
+description: Atualize um cliente em um servidor Linux ou UNIX no System Center Configuration Manager.
 ms.custom: na
 ms.date: 04/23/2017
 ms.prod: configuration-manager
@@ -18,35 +18,35 @@ manager: angrobe
 ms.openlocfilehash: 394ba7c236c05cc90a3d7f99eb6146b15d620f11
 ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
 ms.translationtype: HT
-ms.contentlocale: zh-CN
+ms.contentlocale: pt-BR
 ms.lasthandoff: 08/07/2017
 ---
-# <a name="how-to-upgrade-clients-for-linux-and-unix-servers-in-system-center-configuration-manager"></a>如何在 System Center Configuration Manager 中升级 Linux 和 UNIX 服务器的客户端
+# <a name="how-to-upgrade-clients-for-linux-and-unix-servers-in-system-center-configuration-manager"></a>Como atualizar clientes de servidor Linux e UNIX no System Center Configuration Manager
 
-*适用范围：System Center Configuration Manager (Current Branch)*
+*Aplica-se a: System Center Configuration Manager (Branch Atual)*
 
-可以将计算机上的适用于 Linux 和 UNIX 的客户端版本升级到较新的客户端版本，而不用先卸载当前的客户端。 要实现此操作，请使用 **-keepdb** 命令行属性在计算机上安装新的客户端安装包。 安装适用于 Linux 和 UNIX 的客户端时，它将用新的客户端文件覆盖现有的客户端数据。 但是，**keepdb** 命令行属性将指示安装过程保留客户端唯一标识符 (GUID)、本地信息数据库和证书存储。 然后，新的客户端安装将使用这些信息。  
+Você pode atualizar a versão do cliente para Linux e UNIX em um computador para uma versão mais recente do cliente sem precisar desinstalar o cliente atual antes. Para fazer isso, instale pacote de instalação do novo cliente no computador usando a propriedade de linha de comando **-keepdb** . Quando é instalado, o cliente para Linux e UNIX substitui os dados do cliente existente pelos arquivos do novo cliente. No entanto, a propriedade de linha de comando **–keepdb** instrui o processo de instalação a manter o GUID (identificador exclusivo), banco de dados local de informações e o repositório de certificados do cliente. Essas informações são usadas pela instalação do novo cliente.  
 
- 例如，你具有一台 RHEL5 x64 计算机，该计算机运行来自适用于 Linux 和 UNIX 的原始版 Configuration Manager 客户端的客户端。 若要将此客户端升级到累计更新 1 中的客户端版本，请手动运行 **install** 脚本以从累积更新 1 中安装适用的客户端包，并增加 **keepdb** 命令行开关。 使用的命令行类似于：**./install -mp <hostname\> -sitecode <code\> -keepdb ccm-Universal-x64.<build\>.tar**  
+ Por exemplo, você tem um RHEL5 x64 computador que executa o cliente a partir da versão original do cliente do Gerenciador de Configurações para Linux e UNIX. Para atualizar esse cliente para a versão do cliente da atualização cumulativa 1, execute manualmente o script **install** para instalar o pacote do cliente aplicável da atualização cumulativa 1 com o acréscimo da opção de linha de comando **–keepdb**. A linha de comando usada se parece com a seguinte: **./install -mp <nome do host\> -sitecode <código\> -keepdb ccm-Universal-x64.<build\>.tar**  
 
-## <a name="how-to-use-a-software-deployment-to-upgrade-the-client-on-linux-and-unix-servers"></a>如何使用软件部署来升级 Linux 和 UNIX 服务器上的客户端  
- 你可以使用软件部署来将适用于 Linux 和 UNIX 的客户端升级到新的客户端版本。 但是，System Center Configuration Manager 客户端不能通过直接运行安装脚本来安装新客户端，因为必须先卸载当前客户端才能安装新的客户端。 这将在安装新客户端开始之前，结束运行安装脚本的 Configuration Manager 客户端进程。 若要成功使用软件部署来安装新客户端，必须计划此安装，使其在将来某一时间点由操作系统内置计划功能启动并运行。  
+## <a name="how-to-use-a-software-deployment-to-upgrade-the-client-on-linux-and-unix-servers"></a>Como usar uma implantação de software para atualizar o cliente em servidores Linux e UNIX  
+ Você pode usar uma implantação de software para atualizar o cliente para Linux e UNIX para uma nova versão de cliente No entanto, o cliente do System Center Configuration Manager não pode executar diretamente o script de instalação para instalar o novo cliente porque a instalação de um novo cliente precisa, primeiro, desinstalar o cliente atual. Isso terminaria o processo do cliente Configuration Manager que executa o script de instalação antes do início da instalação do novo cliente. Para usar uma implantação de software para instalar o novo cliente com sucesso, você deve agendar a instalação para ser iniciada no futuro e para ser executada pelos recursos internos de agendamento do sistema operacional.  
 
- 若要实现此目的，请使用软件部署先将新的客户端安装包的文件复制到客户端计算机，然后部署并运行一个脚本来计划客户端安装过程。 该脚本使用操作系统的内置 **at** 命令来延迟其启动。 然后，当脚本运行时，由客户端操作系统而不是计算机上的 Configuration Manager 客户端对其进行管理。 这允许脚本调用的命令行先卸载 Configuration Manager 客户端，然后安装新客户端，完成 Linux 或 UNIX 计算机上的客户端升级过程。 升级完成后，升级后的客户端依旧由 Configuration Manager 进行管理。  
+ Para fazer isso, use uma implantação de software para, primeiro, copiar os arquivos do novo pacote de instalação do cliente para o computador cliente e, em seguida, implantar e executar um script para agendar o processo de instalação do cliente. O script usa o comando **at** interno do sistema operacional para atrasar o início. Em seguida, quando o script é executado, sua operação é gerenciada pelo sistema operacional cliente e não pelo cliente do Configuration Manager no computador. Isso permite que a linha de comando chamada pelo script primeiro desinstale o cliente do Configuration Manager e depois instale o novo cliente, concluindo o processo de atualização do cliente no computador Linux ou UNIX. Após a conclusão da atualização, o cliente atualizado permanece sendo gerenciado pelo Configuration Manager.  
 
- 使用以下过程来帮助你配置软件部署以升级适用于 Linux 和 UNIX 的客户端。 下面的步骤和示例将运行初始版客户端的 RHEL5 x64 计算机升级到累积更新 1 客户端版本。  
+ Use o procedimento a seguir para ajudá-lo a configurar uma implantação de software para atualizar o cliente para Linux e UNIX. As etapas e os exemplos a seguir atualizam um computador RHEL5 x64 que executa a versão inicial do cliente para a versão do cliente da atualização cumulativa 1.  
 
-#### <a name="to-use-a-software-deployment-to-upgrade-the-client-on-linux-and-unix-servers"></a>若要使用软件部署来升级 Linux 和 UNIX 服务器上的客户端  
+#### <a name="to-use-a-software-deployment-to-upgrade-the-client-on-linux-and-unix-servers"></a>Para usar uma implantação de software para atualizar o cliente em servidores Linux e UNIX  
 
-1.  将新的客户端安装包文件复制到运行计划升级的 Configuration Manager 客户端的计算机上。  
+1.  Copie o arquivo do pacote de instalação do novo cliente para o computador que executa o cliente do Configuration Manager que você planeja atualizar.  
 
-     例如，你可能会将客户端安装包和累积更新 1 的安装脚本放置于客户端计算机上的以下位置： **/tmp/PATCH**  
+     Por exemplo, você pode colocar o pacote de instalação do cliente e o script de instalação da atualização cumulativa 1 no seguinte local no computador cliente: **/tmp/PATCH**  
 
-2.  创建一个脚本来管理 Configuration Manager 客户端的升级，然后将脚本的副本放置到客户端计算机上与步骤 1 中的客户端安装文件相同的文件夹中。  
+2.  Crie um script para gerenciar a atualização do cliente do Configuration Manager e, em seguida, coloque uma cópia do script na mesma pasta do computador cliente em que estiverem os arquivos de instalação do cliente da etapa 1.  
 
-     此脚本不需要特定名称，但必须包含能够使用客户端计算机上本地文件夹中的客户端安装文件的命令行，并能够通过使用 **keepdb** 命令行属性来安装客户端安装包。 使用 **-keepdb** 命令行属性来维护当前客户端的唯一标识符，以供正在安装的新客户端使用。  
+     O script não requer um nome específico, mas deve conter linhas de comando suficientes para usar os arquivos de instalação do cliente de uma pasta local no computador cliente e para instalar o pacote de instalação do cliente usando a propriedade de linha de comando **-keepdb**. Use a propriedade de linha de comando **– keepdb** para manter o identificador exclusivo do cliente atual para que ele seja usado pelo novo cliente que você está instalando.  
 
-     例如，创建名为 **upgrade.sh** 且包含以下行的脚本，然后将其复制到客户端计算机上的 **/tmp/PATCH** 文件夹：  
+     Por exemplo, você pode criar um script chamado **upgrade.sh** que contém as linhas a seguir e, em seguida, copiá-lo para a pasta **/tmp/PATCH** no computador cliente:  
 
     ```  
     #!/bin/sh  
@@ -55,8 +55,8 @@ ms.lasthandoff: 08/07/2017
 
     ```  
 
-3.  使用软件部署让每个客户端都使用计算机内置的 **at** 命令来运行 **upgrade.sh** 脚本，且运行脚本前具有短暂延迟。  
+3.  Use a implantação de software para fazer com que cada cliente use o comando interno **at** do computador para executar o script **upgrade.sh** com um pequeno atraso antes da execução do script.  
 
-     例如，使用以下命令行来运行脚本：**at -f /tmp/upgrade.sh -m now + 5 minutes**  
+     Por exemplo, use a seguinte linha de comando para executar o script: **at –f /tmp/upgrade.sh –m now + 5 minutes**  
 
- 客户端成功计划要运行的 **upgrade.sh** 脚本后，客户端将提交一条状态消息，指示软件部署已成功完成。 但是在延迟后，实际客户端安装随后由计算机进行管理。 客户端升级完成后，通过检查客户端计算机上的 **/var/opt/microsoft/scxcm.log** 文件来验证安装。 此外，可以通过在 Configuration Manager 控制台中“资产和符合性”工作区的“设备”节点中查看客户端的详细信息，确认客户端是否已安装并与站点通信。  
+ Após o cliente agendar com êxito a execução do script **upgrade.sh** , o cliente envia uma mensagem de status indicando que a implantação do software foi concluída com êxito. No entanto, a instalação do cliente real é gerenciada pelo computador após o atraso. Após a conclusão da atualização do cliente, valide a instalação examinando o arquivo **/var/opt/microsoft/scxcm.log** no computador cliente. Além disso, é possível confirmar se o cliente está instalado e se comunicando com o site exibindo detalhes do cliente no nó **Dispositivos** do espaço de trabalho **Ativos e Conformidade** do console do Configuration Manager.  

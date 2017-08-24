@@ -1,6 +1,6 @@
 ---
-title: "部署应用程序 | Microsoft Docs"
-description: "使用 System Center Configuration Manager 为应用程序创建部署类型或模拟部署。"
+title: Implantar aplicativos | Microsoft Docs
+description: "Crie um tipo de implantação ou simule uma implantação de um aplicativo usando o System Center Configuration Manager."
 ms.custom: na
 ms.date: 7/31/2017
 ms.prod: configuration-manager
@@ -18,177 +18,177 @@ manager: angrobe
 ms.openlocfilehash: f704d1b0ec48e3a7bbea784a7c18de77b21cd0ee
 ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
 ms.translationtype: HT
-ms.contentlocale: zh-CN
+ms.contentlocale: pt-BR
 ms.lasthandoff: 08/07/2017
 ---
-# <a name="deploy-applications-with-system-center-configuration-manager"></a>使用 System Center Configuration Manager 部署应用程序
+# <a name="deploy-applications-with-system-center-configuration-manager"></a>Implantar aplicativos com o System Center Configuration Manager
 
-*适用范围：System Center Configuration Manager (Current Branch)*
+*Aplica-se a: System Center Configuration Manager (Branch Atual)*
 
-你至少必须为应用程序创建一种部署类型，然后才能部署 System Center Configuration Manager 应用程序。 有关创建应用程序和部署类型的详细信息，请参阅[创建应用程序](/sccm/apps/deploy-use/create-applications)。
+Para poder implantar um aplicativo no System Center Configuration Manager, é necessário criar pelo menos um tipo de implantação para o aplicativo. Para saber mais sobre a criação de tipos de implantação e aplicativos, confira [Criar aplicativos](/sccm/apps/deploy-use/create-applications).
 
- 还可以模拟应用程序部署。 此类型的部署在不安装或卸载应用程序的情况下测试将它部署到计算机的适用性。 模拟部署将评估部署类型的检测方法、要求和依赖关系，然后在“监视”工作区的“部署”节点中报告结果。 有关详细信息，请参阅[模拟应用程序部署](/sccm/apps/deploy-use/simulate-application-deployments)。
+ Você também pode simular uma implantação de aplicativo. Esse tipo de implantação testa a aplicabilidade de uma implantação de aplicativo em computadores sem instalar ou desinstalar o aplicativo. Uma implantação simulada avalia o método de detecção, os requisitos e as dependências para um tipo de implantação e relata os resultados no nó **Implantações** do espaço de trabalho **Monitoramento**. Para saber mais, confira [Simular implantações de aplicativos](/sccm/apps/deploy-use/simulate-application-deployments).
 
 > [!IMPORTANT]
->  可部署（安装或卸载）所需应用程序，但不能部署包或软件更新。 已注册 MDM 的设备也不支持模拟部署、用户体验或计划设置。
+>  É possível implantar (instalar ou desinstalar) aplicativos necessários, mas não pacotes ou atualizações de software. Os dispositivos registrados em MDM também não dão suporte às configurações de agendamento, às experiência do usuário nem às implantações simuladas.
 
-## <a name="deploy-an-application"></a>部署应用程序
+## <a name="deploy-an-application"></a>Implantar um aplicativo
 
-1.  在 Configuration Manager 控制台中，转到“软件库” > “应用程序管理” > “应用程序”。
+1.  No console do Configuration Manager, vá para **Biblioteca de Software** > **Gerenciamento de Aplicativos** > **Aplicativos**.
 
-2.  在“应用程序”  列表中，选择要部署的应用程序。 然后，在 **主页** 选项卡上，在 **部署** 组中，单击 **部署**。
+2.  Na lista **Aplicativos** , selecione o aplicativo a implantar. Na guia **Início** , no grupo **Implantação** , clique em **Implantar**.
 
-### <a name="specify-general-information-about-the-deployment"></a>指定关于部署的常规信息
+### <a name="specify-general-information-about-the-deployment"></a>Especificar informações gerais sobre a implantação
 
-在“部署软件”向导的“常规”页上，指定以下信息：
+Na página **Geral** do Assistente para Implantar Software, especifique as seguintes informações:
 
-- **软件**  
-此信息显示要部署的应用程序。 你可以单击“浏览”  以选择其他应用程序。
-- **收集**  
-单击“浏览”选择要在其中部署应用程序的集合。
-- **使用与此集合关联的默认分发点组**  
-如果要将应用程序内容存储在集合的默认分发点组上，请选择此选项。 如果未将所选集合与分发点组关联，则此选项为灰色。
-- **为依赖关系自动分发内容**  
-如果启用了此选项，并且应用程序中的任何部署类型若包含依赖关系，则也会将从属应用程序内容发送到分发点。
+- **Software**  
+Exibe o aplicativo a ser implantado. Você pode clicar em **Procurar** para selecionar um aplicativo diferente.
+- **Coleta**  
+Clique em **Procurar** para selecionar a coleção na qual o aplicativo será implantado.
+- **Usar grupos de pontos de distribuição padrão associados a esta coleção**  
+Selecione esta opção se quiser armazenar o conteúdo do aplicativo no grupo dos pontos de distribuição padrão das coleções. Se você não tiver associado a coleção selecionada a um grupo de pontos de distribuição, essa opção estará indisponível.
+- **Distribuir automaticamente conteúdo para dependências**  
+Se estiver habilitada e algum tipo de implantação no aplicativo contiver dependências, o conteúdo do aplicativo dependente também será enviado aos pontos de distribuição.
 
     >[!IMPORTANT]
-    > 如果在部署了主应用程序之后更新从属应用程序，则不会自动分发依赖项的任何新内容。
+    > Se você atualizar o aplicativo dependente após a implantação do aplicativo primário, qualquer conteúdo novo para a dependência não é distribuído automaticamente.
 
-- **备注(可选)**  
-可选，为此部署输入描述。
+- **Comentários (opcional)**  
+Como opção, insira uma descrição para essa implantação.
 
-### <a name="specify-content-options-for-the-deployment"></a>为部署指定内容选项
+### <a name="specify-content-options-for-the-deployment"></a>Especificar as opções de conteúdo para a implantação
 
-在“内容”页上，单击“添加”将与此部署关联的内容添加到分发点或分发点组。 如果在“常规”页上选择了“使用与此集合关联的默认分发点”，则会自动填充此选项，并且只有“应用程序管理员”安全角色的成员才能对其进行修改。
+Na página **Conteúdo**, clique em **Adicionar** para adicionar o conteúdo associado a essa implantação aos pontos de distribuição ou aos grupos de pontos de distribuição. Se você selecionou **Usar pontos de distribuição padrão associados a esta coleção** na página **Geral**, essa opção será automaticamente populada e poderá ser modificada apenas por um membro da função de segurança Administrador de Aplicativos.
 
-### <a name="specify-deployment-settings"></a>指定部署设置
+### <a name="specify-deployment-settings"></a>Especificar configurações da implantação
 
-在“部署软件”向导的“部署设置”页上，指定以下信息：
+Na página **Configurações de Implantação** do Assistente para Implantar Software, especifique as seguintes informações:
 
-- **操作**  
-从下拉列表选择此部署的用途，“安装”或“卸载”应用程序。
+- **Ação**  
+Na lista suspensa, escolha se essa implantação tem a intenção de **Instalar** ou **Desinstalar** o aplicativo.
 
     > [!NOTE]
-    >  如果将应用程序部署到设备两次，一次使用“安装”操作，一次使用“卸载”操作，则使用“安装”操作的应用程序部署优先。
+    >  Se um aplicativo é implantado duas vezes em um dispositivo, uma vez com a ação de **Instalar** e uma vez com a ação de **Desinstalar**, a implantação do aplicativo com a ação de **Instalar** torna-se prioridade.
 
-你不能在创建部署之后更改部署的操作。
+Não é possível alterar a ação de uma implantação após ela ter sido criada.
 
-- **目的**  
-从下拉列表中，选择下列选项之一：
-    - **可用**  
-    如果将应用程序部署到用户，则用户将在软件中心看到发布的应用程序，并可根据需要进行安装。
-    - **必需**  
-    依据计划自动部署应用程序。 如果应用程序部署状态未隐藏，则使用该应用程序的所有人均可跟踪其部署状态，并于截止时间前从软件中心安装该应用程序。
+- **Finalidade**  
+Na lista suspensa, escolha uma das seguintes opções:
+    - **Disponível**  
+    Se o aplicativo for implantado em um usuário, o usuário verá o aplicativo publicado no Centro de Software e poderá instalá-lo sob demanda.
+    - **Necessária**  
+    O aplicativo é implantado automaticamente de acordo com o agendamento. Se o status de implantação de aplicativo não estiver oculto, qualquer pessoa que usar o aplicativo poderá acompanhar o status de implantação e instalar o aplicativo do Centro de Software antes da data limite.
 
     > [!NOTE]   
-    >  将部署操作设置为“卸载” 时，部署目的将自动设置为“必需”  ，并且无法更改。  
+    >  Quando a ação de implantação está definida para **Desinstalar**, a finalidade da implantação é definida automaticamente como **Necessária** e não pode ser alterada.  
 
-- **无论用户是否登录都依据计划自动部署**  
-如果部署针对于用户，请选择此选项以将应用部署到用户的主要设备。 在该部署运行之前，此设置不需要用户登录。 如果用户必须提供输入才能完成安装，请勿选择此选项。 只有当部署的目的是“必须” 时，此选项才可用。
+- **Implantar automaticamente de acordo com o agendamento com ou sem um usuário registrado**  
+Se a implantação for para um usuário, selecione esta opção para implantar o aplicativo nos dispositivos principais do usuário. Esta configuração não requer que o usuário faça logon antes de executar a implantação. Não selecione esta opção se o usuário precisar fornecer uma entrada para concluir a instalação. Essa opção está disponível somente quando a implantação tem a finalidade de **Necessária**.
 
-- **发送唤醒数据包**  
-如果将部署目的设置为“必需”，并选择了此选项，则会在安装部署前向计算机发送一个唤醒数据包。 此包可在安装截止时将计算机从休眠中唤醒。 必须针对“LAN 唤醒”配置计算机和网络，然后才能使用此选项。
-- **允许客户端使用按流量计费的 Internet 连接在安装截止时间之后下载内容，这可能会导致附加成本**  
-只有当部署的目的是“必须”时，此选项才可用。
-- **自动关闭在“部署类型属性”对话框的“安装行为”选项卡中指定的任何运行中的可执行文件**  
-有关如何配置可阻止应用程序安装的可执行文件列表的更多信息，请参阅本主题后面的“如何在安装应用程序之前检查正在运行的可执行文件”。
-- **如果用户请求此应用程序，则需要管理员批准**  
-如果选择了此选项，则管理员必须批准针对该应用程序的任何用户请求，然后才能安装应用程序。 如果部署目的为“必需”或者应用程序部署到了设备集合，则此选项为灰色。
+- **Enviar pacotes de ativação**  
+Se a finalidade da implantação estiver definida como **Obrigatório** e essa opção estiver selecionada, um pacote de ativação será enviado aos computadores antes de a implantação ser instalada. Esse pacote ativa os computadores na data limite da instalação. Para usar essa opção, os computadores e as redes devem ser configurados para Wake on LAN.
+- **Permitir que clientes em uma conexão de Internet limitada baixem conteúdo após o prazo de instalação, o que pode incorrer custos adicionais**  
+Essa opção está disponível somente para implantações com a finalidade de **Obrigatório**.
+- **Fechar automaticamente arquivos executáveis em execução especificados na guia de comportamento de instalação, da caixa de diálogo Propriedades do tipo de implantação**  
+Para saber mais sobre como configurar uma lista de arquivos executáveis que podem impedir que um aplicativo seja instalado, veja **Como verificar se há arquivos executáveis antes de instalar um aplicativo** mais adiante neste tópico.
+- **Exigir aprovação do administrador se os usuários solicitarem este aplicativo**  
+Se essa opção estiver selecionada, o administrador precisará aprovar todas as solicitações do usuário para o aplicativo antes que ele possa ser instalado. Essa opção estará esmaecida quando a finalidade da implantação for **Necessária** ou quando o aplicativo for implantado em uma coleção de dispositivos.
 
     > [!NOTE]
-    >  应用程序批准请求显示在“软件库”  工作区中“应用程序管理”  下的“批准请求”  节点中。 如果请求未在 45 天内获批准，则会将其删除。 此外，重新安装 Configuration Manager 客户端可能会取消任何挂起的批准请求。
-    >  批准安装应用程序后，可在 Configuration Manager 控制台单击“拒绝”（在批准前该按钮为灰色），选择拒绝该请求。
-    >  此操作不会从任何设备卸载应用程序，但会阻止用户从软件中心安装应用程序的新副本。
+    >  As solicitações de aprovação do aplicativo são exibidas no nó **Solicitações de Aprovação** , no **Gerenciamento de Aplicativos** no espaço de trabalho **Biblioteca de Software** . Se uma solicitação não for aprovada dentro de 45 dias, ela será removida. Além disso, reinstalar o cliente do Configuration Manager pode cancelar as solicitações de aprovação pendentes.
+    >  Depois de ter aprovado um aplicativo para a instalação, você pode escolher subsequentemente para negar a solicitação clicando em **Negar** no console do Configuration Manager (anteriormente esse botão estava esmaecido após aprovação).
+    >  Essa ação não faz com que o aplicativo seja desinstalado de nenhum dispositivo, mas impede que os usuários instalem novas cópias do aplicativo do Centro de Software.
 
-- **自动升级此应用程序的任何取代版本**  
-如果选择此选项，则会使用取代应用程序升级应用程序的任何被取代的版本。
+- **Atualizar automaticamente qualquer versão substituída deste aplicativo**  
+Se essa opção for selecionada, qualquer versão substituída do aplicativo será atualizada com o aplicativo substituto.
 
-### <a name="specify-scheduling-settings-for-the-deployment"></a>为部署指定计划设置
+### <a name="specify-scheduling-settings-for-the-deployment"></a>Especificar configurações de agendamento para a implantação
 
-在“部署软件”向导的“计划”页上，设置何时部署此应用程序或将其提供给客户端设备。
-根据部署操作是设置为“可用”还是“必需”，此页上的选项会有所不同。
+Na página **Agendamento** do Assistente para Implantar Software, defina a hora em que este aplicativo será implantado ou ficará disponível para os dispositivos cliente.
+As opções nesta página diferem dependendo a definição da implantação como **Disponível** ou **Obrigatória**.
 
-在某些情况下，可能会希望为用户提供更多时间（超出所设置的任何截止时间）来安装所需的应用程序部署或软件更新。 通常，当一台计算机关闭的时间过长且需要安装大量更新或应用程序部署时，会需要执行这种操作。 例如，如果用户从假期返回，则他们可能需要等待很长时间，因为安装的应用程序部署已过期。 为了帮助解决此问题，现在可通过将 Configuration Manager 客户端设置部署到集合来定义强制的宽限期。
+Em alguns casos, talvez você queira conceder aos usuários mais tempo instalar as atualizações de software ou as implantações de aplicativo obrigatórias além das datas limite definidas. Isso normalmente é necessário quando um computador ficou desligado por um período estendido e precisa instalar uma grande quantidade de implantações de aplicativo ou atualizações. Por exemplo, se um usuário voltou de férias, ele terá que aguardar um longo período enquanto as implantações de aplicativo atrasadas são instaladas. Para ajudar a resolver esse problema, agora você pode definir um período de carência para a imposição implantando configurações de cliente do Configuration Manager para uma coleção.
 
-若要配置宽限期，请执行以下操作：
+Para configurar o período de carência, execute as seguintes ações:
 
-- 在客户端设置的“计算机代理”页上，将“部署截止时间后强制的宽限期(小时)”这一新属性的值配置为介于 **1** 和 **120** 小时之间。
-- 在新的所需应用程序部署中的“计划”页上，或在现有部署属性中，选中复选框“根据用户首选项延迟此部署的强制执行，延迟时间以客户端设置中定义的宽限期为依据”。 选中了此复选框并针对其中部署了客户端设置的设备的所有部署都将使用此强制宽限期。
+- Na página **Agente de Computador** das configurações do cliente, configure a nova propriedade **Período de carência para a imposição após a data limite da implantação (horas):** com um valor entre **1** e **120** horas.
+- Na página **Agendamento** em uma nova implantação de aplicativo necessária, ou nas propriedades de uma implantação existente, selecione a caixa **Atrasar a imposição dessa implantação de acordo com as preferências do usuário até o período de carência definido nas configurações do cliente**. O período de carência de imposição é usado por todas as implantações que têm essa caixa selecionada e são voltadas para dispositivos nos quais você também implantou a configuração do cliente.
 
-到达应用程序安装截止时间后，将在用户配置的第一个非业务窗口内安装该应用程序，用户以该宽限期为依据配置了该窗口。 但是，用户仍可打开软件中心并在任何所需时间安装该应用程序。 一旦过了宽限期，对于未完成的部署，强制将恢复为正常行为。
+Após a data limite de instalação do aplicativo ser atingida, o aplicativo será instalado na primeira janela fora do horário comercial que o usuário configurou até o período de carência. No entanto, o usuário ainda poderá abrir o Centro de Software e instalar o aplicativo a qualquer momento que desejar. Depois que o período de carência expirar, a imposição retorna ao comportamento normal para implantações atrasadas.
 
-如果部署的应用程序取代另一个应用程序，则可以设置安装截止时间，届时用户会收到新应用程序。 使用“安装截止时间”设置执行此操作，升级具有被取代应用程序的用户。
+Se o aplicativo que você está implantando substitui outro aplicativo, você pode definir a data limite de instalação quando os usuários devem receber o novo aplicativo. Faça isso usando a configuração **Data Limite de Instalação** para atualizar usuários com aplicativo substituído.
 
-### <a name="specify-user-experience-settings-for-the-deployment"></a>为部署指定用户体验设置
+### <a name="specify-user-experience-settings-for-the-deployment"></a>Especificar as configurações de experiência do usuário para a implantação
 
 
-在“部署软件”向导的“用户体验”页上，指定有关用户如何与应用程序安装交互的信息。
+Na página **Experiência do Usuário** do Assistente para Implantar Software, especifique as informações sobre como os usuários podem interagir com a instalação do aplicativo.
 
-将应用程序部署到启用了写入筛选器的 Windows Embedded 设备时，你可以指定将应用程序安装在临时覆盖上并稍后提交更改，或者在安装截止时或在维护时段内提交更改。 如果在安装截止时或维护时段内提交更改，则必须重启设备。 设备上将保留这些更改。
+Ao implantar aplicativos em dispositivos Windows Embedded habilitados com filtro de gravação, você pode especificar que o aplicativo seja instalado na sobreposição temporária e que as alterações devam ser confirmadas mais tarde, no prazo da instalação ou durante uma janela de manutenção. Ao confirmar as alterações na data limite da instalação ou durante uma janela de manutenção, é necessário reiniciar o dispositivo. As alterações permanecem no dispositivo.
 
 >[!NOTE]
-    >  将应用程序部署到 Windows Embedded 设备时，确保设备是配置了维护时段的集合的成员。 有关在将应用程序部署到 Windows Embedded 设备时使用的维护时段的详细信息，请参阅[创建 Windows Embedded 应用程序](../../apps/get-started/creating-windows-embedded-applications.md)主题。
-    > 如果部署目的设置为“可用”  ，则不使用选项“软件安装”  和“系统重新启动(如果要求完成安装)” 。 你还可以配置在安装应用程序时用户看到的通知的级别。
+    >  Quando você implanta um aplicativo a um dispositivo Windows Embedded, verifique se o dispositivo é um membro de uma coleção com uma janela de manutenção configurada. Para obter mais informações sobre como as janelas de manutenção são usadas ao implantar aplicativos nos dispositivos Windows Embedded, consulte o tópico [Criar aplicativos Windows Embedded](../../apps/get-started/creating-windows-embedded-applications.md).
+    > As opções **Instalação de software** e **Reinicialização do sistema (se necessário para conclusão da instalação)** não são usadas se a finalidade de implantação está definida como **Disponível**. É possível configurar o nível de notificação que um usuário vê quando o aplicativo está instalado.
 
-### <a name="specify-alert-options-for-the-deployment"></a>为部署指定警报选项
+### <a name="specify-alert-options-for-the-deployment"></a>Especificar as opções de alerta para a implantação
 
-在“部署软件”向导的“警报”页上，设置 Configuration Manager 和 System Center Operations Manager 为此部署生成警报的方式。 你可以配置用于报告警报的阈值，并在部署持续时间内关闭报告。
+Na página **Alertas** do Assistente para Implantar Software, defina como o Configuration Manager e o System Center Operations Manager geram alertas para essa implantação. É possível configurar limites para relatar alertas e desativar o relatório para a duração da implantação.
 
-### <a name="associate-the-deployment-with-an-ios-app-configuration-policy"></a>将该部署与 iOS 应用配置策略关联
+### <a name="associate-the-deployment-with-an-ios-app-configuration-policy"></a>Associar a implantação a uma política de configuração de aplicativo iOS
 
-在“应用配置策略”页上，单击“新建”，将此部署与 iOS 应用配置策略（如果已创建策略）相关联。 有关此类型策略的详细信息，请参阅[使用应用配置策略配置 iOS 应用](../../apps/deploy-use/configure-ios-apps-with-app-configuration-policies.md)。
+Na página **Políticas de Configuração de Aplicativo**, clique em **Novo** para associar essa implantação a uma política de configuração de aplicativo iOS (se você tiver criado uma). Para obter mais informações sobre este tipo de política, consulte [Configurar aplicativos do iOS com as políticas de configuração de aplicativo](../../apps/deploy-use/configure-ios-apps-with-app-configuration-policies.md).
 
-### <a name="finish-up"></a>完成
+### <a name="finish-up"></a>Concluir
 
-在“部署软件”向导的“摘要”页上，查看此部署进行的操作，然后单击“下一步”完成向导。
+Na página **Resumo** do Assistente para Implantar Software, examine as ações a serem tomadas por esta implantação e clique em **Avançar** para concluir o assistente.
 
-新部署显示在“监视”工作区的“部署”节点中的“部署”列表中。 你可以从应用程序详细信息窗格的“部署”  选项卡中编辑此部署的属性或删除部署。
+A nova implantação é exibida na lista **Implantações**, no nó **Implantações**, no espaço de trabalho **Monitoramento**. É possível editar as propriedades dessa implantação ou excluir a implantação na guia **Implantações** do painel de detalhes do aplicativo.
 
-## <a name="delete-an-application-deployment"></a>删除应用程序部署
+## <a name="delete-an-application-deployment"></a>Excluir uma implantação de aplicativo
 
-1.  在 Configuration Manager 控制台中，转到“软件库” > “应用程序管理” > “应用程序”。
-3.  在“应用程序”列表中，选择其中含有删除的部署的应用程序。
-4.  在 <application name\> 列表的“部署”选项卡中，选择要删除的应用程序部署。 然后，在“部署”选项卡的“部署”组中，单击“删除” 。
+1.  No console do Configuration Manager, vá para **Biblioteca de Software** > **Gerenciamento de Aplicativos** > **Aplicativos**.
+3.  Na lista **Aplicativos**, selecione o aplicativo que inclui a implantação excluída.
+4.  Na guia **Implantações** da lista *<nome do aplicativo\>*, selecione a implantação do aplicativo que será excluída. Na guia **Implantação**, no grupo **Implantação**, clique em **Excluir**.
 
-删除应用程序部署时，不会删除已安装的应用程序的任何实例。 要删除这些应用程序，必须使用“卸载”将应用程序部署到计算机。 如果删除应用程序部署，或从部署到的集合中删除资源，则应用程序将不再显示在软件中心中。
+Ao excluir uma implantação de aplicativo, quaisquer instâncias do aplicativo que já foram instaladas não serão removidas. Para remover esses aplicativos, é necessário implantar o aplicativo em computadores com **Desinstalar**. Se você excluir uma implantação de aplicativo ou remover um recurso da coleção na qual está implantando, o aplicativo já não estará visível no Centro de Software.
 
-## <a name="user-notifications-for-required-deployments"></a>所需部署的用户通知
-通过“暂停并提醒我”设置收到所需软件后，可从下面的下拉值列表中进行选择：
-- **以后**  
-指定根据客户端代理设置中配置的通知设置安排通知。
-- **固定时间**  
-指定在选定时间之后再次显示通知。 例如，如果选择 30 分钟，则通知在 30 分钟后再次显示。
+## <a name="user-notifications-for-required-deployments"></a>Notificações do usuário para implantações necessárias
+Quando receber software necessário, na configuração **Suspender e lembrar dentro de**, você pode selecionar na seguinte lista suspensa de valores:
+- **Mais tarde**  
+Especifica que as notificações são agendadas com base nas configurações de notificação definidas nas configurações do Agente Cliente.
+- **Tempo fixo**  
+Especifica que a notificação será agendada para ser exibida novamente após o tempo selecionado. Por exemplo, se você selecionar 30 minutos, a notificação será exibida novamente em 30 minutos.
 
-![客户端代理设置中的计算机代理页](media/ComputerAgentSettings.png)
+![Página do Agente de Computador nas configurações do Agente Cliente](media/ComputerAgentSettings.png)
 
-最长暂停时间始终基于沿部署时间轴推移的客户端代理设置中配置的通知值。 例如，如果将“计算机代理”页上的“部署截止时间大于 24 小时，请提醒用户，提醒间隔时间（小时）为”设置配置为 10 小时，且对话框启动时距离截止时间超过 24 小时，则会出现一组暂停选项，暂停时间最多不超过 10 小时。 随着截止时间的临近，对话框显示的选项会变少，与部署时间轴的每个组件的相关客户端代理设置相一致。
+O tempo máximo de adiamento sempre se baseia nos valores de notificação definidos nas configurações do Agente Cliente em cada ponto na linha do tempo de implantação. Por exemplo, se a configuração **Prazo de implantação superior a 24 horas, lembrar o usuário a cada (horas)** na página do **Agente de Computador** estiver definida como 10 horas e demorar mais de 24 horas até o prazo em que a caixa de diálogo será iniciada, você verá um conjunto de opções de adiamento de até 10 horas, mas nunca superior a esse valor. Conforme o prazo se aproxima, a caixa de diálogo mostra menos opções, consistentes com as configurações do Agente Cliente relevantes para cada componente da linha do tempo da implantação.
 
-此外，对于高风险部署，如用于部署操作系统的任务序列，用户会更频繁地收到通知。 这不是临时性的任务栏通知，每次通知需要维护关键软件时，计算机上都会显示与下方类似的对话框：
+Além disso, para uma implantação de alto risco, como uma sequência de tarefas que implanta um sistema operacional, a experiência de notificação do usuário agora será mais invasiva. Em vez de uma notificação transitória na barra de tarefas, uma caixa de diálogo como a seguinte será exibida no computador cada vez que você for notificado de que uma manutenção de software crítica é necessária:
 
-![所需软件对话框](media/client-toast-notification.png)
+![Caixa de diálogo Software Exigido](media/client-toast-notification.png)
 
-## <a name="how-to-check-for-running-executable-files-before-installing-an-application"></a>如何在安装应用程序之前检查正在运行的可执行文件
+## <a name="how-to-check-for-running-executable-files-before-installing-an-application"></a>Como verificar se há arquivos executáveis antes de instalar um aplicativo
 
 >[!Tip]
->与版本 1702 一起引入，这是预发布功能。 要启用该功能，请参阅 [System Center Configuration Manager 中的预发布功能](https://docs.microsoft.com/sccm/core/servers/manage/pre-release-features)。
+>Apresentado com a versão 1702, esse é um recurso de pré-lançamento. Para habilitá-lo, veja [Recursos de pré-lançamento no System Center Configuration Manager](https://docs.microsoft.com/sccm/core/servers/manage/pre-release-features).
 
-在部署类型的“属性”对话框中，在“安装行为”选项卡上，你可以指定其中一个或多个可执行文件，如果正在运行，则阻止部署类型的安装。 用户必须先关闭运行中的可执行文件（或者因为部署的特定要求而自动关闭），然后才能安装部署类型。 要进行配置，请执行以下操作：
+Na caixa de diálogo **Propriedades** de um tipo de implantação, na guia **Comportamento de Instalação**, você pode especificar um ou mais arquivos executáveis que, se estiverem em execução, bloquearão a instalação do tipo de implantação. O usuário deve fechar o arquivo executável em execução (ou ele pode ser fechado automaticamente para implantações com a finalidade obrigatória) antes de o tipo de implantação poder ser instalado. Para configurar isso:
 
-1. 为任何部署类型打开“属性”对话框。
-2. 在“*<deployment type name>* 属性”对话框的“安装行为”选项卡上，单击“添加”。
-3. 在“添加或编辑可执行文件”对话框中，输入可执行文件的名称，如果正在运行，则阻止应用程序的安装。 或者，你还可以为应用程序输入友好名称，以帮助你在列表中识别它。
-4. 单击“确定”，然后关闭“*<deployment type name>* 属性” 对话框。
-5. 接下来，部署应用程序时，在部署软件向导的“部署设置”页上，选择“自动关闭在‘部署类型属性’对话框中的‘安装行为’选项卡中指定的任何运行中的可执行文件”，然后继续部署应用程序。
+1. Abra a caixa de diálogo **Propriedades** para qualquer tipo de implantação.
+2. Na guia **Comportamento da Instalação** da caixa de diálogo *<deployment type name>* **Propriedades**, clique em **Adicionar**.
+3. Na caixa de diálogo **Adicionar ou Editar Arquivo Executável**, digite o nome do arquivo executável que, se estiver em execução, bloqueará a instalação do aplicativo. Opcionalmente, você também pode inserir um nome amigável para o aplicativo para ajudar a identificá-lo na lista.
+4. Clique em **OK** e feche a caixa de diálogo *<deployment type name>* **Propriedades**.
+5. Em seguida, ao implantar um aplicativo na página **Configurações de implantação** do Assistente de Implantação de Software, selecione **Fechar automaticamente todos os executáveis em execução especificados na guia de comportamento de instalação da caixa de diálogo de propriedades do tipo de implantação**, em seguida, continue para implantar o aplicativo.
 
-应用程序到达客户端电脑后，以下行为适用：
+Depois que o aplicativo alcançar os PCs do cliente, o comportamento a seguir se aplicará:
 
-- 如果应用程序已部署为“可用”，最终用户尝试安装它时，系统会提示其先关闭指定的任何运行中的可执行文件，然后才能继续安装。
+- Se o aplicativo tiver sido implantado como **Disponível** e um usuário final tentar instalá-lo, será solicitado que ele feche todos os executáveis em execução especificados antes de prosseguir com a instalação.
 
-- 如果应用程序已部署为“必需”，且已选择“自动关闭在‘部署类型属性’对话框中的‘安装行为’选项卡中指定的任何运行中的可执行文件”选项，他们会看到一个对话框，通知他们在应用程序安装截止时间到达时将自动关闭指定的可执行文件。 可在“客户端设置” > “计算机代理”中计划这些对话框。 如果不希望最终用户看到这些消息，请选择部署属性的“用户体验”选项卡上的“在软件中心和所有通知中隐藏”。
+- Se o aplicativo tiver sido implantado como **Obrigatório** e a opção **Fechar automaticamente todos os executáveis em execução especificados na guia de comportamento de instalação da caixa de diálogo de propriedades do tipo de implantação** estiver selecionada, ele verá uma caixa de diálogo informando que os executáveis especificados serão fechados automaticamente quando o prazo da instalação for atingido. Você pode agendar essas caixas de diálogo em **Configurações do Cliente** > **Agente de Computador**. Se você não quiser que o usuário final veja essas mensagens, selecione **Ocultar no Centro de Software e todas as notificações** na guia **Experiência do Usuário** das propriedades da implantação.
 
-- 如果应用程序已部署为“必需”，且未选择“自动关闭在‘部署类型属性’对话框中的‘安装行为’选项卡中指定的任何运行中的可执行文件”选项，并且如果一个或多个指定的应用程序在运行中，则应用安装失败。
+- Se o aplicativo tiver sido implantado como **Obrigatório** e a opção **Fechar automaticamente todos os executáveis em execução especificados na guia de comportamento de instalação da caixa de diálogo de propriedades do tipo de implantação** não estiver selecionada, a instalação do aplicativo falhará se um ou mais dos aplicativos especificados estiverem em execução.
 
-## <a name="for-more-information"></a>获取详细信息
+## <a name="for-more-information"></a>Para obter mais informações
 
-   -  [用于管理高风险部署的设置](../../protect/understand/settings-to-manage-high-risk-deployments.md)  
-   -  [如何配置客户端设置](../../core/clients/deploy/configure-client-settings.md)
+   -  [Configurações para gerenciar implantações de alto risco](../../protect/understand/settings-to-manage-high-risk-deployments.md)  
+   -  [Como definir as configurações do cliente](../../core/clients/deploy/configure-client-settings.md)

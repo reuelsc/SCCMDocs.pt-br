@@ -1,5 +1,5 @@
 ---
-title: "使用软件计数监视应用使用情况 | Microsoft Docs"
+title: "Monitorar o uso de aplicativos com a medição de software | Microsoft Docs"
 description: 
 ms.custom: na
 ms.date: 10/06/2016
@@ -17,162 +17,162 @@ manager: angrobe
 ms.openlocfilehash: eddf20bebd80028336503957dfc4c3d1dbbb23f2
 ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
 ms.translationtype: HT
-ms.contentlocale: zh-CN
+ms.contentlocale: pt-BR
 ms.lasthandoff: 08/07/2017
 ---
-# <a name="software-metering-in-system-center-configuration-manager"></a>System Center Configuration Manager 中的软件计数
+# <a name="software-metering-in-system-center-configuration-manager"></a>Medição de software no System Center Configuration Manager
 
-*适用范围：System Center Configuration Manager (Current Branch)*
+*Aplica-se a: System Center Configuration Manager (Branch Atual)*
 
-本主题包含使用 System Center Configuration Manager 软件计数时，可能执行的所有操作的参考。
+Este tópico contém uma referência para todas as operações que você pode executar ao usar a medição de software do System Center Configuration Manager.
 
 > [!IMPORTANT]
->  软件计数用于监视文件名以“.exe” 结尾的 Windows 电脑桌面应用。 软件计数不监视现代 Windows 应用（例如 Windows 8 曾使用的应用）。
+>  A medição de software é usada para monitorar aplicativos de desktop para PCs com Windows com um nome de arquivo que termina em **.exe**. A medição de software não monitora aplicativos modernos do Windows (como aqueles usados pelo Windows 8).
 
-##  <a name="prerequisites-for-software-metering"></a>软件计数的先决条件
-软件计数没有外部依赖关系，仅在产品内部有依赖关系。
+##  <a name="prerequisites-for-software-metering"></a>Pré-requisitos para a medição de software
+A medição de software não tem dependências externas, apenas dependências internas no produto.
 
-|依赖关系|更多信息|
+|Dependência|Mais informações|
 |----------------|----------------------|
-|软件计数的客户端设置。|若要使用软件计数，必须启用客户端设置“在客户端上启用软件计数”  ，并将该设置部署到计算机。 可以将软件计数设置部署到层次结构中的所有计算机，也可以将自定义设置部署计算机组。 请参阅本主题中的**配置软件计数**。|
-|Reporting Services 点。|在查看软件计数报表前，必须先配置一个 Reporting Services 点。 有关详细信息，请参阅 [System Center Configuration Manager 中的报表](../../core/servers/manage/reporting.md)。|
+|Configurações do cliente para a medição de software.|Para usar a medição de software, a configuração do cliente **Habilitar medição de software em clientes** deve estar habilitada e implantada nos computadores. Você pode implantar as configurações de medição de software em todos os computadores na hierarquia ou implantar configurações personalizadas em grupos de computadores. Consulte **Configurar a medição de software** neste tópico.|
+|O ponto do Reporting Services.|É necessário configurar um ponto do Reporting Services antes de exibir relatórios de medição de software. Para obter mais informações, consulte [Relatórios no System Center Configuration Manager](../../core/servers/manage/reporting.md).|
 
-##  <a name="configure-software-metering"></a>配置软件计数
- 此过程为软件计数配置默认客户端设置，并应用于层次结构中的所有计算机。 如果希望这些设置仅应用于某些计算机，请创建一个自定义设备客户端设置，并将其部署到包含要使用软件计数的计算机的集合。 有关如何创建自定义设备设置的详细信息，请参阅[配置客户端设置](../../core/clients/deploy/configure-client-settings.md)。
+##  <a name="configure-software-metering"></a>Configurar medição de software
+ Este procedimento define as configurações padrão do cliente para a medição de software e se aplica a todos os computadores em sua hierarquia. Se quiser que essas configurações se apliquem somente a alguns computadores, crie uma configuração personalizada do cliente de dispositivo e a implante em uma coleção que contém os computadores nos quais deseja usar a medição de software. Para obter mais informações sobre como criar configurações personalizadas do dispositivo, consulte [Definir as configurações do cliente](../../core/clients/deploy/configure-client-settings.md).
 
-1.  在 Configuration Manager 控制台中，单击“管理” > “客户端设置” > “默认客户端设置”。
+1.  No console do Configuration Manager, clique em **Administração** > **Configurações do Cliente** > **Configurações do Cliente Padrão**.
 
-2.  在“主页”  选项卡上的“属性”  组中，单击“属性” 。
+2.  Na guia **Início** , no grupo **Propriedades** , clique em **Propriedades**.
 
-3.  在“默认设置”  对话框中，单击“软件计数” 。
+3.  Na caixa de diálogo **Configurações Padrão** , clique em **Medição de Software**.
 
-4.  在“设备设置”  列表中，配置以下各项：
+4.  Na lista **Configurações do Dispositivo** , configure o seguinte:
 
-    -   “在客户端上启用软件计数”：选择“”  以启用软件计数。
+    -   **Habilitar medição de software em clientes**: selecione **True** para habilitar a medição de software.
 
-    -   “计划数据收集”：配置从客户端计算机收集软件计数数据的频率。 使用默认值每“7 天”  或单击“计划”  来指定自定义计划。
+    -   **Agendar coleta de dados**: configure a frequência com que os dados de medição de software são coletados dos computadores cliente. Use o valor padrão de cada **7 dias** ou clique em **Agendamento** para especificar um agendamento personalizado.
 
-5.  单击“确定”  来关闭“默认设置”  对话框。
+5.  Clique em **OK** para fechar a caixa de diálogo **Configurações Padrão** .
 
- 当客户端计算机下一次下载客户端策略时，将使用这些设置进行配置。 若要为单个客户端启动策略检索，请参阅[管理客户端](../../core/clients/manage/manage-clients.md)。
+ Os computadores cliente são definidos com essas configurações na próxima vez que baixarem a política do cliente. Para iniciar a recuperação de política para um cliente individual, consulte [Gerenciar clientes](../../core/clients/manage/manage-clients.md).
 
-##  <a name="create-software-metering-rules"></a>创建软件计数规则
- 使用“创建软件计数规则向导”为 Configuration Manager 站点创建新的软件计数规则。
+##  <a name="create-software-metering-rules"></a>Criar regras de medição de software
+ Use o assistente para Criar Regra de Medição de Software para criar uma nova regra de medição de software para seu site do Configuration Manager.
 
-1.  在 Configuration Manager 控制台中，单击“资产和符合性”  > “软件计数”。
+1.  No console do Configuration Manager, clique em **Ativos e Conformidade** > **Medição de Software**.
 
-3.  在“主页”  选项卡的“创建”  组中，单击“创建软件计数规则” 。
+3.  Na guia **Início** , no grupo **Criar** , clique em **Criar Regra de Medição de Software**.
 
-4.  在“创建软件计数规则向导”的“常规”页上，指定下列信息：
+4.  Na página **Geral** do assistente para Criar Regra de Medição de Software, especifique as seguintes informações:
 
-    -   **名称** - 软件计数规则的名称。 名称应该唯一并且是描述性的。
-
-        > [!NOTE]
-        >  如果规则中包含的文件名不同，软件计数规则可共享相同的名称。
-
-    -   **文件名** - 要计数的程序文件的名称。 可以单击“浏览”  以显示“打开”  对话框，然后从中选择要使用的程序文件。
+    -   **Nome** - O nome da regra de medição de software. Isso deve ser exclusivo e descritivo.
 
         > [!NOTE]
-        >  如果在“文件名”  框中键入可执行文件名，则不会执行任何检查来确定此文件是否存在或是否包含必需的标头信息。 如果可能，请单击“浏览”  ，然后选择要计数的可执行文件。
-        >
-        >  不允许在文件名中使用通配符。
-        >
-        >  如果为“原始文件名”  指定了值，则此框是可选的。
+        >  As regras de medição de software podem compartilhar o mesmo nome se o nome de arquivo contido nas regras for diferente.
 
-    -   **原始文件名** - 要计数的可执行文件的名称。 此名称与文件头中的信息（而不是文件名本身）相匹配，这在已重命名可执行文件但是你要按原始名称计数时非常有用。
+    -   **Nome do Arquivo** - O nome do arquivo de programa que deseja medir. Você pode clicar em **Procurar** para exibir a caixa de diálogo **Abrir** , na qual é possível selecionar o arquivo de programa a ser usado.
 
         > [!NOTE]
-        >  不允许在原始文件名中使用通配符。
+        >  Se você digitar o nome do arquivo executável na caixa **Nome de arquivo** , nenhuma verificação será executada para determinar se esse arquivo existe ou se ele contém as informações de cabeçalho necessárias. Quando possível, clique em **Procurar** e selecione o arquivo executável a ser medido.
         >
-        >  如果为“文件名”  指定了值，则此框是可选的。
+        >  Caracteres curinga não são permitidos no nome do arquivo.
+        >
+        >  Essa caixa será opcional se um valor para **Nome do arquivo original** for especificado.
 
-    -   **版本** - 要计数的可执行文件的版本。 您可以使用通配符 (*) 表示任何字符串，也可以使用通配符 (?) 表示任何单个字符。 如果要计数可执行文件的所有版本，请使用默认值 (\*)。
+    -   **Nome do arquivo original** - O nome do arquivo executável que deseja medir. Esse nome corresponde às informações no cabeçalho do arquivo, e não ao nome do próprio arquivo, para que ele possa ser útil em casos em que o arquivo executável foi renomeado, mas você deseja medi-lo pelo nome original.
 
-    -   **语言** - 要计数的可执行文件的语言。 默认值为正在使用的操作系统的当前区域设置。 如果你通过单击“浏览”  按钮来选择要计数的可执行文件，则当文件标头中存在语言信息，系统会自动填充此框。 要对文件的所有语言版本计数，请在下拉列表中选择“任何”  。
+        > [!NOTE]
+        >  Caracteres curinga não são permitidos no nome do arquivo original.
+        >
+        >  Essa caixa será opcional se um valor para **Nome de Arquivo** for especificado.
 
-    -   **描述** - 软件计数规则的可选描述。
+    -   **Versão** - A versão do arquivo executável que deseja medir. Você pode usar o caractere curinga (*) para representar qualquer cadeia de caracteres ou o caractere curinga (?) para representar qualquer caractere único. Se quiser medir todas as versões de um arquivo executável, use o valor padrão (\*).
 
-    -   “将此软件计数规则应用于以下客户端” – 选择你是要将此软件计数规则应用到层次结构中的所有客户端还是分配给“站点”  列表中指定站点的客户端。
+    -   **Idioma** - O idioma do arquivo executável a ser medido. O valor padrão é a localidade atual do sistema operacional que está sendo usado. Se você selecionar um arquivo executável para ser monitorado clicando no botão **Procurar** , essa caixa será preenchida automaticamente se as informações de idioma estiverem presentes no cabeçalho do arquivo. Para medir todas as versões de idioma de um arquivo, selecione **Qualquer** na lista suspensa.
 
-5.  要继续，请单击“下一步” 。
+    -   **Descrição** - Uma descrição opcional para a regra de medição de software.
 
-6.  查看并确认设置，然后完成向导以创建软件计数规则。 新的软件计数规则将显示在“资产和符合性”  工作区中的“软件计数”  节点下。
+    -   **Aplicar esta regra de medição de software aos seguintes clientes** – Selecione se deseja aplicar a regra de medição de software a todos os clientes na hierarquia ou aos clientes que foram atribuídos ao site especificado na lista **Site** .
 
-##  <a name="configure-automatic-software-metering-rules"></a>配置自动软件计数规则
- 可在 Configuration Manager 中将软件计数配置为从站点数据库中保存的最新使用率清单数据自动生成禁用的软件计数规则。 你可以配置此清单数据，以便仅针对在指定百分比的计算机上使用的应用程序创建计数规则。 您还可以指定允许在站点上自动生成的软件计数规则的最大数量。
+5.  Para continuar, clique em **Avançar**.
+
+6.  Examine e confirme as configurações e conclua o assistente para criar a regra de medição de software. A nova regra de medição de software é exibida no nó **Medição de Software** do espaço de trabalho **Ativos e Conformidade** .
+
+##  <a name="configure-automatic-software-metering-rules"></a>Configurar regras de medição de software automáticas
+ Você pode configurar a medição de software no Configuration Manager para gerar automaticamente regras de medição de software desabilitadas dos dados de inventário de uso recentes mantidos no banco de dados do site. Você pode configurar esses dados de inventário para que sejam criadas regras de medição somente para os aplicativos que são usados em um percentual especificado de computadores. Você também pode especificar o número máximo de regras de medição de software geradas automaticamente permitidas no site.
 
 > [!NOTE]
->  默认情况下，自动创建的软件计数规则处于禁用状态。 在可以根据这些规则开始收集使用数据之前，必须启用这些规则。
+>  Por padrão, as regras de medição de software que são criadas automaticamente são desabilitadas. Antes de começar a coletar dados de uso dessas regras, você deve habilitá-las.
 
-1.  在 Configuration Manager 控制台中，单击“资产和符合性” > “软件计数”，然后在“主页”选项卡上的“设置”组中，单击“软件计数属性”。
+1.  No console do Configuration Manager, clique em **Ativos e Conformidade** > **Medição de Software** e, na guia **Início**, no grupo **Configurações**, clique em **Propriedades de Medição de Software**.
 
-3.  在“软件计数属性”  对话框中，配置以下各项：
+3.  Na caixa de diálogo **Propriedades de Medição de Software** , configure o seguinte:
 
-    -   **数据保留期(天)** - 指定软件计数规则生成的数据保存在站点数据库中的时间长度。 默认值为 **90** 天。
+    -   **Retenção de dados (em dias)** -Especifica a quantidade de tempo que os dados gerados pelas regras de medição de software são mantidos no banco de dados do site. O valor padrão é **90** dias.
 
-    -   启用“根据最新使用率清单数据自动创建禁用的计数规则” 选项。
+    -   Habilite a opção **Criar automaticamente regras de medição desabilitadas dos dados de inventário de uso recente**.
 
-    -   **指定在自动创建软件计数规则前层次结构中必须使用程序的计算机的百分比** - 默认值为“10”  %。
+    -   **Especificar o percentual de computadores na hierarquia que devem usar um programa antes que uma regra de medição de software seja criada automaticamente** - O valor padrão é **10%** .
 
-    -   **指定在禁用自动创建规则前层次结构中必须超出的软件计数规则数** - 默认值为 **100** 条规则。
+    -   **Especificar o número de regras de medição de software que devem ser excedidas na hierarquia antes que a criação automática de regras seja desabilitada** - O valor padrão é **100** regras.
 
-4.  单击“确定”  以关闭“软件计数属性”  对话框。
+4.  Clique em **OK** para fechar a caixa de diálogo **Propriedades de Medição de Software** .
 
-##  <a name="manage-software-metering-rules"></a>管理软件计数规则
- 在“资产和符合性”  工作区中，选择“软件计数” ，然后选择要管理的软件计数规则和管理任务。
+##  <a name="manage-software-metering-rules"></a>Gerenciar regras de medição de software
+ No espaço de trabalho **Ativos e Conformidade** , selecione **Medição de Software**, selecione a regra de medição de software a ser gerenciada e uma tarefa de gerenciamento.
 
- 使用下表以详细了解可能需要一些信息才能让你选择的管理任务。
+ Use a tabela a seguir para obter mais informações sobre as tarefas de gerenciamento que podem requerer informações adicionais antes de você selecioná-las.
 
-|管理任务|详细信息|
+|Tarefa de gerenciamento|Detalhes|
 |---------------------|-------------|
-|**启用**<br /><br /> **禁用**|启用或禁用软件计数规则。 此设置根据客户端设置中“客户端策略”  部分的“客户端策略轮询间隔”  （默认值为每隔 60 分钟）下载到客户端计算机。<br /><br /> 请参阅[配置客户端设置](../../core/clients/deploy/configure-client-settings.md)。|
+|**Habilitar**<br /><br /> **Desabilitar**|Habilita ou desabilita um regra de medição de software. Essa configuração é baixada para computadores cliente de acordo com o **Intervalo de sondagem da política do cliente** na seção **Política do cliente** das configurações do cliente (por padrão, a cada 60 minutos).<br /><br /> Consulte [Definir as configurações do cliente](../../core/clients/deploy/configure-client-settings.md).|
 
-##  <a name="monitor-software-metering"></a>监视软件计数
- Configuration Manager 中的软件计数包括多种内置报表，使用这些报表可监视有关软件计数操作的信息。 这些报表的报表类别为“软件计数” 。
+##  <a name="monitor-software-metering"></a>Monitorar a medição de software
+ A medição de software no Configuration Manager inclui vários relatórios internos que permitem monitorar informações sobre operações de medição de software. Esses relatórios contêm a categoria de relatório **Medição de software**.
 
- 有关如何在 Configuration Manager 中配置报表的详细信息，请参阅 [System Center Configuration Manager 中的报表](../../core/servers/manage/reporting.md)。
+ Para obter mais informações sobre como configurar relatórios no Configuration Manager, consulte [Relatórios no System Center Configuration Manager](../../core/servers/manage/reporting.md).
 
- 此外，你还可以根据 Configuration Manager 数据库中存储的数据根据软件计数创建查询和集合。
+ Além disso, você pode criar consultas e coleções com base nos dados armazenados no banco de dados do Configuration Manager por meio da medição de software.
 
- 有关 Configuration Manager 中的集合的详细信息，请参阅[集合简介](/sccm/core/clients/manage/collections/introduction-to-collections)。
+ Para obter mais informações sobre coleções no Configuration Manager, consulte [Introdução a coleções](/sccm/core/clients/manage/collections/introduction-to-collections).
 
- 有关 Configuration Manager 中的查询的详细信息，请参阅[查询简介](/sccm/core/servers/manage/introduction-to-queries)。
+ Para obter mais informações sobre consultas no Configuration Manager, consulte [Introdução a consultas](/sccm/core/servers/manage/introduction-to-queries).
 
-##  <a name="security-and-privacy-for-software-metering"></a>软件计数的安全和隐私
+##  <a name="security-and-privacy-for-software-metering"></a>Segurança e privacidade da medição de software
 
-### <a name="security-issues-for-software-metering"></a>软件计数的安全问题
- 攻击者可能会向 Configuration Manager 发送无效的软件计数信息，即使禁用了软件计数客户端设置，管理点也会接受该信息。 这可能会导致整个层次结构中复制大量计数规则在，进而导致拒绝网络上的服务和对 Configuration Manager 站点的服务。
+### <a name="security-issues-for-software-metering"></a>Problemas de segurança para a medição de software
+ Um invasor pode enviar informações de medição de software inválidas para o Configuration Manager, que serão aceitas pelo ponto de gerenciamento mesmo quando a configuração do cliente de medição de software estiver desabilitada. Isso poderá resultar em um grande número de regras de medição que são replicadas em toda a hierarquia, provocando uma negação de serviço na rede e aos servidores do site do Configuration Manager.
 
- 由于攻击者可以创建无效的软件计数数据，因此请勿认为软件计数信息具有权威性。
+ Como um invasor pode criar dados de medição de software inválidos, não considere confiáveis as informações de medição de software.
 
- 作为客户端设置，默认情况下已启用软件计数。
+ Medição de software está habilitada por padrão como uma configuração de cliente.
 
-###  <a name="privacy-information-for-software-metering"></a>有关软件计数隐私信息
- 软件计数监视客户端计算机上应用程序的使用情况。 默认情况下，软件计数处于启用状态。 您必须配置要计数的应用程序。 计数信息存储在 Configuration Manager 数据库中。 该信息在传输到管理点的过程中加密，但不会存储在 Configuration Manager 数据库的加密表单中。
+###  <a name="privacy-information-for-software-metering"></a>Informações de privacidade para medição de Software
+ Medição de software monitora o uso de aplicativos em computadores cliente. A medição de software é habilitada por padrão. É necessário configurar os aplicativos a ser medidos. As informações da medição são armazenadas no banco de dados do Configuration Manager. As informações são criptografadas durante a transferência para um ponto de gerenciamento, mas não são armazenadas em formato criptografado no banco de dados do Configuration Manager.
 
- 在被站点维护任务“删除过期的软件计数数据”  （每隔五天）和“删除过期的软件计数摘要数据”  （每隔 270 天）删除之前，此信息将保留在数据库中。 可以配置删除间隔。 计数信息不会发送到 Microsoft。
+ Essas informações são mantidas no banco de dados até que sejam excluídas pelas tarefas de manutenção do site **Excluir Dados Antigos de Medição de Software** (a cada cinco dias) e **Excluir Dados Antigos de Resumo de Medição de Software** (a cada 270 dias). Você pode configurar o intervalo de exclusão. As informações de medição não são enviadas à Microsoft.
 
- 在配置软件计数前，请考虑隐私要求。
+ Antes de configurar a medição de software, considere seus requisitos de privacidade.
 
-## <a name="example-scenario-for-using-software-metering"></a>使用软件计数的示例方案
- 在本部分中，可以创建一个示例软件计数规则，它可以帮助解决下列业务要求：
+## <a name="example-scenario-for-using-software-metering"></a>Cenário de exemplo de uso da medição de software
+ Nesta seção, você criará uma regra de medição de software de exemplo que pode ajudá-lo a resolver os seguintes requisitos de negócios:
 
--   确定公司中有多少特定应用的副本。
+-   Determinar quantas cópias de um determinado aplicativo estão em sua empresa
 
--   发现任何未使用的应用副本
+-   Descobrir quaisquer cópias não utilizadas de um aplicativo
 
--   确定哪些用户定期使用特定应用
+-   Determinar quais usuários usam um determinado aplicativo regularmente
 
- Woodgrove Bank 部署了 Microsoft Office 2010 作为其标准的办公生产力套件。 但是，若要支持旧应用程序，有些计算机必须继续运行 Microsoft Office Word 2003。 IT 部门要减少支持和授权成本，如果不再使用旧应用程序，则需要删除这些 Word 2003 副本。 技术支持还需要识别哪些用户使用旧应用程序。
+ O Woodgrove Bank implantou o Microsoft Office 2010 como seu conjunto de produtividade do office padrão. No entanto, para dar suporte a um aplicativo herdado, alguns computadores devem continuar executando o Microsoft Office Word 2003. O departamento de TI deseja reduzir os custos de licenciamento e suporte removendo essas cópias do Word 2003 se o aplicativo herdado não for mais utilizado. O suporte técnico também deseja identificar os usuários que usam o aplicativo herdado.
 
- John 是 Woodgrove Bank 的 IT 系统经理，他使用 Configuration Manager 中的软件计数来实现这些业务目标。 他将执行以下操作：
+ John é o gerente de sistemas de TI do Woodgrove Bank e usa a medição de software no Configuration Manager para atingir esses objetivos de negócios. Ele executa as seguintes ações:
 
-- John 检查软件计数的先决条件，并确认 Reporting Services 点安装且正常运行。
-- John 配置软件计数的默认客户端设置：<br>John 启用软件计数，并且使用每七天一次的默认数据收集计划。<br>他通过配置软件清单客户端设置“列出这些文件类型的清单” ，来配置软件清单以列出具有 .exe 扩展名的清单。<br>他添加了一条名为“woodgrove.exe” 的新软件计数规则，用于监视银行的旧应用程序。
-- John 等待七天后，客户端计算机开始报告“woodgrove.exe”  可执行文件的使用数据。
-- John 使用 Configuration Manager 报表“所有计数软件程序的安装基础”来查看哪些计算机加载了应用程序 **woodgrove.exe**。
-- 六个月后，他使用报表“已安装计数程序，但在指定的日期后尚未运行此程序的计算机” ，指定软件计数规则以及六个月以前的一个日期。 此报表识别了在过去六个月内未运行该程序的 120 台计算机。
-- John 进行进一步检查，以确认标识的计算机上不再需要旧应用程序。 然后他从这些计算机中卸载旧应用程序和 Word 2003 副本。<br>John 运行该报表“已运行特定计数的软件程序的用户”  来为技术支持提供继续使用旧应用程序的用户的列表。
-- John 继续每周检查软件计数报表，并在必要时采取修正措施。
+- John verifica os pré-requisitos da medição de software e confirma que o ponto do Reporting Services está instalado e operacional.
+- John define as configurações do cliente padrão para a medição de software:<br>Ele habilita a medição de software e usa a agenda de coleta de dados padrão de uma vez a cada sete dias.<br>Ele configura inventário de software para arquivos de inventário que têm a extensão .exe definindo a configuração do cliente de inventário de software como **Inventariar esses tipos de arquivo**.<br>Ele adiciona um novo regra de medição de software, chamada **woodgrove.exe**, para monitorar o aplicativo herdado.
+- John aguarda por sete dias, após os quais os computadores cliente começam a relatar os dados de uso para o executável **woodgrove.exe** .
+- João usa o relatório **Base de instalação de todos os programas de software medidos** do Configuration Manager para ver quais computadores têm o aplicativo **woodgrove.exe** carregado.
+- Depois de seis meses, John executa o relatório **Computadores que têm um programa medido instalado mas não executaram o programa desde uma data especificada**, especificando a regra de medição de software e  uma data seis meses no passado. Este relatório identifica 120 computadores que não executaram o programa nos últimos seis meses.
+- John faz algumas verificações adicionais para confirmar que o aplicativo herdado não é necessário nos computadores identificados. Ele desinstala o aplicativo herdado e a cópia do Word 2003 desses computadores.<br>John executa o relatório **Usuários que executaram um programa de software medido específico** para fornecer à assistência técnica uma lista de usuários que continuam usando o aplicativo herdado.
+- John continua verificando os relatórios de medição de software semanalmente e toma medidas corretivas, se necessário.
 
- 进行这一系列操作的结果就是，通过删除不再需要的应用程序，减少了 IT 支持与授权成本。 此外，技术支持人员现在获得了他们想要的运行旧应用程序的用户的列表。
+ Como resultado deste curso de ação, os custos de licenciamento e suporte de TI são reduzidos removendo os aplicativos que não são mais necessários. Além disso, o suporte técnico agora tem a lista que gostaria de ter com os usuários que executam o aplicativo herdado.

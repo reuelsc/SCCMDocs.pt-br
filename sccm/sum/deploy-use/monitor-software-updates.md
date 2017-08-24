@@ -1,6 +1,6 @@
 ---
-title: "监视软件更新 | Microsoft Docs"
-description: "System Center Configuration Manager 控制台提供警报和状态以监视更新和符合性。"
+title: "Monitorar atualizações de software | Microsoft Docs"
+description: "O console do System Center Configuration Manager fornece alertas e status para monitorar atualizações e a conformidade."
 keywords: 
 author: dougeby
 ms.author: dougeby
@@ -14,86 +14,86 @@ ms.assetid: 9afd7b0f-5c8e-48bc-9a65-1f7d74103688
 ms.openlocfilehash: 956ef263a1c178b5ab5926705859f4b2d0ae5bc7
 ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
 ms.translationtype: HT
-ms.contentlocale: zh-CN
+ms.contentlocale: pt-BR
 ms.lasthandoff: 08/07/2017
 ---
-# <a name="monitor-software-updates-in-system-center-configuration-manager"></a>在 System Center Configuration Manager 中监视软件更新
+# <a name="monitor-software-updates-in-system-center-configuration-manager"></a>Monitorar atualizações de software no System Center Configuration Manager
 
-*适用范围：System Center Configuration Manager (Current Branch)*
+*Aplica-se a: System Center Configuration Manager (Branch Atual)*
 
-System Center Configuration Manager 提供了许多方式来帮助你监视软件更新对象、过程和符合性信息。 使用以下部分可监视软件更新。
+O System Center Configuration Manager fornece muitas maneiras de ajudar a monitorar objetos de atualizações de software, processos e informações de conformidade. Use as seções a seguir para monitorar atualizações de software.
 
-## <a name="software-updates-dashboard"></a>软件更新仪表板
-从 Configuration Manager 版本 1610 开始，可以使用软件更新仪表板查看组织中设备的当前符合性状态，并快速分析数据以确定哪些设备处于风险中。 若要查看仪表板，请导航到“监视” > “概述” > “安全性” > “软件更新仪表板”。   
+## <a name="software-updates-dashboard"></a>Painel de atualizações de software
+Começando do Configuration Manager versão 1610, é possível usar o Painel de Atualizações de Software para exibir o status atual de conformidade dos dispositivos em sua organização e analisar rapidamente os dados para ver quais dispositivos estão em risco. Para exibir o painel, navegue até **Monitoramento** > **Visão Geral** > **Segurança** > **Painel de Atualizações de Software**.   
 
-##  <a name="BKMK_SUAlerts"></a> 软件更新的警报  
- 可以配置软件更新的警报，以便在软件更新部署的符合性级别低于已配置的百分比时通知管理用户。 可以在下列位置中配置软件更新部署的警报：  
+##  <a name="BKMK_SUAlerts"></a> Alertas de atualizações de software  
+ Você pode definir alertas para atualizações de software para notificar os usuários administrativos quando os níveis de conformidade para implantações de atualização de software estão abaixo da porcentagem configurada. Você pode configurar alertas para implantações de atualização de software nos seguintes locais:  
 
--   ADR 设置：可以在“自动部署规则向导”中和 ADR 的属性中配置警报设置。  
+-   Configuração de ADR: é possível definir as configurações de alertas no Assistente de Regra de Implantação Automática e nas propriedades da ADR.  
 
--   部署设置：可以在“部署软件更新向导”中和部署属性中配置警报设置。  
+-   Configuração de implantação: é possível definir as configurações de alertas no Assistente para Implantar Atualizações de Software e nas propriedades de implantação.  
 
-配置警报设置后，如果出现指定的条件，则 Configuration Manager 会生成警报。 可以在下列位置中查看软件更新警报：  
+Depois de definir as configurações de alerta, se ocorrerem as condições especificadas, o Configuration Manager gerará um alerta. Você pode revisar os alertas de atualização de software nos seguintes locais:  
 
-1.  在“软件库”  工作区的“软件更新”  节点中查看最新警报。  
+1.  Reveja alertas recentes no nó **Atualizações de Software** no espaço de trabalho **Biblioteca de Software** .  
 
-2.  在“监视”  工作区的“警报”  节点中管理已配置的警报。  
+2.  Gerencie os alertas configurados no nó **Alertas** no espaço de trabalho **Monitoramento** .  
 
-##  <a name="BKMK_SUSyncStatus"></a> 软件更新同步状态  
- 启动同步过程之后，可以通过 Configuration Manager 控制台监视层次结构中的所有软件更新点的同步过程。 使用下列过程来监视软件更新同步过程。  
+##  <a name="BKMK_SUSyncStatus"></a> Status da sincronização de atualizações de software  
+ Após iniciar o processo de sincronização, você poderá monitorar o processo de sincronização do console do Configuration Manager para todos os pontos de atualização de software da hierarquia. Use o procedimento a seguir para monitorar o processo de sincronização de atualização de software.  
 
-#### <a name="to-monitor-the-software-updates-synchronization-process"></a>监视软件更新同步过程  
+#### <a name="to-monitor-the-software-updates-synchronization-process"></a>Para monitorar o processo de sincronização de atualizações de software  
 
-- 在 Configuration Manager 控制台中，导航到“监视” > “概述” > “软件更新点同步状态”。  
+- No console do Configuration Manager, navegue até **Monitoramento** > **Visão Geral** > **Status de Sincronização do Ponto de Atualização de Software**.  
 
-    Configuration Manager 层次结构中的软件更新点显示在结果窗格中。 从此视图中，你可以监视所有软件更新点的同步状态。 若要了解有关同步过程的更多详细信息，请查看每台站点服务器上的 <ConfigMgrInstallationPath>\Logs 中的 wsyncmgr.log 文件。  
+    Os pontos de atualização de software na sua hierarquia do Configuration Manager são exibidos no painel de resultados. Nessa exibição, você pode monitorar o status de sincronização de todos os pontos de atualização de software. Para obter informações mais detalhadas sobre o processo de sincronização, é possível ver o arquivo wsyncmgr.log, localizado em <*ConfigMgrInstallationPath*>\Logs em cada servidor do site.  
 
-##  <a name="BKMK_SUDeployStatus"></a> 软件更新部署状态  
- 在软件更新组中部署软件更新或部署单个软件更新之后，可以监视部署状态。 使用下列过程来监视软件更新组或软件更新的部署状态。  
+##  <a name="BKMK_SUDeployStatus"></a> Status de implantação de atualização de software  
+ Depois de implantar as atualizações de software em um grupo de atualização de software ou implantar uma atualização de software individual, você poderá monitorar o status da implantação. Use o procedimento a seguir para monitorar o status da implantação de um grupo de atualização de software ou uma atualização de software.  
 
-#### <a name="to-monitor-deployment-status"></a>监视部署状态  
+#### <a name="to-monitor-deployment-status"></a>Para monitorar o status da implantação  
 
-1.  在 Configuration Manager 控制台中，导航到“监视” > “概述” > “部署”。  
+1.  No console do Configuration Manager, navegue para **Monitoramento** > **Visão Geral** > **Implantações**.  
 
-2.  单击要监视其部署状态的软件更新组或软件更新。  
+2.  Clique no grupo de atualização de software ou na atualização de software para a qual você deseja monitorar o status da implantação.  
 
-3.  在“主页”  选项卡上的“部署”  组中，单击“查看状态” 。  
+3.  Na guia **Início** , no grupo **Implantação** , clique em **Exibir Status**.  
 
-##  <a name="BKMK_SUReports"></a> 软件更新报表  
- 软件更新的状态消息提供了有关软件更新的符合性的信息，以及有关软件更新部署的评估和强制状态的信息。 可以运行软件更新报表以显示这些状态消息。 可以使用 30 多个预定义的软件更新报表。 它们分为几个类别，可用于报告有关软件更新和部署的特定信息。 除了使用预先配置的报表之外，还可以按照企业的需求创建自定义软件更新报表。 有关详细信息，请参阅[报表的操作和维护](../../core/servers/manage/operations-and-maintenance-for-reporting.md)。  
+##  <a name="BKMK_SUReports"></a> Relatórios de atualizações de software  
+ As mensagens de estado para atualizações de software fornecem informações sobre a conformidade de atualizações de software e sobre a avaliação e o estado de imposição das implantações de atualização de software. Você pode executar relatórios de atualização de software para exibir essas mensagens de estado. Há mais de 30 relatórios de atualização de software predefinidos disponíveis. Eles estão organizados em diversas categorias e podem ser usados para reportar informações específicas sobre atualizações de software e implantações. Além de usar relatórios pré-configurados, você também pode criar relatórios de atualização de software personalizados, de acordo com as necessidades de sua empresa. Para mais informações, consulte [Operações e manutenção de relatórios](../../core/servers/manage/operations-and-maintenance-for-reporting.md).  
 
-##  <a name="BKMK_MonitorContent"></a> 监视内容  
- 可以在 Configuration Manager 控制台中监视内容，以查看与关联的分发点相关的所有包类型的状态。 这可以包括包中的内容的内容验证状态、分配给特定分发点组的内容的状态、分配给分发点的内容的状态和每个分发点的可选功能（内容验证、PXE 和多播）的状态。  
+##  <a name="BKMK_MonitorContent"></a> Monitorar o conteúdo  
+ Você pode monitorar o conteúdo no console do Configuration Manager para revisar o status de todos os tipos de pacotes em relação aos pontos de distribuição associados. Isso pode incluir o status de validação do conteúdo para o conteúdo no pacote, o status do conteúdo atribuído a um grupo de ponto de distribuição específico, o estado do conteúdo atribuído a um ponto de distribuição e o status de recursos opcionais para cada ponto de distribuição (validação de conteúdo, PXE e multicast).  
 
-###  <a name="BKMK_ContentStatus"></a> 内容状态监视  
- “监视”  工作区中的“内容状态”  节点提供有关内容包的信息。 可以查看有关包的常规信息、包的分发状态和有关包的详细状态信息。 使用下列过程来查看内容状态。  
+###  <a name="BKMK_ContentStatus"></a> Monitoramento de status do conteúdo  
+ O nó **Status do Conteúdo** no espaço de trabalho **Monitoramento** fornece informações sobre os pacotes de conteúdo. Você pode revisar informações gerais sobre o pacote, status de distribuição para o pacote e informações de status detalhadas sobre o pacote. Use o procedimento a seguir para exibir o status do conteúdo.  
 
-#### <a name="to-monitor-content-status"></a>监视内容状态  
+#### <a name="to-monitor-content-status"></a>Para monitorar o status do conteúdo  
 
-1.  在 Configuration Manager 控制台中，导航到“监视” > “概述” > “分发状态” > “内容状态”。 此时会显示包。  
+1.  No console do Configuration Manager, navegue para **Monitoramento** > **Visão Geral** > **Status de Distribuição** > **Status de Conteúdo**. Os pacotes são exibidos.  
 
-2.  选择要查看其详细状态信息的包。  
+2.  Selecione o pacote para exibir informações detalhadas de status.  
 
-3.  在“主页”  选项卡上，单击“查看状态” 。 此时会显示包的详细状态信息。  
+3.  Na guia **Início** , clique em **Exibir Status**. As informações detalhadas de status para o pacote são exibidas.  
 
-###  <a name="BKMK_DPGroupStatus"></a> 分发点组状态  
- “监视”  工作区中的“分发点组状态”  节点提供有关分发点组的信息。 可以查看有关分发点组的常规信息（例如分发点组状态和符合性比率），以及分发点组的详细状态信息。 使用下列过程来查看分发点组状态。  
+###  <a name="BKMK_DPGroupStatus"></a> Status do grupo de pontos de distribuição  
+ O nó **Status do Grupo de Pontos de Distribuição** no espaço de trabalho **Monitoramento** fornece informações sobre grupos de pontos de distribuição. Você pode rever informações sobre o grupo de pontos de distribuição, como o status do grupo de pontos de distribuição e a taxa de conformidade, bem como informações detalhadas do status do grupo de pontos de distribuição. Use o procedimento a seguir para exibir o status do grupo de pontos de distribuição.  
 
-#### <a name="to-monitor-distribution-point-group-status"></a>监视分发点组状态  
+#### <a name="to-monitor-distribution-point-group-status"></a>Para monitorar o status do grupo de pontos de distribuição  
 
-1.  在 Configuration Manager 控制台中，导航到“监视” > “概述” > “分发状态” > “分发点组状态”。 此时会显示分发点组。  
+1.  No console do Configuration Manager, navegue para **Monitoramento** > **Visão Geral** > **Status de Distribuição** > **Status do Grupo de Pontos de Distribuição**. Os grupos de pontos de distribuição são exibidos.  
 
-2.  选择要查看其详细状态信息的分发点组。  
+2.  Selecione o grupo de pontos de distribuição para exibir informações detalhadas de status.  
 
-3.  在“主页”  选项卡上，单击“查看状态” 。 此时会显示分发点组的详细状态信息。  
+3.  Na guia **Início** , clique em **Exibir Status**. As informações detalhadas de status para o grupo de pontos de distribuição são exibidas.  
 
-###  <a name="BKMK_DPConfigStatus"></a> 分发点配置状态  
- “监视”  工作区中的“分发点配置状态”  节点提供有关分发点的信息。 可以查看为分发点启用的属性，例如 PXE、多播和内容验证。 还可以查看分发点的详细状态信息。 使用下列过程来查看分发点配置状态。  
+###  <a name="BKMK_DPConfigStatus"></a> Status de configuração do ponto de distribuição  
+ O nó **Status de Configuração de Pontos de Distribuição** no espaço de trabalho **Monitoramento** fornece informações sobre o ponto de distribuição. Você pode rever quais atributos estão habilitados para o ponto de distribuição, como o PXE, Multicast e validação de conteúdo. É possível também exibir informações detalhadas para o ponto de distribuição. Use o procedimento a seguir para exibir o status de configuração de pontos de distribuição.  
 
-#### <a name="to-monitor-distribution-point-configuration-status"></a>监视分发点配置状态  
+#### <a name="to-monitor-distribution-point-configuration-status"></a>Para monitorar o status de configuração de pontos de distribuição  
 
-1.  在 Configuration Manager 控制台中，导航到“监视” > “概述” > “分发状态” > “分发点配置状态”。 此时会显示分发点。  
+1.  No console do Configuration Manager, navegue para **Monitoramento** > **Visão Geral** > **Status de Distribuição** > **Status da Configuração do Ponto de Distribuição**. Os pontos de distribuição são exibidos.  
 
-2.  选择要查看其分发点状态信息的分发点。  
+2.  Selecione o ponto de distribuição para exibir informações de status do ponto de distribuição.  
 
-3.  在结果窗格中，单击“详细信息”  选项卡。 此时会显示分发点的状态信息。  
+3.  No painel de resultados, clique na guia **Detalhes** . As informações de status para o ponto de distribuição são exibidas.  

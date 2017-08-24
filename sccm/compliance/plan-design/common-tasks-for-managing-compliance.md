@@ -1,6 +1,6 @@
 ---
-title: "管理合规性的常见任务 | Microsoft Docs"
-description: "了解如何在 System Center Configuration Manager 中使用符合性设置。"
+title: Tarefas comuns de gerenciamento de conformidade | Microsoft Docs
+description: "Saiba como usar as configurações de conformidade no System Center Configuration Manager."
 ms.custom: na
 ms.date: 10/06/2016
 ms.prod: configuration-manager
@@ -17,20 +17,20 @@ manager: angrobe
 ms.openlocfilehash: f62ae116f6f397e7de1da622eea0d9828dd220df
 ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
 ms.translationtype: HT
-ms.contentlocale: zh-CN
+ms.contentlocale: pt-BR
 ms.lasthandoff: 08/07/2017
 ---
-# <a name="common-tasks-for-managing-compliance-with-system-center-configuration-manager"></a>使用 System Center Configuration Manager 管理符合性的常见任务
+# <a name="common-tasks-for-managing-compliance-with-system-center-configuration-manager"></a>Tarefas comuns para gerenciar a conformidade com o System Center Configuration Manager
 
-*适用范围：System Center Configuration Manager (Current Branch)*
+*Aplica-se a: System Center Configuration Manager (Branch Atual)*
 
-在本部分中，将介绍一些常见方案，它们可帮助了解如何使用 System Center Configuration Manager 中的符合性设置。  
+Nesta seção, você encontrará alguns cenários comuns que o ajudarão a aprender a usar as configurações de conformidade no System Center Configuration Manager.  
 
-## <a name="for-devices-that-run-the-configuration-manager-client"></a>对于运行 Configuration Manager 客户端的设备  
- [使用 System Center Configuration Manager 客户端在设备上管理符合性的常见任务](../../compliance/plan-design/common-tasks-for-managing-compliance-on-devices-with-the-client.md)  
+## <a name="for-devices-that-run-the-configuration-manager-client"></a>Para dispositivos que executam o cliente do Gerenciador de Configurações  
+ [Tarefas comuns para gerenciar a conformidade em dispositivos com o cliente do System Center Configuration Manager](../../compliance/plan-design/common-tasks-for-managing-compliance-on-devices-with-the-client.md)  
 
-## <a name="for-devices-that-do-not-run-the-configuration-manager-client"></a>对于不运行 Configuration Manager 客户端的设备  
- [在未运行 System Center Configuration Manager 客户端的设备上管理符合性的常见任务](../../compliance/plan-design/common-tasks-for-managing-compliance-on-devices-not-running-the-client.md)  
+## <a name="for-devices-that-do-not-run-the-configuration-manager-client"></a>Para dispositivos que não executam o cliente do Gerenciador de Configurações  
+ [Tarefas comuns para gerenciar a conformidade em dispositivos que não executam o cliente do System Center Configuration Manager](../../compliance/plan-design/common-tasks-for-managing-compliance-on-devices-not-running-the-client.md)  
 
-## <a name="scenarios-for-creating-and-deploying-configuration-baselines"></a>用于创建和部署配置基线的方案  
- [使用 System Center Configuration Manager 创建和部署配置基线的常见任务](../../compliance/plan-design/common-tasks-for-creating-and-deploying-configuration-baselines.md)  
+## <a name="scenarios-for-creating-and-deploying-configuration-baselines"></a>Cenários para a criação e implantação de linhas de base de configuração  
+ [Tarefas comuns para criar e implantar linhas de base de configuração com o System Center Configuration Manager](../../compliance/plan-design/common-tasks-for-creating-and-deploying-configuration-baselines.md)  

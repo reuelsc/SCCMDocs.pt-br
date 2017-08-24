@@ -1,6 +1,6 @@
 ---
-title: "管理发布项 | Microsoft Docs"
-description: "使用 System Center Updates Publisher 将各组软件更新作为发布项进行管理"
+title: "Gerenciar publicações | Microsoft Docs"
+description: "Gerenciar grupos de atualizações de software como uma publicação com o System Center Updates Publisher"
 ms.custom: na
 ms.date: 4/29/2017
 ms.prod: configuration-manager
@@ -18,88 +18,88 @@ robots: NOINDEX, NOFOLLOW
 ms.openlocfilehash: ddea7af935d5be880b96e383401061f8aa11e6da
 ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
 ms.translationtype: HT
-ms.contentlocale: zh-CN
+ms.contentlocale: pt-BR
 ms.lasthandoff: 08/07/2017
 ---
-# <a name="manage-publications-in-updates-publisher"></a>管理 Updates Publisher 中的发布项
+# <a name="manage-publications-in-updates-publisher"></a>Gerenciar publicações no Updates Publisher
 
-*适用范围：System Center Updates Publisher*
+*Aplica-se ao: System Center Updates Publisher*
 
-可以使用发布项将各组更新和捆绑包作为一个对象进行管理。 这包括将更新发布到管理服务器，以及将发布项导出为组，以供其他 Updates Publisher 安装项使用。
+Use publicações para gerenciar grupos de atualizações e pacotes como um único objeto. Isso inclui a publicação de atualizações para um servidor de gerenciamento e a exportação da publicação como grupo para uso com outra instalação do Updates Publisher.
 
-## <a name="create-publications"></a>创建发布项
-发布项的创建方式有两种：
+## <a name="create-publications"></a>Criar publicações
+As publicações são criadas de duas maneiras:
 
--   在“更新工作区”中管理更新和捆绑包时，可以将它们[分配](/sccm/sum/tools/manage-updates-with-updates-publisher#assign-updates-and-bundles-to-a-publication)给同一时间创建的新发布项。
+-   Quando você gerencia atualizações e pacotes no **Espaço de Trabalho de Atualizações**, é possível [atribui-las](/sccm/sum/tools/manage-updates-with-updates-publisher#assign-updates-and-bundles-to-a-publication) a uma nova publicação criada no momento.
 
--   在“发布项工作区”中，可以使用功能区中“发布项”选项卡上的“创建”按钮。 使用这种方法创建的发布项可供将来使用。 稍后，可以在分配更新时使用此发布项。
+-   No **Espaço de Trabalho de Publicações,** você pode usar o botão **Criar** na guia **Publicação** da faixa de opções. Este método permite que você crie uma publicação para uso futuro. Posteriormente, ao atribuir as atualizações, você pode usar essa publicação.
 
-## <a name="rename-a-publication"></a>重命名发布项
-若要重命名发布项，请从“发布项工作区”中选择发布项，然后在功能区的“发布项”选项卡上，选择“编辑”。
+## <a name="rename-a-publication"></a>Renomear uma publicação
+Para renomear uma publicação, selecione a publicação de dentro do **Espaço de Trabalho de Publicações** e, na guia **Publicação** da faixa de opções, escolha **Editar**.
 
-## <a name="change-the-publication-type-of-updates-in-a-publication"></a>在发布项中更改更新的发布项类别
-在“发布项工作区”中，可以修改分配给发布项的更新和捆绑包的**发布项类型**。
+## <a name="change-the-publication-type-of-updates-in-a-publication"></a>Alterar o tipo de publicação de atualizações em uma publicação
+No **Espaço de Trabalho de Publicação**, você pode modificar o **tipo de publicação** de atualizações e pacotes que são atribuídos a uma publicação.
 
-1. 选择包含要修改的更新的发布项，然后在“全部 &lt;发布项名称> 成员更新”列表中选择一个或多个更新或捆绑包。
+1. Selecione a publicação que contém as atualizações que você deseja modificar e, em seguida, selecione uma ou mais atualizações ou pacotes na lista **Todas&lt;nome da publicação > atualizações de membro**.
 
-2. 接下来，在“开始”选项卡上，选择以下任一选项。 可用选项因已选择的更新的发布项类型而异。
+2. Em seguida, na guia **Início**, escolha uma das seguintes opções. As opções disponíveis dependem do tipo de publicação das atualizações que você selecionou.
 
-  -   **自动**
-  -   **完整内容**
-  -   **仅元数据**
+  -   **Automática**
+  -   **Conteúdo Completo**
+  -   **Somente metadados**
 
-更改后，可能需要刷新发布项视图，才能看到新值。
+Depois de fazer uma alteração, você precisará atualizar a exibição da publicação para ver os novos valores.
 
-若要了解不同的发布项类型，请参阅[将更新和捆绑包分配给发布项](/sccm/sum/tools/manage-updates-with-updates-publisher#assign-updates-and-bundles-to-a-publication)。
+Para saber mais sobre os tipos de publicação diferentes, veja [Atribuir pacotes e atualizações para uma publicação](/sccm/sum/tools/manage-updates-with-updates-publisher#assign-updates-and-bundles-to-a-publication).
 
 > [!TIP]    
-> 设置捆绑包的发布项类型后，捆绑包中的所有软件更新都会使用此捆绑包的发布项类型进行发布。
+> Ao definir o tipo de publicação de um pacote, todas as atualizações de software nesse pacote são publicadas com o tipo de publicação desse pacote.
 
-## <a name="remove-updates-from-a-publication"></a>删除发布项中的更新
-若要删除发布项中的更新或捆绑包，请在“发布项工作区”中选择要修改的发布项，然后选择要删除的更新和捆绑包。 接下来，从功能区的“开始”选项卡中，选择“删除”。
+## <a name="remove-updates-from-a-publication"></a>Remover as atualizações de uma publicação
+Para remover as atualizações ou pacotes de uma publicação, no **Espaço de Trabalho de Publicações**, selecione a publicação que você deseja modificar e, em seguida, selecione as atualizações e os pacotes que você quer remover. Em seguida, na guia **Início** da faixa de opções, escolha **Remover**.
 
-从发布项中删除的更新在 Updates Publisher 存储库中仍有。
+Após a remoção das atualizações de uma publicação, elas permanecem disponíveis no repositório do Updates Publisher.
 
-## <a name="publish-publications"></a>发布发布项
-发布更新和捆绑包时，Updates Publisher 会向更新服务器添加这些更新和捆绑包的相关信息（元数据），可能还会添加更新的二进制文件（完整内容），以供部署到设备。
+## <a name="publish-publications"></a>Publicar publicações
+Quando você publica atualizações e pacotes, o Updates Publisher adiciona informações sobre essas atualizações e pacotes (metadados) e, possivelmente, os binários para as atualizações (conteúdo completo) para um servidor de atualização para implantação em dispositivos.
 
-必须先为 Updates Publisher 配置[“更新服务器”](/sccm/sum/tools/updates-publisher-options#update-server)选项，然后才能进行发布。 若要打开此配置选项，请依次转到“更新工作区”&gt;“概述”，然后选择“配置 WSUS 和签名证书”。 还可以转到 Updates Publisher 选项的“更新服务器”页。
+Antes de você ter a opção de publicar, é necessário configurar a opção [Servidor de Atualização](/sccm/sum/tools/updates-publisher-options#update-server) para o Updates Publisher. Para abrir essa opção de configuração, acesse **Espaço de Trabalho de Atualizações** &gt; **Visão geral** e selecione **Configurar WSUS e Certificado de Assinatura.** Você também pode acessar a página do Servidor de Atualização nas opções do Updates Publisher.
 
 > [!NOTE]   
-> Updates Publisher 只能发布大小不超过 375 MB 的更新。
+> O Updates Publisher só pode publicar atualizações com 375 megabytes (MB) ou menos de tamanho.
 
-### <a name="to-publish-a-publication"></a>如何发布发布项
+### <a name="to-publish-a-publication"></a>Para publicar uma publicação
 
-1.  转到“发布项工作区”，选择包含要发布或导出的一组更新或捆绑包的发布项。 然后，从功能区的“开始”选项卡中，选择“发布”
+1.  Acesse o **Espaço de Trabalho de Publicações** e, em seguida, selecione uma publicação que contém o grupo de atualizações e pacotes que você deseja publicar ou exportar. Em seguida, escolha **Publicar** na guia **Início** da faixa de opções.
 
-2.  在“发布”向导的“选择”页中，可以选择使用新的发布证书对所有更新进行签名，但不能更改发布项类型。
+2.  Na página **Selecionar** do assistente para **Publicar**, você pode escolher assinar todas as atualizações com um novo certificado de publicação, mas não pode alterar o tipo de publicação.
 
-3.  完成向导。
+3.  Conclua o assistente.
 
-  如果发布失败，将会看到指向 UpdatesPublisher.log 文件的链接，其中介绍了详细信息。
+  Se a publicação falhar, você receberá um link para o arquivo UpdatesPublisher.log que pode fornecer mais informações.
 
-## <a name="export-a-publication"></a>导出发布项
-可以从 Updates Publisher 存储库中导出发布项。 这样可以导出分配给相应发布项的更新和捆绑包，并创建更新目录。 然后，可以[添加](/sccm/sum/tools/updates-publisher-catalogs#add-software-update-catalogs)目录，并将其[导入](/sccm/sum/tools/updates-publisher-catalogs#mport-updates)其他 Updates Publisher 实例。 还可以[导出](/sccm/sum/tools/manage-updates-with-updates-publisher#export-updates)不属于发布项的更新。
+## <a name="export-a-publication"></a>Exportar uma publicação
+Você pode exportar uma publicação de seu repositório do Updates Publisher. Isso exporta as atualizações e os pacotes que são atribuídos a essa publicação e cria um catálogo de atualizações. Depois, você pode [adicionar](/sccm/sum/tools/updates-publisher-catalogs#add-software-update-catalogs) e depois [importar](/sccm/sum/tools/updates-publisher-catalogs#mport-updates) esse catálogo para outra instância do Updates Publisher. Você também pode [exportar atualizações](/sccm/sum/tools/manage-updates-with-updates-publisher#export-updates) que não fazem parte de uma publicação.
 
-若要导出发布项，请转到“发布项工作区”，然后选择包含要导出的更新的发布项。 一次只能选择一个发布项。
+Para exportar uma publicação, acesse o **Espaço de Trabalho de Publicações** e selecione a publicação que contém as atualizações que você deseja exportar. Você só pode selecionar uma publicação por vez.
 
-选择发布项后，从功能区的“开始”选项卡中选择“导出”，然后提供目录导出的路径和文件名。
+Com a publicação selecionada, escolha **Exportar** na guia **Início** da faixa de opções e forneça um caminho e nome de arquivo para a exportação do catálogo.
 
-还可以视需要导出（添加）从属软件更新。
+Você também tem a opção de exportar (incluir) atualizações de software dependentes como parte da exportação.
 
-## <a name="rename-a-publication"></a>重命名发布项
-若要重命名发布项，请从“发布项工作区”中选择发布项，然后在功能区的“发布项”选项卡上，选择“编辑”。
+## <a name="rename-a-publication"></a>Renomear uma publicação
+Para renomear uma publicação, selecione a publicação no **Espaço de Trabalho de Publicações** e escolha **Editar** na guia **Publicação** da faixa de opções.
 
-## <a name="delete-a-publication"></a>删除发布项
-若要删除发布项，请从“发布项工作区”中选择发布项，然后在功能区的“发布项”选项卡上，选择“删除”。
+## <a name="delete-a-publication"></a>Excluir uma publicação
+Para excluir uma publicação, selecione a publicação no **Espaço de Trabalho de Publicações** e escolha **Excluir** na guia **Publicação** da faixa de opções.
 
-从 Updates Publisher 中删除的发布项中的更新在 Updates Publisher 存储库中仍有。
+Após a remoção da publicação do Updates Publisher, as atualizações que estavam na publicação permanecerão disponíveis no repositório do Updates Publisher.
 
-## <a name="expire-or-reactivate-updates-and-bundles"></a>终止或重新激活更新和捆绑包
-可以使用“更新工作区”选择并终止或重新激活更新和捆绑包。 可以根据需要多次终止和重新激活更新和捆绑包。
+## <a name="expire-or-reactivate-updates-and-bundles"></a>Expirar ou reativar pacotes e atualizações
+Você pode usar o **Espaço de Trabalho de Atualizações** para selecionar e, em seguida, expirar ou reativar pacotes e atualizações. Você pode expirar e reativar atualizações e pacotes quantas vezes quiser.
 
--   **若要终止更新或捆绑包**，请在“更新工作区”中选择一个或多个未终止的更新或捆绑包，然后在“开始”选项卡中选择“终止”。 将更新或捆绑包的终止状态发布到 Configuration Manager 中之前，都可以重新激活。
+-   **Para expirar atualizações ou pacotes**, no Espaço de Trabalho de Atualizações, selecione uma ou mais atualizações ou pacotes que não expiraram e, em seguida, escolha **Expirar** na guia **Início**. Até que você publique a atualização ou o pacote como expirados no Configuration Manager, você poderá reativá-la.
 
-    必须先终止自定义更新或捆绑包，并将其终止状态发布到 Configuration Manager 中，然后才能将其从 Configuration Manager 中删除。 当更新或捆绑包的终止状态发布到 Configuration Manager 中后，便无法再部署或重新激活更新或捆绑包。
+    Antes de remover (excluir) uma atualização ou pacote personalizado do Configuration Manager, você deve expirá-la e publicar esse status de expirado no Configuration Manager. Após a expiração das atualizações ou pacotes no Configuration Manager, não será mais possível implantar ou reativar o pacote ou a atualização.
 
--   **若要重新激活更新或捆绑包**，请在“更新工作区”中选择一个或多个已终止的更新或捆绑包，然后在“开始”选项卡中选择“重新激活”。 如果之前已将已终止更新的终止状态发布到 Configuration Manager 中，则无法重新激活。
+-   **Para reativar as atualizações ou pacotes**, no Espaço de Trabalho de Atualizações, selecione uma ou mais atualizações expiradas e escolha **Reativar** na guia **Início** da faixa de opções. Se a atualização expirada tiver sido publicada anteriormente como expirada no Configuration Manager, não será possível reativá-la.

@@ -1,6 +1,6 @@
 ---
-title: "管理来自适用于企业的 Windows 应用商店的应用 | Microsoft Docs"
-description: "使用 System Center Configuration Manager 管理并部署来自适用于企业的 Windows 应用商店的应用"
+title: Gerenciar aplicativos da Windows Store para Empresas | Microsoft Docs
+description: Gerenciar e implantar aplicativos da Windows Store para Empresas usando o System Center Configuration Manager.
 ms.custom: na
 ms.date: 7/31/2017
 ms.prod: configuration-manager
@@ -17,128 +17,128 @@ manager: angrobe
 ms.openlocfilehash: 369b6a82a20a90ca534f9484c0be71096dd35a30
 ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
 ms.translationtype: HT
-ms.contentlocale: zh-CN
+ms.contentlocale: pt-BR
 ms.lasthandoff: 08/07/2017
 ---
-# <a name="manage-apps-from-the-windows-store-for-business-with-system-center-configuration-manager"></a>使用 System Center Configuration Manager 管理来自适用于企业的 Windows 应用商店的应用
-[适用于企业的 Windows 应用商店](https://www.microsoft.com/business-store)中可以为组织查找并采购 Windows 应用（单个或批量）。 通过将应用商店连接到 Configuration Manager，可以使用 Configuration Manager 同步已购买的应用列表。 然后，可以在 Configuration Manager 控制台中查看这些应用，并按照部署任何其他应用的方式进行部署。
+# <a name="manage-apps-from-the-windows-store-for-business-with-system-center-configuration-manager"></a>Gerenciar aplicativos da Windows Store para Empresas com o System Center Configuration Manager
+Na [Windows Store para Empresas](https://www.microsoft.com/business-store), é possível encontrar e adquirir aplicativos Windows para sua organização, individualmente ou por volume. Ao conectar a loja ao Configuration Manager, é possível sincronizara lista de aplicativos adquiridos com o Configuration Manager. Em seguida, é possível exibir esses aplicativos no console do Configuration Manager e implantá-los como você implantaria qualquer outro aplicativo.
 
 
-## <a name="online-and-offline-apps"></a>联机和脱机应用
+## <a name="online-and-offline-apps"></a>Aplicativos online e offline
 
-适用于企业的 Windows 应用商店支持两种类型的应用：
+A Windows Store para Empresas dá suporte a dois tipos de aplicativo:
 
-- **联机** - 此许可类型要求用户和设备连接到应用商店，以获取应用及其许可。 Windows 10 设备必须已加入 Azure Active Directory 域。
-- 脱机 - 允许缓存应用和许可，从而直接在本地网络部署，而无需连接应用商店或连接 Internet。
+- **Online** – este tipo de licença exige que usuários e dispositivos se conectem à loja para obter um aplicativo e sua licença. Dispositivos Windows 10 devem ser ingressados em um domínio do Azure Active Directory.
+- **Offline** – permite que você armazene em cache aplicativos e licenças para implantar diretamente em sua rede local, sem se conectar à loja ou ter uma conexão com a Internet.
 
-[了解更多](https://technet.microsoft.com/itpro/windows/whats-new/windows-store-for-business-overview?f=255&MSPPError=-2147217396)适用于企业的 Windows 应用商店的相关信息。
+[Leia mais](https://technet.microsoft.com/itpro/windows/whats-new/windows-store-for-business-overview?f=255&MSPPError=-2147217396) sobre o Windows Store para Empresas.
 
-Configuration Manager 支持在运行 Configuration Manager 客户端的 Windows 10 设备上管理适用于企业的 Windows 应用商店的应用，也支持在向 Microsoft Intune 注册的 Windows 10 设备上（称之为混合配置）管理这些应用。 Configuration Manager 对联机和脱机应用提供以下功能。
+O Configuration Manager dá suporte ao gerenciamento de aplicativos da Windows Store para Empresas em dispositivos Windows 10 que executam o cliente do Configuration Manager e a dispositivos Windows 10 registrados no Microsoft Intune (conhecido como configuração híbrida). O Configuration Manager oferece os seguintes recursos para aplicativos online e offline.
 
 > [!IMPORTANT]
-> 若要使用此功能，Windows 10 设备必须运行 2015 年 11 月（即 1511）版本或更高版本。
+> Para usar essa funcionalidade, dispositivos Windows 10 devem estar executando a versão de novembro de 2015 (1511) ou posterior.
 
 
-|功能|脱机应用|联机应用|
+|Funcionalidade|Aplicativos offline|Aplicativos online|
 |------------|------------|------------|
-|将应用数据同步到 Configuration Manager<br>（每 24 小时同步一次）|是|是|
-|从应用商店应用创建 Configuration Manager 应用程序|是|是|
-|对应用商店中免费应用的支持|是|是|
-|对应用商店中收费应用的支持|否|是|
-|支持针对用户或设备集合必需的部署|是|是|
-|支持对用户或设备集合可用的部署|是|是|
-|来自应用商店的业务线应用的支持|是|是|
+|Sincronizar dados do aplicativo com o Configuration Manager<br>(a sincronização ocorre a cada 24 horas)|Sim|Sim|
+|Criar aplicativos do Configuration Manager de aplicativos da loja|Sim|Sim|
+|Suporte para aplicativos gratuitos da loja|Sim|Sim|
+|Suporte para aplicativos pagos da loja|Não|Sim|
+|Suporte para implantações obrigatórias em coleções de usuários ou dispositivos|Sim|Sim|
+|Suporte para implantações disponíveis em coleções de usuários ou dispositivos|Sim|Sim|
+|Suporte a aplicativos de linha de negócios da loja|Sim|Sim|
 
-若要使用 Configuration Manager 客户端将在线许可的应用部署到 Windows 10 电脑，这些应用必须在 Windows 10 创意者更新或更高版本上运行。
+Para implantar aplicativos licenciados online em PCs com Windows 10 com o cliente do Configuration Manager, ele deverá estar executando a Atualização do Windows 10 para Criadores ou posterior.
 
-## <a name="deploying-online-apps-using-the-windows-store-for-business-with-pcs-that-run-the-configuration-manager-client"></a>在运行 Configuration Manager 客户端的 PC 上使用适用于企业的 Windows 应用商店部署在线应用程序
-在将适用于企业的 Windows 应用商店应用部署到运行完整 Configuration Manager 客户端的电脑前，请考虑以下方面：
+## <a name="deploying-online-apps-using-the-windows-store-for-business-with-pcs-that-run-the-configuration-manager-client"></a>Implantando aplicativos online usando a Windows Store para Empresas com PCs que executam o cliente do Configuration Manager
+Antes de implantar aplicativos da Windows Store para Empresas em computadores que executam o cliente do Configuration Manager completo, considere os seguintes pontos:
 
-- 若要使用完整功能，PC 必须运行 Windows 10 创意者更新或更高版本。
-- PC 必须加入了 Azure Active Directory 工作区，并与将适用于企业的 Windows 应用商店注册为管理工具的 AAD 租户处于同一位置。
-- 使用内置管理员帐户登录 PC 时，它们无法访问适用于企业的 Windows 应用商店应用。
-- PC 必须具有适用于企业的 Windows 应用商店的实时 Internet 连接。
+- Para a funcionalidade completa, os PCs devem estar executando a Atualização do Windows 10 para Criadores, ou posterior.
+- Os PCs devem estar associados ao espaço de trabalho do Azure Active Directory e estar no mesmo locatário do AAD onde você registrou a Windows Store para Empresas como uma ferramenta de gerenciamento.
+- Quando os PCs estão conectados com a conta de administrador interna, eles não podem acessar os aplicativos na Windows Store para Empresas.
+- Os PCs devem ter uma conexão de Internet em tempo real para a Windows Store para Empresa.
 
-### <a name="notes-for-pcs-running-earlier-versions-of-windows-10"></a>有关运行较早版本的 Windows 10 的 PC 的说明
-在运行创意者更新（与 Configuration Manager 客户端一起使用）之前的 Windows 10 版本的 PC 上，适用以下功能：
-
-
-- 通过用户安装应用程序，或通过应用程序达到其安装截止时间，或通过对所需部署进行后安装重新评估，强制执行安装时：
-    - 会通过启动适用于企业的 Windows 应用商店应用，“强制执行”应用程序。 
-    - 在安装应用前，最终用户必须从应用商店完成安装
-    - Configuration Manager 控制台中的应用程序状态会报告失败，并显示错误“Windows 应用商店应用在客户端 PC 上打开并等待用户完成安装。”
-- 在下一步的应用程序评估周期中：
-    - 如果最终用户从应用商店安装了应用程序，则应用程序会报告状态成功。 
-    - 如果最终用户未尝试从应用商店安装应用：
-        - 所需的部署会尝试启动应用商店并再次强制执行应用程序安装。
-        - 不会重新强制执行可用的部署。
-
-#### <a name="further-notes-for-pcs-running-earlier-versions-of-windows-10"></a>有关运行较早版本的 Windows 10 的 PC 的进一步说明：
-
-- 不能部署来自适用于企业的 Windows 应用商店的业务线应用
-- 部署来自应用商店的付费应用时，最终用户必须登录到应用商店并自己购买应用。
-- 如果部署了禁用 Windows 应用商店的使用者版本的访问权限的组策略，则适用于企业的 Windows 应用商店的部署无法运行，即使已启用适用于企业的 Windows 应用商店。
+### <a name="notes-for-pcs-running-earlier-versions-of-windows-10"></a>Observações para PCs que executam versões anteriores do Windows 10
+Em computadores que executam uma versão do Windows 10 anterior à Atualização para Criadores (com o cliente do Configuration Manager), a seguinte funcionalidade aplica-se:
 
 
-## <a name="set-up-windows-store-for-business-synchronization"></a>设置适用于企业的 Windows 应用商店同步
+- Quando a instalação for imposta pelo usuário que estiver instalando o aplicativo, pelo aplicativo que estiver atingindo seu prazo de instalação ou pela publicação da reavaliação de instalação para as implantações necessárias:
+    - O aplicativo será "imposto" inicializando o aplicativo da Windows Store para Empresas. 
+    - O usuário final deverá concluir a instalação pela loja antes que o aplicativo seja instalado
+    - O status do aplicativo no console do Configuration Manager relatará falha com o erro "O aplicativo da Windows Store foi aberto no computador cliente e está aguardando o usuário concluir a instalação".
+- No próximo ciclo de avaliação do aplicativo:
+    - Se o aplicativo tiver sido instalado pelo usuário final da loja, o aplicativo relatará o status **Sucesso**. 
+    - Se o usuário final não tiver tentado instalar o aplicativo pela loja:
+        - As implantações necessárias tentarão inicializar a loja e impor novamente a instalação do aplicativo.
+        - As implantações disponíveis não serão impostas novamente.
 
-### <a name="for-configuration-manager-versions-prior-to-1706"></a>对于 1706 之前的 Configuration Manager 版本
+#### <a name="further-notes-for-pcs-running-earlier-versions-of-windows-10"></a>Outras observações para PCs que executam versões anteriores do Windows 10:
 
-**在 Azure Active Directory 中，将 Configuration Manager 注册为“Web 应用程序和/或 Web API”管理工具。此操作会提供客户端 ID，稍后需要使用它。**
-1. 在 [https://manage.windowsazure.com](https://manage.windowsazure.com) 的 Active Directory 节点中，选择 Azure Active Directory，然后单击“应用程序” > “添加”。
-2.  单击“添加我的组织正在开发的应用程序”。
-3.  为应用程序输入名称，选择“Web 应用程序”和/或“Web API”，然后单击“下一步”箭头。
-4.  为**登录 URL**和**应用 ID URI** 输入相同 URL。 该 URL 可以是任何内容，无需解析为实际地址。 例如，可以输入 *https://yourdomain/sccm*。
-5.  完成向导。
-
-**在 Azure Active Directory 中，为已注册的管理工具创建客户端密钥**
-1.  突出显示已创建的应用程序，然后单击“配置”。
-2.  在“密钥”下，从列表中选择持续时间，然后单击“保存”。 此操作会创建一个新的客户端密钥。 成功将适用于企业的 Windows 应用商店载入到 Configuration Manager 之前，请勿导航离开此页面。
-
-**在适用于企业的 Windows 应用商店中，将 Configuration Manager 配置为存储管理工具**
-1.  打开 [https://businessstore.microsoft.com/zh-cn/managementtools](https://businessstore.microsoft.com/en-us/managementtools)，在出现提示时进行登录。
-2.  接受使用条款（如果需要）。
-3.  在“管理工具”下，单击“添加管理工具”。
-4.  在“按名称搜索工具”中，键入以前在 AAD 中创建的应用程序的名称，然后单击“添加”。
-5.  在已导入的应用程序旁单击“激活”。
-6.  如果要允许购买脱机许可的应用程序，则在“管理”>“帐户信息”页面，选择“显示脱机许可的应用”。
-
-**将应用商店帐户添加到 Configuration Manager**
-
-1. 请确保已从适用于企业的 Windows 应用商店购买至少一个应用。 在 Configuration Manager 控制台的“管理”工作区中，展开“云服务”，然后单击“适用于企业的 Windows 应用商店”。
-2.  在“主页”选项卡上的“适用于企业的 Windows 应用商店”组中，单击“添加适用于企业的 Windows 应用商店帐户”。 
-3.  从 Azure Active Directory 添加租户 ID、客户端 ID 和客户端密钥，然后完成向导。
-4. 完成之后，会在 Configuration Manager 控制台中“适用于企业的 Windows 应用商店”列表中看到配置的帐户。
-
-### <a name="for-configuration-manager-version-1706-and-later"></a>对于 Configuration Manager 版本 1706 及更高版本
-
-1. 在控制台中，转到“管理” > “概述” > “云服务管理” > “Azure” > “Azure 服务”，然后选择“配置 Azure 服务”以启动“Azure 服务向导”。
-2. 在“Azure 服务”页上，选择要配置的服务，然后单击“下一步”。
-3. 在“常规”页上，提供“Azure 服务名称”的友好名称和可选说明，然后单击“下一步”。
-4. 在“应用”页上，指定 Azure 环境，然后单击“浏览”打开“服务器应用”窗口。
-5. 在“服务器应用”窗口中，选择要使用的服务器应用，然后单击“确定”。 服务器应用是包含 Azure 帐户配置的 Azure Web 应用，包括客户端的租户 ID、客户端 ID 和密钥。 如果没有可用的服务器应用，请使用以下操作之一：
-    - 创建：若要创建新的服务器应用，请单击“创建”。 为应用和租户提供友好名称。 然后，登录 Azure 后，Configuration Manager 将在 Azure 中为用户创建 Web 应用，包括用于 Web 应用的客户端 ID 和密钥。 之后，可在 Azure 门户中查看这些内容。
-    - 导入：若要使用 Azure 订阅中已存在的 Web 应用，请单击“导入”。 为应用和租户提供友好名称，然后为 Configuration Manager 要使用的 Azure Web 应用指定租户 ID、客户端 ID 和密钥。 “验证”信息后，单击“确定”以继续。 
-6. 查看“信息”页，并根据指示完成所有额外步骤和配置。 这些配置是通过 Configuration Manager 使用服务所必需的。 例如，配置适用于企业的 Windows 应用商店：
-    - 在 Azure 中，必须将 Configuration Manager 注册为 Web 应用程序或 Web API 并记录客户端 ID。 还可以指定用于管理工具 (Configuration Manager) 的客户端密钥。
-    - 在适用于企业的 Windows 应用商店控制台中，必须将 Configuration Manager 配置为存储管理工具并启用对脱机许可应用的支持，然后购买至少一个应用。 
-7. 准备好继续后，单击“下一步”。
-8. 在“应用配置”页上，完成此服务的应用目录和语言配置，然后单击“下一步”。
-9. 完成向导后，Configuration Manager 控制台将显示已将“适用于企业的 Windows 应用商店”配置为“云服务类型”。
+- Não é possível implantar aplicativos de linha de negócios da Windows Store para Empresas
+- Quando você implanta aplicativos pagos pela loja, os usuários finais devem fazer logon na loja e comprar os aplicativos por sua conta.
+- Se você tiver implantado uma Política de Grupo desabilitando o acesso à versão de cliente da Windows Store, as implantações da Windows Store para Empresas não funcionarão, mesmo se ela estiver habilitada.
 
 
+## <a name="set-up-windows-store-for-business-synchronization"></a>Configurar a sincronização da Windows Store para Empresas
+
+### <a name="for-configuration-manager-versions-prior-to-1706"></a>Para versões do Configuration Manager anteriores à 1706
+
+**No Azure Active Directory, registre o Configuration Manager como uma ferramenta de gerenciamento de "Aplicativo Web e/ou API da Web". Esta ação lhe dá uma ID de cliente que será necessária mais tarde.**
+1. No nó Active Directory de [https://manage.windowsazure.com](https://manage.windowsazure.com), selecione seu Azure Active Directory e clique em **Aplicativos** > **Adicionar**.
+2.  Clique em **Adicionar um aplicativo que minha organização esteja desenvolvendo**.
+3.  Insira um nome para o aplicativo, selecione **Aplicativo Web** e/ou **API da Web** e clique na seta **Avançar**.
+4.  Insira a mesma URL para **URL de Entrada** e **URI da ID do Aplicativo**. A URL pode ser qualquer uma e não precisa ser resolvida para um endereço real. Por exemplo, você pode inserir *https://seudomínio/sccm*.
+5.  Conclua o assistente.
+
+**No Azure Active Directory, crie uma chave de cliente para a ferramenta de gerenciamento registrada**
+1.  Realce o aplicativo criado e clique em **Configurar**.
+2.  Em **Chaves**, escolha uma duração na lista e clique em **Salvar**. Essa ação cria uma nova chave do cliente. Não saia dessa página até que você tenha carregado com êxito a Windows Store para Empresas no Configuration Manager.
+
+**Na Windows Store para Empresas, configure o Configuration Manager como a ferramenta de gerenciamento da loja.**
+1.  Abra [https://businessstore.microsoft.com/en-us/managementtools](https://businessstore.microsoft.com/en-us/managementtools) e se conecte, se solicitado.
+2.  Aceite os termos de uso, se solicitado.
+3.  Em **Ferramentas de Gerenciamento**, clique em **Adicionar uma ferramenta de gerenciamento**.
+4.  Em **Pesquisar a ferramenta por nome**, digite o nome do aplicativo que você criou anteriormente no AAD e clique em **Adicionar**.
+5.  Clique em **Ativar** ao lado do aplicativo importado.
+6.  Na página **Gerenciar > Informações da Conta**, selecione **Exibir Aplicativos Licenciados Offline** se quiser permitir que aplicativos licenciados offline sejam comprados.
+
+**Adicionar a conta da loja ao Configuration Manager**
+
+1. Verifique se você comprou pelo menos um aplicativo da Windows Store para Empresas. No espaço de trabalho **Administração** do console do Configuration Manager, expanda **Serviços de Nuvem** e clique em **Windows Store para Empresas**.
+2.  Na guia **Início**, no grupo **Windows Store para Empresas**, clique em **Adicionar Conta da Windows Store para Empresas**. 
+3.  Adicione a ID de locatário, a id de cliente e a chave de cliente do Azure Active Directory e conclua o assistente.
+4. Quando terminar, será possível ver a conta configurada na lista **Windows Store para Empresas** no console do Configuration Manager.
+
+### <a name="for-configuration-manager-version-1706-and-later"></a>Para a versão do Configuration Manager anterior à 1706
+
+1. No console, vá para **Administração** > **Visão geral** > **Gerenciamento de serviços de nuvem** > **Azure** > **Serviços do Azure** e, em seguida, escolha **Configurar serviços do Azure** para iniciar o **Assistente de serviços do Azure**.
+2. Na página de **Serviços do Azure**, selecione o serviço que deseja configurar e, em seguida, clique em **Próxima**.
+3. Na página **Geral**, forneça um nome amigável para o Nome do serviço do Azure e uma descrição opcional e clique **Próxima**.
+4. Na página do **Aplicativo**, especifique seu ambiente do Azure e, em seguida, clique em **Procurar** para abrir a janela do **Aplicativo de Servidor**.
+5. Na janela do **aplicativo de servidor**, selecione o aplicativo de servidor que você deseja usar e depois clique em **OK**. Aplicativos de servidor são os aplicativos Web do Azure que contêm as configurações da sua conta do Azure, incluindo sua ID de locatário, ID de cliente e uma chave secreta para clientes. Se você não tiver um aplicativo de servidor disponível, use um dos seguintes:
+    - **Criar**: Para criar um novo aplicativo de servidor, clique em **Criar**. Forneça um nome amigável para o aplicativo e o locatário. Em seguida, depois que você entrar no Azure, o Configuration Manager cria o aplicativo Web do Azure para você, incluindo a ID do cliente e a chave secreta para uso com o aplicativo Web. Posteriormente, você pode exibi-las no portal do Azure.
+    - **Importar**: Para usar um aplicativo Web que já existe em sua assinatura do Azure, clique em **Importar**. Forneça um nome amigável para o aplicativo e o locatário e especifique a ID de locatário, ID do cliente e a chave secreta para o aplicativo Web do Azure que você deseja que o Configuration Manager use. Depois que você **verificar** as informações, clique em **OK** para continuar. 
+6. Examine a página de **informações** e conclua quaisquer etapas adicionais e configurações, conforme indicado. Essas configurações são necessárias para usar o serviço com o Configuration Manager. Por exemplo, para configurar o Windows Store para Empresas:
+    - No Azure, você deve registrar o Configuration Manager como um aplicativo Web ou API Web e registrar a ID do cliente. Você também pode especificar uma chave de cliente para uso pela ferramenta de gerenciamento (que é o Configuration Manager).
+    - No console do Windows Store para Empresas, você deve configurar o Configuration Manager como a ferramenta de gerenciamento de repositório, habilitar o suporte para aplicativos licenciados offline e, em seguida, pelo menos um aplicativo de compra. 
+7. Quando estiver pronto para continuar, clique em **Próximo**.
+8. Na página **Configurações de aplicativo**, conclua as configurações de catálogo e idioma do aplicativo para este serviço e, em seguida, clique em **Próxima**.
+9. Após concluir o assistente, o console do Configuration Manager mostra que você configurou **Windows Store para Empresas** como um **tipo de serviço de nuvem**.
 
 
-## <a name="create-and-deploy-a-configuration-manager-application-from-a-windows-store-for-business-app"></a>从适用于企业的 Windows 应用商店应用创建和部署 Configuration Manager 应用程序。
-1.  在 Configuration Manager 控制台的“软件库”工作区中，展开“应用程序管理”，然后单击“应用商店应用的许可证信息”。
-2.  选择要部署的应用，然后在“主页”选项卡的“创建”组中，单击“创建应用程序”。
-将创建包含适用于企业的 Windows 应用商店应用的 Configuration Manager 应用程序。 然后，可以像对任何其他 Configuration Manager 应用程序一样部署并监视此应用程序。
+
+
+## <a name="create-and-deploy-a-configuration-manager-application-from-a-windows-store-for-business-app"></a>Criar e implantar um aplicativo do Configuration Manager por meio de um aplicativo da Windows Store para Empresas.
+1.  No espaço de trabalho **Biblioteca de Software** do console do Configuration Manager, expanda **Gerenciamento de Aplicativos** e clique em **Informações sobre Licença para Aplicativos da Loja**.
+2.  Escolha o aplicativo que deseja implantar e, na guia **Início**, no grupo **Criar**, clique em **Criar Aplicativo**.
+É criado um aplicativo do Configuration Manager contendo o aplicativo da Windows Store para Empresas. Em seguida, é possível implantar e monitorar o aplicativo, como você faria com qualquer outro aplicativo do Configuration Manager.
 
 > [!IMPORTANT]
-> 对于向 Intune 注册的设备，已部署的应用仅适用于最初注册该设备的用户。 其他任何用户都无法访问该应用。
+> Para dispositivos registrados no Intune, os aplicativos implantados ficam disponíveis somente para o usuário que registrou o dispositivo originalmente. Nenhum outro usuário pode acessar o aplicativo.
 
-## <a name="next-steps"></a>后续步骤
+## <a name="next-steps"></a>Próximas etapas
 
-在“软件库”工作区中，展开“应用程序管理”，然后单击“应用商店应用的许可证信息”。
+No espaço de trabalho **Biblioteca de Software**, expanda **Gerenciamento de Aplicativos** e clique em **Informações sobre Licença para Aplicativos da Loja**.
 
-对于所管理的每个应用商店应用，可以查看关于应用的以下信息：名称、平台、拥有的应用许可数量和可用的许可数量。
+Para cada aplicativo da loja que gerencia, você pode ver as informações sobre o aplicativo, incluindo seu nome, a plataforma, quantas licenças do aplicativo que você possui e o número de licenças que estão disponíveis.

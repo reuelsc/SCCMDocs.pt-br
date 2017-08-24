@@ -1,6 +1,6 @@
 ---
-title: "部署软件更新 | Microsoft Docs"
-description: "在 Configuration Manager 控制台中选择软件更新以手动启动部署过程或自动部署更新。"
+title: "Implantar atualizações de software | Microsoft Docs"
+description: "Escolha as atualizações de software no console do Configuration Manager para iniciar manualmente o processo de implantação ou implantar atualizações automaticamente."
 keywords: 
 author: dougeby
 ms.author: dougeby
@@ -14,59 +14,59 @@ ms.assetid: 04536d51-3bf7-45e5-b4af-36ceed10583d
 ms.openlocfilehash: 70a0ad1da03a7ca88df206fec683ab1df2b531e1
 ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
 ms.translationtype: HT
-ms.contentlocale: zh-CN
+ms.contentlocale: pt-BR
 ms.lasthandoff: 08/07/2017
 ---
-#  <a name="BKMK_SUMDeploy"></a> 部署软件更新  
+#  <a name="BKMK_SUMDeploy"></a> Implantar atualizações de software  
 
-*适用范围：System Center Configuration Manager (Current Branch)*
+*Aplica-se a: System Center Configuration Manager (Branch Atual)*
 
-软件更新部署阶段是指部署软件更新的过程。 无论如何部署软件更新，更新通常都会添加到软件更新组，软件更新会下载到分发点，并且更新组会部署到客户端。 当你创建部署时，系统会将关联软件更新策略发送到客户端计算机，从分发点将软件更新内容文件下载至客户端计算机上的本地缓存，然后即可从客户端安装软件更新。 Internet 上的客户端将从 Microsoft 更新下载内容。  
-
-> [!NOTE]  
->  你可以在 Intranet 上配置客户端，以在未提供分发点时从 Microsoft 更新下载软件更新。  
+A fase de implantação de atualização de software é o processo de implantação de atualizações de software. Independentemente de como você implanta atualizações de software, as atualizações normalmente são adicionados a um grupo de atualização de software, baixadas nos pontos de distribuição e o grupo de atualização é implantado para os clientes. Quando você cria a implantação, a política de atualização de software associada é enviada para computadores cliente, os arquivos do conteúdo de atualização de software são baixados de um ponto de distribuição para o cache local em computadores cliente e as atualizações de software estão disponíveis para instalação do cliente. Os clientes na Internet baixam conteúdo do Microsoft Update.  
 
 > [!NOTE]  
->  与其他部署类型不同，无论客户端上的最大缓存大小如何设置，所有软件更新均会下载到客户端缓存中。 有关客户端缓存设置的详细信息，请参阅 [Configure the Client Cache for Configuration Manager Clients](../../core/clients/manage/manage-clients.md#BKMK_ClientCache)。  
+>  É possível configurar um cliente na intranet para baixar atualizações de software do Microsoft Update caso um ponto de distribuição não esteja disponível.  
 
-如果配置必需的软件更新部署，则软件更新将于计划的截止时间自动安装。 或者，客户端计算机上的用户可以在截止时间前计划或启动软件更新安装。 在尝试的安装后，客户端计算机会将状态消息发回站点服务器以报告软件更新安装是否成功。 有关软件更新部署的详细信息，请参阅 [Software update deployment workflows](../understand/software-updates-introduction.md#BKMK_DeploymentWorkflows)。  
+> [!NOTE]  
+>  Ao contrário de outros tipos de implantação, as atualizações de software são todas baixadas para o cache do cliente independentemente da configuração do tamanho máximo do cache no cliente. Para obter mais informações sobre as configurações do cache do cliente, veja [Configure the Client Cache for Configuration Manager Clients](../../core/clients/manage/manage-clients.md#BKMK_ClientCache).  
 
-部署软件更新有两个主要方案：手动部署和自动部署。 通常，首先会手动部署软件更新以为客户端计算机创建基线，然后将通过使用自动部署来管理客户端上的软件更新。  
+Se você configurar uma implantação de atualização de software necessária, as atualizações de software serão instaladas automaticamente no prazo agendado. Como alternativa, o usuário no computador cliente pode agendar ou iniciar a instalação da atualização de software antes do prazo. Após a tentativa de instalação, os computadores cliente enviam mensagens de estado de volta para o servidor do site para relatar se a instalação da atualização de software teve êxito. Para obter mais informações sobre implantações de atualização de software, veja [Software update deployment workflows](../understand/software-updates-introduction.md#BKMK_DeploymentWorkflows).  
 
-## <a name="BKMK_ManualDeployment"></a>手动部署软件更新
-可以在 Configuration Manager 控制台中选择软件更新并手动启动部署过程。 在创建将管理进行中的每月软件更新部署的自动部署规则之前，你通常将使用此部署方法以用所需的软件更新使客户端计算机保持最新，并部署带外软件更新要求。 以下列表提供手动部署软件更新的一般工作流：  
+Há dois cenários principais para implantar atualizações de software: implantação manual e implantação automática. Em geral, inicialmente você implantará manualmente atualizações de software para criar uma linha de base para seus computadores cliente; em seguida, você gerenciará atualizações de software em clientes usando a implantação automática.  
 
-1. 使用特定要求的软件更新的筛选。 例如，你可以提供条件，以检索在 50 多台客户端设备上所需要的所有安全或严重软件更新。  
-2. 创建包含软件更新的软件更新组。  
-3. 下载软件更新组中的软件更新的内容。  
-4. 手动部署软件更新组。
+## <a name="BKMK_ManualDeployment"></a> Implantar atualizações de software manualmente
+Você pode selecionar as atualizações de software no console do Configuration Manager para iniciar manualmente o processo de implantação. Esse método de implantação é usado geralmente para ter os computadores cliente em dia com as atualizações de software necessárias antes de serem criadas regras de implantação automáticas que gerenciam as implantações de atualização de software mensalmente e continuamente e para implantar requisitos de atualização de software fora da banda. A lista seguinte fornece o fluxo de trabalho geral para implantação manual das atualizações de software:  
 
-有关详细步骤，请参阅[手动部署软件更新](manually-deploy-software-updates.md)。
+1. Filtro para atualizações de software que usam requisitos específicos. Por exemplo, você pode fornecer critérios que recuperam toda a segurança ou atualizações críticas de software que são necessárias em mais de 50 computadores cliente.  
+2. Crie um grupo de atualização de software que contém as atualizações de software.  
+3. Baixe o conteúdo das atualizações de software no grupo de atualização de software.  
+4. Implante manualmente o grupo de atualização de software.
 
-## <a name="automatically-deploy-software-updates"></a>自动部署软件更新
-通过使用自动部署规则 (ADR).配置自动软件更新部署。 这是部署每月软件更新（通常称为“周二补丁日”）的常见方法，并且用于管理定义更新。 规则运行时，软件更新将从软件更新组中删除（如果使用现有更新组），将符合指定条件（例如，在最后一月中发布的所有安全软件更新）的软件更新添加到软件更新组中，软件更新的内容文件将下载和复制到分发点，并将软件更新部署到目标集合中的客户端。 以下列表提供自动部署软件更新的一般工作流：  
+Para obter etapas detalhadas, consulte [Implantar manualmente as atualizações de software](manually-deploy-software-updates.md).
 
-1.  创建 ADR 以指定部署设置。
-2.  软件更新会添加到软件更新组中。  
-3.  如果已指定软件更新组，则将其部署到目标集合中的客户端计算机。  
+## <a name="automatically-deploy-software-updates"></a>Implantar atualizações de software automaticamente
+A implantação automática de atualizações de software é configurada usando uma ADR (regra de implantação automática). Esse é um método comum de implantação de atualizações de software mensais (geralmente conhecido como “Patch Tuesday”) e para o gerenciamento de atualizações de definição. Quando a regra é executada, as atualizações de software são removidas do grupo de atualização de software (caso esteja usando um grupo de atualização existente), as atualizações de software que atendem aos critérios especificados (por exemplo, todas as atualizações de software de segurança lançadas no último mês) são adicionadas a um grupo de atualização de software, os arquivos de conteúdo das atualizações de software são baixados e copiados para os pontos de distribuição e as atualizações de software são implantadas em clientes na coleção de destino. A lista a seguir fornece o fluxo de trabalho geral para implantação automática das atualizações de software:  
 
-必须确定要在环境中使用的部署策略。 例如，你可以创建 ADR 并以测试客户端集合为目标。 验证在测试组上是否安装了软件更新之后，你可以在规则中添加新部署或将现有部署中的集合更改为包含更大客户端集的目标集合。 ADR 所创建的软件更新对象具有交互性。  
+1.  Crie uma ADR que especifica as configurações de implantação.
+2.  As atualizações de software são adicionadas a um grupo de atualização de software.  
+3.  O grupo de atualização de software é implantado nos computadores cliente na coleção de destino, se especificada.  
 
--   使用 ADR 部署的软件更新会自动部署到已添加到目标集合的新客户端。  
--   添加到软件更新组的新软件更新会自动部署到目标集合中的客户端。  
--   你可以针对 ADR 随时启用或禁用部署。  
+Você deve determinar qual estratégia de implantação usar no seu ambiente. Por exemplo, é possível criar a ADR e ter com alvo uma coleção de clientes de teste. Depois de verificar se as atualizações de software estão instaladas no grupo de teste, é possível adicionar uma nova implantação à regra ou alterar a coleção na implantação existente para uma coleção de destino que inclua um conjunto maior de clientes. Os objetos de atualização de software que são criados pelas ADRs são interativos.  
 
-创建 ADR 后，可以将其他部署添加到规则。 这可以帮助你管理将不同更新部署到不同集合的复杂性。 每个新部署均具有完整的功能和部署监视体验，且你添加的每个新部署具有以下特性：  
+-   As atualizações de software implantadas usando uma ADR são automaticamente implantadas nos novos clientes adicionados à coleção de destino.  
+-   Novas atualizações de software adicionadas a um grupo de atualização de software são automaticamente implantadas em clientes na coleção de destino.  
+-   É possível habilitar ou desabilitar as implantações a qualquer momento para a ADR.  
 
--   使用的更新组和包与在 ADR 首次运行时创建的更新组和包相同  
--   可以指定不同的集合  
--   支持唯一部署属性，包括：  
-   -   激活时间  
-   -   截止时间  
-   -   显示或隐藏最终用户体验  
-   -   针对此部署的单独警报  
+Depois de criar uma ADR, é possível adicionar outras implantações à regra. Isso pode ajudá-lo a gerenciar a complexidade de implantar diferentes atualizações em diferentes coleções. Cada nova implantação tem a gama completa da funcionalidade e da experiência de monitoramento da implantação, e cada nova implantação que você adicionar:  
 
-有关详细步骤，请参阅[自动部署软件更新](automatically-deploy-software-updates.md)
+-   Usa o mesmo grupo e pacote de atualização que é criado quando o ADR é executado pela primeira vez  
+-   Pode especificar uma coleção diferente  
+-   Dá suporte a propriedades de implantação exclusivas, incluindo:  
+   -   Tempo de ativação  
+   -   Prazo  
+   -   Mostrar ou ocultar a experiência do usuário final  
+   -   Alertas separados para esta implantação  
+
+Para obter etapas detalhadas, consulte [Implantar as atualizações de software automaticamente](automatically-deploy-software-updates.md)
 
 <!-- ###  <a name="BKMK_ClientCache"></a> Client cache setting  
 The Configuration Manager client downloads the content for required software updates to the local client cache soon after it receives the deployment. However, the client waits to download the content until after the **Software available time** setting for the deployment. The client does not download software updates in optional deployments (deployments that do not have a scheduled installation deadline) until the user manually starts the installation. When the configured deadline passes, the software updates client agent performs a scan to verify that the software update is still required, then the software updates client agent checks the local cache on the client computer to verify that the software update source file is still available, and then installs the software update. If the content was deleted from the client cache to make room for another deployment, the client downloads the software updates to the cache. Software updates are always downloaded to the client cache regardless of the configured maximum client cache size. For other deployments, such as applications or packages, the client only downloads content that is within the maximum cache size that you configure for the client. Cached content is not automatically deleted, but it remains in the cache for at least one day after the client used that content.  -->

@@ -1,6 +1,6 @@
 ---
-title: "任务序列操作变量 | Microsoft Docs"
-description: "使用序列操作变量（如网络设置变量）来指定 Configuration Manager 任务序列中单个步骤的配置设置。"
+title: "Variáveis de ação de sequência de tarefas | Microsoft Docs"
+description: "Use variáveis de ação de sequência, como variáveis de configuração de rede, para definir configurações para uma única etapa em uma sequência de tarefas do Configuration Manager."
 ms.custom: na
 ms.date: 10/06/2016
 ms.prod: configuration-manager
@@ -18,330 +18,330 @@ manager: angrobe
 ms.openlocfilehash: 6049ec2369e0a97b21ce6523ba8448335385ab9a
 ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
 ms.translationtype: HT
-ms.contentlocale: zh-CN
+ms.contentlocale: pt-BR
 ms.lasthandoff: 08/07/2017
 ---
-# <a name="task-sequence-action-variables-in-system-center-configuration-manager"></a>System Center Configuration Manager 中的任务序列操作变量
+# <a name="task-sequence-action-variables-in-system-center-configuration-manager"></a>Variáveis de ação da sequência de tarefas no System Center Configuration Manager
 
-*适用范围：System Center Configuration Manager (Current Branch)*
+*Aplica-se a: System Center Configuration Manager (Branch Atual)*
 
-任务序列操作变量指定在 System Center Configuration Manager 任务序列中单个步骤使用的配置设置。 默认情况下，任务序列步骤采用的设置在运行步骤前会被初始化，并且只有当运行相关联的任务序列步骤时才可用。 也就是说，任务序列变量设置在运行任务序列步骤之前添加到任务序列环境，并且在任务序列步骤运行之后该值会从任务序列环境删除。  
+Variáveis de ação de sequência de tarefas especificam configurações que são usadas por uma única etapa em uma sequência de tarefas do System Center Configuration Manager. Por padrão, as configurações usadas por uma etapa da sequência de tarefas são inicializadas antes que a etapa é executada e estão disponíveis apenas durante a execução da etapa de sequência de tarefas associada. Em outras palavras, a configuração da variável de sequência de tarefas é adicionada ao ambiente da sequência de tarefas antes que a etapa da sequência de tarefas seja executada, e o valor é removido do ambiente da sequência de tarefas depois que a etapa da sequência de tarefas é executada.  
 
-## <a name="action-variable-example"></a>操作变量示例  
- 例如，通过使用“运行命令行”  任务序列步骤为命令行操作指定开始目录。 此步骤包括“开始”  属性，其默认值作为 **WorkingDirectory** 变量存储在任务序列环境中。 **WorkingDirectory** 环境变量在运行“运行命令行”  任务序列操作前会被初始化。 在“运行命令行”  步骤过程中，通过“开始”  属性可以访问 **WorkingDirectory** 值。 在任务序列步骤完成后， **WorkingDirectory** 变量的值会从任务序列环境中删除。 如果序列包含另一个“运行命令行”  任务序列步骤，则新的 **WorkingDirectory** 变量会被初始化并设置为该任务序列步骤的启动值。  
+## <a name="action-variable-example"></a>Exemplo de variável de ação  
+ Por exemplo, você pode especificar um diretório de início para uma ação de linha de comando usando a etapa **Executar Linha de Comando** da sequência de tarefas. Esta etapa inclui uma propriedade **Iniciar em** , cujo valor padrão é armazenado no ambiente da sequência de tarefas como a variável **WorkingDirectory** . A variável de ambiente **WorkingDirectory** é inicializada antes da ação da sequência de tarefas **Executar Linha de Comando** . Durante a etapa **Executar Linha de Comando** , o valor **WorkingDirectory** pode ser acessado por meio da propriedade **Start In** . Depois que a etapa da sequência de tarefas for concluída, o valor da variável **WorkingDirectory** será removido do ambiente da sequência de tarefas. Se a sequência contiver outra etapa da sequência de tarefas **Executar Linha de Comando** , a nova variável **WorkingDirectory** será inicializada e definida como o valor inicial para essa etapa da sequência de tarefas.  
 
- 尽管在运行任务序列步骤时任务序列操作设置存在默认值，但是序列中的多个步骤可以使用你设置的任何新值。 如果使用任务序列变量创建方法之一来替代内置变量值，则新值仍将保留在环境中，并替代任务序列中其他步骤的默认值。 在上一示例中，如果将**设置任务序列变量**步骤添加为任务序列的第一个步骤，并将 **WorkingDirectory** 环境变量设置为值 **C:\\**，则任务序列中的两个**运行命令行**步骤都将使用新的开始目录值。  
+ Enquanto o valor padrão de uma configuração de ação da sequência de tarefas está presente durante a execução da etapa da sequência de tarefas, qualquer novo valor definido pode ser usado por várias etapas na sequência. Se você usar um dos métodos de criação da variável de sequência de tarefas para substituir o valor de uma variável interna, o novo valor permanecerá no ambiente e substituirá o valor padrão para as outras etapas na sequência de tarefas. No exemplo anterior, se uma etapa **Definir Variável de Sequência de Tarefas** for adicionada como a primeira etapa da sequência de tarefas e se ela definir a variável de ambiente **WorkingDirectory** para o valor **C:\\**, as etapas **Executar Linha de Comando** na sequência de tarefas usarão o novo valor de diretório inicial.  
 
-## <a name="action-variables-for-task-sequence-actions"></a>任务序列操作的操作变量  
- Configuration Manager 任务序列变量按照关联的任务序列操作进行分组。 使用以下链接收集与特定操作相关联的操作变量的相关信息。 任务序列变量控制任务序列操作的工作方式。 任务序列操作读取和使用标记为输入变量的变量。 或者，您可以使用“设置任务序列变量”操作或 TSEnvironment COM 对象在运行时设置变量。 只有任务序列操作会将变量标记为输出变量，任务序列中稍后发生的操作会读取这些输出变量。  
+## <a name="action-variables-for-task-sequence-actions"></a>Variáveis de ação para ações de sequência de tarefas  
+ As variáveis de sequência de tarefas do Configuration Manager são agrupadas segundo a ação da sequência de tarefas associada. Use os links a seguir para coletar informações sobre as variáveis de ação associadas a uma ação específica. As variáveis de sequência de tarefas controlam como é operada a ação de sequência da tarefas. A ação de sequência de tarefas lê e usa as variáveis que você marca como variáveis de entrada. Como alternativa, você pode usar a ação Definir Variável de Sequência de Tarefas ou o objeto TSEnvironment COM para definir as variáveis no tempo de execução. Somente a ação de sequência de tarefas marca variáveis como variáveis de saída, que são lidas pelas ações que ocorrem posteriormente na sequência de tarefas.  
 
 > [!NOTE]  
->  不是所有的任务序列操作都与任务序列变量集相关联。 例如，虽然有与启用 BitLocker 操作相关联的变量，但没有与禁用 BitLocker 操作相关联的变量。  
+>  Nem todas as ações da sequência de tarefas são associadas a um conjunto de variáveis de sequência de tarefas. Por exemplo, embora existam variáveis associadas à ação Habilitar BitLocker, não há variáveis associadas à ação Desabilitar BitLocker.  
 
-###  <a name="BKMK_ApplyDataImage"></a> 应用数据映像任务序列操作变量  
- 此操作的变量指定 WIM 文件的哪个映像将应用于目标计算机，以及是否在目标分区上删除文件。 有关与这些变量相关联的任务序列步骤的详细信息，请参阅[应用数据映像任务序列步骤](task-sequence-steps.md#BKMK_ApplyDataImage)。  
+###  <a name="BKMK_ApplyDataImage"></a> Aplicar variáveis de ação da sequência de tarefas da imagem de dados  
+ As variáveis dessa ação especificam qual imagem de um arquivo WIM é aplicada ao computador de destino e se os arquivos na partição de destino são excluídos ou não. Para obter mais informações sobre a etapa da sequência de tarefas associada a essas variáveis, consulte [Etapa da sequência de tarefas Aplicar Imagem de Dados](task-sequence-steps.md#BKMK_ApplyDataImage).  
 
-#### <a name="details"></a>详细信息  
+#### <a name="details"></a>Detalhes  
 
-|操作变量名称|描述|  
+|Nome de variável de ação|Descrição|  
 |--------------------------|-----------------|  
-|OSDDataImageIndex<br /><br /> (input)|指定应用于目标计算机上的映像的索引值。|  
-|OSDWipeDestinationPartition<br /><br /> (input)|指定是否删除位于目标分区上的文件。<br /><br /> 有效值：<br /><br /> **“true”** （默认值）<br /><br /> **“false”**|  
+|OSDDataImageIndex<br /><br /> (entrada)|Especifica o valor de índice da imagem aplicado ao computador de destino.|  
+|OSDWipeDestinationPartition<br /><br /> (entrada)|Especifica se é necessário excluir os arquivos localizados na partição de destino.<br /><br /> Valores válidos:<br /><br /> **"true"** (padrão)<br /><br /> **"false"**|  
 
-###  <a name="BKMK_ApplyDriverPackage"></a> 应用驱动程序包任务序列操作变量  
- 此操作的变量指定大容量存储驱动程序的安装信息以及是否要安装未签名的驱动程序。 有关与这些变量相关联的任务序列步骤的详细信息，请参阅[应用驱动程序包](task-sequence-steps.md#BKMK_ApplyDriverPackage)。  
+###  <a name="BKMK_ApplyDriverPackage"></a> Aplicar variáveis de ação da sequência de tarefas do pacote de driver  
+ As variáveis dessa ação especificam informações sobre a instalação de drivers de armazenamento em massa e se é necessário instalar drivers não assinados. Para obter mais informações sobre a etapa da sequência de tarefas associada a essas variáveis, consulte [Aplicar Pacote de Driver](task-sequence-steps.md#BKMK_ApplyDriverPackage).  
 
-#### <a name="details"></a>详细信息  
+#### <a name="details"></a>Detalhes  
 
-|操作变量名称|描述|  
+|Nome de variável de ação|Descrição|  
 |--------------------------|-----------------|  
-|OSDApplyDriverBootCriticalContentUniqueID<br /><br /> (input)|指定要从驱动程序包中进行安装的大容量存储驱动程序的内容 ID。 如果没有指定，则不安装大容量存储驱动程序。|  
-|OSDApplyDriverBootCriticalINFFile<br /><br /> (input)|指定要安装的大容量存储驱动程序的 INF 文件。<br /><br /> <br /><br /> 如果设置了 OSDApplyDriverBootCriticalContentUniqueID，则需要此任务序列变量。|  
-|OSDApplyDriverBootCriticalHardwareComponent<br /><br /> (input)|指定无论是否安装大容量存储设备驱动程序，此值必须为**scsi**。<br /><br /> <br /><br /> 如果设置了 OSDApplyDriverBootCriticalContentUniqueID，则需要此任务序列变量。|  
-|OSDApplyDriverBootCriticalID<br /><br /> (input)|指定要安装的大容量存储设备驱动程序的启动关键 ID。 此 ID 列在设备驱动程序 txtsetup.oem 文件的 **scsi** 部分中。<br /><br /> <br /><br /> 如果设置了 OSDApplyDriverBootCriticalContentUniqueID，则需要此任务序列变量。|  
-|OSDAllowUnsignedDriver<br /><br /> (input)|指定是否将 Windows 配置为允许安装未签名的设备驱动程序。 部署 Windows Vista 和更高版本的操作系统时不使用此任务序列变量。<br /><br /> 有效值：<br /><br /> **“true”**<br /><br /> **“false”** （默认值）|  
+|OSDApplyDriverBootCriticalContentUniqueID<br /><br /> (entrada)|Especifica a ID de conteúdo do driver do dispositivo de armazenamento em massa a ser instalada do pacote de drivers. Se isso não for especificado, nenhum driver de armazenamento em massa será instalado.|  
+|OSDApplyDriverBootCriticalINFFile<br /><br /> (entrada)|Especifica o arquivo INF do driver de armazenamento em massa a ser instalado.<br /><br /> <br /><br /> Esta variável de sequência de tarefas é obrigatória se OSDApplyDriverBootCriticalContentUniqueID estiver definido.|  
+|OSDApplyDriverBootCriticalHardwareComponent<br /><br /> (entrada)|Especifica se um driver de dispositivo de armazenamento em massa está instalado; deve ser **scsi**.<br /><br /> <br /><br /> Esta variável de sequência de tarefas é obrigatória se OSDApplyDriverBootCriticalContentUniqueID estiver definido.|  
+|OSDApplyDriverBootCriticalID<br /><br /> (entrada)|Especifica a ID crítica de inicialização do driver do dispositivo de armazenamento em massa a ser instalada. Esta ID é listada na seção “**scsi**” do arquivo txtsetup.oem do driver de dispositivo.<br /><br /> <br /><br /> Esta variável de sequência de tarefas é obrigatória se OSDApplyDriverBootCriticalContentUniqueID estiver definido.|  
+|OSDAllowUnsignedDriver<br /><br /> (entrada)|Especifica se é necessário configurar o Windows para permitir a instalação de drivers de dispositivo não assinados. Essa variável de sequência de tarefas não é usada ao implantar o Windows Vista e o sistema operacional posterior.<br /><br /> Valores válidos:<br /><br /> **"true"**<br /><br /> **"false"** (padrão)|  
 
-###  <a name="BKMK_ApplyNetworkSettings"></a> 应用网络设置任务序列操作变量  
- 此操作的变量为目标计算机指定网络设置，例如计算机网络适配器的设置、域设置以及工作组设置。 有关与这些变量相关联的任务序列步骤的详细信息，请参阅[应用网络设置步骤](task-sequence-steps.md#BKMK_ApplyNetworkSettings)。  
+###  <a name="BKMK_ApplyNetworkSettings"></a> Aplicar variáveis de ação da sequência de tarefas das configurações de rede  
+ As variáveis dessa ação especificam as configurações de rede para o computador de destino, como configurações de adaptadores de rede do computador, configurações de domínio e configurações de grupo de trabalho. Para obter mais informações sobre a etapa da sequência de tarefas associada a essas variáveis, consulte [Etapa Aplicar Configurações de Rede](task-sequence-steps.md#BKMK_ApplyNetworkSettings).  
 
-#### <a name="details"></a>详细信息  
+#### <a name="details"></a>Detalhes  
 
-|操作变量名称|描述|  
+|Nome de variável de ação|Descrição|  
 |--------------------------|-----------------|  
-|OSDAdapter<br /><br /> (input)|此任务序列变量是一个数组变量。 数组中的每个元素都代表计算机上单个网络适配器的设置。 通过将数组变量名称与基于零的网络适配器下标及属性名称组合，访问为每个适配器定义的设置。<br /><br /> <br /><br /> 如果使用此任务序列操作配置多个网络适配器，则第二个网络适配器的属性使用变量名称中的索引来定义；例如，OSDAdapter1EnableDHCP、OSDAdapter1IPAddressList、OSDAdapter1DNSDomain、OSDAdapter1WINSServerList 和 OSDAdapter1EnableWINS 等。<br /><br /> <br /><br /> 例如，以下变量名称可用于为将由此任务序列操作配置的第一个网络适配器定义属性：<br /><br /> <ul><li>**OSDAdapter0EnableDHCP** – 设置为“true”将为适配器启用动态主机配置协议 (DHCP)。<br />    此设置是必需的。 可用的值有：True 或 False。</li><li>**OSDAdapter0IPAddressList** – 以逗号分隔的适配器 IP 地址列表。 除非 **EnableDHCP** 设置为 **false**，否则将忽略此属性。<br />    此设置是必需的。</li><li>**OSDAdapter0SubnetMask** – 以逗号分隔的子网掩码列表。 除非 **EnableDHCP** 设置为 **false**，否则将忽略此属性。<br />    此设置是必需的。</li><li>**OSDAdapter0Gateways** – 以逗号分隔的 IP 网关地址列表。 除非 **EnableDHCP** 设置为 **false**，否则将忽略此属性。<br />    此设置是必需的。</li><li>**OSDAdapter0DNSDomain** - 适配器的域名系统 (DNS) 域。</li><li>**OSDAdapter0DNSServerList** – 以逗号分隔的适配器 DNS 服务器列表。<br />    此设置是必需的。</li><li>设置**OSDAdapter0EnableDNSRegistration** - **true** 以在 DNS 中为适配器注册 IP 地址。</li><li>**OSDAdapter0EnableFullDNSRegistration** - 设置为 **true** 将根据计算机的完整 DNS 名称在 DNS 中为适配器注册 IP 地址。</li><li>**OSDAdapter0EnableIPProtocolFiltering** - 设置为 **true** 将在适配器上启用 IP 协议筛选。</li><li>**OSDAdapter0IPProtocolFilterList** – 以逗号分隔的协议列表，这些协议被允许在 IP 的上层运行。 如果 **EnableIPProtocolFiltering** 设置为 **false**，将忽略此属性。</li><li>**OSDAdapter0EnableTCPFiltering** - 设置为 **true** 将为适配器启用 TCP 端口筛选。</li><li>**OSDAdapter0TCPFilterPortList** – 以逗号分隔的端口列表，这些端口将被授予对 TCP 的访问权限。 如果 **EnableTCPFiltering** 设置为 **false**，将忽略此属性。</li><li>**OSDAdapter0TcpipNetbiosOptions** – TCP/IP 上层的 NetBIOS 选项。 可能的值如下：<br /><br /> <ul><li>0 - 使用 DHCP 服务器中的 NetBIOS 设置。</li><li>1 - 启用 TCP/IP 上层的 NetBIOS。</li><li>2 - 禁用 TCP/IP 上层的 NetBIOS。</li></ul></li><li>**OSDAdapter0EnableWINS** - 设置为 **true** 将为名称解析使用 WINS。</li><li>**OSDAdapter0WINSServerList** – 以逗号分隔的 WINS 服务器 IP 地址列表。 除非 **EnableWINS** 设置为 **true**，否则将忽略此属性。</li><li>**OSDAdapter0MacAddress** – 媒体访问控制器 (MAC) 地址，用于匹配物理网络适配器的设置。</li><li>**OSDAdapter0Name** – 显示在网络连接控制面板程序中的网络连接的名称。 该名称的长度介于 0 到 255 个字符之间。</li><li>**OSDAdapter0Index** – 设置数组中网络适配器设置的下标。<br /><br />     OSDAdapterCount=1<br />    OSDAdapter0EnableDHCP=FALSE<br />    OSDAdapter0IPAddressList=192.168.0.40<br />    OSDAdapter0SubnetMask=255.255.255.0<br />    OSDAdapter0Gateways=192.168.0.1<br />    OSDAdapter0DNSSuffix=contoso.com</li></ul>|  
-|OSDAdapterCount<br /><br /> (input)|指定目标计算机上安装的网络适配器的数目。 在设置 **OSDAdapterCount** 值时，必须为每个适配器的所有配置选项设置值。 例如，如果为一个特定的适配器设置 **OSDAdapterTCPIPNetbiosOptions** 值，那么也必须设置该适配器的所有值。<br /><br /> <br /><br /> 如果未指定此值，将忽略所有的 **OSDAdapter** 值。|  
-|OSDDNSDomain<br /><br /> (input)|指定目标计算机使用的主 DNS 服务器。|  
-|OSDDomainName<br /><br /> (input)|指定目标计算机加入的 Windows 域的名称。 指定的值必须是有效的 Active Directory 域服务的域名。|  
-|OSDDomainOUName<br /><br /> (input)|指定目标计算机加入的组织单位 (OU) 的 RFC 1779 格式名称。 如果指定了值，该值必须包含完整路径。<br /><br /> 例如：<br /><br /> **LDAP://OU=MyOu,DC=MyDom,DC=MyCompany,DC=com**|  
-|OSDEnableTCPIPFiltering<br /><br /> (input)|指定是否启用 TCP/IP 筛选。<br /><br /> 有效值：<br /><br /> **“true”**<br /><br /> **“false”** （默认值）|  
-|OSDJoinAccount<br /><br /> (input)|指定用于将目标计算机添加到 Windows 域的网络帐户。|  
-|OSDJoinPassword<br /><br /> (input)|指定用于将目标计算机添加到 Windows 域的网络密码。|  
-|OSDNetworkJoinType<br /><br /> (input)|指定目标计算机是否加入 Windows 域或工作组。<br /><br /> “0” 指示目标计算机加入 Windows 域。 “1” 指定计算机加入工作组。<br /><br /> 有效值：<br /><br /> **"0"**<br /><br /> **"1"**|  
-|OSDDNSSuffixSearchOrder<br /><br /> (input)|指定目标计算机的 DNS 搜索顺序。|  
-|OSDWorkgroupName<br /><br /> (input)|指定目标计算机加入的工作组的名称。<br /><br /> 您必须指定此值或 **OSDDomainName** 值。 工作组名称最多可使用 32 个字符。<br /><br /> 例如：<br /><br /> **“计帐”**|  
+|OSDAdapter<br /><br /> (entrada)|Esta variável de sequência de tarefas é uma variável de matriz. Cada elemento na matriz representa as configurações para um único adaptador de rede no computador. As configurações definidas para cada adaptador são acessadas pela combinação do nome de variável de matriz com o índice do adaptador de rede baseado em zero e o nome da propriedade.<br /><br /> <br /><br /> Se vários adaptadores de rede precisarem ser configurados com esta ação da sequência de tarefas, as propriedades do segundo adaptador de rede serão definidas usando seu índice no nome da variável; por exemplo, OSDAdapter1EnableDHCP, OSDAdapter1IPAddressList, OSDAdapter1DNSDomain, OSDAdapter1WINSServerList, OSDAdapter1EnableWINS e assim por diante.<br /><br /> <br /><br /> Por exemplo, os seguintes nomes de variáveis podem ser usados para definir as propriedades para o primeiro adaptador de rede que será configurado por esta ação da sequência de tarefas:<br /><br /> <ul><li>**OSDAdapter0EnableDHCP** – true para habilitar o protocolo DHCP para o adaptador.<br />    Essa configuração é necessária. Os valores possíveis são: True ou False.</li><li>**OSDAdapter0IPAddressList** – lista delimitada por vírgula de endereços IP do adaptador. Essa propriedade será ignorada, a menos que **EnableDHCP** seja definido como **false**.<br />    Essa configuração é necessária.</li><li>**OSDAdapter0SubnetMask** – lista delimitada por vírgula de máscaras de sub-rede. Essa propriedade será ignorada, a menos que **EnableDHCP** seja definido como **false**.<br />    Essa configuração é necessária.</li><li>**OSDAdapter0Gateways** – lista delimitada por vírgula de endereços IP de gateway. Essa propriedade será ignorada, a menos que **EnableDHCP** seja definido como **false**.<br />    Essa configuração é necessária.</li><li>**OSDAdapter0DNSDomain** -Domínio DNS (Sistema de Nomes de Domínio) do adaptador.</li><li>**OSDAdapter0DNSServerList** – lista delimitada por vírgula de servidores DNS do adaptador.<br />    Essa configuração é necessária.</li><li>**OSDAdapter0EnableDNSRegistration** - **true** para registrar o endereço IP do adaptador no DNS.</li><li>**OSDAdapter0EnableFullDNSRegistration** - **true** para registrar o endereço IP do adaptador no DNS com o nome DNS completo do computador.</li><li>**OSDAdapter0EnableIPProtocolFiltering** - **true** para habilitar a filtragem de protocolo IP no adaptador.</li><li>**OSDAdapter0IPProtocolFilterList** – lista delimitada por vírgula de protocolos que podem ser executados com IP. Essa propriedade será ignorada se **EnableIPProtocolFiltering** estiver definido como **false**.</li><li>**OSDAdapter0EnableTCPFiltering** - **true** para habilitar a filtragem de porta TCP do adaptador.</li><li>**OSDAdapter0TCPFilterPortList** – lista delimitada por vírgula de portas que receberão permissões de acesso para TCP. Essa propriedade será ignorada se **EnableTCPFiltering** estiver definido como **false**.</li><li>**OSDAdapter0TcpipNetbiosOptions** – opções de NetBIOS em TCP/IP. Os valores possíveis são:<br /><br /> <ul><li>0 Use as configurações de NetBIOS do servidor DHCP.</li><li>1 Habilitar NetBIOS por TCP/IP.</li><li>2 Desabilitar NetBIOS por TCP/IP.</li></ul></li><li>**OSDAdapter0EnableWINS** - **true** para usar o WINS para a resolução de nomes.</li><li>**OSDAdapter0WINSServerList** – Lista delimitada por vírgula de endereços IP do servidor WINS. Essa propriedade será ignorada, a menos que **EnableWINS ativa** esteja definido como **true**.</li><li>**OSDAdapter0MacAddress** – endereço MAC (Media access controller) usado para fazer a correspondência das configurações com o adaptador de rede física.</li><li>**OSDAdapter0Name** – nome da conexão de rede como ele aparece no programa do painel de controle das conexões de rede. O comprimento do nome está entre 0 e 255 caracteres.</li><li>**OSDAdapter0Index** – índice das configurações do adaptador de rede na matriz de configurações.<br /><br />     OSDAdapterCount=1<br />    OSDAdapter0EnableDHCP=FALSE<br />    OSDAdapter0IPAddressList=192.168.0.40<br />    OSDAdapter0SubnetMask=255.255.255.0<br />    OSDAdapter0Gateways=192.168.0.1<br />    OSDAdapter0DNSSuffix=contoso.com</li></ul>|  
+|OSDAdapterCount<br /><br /> (entrada)|Especifica o número de adaptadores de rede instalados no computador de destino. Quando o valor **OSDAdapterCount** estiver definido, todas as opções de configuração para cada adaptador deverão ser definidas. Por exemplo, se você definir o valor de **OSDAdapterTCPIPNetbiosOptions** como um adaptador específico, todos os valores desse adaptador também precisarão ser configurados.<br /><br /> <br /><br /> Se esse valor não for especificado, todos os valores **OSDAdapter** serão ignorados.|  
+|OSDDNSDomain<br /><br /> (entrada)|Especifica o servidor DNS primário que é usado pelo computador de destino.|  
+|OSDDomainName<br /><br /> (entrada)|Especifica o nome do domínio do Windows ingressado pelo computador de destino. O valor especificado deve ser um nome de domínio válido dos Serviços de Domínio do Active Directory.|  
+|OSDDomainOUName<br /><br /> (entrada)|Especifica o nome de formato RFC 1779 da UO (unidade organizacional) ingressada pelo computador de destino. Se especificado, o valor deve conter o caminho completo.<br /><br /> Exemplo:<br /><br /> **LDAP://OU=MinhaUo,DC=MeuDomínio,DC=MinhaEmpresa,DC=com**|  
+|OSDEnableTCPIPFiltering<br /><br /> (entrada)|Especifica se a filtragem de TCP/IP está habilitada.<br /><br /> Valores válidos:<br /><br /> **"true"**<br /><br /> **"false"** (padrão)|  
+|OSDJoinAccount<br /><br /> (entrada)|Especifica a conta de rede que é usada para adicionar o computador de destino a um domínio do Windows.|  
+|OSDJoinPassword<br /><br /> (entrada)|Especifica a senha de rede usada para adicionar o computador de destino a um domínio do Windows.|  
+|OSDNetworkJoinType<br /><br /> (entrada)|Especifica se o computador de destino ingressa em um domínio ou grupo de trabalho do Windows.<br /><br /> **“0”** indica que o computador de destino ingressa em um domínio do Windows. **“1”** especifica que o computador ingressa em um grupo de trabalho.<br /><br /> Valores válidos:<br /><br /> **“0”**<br /><br /> **“1”**|  
+|OSDDNSSuffixSearchOrder<br /><br /> (entrada)|Especifica a ordem de pesquisa DNS para o computador de destino.|  
+|OSDWorkgroupName<br /><br /> (entrada)|Especifica o nome do grupo de trabalho ingressado pelo computador de destino.<br /><br /> É necessário especificar esse valor ou o valor **OSDDomainName** . O nome do grupo de trabalho pode ter, no máximo, 32 caracteres.<br /><br /> Exemplo:<br /><br /> **"Accounting"**|  
 
-###  <a name="BKMK_ApplyOperatingSystem"></a> 应用操作系统映像任务序列操作变量  
- 此操作的变量为你希望在目标计算机上安装的操作系统指定设置。 有关与这些变量关联的任务序列步骤的详细信息，请参阅[应用操作系统映像](task-sequence-steps.md#BKMK_ApplyOperatingSystemImage)。  
+###  <a name="BKMK_ApplyOperatingSystem"></a> Aplicar variáveis de ação da sequência de tarefas da imagem do sistema operacional  
+ As variáveis dessa ação especificam as configurações para o sistema operacional que você deseja instalar no computador de destino. Para obter mais informações sobre a etapa da sequência de tarefas associada a essas variáveis, consulte [Aplicar Imagem de Sistema Operacional](task-sequence-steps.md#BKMK_ApplyOperatingSystemImage).  
 
-#### <a name="details"></a>详细信息  
+#### <a name="details"></a>Detalhes  
 
-|操作变量名称|描述|  
+|Nome de variável de ação|Descrição|  
 |--------------------------|-----------------|  
-|OSDConfigFileName<br /><br /> (input)|指定与操作系统部署包关联的操作系统部署答案文件的文件名。|  
-|OSDImageIndex<br /><br /> (input)|指定应用于目标计算机上的 WIM 文件的映像索引值。|  
-|OSDInstallEditionIndex<br /><br /> (input)|指定安装的 Windows Vista 或更高版本操作系统的版本。 如果没有指定版本，Windows 安装程序将使用引用的产品密钥来确定安装哪个版本。<br /><br /> 如果以下条件成立，则仅使用零 (0) 值：<br /><br /> -   正在安装 Windows Vista 预装版操作系统<br />-   正在安装批量许可证版或更高版的 Windows Vista，没有指定产品秘钥。<br /><br /> 有效值：<br /><br /> **“0”** （默认）|  
-|OSDTargetSystemDrive (output)|指定包含操作系统文件的分区的驱动器号。|  
+|OSDConfigFileName<br /><br /> (entrada)|Especifica o nome do arquivo de resposta da implantação de sistema operacional associado ao pacote de implantação de sistema operacional.|  
+|OSDImageIndex<br /><br /> (entrada)|Especifica o valor de índice da imagem do arquivo WIM aplicado ao computador de destino.|  
+|OSDInstallEditionIndex<br /><br /> (entrada)|Especifica a versão do Windows Vista ou do sistema operacional mais recente instalada. Se nenhuma versão for especificada, a instalação do Windows determinará a versão que será instalada usando a chave do produto (Product Key) referenciada.<br /><br /> Use apenas um valor de 0 (zero) se as seguintes condições forem verdadeiras:<br /><br /> – Você está instalando um sistema operacional anterior ao Windows Vista<br />– Você está instalando uma edição de licença por volume do Windows Vista ou posterior, e nenhuma chave do produto (Product Key) foi especificada.<br /><br /> Valores válidos:<br /><br /> **"0"** (padrão)|  
+|OSDTargetSystemDrive (saída)|Especifica a letra da unidade da partição que contém os arquivos do sistema operacional.|  
 
-###  <a name="BKMK_ApplyWindowsSettings"></a> 应用 Windows 设置任务序列操作变量  
- 此操作的变量为目标计算机指定 Windows 设置，例如计算机名称、Windows 产品密钥、注册的用户和组织以及本地管理员密码。 有关与这些变量关联的任务序列步骤的详细信息，请参阅[应用 Windows 设置](task-sequence-steps.md#BKMK_ApplyWindowsSettings)。  
+###  <a name="BKMK_ApplyWindowsSettings"></a> Aplicar variáveis de ação da sequência de tarefas das configurações do Windows  
+ As variáveis dessa ação especificam as configurações do Windows para o computador de destino, como o nome do computador, a chave do produto (Product Key) do Windows, o usuário registrado e a organização e a senha de administrador local. Para obter mais informações sobre a etapa da sequência de tarefas associada a essas variáveis, consulte [Aplicar Configurações do Windows](task-sequence-steps.md#BKMK_ApplyWindowsSettings).  
 
-#### <a name="details"></a>详细信息  
+#### <a name="details"></a>Detalhes  
 
-|操作变量名称|描述|  
+|Nome de variável de ação|Descrição|  
 |--------------------------|-----------------|  
-|OSDComputerName<br /><br /> (input)|指定目标计算机的名称。<br /><br /> 例如：<br /><br /> **“%_SMSTSMachineName%”** （默认）|  
-|OSDProductKey<br /><br /> (input)|指定 Windows 产品密钥。 指定的值字符数必须介于 1 和 255 之间。|  
-|OSDRegisteredUserName<br /><br /> (input)|指定新操作系统中的默认注册用户名。 指定的值字符数必须介于 1 和 255 之间。|  
-|OSDRegisteredOrgName<br /><br /> (input)|指定新操作系统中的默认注册组织名称。 指定的值字符数必须介于 1 和 255 之间。|  
-|OSDTimeZone<br /><br /> (input)|指定在新操作系统中使用的默认时区设置。|  
-|OSDServerLicenseMode<br /><br /> (input)|指定使用的 Windows Server 许可证模式。<br /><br /> 有效值：<br /><br /> **“PerSeat”**<br /><br /> **“PerServer”**|  
-|OSDServerLicenseConnectionLimit<br /><br /> (input)|指定允许的最大连接数。 指定的连接数必须介于 5 和 9999 之间。|  
-|OSDRandomAdminPassword<br /><br /> (input)|指定在新操作系统中为管理员帐户随机生成的密码。 如果设置为 **true**，将在目标计算机上禁用本地管理员帐户。 如果设置为 **false**，将在目标计算机上启用本地管理员帐户，变量值 **OSDLocalAdminPassword** 将分配给本地管理员帐户密码。<br /><br /> 有效值：<br /><br /> **“true”** （默认值）<br /><br /> **“false”**|  
-|OSDLocalAdminPassword<br /><br /> (input)|指定本地管理员密码。 如果启用“随机生成本地管理员密码并在所有支持的平台上禁用帐户”  选项，此值会被忽略。 指定的值字符数必须介于 1 和 255 之间。|  
+|OSDComputerName<br /><br /> (entrada)|Especifica o nome do computador de destino.<br /><br /> Exemplo:<br /><br /> **"%_SMSTSMachineName%"** (padrão)|  
+|OSDProductKey<br /><br /> (entrada)|Especifica a chave do produto (Product Key) do Windows. O valor especificado deve estar entre 1 e 255 caracteres.|  
+|OSDRegisteredUserName<br /><br /> (entrada)|Especifica o nome de usuário registrado padrão no novo sistema operacional. O valor especificado deve estar entre 1 e 255 caracteres.|  
+|OSDRegisteredOrgName<br /><br /> (entrada)|Especifica o nome da organização registrada padrão no novo sistema operacional. O valor especificado deve estar entre 1 e 255 caracteres.|  
+|OSDTimeZone<br /><br /> (entrada)|Especifica a configuração de fuso horário padrão usada no novo sistema operacional.|  
+|OSDServerLicenseMode<br /><br /> (entrada)|Especifica o modo de licença do Windows Server que é usado.<br /><br /> Valores válidos:<br /><br /> **"PerSeat"**<br /><br /> **"PerServer"**|  
+|OSDServerLicenseConnectionLimit<br /><br /> (entrada)|Especifica o número máximo de conexões permitidas. O número especificado deve estar no intervalo entre 5 e 9.999 conexões.|  
+|OSDRandomAdminPassword<br /><br /> (entrada)|Especifica uma senha gerada aleatoriamente para a conta de administrador no novo sistema operacional. Se definido como **true**, a conta de administrador local será desabilitada no computador de destino. Se definido como **false**, a conta de administrador local será habilitada no computador de destino e a senha da conta de administrador local receberá o valor da variável **OSDLocalAdminPassword**.<br /><br /> Valores válidos:<br /><br /> **"true"** (padrão)<br /><br /> **"false"**|  
+|OSDLocalAdminPassword<br /><br /> (entrada)|Especifica a senha do administrador local. Esse valor será ignorado se a opção **Gerar aleatoriamente a senha de administrador local e desabilitar a conta em todas as plataformas com suporte** for habilitada. O valor especificado deve estar entre 1 e 255 caracteres.|  
 
-###  <a name="BKMK_AutoApplyDrivers"></a> 自动应用驱动程序任务序列操作变量  
- 此操作的变量指定在目标计算机上安装的 Windows 驱动程序以及是否安装未签名的驱动程序。 有关与这些变量关联的任务序列步骤的详细信息，请参阅[自动应用驱动程序](task-sequence-steps.md#BKMK_AutoApplyDrivers)。  
+###  <a name="BKMK_AutoApplyDrivers"></a> Aplicar automaticamente variáveis de ação da sequência de tarefas de drivers  
+ As variáveis dessa ação especificam quais drivers do Windows são instalados no computador de destino e se os drivers não assinados são instalados. Para obter mais informações sobre a etapa da sequência de tarefas associada a essas variáveis, consulte [Drivers de Aplicação Automática](task-sequence-steps.md#BKMK_AutoApplyDrivers).  
 
-#### <a name="details"></a>详细信息  
+#### <a name="details"></a>Detalhes  
 
-|操作变量名称|描述|  
+|Nome de variável de ação|Descrição|  
 |--------------------------|-----------------|  
-|OSDAutoApplyDriverCategoryList<br /><br /> (input)|驱动程序目录类别唯一 ID 的以逗号分隔的列表。 如果已指定，在安装驱动程序时，“自动应用驱动程序”  任务序列操作仅考虑至少在上述其中一个类别中的驱动程序。 此值是可选的，默认情况下不设置。 可以通过枚举站点上的 **SMS_CategoryInstance** 对象列表来获取可用的类别 ID。|  
-|OSDAllowUnsignedDriver<br /><br /> (input)|指定是否将 Windows 配置为允许安装未签名的设备驱动程序。 部署 Windows Vista 和更高版本的操作系统时不使用此任务序列变量。<br /><br /> 有效值：<br /><br /> **“true”**<br /><br /> **“false”** （默认值）|  
-|OSDAutoApplyDriverBestMatch<br /><br /> (input)|指定如果驱动程序目录中有多个设备驱动程序与硬件设备兼容时，任务序列操作应怎么做。 如果设置为**“true”**，将仅安装最好的设备驱动程序。  如果设置为 **false**，将安装所有兼容的设备驱动程序，并且操作系统将选择使用最好的驱动程序。<br /><br /> 有效值：<br /><br /> **“true”** （默认值）<br /><br /> **“false”**|  
+|OSDAutoApplyDriverCategoryList<br /><br /> (entrada)|Uma lista delimitada por vírgulas de IDs exclusivas de categorias do catálogo de drivers. Se especificada, a ação da sequência de tarefas **Aplicar Driver Automaticamente** considerará apenas os drivers que estão em, pelo menos, uma dessas categorias ao instalar os drivers. Esse valor é opcional e não é definido por padrão. As IDs de categoria disponíveis podem ser obtidas pela enumeração da lista de objetos **SMS_CategoryInstance** no site.|  
+|OSDAllowUnsignedDriver<br /><br /> (entrada)|Especifica se o Windows está configurado para permitir que drivers de dispositivo não assinados sejam instalados. Essa variável de sequência de tarefas não é usada ao implantar o Windows Vista e sistemas operacionais posteriores.<br /><br /> Valores válidos:<br /><br /> **"true"**<br /><br /> **"false"** (padrão)|  
+|OSDAutoApplyDriverBestMatch<br /><br /> (entrada)|Especifica o que a ação de sequência de tarefas faz se houver vários drivers de dispositivo no catálogo de drivers que são compatíveis com um dispositivo de hardware. Se definido como **true**, somente o melhor driver de dispositivo será instalado.  Se for definido como **false**, serão instalados todos os drivers de dispositivo compatíveis, e o sistema operacional escolherá o melhor driver a ser usado.<br /><br /> Valores válidos:<br /><br /> **"true"** (padrão)<br /><br /> **"false"**|  
 
-###  <a name="BKMK_CaptureNetworkSettings"></a> 捕获网络设置任务序列操作变量  
- 针对此操作的变量指定是否捕获网络适配器设置（TCP/IP、DNS 和 WINS）配置信息以及是否将工作组或域成员身份的信息迁移为操作系统部署的一部分。 有关与这些变量关联的任务序列步骤的详细信息，请参阅[捕获网络设置](task-sequence-steps.md#BKMK_CaptureNetworkSettings)。  
+###  <a name="BKMK_CaptureNetworkSettings"></a> Capturar variáveis de ação da sequência de tarefas de configurações de rede  
+ As variáveis dessa ação especificam se as informações de configuração das definições do adaptador de rede (TCP/IP, DNS e WINS) são capturadas e se as informações de associação de grupo de trabalho ou domínio são migradas como parte da implantação de sistema operacional. Para obter mais informações sobre a etapa da sequência de tarefas associada a essas variáveis, consulte [Capturar Configurações da Rede](task-sequence-steps.md#BKMK_CaptureNetworkSettings).  
 
-#### <a name="details"></a>详细信息  
+#### <a name="details"></a>Detalhes  
 
-|操作变量名称|描述|  
+|Nome de variável de ação|Descrição|  
 |--------------------------|-----------------|  
-|OSDMigrateAdapterSettings<br /><br /> (input)|指定是否捕获网络适配器设置（TCP/IP、DNS 和 WINS）的配置信息。<br /><br /> 例如：<br /><br /> **“true”** （默认值）<br /><br /> **“false”**|  
-|OSDMigrateNetworkMembership<br /><br /> (input)|指定是否将工作组或域成员身份信息作为操作系统部署的一部分进行迁移。<br /><br /> 例如：<br /><br /> **“true”** （默认值）<br /><br /> **“false”**|  
+|OSDMigrateAdapterSettings<br /><br /> (entrada)|Especifica se as informações de configurações do adaptador de rede (TCP/IP, DNS e WINS) são capturadas.<br /><br /> Exemplos:<br /><br /> **"true"** (padrão)<br /><br /> **"false"**|  
+|OSDMigrateNetworkMembership<br /><br /> (entrada)|Especifica se as informações de associação de grupo de trabalho ou de domínio são migradas como parte da implantação de sistema operacional.<br /><br /> Exemplos:<br /><br /> **"true"** (padrão)<br /><br /> **"false"**|  
 
-###  <a name="BKMK_CaptureOperatingSystemImage"></a> 捕获操作系统映像任务序列操作变量  
- 此操作的变量指定有关正在捕获的操作系统映像的详细信息，例如存储映像的位置、映像创作者以及映像的描述。 有关与这些变量关联的任务序列步骤的详细信息，请参阅[捕获操作系统映像](task-sequence-steps.md#BKMK_CaptureOperatingSystemImage)。  
+###  <a name="BKMK_CaptureOperatingSystemImage"></a> Capturar variáveis de ação da sequência de tarefas da imagem do sistema operacional  
+ As variáveis dessa ação especificam informações sobre a imagem de sistema operacional que está sendo capturada, como o local em que a imagem está armazenada, quem criou a imagem e uma descrição dela. Para obter mais informações sobre a etapa da sequência de tarefas associada a essas variáveis, consulte [Capturar Imagem do Sistema Operacional](task-sequence-steps.md#BKMK_CaptureOperatingSystemImage).  
 
-#### <a name="details"></a>详细信息  
+#### <a name="details"></a>Detalhes  
 
-|操作变量名称|描述|  
+|Nome de variável de ação|Descrição|  
 |--------------------------|-----------------|  
-|OSDCaptureAccount<br /><br /> (input)|指定在网络共享上有权限存储捕获的映像的 Windows 帐户名称。|  
-|OSDCaptureAccountPassword<br /><br /> (input)|指定用于将捕获映像存储到网络共享的 Windows 帐户的密码。|  
-|OSDCaptureDestination<br /><br /> (input)|指定保存捕获的操作系统映像的位置。 目录名称的最大长度为 255 个字符。|  
-|OSDImageCreator<br /><br /> (input)|创建映像的用户的名称（可选）。 此名称存储在 WIM 文件中。 此用户名称的最大长度为 255 个字符。|  
-|OSDImageDescription<br /><br /> (input)|捕获的操作系统映像的用户定义的描述（可选）。 此描述存储在 WIM 文件中。 此描述的最大长度为 255 个字符。|  
-|OSDImageVersion<br /><br /> (input)|向捕获的操作系统映像分配的用户定义的版本号（可选）。 该版本号存储在 WIM 文件中。 此值可以为字母的任意组合（最大长度为 32 个字符）。|  
-|OSDTargetSystemRoot<br /><br /> (input)|指定引用计算机上已安装操作系统的 Windows 目录的路径。 此操作系统由 Configuration Manager 确认为可进行捕获的受支持操作系统。|  
+|OSDCaptureAccount<br /><br /> (entrada)|Especifica um nome de conta do Windows que tem permissões para armazenar a imagem capturada em um compartilhamento de rede.|  
+|OSDCaptureAccountPassword<br /><br /> (entrada)|Especifica a senha da conta do Windows usada para armazenar a imagem capturada em um compartilhamento de rede.|  
+|OSDCaptureDestination<br /><br /> (entrada)|Especifica o local em que a imagem capturada do sistema operacional é salva. O comprimento máximo do nome do diretório é de 255 caracteres.|  
+|OSDImageCreator<br /><br /> (entrada)|Um nome opcional do usuário que criou a imagem. Este nome é armazenado no arquivo WIM. O comprimento máximo do nome de usuário é de 255 caracteres.|  
+|OSDImageDescription<br /><br /> (entrada)|Uma descrição opcional definida pelo usuário da imagem capturada do sistema operacional. Essa descrição é armazenada no arquivo WIM. O comprimento máximo da descrição é de 255 caracteres.|  
+|OSDImageVersion<br /><br /> (entrada)|Um número de versão opcional definido pelo usuário para atribuir a imagem capturada do sistema operacional. Esse número de versão é armazenado no arquivo WIM. Esse valor pode ser qualquer combinação de letras com um comprimento máximo de 32 caracteres.|  
+|OSDTargetSystemRoot<br /><br /> (entrada)|Especifica o caminho para o diretório do Windows do sistema operacional instalado no computador de referência. Este sistema operacional é confirmado como um sistema operacional com suporte para captura pelo Configuration Manager.|  
 
-###  <a name="BKMK_CaptureUserState"></a> 捕获用户状态任务序列操作变量  
- 此操作的变量指定用户状态迁移工具 (USMT) 使用的信息，例如保存用户状态的文件夹、USMT 的命令行选项以及用来控制捕获用户配置文件的配置文件。  有关与这些变量相关联的任务序列步骤的详细信息，请参阅[捕获用户状态](task-sequence-steps.md#BKMK_CaptureUserState)。  
+###  <a name="BKMK_CaptureUserState"></a> Capturar variáveis de ação da sequência de tarefas de estado de usuário  
+ As variáveis dessa ação especificam as informações usadas pela USMT (Ferramenta de Migração do Usuário), como a pasta em que o estado de usuário foi salvo, opções de linha de comando para a USMT e os arquivos de configuração usados para controlar a captura dos perfis de usuário.  Para obter mais informações sobre a etapa da sequência de tarefas associada a essas variáveis, consulte [Capturar Estado do Usuário](task-sequence-steps.md#BKMK_CaptureUserState).  
 
-#### <a name="details"></a>详细信息  
+#### <a name="details"></a>Detalhes  
 
-|操作变量名称|描述|  
+|Nome de variável de ação|Descrição|  
 |--------------------------|-----------------|  
-|OSDStateStorePath<br /><br /> (input)|保存用户状态的文件夹的 UNC 或本地路径名称。 无默认值。|  
-|OSDMigrateAdditionalCaptureOptions<br /><br /> (input)|指定捕获用户状态时使用的，但未显示在 Configuration Manager 用户界面中的用户状态迁移工具 (USMT) 命令行选项。 其他选项以附加到自动生成的 USMT 命令行的字符串形式指定。<br /><br /> <br /><br /> 在运行任务序列之前，使用此任务序列变量指定的 USMT 选项未通过精确度验证。|  
-|OSDMigrateMode<br /><br /> (input)|允许自定义 USMT 捕获的文件。 如果此变量设置为“简单”，则只会使用标准 USMT 配置文件。 如果此变量设置为“高级”，则任务序列变量 OSDMigrateConfigFiles 会指定 USMT 使用的配置文件。<br /><br /> 有效值：<br /><br /> **“简单”**<br /><br /> **“高级”**|  
-|OSDMigrateConfigFiles<br /><br /> (input)|指定用于控制对用户配置文件的捕获的配置文件。 仅当 OSDMigrateMode 设置为“高级”时，才使用此变量。 设置此逗号分隔的列表值，以执行自定义的用户配置文件迁移。<br /><br /> 例如：miguser.xml、migsys.xml、migapps.xml|  
-|OSDMigrateContinueOnLockedFiles<br /><br /> (input)|在无法捕获某些文件时允许继续捕获用户状态。<br /><br /> 有效值：<br /><br /> **“true”** （默认值）<br /><br /> **“false”**|  
-|OSDMigrateEnableVerboseLogging<br /><br /> (input)|启用 USMT 的详细日志记录。<br /><br /> 有效值：<br /><br /> **“true”**<br /><br /> **“false”** （默认值）|  
-|OSDMigrateSkipEncryptedFiles<br /><br /> (input)|指定是否捕获加密文件。<br /><br /> 有效值：<br /><br /> **“true”**<br /><br /> **“false”** （默认值）|  
-|_OSDMigrateUsmtPackageID<br /><br /> (input)|指定将包含 USMT 文件的 Configuration Manager 包的包 ID。 此变量是必需的。|  
+|OSDStateStorePath<br /><br /> (entrada)|O UNC ou nome de caminho local da pasta em que o estado de usuário foi salvo. Nenhum padrão.|  
+|OSDMigrateAdditionalCaptureOptions<br /><br /> (entrada)|Especifica as opções de migração de linha de comando da USMT (Ferramenta de Migração do Usuário) que são usadas ao capturar o estado de usuário, mas que não são expostas na interface do usuário do Configuration Manager. As opções adicionais são especificadas na forma de uma cadeia de caracteres que é anexada à linha de comando USMT gerada automaticamente.<br /><br /> <br /><br /> As opções do USMT especificadas com essa variável de sequência de tarefas não são validadas quanto à precisão antes da execução da sequência de tarefas.|  
+|OSDMigrateMode<br /><br /> (entrada)|Permite que você personalize os arquivos que são capturados pelo USMT. Se essa variável for definida como "Simple", somente os arquivos padrão de configuração do USMT serão usados. Se for definida como "Advanced", a variável de sequência de tarefas OSDMigrateConfigFiles especificará os arquivos de configuração usados pelo USMT.<br /><br /> Valores válidos:<br /><br /> **"Simple"**<br /><br /> **"Advanced"**|  
+|OSDMigrateConfigFiles<br /><br /> (entrada)|Especifica os arquivos de configuração usados para controlar a captura de perfis de usuário. Essa variável será usada apenas se OSDMigrateMode estiver definido como “Advanced”. Esse valor de lista delimitado por vírgulas é definido para executar a migração personalizada de perfil do usuário.<br /><br /> Exemplo: miguser.xml, migsys.xml, migapps.xml|  
+|OSDMigrateContinueOnLockedFiles<br /><br /> (entrada)|Permite a continuação da captura de estado do usuário se não for possível capturar alguns arquivos.<br /><br /> Valores válidos:<br /><br /> **"true"** (padrão)<br /><br /> **"false"**|  
+|OSDMigrateEnableVerboseLogging<br /><br /> (entrada)|Habilita o log detalhado do USMT.<br /><br /> Valores válidos:<br /><br /> **"true"**<br /><br /> **"false"** (padrão)|  
+|OSDMigrateSkipEncryptedFiles<br /><br /> (entrada)|Especifica se os arquivos criptografados serão capturados.<br /><br /> Valores válidos:<br /><br /> **"true"**<br /><br /> **"false"** (padrão)|  
+|_OSDMigrateUsmtPackageID<br /><br /> (entrada)|Especifica a ID do pacote do Configuration Manager que conterá os arquivos do USMT. Esta variável é obrigatória.|  
 
-###  <a name="BKMK_CaptureWindowsSettings"></a> 捕获 Windows 设置任务序列操作变量  
- 此操作的变量指定是否将特定的 Windows 设置迁移到目标计算机中，例如计算机的名称、注册组织名称以及所在时区的信息。 有关与这些变量相关联的任务序列步骤的详细信息，请参阅[捕获 Windows 设置](task-sequence-steps.md#BKMK_CaptureWindowsSettings)。  
+###  <a name="BKMK_CaptureWindowsSettings"></a> Capturar variáveis de ação da sequência de tarefas de configurações do Windows  
+ As variáveis dessa ação especificam se configurações específicas do Windows são migradas para o computador de destino, como o nome do computador, o nome da organização do registro e informações de fuso horário. Para obter mais informações sobre a etapa da sequência de tarefas associada a essas variáveis, consulte [Capturar Configurações do Windows](task-sequence-steps.md#BKMK_CaptureWindowsSettings).  
 
-#### <a name="details"></a>详细信息  
+#### <a name="details"></a>Detalhes  
 
-|操作变量名称|描述|  
+|Nome de variável de ação|Descrição|  
 |--------------------------|-----------------|  
-|OSDMigrateComputerName<br /><br /> (input)|指定是否迁移计算机名称。<br /><br /> 有效值：<br /><br /> **“true”** （默认值）<br /><br /> **“false”**<br /><br /> 如果值为“true”，则将 OSDComputerName 变量设置为计算机的 NetBIOS 名称。|  
-|OSDComputerName<br /><br /> (output)|设置为计算机的 NetBIOS 名称。 仅当 OSDMigrateComputerName 变量设置为“true”时设置该值。|  
-|OSDMigrateRegistrationInfo<br /><br /> (input)|指定是否迁移计算机用户和组织信息。<br /><br /> 有效值：<br /><br /> **“true”** （默认值）<br /><br /> **“false”**<br /><br /> 如果该值为“true”，则将 OSDRegisteredOrgName 变量设置为计算机的注册组织名称。|  
-|OSDRegisteredOrgName<br /><br /> (output)|设置为计算机的注册组织名称。 仅当 OSDMigrateRegistrationInfo 变量被设置为“true”时，才设置该值。|  
-|OSDMigrateTimeZone<br /><br /> (input)|指定是否迁移计算机名称时区。<br /><br /> 有效值：<br /><br /> **“true”** （默认值）<br /><br /> **“false”**<br /><br /> 如果该值是“true”，则变量 OSDTimeZone 将设置为计算机的时区。|  
-|OSDTimeZone<br /><br /> (output)|设置为计算机的时区。 仅当 OSDMigrateTimeZone 变量设置为“true”时，才设置该值。|  
+|OSDMigrateComputerName<br /><br /> (entrada)|Especifica se o nome do computador é migrado.<br /><br /> Valores válidos:<br /><br /> **"true"** (padrão)<br /><br /> **"false"**<br /><br /> Se o valor for "true", a variável OSDComputerName será definida como o nome NetBIOS do computador.|  
+|OSDComputerName<br /><br /> (saída)|Defina como o nome NetBIOS do computador. O valor será definido somente se a variável OSDMigrateComputerName for definida como “true”.|  
+|OSDMigrateRegistrationInfo<br /><br /> (entrada)|Especifica se o usuário do computador e as informações organizacionais são migradas.<br /><br /> Valores válidos:<br /><br /> **"true"** (padrão)<br /><br /> **"false"**<br /><br /> Se o valor for "true", a variável OSDRegisteredOrgName será definida como o nome da organização registrada do computador.|  
+|OSDRegisteredOrgName<br /><br /> (saída)|Defina como o nome da organização registrada do computador. O valor será definido somente se a variável OSDMigrateRegistrationInfo for definida como “true”.|  
+|OSDMigrateTimeZone<br /><br /> (entrada)|Especifica se o fuso horário do computador é migrado.<br /><br /> Valores válidos:<br /><br /> **"true"** (padrão)<br /><br /> **"false"**<br /><br /> Se o valor for "true", a variável OSDTimeZone será definida como o fuso horário do computador.|  
+|OSDTimeZone<br /><br /> (saída)|Defina como o fuso horário do computador. O valor será definido somente se a variável OSDMigrateTimeZone for definida como “true”.|  
 
-###  <a name="BKMK_ConnecttoNetworkFolder"></a> 连接到网络文件夹任务序列操作变量  
- 此操作的变量指定有关网络上文件夹的信息，例如使用的帐户和用于连接到网络文件夹的密码、文件夹的驱动器号以及到文件夹路径。 有关与这些变量相关联的任务序列步骤的详细信息，请参阅[连接到网络文件夹](task-sequence-steps.md#BKMK_ConnectToNetworkFolder)。  
+###  <a name="BKMK_ConnecttoNetworkFolder"></a> Conectar a variáveis de ação da sequência de tarefas da pasta de rede  
+ As variáveis desta ação especificam informações sobre uma pasta em uma rede, como a conta usada e a senha para se conectar à pasta de rede, a letra da unidade da pasta e o caminho para a pasta. Para obter mais informações sobre a etapa da sequência de tarefas associada a essas variáveis, consulte [Conectar à Pasta de Rede](task-sequence-steps.md#BKMK_ConnectToNetworkFolder).  
 
-#### <a name="details"></a>详细信息  
+#### <a name="details"></a>Detalhes  
 
-|操作变量名称|描述|  
+|Nome de variável de ação|Descrição|  
 |--------------------------|-----------------|  
-|SMSConnectNetworkFolderAccount<br /><br /> (input)|指定用于连接到网络共享的管理员帐户。|  
-|SMSConnectNetworkFolderDriveLetter<br /><br /> (input)|指定要连接的网络驱动器号。 此值是可选的；如果不指定此值，网络连接将不映射到某个驱动器号。 如果指定此值，其范围必须为 D: 到 Z:。  此外，不要使用 X:，因为它在 Windows PE 阶段中是 Windows PE 使用的驱动器号。<br /><br /> 例如：<br /><br /> **“D:”**<br /><br /> **“E:”**|  
-|SMSConnectNetworkFolderPassword<br /><br /> (input)|指定用于连接到网络共享的网络密码。|  
-|SMSConnectNetworkFolderPath<br /><br /> (input)|指定连接的网络路径。<br /><br /> 例如：<br /><br /> **"\\\servername\sharename"**|  
+|SMSConnectNetworkFolderAccount<br /><br /> (entrada)|Especifica a conta de administrador usada para se conectar ao compartilhamento de rede.|  
+|SMSConnectNetworkFolderDriveLetter<br /><br /> (entrada)|Especifica a letra da unidade da rede à qual se conectar. Esse valor é opcional; se não for especificado, a conexão de rede não será mapeada para uma letra da unidade. Se esse valor for especificado, o valor deverá estar no intervalo de D: a Z:.  Além disso, não use X, pois essa é a letra da unidade usada pelo Windows PE durante a fase do Windows PE.<br /><br /> Exemplos:<br /><br /> **"D:"**<br /><br /> **"E:"**|  
+|SMSConnectNetworkFolderPassword<br /><br /> (entrada)|Especifica a senha de rede usada para se conectar ao compartilhamento de rede.|  
+|SMSConnectNetworkFolderPath<br /><br /> (entrada)|Especifica o caminho de rede para a conexão.<br /><br /> Exemplo:<br /><br /> **"\\\servername\sharename"**|  
 
-###  <a name="BKMK_ConvertDisk"></a> 将磁盘转换为动态磁盘任务序列操作变量  
- 此操作的变量指定要从基本磁盘转换到动态磁盘的物理磁盘的编号。 有关与这些变量相关联的任务序列步骤的详细信息，请参阅[将磁盘转换为动态磁盘](task-sequence-steps.md#BKMK_ConvertDisktoDynamic)。  
+###  <a name="BKMK_ConvertDisk"></a> Converter disco em variáveis dinâmicas de ação da sequência de tarefas  
+ A variável dessa ação especifica o número do disco físico para converter de disco básico em dinâmico. Para obter mais informações sobre a etapa da sequência de tarefas associada a essas variáveis, consulte [Converter Disco em Dinâmico](task-sequence-steps.md#BKMK_ConvertDisktoDynamic).  
 
-#### <a name="details"></a>详细信息  
+#### <a name="details"></a>Detalhes  
 
-|操作变量名称|描述|  
+|Nome de variável de ação|Descrição|  
 |--------------------------|-----------------|  
-|OSDConvertDiskIndex<br /><br /> (input)|指定转换的物理磁盘编号。|  
+|OSDConvertDiskIndex<br /><br /> (entrada)|Especifica o número de discos físicos que são convertidos.|  
 
-###  <a name="BKMK_EnableBitLocker"></a> 启用 BitLocker 任务序列操作变量  
- 此操作的变量指定用于在目标计算机上启用 BitLocker 的恢复密码和启动密钥选项。 有关与这些变量相关联的任务序列步骤的详细信息，请参阅[启用 BitLocker](task-sequence-steps.md#BKMK_EnableBitLocker)。  
+###  <a name="BKMK_EnableBitLocker"></a> Habilitar variáveis de ação da sequência de tarefas do BitLocker  
+ As variáveis dessa ação especificam as opções de senha de recuperação e chave de inicialização usadas para habilitar o BitLocker no computador de destino. Para obter mais informações sobre a etapa da sequência de tarefas associada a essas variáveis, consulte [Habilitar BitLocker](task-sequence-steps.md#BKMK_EnableBitLocker).  
 
-#### <a name="details"></a>详细信息  
+#### <a name="details"></a>Detalhes  
 
-|操作变量名称|描述|  
+|Nome de variável de ação|Descrição|  
 |--------------------------|-----------------|  
-|OSDBitLockerRecoveryPassword<br /><br /> (input)|“启用 BitLocker”  任务序列操作使用指定的值作为恢复密码，而不是生成随机恢复密码。 此值必须是有效的数字 BitLocker 恢复密码。|  
-|OSDBitLockerStartupKey<br /><br /> (input)|“启用 BitLocker”任务序列操作使用受信任的平台模块 (TPM) 作为启动密钥，而不是为密钥管理选项“仅 USB 上的启动密钥” 生成随机启动密钥。 此值必须是一个有效的 256 位 Base-64 编码的 BitLocker 启动密钥。|  
+|OSDBitLockerRecoveryPassword<br /><br /> (entrada)|Em vez de gerar uma senha aleatória de recuperação, a ação da sequência de tarefas **Habilitar BitLocker** usa o valor especificado como a senha de recuperação. O valor deve ser uma senha de recuperação do BitLocker numérica e válida.|  
+|OSDBitLockerStartupKey<br /><br /> (entrada)|Em vez de gerar uma chave de inicialização aleatória para a opção de gerenciamento de chaves **Chave de Inicialização somente em USB**, a ação da sequência de tarefas **Habilitar BitLocker** usa o TPM (Trusted Platform Module) como a chave de inicialização. O valor deve ser uma chave de inicialização do BitLocker válida, codificada em Base64 e de 256 bits.|  
 
-###  <a name="BKMK_FormatPartitionDisk"></a> 格式化磁盘并分区任务序列操作变量  
- 此操作的变量为针对物理磁盘进行格式化和分区指定信息，例如磁盘编号以及分区设置的数组。 有关与这些变量相关联的任务序列步骤的详细信息，请参阅[格式化磁盘并分区](task-sequence-steps.md#BKMK_FormatandPartitionDisk)。  
+###  <a name="BKMK_FormatPartitionDisk"></a> Variáveis de ação da sequência de tarefas de formato e disco de partição  
+ As variáveis dessa ação especificam informações para formatar e particionar um disco físico, como o número do disco e uma matriz de configurações de partição. Para obter mais informações sobre a etapa da sequência de tarefas associada a essas variáveis, consulte [Formatar e Particionar Disco](task-sequence-steps.md#BKMK_FormatandPartitionDisk).  
 
-#### <a name="details"></a>详细信息  
+#### <a name="details"></a>Detalhes  
 
-|操作变量名称|描述|  
+|Nome de variável de ação|Descrição|  
 |--------------------------|-----------------|  
-|OSDDiskIndex<br /><br /> (input)|指定要分区的物理磁盘编号。|  
-|OSDDiskpartBiosCompatibilityMode<br /><br /> (input)|指定在对硬盘进行分区以便与某些类型的 BIOS 兼容时是否禁用缓存对齐优化。 此操作在部署 Windows XP 或 Windows Server 2003 操作系统时非常必要。 有关详细信息，请参阅 Microsoft 知识库中的 [文章 931760](http://go.microsoft.com/fwlink/?LinkId=134081) 和 [文章 931761](http://go.microsoft.com/fwlink/?LinkId=134082) 。<br /><br /> 有效值：<br /><br /> **“true”**<br /><br /> **“false”** （默认值）|  
-|OSDGPTBootDisk<br /><br /> (input)|指定是否在 GPT 硬盘上创建 EFI 分区，以便在基于 EFI 的计算机上用作启动盘使用。<br /><br /> 有效值：<br /><br /> **“true”**<br /><br /> **“false”** （默认值）|  
-|OSDPartitions<br /><br /> (input)|指定一个分区设置数组；有关在任务序列变量环境中访问数组变量的信息，请参阅 SDK 主题。<br /><br /> 此任务序列变量是一个数组变量。 数组中的每个元素都代表硬盘上单个分区的设置。 通过将数组变量名称与基于零的磁盘分区号及属性名称组合，可以访问为每个分区定义的设置。<br /><br /> 例如，以下变量名称可用于为将由此任务序列操作在硬盘上创建的第一个分区定义属性：<br /><br /> - **OSDPartitions0Type** - 指定分区的类型。 这是必需的属性。 有效值有“主要”、“扩展”、“逻辑”以及“隐藏”。<br />-   **OSDPartitions0FileSystem** - 指定格式化分区时使用的文件系统类型。 这是可选属性；如果未指定任何文件系统，将不会格式化该分区。 有效值有“**FAT32**”和“**NTFS**”。<br />-   **OSDPartitions0Bootable** - 指定分区是否可引导。 这是必需的属性。 如果 MBR 磁盘的该值设置为“**TRUE**”，这将成为活动分区。<br />-   **OSDPartitions0QuickFormat** - 指定使用的格式类型。 这是必需的属性。 如果该值设置为“**TRUE**”，将执行快速格式化，否则将执行完全格式化。<br />-   **OSDPartitions0VolumeName** - 指定格式化时分配给该卷的名称。 这是一个可选属性。<br />-   **OSDPartitions0Size** - 指定分区的大小。 单位由 **OSDPartitions0SizeUnits** 变量指定。 这是一个可选属性。 如果未指定此属性，将使用所有剩余可用空间来创建分区。<br />-   **OSDPartitions0SizeUnits** - 指定解释 **OSDPartitions0Size** 任务序列变量时将使用的单位。 这是一个可选属性。 有效值有“**MB**”（默认值）、“**GB**”和“**百分比**”。<br />-   **OSDPartitions0VolumeLetterVariable** - 创建分区后，分区将始终使用 Windows PE 中的下一可用驱动器号。 使用此可选属性来指定另一任务序列变量的名称，该变量将用来保存新驱动器号，供将来参考。<br /><br /> <br /><br /> 如果将使用此任务序列操作定义多个分区，则第二个分区的属性可以使用变量名称中的下标来定义；例如， **OSDPartitions1Type**、 **OSDPartitions1FileSystem**、 **OSDPartitions1Bootable**、 **OSDPartitions1QuickFormat**和 **OSDPartitions1VolumeName** 等。|  
-|OSDPartitionStyle<br /><br /> (input)|指定对磁盘进行分区时使用的分区类型。 “**MBR**”表示主启动记录分区形式，“**GPT**”表示 GUID 分区表形式。<br /><br /> 有效值：<br /><br /> **“GPT”**<br /><br /> **“MBR”**|  
+|OSDDiskIndex<br /><br /> (entrada)|Especifica o número de discos físicos a ser particionados.|  
+|OSDDiskpartBiosCompatibilityMode<br /><br /> (entrada)|Especifica se é necessário desabilitar as otimizações de alinhamento de cache ao particionar o disco rígido para compatibilidade com certos tipos de BIOS. Isso pode ser necessário durante a implantação de sistemas operacionais Windows XP ou Windows Server 2003. Para obter mais informações, veja o [artigo 931760](http://go.microsoft.com/fwlink/?LinkId=134081) e o [artigo 931761](http://go.microsoft.com/fwlink/?LinkId=134082) na Base de Dados de Conhecimento Microsoft.<br /><br /> Valores válidos:<br /><br /> **"true"**<br /><br /> **"false"** (padrão)|  
+|OSDGPTBootDisk<br /><br /> (entrada)|Especifica se é necessário criar uma partição EFI em um disco rígido GPT para que ele possa ser usado como o disco de inicialização em computadores baseados em EFI.<br /><br /> Valores válidos:<br /><br /> **"true"**<br /><br /> **"false"** (padrão)|  
+|OSDPartitions<br /><br /> (entrada)|Especifica uma matriz de configurações de partição; veja o tópico sobre o SDK para acessar variáveis de matriz no ambiente da sequência de tarefas.<br /><br /> Esta variável de sequência de tarefas é uma variável de matriz. Cada elemento na matriz representa as configurações para uma única partição no disco rígido. As configurações definidas para cada partição podem ser acessadas pela combinação do nome de variável de matriz com o número de partição de disco baseado em zero e o nome da propriedade.<br /><br /> Por exemplo, os seguintes nomes de variáveis podem ser usados para definir as propriedades para a primeira partição que será criada por esta ação da sequência de tarefas:<br /><br /> - **OSDPartitions0Type** – especifica o tipo de partição. Esta é uma propriedade obrigatória. Os valores válidos são "**Primary**", "**Extended**", "**Logical**" e "**Hidden**".<br />-   **OSDPartitions0FileSystem** -Especifica o tipo de sistema de arquivos a ser usado ao formatar a partição. Essa é uma propriedade opcional; se nenhum sistema de arquivos for especificado, a partição não será formatada. Os valores válidos são “**FAT32**”e “**NTFS**”.<br />-   **OSDPartitions0Bootable** -Especifica se a partição será inicializável. Esta é uma propriedade obrigatória. Se esse valor for definido como "**TRUE**" para discos MBR, isso se tornará a partição ativa.<br />-   **OSDPartitions0QuickFormat** -Especifica o tipo de formato usado. Esta é uma propriedade obrigatória. Se esse valor for definido como "**TRUE**", uma formatação rápida será executada; caso contrário, será executada uma formatação completa.<br />-   **OSDPartitions0VolumeName** -Especifica o nome atribuído ao volume quando ele é formatado. Esta é uma propriedade opcional.<br />-   **OSDPartitions0Size** - Especifica o tamanho da partição. As unidades são especificadas pela variável **OSDPartitions0SizeUnits** . Esta é uma propriedade opcional. Se esta propriedade não for especificada, a partição será criada usando todo o espaço livre restante.<br />-   **OSDPartitions0SizeUnits** -Especifica as unidades que serão usadas ao interpretar a variável de sequência de tarefas **OSDPartitions0Size** . Esta é uma propriedade opcional. Os valores válidos são “**MB**” (padrão), “**GB**” e “**%**”.<br />-   **OSDPartitions0VolumeLetterVariable** - As partições sempre usarão a próxima letra da unidade disponível no Windows PE quando forem criadas. Use essa propriedade opcional para especificar o nome de outra variável de sequência de tarefas, que será usado para salvar a nova letra da unidade para referência futura.<br /><br /> <br /><br /> Se várias partições precisarem ser definidas com esta ação da sequência de tarefas, as propriedades da segunda partição poderão ser definidas usando seu índice no nome da variável; por exemplo, **OSDPartitions1Type**, **OSDPartitions1FileSystem**, **OSDPartitions1Bootable**, **OSDPartitions1QuickFormat**, **OSDPartitions1VolumeName** e assim por diante.|  
+|OSDPartitionStyle<br /><br /> (entrada)|Especifica o estilo de partição a ser usado ao particionar o disco. "**MBR**" indica o estilo de partição do registro mestre de inicialização, e "**GPT**" indica o estilo de tabela de partição GUID.<br /><br /> Valores válidos:<br /><br /> **"GPT"**<br /><br /> **"MBR"**|  
 
-###  <a name="BKMK_InstallSoftwareUpdates"></a> 安装软件更新任务序列操作变量  
- 此操作的变量指定是否安装所有的更新或仅安装必备更新。 有关与这些变量相关联的任务序列步骤的详细信息，请参阅[安装软件更新](task-sequence-steps.md#BKMK_InstallSoftwareUpdates)。  
+###  <a name="BKMK_InstallSoftwareUpdates"></a> Instalar variáveis de ação da sequência de tarefas das Atualizações de Software  
+ A variável dessa ação especifica se é necessário instalar todas as atualizações ou apenas as atualizações obrigatórias. Para obter mais informações sobre a etapa da sequência de tarefas associada a essas variáveis, consulte [Instalar Atualizações de Software](task-sequence-steps.md#BKMK_InstallSoftwareUpdates).  
 
-#### <a name="details"></a>详细信息  
+#### <a name="details"></a>Detalhes  
 
-|操作变量名称<br /><br /> (input)|描述|  
+|Nome de variável de ação<br /><br /> (entrada)|Descrição|  
 |----------------------------------------|-----------------|  
-|SMSInstallUpdateTarget<br /><br /> (input)|指定是否安装所有更新或仅安装必备更新。<br /><br /> 有效值：<br /><br /> **“全部”**<br /><br /> **“必需”**|  
+|SMSInstallUpdateTarget<br /><br /> (entrada)|Especifica se é necessário instalar todas as atualizações ou apenas as atualizações obrigatórias.<br /><br /> Valores válidos:<br /><br /> **"All"**<br /><br /> **"Mandatory"**|  
 
-###  <a name="BKMK_JoinDomainWorkgroup"></a> 加入域或工作组任务序列操作变量  
- 此操作的变量指定将目标计算机加入到 Windows 域或工作组所需的信息。 有关与这些变量相关联的任务序列步骤的详细信息，请参阅[加入域或工作组](task-sequence-steps.md#BKMK_JoinDomainorWorkgroup)。  
+###  <a name="BKMK_JoinDomainWorkgroup"></a> Ingressar variáveis de ação da sequência de tarefas no domínio ou no grupo de trabalho  
+ As variáveis dessa ação especificam as informações necessárias para ingressar o computador de destino em um domínio ou grupo de trabalho do Windows. Para obter mais informações sobre a etapa da sequência de tarefas associada a essas variáveis, consulte [Ingressar no Domínio ou Grupo de Trabalho](task-sequence-steps.md#BKMK_JoinDomainorWorkgroup).  
 
-#### <a name="details"></a>详细信息  
+#### <a name="details"></a>Detalhes  
 
-|操作变量名称|描述|  
+|Nome de variável de ação|Descrição|  
 |--------------------------|-----------------|  
-|OSDJoinAccount<br /><br /> (input)|指定目标计算机加入 Windows 域时使用的帐户。 此变量是加入域时必需的变量。|  
-|OSDJoinDomainName<br /><br /> (input)|指定目标计算机加入的 Windows 域的名称。 Windows 域的名称长度必须介于 1 到 255 个字符之间。|  
-|OSDJoinDomainOUName<br /><br /> (input)|指定目标计算机加入的组织单位 (OU) 的 RFC 1779 格式名称。 如果指定了值，该值必须包含完整路径。 Windows 域的 OU 名称长度必须介于 0 到 32,767 个字符之间。 如果 **OSDJoinType** 变量设置为“1”（加入工作组），则不设置此值。<br /><br /> 例如：<br /><br /> **LDAP://OU=MyOu,DC=MyDom,DC=MyCompany,DC=com**|  
-|OSDJoinPassword<br /><br /> (input)|指定目标计算机加入 Windows 域使用的网络密码。 如果未指定变量，则会尝试使用空密码。 如果变量 **OSDJoinType** 变量被设置为 “**0**”（加入域），则此值是必需的。|  
-|OSDJoinSkipReboot<br /><br /> (input)|指定在目标计算机加入域或工作组后是否跳过重新启动。<br /><br /> 有效值：<br /><br /> **“true”**<br /><br /> **“false”**|  
-|OSDJoinType<br /><br /> (input)|指定目标计算机是否加入 Windows 域或工作组。 若要将目标计算机加入到 Windows 域中，请指定“**0**”。 若要将目标计算机加入到工作组中，请指定“**1**”。<br /><br /> 有效值：<br /><br /> **"0"**<br /><br /> **"1"**|  
-|OSDJoinWorkgroupName<br /><br /> (input)|指定目标计算机加入的工作组的名称。 工作组的名称长度必须介于 1 到 32 个字符之间。<br /><br /> 例如：<br /><br /> **“计帐”**|  
+|OSDJoinAccount<br /><br /> (entrada)|Especifica a conta usada pelo computador de destino para ingressar no domínio do Windows. Essa variável é necessária ao ingressar em um domínio.|  
+|OSDJoinDomainName<br /><br /> (entrada)|Especifica o nome de um domínio do Windows ingressado pelo computador de destino. O comprimento do nome de domínio do Windows deve estar entre 1 e 255 caracteres.|  
+|OSDJoinDomainOUName<br /><br /> (entrada)|Especifica o nome de formato RFC 1779 da UO (unidade organizacional) ingressada pelo computador de destino. Se especificado, o valor deve conter o caminho completo. O comprimento do nome de UO do domínio do Windows deve estar entre 0 e 32.767 caracteres. Esse valor não será definido se a variável **OSDJoinType** for definida como “1” (ingressar no grupo de trabalho).<br /><br /> Exemplo:<br /><br /> **LDAP://OU=MinhaUo,DC=MeuDomínio,DC=MinhaEmpresa,DC=com**|  
+|OSDJoinPassword<br /><br /> (entrada)|Especifica a senha de rede usada pelo computador de destino para ingressar no domínio do Windows. Se a variável não for especificada, uma senha em branco será usada. Esse valor será necessário se a variável **OSDJoinType** for definida como “**0**” (ingressar no domínio).|  
+|OSDJoinSkipReboot<br /><br /> (entrada)|Especifica se é necessário ignorar a reinicialização depois que o computador de destino ingressar no domínio ou no grupo de trabalho.<br /><br /> Valores válidos:<br /><br /> **"true"**<br /><br /> **"false"**|  
+|OSDJoinType<br /><br /> (entrada)|Especifica se o computador de destino ingressa em um domínio ou grupo de trabalho do Windows. Para ingressar o computador de destino em um domínio do Windows, especifique “**0**”. Para ingressar o computador de destino em um grupo de trabalho, especifique “**1**”.<br /><br /> Valores válidos:<br /><br /> **“0”**<br /><br /> **“1”**|  
+|OSDJoinWorkgroupName<br /><br /> (entrada)|Especifica o nome de um grupo de trabalho ingressado pelo computador de destino. O comprimento do nome do grupo de trabalho deve estar entre 1 e 32 caracteres.<br /><br /> Exemplo:<br /><br /> **"Accounting"**|  
 
-###  <a name="BKMK_PrepareWindowsCapture"></a> 为捕获任务序列操作变量准备 Windows  
- 此操作的变量指定用于从目标计算机捕获 Windows 操作系统的信息。 有关与这些变量相关联的任务序列步骤的详细信息，请参阅[准备 ConfigMgr 客户端以便捕获](task-sequence-steps.md#BKMK_PrepareConfigMgrClientforCapture)。  
+###  <a name="BKMK_PrepareWindowsCapture"></a> Preparar o Windows para a captura de variáveis de ação da sequência de tarefas  
+ As variáveis dessa ação especificam as informações usadas para capturar o sistema operacional Windows do computador de destino. Para obter mais informações sobre a etapa da sequência de tarefas associada a essas variáveis, consulte [Preparar o ConfigMgr para Captura](task-sequence-steps.md#BKMK_PrepareConfigMgrClientforCapture).  
 
-#### <a name="details"></a>详细信息  
+#### <a name="details"></a>Detalhes  
 
-|操作变量名称|描述|  
+|Nome de variável de ação|Descrição|  
 |--------------------------|-----------------|  
-|OSDBuildStorageDriverList<br /><br /> (input)|指定 sysprep 是否构建大容量存储设备驱动程序列表。 此设置仅应用于 Windows XP 和 Windows Server 2003。 它会使用所有大容量存储设备驱动程序上的信息来填充 sysprep.inf 的 [SysprepMassStorage] 部分，这些驱动程序受到要捕获的映像的支持。<br /><br /> 有效值：<br /><br /> **“true”**<br /><br /> **“false”** （默认值）|  
-|OSDKeepActivation<br /><br /> (input)|指定 sysprep 是否重置产品激活标志。<br /><br /> 有效值：<br /><br /> **“true”**<br /><br /> **“false”** （默认值）|  
-|OSDTargetSystemRoot<br /><br /> (output)|指定引用计算机上已安装操作系统的 Windows 目录的路径。 此操作系统由 Configuration Manager 确认为可进行捕获的受支持操作系统。|  
+|OSDBuildStorageDriverList<br /><br /> (entrada)|Especifica se o sysprep compila uma lista de drivers de dispositivo de armazenamento em massa. Essa configuração se aplica somente ao Windows XP e Windows Server 2003. Ela populará a seção [SysprepMassStorage] de sysprep.inf com informações sobre todos os drivers de armazenamento em massa que são compatíveis com a imagem a ser capturada.<br /><br /> Valores válidos:<br /><br /> **"true"**<br /><br /> **"false"** (padrão)|  
+|OSDKeepActivation<br /><br /> (entrada)|Especifica se o sysprep redefine o sinalizador de ativação do produto.<br /><br /> Valores válidos:<br /><br /> **"true"**<br /><br /> **"false"** (padrão)|  
+|OSDTargetSystemRoot<br /><br /> (saída)|Especifica o caminho para o diretório do Windows do sistema operacional instalado no computador de referência. Este sistema operacional é confirmado como um sistema operacional com suporte para captura pelo Configuration Manager.|  
 
-###  <a name="BKMK_ReleaseStateStore"></a> 发布状态存储任务序列操作变量  
- 此操作的变量指定用于发布存储的用户状态的信息。 有关与这些变量相关联的任务序列步骤的详细信息，请参阅[发布状态存储](task-sequence-steps.md#BKMK_ReleaseStateStore)。  
+###  <a name="BKMK_ReleaseStateStore"></a> Variáveis de ação da sequência de armazenamento de estado de versão  
+ As variáveis dessa ação especificam as informações usadas para liberar o estado de usuário armazenado. Para obter mais informações sobre a etapa da sequência de tarefas associada a essas variáveis, consulte [Liberar Armazenamento de Estado](task-sequence-steps.md#BKMK_ReleaseStateStore).  
 
-#### <a name="details"></a>详细信息  
+#### <a name="details"></a>Detalhes  
 
-|操作变量名称|描述|  
+|Nome de variável de ação|Descrição|  
 |--------------------------|-----------------|  
-|OSDStateStorePath<br /><br /> (input)|从中还原用户状态的位置的 UNC 或本地路径名。 此值由“捕获用户状态”  任务序列操作和“还原用户状态”  任务序列操作这两者使用。|  
+|OSDStateStorePath<br /><br /> (entrada)|O UNC ou nome de caminho local d local do qual o estado de usuário foi restaurado. Esse valor é usado pelas ações da sequência de tarefas **Capturar Estado de Usuário** e **Restaurar Estado de Usuário** .|  
 
-###  <a name="BKMK_RequestState"></a> 请求状态存储任务序列操作变量  
- 此操作的变量指定用于请求已存储的用户状态的信息，例如存储用户数据所在的状态迁移点上的文件夹。 有关与这些变量相关联的任务序列步骤的详细信息，请参阅[发布状态存储](../../osd/understand/task-sequence-steps.md#BKMK_ReleaseStateStore)。  
+###  <a name="BKMK_RequestState"></a> Variáveis de ação da sequência de tarefas de armazenamento de estado de solicitação  
+ As variáveis dessa ação especificam as informações usadas para solicitar o estado de usuário armazenado, como a pasta no ponto de migração de estado em que os dados de usuário são armazenados. Para obter mais informações sobre a etapa da sequência de tarefas associada a essas variáveis, consulte [Liberar Armazenamento de Estado](../../osd/understand/task-sequence-steps.md#BKMK_ReleaseStateStore).  
 
-#### <a name="details"></a>详细信息  
+#### <a name="details"></a>Detalhes  
 
-|操作变量名称|描述|  
+|Nome de variável de ação|Descrição|  
 |--------------------------|-----------------|  
-|OSDStateFallbackToNAA<br /><br /> (input)|当计算机帐户无法连接到状态迁移点时，指定是否将该网络访问帐户作为回退使用。<br /><br /> 有效值：<br /><br /> **“true”**<br /><br /> **“false”** （默认值）|  
-|OSDStateSMPRetryCount<br /><br /> (input)|指定在步骤失败前，任务列表步骤尝试查找状态迁移点的次数。 指定的计数必须介于 0 和 600 之间。|  
-|OSDStateSMPRetryTime<br /><br /> (input)|指定任务序列步骤在重新尝试之间等待的秒数。 秒数最多可为 30 个字符。|  
-|OSDStateStorePath<br /><br /> (output)|保存或还原用户状态的状态迁移点上的文件夹的 UNC 路径。|  
+|OSDStateFallbackToNAA<br /><br /> (entrada)|Especifica se a Conta de Acesso à Rede é usada como um fallback quando a conta de computador não puder se conectar ao ponto de migração de estado.<br /><br /> Valores válidos:<br /><br /> **"true"**<br /><br /> **"false"** (padrão)|  
+|OSDStateSMPRetryCount<br /><br /> (entrada)|Especifica o número de vezes que a etapa da sequência de tarefas tentará localizar um ponto de migração de estado antes da etapa falhar. A contagem especificada deve estar entre 0 e 600.|  
+|OSDStateSMPRetryTime<br /><br /> (entrada)|Especifica o número de segundos durante os quais a etapa da sequência de tarefas aguarda entre as novas tentativas. O número de segundos pode ter, no máximo, 30 caracteres.|  
+|OSDStateStorePath<br /><br /> (saída)|O caminho UNC para a pasta no ponto de migração de estado em que o estado de usuário foi armazenado.|  
 
-###  <a name="BKMK_RestartComputer"></a> 重新启动计算机任务序列操作变量  
- 此操作的变量指定用于重新启动目标计算机的信息。 有关与这些变量相关联的任务序列步骤的详细信息，请参阅[重新启动计算机](task-sequence-steps.md#a-namebkmkrestartcomputera-restart-computer)。  
+###  <a name="BKMK_RestartComputer"></a> Reiniciar variáveis de ação da sequência de tarefas do computador  
+ As variáveis dessa ação especificam as informações usadas para reiniciar o computador de destino. Para obter mais informações sobre a etapa da sequência de tarefas associada a essas variáveis, consulte [Reiniciar Computador](task-sequence-steps.md#a-namebkmkrestartcomputera-restart-computer).  
 
-#### <a name="details"></a>详细信息  
+#### <a name="details"></a>Detalhes  
 
-|操作变量名称|描述|  
+|Nome de variável de ação|Descrição|  
 |--------------------------|-----------------|  
-|SMSRebootMessage<br /><br /> (input)|指定重新启动计算机之前要向用户显示的消息。 如果未设置此变量，则显示默认消息文本。 指定的消息不能超过 512 个字符。<br /><br /> 例如：<br /><br /> -“此计算机将重新启动;请保存工作。”|  
-|SMSRebootTimeout<br /><br /> (input)|指定计算机重新启动之前向用户显示警告的秒数。 指定零秒表示不显示重新启动消息。<br /><br /> 例如：<br /><br /> **“0”** （默认）<br /><br /> **"5"**<br /><br /> **"10"**|  
+|SMSRebootMessage<br /><br /> (entrada)|Especifica a mensagem a ser exibida para os usuários antes de reiniciar o computador de destino. Se essa variável não for definida, o texto da mensagem padrão será exibido. A mensagem especificada não deve exceder 512 caracteres.<br /><br /> Exemplo:<br /><br /> – “Este computador será reiniciado. Salve seu trabalho.”|  
+|SMSRebootTimeout<br /><br /> (entrada)|Especifica o número de segundos que o aviso é exibido para o usuário antes da reinicialização do computador. Especifique zero segundo para indicar que nenhuma mensagem de reinicialização é exibida.<br /><br /> Exemplos:<br /><br /> **"0"** (padrão)<br /><br /> **"5"**<br /><br /> **"10"**|  
 
-###  <a name="BKMK_RestoreUserState"></a> 还原用户状态任务序列操作变量  
- 此操作的变量指定用于还原目标计算机的用户状态的信息，例如从中还原用户状态的文件夹的路径名称以及是否还原本地计算机帐户。 有关与这些变量相关联的任务序列步骤的详细信息，请参阅[还原用户状态](task-sequence-steps.md#BKMK_RestoreUserState)。  
+###  <a name="BKMK_RestoreUserState"></a> Restaurar variáveis de ação da sequência de tarefas de estado de usuário  
+ As variáveis dessa ação especificam as informações usadas para restaurar o estado de usuário do computador de destino, como o nome do caminho da pasta do qual o estado de usuário é restaurado e se a conta de computador local é restaurada. Para obter mais informações sobre a etapa da sequência de tarefas associada a essas variáveis, consulte [Restaurar Estado do Usuário](task-sequence-steps.md#BKMK_RestoreUserState).  
 
-#### <a name="details"></a>详细信息  
+#### <a name="details"></a>Detalhes  
 
-|操作变量名称|描述|  
+|Nome de variável de ação|Descrição|  
 |--------------------------|-----------------|  
-|OSDStateStorePath<br /><br /> (input)|从中还原用户状态的文件夹的 UNC 或本地路径名。|  
-|OSDMigrateContinueOnRestore<br /><br /> (input)|指定即使无法还原某些文件，也要继续还原用户状态。<br /><br /> 有效值：<br /><br /> **“true”** （默认值）<br /><br /> **“false”**|  
-|OSDMigrateEnableVerboseLogging<br /><br /> (input)|启用 USMT 工具的详细日志记录。 操作需要此值；必须设置为“true”或“false”。<br /><br /> 有效值：<br /><br /> **“true”**<br /><br /> **“false”** （默认值）|  
-|OSDMigrateLocalAccounts<br /><br /> (input)|指定是否还原本地计算机帐户。<br /><br /> 有效值：<br /><br /> **“true”**<br /><br /> **“false”** （默认值）|  
-|OSDMigrateLocalAccountPassword<br /><br /> (input)|如果 **OSDMigrateLocalAccounts** 变量为“true”，此变量必须包含分配给已迁移的所有本地帐户的密码。 由于为所有已迁移的本地帐户分配了相同的密码，所以考虑使用 Configuration Manager 操作系统部署以外的某些方法稍后会进行更改的临时密码。|  
-|OSDMigrateAdditionalRestoreOptions<br /><br /> (input)|指定其他用户状态迁移工具 (USMT) 命令行选项，这些选项将在还原用户状态时使用。 其他选项以附加到自动生成的 USMT 命令行的字符串形式指定。 在运行任务序列之前，使用此任务序列变量指定的 USMT 选项未通过精确度验证。|  
-|_OSDMigrateUsmtRestorePackageID<br /><br /> (input)|指定包含 USMT 文件的 Configuration Manager 包的包 ID。 此变量是必需的。|  
+|OSDStateStorePath<br /><br /> (entrada)|O UNC ou nome de caminho local da pasta do qual o estado de usuário foi restaurado.|  
+|OSDMigrateContinueOnRestore<br /><br /> (entrada)|Especifica que a restauração de estado de usuário continuará mesmo que alguns arquivos não possam ser restaurados.<br /><br /> Valores válidos:<br /><br /> **"true"** (padrão)<br /><br /> **"false"**|  
+|OSDMigrateEnableVerboseLogging<br /><br /> (entrada)|Habilita o log detalhado para a ferramenta USMT. Esse valor é exigido pela ação; ele deve ser definido como “true” ou “false”.<br /><br /> Valores válidos:<br /><br /> **"true"**<br /><br /> **"false"** (padrão)|  
+|OSDMigrateLocalAccounts<br /><br /> (entrada)|Especifica se a conta do computador local é restaurada.<br /><br /> Valores válidos:<br /><br /> **"true"**<br /><br /> **"false"** (padrão)|  
+|OSDMigrateLocalAccountPassword<br /><br /> (entrada)|Se a variável **OSDMigrateLocalAccounts** for "true", essa variável deverá conter a senha que é atribuída a todas as contas locais que são migradas. Como a mesma senha é atribuída a todas as contas locais migradas, ela é considerada uma senha temporária que será alterada posteriormente por algum método diferente da implantação de sistema operacional do Configuration Manager.|  
+|OSDMigrateAdditionalRestoreOptions<br /><br /> (entrada)|Especifica as demais opções de migração da linha de comando da USMT (Ferramenta de Migração do Usuário) que são usadas ao restaurar o estado de usuário. As opções adicionais são especificadas na forma de uma cadeia de caracteres que é anexada à linha de comando USMT gerada automaticamente. As opções do USMT especificadas com essa variável de sequência de tarefas não são validadas quanto à precisão antes da execução da sequência de tarefas.|  
+|_OSDMigrateUsmtRestorePackageID<br /><br /> (entrada)|Especifica a ID do pacote do Configuration Manager que contém os arquivos do USMT. Esta variável é obrigatória.|  
 
-###  <a name="BKMK_RunCommand"></a> 运行命令行任务序列操作变量  
- 此操作的变量指定用于从命令行中运行命令的信息，例如运行命令行的工作目录。 有关与这些变量相关联的任务序列步骤的详细信息，请参阅 [Run Command Line](task-sequence-steps.md#BKMK_RunCommandLine)。  
+###  <a name="BKMK_RunCommand"></a> Executar variáveis de ação da sequência de tarefas da linha de comando  
+ As variáveis dessa ação especificam as informações usadas para executar um comando da linha de comando, como o diretório de trabalho em que o comando é executado. Para obter mais informações sobre a etapa da sequência de tarefas associada a essas variáveis, consulte [Executar Linha de Comando](task-sequence-steps.md#BKMK_RunCommandLine).  
 
-#### <a name="details"></a>详细信息  
+#### <a name="details"></a>Detalhes  
 
-|操作变量名称|描述|  
+|Nome de variável de ação|Descrição|  
 |--------------------------|-----------------|  
-|SMSTSDisableWow64Redirection<br /><br /> (input)|默认情况下，在 64 位操作系统上运行时，使用 WOW64 文件系统重定向程序查找并运行命令行中的程序，以便找到 32 位版本的操作系统程序和 DLL。 将此变量设置为“true”以禁用 WOW64 文件系统重定向程序，以便可以找到本机 64 位版本的操作系统程序和 DLL。 在 32 位操作系统上运行时，此变量没有任何作用。|  
-|WorkingDirectory<br /><br /> (input)|指定命令行操作的开始目录。 指定的目录名称不能超过 255 个字符。<br /><br /> 例如：<br /><br /> -   **"C:\\"**<br />-   **“%SystemRoot%”**|  
-|SMSTSRunCommandLineUserName<br /><br /> (input)|指定运行命令行所依据的帐户。 此值为用户名或域\用户名形式的字符串。|  
-|SMSTSRunCommandLinePassword<br /><br /> (input)|为 SMSTSRunCommandLineUserName 变量所指定的帐户指定密码。|  
+|SMSTSDisableWow64Redirection<br /><br /> (entrada)|Por padrão, quando executado em um sistema operacional de 64 bits, o programa na linha de comando é localizado e executado usando o redirecionador do sistema de arquivos do WOW64, para que as versões de 32 bits dos programas e DLLs do sistema operacional sejam encontradas. Configurar esta variável como “true” desabilita o uso do redirecionador do sistema de arquivos do WOW64 para que as versões nativas de 64 bits de DLLs e programas do sistema operacional possam ser encontradas. Essa variável não tem nenhum efeito em um sistema operacional de 32 bits.|  
+|WorkingDirectory<br /><br /> (entrada)|Especifica o diretório inicial para uma ação de linha de comando. O nome do diretório especificado não deve exceder 255 caracteres.<br /><br /> Exemplos:<br /><br /> -   **"C:\\"**<br />-   **"%SystemRoot%"**|  
+|SMSTSRunCommandLineUserName<br /><br /> (entrada)|Especifica a conta pela qual a linha de comando é executada. O valor é uma cadeia de caracteres do formato nomeusuário ou domínio\nomeusuário.|  
+|SMSTSRunCommandLinePassword<br /><br /> (entrada)|Especifica a senha para a conta especificada pela variável SMSTSRunCommandLineUserName.|  
 
-### <a name="set-dynamic-variables"></a>设置动态变量  
- 当你添加“设置动态变量”任务序列步骤时，将自动设置此操作的变量。 有关与这些变量相关联的任务序列步骤的详细信息，请参阅 [设置动态变量](task-sequence-steps.md#BKMK_SetDynamicVariables)。  
+### <a name="set-dynamic-variables"></a>Definir Variáveis Dinâmicas  
+ As variáveis para esta ação são definidas automaticamente ao adicionar a etapa Definir Variáveis Dinâmicas da sequência de tarefas. Para obter mais informações sobre a etapa da sequência de tarefas associada a essas variáveis, consulte [Definir Variáveis Dinâmicas](task-sequence-steps.md#BKMK_SetDynamicVariables).  
 
-#### <a name="details"></a>详细信息  
+#### <a name="details"></a>Detalhes  
 
-|操作变量名称<br /><br /> (input)|描述|  
+|Nome de variável de ação<br /><br /> (entrada)|Descrição|  
 |----------------------------------------|-----------------|  
-|_SMSTSMake|指定计算机的品牌。|  
-|_SMSTSModel|指定计算机的型号。|  
-|_SMSTSMacAddresses|指定计算机使用的 MAC 地址。|  
-|_SMSTSIPAddresses|指定计算机使用的 IP 地址。|  
-|_SMSTSSerialNumber|指定计算机的序列号。|  
-|_SMSTSAssetTag|指定计算机的资产标记。|  
-|_SMSTSUUID|指定计算机的 UUID。|  
-|_SMSTSDefaultGateways|指定计算机使用的默认网关。|  
+|_SMSTSMake|Especifica a marca do computador.|  
+|_SMSTSModel|Especifica o modelo do computador.|  
+|_SMSTSMacAddresses|Especifica os endereços MAC usados pelo computador.|  
+|_SMSTSIPAddresses|Especifica os endereços IP usados pelo computador.|  
+|_SMSTSSerialNumber|Especifica o número de série do computador.|  
+|_SMSTSAssetTag|Especifica a marca de ativo do computador.|  
+|_SMSTSUUID|Especifica o UUID do computador.|  
+|_SMSTSDefaultGateways|Especifica os gateways padrão usados pelo computador.|  
 
-###  <a name="BKMK_SetupWindows"></a> 安装 Windows 和 ConfigMgr 任务序列操作变量  
- 此操作的变量指定安装 Configuration Manager 客户端时使用的客户端安装属性。 有关与这些变量相关联的任务序列步骤的详细信息，请参阅[安装 Windows 和 ConfigMgr](task-sequence-steps.md#BKMK_SetupWindowsandConfigMgr)。  
+###  <a name="BKMK_SetupWindows"></a> Configurar variáveis de ação da sequência de tarefas do Windows e ConfigMgr  
+ A variável dessa ação especifica as propriedades de instalação do cliente que são usadas durante a instalação do cliente do Configuration Manager. Para obter mais informações sobre a etapa da sequência de tarefas associada a essas variáveis, consulte [Instalar Windows e ConfigMgr](task-sequence-steps.md#BKMK_SetupWindowsandConfigMgr).  
 
-#### <a name="details"></a>详细信息  
+#### <a name="details"></a>Detalhes  
 
-|操作变量名称<br /><br /> (input)|描述|  
+|Nome de variável de ação<br /><br /> (entrada)|Descrição|  
 |----------------------------------------|-----------------|  
-|SMSClientInstallProperties<br /><br /> (input)|指定在安装 Configuration Manager 客户端时应使用的客户端安装属性。|  
+|SMSClientInstallProperties<br /><br /> (entrada)|Especifica as propriedades de instalação do cliente que são usadas durante a instalação do cliente do Configuration Manager.|  
 
-### <a name="upgrade-operating-system"></a>升级操作系统  
- 此操作的变量指定将在 Configuration Manager 控制台中不可用的其他的命令行选项添加到用于 Windows 10 升级的安装程序中。 有关与此变量相关联的任务序列步骤的详细信息，请参阅[升级操作系统](task-sequence-steps.md#BKMK_UpgradeOS)。  
+### <a name="upgrade-operating-system"></a>Atualizar o sistema operacional  
+ A variável dessa ação especifica as opções de linha de comando adicionais que não estão disponíveis no console do Configuration Manager e que serão adicionadas à Instalação para uma atualização do Windows 10. Para obter mais informações sobre a etapa da sequência de tarefas associada a essa variável, consulte [Atualizar sistema operacional](task-sequence-steps.md#BKMK_UpgradeOS).  
 
-#### <a name="details"></a>详细信息  
+#### <a name="details"></a>Detalhes  
 
-|操作变量名称<br /><br /> (input)|描述|  
+|Nome de variável de ação<br /><br /> (entrada)|Descrição|  
 |----------------------------------------|-----------------|  
-|OSDSetupAdditionalUpgradeOptions<br /><br /> (input)|指定在 Windows 10 升级过程中添加到安装程序的其他命令行选项。 命令行选项未验证。 因此，请检查你输入的选项是否准确。<br /><br /> 有关详细信息，请参阅 [Windows 安装程序命令行选项](https://msdn.microsoft.com/library/windows/hardware/dn938368\(v=vs.85\).aspx)。|  
+|OSDSetupAdditionalUpgradeOptions<br /><br /> (entrada)|Especifica as demais opções da linha de comando que são adicionadas à Instalação durante uma atualização do Windows 10. As opções de linha de comando não são verificadas. Portanto, verifique se a opção que você inseriu está correta.<br /><br /> Para obter mais informações, veja [Opções de Linha de Comando da Instalação do Windows](https://msdn.microsoft.com/library/windows/hardware/dn938368\(v=vs.85\).aspx).|  

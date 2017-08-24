@@ -1,6 +1,6 @@
 ---
-title: "通过导入证书详细信息创建 PFX 证书配置文件 | Microsoft Docs"
-description: "了解如何使用 System Center Configuration Manager 中的 PFX 文件生成支持加密数据交换的用户特定证书。"
+title: Criar perfis de certificado PFX importando detalhes do certificado | Microsoft Docs
+description: "Saiba como usar arquivos PFX no System Center Configuration Manager para gerar certificados específicos do usuário que dão suporte à troca de dados criptografados."
 ms.custom: na
 ms.date: 04/04/2017
 ms.prod: configuration-manager
@@ -18,85 +18,85 @@ manager: angrobe
 ms.openlocfilehash: c8346d04c7cd9761291824f5d30f09fab9acbcf9
 ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
 ms.translationtype: HT
-ms.contentlocale: zh-CN
+ms.contentlocale: pt-BR
 ms.lasthandoff: 08/07/2017
 ---
-# <a name="how-to-create-pfx-certificate-profiles-by-importing-certificate-details"></a>如何通过导入证书详细信息创建 PFX 证书配置文件
+# <a name="how-to-create-pfx-certificate-profiles-by-importing-certificate-details"></a>Como criar perfis de certificado PFX importando detalhes do certificado
 
-*适用范围：System Center Configuration Manager (Current Branch)*
+*Aplica-se a: System Center Configuration Manager (Branch Atual)*
 
 
-本文介绍如何通过从外部证书导入凭据来创建证书配置文件。  
+Aqui, você aprende a criar um perfil de certificado importando as credenciais de certificados externos.  
 
-[证书配置文件](../../protect/deploy-use/introduction-to-certificate-profiles.md)提供有关创建和配置证书配置文件的一般信息。 本主题强调了有关与 PFX 证书相关的证书配置文件的一些具体信息。
+[Perfis de certificado](../../protect/deploy-use/introduction-to-certificate-profiles.md) fornecem informações gerais sobre como criar e configurar perfis de certificado. Este tópico destaca algumas informações específicas sobre perfis de certificado relacionados aos certificados PFX.
 
--  Configuration Manager 可管理各种适用于不同设备和操作系统的证书存储。  其中包括:
+-  O Configuration Manager tem vários repositórios de certificado apropriados para diferentes dispositivos e sistemas operacionais.  Elas incluem:
 
- -   iOS 和 MacOS/OSX
- -   Android 和 Android for Work
- -   Windows 10，包括 Windows 10 移动版。
+ -   iOS e MacOS/OSX
+ -   Android e Android for Work
+ -   Windows 10, incluindo Windows 10 Mobile.
 
-若要了解详细信息，请参阅[证书配置文件先决条件](../../protect/plan-design/prerequisites-for-certificate-profiles.md)。
+Para saber mais, confira [Pré-requisitos para perfis de certificado](../../protect/plan-design/prerequisites-for-certificate-profiles.md).
 
-## <a name="pfx-certificate-profiles"></a>PFX 证书配置文件
-System Center Configuration Manager 允许导入证书凭据，然后将个人信息交换 (.pfx) 文件导入到用户设备。 PFX 文件可以用于生成特定于用户的证书以支持加密数据交换。
+## <a name="pfx-certificate-profiles"></a>Perfis de certificado PFX
+O System Center Configuration Manager permite que você importe credenciais de certificado e provisione arquivos .pfx (troca de informações pessoais) para dispositivos do usuário. Os arquivos PFX podem ser usados para gerar certificados específicos do usuário para dar suporte à troca de dados criptografados.
 
 > [!TIP]  
->  描述此过程的分步演练会出现在 [如何在 Configuration Manager 中创建和部署 PFX 证书配置文件](http://blogs.technet.com/b/karanrustagi/archive/2015/09/01/how-to-create-and-deploy-pfx-certificate-profiles-in-configuration-manager.aspx)。  
+>  Um tutorial passo a passo que descreve esse processo está disponível em [Como criar e implantar perfis de certificado PFX no Configuration Manager](http://blogs.technet.com/b/karanrustagi/archive/2015/09/01/how-to-create-and-deploy-pfx-certificate-profiles-in-configuration-manager.aspx).  
 
-## <a name="create-import-and-deploy-a-personal-information-exchange-pfx-certificate-profile"></a>创建、导入和部署个人信息交换 (PFX) 证书配置文件  
+## <a name="create-import-and-deploy-a-personal-information-exchange-pfx-certificate-profile"></a>Criar, importar e implantar um perfil de certificado PFX (Troca de Informações Pessoais)  
 
-### <a name="get-started"></a>入门
+### <a name="get-started"></a>Introdução
 
-1.  在 System Center Configuration Manager 控制台中，单击“资产和符合性”。  
-2.  在“资产和符合性”  工作区中，展开“符合性设置” ，展开“公司资源访问” ，然后单击“证书配置文件” 。  
+1.  No console do System Center Configuration Manager, clique em **Ativos e Conformidade**.  
+2.  No espaço de trabalho **Ativos e Conformidade** , expanda **Configurações de Conformidade**, expanda **Acesso ao Recurso da Empresa**e clique em **Perfis de Certificado**.  
 
-3.  在“主页”  选项卡上的“创建”  组中，单击“创建证书配置文件” 。
+3.  Na guia **Início** , no grupo **Criar** , clique em **Criar Perfil Certificado**.
 
-4.  在“创建证书配置文件”向导的“常规”  页上  ，指定下列信息：  
+4.  Na página **Geral** do Assistente para **Criar Perfil de Certificado** , especifique as seguintes informações:  
 
-    -   **名称**：输入证书配置文件的唯一名称。 最多可以使用 256 个字符。  
+    -   **Nome**: insira um nome exclusivo para o perfil de certificado. Você pode usar no máximo 256 caracteres.  
 
-    -   **说明**：提供对证书配置文件进行概述，以及可帮助在 System Center Configuration Manager 控制台中识别该证书配置文件的其他相关信息的描述。 最多可以使用 256 个字符。  
+    -   **Descrição**: forneça uma descrição que ofereça uma visão geral do perfil de certificado e outras informações relevantes que ajudem a identificá-lo no console do System Center Configuration Manager. Você pode usar no máximo 256 caracteres.  
 
-    -   **指定想要创建的证书配置文件的类型**：对于 PFX 证书，请选择以下选项之一：  
+    -   **Especifique o tipo de perfil de certificado que deseja criar**: para certificados PFX, escolha uma das opções a seguir:  
 
-        -   **个人信息交换 PKCS #12 (PFX) 设置 - 导入**：通过以编程方式导入现有证书的信息来创建证书配置文件。  
+        -   **Configurações de Troca de Informações Pessoais PKCS #12 (PFX) – Importar**: cria um perfil de certificado importando programaticamente as informações de certificados existentes.  
 
-        -   **个人信息交换 - PKCS #12 (PFX) 设置 - 创建**：使用证书颁发机构提供的凭据来创建 PFX 证书配置文件。  若要了解详细信息，请参阅[如何使用证书颁发机构创建 PFX 证书配置文件](../../mdm/deploy-use/create-pfx-certificate-profiles.md)。
+        -   **Configurações de Troca de Informações Pessoais – PKCS #12 (PFX) – Criar**: cria um perfil de certificado PFX usando as credenciais fornecidas por uma autoridade de certificação.  Para saber mais, confira [Como criar perfis de certificado PFX usando uma autoridade de certificação](../../mdm/deploy-use/create-pfx-certificate-profiles.md).
 
 
-### <a name="create-a-pfx-certificate-profile-for-the-imported-credentials"></a>为导入的凭据创建 PFX 证书配置文件
+### <a name="create-a-pfx-certificate-profile-for-the-imported-credentials"></a>Criar um perfil de certificado PFX para as credenciais importadas
 
-要导入 PFX 证书，需要使用 Configuration Manager SDK 部署创建 PFX 脚本。 
+Para importar um certificado PFX, use o SDK do Configuration Manager para implantar um script Criar PFX. 
 
-稍后将导入的证书部署到注册的设备。
+Certificados importados são posteriormente implantados em dispositivos registrados.
 
-1. 在“创建证书配置文件向导”的“PFX 证书”页上，指定设备密钥存储提供程序的位置：
-    -   **如果存在受信任的平台模块 (TPM) 则安装到该处**  
-    -   **安装到受信任的平台模块 (TPM)，否则失败** 
-    -   **安装到 Windows Hello 企业版，否则失败** 
-    -   **安装到软件密钥存储提供程序** 
-2. 单击“下一步” 。 
-3. 在向导的“支持的平台”页上，选择支持的设备平台，然后单击“下一步”。
+1. Na página **Certificado de PFX** do **Assistente para Criar Perfil de Certificado**, especifique onde o provedor de armazenamento de chave do dispositivo:
+    -   **Instalar em um TPM (Trusted Platform Module), se houver**  
+    -   **Instalar em um TPM (Trusted Platform Module); caso contrário, ocorrerá uma falha** 
+    -   **Instalar para o Windows Hello para Empresas, caso contrário, falhará** 
+    -   **Instalar o Provedor de Armazenamento de Chaves de Software** 
+2. Clique em **Avançar**. 
+3. Na página **Plataformas com Suporte** do assistente, escolha as plataformas de dispositivo com suporte e clique em **Avançar**.
 
-### <a name="finish-the-profile"></a>完成配置文件
+### <a name="finish-the-profile"></a>Concluir o perfil
 
-1.  单击“下一步” ，查看“摘要”  页，然后关闭向导。  
-2.  “证书配置文件”  工作区现在推出包含 PFX 文件的证书配置文件。 
-3.  要部署配置文件，请在“资产和符合性”工作区中打开“符合性设置”  > “公司资源访问” > “证书配置文件”，右键单击所需的证书，然后单击“部署”。 
+1.  Clique em **Próximo**, examine a página **Resumo** e feche o assistente.  
+2.  O perfil de certificado que contém o arquivo PFX agora está disponível do espaço de trabalho **Perfis de Certificado** . 
+3.  Para implantar o perfil, no espaço de trabalho **Ativos e Conformidade**, abra **Configurações de Conformidade** > **Acesso ao Recurso da Empresa** > **Perfis de Certificado**, clique com o botão direito no certificado desejado e clique em **Implantar**. 
 
-### <a name="deploy-a-create-pfx-script"></a>部署创建 PFX 脚本
+### <a name="deploy-a-create-pfx-script"></a>Implantar um script Criar PFX
 
-使用 [Configuration Manager SDK](http://go.microsoft.com/fwlink/?LinkId=613525) 部署创建 PFX 脚本。 
+Use o [SDK do Configuration Manager](http://go.microsoft.com/fwlink/?LinkId=613525) para implantar um script Criar PFX. 
 
-Configuration Manager 2012 SP2 中添加的创建 PFX 脚本向该 SDK 添加 SMS_ClientPfxCertificate 类。 此类包括以下方法：  
+O Script para Criar PFX adicionado no Configuration Manager 2012 SP2 adiciona uma classe SMS_ClientPfxCertificate ao SDK. Esta classe inclui os seguintes métodos:  
 
     -   `ImportForUser`  
 
     -   `DeleteForUser`  
 
-下面的示例将凭据导入 PFX 证书配置文件。
+O exemplo a seguir importa as credenciais para um perfil de certificado PFX.
 
 ``` powershell
     $EncryptedPfxBlob = "<blob>"  
@@ -114,16 +114,16 @@ Configuration Manager 2012 SP2 中添加的创建 PFX 脚本向该 SDK 添加 SM
     $Resource = $WMIConnection.psbase.InvokeMethod("ImportForUser",$NewEntry,$null)  
 ```  
 
-若要使用此示例，请更新以下脚本变量：  
+Para usar este exemplo, atualize as variáveis de script a seguir:  
 
-   -   **blob**\ - PFX base64 加密的 blob  
-   -   **$Password** - PFX 文件的密码  
-   -   **$ProfileName** - PFX 配置文件的名称  
-   -   **ComputerName** - 主机名   
+   -   **blob**\ – O blob PFX criptografado em base64  
+   -   **$Password** – A senha do arquivo PFX  
+   -   **$ProfileName** – O nome do perfil PFX  
+   -   **ComputerName** – nome do computador host   
 
-## <a name="see-also"></a>另请参阅
-[创建新的证书配置文件](../../protect/deploy-use/create-certificate-profiles.md)，此文档将引导你完成创建证书配置文件向导。
+## <a name="see-also"></a>Consulte também
+[Criar um novo perfil de certificado](../../protect/deploy-use/create-certificate-profiles.md) orienta você pelo Assistente para criar perfil de certificado.
 
-[如何通过导入证书详细信息创建 PFX 证书配置文件](../../mdm/deploy-use/create-pfx-certificate-profiles.md)
+[Como criar perfis de certificado PFX importando detalhes do certificado](../../mdm/deploy-use/create-pfx-certificate-profiles.md)
 
-[部署 Wi-Fi、VPN、电子邮件和证书配置文件](../../protect/deploy-use/deploy-wifi-vpn-email-cert-profiles.md)介绍了如何部署证书配置文件。
+[Implantar Wi-Fi, VPN, email e perfis de certificado](../../protect/deploy-use/deploy-wifi-vpn-email-cert-profiles.md) descreve como implantar perfis de certificado.

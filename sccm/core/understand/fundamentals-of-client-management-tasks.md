@@ -1,6 +1,6 @@
 ---
-title: "客户端管理基础知识 | Microsoft Docs"
-description: "了解有关用于管理 System Center Configuration Manager 客户端运行的任务的详细信息。"
+title: "Conceitos básicos do gerenciamento de clientes | Microsoft Docs"
+description: "Saiba mais sobre as tarefas que você executa para gerenciar clientes do System Center Configuration Manager."
 ms.custom: na
 ms.date: 12/30/2016
 ms.prod: configuration-manager
@@ -17,48 +17,48 @@ manager: angrobe
 ms.openlocfilehash: 0fee4f4ba462e59859ac93c4218b67cb26bdd6f6
 ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
 ms.translationtype: HT
-ms.contentlocale: zh-CN
+ms.contentlocale: pt-BR
 ms.lasthandoff: 08/07/2017
 ---
-# <a name="fundamentals-of-client-management-tasks-for-system-center-configuration-manager"></a>System Center Configuration Manager 的客户端管理任务基础
+# <a name="fundamentals-of-client-management-tasks-for-system-center-configuration-manager"></a>Noções básicas das tarefas de gerenciamento de cliente para o System Center Configuration Manager
 
-*适用范围：System Center Configuration Manager (Current Branch)*
+*Aplica-se a: System Center Configuration Manager (Branch Atual)*
 
-安装 System Center Configuration Manager 客户端后，可以运行几个任务来管理客户端。  可从 Configuration Manager 控制台运行一些任务。 可从 Configuration Manager 客户端应用程序运行其他任务。 使用 Configuration Manager 客户端软件安装 Configuration Manager 客户端应用程序。
+Após instalar clientes do System Center Configuration Manager, há várias tarefas que você executa para gerenciá-los.  Algumas das tarefas são executadas no console do Configuration Manager. Outras tarefas são executadas de um aplicativo cliente do Configuration Manager. O aplicativo cliente do Configuration Manager é instalado com o software cliente do Configuration Manager.
 
-## <a name="configuration-manager-console-tasks"></a>Configuration Manager 控制台任务
- 可在 Configuration Manager 控制台中执行不同的客户端管理任务：  
+## <a name="configuration-manager-console-tasks"></a>Tarefas do console do Configuration Manager
+ No console do Configuration Manager, é possível realizar diversas tarefas de gerenciamento de clientes:  
 
--   部署应用程序、软件更新、维护脚本和操作系统。 可将安装配置为在指定日期和时间进行，在用户请求时提供可供安装的软件，或配置要卸载的应用程序。  
+-   Implantar aplicativos, atualizações de software, scripts de manutenção e sistemas operacionais. Configurar a instalação para uma data e hora específica, disponibilizar o software para os usuários instalarem quando forem solicitados ou configurar os aplicativos a serem desinstalados.  
 
--   帮助计算机抵御恶意软件和安全威胁，并在检测到问题时通知你。  
+-   Ajudar na proteção de computadores contra malware e ameaças à segurança e notificar quando problemas forem detectados.  
 
--   定义要监视并在违反符合性时修正的客户端配置的设置。  
+-   Definir as configurações de cliente que você deseja monitorar e corrigir se estiverem fora de conformidade.  
 
--   收集硬件和软件清单信息，包括来自 Microsoft 的监视和协调许可证信息。  
+-   Coletar informações de inventário de hardware e software, que incluam monitoramento e reconciliação das informações de licença da Microsoft.  
 
--   使用远程控制对计算机进行故障排除。  
+-   Solucionar problemas de computadores usando o controle remoto.  
 
--   实施电源管理设置，以管理和监视计算机的功耗。  
+-   Implementar as configurações de gerenciamento de energia para gerenciar e monitorar o consumo de energia de computadores.  
 
-Configuration Manager 控制台几乎可实时监视之前的任务。 Configuration Manager 控制台中提供每个任务的通知和状态信息。 若要捕获数据和分析历史趋势，请使用集成的 SQL Server Reporting Services 报表功能。 客户端将详细信息作为客户端状态提交给站点。  客户端状态信息提供客户端和客户端的活动运行状况的相关数据，并且可以在控制台中或使用 Configuration Manager 的内置报表查看此客户端状态信息。 此数据帮助识别未响应的计算机，而且在一些情况下可以自动修正问题。  
+O console do Configuration Manager monitora as tarefas anteriores quase em tempo real. A notificação e as informações de status para cada tarefa estão disponíveis no console do Configuration Manager. Para capturar dados e tendências históricas, use os recursos integrados de relatório do SQL Server Reporting Services. Os clientes enviam detalhes para o site, como o status do cliente.  As informações de status do cliente fornecem dados sobre a integridade do cliente e a atividade do cliente, e são exibidas no console ou por meio dos relatórios internos para o Configuration Manager. Esses dados ajudam a identificar computadores sem resposta e, em alguns casos, os problemas são corrigidos automaticamente.  
 
- 有关客户端管理任务的详细信息，请参阅[如何在 System Center Configuration Manager 中管理客户端](../../core/clients/manage/manage-clients.md)和[如何在 System Center Configuration Manager 中管理 Linux 和 UNIX 服务器客户端](../../core/clients/manage/manage-clients-for-linux-and-unix-servers.md)。 若要了解报表的使用，请参阅   
-            [System Center Configuration Manager 中的报表简介](../../core/servers/manage/introduction-to-reporting.md)。  
+ Para obter mais informações sobre tarefas de gerenciamento para clientes, consulte [Como gerenciar clientes no System Center Configuration Manager](../../core/clients/manage/manage-clients.md) e [Como gerenciar clientes para servidores Linux e UNIX no System Center Configuration Manager](../../core/clients/manage/manage-clients-for-linux-and-unix-servers.md). Para saber mais sobre como usar relatórios, confira   
+            [Introdução à emissão de relatórios no System Center Configuration Manager](../../core/servers/manage/introduction-to-reporting.md).  
 
-## <a name="configuration-manager-client-application"></a>Configuration Manager 客户端应用程序  
- 安装 Configuration Manager 客户端软件时，同时也会安装 Configuration Manager 客户端应用程序。 与软件中心不同的是，Configuration Manager 客户端应用程序是为技术支持工程师而不是最终用户设计的。 使用某些配置选项需要本地管理权限，而且使用大部分选项都要求掌握有关 Configuration Manager 客户端应用程序工作原理的技术知识。 可以使用此应用程序在客户端上执行下列任务：  
+## <a name="configuration-manager-client-application"></a>Aplicativo cliente do Configuration Manager  
+ Quando você instala o software cliente do Configuration Manager, o aplicativo cliente do Configuration Manager também é instalado. Ao contrário do Centro de Software, o aplicativo cliente do Configuration Manager foi projetado para o suporte técnico e não para os usuários finais. Algumas opções de configuração exigem permissões administrativas locais e a maioria das opções exige conhecimento técnico sobre como o aplicativo cliente do Configuration Manager funciona. Você pode usar esse aplicativo para executar as seguintes tarefas em um cliente:  
 
--   查看有关客户端的属性，例如内部版本号、为它分配的站点、它与之通信的管理点以及客户端使用的是公钥基础结构 (PKI) 证书还是自签名证书。  
+-   Exibir propriedades sobre o cliente, como o número de build, o site atribuído, o ponto de gerenciamento com o qual está se comunicando e se o cliente está usando um certificado de PKI (infraestrutura de chave pública) ou um certificado autoassinado.  
 
--   第一次安装客户端后，确认该客户端已成功安装客户端策略。 还要根据 Configuration Manager 控制台中配置的客户端设置，确认已按预期启用或禁用客户端设置。  
+-   Confirmar se o cliente baixou com êxito uma política de cliente depois que o cliente foi instalado pela primeira vez. Além disso, confirmar se as configurações de cliente estão habilitadas ou desabilitadas conforme o esperado, de acordo com as configurações de cliente que são definidas no console do Configuration Manager.  
 
--   启动客户端操作。 例如，如果最近在 Configuration Manager 控制台中更改了配置，且不希望等到下次计划时间，则可以下载客户端策略。  
+-   Iniciar ações de cliente. Por exemplo, baixar a política de cliente, se houve uma alteração recente da configuração no console do Configuration Manager e você não deseja esperar até a próxima hora agendada.  
 
--   手动将客户端分配到 Configuration Manager 站点，或尝试查找站点。 然后为发布到 DNS 的管理点指定域名系统 (DNS) 后缀。  
+-   Atribuir manualmente um cliente a um site do Configuration Manager ou tentar encontrar um site. Em seguida, especificar o sufixo do DNS (Sistema de Nomes de Domínio) para pontos de gerenciamento que publicam no DNS.  
 
--   配置临时存储文件的客户端缓存。 如果需要更多的磁盘空间来安装软件，则删除缓存中的文件。  
+-   Configurar o cache de cliente que armazena arquivos temporariamente. E, em seguida, excluirá os arquivos no cache se você precisar de mais espaço em disco para instalar software.  
 
--   配置用于执行基于 Internet 的客户端管理的设置。  
+-   Definir as configurações de gerenciamento de clientes baseado na Internet.  
 
--   查看已部署到客户端的配置基线，启动符合性评估，以及查看符合性报告。  
+-   Exibir as linhas de base de configuração implantadas para o cliente, iniciar a avaliação de conformidade e exibir os relatórios de conformidade.  

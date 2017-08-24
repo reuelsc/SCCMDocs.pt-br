@@ -1,6 +1,6 @@
 ---
-title: "选择设备管理解决方案 - Configuration Manager | Microsoft Docs"
-description: "了解 System Center Configuration Manager 提供的用于管理电脑、服务器和设备的解决方案。"
+title: "Escolher uma solução de gerenciamento de dispositivo – Configuration Manager | Microsoft Docs"
+description: "Saiba mais sobre as soluções oferecidas pelo System Center Configuration Manager para gerenciar computadores, servidores e dispositivos."
 ms.custom: na
 ms.date: 12/08/2016
 ms.prod: configuration-manager
@@ -18,77 +18,77 @@ manager: angrobe
 ms.openlocfilehash: 9989ea1bf4cb74a6286ebae9de7614ed622de5b6
 ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
 ms.translationtype: HT
-ms.contentlocale: zh-CN
+ms.contentlocale: pt-BR
 ms.lasthandoff: 08/07/2017
 ---
-# <a name="choose-a-device-management-solution-for-system-center-configuration-manager"></a>选择 System Center Configuration Manager 的设备管理解决方案
+# <a name="choose-a-device-management-solution-for-system-center-configuration-manager"></a>Escolher uma solução de gerenciamento de dispositivo para o System Center Configuration Manager
 
-*适用范围：System Center Configuration Manager (Current Branch)*
+*Aplica-se a: System Center Configuration Manager (Branch Atual)*
 
-System Center Configuration Manager（也称为 ConfgMgr 或 SCCM）提供用于管理电脑、服务器和设备的不同解决方案。 可以根据进行管理所需的设备平台和所需的管理功能来选择最适合的解决方案。  
-
-
-##  <a name="overview-of-device-management-solutions"></a>设备管理解决方案概述  
- 本文介绍了四种设备管理解决方案：Configuration Manager 客户端应用程序、本地 Configuration Manager 基础结构、Microsoft Intune 和 Exchange。 本文结尾是两个比较管理解决方案的表，一个[基于支持的移动设备平台](#compare-device-management-solutions-based-on-supported-mobile-device-platforms)，另一个基于[管理功能](#compare-mobile-device-management-solutions-based-on-management-functionality)。
+O System Center Configuration Manager (também conhecido como ConfgMgr ou SCCM) oferece soluções diferentes para o gerenciamento de computadores, de servidores e de dispositivos. Você pode escolher a solução certa para você com base nas plataformas de dispositivos que você precisa gerenciar e na funcionalidade de gerenciamento que você precisa.  
 
 
-###  <a name="manage-devices-with-the-configuration-manager-client"></a>使用 Configuration Manager 客户端管理设备  
+##  <a name="overview-of-device-management-solutions"></a>Visão geral das soluções de gerenciamento de dispositivo  
+ Este artigo aborda quatro soluções de gerenciamento de dispositivo: o aplicativo cliente do Configuration Manager, a infraestrutura local do Configuration Manager, o Microsoft Intune e o Exchange. O artigo é concluído com duas tabelas que comparam as soluções de gerenciamento: uma com base nas [plataformas de dispositivos móveis com suporte](#compare-device-management-solutions-based-on-supported-mobile-device-platforms) e a outra com base na [funcionalidade de gerenciamento](#compare-mobile-device-management-solutions-based-on-management-functionality).
 
-此选项要求在设备上安装 Configuration Manager 客户端应用程序，提供用于管理电脑、服务器和环境中的其他设备的大多数功能。 有关详细信息，请参阅 [System Center Configuration Manager 中的客户端安装方法](/sccm/core/clients/deploy/plan/client-installation-methods)。  
 
-###  <a name="manage-devices-with-on-premises-configuration-manager-infrastructure"></a>使用本地 Configuration Manager 基础结构管理设备  
+###  <a name="manage-devices-with-the-configuration-manager-client"></a>Gerenciar dispositivos com o cliente do Configuration Manager  
 
-此选项使用内置于某些设备平台的操作系统的设备管理功能。 尽管没有基于客户端的管理的功能全面，本地移动设备管理通过使用本地 Configuration Manager 资源访问和管理设备为管理提供更轻巧的触点方法。 请注意，此选项目前仅支持 Windows 10 电脑和 Windows 10 移动版设备。  
+Essa opção, que exige a instalação do aplicativo cliente do Configuration Manager em todos os dispositivos, fornece a maioria dos recursos para gerenciar computadores, servidores e outros dispositivos em seu ambiente. Para mais informações, consulte [Métodos de instalação do cliente no System Center Configuration Manager](/sccm/core/clients/deploy/plan/client-installation-methods).  
 
-有关详细信息，请参阅[在 System Center Configuration Manager 中使用本地基础结构管理移动设备](../../mdm/understand/manage-mobile-devices-with-on-premises-infrastructure.md)。  
+###  <a name="manage-devices-with-on-premises-configuration-manager-infrastructure"></a>Gerenciar dispositivos com a infraestrutura local do Configuration Manager  
 
-###  <a name="manage-devices-with-microsoft-intune-hybrid"></a>使用 Microsoft Intune（混合）管理设备  
+Essa opção usa os recursos de gerenciamento de dispositivo internos dos sistemas operacionais de algumas plataformas de dispositivo. Embora não seja tão completo quanto o gerenciamento baseado em cliente, o gerenciamento de dispositivo móvel local fornece uma abordagem mais leve de gerenciamento que usa recursos locais do Configuration Manager para acessar e gerenciar dispositivos. Observe que há suporte para essa opção somente nos computadores Windows 10 e nos dispositivos Windows 10 Mobile.  
 
-此选项使用 Microsoft Intune 注册和管理设备，而不是使用 Configuration Manager 本地资源。 尽管由 Intune 管理设备，但需要在 Configuration Manager 控制台中访问管理任务。 此选项支持所有主要移动设备操作系统，包括 Windows 10 移动版、Windows Phone、iOS、Mac OS X 以及 Android。 它还为组织中的 Windows 8.1 和 Windows 10 计算机提供管理。  
+Para obter mais informações, consulte [Gerenciar dispositivos móveis com infraestrutura local no System Center Configuration Manager](../../mdm/understand/manage-mobile-devices-with-on-premises-infrastructure.md).  
 
-有关详细信息，请参阅[使用 System Center Configuration Manager 和 Microsoft Intune 的混合移动设备管理 (MDM)](../../mdm/understand/hybrid-mobile-device-management.md)。  
+###  <a name="manage-devices-with-microsoft-intune-hybrid"></a>Gerenciar dispositivos com o Microsoft Intune (híbrido)  
 
-###  <a name="manage-devices-with-microsoft-exchange"></a>使用 Microsoft Exchange 管理设备  
+Essa opção usa o Microsoft Intune para registrar e gerenciar dispositivos em vez de usar os recursos locais do Configuration Manager. Embora o Intune gerencie os dispositivos, você acessa suas tarefas de gerenciamento no console do Configuration Manager. Essa opção dá suporte a todos os principais sistemas de operacionais de dispositivos móveis, incluindo Windows 10 Mobile, Windows Phone, iOS, Mac OS X e Android. Ela também fornece gerenciamento de computadores com Windows 8.1 e Windows 10 em sua organização.  
 
-此选项使用 Exchange Server 连接器将多个 Exchange 服务器连接到 Configuration Manager。 以便集中管理连接到 Exchange ActiveSync 的设备。 可从 Configuration Manager 控制台配置 Exchange 移动设备管理功能，例如远程设备擦除和针对多个 Exchange 服务器的设置控制。  
+Para obter mais informações, consulte [Hybrid mobile device management (MDM) with System Center Configuration Manager and Microsoft Intune](../../mdm/understand/hybrid-mobile-device-management.md) (MDM [gerenciamento de dispositivo móvel] híbrido com o System Center Configuration Manager e o Microsoft Intune).  
 
-有关详细信息，请参阅[使用 System Center Configuration Manager 和 Exchange 管理移动设备](../../mdm/deploy-use/manage-mobile-devices-with-exchange-activesync.md)。  
+###  <a name="manage-devices-with-microsoft-exchange"></a>Gerenciar dispositivos com o Microsoft Exchange  
 
-可以使用这些设备管理解决方案本身或彼此之间相互结合使用。 例如，可以使用基于客户端的管理方法来管理组织中的计算机和服务器，同时使用 Intune 管理移动设备。 通过这样的组合方法，可以通过 Configuration Manager 控制台满足所有设备管理需求。  
+Essa opção usa o conector do Exchange Server para conectar vários servidores Exchange ao Configuration Manager. Com isso, o gerenciamento dos dispositivos que podem se conectar ao Exchange ActiveSync é centralizado. Você pode configurar os recursos de gerenciamento de dispositivo móvel do Exchange, como o apagamento remoto de dados no dispositivo e o controle de configurações para vários servidores Exchange, no console do Configuration Manager.  
 
-## <a name="compare-device-management-solutions-based-on-supported-mobile-device-platforms"></a>基于受支持的移动设备平台比较设备管理解决方案  
+Para obter mais informações, consulte [Gerenciar dispositivos móveis com o System Center Configuration Manager e o Exchange](../../mdm/deploy-use/manage-mobile-devices-with-exchange-activesync.md).  
 
-|平台|带 Configuration Manager 客户端|带 Microsoft Intune 的 Configuration Manager（混合）|本地移动设备管理|带 Exchange 的 Configuration Manager|  
+Use essas soluções de gerenciamento de dispositivo sozinhas ou combinadas umas com as outras. Por exemplo, é possível usar a abordagem de gerenciamento baseada em cliente para gerenciar computadores e servidores em sua organização e também usar o Intune para gerenciar dispositivos móveis. Ao combinar as abordagens dessa forma, é possível atender a todas as suas necessidades de gerenciamento de dispositivo no console do Configuration Manager.  
+
+## <a name="compare-device-management-solutions-based-on-supported-mobile-device-platforms"></a>Comparar as soluções de gerenciamento de dispositivo móvel com base nas plataformas de dispositivos móveis com suporte  
+
+|Plataforma|Com o cliente do Configuration Manager|Configuration Manager com Microsoft Intune (híbrido)|Gerenciamento de dispositivo móvel local|Configuration Manager com Exchange|  
 |--------------|-------------------------------------------|-------------------------------------------------------------------|-------------------------------|-----------------------------------------|  
-|Android||是||是|  
-|iOS||是||是|  
-|Mac OS X|是|||是|  
-|UNIX/Linux|是|||是|  
-|Windows 10|是|是|是|是|  
-|Windows 10 移动版||是|是|是|  
-|Windows（以前版本）|是|是||是|  
-|Windows CE|是（具有移动设备旧客户端）|||是|  
-|Windows Embedded|是||||  
-|Windows Phone||是||是|  
-|Windows Server|是|||是|  
+|Android||Sim||Sim|  
+|iOS||Sim||Sim|  
+|Mac OS X|Sim|||Sim|  
+|UNIX/Linux|Sim|||Sim|  
+|Windows 10|Sim|Sim|Sim|Sim|  
+|Windows 10 Mobile||Sim|Sim|Sim|  
+|Windows (versões anteriores)|Sim|Sim||Sim|  
+|Windows CE|Sim (com cliente herdado de dispositivo móvel)|||Sim|  
+|Windows Embedded|Sim||||  
+|Windows Phone||Sim||Sim|  
+|Windows Server|Sim|||Sim|  
 
- 有关支持的平台的完整列表，请参阅 [System Center Configuration Manager 客户端和设备支持的操作系统](configs\supported-operating-systems-for-clients-and-devices.md)。
+ Para ver uma lista das plataformas com suporte, consulte [Sistemas operacionais com suporte para clientes e dispositivos para o System Center Configuration Manager](configs\supported-operating-systems-for-clients-and-devices.md).
 
-##  <a name="bkmk_comp2"></a> 根据管理功能比较移动设备管理解决方案  
+##  <a name="bkmk_comp2"></a> Compare as soluções de gerenciamento de dispositivo móvel baseadas na funcionalidade de gerenciamento  
 
-|管理功能|带 Configuration Manager 客户端|带 Microsoft Intune 的 Configuration Manager（混合）|本地移动设备管理|带 Exchange 的 Configuration Manager|  
+|Funcionalidade de gerenciamento|Com o cliente do Configuration Manager|Configuration Manager com Microsoft Intune (híbrido)|Gerenciamento de dispositivo móvel local|Configuration Manager com Exchange|  
 |------------------------------|-------------------------------------------|-------------------------------------------------------------------|-------------------------------|-----------------------------------------|  
-|移动设备和 Configuration Manager 之间的公钥基础结构 (PKI) 安全性（使用相互身份验证和 SSL 加密数据传输）|是|是|是||  
-|客户端安装|是||||  
-|通过 Internet 提供的支持|是||||  
-|发现|是|||是|  
-|硬件清单|是|是|是|是|  
-|软件清单|是|||是|  
-|设置|是|是|是|是|  
-|软件部署|是|是|是||  
-|利用回退状态点进行监视|是||||  
-|连接到管理点|是||是||  
-|连接到分发点|是||是||  
-|通过 Configuration Manager 进行阻止|是|是|是||  
-|通过 Exchange Server 和 Configuration Manager 进行隔离和阻止||||是|  
-|远程擦除| |是|是|是|  
+|Segurança de PKI (infraestrutura de chave pública) entre o dispositivo móvel e o Configuration Manager (usa autenticação mútua e SSL para criptografar transferências de dados)|Sim|Sim|Sim||  
+|Instalação do cliente|Sim||||  
+|Suporte pela Internet|Sim||||  
+|Descoberta|Sim|||Sim|  
+|Inventário de hardware|Sim|Sim|Sim|Sim|  
+|Inventário de software|Sim|||Sim|  
+|Configurações|Sim|Sim|Sim|Sim|  
+|Implantação de software|Sim|Sim|Sim||  
+|Monitor com ponto de status de fallback|Sim||||  
+|Conexões para pontos de gerenciamento|Sim||Sim||  
+|Conexões para pontos de distribuição|Sim||Sim||  
+|Bloqueio do Configuration Manager|Sim|Sim|Sim||  
+|Quarentena e bloqueio do Exchange Server (e Configuration Manager)||||Sim|  
+|Apagamento remoto| |Sim|Sim|Sim|  

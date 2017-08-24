@@ -1,6 +1,6 @@
 ---
-title: "推荐的硬件 | Microsoft Docs"
-description: "获取硬件建议，有助于在基本部署以上扩展 System Center Configuration Manager 环境。"
+title: Hardware recomendado | Microsoft Docs
+description: "Obtenha recomendações de hardware para ajudar você a dimensionar o ambiente do System Center Configuration Manager, além de uma implantação básica."
 ms.custom: na
 ms.date: 05/04/2017
 ms.prod: configuration-manager
@@ -18,166 +18,166 @@ manager: angrobe
 ms.openlocfilehash: 8dac6df60b07461d6410d305723b3f03fb09fa16
 ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
 ms.translationtype: HT
-ms.contentlocale: zh-CN
+ms.contentlocale: pt-BR
 ms.lasthandoff: 08/07/2017
 ---
-# <a name="recommended-hardware-for-system-center-configuration-manager"></a>用于 System Center Configuration Manager 的推荐硬件
+# <a name="recommended-hardware-for-system-center-configuration-manager"></a>Hardware recomendado para o System Center Configuration Manager
 
-*适用范围：System Center Configuration Manager (Current Branch)*
+*Aplica-se a: System Center Configuration Manager (Branch Atual)*
 
-以下建议是一些指南，可以帮助扩展 System Center Configuration Manager 环境，支持比非常基本的站点、站点系统和客户端部署更高级的部署。 这些指南并未打算将所有可能的站点和层次结构配置都包括在内。  
+As recomendações a seguir são diretrizes para ajudar a dimensionar seu ambiente do System Center Configuration Manager para dar suporte a mais de uma implantação muito básica de sites, sistemas de sites e clientes. Elas não têm a finalidade de abordar todos os sites e configurações de hierarquia possíveis.  
 
- 请使用以下各部分中的这些信息作为指南来帮助你做好硬件规划，使默认的硬件配置能满足使用 Configuration Manager 可用功能的客户端和站点在处理负载方面的要求。  
+ Use as informações nas seções a seguir como um guia para ajudar a planejar o hardware que pode atender aos volumes de processamento de clientes e sites que usam os recursos do Configuration Manager disponíveis com as configurações padrão.  
 
 
-##  <a name="bkmk_ScaleSieSystems"></a>站点系统  
- 本部分提供用于 Configuration Manager 站点系统的推荐硬件配置，以实现具有以下效果的部署：支持最大数目的客户端，以及使用大部分或全部 Configuration Manager 功能。 支持小于最大数量的客户端且不使用所有可用功能的部署可能需要更少的计算机资源。 通常，限制整个系统的性能的关键因素包括下列因素（按顺序列出）：  
+##  <a name="bkmk_ScaleSieSystems"></a> Sistemas de sites  
+ Esta seção fornece as configurações de hardware recomendadas para sistemas de sites do Configuration Manager para implantações que dão suporte ao número máximo de clientes e usam todos os recursos do Configuration Manager ou a maior parte deles. Implantações que dão suporte a menos que o número máximo de clientes e que não usam todos os recursos disponíveis podem exigir menos recursos do computador. Em geral, os fatores principais que limitam o desempenho geral do sistema incluem, na ordem:  
 
-1.  磁盘 I/O 性能  
+1.  Desempenho da E/S de disco  
 
-2.  可用内存  
+2.  Memória disponível  
 
 3.  CPU  
 
-为了获得最佳性能，请将 RAID 10 配置用于所有数据驱动器以及 1 Gbps 以太网。  
+Para obter um melhor desempenho, use as configurações de RAID 10 para todas as unidades de dados e rede Ethernet de 1 Gbps.  
 
-###  <a name="bkmk_ScaleSiteServer"></a>站点服务器  
+###  <a name="bkmk_ScaleSiteServer"></a> Servidores do site  
 
-|独立主站点|CPU（核心数）|内存(GB)|SQL Server 的内存分配 (%)|  
+|Site primário autônomo|CPU (núcleos)|Memória (GB)|Alocação de memória para o SQL Server (%)|  
 |-------------------------------|---------------|---------------|----------------------------------------|  
-|数据库站点角色在同一服务器上的独立主站点服务器<sup>1</sup>|16|96|80|  
-|具有远程站点数据库的独立主站点服务器|8|16|-|  
-|独立主站点的远程数据库服务器|16|72|90|  
-|数据库站点角色在同一服务器上的管理中心站点服务器<sup>1</sup>|20|128|80|  
-|具有远程站点数据库的管理中心站点服务器|8|16|-|  
-|管理中心站点的远程数据库服务器|16|96|90|  
-|数据库站点角色在同一服务器上的子主站点|16|96|80|  
-|具有远程站点数据库的子主站点服务器|8|16|-|  
-|子主站点的远程数据库服务器|16|72|90|  
-|辅助站点服务器|8|16|-|  
+|Servidor do site primário autônomo com uma função de site do banco de dados no mesmo servidor<sup>1</sup>|16|96|80|  
+|Servidor de site primário autônomo com um banco de dados do site remoto|8|16|-|  
+|Servidor de banco de dados remoto para um site primário autônomo|16|72|90|  
+|Servidor do site de administração central com uma função de site do banco de dados no mesmo servidor<sup>1</sup>|20|128|80|  
+|Servidor de site de administração central com um banco de dados do site remoto|8|16|-|  
+|Servidor de banco de dados remoto para um site de administração central|16|96|90|  
+|Site primário filho com a função de site do banco de dados no mesmo servidor|16|96|80|  
+|Servidor de site primário filho com um banco de dados do site remoto|8|16|-|  
+|Servidor de banco de dados remoto para um site primário filho|16|72|90|  
+|Servidor do site secundário|8|16|-|  
 
- <sup>1</sup>在同一台计算机上安装站点服务器和 SQL Server 时，部署对站点和客户端支持[调整大小和缩放数量](/sccm/core/plan-design/configs/size-and-scale-numbers)的最大值。 但是，此配置可以限制 [System Center Configuration Manager 的高可用性选项](/sccm/protect/understand/high-availability-options)，像使用 SQL Server 群集那样。 此外，由于支持 SQL Server 和 Configuration Manager 站点服务器所需的 I/O 要求较高，因此在同一台计算机上运行二者时，如果部署较大，最好考虑将配置用于远程 SQL Server 计算机。  
+ <sup>1</sup> Quando o servidor do site e do SQL Server estão instalados no mesmo computador, a implantação dá suporte a um máximo de [números de tamanho e escala](/sccm/core/plan-design/configs/size-and-scale-numbers) para sites e clientes. Porém, essa configuração pode limitar as [opções de alta disponibilidade para o System Center Configuration Manager](/sccm/protect/understand/high-availability-options), como ao usar um cluster do SQL Server. Além disso, por causa dos requisitos de E/S mais elevados necessários para dar suporte tanto ao SQL Server quanto ao servidor do site do Configuration Manager ao executar ambos no mesmo computador, será recomendável considerar o uso de uma configuração com um computador remoto do SQL Server se você tiver uma implantação maior.  
 
-###  <a name="bkmk_RemoteSiteSystem"></a>远程站点系统服务器  
- 以下指南适用于具有单一站点系统角色的计算机。 当在同一台计算机上安装多个站点系统角色时，请计划实施调整。  
+###  <a name="bkmk_RemoteSiteSystem"></a> Servidores do sistema de sites remoto  
+ As diretrizes a seguir são para computadores que contêm uma função de sistema de sites único. Você planeja fazer ajustes ao instalar várias funções de sistema de site no mesmo computador.  
 
-|站点系统角色|CPU（核心数）|内存(GB)|硬盘空间 (GB)|  
+|Função do sistema de site|CPU (núcleos)|Memória (GB)|Espaço em disco (GB)|  
 |----------------------|---------------|---------------|--------------------|  
-|管理点|4|8|50|  
-|分发点|2|8|根据操作系统需要，存储所部署的内容|  
-|应用程序目录（Web 服务和网站在站点系统计算机上）|4|16|50|  
-|软件更新点<sup>1</sup>|8|16|根据操作系统需要，存储所部署的更新|  
-|所有其他站点系统角色|4|8|50|  
+|Ponto de gerenciamento|4|8|50|  
+|Ponto de distribuição|2|8|Conforme exigido pelo sistema operacional e para armazenar o conteúdo que você implantar|  
+|Catálogo de aplicativos, com o serviço Web e o site da Web no computador do sistema de site|4|16|50|  
+|Ponto de atualização de software<sup>1</sup>|8|16|Conforme exigido pelo sistema operacional e para armazenar as atualizações que você implantar|  
+|Todas as outras funções do sistema de site|4|8|50|  
 
- <sup>1</sup>托管软件更新点的计算机对 IIS 应用程序池需要使用以下配置：  
+ <sup>1</sup> O computador que hospeda um ponto de atualização de software exige as seguintes configurações para pools de aplicativos do IIS:  
 
--   将 **WsusPool 队列长度** 增加到 **2000**。  
+-   Aumentar o **Comprimento da Fila de WsusPool** para **2000**.  
 
--   将 **WsusPool 专用内存限制** 增加 4 倍，或设置为 **0**（无限制）。  
+-   Aumentar o **limite da Memória Particular de WsusPool** em quatro vezes ou defini-lo como **0** (ilimitado).  
 
-###  <a name="bkmk_DiskSpace"></a>站点系统的磁盘空间  
- 磁盘分配和配置会影响 Configuration Manager 的性能。 由于每个 Configuration Manager 环境都不同，因此，所实现的值可能会不同于下列指南的值。  
+###  <a name="bkmk_DiskSpace"></a> Espaço em disco para sistemas de sites  
+ A configuração e a alocação de disco contribuem para o desempenho de Configuration Manager. Como cada ambiente do Configuration Manager é diferente, os valores que você implementa podem variar com a seguinte diretriz.  
 
- 为了获得最佳性能，请将每个对象都放在单独、专用的 RAID 卷上。 对于所有数据卷（Configuration Manager 及其数据库文件），请使用 RAID 10 以获得最佳性能。  
+ Para obter o melhor desempenho, coloque cada objeto em um volume RAID separado e dedicado. Para todos os volumes de dados (Configuration Manager e seus arquivos de banco de dados), use RAID 10 para obter o melhor desempenho.  
 
-|数据用途|最小磁盘空间|25,000 个客户端|50,000 个客户端|100,000 个客户端|150,000 个客户端|700,000 个客户端（管理中心站点）|  
+|Uso de dados|Espaço mínimo em disco|25.000 clientes|50.000 clientes|100.000 clientes|150.000 clientes|700.000 clientes (site de administração central)|  
 |----------------|------------------------|--------------------|--------------------|---------------------|---------------------|-----------------------------------------------------|  
-|操作系统|请参阅操作系统指南。|请参阅操作系统指南。|请参阅操作系统指南。|请参阅操作系统指南。|请参阅操作系统指南。|请参阅操作系统指南。|  
-|Configuration Manager 应用程序和日志文件|25 GB|50 GB|100 GB|200 GB|300 GB|200 GB|  
-|站点数据库 .mdf 文件|每 25,000 个客户端 75 GB|75 GB|150 GB|300 GB|500 GB|2 TB|  
-|站点数据库 .ldf 文件|每 25,000 个客户端 25 GB|25 GB|50 GB|100 GB|150 GB|100 GB|  
-|临时数据库文件（.mdf 和 .ldf）|按需而定|按需而定|按需而定|按需而定|按需而定|按需而定|  
-|内容（分发点共享）|按需而定<sup>1</sup>|按需而定<sup>1</sup>|按需而定<sup>1</sup>|按需而定<sup>1</sup>|按需而定<sup>1</sup>|按需而定<sup>1</sup>|  
+|Sistema operacional|Consulte as diretrizes para o sistema operacional.|Consulte as diretrizes para o sistema operacional.|Consulte as diretrizes para o sistema operacional.|Consulte as diretrizes para o sistema operacional.|Consulte as diretrizes para o sistema operacional.|Consulte as diretrizes para o sistema operacional.|  
+|Arquivos de log e aplicativo do Configuration Manager|25 GB|50 GB|100 GB|200 GB|300 GB|200 GB|  
+|Arquivo .mdf do banco de dados do site|75 GB para cada 25.000 clientes|75 GB|150 GB|300 GB|500 GB|2 TB|  
+|Arquivo .ldf do banco de dados do site|25 GB para cada 25.000 clientes|25 GB|50 GB|100 GB|150 GB|100 GB|  
+|Arquivos do banco de dados temporário (. mdf e. ldf)|Conforme necessário|Conforme necessário|Conforme necessário|Conforme necessário|Conforme necessário|Conforme necessário|  
+|Conteúdo (compartilhamentos de ponto de distribuição)|Conforme o necessário<sup>1</sup>|Conforme o necessário<sup>1</sup>|Conforme o necessário<sup>1</sup>|Conforme o necessário<sup>1</sup>|Conforme o necessário<sup>1</sup>|Conforme o necessário<sup>1</sup>|  
 
- <sup>1</sup>磁盘空间指导未包括位于站点服务器或分发点上内容库中的内容所需的空间。 有关规划内容库的信息，请参阅[内容库](../../../core/plan-design/hierarchy/the-content-library.md)。  
+ <sup>1</sup> As diretrizes de espaço em disco não incluem o espaço necessário para o conteúdo localizado na biblioteca de conteúdo no servidor do site ou pontos de distribuição. Para obter informações sobre o planejamento da biblioteca de conteúdo, consulte [A biblioteca de conteúdo](../../../core/plan-design/hierarchy/the-content-library.md).  
 
- 在规划磁盘空间要求时，除了考虑上述指南之外，另请考虑下列指南：  
+ Além das orientações acima, considere as seguintes diretrizes ao planejar requisitos de espaço em disco:  
 
--   每个客户端都需要大约 5 MB 的空间。  
+-   Cada cliente requer aproximadamente 5 MB de espaço.  
 
--   规划主站点的临时数据库大小时，其组合大小应为站点数据库 .mdf 文件大小的 25% 到 30%。 实际大小可能会小得多或大得多，具体取决于站点服务器的性能，以及短期和长期的传入数据量。  
+-   Quando planejar o tamanho do banco de dados temporário de um site primário, planeje um tamanho combinado que seja de 25% a 30% do arquivo .mdf do banco de dados do site. O tamanho real pode ser significativamente menor ou maior, isso depende do desempenho do servidor do site e do volume de dados de entrada durante períodos de tempo curtos e longos.  
 
     > [!NOTE]  
-    >  站点有 50,000 个或更多客户端时，请计划使用 4 个或更多临时数据库 .mdf 文件。  
+    >  Quando tiver 50.000 ou mais clientes em um site, planeje usar quatro ou mais arquivos .mdf do banco de dados temporário.  
 
--   管理中心站点的临时数据库大小通常比主站点的此大小要小得多。  
+-   O tamanho do banco de dados temporário para um site de administração central normalmente é menor do que para um site primário.  
 
--   辅助站点数据库的大小有下列限制：  
+-   O banco de dados do site secundário é limitado em tamanho para:  
 
-    -   SQL Server 2012 Express：10 GB  
+    -   SQL Server 2012 Express: 10 GB  
 
-    -   SQL Server 2014 Express：10 GB  
+    -   SQL Server 2014 Express: 10 GB  
 
-##  <a name="bkmk_ScaleClient"></a>客户端  
- 本部分提供使用 Configuration Manager 客户端软件管理计算机的推荐硬件配置。  
+##  <a name="bkmk_ScaleClient"></a> Clientes  
+ Esta seção fornece as configurações de hardware recomendadas para computadores gerenciados usando o software cliente do Configuration Manager.  
 
-### <a name="client-for-windows-computers"></a>Windows 计算机的客户端  
- 以下是使用 Configuration Manager 管理基于 Windows 的计算机的最低要求，包括嵌入的操作系统：  
+### <a name="client-for-windows-computers"></a>Cliente para computadores Windows  
+ Estes são os requisitos mínimos para computadores baseados no Windows que você gerencia usando o Configuration Manager, incluindo sistemas operacionais inseridos:  
 
--   **处理器和内存：**请参阅计算机操作系统的处理器和 RAM 要求。  
+-   **Processador e memória**: consulte os requisitos de processador e RAM para o sistema operacional do computador.  
 
--   **磁盘空间：**500 MB 可用磁盘空间，含 5 GB 建议用于 Configuration Manager 客户端缓存。 如果使用自定义设置安装 Configuration Manager 客户端，则需要较少的磁盘空间：  
+-   **Espaço em disco:** 500 MB de espaço em disco disponível, com 5 GB recomendados para o cache do cliente do Configuration Manager. Menos espaço em disco será necessário se você usar as configurações personalizadas para instalar o cliente do Configuration Manager:  
 
-    -   使用 CCMSetup 命令行属性/skipprereq 避免安装客户端不需要的文件。 例如，如果客户端不使用应用程序目录，则运行 **CCMSetup.exe /skipprereq:silverlight.exe**。  
+    -   Use a propriedade de linha de comando /skipprereq do CCMSetup para evitar a instalação de arquivos não solicitados pelo cliente. Por exemplo, execute o **CCMSetup.exe /skipprereq:silverlight.exe** se o cliente não usar o catálogo de aplicativos.  
 
-    -   使用 Client.msi 属性 SMSCACHESIZE 设置小于默认为 5120 MB 的缓存文件。 最小大小为 1 MB。 例如， **CCMSetup.exe SMSCachesize=2** 创建大小为 2 MB 的缓存。  
+    -   Use a propriedade SMSCACHESIZE do Client.msi para definir um arquivo de cache que seja menor do que o padrão de 5.120 MB. O tamanho mínimo é 1 MB. Por exemplo, o **CCMSetup.exe SMSCachesize=2** cria um cache que é de 2 MB de tamanho.  
 
-    有关这些客户端安装设置的详细信息，请参阅[关于 System Center Configuration Manager 的客户端安装属性](../../../core/clients/deploy/about-client-installation-properties.md)。  
+    Para obter mais informações sobre essas configurações de instalação do cliente, consulte [Sobre as propriedades de instalação do cliente no System Center Configuration Manager](../../../core/clients/deploy/about-client-installation-properties.md).  
 
     > [!TIP]  
-    >  使用最小磁盘空间安装客户端适用于 Windows Embedded 设备，此设备的磁盘大小通常比标准 Windows 计算机的磁盘大小要小。  
+    >  Instalar o cliente com espaço em disco mínimo é útil para dispositivos com Windows Embedded que normalmente têm tamanhos menores de disco que computadores com Windows padrão.  
 
 
 
- 以下是 Configuration Manager 中可选功能的其他最低硬件要求。  
+ Veja abaixo os requisitos de hardware mínimos adicionais para a funcionalidade opcional no Configuration Manager.  
 
--   **操作系统部署：**384 MB RAM  
+-   **Implantação do sistema operacional:** 384 MB de RAM  
 
--   **软件中心：**500 MHz 处理器  
+-   **Centro de Software:** processador de 500 MHz  
 
--   **远程控制：**Pentium 4 Hyper-Threaded 3 GHz（单核）或类似的 CPU，包含至少 1 GB RAM 以获得最佳体验  
+-   **Controle Remoto:** Pentium 4 Hyper-Threaded 3 GHz (núcleo único) ou CPU comparável, com pelo menos 1 GB de RAM para uma experiência ideal  
 
-### <a name="client-for-linux-and-unix"></a>适用于 Linux 和 UNIX 的客户端  
- 以下是对使用 Configuration Manager 管理的 Linux 和 UNIX 服务器的最低要求。  
+### <a name="client-for-linux-and-unix"></a>Cliente para Linux e UNIX  
+ Estes são os requisitos mínimos para servidores Linux e UNIX que você gerencia com o Configuration Manager.  
 
-|要求|详细信息|  
+|Requisito|Detalhes|  
 |-----------------|-------------|  
-|处理器和内存|请参阅计算机操作系统的处理器和 RAM 要求。|  
-|硬盘空间|500 MB 可用磁盘空间，含 5 GB 建议用于 Configuration Manager 客户端缓存。|  
-|网络连接|Configuration Manager 客户端计算机必须具有到 Configuration Manager 站点系统的网络连接才能启用管理。|  
+|Processador e memória|Consulte os requisitos de RAM e processador para o sistema operacional do computador.|  
+|Espaço em disco|500 MB de espaço em disco disponível, com 5 GB recomendados para o cache do cliente do Configuration Manager.|  
+|Conectividade de rede|Os computadores cliente do Configuration Manager devem ter conectividade de rede com os sistemas de sites do Configuration Manager para habilitar o gerenciamento.|  
 
-##  <a name="bkmk_ScaleConsole"></a> Configuration Manager 控制台  
- 下表中的要求适用于运行 Configuration Manager 控制台的每台计算机。  
+##  <a name="bkmk_ScaleConsole"></a> Console do Configuration Manager  
+ Os requisitos na tabela a seguir se aplicam a cada computador que executa o console do Configuration Manager.  
 
- **最低硬件配置：**  
+ **Configuração mínima de hardware:**  
 
--   Intel i3 或相当的 CPU  
+-   CPU Intel i3 ou comparável  
 
--   2 GB RAM  
+-   2 GB de RAM  
 
--   2 GB 磁盘空间  
+-   2 GB de espaço em disco  
 
-|DPI 设置|最小分辨率|  
+|Configuração de DPI|Resolução mínima|  
 |-----------------|------------------------|  
 |96/100%|1024 x 768|  
 |120/125%|1280 x 960|  
 |144/150%|1600 x 1200|  
 |196/200%|2500 x 1600|  
 
- **支持 PowerShell：**  
+ **Suporte para o PowerShell:**  
 
- 在运行 Configuration Manager 控制台的计算机上安装针对 PowerShell 的支持时，可以在该计算机上运行 PowerShell cmdlet 以管理 Configuration Manager。
+ Quando você instala o suporte para o PowerShell em um computador que executa o console do Configuration Manager, é possível executar os cmdlets do PowerShell nesse computador para gerenciar o Configuration Manager.
 
- - 支持 PowerShell 3.0 或更高版本
+ - Há suporte para PowerShell 3.0 ou posterior
 
-除 PowerShell 以外，还支持 Management Framework (WMF) 版本 3.0 或更高版本。   
+Além do PowerShell, há suporte para o Windows Management Framework (WMF) versão 3.0 ou posterior.   
 
 
-##  <a name="bkmk_ScaleLab"></a>实验室部署  
- 对 Configuration Manager 的实验室和测试部署使用下列建议的最低硬件配置。 这些建议适用于所有站点类型，并可用于最多 100 个客户端：  
+##  <a name="bkmk_ScaleLab"></a> Implantações de laboratório  
+ Use as recomendações mínimas de hardware a seguir para implantações de laboratório e teste do Configuration Manager. Essas recomendações se aplicam a todos os tipos de site, até 100 clientes:  
 
-|角色|CPU（核心数）|内存(GB)|硬盘空间 (GB)|  
+|Função|CPU (núcleos)|Memória (GB)|Espaço em disco (GB)|  
 |----------|---------------|-------------------|-----------------------|  
-|站点和数据库服务器|2 - 4|7 - 12|100|  
-|站点系统服务器|1 - 4|2 - 4|50|  
-|客户端|1 - 2|1 - 3|30|  
+|Servidor de banco de dados e site|2 - 4|7 - 12|100|  
+|Servidor do sistema de site|1 - 4|2 - 4|50|  
+|Cliente|1 - 2|1 - 3|30|  

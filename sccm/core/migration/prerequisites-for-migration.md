@@ -1,6 +1,6 @@
 ---
-title: "迁移先决条件 | Microsoft Docs"
-description: "了解支持的 Configuration Manager 版本、支持的源站点语言和迁移所需的配置。"
+title: "Pré-requisitos de migração | Microsoft Docs"
+description: "Entenda as versões compatíveis do Configuration Manager, os idiomas com suporte do site de origem e as configurações necessárias para migração."
 ms.custom: na
 ms.date: 3/7/2017
 ms.prod: configuration-manager
@@ -18,110 +18,110 @@ manager: angrobe
 ms.openlocfilehash: cd90f5462ac4bb4c0a2021e6d5dde65161b9c5f6
 ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
 ms.translationtype: HT
-ms.contentlocale: zh-CN
+ms.contentlocale: pt-BR
 ms.lasthandoff: 08/07/2017
 ---
-# <a name="prerequisites-for-migration-in-system-center-configuration-manager"></a>System Center Configuration Manager 中迁移的先决条件
+# <a name="prerequisites-for-migration-in-system-center-configuration-manager"></a>Pré-requisitos para a migração no System Center Configuration Manager
 
-*适用范围：System Center Configuration Manager (Current Branch)*
+*Aplica-se a: System Center Configuration Manager (Branch Atual)*
 
-若要从支持的源层次结构中进行迁移，必须拥有对每个适用的 Configuration Manager 源站点的访问权限以及 System Center Configuration Manager 目标站点内的权限，才能配置和运行迁移操作。  
+Para migrar de uma hierarquia de origem com suporte, é necessário ter acesso a cada site de origem aplicável do Configuration Manager e às permissões no site de destino do System Center Configuration Manager para configurar e executar as operações de migração.  
 
- 使用下列部分中的信息可帮助了解迁移支持的 Configuration Manager 版本以及必需的配置。  
+ Use as informações das seções a seguir para ajudá-lo a entender as versões do Configuration Manager que têm suporte para migração, além das configurações necessárias.  
 
--   [迁移支持的 Configuration Manager 版本](#BKMK_SupportedMigrationVersions)  
+-   [Versões do Configuration Manager com suporte para migração](#BKMK_SupportedMigrationVersions)  
 
--   [迁移支持的源站点语言](#BKMK_SorceSiteLanguage)  
+-   [Idiomas do site de origem com suporte para migração](#BKMK_SorceSiteLanguage)  
 
--   [迁移所需的配置](#BKMK_Required_Configurations)  
+-   [Configurações necessárias para a migração](#BKMK_Required_Configurations)  
 
-##  <a name="BKMK_SupportedMigrationVersions"></a> 迁移支持的 Configuration Manager 版本  
- 可以从运行以下任何版本的 Configuration Manager 的源层次结构迁移数据：  
+##  <a name="BKMK_SupportedMigrationVersions"></a> Versões do Configuration Manager com suporte para migração  
+ Você pode migrar dados de uma hierarquia de origem que executa qualquer uma das seguintes versões do Configuration Manager:  
 
--   Configuration Manager 2007 SP2（对于迁移，不考虑使用源站点上的 Configuration Manager 2007 R2 或 R3。 只要源站点运行 SP2，就会支持将安装有 R2 或 R3 加载项的站点迁移到 System Center Configuration Manager）。  
+-   Configuration Manager 2007 SP2 (para fins de migração, o Configuration Manager 2007 R2 ou R3 no site de origem não são considerados. Contanto que o site de origem execute o SP2, os sites com o complemento R2 ou R3 instalado contam com suporte para migração para o System Center Configuration Manager).  
 
--   System Center 2012 Configuration Manager SP2 或 System Center 2012 R2 Configuration Manager SP1。  
+-   System Center 2012 Configuration Manager SP2 ou System Center 2012 R2 Configuration Manager SP1.  
 
     > [!TIP]  
-    >  除迁移外，还可以将运行 System Center 2012 Configuration Manager 的站点就地升级到 System Center Configuration Manager。  
+    >  Além de migração, você pode usar uma atualização in-loco de sites que executam o System Center 2012 Configuration Manager para o System Center Configuration Manager.  
 
--   相同或更低版本的 System Center Configuration Manager 的 System Center Configuration Manager 层次结构。  
+-   Uma hierarquia do System Center Configuration Manager da mesma versão ou de versão inferior do System Center Configuration Manager.  
 
-  例如，如果具有运行 System Center Configuration Manager 1606 的目标层次结构，则可以使用迁移复制运行 1606 或 1602 版本的源层次结构中的数据。 但是不能迁移运行 1610 版的源层次结构中的数据。  
+  Por exemplo, se você tiver uma hierarquia de destino que executa o System Center Configuration Manager 1606, use a migração para copiar dados de uma hierarquia de origem que executa a versão 1606 ou 1602. No entanto, não é possível migrar dados de uma hierarquia de origem que executa o 1610.  
 
 
-##  <a name="BKMK_SorceSiteLanguage"></a> 迁移支持的源站点语言  
- 在 Configuration Manager 层次结构之间迁移数据时，数据将采用 System Center Configuration Manager 的语言中性格式存储在目标层次结构中。 由于 Configuration Manager2007 不采用语言中性格式存储数据，因此在从 Configuration Manager2007 迁移的过程中，迁移过程必须将对象转换为此格式。 因此，迁移只支持安装有以下语言的 Configuration Manager 2007 源站点：  
+##  <a name="BKMK_SorceSiteLanguage"></a> Idiomas do site de origem com suporte para migração  
+ Ao migrar dados entre as hierarquias do Configuration Manager, eles são armazenados na hierarquia de destino em formato de idioma neutro para o System Center Configuration Manager. Devido ao fato de o Configuration Manager 2007 não armazenar os dados em um formato de idioma neutro, o processo de migração deve converter os objetos nesse formato durante a migração do Configuration Manager 2007. Portanto, somente os sites de origem do Configuration Manager 2007 instalados com os seguintes idiomas têm suporte para migração:  
 
--   英语  
+-   Inglês  
 
--   法语  
+-   Francês  
 
--   德语  
+-   Alemão  
 
--   日语  
+-   Japonês  
 
--   朝鲜语  
+-   Coreano  
 
--   俄语  
+-   Russo  
 
--   简体中文  
+-   Chinês simplificado  
 
--   繁体中文  
+-   Chinês tradicional  
 
-从 System Center 2012 Configuration Manager 或 System Center Configuration Manager 层次结构中迁移数据时，没有源站点语言限制。 源站点数据库中的对象已采用语言中性格式。  
+Quando você migra dados de uma hierarquia do System Center 2012 Configuration Manager ou do System Center Configuration Manager, não há limitações de idioma do site de origem. Os objetos do banco de dados do site de origem já estão em um formato de idioma neutro.  
 
-##  <a name="BKMK_Required_Configurations"></a> 迁移所需的配置  
-下面列出了使用迁移所需的配置以及迁移操作：  
+##  <a name="BKMK_Required_Configurations"></a> Configurações necessárias para a migração  
+Veja a seguir as configurações necessárias para o uso da migração e de suas operações.  
 
--   **在 Configuration Manager 控制台中配置、运行和监视迁移：**  
+-   **Para configurar, executar e monitorar a migração no console do Configuration Manager:**  
 
-     在目标站点中，必须为你的帐户分配基于角色的管理安全角色“基础结构管理员” 。 此安全角色授予用于管理所有迁移操作的权限，这些操作包括创建迁移作业、清理、监视以及共享和升级分发点的操作。  
+     No site de destino, sua conta deve ser atribuída à função de segurança de administração baseada em funções do **Administrador de Infraestrutura**. Essa função de segurança concede permissões para gerenciamento de todas as operações de migração, que incluem criação de trabalhos de migração, limpeza, monitoramento e a ação de compartilhar e atualizar os pontos de distribuição.  
 
--   **数据收集：**  
+-   **Coleta de dados:**  
 
-     要使目标站点能够收集数据，你必须配置以下两个源站点访问帐户以与每个源站点一起使用：  
+     Para habilitar o site de destino para coletar dados, é necessário configurar as duas contas de acesso ao site de origem demonstradas a seguir para uso em todo site de origem:  
 
-    -   **源站点帐户：** 此帐户用于访问源站点的 SMS 提供程序。  
+    -   **Conta do Site de Origem:** essa conta é usada para acessar o Provedor de SMS do site de origem.  
 
-        -   对于 Configuration Manager2007 SP2 源站点，此帐户需要对所有源站点对象具有“读取”权限。  
+        -   Para sites de origem do Configuration Manager 2007 SP2, essa conta necessita de permissão de **Leitura** para todos os objetos do site de origem.  
 
-        -   对于 System Center 2012 Configuration Manager 或 System Center Configuration Manager 源站点，此帐户需要对所有源站点对象具有“读取”权限，可通过使用基于角色的管理向帐户授予此权限。 有关如何使用基于角色的管理的信息，请参阅 [Fundamentals of role-based administration for System Center Configuration Manager](../../core/understand/fundamentals-of-role-based-administration.md)。  
+        -   Para um site de origem do System Center 2012 Configuration Manager ou do System Center Configuration Manager, essa conta exige permissão de **Leitura** para todos os objetos do site de origem. Você concede essa permissão à conta usando a administração baseada em funções. Para obter informações sobre como usar a administração baseada em funções, consulte [Fundamentals of role-based administration for System Center Configuration Manager](../../core/understand/fundamentals-of-role-based-administration.md).  
 
-    -   **源站点数据库帐户：** 此帐户用于访问源站点的 SQL Server 数据库，并需要源站点数据库的 **Connect**、 **Execute**和 **Select** 权限。  
+    -   **Conta do Banco de Dados do Site de Origem:** essa conta é usada para acessar o banco de dados do SQL Server do site de origem e exige as permissões **Connect**, **Execute**e **Select** para o banco de dados do site de origem.  
 
-    你可以在配置新的源层次结构、其他源站点的数据收集或在为源站点重新配置凭据时配置这些帐户。 这些帐户可以使用域用户帐户，或者你可以指定目标层次结构的顶层站点的计算机帐户。  
+    Você pode configurar essas contas definindo uma nova hierarquia de origem, uma coleta de dados para um site de origem adicional, ou reconfigurando as credenciais para um site de origem. Essas contas podem usar uma conta de usuário do domínio ou então você pode especificar a conta de computador do site de nível superior da hierarquia de destino.  
 
     > [!IMPORTANT]  
-    >  如果为任一访问帐户使用 Configuration Manager 计算机帐户，请确保此帐户是源站点所在域中“分布式 COM 用户”安全组的成员。  
+    >  Se você usar a conta de computador do Configuration Manager para as contas de acesso, verifique se a conta é membro do grupo de segurança **Distributed COM – Usuários** no domínio no qual o site de origem reside.  
 
-    在收集数据时，将使用以下网络协议和端口：  
+    Ao coletar dados, os seguintes protocolos e portas de rede são usados:  
 
-    -   NetBIOS/SMB - 445 (TCP)  
+    -   NetBIOS/SMB – 445 (TCP)  
 
     -   RPC (WMI) - 135 (TCP)  
 
-    -   SQL Server - 源站点数据库和目标站点数据库同时使用的 TCP 端口。  
+    -   SQL Server - portas TCP usadas pelos bancos de dados de sites de origem e de destino.  
 
--   **迁移软件更新：**  
+-   **Migrar atualizações de software:**  
 
-     在迁移软件更新之前，你必须配置包含软件更新点的目标层次结构。 有关详细信息，请参阅[规划软件更新迁移](../../core/migration/planning-for-the-migration-of-objects.md#Plan_migrate_Software_updates)。  
+     Para poder migrar as atualizações de software, é necessário configurar a hierarquia de destino com um ponto de atualização de software. Para obter mais informações, consulte [Planejando a migração de atualização de Software](../../core/migration/planning-for-the-migration-of-objects.md#Plan_migrate_Software_updates).  
 
--   **共享分发点：**  
+-   **Compartilhar pontos de distribuição:**  
 
-     要成功共享源站点中的任何分发点，目标层次结构中的至少一个主站点或管理中心站点必须为客户端请求使用与源站点一样的端口号。 有关客户端请求端口的信息，请参阅[如何在 System Center Configuration Manager 中配置客户端通信端口](../../core/clients/deploy/configure-client-communication-ports.md)  
+     Para compartilhar com êxito pontos de distribuição do site de origem, pelo menos um site primário ou o site de administração central na hierarquia de destino deve usar os mesmos números de porta para as solicitações do cliente que os do site de origem. Para obter informações sobre portas de solicitação de cliente, consulte [Como configurar portas de comunicação do cliente no System Center Configuration Manager](../../core/clients/deploy/configure-client-communication-ports.md)  
 
-     对于每个源站点，只会共享在使用 FQDN 配置的站点系统服务器上安装的分发点。  
+     Para todo site de origem, são compartilhados somente os pontos de distribuição instalados nos servidores do sistema de site configurados com um FQDN.  
 
-     此外，要共享 System Center 2012 Configuration Manager 或 System Center Configuration Manager 源站点中的分发点，“源站点帐户”（此帐户访问源站点服务器的 SMS 提供程序）必须具有对源站点上“站点”对象的“修改”权限。 通过使用基于角色的管理来向帐户授予此权限。 有关如何使用基于角色的管理的信息，请参阅 [Fundamentals of role-based administration for System Center Configuration Manager](../../core/understand/fundamentals-of-role-based-administration.md)。  
+     Além disso, para compartilhar um ponto de distribuição de um site de origem do System Center 2012 Configuration Manager ou do System Center Configuration Manager, a **Conta de Site de Origem** (que acessa o Provedor de SMS para o servidor do site de origem) deve ter permissões **Modificar** para o objeto **Site** no site de origem. Você pode conceder essa permissão para a conta usando a administração baseada em funções. Para obter informações sobre como usar a administração baseada em funções, consulte [Fundamentals of role-based administration for System Center Configuration Manager](../../core/understand/fundamentals-of-role-based-administration.md).  
 
 
--   **升级或重新分配分发点：**  
+-   **Atualizar ou reatribuir pontos de distribuição:**  
 
-     配置为从源站点的 SMS 提供程序中收集数据的“源站点访问帐户”  必须拥有以下权限：  
+     A **Conta de Acesso do Site de Origem** configurada para coletar dados do Provedor de SMS do site de origem deve possuir as seguintes permissões:  
 
-    -   若要升级 Configuration Manager2007 分发点，该帐户需要拥有对 Configuration Manager2007 站点服务器上“站点”类的“读取”、“执行”和“删除”权限，才能成功删除 Configuration Manager2007 源站点中的分发点  
+    -   Para atualizar um ponto de distribuição do Configuration Manager 2007, a conta necessita das permissões de **Leitura**, **Executar** e **Excluir** para a classe do **Site** no servidor do site do Configuration Manager 2007 para remover com êxito o ponto de distribuição do site de origem do Configuration Manager 2007  
 
-    -   若要重新分配 System Center 2012 Configuration Manager 或 System Center Configuration Manager 分发点，该帐户必须对源站点上的“站点”对象具有“修改”权限。 通过使用基于角色的管理来向帐户授予此权限。 有关如何使用基于角色的管理的信息，请参阅 [Fundamentals of role-based administration for System Center Configuration Manager](../../core/understand/fundamentals-of-role-based-administration.md)。  
+    -   Para reatribuir um ponto de distribuição do System Center 2012 Configuration Manager ou do System Center Configuration Manager, a conta deve ter uma permissão **Modificar** para o objeto **Site** no site de origem. Você pode conceder essa permissão para a conta usando a administração baseada em funções. Para obter informações sobre como usar a administração baseada em funções, consulte [Fundamentals of role-based administration for System Center Configuration Manager](../../core/understand/fundamentals-of-role-based-administration.md).  
 
-     若要成功将分发点升级或重新分配到新层次结构，为源层次结构中用于管理分发点的站点上的客户端请求配置的端口必须与为将用于管理分发点的目标站点上的客户端请求配置的端口匹配。 有关客户端请求端口的信息，请参阅[如何在 System Center Configuration Manager 中配置客户端通信端口](../../core/clients/deploy/configure-client-communication-ports.md)。  
+     Para atualizar ou reatribuir com sucesso um ponto de distribuição a uma nova hierarquia, as portas configuradas para solicitações de cliente no site que gerencia o ponto de distribuição na hierarquia de origem deve ser igual às portas que estão configuradas para solicitações de cliente no site de destino que irá gerenciar o ponto de distribuição. Para obter informações sobre portas de solicitação de cliente, consulte [Como configurar portas de comunicação do cliente no System Center Configuration Manager](../../core/clients/deploy/configure-client-communication-ports.md).  

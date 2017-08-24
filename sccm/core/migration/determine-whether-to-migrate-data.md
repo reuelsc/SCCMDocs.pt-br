@@ -1,6 +1,6 @@
 ---
-title: "选择要迁移的内容 | Microsoft Docs"
-description: "了解可以迁移的数据以及不能迁移到 System Center Configuration Manager 的数据。"
+title: Escolha o que migrar | Microsoft Docs
+description: "Saiba quais dados você pode migrar e quais dados você não pode migrar para o System Center Configuration Manager."
 ms.custom: na
 ms.date: 12/29/2016
 ms.prod: configuration-manager
@@ -18,171 +18,171 @@ manager: angrobe
 ms.openlocfilehash: 9dc5f6c9f58e1fc33b2dc9dd76737ae23af81993
 ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
 ms.translationtype: HT
-ms.contentlocale: zh-CN
+ms.contentlocale: pt-BR
 ms.lasthandoff: 08/07/2017
 ---
-# <a name="determine-whether-to-migrate-data-to-system-center-configuration-manager"></a>确定是否将数据迁移到 System Center Configuration Manager
+# <a name="determine-whether-to-migrate-data-to-system-center-configuration-manager"></a>Determinar se realizará ou não a migração de dados para o System Center Configuration Manager
 
-*适用范围：System Center Configuration Manager (Current Branch)*
+*Aplica-se a: System Center Configuration Manager (Branch Atual)*
 
-在 System Center Configuration Manager 中，迁移提供了一个进程，用于将从 Configuration Manager 的受支持版本中创建的数据和配置迁移到新的层次结构。  可用它来执行以下操作：  
+No System Center Configuration Manager, a migração fornece um processo para a transferência de dados e configurações que você criou de versões do Configuration Manager com suporte para sua nova hierarquia.  Você pode usá-la para:  
 
--   将多个层次结构合为一个。  
+-   Combinar várias hierarquias em uma.  
 
--   将数据和配置从实验室部署移动到生产部署中。
+-   Mover dados e configurações de uma implantação de laboratório para sua implantação de produção.
 
--   从没有指向 System Center Configuration Manager 的升级路径的早期版本 Configuration Manager（如 Configuration Manager 2007）或是从 System Center 2012 Configuration Manager（支持指向 System Center Configuration Manager 的升级路径）移动数据和配置。  
+-   Mover dados e configuração de uma versão do Configuration Manager anterior, como o Configuration Manager 2007, que não tem nenhum caminho de atualização para o System Center Configuration Manager ou do System Center 2012 Configuration Manager (que dá suporte a um caminho de atualização para o System Center Configuration Manager).  
 
-除了分发点站点系统角色和承载分发点的计算机外，没有基础结构（包括站点、站点系统角色或承载站点系统角色的计算机）会迁移、传输或可在层次结构之间共享。  
+Com exceção da função do sistema de site do ponto de distribuição e dos computadores que hospedam pontos de distribuição, nenhuma infraestrutura (o que inclui sites, funções do sistema de site e computadores que hospedam uma função do sistema de site) migra, transfere ou pode ser compartilhada entre hierarquias.  
 
- 尽管你无法迁移服务器基础结构，但可以在层次结构之间迁移 Configuration Manager 客户端。 客户端迁移涉及将客户端使用的数据从源层次结构迁移到目标层次结构，然后将安装或重新分配客户端软件以便客户端随后可向新层次结构报告。
+ Embora não seja possível migrar a infraestrutura do servidor, é possível migrar clientes do Configuration Manager entre hierarquias. A migração de cliente envolve migrar os dados que os clientes usam da hierarquia de origem para a hierarquia de destino e instalar ou reatribuir o software cliente de forma que o cliente se reporte à nova hierarquia.
 
-将客户端安装到新层次结构并且客户端提交其数据后，其唯一的 Configuration Manager ID 可帮助 Configuration Manager 将以前迁移的数据与每台客户端计算机关联。  
+Após instalar um cliente na nova hierarquia e o cliente enviar seus dados, sua ID exclusiva do Configuration Manager ajuda o Configuration Manager a associar os dados que você migrou anteriormente com cada computador cliente.  
 
- 迁移提供的功能有助于维护在配置和部署中进行的投资，同时使用户能够充分利用在 System Center 2012 Configuration Manager 中首次引入且在 System Center Configuration Manager 中继续使用的产品核心更改。 这些更改包括使用更少的站点和资源的简化 Configuration Manager 层次结构，以及通过使用运行于 64 位硬件上的本机 64 位代码改善了处理。  
+ A funcionalidade que é proporcionada pela migração ajuda você a manter investimentos feitos em configurações e implantações e aproveitar totalmente as alterações principais do produto, introduzidas pela primeira vez no System Center 2012 Configuration Manager e então, continuadas no System Center Configuration Manager. Essas alterações incluem uma hierarquia simplificada do Configuration Manager, que usa menos sites e recursos, e o processamento melhorado que vem com o uso do código nativo de 64 bits executado em hardware de 64 bits.  
 
- 有关迁移支持的 Configuration Manager 的版本信息，请参阅 [System Center Configuration Manager 中迁移的先决条件](../../core/migration/prerequisites-for-migration.md)。  
+ Para obter informações sobre as versões do Configuration Manager que têm suporte pela migração, consulte [Pré-requisitos para a migração no System Center Configuration Manager](../../core/migration/prerequisites-for-migration.md).  
 
- 下列部分可帮助规划可迁移或无法迁移的数据：  
+ As seções a seguir ajudam a planejar os dados que você pode ou não pode migrar:  
 
--   [可迁移到 System Center Configuration Manager 的数据](#Can_Migrate)  
+-   [Dados que você pode migrar para o System Center Configuration Manager](#Can_Migrate)  
 
--   [无法迁移到 System Center Configuration Manager 的数据](#Cannot_migrate)  
+-   [Dados que você não pode migrar para o System Center Configuration Manager](#Cannot_migrate)  
 
-##  <a name="Can_Migrate"></a>可迁移到 System Center Configuration Manager 的数据  
- 迁移可在支持的 Configuration Manager 层次结构之间迁移大多数对象。 必须对从支持的 Configuration Manager 2007 版本中迁移的某些对象实例进行修改，以符合 System Center 2012 Configuration Manager 架构和对象格式。
+##  <a name="Can_Migrate"></a> Dados que você pode migrar para o System Center Configuration Manager  
+ A migração pode migrar a maioria dos objetos entre as hierarquias com suporte do Configuration Manager. É necessário modificar as instâncias migradas de alguns objetos de uma versão com suporte do Configuration Manager 2007 para estar em conformidade com o esquema e o formato de objeto do System Center 2012 Configuration Manager.
 
-这些修改不影响源站点数据库中的数据。 从受支持版本的 System Center 2012 Configuration Manager 或 System Center Configuration Manager 迁移的对象无需修改。  
+Essas modificações não afetam os dados no banco de dados do site de origem. Objetos que são migrados de uma versão com suporte do System Center 2012 Configuration Manager ou do System Center Configuration Manager não requerem modificação.  
 
- 下面是基于源层次结构中的 Configuration Manager 版本可迁移的对象。 某些对象（与查询）不会迁移。 如果要继续使用这些不迁移的对象，你必须在新层次结构中重新创建它们。 当在新层次结构中管理客户端时，会在该层次结构中自动重新创建其他对象（包括某些客户端数据）。  
+ Veja a seguir os objetos que podem migrar com base na versão do Configuration Manager na hierarquia de origem. Alguns objetos, como consultas, não migram. Se você quiser continuar usando esses objetos que não migram, será preciso recriá-los na nova hierarquia. Outros objetos, incluindo alguns dados do cliente, são recriados automaticamente na nova hierarquia quando os clientes são gerenciados nessa hierarquia.  
 
-### <a name="objects-that-you-can-migrate-from-system-center-2012-configuration-manager-or-system-center-configuration-manager-current-branch"></a>可以从 System Center 2012 Configuration Manager 或 System Center Configuration Manager Current Branch 迁移的对象
+### <a name="objects-that-you-can-migrate-from-system-center-2012-configuration-manager-or-system-center-configuration-manager-current-branch"></a>Objetos que você pode migrar do System Center 2012 Configuration Manager ou do branch atual do System Center Configuration Manager
 
--   播发  
+-   Anúncios  
 
--   适用于 System Center 2012 Configuration Manager 及更高版本的应用程序  
+-   Aplicativos para o System Center 2012 Configuration Manager e versões posteriores  
 
--   适用于 System Center 2012 Configuration Manager 及更高版本的 App-V 虚拟环境  
+-   Ambiente Virtual do App-V do System Center 2012 Configuration Manager e versões posteriores  
 
--   资产智能自定义项  
+-   Personalizações do Asset Intelligence  
 
--   边界  
+-   Limites  
 
--   集合：若要从支持的 System Center 2012 Configuration Manager 或 System Center Configuration Manager 版本迁移集合，可以使用对象迁移作业。  
+-   Coleções: para migrar coleções de uma versão com suporte do System Center 2012 Configuration Manager ou do System Center Configuration Manager, use um trabalho de migração de objeto.  
 
--   符合性设置：  
+-   Configurações de conformidade:  
 
-    -   配置基线  
+    -   Linhas de base de configuração  
 
-    -   配置项目  
+    -   Itens de configuração  
 
--   操作系统部署：  
+-   Implantação de sistema operacional:  
 
-    -   启动映像  
+    -   Imagens de inicialização  
 
-    -   驱动程序包  
+    -   Pacotes de driver  
 
-    -   驱动程序  
+    -   Drivers  
 
-    -   映像  
+    -   Imagens  
 
-    -   包  
+    -   Pacotes  
 
-    -   任务序列  
+    -   Sequências de tarefas  
 
--   搜索结果：保存的搜索条件  
+-   Resultados da pesquisa: critérios de pesquisa salvos  
 
--   软件更新：  
+-   Atualizações de software:  
 
-    -   部署  
+    -   Implantações  
 
-    -   部署包  
+    -   Pacotes de implantação  
 
-    -   模板  
+    -   Modelos  
 
-    -   软件更新列表  
+    -   Listas de atualizações de software  
 
--   软件分发包  
+-   Pacotes de distribuição de software  
 
--   软件计数规则  
+-   Regras de medição de software  
 
--   虚拟应用程序包  
+-   Pacotes de aplicativos virtuais  
 
-### <a name="objects-that-you-can-migrate-from-configuration-manager-2007-sp2"></a>可以从 Configuration Manager 2007 SP2 迁移的对象
+### <a name="objects-that-you-can-migrate-from-configuration-manager-2007-sp2"></a>Objetos que você pode migrar do Configuration Manager 2007 SP2
 
--   播发  
+-   Anúncios  
 
--   适用于 System Center 2012 Configuration Manager 及更高版本的应用程序  
+-   Aplicativos para o System Center 2012 Configuration Manager e versões posteriores  
 
--   适用于 System Center 2012 Configuration Manager 及更高版本的 App-V 虚拟环境  
+-   Ambiente Virtual do App-V do System Center 2012 Configuration Manager e versões posteriores  
 
--   资产智能自定义项  
+-   Personalizações do Asset Intelligence  
 
--   边界  
+-   Limites  
 
--   集合：可使用集合迁移作业从支持的 Configuration Manager 2007 版本迁移集合。  
+-   Coleções: você migra coleções de uma versão com suporte do Configuration Manager 2007 usando um trabalho de migração de coleção.  
 
--   符合性设置（在 Configuration Manager 2007 中称为所需的配置管理）：  
+-   Configurações de conformidade (conhecidas como gerenciamento de configurações desejadas no Configuration Manager 2007):  
 
-    -   配置基线  
+    -   Linhas de base de configuração  
 
-    -   配置项目  
+    -   Itens de configuração  
 
--   操作系统部署：  
+-   Implantação de sistema operacional:  
 
-    -   启动映像  
+    -   Imagens de inicialização  
 
-    -   驱动程序包  
+    -   Pacotes de driver  
 
-    -   驱动程序  
+    -   Drivers  
 
-    -   映像  
+    -   Imagens  
 
-    -   包  
+    -   Pacotes  
 
-    -   任务序列  
+    -   Sequências de tarefas  
 
--   搜索结果：搜索文件夹  
+-   Resultados da pesquisa: pastas de pesquisa  
 
--   软件更新：  
+-   Atualizações de software:  
 
-    -   部署  
+    -   Implantações  
 
-    -   部署包  
+    -   Pacotes de implantação  
 
-    -   模板  
+    -   Modelos  
 
-    -   软件更新列表  
+    -   Listas de atualizações de software  
 
--   软件分发包  
+-   Pacotes de distribuição de software  
 
--   软件计数规则  
+-   Regras de medição de software  
 
--   虚拟应用程序包  
+-   Pacotes de aplicativos virtuais  
 
-##  <a name="Cannot_migrate"></a>不可迁移到 System Center Configuration Manager 的数据  
- 你无法迁移下列类型的对象：  
+##  <a name="Cannot_migrate"></a> Dados que você não pode migrar para o System Center Configuration Manager  
+ Não é possível migrar os seguintes tipos de objetos:  
 
--   AMT 客户端设置信息  
+-   Informações de provisionamento de cliente AMT  
 
--   客户端上的文件，包括：  
+-   Arquivos em clientes, incluindo:  
 
-    -   客户端清单和历史记录数据  
+    -   Dados de inventário e histórico do cliente  
 
-    -   客户端缓存中的文件  
+    -   Arquivos no cache do cliente  
 
--   查询  
+-   Consultas  
 
--   Configuration Manager 2007 安全权限以及站点和对象的实例  
+-   Instâncias e direitos de segurança do Configuration Manager 2007 para o site e os objetos  
 
--   SQL Server Reporting Services 中的 Configuration Manager 2007 报表  
+-   Relatórios do Configuration Manager 2007 do SQL Server Reporting Services  
 
--   Configuration Manager 2007 Web 报表  
+-   Relatórios da Web do Configuration Manager 2007  
 
--   System Center 2012 Configuration Manager 和 System Center Configuration Manager 报表  
+-   Relatórios do System Center 2012 Configuration Manager e do System Center Configuration Manager  
 
--   System Center 2012 Configuration Manager 和 System Center Configuration Manager 基于角色的管理：  
+-   Administração baseada em função do System Center 2012 Configuration Manager e do System Center Configuration Manager:  
 
-    -   安全角色  
+    -   Funções de segurança  
 
-    -   安全作用域  
+    -   Escopos de segurança  

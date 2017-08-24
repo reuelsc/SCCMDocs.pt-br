@@ -1,6 +1,6 @@
 ---
-title: "规划软件更新 | Microsoft Docs"
-description: "在 System Center Configuration Manager 生产环境中使用软件更新之前，需要规划软件更新点基础结构。"
+title: "Planejar atualizações de software | Microsoft Docs"
+description: "É essencial ter um plano para a infraestrutura de ponto de atualização de software antes de usar atualizações de software em um ambiente de produção do System Center Configuration Manager."
 keywords: 
 author: dougeby
 ms.author: dougeby
@@ -14,176 +14,176 @@ ms.assetid: d071b0ec-e070-40a9-b7d4-564b92a5465f
 ms.openlocfilehash: 8b739a01a6bb5cacf0f7109e2e6fa3b31dd666d3
 ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
 ms.translationtype: HT
-ms.contentlocale: zh-CN
+ms.contentlocale: pt-BR
 ms.lasthandoff: 08/07/2017
 ---
-# <a name="plan-for-software-updates-in-system-center-configuration-manager"></a>在 System Center Configuration Manager 中规划软件更新
+# <a name="plan-for-software-updates-in-system-center-configuration-manager"></a>Planejar atualizações de software no System Center Configuration Manager
 
-*适用范围：System Center Configuration Manager (Current Branch)*
+*Aplica-se a: System Center Configuration Manager (Branch Atual)*
 
-在 System Center Configuration Manager 生产环境中使用软件更新之前，需进行规划过程，这点十分重要。 很好地规划软件更新点基础结构对于成功的软件更新实现十分关键。
+Antes de usar atualizações de software em um ambiente de produção do System Center Configuration Manager, é importante que você passe pelo processo de planejamento. Ter um bom plano para a infraestrutura de ponto de atualização de software é fundamental para uma implementação bem-sucedida das atualizações de software.
 
-## <a name="capacity-planning-recommendations-for-software-updates"></a>软件更新的容量规划建议  
- 你可以使用下列建议作为基准，可帮助你确定适合于你的组织的软件更新容量规划的信息。 实际容量要求可能会与本主题中列出的建议有所不同，具体取决于以下标准：你的特定网络环境、用于承载软件更新点站点系统的硬件、安装的客户端的数量，以及服务器上安装的站点系统角色。  
+## <a name="capacity-planning-recommendations-for-software-updates"></a>Recomendações de planejamento de capacidade para atualizações de software  
+ Você pode usar as seguintes recomendações como uma linha de base que pode ajudá-lo a determinar as informações para o planejamento de capacidade de atualizações de software apropriadas para sua organização. Os requisitos de capacidade real podem variar das recomendações listadas neste tópico dependendo dos seguintes critérios: o ambiente de rede específico, o hardware usado para hospedar o sistema de sites do ponto de atualização de software, o número de clientes instalados e as funções do sistema de sites instaladas no servidor.  
 
-###  <a name="BKMK_SUMCapacity"></a> 软件更新点的容量规划  
- 受支持客户端的数量取决于在软件更新点上运行的 Windows Server Update Services (WSUS) 版本，并且还取决于软件更新点站点系统角色是否与另一站点系统角色并存：  
+###  <a name="BKMK_SUMCapacity"></a> Planejamento de capacidade para o ponto de atualização de software  
+ O número de clientes com suporte depende da versão do WSUS (Windows Server Update Services) executada no ponto de atualização de software e também depende de se a função do sistema de sites do ponto de atualização de software coexiste ou não com outra função do sistema de sites:  
 
--   当 WSUS 运行在软件更新点计算机上并且该软件更新点与另一站点系统角色并存时，软件更新点最多可支持 25,000 个客户端。  
+-   O ponto de atualização de software pode dar suporte a até 25.000 clientes quando o WSUS é executado no computador do ponto de atualização de software e quando o ponto de atualização de software coexiste com outra função do sistema de sites.  
 
--   在远程计算机满足 WSUS 要求、将 WSUS 与 Configuration Manager 配合使用，并进行以下配置时，软件更新点最多可支持 150,000 个客户端：
+-   O ponto de atualização de software pode oferecer suporte a até 150.000 clientes quando o computador remoto atende aos requisitos do WSUS. O WSUS é usado com o Configuration Manager e você configura o seguinte:
 
-    IIS 应用程序池：
-    - 将 WsusPool 队列长度增加到 2000
-    - 将 WsusPool 专用内存限制增加 4 倍，或设置为 0（无限制）      
+    Pool de Aplicativos do IIS:
+    - Aumentar o Comprimento da Fila de WsusPool para 2000
+    - Aumentar em o limite da Memória Particular do WsusPool para 4 vezes mais ou defini-lo como 0 (ilimitado)      
 
-    有关软件更新点的硬件要求的详细信息，请参阅[推荐的站点系统硬件](/sccm/core/plan-design/configs/recommended-hardware#a-namebkmkscalesiesystemsa-site-systems)。
+    Para obter detalhes sobre os requisitos de hardware para o ponto de atualização de software, consulte [Hardware recomendado para sistemas de sites](/sccm/core/plan-design/configs/recommended-hardware#a-namebkmkscalesiesystemsa-site-systems).
 
--   默认情况下，Configuration Manager 不支持将软件更新点配置为 NLB 群集。 在 Configuration Manager 版本 1702 之前，可以使用 Configuration Manager SDK 在 NLB 群集上配置最多 4 个软件更新点。 但是，从 Configuration Manager 版本 1702 开始，软件更新点不再作为 NLB 群集支持，并且如果检测到此配置，则会阻止升级到 Configuration Manager 版本 1702。
+-   Por padrão, o Configuration Manager não dá suporte à configuração de pontos de atualização de software como clusters de NLB. Antes da versão 1702 do Configuration Manager, era possível usar o SDK do Configuration Manager para configurar até quatro pontos de atualização de software em um cluster de NLB. No entanto, a partir do Configuration Manager versão 1702, não há suporte para os pontos de atualização de software como clusters NLB, e as atualizações para o Configuration Manager versão 1702 serão bloqueadas se essa configuração for detectada.
 
-### <a name="capacity-planning-for-software-updates-objects"></a>软件更新对象的容量规划  
- 使用下列容量信息来规划软件更新对象。  
+### <a name="capacity-planning-for-software-updates-objects"></a>Planejamento de capacidade para objetos de atualizações de software  
+ Use as seguintes informações de capacidade para planejar objetos de atualizações de software.  
 
--   **部署中 1000 个软件更新的限制**  
+-   **Limite de 1000 atualizações de software em uma implantação**  
 
-     你必须为每个软件更新部署将软件更新数限制为 1000。 在创建自动部署规则时，请指定一个条件，该条件限制返回的软件更新的数量。 如果指定的条件返回超过 1000 个软件更新，自动部署规则将失败。 你可以在 Configuration Manager 控制台的“自动部署规则”节点中查看自动部署规则的状态。 在手动部署软件更新时，请不要选择超过 1000 个更新进行部署。  
+     É necessário limitar o número de atualizações de software a 1000 para cada implantação de atualização de software. Ao criar uma regra de implantação automática, especifique os critérios que limitam o número de atualizações de software que serão retornadas. A regra de implantação automática falha quando os critérios que você especifica retornam mais de 1000 atualizações de software. É possível verificar o status da regra de implantação automática no nó **Regras de Implantação Automática** no console do Configuration Manager. Ao implantar atualizações de software manualmente, não selecione mais de 1.000 atualizações para implantar.  
 
-     还必须在配置基线中将软件更新数限制为 1000。 有关详细信息，请参阅[创建配置基线](../../compliance/deploy-use/create-configuration-baselines.md)。
+     Você também precisa limitar o número de atualizações de software a 1.000 em uma linha de base de configuração. Para obter mais informações, consulte [Criar linhas de base de configuração](../../compliance/deploy-use/create-configuration-baselines.md).
 
-##  <a name="BKMK_SUPInfrastructure"></a> 确定软件更新点基础结构  
- 管理中心站点和所有子主站点必须有你将在其中部署软件更新的软件更新点。 在规划软件更新点基础结构时，你需要确定下列依赖关系：
- - 在何处安装站点软件更新点
- - 哪些站点需要接受来自基于 Internet 的客户端的通信的软件更新点
- - 是否需要在辅助站点上安装软件更新点。
+##  <a name="BKMK_SUPInfrastructure"></a> Determinar a infraestrutura do ponto de atualização de software  
+ O site de administração central e todos os sites primários filho devem ter um ponto de atualização de software onde você implantará atualizações de software. Enquanto planeja a infraestrutura do ponto de atualização de software, você precisa determinar as seguintes dependências:
+ - onde instalar o ponto de atualização de software para o site
+ - quais sites exigem um ponto de atualização de software que aceita comunicação de clientes baseados na Internet
+ - se você precisa de um ponto de atualização de software em um site secundário.
 
-使用下列部分来确定软件更新点基础结构。  
+Use as seções a seguir para determinar a infraestrutura do ponto de atualização de software.  
 
 > [!IMPORTANT]  
->  有关软件更新所需的内部和外部依赖关系的信息，请参阅[软件更新的先决条件](prerequisites-for-software-updates.md)。  
+>  Para obter informações sobre as dependências internas e externas necessárias para as atualizações de software, consulte [Pré-requisitos para atualizações de software](prerequisites-for-software-updates.md).  
 
- 你可以在 Configuration Manager 主站点上添加多个软件更新点。 在一个站点上使用多个软件更新点的功能提供了容错能力，而无需使用复杂的 NLB。 但是，对于纯粹的负载平衡而言，你通过多个软件更新点实现的故障转移不如 NLB 可靠，然而它却是为容错设计的。 并且，软件更新点的故障转移设计与管理点设计中使用的纯粹随机化模型不同。 与管理点设计中不同，在软件更新点中，存在与切换到新软件更新点关联的客户端和网络性能开销。 当客户端切换到新的 WSUS 服务器来扫描软件更新时，将会使目录大小增加，并产生关联的客户端和网络性能需求。 因此，客户端将保留与它成功扫描的上一个软件更新点的相关性。  
+ É possível adicionar vários pontos de atualização de software em um site primário do Configuration Manager. A capacidade de ter vários pontos de atualização de software em um site fornece tolerância a falhas sem exigir a complexidade do NLB. No entanto, o failover que você recebe com vários pontos de atualização de software não é tão robusto quanto o NLB para balanceamento de carga puro, mas foi projetado para tolerância a falhas. Além disso, o design de failover do ponto de atualização de software é diferente do modelo aleatório puro de usado no design de pontos de gerenciamento. Ao contrário do design de pontos de gerenciamento, nos pontos de atualização de software existem custos de desempenho e rede e do cliente associados à mudança para um novo ponto de atualização de software. Quando o cliente muda para um novo servidor do WSUS para verificar atualizações de software, o resultado é um aumento no tamanho do catálogo e no lado do cliente associado, e nas demandas de desempenho de rede. Portanto, o cliente preserva a afinidade com o último ponto de atualização de software para o qual ele verificou com êxito.  
 
- 你在主站点上安装的第一个软件更新点是在主站点上添加的所有其他软件更新点的同步源。 添加了软件更新点并启动了软件更新同步后，你可以从“监视”  工作区的“软件更新点同步状态”  节点中查看软件更新点和同步源的状态。  
+ O primeiro ponto de atualização de software que você instala em um site primário é a origem da sincronização de todos os pontos de atualização de software que você adiciona ao site primário. Depois de adicionar os pontos de atualização de software e iniciar a sincronização das atualizações de software, você poderá exibir o status dos pontos de atualização de software e a origem da sincronização no nó **Status da Sincronização do Ponto de Atualização de Software** no espaço de trabalho **Monitoramento** .  
 
- 当软件更新点失败，并且该软件更新点配置为站点上其他软件更新点的同步源时，你必须手动删除失败的软件更新点，并选择新的软件更新点以用作同步源。 有关如何删除软件更新点的详细信息，请参阅[删除软件更新点站点系统角色](../get-started/remove-a-software-update-point.md)。  
+ Quando ocorre falha em um ponto de atualização de software e esse ponto é configurado como a origem da sincronização para outros pontos de atualização de software, você deve remover manualmente o ponto de atualização de software com falha e selecionar um novo ponto para usar como origem da sincronização. Para obter mais informações sobre como remover um ponto de atualização de software, consulte [Remover a função de sistema de sites do ponto de atualização de software](../get-started/remove-a-software-update-point.md).  
 
-###  <a name="BKMK_SUPList"></a> 软件更新点列表  
- Configuration Manager 在以下方案中向客户端提供软件更新点列表：在新客户端接收策略以启用软件更新时，或在客户端无法与其软件更新点联系并需要切换到另一个软件更新点时。 客户端将随机从列表中选择一个软件更新点，并将排列位于同一林中的软件更新点的优先级。 Configuration Manager 根据客户端的类型向客户端提供不同的列表。  
+###  <a name="BKMK_SUPList"></a> Lista de pontos de atualização de software  
+ O Configuration Manager fornece ao cliente uma lista de pontos de atualização de software nos seguintes cenários: quando um novo cliente recebe a política para habilitar atualizações de software ou quando um cliente não consegue entrar em contato com seu ponto de atualização de software e precisa mudar para outro ponto de atualização de software. O cliente seleciona aleatoriamente um ponto de atualização de software na lista e prioriza os pontos de atualização de software que estão na mesma floresta. O Configuration Manager oferece aos clientes uma lista diferente, dependendo do tipo de cliente.  
 
--   **基于 Intranet 的客户端**：接收可配置为仅允许来自 Intranet 的连接的软件更新点的列表，或接收允许 Internet 和 Intranet 客户端连接的软件更新点的列表。  
+-   **Clientes baseados em intranet**: recebem uma lista de pontos de atualização de software que você pode configurar para permitir conexões somente da intranet ou uma lista de pontos de atualização de software que permitem conexões do cliente na Internet e na intranet.  
 
--   “基于 Internet 的客户端”：接收配置为仅允许来自 Internett 的连接的软件更新点的列表，或接收允许 Internet 和 Intranet 客户端连接的软件更新点的列表。  
+-   **Clientes baseados em internet**: recebem uma lista de pontos de atualização de software que você pode configurar para permitir conexões somente da internet ou uma lista de pontos de atualização de software que permitem conexões do cliente na Internet e na intranet.  
 
-###  <a name="BKMK_SUPSwitching"></a> 软件更新点切换  
+###  <a name="BKMK_SUPSwitching"></a> Mudança de ponto de atualização de software  
 > [!NOTE]
-> 从版本 1702 开始，客户端使用边界组查找新的软件更新点，并在其当前软件更新点不再可用时回退并查找新的软件更新点。 可以向不同的边界组添加各个软件更新点，以控制客户端可以找到哪些服务器。 有关详细信息，请参阅[配置边界组](/sccm/core/servers/deploy/configure/boundary-groups)主题中的[软件更新点](/sccm/core/servers/deploy/configure/boundary-groups#software-update-points)。
+> A partir da versão 1702, os clientes usam grupos de limites para localizar um novo ponto de atualização de software, fazer fallback e localizar um novo ponto de atualização de software se o atual não estiver mais acessível. Você pode adicionar pontos de atualização de software individuais a grupos de limites diferentes para controlar quais servidores um cliente pode encontrar. Para saber mais, veja [pontos de atualização de software](/sccm/core/servers/deploy/configure/boundary-groups#software-update-points) no tópico [Configurando grupos de limites](/sccm/core/servers/deploy/configure/boundary-groups).
 
-如果站点上有多个软件更新点，然后一个软件更新点失败或变得不可用，则客户端将连接到其他软件更新点并继续扫描最新的软件更新。 为客户端第一次分配了软件更新点后，会将该客户端一直分配给该软件更新点，除非它无法在该软件更新点上扫描软件更新。  
+Se você tiver vários pontos de atualização de software e um deles falhar ou ficar indisponível, os clientes irão se conectar a um ponto de atualização de software diferente e continuarão verificando as atualizações de software mais recentes. Quando um cliente for atribuído pela primeira vez a um ponto de atualização de software, ele permanecerá atribuído a esse ponto de atualização de software a menos que ocorra falha na verificação de atualizações de software nesse ponto de atualização de software.  
 
-软件更新扫描可能会失败，并出现很多不同的重试和非重试错误代码。 如果扫描失败并出现重试错误代码，则客户端将启动重试过程以在软件更新点上扫描软件更新。 导致重试错误代码的高级别情况通常是因为 WSUS 服务器不可用或暂时超负荷。 客户端在无法扫描软件更新时将使用下列过程：  
+A verificação de atualizações de software pode falhar com um número de repetição diferente e códigos de erro sem repetição. Quando há falha na verificação para repetir um código de erro, o cliente inicia o processo de repetição para verificar as atualizações de software no ponto de atualização de software. As condições de alto nível que resultam em na repetição de um código de erro geralmente ocorrem porque o servidor do WSUS está indisponível ou temporariamente sobrecarregado. O cliente usa o processo a seguir quando ocorre falha para verificar se há atualizações de software:  
 
-1.  客户端按其计划的时间扫描软件更新、在其通过客户端上的控制面板启动时进行扫描，或通过使用 SDK 进行扫描。 如果扫描失败，客户端将等待 30 分钟再重试扫描，并使用相同的软件更新点。  
+1.  O cliente verifica atualizações de software no horário agendado ou quando ele é iniciado através do painel de controle no cliente, ou usando o SDK. Se a verificação falhar, o cliente aguardará 30 minutos para repetir a verificação e usará o mesmo ponto de atualização de software.  
 
-2.  客户端按 30 分钟的间隔至少重试四次。 第四次失败后，客户端将再等待两分钟，然后切换到软件更新点列表中的下一个软件更新点。  
+2.  O cliente tenta novamente por no mínimo quatro vezes em intervalos de 30 minutos. Após a quarta falha, e depois de aguardar mais dois minutos, o cliente passará para o próximo ponto de atualização de software na lista de pontos de atualização de software.  
 
-3.  客户端将在新的软件更新点完成相同的过程。 成功扫描之后，客户端将继续连接到新的软件更新点。
+3.  O cliente passa pelo mesmo processo no novo ponto de atualização de software. Após uma verificação bem-sucedida, o cliente continuará a se conectar ao novo ponto de atualização de software.
 
- 下面的列表提供了可为软件更新点重试和切换方案考虑的其他信息：  
+ A lista a seguir fornece informações adicionais que você pode considerar para repetição do ponto de atualização de software e mudança de cenários:  
 
--   如果客户端从公司 Intranet 断开连接并且无法扫描软件更新，它将不会切换到另一个软件更新点。 这种失败情况是意料之中的，因为客户端无法访问公司网络，也无法访问允许来自 Intranet 的连接的软件更新点。 Configuration Manager 客户端确定 Intranet 软件更新点的可用性。  
+-   Se um cliente for desconectado da intranet corporativa e falhar para verificar atualizações de software, ele não mudará para outro ponto de atualização de software. Essa é uma falha esperada, pois o cliente não pode chegar à rede corporativa ou ao ponto de atualização de software que permite conexão da intranet. O cliente do Configuration Manager determina a disponibilidade do ponto de atualização de software da intranet.  
 
--   如果启用了基于 Internet 的客户端管理，并且有多个配置为接受来自 Internet 客户端的通信的软件更新点，则切换过程将按照前面的方案中描述的标准重试过程进行。  
+-   Se o gerenciamento de clientes baseado na Internet estiver habilitado e existirem vários pontos de atualização de software configurados para aceitar comunicação de clientes na Internet, o processo de mudança acompanhará o processo de repetição padrão descrito no cenário anterior.  
 
--   如果扫描过程已启动，但客户端在扫描完成之前关闭，则不会将其视为扫描失败，并且不会计入四次重试之一。  
+-   Se o processo de verificação foi iniciado, mas o cliente estava desligado antes da conclusão da verificação, ele não é considerado uma falha de verificação e não conta como uma das quatro repetições.  
 
-当 Configuration Manager 收到以下任何 Windows 更新代理错误代码时，将使客户端重试连接：  
+Quando o Configuration Manager receber qualquer um dos seguintes códigos de erro do Windows Update Agent, o cliente tentará novamente estabelecer a conexão:  
 
 2149842970, 2147954429, 2149859352, 2149859362, 2149859338, 2149859344, 2147954430, 2147747475, 2149842974, 2149859342, 2149859372, 2149859341, 2149904388, 2149859371, 2149859367, 2149859366, 2149859364, 2149859363, 2149859361, 2149859360, 2149859359, 2149859358, 2149859357, 2149859356, 2149859354, 2149859353, 2149859350, 2149859349, 2149859340, 2149859339, 2149859332, 2149859333, 2149859334, 2149859337, 2149859336, 2149859335
 
-若要查找错误代码的含义，必须将十进制错误代码转换为十六进制，然后在 [Windows Update Agent - Error Codes Wiki](https://social.technet.microsoft.com/wiki/contents/articles/15260.windows-update-agent-error-codes.aspx)（Windows Update 代理 - 错误代码 Wiki）等网站搜索该十六进制值。
+Para pesquisar o significado de um código de erro, você deve converter o código de erro decimal em hexadecimal e pesquisar o valor hexadecimal em um site como o [Wiki Windows Update Agent – Error Codes](https://social.technet.microsoft.com/wiki/contents/articles/15260.windows-update-agent-error-codes.aspx) (Windows Update Agent – Códigos de Erro).
 
 
-###  <a name="BKMK_ManuallySwitchSUPs"></a>手动将客户端切换到新的软件更新点
-从 Configuration Manager 版本 1606 开始，可以启用使 Configuration Manager 客户端在活动软件更新点出现问题时切换到新软件更新点的选项。 仅当客户端从管理点接收多个软件更新点时，此选项才导致更改。
+###  <a name="BKMK_ManuallySwitchSUPs"></a>Mudar manualmente clientes para um novo ponto de atualização de software
+A partir da versão 1606 do Configuration Manager, você pode habilitar a opção para clientes do Configuration Manager mudarem para um novo ponto de atualização de software quando houver problemas com o ponto de atualização de software ativo. Essa opção resulta em alterações somente quando um cliente recebe vários pontos de atualização de software de um ponto de gerenciamento.
 
 > [!IMPORTANT]    
-> 切换设备以使用新的服务器时，设备使用回退来查找该新服务器。 因此，请检查你的边界组配置，并在确保软件更新点位于正确的边界组后，再开始进行此更改。 有关详细信息，请参阅[软件更新点](/sccm/core/servers/deploy/configure/boundary-groups#software-update-points)。
+> Quando você alternar os dispositivos para usar um novo servidor, os dispositivos usam fallback para localizar esse novo servidor. Portanto, examine as configurações de seu grupo de limites e certifique-se de que seus pontos de atualização de software estejam nos grupos de limites corretos antes de iniciar esta alteração. Para ver os detalhes, confira [Pontos de atualização de software](/sccm/core/servers/deploy/configure/boundary-groups#software-update-points).
 >
-> 切换到新的软件更新点会产生额外的网络流量。 流量大小取决于你的 WSUS 配置设置（更新分类、产品、软件更新点是否共享 WSUS 数据库等等）。 如果计划切换多个设备，请考虑在维护时段执行此操作，以减少同步到新的软件更新点服务器时对网络的影响。
+> A alteração para um novo ponto de atualização de software gerará tráfego de rede adicional. A quantidade de tráfego depende de suas definições de configuração do WSUS (classificações de atualização, produtos, se os pontos de atualização de software compartilham um banco de dados do WSUS etc.). Se você planeja alternar vários dispositivos, considere a possibilidade de fazer isso durante as janelas de manutenção a fim de reduzir o impacto em sua rede durante a sincronização para o novo servidor de ponto de atualização de software.
 
-#### <a name="to-enable-the-option-to-switch-software-update-points"></a>启用切换软件更新点的选项  
-在设备集合或一套所选设备上启用此选项。 启用后，客户端将在下次扫描时查找另一个软件更新点。
+#### <a name="to-enable-the-option-to-switch-software-update-points"></a>Para habilitar a opção de alternar pontos de atualização de software  
+Habilite essa opção em uma coleção de dispositivos ou em um conjunto de dispositivos selecionados. Uma vez habilitada, os clientes procurarão outro ponto de atualização de software na próxima verificação.
 
-1.  在 Configuration Manager 控制台中，转到“资产和符合性”>“概览”>“设备集合”。  
+1.  No console do Configuration Manager, vá até **Ativos e Conformidade > Visão Geral > Coleções de Dispositivos**.  
 
-2.  在“主页”选项卡上的“集合”组中，单击“客户端通知”，然后单击“切换到下一个软件更新点”。  
+2.  Na guia **Início** , no grupo **Coleção** , clique em **Notificação do Cliente**e em **Alternar para o próximo ponto de atualização de software**.  
 
 
-###  <a name="BKMK_SUP_CrossForest"></a> 不受信任林中的软件更新点  
- 你可以在站点上创建一个或多个软件更新点来支持不受信任林中的客户端。 要添加另一个林中的软件更新点，你必须首先在该林中安装和配置 WSUS 服务器。 然后启动向导以添加具有软件更新点站点系统角色的 Configuration Manager 站点服务器。 在向导中，配置下列设置以成功连接到不受信任林中的 WSUS：  
+###  <a name="BKMK_SUP_CrossForest"></a> Pontos de atualização de software em uma floresta não confiável  
+ Você pode criar um ou mais pontos de atualização de software em um site para dar suporte a clientes em uma floresta não confiável. Para adicionar um ponto de atualização de software em outra floresta, você deve primeiro instalar e configurar um servidor do WSUS na floresta. Depois, inicie o assistente para adicionar um servidor do site do Configuration Manager com a função de sistema de sites do ponto de atualização de software. No assistente, defina as seguintes configurações para se conectar com êxito ao WSUS na floresta não confiável:  
 
--   指定可访问林中的 WSUS 服务器的站点系统安装帐户。  
+-   Especifique uma conta de Instalação do Sistema de Site que possa acessar o servidor do WSUS na floresta.  
 
--   指定要用于连接到 WSUS 服务器的 WSUS 服务器连接帐户。  
+-   Especifique a conta de Conexão do Servidor do WSUS a ser usada para se conectar ao servidor do WSUS.  
 
- 例如，你在具有两个软件更新点（SUP01 和 SUP02）的林 A 中具有主站点。 此外，对于此相同的主站点，你在林 B 中具有两个软件更新点（SUP03 和 SUP04）。在此示例中发生切换时，与客户端在相同林中的软件更新点的优先级排在第一位。  
+ Por exemplo, você tem um site primário na floresta A com dois pontos de atualização de software (SUP01 e SUP02). Além disso, para o mesmo site primário, você tem dois pontos de atualização de software (SUP03 e SUP04) na floresta B. Quando a mudança ocorre nesse exemplo, os pontos de atualização de software da mesma floresta como cliente são priorizados primeiro.  
 
-###  <a name="BKMK_WSUSSyncSource"></a> 使用现有的 WSUS 服务器作为顶层站点中的同步源  
- 通常，层次结构中的顶层站点被配置为将软件更新元数据与 Microsoft 更新同步。 当公司安全策略不允许从顶层站点访问 Internet 时，你可以将顶层站点的同步源配置为使用不在 Configuration Manager 层次结构中的现有 WSUS 服务器。 例如，你可能在具有 Internet 访问权限的 DMZ 中安装了 WSUS 服务器，但顶层站点没有。 你可以将 DMZ 中的 WSUS 服务器配置为软件更新元数据的同步源。 你必须确保 DMZ 中的 WSUS 服务器对满足 Configuration Manager 层次结构中所需的条件的软件更新进行同步。 否则，顶层站点可能无法对你期待的软件更新进行同步。 安装软件更新点时，请配置能够访问 DMZ 中的 WSUS 服务器的 WSUS 连接帐户，并确认防火墙允许合适的端口流量。 有关详细信息，请查看[软件更新点用于同步源的端口](../../core/plan-design/hierarchy/ports.md#BKMK_PortsSUP-WSUS)。  
+###  <a name="BKMK_WSUSSyncSource"></a> Usar um servidor do WSUS existente como a origem de sincronização no site de nível superior  
+ Normalmente, o site de nível superior na sua hierarquia é configurado para sincronizar metadados de atualizações de software com o Microsoft Update. Quando a política de segurança corporativa não permite acesso à Internet do site de nível superior, você pode configurar a origem da sincronização do site de nível superior para usar um servidor do WSUS existente que não esteja em sua hierarquia do Configuration Manager. Por exemplo, você pode ter um servidor do WSUS instalado no rede de perímetro com acesso à Internet, mas o site de nível superior não pode. Você pode configurar o servidor do WSUS no rede de perímetro como origem de sincronização para metadados de atualizações de software. Você precisa verificar se o servidor do WSUS no DMZ sincroniza atualizações de software que atendem aos critérios necessários em sua hierarquia do Configuration Manager. Caso contrário, o site de nível superior pode não sincronizar as atualizações de software que você espera. Ao instalar o ponto de atualização de software, configure uma conta de conexão do WSUS com acesso ao servidor do WSUS no rede de perímetro e confirme se o firewall permite tráfego para as portas apropriadas. Para obter mais informações, veja as [portas usadas pelo ponto de atualização de software para a origem de sincronização](../../core/plan-design/hierarchy/ports.md#BKMK_PortsSUP-WSUS).  
 
-###  <a name="BKMK_NLBSUPSP1"></a> 配置为使用 NLB 的软件更新点  
- 软件更新点切换可能会满足你具有的容错需求。 默认情况下，Configuration Manager 不支持将软件更新点配置为 NLB 群集。 在 Configuration Manager 版本 1702 之前，可以使用 Configuration Manager SDK 在 NLB 群集上配置最多 4 个软件更新点。 但是，从 Configuration Manager 版本 1702 开始，软件更新点不再作为 NLB 群集支持，并且如果检测到此配置，则会阻止升级到 Configuration Manager 版本 1702。 有关 Set-CMSoftwareUpdatePoint PowerShell cmdlet 的详细信息，请参阅 [Set-CMSoftwareUpdatePoint](http://go.microsoft.com/fwlink/?LinkId=276834)。
+###  <a name="BKMK_NLBSUPSP1"></a> Ponto de atualização de software configurado para usar um NLB  
+ Provavelmente, a mudança de ponto de atualização de software lidará com suas necessidades de tolerância a falhas. Por padrão, o Configuration Manager não dá suporte à configuração de pontos de atualização de software como clusters de NLB. Antes da versão 1702 do Configuration Manager, era possível usar o SDK do Configuration Manager para configurar até quatro pontos de atualização de software em um cluster de NLB. No entanto, a partir do Configuration Manager versão 1702, não há suporte para os pontos de atualização de software como clusters NLB, e as atualizações para o Configuration Manager versão 1702 serão bloqueadas se essa configuração for detectada. Para obter mais informações sobre o cmdlet Set-CMSoftwareUpdatePoint do PowerShell, consulte [Set-CMSoftwareUpdatePoint](http://go.microsoft.com/fwlink/?LinkId=276834).
 
-###  <a name="BKMK_SUPSecSite"></a> 辅助站点上的软件更新点  
- 软件更新点在辅助站点上是可选的。 在辅助站点上安装软件更新点时，WSUS 数据库被配置为父主站点上默认软件更新点的副本。 你只能在辅助站点上安装一个软件更新点。 分配给辅助站点的设备被配置为当辅助站点上未安装软件更新点时使用父站点上的软件更新点。 通常，当分配给辅助站点的设备与父主站点上的软件更新点之间存在受限制的网络带宽时，或者当软件更新点接近容量限制时，你将在辅助站点上安装软件更新点。 在辅助站点中成功安装和配置软件更新点之后，会为分配给该站点的客户端计算机更新站点范围的策略，并且这些计算机将开始使用新软件更新点。  
+###  <a name="BKMK_SUPSecSite"></a> Ponto de atualização de software em um site secundário  
+ O ponto de atualização de software é opcional em um site secundário. Quando você instala um ponto de atualização de software em um site secundário, o banco de dados do WSUS é configurado como uma réplica do ponto de atualização de software padrão no site primário pai. Você pode instalar apenas um ponto de atualização de software em um site secundário. Os dispositivos atribuídos a um site secundário são configurados para usar um ponto de atualização de software no site pai quando um ponto de atualização de software não está instalado no site secundário. Geralmente, você instalará um ponto de atualização de software em um site secundário quando houver largura de banda de rede limitada entre os dispositivos atribuídos ao site secundário e os pontos de atualização de software no site primário pai, ou quando o ponto de atualização de software se aproximar do limite de capacidade. Após a instalação e configuração de um ponto de atualização de software com êxito no site secundário, uma política de todo o site será atualizada para computadores cliente atribuídos ao site, e eles começarão a usar o novo ponto de atualização de software.  
 
-##  <a name="BKMK_SUPInstallation"></a>规划软件更新点安装  
- 在 Configuration Manager 中创建软件更新点站点系统角色之前，你必须根据 Configuration Manager 基础结构考虑一些要求。 将软件更新点配置为使用 SSL 进行通信时，查看本部分特别重要，因为你必须执行其他步骤，层次结构中的软件更新点才能正常工作。 本部分提供有关成功规划和准备软件更新点安装所必须执行的步骤的信息。  
+##  <a name="BKMK_SUPInstallation"></a> Planejar a instalação do ponto de atualização de software  
+ Para criar uma função de sistema de sites no ponto de atualização de software no Configuration Manager, existem vários requisitos que você deve levar em consideração dependendo de sua infraestrutura do Configuration Manager. Quando você configura o ponto de atualização de software para se comunicar usando SSL, esta sessão é especificamente importante para revisão, pois você deve seguir etapas adicionais para os pontos de atualização de software na hierarquia que funcionará corretamente. Esta seção fornece informações sobre as etapas que você deve seguir para planejar e preparar com êxito a instalação do ponto de atualização de software.  
 
-###  <a name="BKMK_SUPSystemRequirements"></a> 软件更新点的要求  
- 必须在满足 WSUS 的最低要求且达到 Configuration Manager 站点系统的支持配置的站点系统上安装软件更新点站点系统角色。  
+###  <a name="BKMK_SUPSystemRequirements"></a> Requisitos para o ponto de atualização de software  
+ A função de sistema de sites do ponto de atualização de software deve ser instalada em um sistema de sites que atenda aos requisitos mínimos do WSUS e às configurações com suporte para sistemas de sites do Configuration Manager.  
 
--   有关针对 Windows Server 2012 中 WSUS 服务器角色的最低要求的详细信息，请参阅 Windows Server 2012 文档库中的[查看注意事项和系统要求](https://technet.microsoft.com/library/hh852344.aspx#BKMK_1.1)。  
+-   Para obter mais informações sobre os requisitos mínimos da função de servidor do WSUS no Windows Server 2012, consulte [Avaliar considerações e requisitos de sistema](https://technet.microsoft.com/library/hh852344.aspx#BKMK_1.1) na biblioteca de documentação do Windows Server 2012.  
 
--   有关 Configuration Manager 站点系统支持的配置的详细信息，请参阅[站点和站点系统先决条件](../../core/plan-design/configs/site-and-site-system-prerequisites.md)。  
+-   Para obter mais informações sobre as configurações com suporte para sistemas de sites do Configuration Manager, consulte [Pré-requisitos de site e sistema de sites](../../core/plan-design/configs/site-and-site-system-prerequisites.md).  
 
-###  <a name="BKMK_PlanningForWSUS"></a> 规划 WSUS 安装  
+###  <a name="BKMK_PlanningForWSUS"></a> Planejar a instalação do WSUS  
 
-软件更新要求在为软件更新点站点系统角色配置的所有站点系统服务器上安装 WSUS 的支持版本。 此外，如果你未在站点服务器上安装软件更新点，则必须在站点服务器计算机上安装 WSUS 管理控制台（如果尚未安装该控制台）。 这允许站点服务器与软件更新点上运行的 WSUS 通信。  
+As atualizações de software requerem que uma versão com suporte do WSUS esteja instalada em todos os servidores do sistema de site que você configura para a função do sistema de site do ponto de atualização de software. Além disso, quando você não instalar o ponto de atualização de software no servidor do site, deverá instalar o Console de Administração do WSUS computador do servidor do site se ainda não estiver instalado. Isso permite que o servidor do site se comunique com o WSUS executado no ponto de atualização de software.  
 
- 在 Windows Server 2012 上使用 WSUS 时，必须将其他权限配置为允许 Configuration Manager 中的“WSUS Configuration Manager”连接到 WSUS 以执行定期运行状况检查。 选择下列选项之一以配置权限：  
+ Quando usa o WSUS no Windows Server 2012, você precisa configurar permissões adicionais para permitir que o **Configuration Manager do WSUS** no Configuration Manager se conecte ao WSUS, a fim de executar verificações de integridade periódicas. Escolha uma das opções a seguir para configurar as permissões:  
 
--   将“SYSTEM”  帐户添加到“WSUS 管理员”  组  
+-   Adicione a conta **SYSTEM** ao grupo **Administradores do WSUS**  
 
--   将“NT AUTHORITY\SYSTEM”  帐户添加为 WSUS 数据库 (SUSDB) 的用户，并配置最低的 webService 数据库角色成员资格  
+-   Adicione a conta **NT AUTHORITY\SYSTEM** como um usuário para o banco de dados do WSUS (SUSDB) e configure um mínimo de associação de função do banco de dados do serviço Web  
 
- 有关如何在 Windows Server 2012 上安装 WSUS 的详细信息，请参阅 Windows Server 2012 文档库中的 [Install the WSUS Server Role（安装 WSUS 服务器角色）](http://go.microsoft.com/fwlink/p/?LinkId=272355) 。  
+ Para obter mais informações sobre como instalar o WSUS no Windows Server 2012, consulte [Install the WSUS Server Role (Instalar a função de servidor do WSUS)](http://go.microsoft.com/fwlink/p/?LinkId=272355) na biblioteca de documentação do Windows Server Update Services 2012.  
 
- 在主站点上安装多个软件更新点时，请为同一 Active Directory 林中的每个软件更新点使用同一 WSUS 数据库。 如果共享相同的数据库，则可以极大程度地进行缓解，但不完全排除在客户端切换到新软件更新点时可能会遇到的客户端和网络性能影响。 当客户端切换到与旧软件更新点共享数据库的新软件更新点时，仍然会进行增量扫描，但与 WSUS 服务器具有其自己的数据库的情况相比，扫描工作要少得多。  
+ Quando você instalar mais de um ponto de atualização de software em um site primário, use o mesmo banco de dados do WSUS para cada ponto de atualização de software na mesma floresta do Active Directory. Se você compartilhar o mesmo banco de dados, ele atenuará significativamente, mas não eliminará completamente o impacto de desempenho à rede e ao cliente que você pode experimentar quando os clientes mudam para um novo ponto de atualização de software. Uma verificação delta ainda ocorre quando um cliente muda para a um novo ponto de atualização de software que compartilha um banco de dados com o ponto de atualização de software antigo, mas a verificação é bem menor do que seria se o servidor do WSUS tivesse o próprio banco de dados.  
 
-####  <a name="BKMK_CustomWebSite"></a> 配置 WSUS 以使用自定义网站  
- 在安装 WSUS 时，可以选择使用现有的 IIS 默认网站或创建自定义的 WSUS 网站。 为 WSUS 创建自定义网站，以便 IIS 在专用的虚拟网站中承载 WSUS 服务，而不是共享由其他 Configuration Manager 站点系统或其他应用程序使用的同一个网站。 尤其是在站点服务器上安装软件更新点站点系统角色时。 在 Windows Server 2012 或 Windows Server 2016 中运行 WSUS 时，WSUS 被默认配置为针对 HTTP 使用端口 8530，针对 HTTPS 使用端口 8531。 在站点上创建软件更新点时，必须指定这些端口设置。  
+####  <a name="BKMK_CustomWebSite"></a> Configurar o WSUS para usar um site personalizado  
+ Ao instalar o WSUS, você tem a opção de usar o site padrão do IIS ou criar um site do WSUS personalizado. Crie um site personalizado para o WSUS de forma que o IIS hospede os serviços do WSUS em um site virtual dedicado, em vez de compartilhar o mesmo site usado por outros sistemas de sites do Configuration Manager ou outros aplicativos. Isso é especialmente verdadeiro quando você instala a função do sistema de site do ponto de atualização de software no servidor do site. Ao executar o WSUS no Windows Server 2012 ou Windows Server 2016, o WSUS é configurado por padrão para usar a porta 8530 para HTTP e a porta 8531 para HTTPS. É necessário especificar essas configurações de porta para criar o ponto de atualização de software no site.  
 
-####  <a name="BKMK_WSUSInfrastructure"></a> 使用现有的 WSUS 基础结构  
- 安装 Configuration Manager 之前，可以选择在环境中处于活动状态的 WSUS 服务器，以用作软件更新点。 配置软件更新点时，必须指定同步设置。 Configuration Manager 连接至在软件更新点服务器运行的 WSUS 服务器并使用相同设置配置 WSUS。 如果 WSUS 服务器以前与未配置为软件更新点同步设置的产品或分类同步，则会对 WSUS 数据库中的所有软件更新元数据同步产品和分类的软件更新元数据，而与软件更新点配置的同步设置无关。 这可能会导致站点数据库中出现意外的软件更新元数据。 直接在 WSUS 管理控制台中添加产品或分类然后立即启动同步时，你将遇到相同的行为方式。 默认情况下，Configuration Manager 每小时会连接到软件更新点上的 WSUS，并重置在 Configuration Manager 外修改的任何设置。 未满足你在同步设置中指定的产品和分类要求的软件更新被设置为过期，然后会从站点数据库中删除。
+####  <a name="BKMK_WSUSInfrastructure"></a> Usar uma infraestrutura existente do WSUS  
+ Você pode selecionar um servidor do WSUS que estava ativo no seu ambiente antes da instalação do Configuration Manager como um ponto de atualização de software. Quando o ponto de atualização de software for configurado, você deve especificar as configurações de sincronização. O Configuration Manager se conecta ao servidor do WSUS que é executado no servidor do ponto de atualização de software e configura o WSUS com as mesmas configurações. Se você tiver sincronizado o WSUS antes de ter configurado como um ponto de atualização de software com produtos ou classificações que você não configurou como parte das configurações de sincronização do ponto de atualização de software, os metadados de atualizações de software para os produtos e as classificações são sincronizados para todos os metadados de atualizações no banco de dados do WSUS, independentemente das configurações de sincronização feitas para o ponto de atualização de software. Isso pode resultar em metadados de atualizações de software inesperados no banco de dados do site. Você experimentará o mesmo comportamento ao adicionar produtos ou classificações diretamente no console de administração do WSUS, e logo em seguida iniciar a sincronização. A cada hora, por padrão, o Configuration Manager se conecta ao WSUS no ponto de atualização de software e redefine as configurações que foram modificadas fora do Configuration Manager. As atualizações de software que não atenderem aos produtos e às classificações especificadas nas configurações de sincronização serão ajustadas para expirar e depois serão removidas do banco de dados do site.
 
- 将 WSUS 服务器配置为软件更新点时，将无法再将其用作独立 WSUS 服务器。 如果需要不由 Configuration Manager 管理的单独的独立 WSUS 服务器，则必须在其他服务器上配置它。
+ Quando um servidor do WSUS for configurado como um ponto de atualização de software, você não poderá mais usá-lo como um servidor autônomo do WSUS. Se você precisar de um servidor do WSUS autônomo separado que não seja gerenciado pelo Configuration Manager, deverá configurá-lo em um servidor diferente.
 
-####  <a name="BKMK_WSUSAsReplica"></a> 将 WSUS 配置为副本服务器  
- 在主站点服务器上创建软件更新点站点系统角色时，你无法使用配置为副本的 WSUS 服务器。 将 WSUS 服务器配置为副本时，Configuration Manager 无法配置 WSUS 服务器，WSUS 同步也会失败。 在辅助站点上创建软件更新点时，Configuration Manager 会将 WSUS 配置为在父主站点中软件更新点上运行的 WSUS 的副本服务器。 在主站点中安装的第一个软件更新点为默认的软件更新点。 站点中的其他软件更新点被配置为默认软件更新点的副本。  
+####  <a name="BKMK_WSUSAsReplica"></a> Configurar o WSUS como um servidor de réplica  
+ Quando você cria uma função de sistema de ponto de atualização de software em um servidor do site primário, não pode usar um servidor do WSUS que está configurado como uma réplica. Quando o servidor do WSUS é configurado como uma réplica, o Configuration Manager não configura o servidor do WSUS e a sincronização do WSUS também falha. Quando um ponto de atualização de software é criado em um site secundário, o Configuration Manager configura o WSUS para ser um servidor de réplica do WSUS que é executado no ponto de atualização de software no site primário pai. O primeiro ponto de atualização de software instalado em um site primário é o ponto de atualização de software padrão. Pontos de atualização de software adicionais no site são configurados como réplicas do ponto de atualização de software padrão.  
 
-####  <a name="BKMK_WSUSandSSL"></a> 决定是否将 WSUS 配置为使用 SSL  
- 你可以使用 SSL 协议帮助保护软件更新点上运行的 WSUS。 WSUS 使用 SSL 向 WSUS 服务器验证客户端计算机和下游 WSUS 服务器的身份。 WSUS 还使用 SSL 来加密软件更新元数据。 如果选择使用 SSL 保护 WSUS，则必须在安装软件更新点之前准备 WSUS 服务器。  
+####  <a name="BKMK_WSUSandSSL"></a> Decidir se o WSUS deve ser configurado para usar SSL  
+ Você pode usar o protocolo SSL para ajudar a proteger o WSUS que é executado no ponto de atualização de software. O WSUS usa o SSL para autenticar computadores cliente e servidores de WSUS downstream para o servidor do WSUS. Além disso, o WSUS usa SSL para criptografar metadados de atualização de software. Quando você opta por proteger o WSUS com SSL, deve preparar o servidor do WSUS antes de instalar o ponto de atualização de software.  
 
- 在安装和配置软件更新点时，必须选择“为 WSUS 服务器启用 SSL 通信”  设置。 否则，Configuration Manager 会将 WSUS 配置为不使用 SSL。 为软件更新点上运行的 WSUS 启用 SSL 时，也必须将在任何子站点的软件更新点上运行的 WSUS 配置为使用 SSL。  
+ Quando você instala e configura o ponto de atualização de software, deve selecionar a configuração **Habilitar comunicações SSL para o servidor do WSUS** . Caso contrário, o Configuration Manager configurará o WSUS para não usar SSL. Quando você habilita o SSL para o WSUS executado em um ponto de atualização de software, o WSUS executado no ponto de atualização de software de quaisquer sites filhos também deve ser configurado para usar SSL.  
 
-###  <a name="BKMK_ConfigureFirewalls"></a> 配置防火墙  
- Configuration Manager 管理中心站点上的软件更新与软件更新点上运行的 WSUS 进行通信，这反过来会与同步源进行通信以同步软件更新元数据。 子站点上的软件更新点与父站点上的软件更新点通信。 如果主站点中有多个软件更新点，则其他软件更新点必须与安装在该站点中的第一个软件更新点（默认的软件更新点）通信。  
+###  <a name="BKMK_ConfigureFirewalls"></a> Configurar firewalls  
+ Atualizações de software em um site de administração central do Configuration Manager se comunicam com o WSUS que é executado no ponto de atualização de software que, por sua vez, se comunica com a origem da sincronização para sincronizar metadados de atualizações de software. Pontos de atualização de software em um site filho comunicam-se com o ponto de atualização de software no site pai. Quando há mais de um ponto de atualização de software em um site primário, os pontos de atualização de software adicionais devem se comunicar com o primeiro ponto de atualização de software instalado no site, que é o ponto de atualização de software padrão.  
 
- 为了接受 WSUS 在以下方案中使用的 HTTP 或 HTTPS 端口，可能需要配置防火墙：当 Configuration Manager 软件更新点与 Internet 之间具有企业防火墙；当你具有软件更新点及其上游同步源；当你具有其他的软件更新点。 至 Microsoft 更新的连接始终配置为针对 HTTP 使用端口 80，针对 HTTPS 使用端口 443。 你可以将自定义端口用于从子站点中软件更新点上运行的 WSUS 至主站点中软件更新点上运行的 WSUS 的连接。 当安全策略不允许连接时，必须使用导出和导入同步方法。 有关详细信息，请参阅本主题中的 [同步源](#BKMK_SyncSource) 部分。 有关 WSUS 使用的端口的详细信息，请参阅[如何确定 System Center Configuration Manager 中 WSUS 使用的端口设置](../get-started/install-a-software-update-point.md#wsus-settings)。  
+ O firewall pode precisar ser configurado para aceitar as portas HTTP ou HTTPS usadas pelo WSUS nos seguintes cenários: quando há um firewall corporativo entre o ponto de atualização de software do Configuration Manager e a Internet; quando há um ponto de atualização de software e sua origem de sincronização upstream ou quando há pontos de atualização de software adicionais. A conexão com o Microsoft Update é sempre configurada para usar a porta 80 para HTTP e a porta 443 para HTTPS. Você pode usar uma porta personalizada para a conexão do WSUS que é executado no ponto de atualização de software em um site filho e o WSUS que é executado no ponto de atualização de software no site pai. Quando sua política de segurança não permitir a conexão, é necessário usar o método de sincronização de exportação e importação. Para obter mais informações, consulte a seção [Origem da sincronização](#BKMK_SyncSource) neste tópico. Para obter mais informações sobre as portas usadas pelo WSUS, consulte [Como determinar as configurações de porta usadas pelo WSUS no System Center Configuration Manager](../get-started/install-a-software-update-point.md#wsus-settings).  
 
-#### <a name="restrict-access-to-specific-domains"></a>限制对特定域的访问  
- 如果组织不允许向活动软件更新点与 Internet 之间的防火墙上的所有地址开放端口和协议，则可以限制访问以下域，以便 WSUS 和自动更新可以与 Microsoft 更新通信：  
+#### <a name="restrict-access-to-specific-domains"></a>Restringir o acesso a domínios específicos  
+ Se a sua organização não permite que portas e protocolos sejam abertos a todos os endereços no firewall entre o ponto ativo de atualização de software e a Internet, você pode restringir o acesso aos seguintes domínios, de modo que o WSUS e as Atualizações Automáticas possam se comunicar com o Microsoft Update:  
 
 -   http://windowsupdate.microsoft.com
 
@@ -207,120 +207,120 @@ ms.lasthandoff: 08/07/2017
 
 -   http://ntservicepack.microsoft.com  
 
- 在以下情况下，可能需要将下列地址添加到位于两个站点系统中的防火墙中：如果子站点具有软件更新点或如果站点中存在远程活动的基于 Internet 的软件更新点：  
+ Talvez seja necessário adicionar os seguintes endereços ao firewall localizado entre os dois sistemas de sites nos seguintes casos: se os sites filho tiverem um ponto de atualização de software ou se existir um ponto de atualização de software baseado na Internet remoto ativo em um site:  
 
- **子站点上的软件更新点**  
+ **Ponto de atualização de software no site filho**  
 
--   http://<*子站点上软件更新点的 FQDN*>  
+-   http://<*FQDN do ponto de atualização de software no site filho*>  
 
--   https://<*子站点上软件更新点的 FQDN*>  
+-   https://<*FQDN do ponto de atualização de software no site filho*>  
 
--   http://<*父站点上软件更新点的 FQDN*>  
+-   http://<*FQDN do ponto de atualização de software no site pai*>  
 
--   https://<*父站点上软件更新点的 FQDN*>  
+-   https://<*FQDN do ponto de atualização de software no site pai*>  
 
-##  <a name="BKMK_SyncSettings"></a> 规划同步设置  
- Configuration Manager 中的软件更新同步是指根据你配置的条件检索软件更新元数据的过程。 层次结构中的顶层站点、管理中心站点或独立主站点从 Microsoft 更新同步软件更新。 你可以选择将顶层站点上的软件更新点配置为与不在 Configuration Manager 层次结构中的现有 WSUS 服务器同步。 子主站点从管理中心站点上的软件更新点同步软件更新元数据。 安装和配置软件更新点之前，请使用本部分规划同步设置。  
+##  <a name="BKMK_SyncSettings"></a> Planejar as configurações de sincronização  
+ A sincronização de atualizações de software no Configuration Manager é o processo de recuperar metadados de atualizações de software com base em critérios definidos. O site de nível superior na hierarquia, o site da administração central ou site primário autônomo sincroniza atualizações de software do Microsoft Update. Você tem a opção de configurar o ponto de atualização de software no site de nível superior para ser sincronizado com um servidor do WSUS existente, que não está na hierarquia do Configuration Manager. Os sites primário filhos sincronizam metadados de atualizações de software a partir do ponto de atualização de software no site de administração central. Para instalar e configurar um ponto de atualização de software, use esta seção para planejar as configurações de sincronização.  
 
-###  <a name="BKMK_SyncSource"></a> 同步源  
- 软件更新点的同步源设置指定软件更新点检索软件更新元数据所在的位置，以及是否在同步过程中创建 WSUS 报表事件。  
+###  <a name="BKMK_SyncSource"></a> Origem de sincronização  
+ As configurações de origem da sincronização para o ponto de atualização de software especificam o local onde o ponto de atualização de software recupera metadados de atualizações de software, e se os eventos de relatório do WSUS são criados durante o processo de sincronização.  
 
--   **同步源** ：默认情况下，顶层站点的软件更新点针对 Microsoft 更新配置同步源。 你可以选择将顶层站点与现有的 WSUS 服务器同步。 默认情况下，子主站点上的软件更新点会将同步源配置为管理中心站点中的软件更新点。  
+-   **Origem da sincronização:** o ponto de atualização de software no site de nível superior configura a origem da sincronização para o Microsoft Update por padrão. Você tem a opção de sincronizar o site de nível superior com um servidor do WSUS existente. O ponto de atualização de software em um site primário filho configura a origem da sincronização como o ponto de atualização de software no site de administração central por padrão.  
 
     > [!NOTE]  
-    >  在主站点中安装的第一个软件更新点为默认的软件更新点，并且会与管理中心站点同步。 主站点中的其他软件更新点与主站点中的默认软件更新点同步。  
+    >  O primeiro ponto de atualização de software instalado em um site primário, que é o ponto de atualização de software padrão, é sincronizado com o site de administração central. Pontos de atualização de software adicionais no site primário sincronizam com o ponto de atualização de software padrão no site primário.  
 
-     从 Microsoft 更新或从上游更新服务器中断开软件更新点时，可以将同步源配置为不与配置的同步源同步，而是使用 WSUSUtil 工具的导出和导入功能来同步软件更新。 有关详细信息，请参阅[从断开连接的软件更新点中同步软件更新](../get-started/synchronize-software-updates-disconnected.md)。  
+     Quando um ponto de atualização de software é desconectado do Microsoft Update ou do servidor de atualização upstream, você pode configurar a origem da sincronização para não sincronizar com uma origem de sincronização configurada, mas, em vez disso, usar a função de exportação e importação da ferramenta WSUSUtil para sincronizar atualizações de software. Para obter mais informações, consulte [Synchronize software updates from a disconnected software update point](../get-started/synchronize-software-updates-disconnected.md) (Sincronizar atualizações de software de um ponto de atualização de software desconectado).  
 
--   **WSUS 报告事件：** 客户端计算机上的 Windows 更新代理可以创建用于 WSUS 报告的事件消息。 但这些事件不会用于 Configuration Manager 中的软件更新，因此，默认情况下选择“不创建 WSUS 报告事件”选项。 如果未创建这些事件，则客户端计算机应该仅在软件更新评估和符合性扫描过程中连接到 WSUS 服务器。 如果在 Configuration Manager 中的软件更新之外进行报告需要这些事件，则将需要修改此设置以创建 WSUS 报告事件。  
+-   **Eventos de geração de relatórios do WSUS:** O Windows Update Agent em computadores cliente pode criar mensagens de eventos que são usadas para relatórios do WSUS. Esses eventos não são usados pela atualização de software no Configuration Manager, portanto, a opção **Não criar eventos de relatórios do WSUS** é selecionada por padrão. Quando esses eventos não são criados, a única vez que o computador cliente deve se conectar ao servidor do WSUS é durante a avaliação da atualização de software e varreduras de conformidade. Se esses eventos forem necessários para relatórios fora das atualizações de software no Configuration Manager, você precisará modificar essa configuração para criar eventos de relatório do WSUS.  
 
-###  <a name="BKMK_SyncSchedule"></a> 同步计划  
- 你只能在 Configuration Manager 层次结构中顶层站点的软件更新点上配置同步计划。 配置同步计划后，软件更新点会在你指定的日期和时间与同步源同步。 自定义的计划允许你在 WSUS 服务器、站点服务器和网络的需求不高的日期和时间同步软件更新，如每周凌晨 2:00 一次。 或者，你可以使用“所有软件更新”中的“同步软件更新”操作或 Configuration Manager 控制台的“软件更新组”节点启动顶层站点的同步。  
+###  <a name="BKMK_SyncSchedule"></a> Agendamento de sincronização  
+ É possível configurar o cronograma de sincronização apenas no ponto de atualização de software no site de nível superior na hierarquia do Configuration Manager. Quando você configura a agenda de sincronização, o ponto de atualização de software sincroniza-se com a origem da sincronização, na data e hora que você especificou. A agenda personalizada permite que você sincronize as atualizações de software em uma data e hora em que as demandas do servidor do WSUS, servidor do site e da rede estão baixas, como às 2h, uma vez por semana. Como alternativa, você pode iniciar a sincronização no site de nível superior usando a ação **Atualizações de Software de Sincronização** no nó **Todas as Atualizações de Software** ou **Grupos de Atualização de Software** no console do Configuration Manager.  
 
 > [!TIP]  
->  使用适合你的环境的时间范围来计划运行软件更新同步。 最常见的一种情况是将软件更新同步计划设置为在每月第二个星期二发布了 Microsoft 定期安全更新（这通常称为周二补丁日）之后立即运行。 另一种常见的情况是将软件更新同步计划设置为每天使用软件更新提供 Endpoint Protection 定义和引擎更新时运行。  
+>  Agende a sincronização de atualizações de software para ser executadas usando um período apropriado a seu ambiente. Um cenário típico é definir a agenda de sincronização das atualizações de software para execução logo após o lançamento da atualização de segurança regular da Microsoft na segunda terça-feira de cada mês, que é normalmente conhecida como Patch Tuesday. Outro cenário típico é definir a agenda de sincronização de atualizações de software para ser executada diariamente quando você usa as atualizações de software para fornecer definição e atualizações de mecanismo do Endpoint Protection.  
 
- 在软件更新点成功完成同步后，会将同步请求发送给子站点。 如果主站点中有其他软件更新点，则会将同步请求发送给每个软件更新点。 此过程在层次结构中的每个站点上重复发生。  
+ Após o ponto de atualização de software concluir com êxito a sincronização, uma solicitação de sincronização é enviada para sites filhos. Se houver pontos de atualização de software adicionais em um site primário, uma solicitação de sincronização será enviada para cada ponto de atualização de software. O processo é repetido em todos os sites na hierarquia.  
 
-###  <a name="BKMK_UpdateClassifications"></a> 更新分类  
- 每个软件更新都是利用更新分类定义的，此分类能帮助组织不同的更新类型。 同步过程中，将同步指定分类的软件更新元数据。 Configuration Manager 可以将软件更新与下列更新分类一并同步：  
+###  <a name="BKMK_UpdateClassifications"></a> Classificações de atualizações  
+ Cada atualização de software é definida com uma classificação de atualização que ajuda a organizar os diferentes tipos de atualização. Durante o processo de sincronização, os metadados de atualizações de software para as classificações especificadas serão sincronizados. O Configuration Manager permite que você sincronize as atualizações de software com as seguintes classificações de atualização:  
 
--   **关键更新：** 针对特定的问题指定广泛发布的更新，以解决与安全性无关的关键错误。  
+-   **Atualizações críticas:** especifica uma atualização lançada em larga escala para um problema específico que aborda um bug crítico não relacionado à segurança.  
 
--   **定义更新：** 指定对病毒定义文件或其他定义文件的更新。  
+-   **Atualizações de definições:** especifica uma atualização para vírus ou outros arquivos de definição.  
 
--   **功能包：** 指定新的产品功能，这些功能在产品版本以外分发，而且通常包含在下一个完整的产品版本和功能中。  
+-   **Feature Packs:** Especifica novos recursos de produtos que são distribuídos fora de uma versão do produto e recursos que são normalmente incluídos na próxima versão completa do produto.  
 
--   **安全更新：** 针对特定于产品而且与安全性相关的问题指定广泛发布的更新。  
+-   **Atualizações de segurança:** especifica uma atualização lançada em larga escala para um problema de um produto em específico relacionado à segurança.  
 
--   **Service Pack：** 指定一组累积的将应用于应用程序的修补程序。 这些修补程序可以包括安全更新、关键更新、软件更新等。  
+-   **Service Packs:** especifica um conjunto cumulativo de hotfixes que são aplicados a um aplicativo. Esses hotfixes podem incluir atualizações de segurança, atualizações críticas, atualizações de software e assim por diante.  
 
--   **工具：** 指定可帮助完成一项或多项任务的实用程序或功能。  
+-   **Ferramentas:** especifica um utilitário ou um recurso que ajuda a concluir uma ou mais tarefas.  
 
--   **更新汇总：** 指定一组累积的修补程序，它们打包在一起以便于部署。 这些修补程序可以包括安全更新、关键更新、其他更新等。 更新汇总通常解决特定领域的问题，例如安全性或产品组件问题。  
+-   **Pacotes cumulativos de atualizações:** especifica um conjunto cumulativo de hotfixes que são reunidos para facilitar a implantação. Esses hotfixes podem incluir atualizações de segurança, atualizações críticas, atualizações e assim por diante. Um pacote cumulativo de atualizações geralmente aborda uma área específica, como segurança ou um componente do produto.  
 
--   **更新：** 指定对已安装的应用程序或文件的更新。  
+-   **Atualizações:** especifica uma atualização para um aplicativo ou arquivo que está atualmente instalado.  
 
- 仅在顶层站点上配置更新分类设置。 未在子站点上的软件更新点上配置更新分类设置，因为已将软件更新元数据从顶层站点复制到子主站点。 选择更新分类时，请注意，你选择的分类越多，同步软件更新元数据所需的时间越长。  
+ As configurações de classificação de atualização são definidas somente no site de nível superior. As configurações de classificação de atualização não estão definidas no ponto de atualização de software de sites filhos, porque os metadados das atualizações de software são replicados do site de nível superior em sites primários filhos. Ao selecionar classificações de atualização, lembre-se de que quanto mais classificações você selecionar, mais tempo levará para sincronizar os metadados das atualizações de software.  
 
 > [!WARNING]  
->  作为最佳方案，请在首次同步软件更新之前清除所有分类。 初次同步之后，请从软件更新点组件属性中选择分类，然后重新启动同步。  
+>  Como prática recomendada, desmarque todas as classificações antes de sincronizar atualizações de software pela primeira vez. Após a sincronização inicial, selecione as classificações de propriedades do componente de ponto de atualização de software e, em seguida, reinicialize a sincronização.  
 
-###  <a name="BKMK_UpdateProducts"></a> 产品  
- 每个软件更新的元数据都定义了更新适用于的一个或多个产品。 产品是指特定版本的操作系统或应用程序。 产品示例是 Microsoft Windows Server 2008。 产品家族是指从中派生单个产品的基本操作系统或应用程序。 产品系列的示例是 Microsoft Windows，而 Microsoft Windows Server 2008 是其成员之一。 可以指定产品系列或产品系列中的各个产品。  
+###  <a name="BKMK_UpdateProducts"></a> Produtos  
+ Os metadados de cada atualização de software definem um ou mais produtos aos quais a atualização é aplicável. Um produto é uma edição específica de um aplicativo ou sistema operacional. Um exemplo de um produto é o Microsoft Windows Server 2008. Uma família de produtos é o sistema operacional base ou o aplicativo do qual os produtos individuais são derivados. Um exemplo de uma família de produtos é o Microsoft Windows, do qual o Microsoft Windows Server 2008 é um membro. Você pode especificar uma família de produtos ou produtos individuais dentro de uma família de produtos.  
 
- 在软件更新适用于多个产品，而且至少选择了一个要同步的产品时，即使没有选择某些产品，所有产品都将出现在 Configuration Manager 控制台中。 例如，Windows Server 2012 是你订阅的唯一操作系统，并且软件更新应用于 Windows Server 2012 和 Windows Server 2012 Datacenter Edition，那么，这两个产品都将位于站点数据库中。  
+ Quando as atualizações de software são aplicáveis a vários produtos, e no mínimo um dos produtos é selecionado para sincronização, todos os produtos aparecerão no console do Configuration Manager, mesmo se alguns produtos não forem selecionados. Por exemplo, se o Windows Server 2012 for o único sistema operacional que você assina, e se uma atualização de software se aplicar ao Windows Server 2012 e ao Windows Server 2012 Datacenter Edition, ambos os produtos estarão no banco de dados do site.  
 
- 只会在顶层站点上配置产品设置， 而不会在子站点的软件更新点上配置产品设置，因为软件更新元数据将从顶层站点复制到子主站点。 在选择产品时，请注意，你选择的产品越多，同步软件更新元数据所花费的时间就越长。  
+ Os parâmetros do produto são configurados somente no site de nível superior. Os parâmetros do produto não são configurados no ponto de atualização de software para sites filho porque os metadados de atualizações de software são replicados do site de nível superior para sites primários filho. Quando você selecionar produtos, esteja ciente de que quanto mais produtos seleciona, mais tempo irá demorar para sincronizar os metadados de atualizações de software.  
 
 > [!IMPORTANT]  
->  Configuration Manager 存储产品和产品系列的列表，你在初次安装软件更新点时可以从此列表中进行选择。 如果某些产品和产品系列是在发布 Configuration Manager 之后发布的，那么，在完成软件更新同步（这将更新可供你从中进行选择的可用产品和产品系列的列表）之前，可能无法选择它们。 作为一种最佳方案，请在首次同步软件更新之前清除所有产品。 初始同步后，从软件更新点组件属性中选择产品，然后重新启动同步。  
+>  O Configuration Manager armazena uma lista de produtos e famílias de produtos que você pode escolher ao instalar o ponto de atualização de software pela primeira vez. Os produtos e as famílias de produtos que forem lançados após o lançamento do Configuration Manager podem não estar disponíveis para seleção até que você conclua a sincronização das atualizações de software, o que atualizará a lista de produtos e famílias de produtos disponíveis para você escolher. Como prática recomendada, desmarque todos os produtos antes de sincronizar as atualizações de software pela primeira vez. Após a sincronização inicial, selecione os produtos em Propriedades do Componente de Ponto de Atualização de Software e reinicie a sincronização.  
 
-###  <a name="BKMK_SupersedenceRules"></a>取代规则  
- 通常，取代另一个软件更新的软件更新执行下列一项或多项操作：  
+###  <a name="BKMK_SupersedenceRules"></a>Regras de substituição  
+ Normalmente, uma atualização de software que substitui outra executa uma ou mais das seguintes ações:  
 
--   增强、改进或更新由以前发布的一个或多个更新提供的修补程序。  
+-   Melhora, aumenta ou atualiza a correção fornecida por uma ou mais atualizações lançadas anteriormente.  
 
--   提高被取代更新文件包的效率，如果更新已获准安装，则该更新文件包将安装在客户端计算机上。 例如，被取代更新可能包含不再与修补程序或新更新支持的操作系统相关的文件，因此这些文件未包括在更新的取代文件包中。  
+-   Melhora a eficiência do pacote de arquivos de atualização substituído, que é instalado em computadores cliente se a atualização for aprovada para instalação. Por exemplo, a atualização substituída pode conter arquivos que não são mais relevantes para a correção ou para os sistemas operacionais com suporte pela nova atualização. Portanto, esses arquivos não são incluídos no pacote de arquivos de substituição da atualização.  
 
--   更新产品的较新版本。 换句话说，它将更新不再适用于产品的较旧版本或配置的版本。 如果进行了修改来扩展语言支持，则更新还可能取代其他更新。 例如，稍后对 Microsoft Office 的产品更新进行的修订可能会删除对较旧操作系统的支持，但可能会在初始更新版本中添加对新语言的额外支持。  
+-   Atualiza versões mais recentes de um produto. Em outras palavras, atualiza as versões que não são mais aplicáveis a versões ou configurações mais antigas de um produto. As atualizações também pode substituir outras atualizações caso modificações tenham sido feitas para expandir o suporte para idiomas. Por exemplo, uma revisão posterior da atualização de um produto do Microsoft Office pode remover o suporte de um sistema operacional mais antigo, mas pode adicionar suporte para novos idiomas na versão de atualização inicial.  
 
- 在软件更新点的属性中，你可以指定被取代软件更新立即过期，从而防止将它们包括在新部署中，并标记现有部署以指示它们包含一个或多个过期的软件更新。 或者，你可以指定被取代软件更新过期之前的时间段，从而允许你继续部署这些更新。 考虑你可能需要部署被取代软件更新的以下情况：  
+ Nas propriedades do ponto de atualização de software, é possível especificar se as atualizações de software substituídas expiram imediatamente, o que evita que elas sejam incluídas em novas implantações e sinaliza as implantações existentes para indicar que contêm uma ou mais atualizações de software expiradas. Ou, você pode especificar um período de tempo até que as atualizações de software substituídas se expirem, o que permitirá que você continue a implantá-las. Considere os seguintes cenários em que poderia ser necessário implantar uma atualização de software substituída:  
 
--   如果取代软件更新仅支持较新版本的操作系统，而你的部分客户端计算机运行较早版本的操作系统。  
+-   Se uma atualização de software substituta oferecer suporte somente para versões mais recentes de um sistema operacional, e alguns de seus computadores cliente executarem versões anteriores do sistema operacional.  
 
--   如果取代软件更新与它所取代的软件更新相比适用性限制更多。 这将使其不适合于某些客户端计算机。  
+-   Se uma atualização de software substituta tiver aplicabilidade mais restrita do que a atualização de software que está substituindo. Isso a tornaria inadequada para alguns computadores cliente.  
 
--   如果取代软件更新未获准在生产环境中进行部署。  
+-   Se uma atualização de software substituta não for aprovada para implantação em seu ambiente de produção.  
 
     > [!NOTE]  
-    > Configuration Manager 将被取代的软件更新设置为“已过期”时，不会在 WSUS 中将该更新设置为“已拒绝”。 但是，WSUS 清除任务运行时，在 Configuration Manager 中设置为“已过期”的更新在 WSUS 服务器中设置为“已拒绝”状态，并且计算机上的 Windows 更新代理不再扫描这些更新。 这意味着客户端将继续扫描已过期的更新，直到清除任务运行。 有关 WSUS 清除任务的信息，请参阅[软件更新维护](/sccm/sum/deploy-use/software-updates-maintenance)。
+    > Quando o Configuration Manager define uma atualização de software substituída como **Expirada**, ele não define a atualização como **Recusada** no WSUS. No entanto, quando a tarefa de limpeza do WSUS é executada, as atualizações definidas como **Expiradas** no Configuration Manager são definidas com o status de **Recusadas** no servidor do WSUS e o Agente do Windows Update nos computadores não verificará mais essas atualizações. Isso significa que os clientes continuarão a verificar se há uma atualização expirada até que a tarefa de limpeza seja executada. Para obter informações sobre a tarefa de limpeza do WSUS, veja [Manutenção de atualizações de software](/sccm/sum/deploy-use/software-updates-maintenance).
 
-###  <a name="BKMK_UpdateLanguages"></a> 语言  
- 软件更新点的语言设置允许你配置为软件更新同步摘要详细信息（软件更新元数据）的语言，以及将为软件更新下载的软件更新文件语言。  
+###  <a name="BKMK_UpdateLanguages"></a> Idiomas  
+ As configurações de idioma do ponto de atualização de software permitem configurar os idiomas para os quais os detalhes de resumo (metadados de atualizações de software) são sincronizados para atualizações de software, e os idiomas do arquivo de atualização do software serão baixados para as atualizações de software.  
 
-#### <a name="software-update-file"></a>软件更新文件  
- 你为软件更新点属性中的“软件更新文件”  设置配置的语言提供在站点上下载软件更新时可用的默认语言集。 每次下载或部署软件更新时，你可以修改默认选择的语言。 在下载过程中，会将配置的语言的软件更新文件下载到部署包源位置（如果有采用所选语言的软件更新文件）。 然后，会将这些软件更新文件复制到站点服务器上的内容库，再将它们复制到为包配置的分发点。  
+#### <a name="software-update-file"></a>Arquivo de atualização de software  
+ Os idiomas que você configura para o parâmetro **Arquivo de atualização de software** nas propriedades do ponto de atualização de software fornecem o conjunto padrão de idiomas que estão disponíveis ao baixar as atualizações de software em um site. É possível modificar os idiomas selecionados que são selecionados por padrão sempre que as atualizações de software são baixadas ou implantadas. Durante o processo de download, os arquivos de atualização de software para os idiomas configurados são baixados no local de origem do pacote de implantação, se os arquivos de atualização de software estiverem disponíveis no idioma selecionado. Em seguida, eles são copiados na biblioteca de conteúdo do servidor do site e depois são copiados nos pontos de distribuição configurados para o pacote.  
 
- 软件更新文件语言设置应配置为包含环境中最常用的语言。 例如，分配给站点的客户端计算机为操作系统或应用程序最常使用英语和日语，并且有站点上使用的极少数其他语言，则在下载或部署软件更新时在“软件更新文件”  列中选择英语和日语，并清除其他语言。 这允许你在部署和下载向导的“语言选择”  页上使用默认设置， 还可防止下载不需要的更新文件。 在 Configuration Manager 层次结构中的每个软件更新点上配置此设置。  
+ Os parâmetros de idioma do arquivo de atualização de software devem ser configurados com os idiomas usados com mais frequência em seu ambiente. Por exemplo, se os computadores cliente atribuídos ao site usam mais os idiomas inglês e japonês para o sistema operacional ou aplicativos, e há outros pouquíssimos idiomas que são usados no site, selecione Inglês e Japonês na coluna **Arquivo de Atualização de Software** quando você baixar ou implantar a atualização de software e desmarque os outros idiomas. Isso permite usar as configurações padrão na página **Seleção de Idioma** da implantação e baixar assistentes. Isso também impede que arquivos de atualização desnecessários sejam baixados. Esse parâmetro é configurado em cada ponto de atualização de software da hierarquia do Configuration Manager.  
 
-#### <a name="summary-details"></a>摘要详细信息  
- 在同步过程中，将采用你指定的语言为软件更新更新摘要详细信息（软件更新元数据）。 元数据提供有关软件更新的信息，例如名称、描述、更新支持的产品、更新分类、文章 ID、下载 URL、适用性规则等。  
+#### <a name="summary-details"></a>Detalhes do resumo  
+ Durante o processo de sincronização, as informações detalhadas do resumo (metadados de atualizações de software) são atualizadas para as atualizações de software nos idiomas que você especificar. Os metadados fornecem as informações sobre a atualização de software, como nome, descrição, produtos com suporte na atualização, classificação da atualização, ID do artigo, URL para download, regras de aplicabilidade e assim por diante.  
 
- 只会在顶层站点上配置摘要详细信息设置， 而不会在子站点上的软件更新点上配置摘要详细信息，因为软件更新元数据将通过使用基于文件的复制从管理中心站点向下复制到这些站点。 在选择摘要详细信息语言时，请仅选择环境中需要的语言。 选择的语言越多，同步软件更新元数据所花的时间就越长。 Configuration Manager 在 Configuration Manager 控制台运行的操作系统的区域设置中显示软件更新元数据。 如果操作系统的区域设置中没有软件更新的本地化属性，则软件更新信息以英语显示。  
+ Os parâmetros de detalhes do resumo são configurados somente no site de nível superior. Os detalhes do resumo não são configurados no ponto de atualização de software em sites filho porque os metadados das atualizações de software são replicados do site de administração central para esses sites por meio da replicação baseada em arquivo. Quando você for selecionar os idiomas dos detalhes do resumo, selecione somente os idiomas necessários em seu ambiente. Quanto mais idiomas você selecionar, mais tempo levará para sincronizar os metadados de atualizações de software. O Configuration Manager exibe os metadados de atualizações de software na localidade do sistema operacional no qual o console do Configuration Manager é executado. Se as propriedades localizadas das atualizações de software não estiverem disponíveis no idioma do sistema operacional, as informações de atualizações de software serão exibidas em inglês.  
 
 > [!IMPORTANT]  
->  请务必选择将在 Configuration Manager 层次结构中需要的所有摘要详细信息语言。 当顶层站点上的软件更新点与同步源同步时，所选摘要详细信息语言确定检索的软件更新元数据。 如果在同步至少运行一次后修改摘要详细信息语言，则针对修改的摘要详细信息语言检索的软件更新元数据仅适用于新的或更新的软件更新。 除非更改了同步源上的软件更新，否则不会使用已修改语言的新元数据更新已同步的软件更新。  
+>  É importante que você selecione todos os idiomas dos detalhes de resumo que serão necessários na hierarquia do Configuration Manager. Quando o ponto de atualização de software no site de nível superior sincronizar com a origem da sincronização, os idiomas selecionados para os detalhes do resumo determinarão quais metadados de atualizações de software serão recuperados. Se você modificar os idiomas de detalhes do resumo após a execução da sincronização no mínimo uma vez, os metadados de atualizações de software serão recuperados para os idiomas de detalhes do resumo modificados somente para atualizações de software novas ou atualizadas. As atualizações de software que já tiverem sido sincronizadas não serão atualizadas com os novos metadados dos idiomas modificados, a menos que haja uma alteração na atualização de software na origem da sincronização.  
 
-##  <a name="BKMK_MaintenanceWindow"></a> 规划软件更新维护窗口  
- 你可以添加专用于软件更新安装的维护时段。 这样，你将能配置一般维护时段以及用于软件更新的其他维护时段。 如果同时配置了一般维护时段和软件更新维护时段，则客户端将仅在软件更新维护时段内安装软件更新。 有关维护时段的详细信息，请参阅[如何使用维护时段](../../core/clients/manage/collections/use-maintenance-windows.md)。  
+##  <a name="BKMK_MaintenanceWindow"></a> Planejar uma janela de manutenção para atualizações de software  
+ É possível adicionar uma janela de manutenção dedicada para a instalação de atualizações de software. Isso lhe permite configurar uma janela de manutenção geral e uma janela de manutenção diferente para atualizações de software. Quando a janela de manutenção geral e a janela de manutenção para atualizações de software estão configuradas, os clientes instalam as atualizações de software apenas durante a janela de manutenção para atualizações de software. Para obter mais informações sobre janelas de manutenção, consulte [Como usar janelas de manutenção](../../core/clients/manage/collections/use-maintenance-windows.md).  
 
-##  <a name="BKMK_RestartOptions"></a> 在软件更新安装之后重启 Windows 10 客户端的选项
-当需要重启的软件更新已使用 Configuration Manager 进行部署并且已安装在一台计算机上时，将计划挂起的重启并显示重启对话框。
+##  <a name="BKMK_RestartOptions"></a> Opções de reinício para clientes do Windows 10 após a instalação da atualização de software
+Quando uma atualização de software que requer reinicialização é implantada usando o Configuration Manager e é instalada em um computador, uma reinicialização pendente é agendada e uma caixa de diálogo de reinicialização é exibida.
 
-从 Configuration Manager 版本 1606 开始，只要 Configuration Manager 软件更新存在挂起的重启，则 Windows 10 计算机上的 Windows 电源选项中将出现“更新并重启”和“更新并关闭”选项。 使用这些选项中的某一个后，计算机重启后将不再显示重启对话框。
+A partir da versão 1606 do Configuration Manager, as opções **Atualizar e Reiniciar**e **Atualizar e Desligar** estão disponíveis em computadores Windows 10, nas opções de energia do Windows, sempre que houver uma reinicialização pendente para uma atualização de software do Configuration Manager. Depois de usar uma dessas opções, a caixa de diálogo de reinicialização não será exibida após o computador reiniciar.
 
-在 Configuration Manager 的以前版本中，当 Windows 8 和更高版本的计算机挂起重新启动时，以及当使用 Windows 电源选项（而不是从重新启动对话框）关闭或重新启动计算机时，计算机重新启动后“重新启动”对话框仍然保留并且计算机在配置的截止时间仍将需要重新启动。
+Em versões anteriores do Configuration Manager, quando uma reinicialização está pendente para computadores com Windows 8 e mais recentes, e você desliga ou reinicia o computador usando as opções de energia do Windows (em vez da caixa de diálogo de reinicialização), a caixa de diálogo de reinicialização permanece depois da reinicialização do computador e ainda será necessário reiniciá-lo no prazo configurado.
 
-## <a name="next-steps"></a>后续步骤
-规划软件更新之后，请参阅[准备软件更新管理](../get-started/prepare-for-software-updates-management.md)。
+## <a name="next-steps"></a>Próximas etapas
+Quando planejar atualizações de software, consulte [Preparar-se para o gerenciamento de atualização de software](../get-started/prepare-for-software-updates-management.md).

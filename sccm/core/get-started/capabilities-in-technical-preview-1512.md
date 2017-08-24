@@ -1,6 +1,6 @@
 ---
-title: "Technical Preview 1512 Configuration Manager 中的功能"
-description: "了解 System Center Configuration Manager Technical Preview 1512 版中的可用功能。"
+title: Funcionalidades no Technical Preview 1512 do Configuration Manager
+description: "Saiba mais sobre os recursos disponíveis no Technical Preview do System Center Configuration Manager, versão 1512."
 ms.custom: na
 ms.date: 01/23/2017
 ms.prod: configuration-manager
@@ -18,76 +18,76 @@ robots: noindex,nofollow
 ms.openlocfilehash: 5cf8d54fbaa98a75ac2a875a23a43b1d3e5be0dd
 ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
 ms.translationtype: HT
-ms.contentlocale: zh-CN
+ms.contentlocale: pt-BR
 ms.lasthandoff: 08/07/2017
 ---
-# <a name="capabilities-in-technical-preview-1512-for-system-center-configuration-manager"></a>System Center Configuration Manager Technical Preview 1512 版中的功能
+# <a name="capabilities-in-technical-preview-1512-for-system-center-configuration-manager"></a>Funcionalidades no Technical Preview 1512 do System Center Configuration Manager
 
-*适用范围：System Center Configuration Manager (Technical Preview)*
+*Aplica-se a: System Center Configuration Manager (Technical Preview)*
 
-本文介绍了 System Center Configuration Manager Technical Preview 1512 版中的可用功能。 可以安装此版本以更新 Configuration Manager Technical Preview 站点的功能并向其添加新功能。 在安装此版本的 Technical Preview 前，请查看介绍性主题 [System Center Configuration Manager Technical Preview](technical-preview.md)，以熟悉使用 Technical Preview 的常规要求和限制、如何在版本之间进行更新，以及如何提供关于 Technical Preview 中的功能的反馈。  
+Este artigo apresenta os recursos disponíveis no Technical Preview do System Center Configuration Manager, versão 1512. Você pode instalar esta versão para atualizar e adicionar novas funcionalidades ao seu site do Configuration Manager Technical Preview. Antes de instalar esta versão do technical preview, consulte o tópico introdutório, [Technical Preview do System Center Configuration Manager](technical-preview.md), para se familiarizar com os requisitos e limitações gerais de uso de um technical preview, como atualizar entre versões e como fornecer comentários sobre os recursos em um technical preview.  
 
- 以下是可以试用的此版本的新功能。  
+ Veja a seguir os novos recursos que você pode experimentar nesta versão.  
 
-##  <a name="bkmk_devicehealth"></a> 设备运行状况证明  
- 从 Technical Preview 1512 开始，管理员可以在 Configuration Manager 中查看 Windows 10 设备运行状况证明的状态。  此功能适用于 Configuration Manager 和带 Microsoft Intune 的 Configuration Manager。 设备运行状况证明让管理员能够确保客户端计算机具有可信 BIOS、TPM 和启动软件配置。 为了支持设备运行状况证明，客户端设备必须运行 Win10 并启用 TPM 2。 设备运行状况证明显示为以下各项启用的设备数：  
+##  <a name="bkmk_devicehealth"></a> Atestado de integridade do dispositivo  
+ Começando com o Technical Preview 1512, os administradores podem ver o status do atestado de integridade de dispositivo Windows 10 no console do Configuration Manager.  Essa funcionalidade está disponível para o Configuration Manager e o Configuration Manager com o Microsoft Intune. O atestado de integridade do dispositivo permite que o administrador garanta que os computadores cliente têm configurações confiáveis de BIOS, TPM e software de inicialização. Para dar suporte de atestado de integridade do dispositivo, os dispositivos do cliente devem estar executando o Win10 com o TPM 2 habilitado. O atestado de integridade do dispositivo exibe o número de dispositivos habilitados para cada um dos seguintes:  
 
--   开机初期启动的反恶意软件  
+-   Antimalware de inicialização antecipada  
 
 -   BitLocker  
 
--   安全启动  
+-   Inicialização Segura  
 
--   代码完整性  
+-   Integridade do código  
 
-控制台还显示丢失最多的运行状况证明设置和设备数。  
+O console também exibe as principais configurações de atestado de integridade ausentes com o número de dispositivos.  
 
-若要预览设备运行状况证明视图，请在 Configuration Manager 中转到“监视”工作区，单击“安全”节点，然后单击“运行状况证明”。  
+Para visualizar a exibição do atestado de integridade do dispositivo no console do Configuration Manager, acesse o espaço de trabalho **Monitoramento**, clique no nó **Segurança** e clique em **Atestado de Integridade**.  
 
-##  <a name="bkmk_viewterms"></a>条款和条件的控制台中监视  
-从 Technical Preview 1512 开始，如果将 Configuration Manager 与 Microsoft Intune 集成，便可以使用 Configuration Manager 查看已接受和未接受你的 IT 部门所配置条款和条件的用户。  
+##  <a name="bkmk_viewterms"></a> Monitoramento no console dos termos e condições  
+A partir do Technical Preview 1512, ao integrar o Configuration Manager ao Microsoft Intune, você poderá usar o console do Configuration Manager para ver quais usuários aceitaram os termos e condições configurados pelo departamento de TI, e quais não aceitaram.  
 
-**查看摘要信息：**  
+**Para exibir informações de resumo:**  
 
--   在 Configuration Manager 控制台中，转到“监视” > “概述” > “部署”，然后选择要查看的条款和条件部署。  
+-   No console do Configuration Manager, acesse **Monitoramento** > **Visão Geral** > **Implantações** e selecione a implantação de termos e condições que você deseja exibir.  
 
-**查看详细信息：**  
+**Para exibir informações detalhadas:**  
 
-1.  在 Configuration Manager 控制台中，转到“资产和符合性” > “概述” > “符合性设置” > “条款和条件”，然后选择要查看的条款和条件。  
+1.  No console do Configuration Manager, acesse **Ativos e Conformidade** > **Visão Geral** > **Configurações de Conformidade** > **Termos e Condições** e selecione os termos e condições que você deseja exibir.  
 
-2.  在控制台底部，选择“部署”选项卡并选择部署，然后单击“查看状态”。  
+2.  Na parte inferior do console, selecione a guia **Implantações**, selecione a implantação e clique em **Exibir Status.**  
 
-##  <a name="bkmk_EPpolicy"></a>对 Endpoint Protection 策略设置的改进  
-在 1512 Technical Preview 中，我们在 Endpoint Protection 反恶意软件策略中添加了以下新设置：  
+##  <a name="bkmk_EPpolicy"></a> Aprimoramentos nas configurações da política do Endpoint Protection  
+Na Visualização Técnica 1512, adicionamos as seguintes novas configurações na política antimalware do Endpoint Protection:  
 
--   实时保护：**在下载时和安装前阻止可能不需要的应用程序**  
+-   Proteção em tempo real: **Bloco de aplicativos potencialmente indesejados no download e antes da instalação**  
 
-    -   可能不需要的应用程序 (PUA) 是一种基于信誉和研究驱动的标识的威胁分类。 大多数情况下，它们是不需要的应用程序捆绑程序或其捆绑应用程序。  
+    -   PUA (Aplicativos Potencialmente Indesejados) é uma classificação de risco com base na reputação e identificação voltadas para a pesquisa. Normalmente, esses são agregadores de aplicativos indesejados ou seus aplicativos empacotados.  
 
-    -   默认启用了保护策略设置（设置为“是”）。 启用后，此设置将在下载和安装时阻止 PUA。 但是，您可以排除特定文件或文件夹，以满足您的环境的特定需求。  
+    -   A configuração de política de proteção está habilitada (definida como "Sim") por padrão. Quando habilitada, essa configuração impede PUA no momento de download e instalação. No entanto, você pode excluir arquivos específicos ou pastas para atender às necessidades específicas do seu ambiente.  
 
--   扫描设置：**在运行完全扫描时扫描映射的网络驱动器**  
+-   Configurações de verificação: **Verificação de unidades de rede mapeadas ao executar uma verificação completa**  
 
-    -   此设置可以提供更高的粒度，让管理员能够在按计划完全扫描的过程中允许按需扫描网络文件，从而规避始终扫描映射的网络驱动器的风险。  
+    -   Essa configuração fornece maior granularidade ao administrador para permitir verificações sob demanda de arquivos de rede sem o risco de sempre verificar unidades de rede mapeadas durante uma verificação completa agendada.  
 
-    -   必须先启用“扫描网络文件”设置（“是”），才可对此设置进行配置。  
+    -   A configuração **Verificar arquivos de rede** deve primeiro ser habilitada (“Sim”) para que essa configuração esteja disponível para configurar.  
 
-    -   默认情况下，此设置为“否”，表示完全扫描将不访问映射的网络驱动器。  
+    -   Por padrão, essa configuração é definida como "Não", o que significa que uma verificação completa não acessará as unidades de rede mapeadas.  
 
--   自动示例文件提交配置：  
+-   Configurações de envio de arquivo de exemplo automático:  
 
-     反恶意软件引擎可能会请求将文件示例发送到 Microsoft 供进一步分析。 默认情况下，发送此类示例之前将始终给出提示。 管理员现在可以管理以下设置以配置此行为：  
+     O mecanismo antimalware pode solicitar que amostras de arquivo sejam enviadas à Microsoft para análise posterior. Por padrão, ele solicitará sempre antes de enviar esses exemplos. Os administradores agora podem gerenciar as configurações a seguir para configurar esse comportamento:  
 
-    -   高级：**启用自动示例文件提交以帮助 Microsoft 确定某些检测到的项是否为恶意项**：将此设置更改为“是”以启用自动示例文件提交。 默认情况下，此设置为“否”，这意味着禁用了自动示例文件提交，并且将在发送示例前提示用户。   （此设置是在 System Center 2012 R2 Configuration Manager SP1 中首次推出的）  
+    -   Avançado ‑ **Permitir o envio de arquivo de amostra automático para ajudar a Microsoft a determinar se certos itens detectados são maliciosos**: altere essa configuração para "Sim" para habilitar o envio automático de amostra. Por padrão, essa configuração é "Não", o que significa que o envio automático de amostra está desabilitado e os usuários serão avisados antes do envio de amostras.   (Essa configuração foi introduzida no System Center 2012 R2 Configuration Manager SP1)  
 
-    -   高级：**允许用户修改自动示例文件提交设置**：此设置决定在设备上具有本地管理权限的用户可否在客户端界面中更改自动示例文件提交设置。 默认情况下，此设置为“否”，这意味着只能从 Configuration Manager 内更改设置，设备上的本地管理员不能更改此配置。  
+    -   Avançado ‑ **Permitir que usuários modifiquem configurações de envio do arquivo de amostra automática**: essa configuração determina se um usuário com direitos administrativos em um dispositivo pode alterar a configuração de envio do arquivo de amostra automática na interface do cliente. Por padrão, essa configuração é definida como “Não”, o que significa que as configurações só podem ser alteradas no console do Configuration Manager e os administradores locais em um dispositivo não podem alterar essa configuração.  
 
-         例如，下面显示了启用时由管理员设置的 Windows 10 中的 Windows Defender 设置，并且不允许用户对其进行修改：  
+         Por exemplo, o código a seguir mostra a configuração do Windows Defender no Windows 10 definida pelo administrador como habilitada e o usuário não tem permissão para modificá-la:  
 
          ![TechRef&#95;WinDefender](../../core/get-started/media/TechRef_WinDefender.png "TechRef_WinDefender")  
 
-    此外，Endpoint Protection 反恶意软件政策的“排除设置”部分中的现有“排除文件和文件夹”设置已改进为允许设备排除。 例如，你现在可以将以下内容指定为排除项： **\device\mvfs** （适用于 Multiversion 文件系统）。 策略不会验证设备路径；将 Endpoint Protection 策略提供给客户端上必须能够解释设备字符串的反恶意软件引擎。  
+    Além disso, a configuração existente **Excluir arquivos e pastas** na seção "Configurações de exclusão" da política antimalware do Endpoint Protection foi aprimorada para permitir exclusões de dispositivo. Por exemplo, agora você pode especificar o seguinte como uma exclusão: **\device\mvfs** (para o sistema de arquivos Multiversion). A política não valida o caminho do dispositivo; a política do Endpoint Protection é fornecida ao mecanismo antimalware do cliente que deve ser capaz de interpretar a cadeia de caracteres do dispositivo.  
 
-**使用 Endpoint Protection 策略的先决条件：**  
+**Pré-requisitos para usar as políticas do Endpoint Protection:**  
 
-必须先使用 Endpoint Protection 客户端设置安装并管理 Endpoint Protection 客户端，才能使用 Endpoint Protection 策略。 该操作使用适用于 Windows 7、Windows 8、Windows 8.1 的 System Center Endpoint Protection 客户端或适用于 Windows 10 的托管 Windows Defender 完成。 请参阅 [System Center Configuration Manager 中的 Endpoint Protection](../../protect/deploy-use/endpoint-protection.md)。  
+Antes de usar as políticas do Endpoint Protection, você deve instalar e gerenciar o cliente Endpoint Protection usando as configurações de cliente do Endpoint Protection. Isso é feito usando o cliente do System Center Endpoint Protection para Windows 7, Windows 8, Windows 8.1 ou Windows Defender para Windows 10 gerenciado. Consulte [Endpoint Protection no System Center Configuration Manager](../../protect/deploy-use/endpoint-protection.md).  

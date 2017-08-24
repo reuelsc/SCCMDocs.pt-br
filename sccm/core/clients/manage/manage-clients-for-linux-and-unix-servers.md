@@ -1,6 +1,6 @@
 ---
-title: "管理 Linux 和 UNIX 客户端 | Microsoft Docs"
-description: "在 System Center Configuration Manager 中管理 Linux 和 UNIX 服务器上的客户端。"
+title: Gerenciar clientes Linux e UNIX | Microsoft Docs
+description: Gerencie clientes em servidores Linux e UNIX no System Center Configuration Manager.
 ms.custom: na
 ms.date: 04/23/2017
 ms.prod: configuration-manager
@@ -18,63 +18,63 @@ manager: angrobe
 ms.openlocfilehash: 506df4f7c7baa5f0586a1ddf0cb02b3de9f4d076
 ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
 ms.translationtype: HT
-ms.contentlocale: zh-CN
+ms.contentlocale: pt-BR
 ms.lasthandoff: 08/07/2017
 ---
-# <a name="how-to-manage-clients-for-linux-and-unix-servers-in-system-center-configuration-manager"></a>如何在 System Center Configuration Manager 中管理 Linux 和 UNIX 服务器客户端
+# <a name="how-to-manage-clients-for-linux-and-unix-servers-in-system-center-configuration-manager"></a>Como gerenciar clientes para servidores Linux e UNIX no System Center Configuration Manager
 
-*适用范围：System Center Configuration Manager (Current Branch)*
+*Aplica-se a: System Center Configuration Manager (Branch Atual)*
 
-当使用 System Center Configuration Manager 管理 Linux 和 UNIX 服务器时，可以配置集合、维护时段和客户端设置，以帮助管理服务器。 此外，尽管适用于 Linux 和 UNIX 的 Configuration Manager 客户端没有用户界面，但可以强制客户端手动轮询客户端策略。
+Ao gerenciar servidores Linux e UNIX com o System Center Configuration Manager, você pode configurar coleções, janelas de manutenção e configurações do cliente para ajudar a gerenciar os servidores. Além disso, embora o cliente do Configuration Manager para Linux e UNIX não tenha uma interface do usuário, você pode forçar o cliente a pesquisar manualmente a política do cliente.
 
 ##  <a name="BKMK_CollectionsforLnU"></a> Collections of Linux and UNIX servers  
- 使用集合管理 Linux 和 UNIX 服务器组的方式与使用集合管理其他客户端类型的方式相同。 集合可以是直接成员身份集合，也可以是基于查询的集合。 基于查询的集合用于确定客户端操作系统、硬件配置或有关站点数据库中存储的客户端的其他详细信息。 例如，你可以使用包括 Linux 和 UNIX 服务器的集合来管理下列设置：  
+ Use coleções para gerenciar grupos de servidores Linux e UNIX da mesma maneira que usa coleções para gerenciar outros tipos de clientes. Coleções podem ser coleções de associação direta ou coleções com base em consulta. Coleções baseadas em consulta identificam os sistemas operacionais cliente, as configurações de hardware ou outros detalhes sobre o cliente que são armazenados no banco de dados do site. Por exemplo, você pode usar coleções que incluem servidores Linux e UNIX para gerenciar as seguintes configurações:  
 
--   客户端设置  
+-   Configurações do cliente  
 
--   软件部署  
+-   Implantações de software  
 
--   强制维护时段  
+-   Impor janelas de manutenção  
 
- 必须先从客户端收集[硬件清单](../../../core/clients/manage/inventory/hardware-inventory-for-linux-and-unix.md)，然后才可通过客户端操作系统或分发来标识 Linux 或 UNIX 客户端。  
+ Para poder identificar um cliente Linux ou UNIX pelo seu sistema operacional ou sua distribuição, é necessário coletar o [inventário de hardware](../../../core/clients/manage/inventory/hardware-inventory-for-linux-and-unix.md) do cliente.  
 
- 硬件清单的默认客户端设置包括有关客户端计算机的操作系统的信息。 你可以使用 **Operating System** 类的 **Caption** 属性来标识 Linux 或 UNIX 服务器的操作系统。  
+ As configurações padrão do cliente para inventário de hardware incluem informações sobre o sistema operacional de um computador cliente. Você pode usar a propriedade **Legenda** da classe **Sistema Operacional** para identificar o sistema operacional de um servidor Linux ou UNIX.  
 
- 在 Configuration Manager 控制台的“资产和符合性”工作区中的“设备”节点下，可查看有关运行 Linux 和 UNIX 的 Configuration Manager 客户端的计算机的详细信息。 在 Configuration Manager 控制台的“资产和符合性”工作区中，可在“操作系统”列中查看每台计算机的操作系统名称。  
+ Você pode exibir detalhes sobre os computadores que executam o cliente do Configuration Manager para Linux e UNIX no nó **Dispositivos** do espaço de trabalho **Ativos e Conformidade** no console do Configuration Manager. No espaço de trabalho **Ativos e Conformidade** do console do Configuration Manager, é possível exibir o nome do sistema operacional de cada computador na coluna **Sistema Operacional**.  
 
- 默认情况下，Linux 和 UNIX 服务器属于 **所有系统** 集合的成员。 建议生成仅包括 Linux 和 UNIX 服务器或其子集的自定义集合。 通过自定义集合，可管理向诸如计算机组部署软件或分配客户端设置等操作，以便准确衡量部署是否成功。   
+ Por padrão, os servidores Linux e UNIX são membros da coleção **Todos os Sistemas** . Recomendamos que você compile coleções personalizadas que incluam somente servidores Linux e UNIX ou um subconjunto deles. As coleções personalizadas permitem que você gerencie operações como implantação de software ou atribuição de configurações do cliente a grupos de computadores semelhantes, para que você possa medir com precisão o sucesso de uma implantação.   
 
- 在为 Linux 和 UNIX 服务器生成自定义集合时，请包含成员身份规则查询，并在这些查询中包括操作系统特性的 Caption 特性。 有关创建集合的信息，请参阅[如何在 System Center Configuration Manager 中创建集合](../../../core/clients/manage/collections/create-collections.md)。  
+ Ao compilar uma coleção personalizada para servidores Linux e UNIX, inclua consultas de regra de associação que incluem o atributo Caption para o atributo Operating System. Para obter informações sobre a criação de coleções, consulte [Como criar coleções no System Center Configuration Manager](../../../core/clients/manage/collections/create-collections.md).  
 
 ##  <a name="BKMK_MaintenanceWindowsforLnU"></a> Maintenance windows for Linux and UNIX servers  
- Linux 和 UNIX 服务器的 Configuration Manager 客户端支持使用[维护时段](../../../core/clients/manage/collections/use-maintenance-windows.md)。 与对基于 Windows 的客户端的支持相比，此支持并无变化。  
+ O cliente do Configuration Manager para servidores Linux e UNIX dá suporte ao uso de [janelas de manutenção](../../../core/clients/manage/collections/use-maintenance-windows.md). Esse suporte não foi alterado em clientes baseados em Windows.  
 
 ##  <a name="BKMK_ClientSettingsforLnU"></a> Client settings for Linux and UNIX servers  
- 可使用与配置其他客户端设置相同的方式配置适用于 Linux 和 UNIX 服务器的[客户端设置](../../../core/clients/deploy/configure-client-settings.md)。  
+ Você pode [definir configurações do cliente](../../../core/clients/deploy/configure-client-settings.md) que se aplicam a servidores Linux e UNIX da mesma forma que você define configurações para outros clientes.  
 
- 默认情况下， **默认客户端代理设置** 适用于 Linux 和 UNIX 服务器。 还可以创建自定义客户端设置，并将其部署到特定客户端的集合中。  
+ Por padrão, as **Configurações Padrão do Agente Cliente** se aplicam a servidores Linux e UNIX. Você também pode criar configurações de cliente personalizadas e implantá-las em coleções de clientes específicos.  
 
- 没有仅适用于 Linux 和 UNIX 客户端的其他客户端设置。 但是，有不适用于 Linux 和 UNIX 的客户端的默认客户端设置。 Linux 和 UNIX 客户端仅应用所支持功能的设置。  
+ Não há outras configurações do cliente que se aplicam somente aos clientes Linux e UNIX. No entanto, há configurações padrão do cliente que não se aplicam aos clientes Linux e UNIX. O cliente para Linux e UNIX só aplica configurações para funcionalidade que ele dá suporte.  
 
- 例如，Linux 和 UNIX 服务器会忽略启用并配置了远程控制设置的自定义客户端设备设置，因为 Linux 和 UNIX 客户端不支持远程控制。  
+ Por exemplo, uma configuração de dispositivo de cliente personalizada que habilita e configura configurações de controle remoto seria ignorada por servidores Linux e UNIX, porque o cliente para Linux e UNIX não oferece suporte para controle remoto.  
 
 ##  <a name="BKMK_PolicyforLnU"></a> Computer policy for Linux and UNIX servers  
- Linux 和 UNIX 服务器的客户端定期轮询其站点中的计算机策略，以了解请求的配置，并检查部署。  
+ O cliente para servidores Linux e UNIX sonda periodicamente seu site em relação à política de computador para saber mais sobre as configurações solicitadas e para verificar se há implantações.  
 
- 也可以强制 Linux 或 UNIX 服务器的客户端立即轮询计算机策略。 为此，请使用服务器上的**根**凭据运行以下命令：**/opt/microsoft/configmgr/bin/ccmexec -rs policy**  
+ Você também pode forçar o cliente em um servidor Linux ou UNIX a sondar imediatamente a política do computador. Para fazer isso, use as credenciais de **raiz** no servidor para executar o seguinte comando: **/opt/microsoft/configmgr/bin/ccmexec -rs policy**  
 
- 有关计算机策略轮询的详细信息包含在共享的客户端日志文件 **scxcm.log**中。  
+ Os detalhes sobre a pesquisa de política de computador são inseridos no arquivo de log do cliente compartilhado, **scxcm.log**.  
 
 > [!NOTE]  
->  Linux 和 UNIX 的 Configuration Manager 客户端从不请求或处理用户策略。  
+>  O cliente do Configuration Manager para Linux e UNIX nunca solicita nem processa a política de usuário.  
 
 ##  <a name="BKMK_ManageLinuxCerts"></a> How to manage certificates on the client for Linux and UNIX  
- 安装适用于 Linux 和 UNIX 的客户端后，你可以使用 **certutil** 工具来更新包含新 PKI 证书的客户端，并导入新的证书吊销列表 (CRL)。 安装适用于 Linux 和 UNIX 的客户端时，将此工具放置在 **/opt/microsoft/configmgr/bin/certutil** 中。 
+ Depois de instalar o cliente para Linux e UNIX, você pode usar a ferramenta **certutil** para atualizar o cliente com um novo certificado PKI e importar uma nova CRL (lista de Certificados Revogados). Quando você instala o cliente para Linux e UNIX, essa ferramenta é colocada em: **/opt/microsoft/configmgr/bin/certutil**. 
 
- 若要管理证书，请使用以下选项之一在每个客户端上运行 certutil：  
+ Para gerenciar certificados, em cada cliente execute certutil com uma das seguintes opções:  
 
-|选项|更多信息|  
+|Opção|Mais informações|  
 |------------|----------------------|  
-|importPFX|使用此选项可指定证书，以替换客户端当前使用的证书。<br /><br /> 使用 **-importPFX**时，还必须使用 **-password** 命令行参数来提供与 PKCS#12 文件关联的密码。<br /><br /> 使用 **-rootcerts** 可指定任何其他根证书要求。<br /><br /> 示例：**certutil -importPFX &lt;Path to the PKCS#12 certificate> -password &lt;Certificate password\> [-rootcerts &lt;comma-separated list of certificates>]**|  
-|-importsitecert|使用此选项可更新管理服务器上的站点服务器签名证书。<br /><br /> 示例：**certutil -importsitecert &lt;Path to the DER certificate\>**|  
-|-importcrl|使用此选项可通过一个或多个 CRL 文件路径更新客户端上的 CRL。<br /><br /> 示例：**certutil -importcrl &lt;comma separated CRL file paths\>**|  
+|importPFX|Use esta opção para especificar um certificado para substituir o certificado que está sendo usado atualmente por um cliente.<br /><br /> Quando você usa o **-importPFX**, também é necessário usar o parâmetro **–password** da linha de comando para fornecer a senha associada ao arquivo PKCS#12.<br /><br /> Use **-rootcerts** para especificar requisitos de certificado raiz adicionais.<br /><br /> Exemplo: **certutil -importPFX &lt;Caminho para o certificado PKCS#12> -password &lt;Senha do certificado\> [-rootcerts &lt;lista de certificados separados por vírgula>]**|  
+|-importsitecert|Use esta opção para atualizar o certificado de assinatura de servidor do site localizado no servidor de gerenciamento.<br /><br /> Exemplo: **certutil -importsitecert &lt;Caminho para o certificado DER\>**|  
+|-importcrl|Use esta opção para atualizar a CRL no cliente com um ou mais caminhos de arquivo da CRL.<br /><br /> Exemplo: **certutil -importcrl &lt;caminhos de arquivos CRL separados por vírgula\>**|  

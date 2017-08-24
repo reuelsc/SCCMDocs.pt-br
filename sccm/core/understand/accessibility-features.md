@@ -1,6 +1,6 @@
 ---
-title: "辅助功能 | Microsoft Docs"
-description: "了解使 System Center Configuration Manager 可供残疾人使用的功能。"
+title: Acessibilidade | Microsoft Docs
+description: "Saiba mais sobre os recursos que tornam o System Center Configuration Manager acessível para pessoas com deficiências."
 ms.custom: na
 ms.date: 7/31/2017
 ms.reviewer: na
@@ -17,118 +17,118 @@ manager: angrobe
 ms.openlocfilehash: ca518796477dda149a9f4c0ebd65f0a082eab806
 ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
 ms.translationtype: HT
-ms.contentlocale: zh-CN
+ms.contentlocale: pt-BR
 ms.lasthandoff: 08/07/2017
 ---
-# <a name="accessibility-features-in-system-center-configuration-manager"></a>System Center Configuration Manager 中的辅助功能
+# <a name="accessibility-features-in-system-center-configuration-manager"></a>Recursos de acessibilidade no System Center Configuration Manager
 
-*适用范围：System Center Configuration Manager (Current Branch)*
-
-
-System Center Configuration Manager 包含可供残疾人使用的功能。
+*Aplica-se a: System Center Configuration Manager (Branch Atual)*
 
 
-## <a name="bkmk_aconsole"></a>Configuration Manager 控制台的辅助功能  
+O System Center Configuration Manager inclui recursos para ajudar a torná-lo acessível para pessoas com deficiências.
 
-**版本 1706 及更高版本的快捷方式和改进**
 
-|键盘快捷方式|  目的|
+## <a name="bkmk_aconsole"></a> Recursos de acessibilidade para o console do Configuration Manager  
+
+**Atalhos e aprimoramentos na versão 1706 e posterior**
+
+|Atalho de teclado|  Finalidade|
 |--------|--------|  
-|Ctrl + M|将焦点设置在主（中心）窗格中。|
-|Ctrl + T|将焦点设置到导航窗格中的顶级节点。 如果焦点已在此窗格中，则将焦点设置到你访问的最后一个节点。|
-|Ctrl + I|将焦点设置到功能区下方的痕迹导航栏中。|
-|Ctrl + L|将焦点设置到“搜索”字段中（可用时）。|
-|Ctrl + D|将焦点设置到细节窗格中（可用时）。|
-|Alt     |将焦点移入和移出功能区。|
+|Ctrl + M|Define o foco no painel principal (central).|
+|Ctrl + T|Define o foco o nó superior no painel de navegação. Se o foco já estiver nesse painel, ele será definido para o último nó que você visitou.|
+|Ctrl + I|Define o foco para a barra de trilha, abaixo da faixa de opções.|
+|Ctrl + L|Define o foco para o campo **Pesquisa**, quando estiver disponível.|
+|Ctrl + D|Define o foco para o painel de detalhes, quando estiver disponível.|
+|Alt     |Altera o foco para dentro e fora da faixa de opções.|
 
 
-- 改进了在导航窗格键入节点名称字母时的导航。
-- 现在，通过主视图和功能区的键盘导航为圆形。
-- 现在详细信息窗格中的键盘导航为圆形。 要返回到上一个对象或窗格，使用 Ctrl + D，然后按住 Shift + TAB 即可实现。
-- 在刷新工作区视图后，焦点将设置到该工作区的主窗格中。
-- 修复了一个问题，可使屏幕阅读器公布列表项的名称。
-- 为页面上的多个控件添加了可访问名称，使得屏幕阅读器可以公布重要信息。
+- Melhora a navegação no painel de navegação quando você digita as letras de um nome de nó.
+- A navegação por teclado no modo de exibição principal e na faixa de opções agora é circular.
+- Agora, a navegação por teclado no painel de detalhes é circular. Para retornar ao painel ou objeto anterior, use Ctrl + D, depois, Shift + TAB.
+- Depois de atualizar um modo de exibição do Espaço de Trabalho, o foco é definido para o painel principal desse espaço de trabalho.
+- Correção de um problema para permitir que os leitores de tela anunciem os nomes dos itens de lista.
+- Adição de nomes acessíveis para vários controles na página, o que permite aos leitores de tela anunciarem informações importantes.
 
 
-**以下快捷方式在所有版本中可用**
+**Os atalhos de teclado a seguir estão disponíveis para todas as versões**
 
-- 要访问工作区，请使用以下键盘快捷方式：  
+- Para acessar um espaço de trabalho, use os seguintes atalhos de teclado:  
 
-|键盘快捷方式| 工作区|
+|Atalho de teclado| Espaço de trabalho|
 |--------|--------|  
-|Ctrl + 1| 资产和符合性|
-|Ctrl + 2|  软件库|
-|Ctrl + 3|  监视|
-|Ctrl + 4|  管理|
+|Ctrl + 1| Ativos e conformidade|
+|Ctrl + 2|  Biblioteca de software|
+|Ctrl + 3|  monitoramento|
+|Ctrl + 4|  Administração|
 
 
--   要访问工作区菜单，请选择 Tab 键，直到焦点位于“展开/折叠”图标上为止。 然后，选择向下箭头键以访问工作区菜单。  
+-   Para acessar um menu do espaço de trabalho, pressione a tecla Tab até que o ícone Expandir/Recolher esteja em foco. Em seguida, pressione a tecla de seta para baixo para acessar o menu do espaço de trabalho.  
 
--   要在工作区菜单中导航，请使用箭头键。  
+-   Para navegar por um menu de espaço de trabalho, use as teclas de direção.  
 
--   要访问工作区中的其他区域，请使用 Tab 键和 Shift+Tab 键。 要在工作区区域（如功能区）内导航，请使用箭头键。  
+-   Para acessar diferentes áreas no espaço de trabalho, use a tecla Tab e as teclas Shift+Tab. Para navegar dentro de uma área do espaço de trabalho, como a faixa de opções, use as teclas de direção.  
 
--   当焦点在树节点中时，若要访问地址栏，请使用 3 次 Shift+Tab。  
+-   Para acessar a barra de endereços quando seu foco estiver no nó de árvore, use Shift+Tab três vezes.  
 
--   在向导或属性页上，可以使用键盘快捷方式在方框之间移动。 按住 Alt 键的同时按下划线字符 (Alt+_) 可以选择特定框。     
+-   Em uma página de assistente ou de propriedades, você pode se mover entre as caixas com os atalhos de teclado. Pressione a tecla Alt mais o caractere sublinhado (Alt+_) para selecionar uma caixa específica.     
 
--  若要导航到工作区的不同节点，需输入节点名称的第一个字母。 每次按键都会将光标移动到以该字母开头的下一节点。 如果使用屏幕阅读器，阅读器会读出该节点的名称。
+-  Para navegar até os diferentes nós de um espaço de trabalho, insira a primeira letra do nome do nó. Cada pressionamento de tecla move o cursor para o próximo nó que começa com determinada letra. Quando você estiver usando um leitor de tela, o leitor lê o nome do nó.
 
 > [!NOTE]  
->  本节中的信息可能仅适用于在美国获得 Microsoft 产品许可的用户。 如果在美国以外的国家/地区获得本产品，可以使用软件包附带的子公司信息卡或访问 [Microsoft 辅助功能网站](http://go.microsoft.com/fwlink/?LinkId=8431)，获取 Microsoft 支持服务的联系信息。 可与你所在地的子公司联系，了解本节中描述的产品和服务的类型在你所在地区是否可用。 辅助功能的相关信息具有其他语言（包括日语和法语）版本。  
+>  As informações nessa seção podem se aplicar somente a usuários que licenciam produtos da Microsoft nos Estados Unidos. Se você adquiriu este produto fora dos Estados Unidos, pode usar o cartão de informações da subsidiária fornecido com o pacote do software ou acessar o [site de Acessibilidade da Microsoft](http://go.microsoft.com/fwlink/?LinkId=8431) para obter informações de contato dos serviços de suporte da Microsoft. Você pode contatar a subsidiária para descobrir se os tipos de produtos e serviços descritos nessa seção estão disponíveis na sua área. As informações sobre acessibilidade estão disponíveis em outros idiomas, incluindo japonês e francês.  
 
-##  <a name="bkmk_ahelp"></a>Configuration Manager 帮助的辅助功能  
- Configuration Manager 帮助中包括的功能适用于范围更广的用户（包括行动不便和低视力用户，或其他残障人士）。  
+##  <a name="bkmk_ahelp"></a> Recursos de acessibilidade para a Ajuda do Configuration Manager  
+ A Ajuda do Configuration Manager inclui recursos que o tornam acessível a um maior número de usuários, incluindo aqueles que têm destreza limitada, visão subnormal ou outras deficiências.  
 
-|若要执行此操作|使用此键盘快捷方式|  
+|Para fazer isso|Usar este atalho de teclado|  
 |----------------|--------------------------------|  
-|显示“帮助”窗口。|F1|  
-|在帮助主题窗格与导航窗格（“内容” 、“搜索” 和“索引”  选项卡）之间移动光标。|F6|  
-|在导航窗格中的选项卡（例如，“内容”、“搜索”和“索引”）之间切换。|Alt + 选项卡的带下划线的字母|  
-|选择下一个隐藏的文本或超链接。|选项卡|  
-|选择上一个隐藏的文本或超链接。|Shift+Tab|  
-|为所选的“全部显示”、“全部隐藏”、隐藏文本或超链接执行操作。|Enter|  
-|显示“选项”  菜单以访问任何帮助工具栏命令。|Alt+O|  
-|隐藏或显示包含“内容”、“搜索”和“索引”选项卡的窗格。|Alt+O，再按 T|  
-|显示以前查看过的主题。|Alt+O，再按 B|  
-|显示以前显示的主题序列中的下一主题。|Alt+O，再按 F|  
-|返回指定的主页。|Alt+O，再按 H|  
-|阻止“帮助”窗口打开帮助主题，例如阻止网页下载。|Alt + O，再按 S|  
-|打开 Windows Internet Explorer 的“Internet 选项”  对话框，您可以在其中更改辅助功能设置。|Alt+O，再按 I|  
-|刷新主题，例如链接的网页。|Alt+O，再按 R|  
-|打印书中的所有主题或仅打印选定的主题。|Alt+O，再按 P|  
-|关闭“帮助”窗口。|Alt+F4|  
+|Exibir a janela da Ajuda.|F1|  
+|Mover o cursor entre o painel do tópico da Ajuda e o painel de navegação (as guias **Conteúdo**, **Pesquisar**e **Índice** ).|F6|  
+|Alterar entre as guias (por exemplo, **Conteúdo**, **Pesquisar** e **Índice**) enquanto estiver no painel de navegação.|Alt + letra sublinhada da guia|  
+|Selecionar o próximo texto oculto ou hiperlink.|Guia|  
+|Selecionar o texto oculto ou hiperlink anterior|Shift+Tab|  
+|Executar a ação de Mostrar tudo, Ocultar tudo, Texto oculto ou hiperlink.|Entrar|  
+|Exibir o menu **Opções** para acessar qualquer comando na barra de ferramentas da Ajuda.|Alt+O|  
+|Ocultar ou mostrar o painel que contém as guias **Conteúdo**, **Pesquisar** e **Índices**.|Alt+O e depois pressione T|  
+|Exibir o tópico visualizado anteriormente.|Alt+O e depois pressione B|  
+|Exibir o próximo tópico em uma sequencia de tópicos exibidos anteriormente.|Alt+O e depois pressione F|  
+|Retornar à página inicial especificada.|Alt+O e depois pressione H|  
+|Impedir que a janela da Ajuda abra um tópico da Ajuda, como para interromper o download de uma página da Web.|Alt+O e depois pressione S|  
+|Abrir a caixa de diálogo **Opções da Internet** no Internet Explorer, na qual é possível alterar as configurações de acessibilidade.|Alt+O e depois pressione I|  
+|Atualizar o tópico, como uma página da Web vinculada.|Alt+O e depois pressione R|  
+|Imprimir todos os tópicos em um livro ou apenas um tópico selecionado.|Alt+O e depois pressione P|  
+|Fechar a janela da Ajuda.|Alt+F4|  
 
-#### <a name="to-change-the-appearance-of-a-help-topic"></a>更改帮助主题的外观  
+#### <a name="to-change-the-appearance-of-a-help-topic"></a>Para alterar a aparência de um tópico da Ajuda  
 
-1.  若要准备自定义“帮助”中的颜色、字形和字号，请打开“帮助”窗口。  
+1.  Para se preparar para personalizar cores, estilos e tamanhos de fontes na Ajuda, abra a janela da Ajuda.  
 
-2.  选择“选项”，然后选择“Internet 选项”。  
+2.  Clique em **Opções** e, em seguida, clique em **Opções da Internet**.  
 
-3.  在“常规”选项卡上，选择“辅助功能”。 选择“不使用网页中指定的颜色”、“不使用网页中指定的字体样式”和“不使用网页中指定的字体大小”。 也可以选择使用在你自己的样式表中指定的设置。  
+3.  Na guia **Geral**, clique em **Acessibilidade**. Selecione **Ignorar cores especificadas em páginas da Web**, **Ignorar estilos de fonte especificados em páginas da Web** e **Ignorar tamanhos de fonte especificados em páginas da Web**. Você também pode optar por usar as configurações especificadas na sua própria folha de estilo.  
 
-#### <a name="to-change-the-color-of-the-background-or-text-in-help"></a>更改“帮助”中的背景或文本的颜色  
+#### <a name="to-change-the-color-of-the-background-or-text-in-help"></a>Para alterar a cor do plano de fundo ou texto na Ajuda  
 
-1.  打开“帮助”窗口。  
+1.  Abra a janela da Ajuda.  
 
-2.  选择“选项”，然后选择“Internet 选项”。  
+2.  Clique em **Opções** e, em seguida, clique em **Opções da Internet**.  
 
-3.  在“常规”选项卡上，选择“辅助功能”。 然后，选择“不使用网页中指定的颜色”。 也可以选择使用在你自己的样式表中指定的设置。  
+3.  Na guia **Geral**, clique em **Acessibilidade**. Em seguida, selecione **Ignorar cores especificadas em páginas da Web**. Você também pode optar por usar as configurações especificadas na sua própria folha de estilo.  
 
-4.  要自定义帮助中使用的颜色，请在“常规”选项卡上选择“颜色”。 取消选中“使用 Windows 颜色”框，然后选择要使用的字体颜色和背景颜色。  
-
-    > [!NOTE]  
-    >  如果在“帮助”窗口中更改帮助主题的背景颜色，则更改还会影响 Windows Internet Explorer 中的网页的背景颜色。  
-
-#### <a name="to-change-the-font-in-help"></a>更改“帮助”中的字体  
-
-1.  打开“帮助”窗口。  
-
-2.  选择“选项”，然后选择“Internet 选项”。  
-
-3.  在“常规”选项卡上，选择“辅助功能”。 要使用与 Windows Internet Explorer 实例中使用的设置相同的设置，请选择“不使用网页中指定的字体样式”和“不使用网页中指定的字体大小”。 也可以选择使用在你自己的样式表中指定的设置。  
-
-4.  要自定义“帮助”中使用的字形，请在“常规”选项卡上选择“字体”，然后选择所需的字形。  
+4.  Para personalizar as cores usadas na Ajuda, na guia **Geral**, clique em **Cores**. Desmarque a caixa de seleção **Usar cores do Windows** e selecione as cores de fonte e de plano de fundo que deseja usar.  
 
     > [!NOTE]  
-    >  如果在“帮助”窗口中更改帮助主题的字体，则更改还会影响 Windows Internet Explorer 中的网页的字体。  
+    >  Se você alterar a cor de plano de fundo dos tópicos da Ajuda na janela da Ajuda, a alteração também afetará a cor de plano de fundo das páginas da Web no Internet Explorer.  
+
+#### <a name="to-change-the-font-in-help"></a>Para alterar a fonte na Ajuda  
+
+1.  Abra a janela da Ajuda.  
+
+2.  Clique em **Opções** e, em seguida, clique em **Opções da Internet**.  
+
+3.  Na guia **Geral**, clique em **Acessibilidade**. Para usar as mesmas configurações usadas em sua instância do Windows Internet Explorer, selecione **Ignorar estilos de fonte especificados em páginas da Web** e **Ignorar tamanhos de fonte especificados em páginas da Web**. Você também pode optar por usar as configurações especificadas na sua própria folha de estilo.  
+
+4.  Para personalizar o estilo de fonte usado na Ajuda, na guia **Geral**, clique em **Fontes** e escolha o estilo de fonte desejado.  
+
+    > [!NOTE]  
+    >  Se você alterar a fonte dos tópicos da Ajuda na janela da Ajuda, a alteração também afetará a fonte das páginas da Web no Internet Explorer.  

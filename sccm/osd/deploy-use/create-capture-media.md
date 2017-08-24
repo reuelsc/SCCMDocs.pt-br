@@ -1,6 +1,6 @@
 ---
-title: "创建捕获介质 - Configuration Manager | Microsoft Docs"
-description: "使用“创建任务序列媒体向导”在 Configuration Manager 中创建捕获媒体，以从引用计算机中捕获操作系统映像。"
+title: "Criar mídia de captura – Configuration Manager | Microsoft Docs"
+description: "Use o Assistente para Criar Mídia da Sequência de Tarefas para criar mídia de captura no Configuration Manager, a fim de capturar uma imagem do sistema operacional de um computador de referência."
 ms.custom: na
 ms.date: 01/23/2017
 ms.prod: configuration-manager
@@ -18,64 +18,64 @@ manager: angrobe
 ms.openlocfilehash: 5acf800ff5aebd849e294393337755145a60cca5
 ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
 ms.translationtype: HT
-ms.contentlocale: zh-CN
+ms.contentlocale: pt-BR
 ms.lasthandoff: 08/07/2017
 ---
-# <a name="create-capture-media-with-system-center-configuration-manager"></a>使用 System Center Configuration Manager 创建捕获媒体
+# <a name="create-capture-media-with-system-center-configuration-manager"></a>Criar mídia de captura com o System Center Configuration Manager
 
-*适用范围：System Center Configuration Manager (Current Branch)*
+*Aplica-se a: System Center Configuration Manager (Branch Atual)*
 
-在 Configuration Manager 中捕获媒体使用户可以从引用计算机中捕获操作系统映像。 在以下情况下使用捕获媒体：  
+A mídia de captura no Configuration Manager permite que você capture uma imagem do sistema operacional de um computador de referência. Use a mídia de captura para o cenário a seguir:  
 
--   [创建用于捕获操作系统的任务序列](create-a-task-sequence-to-capture-an-operating-system.md)  
+-   [Criar uma sequência de tarefas para capturar um sistema operacional](create-a-task-sequence-to-capture-an-operating-system.md)  
 
-##  <a name="BKMK_CreateCaptureMedia"></a> 如何创建捕获媒体  
- 使用捕获媒体从引用计算机中捕获操作系统映像。 捕获媒体包含用于启动引用计算机的启动映像，以及用于捕获操作系统映像的任务序列。
+##  <a name="BKMK_CreateCaptureMedia"></a> Como criar mídia de captura  
+ Use a mídia de captura para capturar uma imagem do sistema operacional de um computador de referência. A mídia de captura contém a imagem de inicialização que inicia o computador de referência e a sequência de tarefas que captura a imagem do sistema operacional.
 
-通过使用创建任务序列媒体向导来创建捕获媒体。 在运行向导之前，请确保满足下列所有条件：  
+Você cria a mídia de captura usando o Assistente para Criar Mídia de Sequência de Tarefas. Antes de executar o assistente, todas as condições a seguir devem ser atendidas:  
 
-|任务|描述|  
+|Tarefa|Descrição|  
 |----------|-----------------|  
-|启动映像|请考虑以下关于将在任务序列中用于捕获操作系统的启动映像信息：<br /><br /> -   启动映像的体系结构必须适合于目标计算机的体系结构。 例如，x64 目标计算机可启动和运行 x86 或 x64 启动映像。 但是，x86 目标计算机只能启动和运行 x86 启动映像。<br />-   确保启动映像包含预配目标计算机所需的网络和大容量存储驱动程序。|  
-|分发与任务序列关联的所有内容|必须将任务序列所需的所有内容至少分发到一个分发点。 这包括启动映像、操作系统映像和其他相关联的文件。 向导在创建独立媒体时从分发点中收集信息。 必须具有对该分发点上的内容库的 **读取** 访问权限。  有关详细信息，请参阅[分发内容](../../core/servers/deploy/configure/deploy-and-manage-content.md#bkmk_distribute)。|  
-|准备可移动的 USB 驱动器|对于可移动的 USB 驱动器：<br /><br /> 如果你要使用可移动的 USB 驱动器，该 USB 驱动器必须连接到运行向导的计算机，并且 USB 驱动器必须可被 Windows 检测为可移动设备。 向导将在创建媒体时直接写入 USB 驱动器。|  
-|创建一个输出文件夹|对于 CD/DVD 集：<br /><br /> 在运行创建任务序列媒体向导以便为 CD 或 DVD 集创建媒体之前，你必须为向导创建的输出文件创建一个文件夹。 为 CD 或 DVD 集创建的媒体将以 .iso 文件形式直接写入该文件夹。|  
+|Imagem de inicialização|Considere o seguinte sobre a imagem de inicialização que você usará na sequência de tarefas para capturar o sistema operacional:<br /><br /> -   A arquitetura da imagem de inicialização deve ser apropriada para a arquitetura do computador de destino. Por exemplo, um computador de destino x64 pode iniciar e executar uma imagem de inicialização x86 ou x64. No entanto, um computador de destino x86 pode iniciar e executar apenas uma imagem de inicialização x86.<br />-   Verifique se a imagem de inicialização contém os drivers de rede e armazenamento em massa necessários para provisionar o computador de destino.|  
+|Distribuir todo o conteúdo associado à sequência de tarefas|Você deve distribuir todo o conteúdo exigido pela sequência de tarefas para pelo menos um ponto de distribuição. Isso inclui a imagem de inicialização, a imagem do sistema operacional e outros arquivos associados. O assistente reúne as informações do ponto de distribuição quando ele cria a mídia autônoma. Você deve ter direitos de acesso de **Leitura** à biblioteca de conteúdo no ponto de distribuição.  Para obter mais informações, consulte [Distribuir conteúdo](../../core/servers/deploy/configure/deploy-and-manage-content.md#bkmk_distribute).|  
+|Preparar a unidade USB removível|Para uma unidade USB removível:<br /><br /> Se você pretende usar uma unidade USB removível, a unidade USB deve ser conectada ao computador no qual o assistente é executado e a unidade USB deve ser detectável pelo Windows como um dispositivo de remoção. O assistente grava diretamente na unidade USB ao criar a mídia.|  
+|Criar uma pasta de saída|Para um conjunto de CD/DVD:<br /><br /> Para executar o Assistente para Criar Mídia de Sequência de Tarefas para criar mídia para um conjunto de CD ou DVD, é preciso criar uma pasta para os arquivos de saída criados pelo assistente. A mídia criada para um conjunto de CD ou DVD é gravada como arquivos .iso diretamente na pasta.|  
 
- 使用以下过程来创建捕获媒体。  
+ Use o procedimento a seguir para criar mídia de captura.  
 
-#### <a name="to-create-capture-media"></a>创建捕获媒体  
+#### <a name="to-create-capture-media"></a>Para criar mídia de captura  
 
-1.  在 Configuration Manager 控制台中，单击“软件库” 。  
+1.  No console do Configuration Manager, clique em **Biblioteca de Software**.  
 
-2.  在“软件库”工作区中，展开“操作系统”，然后单击“任务序列”。  
+2.  No espaço de trabalho **Biblioteca de Software** , expanda **Sistemas Operacionais**e clique em **Sequências de Tarefas**.  
 
-3.  在“主页”  选项卡上的“创建”  组中，单击“创建任务序列媒体”  以启动创建任务序列媒体向导。  
+3.  Na guia **Início** , no grupo **Criar** , clique em **Criar Mídia de Sequência de Tarefas** para iniciar o Assistente para Criar Mídia de Sequência de Tarefas.  
 
-4.  在“选择媒体类型”  页上，选择“捕获媒体” ，然后单击“下一步” 。  
+4.  Na página **Selecionar o Tipo de Mídia** , selecione **Capturar mídia**e clique em **Próximo**.  
 
-5.  在“媒体类型”  页上，指定媒体是闪存驱动器还是 CD/DVD 集，然后单击进行以下配置：  
+5.  Na página **Tipo de Mídia** , especifique se a mídia é uma unidade flash ou um conjunto de CD/DVD e clique em configurar o seguinte:  
 
-    -   如果选择“USB 闪存驱动器” ，则指定要在其中存储内容的驱动器。  
+    -   Se você selecionar a **Unidade flash USB**, especifique a unidade na qual deseja armazenar o conteúdo.  
 
-    -   如果选择“CD/DVD 集”，请指定媒体的容量以及输出文件的名称和路径。 向导会将输出文件写入到此位置。 例如：**\\\servername\folder\outputfile.iso**  
+    -   Caso selecione **Conjunto de CD/DVD**, especifique a capacidade da mídia, o nome e o caminho dos arquivos de saída. O assistente grava os arquivos de saída nesse local. Por exemplo: **\\\nomedoservidor\pasta\arquivodesaida.iso**  
 
-         如果媒体的容量太小，无法存储整个内容，则会创建多个文件，从而必须将内容存储在多张 CD 或 DVD 上。 当需要多个媒体时，Configuration Manager 会在创建的每个输出文件的名称中添加序号。 此外，如果将应用程序与操作系统一起部署，而单个媒体无法容纳应用程序，则 Configuration Manager 会将应用程序存储到多个媒体中。 在运行独立媒体时，Configuration Manager 会提示用户提供下一个存储了应用程序的媒体。  
+         Se a capacidade da mídia for muito pequena para armazenar todo o conteúdo, vários arquivos são criados e você deve armazenar o conteúdo em vários CDs ou DVDs. Se várias mídias forem necessárias, o Configuration Manager adicionará um número de sequência ao nome de cada arquivo de saída criado. Além disso, se você implantar um aplicativo juntamente com o sistema operacional e o aplicativo não couber em uma única mídia, o Configuration Manager armazenará o aplicativo em várias mídias. Quando a mídia autônoma é executada, o Configuration Manager solicita ao usuário a próxima mídia, na qual o aplicativo está armazenado.  
 
         > [!IMPORTANT]  
-        >  如果选择现有的 .iso 映像，任务序列媒体向导将在你进入向导的下一页后立即从驱动器或共享中删除该映像。 即使随后取消该向导，也会删除这个现有的映像。  
+        >  Se você selecionar uma imagem .iso existente, o Assistente de Mídia de Sequência de Tarefas excluirá essa imagem da unidade ou do compartilhamento assim que você prosseguir para a próxima página do assistente. A imagem existente será excluída mesmo se você cancelar o assistente.  
 
-     单击“下一步” 。  
+     Clique em **Avançar**.  
 
-6.  在“启动映像包”  页上，指定以下信息，然后单击“下一步” 。  
+6.  Na página **Imagem de inicialização** , especifique as informações a seguir e clique em **Próximo**.  
 
     > [!IMPORTANT]  
-    >  指定的启动映像的体系结构必须适合于引用计算机的体系结构。 例如，x64 引用计算机可启动和运行 x86 或 x64 启动映像。 但是，x86 引用计算机只能启动和运行 x86 启动映像。  
+    >  A arquitetura da imagem de inicialização que você especifica deve ser apropriada para a arquitetura do computador de referência. Por exemplo, um computador de referência x64 pode iniciar e executar uma imagem de inicialização x86 ou x64. No entanto, um computador de referência x86 pode iniciar e executar somente uma imagem de inicialização x86.  
 
-    -   在“启动映像包”  框中，指定用于启动引用计算机的启动映像。  
+    -   Na caixa **Imagem de inicialização** , especifique a imagem de inicialização para iniciar o computador de referência.  
 
-    -   在“分发点”  框中，指定启动映像所在的分发点。 向导将从分发点中检索启动映像并将其写入媒体。  
+    -   Na caixa **Ponto de distribuição** , especifique o ponto de distribuição onde a imagem de inicialização reside. O assistente recupera a imagem de inicialização do ponto de distribuição e a grava na mídia.  
 
         > [!NOTE]  
-        >  你必须对分发点上的内容库具有“读取”访问权限。  
+        >  É necessário ter direitos de acesso de leitura à biblioteca de conteúdo do ponto de distribuição.  
 
-7.  完成向导。  
+7.  Conclua o assistente.  

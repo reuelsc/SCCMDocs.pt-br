@@ -1,6 +1,6 @@
 ---
-title: "创建和部署设备合规性策略 | Microsoft Docs"
-description: "了解如何在 System Center Configuration Manager 中创建和部署设备合规性策略。"
+title: "Criar e implantar uma política de conformidade de dispositivo | Microsoft Docs"
+description: "Saiba como criar e implantar políticas de conformidade do dispositivo no System Center Configuration Manager."
 ms.custom: na
 ms.date: 03/05/2017
 ms.prod: configuration-manager
@@ -18,303 +18,303 @@ robots: noindex
 ms.openlocfilehash: 6630d0170df22f46f14df241ffd8d48266c69263
 ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
 ms.translationtype: HT
-ms.contentlocale: zh-CN
+ms.contentlocale: pt-BR
 ms.lasthandoff: 08/07/2017
 ---
-# <a name="create-and-deploy-a-device-compliance-policy"></a>创建和部署设备合规性策略
+# <a name="create-and-deploy-a-device-compliance-policy"></a>Criar e implantar uma política de conformidade de dispositivo
 
-*适用范围：System Center Configuration Manager (Current Branch)*
+*Aplica-se a: System Center Configuration Manager (Branch Atual)*
 
 
-## <a name="create-a-compliance-policy"></a>创建合规性策略
+## <a name="create-a-compliance-policy"></a>Criar uma política de conformidade
 
-1.  在 System Center Configuration Manager 控制台中，选择“资产和符合性”。
+1.  No console do System Center Configuration Manager, escolha **Ativos e Conformidade**.
 
-2.  在“资产和符合性”工作区中，展开“符合性设置”，然后选择“符合性策略”。
+2.  No espaço de trabalho **Ativos e Conformidade**, expanda **Configurações de Conformidade**e escolha **Políticas de Conformidade**.
 
-3.  在“主页”选项卡上的“创建”组中，选择“创建符合性策略”。
+3.  Na guia **Início**, no grupo **Criar**, escolha **Criar Política de Conformidade**.
 
-4.  在“创建符合性策略向导”的“常规”页上，指定下列信息：
+4.  Na página **Geral** do Assistente para Criar a Política de Conformidade, especifique as seguintes informações:
 
-  * **名称**。 输入合规性策略的唯一名称。 最多可以使用 256 个字符。
+  * **Nome**. Insira um nome exclusivo para a política de conformidade. Você pode usar até 256 caracteres.
 
-  * **说明**。 输入概述 VPN 配置文件并有助于在 Configuration Manager 控制台中识别它的说明。 最多可以使用 256 个字符。
+  * **Descrição**. Insira uma descrição que dê uma visão geral do perfil VPN e ajudem a identificá-lo no console do Configuration Manager. Você pode usar até 256 caracteres.
 
-  * **符合性策略的类型**。 可根据设备是否由 Configuration Manager 管理来选择要创建的策略类型。 这适用于此版本或更高版本。<br /><br /> 对于由 Intune 管理的设备，请选择“适用于不由 Configuration Manager 客户端管理的设备的合规性策略”选项。 选择此选项时，还可选择你希望将此策略应用到的平台类型。
+  * **Tipo de política de conformidade**. Selecione o tipo de política que você quer criar dependendo de o dispositivo ser gerenciado ou não pelo Configuration Manager. Isso se aplica à versão em questão ou posterior.<br /><br /> Para dispositivos gerenciados pelo Intune, escolha a opção **Regras de conformidade para dispositivos gerenciados sem o cliente do Configuration Manager** . Ao escolher essa opção, você também poderá selecionar o tipo de plataforma ao qual deseja que essa política se aplique.
 
-  * **报表的不符合性严重程度**。 指定此合规性策略被评估为不符合时报告的严重性级别。 可用的严重性级别包括：
+  * **Severidade de não conformidade para relatórios**. Especifique o nível de severidade que será relatado se esta política de conformidade for avaliada como não compatível. Os níveis de severidade disponíveis são:
 
-     * **无**。 对于 Configuration Manager 报表，不符合此符合性规则的设备不报告故障严重性。
-     * **信息**。 对于 Configuration Manager 报表，不符合此符合性规则的设备将故障严重性报告为**信息**。   
-     * **警告**。 对于 Configuration Manager 报表，不符合此符合性规则的设备将故障严重性报告为**警告**。
-     * **严重**。 对于 Configuration Manager 报表，不符合此符合性规则的设备将故障严重性报告为**严重**。
-     * **严重事件**。 对于 Configuration Manager 报表，不符合此符合性规则的设备将故障严重性报告为**严重**。 应用程序事件日志中也会以 Windows 事件的形式记录此严重性级别。      
+     * **Nenhum**. Os dispositivos que não cumprem essa regra de conformidade não relatam uma severidade de falha nos relatórios do Configuration Manager.
+     * **Informações**. Os dispositivos que não cumprem essa regra de conformidade relatam uma severidade de falha **Informações** nos relatórios do Configuration Manager.   
+     * **Aviso**. Os dispositivos que não cumprem essa regra de conformidade relatam uma severidade de falha **Aviso** nos relatórios do Configuration Manager.
+     * **Crítico**. Os dispositivos que não cumprem essa regra de conformidade relatam uma severidade de falha **Crítico** nos relatórios do Configuration Manager.
+     * **Crítico com evento**. Os dispositivos que não cumprem essa regra de conformidade relatam uma severidade de falha **Crítico** nos relatórios do Configuration Manager. Esse nível de severidade também é registrado como um evento do Windows no log de eventos de aplicativos.      
 
-5.  在“受支持的平台”页上，选择将在其上评估符合性策略的设备平台，或者选择“选择全部”以选择所有设备平台。 支持的平台包括： Windows 7、Windows 8.1 和 Windows 10；Windows Server 2008 R2、Windows Server 2012、Windows Server 2012 R2 和 Windows Server 2016。
+5.  Na página **Plataformas com Suporte**, escolha as plataformas de dispositivo nas quais esta política de conformidade será avaliada ou escolha **Selecionar todas** para escolher todas as plataformas de dispositivo. As plataformas com suporte são: Windows 7, Windows 8.1 e Windows 10; Windows Server 2008 R2, Windows Server 2012, Windows Server 2012 R2 e Windows Server 2016.
 
-6.  在“规则”  页上，定义一个或多个规则，这些规则定义设备为评估为合规而必需具有的配置。 当创建符合性策略时，会默认启用某些规则，但你可以编辑或删除这些规则。 有关所有规则的完整列表，请参阅本主题后面的“符合性策略规则”部分。
+6.  Na página **Regras** , defina uma ou mais regras que definem a configuração que os dispositivos devem ter para que eles sejam avaliados como compatíveis. Quando você cria uma política de conformidade, algumas regras são habilitadas por padrão, mas você pode editar ou excluí-las. Para obter uma lista completa de todas as regras, confira a seção “Regras de política de conformidade” mais adiante neste tópico.
 
   > [!NOTE]  
-  >  在 Windows 电脑上，Windows 操作系统版本 8.1 被报告为 6.3 而非 8.1。 对于 Windows，如果操作系统版本规则设置为 Windows 8.1，则该设备将报告为不符合要求，即使该设备具有 Windows 8.1 也是如此。 确保针对最低和最高操作系统规则设置正确*报告*的 Windows 版本。 版本号必须与 **winver** 命令返回的版本一致。 Windows Phone 不具有此问题，版本按预期报告为 8.1。 使用 Windows 10 操作系统的 Windows 电脑的版本应设置为 **10.0** 和 **winver** 命令返回的操作系统内部版本号。
+  >  Em computadores com Windows, o sistema operacional Windows versão 8.1 será relatado como 6.3 em vez de 8.1. Se a regra de versão do sistema operacional é definida como Windows 8.1 para Windows, em seguida, o dispositivo será relatado como não compatível mesmo que o dispositivo tenha Windows 8.1. Verifique se você está definindo a versão *relatada* correta do Windows para as regras de sistema operacional mínima e máxima. O número de versão deve corresponder à versão que o comando **winver** retorna. Windows Phones não têm esse problema, a versão será relatada como 8.1 conforme o esperado. Para PCs com o sistema operacional Windows 10, a versão deve ser definida como **10.0** mais o número de build do sistema operacional que o comando **winver** retorna.
 
-7.  在向导的“摘要”页上，查看已执行的设置，然后完成向导。
+7.  Na página **Resumo** do assistente, examine as configurações feitas e conclua o assistente.
 
- 新的策略将在“资产和符合性”工作区的“符合性策略”节点处显示。
+ A nova política é mostrada no nó **Políticas de Conformidade** do espaço de trabalho **Ativos e Conformidade**.
 
-## <a name="deploy-a-compliance-policy"></a>部署合规性策略
+## <a name="deploy-a-compliance-policy"></a>Implantar uma política de conformidade
 
-1.  在 Configuration Manager 控制台中，选择“资产和符合性”。
+1.  No console do Configuration Manager, escolha **Ativos e Conformidade**.
 
-2.  在“资产和符合性”工作区中，展开“符合性设置”，然后选择“符合性策略”。
+2.  No espaço de trabalho **Ativos e Conformidade**, expanda **Configurações de Conformidade**e escolha **Políticas de Conformidade**.
 
-3.  在“主页”选项卡上的“部署”组中，选择“部署”。
+3.  Na guia **Início**, no grupo **Implantação**, escolha **Implantar**.
 
-4.  在“部署符合性策略”对话框中，选择“浏览”以选择要将策略部署到的用户集合。
+4.  Na caixa de diálogo **Implantar Política de Conformidade**, escolha **Procurar** para selecionar a coleção de usuários nos quais você deseja implantar a política.
 
-     此外，可以选择选项在策略不符合时生成警报，并设置将按其评估策略符合性的计划。
+     Além disso, é possível selecionar opções para gerar alertas quando a política não for compatível e definir o agendamento por meio do qual essa política será avaliada quanto à conformidade.
 
-5.  完成后，选择“确定”。
+5.  Quando terminar, escolha **OK**.
 
-## <a name="monitor-the-compliance-policy"></a>监视合规性策略
+## <a name="monitor-the-compliance-policy"></a>Monitorar a política de conformidade
 
-#### <a name="to-view-compliance-results-in-the-configuration-manager-console"></a>在 Configuration Manager 控制台查看符合性结果
+#### <a name="to-view-compliance-results-in-the-configuration-manager-console"></a>Para exibir resultados de conformidade no console do Configuration Manager
 
-1.  在 Configuration Manager 控制台中，选择“监视”。
+1.  No console do Configuration Manager, escolha **Monitoramento**.
 
-2.  在“监视”工作区中，选择“部署”。
+2.  No espaço de trabalho **Monitoramento**, escolha **Implantações**.
 
-3.  在“部署”  列表中，选择要查看其符合性信息的符合性策略部署。
+3.  Na lista **Implantações** , selecione a implantação da política de conformidade para a qual você deseja examinar as informações de conformidade.
 
-4.  你可以在主页上查看有关策略部署符合性的摘要信息。 若要查看更详细的信息，请选择部署，然后在“主页”选项卡上的“部署”组中，选择“查看状态”以打开“部署状态”页。
+4.  É possível examinar as informações de resumo sobre a conformidade da implantação da política na página principal. Para exibir informações mais detalhadas, selecione a implantação e, na guia **Início**, no grupo **Implantação**, escolha **Exibir Status** para abrir a página **Status da Implantação**.
 
-    “部署状态”页包含下列选项卡：
+    A página **Status da Implantação** tem as seguintes guias:
 
-    -   **符合**。 显示基于受影响资产数量的策略符合性。 你可以选择规则以在“资产和符合性”工作区的“用户”或“设备”节点下创建一个临时节点，其中包含符合此规则的所有用户或设备。 “资产详细信息”窗格显示符合策略的用户或设备。 双击列表中的用户或设备以显示其他信息。
+    -   **Compatível**. Mostra a conformidade da política com base no número de ativos afetados. É possível escolher uma regra para criar um nó temporário no nó **Usuários** ou **Dispositivos** do espaço de trabalho **Ativos e Conformidade**, que contém todos os usuários ou dispositivos que são compatíveis com esta regra. O painel **Detalhes do Ativo** mostra os usuários e os dispositivos compatíveis com a política. Clique duas vezes em um usuário dispositivo na lista para mostrar informações adicionais.
 
-    -   **错误**。 显示基于受影响资产数量的所选策略部署的所有错误的列表。 你可以选择规则以在“资产和符合性”工作区的“用户”或“设备”节点下创建一个临时节点，其中包含对于此规则生成了错误的所有用户或设备。 选择某个用户或设备时，“资产详细信息”窗格将显示受问题影响的用户或设备。 双击列表中的用户或设备以显示有关问题的其他信息。
+    -   **Erro**. Mostra uma lista de todos os erros da implantação da política selecionada com base no número de ativos afetados. É possível escolher uma regra para criar um nó temporário no nó **Usuários** ou **Dispositivos** do espaço de trabalho **Ativos e Conformidade**, que contém todos os usuários ou dispositivos que geraram erros com esta regra. Ao selecionar um usuário ou dispositivo, o painel **Detalhes do Ativo** mostra os usuários ou os dispositivos afetados pelo problema. Clique duas vezes em um usuário ou dispositivo na lista para mostrar informações adicionais sobre o problema.
 
-    -   **不符合**。 显示基于受影响资产数量的策略内所有不符合规则的列表。 你可以选择规则以在“资产和符合性”工作区的“用户”或“设备”节点下创建一个临时节点，其中包含不符合此规则的所有用户或设备。 选择某个用户或设备时，“资产详细信息”窗格将显示受问题影响的用户或设备。 双击列表中的用户或设备以显示有关问题的进一步信息。
+    -   **Não compatível**. Mostra uma lista de todas as regras não compatíveis na política com base no número de ativos afetados. É possível escolher uma regra para criar um nó temporário no nó **Usuários** ou **Dispositivos** do espaço de trabalho **Ativos e Conformidade**, que contém todos os usuários ou dispositivos que não são compatíveis com esta regra. Ao selecionar um usuário ou dispositivo, o painel **Detalhes do Ativo** mostra os usuários ou os dispositivos afetados pelo problema. Clique duas vezes em um usuário ou dispositivo na lista para mostrar informações adicionais sobre o problema.
 
-    -   **未知**。 显示没有为所选策略部署报告符合性的所有用户和设备的列表，以及设备的当前客户端状态。
+    -   **Desconhecida**. Mostra uma lista de todos os usuários e dispositivos que não relataram a conformidade para a implantação da política selecionada junto com o status atual do cliente dos dispositivos.
 
-#### <a name="to-monitor-the-compliance-status-of-an-individual-device"></a>监视单个设备的符合性状态
+#### <a name="to-monitor-the-compliance-status-of-an-individual-device"></a>Para monitorar o status de conformidade de um dispositivo individual
 
-1.  在 Configuration Manager 控制台中，选择“资产和符合性”工作区。
+1.  No console do Configuration Manager, escolha o espaço de trabalho **Ativos e conformidade**.
 
-2.  选择“设备”。
+2.  Escolha **Dispositivos**.
 
-3.  右键单击某一列以启用更多的列。
+3.  Clique com botão direito em uma das colunas para habilitar mais colunas.
 
-  可以添加以下列：
+  Você pode adicionar as seguintes colunas:
 
-  - **Azure Active Directory 设备 ID**。  Azure Active Directory 中设备的唯一标识符。
+  - **ID do dispositivo do Azure Active Directory**.  O identificador exclusivo para o dispositivo no Azure Active Directory.
 
-  - **符合性错误详细信息**。  端到端流程出现问题时的错误消息详细信息。 如果此列为空，则表示未发现错误，并成功报告符合性状态。
+  - **Detalhes do erro de conformidade**.  Os detalhes das mensagens de erro quando o processo de ponta a ponta dá errado. Se esta coluna estiver em branco, isso significará que nenhum erro foi encontrado e o status de conformidade foi registrado com êxito.
 
-  - **符合性错误位置**。  不遵从符合性的更多详细信息。 如果此列为空，则表示未发现错误，并成功报告符合性状态。 符合性过程可能会失败的示例： 
-      - ConfigMgr 客户端
-      - 管理点
+  - **Local do erro de conformidade**.  Mais detalhes sobre onde ocorreu a falha de compatibilidade. Se esta coluna estiver em branco, isso significará que nenhum erro foi encontrado e o status de conformidade foi registrado com êxito. Exemplos de onde o processo de conformidade poderia falhar: 
+      - Cliente do ConfigMgr
+      - Ponto de gerenciamento
       - Intune
       - Azure Active Directory
 <br></br>
-  - **符合性评估时间**。 上次检查符合性的时间。
+  - **Tempo de avaliação da conformidade**. Última vez em que foi verificada a conformidade.
 
-  - **符合性设定时间**。 上次符合性更新到 Azure Active Directory 的时间。
+  - **Hora da definição da conformidade**. Última vez que a conformidade foi atualizada para o Azure Active Directory.
 
-  - **条件访问符合性**。  计算机是否符合条件访问策略。
+  - **Conformidade de acesso condicional**.  Se a máquina está em conformidade com políticas de acesso condicional ou não.
 
   > [!IMPORTANT]
-  > 默认情况下，这些列不会显示。
+  > Essas colunas não são mostradas por padrão.
 
-#### <a name="to-view-intune-compliance-policies-charts"></a>查看 Intune 合规性策略图表
-1. 从 Configuration Manager 的 1610 版开始，在 Configuration Manager 控制台中，选择“监视”。
+#### <a name="to-view-intune-compliance-policies-charts"></a>Para exibir gráficos de políticas de conformidade do Intune
+1. A partir da versão 1610 do Configuration Manager, no console do Configuration Manager, escolha **Monitoramento**.
 
-2. 在“监视”工作区中，转到“概述” > “符合性设置” > “合规性策略”。
+2. No espaço de trabalho **Monitoramento**, acesse **Visão Geral** > **Configurações de Conformidade** > **Políticas de Conformidade**.
 
-   将显示以下图表：
+   Os gráficos a seguir são exibidos:
 
-    - **设备的总体符合性**。 显示设备针对所有符合性策略的总体符合性。
-    - **不符合的主要原因**。 显示设备不符合的主要策略。
+    - **Conformidade geral do dispositivo**. Mostra a conformidade geral dos dispositivos para todas as políticas de conformidade.
+    - **Principais motivos de não conformidade**. Mostra as principais políticas para quais dispositivos não estão em conformidade.
 
-3. 选择任意图表中的某个分区了解该类别中的设备列表。
+3. Escolha uma seção de um dos gráficos para fazer uma busca detalhada até uma lista de dispositivos nessa categoria.
 
-#### <a name="to-view-a-health-attestation-report"></a>查看运行状况证明报告
+#### <a name="to-view-a-health-attestation-report"></a>Para exibir um relatório de atestado de integridade
 
-1.  从 Configuration Manager 的版本 1602 开始，在 Configuration Manager 控制台中，选择“监视”。
+1.  A partir da versão 1602 do Configuration Manager, no console do Configuration Manager, escolha **Monitoramento**.
 
-2.  若要按符合性状态查看设备当前状态的摘要报告，请选择“安全”，然后选择“运行状况证明”。
+2.  Para exibir um relatório de resumo do status atual dos dispositivos, pelo respectivo status de conformidade, escolha **Segurança** e, em seguida, **Atestado de Integridade**.
 
-3.  若要查看列出了所有设备和所有运行状况证明属性的报告，请选择“安全”，然后选择“运行状况证明”。
+3.  Para exibir um relatório que lista todos os dispositivos e todos os atributos de atestado de integridade, escolha **Segurança** e, em seguida, **Atestado de Integridade**.
 
-## <a name="compliance-policy-rules"></a>合规性策略规则
-* **移动设备上需要密码设置**。 可以要求用户输入密码以访问其设备。
+## <a name="compliance-policy-rules"></a>Regras de política de conformidade
+* **Exigir configurações de senha em dispositivos móveis**. Você pode exigir que os usuários insiram uma senha antes que possam acessar seu dispositivo.
 
-  **在以下设备上受支持：**
+  **Com suporte em:**
     * Windows Phone 8+
     * iOS 6+
     * Android 4.0+
-    * Samsung KNOX 标准版 4.0+
+    * Samsung KNOX Standard 4.0+
 
-* **需要密码以解锁空闲设备**（1602 更新）。 可以要求用户输入密码以访问已锁定的设备。
+* **Exigir uma senha para desbloquear um dispositivo ocioso** (atualização 1602). Você pode exigir que os usuários insiram uma senha para acessar o dispositivo que está bloqueado.
 
-  **在以下设备上受支持：**
+  **Com suporte em:**
   * Windows Phone 8+
   * iOS 6+
   * Android 4.0+
-  * Samsung KNOX 标准版 4.0+
+  * Samsung KNOX Standard 4.0+
 
-* **需要提供密码之前处于非活动状态的分钟数**（1602 更新）。 可以指定用户必须重新输入密码前的空闲时间。 请将此值设置为以下可用选项之一：“1 分钟”、“5 分钟”、“15 分钟”、“30 分钟”、“1 小时”。
+* **Minutos de inatividade antes que a senha seja solicitada** (atualização 1602). Você pode especificar o tempo ocioso antes que o usuário precise inserir novamente sua senha. Defina o valor como uma das opções disponíveis: **1 minuto**, **5 minutos**, **15 minutos**, **30 minutos**, **1 hora**.
 
-  此规则必须与“需要密码以解锁空闲设备”一起使用。 此处设置的值决定了何时将设备视为空闲，何时将其视为锁定。 将“需要密码以解锁空闲设备”设置为“True”时，用户必须输入密码才能访问锁定的设备。
+  Essa regra deve ser usada com **Exigir uma senha para desbloquear um dispositivo ocioso**. O valor definido aqui determina quando o dispositivo é considerado ocioso e está bloqueado. Quando **Exigir uma senha para desbloquear um dispositivo ocioso** é definido como **True**, o usuário deverá digitar uma senha para acessar o dispositivo bloqueado.
 
-  **在以下设备上受支持：**
+  **Com suporte em:**
   * Windows Phone 8+
   * Windows RT/8.1
   * iOS 6+
   * Android 4.0+
-  * Samsung KNOX 标准版 4.0+
+  * Samsung KNOX Standard 4.0+
 
-* **需要自动更新**（1602 更新）。 可以要求运行 Windows 8.1 或更高版本的设备自动安装更新，并可以指定更新的类别。
+* **Exigir atualizações automáticas** (atualização 1602). Você pode exigir que os dispositivos com Windows 8.1 ou posterior instalem atualizações automaticamente e pode especificar a classe das atualizações.
 
-  值应设置为“无”以防止自动安装，设置为“推荐”将自动安装所有推荐的更新，或设置为“重要”以只安装归类为重要的更新。
+  O valor deve ser definido como **Nenhum** para impedir a instalação automática, como **Recomendado** para instalar automaticamente todas as atualizações recomendadas ou como **Importante** para instalar somente as atualizações classificadas como importantes.
 
-  **在以下设备上受支持：**
+  **Com suporte em:**
   * Windows Phone 8+
 
-* **允许简单密码**。 可以允许用户创建简单密码，如“1234”或“1111”。 默认情况下，此设置处于禁用状态。
+* **Permitir senha simples**. Você pode permitir que os usuários criem senhas simples, como "1234" ou "1111". Essa configuração fica desabilitada por padrão.
 
-  **在以下设备上受支持：**
+  **Com suporte em:**
   * Windows Phone 8+
   * iOS 6+
 
-* **最短密码长度**。 可以指定用户密码必须包含的最小位数或最小字符数（默认为 6 位）。
+* **Tamanho mínimo da senha**. Você pode especificar o número mínimo de dígitos ou caracteres que a senha do usuário deve ter (6 por padrão).
 
-  **在以下设备上受支持：**
+  **Com suporte em:**
   * Windows Phone 8+
   * Windows 8.1
   * iOS 6+
   * Android 4.0+
-  * Samsung KNOX 标准版 4.0+
+  * Samsung KNOX Standard 4.0+
 
   >[!NOTE]
-  >对于运行 Windows 且由 Microsoft 帐户保护的设备，如果**最短密码长度**大于 8 个字符，或**字符集的最小数量**大于 2，则符合性策略将无法正确评估。
+  >Para dispositivos que executam o Windows e são protegidos com uma conta da Microsoft, a política de conformidade não será avaliada corretamente se o **Comprimento mínimo da senha** tiver mais de 8 caracteres ou se o **Número mínimo de conjuntos de caracteres** for maior do que 2.
 
-* **移动设备上的文件加密**。 可以要求设备进行加密以连接到资源。 运行 Windows Phone 8 的设备进行自动加密。 当配置设置“移动设备上需要密码设置” 时，将对运行 iOS 的设备进行加密。 默认情况下将启用此设置。
+* **Criptografia de arquivo no dispositivo móvel**. Você pode exigir que o dispositivo seja criptografado para conectar-se aos recursos. Os dispositivos que executam o Windows Phone 8 são criptografados automaticamente. Dispositivos que executam o iOS são criptografados ao definir a configuração **Exigir configurações de senha em dispositivos móveis**. Essa configuração é habilitada por padrão.
 
-  **在以下设备上受支持：**
+  **Com suporte em:**
   * Windows Phone 8+
   * Windows 8.1
   * iOS 6+
   * Android 4.0+
-  * Samsung KNOX 标准版 4.0+
+  * Samsung KNOX Standard 4.0+
 
-* **设备不能已越狱或取得 root 权限**。 如果启用此设置，已越狱 (iOS) 或取得 root 权限的 (Android) 设备将不符合策略。 默认情况下，此设置处于禁用状态。
+* **O dispositivo não deve ser desbloqueado nem modificado**. Se você habilitar essa configuração, os dispositivos desbloqueados (iOS) ou com raiz (Android) não serão compatíveis. Essa configuração fica desabilitada por padrão.
 
-  **在以下设备上受支持：**
+  **Com suporte em:**
   * iOS 6+
   * Android 4.0+
-  * Samsung KNOX 标准版 4.0+
+  * Samsung KNOX Standard 4.0+
 
-* **必须由 Intune 管理电子邮件配置文件**。 将此选项设置为“是”时，设备必须使用部署到该设备的电子邮件配置文件。 如果电子邮件配置文件未部署到相同的用户组（符合性策略将此用户组作为目标），则设备不合规。
+* **O perfil de email deve ser gerenciado pelo Intune**. Quando você define essa opção como **Sim**, o dispositivo deverá usar o perfil de email implantado para o dispositivo. O dispositivo será considerado incompatível se perfil de email não estiver implantado no mesmo grupo de usuários que o grupo visado pela política de conformidade.
 
-  如果用户已在设备上设置了电子邮件帐户，且该帐户与部署到该设备的 Intune 电子邮件配置文件相匹配，则该设备同样不合规。 这种情况下，Intune 不能覆盖用户设置的配置文件，因此无法管理它。 用户可以通过删除现有的电子邮件设置（它允许 Intune 安装托管的电子邮件配置文件）将该设备变为符合策略。
+  Ele também será incompatível se o usuário já tiver configurado uma conta de email no dispositivo que corresponda ao perfil de email do Intune implantado para o dispositivo. Nesse caso, o Intune não pode substituir o perfil de usuário provisionado e, portanto, não é capaz de gerenciá-lo. O usuário pode colocar o dispositivo em conformidade removendo as configurações de email existentes, o que permite que o Intune instale o perfil de email gerenciado.
 
-  有关电子邮件配置文件的详细信息，请参阅 [使用 Microsoft Intune 启用对使用电子邮件配置文件的公司电子邮件的访问](https://technet.microsoft.com/library/dn800672.aspx)。 默认情况下，此设置处于禁用状态。
+  Para obter detalhes sobre os perfis de email, veja [Habilitar o acesso ao email corporativo usando perfis de email com o Microsoft Intune](https://technet.microsoft.com/library/dn800672.aspx). Essa configuração fica desabilitada por padrão.
 
-  **在以下设备上受支持：**
+  **Com suporte em:**
   * iOS 6+
 
-* **电子邮件配置文件**。 如果“必须由 Intune 管理电子邮件帐户”处于选中状态，选择“选择”以选择设备必须由其管理的电子邮件配置文件。 电子邮件配置文件必须存在于设备上。
+* **Perfil de email**. Se a opção **A conta de email deve ser gerenciada pelo Intune** estiver marcada, escolha **Selecionar** para escolher o perfil de email pelo qual os dispositivos devem ser gerenciados. O perfil de email deve estar presente no dispositivo.
 
-  **在以下设备上受支持：**
+  **Com suporte em:**
   * iOS 6+
 
-* **所需的最低操作系统**。 当设备不满足你所指定的最低操作系统版本要求时，它将被报告为不符合策略。 将显示一个链接，其中包含有关如何升级的信息。 用户可以选择升级其设备，升级后他们将可以访问公司资源。
+* **SO mínimo requerido**. Quando um dispositivo não atende ao requisito mínimo de versão do sistema operacional que você especificou, ele será relatado como sem conformidade. Será exibido um link com informações sobre como atualizar. O usuário pode optar por atualizar seus dispositivos após o qual eles serão capazes de acessar os recursos da empresa.
 
-  **在以下设备上受支持：**
+  **Com suporte em:**
   * Windows Phone 8+
   * Windows 8.1
   * iOS 6+
   * Android 4.0+
-  * Samsung KNOX 标准版 4.0+
+  * Samsung KNOX Standard 4.0+
 
-* **允许的最高操作系统版本**。 当设备使用的操作系统版本高于规则中指定的版本时，将阻止访问公司资源，并要求用户联系其 IT 管理员。 除非变更规则以允许该操作系统版本，否则该设备将不能用于访问公司资源。
+* **Versão máxima do SO permitida**. Quando um dispositivo usar uma versão de sistema operacional posterior àquela que você especificou na regra, o acesso aos recursos da empresa será bloqueado e o usuário será solicitado a entrar em contato com o administrador de TI. Até que você altere a regra para permitir a versão do SO, este dispositivo não pode ser usado para acessar recursos da empresa.
 
-  **在以下设备上受支持：**
+  **Com suporte em:**
   * Windows Phone 8+
   * Windows 8.1
   * iOS 6+
   * Android 4.0+
-  * Samsung KNOX 标准版 4.0+
+  * Samsung KNOX Standard 4.0+
 
-* **要求设备被报告为运行正常**（1602 更新）。 可以在新的或现有的符合性策略中设置规则，要求 Windows 10 设备必须被报告为正常。 如果启用了此设置，运行状况证明服务 (HAS) 会对 Windows 10 设备的下列数据点进行评估：
+* **Exigir que os dispositivos sejam relatados como íntegros**(atualização 1602). Você pode definir uma regra para exigir que os dispositivos com Windows 10 sejam obrigatoriamente relatados como íntegros em políticas de conformidade novas ou existentes. Se você habilitar essa configuração, os dispositivos com Windows 10 serão avaliados por meio do HAS (Serviço de Atestado de Integridade) para os seguintes pontos de dados:
 
-  - **已启用 BitLocker**。 如果启用了 BitLocker，则当系统关闭或进入休眠状态时，设备能够保护存储在驱动器上的数据免受未经授权的访问。
+  - **O BitLocker está habilitado**. Quando o BitLocker está ativado, o dispositivo pode proteger os dados armazenados na unidade contra acesso não autorizado, quando o sistema é desligado ou entra no modo de hibernação.
 
-   Windows BitLocker 驱动器加密可以对存储在 Windows 操作系统卷上的所有数据进行加密。 BitLocker 使用 TPM 来帮助保护 Windows 操作系统和用户数据。 它有助于确保计算机不被篡改，即使它处于无人参与、丢失或被盗状态也是如此。
+   A Criptografia de Unidade de Disco BitLocker do Windows criptografa todos os dados armazenados no volume do sistema operacional Windows. O BitLocker usa o TPM para ajudar a proteger o sistema operacional Windows e os dados do usuário. Ele ajuda a garantir que um computador não seja violado, mesmo se ficar aberto, se for perdido ou roubado.
    
-   如果计算机装有兼容的 TPM，BitLocker 将使用该 TPM 锁定用于保护数据的加密密钥。 因此，仅当 TPM 验证计算机的状态后才能访问密钥。
+   Se o computador estiver equipado com um TPM compatível, o BitLocker usará o TPM para bloquear as chaves de criptografia que protegem os dados. Consequentemente, as chaves não poderão ser acessadas até que o TPM verifique o estado do computador.
 
-  - **已启用代码完整性**。 代码完整性是这样一项功能，它在每次将驱动器或系统文件加载到内存时行验证其完整性。 代码完整性检测是否将未签名的驱动程序或系统文件加载到内核中。 它还可以检测系统文件是否由具有管理员权限的用户帐户运行的恶意软件进行了更改。
+  - **A integridade do código está habilitada**. A integridade do código é um recurso que valida a integridade de um arquivo do driver ou do sistema toda vez que ele é carregado na memória. A integridade do código detecta se um arquivo de sistema ou driver não assinado está sendo carregado no kernel. Ele também detecta se um arquivo do sistema foi alterado por software mal-intencionado que está sendo executado por uma conta de usuário com privilégios de administrador.
 
-  - **已启用安全启动**。 启用安全启动后，会将系统强制启动为工厂信任的状态。 并且启用安全启动后，用于启动计算机的核心组件必须具有制造设备的组织所信任的正确的加密签名。 UEFI 固件将在对此进行验证后才允许计算机启动。 如果有任何文件被篡改，破坏了其签名，则系统将不会启动。
+  - **A inicialização segura está habilitada**. Quando a Inicialização Segura está habilitada, o sistema é forçado a iniciar em um estado confiável de fábrica. Além disso, quando a Inicialização Segura está habilitada, os principais componentes usados para iniciar o computador devem ter assinaturas criptográficas corretas que sejam de confiança da organização fabricante do dispositivo. O firmware UEFI verifica isso antes de permitir que o computador seja iniciado. Se algum arquivo tiver sido violado, rompendo sua assinatura, o sistema não será iniciado.
 
-  - **提前启动反恶意软件已启用**。 此设置仅适用于电脑。 开机初期启动的反恶意软件 (ELAM) 在网络中的计算机启动后、第三方驱动程序初始化之前，对计算机提供保护。
+  - **O antimalware de inicialização antecipada está habilitado**. Essa configuração aplica-se apenas a PCs. O ELAM (Antimalware de Início Antecipado) fornece proteção para os computadores em sua rede quando estes são iniciados e antes que drivers de terceiros sejam inicializados.
   
-   默认关闭此规则。
+   Essa regra está desativada por padrão.
 
-  有关 HAS 服务工作原理的详细信息，请参阅 [运行状况证明 CSP](https://msdn.microsoft.com/library/dn934876.aspx)。
+  Para saber mais sobre o funcionamento do serviço HAS, confira [CSP do Atestado de Integridade](https://msdn.microsoft.com/library/dn934876.aspx).
 
-  **在以下设备上受支持：**
-  * Windows 10 和 Windows 10 移动版
+  **Com suporte em:**
+  * Windows 10 e Windows 10 Mobile
 
-- **无法在设备上安装的应用**。 如果用户安装的应用来自管理员非符合性应用列表，则该应用将在尝试访问公司电子邮件和支持条件性访问的其他公司资源时受阻。 将应用添加到管理员定义的非符合性列表时，此规则要求输入应用名称和应用 ID。 也可添加应用发布者，但并非必需。
+- **Aplicativos que não podem ser instalados no dispositivo**. Se os usuários instalarem um aplicativo da lista de aplicativos fora de conformidade do administrador, eles serão bloqueados ao tentarem acessar o email corporativo e outros recursos corporativos que deem suporte ao acesso condicional. Essa regra exige o nome do aplicativo e a ID do aplicativo ao adicionar um aplicativo à lista fora de conformidade definida pelo administrador. O editor do aplicativo também pode ser adicionado, mas não é obrigatório.
 
-    **在以下设备上受支持：**
+    **Com suporte em:**
       * iOS 6+
       * Android 4.0+
-      * Samsung KNOX 标准版 4.0+
+      * Samsung KNOX Standard 4.0+
 <br></br>
-* **所需的密码类型**。 指定用户是否必须创建字母数字密码或数字密码。 对于字母数字密码，还可以指定密码必须包含的字符集的最小个数。 有以下四个字符集：小写字母、大写字母、符号和数字。
+* **Tipo de senha necessária**. Especifica se o usuário deve criar uma senha Alfanumérica ou Numérica. Para senhas Alfanuméricas, especifique também o número mínimo de conjuntos de caracteres que a senha deverá conter. Há quatro conjuntos de caracteres: minúsculas, maiúsculas, letras, Símbolos e Números.
 
-    **在以下设备上受支持：**
+    **Com suporte em:**
     * Windows Phone 8+
     * Windows 8.1+
     * iOS 6+
 <br></br>
-* **在设备上阻止进行 USB 调试**。 无需配置此设置，因为已在 Android for Work 的设备上禁用 USB 调试。
+* **Bloquear a depuração de USB no dispositivo**. Você não precisa definir essas configurações, pois a depuração de USB já está desabilitada em dispositivos com Android for Work.
 
-    **在以下设备上受支持：**
+    **Com suporte em:**
     * Android 4.0+
-    * Samsung KNOX 标准版 4.0+
+    * Samsung KNOX Standard 4.0+
 <br></br>
-* **阻止来自未知源的应用**。 要求设备阻止安装来自未知源的应用。 无需配置此设置，因为 Android for Work 设备始终限制来自未知源的安装。
+* **Bloquear aplicativos de fontes desconhecidas**. Exija que dispositivos impeçam a instalação de aplicativos de fontes desconhecidas. Você não precisa definir essa configuração, pois os dispositivos com Android for Work sempre restringem a instalação de fontes desconhecidas.
 
-    **在以下设备上受支持：**
+    **Com suporte em:**
     * Android 4.0+
-    * Samsung KNOX 标准版 4.0+
+    * Samsung KNOX Standard 4.0+
 <br></br>
-* **要求对应用进行威胁扫描**。 此设置指定在设备上启用的“验证”应用功能。 
+* **Exigir verificação de ameaças em aplicativos**. Essa configuração especifica que o recurso Verificar aplicativos fique habilitado no dispositivo. 
 
-    **在以下设备上受支持：**
-    * Android 4.2 到 4.4
-    * Samsung KNOX 标准版 4.0+
+    **Com suporte em:**
+    * Android 4.2 a 4.4
+    * Samsung KNOX Standard 4.0+
 
-### <a name="find-an-app-id"></a>查找应用 ID
+### <a name="find-an-app-id"></a>Localizar uma ID do aplicativo
 
-应用 ID 是唯一标识 Apple 和 Google 应用程序服务中的应用的标识符。 例如，com.contoso.myapp。 要查找 ID：
-
-- **Outlook Web Access (OWA)**
-    - 你可以在 Google Play 商店 URL 中查找用于创建应用的应用 ID。 应用 ID 示例：*…?id=com.companyname.appname&hl=en*
+A ID do aplicativo é um identificador que identifica exclusivamente o aplicativo dentro dos serviços de aplicativos da Apple e do Google. Por exemplo, com.contoso.myapp. Para localizar uma:
 
 - **Android**
-    1. 在 iTunes 商店 URL 中，找到 ID号，如以下示例中所示：*/id875948587?mt=8*
+    - Você pode localizar a ID do aplicativo na URL da Google Play Store usada para criar o aplicativo. Um exemplo de ID do aplicativo: *…?id=com.nomedaempresa.nomedoapp&hl=en*
 
-    2. 在 Web 浏览器中，转到以下 URL，将号码替换为你刚刚找到的 ID 号（此处为上一个示例）：https://itunes.apple.com/lookup?id=875948587
+- **iOS**
+    1. Na URL da loja do iTunes, localize o número de identificação, como o mostrado neste exemplo: */id875948587?mt=8*
 
-    3. 下载并打开文本文件。
+    2. Em um navegador da Web, vá para a URL a seguir, substituindo o número pelo número de identificação que você acabou de encontrar (nesse caso, o exemplo anterior): https://itunes.apple.com/lookup?id=875948587
+
+    3. Baixe e abra o arquivo de texto.
   
-    4. 搜索文本“**bundleid**”。
+    4. Procure o texto **bundleId**.
 
-    应用 ID 示例：“*bundleId*":"*com.companyname.appname*” 
+    Um exemplo de ID do aplicativo: "*bundleId*":"*com.companyname.appname*" 
 

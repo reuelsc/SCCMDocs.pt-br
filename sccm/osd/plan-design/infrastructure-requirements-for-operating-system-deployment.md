@@ -1,6 +1,6 @@
 ---
-title: "操作系统部署的基础结构要求 | Microsoft Docs"
-description: "使用 System Center 2012 Configuration Manager 部署操作系统前，确保已了解外部依赖关系和产品依赖关系。"
+title: "Requisitos de infraestrutura para implantação de sistema operacional | Microsoft Docs"
+description: "Verifique se você conhece as dependências externas e dependências de produto antes de usar o System Center 2012 Configuration Manager para a implantação de sistema operacional."
 ms.custom: na
 ms.date: 10/06/2016
 ms.prod: configuration-manager
@@ -17,227 +17,227 @@ manager: angrobe
 ms.openlocfilehash: 167e639cdb9995fd743787cc9fbf364ec70f6ed9
 ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
 ms.translationtype: HT
-ms.contentlocale: zh-CN
+ms.contentlocale: pt-BR
 ms.lasthandoff: 08/07/2017
 ---
-# <a name="infrastructure-requirements-for-operating-system-deployment-in-system-center-configuration-manager"></a>System Center Configuration Manager 中的操作系统部署的基础架构要求
+# <a name="infrastructure-requirements-for-operating-system-deployment-in-system-center-configuration-manager"></a>Requisitos de infraestrutura para implantação do sistema operacional no System Center Configuration Manager
 
-*适用范围：System Center Configuration Manager (Current Branch)*
+*Aplica-se a: System Center Configuration Manager (Branch Atual)*
 
-System Center 2012 Configuration Manager 中的操作系统部署具有外部依赖关系和产品内依赖关系。 使用以下部分的内容帮助你准备操作系统的部署。  
+A implantação de sistema operacional no System Center 2012 Configuration Manager tem dependências externas e dependências dentro do produto. Use as seções a seguir para ajudá-lo a preparar uma implantação do sistema operacional.  
 
-##  <a name="BKMK_ExternalDependencies"></a> Configuration Manager 的外部依赖关系  
- 下面提供了有关在 Configuration Manager 中部署操作系统所需的外部工具、安装工具包和操作系统的信息。  
+##  <a name="BKMK_ExternalDependencies"></a> Dependências externas ao Configuration Manager  
+ A seguir, há informações sobre ferramentas externas, kits de instalação e sistemas operacionais necessários para implantar sistemas operacionais no Configuration Manager.  
 
-### <a name="windows-adk-for-windows-10"></a>适用于 Windows 10 的 Windows ADK  
- Windows ADK 是一组工具和文档，为 Windows 操作系统的配置和部署提供支持。 Configuration Manager 使用 Windows ADK 来自动完成 Windows 安装、捕获 Windows 映像、迁移用户配置文件和数据，诸如此类。  
+### <a name="windows-adk-for-windows-10"></a>Windows ADK para Windows 10  
+ O Windows ADK é um conjunto de ferramentas e de documentação que oferece suporte à configuração e implantação dos sistemas operacionais Windows. O Configuration Manager usa o Windows ADK para automatizar as instalações do Windows, capturar imagens do Windows, migrar perfis e dados de usuários, entre outros.  
 
- 必须在层次结构的顶层站点的站点服务器上、层次结构中每个主站点的站点服务器上以及 SMS 提供程序站点系统服务器上安装 Windows ADK 的以下功能：  
+ Os recursos a seguir do Windows ADK devem ser instalados no servidor do site de nível superior da hierarquia, no servidor de cada site primário da hierarquia e no servidor de sistema do site do Provedor de SMS:  
 
--   用户状态迁移工具 (USMT) <sup>1</sup>  
+-   USMT (Ferramenta de Migração do Usuário) <sup>1</sup>  
 
--   Windows 部署工具  
+-   Windows Deployment Tools  
 
--   Windows 预安装环境 (Windows PE)
+-   Ambiente de Pré-Instalação do Windows (Windows PE)
 
-有关可对不同版本 Configuration Manager 使用的 Windows 10 ADK 版本列表，请参阅[对作为客户端的 Windows 10 的支持](https://docs.microsoft.com/en-us/sccm/core/plan-design/configs/support-for-windows-10#windows-10-adk)。
+Para obter uma lista das versões do Windows 10 ADK que você pode usar com diferentes versões do Configuration Manager, consulte [Support For Windows 10 as a client (Suporte para o Windows 10 como cliente)](https://docs.microsoft.com/en-us/sccm/core/plan-design/configs/support-for-windows-10#windows-10-adk).
 
- <sup>1</sup> SMS 提供程序站点系统服务器上不需要 USMT。  
+ <sup>1</sup> USMT não é obrigatória no servidor do sistema de site do Provedor de SMS.  
 
 > [!NOTE]  
->  在安装 Configuration Manager 站点之前，必须在每台计算机上手动安装 Windows ADK，这些计算机将托管管理中心站点或主站点服务器。  
+>  É necessário instalar manualmente o Windows ADK em cada computador que hospedará um site de administração central ou um servidor do site primário antes de instalar o site do Configuration Manager.  
 
- 有关详情，请参阅：  
+ Para obter mais informações, consulte:  
 
--   [面向 IT 专业人员的适用于 Windows 10 方案的 Windows ADK](https://technet.microsoft.com/library/mt280162\(v=vs.85\).aspx)  
+-   [Cenários do Windows ADK para Windows 10 para Profissionais de TI](https://technet.microsoft.com/library/mt280162\(v=vs.85\).aspx)  
 
--   [下载适用于 Windows 10 的 Windows ADK](https://msdn.microsoft.com/windows/hardware/dn913721.aspx#adkwin10)  
+-   [Baixar o Windows ADK para Windows 10](https://msdn.microsoft.com/windows/hardware/dn913721.aspx#adkwin10)  
 
--   [支持 Windows 10](/sccm/core/plan-design/configs/support-for-windows-10)  
+-   [Suporte para Windows 10](/sccm/core/plan-design/configs/support-for-windows-10)  
 
 
-### <a name="user-state-migration-tool-usmt"></a>用户状态迁移工具 (USMT)  
- Configuration Manager 使用包含 USMT 10 源文件的 USMT 包在操作系统部署过程中捕获和还原用户状态。 位于顶层站点的 Configuration Manager 安装程序将自动创建 USMT 包。 USMT 10 可以捕获 Windows 7、Windows 8、Windows 8.1 和 Windows 10 中的用户状态。 在适用于 Windows 10 的 Windows 评估和部署工具包 (Windows ADK) 中分发 USMT 10。  
+### <a name="user-state-migration-tool-usmt"></a>USMT (Ferramenta de Migração do Usuário)  
+ O Configuration Manager usa um pacote de USMT que contém arquivos de origem da USMT 10 para capturar e restaurar o estado do usuário como parte da implantação do seu sistema operacional. A Instalação do Configuration Manager no site de nível superior cria automaticamente o pacote da USMT. A USMT 10 pode capturar o estado do usuário do Windows 7, Windows 8, Windows 8.1 e Windows 10. A USMT 10 é distribuída no Windows ADK (Kit de Avaliação e Implantação do Windows) para Windows 10.  
 
- 有关详情，请参阅：  
+ Para obter mais informações, consulte:  
 
--   [USMT 10 的常见迁移方案](https://technet.microsoft.com/library/mt299169\(v=vs.85\).aspx)  
+-   [Cenários comuns de migração da USMT 10](https://technet.microsoft.com/library/mt299169\(v=vs.85\).aspx)  
 
--   [管理用户状态](../get-started/manage-user-state.md)  
+-   [Gerenciar o estado do usuário](../get-started/manage-user-state.md)  
 
 ### <a name="windows-pe"></a>Windows PE  
- Windows PE 用于引导映像以启动计算机。 它是一种提供有限服务的 Windows 操作系统，在 Windows 操作系统的预安装和部署过程中使用。 下面提供了 Configuration Manager 的版本、受支持的 Windows ADK 版本、启动映像所基于的 Windows PE 版本（可在 Configuration Manager 控制台中自定义），以及启动映像所基于的 Windows PE 版本（可使用 DISM 自定义，然后将映像添加到 Configuration Manager 指定版本）。  
+ O Windows PE é usado em imagens de inicialização para iniciar um computador. É um sistema operacional Windows com serviços limitados usado durante a pré-instalação e implantação dos sistemas operacionais Windows. Veja a seguir a versão do Configuration Manager e a versão com suporte do Windows ADK, a versão do Windows PE na qual se baseia a imagem de inicialização que pode ser personalizada no console do Configuration Manager e as versões do Windows PE nas quais se baseia a imagem de inicialização que pode ser personalizada com o DISM e, em seguida, adicione a imagem à versão especificada do Configuration Manager.  
 
-#### <a name="configuration-manager-version-1511"></a>Configuration Manager 版本 1511  
- 下面提供了受支持的 Windows ADK 版本、可在 Configuration Manager 控制台中自定义的启动映像所基于的 Windows PE 版本，以及可使用 DISM 自定义，然后将映像添加到 Configuration Manager 的启动映像所基于的 Windows PE 版本。  
+#### <a name="configuration-manager-version-1511"></a>Configuration Manager versão 1511  
+ Veja a seguir a versão com suporte do Windows ADK, a versão do Windows PE na qual se baseia a imagem de inicialização que pode ser personalizada no console do Configuration Manager e as versões do Windows PE nas quais se baseia a imagem de inicialização que pode ser personalizada usando o DISM e, em seguida, adicione a imagem ao Configuration Manager.  
 
--   **Windows ADK 版本**  
+-   **Versão do Windows ADK**  
 
-     适用于 Windows 10 的 Windows ADK  
+     Windows ADK para Windows 10  
 
--   **可从 Configuration Manager 控制台中自定义的启动映像的 Windows PE 版本**  
+-   **Versões do Windows PE para imagens de inicialização personalizáveis no console do Configuration Manager**  
 
      Windows PE 10  
 
--   **不可从 Configuration Manager 控制台中自定义的启动映像的 Windows PE 支持版本**  
+-   **Versões do Windows PE com suporte para imagens de inicialização não personalizáveis no console do Configuration Manager**  
 
-     Windows PE 3.1<sup>1</sup> 和 Windows PE 5  
+     Windows PE 3.1<sup>1</sup> e Windows PE 5  
 
-     <sup>1</sup> 只有当启动映像基于 Windows PE 3.1 时才能将该映像添加到 Configuration Manager 中。 安装适用于 Windows 7 SP1 的 Windows AIK 补充，以使用适用于 Windows 7 SP1（基于 Windows PE 3.1）的 Windows AIK 补充升级适用于 Windows 7（基于 Windows PE 3）的 Windows AIK。 你可以从 [Microsoft 下载中心](http://www.microsoft.com/download/details.aspx?id=5188)下载适用于 Windows 7 SP1 的 Windows AIK 补充。  
+     <sup>1</sup> Só será possível adicionar uma imagem de inicialização ao Configuration Manager quando ela se basear no Windows PE 3.1. Instale o Suplemento do Windows AIK para Windows 7 SP1 a fim de atualizar o Windows AIK para Windows 7 (baseado no Windows PE 3) com o Suplemento do Windows AIK para Windows 7 SP1 (baseado no Windows PE 3.1). Você pode baixar o Suplemento do Windows AIK para Windows 7 SP1 do [Centro de Download da Microsoft](http://www.microsoft.com/download/details.aspx?id=5188).  
 
-     例如，如果具有 Configuration Manager，则可以利用 Configuration Manager 控制台自定义适用于 Windows 10 的 Windows ADK 中的启动映像（基于 Windows PE 10）。 但是，当支持基于 Windows PE 5 的启动映像时，你必须在不同的计算机中自定义它们，并使用随适用于 Windows 8 的 Windows ADK 一起安装的 DISM 版本。 然后，可以向 Configuration Manager 控制台添加启动映像。 有关自定义启动映像（添加可选组件和驱动程序）、对启动映像启用命令支持、将启动映像添加到 Configuration Manager 控制台中，以及使用启动映像更新分发点的步骤的详细信息，请参阅[自定义启动映像](../get-started/customize-boot-images.md)。 有关启动映像的详细信息，请参阅[管理启动映像](../get-started/manage-boot-images.md)。  
+     Por exemplo, quando você tiver o Configuration Manager, será possível personalizar as imagens de inicialização do Windows ADK para Windows 10 (baseado no Windows PE 10) no console do Configuration Manager. No entanto, embora haja suporte para imagens de inicialização baseadas no Windows PE 5, você deverá personalizá-las em outro computador e usar a versão do DISM instalada com o Windows ADK para Windows 8. Em seguida, é possível adicionar a imagem de inicialização ao console do Configuration Manager. Para obter mais informações sobre as etapas para personalizar uma imagem de inicialização (adicionar componentes e drivers opcionais), habilitar o suporte de comandos para a imagem de inicialização, adicionar a imagem de inicialização ao console do Configuration Manager e atualizar os pontos de distribuição com ela, consulte [Personalizar imagens de inicialização](../get-started/customize-boot-images.md). Para obter mais informações sobre imagens de inicialização, consulte [Gerenciar imagens de inicialização](../get-started/manage-boot-images.md).  
 
 ### <a name="windows-server-update-services-wsus"></a>Windows Server Update Services (WSUS)  
-必须安装以下 WSUS 4.0 修补程序：
-  - [Hotfix 3095113](https://support.microsoft.com/kb/3095113) 的 WSUS 4.0，它使用软件更新基础架构来获取 Windows 10 功能的升级。 如果你使用的是 WSUS 3.2，则必须使用任务序列来升级 Windows 10。 有关详细信息，请参阅[管理 Windows 即服务](../deploy-use/manage-windows-as-a-service.md)。  
-  - 如果要使用 Windows 10 维护服务将计算机升级到 Windows 10 Anniversary Update，必须提供[修补程序 3159706](https://support.microsoft.com/kb/3159706)对于子序列版本也是如此。 支持文章中描述有手动操作步骤，必须按照这些步骤安装此修补程序。 有关详细信息，请参阅[管理 Windows 即服务](../deploy-use/manage-windows-as-a-service.md)。
+Você precisa instalar os seguintes hotfixes do WSUS 4.0:
+  - [Hotfix 3095113](https://support.microsoft.com/kb/3095113) é necessário para a manutenção do Windows 10, que utiliza a infraestrutura de atualizações de software para obter as atualizações de recursos do Windows 10. Quando você tem o WSUS 3.2, deve usar sequências de tarefas para atualizar o Windows 10. Para obter mais informações, consulte [Gerenciar o Windows como um serviço](../deploy-use/manage-windows-as-a-service.md).  
+  - O [Hotfix 3159706](https://support.microsoft.com/kb/3159706) é necessário para usar o serviço do Windows 10 para atualizar os computadores para a Atualização de Aniversário do Windows 10, bem como para versões posteriores. Há etapas manuais descritas no artigo de suporte que você precisa seguir para instalar esse hotfix. Para obter mais informações, consulte [Gerenciar o Windows como um serviço](../deploy-use/manage-windows-as-a-service.md).
 
 
-### <a name="internet-information-services-iis-on-the-site-system-servers"></a>站点系统服务器上的 Internet 信息服务 (IIS)  
- 分发点、状态迁移点和管理点均需要 IIS。 有关此要求的详细信息，请参阅[站点和站点系统角色的先决条件](../../core/plan-design/configs/site-and-site-system-prerequisites.md)。  
+### <a name="internet-information-services-iis-on-the-site-system-servers"></a>IIS (Serviços de Informações da Internet) nos servidores do sistema de sites  
+ O IIS é necessário no ponto de distribuição, ponto de migração de estado e ponto de gerenciamento. Para obter mais informações sobre esse requisito, consulte [Pré-requisitos do site e do sistema de sites](../../core/plan-design/configs/site-and-site-system-prerequisites.md).  
 
-### <a name="windows-deployment-services-wds"></a>Windows 部署服务 (WDS)  
- PXE 部署需要 WDS，当你使用多播在部署中优化带宽以及将其用于脱机维护映像时，也需要 WDS。 如果在远程服务器上安装提供程序，则必须在站点服务器和远程提供程序上安装 WDS。 有关详细信息，请参阅本主题中的 [Windows 部署服务](#BKMK_WDS) 。  
+### <a name="windows-deployment-services-wds"></a>WDS (Serviços de Implantação do Windows)  
+ O WDS é necessário para as implantações do PXE, ao usar o multicast para otimizar a largura de banda em implantações e para a instalação offline de imagens. Caso o provedor esteja instalado em um servidor remoto, você deve instalar o WDS no servidor do site e no provedor remoto. Para obter mais informações, consulte [Serviços de implantação do Windows](#BKMK_WDS) , neste tópico.  
 
-### <a name="dynamic-host-configuration-protocol-dhcp"></a>动态主机配置协议 (DHCP)  
- DHCP 是 PXE 部署所必需的。 你必须有正常运行的 DHCP 服务器（带有活动主机）才能使用 PXE 部署操作系统。 有关 PXE 部署的详细信息，请参阅[使用 PXE 通过网络部署 Windows](../deploy-use/use-pxe-to-deploy-windows-over-the-network.md)。  
+### <a name="dynamic-host-configuration-protocol-dhcp"></a>Protocolo DHCP  
+ O DHCP é necessário para as implantações do PXE. É necessário ter um servidor DHCP em funcionamento com um host ativo para implantar os sistemas operacionais usando o PXE. Para obter mais informações sobre implantações de PXE, veja [Usar PXE para implantar o Windows na rede](../deploy-use/use-pxe-to-deploy-windows-over-the-network.md).  
 
-### <a name="supported-operating-systems-and-hard-disk-configurations"></a>支持的操作系统和硬盘配置  
- 有关部署操作系统时 Configuration Manager 所支持的操作系统版本和硬盘配置的详细信息，请参阅[支持的操作系统](#BKMK_SupportedOS)和[支持的硬盘配置](#BKMK_SupportedDiskConfig)。  
+### <a name="supported-operating-systems-and-hard-disk-configurations"></a>Sistemas operacionais e configurações de disco rígido com suporte  
+ Para obter mais informações sobre versões do sistema operacional e configurações de disco rígido com suporte do Configuration Manager ao implantar sistemas operacionais, consulte [Sistemas operacionais com suporte](#BKMK_SupportedOS) e [Configurações de disco com suporte](#BKMK_SupportedDiskConfig).  
 
-### <a name="windows-device-drivers"></a>Windows 设备驱动程序  
- 当你在目标计算机上安装操作系统，以及使用启动映像来运行 Windows PE 时，可以使用 Windows 设备驱动程序。 有关设备驱动程序的详细信息，请参阅[管理驱动程序](../get-started/manage-drivers.md)。  
+### <a name="windows-device-drivers"></a>Drivers de dispositivos Windows  
+ Os drivers de dispositivos Windows podem ser usados ao instalar o sistema operacional no computador de destino e ao executar o Windows PE usando uma imagem de inicialização. Para obter mais informações sobre drivers de dispositivo, consulte [Gerenciar drivers](../get-started/manage-drivers.md).  
 
-##  <a name="BKMK_InternalDependencies"></a> Configuration Manager 依赖关系  
- 下面提供了有关 Configuration Manager 操作系统部署先决条件的信息。  
+##  <a name="BKMK_InternalDependencies"></a> Dependências do Configuration Manager  
+ A seguir, há informações sobre os pré-requisitos de implantação de sistema operacional do Configuration Manager.  
 
-### <a name="operating-system-image"></a>操作系统映像  
- Configuration Manager 中的操作系统映像以 Windows 映像 (WIM) 文件格式存储，代表在计算机上成功安装和配置操作系统所需的引用文件和文件夹的压缩集合。 有关详细信息，请参阅[管理操作系统映像](../get-started/manage-operating-system-images.md)。  
+### <a name="operating-system-image"></a>Imagem do sistema operacional  
+ As imagens do sistema operacional no Configuration Manager são armazenadas em arquivos de formato WIM (Windows Imaging) e representam uma coleção compactada de arquivos e pastas de referência necessários para instalar e configurar com êxito um sistema operacional em um computador. Para obter mais informações, consulte [Gerenciar imagens do sistema operacional](../get-started/manage-operating-system-images.md).  
 
-### <a name="driver-catalog"></a>驱动程序目录  
- 要部署设备驱动程序，必须导入并启用该设备驱动程序，然后使其在 Configuration Manager 客户端可访问的分发点上可用。 有关驱动程序目录的详细信息，请参阅[管理驱动程序](../get-started/manage-drivers.md)。  
+### <a name="driver-catalog"></a>Catálogo de drivers  
+ Para implantar o driver de dispositivo, é necessário importá-lo, habilitá-lo e disponibilizá-lo em um ponto de distribuição que o cliente do Configuration Manager possa acessar. Para obter mais informações sobre o catálogo de drivers, consulte [Gerenciar drivers](../get-started/manage-drivers.md).  
 
-### <a name="management-point"></a>管理点  
- 管理点在客户端计算机和 Configuration Manager 站点之间传输信息。 客户端使用管理点来运行完成操作系统部署所需的任何任务序列。  
+### <a name="management-point"></a>Ponto de gerenciamento  
+ Os pontos de gerenciamento transferem informações entre os computadores cliente e o site do Configuration Manager. O cliente usa o ponto de gerenciamento para executar toda sequência de tarefas necessárias para a conclusão da implantação do sistema operacional.  
 
- 有关任务序列的详细信息，请参阅[计划自动执行任务时的考虑事项](planning-considerations-for-automating-tasks.md)。  
+ Para obter mais informações sobre sequências de tarefas, consulte [Considerações sobre o planejamento para automatizar tarefas](planning-considerations-for-automating-tasks.md).  
 
-### <a name="distribution-point"></a>分发点  
- 分发点在大多数部署中使用，存储用于部署操作系统的数据，例如操作系统映像或设备驱动程序包。 任务序列通常从分发点中检索数据来部署操作系统。  
+### <a name="distribution-point"></a>Ponto de distribuição  
+ Os pontos de distribuição são usados na maioria das implantações para armazenar os dados usados para implantar um sistema operacional, como a imagem do sistema operacional e os pacotes de drivers de dispositivos. As sequências de tarefas normalmente recuperam dados de um ponto de distribuição para implantar o sistema operacional.  
 
- 有关如何安装分发点和管理内容的详细信息，请参阅[管理内容和内容基础结构](../../core/servers/deploy/configure/manage-content-and-content-infrastructure.md)。  
+ Para obter mais informações sobre como instalar pontos de distribuição e gerenciar conteúdo, consulte [Gerenciar conteúdo e infraestrutura de conteúdo](../../core/servers/deploy/configure/manage-content-and-content-infrastructure.md).  
 
-### <a name="pxe-enabled-distribution-point"></a>已启用 PXE 的分发点  
- 要部署 PXE 启动的部署，你必须将分发点配置为接受来自客户端的 PXE 请求。 有关如何配置分发点的详细信息，请参阅[配置分发点](/sccm/core/servers/deploy/configure/install-and-configure-distribution-points#pxe)。  
+### <a name="pxe-enabled-distribution-point"></a>Ponto de distribuição habilitado para PXE  
+ Para realizar as implantações iniciadas por PXE, é necessário configurar um ponto de distribuição para aceitar as solicitações PXE de clientes. Para obter mais informações sobre como configurar o ponto de distribuição, consulte [Configurar um ponto de distribuição](/sccm/core/servers/deploy/configure/install-and-configure-distribution-points#pxe).  
 
-### <a name="multicast-enabled-distribution-point"></a>启用多播的分发点  
- 要使用多播优化操作系统部署，你必须配置分发点以支持多播。 有关如何配置分发点的详细信息，请参阅[配置分发点](/sccm/core/servers/deploy/configure/install-and-configure-distribution-points#multicast)。   
+### <a name="multicast-enabled-distribution-point"></a>Ponto de distribuição habilitado para multicast  
+ Para otimizar as imagens do sistema operacional usando multicast, configure um ponto de distribuição que ofereça suporte a multicast. Para obter mais informações sobre como configurar o ponto de distribuição, consulte [Configurar um ponto de distribuição](/sccm/core/servers/deploy/configure/install-and-configure-distribution-points#multicast).   
 
-### <a name="state-migration-point"></a>状态迁移点  
- 在为并排部署和全新部署捕获和还原用户状态数据时，你必须配置状态迁移点以便将用户状态数据存储在另一台计算机上。  
+### <a name="state-migration-point"></a>Ponto de migração de estado  
+ Ao capturar e restaurar os dados do estado do usuário para implantações lado a lado e de atualização, é necessário configurar um ponto de migração de estado para armazenar os dados de estado do usuário em outro computador.  
 
- 有关如何配置状态迁移点的详细信息，请参阅 [状态迁移点](../get-started/prepare-site-system-roles-for-operating-system-deployments.md#BKMK_StateMigrationPoints)。  
+ Para obter mais informações sobre como configurar o ponto de migração de estado, consulte [Ponto de migração de estado](../get-started/prepare-site-system-roles-for-operating-system-deployments.md#BKMK_StateMigrationPoints).  
 
- 有关如何捕获和还原用户状态的信息，请参阅[管理用户状态](../get-started/manage-user-state.md)。  
+ Para obter informações sobre como capturar e restaurar o estado do usuário, consulte [Gerenciar o estado do usuário](../get-started/manage-user-state.md).  
 
-### <a name="service-connection-point"></a>服务连接点  
- 使用 Windows 即服务 (WaaS) 部署 Windows 10 当前分支时，必须已安装服务连接点。 有关详细信息，请参阅[管理 Windows 即服务](../deploy-use/manage-windows-as-a-service.md)。  
+### <a name="service-connection-point"></a>Ponto de Conexão de Serviço  
+ Ao usar o WaaS (Windows como um Serviço) para implantar a ramificação atual do Windows 10, o ponto de conexão do serviço deve estar instalado. Para obter mais informações, consulte [Gerenciar o Windows como um serviço](../deploy-use/manage-windows-as-a-service.md).  
 
-### <a name="reporting-services-point"></a>Reporting Services 点  
- 如果针对操作系统部署需使用 Configuration Manager 报表，则必须安装和配置 Reporting Services 点。 有关详细信息，请参阅[报表](../../core/servers/manage/reporting.md)。  
+### <a name="reporting-services-point"></a>Ponto do Reporting Services  
+ Para usar os relatórios do Configuration Manager para implantações de sistema operacional, é necessário instalar e configurar um ponto do Reporting Services. Para obter mais informações, consulte [Relatórios](../../core/servers/manage/reporting.md).  
 
-### <a name="security-permissions-for-operating-system-deployments"></a>操作系统部署的安全权限  
- “操作系统部署管理员”  安全角色是一个无法更改的内置角色。 不过，你可以复制该角色，进行更改，然后将这些更改保存为一个新的自定义安全角色。 下面是一些直接应用于操作系统部署的权限：  
+### <a name="security-permissions-for-operating-system-deployments"></a>Permissões de segurança para implantações de sistema operacional  
+ A função de segurança do **Gerenciador de Implantação de Sistema Operacional** é uma função interna que não pode ser alterada. No entanto, é possível copiar a função, fazer alterações e salvar essas alterações como uma nova função de segurança personalizada. Aqui estão algumas das permissões que se aplicam diretamente às implantações de sistema operacional:  
 
--   **启动映像包**：创建、删除、修改、修改文件夹、移动对象、读取、设置安全作用域  
+-   **Pacote de Imagem de Inicialização**: Criar, Excluir, Modificar, Modificar Pasta, Mover Objeto, Ler, Definir Escopo de Segurança  
 
--   **设备驱动程序**：创建、删除、修改、修改文件夹、修改报表、移动对象、读取、运行报表  
+-   **Drivers do dispositivo**: Criar, Excluir, Modificar, Modificar Pasta, Modificar Relatório, Mover Objeto, Ler, Executar Relatório  
 
--   **驱动程序包**：创建、删除、修改、修改文件夹、移动对象、读取、设置安全作用域  
+-   **Pacote de drivers**: Criar, Excluir, Modificar, Modificar Pasta, Mover Objeto, Ler, Definir Escopo de Segurança  
 
--   **操作系统映像**：创建、删除、修改、修改文件夹、移动对象、读取、设置安全作用域  
+-   **Imagem do sistema operacional**: Criar, Excluir, Modificar, Modificar Pasta, Mover Objeto, Ler, Definir Escopo de Segurança  
 
--   **操作系统安装包**：创建、删除、修改、修改文件夹、移动对象、读取、设置安全作用域  
+-   **Pacote de instalação do sistema operacional**: Criar, Excluir, Modificar, Modificar Pasta, Mover Objeto, Ler, Definir Escopo de Segurança  
 
--   **任务序列包**：创建、创建任务序列介质、删除、修改、修改文件夹、修改报表、移动对象、读取、运行报表、设置安全作用域  
+-   **Pacote de sequência de tarefas**: Criar, Criar Mídia de Sequência de Tarefas, Excluir, Modificar, Modificar Pasta, Modificar Relatório, Mover Objeto, Ler, Executar Relatório, Definir Escopo de Segurança  
 
- 有关自定义安全角色的详细信息，请参阅 [创建自定义安全角色](../../core/servers/deploy/configure/configure-role-based-administration.md#BKMK_CreateSecRole)。  
+ Para obter mais informações sobre funções de segurança personalizadas, consulte [Criar funções de segurança personalizadas](../../core/servers/deploy/configure/configure-role-based-administration.md#BKMK_CreateSecRole).  
 
-### <a name="security-scopes-for-operating-system-deployments"></a>操作系统部署的安全作用域  
- 使用安全作用域来向管理用户提供对操作系统部署中所使用的安全对象（例如操作系统和启动映像、驱动程序包以及任务序列包）的访问权限。 有关详细信息，请参阅 [安全作用域](../../core/understand/fundamentals-of-role-based-administration.md#bkmk_PlanScope)。  
+### <a name="security-scopes-for-operating-system-deployments"></a>Escopos de segurança para implantações de sistema operacional  
+ Use os escopos de segurança para fornecer aos usuários administrativos o acesso a objetos protegíveis usados nas implantações de sistema operacional, como imagens de sistema operacional e de inicialização, pacotes de drivers e pacotes de sequência de tarefas. Para obter mais informações, consulte [Escopos de segurança](../../core/understand/fundamentals-of-role-based-administration.md#bkmk_PlanScope).  
 
-##  <a name="BKMK_WDS"></a> Windows 部署服务  
- 必须在配置为支持 PXE 或多播的分发点所在的服务器上安装 Windows 部署服务 (WDS)。 WDS 包括在服务器的操作系统中。 对于 PXE 部署，WDS 是执行 PXE 启动的服务。 如果为 PXE 安装和启用了分发点，则 Configuration Manager 会将一个使用 WDS PXE 启动功能的提供程序安装到 WDS 中。  
+##  <a name="BKMK_WDS"></a> Serviços de Implantação do Windows  
+ O WDS (Serviços de Implantação do Windows) deve ser instalado no mesmo servidor que os pontos de distribuição configurados para dar suporte a PXE ou multicast. O WDS está incluído no sistema operacional do servidor. Para implantações do PXE, o WDS é o serviço que executa a inicialização do PXE. Quando o ponto de distribuição está instalado e habilitado para PXE, o Configuration Manager instala um provedor no WDS que usa as funções de inicialização do PXE do WDS.  
 
 > [!NOTE]  
->  如果服务器需要重启，则 WDS 的安装可能会失败。 
+>  Se o servidor requerer reinicialização, a instalação do WDS poderá falhar. 
 
- 必须考虑的其他 WDS 配置包括下列各项：  
+ Outras configurações do WDS que devem ser consideradas incluem o seguinte:  
 
--   服务器上的 WDS 安装要求管理员是“本地管理员”组的成员。  
+-   A instalação do WDS no servidor exige que o administrador seja membro do grupo local de administradores.  
 
--   WDS 服务器必须是 Active Directory 域或 Active Directory 域的域控制器的成员。 所有 Windows 域和林配置都支持 WDS。  
+-   O servidor do WDS deve ser membro de um domínio Active Directory ou de um controlador de domínio para o domínio Active Directory. Todas as configurações de domínio e de floresta do Windows têm suporte para o WDS.  
 
--   如果在远程服务器上安装提供程序，则必须在站点服务器和远程提供程序上安装 WDS。  
+-   Caso o provedor esteja instalado em um servidor remoto, você deve instalar o WDS no servidor do site e no provedor remoto.  
 
-###  <a name="BKMK_WDSandDHCP"></a> WDS 和 DHCP 在同一个服务器上时的注意事项  
- 如果计划在运行 DHCP 的服务器上共同承载分发点，请考虑以下配置问题。  
+###  <a name="BKMK_WDSandDHCP"></a> Considerações sobre quando você tem o WDS e DHCP no mesmo servidor  
+ Considere os seguintes problemas de configuração se você planeja co-hospedar o ponto de distribuição em um servidor executando DHCP.  
 
--   必须具有正常运行的 DHCP 服务器和活动作用域。 Windows 部署服务使用需要 DHCP 服务器的 PXE。  
+-   Você deve ter um servidor DHCP funcionando com um escopo ativo. Os Serviços de Implantação do Windows utilizam PXE, o que requer um servidor DHCP.  
 
--   DHCP 和 Windows 部署服务都需要端口号 67。 如果共同承载 Windows 部署服务和 DHCP，则可以将为 PXE 配置的 DHCP 或分发点移动到单独的服务器。 或者可以使用以下过程将 Windows 部署服务服务器配置为侦听其他端口。  
+-   O DHCP e os Serviços de Implantação do Windows exigem o número da porta 67. Se você co-hospedar os Serviços de Implantação do Windows e o DHCP, será possível mover o DHCP ou o ponto de distribuição que está configurado para PXE para um servidor separado. Ou, você pode usar o procedimento a seguir para configurar o servidor dos Serviços de Implantação do Windows para escutar em uma porta diferente.  
 
-    #### <a name="to-configure-the-windows-deployment-services-server-to-listen-on-a-different-port"></a>将 Windows 部署服务服务器配置为侦听其他端口  
+    #### <a name="to-configure-the-windows-deployment-services-server-to-listen-on-a-different-port"></a>Para configurar o servidor dos Serviços de Implantação do Windows para escutar em uma porta diferente  
 
-    1.  修改下面的注册表项：  
+    1.  Modifique a seguinte chave do Registro:  
 
          **HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\WDSServer\Providers\WDSPXE**  
 
-    2.  将注册表值设置为： **UseDHCPPorts = 0**  
+    2.  Defina o valor do Registro como: **UseDHCPPorts = 0**  
 
-    3.  为了使新配置生效，请在服务器上运行以下命令：  
+    3.  Para que a nova configuração entre em vigor, execute o seguinte comando no servidor:  
 
          `WDSUTIL /Set-Server /UseDHCPPorts:No /DHCPOption60:Yes`  
 
--   运行 Windows 部署服务需要 DNS 服务器。  
+-   Um servidor DNS é necessário para executar os Serviços de Implantação do Windows.  
 
--   必须在 Windows 部署服务服务器上打开以下 UDP 端口。  
+-   As seguintes portas UDP devem ser abertas no servidor dos Serviços de Implantação do Windows.  
 
-    -   端口 67 (DHCP)  
+    -   Porta 67 (DHCP)  
 
-    -   端口 69 (TFTP)  
+    -   Porta 69 (TFTP)  
 
-    -   端口 4011 (PXE)  
+    -   Porta 4011 (PXE)  
 
     > [!NOTE]  
-    >  此外，如果服务器上需要 DHCP 授权，则需要在服务器上打开 DHCP 客户端端口 68。  
+    >  Além disso, se a autorização de DHCP for necessária no servidor, a porta 68 do cliente DHCP precisará estar aberta no servidor.  
 
-##  <a name="BKMK_SupportedOS"></a> 支持的操作系统  
- 所有 Windows 操作系统（在[客户端和设备支持的操作系统](../../core/plan-design/configs/supported-operating-systems-for-clients-and-devices.md)中列为受支持的操作系统）都支持用于操作系统部署。  
+##  <a name="BKMK_SupportedOS"></a> Sistemas operacionais com suporte  
+ Todos os sistemas operacionais Windows listados como sistemas operacionais cliente com suporte em [Sistemas operacionais com suporte para clientes e dispositivos](../../core/plan-design/configs/supported-operating-systems-for-clients-and-devices.md) têm suporte para implantações de sistema operacional.  
 
-##  <a name="BKMK_SupportedDiskConfig"></a> 支持的磁盘配置  
- 下表显示了引用计算机和目标计算机上 Configuration Manager 操作系统部署支持的硬盘配置组合。  
+##  <a name="BKMK_SupportedDiskConfig"></a> Configurações de disco compatíveis  
+ As combinações de configurações de disco rígido nos computadores de referência e destino que têm suporte para a implantação de sistema operacional do Configuration Manager são mostradas na tabela a seguir.  
 
-|引用计算机硬盘配置|目标计算机硬盘配置|  
+|Configuração de disco rígido do computador de referência|Configuração de disco rígido do computador de destino|  
 |------------------------------------------------|--------------------------------------------------|  
-|基本磁盘|基本磁盘|  
-|动态磁盘上的简单卷|动态磁盘上的简单卷|  
+|Disco básico|Disco básico|  
+|Volume simples em um disco dinâmico|Volume simples em um disco dinâmico|  
 
- Configuration Manager 仅支持从配置有简单卷的计算机捕获操作系统映像。 不支持下列硬盘配置：  
+ O Configuration Manager dá suporte à captura de uma imagem de sistema operacional somente de computadores configurados com volumes simples. Não há suporte para as seguintes configurações de disco rígido:  
 
--   跨区卷  
+-   Volumes estendidos  
 
--   带区卷 (RAID 0)  
+-   Volumes distribuídos (RAID 0)  
 
--   镜像卷 (RAID 1)  
+-   Volumes espelhados (RAID 1)  
 
--   奇偶校验卷 (RAID 5)  
+-   Volumes de paridade (RAID 5)  
 
- 下表显示了引用计算机和目标计算机上不支持用于 Configuration Manager 操作系统部署的其他硬盘配置。  
+ A tabela a seguir mostra uma configuração de disco rígido adicional em computadores de referência e de destino que não tem suporte com a implantação de sistema operacional do Configuration Manager.  
 
-|引用计算机硬盘配置|目标计算机硬盘配置|  
+|Configuração de disco rígido do computador de referência|Configuração de disco rígido do computador de destino|  
 |------------------------------------------------|--------------------------------------------------|  
-|基本磁盘|动态磁盘|  
+|Disco básico|Disco dinâmico|  
 
-## <a name="next-steps"></a>后续步骤
-[准备操作系统部署](../get-started/prepare-for-operating-system-deployment.md)
+## <a name="next-steps"></a>Próximas etapas
+[Preparar para implantação de sistema operacional](../get-started/prepare-for-operating-system-deployment.md)

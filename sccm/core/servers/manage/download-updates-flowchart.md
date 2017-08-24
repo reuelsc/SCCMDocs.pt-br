@@ -1,6 +1,6 @@
 ---
-title: "流程图 - 下载更新 | Microsoft Docs"
-description: "查看具有在线服务连接点的站点下载控制台内部更新的过程。"
+title: "Fluxograma — baixar atualizações | Microsoft Docs"
+description: "Consulte o processo pelo qual um site com um ponto de conexão de serviço online baixa atualizações no console."
 ms.custom: na
 ms.date: 10/06/2016
 ms.prod: configuration-manager
@@ -17,13 +17,13 @@ manager: angrobe
 ms.openlocfilehash: cd2ef0f0d694937b760d514c2a6a24973810a2b2
 ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
 ms.translationtype: HT
-ms.contentlocale: zh-CN
+ms.contentlocale: pt-BR
 ms.lasthandoff: 08/07/2017
 ---
-# <a name="flowchart---download-updates-for-system-center-configuration-manager"></a>流程图 - 下载 System Center Configuration Manager 的更新
+# <a name="flowchart---download-updates-for-system-center-configuration-manager"></a>Fluxograma — baixar atualizações do System Center Configuration Manager
 
-*适用范围：System Center Configuration Manager (Current Branch)*
+*Aplica-se a: System Center Configuration Manager (Branch Atual)*
 
-此数据流将显示具有在线服务连接点的站点下载控制台内部更新的过程。  
+Esse fluxo de dados exibe o processo pelo qual um site com um ponto de conexão de serviço online baixa atualizações no console.  
 
- ![流程图 - 下载更新](media/Flowchart---Download-updates.png)  
+ ![Fluxograma — baixar atualizações](media/Flowchart---Download-updates.png)  

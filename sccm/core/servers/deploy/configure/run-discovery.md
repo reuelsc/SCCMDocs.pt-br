@@ -1,6 +1,6 @@
 ---
-title: "发现设备和用户资源 | Microsoft Docs"
-description: "阅读发现过程和发现数据记录的概述。"
+title: "Descobrir recursos de dispositivo e de usuário | Microsoft Docs"
+description: "Leia uma visão geral do processo de descoberta e dos registros dos dados de descoberta."
 ms.custom: na
 ms.date: 2/8/2017
 ms.prod: configuration-manager
@@ -18,71 +18,71 @@ manager: angrobe
 ms.openlocfilehash: 647826e9d340d3ef97abab0dba51041a3727dedc
 ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
 ms.translationtype: HT
-ms.contentlocale: zh-CN
+ms.contentlocale: pt-BR
 ms.lasthandoff: 08/07/2017
 ---
-# <a name="run-discovery-for-system-center-configuration-manager"></a>运行 System Center Configuration Manager 发现
+# <a name="run-discovery-for-system-center-configuration-manager"></a>Executar descoberta para o System Center Configuration Manager
 
-*适用范围：System Center Configuration Manager (Current Branch)*
+*Aplica-se a: System Center Configuration Manager (Branch Atual)*
 
-使用 System Center Configuration Manager 中的一种或多种发现方法以查找可以管理的设备和用户资源。 还可以使用发现来识别环境中的网络基础结构。 可使用多种不同的方法来发现不同的内容，并且每种方法都有其自己的配置和限制。  
+Use um ou mais métodos de descoberta no System Center Configuration Manager para encontrar recursos de dispositivo e usuário que você pode gerenciar. Também é possível usar a descoberta para identificar a infraestrutura de rede em seu ambiente. Há vários métodos de descoberta diferentes que você pode usar para descobrir coisas diferentes, cada um dos quais com configurações e limitações próprias.  
 
-## <a name="overview-of-discovery"></a>发现概述  
- 发现是一个 Configuration Manager 用于了解可管理的事务的过程。 以下是可用的发现方法：  
+## <a name="overview-of-discovery"></a>Visão geral da descoberta  
+ Descoberta é o processo pelo qual o Configuration Manager aprende sobre as coisas que você pode gerenciar. Veja a seguir os métodos de descoberta disponíveis:  
 
--   Active Directory 林发现  
+-   Descoberta de Florestas do Active Directory  
 
--   Active Directory 组发现  
+-   Descoberta de grupos do Active Directory  
 
--   Active Directory 系统发现  
+-   Descoberta de sistemas do Active Directory  
 
--   Active Directory 用户发现  
+-   Descoberta de Usuário do Active Directory  
 
--   检测信号发现  
+-   Descoberta de pulsação  
 
--   网络发现  
+-   Descoberta de Rede  
 
--   服务器发现  
+-   Descoberta de Servidor  
 
 > [!TIP]  
->  你可以在[有关 System Center Configuration Manager 的发现方法](../../../../core/servers/deploy/configure/about-discovery-methods.md)中了解各个发现方法。  
+>  Você pode aprender sobre os métodos de descoberta individuais em [Sobre métodos de descoberta para o System Center Configuration Manager](../../../../core/servers/deploy/configure/about-discovery-methods.md).  
 >   
->  有关选择要使用的方法和层次结构中的站点的帮助，请参阅[选择 System Center Configuration Manager 要使用的发现方法](../../../../core/servers/deploy/configure/select-discovery-methods-to-use.md)。  
+>  Para obter ajuda na seleção de quais métodos usar e em quais sites na hierarquia, veja [Selecione os métodos de descoberta para usar com o System Center Configuration Manager](../../../../core/servers/deploy/configure/select-discovery-methods-to-use.md).  
 
- 若要使用大部分的发现方法，必须在站点上启用该方法，并将其设置为搜索特定网络或 Active Directory 位置。 运行时，此方法会查询特定位置以获取有关 Configuration Manager 可管理的设备或用户的信息。 当发现方法成功找到有关资源的信息时，它会将该信息放在称为发现数据记录 (DDR) 的文件中。 主站点或管理中心站点随后将对该文件进行处理。 对 DDR 的处理会在站点数据库中为新发现的资源创建一条新记录，或使用新信息更新现有记录。  
+ Para usar a maioria dos métodos de descoberta, você deve habilitar o método em um site e configurá-lo para pesquisar locais de rede ou do Active Directory específicos. Quando for executado, ele consultará o local especificado em busca de informações sobre dispositivos ou usuários que o Configuration Manager pode gerenciar. Quando um método de descoberta encontra informações com êxito, ele coloca essas informações em um arquivo chamado DDR (registro dos dados de descoberta). Esse arquivo é processado por um site de administração central ou primário. O processamento de um DDR cria um novo registro no banco de dados do site para recursos recém-descobertos ou atualiza os registros existentes com as novas informações.  
 
- 某些发现方法可能会生成大量的网络流量，并且所产生的 DDR 可能会导致在处理过程中使用大量的 CPU 资源。 因此，请计划仅使用满足目标所需的那些发现方法。 可在开始时仅使用一种或两种发现方法，之后以管制方式启用其他方法以扩展环境中的发现级别。  
+ Alguns métodos de descoberta podem gerar um grande volume de tráfego de rede, e os DDRs resultantes podem ocasionar um uso significativo de recursos da CPU durante o processamento. Portanto, planeje usar somente os métodos de descoberta que você precisa para atingir suas metas. Você pode começar usando somente um ou dois métodos de descoberta e, posteriormente, habilitar métodos adicionais de forma controlada para estender o nível de descoberta em seu ambiente.  
 
- 将发现信息添加到站点数据库后，再将其复制到层次结构中的每个站点中，与发现或处理此信息的位置无关。 因此，尽管可为不同站点中的发现方法设置不同的计划和设置，但可能仅会在单个站点中运行特定的发现方法。 这通过重复的发现操作减少网络带宽的使用，并减少在多个站点中对冗余发现数据的处理。  
+ Depois que as informações de descoberta são adicionadas ao banco de dados do site, elas são replicadas em cada site na hierarquia, independentemente do site em que foram descobertas ou processadas. Portanto, embora você possa definir diferentes agendamentos e configurações para métodos de descoberta em sites diferentes, um método de descoberta específico pode ser executado em apenas um único site. Isso reduz o uso de largura de banda de rede por meio de ações de descoberta duplicadas e reduz o processamento de dados de descoberta redundantes em vários sites.  
 
- 可以使用发现数据来创建对管理任务的资源进行逻辑分组的自定义集合和查询。 例如：  
+ Você pode usar dados de descoberta para criar coleções e consultas personalizadas que agrupam logicamente os recursos para tarefas de gerenciamento. Por exemplo:  
 
--   推送客户端安装或升级。  
+-   Enviar por push as instalações de cliente ou atualizar.  
 
--   将内容部署到用户或设备。  
+-   Implantar conteúdo para usuários ou dispositivos.  
 
--   部署客户端设置和相关配置。
+-   Implantar configurações de cliente e as configurações relacionadas.
 
-##  <a name="BKMK_DDRs"></a>关于发现数据记录  
- DDR 是由发现方法创建的文件。 它们包含可在 Configuration Manager 中管理的资源的信息，如计算机、用户和（某些情况下的）网络基础结构。 将在主站点或管理中心站点上对它们进行处理。 在 DDR 中的资源信息进入数据库后，即会删除该 DDR，并且信息将以全局数据的形式复制到层次结构中的所有站点。  
+##  <a name="BKMK_DDRs"></a> Sobre os registros dos dados de descoberta  
+ Os DDRs são arquivos criados por um método de descoberta. Eles contêm informações sobre um recurso que você pode gerenciar no Configuration Manager, como computadores, usuários e, em alguns casos, infraestrutura de rede. Eles são processados em sites primários ou em sites de administração central. Depois que as informações de recursos do DDR são inseridas no banco de dados, o DDR é excluído e as informações são replicadas como dados globais em todos os sites da hierarquia.  
 
- 处理 DDR 的站点取决于它包含的信息：  
+ O site em que um DDR é processado depende das informações que ele contém:  
 
--   数据库中没有的新发现资源的 DDR 在层次结构的顶层站点上进行处理。 顶层站点在数据库中创建一条新的资源记录，并为其分配唯一的标识符。 DDR 通过基于文件的复制进行传输，直至到达顶层站点为止。  
+-   Os DDRs de recursos recém-descobertos que não estão no banco de dados são processados no site de nível superior da hierarquia. O site de nível superior cria um novo registro de recurso no banco de dados e atribui um identificador exclusivo a ele. Os DDRs são transferidos por replicação baseada em arquivo até chegarem ao site de nível superior.  
 
--   以前发现的对象的 DDR 在主站点上进行处理。 如果 DDR 包含有关数据库中已有资源的信息，则子主站点不会将 DDR 传输到管理中心站点。  
+-   Os DDRs para objetos descobertos anteriormente são processados em sites primários. Os sites primários filho não transferem os DDRs para o site de administração central quando o DDR contém informações sobre um recurso que já está no banco de dados.  
 
--   辅助站点不处理 DDR，并会始终通过基于文件的复制将其传输到它们的父主站点。  
+-   Os sites secundários não processam DDRs e sempre os transferem por replicação baseada em arquivo para o respectivo site pai primário.  
 
-DDR 文件由 .ddr 扩展名标识，大小通常约为 1 KB。  
+Os arquivos DDR são identificados pela extensão .ddr e têm um tamanho típico de aproximadamente 1 KB.  
 
-## <a name="get-started-with-discovery"></a>发现入门：  
- 使用 Configuration Manager 控制台设置发现之前，应了解方法间的差异、方法可实现的效果，以及某些方法的局限性。  
+## <a name="get-started-with-discovery"></a>Introdução à descoberta:  
+ Antes de usar o console do Configuration Manager para configurar a descoberta, você deve compreender as diferenças entre os métodos, o que eles podem fazer e para alguns, suas limitações.  
 
-以下主题可构成有助于你成功使用发现方法的基础：  
+Os seguintes tópicos podem construir uma base que ajudarão você a usar métodos de descoberta com êxito:  
 
--   [关于 System Center Configuration Manager 的发现方法](../../../../core/servers/deploy/configure/about-discovery-methods.md)  
+-   [Sobre métodos de descoberta para o System Center Configuration Manager](../../../../core/servers/deploy/configure/about-discovery-methods.md)  
 
--   [选择 System Center Configuration Manager 要使用的发现方法](../../../../core/servers/deploy/configure/select-discovery-methods-to-use.md)  
+-   [Selecione os métodos de descoberta que serão usados com o System Center Configuration Manager](../../../../core/servers/deploy/configure/select-discovery-methods-to-use.md)  
 
-在对要使用的方法有所了解之后，可在[配置 System Center Configuration Manager 的发现方法](../../../../core/servers/deploy/configure/configure-discovery-methods.md)中找到每个方法的设置指南。  
+Em seguida, quando compreender os métodos que deseja usar, encontre orientações para configurar cada método em [Configurar métodos de descoberta para o System Center Configuration Manager](../../../../core/servers/deploy/configure/configure-discovery-methods.md).  

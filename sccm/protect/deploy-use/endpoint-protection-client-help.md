@@ -1,6 +1,6 @@
 ---
-title: "Endpoint Protection 客户端帮助 | Microsoft Docs"
-description: "了解 Endpoint Protection 中的功能和改进功能，它们可用于更好地帮助保护计算机免受威胁。"
+title: Ajuda do cliente do Endpoint Protection | Microsoft Docs
+description: "Saiba mais sobre recursos e aprimoramentos no Endpoint Protection que ajudam a proteger seu computador contra ameaças."
 ms.custom: na
 ms.date: 02/14/2017
 ms.prod: configuration-manager
@@ -17,44 +17,44 @@ manager: angrobe
 ms.openlocfilehash: 212c73fcb947c3b56da6055bf47fe078301ad90d
 ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
 ms.translationtype: HT
-ms.contentlocale: zh-CN
+ms.contentlocale: pt-BR
 ms.lasthandoff: 08/07/2017
 ---
-# <a name="endpoint-protection-client-help"></a>Endpoint Protection 客户端帮助
+# <a name="endpoint-protection-client-help"></a>Ajuda do cliente Endpoint Protection
 
-*适用范围：System Center Configuration Manager (Current Branch)*
+*Aplica-se a: System Center Configuration Manager (Branch Atual)*
 
 
-此版本的 Windows Defender 或 Endpoint Protection 包括以下功能，这些功能有助于帮助保护计算机免受威胁：  
+Essa versão do Windows Defender ou do Endpoint Protection inclui os seguintes recursos para ajudar a proteger seu computador contra ameaças:  
 
--   **Windows 防火墙集成。** Endpoint Protection 设置允许你打开或关闭 Windows 防火墙。  
--   **网络检查系统。** 此功能通过检查网络流量以便及时阻止利用已知的基于网络的漏洞，从而增强实时保护。  
--   **保护引擎。** 实时保护可查找恶意软件并阻止其在电脑上安装或运行。 更新后的引擎可增强检测和清理功能并提高性能。  
+-   **Integração do Firewall do Windows.** A configuração do Endpoint Protection permite ligar ou desligar o Firewall do Windows.  
+-   **Sistema de Inspeção da Rede.** Este recurso aprimora a proteção em tempo real ao inspecionar o tráfego de rede para ajudar a bloquear de forma pró-ativa a exploração de vulnerabilidades conhecidas de rede.  
+-   **Mecanismo de proteção.** A proteção em tempo real localiza e interrompe a instalação ou execução de malware em seu computador. O mecanismo atualizado oferece recursos de detecção e limpeza aprimorados com melhor desempenho.  
 
-Windows Defender 默认为 Windows 10 操作系统的一部分。  在早期版本的 Windows 中，你的管理员可以使用管理软件提供 Windows Defender 或 Endpoint Protection。
+O Windows Defender é fornecido como parte do sistema operacional Windows 10.  Em versões anteriores do Windows, o administrador pode fornecer o Windows Defender ou o Endpoint Protection usando software de gerenciamento.
 
-还可找到 [Windows Defender 和 Endpoint Protection 常见问题](endpoint-protection-client-faq.md)列表。 有关故障排除的帮助，请参阅[对 Windows Defender 或 Endpoint Protection 客户端进行故障排除](troubleshoot-endpoint-client.md)。 有关新功能的列表，请参阅 [Windows Defender 客户端中的新增功能](https://support.microsoft.com/help/29276/windows-10-whats-new-in-windows-defender)。
+Você também pode encontrar uma lista de [perguntas frequentes sobre o Windows Defender e o Endpoint Protection](endpoint-protection-client-faq.md). Para ajuda de solução de problemas, consulte [Solução de problemas do cliente Windows Defender ou Endpoint Protection](troubleshoot-endpoint-client.md). Para obter uma lista dos novos recursos, consulte [Novidades no cliente Windows Defender](https://support.microsoft.com/help/29276/windows-10-whats-new-in-windows-defender).
 
-## <a name="windows-firewall-integration"></a>Windows 防火墙集成  
- Windows 防火墙可以帮助阻止攻击者或恶意软件通过 Internet 或网络访问你的计算机。 现在，当你安装 Endpoint Protection 时，安装向导会验证是否已打开 Windows 防火墙。 如果你是有意关闭 Windows 防火墙的，则可以通过清除相应的复选框来避免打开它。 你可以随时通过控制面板中的“系统和安全”设置来更改 Windows 防火墙设置。  
+## <a name="windows-firewall-integration"></a>Integração do Firewall do Windows  
+ O Firewall do Windows pode ajudar a impedir que invasores ou softwares maliciosos tenham acesso ao seu computador pela Internet ou por uma rede. Agora, quando você instala o Endpoint Protection, o assistente de instalação verifica se o Firewall do Windows está ativado. Se você tiver desativado o Firewall do Windows intencionalmente, poderá desmarcar uma caixa de seleção para evitar ativá-lo. É possível alterar as configurações do Firewall do Windows a qualquer momento, via Sistema e Segurança no Painel de Controle.  
 
-## <a name="network-inspection-system"></a>网络检查系统  
- 攻击者在软件供应商开发和分发安全更新之前，会针对已公开的漏洞逐渐展开网络攻击。 漏洞研究表明，从初始攻击报告发布之日起，可能需要一个月或更长时间才能开发、测试和发布一个适合的安全更新。 保护措施的空缺使许多计算机在很长一段时间内都易受到攻击和利用。 网络检查系统使用实时保护极大地缩短漏洞发现和更新部署之间的时间间隔（从几周缩短到几个小时），从而更好地帮助你抵御网络攻击。  
+## <a name="network-inspection-system"></a>Sistema de Inspeção da Rede  
+ Os invasores cada vez mais realizam ataques com base em redes e se aproveitam das vulnerabilidades expostas antes que os fornecedores de software possam desenvolver e distribuir atualizações de segurança. Os estudos de vulnerabilidades mostram que pode levar um mês ou mais do momento do início de um ataque antes que uma atualização de segurança apropriada seja desenvolvida, testada e lançada. Essa falha na proteção deixa muitos computadores vulneráveis a ataques e explorações por um período significativo. O Sistema de Inspeção de Rede trabalha com proteção em tempo real para protegê-lo melhor de ataques com base em redes. Para isso, ele reduz o tempo entre descobertas de vulnerabilidades e implantação de atualizações de semanas para apenas algumas horas.  
 
-## <a name="award-winning-protection-engine"></a>获奖的保护引擎  
- Windows Defender 或 Endpoint Protection 基于一个获奖的保护引擎，此引擎将会定期更新。 Microsoft 恶意软件防护中心的反恶意软件研究人员团队为此引擎提供支持，可一天 24 小时对最新的恶意软件威胁做出响应。  
+## <a name="award-winning-protection-engine"></a>Mecanismo de proteção premiado  
+ Nos bastidores do Windows Defender ou do Endpoint Protection está o premiado mecanismo de proteção, atualizado regularmente. O mecanismo conta com o suporte de uma equipe de pesquisadores antimalware do Centro de Proteção contra Malware da Microsoft, fornecendo respostas às ameaças de malware mais recentes, 24 horas por dia.  
 
-## <a name="windows-defender-settings"></a>Windows Defender 设置
-Windows Defender 设置可启用有助于保护电脑免受恶意软件攻击的设置。 管理员可能为你管理某些 Windows Defender 设置。 你可以使用 Windows Defender 设置管理其他设置。 我们建议启用 Windows Defender 设置，以帮助保护电脑 和数据。
+## <a name="windows-defender-settings"></a>Configurações do Windows Defender
+As configurações do Windows Defender habilitam configurações que ajudam a proteger seu computador contra software mal-intencionado. O administrador pode gerenciar algumas configurações do Windows Defender pra você. Você pode gerenciar outras usando as configurações do Windows Defender. Recomendamos que você habilite as configurações do Windows Defender para ajudar a proteger seu computador e seus dados.
 
-若要查看 Windows Defender 设置，请在电脑上搜索 `Windows Defender`。 打开“Windows Defender”，然后选择“设置”。 Windows Defender 设置包括：
-- **实时保护** - 查找恶意软件并阻止其在电脑上安装或运行。
-- **基于云的保护** - Windows Defender 向 Microsoft 发送有关潜在安全威胁的信息。
-- **自动样本提交** - 允许 Windows Defender 向 Microsoft 发送可疑文件的样本，以帮助提高恶意软件检测。
-- **排除** - 可以排除特定文件、文件夹、文件扩展名或来自 Windows Defender 扫描的进程。
-- **增强的通知** - 启用通知电脑运行状况的通知。 即使“关闭”，也将接收到重要通知。
-- **Windows Defender Offline** - 可以运行 Windows Defender Offline，以帮助查找并删除恶意软件。 此扫描将重启电脑，并将需要大约 15 分钟的时间。
+Para exibir as configurações do Windows Defender, pesquise `Windows Defender` em seu computador. Abra o **Windows Defender** e selecione **Configurações**. As configurações do Windows Defender incluem:
+- **Proteção em tempo real** – localiza e interrompe a instalação ou execução de malware em seu computador.
+- **Proteção baseada em nuvem** – o Windows Defender envia informações à Microsoft sobre possíveis ameaças de segurança.
+- **Envio automático de amostra** – permite que o Windows Defender envie amostras de arquivos suspeitos para a Microsoft para ajudar a melhorar a detecção de malware.
+- **Exclusões** – é possível excluir determinados arquivos, pastas, extensões de arquivos ou processos da verificação do Windows Defender.
+- **Notificação aprimorada** – habilita notificações que informam sobre a integridade do seu computador. Mesmo **Desligado**, você receberá notificações críticas.
+- **Windows Defender Offline** – é possível executar o Windows Defender Offline para ajudar a localizar e remover software mal-intencionado. Essa verificação reiniciará o seu computador e levará cerca de 15 minutos.
 
-### <a name="see-also"></a>另请参阅  
- [Endpoint Protection 客户端的常见问题](endpoint-protection-client-faq.md)   
- [对 Windows Defender 或 Endpoint Protection 客户端进行故障排除](troubleshoot-endpoint-client.md)
+### <a name="see-also"></a>Consulte também  
+ [Perguntas frequentes sobre o cliente do Endpoint Protection](endpoint-protection-client-faq.md)   
+ [Solucionando problemas do cliente Windows Defender ou Endpoint Protection](troubleshoot-endpoint-client.md)

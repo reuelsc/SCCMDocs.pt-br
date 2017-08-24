@@ -1,6 +1,6 @@
 ---
-title: "使用维护时段 | Microsoft Docs"
-description: "使用集合和维护时段在 System Center Configuration Manager 中有效管理客户端。"
+title: "Usar janelas de manutenção | Microsoft Docs"
+description: "Use coleções e janelas de manutenção para gerenciar com eficácia os clientes no System Center Configuration Manager."
 ms.custom: na
 ms.date: 02/22/2017
 ms.prod: configuration-manager
@@ -18,54 +18,54 @@ manager: angrobe
 ms.openlocfilehash: fa67cf597c73bab47209c9b98539f97e174ae70b
 ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
 ms.translationtype: HT
-ms.contentlocale: zh-CN
+ms.contentlocale: pt-BR
 ms.lasthandoff: 08/07/2017
 ---
-# <a name="how-to-use-maintenance-windows-in-system-center-configuration-manager"></a>如何在 Configuration Manager 中使用维护时段
+# <a name="how-to-use-maintenance-windows-in-system-center-configuration-manager"></a>Como usar as janelas de manutenção no System Center Configuration Manager
 
-*适用范围：System Center Configuration Manager (Current Branch)*
+*Aplica-se a: System Center Configuration Manager (Branch Atual)*
 
-通过维护时段，可以定义对设备集合进行 Configuration Manager 操作的时间。 可以使用维护时段来帮助确保在不会影响工作效率的时段进行客户端配置更改。  
+As janelas de manutenção permitem que você defina um período em que as operações do Configuration Manager podem ser executadas em uma coleção de dispositivos. É possível usar as janelas de manutenção para ajudar a assegurar que as alterações de configuração do cliente ocorrem durante períodos que não afetam a produtividade.  
 
- 以下操作支持维护时段：  
+ As seguintes operações dão suporte a janelas de manutenção:  
 
--   软件部署  
+-   Implantações de software  
 
--   软件更新部署  
+-   Implantações de atualização de software  
 
--   符合性设置部署和评估  
+-   Implantação e avaliação das configurações de conformidade  
 
--   操作系统部署  
+-   Implantações de sistema operacional  
 
--   任务序列部署  
+-   Implantações de sequência de tarefas  
 
- 配置维护时段的开始日期、开始和完成时间以及定期模式。 时段的最长持续时间必须小于 24 小时。 默认情况下，不允许在维护时段外进行部署所导致的计算机重启，但可以替代默认设置。 维护时段仅影响部署程序的运行时间；配置为在本地下载并运行的应用程序可在时段外下载内容。  
+ Configure as janelas de manutenção com uma data de início, uma hora de início e término e um padrão de recorrência. A duração máxima de uma janela deve ser menor que 24 horas. Por padrão, as reinicializações do computador causadas por uma implantação não são permitidas fora de uma janela de manutenção, mas é possível substituir o padrão. As janelas de manutenção afetam somente o período em que o programa de implantação é executado; os aplicativos configurados para serem baixados e executados localmente podem baixar conteúdo fora da janela.  
 
- 如果客户端计算机是具有维护时段的设备集合的成员，那么只有在允许的最长运行时间未超出为时段配置的持续时间时，部署程序才会运行。 如果程序未能运行，则会生成警报，并且将在具有可用时间的下一次计划的维护时段中重新运行部署。  
+ Quando um computador cliente é membro de uma coleção de dispositivos que contém uma janela de manutenção, um programa de implantação somente é executado se o tempo máximo de execução permitido não excede a duração configurada para a janela. Se o programa falhar na execução, um alerta será gerado e a implantação será executada novamente durante a próxima janela de manutenção agendada que tiver um horário disponível.  
 
-## <a name="using-multiple-maintenance-windows"></a>使用多个维护时段  
- 如果客户端计算机是具有维护时段的多个设备集合的成员，则以下规则适用：  
+## <a name="using-multiple-maintenance-windows"></a>Usando várias janelas de manutenção  
+ Quando um computador cliente é membro de várias coleções de dispositivos que contêm janelas de manutenção, estas regras se aplicam:  
 
--   如果维护时段未重叠，则将它们视为两个独立的维护时段。  
+-   Se as janelas de manutenção não se sobrepõem, elas são tratadas como duas janelas de manutenção independentes.  
 
--   如果维护时段重叠，则将它们视为包含两个维护时段所涵盖的时间段的单一维护时段。 例如，如果有两个时段，每个时段的持续时间为 1 小时，其中 30 分钟重叠，则维护时段的有效持续时间将为 90 分钟。  
+-   Se as janelas de manutenção se sobrepõem, elas são tratadas como uma única janela de manutenção abrangendo o período de tempo coberto por ambas as janelas de manutenção. Por exemplo, se duas janelas, cada uma com uma hora de duração, se sobreporem por 30 minutos, a duração efetiva da janela de manutenção deverá ser de 90 minutos.  
 
- 当用户从软件中心中启动应用程序安装时，应用程序将立即安装，而不考虑任何维护时段。  
+ Quando um usuário inicia uma instalação de aplicativo por meio do Centro de Software, o aplicativo é instalado imediatamente, independentemente das janelas de manutenção.  
 
- 如果目的为“必需”  的应用程序部署在非营业时间（由用户在软件中心中配置）内达到其安装期限，将安装应用程序。  
+ Se uma implantação de aplicativo com a finalidade de **Obrigatória** atingir a data limite de instalação fora do horário comercial configurado pelo usuário no Centro de Software, o aplicativo será instalado.  
 
-### <a name="how-to-configure-maintenance-windows"></a>如何配置维护时段  
+### <a name="how-to-configure-maintenance-windows"></a>Como configurar janelas de manutenção  
 
-1.  在 Configuration Manager 控制台中，选择“资产和符合性”>  “设备集合”。  
+1.  No console do Configuration Manager, escolha **Ativos e Conformidade**>  **Coleções de Dispositivos**.  
 
-3.  在“设备集合”列表中，选择一个集合。 你不能为“所有系统”  集合创建维护时段。  
+3.  Na lista **Coleções de Dispositivos**, selecione uma coleção. Você não pode criar janelas de manutenção para a coleção **Todos os sistemas** .  
 
-4.  在“主页”选项卡上的“属性”组中，选择“属性”。  
+4.  Na guia **Início**, no grupo **Propriedades**, clique em **Propriedades**.  
 
-5.  在“&lt;集合名称\>属性”对话框的“维护时段”选项卡中，选择“新建”图标。  
+5.  Na guia **Janelas de Manutenção** da caixa de diálogo **Propriedades do &lt;nome da coleção\>**, escolha o ícone **Novo**.  
 
-6.  完成“&lt;新建\>计划”对话框。  
+6.  Conclua a caixa de diálogo **&lt;novo\> Agendamento**.  
 
-7.  从“将此计划应用到”下拉列表中进行选择。  
+7.  Faça uma seleção na lista suspensa **Aplicar este agendamento a**.  
 
-8.  选择“确定”，然后关闭“&lt;集合名称\>属性”对话框。  
+8.  Escolha **OK** e feche a caixa de diálogo **Propriedades do &lt;nome da coleção\>**.  

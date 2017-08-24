@@ -18,13 +18,13 @@ robots: noindex,nofollow
 ms.openlocfilehash: 10fb029b4e3f9d3386df616a1a238674443d2c76
 ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
 ms.translationtype: HT
-ms.contentlocale: zh-CN
+ms.contentlocale: pt-BR
 ms.lasthandoff: 08/07/2017
 ---
 # <a name="system-center-configuration-manager"></a>System Center Configuration Manager
 
-*适用于：System Center Configuration Manager (Current Branch)*
+*Aplica-se a: System Center Configuration Manager (ramificação atual)*
 
-欢迎使用 Microsoft System Center Configuration Manager。 使用 Configuration Manager 通过对服务器、桌面和移动设备启用安全和可缩放的软件部署、符合性设置管理以及综合资产管理来提供更有效的 IT 服务。  
+Bem-vindo ao Microsoft System Center Configuration Manager. Use o Configuration Manager para fornecer serviços de TI mais efetivos habilitando a implantação de software seguro e escalonável, gerenciamento das configurações de conformidade e amplo gerenciamento de ativo de servidores, áreas de trabalho e dispositivos móveis.  
 
- 可在以下位置联机找到关于此版本 Configuration Manager 的最新内容： [System Center Configuration Manager 联机文档](https://go.microsoft.com/fwlink/?LinkID=533344)
+ Localizar o conteúdo mais atualizado para esta versão do Configuration Manager online no seguinte local: [Documentação Online do System Center Configuration Manager](https://go.microsoft.com/fwlink/?LinkID=533344)

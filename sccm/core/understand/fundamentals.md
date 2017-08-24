@@ -1,6 +1,6 @@
 ---
-title: "System Center Configuration Manager 基础知识 | Microsoft Docs"
-description: "了解 System Center Configuration Manager 的基础概念。"
+title: "Conceitos básicos do System Center Configuration Manager | Microsoft Docs"
+description: "Saiba mais sobre os conceitos básicos do System Center Configuration Manager."
 ms.custom: na
 ms.date: 12/30/2016
 ms.prod: configuration-manager
@@ -18,32 +18,32 @@ manager: angrobe
 ms.openlocfilehash: 662ac092746f37c354e5accf288e3375c16b9c72
 ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
 ms.translationtype: HT
-ms.contentlocale: zh-CN
+ms.contentlocale: pt-BR
 ms.lasthandoff: 08/07/2017
 ---
-# <a name="fundamentals-of-system-center-configuration-manager"></a>System Center Configuration Manager 基础知识
+# <a name="fundamentals-of-system-center-configuration-manager"></a>Aspectos fundamentais do System Center Configuration Manager.
 
-*适用范围：System Center Configuration Manager (Current Branch)*
+*Aplica-se a: System Center Configuration Manager (Branch Atual)*
 
-如果不熟悉 System Center Configuration Manager，请在运行安装程序安装第一个站点之前，阅读基础主题以了解有关 Configuration Manager 的基本概念。 如果熟悉 Configuration Manager，则可以直接运行安装程序。 我们建议首先阅读 [System Center Configuration Manager 中的新增功能](/sccm/core/plan-design/changes/what-has-changed-from-configuration-manager-2012)。  
+Se você for novo no System Center Configuration Manager, leia os tópicos sobre noções básicas para saber mais sobre os conceitos básicos do Configuration Manager antes de executar a instalação de seu primeiro site. Se já estiver familiarizado com o Configuration Manager, você poderá começar imediatamente. Recomendamos que você inicie com [Novidades no System Center Configuration Manager](/sccm/core/plan-design/changes/what-has-changed-from-configuration-manager-2012).  
 
- 有关支持的操作系统和支持的环境的信息、硬件要求以及容量信息，请参阅 [Supported configurations for System Center Configuration Manager](../../core/plan-design/configs/supported-configurations.md)。  
+ Para obter informações sobre sistemas operacionais e ambientes com suporte, requisitos de hardware e informações de capacidade, consulte [Supported configurations for System Center Configuration Manager](../../core/plan-design/configs/supported-configurations.md).  
 
- 当部署 Configuration Manager 时，部署一个或多个站点：  
+ Ao implantar o Configuration Manager, você implanta um ou mais sites:  
 
--   **部署多个站点时**，站点将形成子级到父级的关系，这些关系统称为层次结构。 使用层次结构集中管理大量站点和设备。  数据和信息沿层次结构向下流动以到达你管理的设备。 设备信息、配置任务和请求的结果沿层次结构向上流动。  
+-   **Quando você implanta vários sites**, os sites formam relações de pai que e filho que são chamadas, coletivamente, de hierarquia. Use uma hierarquia para gerenciar centralmente um número maior de sites e dispositivos.  Os dados e informações fluem de cima para baixo na hierarquia para alcançar os dispositivos que você gerencia. Informações sobre dispositivos e resultados de tarefas de configuração e solicitações fluem de baixo para cima na hierarquia.  
 
--   **部署单个站点时**，该站点也称为层次结构。  
+-   **Quando você implanta um único site**, ele também é chamado de hierarquia.  
 
- 一些配置任务和设置将适用于层次结构中的所有站点，而其他一些则适用于个别站点。  
+ Algumas tarefas de configuração e configurações serão aplicadas a todos os sites de uma hierarquia, enquanto outras se aplicam a sites individuais.  
 
-## <a name="fundamental-concepts-for-system-center-configuration-manager"></a>System Center Configuration Manager 的基本概念
-查看以下主题，了解 System Center Configuration Manager 的基本概念：  
+## <a name="fundamental-concepts-for-system-center-configuration-manager"></a>Conceitos fundamentais para o System Center Configuration Manager
+Exiba os tópicos a seguir para saber mais sobre os conceitos fundamentais do System Center Configuration Manager:  
 
--   [System Center Configuration Manager 的站点和层次结构基础知识](../../core/understand/fundamentals-of-sites-and-hierarchies.md)  
+-   [Conceitos básicos de sites e hierarquias do System Center Configuration Manager](../../core/understand/fundamentals-of-sites-and-hierarchies.md)  
 
--   [使用 System Center Configuration Manager 管理设备的基础知识](../../core/understand/fundamentals-of-managing-devices.md)  
+-   [Conceitos básicos do gerenciamento de dispositivos com o System Center Configuration Manager](../../core/understand/fundamentals-of-managing-devices.md)  
 
--   [System Center Configuration Manager 的客户端管理任务基础](../../core/understand/fundamentals-of-client-management-tasks.md)  
+-   [Noções básicas das tarefas de gerenciamento de cliente para o System Center Configuration Manager](../../core/understand/fundamentals-of-client-management-tasks.md)  
 
--   [System Center Configuration Manager 安全性的基础知识](../../core/understand/fundamentals-of-security.md)  
+-   [Conceitos básicos de segurança do System Center Configuration Manager](../../core/understand/fundamentals-of-security.md)  

@@ -1,6 +1,6 @@
 ---
-title: "服务时段 | Microsoft Docs"
-description: "使用服务时段控制 System Center Configuration Manager 站点安装更新的时间。"
+title: "Períodos de manutenção | Microsoft Docs"
+description: "Use períodos de manutenção para controlar quando os sites do System Center Configuration Manager instalam atualizações."
 ms.custom: na
 ms.date: 1/11/2017
 ms.prod: configuration-manager
@@ -18,27 +18,27 @@ manager: angrobe
 ms.openlocfilehash: d06a2a955ff59fa84bb844033fe31874fc735087
 ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
 ms.translationtype: HT
-ms.contentlocale: zh-CN
+ms.contentlocale: pt-BR
 ms.lasthandoff: 08/07/2017
 ---
-#  <a name="service-windows-for-site-servers"></a>站点服务器的服务时段
+#  <a name="service-windows-for-site-servers"></a>Períodos de manutenção para servidores de site
 
-*适用范围：System Center Configuration Manager (Current Branch)*
+*Aplica-se a: System Center Configuration Manager (Branch Atual)*
 
-可以在中心管理站点和主站点配置服务时段，控制控制台中更新可以安装的时间。  可配置多个时段，时段允许用于安装更新，更新由该站点服务器的所有服务时段的组合决定。
+Você pode configurar períodos de manutenção em sites de administração central e em sites primários a fim de controlar quando as atualizações no console podem ser instaladas.  É possível configurar vários períodos, com o período permitido para instalação de atualizações determinado por uma combinação de todos os períodos de serviço para esse servidor do site.
 
-如果未配置任何服务时段：
-- **在顶层站点**（中心管理站点或独立主站点）上，选择启动更新安装的时间。
-- 中心管理站点的更新完成安装后，**子主站点上**的更新将自动安装。
-- **在辅助站点上**，永远不会自动启动更新。 但是，在父主站点完成更新安装后，必须从控制台中手动启动更新安装。
+Quando não houver um nenhum período de manutenção configurado:
+- **Em seu site de nível superior** (um site de administração central ou um site primário autônomo) escolha quando iniciar a instalação da atualização.
+- **Em um site primário filho**, a atualização é instalada automaticamente após a conclusão da atualização no site de administração central.
+- **Em um site secundário**, as atualizações nunca começam automaticamente. Em vez disso, você deve iniciar manualmente a atualização da instalação de dentro do console, após a instalação da atualização pelo site pai primário.
 
-如果已配置服务时段：
-- **在顶层站点上**，将无法从 Configuration Manager 控制台中启动任何新更新的安装。 即使配置了服务时段，站点也会自动下载更新，以便准备安装。  
-- **在子主站点上**，已在中心管理站点安装的更新将下载到主站点，但不会自动启动。 在使用服务时段阻止期间，不能手动启动更新安装。 服务时段不再阻止更新安装时，更新安装将自动启动。
-- **辅助站点**不支持服务时段，并且不会自动安装更新。 辅助站点的主父站点安装更新后，可从控制台中启动辅助站点的更新。
+Quando houver um período de manutenção configurado:
+- **Em seu site de nível superior**, você não poderá iniciar a instalação de qualquer atualização nova do console do Configuration Manager. Mesmo com um período de serviço configurado, o site baixa atualizações automaticamente para que estejam prontas instalação.  
+- **Em um site primário filho**, as atualizações instaladas em um site de administração central serão baixadas no site primário, mas não começarão automaticamente. Você não pode iniciar manualmente a instalação de uma atualização durante um período bloqueado pelo uso de um período de manutenção. Quando o período de manutenção não bloquear mais a instalação da atualização, a atualização instalada será iniciada automaticamente.
+- **Sites secundários** não oferecem suporte a períodos de manutenção, e não instalam atualizações automaticamente. Após um site primário pai de um site secundário instalar uma atualização, você poderá iniciar a atualização do site secundário a partir do console.
 
-## <a name="to-configure-a-service-window"></a>配置服务时段
+## <a name="to-configure-a-service-window"></a>Para configurar um período de manutenção
 
-1.  在 Configuration Manager 控制台中，打开“管理” > “站点配置” > “站点”，然后选择要在其中配置服务时段的站点服务器。  
+1.  No console do Configuration Manager, abra **Administração** > **Configuração de Site** > **Sites** e selecione o servidor do site para o qual deseja configurar um período de serviço.  
 
-2.  接下来，编辑站点服务器“属性”，然后选择“服务时段”选项卡，此时你可以在其中为该站点服务器设置一个或多个服务时段。  
+2.  Em seguida, edite as **Propriedades** dos servidores do site e selecione a guia **Período de Serviço** , na qual você pode definir um ou mais períodos de serviço para o servidor do site.  

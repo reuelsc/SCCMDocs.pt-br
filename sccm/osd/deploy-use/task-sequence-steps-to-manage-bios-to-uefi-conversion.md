@@ -1,6 +1,6 @@
 ---
-title: "管理 BIOS 转换为 UEFI 所采用的任务序列步骤 | Configuration Manager"
-description: "了解如何自定义操作系统部署任务的序列，以便为到 UEFI 的转换准备 FAT32 分区。"
+title: "Etapas de sequência de tarefas para gerenciar o BIOS para a conversão de UEFI | Configuration Manager"
+description: "Saiba como personalizar uma sequência de tarefas de implantação do sistema operacional para preparar uma partição FAT32 para a transição para UEFI."
 ms.custom: na
 ms.date: 03/24/2017
 ms.prod: configuration-manager
@@ -16,50 +16,50 @@ manager: angrobe
 ms.openlocfilehash: 528ce515c86c4e778532290026a90a46476c4576
 ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
 ms.translationtype: HT
-ms.contentlocale: zh-CN
+ms.contentlocale: pt-BR
 ms.lasthandoff: 08/07/2017
 ---
-# <a name="task-sequence-steps-to-manage-bios-to-uefi-conversion"></a>管理 BIOS 转换为 UEFI 所采用的任务序列步骤
-Windows 10 提供了许多需要启用 UEFI 的设备的新安全功能。 你可能拥有支持 UEFI 的新式 Windows 电脑，但正在使用旧版 BIOS。 将设备转换为 UEFI 需要你转到每台电脑、对硬盘重新分区并重新配置固件。 通过在 Configuration Manager 中使用任务序列，你可以准备用于 BIOS 到 UEFI 转换的硬盘，作为就地升级过程的一部分从 BIOS 转换为 UEFI，并收集 UEFI 信息作为硬件清单的一部分。
+# <a name="task-sequence-steps-to-manage-bios-to-uefi-conversion"></a>Etapas de sequência de tarefas para gerenciar o BIOS para a conversão de UEFI
+O Windows 10 oferece muitos novos recursos de segurança que exigem dispositivos habilitados para UEFI. Você pode ter PCs modernos com Windows que oferecem suporte a UEFI, mas que usam BIOS herdada. Converter um dispositivo em UEFI exigiria realizar a operação em cada computador, reparticionar o disco rígido e reconfigurar o firmware. Ao usar as sequências de tarefas no Configuration Manager, você poderá preparar um disco rígido para o BIOS para a conversão de UEFI, converter do BIOS para UEFI como parte do processo de atualização in-loco e coletar informações de UEFI como parte do inventário de hardware.
 
-## <a name="hardware-inventory-collects-uefi-information"></a>硬件清单将收集 UEFI 信息
-从版本 1702 开始，新的硬件清单类 (**SMS_Firmware**) 和属性 (**UEFI**) 可用于帮助你确定计算机是否以 UEFI 模式启动。 如果以 UEFI 模式启动计算机，则 **UEFI** 属性设为 **TRUE**。 默认情况下，这在硬件清单中处于启用状态。 有关硬件清单的详细信息，请参阅[如何配置硬件清单](/sccm/core/clients/manage/inventory/configure-hardware-inventory)。
+## <a name="hardware-inventory-collects-uefi-information"></a>O inventário de hardware coleta informações de UEFI
+A partir de 1702, uma nova classe de inventário de hardware (**SMS_Firmware**) e a propriedade (**UEFI**) estão disponíveis para ajudá-lo a determinar se um computador é iniciado no modo UEFI. Quando um computador é iniciado no modo UEFI, a propriedade **UEFI** é definida como **TRUE**. Isso é habilitado no inventário de hardware por padrão. Para obter mais informações sobre o inventário de hardware, consulte [Como configurar o inventário de hardware](/sccm/core/clients/manage/inventory/configure-hardware-inventory).
 
-## <a name="create-a-custom-task-sequence-to-prepare-the-hard-drive-for-bios-to-uefi-conversion"></a>创建自定义任务序列以准备用于 BIOS 到 UEFI 转换的硬盘
-自 1610 版 Configuration Manager 起，现在可以使用新的变量 TSUEFIDrive 自定义操作系统部署任务的序列，以便“重启计算机”步骤为到 UEFI 的转换在硬盘驱动器上准备 FAT32 分区。 以下过程提供了有关如何创建任务序列步骤以便为 BIOS 到 UEFI 的转换准备硬盘驱动器的示例。
+## <a name="create-a-custom-task-sequence-to-prepare-the-hard-drive-for-bios-to-uefi-conversion"></a>Criar uma sequência de tarefas personalizada para preparar o disco rígido para a conversão de BIOS para UEFI
+Agora, começando do Configuration Manager versão 1610, é possível personalizar uma sequência de tarefas de implantação do sistema operacional com uma nova variável, TSUEFIDrive, para que a etapa **Reiniciar o Computador** prepare uma partição FAT32 no disco rígido para a transição para UEFI. O procedimento a seguir fornece um exemplo de como você pode criar etapas de sequência de tarefas para preparar o disco rígido para a conversão de BIOS para UEFI.
 
-### <a name="to-prepare-the-fat32-partition-for-the-conversion-to-uefi"></a>为到 UEFI 的转换准备 FAT32 分区：
-在现有的用于安装操作系统的任务序列中，添加一个新组，并包含将 BIOS 转换为 UEFI 的步骤。
+### <a name="to-prepare-the-fat32-partition-for-the-conversion-to-uefi"></a>Para preparar a partição FAT32 para a conversão para UEFI:
+Em uma sequência de tarefas existente para instalar um sistema operacional, você adicionará um novo grupo com etapa para realizar a conversão de BIOS para UEFI.
 
-1. 在捕获文件和设置之后，并在安装操作系统之前，创建新的任务序列组。 例如，在“捕获文件和设置”组之后创建名为“BIOS-to-UEFI”的组。
-2. 在新组的“选项”选项卡中，添加一个新的任务序列变量作为条件，其中 **_SMSTSBootUEFI**  **不等于** **true**。 这样可以在计算机已处于 UEFI 模式时，防止运行组中的步骤。
+1. Crie um novo grupo de sequências de tarefas após as etapas para capturar arquivos e configurações e antes das etapas para instalar o sistema operacional. Por exemplo, crie um grupo após o grupo de **Capturar Arquivos e Configurações** denominado **BIOS-to-UEFI (BIOS para UEFI)**.
+2. Na guia **Opções** do novo grupo, adicione uma nova variável de sequência de tarefas como uma condição em que **_SMSTSBootUEFI** é **diferente** de **true**. Isso impede que as etapas no grupo sejam executadas quando um computador já estiver no modo UEFI.
 
-  ![BIOS 转 UEFI 组](../../core/get-started/media/BIOS-to-UEFI-group.png)
-3. 在新组中，添加“重启计算机”任务序列步骤。 在“指定重启后要运行的内容”中，选择“已选择分配给此任务序列的启动映像”以在 Windows PE 中启动计算机。  
-4. 在“选项”选项卡中，添加一个任务序列变量作为条件，其中 **_SMSTSInWinPE 等于 false**。 这样在计算机已处于 Windows PE 时，防止运行此步骤。
+  ![Grupo BIOS para UEFI](../../core/get-started/media/BIOS-to-UEFI-group.png)
+3. No novo grupo, adicione a etapa de sequência de tarefas **Reiniciar Computador**. Em **Especifique o que executar após reiniciar**, selecione **The boot image assigned to this task sequence is selected (A imagem de inicialização atribuída a essa sequência de tarefas está selecionada)** para iniciar o computador no Windows PE.  
+4. Na guia **Opções**, adicione uma variável de sequência de tarefa como uma condição em que **_SMSTSInWinPE equals false (_SMSTSInWinPE é igual a falso)**. Isso impede que esta etapa seja executada se o computador já estiver no Windows PE.
 
-  ![“重启计算机”步骤](../../core/get-started/media/restart-in-windows-pe.png)
-5. 添加一个步骤以启动 OEM 工具，该工具可将固件从 BIOS 转换到 UEFI。 这通常是**运行命令行**任务序列步骤，其中有一个命令行可以启动 OEM 工具。
-6. 添加“格式化磁盘并分区”任务序列步骤，用于对硬盘进行分区和格式化。 在该步骤中，执行以下操作：
-  1. 创建 FAT32 分区，该分区在安装操作系统之前将转换为 UEFI。 为“磁盘类型”选择“GPT”。
-    ![格式化磁盘并分区步骤](../media/format-and-partition-disk.png)
-  2. 转到 FAT32 分区的属性。 在“变量”字段中输入“TSUEFIDrive”。 当任务序列检测到此变量时，它将为 UEFI 转换做准备，准备就绪后会重启计算机。
-    ![分区属性](../../core/get-started/media/partition-properties.png)
-  3. 创建 NTFS 分区，任务序列引擎使用此分区保存其状态和存储日志文件。
-7. 添加“重启计算机”任务序列步骤。 在“指定重启后要运行的内容”中，选择“已选择分配给此任务序列的启动映像”以在 Windows PE 中启动计算机。  
+  ![Etapa Reiniciar Computador](../../core/get-started/media/restart-in-windows-pe.png)
+5. Adicione uma etapa para iniciar a ferramenta de OEM que converterá o firmware de BIOS para UEFI. Isso geralmente será uma etapa de sequência de tarefas **Executar Linha de Comando** com uma linha de comando para iniciar a ferramenta de OEM.
+6. Adicione a etapa de sequência de tarefas Formatar e Particionar Disco que particionará e formatará o disco rígido. Na etapa, faça o seguinte:
+  1. Crie a partição FAT32 que será convertida em UEFI antes de o sistema operacional ser instalado. Escolha **GGT** para **Tipo de disco**.
+    ![Etapa Formatar e particionar disco](../media/format-and-partition-disk.png)
+  2. Vá para as propriedades da partição FAT32. Digite **TSUEFIDrive** no campo **Variável**. Quando a sequência de tarefas detectar essa variável, ela preparará para a transição de UEFI antes de reiniciar o computador.
+    ![Propriedades da partição](../../core/get-started/media/partition-properties.png)
+  3. Crie uma partição NTFS que o mecanismo de sequência de tarefas usa para salvar seu estado e para armazenar arquivos de log.
+7. Adicione a etapa de sequência de tarefas **Reiniciar Computador**. Em **Especifique o que executar após reiniciar**, selecione **The boot image assigned to this task sequence is selected (A imagem de inicialização atribuída a essa sequência de tarefas está selecionada)** para iniciar o computador no Windows PE.  
 
-## <a name="convert-from-bios-to-uefi-during-an-in-place-upgrade"></a>在就地升级过程中从 BIOS 转换为 UEFI
-Windows 10 创意者更新引入了一个简单的转换工具，可自动执行对用于启用 UEFI 的硬件的硬盘重新分区的过程，并将该转换工具集成到 Windows 7 到 Windows 10 的就地升级过程中。 将此工具与操作系统升级任务序列和将固件从 BIOS 转换为 UEFI 的 OEM 工具组合时，可以在就地升级到 Windows 10 创意者更新的过程中将计算机从 BIOS 转换为 UEFI。
+## <a name="convert-from-bios-to-uefi-during-an-in-place-upgrade"></a>Converter de BIOS para UEFI durante uma atualização in-loco
+A Atualização do Windows 10 para Criadores apresenta uma ferramenta de conversão simples que automatiza o processo para reparticionar o disco rígido para hardware habilitado para UEFI e integra a ferramenta de conversão ao processo de atualização in-loco do Windows 7 para o Windows 10. Quando você combina essa ferramenta com a sequência de tarefas de atualização do sistema operacional e a ferramenta de OEM que converte o firmware do BIOS para UEFI, pode converter os computadores de BIOS para UEFI durante uma atualização in-loco para a Atualização do Windows 10 para Criadores.
 
-**要求**：
-- Windows 10 创意者更新
-- 支持 UEFI 的计算机
-- 将计算机固件从 BIOS 转换为 UEFI 的 OEM工具
+**Requisitos**:
+- Atualização do Windows 10 para Criadores
+- Computadores que dão suporte a UEFI
+- Ferramenta de OEM que converte o firmware do computador de BIOS para UEFI
 
-### <a name="to-convert-from-bios-to-uefi-during-an-in-place-upgrade"></a>在就地升级过程中从 BIOS 转换为 UEFI
-1. 创建一个操作系统升级任务序列，用于执行到 Windows 10 创意者更新的就地升级。
-2. 编辑任务序列。 在“正在后处理组”中，添加以下任务顺序步骤：
-   1. 从“常规”中，添加“运行命令行”步骤。 你将添加 MBR 2 GPT 工具的命令行，该工具将磁盘从 MBR 转换为 GPT，而不会修改或删除磁盘中的数据。 在命令行中，键入以下内容：**MBR2GPT /convert /disk:0 /AllowFullOS**。 你也可以选择在 Windows PE 中运行 MBR 2 GPT.EXE 工具，而不是在完整的操作系统中运行。 你可以通过在运行 MBR2GPT.EXE 工具并从命令行中删除 /AllowFullOS 选项之前添加重启计算机到 WinPE 的步骤来执行此操作。 有关该工具和可用选项的详细信息，请参阅 [MBR2GPT.EXE](https://technet.microsoft.com/itpro/windows/deploy/mbr-to-gpt)。
-   2. 添加一个步骤以启动 OEM 工具，该工具可将固件从 BIOS 转换到 UEFI。 这通常是一个运行命令行任务序列步骤，其中有一个命令行来启动 OEM 工具。
-   3. 从“常规”中，添加“重新启动计算机”步骤。 要指定重新启动后要运行的内容，请选择“当前安装的默认操作系统”。
-3. 部署任务序列。
+### <a name="to-convert-from-bios-to-uefi-during-an-in-place-upgrade"></a>Para converter de BIOS para UEFI durante uma atualização in-loco
+1. Crie uma sequência de tarefas de atualização do sistema operacional que executa uma atualização in-loco para a Atualização do Windows 10 para Criadores.
+2. Edite a sequência de tarefas. No **Grupo de pós-processamento**, adicione as seguintes etapas:
+   1. Em Geral, adicione uma etapa **Executar linha de comando**. Você adicionará a linha de comando para a ferramenta MBR2GPT que converte um disco de MBR para GPT sem modificar ou excluir dados do disco. Na linha de comando, digite o seguinte: **MBR2GPT /convert /disk:0 /AllowFullOS**. Você pode optar por executar a ferramenta MBR2GPT.EXE no Windows PE em vez de no sistema operacional completo. Você pode fazer isso adicionando uma etapa para reiniciar o computador no WinPE antes da etapa executar a ferramenta MBR2GPT.EXE e removendo a opção /AllowFullOS na linha de comando. Para obter detalhes sobre a ferramenta e as opções disponíveis, veja [MBR2GPT. EXE](https://technet.microsoft.com/itpro/windows/deploy/mbr-to-gpt).
+   2. Adicione uma etapa para iniciar a ferramenta de OEM que converterá o firmware de BIOS para UEFI. Isso geralmente será uma etapa de sequência de tarefas Executar Linha de Comando com uma linha de comando para iniciar a ferramenta de OEM.
+   3. Em Geral, adicione a etapa **Reiniciar o computador**. Para especificar o que deve ser executado após a reinicialização, selecione **O sistema operacional padrão atualmente instalado**.
+3. Implantar a sequência de tarefas.

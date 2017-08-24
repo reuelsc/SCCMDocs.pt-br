@@ -1,6 +1,6 @@
 ---
-title: "准备操作系统部署 | Microsoft Docs"
-description: "阅读这些文章，了解为准备操作系统部署，在 Configuration Manager 必须做的事情。"
+title: "Preparar para implantação de sistema operacional | Microsoft Docs"
+description: "Leia estes artigos para saber mais sobre o que você deve fazer no Configuration Manager para se preparar para implantações de sistema operacional."
 ms.custom: na
 ms.date: 10/06/2016
 ms.prod: configuration-manager
@@ -17,25 +17,25 @@ manager: angrobe
 ms.openlocfilehash: dcc35f39b6ece8b466fc3770c6b9f304180eb42a
 ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
 ms.translationtype: HT
-ms.contentlocale: zh-CN
+ms.contentlocale: pt-BR
 ms.lasthandoff: 08/07/2017
 ---
-# <a name="prepare-for-operating-system-deployment-in-system-center-configuration-manager"></a>准备 System Center Configuration Manager 中的操作系统部署
+# <a name="prepare-for-operating-system-deployment-in-system-center-configuration-manager"></a>Preparar para implantação de sistema operacional no System Center Configuration Manager
 
-*适用范围：System Center Configuration Manager (Current Branch)*
+*Aplica-se a: System Center Configuration Manager (Branch Atual)*
 
-必须在 Configuration Manager 中完成几件事情，才能部署操作系统。 使用以下主题帮助你准备操作系统的部署：  
+Há várias coisas que você deve fazer no Configuration Manager antes de poder implantar sistemas operacionais. Use os tópicos a seguir para preparar para a implantação de sistema operacional:  
 
--   [管理启动映像](manage-boot-images.md)  
+-   [Gerenciar imagens de inicialização](manage-boot-images.md)  
 
--   [管理操作系统映像](manage-operating-system-images.md)  
+-   [Gerenciar imagens do sistema operacional](manage-operating-system-images.md)  
 
--   [管理操作系统升级包](manage-operating-system-upgrade-packages.md)  
+-   [Gerenciar pacotes de atualização de sistema operacional](manage-operating-system-upgrade-packages.md)  
 
--   [管理驱动程序](manage-drivers.md)  
+-   [Gerenciar drivers](manage-drivers.md)  
 
--   [管理用户状态](manage-user-state.md)  
+-   [Gerenciar o estado do usuário](manage-user-state.md)  
 
--   [准备未知计算机部署](prepare-for-unknown-computer-deployments.md)  
+-   [Preparar-se para implantações em computadores desconhecidos](prepare-for-unknown-computer-deployments.md)  
 
--   [将用户与目标计算机相关联](associate-users-with-a-destination-computer.md)  
+-   [Associar usuários a um computador de destino](associate-users-with-a-destination-computer.md)  

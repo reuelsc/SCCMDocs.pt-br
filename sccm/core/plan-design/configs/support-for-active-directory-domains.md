@@ -1,6 +1,6 @@
 ---
-title: "受支持的 Active Directory 域 | Microsoft Docs"
-description: "获取 Active Directory 域中 System Center Configuration Manager 站点系统的成员身份要求。"
+title: "Domínios do Active Directory com suporte | Microsoft Docs"
+description: "Obtenha os requisitos para a associação de um sistema de sites do System Center Configuration Manager em um domínio do Active Directory."
 ms.custom: na
 ms.date: 3/23/2017
 ms.prod: configuration-manager
@@ -18,30 +18,30 @@ manager: angrobe
 ms.openlocfilehash: 2654ab4eaaaf6a4bf3bd7dca9908e7033647dc2c
 ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
 ms.translationtype: HT
-ms.contentlocale: zh-CN
+ms.contentlocale: pt-BR
 ms.lasthandoff: 08/07/2017
 ---
-# <a name="supported-active-directory-domains-for-system-center-configuration-manager"></a>对于 System Center Configuration Manager 受支持的 Active Directory 域
+# <a name="supported-active-directory-domains-for-system-center-configuration-manager"></a>Domínios do Active Directory com suporte no System Center Configuration Manager
 
-*适用范围：System Center Configuration Manager (Current Branch)*
+*Aplica-se a: System Center Configuration Manager (Branch Atual)*
 
-所有 System Center Configuration Manager 站点系统必须均为受支持的 Windows Server Active Directory 域的成员。 Configuration Manager 客户端计算机可以是域成员，也可以是工作组成员。  
+Todos os sistemas de sites do System Center Configuration Manager devem ser membros de um domínio do Active Directory do Windows Server com suporte. Os computadores cliente do Configuration Manager podem ser membros do domínio ou membros do grupo de trabalho.  
 
- **要求和限制：**  
+ **Requisitos e limitações:**  
 
--   域成员关系适用于在外围网络（也称为 DMZ、外围安全区域和外围子网）中支持基于 Internet 的客户端管理的站点系统。  
+-   A associação ao domínio se aplica a sistemas de sites que dão suporte ao gerenciamento de clientes baseado na Internet em uma rede de perímetro (também conhecida como um DMZ, zona desmilitarizada e sub-rede filtrada).  
 
--   不支持对托管站点系统角色的计算机进行以下更改：  
+-   Não há suporte para alterar o seguinte em um computador que hospeda uma função do sistema de sites:  
 
-    -   域成员身份  
+    -   Associação do domínio  
 
-    -   域名  
+    -   Nome de domínio  
 
-    -   计算机名称  
+    -   Nome do computador  
 
-进行这些更改之前，必须卸载站点系统角色（若为站点服务器，则包括卸载站点）。  
+É necessário desinstalar a função do sistema de sites (incluindo o site, caso seja um servidor do site) antes de fazer essas alterações.  
 
-**支持具有以下域功能级别的域：**  
+**Há suporte para domínios com os seguintes níveis funcionais de domínio:**  
 - Windows Server 2016
 
 - Windows Server 2012 R2  
@@ -58,30 +58,30 @@ ms.lasthandoff: 08/07/2017
 
 
 
-##  <a name="bkmk_Disjoint"></a> 非连续命名空间  
-Configuration Manager 支持在具有非连续命名空间的域中安装站点系统和客户端。  
+##  <a name="bkmk_Disjoint"></a> Namespace não contíguo  
+O Configuration Manager dá suporte à instalação de sistemas de sites e clientes em um domínio com namespace não contíguo.  
 
-在非连续命名空间方案中，一台计算机的主域名系统 (DNS) 后缀与该计算机所在的 Active Directory DNS 域名不匹配。 使用不匹配的主 DNS 后缀的计算机则称为非连续。 如果域控制器的 NetBIOS 域名与 Active Directory DNS 域名不匹配，则会产生另一种非连续命名空间方案。  
+Um cenário de namespace não contíguo é aquele em que o sufixo DNS (Sistema de Nomes de Domínio) primário de um computador não corresponde ao nome de domínio DNS do Active Directory em que o computador reside. O computador que usa o sufixo DNS primário sem correspondência é chamado não contíguo. Outro cenário de namespace não contíguo ocorrerá se o nome de domínio NetBIOS de um controlador de domínio não corresponder ao nome de domínio DNS do Active Directory.  
 
-下表标识了非连续命名空间受支持的方案。  
+A tabela a seguir identifica os cenários com suporte para um namespace não contíguo.  
 
-|方案|更多信息|  
+|Cenário|Mais informações|  
 |--------------|----------------------|  
-|**方案 1：**<br /><br /> 域控制器的主 DNS 后缀与 Active Directory DNS 域名不同。 是域成员的计算机可以是非连续的或连续的。|在此方案中，域控制器的主 DNS 后缀与 Active Directory DNS 域名不同。 在此方案中，域控制器是非连续的。 是域成员的计算机（例如站点服务器和计算机），可以具有与域控制器的主 DNS 后缀匹配或与 Active Directory DNS 域名匹配的主 DNS 后缀。|  
-|**方案 2：**<br /><br /> Active Directory 域中的成员计算机是非连续的，即使域控制器是连续的。|在此方案中，安装站点系统的成员计算机的主 DNS 后缀与 Active Directory DNS 域名不同，即使域控制器的主 DNS 后缀与 Active Directory DNS 域名相同。 在此方案中，你有一个连续的域控制器，和一台非连续的成员计算机。 正在运行 Configuration Manager 客户端的成员计算机可以具有与非连续站点系统服务器的主 DNS 后缀匹配或与 Active Directory DNS 域名匹配的主 DNS 后缀。|  
+|**Cenário 1:**<br /><br /> O sufixo DNS primário do controlador de domínio é diferente do nome de domínio DNS do Active Directory. Os computadores que são membros do domínio podem ser contíguos ou não contíguos.|Neste cenário, o sufixo DNS primário do controlador de domínio é diferente do nome de domínio DNS do Active Directory. O controlador de domínio é não contíguo neste cenário. Os computadores que são membros do domínio, como servidores do site e computadores, podem ter um sufixo DNS primário que corresponde ao sufixo DNS primário do controlador de domínio ou que corresponde ao nome de domínio DNS do Active Directory.|  
+|**Cenário 2:**<br /><br /> Um computador membro em um domínio do Active Directory é não contíguo, embora o controlador de domínio não seja contíguo.|Neste cenário, o sufixo DNS primário de um computador membro no qual um sistema de sites está instalado é diferente do nome de domínio DNS do Active Directory, mesmo que o sufixo DNS primário do controlador de domínio seja o mesmo que o nome de domínio DNS do Active Directory. Neste cenário, você tem um controlador de domínio contíguo e um computador membro não contíguo. Os computadores membros que executam o cliente do Configuration Manager podem ter um sufixo DNS primário que corresponde àquele do servidor do sistema de sites não contíguo ou que corresponde ao nome de domínio DNS do Active Directory.|  
 
- 若要允许计算机访问非连续域控制器，则必须更改域对象容器上的 **msDS-AllowedDNSSuffixes** Active Directory 属性。 必须将两个 DNS 后缀都加入到属性中。  
+ Para permitir que um computador acesse os controladores de domínio não contíguos, você deve alterar o atributo **msDS-AllowedDNSSuffixes** do Active Directory no contêiner do objeto de domínio. É necessário adicionar os dois sufixos DNS ao atributo.  
 
- 此外，若要确保 DNS 后缀搜索列表包含在组织内部署的所有 DNS 命名空间，必须在非连续域中配置每台计算机的搜索列表。 确保命名空间列表包含以下内容：域控制器的主 DNS 后缀、DNS 域名以及 Configuration Manager 可能与其进行互操作的其他服务器的任何其他命名空间。 可以使用组策略管理控制台来配置“域名系统 (DNS) 后缀搜索”  列表。  
+ Além disso, para garantir que a lista de pesquisa de sufixos DNS contém todos os namespaces DNS implantados na organização, é necessário configurar a lista de pesquisa para cada computador no domínio não contíguo. Lembre-se de incluir o seguinte na lista de namespaces: o sufixo DNS primário do controlador de domínio, o nome de domínio DNS e todos os namespaces adicionais para outros servidores com os quais o Configuration Manager poderá interoperar. É possível usar o Console de Gerenciamento de Política de Grupo para configurar a lista **pesquisa de sufixos do DNS (Sistema de Nomes de Domínio)** .  
 
 > [!IMPORTANT]  
->  引用 Configuration Manager 中的计算机时，使用其主 DNS 后缀输入该计算机。 此后缀应与在 Active Directory 域中注册为 **dnsHostName** 属性的完全限定域名相匹配和与该系统关联的服务主体名称相匹配。  
+>  Ao fazer referência a um computador no Configuration Manager, insira o computador usando seu sufixo DNS Primário. Esse sufixo deve corresponder ao Nome de Domínio Totalmente Qualificado registrado como o atributo **dnsHostName** no domínio do Active Directory e ao Nome da Entidade de Serviço associado ao sistema.  
 
-##  <a name="bkmk_SLD"></a> 单标签域  
- 在满足以下条件时，Configuration Manager 支持单标签域中的站点系统和客户端：  
+##  <a name="bkmk_SLD"></a> Domínios de rótulo único  
+ O Configuration Manager dá suporte a sistemas de sites e clientes em um domínio de rótulo único quando os critérios a seguir são atendidos:  
 
--   Active Directory 域服务中的单标签域必须使用具有有效顶级域的非连续 DNS 命名空间配置。  
+-   O domínio de rótulo único no Active Directory Domain Services deve ser configurado com um namespace DNS não contíguo que tem um domínio primário válido.  
 
-     **例如：** Contoso 的单标签域配置为在 contoso.com 的 DNS 中具有非连续命名空间。 因此，当在 Configuration Manager 中为 Contoso 域中的计算机指定 DNS 后缀时，应指定 Contoso.com 而不是 Contoso。  
+     **Por exemplo:** o domínio de rótulo único da Contoso é configurado para ter um namespace não contíguo no DNS de contoso.com. Portanto, ao especificar o sufixo DNS no Configuration Manager para um computador no domínio Contoso, especifique “Contoso.com” e não “Contoso”.  
 
--   系统上下文中的站点服务器之间的分布式组件对象模型 (DCOM) 连接必须使用 Kerberos 身份验证成功完成。  
+-   As conexões do DCOM (Distributed Component Object Model) entre os servidores do site no contexto do sistema devem ser bem-sucedidas com o uso da autenticação Kerberos.  

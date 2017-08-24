@@ -1,6 +1,6 @@
 ---
-title: "使用 System Center Configuration Manager，通过远程擦除、锁定或密码重置功能保护数据 | Microsoft Docs"
-description: "使用 System Center Configuration Manager，通过完全擦除、选择性擦除、远程锁定或密码重置功能保护设备数据。"
+title: "Proteger os dados com a limpeza remota, bloqueio ou redefinição de senha usando o System Center Configuration Manager | Microsoft Docs"
+description: "Proteja os dados do dispositivo com uma limpeza completa, limpeza seletiva, bloqueio remoto ou redefinição de senha usando o System Center Configuration Manager."
 ms.custom: na
 ms.date: 03/27/2017
 ms.prod: configuration-manager
@@ -18,210 +18,210 @@ manager: angrobe
 ms.openlocfilehash: 351fdc6328dd0859d60e00b128963df738e69f81
 ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
 ms.translationtype: HT
-ms.contentlocale: zh-CN
+ms.contentlocale: pt-BR
 ms.lasthandoff: 08/07/2017
 ---
-# <a name="protect-data-with-remote-wipe-lock-or-passcode-reset-by-using-system-center-configuration-manager"></a>使用 System Center Configuration Manager，通过远程擦除、锁定或密码重置功能保护数据
+# <a name="protect-data-with-remote-wipe-lock-or-passcode-reset-by-using-system-center-configuration-manager"></a>Proteger os dados com a limpeza remota, bloqueio ou redefinição de senha usando o System Center Configuration Manager
 
-*适用范围：System Center Configuration Manager (Current Branch)*
+*Aplica-se a: System Center Configuration Manager (Branch Atual)*
 
-System Center Configuration Manager 提供选择性擦除、完全擦除、远程锁定以及密码重置功能。 移动设备可以存储敏感的公司数据并提供对许多公司资源的访问。 为了保护设备，你可以发出以下命令：  
+O System Center Configuration Manager fornece os recursos de limpeza seletiva, limpeza completa, bloqueio remoto e redefinição de senha. Os dispositivos móveis podem armazenar dados corporativos confidenciais e fornecer acesso a muitos recursos corporativos. Para ajudar a proteger os dispositivos, você pode emitir:  
 
-- 用于将设备还原为其出厂默认设置的完全擦除命令。  
+- Um apagamento completo para restaurar as configurações de fábrica do dispositivo.  
 
-- 只删除公司数据的选择性擦除命令。  
+- Um apagamento seletivo para remover somente os dados da empresa.  
 
-- 用于帮助保护设备安全的远程锁定可能会丢失。  
+- Um bloqueio remoto para ajudar a proteger um dispositivo que pode estar perdido.  
 
-- 重置设备密码。  
+- Uma redefinição de senha do dispositivo.  
 
-## <a name="full-wipe"></a>完全擦除  
-如果需要保护遗失设备的安全或者停用正在使用的设备，你可以向设备发出擦除命令。  
+## <a name="full-wipe"></a>Apagamento completo  
+Você pode emitir um comando de apagamento para um dispositivo quando precisar proteger um dispositivo perdido ou quando desativar um dispositivo de seu uso ativo.  
 
-向设备发出“完全擦除”  命令以将设备还原为其出厂默认值。 这将删除所有公司及用户数据和设置。 可以在 Windows Phone、iOS、Android 和 Windows 10 上执行完全擦除。  
+Emita um **apagamento completo** para um dispositivo para restaurá-lo às suas configurações de fábrica. Isso remove todos os dados da empresa e do usuário e configurações. É possível fazer um apagamento completo em dispositivos Windows Phone, iOS, Android e Windows 10.  
 
 > [!NOTE]
-> 擦除版本早于 1511，且 RAM 小于 4 GB 的 Windows 10 设备可能会使该设备不响应。 [了解详细信息](https://technet.microsoft.com/library/mt592024.aspx#full-wipe-disables-windows-10-devices-with-less-than-4-gb-ram)。
+> Apagar dispositivos Windows 10 em versões anteriores à versão 1511 com menos de 4 GB de RAM pode deixar o dispositivo sem resposta. [Saiba mais](https://technet.microsoft.com/library/mt592024.aspx#full-wipe-disables-windows-10-devices-with-less-than-4-gb-ram).
 
-#### <a name="to-initiate-a-remote-wipe-from-the-configuration-manager-console"></a>从 Configuration Manager 控制台启动远程擦除  
+#### <a name="to-initiate-a-remote-wipe-from-the-configuration-manager-console"></a>Para iniciar um apagamento remoto no console do Configuration Manager  
 
-1. 在 Configuration Manager 控制台中，选择“资产和符合性”，然后选择“设备”。 或者，可以选择“设备集合”并选择一个集合。  
+1. No console do Configuration Manager, escolha **Ativos e Conformidade**, e escolha **Dispositivos**. Como alternativa, é possível escolher **Coleções de Dispositivos** e selecionar uma coleção.  
 
-2. 选择需停用/擦除的设备。  
+2. Selecione o dispositivo que deseja desativar/apagar.  
 
-3. 选择“设备组”中的“远程设备操作”，然后选择“停用/擦除”。  
+3. Clique em **Ações do Dispositivo Remoto** no **Grupo de Dispositivos**e escolha **Desativar/Limpar**.  
 
-## <a name="selective-wipe"></a>选择性擦除  
-向设备发出“选择性擦除”  命令以仅删除公司数据。 下表按平台描述了将删除什么数据，以及执行选择性擦除后对设备上保留的数据的影响。  
+## <a name="selective-wipe"></a>Limpeza seletiva  
+Emita um **apagamento seletivo** para um dispositivo para remover apenas os dados da empresa. A tabela a seguir descreve, por plataforma, qual dado foi removido e o efeito nos dados que permaneceram no dispositivo após a limpeza seletiva.  
 
-**Android**  
+**iOS**  
 
-|注销设备时删除的内容|iOS|  
+|Conteúdo removido quando você está desativando um dispositivo|iOS|  
 |--------------------------------------------|---------|  
-|使用 Configuration Manager 和 Intune 安装的公司应用及关联数据|卸载应用。 删除公司应用数据。|  
-|VPN 和 Wi-Fi 配置文件|删除。|  
-|证书|删除并吊销。|  
-|设置|已删除，除了：**允许语音漫游**、**允许数据漫游**和**允许漫游时自动同步**。|  
-|管理代理|删除管理配置文件。|  
-|电子邮件配置文件|对于由 Intune 设置的电子邮件配置文件，将删除电子邮件帐户和电子邮件。|  
+|Aplicativos da empresa e dados associados instalados usando o Configuration Manager e o Intune|Aplicativos são desinstalados. Dados de aplicativo da empresa são removidos.|  
+|Perfis VPN e Wi-Fi|Removidos.|  
+|Certificados|Removidos e revogados.|  
+|Configurações|Removidos, exceto para: **Permitir roaming de voz**, **Permitir roaming de dados** e **Permitir sincronização automática durante roaming**.|  
+|Agente de gerenciamento|O perfil de gerenciamento é removido.|  
+|Perfis de email|Para os perfis de email configurados pelo Intune, a conta de email e o email são removidos.|  
 
-**Android 和 Android Samsung KNOX 标准版**  
+**Android e Android Samsung KNOX Standard**  
 
-|注销设备时删除的内容|Android|Samsung KNOX 标准版|  
+|Conteúdo removido quando você está desativando um dispositivo|Android|Samsung KNOX Standard|  
 |--------------------------------------------|-------------|------------------|  
-|使用 Configuration Manager 和 Intune 安装的公司应用及关联数据|保留已安装的应用和数据。|卸载应用。|  
-|VPN 和 Wi-Fi 配置文件|删除。|删除。|  
-|证书|吊销。|吊销。|  
-|设置|删除要求。|删除要求。|  
-|管理代理|撤销设备管理员权限。|撤销设备管理员权限。|  
-|电子邮件配置文件|不适用。|对于由 Intune 设置的电子邮件配置文件，将删除电子邮件帐户和电子邮件。|  
+|Aplicativos da empresa e dados associados instalados usando o Configuration Manager e o Intune|Aplicativos e dados permanecem instalados.|Aplicativos são desinstalados.|  
+|Perfis VPN e Wi-Fi|Removidos.|Removidos.|  
+|Certificados|Revogado.|Revogado.|  
+|Configurações|Os requisitos são removidos.|Os requisitos são removidos.|  
+|Agente de gerenciamento|O privilégio de administrador do dispositivo é revogado.|O privilégio de administrador do dispositivo é revogado.|  
+|Perfis de email|Não aplicável.|Para os perfis de email configurados pelo Intune, a conta de email e o email são removidos.|  
 
 **Android for Work**
 
-在 Android for Work 设备上执行选择性擦除将删除该设备上的工作配置文件以及工作配置文件中的的所有数据、应用和设置。 这将在 Configuration Manager 和 Intune 中停用对该设备的管理。 Android for Work 不支持完全擦除。
+Fazer uma limpeza seletiva em um dispositivo Android for Work remove o perfil de trabalho junto com todos os dados, aplicativos e configurações no perfil de trabalho nesse dispositivo. Isso retira o dispositivo do gerenciamento com o Configuration Manager e o Intune. O apagamento completo não tem suporte para Android for Work.
 
- **Windows 10、Windows 8.1、Windows RT 8.1 和 Windows RT**  
+ **Windows 10, Windows 8.1, Windows RT 8.1 e Windows RT**  
 
-|注销设备时删除的内容|Windows 10、Windows 8.1 和 Windows RT 8.1|  
+|Conteúdo removido quando você está desativando um dispositivo|Windows 10, Windows 8.1 e Windows RT 8.1|  
 |---------------------------------|-------------|
-|使用 Configuration Manager 和 Intune 安装的公司应用及关联数据|将卸载应用并删除旁加载密钥。 使用 Windows 选择性擦除的应用将吊销加密密钥，并且数据将不再可访问。|  
-|VPN 和 Wi-Fi 配置文件|删除。|  
-|证书|删除并吊销。|  
-|设置|删除要求。|
-|管理代理|不适用。 管理代理为内置。|  
-|电子邮件配置文件|删除启用了 EFS 的电子邮件，包括 Windows 电子邮件和附件的邮件应用。|  
+|Aplicativos da empresa e dados associados instalados usando o Configuration Manager e o Intune|Os aplicativos são desinstalados e a chaves de sideload são removidas. Os aplicativos que usam a Limpeza Seletiva do Windows terão a chave de criptografia revogada e os dados não estarão mais acessíveis.|  
+|Perfis VPN e Wi-Fi|Removidos.|  
+|Certificados|Removidos e revogados.|  
+|Configurações|Os requisitos são removidos.|
+|Agente de gerenciamento|Não aplicável. O agente de gerenciamento é interno.|  
+|Perfis de email|O email habilitado para EFS é removido, que inclui o aplicativo de email para o Windows e anexos.|  
 
- **Windows 10 移动版、Windows Phone 8.0 和 Windows Phone 8.1**
+ **Windows 10 Mobile, Windows Phone 8.0 e Windows Phone 8.1**
 
-|注销设备时删除的内容|Windows 10 移动版、Windows Phone 8 和 Windows Phone 8.1|  
+|Conteúdo removido quando você está desativando um dispositivo|Windows 10 Mobile, Windows Phone 8 e Windows Phone 8.1|  
 |-|-|
-|使用 Configuration Manager 和 Intune 安装的公司应用及关联数据|卸载应用。 删除公司应用数据。|  
-|VPN 和 Wi-Fi 配置文件|已针对 Windows 10 移动版和 Windows Phone 8.1 删除。|  
-|证书|从 Windows Phone 8.1 中删除。|  
-|管理代理|不适用。 管理代理为内置。|  
-|电子邮件配置文件|已删除（除 Windows Phone 8.0 外）。|  
+|Aplicativos da empresa e dados associados instalados usando o Configuration Manager e o Intune|Aplicativos são desinstalados. Dados de aplicativo da empresa são removidos.|  
+|Perfis VPN e Wi-Fi|Removido para o Windows 10 Mobile e Windows Phone 8.1.|  
+|Certificados|Removido para o Windows Phone 8.1.|  
+|Agente de gerenciamento|Não aplicável. O agente de gerenciamento é interno.|  
+|Perfis de email|Removido (exceto no Windows Phone 8.0).|  
 
-还从 Windows 10 移动版和 Windows Phone 8.1 设备删除了以下设置：  
+As configurações a seguir também são removidas dos dispositivos Windows 10 Mobile e Windows Phone 8.1:  
 
-- **需要密码才可解锁移动设备**  
-- **允许简单密码**  
-- **最短密码长度**  
-- **所需的密码类型**
-- **密码过期（天数）**  
-- **记住密码历史**  
-- **擦除设备前允许的重复登录失败次数**  
-- **需要提供密码之前处于非活动状态的分钟数**  
-- **所需密码类型 - 最小字符集数**  
-- **允许照相机**
-- **需要对移动设备加密**  
-- **允许使用可移动存储**  
-- **允许使用 Web 浏览器**  
-- **允许应用程序商店**  
-- **允许屏幕捕获**  
-- **允许使用地理位置**  
-- **允许 Microsoft 帐户**  
-- **允许复制和粘贴**  
-- **允许使用 Wi-Fi tethering**  
-- **允许自动连接到免费 Wi-Fi 热点**  
-- **允许 Wi-Fi 热点报告**  
-- **允许恢复出厂设置**
-- **允许使用蓝牙**  
-- **允许使用 NFC**
-- **允许 Wi-Fi**
+- **Exigir uma senha para desbloquear os dispositivos móveis**  
+- **Permitir senha simples**  
+- **Tamanho mínimo da senha**  
+- **Tipo de senha necessária**
+- **Expiração da senha (dias)**  
+- **Lembrar histórico de senha**  
+- **Número de falhas de entrada repetidas permitidas antes que o dispositivo seja apagado**  
+- **Minutos de inatividade antes de a senha ser necessária**  
+- **Tipo de senha necessária – o número mínimo de conjuntos de caracteres**  
+- **Permitir câmera**
+- **Exigir criptografia no dispositivo móvel**  
+- **Permitir armazenamento removível**  
+- **Permitir navegador da Web**  
+- **Permitir armazenamento de aplicativos**  
+- **Permitir captura de tela**  
+- **Permitir geolocalização**  
+- **Permitir Conta da Microsoft**  
+- **Permitir copiar e colar**  
+- **Permitir compartilhamento de Internet por Wi-Fi**  
+- **Permitir conexão automática a pontos de acesso Wi-Fi gratuitos**  
+- **Permitir relatório de ponto de acesso Wi-Fi**  
+- **Permitir redefinição de fábrica**
+- **Permitir Bluetooth**  
+- **Permitir NFC**
+- **Permitir Wi-Fi**
 
-#### <a name="to-initiate-a-remote-wipe-from-the-configuration-manager-console"></a>从 Configuration Manager 控制台启动远程擦除  
+#### <a name="to-initiate-a-remote-wipe-from-the-configuration-manager-console"></a>Para iniciar um apagamento remoto no console do Configuration Manager  
 
-1. 在 Configuration Manager 控制台中，选择“资产和符合性”，然后选择“设备”。 或者，可以选择“设备集合”并选择一个集合。  
+1. No console do Configuration Manager, escolha **Ativos e Conformidade**, e escolha **Dispositivos**. Como alternativa, é possível escolher **Coleções de Dispositivos** e selecionar uma coleção.  
 
-2. 选择需停用/擦除的设备。  
+2. Selecione o dispositivo que deseja desativar/apagar.  
 
-3. 选择“设备组”中的“远程设备操作”，然后选择“停用/擦除”。  
+3. Clique em **Ações do Dispositivo Remoto** no **Grupo de Dispositivos**e escolha **Desativar/Limpar**.  
 
-## <a name="wiping-efs-enabled-content"></a>擦除启用了 EFS 的内容  
-Windows 8.1 和 Windows RT 8.1 支持选择性擦除加密文件系统 (EFS) 加密的内容。 下列各项适用于启用 EFS 的内容的选择性擦除：  
+## <a name="wiping-efs-enabled-content"></a>Apagar conteúdo habilitado para EFS  
+O Windows 8.1 e o Windows RT 8.1 suportam a limpeza seletiva do conteúdo criptografado do Sistema de Arquivos com Criptografia (EFS). O exemplo a seguir se aplica a um apagamento seletivo de conteúdo habilitado para EFS:  
 
-- 仅选择性擦除由 EFS 通过与 Intune 帐户相同的 Internet 域保护的应用和数据。 有关详细信息，请参阅 [设备数据管理的 Windows 选择性擦除](http://technet.microsoft.com/library/dn486874.aspx)。  
+- Somente os aplicativos e os dados protegidos por EFS, com o mesmo domínio de Internet da conta do Intune, são apagados de forma seletiva. Para obter mais informações, consulte [Apagamento Seletivo do Windows para Gerenciamento de Dados do Dispositivo](http://technet.microsoft.com/library/dn486874.aspx).  
 
-- 如果对与 EFS 关联的域进行了任何更改，则更改可能要花费长达 48 小时，之后才能对使用新域的应用和数据进行选择性擦除。  
+- Se houver qualquer alteração no domínio associado ao EFS, as alterações poderão levar até 48 horas para que os aplicativos e os dados usando o novo domínio possam ser apagados seletivamente.  
 
-- 向 Intune 注册的每个域均为将擦除的域。  
+- Cada domínio registrado com o Intune é o domínio que será apagado.  
 
-EFS 选择性擦除当前支持的数据和应用：  
+Os dados e os aplicativos que atualmente têm suporte da limpeza seletiva do EFS são:  
 
-- Windows 相关邮件应用。  
+- Aplicativo de email para o Windows.  
 
-- 工作文件夹。
+- Pastas de trabalho.
 
-- 使用 EFS 加密的文件和文件夹。 有关详细信息，请参阅 [加密文件系统的最佳方案](http://support.microsoft.com/kb/223316)。  
+- Pastas e arquivos criptografados pelo EFS. Para obter mais informações, consulte as [Práticas recomendadas para criptografia de sistema de arquivos](http://support.microsoft.com/kb/223316).  
 
-### <a name="best-practices-for-selective-wipe"></a>选择性擦除的最佳方案  
+### <a name="best-practices-for-selective-wipe"></a>Práticas recomendadas para a limpeza seletiva  
 
-- 为 iOS 和 Windows Phone 8.1 设备设置电子邮件配置文件，以便成功擦除电子邮件。  
+- Para limpar o email com êxito, configure perfis de email para os dispositivos iOS e Windows Phone 8.1.  
 
-- 确保通过移动设备应用管理分发了应用，以便成功擦除应用。  
+- Para limpar o email com êxito, verifique se os aplicativos são distribuídos por meio do gerenciamento de aplicativos dos dispositivos móveis.  
 
-- 对于 iOS，将设置“允许备份到 iCloud”配置为“不允许”，以使用户无法使用 iCloud 还原内容。  
+- Para o iOS, defina a configuração **Permitir backup no iCloud** para **Não permitir** para que os usuários não possam restaurar o conteúdo usando o iCloud.  
 
-- 如果帐户已停用一年，那么 Intune 将停用该帐户，并将执行选择性擦除。  
+- Se uma conta for desativada, depois de um ano ela será desativada pelo Intune e uma limpeza seletiva será executada.  
 
-##  <a name="passcode-reset"></a>密码重置  
-如果用户忘记密码，则你可以删除设备中的密码，或者在设备上强制使用新的临时密码，从而帮助用户解决问题。 下表列出了在不同移动平台上重置密码的方法。  
+##  <a name="passcode-reset"></a>Redefinição de senha  
+Se um usuário esquecer sua senha, você poderá ajudá-lo removendo a senha de um dispositivo ou impondo uma nova senha temporária em um dispositivo. A tabela abaixo lista como a redefinição da senha funciona em diferentes plataformas móveis.  
 
-|平台|密码重置|  
+|Plataforma|Redefinição de senha|  
 |--------------|--------------------|  
-|iOS|支持以便清除设备中的密码。 不创建新的临时密码。|
-|macOS| 不支持。|
-|Android|支持并且创建临时密码。|
-|Android for Work | 不支持。|
-|Windows 10 电脑|不支持。|  
-|Windows 10 移动版|支持，已加入 Azure AD 的设备除外。|
-|Windows Phone 8.1|支持。|  
-|Windows RT 8.1 |不支持。|  
-|Windows 8.1 电脑 |不支持。|  
+|iOS|Suportado para limpar a senha de um dispositivo. Não cria uma nova senha temporária.|
+|macOS| Não há suporte.|
+|Android|Suportado e uma senha temporária é criada.|
+|Android for Work | Não há suporte.|
+|PCs com Windows 10|Não há suporte.|  
+|Celular com Windows 10|Suportado, exceto os dispositivos ingressados do Azure AD.|
+|Windows Phone 8.1|Com suporte.|  
+|Windows RT 8.1 |Não há suporte.|  
+|PCs com Windows 8.1 |Não há suporte.|  
 
-#### <a name="to-reset-the-passcode-on-a-mobile-device-remotely-in-configuration-manager"></a>在 Configuration Manager 中远程重置移动设备上的密码  
+#### <a name="to-reset-the-passcode-on-a-mobile-device-remotely-in-configuration-manager"></a>Para reconfigurar a senha em um dispositivo móvel remotamente no Configuration Manager  
 
-1. 在 Configuration Manager 控制台中，选择“资产和符合性”，然后选择“设备”。 或者，可以选择“设备集合”并选择一个集合。  
+1. No console do Configuration Manager, escolha **Ativos e Conformidade**, e escolha **Dispositivos**. Como alternativa, é possível escolher **Coleções de Dispositivos** e selecionar uma coleção.  
 
-2. 选择要重置密码的一台或多台设备。  
+2. Selecione o dispositivo ou os dispositivos nos quais a senha será reconfigurada.  
 
-3. 选择“设备组”中的“远程设备操作”，然后选择“密码重置”。  
+3. Clique em **Ações do Dispositivo Remoto** no **Grupo de Dispositivos**e escolha **Redefinir Senha**.  
 
-#### <a name="to-show-the-state-of-the-passcode-reset"></a>显示密码重置状态  
+#### <a name="to-show-the-state-of-the-passcode-reset"></a>Para mostrar o estado de reconfiguração de senha  
 
-1. 在 Configuration Manager 控制台中，选择“资产和符合性”，然后选择“设备”。 或者，可以选择“设备集合”并选择一个集合。  
+1. No console do Configuration Manager, escolha **Ativos e Conformidade**, e escolha **Dispositivos**. Como alternativa, é possível escolher **Coleções de Dispositivos** e selecionar uma coleção.  
 
-2. 选择要显示密码重置状态的一台或多台设备。  
+2. Selecione o dispositivo ou os dispositivos nos quais será mostrado o estado de reconfiguração de senha.  
 
-3. 选择“设备组”中的“远程设备操作”，然后选择“显示密码状态”。  
+3. Clique em **Ações do Dispositivo Remoto** no **Grupo de Dispositivos**e escolha **Mostrar Estado da Senha**.  
 
-## <a name="remote-lock"></a>远程锁定  
-如果用户丢失其设备，你可以远程锁定该设备。 下表列出了是如何在不同的移动平台上进行远程锁定的。  
+## <a name="remote-lock"></a>Bloqueio remoto  
+Se um usuário perder o dispositivo, você poderá bloqueá-lo remotamente. A tabela abaixo lista como o bloqueio remoto funciona em diferentes plataformas móveis.  
 
-|平台|远程锁定|  
+|Plataforma|Bloqueio remoto|  
 |--------------|-----------------|  
-|iOS|支持。|  
-|Android|支持。|  
-|Windows 10|此时不受支持。|  
-|Windows Phone 8 和 Windows Phone 8.1|支持。|  
-|Windows RT 8.1 |如果设备的当前用户是注册设备的相同用户，则支持。|  
-|Windows 8.1|如果设备的当前用户是注册设备的相同用户，则支持。|  
+|iOS|Com suporte.|  
+|Android|Com suporte.|  
+|Windows 10|Não tem suporte no momento.|  
+|Windows Phone 8 e Windows Phone 8.1|Com suporte.|  
+|Windows RT 8.1 |Suportado se o usuário atual do dispositivo for o mesmo usuário que registrou o dispositivo.|  
+|Windows 8.1|Suportado se o usuário atual do dispositivo for o mesmo usuário que registrou o dispositivo.|  
 
-#### <a name="to-lock-a-mobile-device-remotely-through-the-configuration-manager-console"></a>通过 Configuration Manager 控制台远程锁定移动设备  
+#### <a name="to-lock-a-mobile-device-remotely-through-the-configuration-manager-console"></a>Para bloquear um dispositivo móvel remotamente por meio do console do Configuration Manager  
 
-1. 在 Configuration Manager 控制台中，选择“资产和符合性”，然后选择“设备”。 或者，可以选择“设备集合”并选择一个集合。  
+1. No console do Configuration Manager, escolha **Ativos e Conformidade**, e escolha **Dispositivos**. Como alternativa, é possível escolher **Coleções de Dispositivos** e selecionar uma coleção.  
 
-2. 选择要锁定的一台或多台设备。  
+2. Selecione o dispositivo ou os dispositivos que serão bloqueados.  
 
-3. 选择“设备组”中的“远程设备操作”，然后选择“远程锁定”。  
+3. Escolha **Ações do Dispositivo Remoto** no **Grupo de Dispositivos**e escolha **Bloqueio Remoto**.  
 
-#### <a name="to-show-the-state-of-the-remote-lock"></a>显示远程锁定状态  
+#### <a name="to-show-the-state-of-the-remote-lock"></a>Para mostrar o estado do bloqueio remoto  
 
-1. 在 Configuration Manager 控制台中，选择“资产和符合性”，然后选择“设备”。 或者，可以选择“设备集合”并选择一个集合。  
+1. No console do Configuration Manager, escolha **Ativos e Conformidade**, e escolha **Dispositivos**. Como alternativa, é possível escolher **Coleções de Dispositivos** e selecionar uma coleção.  
 
-2. 选择要显示远程锁定状态的设备。  
+2. Selecione o dispositivo no qual será mostrado o estado do bloqueio remoto.  
 
-3. 选择“设备组”中的“远程设备操作”，然后选择“显示远程锁定状态”。  
+3. Escolha **Ações do Dispositivo Remoto** no **Grupo de Dispositivos**e escolha **Mostrar Estado do Bloqueio Remoto**.  
 
-### <a name="see-also"></a>另请参阅  
-[Windows Selective Wipe for Device Data Management](http://technet.microsoft.com/library/dn486874.aspx)（设备数据管理的 Windows 选择性擦除）   
+### <a name="see-also"></a>Consulte também  
+[Apagamento Seletivo do Windows para Gerenciamento de Dados do Dispositivo](http://technet.microsoft.com/library/dn486874.aspx)   

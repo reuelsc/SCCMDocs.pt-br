@@ -1,6 +1,6 @@
 ---
-title: "安装和配置软件更新点 | Microsoft 文档"
-description: "主站点需要管理中心站点上的软件更新点，以便评估软件更新合规性，并将软件更新部署到客户端。"
+title: "Instalar e configurar um ponto de atualização de software | Microsoft Docs"
+description: "Os sites primários requerem um ponto de atualização de software no site de administração central para a avaliação de conformidade das atualizações de software e para implantar atualizações de software em clientes."
 keywords: 
 author: dougeby
 ms.author: dougeby
@@ -14,138 +14,138 @@ ms.assetid: b099a645-6434-498f-a408-1d438e394396
 ms.openlocfilehash: 7d369384d133c90a15e01df50ac53992d61f3873
 ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
 ms.translationtype: HT
-ms.contentlocale: zh-CN
+ms.contentlocale: pt-BR
 ms.lasthandoff: 08/07/2017
 ---
-# <a name="install-and-configure-a-software-update-point"></a>安装和配置软件更新点  
+# <a name="install-and-configure-a-software-update-point"></a>instalar e configurar um ponto de atualização de software  
 
-*适用范围：System Center Configuration Manager (Current Branch)*
+*Aplica-se a: System Center Configuration Manager (Branch Atual)*
 
-
-> [!IMPORTANT]  
->  在安装软件更新点站点系统角色之前，你必须验证服务器是否满足所需的依赖关系，并确定站点上的软件更新点基础结构。 有关如何规划软件更新和确定软件更新点基础结构的详细信息，请参阅[规划软件更新](../plan-design/plan-for-software-updates.md)。  
-
- 管理中心站点和主站点上需要软件更新点以便启用软件更新符合性评估和将软件更新部署到客户端。 软件更新点在辅助站点上是可选的。 必须在安装了 WSUS 的服务器上创建软件更新点站点系统角色。 软件更新点与 WSUS 服务交互以配置软件更新设置，并请求软件更新元数据的同步。 如果有 Configuration Manager 层次结构，请先在管理中心站点上安装和配置软件更新点，然后依次在子主站点上和根据需要在辅助站点上安装和配置软件更新点。 如果有独立主站点（而不是管理中心站点），请先在主站点上安装和配置软件更新点，然后根据需要在辅助站点上安装和配置软件更新点。 只有当你在顶层站点上配置软件更新点时，某些设置才可用。 视软件更新点安装在何处而定，你必须考虑不同的选项。  
 
 > [!IMPORTANT]  
->  你可以在站点上安装多个软件更新点。 你安装的第一个软件更新点配置为同步源，它从 Microsoft 更新或上游同步源中同步更新。 站点上的其他软件更新点配置为第一个软件更新点的副本。 因此，在你安装和配置初始软件更新点之后，某些设置不可用。  
+>  Antes de instalar a função de ponto de atualização de software, é necessário verificar se o servidor atende às dependências necessárias e determina a infraestrutura do ponto de atualização de software no site. Para obter mais informações sobre como planejar as atualizações de software e determinar a infraestrutura do ponto de atualização de software, consulte [Planejar atualizações de software](../plan-design/plan-for-software-updates.md).  
+
+ O ponto de atualização de software é necessário no site de administração central e nos sites primários para habilitar a avaliação de conformidade das atualizações de software e implantar atualizações de software em clientes. O ponto de atualização de software é opcional em sites secundários. A função de sistema de site do ponto de atualização de software deve ser criada em um servidor que tenha o WSUS instalado. O ponto de atualização de software interage com os serviços do WSUS para configurar os parâmetros de atualização de software e solicitar a sincronização dos metadados das atualizações de software. Quando houver uma hierarquia do Configuration Manager, instale e configure o ponto de atualização de software no site de administração central primeiro, depois nos sites primários filho e, opcionalmente, nos sites secundários. Quando houver um site primário autônomo, e não um site de administração central, instale e configure o ponto de atualização de software no site primário primeiro e, opcionalmente, nos sites secundários. Algumas configurações estão disponíveis somente quando você configura o ponto de atualização de software no site de nível superior. Há diferentes opções que devem ser consideradas dependendo de onde o ponto de atualização de software é instalado.  
 
 > [!IMPORTANT]  
->  不支持在服务器上安装已配置和用作独立 WSUS 服务器的软件更新点站点系统，或使用软件更新点来直接管理 WSUS 客户端。 现有 WSUS 服务器仅支持作为活动软件更新点的上游同步源。 请参阅[从上游数据源位置同步](#BKMK_wsussync)
+>  É possível instalar mais de um ponto de atualização de software em um site. O primeiro ponto de atualização de software que você instala é configurado como a origem da sincronização, que sincroniza as atualizações do Microsoft Update ou da origem de sincronização upstream. Os outros pontos de atualização de software no site são configurados como réplicas do primeiro ponto de atualização de software. Portanto, algumas configurações não estarão disponíveis depois de instalar e configurar o ponto de atualização de software inicial.  
 
- 你可以将软件更新点站点系统角色添加到现有站点系统服务器，或者可以创建新站点系统服务器。 在“创建站点系统服务器向导”或“添加站点系统角色向导”的“系统角色选择”页上，根据你是将站点系统角色添加到新站点服务器还是现有站点服务器，选择“软件更新点”，然后在向导中配置软件更新点设置。 根据所使用的 Configuration Manager 版本，设置会有所不同。 有关如何安装站点系统角色的详细信息，请参阅[安装站点系统角色](../../core/servers/deploy/configure/install-site-system-roles.md)。  
+> [!IMPORTANT]  
+>  Não há suporte para instalar a função do sistema de site do ponto de atualização de software em um servidor que tenha sido configurado e usado como um servidor do WSUS autônomo ou usando um ponto de atualização de software para gerenciar diretamente os clientes do WSUS. Os servidores do WSUS existentes têm suporte apenas como origens da sincronização upstream para o ponto de atualização de software ativo. Veja [Sincronizar por meio de um local de fonte de dados upstream](#BKMK_wsussync)
 
- 使用下列部分来了解有关站点上的软件更新点设置的信息。  
+ Você pode adicionar a função do sistema de site do ponto de atualização de software a um servidor do sistema de site existente ou criar um novo. Na página **Seleção de Função do Sistema** do **Assistente para Criar Servidor do Sistema de Site** ou do **Assistente para Adicionar Funções do Sistema de Site** , dependendo se você adicionar a função do sistema de site a um servidor do site novo ou existente, selecione **Ponto de atualização de software**e configure os parâmetros de atualização de software no assistente. As configurações são diferentes dependendo da versão do Configuration Manager que você usa. Para obter mais informações sobre como instalar funções do sistema de sites, veja [Instalar funções do sistema de sites](../../core/servers/deploy/configure/install-site-system-roles.md).  
 
-## <a name="proxy-server-settings"></a>代理服务器设置  
- 可以配置“创建站点系统服务器向导”或“添加站点系统角色向导”不同页上的代理服务器设置，具体取决于使用的 Configuration Manager 的版本。  
+ Use as seções a seguir para obter informações sobre as configurações do ponto de atualização de software em um site.  
 
--   你必须配置代理服务器，然后指定何时为软件更新使用代理服务器。 配置下列设置：  
+## <a name="proxy-server-settings"></a>Configurações do servidor proxy  
+ É possível configurar os parâmetros do servidor proxy em diferentes páginas do **Assistente para Criar Servidor do Sistema de Sites** ou do **Assistente para Adicionar Funções do Sistema de Sites** dependendo da versão do Configuration Manager que você usa.  
 
-    -   在向导的“代理”页上或“站点系统属性”的“代理”选项卡上配置代理服务器设置。 代理服务器设置特定于站点系统，这意味着所有站点系统角色都使用你指定的代理服务器设置。  
+-   Você deve configurar o servidor proxy e especificar quando usar esse servidor para atualizações de software. Defina as seguintes configurações:  
 
-    -   指定是否在 Configuration Manager 同步软件更新或通过使用自动部署规则下载内容时使用代理服务器。 在向导的“代理和帐户设置”页上或“软件更新点属性”中的“代理和帐户设置”选项卡上配置软件更新点代理服务器设置。  
+    -   Defina as configurações do servidor proxy na página **Proxy** do assistente ou na guia **Proxy** em Propriedades do Sistema de Site. As configurações do servidor proxy são específicas do sistema de site, o que significa que todas as funções do sistema de site usam as configurações de servidor proxy que você especificar.  
+
+    -   Especifique se é para usar o servidor proxy quando o Configuration Manager sincroniza as atualizações de software e baixa conteúdo usando uma regra de implantação automática. Defina as configurações do servidor proxy do ponto de atualização do software na página **Configurações de Proxy e Conta** do assistente ou na guia **Configurações de Proxy e Conta** em Propriedades do Ponto de Atualização de Software.  
 
         > [!NOTE]  
-        >  辅助站点上提供了“使用自动部署规则下载内容时使用代理服务器”设置，但不用于软件更新点。 只有管理中心站点和主站点上的软件更新点才从 Microsoft 更新页下载内容。  
+        >  A configuração **Usar um proxy ao baixar conteúdo usando regras de implantação automática** está disponível, mas não é usada para um ponto de atualização de software em um site secundário. Somente o ponto de atualização de software no site de administração central e no site primário baixa conteúdo da página do Microsoft Update.  
 
 > [!IMPORTANT]  
->  默认情况下，当自动部署规则运行时，将使用在其上创建自动部署规则的服务器的“本地系统”帐户连接到 Internet 并下载软件更新。 当此帐户没有 Internet 访问权限时，软件更新将无法下载并且以下条目会被记录在 ruleengine.log 中：**无法从 Internet 下载更新。错误 = 12007**。 当“本地系统”帐户没有 Internet 访问权限时，配置凭据以连接到代理服务器。  
+>  Por padrão, a conta **Sistema Local** do servidor em que uma regra de implantação automática foi criada é usada para conectar à Internet e baixar atualizações de software quando as regras de implantação automática forem executadas. Quando essa conta não tem acesso à Internet, as atualizações de software não são baixadas e a seguinte entrada é registrada em ruleengine.log: **Falha ao baixar a atualização da Internet. Erro = 12007**. Configure as credenciais para conectar ao servidor proxy quando a conta Sistema Local não tem acesso à Internet.  
 
 
-## <a name="wsus-settings"></a>WSUS 设置  
- 必须在“创建站点系统服务器向导”或“添加站点系统角色向导”的不同页上配置 WSUS 设置，具体取决于使用的 Configuration Manager 的版本，在某些情况下，必须仅在软件更新点的属性（也称为软件更新点组件属性）中进行配置。 使用下列部分中的信息来配置 WSUS 设置。  
+## <a name="wsus-settings"></a>Configurações do WSUS  
+ É necessário definir as configurações do WSUS em diferentes páginas do **Assistente para Criar Servidor do Sistema de Sites** ou do **Assistente para Adicionar Funções do Sistema de Sites** dependendo da versão do Configuration Manager que você usa e, em alguns casos, somente nas propriedades do ponto de atualização de software, também conhecidas como Propriedades do Componente de Ponto de Atualização de Software. Use as informações das seções a seguir para configurar o WSUS.  
 
-### <a name="BKMK_wsusport"></a>WSUS 端口设置  
- 你必须在向导的“软件更新点”页上或软件更新点的属性中配置 WSUS 端口设置。 使用下列过程来确定 WSUS 使用的端口设置。  
+### <a name="BKMK_wsusport"></a> Configurações de porta do WSUS  
+ Você deve configurar os parâmetros da porta do WSUS na página Ponto de Atualização de Software do assistente ou nas propriedades do ponto de atualização de software. Use o procedimento a seguir para determinar as configurações de porta usadas pelo WSUS.  
 
-#### <a name="to-determine-the-port-settings-used-in-iis"></a>在 IIS 中确定所用的端口设置  
+#### <a name="to-determine-the-port-settings-used-in-iis"></a>Para determinar as configurações de porta usadas no IIS  
 
- 1.  在 WSUS 服务器上，打开 Internet Information Services (IIS) 管理器。  
+ 1.  No servidor WSUS, abra o Gerenciador do IIS (Serviços de Informações da Internet).  
 
- 2.  展开“网站”，右键单击 WSUS 服务器的网站，再单击“编辑绑定”。 在“网站绑定”对话框中，HTTP 和 HTTPS 端口值显示在“端口”列中。
+ 2.  Expanda **Sites**, clique com o botão direito do mouse no site do servidor WSUS e clique em **Editar Ligações**. No diálogo Ligações do Site, os valores de porta HTTP e HTTPS são exibidos na coluna **Porta** .
 
 
-### <a name="configure-ssl-communications-to-wsus"></a>配置与 WSUS 的 SSL 通信  
- 你可以在向导的“常规”页上或软件更新点属性的“常规”选项卡上配置 SSL 通信。  
+### <a name="configure-ssl-communications-to-wsus"></a>Configurar as comunicações SSL para o WSUS  
+ É possível configurar a comunicação SSL na página **Geral** do assistente ou na guia **Geral** das propriedades do ponto de atualização de software.  
 
- 有关如何使用 SSL 的详细信息，请参阅 [Decide whether to configure WSUS to use SSL](../plan-design/plan-for-software-updates.md#BKMK_WSUSandSSL)。  
+ Para obter mais informações sobre como usar o SSL, veja [Decide whether to configure WSUS to use SSL](../plan-design/plan-for-software-updates.md#BKMK_WSUSandSSL).  
 
-### <a name="wsus-server-connection-account"></a>WSUS 服务器连接帐户  
- 你可以配置要在站点服务器连接到软件更新点上运行的 WSUS 时使用的帐户。 如果不配置此帐户，Configuration Manager 将使用要连接到 WSUS 的站点服务器的计算机帐户。 在向导的“代理和帐户设置”页上或“软件更新点属性”中的“代理和帐户设置”选项卡上配置 WSUS 服务器连接帐户。  可以在向导的不同位置中配置帐户，具体情况视使用的 Configuration Manager 版本而定。  
+### <a name="wsus-server-connection-account"></a>Conta de conexão do servidor do WSUS  
+ Você pode configurar uma conta para ser usada pelo servidor do site quando ele se conecta ao WSUS executado no ponto de atualização de software. Quando você não configura essa conta, o Configuration Manager usa a conta de computador do servidor do site para se conectar ao WSUS. Configure a Conta de Conexão do Servidor do WSUS na página **Configurações de Proxy e Conta** do assistente ou na guia **Configurações de Proxy e Conta** nas Propriedades do Ponto de atualização de software.  É possível configurar a conta em diferentes locais do assistente dependendo da versão do Configuration Manager que você usa.  
 
- 有关 Configuration Manager 帐户的详细信息，请参阅 [System Center Configuration Manager 中使用的帐户](../../core/plan-design/hierarchy/accounts.md)。  
+ Para obter mais informações sobre contas do Configuration Manager, consulte [Contas usadas no System Center Configuration Manager](../../core/plan-design/hierarchy/accounts.md).  
 
-## <a name="synchronization-source"></a>同步源  
- 在向导的“同步源”页上，或者在“软件更新点组件属性”中的“同步设置”选项卡上，你可以配置软件更新同步的上游同步源。 同步源的选项因站点而异。  
+## <a name="synchronization-source"></a>Origem de sincronização  
+ Você pode configurar a origem da sincronização upstream para a sincronização de atualizações de software na página **Origem da Sincronização** do assistente ou na guia **Configurações de Sincronização** em Propriedades do Componente de Ponto de Atualização de Software. As opções de origem da sincronização variam dependendo do site.  
 
- 使用下表以了解配置站点中的软件更新点时的可用选项。  
+ Use a tabela a seguir para obter as opções disponíveis ao configurar o ponto de atualização de software em um site.  
 
-|站点|可用的同步源选项|  
+|Site|Opções de origem da sincronização disponíveis|  
 |----------|----------------------------------------------|  
-|-   管理中心站点<br />-   独立主站点|-   从 Microsoft 更新网站同步<br />-   从上游数据源位置同步<br />-   不从 Microsoft 更新或上游数据源同步|  
-|-   站点中的附加软件更新点<br />-   子主站点<br />-   辅助站点|-   从上游数据源位置同步|  
+|-   Site de administração central<br />-   Site primário autônomo|-   Sincronizar do site Microsoft Update<br />-   Sincronizar por meio de um local de fonte de dados upstream<br />-   Não sincronizar do Microsoft Update ou da fonte de dados upstream|  
+|-   Pontos de atualização de software adicionais em um site<br />-   Site primário filho<br />-   Site secundário|-   Sincronizar por meio de um local de fonte de dados upstream|  
 
- 以下列表提供了有关可用作同步源的每个选项的详细信息：  
+ A lista a seguir fornece mais informações sobre cada opção que você pode usar como origem da sincronização:  
 
--   从 Microsoft 更新同步：使用此设置以从 Microsoft 更新同步软件更新元数据。 管理中心站点必须具有 Internet 访问权限。否则，同步将失败。 只有在配置顶层站点的软件更新点后才可以使用此设置。  
+-   **Sincronizar do Microsoft Update**: use essa configuração para sincronizar metadados de atualizações de software do Microsoft Update. O site de administração central deve ter acesso à Internet; caso contrário, a sincronização falhará. Essa configuração está disponível apenas quando você configura o ponto de atualização de software no site de nível superior.  
 
     > [!NOTE]  
-    >  如果软件更新点与 Internet 之间存在防火墙，则可能需要将防火墙配置为接受用于 WSUS 网站的 HTTP 和 HTTPS 端口。 你也可以选择将防火墙上的访问权限局限于受限制的域。 有关如何规划支持软件更新的防火墙的详细信息，请参阅 [Configure firewalls](../plan-design/plan-for-software-updates.md#BKMK_ConfigureFirewalls)。  
+    >  Quando há um firewall entre o ponto de atualização de software e a Internet, o firewall pode precisar configurar o firewall para aceitar as portas HTTP e HTTPS usadas para o site do WSUS. Você também pode restringir o acesso no firewall a domínios limitados. Para obter mais informações sobre como planejar um firewall que dá suporte a atualizações de software, veja [Configure firewalls](../plan-design/plan-for-software-updates.md#BKMK_ConfigureFirewalls).  
 
--   **<a name="BKMK_wsussync"></a>**从上游数据源位置同步：使用此设置以从上游同步源同步软件更新元数据。 系统会将子主站点和辅助站点自动配置为将父站点 URL 用于此设置。 你可以选择将从现有的 WSUS 服务器同步软件更新。 指定 URL，如 https://WSUSServer:8531 ，其中 8531 是用于连接到 WSUS 服务器的端口。  
+-   **<a name="BKMK_wsussync"></a>Sincronizar a partir de um local de fonte de dados upstream**: use essa configuração para sincronizar os metadados das atualizações de software da origem de sincronização upstream. Os sites primários filhos e os sites secundários são automaticamente configurados para usar o URL do site pai para essa configuração. Você tem a opção de sincronizar as atualizações de software em um servidor do WSUS existente. Especifique um URL, como https://WSUSServer:8531, em que 8531 é a porta usada para se conectar ao servidor WSUS.  
 
--   不要从 Microsoft 更新或上游数据源同步：使用此设置以在顶层站点上的软件更新点从 Ineternet 断开连接时手动同步软件更新。 有关详细信息，请参阅[从断开连接的软件更新点中同步软件更新](synchronize-software-updates-disconnected.md)。  
+-   **Não sincronizar do Microsoft Update ou da fonte de dados upstream**: use essa configuração para sincronizar manualmente as atualizações de software quando o ponto de atualização de software no site de nível superior estiver desconectado da Internet. Para obter mais informações, consulte [Synchronize software updates from a disconnected software update point](synchronize-software-updates-disconnected.md) (Sincronizar atualizações de software de um ponto de atualização de software desconectado).  
 
 > [!NOTE]  
->  如果软件更新点与 Internet 之间存在防火墙，则可能需要将防火墙配置为接受用于 WSUS 网站的 HTTP 和 HTTPS 端口。 你也可以选择将防火墙上的访问权限局限于受限制的域。 有关如何规划支持软件更新的防火墙的详细信息，请参阅 [Configure firewalls](../plan-design/plan-for-software-updates.md#BKMK_ConfigureFirewalls)。  
+>  Quando há um firewall entre o ponto de atualização de software e a Internet, o firewall pode precisar configurar o firewall para aceitar as portas HTTP e HTTPS usadas para o site do WSUS. Você também pode restringir o acesso no firewall a domínios limitados. Para obter mais informações sobre como planejar um firewall que dá suporte a atualizações de software, veja [Configure firewalls](../plan-design/plan-for-software-updates.md#BKMK_ConfigureFirewalls).  
 
- 你还可配置是在向导“同步源”页上还是在“软件更新点组件属性”的“同步设置”选项卡上创建 WSUS 报告事件。 Configuration Manager 不使用这些事件；因此，通常选择默认设置“不创建 WSUS 报告事件”。  
+ Você também pode configurar se deseja criar eventos de relatório do WSUS na página **Origem de Sincronização** do assistente ou na guia **Configurações de Sincronização** nas propriedades do Componente do Ponto de Atualização de Software. O Configuration Manager não usa esses eventos; portanto, normalmente você escolherá a configuração padrão **Não criar eventos de relatório do WSUS**.  
 
-## <a name="synchronization-schedule"></a>同步计划  
- 在向导的“同步计划”页上或者在“软件更新点组件属性”中配置同步计划。 仅在顶层站点的软件更新点上配置此设置。  
+## <a name="synchronization-schedule"></a>Agendamento de sincronização  
+ Configure a agenda de sincronização na página **Agenda de Sincronização** do assistente ou em Propriedades do Componente de Ponto de Atualização de Software. Essa configuração é definida somente no ponto de atualização de software no site de nível superior.  
 
- 如果启用计划，则可以配置一个简单或自定义的定期同步计划。 如果只是配置简单的计划，则开始时间基于在创建计划时运行 Configuration Manager 控制台的计算机的本地时间。 如果配置自定义计划的开始时间，则此开始时间基于运行 Configuration Manager 控制台的计算机的本地时间。  
+ Ao habilitar a agenda, você poderá configurar um agendamento de sincronização simples e recorrente ou personalizado. Quando você configura um agendamento simples, o horário de início é baseado na hora local do computador que executa o console do Configuration Manager no momento em que a agenda é criada. Quando você configura a hora de início para um agendamento personalizado, ela é baseada no horário local do computador que executa o console do Configuration Manager.  
 
 > [!TIP]  
->  使用适合你的环境的时间范围来计划运行软件更新同步。 常见的一种情况是将软件更新同步计划设置为在每月第二个星期二发布了 Microsoft 定期安全更新（这通常称为周二补丁日）之后立即运行。 另一种常见的情况是将软件更新同步计划设置为每天使用软件更新提供 Endpoint Protection 定义和引擎更新时运行。  
+>  Agende a sincronização de atualizações de software para ser executada em um período apropriado ao seu ambiente. Um cenário típico é definir a agenda de sincronização de atualizações de software para ser executada logo após o lançamento da atualização de segurança regular da Microsoft na segunda terça-feira de cada mês, que é normalmente conhecida como Patch Tuesday. Outro cenário típico é definir a agenda de sincronização de atualizações de software para ser executada diariamente quando você usar as atualizações de software para fornecer atualizações de mecanismos e definições do Endpoint Protection.  
 
 > [!NOTE]  
->  如果选择不按计划启用软件更新同步，则可以从“软件库”工作区内的“所有软件更新”或“软件更新组”节点中手动同步软件更新。 有关详细信息，请参阅[同步软件更新](synchronize-software-updates.md)。  
+>  Ao optar por não permitir a sincronização de atualizações de software em uma agenda, você poderá sincronizar manualmente as atualizações de software nos nós **Todas as Atualizações de Software** ou **Grupos de Atualização de Software** , no espaço de trabalho Biblioteca de Software. Para mais informações, consulte [Sincronizar atualizações de software](synchronize-software-updates.md).  
 
-## <a name="supersedence-rules"></a>取代规则  
- 在向导的“取代规则”页上或者在“软件更新点组件属性”中的“取代规则”选项卡上配置取代设置。 只能在顶层站点上配置取代规则。  
+## <a name="supersedence-rules"></a>Regras de substituição  
+ Configure as definições de substituição na página **Regras de Substituição** do assistente ou na guia **Regras de Substituição** em Propriedades do Componente de Ponto de Atualização de Software. Você pode configurar as regras de substituições somente no site de nível superior.  
 
- 在此页上，你可以指定被取代的软件更新立即过期，这会阻止将它们包含在新部署中并标记现有部署，以指明被取代的软件更新包含一个或多个过期的软件更新。 或者，你可以指定被取代软件更新过期之前的时间段，从而允许你继续部署这些更新。 有关详细信息，请参阅 [Supersedence rules](../plan-design/plan-for-software-updates.md#BKMK_SupersedenceRules)。  
-
-> [!NOTE]  
->  向导的“取代规则”页仅当在站点配置第一个软件更新点时可用。 当你安装其他软件更新点时，此页不会显示。  
-
-## <a name="classifications"></a>分类  
- 在向导的“分类”页上或者在“软件更新点组件属性”中的“分类”选项卡上配置分类设置。 有关软件更新分类的详细信息，请参阅 [Update classifications](../plan-design/plan-for-software-updates.md#BKMK_UpdateClassifications)。  
+ Nesta página, você pode determinar que as atualizações de software substituídas sejam imediatamente expiradas, o que as impedirá de serem incluídas em novas implantações e sinalizará as implantações existentes para indicar que as atualizações de software substituídas contêm uma ou mais atualizações de software expiradas. Ou, você pode especificar um período de tempo até que as atualizações de software substituídas se expirem, o que permitirá que você continue a implantá-las. Para obter mais informações, consulte [Supersedence rules](../plan-design/plan-for-software-updates.md#BKMK_SupersedenceRules).  
 
 > [!NOTE]  
->  向导的“分类”页仅当在站点配置第一个软件更新点时可用。 当你安装其他软件更新点时，此页不会显示。  
+>  A página **Regras de Substituição** do assistente está disponível apenas quando você configura o primeiro ponto de atualização de software no site. Essa página não é exibida quando você instala pontos de atualização de software adicionais.  
+
+## <a name="classifications"></a>Classificações  
+ Configure as definições de classificação na página **Classificações** do assistente ou na guia **Classificações** em Propriedades do Componente de Ponto de Atualização de Software. Para obter mais informações sobre classificações de atualização de software, veja [Update classifications](../plan-design/plan-for-software-updates.md#BKMK_UpdateClassifications).  
+
+> [!NOTE]  
+>  A página **Classificações** do assistente está disponível apenas quando você configura o primeiro ponto de atualização de software no site. Essa página não é exibida quando você instala pontos de atualização de software adicionais.  
 
 > [!TIP]  
->  当你首次在顶层站点上安装软件更新点时，请清除所有软件更新分类。 初次软件更新同步之后，请配置更新的列表中的分类，然后重新启动同步。 仅在顶层站点的软件更新点上配置此设置。  
+>  Ao instalar pela primeira vez o ponto de atualização de software no site de nível superior, desmarque todas as classificações de atualizações de software. Após a sincronização inicial das atualizações de software, configure as classificações de uma lista atualizada e reinicie a sincronização. Essa configuração é definida somente no ponto de atualização de software no site de nível superior.  
 
-## <a name="products"></a>产品  
- 在向导的“产品”页上或者在“软件更新点组件属性”中的“产品”选项卡上配置产品设置。  
+## <a name="products"></a>Produtos  
+ Configure as definições de produto na página **Produtos** do assistente ou na guia **Produtos** em Propriedades do Componente de Ponto de Atualização de Software.  
 
 > [!NOTE]  
->  向导的“产品”页仅当在站点配置第一个软件更新点时可用。 当你安装其他软件更新点时，此页不会显示。  
+>  A página **Produtos** do assistente está disponível apenas quando você configura o primeiro ponto de atualização de software no site. Essa página não é exibida quando você instala pontos de atualização de software adicionais.  
 
 > [!TIP]  
->  当你首次在顶层站点上安装软件更新点时，请清除所有产品。 初次软件更新同步之后，请配置更新的列表中的产品，然后重新启动同步。 仅在顶层站点的软件更新点上配置此设置。  
+>  Ao instalar pela primeira vez o ponto de atualização de software no site de nível superior, desmarque todos os produtos. Após a sincronização inicial das atualizações de software, configure os produtos de uma lista atualizada e reinicie a sincronização. Essa configuração é definida somente no ponto de atualização de software no site de nível superior.  
 
-## <a name="languages"></a>语言  
- 在向导的“语言”页上或者在“软件更新点组件属性”中的“语言”选项卡上配置语言设置。 指定想要对其同步软件更新文件和摘要详细信息的语言。 在 Configuration Manager 层次结构中的每个软件更新点上配置“软件更新文件”设置。 “摘要详细信息”设置仅在顶层软件更新点上配置。 有关详细信息，请参阅 [Languages](../plan-design/plan-for-software-updates.md#BKMK_UpdateLanguages)。  
+## <a name="languages"></a>Idiomas  
+ Configure as definições de idioma na página **Idiomas** do assistente ou na guia **Idiomas** em Propriedades do Componente de Ponto de Atualização de Software. Especifique os idiomas para os quais você quer sincronizar os arquivos de atualização de software e detalhes do resumo. A configuração do **Arquivo de Atualização de Software** é configurada em cada ponto de atualização de software da hierarquia do Configuration Manager. As configurações **Detalhes do Resumo** são definidas somente no ponto de atualização de software de nível superior. Para obter mais informações, consulte [Languages](../plan-design/plan-for-software-updates.md#BKMK_UpdateLanguages).  
 
 > [!NOTE]  
->  向导的“语言”页仅在安装管理中心站点的软件更新点时可用。 你可以在“软件更新点组件属性”内的“语言”选项卡中配置子站点中的软件更新文件语言。  
+>  A página **Idiomas** do assistente está disponível apenas quando você instala o ponto de atualização de software no site de administração central. Você pode configurar os idiomas do Arquivo de Atualização de Software em sites filhos na guia **Idiomas** em Propriedades do Componente de Ponto de Atualização de Software.  
 
-## <a name="next-steps"></a>后续步骤
-在 Configuration Manager 层次结构中的顶层站点，开始安装软件更新点。 重复该主题中的步骤，在子级站点上安装软件更新点。
+## <a name="next-steps"></a>Próximas etapas
+Você instalou o ponto de atualização de software iniciando no site de mais alto na hierarquia do Configuration Manager. Repita os procedimentos deste tópico para instalar o ponto de atualização de software em sites filho.
 
-安装软件更新点后，请转到[同步软件更新](synchronize-software-updates.md)。
+Depois de instalar os pontos de atualização de software, vá para [sincronizar atualizações de software](synchronize-software-updates.md).

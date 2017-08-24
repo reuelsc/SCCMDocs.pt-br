@@ -1,6 +1,6 @@
 ---
-title: "监视迁移 | Microsoft Docs"
-description: "了解如何使用 Configuration Manager 控制台来监视迁移作业的进度和成功情况。"
+title: "Monitorar a migração | Microsoft Docs"
+description: "Saiba como usar o console do Configuration Manager para monitorar o progresso e o sucesso dos trabalhos de migração."
 ms.custom: na
 ms.date: 10/06/2016
 ms.prod: configuration-manager
@@ -18,23 +18,23 @@ manager: angrobe
 ms.openlocfilehash: 896807ec2c4be2835094a27add59d4cc09e93add
 ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
 ms.translationtype: HT
-ms.contentlocale: zh-CN
+ms.contentlocale: pt-BR
 ms.lasthandoff: 08/07/2017
 ---
-# <a name="planning-to-monitor-migration-activity-in-system-center-configuration-manager"></a>在 System Center Configuration Manager 中规划监视迁移活动
+# <a name="planning-to-monitor-migration-activity-in-system-center-configuration-manager"></a>Planejamento do monitoramento da atividade de migração no System Center Configuration Manager
 
-*适用范围：System Center Configuration Manager (Current Branch)*
+*Aplica-se a: System Center Configuration Manager (Branch Atual)*
 
-使用 System Center Configuration Manager，可以在连接到目标层次结构的 Configuration Manager 控制台中监视迁移。 在 Configuration Manager 控制台的“管理” 工作区中，可以使用“迁移”节点监视迁移工作的进度和成功情况。 你可以查看每个迁移作业的摘要信息，该信息确定已迁移的对象、尚未迁移的那些对象，以及从迁移作业中排除的对象的数量。 你还将看到有关任何迁移问题的详细信息。  
+Com o System Center Configuration Manager, você pode monitorar a migração no console do Configuration Manager que se conecta à hierarquia de destino. No console do Configuration Manager, no espaço de trabalho **Administração**, é possível usar o nó **Migração** para monitorar o progresso e o sucesso dos trabalhos de migração. É possível exibir informações de resumo para cada trabalho de migração que identifique objetos que migraram, objetos que ainda não foram migrados e o número de objetos excluídos de um trabalho de migração. Você também verá detalhes sobre problemas de migração.  
 
-## <a name="view-migration-progress"></a>查看迁移进度  
- 若要查看迁移作业的进度，请使用下列任何操作：  
+## <a name="view-migration-progress"></a>Exibir andamento da migração  
+ Para exibir o andamento de um trabalho de migração, execute uma das seguintes ações:  
 
--   在 Configuration Manager 控制台的“管理”工作区中，展开“迁移作业”节点，选择一个迁移作业，然后选择“作业中的对象”选项卡。  
+-   No espaço de trabalho **Administração** do console do Configuration Manager, expanda o nó **Trabalhos de Migração**, selecione um trabalho de migração e selecione a guia **Objetos no Trabalho**.  
 
--   使用 Configuration Manager 日志文件来查看迁移进度或发现任何问题。 迁移管理器是 Configuration Manager 过程，用于跟踪迁移操作并将这些操作记录在站点服务器上 **\&lt;InstallationPath\>\\LOGS** 文件夹中的 migmctrl.log 文件中。  
+-   Use os arquivos de log do Configuration Manager para examinar o andamento da migração ou para identificar problemas. O Gerenciador de Migração é o processo do Configuration Manager que controla as ações de migração e as registra no arquivo migmctrl.log, na pasta **\&lt;CaminhoDeInstalação\>\\LOGS** do servidor do site.  
 
     > [!NOTE]  
-    >  如果迁移作业失败，请尽快在 migmctrl.log 文件中查看详细信息。 迁移日志条目会一直添加到该文件中并覆盖旧详细信息。 如果条目被覆盖，你可能无法确定你可能遇到的任何迁移对象问题是否与迁移问题相关。 不管在配置迁移时 Configuration Manager 控制台连接到哪个站点，迁移活动都记录在层次结构的顶层站点上。  
+    >  Se ocorrer falha em um trabalho de migração, verifique os detalhes no arquivo migmctrl.log o mais rápido possível. As entradas do log de migração são continuamente adicionadas ao arquivo e substituem os detalhes antigos. Se as entradas forem substituídas, talvez você não consiga identificar se os problemas encontrados nos objetos migrados estão associados aos problemas de migração. A atividade de migração é registrada no site de nível superior da hierarquia, independentemente do site ao qual o seu console do Configuration Manager se conecta quando você configura a migração.  
 
--   使用 Configuration Manager 报表。 Configuration Manager 提供了若干内置迁移报表，可以选择对它们进行编辑以满足你的需求。 有关 Configuration Manager 报表的详细信息，请参阅 [System Center Configuration Manager 中的报表](../../core/servers/manage/reporting.md)。  
+-   Use os relatórios do Configuration Manager. O Configuration Manager fornece diversos relatórios internos de migração, ou você pode editar os relatórios para que se adaptem às suas necessidades. Para obter mais informações sobre os relatórios no Configuration Manager, consulte [Relatórios no System Center Configuration Manager](../../core/servers/manage/reporting.md).  

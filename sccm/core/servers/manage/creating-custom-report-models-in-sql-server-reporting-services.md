@@ -1,6 +1,6 @@
 ---
-title: "创建自定义报表 | Microsoft Docs"
-description: "定义报表模型以满足你的业务需求，然后将报表模型部署到 Configuration Manager。"
+title: "Criar relatórios personalizados | Microsoft Docs"
+description: "Defina modelos de relatório para atender aos requisitos de negócios e, em seguida, implante os modelos de relatório no Configuration Manager."
 ms.custom: na
 ms.date: 10/06/2016
 ms.prod: configuration-manager
@@ -18,151 +18,151 @@ manager: angrobe
 ms.openlocfilehash: 9951dd9333ebef00c7acd5d72b20a02382e3206c
 ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
 ms.translationtype: HT
-ms.contentlocale: zh-CN
+ms.contentlocale: pt-BR
 ms.lasthandoff: 08/07/2017
 ---
-# <a name="creating-custom-report-models-for-system-center-configuration-manager-in-sql-server-reporting-services"></a>在 SQL Server Reporting Services 中的 System Center Configuration Manager 创建自定义报表模型
+# <a name="creating-custom-report-models-for-system-center-configuration-manager-in-sql-server-reporting-services"></a>Criando modelos de relatório personalizados para o System Center Configuration Manager no SQL Server Reporting Services
 
-*适用范围：System Center Configuration Manager (Current Branch)*
+*Aplica-se a: System Center Configuration Manager (Branch Atual)*
 
-示例报表模型包括在 System Center Configuration Manager 中，但也可以定义报表模型来满足自己的业务需求，然后将报表模型部署到 Configuration Manager 以在创建基于模型的新报表时使用。 下表提供了创建和部署基本报表模型的步骤。  
+Exemplos de modelos de relatórios estão incluídos no System Center Configuration Manager, mas você também pode definir modelos de relatórios para atender aos seus próprios requisitos de negócios e implantar o modelo de relatório para o Configuration Manager a ser usado ao criar novos relatórios baseados no modelo. A tabela a seguir fornece as etapas para criar e implantar um modelo de relatório básico.  
 
 > [!NOTE]  
->  有关创建更高级报表模型的步骤，请参阅本主题中的 [在 SQL Server Reporting Services 中创建高级报表模型的步骤](#AdvancedReportModel) 部分。  
+>  Para ver as etapas para criar um modelo de relatório mais avançado, consulte a seção [Etapas para criar um modelo de relatório avançado no SQL Server Reporting Services](#AdvancedReportModel) deste tópico.  
 
-|步骤|描述|更多信息|  
+|Etapa|Descrição|Mais informações|  
 |----------|-----------------|----------------------|  
-|验证是否安装了 SQL Server Business Intelligence Development Studio|报表模型是通过使用 SQL Server Business Intelligence Development Studio 设计和构建的。 验证在你创建自定义报表模型的计算机上是否安装了 SQL Server Business Intelligence Development Studio。|有关 SQL Server Business Intelligence Development Studio 的详细信息，请参阅 SQL Server 2008 文档。|  
-|创建报表模型项目|报表模型项目包含数据源的定义（.ds 文件）、数据源视图的定义（.dsv 文件）以及报表模型（.smdl 文件）。|有关详细信息，请参阅本主题中的 [创建报表模型项目](#BKMK_CreateReportModelProject) 部分。|  
-|为报表模型定义数据源|创建报表模型项目之后，你必须定义一个从中提取业务数据的数据源。 通常情况下，该数据源为 Configuration Manager 站点数据库。|有关详细信息，请参阅本主题中的 [为报表模型定义数据源](#BKMK_DefineReportModelDataSource) 部分。|  
-|为报表模型定义数据源视图|定义了在报表模型项目中使用的数据源之后，下一步是为项目定义数据源视图。 数据源视图是基于一个或多个数据源的逻辑数据模型。 数据源视图封装基础数据源包含的物理对象（例如表和视图）的访问权限。 SQL Server Reporting Services 通过数据源视图生成报表模型。<br /><br /> 数据源视图向你提供所指定的数据的有用表示形式，从而简化模型设计过程。 你可以重命名表和字段并在数据源视图中添加聚合字段和派生表，而无需更改基础数据源。 为了提高模型效率，请仅将你打算使用的那些表添加到数据源。|有关详细信息，请参阅本主题中的 [为报表模型定义数据源视图](#BKMK_DefineReportModelDataSourceView) 部分。|  
-|创建报表模型|报表模型是数据库的一个层，它标识业务实体、字段和角色。 在发布之后，报表生成器用户可以通过使用这些模型来开发报表，而不必熟悉数据库结构或了解并编写查询。 模型由一同分组在一个友好名称下的几组相关的报表项目组成，包含这些业务项目之间的预定义关系，并包含预定义的计算。 模型是通过使用一种名为语义模型定义语言 (SMDL) 的 XML 语言定义的。 报表模型文件的文件扩展名为 .smdl。|有关详细信息，请参阅本主题中的 [To create the report model](#BKMK_CreateReportModel) 部分。|  
-|发布报表模型|要通过使用刚刚创建的模型构建报表，你必须将其发布到报表服务器。 在发布模型时，模型中包括数据源和数据源视图。|有关详细信息，请参阅本主题中的 [发布报表模型以在 SQL Server Reporting Services 中使用](#BKMK_PublishReportModel) 部分。|  
-|将报表模型部署到 Configuration Manager|在使用“创建报表向导”中的自定义报表模型创建基于模型的报表之前，必须将报表模型部署到 Configuration Manager。|有关详细信息，请参阅本主题中的 [将自定义报表模型部署到 Configuration Manager](#BKMK_DeployReportModel) 部分。|  
+|Verifique se o SQL Server Business Intelligence Development Studio está instalado|Os modelos de relatório são projetados e criados usando o SQL Server Business Intelligence Development Studio. Verifique se o SQL Server Business Intelligence Development Studio está instalado no computador em que você está criando o modelo de relatório personalizado.|Para obter mais informações sobre o SQL Server Business Intelligence Development Studio, consulte a documentação do SQL Server 2008.|  
+|Criar um projeto de modelo de relatório|Um projeto de modelo de relatório contém a definição da fonte de dados (um arquivo .ds), a definição de uma exibição da fonte de dados (um arquivo .dsv) e o modelo de relatório (um arquivo .smdl).|Para obter mais informações, consulte a seção [Para criar o projeto do modelo de relatório](#BKMK_CreateReportModelProject) neste tópico.|  
+|Definir uma fonte de dados para um modelo de relatório|Após criar um projeto de modelo de relatório, você deverá definir uma fonte de dados da qual os dados corporativos serão extraídos. Normalmente, este é o banco de dados do site do Configuration Manager.|Para obter mais informações, consulte a seção [Para definir a fonte de dados para o modelo de relatório](#BKMK_DefineReportModelDataSource) neste tópico.|  
+|Definir uma exibição de fonte de dados para um modelo de relatório|Após definir as fontes de dados usadas no projeto do modelo de relatório, a próxima etapa é definir uma exibição de fonte de dados para o projeto. Uma exibição de fonte de dados é um modelo lógico de dados baseado em uma ou mais fontes de dados. As exibições de fontes de dados encapsulam o acesso a objetos físicos, como tabelas e exibições, contidas em fontes de dados subjacentes. O SQL Server Reporting Services gera o modelo de relatório a partir da exibição de fonte de dados.<br /><br /> As exibições de fonte de dados facilitam o processo de criação do modelo fornecendo uma representação útil dos dados especificados. Sem alterar a fonte de dados subjacente, você pode renomear tabelas e campos e adicionar campos agregados e tabelas derivadas em uma exibição de fonte de dados. Para obter um modelo eficiente, adicione somente essas tabelas à exibição de fonte de dados que pretender usar.|Para obter mais informações, consulte a seção [Para definir a exibição da fonte de dados para o modelo de relatório](#BKMK_DefineReportModelDataSourceView) neste tópico.|  
+|Criar um modelo de relatório|Um modelo de relatório é uma camada no início do banco de dados que identifica as entidade, os campos e as funções corporativas. Quando publicado, usando esses modelos, os usuários do Construtor de Relatórios podem desenvolver relatórios sem ter de estar familiarizados com estruturas de bancos de dados ou entender e gravar consultas. Os modelos são compostos de conjuntos de itens de relatórios relacionados que são agrupados em um nome amigável, com relações predefinidas entre esses itens corporativos e com cálculos predefinidos. Os modelos são definidos usando uma linguagem XML chamada SMDL. A extensão do nome do arquivo para os arquivos de modelo de relatório é .smdl.|Para obter mais informações, consulte a seção [Para criar o modelo de relatório](#BKMK_CreateReportModel) neste tópico.|  
+|Publicar um modelo de relatório|Para criar um relatório usando o modelo que você acabou de criar, é necessário publicá-lo em um servidor de relatório. A fonte de dados e a exibição de fonte de dados serão incluídas no modelo quando ele for publicado.|Para obter mais informações, consulte a seção [Para publicar o modelo de relatório para uso no SQL Server Reporting Services](#BKMK_PublishReportModel) neste tópico.|  
+|Para implantar o modelo de relatório no Configuration Manager|Antes de usar um modelo de relatório personalizado no **Assistente para Criar Relatório** para criar um relatório baseado no modelo, é necessário implantar o modelo de relatório no Configuration Manager.|Para obter mais informações, consulte a seção [Para implantar o modelo de relatório personalizado no Configuration Manager](#BKMK_DeployReportModel) neste tópico.|  
 
-## <a name="steps-for-creating-a-basic-report-model-in-sql-server-reporting-services"></a>在 SQL Server Reporting Services 中创建基本报表模型的步骤  
- 可以使用以下过程创建一个基本报表模型，站点中的用户可使用该模型根据 Configuration Manager 数据库的单一视图中的数据来构建基于特定模型的报表。 你创建一个报表模型，该模型向报表作者呈现有关站点中的客户端计算机的信息。 该信息来自 Configuration Manager 数据库中的 **v_R_System** 视图。  
+## <a name="steps-for-creating-a-basic-report-model-in-sql-server-reporting-services"></a>Etapas para criar um modelo de relatório básico no SQL Server Reporting Services  
+ É possível usar os seguintes procedimentos para criar um modelo de relatório básico que os usuários do seu site poderão usar para criar relatórios baseados em modelos particulares de acordo com os dados de uma única exibição do banco de dados do Configuration Manager. Você cria um modelo de relatório que apresenta informações sobre os computadores cliente do seu site ao autor do relatório. Essas informações foram retiradas da exibição **v_R_System** no banco de dados do Configuration Manager.  
 
- 在你执行这些过程的计算机上，确保已安装了 SQL Server Business Intelligence Development Studio，并且计算机已通过网络连接到 Reporting Services 点服务器。 有关 SQL Server Business Intelligence Development Studio 的详细信息，请参阅 SQL Server 2008 文档。  
+ No computador em que você executa esses procedimentos, verifique se você instalou o SQL Server Business Intelligence Development Studio e se o computador tem conectividade de rede ao servidor do ponto do Reporting Services. Para obter informações detalhadas sobre o SQL Server Business Intelligence Development Studio, consulte a documentação do SQL Server 2008.  
 
-###  <a name="BKMK_CreateReportModelProject"></a> 创建报表模型  
+###  <a name="BKMK_CreateReportModelProject"></a> Para criar o modelo de relatório  
 
-1.  在桌面上，单击“开始” ，单击“Microsoft SQL Server 2008” ，然后单击“SQL Server Business Intelligence Development Studio” 。  
+1.  Na área de trabalho, clique em **Iniciar**, **Microsoft SQL Server 2008**e **SQL Server Business Intelligence Development Studio**.  
 
-2.  当“SQL Server Business Intelligence Development Studio”  在 Microsoft Visual Studio 中打开后，单击“文件” ，单击“新建” ，然后单击“项目” 。  
+2.  Após o **SQL Server Business Intelligence Development Studio** abrir no Microsoft Visual Studio, clique em **Arquivo**, **Novo**e **Projeto**.  
 
-3.  在“新建项目”  对话框的“模板”  列表中选择“报表模型项目”  。  
+3.  Na caixa de diálogo **Novo Projeto** , selecione **Projeto do Modelo de Relatório** na lista **Modelos** .  
 
-4.  在“名称”  框中，为此报表模型指定一个名称。 对于本例，请键入 **Simple_Model**。  
+4.  Na caixa **Nome** , especifique um nome para esse modelo de relatório. Nesse exemplo, digite **Simple_Model**.  
 
-5.  要创建报表模型项目，请单击“确定” 。  
+5.  Para criar o projeto de modelo de relatório, clique em **OK**.  
 
-6.  “Simple_Model”  解决方案将显示在“解决方案资源管理器” 中。  
-
-    > [!NOTE]  
-    >  如果看不到“解决方案资源管理器”  窗格，请单击“视图” ，然后单击“解决方案资源管理器” 。  
-
-###  <a name="BKMK_DefineReportModelDataSource"></a> 为报表模型定义数据源  
-
-1.  在“SQL Server Business Intelligence Development Studio”  的“解决方案资源管理器” 窗格中，右键单击“数据源”  以选择“添加新数据源” 。  
-
-2.  在“欢迎使用数据源向导”  页上，单击“下一步” 。  
-
-3.  在“选择如何定义连接”  页上，验证是否选择了“基于现有连接或新连接创建数据源”  ，然后单击“新建” 。  
-
-4.  在“连接管理器”  对话框中，为数据源指定以下连接属性：  
-
-    -   **服务器名称**：键入 Configuration Manager 站点数据库服务器的名称，或在列表中选择该名称。 如果你使用的是命名的实例（而不是默认实例），请键入 &lt;数据库服务器>\\&lt;实例名称>。  
-
-    -   选择“使用 Windows 身份验证” 。  
-
-    -   在“选择或输入数据库名称”列表中，选择 Configuration Manager 站点数据库的名称。  
-
-5.  要验证数据库连接，请单击“测试连接” 。  
-
-6.  如果连接成功，请单击“确定”  关闭“连接管理器”  对话框。 如果连接未成功，请验证你输入的信息是否正确，然后再次单击“测试连接”  。  
-
-7.  在“选择如何定义连接”  页上，验证是否选择了“基于现有连接或新连接创建数据源”  ，验证你刚刚指定的数据源是否在“数据连接” 中处于选定状态，然后单击“下一步” 。  
-
-8.  在“数据源名称” 中，为数据源指定一个名称，然后单击“完成” 。 对于本例，请键入 **Simple_Model**。  
-
-9. 数据源“Simple_Model.ds”  将显示在“解决方案资源管理器”  中的“数据源”  节点下。  
+6.  A solução **Simple_Model** será exibida no **Gerenciador de Soluções**.  
 
     > [!NOTE]  
-    >  要编辑现有数据源的属性，请在“解决方案资源管理器”  窗格的“数据源”  文件夹中双击该数据源，以在数据源设计器中显示数据源属性。  
+    >  Se você não conseguir ver o painel **Gerenciador de Soluções** , clique em **Exibir**e em **Gerenciador de Soluções**.  
 
-###  <a name="BKMK_DefineReportModelDataSourceView"></a> 为报表模型定义数据源视图  
+###  <a name="BKMK_DefineReportModelDataSource"></a> Para definir a fonte de dados para o modelo de relatório  
 
-1.  在“解决方案资源管理器” 中，右键单击“数据源视图”  以选择“添加新数据源视图” 。  
+1.  No painel **Gerenciador de Soluções** do **SQL Server Business Intelligence Development Studio**, clique com o botão direito do mouse em **Fontes de Dados** para selecionar **Adicionar Nova Fonte de Dados**.  
 
-2.  在“欢迎使用数据源视图向导”  页上，单击“下一步” 。 将显示“选择数据源”  页。  
+2.  Na página **Bem-vindo ao Assistente de Fonte de Dados** , clique em **Próximo**.  
 
-3.  在“关系数据源”  窗口中，验证“Simple_Model”  数据源是否处于选定状态，然后单击“下一步” 。  
+3.  Na página **Selecione como definir a conexão** , verifique se a opção **Criar uma fonte de dados com base em uma conexão nova ou existente** está selecionada e clique em **Nova**.  
 
-4.  在“选择表和视图”  页上的“可用对象”  列表中选择要在报表模型中使用的以下视图： **v_R_System (dbo)**。  
+4.  Na caixa de diálogo **Gerenciador de Conexões** , especifique as seguintes propriedades de conexão para a fonte de dados:  
+
+    -   **Nome do servidor**: digite o nome do seu servidor de banco de dados do site do Configuration Manager ou selecione-o na lista. Se você estiver trabalhando com uma instância nomeada em vez da instância padrão, digite &lt;*servidor de banco de dados*>\\&lt;*nome da instância*>.  
+
+    -   Selecione **Usar Autenticação do Windows**.  
+
+    -   Na lista **Selecionar ou digitar nome do banco de dados**, selecione o nome do banco de dados do site do Configuration Manager.  
+
+5.  Para verificar a conexão do banco de dados, clique em **Testar Conexão**.  
+
+6.  Se a conexão for bem-sucedida, clique em **OK** para fechar a caixa de diálogo **Gerenciador de Conexões** . Se a conexão não for bem-sucedida, verifique se as informações inseridas estão corretas e clique em **Testar Conexão** novamente.  
+
+7.  Na página **Selecione como definir a conexão** , verifique se a opção **Criar uma fonte de dados com base em uma conexão nova ou existente** está selecionada, verifique se a fonte de dados especificada está selecionada em **Conexões de Dados**e clique em **Próximo**.  
+
+8.  Em **Nome da fonte de dados**, especifique um nome para a fonte de dados e clique em **Concluir**. Nesse exemplo, digite **Simple_Model**.  
+
+9. A fonte de dados **Simple_Model.ds** será exibida no **Gerenciador de Soluções** no nó **Fontes de Dados** .  
+
+    > [!NOTE]  
+    >  Para editar as propriedades de uma fonte de dados existente, clique duas vezes na fonte de dados na pasta **Fontes de Dados** do painel **Gerenciador de Soluções** para exibir as propriedades da fonte de dados no Designer de Fonte de Dados.  
+
+###  <a name="BKMK_DefineReportModelDataSourceView"></a> Para definir a exibição da fonte de dados para o modelo de relatório  
+
+1.  No **Gerenciador de Soluções**, clique com o botão direito do mouse em **Exibições da Fonte de Dados** para selecionar **Adicionar Nova Exibição da Fonte de Dados**.  
+
+2.  Na página **Bem-vindo ao Assistente de Exibição da Fonte de Dados** , clique em **Próximo**. A página **Selecionar uma Fonte de Dados** é exibida.  
+
+3.  Na janela **Fontes de dados relacionais** , verifique se a fonte de dados **Simple_Model** está selecionada e clique em **Próximo**.  
+
+4.  Na página **Selecionar Tabelas e Exibições** , selecione a seguinte exibição na lista **Objetos disponíveis** que será usada no modelo de relatório: **v_R_System (dbo)**.  
 
     > [!TIP]  
-    >  为了帮助在“可用对象”  列表中找到视图，请单击列表顶部的“名称”  标题，按字母顺序对对象进行排序。  
+    >  Para ajudar a localizar exibições na lista **Objetos disponíveis** , clique no cabeçalho **Nome** na parte superior da lista para classificar os objetos em ordem alfabética.  
 
-5.  选择视图之后，单击“&gt;” **>** 以将对象传输到  。  
+5.  Depois de selecionar a exibição, clique em **>** para transferir o objeto para a lista **Objetos incluídos** .  
 
-6.  如果显示“名称匹配”  页，请接受默认选择，并单击“下一步” 。  
+6.  Se a página **Correspondência de Nomes** for exibida, aceite as seleções padrão e clique em **Próximo**.  
 
-7.  选择了所需的对象后，单击“下一步” ，然后为数据源视图指定一个名称。 对于本例，请键入 **Simple_Model**。  
+7.  Após selecionar os objetos desejados, clique em **Próximo**e especifique um nome para a exibição da fonte de dados. Nesse exemplo, digite **Simple_Model**.  
 
-8.  单击 **“完成”**。 “Simple_Model.dsv”  数据源视图将显示在“解决方案资源管理器”  的“数据源视图” 文件夹中。  
+8.  Clique em **Finalizar**. A exibição da fonte de dados **Simple_Model.dsv** será exibida na pasta **Exibições da Fonte de Dados** do **Gerenciador de Soluções**.  
 
 ###  <a name="BKMK_CreateReportModel"></a> To create the report model  
 
-1.  在“解决方案资源管理器” 中，右键单击“报表模型”  以选择“添加新报表模型” 。  
+1.  No **Gerenciador de Soluções**, clique com o botão direito do mouse em **Modelos de Relatório** para selecionar **Adicionar Novo Modelo de Relatório**.  
 
-2.  在“欢迎使用报表模型向导”  页上，单击“下一步” 。  
+2.  Na página **Bem-vindo ao Assistente de Modelos de Relatório** , clique em **Próximo**.  
 
-3.  在“选择数据源视图”  页上的“可用数据源视图”  列表中选择数据源视图，然后单击“下一步” 。 对于本例，请选择“Simple_Model.dsv” 。  
+3.  Na página **Selecionar Exibições da Fonte de Dados** , selecione a exibição da fonte de dados na lista **Exibições da fonte de dados disponíveis** e clique em **Próximo**. Para esse exemplo, selecione **Simple_Model.dsv**.  
 
-4.  在“选择报表模型生成规则”  页上，接受默认值，并单击“下一步” 。  
+4.  Na página **Selecione as regras de geração automática do modelo de relatório** , aceite os valores padrão e clique em **Próximo**.  
 
-5.  在“收集模型统计信息”  页上，验证是否选择了“在生成前更新模型统计信息”  ，然后单击“下一步” 。  
+5.  Na página **Coletar Estatísticas do Modelo** , verifique se a opção **Atualizar as estatísticas do modelo antes da geração automática** está selecionada e clique em **Próximo**.  
 
-6.  在“完成向导”  页上，为报表模型指定一个名称。 对于本例，请验证是否显示了“Simple_Model”  。  
+6.  Na página **Concluindo o Assistente** , especifique um nome para o modelo de relatório. Para esse exemplo, verifique se **Simple_Model** é exibida.  
 
-7.  要完成向导并创建报表模型，请单击“运行” 。  
+7.  Para concluir o assistente e criar o modelo de relatório, clique em **Executar**.  
 
-8.  要退出向导，请单击“完成” 。 报表模型将显示在“设计”窗口中。  
+8.  Para sair do assistente, clique em **Concluir**. O modelo de relatório é mostrado na janela Design.  
 
-###  <a name="BKMK_PublishReportModel"></a> 发布报表模型以在 SQL Server Reporting Services 中使用  
+###  <a name="BKMK_PublishReportModel"></a> Para publicar o modelo de relatório para uso no SQL Server Reporting Services  
 
-1.  在“解决方案资源管理器” 中，右键单击报表模型以选择“部署” 。 对于本例，报表模型为“Simple_Model.smdl” 。  
+1.  No **Gerenciador de Soluções**, clique com o botão direito do mouse para selecionar **Implantar**. Nesse exemplo, o modelo de relatório é **Simple_Model.smdl**.  
 
-2.  在“SQL Server Business Intelligence Development Studio”  窗口的左下角检查部署状态。 部署完成后，将显示“部署已成功”  。 如果部署失败，失败原因将显示在“输出”  窗口中。 新报表模型现在可在 SQL Server Reporting Services 网站上找到。  
+2.  Examine o status da implantação no canto inferior esquerdo da janela do **SQL Server Business Intelligence Development Studio** . Quando a implantação for concluída, a mensagem **Implantação bem-sucedida** será exibida. Se a implantação falhar, o motivo da falha será exibido na janela **Saída** . O novo modelo de relatório estará disponível no seu site do SQL Server Reporting Services.  
 
-3.  单击“文件” ，单击“全部保存” ，然后关闭“SQL Server Business Intelligence Development Studio” 。  
+3.  Clique em **Arquivo**, **Salvar Tudo**e feche o **SQL Server Business Intelligence Development Studio**.  
 
 ###  <a name="BKMK_DeployReportModel"></a> To deploy the custom report model to Configuration Manager  
 
-1.  找到你在其中创建了报表模型项目的文件夹。 例如，%*USERPROFILE*%\Documents\Visual Studio 2008\Projects\\*&lt;项目名称\>。*  
+1.  Localize a pasta na qual você criou o projeto de modelo de relatório. Por exemplo, %*USERPROFILE*%\Documentos\Visual Studio 2008\Projetos\\*&lt;Nome do Projeto\>.*  
 
-2.  将以下文件从报表模型项目文件夹复制到计算机上的一个临时文件夹。  
+2.  Copie os seguintes arquivos da pasta do projeto de modelo de relatório para uma pasta temporária em seu computador:  
 
-    -   *&lt;Model Name\>* **.dsv**  
+    -   *&lt;Nome do Modelo\>* **.dsv**  
 
-    -   *&lt;Model Name\>* **.smdl**  
+    -   *&lt;Nome do Modelo\>* **.smdl**  
 
-3.  使用文本编辑器（例如记事本）打开前述文件。  
+3.  Abra os arquivos acima usando um editor de texto, como o Bloco de Notas.  
 
-4.  在文件 *&lt;Model Name\>***.dsv** 中，找到文件的第一行，其内容如下所示：  
+4.  No arquivo *&lt;Nome do Modelo\>***.dsv**, localize a primeira linha do arquivo, que é a seguinte:  
 
      **&lt;DataSourceView xmlns="http://schemas.microsoft.com/analysisservices/2003/engine"\>**  
 
-     编辑此行以使内容如下所示：  
+     Edite essa linha da seguinte forma:  
 
      **&lt;DataSourceView xmlns="http://schemas.microsoft.com/analysisservices/2003/engine" xmlns:xsi="RelationalDataSourceView"\>**  
 
-5.  将文件的整个内容复制到 Windows 剪贴板。  
+5.  Copie todo o conteúdo do arquivo na área de transferência do Windows.  
 
-6.  关闭文件 *&lt;Model Name\>***.dsv**。  
+6.  Feche o arquivo *&lt;Nome do Modelo\>***.dsv**.  
 
-7.  在文件 *&lt;Model Name\>***.smdl** 中，找到文件的最后三行，其内容如下所示：  
+7.  No arquivo *&lt;Nome do Modelo\>***.smdl**, localize as três últimas linhas do arquivo, que aparecem da seguinte maneira:  
 
      `</Entity>`  
 
@@ -170,116 +170,116 @@ ms.lasthandoff: 08/07/2017
 
      `</SemanticModel>`  
 
-8.  将文件 *&lt;Model Name\>***.dsv** 的内容直接粘贴在文件 (**&lt;SemanticModel\>**) 的最后一行之前。  
+8.  Cole o conteúdo do arquivo *&lt;Nome do Modelo\>***.dsv** diretamente antes da última linha do arquivo (**&lt;SemanticModel\>**).  
 
-9. 保存并关闭文件 *&lt;Model Name\>***.smdl**。  
+9. Salve e feche o arquivo *&lt;Nome do Modelo\>***.smdl**.  
 
-10. 将文件 *&lt;Model Name\>***.smdl** 复制到 Configuration Manager 站点服务器上的文件夹 *%programfiles%*\Microsoft Configuration Manager \AdminConsole\XmlStorage\Other 中。  
+10. Copie o arquivo *&lt;Nome do Modelo\>***.smdl** para a pasta *%programfiles%*\Microsoft Configuration Manager \AdminConsole\XmlStorage\Other no servidor do site do Configuration Manager.  
 
     > [!IMPORTANT]  
-    >  将报表模型文件复制到 Configuration Manager 站点服务器之后，必须退出并重新启动 Configuration Manager 控制台，然后才能在“创建报表向导”中使用报表模型。  
+    >  Depois de copiar o arquivo do modelo de relatório para o servidor do site do Configuration Manager, saia e reinicie o console do Configuration Manager antes de usar o modelo de relatório no **Assistente para Criar Relatório**.  
 
-##  <a name="AdvancedReportModel"></a> 在 SQL Server Reporting Services 中创建高级报表模型的步骤  
- 可以使用以下过程创建一个高级报表模型，站点中的用户可使用该模型根据 Configuration Manager 数据库的多个视图中的数据来构建基于特定模型的报表。 你将创建一个报表模型，该报表模型向报表作者呈现有关客户端计算机以及这些计算机上安装的操作系统的信息。 该信息来自 Configuration Manager 数据库中的以下视图：  
+##  <a name="AdvancedReportModel"></a> Etapas para criar um modelo de relatório avançado no SQL Server Reporting Services  
+ É possível usar os seguintes procedimentos para criar um modelo de relatório avançado que os usuários em seu site poderão usar para criar relatórios baseados em modelos particulares, de acordo com os dados de várias exibições do banco de dados do Configuration Manager. Você cria um modelo de relatório que apresente as informações sobre os computadores cliente e o sistema operacional instalados nesses computadores ao autor do relatório. Essas informações foram retiradas das seguintes exibições no banco de dados do Configuration Manager:  
 
--   **V_R_System**：包含有关发现的计算机和 Configuration Manager 客户端的信息。  
+-   **V_R_System**: contém informações sobre os computadores descobertos e sobre o cliente do Configuration Manager.  
 
--   **V_GS_OPERATING_SYSTEM**：包含有关客户端计算机上所安装的操作系统的信息。  
+-   **V_GS_OPERATING_SYSTEM**: contém informações sobre o sistema operacional instalado no computador cliente.  
 
- 会将从前述视图中选择的项目合并为一个列表、为其指定友好名称，然后在报表生成器中呈现给报表作者以包括在特定报表中。  
+ Os itens selecionados nas exibições anteriores são consolidados em uma lista, recebem nomes amigáveis e são apresentados ao autor do relatório no Construtor de Relatórios para inclusão em determinados relatórios.  
 
- 在你执行这些过程的计算机上，确保已安装了 SQL Server Business Intelligence Development Studio，并且计算机已通过网络连接到 Reporting Services 点服务器。 有关 SQL Server Business Intelligence Development Studio 的详细信息，请参阅 SQL Server 文档。  
+ No computador em que você executa esses procedimentos, verifique se você instalou o SQL Server Business Intelligence Development Studio e se o computador tem conectividade de rede ao servidor do ponto do Reporting Services. Para obter informações detalhadas sobre o SQL Server Business Intelligence Development Studio, consulte a documentação do SQL Server.  
 
 #### <a name="to-create-the-report-model-project"></a>To create the report model project  
 
-1.  在桌面上，单击“开始” ，单击“Microsoft SQL Server 2008” ，然后单击“SQL Server Business Intelligence Development Studio” 。  
+1.  Na área de trabalho, clique em **Iniciar**, **Microsoft SQL Server 2008**e **SQL Server Business Intelligence Development Studio**.  
 
-2.  当“SQL Server Business Intelligence Development Studio”  在 Microsoft Visual Studio 中打开后，单击“文件” ，单击“新建” ，然后单击“项目” 。  
+2.  Após o **SQL Server Business Intelligence Development Studio** abrir no Microsoft Visual Studio, clique em **Arquivo**, **Novo**e **Projeto**.  
 
-3.  在“新建项目”  对话框的“模板”  列表中选择“报表模型项目”  。  
+3.  Na caixa de diálogo **Novo Projeto** , selecione **Projeto do Modelo de Relatório** na lista **Modelos** .  
 
-4.  在“名称”  框中，为此报表模型指定一个名称。 对于本例，请键入 **Advanced_Model**。  
+4.  Na caixa **Nome** , especifique um nome para esse modelo de relatório. Nesse exemplo, digite **Advanced_Model**.  
 
-5.  要创建报表模型项目，请单击“确定” 。  
+5.  Para criar o projeto de modelo de relatório, clique em **OK**.  
 
-6.  “Advanced_Model”  解决方案将显示在“解决方案资源管理器” 中。  
-
-    > [!NOTE]  
-    >  如果看不到“解决方案资源管理器”  窗格，请单击“视图” ，然后单击“解决方案资源管理器” 。  
-
-#### <a name="to-define-the-data-source-for-the-report-model"></a>为报表模型定义数据源  
-
-1.  在“SQL Server Business Intelligence Development Studio”  的“解决方案资源管理器” 窗格中，右键单击“数据源”  以选择“添加新数据源” 。  
-
-2.  在“欢迎使用数据源向导”  页上，单击“下一步” 。  
-
-3.  在“选择如何定义连接”  页上，验证是否选择了“基于现有连接或新连接创建数据源”  ，然后单击“新建” 。  
-
-4.  在“连接管理器”  对话框中，为数据源指定以下连接属性：  
-
-    -   **服务器名称**：键入 Configuration Manager 站点数据库服务器的名称，或在列表中选择该名称。 如果你使用的是命名的实例（而不是默认实例），请键入 &lt;数据库服务器>\\&lt;实例名称>。  
-
-    -   选择“使用 Windows 身份验证” 。  
-
-    -   在“选择或输入数据库名称”列表中，选择 Configuration Manager 站点数据库的名称。  
-
-5.  要验证数据库连接，请单击“测试连接” 。  
-
-6.  如果连接成功，请单击“确定”  关闭“连接管理器”  对话框。 如果连接未成功，请验证你输入的信息是否正确，然后再次单击“测试连接”  。  
-
-7.  在“选择如何定义连接”  页上，验证是否选择了“基于现有连接或新连接创建数据源”  ，验证你刚刚指定的数据源是否在“数据连接”  列表框中处于选定状态，然后单击“下一步” 。  
-
-8.  在“数据源名称” 中，为数据源指定一个名称，然后单击“完成” 。 对于本例，请键入 **Advanced_Model**。  
-
-9. 数据源“Advanced_Model.ds”  将显示在“解决方案资源管理器”  中的“数据源”  节点下。  
+6.  A solução **Advanced_Model** será exibida no **Gerenciador de Soluções**.  
 
     > [!NOTE]  
-    >  要编辑现有数据源的属性，请在“解决方案资源管理器”  窗格的“数据源”  文件夹中双击该数据源，以在数据源设计器中显示数据源属性。  
+    >  Se você não conseguir ver o painel **Gerenciador de Soluções** , clique em **Exibir**e em **Gerenciador de Soluções**.  
 
-#### <a name="to-define-the-data-source-view-for-the-report-model"></a>为报表模型定义数据源视图  
+#### <a name="to-define-the-data-source-for-the-report-model"></a>Para definir a fonte de dados para o modelo de relatório  
 
-1.  在“解决方案资源管理器” 中，右键单击“数据源视图”  以选择“添加新数据源视图” 。  
+1.  No painel **Gerenciador de Soluções** do **SQL Server Business Intelligence Development Studio**, clique com o botão direito do mouse em **Fontes de Dados** para selecionar **Adicionar Nova Fonte de Dados**.  
 
-2.  在“欢迎使用数据源视图向导”  页上，单击“下一步” 。 将显示“选择数据源”  页。  
+2.  Na página **Bem-vindo ao Assistente de Fonte de Dados** , clique em **Próximo**.  
 
-3.  在“关系数据源”  窗口中，验证“Advanced_Model”  数据源是否处于选定状态，然后单击“下一步” 。  
+3.  Na página **Selecione como definir a conexão** , verifique se a opção **Criar uma fonte de dados com base em uma conexão nova ou existente** está selecionada e clique em **Nova**.  
 
-4.  在“选择表和视图”  页上的“可用对象”  列表中选择要在报表模型中使用的以下视图：  
+4.  Na caixa de diálogo **Gerenciador de Conexões** , especifique as seguintes propriedades de conexão para a fonte de dados:  
+
+    -   **Nome do servidor**: digite o nome do seu servidor de banco de dados do site do Configuration Manager ou selecione-o na lista. Se você estiver trabalhando com uma instância nomeada em vez da instância padrão, digite &lt;*servidor de banco de dados*>\\&lt;*nome da instância*>.  
+
+    -   Selecione **Usar Autenticação do Windows**.  
+
+    -   Na lista **Selecionar ou digitar nome do banco de dados**, selecione o nome do banco de dados do site do Configuration Manager.  
+
+5.  Para verificar a conexão do banco de dados, clique em **Testar Conexão**.  
+
+6.  Se a conexão for bem-sucedida, clique em **OK** para fechar a caixa de diálogo **Gerenciador de Conexões** . Se a conexão não for bem-sucedida, verifique se as informações inseridas estão corretas e clique em **Testar Conexão** novamente.  
+
+7.  Na página **Selecione como definir a conexão** , verifique se a opção **Criar uma fonte de dados com base em uma conexão nova ou existente** está selecionada, verifique se a fonte de dados especificada está selecionada na caixa de listagem **Conexões de Dados** e clique em **Próximo**.  
+
+8.  Em **Nome da fonte de dados**, especifique um nome para a fonte de dados e clique em **Concluir**. Nesse exemplo, digite **Advanced_Model**.  
+
+9. A fonte de dados **Advanced_Model.ds** é exibida no **Gerenciador de Soluções** no nó **Fontes de Dados** .  
+
+    > [!NOTE]  
+    >  Para editar as propriedades de uma fonte de dados existente, clique duas vezes na fonte de dados na pasta **Fontes de Dados** do painel **Gerenciador de Soluções** para exibir as propriedades da fonte de dados no Designer de Fonte de Dados.  
+
+#### <a name="to-define-the-data-source-view-for-the-report-model"></a>Para definir a exibição da fonte de dados para o modelo de relatório  
+
+1.  No **Gerenciador de Soluções**, clique com o botão direito do mouse em **Exibições da Fonte de Dados** para selecionar **Adicionar Nova Exibição da Fonte de Dados**.  
+
+2.  Na página **Bem-vindo ao Assistente de Exibição da Fonte de Dados** , clique em **Próximo**. A página **Selecionar uma Fonte de Dados** é exibida.  
+
+3.  Na janela **Fontes de dados relacionais** , verifique se a fonte de dados **Advanced_Model** está selecionada e clique em **Próximo**.  
+
+4.  Na página **Selecionar Tabelas e Exibições** , selecione as seguintes exibições na lista **Objetos disponíveis** a ser usada no modelo de relatório:  
 
     -   **v_R_System (dbo)**  
 
     -   **v_GS_OPERATING_SYSTEM (dbo)**  
 
-     选择每个视图之后，单击“&gt;” **>** 以将对象传输到  。  
+     Depois de selecionar cada exibição, clique em **>** para transferir o objeto para a lista **Objetos incluídos** .  
 
     > [!TIP]  
-    >  为了帮助在“可用对象”  列表中找到视图，请单击列表顶部的“名称”  标题，按字母顺序对对象进行排序。  
+    >  Para ajudar a localizar exibições na lista **Objetos disponíveis** , clique no cabeçalho **Nome** na parte superior da lista para classificar os objetos em ordem alfabética.  
 
-5.  如果“名称匹配”  对话框出现，请接受默认选择，并单击“下一步” 。  
+5.  Se a caixa de diálogo **Correspondência de Nomes** for exibida, aceite as seleções padrão e clique em **Próximo**.  
 
-6.  选择了所需的对象后，单击“下一步” ，然后为数据源视图指定一个名称。 对于本例，请键入 **Advanced_Model**。  
+6.  Após selecionar os objetos desejados, clique em **Próximo**e especifique um nome para a exibição da fonte de dados. Nesse exemplo, digite **Advanced_Model**.  
 
-7.  单击 **“完成”**。 “Advanced_Model.dsv”  数据源视图将显示在“解决方案资源管理器”  的“数据源视图” 文件夹中。  
+7.  Clique em **Finalizar**. A exibição da fonte de dados **Advanced_Model.dsv** é exibida na pasta **Exibições da Fonte de Dados** do **Gerenciador de Soluções**.  
 
-#### <a name="to-define-relationships-in-the-data-source-view"></a>在数据源视图中定义关系  
+#### <a name="to-define-relationships-in-the-data-source-view"></a>Para definir relacionamentos na exibição da fonte de dados  
 
-1.  在“解决方案资源管理器” 中，双击“Advanced_Model.dsv”  以打开“设计”窗口。  
+1.  No **Gerenciador de Soluções**, clique duas vezes em **Advanced_Model.dsv** para abrir a janela Design.  
 
-2.  右键单击“v_R_System”  窗口的标题栏以选择“替换表” ，然后单击“使用新建命名查询” 。  
+2.  Clique com o botão direito do mouse na barra de título da janela **v_R_System** para selecionar **Substituir Tabela**e clique em **Nova Consulta Nomeada**.  
 
-3.  在“创建命名查询”  对话框中，单击“添加表”  图标（通常是功能区中的最后一个图标）。  
+3.  Na caixa de diálogo **Criar Consulta Nomeada** , clique no ícone **Adicionar Tabela** (geralmente o último ícone da faixa de opções).  
 
-4.  在“添加表”  对话框中，单击“视图”  选项卡，在列表中选择“V_GS_OPERATING_SYSTEM”  ，然后单击“添加” 。  
+4.  Na caixa de diálogo **Adicionar Tabela** , clique na guia **Exibições** , selecione **V_GS_OPERATING_SYSTEM** na lista e clique em **Adicionar**.  
 
-5.  单击“关闭”  以关闭“添加表”  对话框。  
+5.  Clique em **Fechar** para fechar a caixa de diálogo **Adicionar Tabela** .  
 
-6.  在“创建命名查询”  对话框中，指定以下信息：  
+6.  Na caixa de diálogo **Criar Consulta Nomeada** , especifique as seguintes informações:  
 
-    -   **名称** ：指定查询的名称。 对于本例，请键入 **Advanced_Model**。  
+    -   **Nome:** especifique o nome para a consulta. Nesse exemplo, digite **Advanced_Model**.  
 
-    -   **说明** ：指定查询的说明。 对于本例，请键入 **“示例 Reporting Services 报表模型”**。  
+    -   **Descrição:** especifique uma descrição para a consulta. Neste exemplo, digite **Exemplo de modelo de relatório do Reporting Services**.  
 
-7.  在“v_R_System”  窗口的对象列表中选择要在报表模型中显示的以下项目：  
+7.  Na janela **v_R_System** , selecione os seguintes itens na lista de objetos para que sejam exibidos no modelo de relatório:  
 
     -   **ResourceID**  
 
@@ -309,7 +309,7 @@ ms.lasthandoff: 08/07/2017
 
     -   **Operating_System_Name_and0**  
 
-8.  在“v_GS_OPERATING_SYSTEM”  框的对象列表中选择要在报表模型中显示的以下项目：  
+8.  Na caixa **v_GS_OPERATING_SYSTEM** , selecione os seguintes itens na lista de objetos para que sejam exibidos no modelo de relatório:  
 
     -   **ResourceID**  
 
@@ -333,79 +333,79 @@ ms.lasthandoff: 08/07/2017
 
     -   **WindowsDirectory0**  
 
-9. 要将这些视图中的对象以一个列表的形式呈现给报表作者，你必须通过使用联接在两个表或视图之间指定关系。 你可以使用两个视图中均出现的“ResourceID” 对象来联接两个视图。  
+9. Para apresentar os objetos dessas exibições como uma lista ao autor do relatório, é necessário especificar um relacionamento entre as duas tabelas ou exibições usando uma junção. Você pode juntar as duas exibições usando o objeto **ResourceID**, que aparece em ambas as exibições.  
 
-10. 在“v_R_System”  窗口中，单击并按住“ResourceID”  对象，并将其拖到“v_GS_OPERATING_SYSTEM”  窗口中的“ResourceID”  对象上。  
+10. Na janela **v_R_System** , clique e segure o objeto **ResourceID** e arraste-o para o objeto **ResourceID** na janela **v_GS_OPERATING_SYSTEM** .  
 
-11. 单击“确定”   
+11. Clique em **OK**  
 
-12. “Advanced_Model”  窗口将替换“v_R_System”  窗口，并为报表模型包括“v_R_System”  和“v_GS_OPERATING_SYSTEM”  视图中的所有必要的对象。 你现在可以从数据源视图设计器中删除“v_GS_OPERATING_SYSTEM”  窗口。 右键单击“v_GS_OPERATING_SYSTEM”  窗口的标题栏以选择“从 DSV 中删除表” 。 在“删除对象”  对话框中，单击“确定”  以确认删除。  
+12. A janela **Advanced_Model** substitui a janela **v_R_System** e contém todos os objetos necessários exigidos para o modelo de relatório nas exibições **v_R_System** e **v_GS_OPERATING_SYSTEM** . Agora você pode excluir a janela **v_GS_OPERATING_SYSTEM** do Designer de Exibição de Fonte de Dados. Clique com o botão direito do mouse na barra de título da janela **v_GS_OPERATING_SYSTEM** para selecionar a opção **Excluir Tabela de DSV**. Na caixa de diálogo **Excluir Objetos** , clique em **OK** para confirmar a exclusão.  
 
-13. 单击“文件” ，然后单击“全部保存” 。  
+13. Clique em **Arquivo**e em **Salvar Tudo**.  
 
 #### <a name="to-create-the-report-model"></a>To create the report model  
 
-1.  在“解决方案资源管理器” 中，右键单击“报表模型”  以选择“添加新报表模型” 。  
+1.  No **Gerenciador de Soluções**, clique com o botão direito do mouse em **Modelos de Relatório** para selecionar **Adicionar Novo Modelo de Relatório**.  
 
-2.  在“欢迎使用报表模型向导”  页上，单击“下一步” 。  
+2.  Na página **Bem-vindo ao Assistente de Modelos de Relatório** , clique em **Próximo**.  
 
-3.  在“选择数据源视图”  页上的“可用数据源视图”  列表中选择数据源视图，然后单击“下一步” 。 对于本例，请选择“Simple_Model.dsv” 。  
+3.  Na página **Selecionar Exibição da Fonte de Dados** , selecione a exibição da fonte de dados na lista **Exibições da fonte de dados disponíveis** e clique em **Próximo**. Para esse exemplo, selecione **Simple_Model.dsv**.  
 
-4.  在“选择报表模型生成规则”  页上，不要更改默认值，并单击“下一步” 。  
+4.  Na página **Selecione as regras de geração automática do modelo de relatório** , não altere os valores padrão e clique em **Próximo**.  
 
-5.  在“收集模型统计信息”  页上，验证是否选择了“在生成前更新模型统计信息”  ，然后单击“下一步” 。  
+5.  Na página **Coletar Estatísticas do Modelo** , verifique se a opção **Atualizar as estatísticas do modelo antes da geração automática** está selecionada e clique em **Próximo**.  
 
-6.  在“完成向导”  页上，为报表模型指定一个名称。 对于本例，请验证是否显示了“Advanced_Model”  。  
+6.  Na página **Concluindo o Assistente** , especifique um nome para o modelo de relatório. Para esse exemplo, verifique se **Advanced_Model** é exibida.  
 
-7.  要完成向导并创建报表模型，请单击“运行” 。  
+7.  Para concluir o assistente e criar o modelo de relatório, clique em **Executar**.  
 
-8.  要退出向导，请单击“完成” 。  
+8.  Para sair do assistente, clique em **Concluir**.  
 
-9. 报表模型将显示在“设计”窗口中。  
+9. O modelo de relatório é mostrado na janela Design.  
 
-#### <a name="to-modify-object-names-in-the-report-model"></a>修改报表模型中的对象名称  
+#### <a name="to-modify-object-names-in-the-report-model"></a>Para modificar nomes de objeto no modelo de relatório  
 
-1.  在“解决方案资源管理器” 中，右键单击报表模型以选择“视图设计器” 。 对于本例，请选择“Advanced_Model.smdl” 。  
+1.  No **Gerenciador de Soluções**, clique com o botão direito do mouse em um modelo de relatório para selecionar **Designer de Exibição**. Para esse exemplo, selecione **Advanced_Model.smdl**.  
 
-2.  在报表模型的“设计”视图中，右键单击任何对象名称以选择“重命名” 。  
+2.  Na exibição do design do modelo de relatório, clique com o botão direito do mouse em qualquer nome de objeto para selecionar **Renomear**.  
 
-3.  为所选对象键入新名称，然后按 Enter。 例如，你可以重命名对象“CSD_Version_0”  以显示“Windows Service Pack 版本” 。  
+3.  Digite um novo nome para o objeto selecionado e pressione Enter. Por exemplo, você pode renomear o objeto **CSD_Version_0** para que passe a ser **Versão do Service Pack do Windows**.  
 
-4.  完成重命名对象的操作后，单击“文件” ，然后单击“全部保存” 。  
+4.  Quando terminar de renomear objetos, clique em **Arquivo**e em **Salvar Tudo**.  
 
-#### <a name="to-publish-the-report-model-for-use-in-sql-server-reporting-services"></a>发布报表模型以在 SQL Server Reporting Services 中使用  
+#### <a name="to-publish-the-report-model-for-use-in-sql-server-reporting-services"></a>Para publicar o modelo de relatório para uso no SQL Server Reporting Services  
 
-1.  在“解决方案资源管理器” 中，右键单击“Advanced_Model.smdl”  以选择“部署” 。  
+1.  No **Gerenciador de Soluções**, clique com o botão direito do mouse em **Advanced_Model.smdl** para selecionar **Implantar**.  
 
-2.  在“SQL Server Business Intelligence Development Studio”  窗口的左下角检查部署状态。 部署完成后，将显示“部署已成功”  。 如果部署失败，失败原因将显示在“输出”  窗口中。 新报表模型现在可在 SQL Server Reporting Services 网站上找到。  
+2.  Examine o status da implantação no canto inferior esquerdo da janela do **SQL Server Business Intelligence Development Studio** . Quando a implantação for concluída, a mensagem **Implantação bem-sucedida** será exibida. Se a implantação falhar, o motivo da falha será exibido na janela **Saída** . O novo modelo de relatório estará disponível no seu site do SQL Server Reporting Services.  
 
-3.  单击“文件” ，单击“全部保存” ，然后关闭“SQL Server Business Intelligence Development Studio” 。  
+3.  Clique em **Arquivo**, **Salvar Tudo**e feche o **SQL Server Business Intelligence Development Studio**.  
 
 #### <a name="to-deploy-the-custom-report-model-to-configuration-manager"></a>To deploy the custom report model to Configuration Manager  
 
-1.  找到你在其中创建了报表模型项目的文件夹。 例如，%*USERPROFILE*%\Documents\Visual Studio 2008\Projects\\*&lt;项目名称\>。*  
+1.  Localize a pasta na qual você criou o projeto de modelo de relatório. Por exemplo, %*USERPROFILE*%\Documentos\Visual Studio 2008\Projetos\\*&lt;Nome do Projeto\>.*  
 
-2.  将以下文件从报表模型项目文件夹复制到计算机上的一个临时文件夹。  
+2.  Copie os seguintes arquivos da pasta do projeto de modelo de relatório para uma pasta temporária em seu computador:  
 
-    -   *&lt;Model Name\>* **.dsv**  
+    -   *&lt;Nome do Modelo\>* **.dsv**  
 
-    -   *&lt;Model Name\>* **.smdl**  
+    -   *&lt;Nome do Modelo\>* **.smdl**  
 
-3.  使用文本编辑器（例如记事本）打开前述文件。  
+3.  Abra os arquivos acima usando um editor de texto, como o Bloco de Notas.  
 
-4.  在文件 *&lt;Model Name\>***.dsv** 中，找到文件的第一行，其内容如下所示：  
+4.  No arquivo *&lt;Nome do Modelo\>***.dsv**, localize a primeira linha do arquivo, que é a seguinte:  
 
      **&lt;DataSourceView xmlns="http://schemas.microsoft.com/analysisservices/2003/engine"\>**  
 
-     编辑此行以使内容如下所示：  
+     Edite essa linha da seguinte forma:  
 
      **&lt;DataSourceView xmlns="http://schemas.microsoft.com/analysisservices/2003/engine" xmlns:xsi="RelationalDataSourceView"\>**  
 
-5.  将文件的整个内容复制到 Windows 剪贴板。  
+5.  Copie todo o conteúdo do arquivo na área de transferência do Windows.  
 
-6.  关闭文件 *&lt;Model Name\>***.dsv**。  
+6.  Feche o arquivo *&lt;Nome do Modelo\>***.dsv**.  
 
-7.  在文件 *&lt;Model Name\>***.smdl** 中，找到文件的最后三行，其内容如下所示：  
+7.  No arquivo *&lt;Nome do Modelo\>***.smdl**, localize as três últimas linhas do arquivo, que aparecem da seguinte maneira:  
 
      `</Entity>`  
 
@@ -413,11 +413,11 @@ ms.lasthandoff: 08/07/2017
 
      `</SemanticModel>`  
 
-8.  将文件 *&lt;Model Name\>***.dsv** 的内容直接粘贴在文件 (**&lt;SemanticModel\>**) 的最后一行之前。  
+8.  Cole o conteúdo do arquivo *&lt;Nome do Modelo\>***.dsv** diretamente antes da última linha do arquivo (**&lt;SemanticModel\>**).  
 
-9. 保存并关闭文件 *&lt;Model Name\>***.smdl**。  
+9. Salve e feche o arquivo *&lt;Nome do Modelo\>***.smdl**.  
 
-10. 将文件 *&lt;Model Name\>***.smdl** 复制到 Configuration Manager 站点服务器上的文件夹 *%programfiles%*\Microsoft Configuration Manager\AdminConsole\XmlStorage\Other 中。  
+10. Copie o arquivo *&lt;Nome do Modelo\>***.smdl** para a pasta *%programfiles%*\Microsoft Configuration Manager\AdminConsole\XmlStorage\Other no servidor do site do Configuration Manager.  
 
     > [!IMPORTANT]  
-    >  将报表模型文件复制到 Configuration Manager 站点服务器之后，必须退出并重新启动 Configuration Manager 控制台，然后才能在“创建报表向导”中使用报表模型。  
+    >  Depois de copiar o arquivo do modelo de relatório para o servidor do site do Configuration Manager, saia e reinicie o console do Configuration Manager antes de usar o modelo de relatório no **Assistente para Criar Relatório**.  

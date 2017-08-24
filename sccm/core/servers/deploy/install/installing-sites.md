@@ -1,6 +1,6 @@
 ---
-title: "站点安装资源 | Microsoft Docs"
-description: "查看列表中的各主题有助于安装 System Center Configuration Manager，或将站点添加到层次结构。"
+title: "Recursos de instalação do site | Microsoft Docs"
+description: "Examine uma lista de tópicos que ajudarão a instalar o System Center Configuration Manager ou adicionar sites à sua hierarquia."
 ms.custom: na
 ms.date: 1/3/2017
 ms.prod: configuration-manager
@@ -18,35 +18,35 @@ manager: angrobe
 ms.openlocfilehash: 75511c744d7d2bae960273c845ce68f06a82b697
 ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
 ms.translationtype: HT
-ms.contentlocale: zh-CN
+ms.contentlocale: pt-BR
 ms.lasthandoff: 08/07/2017
 ---
-# <a name="resources-for-installing-system-center-configuration-manager-sites"></a>用于安装 System Center Configuration Manager 站点的资源
+# <a name="resources-for-installing-system-center-configuration-manager-sites"></a>Recursos para instalar sites do System Center Configuration Manager
 
-*适用范围：System Center Configuration Manager (Current Branch)*
+*Aplica-se a: System Center Configuration Manager (Branch Atual)*
 
-以下主题有助于安装 System Center Configuration Manager，或将站点添加到现有 Configuration Manager 层次结构。
+Os tópicos a seguir podem ajudá-lo a instalar o System Center Configuration Manager ou adicionar sites a hierarquia do Configuration Manager existente.
 
-- [安装站点的准备工作](prepare-to-install-sites.md)
+- [Preparar para instalar sites](prepare-to-install-sites.md)
 
-  本主题提供了有助于将站点安装到新的或现有层次结构的重要信息。 这些信息包括何时选择非默认源文件、应用于所有站点的限制，以及安装多个站点时可采用的有助于简化任务的可选操作。
+  Esse tópico oferece informações essenciais que podem ajudá-lo a instalar um site em uma hierarquia nova ou existente. As informações incluem quando escolher arquivos de origem não padrão, limitações que se aplicam a todos os sites e ações opcionais que você pode tomar para ajudar a simplificar suas tarefas ao instalar mais de um site.
 
-- [安装站点的先决条件](prerequisites-for-installing-sites.md)
+- [Pré-requisitos para instalar sites](prerequisites-for-installing-sites.md)
 
-  了解安装站点时帐户必须具备的用户权限，以及可安装的每种站点类型的相关先决条件。
+  Saiba mais sobre os direitos de usuário e as permissões que sua conta deve ter para instalar um site e os pré-requisitos relacionados para cada tipo de site que você pode instalar.
 
-- [使用安装向导安装站点](use-the-setup-wizard-to-install-sites.md)
+- [Instalar sites usando o Assistente de Instalação](use-the-setup-wizard-to-install-sites.md)
 
-  本主题将介绍站点安装向导。 提供有关在向导用户界面中可能未解释清楚的选项的详细信息。  
+  Este tópico explica passo a passo o assistente de instalação de site. Ele fornece detalhes sobre as opções que podem não estar claras na interface do usuário do assistente.  
 
-- [使用命令行和脚本安装站点](use-a-command-line-to-install-sites.md)
+- [Instalar sites usando uma linha de comando e scripts](use-a-command-line-to-install-sites.md)
 
-  了解如何获取站点安装脚本，以及如何将其用于无人参与的站点安装。
+  Saiba como obter um script de instalação de site e como usá-lo para instalações autônomas de site.
 
-- [安装 Configuration Manager 控制台](install-consoles.md)
+- [Instalar o console do Configuration Manager](install-consoles.md)
 
-  本主题指导用户如何在未安装站点的计算机上安装 Configuration Manager 控制台。
+  Este tópico tem diretrizes de como instalar o console do Configuration Manager em um computador em que você não está instalando um site.
 
-- [将评估版安装升级为完整版安装](upgrade-an-evaluation-install-to-a-full-install.md)
+- [Atualizar uma instalação de avaliação para instalação completa](upgrade-an-evaluation-install-to-a-full-install.md)
 
-  如果已准备好将评估站点升级到获得完整许可的 Configuration Manager 站点，请阅读本主题。
+  Leia este tópico quando estiver pronto para atualizar seu site de avaliação para um site totalmente licenciado do Configuration Manager.

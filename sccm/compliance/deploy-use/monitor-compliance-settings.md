@@ -1,6 +1,6 @@
 ---
-title: "监视符合性设置 | Microsoft Docs"
-description: "使用本主题中的一个或多个过程可显示配置基线的符合性状态。"
+title: "Monitorar as configurações de conformidade | Microsoft Docs"
+description: "Use um ou mais dos procedimentos deste tópico para exibir o status de conformidade da linha de base de configuração."
 ms.custom: na
 ms.date: 10/06/2016
 ms.prod: configuration-manager
@@ -18,94 +18,94 @@ manager: angrobe
 ms.openlocfilehash: 75cd7e811262633d81d978265f21ec7ed3b61a58
 ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
 ms.translationtype: HT
-ms.contentlocale: zh-CN
+ms.contentlocale: pt-BR
 ms.lasthandoff: 08/07/2017
 ---
-# <a name="monitor-compliance-settings-in-system-center-configuration-manager"></a>在 System Center Configuration Manager 中监视符合性设置
+# <a name="monitor-compliance-settings-in-system-center-configuration-manager"></a>Monitorar as configurações de conformidade no System Center Configuration Manager
 
-*适用范围：System Center Configuration Manager (Current Branch)*
+*Aplica-se a: System Center Configuration Manager (Branch Atual)*
 
-在向层次结构中的设备部署 System Center Configuration Manager 配置基线后，你可以使用本主题中的一个或多个过程来显示配置基线的符合性状态：
+Depois de as implantar linhas de base de configuração do System Center Configuration Manager em dispositivos na sua hierarquia, você pode usar um ou mais dos procedimentos deste tópico para exibir o status de conformidade da linha de base de configuração:
 
 > [!NOTE]  
->  符合性设置报表中的验证条件字段（客户端报表的等价内容是“约束” ）显示基础服务建模语言 (SML)。 如果在 Configuration Manager 控制台中创作配置项目的管理员不具备 SML 的相关知识，则难以了解验证条件是什么。 在这种情况下，使用 Configuration Manager 控制台中的“监视”工作区来查看配置项目的属性及其验证条件。  
+>  Os campos de critérios de validação nos relatórios de configurações de conformidade (o equivalente no relatório do lado do cliente é **Restrições**) exibem o SML subjacente (Service Modeling Language). Isso pode dificultar para os administradores que criaram o item de configuração no console do Configuration Manager entenderem quais são os critérios de validação, caso não tenham conhecimento do SML. Nesse caso, use o espaço de trabalho **Monitoramento** do console do Configuration Manager para exibir as propriedades do item de configuração e seus critérios de validação.  
 
-##  <a name="view-compliance-results-in-the-configuration-manager-console"></a>在 Configuration Manager 控制台中查看符合性结果  
- 使用此过程在 Configuration Manager 控制台中查看有关所部署配置基线的符合性的详细信息。  
+##  <a name="view-compliance-results-in-the-configuration-manager-console"></a>Exibir resultados de conformidade no console do Configuration Manager  
+ Use este procedimento para exibir detalhes sobre a conformidade das linhas de base de configuração implantadas no console do Configuration Manager.  
 
-### <a name="view-compliance-results-in-the-configuration-manager-console"></a>在 Configuration Manager 控制台中查看符合性结果  
+### <a name="view-compliance-results-in-the-configuration-manager-console"></a>Exibir resultados de conformidade no console do Configuration Manager  
 
-1.  在 Configuration Manager 控制台中，单击“监视” > “部署”。  
+1.  No console do Configuration Manager, clique em **Monitoramento** > **Implantações**.  
 
-3.  在“部署”  列表中，选择要查看其符合性信息的配置基线部署。  
+3.  Na lista **Implantações** , selecione a implantação de linha de base de configuração da qual deseja examinar as informações de conformidade.  
 
-4.  可以在主页上查看有关配置基线部署符合性的摘要信息。 若要查看更详细的信息，请选择配置基线部署，然后在“主页”  选项卡上的“部署”  组中，单击“查看状态”  以打开“部署状态”  页。  
+4.  Você pode examinar as informações de resumo sobre a conformidade da implantação da linha de base de configuração na página principal. Para exibir informações mais detalhadas, selecione a implantação de linha de base de configuração e, na guia **Início** , no grupo **Implantação** , clique em **Exibir Status** para abrir a página **Status da Implantação** .  
 
-     “部署状态”  页包含下列选项卡：  
+     A página **Status da Implantação** contém as seguintes guias:  
 
-    -   **符合**：显示基于受影响资产数量的配置基线符合性。 你可以单击规则以在“资产和符合性”  工作区中的“用户”  或“设备”  节点下创建一个临时节点，其中包含符合此规则的所有用户或设备。 “资产详细信息”  窗格显示符合配置基线的用户或设备。 双击列表中的用户或设备以显示其他信息。  
+    -   **Compatível**: exibe a conformidade da linha de base de configuração com base no número de ativos afetados. É possível clicar em uma regra para criar um nó temporário no nó **Usuários** ou **Dispositivos** que estão localizados no espaço de trabalho **Ativos e Conformidade** , que contém todos os usuários ou dispositivos que são compatíveis com esta regra. O painel **Detalhes do Ativo** exibe os usuários e os dispositivos compatíveis com a linha de base de configuração. Clique duas vezes em um usuário dispositivo na lista para exibir informações adicionais.  
 
         > [!IMPORTANT]  
-        >  如果未检测到配置项目规则或该规则在客户端设备上不适用，则不会评估配置项目规则，但是该规则返回的状态为符合。  
+        >  Uma regra de item de configuração não será avaliada se não for detectada nem aplicável em um dispositivo cliente; no entanto, será retornada como compatível.  
 
-    -   **错误**：显示基于受影响资产数量的所选配置基线部署的所有错误的列表。 你可以单击规则以在  “资产和符合性”  工作区的“用户”或“设备”  节点下创建一个临时节点，其中包含对于此规则生成了错误的所有用户或设备。 当你选择某个用户或设备时，“资产详细信息”  窗格将显示受所选问题影响的用户或设备。 双击列表中的用户或设备以显示有关问题的其他信息。  
+    -   **Erro**: exibe uma lista de todos os erros da implantação da linha de base de configuração selecionada com base no número de ativos afetados. É possível clicar em uma regra para criar um nó temporário no nó **Usuários** ou **Dispositivos** do espaço de trabalho **Ativos e Conformidade** , que contém todos os usuários ou dispositivos que geraram erros com esta regra. Ao selecionar um usuário ou dispositivo, o painel **Detalhes do Ativo** exibe os usuários ou os dispositivos afetados pelo problema selecionado. Clique duas vezes em um usuário ou dispositivo na lista para exibir informações adicionais sobre o problema.  
 
-    -   **不符合**：显示基于受影响资产数量的配置基线内所有不符合规则的列表。 你可以单击规则以在“资产和符合性”  工作区的“用户”  或“设备”  节点下创建一个临时节点，其中包含不符合此规则的所有用户或设备。 当你选择某个用户或设备时，“资产详细信息”  窗格将显示受所选问题影响的用户或设备。 双击列表中的用户或设备以显示有关问题的进一步信息。  
+    -   **Não Compatível**: exibe uma lista de todas as regras não compatíveis na linha de base de configuração com base no número de ativos afetados. É possível clicar em uma regra para criar um nó temporário no nó **Usuários** ou **Dispositivos** do espaço de trabalho **Ativos e Conformidade** , que contém todos os usuários ou dispositivos que não são compatíveis com esta regra. Ao selecionar um usuário ou dispositivo, o painel **Detalhes do Ativo** exibe os usuários ou os dispositivos afetados pelo problema selecionado. Clique duas vezes em um usuário ou dispositivo na lista para exibir informações adicionais sobre o problema.  
 
-    -   **未知**：显示没有为所选配置基线部署报告符合性的所有用户和设备的列表，以及设备的当前客户端状态。  
+    -   **Desconhecido**: exibe uma lista de todos os usuários e dispositivos que não relataram a conformidade para a implantação da linha de base de configuração selecionada, junto com o status atual do cliente dos dispositivos.  
 
-5.  在“部署状态”  页上，你可以查看有关所部署配置基线的符合性的详细信息。 将在“部署”  节点下创建一个临时节点，该节点可帮助你快速再次找到此信息。  
+5.  Na página **Status da Implantação** , você pode examinar informações detalhadas sobre a conformidade da linha de base de configuração implantada. Um nó temporário é criado no nó **Implantações** , que ajuda você a localizar essas informações novamente com rapidez.  
 
-##  <a name="view-compliance-results-by-using-reports"></a>使用报表来查看符合性结果  
- Configuration Manager 中的符合性设置包括大量内置报表，可让你监视有关配置项目、配置基线和部署的信息。 这些报表的报表类别为“符合性和设置管理” 。  
+##  <a name="view-compliance-results-by-using-reports"></a>Exibir resultados de conformidade por meio de relatórios  
+ As configurações de conformidade no Configuration Manager incluem diversos relatórios internos que permitem monitorar informações sobre itens de configuração, linhas de base de configuração e implantações. Esses relatórios têm a categoria de relatório de **Gerenciamento de Conformidade e Configurações**.  
 
 > [!IMPORTANT]  
->  在符合性设置报表中使用参数“设备筛选器”**%****和“用户筛选器”时，你必须使用通配符 (** ) 字符。  
+>  Você deverá usar um caractere curinga (**%**) ao usar os parâmetros **Filtro de dispositivo** e Filtro de usuário nos relatórios de configurações de conformidade.  
 
- 有关如何在 Configuration Manager 中配置报表的详细信息，请参阅 [System Center Configuration Manager 中的报表](../../core/servers/manage/reporting.md)  
+ Para obter mais informações sobre como configurar relatórios no Configuration Manager, consulte [Relatórios no System Center Configuration Manager](../../core/servers/manage/reporting.md)  
 
-##  <a name="view-compliance-results-on-a-configuration-manager-windows-client-computer"></a>在 Configuration Manager Windows 客户端计算机上查看符合性结果
+##  <a name="view-compliance-results-on-a-configuration-manager-windows-client-computer"></a>Para exibir os resultados de conformidade em um computador cliente Windows do Configuration Manager
 
 > [!NOTE]  
->  如果使用域来宾帐户登录，则不能在 Configuration Manager Windows 客户端中查看信息。    
+>  Não será possível exibir informações sobre o cliente Windows do Configuration Manager se você estiver conectado com uma conta de domínio Convidado.    
 
-1.  导航到客户端计算机控制面板中的“Configuration Manager”  ，然后双击它以打开其属性。  
+1.  Navegue até **Configuration Manager** no Painel de Controle do computador cliente e clique duas vezes para abrir suas propriedades.  
 
-2.  单击“配置”  选项卡，然后查看部署的配置基线列表。  
+2.  Clique na guia **Configurações** e exiba a lista de linhas de base de configuração implantadas.  
 
-3.  查看每个配置基线的“符合性状态”  ：  
+3.  Exibir o **Estado de Conformidade** para cada linha de base de configuração:  
 
     > [!IMPORTANT]  
-    >  评估结果将在客户端上缓存 15 分钟。 如果你在 15 分钟内启动重新评估，则将从此缓存而不是新评估中返回符合性结果。 因此，如果您在客户端上进行了可能影响符合性评估结果的更改，则在启动重新评估之前请等待 15 分钟。  
+    >  Os resultados da avaliação são armazenados em cache por 15 minutos. Se você iniciar uma reavaliação no período de 15 minutos, os resultados de conformidade serão retornados desse cache em vez de uma nova avaliação. Portanto, se você fizer uma alteração no cliente que possa afetar os resultados da avaliação de conformidade, aguarde 15 minutos antes de iniciar uma reavaliação.  
 
-    -   **符合**：客户端计算机符合评估的配置基线。  
+    -   **Compatível**: o computador cliente está em conformidade com a linha de base de configuração avaliada.  
 
-    -   **不符合**：客户端计算机不符合评估的配置基线。  
+    -   **Não Compatível**: o computador cliente não está em conformidade com a linha de base de configuração avaliada.  
 
-    -   **未知**：客户端计算机尚未评估配置基线。 如果想要启动符合性评估计划以外的评估，请选择要评估的配置基线，然后单击“评估” 。  
+    -   **Desconhecido**: o computador cliente ainda não avaliou a linha de base de configuração. Se deseja iniciar a avaliação fora do agendamento de avaliação de conformidade, selecione as linhas de base de configuração a ser avaliadas e clique em **Avaliar**.  
 
         > [!NOTE]  
-        >  如果你具有客户端计算机的本地管理员证书，则可以查看每个已评估配置基线的详细信息，以确定报告了不符合状态的配置项目。 为此，请选择配置基线，然后单击“查看报表” 。  
+        >  Se você tiver credenciais de administrador local no computador cliente, é possível exibir detalhes de cada linha de base de configuração avaliada para determinar qual item de configuração está relatando um status não compatível. Para fazer isso, selecione a linha de base de configuração e clique em **Exibir Relatório**.  
 
-4.  单击" **确定**"。  
+4.  Clique em **OK**.  
 
-##  <a name="create-collections-based-on-configuration-baseline-compliance"></a>根据配置基线符合性创建集合  
- 使用以下过程，根据具有指定符合性的设备创建 Configuration Manager 集合。 你可以基于以下符合性状态创建集合：  
+##  <a name="create-collections-based-on-configuration-baseline-compliance"></a>Criar coleções baseadas na conformidade da linha de base de configuração  
+ Use o procedimento a seguir para criar uma coleção do Configuration Manager com base em dispositivos com uma conformidade especificada. É possível criar coleções com base nos seguintes estados de conformidade:  
 
--   **符合**  
+-   **Compatível**  
 
--   **错误**  
+-   **Erro**  
 
 -   **Non-compliant**  
 
--   **未知**  
+-   **Desconhecida**  
 
-1.  在 Configuration Manager 控制台中，单击“资产和符合性” > “符合性设置” > “配置基线”。  
+1.  No console do Configuration Manager, clique em **Ativos e Conformidade** > **Configurações de Conformidade** > **Linhas de Base de Configuração**.  
 
-3.  在“配置基线”  列表中，选择要基于其创建集合的配置基线。  
+3.  Na lista **Linhas de Base de Configuração** , selecione a linha de base por meio da qual você deseja criar uma coleção.  
 
-4.  在“部署”  选项卡上的“部署组” 中，单击“创建新集合”  ，然后在下拉列表中选择要为其创建集合的符合性级别。  
+4.  Na guia **Implantação** , no **Grupo de Implantação**, clique em **Criar Nova Coleção** e, na lista suspensa, selecione o nível de conformidade para o qual deseja criar uma coleção.  
 
-5.  “创建用户集合向导”  或“创建设备集合向导”  将打开，具体取决于是向用户还是设备部署了配置项目。 该向导自动填充正确的值以创建集合；但是，你可以编辑这些值。  
+5.  O **Assistente para Criar Coleção de Usuários** ou o **Assistente para Criar Coleção de Dispositivos** é aberto, dependendo se o item de configuração foi implantado em usuários ou dispositivos. O assistente é populado automaticamente com os valores corretos para criar a coleção; no entanto, é possível editar esses valores.  
 
-6.  完成向导后，该集合显示在“资产和符合性”  工作区中的“用户集合”  或“设备集合”  节点下。  
+6.  Depois de concluir o assistente, a coleção é exibida no nó **Coleções de Usuários** ou **Coleções de Dispositivos** do espaço de trabalho **Ativos e Conformidade** .  

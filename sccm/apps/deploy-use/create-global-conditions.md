@@ -1,6 +1,6 @@
 ---
-title: "创建全局条件 | Microsoft Docs"
-description: "创建全局条件以指定提供应用程序并部署到客户端设备的方式。"
+title: "Criar condições globais | Microsoft Docs"
+description: "Crie condições globais para especificar como um aplicativo é fornecido e implantado em dispositivos cliente."
 ms.custom: na
 ms.date: 10/06/2016
 ms.prod: configuration-manager
@@ -18,197 +18,197 @@ manager: angrobe
 ms.openlocfilehash: 8a59a1769eec4cd6d78d7686a1d8008e832dd924
 ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
 ms.translationtype: HT
-ms.contentlocale: zh-CN
+ms.contentlocale: pt-BR
 ms.lasthandoff: 08/07/2017
 ---
-# <a name="how-to-create-global-conditions-in-system-center-configuration-manager"></a>如何在 System Center Configuration Manager 中创建全局条件
+# <a name="how-to-create-global-conditions-in-system-center-configuration-manager"></a>Como criar condições globais no System Center Configuration Manager
 
-*适用范围：System Center Configuration Manager (Current Branch)*
+*Aplica-se a: System Center Configuration Manager (Branch Atual)*
 
-在 System Center Configuration Manager 中，全局条件是表示业务或技术条件的规则，你可以使用这些条件指定向客户端设备提供和部署应用程序的方式。 可以从创建部署类型向导的“要求”  页中访问全局条件。  
+No System Center Configuration Manager, as condições globais são as regras que representam condições técnicas ou de negócios que você pode usar para especificar como um aplicativo é fornecido e implantado nos dispositivos de clientes. As condições globais são acessadas na página **Requisitos** do Assistente para Criar Tipo de Implantação.  
 
 > [!NOTE]  
->  只能从创建全局条件的站点编辑全局条件。  
+>  Você pode editar condições globais somente do site em que elas foram criadas.  
 
- 使用以下过程来创建 Configuration Manager 全局条件。  
+ Use os procedimentos a seguir para criar condições globais do Configuration Manager.  
 
-## <a name="provide-basic-information-about-the-global-condition"></a>提供有关全局条件的基本信息  
- 可以使用几种不同类型的全局条件。 不同的选项与不同的全局条件类型相关联。 选择特定全局条件类型时，Configuration Manager 会显示适用于所选类型的选项。  
+## <a name="provide-basic-information-about-the-global-condition"></a>Fornecer informações básicas sobre a condição global  
+ Vários tipos diferentes de condições globais estão disponíveis. Opções diferentes estão associadas aos tipos diferentes de condição global. Quando você seleciona um tipo de condição global específico, o Configuration Manager mostra as opções que se aplicam à sua seleção.  
 
-1.  在 Configuration Manager 控制台中，选择“软件库” > “应用程序管理” > “全局条件”。  
+1.  No console do Configuration Manager, escolha **Biblioteca de Software** > **Gerenciamento de Aplicativos** > **Condições Globais**.  
 
-3.  在“主页”选项卡上的“创建”组中，选择“创建全局条件”。  
+3.  Na guia **Início**, no grupo **Criar**, escolha **Criar Condição Global**.  
 
-4.  在“创建全局条件”  对话框中，为全局条件提供名称和可选描述。  
+4.  Na caixa de diálogo **Criar Condição Global** , forneça um nome e uma descrição opcional para a condição global.  
 
-5.  在“设备类型”下拉列表中，选择全局条件是用于“Windows”计算机还是“Windows Mobile”设备。  
+5.  Na lista suspensa **Tipo de dispositivo**, escolha se a condição global destina-se a um computador **Windows** ou um dispositivo **Windows Mobile**.  
 
-6.  在“条件类型”  下拉列表中选择以下选项之一：  
+6.  Na lista suspensa **Tipo de Condição** , escolha uma das seguintes opções:  
 
-    -   **设置** – 此选项检查客户端设备上是否存在一个或多个项。 例如，可以检查客户端设备上是否存在文件、文件夹或注册表项值。  
+    -   **Configuração** – Esta opção verifica a existência de um ou mais itens nos dispositivos cliente. Por exemplo, você pode verificar se um arquivo, pasta ou valor de chave do Registro existe em um dispositivo cliente.  
 
-    -   **表达式** - 此选项允许设置更复杂的规则以检查客户端设备是否满足条件。 例如，可以检查计算机上的物理内存是否介于 2 GB 和 4 GB 之间，或者检查移动设备是否使用触摸屏输入。  
+    -   **Expressão** – Esta opção permite configurar regras mais complexas para verificar se a condição é atendida nos dispositivos cliente. Por exemplo, você pode verificar se a memória física em um computador está entre 2 GB e 4 GB ou se um dispositivo móvel usa entrada por tela sensível ao toque.  
 
-## <a name="set-up-rules-for-the-global-condition"></a>为全局条件设置规则  
- 定义全局条件规则的过程有所不同，具体取决于是要配置设置还是表达式。 使用本文中合适的过程为全局条件配置设置或表达式。  
+## <a name="set-up-rules-for-the-global-condition"></a>Configurar regras para a condição global  
+ O procedimento para definir as regras da condição global é diferente dependendo se você está definindo uma configuração ou uma expressão. Use o procedimento aplicável aqui para configurar uma configuração ou uma expressão para a condição global.  
 
-### <a name="to-set-up-a-setting-for-the-global-condition"></a>为全局条件配置设置  
+### <a name="to-set-up-a-setting-for-the-global-condition"></a>Para configurar a condição global  
 
-1.  在“条件类型”  下拉列表中选择“设置” 。  
+1.  Na lista suspensa **Tipo de Condição** , escolha **Configuração**.  
 
-2.  在“设置类型”  下拉列表中，选择要用作将对其检查要求的条件的项。 可以使用下列设置类型和配置。  
+2.  Na lista suspensa **Tipo de configuração** , escolha o item a ser usado como condição para os quais os requisitos serão verificados. Os seguintes tipos de configuração e definição estão disponíveis.  
 
-    -   **Active Directory 查询**  
+    -   **Consulta ao Active Directory**  
 
-        -   **LDAP 前缀** - 指定 Active Directory 域服务查询的有效 LDAP 前缀以评估客户端计算机上的符合性。 可以使用 **LDAP://** 或 **GC://**。  
+        -   **Prefixo LDAP** - Especifique um prefixo LDAP válido para a consulta aos Serviços de Domínio Active Directory para avaliar a conformidade nos computadores cliente. Você pode usar **LDAP://** ou **GC://**.  
 
-        -   **可分辨名称 (DN)** - 指定 Active Directory 域服务对象的可分辨名称，将评估此对象以确定客户端计算机的符合性。  
+        -   **DN (nome diferenciado)** – Especifique o nome diferenciado do objeto do Active Directory Domain Services que será avaliado quanto à conformidade nos computadores cliente.  
 
-        -   **搜索筛选器** - 指定可选的 LDAP 筛选器以优化 Active Directory 域服务查询的结果，从而评估客户端计算机上的符合性。  
+        -   **Filtro de pesquisa** - Especifique um filtro LDAP opcional para refinar os resultados da consulta aos Serviços de Domínio Active Directory para avaliar a conformidade nos computadores cliente.  
 
-        -   **搜索作用域** - 指定 Active Directory 域服务中的搜索作用域：  
+        -   **Escopo de pesquisa** - Especifique o escopo de pesquisa nos Serviços de Domínio Active Directory:  
 
-            -   **基本** - 仅查询指定的对象。  
+            -   **Base** – Consulta apenas o objeto especificado.  
 
-            -   **一级** - 此版本的 Configuration Manager 中不使用此选项。  
+            -   **Um Nível** – Esta opção não é usada nesta versão do Configuration Manager.  
 
-            -   **子树** - 在目录中查询指定的对象及其完整的子树。  
+            -   **Subárvore** – Consulta o objeto especificado e sua subárvore completa no diretório.  
 
-        -   **属性** - 指定将用于评估客户端计算机上的符合性的 Active Directory 域服务对象属性。  
+        -   **Propriedade** - Especifica a propriedade do objeto de Serviços de Domínio Active Directory que serão usados para avaliar a conformidade nos computadores cliente.  
 
-        -   **查询** - 显示从“LDAP 前缀”、“可分辨名称 (DN)”、“搜索筛选器”（如果已指定）和“属性”中的条目构造的 LDAP 查询。 此查询将用于评估客户端计算机上的符合性。  
+        -   **Consulta** – Mostra a consulta LDAP que foi construída com base nas entradas no **Prefixo LDAP**, **DN (nome diferenciado)**, **Filtro de Pesquisa**, se especificado, e **Propriedade**. Essa consulta será usada para avaliar a conformidade em computadores cliente.  
 
-    -   **程序集**  
+    -   **Assembly**  
 
-        -   **程序集名称** - 指定要搜索的程序集对象的名称。 此名称不能与相同类型的任何其他程序集对象的名称相同，且必须在全局程序集缓存中注册。 程序集名称长度最多可包含 256 个字符。  
+        -   **Nome do assembly** - Especifica o nome do objeto de assembly a ser pesquisado. O nome não pode ser o mesmo de outro objeto de assembly do mesmo tipo e deve ser registrado no Cache de Assembly Global. O nome do assembly pode ter um máximo de 256 caracteres.  
 
         > [!NOTE]  
-        >  程序集是可在应用程序之间共享的一段代码。 程序集的文件扩展名可以是 .dll 或 .exe。 全局程序集缓存是客户端计算机上名为 *%systemroot%\assembly* 的文件夹，其中存储了所有共享程序集。  
+        >  Um assembly é um trecho de código que pode ser compartilhado entre aplicativos. Os assemblies podem ter a extensão de nome de arquivo .dll ou .exe. O Cache de assembly global é uma pasta chamada *%systemroot%\assembly* em computadores cliente em que todos os assemblies compartilhados são armazenados.  
 
-    -   **文件系统**  
+    -   **Sistema de arquivos**  
 
-        -   **类型** – 从下拉列表中，选择是要搜索“文件”还是“文件夹”。  
+        -   **Tipo** – Na lista suspensa, escolha se você deseja pesquisar um **Arquivo** ou uma **Pasta**.  
 
-        -   **路径** - 指定客户端计算机上指定文件或文件夹的路径。 你可以在路径中指定系统环境变量和 *%USERPROFILE%* 环境变量。  
-
-            > [!NOTE]  
-            >  如果你使用“路径”  或“文件或文件夹名称”  字段中的环境变量 **%USERPROFILE%** ，将搜索客户端计算机上的所有用户配置文件。 这可能导致发现文件或文件夹的多个实例。  
-
-        -   **文件或文件夹名称** - 指定将搜索的文件或文件夹对象的名称。 你可以在文件或文件夹名称中指定系统环境变量和 *%USERPROFILE%* 环境变量。 还可以在文件名中 使用 * 和 ? 通配符。  
+        -   **Caminho** - Especifique os caminho para o arquivo ou a pasta especificada em computadores cliente. Você pode especificar variáveis de ambiente do sistema e a variável de ambiente *%USERPROFILE%* no caminho.  
 
             > [!NOTE]  
-            >  如果指定文件或文件夹名称并使用通配符，则可能会产生大量的结果。 这可能会导致客户端计算机上资源使用率高，在将结果报告给 Configuration Manager 时还可能导致高网络流量。  
+            >  Se você usar a variável de ambiente *%USERPROFILE%* nos campos **Caminho** ou **Nome do arquivo ou pasta** , todos os perfis de usuário no computador cliente serão pesquisados. Isso pode resultar na detecção de várias instâncias do arquivo ou pasta.  
 
-        -   **包括子文件夹** – 如果也要搜索指定路径下面的任何子文件夹，请启用此选项。  
-
-        -   **此文件或文件夹与 64 位应用程序关联** - 选择是否在运行 64 位版本 Windows 的Configuration Manager 客户端上除了搜索 32 位系统文件位置 (%windir%\syswow64) 之外还要搜索 64 位系统文件位置 (%windir%\system32)。  
+        -   **Nome do arquivo ou pasta** - Especifique o nome do objeto do arquivo ou pasta que será pesquisado. Você pode especificar variáveis de ambiente do sistema e a variável de ambiente *%USERPROFILE%* no nome do arquivo ou da pasta. Você também pode usar os caracteres curinga * e ? no nome do arquivo.  
 
             > [!NOTE]  
-            >  如果在同一 64 位计算机上的 64 位和 32 位系统文件位置中存在相同的文件或文件夹，则全局条件将发现多个文件。  
+            >  Se você especificar um nome de arquivo ou pasta e usar caracteres curinga, isso poderá gerar um alto número de resultados. Isso pode resultar em um alto uso de recursos no computador cliente e um alto tráfego de rede ao relatar os resultados para o Configuration Manager.  
 
-         “文件系统”  设置类型不支持在“路径”  字段中指定网络共享的 UNC 路径。  
+        -   **Incluir subpastas** – Habilite esta opção se também desejar pesquisar quaisquer subpastas no caminho especificado.  
 
-    -   **IIS 元数据库**  
-
-        -   **元数据库路径** - 指定 IIS 元数据库的有效路径。  
-
-        -   **属性 ID** - 指定 IIS 元数据库设置的数值属性。  
-
-    -   **注册表项**  
-
-        -   **配置单元** – 从下拉列表中，选择要在其中进行搜索的注册表配置单元。  
-
-        -   **项** - 指定要搜索的注册表项名称。 所用的格式应为 *key\subkey*。  
-
-        -   **此注册表项与 64 位应用程序关联** - 指定在运行 64 位版本的 Windows 的客户端上除了搜索 32 位注册表项之外是否也应该搜索 64 位注册表项。  
+        -   **Este arquivo ou pasta está associado a um aplicativo de 64 bits** ‑ Escolha se o local do arquivo do sistema de 64 bits (*%windir%*\system32) deve ser pesquisado além do local do arquivo do sistema de 32 bits (*%windir%*\syswow64) em clientes do Configuration Manager que executam uma versão de 64 bits do Windows.  
 
             > [!NOTE]  
-            >  如果在同一 64 位计算机上的 64 位和 32 位注册表位置中存在相同的注册表项，则全局条件将发现两个注册表项。  
+            >  Se o mesmo arquivo ou pasta existir nos dois locais do arquivo do sistema de 64 e de 32 bits no mesmo computador de 64 bits, vários arquivos serão detectados pela condição global.  
 
-    -   **注册表值**  
+         O tipo de configuração **Sistema de arquivos** não dá suporte para especificar um caminho UNC para um compartilhamento de rede no campo **Caminho** .  
 
-        -   **配置单元** – 从下拉列表中，选择要在其中进行搜索的注册表配置单元。  
+    -   **Metabase do IIS**  
 
-        -   **项** - 指定要搜索的注册表项名称。 所用的格式应为 *key\subkey*。  
+        -   **Caminho da metabase** - Especifique um caminho válido para a Metabase do IIS.  
 
-        -   **值** – 指定必须包含在指定注册表项中的值。  
+        -   **ID da Propriedade** - Especifique a propriedade numérica da configuração da Metabase do IIS.  
 
-        -   **此注册表项与 64 位应用程序关联** - 指定在运行 64 位版本的 Windows 的客户端上除了搜索 32 位注册表项之外是否也应该搜索 64 位注册表项。  
+    -   **Chave do Registro**  
 
-            > [!NOTE]  
-            >  如果在同一 64 位计算机上的 64 位和 32 位注册表位置中存在相同的注册表项，则全局条件将发现两个注册表项。  
+        -   **Hive** – Na lista suspensa, escolha o hive de Registro no qual deseja pesquisar.  
 
-    -   **脚本**  
+        -   **Chave** - Especifique o nome da chave do Registro que deseja pesquisar. O formato usado deve ser *key\subkey*.  
 
-        -   **发现脚本** – 选择“添加”以输入或浏览到要使用的脚本。 可以使用 Windows PowerShell、VBScript 或 JScript 脚本。  
-
-        -   **使用登录用户凭据运行脚本** – 如果启用此选项，则将使用登录用户凭据在客户端计算机上运行脚本。  
+        -   **A chave do Registro está associada ao aplicativo de 64 bits** - Especifica se as chaves do Registro de 64 bits devem ser pesquisadas além das chaves do Registro de 32 bits em clientes que executam uma versão de 64 bits do Windows.  
 
             > [!NOTE]  
-            >  脚本返回的值将用于评估全局条件的符合性。 例如，使用 VBScript 时，可以使用 **WScript.Echo Result** 命令将结果变量值返回给全局条件。  
+            >  Se a mesma chave do Registro existir nos dois locais do Registro, de 64 e de 32 bits, no mesmo computador de 64 bits, várias chaves do Registro serão detectadas pela condição global.  
+
+    -   **Valor do Registro**  
+
+        -   **Hive** - Na lista suspensa, selecione o hive de Registro que deseja pesquisar.  
+
+        -   **Chave** - Especifique o nome da chave do Registro que deseja pesquisar. O formato usado deve ser *key\subkey*.  
+
+        -   **Valor** – Especifique o valor que deve estar contido na chave do Registro especificado.  
+
+        -   **A chave do Registro está associada ao aplicativo de 64 bits** - Especifica se as chaves do Registro de 64 bits devem ser pesquisadas além das chaves do Registro de 32 bits em clientes que executam uma versão de 64 bits do Windows.  
+
+            > [!NOTE]  
+            >  Se a mesma chave do Registro existir nos dois locais do Registro, de 64 e de 32 bits, no mesmo computador de 64 bits, várias chaves do Registro serão detectadas pela condição global.  
+
+    -   **script**  
+
+        -   **Script de descoberta** – Escolha **Adicionar** para digitar ou procure o script a ser usado. Você pode usar scripts do Windows PowerShell, VBScript ou JScript.  
+
+        -   **Executar scripts usando as credenciais do usuário conectado** – Se você habilitar esta opção, o script será executado em computadores cliente usando as credenciais do usuário conectado.  
+
+            > [!NOTE]  
+            >  O valor retornado pelo script será usado para avaliar a conformidade da condição global. Por exemplo, quando você usa VBScript, pode usar o comando **WScript.Echo Result** para retornar o valor da variável Result para a condição global.  
             >   
-            >  如果脚本返回多个值，这些值必须位于同一行，且各值之间用分号分隔。 如果每个值位于单独的行，则评估将失败。  
+            >  Se seu script retornar vários valores, eles deverão ser dispostos em uma única linha, separados por ponto e vírgula. Se cada valor estiver em uma linha separada, a avaliação falhará.  
 
-    -   **SQL 查询**  
+    -   **Consulta SQL**  
 
-        -   **SQL Server 实例** – 选择是要在默认实例、所有实例还是指定的数据库实例名称上运行 SQL 查询。  
+        -   **Instância do SQL Server** – Escolha se deseja que a consulta SQL seja executada na instância padrão, em todas as instâncias ou em um determinado nome da instância do banco de dados.  
 
             > [!NOTE]  
-            >  实例名称必须引用 SQL Server 的本地实例。 为了引用群集的 SQL Server 实例，应该使用脚本设置。  
+            >  O nome da instância deve se referir a uma instância local do SQL Server. Para se referir a uma instância de servidor em cluster do SQL, você deve usar uma configuração de script.  
 
-        -   **数据库** - 指定将对其运行 SQL 查询的 Microsoft SQL Server 数据库的名称。  
+        -   **Banco de Dados** - Especifique o nome do banco de dados do Microsoft SQL Server para o qual a consulta SQL será executada.  
 
-        -   **列** - 指定 Transact-SQL 语句返回的列名称以用于评估全局条件的符合性。  
+        -   **Coluna** - Especifique o nome da coluna retornada pela declaração Transact-SQL a ser usada para avaliar a conformidade da condição global.  
 
-        -   **Transact-SQL 语句** – 指定要用于全局条件的完整 SQL 查询。 也可以选择“打开”以打开现有的 SQL 查询。  
+        -   **Declaração Transact-SQL** – Especifique a consulta SQL completa para a condição global. Você também pode escolher **Abrir** para abrir uma consulta SQL existente.  
 
-    -   **WQL 查询**  
+    -   **Consulta WQL**  
 
-        -   **命名空间** - 指定将用于构建 WQL 查询的 WMI 命名空间，将评估该查询以了解客户端计算机上的符合性。 默认值为 Root\cimv2。  
+        -   **Namespace** - Especifica o namespace WMI que será usado para criar uma consulta WQL que será avaliada quanto à conformidade em computadores cliente. O valor padrão é Root\cimv2.  
 
-        -   **类** - 指定将用于构建 WQL 查询的 WMI 类，将评估该查询以了解客户端计算机上的符合性。  
+        -   **Classe** - Especifica a classe WMI que será usada para criar uma consulta WQL que será avaliada quanto à conformidade em computadores cliente.  
 
-        -   **属性** - 指定将用于构建 WQL 查询的 WMI 属性，将评估该查询以了解客户端计算机上的符合性。  
+        -   **Propriedade** - Especifica a propriedade WMI que será usada para criar uma consulta WQL que será avaliada quanto à conformidade em computadores cliente.  
 
-        -   “WQL 查询 WHERE 子句” - 你可使用“WQL 查询 WHERE 子句”  项目来指定应用于客户端计算机上指定命名空间、类和属性的 WHERE 子句。  
+        -   **Cláusula WHERE da consulta WQL** - Você pode usar o item **Cláusula WHERE da consulta WQL** para especificar uma cláusula WHERE a ser aplicada ao namespace, à classe e à propriedade especificados em computadores cliente.  
 
-    -   **XPath 查询**  
+    -   **Consulta XPath**  
 
-        -   “路径” - 指定指向将用于评估符合性的客户端计算机上的 XML 文件的路径。 Configuration Manager 支持在路径名称中使用所有 Windows 系统环境变量和 *%USERPROFILE%* 用户变量。  
+        -   **Caminho** – Especifique o caminho para o arquivo XML nos computadores cliente que serão usados para avaliar a conformidade. O Configuration Manager dá suporte ao uso de todas as variáveis de ambiente do sistema Windows e à variável de usuário *%USERPROFILE%* no nome do caminho.  
 
-        -   **XML 文件名** - 指定文件名，此文件名包含用于评估客户端计算机符合性的 XML 查询。  
+        -   **Nome do arquivo XML** – Especifique o nome do arquivo que contém a consulta XML a ser usada para avaliar a conformidade em computadores cliente.  
 
-        -   **包括子文件夹** – 如果也要搜索指定路径下面的任何子文件夹，请启用此选项。  
+        -   **Incluir subpastas** - Habilite esta opção se também desejar pesquisar quaisquer subpastas no caminho especificado.  
 
-        -   **此文件与 64 位应用程序关联** - 选择是否在运行 64 位版本 Windows 的Configuration Manager 客户端上除了搜索 32 位系统文件位置 (%windir%\syswow64) 之外还要搜索 64 位系统文件位置 (%windir%\system32)。  
+        -   **Este arquivo está associado a um aplicativo de 64 bits** ‑ Escolha se o local do arquivo do sistema de 64 bits (*%windir%*\system32) deve ser pesquisado além do local do arquivo do sistema de 32 bits (*%windir%*\syswow64) em clientes do Configuration Manager que executam uma versão de 64 bits do Windows.  
 
-        -   **XPath 查询** - 指定用于评估客户端计算机上的符合性的有效完整 XML 路径语言 (XPath) 查询。  
+        -   **Consulta XPath** - Especifique uma consulta XPath (XML path language) válida completa a ser usada para avaliar a conformidade em computadores cliente.  
 
-        -   “命名空间” - 打开“XML 命名空间” **XML**  对话框来确定要在 XPath 查询期间使用的命名空间和前缀。  
+        -   **Namespaces** - Abre a caixa de diálogo **XML Namespaces** para identificar namespaces e prefixos a serem usados durante a consulta XPath.  
 
-3.  在“数据类型”  下拉列表中，选择在用于检查要求之前条件将返回的数据的格式。  
+3.  Na lista suspensa **Tipo de dados** , escolha o formato no qual os dados serão retornados pela condição antes de ser usada para verificar os requisitos.  
 
     > [!NOTE]  
-    >  系统没有为所有设置类型显示“数据类型”下拉列表。  
+    >  A lista suspensa **Tipo de dados** não é mostrada para todos os tipos de configuração.  
 
-4.  在“设置类型”下拉列表下面设置有关此设置的更多详细信息。 可以设置的项将因已选的设置类型而异。  
+4.  Configure mais detalhes sobre essa configuração abaixo da lista suspensa **Tipo de configuração**. Os itens que você pode configurar variarão dependendo do tipo de configuração que você selecionou.  
 
-5.  选择“确定”以保存规则并关闭“创建全局条件”对话框。  
+5.  Escolha **OK** para salvar a regra e fechar a caixa de diálogo **Criar Condição Global**.  
 
-### <a name="set-up-an-expression-for-the-global-condition"></a>为全局条件设置表达式  
+### <a name="set-up-an-expression-for-the-global-condition"></a>Configurar uma expressão para a condição global  
 
-1.  在“条件类型”  下拉列表中选择“表达式” 。  
+1.  Na lista suspensa **Tipo de Condição** , escolha **Expressão**.  
 
-2.  选择“添加子句”以打开“添加子句”对话框。  
+2.  Escolha **Adicionar Cláusula** para abrir a caixa de diálogo **Adicionar Cláusula**.  
 
-3.  从“选择类别”  下拉列表中选择此表达式是用于设备还是用于用户。 或者，选择“自定义”  以使用以前配置的全局条件。  
+3.  Na lista suspensa **Selecionar categoria** , selecione se esta expressão é para um dispositivo ou um usuário. Como alternativa, selecione **Personalizado** para usar uma condição global previamente configurada.  
 
-4.  从“选择条件”  下拉列表中，选择要用于评估用户或设备是否满足规则要求的条件。 根据所选类别，此列表的内容会有所不同。  
+4.  Na lista suspensa **Selecionar uma condição** , selecione a condição a ser usada para avaliar se o usuário ou o dispositivo atende aos requisitos da regra. O conteúdo desta lista varia dependendo da categoria selecionada.  
 
-5.  从“选择运算符”  下拉列表中，选择运算符，此运算符用于将所选条件与指定值进行比较以评估用户或设备是否满足规则要求。 可用运算符将因所选条件而异。  
+5.  Na lista suspensa **Escolher operador** , escolha o operador que será usado para comparar a condição selecionada ao valor especificado para avaliar se o usuário ou o dispositivo atende aos requisitos da regra. Os operadores disponíveis variam dependendo da condição selecionada.  
 
-6.  在“值”  字段中，指定值，这些值将与所选条件和运算符一起用于评估用户或设备是否满足规则要求。 可用值将因所选条件和所选运算符而异。  
+6.  No campo **Valor** , especifique os valores que serão usados com a condição selecionada e o operado para avaliar se o usuário ou o dispositivo atende aos requisitos da regra. Os valores disponíveis irão variar dependendo da condição selecionada e do operador selecionado.  
 
-7.  选择“确定”以保存表达式并关闭“添加子句”对话框。  
+7.  Escolha **OK** para salvar a expressão e fechar a caixa de diálogo **Adicionar Cláusula**.  
 
-8.  向全局条件添加完子句后，选择“确定”以关闭“创建全局条件”对话框并保存全局条件。  
+8.  Quando terminar de adicionar cláusulas à condição global, escolha **OK** para fechar a caixa de diálogo **Criar Condição Global** e salvar a condição global.  

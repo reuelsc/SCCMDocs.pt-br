@@ -1,6 +1,6 @@
 ---
-title: "1511、1602 和 1606 的边界组 | System Center Configuration Manager"
-description: "通过 1511、1602 和 1606 版 Configuration Manager 使用边界组。"
+title: Grupos de limites para 1511, 1602 e 1606 | System Center Configuration Manager
+description: "Use grupos de limites com as versões 1511, 1602 e 1606 do Configuration Manager."
 ms.custom: na
 ms.date: 2/8/2017
 ms.prod: configuration-manager
@@ -17,159 +17,159 @@ manager: angrobe
 ms.openlocfilehash: 311606b8d52645d3ca89642be4cc341b8a64ec56
 ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
 ms.translationtype: HT
-ms.contentlocale: zh-CN
+ms.contentlocale: pt-BR
 ms.lasthandoff: 08/07/2017
 ---
-# <a name="boundary-groups-for-system-center-configuration-manager-version-1511-1602-and-1606"></a>System Center Configuration Manager 1511、1602 和 1606 版的边界组
+# <a name="boundary-groups-for-system-center-configuration-manager-version-1511-1602-and-1606"></a>Grupos de limites para as versões 1511, 1602 e 1606 do System Center Configuration Manager
 
-*适用范围：System Center Configuration Manager (Current Branch)*
+*Aplica-se a: System Center Configuration Manager (Branch Atual)*
 <!-- This topic drops from TOC with the release of version 1706 -->
 
-本主题中的信息特定于通过 1511、1602 和 1606 版 System Center Configuration Manager 使用边界组。
-如果你使用的是版本 1610 或更高版本，请参阅[配置边界组](/sccm/core/servers/deploy/configure/boundary-groups)，以了解有关使用重新设计的边界组的信息。  
+As informações neste tópico são específicas para usar os grupos de limites com as versões 1511, 1602 e 1606 do System Center Configuration Manager.
+Se você usar a versão 1610 ou posterior, veja [Configurar grupos de limites](/sccm/core/servers/deploy/configure/boundary-groups) para obter informações sobre como usar os grupos de limites reprojetados.  
 
 
 ##  <a name="BKMK_BoundaryGroups"></a> Boundary groups  
- 将边界组创建为以逻辑方式对相关的网络位置（边界）进行分组，以便可以更轻松的管理你的基础结构。 你必须将边界分配给边界组，然后才能使用边界组。 客户端使用边界组配置用于：  
+ Você cria grupos de limites apara agrupar de logicamente locais de rede (limites) relacionados para facilitar o gerenciamento da infraestrutura de rede. É necessário atribuir limites a grupos de limites para poder usar o grupo de limites. Os clientes usam a configuração do grupo de limites para:  
 
--   自动站点分配  
+-   Atribuição automática de site  
 
--   内容位置  
+-   Local do conteúdo  
 
--   首选管理点
+-   Pontos de gerenciamento preferenciais
 
-    若要使用首选管理点，则必须为层次结构启用此选项，但不是从边界组配置中启用。 请稍后参阅本主题中的*启用对首选管理点的使用*。  
+    Se você usar pontos de gerenciamento preferenciais, deverá habilitar essa opção para a hierarquia, e não de dentro da configuração do grupo de limites. Veja o procedimento *Para habilitar o uso de pontos de gerenciamento preferenciais* posteriormente nesse tópico.  
 
-设置边界组时，可向其添加一个或多个边界。 然后可以配置其他的设置，以供位于这些边界上的客户端使用。  
+Ao configurar grupos de limites, você adiciona um ou mais limites ao grupo de limites. Em seguida, define configurações adicionais para uso por clientes localizados nesses limites.  
 
-#### <a name="to-create-a-boundary-group"></a>创建边界组  
+#### <a name="to-create-a-boundary-group"></a>Para criar um grupo de limites  
 
-1.  在 Configuration Manager 控制台中，选择“管理” > “层次结构配置” >  “边界组”。  
+1.  No console do Configuration Manager, clique em **Administração** > **Configuração da Hierarquia** >  **Grupos de Limites**.  
 
-2.  在“主页”选项卡上的“创建”组中，选择“创建边界组”。  
+2.  Na guia **Início**, no grupo **Criar**, clique em **Criar Grupo de Limites**.  
 
-3.  在“创建边界组”对话框中，选择“常规”选项卡，并为此边界组输入“名称”。  
+3.  Na caixa de diálogo **Criar Grupo de Limites**, selecione a guia **Geral** e especifique um **Nome** para esse grupo de limites.  
 
-4.  选择“确定”保存新的边界组。  
+4.  Clique em **OK** para salvar o novo grupo de limites.  
 
-#### <a name="to-set-up-a-boundary-group"></a>设置边界组  
+#### <a name="to-set-up-a-boundary-group"></a>Para configurar um grupo de limites  
 
-1.  在 Configuration Manager 控制台中，选择“管理” > “层次结构配置” >  “边界组”。  
+1.  No console do Configuration Manager, clique em **Administração** > **Configuração da Hierarquia** >  **Grupos de Limites**.  
 
-2.  选择要更改的边界组。  
+2.  Escolha o grupo de limites que você deseja alterar.  
 
-3.  在“主页”选项卡上的“属性”组中，选择“属性”。  
+3.  Na guia **Início**, no grupo **Propriedades**, clique em **Propriedades**.  
 
-4.  在边界组的“属性”对话框中，选择“常规”选项卡以更改作为此边界组成员的边界：  
+4.  Na caixa de diálogo **Propriedades** do grupo de limites, selecione a guia **Geral** para alterar os limites que são membros desse grupo de limites:  
 
-    -   若要添加边界，请选择“添加”，选中一个或多个边界的复选框，并选择“确定”。  
+    -   Para adicionar limites, clique em **Adicionar**, marque a caixa de seleção para um ou mais limites e clique em **OK**.  
 
-    -   若要删除边界，请选择边界并选择“删除”。  
+    -   Para remover limites, selecione o limite e clique em **Remover**.  
 
-5.  选择“引用”选项卡以更改站点分配和关联的站点系统服务器配置：  
+5.  Selecione a guia **Referências** para modificar a atribuição de site e a configuração do servidor do sistema de sites associado:  
 
-    -   若要启用此边界组以供站点分配的客户端使用，请选中“将此边界组用于站点分配”复选框，然后从“分配的站点”下拉框中选择一个站点。  
+    -   Para habilitar esse grupo de limites para uso de clientes para atribuição de sites, marque a caixa de seleção **Utilize este grupo de limites para a atribuição de site** e escolha um site na caixa suspensa **Site atribuído**.  
 
-    -   设置与此边界组关联的可用站点系统服务器：  
+    -   Para configurar quais servidores do sistema de sites disponíveis estão associados a este grupo de limites:  
 
-    1.  选择“添加”，然后选中一个或多个服务器的复选框。 将服务器添加为此边界组的关联站点系统服务器。 仅在其上安装有受支持的站点系统角色的服务器可用。  
-
-        > [!NOTE]  
-        >  你可从层次结构中的任何站点选择可用站点系统的任意组合。 所选的站点系统列在作为此边界组成员的每个边界的属性中的“站点系统”  选项卡上。  
-
-    2.  若要从此边界组中删除服务器，请选择该服务器，然后选择“删除”。  
+    1.  Selecione **Adicionar** e marque a caixa de seleção de um ou mais servidores. Os servidores são adicionados como servidores do sistema de sites associados a este grupo de limite. Somente os servidores que têm suporte para a função do sistema de sites instalada neles estão disponíveis.  
 
         > [!NOTE]  
-        >  若要停止为关联的站点系统使用此边界组，则必须删除列为关联的站点系统服务器的所有服务器。  
+        >  É possível selecionar qualquer combinação de sistemas de sites disponíveis de qualquer site na hierarquia. Os sistemas de site selecionados são listados na guia **Sistemas de Site** nas propriedades de cada limite membro desse grupo de limites.  
 
-    3.  若要更改此边界组站点系统服务器的网络连接速度，请选择该服务器，然后选择“更改连接”。  
+    2.  Para remover um servidor deste grupo de limites, selecione o servidor e clique em **Remover**.  
 
-         默认情况下，每个站点系统的连接速度为“快”，但可将速度更改为“慢”。 网络连接速度和部署的配置确定客户端是否能够从服务器下载内容。  
+        > [!NOTE]  
+        >  Para interromper o uso deste grupo de limites para a associação de sistemas de sites, você deve remover todos os servidores listados como servidores do sistema de sites associados.  
 
-6.  选择“确定”关闭边界组属性并保存配置。  
+    3.  Para alterar a velocidade de conexão de rede de um servidor do sistema de sites para este grupo de limite, selecione o servidor e clique em **Alterar Conexão**.  
 
-#### <a name="to-associate-a-content-deployment-server-or-management-point-with-a-boundary-group"></a>将内容部署服务器或管理点与边界组关联  
+         Por padrão, a velocidade de conexão para cada sistema de sites é **Rápida**, podendo ser alterada para **Lenta**. A velocidade de conexão de rede e a configuração de uma implantação determinam se o cliente pode baixar o conteúdo do servidor.  
 
-1.  在 Configuration Manager 控制台中，选择“管理” > “层次结构配置” >  “边界组”。  
+6.  Clique em **OK** para fechar as propriedades do grupo de limites e salvar a configuração.  
 
-2.  选择要更改的边界组。  
+#### <a name="to-associate-a-content-deployment-server-or-management-point-with-a-boundary-group"></a>Para associar um servidor de implantação de conteúdo ou um ponto de gerenciamento a um grupo de limite  
 
-3.  在“主页”选项卡上的“属性”组中，选择“属性”。  
+1.  No console do Configuration Manager, clique em **Administração** > **Configuração da Hierarquia** >  **Grupos de Limites**.  
 
-4.  在边界组的“属性”对话框中，选择“引用”选项卡。  
+2.  Escolha o grupo de limites que você deseja alterar.  
 
-5.  在“选择站点系统服务器”下，选择“添加”，选中要与此边界组关联的站点系统服务器的复选框，然后选择“确定”。  
+3.  Na guia **Início**, no grupo **Propriedades**, clique em **Propriedades**.  
 
-6.  选择“确定”关闭对话框并保存边界组配置。  
+4.  Na caixa de diálogo **Propriedades** para o grupo de limites, selecione a guia **Referências**.  
 
-#### <a name="to-enable-use-of-preferred-management-points"></a>若要启用对首选管理点的使用  
+5.  Em **Selecionar servidores do sistema de sites**, clique em **Adicionar**, marque a caixa de seleção para os servidores do sistema de sites que deseja associar a esse grupo de limites e clique em **OK**.  
 
-1.  在 Configuration Manager 控制台中，选择“管理” > “站点配置” > “站点”，然后在“主页”选项卡上选择“层次结构设置”。  
+6.  Clique em **OK** para fechar a caixa de diálogo e salvar a configuração do grupo de limites.  
 
-2.  在“层次结构设置”的“常规”选项卡上，选择“客户端首选使用边界组中指定的管理点”。  
+#### <a name="to-enable-use-of-preferred-management-points"></a>para habilitar o uso de pontos de gerenciamento preferenciais  
 
-3.  选择“确定”关闭对话框并保存配置。  
+1.  No console do Configuration Manager, clique em **Administração** > **Configuração do Site** > **Sites** e, na guia **Início**, selecione **Configurações da Hierarquia**.  
 
-#### <a name="to-set-up-a-fallback-site-for-automatic-site-assignment"></a>为自动站点分配设置回退站点  
+2.  Na guia **Geral** das **Configurações da Hierarquia**, selecione **Os clientes preferem usar os pontos de gerenciamento especificados em grupos de limite**.  
 
-1.  在 Configuration Manager 控制台中，单击“管理” > “站点配置” >  “站点”。  
+3.  Clique em **OK** para fechar a caixa de diálogo e salvar a configuração.  
 
-2.  在“主页”选项卡上的“站点”组中，选择“层次结构设置”。  
+#### <a name="to-set-up-a-fallback-site-for-automatic-site-assignment"></a>Para configurar um local de fallback para atribuição automática de site  
 
-3.  在“常规”选项卡上，选中“使用回退站点”的复选框，然后从“回退站点”下拉列表中选择一个站点。  
+1.  No console do Configuration Manager, escolha **Administração** > **Configuração de Site** >  **Sites**.  
 
-4.  选择“确定”保存配置。  
+2.  Na guia **Início**, no grupo **Sites**, escolha **Configurações da Hierarquia**.  
 
- 下列部分提供了有关边界组配置的其他详细信息。  
+3.  Na guia **Geral**, marque a caixa de seleção **Usar um local de fallback** e selecione um local na lista suspensa **Local de fallback**.  
 
-###  <a name="BKMK_BoundarySiteAssignment"></a> 有关站点分配  
- 可以使用客户端的分配的站点设置每个边界组。  
+4.  Clique em **OK** para salvar a configuração.  
 
--   使用自动站点分配的新安装的客户端将加入具有客户端当前网络位置的边界组的分配的站点。  
+ As seções a seguir fornecem detalhes adicionais sobre configurações de grupo de limites.  
 
--   当被分配到站点的客户端更改其网络位置时，此客户端不会更改其站点分配。 例如，如果客户端漫游到由具有不同站点分配的边界组中的某个边界所表示的新网络位置，该客户端的分配的站点则将保持不变。  
+###  <a name="BKMK_BoundarySiteAssignment"></a> Sobre atribuição de site  
+ É possível configurar cada grupo de limites com um site atribuído para clientes.  
 
--   当 Active Directory 系统发现发现新资源时，将依据边界组的边界对所发现的资源的网络信息进行评估。 此过程将新资源与分配的站点关联，以供客户端请求安装方法使用。  
+-   Um cliente recém-instalado que usa a atribuição automática de site ingressará no site atribuído de um grupo de limites que contém o local de rede atual do cliente.  
 
--   当边界是多个边界组（这些边界组具有不同的分配的站点）的成员时，客户端会随机选择其中一个站点。  
+-   Depois de atribuir a um site, o cliente não altera a atribuição de site quando o local de rede é alterado. Por exemplo, se o cliente usa o perfil móvel em um novo local de rede que está representado por um limite em um grupo de limites com uma atribuição de site diferente, o site atribuído do cliente permanece inalterado.  
 
--   对边界组的分配的站点的更改仅适用于新的站点分配操作。 以前分配给站点的客户端不会根据对边界组的配置（或它们自身网络位置）的更改再次评估其站点分配。  
+-   Quando a Descoberta de Sistemas do Active Directory encontra um novo recurso, as informações de rede para o recurso descoberto são avaliadas com os limites em grupos de limites. Esse processo associa o novo recurso a um site atribuído para uso do método de instalação do cliente por push.  
 
-有关客户端站点分配的详细信息，请参阅[如何在 System Center Configuration Manager 中将客户端分配到一个站点](../../../../core/clients/deploy/assign-clients-to-a-site.md)中的[对计算机使用自动站点分配](../../../../core/clients/deploy/assign-clients-to-a-site.md#BKMK_AutomaticAssignment)。  
+-   Quando um limite é um membro de vários grupos de limites que têm diferentes locais atribuídos, os clientes selecionarão aleatoriamente um desses sites.  
 
-###  <a name="BKMK_BoundaryContentLocation"></a> 有关内容位置  
- 可以使用一个或多个分发点和状态迁移点设置每个边界组，并可将相同的分发点和状态迁移点与多个边界组关联。  
+-   As alterações em um site atribuído de grupos de limites somente se aplicam a novas ações de atribuição de site. Os clientes atribuídos previamente a um site não reavaliam sua atribuição de site com base nas alterações da configuração de um grupo de limites (ou ao seu próprio local de rede).  
 
--   **在软件分发过程中**，客户端请求用于部署内容的位置。 Configuration Manager 将向客户端发送包括客户端当前网络位置的每个边界组关联的分发点列表。  
+Para saber mais sobre a atribuição de site de cliente, veja [Usar atribuição automática de site para computadores](../../../../core/clients/deploy/assign-clients-to-a-site.md#BKMK_AutomaticAssignment) em [Como atribuir clientes a um site no System Center Configuration Manager](../../../../core/clients/deploy/assign-clients-to-a-site.md).  
 
--   **在操作系统部署期间**，客户端请求用以发送或接收其状态迁移信息的位置。 Configuration Manager 将向客户端发送包括客户端当前网络位置的每个边界组关联的状态迁移点列表。  
+###  <a name="BKMK_BoundaryContentLocation"></a> Sobre o local do conteúdo  
+ Você pode configurar cada grupo de limites com um ou mais pontos de distribuição e pontos de migração de estado e associar os mesmos pontos de distribuição e pontos de migração de estado a vários grupos de limites.  
 
-此行为使客户端能够选择从中传输内容或状态迁移信息的最近的服务器。  
+-   **Durante a distribuição de software**, os clientes solicitam um local para o conteúdo de implantação. O Configuration Manager envia ao cliente uma lista de pontos de distribuição associados a cada grupo de limites que inclui o local de rede atual do cliente.  
 
-###  <a name="BKMK_PreferredMP"></a> 关于首选管理点  
- 首选管理点使客户端能够识别与其当前网络位置（边界）关联的管理点。  
+-   **Durante a implantação de sistema operacional**, os clientes solicitam um local para enviar ou receber suas informações de migração de estado. O Configuration Manager envia ao cliente uma lista de pontos de migração de estado associados a cada grupo de limites que inclui o local de rede atual do cliente.  
 
--   客户端先尝试使用其分配的站点中的首选管理点，然后再使用其分配的站点中未设置为首选的管理点。  
+Esse comportamento permite que o cliente selecione o servidor mais próximo do qual transferir o conteúdo ou as informações de migração de estado.  
 
--   若要使用此选项，必须为层次结构启用该选项，并在各个主站点上将边界组设置为包括应与该边界组的关联边界相关联的管理点  
+###  <a name="BKMK_PreferredMP"></a> Sobre pontos de gerenciamento preferenciais  
+ Os pontos de gerenciamento preferenciais permitem que um cliente identifique um ponto de gerenciamento associado ao local de rede (limite) atual.  
 
--   设置了首选管理点后，客户端在组织其管理点列表时会将首选管理点放置在其分配的管理点（其中包括该客户端的分配的站点中的所有管理点）列表的顶部。  
+-   Um cliente tenta usar um ponto de gerenciamento preferencial de seu site atribuído antes de usar um ponto de gerenciamento de seu site atribuído que não está configurado como preferencial.  
+
+-   Para usar esta opção, é necessário habilitá-la para a hierarquia e configurar grupos de limites em sites primários individuais para incluir os pontos de gerenciamento que devem ser associados aos limites associados desse grupo de limites  
+
+-   Quando os pontos de gerenciamento preferenciais são configurados e um cliente organiza sua lista de pontos de gerenciamento, o cliente coloca os pontos de gerenciamento preferenciais na parte superior de sua lista de pontos de gerenciamento atribuídos, que inclui todos os pontos de gerenciamento do site atribuído do cliente.  
 
 > [!NOTE]  
->  当客户端漫游时（例如，笔记本电脑转至远程办公地点，并更改其网络位置），在该客户端尝试使用其分配的站点中的管理点（其中包括首选管理点）之前，它可能会使用来自其新位置的本地站点中的管理点（或代理管理点）。  有关详细信息，请参阅[了解客户端如何查找 System Center Configuration Manager 的站点资源和服务](../../../../core/plan-design/hierarchy/understand-how-clients-find-site-resources-and-services.md)。  
+>  Quando um cliente realiza roaming (o que significa alterar seus locais de rede, como quando um laptop passa para um local de escritório remoto), ele pode usar um ponto de gerenciamento (ou ponto de gerenciamento de proxy) do site local em seu novo local antes de tentar usar um ponto de gerenciamento do seu site atribuído (que inclui os pontos de gerenciamento preferenciais).  Consulte [Entender como os clientes encontram serviços e recursos do site para o System Center Configuration Manager](../../../../core/plan-design/hierarchy/understand-how-clients-find-site-resources-and-services.md) para obter mais informações.  
 
-###  <a name="BKMK_BoundaryOverlap"></a> 有关重叠边界  
- Configuration Manager 对于内容位置支持重叠边界配置：  
+###  <a name="BKMK_BoundaryOverlap"></a> Sobre a sobreposição de limites  
+ O Configuration Manager dá suporte à sobreposição de configurações de limite para o local do conteúdo:  
 
--   **当客户端请求内容**，并且客户端网络位置属于多个边界组时，Configuration Manager 将向客户端发送具有内容的所有分发点的列表。  
+-   **Quando um cliente solicita conteúdo** e o local de rede do cliente pertence a vários grupos de limites, o Configuration Manager envia ao cliente uma lista de todos os pontos de distribuição que têm o conteúdo.  
 
--   **当客户端请求服务器发送或接收其状态迁移信息**，并且客户端网络位置属于多个边界组时，Configuration Manager 将向客户端发送与包括客户端当前网络位置的边界组关联的所有状态迁移点的列表。  
+-   **Quando um cliente solicita a um servidor o envio ou recebimento de suas informações de migração de estado**, e o local de rede do cliente pertence a vários grupos de limites, o Configuration Manager envia ao cliente uma lista de todos os pontos de migração de estado associados a um grupo de limites que inclui o local de rede atual do cliente.  
 
-此行为使客户端能够选择从中传输内容或状态迁移信息的最近的服务器。  
+Esse comportamento permite que o cliente selecione o servidor mais próximo do qual transferir o conteúdo ou as informações de migração de estado.  
 
-###  <a name="BKMK_BoudnaryNetworkSpeed"></a> 有关网络连接速度  
- 可以为边界组中的每个站点系统服务器设置网络连接速度。 此设置适用于基于此边界组的配置连接到站点系统的客户端。 同一站点系统服务器在不同的边界组中可设置不同的连接速度。  
+###  <a name="BKMK_BoudnaryNetworkSpeed"></a> Sobre a velocidade de conexão de rede  
+ Você pode definir a velocidade de conexão de rede para cada servidor do sistema de sites em um grupo de limites. Essa configuração aplica-se a clientes que se conectam a um sistema de sites com base nessa configuração de grupos de limites. O mesmo servidor do sistema de sites pode ter uma velocidade de conexão definida para ele em grupos de limites diferentes.  
 
- 默认情况下，网络连接速度设置为“快”，但可将其更改为“慢”。 网络连接速度和部署配置会检查当客户端位于关联的边界组中时它是否能从分发点下载内容。  
+ Por padrão, a velocidade de conexão de rede é definida como **Rápida**, mas você pode alterá-la para **Lenta**. A velocidade de conexão de rede e a configuração da implantação determinam se um cliente pode baixar conteúdo de um ponto de distribuição quando o cliente está em um grupo de limites associado.  
 
- 有关网络连接速度配置如何影响客户端获取内容的方式的详细信息，请参阅[内容源位置方案](../../../../core/plan-design/hierarchy/content-source-location-scenarios.md)。  
+ Para saber mais sobre como a configuração de velocidade de conexão de rede afeta o modo como os clientes obtêm conteúdo, veja [Cenários de local de origem de conteúdo](../../../../core/plan-design/hierarchy/content-source-location-scenarios.md).  

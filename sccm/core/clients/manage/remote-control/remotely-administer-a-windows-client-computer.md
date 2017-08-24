@@ -1,6 +1,6 @@
 ---
-title: "远程管理 Windows 计算机 | Microsoft Docs"
-description: "使用 System Center Configuration Manager 管理远程 Windows 客户端计算机。"
+title: Administrar remotamente o computador Windows | Microsoft Docs
+description: Administre um computador cliente Windows remoto usando o System Center Configuration Manager.
 ms.custom: na
 ms.date: 07/27/2017
 ms.prod: configuration-manager
@@ -18,80 +18,80 @@ manager: angrobe
 ms.openlocfilehash: aecc4ccfec98932f3988f1ca1fcdc898cd417933
 ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
 ms.translationtype: HT
-ms.contentlocale: zh-CN
+ms.contentlocale: pt-BR
 ms.lasthandoff: 08/07/2017
 ---
-# <a name="how-to-remotely-administer-a-windows-client-computer-by-using-system-center-configuration-manager"></a>如何使用 System Center Configuration Manager 远程管理 Windows 客户端计算机
+# <a name="how-to-remotely-administer-a-windows-client-computer-by-using-system-center-configuration-manager"></a>Como administrar remotamente um computador cliente com Windows usando o System Center Configuration Manager
 
-*适用范围：System Center Configuration Manager (Current Branch)*
+*Aplica-se a: System Center Configuration Manager (Branch Atual)*
 
-在开始使用远程控制之前，请确保已经查看了以下主题的信息：  
+Antes de começar a usar o controle remoto, certifique-se de que você leu as informações nos seguintes tópicos:  
 
--   [System Center Configuration Manager 中远程控制的先决条件](../../../../core/clients/manage/remote-control/prerequisites-for-remote-control.md)  
+-   [Pré-requisitos para o controle remoto no System Center Configuration Manager](../../../../core/clients/manage/remote-control/prerequisites-for-remote-control.md)  
 
--   [配置 System Center Configuration Manager 中的远程控制](../../../../core/clients/manage/remote-control/configuring-remote-control.md)  
+-   [Configurando o controle remoto no System Center Configuration Manager](../../../../core/clients/manage/remote-control/configuring-remote-control.md)  
 
-以下是启动远程控制查看器的三种方式：  
+Aqui estão três maneiras de iniciar o visualizador de controle remoto:  
 
--   在 Configuration Manager 控制台中。  
+-   No console do Configuration Manager.  
 
--   在 Windows 命令提示符中。  
+-   Em um prompt de comando do Windows.  
 
--   在运行 Configuration Manager 控制台的计算机上的 Windows“开始”菜单中（从“Microsoft System Center”程序组）。  
+-   No menu **Iniciar** do Windows em um computador que executa o console do Configuration Manager do grupo de programas do **Microsoft System Center**.  
 
-### <a name="to-remotely-administer-a-client-computer-from-the-configuration-manager-console"></a>若要从 Configuration Manager 控制台中远程管理客户端计算机  
+### <a name="to-remotely-administer-a-client-computer-from-the-configuration-manager-console"></a>Para administrar remotamente um computador cliente no console do Configuration Manager  
 
-1.  在 Configuration Manager 控制台中，依次选择“资产和符合性” > “设备”或“设备集合”。  
+1.  No console do Configuration Manager, escolha **Ativos e Conformidade** > **Dispositivos** ou **Coleções de Dispositivos**.  
 
-3.  选择要远程管理的计算机，然后在“主页”选项卡上的“设备”组中，选择“启动” > “远程控制”。  
+3.  Selecione o computador que deseja administrar remotamente e, na guia **Início**, no grupo **Dispositivo**, escolha **Iniciar** > **Controle Remoto**.  
 
     > [!IMPORTANT]  
-    >  如果将“提示用户进行远程控制”  客户端设置权限设置为“真” ，直至远程计算机上的用户同意远程控制提示后才会启动连接。 有关详细信息，请参阅[配置 System Center Configuration Manager 中的远程控制](../../../../core/clients/manage/remote-control/configuring-remote-control.md)。  
+    >  Se a permissão **Solicitar o controle remoto ao usuário** da configuração do cliente for definida como **True**, a conexão não será iniciada até que o usuário no computador remoto concorde com o prompt de controle remoto. Para mais informações, consulte [Configurar o controle remoto no System Center Configuration Manager](../../../../core/clients/manage/remote-control/configuring-remote-control.md).  
 
-4.  “Configuration Manager 远程控制”  窗口打开后，就可以远程管理客户端计算机了。 使用下列选项来配置连接。  
+4.  Depois que a janela **Controle Remoto do Configuration Manager** for aberta, você poderá administrar remotamente o computador cliente. Use as opções a seguir para configurar a conexão.  
 
     > [!NOTE]  
-    >  如果连接的计算机有多台监视器，那么远程控制窗口中会显示所有这些监视器的显示内容。  
+    >  Se o computador ao qual você se conectar tiver vários monitores, a exibição de todos os monitores será mostrada na janela do controle remoto.  
 
-    -   **文件 - 连接** - 连接到另一台计算机。 远程控制会话处于活动状态时，此选项不可用。  
+    -   **Arquivo ‑ Conectar** – Conecte-se a outro computador. Essa opção não está disponível quando uma sessão de controle remoto está ativa.  
 
-    -   **文件 - 断开** - 断开活动远程控制会话的连接，但不会关闭“Configuration Manager 远程控制”窗口。  
+    -   **Arquivo ‑ Desconectar** – Desconecta a sessão ativa de controle remoto, mas não fecha a janela **Controle Remoto do Configuration Manager**.  
 
-    -   **文件 - 退出** - 断开活动远程控制会话的连接，并关闭“Configuration Manager 远程控制”窗口。  
-
-        > [!NOTE]  
-        >  当断开远程控制会话的连接时，将删除正在查看的计算机上 Windows 剪贴板的内容。  
-
-    -   **视图 - 全屏** - 最大化显示“Configuration Manager 远程控制”窗口。  
+    -   **Arquivo ‑ Sair** – Desconecta a sessão ativa de controle remoto e fecha a janela **Controle Remoto do Configuration Manager**.  
 
         > [!NOTE]  
-        >  要退出全屏显示模式，请按 Ctrl + Alt + Break。  
+        >  Quando você desconecta uma sessão de controle remoto, o conteúdo da Área de Transferência do Windows no computador que está sendo exibido é excluído.  
 
-    -   **视图 - 调整为适合页面** - 缩放远程计算机的显示尺寸以适合“Configuration Manager 远程控制”窗口的大小。  
-
-    -   **视图 - 状态栏** - 切换“Configuration Manager 远程控制”窗口状态栏显示。  
-
-    -   **操作 - 发送 Ctrl+Alt+Del 键** - 向远程计算机发送 Ctrl+Alt+Del 键组合。  
-
-    -   **操作 - 启用剪贴板共享** - 允许从/向远程计算机复制和粘贴项目。 如果更改此值，必须重新启动远程控制会话，更改才会生效。  
+    -   **Exibir – Tela Inteira** – Maximiza a janela do **Controle Remoto do Configuration Manager**.  
 
         > [!NOTE]  
-        >  如果不希望在 Configuration Manager 控制台中启用剪贴板共享，请在运行控制台的计算机上将注册表项“HKEY_CURRENT_USER\Software\Microsoft\ConfigMgr10\Remote Control\Clipboard Sharing”的值设置为“0”。  
+        >  Para sair do modo de tela inteira, pressione Ctrl+Alt+Break.  
 
-    -   **操作 - 锁定远程键盘和鼠标** - 锁定远程键盘和鼠标以阻止用户操作远程计算机。  
+    -   **Exibição ‑ Dimensionar para Ajustar** – Dimensiona o monitor do computador remoto para se ajustar ao tamanho da janela do **Controle Remoto do Configuration Manager**.  
 
-    -   **帮助 - 关于远程控制** - 显示查看器的当前版本。  
+    -   **Exibir ‑ Barra de Status** – Alterna a exibição da barra de status da janela do **Controle Remoto do Configuration Manager**.  
 
-5.  远程计算机上的用户在单击 Windows 通知区域中的 Configuration Manager“远程控制”图标或远程控制会话栏上的图标时可以查看有关远程控制会话的详细信息。  
+    -   **Ação ‑ Enviar tecla Ctrl+Alt+Del** – Envia uma combinação de teclas Ctrl+Alt+Del ao computador remoto.  
 
-### <a name="to-start-the-remote-control-viewer-from-the-windows-command-line"></a>若要从 Windows 命令行中启动远程控制查看器  
+    -   **Ação ‑ Habilitar o Compartilhamento da Área de Transferência** – Permite copiar e colar itens no computador remoto. Se você alterar esse valor, será necessário reiniciar a sessão de controle remoto para que a alteração tenha efeito.  
 
--   在 Windows 命令提示符处键入 <Configuration Manager Installation Folder\>**\AdminConsole\Bin\x64\CmRcViewer.exe**  
+        > [!NOTE]  
+        >  Se não desejar que o compartilhamento de área de transferência seja habilitado no console do Configuration Manager, no computador que executa o console, defina o valor da chave do Registro, **HKEY_CURRENT_USER\Software\Microsoft\ConfigMgr10\Remote Control\Clipboard Sharing** como **0**.  
 
-CmRcViewer.exe 支持以下命令行选项：  
+    -   **Ação ‑ Bloqueio do Teclado e Mouse Remotos** – Bloqueia o teclado e o mouse para impedir que o usuário opere o computador remoto.  
 
-- Address - 指定要连接的客户端计算机的 NetBIOS 名称、完全限定域名 (FQDN) 或 IP 地址。
-- Site Server Name - 指定要向其发送与远程控制会话相关的状态消息的 System Center Configuration Manager 站点服务器的名称。
-- **/?** - 显示远程控制查看器的命令行选项。  
+    -   **Ajuda – Sobre o Controle Remoto** – Exibe a versão atual do visualizador.  
+
+5.  Os usuários no computador remoto podem exibir mais informações sobre a sessão de controle remoto ao clicar no ícone **Controle Remoto** do Configuration Manager na área de notificação do Windows ou no ícone na barra da sessão de controle remoto.  
+
+### <a name="to-start-the-remote-control-viewer-from-the-windows-command-line"></a>Para iniciar o visualizador de controle remoto na linha de comando do Windows  
+
+-   No prompt de comando do Windows, digite *<Pasta de instalação do Configuration Manager\>***\AdminConsole\Bin\x64\CmRcViewer.exe**  
+
+O CmRcViewer.exe dá suporte às seguintes opções de linha de comando:  
+
+- *Endereço* – Especifica o nome NetBIOS, o FQDN (nome de domínio totalmente qualificado) ou o endereço IP do computador cliente ao qual você deseja se conectar.
+- *Nome do Servidor do Site* – Especifica o nome do servidor do site do System Center Configuration Manager ao qual você deseja enviar mensagens de status relacionadas à sessão de controle remoto.
+- **/?** – Exibe as opções de linha de comando para o visualizador de controle remoto.  
      
-**示例：CmRcViewer.exe** <Address\> <\\\Site Server Name>  
+**Exemplo:CmRcViewer.exe** *<Endereço\>* *<\\\Nome do Servidor do Site>*  

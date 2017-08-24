@@ -1,6 +1,6 @@
 ---
-title: "电源管理简介 | Microsoft Docs"
-description: "获取 System Center Configuration Manager 中的电源管理简介。"
+title: "Introdução ao gerenciamento de energia | Microsoft Docs"
+description: "Veja a introdução ao gerenciamento de energia no System Center Configuration Manager."
 ms.custom: na
 ms.date: 10/06/2016
 ms.prod: configuration-manager
@@ -18,33 +18,33 @@ manager: angrobe
 ms.openlocfilehash: f46c9479021c814b1102d72c7d493f21a7243bf1
 ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
 ms.translationtype: HT
-ms.contentlocale: zh-CN
+ms.contentlocale: pt-BR
 ms.lasthandoff: 08/07/2017
 ---
-# <a name="introduction-to-power-management-in-system-center-configuration-manager"></a>System Center Configuration Manager 中的电源管理简介
+# <a name="introduction-to-power-management-in-system-center-configuration-manager"></a>Introdução ao gerenciamento de energia no System Center Configuration Manager
 
-*适用范围：System Center Configuration Manager (Current Branch)*
+*Aplica-se a: System Center Configuration Manager (Branch Atual)*
 
-System Center Configuration Manager 中的电源管理可满足众多组织监视和减少其计算机功耗的需求。 该功能利用 Windows 中的内置电源管理功能对组织中的计算机应用相关且一致的设置。 你可以在营业时间和非营业时间对计算机应用不同的电源设置。 例如，你可能想要在非营业时间对计算机应用限制性更强的电源计划。 在计算机必须始终保持开机状态的情况下，可以禁止应用电源管理设置。  
+O gerenciamento de energia no System Center Configuration Manager atende às necessidades que muitas organizações têm de monitorar e reduzir o consumo de energia de seus computadores. O recurso aproveita os recursos de gerenciamento de energia do Windows para aplicar configurações consistentes e relevantes aos computadores na organização. Você pode aplicar diferentes configurações de energia aos computadores durante os horários comercial e não comercial. Por exemplo, talvez você deseje aplicar um plano de energia mais restritivo aos computadores fora do horário comercial. Nos casos em que os computadores precisam permanecer ligados, você pode impedir que as configurações de gerenciamento de energia sejam aplicadas.  
 
- Configuration Manage 中的电源管理包括多种报表，可帮助分析组织的功耗情况和计算机电源设置。 你还可使用报表来帮助诊断电源管理问题。  
+ O gerenciamento de energia no Configuration Manager inclui vários relatórios que ajudam a analisar o consumo de energia e as configurações de energia de computadores em sua organização. Também é possível usar os relatórios para ajudá-lo a solucionar problemas com o gerenciamento de energia.  
 
- 有关如何配置和使用电源管理的详细工作流，请参阅 [System Center Configuration Manager 中电源管理的管理员清单](../../../../core/clients/manage/power/administrator-checklist-for-power-management.md)。  
-
-> [!IMPORTANT]  
->  虚拟机不支持 Configuration Manager 电源管理。 不能对虚拟机应用电源计划，也不能报告虚拟机的电源数据。  
-
-## <a name="the-power-management-workflow"></a>电源管理工作流  
- 使用以下三个阶段来计划和实施 Configuration Manager 中的电源管理。  
-
-### <a name="monitoring-and-planning-phase"></a>监控和规划阶段  
- 电源管理使用 Configuration Manager 硬件清单来收集有关站点中计算机使用情况和电源设置的数据。 可以使用大量报表来分析此数据并确定计算机的最佳电源管理设置。 例如，在电源管理工作流的监控和规划阶段，你可以创建基于“电源功能”  报表中所含数据的集合并使用该数据来标识不能使用电源管理的计算机。 然后，可以从电源管理中排除这些计算机。  
+ Um ver fluxo de trabalho detalhado sobre como configurar e usar o gerenciamento de energia, consulte [Lista de verificação do administrador do gerenciamento de energia no System Center Configuration Manager](../../../../core/clients/manage/power/administrator-checklist-for-power-management.md).  
 
 > [!IMPORTANT]  
->  在收集并分析客户端计算机上的电源数据后，才能将电源计划应用于站点中的计算机。 如果不首先检查现有设置就将新的电源管理设置应用于计算机，这可能导致功耗变大。  
+>  Não há suporte para o gerenciamento de energia do Configuration Manager em máquinas virtuais. Não é possível aplicar planos de energia a máquinas virtuais nem é possível relatar dados de energia deles.  
 
-### <a name="enforcement-phase"></a>实施阶段  
- 通过电源管理，你可以创建可应用到站点中计算机集合的电源计划。 这些电源计划在计算机上配置 Windows 电源管理设置。 可以使用 Configuration Manager 附带的电源计划，或者可以配置自己的自定义电源计划。 可以将监控和规划阶段收集的电源数据用作基线来帮助你评估对计算机应用电源计划之后的节能情况。 有关详细信息，请参阅[System Center Configuration Manager 中电源管理的管理员清单](../../../../core/clients/manage/power/administrator-checklist-for-power-management.md)。  
+## <a name="the-power-management-workflow"></a>O fluxo de trabalho do gerenciamento de energia  
+ Use estas três fases a seguir para planejar e implementar o gerenciamento de energia no Configuration Manager.  
 
-### <a name="compliance-phase"></a>符合性阶段  
- 在符合性阶段中，可以运行帮助评估贵组织中电源使用情况和电源成本节省的报表。 还可以运行描述计算机产生的 CO2 量改善情况的报表。 此外，报表还可帮助验证计算机是否已正确应用电源设置，并且帮助诊断电源管理功能问题。  
+### <a name="monitoring-and-planning-phase"></a>Fases de planejamento e de monitoramento  
+ O gerenciamento de energia usa o inventário de hardware do Configuration Manager para coletar dados sobre as configurações de consumo e energia dos computadores no site. Há diversos relatórios que podem ser usados para analisar esses dados e determinar as configurações ideais de gerenciamento de energia para computadores. Por exemplo, durante as fases de planejamento e monitoramento do fluxo de trabalho do gerenciamento de energia, você pode criar coleções baseadas nos dados que estão incluídos no relatório **Recursos de energia** e usar esses dados para identificar os computadores incapazes de executar o gerenciamento de energia. Em seguida, é possível excluir esses computadores do gerenciamento de energia.  
+
+> [!IMPORTANT]  
+>  Não aplique planos de energia a computadores em seu site até coletar e analisar os dados de energia de computadores cliente. Se você aplicar novas configurações de gerenciamento de energia a computadores sem primeiro examinar as configurações existentes, você poderá perceber um aumento no consumo de energia.  
+
+### <a name="enforcement-phase"></a>Fase de imposição  
+ O gerenciamento de energia permite criar planos de energia que podem ser aplicados a coleções de computadores em seu site. Esses planos de energia definem as configurações de gerenciamento de energia do Windows em computadores. Você pode usar os planos de energia que acompanham o Configuration Manager ou configurar seus próprios planos de energia personalizados. Você pode usar os dados de energia coletados durante as fases de planejamento e monitoramento como uma linha de base para ajudá-lo a avaliar a economia de energia depois de aplicar um plano de energia aos computadores. Para mais informações, consulte [Lista de verificação do administrador do gerenciamento de energia no System Center Configuration Manager](../../../../core/clients/manage/power/administrator-checklist-for-power-management.md).  
+
+### <a name="compliance-phase"></a>Fase de conformidade  
+ Na fase de conformidade, você pode executar relatórios que podem ajudá-lo a avaliar o consumo de energia e a economia de energia em sua organização. Você também pode executar relatórios que descrevem os aperfeiçoamentos na quantidade de CO2 gerado por computadores. Relatórios também estão disponíveis, o que ajuda a validar se as configurações de energia foram aplicadas corretamente aos computadores e a resolver problemas com o recurso de gerenciamento de energia.  

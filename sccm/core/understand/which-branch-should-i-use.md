@@ -1,6 +1,6 @@
 ---
-title: "应该使用哪一个分支 | Microsoft Docs"
-description: "了解 System Center Configuration Manager 可用分支之间的差异。"
+title: Qual branch devo usar | Microsoft Docs
+description: "Aprenda as diferenças entre os branches do System Center Configuration Manager disponíveis."
 ms.custom: na
 ms.date: 05/02/2017
 ms.prod: configuration-manager
@@ -17,137 +17,137 @@ manager: angrobe
 ms.openlocfilehash: 26356a80bd8c78d4517253bae73e53d8d8f3a73a
 ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
 ms.translationtype: HT
-ms.contentlocale: zh-CN
+ms.contentlocale: pt-BR
 ms.lasthandoff: 08/07/2017
 ---
-# <a name="which-branch-of-configuration-manager-should-i-use"></a>应该使用 Configuration Manager 的哪一个分支？
+# <a name="which-branch-of-configuration-manager-should-i-use"></a>Qual branch do Configuration Manager devo usar?
 
-*适用范围：System Center Configuration Manager（Current Branch、Long-Term Servicing Branch 和 Technical Preview）*
+*Aplica-se a: System Center Configuration Manager (Branch Atual, Branch de Manutenção em Longo Prazo e Technical Preview)*
 
 
-从 2016 年 10 月开始，System Center Configuration Manager 有三个分支可用。 使用本主题帮助选择适合的分支。
+Desde outubro de 2016, há três branches do System Center Configuration Manager disponíveis. Use este tópico para ajudar a escolher o branch correto para você.
 
 > [!TIP]  
-> 层次结构中的所有站点必须运行相同的分支。 不支持在各个网站运行不同分支的层次结构。
+> Todos os sites em uma hierarquia devem executar o mesmo branch. Não há suporte para ter uma hierarquia com uma branches diferentes em sites diferentes.
 
-## <a name="current-branch-of-system-center-configuration-manager"></a>System Center Configuration Manager 的 Current Branch
-此经过许可的分支可用于需要获取最新功能的选项的生产环境。 如果拥有以下项之一，应使用该分支：System Center 数据中心、System Center Standard、System Center Configuration Manager 或等效订阅权限。 有关软件保障和许可选项的详细信息，请参阅 [System Center Configuration Manager 的许可和分支](learn-more-editions.md)。
+## <a name="current-branch-of-system-center-configuration-manager"></a>Branch atual do System Center Configuration Manager
+Essa é um branch licenciado para uso em um ambiente de produção em que você deseja a opção de ter os recursos e funcionalidades mais recentes. Esse é o branch a ser usado se você tiver um dos seguintes: System Center Datacenter, System Center Standard, System Center Configuration Manager ou direitos de assinatura equivalentes. Para mais informações sobre as opções de licenciamento e Software Assurance, confira [Licenciamento e branches do System Center Configuration Manager](learn-more-editions.md).
 
 
 >  [!TIP]
-> Current Branch 可作为无需许可证的评估版进行安装。 评估版可使用 180 天，并支持升级到 Current Branch 的许可版。
+> O Branch Atual pode ser instalado como uma edição de avaliação que não requer uma licença. A edição de avaliação pode ser usada por 180 dias e dá suporte à atualização para uma edição licenciada do Branch Atual.
 
-Current Branch 一年更新几次，更新时提供新的功能。 每个更新版本在其发布后一年内受支持。 必须在 1 年期限到期之前或到期日当天升级到 Current Branch 的较新版本。 较新版本的更新以控制台内更新的形式提供。
+O Branch Atual é atualizado várias vezes ao ano com novos recursos. Cada versão de atualização tem suporte por um ano após seu lançamento. Você deve atualizar para uma versão mais recente do Branch Atual na data da validade ou antes da validade desse período de um ano. As atualizações para as versões mais novas estão disponíveis como atualizações no console.
 
-若要将 Current Branch 作为新站点进行安装，或者安装为来自 System Center 2012 Configuration Manager Service Pack 2 或 System Center 2012 R2 Configuration Manager Service Pack 1 的升级，则需要使用 System Center Configuration Manager 的[基线介质](/sccm/core/servers/manage/updates#baseline-and-update-versions)，该介质以 DVD 形式随附在 System Cener 2016 中，或者作为 System Center Configuration Manager 的一部分单独发行。 对此介质的访问权取决于 System Center Configuration Manager 的许可方式。 更高的基线版本（如 1702）不支持安装 LTSB。
+Para instalar o Branch Atual como um novo site ou como uma atualização do System Center 2012 Configuration Manager com Service Pack 2 ou System Center 2012 R2 Configuration Manager com Service Pack 1 use a [mídia de linha de base](/sccm/core/servers/manage/updates#baseline-and-update-versions) do System Center Configuration Manager fornecida como um DVD com o System Center 2016 ou que está disponível como parte da versão autônoma do System Center Configuration Manager. O acesso a esta mídia depende de como o System Center Configuration Manager foi licenciado. Versões de linha de base posteriores, como 1702, não dão suporte à instalação do LTSB.
 
-还可使用基线介质安装充当 Current Branch 评估版的新站点。 如果想仅安装评估版，可从 [TechNet 评估中心](https://www.microsoft.com/evalcenter/evaluate-system-center-configuration-manager-and-endpoint-protection)网站获取软件。
+Você também pode usar a mídia de linha de base para instalar um novo site de uma edição de avaliação do Branch Atual. Se você deseja instalar apenas uma edição de avaliação, pode obter o software do site do [Centro de Avaliação do TechNet](https://www.microsoft.com/evalcenter/evaluate-system-center-configuration-manager-and-endpoint-protection).
 
 >  [!NOTE]
-> 使用基线介质安装新的 Configuration Manager 层次结构的站点。 如果以前安装了基准版本（如版本 1511），请使用控制台内部更新将站点更新到新版本（如 1606）。
+> Use a mídia de linha de base para instalar sites para uma nova hierarquia do Configuration Manager. Se você instalou uma versão de linha de base como a versão 1511 anteriormente, use as atualizações no console para atualizar seus sites para uma nova versão, como a 1606.
 >
-> 使用控制台内部更新更新后的站点与使用基线介质安装新站点的效果一样。
+> Sites que são atualizados usando atualizações no console resultam em sites iguais ao novo site instalado usando a mídia de linha de base.
 >
-> 有关详细信息，请参阅 [System Center Configuration Manager 的更新](/sccm/core/servers/manage/updates)。
+> Para mais informações, confira [Updates for System Center Configuration Manager](/sccm/core/servers/manage/updates) (Atualizações para o System Center Configuration Manager).
 
-**Current Branch 的功能**
-- 接收[控制台中更新](/sccm/core/servers/manage/install-in-console-updates)，使新功能可用。
-- 接收控制台中更新，为现有功能提供安全和质量修补程序。
-- 必要时支持带外更新。 请参阅[使用更新注册工具](/sccm/core/servers/manage/use-the-update-registration-tool-to-import-hotfixes)或[使用修补程序安装程序](/sccm/core/servers/manage/use-the-hotfix-installer-to-install-updates)。
-- 可以与 Microsoft Intune 和其他基于云的服务和基础结构交互操作。
-- 支持与其他 Configuration Manager 安装之间的[数据迁移](/sccm/core/migration/migrate-data-between-hierarchies)。
-- 支持从以前版本的 Configuration Manager 升级。
-- 支持安装评估版本，以后可以升级到完全许可的安装。
+**Recursos do Branch Atual**
+- Recebe [atualizações no console](/sccm/core/servers/manage/install-in-console-updates) que disponibilizam novos recursos para uso.
+- Recebe atualizações no console que fornecem correções de segurança e qualidade para os recursos existentes.
+- Dá suporte a atualizações fora da banda quando necessário. Confira [Usar a Ferramenta de Registro de Atualização](/sccm/core/servers/manage/use-the-update-registration-tool-to-import-hotfixes) ou [Usar o instalador do hotfix](/sccm/core/servers/manage/use-the-hotfix-installer-to-install-updates).
+- Pode interoperar com o Microsoft Intune e outros serviços baseados em nuvem e infraestrutura.
+- Dá suporte à [migração de dados](/sccm/core/migration/migrate-data-between-hierarchies) de e para outras instalações do Configuration Manager.
+- Dá suporte à atualização de versões anteriores do Configuration Manager.
+- Dá suporte à instalação como uma edição de avaliação, por meio da qual você pode atualizar para uma instalação totalmente licenciada posteriormente.
 
-Current Branch 的初始版本是版本 1511。 后续更新包括版本 1602 和 1606 等。 各版本的有效期为 1 年，Microsoft 建议在最新版本发布后立即更新。 较旧版本最多可使用一年，之后需要更新到较新版本，也可跳过更新，直接安装最新的可用版本。 由于每个版本是累积更新，因此如果跳过更新并安装最新版本，仍可获取来自以前版本的所有功能和改进。
+A versão inicial do Branch Atual foi a versão 1511. Atualizações subsequentes incluem as versões 1602, 1606 e assim por diante. Cada versão permanece no suporte por um ano e a Microsoft recomenda que você atualize para a versão mais nova logo após seu lançamento. Você pode esperar por até um ano antes de atualizar para uma versão mais nova e também pode ignorar uma atualização para instalar a versão mais nova disponível. Como cada versão é cumulativa, se você pular uma atualização e instalar a versão mais recente, ainda terá acesso a todos os recursos e aprimoramentos de versões anteriores.
 
-有关详细信息，请参阅[对 Current Branch 版本的支持](/sccm/core/servers/manage/current-branch-versions-supported)。
+Para mais informações, confira [Support for Current Branch versions](/sccm/core/servers/manage/current-branch-versions-supported) (Suporte para versões do Branch Atual).
 
-**更新选项**
-- 通过可用的软件保障，可以安装 Current Branch 版本的控制台中更新。  
-- 无法将 Current Branch 转换为 Technical Preview。 Technical Preview 是不需要许可证的单独安装。
-- 无法将 Current Branch 转换为 Long-Term Servicing Branch (LTSB)。 必须卸载 Current Branch，然后将 LTSB 作为新安装进行安装。
+**Opções de atualização**
+- Com o Software Assurance, você pode instalar atualizações no console para versões do Branch Atual.  
+- Não há nenhuma opção para converter o Branch Atual em um Technical Preview. Os Technical Previews são instalações separadas que não exigem uma licença.
+- Não há nenhuma opção para converter seu Branch Atual para o LTSB (Branch de Manutenção em Longo Prazo). Você deve desinstalar o Branch Atual e, em seguida, desinstalar o LTSB como uma nova instalação.
 
-##  <a name="long-term-servicing-branch-of-system-center-configuration"></a>System Center Configuration Manager 的 Long-Term Servicing Branch
-这是获得许可且适用于生产的分支，面向正在使用 Current Branch 且允许其 Configuration Manager 软件保障 (SA) 或等效订阅权限在 2016 年 10 月 1 日后过期的 Configuration Manager 客户。 有关软件保障和许可选项的详细信息，请参阅 [System Center Configuration Manager 的许可和分支](learn-more-editions.md)。
+##  <a name="long-term-servicing-branch-of-system-center-configuration"></a>Branch de Manutenção em Longo Prazo do System Center Configuration
+Esse é um branch licenciado para uso na produção para clientes do Configuration Manager que estão usando o Branch Atual e que permitiram que seu SA (Software Assurance) do Configuration Manager ou seus direitos de assinatura equivalentes expirassem após 1º de outubro de 2016. Para mais informações sobre as opções de licenciamento e Software Assurance, confira [Licenciamento e branches do System Center Configuration Manager](learn-more-editions.md).
 
-LTSB 基于版本 1606。 该分支不会收到提供新功能或更新现有功能的控制台中更新。 但是，提供了关键安全修补程序。 若要安装 LTSB，你必须使用版本 1606 [基线介质](/sccm/core/servers/manage/updates#baseline-and-update-versions)，基线介质以 DVD 形式随附在 System Center 2016 或 System Center Configuration Manager 中。
+O LTSB baseia-se na versão 1606. Essa ramificação não recebe atualizações no console que oferecem novas funcionalidades ou atualiza funcionalidades existentes. No entanto, correções de segurança críticas são fornecidas. Para instalar o LTSB, você deverá usar a [mídia de linha de base](/sccm/core/servers/manage/updates#baseline-and-update-versions) da versão 1606 que você obtém como um DVD com o System Center 2016 ou System Center Configuration Manager.
 
-若要将 LTSB 作为新站点或作为来自受支持的 Configuration Manager 2012 站点的升级对其进行安装，请使用版本 1606 [基线介质](/sccm/core/servers/manage/updates#baseline-and-update-versions)，该基线介质以 DVD 形式随附在 System Center 2016 或 System Center Configuration Manager (Current Branch and Long-Term Servicing Branch 1606) 版本中。 可使用基线介质安装运行 Current Branch 版本 1606 的新站点或运行 Long-Term Servicing Branch 的新站点。
+Para instalar o LTSB como um novo site ou uma atualização do site do Configuration Manager 2012 com suporte, use a [mídia de linha de base](/sccm/core/servers/manage/updates#baseline-and-update-versions) da versão 1606 obtida como um DVD com a versão do System Center 2016 ou System Center Configuration Manager (Branch Atual e Branch de Manutenção em Longo Prazo 1606). Você pode usar a mídia de linha de base para instalar um novo site que executa a versão 1606 do Branch Atual ou um novo site que executa o Branch de Manutenção em Longo Prazo.
 
 > [!TIP]  
-> 若要了解 System Center 2016，请参阅 [System Center 2016 文档](https://technet.microsoft.com/system-center-docs/system-center)。 本文档还说明如何获取 System Center 2016（需要 Microsoft 许可证协议或类似权限）。
+> Para saber sobre o System Center 2016, consulte a [Documentação do System Center 2016](https://technet.microsoft.com/system-center-docs/system-center). Esta documentação também identifica como obter o System Center 2016, que exige um contrato de licença da Microsoft ou direitos semelhantes.
 
-> 若要在批量许可服务中心 (VLSC) 查找 System Center Configuration Manager 版本 1606，请转到 [VLSC](https://www.microsoft.com/Licensing/servicecenter/Downloads/DownloadsAndKeys.aspx) 的“下载和密钥”选项卡，搜索“system center config”，然后选择“System Center Config Mgr (当前分支和 LTSB)”。
+> Para localizar o System Center Configuration Manager versão 1606 no VLSC (Centro de Serviços de Licenciamento por Volume), acesse a guia **Downloads e Chaves** do [VLSC](https://www.microsoft.com/Licensing/servicecenter/Downloads/DownloadsAndKeys.aspx), pesquise “configuração do system center” e selecione **System Center Config Mgr (Branch Atual e LTSB)**.
 
-> 也可从 [TechNet 评估中心](https://www.microsoft.com/evalcenter/evaluate-system-center-technical-preview)获取 System Center 2016 评估版。
+> Você também pode obter uma edição de avaliação do System Center 2016 do [Centro de Avaliação do TechNet](https://www.microsoft.com/evalcenter/evaluate-system-center-technical-preview).
 
-**LTSB 的功能**
--   接收提供关键安全修补程序的控制台内部更新
-- SA 协议或 Configuration Manager 的等效权限过期后，提供安装选项
-- 如果当前具有 SA 协议或 Configuration Manager 等效权限，支持升级（转换）到 Current Branch
+**Recursos do LTSB**
+-   Recebe atualizações no console que fornecem correções de segurança críticas
+- Fornece uma opção de instalação quando o contrato de SA ou direitos equivalentes para o Configuration Manager tiverem expirado
+- Dá suporte à atualização (conversão) para o Branch Atual quando você tem um contrato de SA atual ou direitos equivalentes para o Configuration Manager
 
-**限制**  
-LTSB 以 Current Branch 版本 1606 为基础，具有以下限制：
-- 正式发布（2016 年 10 月）后，支持 LTSB 的 10 年关键安全更新，此后，此分支的支持将过期。 有关支持生命周期的详细信息，请参阅 [Microsoft 生命周期策略](https://support.microsoft.com/en-us/lifecycle)。
-- 支持有限数量的服务器和客户端操作系统以及相关技术（如 SQL Server 版本）。 有关此分支支持功能的详细信息，请参阅 [Long-Term Servicing Branch 支持的配置](supported-configurations-for-ltsb.md)。
-- 不接收新功能的更新。
-- 不支持添加 Microsoft Intune 订阅，即阻止使用：
-  - 混合 MDM 配置中的 Intune
- - 本地 MDM
--   不支持使用 Windows 10 服务仪表板和服务计划、Windows 10 Current Branch (CB) 或 Current Branch for Business (CBB)。
-- 不支持 Windows 10 LTSB 和 Windows Server 的未来版本。
--   不支持资产智能。
--   不支持基于云的分发点。
--   不支持将 Exchange 连接器用作 Exchange Online。
--   不支持任何预发行版本功能。
-
-
-
-**更新选项**
-- 可以将 LTSB 安装转换为 Current Branch 安装。 对 LTSB 的支持过期前或过期后，支持转换为 Current Branch。
-
-  若要转换，必须具有与 Microsoft 签署的可用的软件保障协议。 有关详细信息，请参阅以下链接：
-  - [将 Long-Term Servicing Branch 升级到 Current Branch](convert-to-current-branch.md)
-  - [System Center Configuration Manager 的许可和分支](learn-more-editions.md)
-  - [Configuration Manager 的更新](/sccm/core/servers/manage/updates)中的[基线和更新版本](/sccm/core/servers/manage/updates#baseline-and-update-versions)
-- 无法将 LTSB 转换为 Technical Preview。 Technical Preview 是不需要许可证的单独安装。
--   不可将 Current Branch 的评估版升级到 LTSB 安装。
+**Limitações**  
+O LTSB se baseia na versão 1606 do Branch Atual e tem as seguintes limitações:
+- O LTSB tem suporte por 10 anos de atualizações de segurança críticas após sua disponibilidade geral (outubro de 2016), após o qual o suporte para esse branch expira. Para mais informações sobre o ciclo de vida de suporte, confira [Política de Ciclo de Vida da Microsoft](https://support.microsoft.com/en-us/lifecycle).
+- Dá suporte a uma lista de definições limitada dos sistemas operacionais do servidor e do cliente e tecnologias relacionadas, como as versões do SQL Server. Para mais informações sobre o que tem suporte com esse branch, confira [Configurações com suporte para o Branch de Manutenção em Longo Prazo](supported-configurations-for-ltsb.md).
+- Não recebe atualizações para novos recursos.
+- Não dá suporte à adição de uma Assinatura do Microsoft Intune, o que impede o uso do:
+  - Intune em uma configuração de MDM híbrida
+ - MDM local
+-   Não dá suporte ao uso do Painel de Serviço do Windows 10, planos de serviço, CB (Branch Atual) do Windows 10 ou CBB (Branch Atual para Negócios).
+- Não dá suporte para versões futuras do Windows 10 LTSB e do Windows Server.
+-   Não há suporte para o Asset Intelligence.
+-   Não há suporte para pontos de distribuição baseados em nuvem.
+-   O Suporte para o Exchange Online não tem suporte como um Exchange Connector.
+-   Não dá suporte a nenhum recurso de pré-lançamento.
 
 
-## <a name="technical-preview-for-system-center-configuration-manager"></a>System Center Configuration Manager Technical Preview
-Technical Preview 适用于在实验室环境中了解和试用为 Configuration Manager 开发的的最新功能。 Technical Preview 不支持在生产环境中使用，并且不需要具有软件保障许可证协议。
 
-若要安装运行 Technical Preview 的新站点，使用最新 [System Center Configuration Manager Technical Preview 的基线介质](/sccm/core/get-started/technical-preview#install-and-update-the-technical-preview)。 安装 Technical Preview 后，每月提供作为控制台中更新的新版本。
+**Opções de atualização**
+- Você pode converter sua instalação LTSB para uma instalação de Branch Atual. A conversão para o Branch Atual tem suporte antes ou depois do suporte ao LTSB expirar.
 
-**Technical Preview 的功能**
--  基于 Current Branch 的最新基线版本
--  接收控制台内部更新，该更新将安装更新到 Technical Preview 最新版
--  内附正在开发且开发人员希望你提供反馈的新功能
--  接收仅适用于 Technical Preview 分支的更新
-
-**限制**
--  [有限支持](/sccm/core/get-started/technical-preview#requirements-and-limitatins-for-the-techincal-preview)，仅包括单个主站点和最多 10 个客户端。  
--  不能升级到 Current Branch 或 LTSB。
--  不支持使用迁移将数据导入或导出到另一个 Configuration Manager 安装。
--  不支持从以前版本的 Configuration Manager 升级。
--  不支持安装评估版本。
-
-先引入 Technical Preview 中的功能通常会在之后的更新中添加到 Current Branch。 每个新的 Technical Preview 版本都包括以前 Technical Preview 版本的功能，即使这些功能已添加到 Current Branch，也是如此。
-
-有关详细信息，请参阅 [System Center Configuration Manager Technical Preview](/sccm/core/get-started/technical-preview)。
-
-**更新选项**
--   对于新的 Technical Preview 版本，可以安装任何控制台中更新。
--   无法将 Technical Preview 转换为 Current Branch 或 LTSB。
+  Para converter, você deve ter um contrato de Software Assurance ativo com a Microsoft. Para mais informações, consulte os links a seguir:
+  - [Atualizar o Branch de Manutenção em Longo Prazo para o Branch Atual](convert-to-current-branch.md)
+  - [Licenciamento e branches do System Center Configuration Manager](learn-more-editions.md)
+  - [Baseline and update versions](/sccm/core/servers/manage/updates#baseline-and-update-versions) (Versões de linha de base e atualização) em [Updates for Configuration Manager](/sccm/core/servers/manage/updates) (Atualizações para o Configuration Manager)
+- Não há nenhuma opção para converter o LTSB em um Technical Preview. Os Technical Previews são instalações separadas que não exigem uma licença.
+-   Você não pode atualizar uma edição de avaliação do Branch Atual para uma instalação do LTSB.
 
 
-## <a name="identify-your-branch-and-version"></a>识别分支和版本
-查看 Configuration Manager 站点的版本信息时，也可确认分支。
+## <a name="technical-preview-for-system-center-configuration-manager"></a>Visualização técnica do System Center Configuration Manager
+O Technical Preview é para uso em um ambiente de laboratório em que você deseja conhecer e testar os recursos mais recentes sendo desenvolvidos para o Configuration Manager. O Technical Preview não tem suporte em um ambiente de produção e não requer que você tenha um contrato de licença do Software Assurance.
 
-**版本**   
-若要查看网站的版本，请转到控制台左上角的“关于 System Center Configuration Manager”，调出“网站版本”。 有关网站版本列表，请参阅 []()。
+Para instalar um novo site que executa o Technical Preview, use a [mídia de linha de base do System Center Configuration Manager Technical Preview](/sccm/core/get-started/technical-preview#install-and-update-the-technical-preview) mais recente. Depois de instalar o Technical Preview, há novas versões disponíveis como atualizações no console todo mês.
 
-**分支**  
-若要确认站点分支（是 LTSB 还是 Current Branch），在控制台中转至“管理” > “站点配置” > “站点”，并打开“层次结构设置”。 如果有转换为 Current Branch 的选项，而且选项处于活动状态，该站点运行 LTSB 版本。 如果站点运行 Current Branch，此选项将灰显。
-若要了解 Configuration Manager 的不同版本，请参阅 [Configuration Manager 更新](/sccm/core/servers/manage/updates)中的“基线和更新版本”。
+**Recursos da Technical Preview**
+-  Com base nas versões de linha de base recente do Branch Atual
+-  Recebe atualizações no console que atualizam sua instalação para a versão mais recente da Technical Preview
+-  Inclui novos recursos que estão sendo desenvolvidos e para os quais nossos desenvolvedores gostariam de receber seus comentários
+-  Recebe atualizações que se aplicam apenas ao branch de Technical Preview
+
+**Limitações**
+-  [O suporte é limitado](/sccm/core/get-started/technical-preview#requirements-and-limitatins-for-the-techincal-preview), incluindo apenas um único site primário e até 10 clientes.  
+-  Não pode ser atualizada para o Branch Atual ou o LTSB.
+-  Não dá suporte ao uso da migração para importar ou exportar dados para outra instalação do Configuration Manager.
+-  Não dá suporte à atualização de versões anteriores do Configuration Manager.
+-  Não dá suporte à instalação como uma edição de avaliação.
+
+Recursos que são introduzidos pela primeira vez em um Technical Preview geralmente são adicionados ao Branch Atual em uma atualização posterior. Cada nova versão da Technical Preview inclui os recursos dos technical previews anteriores, mesmo após esses recursos terem sido adicionados ao Branch Atual.
+
+Para mais informações, confira [Technical Preview do System Center Configuration Manager](/sccm/core/get-started/technical-preview).
+
+**Opções de atualização**
+-   Você pode instalar qualquer atualização no console para uma nova versão de Technical Preview.
+-   Não há nenhuma opção de converter uma Technical Preview para o Branch Atual ou LTSB.
+
+
+## <a name="identify-your-branch-and-version"></a>Identificar seu branch e versão
+Ao exibir as informações da versão de um site do Configuration Manager, também confirma o branch.
+
+**Versão**   
+Para verificar a versão do site, no console, acesse **Sobre o System Center Configuration Manager** no canto superior esquerdo do console em que a **Versão do site** é exibida. Consulte []() para obter uma lista das versões do site.
+
+**Branch**  
+Para confirmar o branch do seu site (como LTSB ou Branch Atual), no console, acesse **Administração** > **Configuração do Site** > **Sites** e abra **Configurações da Hierarquia**. Se houver uma opção para converter para o Branch Atual e ela estiver ativa, o site executará a versão LTSB. Quando o site executa o Branch Atual, essa opção fica esmaecida.
+Para saber mais sobre as diferentes versões do Configuration Manager, veja “Versões de linha de base e atualização” em [Atualizações para o Configuration Manager](/sccm/core/servers/manage/updates).

@@ -1,6 +1,6 @@
 ---
-title: "将客户端软件部署到 Mac 的准备工作 | Microsoft Docs"
-description: "将 Configuration Manager 客户端部署到 Mac 计算机前的配置任务。"
+title: Preparar para implantar o software cliente em Macs | Microsoft Docs
+description: "As tarefas de configuração antes da implantação do cliente do Configuration Manager em Macs."
 ms.custom: na
 ms.date: 05/04/2017
 ms.prod: configuration-manager
@@ -17,20 +17,20 @@ manager: angrobe
 ms.openlocfilehash: b3bb72f81812705b4654e268025074402e89a7cb
 ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
 ms.translationtype: HT
-ms.contentlocale: zh-CN
+ms.contentlocale: pt-BR
 ms.lasthandoff: 08/07/2017
 ---
-# <a name="prepare-to-deploy-client-software-to-macs"></a>将客户端软件部署到 Mac 的准备工作
+# <a name="prepare-to-deploy-client-software-to-macs"></a>Preparar para implantar o software cliente em Macs
 
-*适用范围：System Center Configuration Manager (Current Branch)*
+*Aplica-se a: System Center Configuration Manager (Branch Atual)*
 
-按照下列步骤，确保你已准备好[将 Configuration Manager 客户端部署到 Mac 计算机](/sccm/core/clients/deploy/deploy-clients-to-macs)。 
+Siga estas etapas para assegurar que você está pronto para [implantar o cliente do Configuration Manager em computadores Mac](/sccm/core/clients/deploy/deploy-clients-to-macs). 
 
-## <a name="mac-prerequisites"></a>Mac 先决条件
+## <a name="mac-prerequisites"></a>Pré-requisitos do Mac
 
-Mac 客户端安装包未与 Configuration Manager 媒体一同提供。 可从 [Microsoft 下载中心](http://go.microsoft.com/fwlink/?LinkID=525184)下载**适用于其他操作系统的客户端**。  
+O pacote de instalação do cliente Mac não é fornecido com a mídia do Configuration Manager. Baixe os **Clientes para Sistemas Operacionais Adicionais** no [Centro de Download da Microsoft](http://go.microsoft.com/fwlink/?LinkID=525184).  
 
-**支持的版本：**  
+**Versões com suporte:**  
 
 -   **Mac OS X 10.6** (Snow Leopard) 
 
@@ -46,148 +46,148 @@ Mac 客户端安装包未与 Configuration Manager 媒体一同提供。 可从 
 
 -   **Mac OS X 10.11** (El Capitan)  
 
--   **Mac OS X 10.12** (macOS Sierra)  
+-   **Mac OS X 10.12** (macOS Sierra )  
 
-## <a name="certificate-requirements"></a>证书要求
-在 Mac 计算机上安装和管理客户端需要公钥基础结构 (PKI) 证书。 PKI 证书通过使用手动身份验证和加密的数据传输来保护 Mac 计算机和 Configuration Manager 站点之间的通信的安全。 Configuration Manager 可通过将 Microsoft 证书服务与企业证书颁发机构 (CA)、Configuration Manager 注册点和注册代理点站点系统角色一起使用，从而请求和安装用户客户端证书。 或者，如果证书满足 Configuration Manager 的要求，你可以独立于 Configuration Manager 请求和安装计算机证书。   
+## <a name="certificate-requirements"></a>Requisitos de certificado
+A instalação e o gerenciamento do cliente para computadores Mac exigem certificados de PKI (infraestrutura de chave pública). Os certificados PKI protegem a comunicação entre os computadores Mac e o site do Configuration Manager usando autenticação mútua e transferência de dados criptografados. O Configuration Manager pode solicitar e instalar um certificado de cliente do usuário usando os Serviços de Certificados da Microsoft com uma AC (autoridade de certificação) corporativa e as funções do sistema de sites de ponto de registro e ponto proxy do registro do Configuration Manager. Ou você poderá solicitar e instalar um certificado de computador independentemente do Configuration Manager se o certificado atender aos requisitos do Configuration Manager.   
   
-Configuration Manager Mac 客户端始终执行证书吊销检查。 不能禁用此功能。  
+Os clientes Mac do Configuration Manager sempre executam a verificação de revogação de certificado. Não é possível desabilitar essa função.  
   
-如果 Mac 客户端由于无法找到 CRL 而无法确认服务器证书的证书吊销状态，它们将无法成功连接到 Configuration Manager 站点系统。 特别是，对于所在的林与证书颁发机构不同的 Mac 客户端，请检查你的 CRL 设计以确保 Mac 客户端可找到并连接到 CRL 分发点 (CDP) 以便连接站点系统服务器。  
+Se os clientes Mac não puderem confirmar o status de revogação de um certificado do servidor por não ter sido possível localizar a CRL, eles não poderão se conectar com êxito aos sistemas de sites do Configuration Manager. Especialmente para clientes Mac em uma floresta diferente da autoridade de certificação emissora, verifique o design da sua CRL para garantir que os clientes Mac possam localizar e se conectar a um CDP (ponto de distribuição) de CRL para estabelecer conexão com servidores do sistema de site.  
 
-在 Mac 计算机上安装 Configuration Manager 客户端之前，请决定安装客户端证书的方式：  
+Antes de instalar o cliente do Configuration Manager em um computador Mac, decida como o certificado do cliente será instalado:  
 
--   通过使用 [CMEnroll 工具](/sccm/core/clients/deploy/deploy-clients-to-macs#install-the-client-and-then-enroll-the-client-certificate-on-the-mac)注册 Configuration Manager。 注册过程不支持自动证书续订，因此你必须在安装的证书过期之前重新注册 Mac 计算机。  
+-   Usar o registro do Configuration Manager usando a [ferramenta CMEnroll](/sccm/core/clients/deploy/deploy-clients-to-macs#install-the-client-and-then-enroll-the-client-certificate-on-the-mac). O processo de registro não oferece suporte à renovação automática de certificados, portanto, é necessário registrar novamente os computadores Mac antes de o certificado instalado expirar.  
 
--   [使用与 Configuration Manager 无关的证书请求和安装方法](/sccm/core/clients/deploy/deploy-clients-to-macs#use-a-certificate-request-and-installation-method-that-is-independent-from-configuration-manager)。  
+-   [Usar um método de solicitação e de instalação de certificado independente do Configuration Manager](/sccm/core/clients/deploy/deploy-clients-to-macs#use-a-certificate-request-and-installation-method-that-is-independent-from-configuration-manager).  
 
-有关 Mac 客户端证书要求和支持 Mac 计算机所需的其他 PKI 证书的详细信息，请参阅 [System Center Configuration Manager 的 PKI 证书要求](../../../core/plan-design/network/pki-certificate-requirements.md)。  
+Para obter mais informações sobre o requisito de certificado do cliente Mac e outros certificados PKI necessários para dar suporte a computadores Mac, consulte [Requisitos de certificado PKI para o System Center Configuration Manager](../../../core/plan-design/network/pki-certificate-requirements.md).  
 
-会自动将 Mac 客户端分配给对其进行管理的 Configuration Manager 站点。 即使仅与 Intranet 通信，Mac 客户端也将安装为仅 Internet 的客户端。 这种客户端配置意味着，当你将为客户端分配的站点中的站点系统角色（管理点和分发点）配置为允许来自 Internet 的客户端连接时，它们只会与这些站点系统角色通信。 Mac 计算机不会与为其分配的站点范围外的站点系统角色通信。  
+Os clientes Mac são atribuídos automaticamente ao site do Configuration Manager que os gerencia. Os clientes Mac são instalados como clientes somente de Internet, mesmo se a comunicação for restrita à intranet. Essa configuração de cliente significa que eles se comunicarão com as funções de sistema de site (pontos de gerenciamento e de distribuição) em seus sites atribuídos quando você configurar essas funções do sistema de site para permitir conexões de clientes por meio da Internet. Os computadores Mac não se comunicam com as funções do sistema de site fora do site atribuído.  
 
 > [!IMPORTANT]  
->  Configuration Manager Mac 客户端不能用于连接到配置为使用[数据库副本](../../../core/servers/deploy/configure/database-replicas-for-management-points.md)的管理点。  
+>  O cliente Mac do Configuration Manager não pode ser usado para se conectar a um ponto de gerenciamento configurado para usar uma [réplica de banco de dados](../../../core/servers/deploy/configure/database-replicas-for-management-points.md).  
 
 
-## <a name="deploy-a-web-server-certificate-to-site-system-servers"></a>将 Web 服务器证书部署到站点系统服务器  
-如果这些站点系统不具有 Web 服务器证书，请将该证书部署到具有这些站点系统角色的计算机：  
+## <a name="deploy-a-web-server-certificate-to-site-system-servers"></a>Implantar um certificado do servidor Web nos servidores do sistema de sites  
+Caso os sistemas de sites ainda não tenham um certificado do servidor Web, implante um nos computadores que têm as funções de sistema de sites a seguir:  
 
--   管理点  
+-   Ponto de gerenciamento  
 
--   分发点  
+-   Ponto de distribuição  
 
--   注册点  
+-   Ponto de registro  
 
--   注册代理点  
+-   Ponto proxy do registro  
 
-Web 服务器证书必须包含在站点系统属性中指定的 Internet FQDN。 但不可通过 Internet 访问的服务器也支持 Mac 计算机。 如果不需要基于 Internet 的客户端管理，你可以为 Internet FQDN 指定 Intranet FQDN 值。  
+O Certificado do servidor Web deve conter o FQDN de Internet especificado nas propriedades de sistema de site. O servidor não precisa ser acessível pela Internet para dar suporte a computadores Mac. Se você não precisa de gerenciamento de clientes baseado na Internet, pode especificar o valor de FQDN de intranet para o FQDN de Internet.  
 
-可在管理点、分发点和注册代理点的 Web 服务器证书中指定站点系统的 Internet FQDN 值。 
+Especifique o valor do FQDN de Internet do sistema de sites no certificado do servidor Web para o ponto de gerenciamento, o ponto de distribuição e o ponto proxy do registro. 
 
-有关创建和安装此 Web 服务器证书的部署示例，请参阅[为运行 IIS 的站点系统部署 Web 服务器证书](../../plan-design/network/example-deployment-of-pki-certificates.md#BKMK_webserver2008_cm2012)。  
+Para ver um exemplo de implantação que cria e instala esse certificado do servidor Web, consulte [Implantando o certificado do servidor Web para sistemas de sites que executam IIS](../../plan-design/network/example-deployment-of-pki-certificates.md#BKMK_webserver2008_cm2012).  
 
 
-## <a name="deploy-a-client-authentication-certificate-to-site-system-servers"></a>将客户端身份验证证书部署到站点系统服务器  
- 如果这些站点系统没有客户端身份验证证书，请向托管以下站点系统角色的计算机部署客户端身份验证证书：  
+## <a name="deploy-a-client-authentication-certificate-to-site-system-servers"></a>Implantar um certificado de autenticação de cliente nos servidores do sistema de sites  
+ Caso os sistemas de sites ainda não tenham um certificado de autenticação de cliente, implante um nos computadores que hospedam as funções de sistema de sites a seguir:  
 
--   管理点  
+-   Ponto de gerenciamento  
 
--   分发点  
+-   Ponto de distribuição  
 
- 有关创建和安装管理点的客户端证书的示例部署，请参阅[为 Windows 计算机部署客户端证书](../../plan-design/network/example-deployment-of-pki-certificates.md#BKMK_client2008_cm2012)  
+ Para ver um exemplo de implantação que cria e instala o certificado do cliente para pontos de gerenciamento, consulte [Implantando o certificado do cliente para computadores com Windows](../../plan-design/network/example-deployment-of-pki-certificates.md#BKMK_client2008_cm2012)  
 
- 有关创建和安装分发点的客户端证书的示例部署，请参阅[为分发点部署客户端证书](../../plan-design/network/example-deployment-of-pki-certificates.md#BKMK_clientdistributionpoint2008_cm2012)。  
+ Para ver um exemplo de implantação que cria e instala o certificado do cliente para pontos de distribuição, consulte [Implantando o certificado do cliente para pontos de distribuição](../../plan-design/network/example-deployment-of-pki-certificates.md#BKMK_clientdistributionpoint2008_cm2012).  
 
 >[!IMPORTANT]
->  若要将客户端部署到运行 macOS Sierra 的设备上，必须正确配置管理点证书的使用者名称（例如，使用管理点服务器的 FQDN）。
+>  Para implantar o cliente em dispositivos com macOS Sierra, o nome da entidade do certificado do ponto de gerenciamento deve estar configurado corretamente, por exemplo, usando o FQDN do servidor de ponto de gerenciamento.
 
-## <a name="prepare-the-client-certificate-template-for-macs"></a>为 Mac 准备客户端证书模板  
+## <a name="prepare-the-client-certificate-template-for-macs"></a>Preparar o modelo de certificado do cliente para Macs  
 
- 对于将在 Mac 计算机上注册证书的用户帐户，证书模板必须具有“读取”  和“注册”  权限。  
+ O modelo de certificado deve ter permissões de **Leitura** e **Registro** para a conta de usuário que registrará o certificado no computador Mac.  
 
- 请参阅[部署 Mac 计算机的客户端证书](../../plan-design/network/example-deployment-of-pki-certificates.md#BKMK_MacClient_SP1)。  
+ Consulte [Implantando o certificado do cliente para computadores Mac](../../plan-design/network/example-deployment-of-pki-certificates.md#BKMK_MacClient_SP1).  
 
-## <a name="configure-the-management-point-and-distribution-point"></a>配置管理点和分发点  
- 为下列选项配置管理点：  
+## <a name="configure-the-management-point-and-distribution-point"></a>Configurar o ponto de gerenciamento e o ponto de distribuição  
+ Configure os pontos de gerenciamento para as seguintes opções:  
 
 -   HTTPS  
 
--   允许来自 Internet 的客户端连接。 管理 Mac 计算机需要该配置值。 但是，它并不意味着站点系统服务器必须可从 Internet 中访问。  
+-   Permitir conexões do cliente por meio da Internet. Esse valor de configuração é necessário para gerenciar computadores Mac. No entanto, isso não significa que os servidores do sistema de site devem ser acessíveis pela Internet.  
 
--   允许移动设备和 Mac 计算机使用此管理点  
+-   Permitir que dispositivos móveis e computadores Mac usem este ponto de gerenciamento  
 
- 尽管安装客户端无需分发点，但是，如果要在安装客户端之后将软件部署到这些计算机，则必须配置分发点以允许来自 Internet 的客户端连接。  
+ Embora não sejam necessários pontos de distribuição para a instalação do cliente, você deverá configurar pontos de distribuição para permitir conexões de clientes por meio da Internet se desejar implantar software nesses computadores após o cliente ser instalado.  
 
  
-### <a name="to-configure-management-points-and-distribution-points-to-support-macs"></a>配置管理点和分发点以支持 Mac  
+### <a name="to-configure-management-points-and-distribution-points-to-support-macs"></a>Para configurar pontos de gerenciamento e pontos de distribuição para dar suporte a Mac  
 
-在开始此过程之前，请确保运行管理点和分发点的站点系统服务器配置为包含 Internet FQDN。 如果这些服务器不支持基于 Internet 的客户端管理，则可以将 Intranet FQDN 指定为 Internet FQDN 值。 
+Antes de iniciar esse procedimento, verifique se o servidor de sistema de site que executa o ponto de gerenciamento e o ponto de distribuição está configurado com um FQDN de Internet. Se esses servidores não derem suporte ao gerenciamento de clientes baseado na Internet, você poderá especificar o FQDN de intranet como o valor de FQDN de Internet. 
 
-这些站点系统角色必须位于主站点中。  
+As funções de sistema de sites devem estar em um site primário.  
 
 
-1.  在 Configuration Manager 控制台中，选择“管理” > “站点配置” > “服务器和站点系统角色”，然后选择拥有正确站点系统角色的服务器。  
+1.  No console do Configuration Manager, escolha **Administração** > **Configuração do Site** > **Funções de Servidores e Sistema de Site** e escolha o servidor com as funções do sistema de site corretas.  
 
-3.  在“详细信息”窗格中，右键单击“管理点”，选择“角色属性”，并在“管理点属性”对话框中配置这些选项：  
+3.  No painel de detalhes, clique com o botão direito do mouse no **Ponto de gerenciamento**, escolha **Propriedades de Função** e, na caixa de diálogo **Propriedades do Ponto de Gerenciamento**, configure as opções a seguir:  
 
-    1.  选择“HTTPS”。  
+    1.  Escolha **HTTPS**.  
 
-    2.  选择“仅允许 Internet 客户端连接”或“允许 Intranet 和 Internet 客户端连接”。 这些选项需要 Internet 或 Intranet FQDN。  
+    2.  Escolha **Permitir conexões de cliente apenas de Internet** ou **Permitir conexões de cliente de intranet e Internet**. Essas opções exigem um FQDN de Internet ou de intranet.  
 
-    3.  选择“允许移动设备和 Mac 计算机使用此管理点”。  
+    3.  Escolha **Permitir que dispositivos móveis e computadores Mac usem este ponto de gerenciamento**.  
 
-4.  在“详细信息”窗格中，右键单击“分发点”，选择“角色属性”，并在“分发点属性”对话框中配置这些选项：  
+4.  No painel de detalhes, clique com o botão direito do mouse em **Ponto de distribuição**, escolha **Propriedades de Função** e, na caixa de diálogo **Propriedades do Ponto de Distribuição**, configure as opções a seguir:  
 
-    -   选择“HTTPS”。  
+    -   Escolha **HTTPS**.  
 
-    -   选择“仅允许 Internet 客户端连接”或“允许 Intranet 和 Internet 客户端连接”。 这些选项需要 Internet 或 Intranet FQDN。  
+    -   Escolha **Permitir conexões de cliente apenas de Internet** ou **Permitir conexões de cliente de intranet e Internet**. Essas opções exigem um FQDN de Internet ou de intranet.  
 
-    -   选择“导入证书”，浏览到导出的客户端分发点证书文件，然后指定密码。  
+    -   Escolha **Importar certificado**, navegue até o arquivo do certificado do ponto de distribuição do cliente exportado e especifique a senha.  
 
-5.  对将用于 Mac 的主站点中的所有管理点和分发点重复步骤 2 至 4。  
+5.  Repita as etapas de 2 a 4 para todos os pontos de gerenciamento e de distribuição nos sites primários que você usará com Macs.  
 
-## <a name="configure-the-enrollment-proxy-point-and-the-enrollment-point"></a>配置注册代理点和注册点  
- 你必须在同一站点中安装这两个站点系统角色，但不必将它们安装在同一站点系统服务器上或同一 Active Directory 林中。  
+## <a name="configure-the-enrollment-proxy-point-and-the-enrollment-point"></a>Configurar o ponto proxy do registro e o ponto de registro  
+ É necessário instalar ambas as funções de sistema de site no mesmo site, mas não é necessário instalá-las no mesmo servidor de sistema de site ou na mesma floresta do Active Directory.  
 
- 有关站点系统角色布局和注意事项的详细信息，请参阅[为 System Center Configuration Manager 规划站点系统服务器和站点系统角色](../../../core/plan-design/hierarchy/plan-for-site-system-servers-and-site-system-roles.md)中的[站点系统角色](../../../core/plan-design/hierarchy/plan-for-site-system-servers-and-site-system-roles.md#bkmk_planroles)。  
+ Para obter mais informações e considerações sobre o posicionamento de funções de sistema de sites, consulte [Funções de sistema de sites](../../../core/plan-design/hierarchy/plan-for-site-system-servers-and-site-system-roles.md#bkmk_planroles) em [Planejar funções e servidores do sistema de sites para o System Center Configuration Manager](../../../core/plan-design/hierarchy/plan-for-site-system-servers-and-site-system-roles.md).  
 
- 这些过程配置站点系统角色以支持 Mac 计算机。   
+ Estes procedimentos configuram as funções do sistema de site para oferecer suporte a computadores Mac.   
 
--   [新建站点系统服务器](#new-site-system-server)  
+-   [Novo servidor do sistema de sites](#new-site-system-server)  
 
--   [现有站点系统服务器](#existing-site-system-server)  
+-   [Servidor do sistema de sites existente](#existing-site-system-server)  
 
-###  <a name="new-site-system-server"></a>新建站点系统服务器  
+###  <a name="new-site-system-server"></a>Novo servidor do sistema de site  
 
-1.  在 Configuration Manager 控制台中，选择“管理” >  “站点配置” > “服务器和站点系统角色”  
+1.  No console do Configuration Manager, escolha **Administração** >  **Configuração do Site** > **Funções de Servidores e Sistema de Site**  
 
-3.  在“主页”选项卡上的“创建”组中，选择“创建站点系统服务器”。  
+3.  Na guia **Início**, no grupo **Criar**, escolha **Criar Servidor do Sistema de Site**.  
 
-4.  在“常规”页上，指定站点系统的常规设置。  请确保为 Internet FQDN 指定值。 如果不能从 Internet 中访问服务器，请使用 Intranet FQDN。  
+4.  Na página **Geral**, especifique as configurações gerais do sistema de sites.  Não se esqueça de especificar um valor para o FQDN de Internet. Se o servidor não puder ser acessado pela Internet, use o FQDN de intranet.  
 
-5.  在“系统角色选择”页上，从可用角色列表中选择“注册代理点”和“注册点”。  
+5.  Na página **Seleção de Função do Sistema**, selecione **Ponto proxy do registro** e **Ponto de registro** na lista de funções disponíveis.  
 
-6.  在“注册代理点”页上，查看设置并进行任何必要的更改。  
+6.  Na página **Ponto Proxy do Registro**, examine as configurações e faça as alterações necessárias.  
 
-7.  在“注册点设置”页上，查看设置并进行任何必要的更改。 然后完成该向导。  
+7.  Na página **Configurações do Ponto de Registro**, examine as configurações e faça as alterações necessárias. Em seguida, conclua o assistente.  
 
-### <a name="existing-site-system-server"></a>现有站点系统服务器  
+### <a name="existing-site-system-server"></a>Servidor do sistema de site existente  
 
-1.  在 Configuration Manager 控制台中，选择“管理” >  “站点配置” > “服务器和站点系统角色”，然后选择要用于支持 Mac 的服务器。  
+1.  No console do Configuration Manager, escolha **Administração** >  **Configuração do Site** > **Funções de Servidores e Sistema de Site** e escolha o servidor que deseja usar para dar suporte a Macs.  
 
-3.  在“主页”选项卡上的“创建”组中，选择“添加站点系统角色”。  
+3.  Na guia **Início**, no grupo **Criar**, escolha **Adicionar Funções do Sistema de Site**.  
 
-4.  在“常规”  页上，指定站点系统的常规设置，然后单击“下一步” 。 请确保为 Internet FQDN 指定值。 如果不能从 Internet 中访问服务器，请使用 Intranet FQDN。   
+4.  Na página **Geral** , especifique as configurações gerais para o sistema de site e clique em **Próximo**. Não se esqueça de especificar um valor para o FQDN de Internet. Se o servidor não puder ser acessado pela Internet, use o FQDN de intranet.   
 
-5.  在“系统角色选择”页上，从可用角色列表中选择“注册代理点”和“注册点”。  
+5.  Na página **Seleção de Função do Sistema**, escolha **Ponto proxy do registro** e **Ponto de registro** na lista de funções disponíveis.  
 
-6.  在“注册代理点”页上，查看设置并进行任何必要的更改。  
+6.  Na página **Ponto Proxy do Registro**, examine as configurações e faça as alterações necessárias.  
 
-7.  在“注册点设置”页上，查看设置并进行任何必要的更改。 然后完成该向导。  
+7.  Na página **Configurações do Ponto de Registro**, examine as configurações e faça as alterações necessárias. Em seguida, conclua o assistente.  
 
-## <a name="install-the-reporting-services-point"></a>安装 Reporting Services 点  
- 如果要为 Mac 运行报表，请[安装 Reporting Services 点](../../../core/servers/manage/configuring-reporting.md)。  
+## <a name="install-the-reporting-services-point"></a>Instale o ponto do Reporting Services  
+ [Instale o ponto do Reporting Services](../../../core/servers/manage/configuring-reporting.md) se você desejar executar relatórios para Macs.  
 
-### <a name="next-steps"></a>后续步骤
+### <a name="next-steps"></a>Próximas etapas
 
-[将 Configuration Manager 客户端部署到 Mac 计算机](/sccm/core/clients/deploy/deploy-clients-to-macs)。  
+[Implantar o cliente do Configuration Manager em computadores Mac](/sccm/core/clients/deploy/deploy-clients-to-macs).  

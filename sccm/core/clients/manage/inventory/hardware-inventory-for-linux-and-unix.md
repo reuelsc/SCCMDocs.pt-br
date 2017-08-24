@@ -1,6 +1,6 @@
 ---
-title: "硬件清单 | Microsoft Docs | Linux UNIX "
-description: "了解如何在 System Center Configuration Manager 中使用 Linux 和 UNIX 的硬件清单。"
+title: "Inventário de hardware | Microsoft Docs | Linux UNIX "
+description: "Saiba como usar o inventário de hardware para Linux e UNIX no System Center Configuration Manager."
 ms.custom: na
 ms.date: 02/22/2017
 ms.prod: configuration-manager
@@ -17,36 +17,36 @@ manager: angrobe
 ms.openlocfilehash: b6776fbe0cfca23244d767cffd554a2ef4567a2d
 ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
 ms.translationtype: HT
-ms.contentlocale: zh-CN
+ms.contentlocale: pt-BR
 ms.lasthandoff: 08/07/2017
 ---
-# <a name="hardware-inventory-for-linux-and-unix-in-system-center-configuration-manager"></a>System Center Configuration Manager 中 Linux 和 UNIX 的硬件清单
+# <a name="hardware-inventory-for-linux-and-unix-in-system-center-configuration-manager"></a>Inventário de hardware para Linux e UNIX no System Center Configuration Manager
 
-*适用范围：System Center Configuration Manager (Current Branch)*
+*Aplica-se a: System Center Configuration Manager (Branch Atual)*
 
-适用于 Linux 和 UNIX 的 System Center Configuration Manager 客户端支持硬件清单。 收集硬件清单后，可在资源浏览器或 Configuration Manager 报表中运行查看清单，并可使用此信息来创建能够实现以下操作的查询和集合：  
+O cliente do System Center Configuration Manager para Linux e UNIX dá suporte ao inventário de hardware. Depois de coletar inventários de hardware, você pode executar o inventário de exibição no Gerenciador de recursos ou nos relatórios do Configuration Manager e usar essas informações para criar consultas e coleções que habilitam as seguintes operações:  
 
--   软件部署  
+-   Implantação de software  
 
--   强制维护时段  
+-   Impor janelas de manutenção  
 
--   部署自定义客户端设置  
+-   Implantar configurações personalizadas do cliente  
 
- 适用于 Linux 和 UNIX 服务器的硬件清单使用基于标准的通用信息模型 (CIM) 服务器。 CIM 服务器作为软件服务（或后台程序）运行，并提供基于分布式管理任务组 (DMTF) 标准的管理基础结构。 CIM 服务器提供类似于在基于 Windows 的计算机上可用的 Windows Management Infrastructure (WMI) CIM 功能的功能。  
+ O inventário de hardware para servidores Linux e UNIX usa um servidor CMI (Common Information Model) baseado em padrões. O servidor CIM é executado como um serviço de software (ou daemon) e fornece uma infraestrutura de gerenciamento baseada em padrões da DMTF (Força-tarefa de gerenciamento distribuída). O servidor CIM fornece funcionalidade semelhante aos recursos de CIM do WMI (Windows Management Infrastructure ) que estão disponíveis em computadores baseados no Windows.  
 
- 从累积更新 1 开始，适用于 Linux 和 UNIX 的客户端使用 **开放组** 的开放源代码 **omiserver**版本 1.0.6。 （在累积更新 1 之前，客户端使用 **nanowbem** 作为其 CIM 服务器）。  
+ A partir da atualização cumulativa 1, o cliente para Linux e UNIX usa o software livre **omiserver** versão 1.0.6 no **Open Group**. (Antes da atualização cumulativa 1, o cliente usou **nanowbem** como seu servidor CIM).  
 
- CIM 服务器作为适用于 Linux 和 UNIX 的客户端的一部分安装。 适用于 Linux 和 UNIX 的客户端直接与 CIM 服务器进行通信，并且不使用 CIM 服务器的 WS-MAN 接口。 在客户端安装时，会禁用 CIM 服务器上的 WS-MAN 端口。 Microsoft 开发了 CIM 服务器，现已通过开放式管理基础结构 (OMI) 项目成为可用的开放源代码。 有关开放式管理基础结构项目的详细信息，请参阅 [开放组](http://go.microsoft.com/fwlink/p/?LinkId=262317) 网站。  
+ O servidor CIM é instalado como parte do cliente para Linux e UNIX. O cliente para Linux e UNIX se comunica diretamente com o servidor CIM e não usa a interface do WS-MAN do servidor CIM. A porta WS-MAN no servidor de CIM é desabilitada quando o cliente é instalado. A Microsoft desenvolveu o servidor CIM que agora está disponível como software livre por meio do projeto OMI (Infraestrutura de Gerenciamento Aberto). Para obter mais informações sobre o projeto de Infraestrutura de Gerenciamento Aberto, veja o site do [The Open Group](http://go.microsoft.com/fwlink/p/?LinkId=262317) .  
 
- Linux 和 UNIX 服务器上的硬件清单通过将现有 Win32 WMI 类和属性映射到 Linux 和 UNIX 服务器的等效类和属性实现运行。 这种类和属性的一对一映射使 Linux 和 UNIX 硬件清单能够与 Configuration Manager 集成。 Linux 和 UNIX 服务器的清单数据与 Configuration Manager 控制台和报表中基于 Windows 的计算机的清单一起显示。 这提供了一致的异构管理体验。  
+ O inventário de hardware em servidores Linux e UNIX funciona pelo mapeamento de classes e propriedades Win32 WMI existentes para as classes e propriedades equivalentes em servidores Linux e UNIX. Esse mapeamento de classes e propriedades de um para um permite que o inventário de hardware do Linux e UNIX seja integrado com o Configuration Manager. Os dados de inventário de servidores Linux e UNIX são exibidos com o inventário de computadores baseados em Windows no console e relatórios do Configuration Manager. Isso fornece uma experiência consistente de gerenciamento heterogêneo.  
 
 > [!TIP]  
->  你可以使用“操作系统”  类的“标题”  值标识查询和集合中的不同 Linux 和 UNIX 操作系统。  
+>  Você pode usar o valor da **Legenda** para a classe do **Sistema Operacional** para identificar os diferentes sistemas operacionais com Linux e UNIX em consultas e coleções.  
 
-##  <a name="BKMK_ConfigHardwareforLnU"></a> 配置适用于 Linux 和 UNIX 服务器的硬件清单  
- 可以使用默认客户端设置或创建自定义客户端设备设置来配置硬件清单。 当使用自定义客户端设备设置时，可以配置你希望仅从你的 Linux 和 UNIX 服务器中收集的类和属性。 还可以指定自定义计划确定何时从你的 Linux 和 UNIX 服务器中收集完整清单和增量清单。  
+##  <a name="BKMK_ConfigHardwareforLnU"></a> Configurando o inventário de hardware para servidores Linux e UNIX  
+ Você pode usar as configurações padrão de cliente ou criar configurações personalizadas do dispositivo para configurar o inventário de hardware. Ao usar configurações personalizadas do dispositivo, você pode configurar as classes e propriedades que você deseja coletar apenas dos servidores Linux e UNIX. Você também pode especificar agendas personalizadas ao coletar inventários completos e delta de seus servidores Linux e UNIX.  
 
- 适用于 Linux 和 UNIX 的客户端支持以下在 Linux 和 UNIX 服务器上可用的硬件清单类：  
+ O cliente para Linux e UNIX dá suporte para as seguintes classes de inventário de hardware que estão disponíveis em servidores Linux e UNIX:  
 
 -   Win32_BIOS  
 
@@ -72,54 +72,54 @@ ms.lasthandoff: 08/07/2017
 
 -   SMS_Processor  
 
- 并非这些清单类的所有属性都在 Configuration Manager 中的 Linux 和 UNIX 计算机上启用。  
+ Nem todas as propriedades para essas classes de inventário são habilitadas para computadores Linux e UNIX no Configuration Manager.  
 
-##  <a name="BKMK_OperationsforHardwareforLnU"></a> 硬件清单的操作  
- 从你的 Linux 和 UNIX 服务器上收集硬件清单后，可以使用与查看收集自其它计算机的清单一样的方式查看和使用此信息：  
+##  <a name="BKMK_OperationsforHardwareforLnU"></a> Operações de inventário de hardware  
+ Depois de coletar inventários de hardware dos servidores Linux e UNIX, você pode exibir e usar essas informações da mesma maneira que você exibir o inventário coletado dos outros computadores:  
 
--   使用资源浏览器查看有关 Linux 和 UNIX 服务器硬件清单的详细信息  
+-   Use o Gerenciador de Recursos para exibir informações detalhadas sobre o inventário de hardware de servidores Linux e UNIX  
 
--   基于特定的硬件配置创建查询  
+-   Crie consultas com base nas configurações específicas de hardware  
 
--   创建基于特定硬件配置的基于查询的集合  
+-   Crie coleções baseadas em consulta que se baseiam em configurações de hardware específicas  
 
--   运行显示硬件配置的特定详细信息的报表  
+-   Execute os relatórios que exibem detalhes específicos sobre as configurações de hardware  
 
- Linux 或 UNIX 服务器上的硬件清单会根据客户端设置中配置的计划运行。 默认运行频率为每七天。 适用于 Linux 和 UNIX 的客户端支持的完整清单周期和增量清单周期。  
+ O inventário de hardware em um servidor Linux ou UNIX é executado de acordo com o agendamento configurado nas configurações do cliente. Por padrão, esse é a cada sete dias. O cliente para Linux e UNIX dá suporte aos ciclos de inventário completos e ciclos de inventário delta.  
 
- 也可以强制 Linux 或 UNIX 服务器上的客户端立即运行硬件清单。 若要运行硬件清单，在客户端上使用“根”  凭据运行以下命令以启动硬件清单周期： **/opt/microsoft/configmgr/bin/ccmexec-rs hinv**  
+ Você também pode forçar o cliente em um servidor Linux ou UNIX a executar o inventário de hardware imediatamente. Para executar o inventário de hardware em um cliente, use as credenciais **raiz** para executar o comando a seguir para iniciar um ciclo de inventário de hardware: **opt/microsoft/configmgr/bin/ccmexec -rs hinv**  
 
- 针对硬件清单的操作会输入到客户端日志文件，“scxcm.log” 。  
+ As ações de inventário de hardware são inseridas no arquivo de log do cliente, **scxcm.log**.  
 
-##  <a name="BKMK_CustomHINVforLinux"></a> 如何使用开放式管理基础结构来创建自定义硬件清单  
- 适用于 Linux 和 UNIX 的客户端支持可以使用开放式管理基础结构 (OMI) 创建的自定义硬件清单。 若要完成此操作，可以使用下列步骤：  
+##  <a name="BKMK_CustomHINVforLinux"></a> Como usar a infraestrutura de gerenciamento aberto para criar um inventário de hardware personalizado  
+ O cliente para Linux e UNIX dá suporte para o inventário de hardware personalizado que você pode criar usando a OMI (Infraestrutura de Gerenciamento Aberto). Para fazer isso, use as seguintes etapas:  
 
-1.  通过使用 OMI 源创建自定义清单提供程序  
+1.  Criar um provedor de inventário personalizado por meio da OMI de origem  
 
-2.  将计算机配置为可使用新的提供程序报告清单  
+2.  Configure computadores para usar o novo provedor de relatórios de estoque  
 
-3.  使 Configuration Manager 支持新的提供程序  
+3.  Habilitar o Configuration Manager para dar suporte ao novo provedor  
 
-###  <a name="BKMK_LinuxProvider"></a> 创建适用于 Linux 和 UNIX 计算机的自定义硬件清单提供程序。  
- 若要创建适用于 Linux 和 UNIX 的 Configuration Manager 客户端的自定义硬件清单提供程序，请使用 **OMI 源-v.1.0.6** 并按照 OMI 入门指南中的说明进行操作。 此过程包括创建托管对象格式 (MOF) 文件，该文件用于定义新提供程序的架构。 随后，将 MOF 文件导入 Configuration Manager 以支持新自定义清单类。  
+###  <a name="BKMK_LinuxProvider"></a> Crie um provedor de inventário de hardware personalizado para computadores Linux e UNIX:  
+ Para criar um provedor de inventário de hardware personalizado para o cliente do Configuration Manager para Linux e UNIX, use **OMI Source – v.1.0.6** e siga as instruções da Guia de Introdução à OMI. Esse processo inclui a criação de um arquivo MOF (Managed Object Format) que define o esquema do novo provedor. Posteriormente, você importa o arquivo MOF no Configuration Manager para habilitar o suporte da nova classe personalizada de inventário.  
 
- OMI 源-v.1.0.6 和 OMI 入门指南均可以从 [开放组](http://go.microsoft.com/fwlink/p/?LinkId=262317) 网站下载。 可以在 OpenGroup.org 网站上的以下 web 页面中的“文档”  选项卡上找到这些下载内容： [开放式管理基础结构 (OMI)](http://go.microsoft.com/fwlink/p/?LinkId=286805)。  
+ Tanto o OMI Source - v.1.0.6 quanto o Guia de Introdução à OMI estão disponíveis para download no site do [The Open Group](http://go.microsoft.com/fwlink/p/?LinkId=262317) . Você pode localizar esses downloads na guia **Documentos** na seguinte página da Web no site OpenGroup.org: [OMI (Infraestrutura de Gerenciamento Aberta)](http://go.microsoft.com/fwlink/p/?LinkId=286805).  
 
-###  <a name="BKMK_AddProvidertoLinux"></a> 使用自定义硬件清单提供程序对每个运行 Linux 或 UNIX 的计算机进行配置：  
- 创建自定义清单提供程序后，必须在具有你想收集的清单的每个计算机上复制并注册提供程序库文件。  
+###  <a name="BKMK_AddProvidertoLinux"></a> Configure cada computador que executa o Linux ou UNIX com o provedor de inventário de hardware personalizado:  
+ Depois de criar um provedor de inventário personalizado, você deve copiar e registrar o arquivo de biblioteca do provedor em cada computador que tenha inventário que você deseja coletar.  
 
-1.  将提供程序库复制到想要从中收集清单的每个 Linux 和 UNIX 计算机。 提供程序库的名称类似于： **XYZ_MyProvider.so**  
+1.  Copie a biblioteca do provedor para cada computador Linux e UNIX, do qual você deseja coletar o inventário. O nome da biblioteca do provedor é semelhante à seguinte: **XYZ_MyProvider.so**  
 
-2.  接下来，在每台 Linux 和 UNIX 计算机上，向 OMI 服务器注册提供程序库。 当安装适用于 Linux 和 UNIX 的 Configuration Manager 客户端时，OMI 服务器会安装在计算机上，但必须手动注册自定义提供程序。 使用以下命令行注册提供程序： **/opt/microsoft/omi/bin/omireg XYZ_MyProvider.so**  
+2.  Em seguida, em cada computador Linux e UNIX, registre a biblioteca do provedor no servidor da OMI. O servidor da OMI é instalado no computador quando você instala o cliente do Configuration Manager para Linux e UNIX, mas você deverá registrar os provedores personalizados manualmente. Use a seguinte linha de comando para registrar o provedor: **/opt/microsoft/omi/bin/omireg XYZ_MyProvider.so**  
 
-3.  注册新提供程序后，使用 **omicli** 工具测试提供程序。 安装适用于 Linux 和 UNIX 的 Configuration Manager 客户端时， **omicli** 工具会安装在每台 Linux 和 UNIX 计算机上。 例如，当创建的提供程序的名称是 **XYZ_MyProvider** 时，则在计算机上运行后列命令： **/opt/microsoft/omi/bin/omicli ei root/cimv2 XYZ_MyProvider**  
+3.  Depois de registrar o novo provedor, teste-o usando a ferramenta **omicli** . A ferramenta **omicli** é instalada em cada computador Linux e UNIX, quando você instala o cliente do Configuration Manager para Linux e UNIX. Por exemplo, no local em que **XYZ_MyProvider** é o nome do provedor que você criou, execute o seguinte comando no computador: **/opt/microsoft/omi/bin/omicli ei root/cimv2 XYZ_MyProvider**  
 
-     关于 **omicli** 和测试自定义提供程序的信息，请参阅 OMI 入门指南。  
+     Para obter informações sobre o **omicli** e provedores personalizados de teste, veja o Guia de Introdução à OMI.  
 
 > [!TIP]  
->  使用软件分发来部署自定义提供程序和在每个 Linux 和 UNIX 客户端计算机上注册自定义提供程序。  
+>  Use a distribuição de software para implantar e registrar provedores personalizados em cada computador de cliente Linux e UNIX.  
 
-###  <a name="BKMK_AddLinuxProvidertoCM"></a> 在 Configuration Manager 中启用新清单类：  
- 必须首先导入用于定义自定义提供程序架构的托管对象格式 (MOF) 文件，Configuration Manager 才可以报告由 Linux 和 UNIX 计算机上的新提供程序报告的清单。  
+###  <a name="BKMK_AddLinuxProvidertoCM"></a> Habilite a nova classe de inventário do Configuration Manager:  
+ Antes que o Configuration Manager possa gerar relatórios sobre o inventário relatado pelo novo provedor em computadores Linux e UNIX, você deve importar o arquivo MOF (Managed Object Format) que define o esquema do provedor personalizado.  
 
- 若要将自定义 MOF 文件导入 Configuration Manager，请参阅[如何在 System Center Configuration Manager 中配置硬件清单](../../../../core/clients/manage/inventory/configure-hardware-inventory.md)。  
+ Para importar um arquivo MOF personalizado para o Configuration Manager, consulte [Como configurar o inventário de hardware no System Center Configuration Manager](../../../../core/clients/manage/inventory/configure-hardware-inventory.md).  

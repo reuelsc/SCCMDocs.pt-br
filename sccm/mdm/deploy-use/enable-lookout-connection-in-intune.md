@@ -1,6 +1,6 @@
 ---
-title: "在 Intune 中启用 Lookout MTP | Microsoft Docs"
-description: "在 Intune 管理控制台中启用 Lookout Mobile Threat Protection。"
+title: Habilitar o Lookout MTP no Intune | Microsoft Docs
+description: "Habilite o Lookout Mobile Threat Protection no console de administração do Intune."
 ms.custom: na
 ms.date: 03/05/2017
 ms.prod: configuration-manager
@@ -17,23 +17,23 @@ manager: angrobe
 ms.openlocfilehash: f9ddbcc981fa1274a41ae16a6a939c0cdf739c3e
 ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
 ms.translationtype: HT
-ms.contentlocale: zh-CN
+ms.contentlocale: pt-BR
 ms.lasthandoff: 08/07/2017
 ---
-# <a name="enable-lookout-mtp-connection-in-the-intune-admin-console"></a>在 Intune 管理控制台中启用 Lookout MTP 连接
+# <a name="enable-lookout-mtp-connection-in-the-intune-admin-console"></a>Habilitar a conexão do Lookout MTP no console do Intune
 
-*适用范围：System Center Configuration Manager (Current Branch)*
+*Aplica-se a: System Center Configuration Manager (Branch Atual)*
 
-本主题演示如何在 Intune 中启用 Lookout MTP 连接。 用户应在 Lookout 控制台中配置 Intune 连接器，然后才执行此步骤。  如果尚未执行此步骤，请执行[使用 Lookout Mobile Threat Protection 设置订阅](set-up-your-subscription-with-lookout.md)中所述的步骤。
+Este tópico mostra como habilitar a conexão do Lookout MTP no Intune. Você já deve ter configurado o Conector do Intune no console do Lookout antes de realizar essa etapa.  Se você ainda não o fez, siga as etapas descritas em [Set up your subscription with Lookout mobile threat protection](set-up-your-subscription-with-lookout.md) (Configurar sua assinatura no Lookout Mobile Threat Protection).
 
-若要在 Intune 中启用 Lookout MTP 连接，在 [Microsoft Intune 管理员控制台](https://manage.microsoft.com)中的“管理”页中，选择“第三方服务集成”。 选择“Lookout 状态”，然后使用切换按钮启用“与 MTP 同步”。
+Para habilitar a conexão do Lookout MTP no Intune, na página **Administração** no [Console do administrador do Microsoft Intune](https://manage.microsoft.com), escolha **Integração de Serviço de Terceiros**. Escolha **Status da consulta** e habilite **Sincronização com MTP** usando o botão de alternância.
 
-![突出显示了启用切换按钮的 Lookout 同步页屏幕截图](media/lookout-intune-synchronization.png)
+![captura de tela da página de sincronização do Lookout com o botão de alternância Habilitar realçado](media/lookout-intune-synchronization.png)
 
-这样就完成了在 Intune 管理员控制台中设置 Lookout 和 Intune 的集成。  下面的几个步骤可实现此解决方案，其中包括部署 [Lookout for Work 应用](configure-and-deploy-lookout-for-work-apps.md)和设置[合规性](enable-device-threat-protection-rule-compliance-policy.md)策略。
+Isso conclui a configuração da integração do Lookout e do Intune no console do administrador do Intune.  As próximas etapas para implementar essa solução envolvem a implantação de [Aplicativos Lookout for Work](configure-and-deploy-lookout-for-work-apps.md) e a configuração da política de [conformidade](enable-device-threat-protection-rule-compliance-policy.md).
 
 >[!IMPORTANT]
-> **必须**先配置 Lookout for Work 应用，然后才创建合规性策略规则和配置条件性访问。 这确保了最终用户有权访问电子邮件和其他公司资源之前，应用已准备就绪并且可用。
+> Você **deve** configurar o aplicativo Lookout for Work antes de criar regras de política de conformidade e configurar o acesso condicional. Isso garante que o aplicativo está pronto e disponível para os usuários finais instalarem antes que possam ter acesso ao email ou outros recursos da empresa.
 
-## <a name="next-steps"></a>后续步骤
-[配置 Lookout for Work 应用](configure-and-deploy-lookout-for-work-apps.md)
+## <a name="next-steps"></a>Próximas etapas
+[Configurar aplicativo Lookout for Work ](configure-and-deploy-lookout-for-work-apps.md)

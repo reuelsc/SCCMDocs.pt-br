@@ -1,6 +1,6 @@
 ---
-title: "配置客户端以查找管理点 DNS 发布 | Microsoft Docs"
-description: "在 System Center Configuration Manager 中设置客户端计算机以使用 DNS 发布查找管理点。"
+title: "Configurar clientes para localizar pontos de gerenciamento com a publicação do DNS | Microsoft Docs"
+description: "Defina computadores cliente para localizar pontos de gerenciamento usando a publicação do DNS no System Center Configuration Manager."
 ms.custom: na
 ms.date: 04/23/2017
 ms.prod: configuration-manager
@@ -17,42 +17,42 @@ manager: angrobe
 ms.openlocfilehash: d016ec3fe106b2d90b3c14b4f9296aed4d198644
 ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
 ms.translationtype: HT
-ms.contentlocale: zh-CN
+ms.contentlocale: pt-BR
 ms.lasthandoff: 08/07/2017
 ---
-# <a name="how-to-configure-client-computers-to-find-management-points-by-using-dns-publishing-in-system-center-configuration-manager"></a>如何在 System Center Configuration Manager 中配置客户端计算机以使用 DNS 发布查找管理点
+# <a name="how-to-configure-client-computers-to-find-management-points-by-using-dns-publishing-in-system-center-configuration-manager"></a>Como configurar computadores cliente para localizar pontos de gerenciamento usando a publicação do DNS no System Center Configuration Manager
 
-*适用范围：System Center Configuration Manager (Current Branch)*
+*Aplica-se a: System Center Configuration Manager (Branch Atual)*
 
-System Center Configuration Manager 中的客户端必须找到管理点才能完成站点分配，并作为持续的进程一直受到管理。 Active Directory 域服务为 Intranet 上的客户端提供了找到管理点的最安全的方法。 但是，如果客户端无法使用此服务位置方法（例如，你未扩展 Active Directory 架构，或者客户端来自工作组），则使用 DNS 发布作为首选的备用服务位置方法。  
+Clientes no System Center Configuration Manager devem localizar um ponto de gerenciamento para concluir a atribuição de site e como um processo contínuo para permanecer gerenciado. Os Serviços de Domínio Active Directory fornecem o método mais seguro para clientes na intranet localizarem pontos de gerenciamento. Entretanto, se os clientes não puderem usar esse método de local do serviço (por exemplo, você não estendeu o esquema do Active Directory ou os clientes não são de um grupo de trabalho), utilize a publicação de DNS como método de local do serviço alternativo preferido.  
 
 > [!NOTE]  
->  在安装 Linux 和 UNIX 的客户端时，必须指定用作初始联系点的管理点。 有关如何安装适用于 Linux 和 UNIX 的客户端的信息，请参阅[如何在 System Center Configuration Manager 中将客户端部署到 UNIX 和 Linux 服务器](../../../core/clients/deploy/deploy-clients-to-unix-and-linux-servers.md)。  
+>  Ao instalar o cliente para Linux e UNIX, você deve especificar um ponto de gerenciamento para usar como um ponto inicial de contato. Para obter informações sobre como instalar o cliente para Linux e UNIX, consulte [Como implantar clientes para servidores UNIX e Linux no System Center Configuration Manager](../../../core/clients/deploy/deploy-clients-to-unix-and-linux-servers.md).  
 
- 在为管理点使用 DNS 发布之前，请确保 Intranet 上的 DNS 服务器具有服务位置资源记录 (SRV RR)，以及站点的管理点的相应主机（A 或 AAA）资源记录。 服务定位资源记录可以由 Configuration Manager 自动创建，也可以由在 DNS 中创建记录的 DNS 管理员手动创建。  
+ Antes de usar publicação DNS para pontos de gerenciamento, verifique se os servidores DNS na intranet possuem SRV RR (registros de recursos de local do serviço) e registros de recurso de host correspondentes (A ou AAA) para os pontos de gerenciamento do site. Os registros de recurso de local de serviço podem ser criados automaticamente pelo Configuration Manager ou manualmente pelo administrador de DNS que cria os registros em DNS.  
 
- 有关 DNS 发布作为 Configuration Manager 客户端服务定位方法的详细信息，请参阅[了解客户端如何查找 System Center Configuration Manager 的站点资源和服务](../../../core/plan-design/hierarchy/understand-how-clients-find-site-resources-and-services.md)。  
+ Para obter mais informações sobre a publicação de DNS como um método de local de serviço para clientes do Configuration Manager, consulte [Entender como os clientes encontram serviços e recursos do site para o System Center Configuration Manager](../../../core/plan-design/hierarchy/understand-how-clients-find-site-resources-and-services.md).  
 
- 默认情况下，客户端将搜索 DNS 以在其 DNS 域中查找管理点。 但是，如果客户端的域中没有发布的管理点，则必须将客户端手动配置为具有管理点 DNS 后缀。 你可以在客户端安装过程中或之后在客户端上配置此 DNS 后缀：  
+ Por padrão, os clientes procuram DNS para os pontos de gerenciamento em seu domínio DNS. No entanto, se não houver pontos de gerenciamento publicados no domínio do cliente, você deverá configurar clientes manualmente com um sufixo DNS de ponto de gerenciamento. Você pode configurar esse sufixo DNS nos clientes durante ou após a instalação do cliente:  
 
--   若要在客户端安装过程中针对管理点后缀配置客户端，请配置 CCMSetup Client.msi 属性。  
+-   Para configurar os clientes de um sufixo de ponto de gerenciamento durante a instalação do cliente, configure as propriedades de CCMSetup Client.msi.  
 
--   若要在客户端安装之后针对管理点后缀配置客户端，请在“控制面板”中配置“Configuration Manager 属性” 。  
+-   Para configurar clientes de um sufixo de ponto de gerenciamento após a instalação do cliente, no Painel de Controle, configure **Propriedades do Configuration Manager**.  
 
-#### <a name="to-configure-clients-for-a-management-point-suffix-during-client-installation"></a>在客户端安装过程中针对管理点后缀配置客户端  
+#### <a name="to-configure-clients-for-a-management-point-suffix-during-client-installation"></a>Para configurar os clientes de um sufixo de ponto de gerenciamento durante a instalação do cliente  
 
--   利用下列 CCMSetup Client.msi 属性安装客户端：  
+-   Instale o cliente com a seguinte propriedade CCMSetup Client.msi:  
 
-    -   **DNSSUFFIX=** &lt;管理点域\>  
+    -   **DNSSUFFIX=** *&lt;domínio de ponto de gerenciamento\>*  
 
-         如果站点具有多个管理点，而且这些管理点位于多个域中，则仅指定一个域。 在客户端连接到此域中的管理点时，它们下载可用管理点的列表（将包含其他域中的管理点）。  
+         Se o site tiver mais de um ponto de gerenciamento e eles estiverem em mais de um domínio, especifique apenas um domínio. Ao conectarem-se a um ponto de gerenciamento nesse domínio, os clientes baixam uma lista de pontos de gerenciamento disponíveis, que incluirá os pontos de gerenciamento de outros domínios.  
 
-     有关 CCMSetup 命令行属性的详细信息，请参阅[关于 System Center Configuration Manager 中的客户端安装属性](../../../core/clients/deploy/about-client-installation-properties.md)。  
+     Para obter mais informações sobre as propriedade da linha de comando do CCMSetup, consulte [Sobre as propriedades de instalação do cliente no System Center Configuration Manager](../../../core/clients/deploy/about-client-installation-properties.md).  
 
-#### <a name="to-configure-clients-for-a-management-point-suffix-after-client-installation"></a>在客户端安装之后针对管理点后缀配置客户端  
+#### <a name="to-configure-clients-for-a-management-point-suffix-after-client-installation"></a>Para configurar os clientes de um sufixo de ponto de gerenciamento após a instalação do cliente  
 
-1.  在客户端计算机的“控制面板”中，导航到“Configuration Manager” ，然后双击“属性” 。  
+1.  No Painel de Controle do computador cliente, navegue para **Configuration Manager**e clique duas vezes em **Propriedades**.  
 
-2.  在“站点”  选项卡上，指定管理点的 DNS 后缀，然后单击“确定” 。  
+2.  Na guia **Site** , especifique o sufixo DNS dos pontos de gerenciamento e clique em **OK**.  
 
-     如果站点具有多个管理点，而且这些管理点位于多个域中，则仅指定一个域。 在客户端连接到此域中的管理点时，它们下载可用管理点的列表（将包含其他域中的管理点）。
+     Se o site tiver mais de um ponto de gerenciamento e eles estiverem em mais de um domínio, especifique apenas um domínio. Ao conectarem-se a um ponto de gerenciamento nesse domínio, os clientes baixam uma lista de pontos de gerenciamento disponíveis, que incluirá os pontos de gerenciamento de outros domínios.

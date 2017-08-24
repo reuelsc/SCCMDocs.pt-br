@@ -1,6 +1,6 @@
 ---
-title: "软件更新的先决条件 | Microsoft Docs"
-description: "了解 System Center Configuration Manager 中软件更新的先决条件。"
+title: "Pré-requisitos para atualizações de software | Microsoft Docs"
+description: "Saiba mais sobre os pré-requisitos para atualizações de software no System Center Configuration Manager."
 keywords: 
 author: dougeby
 ms.author: dougeby
@@ -14,79 +14,79 @@ ms.assetid: fdf05118-162a-411e-b72e-386b9dc9a5e1
 ms.openlocfilehash: 179f076f228daa5adf612275a822cd379b0ce1e3
 ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
 ms.translationtype: HT
-ms.contentlocale: zh-CN
+ms.contentlocale: pt-BR
 ms.lasthandoff: 08/07/2017
 ---
-# <a name="prerequisites-for-software-updates-in-system-center-configuration-manager"></a>System Center Configuration Manager 中软件更新的先决条件
+# <a name="prerequisites-for-software-updates-in-system-center-configuration-manager"></a>Pré-requisitos para atualizações de software no System Center Configuration Manager
 
-*适用范围：System Center Configuration Manager (Current Branch)*
+*Aplica-se a: System Center Configuration Manager (Branch Atual)*
 
-本主题列出了 System Center Configuration Manager 中软件更新的先决条件。 对于这些先决条件中的每一个，在不同的表格中列出了外部依赖关系和内部依赖关系。  
+Este tópico lista os pré-requisitos para atualizações de software no System Center Configuration Manager. Para cada um deles, as dependências externas e internas são listadas em tabelas separadas.  
 
-## <a name="software-update-dependencies-external-to-configuration-manager"></a>Configuration Manager 软件更新的外部依赖关系  
- 以下部分列出了软件更新的外部依赖关系。  
+## <a name="software-update-dependencies-external-to-configuration-manager"></a>Dependências de atualizações de software externas ao Configuration Manager  
+ As seções a seguir listam as dependências externas para atualizações de software.  
 
-### <a name="internet-information-services-iis"></a>Internet Information Services (IIS)  
- Internet Information Services (IIS) 必须安装在站点系统服务器上才可运行软件更新点、管理点和分发点。 有关详细信息，请参阅[站点系统角色的先决条件](../../core/plan-design/configs/site-and-site-system-prerequisites.md)。  
+### <a name="internet-information-services-iis"></a>Serviços de Informações da Internet (IIS)  
+ O IIS (Serviços de Informações da Internet) deve estar nos servidores de sistema de sites para executar o ponto de atualização de software, o ponto de gerenciamento e o ponto de distribuição. Para mais informações, consulte [Pré-requisitos para funções de sistema de sites](../../core/plan-design/configs/site-and-site-system-prerequisites.md).  
 
 ### <a name="windows-server-update-services-wsus"></a>Windows Server Update Services (WSUS)  
- 软件更新同步和在客户端上进行的软件更新符合性评估扫描都需要使用 WSUS。 在创建软件更新点站点系统角色之前，必须安装 WSUS 服务器。 软件更新点支持以下版本的 WSUS：  
+ O WSUS é necessário para sincronização de atualizações de software e para o exame de avaliação de conformidade de atualizações de software nos clientes. O servidor WSUS deve ser instalado antes de se criar a função de sistema de site do ponto de atualização de software. Há suporte para as seguintes versões do WSUS em um ponto de atualização de software:  
 
--   WSUS 4（Windows Server 2012 和 Windows Server 2012 R2 中的角色）  
+-   WSUS 4 (função no Windows Server 2012 e Windows Server 2012 R2)  
 
--   WSUS 3.2（Windows Server 2008 R2 中的角色）  
+-   WSUS 3.2 (função no Windows Server 2008 R2)  
 
- 如果在一个站点上有多个软件更新点，请确保它们全都运行相同版本的 WSUS。  
+ Quando você possui diversos pontos de atualização de software em um site, verifique se todos estão executando a mesma versão do WSUS.  
 
 > [!WARNING]  
->  仅从 WSUS 4.0 开始支持**升级**软件更新分类。 在同步此新分类，并且能够对 Windows 10 维护服务计划中的 Windows 10 计算机进行评估之前，在你的软件更新点和站点服务器上为 WSUS 安装 [修补程序 3095113](https://support.microsoft.com/kb/3095113) 很重要。 此修补程序使基于 Windows Server 2012 或基于 Windows Server 2012 R2 的服务器上的 WSUS 能够同步和分发 Windows 10 的功能升级。 有关详细信息，请参阅[管理 Windows 即服务](../../osd/deploy-use/manage-windows-as-a-service.md)。  
+>  A classificação de atualizações de software **Atualizações** conta com suporte apenas a partir do WSUS 4.0. Antes de sincronizar essa nova classificação e poder avaliar computadores com Windows 10 em um plano de manutenção do Windows 10, é essencial que você instale o [hotfix 3095113](https://support.microsoft.com/kb/3095113) para o WSUS nos pontos de atualização de software e servidores do site. Esse hotfix permite que o WSUS em um servidor baseado no Windows Server 2012 ou no Windows Server 2012 R2 sincronize e distribua atualizações de recurso para o Windows 10. Para obter mais informações, consulte [Gerenciar o Windows como um serviço](../../osd/deploy-use/manage-windows-as-a-service.md).  
 >   
->  如果在安装[修补程序 3095113](https://support.microsoft.com/kb/3095113)之前同步具有**升级**分类的软件更新，请参阅[在安装 KB 3095113 之前从同步升级分类中恢复](#BKMK_RecoverUpgrades)。  
+>  Se você sincronizar atualizações de software com a classificação **Atualizações** antes de instalar o [hotfix 3095113](https://support.microsoft.com/kb/3095113), consulte [Recover from synchronizing the Atualizações category before you install KB 3095113](#BKMK_RecoverUpgrades).  
 
-### <a name="wsus-administration-console"></a>WSUS 管理控制台  
- 当软件更新点位于远程站点系统服务器上，且该站点服务器并未安装 WSUS 时，Configuration Manager 站点服务器上需要安装 WSUS 管理控制台。  
-
-> [!IMPORTANT]  
->  站点服务器上的 WSUS 版本必须与在软件更新点上运行的 WSUS 版本相同。  
+### <a name="wsus-administration-console"></a>Console de Administração do WSUS  
+ O Console de Administração do WSUS é necessário no servidor de site do Configuration Manager quando o ponto de atualização de software está em um servidor de sistema de sites remoto e o WSUS ainda não está instalado no servidor de site.  
 
 > [!IMPORTANT]  
->  不要使用 WSUS 管理控制台来配置 WSUS 设置。 Configuration Manager 连接到在软件更新点上运行的 WSUS，并配置适当的设置。  
+>  A versão do WSUS no servidor de site deve ser a mesma versão do WSUS em execução nos pontos de atualização de software.  
 
-### <a name="windows-update-agent-wua"></a>Windows 更新代理 (WUA)  
- 客户端上需要安装 WUA 客户端才能连接到 WSUS 服务器，以及检索那些必须接受符合性扫描的软件更新的列表。  
+> [!IMPORTANT]  
+>  Não use o Console de Administração do WSUS para definir as configurações do WSUS. O Configuration Manager se conecta ao WSUS que é executado no ponto de atualização de software e define as configurações apropriadas.  
 
- 安装 Configuration Manager 时，会下载 WUA 的最新版本。 之后，安装 Configuration Manager 客户端时，如有必要将会升级 WUA。 但是，如果安装失败，你必须使用另一种方法来升级 WUA。  
+### <a name="windows-update-agent-wua"></a>Windows Update Agent (WUA)  
+ O cliente WUA é necessário para habilitar a conexão de clientes ao servidor WSUS e recuperar a lista de atualizações de software que deve ser verificada quanto à conformidade.  
 
-## <a name="software-update-dependencies-internal-to-configuration-manager"></a>Configuration Manager 软件更新的内部依赖关系  
- 以下部分列出了 Configuration Manager 中软件更新的内部依赖关系。  
+ Quando você instala o Configuration Manager, a última versão do WUA é baixada. Depois, quando o cliente do Configuration Manager é instalado, o WUA é atualizado, se necessário. No entanto, se a instalação falhar, você deverá usar um método diferente para atualizar o WUA.  
 
-### <a name="management-points"></a>管理点  
- 管理点在客户端计算机和 Configuration Manager 站点之间传输信息。 它们对于软件更新是必需的。  
+## <a name="software-update-dependencies-internal-to-configuration-manager"></a>Dependências de atualizações de software internas ao Configuration Manager  
+ As seções a seguir listam as dependências internas para atualizações de software no Configuration Manager.  
 
-### <a name="software-update-point"></a>软件更新点  
- 必须在 WSUS 服务器上安装软件更新点，才能在 Configuration Manager 中部署软件更新。 有关详细信息，请参阅[安装和配置软件更新点](../get-started/install-a-software-update-point.md)。
+### <a name="management-points"></a>Pontos de gerenciamento  
+ Os pontos de gerenciamento transferem informações entre os computadores cliente e o site do Configuration Manager. Eles são necessários para atualizações de software.  
 
-### <a name="distribution-points"></a>分发点  
- 需要使用分发点来存储软件更新的内容。 有关如何安装分发点和管理内容的详细信息，请参阅[管理内容和内容基础结构](../../core/servers/deploy/configure/manage-content-and-content-infrastructure.md)。  
+### <a name="software-update-point"></a>Ponto de atualização de software  
+ Você deve instalar um ponto de atualização de software no servidor WSUS para poder implantar atualizações de software no Configuration Manager. Para mais informações, consulte [Instalar e configurar um ponto de atualização de software](../get-started/install-a-software-update-point.md).
 
-### <a name="client-settings-for-software-updates"></a>软件更新的客户端设置  
- 默认情况下，会为客户端启用软件更新。 但是，可以使用其他一些设置来控制客户端如何和何时评估软件更新的符合性，以及对如何安装软件更新进行控制。  
+### <a name="distribution-points"></a>Pontos de distribuição  
+ Pontos de distribuição são necessários para armazenar o conteúdo de atualizações de software. Para obter mais informações sobre como instalar pontos de distribuição e gerenciar conteúdo, consulte [Gerenciar conteúdo e infraestrutura de conteúdo](../../core/servers/deploy/configure/manage-content-and-content-infrastructure.md).  
 
- 有关详细信息，请参阅以下内容：  
+### <a name="client-settings-for-software-updates"></a>Configurações do cliente para atualizações de software  
+ Por padrão, as atualizações de software estão habilitadas para clientes. Entretanto, existem outras configurações disponíveis que controlam como e quando os clientes avaliam a conformidade das atualizações de software e como elas são instaladas.  
 
--   [软件更新的客户端设置](../get-started/manage-settings-for-software-updates.md#a-namebkmkclientsettingsa-client-settings-for-software-updates)。  
+ Para obter mais informações, consulte:  
 
--   [软件更新客户端设置](../../core/clients/deploy/about-client-settings.md#software-updates)主题。  
+-   [Configurações do cliente para atualizações de software](../get-started/manage-settings-for-software-updates.md#a-namebkmkclientsettingsa-client-settings-for-software-updates).  
 
-### <a name="reporting-services-point"></a>Reporting Services 点  
- Reporting Services 点站点系统角色可以显示软件更新的报表。 此角色是可选的，但建议使用它。 有关如何创建 Reporting Services 点的详细信息，请参阅[配置报表](../../core/servers/manage/configuring-reporting.md)。  
+-   Tópico [Configurações do cliente para atualizações de software](../../core/clients/deploy/about-client-settings.md#software-updates).  
 
-##  <a name="BKMK_RecoverUpgrades"></a> 在安装 KB 3095113 之前从同步升级分类中恢复  
- 必须在你的软件更新点和站点服务器上为 WSUS 安装 [修补程序 3095113](https://support.microsoft.com/kb/3095113) ，然后再同步 **升级** 分类。 如果在启用 **升级** 分类后未安装此修补程序，即使 WSUS 无法正确下载并部署 Windows 10 内部版本 1511 功能升级包，也能看见此功能升级选项。 如果你未先安装 [修补程序 3095113](https://support.microsoft.com/kb/3095113)就同步任何升级，则会使用不可用数据填充 WSUS 数据库 (SUSDB)，必须清除这些数据才能正确部署升级。  使用以下步骤从该问题中恢复。  
+### <a name="reporting-services-point"></a>Ponto do Reporting Services  
+ A função do sistema de site do ponto do Reporting Services pode exibir relatórios de atualizações de software. Essa função é opcional, mas recomendada. Para obter mais informações sobre como criar um ponto do Reporting Services, consulte [Configurando relatórios](../../core/servers/manage/configuring-reporting.md).  
 
-#### <a name="to-recover-from-synchronizing-the-upgrades-classification-before-you-install-kb-3095113"></a>在安装 KB 3095113 之前从同步升级分类中恢复  
+##  <a name="BKMK_RecoverUpgrades"></a> Recuperar-se da sincronização da categoria Atualizações antes de instalar o KB 3095113  
+ Você deve instalar o [hotfix 3095113](https://support.microsoft.com/kb/3095113) para o WSUS nos pontos de atualização de software e servidores do site antes de sincronizar a classificação **Atualizações** . Se o hotfix não estiver instalado quando a classificação **Atualizações** for habilitada, o WSUS verá a atualização de recurso do build 1511 do Windows 10 mesmo que não possa baixar e implantar corretamente os pacotes associados. Se você sincronizar todas as atualizações sem primeiro ter instalado o [hotfix 3095113](https://support.microsoft.com/kb/3095113), o SUSDB (banco de dados do WSUS) será populado com dados inúteis que deverão ser apagados para que as atualizações possam ser implantadas corretamente.  Use o procedimento a seguir para se recuperar desse problema.  
 
-1.  使用升级分类删除软件更新。 你可以使用类似于下面的示例脚本的 PowerShell 脚本：  
+#### <a name="to-recover-from-synchronizing-the-upgrades-classification-before-you-install-kb-3095113"></a>Para se recuperar da sincronização da classificação Atualizações antes de instalar o KB 3095113  
+
+1.  Exclua as atualizações de software com a classificação Atualizações. Você pode usar um script do PowerShell semelhante ao exemplo a seguir:  
 
     ```  
     $Server = Get-WSUSServer  
@@ -97,15 +97,15 @@ ms.lasthandoff: 08/07/2017
     ```  
 
     > [!IMPORTANT]  
-    >  在执行下一步之前，必须在 Configuration Manager 层次结构中的所有软件更新点上运行此脚本。  
+    >  Você deve executar o script em todos os pontos de atualização de software na hierarquia do Configuration Manager antes de ir para a próxima etapa.  
 
-     要使用升级分类批量删除软件更新，你可以修改此 PowerShell 脚本从一个 txt 文件读取多个 GUID。  
+     Para excluir em massa atualizações de software com a classificação Atualizações, modifique o script do PowerShell para ler vários GUIDs de um arquivo txt.  
 
-2.  在软件更新点组件属性中取消选中“升级”分类（有关详细信息，请参阅[配置分类和产品](../get-started/configure-classifications-and-products.md)），然后启动软件更新同步（有关详细信息，请参阅[同步软件更新](../get-started/synchronize-software-updates.md)）。  
+2.  Desmarque a classificação **Atualizações** nas propriedades do componente do Ponto de Atualização de Software (para obter os detalhes, consulte [Configurar classificações e produtos](../get-started/configure-classifications-and-products.md)) e inicie a sincronização de atualizações de software (para obter detalhes, consulte [Sincronizar atualizações de software](../get-started/synchronize-software-updates.md).  
 
-3.  在你的软件更新点和站点服务器上为 WSUS 安装 [修补程序 3095113](https://support.microsoft.com/kb/3095113) 很重要。  
+3.  Instale o [hotfix 3095113](https://support.microsoft.com/kb/3095113) para o WSUS nos pontos de atualização de software e servidores do site.  
 
-4.  在软件更新点组件属性中选中“升级”分类（有关详细信息，请参阅[配置分类和产品](../get-started/configure-classifications-and-products.md)），然后启动软件更新同步（有关详细信息，请参阅[同步软件更新](../get-started/synchronize-software-updates.md)）。  
+4.  Marque a classificação **Atualizações** nas propriedades do componente do Ponto de Atualização de Software (para obter os detalhes, consulte [Configurar classificações e produtos](../get-started/configure-classifications-and-products.md)) e inicie a sincronização de atualizações de software (para obter detalhes, consulte [Sincronizar atualizações de software](../get-started/synchronize-software-updates.md).  
 
-## <a name="next-steps"></a>后续步骤
-[准备软件更新管理](../get-started/prepare-for-software-updates-management.md)
+## <a name="next-steps"></a>Próximas etapas
+[Preparar-se para o gerenciamento de atualização de software](../get-started/prepare-for-software-updates-management.md)

@@ -1,6 +1,6 @@
 ---
-title: "更新注册工具 | Microsoft Docs"
-description: "了解何时以及如何使用更新注册工具来手动将更新导入 Configuration Manager 控制台。"
+title: "Ferramenta de Registro de Atualização | Microsoft Docs"
+description: "Descubra quando e como usar a ferramenta de registro de atualização para importar manualmente uma atualização para o console do Configuration Manager."
 ms.custom: na
 ms.date: 3/27/2017
 ms.prod: configuration-manager
@@ -17,55 +17,55 @@ manager: angrobe
 ms.openlocfilehash: 35a4c201f73469fdfaa5bb8629e91886f7ae8751
 ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
 ms.translationtype: HT
-ms.contentlocale: zh-CN
+ms.contentlocale: pt-BR
 ms.lasthandoff: 08/07/2017
 ---
-# <a name="use-the-update-registration-tool-to-import-hotfixes-to-system-center-configuration-manager"></a>使用更新注册工具将修补程序导入 System Center Configuration Manager
+# <a name="use-the-update-registration-tool-to-import-hotfixes-to-system-center-configuration-manager"></a>Usar a Ferramenta de Registro de Atualização para importar hotfixes para o System Center Configuration Manager
 
-*适用范围：System Center Configuration Manager (Current Branch)*
+*Aplica-se a: System Center Configuration Manager (Branch Atual)*
 
-Configuration Manager 的某些更新无法从 Microsoft 云服务获取，只能在带外获取。 用于解决特定问题的受限版本修补程序是一个示例。   
-必须安装带外版本，并且更新或修补程序文件名以扩展名 **update.exe** 结尾时，需使用**更新注册工具**手动将更新导入 Configuration Manager 控制台。 该工具使你可以提取更新包并将它传输到站点服务器，然后向 Configuration Manager 控制台注册更新。  
+Algumas atualizações do Configuration Manager não estão disponíveis no serviço de nuvem da Microsoft e só são obtidas fora de banda. Um exemplo é um hotfix de versão limitada para resolver um problema específico.   
+Quando for preciso instalar uma versão fora de banda e o nome do arquivo da atualização ou do hotfix terminar com a extensão **update.exe**, use a **ferramenta de registro de atualização** para importar manualmente a atualização para o console do Configuration Manager. A ferramenta permite extrair e transferir o pacote de atualização para o servidor do site, bem como registrar a atualização no console do Configuration Manager.  
 
- 如果修补程序文件有 **.exe** 文件扩展名（不是 **update.exe**），请参阅[使用修补程序安装程序来安装 System Center Configuration Manager 的更新](../../../core/servers/manage/use-the-hotfix-installer-to-install-updates.md)  
+ Se o arquivo de hotfix tiver a extensão de arquivo **.exe** (e não **update.exe**), consulte [Usar o Instalador dr Hotfix para instalar atualizações do System Center Configuration Manager](../../../core/servers/manage/use-the-hotfix-installer-to-install-updates.md)  
 
 > [!NOTE]  
->  本主题提供有关如何安装更新 System Center Configuration Manager 的修补程序的常规指导。 有关特定修补程序或更新的详细信息，请参阅 Microsoft 支持上该更新的相应知识库 (KB) 文章。  
+>  Este tópico fornece diretrizes gerais sobre como instalar os hotfixes que atualizam o System Center Configuration Manager. Para obter detalhes sobre uma atualização ou um hotfix específico, consulte o artigo da KB (Base de Dados de Conhecimento) correspondente no site de Suporte da Microsoft.  
 
- **使用更新注册工具的先决条件：**  
+ **Pré-requisitos para usar a ferramenta de registro de atualização:**  
 
--   只有以 **.update.exe** 扩展名结尾的带外更新才能使用此工具安装  
+-   Somente atualizações fora de banda que terminem com a extensão **.update.exe** podem ser instaladas com essa ferramenta  
 
--   该工具自包含有直接从 Microsoft 获取的各个更新  
+-   A ferramenta é autossuficiente com as atualizações individuais que você obtém diretamente da Microsoft  
 
--   该工具不依赖于服务连接点的模式  
+-   A ferramenta não tem uma dependência no modo do ponto de conexão de serviço  
 
--   该工具必须在承载服务连接点的计算机上运行  
+-   A ferramenta deve ser executada no computador que hospeda o ponto de conexão de serviço  
 
--   运行该工具的计算机（服务连接点计算机）必须安装 .NET Framework 4.52  
+-   O computador onde a ferramenta é executada (o computador do ponto de conexão de serviço) deve ter o .NET Framework 4.52 instalado  
 
--   用于运行该工具的帐户必须在托管服务连接点的计算机上具有“本地管理员”权限（工具在此计算机上运行）  
+-   A conta usada para executar a ferramenta deve ter permissões de **administrador local** no computador que hospeda o ponto de conexão de serviço (no qual a ferramenta é executada)  
 
--   用于运行该工具的帐户必须对托管服务连接点的计算机上的以下文件夹具有“写入”权限：**&lt;ConfigMgr Installation directory\>\EasySetupPayload\offline**  
+-   A conta usada para executar a ferramenta deve ter permissões de **gravação** para a seguinte pasta no computador que hospeda o ponto de conexão de serviço: **&lt;diretório de instalação do ConfigMgr\>\EasySetupPayload\offline**  
 
-### <a name="to-use-the-update-registration-tool"></a>使用更新注册工具  
+### <a name="to-use-the-update-registration-tool"></a>Para usar a ferramenta de registro de atualização  
 
-1.  在承载服务连接点的计算机上：  
+1.  No computador que hospeda o ponto de conexão de serviço:  
 
-    -   使用管理特权打开命令提示符，然后将目录更改为包含 **&lt;Product\>-&lt;product version\>-&lt;KB article ID\>ConfigMgr.Update.exe** 的位置  
+    -   Abra um prompt de comando com privilégios administrativos e altere os diretórios para o local que contém **&lt;Produto\>-&lt;versão do produto\>-&lt;ID do artigo da KB\>-ConfigMgr.Update.exe**  
 
-2.  运行以下命令以启动更新注册工具：  
+2.  Execute o seguinte comando para iniciar a ferramenta de registro de atualização:  
 
-    -   **&lt;Product\>-&lt;product version\>-&lt;KB article ID\>-ConfigMgr.Update.exe**  
+    -   **&lt;Produto\>-&lt;versão do produto\>-&lt;ID do artigo da KB\>-ConfigMgr.Update.exe**  
 
-    修补程序进行注册之后，它会在 24 小时内在控制台中显示为新的更新。  你可以加快此进程：
+    Depois que o hotfix for registrado, ele aparecerá como uma nova atualização no console em até 24 horas.  Você pode acelerar o processo:
 
-    - 打开 Configuration Manager 控制台并转到“管理” > “更新和服务”，然后单击“检查更新”。 （在版本 1702 之前，“更新和服务”在“管理” > “云服务”下。） 
+    - Abra o console do Configuration Manager, vá até **Administração** > **Atualizações e Manutenção** e clique em **Verificar Atualizações**. (Antes da versão 1702, Atualizações e Manutenção ficava em **Administração** > **Serviços de Nuvem**.) 
 
-    更新注册工具会将其操作记录到本地计算机上的 .log 文件。 该日志文件与修补程序 .exe 文件同名，并且会写入到 **%SystemRoot%Temp** 文件夹中。  
+    A ferramenta de registro de atualização registra suas ações em um arquivo .log no computador local. O arquivo de log tem o mesmo nome do arquivo .exe do hotfix e é gravado na pasta **%SystemRoot%/Temp**.  
 
-     注册更新之后，可以关闭更新注册工具。  
+     Depois que a atualização for registrada, você poderá fechar a ferramenta de registro de atualização.  
 
-3.  打开 Configuration Manager 控制台并导航到“管理” > “更新和服务”。 现在即可安装之前导入的修补程序。 （在版本 1702 之前，“更新和服务”在“管理” > “云服务”下。）
+3.  Abra o console do Configuration Manager e navegue até **Administração** > **Atualizações e Manutenção**. Os hotfixes que foram importados agora estão disponíveis para instalação. (Antes da versão 1702, Atualizações e Manutenção ficava em **Administração** > **Serviços de Nuvem**.)
 
- 有关安装更新的信息，请参阅[安装 System Center Configuration Manager 在控制台的更新](../../../core/servers/manage/install-in-console-updates.md)  
+ Para obter informações sobre a instalação de atualizações, consulte [Instalar atualizações no console para o System Center Configuration Manager](../../../core/servers/manage/install-in-console-updates.md)  

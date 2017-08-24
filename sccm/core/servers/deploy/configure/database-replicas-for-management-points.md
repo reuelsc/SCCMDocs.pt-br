@@ -1,6 +1,6 @@
 ---
-title: "管理点数据库副本 | Microsoft Docs"
-description: "使用数据库副本可减少管理点对站点数据库服务器施加的 CPU 负载。"
+title: "Réplicas de banco de dados do ponto de gerenciamento | Microsoft Docs"
+description: "Use uma réplica de banco de dados para reduzir a carga de CPU alocada no servidor de banco de dados do site por pontos de gerenciamento."
 ms.custom: na
 ms.date: 10/06/2016
 ms.prod: configuration-manager
@@ -17,235 +17,235 @@ manager: angrobe
 ms.openlocfilehash: 130c053c9f2a1817dd85b1f3c01285aab19d59cb
 ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
 ms.translationtype: HT
-ms.contentlocale: zh-CN
+ms.contentlocale: pt-BR
 ms.lasthandoff: 08/07/2017
 ---
-# <a name="database-replicas-for-management-points-for-system-center-configuration-manager"></a>System Center Configuration Manager 管理点的数据库副本
+# <a name="database-replicas-for-management-points-for-system-center-configuration-manager"></a>Réplicas de banco de dados para pontos de gerenciamento para o System Center Configuration Manager
 
-*适用范围：System Center Configuration Manager (Current Branch)*
+*Aplica-se a: System Center Configuration Manager (Branch Atual)*
 
-System Center Configuration Manager 主站点可以使用数据库副本来减少管理点在处理来自客户端的请求时对站点数据库服务器施加的 CPU 负载。  
+Os sites primários do System Center Configuration Manager podem usar uma réplica de banco de dados para reduzir a carga de CPU alocada no servidor de banco de dados do site por pontos de gerenciamento conforme eles atendem solicitações de serviço de clientes.  
 
--   当管理点使用数据库副本时，此管理点会从承载数据库副本的 SQL Server 计算机中请求数据，而不是从站点数据库服务器中请求。  
+-   Quando um ponto de gerenciamento usa uma réplica de banco de dados, ele solicita dados do computados SQL Server que hospeda a réplica de banco de dados, em vez do servidor de banco de dados do site.  
 
--   这有助于通过卸载与客户端相关的频繁处理任务来减少站点数据库服务器上的 CPU 处理要求。  客户端的频繁处理任务的示例包括其中存在大量客户端的站点，这些站点频繁请求客户端策略  
+-   Isso pode ajudar a reduzir os requisitos de processamento da CPU no servidor de banco de dados do site ao descarregar tarefas de processamento frequentes relacionadas aos clientes.  Um exemplo das tarefas de processamento frequentes para clientes inclui sites em que há um grande número de clientes que fazem solicitações frequentes para a política do cliente  
 
 
-##  <a name="bkmk_Prepare"></a> 准备使用数据库副本  
-**关于管理点的数据库副本：**  
+##  <a name="bkmk_Prepare"></a> Prepare-se para usar réplicas de banco de dados  
+**Sobre réplicas de banco de dados para pontos de gerenciamento:**  
 
--   副本是指站点数据库的部分复制，该站点数据库复制到独立的 SQL Server 实例：  
+-   Réplicas são uma cópia parcial do banco de dados do site que é replicada para uma instância separada do SQL Server:  
 
-    -   主站点支持站点上的每个管理点的专用数据库副本（辅助站点不支持数据库副本）  
+    -   Sites primários dão suporte a uma réplica de banco de dados dedicado para cada ponto de gerenciamento no site (sites secundários não dão suporte a réplicas de banco de dados)  
 
-    -   单个数据库副本可用于同一站点的多个管理点  
+    -   Uma réplica do banco de dados individual pode ser usada por mais de um ponto de gerenciamento do mesmo site  
 
-    -   只要每个数据库副本在独立的 SQL Server 实例中运行，SQL Server 即可承载多个副本以供不同管理点使用  
+    -   Um SQL Server pode hospedar várias réplicas de banco de dados para uso por diferentes pontos de gerenciamento, desde que cada uma seja executada em uma instância separada do SQL Server  
 
--   副本按固定计划，从站点数据库服务器以此目的发布的数据中同步站点数据库的副本。  
+-   Réplicas sincronizam uma cópia do banco de dados de site em uma programação fixa de dados publicados pelo servidor de banco de dados de sites para essa finalidade.  
 
--   管理点可配置为在安装此管理点时使用副本，或随后通过重新配置先前安装的管理点以使用数据库副本  
+-   Pontos de gerenciamento podem ser configurados para usar uma réplica quando você instala o ponto de gerenciamento ou em um momento posterior reconfigurando o ponto de gerenciamento instalado anteriormente para usar a réplica de banco de dados  
 
--   定期监视站点数据库服务器和各个数据库副本服务器，以确保这两者间发生复制操作，并确保数据库副本服务器的性能足以满足所需的站点和客户端性能  
+-   Monitore regularmente o servidor de banco de dados do site e cada servidor de réplica de banco de dados para assegurar que a replicação ocorre entre eles, e que o desempenho do servidor de réplica de banco de dados é suficiente para o desempenho do site e do cliente que você requer  
 
-**数据库副本的先决条件：**  
+**Pré-requisitos para réplicas de banco de dados:**  
 
--   **SQL Server 要求：**  
+-   **Requisitos do SQL Server:**  
 
-    -   承载数据库副本的 SQL Server 必须满足与站点数据库服务器相同的要求。 但只要副本服务器运行受支持的 SQL Server 版本，就无需运行与站点数据库服务器相同版本的 SQL Server。 有关信息，请参阅[对 System Center Configuration Manager 的 SQL Server 版本的支持](../../../../core/plan-design/configs/support-for-sql-server-versions.md)  
+    -   O SQL Server que hospeda a réplica de banco de dados deve atender aos mesmos requisitos do servidor de banco de dados do site. No entanto, o servidor de réplica não precisa executar a mesma versão ou edição do SQL Server que o banco de dados do site, desde que execute uma versão e uma edição com suporte do SQL Server. Para obter informações, consulte [Suporte para versões do SQL Server para o System Center Configuration Manager](../../../../core/plan-design/configs/support-for-sql-server-versions.md)  
 
-    -   承载副本数据库的计算机上的 SQL Server 服务必须以 **系统** 帐户形式运行。  
+    -   O serviço SQL Server no computador que hospeda o banco de dados de réplica deve executar como a conta do **Sistema** .  
 
-    -   承载站点数据库和承载数据库副本的这两个 SQL Server 均必须安装有“SQL Server 复制”  。  
+    -   O SQL Server que hospeda o banco de dados do site e o que hospeda uma réplica de banco de dados devem ter ambos a **replicação do SQL Server** instalada.  
 
-    -   站点数据库必须 **发布** 数据库副本，且每个远程数据库副本服务器必须 **订阅** 已发布的数据。  
+    -   O banco de dados do site deve **publicar** a réplica de banco de dados e cada servidor de réplica de banco de dados remoto deve **assinar** os dados publicados.  
 
-    -   承载站点数据库和承载数据库副本的这两个 SQL Server 均必须配置为支持 2 GB 的“最大文本替换大小”  。 有关如何为 SQL Server 2012 配置此项的示例，请参阅 [Configure the max text repl size Server Configuration Option（配置最大文本替换大小服务器配置选项）](http://go.microsoft.com/fwlink/p/?LinkId=273960)。  
+    -   O SQL Server que hospeda o banco de dados do site e uma réplica de banco de dados deve ser configurado para dar suporte a um **Tamanho Máximo de Repl. de Texto** de 2 GB. Para ver um exemplo de como configurar isso para o SQL Server 2012, consulte [Configurar a opção de configuração do servidor do tamanho máx. de repl. de texto](http://go.microsoft.com/fwlink/p/?LinkId=273960).  
 
--   **自签名证书：** 若要配置数据库副本，必须在数据库副本服务器上创建自签名证书，并将此证书提供给将使用该数据库副本服务器的每个管理点。  
+-   **Certificado autoassinado:** para configurar uma réplica do banco de dados, você deve criar um certificado autoassinado no servidor de réplica de banco de dados e disponibilizar esse certificado para cada ponto de gerenciamento que usará esse servidor.  
 
-    -   证书会自动提供给数据库副本服务器上安装的管理点。  
+    -   O certificado está disponível automaticamente para um ponto de gerenciamento instalado no servidor de réplica de banco de dados.  
 
-    -   若要将此证书提供给远程管理点，则必须导出证书，然后将其添加到远程管理点上的 **受信任人** 证书存储中。  
+    -   Para disponibilizar esse certificado para pontos de gerenciamento remoto, você deve exportá-lo e adicioná-lo ao repositório de certificados de **Pessoas Confiáveis** no ponto de gerenciamento remoto.  
 
--   **客户端通知：** 若要支持包含管理点数据库副本的客户端通知，你必须针对 **SQL Server Service Broker**配置站点数据库服务器和数据库副本服务器之间的通信。 这要求：  
+-   **Notificação do cliente** : para dar suporte à notificação do cliente com uma réplica de banco de dados para um ponto de gerenciamento, você deve configurar a comunicação entre o servidor de banco de dados do site e o servidor de réplica de banco de dados no **SQL Server Service Broker**. Isso requer que você:  
 
-    -   使用其他数据库的相关信息配置每个数据库  
+    -   Configure cada banco de dados com informações sobre outro banco de dados  
 
-    -   在两个数据库间交换证书以确保安全通信  
+    -   Troque certificados entre dois bancos de dados para comunicação segura  
 
-**使用数据库副本时的限制：**  
+**Limitações ao usar réplicas de banco de dados:**  
 
--   当站点配置为发布数据库副本时，应使用以下过程代替常规指导：  
+-   Quando seu site estiver configurado para publicar as réplicas de banco de dados, os procedimentos a seguir deverão ser usados no lugar da diretriz normal:  
 
-    -   [卸载发布数据库副本的站点服务器](#BKMK_DBReplicaOps_Uninstall)  
+    -   [Desinstalar um servidor do site que publique uma réplica de banco de dados](#BKMK_DBReplicaOps_Uninstall)  
 
-    -   [移动发布数据库副本的站点服务器数据库](#BKMK_DBReplicaOps_Move)  
+    -   [Mover um banco de dados de servidor de site que publique uma réplica de banco de dados](#BKMK_DBReplicaOps_Move)  
 
--   **升级到 System Center Configuration Manager**：将站点从 System Center 2012 Configuration Manager 升级到 System Center Configuration Manager 之前，必须对管理点禁用数据库副本。  站点升级之后，可以为管理点重新配置数据库副本。  
+-   **Atualizações para o System Center Configuration Manager**: antes de atualizar um site do System Center 2012 Configuration Manager para o System Center Configuration Manager, você deve desabilitar as réplicas de banco de dados para os pontos de gerenciamento.  Depois de atualizar seu site, você pode reconfigurar as réplicas de banco de dados de pontos de gerenciamento.  
 
--   **单个 SQL Server 上的多个副本：**如果将数据库副本服务器配置为承载管理点的多个数据库副本（每个副本必须位于单独的实例上），则必须使用修改后的配置脚本（从下一节的第 4 步开始）来防止此服务器上先前配置的数据库副本覆盖当前使用的自签名证书。  
+-   **Várias réplicas em um único SQL Server:** se você configurar um servidor de réplica de banco de dados para hospedar várias réplicas de banco de dados para pontos de gerenciamento (cada réplica deve estar em uma instância separada), deverá usar um script de configuração modificado (da Etapa 4 da seção a seguir) para evitar a substituição do certificado autoassinado em uso pelas réplicas de banco de dados previamente configuradas no servidor.  
 
-##  <a name="BKMK_DBReplica_Config"></a> 配置数据库副本  
-若要配置数据库副本，需要以下步骤：  
+##  <a name="BKMK_DBReplica_Config"></a> Configurar réplicas de banco de dados  
+Para usar configurar uma réplica de banco de dados, as etapas a seguir são necessárias:  
 
--   [第 1 步 - 配置站点数据库服务器以发布数据库副本](#BKMK_DBReplica_ConfigSiteDB)  
+-   [Etapa 1 – configurar o servidor de banco de dados do site para publicar a réplica de banco de dados](#BKMK_DBReplica_ConfigSiteDB)  
 
--   [第 2 步 – 配置数据库副本服务器](#BKMK_DBReplica_ConfigSrv)  
+-   [Etapa 2 – configurando o servidor de réplica de banco de dados](#BKMK_DBReplica_ConfigSrv)  
 
--   [第 3 步 - 将管理点配置为使用数据库副本](#BKMK_DBReplica_ConfigMP)  
+-   [Etapa 3 – configurar os pontos de gerenciamento para usar a réplica de banco de dados](#BKMK_DBReplica_ConfigMP)  
 
--   [第 4 步 - 配置数据库副本服务器的自签名证书](#BKMK_DBReplica_Cert)  
+-   [Etapa 4 – configurar um certificado autoassinado para o servidor de réplica de banco de dados](#BKMK_DBReplica_Cert)  
 
--   [第 5 步 - 为数据库副本服务器配置 SQL Server Service Broker](#BKMK_DBreplica_SSB)  
+-   [Etapa 5 – configurar o SQL Server Service Broker para o servidor de réplica de banco de dados](#BKMK_DBreplica_SSB)  
 
-###  <a name="BKMK_DBReplica_ConfigSiteDB"></a> 第 1 步 - 配置站点数据库服务器以发布数据库副本  
- 使用下列过程作为示例，了解如何在 Windows Server 2008 R2 计算机上将站点数据库服务器配置为发布数据库副本。 如果具有不同的操作系统版本，请参阅操作系统文档，并根据需要调整此过程中的步骤。  
+###  <a name="BKMK_DBReplica_ConfigSiteDB"></a> Etapa 1 – configurar o servidor de banco de dados do site para publicar a réplica de banco de dados  
+ Use o procedimento a seguir como um exemplo de como configurar o servidor de banco de dados do site em um computador Windows Server 2008 R2 para publicar a réplica de banco de dados. Se você tiver uma versão diferente de sistema operacional, consulte a documentação do sistema operacional e ajuste as etapas neste procedimento conforme necessário.  
 
-##### <a name="to-configure-the-site-database-server"></a>配置站点数据库服务器  
+##### <a name="to-configure-the-site-database-server"></a>Para configurar o servidor de banco de dados do site  
 
-1.  在站点数据库服务器上，将 SQL Server 代理设置为自动启动。  
+1.  No servidor de banco de dados do site, defina o SQL Server Agent para iniciar automaticamente.  
 
-2.  在站点数据库服务器上，用 **ConfigMgr_MPReplicaAccess**名称创建本地用户组。 必须将要在此站点使用的每个数据库副本服务器的计算机帐户添加到此组中，以使那些数据库副本服务器能够与发布的数据库副本同步。  
+2.  No servidor de banco de dados do site, crie um grupo de usuários local com o nome **ConfigMgr_MPReplicaAccess**. Você deve adicionar a esse grupo a conta de computador para cada servidor de réplica de banco de dados que você usar nesse site para habilitar esses servidores de réplica de banco de dados a sincronizar com a réplica de banco de dados publicado.  
 
-3.  在站点数据库服务器上，配置名为 **ConfigMgr_MPReplica**的文件共享。  
+3.  No servidor de banco de dados do site, configure um compartilhamento de arquivo com o nome **ConfigMgr_MPReplica**.  
 
-4.  将以下权限添加到“ConfigMgr_MPReplica”  共享中：  
+4.  Adicione as seguintes permissões ao compartilhamento **ConfigMgr_MPReplica** :  
 
     > [!NOTE]  
-    >  如果 SQL Server 代理使用的帐户不是本地系统帐户，请将“系统”替换为以下列表中的该帐户名称。  
+    >  Se o SQL Server Agent usa uma conta diferente da conta do sistema local, substitua SISTEMA pelo nome dessa conta na seguinte lista.  
 
-    -   **共享权限**：  
+    -   **Permissões de compartilhamento**:  
 
-        -   系统： **写**  
+        -   SISTEMA: **Gravação**  
 
-        -   ConfigMgr_MPReplicaAccess： **读取**  
+        -   ConfigMgr_MPReplicaAccess: **Ler**  
 
-    -   **NTFS 权限**：  
+    -   **Permissões NTFS**:  
 
-        -   系统： **完全控制**  
+        -   SISTEMA: **Controle total**  
 
-        -   ConfigMgr_MPReplicaAccess：“读取”、“读取和执行”、“列表文件夹内容”  
+        -   ConfigMgr_MPReplicaAccess: **Ler**, **Ler e executar** e **Listar conteúdo da pasta**  
 
-5.  使用“SQL Server Management Studio”  连接到站点数据库，并以查询形式运行以下存储过程： **spCreateMPReplicaPublication**  
+5.  Use o **SQL Server Management Studio** para se conectar ao banco de dados do site e executar o seguinte procedimento armazenado como uma consulta: **spCreateMPReplicaPublication**  
 
-当存储过程完成后，站点数据库服务器被配置为发布数据库副本。  
+Quando o procedimento armazenado for concluído, o servidor de banco de dados do site estará configurado para publicar a réplica de banco de dados.  
 
-###  <a name="BKMK_DBReplica_ConfigSrv"></a> 第 2 步 – 配置数据库副本服务器  
-数据库副本服务器是运行 SQL Server 的计算机，它承载了站点数据库副本以供管理点使用。 数据库副本服务器按照固定计划将其数据库副本与站点数据库服务器发布的数据库副本同步。  
+###  <a name="BKMK_DBReplica_ConfigSrv"></a> Etapa 2 – configurando o servidor de réplica de banco de dados  
+O servidor de réplica de banco de dados é um computador que executa o SQL Server e que hospeda uma réplica do banco de dados do site para pontos de gerenciamento a serem usados. Em um agendamento fixo, o servidor de réplica de banco de dados sincroniza sua cópia do banco de dados com a réplica de banco de dados que é publicado pelo servidor de banco de dados do site.  
 
-数据库副本服务器必须满足站点数据库服务器应满足的要求。 但是，数据库副本服务器运行的 SQL Server 版本可以与站点数据库服务器使用的版本不同。 有关支持的 SQL Server 版本的信息，请参阅[对 System Center Configuration Manager 的 SQL Server 版本的支持](../../../../core/plan-design/configs/support-for-sql-server-versions.md)主题。  
+O servidor de réplica de banco de dados deve atender os mesmos requisitos do servidor de banco de dados do site. No entanto, o servidor de réplica de banco de dados pode executar uma edição ou versão diferente de SQL Server do que a usada pelo servidor de banco de dados do site. Para obter informações sobre as versões do SQL Server com suporte, consulte o tópico [Suporte para versões do SQL Server para o System Center Configuration Manager](../../../../core/plan-design/configs/support-for-sql-server-versions.md).  
 
 > [!IMPORTANT]  
->  承载副本数据库的计算机上的 SQL Server 服务必须以系统帐户形式运行。  
+>  O serviço SQL Server no computador que hospeda o banco de dados de réplica deve executar como a conta do sistema.  
 
-使用下列过程作为示例，了解如何在 Windows Server 2008 R2 计算机上配置数据库副本服务器。 如果具有不同的操作系统版本，请参阅操作系统文档，并根据需要调整此过程中的步骤。  
+Use o procedimento a seguir como um exemplo de como configurar o servidor de réplica de banco de dados em um computador Windows Server 2008 R2. Se você tiver uma versão diferente de sistema operacional, consulte a documentação do sistema operacional e ajuste as etapas neste procedimento conforme necessário.  
 
-##### <a name="to-configure-the-database-replica-server"></a>配置数据库副本服务器  
+##### <a name="to-configure-the-database-replica-server"></a>Para configurar o servidor de réplica de banco de dados  
 
-1.  在数据库副本服务器上，将 SQL Server 代理设置为自动启动。  
+1.  No servidor de réplica de banco de dados do site, defina o SQL Server Agent para inicialização automática.  
 
-2.  在数据库副本服务器上，使用“SQL Server Management Studio”  连接到本地服务器，浏览到“复制”  文件夹，单击“本地订阅”，并选择“新建订阅”  以启动“新建订阅向导” ：  
+2.  No servidor de réplica de banco de dados, use o **SQL Server Management Studio** para conectar-se ao servidor local, navegue até a pasta **Replicação** , clique em Assinaturas Locais e selecione **Novas Assinaturas** para iniciar o **Assistente para Nova Assinatura**:  
 
-    1.  在“发布”  页上的“发布者”  列表框中，选择“查找 SQL Server 发布者” ，输入站点数据库服务器的名称，然后单击“连接” 。  
+    1.  Na página **Publicação** , na caixa de listagem **Publicador** , selecione **Encontrar Publicador SQL Server**, insira o nome do servidor de banco de dados dos sites e clique em **Conectar**.  
 
-    2.  选择“ConfigMgr_MPReplica” ，然后单击“下一步” 。  
+    2.  Selecione **ConfigMgr_MPReplica**e clique em **Próximo**.  
 
-    3.  在“分发代理位置”  页上，选择“在其订阅服务器上运行每个代理(请求订阅)” ，然后单击“下一步” 。  
+    3.  Na página **Local do agente de distribuição** , selecione **Executar cada agente em seu Assinante (assinaturas pull)**e clique em **Próximo**.  
 
-    4.  在“订阅服务器”  页上，执行下列操作之一：  
+    4.  Na página **Assinantes** , siga um destes procedimentos:  
 
-        -   从数据库副本服务器上选择要用于数据库副本的现有数据库，然后单击“确定” 。  
+        -   Selecione um banco de dados existente no servidor de réplica de banco de dados a ser usado para a réplica de banco de dados e clique em **OK**.  
 
-        -   选择“新建数据库”  以为该数据库副本创建新数据库。 在“新建数据库”  页上，指定数据库名称，然后单击“确定” 。  
+        -   Selecione **Novo banco de dados** para criar um novo banco de dados para a réplica de banco de dados. Na página **Novo banco de dados** , especifique um nome de banco de dados e clique em **OK**.  
 
-    5.  单击 **“下一步”** 以继续。  
+    5.  Clique em **Próximo** para continuar.  
 
-    6.  在“分发代理安全性”页上，单击对话框的“订阅服务器连接”行中的属性按钮“(.…)”，然后配置连接的安全设置。  
+    6.  Na página **Segurança do Agente de Distribuição**, clique no botão de propriedades **(.…)** na linha Conexão do Assinante da caixa de diálogo e defina as configurações de segurança para a conexão.  
 
         > [!TIP]  
-        >  属性按钮“(....)”在显示框的第四列中。  
+        >  O botão de propriedades, **(....)**, está na quarta coluna da caixa de exibição.  
 
-        **安全设置：**  
+        **Configurações de segurança:**  
 
-        -   配置运行分发代理进程（进程帐户）的帐户：  
+        -   Configure a conta que executa o processo do Agente de Distribuição (a conta de processo):  
 
-            -   如果 SQL Server 代理作为本地系统运行，请选择“在 SQL Server 代理服务帐户下运行(这不是我们推荐的最佳安全配置)”   
+            -   Se o SQL Server Agent é executado como um sistema local, selecione **Executar na conta de serviço do SQL Server Agent (Essa não é uma prática de segurança recomendada.)**  
 
-            -   如果 SQL Server 代理使用其他帐户运行，请选择“在以下 Windows 帐户下运行” ，然后配置该帐户。 你可以指定 Windows 帐户或某个 SQL Server 帐户。  
+            -   Se o SQL Server Agent é executado usando uma conta diferente, selecione **Executar nesta conta do Windows**e configure essa conta. Você pode especificar uma conta do Windows ou uma conta do SQL Server.  
 
             > [!IMPORTANT]  
-            >  你必须以请求订阅的形式向运行分发代理的帐户授予对发布者的权限。 有关配置这些权限的信息，请参阅 SQL Server TechNet 库中的 [分发代理安全性](http://go.microsoft.com/fwlink/p/?LinkId=238463) 。  
+            >  Você deve conceder a conta que executa as permissões do Agente de Distribuição ao publicador como uma assinatura pull. Para obter informações sobre a configuração dessas permissões, consulte [Segurança do agente de distribuição](http://go.microsoft.com/fwlink/p/?LinkId=238463) na Biblioteca do TechNet do SQL Server.  
 
-        -   对于“连接到分发服务器” ，请选择“通过模拟进程帐户” 。  
+        -   Para **Conectar ao Distribuidor**, selecione **Pela representação da conta do processo**.  
 
-        -   对于“连接到订阅服务器” ，请选择“通过模拟进程帐户” 。  
+        -   Para **Conectar ao Assinante**, selecione **Pela representação da conta do processo**.  
 
-         在配置连接安全设置之后，请单击“确定”  以保存它们，然后单击“下一步” 。  
+         Depois de definir as configurações de segurança da conexão, clique em **OK** para salvá-las e clique em **Próximo**.  
 
-    7.  在“同步计划”  页上的“代理计划”  列表框中，选择“定义计划” ，然后配置“新建作业计划” 。 将频率设置为“每日” 发生，并且每“5 分钟” 重复一次，并将持续时间设置为“无结束日期” 。 单击“下一步”  以保存计划，然后再单击“下一步”  。  
+    7.  Na página **Agenda de sincronização** , na caixa de listagem **Agenda do Agente** , selecione **Definir agendamento**e configure a **Nova Agenda de Trabalho**. Defina a frequência para ocorrer **Diariamente**, a cada **5 minuto(s)**, e a duração para **Sem data de término**. Clique em **Próximo** para salvar o agendamento e clique em **Próximo** novamente.  
 
-    8.  在“向导操作”  页上，选中“创建订阅” 的复选框，然后单击“下一步” 。  
+    8.  Na página **Ações do assistente** , marque a caixa de seleção para **Criar a(s) assinatura(s)**e clique em **Próximo**.  
 
-    9. 在“完成向导”  页上，单击“完成” ，然后单击“关闭”  以完成向导。  
+    9. Na página **Concluir o assistente** , clique em **Concluir**e em **Fechar** para concluir o assistente.  
 
-3.  完成新建订阅向导之后，立即使用“SQL Server Management Studio”连接到数据库副本服务器数据库并运行以下查询以启用 TRUSTWORTHY 数据库属性：`ALTER DATABASE <MP Replica Database Name> SET TRUSTWORTHY ON;`  
+3.  Imediatamente após a conclusão do Assistente para Nova Assinatura, use o **SQL Server Management Studio** para se conectar ao banco de dados de servidor de réplica e executar a consulta a seguir para habilitar a propriedade de banco de dados TRUSTWORTHY:  `ALTER DATABASE <MP Replica Database Name> SET TRUSTWORTHY ON;`  
 
-4.  查看同步状态以验证订阅是否成功：  
+4.  Examinar o status de sincronização para validar que a assinatura foi bem-sucedida:  
 
-    -   在订阅服务器计算机上：  
+    -   No computador do assinante:  
 
-        -   在“SQL Server Management Studio” 中，连接到数据库副本服务器，并展开“复制” 。  
+        -   Use o **SQL Server Management Studio**para conectar-se ao servidor de réplica de banco de dados e expanda **Replicação**.  
 
-        -   展开“本地订阅” ，右键单击站点数据库发布订阅，然后选择“查看同步状态” 。  
+        -   Expanda **Assinaturas Locais**, clique com o botão direito na publicação do banco de dados do site e selecione **Exibir Status da Sincronização**.  
 
-    -   在发布服务器计算机上：  
+    -   No computador do publicador:  
 
-        -   在“SQL Server Management Studio” 中，连接到站点数据库计算机，右键单击“复制”  文件夹，然后选择“启动复制监视器” 。  
+        -   Em **SQL Server Management Studio**, conecte-se ao computador do banco de dados do site, clique com o botão direito na pasta **Replicação** e selecione **Iniciar o Replication Monitor**.  
 
-5.  要为数据库副本启用公共语言运行时 (CLR) 集成，请使用“SQL Server Management Studio”  连接到数据库副本服务器上的数据库副本，并以查询形式运行以下存储过程： **exec sp_configure 'clr enabled', 1; RECONFIGURE WITH OVERRIDE**  
+5.  Para habilitar a integração de Common Language Runtime (CLR) para a réplica de banco de dados, use o **SQL Server Management Studio** para conectar-se à réplica de banco de dados no servidor de réplica de banco de dados e execute o seguinte procedimento armazenado como uma consulta: **exec sp_configure 'clr enabled', 1; RECONFIGURE WITH OVERRIDE**  
 
-6.  对于使用数据库副本服务器的每个管理点，请将该管理点计算机帐户添加到该数据库副本服务器上的本地“管理员”  组中。  
+6.  Para cada ponto de gerenciamento que usa um servidor de réplica de banco de dados, adicione essa conta de computador dos pontos de gerenciamento ao grupo local **Administradores** nesse servidor de réplica de banco de dados.  
 
     > [!TIP]  
-    >  数据库副本服务器上运行的管理点不需要此步骤。  
+    >  Esta etapa não é necessária um ponto de gerenciamento executado no servidor de réplica de banco de dados.  
 
- 现在管理点可以使用数据库副本了。  
+ Agora a réplica de banco de dados está pronta para usar um ponto de gerenciamento.  
 
-###  <a name="BKMK_DBReplica_ConfigMP"></a> 第 3 步 - 将管理点配置为使用数据库副本  
- 可以将主站点上的管理点配置为在安装管理点角色时使用数据库副本，或者可以将现有管理点重新配置为使用数据库副本。  
+###  <a name="BKMK_DBReplica_ConfigMP"></a> Etapa 3 – configurar os pontos de gerenciamento para usar a réplica de banco de dados  
+ Você pode configurar um ponto de gerenciamento em um site primário para usar uma réplica de banco de dados quando você instalar a função do ponto de gerenciamento ou pode reconfigurar um ponto de gerenciamento existente para usar uma réplica de banco de dados.  
 
- 使用下列信息将管理点配置为使用数据库副本：  
+ Use as informações a seguir para configurar um ponto de gerenciamento para usar uma réplica de banco de dados:  
 
--   **配置新的管理点：** 在用于安装管理点的“管理点数据库”  页上，选择“使用数据库副本” ，然后指定承载数据库副本的计算机的 FQDN。 接着，对于“ConfigMgr 站点数据库名称” ，请指定该计算机上数据库副本的数据库名称。  
+-   **Para configurar um novo ponto de gerenciamento:** Na página **Banco de Dados do Ponto de Gerenciamento** do assistente usado para instalar o ponto de gerenciamento, selecione **Usar uma réplica de banco de dados**e especifique o FQDN do computador que hospeda a réplica de banco de dados. Em seguida, para **Nome do banco de dados do site do ConfigMgr**, especifique o nome do banco de dados da réplica de banco de dados nesse computador.  
 
--   **配置以前安装的管理点**：打开管理点的属性页，选择“管理点数据库”  选项卡，再选择“使用数据库副本” ，然后指定承载数据库副本的计算机的 FQDN。 接着，对于“ConfigMgr 站点数据库名称” ，请指定该计算机上数据库副本的数据库名称。  
+-   **Para configurar um ponto de gerenciamento instalado anteriormente**: Abra a página de propriedades do ponto de gerenciamento, selecione a guia **Banco de Dados do Ponto de Gerenciamento** , selecione **Use uma réplica de banco de dados**e especifique o FQDN do computador que hospeda a réplica de banco de dados. Em seguida, para **Nome do banco de dados do site do ConfigMgr**, especifique o nome do banco de dados da réplica de banco de dados nesse computador.  
 
--   **对于使用数据库副本的每个管理点**，必须将管理点服务器的计算机帐户手动添加到该数据库副本的 **db_datareader** 角色。  
+-   **Para cada ponto de gerenciamento que usa uma réplica de banco de dados**, você deve adicionar manualmente a conta de computador do servidor do ponto de gerenciamento para a função **db_datareader** da réplica de banco de dados.  
 
-除了将管理点配置为使用数据库副本服务器之外，必须在管理点上的“IIS”  中启用“Windows 身份验证”  ：  
+Além de configurar o ponto de gerenciamento para usar o servidor de réplica de banco de dados, você deve habilitar a **Autenticação do Windows** no **IIS** no ponto de gerenciamento:  
 
-1.  打开“Internet Information Services (IIS)管理器” 。  
+1.  Abra o **Gerenciador do IIS (Serviços de Informações da Internet)**.  
 
-2.  选择管理点使用的网站，并打开“身份验证” 。  
+2.  Selecione o site da Web usado pelo ponto de gerenciamento e abra **Autenticação**.  
 
-3.  将“Windows 身份验证”  设置为“启用” ，然后关闭“Internet Information Services (IIS)管理器” 。  
+3.  Defina a **Autenticação do Windows** como **Habilitada**e feche o **Gerenciador do IIS (Serviços de Informações da Internet)**.  
 
-###  <a name="BKMK_DBReplica_Cert"></a> 第 4 步 - 配置数据库副本服务器的自签名证书  
- 必须在数据库副本服务器上创建自签名证书，并将此证书提供给将使用该数据库副本服务器的每个管理点。  
+###  <a name="BKMK_DBReplica_Cert"></a> Etapa 4 – configurar um certificado autoassinado para o servidor de réplica de banco de dados  
+ Você deve criar um certificado autoassinado no servidor de réplica de banco de dados e disponibilizar esse certificado para cada ponto de gerenciamento que usará esse servidor.  
 
- 证书会自动提供给数据库副本服务器上安装的管理点。 但是，要将此证书提供给远程管理点，则必须导出证书，然后将其添加到远程管理点上的可信人员证书存储中。  
+ O certificado está disponível automaticamente para um ponto de gerenciamento instalado no servidor de réplica de banco de dados. No entanto, para disponibilizar esse certificado para pontos de gerenciamento remoto, você deve exportá-lo e adicioná-lo ao repositório de certificados de pessoas confiáveis no ponto de gerenciamento remoto.  
 
- 使用下列过程作为示例，了解如何在 Windows Server 2008 R2 计算机的数据库副本服务器上配置自签名证书。 如果具有不同的操作系统版本，请参阅操作系统文档，并根据需要调整这些过程中的步骤。  
+ Use os procedimentos a seguir como um exemplo de como configurar o certificado autoassinado no servidor de réplica de banco de dados para um computador Windows Server 2008 R2. Se você tiver uma versão diferente de sistema operacional, consulte a documentação do sistema operacional e ajuste as etapas nesses procedimentos conforme necessário.  
 
-##### <a name="to-configure-a-self-signed-certificate-for-the-database-replica-server"></a>配置数据库副本服务器的自签名证书  
+##### <a name="to-configure-a-self-signed-certificate-for-the-database-replica-server"></a>Para configurar um certificado autoassinado para o servidor de réplica de banco de dados  
 
-1.  在数据库副本服务器上，使用管理权限打开 PowerShell 命令提示符，然后运行下列命令： **set-executionpolicy UnRestricted**  
+1.  No servidor de réplica de banco de dados, abra um prompt de comando do PowerShell com privilégios administrativos e execute o seguinte comando: **set-executionpolicy UnRestricted**  
 
-2.  复制以下 PowerShell 脚本，并用 **CreateMPReplicaCert.ps1**名称将其保存为文件。 将此文件的副本放入数据库副本服务器的系统分区的根文件夹中。  
+2.  Copie o script do PowerShell a seguir e salve-o com um arquivo com o nome **CreateMPReplicaCert.ps1**. Coloque uma cópia desse arquivo na pasta raiz da partição do sistema do servidor de réplica de banco de dados.  
 
     > [!IMPORTANT]  
-    >  如果你正在单个 SQL Server 上配置多个数据库副本，则对于配置的每个后续副本，必须对此步骤使用此脚本的修改版本。 请参阅  [单个 SQL Server 上附加数据库副本的补充脚本](#bkmk_supscript)  
+    >  Se você estiver configurando mais de uma réplica de banco de dados em um único SQL Server, para cada réplica subsequente que você configurar, use uma versão modificada do script para esse procedimento. Consulte  [Script complementar para réplicas de banco de dados adicionais em um único SQL Server](#bkmk_supscript)  
 
     ```  
     # Script for creating a self-signed certificate for the local machine and configuring SQL Server to use it.  
@@ -372,140 +372,140 @@ System Center Configuration Manager 主站点可以使用数据库副本来减�
     Restart-Service $SQLServiceName -Force  
     ```  
 
-3.  在数据库副本服务器上，运行下列适用于 SQL Server 配置的命令：  
+3.  No servidor de réplica de banco de dados, execute o seguinte comando que se aplica à configuração do seu SQL Server:  
 
-    -   对于 SQL Server 的默认实例：右键单击文件“CreateMPReplicaCert.ps1”  ，并选择“使用 PowerShell 运行” 。 运行脚本时，它会创建自签名证书，并将 SQL Server 配置为使用该证书。  
+    -   Para uma instância padrão do SQL Server: Clique com o botão direito no arquivo **CreateMPReplicaCert.ps1** e selecione **Executar com o PowerShell**. Quando o script é executado, ele cria o certificado autoassinado e configura o SQL Server para usar o certificado.  
 
-    -   对于 SQL Server 的命名实例：使用 PowerShell 运行命令 **%path%\CreateMPReplicaCert.ps1 xxxxxx** ，其中 **xxxxxx** 是 SQL Server 实例的名称。  
+    -   Para uma instância nomeada do SQL Server: Use o PowerShell para executar o comando **%path%\CreateMPReplicaCert.ps1 xxxxxx** em que **xxxxxx** é o nome da instância do SQL Server.  
 
-    -   脚本完成之后，验证 SQL Server 代理是否正在运行。 如果未在运行，请重启 SQL Server 代理。  
+    -   Depois que o script for concluído, verifique se o SQL Server Agent está sendo executado. Se não estiver, reinicie o SQL Server Agent.  
 
-##### <a name="to-configure-remote-management-points-to-use-the-self-signed-certificate-of-the-database-replica-server"></a>配置远程管理点以使用数据库副本服务器的自签名证书  
+##### <a name="to-configure-remote-management-points-to-use-the-self-signed-certificate-of-the-database-replica-server"></a>Para configurar os pontos de gerenciamento remoto para usar o certificado autoassinado do servidor de réplica de banco de dados  
 
-1.  在数据库副本服务器上执行下列步骤以导出该服务器的自签名证书：  
+1.  Execute as seguintes etapas no servidor de réplica de banco de dados para exportar o certificado autoassinado do servidor:  
 
-    1.  单击“启动” ，再单击“运行” ，然后键入 **mmc.exe**。 在空白控制台中，单击“文件”，然后单击“添加/删除管理单元”。  
+    1.  Clique em **Iniciar**e, em seguida, em **Executar**e digite **mmc.exe**. No console vazio, clique em **Arquivo**e em **Adicionar/Remover Snap-in**.  
 
-    2.  在“添加/删除管理单元”对话框中，从“可用的管理单元”列表中选择“证书”，然后单击“添加”。  
+    2.  Na caixa de diálogo **Adicionar ou Remover Snap-ins** , selecione **Certificados** na lista de **Snap-ins disponíveis**e clique em **Adicionar**.  
 
-    3.  在“证书管理单元”对话框中，选择“计算机帐户”，然后单击“下一步”。  
+    3.  Na caixa de diálogo **Snap-in de certificado** , selecione **Conta de computador**e clique em **Próximo**.  
 
-    4.  在“选择计算机”对话框中，确保选中“本地计算机: (运行此控制台的计算机)”，然后单击“完成”。  
+    4.  Na caixa de diálogo **Selecionar Computador** , verifique se a opção **Computador local: (o computador no qual este console está sendo executado)** está marcada e clique em **Concluir**.  
 
-    5.  在“添加/删除管理单元”  对话框中，单击“确定” 。  
+    5.  Na caixa de diálogo **Adicionar ou Remover Snap-ins** , clique em **OK**.  
 
-    6.  在控制台中展开“证书(本地计算机)” ，展开“个人” ，并选择“证书” 。  
+    6.  No console, expanda **Certificados (computador local)**e, em seguida, **Pessoal**e selecione **Certificados**.  
 
-    7.  右键单击友好名称为“ConfigMgr SQL Server 标识证书” 的证书，单击“所有任务” ，然后选择“导出” 。  
+    7.  Clique com o botão direito do mouse no certificado de nome amigável **Certificado de Identificação de SQL Server do ConfigMgr**, clique em **Todas as Tarefas**e, em seguida, selecione **Exportar**.  
 
-    8.  通过使用默认选项完成“证书导出向导”  ，并使用“.cer”  文件扩展名保存证书。  
+    8.  Conclua o **Assistente para Exportação de Certificados** usando as opções padrão e salve o certificado com a extensão de nome de arquivo **.cer** .  
 
-2.  在管理点计算机上执行以下步骤，将数据库副本服务器的自签名证书添加到管理点上的“受信任人”证书存储：  
+2.  Execute as seguintes etapas no computador do ponto de gerenciamento para adicionar o certificado autoassinado relativo ao servidor de réplica de banco de dados ao repositório de certificados Pessoas Confiáveis no ponto de gerenciamento:  
 
-    1.  重复前面 1.a 到 1.e 的步骤 在管理点计算机上的 MMC 中配置**证书**管理单元。  
+    1.  Repita que as etapas anteriores, de 1.a até 1.e para configurar o MMC do snap-in do **Certificado** no computador do ponto de gerenciamento.  
 
-    2.  在控制台中，展开“证书(本地计算机)”，展开“受信任人”，右键单击“证书”，选择“所有任务”，然后选择“导入”以启动“证书导入向导”。  
+    2.  No console, expanda **Certificados (computador local)**e, em seguida, **Pessoas Confiáveis**; clique com o botão direito do mouse em **Certificados**, selecione **Todas as Tarefas**e, depois, **Importar** para iniciar o **Assistente para Importação de Certificados**.  
 
-    3.  在“要导入的文件”页上，选择在步骤 1.h 中保存的证书，然后单击“下一步”。  
+    3.  Na página **Arquivo a Ser Importado** , selecione o certificado salvo na etapa 1.h e clique em **Próximo**.  
 
-    4.  在“证书存储”  页上，选择“将所有的证书放入下列存储” （“证书存储”  设置为“受信任人” ），然后单击“下一步” 。  
+    4.  Na página **Repositório de Certificados** , selecione **Colocar todos os certificados no repositório a seguir**com o **Repositório de certificados** definido como **Pessoas Confiáveis**; clique em **Próximo**.  
 
-    5.  单击“完成”  关闭向导并在管理点上完成证书配置。  
+    5.  Clique em **Concluir** para fechar o assistente e concluir a configuração do certificado no ponto de gerenciamento.  
 
-###  <a name="BKMK_DBreplica_SSB"></a> 第 5 步 - 为数据库副本服务器配置 SQL Server Service Broker  
-要支持包含管理点的数据库副本的客户端通知，你必须针对 SQL Server Service Broker 配置站点数据库服务器和数据库副本服务器之间的通信。 这要求你配置包含有关其他数据库的信息的每个数据库，并在两个数据库之间交换证书以实现安全通信。  
-
-> [!NOTE]  
->  数据库副本服务器必须成功完成与站点数据库服务器的初始同步，然后你才能使用下列过程。  
-
- 以下过程不会修改在 SQL Server 中为站点数据库服务器或数据库副本服务器配置的 Service Broker 端口。 作为替代，此过程将每个数据库配置为使用正确的 Service Broker 端口与其他数据库通信。  
-
- 使用以下过程来为站点数据库服务器和数据库副本服务器配置 Service Broker。  
-
-##### <a name="to-configure-the-service-broker-for-a-database-replica"></a>为数据库副本配置 Service Broker  
-
-1.  使用“SQL Server Management Studio”连接到数据库副本服务器数据库，然后运行以下查询以在数据库副本服务器上启用 Service Broker：**ALTER DATABASE &lt;副本数据库名称\> SET ENABLE_BROKER, HONOR_BROKER_PRIORITY ON WITH ROLLBACK IMMEDIATE**  
-
-2.  接着，在数据库副本服务器上，为客户端通知配置 Service Broker，并导出 Service Broker 证书。 为此，请运行 SQL Server 存储过程，该存储过程只需一次操作便可配置 Service Broker 并导出证书。 在运行该存储过程时，你必须指定数据库副本服务器的 FQDN、数据库副本数据库的名称，并指定证书文件的导出位置。  
-
-     运行以下查询在数据库副本服务器上配置所需的详细信息，并导出数据库副本服务器的证书：**EXEC sp_BgbConfigSSBForReplicaDB '&lt;副本 SQL Server FQDN\>', '&lt;副本数据库名称\>', '&lt;证书备份文件路径\>'**  
-
-    > [!NOTE]  
-    >  如果数据库副本服务器不在 SQL Server 的默认实例上，则对于此步骤，除了指定副本数据库名称之外，你还必须指定实例名称。 为此，请将**&lt;副本数据库名称\>**替换为**实例名称&lt;\\副本数据库名称\>**。  
-
-     从数据库副本服务器中导出证书后，将证书的副本放在主站点数据库服务器上。  
-
-3.  使用“SQL Server Management Studio”  连接到主站点数据库。 连接到主站点数据库后，运行查询以导入证书，并指定数据库副本服务器上正在使用的 Service Broker 端口、数据库副本服务器的 FQDN，以及数据库副本数据库的名称。 这会将主站点数据库配置为使用 Service Broker 与数据库副本服务器的数据库通信。  
-
-     运行以下查询以从数据库副本服务器导入证书并指定所需的详细信息：**EXEC sp_BgbConfigSSBForRemoteService 'REPLICA', '&lt;SQL Service Broker 端口\>', '&lt;证书文件路径\>', '&lt;副本 SQL Server FQDN\>', '&lt;副本数据库名称\>'**  
-
-    > [!NOTE]  
-    >  如果数据库副本服务器不在 SQL Server 的默认实例上，则对于此步骤，除了指定副本数据库名称之外，你还必须指定实例名称。 为此，请将 **&lt;副本数据库名称\>** 替换为 **\实例名称\\副本数据库名称\>**。  
-
-4.  接着，在站点数据库服务器上，运行以下命令来导出站点数据库服务器的证书：**EXEC sp_BgbCreateAndBackupSQLCert '&lt;证书备份文件路径\>'**  
-
-     从站点数据库服务器中导出证书后，将证书的副本放在数据库副本服务器上。  
-
-5.  使用“SQL Server Management Studio”  连接到数据库副本服务器数据库。 连接到数据库副本服务器数据库后，运行查询以导入证书，并指定主站点的站点代码和站点数据库服务器上正在使用的 Service Broker 端口。 这会将数据库副本服务器配置为使用 Service Broker 与主站点的数据库通信。  
-
-     运行以下查询以从站点数据库服务器导入证书：**EXEC sp_BgbConfigSSBForRemoteService '&lt;站点代码\>', '&lt;SQL Service Broker 端口\>', '&lt;证书文件路径\>'**  
-
- 在你完成站点数据库和数据库副本数据库的配置几分钟后，主站点上的通知管理器将为客户端通知设置从主站点数据库到数据库副本的 Service Broker 对话。  
-
-###  <a name="bkmk_supscript"></a> 单个 SQL Server 上附加数据库副本的补充脚本  
- 当你使用第 4 步中的脚本在 SQL Server 上配置数据库副本服务器的自签名证书（其中 SQL Server 已具有你计划继续使用的数据库副本）时，必须使用原始脚本修改后的版本。 以下修改使脚本无法删除服务器上的现有证书，并创建具有唯一友好名称的后续证书。  编辑原始脚本，如下所示：  
-
--   注释掉（阻止运行）脚本条目 **# Delete existing cert if one exists** 和 **# Create the new cert**之间的每一行。 若要如此，请添加“#”  **#**  作为每个适用行的第一个字符。  
-
--   对于使用此脚本配置的每个后续数据库副本，请更新证书的友好名称。  若要如此，请编辑行 **$enrollment.CertificateFriendlyName = "ConfigMgr SQL Server Identification Certificate"** 并将 **ConfigMgr SQL Server Identification Certificate** 替换为新名称，如  **ConfigMgr SQL Server Identification Certificate1**。  
-
-##  <a name="BKMK_DBReplicaOps"></a> 管理数据库副本配置  
- 在站点上使用数据库副本时，请使用下列部分中的信息对卸载数据库副本、卸载使用数据库副本的站点或将站点数据库转移到新安装 SQL Server 的过程进行补充。 在使用下列部分中的信息删除发布时，请使用有关为用于数据库副本的 SQL Server 版本删除事务复制的指引。 例如，如果使用 SQL Server 2008 R2，请参阅 [如何：删除发布（复制 Transact-SQL 编程）](http://go.microsoft.com/fwlink/p/?LinkId=273934)。  
+###  <a name="BKMK_DBreplica_SSB"></a> Etapa 5 – configurar o SQL Server Service Broker para o servidor de réplica de banco de dados  
+Para dar suporte à notificação do cliente com uma réplica de banco de dados para um ponto de gerenciamento, você deve configurar a comunicação entre o servidor de banco de dados do site e o servidor de réplica de banco de dados no SQL Server Service Broker. Para tanto, é necessário configurar cada banco de dados com informações sobre o outro banco de dados e trocar os certificados entre os dois bancos de dados, para comunicação segura.  
 
 > [!NOTE]  
->  还原为数据库副本配置的站点数据库之后，你必须重新配置每个数据库副本（从而重新创建发布和订阅），然后才能使用数据库副本。  
+>  Para que o procedimento a seguir seja possível, o servidor de réplica de banco de dados deve concluir com êxito a sincronização inicial com o servidor de banco de dados do site.  
 
-###  <a name="BKMK_UninstallDbReplica"></a> 卸载数据库副本  
- 如果为管理点使用数据库副本，你可能需要卸载数据库副本一段时间，然后再重新配置它以供使用。 例如，你必须在将 Configuration Manager 站点升级到新的 Service Pack 之前删除数据库副本。 站点升级完成后，你可以还原数据库副本以供使用。  
+ O procedimento a seguir não modifica a porta do Service Broker que está configurada no SQL Server para o servidor de banco de dados do site ou para o servidor de réplica de banco de dados. Em vez disso, ele configura cada banco de dados para comunicação com o outro banco de dados usando a porta correta do Service Broker.  
 
- 使用以下步骤来卸载数据库副本。  
+ Use o procedimento a seguir para configurar o Service Broker para o servidor de banco de dados do site e o servidor de réplica de banco de dados.  
 
-1.  在 Configuration Manager 控制台的“管理”工作区中，展开“站点配置”，选择“服务器和站点系统角色”，然后在详细信息窗格中选择承载管理点的站点系统服务器，其中该管理点使用将卸载的数据库副本。  
+##### <a name="to-configure-the-service-broker-for-a-database-replica"></a>Para configurar o Service Broker para uma réplica de banco de dados  
 
-2.  在“站点系统角色”  窗格中，右键单击“管理点”  并选择“属性” 。  
+1.  Use o **SQL Server Management Studio** para conectar-se ao banco de dados do servidor de réplica e execute a consulta a seguir para habilitar o Service Broker no servidor de réplica de banco de dados: **ALTER DATABASE &lt;Nome do banco de dados de réplica\> SET ENABLE_BROKER, HONOR_BROKER_PRIORITY ON WITH ROLLBACK IMMEDIATE**  
 
-3.  在“管理点数据库”  选项卡上，选择“使用站点数据库”  将管理点配置为使用站点数据库，而不是数据库副本。 然后，单击“确定”  保存配置。  
+2.  Em seguida, no servidor de réplica de banco de dados, configure o Service Broker para notificação do cliente e exporte o certificado do Service Broker. Para tanto, execute um procedimento armazenado do SQL Server que configura o Service Broker e exporta o certificado em uma única ação. Ao executar o procedimento armazenado, você deve especificar o FQDN do servidor de réplica de banco de dados, o nome do banco de dados das réplicas e especificar o local para a exportação do arquivo de certificado.  
 
-4.  接着，使用“SQL Server Management Studio”  执行下列任务：  
+     Execute a consulta a seguir para configurar os detalhes necessários no servidor de réplica de banco de dados e para exportar o certificado para o servidor de réplica de banco de dados: **EXEC sp_BgbConfigSSBForReplicaDB "&lt;FQDN do SQL Server de réplica\>", "&lt;Nome do banco de dados de réplica\>", "&lt;Caminho do arquivo de backup do certificado\>"**  
 
-    -   从站点服务器数据库中删除数据库副本的发布。  
+    > [!NOTE]  
+    >  Se o servidor de réplica de banco de dados não estiver na instância padrão do SQL Server, será necessário especificar, nesta etapa, o nome da instância, além do nome do banco de dados de réplica. Para isso, substitua o **&lt;Nome do banco de dados de réplica\>** pelo **&lt;Nome da instância\\Nome do banco de dados de réplica\>**.  
 
-    -   从数据库副本服务器中删除数据库副本的订阅。  
+     Após exportar o certificado do servidor de réplica de banco de dados, coloque uma cópia do certificado no servidor do banco de dados dos sites primários.  
 
-    -   从数据库副本服务器中删除副本数据库。  
+3.  Use o **SQL Server Management Studio** para conectar-se ao banco de dados do site primário. Feita a conexão, execute uma consulta para importar o certificado e especifique a porta do Service Broker que está em uso no servidor de réplica de banco de dados, o FQDN do servidor de réplica e o nome do banco de dados das réplicas de banco de dados. Isso configura o banco de dados dos sites primários para usar o Service Broker para comunicação com o banco de dados do servidor de réplica de banco de dados.  
 
-    -   在站点数据库服务器上禁用发布和分发。 要禁用发布和分发，请右键单击“复制”文件夹，然后单击“禁用发布和分发” 。  
+     Execute a consulta a seguir para importar o certificado do servidor de réplica do banco de dados e especificar os detalhes necessários: **EXEC sp_BgbConfigSSBForRemoteService 'REPLICA', “&lt;Porta do SQL Service Broker\>”, “&lt;Caminho do arquivo de certificado\>”, “&lt;FQDN do SQL Server de réplica\>”, “&lt;Nome do banco de dados de réplica\>”**  
 
-5.  在你删除发布、订阅、副本数据库并在站点数据库服务器上禁用发布之后，即会卸载数据库副本。  
+    > [!NOTE]  
+    >  Se o servidor de réplica de banco de dados não estiver na instância padrão do SQL Server, será necessário especificar, nesta etapa, o nome da instância, além do nome do banco de dados de réplica. Para isso, substitua o **&lt;Nome do banco de dados de réplica\>** pelo **\Nome da instância\\Nome do banco de dados de réplica\>**.  
 
-###  <a name="BKMK_DBReplicaOps_Uninstall"></a> 卸载发布数据库副本的站点服务器  
- 在卸载发布数据库副本的站点之前，请使用下列步骤清理发布和任何订阅。  
+4.  Em seguida, no servidor de banco de dados do site, execute o comando a seguir para exportar o certificado para esse servidor: **EXEC sp_BgbCreateAndBackupSQLCert “&lt;Caminho do arquivo de backup do certificado\>”**  
 
-1.  使用“SQL Server Management Studio”  从站点服务器数据库中删除数据库副本发布。  
+     Após exportar o certificado do servidor de banco de dados do site, coloque uma cópia do certificado no servidor de réplica de banco de dados.  
 
-2.  使用“SQL Server Management Studio”  从承载此站点的数据库副本的每个远程 SQL Server 中删除数据库副本订阅。  
+5.  Use o **SQL Server Management Studio** para conectar-se ao banco de dados do servidor de réplica de banco de dados. Feita a conexão, execute uma consulta para importar o certificado e especificar o código do site primário e a porta do Service Broker que está em uso no servidor de banco de dados do site. Isso configura o servidor de réplica de banco de dados para usar o Service Broker para comunicação com o banco de dados do site primário.  
 
-3.  卸载站点。  
+     Execute a consulta a seguir para importar o certificado do servidor de banco de dados do site: **EXEC sp_BgbConfigSSBForRemoteService “&lt;Código do site\>”,”&lt;Porta do SQL Service Broker\>”, “&lt;Caminho do arquivo de certificado\>”**  
 
-###  <a name="BKMK_DBReplicaOps_Move"></a> 移动发布数据库副本的站点服务器数据库  
- 将站点数据库转移到新计算机时，请使用下列步骤：  
+ Alguns minutos após concluir a configuração do banco de dados do site e do banco de dados de réplica do banco de dados, o gerenciador de notificações no site primário definirá a conversa do Service Broker para notificação do cliente, do banco de dados do site primário para a réplica de banco de dados.  
 
-1.  使用“SQL Server Management Studio”  从站点服务器数据库中删除数据库副本发布。  
+###  <a name="bkmk_supscript"></a> Script complementar para réplicas de banco de dados adicionais em um único SQL Server  
+ Quando você usar o script da etapa 4 para configurar um certificado autoassinado para o servidor de réplica de banco de dados em um SQL Server que já tenha uma réplica de banco de dados que você planeje continuar usando, use uma versão modificada do script original. As seguintes modificações impedem que o script exclua um certificado existente no servidor e criam certificados subsequentes com nomes amigáveis exclusivos.  Edite o script original da seguinte maneira:  
 
-2.  使用“SQL Server Management Studio”  从此站点的每个数据库副本服务器中删除数据库副本订阅。  
+-   Comente (impeça a execução) cada linha entre as entradas de script **# Excluir certificado existente se houver** e **# Criar o novo certificado**. Para fazer isso, adicione um  **#**  como o primeiro caractere de cada linha aplicável.  
 
-3.  将数据库转移到新的 SQL Server 计算机。 有关详细信息，请参阅 [Modify the site database configuration](../../../../core/servers/manage/modify-your-infrastructure.md#bkmk_dbconfig) 主题中的 [Modify your System Center Configuration Manager infrastructure](../../../../core/servers/manage/modify-your-infrastructure.md) 部分。  
+-   Para cada réplica de banco de dados subsequentes que use esse script para configurar, atualize o nome amigável do certificado.  Para fazer isso, edite a linha **$enrollment.CertificateFriendlyName = "ConfigMgr SQL Server Identification Certificate"** e substitua **ConfigMgr SQL Server Identification Certificate** por um novo nome, como  **ConfigMgr SQL Server Identification Certificate1**.  
 
-4.  在站点数据库服务器上重新创建数据库副本的发布。 有关详情，请参阅本主题中的 [第 1 步 - 配置站点数据库服务器以发布数据库副本](#BKMK_DBReplica_ConfigSiteDB) 。  
+##  <a name="BKMK_DBReplicaOps"></a> Gerenciar configurações de réplica de banco de dados  
+ Ao usar réplica de banco de dados em um site, observe as informações das seções abaixo para suplementar o processo executado para desinstalar uma réplica, desinstalar um site que use réplica de banco de dados ou mover o banco de dados do site para uma nova instalação de SQL Server. Ao usar as informações das seções abaixo para excluir publicações, siga as diretrizes para excluir a replicação transacional da versão de SQL Server utilizada para a réplica de banco de dados. Por exemplo, se você usar o SQL Server 2008 R2, veja [Como: Excluir uma publicação (programação Transact-SQL de replicação)](http://go.microsoft.com/fwlink/p/?LinkId=273934).  
 
-5.  在每个数据库副本服务器上重新创建数据库副本的订阅。 有关详情，请参阅本主题中的 [第 2 步 – 配置数据库副本服务器](#BKMK_DBReplica_ConfigSrv) 。  
+> [!NOTE]  
+>  Após restaurar o banco de dados do site que estava configurado para as réplicas de banco de dados, reconfigure cada réplica para poder usá-las, recriando as publicações e assinaturas.  
+
+###  <a name="BKMK_UninstallDbReplica"></a> Desinstalar uma réplica de banco de dados  
+ Quando se usa réplica de banco de dados para um ponto de gerenciamento, pode ser preciso desinstalar a réplica por determinado tempo e, depois, reconfigurá-la para uso. Por exemplo, é necessário remover as réplicas de banco de dados para poder atualizar um site do Configuration Manager para um novo service pack. Após a atualização do site, você pode restaurar a réplica de banco de dados para uso.  
+
+ Siga as etapas abaixo para desinstalar uma réplica de banco de dados.  
+
+1.  No espaço de trabalho de **Administração** do console do Configuration Manager, expanda **Configuração de Site** e selecione **Funções de Servidores e Sistema de Sites**; no painel de detalhes, selecione o servidor do sistema de sites que hospeda o ponto de gerenciamento que usa a réplica de banco de dados que você vai desinstalar.  
+
+2.  No painel **Funções do Sistema de Site** , clique com o botão direito do mouse em **Ponto de gerenciamento** e selecione **Propriedades**.  
+
+3.  Na guia **Banco de Dados do Ponto de Gerenciamento** , selecione **Usar o banco de dados do site** para configurar o ponto de gerenciamento de modo a usar o banco de dados do site, em vez da réplica de banco de dados. Em seguida, clique em **OK** para salvar a configuração.  
+
+4.  Em seguida, use o **SQL Server Management Studio** para executar as seguintes tarefas:  
+
+    -   Exclua, do banco de dados do servidor do site, a publicação da réplica de banco de dados.  
+
+    -   Exclua, do servidor de réplica de banco de dados, a assinatura da réplica.  
+
+    -   Exclua, do servidor de réplica de banco de dados, o banco de dados de réplica.  
+
+    -   Desabilite a publicação e a distribuição no servidor de banco de dados do site. Para desabilitar a publicação e a distribuição, clique com o botão direito do mouse na pasta Replicação e, depois, clique em **Desabilitar Publicação e Distribuição**.  
+
+5.  Após a exclusão da publicação, da assinatura e do banco de dados de réplica e a desabilitação da publicação no servidor de banco de dados do site, a réplica de banco de dados estará desinstalada.  
+
+###  <a name="BKMK_DBReplicaOps_Uninstall"></a> Desinstalar um servidor do site que publique uma réplica de banco de dados  
+ Antes de desinstalar um site que publique uma réplica de banco de dados, siga as etapas abaixo para limpar a publicação e eventuais assinaturas.  
+
+1.  Use o **SQL Server Management Studio** para excluir, do banco de dados do servidor do site, a publicação da réplica de banco de dados.  
+
+2.  Use o **SQL Server Management Studio** para excluir a assinatura da réplica de banco de dados de cada SQL Server remoto que hospede uma réplica de banco de dados desse site.  
+
+3.  Desinstale o site.  
+
+###  <a name="BKMK_DBReplicaOps_Move"></a> Mover um banco de dados de servidor de site que publique uma réplica de banco de dados  
+ Ao mover o banco de dados do site para um novo computador, siga estas etapas:  
+
+1.  Use o **SQL Server Management Studio** para excluir, do banco de dados do servidor do site, a publicação da réplica de banco de dados.  
+
+2.  Use o **SQL Server Management Studio** para excluir a assinatura da réplica de banco de dados de cada servidor de réplica desse site.  
+
+3.  Mova o banco de dados para o novo computador SQL Server. Para obter mais informações, consulte a seção [Modify the site database configuration](../../../../core/servers/manage/modify-your-infrastructure.md#bkmk_dbconfig) no tópico [Modify your System Center Configuration Manager infrastructure](../../../../core/servers/manage/modify-your-infrastructure.md) .  
+
+4.  Recrie a publicação da réplica de banco de dados no servidor de banco de dados do site. Para obter mais informações, consulte [Etapa 1 – configurar o servidor de banco de dados do site para publicar a réplica de banco de dados](#BKMK_DBReplica_ConfigSiteDB) neste tópico.  
+
+5.  Recrie as assinaturas da réplica de banco de dados em cada servidor de réplica. Para obter mais informações, consulte [Etapa 2 – configurando o servidor de réplica de banco de dados](#BKMK_DBReplica_ConfigSrv) neste tópico.  

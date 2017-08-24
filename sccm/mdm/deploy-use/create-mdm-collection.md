@@ -1,6 +1,6 @@
 ---
-title: "使用 System Center Configuration Manager 创建 MDM 集合 | Microsoft Docs"
-description: "使用 System Center Configuration Manager 创建 MDM 集合。"
+title: "Criar uma coleção de MDM usando o System Center Configuration Manager | Microsoft Docs"
+description: "Crie uma coleção de MDM usando o System Center Configuration Manager."
 ms.custom: na
 ms.date: 03/05/2017
 ms.prod: configuration-manager
@@ -18,21 +18,21 @@ manager: angrobe
 ms.openlocfilehash: fabbcfd2d5656d4fa8cb87feffe87e17998df145
 ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
 ms.translationtype: HT
-ms.contentlocale: zh-CN
+ms.contentlocale: pt-BR
 ms.lasthandoff: 08/07/2017
 ---
-# <a name="create-an-mdm-collection-with-system-center-configuration-manager-and-microsoft-intune"></a>使用 System Center Configuration Manager 和 Microsoft Intune 创建 MDM 集合
+# <a name="create-an-mdm-collection-with-system-center-configuration-manager-and-microsoft-intune"></a>Criar uma coleção de MDM usando o System Center Configuration Manager
 
-*适用范围：System Center Configuration Manager (Current Branch)*
+*Aplica-se a: System Center Configuration Manager (Branch Atual)*
 
-需要 Configuration Manager 用户集合以指定可以向管理中注册设备的用户。 由于 Intune 许可证由用户进行分配，所以只能使用用户集合（而非设备集合）。
+É necessária uma coleção de usuários do Configuration Manager para especificar os usuários que podem registrar dispositivos no gerenciamento. Você pode usar apenas coleções de usuário (em vez de coleções de dispositivos) porque as licenças do Intune são atribuídas por usuário.
 
 > [!NOTE]
-> 若要向 Intune 注册设备，无需在 Office 365 门户或 Azure Active Directory 门户中向用户分配许可证。 只需在与 Intune 订阅（在一个[后续步骤](configure-intune-subscription.md)中）关联的集合中包括用户即可。
+> Para registrar dispositivos com o Intune, você não precisa atribuir licenças a usuários no portal do Office 365 ou Portal do Azure Active Directory. Incluir os usuários em uma coleção que é associada à assinatura do Intune (em uma [etapa posterior](configure-intune-subscription.md)) é tudo o que é necessário.
 
-为进行测试，可以设置**直接规则**并添加可以注册设备的特定用户。 在 Configuration Manager 控制台中，选择“资产和符合性” > “用户集合”，单击“主页”选项卡 >“创建”组，然后单击“创建用户集合”。 若要实现更广泛的分发，应使用**查询规则**定义用户。 有关集合的详细信息，请参阅[如何创建集合](https://technet.microsoft.com/library/mt629371.aspx)。
+Para fins de teste você pode configurar uma **regra direta** e adicionar usuários específicos que podem registrar dispositivos. No console do Configuration Manager, escolha **Ativos e Conformidade** > **Coleções de Usuários**, clique na guia **Início** > grupo **Criar** e clique em **Criar Coleção do Usuário**. Para uma distribuição mais ampla, você deve usar **Regras de consulta** para definir usuários. Para obter mais informações sobre coleções, confira [Como criar coleções](https://technet.microsoft.com/library/mt629371.aspx).
 
-![为 MDM 创建用户集合](../media/mdm-create-user-collection.png)
+![Criar uma coleção de usuários para MDM](../media/mdm-create-user-collection.png)
 
 > [!div class="button"]
-[下一步 >](confirm-dns.md)
+[Próxima etapa >](confirm-dns.md)

@@ -1,6 +1,6 @@
 ---
-title: "Windows Defender 高级威胁防护 | Microsoft Docs"
-description: "了解如何管理和监视 Windows Defender 高级威胁防护，这是一项可帮助企业应对高级安全攻击的新服务。"
+title: "Proteção Avançada contra Ameaças do Windows Defender | Microsoft Docs"
+description: "Saiba como gerenciar e monitorar a Proteção Avançada contra Ameaças do Windows Defender, um novo serviço que ajuda as empresas a responder a ataques avançados."
 ms.custom: na
 ms.date: 03/07/2017
 ms.prod: configuration-manager
@@ -17,98 +17,98 @@ manager: angrobe
 ms.openlocfilehash: 6c3b67278fa587c137a29e174e277fb0f15872c8
 ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
 ms.translationtype: HT
-ms.contentlocale: zh-CN
+ms.contentlocale: pt-BR
 ms.lasthandoff: 08/07/2017
 ---
-# <a name="windows-defender-advanced-threat-protection"></a>Windows Defender 高级威胁防护
+# <a name="windows-defender-advanced-threat-protection"></a>Proteção Avançada contra Ameaças do Windows Defender
 
-*适用范围：System Center Configuration Manager (Current Branch)*
+*Aplica-se a: System Center Configuration Manager (Branch Atual)*
 
-从 Configuration Manager (Current Branch) 版本 1606 开始，Endpoint Protection 可以帮助管理和监控 Windows Defender 高级威胁防护 (ATP)。 Windows Defender ATP 是一种新服务，可帮助企业检测、调查其网络上的高级攻击并做出响应。  了解有关 [Windows Defender ATP](http://aka.ms/technet-wdatp) 的详细信息。 Configuration Manager 策略可帮助载入和监视托管的 Windows 10 版本 1607（内部版本 14328）或更高版本。
+A partir da versão 1606 do Configuration Manager (ramificação atual), o Endpoint Protection pode ajudar a gerenciar e monitorar a ATP (Proteção Avançada contra Ameaças) do Windows Defender. A ATP do Windows Defender é um novo serviço que ajudará as empresas a detectar, investigar e responder a ataques avançados em suas redes.  Saiba mais sobre a [ATP do Windows Defender](http://aka.ms/technet-wdatp). Políticas do Configuration Manager podem ajudar a carregar e monitorar o Windows 10, versão 1607 (build 14328) ou posterior gerenciado.
 
-Windows Defender ATP 是 [Windows Security Center](https://securitycenter.windows.com)（Windows 安全中心）的一种服务。 通过添加和部署客户端载入配置文件，Configuration Manager 能够监视部署状态和 Windows Defender ATP 代理运行状况。 Windows Defender ATP 仅支持运行 Configuration Manager 客户端的电脑。 不支持本地移动设备管理和 Intune 混合 MDM 管理的计算机。
+O Windows Defender ATP é um serviço da [Central de Segurança do Windows](https://securitycenter.windows.com). Adicionando e implantando um arquivo de configuração de integração do cliente, o Configuration Manager pode monitorar o status da implantação e a integridade de agente do Windows Defender ATP. Somente há suporte para o Windows Defender ATP em computadores que executam o cliente do Configuration Manager. Não há suporte para o gerenciamento de dispositivo móvel local nem para computadores gerenciados por MDM híbrido com Intune.
 
- **先决条件**  
+ **Pré-requisitos**  
 
--   Windows Defender 高级威胁防护联机服务的订阅  
--   运行 Windows 10、版本 1607 及更高版本的客户端计算机  
--   运行 Configuration Manager 1610 版或更高客户端代理的客户端计算机
+-   Assinatura do serviço online de Proteção Avançada contra Ameaças do Windows Defender  
+-   Computadores clientes que executam o Windows 10, versão 1607 e posterior  
+-   Os computadores clientes que executam a versão 1610 do Configuration Manager ou agente cliente posterior
 
-## <a name="how-to-create-an-onboarding-configuration-file"></a>如何创建载入配置文件  
+## <a name="how-to-create-an-onboarding-configuration-file"></a>Como criar um arquivo de configuração de integração  
 
- 1.  登录到 [Windows Defender ATP online service](https://securitycenter.windows.com/)（Windows Defender ATP 联机服务）   
+ 1.  Faça logon no [serviço online da ATP do Windows Defender](https://securitycenter.windows.com/)   
 
- 2.  在“终结点管理”菜单项上单击。  
+ 2.  Clique no item de menu **Gerenciamento de pontos de extremidade**.  
 
- 3.  选择“System Center Configuration Manager (Current Branch) 版本 1606”，然后单击“下载包”。  
+ 3.  Selecione **System Center Configuration Manager (branch atual) versão 1606** e clique em **Baixar pacote**.  
 
- 4.  下载压缩的存档 (.zip) 文件并将内容解压缩。
-
-> [!IMPORTANT]
-> Windows Defender ATP 配置文件包含敏感信息，应保障其安全。
-
-## <a name="onboard-devices-for-windows-defender-atp"></a>Windows Defender ATP 的机载设备  
-
-1.  在 Configuration Manager 控制台中，导航到“资产和符合性” > “概述” > “Endpoint Protection” > “Windows Defender ATP 策略”，然后单击“创建 Windows Defender ATP 策略”。 将打开 Windows Defender ATP 策略向导。  
-
-2.  键入 Windows Defender ATP 策略的**名称**和**说明**，然后选择“载入”。 单击“下一步”。  
-
-3.  **浏览**到组织的 Windows Defender ATP 云服务租户提供的配置文件。 单击“下一步”。  
-
-4.  指定从托管设备收集和共享的文件示例以进行分析。  
-
-    -   **无**   
-
-    -   **所有文件类型**  
-
-     单击“下一步”。  
-
-5.  查看摘要，然后完成该向导。  
-
-6.  通过单击“部署”，现在可以将 Windows Defender ATP 策略部署到托管客户端计算机。  
-
-## <a name="monitor-windows-defender-atp"></a>监视 Windows Defender ATP  
-
-1.  在 Configuration Manager 控制台中，导航到“监视” > 概述” > “安全”，然后单击“Windows Defender ATP”。  
-
-2.  查看 Windows Defender 高级威胁防护仪表板。  
-
-    -   **Windows Defender 代理部署状态** - 合格托管客户端计算机（已载入活动 Windows Defender ATP 策略）的数量和百分比  
-
-    -   **Windows Defender ATP 代理运行状况** - 报告其 Windows Defender ATP 代理状态的计算机客户端的百分比  
-
-        -   **运行状况** - 运行正常  
-
-        -   **非活动** - 在时间段内没有数据发送到服务  
-
-        -   **代理状态** - Windows 中代理的系统服务未运行  
-
-        -   **未载入** - 策略已应用，但代理尚未报告已载入策略  
-
-
-## <a name="how-to-create-and-deploy-an-offboarding-configuration-file"></a>如何创建和部署载出配置文件  
-
-1.  登录到 [Windows Defender ATP online service](https://securitycenter.windows.com/)（Windows Defender ATP 联机服务）   
-
-2.  在“终结点管理”菜单项上单击。  
-
-3.  选择“System Center Configuration Manager (Current Branch) 版本 1606”，然后单击“终结点载出”。  
-
-4.  下载压缩的存档 (.zip) 文件并将内容解压缩。 载出文件的有效期为 30 天。
-
-5.  在 Configuration Manager 控制台中，导航到“资产和符合性” > “概述” > “Endpoint Protection” > “Windows Defender ATP 策略”，然后单击“创建 Windows Defender ATP 策略”。 将打开 Windows Defender ATP 策略向导。  
-
-6.  键入 Windows Defender ATP 策略的**名称**和**说明**，选择“载出”。 单击“下一步”。  
-
-7.  **浏览**到组织的 Windows Defender ATP 云服务租户提供的配置文件。 单击“下一步”。  
-
-8.  查看摘要，然后完成该向导。  
-
-9.  通过单击“部署”，现在可以将 Windows Defender ATP 策略部署到托管客户端计算机。  
+ 4.  Baixe o arquivo compactado (.zip) e extraia o conteúdo.
 
 > [!IMPORTANT]
-> Windows Defender ATP 配置文件包含敏感信息，应保护这些信息的安全。
+> O arquivo de configuração do Windows Defender ATP contém informações confidenciais que devem ser mantidas seguras.
 
-[Windows Defender 高级威胁防护](https://technet.microsoft.com/itpro/windows/keep-secure/windows-defender-advanced-threat-protection)
+## <a name="onboard-devices-for-windows-defender-atp"></a>Dispositivos integrados para a ATP do Windows Defender  
 
-[Windows Defender 高级威胁防护载入问题疑难解答](https://technet.microsoft.com/itpro/windows/keep-secure/troubleshoot-onboarding-windows-defender-advanced-threat-protection)
+1.  No console do Configuration Manager, navegue para **Ativos e Conformidade** > **Visão Geral** > **Endpoint Protection** > **Políticas do Windows Defender ATP** e clique em **Criar uma política do Windows Defender ATP**. O Assistente de Política da ATP do Windows Defender é aberto.  
+
+2.  Digite o **Nome** e a **Descrição** para a política da ATP do Windows Defender e selecione **Integração**. Clique em **Avançar**.  
+
+3.  **Procure** o arquivo de Configuração fornecido pelo locatário do serviço de nuvem da ATP do Windows Defender da sua organização. Clique em **Avançar**.  
+
+4.  Especifique os arquivos de exemplo que são coletados e compartilhados por meio dos dispositivos gerenciados para análise.  
+
+    -   **Nenhum**   
+
+    -   **Todos os tipos de arquivo**  
+
+     Clique em **Avançar**.  
+
+5.  Examine o resumo e conclua o assistente.  
+
+6.  Agora você pode implantar a política da ATP do Windows Defender em computadores cliente gerenciados clicando em **Implantar**.  
+
+## <a name="monitor-windows-defender-atp"></a>Monitorar a ATP do Windows Defender  
+
+1.  No console do Configuration Manager, navegue para **Monitoramento** > **Visão Geral** > **Segurança** e clique em **Windows Defender ATP**.  
+
+2.  Examine o painel da Proteção Avançada contra Ameaças do Windows Defender.  
+
+    -   **Status da Implantação do Agente do Windows Defender** – O número e o percentual de computadores cliente gerenciados qualificados com a política da ATP do Windows Defender ativa e integrada  
+
+    -   **Integridade do Agente do Windows Defender ATP** – Percentual de computadores cliente que relatam o status para o agente da ATP do Windows Defender  
+
+        -   **Íntegro** – Funcionando corretamente  
+
+        -   **Inativo** – Nenhum dado enviado ao serviço durante o período  
+
+        -   **Estado do agente** – O serviço do sistema para o agente do Windows não está em execução  
+
+        -   **Não integrado** ‑ A política foi aplicada, mas o agente não informou sua integração  
+
+
+## <a name="how-to-create-and-deploy-an-offboarding-configuration-file"></a>Como criar e implantar um arquivo de configuração de remoção  
+
+1.  Faça logon no [serviço online da ATP do Windows Defender](https://securitycenter.windows.com/)   
+
+2.  Clique no item de menu **Gerenciamento de pontos de extremidade**.  
+
+3.  Selecione **System Center Configuration Manager (branch atual) versão 1606** e clique em **Remoção de ponto de extremidade**.  
+
+4.  Baixe o arquivo compactado (.zip) e extraia o conteúdo. Os arquivos de remoção são válidos por 30 dias.
+
+5.  No console do Configuration Manager, navegue para **Ativos e Conformidade** > **Visão Geral** > **Endpoint Protection** > **Políticas do Windows Defender ATP** e clique em **Criar uma política do Windows Defender ATP**. O Assistente de Política da ATP do Windows Defender é aberto.  
+
+6.  Digite o **Nome** e a **Descrição** para a política da ATP do Windows Defender e selecione **Remoção**. Clique em **Avançar**.  
+
+7.  **Procure** o arquivo de Configuração fornecido pelo locatário do serviço de nuvem da ATP do Windows Defender da sua organização. Clique em **Avançar**.  
+
+8.  Examine o resumo e conclua o assistente.  
+
+9.  Agora você pode implantar a política da ATP do Windows Defender em computadores cliente gerenciados clicando em **Implantar**.  
+
+> [!IMPORTANT]
+> Os arquivos de configuração do Windows Defender ATP contém informações confidenciais que devem ser mantidas seguras.
+
+[Proteção Avançada contra Ameaças do Windows Defender](https://technet.microsoft.com/itpro/windows/keep-secure/windows-defender-advanced-threat-protection)
+
+[Solucionar problemas de integração da Proteção Avançada contra Ameaças do Windows Defender](https://technet.microsoft.com/itpro/windows/keep-secure/troubleshoot-onboarding-windows-defender-advanced-threat-protection)

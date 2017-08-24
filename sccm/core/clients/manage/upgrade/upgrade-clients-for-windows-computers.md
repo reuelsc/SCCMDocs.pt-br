@@ -6,23 +6,20 @@ ms.date: 05/04/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
-ms.technology:
-- configmgr-client
+ms.technology: configmgr-client
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 6143fd47-48ec-4bca-b53b-5b9b9f067bc3
-caps.latest.revision: 11
-caps.handback.revision: 0
+caps.latest.revision: "11"
+caps.handback.revision: "0"
 author: robstackmsft
 ms.author: robstack
 manager: angrobe
-ms.translationtype: Human Translation
-ms.sourcegitcommit: 212628639300e9c361f7cee61b3df6b1cb6874ce
 ms.openlocfilehash: 98b8c92e4dad3cef1ed3701b9c0f9111eb9941ea
-ms.contentlocale: pt-br
-ms.lasthandoff: 05/17/2017
-
-
+ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
+ms.translationtype: HT
+ms.contentlocale: pt-BR
+ms.lasthandoff: 08/07/2017
 ---
 # <a name="how-to-upgrade-clients-for-windows-computers-in-system-center-configuration-manager"></a>Como atualizar clientes para computadores Windows no System Center Configuration Manager
 
@@ -103,4 +100,3 @@ ms.lasthandoff: 05/17/2017
 
 >[!NOTE]
 >As atualizações de cliente aceitam todas as janelas de manutenção do Configuration Manager que você configurar.
-

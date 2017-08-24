@@ -1,6 +1,6 @@
 ---
-title: "监视和计划电源管理 | Microsoft Docs"
-description: "了解如何在 System Center Configuration Manager 中监视和规划电源管理。"
+title: Monitorar e planejar o gerenciamento de energia | Microsoft Docs
+description: Saiba como monitorar e planejar o gerenciamento de energia no System Center Configuration Manager.
 ms.custom: na
 ms.date: 10/06/2016
 ms.prod: configuration-manager
@@ -18,608 +18,608 @@ manager: angrobe
 ms.openlocfilehash: b308329635400438cebc4935efe79b46e607fd58
 ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
 ms.translationtype: HT
-ms.contentlocale: zh-CN
+ms.contentlocale: pt-BR
 ms.lasthandoff: 08/07/2017
 ---
-# <a name="how-to-monitor-and-plan-for-power-management-in-system-center-configuration-manager"></a>如何在 System Center Configuration Manager 中监视和计划电源管理
+# <a name="how-to-monitor-and-plan-for-power-management-in-system-center-configuration-manager"></a>Como monitorar e planejar o gerenciamento de energia no System Center Configuration Manager
 
-*适用范围：System Center Configuration Manager (Current Branch)*
+*Aplica-se a: System Center Configuration Manager (Branch Atual)*
 
-请使用以下信息，帮助你在 System Center Configuration Manager 中监视和规划电源管理。  
+Use as informações a seguir para aprender a monitorar e planejar o gerenciamento de energia no System Center Configuration Manager.  
 
-##  <a name="BKMK_How_to_use_reports"></a> 如何使用电源管理报表  
- Configuration Manage 中的电源管理包括多种报表，可帮助分析组织的功耗情况和计算机电源设置。 报表还用于帮助排查问题。  
+##  <a name="BKMK_How_to_use_reports"></a> Como usar relatórios para o gerenciamento de energia  
+ O gerenciamento de energia no Configuration Manager inclui vários relatórios que ajudam a analisar o consumo de energia e as configurações de energia de computadores em sua organização. Os relatórios também podem ser usados para ajudá-lo a resolver problemas.  
 
- 必须为你的层次结构配置报表，然后才能使用电源管理报表。 有关 Configuration Manager 中报表的详细信息，请参阅 [System Center Configuration Manager 中的报表](../../../../core/servers/manage/reporting.md)。  
+ Para poder usar os relatórios de gerenciamento de energia, você precisará configurar relatórios para sua hierarquia. Para obter mais informações sobre os relatórios do Configuration Manager, consulte [Relatórios no System Center Configuration Manager](../../../../core/servers/manage/reporting.md).  
 
 > [!NOTE]  
->  每日报表所使用的电源管理信息将在 Configuration Manager 站点数据库中保留 31 天。  
->           每月报表所使用的电源管理信息将在 Configuration Manager 站点数据库中保留 13 个月。  
+>  As informações de gerenciamento de energia usadas pelos relatórios diários são mantidas no banco de dados do site do Configuration Manager durante 31 dias.  
+>           As informações de gerenciamento de energia usadas pelos relatórios mensais são mantidas no banco de dados do site do Configuration Manager durante 13 meses.  
 >   
->  在电源管理的监视和规划阶段以及符合性阶段运行报表时，请从要为将来对比保留数据的报表保存或导出结果，以免以后 Configuration Manager 将其删除。  
+>  Ao executar relatórios durante as fases de planejamento, monitoramento e conformidade do gerenciamento de energia, salve ou exporte os resultados dos relatórios cujos dados você deseja manter para fazer uma comparação posterior, caso eles sejam removidos mais tarde pelo Configuration Manager.  
 
-## <a name="list-of-power-management-reports"></a>电源管理报表列表  
- 下表列出了 Configuration Manager 中可用的电源管理报表的详细信息。  
-
-> [!NOTE]  
->  电源管理报表显示所选集合中物理计算机的数量和虚拟计算机的数量。 但是，只有物理计算机的电源管理信息显示在电源管理报表中。  
-
-###  <a name="BKMK_Activity"></a> 计算机活动报表  
- “计算机活动”  报表显示一个图形，该图形显示指定集合在指定时间段内的以下活动：  
-
--   **计算机开机** – 计算机已开机。  
-
--   **监视器开启** – 监视器已开启。  
-
--   **用户活动** – 已从计算机鼠标、计算机键盘或从远程桌面与计算机的连接检测到活动  
-
- 此报表用于在监视计划与实施阶段帮助了解 24 小时内计算机活动、监视活动和用户活动之间的协调情况。 如果在数天内运行报表，则会聚合此时间段的数据。 此报表可以帮助确定所选集合的典型营业时间（高峰时间）和非营业时间（非高峰时间），以帮助决定何时应用配置的电源管理计划。  
-
- 此图显示可能会开启计算机，但没有任何用户活动的时间段。 请考虑在这些时段内应用限制性更强的电源设置，以节省处于开机状态但未使用的计算机的电源成本。 如果一分钟或更长时间（图上显示的小时数）存在计算机、用户或监视活动，则视为这台计算机处于活动状态。 如果计算机未报告电源管理数据，它将不会包含在“计算机活动”  报表中。  
-
- 可以使用以下参数来配置此报表。  
-
-#### <a name="required-report-parameters"></a>需要的报表参数  
- 必须指定以下参数运行此报表。  
-
-|参数名称|描述|  
-|--------------------|-----------------|  
-|**开始日期**|从下拉列表中，选择此报表的开始日期。|  
-|**结束日期（可选）**|从下拉列表中，选择此报表的可选结束日期。|  
-|**集合名称**|从下拉列表中，选择此报表要使用的集合。|  
-|**设备类型**|从下拉列表中，选择要为其生成报表的计算机的类型。 有效值为“所有”（台式机和便携计算机）、“台式机”（仅限台式机）和“笔记本电脑”（仅限便携计算机）。|  
-
-#### <a name="hidden-report-parameters"></a>隐藏报表参数  
- 此报表没有任何可以设置的隐藏参数。  
-
-#### <a name="report-links"></a>报表链接  
- 如果未指定“结束日期（可选）”  的值，则此报表包含指向提供更多信息的以下报表的链接。  
-
-|报表名称|详细信息|  
-|-----------------|-------------|  
-|**计算机活动详细信息**|单击“点击获取详细信息”  链接以查看指定日期的活动、非活动和非报告计算机的列表。<br /><br /> 有关详情，请参阅本主题中的 [Computer Activity Details Report](#BKMK_Activity_Details) 。|  
-
-###  <a name="BKMK_Comp_Activity_by_computer"></a> 按计算机列出的计算机活动报表  
- “按计算机列出的计算机活动”  报表显示一个图形，该图形显示指定计算机在指定日期的以下活动：  
-
--   **计算机开机** – 计算机已开机。  
-
--   **监视器开启** – 监视器已开启。  
-
--   **用户活动** – 已从计算机鼠标、计算机键盘或从远程桌面与计算机的连接检测到活动。  
-
- 此报表可以独立运行或由“计算机活动详细信息”  报表调用。  
+## <a name="list-of-power-management-reports"></a>Lista de relatórios de gerenciamento de energia  
+ A lista a seguir detalha os relatórios de gerenciamento de energia que estão disponíveis no Configuration Manager.  
 
 > [!NOTE]  
->  在硬件清点过程中，会从客户端计算机收集关于计算机活动的信息。 根据硬件清单运行的时间，可能会收集应用的高峰时间或非高峰时间电源计划期间的活动。  
+>  Os relatórios de gerenciamento de energia exibem o número de computadores físicos e o número de computadores virtuais em uma coleção selecionada. No entanto, apenas as informações sobre gerenciamento de energia de computadores físicos são exibidas nos relatórios de gerenciamento de energia.  
 
- 可以使用以下参数来配置此报表。  
+###  <a name="BKMK_Activity"></a> Relatório Atividades do computador  
+ O relatório **Atividade do computador** exibe um gráfico que mostra a seguinte atividade para uma coleção específica em um período de tempo especificado:  
 
-#### <a name="required-report-parameters"></a>需要的报表参数  
- 必须指定以下参数运行此报表。  
+-   **Computador ligado** – O computador foi ligado.  
 
-|参数名称|描述|  
+-   **Monitor ligado** – O monitor foi ligado.  
+
+-   **Usuário Ativo** – Foi detectada a atividade do mouse do computador, do teclado de computador ou de uma conexão de Área de Trabalho Remota ao computador  
+
+ Esse relatório é usado durante as fases de planejamento e monitoramento e de imposição para ajudá-lo a entender o alinhamento entre a atividade do computador, a atividade do monitor e a atividade do usuário em um período de 24 horas. Se você executar o relatório durante vários dias, os dados serão agregados durante esse período. Este relatório pode ajudá-lo a determinar horários comerciais (de pico) e horários não comerciais (fora de pico) de uma coleção selecionada para ajudá-lo a decidir quando aplicar os planos de gerenciamento de energia configurados.  
+
+ O gráfico mostra os períodos de tempo em que um computador pode ser ligado, mas que não há qualquer atividade de usuário. Considere a aplicação de configurações de energia mais restritivas durante esses horários para economizar nos custos de energia de computadores que estão ligados, mas que não estão sendo usados. Um computador é considerado ativo se houve atividade de monitor, usuário ou computador durante um minuto ou mais em relação a uma hora exibida no gráfico. Se um computador não estiver relatando dados de gerenciamento de energia, ele não será incluído no relatório **Atividade do computador** .  
+
+ Use os parâmetros a seguir para configurar este relatório.  
+
+#### <a name="required-report-parameters"></a>Parâmetros de relatório necessários  
+ Para executar este relatório, os parâmetros a seguir devem ser especificados.  
+
+|Nome do parâmetro|Descrição|  
 |--------------------|-----------------|  
-|**报表日期**|从下拉列表中，选择此报表的日期。|  
-|**计算机名称**|输入要为其生成报表的计算机名称。|  
+|**Data de Início**|Na lista suspensa, selecione a data de início para este relatório.|  
+|**Data de término (opcional)**|Na lista suspensa, selecione uma data de término opcional para este relatório.|  
+|**Nome da coleção**|Na lista suspensa, selecione uma coleção a ser usada para este relatório.|  
+|**Tipo de dispositivo**|Na lista suspensa, selecione o tipo de computador para o qual deseja obter um relatório. Os valores válidos são **Todos** (computadores desktop e portáteis), **Desktop** (somente computadores desktop) e **Laptop** (somente computadores portáteis).|  
 
-#### <a name="hidden-report-parameters"></a>隐藏报表参数  
- 此报表没有任何可以设置的隐藏参数。  
+#### <a name="hidden-report-parameters"></a>Parâmetros de relatório ocultos  
+ Este relatório não contém parâmetros ocultos que podem ser definidos.  
 
-#### <a name="report-links"></a>报表链接  
- 此报表包含指向提供所选项目更多相关信息的以下报表的链接。  
+#### <a name="report-links"></a>Links de relatório  
+ Se um valor para **Data de término (opcional)** não for especificado, este relatório conterá um link para o relatório a seguir, que fornece outras informações.  
 
-|报表名称|详细信息|  
+|Nome do relatório|Detalhes|  
 |-----------------|-------------|  
-|**计算机详细信息**|单击“点击获取详细信息”  链接可查看所选计算机的电源功能、电源设置和应用的电源计划。|  
+|**Detalhes da atividade do computador**|Clique no link **Clique para obter informações detalhadas** para ver uma lista de computadores ativos, inativos e que não forneceram relatórios na data especificada.<br /><br /> Para obter mais informações, consulte [Computer Activity Details Report](#BKMK_Activity_Details) neste tópico.|  
+
+###  <a name="BKMK_Comp_Activity_by_computer"></a> Atividades do computador por relatório de computador  
+ O relatório **Atividade do computador por computador** exibe um gráfico que mostra a seguinte atividade de um computador especificado em determinada data:  
+
+-   **Computador ligado** – O computador foi ligado.  
+
+-   **Monitor ligado** – O monitor foi ligado.  
+
+-   **Usuário Ativo** – Foi detectada a atividade do mouse do computador, do teclado de computador ou de uma conexão de Área de Trabalho Remota ao computador.  
+
+ Este relatório pode ser executado de forma independente ou chamado pelo relatório **Detalhes da atividade do computador** .  
+
+> [!NOTE]  
+>  Informações sobre a atividade do computador são coletadas de computadores cliente durante o inventário de hardware. Dependendo do tempo em que é executado o inventário de hardware, a atividade que ocorre durante um horário de pico aplicado ou um plano de energia para horário fora de pico pode ser coletada.  
+
+ Use os parâmetros a seguir para configurar este relatório.  
+
+#### <a name="required-report-parameters"></a>Parâmetros de relatório necessários  
+ Para executar este relatório, os parâmetros a seguir devem ser especificados.  
+
+|Nome do parâmetro|Descrição|  
+|--------------------|-----------------|  
+|**Data do relatório**|Na lista suspensa, selecione uma data para este relatório.|  
+|**Nome do computador**|Insira um nome do computador para o qual você deseja obter um relatório.|  
+
+#### <a name="hidden-report-parameters"></a>Parâmetros de relatório ocultos  
+ Este relatório não contém parâmetros ocultos que podem ser definidos.  
+
+#### <a name="report-links"></a>Links de relatório  
+ Este relatório contém links para o relatório a seguir, que fornece mais informações sobre o item selecionado.  
+
+|Nome do relatório|Detalhes|  
+|-----------------|-------------|  
+|**Detalhes do Computador**|Clique no link **Clique para obter informações detalhadas** para ver os recursos de energia, as configurações de energia e os planos de energia aplicados para o computador selecionado.|  
 
 ###  <a name="BKMK_Activity_Details"></a> Computer Activity Details report  
- “计算机活动详细信息”  报表将显示具有睡眠和唤醒功能的活动或非活动计算机的列表。 此报表由 [Computer Activity Report](#BKMK_Activity) 调用，而不是由站点管理员直接运行。  
+ O relatório **Detalhes da atividade do computador** exibe uma lista de computadores ativos ou inativos com seus recursos de suspensão e ativação. Esse relatório é chamado pelo [Computer Activity Report](#BKMK_Activity) e não foi projetado para ser executado diretamente pelo administrador do site.  
 
- 可以使用以下参数来配置此报表。  
+ Use os parâmetros a seguir para configurar este relatório.  
 
-#### <a name="required-report-parameters"></a>需要的报表参数  
- 必须指定以下参数运行此报表。  
+#### <a name="required-report-parameters"></a>Parâmetros de relatório necessários  
+ Para executar este relatório, os parâmetros a seguir devem ser especificados.  
 
-|参数名称|描述|  
+|Nome do parâmetro|Descrição|  
 |--------------------|-----------------|  
-|**集合名称**|从下拉列表中，选择此报表要使用的集合。|  
-|**报表日期**|从下拉列表中，选择此报表的使用日期。|  
-|**报表小时**|从下拉列表中，选择从指定日期起要运行此报表的时段。 有效值介于“12 am”  和“11pm” 之间。|  
-|**计算机状态**|从下拉列表中，选择从指定日期起要运行此报表的小时。 有效值为“所有”（已打开或关闭的计算机），“打开”（已打开的计算机）和“关闭”（已关闭、处于睡眠或休眠状态的计算机）。 仅所选报告期间返回这些值。|  
-|**设备类型**|从下拉列表中，选择要为其生成报表的计算机的类型。 有效值为“所有”（台式机和便携计算机）、“台式机”（仅限台式机）和“笔记本电脑”（仅限便携计算机）。 仅所选报告期间返回这些值。|  
-|**能够睡眠**|从下拉列表中，选择是否想要在报表中显示能够进入睡眠状态的计算机。 有效值为“所有”（能和不能睡眠的计算机）、“否”（不能睡眠的计算机）和“是”（能睡眠的计算机）。|  
-|**能够从睡眠状态唤醒**|从下拉列表中，选择是否想要在报表中显示能够从睡眠状态唤醒的计算机。 有效值为“所有”（能和不能从睡眠状态唤醒的计算机）、“否”（不能从睡眠状态唤醒的计算机）和“是”（能从睡眠状态唤醒的计算机）。|  
-|**电源计划**|从下拉列表中，选择想要在报表中显示的电源计划类型。 有效值为“所有”（没有应用任何电源管理计划的计算机；已应用电源管理计划的计算机；从电源管理中排除的计算机）、“未指定”（没有应用电源管理计划的计算机）、“已定义”（已应用电源管理计划的计算机）和“已排除”（已从电源管理中排除的计算机）。|  
-|**操作系统**|从下拉列表中，选择想要显示在报表中的计算机操作系统，或选择“所有”  以显示所有操作系统。|  
+|**Nome da coleção**|Na lista suspensa, selecione uma coleção a ser usada para este relatório.|  
+|**Data do relatório**|Na lista suspensa, selecione uma data a ser usada para este relatório.|  
+|**Hora do relatório**|Na lista suspensa, selecione uma hora da data especificada na qual este relatório deve ser executado. Os valores válidos são entre **00h** e **23h**.|  
+|**Estado do computador**|Na lista suspensa, selecione o estado do computador no qual este relatório deve ser executado. Os valores válidos são **Todos** (computadores que ativados ou desativados) **Ativado** (computadores ativados) e **Desativado** (computadores desativados, no modo de suspensão ou em hibernação). Esses valores são retornados apenas para o período de relatório selecionado.|  
+|**Tipo de dispositivo**|Na lista suspensa, selecione o tipo de computador para o qual deseja obter um relatório. Os valores válidos são **Todos** (computadores desktop e portáteis), **Desktop** (somente computadores desktop) e **Laptop** (somente computadores portáteis). Esses valores são retornados apenas para o período de relatório selecionado.|  
+|**Capacidade de suspensão**|Na lista suspensa, selecione se deseja exibir computadores com capacidade de suspensão no relatório. Os valores válidos são **Todos** (computadores com e sem capacidade de suspensão), **Não** (computadores sem capacidade de suspensão) e **Sim** (computadores com capacidade de suspensão).|  
+|**Com capacidade de sair do modo de suspensão**|Na lista suspensa, selecione se deseja exibir computadores com capacidade de sair do modo de suspensão no relatório. Os valores válidos são **Todos** (computadores com e sem capacidade de retornar da suspensão), **Não** (computadores sem capacidade retornar da suspensão) e **Sim** (computadores com capacidade de retornar da suspensão).|  
+|**Plano de energia**|Na lista suspensa, selecione os tipos de plano de energia que deseja exibir no relatório. Os valores válidos são **Todos** (computadores que não têm planos de gerenciamento de energia aplicados; computadores que têm um plano de gerenciamento de energia aplicado; computadores excluídos do gerenciamento de energia), **Não especificado** (computadores que não têm um plano de gerenciamento de energia aplicado), **Definido** (computadores que têm um plano de gerenciamento de energia aplicado) e **Excluído** (computadores que foram excluídos do gerenciamento de energia).|  
+|**Sistema operacional**|Na lista suspensa, selecione os sistemas operacionais de computador que deseja exibir no relatório ou selecione **Todos** para exibir todos os sistemas operacionais.|  
 
-#### <a name="hidden-report-parameters"></a>隐藏报表参数  
- 此报表没有任何可以设置的隐藏参数。  
+#### <a name="hidden-report-parameters"></a>Parâmetros de relatório ocultos  
+ Este relatório não contém parâmetros ocultos que podem ser definidos.  
 
-#### <a name="report-links"></a>报表链接  
- 此报表包含指向提供所选项目更多相关信息的以下报表的链接。  
+#### <a name="report-links"></a>Links de relatório  
+ Este relatório contém links para o relatório a seguir, que fornece mais informações sobre o item selecionado.  
 
-|报表名称|详细信息|  
+|Nome do relatório|Detalhes|  
 |-----------------|-------------|  
-|**Computer Activity by Computer**|单击计算机名称，查看所选报告期间该计算机的特定活动。 这些活动包括“计算机已打开”（计算机是否已打开？）、“监视器已打开”（监视器是否已打开？）和“用户活动”（从计算机鼠标、键盘或远程桌面连接检测到活动）。<br /><br /> 有关详情，请参阅本主题中的 [Computer Activity by Computer Report](#BKMK_Comp_Activity_by_computer) 。|  
+|**Atividade do computador por computador**|Clique no nome de um computador para ver a atividade específica do computador no período de relatório escolhido. Essas atividades incluem **Computador ativado** (o computador foi ativado?), **Monitor ativado** (o monitor foi ativado?) e **Usuário Ativo** (foi detectada atividade do mouse ou do teclado do computador ou uma conexão de área de trabalho remota).<br /><br /> Para obter mais informações, consulte [Computer Activity by Computer Report](#BKMK_Comp_Activity_by_computer) neste tópico.|  
 
-###  <a name="BKMK_Computer_Details"></a> 计算机详细信息报表  
- “计算机详细信息”  报表显示应用到指定计算机的电源功能、电源设置和电源计划的相关详细信息。 此报表由“按计算机列出的计算机活动”  报表、“具有多个电源计划的计算机”  报表、“电源功能”  报表和“电源设置详细信息”  报表调用。 而不是由站点管理员直接运行。  
+###  <a name="BKMK_Computer_Details"></a> Relatório Detalhes do computador  
+ O relatório **Detalhes do computador** exibe informações detalhadas sobre os recursos de energia, configurações de energia e planos de energia aplicados a um computador especificado. Esse relatório é chamado pelos relatórios **Atividade do computador por computador** , **Computadores com vários planos de energia** , **Recursos de energia** e **Detalhes de configurações de energia** . Ele não foi projetado para ser executado diretamente pelo administrador do site.  
 
-#### <a name="required-report-parameters"></a>需要的报表参数  
- 必须指定以下参数运行此报表。  
+#### <a name="required-report-parameters"></a>Parâmetros de relatório necessários  
+ Para executar este relatório, os parâmetros a seguir devem ser especificados.  
 
-|参数名称|描述|  
+|Nome do parâmetro|Descrição|  
 |--------------------|-----------------|  
-|**计算机名称**|输入要为其生成报表的计算机名称。|  
-|**电源模式**|从下拉列表中，选择想要在报表结果中显示的电源设置类型。 选择“接通电源”  可查看为计算机接通电源的状态所配置的电源设置，而选择“电池供电”  可查看为计算机使用电池供电的状态所配置的电源设置。|  
+|**Nome do computador**|Insira um nome do computador para o qual você deseja obter um relatório.|  
+|**Modo de energia**|Na lista suspensa, selecione o tipo de configurações de energia que deseja exibir nos resultados do relatório. Selecione **Conectado** para exibir as configurações de energia definidas para quando o computador está conectado e **Funcionando com bateria** para exibir as configurações de energia definidas para quando o computador está funcionando com bateria.|  
 
-#### <a name="hidden-report-parameters"></a>隐藏报表参数  
- 此报表没有任何可以设置的隐藏参数。  
+#### <a name="hidden-report-parameters"></a>Parâmetros de relatório ocultos  
+ Este relatório não contém parâmetros ocultos que podem ser definidos.  
 
-#### <a name="report-links"></a>报表链接  
- 此报表没有链接任何其他电源管理报表。  
+#### <a name="report-links"></a>Links de relatório  
+ Este relatório não contém links para outros relatórios de gerenciamento de energia.  
 
-###  <a name="BKMK_Not_Reporting"></a> 未报告详细信息的计算机报表  
- “未报告详细信息的计算机”  报表显示指定集合中在指定日期和时间未报告任何电源活动的计算机的列表。 此报表由 **Computer Activity Report** 调用，而不是由站点管理员直接运行。  
+###  <a name="BKMK_Not_Reporting"></a> Relatório Computadores que não relataram detalhes  
+ O relatório **Computadores que não relataram detalhes** exibe uma lista de computadores em uma coleção especificada que não têm atividade de energia em uma data e hora especificadas. Esse relatório é chamado pelo **Computer Activity Report** e não foi projetado para ser executado diretamente pelo administrador do site.  
 
 > [!NOTE]  
->  计算机将电源管理信息视为其硬件清单计划的一部分报告。 在考虑不报告的计算机之前，确保它已报告硬件清单。  
+>  Os computadores relatam informações sobre gerenciamento de energia como parte do seu agendamento de inventário de hardware. Antes de considerar que um computador não está relatando, certifique-se de que ele relatou o inventário de hardware.  
 
- 可以使用以下参数来配置此报表。  
+ Use os parâmetros a seguir para configurar este relatório.  
 
-#### <a name="required-report-parameters"></a>需要的报表参数  
- 必须指定以下参数运行此报表。  
+#### <a name="required-report-parameters"></a>Parâmetros de relatório necessários  
+ Para executar este relatório, os parâmetros a seguir devem ser especificados.  
 
-|参数名称|描述|  
+|Nome do parâmetro|Descrição|  
 |--------------------|-----------------|  
-|**集合名称**|从下拉列表中，选择此报表要使用的集合。|  
-|**报表日期**|从下拉列表中，选择此报表的日期。|  
-|**报表小时**|从下拉列表中，选择从指定日期起要运行此报表的时段。 有效值介于“12 am”  和“11pm” 之间。|  
-|**设备类型**|从下拉列表中，选择要为其生成报表的计算机的类型。 有效值为“所有”（台式机和便携计算机）、“台式机”（仅限台式机）和“笔记本电脑”（仅限便携计算机）。 仅所选报告期间返回这些值。|  
+|**Nome da coleção**|Na lista suspensa, selecione uma coleção a ser usada para este relatório.|  
+|**Data do relatório**|Na lista suspensa, selecione uma data para este relatório.|  
+|**Hora do relatório**|Na lista suspensa, selecione uma hora da data especificada na qual este relatório deve ser executado. Os valores válidos são entre **00h** e **23h**.|  
+|**Tipo de dispositivo**|Na lista suspensa, selecione o tipo de computador para o qual deseja obter um relatório. Os valores válidos são **Todos** (computadores desktop e portáteis), **Desktop** (somente computadores desktop) e **Laptop** (somente computadores portáteis). Esses valores são retornados apenas para o período de relatório selecionado.|  
 
-#### <a name="hidden-report-parameters"></a>隐藏报表参数  
- 此报表没有任何可以设置的隐藏参数。  
+#### <a name="hidden-report-parameters"></a>Parâmetros de relatório ocultos  
+ Este relatório não contém parâmetros ocultos que podem ser definidos.  
 
-#### <a name="report-links"></a>报表链接  
- 此报表没有链接任何其他电源管理报表。  
+#### <a name="report-links"></a>Links de relatório  
+ Este relatório não contém links para outros relatórios de gerenciamento de energia.  
 
-###  <a name="BKMK_Excluded"></a> 排除的计算机  
- **排除的计算机**报表显示指定集合中已从 Configuration Manager 电源管理中排除的计算机的列表。  
+###  <a name="BKMK_Excluded"></a> Computadores excluídos  
+ O relatório **Computadores excluídos** exibe uma lista de computadores em uma coleção especificada que foram excluídos do gerenciamento de energia do Configuration Manager.  
 
- 可以使用以下参数来配置此报表。  
+ Use os parâmetros a seguir para configurar este relatório.  
 
-#### <a name="required-report-parameters"></a>需要的报表参数  
- 必须指定以下参数运行此报表。  
+#### <a name="required-report-parameters"></a>Parâmetros de relatório necessários  
+ Para executar este relatório, os parâmetros a seguir devem ser especificados.  
 
-|参数名称|描述|  
+|Nome do parâmetro|Descrição|  
 |--------------------|-----------------|  
-|**收集**|从下拉列表中，选择此报表的集合。|  
-|**原因**|从下拉列表中，选择将计算机从电源管理中排除的原因。 可以显示“所有”（所有排除的计算机）、“由管理员排除”（仅由管理用户排除的计算机）和“由用户排除”（仅由软件中心用户排除的计算机）。|  
+|**Coleta**|Na lista suspensa, selecione uma coleção para este relatório.|  
+|**Motivo**|Na lista suspensa, selecione o motivo pelo qual os computadores foram excluídos do gerenciamento de energia. Você pode exibir **Todos** (todos os computadores excluídos), **Excluído pelo administrador** (apenas computadores que foram excluídos por um usuário administrativo) e **Excluídos pelo usuário** (apenas computadores que foram excluídos por um usuário do Centro de Software).|  
 
-#### <a name="hidden-report-parameters"></a>隐藏报表参数  
- 此报表没有任何可以设置的隐藏参数。  
+#### <a name="hidden-report-parameters"></a>Parâmetros de relatório ocultos  
+ Este relatório não contém parâmetros ocultos que podem ser definidos.  
 
-#### <a name="report-links"></a>报表链接  
- 此报表包含指向提供所选项目更多相关信息的以下报表的链接。  
+#### <a name="report-links"></a>Links de relatório  
+ Este relatório contém links para o relatório a seguir, que fornece mais informações sobre o item selecionado.  
 
-|报表名称|详细信息|  
+|Nome do relatório|Detalhes|  
 |-----------------|-------------|  
-|**电源计算机详细信息**|单击计算机名可查看所选计算机的电源功能、电源设置和应用的电源计划。<br /><br /> 有关详情，请参阅本主题中的 [Computer Details Report](#BKMK_Computer_Details) 。|  
+|**Detalhes de energia do computador**|Clique em um nome do computador para ver os recursos de energia, as configurações de energia e os planos de energia aplicados para o computador selecionado.<br /><br /> Para obter mais informações, consulte [Computer Details Report](#BKMK_Computer_Details) neste tópico.|  
 
-###  <a name="BKMK_Multiple"></a>   
- “具有多个电源计划的计算机”  报表显示为多个集合（每个都应用不同电源计划）成员的计算机的列表。 对于可能存在电源设置冲突的每个计算机，此报表会显示计算机名和为该计算机是其成员的每个集合应用的电源计划。  
+###  <a name="BKMK_Multiple"></a> Computadores com vários planos de energia  
+ O relatório **Computadores com vários planos de energia** exibe uma lista de computadores que são membros de várias coleções, e a cada um é aplicável um plano de energia diferente. Para cada computador com configurações de energia potencialmente conflitantes, o relatório exibe o nome do computador e os planos de energia aplicados a cada coleção do qual o computador é membro.  
 
 > [!IMPORTANT]  
->  如果计算机是多个集合（每个集合有不同的电源计划）的成员，将应用限制性最小的电源计划。  
+>  Se um computador for membro de várias coleções, e cada coleção tiver planos de energia diferentes, o plano de energia menos restritivo será aplicado.  
 >   
->  如果计算机是多个集合（每个集合有不同的唤醒时间）的成员，将使用最靠近午夜的时间。  
+>  Se um computador for membro de várias coleções, e cada coleção tiver horários de ativação diferentes, o horário mais próximo à meia-noite será usado.  
 
- 可以使用以下参数来配置此报表。  
+ Use os parâmetros a seguir para configurar este relatório.  
 
-#### <a name="required-report-parameters"></a>需要的报表参数  
- 必须指定以下参数运行此报表。  
+#### <a name="required-report-parameters"></a>Parâmetros de relatório necessários  
+ Para executar este relatório, os parâmetros a seguir devem ser especificados.  
 
-|参数名称|描述|  
+|Nome do parâmetro|Descrição|  
 |--------------------|-----------------|  
-|**集合名称**|从下拉列表中，选择此报表的集合。|  
+|**Nome da coleção**|Na lista suspensa, selecione uma coleção para este relatório.|  
 
-#### <a name="hidden-report-parameters"></a>隐藏报表参数  
- 此报表没有任何可以设置的隐藏参数。  
+#### <a name="hidden-report-parameters"></a>Parâmetros de relatório ocultos  
+ Este relatório não contém parâmetros ocultos que podem ser definidos.  
 
-#### <a name="report-links"></a>报表链接  
- 此报表包含指向提供所选项目更多相关信息的以下报表的链接。  
+#### <a name="report-links"></a>Links de relatório  
+ Este relatório contém links para o relatório a seguir, que fornece mais informações sobre o item selecionado.  
 
-|报表名称|详细信息|  
+|Nome do relatório|Detalhes|  
 |-----------------|-------------|  
-|**电源计算机详细信息**|单击计算机名可查看所选计算机的电源功能、电源设置和应用的电源计划。<br /><br /> 有关详情，请参阅本主题中的 [Computer Details Report](#BKMK_Computer_Details) 。|  
+|**Detalhes de energia do computador**|Clique em um nome do computador para ver os recursos de energia, as configurações de energia e os planos de energia aplicados para o computador selecionado.<br /><br /> Para obter mais informações, consulte [Computer Details Report](#BKMK_Computer_Details) neste tópico.|  
 
-###  <a name="BKMK_Consumption"></a> 能耗报表  
- “能耗”  报表显示以下信息：  
+###  <a name="BKMK_Consumption"></a> Relatório Consumo de energia  
+ O relatório **Consumo de energia** exibe as seguintes informações:  
 
--   显示指定时间段内指定集合中计算机的每月总功耗（单位为千瓦时，kWh）的图表。  
+-   Um gráfico que mostra o consumo de energia mensal total de computadores em kWh (quilowatts por hora) na coleção especificada, no período de tempo especificado.  
 
--   显示指定时间段内指定集合中每台计算机的平均功耗（单位为千瓦时，kWh）的图表。  
+-   Um gráfico que mostra o consumo de energia médio em kWh (quilowatts por hora) de cada computador na coleção especificada, no período de tempo especificado.  
 
--   显示指定时间段内指定集合中计算机的每月总功耗（单位为千瓦时，kWh）和平均功耗的表格。  
+-   Uma tabela que mostra o consumo de energia mensal total em kWh (quilowatts por hora) e o consumo de energia médio de computadores na coleção especificada, no período de tempo especificado.  
 
- 此信息可以用于帮助了解环境中的功耗趋势。 将电源计划应用到所选集合中的计算机后，将会降低计算机的功耗。  
-
-> [!NOTE]  
->  如果在应用了电源计划之后添加或删除集合的成员，这会影响“能耗”  报表显示的结果，并导致更加难以比较监控和规划阶段和实施阶段的结果。  
-
- 可以使用以下参数来配置此报表。  
-
-#### <a name="required-report-parameters"></a>需要的报表参数  
- 必须指定以下参数运行此报表。  
-
-|参数名称|描述|  
-|--------------------|-----------------|  
-|**开始日期**|从下拉列表中，选择此报表的开始日期。|  
-|**结束日期**|从下拉列表中，选择此报表的结束日期。|  
-|**集合名称**|从下拉列表中，选择此报表的集合。|  
-|**设备类型**|从下拉列表中，选择要为其生成报表的计算机的类型。 有效值为“所有”（台式机和便携计算机）、“台式机”（仅限台式机）和“笔记本电脑”（仅限便携计算机）。 仅所选报告期间返回这些值。|  
-
-#### <a name="hidden-report-parameters"></a>隐藏报表参数  
- 可根据需要指定以下隐藏参数来更改此报表的行为。  
-
-|参数名称|描述|  
-|--------------------|-----------------|  
-|**台式计算机开机**|指定台式计算机在开机状态的功耗。 默认值为每小时 0.07  kW。|  
-|**便携式计算机开机**|指定便携式计算机在开机状态的功耗。 默认值为每小时 0.02  kW。|  
-|**台式计算机睡眠**|指定台式计算机进入睡眠状态的功耗。 默认值为每小时 0.003  kW。|  
-|**便携式计算机睡眠**|指定便携式计算机进入睡眠状态的功耗。 默认值为每小时 0.001  kW。|  
-|**台式计算机关机**|指定台式计算机在关机状态的功耗。 默认值为每小时 0  kW。|  
-|**便携式计算机关机**|指定便携式计算机在关机状态的功耗。 默认值为每小时 0  kW。|  
-|**台式机监视器开启**|指定台式计算机监视器在开启状态的功耗。 默认值为每小时 0.028  kW。|  
-|**便携式计算机监视器开启**|指定便携式计算机监视器在开启状态的功耗。 默认值为每小时 0  kW。|  
-
-#### <a name="report-links"></a>报表链接  
- 此报表没有链接任何其他电源管理报表。  
-
-###  <a name="BKMK_Consumption_by_Day"></a> 按天显示的能耗报表  
- “按天显示的能耗”  报表显示以下信息：  
-
--   显示过去 31 天指定集合中计算机的每日总功耗（单位为千瓦时，kWh）的图表。  
-
--   显示过去 31 天指定集合中每台计算机的日平均功耗（单位为千瓦时，kWh）的图表。  
-
--   显示过去 31 天指定集合中计算机的每日总功耗（单位为千瓦时，kWh）和日平均功耗的表格。  
-
- 此信息可以用于帮助了解环境中的功耗趋势。 将电源计划应用到所选集合中的计算机后，将会降低计算机的功耗。  
+ Essas informações podem ser usadas para ajudá-lo a entender as tendências de consumo de energia em seu ambiente. Depois de aplicar um plano de energia aos computadores na coleção selecionada, o consumo de energia dos computadores deverá diminuir.  
 
 > [!NOTE]  
->  如果在应用了电源计划之后添加或删除集合的成员，这会影响“能耗”  报表显示的结果，并导致更加难以比较监控和规划阶段和实施阶段的结果。  
+>  Se você adicionar ou remover membros da coleção depois de aplicar um plano de energia, isso afetará os resultados mostrados pelo relatório **Consumo de energia** e poderá dificultar a comparação dos resultados das fases de monitoramento e de planejamento e da fase de imposição.  
 
- 可以使用以下参数来配置此报表。  
+ Use os parâmetros a seguir para configurar este relatório.  
 
-#### <a name="required-report-parameters"></a>需要的报表参数  
- 必须指定以下参数运行此报表。  
+#### <a name="required-report-parameters"></a>Parâmetros de relatório necessários  
+ Para executar este relatório, os parâmetros a seguir devem ser especificados.  
 
-|参数名称|描述|  
+|Nome do parâmetro|Descrição|  
 |--------------------|-----------------|  
-|**收集**|从下拉列表中，选择此报表的集合。|  
-|**Device Type**|从下拉列表中，选择要为其生成报表的计算机的类型。 有效值为“所有”（台式机和便携计算机）、“台式机”（仅限台式机）和“笔记本电脑”（仅限便携计算机）。 仅所选报告期间返回这些值。|  
+|**Data de Início**|Na lista suspensa, selecione uma data de início para este relatório.|  
+|**Data de término**|Na lista suspensa, selecione uma data de término para este relatório.|  
+|**Nome da coleção**|Na lista suspensa, selecione uma coleção para este relatório.|  
+|**Tipo de dispositivo**|Na lista suspensa, selecione o tipo de computador para o qual deseja obter um relatório. Os valores válidos são **Todos** (computadores desktop e portáteis), **Desktop** (somente computadores desktop) e **Laptop** (somente computadores portáteis). Esses valores são retornados apenas para o período de relatório selecionado.|  
 
-#### <a name="hidden-report-parameters"></a>隐藏报表参数  
- 可根据需要指定以下隐藏参数来更改此报表的行为。  
+#### <a name="hidden-report-parameters"></a>Parâmetros de relatório ocultos  
+ Opcionalmente, os parâmetros ocultos a seguir podem ser especificados para alterar o comportamento deste relatório.  
 
-|参数名称|描述|  
+|Nome do parâmetro|Descrição|  
 |--------------------|-----------------|  
-|**台式计算机开机**|指定台式计算机在开机状态的功耗。 默认值为每小时 0.07  kW。|  
-|**便携式计算机开机**|指定便携式计算机在开机状态的功耗。 默认值为每小时 0.02  kW。|  
-|**台式计算机睡眠**|指定台式计算机进入睡眠状态的功耗。 默认值为每小时 0.003  kW。|  
-|**便携式计算机睡眠**|指定便携式计算机进入睡眠状态的功耗。 默认值为每小时 0.001  kW。|  
-|**台式计算机关机**|指定台式计算机在关机状态的功耗。 默认值为每小时 0  kW。|  
-|**便携式计算机关机**|指定便携式计算机在关机状态的功耗。 默认值为每小时 0  kW。|  
-|**台式机监视器开启**|指定台式计算机监视器在开启状态的功耗。 默认值为每小时 0.028  kW。|  
-|**便携式计算机监视器开启**|指定便携式计算机监视器在开启状态的功耗。 默认值为每小时 0  kW。|  
+|**Computador desktop ligado**|Especifique o consumo de energia de um computador desktop quando ele está ligado. O valor padrão é **0,07** kW por hora.|  
+|**Computador laptop ligado**|Especifique o consumo de energia de um computador portátil quando ele está ligado. O valor padrão é **0,02** kW por hora.|  
+|**Computador desktop em suspensão**|Especifique o consumo de energia de um computador desktop que entrou em suspensão. O valor padrão é **0,003** kW por hora.|  
+|**Computador laptop em suspensão**|Especifique o consumo de energia de um computador portátil que entrou em suspensão. O valor padrão é **0,001** kW por hora.|  
+|**Computador desktop desligado**|Especifique o consumo de energia de um computador desktop quando ele está desligado. O valor padrão é **0** kW por hora.|  
+|**Computador laptop desligado**|Especifique o consumo de energia de um computador portátil quando ele está desligado. O valor padrão é **0** kW por hora.|  
+|**Monitor de desktop ligado**|Especifique o consumo de energia do monitor de um computador desktop quando ele está ligado. O valor padrão é **0,028** kW por hora.|  
+|**Monitor de laptop ligado**|Especifique o consumo de energia do monitor de um computador portátil quando ele está ligado. O valor padrão é **0** kW por hora.|  
 
-#### <a name="report-links"></a>报表链接  
- 此报表没有链接任何其他电源管理报表。  
+#### <a name="report-links"></a>Links de relatório  
+ Este relatório não contém links para outros relatórios de gerenciamento de energia.  
 
-###  <a name="BKMK_Cost"></a> 能源成本报表  
- “能源成本”  报表显示以下信息：  
+###  <a name="BKMK_Consumption_by_Day"></a> Relatório Consumo de energia por dia  
+ O relatório **Consumo de energia por dia** exibe as seguintes informações:  
 
--   显示指定时间段内指定集合中计算机的每月总能源成本的图表。  
+-   Um gráfico que mostra o consumo de energia diário total de computadores em kWh (quilowatts por hora) na coleção especificada, nos últimos 31 dias.  
 
--   显示指定时间段内指定集合中每台计算机的月平均能源成本的图表。  
+-   Um gráfico que mostra o consumo de energia diário médio em kWh (quilowatts por hora) de cada computador na coleção especificada, nos últimos 31 dias.  
 
--   显示过去 31 天指定集合中计算机的每月总能源成本和月平均能源成本的表格。  
+-   Uma tabela que mostra o consumo de energia diário total em kWh (quilowatts por hora) e o consumo de energia diário médio de computadores na coleção especificada, nos últimos 31 dias.  
 
- 此信息可用于帮助了解环境中的能源成本趋势。 将电源计划应用到所选集合中的计算机后，将会降低计算机的能源成本。  
-
- 可以使用以下参数来配置此报表。  
-
-#### <a name="required-report-parameters"></a>需要的报表参数  
- 必须指定以下参数运行此报表。  
-
-|参数名称|描述|  
-|--------------------|-----------------|  
-|**开始日期**|从下拉列表中，选择此报表的开始日期。|  
-|**结束日期**|从下拉列表中，选择此报表的结束日期。|  
-|**kWh 成本**|指定每 kWh 电力的成本。 默认值为 0.09 。<br /><br /> 可以在隐藏参数部分修改此报表的使用的货币单位。|  
-|**集合名称**|从下拉列表中，选择此报表要使用的集合。|  
-|**设备类型**|从下拉列表中，选择要为其生成报表的计算机的类型。 有效值为“所有”（台式机和便携计算机）、“台式机”（仅限台式机）和“笔记本电脑”（仅限便携计算机）。 仅所选报告期间返回这些值。|  
-
-#### <a name="hidden-report-parameters"></a>隐藏报表参数  
- 可根据需要指定以下隐藏参数来更改此报表的行为。  
-
-|参数名称|描述|  
-|--------------------|-----------------|  
-|**台式计算机开机**|指定台式计算机在开机状态的功耗。 默认值为每小时 0.07  kW。|  
-|**便携式计算机开机**|指定便携式计算机在开机状态的功耗。 默认值为每小时 0.02  kW。|  
-|**台式计算机睡眠**|指定台式计算机进入睡眠状态的功耗。 默认值为每小时 0.003  kW。|  
-|**便携式计算机睡眠**|指定便携式计算机进入睡眠状态的功耗。 默认值为每小时 0.001  kW。|  
-|**台式计算机关机**|指定台式计算机在关机状态的功耗。 默认值为每小时 0  kW。|  
-|**便携式计算机关机**|指定便携式计算机在关机状态的功耗。 默认值为每小时 0  kW。|  
-|**台式机监视器开启**|指定台式计算机监视器在开启状态的功耗。 默认值为每小时 0.028  kW。|  
-|**便携式计算机监视器开启**|指定便携式计算机监视器在开启状态的功耗。 默认值为每小时 0  kW。|  
-|**货币**|指定要用于此报表的货币标签。 默认值为“USD ($)” 。|  
-
-#### <a name="report-links"></a>报表链接  
- 此报表没有链接任何其他电源管理报表。  
-
-###  <a name="BKMK_Cost_by_Day"></a> 按天显示的能源成本报表  
- “按天显示的能源成本”  报表显示以下信息：  
-
--   显示过去 31 天指定集合中计算机的每日总能源成本的图表。  
-
--   显示过去 31 天指定集合中每台计算机的日平均能源成本的图表。  
-
--   显示过去 31 天指定集合中计算机的每日总能源成本和日平均能源成本的表格。  
-
- 此信息可用于帮助了解环境中的能源成本趋势。 将电源计划应用到所选集合中的计算机后，将会降低计算机的能源成本。  
-
- 可以使用以下参数来配置此报表。  
-
-#### <a name="required-report-parameters"></a>需要的报表参数  
- 必须指定以下参数运行此报表。  
-
-|参数名称|描述|  
-|--------------------|-----------------|  
-|**集合名称**|从下拉列表中，选择此报表要使用的集合。|  
-|**设备类型**|从下拉列表中，选择要为其生成报表的计算机的类型。 有效值为“所有”（台式机和便携计算机）、“台式机”（仅限台式机）和“笔记本电脑”（仅限便携计算机）。 仅所选报告期间返回这些值。|  
-|**kWh 成本**|指定每 kWh 电力的成本。 默认值为 0.09 。<br /><br /> 可以在隐藏参数部分修改此报表的使用的货币单位。|  
-
-#### <a name="hidden-report-parameters"></a>隐藏报表参数  
- 可根据需要指定以下隐藏参数来更改此报表的行为。  
-
-|参数名称|描述|  
-|--------------------|-----------------|  
-|**台式计算机开机**|指定台式计算机在开机状态的功耗。 默认值为每小时 0.07  kW。|  
-|**便携式计算机开机**|指定便携式计算机在开机状态的功耗。 默认值为每小时 0.02  kW。|  
-|**台式计算机睡眠**|指定台式计算机进入睡眠状态的功耗。 默认值为每小时 0.003  kW。|  
-|**便携式计算机睡眠**|指定便携式计算机进入睡眠状态的功耗。 默认值为每小时 0.001  kW。|  
-|**台式计算机关机**|指定台式计算机在关机状态的功耗。 默认值为每小时 0  kW。|  
-|**便携式计算机关机**|指定便携式计算机在关机状态的功耗。 默认值为每小时 0  kW。|  
-|**台式机监视器开启**|指定台式计算机监视器在开启状态的功耗。 默认值为每小时 0.028  kW。|  
-|**便携式计算机监视器开启**|指定便携式计算机监视器在开启状态的功耗。 默认值为每小时 0  kW。|  
-|**货币**|指定要用于此报表的货币标签。 默认值为“USD ($)” 。|  
-
-#### <a name="report-links"></a>报表链接  
- 此报表没有链接任何其他电源管理报表。  
-
-###  <a name="BKMK_Environmental_Impact"></a> 环境影响报表  
- “环境影响”  报表显示以下信息：  
-
--   显示指定时间段内指定集合中计算机每月产生的总二氧化碳量（单位为吨）的图表。  
-
--   显示指定时间段内指定集合中每台计算机每月产生的平均二氧化碳量（单位为吨）的图表。  
-
--   显示指定时间段内指定集合中计算机每月产生的总二氧化碳量和月平均二氧化碳量的表格。  
-
- **环境影响**报表通过使用 24 小时内计算机或监视器开启的时间计算产生的二氧化碳量（单位为吨）。  
-
- 可以使用以下参数来配置此报表。  
-
-#### <a name="required-report-parameters"></a>需要的报表参数  
- 必须指定以下参数运行此报表。  
-
-|参数名称|描述|  
-|--------------------|-----------------|  
-|**报表开始日期**|从下拉列表中，选择此报表的开始日期。|  
-|**报表结束日期**|从下拉列表中，选择此报表的结束日期。|  
-|**集合名称**|从下拉列表中，选择此报表的集合。|  
-|**设备类型**|从下拉列表中，选择要为其生成报表的计算机的类型。 有效值为“所有”（台式机和便携计算机）、“台式机”（仅限台式机）和“笔记本电脑”（仅限便携计算机）。 仅所选报告期间返回这些值。|  
-
-#### <a name="hidden-report-parameters"></a>隐藏报表参数  
- 可根据需要指定以下隐藏参数来更改此报表的行为。  
-
-|参数名称|描述|  
-|--------------------|-----------------|  
-|**台式计算机开机**|指定台式计算机在开机状态的功耗。 默认值为每小时 0.07  kW。|  
-|**便携式计算机开机**|指定便携式计算机在开机状态的功耗。 默认值为每小时 0.02  kW。|  
-|**台式计算机睡眠**|指定台式计算机进入睡眠状态的功耗。 默认值为每小时 0.003  kW。|  
-|**便携式计算机睡眠**|指定便携式计算机进入睡眠状态的功耗。 默认值为每小时 0.001  kW。|  
-|**台式计算机关机**|指定台式计算机在关机状态的功耗。 默认值为每小时 0  kW。|  
-|**便携式计算机关机**|指定便携式计算机在关机状态的功耗。 默认值为每小时 0  kW。|  
-|**台式机监视器开启**|指定台式计算机监视器在开启状态的功耗。 默认值为每小时 0.028  kW。|  
-|**便携式计算机监视器开启**|指定便携式计算机监视器在开启状态的功耗。 默认值为每小时 0  kW。|  
-|碳排放因子（吨/kwh） (CO2Mix)|指定通常从电力公司获取的碳排放因子值（吨/kwh）。 默认值为每 kWh 0.0015  吨。|  
-
-#### <a name="report-links"></a>报表链接  
- 此报表没有链接任何其他电源管理报表。  
-
-###  <a name="BKMK_Environmental_Impact_by_Day"></a> 按天显示的环境影响报表  
- “按天显示的环境影响”  报表显示以下信息：  
-
--   显示过去 31 天指定集合中计算机产生的每日总二氧化碳量（单位为吨）的图表。  
-
--   显示过去 31 天指定集合中每台计算机产生的日平均二氧化碳量（单位为吨）的图表。  
-
--   显示过去 31 天指定集合中计算机产生的每日总二氧化碳量和日平均二氧化碳量的表格。  
-
- **每日的环境影响**报表通过使用 24 小时内计算机或监视器开启的时间计算产生的二氧化碳量（单位为吨）。  
-
-#### <a name="required-report-parameters"></a>需要的报表参数  
- 必须指定以下参数运行此报表。  
-
-|参数名称|描述|  
-|--------------------|-----------------|  
-|**集合名称**|从下拉列表中，选择此报表的集合。|  
-|**设备类型**|从下拉列表中，选择要为其生成报表的计算机的类型。 有效值为“所有”（台式机和便携计算机）、“台式机”（仅限台式机）和“笔记本电脑”（仅限便携计算机）。 仅所选报告期间返回这些值。|  
-
-#### <a name="hidden-report-parameters"></a>隐藏报表参数  
- 可根据需要指定以下隐藏参数来更改此报表的行为。  
-
-|参数名称|描述|  
-|--------------------|-----------------|  
-|**台式计算机开机**|指定台式计算机在开机状态的功耗。 默认值为 0.07  kWh。|  
-|**便携式计算机开机**|指定便携式计算机在开机状态的功耗。 默认值为 0.02  kWh。|  
-|**台式计算机关机**|指定台式计算机在关机状态的功耗。 默认值为 0  kWh。|  
-|**便携式计算机关机**|指定便携式计算机在关机状态的功耗。 默认值为 0  kWh。|  
-|**台式计算机睡眠**|指定台式计算机进入睡眠状态的功耗。 默认值为 0.003  kWh。|  
-|**便携式计算机睡眠**|指定便携式计算机进入睡眠状态的功耗。 默认值为 0.001  kWh。|  
-|**台式机监视器开启**|指定台式计算机监视器在开启状态的功耗。 默认值为 0.028  kWh。|  
-|**便携式计算机监视器开启**|指定便携式计算机监视器在开启状态的功耗。 默认值为 0  kWh。|  
-|碳排放因子（吨/kwh） (CO2Mix)|指定通常从电力公司获取的碳排放因子值（吨/kwh）。 默认值为每 kWh 0.0015  吨。|  
-
-#### <a name="report-links"></a>报表链接  
- 此报表没有链接任何其他电源管理报表。  
-
-###  <a name="BKMK_Insomnia_Computer_Details"></a> 失眠计算机详细信息报表  
- “失眠计算机详细信息”  报表显示由于特定原因在指定时间段内未进入睡眠或休眠状态的计算机的列表。 此报表由“失眠报表”  调用，而不是由站点管理员直接运行。  
-
- “失眠报表”  将在整个指定报表时间间隔内不能进入睡眠状态、始终开启的计算机显示为“不能进入睡眠”  。 该报表将在整个指定报表时间间隔内不能进入休眠状态、始终开启的计算机显示为“不能进入休眠”  。  
+ Essas informações podem ser usadas para ajudá-lo a entender as tendências de consumo de energia em seu ambiente. Depois de aplicar um plano de energia aos computadores na coleção selecionada, o consumo de energia dos computadores deverá diminuir.  
 
 > [!NOTE]  
->  电源管理仅可从运行 Windows 7 或 Windows Server 2008 R2 的计算机上收集阻止计算机进入睡眠或休眠状态的原因。  
+>  Se você adicionar ou remover membros da coleção depois de aplicar um plano de energia, isso afetará os resultados mostrados pelo relatório **Consumo de energia** e poderá dificultar a comparação dos resultados das fases de monitoramento e de planejamento e da fase de imposição.  
 
- 可以使用以下参数来配置此报表。  
+ Use os parâmetros a seguir para configurar este relatório.  
 
-#### <a name="required-report-parameters"></a>需要的报表参数  
- 必须指定以下参数运行此报表。  
+#### <a name="required-report-parameters"></a>Parâmetros de relatório necessários  
+ Para executar este relatório, os parâmetros a seguir devem ser especificados.  
 
-|参数名称|描述|  
+|Nome do parâmetro|Descrição|  
 |--------------------|-----------------|  
-|**集合名称**|从下拉列表中，选择此报表要使用的集合。|  
-|**报表间隔（天）**|指定要生成报表的天数。 默认值为 **7** 天。|  
-|**失眠的原因**|从下拉列表中，选择一个阻止计算机进入睡眠或休眠状态的原因。|  
+|**Coleta**|Na lista suspensa, selecione uma coleção para este relatório.|  
+|**Device Type**|Na lista suspensa, selecione o tipo de computador para o qual deseja obter um relatório. Os valores válidos são **Todos** (computadores desktop e portáteis), **Desktop** (somente computadores desktop) e **Laptop** (somente computadores portáteis). Esses valores são retornados apenas para o período de relatório selecionado.|  
 
-#### <a name="hidden-report-parameters"></a>隐藏报表参数  
- 此报表没有任何可以设置的隐藏参数。  
+#### <a name="hidden-report-parameters"></a>Parâmetros de relatório ocultos  
+ Opcionalmente, os parâmetros ocultos a seguir podem ser especificados para alterar o comportamento deste relatório.  
 
-#### <a name="report-links"></a>报表链接  
- 此报表包含指向提供所选项目更多相关信息的以下报表的链接。  
+|Nome do parâmetro|Descrição|  
+|--------------------|-----------------|  
+|**Computador desktop ligado**|Especifique o consumo de energia de um computador desktop quando ele está ligado. O valor padrão é **0,07** kW por hora.|  
+|**Computador laptop ligado**|Especifique o consumo de energia de um computador portátil quando ele está ligado. O valor padrão é **0,02** kW por hora.|  
+|**Computador desktop em suspensão**|Especifique o consumo de energia de um computador desktop que entrou em suspensão. O valor padrão é **0,003** kW por hora.|  
+|**Computador laptop em suspensão**|Especifique o consumo de energia de um computador portátil que entrou em suspensão. O valor padrão é **0,001** kW por hora.|  
+|**Computador desktop desligado**|Especifique o consumo de energia de um computador desktop quando ele está desligado. O valor padrão é **0** kW por hora.|  
+|**Computador laptop desligado**|Especifique o consumo de energia de um computador portátil quando ele está desligado. O valor padrão é **0** kW por hora.|  
+|**Monitor de desktop ligado**|Especifique o consumo de energia do monitor de um computador desktop quando ele está ligado. O valor padrão é **0,028** kW por hora.|  
+|**Monitor de laptop ligado**|Especifique o consumo de energia do monitor de um computador portátil quando ele está ligado. O valor padrão é **0** kW por hora.|  
 
-|报表名称|详细信息|  
+#### <a name="report-links"></a>Links de relatório  
+ Este relatório não contém links para outros relatórios de gerenciamento de energia.  
+
+###  <a name="BKMK_Cost"></a> Relatório Custo de energia  
+ O relatório **Custo de energia** exibe as seguintes informações:  
+
+-   Um gráfico que mostra o consumo de energia mensal total de computadores na coleção especificada, no período de tempo especificado.  
+
+-   Um gráfico que mostra o custo de energia médio mensal para cada computador na coleção especificada, no período de tempo especificado.  
+
+-   Uma tabela que mostra o custo de energia mensal total e o custo de energia mensal médio de computadores na coleção especificada, nos últimos 31 dias.  
+
+ Essas informações podem ser usadas para ajudá-lo a entender as tendências de custo de energia em seu ambiente. Depois de aplicar um plano de energia aos computadores na coleção selecionada, o custo de energia dos computadores deverá diminuir.  
+
+ Use os parâmetros a seguir para configurar este relatório.  
+
+#### <a name="required-report-parameters"></a>Parâmetros de relatório necessários  
+ Para executar este relatório, os parâmetros a seguir devem ser especificados.  
+
+|Nome do parâmetro|Descrição|  
+|--------------------|-----------------|  
+|**Data de Início**|Na lista suspensa, selecione uma data de início para este relatório.|  
+|**Data de término**|Na lista suspensa, selecione uma data de término para este relatório.|  
+|**Custo de KwH**|Especifique o custo por kWh de eletricidade. O valor padrão é **0,09**.<br /><br /> Você pode modificar a unidade de moeda usada por este relatório na seção de parâmetros ocultos.|  
+|**Nome da coleção**|Na lista suspensa, selecione uma coleção a ser usada para este relatório.|  
+|**Tipo de dispositivo**|Na lista suspensa, selecione o tipo de computador para o qual deseja obter um relatório. Os valores válidos são **Todos** (computadores desktop e portáteis), **Desktop** (somente computadores desktop) e **Laptop** (somente computadores portáteis). Esses valores são retornados apenas para o período de relatório selecionado.|  
+
+#### <a name="hidden-report-parameters"></a>Parâmetros de relatório ocultos  
+ Opcionalmente, os parâmetros ocultos a seguir podem ser especificados para alterar o comportamento deste relatório.  
+
+|Nome do parâmetro|Descrição|  
+|--------------------|-----------------|  
+|**Computador desktop ligado**|Especifique o consumo de energia de um computador desktop quando ele está ligado. O valor padrão é **0,07** kW por hora.|  
+|**Computador laptop ligado**|Especifique o consumo de energia de um computador portátil quando ele está ligado. O valor padrão é **0,02** kW por hora.|  
+|**Computador desktop em suspensão**|Especifique o consumo de energia de um computador desktop que entrou em suspensão. O valor padrão é **0,003** kW por hora.|  
+|**Computador laptop em suspensão**|Especifique o consumo de energia de um computador portátil que entrou em suspensão. O valor padrão é **0,001** kW por hora.|  
+|**Computador desktop desligado**|Especifique o consumo de energia de um computador desktop quando ele está desligado. O valor padrão é **0** kW por hora.|  
+|**Computador laptop desligado**|Especifique o consumo de energia de um computador portátil quando ele está desligado. O valor padrão é **0** kW por hora.|  
+|**Monitor de desktop ligado**|Especifique o consumo de energia do monitor de um computador desktop quando ele está ligado. O valor padrão é **0,028** kW por hora.|  
+|**Monitor de laptop ligado**|Especifique o consumo de energia do monitor de um computador portátil quando ele está ligado. O valor padrão é **0** kW por hora.|  
+|**Moeda**|Especifique o rótulo de moeda a ser usado para este relatório. O valor padrão é **USD (US$)**.|  
+
+#### <a name="report-links"></a>Links de relatório  
+ Este relatório não contém links para outros relatórios de gerenciamento de energia.  
+
+###  <a name="BKMK_Cost_by_Day"></a> Relatório Custo de energia por dia  
+ O relatório **Custo de energia por dia** exibe as seguintes informações:  
+
+-   Um gráfico que mostra o custo de energia diário total para computadores na coleção especificada, nos últimos 31 dias.  
+
+-   Um gráfico que mostra o custo de energia diário médio de cada computador na coleção especificada, nos últimos 31 dias.  
+
+-   Uma tabela que mostra o custo de energia diário total e o custo de energia diário médio de computadores na coleção especificada, nos últimos 31 dias.  
+
+ Essas informações podem ser usadas para ajudá-lo a entender as tendências de custo de energia em seu ambiente. Depois de aplicar um plano de energia aos computadores na coleção selecionada, o custo de energia dos computadores deverá diminuir.  
+
+ Use os parâmetros a seguir para configurar este relatório.  
+
+#### <a name="required-report-parameters"></a>Parâmetros de relatório necessários  
+ Para executar este relatório, os parâmetros a seguir devem ser especificados.  
+
+|Nome do parâmetro|Descrição|  
+|--------------------|-----------------|  
+|**Nome da coleção**|Na lista suspensa, selecione uma coleção a ser usada para este relatório.|  
+|**Tipo de dispositivo**|Na lista suspensa, selecione o tipo de computador sobre o qual deseja fornecer um relatório. Os valores válidos são **Todos** (computadores desktop e portáteis), **Desktop** (somente computadores desktop) e **Laptop** (somente computadores portáteis). Esses valores são retornados apenas para o período de relatório selecionado.|  
+|**Custo de KwH**|Especifique o custo por kWh de eletricidade. O valor padrão é **0,09**.<br /><br /> Você pode modificar a unidade de moeda usada por este relatório na seção de parâmetros ocultos.|  
+
+#### <a name="hidden-report-parameters"></a>Parâmetros de relatório ocultos  
+ Opcionalmente, os parâmetros ocultos a seguir podem ser especificados para alterar o comportamento deste relatório.  
+
+|Nome do parâmetro|Descrição|  
+|--------------------|-----------------|  
+|**Computador desktop ligado**|Especifique o consumo de energia de um computador desktop quando ele está ligado. O valor padrão é **0,07** kW por hora.|  
+|**Computador laptop ligado**|Especifique o consumo de energia de um computador portátil quando ele está ligado. O valor padrão é **0,02** kW por hora.|  
+|**Computador desktop em suspensão**|Especifique o consumo de energia de um computador desktop que entrou em suspensão. O valor padrão é **0,003** kW por hora.|  
+|**Computador laptop em suspensão**|Especifique o consumo de energia de um computador portátil que entrou em suspensão. O valor padrão é **0,001** kW por hora.|  
+|**Computador desktop desligado**|Especifique o consumo de energia de um computador desktop quando ele está desligado. O valor padrão é **0** kW por hora.|  
+|**Computador laptop desligado**|Especifique o consumo de energia de um computador portátil quando ele está desligado. O valor padrão é **0** kW por hora.|  
+|**Monitor de desktop ligado**|Especifique o consumo de energia do monitor de um computador desktop quando ele está ligado. O valor padrão é **0,028** kW por hora.|  
+|**Monitor de laptop ligado**|Especifique o consumo de energia do monitor de um computador portátil quando ele está ligado. O valor padrão é **0** kW por hora.|  
+|**Moeda**|Especifique o rótulo de moeda a ser usado para este relatório. O valor padrão é **USD (US$)**.|  
+
+#### <a name="report-links"></a>Links de relatório  
+ Este relatório não contém links para outros relatórios de gerenciamento de energia.  
+
+###  <a name="BKMK_Environmental_Impact"></a> Relatório Impacto ambiental  
+ O relatório **Impacto ambiental** exibe as seguintes informações:  
+
+-   Um gráfico que mostra a quantidade total mensal de CO2 gerado (em toneladas) para cada computador na coleção especificada, no período especificado.  
+
+-   Um gráfico que mostra a quantidade média mensal de CO2 gerado (em toneladas) para cada computador na coleção especificada, no período especificado.  
+
+-   Uma tabela que mostra a quantidade total mensal de CO2 gerado e a quantidade média mensal de CO2 gerado dos computadores na coleção especificada, no período especificado.  
+
+ O relatório **Impacto ambiental** calcula a quantidade de CO2 gerado (em toneladas) usando o tempo que um computador ou monitor permaneceu ligado em um período de 24 horas.  
+
+ Use os parâmetros a seguir para configurar este relatório.  
+
+#### <a name="required-report-parameters"></a>Parâmetros de relatório necessários  
+ Para executar este relatório, os parâmetros a seguir devem ser especificados.  
+
+|Nome do parâmetro|Descrição|  
+|--------------------|-----------------|  
+|**Data de início do relatório**|Na lista suspensa, selecione uma data de início para este relatório.|  
+|**Data de término do relatório**|Na lista suspensa, selecione uma data de término para este relatório.|  
+|**Nome da coleção**|Na lista suspensa, selecione uma coleção para este relatório.|  
+|**Tipo de dispositivo**|Na lista suspensa, selecione o tipo de computador para o qual deseja obter um relatório. Os valores válidos são **Todos** (computadores desktop e portáteis), **Desktop** (somente computadores desktop) e **Laptop** (somente computadores portáteis). Esses valores são retornados apenas para o período de relatório selecionado.|  
+
+#### <a name="hidden-report-parameters"></a>Parâmetros de relatório ocultos  
+ Opcionalmente, os parâmetros ocultos a seguir podem ser especificados para alterar o comportamento deste relatório.  
+
+|Nome do parâmetro|Descrição|  
+|--------------------|-----------------|  
+|**Computador desktop ligado**|Especifique o consumo de energia de um computador desktop quando ele está ligado. O valor padrão é **0,07** kW por hora.|  
+|**Computador laptop ligado**|Especifique o consumo de energia de um computador portátil quando ele está ligado. O valor padrão é **0,02** kW por hora.|  
+|**Computador desktop em suspensão**|Especifique o consumo de energia de um computador desktop que entrou em suspensão. O valor padrão é **0,003** kW por hora.|  
+|**Computador laptop em suspensão**|Especifique o consumo de energia de um computador portátil que entrou em suspensão. O valor padrão é **0,001** kW por hora.|  
+|**Computador desktop desligado**|Especifique o consumo de energia de um computador desktop quando ele está desligado. O valor padrão é **0** kW por hora.|  
+|**Computador laptop desligado**|Especifique o consumo de energia de um computador portátil quando ele está desligado. O valor padrão é **0** kW por hora.|  
+|**Monitor de desktop ligado**|Especifique o consumo de energia do monitor de um computador desktop quando ele está ligado. O valor padrão é **0,028** kW por hora.|  
+|**Monitor de laptop ligado**|Especifique o consumo de energia do monitor de um computador portátil quando ele está ligado. O valor padrão é **0** kW por hora.|  
+|**Fator de carbono (toneladas/kWh)** (CO2Mix)|Especifique o valor para o fator de carbono (em toneladas/kWh) que você geralmente pode obter de sua companhia elétrica. O valor padrão é **0,0015** toneladas por kWh.|  
+
+#### <a name="report-links"></a>Links de relatório  
+ Este relatório não contém links para outros relatórios de gerenciamento de energia.  
+
+###  <a name="BKMK_Environmental_Impact_by_Day"></a> Relatório Impacto ambiental por dia  
+ O relatório **Impacto ambiental por dia** exibe as seguintes informações:  
+
+-   Um gráfico que mostra a quantidade diária total de CO2 gerado (em toneladas) para computadores na coleção especificada, nos últimos 31 dias.  
+
+-   Um gráfico que mostra a quantidade diária média de CO2 gerado (em toneladas) para cada computador na coleção especificada, nos últimos 31 dias.  
+
+-   Uma tabela que mostra a quantidade diária total de CO2 gerado e a quantidade diária média de CO2 gerado por computadores na coleção especificada, nos últimos 31 dias.  
+
+ O relatório **Impacto ambiental por dia** calcula a quantidade de CO2 gerado (em toneladas) usando o tempo que um computador ou monitor permaneceu ligado em um período de 24 horas.  
+
+#### <a name="required-report-parameters"></a>Parâmetros de relatório necessários  
+ Para executar este relatório, os parâmetros a seguir devem ser especificados.  
+
+|Nome do parâmetro|Descrição|  
+|--------------------|-----------------|  
+|**Nome da coleção**|Na lista suspensa, selecione uma coleção para este relatório.|  
+|**Tipo de dispositivo**|Na lista suspensa, selecione o tipo de computador sobre o qual deseja fornecer um relatório. Os valores válidos são **Todos** (computadores desktop e portáteis), **Desktop** (somente computadores desktop) e **Laptop** (somente computadores portáteis). Esses valores são retornados apenas para o período de relatório selecionado.|  
+
+#### <a name="hidden-report-parameters"></a>Parâmetros de relatório ocultos  
+ Opcionalmente, os parâmetros ocultos a seguir podem ser especificados para alterar o comportamento deste relatório.  
+
+|Nome do parâmetro|Descrição|  
+|--------------------|-----------------|  
+|**Computador desktop ligado**|Especifique o consumo de energia de um computador desktop quando ele está ligado. O valor padrão é **0,07** kWh.|  
+|**Computador laptop ligado**|Especifique o consumo de energia de um computador portátil quando ele está ligado. O valor padrão é **0,02** kWh.|  
+|**Computador desktop desligado**|Especifique o consumo de energia de um computador desktop quando ele está desligado. O valor padrão é **0** kWh.|  
+|**Computador laptop desligado**|Especifique o consumo de energia de um computador portátil quando ele está desligado. O valor padrão é **0** kWh.|  
+|**Computador desktop em suspensão**|Especifique o consumo de energia de um computador desktop que entrou em suspensão. O valor padrão é **0,003** kWh.|  
+|**Computador laptop em suspensão**|Especifique o consumo de energia de um computador portátil que entrou no modo de suspensão. O valor padrão é **0,001** kWh.|  
+|**Monitor de desktop ligado**|Especifique o consumo de energia do monitor de um computador desktop quando ele está ligado. O valor padrão é **0,028** kWh.|  
+|**Monitor de laptop ligado**|Especifique o consumo de energia do monitor de um computador portátil quando ele está ligado. O valor padrão é **0** kWh.|  
+|**Fator de carbono (toneladas/kWh)** (CO2Mix)|Especifique um valor para o fator de carbono (em toneladas/kWh) que você geralmente pode obter de sua companhia elétrica. O valor padrão é **0,0015** toneladas por kWh.|  
+
+#### <a name="report-links"></a>Links de relatório  
+ Este relatório não contém links para outros relatórios de gerenciamento de energia.  
+
+###  <a name="BKMK_Insomnia_Computer_Details"></a> Relatório Detalhes de computadores com insônia  
+ O relatório **Detalhes de computadores com insônia** exibe uma lista de computadores que não entraram no modo de suspensão ou hibernação por um motivo específico em um período de tempo especificado. Esse relatório é chamado pelo **Relatório de Insônia** e não foi projetado para ser executado diretamente pelo administrador do site.  
+
+ O **Relatório de Insônia** exibe computadores como **Sem capacidade de suspensão** quando eles não são capazes de entrar no modo de suspensão e foram ligados durante todo o intervalo do relatório especificado. O relatório exibe computadores como **Sem capacidade de hibernar** quando não são capazes de hibernar e foram ligados durante todo o intervalo do relatório especificado.  
+
+> [!NOTE]  
+>  O gerenciamento de energia pode coletar apenas causas que impediram que os computadores entrassem em suspensão ou hibernação de computadores que executam o Windows 7 ou Windows Server 2008 R2.  
+
+ Use os parâmetros a seguir para configurar este relatório.  
+
+#### <a name="required-report-parameters"></a>Parâmetros de relatório necessários  
+ Para executar este relatório, os parâmetros a seguir devem ser especificados.  
+
+|Nome do parâmetro|Descrição|  
+|--------------------|-----------------|  
+|**Nome da coleção**|Na lista suspensa, selecione uma coleção a ser usada para este relatório.|  
+|**Intervalo do relatório (dias)**|Especifique o número de dias até o relatório. O valor padrão é **7** dias.|  
+|**Causa de insônia**|Na lista suspensa, selecione uma das causas que podem impedir que os computadores entrem em suspensão ou hibernação.|  
+
+#### <a name="hidden-report-parameters"></a>Parâmetros de relatório ocultos  
+ Este relatório não contém parâmetros ocultos que podem ser definidos.  
+
+#### <a name="report-links"></a>Links de relatório  
+ Este relatório contém links para o relatório a seguir, que fornece mais informações sobre o item selecionado.  
+
+|Nome do relatório|Detalhes|  
 |-----------------|-------------|  
-|**计算机详细信息**|单击“点击获取详细信息”  链接可查看所选计算机的电源功能、电源设置和应用的电源计划。<br /><br /> 有关详情，请参阅本主题中的 [Computer Details Report](#BKMK_Computer_Details) 。|  
+|**Detalhes do Computador**|Clique no link **Clique para obter informações detalhadas** para ver os recursos de energia, as configurações de energia e os planos de energia aplicados para o computador selecionado.<br /><br /> Para obter mais informações, consulte [Computer Details Report](#BKMK_Computer_Details) neste tópico.|  
 
 ###  <a name="BKMK_Insomnia"></a> Insomnia report  
- “失眠报表”  显示了一个列表，该列表列出了阻止计算机进入睡眠或休眠状态的常见原因以及指定时间段内受每种原因影响的计算机数量。 有多种原因可能会阻止计算机进入睡眠或休眠状态，例如运行在计算机上的进程、打开的远程桌面会话或计算机无法进入睡眠或休眠状态。 从此报表中，可以打开“失眠计算机详细信息”  报表，该报表显示导致计算机不能进入睡眠或休眠状态的每种原因所影响的计算机的列表。  
+ O **Relatório de Insônia** exibe uma lista das causas comuns que impediram os computadores de entrarem no modo de suspensão ou hibernação e o número de computadores que foram afetados por cada causa em um período de tempo especificado. Há várias causas que podem impedir que um computador entre no modo de suspensão ou hibernação, como um processo em execução no computador, uma sessão aberta da Área de Trabalho Remota ou o fato de o computador não ter a capacidade de entrar no modo de suspensão ou hibernação. Nesse relatório, você pode abrir o relatório **Detalhes de computadores com insônia** , que exibe uma lista de computadores afetados por motivos individuais de computadores que não entraram em suspensão ou hibernação.  
 
- 电源失眠报表将在整个指定报表时间间隔内不能进入睡眠状态、始终开启的计算机显示为“不能进入睡眠”  。 该报表将在整个指定报表时间间隔内不能进入休眠状态、始终开启的计算机显示为“不能进入休眠”  。  
-
-> [!NOTE]  
->  电源管理仅可从运行 Windows 7 或 Windows Server 2008 R2 的计算机上收集阻止计算机进入睡眠或休眠状态的原因。  
-
- 可以使用以下参数来配置此报表。  
-
-#### <a name="required-report-parameters"></a>需要的报表参数  
- 必须指定以下参数运行此报表。  
-
-|参数名称|描述|  
-|--------------------|-----------------|  
-|**集合名称**|从下拉列表中，选择此报表要使用的集合。|  
-|**报表间隔（天）**|指定要生成报表的天数。 默认值为 **7** 天。 最大值为 365  天。 指定“0”  可运行今天的报表。|  
-
-#### <a name="hidden-report-parameters"></a>隐藏报表参数  
- 此报表没有任何可以设置的隐藏参数。  
-
-#### <a name="report-links"></a>报表链接  
- 此报表包含指向提供所选项目更多相关信息的以下报表的链接。  
-
-|报表名称|详细信息|  
-|-----------------|-------------|  
-|**Insomnia Computer Details**|单击“受影响计算机”  列中的数字可查看因所选原因无法进入睡眠或休眠状态的计算机的列表。<br /><br /> 有关详情，请参阅本主题中的 [Insomnia Computer Details Report](#BKMK_Insomnia_Computer_Details) 。|  
-
-###  <a name="BKMK_Capabilites"></a> 电源功能报表  
- “电源功能”  报表显示指定集合中计算机的电源管理硬件功能。 通常在电源管理的监视阶段中使用此报表来确定组织中计算机的电源管理功能。 然后可使用报表中显示的信息来创建应用电源计划的计算机的集合，或从电源管理中排除的计算机的集合。 此报表显示的电源管理功能包括：  
-
--   **能够睡眠** – 指示如果配置此操作，计算机能否进入睡眠状态。  
-
--   **能够休眠** – 指示如果配置此操作，计算机能否进入休眠状态。  
-
--   **从睡眠状态唤醒** – 指示如果配置此操作，计算机能否从睡眠状态唤醒。  
-
--   **从休眠状态唤醒** – 指示如果配置此操作，计算机能否从休眠状态唤醒。  
-
- 和 Windows 一样，“电源功能”  报表报告的值指示计算机的睡眠和休眠功能。 但是，如果 Windows 或 BIOS 设置禁用了这些功能，报告的值就不能反映情况。  
-
- 可以使用以下参数来配置此报表。  
-
-#### <a name="required-report-parameters"></a>需要的报表参数  
- 必须指定以下参数运行此报表。  
-
-|参数名称|描述|  
-|--------------------|-----------------|  
-|**收集**|从下拉列表中，选择此报表的集合。|  
-|**显示筛选器**|在下拉列表中选择“不支持”，仅显示指定集合中不能进入睡眠、休眠、从睡眠状态唤醒或从休眠状态唤醒的计算机。 选择“全部显示”，显示指定集合中的所有计算机。|  
-
-#### <a name="hidden-report-parameters"></a>隐藏报表参数  
- 此报表没有任何可以设置的隐藏参数。  
-
-#### <a name="report-links"></a>报表链接  
- 此报表包含指向提供所选项目更多相关信息的以下报表的链接。  
-
-|报表名称|详细信息|  
-|-----------------|-------------|  
-|**计算机详细信息**|单击计算机名可查看所选计算机的电源功能、电源设置和应用的电源计划。<br /><br /> 有关详情，请参阅本主题中的 [Computer Details Report](#BKMK_Computer_Details) 。|  
-
-###  <a name="BKMK_Settings"></a> 电源设置报表  
- “电源设置”  报表显示指定集合中的计算机使用的电源设置的聚合列表。 对于每个电源设置，都会显示可能的电源模式、值和单位，以及使用这些值的计算机的数目。 在电源管理的监视阶段可以使用此报表，以帮助管理员了解站点中计算机使用的现有电源设置，并帮助通过使用电源管理计划规划要应用的最佳电源设置。 在进行故障排除时此报表也非常有用，可以验证是否正确应用了电源设置。  
+ O relatório de Insônia de energia exibe computadores como **Sem capacidade de suspensão** quando eles não são capazes de entrar no modo de suspensão e foram ligados durante todo o intervalo do relatório especificado. O relatório exibe computadores como **Sem capacidade de hibernar** quando não são capazes de hibernar e foram ligados durante todo o intervalo do relatório especificado.  
 
 > [!NOTE]  
->  在硬件清单过程中，会从客户端计算机收集显示的信息。 根据硬件清单运行的时间，可能会收集应用的高峰时间或非高峰时间电源计划的设置。  
+>  O gerenciamento de energia pode coletar apenas causas que impediram que os computadores entrassem em suspensão ou hibernação de computadores que executam o Windows 7 ou Windows Server 2008 R2.  
 
- 可以使用以下参数来配置此报表。  
+ Use os parâmetros a seguir para configurar este relatório.  
 
-#### <a name="required-report-parameters"></a>需要的报表参数  
- 必须指定以下参数运行此报表。  
+#### <a name="required-report-parameters"></a>Parâmetros de relatório necessários  
+ Para executar este relatório, os parâmetros a seguir devem ser especificados.  
 
-|参数名称|描述|  
+|Nome do parâmetro|Descrição|  
 |--------------------|-----------------|  
-|**集合名称**|从下拉列表中，选择此报表的集合。|  
+|**Nome da coleção**|Na lista suspensa, selecione uma coleção a ser usada para este relatório.|  
+|**Intervalo do relatório (dias)**|Especifique o número de dias até o relatório. O valor padrão é **7** dias. O valor máximo é de **365** dias. Especifique **0** para executar o relatório de hoje.|  
 
-#### <a name="hidden-report-parameters"></a>隐藏报表参数  
- 可根据需要指定以下隐藏参数来更改此报表的行为。  
+#### <a name="hidden-report-parameters"></a>Parâmetros de relatório ocultos  
+ Este relatório não contém parâmetros ocultos que podem ser definidos.  
 
-|参数名称|描述|  
-|--------------------|-----------------|  
-|**numberOfLocalizations**|指定要查看由客户端计算机报告的电源设置名称的语种的数目。 如果只想查看最流行的语言，则将此设置保留为默认值“1” 。 若要查看所有语言，请将该值设置为“0” 。|  
+#### <a name="report-links"></a>Links de relatório  
+ Este relatório contém links para o relatório a seguir, que fornece mais informações sobre o item selecionado.  
 
-#### <a name="report-links"></a>报表链接  
- 此报表包含指向提供所选项目更多相关信息的以下报表的链接。  
-
-|报表名称|详细信息|  
+|Nome do relatório|Detalhes|  
 |-----------------|-------------|  
-|**Power Settings Details**|单击“计算机”  列中的计算机数，以查看使用该行中电源设置的所有计算机的列表。<br /><br /> 有关详情，请参阅本主题中的 [Power Settings Details Report](#BKMK_Settings_Details) 。|  
+|**Detalhes de computadores com insônia**|Clique em um número na coluna **Computadores Afetados** para ver uma lista de computadores que não conseguiram ser suspensos ou hibernados devido à causa selecionada.<br /><br /> Para obter mais informações, consulte [Insomnia Computer Details Report](#BKMK_Insomnia_Computer_Details) neste tópico.|  
+
+###  <a name="BKMK_Capabilites"></a> Relatório Recursos de energia  
+ O relatório **Recursos de energia** exibe os recursos de gerenciamento de hardware de computadores na coleção especificada. Normalmente, esse relatório é usado na fase de monitoramento do gerenciamento de energia para determinar os recursos de gerenciamento de energia dos computadores em sua organização. As informações exibidas no relatório podem ser usadas para criar coleções de computadores aos quais os planos de energia serão aplicados, ou para excluir do gerenciamento de energia. Os recursos de gerenciamento de energia exibidos por este relatório são:  
+
+-   **Com capacidade de suspensão** – Indica se o computador pode entrar no modo de suspensão se estiver configurado para fazer isso.  
+
+-   **Com capacidade de hibernação** – Indica se o computador pode entrar no modo de hibernação se estiver configurado para fazer isso.  
+
+-   **Sair do modo de suspensão** – Indica se o computador pode sair do modo de suspensão se estiver configurado para fazer isso.  
+
+-   **Sair do modo de hibernação** – Indica se o computador pode sair do modo de hibernação se estiver configurado para fazer isso.  
+
+ Os valores relatados pelo relatório **Recursos de energia** indicam os recursos de suspensão e hibernação de computadores, conforme relatado pelo Windows. No entanto, os valores relatados não refletem os casos em que as configurações do Windows ou do BIOS impedem essas funções de funcionar.  
+
+ Use os parâmetros a seguir para configurar este relatório.  
+
+#### <a name="required-report-parameters"></a>Parâmetros de relatório necessários  
+ Para executar este relatório, os parâmetros a seguir devem ser especificados.  
+
+|Nome do parâmetro|Descrição|  
+|--------------------|-----------------|  
+|**Coleta**|Na lista suspensa, selecione uma coleção para este relatório.|  
+|**Exibir filtro**|Na lista suspensa, selecione **Sem suporte** para exibir apenas os computadores na coleção especificada que não são capazes de suspensão, hibernação, retornar da suspensão ou retornar da hibernação. Selecione **Mostrar Tudo** para exibir todos os computadores na coleção especificada.|  
+
+#### <a name="hidden-report-parameters"></a>Parâmetros de relatório ocultos  
+ Este relatório não contém parâmetros ocultos que podem ser definidos.  
+
+#### <a name="report-links"></a>Links de relatório  
+ Este relatório contém links para o relatório a seguir, que fornece mais informações sobre o item selecionado.  
+
+|Nome do relatório|Detalhes|  
+|-----------------|-------------|  
+|**Detalhes do Computador**|Clique em um nome do computador para ver os recursos de energia, as configurações de energia e os planos de energia aplicados para o computador selecionado.<br /><br /> Para obter mais informações, consulte [Computer Details Report](#BKMK_Computer_Details) neste tópico.|  
+
+###  <a name="BKMK_Settings"></a> Relatório Configurações de energia  
+ O relatório **Configurações de energia** exibe uma lista agregada de configurações de energia usadas por computadores na coleção especificada. Para cada configuração de energia, os possíveis modos de energia, valores e unidades são exibidos com uma contagem do número de computadores que usam esses valores. Este relatório pode ser usado durante a fase de monitoramento do gerenciamento de energia para ajudar o administrador a entender as configurações de energia existentes usadas pelos computadores no site e para ajudar a planejar a aplicação de configurações de energia ideais usando um plano de gerenciamento de energia. O relatório também é útil ao resolver problemas para validar que as configurações de energia foram aplicadas corretamente.  
+
+> [!NOTE]  
+>  As configurações exibidas são coletadas de computadores cliente durante o inventário de hardware. Dependendo do tempo em que é executado o inventário de hardware, as configurações do horário de pico aplicado ou dos planos de energia para horário fora de pico podem ser coletadas.  
+
+ Use os parâmetros a seguir para configurar este relatório.  
+
+#### <a name="required-report-parameters"></a>Parâmetros de relatório necessários  
+ Para executar este relatório, os parâmetros a seguir devem ser especificados.  
+
+|Nome do parâmetro|Descrição|  
+|--------------------|-----------------|  
+|**Nome da coleção**|Na lista suspensa, selecione uma coleção para este relatório.|  
+
+#### <a name="hidden-report-parameters"></a>Parâmetros de relatório ocultos  
+ Opcionalmente, os parâmetros ocultos a seguir podem ser especificados para alterar o comportamento deste relatório.  
+
+|Nome do parâmetro|Descrição|  
+|--------------------|-----------------|  
+|**numberOfLocalizations**|Especifique o número de idiomas nos quais você deseja exibir os nomes de configuração de energia relatados pelos computadores cliente. Se quiser exibir a linguagem mais popular, deixe essa configuração no padrão de **1**. Para exibir todas as linguagens, defina esse valor como **0**.|  
+
+#### <a name="report-links"></a>Links de relatório  
+ Este relatório contém links para o relatório a seguir, que fornece mais informações sobre o item selecionado.  
+
+|Nome do relatório|Detalhes|  
+|-----------------|-------------|  
+|**Detalhes de configurações de energia**|Clique no número de computadores na coluna **Computadores** para ver uma lista de todos os computadores que usam as configurações de energia nessa linha.<br /><br /> Para obter mais informações, consulte [Power Settings Details Report](#BKMK_Settings_Details) neste tópico.|  
 
 ###  <a name="BKMK_Settings_Details"></a> Power Settings Details report  
- “电源设置详细信息”  报表显示“电源设置”  报表中选定计算机的详细信息。 此报表由“电源设置”  报表调用，而不是由站点管理员直接运行。  
+ O relatório **Detalhes de configurações de energia** exibe mais informações sobre os computadores selecionados no relatório **Configurações de energia** . Esse relatório é chamado pelo relatório **Configurações de energia** e não foi projetado para ser executado diretamente pelo administrador do site.  
 
-#### <a name="required-report-parameters"></a>需要的报表参数  
- 必须指定以下参数运行此报表。  
+#### <a name="required-report-parameters"></a>Parâmetros de relatório necessários  
+ Para executar este relatório, os parâmetros a seguir devem ser especificados.  
 
-|参数名称|描述|  
+|Nome do parâmetro|Descrição|  
 |--------------------|-----------------|  
-|**收集**|从下拉列表中，选择此报表要使用的集合。|  
-|**电源设置 GUID**|从下拉列表中，选择要为其生成报表的电源设置 GUID。 有关所有电源设置及其用途的列表，请参阅[如何在 System Center Configuration Manager 中创建并应用电源计划](../../../../core/clients/manage/power/create-and-apply-power-plans.md)主题中的[可用的电源管理和计划设置](../../../../core/clients/manage/power/create-and-apply-power-plans.md#BKMK_Plans)。|  
-|**Power Mode**|从下拉列表中，选择想要在报表结果中显示的电源设置类型。 选择“接通电源”  可查看为计算机接通电源的状态所配置的电源设置，而选择“电池供电”  可查看为计算机使用电池供电的状态所配置的电源设置。|  
-|**设置索引**|从下拉列表中，选择要为其生成报表的选定电源设置名称的值。 例如，如果想要显示将“在此时间后关闭硬盘”  设置设为 10  分钟的所有计算机，请为“电源设置名称”  选择“在此时间后关闭硬盘”  ，为“设置索引”  选择 10 。|  
+|**Coleta**|Na lista suspensa, selecione uma coleção a ser usada para este relatório.|  
+|**GUID de configuração de energia**|Na lista suspensa, selecione o GUID da configuração de energia no qual você deseja relatar. Para obter uma lista de todas as configurações de energia e seus usos, consulte [Configurações de plano de gerenciamento de energia disponíveis](../../../../core/clients/manage/power/create-and-apply-power-plans.md#BKMK_Plans) no tópico [Como criar e aplicar planos de energia no System Center Configuration Manager](../../../../core/clients/manage/power/create-and-apply-power-plans.md).|  
+|**Power Mode**|Na lista suspensa, selecione o tipo de configurações de energia que deseja exibir nos resultados do relatório. Selecione **Conectado** para exibir as configurações de energia definidas para quando o computador está conectado e **Funcionando com bateria** para exibir as configurações de energia definidas para quando o computador está funcionando com bateria.|  
+|**Índice de configuração**|Na lista suspensa, selecione o valor para o nome da configuração de energia selecionado sobre o qual deseja fornecer um relatório. Por exemplo, se você deseja exibir todos os computadores com a configuração **desligar disco rígido após** definida como **10** minutos, selecione **desligar disco rígido após** como o **Nome da Configuração de Energia** e **10** como o **Índice de Configuração**.|  
 
-#### <a name="hidden-report-parameters"></a>隐藏报表参数  
- 可根据需要指定以下隐藏参数来更改此报表的行为。  
+#### <a name="hidden-report-parameters"></a>Parâmetros de relatório ocultos  
+ Opcionalmente, os parâmetros ocultos a seguir podem ser especificados para alterar o comportamento deste relatório.  
 
-|参数名称|描述|  
+|Nome do parâmetro|Descrição|  
 |--------------------|-----------------|  
-|**numberOfLocalizations**|指定要查看由客户端计算机报告的电源设置名称的语种的数目。 如果只想查看最流行的语言，则将此设置保留为默认值“1” 。 若要查看所有语言，请将该值设置为“0” 。|  
+|**numberOfLocalizations**|Especifique o número de idiomas nos quais você deseja exibir os nomes de configuração de energia relatados pelos computadores cliente. Se quiser exibir a linguagem mais popular, deixe essa configuração no padrão de **1**. Para exibir todas as linguagens, defina esse valor como **0**.|  
 
-#### <a name="report-links"></a>报表链接  
- 此报表包含指向提供所选项目更多相关信息的以下报表的链接。  
+#### <a name="report-links"></a>Links de relatório  
+ Este relatório contém links para o relatório a seguir, que fornece mais informações sobre o item selecionado.  
 
-|报表名称|详细信息|  
+|Nome do relatório|Detalhes|  
 |-----------------|-------------|  
-|**计算机详细信息**|单击计算机名可查看所选计算机的电源功能、电源设置和应用的电源计划。<br /><br /> 有关详情，请参阅本主题中的 [Computer Details Report](#BKMK_Computer_Details) 。|  
+|**Detalhes do Computador**|Clique em um nome do computador para ver os recursos de energia, as configurações de energia e os planos de energia aplicados para o computador selecionado.<br /><br /> Para obter mais informações, consulte [Computer Details Report](#BKMK_Computer_Details) neste tópico.|  

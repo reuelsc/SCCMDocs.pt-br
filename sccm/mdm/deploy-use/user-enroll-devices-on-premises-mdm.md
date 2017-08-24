@@ -1,6 +1,6 @@
 ---
-title: "用户如何向本地 MDM 注册设备 - Configuration Manager | Microsoft Docs"
-description: "了解用户如何在 System Center Configuration Manager 中向本地移动设备管理注册设备。"
+title: "Como os usuários registram dispositivos com o MDM local – Configuration Manager | Microsoft Docs"
+description: "Entenda como os usuários registram dispositivos com o Gerenciamento de Dispositivo Móvel local no System Center Configuration Manager."
 ms.custom: na
 ms.date: 03/05/2017
 ms.prod: configuration-manager
@@ -18,62 +18,62 @@ manager: angrobe
 ms.openlocfilehash: 8c7438c2cc0bc66654eb3e74de10553df53181d9
 ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
 ms.translationtype: HT
-ms.contentlocale: zh-CN
+ms.contentlocale: pt-BR
 ms.lasthandoff: 08/07/2017
 ---
-# <a name="how-users-enroll-devices-with-on-premises-mobile-device-management-in-system-center-configuration-manager"></a>用户如何在 System Center Configuration Manager 中向本地移动设备管理注册设备
+# <a name="how-users-enroll-devices-with-on-premises-mobile-device-management-in-system-center-configuration-manager"></a>Como os usuários registram dispositivos com o Gerenciamento de Dispositivo Móvel local no System Center Configuration Manager
 
-*适用范围：System Center Configuration Manager (Current Branch)*
+*Aplica-se a: System Center Configuration Manager (Branch Atual)*
 
-借助 System Center Configuration Manager 本地移动设备管理，如果用户已获得注册权限（通过更新客户端设置的方式）并且设备已安装所需的根证书以与承载所需站点系统角色的服务器进行受信任的通信，则可以注册设备。 有关如何设置注册的详细信息，请参阅 [Set up device enrollment for On-premises Mobile Device Management in System Center Configuration Manager](../../mdm/get-started/set-up-device-enrollment-on-premises-mdm.md)（在 System Center Configuration Manager 中为本地移动设备管理设置设备注册）。  
+Com o Gerenciamento de Dispositivo Móvel Local do System Center Configuration Manager, os usuários poderão registrar dispositivos se receberam permissão de registro (por meio das configurações do cliente atualizadas) e se seus dispositivos tiverem o certificado raiz necessário instalado para ter uma comunicação confiável com os servidores que hospedam as funções do sistema de sites necessárias. Para obter mais informações sobre como configurar o registro, veja [Configurar o registro de dispositivo para o Gerenciamento de Dispositivo Móvel Local no System Center Configuration Manager](../../mdm/get-started/set-up-device-enrollment-on-premises-mdm.md).  
 
 > [!NOTE]  
->  Configuration Manager 的 Current Branch 支持针对运行以下操作系统的设备的本地移动设备管理中的注册：  
+>  O branch atual do Configuration Manager dá suporte ao registro no Gerenciamento de Dispositivo Móvel Local para dispositivos que executam os seguintes sistemas operacionais:  
 >   
-> -  Windows 10 企业版  
-> -   Windows 10 专业版  
-> -   Windows 10 协同版\(自 Configuration Manager 版本 1602 起\)  
-> -   Windows 10 移动版  
-> -   Windows 10 移动企业版
-> -   Windows 10 IoT 企业版   
+> -  Windows 10 Enterprise  
+> -   Windows 10 Pro  
+> -   Windows 10 Team \(a partir do Configuration Manager versão 1602\)  
+> -   Windows 10 Mobile  
+> -   Windows 10 Mobile Enterprise
+> -   Windows 10 IoT Enterprise   
 
-以下任务说明了如何注册和验证本地移动设备管理的计算机和设备的注册：  
+As seguintes tarefas explicam como registrar e verificar o registro de computadores e dispositivos para o Gerenciamento de Dispositivo Móvel Local:  
 
--   [注册 Windows 10 计算机](#bkmk_enrollDesk)  
+-   [Registrar um computador com Windows 10](#bkmk_enrollDesk)  
 
--   [注册 Windows 10 移动版设备](#bkmk_enrollMob)  
+-   [Registrar um dispositivo Windows 10 Mobile](#bkmk_enrollMob)  
 
--   [验证设备注册](#bkmk_verify)  
+-   [Verificar registro do dispositivo](#bkmk_verify)  
 
-##  <a name="bkmk_enrollDesk"></a> 注册 Windows 10 计算机  
+##  <a name="bkmk_enrollDesk"></a> Registrar um computador com Windows 10  
 
-1.  在 Windows 10 计算机上，转到“设置” 。  
+1.  Em um computador com Windows 10, vá para **Configurações**.  
 
-2.  单击“帐户” ，然后单击“工作单位访问” 。  
+2.  Clique em **Contas**e em **Acesso corporativo**.  
 
-3.  在“工作单位访问”下的“连接到工作单位或学校” 中，单击“连接” ，输入工作电子邮件地址，然后单击“继续” 。  
+3.  Em Acesso Corporativo sob **Conectar-se ao trabalho ou à escola**, clique em **Conectar**, insira seu endereço de email comercial e clique em **Continuar**.  
 
-4.  输入承载注册代理点站点系统角色的服务器的 FQDN，然后单击“继续”。  
+4.  Insira o FQDN do servidor que hospeda a função do sistema de sites do ponto de registro e clique em **Continuar**.  
 
-5.  在“连接到服务”中，输入你的工作电子邮件密码，然后单击“登录” 。  
+5.  Em Conectando a um serviço, insira sua senha de email comercial e clique em **Entrar**.  
 
-6.  单击“跳过”  以记住登录信息，不久过后将连接设备。  
+6.  Clique em **Ignorar** para memorizar as informações de entrada e, após alguns instantes, o dispositivo estará conectado.  
 
-##  <a name="bkmk_enrollMob"></a> 注册 Windows 10 移动版设备  
+##  <a name="bkmk_enrollMob"></a> Registrar um dispositivo Windows 10 Mobile  
 
-1.  在 Windows 10 移动版设备上，转到“设置” 。  
+1.  Em um dispositivo Windows 10 Mobile, vá para **Configurações**.  
 
-2.  单击“帐户” ，然后单击“工作单位访问” 。  
+2.  Clique em **Contas**e em **Acesso corporativo**.  
 
-3.  单击“连接” 。  
+3.  Clique em **Conectar**.  
 
-4.  输入你的工作电子邮件地址以及承载注册代理点站点系统角色的服务器的 FQDN。 单击“连接” 。  
+4.  Insira seu endereço de email comercial e o FQDN do servidor que hospeda a função do sistema de sites do ponto proxy do registro. Clique em **Conectar**.  
 
-5.  在下一个屏幕上，输入你的工作电子邮件地址和密码，然后单击“登录” 。 不久过后，设备将完成注册。 单击“Done”（完成） 。  
+5.  Na próxima tela, insira seu endereço de email comercial e a senha e clique em **Entrar**. Após alguns instantes, o dispositivo é registrado. Clique em **Concluído**.  
 
-##  <a name="bkmk_verify"></a> 验证设备注册  
- 可以在 Configuration Manager 控制台中验证是否已成功注册设备。  
+##  <a name="bkmk_verify"></a> Verificar registro do dispositivo  
+ É possível verificar se os dispositivos foram registrados com êxito no console do Configuration Manager.  
 
-1.  启动 Configuration Manager 控制台。  
+1.  Inicie o console do Configuration Manager.  
 
-2.  单击“关闭”  >  > 所需的站点系统角色之间进行受信任的通信需要此根证书。 列表中将显示已注册的设备。  
+2.  Clique em **Ativos e Conformidade** > **Visão Geral** > **Dispositivos**. O dispositivo registrado aparecerá na lista.  

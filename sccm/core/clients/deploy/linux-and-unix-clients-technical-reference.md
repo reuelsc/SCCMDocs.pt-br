@@ -1,6 +1,6 @@
 ---
-title: "UNIX/Linux 客户端组件服务和命令 | Microsoft Docs"
-description: "了解 System Center Configuration Manager 中 Linux 和 UNIX 客户端的组件服务和命令。"
+title: "Serviços e comandos de componentes de cliente UNIX/Linux | Microsoft Docs"
+description: "Saiba mais sobre os serviços e comandos de componentes em clientes Linux e UNIX no System Center Configuration Manager."
 ms.custom: na
 ms.date: 04/23/2017
 ms.prod: configuration-manager
@@ -17,28 +17,28 @@ manager: angrobe
 ms.openlocfilehash: 89668f3e2e0a3e2e0178e5b2c91b2508f583649f
 ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
 ms.translationtype: HT
-ms.contentlocale: zh-CN
+ms.contentlocale: pt-BR
 ms.lasthandoff: 08/07/2017
 ---
-# <a name="linux-and-unix-clients-component-services-and-commands-for-system-center-configuration-manager"></a>System Center Configuration Manager 的 UNIX 和 Linux 客户端组件服务和命令
+# <a name="linux-and-unix-clients-component-services-and-commands-for-system-center-configuration-manager"></a>Serviços e comandos de componentes de cliente Linux e UNIX para o System Center Configuration Manager
 
-*适用范围：System Center Configuration Manager (Current Branch)*
+*Aplica-se a: System Center Configuration Manager (Branch Atual)*
 
 
- 下表标识了适用于 Linux 和 UNIX 的 Configuration Manager 客户端的客户端组件服务。  
+ A tabela a seguir identifica os serviços do componente do cliente do Configuration Manager para Linux e UNIX.  
 
-|文件名|更多信息|  
+|Nome do arquivo|Mais informações|  
 |---------------|----------------------|  
-|ccmexec.bin|此服务等效于基于 Windows 的客户端上的 ccmexc 服务。 它负责与 Configuration Manager 站点系统角色的所有通信，并且还可通过与 omiserver.bin 服务通信，从本地计算机收集硬件清单。<br /><br /> 有关支持的命令行参数列表，请运行 **ccmexec -h**|  
-|omiserver.bin|此服务是 CIM 服务器。 CIM 服务器为被称为提供程序的可插拔软件模块提供框架。 提供程序与 Linux 和 UNIX 计算机资源进行交互，并且收集硬件清单数据。 例如， **进程内提供程序** Linux 计算机收集与 Linux 操作系统进程关联的数据。|  
+|ccmexec.bin|Esse serviço é equivalente ao serviço ccmexc em um cliente baseado em Windows. Ele é responsável por todas as comunicações com as funções de sistema de sites do Configuration Manager e também se comunica com o serviço de omiserver.bin para coletar o inventário de hardware do computador local.<br /><br /> Para obter uma lista de argumentos de linha de comando com suporte, execute **ccmexec -h**|  
+|omiserver.bin|Esse serviço é o servidor CIM. O servidor CIM fornece uma estrutura para módulos de software conectáveis chamados provedores. Os provedores interagem com os recursos de computador Linux e UNIX e coletam os dados de inventário de hardware. Por exemplo, o **provedor processo** para um Linux computador coleta os dados associados com os processos de sistema operacional Linux.|  
 
- 以下表列表命令可用于启动、 停止或重新启动上每个版本的 Linux 或 UNIX 的客户端服务 (ccmexec.bin 和 omiserver.bin)。 在启动或停止 ccmexec 服务时，omiserver 服务也会启动或停止。  
+ Os seguintes comandos da lista de tabelas que você pode usar para iniciar, parar ou reiniciar os serviços do cliente (CcmExec e omiserver) em cada versão do Linux ou UNIX. Ao iniciar ou parar o serviço ccmexec, o serviço de omiserver também é iniciado ou interrompido.  
 
-|操作系统|命令|  
+|Sistema operacional|Comandos|  
 |----------------------|--------------|  
-|通用代理<br /><br /> RHEL 4 和 SLES 9|启动： **/etc/init d/ccmexecd start**<br /><br /> 停止： **/etc/init d/ccmexecd stop**<br /><br /> 重启： **/etc/init d/ccmexecd restart**|  
-|Solaris 9|启动： **/etc/init d/ccmexecd start**<br /><br /> 停止： **/etc/init d/ccmexecd stop**<br /><br /> 重启： **/etc/init d/ccmexecd restart**|  
-|Solaris 10|启动：<br /><br /> **svcadm enable -s svc:/application/management/omiserver**<br /><br /> **svcadm enable -s svc:/application/management/ccmexecd**<br /><br /> 停止：<br /><br /> **svcadm disable -s svc:/application/management/ccmexecd**<br /><br /> **svcadm disable -s svc:/application/management/omiserver**|  
-|Solaris 11|启动：<br /><br /> **svcadm enable -s svc:/application/management/omiserver**<br /><br /> **svcadm enable -s svc:/application/management/ccmexecd**<br /><br /> 停止：<br /><br /> **svcadm disable -s svc:/application/management/ccmexecd**<br /><br /> **svcadm disable -s svc:/application/management/omiserver**|  
-|AIX|启动：<br /><br /> **startsrc -s omiserver**<br /><br /> **startsrc -s ccmexec**<br /><br /> 停止：<br /><br /> **stopsrc -s ccmexec**<br /><br /> **stopsrc -s omiserver**|  
-|HP-UX|启动： **/sbin/init.d/ccmexecd start**<br /><br /> 停止： **/sbin/init.d/ccmexecd stop**<br /><br /> 重启： **/sbin/init.d/ccmexecd restart**|  
+|Agente Universal<br /><br /> RHEL 4 e SLES 9|Início: **/etc/init d/ccmexecd start**<br /><br /> Parar: **/etc/init d/ccmexecd stop**<br /><br /> Reiniciar: **/etc/init d/ccmexecd restart**|  
+|Solaris 9|Início: **/etc/init d/ccmexecd start**<br /><br /> Parar: **/etc/init d/ccmexecd stop**<br /><br /> Reiniciar: **/etc/init d/ccmexecd restart**|  
+|Solaris 10|Início:<br /><br /> **svcadm enable -s svc:/application/management/omiserver**<br /><br /> **svcadm enable -s svc:/application/management/ccmexecd**<br /><br /> Parar:<br /><br /> **svcadm disable -s svc:/application/management/ccmexecd**<br /><br /> **svcadm disable -s svc:/application/management/omiserver**|  
+|Solaris 11|Início:<br /><br /> **svcadm enable -s svc:/application/management/omiserver**<br /><br /> **svcadm enable -s svc:/application/management/ccmexecd**<br /><br /> Parar:<br /><br /> **svcadm disable -s svc:/application/management/ccmexecd**<br /><br /> **svcadm disable -s svc:/application/management/omiserver**|  
+|AIX|Início:<br /><br /> **startsrc -s omiserver**<br /><br /> **startsrc -s ccmexec**<br /><br /> Parar:<br /><br /> **stopsrc -s ccmexec**<br /><br /> **stopsrc -s omiserver**|  
+|HP-UX|Início: **/sbin/init.d/ccmexecd start**<br /><br /> Parar: **/sbin/init.d/ccmexecd stop**<br /><br /> Reiniciar: **/sbin/init.d/ccmexecd restart**|  

@@ -1,6 +1,6 @@
 ---
-title: "Windows 客户端部署先决条件 | Microsoft Docs"
-description: "了解在 System Center Configuration Manager 中将客户端部署到 Windows 计算机的先决条件。"
+title: "Pré-requisitos de implantação do cliente Windows | Microsoft Docs"
+description: "Conheça os pré-requisitos para a implantação de clientes em computadores Windows no System Center Configuration Manager."
 ms.custom: na
 ms.date: 04/23/2017
 ms.prod: configuration-manager
@@ -18,220 +18,220 @@ manager: angrobe
 ms.openlocfilehash: 6636ce4d929326fad0210407d7634ea585eb0a2d
 ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
 ms.translationtype: HT
-ms.contentlocale: zh-CN
+ms.contentlocale: pt-BR
 ms.lasthandoff: 08/07/2017
 ---
-# <a name="prerequisites-for-deploying-clients-to-windows-computers-in-system-center-configuration-manager"></a>在 System Center Configuration Manager 中将客户端部署到 Windows 计算机的先决条件
+# <a name="prerequisites-for-deploying-clients-to-windows-computers-in-system-center-configuration-manager"></a>Pré-requisitos para a implantação de clientes em computadores com Windows no System Center Configuration Manager
 
-*适用范围：System Center Configuration Manager (Current Branch)*
+*Aplica-se a: System Center Configuration Manager (Branch Atual)*
 
-在环境中部署 Configuration Manager 客户端有下列外部依赖关系和产品内部依赖关系。 此外，每个客户端部署方法有其自己的先决条件，要成功安装客户端，必须满足其自己的先决条件。  
+A implantação de clientes do Configuration Manager em seu ambiente tem as seguintes dependências externas e dependências no produto. Além disso, cada método de implantação do cliente tem suas próprias dependências que devem ser atendidas para que as instalações do cliente sejam bem-sucedidas.  
 
-  请确保同时查看 [System Center Configuration Manager 支持的配置](../../../core/plan-design/configs/supported-configurations.md)以确认设备满足 Configuration Manager 客户端的最低硬件和操作系统要求。  
+  Certifique-se de examinar também [Configurações com suporte para o System Center Configuration Manager](../../../core/plan-design/configs/supported-configurations.md) para confirmar se os dispositivos atendem aos requisitos mínimos de hardware e de sistema operacional para o cliente do Configuration Manager.  
 
- 有关适用于 Linux 和 UNIX 的 Configuration Manager 客户端的先决条件的信息，请参阅[在 System Center Configuration Manager 中规划 Linux 和 UNIX 计算机的客户端部署](../../../core/clients/deploy/plan/planning-for-client-deployment-to-linux-and-unix-computers.md)。  
-
-> [!NOTE]  
->  本文中显示的软件版本号仅列出所需的最低版本号。  
-
-##  <a name="BKMK_prereqs_computers"></a>计算机客户端的先决条件  
- 使用下列信息来确定在计算机上安装 Configuration Manager 客户端时的先决条件。  
-
-### <a name="dependencies-external-to-configuration-manager"></a>Configuration Manager 的外部依赖关系  
-
-|||  
-|-|-|  
-|Windows Installer 版本 3.1.4000.2435|这是支持将 Windows Installer 更新文件 (.msp) 用于包和软件更新所必需的。|  
-|[KB2552033](http://go.microsoft.com/fwlink/p/?LinkId=240048)|如果启用了客户端请求安装，则必须在运行 Windows Server 2008 R2 的站点服务器上安装此修补程序。|  
-|Microsoft 后台智能传输服务 (BITS) 2.5 版|需要允许客户端计算机和 Configuration Manager 站点系统之间的受限数据传输。 客户端安装过程中不会自动下载 BITS。 在计算机上安装了 BITS 后，通常需要重启来完成安装。<br /><br /> 大多数操作系统都包括 BITS，但如果未包括（例如，Windows Server 2003 R2 SP2），则必须在安装 Configuration Manager 客户端之前安装 BITS。|  
-|Microsoft 任务计划程序|在客户端上启用此服务，以便完成客户端安装。|  
-
-### <a name="dependencies-external-to-configuration-manager-and-automatically-downloaded-during-installation"></a>Configuration Manager 的外部依赖关系及安装过程中的自动下载  
- Configuration Manager 客户端有一些可能的外部依赖关系。 这些依赖关系取决于操作系统以及客户端计算机上安装的软件。  
-
- 如果需要这些依赖关系来完成客户端安装，则它们将随客户端软件一起自动安装。  
-
-|||  
-|-|-|  
-|Windows Update 代理版本 7.0.6000.363|Windows 要求支持更新检测和部署。|  
-|Microsoft Core XML Services (MSXML) 版本 6.20.5002 或更高版本|要求支持在 Windows 中处理 XML 文档。|  
-|Microsoft 远程差分压缩 (RDC)|需要该项以优化网络上的数据传输。|  
-|Microsoft Visual C++ 2013 可再发行组件版本 12.0.21005.1|需要该项以支持客户端操作。 客户端计算机上安装此更新后，可能需要重新启动才能完成安装。|  
-|Microsoft Visual C++ 2005 可再发行组件版本 8.0.50727.42|对于 1606 或更早版本，需要该项以支持 Microsoft SQL Server Compact 操作。|  
-|Windows 映像 API 6.0.6001.18000|需要该项以允许 Configuration Manager 管理 Windows 映像 (.wim) 文件。|  
-|Microsoft 策略平台 1.2.3514.0|需要该项以允许客户端评估符合性设置。|  
-|Microsoft Silverlight 5.1.41212.0（从 Configuration Manager 版本 1602 开始）|需要该项以支持应用程序目录网站用户体验。|  
-|Microsoft .NET Framework 版本 4.5.2|需要该项以支持客户端操作。 如果没有安装 Microsoft .NET Framework 4.5 或更高版本，那么将自动将其安装在客户端计算机上。 有关详细信息，请参阅[有关 Microsoft .NET Framework 版本 4.5.2 的其他详细信息](#dotNet)。|  
-|Microsoft SQL Server Compact 3.5 SP2 组件|需要该项以存储与客户端操作相关的信息。|  
-|Microsoft Windows 映像组件|对于 64 位计算机，适用于 Windows Server 2003 或 Windows XP SP2 的 Microsoft .NET Framework 4.0 需要该组件。|
-|Microsoft Intune 电脑软件客户端|你不能在同一台电脑上运行 Intune 电脑软件客户端和 Configuration Manager 客户端。 在安装 Configuration Manager 客户端之前，请确保删除 Intune 客户端。|
-
-####  <a name="dotNet"></a>有关 Microsoft .NET Framework 版本 4.5.2 的其他详细信息  
+ Para obter informações sobre os pré-requisitos do cliente do Configuration Manager para Linux e UNIX, consulte [Planejando a implantação de cliente em computadores Linux e UNIX no System Center Configuration Manager](../../../core/clients/deploy/plan/planning-for-client-deployment-to-linux-and-unix-computers.md).  
 
 > [!NOTE]  
->  对 .NET 4.0、4.5 和 4.5.1 的支持已于 2016 年 1 月 12 日过期。 有关详细信息，请参阅 support.microsoft.com 处的 [Microsoft .NET Framework 支持生命周期策略常见问题解答](https://support.microsoft.com/gp/framework_faq?WT.mc_id=azurebg_email_Trans_943_NET452_Update)。  
+>  Os números de versão de software mostrados neste artigo listam somente os números de versão mínimos.  
 
- 可能需要重启以完成安装 Microsoft .NET Framework 版本 4.5.2。 用户将在系统托盘中看到 **需要重启** 通知。  需要客户端计算机重启的常见场景：  
+##  <a name="BKMK_prereqs_computers"></a> Pré-requisitos para clientes de computadores  
+ Use as informações a seguir para determinar os pré-requisitos ao instalar o cliente do Configuration Manager em computadores.  
 
--   计算机上正在运行.NET 应用程序或服务。  
-
--   .NET 安装所需的一个或多个软件更新丢失。  
-
--   计算机正在等待从 .NET Framework 软件更新的先前安装中重启。  
-
- 安装.NET Framework 4.5.2 后，它的其他更新可能会随后安装，这可能需要另外重启计算机。  
-
-### <a name="configuration-manager-dependencies"></a>Configuration Manager 依赖关系  
- 有关以下站点系统角色的详细信息，请参阅[为 System Center Configuration Manager 客户端确定站点系统角色](../../../core/clients/deploy/plan/determine-the-site-system-roles-for-clients.md)  
+### <a name="dependencies-external-to-configuration-manager"></a>Dependências externas ao Configuration Manager  
 
 |||  
 |-|-|  
-|管理点|尽管部署 Configuration Manager 客户端不需要管理点，但要在客户端计算机和 Configuration Manager 服务器之间传输信息，则必须有管理点。 没有管理点，就无法管理客户端计算机。|  
-|分发点|分发点是可选的，但建议为客户端部署使用该站点系统角色。 所有分发点都承载客户端源文件，从而使计算机能够在客户端部署过程中找到从中下载客户端源文件的最近分发点。 如果站点没有分发点，则计算机从其管理点中下载客户端源文件。|  
-|回退状态点|回退状态点是可选的，但建议为客户端部署使用该站点系统角色。 当 Configuration Manager 站点中的计算机不能与管理点通信时，回退状态点将跟踪客户端部署并允许这些计算机发送状态消息。|  
-|Reporting Services 点|Reporting Services 点是可选的，但建议使用该站点系统角色，它能够显示与客户端部署和管理相关的报表。 有关详细信息，请参阅 [System Center Configuration Manager 中的报表](../../../core/servers/manage/reporting.md)。|  
+|Windows Installer versão 3.1.4000.2435|Necessário para oferecer suporte ao uso dos arquivos de atualização (. msp) do Windows Installer para pacotes e atualizações de software.|  
+|[KB2552033](http://go.microsoft.com/fwlink/p/?LinkId=240048)|Instale esse hotfix nos servidores do site que executam o Windows Server 2008 R2 quando a instalação do cliente por push for habilitada.|  
+|Serviço de Transferência Inteligente em Segundo Plano (BITS) da Microsoft versão 2.5|Necessário para permitir transferências de dados limitadas entre o computador cliente e os sistemas de sites do Configuration Manager. O BITS não é baixado automaticamente durante a instalação do cliente. Quando o BITS é instalado em computadores, normalmente é necessário reinicializar para concluir a instalação.<br /><br /> A maioria dos sistemas operacionais inclui o BITS, mas se eles não o incluem (por exemplo, Windows Server 2003 R2 SP2), é necessário instalar o BITS antes de instalar o cliente do Configuration Manager.|  
+|Agendador de Tarefas Microsoft|Habilite esse serviço no cliente para que a instalação do cliente seja concluída.|  
 
-### <a name="installation-method-dependencies"></a>安装方法依赖关系  
- 以下先决条件特定于客户端的各种不同安装方法。  
+### <a name="dependencies-external-to-configuration-manager-and-automatically-downloaded-during-installation"></a>Dependências externas ao Configuration Manager e baixadas automaticamente durante a instalação  
+ O cliente do Configuration Manager tem algumas dependências externas potenciais. Essas dependências dependem do sistema operacional e do software instalado no computador cliente.  
 
--   客户端请求安装  
+ Se essas dependências são necessárias para concluir a instalação do cliente, elas são instaladas automaticamente com o software cliente.  
 
-    -   客户端请求安装帐户用于连接到计算机以安装客户端，并且是在“客户端请求安装属性”  对话框的“帐户”  选项卡上指定的。 该帐户必须是目标计算机上本地管理员组的成员。  
+|||  
+|-|-|  
+|Windows Update Agent versão 7.0.6000.363|Necessário para o Windows a fim de oferecer suporte à detecção de atualização e implantação.|  
+|Microsoft Core XML Services (MSXML) versão 6.20.5002 ou posterior|Necessário para oferecer suporte ao processamento de documentos XML no Windows.|  
+|Compactação Diferencial Remota da Microsoft (RDC)|Necessário para otimizar a transmissão de dados pela rede.|  
+|Microsoft Visual C++ 2013 Redistribuível versão 12.0.21005.1|Necessário para oferecer suporte às operações do cliente. Quando esta atualização é instalada em computadores cliente, pode ser necessário reinicializar para concluir a instalação.|  
+|Microsoft Visual C++ 2005 Redistribuível versão 8.0.50727.42|Para a versão 1606 e anteriores, necessário para dar suporte a operações do Microsoft SQL Server Compact.|  
+|APIs do Windows Imaging 6.0.6001.18000|Necessário para permitir que o Configuration Manager gerencie arquivos de imagem (.wim) do Windows.|  
+|Microsoft Policy Platform 1.2.3514.0|Necessário para permitir que clientes avaliem as configurações de conformidade.|  
+|Microsoft Silverlight 5.1.41212.0 (a partir do Configuration Manager versão 1602)|Necessário para oferecer suporte à experiência do usuário de site da Web do catálogo de aplicativos.|  
+|Microsoft .NET Framework versão 4.5.2|Necessário para oferecer suporte às operações do cliente. Instalado automaticamente no computador cliente se ele não contém o Microsoft .NET Framework versão 4.5 ou posterior instalado. Para obter mais informações, consulte [Detalhes adicionais sobre o Microsoft .NET Framework versão 4.5.2](#dotNet).|  
+|Componentes do Microsoft SQL Server Compact 3.5 SP2|Necessário para armazenar informações relacionadas às operações do cliente.|  
+|Componentes do Microsoft Windows Imaging|Necessários para o Microsoft .NET Framework 4.0 para o Windows Server 2003 ou o Windows XP SP2 para computadores de 64 bits.|
+|Cliente de software do computador do Microsoft Intune|Você não pode executar o cliente de software do computador do Intune e o cliente do Configuration Manager no mesmo computador. Remova o cliente do Intune antes de instalar o cliente do Configuration Manager.|
 
-         如果未指定客户端请求安装帐户，则使用站点服务器计算机帐户。  
+####  <a name="dotNet"></a> Detalhes adicionais sobre o Microsoft .NET Framework versão 4.5.2  
 
-    -   必须已通过至少一种 Configuration Manager 发现方法发现要在其中安装客户端的计算机。  
+> [!NOTE]  
+>  Em 12 de janeiro de 2016, o suporte ao .NET 4.0, 4.5 e 4.5.1 expirou. Para obter mais informações, consulte [Perguntas frequentes sobre a política do ciclo de vida de suporte do Microsoft .NET Framework](https://support.microsoft.com/gp/framework_faq?WT.mc_id=azurebg_email_Trans_943_NET452_Update) em support.microsoft.com.  
 
-    -   计算机具有 ADMIN$ 共享。  
+ Uma reinicialização pode ser necessária para concluir a instalação do Microsoft .NET Framework versão 4.5.2. O usuário verá a notificação **Reinicialização necessária** na bandeja do sistema.  Cenários comuns que exigem a reinicialização dos computadores cliente:  
 
-    -   如果要对发现的资源自动请求 Configuration Manager 客户端，则必须在“客户端请求安装属性”对话框中选择“对已分配资源启用客户端请求安装”。  
+-   Há aplicativos ou serviços do .NET em execução no computador.  
 
-    -   客户端计算机必须能够联系分发点或管理点以便下载支持文件。  
+-   Uma ou mais atualizações de software necessárias para a instalação do .NET estão ausentes.  
 
-     必须具有下列安全权限才能通过使用客户端请求安装 Configuration Manager 客户端：  
+-   O computador está aguardando uma reinicialização da instalação anterior das atualizações de software do .NET Framework.  
 
-    -   配置客户端请求安装帐户：“站点”  对象的 **修改** 和读取权限。  
+ Após a instalação do .NET Framework 4.5.2, atualizações adicionais podem ser instaladas posteriormente, o que pode exigir outra reinicialização do computador.  
 
-    -   使用客户端请求将客户端安装到集合、设备和查询：“集合”对象的 **修改资源** 和 **读取** 权限。  
+### <a name="configuration-manager-dependencies"></a>Dependências do Configuration Manager  
+ Para obter mais informações sobre as seguintes funções de sistema de sites, consulte [Adicionar as funções do sistema de sites para os clientes do System Center Configuration Manager](../../../core/clients/deploy/plan/determine-the-site-system-roles-for-clients.md)  
 
-     “基础结构管理员”  安全角色包括管理客户端请求安装所需的权限。  
+|||  
+|-|-|  
+|Ponto de gerenciamento|Apesar de o ponto de gerenciamento não ser necessário para implantar o cliente do Configuration Manager, será necessário ter um ponto de gerenciamento para transferir informações entre os computadores cliente e os servidores do Configuration Manager. Sem um ponto de gerenciamento não é possível gerenciar computadores cliente.|  
+|Ponto de distribuição|O ponto de distribuição é uma função do sistema de site opcional, mas recomendável, para a implantação de clientes. Todos os pontos de distribuição hospedam arquivos de origem de cliente, o que permite que computadores encontrem o ponto de distribuição mais próximo do qual baixar os arquivos de origem de cliente durante a implantação do cliente. Se o site não possui um ponto de distribuição, os computadores baixam os arquivos de origem de cliente de seu ponto de gerenciamento.|  
+|Ponto de status de fallback|O ponto de status de fallback é uma função do sistema de site opcional, mas recomendável, para a implantação de clientes. O ponto de status de fallback controla a implantação do cliente e habilita computadores no site do Configuration Manager para enviar mensagens de estado quando eles não podem se comunicar com um ponto de gerenciamento.|  
+|Ponto do Reporting Services|O ponto do Reporting Services é uma função do sistema de site opcional, mas recomendável, que pode exibir relatórios relacionados a implantação e gerenciamento do cliente. Para obter mais informações, consulte [Relatórios no System Center Configuration Manager](../../../core/servers/manage/reporting.md).|  
 
--   基于软件更新点的安装  
+### <a name="installation-method-dependencies"></a>Dependências do método de instalação  
+ Os pré-requisitos a seguir são específicos para os diversos métodos de instalação do cliente.  
 
-    -   如果尚未扩展 Active Directory 架构，或者要从另一个林中安装客户端，则必须使用组策略在计算机的注册表中设置 CCMSetup.exe 的安装属性。 有关详细信息，请参阅  [How to Provision Client Installation Properties (Group Policy and Software Update-Based Client Installation)](../../../core/clients/deploy/deploy-clients-to-windows-computers.md#BKMK_Provision)。  
+-   Instalação do cliente por push  
 
-    -   必须将 Configuration Manager 客户端发布到软件更新点。  
+    -   As contas de instalação do cliente por push são usadas para conectar computadores para instalar o cliente e são especificadas na guia **Contas** da caixa de diálogo **Propriedades da Instalação do Cliente por Push** . A conta deve ser membro do grupo local de administradores no computador de destino.  
 
-    -   客户端计算机必须能够联系分发点或管理点以便下载支持文件。  
+         Se você não especifica uma conta de instalação do cliente por push, a conta de computador do servidor do site é usada.  
 
-     有关管理 Configuration Manager 软件更新所需的安全权限，请参阅 [System Center Configuration Manager 中软件更新的先决条件](../../../sum/plan-design/prerequisites-for-software-updates.md)。  
+    -   O computador no qual se está instalando o cliente precisa ter sido descoberto por ao menos um método de descoberta do Configuration Manager.  
 
--   基于组策略的安装  
+    -   O computador tem um compartilhamento Admin$.  
 
-    -   如果尚未扩展 Active Directory 架构，或者要从另一个林中安装客户端，则必须使用组策略在计算机的注册表中设置 CCMSetup.exe 的安装属性。 有关详细信息，请参阅  [How to Provision Client Installation Properties (Group Policy and Software Update-Based Client Installation)](../../../core/clients/deploy/deploy-clients-to-windows-computers.md#BKMK_Provision)。  
+    -   **Habilitar a instalação do cliente por push para recursos atribuídos** deve estar selecionado na caixa de diálogo **Propriedades da Instalação do Cliente por Push** se você deseja usar automaticamente o cliente do Configuration Manager por push para recursos descobertos.  
 
-    -   客户端计算机必须能够联系管理点以便下载支持文件。  
+    -   O computador cliente deve ser capaz de contatar um ponto de distribuição ou um ponto de gerenciamento para baixar os arquivos de suporte.  
 
--   基于登录脚本的安装  
+     É necessário ter as seguintes permissões de segurança para instalar o cliente do Configuration Manager usando o push de clientes:  
 
-     除非您在命令提示符处指定了包含命令行属性 **ccmsetup /source**的 CCMSetup.exe，否则客户端计算机必须能够联系分发点或管理点以便下载支持文件。  
+    -   Para configurar a conta de Instalação do Cliente por Push: permissão **Modificar** e Ler para o objeto **Site** .  
 
--   手动安装  
+    -   Para usar o cliente por push para instalar coleções, dispositivos e consultas: permissão **Modificar Recurso** e **Ler** para o objeto de Coleção.  
 
-     除非您在命令提示符处指定了包含命令行属性 **ccmsetup /source**的 CCMSetup.exe，否则客户端计算机必须能够联系分发点或管理点以便下载支持文件。  
+     A função de segurança **Administrador de Infraestrutura** inclui as permissões necessárias para gerenciar a instalação do cliente por push.  
 
--   工作组计算机安装  
+-   Instalação baseada em ponto de atualização de software  
 
-     为了访问 Configuration Manager 站点服务器域中的资源，必须为该站点配置网络访问帐户。  
+    -   Se o esquema do Active Directory não foi estendido ou você está instalando clientes de outra floresta, as propriedades da instalação para o CCMSetup.exe devem ser provisionadas no Registro do computador usando a Política de Grupo. Para obter mais informações, consulte  [How to Provision Client Installation Properties (Group Policy and Software Update-Based Client Installation)](../../../core/clients/deploy/deploy-clients-to-windows-computers.md#BKMK_Provision).  
 
-     有关如何配置“网络访问帐户”的详细信息，请参阅 [System Center Configuration Manager 中内容管理的基本概念](../../plan-design/hierarchy/fundamental-concepts-for-content-management.md)。  
+    -   O cliente do Configuration Manager deve ser publicado no ponto de atualização de software.  
 
--   基于软件分发的安装（仅针对升级）  
+    -   O computador cliente deve ser capaz de contatar um ponto de distribuição ou um ponto de gerenciamento a fim de baixar os arquivos de suporte.  
 
-    -   如果尚未扩展 Active Directory 架构，或者要从另一个林中安装客户端，则必须使用组策略在计算机的注册表中设置 CCMSetup.exe 的安装属性。 有关详细信息，请参阅 [How to Provision Client Installation Properties (Group Policy and Software Update-Based Client Installation)](../../../core/clients/deploy/deploy-clients-to-windows-computers.md#BKMK_Provision)。  
+     Para conhecer as permissões de segurança necessárias para gerenciar atualizações de software do Configuration Manager, consulte [Pré-requisitos para atualizações de software no System Center Configuration Manager](../../../sum/plan-design/prerequisites-for-software-updates.md).  
 
-    -   客户端计算机必须能够联系分发点或管理点以便下载支持文件。  
+-   Instalação baseada na Política de Grupo  
 
-     有关使用应用程序管理升级 Configuration Manager 客户端所需的安全权限，请参阅[应用程序管理的安全和隐私](../../../apps/plan-design/security-and-privacy-for-application-management.md)。  
+    -   Se o esquema do Active Directory não foi estendido ou você está instalando clientes de outra floresta, as propriedades da instalação para o CCMSetup.exe devem ser provisionadas no Registro do computador usando a Política de Grupo. Para obter mais informações, consulte  [How to Provision Client Installation Properties (Group Policy and Software Update-Based Client Installation)](../../../core/clients/deploy/deploy-clients-to-windows-computers.md#BKMK_Provision).  
 
--   自动客户端升级  
+    -   O computador cliente deve ser capaz de contatar um ponto de gerenciamento para baixar os arquivos de suporte.  
 
-     你必须是“完全权限管理员”  安全角色的成员才能配置自动客户端升级。  
+-   Instalação baseada em script de logon  
 
-### <a name="firewall-requirements"></a>防火墙要求  
- 如果站点系统服务器与你想要在其上安装 Configuration Manager 客户端的计算机之间存在防火墙，请参阅 [System Center Configuration Manager 中客户端的 Windows 防火墙和端口设置](../../../core/clients/deploy/windows-firewall-and-port-settings-for-clients.md)。  
+     O computador cliente deve conseguir contatar um ponto de distribuição ou um ponto de gerenciamento a fim de baixar os arquivos de suporte a menos que, no prompt de comando, você especificou o CCMSetup.exe com a propriedade de linha de comando **ccmsetup /source**.  
 
-##  <a name="BKMK_prereqs_mobiledevices"></a>移动设备客户端的先决条件  
- 使用下列信息来确定在移动设备上安装 Configuration Manager 客户端和使用 Configuration Manager 注册这些设备时的先决条件。  
+-   Instalação manual  
 
-### <a name="dependencies-external-to-configuration-manager"></a>Configuration Manager 的外部依赖关系  
+     O computador cliente deve conseguir contatar um ponto de distribuição ou um ponto de gerenciamento a fim de baixar os arquivos de suporte a menos que, no prompt de comando, você especificou o CCMSetup.exe com a propriedade de linha de comando **ccmsetup /source**.  
 
--   Microsoft 企业证书颁发机构 (CA) 及证书模板，用于部署和管理移动设备所需的证书。  
+-   Instalação de computador do grupo de trabalho  
 
-     颁发 CA 必须在注册过程中自动批准来自移动设备用户的证书请求。  
+     Para acessar recursos no domínio de servidor do site do Configuration Manager, a conta de acesso à rede deve ser configurada para o site.  
 
-     有关证书要求的详细信息，请参阅 [System Center Configuration Manager 中证书配置文件的安全和隐私](../../../protect/plan-design/security-and-privacy-for-certificate-profiles.md)。  
+     Para obter mais informações sobre como configurar a Conta de Acesso à Rede, consulte [Conceitos fundamentais para o gerenciamento de conteúdo no System Center Configuration Manager](../../plan-design/hierarchy/fundamental-concepts-for-content-management.md).  
 
--   一个安全组，其中包含可注册其移动设备的用户。  
+-   Instalação baseada em distribuição de software (somente para atualizações)  
 
-     此安全组用于配置在移动设备注册过程中使用的证书模板。  
+    -   Se o esquema do Active Directory não foi estendido ou você está instalando clientes de outra floresta, as propriedades da instalação para o CCMSetup.exe devem ser provisionadas no Registro do computador usando a Política de Grupo. Para obter mais informações, consulte [How to Provision Client Installation Properties (Group Policy and Software Update-Based Client Installation)](../../../core/clients/deploy/deploy-clients-to-windows-computers.md#BKMK_Provision).  
 
--   可选但建议使用：为您将在其上安装注册代理点的站点系统服务器名称配置的 DNS 别名（CNAME 记录），名为 **ConfigMgrEnroll** 。  
+    -   O computador cliente deve ser capaz de contatar um ponto de distribuição ou um ponto de gerenciamento para baixar os arquivos de suporte.  
 
-     必须有此 DNS 别名，才能支持注册服务自动发现：如果您未配置此 DNS 记录，则用户必须在注册过程中手动指定注册代理点的站点系统服务器名称。  
+     Para conhecer as permissões de segurança necessárias para atualizar o cliente do Configuration Manager usando o gerenciamento de aplicativos, consulte [Segurança e privacidade para gerenciamento de aplicativos no Configuration Manager](../../../apps/plan-design/security-and-privacy-for-application-management.md).  
 
--   将运行注册点和注册代理点站点系统角色的计算机的站点系统角色依赖关系。  
+-   Atualizações automáticas do cliente  
 
-     请参阅[站点系统服务器支持的操作系统](../../../core/plan-design/configs/supported-operating-systems-for-site-system-servers.md)。  
+     Você deve ser um membro da função de segurança **Administrador Completo** para configurar atualizações automáticas do cliente.  
 
-### <a name="configuration-manager-dependencies"></a>Configuration Manager 依赖关系  
- 有关以下站点系统角色的详细信息，请参阅[为 System Center Configuration Manager 客户端确定站点系统角色](../../../core/clients/deploy/plan/determine-the-site-system-roles-for-clients.md)。  
+### <a name="firewall-requirements"></a>Requisitos de firewall  
+ Se houver um firewall entre os servidores de sistema de site e os computadores nos quais você quer instalar o cliente do Configuration Manager, consulte [Configurações do Firewall do Windows e de porta para computadores cliente no System Center Configuration Manager](../../../core/clients/deploy/windows-firewall-and-port-settings-for-clients.md).  
 
--   为 HTTPS 客户端连接配置并为移动设备启用的管理点  
+##  <a name="BKMK_prereqs_mobiledevices"></a> Pré-requisitos para clientes de dispositivos móveis  
+ Use as informações a seguir para determinar os pré-requisitos ao instalar o cliente do Configuration Manager em dispositivos móveis e use o Configuration Manager para registrá-los.  
 
-     必须使用管理点才能在移动设备上安装 Configuration Manager 客户端。 除了 HTTPS 要求和为移动设备启用的要求外，还必须将管理点配置为具有 Internet FQDN 并接受来自 Internet 的客户端连接。  
+### <a name="dependencies-external-to-configuration-manager"></a>Dependências externas ao Configuration Manager  
 
--   注册点和注册代理点  
+-   Uma AC (autoridade de certificação) corporativa com modelos de certificado para implantar e gerenciar os certificados necessários para dispositivos móveis.  
 
-     注册代理点管理来自移动设备的注册请求，注册点完成注册过程。 注册点必须位于站点服务器所在的 Active Directory 林中，但注册代理点则可位于另一个林中。  
+     Uma AC emissora deve aprovar automaticamente as solicitações de certificados de usuários de dispositivos móveis durante o processo de registro.  
 
--   移动设备注册的客户端设置  
+     Para obter mais informações sobre os requisitos de certificado, consulte [Segurança e privacidade de perfis de certificado no System Center Configuration Manager](../../../protect/plan-design/security-and-privacy-for-certificate-profiles.md).  
 
-     配置客户端设置以允许用户注册移动设备并至少配置一个注册配置文件。  
+-   Um grupo de segurança que contém os usuários que podem registrar seus dispositivos móveis.  
 
--   Reporting Services 点  
+     Esse grupo de segurança é usado para configurar o modelo de certificado usado durante o registro do dispositivo móvel.  
 
-     Reporting Services 点是可选的，但建议使用该站点系统角色，它能够显示与移动设备注册和客户端管理相关的报表。  
+-   Opcional, mas recomendado: um alias DNS (registro CNAME) denominado **ConfigMgrEnroll** configurado para o nome do servidor do sistema de sites em que você instalar o ponto proxy do registro.  
 
-     有关详细信息，请参阅 [System Center Configuration Manager 中的报表](../../../core/servers/manage/reporting.md)。  
+     Este alias DNS é necessário para dar suporte à descoberta automática para o serviço de registro: se você não configurar esse registro DNS, os usuários deverão especificar manualmente o nome do servidor de sistema de site para o ponto proxy do registro como parte do processo de registro.  
 
--   要针对移动设备配置注册，你必须具有下列安全权限：  
+-   Dependências da função do sistema de site para computadores que executam as funções do sistema de site do ponto de registro e do ponto proxy do registro.  
 
-    -   添加、修改和删除注册站点系统角色：“站点”  对象的 **修改** 权限。  
+     Consulte [Sistemas operacionais com suporte para servidores de sistema de sites](../../../core/plan-design/configs/supported-operating-systems-for-site-system-servers.md).  
 
-    -   配置客户端设置以供注册：默认客户端设置需要“站点”  对象的 **修改** 权限，自定义客户端设置需要 **客户端代理**  权限。  
+### <a name="configuration-manager-dependencies"></a>Dependências do Configuration Manager  
+ Para obter mais informações sobre as seguintes funções de sistema de sites, consulte [Adicionar as funções do sistema de sites para os clientes do System Center Configuration Manager](../../../core/clients/deploy/plan/determine-the-site-system-roles-for-clients.md).  
 
-     “完全权限管理员”  安全角色包括配置注册站点系统角色所需的权限。  
+-   Ponto de gerenciamento que está configurado para conexões de clientes HTTP e habilitado para dispositivos móveis  
 
-     要管理注册的移动设备，你必须具有下列安全权限：  
+     Um ponto de gerenciamento é sempre necessário para instalar o cliente do Configuration Manager em dispositivos móveis. Além dos requisitos de configuração do HTTPS e de estar habilitado para dispositivos móveis, o ponto de gerenciamento deve ser configurado com um FQDN de Internet e deve aceitar conexões de cliente da Internet.  
 
-    -   擦除或停用移动设备：“集合”  对象的 **删除资源** 权限。  
+-   Ponto de registro e ponto proxy do registro  
 
-    -   取消擦除或停用命令：“集合”  对象的 **删除资源** 权限。  
+     O ponto proxy do registro gerencia as solicitações de registro dos dispositivos móveis e o ponto de registro conclui o processo de registro. O ponto de registro deve estar na mesma floresta do Active Directory que o servidor do site, mas o ponto proxy do registro pode estar em outra floresta.  
 
-    -   允许和阻止移动设备：“集合”  对象的 **修改资源** 权限。  
+-   Configurações do cliente para registro do dispositivo móvel  
 
-    -   远程锁定或重置移动设备上的密码：“集合”  对象的 **修改资源** 权限。  
+     Defina as configurações de cliente para permitir que os usuários registrem dispositivos móveis e configurem pelo menos um perfil de registro.  
 
-     “操作管理员”  安全角色包括管理移动设备所需的权限。  
+-   Ponto do Reporting Services  
 
-     有关如何配置安全权限的详细信息，请参阅 [Fundamentals of role-based administration for System Center Configuration Manager](../../../core/understand/fundamentals-of-role-based-administration.md) 和  [Configure role-based administration for System Center Configuration Manager](../../../core/servers/deploy/configure/configure-role-based-administration.md)。  
+     O ponto do Reporting Services é uma função do sistema de site opcional, mas recomendada, que pode exibir relatórios relacionados ao registro de dispositivo móvel e gerenciamento de clientes.  
 
-### <a name="firewall-requirements"></a>防火墙要求  
- 诸如路由器和防火墙以及 Windows 防火墙（如果适用）等干预网络设备必须允许与移动设备注册相关联的通讯：  
+     Para obter mais informações, consulte [Relatórios no System Center Configuration Manager](../../../core/servers/manage/reporting.md).  
 
--   移动设备和注册代理点之间：HTTPS（默认情况下为 TCP 443）  
+-   Para configurar o registro para dispositivos móveis, você deve ter as seguintes permissões de segurança:  
 
--   注册代理点和注册点之间：HTTPS（默认情况下为 TCP 443）  
+    -   Para adicionar, modificar e excluir as funções do sistema de site de registro: permissão **Modificar** para o objeto **Site** .  
 
- 如果你使用代理 Web 服务器，则必须针对 SSL 隧道对其进行配置；移动设备不支持 SSL 桥接。  
+    -   Para definir as configurações de cliente para registro: as configurações de cliente padrão exigem a permissão **Modificar** para o objeto de **Site** , e as configurações de cliente personalizadas exigem as permissões de **Agente cliente**  .  
+
+     A função de segurança **Administrador Completo** inclui as permissões necessárias para configurar as funções do sistema de site de registro.  
+
+     Para gerenciar os dispositivos móveis inscritos, você deve ter as seguintes permissões de segurança:  
+
+    -   Para apagar ou desativar um dispositivo móvel: **Excluir recurso** para o objeto de **Coleção** .  
+
+    -   Para cancelar um comando apagar ou desativar: **Excluir recurso** para o objeto de **Coleção** .  
+
+    -   Para permitir e bloquear dispositivos móveis: **Modificar recurso** para o objeto de **Coleção** .  
+
+    -   Para um bloqueio remoto ou redefinição de senha em um dispositivo móvel: **Modificar** recurso para o objeto de **Coleção** .  
+
+     A função de segurança **Administrador de Operações** inclui as permissões necessárias para gerenciar dispositivos móveis.  
+
+     Para obter mais informações sobre como configurar as permissões de segurança, veja [Fundamentals of role-based administration for System Center Configuration Manager](../../../core/understand/fundamentals-of-role-based-administration.md) e  [Configure role-based administration for System Center Configuration Manager](../../../core/servers/deploy/configure/configure-role-based-administration.md).  
+
+### <a name="firewall-requirements"></a>Requisitos de firewall  
+ Os dispositivos de rede intermediária, como roteadores e firewalls, e Windows Firewall, se aplicável, devem permitir o tráfego associado ao registro de dispositivo móvel:  
+
+-   Entre os dispositivos móveis e o ponto proxy do registro: HTTPS (por padrão, TCP 443)  
+
+-   Entre o ponto proxy do registro e o ponto de registro: HTTPS (por padrão, TCP 443)  
+
+ Se você usar um servidor Web proxy, ele deverá ser configurado para túnel SSL; a ponte SSL não tem suporte para dispositivos móveis.  

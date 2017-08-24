@@ -1,6 +1,6 @@
 ---
-title: "监视客户端部署状态 | Microsoft Docs"
-description: "在 System Center Configuration Manager 中监视客户端部署状态。"
+title: "Monitorar o status de implantação do cliente | Microsoft Docs"
+description: "Monitore o status de implantação do cliente no System Center Configuration Manager."
 ms.custom: na
 ms.date: 04/23/2017
 ms.prod: configuration-manager
@@ -18,47 +18,47 @@ manager: angrobe
 ms.openlocfilehash: 3d9d02d8c56aea17e563112f92173c2b56781da6
 ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
 ms.translationtype: HT
-ms.contentlocale: zh-CN
+ms.contentlocale: pt-BR
 ms.lasthandoff: 08/07/2017
 ---
-# <a name="how-to-monitor-client-deployment-status-in-system-center-configuration-manager"></a>如何在 System Center Configuration Manager 中监视客户端部署状态
+# <a name="how-to-monitor-client-deployment-status-in-system-center-configuration-manager"></a>Como monitorar o status de implantação do cliente no System Center Configuration Manager
 
-*适用范围：System Center Configuration Manager (Current Branch)*
+*Aplica-se a: System Center Configuration Manager (Branch Atual)*
 
-在站点间部署客户端需要时间，并且首次进行某些安装并不会成功。 System Center Configuration Manager 控制台提供了一种通过实时报告客户端部署状态，从而关注集合内客户端部署的方法。  
+Implantar clientes no seu site leva tempo e algumas instalações não são bem-sucedidas na primeira vez. O console do System Center Configuration Manager fornece uma maneira de você ficar de olho nas implantações do cliente em uma coleção ao relatar o status da implantação do cliente em tempo real.  
 
 > [!NOTE]  
->  使用 Configuration Manager 控制台（如本文所述）是监视客户端部署的最佳方法，也是最可靠的方法。 控制台中“监视”工作区的“客户端状态”部分可实时准确地提供客户端部署状态。 也可以使用其他工具来监视客户端部署，例如 Windows Server 中的服务器管理器或 System Center Operations Manager，但是这样可能会从正常的客户端安装活动收到警报。 由于客户端安装程序 (CCMSetup.exe) 在不同环境中的运行方式，这些其他工具可能会生成不能准确反映客户端部署状态的假警报和警告。  
+>  A melhor e mais confiável maneira de monitorar a implantação do cliente é com o console do Configuration Manager (conforme descrito neste artigo). A seção **Status do Cliente** do espaço de trabalho **Monitoramento** no console fornece o status da implantação do cliente de modo preciso e em tempo real. Você pode monitorar implantações do cliente com outras ferramentas, como o Gerenciador de Servidores no Windows Server ou o System Center Operations Manager, mas pode receber alarmes da atividade normal de instalação do cliente. Devido ao modo que o programa de instalação do cliente (CCMSetup.exe) é executado em vários ambientes, essas outras ferramentas podem gerar falsos alarmes e avisos que não refletem precisamente o estado das implantações do cliente.  
 
- 在控制台的“监视”工作区中，可以监视指定集合内发生的客户端部署的以下状态：  
+ No espaço de trabalho **Monitoramento** do console, é possível monitorar os status a seguir de implantações do cliente, que ocorrem em uma coleção que você especifica:  
 
--   合规  
+-   Compatível  
 
--   正在进行  
+-   Em andamento  
 
--   不符合  
+-   Não compatível  
 
--   已失败  
+-   Falha  
 
--   未知  
+-   Desconhecida  
 
- Configuration Manager 报告生产客户端或预生产客户端的部署。 Configuration Manager 控制台还提供指定时间内失败的客户端部署的图表，以帮助你确定随着时间的推移，要为排除部署问题而采取的措施是否提高了部署成功率。  
+ O Configuration Manager relata as implantações de clientes de produção ou clientes de pré-produção. O console do Configuration Manager também fornece um gráfico de implantações do cliente que falharam por um período especificado, a fim de ajudar você a determinar se as ações executadas para solucionar problemas de implantação estão aumentando a taxa de implantações bem-sucedidas ao longo do tempo.  
 
-## <a name="to-monitor-client-deployments"></a>监视客户端部署  
+## <a name="to-monitor-client-deployments"></a>Para monitorar implantações do cliente  
 
--   在 Configuration Manager 控制台中，单击“监视” > “客户端状态”。  
+-   No console do Configuration Manager, clique em **Monitoramento** > **Status do Cliente**.  
 
--   根据想要监视的客户端版本，单击“生产客户端部署”或“预生产客户端部署”。  
+-   Clique em **Implantação do Cliente de Produção** ou **Implantação do Cliente de Pré-Produção**, dependendo da versão do cliente que você deseja monitorar.  
 
--   查看客户端部署状态和客户端部署失败的图表。  
+-   Revise os gráficos do status de implantação do cliente e falha de implantação do cliente.  
 
--   如果想更改报告的范围，单击“浏览...”并选择其他集合。  
+-   Se você quiser alterar o escopo do relatório, clique em **Procurar...** e escolha outra coleção.  
 
- 若要了解有关预生产客户端部署的详细信息，请参阅[如何在 System Center Configuration Manager 中的预生产集合中测试客户端升级](../../../core/clients/manage/upgrade/test-client-upgrades.md)。
+ Para saber mais sobre implantações de cliente em pré-produção, consulte [Como testar atualizações de cliente em uma coleção de pré-produção no System Center Configuration Manager](../../../core/clients/manage/upgrade/test-client-upgrades.md).
 
  > [!NOTE]
- > 即使在已成功部署客户端时，托管预生产集合中站点系统角色的计算机上的部署状态也可能被报告为“不符合”。 当你将客户端提升为生产时，则会正常报告部署状态。   
+ > O status da implantação em computadores que hospedam funções de sistema de sites em uma coleção de pré-produção pode ser relatado como **Não compatível** mesmo que o cliente tenha sido implantado com êxito. Quando você promove o cliente para produção, o status da implantação é relatado corretamente.   
 
- 若要监视已部署客户端的状态，请参阅[如何在 System Center Configuration Manager 中监视客户端](../../../core/clients/manage/monitor-clients.md)  
+ Para monitorar o status de clientes implantados, confira [Como monitorar clientes no System Center Configuration Manager](../../../core/clients/manage/monitor-clients.md)  
 
- 可以使用 Configuration Manager 报告来了解有关站点中的客户端状态的详细信息。 有关如何运行报表的详细信息，请参阅 [System Center Configuration Manager 中的报表](../../../core/servers/manage/reporting.md)。  
+ Você pode usar relatórios do Configuration Manager para obter mais informações sobre o status dos clientes no seu site. Para obter mais informações sobre como executar relatórios, consulte [Relatórios no System Center Configuration Manager](../../../core/servers/manage/reporting.md).  

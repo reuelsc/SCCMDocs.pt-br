@@ -1,6 +1,6 @@
 ---
-title: "监视复制 | Microsoft Docs"
-description: "了解如何使用控制台中的“监视”工作区在 Configuration Manager 中监视基础结构和操作。"
+title: "Monitorar a replicação | Microsoft Docs"
+description: "Saiba como monitorar a infraestrutura e as operações no Configuration Manager quando o espaço de trabalho Monitoramento no console."
 ms.custom: na
 ms.date: 10/06/2016
 ms.prod: configuration-manager
@@ -18,226 +18,226 @@ manager: angrobe
 ms.openlocfilehash: 132803a1aa9aad5c5462686bd656688418e47d07
 ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
 ms.translationtype: HT
-ms.contentlocale: zh-CN
+ms.contentlocale: pt-BR
 ms.lasthandoff: 08/07/2017
 ---
-# <a name="monitor-hierarchy-and-replication-infrastructure-in-system-center-configuration-manager"></a>System Center Configuration Manager 中的监视层次结构和复制基础结构
+# <a name="monitor-hierarchy-and-replication-infrastructure-in-system-center-configuration-manager"></a>Monitorar a infraestrutura de hierarquia e de replicação no System Center Configuration Manager
 
-*适用范围：System Center Configuration Manager (Current Branch)*
+*Aplica-se a: System Center Configuration Manager (Branch Atual)*
 
-若要在 System Center Configuration Manager 中监视基础结构和操作，请使用 Configuration Manager 控制台中的“监视”工作区。  
+Para monitorar a infraestrutura e as operações no System Center Configuration Manager, use o espaço de trabalho **Monitoramento** no console do Configuration Manager.  
 
 > [!NOTE]  
->  此位置的例外是“迁移”，迁移是从“管理”  工作区的“迁移”  节点中直接监视的。 有关详细信息，请参阅 [用于迁移到 System Center Configuration Manager 的操作](../../../core/migration/operations-for-migration.md)。  
+>  A exceção para esse local é Migração, que é monitorada diretamente no nó **Migração** do espaço de trabalho **Administração** . Para obter mais informações, consulte [Operações de migração para o System Center Configuration Manager](../../../core/migration/operations-for-migration.md).  
 
- 除了使用 Configuration Manager 控制台进行监视，还可以使用 Configuration Manager 报表，或查看 Configuration Manager 组件的 Configuration Manager 日志文件。 有关使用报表的详细信息，请参阅 [System Center Configuration Manager 中的报表](../../../core/servers/manage/reporting.md)。 有关日志文件的详细信息，请参阅 [System Center Configuration Manager 中的日志文件](../../../core/plan-design/hierarchy/log-files.md)。  
+ Além de usar o console do Configuration Manager para monitorar, é possível usar os relatórios do Configuration Manager ou exibir arquivos de log do Configuration Manager para componentes do Configuration Manager. Para obter informações sobre os relatórios, consulte [Relatórios no System Center Configuration Manager](../../../core/servers/manage/reporting.md). Para obter informações sobre os arquivos de log, consulte [Arquivos de log no System Center Configuration Manager](../../../core/plan-design/hierarchy/log-files.md).  
 
- 在监视站点时，请查看指示需要你采取措施的问题的迹象。 例如：  
+ Ao monitorar sites, procure sinais que indiquem problemas que requeiram a execução de uma ação. Por exemplo:  
 
--   站点服务器和站点系统上的文件积压。  
+-   Uma lista de pendências de arquivos em servidores e sistemas de sites.  
 
--   指示错误或问题的状态消息。  
+-   Mensagens de status que indiquem um erro ou um problema.  
 
--   失败的站点内通信。  
+-   Falha na comunicação intrassite.  
 
--   服务器上系统事件日志中的错误和警告消息。  
+-   Erro e mensagens de aviso no log de eventos do sistema nos servidores.  
 
--   Microsoft SQL Server 错误日志中的错误和警告消息。  
+-   Erro e mensagens de aviso no log de erros do Microsoft SQL Server.  
 
--   长时间未报告的站点或客户端。  
+-   Sites ou clientes que não relatam a muito tempo.  
 
--   SQL Server 数据库响应缓慢。  
+-   Resposta lenta do banco de dados do SQL Server.  
 
--   硬件故障的迹象。  
+-   Sinais de falha de hardware.  
 
-为了最大程度地降低站点故障的风险，如果监视任务暴露出任何问题迹象，请尽快调整问题根源并将其修复。  
+Para minimizar o risco de falha em um site, se as tarefas de monitoramento revelarem sinais de problemas, investigue a origem do problema e repare-o assim que possível.  
 
 
 
-##  <a name="BKMK_MonintorMgmtTasks"></a> 监视 Configuration Manager 的常用管理任务  
- Configuration Manager 提供从 Configuration Manager 控制台中进行的内置监视。 你可以监视许多任务，其中包括与整个层次结构中的软件更新、电源管理以及内容部署相关的那些任务。  
+##  <a name="BKMK_MonintorMgmtTasks"></a> Monitorar tarefas comuns de gerenciamento do Configuration Manager  
+ O Configuration Manager fornece monitoramento interno de dentro do console do Configuration Manager. Você pode monitorar muitas tarefas incluindo as relacionadas a atualizações de software, gerenciamento de energia e implantação do conteúdo em toda a hierarquia.  
 
- 使用下列信息来帮助你监视常见的 Configuration Manager 任务：  
+ Use as informações a seguir para ajudar você a monitorar as tarefas comuns do Configuration Manager:  
 
- **警报**  
-   请参阅 [使用 System Center Configuration Manager 的警报和状态系统](../../../core/servers/manage/use-alerts-and-the-status-system.md#BKMK_MonitorAlerts) 中的 [监视警报](../../../core/servers/manage/use-alerts-and-the-status-system.md)。  
+ **Alertas**  
+   Veja [Monitorar alertas](../../../core/servers/manage/use-alerts-and-the-status-system.md#BKMK_MonitorAlerts) em [Usar alertas e o sistema de status para o System Center Configuration Manager](../../../core/servers/manage/use-alerts-and-the-status-system.md).  
 
- **符合性设置**  
-   请参阅[如何在 System Center Configuration Manager 中监视符合性设置](../../../compliance/deploy-use/monitor-compliance-settings.md)。  
+ **Configurações de conformidade**  
+   Veja [Como monitorar as configurações de conformidade no System Center Configuration Manager](../../../compliance/deploy-use/monitor-compliance-settings.md).  
 
- **内容部署**  
-   有关监视内容的常规信息，请参阅[为 System Center Configuration Manager 管理内容和内容基础结构](../../../core/servers/deploy/configure/manage-content-and-content-infrastructure.md)。  
+ **Implantação de conteúdo**  
+   Para obter informações gerais sobre o monitoramento de conteúdo, consulte [Gerenciar conteúdo e infraestrutura de conteúdo do System Center Configuration Manager](../../../core/servers/deploy/configure/manage-content-and-content-infrastructure.md).  
 
-有关监视特定类型的内容部署的信息：
--   若要监视应用程序，请参阅[使用 System Center Configuration Manager 监视应用程序](/sccm/apps/deploy-use/monitor-applications-from-the-console)。  
+Para obter informações sobre monitoramento de tipos específicos de implantação de conteúdo:
+-   Para monitorar aplicativos, consulte [Monitorar aplicativos com o System Center Configuration Manager](/sccm/apps/deploy-use/monitor-applications-from-the-console).  
 
--   若要监视包和程序，请参阅 [System Center Configuration Manager 中的包和程序](../../../apps/deploy-use/packages-and-programs.md)中的“如何管理包和程序”。  
+-   Para monitorar pacotes e programas, consulte Como gerenciar pacotes e programas em [Pacotes e programas no System Center Configuration Manager](../../../apps/deploy-use/packages-and-programs.md).  
 
 **Endpoint Protection**  
-   请参阅[如何在 System Center Configuration Manager 中监视 Endpoint Protection](../../../protect/deploy-use/monitor-endpoint-protection.md)。  
+   Consulte [Como monitorar o Endpoint Protection no System Center Configuration Manager](../../../protect/deploy-use/monitor-endpoint-protection.md).  
 
-**监视电源管理**  
- 请参阅[如何在 System Center Configuration Manager 中监视和规划电源管理](../../../core/clients/manage/power/monitor-and-plan-for-power-management.md)。  
+**Monitorar o gerenciamento de energia**  
+ Consulte [Como monitorar e planejar o gerenciamento de energia no System Center Configuration Manager](../../../core/clients/manage/power/monitor-and-plan-for-power-management.md).  
 
-**监视软件计数**  
-请参阅[在 System Center Configuration Manager 中使用软件计数监视应用使用情况](../../../apps/deploy-use/monitor-app-usage-with-software-metering.md)。  
+**Monitorar a medição de software**  
+Consulte [Monitorar o uso de aplicativos com a medição de software no System Center Configuration Manager](../../../apps/deploy-use/monitor-app-usage-with-software-metering.md).  
 
-**监视软件更新**  
- 请参阅[在 System Center Configuration Manager 中监视软件更新](../../../sum/deploy-use/monitor-software-updates.md)。  
+**Monitorar atualizações de software**  
+ Consulte [Monitorar atualizações de software no System Center Configuration Manager](../../../sum/deploy-use/monitor-software-updates.md).  
 
 
-##  <a name="BKMK_MonitorInfrastructure"></a> 监视 Configuration Manager 的层次结构基础结构  
-Configuration Manager 提供了若干方法来监视层次结构的状态和操作。 你可以检查整个层次结构中站点的系统状态、通过站点层次结构或地理视图监视站点内复制、针对数据库复制监视站点之间的复制链接，并使用复制链接分析器工具来修正复制问题。  
+##  <a name="BKMK_MonitorInfrastructure"></a> Monitorar a infraestrutura de hierarquia do Configuration Manager  
+O Configuration Manager oferece diversos métodos para monitorar o status e as operações da sua hierarquia. Você pode verificar o status dos sites do sistema em toda a hierarquia, monitorar a replicação entre sites em uma hierarquia de sites ou exibição geográfica, monitorar links de replicação entre sites para replicação de banco de dados e usar a ferramenta Replication Link Analyzer para corrigir problemas de replicação.  
 
-###  <a name="BKMK_SH_Node"></a> 关于站点层次结构节点  
-“监视”工作区中的“站点层次结构”节点提供 Configuration Manager 层次结构和站点间链接的概述。 你可以使用两个视图：  
+###  <a name="BKMK_SH_Node"></a> Sobre o nó da Hierarquia do Site  
+O nó **Hierarquia do site** do espaço de trabalho **Monitoramento** oferece uma visão geral da sua hierarquia e dos links entre sites do Configuration Manager. Você pode usar dois modos de exibição:  
 
--   **层次结构关系图**：此视图将层次结构显示为一个拓扑图，该拓扑图经过简化，仅显示重要信息。  
+-   **Diagrama Hierárquico**: Esse modo de exibição mostra a sua hierarquia como um mapa de topologia que foi simplificado para mostrar somente informações essenciais.  
 
--   **地理视图**：此视图在显示你配置的站点位置的地图上显示你的站点。  
+-   **Exibição Geográfica**: Este modo exibe os sites em um mapa geográfico, mostrando os locais de site que você configurar.  
 
-使用“站点层次结构”  节点来监视每个站点的运行状况，以及站点内复制链接及它们与外部因素（例如地理位置）的关系。  
+Use o nó **Hierarquia do Site** para monitorar a saúde de cada site e os links de replicação entre sites e suas relações com fatores externos, como uma localização geográfica.  
 
-由于站点状态和站点内链接状态以站点数据（而不是全局数据）形式复制，因此当你将 Configuration Manager 控制台连接到子主站点时，将无法查看其他主站点或其子辅助站点的站点或链接状态。 例如，在多主站点层次结构中，当 Configuration Manager 控制台连接到主站点时，你可以查看子辅助站点、主站点和管理中心站点的状态，但看不到管理中心站点下层次结构的其他节点的状态。  
+Como o status do site e o status do link entre sites são replicados como dados do site e não como dados globais, quando você conecta o console do Configuration Manager a um a site primário filho, não é possível exibir o status do site ou do link a outros sites primários ou seus sites secundários filhos. Por exemplo, em uma hierarquia de site multiprimária, quando o seu console do Configuration Manager se conecta a um site primário, é possível exibir o status de sites secundários filho, do site primário e do site de administração central, mas não é possível ver o status de outros nós da hierarquia abaixo do site de administração central.  
 
- 使用“配置设置”  命令来控制站点层次结构显示的呈现方式。 你在 Configuration Manager 控制台连接到一个站点时对“站点层次结构”节点进行的配置将被复制到所有其他站点。  
+ Use o comando **Definir Configurações** para controlar como a exibição da hierarquia do site é renderizada. As configurações no nó **Hierarquia do Site** feitas quando o seu console do Configuration Manager é conectado a um site são replicadas para todos os outros sites.  
 
-#### <a name="hierarchy-diagram"></a>层次结构关系图  
- 层次结构关系图在拓扑图中显示你的站点。 在此视图中，你可以选择站点并查看该站点中的状态消息摘要，向下钻取以查看状态消息，以及访问站点的“属性”  对话框。  
+#### <a name="hierarchy-diagram"></a>Diagrama Hierárquico  
+ O diagrama hierárquico exibe seus sites em um mapa de topologia. Nessa exibição, você pode selecionar um site e exibir um resumo da mensagem de status desse site, executar uma consulta drill-through para exibir mensagens de status e acessar a caixa de diálogo **Propriedades** dos sites.  
 
- 此外，你可以将鼠标指针悬停在站点或站点之间的复制链接上以查看该对象的高级状态。 由于复制链接状态不会全局复制，因此，在包含多个主站点的层次结构中，你必须将 Configuration Manager 控制台连接到管理中心站点才能查看所有站点之间的复制链接详细信息。  
+ Além disso, você pode colocar o ponteiro do mouse em um site ou link de replicação entre sites para exibir status de alto nível para esse objeto. Como o status do link de replicação não é replicado globalmente, em uma hierarquia com vários sites primários, é necessário conectar o seu console do Configuration Manager ao site de administração central para exibir os detalhes do link de replicação entre todos os sites.  
 
- 下列选项会修改层次结构关系图：  
+ As seguintes opções modificam o diagrama hierárquico:  
 
--   **组**：你可以配置在层次结构关系图显示中触发更改的主站点和辅助站点的数量，该关系图将这些站点合并为一个对象。 如果站点合并为一个对象，你将看到站点的总数，以及状态消息和站点状态的高级汇总。 组配置不影响地理视图。  
+-   **Grupos**: Você pode configurar o número de sites primários e secundários que disparam uma alteração na exibição de diagrama hierárquico que combina os sites em um único objeto. Quando os sites são combinados em um único objeto, você pode ver o número total de sites e um rollup de mensagens de status e status de sites de alto nível. As configurações de grupo não afetam o modo de exibição geográfico.  
 
--   **收藏站点**：你可以将单独的站点指定为收藏站点。 星形图标在层次结构关系图中标识收藏站点。 当你使用组时，收藏站点不会与其他站点合并，并始终会单独显示。  
+-   **Sites favoritos**: Você pode especificar sites individuais como favoritos. Um ícone de estrela identifica um site favorito no diagrama hierárquico. Sites favoritos não são combinados com outros sites quando você usa grupos e são sempre exibidos individualmente.  
 
-#### <a name="geographical-view"></a>地理视图  
- 地理视图显示每个站点在地图上的位置。 只会显示与位置一起配置的站点。 在此视图中选择站点时，将显示指向父站点或子站点的复制链接。 与层次结构关系图视图不同，你无法在此视图中显示站点状态消息或复制链接详细信息。  
+#### <a name="geographical-view"></a>Exibição Geográfica  
+ O modo de exibição geográfica mostra a localização de cada site em um mapa geográfico. Somente os sites configurados com um local serão exibidos. Quando você seleciona um site nesse modo de exibição, os links de replicação para sites pai ou filho são mostrados. Diferentemente da exibição de diagrama hierárquico, não é possível exibir detalhes da mensagem de status do site ou do link de replicação nesse modo de exibição.  
 
 > [!NOTE]  
->  要使用地理视图，Configuration Manager 控制台所连接到的计算机必须安装 Internet Explorer，并且必须能够通过使用 HTTP 协议来访问必应地图。  
+>  Para usar a exibição geográfica, o computador ao qual o seu console do Configuration Manager se conecta deve ter o Internet Explorer instalado e poder acessar Bing Mapas usando o protocolo HTTP.  
 
-下列选项修改地理视图。  
+A opção a seguir modifica a exibição geográfica.  
 
--   **站点位置**：你可以指定每个站点的地理位置。 你可以将位置指定为街道地址、位置名称（例如城市名称），或者通过经纬度坐标来指定位置。 例如，要使用华盛顿雷蒙德市的经纬度，你将指定 **N 47 40 26.3572 W 122 7 17.4432** 作为站点位置。 你无需为经纬度的度、分或秒指定符号。 Configuration Manager 使用必应地图在地理视图上显示位置。 这样，你将能选择相对于某个地理位置查看你的层次结构，从而可深入了解可能影响特定站点或站点内复制的区域问题。  
+-   **Local do Site**: Você pode especificar uma localização geográfica para cada site. Você pode especificar a localização como um endereço de rua, o nome de um local como o nome de uma cidade ou por coordenadas de latitude e longitude. Por exemplo, para usar a latitude e a longitude de Redmond, Washington, você especificaria **N 47 40 26.3572 W 122 7 17.4432** como a localização do site. Você não precisa especificar os símbolos para graus, minutos ou segundos de longitude ou latitude. O Configuration Manager usa o Bing Mapas para exibir o local na exibição geográfica. Isso oferece a você a opção de exibir sua hierarquia em relação a um local geográfico, o que pode fornecer informações sobre questões regionais que podem afetar sites específicos ou a replicação entre sites.  
 
-     在指定位置时，你可以使用“位置”  框来搜索层次结构中的特定站点。 选中站点后，在“位置”  列中输入城市名或街道地址作为位置。 Configuration Manager 使用必应地图解析位置。  
+     Quando você especifica um local, você pode usar a caixa **Local** para pesquisar um site específico da sua hierarquia. Com o site selecionado, insira o local como um nome de cidade ou endereço na coluna **Local** . O Configuration Manager usa o Bing Mapas para resolver o local.  
 
-###  <a name="BKMK_MonitorRepLinksAndStatuss"></a> 如何监视数据库复制链接和复制状态  
- 除了可从“监视”  工作区“站点层次结构”  节点访问的高层详细信息。 还可在使用“监视”  工作区中的“数据复制”  节点时监视数据库复制的详细信息。 从“数据库复制”中，你可以监视站点之间的复制链接的状态，以及你的 Configuration Manager 控制台所连接到的站点上的复制组的初始化详细信息和复制详细信息。  
+###  <a name="BKMK_MonitorRepLinksAndStatuss"></a> Como monitorar o status de replicação e links de replicação de banco de dados  
+ Além dos detalhes de alto nível que são acessíveis no nó **Hierarquia do Site** do espaço de trabalho **Monitoramento** . Você também pode monitorar os detalhes da replicação de banco de dados ao usar o nó **Replicação de Banco de Dados** do espaço de trabalho **Monitoramento** . Em **Replicação de Banco de Dados**, é possível monitorar o status dos links de replicação entre sites e os detalhes de inicialização e de replicação de grupos de replicação no site ao qual o seu Configuration Manager está conectado.  
 
 > [!TIP]  
->  尽管“数据库复制”  节点还出现在“管理”  工作区的“层次结构配置”  节点下，但你无法从该位置中查看数据库复制链接的复制状态。  
+>  Embora um nó **Replicação de Banco de Dados** também apareça no nó **Configuração da Hierarquia** , no espaço de trabalho **Administração** , não é possível exibir o status dos links de replicação de banco de dados desse local.  
 
-####  <a name="BKMK_MonitorReplicationLinks"></a> 复制链接状态  
-站点之间的数据库复制涉及到若干组信息的复制，称为复制组。 每个复制组都使用不同的复制优先级进行复制。 默认情况下，无法修改复制组中包含的数据以及复制的频率。  
+####  <a name="BKMK_MonitorReplicationLinks"></a> Status do link de replicação  
+A replicação de banco de dados entre sites envolve a replicação de diversos conjuntos de informações, chamados de grupos de replicação. Cada grupo de replicação replica com diferentes prioridades de replicação. Por padrão, os dados contidos em um grupo de replicação e a frequência da replicação não podem ser modificados.  
 
- 当复制链接处于活动状态，并且没有失败或降级状态时，所有复制组都将及时进行复制。 如果一个或多个复制组在预期的时间段中无法完成复制，则链接将显示为降级。 降级的链接仍然起作用，但你应对其进行监视以确保其恢复为活动状态，或对其进行调查以确保不会出现其他降级或复制失败情况。  
+ Quando um link de replicação está ativo e não tem um status com falha ou degradado, todos os grupos de replicação são replicados em tempo adequado. Quando ocorrer falha de um ou mais grupos de replicação ao concluir a replicação no período de tempo esperado, o link será exibido como degradado. Os links degradados ainda funcionarão, mas será necessário monitorá-los para garantir que eles retornem ao status de ativos ou investigá-los para garantir que não ocorram mais degradações ou falhas de replicação.  
 
- 你可以为每个复制链接指定未成功复制的复制组在链接状态设置为降级或失败之前重试复制的次数。 即使除了一个复制组外的所有复制组都成功复制，但由于一个复制组无法在指定的尝试次数内完成复制，链接的状态仍会设置为降级或失败。 有关复制阈值的信息，请参阅 [System Center Configuration Manager 中的站点间数据传输](../../../core/servers/manage/data-transfers-between-sites.md)中的[数据库复制阈值](../../../core/servers/manage/data-transfers-between-sites.md#BKMK_DBRepThresholds)部分。  
+ Para cada link de replicação, é possível especificar o número de vezes que um grupo de replicação que não foi replicado com êxito tenta ser replicado antes de o status do link ser definido como degradado ou com falha. Mesmo que todos, exceto um grupo de replicação seja replicado com êxito, o status do link será definido como degradado ou com falha, pois ocorreu falha em um grupo de replicação ao concluir a replicação no número de tentativas especificada. Para obter informações sobre limites de replicação, veja a seção [Limites de replicação de banco de dados](../../../core/servers/manage/data-transfers-between-sites.md#BKMK_DBRepThresholds) no tópico [Transferência de dados entre sites no System Center Configuration Manager](../../../core/servers/manage/data-transfers-between-sites.md).  
 
- 使用下表中的信息来了解可能需要进一步调查的复制链接的状态。  
+ Use as informações da tabela a seguir para saber o status dos links de replicação que podem exigir mais investigação.  
 
-|链接描述|更多信息|  
+|Descrição do link|Mais informações|  
 |----------------------|----------------------|  
-|**链接处于活动状态**|未检测到任何问题，并且链接上的通信正在进行。|  
-|**链接已降级**|复制正常运行，但至少一个复制对象或组已延迟。 监视处于此状态的链接，并查看链接上两个站点中的信息了解链接可能失败的迹象。<br /><br /> 当收到复制的数据的站点无法将数据快速提交到数据库时，链接也可能显示降级状态。 在复制大量数据时，可能会发生这种情况。 例如，你将软件更新部署到大量的计算机，则链接上的父站点可能要花费一段时间来处理复制的数据量。 父站点上的处理延迟可能会导致将链接状态设置为降级，直至父站点可成功处理积压的数据为止。|  
-|**链接已失败**|复制无法正常工作。 复制链接可能无需进行进一步操作便可恢复。 你可以使用复制链接分析器来调查并帮助修正此链接上的复制。<br /><br /> 此状态也可能指示复制链接上父站点和子站点之间的物理网络的问题。|  
+|**O link está ativo**|Nenhum problema foi detectado e a comunicação através do link está atualizada.|  
+|**O link está degradado**|A replicação está funcional, mas pelo menos um objeto ou grupo de replicação está atrasado. Monitore os links que estão nesse estado e verifique as informações de ambos os sites no link para ver se há indicações que o link pode falhar.<br /><br /> Um link também pode exibir um status de degradado quando o site que recebe dados replicados não consegue confirmar rapidamente os dados no banco de dados. Isso pode acontecer quando grandes volumes de dados são replicados. Por exemplo, se você implantar uma atualização de software em um grande número de computadores, o volume de dados replicados poderá levar algum tempo para ser processado pelo site pai do link. Um atraso de processamento no site pai pode resultar em status do link definido como degradado até que o site pai possa processar a lista de pendências de dados.|  
+|**Falha no link**|A replicação não está funcionando. É possível que um link de replicação se recupere sem ação adicional. Você pode usar o Replication Link Analyzer para investigar e ajudar a corrigir a replicação nesse link.<br /><br /> Esse status também pode indicar um problema com a rede física entre o site pai e o site filho no link de replicação.|  
 
- 当父站点正在升级到新的 Service Pack，并且你从子站点中查看链接状态时，链接状态将显示为活动。 升级之后，在子站点也升级到与父站点相同的 Service Pack 之前，如果从父站点中进行查看，链接状态将显示为活动，如果从子站点中进行查看，链接状态将显示为正在配置。  
+ Embora o site pai esteja em processo de atualização para um novo service pack e você exiba o status do link a partir do site filho, o status do link será exibido como ativo. Após a atualização, até que o site filho também tenha o mesmo service pack que o site pai, o status do link será exibido como ativo, quando exibido a partir do site pai, e como sendo configurado, quando exibido do site filho.  
 
-####  <a name="BKMK_MonitorReplicationStatus"></a> 复制状态  
- 你可以使用“监视”  工作区的“数据库复制”  节点来查看复制链接的复制状态，并查看复制链接上每个站点中的站点数据库的详细信息。 你还可以查看有关复制组的详细信息。 要查看详细信息，请选择复制链接，然后为要查看的复制状态选择相应的选项卡。 下面是有关复制状态的不同选项卡的详细信息。  
+####  <a name="BKMK_MonitorReplicationStatus"></a> Status de replicação  
+ Você pode usar o nó **Replicação de Banco de Dados** no espaço de trabalho **Monitoramento** , para exibir o status da replicação para um link de replicação e exibir detalhes sobre o banco de dados do site em cada site do link de replicação. Também é possível exibir detalhes sobre os grupos de replicação. Para exibir detalhes, selecione um link de replicação e a guia apropriada do status de replicação que deseja exibir. Veja a seguir detalhes sobre as diferentes guias para o status de replicação.  
 
- **摘要**  
- 查看有关链接上两个站点之间的站点数据和全局数据复制的高级信息。  
+ **Resumo**  
+ Exiba informações de alto nível sobre a replicação de dados do site e dados globais entre os dois sites de um link.  
 
- 你也可以单击“查看历史流量数据报表”  来查看一个报表，其中显示有关复制链接上的复制所使用的网络带宽的详细信息。  
+ Você também pode clicar em **Exibir relatórios para dados de tráfego de histórico** para exibir um relatório que mostre detalhes sobre a largura de banda da rede por replicação no link de replicação.  
 
- **父站点**  
- 对于复制链接上的父站点，查看有关数据库的详细信息，其中包括：  
+ **Site Pai**  
+ Para o site pai em um link de replicação, exiba detalhes sobre o banco de dados, que incluem:  
 
--   SQL Server 的防火墙端口  
+-   Portas de firewall para o SQL Server  
 
--   可用磁盘空间  
+-   Espaço livre em disco  
 
--   数据库文件位置  
+-   Locais de arquivos de banco de dados  
 
--   证书  
+-   Certificados  
 
-**子站点**  
- 对于复制链接上的子站点，查看有关数据库的详细信息，其中包括：  
+**Site Filho**  
+ Para o site filho em um link de replicação, exiba detalhes sobre o banco de dados, que incluem:  
 
--   SQL Server 的防火墙端口  
+-   Portas de firewall para o SQL Server  
 
--   可用磁盘空间  
+-   Espaço livre em disco  
 
--   数据库文件位置  
+-   Locais de arquivos de banco de dados  
 
--   证书  
+-   Certificados  
 
-**初始化详细信息**    
- 查看通过复制链接进行复制的复制组的初始化状态。 此信息可帮助你确定复制数据的初始化何时正在进行或已失败。  
+**Detalhe de Inicialização**    
+ Exiba o status de inicialização para grupos de replicação que são replicados através do link de replicação. Essas informações podem ajudá-lo a identificar quando a inicialização de dados de replicação está em andamento ou falhou.  
 
- 此外，你可以使用此信息来确定站点何时可能处于互操作性模式。 当子站点运行的 Configuration Manager 版本与父站点不同时，将会出现互操作性模式。  
+ Além disso, você pode usar essas informações para identificar quando um site pode estar no modo de interoperabilidade. O modo de interoperabilidade ocorre quando o site filho não executa a mesma versão do Configuration Manager que o site pai.  
 
-**复制详细信息**    
- 查看通过链接进行复制的每个复制组的复制状态。 使用此信息来帮助确定特定数据复制的问题或延迟，并帮助确定此链接的相应数据库复制阈值。 有关数据库复制阈值的信息，请参阅 [System Center Configuration Manager 中的站点间数据传输](../../../core/servers/manage/data-transfers-between-sites.md)中的[数据库复制阈值](../../../core/servers/manage/data-transfers-between-sites.md#BKMK_DBRepThresholds)部分。  
+**Detalhe de Replicação**    
+ Exiba o status da replicação para cada grupo de replicação que replica entre o link. Use essas informações para ajudá-lo a identificar problemas e atraso na replicação de dados específicos e também para determinar os limites de replicação de banco de dados apropriados para esse link. Para obter informações sobre limites de replicação de bancos de dados, veja a seção [Limites de replicação de banco de dados](../../../core/servers/manage/data-transfers-between-sites.md#BKMK_DBRepThresholds) no tópico [Transferência de dados entre sites no System Center Configuration Manager](../../../core/servers/manage/data-transfers-between-sites.md).  
 
 > [!TIP]  
->  站点数据的复制组只会从子站点发送到父站点。 全局数据的复制组则以双向方式复制。  
+>  Os grupos de replicação de dados do site são enviados somente do site filho para o site pai. Os grupos de replicação para dados globais replicam em ambas as direções.  
 
-###  <a name="BKMK_RLA"></a> 关于复制链接分析器  
- Configuration Manager 包括**复制链接分析器**，你使用该分析器来分析和修复复制问题。 你可以使用复制链接分析器在复制失败以及复制停止工作但尚未报告为失败时修正复制链接故障。 复制链接分析器可用于修正 Configuration Manager 层次结构中以下计算机之间的复制问题（复制故障的方向并不重要）：  
+###  <a name="BKMK_RLA"></a> Sobre o Replication Link Analyzer  
+ O Configuration Manager inclui o **Replication Link Analyzer**, usado para analisar e reparar problemas de replicação. Você pode usar o Replication Link Analyzer para corrigir as falhas de link de replicação quando a replicação falha ou quando ela para de funcionar, mas não foi ainda reportada com falha. O Replication Link Analyzer pode ser usado para corrigir problemas de replicação entre os computadores a seguir na hierarquia do Configuration Manager (a direção da falha de replicação não importa):  
 
--   站点服务器和站点数据库服务器之间。  
+-   Entre um servidor do site e o servidor de banco de dados do site.  
 
--   站点的站点数据库服务器和另一个站点的站点数据库计算机之间（站点间复制）。  
+-   Entre um servidor de banco de dados do site de sites e outro computador do banco de dados de site de sites (replicação entre sites).  
 
-你可以在 Configuration Manager 控制台中或命令提示符处运行复制链接分析器：  
+É possível executar o Replication Link Analyzer no console do Configuration Manager ou em um prompt de comando:  
 
--   在 Configuration Manager 控制台中运行：在“监视”工作区中，单击“数据库复制”节点，选择要分析的复制链接，然后在“主页”选项卡上的“数据库复制”组中选择“复制链接分析器”。  
+-   Para executar no console do Configuration Manager: no espaço de trabalho **Monitoramento**, clique no nó **Replicação do Banco de Dados**, selecione o link de replicação que deseja analisar e, no grupo **Replicação do Banco de Dados**, na guia **Início**, selecione **Replication Link Analyzer**.  
 
--   要在命令提示符处运行，请键入以下命令：**%path%\Microsoft Configuration Manager\AdminConsole\bin\Microsoft.ConfigurationManager.ReplicationLinkAnalyzer.Wizard.exe &lt;源站点服务器 FQDN\> &lt;目标站点服务器 FQDN\>**  
+-   Para executar em um prompt de comando, digite o seguinte comando: **%path%\Microsoft Configuration Manager\AdminConsole\bin\Microsoft.ConfigurationManager.ReplicationLinkAnalyzer.Wizard.exe &lt;FQDN do servidor do site de origem\> &lt;FQDN do servidor do site de destino\>**  
 
-当你运行复制链接分析器时，它将使用一系列诊断规则和检查来检测问题。 该工具运行时，你可以查看该工具确定的问题。 如果用于解决某个问题的说明已知，则会显示出来。 如果复制链接分析器可自动修正问题，则会向你呈现该选项。 当复制链接分析器完成时，它将结果保存在以下基于 XML 的报表以及运行该工具的用户桌面上的一个日志文件中：  
+Ao executar o Replication Link Analyzer, ele detecta os problemas usando uma série de regras e verificações de diagnóstico. Quando a ferramenta é executada, você pode exibir os problemas que ela identifica. Quando as instruções para resolver um problema são conhecidas, elas são exibidas. Se o Replication Link Analyzer pode corrigir automaticamente o problema, você vai conhecer essa opção. Quando o Replication Link Analyzer é concluído, ele salva os resultados no seguinte relatório baseado em XML e um arquivo de log na área de trabalho do usuário que executa a ferramenta:  
 
 -   ReplicationAnalysis.xml  
 
 -   ReplicationLinkAnalysis.log  
 
-当复制链接分析器运行时，它会在修正某些问题时停止以下服务，并在修正完成时重启这些服务：  
+Quando o Replication Link Analyzer é executado, ele interrompe os seguintes serviços enquanto corrige alguns problemas e reinicia esses serviços quando a correção estiver concluída:  
 
 -   SMS_SITE_COMPONENT_MANAGER  
 
 -   SMS_EXECUTIVE  
 
-如果复制链接分析器未能完成修正，请查看站点服务器并重启这些服务（如果它们已停止）。  
+Se o Replication Link Analyzer falha em concluir a correção, analise o servidor do site e reinicie esses serviços se eles estão interrompidos.  
 
-成功和未成功的调查和修正操作会被记录下来，以提供工具界面中未呈现的附加详细信息。  
+As ações de correção e investigação com e sem êxito são registradas em log a fim de fornecer detalhes adicionais que não são apresentados na interface da ferramenta.  
 
-**使用复制链接分析器的先决条件：**  
+**Pré-requisitos para usar o Replication Link Analyzer:**  
 
--   你用于运行复制链接分析器的帐户在复制链接中涉及的每台计算机上必须具有本地管理员权限。 此帐户不需要特定的基于角色的管理安全角色。 因此，有权访问“数据库复制”节点的管理用户可以在 Configuration Manager 控制台中运行该工具，或者对每台计算机具有足够权限的系统管理员可以在命令提示符处运行该工具。  
+-   A conta que você usa para executar o Replication Link Analyzer deve ter os direitos de administrador local em cada computador que está envolvido no link de replicação. A conta não exige uma função de segurança de administração baseada em funções. Portanto, um usuário administrativo com acesso ao nó **Replicação do Banco de Dados** pode executar a ferramenta no console do Configuration Manager ou um administrador do sistema com direitos suficientes em cada computador pode executar a ferramenta em um prompt de comando.  
 
--   你用于运行复制链接分析器的帐户对复制链接中涉及的每个 SQL Server 数据库必须具有 sysadmin 权限。  
+-   A conta que você usa para executar o Replication Link Analyzer deve ter direitos sysadmin em cada banco de dados do SQL Server que está envolvido no link de replicação.  
 
-**复制链接分析器的已知问题：**  
+**Problemas conhecidos do Replication Link Analyzer:**  
 
--   随着 System Center Configuration Manager 1511 版本的发布，复制链接分析器针对从 System Center 2012 Configuration Manager 升级的主站点会产生 SQL Server Service Broker 证书错误。 这是因为 1511 版本引入的证书名称发生更改，而复制链接分析器尚未对其进行更新。 可以安全忽略这些错误。  
+-   Com o lançamento do System Center Configuration Manager versão 1511, o Replication Link Analyzer gera erros de certificado do SQL Server Service Broker para sites primários atualizados do System Center 2012 Configuration Manager. Isso ocorre devido a alterações nos nomes dos certificados introduzidos com a versão 1511, para a qual o Replication Link Analyzer ainda não foi atualizado. Esses erros podem ser ignorados com segurança.  
 
-###  <a name="BKMK_ProcsforMonitoringReplication"></a> 用于监视数据库复制的过程  
+###  <a name="BKMK_ProcsforMonitoringReplication"></a> Procedimentos para monitorar a replicação de banco de dados  
 
-##### <a name="to-monitor-high-level-site-to-site-database-replication-status"></a>监视高级别站点到站点数据库复制状态    
-1.  在 Configuration Manager 控制台中，单击“监视” 。  
+##### <a name="to-monitor-high-level-site-to-site-database-replication-status"></a>Para monitorar o status de replicação de banco de dados de site a site de alto nível    
+1.  No console do Configuration Manager, clique em **Monitoramento**.  
 
-2.  在“监视”  工作区中，单击“站点层次结构”  以打开“层次结构图表”  视图。  
+2.  No espaço de trabalho **Monitoramento** , clique em **Hierarquia do Site** para abrir a exibição do **Diagrama Hierárquico** .  
 
-3.  将鼠标指针短暂停留在两个站点之间的线条上以查看这些站点的全局和站点数据复制的状态。  
+3.  Pause brevemente o ponteiro do mouse na linha entre os dois sites para exibir o status da replicação de dados do site e dados globais para esses sites.  
 
-##### <a name="to-monitor-the-replication-status-for-a-replication-link"></a>监视复制链接的复制状态    
-1.  在 Configuration Manager 控制台中，单击“监视” 。  
+##### <a name="to-monitor-the-replication-status-for-a-replication-link"></a>Para monitorar o status da replicação para um link de replicação    
+1.  No console do Configuration Manager, clique em **Monitoramento**.  
 
-2.  在“监视”  工作区中，单击“数据库复制” ，然后选择要监视的链接的复制链接。 然后，在工作区中选择相应的选项卡以查看有关该链接的复制状态的不同详细信息。  
+2.  No espaço de trabalho **Monitoramento** , clique em **Replicação do Banco de Dados**e selecione o link de replicação que deseja monitorar. Em seguida, no espaço de trabalho, selecione a guia apropriada para exibir os diferentes detalhes sobre o status de replicação para esse link.  

@@ -1,6 +1,6 @@
 ---
-title: "升级评估版安装 | Microsoft Docs"
-description: "了解如何将评估版安装升级到 System Center Configuration Manager 的完整安装。"
+title: "Atualizar instalações de avaliação | Microsoft Docs"
+description: "Saiba como atualizar uma instalação de avaliação para uma instalação completa do System Center Configuration Manager."
 ms.custom: na
 ms.date: 2/7/2017
 ms.prod: configuration-manager
@@ -17,38 +17,38 @@ manager: angrobe
 ms.openlocfilehash: 8f951805c2fc25059965c15c94934c0f8546735c
 ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
 ms.translationtype: HT
-ms.contentlocale: zh-CN
+ms.contentlocale: pt-BR
 ms.lasthandoff: 08/07/2017
 ---
-# <a name="upgrade-an-evaluation-installation-of-system-center-configuration-manager-to-a-full-installation"></a>将 System Center Configuration Manager 的评估版安装升级到完整安装
+# <a name="upgrade-an-evaluation-installation-of-system-center-configuration-manager-to-a-full-installation"></a>Atualizar uma instalação de avaliação para uma instalação completa do System Center Configuration Manager
 
-*适用范围：System Center Configuration Manager (Current Branch)*
+*Aplica-se a: System Center Configuration Manager (Branch Atual)*
 
-如果将 System Center Configuration Manager 作为评估版进行安装，那么 180 天后，Configuration Manager 控制台会变为只读，直至从安装程序的“站点维护”页激活产品。 在 180 天期限之前或之后，可随时选择将评估安装升级到完整安装。  
+Se você tiver instalado o System Center Configuration Manager como uma versão de avaliação, após 180 dias o console do Configuration Manager se tornará somente leitura até você ativar o produto na página **Manutenção do site** em Configurações. A qualquer momento antes ou depois do período de 180 dias, você tem a opção de atualizar para uma instalação de avaliação para uma instalação completa.  
 
 > [!NOTE]  
->  将 Configuration Manager 控制台连接到 Configuration Manager 评估版时，此控制台的标题栏会显示该评估版安装到期前的剩余天数。 此天数不会自动刷新，而且仅在建立新的站点连接时才会更新。  
+>  Ao conectar um console do Configuration Manager a uma instalação de avaliação do Configuration Manager, a barra de título do console mostra o número de dias que restam antes de expirar a instalação de avaliação. O número de dias não é atualizado automaticamente; é atualizado somente quando você faz uma nova conexão a um site.  
 
- 可升级运行评估版安装的以下站点：  
+ Você pode atualizar os seguintes sites que executam uma instalação de avaliação:  
 
--   管理中心站点  
--   主站点  
+-   Site de administração central  
+-   Site primário  
 
-由于未将辅助站点视为评估安装，因此你无需在辅助站点的主父站点升级到完整安装后对其进行修改。  
+Como os sites secundários não são tratados como instalações de avaliação, você não precisa modificar um site secundário depois que seu site pai primário é atualizado para uma instalação completa.  
 
-将评估版升级到许可版的先决条件：  
+Pré-requisitos para atualizar de uma versão de avaliação para uma versão licenciada:  
 
--   必须具有在升级过程中使用的有效产品。  
--   帐户必须具有对安装该站点的计算机的“管理员”权限。  
+-   Você deve ter um produto válido a ser usado durante a atualização.  
+-   Sua conta deve ter permissões de **administrador** para o computador no qual o site está instalado.  
 
-### <a name="to-upgrade-an-evaluation-version-of-configuration-manager-to-a-licensed-version"></a>将 Configuration Manager 的评估版升级到许可版  
+### <a name="to-upgrade-an-evaluation-version-of-configuration-manager-to-a-licensed-version"></a>Para atualizar uma versão de avaliação do Configuration Manager para uma versão licenciada  
 
-1.  在站点服务器上，在 Configuration Manager 安装文件夹 (**%path%\BIN\X64**) 中运行 **Setup.exe**（Configuration Manager 安装程序）。 必须在 Configuration Manager 文件夹中运行位于站点服务器上的安装程序副本，因为从安装媒体运行安装程序时，站点维护选项不可用。  
-2.  在“开始之前”页面上，选择“下一步”。  
-3.  在“入门”页上，选择“执行站点维护或重置此站点”，然后选择“下一步”。  
-4.  在“站点维护”页上，选择“从评估版升级为许可版”，输入有效的产品密钥，然后选择“下一步”。  
-5.  在“Microsoft 软件许可条款”页上，阅读并接受许可条款，然后选择“下一步”。  
-6.  在“确认”页上，选择“关闭”以完成向导。  
+1.  No servidor de sites, localize **Setup.exe** (instalação do Configuration Manager) na pasta de instalação do Configuration Manager (**%caminho%\BIN\X64**). Você deve executar a cópia da instalação que está localizada no servidor do site na pasta do Configuration Manager, uma vez que não há opções de manutenção do site disponíveis quando você executa a instalação da mídia de instalação.  
+2.  Na página **Antes de Começar** escolha **Avançar**.  
+3.  Na página **Guia de introdução**, selecione **Realizar a manutenção do site ou redefinir o site** e clique em **Avançar**.  
+4.  Na página **Manutenção do site**, selecione **Atualizar a edição de avaliação para uma edição licenciada**, insira uma chave do produto válida e clique em **Avançar**.  
+5.  Na página **Termos de Licença de Software Microsoft**, leia e aceite os termos de licença e clique em **Avançar**.  
+6.  Na página **Configuração**, clique em **Fechar** para concluir o assistente.  
 
     > [!NOTE]  
-    >  与升级的站点保持连接的 Configuration Manager 控制台的标题栏可能会指明站点仍为评估版本，直到将控制台重新连接到该站点为止。  
+    >  A barra de título do console do Configuration Manager que permanece conectado ao site que está sendo atualizado pode indicar que o site ainda é uma versão de avaliação até que você reconecte o console ao site.  

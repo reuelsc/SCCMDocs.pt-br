@@ -1,6 +1,6 @@
 ---
-title: "安装程序命令行选项 | Microsoft Docs"
-description: "使用本文中的信息从命令行配置脚本或安装 System Center Configuration Manager。"
+title: "Opções de linha de comando de instalação | Microsoft Docs"
+description: "Use as informações deste artigo para configurar scripts ou instalar o System Center Configuration Manager por meio de uma linha de comando."
 ms.custom: na
 ms.date: 03/27/2017
 ms.prod: configuration-manager
@@ -17,1261 +17,1261 @@ manager: angrobe
 ms.openlocfilehash: 04fe7b3e674287c4255563ab4a308e54d0b6c3aa
 ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
 ms.translationtype: HT
-ms.contentlocale: zh-CN
+ms.contentlocale: pt-BR
 ms.lasthandoff: 08/07/2017
 ---
-# <a name="command-line-options-for-setup-in-system-center-configuration-manager"></a>System Center Configuration Manager 中适用于安装程序的命令行选项
+# <a name="command-line-options-for-setup-in-system-center-configuration-manager"></a>Opções de linha de comando para Instalação no System Center Configuration Manager
 
-*适用范围：System Center Configuration Manager (Current Branch)*
+*Aplica-se a: System Center Configuration Manager (Branch Atual)*
 
 
- 使用以下信息从命令行配置脚本或安装 System Center Configuration Manager。  
+ Use as informações a seguir para configurar scripts ou instalar o System Center Configuration Manager por meio de uma linha de comando.  
 
-##  <a name="bkmk_setup"></a>适用于安装程序的命令行选项  
+##  <a name="bkmk_setup"></a> Opções de linha de comando para instalação  
  **/DEINSTALL**  
- 卸载站点。 必须从站点服务器计算机中运行安装程序。  
+ Desinstala o site. É necessário executar a Instalação no computador de servidor do site.  
 
  **/DONTSTARTSITECOMP**  
- 安装站点，但是阻止站点组件管理器服务启动。 在站点组件管理器服务启动之前，该站点未处于活动状态。 站点组件管理器负责在站点安装和启动 SMS_Executive 服务以及其他进程。 站点安装完成之后，如果启动站点组件管理器服务，则它将安装 SMS_Executive 服务以及站点运行所需的其他进程。  
+ Instala um site, mas impede a inicialização do serviço Gerenciador de Componentes de Site. Até que o serviço do Gerenciador de Componentes do Site seja iniciado, o site não ficará ativo. O Gerenciador de Componentes de Site é responsável por instalar e iniciar o serviço SMS_Executive e por outros processos no site. Após a conclusão da instalação do site, ao iniciar o serviço Gerenciador de Componentes de Site, ele instalará o SMS_Executive e os outros processos necessários para a operação do site.  
 
  **/HIDDEN**  
- 在安装过程中隐藏用户界面。 仅在与 **/SCRIPT** 选项结合时使用此选项。 无人参与的脚本文件必须提供所有必需的选项，否则安装将失败。  
+ Oculta a interface do usuário durante a Instalação. Use essa opção somente junto com a opção **/SCRIPT**. O arquivo de script autônomo deverá fornecer todas as opções necessárias; caso contrário, a Instalação falhará.  
 
  **/NOUSERINPUT**  
- 在安装过程中禁用用户输入，但显示“安装向导”。 仅在与 **/SCRIPT** 选项结合时使用此选项。 无人参与的脚本文件必须提供所有必需的选项，否则安装将失败。  
+ Desabilita a entrada do usuário durante a Instalação, mas exibe o Assistente de Instalação. Use essa opção somente junto com a opção **/SCRIPT**. O arquivo de script autônomo deverá fornecer todas as opções necessárias; caso contrário, a Instalação falhará.  
 
  **/RESETSITE**  
- 执行站点重置，该操作将重置站点的数据库和服务帐户。 必须从站点服务器上的 **<*Configuration Manager 安装路径*>\BIN\X64** 中运行安装程序。 有关站点重置的详细信息，请参阅[修改 System Center Configuration Manager 基础结构](../../../../core/servers/manage/modify-your-infrastructure.md)中的[运行站点重置](../../../../core/servers/manage/modify-your-infrastructure.md#bkmk_reset)部分。  
+ Executa uma redefinição de site que redefine o banco de dados e as contas de serviço do site. É necessário executar a Instalação por meio do **<*Caminho de instalação do Configuration Manager*>\BIN\X64** no servidor do site. Para obter mais informações sobre a redefinição de site, consulte a seção [Executar uma redefinição de site](../../../../core/servers/manage/modify-your-infrastructure.md#bkmk_reset) em [Modificar a infraestrutura do System Center Configuration Manager](../../../../core/servers/manage/modify-your-infrastructure.md).  
 
- **/TESTDBUPGRADE <*实例名称*>\\<*数据库名称*>**  
- 对站点数据库的备份执行测试以确保该数据库能够升级。 你必须提供站点数据库的实例名称和数据库名称。 如果仅指定数据库名称，安装程序将使用默认实例名称。  
+ **/TESTDBUPGRADE <*Nome da instância*>\\<*Nome do banco de dados*>**  
+ Executa um teste em um backup do banco de dados do site para garantir que o banco de dados pode fazer uma atualização. É necessário fornecer o nome da instância e o nome de banco de dados para o banco de dados do site. Se você especificar somente o nome do banco de dados, a Instalação usará o nome padrão da instância.  
 
 > [!IMPORTANT]  
->  不要在生产站点数据库上运行此命令行选项。 在生产站点数据库上运行此命令行选项将升级站点数据库，并可能导致站点不可操作。  
+>  Não execute essa opção de linha de comando no banco de dados do site de produção. A execução dessa opção de linha de comando no banco de dados do site de produção atualizará o banco de dados do site e poderá deixar o site inoperante.  
 
  **/UPGRADE**  
- 运行站点的无人参与升级。 在使用 **/UPGRADE** 时，必须指定产品密钥，包括短划线 (-)。 此外，必须指定以前下载的安装程序先决条件文件的路径。  
+ Executa a atualização autônoma de um site. Ao usar **/UPGRADE**, é necessário especificar a chave do produto (Product Key), incluindo os traços (-). Além disso, é necessário especificar o caminho para os arquivos de pré-requisito da Instalação baixados anteriormente.  
 
- 示例：`setupwpf.exe /UPGRADE xxxxx-xxxxx-xxxxx-xxxxx-xxxxx <path to external component files>`  
+ Exemplo: `setupwpf.exe /UPGRADE xxxxx-xxxxx-xxxxx-xxxxx-xxxxx <path to external component files>`  
 
- 有关安装程序的先决条件文件的详细信息，请参阅[安装程序下载程序](setup-downloader.md)部分。  
+ Para obter mais informações sobre os arquivos de pré-requisito da Instalação, consulte [Downloader de Instalação](setup-downloader.md).  
 
- **/SCRIPT <*安装程序脚本路径*>**  
- 执行无人参与安装。 在使用 **/SCRIPT** 选项时，需要一个安装程序初始化文件。 有关如何运行无人参与的安装程序的详细信息，请参阅[使用命令行安装站点](../../../../core/servers/deploy/install/use-a-command-line-to-install-sites.md)。  
+ **/SCRIPT <*Caminho do script de instalação*>**  
+ Executa instalações autônomas. É necessário ter um arquivo de inicialização da instalação ao usar a opção **/SCRIPT** . Para obter mais informações sobre como executar a Instalação autônoma, consulte [Install sites using a command line (Usar uma linha de comando para instalar sites)](../../../../core/servers/deploy/install/use-a-command-line-to-install-sites.md).  
 
- **/SDKINST <*SMS 提供程序 FQDN*>**  
- 在指定计算机上安装 SMS 提供程序。 必须为 SMS 提供程序计算机提供完全限定的域名 (FQDN)。 有关 SMS 提供程序的详细信息，请参阅[为 System Center Configuration Manager 规划 SMS 提供程序](../../../../core/plan-design/hierarchy/plan-for-the-sms-provider.md)。  
+ **/SDKINST <*FQDN do Provedor de SMS*>**  
+ Instala o Provedor de SMS no computador especificado. É necessário fornecer o FQDN (nome de domínio totalmente qualificado) do computador do Provedor de SMS. Para obter mais informações sobre o Provedor de SMS, consulte [Planejar o Provedor de SMS para o System Center Configuration Manager](../../../../core/plan-design/hierarchy/plan-for-the-sms-provider.md).  
 
- **/SDKDEINST <*SMS 提供程序 FQDN*>**  
- 在指定计算机上卸载 SMS 提供程序。 你必须提供 SMS 提供程序计算机的 FQDN。  
+ **/SDKDEINST <*FQDN do Provedor de SMS*>**  
+ Desinstala o Provedor de SMS do computador especificado. É necessário fornecer o FQDN para o computador do Provedor de SMS.  
 
- **/MANAGELANGS <*语言脚本路径*>**  
- 管理安装在以前安装的站点上的语言。 若要使用此选项，必须从站点服务器上的“**<*Configuration Manager 安装路径>*>\BIN\X64” **中运行安装程序，然后提供包含语言设置的语言脚本文件的位置。 有关语言安装程序脚本文件中可用的语言选项的详细信息，请参阅本主题中的[用于管理语言的命令行选项](#bkmk_Lang)部分。  
+ **/MANAGELANGS <*Caminho do script de idioma*>**  
+ Gerencia os idiomas instalados em um site previamente instalado. Para usar essa opção, é necessário executar a Instalação no **<*Caminho de instalação do Configuration Manager*>\BIN\X64** no servidor do site e fornecer o local do arquivo de script de idioma que contém as configurações de idioma. Para obter mais informações sobre as opções de idioma disponíveis no arquivo de script de instalação de idioma, consulte [Opções de linha de comando para gerenciar idiomas](#bkmk_Lang) neste tópico.  
 
-##  <a name="bkmk_Lang"></a> 用于管理语言的命令行选项  
- **标识**  
+##  <a name="bkmk_Lang"></a> Opções de linha de comando para gerenciar idiomas  
+ **Identificação**  
 
--   **项名称：**Action  
+-   **Nome da chave:** Action  
 
-    -   **是否必需：** 是  
+    -   **Obrigatória:** Sim  
 
-    -   **值：**ManageLanguages  
+    -   **Valores:** ManageLanguages  
 
-    -   **详细信息：**管理站点上的服务器、客户端和移动客户端语言支持。  
+    -   **Detalhes:** gerencia o servidor, o cliente e o suporte ao idioma do cliente móvel em um site.  
 
-**选项**  
+**Opções**  
 
--   **项名称：**AddServerLanguages  
+-   **Nome da chave:** AddServerLanguages  
 
-    -   **是否必需：** 否  
+    -   **Obrigatória:** Não  
 
-    -   **值：**DEU、FRA、RUS、CHS、JPN、CHT、CSY、ESN、HUN、ITA、KOR、NLD、PLK、PTB、PTG、SVE、TRK 或 ZHH  
+    -   **Valores:** DEU, FRA, RUS, CHS, JPN, CHT, CSY, ESN, HUN, ITA, KOR, NLD, PLK, PTB, PTG, SVE, TRK ou ZHH  
 
-    -   **详细信息：**指定可用于 Configuration Manager 控制台、报告和 Configuration Manager 对象的服务器语言。 默认情况下使用英语。  
+    -   **Detalhes:** especifica os idiomas do servidor que estarão disponíveis para o console do Configuration Manager, relatórios e objetos do Configuration Manager. Inglês está disponível por padrão.  
 
--   **项名称：**AddClientLanguages  
+-   **Nome da chave:** AddClientLanguages  
 
-    -   **是否必需：** 否  
+    -   **Obrigatória:** Não  
 
-    -   **值：**DEU、FRA、RUS、CHS、JPN、CHT、CSY、ESN、HUN、ITA、KOR、NLD、PLK、PTB、PTG、SVE、TRK 或 ZHH  
+    -   **Valores:** DEU, FRA, RUS, CHS, JPN, CHT, CSY, ESN, HUN, ITA, KOR, NLD, PLK, PTB, PTG, SVE, TRK ou ZHH  
 
-    -   **详细信息：**指定将可供客户端计算机使用的语言。 默认情况下使用英语。  
+    -   **Details:** especifica os idiomas que estarão disponíveis para computadores cliente. Inglês está disponível por padrão.  
 
--   **项名称：**DeleteServerLanguages  
+-   **Nome da chave:** DeleteServerLanguages  
 
-    -   **是否必需：** 否  
+    -   **Obrigatória:** Não  
 
-    -   **值：**DEU、FRA、RUS、CHS、JPN、CHT、CSY、ESN、HUN、ITA、KOR、NLD、PLK、PTB、PTG、SVE、TRK 或 ZHH  
+    -   **Valores:** DEU, FRA, RUS, CHS, JPN, CHT, CSY, ESN, HUN, ITA, KOR, NLD, PLK, PTB, PTG, SVE, TRK ou ZHH  
 
-    -   **详细信息：**指定将不再可用于 Configuration Manager 控制台、报告和 Configuration Manager 对象的要删除的语言。 默认情况下使用英语，因此无法删除它。  
+    -   **Detalhes:** especifica os idiomas a serem removidos e que não estarão mais disponíveis para o console, os relatórios e objetos do Configuration Manager. Inglês está disponível por padrão e não pode ser removido.  
 
--   **项名称：**DeleteClientLanguages  
+-   **Nome da chave:** DeleteClientLanguages  
 
-    -   **是否必需：** 否  
+    -   **Obrigatória:** Não  
 
-    -   **值：**DEU、FRA、RUS、CHS、JPN、CHT、CSY、ESN、HUN、ITA、KOR、NLD、PLK、PTB、PTG、SVE、TRK 或 ZHH  
+    -   **Valores:** DEU, FRA, RUS, CHS, JPN, CHT, CSY, ESN, HUN, ITA, KOR, NLD, PLK, PTB, PTG, SVE, TRK ou ZHH  
 
-    -   **详细信息：**指定将不再可用于客户端计算机的要删除的语言。 默认情况下使用英语，因此无法删除它。  
+    -   **Detalhes:** especifica os idiomas a serem removidos e que não estarão mais disponíveis para os computadores cliente. Inglês está disponível por padrão e não pode ser removido.  
 
--   **项名称：**MobileDeviceLanguage  
+-   **Nome da chave:** MobileDeviceLanguage  
 
-    -   **是否必需：** 是  
+    -   **Obrigatória:** Sim  
 
-    -   **值：** 0 或 1  
+    -   **Valores:** 0 ou 1  
 
-         0 = 不安装  
+         0 = Não instalar  
 
-         1 = 安装  
+         1 = Instalar  
 
-    -   **详细信息：**指定是否安装移动设备客户端语言。  
+    -   **Detalhes:** especifica se os idiomas do cliente do dispositivo móvel estão instalados.  
 
--   **项名称：**PrerequisiteComp  
+-   **Nome da chave:** PrerequisiteComp  
 
-    -   **是否必需：** 是  
+    -   **Obrigatória:** Sim  
 
-    -   **值：** 0 或 1  
+    -   **Valores:** 0 ou 1  
 
-         0 = 下载  
+         0 = Baixar  
 
-         1 = 已下载  
+         1 = Já baixado  
 
-    -   **详细信息：** 指定安装程序必备文件是否已下载。 例如，如果使用值 **0**，则安装程序将下载文件。  
+    -   **Detalhes:** especifica se os arquivos de pré-requisito da Instalação já foram baixados. Por exemplo, se você usar o valor **0**, a instalação baixará os arquivos.  
 
--   **项名称：**PrerequisitePath  
+-   **Nome da chave:** PrerequisitePath  
 
-    -   **是否必需：** 是  
+    -   **Obrigatória:** Sim  
 
-    -   **值：** <*安装程序先决条件文件的路径*>  
+    -   **Valores:** <*Caminho para os arquivos de pré-requisito da Instalação*>  
 
-    -   **详细信息：** 指定安装程序必备文件的路径。 根据 **PrerequisiteComp** 值，安装程序将使用此路径来存储已下载文件或查找以前下载的文件。  
+    -   **Detalhes:** especifica o caminho para os arquivos de pré-requisito da Instalação. Dependendo do valor do **PrerequisiteComp** , a Instalação usará esse caminho para armazenar arquivos baixados ou para localizar arquivos baixados anteriormente.  
 
-##  <a name="bkmk_Unattended"></a>无人参与安装程序脚本文件项  
- 使用下列部分来帮助你为无人参与安装程序创建脚本。 列表显示了可用的安装程序脚本项、其对应的值、是否需要它们、它们用于哪种安装类型以及项的简要描述。  
+##  <a name="bkmk_Unattended"></a> Chaves de arquivo de script da instalação autônoma  
+ Use as seções a seguir para ajudá-lo a criar seu script para a Instalação autônoma. As listas mostram as chaves de script da Instalação disponíveis, seus valores correspondentes, se são necessárias, em que tipo de instalação são usadas e uma breve descrição da chave.  
 
-### <a name="unattended-install-for-a-central-administration-site"></a>中心管理站点的无人参与安装  
- 使用下列详细信息通过无人参与的安装程序脚本文件来安装管理中心站点。  
+### <a name="unattended-install-for-a-central-administration-site"></a>Instalação autônoma de um site de administração central  
+ Use os detalhes a seguir para instalar um site de administração central usando um arquivo de script de Instalação autônoma.  
 
-**标识**  
+**Identificação**  
 
--   **项名称：**Action  
+-   **Nome da chave:** Action  
 
-    -   **是否必需：** 是  
+    -   **Obrigatória:** Sim  
 
-    -   **值：**InstallCAS  
+    -   **Valores:** InstallCAS  
 
-    -   **详细信息：**安装管理中心站点。  
+    -   **Detalhes:** instala um site de administração central.  
 
--   **密钥名称：**CDLatest  
+-   **Nome da chave:** CDLatest  
 
-    -   **必备：**是（仅在使用 CD.Latest 文件夹中的介质时）。    
+    -   **Obrigatório:** Sim – somente ao usar a mídia da pasta CD.Latest.    
 
-    -   **值：**1。1 以外的任何值均视为不使用 CD.Latest。
+    -   **Valores:** 1 qualquer valor diferente de 1 é considerado como não usando o CD.Latest.
 
-    -   **详细信息：**从 CD.Latest 文件夹中的介质运行安装程序时，你的脚本必须包含该密钥和值，以安装主站点或管理中心站点，或恢复主站点或管理中心站点。 该值将告知安装程序当前使用介质形式 CD.Latest。
+    -   **Detalhes:** seu script deve incluir essa chave e o valor ao executar a instalação de uma mídia em uma pasta CD.Latest com a finalidade de instalar um site primário ou de administração central ou recuperar um site de administração central ou primário. Esse valor informa à instalação que a forma de mídia CD.Latest está sendo usada.
 
-**选项**  
+**Opções**  
 
--   **项名称：**ProductID  
+-   **Nome da chave:** ProductID  
 
-    -   **是否必需：** 是  
+    -   **Obrigatória:** Sim  
 
-    -   **值：** <*xxxxx-xxxxx-xxxxx-xxxxx-xxxxx*>  *或* Eval  
+    -   **Valores:** <*xxxxx-xxxxx-xxxxx-xxxxx-xxxxx*> *ou* Eval  
 
-    -   **详细信息：**指定 Configuration Manager 安装产品密钥，包括短划线。 输入 **Eval** 以安装 Configuration Manager 的评估版。  
+    -   **Detalhes:** especifica a chave do produto (Product Key) de instalação do Configuration Manager, incluindo os traços. Insira **Eval** para instalar a versão de avaliação do Configuration Manager.  
 
--   **项名称：**SiteCode  
+-   **Nome da chave:** SiteCode  
 
-    -   **是否必需：** 是  
+    -   **Obrigatória:** Sim  
 
-    -   **值：** <*站点代码*>  
+    -   **Valores:** <*Código do site*>  
 
-    -   **详细信息：**指定三个字母数字字符，以唯一标识层次结构中的站点。  
+    -   **Detalhes:** especifica três caracteres alfanuméricos que identificam de forma exclusiva o site na hierarquia.  
 
--   **项名称：**站点名称  
+-   **Nome da Chave:** Nome do site  
 
-    -   **是否必需：** 是  
+    -   **Obrigatória:** Sim  
 
-    -   **值：** <*站点名称*>  
+    -   **Valores:** <*Nome do site*>  
 
-    -   **详细信息：**指定此站点的名称。  
+    -   **Detalhes:** especifica o nome do site.  
 
--   **项名称：**SMSInstallDir  
+-   **Nome da chave:** SMSInstallDir  
 
-    -   **是否必需：** 是  
+    -   **Obrigatória:** Sim  
 
-    -   **值：** <*Configuration Manager 安装路径*>  
+    -   **Valores:** <*Caminho de instalação do Configuration Manager*>  
 
-    -   **详细信息：**指定 Configuration Manager 程序文件的安装文件夹。  
+    -   **Detalhes:** especifica a pasta de instalação dos arquivos de programa do Configuration Manager.  
 
--   **项名称：**SDKServer  
+-   **Nome da chave:** SDKServer  
 
-    -   **是否必需：** 是  
+    -   **Obrigatória:** Sim  
 
-    -   **值：** <*SMS 提供程序 FQDN*>  
+    -   **Valores:** <*FQDN do Provedor de SMS*>  
 
-    -   **详细信息：** 指定将托管 SMS 提供程序的服务器的 FQDN。 你可以在初始安装后为站点配置其他 SMS 提供程序。  
+    -   **Detalhes:** especifica o FQDN para o servidor que hospedará o Provedor de SMS. Você pode configurar outros Provedores de SMS para o site após a instalação inicial.  
 
--   **项名称：**PrerequisiteComp  
+-   **Nome da chave:** PrerequisiteComp  
 
-    -   **是否必需：** 是  
+    -   **Obrigatória:** Sim  
 
-    -   **值：** 0 或 1  
+    -   **Valores:** 0 ou 1  
 
-         0 = 下载  
+         0 = Baixar  
 
-         1 = 已下载  
+         1 = Já baixado  
 
-    -   **详细信息：** 指定安装程序必备文件是否已下载。 例如，如果使用值 **0**，则安装程序将下载文件。  
+    -   **Detalhes:** especifica se os arquivos de pré-requisito da Instalação já foram baixados. Por exemplo, se você usar o valor **0**, a Instalação baixará os arquivos.  
 
--   **项名称：**PrerequisitePath  
+-   **Nome da chave:** PrerequisitePath  
 
-    -   **是否必需：** 是  
+    -   **Obrigatória:** Sim  
 
-    -   **值：** <*安装程序先决条件文件的路径*>  
+    -   **Valores:** <*Caminho para os arquivos de pré-requisito da Instalação*>  
 
-    -   **详细信息：** 指定安装程序必备文件的路径。 根据 **PrerequisiteComp** 值，安装程序将使用此路径来存储已下载文件或查找以前下载的文件。  
+    -   **Detalhes:** especifica o caminho para os arquivos de pré-requisito da Instalação. Dependendo do valor do **PrerequisiteComp** , a Instalação usará esse caminho para armazenar arquivos baixados ou para localizar arquivos baixados anteriormente.  
 
--   **项名称：**AdminConsole  
+-   **Nome da chave:** AdminConsole  
 
-    -   **是否必需：** 是  
+    -   **Obrigatória:** Sim  
 
-    -   **值：** 0 或 1  
+    -   **Valores:** 0 ou 1  
 
-         0 = 不安装  
+         0 = Não instalar  
 
-         1 = 安装  
+         1 = Instalar  
 
-    -   **详细信息：**指定是否安装 Configuration Manager 控制台。  
+    -   **Detalhes:** especifica se deseja instalar o console do Configuration Manager.  
 
--   **项名称：**JoinCEIP  
+-   **Nome da chave:** JoinCEIP  
 
-    -   **是否必需：** 是  
+    -   **Obrigatória:** Sim  
 
-    -   **值：** 0 或 1  
+    -   **Valores:** 0 ou 1  
 
-         0 = 不加入  
+         0 = Não ingressar  
 
-         1 = 加入  
+         1 = Ingressar  
 
-    -   **详细信息：**指定是否加入客户体验改善计划 (CEIP)。  
+    -   **Detalhes:** especifica o ingresso ou não no CEIP (Programa de Aperfeiçoamento da Experiência do Usuário).  
 
--   **项名称：**AddServerLanguages  
+-   **Nome da chave:** AddServerLanguages  
 
-    -   **是否必需：** 否  
+    -   **Obrigatória:** Não  
 
-    -   **值：**DEU、FRA、RUS、CHS、JPN、CHT、CSY、ESN、HUN、ITA、KOR、NLD、PLK、PTB、PTG、SVE、TRK 或 ZHH  
+    -   **Valores:** DEU, FRA, RUS, CHS, JPN, CHT, CSY, ESN, HUN, ITA, KOR, NLD, PLK, PTB, PTG, SVE, TRK ou ZHH  
 
-    -   **详细信息：**指定可用于 Configuration Manager 控制台、报告和 Configuration Manager 对象的服务器语言。 默认情况下使用英语。  
+    -   **Detalhes:** especifica os idiomas do servidor que estarão disponíveis para o console do Configuration Manager, relatórios e objetos do Configuration Manager. Inglês está disponível por padrão.  
 
--   **项名称：**AddClientLanguages  
+-   **Nome da chave:** AddClientLanguages  
 
-    -   **是否必需：** 否  
+    -   **Obrigatória:** Não  
 
-    -   **值：**DEU、FRA、RUS、CHS、JPN、CHT、CSY、ESN、HUN、ITA、KOR、NLD、PLK、PTB、PTG、SVE、TRK 或 ZHH  
+    -   **Valores:** DEU, FRA, RUS, CHS, JPN, CHT, CSY, ESN, HUN, ITA, KOR, NLD, PLK, PTB, PTG, SVE, TRK ou ZHH  
 
-    -   **详细信息：**指定将可供客户端计算机使用的语言。 默认情况下使用英语。  
+    -   **Details:** especifica os idiomas que estarão disponíveis para computadores cliente. Inglês está disponível por padrão.  
 
--   **项名称：**DeleteServerLanguages  
+-   **Nome da chave:** DeleteServerLanguages  
 
-    -   **是否必需：** 否  
+    -   **Obrigatória:** Não  
 
-    -   **值：**DEU、FRA、RUS、CHS、JPN、CHT、CSY、ESN、HUN、ITA、KOR、NLD、PLK、PTB、PTG、SVE、TRK 或 ZHH  
+    -   **Valores:** DEU, FRA, RUS, CHS, JPN, CHT, CSY, ESN, HUN, ITA, KOR, NLD, PLK, PTB, PTG, SVE, TRK ou ZHH  
 
-    -   **详细信息：**在安装站点后对其进行修改。 指定将不再可用于 Configuration Manager 控制台、报告和 Configuration Manager 对象的要删除的语言。 默认情况下使用英语，因此无法删除它。  
+    -   **Detalhes:** modifica um site após sua instalação. Especifica os idiomas a serem removidos e que não estarão mais disponíveis para o console, os relatórios e objetos do Configuration Manager. Inglês está disponível por padrão e não pode ser removido.  
 
--   **项名称：**DeleteClientLanguages  
+-   **Nome da chave:** DeleteClientLanguages  
 
-    -   **是否必需：** 否  
+    -   **Obrigatória:** Não  
 
-    -   **值：**DEU、FRA、RUS、CHS、JPN、CHT、CSY、ESN、HUN、ITA、KOR、NLD、PLK、PTB、PTG、SVE、TRK 或 ZHH  
+    -   **Valores:** DEU, FRA, RUS, CHS, JPN, CHT, CSY, ESN, HUN, ITA, KOR, NLD, PLK, PTB, PTG, SVE, TRK ou ZHH  
 
-    -   **详细信息：**在安装站点后对其进行修改。 指定将不再可用于客户端计算机的要删除的语言。 默认情况下使用英语，因此无法删除它。  
+    -   **Detalhes:** modifica um site após sua instalação. Especifica os idiomas a serem removidos e que não estarão mais disponíveis para os computadores cliente. Inglês está disponível por padrão e não pode ser removido.  
 
--   **项名称：**MobileDeviceLanguage  
+-   **Nome da chave:** MobileDeviceLanguage  
 
-    -   **是否必需：** 是  
+    -   **Obrigatória:** Sim  
 
-    -   **值：** 0 或 1  
+    -   **Valores:** 0 ou 1  
 
-         0 = 不安装  
+         0 = Não instalar  
 
-         1 = 安装  
+         1 = Instalar  
 
-    -   **详细信息：**指定是否安装移动设备客户端语言。  
+    -   **Detalhes:** especifica se os idiomas do cliente do dispositivo móvel estão instalados.  
 
 **SQLConfigOptions**  
 
--   **项名称：**SQLServerName  
+-   **Nome da chave:** SQLServerName  
 
-    -   **是否必需：** 是  
+    -   **Obrigatória:** Sim  
 
-    -   **值：** <*SQL Server 名称*>  
+    -   **Valores:** <*Nome do SQL Server*>  
 
-    -   **详细信息：**指定服务器或群集实例的名称，它们正在运行 SQL Server 并将承载站点数据库。  
+    -   **Detalhes:** especifica o nome do servidor ou da instância clusterizada que executa o SQL Server e que hospedará o banco de dados do site.  
 
--   **项名称：**DatabaseName  
+-   **Nome da chave:** DatabaseName  
 
-    -   **是否必需：** 是  
+    -   **Obrigatória:** Sim  
 
-    -   **值：** <*站点数据库名称*> 或 <*实例名称*>\\<*站点数据库名称*>  
+    -   **Valores:** <*Nome do banco de dados do site*> ou <*Nome da instância*>\\<*Nome do banco de dados do site*>  
 
-    -   **详细信息：**指定要创建或用于安装中心管理站点数据库的 SQL Server 数据库的名称。  
+    -   **Detalhes:** especifica o nome do banco de dados SQL Server a ser criado ou o banco de dados SQL Server a ser usado durante a instalação do banco de dados do site de administração central.  
 
         > [!IMPORTANT]  
-        >  如果未使用默认实例，你必须指定实例名称和站点数据库名称。  
+        >  Você deverá especificar o nome da instância e o nome do banco de dados do site se você não usar a instância padrão.  
 
--   **项名称：**SQLSSBPort  
+-   **Nome da chave:** SQLSSBPort  
 
-    -   **是否必需：** 否  
+    -   **Obrigatória:** Não  
 
-    -   **值：** <*SSB 端口号*>  
+    -   **Valores:** <*Número da porta SSB*>  
 
-    -   **详细信息：**指定 SQL Server 使用的 SQL Server Service Broker (SSB) 端口。 SSB 配置为使用 TCP 端口 4022，但也可以使用其他端口。  
+    -   **Detalhes:** especifica a porta do SQL SSB (Server Service Broker) a ser usada pelo SQL Server. Normalmente, o SSB está configurado para usar a porta TCP 4022, mas é possível usar outra porta.  
 
--   **项名称：**SQLDataFilePath  
+-   **Nome da chave:** SQLDataFilePath  
 
-    -   **是否必需：** 否  
+    -   **Obrigatória:** Não  
 
-    -   **值：** <数据库 .mdb 文件的路径>  
+    -   **Valores:** <*Caminho para o arquivo .mdb do banco de dados*>  
 
-    -   **详细信息：**指定创建数据库 .mdb 文件的替代位置。  
+    -   **Detalhes:** especifica um local alternativo para criar o arquivo .mdb do banco de dados.  
 
--   **项名称：**SQLLogFilePath  
+-   **Nome da chave:** SQLLogFilePath  
 
-    -   **是否必需：** 否  
+    -   **Obrigatória:** Não  
 
-    -   **值：** <*数据库.ldf 文件的路径*>  
+    -   **Valores:** <*Caminho para o arquivo .ldf do banco de dados*>  
 
-    -   **详细信息：**指定创建数据库 .ldf 文件的替代位置。  
+    -   **Detalhes:** especifica um local alternativo para criar o arquivo .ldf do banco de dados.  
 
 **CloudConnectorOptions**  
 
--   **项名称：**CloudConnector  
+-   **Nome da chave:** CloudConnector  
 
-    -   **是否必需：** 是  
+    -   **Obrigatória:** Sim  
 
-    -   **值：** 0 或 1  
+    -   **Valores:** 0 ou 1  
 
-         0 = 不安装  
+         0 = Não instalar  
 
-         1 = 安装  
+         1 = Instalar  
 
-    -   **详细信息：**指定是否在此站点上安装服务连接点。 因为服务连接点只能安装在层次结构的顶层站点上，此值对子主站点必须为 **0**。  
+    -   **Detalhes:** especifica se um ponto de conexão de serviço será instalado neste site. Como o ponto de conexão de serviço pode ser instalado somente no site de camada superior de uma hierarquia, esse valor deverá ser **0** para um site primário filho.  
 
--   **项名称：**CloudConnectorServer  
+-   **Nome da chave:** CloudConnectorServer  
 
-    -   **是否必需：**当 **CloudConnector** 等于 1 时需要  
+    -   **Obrigatório:** obrigatório quando **CloudConnector** for igual a 1  
 
-    -   **值：** <服务连接点服务器 FQDN>  
+    -   **Valores:** <*FQDN do servidor de ponto de conexão do serviço*>  
 
-    -   **详细信息：**指定将承载服务连接点站点系统角色的服务器的 FQDN。  
+    -   **Detalhes:** especifica o FQDN do servidor que hospedará a função do sistema de sites do ponto de conexão do serviço.  
 
--   **项名称：**UseProxy  
+-   **Nome da chave:** UseProxy  
 
-    -   **是否必需：**当 **CloudConnector** 等于 1 时需要  
+    -   **Obrigatório:** obrigatório quando **CloudConnector** for igual a 1  
 
-    -   **值：** 0 或 1  
+    -   **Valores:** 0 ou 1  
 
-         0 = 不安装  
+         0 = Não instalar  
 
-         1 = 安装  
+         1 = Instalar  
 
-    -   **详细信息：**指定服务连接点是否将使用代理服务器。  
+    -   **Detalhes:** especifica se o ponto de conexão de serviço usará um servidor proxy.  
 
--   **项名称：**ProxyName  
+-   **Nome da chave:** ProxyName  
 
-    -   **是否必需：**当 **UseProxy** 等于 1 时需要  
+    -   **Obrigatório:** obrigatório quando **UseProxy** for igual a 1  
 
-    -   **值：** <代理服务器 FQDN>  
+    -   **Valores:** <*FQDN do servidor proxy*>  
 
-    -   **详细信息：**指定将用于服务连接点站点系统角色的代理服务器的 FQDN。  
+    -   **Detalhes:** especifica o FQDN do servidor proxy que será usado pela função do sistema de sites do ponto de conexão do serviço.  
 
--   **项名称：**ProxyPort  
+-   **Nome da chave:** ProxyPort  
 
-    -   **是否必需：**当 **UseProxy** 等于 1 时需要  
+    -   **Obrigatório:** obrigatório quando **UseProxy** for igual a 1  
 
-    -   **值：** <*端口号*>  
+    -   **Valores:** <*Número da porta*>  
 
-    -   **详细信息：**指定要用于代理端口的端口号。  
+    -   **Detalhes:** especifica o número da porta a ser usado para a porta do proxy.  
 
-### <a name="unattended-install-for-a-primary-site"></a>主站点的无人参与安装  
-使用下列详细信息通过无人参与的安装程序脚本文件来安装主站点。  
+### <a name="unattended-install-for-a-primary-site"></a>Instalação autônoma de um site primário  
+Use os detalhes a seguir para instalar um site primário usando um arquivo de script de Instalação autônoma.  
 
-**标识**  
+**Identificação**  
 
--   **项名称：**Action  
+-   **Nome da chave:** Action  
 
-    -   **是否必需：** 是  
+    -   **Obrigatória:** Sim  
 
-    -   **值：**InstallPrimarySite  
+    -   **Valores:** InstallPrimarySite  
 
-    -   **详细信息：**安装主站点。  
+    -   **Detalhes:** instala um site primário.  
 
--   **密钥名称：**CDLatest  
+-   **Nome da chave:** CDLatest  
 
-    -   **必备：**是（仅在使用 CD.Latest 文件夹中的介质时）。    
+    -   **Obrigatório:** Sim – somente ao usar a mídia da pasta CD.Latest.    
 
-    -   **值：**1。1 以外的任何值均视为不使用 CD.Latest。
+    -   **Valores:** 1 qualquer valor diferente de 1 é considerado como não usando o CD.Latest.
 
-    -   **详细信息：**从 CD.Latest 文件夹中的介质运行安装程序时，你的脚本必须包含该密钥和值，以安装主站点或管理中心站点，或恢复主站点或管理中心站点。 该值将告知安装程序当前使用介质形式 CD.Latest。
+    -   **Detalhes:** seu script deve incluir essa chave e o valor ao executar a instalação de uma mídia em uma pasta CD.Latest com a finalidade de instalar um site primário ou de administração central ou recuperar um site de administração central ou primário. Esse valor informa à instalação que a forma de mídia CD.Latest está sendo usada.
 
-**选项**  
+**Opções**  
 
--   **项名称：**ProductID  
+-   **Nome da chave:** ProductID  
 
-    -   **是否必需：** 是  
+    -   **Obrigatória:** Sim  
 
-    -   **值：** <*xxxxx-xxxxx-xxxxx-xxxxx-xxxxx*>  *或* Eval  
+    -   **Valores:** <*xxxxx-xxxxx-xxxxx-xxxxx-xxxxx*> *ou* Eval  
 
-    -   **详细信息：**指定 Configuration Manager 安装产品密钥，包括短划线。 输入 **Eval** 以安装 Configuration Manager 的评估版。  
+    -   **Detalhes:** especifica a chave do produto (Product Key) de instalação do Configuration Manager, incluindo os traços. Insira **Eval** para instalar a versão de avaliação do Configuration Manager.  
 
--   **项名称：**SiteCode  
+-   **Nome da chave:** SiteCode  
 
-    -   **是否必需：** 是  
+    -   **Obrigatória:** Sim  
 
-    -   **值：** <*站点代码*>  
+    -   **Valores:** <*Código do site*>  
 
-    -   **详细信息：**指定三个字母数字字符，以唯一标识层次结构中的站点。  
+    -   **Detalhes:** especifica três caracteres alfanuméricos que identificam de forma exclusiva o site na hierarquia.  
 
--   **项名称：**SiteName  
+-   **Nome da chave:** SiteName  
 
-    -   **是否必需：** 是  
+    -   **Obrigatória:** Sim  
 
-    -   **值：** <*站点名称*>  
+    -   **Valores:** <*Nome do site*>  
 
-    -   **详细信息：**指定此站点的名称。  
+    -   **Detalhes:** especifica o nome do site.  
 
--   **项名称：**SMSInstallDir  
+-   **Nome da chave:** SMSInstallDir  
 
-    -   **是否必需：** 是  
+    -   **Obrigatória:** Sim  
 
-    -   **值：** <*Configuration Manager 安装路径*>
+    -   **Valores:** <*Caminho de instalação do Configuration Manager*>
 
-    -   **详细信息：**指定 Configuration Manager 程序文件的安装文件夹。  
+    -   **Detalhes:** especifica a pasta de instalação dos arquivos de programa do Configuration Manager.  
 
--   **项名称：**SDKServer  
+-   **Nome da chave:** SDKServer  
 
-    -   **是否必需：** 是  
+    -   **Obrigatória:** Sim  
 
-    -   **值：** <*SMS 提供程序 FQDN*>  
+    -   **Valores:** <*FQDN do Provedor de SMS*>  
 
-    -   **详细信息：** 指定将托管 SMS 提供程序的服务器的 FQDN。 你可以在初始安装后为站点配置其他 SMS 提供程序。  
+    -   **Detalhes:** especifica o FQDN para o servidor que hospedará o Provedor de SMS. Você pode configurar outros Provedores de SMS para o site após a instalação inicial.  
 
--   **项名称：**PrerequisiteComp  
+-   **Nome da chave:** PrerequisiteComp  
 
-    -   **是否必需：** 是  
+    -   **Obrigatória:** Sim  
 
-    -   **值：** 0 或 1  
+    -   **Valores:** 0 ou 1  
 
-         0 = 下载  
+         0 = Baixar  
 
-         1 = 已下载  
+         1 = Já baixado  
 
-    -   **详细信息：** 指定安装程序必备文件是否已下载。 例如，如果使用值 **0**，则安装程序将下载文件。  
+    -   **Detalhes:** especifica se os arquivos de pré-requisito da Instalação já foram baixados. Por exemplo, se você usar o valor **0**, a Instalação baixará os arquivos.  
 
--   **项名称：**PrerequisitePath  
+-   **Nome da chave:** PrerequisitePath  
 
-    -   **是否必需：** 是  
+    -   **Obrigatória:** Sim  
 
-    -   **值：** <*安装程序先决条件文件的路径*>  
+    -   **Valores:** <*Caminho para os arquivos de pré-requisito da Instalação*>  
 
-    -   **详细信息：** 指定安装程序必备文件的路径。 根据 **PrerequisiteComp** 值，安装程序将使用此路径来存储已下载文件或查找以前下载的文件。  
+    -   **Detalhes:** especifica o caminho para os arquivos de pré-requisito da Instalação. Dependendo do valor do **PrerequisiteComp** , a Instalação usará esse caminho para armazenar arquivos baixados ou para localizar arquivos baixados anteriormente.  
 
--   **项名称：**AdminConsole  
+-   **Nome da chave:** AdminConsole  
 
-    -   **是否必需：** 是  
+    -   **Obrigatória:** Sim  
 
-    -   **值：** 0 或 1  
+    -   **Valores:** 0 ou 1  
 
-         0 = 不安装  
+         0 = Não instalar  
 
-         1 = 安装  
+         1 = Instalar  
 
-    -   **详细信息：**指定是否安装 Configuration Manager 控制台。  
+    -   **Detalhes:** especifica se deseja instalar o console do Configuration Manager.  
 
--   **项名称：**JoinCEIP  
+-   **Nome da chave:** JoinCEIP  
 
-    -   **是否必需：** 是  
+    -   **Obrigatória:** Sim  
 
-    -   **值：** 0 或 1  
+    -   **Valores:** 0 ou 1  
 
-         0 = 不加入  
+         0 = Não ingressar  
 
-         1 = 加入  
+         1 = Ingressar  
 
-    -   **详细信息：**指定是否加入 CEIP。  
+    -   **Detalhes:** especifica o ingresso ou não no Programa de Aperfeiçoamento da Experiência do Usuário.  
 
--   **项名称：**ManagementPoint  
+-   **Nome da chave:** ManagementPoint  
 
-    -   **是否必需：** 否  
+    -   **Obrigatória:** Não  
 
-    -   **值：** <*管理点站点服务器 FQDN*>  
+    -   **Valores:** <*FQDN do servidor do site do ponto de gerenciamento*>  
 
-    -   **详细信息：**指定将承载管理点站点系统角色的服务器的 FQDN。  
+    -   **Detalhes:** especifica o FQDN do servidor que hospedará a função de sistema de sites do ponto de gerenciamento.  
 
--   **项名称：**ManagementPointProtocol  
+-   **Nome da chave:** ManagementPointProtocol  
 
-    -   **是否必需：** 否  
+    -   **Obrigatória:** Não  
 
-    -   **值：**HTTPS *或* HTTP  
+    -   **Valores:** HTTPS *ou* HTTP  
 
-    -   **详细信息：**指定要用于管理点的协议。  
+    -   **Detalhes:** especifica o protocolo a ser usado para o ponto de gerenciamento.  
 
--   **项名称：**DistributionPoint  
+-   **Nome da chave:** DistributionPoint  
 
-    -   **是否必需：** 否  
+    -   **Obrigatória:** Não  
 
-    -   **值：** <*分发点站点服务器 FQDN*>  
+    -   **Valores:** <*FQDN do servidor do site do ponto de distribuição*>  
 
-    -   **详细信息：**指定要用于分发点的协议。  
+    -   **Detalhes:** especifica o protocolo a ser usado para o ponto de distribuição.  
 
--   **项名称：**DistributionPointProtocol  
+-   **Nome da chave:** DistributionPointProtocol  
 
-    -   **是否必需：** 否  
+    -   **Obrigatória:** Não  
 
-    -   **值：**HTTPS *或* HTTP  
+    -   **Valores:** HTTPS *ou* HTTP  
 
-    -   **详细信息：**指定要用于分发点的协议。  
+    -   **Detalhes:** especifica o protocolo a ser usado para o ponto de distribuição.  
 
--   **项名称：**RoleCommunicationProtocol  
+-   **Nome da chave:** RoleCommunicationProtocol  
 
-    -   **是否必需：** 是  
+    -   **Obrigatória:** Sim  
 
-    -   **值：**EnforceHTTPS *或* HTTPorHTTPS  
+    -   **Valores:** EnforceHTTPS *ou* HTTPorHTTPS  
 
-    -   **详细信息：**指定是将所有站点系统配置为仅接受来自客户端的 HTTPS 通信，还是为每个站点系统角色配置通信方法。 如果选择“EnforceHTTPS”，则客户端计算机必须具有有效的公钥基础结构 (PKI) 证书以进行客户端身份验证。  
+    -   **Detalhes:** especifica se todos os sistemas de sites serão configurados para aceitar somente a comunicação HTTPS de clientes ou se o método de comunicação será configurado para cada função do sistema de sites. Ao selecionar **EnforceHTTPS**, o computador cliente deverá ter um certificado PKI (infraestrutura de chave pública) válido para a autenticação de cliente.  
 
--   **项名称：**ClientsUsePKICertificate  
+-   **Nome da chave:** ClientsUsePKICertificate  
 
-    -   **是否必需：** 是  
+    -   **Obrigatória:** Sim  
 
-    -   **值：** 0 或 1  
+    -   **Valores:** 0 ou 1  
 
-         0 = 不使用  
+         0 = Não usar  
 
-         1 = 使用  
+         1 = Usar  
 
-    -   **详细信息：**指定客户端是否将使用客户端 PKI 证书与站点系统角色通信。  
+    -   **Detalhes:** especifica se os clientes usarão um certificado PKI de cliente para se comunicar com as funções do sistema de sites.  
 
--   **项名称：**AddServerLanguages  
+-   **Nome da chave:** AddServerLanguages  
 
-    -   **是否必需：** 否  
+    -   **Obrigatória:** Não  
 
-    -   **值：**DEU、FRA、RUS、CHS、JPN、CHT、CSY、ESN、HUN、ITA、KOR、NLD、PLK、PTB、PTG、SVE、TRK 或 ZHH  
+    -   **Valores:** DEU, FRA, RUS, CHS, JPN, CHT, CSY, ESN, HUN, ITA, KOR, NLD, PLK, PTB, PTG, SVE, TRK ou ZHH  
 
-    -   **详细信息：**指定可用于 Configuration Manager 控制台、报告和 Configuration Manager 对象的服务器语言。 默认情况下使用英语。  
+    -   **Detalhes:** especifica os idiomas do servidor que estarão disponíveis para o console do Configuration Manager, relatórios e objetos do Configuration Manager. Inglês está disponível por padrão.  
 
--   **项名称：**AddClientLanguages  
+-   **Nome da chave:** AddClientLanguages  
 
-    -   **是否必需：** 否  
+    -   **Obrigatória:** Não  
 
-    -   **值：**DEU、FRA、RUS、CHS、JPN、CHT、CSY、ESN、HUN、ITA、KOR、NLD、PLK、PTB、PTG、SVE、TRK 或 ZHH  
+    -   **Valores:** DEU, FRA, RUS, CHS, JPN, CHT, CSY, ESN, HUN, ITA, KOR, NLD, PLK, PTB, PTG, SVE, TRK ou ZHH  
 
-    -   **详细信息：**指定将可供客户端计算机使用的语言。 默认情况下使用英语。  
+    -   **Details:** especifica os idiomas que estarão disponíveis para computadores cliente. Inglês está disponível por padrão.  
 
--   **项名称：**DeleteServerLanguages  
+-   **Nome da chave:** DeleteServerLanguages  
 
-    -   **是否必需：** 否  
+    -   **Obrigatória:** Não  
 
-    -   **值：**DEU、FRA、RUS、CHS、JPN、CHT、CSY、ESN、HUN、ITA、KOR、NLD、PLK、PTB、PTG、SVE、TRK 或 ZHH  
+    -   **Valores:** DEU, FRA, RUS, CHS, JPN, CHT, CSY, ESN, HUN, ITA, KOR, NLD, PLK, PTB, PTG, SVE, TRK ou ZHH  
 
-    -   **详细信息：**在安装站点后对其进行修改。 指定将不再可用于 Configuration Manager 控制台、报告和 Configuration Manager 对象的要删除的语言。 默认情况下使用英语，因此无法删除它。  
+    -   **Detalhes:** modifica um site após sua instalação. Especifica os idiomas a serem removidos e que não estarão mais disponíveis para o console, os relatórios e objetos do Configuration Manager. Inglês está disponível por padrão e não pode ser removido.  
 
--   **项名称：**DeleteClientLanguages  
+-   **Nome da chave:** DeleteClientLanguages  
 
-    -   **是否必需：** 否  
+    -   **Obrigatória:** Não  
 
-    -   **值：**DEU、FRA、RUS、CHS、JPN、CHT、CSY、ESN、HUN、ITA、KOR、NLD、PLK、PTB、PTG、SVE、TRK 或 ZHH  
+    -   **Valores:** DEU, FRA, RUS, CHS, JPN, CHT, CSY, ESN, HUN, ITA, KOR, NLD, PLK, PTB, PTG, SVE, TRK ou ZHH  
 
-    -   **详细信息：**在安装站点后对其进行修改。 指定将不再可用于客户端计算机的要删除的语言。 默认情况下使用英语，因此无法删除它。  
+    -   **Detalhes:** modifica um site após sua instalação. Especifica os idiomas a serem removidos e que não estarão mais disponíveis para os computadores cliente. Inglês está disponível por padrão e não pode ser removido.  
 
--   **项名称：**MobileDeviceLanguage  
+-   **Nome da chave:** MobileDeviceLanguage  
 
-    -   **是否必需：** 是  
+    -   **Obrigatória:** Sim  
 
-    -   **值：** 0 或 1  
+    -   **Valores:** 0 ou 1  
 
-         0 = 不安装  
+         0 = Não instalar  
 
-         1 = 安装  
+         1 = Instalar  
 
-    -   **详细信息：**指定是否安装移动设备客户端语言。  
+    -   **Detalhes:** especifica se os idiomas do cliente do dispositivo móvel estão instalados.  
 
 **SQLConfigOptions**  
 
--   **项名称：**SQLServerName  
+-   **Nome da chave:** SQLServerName  
 
-    -   **是否必需：** 是  
+    -   **Obrigatória:** Sim  
 
-    -   **值：** <*SQL Server 名称*>  
+    -   **Valores:** <*Nome do SQL Server*>  
 
-    -   **详细信息：**指定服务器或群集实例的名称，它们正在运行 SQL Server 并将承载站点数据库。  
+    -   **Detalhes:** especifica o nome do servidor ou da instância clusterizada que executa o SQL Server e que hospedará o banco de dados do site.  
 
--   **项名称：**DatabaseName  
+-   **Nome da chave:** DatabaseName  
 
-    -   **是否必需：** 是  
+    -   **Obrigatória:** Sim  
 
-    -   **值：** <*站点数据库名称*> 或 <*实例名称*>\\<*站点数据库名称*>  
+    -   **Valores:** <*Nome do banco de dados do site*> ou <*Nome da instância*>\\<*Nome do banco de dados do site*>  
 
-    -   **详细信息：**指定要创建或用于安装主站点数据库的 SQL Server 数据库的名称。  
+    -   **Detalhes:** especifica o nome do banco de dados SQL Server a ser criado ou o banco de dados SQL Server a ser usado durante a instalação do banco de dados do site primário.  
 
         > [!IMPORTANT]  
-        >  如果未使用默认实例，你必须指定实例名称和站点数据库名称。  
+        >  Você deverá especificar o nome da instância e o nome do banco de dados do site se você não usar a instância padrão.  
 
--   **项名称：**SQLSSBPort  
+-   **Nome da chave:** SQLSSBPort  
 
-    -   **是否必需：** 否  
+    -   **Obrigatória:** Não  
 
-    -   **值：** <*SSB 端口号*>  
+    -   **Valores:** <*Número da porta SSB*>  
 
-    -   **详细信息：**指定 SQL Server 使用的 SSB 端口。 SSB 配置为使用 TCP 端口 4022，但也可以使用其他端口。  
+    -   **Detalhes:** especifica a porta SSB usada pelo SQL Server. Normalmente, o SSB está configurado para usar a porta TCP 4022, mas é possível usar outra porta.  
 
--   **项名称：**SQLDataFilePath  
+-   **Nome da chave:** SQLDataFilePath  
 
-    -   **是否必需：** 否  
+    -   **Obrigatória:** Não  
 
-    -   **值：** <数据库 .mdb 文件的路径>  
+    -   **Valores:** <*Caminho para o arquivo .mdb do banco de dados*>  
 
-    -   **详细信息：**指定创建数据库 .mdb 文件的替代位置。  
+    -   **Detalhes:** especifica um local alternativo para criar o arquivo .mdb do banco de dados.  
 
--   **项名称：**SQLLogFilePath  
+-   **Nome da chave:** SQLLogFilePath  
 
-    -   **是否必需：** 否  
+    -   **Obrigatória:** Não  
 
-    -   **值：** <*数据库.ldf 文件的路径*>  
+    -   **Valores:** <*Caminho para o arquivo .ldf do banco de dados*>  
 
-    -   **详细信息：**指定创建数据库 .ldf 文件的替代位置。  
+    -   **Detalhes:** especifica um local alternativo para criar o arquivo .ldf do banco de dados.  
 
 **HierarchyExpansionOption**  
 
--   **项名称：**CCARSiteServer  
+-   **Nome da chave:** CCARSiteServer  
 
-    -   **是否必需：** 否  
+    -   **Obrigatória:** Não  
 
-    -   **值：** <*管理中心站点 FQDN*>  
+    -   **Valores:** <*FQDN do site de administração central*>  
 
-    -   **详细信息：**指定主站点加入 Configuration Manager 层次结构时将要附加到的管理中心站点。 必须在安装过程中指定管理中心站点。  
+    -   **Detalhes:** especifica o site de administração central ao qual o site primário será anexado quando ingressar na hierarquia do Configuration Manager. Você deve especificar o site de administração central durante a instalação.  
 
--   **项名称：**CASRetryInterval  
+-   **Nome da chave:** CASRetryInterval  
 
-    -   **是否必需：** 否  
+    -   **Obrigatória:** Não  
 
-    -   **值：** <*Interval*>  
+    -   **Valores:** <*Interval*>  
 
-    -   **详细信息：** 指定连接失败后尝试连接到管理中心站点的重试间隔（以分钟为单位）。 例如，如果连接到管理中心站点失败，则主站点将等待你为 **CASRetryInterval** 值指定的分钟数，然后重新尝试连接。  
+    -   **Detalhes:** especifica o intervalo de repetição (em minutos) para tentar uma conexão ao site de administração central depois de a conexão falhar. Por exemplo, se a conexão com o site de administração central falhar, o site primário aguardará o número de minutos especificados para o valor de **CASRetryInterval** e, em seguida, tentará a conexão novamente.  
 
--   **项名称：**WaitForCASTimeout  
+-   **Nome da chave:** WaitForCASTimeout  
 
-    -   **是否必需：** 否  
+    -   **Obrigatória:** Não  
 
-    -   **值：** <*Timeout*>  
+    -   **Valores:** <*Timeout*>  
 
-         **0** 到 **100** 之间的一个值  
+         Um valor de **0** a **100**  
 
-    -   **详细信息：** 指定主站点连接到管理中心站点的最大超时值（以分钟为单位）。 例如，如果主站点未能连接到管理中心站点，则在达到“WaitForCASTimeout”期间之前，主站点将基于“CASRetryInterval”值重新尝试连接到管理中心站点。 可以指定 **0** 到 **100** 之间的一个值。  
+    -   **Detalhes:** especifica o valor máximo do tempo limite (em minutos) para o site primário se conectar ao site de administração central. Por exemplo, se o site primário falhar ao se conectar ao site de administração central, o site primário tentará a conexão novamente ao site de administração central com base no valor de **CASRetryInterval** até atingir o período de **WaitForCASTimeout**. É possível especificar um valor de **0** a **100**.  
 
 **CloudConnectorOptions**  
 
--   **项名称：**CloudConnector  
+-   **Nome da chave:** CloudConnector  
 
-    -   **是否必需：** 是  
+    -   **Obrigatória:** Sim  
 
-    -   **值：** 0 或 1  
+    -   **Valores:** 0 ou 1  
 
-         0 = 不安装  
+         0 = Não instalar  
 
-         1 = 安装  
+         1 = Instalar  
 
-    -   **详细信息：**指定是否在此站点上安装服务连接点。 因为服务连接点只能安装在层次结构的顶层站点上，此值对子主站点必须为 **0**。  
+    -   **Detalhes:** especifica se um ponto de conexão de serviço será instalado neste site. Como o ponto de conexão de serviço pode ser instalado somente no site de camada superior de uma hierarquia, esse valor deverá ser **0** para um site primário filho.  
 
--   **项名称：**CloudConnectorServer  
+-   **Nome da chave:** CloudConnectorServer  
 
-    -   **是否必需：**当 **CloudConnector** 等于 1 时需要  
+    -   **Obrigatório:** obrigatório quando **CloudConnector** for igual a 1  
 
-    -   **值：** <服务连接点服务器 FQDN\>  
+    -   **Valores:** <*FQDN do servidor de ponto de conexão do serviço*\>  
 
-    -   **详细信息：**指定将承载服务连接点站点系统角色的服务器的 FQDN。  
+    -   **Detalhes:** especifica o FQDN do servidor que hospedará a função do sistema de sites do ponto de conexão do serviço.  
 
--   **项名称：**UseProxy  
+-   **Nome da chave:** UseProxy  
 
-    -   **是否必需：**当 **CloudConnector** 等于 1 时需要  
+    -   **Obrigatório:** obrigatório quando **CloudConnector** for igual a 1  
 
-    -   **值：** 0 或 1  
+    -   **Valores:** 0 ou 1  
 
-         0 = 不安装  
+         0 = Não instalar  
 
-         1 = 安装  
+         1 = Instalar  
 
-    -   **详细信息：**指定服务连接点是否将使用代理服务器。  
+    -   **Detalhes:** especifica se o ponto de conexão de serviço usará um servidor proxy.  
 
--   **项名称：**ProxyName  
+-   **Nome da chave:** ProxyName  
 
-    -   **是否必需：**当 **UseProxy** 等于 1 时需要  
+    -   **Obrigatório:** obrigatório quando **UseProxy** for igual a 1  
 
-    -   **值：** <代理服务器 FQDN>  
+    -   **Valores:** <*FQDN do servidor proxy*>  
 
-    -   **详细信息：**指定将用于服务连接点站点系统角色的代理服务器的 FQDN。  
+    -   **Detalhes:** especifica o FQDN do servidor proxy que será usado pela função do sistema de sites do ponto de conexão do serviço.  
 
--   **项名称：**ProxyPort  
+-   **Nome da chave:** ProxyPort  
 
-    -   **是否必需：**当 **UseProxy** 等于 1 时需要  
+    -   **Obrigatório:** obrigatório quando **UseProxy** for igual a 1  
 
-    -   **值：** <*端口号*>  
+    -   **Valores:** <*Número da porta*>  
 
-    -   **详细信息：**指定要用于代理端口的端口号。  
+    -   **Detalhes:** especifica o número da porta a ser usado para a porta do proxy.  
 
-### <a name="unattended-recovery-for-a-central-administration-site"></a>中心管理站点的无人参与恢复  
- 使用下列详细信息通过无人参与的安装程序脚本文件来恢复管理中心站点。  
+### <a name="unattended-recovery-for-a-central-administration-site"></a>Recuperação autônoma de um site de administração central  
+ Use os detalhes a seguir para recuperar um site de administração central usando um arquivo de script da Instalação autônoma.  
 
-**标识**  
+**Identificação**  
 
--   **项名称：**Action  
+-   **Nome da chave:** Action  
 
-    -   **是否必需：** 是  
+    -   **Obrigatória:** Sim  
 
-    -   **值：** RecoverCCAR  
+    -   **Valores:** RecoverCCAR  
 
-    -   **详细信息：**恢复管理中心站点。  
+    -   **Detalhes:** recupera um site de administração central.  
 
--   **密钥名称：**CDLatest  
+-   **Nome da chave:** CDLatest  
 
-    -   **必备：**是（仅在使用 CD.Latest 文件夹中的介质时）。    
+    -   **Obrigatório:** Sim – somente ao usar a mídia da pasta CD.Latest.    
 
-    -   **值：**1。1 以外的任何值均视为不使用 CD.Latest。
+    -   **Valores:** 1 qualquer valor diferente de 1 é considerado como não usando o CD.Latest.
 
-    -   **详细信息：**从 CD.Latest 文件夹中的介质运行安装程序时，你的脚本必须包含该密钥和值，以安装主站点或管理中心站点，或恢复主站点或管理中心站点。 该值将告知安装程序当前使用介质形式 CD.Latest。
+    -   **Detalhes:** seu script deve incluir essa chave e o valor ao executar a instalação de uma mídia em uma pasta CD.Latest com a finalidade de instalar um site primário ou de administração central ou recuperar um site de administração central ou primário. Esse valor informa à instalação que a forma de mídia CD.Latest está sendo usada.
 
 **RecoveryOptions**  
 
--   **项名称：**ServerRecoveryOptions  
+-   **Nome da chave:** ServerRecoveryOptions  
 
-    -   **是否必需：** 是  
+    -   **Obrigatória:** Sim  
 
-    -   **值：** 1、2 或 4  
+    -   **Valores:** 1, 2 ou 4  
 
-         1 = 恢复站点服务器和 SQL Server。  
+         1 = Recuperar servidor do site e SQL Server.  
 
-         2 = 仅恢复站点服务器。  
+         2 = Recuperar apenas o servidor do site.  
 
-         4 = 仅恢复 SQL Server。  
+         4 = Recuperar apenas o SQL Server.  
 
-    -   **详细信息：** 指定安装程序是恢复站点服务器、SQL Server 还是两者都恢复。 设置 **ServerRecoveryOptions** 设置的以下值时需要关联的项：  
+    -   **Detalhes:** especifica se a Instalação recuperará o servidor do site, o SQL Server ou ambos. As chaves associadas são necessárias quando o seguinte valor é definido para a configuração **ServerRecoveryOptions**:  
 
-        -   值 = 1：你可以选择为 **SiteServerBackupLocation** 项指定值以使用站点备份来恢复站点。 如果未指定值，则会重新安装站点，而不是从备份集中还原站点。  
+        -   Valor = 1: você tem a opção de especificar um valor para a chave **SiteServerBackupLocation** recuperar o site usando um backup do site. Caso não especifique um valor, o site é reinstalado sem ser restaurado por meio de um conjunto de backup.  
 
-        -   值 = 2：你可以选择为 **SiteServerBackupLocation** 项指定值以使用站点备份来恢复站点。 如果未指定值，则会重新安装站点，而不是从备份集中还原站点。  
+        -   Valor = 2: você tem a opção de especificar um valor para a chave **SiteServerBackupLocation** recuperar o site usando um backup do site. Caso não especifique um valor, o site é reinstalado sem ser restaurado por meio de um conjunto de backup.  
 
-        -   值 = 4：如果为 **DatabaseRecoveryOptions** 项（用于从备份中还原站点数据库）配置值 **10** ，则需要 **BackupLocation** 项。  
+        -   Valor = 4: a chave **BackupLocation** é necessária quando o valor **10** é configurado para a chave **DatabaseRecoveryOptions** , que restaura o banco de dados do site por meio do backup.  
 
--   **项名称：**DatabaseRecoveryOptions  
+-   **Nome da chave:** DatabaseRecoveryOptions  
 
-    -   **是否必需：**当 **ServerRecoveryOptions** 设置的值为 **1** 或 **4** 时，需要此项。  
+    -   **Obrigatório:** essa chave é obrigatória quando a configuração **ServerRecoveryOptions** tem um valor **1** ou **4**.  
 
-    -   **值：**10、20、40 或 80  
+    -   **Valores:** 10, 20, 40 ou 80  
 
-         10 = 从备份中还原站点数据库。  
+         10 = Restaurar, por meio do backup, o banco de dados do site.  
 
-         20 = 使用已通过另一种方法手动恢复的站点数据库。  
+         20 = Usar um banco de dados do site recuperado manualmente usando outro método.  
 
-         40 = 为站点创建新数据库。 没有可用的站点数据库备份时，请使用此选项。 通过其他站点中的复制来恢复全局数据和站点数据。  
+         40 = Criar um novo banco de dados para o site. Use essa opção quando não houver backup do banco de dados do site disponível. Os dados globais e do site são recuperados por meio da replicação de outros sites.  
 
-         80 = 跳过数据库恢复。  
+         80 = Ignorar recuperação do banco de dados.  
 
-    -   **详细信息：**指定安装程序如何恢复 SQL Server 中的站点数据库。  
+    -   **Detalhes:** especifica como a Instalação recupera o banco de dados do site no SQL Server.  
 
--   **项名称：**ReferenceSite  
+-   **Nome da chave:** ReferenceSite  
 
-    -   **是否必需：**当 **DatabaseRecoveryOptions** 设置的值为 **40** 时，需要此项。  
+    -   **Obrigatória:** essa chave será obrigatória quando a configuração **DatabaseRecoveryOptions** tiver um valor de **40**.  
 
-    -   **值：** <*引用站点 FQDN*>  
+    -   **Valores:** <*FQDN do site de referência*>  
 
-    -   **详细信息：**指定在数据库备份早于更改跟踪保持期或者在没有备份的情况下恢复站点时，管理中心站点用于恢复全局数据的引用主站点。  
+    -   **Detalhes:** especifica o site primário de referência que o site de administração central usa para recuperar dados globais se o backup do banco de dados é mais antigo que o período de retenção do controle de alterações ou quando o site é recuperado sem backup.  
 
-         如果未指定引用站点，并且备份早于更改跟踪保持期，则会使用管理中心站点中的还原数据重新初始化所有主站点。  
+         Quando um site de referência não é especificado e o backup é mais antigo que o período de retenção do controle de alterações, todos os sites primários são reinicializados com os dados restaurados por meio do site de administração central.  
 
-         如果未指定引用站点，并且备份在更改跟踪保持期中，则从主站点中仅复制备份以后的更改。 如果不同的主站点中具有冲突的更改，则管理中心站点使用它收到的第一个更改。  
+         Caso você não especifique um site de referência e o backup esteja dentro do período de retenção do controle de alterações, somente as alterações feitas após o backup serão replicadas dos sites primários. Quando houver alterações conflitantes de sites primários diferentes, o site de administração central usará a primeira alteração que receber.  
 
--   **项名称：**SiteServerBackupLocation  
+-   **Nome da chave:** SiteServerBackupLocation  
 
-    -   **是否必需：** 否  
+    -   **Obrigatória:** Não  
 
-    -   **值：** <*到站点服务器备份集的路径*>  
+    -   **Valores:** <*Caminho para o conjunto de backup do servidor do site*>  
 
-    -   **详细信息：** 指定站点服务器备份集的路径。 当 **ServerRecoveryOptions** 设置的值为 **1** 或 **2**时，此项是可选的。 为 **SiteServerBackupLocation** 项指定值以使用站点备份来恢复站点。 如果未指定值，则会重新安装站点，而不是从备份集中还原站点。  
+    -   **Detalhes:** especifica o caminho para o conjunto de backups do servidor de site. Essa chave é opcional quando a configuração **ServerRecoveryOptions** tem o valor **1** ou **2**. Especifique um valor para a chave **SiteServerBackupLocation** recuperar o site usando um backup do site. Caso não especifique um valor, o site é reinstalado sem ser restaurado por meio de um conjunto de backup.  
 
--   **项名称：**BackupLocation  
+-   **Nome da chave:** BackupLocation  
 
-    -   **是否必需：**如果为 **ServerRecoveryOptions** 项配置了值 **1** 或 **4**，并为 **DatabaseRecoveryOptions** 项配置了值 **10**，则需要此项。  
+    -   **Obrigatório:** essa chave é obrigatória quando você configura um valor **1** ou **4** para a chave **ServerRecoveryOptions** e um valor **10** para a chave **DatabaseRecoveryOptions**.  
 
-    -   **值：** <*到站点数据库备份集的路径*>  
+    -   **Valores:** <*Caminho para o conjunto de backup do banco de dados do site*>  
 
-    -   **详细信息：** 指定站点数据库备份集的路径。  
+    -   **Detalhes:** especifica o caminho para o conjunto de backup do banco de dados do site.  
 
-**选项**  
+**Opções**  
 
--   **项名称：**ProductID  
+-   **Nome da chave:** ProductID  
 
-    -   **是否必需：** 是  
+    -   **Obrigatória:** Sim  
 
-    -   **值：** <*xxxxx-xxxxx-xxxxx-xxxxx-xxxxx*>  *或* Eval  
+    -   **Valores:** <*xxxxx-xxxxx-xxxxx-xxxxx-xxxxx*> *ou* Eval  
 
-    -   **详细信息：**指定 Configuration Manager 安装产品密钥，包括短划线。 输入 **Eval** 以安装 Configuration Manager 的评估版。  
+    -   **Detalhes:** especifica a chave do produto (Product Key) de instalação do Configuration Manager, incluindo os traços. Insira **Eval** para instalar a versão de avaliação do Configuration Manager.  
 
--   **项名称：**SiteCode  
+-   **Nome da chave:** SiteCode  
 
-    -   **是否必需：** 是  
+    -   **Obrigatória:** Sim  
 
-    -   **值：** <*站点代码*>  
+    -   **Valores:** <*Código do site*>  
 
-    -   **详细信息：**指定三个字母数字字符，以唯一标识层次结构中的站点。 你必须指定在发生故障之前站点使用的站点代码。
+    -   **Detalhes:** especifica três caracteres alfanuméricos que identificam de forma exclusiva o site na hierarquia. É necessário especificar o código do site usado pelo site antes da falha.
 
--   **项名称：**SiteName  
+-   **Nome da chave:** SiteName  
 
-    -   **是否必需：** 否  
+    -   **Obrigatória:** Não  
 
-    -   **值：** <*站点名称*>  
+    -   **Valores:** <*Nome do site*>  
 
-    -   **详细信息：**指定此站点的名称。  
+    -   **Detalhes:** especifica o nome do site.  
 
--   **项名称：**SMSInstallDir  
+-   **Nome da chave:** SMSInstallDir  
 
-    -   **是否必需：** 是  
+    -   **Obrigatória:** Sim  
 
-    -   **值：** <*Configuration Manager 安装路径*>  
+    -   **Valores:** <*Caminho de instalação do Configuration Manager*>  
 
-    -   **详细信息：**指定 Configuration Manager 程序文件的安装文件夹。  
+    -   **Detalhes:** especifica a pasta de instalação dos arquivos de programa do Configuration Manager.  
 
--   **项名称：**SDKServer  
+-   **Nome da chave:** SDKServer  
 
-    -   **是否必需：** 是  
+    -   **Obrigatória:** Sim  
 
-    -   **值：** <*SMS 提供程序 FQDN*>  
+    -   **Valores:** <*FQDN do Provedor de SMS*>  
 
-    -   **详细信息：** 指定将托管 SMS 提供程序的服务器的 FQDN。 你必须指定在发生故障之前承载 SMS 提供程序的服务器。  
+    -   **Detalhes:** especifica o FQDN para o servidor que hospedará o Provedor de SMS. Você deve especificar o servidor que hospedou o Provedor de SMS antes da falha.  
 
-         你可以在初始安装后为站点配置其他 SMS 提供程序。 有关 SMS 提供程序的详细信息，请参阅[为 System Center Configuration Manager 规划 SMS 提供程序](../../../../core/plan-design/hierarchy/plan-for-the-sms-provider.md)。  
+         Você pode configurar outros Provedores de SMS para o site após a instalação inicial. Para obter mais informações sobre o Provedor de SMS, consulte [Planejar o Provedor de SMS para o System Center Configuration Manager](../../../../core/plan-design/hierarchy/plan-for-the-sms-provider.md).  
 
--   **项名称：**PrerequisiteComp  
+-   **Nome da chave:** PrerequisiteComp  
 
-    -   **是否必需：** 是  
+    -   **Obrigatória:** Sim  
 
-    -   **值：** 0 或 1  
+    -   **Valores:** 0 ou 1  
 
-         0 = 下载  
+         0 = Baixar  
 
-         1 = 已下载  
+         1 = Já baixado  
 
-    -   **详细信息：** 指定安装程序必备文件是否已下载。 例如，如果使用值 **0**，则安装程序将下载文件。  
+    -   **Detalhes:** especifica se os arquivos de pré-requisito da Instalação já foram baixados. Por exemplo, se você usar o valor **0**, a instalação baixará os arquivos.  
 
--   **项名称：**PrerequisitePath  
+-   **Nome da chave:** PrerequisitePath  
 
-    -   **是否必需：** 是  
+    -   **Obrigatória:** Sim  
 
-    -   **值：** <*安装程序先决条件文件的路径*>  
+    -   **Valores:** <*Caminho para os arquivos de pré-requisito da Instalação*>  
 
-    -   **详细信息：** 指定安装程序必备文件的路径。 根据 **PrerequisiteComp** 值，安装程序将使用此路径来存储已下载文件或查找以前下载的文件。  
+    -   **Detalhes:** especifica o caminho para os arquivos de pré-requisito da Instalação. Dependendo do valor do **PrerequisiteComp** , a Instalação usará esse caminho para armazenar arquivos baixados ou para localizar arquivos baixados anteriormente.  
 
--   **项名称：**AdminConsole  
+-   **Nome da chave:** AdminConsole  
 
-    -   **是否必需：**当 **ServerRecoveryOptions** 设置的值为 **4**时，需要此项。  
+    -   **Obrigatória:** essa chave é obrigatória, exceto quando a configuração **ServerRecoveryOptions** tiver um valor de **4**.  
 
-    -   **值：** 0 或 1  
+    -   **Valores:** 0 ou 1  
 
-         0 = 不安装  
+         0 = Não instalar  
 
-         1 = 安装  
+         1 = Instalar  
 
-    -   **详细信息：**指定是否安装 Configuration Manager 控制台。  
+    -   **Detalhes:** especifica se deseja instalar o console do Configuration Manager.  
 
--   **项名称：**JoinCEIP  
+-   **Nome da chave:** JoinCEIP  
 
-    -   **是否必需：** 是  
+    -   **Obrigatória:** Sim  
 
-    -   **值：** 0 或 1  
+    -   **Valores:** 0 ou 1  
 
-         0 = 不加入  
+         0 = Não ingressar  
 
-         1 = 加入  
+         1 = Ingressar  
 
-    -   **详细信息：**指定是否加入 CEIP。  
+    -   **Detalhes:** especifica o ingresso ou não no Programa de Aperfeiçoamento da Experiência do Usuário.  
 
 **SQLConfigOptions**  
 
--   **项名称：**SQLServerName  
+-   **Nome da chave:** SQLServerName  
 
-    -   **是否必需：** 是  
+    -   **Obrigatória:** Sim  
 
-    -   **值：** <*SQL Server 名称*>  
+    -   **Valores:** <*Nome do SQL Server*>  
 
-    -   **详细信息：**指定服务器或群集实例的名称，它们正在运行 SQL Server 并将承载站点数据库。 你必须指定在发生故障之前承载站点数据库的同一服务器。  
+    -   **Detalhes:** especifica o nome do servidor ou da instância clusterizada que executa o SQL Server e que hospedará o banco de dados do site. Você deverá especificar o mesmo servidor que hospedou o banco de dados do site antes da falha.  
 
--   **项名称：**DatabaseName  
+-   **Nome da chave:** DatabaseName  
 
-    -   **是否必需：** 是  
+    -   **Obrigatória:** Sim  
 
-    -   **值：** <*站点数据库名称*> 或 <*实例名称*>\\<*站点数据库名称*>  
+    -   **Valores:** <*Nome do banco de dados do site*> ou <*Nome da instância*>\\<*Nome do banco de dados do site*>  
 
-    -   **详细信息：**指定要创建或用于安装中心管理站点数据库的 SQL Server 数据库的名称。 你必须指定在发生故障之前使用的同一数据库名称。  
+    -   **Detalhes:** especifica o nome do banco de dados SQL Server a ser criado ou o banco de dados SQL Server a ser usado durante a instalação do banco de dados do site de administração central. Você deverá especificar o mesmo nome do banco de dados usado antes da falha.  
 
         > [!IMPORTANT]  
-        >  如果未使用默认实例，你必须指定实例名称和站点数据库名称。  
+        >  Você deverá especificar o nome da instância e o nome do banco de dados do site se você não usar a instância padrão.  
 
--   **项名称：**SQLSSBPort  
+-   **Nome da chave:** SQLSSBPort  
 
-    -   **是否必需：** 是  
+    -   **Obrigatória:** Sim  
 
-    -   **值：** <*SSB 端口号*>  
+    -   **Valores:** <*Número da porta SSB*>  
 
-    -   **详细信息：**指定 SQL Server 使用的 SSB 端口。 通常，SSB 配置为使用 TCP 端口 4022。 你必须指定在发生故障之前使用的相同 SSB 端口。  
+    -   **Detalhes:** especifica a porta SSB usada pelo SQL Server. Normalmente, o SSB está configurado para usar a porta TCP 4022. Você deve especificar a mesma porta do SSB que foi usada antes da falha.  
 
--   **项名称：**SQLDataFilePath  
+-   **Nome da chave:** SQLDataFilePath  
 
-    -   **是否必需：** 否  
+    -   **Obrigatória:** Não  
 
-    -   **值：** <数据库 .mdb 文件的路径>  
+    -   **Valores:** <*Caminho para o arquivo .mdb do banco de dados*>  
 
-    -   **详细信息：**指定创建数据库 .mdb 文件的替代位置。  
+    -   **Detalhes:** especifica um local alternativo para criar o arquivo .mdb do banco de dados.  
 
--   **项名称：**SQLLogFilePath  
+-   **Nome da chave:** SQLLogFilePath  
 
-    -   **是否必需：** 否  
+    -   **Obrigatória:** Não  
 
-    -   **值：** <*数据库.ldf 文件的路径*>  
+    -   **Valores:** <*Caminho para o arquivo .ldf do banco de dados*>  
 
-    -   **详细信息：**指定创建数据库 .ldf 文件的替代位置。  
+    -   **Detalhes:** especifica um local alternativo para criar o arquivo .ldf do banco de dados.  
 
 **CloudConnectorOptions**  
 
--   **项名称：**CloudConnector  
+-   **Nome da chave:** CloudConnector  
 
-    -   **是否必需：** 是  
+    -   **Obrigatória:** Sim  
 
-    -   **值：** 0 或 1  
+    -   **Valores:** 0 ou 1  
 
-         0 = 不安装  
+         0 = Não instalar  
 
-         1 = 安装  
+         1 = Instalar  
 
-    -   **详细信息：**指定是否在此站点上安装服务连接点。 因为服务连接点只能安装在层次结构的顶层站点上，此值对子主站点必须为 **0**。  
+    -   **Detalhes:** especifica se um ponto de conexão de serviço será instalado neste site. Como o ponto de conexão de serviço pode ser instalado somente no site de camada superior de uma hierarquia, esse valor deverá ser **0** para um site primário filho.  
 
--   **项名称：**CloudConnectorServer  
+-   **Nome da chave:** CloudConnectorServer  
 
-    -   **是否必需：**当 **CloudConnector** 等于 1 时需要  
+    -   **Obrigatório:** obrigatório quando **CloudConnector** for igual a 1  
 
-    -   **值：** <服务连接点服务器 FQDN>  
+    -   **Valores:** <*FQDN do servidor de ponto de conexão do serviço*>  
 
-    -   **详细信息：**指定将承载服务连接点站点系统角色的服务器的 FQDN。  
+    -   **Detalhes:** especifica o FQDN do servidor que hospedará a função do sistema de sites do ponto de conexão do serviço.  
 
--   **项名称：**UseProxy  
+-   **Nome da chave:** UseProxy  
 
-    -   **是否必需：**当 **CloudConnector** 等于 1 时需要  
+    -   **Obrigatório:** obrigatório quando **CloudConnector** for igual a 1  
 
-    -   **值：** 0 或 1  
+    -   **Valores:** 0 ou 1  
 
-         0 = 不安装  
+         0 = Não instalar  
 
-         1 = 安装  
+         1 = Instalar  
 
-    -   **详细信息：**指定服务连接点是否将使用代理服务器。  
+    -   **Detalhes:** especifica se o ponto de conexão de serviço usará um servidor proxy.  
 
--   **项名称：**ProxyName  
+-   **Nome da chave:** ProxyName  
 
-    -   **是否必需：**当 **CloudConnector** 等于 1 时需要  
+    -   **Obrigatório:** obrigatório quando **CloudConnector** for igual a 1  
 
-    -   **值：** <代理服务器 FQDN>  
+    -   **Valores:** <*FQDN do servidor proxy*>  
 
-    -   **详细信息：**指定将用于服务连接点站点系统角色的代理服务器的 FQDN。  
+    -   **Detalhes:** especifica o FQDN do servidor proxy que será usado pela função do sistema de sites do ponto de conexão do serviço.  
 
--   **项名称：**ProxyPort  
+-   **Nome da chave:** ProxyPort  
 
-    -   **是否必需：**当 **CloudConnector** 等于 1 时需要  
+    -   **Obrigatório:** obrigatório quando **CloudConnector** for igual a 1  
 
-    -   **值：** <*端口号*>  
+    -   **Valores:** <*Número da porta*>  
 
-    -   **详细信息：**指定要用于代理端口的端口号。  
+    -   **Detalhes:** especifica o número da porta a ser usado para a porta do proxy.  
 
-### <a name="unattended-recovery-for-a-primary-site"></a>主站点的无人参与恢复  
- 使用下列详细信息通过无人参与的安装程序脚本文件来恢复主站点。  
+### <a name="unattended-recovery-for-a-primary-site"></a>Recuperação autônoma de um site primário  
+ Use os detalhes a seguir para recuperar um site primário usando um arquivo de script de Instalação autônoma.  
 
-**标识**  
+**Identificação**  
 
--   **项名称：**Action  
+-   **Nome da chave:** Action  
 
-    -   **是否必需：** 是  
+    -   **Obrigatória:** Sim  
 
-    -   **值：** <*RecoverPrimarySite*>  
+    -   **Valores:** <*RecoverPrimarySite*>  
 
-    -   **详细信息：**恢复主站点。  
+    -   **Detalhes:** recupera um site primário.  
 
--   **密钥名称：**CDLatest  
+-   **Nome da chave:** CDLatest  
 
-    -   **必备：**是（仅在使用 CD.Latest 文件夹中的介质时）。    
+    -   **Obrigatório:** Sim – somente ao usar a mídia da pasta CD.Latest.    
 
-    -   **值：**1。1 以外的任何值均视为不使用 CD.Latest。
+    -   **Valores:** 1 qualquer valor diferente de 1 é considerado como não usando o CD.Latest.
 
-    -   **详细信息：**从 CD.Latest 文件夹中的介质运行安装程序时，你的脚本必须包含该密钥和值，以安装主站点或管理中心站点，或恢复主站点或管理中心站点。 该值将告知安装程序当前使用介质形式 CD.Latest。    
+    -   **Detalhes:** seu script deve incluir essa chave e o valor ao executar a instalação de uma mídia em uma pasta CD.Latest com a finalidade de instalar um site primário ou de administração central ou recuperar um site de administração central ou primário. Esse valor informa à instalação que a forma de mídia CD.Latest está sendo usada.    
 
 **RecoveryOptions**  
 
--   **项名称：**ServerRecoveryOptions  
+-   **Nome da chave:** ServerRecoveryOptions  
 
-    -   **是否必需：** 是  
+    -   **Obrigatória:** Sim  
 
-    -   **值：** 1、2 或 4  
+    -   **Valores:** 1, 2 ou 4  
 
-         1 = 恢复站点服务器和 SQL Server。  
+         1 = Recuperar servidor do site e SQL Server.  
 
-         2 = 仅恢复站点服务器。  
+         2 = Recuperar apenas o servidor do site.  
 
-         4 = 仅恢复 SQL Server。  
+         4 = Recuperar apenas o SQL Server.  
 
-    -   **详细信息：** 指定安装程序是恢复站点服务器、SQL Server 还是两者都恢复。 设置 **ServerRecoveryOptions** 设置的以下值时需要关联的项：  
+    -   **Detalhes:** especifica se a Instalação recuperará o servidor do site, o SQL Server ou ambos. As chaves associadas são necessárias quando o seguinte valor é definido para a configuração **ServerRecoveryOptions**:  
 
-        -   值 = 1：你可以选择为 **SiteServerBackupLocation** 项指定值以使用站点备份来恢复站点。 如果未指定值，则会重新安装站点，而不是从备份集中还原站点。  
+        -   Valor = 1: você tem a opção de especificar um valor para a chave **SiteServerBackupLocation** recuperar o site usando um backup do site. Caso não especifique um valor, o site é reinstalado sem ser restaurado por meio de um conjunto de backup.  
 
-        -   值 = 2：你可以选择为 **SiteServerBackupLocation** 项指定值以使用站点备份来恢复站点。 如果未指定值，则会重新安装站点，而不是从备份集中还原站点。  
+        -   Valor = 2: você tem a opção de especificar um valor para a chave **SiteServerBackupLocation** recuperar o site usando um backup do site. Caso não especifique um valor, o site é reinstalado sem ser restaurado por meio de um conjunto de backup.  
 
-        -   值 = 4：如果为 **DatabaseRecoveryOptions** 项（用于从备份中还原站点数据库）配置值 **10** ，则需要 **BackupLocation** 项。  
+        -   Valor = 4: a chave **BackupLocation** é necessária quando o valor **10** é configurado para a chave **DatabaseRecoveryOptions** , que restaura o banco de dados do site por meio do backup.  
 
--   **项名称：**DatabaseRecoveryOptions  
+-   **Nome da chave:** DatabaseRecoveryOptions  
 
-    -   **是否必需：**当 **ServerRecoveryOptions** 设置的值为 **1** 或 **4** 时，需要此项。  
+    -   **Obrigatório:** essa chave é obrigatória quando a configuração **ServerRecoveryOptions** tem um valor **1** ou **4**.  
 
-    -   **值：**10、20、40 或 80  
+    -   **Valores:** 10, 20, 40 ou 80  
 
-         10 = 从备份中还原站点数据库。  
+         10 = Restaurar, por meio do backup, o banco de dados do site.  
 
-         20 = 使用已通过另一种方法手动恢复的站点数据库。  
+         20 = Usar um banco de dados do site recuperado manualmente usando outro método.  
 
-         40 = 为站点创建新数据库。 没有可用的站点数据库备份时，请使用此选项。 通过其他站点中的复制来恢复全局数据和站点数据。  
+         40 = Criar um novo banco de dados para o site. Use essa opção quando não houver backup do banco de dados do site disponível. Os dados globais e do site são recuperados por meio da replicação de outros sites.  
 
-         80 = 跳过数据库恢复。  
+         80 = Ignorar recuperação do banco de dados.  
 
-    -   **详细信息：**指定安装程序如何恢复 SQL Server 中的站点数据库。  
+    -   **Detalhes:** especifica como a Instalação recupera o banco de dados do site no SQL Server.  
 
--   **项名称：**SiteServerBackupLocation  
+-   **Nome da chave:** SiteServerBackupLocation  
 
-    -   **是否必需：** 否  
+    -   **Obrigatória:** Não  
 
-    -   **值：** <*到站点服务器备份集的路径*>  
+    -   **Valores:** <*Caminho para o conjunto de backup do servidor do site*>  
 
-    -   **详细信息：**  
+    -   **Detalhes:**  
 
-         指定站点服务器备份集的路径。 当 **ServerRecoveryOptions** 设置的值为 **1** 或 **2**时，此项是可选的。 为 **SiteServerBackupLocation** 项指定值以使用站点备份来恢复站点。 如果未指定值，则会重新安装站点，而不是从备份集中还原站点。  
+         Especifica o caminho para o conjunto de backup do servidor de site. Essa chave é opcional quando a configuração **ServerRecoveryOptions** tem o valor **1** ou **2**. Especifique um valor para a chave **SiteServerBackupLocation** recuperar o site usando um backup do site. Caso não especifique um valor, o site é reinstalado sem ser restaurado por meio de um conjunto de backup.  
 
--   **项名称：**BackupLocation  
+-   **Nome da chave:** BackupLocation  
 
-    -   **是否必需：**如果为 **ServerRecoveryOptions** 项配置了值 **1** 或 **4**，并为 **DatabaseRecoveryOptions** 项配置了值 **10**，则需要此项。  
+    -   **Obrigatória:** essa chave será obrigatória quando você configurar um valor de **1** ou **4** para a chave **ServerRecoveryOptions**, e configurar um valor de **10** para a chave **DatabaseRecoveryOptions**.  
 
-    -   **值：** <*到站点数据库备份集的路径*>  
+    -   **Valores:** <*Caminho para o conjunto de backup do banco de dados do site*>  
 
-    -   **详细信息：** 指定站点数据库备份集的路径。  
+    -   **Detalhes:** especifica o caminho para o conjunto de backup do banco de dados do site.  
 
-**选项**  
+**Opções**  
 
--   **项名称：**ProductID  
+-   **Nome da chave:** ProductID  
 
-    -   **是否必需：** 是  
+    -   **Obrigatória:** Sim  
 
-    -   **值：***xxxxx-xxxxx-xxxxx-xxxxx-xxxxx* 或 *Eval*  
+    -   **Valores:** *xxxxx-xxxxx-xxxxx-xxxxx-xxxxx* ou *Eval*  
 
-    -   **详细信息：**指定 Configuration Manager 安装产品密钥，包括短划线。 输入 **Eval** 以安装 Configuration Manager 的评估版。  
+    -   **Detalhes:** especifica a chave do produto (Product Key) de instalação do Configuration Manager, incluindo os traços. Insira **Eval** para instalar a versão de avaliação do Configuration Manager.  
 
--   **项名称：**SiteCode  
+-   **Nome da chave:** SiteCode  
 
-    -   **是否必需：** 是  
+    -   **Obrigatória:** Sim  
 
-    -   **值：** <*站点代码*>  
+    -   **Valores:** <*Código do site*>  
 
-    -   **详细信息：**指定三个字母数字字符，以唯一标识层次结构中的站点。 你必须指定在发生故障之前站点使用的站点代码。
+    -   **Detalhes:** especifica três caracteres alfanuméricos que identificam de forma exclusiva o site na hierarquia. É necessário especificar o código do site usado pelo site antes da falha.
 
--   **项名称：**SiteName  
+-   **Nome da chave:** SiteName  
 
-    -   **是否必需：** 否  
+    -   **Obrigatória:** Não  
 
-    -   **值：** <*站点名称*>  
+    -   **Valores:** <*Nome do site*>  
 
-    -   **详细信息：**指定此站点的名称。  
+    -   **Detalhes:** especifica o nome do site.  
 
--   **项名称：**SMSInstallDir  
+-   **Nome da chave:** SMSInstallDir  
 
-    -   **是否必需：** 是  
+    -   **Obrigatória:** Sim  
 
-    -   **值：** <*Configuration Manager 安装路径*>  
+    -   **Valores:** <*Caminho de instalação do Configuration Manager*>  
 
-    -   **详细信息：**指定 Configuration Manager 程序文件的安装文件夹。  
+    -   **Detalhes:** especifica a pasta de instalação dos arquivos de programa do Configuration Manager.  
 
--   **项名称：**SDKServer  
+-   **Nome da chave:** SDKServer  
 
-    -   **是否必需：** 是  
+    -   **Obrigatória:** Sim  
 
-    -   **值：** <*SMS 提供程序 FQDN*>  
+    -   **Valores:** <*FQDN do Provedor de SMS*>  
 
-    -   **详细信息：** 指定将托管 SMS 提供程序的服务器的 FQDN。 你必须指定在发生故障之前承载 SMS 提供程序的服务器。 你可以在初始安装后为站点配置其他 SMS 提供程序。 有关 SMS 提供程序的详细信息，请参阅[为 System Center Configuration Manager 规划 SMS 提供程序](../../../../core/plan-design/hierarchy/plan-for-the-sms-provider.md)。  
+    -   **Detalhes:** especifica o FQDN para o servidor que hospedará o Provedor de SMS. Você deve especificar o servidor que hospedou o Provedor de SMS antes da falha. Você pode configurar outros Provedores de SMS para o site após a instalação inicial. Para obter mais informações sobre o Provedor de SMS, consulte [Planejar o Provedor de SMS para o System Center Configuration Manager](../../../../core/plan-design/hierarchy/plan-for-the-sms-provider.md).  
 
--   **项名称：**PrerequisiteComp  
+-   **Nome da chave:** PrerequisiteComp  
 
-    -   **是否必需：** 是  
+    -   **Obrigatória:** Sim  
 
-    -   **值：** 0 或 1  
+    -   **Valores:** 0 ou 1  
 
-         0 = 下载  
+         0 = Baixar  
 
-         1 = 已下载  
+         1 = Já baixado  
 
-    -   **详细信息：** 指定安装程序必备文件是否已下载。 例如，如果使用值 **0**，则安装程序将下载文件。  
+    -   **Detalhes:** especifica se os arquivos de pré-requisito da Instalação já foram baixados. Por exemplo, se você usar o valor **0**, a instalação baixará os arquivos.  
 
--   **项名称：**PrerequisitePath  
+-   **Nome da chave:** PrerequisitePath  
 
-    -   **是否必需：** 是  
+    -   **Obrigatória:** Sim  
 
-    -   **值：** <*安装程序先决条件文件的路径*>  
+    -   **Valores:** <*Caminho para os arquivos de pré-requisito da Instalação*>  
 
-    -   **详细信息：** 指定安装程序必备文件的路径。 根据 **PrerequisiteComp** 值，安装程序将使用此路径来存储已下载文件或查找以前下载的文件。  
+    -   **Detalhes:** especifica o caminho para os arquivos de pré-requisito da Instalação. Dependendo do valor do **PrerequisiteComp** , a Instalação usará esse caminho para armazenar arquivos baixados ou para localizar arquivos baixados anteriormente.  
 
--   **项名称：**AdminConsole  
+-   **Nome da chave:** AdminConsole  
 
-    -   **是否必需：**当 **ServerRecoveryOptions** 设置的值为 **4**时，需要此项。  
+    -   **Obrigatória:** essa chave é obrigatória, exceto quando a configuração **ServerRecoveryOptions** tiver um valor de **4**.  
 
-    -   **值：** 0 或 1  
+    -   **Valores:** 0 ou 1  
 
-         0 = 不安装  
+         0 = Não instalar  
 
-         1 = 安装  
+         1 = Instalar  
 
-    -   **详细信息：**指定是否安装 Configuration Manager 控制台。  
+    -   **Detalhes:** especifica se deseja instalar o console do Configuration Manager.  
 
--   **项名称：**JoinCEIP  
+-   **Nome da chave:** JoinCEIP  
 
-    -   **是否必需：** 是  
+    -   **Obrigatória:** Sim  
 
-    -   **值：** 0 或 1  
+    -   **Valores:** 0 ou 1  
 
-         0 = 不加入  
+         0 = Não ingressar  
 
-         1 = 加入  
+         1 = Ingressar  
 
-    -   **详细信息：**指定是否加入 CEIP。  
+    -   **Detalhes:** especifica o ingresso ou não no Programa de Aperfeiçoamento da Experiência do Usuário.  
 
 **SQLConfigOptions**  
 
--   **项名称：**SQLServerName  
+-   **Nome da chave:** SQLServerName  
 
-    -   **是否必需：** 是  
+    -   **Obrigatória:** Sim  
 
-    -   **值：** <*SQL Server 名称*>  
+    -   **Valores:** <*Nome do SQL Server*>  
 
-    -   **详细信息：**指定服务器或群集实例的名称，它们正在运行 SQL Server 并将承载站点数据库。 你必须指定在发生故障之前承载站点数据库的同一服务器。  
+    -   **Detalhes:** especifica o nome do servidor ou da instância clusterizada que executa o SQL Server e que hospedará o banco de dados do site. Você deverá especificar o mesmo servidor que hospedou o banco de dados do site antes da falha.  
 
--   **项名称：**DatabaseName  
+-   **Nome da chave:** DatabaseName  
 
-    -   **是否必需：** 是  
+    -   **Obrigatória:** Sim  
 
-    -   **值：**  <*站点数据库名称*> 或 <*实例名称*>\\<*站点数据库名称*>
+    -   **Valores:**  <*Nome do banco de dados do site*> ou <*Nome da instância*>\\<*Nome do banco de dados do site*>
 
-    -   **详细信息：**  
+    -   **Detalhes:**  
 
-         指定要创建或用于安装中心管理站点数据库的 SQL Server 数据库的名称。 你必须指定在发生故障之前使用的同一数据库名称。  
+         Especifica o nome do banco de dados SQL Server a ser criado ou o banco de dados SQL Server a ser usado durante a instalação do banco de dados do site de administração central. Você deverá especificar o mesmo nome do banco de dados usado antes da falha.  
 
         > [!IMPORTANT]  
-        >  如果未使用默认实例，你必须指定实例名称和站点数据库名称。  
+        >  Você deverá especificar o nome da instância e o nome do banco de dados do site se você não usar a instância padrão.  
 
--   **项名称：**SQLSSBPort  
+-   **Nome da chave:** SQLSSBPort  
 
-    -   **是否必需：** 是  
+    -   **Obrigatória:** Sim  
 
-    -   **值：** <*SSB 端口号*>  
+    -   **Valores:** <*Número da porta SSB*>  
 
-    -   **详细信息：**指定 SQL Server 使用的 SSB 端口。 通常，SSB 配置为使用 TCP 端口 4022。 你必须指定在发生故障之前使用的相同 SSB 端口。  
+    -   **Detalhes:** especifica a porta SSB usada pelo SQL Server. Normalmente, o SSB está configurado para usar a porta TCP 4022. Você deve especificar a mesma porta do SSB que foi usada antes da falha.  
 
--   **项名称：**SQLDataFilePath  
+-   **Nome da chave:** SQLDataFilePath  
 
-    -   **是否必需：** 否  
+    -   **Obrigatória:** Não  
 
-    -   **值：** <数据库 .mdb 文件的路径>  
+    -   **Valores:** <*Caminho para o arquivo .mdb do banco de dados*>  
 
-    -   **详细信息：**指定创建数据库 .mdb 文件的替代位置。  
+    -   **Detalhes:** especifica um local alternativo para criar o arquivo .mdb do banco de dados.  
 
--   **项名称：**SQLLogFilePath  
+-   **Nome da chave:** SQLLogFilePath  
 
-    -   **是否必需：** 否  
+    -   **Obrigatória:** Não  
 
-    -   **值：** <*数据库.ldf 文件的路径*>  
+    -   **Valores:** <*Caminho para o arquivo .ldf do banco de dados*>  
 
-    -   **详细信息：**指定创建数据库 .ldf 文件的替代位置。  
+    -   **Detalhes:** especifica um local alternativo para criar o arquivo .ldf do banco de dados.  
 
 **HierarchyExpansionOptions**  
 
--   **项名称：**CCARSiteServer  
+-   **Nome da chave:** CCARSiteServer  
 
-    -   **是否必需：**查看详细信息。  
+    -   **Obrigatória:** ver detalhes.  
 
-    -   **值：** <*中央管理站点的站点代码*>  
+    -   **Valores:** <*Código do site de administração central*>  
 
-    -   **详细信息：**指定主站点加入 Configuration Manager 层次结构时将要附加到的管理中心站点。 如果在发生故障之前主站点已附加到管理中心站点，则此设置为必需。 你必须指定在发生故障之前用于管理中心站点的站点代码。  
+    -   **Detalhes:** especifica o site de administração central ao qual o site primário é anexado quando ingressa na hierarquia do Configuration Manager. Essa configuração é necessária se o site primário foi anexado ao site de administração central antes da falha. É necessário especificar o código do site usado para o site de administração central antes da falha.  
 
--   **项名称：**CASRetryInterval  
+-   **Nome da chave:** CASRetryInterval  
 
-    -   **是否必需：** 否  
+    -   **Obrigatória:** Não  
 
-    -   **值：** <*Interval*>  
+    -   **Valores:** <*Interval*>  
 
-    -   **详细信息：** 指定连接失败后尝试连接到管理中心站点的重试间隔（以分钟为单位）。 例如，如果连接到管理中心站点失败，则主站点将等待你为 **CASRetryInterval** 值指定的分钟数，然后再次尝试连接。  
+    -   **Detalhes:** especifica o intervalo de repetição (em minutos) para tentar uma conexão ao site de administração central depois de a conexão falhar. Por exemplo, se a conexão com o site de administração central falhar, o site primário aguardará o número de minutos especificados para o valor de **CASRetryInterval** e, em seguida, tentará a conexão novamente.  
 
--   **项名称：**WaitForCASTimeout  
+-   **Nome da chave:** WaitForCASTimeout  
 
-    -   **是否必需：** 否  
+    -   **Obrigatória:** Não  
 
-    -   **值：** <*Timeout*>  
+    -   **Valores:** <*Timeout*>  
 
-    -   **详细信息：** 指定主站点连接到管理中心站点的最大超时值（以分钟为单位）。 例如，如果主站点未能连接到管理中心站点，则在达到“WaitForCASTimeout”期间之前，主站点将基于“CASRetryInterval”值重新尝试连接到管理中心站点。 可以指定 **0** 到 **100** 之间的一个值。  
+    -   **Detalhes:** especifica o valor máximo do tempo limite (em minutos) para o site primário se conectar ao site de administração central. Por exemplo, se o site primário falhar ao se conectar ao site de administração central, o site primário tentará a conexão novamente ao site de administração central com base no valor de **CASRetryInterval** até atingir o período de **WaitForCASTimeout**. É possível especificar um valor de **0** a **100**.  
 
 **CloudConnectorOptions**  
 
--   **项名称：**CloudConnector  
+-   **Nome da chave:** CloudConnector  
 
-    -   **是否必需：** 是  
+    -   **Obrigatória:** Sim  
 
-    -   **值：** 0 或 1  
+    -   **Valores:** 0 ou 1  
 
-         0 = 不安装  
+         0 = Não instalar  
 
-         1 = 安装  
+         1 = Instalar  
 
-    -   **详细信息：**指定是否在此站点上安装服务连接点。 因为服务连接点只能安装在层次结构的顶层站点上，此值对子主站点必须为 **0**。  
+    -   **Detalhes:** especifica se um ponto de conexão de serviço será instalado neste site. Como o ponto de conexão de serviço pode ser instalado somente no site de camada superior de uma hierarquia, esse valor deverá ser **0** para um site primário filho.  
 
--   **项名称：**CloudConnectorServer  
+-   **Nome da chave:** CloudConnectorServer  
 
-    -   **是否必需：**当 **CloudConnector** 等于 1 时需要  
+    -   **Obrigatório:** obrigatório quando **CloudConnector** for igual a 1  
 
-    -   **值：** <服务连接点服务器 FQDN>  
+    -   **Valores:** <*FQDN do servidor de ponto de conexão do serviço*>  
 
-    -   **详细信息：**指定将承载服务连接点站点系统角色的服务器的 FQDN。  
+    -   **Detalhes:** especifica o FQDN do servidor que hospedará a função do sistema de sites do ponto de conexão do serviço.  
 
--   **项名称：**UseProxy  
+-   **Nome da chave:** UseProxy  
 
-    -   **是否必需：**当 **CloudConnector** 等于 1 时需要  
+    -   **Obrigatório:** obrigatório quando **CloudConnector** for igual a 1  
 
-    -   **值：** 0 或 1  
+    -   **Valores:** 0 ou 1  
 
-         0 = 不安装  
+         0 = Não instalar  
 
-         1 = 安装  
+         1 = Instalar  
 
-    -   **详细信息：**指定服务连接点是否将使用代理服务器。  
+    -   **Detalhes:** especifica se o ponto de conexão de serviço usará um servidor proxy.  
 
--   **项名称：**ProxyName  
+-   **Nome da chave:** ProxyName  
 
-    -   **是否必需：**当 **CloudConnector** 等于 1 时需要  
+    -   **Obrigatório:** obrigatório quando **CloudConnector** for igual a 1  
 
-    -   **值：** <代理服务器 FQDN>  
+    -   **Valores:** <*FQDN do servidor proxy*>  
 
-    -   **详细信息：**指定将用于服务连接点站点系统角色的代理服务器的 FQDN。  
+    -   **Detalhes:** especifica o FQDN do servidor proxy que será usado pela função do sistema de sites do ponto de conexão do serviço.  
 
--   **项名称：**ProxyPort  
+-   **Nome da chave:** ProxyPort  
 
-    -   **是否必需：**当 **CloudConnector** 等于 1 时需要  
+    -   **Obrigatório:** obrigatório quando **CloudConnector** for igual a 1  
 
-    -   **值：** <*端口号*>  
+    -   **Valores:** <*Número da porta*>  
 
-    -   **详细信息：**指定要用于代理端口的端口号。  
+    -   **Detalhes:** especifica o número da porta a ser usado para a porta do proxy.  

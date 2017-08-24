@@ -1,6 +1,6 @@
 ---
-title: "Unicode 和 ASCII 支持 | Microsoft Docs"
-description: "了解 System Center Configuration Manager 对象中对 Unicode 和 ASCII 字符的支持。"
+title: Suporte a Unicode e ASCII | Microsoft Docs
+description: Saiba mais sobre o suporte para caracteres ASCII e Unicode em objetos do System Center Configuration Manager.
 ms.custom: na
 ms.date: 3/1/2017
 ms.prod: configuration-manager
@@ -18,128 +18,128 @@ manager: angrobe
 ms.openlocfilehash: 18f1c64c1f27001a0fdfbab4236d09a5bc279272
 ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
 ms.translationtype: HT
-ms.contentlocale: zh-CN
+ms.contentlocale: pt-BR
 ms.lasthandoff: 08/07/2017
 ---
-# <a name="unicode-and-ascii-support-in-system-center-configuration-manager"></a>System Center Configuration Manager 中的 Unicode 和 ASCII 支持
+# <a name="unicode-and-ascii-support-in-system-center-configuration-manager"></a>Suporte a Unicode e ASCII no System Center Configuration Manager
 
-*适用范围：System Center Configuration Manager (Current Branch)*
+*Aplica-se a: System Center Configuration Manager (Branch Atual)*
 
-System Center Configuration Manager 使用 Unicode 字符来创建大部分对象。 但是，有几个对象仅支持 ASCII 字符，或者具有其他限制。  
+O System Center Configuration Manager cria a maioria dos objetos usando caracteres Unicode. No entanto, vários objetos dão suporte apenas aos caracteres ASCII, ou têm outras limitações.  
 
- 下列部分列出了只能使用 ASCII 字符集中的字符或者具有其他限制的对象。  
+ As seções a seguir listam os objetos que usam caracteres somente do conjunto de caracteres ASCII, ou que possuem limitações adicionais.  
 
--   [使用 ASCII 字符的对象](#BKMK_ASCIIchar)  
+-   [Objetos que usam caracteres ASCII](#BKMK_ASCIIchar)  
 
--   [其他限制](#BKMK_OtherCharLimitations)  
+-   [Limitações adicionais](#BKMK_OtherCharLimitations)  
 
--   [未本地化的 Configuration Manager 对象](#BKMK_LangNonLocalize)  
+-   [Objetos do Configuration Manager que não são localizados](#BKMK_LangNonLocalize)  
 
-##  <a name="BKMK_ASCIIchar"></a>使用 ASCII 字符的对象  
- 仅在创建下列对象时，Configuration Manager 才支持 ASCII 字符集：  
+##  <a name="BKMK_ASCIIchar"></a> Objetos que usam caracteres ASCII  
+ O Configuration Manager dá suporte ao conjunto de caracteres ASCII somente quando os seguintes objetos são criados:  
 
--   站点代码  
+-   Código do site  
 
--   所有站点系统服务器计算机的名称  
+-   Todos os nomes do computador do servidor do sistema de site  
 
--   下列 Configuration Manager 帐户：  
-
-    > [!NOTE]  
-    >  在以俄语运行的站点上，这些帐户支持 ASCII 字符和 RUS 字符。  
-
-    -   客户端请求安装帐户  
-
-    -   健康状况引用发布帐户  
-
-    -   健康状况引用查询帐户  
-
-    -   管理点数据库连接帐户  
-
-    -   网络访问帐户  
-
-    -   包访问帐户  
-
-    -   标准发件人帐户  
-
-    -   站点系统安装帐户  
-
-    -   软件更新点连接帐户  
-
-    -   软件更新点代理服务器帐户  
+-   As seguintes contas do Configuration Manager:  
 
     > [!NOTE]  
-    >  你为基于角色的管理指定的帐户支持 Unicode。  
+    >  Estas contas dão suporte aos caracteres ASCII e RUS em um site executado em russo.  
+
+    -   Conta de instalação do cliente por push  
+
+    -   Conta de publicação de referência de estado de integridade  
+
+    -   Conta de consulta de referências de estado de integridade  
+
+    -   Conta de conexão do banco de dados do ponto de gerenciamento  
+
+    -   Conta de acesso à rede  
+
+    -   Conta de acesso ao pacote  
+
+    -   Conta do remetente padrão  
+
+    -   Conta de instalação do sistema de sites  
+
+    -   Conta da conexão do ponto de atualização do software  
+
+    -   Conta do servidor proxy do ponto de atualização do software  
+
+    > [!NOTE]  
+    >  As contas que você especificar para a administração baseada em funções oferecerão suporte para Unicode.  
     >   
-    >  Reporting Services 点帐户支持 Unicode（RUS 字符除外）。  
+    >  A conta do ponto do Reporting Services dá suporte a Unicode, exceto aos caracteres RUS.  
 
--   站点服务器和站点系统的完全限定的域名 (FQDN)  
+-   FQDN (nome de domínio totalmente qualificado) para servidores do site e sistemas de sites  
 
--   Configuration Manager 的安装路径  
+-   Caminho de instalação para o Configuration Manager  
 
--   SQL Server 实例名称  
+-   Nomes de instância do SQL Server  
 
--   下列站点系统角色的路径：  
+-   O caminho para as seguintes funções do sistema de site:  
 
-    -   应用程序目录 Web 服务点  
+    -   Ponto de serviços Web do Catálogo de Aplicativos  
 
-    -   应用程序目录网站点  
+    -   Ponto de sites da Web do catálogo de aplicativos  
 
-    -   注册点  
+    -   Ponto de registro  
 
-    -   注册代理点  
+    -   Ponto proxy do registro  
 
-    -   Reporting Services 点  
+    -   Ponto do Reporting Services  
 
-    -   状态迁移点  
+    -   Ponto de migração de estado  
 
--   下列文件夹的路径：  
+-   O caminho para as seguintes pastas:  
 
-    -   存储客户端状态迁移数据的文件夹  
+    -   A pasta que armazena dados de migração de estado do cliente  
 
-    -   包含 Configuration Manager 报表的文件夹  
+    -   A pasta que contém os relatórios do Configuration Manager  
 
-    -   存储 Configuration Manager 备份的文件夹  
+    -   A pasta que armazena o backup do Configuration Manager  
 
-    -   存储站点安装程序的安装源文件的文件夹  
+    -   A pasta que armazena os arquivos de origem de instalação para a instalação do site  
 
-    -   存储所下载的、供安装程序使用的必备组件的文件夹  
+    -   A pasta que armazena os downloads de pré-requisitos para uso pela instalação  
 
--   下列对象的路径：  
+-   O caminho para os seguintes objetos:  
 
-    -   IIS 网站  
+    -   Site da Web do IIS  
 
-    -   虚拟应用程序安装路径  
+    -   Caminho de instalação de aplicativo virtual  
 
-    -   虚拟应用程序名称  
+    -   Nome do aplicativo virtual  
 
--   用于 AMT 和带外管理的下列对象：  
+-   Os seguintes objetos para AMT e gerenciamento fora da banda:  
 
-    -   基于 AMT 的计算机的 FQDN  
+    -   O FQDN do computador baseado em AMT  
 
-    -   基于 AMT 的计算机的计算机名  
+    -   O nome do computador baseado em AMT  
 
-    -   域 NetBIOS 名称  
+    -   O nome NetBIOS do domínio  
 
-    -   无线配置文件名称和 SSID  
+    -   O nome do perfil sem fio e SSID  
 
-    -   受信任的根证书颁发机构的名称  
+    -   O nome da autoridade de certificação raiz confiável  
 
-    -   证书颁发机构 (CA) 的名称和模板名称  
+    -   O nome da AC (autoridade de certificação) e nomes de modelo  
 
-    -   IDE 重定向映像文件的文件名和路径  
+    -   O nome do arquivo e o caminho para o arquivo de imagem de redirecionamento de IDE  
 
-    -   AMT 数据存储的内容  
+    -   O conteúdo do armazenamento de dados AMT  
 
--   启动媒体 ISO 文件名  
+-   Nomes do arquivo ISO da mídia de inicialização  
 
-##  <a name="BKMK_OtherCharLimitations"></a>其他限制  
- 下面是针对支持的字符集和语言版本的其他限制：  
+##  <a name="BKMK_OtherCharLimitations"></a> Limitações adicionais  
+ Estas são as limitações adicionais para conjuntos de caracteres e versões de idioma com suporte:  
 
--   Configuration Manager 不支持更改站点服务器计算机的区域设置。  
+-   O Configuration Manager não dá suporte à alteração de localidade do computador do servidor de site.  
 
--   企业证书颁发机构 (CA) 不支持使用双字节字符集 (DBCS) 的客户端计算机名称。 可以使用的客户端计算机名称受到 IA5 字符集的 PKI 限制的制约。 此外，Configuration Manager 不支持使用 DBCS 的 CA 名称或使用者名称值。  
+-   Uma AC (autoridade de certificação) corporativa não oferece suporte a nomes de computador cliente que usam DBCS (conjunto de caracteres de dois bytes). Os nomes de computador cliente que você pode usar são restritos pela limitação PKI do conjunto de caracteres IA5. Além disso, o Configuration Manager não dá suporte a valores de nome de entidade e de AC que usam DBCS.  
 
-##  <a name="BKMK_LangNonLocalize"></a>未本地化的 Configuration Manager 对象  
- Configuration Manager 数据库对于它存储的大部分对象都支持 Unicode，而且它会尽可能使用与计算机的区域设置匹配的操作系统语言来显示此信息。 若要使客户端界面或 Configuration Manager 控制台以计算机的操作系统语言显示信息，计算机的区域设置必须匹配在站点中安装的客户端或服务器语言。  
+##  <a name="BKMK_LangNonLocalize"></a> Objetos do Configuration Manager que não são localizados  
+ O banco de dados do Configuration Manager dá suporte a Unicode para a maioria dos objetos que ele armazena e, quando possível, exibe essas informações no idioma do sistema operacional que corresponde à localidade de um computador. Para a interface de cliente ou o console do Configuration Manager exibir informações no idioma do sistema operacional do computador, a localidade do computador deve corresponder ao idioma do cliente ou servidor que você instala em um site.  
 
- 但是，有几个 Configuration Manager 对象不支持 Unicode，而且它们使用 ASCII 存储在数据库中，或者它们具有其他语言限制。 此信息始终使用 ASCII 字符集或者在创建对象时使用的语言来显示。  
+ No entanto, diversos objetos do Configuration Manager não dão suporte a Unicode, e são armazenados no banco de dados usando ASCII, ou têm limitações de idioma adicionais. Essas informações são sempre exibidas usando o conjunto de caracteres ASCII ou no idioma em uso quando o objeto foi criado.  

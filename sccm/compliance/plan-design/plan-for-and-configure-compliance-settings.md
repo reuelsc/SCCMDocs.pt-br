@@ -1,6 +1,6 @@
 ---
-title: "规划和配置符合性设置 | Microsoft Docs"
-description: "了解在 System Center Configuration Manager 中使用符合性设置的先决条件和配置任务。"
+title: "Planejar e definir as configurações de conformidade | Microsoft Docs"
+description: "Saiba mais sobre os pré-requisitos e as tarefas de configuração para trabalhar com configurações de conformidade no System Center Configuration Manager."
 ms.custom: na
 ms.date: 10/06/2016
 ms.prod: configuration-manager
@@ -17,37 +17,37 @@ manager: angrobe
 ms.openlocfilehash: d26ac3de58d2f0ef447725e63fc2d8adda6ea06c
 ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
 ms.translationtype: HT
-ms.contentlocale: zh-CN
+ms.contentlocale: pt-BR
 ms.lasthandoff: 08/07/2017
 ---
-# <a name="plan-for-and-configure-compliance-settings-in-system-center-configuration-manager"></a>在 System Center Configuration Manager 中规划和配置符合性设置
+# <a name="plan-for-and-configure-compliance-settings-in-system-center-configuration-manager"></a>Planejar e definir as configurações de conformidade no System Center Configuration Manager
 
-*适用范围：System Center Configuration Manager (Current Branch)*
+*Aplica-se a: System Center Configuration Manager (Branch Atual)*
 
-在开始使用 System Center Configuration Manager 符合性设置之前，需要了解几个先决条件，并且需要执行一些配置任务。  
+Antes de começar a trabalhar com as configurações de conformidade do System Center Configuration Manager, há alguns pré-requisitos que você precisa conhecer e algumas tarefas de configuração que precisará executar.  
 
-## <a name="prerequisites-for-compliance-settings"></a>符合性设置的先决条件  
+## <a name="prerequisites-for-compliance-settings"></a>Pré-requisitos para configurações de conformidade  
 
-|先决条件|更多信息|  
+|Pré-requisito|Mais informações|  
 |------------------|----------------------|  
-|必须启用 Windows Configuration Manager 客户端并配置符合性评估。|请参阅下文|  
-|如果你想要运行报表，就必须为站点配置报告。|[System Center Configuration Manager 中的报表](../../core/servers/manage/reporting.md)|  
-|所需的安全权限。|“符合性设置管理员”安全角色包括管理符合性设置、用户数据和配置文件配置项目和远程连接配置文件必需的权限。<br /><br /> [配置基于角色的管理](../../core/servers/deploy/configure/configure-role-based-administration.md)|  
+|Clientes do Windows Configuration Manager devem estar habilitados e configurados para a avaliação da conformidade.|Veja abaixo|  
+|Se desejar executar relatórios, você deve configurar relatórios para seu site.|[Relatórios no System Center Configuration Manager](../../core/servers/manage/reporting.md)|  
+|Permissões de segurança necessárias.|A função de segurança **Gerenciador de Configurações de Conformidade** inclui as permissões necessárias para gerenciar configurações de conformidade, itens de configuração de perfis e dados do usuário e perfis de conexão remota.<br /><br /> [Configurar administração baseada em funções](../../core/servers/deploy/configure/configure-role-based-administration.md)|  
 
-##  <a name="enable-and-configure-compliance-settings-for-windows-pcs-only"></a>启用并配置符合性设置（仅适用于 Windows 电脑）  
+##  <a name="enable-and-configure-compliance-settings-for-windows-pcs-only"></a>Habilitar e definir configurações de conformidade (somente para computadores Windows)  
 
-此过程为符合性设置配置默认客户端设置并应用于你的层次结构中的所有计算机。 如果希望这些设置仅应用于某些计算机，请创建一个自定义设备客户端设置，并将其分配给包含要使用符合性设置的计算机的集合。 有关如何创建自定义设备设置的详细信息，请参阅[如何配置客户端设置](../../core/clients/deploy/configure-client-settings.md)。  
+Este procedimento define as configurações de conformidade padrão do cliente e se aplica a todos os computadores em sua hierarquia. Se quiser que essas configurações se apliquem somente a alguns computadores, crie uma configuração personalizada do cliente do dispositivo e atribua-a a uma coleção que contém os computadores nos quais deseja usar as configurações de conformidade. Para obter mais informações sobre como criar configurações personalizadas do dispositivo, consulte [Como definir as configurações do cliente](../../core/clients/deploy/configure-client-settings.md).  
 
 > [!TIP]  
->  其他设备类型不需要任何特定的配置以评估符合性设置。  
+>  Outros tipos de dispositivo não exigem nenhuma configuração específica para avaliar as configurações de conformidade.  
 
-1.  在 Configuration Manager 控制台中，单击“管理” > “客户端设置” > “默认设置”。  
-2.  在“主页”  选项卡上的“属性”  组中，单击“属性” 。  
-3.  在“默认设置”  对话框中，单击“符合性设置” 。  
-4.  为符合性设置配置下列客户端设置：
-    - **在客户端上启用符合性评估** - 如果要在客户端设备上评估符合性，则设置为“True”。
-    - **计划符合性评估** - 如果要修改客户端设备上的默认符合性评估计划，请单击“计划”。
-    - **启用用户数据和配置文件** - 如果要向 Windows 计算机创建并部署用户数据和配置文件配置项目，则启用此选项。 有关详细信息，请参阅[创建用户数据和配置文件配置项目](/sccm/compliance/deploy-use/create-remote-connection-profiles)。
-5. 单击“确定”  来关闭“默认设置”  对话框。  
+1.  No console do Configuration Manager, escolha **Administração** > **Configurações do Cliente** > **Configurações Padrão**.  
+2.  Na guia **Início** , no grupo **Propriedades** , clique em **Propriedades**.  
+3.  Na caixa de diálogo **Configurações Padrão** , clique em **Configurações de Conformidade**.  
+4.  Defina as seguintes configurações de conformidade do cliente:
+    - **Habilitar a avaliação de conformidade em clientes** ‑ Defina como **Verdadeiro** se desejar avaliar a conformidade em dispositivos cliente.
+    - **Agendar avaliação de conformidade** ‑ Clique em **Agenda** se você quiser modificar o agendamento da avaliação de conformidade padrão em dispositivos cliente.
+    - **Habilitar Dados e Perfis do Usuário** ‑ Habilite esta opção se deseja criar e implantar itens de configuração de perfis e dados do usuário em computadores com Windows. Para obter detalhes, consulte [Criar itens de configuração de perfis e dados de usuário](/sccm/compliance/deploy-use/create-remote-connection-profiles).
+5. Clique em **OK** para fechar a caixa de diálogo **Configurações Padrão** .  
 
-当客户端计算机下一次下载客户端策略时，将使用这些设置进行配置。  
+Os computadores cliente são definidos com essas configurações na próxima vez que baixarem a política do cliente.  

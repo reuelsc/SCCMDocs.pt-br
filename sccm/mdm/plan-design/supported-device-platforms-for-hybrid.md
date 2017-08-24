@@ -1,6 +1,6 @@
 ---
-title: "混合 MDM 的受支持的平台 | Microsoft Docs"
-description: "混合 MDM 的受支持的平台。"
+title: "Plataformas de dispositivo com suporte para MDM híbrido | Microsoft Docs"
+description: "Plataformas de dispositivo com suporte para MDM híbrido."
 ms.custom: na
 ms.date: 03/05/2017
 ms.prod: configuration-manager
@@ -18,15 +18,15 @@ manager: angrobe
 ms.openlocfilehash: 8e7caef5b7271a9c850513cad26b49426bc0c7a2
 ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
 ms.translationtype: HT
-ms.contentlocale: zh-CN
+ms.contentlocale: pt-BR
 ms.lasthandoff: 08/07/2017
 ---
-# <a name="supported-device-platforms-for-hybrid-mdm"></a>混合 MDM 的受支持的平台
+# <a name="supported-device-platforms-for-hybrid-mdm"></a>Plataformas de dispositivo com suporte para MDM híbrido
 
-*适用范围：System Center Configuration Manager (Current Branch)*
+*Aplica-se a: System Center Configuration Manager (Branch Atual)*
 
-以下移动设备平台支持使用 Microsoft Intune 通过 Configuration Manager 进行移动设备管理：
+O gerenciamento de dispositivo móvel com o Configuration Manager usando o Microsoft Intune dá suporte às seguintes plataformas de dispositivo móvel:
 
 [!INCLUDE[../includes/mdm-supported-devices](../includes/mdm-supported-devices.md)]
 
-只能使用一种管理解决方案（即移动设备管理机构）来管理你的移动设备。 执行此设置之前，应[在 Microsoft Intune 独立移动设备管理和结合 Configuration Manager 使用的混合移动设备管理之间进行选择](../understand/choose-between-standalone-intune-and-hybrid-mobile-device-management.md)
+Você só pode usar uma solução de gerenciamento, a autoridade de gerenciamento de dispositivo móvel, para gerenciar seus dispositivos móveis. Antes de criar essa configuração você deve [escolher entre o gerenciamento de dispositivo móvel híbrido e independente do Microsoft Intune com o Configuration Manager](../understand/choose-between-standalone-intune-and-hybrid-mobile-device-management.md)

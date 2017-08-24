@@ -6,27 +6,26 @@ ms.date: 10/06/2016
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
-ms.technology:
-- configmgr-other
+ms.technology: configmgr-other
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 68fe0e7e-351e-4222-853a-877475adb589
-caps.latest.revision: 10
+caps.latest.revision: "10"
 author: Brenduns
 ms.author: brenduns
 manager: angrobe
-translationtype: Human Translation
-ms.sourcegitcommit: 2ac9f98dc7b455d3b72d794d4311863186ed53ef
 ms.openlocfilehash: cd94f9ccc7e196b30e5dc7ae9368d073b7cff5d2
-
-
+ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
+ms.translationtype: HT
+ms.contentlocale: pt-BR
+ms.lasthandoff: 08/07/2017
 ---
 # <a name="communications-between-endpoints-in-system-center-configuration-manager"></a>Comunicação entre pontos de extremidade no System Center Configuration Manager
 
 *Aplica-se a: System Center Configuration Manager (Branch Atual)*
 
 
-##  <a name="a-nameplanningintra-sitecoma-communications-between-site-systems-in-a-site"></a><a name="Planning_Intra-site_Com"></a> Comunicações entre os sistemas de sites em um site  
+##  <a name="Planning_Intra-site_Com"></a> Comunicações entre os sistemas de sites em um site  
  Quando os sistemas de sites ou componentes do Configuration Manager se comunicam pela rede com outros sistemas de sites ou componentes do Configuration Manager no site, eles utilizam um dos seguintes protocolos, dependendo de como você configura o site:  
 
 -   Protocolo SMB  
@@ -46,7 +45,7 @@ Para ajudá-lo a gerenciar a transferência de conteúdo do servidor do site par
 Para obter mais informações, consulte [Manage network bandwidth for content management](manage-network-bandwidth.md) (Gerenciar largura de banda de rede para gerenciamento de conteúdo).
 
 
-##  <a name="a-nameplanningclienttositesystema-communications-from-clients-to-site-systems-and-services"></a><a name="Planning_Client_to_Site_System"></a> Comunicações de clientes para serviços e sistemas de sites  
+##  <a name="Planning_Client_to_Site_System"></a> Comunicações de clientes para serviços e sistemas de sites  
 Os clientes iniciam a comunicação com as funções do sistema de sites, o Active Directory Domain Services e os serviços online. Para habilitar essas comunicações, os firewalls devem permitir o tráfego de rede entre clientes e o ponto de extremidade de suas comunicações. Os pontos de extremidade incluem:  
 
 -   **Ponto de sites da Web do Catálogo de Aplicativos**: dá suporte à comunicação HTTP e HTTPS
@@ -79,7 +78,7 @@ Para obter mais informações sobre a localização de serviço pelos clientes, 
 
 Para obter detalhes sobre as portas e os protocolos usados pelos clientes quando eles se comunicam com esses pontos de extremidade, consulte [Portas usadas no System Center Configuration Manager](../../../core/plan-design/hierarchy/ports.md).  
 
-###  <a name="a-namebkmkclientspana-considerations-for-client-communications-from-the-internet-or-an-untrusted-forest"></a><a name="BKMK_clientspan"></a> Considerações sobre a comunicação do cliente da Internet ou de uma floresta não confiável  
+###  <a name="BKMK_clientspan"></a> Considerações sobre a comunicação do cliente da Internet ou de uma floresta não confiável  
 As funções do sistema de sites a seguir instaladas em sites primários dão suporte a conexões de clientes que estão em locais não confiáveis, como a Internet ou uma floresta não confiável. (Sites secundários não dão suporte a conexões de cliente de locais não confiáveis):  
 
 -   Ponto de sites da Web do catálogo de aplicativos  
@@ -120,7 +119,7 @@ Como mostra o exemplo anterior, você pode colocar os sistemas de áreas baseado
 -   **Túnel**:   
     Se o seu servidor Web proxy não conseguir dar suporte aos requisitos da ponte SSL ou se desejar configurar o suporte da Internet para dispositivos móveis registrados pelo Configuration Manager, também haverá suporte para o túnel SSL. É uma opção menos segura, pois os pacotes de SSL da Internet são encaminhados para os sistemas de site sem terminação SSL, para que não possam ser inspecionados quanto a conteúdo malicioso. Quando você usa o túnel SSL, não existem requisitos de certificado do servidor proxy da Web.  
 
-##  <a name="a-nameplancomx-foresta-communications-across-active-directory-forests"></a><a name="Plan_Com_X-Forest"></a> Comunicações entre florestas do Active Directory  
+##  <a name="Plan_Com_X-Forest"></a> Comunicações entre florestas do Active Directory  
 O System Center Configuration Manager dá suporte a sites e hierarquias que abrangem florestas do Active Directory.  
 
 O Configuration Manager também dá suporte a computadores de domínio que não estão na mesma floresta do Active Directory que o servidor do site e a computadores de grupos de trabalho:  
@@ -152,7 +151,7 @@ O Configuration Manager também dá suporte a computadores de domínio que não 
 
     -   [Como instalar clientes do Configuration Manager em computadores do grupo de trabalho](../../../core/clients/deploy/deploy-clients-to-windows-computers.md#BKMK_ClientWorkgroup)  
 
-###  <a name="a-namebkmkspana-scenarios-to-support-a-site-or-hierarchy-that-spans-multiple-domains-and-forests"></a><a name="bkmk_span"></a> Cenários compatíveis com um site ou hierarquia que abrange vários domínios e florestas  
+###  <a name="bkmk_span"></a> Cenários compatíveis com um site ou hierarquia que abrange vários domínios e florestas  
 
 #### <a name="communication-between-sites-in-a-hierarchy-that-spans-forests"></a>Comunicação entre sites em uma hierarquia que abrange florestas  
 Esse cenário exige uma relação de confiança de floresta bidirecional que dá suporte à autenticação Kerberos.  Se você não tiver uma relação de confiança de floresta bidirecional que dá suporte à autenticação Kerberos, o Configuration Manager não dará suporte a um site filho na floresta remota.  
@@ -256,11 +255,5 @@ Para publicar informações do site em outra floresta do Active Directory, você
 
 -   Configurar cada site para publicar seus dados nos Serviços de Domínio Active Directory. Essa configuração permite que os clientes nessa floresta recuperem informações do site e localizem pontos de gerenciamento. Para clientes que não podem usar o Active Directory Domain Services no local de serviço, é possível usar DNS, WINS ou o ponto de gerenciamento atribuído do cliente.  
 
-###  <a name="a-namebkmkxchangea-put-the-exchange-server-connector-in-a-remote-forest"></a><a name="bkmk_xchange"></a> Colocar o conector do Exchange Server em uma floresta remota  
+###  <a name="bkmk_xchange"></a> Colocar o conector do Exchange Server em uma floresta remota  
 Para compatibilidade com esse cenário, verifique se a resolução de nomes funciona entre as florestas (por exemplo, configure encaminhamentos de DNS) e, quando configurar o conector do Exchange Server, especifique o FQDN da intranet do Exchange Server. Para obter mais informações, consulte [Gerenciar dispositivos móveis com o System Center Configuration Manager e o Exchange](../../../mdm/deploy-use/manage-mobile-devices-with-exchange-activesync.md).  
-
-
-
-<!--HONumber=Jan17_HO1-->
-
-

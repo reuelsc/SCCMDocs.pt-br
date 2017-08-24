@@ -1,6 +1,6 @@
 ---
-title: "基于角色的管理基础知识 | Microsoft Docs"
-description: "使用基于角色的管理来控制对 Configuration Manager 和管理对象的管理访问权限。"
+title: "Conceitos básicos de administração baseada em funções | Microsoft Docs"
+description: "Use a administração baseada em funções para controlar o acesso administrativo ao Configuration Manager e aos objetos gerenciados."
 ms.custom: na
 ms.date: 1/3/2017
 ms.prod: configuration-manager
@@ -17,197 +17,197 @@ manager: angrobe
 ms.openlocfilehash: ddf2ad1cae51c1e36df5a6d86822e2b9abe604e2
 ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
 ms.translationtype: HT
-ms.contentlocale: zh-CN
+ms.contentlocale: pt-BR
 ms.lasthandoff: 08/07/2017
 ---
-# <a name="fundamentals-of-role-based-administration-for-system-center-configuration-manager"></a>System Center Configuration Manager 的基于角色的管理基础
+# <a name="fundamentals-of-role-based-administration-for-system-center-configuration-manager"></a>Fundamentos de administração baseada em funções para o System Center Configuration Manager
 
-*适用范围：System Center Configuration Manager (Current Branch)*
+*Aplica-se a: System Center Configuration Manager (Branch Atual)*
 
-在 System Center Configuration Manager 中，使用基于角色的管理来保护管理 Configuration Manager 所需的访问权限。 还需保护对你管理的对象（如集合、部署和站点）的访问权限。 了解在本主题中引入的概念后，可以[为 System Center Configuration Manager 配置基于角色的管理](../../core/servers/deploy/configure/configure-role-based-administration.md)。  
+Com o System Center Configuration Manager, você usa administração baseada em funções para proteger o acesso necessário para administrar o Configuration Manager. Você também protege o acesso aos objetos que você gerencia, como coleções, implantações e sites. Depois de entender os conceitos apresentados neste tópico, você poderá [Configurar administração baseada em funções para o System Center Configuration Manager](../../core/servers/deploy/configure/configure-role-based-administration.md).  
 
- 此基于角色的管理模式使用以下内容为所有站点和站点设置集中定义并管理层次结构范围的安全访问设置：  
+ O modelo de administração baseada em funções define e gerencia configurações de acesso de segurança de toda a hierarquia para todos os sites e configurações de sites usando o seguinte:  
 
--   *安全角色*将分配给管理用户，并为这些用户（或用户组）提供不同 Configuration Manager 对象的权限。 例如创建或更改客户端设置的权限。  
+-   *Funções de segurança* são atribuídas a usuários administrativos para fornecer a esses usuários (ou grupos de usuários) permissões para objetos diferentes do Configuration Manager. Por exemplo, permissões para criar ou alterar as configurações de cliente.  
 
--   *管理作用域*用于对管理用户负责管理的对象的特定实例进行分组，如安装 Microsoft Office 2010 的应用程序。  
+-   *Escopos de segurança* são usados para agrupar instâncias específicas de objetos pelas quais um usuário administrativo é responsável por gerenciar, como um aplicativo que instala o Microsoft Office 2010.  
 
--   *集合*用于指定管理用户可管理的用户和设备资源组。  
+-   *Coleções* são usadas para especificar grupos de recursos de usuários e de dispositivos que o usuário administrativo pode gerenciar.  
 
- 组合使用安全角色、安全作用域和集合，可分离满足组织需求的管理任务。 将它们组合使用可定义用户的管理作用域，这就是用户可在 Configuration Manager 部署中查看和管理的内容。  
+ Com a combinação de funções de segurança, escopos de segurança e coleções, você segrega as atribuições administrativas que atendem aos requisitos da sua organização. Usadas em conjunto, elas definem o escopo administrativo de um usuário, que é o que esse usuário poderá exibir e gerenciar na sua implantação do Configuration Manager.  
 
-## <a name="benefits-of-role-based-administration"></a>基于角色的管理的好处  
+## <a name="benefits-of-role-based-administration"></a>Benefícios da administração baseada em funções  
 
--   站点不再用作管理边界。  
+-   Os sites não são usados como limites administrativos.  
 
--   可为层次结构创建管理用户，并仅需将安全性分配给他们一次。  
+-   Você cria usuários administrativos para uma hierarquia e somente precisa atribuir segurança a eles uma vez.  
 
--   所有安全分配都已复制，并在整个层次结构中可用。  
+-   Todas as atribuições de segurança são replicadas e estão disponíveis em toda a hierarquia.  
 
--   有用于分配典型管理任务的内置安全角色。 创建自己的自定义安全角色来满足特定业务需求。  
+-   Há funções de segurança internas que são usadas para atribuir as tarefas administrativas típicas. Criar suas próprias funções de segurança personalizadas para oferecer suporte às necessidades específicas do seu negócio.  
 
--   管理用户仅查看他们有权管理的对象。  
+-   Os usuários administrativos veem apenas os objetos que eles têm permissões para gerenciar.  
 
--   你可以审核管理安全操作。  
+-   Você pode auditar ações de segurança administrativa.  
 
-为 Configuration Manager 设计和实现管理安全性时，使用以下内容为管理用户创建一个*管理作用域*：  
+Ao projetar e implementar a segurança administrativa para o Configuration Manager, use o seguinte para criar um *escopo administrativo* para um usuário administrativo:  
 
--   [安全角色](#bkmk_Planroles)  
+-   [Funções de segurança](#bkmk_Planroles)  
 
--   [集合](#bkmk_planCol)  
+-   [Coleções](#bkmk_planCol)  
 
--   [安全作用域](#bkmk_PlanScope)  
+-   [Escopos de segurança](#bkmk_PlanScope)  
 
 
- 管理作用域控制管理用户可以在 Configuration Manager 控制台中查看的对象，以及该用户对这些对象所具有的权限。 基于角色的管理配置作为全局数据复制到层次结构中的每个站点，然后应用到所有管理连接。  
+ O escopo administrativo controla os objetos que um usuário administrativo exibe no console do Configuration Manager e controla as permissões que um usuário tem nesses objetos. Configurações de administração baseadas em funções replicam em cada site na hierarquia como dados globais e, em seguida, são aplicadas a todas as conexões administrativas.  
 
 > [!IMPORTANT]  
->  站点间复制的延迟可能会阻止站点收到基于角色的管理的变化。 有关如何监视站点间数据库复制的信息，请参阅 [System Center Configuration Manager 中站点间的数据传输](../../core/servers/manage/data-transfers-between-sites.md)主题。  
+>  Atrasos de replicação entre sites podem impedir que um site receba alterações para a administração baseada em funções. Para obter informações sobre como monitorar a replicação de banco de dados entre sites, consulte o tópico [Transferências de dados entre sites no System Center Configuration Manager](../../core/servers/manage/data-transfers-between-sites.md).  
 
-##  <a name="bkmk_Planroles"></a> 安全角色  
- 安全角色用于向管理用户授予安全权限。 安全角色是安全权限的组合，你将这些权限分配给管理用户，以便他们能够执行管理任务。 这些安全权限定义管理用户可以执行的管理操作，以及为特定对象类型授予的权限。 最佳安全方案是分配提供最低权限的安全角色。  
+##  <a name="bkmk_Planroles"></a> Funções de segurança  
+ Use as funções de segurança para conceder permissões de segurança a usuários administrativos. Funções de segurança são grupos de permissões de segurança atribuídas a usuários administrativos para que eles executem suas tarefas administrativas. Essas permissões de segurança definem as ações administrativas que um usuário administrativo pode executar e as permissões concedidas a tipos de objetos particulares. Como uma prática recomendada de segurança, atribua as funções de segurança que fornecem o mínimo de permissões.  
 
- Configuration Manager 具有多个内置的安全角色，能支持常见的管理任务组合，而且用户可以创建自己的自定义安全角色，以满足特定业务需求。 内置安全角色的示例：  
+ O Configuration Manager tem diversas funções de segurança internas para suporte de agrupamentos típicos de tarefas administrativas, e é possível criar suas próprias funções de segurança personalizadas para oferecer suporte a seus requisitos específicos de negócios. Exemplos de funções de segurança interna:  
 
--   “完全权限管理员”授予 Configuration Manager 中的所有权限。  
+-   *Administrador Completo* concede todas as permissões no Configuration Manager.  
 
--   “资产管理器”授予管理以下项目的权限：资产智能同步点、资产智能报告类、软件清单、硬件清单和计数规则。  
+-   O *Gerenciador de Ativos* concede permissões para gerenciar o Ponto de sincronização do Asset Intelligence, as classes de relatórios do Asset Intelligence, o inventário de software, o inventário de hardware e as regras de medição.  
 
--   “软件更新管理员”授予定义和部署软件更新的权限。 与此角色关联的管理用户可以创建集合、软件更新组、部署和模板。  
+-   *Gerenciador de Atualização de Software* concede permissões para definir e implantar atualizações de software. Usuários administrativos associados a essa função podem criar coleções, grupos de atualização de software, implantações e modelos.  
 
 > [!TIP]  
->  在 Configuration Manager 控制台中，可以查看内置的安全角色和创建的自定义安全角色的列表（包括它们的描述）。 若要查看角色，请在“管理”工作区中展开“安全”然后选择“安全角色”。  
+>  Você pode exibir a lista de funções de segurança internas e funções de segurança personalizadas que você cria, incluindo suas descrições, no console do Configuration Manager. Para exibir as funções, no espaço de trabalho **Administração**, expanda **Segurança** e, em seguida, selecione **Funções de Segurança**.  
 
- 每个安全角色都有针对不同对象类型的特定权限。 例如，“应用程序作者”安全角色具有下列针对应用程序的权限：“批准”、“创建”、“删除”、“修改”、“修改文件夹”、“移动对象”、“读取”、“运行报告”和“设置安全作用域”。
+ Cada função de segurança tem as permissões específicas para diferentes tipos de objeto. Por exemplo, a função de segurança *Autor de Aplicativos* tem as seguintes permissões para aplicativos: Aprovar, Criar, Excluir, Modificar, Modificar Pastas, Mover Objetos, Ler, Executar Relatório e Definir Escopo de Segurança.
 
- 无法更改内置安全角色的权限，但可以复制角色，进行更改，然后将所做的更改另存为新的自定义安全角色。 还可以导入从另一个层次结构（例如测试网络）中导出的安全角色。 查看安全角色及其权限，以确定是使用内置的安全角色还是必须创建自己的自定义安全角色。  
+ Você não pode alterar as permissões das funções de segurança internas, mas pode copiar a função, fazer alterações e então salvar essas alterações como uma nova função de segurança personalizada. Também é possível importar funções de segurança que você exportou de outra hierarquia, por exemplo, de uma rede de teste. Examine as funções de segurança e suas permissões para determinar se você usará as funções de segurança internas ou precisará criar suas próprias funções de segurança personalizadas.  
 
- ### <a name="to-help-you-plan-for-security-roles"></a>帮助你规划安全角色  
+ ### <a name="to-help-you-plan-for-security-roles"></a>Para ajudá-lo a planejar as funções de segurança  
 
-1.  确定管理用户在 Configuration Manager 中执行的任务。 这些任务可能关系到一个或多个管理任务组，例如部署应用程序和包、部署操作系统和符合性设置、配置站点和安全性、审核、远程控制计算机以及收集清单数据。  
+1.  Identificar as tarefas que os usuários administrativos executam no Configuration Manager. Essas tarefas podem estar relacionadas a um ou mais grupos de tarefas de gerenciamento, como implantação de aplicativos e pacotes, implantação de sistemas operacionais e configurações para conformidade, configuração de sites e segurança, auditoria, controle de computadores remotamente e coleta de dados de inventário.  
 
-2.  将这些管理任务对应到一个或多个内置的安全角色。  
+2.  Mapear essas tarefas administrativas a uma ou mais funções de segurança internas.  
 
-3.  如果某些管理用户执行多个安全角色的任务，则将多个安全角色分配给这些管理用户，而不是创建一个组合此类任务的新的安全角色。  
+3.  Se algum dos usuários administrativos executar as tarefas de diversas funções de segurança, atribua-as a esses usuários administrativos em vez de criar uma nova função de segurança que combine as tarefas.  
 
-4.  如果你确定的任务未能对应到内置的安全角色，则创建并测试新的安全角色。  
+4.  Se as tarefas identificadas não mapearem para as funções de segurança internas, crie e teste novas funções de segurança.  
 
-有关如何创建和配置安全角色以实现基于角色的管理的信息，请参阅[为 System Center Configuration Manager 配置基于角色的管理](../../core/servers/deploy/configure/configure-role-based-administration.md#BKMK_CreateSecRole)主题中的[创建自定义安全角色](../../core/servers/deploy/configure/configure-role-based-administration.md#BKMK_ConfigSecRole)和[配置安全角色](../../core/servers/deploy/configure/configure-role-based-administration.md)。  
+Para obter informações sobre como criar e configurar funções de segurança para administração baseada em funções, consulte [Criar funções de segurança personalizadas](../../core/servers/deploy/configure/configure-role-based-administration.md#BKMK_CreateSecRole) e [Configurar funções de segurança](../../core/servers/deploy/configure/configure-role-based-administration.md#BKMK_ConfigSecRole) no tópico [Configurar administração baseada em funções para o System Center Configuration Manager](../../core/servers/deploy/configure/configure-role-based-administration.md).  
 
-##  <a name="bkmk_planCol"></a> 集合  
- 集合指定管理用户可以查看或管理的用户和计算机资源。 例如，若要使管理用户能够部署应用程序或运行远程控制，必须将它们分配到相应的安全角色，此角色授予对包含这些资源的集合的访问权限。 可以选择用户或设备的集合。  
+##  <a name="bkmk_planCol"></a> Coleções  
+ Coleções especificam os recursos de usuário e computador que um usuário administrativo pode exibir ou gerenciar. Por exemplo, para usuários administrativos implantarem aplicativos ou executarem controle remoto, eles devem ser atribuídos a uma função de segurança que conceda acesso a uma coleção que contenha esses recursos. Você pode selecionar coleções de usuários ou dispositivos.  
 
- 有关集合的详细信息，请参阅 [System Center Configuration Manager 中的集合简介](../../core/clients/manage/collections/introduction-to-collections.md)。  
+ Para obter mais informações sobre coleções, consulte [Introdução a coleções no System Center Configuration Manager](../../core/clients/manage/collections/introduction-to-collections.md).  
 
- 在配置基于角色的管理之前，请检查你是否必须出于下列任一原因创建新的集合：  
+ Para configurar administração baseada em funções, verifique se você precisa criar novas coleções por algum dos seguintes motivos:  
 
--   功能组织。 例如，独立的服务器和工作站集合。  
+-   Organização funcional. Por exemplo, separar as coleções de servidores e estações de trabalho.  
 
--   地理位置协调。 例如，独立的北美洲和欧洲集合。  
+-   Alinhamento geográfico. Por exemplo, separar as coleções para América do Norte e Europa.  
 
--   安全要求和业务流程。 例如，独立的生产计算机和测试计算机集合。  
+-   Requisitos de segurança e processos de negócios. Por exemplo, separar coleções para computadores de teste e de produção.  
 
--   组织协调。 例如，每个业务单位的独立集合。  
+-   Alinhamento da organização. Por exemplo, separar as coleções para cada unidade de negócios.  
 
-有关如何配置集合以实现基于角色的管理的信息，请参阅[为 System Center Configuration Manager 配置基于角色的管理](../../core/servers/deploy/configure/configure-role-based-administration.md#BKMK_ConfigColl)主题中的[配置集合以管理安全性](../../core/servers/deploy/configure/configure-role-based-administration.md)。  
+Para obter informações sobre como configurar coleções para administração baseada em funções, consulte [Configurar coleções para gerenciar a segurança](../../core/servers/deploy/configure/configure-role-based-administration.md#BKMK_ConfigColl) no tópico [Configurar administração baseada em funções para o System Center Configuration Manager](../../core/servers/deploy/configure/configure-role-based-administration.md).  
 
-##  <a name="bkmk_PlanScope"></a> 安全作用域  
- 使用安全作用域为管理用户提供对安全对象的访问。 安全作用域是作为一个组分配给管理用户的安全对象的命名集。 必须将所有安全对象分配到一个或多个安全作用域。 Configuration Manager 具有两个内置安全作用域：  
+##  <a name="bkmk_PlanScope"></a> Escopos de segurança  
+ Use escopos de segurança para fornecer aos usuários administrativos acesso a objetos protegidos. Um escopo de segurança é um conjunto nomeado de objetos protegíveis que são atribuídos a usuários administradores como um grupo. Todos os objetos protegíveis devem ser atribuídos a um ou mais escopos de segurança. O Configuration Manager tem dois escopos de segurança internos:  
 
--   “全部”内置的安全作用域授予对所有作用域的访问权限。 无法将对象分配到此安全作用域。  
+-   O escopo de segurança interno *Todos* concede acesso a todos os escopos. Você não pode atribuir objetos a este escopo de segurança.  
 
--   “默认”内置安全作用域默认用于所有对象。 初次安装 Configuration Manager 时，所有对象均分配到此安全作用域。  
+-   O escopo de segurança interno *Padrão* é usado para todos os objetos, por padrão. Ao instalar primeiro o Configuration Manager, todos os objetos são atribuídos a esse escopo de segurança.  
 
-如果想限制管理用户可以查看和管理的对象，则必须创建并使用你自己的自定义安全作用域。 安全作用域不支持层次结构，而且不能嵌套。 安全作用域可以包含一个或多个对象类型，其中包括下列类型：  
+Se deseja restringir os objetos que os usuários administrativos podem ver e gerenciar, você deve criar e usar seus próprios escopos de segurança personalizados. Escopos de segurança não oferecem suporte a uma estrutura hierárquica e não podem ser aninhados. Escopos de segurança podem conter um ou mais tipos de objeto, que incluem o seguinte:  
 
--   警报订阅  
+-   Inscrições de alertas  
 
--   应用程序  
+-   Aplicativos  
 
--   启动映像  
+-   Imagens de inicialização  
 
--   边界组  
+-   Grupos de limites  
 
--   配置项目  
+-   Itens de configuração  
 
--   自定义客户端设置  
+-   Configurações personalizadas do cliente  
 
--   分发点和分发点组  
+-   Pontos de distribuição e grupos de ponto de distribuição  
 
--   驱动程序包  
+-   Pacotes de driver  
 
--   全局条件  
+-   Condições globais  
 
--   迁移作业  
+-   Trabalhos de migração  
 
--   操作系统映像  
+-   Imagens do sistema operacional  
 
--   操作系统安装包  
+-   Pacotes de instalação do sistema operacional  
 
--   包  
+-   Pacotes  
 
--   查询  
+-   Consultas  
 
--   站点  
+-   Sites  
 
--   软件计数规则  
+-   Regras de medição de software  
 
--   软件更新组  
+-   Grupos de atualização de software  
 
--   软件更新包  
+-   Pacotes de atualizações de software  
 
--   任务序列包  
+-   Pacotes de sequência de tarefas  
 
--   Windows CE 设备设置项目和包  
+-   Pacotes e itens de configuração de dispositivo do Windows CE  
 
-还有一些对象是无法包含在安全作用域中的，因为它们仅由安全角色保护。 无法将对这些对象进行的管理性访问限制在一部分可用的对象内。 例如，管理用户可能创建了用于特定站点的边界组。 由于边界对象不支持安全作用域，因此，无法向此用户分配这样一个安全作用域：仅提供对可能与该站点关联的边界的访问。 由于边界对象无法关联到安全作用域，因此，在向用户分配包含对边界对象的访问的安全角色时，该用户可以访问层次结构中的每个边界。  
+Há também alguns objetos que não podem ser incluídos em escopos de segurança porque eles são usados somente pelas funções de segurança. O acesso administrativo a esses objetos não pode ser limitado a um subconjunto dos objetos disponíveis. Por exemplo, você pode ter um usuário administrativo que cria grupos de limites que são usados para um site específico. Como esse objeto de limite não suporta escopos de segurança, não é possível atribuir a esse usuário um escopo de segurança que forneça acesso somente aos limites que podem ser associados a esse site. Como o objeto de limite não pode estar associado a um escopo de segurança, quando você atribui uma função de segurança que inclui acesso a objetos de limite a um usuário, este pode acessar cada limite na hierarquia.  
 
-不受安全作用域限制的对象包括：  
+Objetos que não são limitados por escopos de segurança incluem o seguinte:  
 
--   Active Directory 林  
+-   Florestas do Active Directory  
 
--   管理用户  
+-   Usuários administrativos  
 
--   警报  
+-   Alertas  
 
--   反恶意软件策略  
+-   Políticas de antimalware  
 
--   边界  
+-   Limites  
 
--   计算机关联  
+-   Associações de computador  
 
--   默认客户端设置  
+-   Configurações de cliente padrão  
 
--   部署模板  
+-   Modelos de implantação  
 
--   设备驱动程序  
+-   Drivers de dispositivo  
 
--   Exchange Server 连接器  
+-   Conector do Exchange Server  
 
--   迁移站点间映射  
+-   Mapeamentos site a site da migração  
 
--   移动设备注册配置文件  
+-   Perfis de registro do dispositivo móvel  
 
--   安全角色  
+-   Funções de segurança  
 
--   安全作用域  
+-   Escopos de segurança  
 
--   站点地址  
+-   Endereços de sites  
 
--   站点系统角色  
+-   Funções do sistema de site  
 
--   软件标题  
+-   Títulos de software  
 
--   软件更新  
+-   Atualizações de software  
 
--   状态消息  
+-   Mensagens de status  
 
--   用户设备相关性  
+-   Afinidades de dispositivo de usuário  
 
-在必须限制对独立的对象实例的访问时，请创建安全作用域。 例如：  
+Crie escopos de segurança quando precisar limitar o acesso ao separar instâncias de objetos. Por exemplo:  
 
--   你有一组管理用户，他们必须能够查看生产应用程序而不是测试应用程序。 请为生产应用程序创建一个安全作用域，并为测试应用程序创建另一个安全作用域。  
+-   Você possui um grupo de usuários administrativos que devem ser capazes de ver aplicativos de produção e não aplicativos de teste. Crie um escopo de segurança para aplicativos de produção e outro para os aplicativos de teste.  
 
--   不同的管理用户需要对某个对象类型的一些实例进行不同的访问。 例如，一组管理用户需要特定软件更新组的“读取”权限，而另一组管理用户需要其他软件更新组的“修改”和“删除”权限。 请为这些软件更新组创建不同的安全作用域。  
+-   Diferentes usuários administrativos necessitam de acesso distinto para algumas instâncias de um tipo de objeto. Por exemplo, um grupo de usuários administrativos requer permissão de Leitura para grupos de atualização de software específicos e outro grupo de usuários administrativos requer permissões de Modificar e Excluir para outros grupos de atualização de software. Crie escopos de segurança diferentes para esses grupos de atualização de software.  
 
-有关如何配置安全作用域以实现基于角色的管理的信息，请参阅[为 System Center Configuration Manager 配置基于角色的管理](../../core/servers/deploy/configure/configure-role-based-administration.md#BKMK_ConfigSecScope)主题中的[配置对象的安全作用域](../../core/servers/deploy/configure/configure-role-based-administration.md)。  
+Para obter informações sobre como configurar escopos de segurança para administração baseada em funções, consulte [Configurar escopos de segurança para um objeto](../../core/servers/deploy/configure/configure-role-based-administration.md#BKMK_ConfigSecScope) no tópico [Configurar administração baseada em funções para o System Center Configuration Manager](../../core/servers/deploy/configure/configure-role-based-administration.md).  

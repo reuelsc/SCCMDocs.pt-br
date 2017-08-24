@@ -1,6 +1,6 @@
 ---
-title: "保护本地移动设备管理中的数据和设备 "
-description: "在 Configuration Manager 中保护本地移动设备管理中的数据和设备。"
+title: "Proteger dados e dispositivos para o Gerenciamento de Dispositivo Móvel local "
+description: "Proteja dados e dispositivos no Gerenciamento de Dispositivo Móvel local no Configuration Manager."
 ms.custom: na
 ms.date: 03/05/2017
 ms.prod: configuration-manager
@@ -18,18 +18,18 @@ manager: angrobe
 ms.openlocfilehash: 88ab415ed3617ae5385636ad23bd02809979b55a
 ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
 ms.translationtype: HT
-ms.contentlocale: zh-CN
+ms.contentlocale: pt-BR
 ms.lasthandoff: 08/07/2017
 ---
-# <a name="protect-data-and-devices-in-on-premises-mobile-device-management"></a>保护本地移动设备管理中的数据和设备
+# <a name="protect-data-and-devices-in-on-premises-mobile-device-management"></a>Proteger dados e dispositivos no Gerenciamento de Dispositivo Móvel local
 
-*适用范围：System Center Configuration Manager (Current Branch)*
+*Aplica-se a: System Center Configuration Manager (Branch Atual)*
 
-建议让用户能够安全访问你组织的资源，从而使基础结构和数据免于泄露或受恶意攻击。
+Você deseja que seus usuários consigam acessar com segurança os recursos de sua organização, para que sua infraestrutura e seus dados sejam protegidos contra exposição ou ataque mal-intencionado.
 
-按照与用于混合 MDM 部署（见下文）相同的指南帮助保护你的组织资源：
+Siga as mesmas orientações para implantações híbridas do MDM (listadas abaixo) para ajudar a proteger os recursos de sua organização:
 
-- [创建 Wi-Fi 配置文件](create-wifi-profiles.md)
-- [创建 PFX 证书配置文件](create-pfx-certificate-profiles.md)
-- [创建 VPN 配置文件](create-vpn-profiles.md)
-- [创建电子邮件配置文件](create-exchange-activesync-profiles.md)
+- [Criar perfis de Wi-Fi](create-wifi-profiles.md)
+- [Criar perfis de certificado PFX](create-pfx-certificate-profiles.md)
+- [Criar perfis de VPN](create-vpn-profiles.md)
+- [Criar perfis de email](create-exchange-activesync-profiles.md)

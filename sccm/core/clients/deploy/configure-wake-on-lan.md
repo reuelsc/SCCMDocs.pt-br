@@ -1,6 +1,6 @@
 ---
-title: "配置 LAN 唤醒 | Microsoft Docs"
-description: "在 System Center Configuration Manager 中选择 LAN 唤醒设置。"
+title: Configurar o Wake On LAN | Microsoft Docs
+description: "Selecione as configurações de Wake On LAN no System Center Configuration Manager."
 ms.custom: na
 ms.date: 04/23/2017
 ms.prod: configuration-manager
@@ -17,43 +17,43 @@ manager: angrobe
 ms.openlocfilehash: 9c920651ba1dc6e0a28df458d28956126ddbaff0
 ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
 ms.translationtype: HT
-ms.contentlocale: zh-CN
+ms.contentlocale: pt-BR
 ms.lasthandoff: 08/07/2017
 ---
-# <a name="how-to-configure-wake-on-lan-in-system-center-configuration-manager"></a>如何在 System Center Configuration Manager 中配置 LAN 唤醒
+# <a name="how-to-configure-wake-on-lan-in-system-center-configuration-manager"></a>Como configurar Wake on LAN no System Center Configuration Manager
 
-*适用范围：System Center Configuration Manager (Current Branch)*
+*Aplica-se a: System Center Configuration Manager (Branch Atual)*
 
-如果要将计算机从休眠状态中唤醒以安装所需的软件（如软件更新、应用程序、任务序列和程序），请指定 System Center Configuration Manager 的 LAN 唤醒设置。
+Especifique as configurações de Wake on LAN para o System Center Configuration Manager quando desejar tirar os computadores do estado de suspensão para instalar o software necessário, como as atualizações de software, aplicativos, sequências de tarefas e programas.
 
-可以使用唤醒代理客户端设置来对 LAN 唤醒进行补充。 但是，要使用唤醒代理，你必须首先为站点启用 LAN 唤醒，并为 LAN 唤醒传输方法指定“仅使用唤醒数据包”  和“单播”  选项。 这种唤醒解决方案也支持临时连接，例如远程桌面连接。
+Você pode complementar o Wake on LAN usando as configurações cliente de proxy de ativação. No entanto, para usar o proxy de ativação, você deve primeiro habilitar o Wake on LAN para o site e especificar **Usar somente pacotes de ativação** e a opção **Unicast** para o método de transmissão Wake on LAN. Esta solução de ativação também oferece suporte a conexões ad hoc, como uma conexão de área de trabalho remota.
 
-使用第一个过程来针对 LAN 唤醒配置主站点。 然后，使用第二个过程来配置唤醒代理客户端设置。 此第二个过程配置唤醒代理设置的默认客户端设置，以应用于层次结构中的所有计算机。 如果你希望这些设置仅应用于所选计算机，请创建一个自定义设备设置，并将其分配给包含要为唤醒代理配置的计算机的集合。 有关如何创建自定义客户端设置的详细信息，请参阅 [如何在 System Center Configuration Manager 中配置客户端设置](../../../core/clients/deploy/configure-client-settings.md)。
+Use o primeiro procedimento para configurar um site primário para Wake on LAN. Em seguida, use o segundo procedimento para definir as configurações cliente de proxy de ativação. Esse segundo procedimento define as configurações padrão do cliente para as configurações de proxy de ativação para aplicar a todos os computadores na hierarquia. Se você deseja que essas configurações se apliquem somente aos computadores selecionados, crie uma configuração de dispositivo personalizada e a atribua à coleção que contém os computadores que deseja configurar para o proxy de ativação. Para obter mais informações sobre como criar configurações personalizadas do cliente, consulte [Como configurar as definições de cliente no System Center Configuration Manager](../../../core/clients/deploy/configure-client-settings.md).
 
-接收唤醒代理客户端设置的计算机可能会将其网络连接暂停 1-3 秒。 发生此情况是因为客户端必须重置网络接口卡以启用客户端上的唤醒代理驱动程序。
+Um computador que recebe as configurações de cliente do proxy de ativação provavelmente pausará sua conexão de rede por 1 a 3 segundos. Isso ocorre porque o cliente deve redefinir a placa de interface de rede para habilitar que o driver de proxy de ativação nela.
 
 > [!WARNING]
-> 为了避免网络服务意外中断，请首先在有代表性的隔离网络基础结构上评估唤醒代理。 然后，使用自定义客户端设置将测试范围扩展到若干子网上的所选计算机组。 有关唤醒代理运作方式的详细信息，请参阅[规划如何在 System Center Configuration Manager 中唤醒客户端](../../../core/clients/deploy/plan/plan-wake-up-clients.md)。
+> Para evitar a interrupção inesperada do serviço de rede, avalie primeiro o proxy de ativação em uma infraestrutura de rede isolada e representante. Em seguida, use as configurações do cliente personalizadas para expandir seu teste para um grupo selecionado de computadores em várias sub-redes. Para obter mais informações sobre como funciona o proxy de ativação, consulte [Planejar como ativar clientes no System Center Configuration Manager](../../../core/clients/deploy/plan/plan-wake-up-clients.md).
 
-## <a name="to-configure-wake-on-lan-for-a-site"></a>为站点配置 LAN 唤醒
+## <a name="to-configure-wake-on-lan-for-a-site"></a>Para configurar o Wake on LAN para um site
 
-1. 在 Configuration Manager 控制台中，转到“管理”>“站点配置”>“站点”。
-2. 单击要配置的主站点，然后单击“属性”。
-3. 单击“LAN 唤醒”选项卡，然后配置针对此站点所需的选项。 要支持唤醒代理，请确保选择“仅使用唤醒数据包”和“单播”。 有关详细信息，请参阅[规划如何在 System Center Configuration Manager 中唤醒客户端](../../../core/clients/deploy/plan/plan-wake-up-clients.md)。
-4. 单击“确定”，然后为层次结构中的所有主站点重复此过程。
+1. No console do Configuration Manager, vá para **Administração > Configuração de Site > Sites**.
+2. Clique no site primário para configurar e em **Propriedades**.
+3. Clique na guia **Wake on LAN** e configure as opções que você precisa para esse site. Para dar suporte ao proxy de ativação, verifique se selecionou **Usar somente pacotes de ativação** e **Unicast**. Para mais informações, consulte [Planejar a ativação de clientes no System Center Configuration Manager](../../../core/clients/deploy/plan/plan-wake-up-clients.md).
+4. Clique em **OK** e repita o procedimento para todos os sites primários da hierarquia.
 
-## <a name="to-configure-wake-up-proxy-client-settings"></a>配置唤醒代理客户端设置
+## <a name="to-configure-wake-up-proxy-client-settings"></a>Para definir as configurações de cliente do proxy de ativação
 
-1. 在 Configuration Manager 控制台中，转到“管理”>“客户端设置”。
-2. 单击“默认客户端设置”，然后单击“属性”。
-3. 选择“电源管理”，然后对“启用唤醒代理”选择“是”。
-4. 查看并在必要时配置其他唤醒代理设置。 有关这些设置的详细信息，请参阅[电源管理设置](../../../core/clients/deploy/about-client-settings.md#power-management)。
-5. 单击“确定”关闭对话框，再单击“确定”关闭“默认客户端设置”对话框。
+1. No console do Configuration Manager, vá até **Administração > Configurações do Cliente**.
+2. Clique em **Configurações Padrão do Cliente** e em **Propriedades**.
+3. Selecione **Gerenciamento de Energia** e escolha **Sim** para **Habilitar proxy de ativação**.
+4. Examine e, se necessário, defina as outras configurações de proxy de ativação. Para obter mais informações sobre estas configurações, consulte [Configurações de gerenciamento de energia](../../../core/clients/deploy/about-client-settings.md#power-management).
+5. Clique em **OK** para fechar a caixa de diálogo e em **OK** novamente para fechar a caixa de diálogo Configurações do Cliente Padrão.
 
-你可以使用以下 LAN 唤醒报表来监视唤醒代理的安装和配置：
+Você pode usar os seguintes relatórios do Wake On LAN para monitorar a instalação e a configuração do proxy de ativação:
 
-- 唤醒代理部署状态摘要
-- 唤醒代理部署状态详细信息
+- Resumo do estado da implantação do proxy de ativação
+- Detalhes do Estado da Implantação do Proxy de Ativação
 
 > [!TIP]
-> 要测试唤醒代理是否工作，请测试与休眠计算机的连接。 例如，连接到该计算机上的共享文件夹，或尝试通过使用远程桌面连接到该计算机。 如果使用“直接访问”，请通过为当前位于 Internet 上的休眠计算机尝试相同的测试来检查 IPv6 前缀是否工作。
+> Para testar se o proxy de ativação está funcionando, teste uma conexão em um computador suspenso. Por exemplo, conecte-se a uma pasta compartilhada naquele computador ou tente a conexão no computador usando a Área de Trabalho Remota. Se você usa o DirectAccess, verifique se os prefixos IPv6 funcionam ao tentar os mesmos testes em um computador suspenso que está atualmente na Internet.

@@ -1,6 +1,6 @@
 ---
-title: "管理更新目录 | Microsoft Docs"
-description: "管理 System Center Updates Publisher 中的软件更新目录"
+title: "Gerenciar catálogos de atualizações | Microsoft Docs"
+description: "Gerenciar catálogos de atualizações de software para o System Center Updates Publisher"
 ms.custom: na
 ms.date: 4/29/2017
 ms.prod: configuration-manager
@@ -18,88 +18,88 @@ robots: NOINDEX, NOFOLLOW
 ms.openlocfilehash: 7451d699e0e5e146b0538a57deca595188d113bf
 ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
 ms.translationtype: HT
-ms.contentlocale: zh-CN
+ms.contentlocale: pt-BR
 ms.lasthandoff: 08/07/2017
 ---
-# <a name="manage-software-update-catalogs-in-updates-publisher"></a>管理 Updates Publisher 中的软件更新目录
+# <a name="manage-software-update-catalogs-in-updates-publisher"></a>Gerenciar catálogos de atualizações de software no Updates Publisher
 
-*适用范围：System Center Updates Publisher*
+*Aplica-se ao: System Center Updates Publisher*
 
-使用“目录工作区”可管理软件更新目录。 这包括添加新目录、管理现有目录订阅，以及将更新信息从目录导入 Updates Publisher 存储库。
+Use **Catálogos** **Espaço de trabalho** para gerenciar catálogos de atualizações de software. Isso inclui a adição de novos catálogos, o gerenciamento de assinaturas de catálogo existentes e a importação de informações sobre as atualizações de um catálogo no repositório do Updates Publisher.
 
-软件更新目录包含非 Microsoft 组织创建的相关更新的信息。 其他组织包括你自己的组织，以及向 Microsoft 注册过目录的第三方软件供应商。 软件供应商注册的目录称为*合作伙伴目录*。 你创建的未向 Microsoft 注册的目录称为*用户*目录。
+Os catálogos de atualizações de software contêm informações sobre as atualizações relacionadas que são criadas por organizações diferentes da Microsoft. Outras organizações incluem sua própria organização e fornecedores de software de terceiros que registraram seus catálogos com a Microsoft. Catálogos registrados de fornecedores de software são chamados *catálogos de parceiros*. Os catálogos que você cria, e que não estão registrados com a Microsoft, são chamados de catálogos de*usuário*.
 
-## <a name="add-software-update-catalogs"></a>添加软件更新目录
-必须先向 Updates Publisher 添加更新目录，然后才能管理其中包含的更新。 在你添加目录后，Updates Publisher 便会：
--   创建此目录的订阅，从而能够检查此目录的最新动态。
--   将此目录添加到“目录工作区”的“我的软件更新目录”窗口中的列表内。  
+## <a name="add-software-update-catalogs"></a>Adicionar catálogos de atualizações de software
+Você deve adicionar um catálogo de atualizações ao Updates Publisher antes de poder gerenciar as atualizações que ele contém. Quando você adiciona um catálogo, o Updates Publisher:
+-   Cria uma assinatura para esse catálogo, para que possa verificar se há atualizações para esse catálogo.
+-   Adiciona o catálogo a uma lista na janela **Meus Catálogos de Atualizações de Software** do **Espaço de Trabalho de Catálogos**.  
 
-控制台中显示每个已订阅目录的信息。 信息包括下载 URL 或位置、目录创建公司或组织名称以及上次导入或修改时间。
+Confira informações sobre cada catálogo assinado no console. As informações incluem a URL ou local de download, o nome da empresa ou organização que criou o catálogo e quando ele foi importado ou modificado pela última vez.
 
-Updates Publisher 可以在每次启动时自动检查订阅是否有变化。 这可配置为[高级选项](/sccm/sum/tools/updates-publisher-options#advanced)。 配置后，Updates Publisher 会引用订阅的下载 URL 或位置信息，然后在目录自上次导入存储库起有变化时提醒你。
+O Updates Publisher pode verificar automaticamente as assinaturas em busca de alterações sempre que for iniciado. Isso é configurado como uma [Opção avançada](/sccm/sum/tools/updates-publisher-options#advanced). Quando configurado, o Updates Publisher consulta as informações de URL ou local de download da assinatura e envia um alerta quando houver alterações no catálogo que foram feitas desde a última vez que você o importou no repositório.
 
-若要手动查看目录最新动态，请选择“我的软件更新目录”列表中的目录，然后从功能区中选择“刷新”。
+Para verificar manualmente uma atualização do catálogo, selecione o catálogo na lista **Meus Catálogos de Atualização de Software** e, em seguida, escolha **Atualizar** na faixa de opções.
 
-除了添加目录和查看已订阅目录的信息以外，还可以：
--  **编辑***用户*目录的信息。
--  从 Updates Publisher 中**删除**（移除）目录。
--  将目录中的更新**导入** Updates Publisher 存储库。 导入更新时，即导入目录中包含的所有更新。 然后，可以在“更新工作区”中查看更新，稍后可以在其中选择更新，并将其发布到更新服务器。
+Além de adicionar catálogos e exibir informações sobre os catálogos assinados, você pode:
+-  **Editar** informações de catálogos de *usuário*.
+-  **Excluir** (remover) um catálogo do Updates Publisher.
+-  **Importar** atualizações de um catálogo no repositório do Updates Publisher. Quando você importa as atualizações, importa todas as atualizações contidas nesse catálogo. Em seguida, você pode exibir as atualizações no espaço de trabalho de Atualizações, onde pode selecionar e publicar atualizações em seu servidor de atualização.
 
 > [!NOTE]   
-> 从 Updates Publisher 中删除目录也会将其中包含的更新从存储库中删除。 此操作不会影响已发布到更新服务器的更新。 若要从更新服务器中删除存储库中不再有的更新，请参阅[终止未引用的软件更新](/sccm/sum/tools/updates-publisher-options#expire-unreferenced-software-updates)。
+> A exclusão de um catálogo do Updates Publisher resulta na remoção das atualizações no catálogo de seu repositório. Isso não afeta as atualizações que você publicou em seu servidor de atualização. Para remover as atualizações de seu servidor de atualização que não estão mais em seu repositório, confira [Expirar atualizações de software sem referência](/sccm/sum/tools/updates-publisher-options#expire-unreferenced-software-updates).
 
-## <a name="manage-update-catalogs"></a>管理更新目录
-可以在“目录工作区”的“我的软件更新目录”窗口中查看已导入的列表目录。 在此工作区中，可以执行下列操作：
+## <a name="manage-update-catalogs"></a>Gerenciar catálogos de atualização
+Veja a lista de catálogos que você importou na janela **Meus Catálogos de Atualizações de Software** do **Espaço de Trabalho de Catálogos**. Nesse espaço de trabalho, você pode:
 
--   **添加合作伙伴目录：**使用以下任一方法查找新的合作伙伴目录：
+-   **Adicionar um catálogo de parceiros:** use uma das seguintes opções para localizar novos catálogos de parceiros:
 
-    -   在控制台中，依次转到“更新工作区” > “概述”。 在“入门”窗口中，选择“添加合作伙伴软件更新目录”。
+    -   No console, acesse **Espaço de Trabalho de Atualizações** > **Visão geral**. Na janela **Introdução**, escolha **Adicionar Catálogos de Atualizações de Software de Parceiros**.
 
-    -   在控制台中，依次转到“目录工作区” > “我的目录”。 然后，从功能区中选择“添加目录”。
+    -   No console, acesse **Espaço de Trabalho de Catálogos** > **Meus Catálogos**. Em seguida, na faixa de opções, escolha **Adicionar Catálogos**.
 
--   **添加用户目录：**在控制台中，依次转到“目录工作区” > “我的目录”。 然后，从功能区中选择“添加目录”。 除了 .cab 文件的位置以外，还必须指定“发布者”、“名称”和“说明”来标识目录。
+-   **Adicionar um catálogo de usuários:** no console, acesse **Espaço de Trabalho de Catálogos** > **Meus Catálogos**. Em seguida, na faixa de opções, escolha **Adicionar Catálogos**. Além do local do arquivo .cab, você deve especificar um Editor, Nome e Descrição para identificar o catálogo.
 
 
--   **检查目录最新动态：**选择一个或多个目录，然后选择功能区中的“刷新”。
+-   **Verificar se há atualizações para catálogos:** selecione um ou mais catálogos e escolha **Atualizar** na faixa de opções.
 
--   **编辑用户目录：**选择*用户*目录，然后选择功能区中的“编辑”。 然后，可以修改用户定义的属性。
+-   **Editar um catálogo de usuário:** selecione um catálogo de *usuário* e, em seguida, escolha **Editar** na faixa de opções. Depois, você pode modificar as propriedades definidas pelo usuário.
 
--   **删除目录：**选择一个或多个目录，然后选择功能区中的“删除”。 这会从 Updates Publisher 存储库中删除目录、订阅以及目录中的更新。
+-   **Excluir catálogos:** selecione um ou mais catálogos e escolha **Remover** na faixa de opções. Isso remove o catálogo, sua assinatura e as atualizações desses catálogos de seu repositório do Updates Publisher.
 
--   **向存储库添加目录中的更新**：选择功能区中的“导入”，启动“导入目录”向导。 有关详细信息，请参阅[导入更新](#import-updates)
+-   **Adicionar atualizações de um catálogo para seu repositório**: escolha **Importar** na faixa de opções para iniciar o assistente para **Importar Catálogo**. Para saber mais, veja [Importar atualizações](#import-updates)
 
-## <a name="import-updates"></a>导入更新
-如果导入目录，Updates Manager 会将相应目录中的更新添加到 Updates Publisher 存储库中。 导入更新后，可以将其发布到更新服务器，以供受管理设备使用。
+## <a name="import-updates"></a>Importar atualizações
+Quando você importa um catálogo, o Gerenciador de Atualizações adiciona as atualizações desse catálogo ao repositório do Updates Publisher. Após a importação das atualizações, você poderá publicá-las em seu servidor de atualização para disponibilizá-las para dispositivos gerenciados.
 
-### <a name="to-import-updates"></a>如何导入更新
-1.  若要启动“导入目录”向导，请从以下任一工作区的功能区中选择“导入”：
+### <a name="to-import-updates"></a>Para importar atualizações
+1.  Para iniciar o assistente para **Importar Catálogo**, escolha **Importar** na faixa de opções em um dos seguintes espaços de trabalho:
 
-    -   目录工作区
+    -   Espaço de Trabalho de Catálogos
 
-    -   更新工作区
+    -   Espaço de trabalho de Atualizações
 
-2.  在“导入类型”页中，选择已添加到 Updates Publisher 中的一个或多个目录，或指定尚未添加为订阅的目录的路径。 选择“下一步”查看摘要屏幕。完成后，选择“下一步”开始导入。
+2.  Na página **Tipo de Importação**, selecione um ou mais catálogos que você adicionou ao Updates Publisher, ou especifique um caminho para um catálogo que você ainda não adicionou como uma assinatura. Escolha **Avançar** para exibir a tela de resumo e, quando estiver pronto, escolha **Avançar** para iniciar a importação.
 
-3.  在“安全警告 - 目录验证”窗口中，检查目录证书。完成后，选择“接受”导入更新。
+3.  Na janela **Aviso de Segurança – Validação de Catálogo**, examine o certificado do catálogo e, quando estiver pronto, escolha **Aceitar** para importar as atualizações.
 
     > [!CAUTION]    
-    > 仅接受你信任的发布者发布的更新。 不受信任的发布者发布的软件更新可能会在扫描更新时损坏客户端计算机。
+    > Aceite atualizações somente de editores confiáveis. As atualizações de software de editores que não são confiáveis pode danificar os computadores dos clientes ao verificar se há atualizações.
 
-    >  如果不再信任某发布者，请将此发布者从受信任的发布者列表中删除。 若要详细了解如何接受目录，请单击“安全警告 - 目录验证”对话框中的“告诉我详细信息”。
+    >  Se você não confiar em um editor, remova esse editor da lista de editores confiáveis. Para saber mais sobre a aceitação de catálogos, clique em **Conte-me Mais** na caixa de diálogo **Aviso de Segurança – Validação de Catálogo**.
 
-    如果选择始终接受某发布者发布的目录，请将此发布者添加到[“受信任的发布者列表”](/sccm/sum/tools/updates-publisher-options#trusted-publishers)中。 可以使用 Updates Publisher 选项检查和编辑此列表。
+    Se você optar por sempre aceitar catálogos de um editor, esse editor será adicionado à [lista de editores confiáveis](/sccm/sum/tools/updates-publisher-options#trusted-publishers). Você pode revisar e editar essa lista como uma opção do Updates Publisher.
 
-4.  当存储库中已有更新且满足以下任一条件时，导入向导会跳过更新导入：
+4.  A importação ignora a importação de uma atualização quando a atualização já estiver no repositório e uma das seguintes opções for verdadeira:
 
-    -   更新自上次导入后未发生变化。
+    -   A atualização não sofreu alterações desde a última vez em que foi importada.
 
-    -   更新已经过编辑且具有新的数字哈希。 编辑更新可防止新更新覆盖原始更新，因为如果导入，则会覆盖你可能已部署的更改。
+    -   A atualização foi editada e tem um novo hash digital. A edição de uma atualização impede que uma nova atualização substitua a original, pois isso substituiria as alterações que você pode ter implantado.
 
-5.  在“确认”页上，检查导入结果。
+5.  Na página **Confirmação**, revise os resultados da importação.
 
-6.  单击“关闭”，完成向导。 现在，可以在“更新工作区”中查看此目录的更新。
+6.  Clique em **Fechar** para concluir o assistente. Agora você pode exibir as atualizações para esse catálogo no Espaço de Trabalho de Atualizações.
 
-## <a name="next-steps"></a>后续步骤
-导入更新后，可执行的常见操作包括：
--   [管理更新](/sccm/sum/tools/manage-updates-with-updates-publisher)，从而在更新服务器上捆绑、分配和部署更新。
--   [创建适用性规则](/sccm/sum/tools/updates-publisher-applicability-rules)，以帮助确定更新在更新服务器上的部署时间。
+## <a name="next-steps"></a>Próximas etapas
+Depois de importar atualizações, as ações comuns incluem:
+-   [Gerenciar atualizações](/sccm/sum/tools/manage-updates-with-updates-publisher) para agrupar, atribuir e implantá-las em seu servidor de atualização.
+-   [Criar regras de aplicabilidade](/sccm/sum/tools/updates-publisher-applicability-rules) para ajudar a determinar quando as atualizações são implantadas no servidor de atualização.

@@ -1,6 +1,6 @@
 ---
-title: "Windows Hello 企业版设置 | Microsoft Docs"
-description: "了解如何将 Windows Hello 企业版与 System Center Configuration Manager 集成。"
+title: "Configurações do Windows Hello para Empresas | Microsoft Docs"
+description: Saiba como integrar o Windows Hello para Empresas com o System Center Configuration Manager.
 ms.custom: na
 ms.date: 03/05/2017
 ms.prod: configuration-manager
@@ -17,90 +17,90 @@ manager: angrobe
 ms.openlocfilehash: a97b3d97eb302e4133b0a79a8c7e27004872c8b1
 ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
 ms.translationtype: HT
-ms.contentlocale: zh-CN
+ms.contentlocale: pt-BR
 ms.lasthandoff: 08/07/2017
 ---
-# <a name="windows-hello-for-business-settings-in-system-center-configuration-manager-hybrid"></a>System Center Configuration Manager 中的 Windows Hello 企业版设置（混合）
+# <a name="windows-hello-for-business-settings-in-system-center-configuration-manager-hybrid"></a>Configurações do Windows Hello para Empresas no System Center Configuration Manager (híbrido)
 
-*适用范围：System Center Configuration Manager (Current Branch)*
+*Aplica-se a: System Center Configuration Manager (Branch Atual)*
 
-通过 System Center Configuration Manager，可与 Windows Hello 企业版（以前为 Microsoft Passport for Windows）集成，其为 Windows 10 设备的替代登录方法。 Hello 企业版使用 Active Directory 或 Azure Active Directory 帐户来替代密码、智能卡或虚拟智能卡。  
+O System Center Configuration Manager permite que você se integre com o Windows Hello para Empresas (anteriormente conhecida como Microsoft Passport para Windows), um método de entrada alternativo para dispositivos Windows 10. O Hello para Empresas usa o Active Directory ou uma conta do Azure Active Directory para substituir uma senha, cartão inteligente ou cartão inteligente virtual.  
 
-在 Hello 企业版中，可以使用“用户手势”取代密码进行登录。 用户手势可以是简单的 PIN、生物识别身份验证或指纹读取器等外部设备。  
+O Hello para Empresas permite que você use um **gesto de usuário** para logon, em vez de uma senha. O gesto do usuário pode ser um PIN simples, uma autenticação biométrica ou um dispositivo externo, como um leitor de impressão digital.  
 
- Configuration Manager 通过两种方式与 Windows Hello 企业版集成：  
+ O Configuration Manager integra-se com o Windows Hello para Empresas de duas maneiras:  
 
--   可以使用 Configuration Manager 来控制用户能够和不能用于登录的手势。  
+-   É possível usar o Configuration Manager para controlar quais gestos os usuários podem e não podem usar para se conectar.  
 
--   可在 Windows Hello 企业版密钥存储提供程序 (KSP) 中存储身份验证证书。 有关详细信息，请参阅[证书配置文件](create-pfx-certificate-profiles.md)。  
+-   Você pode armazenar certificados de autenticação no KSP (provedor de armazenamento de chaves) do Windows Hello para Empresas. Para obter mais informações, consulte [Certificate profiles (Perfis de Certificado)](create-pfx-certificate-profiles.md).  
 
-- 可将 Windows Hello 企业版策略部署到运行 Configuration Manager 客户端的已加入域的 Windows 10 设备。 [在已加入域的 Windows 10 设备上配置 Windows Hello 企业版](../../protect/deploy-use/windows-hello-for-business-settings.md#configure-windows-hello-for-business-on-domain-joined-windows-10-devices)中介绍了此配置。 搭配使用 Configuration Manager 和 Intune（混合）时，可在 Windows 10 和 Windows 10 移动设备上配置这些设置，但不能在运行 Configuration Manager 客户端的已加入域的设备上进行配置。   
+- É possível implantar as políticas do Windows Hello para Empresas em dispositivos Windows 10 ingressados em domínio que executam o cliente do Configuration Manager. Essa configuração é descrita em [Configurar o Windows Hello para Empresas em dispositivos Windows 10 ingressados em domínio](../../protect/deploy-use/windows-hello-for-business-settings.md#configure-windows-hello-for-business-on-domain-joined-windows-10-devices). Quando você estiver usando o Configuration Manager com o Intune (híbrido), será possível definir essas configurações em dispositivos Windows 10 e Windows 10 Mobile, mas não em dispositivos ingressados em domínio que executam o cliente do Configuration Manager.   
 
-有关配置 Windows Hello 企业版设置的一般信息，请参阅 [System Center Configuration Manager 中的 Windows Hello 企业版设置](../../protect/deploy-use/windows-hello-for-business-settings.md)。
+Para obter informações gerais sobre como configurar o Windows Hello para Empresas, confira [Windows Hello para Empresas no System Center Configuration Manager](../../protect/deploy-use/windows-hello-for-business-settings.md).
 
-## <a name="configure-windows-hello-for-business-settings-hybrid"></a>配置 Windows Hello 企业版设置（混合）  
+## <a name="configure-windows-hello-for-business-settings-hybrid"></a>Configurar o Windows Hello para Empresas (híbrido)  
 
-1.  在 Configuration Manager 控制台中，单击“管理” > “云服务” > “Microsoft Intune 订阅”。  
+1.  No console do Configuration Manager, clique em **Administração** > **Serviços em Nuvem** > **Assinaturas do Microsoft Intune**.  
 
-3.  从列表中选择你的 Microsoft Intune 订阅，然后在“主页”选项卡的“订阅”组中，单击“配置平台” > “Windows (MDM)”。  
+3.  Na lista, selecione sua assinatura do Microsoft Intune e, em seguida, na guia **Início** , no grupo **Assinatura** , clique em **Configurar plataformas** > **Windows (MDM)**.  
 
-4.  在“Microsoft Intune 订阅属性”对话框的“Windows Hello 企业版”选项卡上，从以下值中选择将影响所有已注册的 Windows 10 和 Windows 10 移动版设备的项：  
+4.  Na guia **Windows Hello para Empresas** da caixa de diálogo **Propriedades de assinatura do Microsoft Intune** , escolha um dos seguintes valores que afetarão todos os dispositivos Windows 10 e Windows 10 Mobile registrados:  
 
-    -   **禁用已注册设备上的 Windows Hello 企业版**或**启用已注册设备上的 Windows Hello 企业版** - 启用或禁用所有已注册的 Windows 10 和 Windows 10 移动版设备上的 Windows Hello 企业版。  
+    -   **Desabilitar Windows Hello para Empresas em dispositivos registrados** ou **Habilitar Windows Hello para Empresas em dispositivos registrados** - habilita ou desabilita o uso do Windows Hello para Empresas em todos os dispositivos Windows 10 e Windows 10 Mobile registrados.  
 
-    -   **使用受信任的平台模块 (TPM)** - 受信任的平台模块 (TPM) 芯片提供了一层额外的数据安全保障。 选择下列值之一：  
+    -   **Usar um Trusted Platform Module (TPM)** – um chip do TPM (Trusted Platform Module) fornece uma camada adicional de segurança de dados. Selecione uma das seguintes opções:  
 
-        -   **必须** （默认）- 仅具有可访问 TPM 的设备可预配 Windows Hello 企业版。  
+        -   **Necessário** (padrão) - somente dispositivos com um TPM acessível podem provisionar o Windows Hello para Empresas.  
 
-        -   **首选** - 首次尝试使用 TPM 的设备。 如果这不可用，他们可以使用软件加密  
+        -   **Preferenciais** - Primeira tentativa para usar dispositivos em um TPM. Se não estiver disponível, eles podem usar criptografia de software  
 
-    -   **要求的最小 PIN 长度** - 指定 Windows Hello 企业版 PIN 所需的最小字符数。 必须使用至少 4 个字符（默认值为 6 个字符）。  
+    -   **Exigir comprimento mínimo de PIN** – especifique o número mínimo de caracteres necessários para o PIN do Windows Hello para Empresas. Você deve usar pelo menos quatro caracteres (o valor padrão são seis caracteres).  
 
-    -   **要求的最大 PIN 长度** - 指定 Windows Hello 企业版 PIN 允许的最大字符数。 最多可以使用 127 个字符。  
+    -   **Exigir comprimento máximo de PIN** – especifique o número máximo de caracteres permitidos para o PIN do Windows Hello para Empresas. Você pode usar até 127 caracteres.  
 
-    -   **要求在 PIN 中使用小写字母** - 指定是否必须在 Windows Hello 企业版 PIN 中使用小写字母。 选择：  
+    -   **Exigir letras minúsculas no PIN** – especifica se letras minúsculas devem ser usadas no PIN do Windows Hello para Empresas. Escolha:  
 
-        -   **允许** - 用户可以在其 PIN 中使用小写字母。  
+        -   **Permitido** - Os usuários podem usar caracteres minúsculos em seu PIN.  
 
-        -   **必须** - 用户必须在其 PIN 中包含至少一个小写字母。  
+        -   **Necessário** - Os usuários devem incluir pelo menos um caractere minúsculo no PIN.  
 
-        -   **不允许** （默认）- 用户不得在其 PIN 中使用小写字母。  
+        -   **Não permitido** (padrão) - Os usuários não devem usar caracteres minúsculos em seu PIN.  
 
-    -   **要求在 PIN 中使用大写字母** - 指定是否必须在 Windows Hello 企业版 PIN 中使用大写字母。 选择：  
+    -   **Exigir letras maiúsculas no PIN** – especifica se letras maiúsculas devem ser usadas no PIN do Windows Hello para Empresas. Escolha:  
 
-        -   **允许** - 用户可以在其 PIN 中使用大写字母。  
+        -   **Permitido** - Os usuários podem usar caracteres maiúsculos em seu PIN.  
 
-        -   **必须** - 用户必须在其 PIN 中包含至少一个大写字母。  
+        -   **Necessário** - Os usuários devem incluir pelo menos um caractere maiúsculo no PIN.  
 
-        -   **不允许** （默认）- 用户不得在其 PIN 中使用大写字母。  
+        -   **Não permitido** (padrão) - Os usuários não devem usar caracteres maiúsculos no PIN.  
 
-    -   **要求含有特殊字符** - 指定 PIN 中使用特殊字符。 选择：  
+    -   **Exigir caracteres especiais** – especifica o uso de caracteres especiais no PIN. Escolha:  
 
-        -   **允许** - 用户可以在其 PIN 中使用特殊字符。  
+        -   **Permitido** - Os usuários podem usar caracteres especiais em seu PIN.  
 
-        -   **必须** - 用户必须在其 PIN 中包含至少一个特殊字符。  
+        -   **Necessário** - Os usuários devem incluir pelo menos um caractere especial em seu PIN.  
 
-        -   **不允许** （默认）- 用户必须在其 PIN 中使用特殊字符（这也是不配置此设置时的行为）。  
+        -   **Não permitido** (padrão) - Os usuários não devem usar caracteres especiais no PIN (este também é o comportamento se a configuração não estiver configurada).  
 
-         特殊字符包括：**! " # $ % & ' ( ) \* + , - . / : ; < = > ? @ [ \ ] ^ _ ` { &#124; } ~**。  
+         Caracteres especiais incluem: **! " # $ % & ' ( ) \* + , - . / : ; < = > ? @ [ \ ] ^ _ ` { &#124; } ~**.  
 
-    -   **需要 PIN 有效期（天）** - 指定必须更改设备 PIN 前的天数。 默认值为 41 天。  
+    -   **Exigir a expiração do PIN (dias)** – especifica o número de dias antes da alteração obrigatória do PIN do dispositivo. O padrão é 41 dias.  
 
-    -   **防止重用以前的 PIN** - 使用此设置来限制重用以前使用过的 PIN。 默认设置为不能重用最近使用的 5 个 PIN。  
+    -   **Evitar a reutilização de PINs anteriores** – use essa configuração para restringir a reutilização de PINs usados anteriormente. O padrão determina que os últimos cinco PINS usados não podem ser reutilizados.  
 
-    -   **启用生物识别手势** - 启用如面部识别或指纹等生物识别身份验证作为 Windows Hello 企业版的 PIN 的替代方法。 如果生物识别身份验证失败，则用户仍必须配置工作 PIN。  
+    -   **Habilitar gestos biométricos** – permite a autenticação biométrica, como reconhecimento facial ou impressão digital, como uma alternativa a um PIN do Windows Hello para Empresas. Os usuários ainda devem configurar um PIN de trabalho no caso de falha de autenticação biométrica.  
 
-         如果设置为“启用”，Windows Hello 企业版则允许生物识别身份验证。  如果设置为“禁用”，Windows Hello 企业版将阻止生物识别身份验证（对于所有帐户类型）。  
+         Se definido como **Habilitado**, o Windows Hello para Empresas permite autenticação biométrica.  Se definido como **Desabilitado**, o Windows Hello para Empresas impede a autenticação biométrica (para todos os tipos de conta).  
 
-    -   **在可用时，使用增强型反欺骗程序** - 配置是否在支持增强型反欺骗程序的设备上使用该程序。  
+    -   **Usar antifalsificação avançada, quando disponível** – define se a antifalsificação avançada é usada em dispositivos que são compatíveis com ela.  
 
-         如果设置为“已启用” ，则 Windows 将在支持反电子欺骗技术时要求所有用户对面部识别功能使用此技术。  
+         Se definido como **Habilitado**, o Windows exige que todos os usuários usem a antifalsificação para recursos faciais quando há suporte.  
 
-    -   **使用远程 Passport** - 如果此选项设置为“启用”，则用户可以使用远程 Hello 企业版充当台式计算机身份验证的便携伴侣设备。 台式计算机必须加入 Azure Active Directory，并且伴侣设备必须配置 Windows Hello 企业版 PIN。  
+    -   **Usar Remote Passport** – se essa opção for definida como **Habilitada**, os usuários poderão usar o Hello para Empresas para servir como um dispositivo portátil complementar para autenticação de computador desktop. O computador desktop deve ser associado ao Azure Active Directory e o dispositivo complementar deve ser configurado com um PIN do Windows Hello para Empresas.  
 
-5.  完成后单击“确定” 。  
+5.  Ao terminar, clique em **OK**.  
 
-### <a name="see-also"></a>另请参阅  
- [使用 System Center Configuration Manager 保护数据和站点基础结构](../../protect/understand/protect-data-and-site-infrastructure.md)
+### <a name="see-also"></a>Consulte também  
+ [Proteger a infraestrutura de dados e do site com o System Center Configuration Manager](../../protect/understand/protect-data-and-site-infrastructure.md)
 
- [使用 Windows Hello 企业版管理身份验证](https://technet.microsoft.com/itpro/windows/keep-secure/manage-identity-verification-using-microsoft-passport)。  
+ [Gerenciar a verificação de identidade usando o Windows Hello para Empresas](https://technet.microsoft.com/itpro/windows/keep-secure/manage-identity-verification-using-microsoft-passport).  

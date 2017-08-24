@@ -1,6 +1,6 @@
 ---
-title: "修改基础结构 | Microsoft Docs"
-description: "了解如何更改所部署的 Configuration Manager 基础结构或执行可对其产生影响的操作。"
+title: Modificar a infraestrutura | Microsoft Docs
+description: "Saiba como fazer alterações ou executar ações que afetam a infraestrutura do Configuration Manager que você implantou."
 ms.custom: na
 ms.date: 10/06/2016
 ms.prod: configuration-manager
@@ -18,352 +18,352 @@ manager: angrobe
 ms.openlocfilehash: a5228c4984347be4b115bfa5563791fa2fb7319c
 ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
 ms.translationtype: HT
-ms.contentlocale: zh-CN
+ms.contentlocale: pt-BR
 ms.lasthandoff: 08/07/2017
 ---
-# <a name="modify-your-system-center-configuration-manager-infrastructure"></a>修改你的 System Center Configuration Manager 基础结构
+# <a name="modify-your-system-center-configuration-manager-infrastructure"></a>Modificar a infraestrutura do System Center Configuration Manager
 
-*适用范围：System Center Configuration Manager (Current Branch)*
+*Aplica-se a: System Center Configuration Manager (Branch Atual)*
 
-安装一个或多个站点后，你可能需要修改配置，或采取会影响你部署的基础结构的操作。  
+Depois de instalar um ou mais sites, talvez você precise modificar configurações ou tomar medidas que afetem a infraestrutura implantada.  
 
 
-##  <a name="BKMK_ManageSMSprovider"></a>管理 SMS 提供程序  
- SMS 提供程序（一个动态链接库文件：smsprov.dll）为一个或多个 Configuration Manager 控制台提供管理联系点。 安装多个 SMS 提供程序时，可以提供联系点冗余以管理你的站点和层次结构。  
+##  <a name="BKMK_ManageSMSprovider"></a> Gerenciar o Provedor de SMS  
+ O Provedor de SMS (um arquivo de biblioteca de vínculo dinâmico: smsprov.dll) fornece o ponto de contato administrativo para um ou mais consoles do Configuration Manager. Ao instalar vários Provedores de SMS, você pode fornecer redundância para pontos de contato para administrar o site e a hierarquia.  
 
- 在每个 Configuration Manager 站点，均可以重新运行安装程序以实现下列操作：  
+ Em cada site do Configuration Manager, você pode executar novamente a Instalação para:  
 
--   添加其他 SMS 提供程序（每个 SMS 提供程序的其他实例必须是单独的计算机）的实例  
+-   Adicionar outra instância do Provedor de SMS (cada instância adicional do Provedor de SMS deve estar em um computador separado)  
 
--   删除 SMS 提供程序实例（要删除站点的最后一个 SMS 提供程序，你必须卸载该站点）。  
+-   Remover uma instância do Provedor de SMS (para remover o último Provedor de SMS de um site, é necessário desinstalar o site)  
 
- 通过查看你运行安装程序的站点服务器的根文件夹中的“ConfigMgrSetup.log”  ，你可以监视 SMS 提供程序的安装或删除。  
+ É possível monitorar a instalação ou a remoção do Provedor de SMS exibindo o **ConfigMgrSetup.log** na pasta raiz do servidor de site em que você executa a Instalação.  
 
- 在站点修改 SMS 提供程序之前，熟悉[为 System Center Configuration Manager 规划 SMS 提供程序](../../../core/plan-design/hierarchy/plan-for-the-sms-provider.md)中的信息。  
+ Antes de modificar o Provedor de SMS em um site, familiarize-se com as informações em [Planejar o Provedor de SMS para o System Center Configuration Manager](../../../core/plan-design/hierarchy/plan-for-the-sms-provider.md).  
 
-#### <a name="to-manage-the-sms-provider-configuration-for-a-site"></a>管理站点的 SMS 提供程序配置  
+#### <a name="to-manage-the-sms-provider-configuration-for-a-site"></a>Para gerenciar a configuração do Provedor de SMS para um site  
 
-1.  从 **&lt;Configuration Manager 站点安装文件夹 \>\BIN\X64\setup.exe** 运行 **Configuration Manager 安装程序**。  
+1.  Execute a **Instalação do Configuration Manager** na **&lt;pasta de instalação do site do Configuration Manager\>\BIN\X64\setup.exe**.  
 
-2.  在“入门”  页上，选择“执行站点维护或重置此站点” ，然后单击“下一步”   
+2.  Na página **Introdução** , selecione **Realizar a manutenção do site ou redefinir este site**e clique em **Próximo**.  
 
-3.  在“站点维护”  页上，选择“修改 SMS 提供程序配置” ，然后单击“下一步” 。  
+3.  Na página **Manutenção do Site** , selecione **Modificar configuração do Provedor de SMS**e clique em **Próximo**.  
 
-4.  在“管理 SMS 提供程序”  页上，选择下列选项之一，并通过使用下列选项之一来完成向导：  
+4.  Na página **Gerenciar Provedores de SMS** , selecione uma das opções a seguir e conclua o assistente usando uma dessas opções:  
 
-    -   在此站点上添加其他 SMS 提供程序：  
+    -   Para adicionar um Provedor de SMS adicional nesse site:  
 
-         选择“添加新的 SMS 提供程序” ，指定将承载 SMS 提供程序且当前没有承载 SMS 提供程序的计算机的 FQDN，然后单击“下一步” 。  
+         Selecione **Adicionar um novo Provedor de SMS**, especifique o FQDN para um computador que irá hospedar, mas que atualmente não hospeda, um Provedor de SMS e clique em **Próximo**.  
 
-    -   从服务器中删除 SMS 提供程序：  
+    -   Para remover um Provedor de SMS de um servidor:  
 
-         选择“卸载指定的 SMS 提供程序” ，选择要从中删除 SMS 提供程序的计算机的名称，单击“下一步” ，然后确认操作。  
+         Selecione **Desinstalar o Provedor de SMS especificado**, selecione o nome do computador do qual deseja remover o Provedor de SMS, clique em **Próximo**e confirme a ação.  
 
         > [!TIP]  
-        >  要在两台计算机之间移动 SMS 提供程序，你必须将 SMS 提供程序安装到新计算机，并从原始位置中删除 SMS 提供程序。 没有专门用于在单一过程中在两台计算机之间移动 SMS 提供程序的选项。  
+        >  Para mover o Provedor de SMS entre dois computadores, é necessário instalar o Provedor de SMS no novo computador e removê-lo do local original. Não há opção dedicada para mover o Provedor de SMS entre computadores em um único processo.  
 
- 安装向导完成后，SMS 提供程序配置即完成。 在站点的“属性”  对话框的“常规”  选项卡上，你可以验证为站点安装了 SMS 提供程序的计算机。  
+ Após a conclusão do Assistente de Instalação, a configuração do Provedor de SMS é concluída. Na guia **Geral** , na caixa de diálogo **Propriedades** do site, você pode verificar os computadores que têm um Provedor de SMS instalados para um site.  
 
-##  <a name="bkmk_Console"></a>管理 Configuration Manager 控制台  
- 以下是可以执行以管理 Configuration Manager 控制台的任务：  
+##  <a name="bkmk_Console"></a> Gerenciar o console do Configuration Manager  
+ Estas são as tarefas que você pode realizar para gerenciar o console do Configuration Manager:  
 
--   **修改 Configuration Manager 控制台中显示的语言** - 若要修改已安装的语言，请参阅本主题中的[管理 Configuration Manager 控制台语言](#BKMK_ManageConsoleLanguages)。  
+-   **Modificar o idioma exibido no console do Gerenciador de Configurações** – para modificar os idiomas instalados, consulte [Gerenciar idiomas do console do Configuration Manager](#BKMK_ManageConsoleLanguages) neste tópico.  
 
--   **安装其他控制台** - 若要安装其他控制台，请参阅[安装 System Center Configuration Manager 控制台](/sccm/core/servers/deploy/install/install-consoles)。  
+-   **Instalar consoles adicionais** – para instalar consoles adicionais, consulte [Instalar consoles do System Center Configuration Manager](/sccm/core/servers/deploy/install/install-consoles).  
 
--   **配置 DCOM** - 若要配置 DCOM 权限以允许远离站点服务器的控制台连接，请参阅本主题中的[为远程 Configuration Manager 控制台配置 DCOM 权限](#BKMK_ConfigDCOMforRemoteConsole)。  
+-   **Configurar DCOM** – para configurar permissões DCOM para habilitar consoles remotos do servidor do site a se conectarem, consulte [Configurar permissões DCOM para consoles remotos do Configuration Manager](#BKMK_ConfigDCOMforRemoteConsole) neste tópico.  
 
--   **修改权限以限制管理用户可以在控制台中看到的内容** - 若要修改限制用户在控制台中所看到的内容和可以进行的操作的管理权限，请参阅[修改管理用户的管理作用域](/sccm/core/servers/deploy/configure/configure-role-based-administration#BKMK_ModAdminUser)。     
+-   **Modificar permissões para limitar o que os usuários administrativos podem ver no console** – para modificar permissões administrativas, que limitam o que os usuários podem ver e fazer no console, consulte [Modificar o escopo administrativo de um usuário administrativo](/sccm/core/servers/deploy/configure/configure-role-based-administration#BKMK_ModAdminUser).     
 
-###  <a name="BKMK_ManageConsoleLanguages"></a>管理 Configuration Manager 控制台语言  
- 安装站点服务器期间，Configuration Manager 控制台安装文件和站点的支持语言包将复制到站点服务器上的 **&lt;ConfigMgrInstallationPath\>\Tools\ConsoleSetup** 子文件夹中。  
+###  <a name="BKMK_ManageConsoleLanguages"></a> Gerenciar o idioma do console do Configuration Manager  
+ Durante a instalação do servidor do site, os arquivos de instalação do console do Configuration Manager e os pacotes de idiomas com suporte do site são copiados para a subpasta **&lt;ConfigMgrInstallationPath\>\Tools\ConsoleSetup** no servidor do site.  
 
--   在站点服务器上从此文件夹中启动 Configuration Manager 控制台安装时，会将 Configuration Manager 控制台和支持的语言包文件复制到此计算机中  
+-   Quando você inicia a instalação do console do Configuration Manager dessa pasta no servidor do site, o console do Configuration Manager e os arquivos do pacote de idiomas com suporte são copiados para o computador  
 
--   当语言包可用于计算机上的当前语言设置时，会以该语言打开 Configuration Manager 控制台  
+-   Quando um pacote de idiomas está disponível para a configuração do idioma atual no computador, o console do Configuration Manager é aberto nesse idioma  
 
--   如果关联的语言包无法用于 Configuration Manager 控制台，则以英文打开控制台  
+-   Se o pacote de idiomas associado não estiver disponível para o console do Configuration Manager, o console será aberto em inglês  
 
-例如，假设有这样一种情况：从支持英文、德文和法文的站点服务器安装 Configuration Manager 控制台。 如果在配置了法语设置的计算机上打开 Configuration Manager 控制台，则将以法文打开控制台。 如果在配置了日语的计算机上打开 Configuration Manager 控制台，则将以英文打开控制台，因为日文语言包不可用。  
+Por exemplo, considere um cenário em que você instala o console do Configuration Manager de um servidor do site que dá suporte a inglês, alemão e francês. Se você abrir o console do Configuration Manager em um computador cujo idioma configurado é o francês, o console será aberto em francês. Se você abrir o console do Configuration Manager em um computador cujo idioma configurado é o japonês, o console será aberto em inglês, pois o pacote do idioma japonês não está disponível.  
 
- 每次打开 Configuration Manager 控制台时，它都会确定计算机的配置语言设置，并验证关联的语言包是否可用于 Configuration Manager 控制台，然后使用合适的语言包打开控制台。 如果想要用英文打开 Configuration Manager 控制台而不考虑计算机上配置的语言设置，则必须手动删除或重命名该计算机上的语言包文件。  
+ Se que o console do Configuration Manager é aberto, ele determina as configurações de idioma definidas para o computador, verifica se um pacote de idiomas associado está disponível para o console do Configuration Manager e abre o console usando o pacote de idiomas apropriado. Quando desejar abrir o console do Configuration Manager em inglês independentemente das configurações de idioma definidas no computador, você precisará remover manualmente ou renomear os arquivos de pacote de idiomas no computador.  
 
- 使用以下过程用英文启动 Configuration Manager 控制台而不考虑计算机上配置的区域设置。  
+ Use os procedimentos a seguir para iniciar o console do Configuration Manager em inglês independentemente da configuração de localidade definida no computador.  
 
-##### <a name="to-install-an-english-only-version-of-the-configuration-manager-console-on-computers"></a>在计算机上安装纯英文版的 Configuration Manager 控制台  
+##### <a name="to-install-an-english-only-version-of-the-configuration-manager-console-on-computers"></a>Para instalar uma versão apenas em inglês do console do Configuration Manager em computadores  
 
-1.  在 Windows 资源管理器中，浏览到 **&lt;ConfigMgrInstallationPath\>\Tools\ConsoleSetup\LanguagePack**  
+1.  No Windows Explorer, navegue até **&lt;ConfigMgrInstallationPath\>\Tools\ConsoleSetup\LanguagePack**  
 
-2.  重命名 **.msp** 和 **.mst** 文件。 例如，你可以将 **&lt;file name\>.MSP** 更改为 **&lt;file name\>.MSP.disabled**。  
+2.  Renomeie os arquivos **.msp** e **.mst** . Por exemplo, você pode alterar **&lt;nome do arquivo\>.MSP** para **&lt;nome do arquivo\>.MSP.disabled**.  
 
-3.  在计算机上安装 Configuration Manager 控制台。  
+3.  Instale o console do Configuration Manager no computador.  
 
     > [!IMPORTANT]  
-    >  当为站点服务器配置新服务器语言时，.msp 和 .mst 文件会再次复制到 **LanguagePack** 文件夹中，并且必须重复此过程以安装纯英文的新 Configuration Manager 控制台。  
+    >  Quando novos idiomas do servidor forem configurados para o servidor do site, os arquivos .msp e .mst serão copiados novamente para a pasta **LanguagePack**, e você deverá repetir esse procedimento para instalar novos consoles do Configuration Manager somente em inglês.  
 
-##### <a name="to-temporarily-disable-a-console-language-on-an-existing-configuration-manager-console-installation"></a>对现有的 Configuration Manager 控制台安装临时禁用控制台语言  
+##### <a name="to-temporarily-disable-a-console-language-on-an-existing-configuration-manager-console-installation"></a>Para desabilitar temporariamente um idioma do console em uma instalação existente do console do Configuration Manager  
 
-1.  在运行 Configuration Manager 控制台的计算机上，关闭 Configuration Manager 控制台。  
+1.  No computador que está executando o console do Configuration Manager, feche o console do Configuration Manager.  
 
-2.  在 Windows 资源管理器中，浏览到 Configuration Manager 控制台计算机上的 &lt;*ConsoleInstallationPath*>\Bin\。  
+2.  No Windows Explorer, navegue até &lt;*ConsoleInstallationPath*>\Bin\ no computador do console do Configuration Manager.  
 
-3.  针对在计算机上配置的语言重命名相应的语言文件夹。 例如，为德文设置了计算机语言设置，则可以将“de”  文件夹重命名为“de.disabled” 。  
+3.  Renomeie a pasta do idioma apropriado para o idioma configurado no computador. Por exemplo, se as configurações de idioma do computador estiverem definidas como alemão, você poderá renomear a pasta **de** para **de.disabled**.  
 
-4.  若要以为计算机配置的语言打开 Configuration Manager 控制台，请将此文件夹重命名为原始名称。 例如，将“de.disabled”  重命名为“de” 。  
+4.  Para abrir o console do Configuration Manager no idioma configurado para o computador, renomeie a pasta para o nome original. Por exemplo, renomeie **de.disabled** para **de**.  
 
-##  <a name="BKMK_ConfigDCOMforRemoteConsole"></a>为远程 Configuration Manager 控制台配置 DCOM 权限  
- 运行 Configuration Manager 控制台的用户帐户需要权限以使用 SMS 提供程序来访问站点数据库。 但是，使用远程 Configuration Manager 控制台的管理用户也需要以下位置的**远程激活** DCOM 权限：  
+##  <a name="BKMK_ConfigDCOMforRemoteConsole"></a> Configurar permissões DCOM para consoles remotos do Configuration Manager  
+ A conta de usuário que executa o console do Configuration Manager requer permissão para acessar o banco de dados do site usando o Provedor de SMS. No entanto, usuários administrativos que usam um console remoto do Configuration Manager também precisam de permissões DCOM de **Ativação Remota** em:  
 
--   站点服务器计算机  
+-   o computador do servidor do site  
 
--   托管 SMS 提供程序实例的每个计算机  
+-   Cada computador que hospeda uma instância do Provedor de SMS  
 
- 名为 **SMS 管理员** 的安全组授予计算机上的 SMS 提供程序的访问权限，并且还可用于授予所需的 DCOM 权限。 （如果 SMS 提供程序在成员服务器上运行，此组是计算机的本地组，如果 SMS 提供程序在域控制器上运行，则此组是域本地组。）  
+ O grupo de segurança chamado **Administradores de SMS** concede acesso ao Provedor de SMS de um computador e também pode ser usado para conceder as permissões DCOM necessárias. Esse grupo é local para o computador quando o Provedor de SMS é executado em um servidor membro e é um grupo de domínio local quando o Provedor de SMS é executado em um controlador de domínio.  
 
 > [!IMPORTANT]  
->  Configuration Manager 控制台使用 Windows Management Instrumentation (WMI) 连接到 SMS 提供程序，并且 WMI 在内部使用 DCOM。 因此，如果 Configuration Manager 控制台在 SMS 提供程序计算机之外的其他计算机上运行，则 Configuration Manager 需要权限以在 SMS 提供程序计算机上激活 DCOM 服务器。 默认情况下，只会为内置“管理员”组的成员授予“远程激活”。 如果允许“SMS 管理员”组具有远程激活权限，则此组的成员可能会尝试对 SMS 提供程序计算机进行 DCOM 攻击。 此配置还会增大计算机的受攻击面。 为了减轻此威胁，请仔细监视“SMS 管理员”组的成员身份。  
+>  O console do Configuration Manager usa a WMI (Instrumentação de Gerenciamento do Windows) para se conectar ao Provedor de SMS, e a WMI usa o DCOM internamente. Portanto, o Configuration Manager vai requerer permissões para ativar um servidor DCOM no computador do Provedor de SMS se o console do Configuration Manager estiver sendo executado em um computador que não seja o do Provedor de SMS. Por padrão, a Ativação Remota é concedida somente aos membros do grupo Administradores internos. Se você permitir que o grupo Administradores de SMS tenha permissão de Ativação Remota, um membro desse grupo poderá tentar ataques DCOM contra o computador do Provedor de SMS. Essa configuração também aumenta a superfície sujeita a ataques do computador. Para atenuar essa ameaça, monitore atentamente os membros do grupo Administradores de SMS.  
 
- 使用下列过程来配置每个管理中心站点、主站点服务器以及每台安装 SMS 提供程序的计算机，以便为管理用户授予远程 Configuration Manager 控制台访问权限。  
+ Use o procedimento a seguir para configurar cada site de administração central, servidor de site primário e cada computador em que o Provedor de SMS está instalado para conceder acesso remoto do console do Configuration Manager a usuários administrativos.  
 
-#### <a name="to-configure-dcom-permissions-for-remote-configuration-manager-console-connections"></a>若要为远程 Configuration Manager 控制台连接配置 DCOM 权限  
+#### <a name="to-configure-dcom-permissions-for-remote-configuration-manager-console-connections"></a>Para configurar permissões DCOM para conexões remotas do console do Gerenciador de Configurações  
 
-1.  通过运行  **Dcomcnfg.exe** 打开“组件服务” 。  
+1.  Abra  os  **Serviços de Componentes** executando **Dcomcnfg.exe**.  
 
-2.  在“组件服务”中，单击“控制台根” >  “组件服务” > “计算机”，然后单击“我的计算机” 在“操作”  菜单上，单击“属性” 。  
+2.  Em **Serviços de Componentes**, clique em **Raiz do console** >  **Serviços de Componentes** > **Computadores**e clique em **Meu Computador**. No menu **Ação** , clique em **Propriedades**.  
 
-3.  在“我的电脑属性”  对话框中“COM 安全”  选项卡上的“启动和激活权限”  部分，单击“编辑限制” 。  
+3.  Na caixa de diálogo **Propriedades do Meu Computador** , na guia **Segurança COM** , seção **Permissões de Inicialização e Ativação** , clique em **Editar Limites**.  
 
-4.  在“启动和激活权限”  对话框中，单击“添加” 。  
+4.  Na caixa de diálogo **Permissões de Inicialização e Ativação** , clique em **Adicionar**.  
 
-5.  在“选择用户、计算机、服务帐户或组”  对话框中，在“输入要选择的对象名称(示例)”  框中键入 **SMS Admins**，然后单击“确定” 。  
+5.  Na caixa de diálogo **Selecionar Usuário, Computadores, Contas de Serviço ou Grupos** , na caixa **Digite os nomes de objetos a serem selecionados (exemplos)** , digite **SMS Admins**e clique em **OK**.  
 
     > [!NOTE]  
-    >  你可能必须更改“从此位置中”  的设置以查找“SMS 管理员”组。 如果 SMS 提供程序运行在成员服务器上，此组是计算机的本地组，如果 SMS 提供程序运行在域控制器上，则此组是域本地组。  
+    >  Talvez seja necessário alterar a configuração de **Deste Local** para localizar o grupo Administradores de SMS. Esse grupo é local para o computador quando o Provedor de SMS é executado em um servidor membro e é um grupo de domínio local quando o Provedor de SMS é executado em um controlador de domínio.  
 
-6.  在“SMS 管理员的权限”  部分，请选中“远程激活”  复选框以允许远程激活。  
+6.  Na seção **Permissões para Administradores de SMS** , para permitir a ativação remota, marque a caixa de seleção **Ativação Remota** .  
 
-7.  单击“确定”  并再次单击“确定”  ，然后关闭“计算机管理” 。 计算机现在已配置为允许“SMS 管理员”组的成员远程访问 Configuration Manager 控制台。  
+7.  Clique em **OK** , clique em **OK** novamente e feche **Gerenciamento de Computador**. Agora, seu computador está configurado para permitir o acesso remoto do console do Configuration Manager a membros do grupo de Administradores de SMS.  
 
- 在每台可能支持远程 Configuration Manager 控制台的 SMS 提供程序计算机上重复此过程。  
+ Repita esse procedimento em cada computador do Provedor de SMS que der suporte a consoles remotos do Configuration Manager.  
 
-##  <a name="bkmk_dbconfig"></a>修改站点数据库配置  
- 安装站点之后，你可以通过在管理中心站点服务器或主站点服务器上运行安装程序来修改站点数据库和站点数据库服务器的配置。 你可以将站点数据库转移到同一计算机上的新 SQL Server 实例，或转移到运行支持的 SQL Server 版本的其他计算机。 对于辅助站点的数据配置，不支持这些更改和相关更改。  
+##  <a name="bkmk_dbconfig"></a> Modificar a configuração do banco de dados do site  
+ Depois de instalar um site, você pode modificar a configuração do banco de dados e o servidor do banco de dados do site executando a Instalação em um servidor de site de administração central ou no servidor do site primário. Você poderá mover o banco de dados do site para uma nova instância do SQL Server no mesmo computador ou para um computador diferente que execute uma versão do SQL Server com suporte. Não há suporte para essas alterações e outras relacionadas em relação à configuração do banco de dados em sites secundários.  
 
- 有关支持的限制的详细信息，请参阅 [Configuration Manager 环境中手动数据库更改的支持策略](https://support.microsoft.com/kb/3106512)。  
+ Para obter mais informações sobre os limites de suporte, veja [Política de suporte para alterações manuais do banco de dados em um ambiente do Configuration Manager](https://support.microsoft.com/kb/3106512).  
 
 > [!NOTE]  
->  当修改站点的数据库配置时，Configuration Manager 将在站点服务器和与数据库通信的远程站点系统服务器上重启或重新安装 Configuration Manager 服务。  
+>  Quando você modifica a configuração do banco de dados de um site, o Configuration Manager reinicia ou reinstala serviços do Configuration Manager no servidor do site e em servidores do sistema de sites remotos que se comunicam com o banco de dados.  
 
-**要修改数据库配置**，你必须在站点服务器上运行安装程序，并选择“执行站点维护或重置此站点” 选项。 接着，选择“修改 SQL Server 配置”  选项。 你可以更改下列站点数据库配置：  
+**Para modificar a configuração do banco de dados**, é necessário executar a Instalação no servidor do site e selecionar a opção **Realizar a manutenção do site ou redefinir este site**. Em seguida, selecione a opção **Modificar configuração do SQL Server** . Você pode alterar as seguintes configurações do banco de dados do site:  
 
--   承载数据库的基于 Windows 的服务器。  
+-   O servidor baseado no Windows que hospeda o banco de dados.  
 
--   承载 SQL Server 数据库的服务器上使用的 SQL Server 实例。  
+-   A instância do SQL Server em uso em um servidor que hospeda o banco de dados do SQL Server.  
 
--   数据库名称。  
+-   Nome do banco de dados.  
 
--   Configuration Manager 正在使用的 SQL Server 端口  
+-   Porta do SQL Server em uso pelo Configuration Manager  
 
--   Configuration Manager 正在使用的 SQL Server Service Broker 端口  
+-   Porta do Service Broker do SQL Server em uso pelo Configuration Manager  
 
-**如果转移站点数据库，必须进行下列配置：**  
+**Ao mover o banco de dados do site, você deverá configurar o seguinte:**  
 
--   “配置访问权限” ：在将站点数据库转移到新计算机时，将站点服务器的计算机帐户添加到运行 SQL Server 的计算机上的“本地管理员”  组。 如果为站点数据库使用 SQL Server 群集，你必须将该计算机帐户添加到每台 Windows Server 群集节点计算机的“本地管理员”  组。  
+-   **Configurar o acesso:** ao mover o banco de dados do site para um novo computador, adicione a conta de computador do servidor do site ao grupo **Local de Administradores** no computador que executa o SQL Server. Se usar um cluster do SQL Server para o banco de dados do site, você deverá adicionar a conta de computador ao grupo **Local de administradores** de cada computador do nó de cluster do Windows Server.  
 
--   **启用公共语言运行时 (CLR) 集成：**  在将数据库转移到 SQL Server 上的新实例或新 SQL Server 计算机时，你必须启用公共语言运行时 (CLR) 集成。 若要启用 CLR，请使用“SQL Server Management Studio”连接到承载站点数据库的 SQL Server 实例，并以查询形式运行以下存储过程：**sp_configure 'clr enabled',1; reconfigure**。  
--  **确保新的 SQL Server 具有访问备份位置的权限：**数据库移到新的服务器（包括 SQL Server AlwaysOn 可用性组或 SQL Server 群集）后，将 UNC 用于存储站点数据库备份时，应确保新 SQL Server 的计算机帐户具有对 UNC 位置的**写入**权限。  
+-   **Habilitar a integração CLR (Common Language Runtime):**  quando você move o banco de dados para uma nova instância do SQL Server, ou para um novo computador SQL Server, é necessário habilitar a integração CLR (Common Language Runtime). Para habilitar o CLR, use o **SQL Server Management Studio** para se conectar à instância do SQL Server que hospeda o banco de dados do site e execute o seguinte procedimento armazenado como uma consulta: **sp_configure ‘clr enabled’,1; reconfigure**.  
+-  **Verificar se o novo SQL Server tem acesso ao local de backup:** ao usar um UNC para armazenar o backup do banco de dados do site, depois de mover o banco de dados para um novo servidor, incluindo uma movimentação para um Grupo de Disponibilidade AlwaysOn do SQL Server ou um cluster do SQL Server, garanta que a conta de computador do novo SQL Server tem permissões de **gravação** no local do UNC.  
 
 
 > [!IMPORTANT]  
->  在转移具有一个或多个管理点数据库副本的数据库之前，你必须先删除数据库副本。 完成数据库转移后，你可以重新配置数据库副本。 有关详细信息，请参阅 [Database replicas for management points for System Center Configuration Manager](../../../core/servers/deploy/configure/database-replicas-for-management-points.md)。  
+>  Antes de mover um banco de dados que possui uma ou mais réplicas de banco de dados para pontos de gerenciamento, primeiro remova as réplicas do banco de dados. Depois de concluir a movimentação do banco de dados, você poderá reconfigurar suas réplicas. Para obter mais informações, consulte [Database replicas for management points for System Center Configuration Manager](../../../core/servers/deploy/configure/database-replicas-for-management-points.md).  
 
-##  <a name="bkmk_SPN"></a>管理站点数据库服务器的 SPN  
-你可为站点数据库选择运行 SQL 服务的帐户：  
+##  <a name="bkmk_SPN"></a> Gerenciar o SPN para o servidor de banco de dados do site  
+Você pode escolher a conta que executa os serviços do SQL para o banco de dados do site:  
 
--   当使用计算机系统帐户运行服务时，将为你自动注册 SPN。  
+-   Quando os serviços são executados com a conta de sistema de computadores, o SPN é registrado automaticamente para você.  
 
--   当使用域本地用户帐户运行服务时，必须手动注册 SPN 以确保 SQL 客户端和其他站点系统可执行 Kerberos 身份验证。 若未进行 Kerberos 身份验证，与数据库的通信可能失败。  
+-   Quando os serviços são executados com uma conta de usuário local do domínio, é necessário registrar manualmente o SPN para garantir que os clientes SQL e outros sistemas de sites podem realizar a autenticação Kerberos. Sem a autenticação Kerberos, a comunicação com o banco de dados poderá falhar.  
 
-SQL 服务器文档可帮助你 [手动注册 SPN](https://technet.microsoft.com/library/ms191153\(v=sql.120\).aspx)，并提供有关 SPN 和 Kerberos 连接的其他背景信息。  
+A documentação do SQL Server pode ajudar você a [registrar manualmente o SPN](https://technet.microsoft.com/library/ms191153\(v=sql.120\).aspx)e fornecer informações adicionais sobre conexões SPNs e Kerberos.  
 
 > [!IMPORTANT]  
->  -   在为群集 SQL Server 创建 SPN 时，你必须指定 SQL Server 群集的虚拟名称作为 SQL Server 计算机名  
-> -   用于为 SQL Server 命名实例注册 SPN 的命令与你在为默认实例注册 SPN 时使用的命令相同，只是端口号必须与命名实例使用的端口匹配  
+>  -   Ao criar um SPN para um SQL Server clusterizado, você deverá especificar o nome virtual do cluster do SQL Server como o nome do computador do SQL Server.  
+> -   O comando usado para registrar um SPN para uma instância nomeada do SQL Server é o mesmo usado para registrar um SPN para uma instância padrão, com exceção de que o número da porta deve coincidir com a porta usada pela instância nomeada.  
 
-可通过使用 **Setspn** 工具来为站点数据库服务器的 SQL Server 服务帐户注册 SPN。 你必须在位于 SQL Server 的域中的计算机上运行 Setspn 工具，并且该工具必须使用域管理员凭据才能运行。  
+Você pode registrar um SPN para a conta de serviço do SQL Server do servidor de banco de dados do site usando a ferramenta **Setspn** . É necessário executar a ferramenta Setspn em um computador que reside no domínio do SQL Server, que deverá usar as credenciais de administrador de domínio para a execução.  
 
- 使用下列过程作为如何为在 Windows Server 2008 R2 上使用 Setspn 工具的 SQL Server 服务帐户管理 SPN 的示例。 有关 Setspn 的具体指引，请参阅 [Setspn Overview（Setspn 概述）](http://go.microsoft.com/fwlink/p/?LinkId=226343)或特定于你的操作系统的类似文档。  
+ Use os procedimentos a seguir como exemplos de como gerenciar o SPN para a conta de serviço do SQL Server que usa a ferramenta Setspn no Windows Server 2008 R2. Para obter orientações específicas sobre o Setspn, consulte [Setspn Overview (Visão geral do Setspn)](http://go.microsoft.com/fwlink/p/?LinkId=226343), ou documentação semelhante específica para o seu sistema operacional.  
 
 > [!NOTE]  
->  下列过程引用 Setspn 命令行工具。 在通过产品 CD 或 [Microsoft Download Center（Microsoft 下载中心）](http://go.microsoft.com/fwlink/p/?LinkId=100114)安装 Windows Server 2003 支持工具时，将包括 Setspn 命令行工具。 有关如何通过产品 CD 安装 Windows 支持工具的详细信息，请参阅 [安装 Windows 支持工具](http://go.microsoft.com/fwlink/p/?LinkId=62270)。  
+>  Os procedimentos a seguir fazem referência à ferramenta de linha de comando Setspn. A ferramenta de linha de comando Setspn está incluída quando você instala as ferramentas de suporte do Windows Server 2003 do CD do produto ou do [Centro de Download da Microsoft](http://go.microsoft.com/fwlink/p/?LinkId=100114). Para obter mais informações sobre como instalar as ferramentas de suporte do Windows do CD do produto, consulte [Instalar Ferramentas de Suporte do Windows](http://go.microsoft.com/fwlink/p/?LinkId=62270).  
 
-#### <a name="to-manually-create-a-domain-user-service-principal-name-spn-for-the-sql-server-service-account"></a>为 SQL Server 服务帐户手动创建域用户服务主体名称 (SPN)  
+#### <a name="to-manually-create-a-domain-user-service-principal-name-spn-for-the-sql-server-service-account"></a>Para criar manualmente um SPN de usuário de domínio para a conta de serviço do SQL Server  
 
-1.  在“开始”  菜单上，单击“运行” ，然后在“运行”对话框中输入“cmd”  。  
+1.  No menu **Iniciar** , clique em **Executar**e insira **cmd** na caixa de diálogo Executar.  
 
-2.  在命令行中，导航到 Windows Server 支持工具安装目录。 默认情况下，这些工具位于 **C:\Program Files\Support Tools** 目录中。  
+2.  Na linha de comando, navegue até o diretório de instalação das ferramentas de suporte do Windows Server. Por padrão, essas ferramentas estão localizadas no diretório **C:\Arquivos de Programas\Ferramentas de Suporte** .  
 
-3.  输入有效的命令以创建 SPN。 要创建 SPN，你可以使用运行 SQL Server 的计算机的 NetBIOS 名称或完全限定的域名 (FQDN)。 但是，你必须为 NetBIOS 名称和 FQDN 都创建 SPN。  
+3.  Insira um comando válido para criar o SPN. Para criar o SPN, você pode usar o nome NetBIOS ou o FQDN (nome de domínio totalmente qualificado) do computador que executa o SQL Server. No entanto, é necessário criar um SPN para o nome NetBIOS e para o FQDN.  
 
     > [!IMPORTANT]  
-    >  在为群集 SQL Server 创建 SPN 时，你必须指定 SQL Server 群集的虚拟名称作为 SQL Server 计算机名。  
+    >  Ao criar um SPN para um SQL Server clusterizado, você deverá especificar o nome virtual do cluster do SQL Server como o nome do computador do SQL Server.  
 
-    -   要为 SQL Server 计算机的 NetBIOS 名称创建 SPN，请键入下列命令：**setspn -A MSSQLSvc/&lt;SQL Server computer name\>:1433 &lt;Domain\Account>**  
+    -   Para criar um SPN para o nome NetBIOS do computador do SQL Server, digite o seguinte comando: **setspn -A MSSQLSvc/&lt;nome do computador do SQL Server\>:1433 &lt;Domínio\Conta>**  
 
-    -   要为 SQL Server 计算机的 FQDN 创建 SPN，请键入下列命令：**setspn -A MSSQLSvc/&lt;SQL Server FQDN\>:1433 &lt;Domain\Account>**  
+    -   Para criar um SPN para o FQDN do computador do SQL Server, digite o seguinte comando: **setspn -A MSSQLSvc/&lt;FQDN do SQL Server\>:1433 &lt;Domínio\Conta>**  
 
     > [!NOTE]  
-    >  用于为 SQL Server 命名实例注册 SPN 的命令与你在为默认实例注册 SPN 时使用的命令相同，只是端口号必须与命名实例使用的端口匹配。  
+    >  O comando usado para registrar um SPN para uma instância nomeada do SQL Server é o mesmo usado para registrar um SPN para uma instância padrão, com exceção de que o número da porta deve coincidir com a porta usada pela instância nomeada.  
 
-#### <a name="to-verify-the-domain-user-spn-is-registered-correctly-by-using-the-setspn-command"></a>通过使用 Setspn 命令验证是否已正确注册了域用户 SPN  
+#### <a name="to-verify-the-domain-user-spn-is-registered-correctly-by-using-the-setspn-command"></a>Para verificar se o usuário de domínio SPN está registrado corretamente usando o comando Setspn  
 
-1.  在“开始”  菜单上，单击“运行” ，然后在“运行”  对话框中输入“cmd”  。  
+1.  No menu **Iniciar** , clique em **Executar**e insira **cmd** na caixa de diálogo **Executar** .  
 
-2.  在命令提示符处，输入以下命令：**setspn -L &lt;domain\SQL Service Account>**。  
+2.  No prompt de comando, digite o seguinte comando: **setspn -L &lt;domínio\Conta de Serviço do SQL>**.  
 
-3.  查看注册的“ServicePrincipalName”  ，确保已为 SQL Server 创建了有效的 SPN。  
+3.  Verifique o **ServicePrincipalName** registrado para garantir que tenha sido criado um SPN válido para o SQL Server.  
 
-#### <a name="to-verify-the-domain-user-spn-is-registered-correctly-when-using-the-adsiedit-mmc-console"></a>在使用 ADSIEdit MMC 控制台时验证是否已正确注册了域用户 SPN  
+#### <a name="to-verify-the-domain-user-spn-is-registered-correctly-when-using-the-adsiedit-mmc-console"></a>Para verificar se o usuário de domínio SPN está registrado corretamente ao usar o console do ADSIEdit MMC  
 
-1.  在“开始”  菜单上，单击“运行” ，然后输入“adsiedit.msc”  以启动 ADSIEdit MMC 控制台。  
+1.  No menu **Iniciar** , clique em **Executar**e insira **adsiedit.msc** para iniciar o console do ADSIEdit MMC.  
 
-2.  如有必要，连接到站点服务器的域。  
+2.  Se necessário, conecte-se ao domínio do servidor do site.  
 
-3.  在控制台窗格中，依次展开站点服务器的域、“DC=&lt;服务器可分辨名称\>”展开“CN=Users”右击“CN=&lt;Service Account User\>”，然后单击“属性”。  
+3.  No painel do console, expanda o domínio do servidor do site, expanda **DC=&lt;nome diferenciado do servidor\>**, expanda **CN=Users**, clique com o botão direito do mouse em **CN=&lt;Usuário da Conta de Serviço\>** e clique em **Propriedades**.  
 
-4.  在“CN=&lt;服务帐户用户\>属性”对话框中，查看 **servicePrincipalName** 值，以确保创建了有效的 SPN 并且已与正确的 SQL Server 计算机关联。  
+4.  Na caixa de diálogo **CN=&lt;Usuário da Conta de Serviço\> Propriedades**, examine o valor de **servicePrincipalName** para garantir que um SPN válido tenha sido criado e associado ao computador correto do SQL Server.  
 
-#### <a name="to-change-the-sql-server-service-account-from-local-system-to-a-domain-user-account"></a>将 SQL Server 服务帐户从本地系统更改为域用户帐户  
+#### <a name="to-change-the-sql-server-service-account-from-local-system-to-a-domain-user-account"></a>Para alterar a conta de serviço do SQL Server do sistema local para uma conta de usuário de domínio  
 
-1.  创建或选择要用作 SQL Server 服务帐户的域或本地系统用户帐户。  
+1.  Crie ou selecione uma conta de usuário de domínio ou do sistema local que você deseja usar como a conta de serviço do SQL Server.  
 
-2.  打开“SQL Server 配置管理器” 。  
+2.  Abra o **SQL Server Configuration Manager**.  
 
-3.  单击“SQL Server 服务”，然后双击“SQL Server &lt;INSTANCE NAME\>”。  
+3.  Clique em **Serviços do SQL Server** e clique duas vezes em **SQL Server&lt;NOME DA INSTÂNCIA\>**.  
 
-4.  在“登录”  选项卡上，选择“此帐户” ，然后输入在步骤 1 中创建的域用户帐户的用户名和密码，或单击“浏览”  查找 Active Directory 域服务中的用户帐户，然后单击“应用” 。  
+4.  Na guia **Logon** , selecione **Esta conta**e insira o nome de usuário e a senha para a conta de usuário do domínio criado na etapa 1, ou clique em **Procurar** para localizar a conta de usuário nos Serviços de Domínio Active Directory, e clique em **Aplicar**.  
 
-5.  在“确认帐户更改”  对话框中单击“是”  以确认服务帐户更改并重启 SQL Server 服务。  
+5.  Clique em **Sim** na caixa de diálogo **Confirmar Alteração de Conta** para confirmar a alteração da conta de serviço e reiniciar o serviço SQL Server.  
 
-6.  在成功更改服务帐户后单击“确定”  。  
+6.  Clique em **OK** depois de alterada com êxito a conta de serviço.  
 
-##  <a name="bkmk_reset"></a>运行站点重置  
- 当在管理中心站点或主站点中运行站点重置时，站点将：  
+##  <a name="bkmk_reset"></a> Executar uma redefinição de site  
+ Quando uma redefinição de site é executada em um site de administração central ou site primário, o site:  
 
--   重新应用默认 Configuration Manager 文件和注册表权限  
+-   Reaplica as permissões de registro e arquivo do Configuration Manager padrão  
 
--   重新安装该站点上的所有站点组件和所有站点系统角色  
+-   Reinstala todos os componentes do site e todas as funções do sistema de sites no site  
 
-辅助站点不支持站点重置。  
+Sites secundários não oferecem suporte a redefinições de site.  
 
-你可以选择手动运行站点重置，但是在你修改站点配置后也可以自动运行。  
+Redefinições de site podem ser executadas manualmente, quando você opta por realizá-las, mas também pode ser executadas automaticamente após você modificar a configuração do site.  
 
-例如，如果已更改为 Configuration Manager 组件使用的帐户，应当考虑手动进行站点重置以确保站点组件更新使用新的帐户详细信息。 但是，如果修改站点上的客户端或服务器语言，Configuration Manager 将自动运行站点重置，因为必须进行重置，然后站点才能使用此更改。  
+Por exemplo, se tiver ocorrido uma alteração nas contas usadas por componentes do Configuration Manager, considere uma redefinição de site manual para garantir que os componentes do site sejam atualizados para usar os detalhes da nova conta. No entanto, se você modificar os idiomas do cliente ou do servidor de um site, o Configuration Manager executará automaticamente uma redefinição de site, pois ela é necessária para que o site possa usar essa alteração.  
 
 > [!NOTE]  
->  站点重置不会重置对非 Configuration Manager 对象的访问权限。  
+>  Redefinições de site não redefinem permissões de acesso para objetos que não são do Configuration Manager.  
 
-运行站点重置时：  
+Quando é executada uma redefinição de site:  
 
-1.  安装程序会停止并重启“SMS_SITE_COMPONENT_MANAGER”  服务和“SMS_EXECUTIVE”  服务的线程组件。  
+1.  A instalação para e reinicia os componentes de serviço e thread do **SMS_SITE_COMPONENT_MANAGER** do serviço **SMS_EXECUTIVE** .  
 
-2.  安装程序会删除本地计算机和远程站点系统计算机上的站点系统共享文件夹和“SMS Executive”  组件，然后再重新创建。  
+2.  A instalação remove e depois recria a pasta de compartilhamento do sistema de sites e o componente **SMS Executive** no computador local e em computadores remotos do sistema de site.  
 
-3.  安装程序重启了“SMS_SITE_COMPONENT_MANAGER”  服务，此服务会安装“SMS_EXECUTIVE”  和“SMS_SQL_MONITOR”  服务。  
+3.  A instalação reinicia o serviço **SMS_SITE_COMPONENT_MANAGER** , esse serviço instala o **SMS_EXECUTIVE** e os serviços do **SMS_SQL_MONITOR** .  
 
-此外，站点重置会还原下列对象：  
+Além disso, redefinições de site restauram os seguintes objetos:  
 
--   “SMS”  或“NAL”  注册表项，以及这些项下的任何默认子项。  
+-   As chaves de Registro do **SMS** ou **NAL** , e todas as subchaves padrão nestas chaves.  
 
--   Configuration Manager 文件目录树，以及此文件目录树中的任何默认文件或子目录。  
+-   A árvore de diretório de arquivos do Configuration Manager e arquivos padrão ou subdiretórios nessa árvore.  
 
-**运行站点重置时需满足的先决条件**  
+**Pré-requisitos para executar uma redefinição de site**  
 
-用于执行站点重置的帐户必须具有下列权限：  
+A conta que você usa para executar uma redefinição de site deve ter as seguintes permissões:  
 
--   用于执行站点重置的帐户必须具有下列权限：  
+-   A conta que você usa para executar uma redefinição de site deve ter as seguintes permissões:  
 
-    -   **管理中心站点**：您用于在此站点中运行站点重置的帐户必须是管理中心站点服务器上的本地管理员，而且必须具有与“完全权限管理员”  这个基于角色的管理安全角色等效的权限。  
+    -   **Site de administração central**: a conta que você usa para executar uma redefinição desse site deve ser de administrador local no servidor do site de administração central e deve ter privilégios equivalentes à função de segurança de administração baseada em função de **Administrador Completo** .  
 
-    -   **主站点**：您用于在此站点中运行站点重置的帐户必须是主站点服务器上的本地管理员，而且必须具有与“完全权限管理员”  这个基于角色的管理安全角色等效的权限。 如果主站点位于具有管理中心站点的层次结构中，则此帐户还必须是管理中心站点服务器上的本地管理员。  
+    -   **Site primário**: a conta que você usa para executar uma redefinição desse site deve ser de administrador local no servidor do site primário e deve ter privilégios equivalentes à função de segurança de administração baseada em função de **Administrador Completo** . Se o site primário estiver em uma hierarquia com um site de administração central, essa conta também deverá ser de administrador local no servidor do site de administração central.  
 
-**站点重置的限制**
-  - 从版本 1602 开始，只要主要层次结构配置为支持[在预生产集合中测试客户端升级](/sccm/core/clients/manage/upgrade/test-client-upgrades)，则不能使用站点重置来更改安装在站点的服务器或客户端语言包。
+**Limitações de uma redefinição de site**
+  - A partir da versão 1602, você não pode usar uma redefinição de site para alterar os pacotes de idiomas do Cliente ou do Servidor instalados nos sites enquanto a hierarquia estiver configurada para dar suporte para [testar atualizações do cliente em uma coleção de pré-produção](/sccm/core/clients/manage/upgrade/test-client-upgrades).
 
-#### <a name="to-perform-a-site-reset"></a>执行站点重置  
+#### <a name="to-perform-a-site-reset"></a>Para executar uma redefinição de site  
 
-1.  从 **&lt;Configuration Manager 站点安装文件夹 \>\BIN\X64\setup.exe** 运行 **Configuration Manager 安装程序**。  
+1.  Execute a **Instalação do Configuration Manager** na **&lt;pasta de instalação do site do Configuration Manager\>\BIN\X64\setup.exe**.  
 
     > [!TIP]  
-    >  也可以通过启动站点服务器计算机上或 Configuration Manager 源媒体上的“开始”菜单上的 Configuration Manager 安装程序运行站点重置。  
+    >  Você também pode executar uma redefinição de site iniciando a Instalação do Configuration Manager no menu **Iniciar** do computador do servidor de sites ou da mídia de origem do Configuration Manager.  
 
-2.  在“入门”  页上，选择“执行站点维护或重置此站点” ，然后单击“下一步” 。  
+2.  Na página **Introdução** , selecione **Realizar a manutenção do site ou redefinir este site**e clique em **Próximo**.  
 
-3.  在“站点维护”  页上，选择“重置站点而不更改配置” ，然后单击“下一步” 。  
+3.  Na página **Manutenção do Site** , selecione **Redefinir o site sem alterações na configuração**e clique em **Próximo**.  
 
-4.  单击“是”  以开始站点重置。  
+4.  Clique em **Sim** para iniciar a redefinição de site.  
 
-在站点重置完成时，单击“关闭”  以完成本过程。  
+Terminada a redefinição de site, clique em **Fechar** para concluir o procedimento.  
 
-##  <a name="bkmk_sitelang"></a>管理站点上的语言包  
-安装站点后，你可以更改正在使用的服务器和客户端语言包：  
+##  <a name="bkmk_sitelang"></a> Gerenciar pacotes de idiomas em um site  
+Depois de instalar um site, você pode alterar os pacotes de idiomas de cliente e servidor que estão em uso:  
 
-**服务器语言包：**  
+**Pacotes de idiomas do servidor:**  
 
--   **适用于：**  
+-   **Aplica-se a:**  
 
-     Configuration Manager 控制台安装  
+     Instalações do console do Configuration Manager  
 
-     适用的站点系统角色的新安装  
+     Novas instalações de funções de sistema de sites aplicáveis  
 
--   **详细信息：**  
+-   **Detalhes:**  
 
-     更新站点中的服务器语言包之后，可以将语言包支持添加到 Configuration Manager 控制台。  
+     Após atualizar os pacotes de idiomas de servidor em um site, você pode adicionar suporte aos pacotes de idiomas nos consoles do Configuration Manager.  
 
-     若要向 Configuration Manager 控制台添加服务器语言包支持，必须从站点服务器的 **ConsoleSetup** 文件夹安装 Configuration Manager 控制台，其中该站点服务器包括想使用的语言包。 如果已安装 Configuration Manager 控制台，则必须先卸载它，以使新安装能够识别当前支持的语言包的列表。  
+     Para adicionar suporte a um pacote de idioma de servidor em um console do Configuration Manager, instale o console do Configuration Manager por meio da pasta **ConsoleSetup** em um servidor de site que inclui o pacote de idioma que você deseja usar. Se o console do Configuration Manager já estiver instalado, desinstale-o primeiro para que a nova instalação possa identificar a lista atual de pacotes de idiomas com suporte.  
 
-**客户端语言包：**  
+**Pacotes de idiomas do cliente:**  
 
--   **适用于：**  
+-   **Aplica-se a:**  
 
-     对客户端语言包进行更改将更新客户端安装源文件，这样新客户端安装和升级会添加对客户端语言已更新列表的支持。  
+     Alterações nos pacotes de idiomas de cliente atualizam os arquivos de origem da instalação do cliente, de modo que novas atualizações e instalações do cliente acrescentam suporte à lista atualizada de idiomas do cliente.  
 
--   **详细信息：**  
+-   **Detalhes:**  
 
-     更新站点中的客户端语言包之后，必须使用包含客户端语言包的源文件来安装将使用这些语言包的每个客户端。  
+     Após atualizar os pacotes de idiomas de cliente em um site, instale cada cliente que usará os pacotes utilizando os arquivos de origem que incluem os pacotes de idiomas de cliente.  
 
-有关 Configuration Manager 支持的客户端和服务器语言的信息，请参阅 [System Center Configuration Manager 中的语言包](../../../core/servers/deploy/install/language-packs.md)  
+Para obter informações sobre os idiomas de cliente e servidor que têm suporte do Configuration Manager, consulte [Pacotes de idiomas no System Center Configuration Manager](../../../core/servers/deploy/install/language-packs.md)  
 
-#### <a name="to-modify-the-language-packs-that-are-supported-at-a-site"></a>修改站点支持的语言包  
+#### <a name="to-modify-the-language-packs-that-are-supported-at-a-site"></a>Para modificar os pacotes de idiomas com suporte em um site  
 
-1.  在站点服务器上，从 **&lt;Configuration Manager 站点安装文件夹\>\BIN\X64\setup.exe.** 运行 Configuration Manager 安装程序  
+1.  No servidor do site, execute a Instalação do Configuration Manager da **&lt;Pasta de instalação do site do Configuration Manager\>\BIN\X64\setup.exe.**  
 
-2.  在“入门”  页上，选择“执行站点维护或重置此站点” ，然后单击“下一步” 。  
+2.  Na página **Introdução** , selecione **Realizar a manutenção do site ou redefinir este site**e clique em **Próximo**.  
 
-3.  在“站点维护”  页上，选择“修改语言配置” ，然后单击“下一步” 。  
+3.  Na página **Manutenção do Site** , selecione **Modificar configuração de idioma**e clique em **Próximo**.  
 
-4.  在“先决条件下载”  页上，选择“下载所需文件”  以获取语言包的更新，或者选择“使用以前下载的文件”  ，以使用以前下载的包含要添加到站点的语言包的文件。 单击“下一步”  以验证文件并继续。  
+4.  Na página **Downloads de Pré-requisitos** , selecione **Baixar arquivos necessários** , para adquirir atualizações de pacotes de idiomas, ou selecione **Usar arquivos baixados anteriormente** para usar arquivos baixados anteriormente que incluem os pacotes de idiomas que você deseja adicionar ao site. Clique em **Próximo** para validar os arquivos e continuar.  
 
-5.  在“服务器语言选择”  页上，选中此站点支持的服务器语言的复选框，然后单击“下一步” 。  
+5.  Na página **Seleção do Idioma do Servidor** , marque a caixa de seleção para os idiomas de servidor aos quais esse site oferece suporte e clique em **Avançar**.  
 
-6.  在“客户端语言选择”  页上，选中此站点支持的客户端语言的复选框，然后单击“下一步” 。  
+6.  Na página **Seleção do Idioma do Cliente** , marque a caixa de seleção para os idiomas de cliente aos quais esse site oferece suporte e clique em **Avançar**.  
 
-7.  单击“下一步” 以修改站点的语言支持。  
+7.  Clique em **Próximo**, para modificar o suporte a idiomas no site.  
 
     > [!NOTE]  
-    >  Configuration Manager 会启动站点重置（也会在该站点重新安装所有站点系统角色）。  
+    >  O Configuration Manager inicia uma redefinição de site que também reinstala todas as funções do sistema de sites no site.  
 
-8.  单击“关闭”  以完成本过程。  
+8.  Clique em **Fechar** para concluir esse procedimento.  
 
-##  <a name="BKMK_ModDBAlert"></a>修改数据库服务器警报阈值  
- 默认情况下，当站点数据库服务器上的可用磁盘空间不足时，Configuration Manager 会生成警报。 默认值设置为当可用磁盘空间为 10 GB 或更少时生成警告，当可用磁盘空间为 5 GB 或更少时生成严重警报。 可以为每个站点修改这些值或禁用警报。  
+##  <a name="BKMK_ModDBAlert"></a> Modificar o limite de alerta do servidor de banco de dados  
+ Por padrão, o Configuration Manager gera alertas quando há pouco espaço livre em disco em um servidor de banco de dados do site. Os padrões são definidos para gerar um alerta quando houver 10 GB ou menos de espaço livre em disco, e um alerta crítico quando houver 5 GB ou menos de espaço livre em disco. Você pode modificar esses valores ou desabilitar os alertas para cada site.  
 
- 更改这些设置：  
+ Para alterar essas configurações:  
 
-1.  在“管理”  工作区中，展开“站点配置” ，然后单击“站点” 。  
+1.  No espaço de trabalho **Administração** , expanda **Configuração do Site**e clique em **Sites**.  
 
-2.  选择想要配置的站点并打开该站点的“属性” 。  
+2.  Selecione o site que você deseja configurar e abra as **Propriedades** do site.  
 
-3.  在该站点的“属性”对话框中，选择“警报”选项卡，然后编辑设置。  
+3.  Na caixa de diálogo **Propriedades** do site, selecione a guia **Alerta** e edite as configurações.  
 
-4.  单击“确定”  以关闭站点属性对话框。  
+4.  Clique em **OK** para fechar a caixa de diálogo de propriedades do site.  

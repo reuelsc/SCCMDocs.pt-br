@@ -1,6 +1,6 @@
 ---
-title: "任务序列步骤 - Configuration Manager | Microsoft Docs"
-description: "了解可添加到 Configuration Manager 任务序列的任务序列步骤。"
+title: "Etapas de sequência de tarefas – Configuration Manager | Microsoft Docs"
+description: "Saiba mais sobre as etapas de sequência de tarefas que você pode adicionar a uma sequência de tarefas do Configuration Manager."
 ms.custom: na
 ms.date: 03/26/2017
 ms.prod: configuration-manager
@@ -18,884 +18,884 @@ manager: angrobe
 ms.openlocfilehash: e0726febc4c36a26c5e067914734838bf2681e6c
 ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
 ms.translationtype: HT
-ms.contentlocale: zh-CN
+ms.contentlocale: pt-BR
 ms.lasthandoff: 08/07/2017
 ---
-# <a name="task-sequence-steps-in-system-center-configuration-manager"></a>System Center Configuration 中的任务序列步骤
+# <a name="task-sequence-steps-in-system-center-configuration-manager"></a>Etapas da sequência de tarefas no System Center Configuration Manager
 
-*适用范围：System Center Configuration Manager (Current Branch)*
+*Aplica-se a: System Center Configuration Manager (Branch Atual)*
 
-以下任务序列步骤可添加到 Configuration Manager 任务序列中。 有关编辑任务序列的信息，请参阅 [Edit a task sequence](../deploy-use/manage-task-sequences-to-automate-tasks.md#BKMK_ModifyTaskSequence)。  
+As etapas de sequência de tarefas a seguir podem ser adicionadas à sequência de tarefas do Configuration Manager. Para obter informações sobre como editar uma sequência de tarefas, veja [Edit a task sequence](../deploy-use/manage-task-sequences-to-automate-tasks.md#BKMK_ModifyTaskSequence).  
 
 
-##  <a name="BKMK_ApplyDataImage"></a>应用数据映像任务序列步骤  
- 使用“应用数据映像”任务序列步骤将数据映像复制到指定目标分区。  
+##  <a name="BKMK_ApplyDataImage"></a> Aplicar a etapa de sequência de tarefas de imagem de dados  
+ Use a etapa de sequência de tarefas **Aplicar imagem de dados** para copiar a imagem de dados para a partição de destino especificada.  
 
- 此步骤仅可在 Windows PE 中运行。 不能在标准操作系统中运行。 有关此操作的任务序列变量的详细信息，请参阅[任务序列操作变量](task-sequence-action-variables.md)。  
+ Esta etapa é executada somente no Windows PE. Ela não é executada em um sistema operacional padrão. Para mais informações sobre as variáveis de sequência de tarefas para esta ação, confira [Task sequence action variables](task-sequence-action-variables.md) (Variáveis de ação da sequência de tarefas).  
 
-### <a name="details"></a>详细信息  
- 在此步骤的“属性”  选项卡上，可以配置此部分描述的设置。  
+### <a name="details"></a>Detalhes  
+ Na guia **Propriedades** desta etapa, você pode definir as configurações descritas nesta seção.  
 
- 此外，使用“选项”  选项卡可执行以下操作：  
+ Além disso, use a guia **Opções** guia para executar as seguintes ações:  
 
--   禁用该步骤。  
+-   Desabilitar a etapa.  
 
--   指定在运行该步骤时若出现错误，任务序列是否继续。  
+-   Especificar se a sequência de tarefas continuará se ocorrer um erro ao executar a etapa.  
 
--   指定运行步骤必须满足的条件。  
+-   Especificar condições que devem ser atendidas para a etapa a ser executada.  
 
- **Name**  
- 描述此步骤所采取操作的用户定义的短名。  
+ **Nome**  
+ Um nome curto definido pelo usuário que descreve a ação realizada nesta etapa.  
 
- **描述**  
- 有关此步骤所采取操作的更详细信息。  
+ **Descrição**  
+ Informações mais detalhadas sobre a ação realizada nesta etapa.  
 
- **映像包**  
- 单击“浏览”，指定将用于此任务序列步骤的“映像包”。 在“选择包”对话框中选择要安装的包。 每个现有映像包的关联属性信息显示在“选择包”对话框的底部。 使用下拉列表，从所选的“映像包”中选择要安装的“映像”。  
+ **Pacote da imagem**  
+ Especifique o **Pacote de imagem** que será usado por essa etapa de sequência de tarefas clicando em **Procurar**. Selecione o pacote que você deseja instalar na caixa de diálogo **Selecionar um pacote** . As informações de propriedade associada para cada pacote de imagem existente são exibidas na parte inferior da caixa de diálogo **Selecionar um pacote** . Use a lista suspensa para selecionar a **imagem** você deseja instalar por meio do **Pacote de imagem**selecionado.  
 
 > [!NOTE]  
->  此任务序列操作将映像视为数据文件，不会执行将映像作为操作系统启动所需的任何设置。  
+>  Esta ação de sequência de tarefas trata a imagem como um arquivo de dados e não realiza nenhuma a configuração necessária para inicializar a imagem como um sistema operacional.  
 
- **目标**  
- 指定现有的格式化分区和硬盘、特定逻辑驱动器号或包含逻辑驱动器号的任务序列变量的名称。  
+ **Destino**  
+ Especifica que um arquivo formatado partição e disco rígido, letra de unidade lógica específica ou o nome de uma variável de sequência de tarefas que contém a letra da unidade lógica.  
 
--   **下一可用分区** - 使用此任务序列中此前未被“应用操作系统”或“应用数据映像”作为目标的下一个顺序分区。  
+-   **Próxima partição disponível** – Use a próxima partição sequencial que não foi visada anteriormente por uma ação Aplicar Sistema Operacional ou Aplicar Imagem de Dados nessa sequência de tarefas.  
 
--   **特定磁盘和分区** - 选择“磁盘”编号（从 0 开始）和“分区”编号（从 1 开始）。  
+-   **Disco e partição específicos** – Selecione o número do **Disco** (começando com 0) e o da **Partição** (começando com 1).  
 
--   **特定逻辑驱动器号** - 指定 Windows PE 分配给分区的“驱动器号”。 注意，此驱动器号可不同于新部署的操作系统将要分配的驱动器号。  
+-   **Letra da unidade lógica específica** – Especifique a **Letra da Unidade** atribuída à partição pelo Windows PE. Observe que essa letra de unidade pode ser diferente da letra de unidade atribuída pelo sistema operacional implantado recentemente.  
 
--   **变量中存储的逻辑驱动器号** - 指定包含 Windows PE 分配给分区的驱动器号的任务序列变量。 对于“格式化磁盘并分区”任务序列操作，此变量通常在“分区属性”对话框的“高级”部分中设置。  
+-   **Letra de unidade lógica armazenada em uma variável** – Especifique a variável de sequência de tarefas que contém a letra da unidade atribuída à partição pelo Windows PE. Essa variável normalmente seria definida na seção avançada da caixa de propriedades **Propriedades da partição** para a ação da sequência de tarefa **Formatar e particionar o disco** .  
 
- **应用映像之前删除分区中的所有内容**  
- 指定在安装映像之前目标分区上的所有文件将被删除。 如果不删除分区内容，则此步骤可用于将其他内容应用到以前的目标分区。  
+ **Excluir todo o conteúdo da partição antes de aplicar a imagem**  
+ Especifica que todos os arquivos da partição de destino serão excluídos antes que a imagem seja instalada. Não excluindo o conteúdo da partição, esta etapa pode ser usada para aplicar o conteúdo adicional a uma partição de destino anterior.  
 
-##  <a name="BKMK_ApplyDriverPackage"></a>应用驱动程序包  
- 使用“应用驱动程序包”任务序列步骤可下载驱动程序包中的所有驱动程序，并将其安装在 Windows 操作系统上。
+##  <a name="BKMK_ApplyDriverPackage"></a> Aplicar pacote de driver  
+ Use a etapa da sequência de tarefas **Aplicar pacote de Driver** para baixar todos os drivers no pacote de driver e instalá-los no sistema operacional Windows.
 
- “应用驱动程序包”任务序列步骤使 Windows 可以使用驱动程序包中的所有设备驱动程序。 此步骤可以添加到“应用操作系统”与“安装 Windows 和 ConfigMgr”步骤之间的任务序列，使驱动程序包中的设备驱动程序可以用于 Windows。 通常，“应用驱动程序包”步骤位于“自动应用驱动程序”任务序列步骤之后。 “应用驱动程序包”任务序列步骤也可以与独立媒体部署方案配合使用。  
+ A etapa da sequência de tarefas **Aplicar pacote de Driver** disponibiliza todos os drivers de dispositivo em um pacote de driver para uso pelo Windows. Esta etapa pode ser adicionada a uma sequência de tarefas entre as etapas **Aplicar sistema operacional**  e **Instalação do Windows e do ConfigMgr** para disponibilizar os drivers de dispositivo no pacote de drivers para o Windows. Normalmente, a etapa **Aplicar pacote de Driver** é posicionada após a **Aplicação automática de drivers** . A etapa da sequência de tarefas **Aplicar pacote de Driver** também é útil em cenários de implantação de mídia autônoma.  
 
- 确保类似的设备驱动程序放入驱动程序包，并将其分发到合适的分发点。 将它们分发后 Configuration Manager 客户端计算机才可安装它们。 例如，可以将所有来自同一制造商的设备驱动程序放在一个驱动程序包中，然后将该包分发到关联计算机可以访问的分发点。
+ Verifique se os drivers de dispositivo similares são colocados em um pacote de driver e distribua-os aos pontos de distribuição apropriados. Depois de serem distribuídos, os computadores cliente do Configuration Manager poderão instalá-los. Por exemplo, você pode colocar todos os drivers de dispositivo de um fabricante em um pacote de driver e distribuir o pacote para pontos de distribuição onde os computadores associados possam acessá-los.
 
- 对于独立媒体和要安装特定驱动程序集的管理员，包括即插即用扫描无法检测到的设备（例如，网络打印机）的驱动程序，此步骤很有用。  
+ Esta etapa é útil para mídia autônoma e para os administradores que desejam instalar um conjunto específico de drivers, incluindo drivers de dispositivos que não seriam detectados em uma varredura de Plug-n-Play (por exemplo, impressoras de rede).  
 
- 此任务序列步骤仅可在 Windows PE 中运行。 不能在标准操作系统中运行。 有关此操作的任务序列变量的详细信息，请参阅 [Apply Driver Package Task Sequence Action Variables](task-sequence-action-variables.md#BKMK_ApplyDriverPackage)。  
+ Essa etapa de sequência de tarefas é executada somente no Windows PE. Ela não é executada em um sistema operacional padrão. Para obter mais informações sobre as variáveis de sequência de tarefas para esta ação, veja [Apply Driver Package Task Sequence Action Variables](task-sequence-action-variables.md#BKMK_ApplyDriverPackage).  
 
-### <a name="details"></a>详细信息  
- 在此步骤的“属性”  选项卡上，可以配置此部分描述的设置。  
+### <a name="details"></a>Detalhes  
+ Na guia **Propriedades** desta etapa, você pode definir as configurações descritas nesta seção.  
 
- 此外，使用“选项”  选项卡可执行以下操作：  
+ Além disso, use a guia **Opções** guia para executar as seguintes ações:  
 
--   禁用该步骤。  
+-   Desabilitar a etapa.  
 
--   指定在运行该步骤时若出现错误，任务序列是否继续。  
+-   Especificar se a sequência de tarefas continuará se ocorrer um erro ao executar a etapa.  
 
--   指定运行步骤必须满足的条件。  
+-   Especificar condições que devem ser atendidas para a etapa a ser executada.  
 
- **Name**  
- 描述此步骤所采取操作的用户定义的短名。  
+ **Nome**  
+ Um nome curto definido pelo usuário que descreve a ação realizada nesta etapa.  
 
- **描述**  
- 有关此步骤所采取操作的更详细信息。  
+ **Descrição**  
+ Informações mais detalhadas sobre a ação realizada nesta etapa.  
 
- **驱动程序包**  
- 通过单击“浏览”并启动“选择包”对话框，指定包含所需设备驱动程序的驱动程序包。 指定要使用的现有包。 相应的包属性显示在对话框底部。  
+ **Pacote de drivers**  
+ Especifique o pacote de driver que contém os drivers de dispositivo necessários clicando em **Procurar** e iniciando a caixa de diálogo **Selecionar um pacote** . Especifique um pacote existente para disponibilizar. As propriedades do pacote associado são exibidas na parte inferior da caixa de diálogo.  
 
- **选择包中需要安装的大容量存储驱动程序，然后在 Windows Vista 以前的操作系统上安装**  
- 指定 Windows Vista 以前的操作系统安装所需的任何大容量存储设备驱动程序。  
+ **Selecione o driver de armazenamento em massa dentro do pacote que precisa ser instalado antes da instalação em sistemas operacionais anteriores ao Windows Vista**  
+ Especifique os drivers de dispositivos de armazenamento em massa que são necessários para instalações de sistemas operacionais anteriores ao Windows Vista.  
 
- **驱动程序**  
- 选择要安装的大容量存储设备驱动程序文件，然后在 Windows Vista 以前的操作系统部署上安装。 下拉列表根据指定包填充。  
+ **Driver**  
+ Selecione o arquivo de driver de dispositivo de armazenamento em massa a serem instalados antes da instalação em implantações de sistemas operacionais anteriores ao Windows Vista. A lista suspensa é preenchida com o pacote especificado.  
 
- **型号**  
- 指定 Windows Vista 以前的操作系统部署需要的启动关键设备。  
+ **Modelo**  
+ Especifique a inicialização crítica de dispositivo necessária para implantações de sistemas operacionais anteriores ao Windows Vista.  
 
- **在 Windows 版本上对未签名的驱动程序执行允许的无人参与安装**  
- 选择此选项以允许 Windows 安装没有在引用计算机上签名的驱动程序。  
+ **Faça uma instalação autônoma de drivers não assinados nas versões do Windows em que isso é permitido**  
+ Selecione esta opção para permitir que o Windows instale drivers que não são assinados no computador de referência.  
 
-##  <a name="BKMK_ApplyNetworkSettings"></a>应用网络设置步骤  
- 使用“应用网络设置”任务序列步骤指定目标计算机的网络或工作组配置信息。 指定值以适当的答案文件格式进行存储，以供 Windows 安装程序在运行“安装 Windows 和 ConfigMgr”任务序列步骤时使用。  
+##  <a name="BKMK_ApplyNetworkSettings"></a> Etapa Aplicar configurações de rede  
+ Use a etapa da sequência de tarefas **Aplicar configurações de rede** para especificar as informações de configuração de rede ou grupo de trabalho do computador de destino. Os valores especificados são armazenados no formato de arquivo de resposta apropriado para uso pela instalação do Windows quando a etapa da sequência de tarefas **Instalação do Windows e ConfigMgr** é executada.  
 
- 标准操作系统或 Windows PE 中均可运行此任务序列步骤。 有关此操作的任务序列变量的详细信息，请参阅 [Apply Network Settings Task Sequence Action Variables](task-sequence-action-variables.md#BKMK_ApplyNetworkSettings)。  
+ Essa etapa de sequência de tarefas é executada em um sistema operacional padrão ou o Windows PE. Para obter mais informações sobre as variáveis de sequência de tarefas para esta ação, veja [Apply Network Settings Task Sequence Action Variables](task-sequence-action-variables.md#BKMK_ApplyNetworkSettings).  
 
-### <a name="details"></a>详细信息  
- 在此步骤的“属性”  选项卡上，可以配置此部分描述的设置。  
+### <a name="details"></a>Detalhes  
+ Na guia **Propriedades** desta etapa, você pode definir as configurações descritas nesta seção.  
 
- 此外，使用“选项”  选项卡可执行以下操作：  
+ Além disso, use a guia **Opções** guia para executar as seguintes ações:  
 
--   禁用该步骤。  
+-   Desabilitar a etapa.  
 
--   指定在运行该步骤时若出现错误，任务序列是否继续。  
+-   Especificar se a sequência de tarefas continuará se ocorrer um erro ao executar a etapa.  
 
--   指定运行步骤必须满足的条件。  
+-   Especificar condições que devem ser atendidas para a etapa a ser executada.  
 
- **Name**  
- 描述此步骤所采取操作的用户定义的短名。  
+ **Nome**  
+ Um nome curto definido pelo usuário que descreve a ação realizada nesta etapa.  
 
- **描述**  
- 有关此步骤所采取操作的更详细信息。  
+ **Descrição**  
+ Informações mais detalhadas sobre a ação realizada nesta etapa.  
 
- **加入工作组**  
- 选择此选项，使目标计算机加入指定的工作组。 在“工作组”行中输入工作组的名称。 此值可被“捕获网络设置”  任务序列步骤所捕获的值替代。  
+ **Ingressar no grupo de trabalho**  
+ Selecione esta opção para fazer o computador de destino ingressar no grupo de trabalho especificado. Insira o nome do grupo de trabalho na linha **Grupo de trabalho** . Esse valor pode ser substituído pelo valor capturado pela etapa da sequência de tarefas **Capturar as configurações de rede** .  
 
- **加入域**  
- 选择此选项以将目标计算机加入指定的域。 指定或浏览到域，如 *fabricam.com*。 指定或浏览到组织单位的轻型目录访问协议 (LDAP) 路径（即 LDAP//OU=computers，DC=Fabricam.com，C=com）。  
+ **Ingressar em um domínio**  
+ Selecione esta opção para fazer o computador de destino ingressar no domínio especificado. Especifique ou navegue para o domínio, como *fabricam.com*. Especifique ou procure um caminho LDAP (Lightweight Directory Access Protocol) para uma unidade organizacional (ou seja, LDAP//OU=computadores, DC=Fabricam.com, C=com).  
 
- **帐户**  
- 单击“设置”  以指定拥有将计算机加入域所需权限的帐户。 在“Windows 用户帐户”对话框中，可以使用下列格式输入用户名：**Domain\User**。  
+ **Conta**  
+ Clique em **Definir** para especificar uma conta com as permissões necessárias para ingressar o computador no domínio. Na caixa de diálogo **Conta de Usuário do Windows** , é possível inserir o nome de usuário usando o seguinte formato: **Domínio\Usuário** .  
 
- **适配器设置**  
- 指定计算机中每个网络适配器的网络配置。 单击 “新建”打开“网络设置”对话框，然后指定网络设置。 如果在之前的“捕获网络设置”任务序列步骤中已捕获网络设置，之前的设置会应用到网络适配器，不会应用在此步骤中指定的设置。 如果先前没有捕获网络设置，在“应用网络设置”步骤中指定的设置将以 Windows 设备枚举顺序应用到网络适配器。  
+ **Adapter settings (Configurações do adaptador)**  
+ Especifica configurações de rede para cada adaptador de rede no computador. Clique em **Novo** para abrir a caixa de diálogo **Configurações de rede** e especifique as configurações de rede. Se as configurações de rede foram capturadas em uma etapa da sequência de tarefas **Capturar as configurações de rede** anterior, as configurações anteriores serão aplicadas ao adaptador de rede e não às configurações especificadas nesta etapa. Se as configurações de rede não foram capturadas anteriormente, as configurações especificadas na etapa **Aplicar configurações de rede** etapa serão aplicadas aos adaptadores de rede na ordem de enumeração de dispositivo do Windows.  
 
-##  <a name="BKMK_ApplyOperatingSystemImage"></a>应用操作系统映像  
- 使用“应用操作系统映像”任务序列步骤在目标计算机上安装操作系统。 此任务序列步骤会根据使用操作系统映像还是操作系统安装包来执行一组操作，以安装操作系统。  
+##  <a name="BKMK_ApplyOperatingSystemImage"></a> Aplicar Imagem de Sistema Operacional  
+ Use a etapa da sequência de tarefas **Aplicar imagem do sistema operacional** para instalar um sistema operacional no computador de destino. Essa etapa de sequência de tarefas executa um conjunto de ações, dependendo de se você estiver usando uma imagem do sistema operacional ou um pacote de instalação do sistema operacional para instalar o sistema operacional.  
 
- 使用操作系统映像时，“应用操作系统映像”步骤将执行以下操作。  
+ A etapa **Aplicar imagem do sistema operacional** executa as seguintes ações quando uma imagem do sistema operacional é usada.  
 
-1.  除了 &#95;SMSTSUserStatePath 任务序列变量所指定文件夹中的文件之外，删除目标卷上的所有内容。  
+1.  Exclui todo o conteúdo no volume de destino, exceto os arquivos na pasta especificada pela variável de sequência de tarefas &#95;SMSTSUserStatePath.  
 
-2.  将指定的 .wim 文件的内容提取到指定目标分区。  
+2.  Extrai o conteúdo do arquivo .wim especificado para a partição de destino especificado.  
 
-3.  准备答案文件：  
+3.  Prepara o arquivo de resposta:  
 
-    1.  为将要部署的操作系统创建新的默认 Windows 安装程序答案文件（sysprep.inf 或 unattend.xml）。  
+    1.  Cria um novo arquivo de resposta padrão da Instalação do Windows (sysprep.inf ou unattend.xml) para o sistema operacional que está sendo implantado.  
 
-    2.  从用户提供的答案文件中合并所有值。  
+    2.  Mescla os valores do arquivo de resposta fornecido pelo usuário.  
 
-4.  将 Windows 启动加载程序复制到活动分区中。  
+4.  Copia carregadores de inicialização do Windows para a partição ativa.  
 
-5.  设置 boot.ini 或启动配置数据库 (BCD) 来引用新安装的操作系统。  
+5.  Configura o boot.ini ou o Banco de Dados de Configuração da Inicialização (BCD) para referenciar o sistema operacional recém-instalado.  
 
- 使用操作系统安装包时，“应用操作系统映像”步骤将执行以下操作。  
+ A etapa **Aplicar imagem do sistema operacional** executa as seguintes ações quando um pacote de instalação do sistema operacional é usado.  
 
-1.  除了 &#95;SMSTSUserStatePath 任务序列变量所指定文件夹中的文件之外，删除目标卷上的所有内容。  
+1.  Exclui todo o conteúdo no volume de destino, exceto os arquivos na pasta especificada pela variável de sequência de tarefas &#95;SMSTSUserStatePath.  
 
-2.  准备答案文件：  
+2.  Prepara o arquivo de resposta:  
 
-    1.  使用 Configuration Manager 创建的标准值创建全新的答案文件。  
+    1.  Cria um arquivo de resposta novo com valores padrão criados pelo Configuration Manager.  
 
-    2.  从用户提供的答案文件中合并所有值。  
+    2.  Mescla os valores do arquivo de resposta fornecido pelo usuário.  
 
 > [!NOTE]  
->  Windows 的实际安装由“安装 Windows 和 ConfigMgr”任务序列步骤启动。 在“应用操作系统”任务序列操作运行之后，OSDTargetSystemDrive 任务序列变量设置为包含操作系统文件的分区的驱动器号。  
+>  A instalação real do Windows é iniciada pela etapa da sequência de tarefas **Instalação do Windows e ConfigMgr** . Após a ação da sequência de tarefas **Aplicar sistema operacional** ser executada, a variável de sequência de tarefas OSDTargetSystemDrive é definida como a letra da unidade da partição que contém os arquivos do sistema operacional.  
 
- 此任务序列步骤仅可在 Windows PE 中运行。 不能在标准操作系统中运行。 有关此操作的任务序列变量的详细信息，请参阅 [Apply Operating System Image Task Sequence Action Variables](task-sequence-action-variables.md#BKMK_ApplyOperatingSystem)。  
+ Essa etapa de sequência de tarefas é executada somente no Windows PE. Ela não é executada em um sistema operacional padrão. Para obter mais informações sobre as variáveis de sequência de tarefas para esta ação, veja [Apply Operating System Image Task Sequence Action Variables](task-sequence-action-variables.md#BKMK_ApplyOperatingSystem).  
 
-### <a name="details"></a>详细信息  
- 在此步骤的“属性”  选项卡上，可以配置此部分描述的设置。  
+### <a name="details"></a>Detalhes  
+ Na guia **Propriedades** desta etapa, você pode definir as configurações descritas nesta seção.  
 
- 此外，使用“选项”  选项卡可执行以下操作：  
+ Além disso, use a guia **Opções** guia para executar as seguintes ações:  
 
--   禁用该步骤。  
+-   Desabilitar a etapa.  
 
--   **直接从分发点访问内容**：  
+-   **Acessar o conteúdo diretamente do ponto de distribuição**:  
 
-     使用此选项指定你是否希望任务序列直接从分发点访问操作系统映像。 例如，可在部署操作系统到存储容量有限的嵌入式设备时使用此选项。 选择此选项后，你还必须在包属性的“数据访问”选项卡上配置包共享设置。  
+     Use esta opção para especificar se deseja que a sequência de tarefas para acessar a imagem do sistema operacional diretamente do ponto de distribuição. Por exemplo, você pode usar essa opção ao implantar sistemas operacionais em dispositivos inseridos que têm a capacidade de armazenamento limitada. Quando essa opção é selecionada, você também deve configurar as configurações de compartilhamento de pacote na guia **Acesso aos dados** das propriedades do pacote.  
 
     > [!NOTE]  
-    >  此设置仅针对此任务序列步骤中指定的操作系统映像覆盖在“部署软件向导”的“分发点”页上配置的部署选项，而不是整个任务序列的所有内容。  
+    >  Essa configuração substitui a opção de implantação configurada na página **Pontos de distribuição** no **Assistente de implantação de software** somente para a imagem de sistema operacional especificada nessa etapa de sequência de tarefas e não todo o conteúdo da sequência de tarefas inteira.  
 
--   指定在运行该步骤时若出现错误，任务序列是否继续。  
+-   Especificar se a sequência de tarefas continuará se ocorrer um erro ao executar a etapa.  
 
--   指定运行步骤必须满足的条件。  
+-   Especificar condições que devem ser atendidas para a etapa a ser executada.  
 
- **Name**  
- 描述此步骤所采取操作的用户定义的短名。  
+ **Nome**  
+ Um nome curto definido pelo usuário que descreve a ação realizada nesta etapa.  
 
- **描述**  
- 有关此步骤所采取操作的更详细信息。  
+ **Descrição**  
+ Informações mais detalhadas sobre a ação realizada nesta etapa.  
 
- **从捕获的映像应用操作系统**  
- 安装先前已捕获的操作系统映像。 单击“浏览”以打开“选择映像包”对话框，然后选择你要安装的现有映像包。 如果指定的映像包关联了多个映像，请使用下拉列表指定将用于此部署的关联映像。 你可以通过单击每个现有映像查看有关该映像的基本信息。  
+ **Aplicar o sistema operacional de uma imagem capturada**  
+ Instala uma imagem do sistema operacional que foi capturada anteriormente. Clique em **Procurar** para abrir a caixa de diálogo **Selecionar um pacote** e selecione o pacote de imagem existente que você deseja instalar. Se várias imagens forem associadas ao **pacote de imagem**especificado, use a lista suspensa para especificar a imagem associada que será usada para essa implantação. Você pode exibir informações básicas sobre cada imagem existente clicando na imagem.  
 
- **从原始安装源应用操作系统映像**  
- 使用原始安装源安装操作系统。 单击“浏览”以打开“选择操作系统安装包”对话框，然后选择你要使用的现有操作系统安装包。 可以通过单击每个现有映像源查看有关该映像源的基本信息。 关联映像源属性显示在对话框底部的结果窗格中。 如果指定的包关联了多个版本，请使用下拉列表指使用的关联“版本”。  
+ **Apply operating system image from an original installation source (Aplicar a imagem do sistema operacional de uma fonte de instalação original)**  
+ Instala um sistema operacional usando a instalação original. Clique em **Procurar** para abrir a caixa de diálogo **Selecione o pacote de instalação do sistema operacional** e selecione o pacote de instalação do sistema operacional existente que deseja usar. Você pode exibir informações básicas sobre cada origem de imagem existente clicando na origem da imagem. As propriedades da origem da imagem associada são exibidas no painel de resultados, na parte inferior da caixa de diálogo. Se houver várias edições associadas ao pacote especificado, use a lista suspensa para especificar a **Edição** associada a ser usada.  
 
- **使用无人参与或 Sysprep 答案文件进行自定义安装**  
- 使用此选项提供 Windows 安装程序答案文件（**unattend.xml**、 **unattend.txt**或 **sysprep.inf**），取决于操作系统版本和安装方法。 你指定的文件可以包含 Windows 答案文件支持的任何标准的配置选项。 例如，可以使用它指定默认的 Internet Explorer 主页。 你必须指定包含答案文件的包以及包中文件的关联路径。  
+ **Usar um arquivo de resposta autônomo ou Sysprep para uma instalação personalizada**  
+ Use esta opção para fornecer um arquivo de resposta de instalação do Windows (**unattend.xml**, **unattend.txt**, ou **sysprep.inf**) dependendo do método de instalação e da versão do sistema operacional. O arquivo especificado pode incluir qualquer uma das opções de configuração padrão compatíveis com arquivos de resposta do Windows. Por exemplo, você pode usá-la para especificar a página inicial padrão do Internet Explorer. Você deve especificar o pacote que contém o arquivo de resposta e o caminho associado ao arquivo no pacote.  
 
 > [!NOTE]  
->  你提供的 Windows 安装程序答案文件可以包含形式为 %*varname*% 的嵌入任务序列变量，其中 varname 是指变量的名称。 %*varname*% 字符串将替换为“安装 Windows 和 ConfigMgr”任务序列操作中的实际变量值。 但是请注意，unattend.xml 答案文件的仅数字字段中不能使用此类嵌入任务序列变量。  
+>  O arquivo de resposta de instalação que você fornece pode conter de variáveis de sequência de tarefa integradas do formulário %*varname*%, onde varname é o nome da variável. A cadeia de caracteres %*varname*% substituirá os valores reais de variável na ação da sequência de tarefas **Instalação do Windows e ConfigMgr** . No entanto, observe que essas variáveis de sequência de tarefas integradas não podem ser usadas em campos somente numérico em um arquivo de resposta unattend.xml.  
 
- 如果你不提供 Windows 安装程序答案文件，此任务序列操作将自动生成一个答案文件。  
+ Se você não fornecer um arquivo de resposta de instalação do Windows, essa ação da sequência de tarefas gerará automaticamente um arquivo de resposta.  
 
- **目标**  
- 指定现有的格式化分区和硬盘、特定逻辑驱动器号或包含逻辑驱动器号的任务序列变量的名称。  
+ **Destino**  
+ Especifica que um arquivo formatado partição e disco rígido, letra de unidade lógica específica ou o nome de uma variável de sequência de tarefas que contém a letra da unidade lógica.  
 
--   **下一可用分区** - 使用此任务序列中此前未被“应用操作系统”或“应用数据映像”作为目标的下一个顺序分区。  
+-   **Próxima partição disponível** – Use a próxima partição sequencial que não foi visada anteriormente por uma ação Aplicar Sistema Operacional ou Aplicar Imagem de Dados nessa sequência de tarefas.  
 
--   **特定磁盘和分区** - 选择“磁盘”编号（从 0 开始）和“分区”编号（从 1 开始）。  
+-   **Disco e partição específicos** – Selecione o número do **Disco** (começando com 0) e o da **Partição** (começando com 1).  
 
--   **特定逻辑驱动器号** - 指定 Windows PE 分配给分区的“驱动器号”。 注意，此驱动器号可不同于新部署的操作系统将要分配的驱动器号。  
+-   **Letra da unidade lógica específica** – Especifique a **Letra da Unidade** atribuída à partição pelo Windows PE. Observe que essa letra de unidade pode ser diferente da letra de unidade atribuída pelo sistema operacional implantado recentemente.  
 
--   **变量中存储的逻辑驱动器号** - 指定包含 Windows PE 分配给分区的驱动器号的任务序列变量。 对于“格式化磁盘并分区”任务序列操作，此变量通常在“分区属性”对话框的“高级”部分中设置。  
+-   **Letra de unidade lógica armazenada em uma variável** – Especifique a variável de sequência de tarefas que contém a letra da unidade atribuída à partição pelo Windows PE. Essa variável normalmente seria definida na seção avançada da caixa de propriedades **Propriedades da partição** para a ação da sequência de tarefa **Formatar e particionar o disco** .  
 
-##  <a name="BKMK_ApplyWindowsSettings"></a>应用 Windows 设置  
- 使用“应用 Windows 设置”任务序列步骤配置目标计算机的 Windows 设置。 指定值以适当的答案文件格式进行存储，以供 Windows 安装程序在运行“安装 Windows 和 ConfigMgr”  任务序列步骤时使用。  
+##  <a name="BKMK_ApplyWindowsSettings"></a> Aplicar as Configurações do Windows  
+ Use a etapa da sequência de tarefas **Aplicar configurações do Windows** para definir as configurações do Windows no computador de destino. Os valores especificados são armazenados no formato de arquivo de resposta apropriado para uso pela instalação do Windows quando a etapa da sequência de tarefas **Instalação do Windows e ConfigMgr** é executada.  
 
- 此任务序列步骤仅可在 Windows PE 中运行。 不能在标准操作系统中运行。 有关此操作的任务序列变量的详细信息，请参阅 [Apply Windows Settings Task Sequence Action Variables](task-sequence-action-variables.md#BKMK_ApplyWindowsSettings)。  
+ Essa etapa de sequência de tarefas é executada somente no Windows PE. Ela não é executada em um sistema operacional padrão. Para obter mais informações sobre as variáveis de sequência de tarefas para esta ação, veja [Apply Windows Settings Task Sequence Action Variables](task-sequence-action-variables.md#BKMK_ApplyWindowsSettings).  
 
-### <a name="details"></a>详细信息  
- 在此步骤的“属性”  选项卡上，可以配置此部分描述的设置。  
+### <a name="details"></a>Detalhes  
+ Na guia **Propriedades** desta etapa, você pode definir as configurações descritas nesta seção.  
 
- 此外，使用“选项”  选项卡可执行以下操作：  
+ Além disso, use a guia **Opções** guia para executar as seguintes ações:  
 
--   禁用该步骤。  
+-   Desabilitar a etapa.  
 
--   指定在运行该步骤时若出现错误，任务序列是否继续。  
+-   Especificar se a sequência de tarefas continuará se ocorrer um erro ao executar a etapa.  
 
--   指定运行步骤必须满足的条件。  
+-   Especificar condições que devem ser atendidas para a etapa a ser executada.  
 
- **Name**  
- 描述在此步骤中执行的操作的用户定义的短名称  
+ **Nome**  
+ Um nome curto definido pelo usuário que descreve a ação realizada nesta etapa  
 
- **描述**  
- 有关此步骤所采取操作的更详细信息。  
+ **Descrição**  
+ Informações mais detalhadas sobre a ação realizada nesta etapa.  
 
- **用户名**  
- 指定与目标计算机关联的已注册用户名。 “捕获 Windows 设置”任务序列操作所捕获的值可以替代此值。  
+ **Nome de usuário**  
+ Especifique o nome de usuário registrado que está associado com o computador de destino. Esse valor pode ser substituído pelo valor capturado pela etapa da sequência de tarefas **Capturar as configurações do Windows** .  
 
- **组织名称**  
- 指定与目标计算机关联的已注册组织名称。 “捕获 Windows 设置”任务序列操作所捕获的值可以替代此值。  
+ **Nome da organização**  
+ Especifique o nome de organização registrado que está associado com o computador de destino. Esse valor pode ser substituído pelo valor capturado pela etapa da sequência de tarefas **Capturar as configurações do Windows** .  
 
- **产品密钥**  
- 指定用于目标计算机上的 Windows 安装的产品密钥。  
+ **Chave do produto (Product Key)**  
+ Especifique a chave do produto que é usada para a instalação do Windows no computador de destino.  
 
- **服务器授权**  
- 指定授权模式。 你可以选择“每服务器”或“每用户”作为授权模式。 如果选择“每服务器”作为授权模式，则还需要指定每个许可协议将允许的最大连接数。 如果目标计算机不是服务器或你不想指定授权模式，请选择“不指定”。  
+ **Licenciamento por servidor**  
+ Especifique o modo de licenciamento do servidor. Você pode selecionar **Por servidor** ou **Por usuário** como o modo de licenciamento. Se você selecionar por servidor como o modo de licenciamento, também precisará especificar o número máximo de conexões que serão permitidas por seu contrato de licença. Selecione **Não especificar** se o computador de destino não é um servidor ou se você não quiser especificar o modo de licenciamento.  
 
- **最大连接数**  
- 指定许可协议中声明的可用于此计算机的最大连接数。  
+ **Máximo de conexões**  
+ Especifique o número máximo de conexões que estão disponíveis para este computador conforme indicado no contrato de licença.  
 
- **随机生成本地管理员密码并在所有支持的平台上禁用帐户（推荐）**  
- 选择此选项以随机生成本地管理员密码。 这将创建本地管理员密码并导致帐户在支持的平台上被禁用。  
+ **Gerar aleatoriamente a senha do administrador local e desabilitar a conta em todas as plataformas com suporte (recomendado)**  
+ Selecione esta opção para gerar aleatoriamente uma senha de administrador local. Isso cria uma senha de administrador local e faz com que a conta seja desativada em plataformas com suporte.  
 
- **启用帐户并指定本地管理员密码**  
- 择此选项以启用本地管理员帐户并创建本地管理员密码。 在“密码”行上输入密码，并在“确认密码”行上确认密码。  
+ **Habilitar a conta e especificar a senha do administrador local**  
+ Selecione esta opção para habilitar a conta de administrador local e criar a senha de administrador local. Insira a senha na linha **Senha** e confirme a senha na linha **Confirmar senha** .  
 
- **时区**  
- 指定要在目标计算机上配置的时区。 “捕获 Windows 设置”任务序列步骤所捕获的值可以替代此值。  
+ **Fuso Horário**  
+ Especifique o fuso horário para o computador de destino. Esse valor pode ser substituído pelo valor capturado pela etapa da sequência de tarefas **Capturar as configurações do Windows** .  
 
-##  <a name="BKMK_AutoApplyDrivers"></a>自动应用驱动程序  
- 使用“自动应用驱动程序”任务序列步骤匹配驱动程序，并将其作为操作系统部署的一部分进行安装。  
+##  <a name="BKMK_AutoApplyDrivers"></a> Drivers de Aplicação Automática  
+ Use a etapa da sequência de tarefas **Aplicação automática de drivers** para corresponder e instalar drivers como parte da implantação de sistema operacional.  
 
- “自动应用驱动程序”任务序列步骤执行以下操作：  
+ A etapa da sequência de tarefas **Aplicação automática de drivers** executa as seguintes ações:  
 
-1.  扫描硬件并为系统上存在的所有设备查找即插即用 ID。  
+1.  Verifica o hardware e localiza os IDs Plug-and-Play para todos os dispositivos presentes no sistema.  
 
-2.  将设备列表以及设备的即插即用 ID 发送到管理点。 管理点从驱动程序目录中为每个设备返回兼容的驱动程序的列表。 无论驱动程序可能位于哪个驱动程序包，管理点都将对所有驱动程序进行考虑。 只考虑标记有指定驱动程序类别和未标记为“已禁用”的驱动程序。  
+2.  Envia a lista de dispositivos e seus IDs de Plug-and-Play para o ponto de gerenciamento. O ponto de gerenciamento retorna uma lista de drivers compatíveis do catálogo de drivers para cada dispositivo. O ponto de gerenciamento considera todos os drivers, independentemente de qual pacote de driver eles possam estar localizados. Somente os drivers marcados com a categoria de driver especificada e os drivers que não são marcados como desabilitados são considerados.  
 
-3.  对于每个设备，客户端会挑选出适合于正在部署该设备的操作系统并位于可访问的分发点上的最佳驱动程序。  
+3.  Para cada dispositivo, o cliente seleciona o melhor driver apropriado para o sistema operacional no qual ele está sendo implantado e em um ponto de distribuição acessível.  
 
-4.  选定的一个或多个驱动程序将从分发点下载，并在目标操作系统上暂存。  
+4.  O driver ou drivers selecionados são baixados de um ponto de distribuição e preparados em sistema operacional de destino.  
 
-    1.  对于基于映像的安装，驱动程序放置在操作系统的驱动程序存储中。  
+    1.  Para instalações baseadas em imagem, os drivers são colocados no repositório de drivers do sistema operacional.  
 
-    2.  对于基于安装程序的安装，Windows 安装程序通过查找驱动程序的位置来进行配置。  
+    2.  Para instalações diretas, a Instalação do Windows é configurada com o local onde encontrar os drivers.  
 
-5.  当 “安装 Windows 和 ConfigMgr”任务序列操作运行且 Windows 首次启动时，它将查找由此操作暂存的驱动程序。  
+5.  Quando a ação da sequência de tarefas **Instalação do Windows e ConfigMgr** é executada e o Windows é inicializado pela primeira vez, ele encontrará os drivers configurados por esta ação.  
 
 > [!IMPORTANT]
->  不能将“自动应用驱动程序”任务序列步骤与独立媒体配合使用，因为 Windows 安装程序将不具有到 Configuration Manager 站点的连接。
+>  A etapa da sequência de tarefas **Drivers de Aplicação Automática** não pode ser usada com mídia autônoma porque a instalação do Windows não terá nenhuma conexão com o site do Configuration Manager.
 
-此任务序列步骤仅可在 Windows PE 中运行。 不能在标准操作系统中运行。 有关此操作的任务序列变量的详细信息，请参阅 [Auto Apply Drivers Task Sequence Action Variables](task-sequence-action-variables.md#BKMK_AutoApplyDrivers)。  
+Essa etapa de sequência de tarefas é executada somente no Windows PE. Ela não é executada em um sistema operacional padrão. Para obter mais informações sobre as variáveis de sequência de tarefas para esta ação, veja [Auto Apply Drivers Task Sequence Action Variables](task-sequence-action-variables.md#BKMK_AutoApplyDrivers).  
 
-### <a name="details"></a>详细信息  
- 在此步骤的“属性”  选项卡上，可以配置此部分描述的设置。  
+### <a name="details"></a>Detalhes  
+ Na guia **Propriedades** desta etapa, você pode definir as configurações descritas nesta seção.  
 
- 此外，使用“选项”  选项卡可执行以下操作：  
+ Além disso, use a guia **Opções** guia para executar as seguintes ações:  
 
--   禁用该步骤。  
+-   Desabilitar a etapa.  
 
--   指定在运行该步骤时若出现错误，任务序列是否继续。  
+-   Especificar se a sequência de tarefas continuará se ocorrer um erro ao executar a etapa.  
 
--   指定运行步骤必须满足的条件。  
+-   Especificar condições que devem ser atendidas para a etapa a ser executada.  
 
- **Name**  
- 描述此步骤所采取操作的用户定义的短名。  
+ **Nome**  
+ Um nome curto definido pelo usuário que descreve a ação realizada nesta etapa.  
 
- **描述**  
- 有关此步骤所采取操作的更详细信息。  
+ **Descrição**  
+ Informações mais detalhadas sobre a ação realizada nesta etapa.  
 
- **仅安装最匹配的兼容驱动程序**  
- 指定任务序列步骤为检测到的每个硬件设备仅安装最匹配的驱动程序。  
+ **Instalar apenas os drivers compatíveis que mais correspondam**  
+ Especifica que a etapa de sequência de tarefas instala apenas o melhor driver correspondente a cada dispositivo de hardware detectado.  
 
- **安装所有兼容的驱动程序**  
- 指定任务序列步骤为检测到的每个硬件设备安装所有兼容的驱动程序并允许 Windows 安装程序选择最适合的驱动程序。 因为此选项会下载更多的驱动程序，所以它会占用更多的网络带宽和磁盘空间，但可以选取到更适合的驱动程序。  
+ **Instalar todos os drivers compatíveis**  
+ Especifica que a etapa de sequência de tarefas instala todos os drivers compatíveis para cada dispositivo de hardware detectado e permite à instalação do Windows escolher o melhor driver. Essa opção ocupa mais espaço em disco e largura de banda de rede porque baixa mais drivers, mas pode resultar na seleção de um melhor driver.  
 
- **考虑所有类别的驱动程序**  
- 指定任务序列操作搜索适当设备驱动程序的所有可用驱动程序类别。  
+ **Considerar os drivers de todas as categorias**  
+ Especifica que a ação da sequência de tarefas pesquisa todas as categorias de driver disponíveis para os drivers de dispositivo apropriados.  
 
- **将驱动程序匹配限制为仅考虑所选类别的驱动程序**  
- 指定任务序列操作在适当设备驱动程序的指定驱动程序类别中搜索设备驱动程序。  
+ **Limitar a correspondência de driver para considerar somente os drivers nas categorias selecionadas**  
+ Especifica que a ação de sequência de tarefa procura por drivers de dispositivo em categorias de drivers específicas para os drivers de dispositivo apropriados.  
 
- **在 Windows 版本上对未签名的驱动程序执行允许的无人参与安装**  
- 允许此任务序列操作安装未签名的 Windows 设备驱动程序。  
+ **Fazer instalação autônoma de drivers não assinados em versões do Windows, onde permitido**  
+ Permite que essa ação de sequência de tarefas instale drivers de dispositivo não assinados do Windows.  
 
 > [!IMPORTANT]  
->  此选项不适用于不能配置驱动程序签名策略的操作系统。  
+>  Essa opção não se aplica aos sistemas operacionais onde a política de assinatura de driver não pode ser configurada.  
 
-##  <a name="BKMK_CaptureNetworkSettings"></a>捕获网络设置  
- 使用“捕获网络设置”任务序列步骤从运行该任务序列的计算机捕获 Microsoft 网络设置。 这些设置保存在任务序列变量中，将替代在“应用网络设置”任务序列步骤中配置的默认设置。  
+##  <a name="BKMK_CaptureNetworkSettings"></a> Capturar configurações da rede  
+ Use a etapa da sequência de tarefas **Capturar as configurações de rede** para capturar as configurações de rede da Microsoft no computador que executa a sequência de tarefas. As configurações são salvas em variáveis de sequência de tarefas que substituirão as configurações padrão definidas na etapa da sequência de tarefas **Aplicar configurações de rede** .  
 
- 此任务序列步骤仅可在标准操作系统中运行。 不可在 Windows PE 中运行。 有关此操作的任务序列变量的详细信息，请参阅 [Capture Network Settings Task Sequence Action Variables](task-sequence-action-variables.md#BKMK_CaptureNetworkSettings)。  
+ Essa etapa só é executada em um sistema operacional padrão. Ela não é executada no Windows PE. Para obter mais informações sobre as variáveis de sequência de tarefas para esta ação, veja [Capture Network Settings Task Sequence Action Variables](task-sequence-action-variables.md#BKMK_CaptureNetworkSettings).  
 
-### <a name="details"></a>详细信息  
- 在此步骤的“属性”  选项卡上，可以配置此部分描述的设置。  
+### <a name="details"></a>Detalhes  
+ Na guia **Propriedades** desta etapa, você pode definir as configurações descritas nesta seção.  
 
- 此外，使用“选项”  选项卡可执行以下操作：  
+ Além disso, use a guia **Opções** guia para executar as seguintes ações:  
 
--   禁用该步骤。  
+-   Desabilitar a etapa.  
 
--   指定在运行该步骤时若出现错误，任务序列是否继续。  
+-   Especificar se a sequência de tarefas continuará se ocorrer um erro ao executar a etapa.  
 
--   指定运行步骤必须满足的条件。  
+-   Especificar condições que devem ser atendidas para a etapa a ser executada.  
 
- **Name**  
- 指定描述此步骤中执行的操作的用户定义的短名。  
+ **Nome**  
+ Especifica um nome curto definido pelo usuário que descreve a ação realizada nesta etapa.  
 
- **描述**  
- 提供有关在此步骤中执行的操作的更详细信息。  
+ **Descrição**  
+ Fornece informações mais detalhadas sobre a ação realizada nesta etapa.  
 
- **迁移域和工作组成员身份**  
- 捕获目标计算机的域和工作组成员身份信息。  
+ **Migrar associação de domínio e grupo de trabalho**  
+ Captura as informações de associação de domínio e grupo de trabalho do computador de destino.  
 
- **迁移网络适配器配置**  
- 捕获目标计算机的网络适配器配置。 捕获的信息包括全局网络设置、适配器数量以及与每个适配器关联的网络设置。 这些设置包括与 DNS、WINS、IP 和端口筛选器关联的设置。  
+ **Migrar configuração do adaptador de rede**  
+ Captura a configuração do adaptador de rede do computador de destino. As informações capturadas incluem as configurações de rede global, o número de adaptadores e as configurações de rede associadas a cada adaptador. Essas configurações incluem as configurações associadas com DNS, WINS, IP e filtros de porta.  
 
-##  <a name="BKMK_CaptureOperatingSystemImage"></a>捕获操作系统映像  
- 使用“捕获操作系统映像”任务序列步骤可从引用计算机捕获一个或多个映像，并将它们存储在指定网络共享上的 WIM 文件中。 随后可以使用添加操作系统映像包向导将此 .WIM 文件导入 Configuration Manager 中，以便它可用于基于映像的操作系统部署。  
+##  <a name="BKMK_CaptureOperatingSystemImage"></a> Capturar imagem do sistema operacional  
+ Use a etapa da sequência de tarefas **Capturar imagem do sistema operacional** para capturar imagens de um ou mais computadores de referência e armazená-las em um arquivo WIM no compartilhamento de rede especificado. O Assistente de Adição do Pacote de Imagem de Sistema Operacional poderá ser usado para importar este arquivo .WIM para o Configuration Manager para que ele possa ser usado para implantações de sistema operacional baseadas em imagem.  
 
- 引用计算机上的每个卷（驱动器）是作为 .wim 文件中的单独映像捕获的。 如果引用计算机有多个卷，则生成的 WIM 文件对于每个卷将包含单独的映像。 仅捕获格式化为 NTFS 或 FAT32 的卷。 其他格式的卷和 USB 卷会被忽略。  
+ Cada volume (unidade) no computador de referência é capturado como uma imagem separada dentro do arquivo. wim. Se o computador de referência tiver vários volumes, o arquivo WIM resultante conterá uma imagem separada para cada volume. Apenas volumes formatados como NTFS ou FAT32 são capturados. Volumes com outros formatos e USB são ignorados.  
 
- 引用计算机上安装的操作系统必须是 Configuration Manager 支持的 Windows 版本，并且必须是使用 SysPrep 工具进行准备的。 安装的操作系统卷和启动卷必须是相同的卷。  
+ O sistema operacional instalado no computador de referência deve ser uma versão do Windows que tenha suporte pelo Configuration Manager e deve ter sido preparada usando a ferramenta SysPrep. O volume do sistema operacional instalado e o volume de inicialização devem ser o mesmo volume.  
 
- 你还必须输入对你所选择的网络共享具有写入权限的 Windows 帐户。  
+ Você também deve inserir uma conta do Windows que tenha permissões de gravação ao compartilhamento de rede que você selecionou.  
 
- 此任务序列步骤仅可在 Windows PE 中运行。 不能在标准操作系统中运行。 有关此操作的任务序列变量的详细信息，请参阅 [Capture Operating System Image Task Sequence Action Variables](task-sequence-action-variables.md#BKMK_CaptureOperatingSystemImage)。  
+ Essa etapa de sequência de tarefas é executada somente no Windows PE. Ela não é executada em um sistema operacional padrão. Para obter mais informações sobre as variáveis de sequência de tarefas para esta ação, veja [Capture Operating System Image Task Sequence Action Variables](task-sequence-action-variables.md#BKMK_CaptureOperatingSystemImage).  
 
-### <a name="details"></a>详细信息  
- 在此步骤的“属性”  选项卡上，可以配置此部分描述的设置。  
+### <a name="details"></a>Detalhes  
+ Na guia **Propriedades** desta etapa, você pode definir as configurações descritas nesta seção.  
 
- 此外，使用“选项”  选项卡可执行以下操作：  
+ Além disso, use a guia **Opções** guia para executar as seguintes ações:  
 
--   禁用该步骤。  
+-   Desabilitar a etapa.  
 
--   指定在运行该步骤时若出现错误，任务序列是否继续。  
+-   Especificar se a sequência de tarefas continuará se ocorrer um erro ao executar a etapa.  
 
--   指定运行步骤必须满足的条件。  
+-   Especificar condições que devem ser atendidas para a etapa a ser executada.  
 
- **Name**  
- 描述此步骤所采取操作的用户定义的短名。  
+ **Nome**  
+ Um nome curto definido pelo usuário que descreve a ação realizada nesta etapa.  
 
- **描述**  
- 有关此步骤所采取操作的更详细信息。  
+ **Descrição**  
+ Informações mais detalhadas sobre a ação realizada nesta etapa.  
 
- **目标**  
- Configuration Manager 在存储捕获的操作系统映像时使用的位置的文件系统路径名。  
+ **Destino**  
+ Nome do caminho do sistema de arquivos para o local que o Configuration Manager usa ao armazenar a imagem capturada do sistema operacional.  
 
- **描述**  
- .WIM 文件中存储的捕获的操作系统映像的用户定义的描述（可选）。  
+ **Descrição**  
+ Uma descrição opcional definida pelo usuário da imagem capturada do sistema operacional que é armazenada no arquivo .WIM.  
 
- **版本**  
- 向捕获的操作系统映像分配的用户定义的版本号（可选）。 此值可以是字母和数字的任意组合，存储在 .WIM 文件中。  
+ **Versão**  
+ Um número de versão opcional definido pelo usuário para atribuir a imagem capturada do sistema operacional. Esse valor pode ser qualquer combinação de letras e números e é armazenado no arquivo .WIM.  
 
- **创建者**  
- 创建操作系统映像的用户的可选名称，存储在 WIM 文件中。  
+ **Criado por**  
+ O nome opcional do usuário que criou a imagem do sistema operacional e é armazenado no arquivo WIM.  
 
- **捕获操作系统映像帐户**  
- 你必须输入对你指定的网络共享具有访问权限的 Windows 帐户。 单击“设置”以指定该 Windows 帐户的名称。  
+ **Capture operating system image account (Capturar conta de imagem do sistema operacional)**  
+ Você deve inserir a conta do Windows que tenha permissões para a rede a compartilhar especificada. Clique em **Definir** para especificar o nome dessa conta do Windows.  
 
-##  <a name="BKMK_CaptureUserState"></a>捕获用户状态  
- 使用“捕获用户状态”任务序列步骤来通过用户状态迁移工具 (USMT) 从运行该任务序列的计算机捕获用户状态和设置。 此任务序列步骤与“还原用户状态”任务序列步骤一起使用。 通过 USMT 3.0.1 和更高版本，此选项始终使用由 Configuration Manager 生成并管理的加密密钥加密 USMT 状态存储。  
+##  <a name="BKMK_CaptureUserState"></a> Capturar Estado do Usuário  
+ Use a etapa da sequência de tarefas **Capturar estado do usuário** para usar a ferramenta de migração de estado do usuário (USMT) para capturar o estado do usuário e configurações do computador que executa a sequência de tarefas. Essa etapa de sequência de tarefas é usada em conjunto com a etapa da sequência de tarefas **Restaurar o estado do usuário** . Com o USMT 3.0.1 e posterior, essa opção sempre criptografa o armazenamento de estado do USMT usando uma chave de criptografia geradas e gerenciadas por Configuration Manager.  
 
- 有关部署操作系统时管理用户状态的详细信息，请参阅[管理用户状态](../get-started/manage-user-state.md)。  
+ Para mais informações sobre como gerenciar o estado do usuário ao implantar sistemas operacionais, confira [Gerenciar o estado do usuário](../get-started/manage-user-state.md).  
 
- 如果要将状态设置保存到 Configuration Manager 站点中的状态迁移点或从其还原设置，还可将“捕获用户状态”任务序列步骤与“请求状态存储”和“发布状态存储”任务序列步骤一起使用。  
+ Você também poderá usar a etapa da sequência de tarefas **Capturar Estado do Usuário** com as etapas **Solicitar Armazenamento de Estado** e **Liberar Armazenamento de Estado** se quiser salvar as configurações de estado ou restaurar as configurações de um ponto de migração de estado no site do Configuration Manager.  
 
- “捕获用户状态”任务序列步骤提供对最常用 USMT选项的受限子网的控制。 其他命令行选项可使用 OSDMigrateAdditionalCaptureOptions 任务序列变量指定。  
+ A etapa da sequência de tarefas **Capturar estado do usuário** fornece controle sobre um subconjunto limitado dos mais opções mais usadas do USMT. Opções de linha de comando adicionais podem ser especificadas usando a variável de sequência de tarefas OSDMigrateAdditionalCaptureOptions.  
 
- 此任务序列步骤仅可在 Windows PE 中运行。 不能在标准操作系统中运行。 有关此操作的任务序列变量的详细信息，请参阅 [Capture User State Task Sequence Action Variables](task-sequence-action-variables.md#BKMK_CaptureUserState)。  
+ Essa etapa de sequência de tarefas é executada somente no Windows PE. Ela não é executada em um sistema operacional padrão. Para obter mais informações sobre as variáveis de sequência de tarefas para esta ação, veja [Capture User State Task Sequence Action Variables](task-sequence-action-variables.md#BKMK_CaptureUserState).  
 
-### <a name="details"></a>详细信息  
- 在此步骤的“属性”  选项卡上，可以配置此部分描述的设置。  
+### <a name="details"></a>Detalhes  
+ Na guia **Propriedades** desta etapa, você pode definir as configurações descritas nesta seção.  
 
- 此外，使用“选项”  选项卡可执行以下操作：  
+ Além disso, use a guia **Opções** guia para executar as seguintes ações:  
 
--   禁用该步骤。  
+-   Desabilitar a etapa.  
 
--   指定在运行该步骤时若出现错误，任务序列是否继续。  
+-   Especificar se a sequência de tarefas continuará se ocorrer um erro ao executar a etapa.  
 
--   指定运行步骤必须满足的条件。  
+-   Especificar condições que devem ser atendidas para a etapa a ser executada.  
 
- **Name**  
- 描述此步骤所采取操作的用户定义的短名。  
+ **Nome**  
+ Um nome curto definido pelo usuário que descreve a ação realizada nesta etapa.  
 
- **描述**  
- 有关此步骤所采取操作的更详细信息。  
+ **Descrição**  
+ Informações mais detalhadas sobre a ação realizada nesta etapa.  
 
- **用户状态迁移工具包**  
- 输入包含 USMT 版本的 Configuration Manager 包，供此任务序列步骤在捕获用户状态和设置时使用。 此包不需要程序。 当任务序列步骤运行时，任务序列将使用指定的包中的 USMT 版本。 根据你正在捕获其状态的操作系统的体系结构，指定包含 32 位或 x64 版本的 USMT 的包。  
+ **Pacote da ferramenta de migração do usuário**  
+ Insira o pacote do Configuration Manager que contém a versão do USMT para essa etapa de sequência de tarefas para usar durante a captura de estado do usuário e suas configurações. Este pacote não exige um programa. Quando a etapa da sequência de tarefas é executada, a sequência de tarefas usará a versão da USMT no pacote que você especificar. Especifique um pacote contendo a versão 32 bits ou x64 do USMT de acordo com a arquitetura do sistema operacional do qual você está capturando o estado.  
 
- **使用标准选项捕获所有用户配置文件**  
- 选择此选项以迁移所有用户配置文件信息。 默认情况下选择此选项。  
+ **Capture all user profiles with standard options (Capturar todos os perfis de usuário com opções padrão)**  
+ Selecione esta opção para migrar todas as informações de perfil do usuário. Essa opção é habilitada por padrão.  
 
- 如果选择此选项，但不在“还原用户状态”任务序列步骤中选择“还原本地计算机用户配置文件”选项，则任务序列将失败，因为 Configuration Manager 不能在未向新用户帐户分配密码的情况下迁移它们。 此外，如果你使用新建任务序列向导并创建了一个任务序列以安装现有映像包，则结果任务序列将默认为“使用标准选项捕获所有用户配置文件”，但是不会选择“还原本地计算机用户配置文件”选项（即非域帐户）。  
+ Se você selecionar essa opção, mas não selecionar a opção de Restaurar perfis de usuário do computador local na etapa da sequência de tarefas Restaurar Estado do Usuário, a sequência de tarefas falhará porque o Configuration Manager não migrará as novas contas sem atribuir senhas a elas. Além disso, se você usar o assistente de **Nova sequência de tarefas** e criar uma sequência de tarefas para **Instalar um pacote de imagem existente**, a sequência de tarefas resultante por padrão irá Capturar todos os perfis de usuário com opções padrão, mas não selecionará a opção de Restaurar perfis de usuário do computador local (ou seja, contas de fora do domínio).  
 
- 选择“还原本地计算机用户配置文件”，并为要迁移的帐户提供密码。 在手动创建的任务序列中，此设置可在“还原用户状态”步骤下找到。 在由新建任务序列向导创建的任务序列中，可在步骤“还原用户文件和设置”向导页面下方找到此设置。  
+ Selecione **Restaurar perfis de usuário do computador local** e forneça uma senha para a conta a ser migrada. Em uma sequência de tarefas criadas manualmente, essa configuração é encontrada na etapa Restaurar estado do usuário. Em uma sequência de tarefas criada pelo assistente **Nova sequência de tarefas** , essa configuração se encontra na página do assistente **Restaurar arquivos e configurações do usuário** .  
 
- 如果没有本地用户帐户，此方法不适用。  
+ Se você não tiver nenhuma conta de usuário local, isso não se aplica.  
 
- **自定义如何捕获用户配置文件**  
- 选择此选项以指定自定义配置文件迁移。 单击“文件”以选择 USMT 要在此步骤中使用的配置文件。 你必须指定一个 custom .xml 文件，该文件包含定义要迁移的用户状态文件的规则。  
+ **Personalizar o modo como perfis de usuários são capturados**  
+ Selecione esta opção para especificar uma migração de arquivo de perfil personalizado. Clique em **Arquivos** para selecionar os arquivos de configuração do USMT a serem usados com esta etapa. Você deve especificar um arquivo .xml personalizado que contém regras que definem os arquivos de estado do usuário para migrar.  
 
- **单击此处选择配置文件**  
- 选择此选项以便在想要用于捕获用户配置文件的 USMT 包中选择配置文件。 单击“文件”按钮以启动“配置文件”对话框。 要指定配置文件，请在“文件名”行中输入文件名称并单击“添加”按钮。  
+ **Clique aqui para selecionar os arquivos de configuração:**  
+ Selecione esta opção para selecionar os arquivos de configuração do pacote da USMT que deseja usar para capturar os perfis de usuário. Clique no botão **Arquivos** para abrir a caixa de diálogo **Arquivos de configuração** . Para especificar um arquivo de configuração, insira o nome do arquivo na linha **Nome do arquivo** e clique no botão **Adicionar** .  
 
- **启用详细日志记录**  
- 启用此选项以生成更详细的日志文件信息。 当捕获状态时，将生成日志 Scanstate.log 并默认存储在 \windows\system32\ccm\logs 文件夹的任务序列日志文件夹中。  
+ **Habilitar log detalhado**  
+ Habilite esta opção para gerar informações de arquivo de log mais detalhadas. Durante a captura de estado, o Scanstate.log é gerado e armazenado na pasta de Log de sequência de tarefas na pasta \windows\system32\ccm\logs por padrão.  
 
- **使用加密文件系统跳过文件**  
- 如果你想跳过而不捕获使用加密文件系统 (EFS) 加密的文件（包括配置文件），请启用此选项。 根据操作系统和 USMT 版本，还原后可能无法读取加密文件。 有关详细信息，请参阅 USMT 文档。  
+ **Skip files using encrypted file system (Ignorar arquivos usando o sistema de arquivos criptografados)**  
+ Habilite esta opção se você quiser ignorar capturas de arquivos criptografados com o Sistema de Arquivo Criptografado (EFS), incluindo arquivos de perfil. Dependendo do sistema operacional e a versão do USMT, arquivos criptografados podem não ser lidos após a restauração. Para obter mais informações, consulte a documentação do USMT.  
 
- **使用文件系统访问进行复制**  
- 启用此选项以指定任何以下设置：  
+ **Copiar usando o acesso ao sistema de arquivos**  
+ Habilite esta opção especificar qualquer uma das seguintes configurações:  
 
--   **在无法捕获某些文件时继续：**启用此设置以在无法捕获某些文件时继续迁移过程。 如果禁用此选项，则当无法捕获某个文件时，任务序列步骤将失败。 默认情况下会启用此选项。  
+-   **Continuar se não for possível capturar alguns arquivos**: habilite essa configuração para continuar o processo de migração mesmo que alguns arquivos não possam ser capturados. Se você desabilitar essa opção e um arquivo não puder ser capturado, a etapa da sequência de tarefas falhará. Essa opção é habilitada por padrão.  
 
--   **使用链接而非复制文件的方式在本地捕获：**启用此设置以使用 NTFS 硬链接来捕获文件。  
+-   **Capturar localmente usando links em vez de copiar arquivos**: habilite essa configuração para usar links físicos NTFS para capturar arquivos.  
 
-     有关使用硬链接迁移数据的详细信息，请参阅 [硬链接迁移存储](http://go.microsoft.com/fwlink/p/?LinkId=240222)  
+     Para obter mais informações sobre como migrar dados usando links físicos, consulte [Repositório de migração de link físico](http://go.microsoft.com/fwlink/p/?LinkId=240222)  
 
--   在脱机模式下捕获（仅针对 Windows PE）：启用此设置可在 Windows PE 而不是整个操作系统中捕获用户状态。  
+-   **Capturar em modo offline (somente Windows PE)**: habilite essa configuração para capturar o estado de usuário no Windows PE em vez do sistema operacional completo.  
 
- **使用卷影复制服务 (VSS) 进行捕获**  
- 通过此选项，你可捕获即使锁定由其他应用程序编辑的文件。  
+ **Capture by using Volume Copy Shadow Services (VSS) (Capturar usando o VSS (Serviços de Cópias de Sombra de Volume))**  
+ Essa opção permite capturar arquivos mesmo se eles estiverem bloqueados para edição por outro aplicativo.  
 
-##  <a name="BKMK_CaptureWindowsSettings"></a>捕获 Windows 设置  
- 使用“捕获 Windows 设置”任务序列步骤从运行该任务序列的计算机捕获 Windows 设置。 这些设置保存在任务序列变量中，将替代在“应用 Windows 设置”任务序列步骤中配置的默认设置。  
+##  <a name="BKMK_CaptureWindowsSettings"></a> Capturar Configurações do Windows  
+ Use a etapa da sequência de tarefas **Capturar as configurações do Windows** para capturar as configurações do Windows no computador que executa a sequência de tarefas. As configurações são salvas em variáveis de sequência de tarefas que substituirão as configurações padrão definidas na etapa da sequência de tarefas **Aplicar configurações do Windows** .  
 
- Windows PE 或标准操作系统中均可运行此任务序列步骤。 有关此操作的任务序列变量的详细信息，请参阅 [Capture Windows Settings Task Sequence Action Variables](task-sequence-action-variables.md#BKMK_CaptureWindowsSettings)。  
+ Essa etapa de sequência de tarefas é executada em um sistema operacional padrão ou o Windows PE. Para obter mais informações sobre as variáveis de sequência de tarefas para esta ação, veja [Capture Windows Settings Task Sequence Action Variables](task-sequence-action-variables.md#BKMK_CaptureWindowsSettings).  
 
-### <a name="details"></a>详细信息  
- 在此步骤的“属性”  选项卡上，可以配置此部分描述的设置。  
+### <a name="details"></a>Detalhes  
+ Na guia **Propriedades** desta etapa, você pode definir as configurações descritas nesta seção.  
 
- 此外，使用“选项”  选项卡可执行以下操作：  
+ Além disso, use a guia **Opções** guia para executar as seguintes ações:  
 
--   禁用该步骤。  
+-   Desabilitar a etapa.  
 
--   指定在运行该步骤时若出现错误，任务序列是否继续。  
+-   Especificar se a sequência de tarefas continuará se ocorrer um erro ao executar a etapa.  
 
--   指定运行步骤必须满足的条件。  
+-   Especificar condições que devem ser atendidas para a etapa a ser executada.  
 
- **Name**  
- 描述此步骤所采取操作的用户定义的短名。  
+ **Nome**  
+ Um nome curto definido pelo usuário que descreve a ação realizada nesta etapa.  
 
- **描述**  
- 有关此步骤所采取操作的更详细信息。  
+ **Descrição**  
+ Informações mais detalhadas sobre a ação realizada nesta etapa.  
 
- **迁移计算机名称**  
- 选择此选项以捕获计算机的 NetBIOS 计算机名称。  
+ **Migrar nome do computador**  
+ Selecione esta opção para capturar o nome do computador NetBIOS do computador.  
 
- **迁移注册用户和组织名称**  
- 选择此选项以捕获计算机中已注册的用户和组织名称。  
+ **Migrar nomes de usuário e de organização registrados**  
+ Selecione esta opção para capturar os nomes de usuário e organização registrados do computador.  
 
- **迁移时区**  
- 选择此选项以捕获计算机上的时区设置。  
+ **Migrar fuso horário**  
+ Selecione esta opção para capturar a configuração de fuso horário no computador.  
 
-##  <a name="BKMK_CheckReadiness"></a>检查准备情况  
- 使用“检查准备情况”任务序列步骤验证目标计算机是否满足指定部署必备条件。  
+##  <a name="BKMK_CheckReadiness"></a> Verificar Preparação  
+ Use a etapa da sequência de tarefas **Verificar preparação** para verificar se o computador de destino atende as condições de pré-requisitos de implantação especificadas.  
 
-### <a name="details"></a>详细信息  
- 在此步骤的“属性”  选项卡上，可以配置此部分描述的设置。  
+### <a name="details"></a>Detalhes  
+ Na guia **Propriedades** desta etapa, você pode definir as configurações descritas nesta seção.  
 
- 此外，使用“选项”  选项卡可执行以下操作：  
+ Além disso, use a guia **Opções** guia para executar as seguintes ações:  
 
--   禁用该步骤。  
+-   Desabilitar a etapa.  
 
--   指定在运行该步骤时若出现错误，任务序列是否继续。 对于此步骤，请勿择此设置，否则当检查失败时将只记录准备情况检查而不停止任务序列。  
+-   Especificar se a sequência de tarefas continuará se ocorrer um erro ao executar a etapa. Para esta etapa, não selecione essa configuração ou a etapa registrará apenas as verificações de preparação e não interromperá a sequência de tarefas quando uma verificação falhar.  
 
--   指定运行步骤必须满足的条件。  
+-   Especificar condições que devem ser atendidas para a etapa a ser executada.  
 
- **Name**  
- 描述此步骤所采取操作的用户定义的短名。  
+ **Nome**  
+ Um nome curto definido pelo usuário que descreve a ação realizada nesta etapa.  
 
- **描述**  
- 有关此步骤所采取操作的更详细信息。  
+ **Descrição**  
+ Informações mais detalhadas sobre a ação realizada nesta etapa.  
 
- **确保最小内存 (MB)**  
- 选择此设置，验证安装在目标计算机上的内存量（以兆字节为单位）是否达到或超出指定的量。 默认情况下选择了此设置。  
+ **Assegurar o mínimo de memória (MB)**  
+ Selecione esta configuração para verificar se a quantidade de memória, em megabytes, instalada no computador de destino atende ou excede o valor especificado. Por padrão, essa configuração está selecionada.  
 
- **确保最低处理器速度 (MHz)**  
- 选择此设置，验证安装在目标计算机上的处理器速度（以兆赫 (MHz) 为单位）是否达到或超过指定量。 默认情况下选择了此设置。  
+ **Assegurar o mínimo de velocidade do processador (MHz)**  
+ Selecione esta configuração para verificar se a velocidade do processador em megahertz (MHz) instalada no computador de destino atende ou excede o valor especificado. Por padrão, essa configuração está selecionada.  
 
- **确保最小可用磁盘空间 (MB)**  
- 选择此设置，验证目标计算机上的可用磁盘空间量（以兆字节为单位）是否达到或超过指定量。  
+ **Assegurar o mínimo de espaço livre em disco (MB)**  
+ Selecione esta configuração para verificar se a quantidade de espaço livre em disco, em megabytes, no computador de destino atende ou excede o valor especificado.  
 
- **确保要刷新的当前 OS**  
- 选择此设置，验证目标计算机上安装的操作系统是否满足你指定的要求。 默认情况下，使用值 **CLIENT**选择此设置。  
+ **Assegurar que o SO atual a ser atualizado seja**  
+ Selecione esta configuração para verificar se o sistema operacional instalado no computador de destino atende o requisito que você especificar. Por padrão, essa configuração é selecionada com um valor de **CLIENTe**.  
 
-##  <a name="BKMK_ConnectToNetworkFolder"></a>连接到网络文件夹  
- 使用“连接到网络文件夹”任务序列操作来创建到共享网络文件夹的连接。  
+##  <a name="BKMK_ConnectToNetworkFolder"></a> Conectar à Pasta de Rede  
+ Use a ação da sequência de tarefas **Conectar à pasta de rede** para criar uma conexão com uma pasta de rede compartilhada.  
 
- 标准操作系统或 Windows PE 中均可运行此任务序列步骤。 有关此操作的任务序列变量的详细信息，请参阅 [Connect to Network Folder Task Sequence Action Variables](task-sequence-action-variables.md#BKMK_ConnecttoNetworkFolder)。  
+ Essa etapa de sequência de tarefas é executada em um sistema operacional padrão ou o Windows PE. Para obter mais informações sobre as variáveis de sequência de tarefas para esta ação, veja [Connect to Network Folder Task Sequence Action Variables](task-sequence-action-variables.md#BKMK_ConnecttoNetworkFolder).  
 
-### <a name="details"></a>详细信息  
- 在此步骤的“属性”  选项卡上，可以配置此部分描述的设置。  
+### <a name="details"></a>Detalhes  
+ Na guia **Propriedades** desta etapa, você pode definir as configurações descritas nesta seção.  
 
- 此外，使用“选项”  选项卡可执行以下操作：  
+ Além disso, use a guia **Opções** guia para executar as seguintes ações:  
 
--   禁用该步骤。  
+-   Desabilitar a etapa.  
 
--   指定在运行该步骤时若出现错误，任务序列是否继续。  
+-   Especificar se a sequência de tarefas continuará se ocorrer um erro ao executar a etapa.  
 
--   指定运行步骤必须满足的条件。  
+-   Especificar condições que devem ser atendidas para a etapa a ser executada.  
 
-##  <a name="BKMK_ConvertDisktoDynamic"></a>将磁盘转换为动态磁盘  
- 使用“将磁盘转换为动态磁盘”任务序列步骤将物理磁盘从基本磁盘类型转换为动态磁盘类型。  
+##  <a name="BKMK_ConvertDisktoDynamic"></a> Converter Disco em Dinâmico  
+ Use a etapa da sequência de tarefas **Converter disco em dinâmico** para converter um disco físico de um tipo de disco básico para um tipo de disco dinâmico.  
 
- 标准操作系统或 Windows PE 中均可运行此步骤。 有关此操作的任务序列变量的详细信息，请参阅 [Convert Disk to Dynamic Task Sequence Action Variables](task-sequence-action-variables.md#BKMK_ConvertDisk)。  
+ Esta etapa é executada em um sistema operacional padrão ou no Windows PE. Para obter mais informações sobre as variáveis de sequência de tarefas para esta ação, veja [Convert Disk to Dynamic Task Sequence Action Variables](task-sequence-action-variables.md#BKMK_ConvertDisk).  
 
-### <a name="details"></a>详细信息  
- 在此步骤的“属性”  选项卡上，可以配置此部分描述的设置。  
+### <a name="details"></a>Detalhes  
+ Na guia **Propriedades** desta etapa, você pode definir as configurações descritas nesta seção.  
 
- 此外，使用“选项”  选项卡可执行以下操作：  
+ Além disso, use a guia **Opções** guia para executar as seguintes ações:  
 
--   禁用该步骤。  
+-   Desabilitar a etapa.  
 
--   指定在运行该步骤时若出现错误，任务序列是否继续。  
+-   Especificar se a sequência de tarefas continuará se ocorrer um erro ao executar a etapa.  
 
--   指定运行步骤必须满足的条件。  
+-   Especificar condições que devem ser atendidas para a etapa a ser executada.  
 
- **Name**  
- 描述此步骤所采取操作的用户定义的短名。  
+ **Nome**  
+ Um nome curto definido pelo usuário que descreve a ação realizada nesta etapa.  
 
- **描述**  
- 有关此步骤所采取操作的更详细信息。  
+ **Descrição**  
+ Informações mais detalhadas sobre a ação realizada nesta etapa.  
 
- **磁盘编号**  
- 将被转换的磁盘的物理磁盘编号。  
+ **Número do Disco**  
+ O número do disco físico que será convertido.  
 
-##  <a name="BKMK_DisableBitLocker"></a>禁用 BitLocker  
- 使用“禁用 BitLocker”任务序列步骤可在当前操作系统驱动器或特定驱动器上禁用 BitLocker 加密。 此操作使得密钥保护程序在硬盘驱动器上以明文形式显示，但是不会解密该驱动器的内容。 因此，此操作几乎立刻完成。  
+##  <a name="BKMK_DisableBitLocker"></a> Desabilitar BitLocker  
+ Use a etapa da sequência de tarefas **Desativar BitLocker** para desabilitar a criptografia de BitLocker na unidade do sistema operacional atual ou em uma unidade específica. Essa ação deixa os protetores de chave visíveis em texto não criptografado no disco rígido, mas não descriptografa o conteúdo da unidade. Consequentemente, essa ação é concluída quase instantaneamente.  
 
 > [!NOTE]  
->  BitLocker 驱动器加密提供磁盘卷内容的低级加密。  
+>  A criptografia de unidade de disco BitLocker fornece criptografia de baixo nível do conteúdo de um volume de disco.  
 
- 如果加密了多个驱动器，你必须在任何数据驱动器上禁用 BitLocker，才能在操作系统驱动器上禁用 BitLocker。  
+ Se você tiver várias unidades criptografadas, você deve desabilitar o BitLocker nas unidades de dados antes de desativar o BitLocker na unidade do sistema operacional.  
 
- 此步骤仅可在标准操作系统中运行。 不可在 Windows PE 中运行。  
+ Esta etapa só é executada em um sistema operacional padrão. Ela não é executada no Windows PE.  
 
-### <a name="details"></a>详细信息  
- 在此步骤的“属性”  选项卡上，可以配置此部分描述的设置。  
+### <a name="details"></a>Detalhes  
+ Na guia **Propriedades** desta etapa, você pode definir as configurações descritas nesta seção.  
 
- 此外，使用“选项”  选项卡可执行以下操作：  
+ Além disso, use a guia **Opções** guia para executar as seguintes ações:  
 
--   禁用该步骤。  
+-   Desabilitar a etapa.  
 
--   指定在运行该步骤时若出现错误，任务序列是否继续。  
+-   Especificar se a sequência de tarefas continuará se ocorrer um erro ao executar a etapa.  
 
--   指定运行步骤必须满足的条件。  
+-   Especificar condições que devem ser atendidas para a etapa a ser executada.  
 
- **Name**  
- 指定描述此步骤中执行的操作的用户定义的短名。  
+ **Nome**  
+ Especifica um nome curto definido pelo usuário que descreve a ação realizada nesta etapa.  
 
- **描述**  
- 提供有关在此步骤中执行的操作的更详细信息。  
+ **Descrição**  
+ Fornece informações mais detalhadas sobre a ação realizada nesta etapa.  
 
- **当前操作系统驱动器**  
- 在当前操作系统驱动器上禁用 BitLocker。  
+ **Unidade do sistema operacional atual**  
+ Desabilita o BitLocker na unidade do sistema operacional atual.  
 
- **特定驱动器**  
- 在特定驱动器上禁用 BitLocker。 使用下拉列表指定禁用 BitLocker 的驱动器。  
+ **Unidade específica**  
+ Desabilita o BitLocker em uma unidade específica. Use a lista suspensa para especificar a unidade em que o BitLocker será desabilitado.  
 
-##  <a name="BKMK_DownloadPackageContent"></a>下载包内容  
- 使用“下载包内容”任务序列步骤下载以下任意一种包类型：  
+##  <a name="BKMK_DownloadPackageContent"></a> Baixar o conteúdo do pacote  
+ Use a etapa da sequência de tarefas **Baixar Conteúdo do Pacote** para baixar qualquer um dos seguintes tipos de pacote:  
 
--   操作系统映像  
+-   Imagens do sistema operacional  
 
--   操作系统升级包  
+-   Pacotes de atualização de sistema operacional  
 
--   驱动程序包  
+-   Pacotes de driver  
 
--   包  
+-   Pacotes  
 
- 此步骤适用于任务序列，从而在以下方案中升级操作系统：  
+ Esta etapa funciona bem em uma sequência de tarefas para atualizar um sistema operacional nos seguintes cenários:  
 
--   若要使用可同时用于 x86 平台和 x64 平台的单一升级任务序列。 为了实现这一目的，在“升级准备”组中包括两个“下载包内容”步骤，以及检测客户端体系结构的条件和仅下载相应操作系统升级包的条件。 将每个“下载包内容”步骤配置为使用相同的变量，并将该变量用于“升级操作系统”步骤的媒体路径。  
+-   Para usar uma sequência de tarefas de atualização única que pode funcionar com plataformas x86 e x64. Para fazer isso, inclua duas etapas **Baixar Conteúdo do Pacote** no grupo **Preparar para Atualização** com condições para detectar a arquitetura do cliente e baixar apenas o Pacote de atualização do sistema operacional apropriado. Configure cada etapa **Baixar Conteúdo do Pacote** para usar a mesma variável e use a variável para o caminho de mídia na etapa **Atualizar Sistema Operacional** .  
 
--   若要动态下载适用的驱动程序包，请使用两个“下载包内容”步骤以及检测每个驱动程序包的相应硬件类型的条件。 将每个“下载包内容”步骤配置为使用相同的变量，并将该变量用于“升级操作系统”步骤的驱动程序部分中的“分步内容”值。  
+-   Para baixar um pacote de drivers aplicáveis dinamicamente, use duas etapas **Baixar Conteúdo do Pacote** com condições para detectar o tipo de hardware apropriado para cada pacote de drivers. Configure cada etapa **Baixar Conteúdo do Pacote** para usar a mesma variável e use a variável para o valor **Conteúdo de Teste** na seção de drivers da etapa **Atualizar Sistema Operacional** .  
 
 > [!NOTE]    
-> 在部署包含“下载包内容”步骤的任务序列时，请勿在部署软件向导的“分发点”页上为“部署选项”选择“在启动任务序列之前在本地下载所有内容”。  
+> Quando você implanta uma sequência de tarefas que contém a etapa Baixar Conteúdo do Pacote, não selecione **Baixar todo o conteúdo localmente antes de iniciar a sequência de tarefas** para **Opções de implantação** na página **Pontos de Distribuição** do Assistente de Implantação de Software.  
 
-标准操作系统或 Windows PE 中均可运行此步骤。 但是，WinPE 中不支持将包保存在 Configuration Manager 客户端缓存中选项。
+Esta etapa é executada em um sistema operacional padrão ou no Windows PE. No entanto, a opção para salvar o pacote no cache do cliente do Configuration Manager não tem suporte no WinPE.
 
-### <a name="details"></a>详细信息  
- 在此步骤的“属性”  选项卡上，可以配置此部分描述的设置。  
+### <a name="details"></a>Detalhes  
+ Na guia **Propriedades** desta etapa, você pode definir as configurações descritas nesta seção.  
 
- 此外，使用“选项”  选项卡可执行以下操作：  
+ Além disso, use a guia **Opções** guia para executar as seguintes ações:  
 
--   禁用该步骤。  
+-   Desabilitar a etapa.  
 
--   指定在运行该步骤时若出现错误，任务序列是否继续。  
+-   Especificar se a sequência de tarefas continuará se ocorrer um erro ao executar a etapa.  
 
--   指定运行步骤必须满足的条件。  
+-   Especificar condições que devem ser atendidas para a etapa a ser executada.  
 
- **Name**  
- 指定描述此步骤中执行的操作的用户定义的短名。  
+ **Nome**  
+ Especifica um nome curto definido pelo usuário que descreve a ação realizada nesta etapa.  
 
- **描述**  
- 提供有关在此步骤中执行的操作的更详细信息。  
+ **Descrição**  
+ Fornece informações mais detalhadas sobre a ação realizada nesta etapa.  
 
- “选择包”图标  
- 单击图标以选择要下载的包。 选择包后，可以再次单击图标以选择另一个包。  
+ Ícone**Selecionar pacote**  
+ Clique no ícone para selecionar o pacote que será baixado. Depois de selecionar um pacote, você pode clicar no ícone novamente para escolher outro pacote.  
 
- **置于下列位置**  
- 选择将包保存在下列位置之一：  
+ **Coloque no seguinte local**  
+ Escolha esta opção para salvar o pacote em um dos seguintes locais:  
 
- -   **任务序列工作目录**  
+ -   **Diretório de trabalho da sequência de tarefas**  
 
- -   **Configuration Manager 客户端缓存：**使用此选项可在客户端缓存中存储内容。 使客户端可作为其他对等缓存客户端的对等缓存源。 有关信息，请参阅[准备 Windows PE 对等缓存来减少 WAN 流量](../get-started/prepare-windows-pe-peer-cache-to-reduce-wan-traffic.md)。  
+ -   **Cache do cliente do Configuration Manager**: use esta opção para armazenar o conteúdo no cache dos clientes. Isso permite que o cliente atue como uma fonte de cache de sistemas pares para outros clientes de cache de sistemas pares. Para mais informações, confira [Prepare Windows PE peer cache to reduce WAN traffic](../get-started/prepare-windows-pe-peer-cache-to-reduce-wan-traffic.md) (Preparar o cache par do Windows PE para reduzir o tráfego da WAN).  
 
- -   **自定义路径**  
+ -   **Caminho personalizado**  
 
- **将路径另存为变量**  
- 可以将路径另存为一个可在另一任务序列步骤中使用的变量。 Configuration Manager 向变量名称中添加数字后缀。 例如，如果你指定变量 %*mycontent*% 作为自定义变量，它就是用于存储所有引用内容（可以是多个包）的根目录。 引用该变量时，将向变量添加数字后缀。 例如，对于第一个包，将引用 %*mycontent01*% 变量。 在子序列步骤（如升级操作系统）中引用变量时，将使用 %*mycontent02*% 或 %*mycontent03*%，其中的数字对应步骤中所列出的包的顺序。  
+ **Salvar caminho como uma variável**  
+ Você pode salvar o caminho como uma variável que pode ser usada em outra etapa da sequência de tarefas. O Configuration Manager adiciona um sufixo numérico ao nome da variável. Por exemplo, se você especificar uma variável de %*mycontent*% como uma variável personalizada, essa será a raiz de onde todo o conteúdo referenciado está armazenado (que podem ser vários pacotes). Quando você faz referência à variável, adicionará um sufixo numérico à variável. Por exemplo, para o primeiro pacote, você fará referência à variável %*mycontent01*%. Quando você fizer referência à variável em etapas subsequentes, como uma atualização do sistema operacional, usa %*mycontent02*% ou %*mycontent03*% em que o número corresponde à ordem na qual o pacote está listado na etapa.  
 
- **如果包下载失败，继续下载列表中的其他包**  
- 指定如果包下载失败，将转到列表中的下一个包并开始下载。  
+ **Se o download do pacote falhar, continue baixando outros pacotes na lista**  
+ Especifica que, caso haja falha no download do pacote, será feito o download do próximo pacote da lista.  
 
-##  <a name="BKMK_EnableBitLocker"></a>启用 BitLocker  
- 使用“启用 BitLocker”任务序列步骤在硬盘上的至少两个分区中启用 BitLocker 加密。 第一个活动分区包含 Windows 启动代码。 另一个分区包含操作系统。 启动分区必须保持为未加密状态。  
+##  <a name="BKMK_EnableBitLocker"></a> Habilitar BitLocker  
+ Use a etapa da sequência de tarefas **Habilitar BitLocker** para habilitar a criptografia BitLocker em pelo menos duas partições no disco rígido. A primeira partição ativa contém o código de inicialização do Windows. Outra partição contém o sistema operacional. A partição de inicialização deve permanecer descriptografada.  
 
- 在 Windows PE 中，使用“预设置 BitLocker”任务序列步骤可在驱动器上启用 BitLocker。 有关详细信息，请参阅本主题中的 [预设置 BitLocker](#BKMK_PreProvisionBitLocker) 部分。  
+ Use a etapa **Pré-provisionar o BitLocker** para habilitar o BitLocker em uma unidade no Windows PE. Para obter mais informações, consulte a seção [Pré-provisionar o BitLocker](#BKMK_PreProvisionBitLocker) neste tópico.  
 
 > [!NOTE]  
->  BitLocker 驱动器加密提供磁盘卷内容的低级加密。  
+>  A criptografia de unidade de disco BitLocker fornece criptografia de baixo nível do conteúdo de um volume de disco.  
 
- “启用 BitLocker”步骤只能在标准操作系统中运行。 不可在 Windows PE 中运行。 有关此操作的任务序列变量的详细信息，请参阅 [Enable BitLocker Task Sequence Action Variables](task-sequence-action-variables.md#BKMK_EnableBitLocker)。  
+ A etapa **Habilitar BitLocker** só é executada em um sistema operacional padrão. Ela não é executada no Windows PE. Para obter mais informações sobre as variáveis de sequência de tarefas para esta ação, veja [Enable BitLocker Task Sequence Action Variables](task-sequence-action-variables.md#BKMK_EnableBitLocker).  
 
- 当指定“仅 TPM”、“USB 上的 TPM 和启动密钥”或“TPM 和 PIN”时，受信任的平台模块 (TPM) 必须处于以下状态，然后才能运行“启用 BitLocker”步骤：  
+ O Trusted Platform Module (TPM) deve estar no seguinte estado quando você especificar **Somente TPM**, **TPM e chave de inicialização em USB** ou **TPM e PIN**, antes de executar a etapa **Habilitar BitLocker** :  
 
--   Enabled  
+-   Habilitada  
 
--   已激活  
+-   Ativado  
 
--   允许的所有权  
+-   Propriedade permitida  
 
- 该任务序列步骤可以完成任何剩余的 TPM 初始化，因为剩余步骤不需要物理访问或重新启动。 可以由“启用 BitLocker”（如有必要）透明完成的剩余 TPM 初始化步骤包括：  
+ A etapa de sequência de tarefas pode concluir qualquer inicialização do TPM restante, porque as etapas restantes não exigem reinicializações ou presença física. As etapas de inicialização de TPM restantes que podem ser concluídas de forma transparente por **Habilitar BitLocker** (se necessário) incluem:  
 
--   创建认可密钥对  
+-   Criar um par de chave de endosso  
 
--   创建所有者授权值和 Active Directory 的证书，后者必须已扩展为支持此值  
+-   Criar valor de autorização do proprietário e caução para o Active Directory, que devem ser estendidos para oferecer suporte a esse valor  
 
--   取得所有权  
+-   Apropriar-se  
 
--   创建存储根密钥，或在已存在但不兼容时重置  
+-   Crie a chave de raiz de armazenamento ou redefina-a se existir, mas for incompatível  
 
- 如果希望“启用 BitLocker”步骤等待驱动器加密过程完成再继续任务序列中的下一步，请选择“等待”复选框。 如果你没有选择  “等待”复选框，将在后台中执行驱动器加密过程，且任务序列将立即执行下一个步骤。  
+ Se você quiser que a etapa **Habilitar BitLocker** aguarde até que o processo de criptografia de unidade seja concluído antes de continuar com a próxima etapa na sequência de tarefas, marque a caixa de seleção **Aguardar** . Se você não marcar a caixa de seleção **Aguardar** , o processo de criptografia de unidade será executado em segundo plano e execução de sequência de tarefas continuará imediatamente para a próxima etapa.  
 
- BitLocker 可用于加密单个计算机系统上的多个驱动器（操作系统和数据驱动器）。 要加密数据驱动器，必须已加密操作系统，并且必须完成加密过程，因为数据驱动器的密钥保护程序存储在操作系统驱动器上。 因此，如果你在同一过程中加密操作系统驱动器和数据驱动器，则必须针对为操作系统驱动器启用 BitLocker 的步骤选择等待选项。  
+ O BitLocker pode ser usado para criptografar várias unidades em um sistema de computador (sistema operacional e unidades de dados). Para criptografar uma unidade de dados, o sistema operacional já devem ter sido criptografado e o processo de criptografia deve estar concluído, porque os protetores de chave para as unidades de dados são armazenados na unidade do sistema operacional. Como resultado, se você criptografar a unidade do sistema operacional e a unidade de dados no mesmo processo, a opção de espera deve ser selecionada para a etapa que habilita o BitLocker na unidade do sistema operacional.  
 
- 如果硬盘已加密，但 BitLocker 处于禁用状态，则“启用 BitLocker”会重新启用一个或多个密钥保护程序，并且将立刻完成。 在这种情况下不需要重新加密硬盘。  
+ Se o disco rígido já está criptografado, mas o BitLocker está desabilitado, quando o Habilitar BitLocker habilita novamente o protetor de chave, isso será concluído quase instantaneamente. Nova criptografia da unidade de disco rígida não é necessária neste caso.  
 
- 有关此操作的任务序列变量的详细信息，请参阅 [Enable BitLocker Task Sequence Action Variables](task-sequence-action-variables.md#BKMK_EnableBitLocker)。  
+ Para obter mais informações sobre as variáveis de sequência de tarefas para esta ação, veja [Enable BitLocker Task Sequence Action Variables](task-sequence-action-variables.md#BKMK_EnableBitLocker).  
 
-### <a name="details"></a>详细信息  
- 在此步骤的“属性”  选项卡上，可以配置此部分描述的设置。  
+### <a name="details"></a>Detalhes  
+ Na guia **Propriedades** desta etapa, você pode definir as configurações descritas nesta seção.  
 
- 此外，使用“选项”  选项卡可执行以下操作：  
+ Além disso, use a guia **Opções** guia para executar as seguintes ações:  
 
--   禁用该步骤。  
+-   Desabilitar a etapa.  
 
--   指定在运行该步骤时若出现错误，任务序列是否继续。  
+-   Especificar se a sequência de tarefas continuará se ocorrer um erro ao executar a etapa.  
 
--   指定运行步骤必须满足的条件。  
+-   Especificar condições que devem ser atendidas para a etapa a ser executada.  
 
- **Name**  
- 指定此任务序列步骤的描述性名称。  
+ **Nome**  
+ Especifica um nome descritivo para esta etapa de sequência de tarefas.  
 
- **描述**  
- 允许你选择性地输入此任务序列步骤的描述。  
+ **Descrição**  
+ Permite que você, opcionalmente, insira uma descrição para essa etapa de sequência de tarefas.  
 
- **选择要加密的驱动器**  
- 指定要加密的驱动器。 要加密当前操作系统驱动器，请选择“当前操作系统驱动器”  ，然后配置以下其中一个密钥管理选项：  
+ **Escolher a unidade a ser criptografada**  
+ Especifica a unidade para criptografar. Para criptografar a unidade do sistema operacional atual, selecione **Unidade do sistema operacional atual** e configure as seguintes opções para o gerenciamento de chaves:  
 
--   **仅 TPM：**选择此选项，以仅使用受信任的平台模块 (TPM)。  
+-   **Somente TPM**: selecione esta opção para usar somente o TPM (Trusted Platform Module).  
 
--   **仅 USB 上的启动密钥：**选择此选项以使用存储在 USB 闪存驱动器上的启动密钥。 选择此选项时，BitLocker 将锁定正常启动过程，直至含有 BitLocker 启动密钥的 USB 设备连接到计算机。  
+-   **Chave de inicialização somente em USB**: selecione esta opção para usar uma chave de inicialização armazenada em uma unidade flash USB. Quando você seleciona essa opção, o BitLocker bloqueia o processo normal de inicialização até que um dispositivo USB que contém uma chave de inicialização do BitLocker é anexado ao computador.  
 
--   **TPM 和 USB 上的启动密钥：**选择此选项以使用 TPM 和存储在 USB 闪存驱动器上的启动密钥。 选择此选项时，BitLocker 将锁定正常启动过程，直至含有 BitLocker 启动密钥的 USB 设备连接到计算机。  
+-   **TPM e chave de inicialização em USB**: selecione esta opção para usar o TPM e uma chave de inicialização armazenada em uma unidade flash USB. Quando você seleciona essa opção, o BitLocker bloqueia o processo normal de inicialização até que um dispositivo USB que contém uma chave de inicialização do BitLocker é anexado ao computador.  
 
--   **TPM 和 PIN：**选择此选项以使用 TPM 和个人标识号 (PIN)。 当选择此选项时，BitLocker 将锁定正常启动过程，直至用户提供 PIN。  
+-   **TPM e PIN**: selecione esta opção para usar o TPM e um PIN (número de identificação pessoal). Quando você seleciona essa opção, o BitLocker bloqueia o processo normal de inicialização até que o usuário forneça o PIN.  
 
- 若要对特定非操作系统数据驱动器进行加密，请选择“特定驱动器” ，然后从列表中选择驱动器。  
+ Para criptografar uma unidade de dados específicos e não do sistema operacional, selecione **Unidade específica**e selecione a unidade na lista.  
 
- **选择要创建恢复密钥的位置**  
- 要指定创建恢复密码的位置，请选择“Active Directory 中”  以在 Active Directory 中保存密码。 如果选择此选项，你必须为站点扩展 Active Directory，以便保存关联的 BitLocker 恢复信息。 你可以选择“不创建恢复密钥” 不创建密码。 但最好创建密码。  
+ **Escolher onde criar a chave de recuperação**  
+ Para especificar onde a senha de recuperação é criada, selecione **No Active Directory** para efetuar o caução da senha no Active Directory. Se você selecionar essa opção, deverá estender o Active Directory para o site para que as informações de recuperação do BitLocker associadas sejam salvas. Você pode optar por não criar uma senha selecionando **Não criar a chave de recuperação**. No entanto, a criação de uma senha é uma prática recomendada.  
 
- **等待 BitLocker 完成所有驱动器上的驱动器加密过程之后，继续执行任务序列**  
- 选择此选项以允许在运行任务序列中的下一步骤之前完成 BitLocker 驱动器加密。 如果选择此选项，则在用户能够登录到计算机之前，将对整个磁盘卷加密。  
+ **Aguarde o BitLocker concluir o processo de criptografia de unidade em todas as unidades antes de continuar a execução da sequência de tarefas**  
+ Selecione esta opção para permitir que a criptografia de unidade do BitLocker seja concluída antes de executar a próxima etapa na sequência de tarefas. Se essa opção for selecionada, todo o volume de disco será criptografado antes que o usuário seja capaz de fazer logon computador.  
 
- 加密大型硬盘时，加密过程可能需要数小时才能完成。 不选择此选项将允许立即处理任务序列。  
+ O processo de criptografia pode levar horas para ser concluído quando um disco rígido grande está sendo criptografado. Esta opção não permitirá que a sequência de tarefas continue imediatamente.  
 
-##  <a name="BKMK_FormatandPartitionDisk"></a>格式化磁盘并分区  
- 使用“格式化磁盘并分区”  任务序列步骤对目标计算机上的特定磁盘进行格式化和分区。  
+##  <a name="BKMK_FormatandPartitionDisk"></a> Formatar e Particionar Disco  
+ Use a etapa da sequência de tarefas **Formatar e particionar disco** para formatar e particionar um disco especificado no computador de destino.  
 
 > [!IMPORTANT]  
->  你为此任务序列步骤指定的所有设置均应用于单个特定磁盘。 如果要对目标计算机上的另一个磁盘进行格式化和分区，则必须将其他“格式化磁盘并分区”  任务序列步骤添加到该任务序列。  
+>  Todas as configurações que você especificar para esta etapa se aplicam a um único disco. Se você deseja formatar e particionar outro disco no computador de destino, deverá adicionar uma etapa **Formatar e particionar disco** adicional à sequência de tarefas.  
 
- 此任务序列步骤仅可在 Windows PE 中运行。 不能在标准操作系统中运行。 有关此操作的任务序列变量的详细信息，请参阅 [Format and Partition Disk Task Sequence Action Variables](task-sequence-action-variables.md#BKMK_FormatPartitionDisk)。  
+ Essa etapa de sequência de tarefas é executada somente no Windows PE. Ela não é executada em um sistema operacional padrão. Para obter mais informações sobre as variáveis de sequência de tarefas para esta ação, veja [Format and Partition Disk Task Sequence Action Variables](task-sequence-action-variables.md#BKMK_FormatPartitionDisk).  
 
-### <a name="details"></a>详细信息  
- 在此步骤的“属性”  选项卡上，可以配置此部分描述的设置。  
+### <a name="details"></a>Detalhes  
+ Na guia **Propriedades** desta etapa, você pode definir as configurações descritas nesta seção.  
 
- 此外，使用“选项”  选项卡可执行以下操作：  
+ Além disso, use a guia **Opções** guia para executar as seguintes ações:  
 
--   禁用该步骤。  
+-   Desabilitar a etapa.  
 
--   指定在运行该步骤时若出现错误，任务序列是否继续。  
+-   Especificar se a sequência de tarefas continuará se ocorrer um erro ao executar a etapa.  
 
--   指定运行步骤必须满足的条件。  
+-   Especificar condições que devem ser atendidas para a etapa a ser executada.  
 
- **Name**  
- 描述此步骤所采取操作的用户定义的短名。  
+ **Nome**  
+ Um nome curto definido pelo usuário que descreve a ação realizada nesta etapa.  
 
- **描述**  
- 有关此步骤所采取操作的更详细信息。  
+ **Descrição**  
+ Informações mais detalhadas sobre a ação realizada nesta etapa.  
 
- **磁盘编号**  
- 要进行格式化的磁盘的物理磁盘编号。 该编号取决于 Windows 磁盘枚举排序。  
+ **Número do Disco**  
+ O número do disco físico que será formatado. O número é baseado na ordem de enumeração de disco do Windows.  
 
- **磁盘类型**  
- 格式化的磁盘的类型。 可以从下拉列表中选择两个选项：  
+ **Tipo de Disco**  
+ O tipo de disco que é formatado. Há duas opções para selecionar na lista suspensa:  
 
--   标准 (MBR) - 主启动记录。  
+-   Padrão(MBR) – Registro Mestre de Inicialização.  
 
--   GPT - GUID 分区表  
-
-> [!NOTE]  
->  如果将磁盘类型从“标准 (MBR)”  更改为“GPT” ，并且分区布局包含扩展分区，则所有扩展分区和逻辑分区将从布局中删除。 系统会在更改磁盘类型前提示你确认此操作。  
-
- **卷**  
- 指定有关要创建的分区或卷的信息，包括：  
-
--   Name  
-
--   剩余磁盘空间  
-
- 要创建新的分区，请单击“新建”  以启动“分区属性”  对话框。 你可以指定分区类型和大小，并指定其是否为启动分区。 要修改现有分区，请单击要修改的分区，然后单击“属性”按钮。 有关如何配置硬盘分区的详细信息，请参阅下列其中一个链接：  
-
--   [如何配置基于 UEFI/GPT 的硬盘分区](http://go.microsoft.com/fwlink/?LinkID=272104)  
-
--   [如何配置基于 BIOS/MBR 的硬盘分区](http://go.microsoft.com/fwlink/?LinkId=272105)  
-
- 要删除分区，请选择要删除的分区，然后单击“删除” 。  
-
-##  <a name="BKMK_InstallApplication"></a>安装应用程序  
- 使用“安装应用程序”  任务序列步骤将应用程序作为任务序列的一部分进行安装。 此步骤可以安装任务序列步骤指定或任务序列变量动态列表指定的一组应用程序。 此步骤运行时，应用程序安装会立即开始而不等待策略轮询间隔。  
-
- 安装的应用程序必须满足以下条件：  
-
--   应用程序的部署类型必须是 Windows Installer 或脚本安装程序。 不支持 Windows 应用程序包（.appx 文件）部署类型。  
-
--   它必须在本地系统帐户而非用户帐户下运行。  
-
--   它不得与桌面进行交互。 该程序必须无提示运行或在无人参与模式下运行。  
-
--   它本身不能启动重新启动。 该应用程序必须使用标准的重新启动代码（3010 退出代码）请求重新启动。 此代码可确保任务序列步骤正确地处理重新启动。 如果该应用程序不返回 3010 退出代码，则基础任务序列引擎执行重新启动。 重新启动后，任务序列自动继续。  
-
- 当“安装应用程序”  步骤运行时，应用程序将检查应用程序部署类型的要求规则和检测方法的适用性。 根据此检查的结果，应用程序将安装适用的部署类型。 如果部署类型包含依赖关系，则对该依赖部署类型进行评估并将其作为安装应用程序步骤的一部分进行安装。 独立媒体不支持应用程序依赖关系。  
+-   GGT – Tabela de partição GUID  
 
 > [!NOTE]  
->  要安装取代另一应用程序的应用程序，被取代的应用程序的内容文件必须可用，否则任务序列步骤将失败。 例如，在客户端或捕获的映像中安装 Microsoft Visio 2010。 当运行“安装应用程序”任务序列步骤安装 Microsoft Visio 2013 时，Microsoft Visio 2010（被取代的应用程序）的内容文件必须在分发点上可用，否则该任务序列将失败。 未安装 Microsoft Visio 的客户端或捕获映像将完成 Microsoft Visio 2013 安装，而不会检查 Microsoft Visio 2010 内容文件。  
+>  Se você alterar o tipo de disco de **Padrão (MBR)** para **GPT**e o layout da partição contiver uma partição estendida, todas as partições estendidas e lógicas serão removidas do layout. Você será solicitado a confirmar esta ação antes de alterar o tipo de disco.  
+
+ **Volume**  
+ Informações específicas sobre a partição ou volume que será criado, incluindo o seguinte:  
+
+-   Nome  
+
+-   Espaço restante em disco  
+
+ Para criar uma nova partição, clique em **Novo** para abrir a caixa de diálogo **Propriedades da partição** . Você pode especificar o tipo e tamanho da partição, bem como se esta será uma partição de inicialização. Para modificar uma partição existente, clique na partição a ser modificada e no botão Propriedades. Para obter mais informações sobre como configurar partições de disco rígido, consulte um destes procedimentos:  
+
+-   [Como configurar partições de disco rígido baseadas em UEFI/GGT](http://go.microsoft.com/fwlink/?LinkID=272104)  
+
+-   [Como configurar partições de disco rígido baseado em BIOS/MBR](http://go.microsoft.com/fwlink/?LinkId=272105)  
+
+ Para excluir uma partição, selecione a partição a ser excluída e clique em **Excluir**.  
+
+##  <a name="BKMK_InstallApplication"></a> Instalar Aplicativo  
+ Use a etapa da sequência de tarefa **Instalar aplicativo** para instalar aplicativos como parte da sequência de tarefas. Esta etapa pode instalar um conjunto de aplicativos que são especificados pela etapa de sequência de tarefas ou um conjunto de aplicativos que são especificados por uma lista dinâmica de variáveis de sequência de tarefas. Quando essa etapa é executada, a instalação do aplicativo começa imediatamente sem esperar que um intervalo de sondagem de política.  
+
+ Os aplicativos que são instalados devem atender aos seguintes critérios:  
+
+-   O aplicativo deve ser um tipo de implantação do Windows Installer ou do Instalador de script. Não há suporte para tipos de implantação do pacote do aplicativo Windows (arquivo .appx).  
+
+-   Ele deve executar sob a conta sistema local e não a conta de usuário.  
+
+-   Ele não deve interagir com a área de trabalho. O programa deve ser executado silenciosamente ou em um modo autônomo.  
+
+-   Ele não deve iniciar uma reinicialização por conta própria. O aplicativo deve solicitar uma reinicialização, usando o código de reinicialização padrão, um código de saída 3010. Isso garante que a etapa de sequência de tarefas manipulará corretamente a reinicialização. Se o aplicativo retornar um código de saída 3010, o mecanismo subjacente de sequência de tarefas executará a reinicialização. Após a reinicialização, a sequência de tarefas continua automaticamente.  
+
+ Quando a etapa **Instalar aplicativo** é executada, o aplicativo verifica a aplicabilidade das regras de requisito e método de detecção de tipos de implantação do aplicativo. Com base nos resultados dessa verificação, o aplicativo instala o tipo de implantação aplicável. Se um tipo de implantação contém dependências, o tipo de implantação dependente é avaliado e instalado como parte da etapa de aplicativo de instalação. Dependências de aplicativos não têm suporte para mídia autônoma.  
+
+> [!NOTE]  
+>  Para instalar um aplicativo que substitui outro, os arquivos de conteúdo para o aplicativo substituído devem estar disponíveis ou a etapa de sequência de tarefas falhará. Por exemplo, o Microsoft Visio 2010 é instalado em um cliente ou em uma imagem capturada. Quando a etapa de sequência de tarefas Instalar aplicativo é executada para instalar o Microsoft Visio 2013, os arquivos de conteúdo para o Microsoft Visio 2010 (aplicativo substituído) devem estar disponíveis em um ponto de distribuição ou a sequência de tarefas falhará. Um cliente ou a imagem capturada com o Microsoft Visio instalado concluirá a instalação do Microsoft Visio 2013 sem verificar os arquivos de conteúdo do Microsoft Visio 2010.  
 
 > [!NOTE]
-> 可使用 SMSTSMPListRequestTimeoutEnabled 和 SMSTSMPListRequestTimeout 内置变量来启用和指定任务序列从定位服务检索管理点失败后重新尝试安装应用程序或软件更新之前要等待的毫秒数。 有关详细信息，请参阅[任务序列内置变量](task-sequence-built-in-variables.md)。
+> Você pode usar as variáveis internas SMSTSMPListRequestTimeoutEnabled e SMSTSMPListRequestTimeout para habilitar e especificar quantos milissegundos uma sequência de tarefas espera antes de tentar instalar novamente uma atualização de software ou aplicativo após uma falha ao recuperar a lista de pontos de gerenciamento dos serviços de localização. Para mais informações, confira [Task sequence built-in varliables](task-sequence-built-in-variables.md) (Variáveis internas da sequência de tarefas).
 
- 此任务序列步骤仅可在标准操作系统中运行。 不可在 Windows PE 中运行。  
+ Essa etapa só é executada em um sistema operacional padrão. Ela não é executada no Windows PE.  
 
-### <a name="details"></a>详细信息  
- 在此步骤的“属性”  选项卡上，可以配置此部分描述的设置。  
+### <a name="details"></a>Detalhes  
+ Na guia **Propriedades** desta etapa, você pode definir as configurações descritas nesta seção.  
 
- 此外，使用“选项”  选项卡可执行以下操作：  
+ Além disso, use a guia **Opções** guia para executar as seguintes ações:  
 
--   禁用该步骤。  
+-   Desabilitar a etapa.  
 
--   指定计算机意外重启时重试此步骤。 还可以指定重启后重试的次数。  
+-   Especifique para repetir esta etapa se o computador for reiniciado de forma inesperada. Também é possível especificar a quantidade de vezes da repetição após uma reinicialização.  
 
--   指定在运行该步骤时若出现错误，任务序列是否继续。  
+-   Especificar se a sequência de tarefas continuará se ocorrer um erro ao executar a etapa.  
 
--   指定运行步骤必须满足的条件。  
+-   Especificar condições que devem ser atendidas para a etapa a ser executada.  
 
- **Name**  
- 描述此步骤所采取操作的用户定义的短名。  
+ **Nome**  
+ Um nome curto definido pelo usuário que descreve a ação realizada nesta etapa.  
 
- **描述**  
- 有关此步骤所采取操作的更详细信息。  
+ **Descrição**  
+ Informações mais detalhadas sobre a ação realizada nesta etapa.  
 
- **安装以下应用程序**  
- 此设置指定按照对其指定的顺序进行安装的应用程序。  
+ **Instalar os seguintes aplicativos**  
+ Essa configuração especifica os aplicativos que são instalados na ordem em que foram especificados.  
 
- Configuration Manager 将筛选出任何禁用的或具有以下设置的应用程序。 这些应用程序不会出现在“选择要安装的应用程序”  对话框中。  
+ O Configuration Manager filtrará qualquer aplicativo desabilitado ou com as seguintes configurações. Esses aplicativos não aparecerão na caixa de diálogo **Selecionar aplicativo para instalar** .  
 
--   仅当用户登录时  
+-   Somente quando um usuário tiver efetuado logon  
 
--   使用用户权限运行  
+-   Executar com direitos de usuário  
 
- **根据动态变量列表安装应用程序**  
- 此设置指定为集合或为计算机定义的一组任务序列变量的基本名称。 这些变量指定将为该集合或计算机安装的应用程序。 每个变量名称都由其通用的基名称和一个数字后缀（从 01 开始）组成。 每个变量的值都必须包含应用程序的名称，且没有其他任何内容。  
+ **Instalar aplicativos de acordo com a lista de variáveis dinâmicas**  
+ Essa configuração especifica o nome de base para um conjunto de variáveis de sequência de tarefas que são definidas para uma coleção ou um computador. Essas variáveis especificam os aplicativos que serão instalados para essa coleção ou computador. Cada nome de variável consiste em seu nome de base comum e um sufixo numérico, começando com 01. O valor de cada variável deve conter o nome do aplicativo e nada mais.  
 
- 对于要使用动态变量列表安装的应用程序，必须在应用程序的“属性”对话框中的“常规”选项卡中启用以下设置：“允许通过安装应用程序任务序列操作安装此应用程序，而不是手动部署”  
+ Para os aplicativos a ser instalados usando uma lista de variáveis dinâmicas, a seguinte configuração deve ser habilitada na guia **Geral** da caixa de diálogo **Propriedades** do aplicativo: **Allow this application to be installed from the Install Application task sequence action instead of deploying manually (Permitir que este aplicativo seja instalado da ação de sequência de tarefas instalar aplicativo em vez de implantar manualmente)**  
 
 > [!NOTE]  
->  对于独立媒体部署，无法使用动态变量列表安装应用程序。  
+>  Você não pode instalar aplicativos usando uma lista dinâmica de variável para implantações de mídia autônoma.  
 
- 例如，要使用名为 AA01 的任务序列变量安装单个应用程序，需指定以下变量：  
+ Por exemplo, para instalar um único aplicativo usando uma variável de sequência de tarefas chamada AA01, especifique a seguinte variável:  
 
-|变量名称|变量值：|  
+|Nome da variável|Valor da variável|  
 |-------------------|--------------------|  
 |AA01|Microsoft Office|  
 
- 要安装两个应用程序，需指定以下变量：  
+ Para instalar dois aplicativos, você deve especificar as seguintes variáveis:  
 
-|变量名称|变量值：|  
+|Nome da variável|Valor da variável|  
 |-------------------|--------------------|  
 |AA01|Microsoft Lync|  
 |AA02|Microsoft Office|  
 
- 以下条件将影响安装的东西：  
+ As condições a seguir afetam o que será instalado:  
 
--   如果变量的值中包含应用程序名称之外的其他任何信息。 不安装该应用程序且任务序列继续。  
+-   Se o valor de uma variável contém todas as informações que não seja o nome do aplicativo. Esse aplicativo não está instalado e continua a sequência de tarefas.  
 
--   如果找不到具有指定基本名称和“01”后缀的变量，则不安装应用程序。 在任务序列步骤的“选项”选项卡上选择“出错时继续”时，该任务序列将在应用程序安装失败时继续。 如果未选择该设置，则任务序列失败且不会安装剩余的应用程序。  
+-   Se nenhuma variável com o nome de base especificado e o sufixo "01" for encontrado, nenhum aplicativo será instalado. Quando você seleciona **Continuar em caso de erro** na guia Opções da etapa de sequência de tarefas, a sequência de tarefas continua quando um aplicativo falhar ao instalar. Quando esta configuração não estiver selecionada, a sequência de tarefas falhará e não instalará os aplicativos restantes.  
 
- **如果应用程序失败，继续安装列表中的其他应用程序**  
- 此设置指定在单个应用程序安装失败时该步骤继续。 如果指定了此设置，任务序列将不考虑返回的任何安装错误而继续。 如果未指定此设置，则在安装失败时任务序列将立即终止。  
+ **If an application fails, continue installing other applications in the list (Se um aplicativo falhar, continue a instalar outros aplicativos na lista)**  
+ Essa configuração especifica que a etapa continuará se a instalação de um aplicativo individual falhar. Se essa configuração estiver especificada, a sequência de tarefas continuará independentemente de qualquer erro de instalação que é retornado. Se isso não for especificado e a instalação falhar, a etapa de sequência de tarefas terminará imediatamente.  
 
-##  <a name="BKMK_InstallDeploymentTools"></a>安装部署工具  
- 使用“安装部署工具”任务序列步骤来安装包含 Sysprep 部署工具的 Configuration Manager 包。  
+##  <a name="BKMK_InstallDeploymentTools"></a> Instalar Ferramentas de Implantação  
+ Use a etapa da sequência de tarefas **Instalar Ferramentas de Implantação** para instalar o pacote do Configuration Manager que contém as ferramentas de implantação do Sysprep.  
 
-### <a name="details"></a>详细信息  
- 在此步骤的“属性”  选项卡上，可以配置此部分描述的设置。  
+### <a name="details"></a>Detalhes  
+ Na guia **Propriedades** desta etapa, você pode definir as configurações descritas nesta seção.  
 
- 此外，使用“选项”  选项卡可执行以下操作：  
+ Além disso, use a guia **Opções** guia para executar as seguintes ações:  
 
--   禁用该步骤。  
+-   Desabilitar a etapa.  
 
--   指定在运行该步骤时若出现错误，任务序列是否继续。  
+-   Especificar se a sequência de tarefas continuará se ocorrer um erro ao executar a etapa.  
 
--   指定运行步骤必须满足的条件。  
+-   Especificar condições que devem ser atendidas para a etapa a ser executada.  
 
- **Name**  
- 描述此步骤所采取操作的用户定义的短名。  
+ **Nome**  
+ Um nome curto definido pelo usuário que descreve a ação realizada nesta etapa.  
 
- **描述**  
- 有关此步骤所采取操作的更详细信息。  
+ **Descrição**  
+ Informações mais detalhadas sobre a ação realizada nesta etapa.  
 
- **Sysprep 包**  
- 此设置指定包含以下操作系统的 Sysprep 部署工具的 Configuration Manager 包：  
+ **Pacote Sysprep**  
+ Essa configuração especifica o pacote do Configuration Manager que contém as ferramentas de implantação do Sysprep para os seguintes sistemas operacionais:  
 
 -   Windows XP SP3  
 
@@ -903,566 +903,566 @@ ms.lasthandoff: 08/07/2017
 
 -   Windows Server 2003 SP2  
 
-##  <a name="BKMK_InstallPackage"></a>安装包
+##  <a name="BKMK_InstallPackage"></a> Instalar Pacote
 
- 使用“安装包”  任务序列步骤将软件作为任务序列的一部分进行安装。 此步骤运行时，安装会立即开始而不等待策略轮询间隔。  
+ Use a etapa da sequência de tarefa **Instalar pacote** para instalar software como parte da sequência de tarefas. Quando essa etapa é executada, a instalação começa imediatamente sem esperar que um intervalo de sondagem de política  
 
- 安装的软件必须满足以下条件：  
+ O software a ser instalado deve atender aos seguintes critérios:  
 
--   它必须在本地系统帐户而非用户帐户下运行。  
+-   Ele deve executar sob a conta sistema local e não a conta de usuário.  
 
--   它不应与桌面进行交互。 该程序必须无提示运行或在无人参与模式下运行。  
+-   Ele não deve interagir com a área de trabalho. O programa deve ser executado silenciosamente ou em um modo autônomo.  
 
--   它本身不能启动重新启动。 该软件必须使用标准的重新启动代码（3010 退出代码）请求重新启动。 此代码可确保任务序列步骤正确地处理重新启动。 如果该软件不返回 3010 退出代码，则基础任务序列引擎将执行重新启动。 重新启动后，该任务序列会自动继续。  
+-   Ele não deve iniciar uma reinicialização por conta própria. O software deve solicitar uma reinicialização, usando o código de reinicialização padrão, um código de saída 3010. Isso garante que a etapa de sequência de tarefas manipulará corretamente a reinicialização. Se o software retornar um código de saída 3010, o mecanismo subjacente de sequência de tarefas executará a reinicialização. Após a reinicialização, a sequência de tarefas continua automaticamente.  
 
- 部署操作系统时不支持使用“首先运行其他程序”  选项安装从属程序的程序。 如果为软件启用了“首先运行其他程序”  且其从属程序已在目标计算机上运行，则将运行从属程序且任务序列将继续。 但是，如果从属程序尚未在目标计算机上运行，则任务序列步骤将失败。  
+ Programas que usam a opção **Executar outro programa primeiro** para instalar um programa dependente não são suportados ao implantar um sistema operacional. Se **Executar outro programa primeiro** estiver habilitado para o software e o programa dependente já foi executado no computador de destino, o programa dependente será executado e a sequência de tarefas continuará. No entanto, se o programa dependente ainda não tiver sido executado no computador de destino, a etapa de sequência de tarefas falhará.  
 
 > [!NOTE]  
->  管理中心站点并没有在执行任务序列期间启用软件分发代理所需的必要客户端配置策略。 当你在管理中心站点为任务序列创建独立媒体，而任务序列包含“安装包”  步骤时，CreateTsMedia.log 文件可能会出现以下错误：  
+>  O site de administração central não possui as políticas de configuração de cliente necessárias para habilitar o agente de distribuição de software durante a execução da sequência de tarefas. Quando você cria mídia autônoma para uma sequência de tarefas no site de administração central, e a sequência de tarefas inclui uma etapa **Instalar pacote** , o seguinte erro pode aparecer no arquivo CreateTsMedia.log:  
 >   
 >  `"WMI method SMS_TaskSequencePackage.GetClientConfigPolicies failed (0x80041001)"`  
 >   
->  对于包含“安装包”步骤的独立媒体，必须在启用了软件分发代理的主站点上创建独立媒体，或者，必须在“安装 Windows 和 ConfigMgr”  步骤之后和第一个“安装包”  步骤之前添加一个“运行命令行”  步骤。 “运行命令行”  步骤运行 WMIC 命令，以便在第一个安装包步骤运行之前启用软件分发代理。 可以在“运行命令行”  任务序列步骤中使用以下命令：  
+>  Para mídia autônoma que inclui uma etapa de Instalar Pacote, você deve criar a mídia autônoma em um site primário que possui o agente de distribuição de software habilitado ou adicionar uma etapa de **Executar linha de comando** após a etapa **Configurar Windows e ConfigMgr** e antes da primeira etapa **Instalar pacote** . A etapa **Executar linha de comando** executa como um comando WMIC para habilitar o agente de distribuição de software antes da primeira etapa de Instalar pacote ser executada. Você pode usar o seguinte em sua etapa de sequência de tarefas de **Executar linha de comando** :  
 >   
->  **命令行**：**WMIC /namespace:\\\root\ccm\policy\machine\requestedconfig path ccm_SoftwareDistributionClientConfig CREATE ComponentName="Enable SWDist", Enabled="true", LockSettings="TRUE", PolicySource="local", PolicyVersion="1.0", SiteSettingsKey="1" /NOINTERACTIVE**  
+>  **Linha de comando**: **WMIC /namespace:\\\root\ccm\policy\machine\requestedconfig path ccm_SoftwareDistributionClientConfig CREATE ComponentName="Enable SWDist", Enabled="true", LockSettings="TRUE", PolicySource="local", PolicyVersion="1.0", SiteSettingsKey="1" /NOINTERACTIVE**  
 >   
->  有关创建独立媒体的详细信息，请参阅[创建独立媒体](../deploy-use/create-stand-alone-media.md)。  
+>  Para mais informações sobre como criar mídia autônoma, confira [Create stand-alone media](../deploy-use/create-stand-alone-media.md) (Criar mídia autônoma).  
 
- 此任务序列步骤仅可在标准操作系统中运行。 不可在 Windows PE 中运行。  
+ Essa etapa só é executada em um sistema operacional padrão. Ela não é executada no Windows PE.  
 
-### <a name="details"></a>详细信息  
- 在此步骤的“属性”  选项卡上，可以配置此部分描述的设置。  
+### <a name="details"></a>Detalhes  
+ Na guia **Propriedades** desta etapa, você pode definir as configurações descritas nesta seção.  
 
- 此外，使用“选项”  选项卡可执行以下操作：  
+ Além disso, use a guia **Opções** guia para executar as seguintes ações:  
 
--   禁用该步骤。  
+-   Desabilitar a etapa.  
 
--   指定在运行该步骤时若出现错误，任务序列是否继续。  
+-   Especificar se a sequência de tarefas continuará se ocorrer um erro ao executar a etapa.  
 
--   指定运行步骤必须满足的条件。  
+-   Especificar condições que devem ser atendidas para a etapa a ser executada.  
 
- **Name**  
- 描述此步骤所采取操作的用户定义的短名。  
+ **Nome**  
+ Um nome curto definido pelo usuário que descreve a ação realizada nesta etapa.  
 
- **描述**  
- 有关此步骤所采取操作的更详细信息。  
+ **Descrição**  
+ Informações mais detalhadas sobre a ação realizada nesta etapa.  
 
- **安装单个软件包**  
- 此设置会指定一个 Configuration Manager 软件包。 该步骤要等到安装完成后才开始。  
+ **Instalar um pacote de software único**  
+ Essa configuração especifica um pacote de software do Configuration Manager. A etapa aguardará até que a instalação seja concluída.  
 
- **根据动态变量列表安装软件包**  
- 此设置指定为集合或为计算机定义的一组任务序列变量的基本名称。 这些变量指定将为该集合或计算机安装的包。 每个变量名称都由其通用的基名称和一个数字后缀（从 001 开始）组成。 每个变量的值都必须包含包 ID 和软件名称，以冒号分隔。  
+ **Instalar pacotes de software de acordo com a lista de variáveis dinâmicas**  
+ Essa configuração especifica o nome de base para um conjunto de variáveis de sequência de tarefas que são definidas para uma coleção ou um computador. Essas variáveis especificam os pacotes que serão instalados para essa coleção ou computador. Cada nome de variável consiste em seu nome de base comum e um sufixo numérico, começando com 001. O valor de cada variável deve conter uma ID de pacote e o nome do software separados por dois-pontos.  
 
- 对于要使用动态变量列表安装的软件，必须在包的“属性”对话框中的“高级”选项卡上启用以下设置：“允许在未部署的情况下从安装包任务序列中安装此应用程序”  
+ Para que o software seja instalado usando uma lista de variáveis dinâmicas, a seguinte configuração deve ser habilitada na guia **Avançado** da caixa de diálogo **Propriedades** do pacote: **Permitir que este programa seja instalado da sequência de tarefas de Pacote de Instalação sem ser implantado**  
 
 > [!NOTE]  
->  对于独立媒体部署，无法使用动态变量列表安装软件包。  
+>  Você não pode instalar pacotes de software usando uma lista dinâmica de variável para implantações de mídia autônoma.  
 
- 例如，要使用名为 AA001 的任务序列变量安装单个软件包，需指定以下变量：  
+ Por exemplo, para instalar um único pacote de software usando uma variável de sequência de tarefas chamada AA001, especifique a seguinte variável:  
 
-|变量名称|变量值：|  
+|Nome da variável|Valor da variável|  
 |-------------------|--------------------|  
 |AA001|CEN00054:Install|  
 
- 要安装两三个软件包，需指定以下变量：  
+ Para instalar três pacotes de software, você deve especificar as seguintes variáveis:  
 
-|变量名称|变量值：|  
+|Nome da variável|Valor da variável|  
 |-------------------|--------------------|  
 |AA001|CEN00054:Install|  
 |AA002|CEN00107:Install Silent|  
 |AA003|CEN00031:Install|  
 
- 以下条件将影响安装的东西：  
+ As condições a seguir afetam o que será instalado:  
 
--   如果变量的值未以正确的格式创建，或者未指定有效的应用程序 ID 和名称，则软件安装将失败。  
+-   Se o valor de uma variável não for criado no formato correto ou não especificar uma ID de aplicativo válido e o nome, a instalação do software falhará.  
 
--   如果包 ID 含有小写字符，则该软件的安装将失败。  
+-   Se a ID do pacote contiver caracteres minúsculos, a instalação desse software falhará.  
 
--   如果未找到具有指定基本名称和“001”后缀的变量，将不安装任何软件包而任务序列将继续。  
+-   Se nenhuma variável com o nome de base especificado e o sufixo "001" for encontrado, nenhum pacote será instalado e a sequência de tarefas continuará.  
 
- **如果软件包安装失败，则继续安装列表中的其他包**  
- 此设置指定在单个软件包安装失败时该步骤继续。 如果指定了此设置，任务序列将不考虑返回的任何安装错误而继续。 如果未指定此设置，则在安装失败时任务序列将立即终止。  
+ **Se a instalação de um pacote de software falhar, continue instalando os outros pacotes da lista**  
+ Essa configuração especifica que a etapa continuará se a instalação de um pacote de software individual falhar. Se essa configuração estiver especificada, a sequência de tarefas continuará independentemente de qualquer erro de instalação que é retornado. Se isso não for especificado e a instalação falhar, a etapa de sequência de tarefas terminará imediatamente.  
 
-##  <a name="BKMK_InstallSoftwareUpdates"></a>安装软件更新  
- 使用“安装软件更新”  任务序列在目标计算机上安装软件更新。 在运行此任务序列步骤时，才会评估目标计算机是否有适用的软件更新。 那时，会与其他 Configuration Manager 托管客户端一样评估目标计算机是否有合适的软件更新。 特别是，此步骤只会安装目标为计算机当前所属集合的软件更新。  
+##  <a name="BKMK_InstallSoftwareUpdates"></a> Instalar Atualizações de Software  
+ Use a etapa da sequência de tarefas **Instalar atualizações de software** para instalar atualizações de software no computador de destino. O computador de destino não é avaliado para atualizações de software aplicáveis até que essa etapa de sequência de tarefas seja executada. Nesse momento, o computador de destino é avaliado para atualizações de software como qualquer outro cliente gerenciado pelo Configuration Manager. Em particular, esta etapa instala somente as atualizações de software que são destinadas às coleções dais qual o computador atualmente é um membro.  
 >  [!IMPORTANT]
->使用安装软件更新任务序列步骤时，强烈建议安装最新版的 Windows 更新代理以实现更好的性能。
->* 有关 Windows 7 的信息，请参阅[知识库文章 3161647](https://support.microsoft.com/kb/3161647)。
->* 有关 Windows 8 的信息，请参阅[知识库文章 3163023](https://support.microsoft.com/kb/3163023)。
+>Recomendamos que você instale a versão mais recente do Windows Update Agent para obter um desempenho muito melhor ao usar a etapa da sequência de tarefas Instalar Atualizações de Software.
+>* Para o Windows 7, consulte na [Base de Dados de Conhecimento o artigo 3161647](https://support.microsoft.com/kb/3161647).
+>* Para o Windows 8, consulte na [Base de Dados de Conhecimento o artigo 3163023](https://support.microsoft.com/kb/3163023).
 
- 此任务序列步骤仅可在标准操作系统中运行。 不可在 Windows PE 中运行。 有关此任务序列操作的任务序列变量的信息，请参阅 [Install Software Updates Task Sequence Action Variables](task-sequence-action-variables.md#BKMK_InstallSoftwareUpdates)。
+ Essa etapa só é executada em um sistema operacional padrão. Ela não é executada no Windows PE. Para obter informações sobre variáveis de sequência de tarefas para esta ação da sequência de tarefas, veja [Install Software Updates Task Sequence Action Variables](task-sequence-action-variables.md#BKMK_InstallSoftwareUpdates).
 
  > [!NOTE]
- > 可使用 SMSTSMPListRequestTimeoutEnabled 和 SMSTSMPListRequestTimeout 内置变量来启用和指定任务序列从定位服务检索管理点失败后重新尝试安装应用程序或软件更新之前要等待的毫秒数。 有关详细信息，请参阅[任务序列内置变量](task-sequence-built-in-variables.md)。
+ > Você pode usar as variáveis internas SMSTSMPListRequestTimeoutEnabled e SMSTSMPListRequestTimeout para habilitar e especificar quantos milissegundos uma sequência de tarefas espera antes de tentar instalar novamente uma atualização de software ou aplicativo após uma falha ao recuperar a lista de pontos de gerenciamento dos serviços de localização. Para obter mais informações, consulte [Variáveis internas da sequência de tarefas](task-sequence-built-in-variables.md).
 
 > [!NOTE]
->在“选项”选项卡中，可以将此任务序列配置为在计算机意外重启时重试。 例如，会自动重启计算机的软件更新安装。 从 Configuration Manager 1602 开始，可以配置 SMSTSWaitForSecondReboot 变量以指定在安装软件更新时，重启计算机之后任务序列应暂停的时间长度（以秒为单位）。 有关详细信息，请参阅[任务序列内置变量](task-sequence-built-in-variables.md)。
+>Na guia Opções, você pode configurar esta sequência de tarefas para ser repetida se o computador for reiniciado inesperadamente. Por exemplo, uma instalação de atualização de software que reinicia automaticamente o computador. A partir do Configuration Manager 1602, você pode configurar a variável SMSTSWaitForSecondReboot para especificar por quanto tempo (em segundos) a sequência de tarefas deve pausar após o computador ser reiniciado ao instalar as atualizações de software. Para obter mais informações, consulte [Variáveis internas da sequência de tarefas](task-sequence-built-in-variables.md).
 
-### <a name="details"></a>详细信息  
- 在此步骤的“属性”  选项卡上，可以配置此部分描述的设置。  
+### <a name="details"></a>Detalhes  
+ Na guia **Propriedades** desta etapa, você pode definir as configurações descritas nesta seção.  
 
- 此外，使用“选项”  选项卡可执行以下操作：  
+ Além disso, use a guia **Opções** guia para executar as seguintes ações:  
 
--   禁用该步骤。  
+-   Desabilitar a etapa.  
 
--   指定计算机意外重启时重试此步骤。 还可以指定重启后重试的次数。  
+-   Especifique para repetir esta etapa se o computador for reiniciado de forma inesperada. Também é possível especificar a quantidade de vezes da repetição após uma reinicialização.  
 
--   指定在运行该步骤时若出现错误，任务序列是否继续。  
+-   Especificar se a sequência de tarefas continuará se ocorrer um erro ao executar a etapa.  
 
--   指定运行步骤必须满足的条件。  
+-   Especificar condições que devem ser atendidas para a etapa a ser executada.  
 
- **Name**  
- 描述此步骤所采取操作的用户定义的短名。  
+ **Nome**  
+ Um nome curto definido pelo usuário que descreve a ação realizada nesta etapa.  
 
- **描述**  
- 有关此步骤所采取操作的更详细信息。  
+ **Descrição**  
+ Informações mais detalhadas sobre a ação realizada nesta etapa.  
 
- **安装要求 - 仅必需的软件更新**  
- 选择此选项以为接收任务序列的目标计算机安装在 Configuration Manager 中被标记为必需的所有软件更新。 必需的软件更新具有管理员定义的安装截止时间。  
+ **Necessárias para instalação – somente atualizações de software obrigatórias**  
+ Selecione esta opção para instalar todas as atualizações de software sinalizadas no Configuration Manager como obrigatórias para os computadores de destino que recebem a sequência de tarefas. Atualizações de software obrigatórias têm prazos definidos pelo administrador para a instalação.  
 
- **可供安装 - 所有软件更新**  
- 选择此选项可以安装以将接收任务序列的 Configuration Manager 集合为目标的所有可用软件更新。 所有可用的软件更新都将安装在目标计算机上。  
+ **Disponíveis para instalação – todas as atualizações de software**  
+ Selecione esta opção para instalar todas as atualizações de software disponíveis direcionando a coleção do Configuration Manager que receberá a sequência de tarefas. Todas as atualizações de software disponíveis serão instaladas nos computadores de destino.  
 
- **根据缓存的扫描结果评估软件更新**  
-从 Configuration Manager 版本 1606 开始，可以选择对软件更新执行完全扫描，而不是使用缓存的扫描结果。 默认情况下，任务序列使用缓存的结果。 你可以清除复选框，使客户端连接到软件更新点以处理和下载最新的软件更新目录。 当使用一个任务序列来[捕获和生成操作系统映像](../deploy-use/create-a-task-sequence-to-capture-an-operating-system.md)时，建议选择此选项。因为其中将有大量的软件更新，尤其是许多软件更新都具有依赖关系（需要安装 X 才会在适用情况下显示 Y）。 当清除此设置并将任务序列部署到大量客户端时，它们将同时连接到的软件更新点。 这可能会在目录处理和下载过程中导致性能问题。 在大多数情况下，建议使用默认设置。
+ **Avaliar as atualizações de software dos resultados da varredura em cache**  
+A partir da versão 1606 do Configuration Manager, você tem a opção de fazer uma verificação completa em busca de atualizações de software em vez de usar os resultados da verificação em cache. Por padrão, a sequência de tarefas usa resultados em cache. Você pode desmarcar a caixa de seleção para que o cliente se conecte ao ponto de atualização de software para processar e baixar o catálogo de atualizações de software mais recente. Você pode escolher essa opção quando usar uma sequência de tarefas para [capturar e criar uma imagem de sistema operacional](../deploy-use/create-a-task-sequence-to-capture-an-operating-system.md), em que você sabe que haverá um grande número de atualizações de software, especialmente muitas que têm dependências (é necessário instalar X antes que Y apareça como aplicável). Ao desmarcar essa configuração e implantar a sequência de tarefas em um grande número de clientes, todos eles se conectarão ao ponto de atualização de software ao mesmo tempo. Isso pode resultar em problemas de desempenho durante o processo e o download do catálogo. Na maioria dos casos, é recomendável que você use a configuração padrão.
 
-Configuration Manager 版本 1606 中引入了一个新的任务序列变量 SMSTSSoftwareUpdateScanTimeout，以使你能够控制安装软件更新任务序列步骤中的软件更新扫描的超时时间。 默认值为 30 分钟。 有关详细信息，请参阅[任务序列内置变量](task-sequence-built-in-variables.md)。
+A nova variável de sequência de tarefas, SMSTSSoftwareUpdateScanTimeout, foi introduzida na versão 1606 do Configuration Manager para possibilitar que você controle o tempo limite da verificação de atualizações de software durante a etapa da sequência de tarefas de Instalar atualizações de software. O valor padrão é 30 minutos. Para obter mais informações, consulte [Variáveis internas da sequência de tarefas](task-sequence-built-in-variables.md).
 
 
-##  <a name="BKMK_JoinDomainorWorkgroup"></a>加入域或工作组  
- 使用“加入域或工作组”  任务序列步骤将目标计算机添加到工作组或域中。  
+##  <a name="BKMK_JoinDomainorWorkgroup"></a> Ingressar no Domínio ou Grupo de Trabalho  
+ Use a etapa da sequência de tarefas **Ingressar no domínio ou grupo de trabalho** para adicionar o computador de destino a um grupo de trabalho ou domínio.  
 
- 此任务序列步骤仅可在标准操作系统中运行。 不可在 Windows PE 中运行。 有关此任务序列操作的任务序列变量的信息，请参阅 [Join Domain or Workgroup Task Sequence Action Variables](task-sequence-action-variables.md#BKMK_JoinDomainWorkgroup)。  
+ Essa etapa só é executada em um sistema operacional padrão. Ela não é executada no Windows PE. Para obter informações sobre variáveis de sequência de tarefas para esta ação da sequência de tarefas, veja [Join Domain or Workgroup Task Sequence Action Variables](task-sequence-action-variables.md#BKMK_JoinDomainWorkgroup).  
 
-### <a name="details"></a>详细信息  
- 在此步骤的“属性”  选项卡上，可以配置此部分描述的设置。  
+### <a name="details"></a>Detalhes  
+ Na guia **Propriedades** desta etapa, você pode definir as configurações descritas nesta seção.  
 
- 此外，使用“选项”  选项卡可执行以下操作：  
+ Além disso, use a guia **Opções** guia para executar as seguintes ações:  
 
--   禁用该步骤。  
+-   Desabilitar a etapa.  
 
--   指定在运行该步骤时若出现错误，任务序列是否继续。  
+-   Especificar se a sequência de tarefas continuará se ocorrer um erro ao executar a etapa.  
 
--   指定运行步骤必须满足的条件。  
+-   Especificar condições que devem ser atendidas para a etapa a ser executada.  
 
- **Name**  
- 描述此步骤所采取操作的用户定义的短名。  
+ **Nome**  
+ Um nome curto definido pelo usuário que descreve a ação realizada nesta etapa.  
 
- **描述**  
- 有关此步骤所采取操作的更详细信息。  
+ **Descrição**  
+ Informações mais detalhadas sobre a ação realizada nesta etapa.  
 
- **加入工作组**  
- 选择此选项，使目标计算机加入指定的工作组。 如果计算机当前是某个域的成员，选择此选项将导致计算机重新启动。  
+ **Ingressar no grupo de trabalho**  
+ Selecione esta opção para fazer o computador de destino ingressar no grupo de trabalho especificado. Se o computador atualmente é um membro de um domínio, selecionar esta opção fará com que o computador seja reinicializado.  
 
- **加入域**  
- 选择此选项以将目标计算机加入指定的域。  
+ **Ingressar em um domínio**  
+ Selecione esta opção para fazer o computador de destino ingressar no domínio especificado.  
 
- （可选）在指定的域中输入或浏览查找计算机要加入的组织单位 (OU)。 如果计算机当前是某个其他域或某个工作组的成员，此操作将导致计算机重新启动。 如果计算机已经是某个其他组织单位的成员，Active Directory 域服务不允许你更改组织单位，且此设置将被忽略。  
+ Opcionalmente, digite ou navegue para uma unidade organizacional (UO) no domínio especificado para ingressar o computador. Se o computador atualmente for um membro de algum outro domínio ou grupo de trabalho, isso causará a reinicialização do computador. Se o computador já for um membro de alguma outra OU, o Active Directory Domain Services não permitirá alterar a unidade organizacional e essa configuração será ignorada.  
 
- **输入有权限加入域的帐户**  
- 单击“设置”  以输入有权限加入域的帐户和密码。 帐户必须按下列格式输入：  
+ **Insira a conta que tem permissão para ingressar no domínio**  
+ Clique em **Definir** para inserir uma conta e senha com permissões para ingressar no domínio. A conta deve ser inserida no seguinte formato:  
 
- 域\帐户  
+ *Domínio\conta*  
 
-## <a name="BKMK_PrepareConfigMgrClientforCapture"></a>准备 ConfigMgr 客户端以便捕获  
-使用“准备 ConfigMgr 客户端以便捕获”步骤来删除 Configuration Manager 客户端，或配置引用计算机上的客户端，使其准备在映像化过程中进行捕获。
+## <a name="BKMK_PrepareConfigMgrClientforCapture"></a> Preparar ConfigMgr Client for Capture  
+Use a etapa **Preparar o Cliente do ConfigMgr para Captura** para remover o cliente do Configuration Manager ou configurar o cliente no computador de referência e prepará-lo para captura como parte do processo de geração de imagens.
 
-从 Configuration Manager 版本 1610 开始，“准备 ConfigMgr 客户端”一步将完全删除 Configuration Manager 客户端，而不是仅删除密钥信息。 任务序列每次部署捕获的操作系统映像时，都将安装新的 Configuration Manager 客户端。  
+Com início no Configuration Manager versão 1610, a etapa Preparar o Cliente do ConfigMgr agora removerá completamente o cliente do Configuration Manager, em vez de apenas remover informações importantes. Quando a sequência de tarefas implantar a imagem capturada do sistema operacional, ela instalará um novo cliente do Configuration Manager sempre.  
 
-在 Configuration Manager 版本 1610 之前，此步骤执行以下任务：  
+Antes do Configuration Manager versão 1610, esta etapa executa as seguintes tarefas:  
 
--   从 Windows 目录的 smscfg.ini 文件中删除客户端配置属性部分。 这些属性包括客户端特定信息，如 Configuration Manager GUID 及其他客户端标识符。  
+-   Remove a seção de propriedades de configuração de cliente do arquivo smscfg.ini no diretório do Windows. Essas propriedades incluem informações específicas do cliente incluindo o GUID do Configuration Manager e outros identificadores de cliente.  
 
--   删除所有 SMS 或 Configuration Manager 计算机证书。  
+-   Exclui todos os certificados do computador do SMS ou do Configuration Manager.  
 
--   删除 Configuration Manager 客户端缓存。  
+-   Exclui o cache do cliente do Configuration Manager.  
 
--   清除 Configuration Manager 客户端的已分配的站点变量。  
+-   Apaga a variável de site atribuída ao cliente do Configuration Manager.  
 
--   删除所有本地 Configuration Manager 策略。  
+-   Exclui todas as políticas locais do Configuration Manager.  
 
--   删除 Configuration Manager 客户端的受信任的根变量。  
+-   Remove a chave raiz confiável para o cliente do Configuration Manager.  
 
- 此任务序列步骤仅可在标准操作系统中运行。 不可在 Windows PE 中运行。  
+ Essa etapa só é executada em um sistema operacional padrão. Ela não é executada no Windows PE.  
 
-### <a name="details"></a>详细信息  
- 在此步骤的“属性”  选项卡上，可以配置此部分描述的设置。  
+### <a name="details"></a>Detalhes  
+ Na guia **Propriedades** desta etapa, você pode definir as configurações descritas nesta seção.  
 
- 此外，使用“选项”  选项卡可执行以下操作：  
+ Além disso, use a guia **Opções** guia para executar as seguintes ações:  
 
--   禁用该步骤。  
+-   Desabilitar a etapa.  
 
--   指定在运行该步骤时若出现错误，任务序列是否继续。  
+-   Especificar se a sequência de tarefas continuará se ocorrer um erro ao executar a etapa.  
 
--   指定运行步骤必须满足的条件。  
+-   Especificar condições que devem ser atendidas para a etapa a ser executada.  
 
- **Name**  
- 描述此步骤所采取操作的用户定义的短名。  
+ **Nome**  
+ Um nome curto definido pelo usuário que descreve a ação realizada nesta etapa.  
 
- **描述**  
- 有关此步骤所采取操作的更详细信息。  
+ **Descrição**  
+ Informações mais detalhadas sobre a ação realizada nesta etapa.  
 
-##  <a name="BKMK_PrepareWindowsforCapture"></a>准备 Windows 以便捕获  
- 使用“准备 Windows 以便捕获”  任务序列步骤指定在引用计算机上捕获操作系统映像时要使用的 Sysprep 选项。 此任务序列操作运行 Sysprep，然后将计算机重新启动到为该任务序列指定的 Windows PE 启动映像。 要使此操作成功完成，引用计算机不可加入域。  
+##  <a name="BKMK_PrepareWindowsforCapture"></a> Preparar Windows para Captura  
+ Use a etapa da sequência de tarefas **Preparar o Windows para captura** para especificar as opções do Sysprep a usar ao capturar uma imagem do sistema operacional no computador de referência. Esta ação de sequência de tarefas executa o Sysprep e reinicia o computador na imagem de inicialização do Windows PE especificado para a sequência de tarefas. O computador de referência não deve estar associado a um domínio para essa ação ser concluída com êxito.  
 
- 此任务序列步骤仅可在标准操作系统中运行。 不可在 Windows PE 中运行。 有关此任务序列操作的任务序列变量的信息，请参阅 [Prepare Windows for Capture Task Sequence Action Variables](task-sequence-action-variables.md#BKMK_PrepareWindowsCapture)。  
+ Essa etapa só é executada em um sistema operacional padrão. Ela não é executada no Windows PE. Para obter informações sobre variáveis de sequência de tarefas para esta ação da sequência de tarefas, veja [Prepare Windows for Capture Task Sequence Action Variables](task-sequence-action-variables.md#BKMK_PrepareWindowsCapture).  
 
-### <a name="details"></a>详细信息  
- 在此步骤的“属性”  选项卡上，可以配置此部分描述的设置。  
+### <a name="details"></a>Detalhes  
+ Na guia **Propriedades** desta etapa, você pode definir as configurações descritas nesta seção.  
 
- 此外，使用“选项”  选项卡可执行以下操作：  
+ Além disso, use a guia **Opções** guia para executar as seguintes ações:  
 
--   禁用该步骤。  
+-   Desabilitar a etapa.  
 
--   指定在运行该步骤时若出现错误，任务序列是否继续。  
+-   Especificar se a sequência de tarefas continuará se ocorrer um erro ao executar a etapa.  
 
--   指定运行步骤必须满足的条件。  
+-   Especificar condições que devem ser atendidas para a etapa a ser executada.  
 
- **Name**  
- 描述此步骤所采取操作的用户定义的短名。  
+ **Nome**  
+ Um nome curto definido pelo usuário que descreve a ação realizada nesta etapa.  
 
- **描述**  
- 有关此步骤所采取操作的更详细信息。  
+ **Descrição**  
+ Informações mais detalhadas sobre a ação realizada nesta etapa.  
 
- **自动生成大容量存储驱动程序列表**  
- 选择此选项以便 Sysprep 从引用计算机自动生成大容量存储驱动程序列表。 此选项在引用计算机上的 sysprep.inf 文件中启用“生成大容量存储驱动程序”选项。 有关此设置的详细信息，请参阅 Sysprep 文档。  
+ **Construir lista de drivers de armazenamento em massa automaticamente**  
+ Selecione esta opção para fazer com que o Sysprep crie automaticamente uma lista de drivers de armazenamento em massa do computador de referência. Essa opção habilita a opção de criar drivers de armazenamento em massa no arquivo sysprep.inf no computador de referência. Para obter mais informações sobre essa configuração, consulte a documentação do Sysprep.  
 
- **不重置激活标志**  
- 选择此选项以阻止 Sysprep 重置产品激活标志。  
+ **Não redefinir sinalizador de ativação**  
+ Selecione esta opção para impedir que o Sysprep redefina o sinalizador de ativação do produto.  
 
-##  <a name="BKMK_PreProvisionBitLocker"></a>预设置 BitLocker  
- 在 Windows PE 中，使用“预设置 BitLocker”  任务序列步骤可在驱动器上启用 BitLocker。 由于仅加密使用的磁盘空间，因此加密时间要短得多。 安装操作系统后，使用 [启用 BitLocker](#BKMK_EnableBitLocker) 任务序列步骤应用密钥管理选项。 此步骤仅可在 Windows PE 中运行。 不能在标准操作系统中运行。  
+##  <a name="BKMK_PreProvisionBitLocker"></a> Pré-provisionar o BitLocker  
+ Use a etapa **Pré-provisionar o BitLocker** para habilitar o BitLocker em uma unidade no Windows PE. Apenas o espaço em disco usado é criptografado e, portanto, os tempos de criptografia são muito mais rápidos. Aplique as opções de gerenciamento de chaves usando a etapa da sequência de tarefas do [Habilitar BitLocker](#BKMK_EnableBitLocker) depois que o sistema operacional for instalado. Esta etapa é executada somente no Windows PE. Ela não é executada em um sistema operacional padrão.  
 
 > [!IMPORTANT]  
->  若要预设置 BitLocker，至少需要安装 Windows 7 操作系统，并且计算机上必须支持且启用 TPM。  
+>  Para pré-provisionar o BitLocker, você deve implantar um sistema operacional mínimo do Windows 7 e o TPM deve ser suportado e estar habilitado no computador.  
 
-### <a name="details"></a>详细信息  
- 在此步骤的“属性”  选项卡上，可以配置此部分描述的设置。  
+### <a name="details"></a>Detalhes  
+ Na guia **Propriedades** desta etapa, você pode definir as configurações descritas nesta seção.  
 
- 此外，使用“选项”  选项卡可执行以下操作：  
+ Além disso, use a guia **Opções** guia para executar as seguintes ações:  
 
--   禁用该步骤。  
+-   Desabilitar a etapa.  
 
--   指定在运行该步骤时若出现错误，任务序列是否继续。  
+-   Especificar se a sequência de tarefas continuará se ocorrer um erro ao executar a etapa.  
 
--   指定运行步骤必须满足的条件。  
+-   Especificar condições que devem ser atendidas para a etapa a ser executada.  
 
- **Name**  
- 指定描述此步骤中执行的操作的用户定义的短名。  
+ **Nome**  
+ Especificar um nome curto definido pelo usuário que descreve a ação realizada nesta etapa.  
 
- **描述**  
- 指定有关此步骤所采取操作的详细信息。  
+ **Descrição**  
+ Especificar informações detalhadas sobre a ação realizada nesta etapa.  
 
- **将 BitLocker 应用于指定的驱动器**  
- 指定要为其启用 BitLocker 的驱动器。 仅加密驱动器上使用的空间。  
+ **Aplicar BitLocker à unidade especificada**  
+ Especificar a unidade para a qual você deseja habilitar o BitLocker. Apenas o espaço usado em disco está criptografado.  
 
- **对于没有 TPM 或 未启用 TPM 的计算机跳过此步骤**  
- 选择此选项以在计算机硬件不支持 TPM 或未启用 TPM 时跳过驱动器加密。 例如，可在将操作系统部署到虚拟机时使用此选项。  
+ **Ignorar esta etapa para computadores que não têm um TPM ou quando o TPM não está habilitado**  
+ Selecione esta opção para ignorar a criptografia de unidade quando o hardware do computador não oferece suporte a TPM ou TPM não está habilitado. Por exemplo, você pode usar esta opção ao implantar um sistema operacional em uma máquina virtual.  
 
-##  <a name="BKMK_ReleaseStateStore"></a>发布状态存储  
- 使用“发布状态存储”  任务序列步骤通知状态迁移点捕获或还原操作已完成。 此步骤与“请求状态存储” 、“捕获用户状态” 和“还原用户状态”  任务序列步骤一起使用，以使用状态迁移点和用户状态迁移工具 (USMT) 迁移用户状态数据。  
+##  <a name="BKMK_ReleaseStateStore"></a> Liberar Armazenamento de Estado  
+ Use a etapa da sequência de tarefas **Liberar armazenamento de estado** para notificar a migração de estado do ponto que a ação de captura ou restauração foi concluída. Esta etapa é usada em conjunto com as etapas de sequência de tarefas **solicitar armazenamento de estado**, **Capturar estado do usuário**, e **Restaurar estado do usuário** para migrar dados de estado do usuário usando um ponto de migração de estado e a ferramenta de migração de estado do usuário (USMT).  
 
- 有关部署操作系统时管理用户状态的详细信息，请参阅[管理用户状态](../get-started/manage-user-state.md)。  
+ Para mais informações sobre como gerenciar o estado do usuário ao implantar sistemas operacionais, confira [Gerenciar o estado do usuário](../get-started/manage-user-state.md).  
 
- 如果你在“请求状态存储”   任务序列步骤中请求访问状态迁移点以捕获用户状态，此步骤将通知状态迁移点捕获过程已完成，且用户状态数据可供还原。 状态迁移点设置已捕获状态的访问控制权限，以便只能通过还原计算机来只读访问此状态。  
+ Se você solicitou acesso a um ponto de migração de estado para capturar o estado do usuário na etapa da sequência de tarefas **Solicitar armazenamento de estado**  , esta etapa notifica o ponto de migração de estado de que o processo de captura foi concluído e que os dados de estado do usuário estão disponíveis para restauração. O ponto de migração de estado define as permissões de controle de acesso ao estado capturado, para que somente possa ser acessado (como somente leitura) pelo computador de restauração.  
 
- 如果你在“请求状态存储”  任务序列步骤中请求访问状态迁移点以还原用户状态，此任务序列步骤通知状态迁移点还原过程已完成。 此时将激活你为状态迁移点配置的保持设置。  
+ Se você solicitar acesso a um ponto de migração de estado para restaurar o estado do usuário na etapa da sequência de tarefa **Solicitar armazenamento de estado** , ela notifica o ponto de migração de estado que o processo de restauração foi concluído. Neste ponto, quaisquer configurações de retenção configuradas para o ponto de migração de estado são ativadas.  
 
 > [!IMPORTANT]  
->  最好你在“请求状态存储”  步骤和“发布状态存储”  步骤之间的任何任务序列步骤中设置“出错时继续”  ，以使每个“请求状态存储”  任务序列操作都有一个相匹配的“发布状态存储”  任务序列操作。  
+>  É uma prática recomendada definir **Continuar em caos de erro** em qualquer tarefa de sequência de etapas entre as etapas **Solicitar armazenamento de estado** e **Liberar armazenamento de estado** para que cada ação **solicitar armazenamento de estado** tenha uma ação **Liberar armazenamento de estado** correspondente.  
 
- 此任务序列步骤仅可在标准操作系统中运行。 不可在 Windows PE 中运行。 有关此任务序列操作的任务序列变量的信息，请参阅 [Release State Store Sequence Action Variables](task-sequence-action-variables.md#BKMK_ReleaseStateStore)。  
+ Essa etapa só é executada em um sistema operacional padrão. Ela não é executada no Windows PE. Para obter informações sobre variáveis de sequência de tarefas para esta ação da sequência de tarefas, veja [Release State Store Sequence Action Variables](task-sequence-action-variables.md#BKMK_ReleaseStateStore).  
 
-### <a name="details"></a>详细信息  
- 在此步骤的“属性”  选项卡上，可以配置此部分描述的设置。  
+### <a name="details"></a>Detalhes  
+ Na guia **Propriedades** desta etapa, você pode definir as configurações descritas nesta seção.  
 
- 此外，使用“选项”  选项卡可执行以下操作：  
+ Além disso, use a guia **Opções** guia para executar as seguintes ações:  
 
--   禁用该步骤。  
+-   Desabilitar a etapa.  
 
--   指定在运行该步骤时若出现错误，任务序列是否继续。  
+-   Especificar se a sequência de tarefas continuará se ocorrer um erro ao executar a etapa.  
 
--   指定运行步骤必须满足的条件。  
+-   Especificar condições que devem ser atendidas para a etapa a ser executada.  
 
- **Name**  
- 描述此步骤所采取操作的用户定义的短名。  
+ **Nome**  
+ Um nome curto definido pelo usuário que descreve a ação realizada nesta etapa.  
 
- **描述**  
- 有关此步骤所采取操作的更详细信息。  
+ **Descrição**  
+ Informações mais detalhadas sobre a ação realizada nesta etapa.  
 
-##  <a name="BKMK_RequestStateStore"></a>请求状态存储  
- 使用“请求状态存储”  任务序列步骤在从计算机捕获状态或将状态还原到计算机时请求访问状态迁移点。  
+##  <a name="BKMK_RequestStateStore"></a> Solicitar Armazenamento de Estado  
+ Use a etapa da sequência de tarefas **Solicitar armazenamento de estado** para solicitar acesso a um ponto de migração de estado durante a captura de estado ou a restauração de estado em um computador.  
 
- 有关部署操作系统时管理用户状态的详细信息，请参阅[管理用户状态](../get-started/manage-user-state.md)。  
+ Para mais informações sobre como gerenciar o estado do usuário ao implantar sistemas operacionais, confira [Gerenciar o estado do usuário](../get-started/manage-user-state.md).  
 
- 可将“请求状态存储”  任务序列步骤与“发布状态存储” 、“捕获用户状态” 和“还原用户状态”  任务序列步骤结合使用，以使用状态迁移点和用户状态迁移工具 (USMT) 迁移计算机状态。  
+ Você pode usar a etapa **Solicitar armazenamento de estado** da sequência de tarefas em conjunto com o as etapas **Liberar armazenamento de estado**, **Capturar estado do usuário**, e **Restaurar estado do usuário** para migrar o estado do computador usando um ponto de migração de estado e a ferramenta de migração de estado do usuário (USMT).  
 
 > [!NOTE]  
->  如果你刚刚建立新的状态迁移点站点角色 (SMP)，最长可能一个小时之后才可用于用户状态存储。 要促进 SMP 的可用性，你可以调整任何状态迁移点属性设置以触发站点控制文件更新。  
+>  Se você acabou de estabelecer uma nova função de site do ponto de migração estado (SMP), poderá levar até uma hora para ela estar disponível para armazenamento de estado do usuário. Para agilizar a disponibilidade do SMP, você pode ajustar qualquer configuração de propriedade de ponto de migração do estado para disparar uma atualização de arquivo de controle do site.  
 
- 对于脱机 USMT，此任务序列步骤仅可在标准操作系统和 Windows PE 中运行。 有关此任务序列操作的任务序列变量的信息，请参阅 [Request State Store Task Sequence Action Variables](task-sequence-action-variables.md#BKMK_RequestState)。  
+ Essa etapa de sequência de tarefas é executada em um sistema operacional padrão e no Windows PE para USMT offline. Para obter informações sobre as variáveis de sequência de tarefas para esta ação da sequência de tarefas, veja [Request State Store Task Sequence Action Variables](task-sequence-action-variables.md#BKMK_RequestState).  
 
-### <a name="details"></a>详细信息  
- 在此步骤的“属性”  选项卡上，可以配置此部分描述的设置。  
+### <a name="details"></a>Detalhes  
+ Na guia **Propriedades** desta etapa, você pode definir as configurações descritas nesta seção.  
 
- 此外，使用“选项”  选项卡可执行以下操作：  
+ Além disso, use a guia **Opções** guia para executar as seguintes ações:  
 
--   禁用该步骤。  
+-   Desabilitar a etapa.  
 
--   指定在运行该步骤时若出现错误，任务序列是否继续。  
+-   Especificar se a sequência de tarefas continuará se ocorrer um erro ao executar a etapa.  
 
--   指定运行步骤必须满足的条件。  
+-   Especificar condições que devem ser atendidas para a etapa a ser executada.  
 
- **Name**  
- 描述此步骤所采取操作的用户定义的短名。  
+ **Nome**  
+ Um nome curto definido pelo usuário que descreve a ação realizada nesta etapa.  
 
- **描述**  
- 有关此步骤所采取操作的更详细信息。  
+ **Descrição**  
+ Informações mais detalhadas sobre a ação realizada nesta etapa.  
 
- **从计算机捕获状态**  
- 查找满足在状态迁移点设置中配置的最低要求（最大客户端数和最小可用磁盘空间）的状态迁移点，但并不保证在状态迁移时有足够的空间可供使用。 选择此选项将请求访问状态迁移点，以便从计算机捕获用户状态和设置。  
+ **Capturar estado do computador**  
+ Localiza um ponto de migração de estado que atenda aos requisitos mínimos definidos nas configurações de ponto de migração de estado (número máximo de clientes e a quantidade mínima de espaço livre em disco), mas não garante que o espaço em disco esteja disponível no momento da migração de estado. Esta opção solicitará acesso ao ponto de migração de estado para capturar o estado do usuário e configurações de um computador.  
 
- 如果 Configuration Manager 站点已启用多个状态迁移点，此任务序列步骤将查找具有可用磁盘空间的状态迁移点，方法是查询该站点的管理点，获取状态迁移点列表，然后评估每个状态迁移点，直到找到满足最低要求的状态迁移点为止。  
+ Se o site do Configuration Manager tiver vários pontos de migração de estado habilitados, essa etapa de sequência de tarefas encontrará um ponto de migração de estado com espaço em disco disponível consultando o ponto de gerenciamento do site para obter uma lista dos pontos de migração de estado e avaliará cada um até encontrar um que atenda aos requisitos mínimos.  
 
- **从另一台计算机还原状态**  
- 选择此选项来请求访问状态迁移点，以便将先前捕获的用户状态和设置还原到目标计算机。  
+ **Restaurar estado de outro computador**  
+ Selecione esta opção para solicitar acesso a um ponto de migração de estado para a restauração de estado do usuário e configurações capturados anteriormente no computador de destino.  
 
- 如果 Configuration Manager 站点具有多个状态迁移点，此任务序列步骤将查找具有为目标计算机存储的计算机状态的状态迁移点。  
+ Se site do Configuration Manager tiver vários pontos de migração, essa etapa de sequência de tarefas localizará o ponto de migração de estado que tem o estado do computador que foi armazenado no computador de destino.  
 
- **重试次数**  
- 此任务序列步骤在失败之前将尝试查找适当的状态迁移点的次数。  
+ **Número de tentativas**  
+ O número de vezes que essa etapa de sequência de tarefas tentará localizar um ponto de migração de estado apropriado antes de falhar.  
 
- **重试延迟（秒）**  
- 任务序列步骤在重试尝试之间等待的秒数。  
+ **Atraso na repetição (em segundos)**  
+ A quantidade de tempo em segundos que a etapa de sequência de tarefas espera entre as novas tentativas.  
 
- **如果计算机帐户无法连接到状态存储，请使用网络访问帐户。**  
- 指定如果 Configuration Manager 客户端无法使用计算机帐户访问 SMP 状态存储，Configuration Manager 网络访问帐户凭据将用于连接到状态迁移点。 此选项的安全性较低，因为其他计算机可能使用该网络访问帐户访问你的已存储状态，但如果目标计算机不可加入域，则可能需要此选项。  
+ **Se a conta de computador não conseguir se conectar a um armazenamento de estado, use a conta de acesso à rede.**  
+ Especifica que as credenciais da conta de acesso de rede do Configuration Manager serão usadas para se conectar ao ponto de migração de estado, se o cliente do Configuration Manager não conseguir acessar o armazenamento de estado do SMP usando a conta de computador. Essa opção é menos segura porque outros computadores poderiam usar a conta de acesso à rede para acessar o estado armazenado, mas pode ser necessária se o computador de destino não estiver integrado ao domínio.  
 
-##  <a name="BKMK_RestartComputer"></a>重新启动计算机  
- 使用“重新启动计算机”  任务序列步骤重新启动运行该任务序列的计算机。 重新启动之后，计算机将自动地继续运行任务序列中的下一个步骤。  
+##  <a name="BKMK_RestartComputer"></a> Reiniciar Computador  
+ Use a etapa da sequência de tarefas **Reiniciar computador** para reiniciar o computador que executa a sequência de tarefas. Após a reinicialização, o computador continuará automaticamente com a próxima etapa na sequência de tarefas.  
 
- 标准操作系统或 Windows PE 中均可运行此步骤。 有关此任务序列操作的任务序列变量的详细信息，请参阅[重新启动计算机任务序列操作变量](task-sequence-action-variables.md#BKMK_RestartComputer)。  
+ Esta etapa pode ser executada em um sistema operacional padrão ou no Windows PE. Para mais informações sobre as variáveis de sequência de tarefas para esta ação da sequência de tarefas, confira [Restart computer task sequence action variables](task-sequence-action-variables.md#BKMK_RestartComputer) (Reiniciar as variáveis de ação da sequência de tarefas do computador).  
 
-### <a name="details"></a>详细信息  
- 在此步骤的“属性”  选项卡上，可以配置此部分描述的设置。  
+### <a name="details"></a>Detalhes  
+ Na guia **Propriedades** desta etapa, você pode definir as configurações descritas nesta seção.  
 
- 此外，使用“选项”  选项卡可执行以下操作：  
+ Além disso, use a guia **Opções** guia para executar as seguintes ações:  
 
--   禁用该步骤。  
+-   Desabilitar a etapa.  
 
--   指定在运行该步骤时若出现错误，任务序列是否继续。  
+-   Especificar se a sequência de tarefas continuará se ocorrer um erro ao executar a etapa.  
 
--   指定运行步骤必须满足的条件。  
+-   Especificar condições que devem ser atendidas para a etapa a ser executada.  
 
- **Name**  
- 描述此步骤所采取操作的用户定义的短名。  
+ **Nome**  
+ Um nome curto definido pelo usuário que descreve a ação realizada nesta etapa.  
 
- **描述**  
- 有关此步骤所采取操作的更详细信息。  
+ **Descrição**  
+ Informações mais detalhadas sobre a ação realizada nesta etapa.  
 
- **分配给此任务序列的启动映像**  
- 对目标计算机选择此选项以使用分配给该任务序列的启动映像。 启动映像将用来运行在 Windows PE 中运行的后续任务序列步骤。  
+ **A imagem de inicialização atribuída a esta sequência de tarefas**  
+ Selecione esta opção para o computador de destino usar a imagem de inicialização atribuída à sequência de tarefas. A imagem de inicialização será usada para executar as etapas da sequência de tarefas subsequentes que executadas no Windows PE.  
 
- **当前安装的默认操作系统**  
- 对目标计算机选择此选项以重新启动到安装的操作系统。  
+ **Sistema operacional padrão instalado atualmente**  
+ Selecione esta opção para o computador de destino ser reinicializado no sistema operacional instalado.  
 
- **重新启动之前通知用户**  
- 选择此选项以向用户显示目标计算机将重新启动的通知。 默认情况下选择此选项。  
+ **Notificar usuário antes de reiniciar**  
+ Selecione esta opção para exibir uma notificação ao usuário que o computador de destino será reiniciado. Essa opção é habilitada por padrão.  
 
- **通知消息**  
- 输入在目标计算机重新启动之前向用户显示的通知消息。  
+ **Mensagem de notificação**  
+ Digite uma mensagem de notificação será exibida para o usuário antes do computador de destino ser reiniciado.  
 
- **消息显示超时**  
- 指定在目标计算机重新启动之前给定用户的时间（秒）。 默认时间为 60 秒。  
+ **Tempo limite de exibição da mensagem**  
+ Especifique a quantidade de tempo em segundos um usuário terá antes do computador de destino ser reiniciado. A quantidade de tempo padrão é de sessenta (60) segundos.  
 
-##  <a name="BKMK_RestoreUserState"></a>还原用户状态  
- 使用  “还原用户状态”任务序列步骤来启动用户状态迁移工具 (USMT) 将用户状态和设置还原到目标计算机。 此任务序列步骤与“捕获用户状态”  任务序列步骤配合使用。  
+##  <a name="BKMK_RestoreUserState"></a> Restaurar Estado do Usuário  
+ Use a etapa da sequência de tarefas **Restaurar estado do usuário** para iniciar a Ferramenta de Migração do Estado do Usuário (USMT) para restaurar o estado do usuário e configurações no computador de destino. Essa etapa de sequência de tarefas é usada em conjunto com a etapa da sequência de tarefas **Capturar o estado do usuário** .  
 
- 有关部署操作系统时管理用户状态的详细信息，请参阅[管理用户状态](../get-started/manage-user-state.md)。  
+ Para mais informações sobre como gerenciar o estado do usuário ao implantar sistemas operacionais, confira [Gerenciar o estado do usuário](../get-started/manage-user-state.md).  
 
- 如果想要将状态设置保存到 Configuration Manager 站点中的状态迁移点或从其还原设置，还可以将“还原用户状态”任务序列步骤与“请求状态存储”和“发布状态存储”任务序列步骤一起使用。 通过 USMT 3.0 和更高版本，此选项始终使用由 Configuration Manager 生成并管理的加密密钥解密 USMT 状态存储。  
+ Você também poderá usar a etapa da sequência de tarefas **Restaurar Estado do Usuário** com as etapas **Solicitar Armazenamento de Estado** e **Liberar Armazenamento de Estado** se quiser salvar as configurações de estado ou restaurar as configurações de um ponto de migração de estado no site do Configuration Manager. Com o USMT 3.0 e superior, essa opção sempre criptografa o armazenamento de estado do USMT usando uma chave de criptografia geradas e gerenciadas por Configuration Manager.  
 
-  “还原用户状态”任务序列步骤提供对最常用 USMT 选项的受限子网的控制。 其他命令行选项可使用 OSDMigrateAdditionalRestoreOptions 任务序列变量指定。  
+ A etapa da sequência de tarefas **Restaurar estado do usuário** fornece controle sobre um subconjunto limitado dos mais opções mais usadas do USMT. Opções de linha de comando adicionais podem ser especificadas usando a variável de sequência de tarefas OSDMigrateAdditionalRestoreOptions.  
 
 > [!IMPORTANT]  
->  如果使用 **还原用户状态** 任务序列步骤执行与操作系统部署方案无关的任务，请在紧随 **还原用户状态** 任务序列步骤之后添加 [Restart Computer](#BKMK_RestartComputer) 任务序列步骤。  
+>  Se estiver usando a etapa da sequência de tarefas **Restaurar Estado do Usuário** para uma finalidade não relacionada a um cenário de implantação de sistema operacional, adicione a etapa [Reiniciar Computador](#BKMK_RestartComputer) imediatamente após a etapa da sequência de tarefas **Restaurar Estado do Usuário** .  
 
- 此任务序列步骤仅可在标准操作系统中运行。 不可在 Windows PE 中运行。 有关此任务序列操作的任务序列变量的信息，请参阅 [Restore User State Task Sequence Action Variables](task-sequence-action-variables.md#BKMK_RestoreUserState)。  
+ Essa etapa só é executada em um sistema operacional padrão. Ela não é executada no Windows PE. Para obter informações sobre as variáveis de sequência de tarefas para esta ação da sequência de tarefas, veja [Restore User State Task Sequence Action Variables](task-sequence-action-variables.md#BKMK_RestoreUserState).  
 
-### <a name="details"></a>详细信息  
- 在此步骤的“属性”  选项卡上，可以配置此部分描述的设置。  
+### <a name="details"></a>Detalhes  
+ Na guia **Propriedades** desta etapa, você pode definir as configurações descritas nesta seção.  
 
- 此外，使用“选项”  选项卡可执行以下操作：  
+ Além disso, use a guia **Opções** guia para executar as seguintes ações:  
 
--   禁用该步骤。  
+-   Desabilitar a etapa.  
 
--   指定在运行该步骤时若出现错误，任务序列是否继续。  
+-   Especificar se a sequência de tarefas continuará se ocorrer um erro ao executar a etapa.  
 
--   指定运行步骤必须满足的条件。  
+-   Especificar condições que devem ser atendidas para a etapa a ser executada.  
 
- **Name**  
- 指定描述此步骤中执行的操作的用户定义的短名。  
+ **Nome**  
+ Especifica um nome curto definido pelo usuário que descreve a ação realizada nesta etapa.  
 
- **描述**  
- 指定有关此步骤所采取操作的更详细信息。  
+ **Descrição**  
+ Especifica informações mais detalhadas sobre a ação realizada nesta etapa.  
 
- **用户状态迁移工具包**  
- 输入包含 USMT 版本的 Configuration Manager 包，供此步骤在还原用户状态和设置时使用。 此包不需要程序。 当任务序列步骤运行时，任务序列将使用指定的包中的 USMT 版本。 根据你正在还原状态到的操作系统的体系结构，指定包含 32 位或 x64 版本的 USMT 的包。  
+ **Pacote da ferramenta de migração do usuário**  
+ Insira o pacote do Configuration Manager que contém a versão do USMT para essa etapa usar durante a restauração de estado do usuário e suas configurações. Este pacote não exige um programa. Quando a etapa da sequência de tarefas é executada, a sequência de tarefas usará a versão da USMT no pacote que você especificar. Especifique um pacote contendo a versão 32 bits ou x64 do USMT de acordo com a arquitetura do sistema operacional para o qual você está restaurando o estado.  
 
- **使用标准选项还原所有捕获的用户配置文件**  
- 使用标准选项还原捕获的用户配置文件。 要自定义将还原的选项，请选择“自定义用户配置文件捕获” 。  
+ **Restaurar todos os perfis de usuários capturados com as opções padrão**  
+ Restaura os perfis de usuário com as opções padrão. Para personalizar as opções que serão restauradas, selecione **Personalizar captura de perfil do usuário**.  
 
- **自定义如何还原用户配置文件**  
- 允许你自定义想要还原到目标计算机的文件。 单击  “文件”以指定想要用于还原用户配置文件的 USMT 包中的配置文件。 要添加配置文件，请在“文件名”  框中输入文件的名称，然后单击“添加” 。 将用于该操作的配置文件列出在“文件”窗格中。 你指定的 .xml 文件定义将还原的用户文件。  
+ **Personalizar o modo como os perfis de usuário são restaurados**  
+ Permite que você personalize os arquivos que você deseja restaurar o computador de destino. Clique em **Arquivos** para especificar os arquivos de configuração do pacote do USMT que deseja usar para restaurar os perfis de usuário. Para adicionar um arquivo de configuração, digite o nome do arquivo na caixa **Nome do arquivo** e clique em **Adicionar**. Os arquivos de configuração que serão usados para a operação são listados no painel de arquivos. O arquivo .xml que você especificar define qual arquivo de usuário será restaurado.  
 
- **还原本地计算机用户配置文件**  
- 还原本地计算机用户（即非域用户）配置文件。 由于不能迁移原始本地用户帐户密码，你将需要对还原的本地用户帐户分配新密码。 在“密码”  框中输入新密码，然后在“确认密码”  框中确认该密码。  
+ **Restaurar perfis de usuário do computador local**  
+ Restaura os perfis de usuário do computador local (ou seja, não o usuário de domínio). Você precisará atribuir novas senhas para as contas de usuário local restaurado porque as senhas de conta de usuário local original não podem ser migradas. Digite a senha nova na caixa **Senha** e confirme a senha em **Confirmar senha** .  
 
- **如果无法还原某些文件则继续**  
- 即使无法还原某些文件，也继续还原用户状态和设置。 默认情况下会启用此选项。 如果你禁用此选项并且在还原文件时遇到错误，任务序列步骤将会立即以故障结束，并且将无法还原所有文件。  
+ **Continuar, se alguns arquivos não forem restaurados**  
+ Continua a restauração das configurações e estado do usuário, mesmo se alguns arquivos não puderem ser restaurados. Essa opção é habilitada por padrão. Se você desabilitar essa opção e forem encontrados erros durante a restauração de arquivos, a etapa da sequência de tarefas terminará imediatamente com falha e nem todos os arquivos serão restaurados.  
 
- **启用详细日志记录**  
- 启用此选项以生成更详细的日志文件信息。 当还原状态时，将生成日志 Loadstate.log 并默认存储在 \windows\system32\ccm\logs 文件夹的任务序列日志文件夹中。  
+ **Habilitar log detalhado**  
+ Habilite esta opção para gerar informações de arquivo de log mais detalhadas. Durante a restauração de estado, o Loadtate.log é gerado e armazenado na pasta de log da sequência de tarefas na pasta \windows\system32\ccm\logs por padrão.  
 
-##  <a name="BKMK_RunCommandLine"></a>运行命令行  
- 使用“运行命令行”  任务序列步骤来运行指定命令行。  
+##  <a name="BKMK_RunCommandLine"></a> Executar Linha de Comando  
+ Use a etapa da sequência de tarefas **Executar linha de comando** para executar uma linha de comando especificada.  
 
- 标准操作系统或 Windows PE 中均可运行此步骤。 有关此任务序列操作的任务序列变量的信息，请参阅 [Run Command Line Task Sequence Action Variables](task-sequence-action-variables.md#BKMK_RunCommand)。  
+ Esta etapa pode ser executada em um sistema operacional padrão ou no Windows PE. Para obter informações sobre variáveis de sequência de tarefas para esta ação da sequência de tarefas, veja [Run Command Line Task Sequence Action Variables](task-sequence-action-variables.md#BKMK_RunCommand).  
 
-### <a name="details"></a>详细信息  
- 在此步骤的“属性”  选项卡上，可以配置此部分描述的设置。  
+### <a name="details"></a>Detalhes  
+ Na guia **Propriedades** desta etapa, você pode definir as configurações descritas nesta seção.  
 
- 此外，使用“选项”  选项卡可执行以下操作：  
+ Além disso, use a guia **Opções** guia para executar as seguintes ações:  
 
--   禁用该步骤。  
+-   Desabilitar a etapa.  
 
--   指定在运行该步骤时若出现错误，任务序列是否继续。  
+-   Especificar se a sequência de tarefas continuará se ocorrer um erro ao executar a etapa.  
 
--   指定运行步骤必须满足的条件。  
+-   Especificar condições que devem ser atendidas para a etapa a ser executada.  
 
- **Name**  
- 指定描述所运行命令行的用户定义的短名称。  
+ **Nome**  
+ Especifica um nome curto definido pelo usuário que descreve a linha de comando executada.  
 
- **描述**  
- 指定与所运行命令行有关的更多详细信息。  
+ **Descrição**  
+ Especifica as informações mais detalhadas sobre a linha de comando que é executada.  
 
- **命令行**  
- 指定所运行的命令行。 此字段为必需字段。 最好包括文件扩展名，例如 .vbs 和 .exe。 包括所有必需的设置文件、命令行选项或开关。  
+ **Linha de comando**  
+ Especifica a linha de comando que é executada. Esse campo é obrigatório. A inclusão das extensões no nome de arquivo é uma prática recomendada, por exemplo, .vbs e .exe. Inclua todos os arquivos de configurações necessários, as opções de linha de comando ou opções.  
 
- 如果文件名没有指定文件扩展名，则 Configuration Manager 会尝试查找 .com、.exe 和 .bat。 如果文件扩展名不是可执行文件，则 Configuration Manager 会尝试应用本地关联。 例如，如果命令行为 readme.gif，则 Configuration Manager 会启动目标计算机上指定的应用程序来打开 .gif 文件。  
+ Se o nome do arquivo não tiver uma extensão de nome de arquivo especificada, o Configuration Manager tentará usar .com, .exe, e.bat. Se o nome do arquivo tiver uma extensão que não é um executável, o Configuration Manager tentará aplicar uma associação local. Por exemplo, se a linha de comando for readme.gif, o Configuration Manager iniciará o aplicativo especificado no computador de destino para abrir arquivos .gif.  
 
- 例如：  
+ Exemplos:  
 
  **setup.exe /a**  
 
  **cmd.exe /c copy Jan98.dat c:\sales\Jan98.dat**  
 
 > [!NOTE]  
->  必须优先执行输出重定向、管道或复制等命令行操作（如上例所述），**cmd.exe /c** 命令才能成功运行。  
+>  Ações de linha de comando, como redirecionamento de saída, tubulação ou cópia, como no exemplo anterior, devem ser precedidas pelo comando **cmd.exe /c** para serem executadas com êxito.  
 
- **禁用 64 位文件系统重定向**  
- 默认情况下，在 64 位操作系统上运行时，使用 WOW64 文件系统重定向程序查找并运行命令行中的可执行文件，以便找到 32 位版本的操作系统可执行文件和 DLL。  选择此选项将禁用 WOW64 文件系统重定向程序，以便可以找到本机 64 位版本的操作系统可执行文件和 DLL。  在 32 位操作系统上运行时，选择此选项没有任何作用。  
+ **Desabilitar o redirecionamento de sistema de arquivos de 64 bits**  
+ Por padrão, quando executado em um sistema operacional de 64 bits, o executável na linha de comando é localizado e executado usando o redirecionador do sistema de arquivos do WOW64 para que as versões de 32 bits dos executáveis e DLLs do sistema operacional sejam encontradas.  Selecionar esta opção desabilita o uso do redirecionador do sistema de arquivos do WOW64 para que as versões nativas de 64 bits de DLLs e executáveis do sistema operacional possam ser encontradas.  Selecionar esta opção não terá nenhum efeito em um sistema operacional de 32 bits.  
 
- **开始位置**  
- 指定程序的可执行文件夹，最多 127 个字符。 此文件夹可以是目标计算机上的绝对路径，也可以是包含包的分发点文件夹的相对路径。 此字段是可选的。  
+ **Iniciar em**  
+ Especifica a pasta do executável do programa, até 127 caracteres. Essa pasta pode ser um caminho absoluto no computador de destino ou um caminho relativo à pasta do ponto de distribuição que contém os arquivos de instalação. Esse campo é opcional.  
 
- 例如：  
+ Exemplos:  
 
  **c:\officexp**  
 
  **i386**  
 
 > [!NOTE]  
->  “浏览”  按钮浏览本地计算机上的文件和文件夹，因此你以此方式选择的任何内容还必须存储在目标计算机上的相同位置，并且具有相同的文件和文件夹名称。  
+>  O botão **Procurar** procura o computador local em busca de arquivos e pastas, assim qualquer coisa selecionada desta forma deverá existir no computador de destino no mesmo local e com os mesmos nomes de arquivo e pasta.  
 
- **包**  
- 当在命令行上指定了目标计算机上尚不存在的文件或程序时，请选择此选项以指定包含合适的文件的 Configuration Manager 包。 此包不需要程序。 如果指定的文件在目标计算机上，则不需要此选项。  
+ **Pacote**  
+ Quando você especificar arquivos ou programas na linha de comando que ainda não estão presentes no computador de destino, selecione essa opção para especificar o pacote do Configuration Manager que contém os arquivos apropriados. Este pacote não exige um programa. Esta opção não é necessária se os arquivos especificados existirem no computador de destino.  
 
- **超时**  
- 指定表示 Configuration Manager 将允许命令行运行的时间长度的值。 此值的范围为 1 分钟至 999 分钟。 默认值为 15 分钟。  
+ **Tempo limite**  
+ Especifica um valor que representa quanto tempo o Configuration Manager permitirá para execução da linha de comando. Esse valor pode ser de 1 a 999 minutos. O valor padrão é 15 minutos.  
 
- 默认情况下禁用此选项。  
+ Essa opção é desabilitada por padrão.  
 
 > [!IMPORTANT]  
->  如果你输入的值使得“运行命令行”任务序列步骤没有足够的时间成功完成，该任务序列步骤将失败，整个任务序列也可能因为其他控制设置而失败。 如果超时过期，Configuration Manager 将终止命令行进程。  
+>  Se você inserir um valor que não reserva tempo suficiente para a etapa de sequência de tarefas Executar linha de comando ser concluída com êxito, ela falhará e a sequência de tarefas inteira poderá falhar dependendo de outras configurações de controle. Se o tempo limite expirar, o Configuration Manager encerrará o processo de linha de comando.  
 
- **作为以下帐户运行此步骤**  
- 指定作为本地系统帐户之外的其他 Windows 用户帐户运行的命令行。  
+ **Executar esta etapa usando a seguinte conta**  
+ Especifica que a linha de comando é executada como uma conta de usuário do Windows diferente da conta sistema local.  
 
 > [!NOTE]  
->  当你在操作系统安装步骤之后为此步骤指定了另一帐户，则必须将该帐户添加到计算机后才能运行简单脚本或命令，且必须还原 Windows 用户帐户的配置文件才能运行 MSI 等更复杂的程序。  
+>  Quando você especificar outra conta para esta etapa e ela ocorrer após uma etapa de instalação do sistema operacional, a conta deverá ser adicionada ao computador para que seja possível executar comandos ou scripts simples, e o perfil da conta de usuário do Windows deverá ser restaurado para executar programas mais complexos, como um MSI.  
 
- **帐户**  
- 为任务序列中的命令行任务指定此操作要运行的运行方式 Windows 用户帐户。 命令行将使用指定帐户的权限运行。 单击“设置”  以指定本地用户或域帐户。  
+ **Conta**  
+ Especifica a conta de usuário do Windows para execução da tarefa de linha de comando na sequência de tarefas executada por esta ação. A linha de comando será executada com as permissões da conta especificada. Clique em **Definir** para especificar o usuário local ou a conta de domínio.  
 
 > [!IMPORTANT]  
->  如果指定用户帐户的“运行命令行”  任务序列操作在 Windows PE 中执行，则该操作可能失败，因为 Windows PE 无法加入域。 该失败将记录在 smsts.log 文件中。  
+>  Se uma ação da sequência de tarefa **Executar linha de comando** especificando uma conta de usuário for executada no Windows PE, a ação falhará, porque o Windows PE não pode ser associado a um domínio. A falha será registrada no arquivo smsts.log.  
 
-##  <a name="BKMK_RunPowerShellScript"></a>运行 PowerShell 脚本  
- 使用“运行 PowerShell 脚本”  任务序列步骤运行指定的 PowerShell 脚本。  
+##  <a name="BKMK_RunPowerShellScript"></a> Executar Script do PowerShell  
+ Use a etapa da sequência de tarefas **Executar Script do PowerShell** para executar um script do PowerShell especificado.  
 
- 标准操作系统或 Windows PE 中均可运行此步骤。 若要在 Windows PE 中运行此步骤，必须在启动映像中启用 PowerShell。 你可以从启动映像属性中的“可选组件”  选项卡中启用 Windows PowerShell (WinPE-PowerShell)。 有关如何修改启动映像的详细信息，请参阅[管理启动映像](../get-started/manage-boot-images.md)。  
+ Esta etapa pode ser executada em um sistema operacional padrão ou no Windows PE. Para executar esta etapa no Windows PE, o PowerShell deve ser habilitado na imagem de inicialização. Você pode habilitar o Windows PowerShell (WinPE-PowerShell) na guia **Componentes opcionais** nas propriedades da imagem de inicialização. Para mais informações sobre como modificar uma imagem de inicialização, confira [Manage boot images](../get-started/manage-boot-images.md) (Gerenciar imagens de inicialização).  
 
 > [!NOTE]  
->  默认情况下，Windows Embedded 操作系统上未启用 PowerShell。  
+>  O PowerShell não é habilitado por padrão nos sistemas operacionais Windows Embedded.  
 
-### <a name="details"></a>详细信息  
- 在此步骤的“属性”  选项卡上，可以配置此部分描述的设置。  
+### <a name="details"></a>Detalhes  
+ Na guia **Propriedades** desta etapa, você pode definir as configurações descritas nesta seção.  
 
- 此外，使用“选项”  选项卡可执行以下操作：  
+ Além disso, use a guia **Opções** guia para executar as seguintes ações:  
 
--   禁用该步骤。  
+-   Desabilitar a etapa.  
 
--   指定在运行该步骤时若出现错误，任务序列是否继续。  
+-   Especificar se a sequência de tarefas continuará se ocorrer um erro ao executar a etapa.  
 
--   指定运行步骤必须满足的条件。  
+-   Especificar condições que devem ser atendidas para a etapa a ser executada.  
 
- **Name**  
- 指定描述所运行命令行的用户定义的短名称。  
+ **Nome**  
+ Especifica um nome curto definido pelo usuário que descreve a linha de comando executada.  
 
- **描述**  
- 指定与所运行命令行有关的更多详细信息。  
+ **Descrição**  
+ Especifica as informações mais detalhadas sobre a linha de comando que é executada.  
 
- **包**  
- 指定包含 PowerShell 脚本的 Configuration Manager 包。 一个包可以包含多个 PowerShell 脚本。  
+ **Pacote**  
+ Especifique o pacote do Configuration Manager que contém o script do PowerShell. Um pacote pode conter vários scripts do PowerShell.  
 
- **脚本名称**  
- 指定要运行的 PowerShell 脚本的名称。 此字段为必需字段。  
+ **Nome do script**  
+ Especifica o nome do script do PowerShell para executar. Esse campo é obrigatório.  
 
- **参数**  
- 指定要传递给 Windows PowerShell 脚本的参数。 配置参数，就好像你正将它们从命令行添加到 Windows PowerShell 脚本一样。  
+ **Parâmetros**  
+ Especifica os parâmetros a serem passados para o script do Windows PowerShell. Configure os parâmetros, como se você estivesse adicionando-os ao script do Windows PowerShell em uma linha de comando.  
 
 > [!IMPORTANT]  
->  提供脚本使用的参数，而不是为 Windows PowerShell 命令行。  
+>  Forneça parâmetros consumidos pelo script, não pela linha de comando do Windows PowerShell.  
 >   
->  以下示例包含有效的参数：  
+>  O exemplo a seguir contém parâmetros válidos:  
 >   
 >  **-MyParameter1 MyValue1 -MyParameter2 MyValue2**  
 >   
->  以下示例包含无效的参数。 粗体项是 Windows PowerShell 命令行参数 (-nologo and -executionpolicy unrestricted)，未被脚本使用。  
+>  O exemplo a seguir contém parâmetros inválidos. Os itens em negrito são parâmetros de linha de comando do Windows PowerShell (-nologo e -executionpolicy unrestricted) e não consumidos pelo script.  
 >   
 >  **-nologo-executionpolicy unrestricted-File MyScript.ps1 -MyParameter1 MyValue1 -MyParameter2 MyValue2**  
 
- **PowerShell 执行策略**  
- 选择 PowerShell 执行策略，你可确定允许哪些 Windows PowerShell 脚本（如果有）在计算机上运行。 选择以下其中一个执行策略：  
+ **Política de execução do PowerShell**  
+ Selecione a política de execução do PowerShell que permite determinar quais scripts do Windows PowerShell (se houver) poderão ser executados no computador. Selecione uma das seguintes políticas de execução:  
 
--   **AllSigned：**只能运行由受信任的发布者签发的脚本。  
+-   **AllSigned**: somente scripts assinados por um fornecedor confiável podem ser executados.  
 
--   **未定义：**未定义执行策略。 。  
+-   **Undefined**: nenhuma política de execução é definida. .  
 
--   **绕过：**加载所有配置文件并运行所有脚本。 如果运行从 Internet 下载的未签名脚本，在其运行前将不提示可允许。  
+-   **Bypass**: carrega todos os arquivos de configuração e executa todos os scripts. Se você executar um script não assinado que foi baixado da Internet, nenhuma permissão será solicitada antes de executar.  
 
 > [!IMPORTANT]  
->  PowerShell 1.0 不支持未定义和旁路执行策略。  
+>  O PowerShell 1.0 não suporta as políticas de execução Indefinido e Ignorar.  
 
-##  <a name="BKMK_SetDynamicVariables"></a>设置动态变量  
- 使用“设置动态变量”  任务序列步骤执行以下操作：  
+##  <a name="BKMK_SetDynamicVariables"></a> Definir Variáveis Dinâmicas  
+ Use a etapa da sequência de tarefas **Definir variáveis dinâmicas** para executar o seguinte:  
 
-1.  从计算机和它所在的环境中收集信息，然后使用该信息设置指定的任务序列变量。  
+1.  Coletar informações do computador e do ambiente onde ele se encontra, e então definir variáveis de sequência de tarefas especificadas com as informações.  
 
-2.  评估定义的规则，并根据为评估结果为 true 的规则配置的变量和值设置任务序列变量。  
+2.  Avalia as regras estabelecidas e define as variáveis de sequência de tarefas com base nas variáveis e nos valores configurados para as regras que avaliam como verdadeiro.  
 
- 任务序列自动设置以下只读任务序列变量：  
+ A sequência de tarefas define automaticamente as seguintes variáveis de sequência de tarefas somente leitura:  
 
  -   &#95;SMSTSMake  
 
@@ -1478,230 +1478,230 @@ Configuration Manager 版本 1606 中引入了一个新的任务序列变量 SMS
 
  -   &#95;SMSTSUUID  
 
- 标准操作系统或 Windows PE 中均可运行此步骤。 有关任务序列变量的详细信息，请参阅[任务序列操作变量](task-sequence-action-variables.md)。  
+ Esta etapa pode ser executada em um sistema operacional padrão ou no Windows PE. Para mais informações sobre variáveis de sequência de tarefas, confira [Task sequence action variables](task-sequence-action-variables.md) (Variáveis de ação de sequência de tarefas).  
 
-### <a name="details"></a>详细信息  
- 在此步骤的“属性”  选项卡上，可以配置此部分描述的设置。  
+### <a name="details"></a>Detalhes  
+ Na guia **Propriedades** desta etapa, você pode definir as configurações descritas nesta seção.  
 
- 此外，使用“选项”  选项卡可执行以下操作：  
+ Além disso, use a guia **Opções** guia para executar as seguintes ações:  
 
--   禁用该步骤。  
+-   Desabilitar a etapa.  
 
--   指定在运行该步骤时若出现错误，任务序列是否继续。  
+-   Especificar se a sequência de tarefas continuará se ocorrer um erro ao executar a etapa.  
 
--   指定运行步骤必须满足的条件。  
+-   Especificar condições que devem ser atendidas para a etapa a ser executada.  
 
-**Name**  
- 此任务序列步骤的用户定义的短名称。  
+**Nome**  
+ Um nome curto do definido pelo usuário para essa etapa de sequência de tarefas.  
 
-**描述**  
- 有关此步骤所采取操作的更详细信息。  
+**Descrição**  
+ Informações mais detalhadas sobre a ação realizada nesta etapa.  
 
-**动态规则和变量**  
- 若要设置动态变量以在任务序列中使用，可以添加一条规则，然后为你为规则指定的每个变量指定一个值，或者添加一个或多个变量进行设置，而不添加规则。 添加规则时，可以从以下规则类别中进行选择：  
+**Regras e variáveis dinâmicas**  
+ Para definir uma variável dinâmica para usar na sequência de tarefas, você pode adicionar uma regra e especificar um valor para cada variável especificada para a regra, ou então adicionar uma ou mais variáveis para definir sem adicionar uma regra. Quando você adiciona uma regra, poderá escolher entre as seguintes categorias de regra:  
 
- -   **计算机：**使用此规则类别可评估资产标记、UUID、序列号或 MAC 地址的值。 你可以设置多个值，如果任何一个值为 true，则该规则将评估为 true。 例如，如果序列号是 5892087，无论 MAC 地址是否等于 26-78-13-5A-A4-22，以下规则都将评估为 true。  
+ -   **Computador**: use esta categoria de regra para avaliar valores para a marcação de Ativo, UUID, número de série ou endereço MAC. Você pode definir vários valores, e se qualquer valor for verdadeiro, então a regra será avaliada como verdadeira. Por exemplo, a regra a seguir retornará verdadeiro se o número de série for 5892087 independentemente de o endereço MAC ser igual a 26-78-13-5A-A4-22.  
 
      `IF Serial Number = 5892087 OR MAC address = 26-78-13-5A-A4-22 THEN`  
 
--   **位置：**使用此规则类别可评估默认网关的值。  
+-   **Local**: use esta categoria de regra para avaliar valores para o gateway padrão.  
 
--   **品牌和型号：**使用此规则类别可评估计算机的品牌和型号的值。 品牌和型号均必须评估为 true，规则才能评估为 true。   
+-   **Marca e modelo**: use esta categoria de regra para avaliar valores para a marca e o modelo de um computador. A marca e o modelo devem ambas serem avaliadas como verdadeiro para a regra a ser avaliada como verdadeiro.   
 
-    从 Configuration Manager 版本 1610 开始，用户可以将星号 (*****) 和问号 (**?**) 指定为通配符，其中 ***** 匹配多个字符和 **?** 匹配单一字符。 例如，字符串 "DELL*900?" 将匹配 DELL-ABC-9001 和 DELL9009。
+    Começando no Configuration Manager versão 1610, você pode especificar um asterisco (*****) e um ponto de interrogação (**?**) como caracteres curinga, em que ***** corresponde a vários caracteres e **?** corresponde a um único caractere. Por exemplo, a cadeia de caracteres "DELL*900?" corresponderá a DELL-ABC-9001 e DELL9009.
 
--   **任务序列变量：**使用此规则类别可添加要评估的任务序列变量、条件和值。 当为变量设置的值符合指定条件时，规则评估为 true。  
+-   **Variável de Sequência de Tarefas**: use esta categoria de regra para adicionar uma variável de sequência de tarefas, uma condição e um valor a ser avaliado. A regra avalia como verdadeiro quando o valor definido para a variável atende a condição especificada.  
 
-你可以指定将为评估为 true 的规则设置的一个或多个变量，或者设置变量而不使用规则。 你可以从现有变量选择或创建自定义变量。  
+Você pode especificar uma ou mais variáveis que serão definidas para uma regra que é avaliada como verdadeiro ou definir variáveis sem usar uma regra. Você pode selecionar entre as variáveis existentes ou criar uma variável personalizada.  
 
- -   **现有任务序列变量：**使用此设置可从现有任务序列变量的列表中选择一个或多个变量。 不可选择数组变量。  
+ -   **Variáveis de sequência de tarefas existentes**: use essa configuração para selecionar uma ou mais variáveis em uma lista de variáveis de sequência de tarefas existentes. Variáveis de matriz não estão disponíveis para selecionar.  
 
- -   **自定义任务序列变量：**使用此设置可定义自定义任务序列变量。 你也可指定现有任务序列变量。 这有助于指定现有变量数组，如 OSDAdapter，因为变量数组不在现有任务序列变量的列表中。  
+ -   **Variáveis personalizadas da sequência de tarefas**: use essa configuração para definir uma variável personalizada da sequência de tarefas. Você também pode especificar uma variável de sequência de tarefas existente. Isso é útil para especificar uma matriz de variáveis existente, como OSDAdapter, pois matrizes de variáveis não estão na lista de variáveis de sequência de tarefas existente.  
 
-为规则选择变量后，必须为每个变量提供一个值。 规则评估为 true 时，则变量设置为指定的值。 对于每个变量，可以选择“机密值”  来隐藏该变量的值。 默认情况下，某些现有变量隐藏值，例如 OSDCaptureAccountPassword 任务序列变量。  
+Depois de selecionar as variáveis de uma regra, você deve fornecer um valor para cada variável. A variável é definida como o valor especificado quando a regra for avaliada como verdadeiro. Para cada variável, você pode selecionar o **Valor secreto** para ocultar o valor da variável. Por padrão, algumas variáveis existentes ocultam valores, como a variável de sequência de tarefas OSDCaptureAccountPassword.  
 
 > [!IMPORTANT]  
->  使用“设置动态变量”步骤导入任务序列并为变量的值选择“机密值”  时，导入该任务序列时将删除该值。 因此，导入任务序列后你必须重新输入动态变量的值。  
+>  Quando você importa uma sequência de tarefas com a etapa Definir variáveis dinâmicas, o **Valor secreto** é selecionado para o valor da variável, sendo o valor removido ao importar a sequência de tarefas. Como resultado, você deve reinserir o valor da variável dinâmica novamente depois de importar a sequência de tarefas.  
 
-##  <a name="BKMK_SetTaskSequenceVariable"></a>设置任务序列变量  
-使用“设置任务序列变量”  任务序列步骤来设置与该任务序列配合使用的变量的值。  
+##  <a name="BKMK_SetTaskSequenceVariable"></a> Definir Variável de Sequência de Tarefas  
+Use a etapa **Definir variável de sequência de tarefas** para definir o valor de uma variável usada com a sequência de tarefas.  
 
-标准操作系统或 Windows PE 中均可运行此步骤。 任务序列变量由任务序列操作读取，并指定这些操作的行为。 有关特定任务序列变量的详细信息，请参阅[任务序列操作变量](task-sequence-action-variables.md)。  
+Esta etapa pode ser executada em um sistema operacional padrão ou no Windows PE. Variáveis de sequência de tarefas são lidas por ações de sequência de tarefas e especificam o comportamento dessas ações. Para mais informações sobre variáveis de sequência de tarefas específicas, confira [Task sequence action variables](task-sequence-action-variables.md) (Variáveis de ação de sequência de tarefas).  
 
-### <a name="details"></a>详细信息  
- 在此步骤的“属性”  选项卡上，可以配置此部分描述的设置。  
+### <a name="details"></a>Detalhes  
+ Na guia **Propriedades** desta etapa, você pode definir as configurações descritas nesta seção.  
 
- 此外，使用“选项”  选项卡可执行以下操作：  
+ Além disso, use a guia **Opções** guia para executar as seguintes ações:  
 
--   禁用该步骤。  
+-   Desabilitar a etapa.  
 
--   指定在运行该步骤时若出现错误，任务序列是否继续。  
+-   Especificar se a sequência de tarefas continuará se ocorrer um erro ao executar a etapa.  
 
--   指定运行步骤必须满足的条件。  
+-   Especificar condições que devem ser atendidas para a etapa a ser executada.  
 
- **Name**  
- 此任务序列步骤的用户定义的短名称。  
+ **Nome**  
+ Um nome curto do definido pelo usuário para essa etapa de sequência de tarefas.  
 
- **描述**  
- 有关此步骤所采取操作的更详细信息。  
+ **Descrição**  
+ Informações mais detalhadas sobre a ação realizada nesta etapa.  
 
- **任务序列变量**  
- 任务序列变量的用户定义的名称。  
+ **Variável de sequência de tarefas**  
+ Um nome definido pelo usuário para a variável de sequência de tarefas.  
 
- **值**  
- 与任务序列变量相关联的值。 此值可以是 %<varname\>% 语法中的另一个任务序列变量。  
+ **Valor**  
+ O valor que associado à variável de sequência de tarefas. O valor pode ser outra variável de sequência de tarefas na sintaxe %<varname\>%.  
 
-## <a name="hide-task-sequence-progress"></a>隐藏任务序列进度
+## <a name="hide-task-sequence-progress"></a>Ocultar o progresso da sequência de tarefas
 <!-- 1354291 -->
-在 1706 版本中，可以通过使用新的变量控制何时向最终用户显示任务序列进度。 在任务序列中，使用“设置任务序列变量”步骤来设置“TSDisableProgressUI”变量的值，以隐藏或显示任务序列进度。 你可以在任务序列中多次使用“设置任务序列变量”步骤来更改变量的值。 这样可以在任务序列进度的不同部分中隐藏或显示任务序列。
+Com a versão 1706, você pode controlar quando o andamento da sequência de tarefas é exibido aos usuários finais por meio de uma nova variável. Em sua sequência de tarefas, use a etapa **Definir Variável de Sequência de Tarefas** para definir o valor para a variável **TSDisableProgressUI** a fim de ocultar ou exibir o andamento da sequência de tarefas. Você pode usar a etapa Definir Variável de Sequência de Tarefas várias vezes em uma sequência de tarefas para alterar o valor da variável. Isso permite que você oculte ou exiba o andamento da sequência de tarefas em diferentes seções da sequência de tarefas.
 
- - **隐藏任务序列进度**  
-在任务序列编辑器中，使用[设置任务序列变量](#BKMK_SetTaskSequenceVariable)步骤将“TSDisableProgressUI”变量的值设置为“True”，以隐藏任务序列进度。
+ - **Para ocultar o progresso da sequência de tarefas**  
+No editor de sequência de tarefas, use a etapa [Definir Variável de Sequência de Tarefas](#BKMK_SetTaskSequenceVariable) para definir o valor da variável **TSDisableProgressUI** como **True** a fim de ocultar o andamento da sequência de tarefas.
 
- - **显示任务序列进度**  
-在任务序列编辑器中，使用[设置任务序列变量](#BKMK_SetTaskSequenceVariable)步骤将“TSDisableProgressUI”变量的值设置为“False”，以显示任务序列进度。
+ - **Para exibir o andamento da sequência de tarefas**  
+No editor de sequência de tarefas, use a etapa [Definir Variável de Sequência de Tarefas](#BKMK_SetTaskSequenceVariable) para definir o valor da variável **TSDisableProgressUI** como **False** a fim de exibir o andamento da sequência de tarefas.
 
-##  <a name="BKMK_SetupWindowsandConfigMgr"></a>安装 Windows 和 ConfigMgr  
- 使用“安装 Windows 和 ConfigMgr”  任务序列步骤执行从 Windows PE 到新操作系统的转移。 此任务序列步骤是在部署任何操作系统时都必需的部分。 该步骤会将 Configuration Manager 客户端安装到新操作系统中，并为任务序列在新操作系统中继续执行做好准备。  
+##  <a name="BKMK_SetupWindowsandConfigMgr"></a> Instalar Windows e ConfigMgr  
+ Use a etapa **Instalação do Windows e ConfigMgr** para realizar a transição do Windows PE para o novo sistema operacional. Esta etapa da sequência de tarefas é necessária em qualquer implantação de sistema operacional. Ele instala o cliente do Configuration Manager no novo sistema operacional e prepara a sequência de tarefas para continuar a execução no novo sistema operacional.  
 
- 此步骤仅可在 Windows PE 中运行。 不能在标准操作系统中运行。 有关此任务序列操作的任务序列变量的详细信息，请参阅[安装 Windows 和 ConfigMgr 任务序列操作变量](task-sequence-action-variables.md#BKMK_SetupWindows)。  
+ Esta etapa é executada somente no Windows PE. Ela não é executada em um sistema operacional padrão. Para obter mais informações sobre variáveis de sequência de tarefas para esta ação, consulte [Setup Windows and ConfigMgr task sequence action variables](task-sequence-action-variables.md#BKMK_SetupWindows) (Variáveis da ação da sequência de tarefas de Instalar Windows e ConfigMgr).  
 
- “安装 Windows 和 ConfigMgr”  任务序列操作将使用 Windows PE 安装目录 X:\Windows 替换 sysprep.inf 或 unattend.xml 目录变量，例如 %WINDIR% 和 %ProgramFiles%。 使用这些环境变量指定的任务序列变量将被忽略。  
+ A ação de sequência de tarefas **Instalar o Windows e o ConfigMgr** substitui as variáveis de diretório sysprep.inf ou unattend.xml, tais como %WINDIR% e %ProgramFiles%, pelo diretório de instalação do Windows PE X:\Windows. Variáveis de sequência de tarefas especificadas usando essas variáveis de ambiente serão ignorados.  
 
- 使用此任务序列步骤来执行以下操作：  
+ Use essa etapa de sequência de tarefas para executar as seguintes ações:  
 
-1.  初步操作：Windows PE  
+1.  Etapas preliminares: Windows PE  
 
-    1.  在 unattend.xml 文件中执行任务序列变量替换。  
+    1.  Executa a substituição de variável de sequência de tarefas no arquivo unattend.xml.  
 
-    2.  下载包含 Configuration Manager 客户端的包，并将其放入部署的映像中。  
+    2.  Baixa o pacote que contém o cliente do Configuration Manager e o coloca na imagem implantada.  
 
-2.  设置 Windows  
+2.  Configurar o Windows  
 
-    1.  基于映像的安装。  
+    1.  Instalação baseada em imagem.  
 
-        1.  在该映像中禁用 Configuration Manager 客户端（即，对 Configuration Manager 客户端服务禁用 Autostart）。  
+        1.  Desabilita o cliente do Configuration Manager na imagem (ou seja, desabilita a Inicialização automática para o serviço do cliente do Configuration Manager).  
 
-        2.  更新已部署映像中的注册表，确保已部署的操作系统使用与引用计算机上相同的驱动器号启动。  
+        2.  Atualiza o registro da imagem implantada para garantir que o sistema operacional implantado comece com a mesma letra que a unidade tinha no computador de referência.  
 
-        3.  在已部署的操作系统中重新启动。  
+        3.  Reinicia o sistema operacional implantado.  
 
-        4.  Windows 最小化安装使用先前指定的已禁用所有最终用户交互的 sysprep.inf 或 unattend.xml 文件运行。 如果“应用网络设置”  指定为加入域，则该信息位于 sysprep.inf 或 unattend.xml 文件中，且 Windows 最小化安装执行域加入操作。  
+        4.  Mini-instalação do Windows executada usando o arquivo sysprep.inf ou unattend.xml especificado com todas as interações do usuário final suprimidas. Observação: se a opção **Aplicar Configurações de Rede** especificou o ingresso em um domínio, essa informação estará no arquivo sysprep.inf ou unattend.xml e a mini-instalação do Windows executará o ingresso no domínio.  
 
-    2.  基于 Setup.exe 的安装。  运行 Setup.exe 会执行典型的 Windows 安装过程：  
+    2.  Instalação baseada em Setup.exe.  Executa o Setup.exe que segue o processo de instalação típica do Windows:  
 
-        1.  将在前面的“应用操作系统”  任务序列中指定的操作系统安装包复制到硬盘驱动器。  
+        1.  Copia o pacote de instalação do sistema operacional especificado em uma sequência de tarefas **Aplicar sistema operacional** anterior para a unidade de disco rígido.  
 
-        2.  在新部署的操作系统中重新启动。  
+        2.  Reinicia o sistema operacional recém-implantado.  
 
-        3.  Windows 最小化安装使用先前指定的已禁用所有用户界面的 sysprep.inf 或 unattend.xml 文件运行。 如果“应用网络设置”  指定为加入域，则该信息位于 sysprep.inf 或 unattend.xml 文件中，且 Windows 最小化安装执行域加入操作。  
+        3.  Mini-instalação do Windows executada usando o arquivo sysprep.inf ou unattend.xml especificado com todas as interfaces do usuário suprimidas. Observação: se a opção **Aplicar Configurações de Rede** especificou o ingresso em um domínio, essa informação estará no arquivo sysprep.inf ou unattend.xml e a mini-instalação do Windows executará o ingresso no domínio.  
 
-3.  安装 Configuration Manager 客户端  
+3.  Instalar o cliente do Configuration Manager  
 
-    1.  Windows 最小化安装结束后，任务序列将使用 setupcomplete.cmd 继续运行。  
+    1.  Após a conclusão da mini-instalação do Windows, a sequência de tarefas é retomada usando setupcomplete.cmd.  
 
-    2.  根据在“应用 Windows 设置”  步骤中选择的选项，启用或禁用本地管理员帐户。  
+    2.  Habilita ou desabilita a conta de administrador local, com base na opção selecionada na etapa **Aplicar configurações do Windows** .  
 
-    3.  使用先前下载的包 (1.b) 以及在“任务序列编辑器”中指定的安装属性，安装 Configuration Manager 客户端。 客户端以“设置模式”进行安装，以防止它在任务序列完成之前处理新策略请求。  
+    3.  Instala o cliente do Configuration Manager usando o pacote baixado anteriormente (1.b) e as propriedades de instalação especificadas no Editor de Sequência de Tarefas. O cliente está instalado em "modo de provisionamento" para impedir o processamento de novas solicitações de política de até que a sequência de tarefas seja concluída.  
 
-    4.  等待客户端完全可以操作。  
+    4.  Aguarda até que o cliente esteja totalmente operacional.  
 
-    5.  如果计算机在启用了网络访问保护的环境中运行，客户端将检查是否存在任何所需的更新并进行安装，以便所需的全部更新在任务序列继续运行之前均已存在。  
+    5.  Se o computador estiver operando em um ambiente com proteção de acesso à rede habilitado, o cliente verifica e instala as atualizações necessárias para que todas as atualizações necessárias estejam presentes antes de continuar com a sequência de tarefas em execução.  
 
-4.  任务序列继续运行下一个步骤。  
+4.  A sequência de tarefas continua sendo executada na sua próxima etapa.  
 
 > [!NOTE]  
->   “安装 Windows 和 ConfigMgr”任务序列操作负责运行新安装计算机上的组策略。 组策略在任务序列完成后应用。  
+>  A ação **Instalação do Windows e ConfigMgr** da sequência de tarefas é responsável pela execução da política de grupo no computador recém-instalado. A Política de Grupo é aplicada após a conclusão da sequência de tarefas.  
 
-### <a name="details"></a>详细信息  
- 在此步骤的“属性”  选项卡上，可以配置此部分描述的设置。  
+### <a name="details"></a>Detalhes  
+ Na guia **Propriedades** desta etapa, você pode definir as configurações descritas nesta seção.  
 
- 此外，使用“选项”  选项卡可执行以下操作：  
+ Além disso, use a guia **Opções** guia para executar as seguintes ações:  
 
--   禁用该步骤。  
+-   Desabilitar a etapa.  
 
--   如果在运行该步骤时出现错误，请勿选择继续执行任务序列。 如果出现错误，无论是否选择此设置，任务序列都将失败。  
+-   Não especifique que a sequência de tarefas continue se ocorrer um erro durante a execução da etapa. Se houver um erro, a sequência de tarefas falhará, independentemente se você selecionar ou não esta configuração.  
 
--   指定运行步骤必须满足的条件。  
+-   Especificar condições que devem ser atendidas para a etapa a ser executada.  
 
- **Name**  
- 指定描述此步骤中执行的操作的用户定义的短名。  
+ **Nome**  
+ Especifica um nome curto definido pelo usuário que descreve a ação realizada nesta etapa.  
 
- **描述**  
- 指定有关在此步骤中采取的操作的其他信息。  
+ **Descrição**  
+ Especifica informações adicionais sobre a ação realizada nesta etapa.  
 
- **客户端包**  
- 指定此任务序列步骤将使用的 Configuration Manager 客户端安装包。 单击“浏览”，并选择要用来安装 Configuration Manager 客户端的客户端安装包。  
+ **Pacote do cliente**  
+ Especifica o pacote de instalação do cliente do Configuration Manager que será usado por essa etapa de sequência de tarefas. Clique em **Procurar** e selecione o pacote de instalação de cliente que você deseja usar para instalar o cliente do Configuration Manager.  
 
- **如果可用，使用预生产客户端包**  
- 指定如有可用的预生产客户端包，则任务序列步骤将使用此包而非生产客户端包。 通常情况下，预生产客户端是在生产环境中进行测试的较新版本。 单击“浏览”，并选择想用于安装 Configuration Manager 客户端的预生产客户端安装包。  
+ **Usar pacote de cliente de pré-produção quando disponível**  
+ Especifica que, se houver um pacote de cliente de pré-produção disponível, a etapa da sequência de tarefas usará esse pacote em vez do pacote do cliente de produção. Normalmente, o cliente de pré-produção é uma versão mais recente que está sendo testada no ambiente de produção. Clique em **Procurar** e selecione o pacote de instalação de cliente de pré-produção que você deseja usar para instalar o cliente do Configuration Manager.  
 
- **安装属性**  
- 站点分配和默认配置由任务序列操作自动指定。 你可以使用此字段来指定安装客户端时使用的任何其他安装属性。 要输入多个安装属性，请使用空格分隔。  
+ **Propriedades de Instalação**  
+ Atribuição de site e a configuração padrão são automaticamente especificadas pela ação de sequência de tarefas. Você pode usar esse campo para especificar as propriedades adicionais de instalação a serem usada ao instalar o cliente. Para inserir várias propriedades de instalação, separe-as com um espaço.  
 
- 你可以指定要在客户端安装过程中使用命令行选项。 例如，你可以输入 **/skipprereq: silverlight.exe** 以通知 CCMSetup.exe 不安装 Microsoft Silverlight 必备组件。 有关 CCMSetup.exe 的可用命令行选项的详细信息，请参阅[关于客户端安装属性](../../core/clients/deploy/about-client-installation-properties.md)。  
+ Você pode especificar as opções de linha de comando usadas durante a instalação do cliente. Por exemplo, você pode inserir **/skipprereq: silverlight.exe** para informar o CCMSetup.exe para não instalar o pré-requisito do Microsoft Silverlight. Para mais informações sobre as opções de linha de comando disponíveis para o CCMSetup.exe, confira [About client installation properties](../../core/clients/deploy/about-client-installation-properties.md) (Sobre as propriedades da instalação do cliente).  
 
-##  <a name="BKMK_UpgradeOS"></a>升级操作系统  
- 使用“升级操作系统”  任务序列步骤将现有的 Windows 7、Windows 8、Windows 8.1 或 Windows 10 操作系统升级到 Windows 10。  
+##  <a name="BKMK_UpgradeOS"></a> Atualizar o sistema operacional  
+ Use a etapa da sequência de tarefas **Atualizar Sistema Operacional** para atualizar um sistema operacional existente do Windows 7, Windows 8, Windows 8.1 ou Windows 10 para um Windows 10.  
 
- 此任务序列步骤仅可在标准操作系统中运行。 不可在 Windows PE 中运行。  
+ Essa etapa só é executada em um sistema operacional padrão. Ela não é executada no Windows PE.  
 
-### <a name="details"></a>详细信息  
- 在此步骤的“属性”  选项卡上，可以配置此部分描述的设置。  
+### <a name="details"></a>Detalhes  
+ Na guia **Propriedades** desta etapa, você pode definir as configurações descritas nesta seção.  
 
- 此外，使用“选项”  选项卡可执行以下操作：  
+ Além disso, use a guia **Opções** guia para executar as seguintes ações:  
 
--   禁用该步骤。  
+-   Desabilitar a etapa.  
 
--   指定在运行该步骤时若出现错误，任务序列是否继续。  
+-   Especificar se a sequência de tarefas continuará se ocorrer um erro ao executar a etapa.  
 
--   指定运行步骤必须满足的条件。  
+-   Especificar condições que devem ser atendidas para a etapa a ser executada.  
 
- **Name**  
- 描述此步骤所采取操作的用户定义的短名。  
+ **Nome**  
+ Um nome curto definido pelo usuário que descreve a ação realizada nesta etapa.  
 
- **描述**  
- 有关此步骤所采取操作的更详细信息。  
+ **Descrição**  
+ Informações mais detalhadas sobre a ação realizada nesta etapa.  
 
- **升级包**  
- 选择此选项以指定用于升级的 Windows 10 操作系统升级包。  
+ **Atualizar pacote**  
+ Selecione esta opção para especificar o pacote de atualização do sistema operacional Windows 10 a ser usado para a atualização.  
 
- **源路径**  
- 指定要使用的 Windows 10 媒体的本地路径或网络路径（对应于 /installFrom 命令行选项）。 还可以指定一个变量，例如 %mycontentpath% 或 %DPC01%。 将变量用作源路径时，必须在任务序列中提前指定。 例如，如果在任务序列中使用 [下载包内容](#BKMK_DownloadPackageContent) 步骤，可以为操作系统升级包的位置指定一个变量。 然后，可在此步骤中将该变量用作源路径。  
+ **Caminho de origem**  
+ Especifica um local ou caminho de rede para a mídia do Windows 10 que deve ser usado (corresponde à opção /installFrom da linha de comando). Você também pode especificar uma variável, como %mycontentpath% ou %DPC01%. Quando você usa uma variável para o caminho de origem, ele deve ser especificado anteriormente na sequência de tarefas. Por exemplo, se você usar a etapa [Baixar o conteúdo do pacote](#BKMK_DownloadPackageContent) na sequência de tarefas, é possível especificar uma variável para o local do pacote de atualização do sistema operacional. Em seguida, você pode usar essa variável para o caminho de origem nesta etapa.  
 
- **版本**  
- 指定要用于升级的操作系统媒体的版本。  
+ **Edição**  
+ Especifique a edição na mídia do sistema operacional a ser usada para a atualização.  
 
- **产品密钥**  
- 指定要用于升级过程的产品密钥  
+ **Chave do produto (Product Key)**  
+ Especificar a chave do produto (Product Key) a ser aplicada ao processo de atualização  
 
- **在升级过程中向 Windows 安装程序提供以下驱动程序内容**  
- 选择此设置在升级过程中将驱动程序添加到目标计算机中（对应于 /InstallDriver 命令行选项）。 驱动程序必须与 Windows 10 兼容。 指定下列选项之一：  
+ **Forneça o conteúdo do driver a seguir para a Instalação do Windows durante a atualização**  
+ Selecione esta configuração para adicionar drivers ao computador de destino durante o processo de atualização (corresponde à opção /InstallDriver da linha de comando). Os drivers devem ser compatíveis com o Windows 10. Especifique uma das seguintes opções:  
 
--   **驱动程序包：**单击“浏览”  并从列表中选择现有的驱动程序包。  
+-   **Pacote de driver**: clique em **Procurar** e selecione um pacote de driver existente na lista.  
 
--   **暂存内容：**选择此选项以指定驱动程序包的位置。 可以指定本地文件夹、网络路径或任务序列变量。 将变量用作源路径时，必须在任务序列中提前指定。 例如，通过使用 [Download Package Content](task-sequence-steps.md#BKMK_DownloadPackageContent) 步骤。  
+-   **Conteúdo de teste**: selecione esta opção para especificar o local para o pacote de drivers. Você pode especificar uma pasta local, um caminho de rede ou uma variável de sequência de tarefas. Quando você usa uma variável para o caminho de origem, ele deve ser especificado anteriormente na sequência de tarefas. Por exemplo, usando a etapa [Download Package Content](task-sequence-steps.md#BKMK_DownloadPackageContent) .  
 
- **超时 （分钟）**  
- 指定在 Configuration Manager 使任务序列步骤失败之前，安装程序必须运行的分钟数。  
+ **Time-out (minutes) (Tempo limite (minutos))**  
+ Especifica o número de minutos durante os quais a Instalação precisa ser executada antes que o Configuration Manager provoque uma falha na etapa de sequência de tarefas.  
 
- **不启动升级而执行 Windows 安装程序兼容性扫描**  
- 指定不启动升级过程而执行 Windows 安装程序兼容性扫描（对应于 Compat ScanOnly 命令行选项）。 使用此选项时，仍必须部署整个安装源。 安装程序将退出代码作为扫描结果返回。 下表提供了一些常见的退出代码。  
+ **Executar a verificação de compatibilidade da Instalação do Windows sem iniciar a atualização**  
+ Especifica a execução da verificação de compatibilidade da Instalação do Windows sem iniciar o processo de atualização (corresponde à opção \Compat ScanOnly da linha de comando). Você ainda deve implantar a origem de instalação inteira ao usar essa opção. A instalação retorna um código de saída como resultado da verificação. A tabela a seguir fornece alguns dos códigos de saída mais comuns.  
 
-|退出代码|详细信息|  
+|Código de saída|Detalhes|  
 |-|-|  
-|MOSETUP_E_COMPAT_SCANONLY (0xC1900210)|不存在兼容性问题（“成功”）。|  
-|MOSETUP_E_COMPAT_INSTALLREQ_BLOCK (0xC1900208)|可操作的兼容性问题。|  
-|MOSETUP_E_COMPAT_MIGCHOICE_BLOCK (0xC1900204)|所选的迁移选项不可用。 例如，从 Enterprise 升级到 Professional。|  
-|MOSETUP_E_COMPAT_SYSREQ_BLOCK (0xC1900200)|不适合 Windows 10。|  
-|MOSETUP_E_COMPAT_INSTALLDISKSPACE_BLOCK (0xC190020E)|可用磁盘空间不足。|  
+|MOSETUP_E_COMPAT_SCANONLY (0xC1900210)|Nenhum problema de compatibilidade (“êxito”).|  
+|MOSETUP_E_COMPAT_INSTALLREQ_BLOCK (0xC1900208)|Problemas de compatibilidade acionáveis.|  
+|MOSETUP_E_COMPAT_MIGCHOICE_BLOCK (0xC1900204)|A opção de migração selecionada não está disponível. Por exemplo, uma atualização do Enterprise para Professional.|  
+|MOSETUP_E_COMPAT_SYSREQ_BLOCK (0xC1900200)|Não qualificado para Windows 10.|  
+|MOSETUP_E_COMPAT_INSTALLDISKSPACE_BLOCK (0xC190020E)|Não há espaço livre em disco suficiente.|  
 
- 有关此参数的详细信息，请参阅 [Windows 安装程序命令行选项](https://msdn.microsoft.com/library/windows/hardware/dn938368\(v=vs.85\).aspx)  
+ Para obter mais informações sobre este parâmetro, veja [Opções de Linha de Comando da Instalação do Windows](https://msdn.microsoft.com/library/windows/hardware/dn938368\(v=vs.85\).aspx)  
 
- **忽略任何不重要的兼容性消息**  
- 指定安装程序完成安装，忽略任何不重要的兼容性消息（对应于 /Compat IgnoreWarning 命令行选项）。  
+ **Ignorar quaisquer mensagens de compatibilidade rejeitadas**  
+ Especifica que a Configuração conclui a instalação, ignorando quaisquer mensagens de compatibilidade dispensáveis (corresponde à opção \Compat IgnoreWarning da linha de comando).  
 
- **通过 Windows Update 动态更新 Windows 安装程序**  
- 指定安装程序是否执行动态更新操作，如搜索、下载和安装更新（对应于 /DynamicUpdate 命令行选项）。 此设置与 Configuration Manager 软件更新不兼容，但使用 WSUS（独立）或 Windows Update 来处理更新时可启用它。  
+ **Atualizar dinamicamente a Instalação do Windows com o Windows Update**  
+ Especifica se a instalação executará operações de Atualização Dinâmica, como pesquisa, download e instalação de atualizações (corresponde à opção /DynamicUpdate da linha de comando). Essa configuração não é compatível com as atualizações de software do Configuration Manager, mas pode ser habilitada ao manipular atualizações usando o WSUS (autônomo) ou o Windows Update.  
 
- **替代策略并使用默认的 Microsoft Update：**选择此设置以实时临时替代本地策略，运行动态更新操作，并让计算机从 Windows Update 中获取更新。  
+ **Substituir política e usar o Microsoft Update padrão**: selecione esta configuração para substituir temporariamente a política local em tempo real para executar operações de Atualização Dinâmica e fazer com que o computador obtenha atualizações do Windows Update.  

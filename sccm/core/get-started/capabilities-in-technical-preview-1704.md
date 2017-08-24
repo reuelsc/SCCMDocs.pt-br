@@ -1,6 +1,6 @@
 ---
-title: "Technical Preview 1704 Configuration Manager 中的功能"
-description: "了解 System Center Configuration Manager Technical Preview（版本 1704）中的可用功能。"
+title: Funcionalidades no Technical Preview 1704 do Configuration Manager
+description: "Saiba mais sobre os recursos disponíveis no Technical Preview do System Center Configuration Manager, versão 1704."
 ms.custom: na
 ms.date: 4/21/2017
 ms.prod: configuration-manager
@@ -16,58 +16,58 @@ manager: angrobe
 ms.openlocfilehash: d7caee47ca74064630e09c1bdb94187af256d4b4
 ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
 ms.translationtype: HT
-ms.contentlocale: zh-CN
+ms.contentlocale: pt-BR
 ms.lasthandoff: 08/07/2017
 ---
-# <a name="capabilities-in-technical-preview-1704-for-system-center-configuration-manager"></a>System Center Configuration Manager Technical Preview 1704 中的功能
+# <a name="capabilities-in-technical-preview-1704-for-system-center-configuration-manager"></a>Funcionalidades do Technical Preview 1704 do System Center Configuration Manager
 
-*适用范围：System Center Configuration Manager (Technical Preview)*
+*Aplica-se a: System Center Configuration Manager (Technical Preview)*
 
-本文介绍了 System Center Configuration Manager Technical Preview（版本 1704）中的可用功能。 可以安装此版本以更新 Configuration Manager Technical Preview 站点的功能并向其添加新功能。 在安装此版本的 Technical Preview 前，请查看介绍性主题 [System Center Configuration Manager Technical Preview](../../core/get-started/technical-preview.md)，以熟悉使用 Technical Preview 的常规要求和限制、如何在版本之间进行更新，以及如何提供关于 Technical Preview 中的功能的反馈。    
+Este artigo apresenta os recursos disponíveis no Technical Preview do System Center Configuration Manager, versão 1704. Você pode instalar esta versão para atualizar e adicionar novas funcionalidades ao seu site do Configuration Manager Technical Preview. Antes de instalar esta versão do technical preview, consulte o tópico introdutório, [Technical Preview do System Center Configuration Manager](../../core/get-started/technical-preview.md), para se familiarizar com os requisitos e limitações gerais de uso de um technical preview, como atualizar entre versões e como fornecer comentários sobre os recursos em um technical preview.    
 
 
-**以下是可以试用的此版本的新功能。**  
+**Veja a seguir os novos recursos que você pode experimentar nesta versão.**  
 
-## <a name="configure-android-apps-with-app-configuration-policies"></a>使用应用配置策略配置 Android 应用
-可以使用 System Center Configuration Manager (Configuration Manager) 中的应用配置策略来分发用户在 Android for Work 设备上运行应用时可能需要的设置。 Android 应用配置政策仅适用于运行 Android for Work 的设备，并可从 Play for Work 商店应用到已批准应用。
+## <a name="configure-android-apps-with-app-configuration-policies"></a>Configurar aplicativos do Android com as políticas de configuração de aplicativo
+Você pode usar políticas de configuração de aplicativo no System Center Configuration Manager (Configuration Manager) para distribuir as configurações que podem ser necessárias quando um usuário executa um aplicativo em dispositivos Android for Work. As políticas de configuração de aplicativo do Android estão disponíveis somente em dispositivos com Android for Work e aplicam-se a aplicativos aprovados da loja Play for Work.
 
-### <a name="try-it-out"></a>试试看                 
+### <a name="try-it-out"></a>Experimente                 
 
-在 Configuration Manager 控制台中，选择“软件库” > “应用程序管理” > “应用配置策略”，然后选择“创建应用配置策略”。 在向导的“常规”页中，现在你可以“选择配置策略类型”。 指定应用配置策略所针对的平台：**适用于Android for Work 应用的配置策略**。 然后，你可以**指定名称和值对**或**浏览到属性列表 JSON 文件**。 新应配置策略显示在“软件库”工作区的“应用配置策略”节点中。 若要将应用配置策略与 Android for Work 应用的部署相关联，可按通常方式使用[部署应用程序](/sccm/apps/deploy-use/deploy-applications)主题中的过程来部署应用程序。
+No console do Configuration Manager, escolha **Biblioteca de Software** > **Gerenciamento de Aplicativos** > **Políticas de Configuração de Aplicativo** e escolha **Criar uma política de configuração do aplicativo**. Na página **Geral** do assistente, você agora pode **Selecionar um tipo de política de configuração**. Especifique a plataforma de destino com a política de configuração de aplicativo: **Política de configuração para os aplicativos do Android for Work**. Você pode **Especificar pares de nome e valor** ou **Procurar um arquivo JSON de lista de propriedade**. A nova política de configuração de aplicativo é mostrada no espaço de trabalho **Biblioteca de Software**, no nó **Políticas de Configuração de Aplicativo**. Para associar uma política de configuração de aplicativo à implantação de um aplicativo Android for Work, implante o aplicativo da maneira normal, usando o procedimento no tópico [Implantar aplicativos](/sccm/apps/deploy-use/deploy-applications).
 
-## <a name="hardware-inventory-collects-secure-boot-information"></a>硬件清单收集安全启动信息
-硬件清单现在收集有关是否在客户端启用安全启动的信息。 该信息存储在 **SMS_Firmware** 类（在 1702 版本中引入）中，并在硬件清单中默认启用。 有关硬件清单的详细信息，请参阅[如何配置硬件清单](/sccm/core/clients/manage/inventory/configure-hardware-inventory)。
+## <a name="hardware-inventory-collects-secure-boot-information"></a>O inventário de hardware coleta informações de Inicialização Segura
+O inventário de hardware agora coleta informações para mostrar se a Inicialização Segura está habilitada nos clientes. Essas informações são armazenadas na classe **SMS_Firmware** (introduzida na versão 1702) e habilitada no inventário de hardware por padrão. Para saber mais sobre o inventário de hardware, confira [Como configurar o inventário de hardware](/sccm/core/clients/manage/inventory/configure-hardware-inventory).
 
-## <a name="add-child-task-sequences-to-a-task-sequence"></a>将子任务序列添加到任务序列
-在此版本中，你可以添加一个运行其他任务序列的新任务序列步骤，该步骤在任务序列之间创建父/子关系。 这允许创建更多可重复使用的模块式任务序列。  
+## <a name="add-child-task-sequences-to-a-task-sequence"></a>Adicionar sequências de tarefas filho a uma sequência de tarefas
+Nesta versão, você pode adicionar uma nova etapa de sequência de tarefas que executa outra sequência de tarefas e cria uma relação pai/filho entre as sequências de tarefas. Isso permite que você crie sequências de tarefas mais modulares que podem ser usadas novamente.  
 
-将子任务序列添加到任务序列时，请考虑以下事项：
+Quando você adiciona uma sequência de tarefas filho a uma sequência de tarefas, considere o seguinte:
 
-- 父和子任务序列有效地组合成客户端运行的单个策略。
-- 不支持添加作为其他任务序列父项的子任务序列。
-- 该环境是全局环境。 例如，如果变量由父任务序列设置，然后由子任务序列更改，那么之后变量将保持更改。 类似地，如果子任务序列创建了一个新变量，那么该变量可用于父任务序列中的其余步骤。
-- 对于单个任务序列操作，状态消息均按正常发送。
-- 任务序列将条目写入 smsts.log 文件，包括在子任务序列启动时使其清晰明确的新日志条目。
-- 在 Technical Preview for Configuration Manager（版本 1704）中，如果子任务序列引用任何程序包，并且你从软件中心运行父任务序列，则在运行子任务序列时，客户端将找不到程序包内容。 在这种情况下，必须从媒体（启动媒体、PXE 等）运行任务序列。  
+- As sequências de tarefas pai e filho efetivamente são combinadas em uma única política que o cliente executa.
+- Não há suporte para adicionar uma sequência de tarefas filho que seja pai de outra sequência de tarefas.
+- O ambiente é global. Por exemplo, se uma variável for definida pela sequência de tarefas pai e, em seguida, alterada pela sequência de tarefas filho, a variável permanecerá alterada. Da mesma forma, se a sequência de tarefas filho criar uma nova variável, a variável estará disponível para as etapas restantes na sequência de tarefas pai.
+- As mensagens de status são enviadas normalmente para uma operação de sequência de tarefas.
+- As sequências de tarefas gravam entradas no arquivo smsts.log, com novas entradas de log que deixam claro quando uma sequência de tarefas filho é iniciada.
+- Na Technical Preview do Configuration Manager, versão 1704, se as sequências de tarefas filho fizerem referência a qualquer pacote e você executar a sequência de tarefas pai do Centro de Software, o cliente não encontrará o conteúdo do pacote quando a sequência de tarefas filho for executada. Nesse cenário, você deverá executar a sequência de tarefas da mídia (mídia de inicialização, PXE etc.).  
 
-    如果子任务序列使用“运行命令行”（无任何程序包引用）、“格式”“BitLocker”等步骤，则任务序列将可从软件中心成功运行。
+    Se a sequência de tarefas filho usar etapas como **Executar linha de comando** (sem qualquer referência de pacote), **Formatar**, **BitLocker** etc., a sequência de tarefas será executada com êxito do Centro de Software.
 
-### <a name="to-add-a-child-task-sequence-to-a-task-sequence"></a>将子任务序列添加到任务序列
-1. 在任务序列编辑器中，单击“添加”，选择“常规”，然后单击“运行任务序列”。
-2. 单击“浏览”，选择子任务序列。  
+### <a name="to-add-a-child-task-sequence-to-a-task-sequence"></a>Para adicionar uma sequência de tarefas filho a uma sequência de tarefas
+1. No editor de sequência de tarefas, clique em **Adicionar**, selecione **Geral** e clique em **Executar Sequência de Tarefas**.
+2. Clique em **Procurar** para selecionar a sequência de tarefas filho.  
 
-## <a name="reload-boot-images-with-current-windows-pe-version"></a>重载当前的 Windows PE 版本的启动映像
-当你在所选启动映像上运行“更新分发点”时，现在可以选择在启动映像中从 Windows ADK 安装目录重载最新版本的 Windows PE。 该向导的“常规”页提供有关安装在站点服务器上的 Windows ADK 版本、启动映像中使用 Windows PE 的 Windows ADK 版本以及 Configuration Manager 客户端版本的信息。 你可以使用此信息来帮助你决定是否重载启动映像。 此外，当你在“启动映像”节点中查看启动映像时，新列（**客户端版本**）已添加，这样你就了解每个启动映像使用的 Configuration Manager 客户端是哪个版本。
+## <a name="reload-boot-images-with-current-windows-pe-version"></a>Recarregue as imagens de inicialização com a versão atual do Windows PE
+Quando você executa **Atualizar Pontos de Distribuição** em uma imagem de inicialização selecionada, agora pode optar por recarregar a versão mais recente do Windows PE (a partir do diretório de instalação do Windows ADK) na imagem de inicialização. A página **Geral** do assistente fornece informações sobre a versão do Windows ADK instalada no servidor do site, a versão do Windows ADK do qual o Windows PE foi usado na imagem de inicialização e a versão do cliente do Configuration Manager. Você pode usar essas informações para ajudá-lo a decidir se deseja recarregar a imagem de inicialização. Além disso, uma nova coluna (**Versão Cliente**) foi adicionada ao exibir imagens de inicialização no nó **Imagens de Inicialização** para que você saiba qual versão do cliente do Configuration Manager cada imagem de inicialização usa.
 
-### <a name="to-reload-a-boot-image-with-the-current-windows-pe-version"></a>使用当前的 Windows PE 版本重载启动映像
+### <a name="to-reload-a-boot-image-with-the-current-windows-pe-version"></a>Para recarregar uma imagem de inicialização com a versão atual do Windows PE
 
-1. 在 Configuration Manager 控制台中，转到“软件库” > “操作系统” > “启动映像”。
-2. 选择“启动映像”，然后单击“更新分发点”。
-3. 在向导的“常规”页面上，选择“使用当前版本的 Windows PE 从安装的 Windows ADK 重载启动映像”。
+1. No console do Configuration Manager, acesse **Biblioteca de Software** > **Sistemas Operacionais** > **Imagens de Inicialização**.
+2. Selecione uma imagem de inicialização e clique em **Atualizar Pontos de Distribuição**.
+3. Na página **Geral** do assistente, selecione **Recarregar imagem de inicialização usando a versão atual do Windows PE do Windows ADK instalado**.
 
-## <a name="improvements-to-operating-system-deployment"></a>对操作系统部署的改进
-我们根据用户的语音反馈，对操作系统部署做了以下改进。
+## <a name="improvements-to-operating-system-deployment"></a>Melhorias na implantação do sistema operacional
+Fizemos as seguintes melhorias para a implantação de sistema operacional, que foram resultado dos comentários dos usuários.
 
-- 操作系统映像的[新**操作系统版本**列](https://configurationmanager.uservoice.com/forums/300492-ideas/suggestions/17558407-add-a-column-to-the-operating-system-images-node-f)：我们添加了一个名为**操作系统版本**的新列，以便在“操作系统映像”和“操作系统升级包”节点中查看信息时显示映像的操作系统版本。 仅显示 WIM 中第一条索引的版本。 转到映像的“详细信息”选项卡，查看其他索引的操作系统版本。
+- [Nova coluna **Versão do sistema operacional** para imagens do sistema operacional](https://configurationmanager.uservoice.com/forums/300492-ideas/suggestions/17558407-add-a-column-to-the-operating-system-images-node-f): adicionamos uma nova coluna chamada **Versão do sistema operacional** para exibir a versão do sistema operacional para a imagem quando você exibir informações nos nós **Imagens do sistema operacional** e **Pacotes de atualização do sistema operacional**. Somente a versão do primeiro índice no .WIM é exibida. Vá para a guia **Detalhes** para a imagem para examinar as versões do sistema operacional para outros índices.
 
-- [更高效地登录 Smsts.log](https://configurationmanager.uservoice.com/forums/300492-ideas/suggestions/16791919-stop-filling-smsts-log-with-useless)：从此版本开始，我们不再向 smsts.log 文件写入用于获取 CCM_CIVersionInfo.PolicyID 信息的条目。 此版本之前的版本可能包含很多带有此信息的条目，这使得在日志文件中查找相关度更高的信息非常困难。
+- [Logs mais eficientes em Smsts.log](https://configurationmanager.uservoice.com/forums/300492-ideas/suggestions/16791919-stop-filling-smsts-log-with-useless): a partir desta versão, não estamos mais gravando entradas no arquivo smsts.log para obter informações de CCM_CIVersionInfo.PolicyID. Antes dessa versão, podia haver muitas entradas com essas informações, o que dificultava encontrar as informações mais relevantes no arquivo de log.

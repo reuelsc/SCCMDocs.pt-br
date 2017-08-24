@@ -6,23 +6,20 @@ ms.date: 05/16/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
-ms.technology:
-- configmgr-client
+ms.technology: configmgr-client
 ms.tgt_pltfrm: na
 ms.topic: get-started-article
 ms.assetid: 83a7c934-3b11-435d-ba22-cbc274951e83
-caps.latest.revision: 7
-caps.handback.revision: 0
+caps.latest.revision: "7"
+caps.handback.revision: "0"
 author: robstackmsft
 ms.author: robstack
 manager: angrobe
-ms.translationtype: Human Translation
-ms.sourcegitcommit: ae60eb25383f4bd07faaa1265185a471ee79b1e9
 ms.openlocfilehash: 90c30bfb22735f73422f1547301552bf42022bb9
-ms.contentlocale: pt-br
-ms.lasthandoff: 05/17/2017
-
-
+ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
+ms.translationtype: HT
+ms.contentlocale: pt-BR
+ms.lasthandoff: 08/07/2017
 ---
 # <a name="plan-for-internet-based-client-management-in-system-center-configuration-manager"></a>Planejar o gerenciamento de clientes baseados na Internet no System Center Configuration Manager
 
@@ -198,4 +195,3 @@ Embora não haja nenhum requisito para haver uma relação de confiança entre a
      Para obter informações de configuração de suporte para esses requisitos, consulte a documentação do servidor proxy ou firewall.  
 
      Para requisitos de comunicação semelhantes ao usar o ponto de atualização de software para conexões de clientes da Internet, consulte a documentação do WSUS (Windows Server Update Services). Por exemplo, para o WSUS no Windows Server 2003, veja [Apêndice D: Configurações de segurança](http://go.microsoft.com/fwlink/p/?LinkId=143368), o apêndice de implantação para configurações de segurança.
-

@@ -1,6 +1,6 @@
 ---
-title: "国际支持 | Microsoft Docs"
-description: "配置 System Center Configuration Manager 以符合特定的国际要求。"
+title: Suporte internacional | Microsoft Docs
+description: "Configure o System Center Configuration Manager para atender a requisitos internacionais específicos."
 ms.custom: na
 ms.date: 10/06/2016
 ms.prod: configuration-manager
@@ -18,27 +18,27 @@ manager: angrobe
 ms.openlocfilehash: 3bab51be96445f766e8f5bbf54eee854e5d09cee
 ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
 ms.translationtype: HT
-ms.contentlocale: zh-CN
+ms.contentlocale: pt-BR
 ms.lasthandoff: 08/07/2017
 ---
-# <a name="international-support-in-system-center-configuration-manager"></a>System Center Configuration Manager 的国际支持
+# <a name="international-support-in-system-center-configuration-manager"></a>Suporte internacional no System Center Configuration Manager
 
-*适用范围：System Center Configuration Manager (Current Branch)*
+*Aplica-se a: System Center Configuration Manager (Branch Atual)*
 
-以下部分提供技术详细信息，帮助使 System Center Configuration Manager 符合特定的国际要求。  
+As seções a seguir fornecem detalhes técnicos para ajudá-lo a tornar o System Center Configuration Manager em conformidade com requisitos internacionais específicos.  
 
-## <a name="gb18030-requirements"></a>GB18030 要求  
- Configuration Manager 符合在 GB18030 中定义的标准，因此，可以在中国使用 Configuration Manager。 Configuration Manager 部署必须具有下列配置才能符合 GB18030 要求：  
+## <a name="gb18030-requirements"></a>Requisitos GB18030  
+ O Configuration Manager atende aos padrões que estão definidos no GB18030, portanto é possível usar o Configuration Manager na China. Uma implantação do Configuration Manager deve ter as seguintes configurações para atender aos requisitos GB18030:  
 
--   与 Configuration Manager 一起使用的每台站点服务器计算机和 SQL Server 计算机都必须使用中文操作系统。  
+-   Cada computador do servidor de site e computador do SQL Server utilizado com o Configuration Manager deve usar um sistema operacional chinês.  
 
--   层次结构中的每个站点数据库和 SQL Server 的每个实例都必须使用相同的排序规则，而且必须是下列排序规则之一：  
+-   Cada banco de dados do site e cada instância do SQL Server na hierarquia deve usar o mesmo agrupamento, e deve ser um dos seguintes:  
 
     -   Chinese_Simplified_Pinyin_100_CI_AI  
 
     -   Chinese_Simplified_Stroke_Order_100_CI_AI  
 
     > [!NOTE]  
-    >  对于[对 System Center Configuration Manager 的 SQL Server 版本的支持](../../../core/plan-design/configs/support-for-sql-server-versions.md)中所述的要求，这些数据库排序规则是一个例外。  
+    >  Estes agrupamentos de banco de dados são uma exceção aos requisitos observados na seção [Suporte para versões do SQL Server para o System Center Configuration Manager](../../../core/plan-design/configs/support-for-sql-server-versions.md).  
 
--   必须将名为 **GB18030.SMS** 的文件放在层次结构中的每台站点服务器计算机的系统卷根文件夹下。 此文件不包含任何数据，而且可能是按照此要求命名的空白文本文件。  
+-   Você deve colocar um arquivo com o nome **GB18030.SMS** na pasta raiz do volume do sistema de cada computador do servidor do site na hierarquia. Esse arquivo não contém dados e pode ser um arquivo de texto vazio que está nomeado para atender a esse requisito.  

@@ -1,6 +1,6 @@
 ---
-title: "软件更新简介 | Microsoft Docs"
-description: "了解 System Center Configuration Manager 中的软件更新的基础知识。"
+title: "Introdução às atualizações de software | Microsoft Docs"
+description: "Tenha noções básicas sobre atualizações de software no System Center Configuration Manager."
 keywords: 
 author: dougeby
 ms.author: dougeby
@@ -14,268 +14,268 @@ ms.assetid: e9778b13-c8a3-40eb-8655-34ac8ce9cdaa
 ms.openlocfilehash: 2904b904bbaf155f016f55fbd36af80308a42d76
 ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
 ms.translationtype: HT
-ms.contentlocale: zh-CN
+ms.contentlocale: pt-BR
 ms.lasthandoff: 08/07/2017
 ---
-# <a name="introduction-to-software-updates-in-system-center-configuration-manager"></a>System Center Configuration Manager 中的软件更新简介
+# <a name="introduction-to-software-updates-in-system-center-configuration-manager"></a>Introdução às atualizações de software no System Center Configuration Manager
 
-*适用范围：System Center Configuration Manager (Current Branch)*
+*Aplica-se a: System Center Configuration Manager (Branch Atual)*
 
-System Center Configuration Manager 中的软件更新提供了一组工具和资源，可帮助管理跟踪软件更新并将其应用到企业中的客户端计算机的复杂任务。 要维持运行效率、克服安全问题和保持网络基础结构的稳定性，有效的软件更新管理过程是必不可少的。 但是，由于技术日新月异，并且新的安全威胁不断出现，因此需要始终如一地持续关注有效的软件更新管理。  
+As atualizações de software no System Center Configuration Manager fornecem um conjunto de ferramentas e recursos que podem ajudar a gerenciar a tarefa complexa de acompanhar e aplicar atualizações de software aos computadores cliente da empresa. Um processo eficiente de gerenciamento de atualização de software é necessário para manter a eficiência operacional, solucionar problemas de segurança e manter a estabilidade da infraestrutura de rede. No entanto, devido à natureza variável da tecnologia e ao aparecimento contínuo de novas ameaças à segurança, a eficiência do gerenciamento de atualização de software exige atenção consistente e contínua.  
 
-有关演示如何能在你的环境中部署软件更新的示例方案，请参阅[部署安全软件更新的示例方案](../deploy-use/example-scenario-deploy-monitor-monthly-security-updates.md)。  
+Para obter um exemplo que mostra como você pode implantar atualizações de software em seu ambiente, consulte [Cenário de exemplo para implantar atualizações de software de segurança](../deploy-use/example-scenario-deploy-monitor-monthly-security-updates.md).  
 
-##  <a name="BKMK_Synchronization"></a> 软件更新同步  
- Configuration Manager 中的软件更新同步连接到 Microsoft 更新来检索软件更新元数据。 顶层站点（管理中心站点或独立主站点）按计划或在你从 Configuration Manager 控制台中手动启动同步时与 Microsoft 更新同步。 当 Configuration Manager 在顶层站点上完成软件更新同步时，软件更新同步将在子站点（如果存在）上开始。 当同步在每个主站点或辅助站点上完成时，将会创建一个站点范围的策略，该策略向客户端计算机提供软件更新点的位置。  
-
-> [!NOTE]  
->  默认情况下，软件更新在客户端设置中启用。 但是，如果将“在客户端上启用软件更新”  客户端设置设置为“否”  以禁用集合上或默认设置中的软件更新，软件更新点的位置不会发送到关联客户端。 有关详细信息，请参阅[软件更新客户端设置](../../core/clients/deploy/about-client-settings.md#software-updates)。  
-
- 客户端收到策略后，将启动软件更新符合性扫描，并将信息写入到 Windows Management Instrumentation (WMI)。 然后，符合性信息将发送到管理点，后者随后将该信息发送到站点服务器。 有关符合性评估的详细信息，请参阅本主题中的 [Software updates compliance assessment](#BKMK_SUMCompliance) 部分。  
-
- 你可以在主站点上安装多个软件更新点。 你安装的第一个软件更新点配置为同步源。 此同步源通过不在 Configuration Manager 层次结构中的 Microsoft 更新或 WSUS 服务器进行同步。 站点上的其他软件更新点使用第一个软件更新点作为同步源。  
+##  <a name="BKMK_Synchronization"></a> Sincronização das atualizações de software  
+ A sincronização de atualizações de software no Configuration Manager se conecta ao Microsoft Update para recuperar metadados de atualizações de software. O site de nível superior (site de administração central ou site primário autônomo) sincroniza com o Microsoft Update em um horário agendado ou quando você inicia a sincronização manualmente no console do Configuration Manager. Quando o Configuration Manager terminar a sincronização das atualizações de software no site de nível superior, a sincronização das atualizações de software se iniciará nos sites filho, se existirem. Quando sincronização termina em cada site primário ou secundário, uma política de site é criada para fornecer aos computadores cliente o local dos pontos de atualização de software.  
 
 > [!NOTE]  
->  当软件更新同步过程在顶层站点上完成时，将通过使用数据库复制将软件更新元数据复制到子站点。 将 Configuration Manager 控制台连接到子站点时，Configuration Manager 将显示软件更新元数据。 但是，在你在站点上安装和配置软件更新点之前，客户端将不会扫描软件更新符合性，客户端将不会向 Configuration Manager 报告符合性信息，并且你无法成功部署软件更新。  
+>  As atualizações de software são habilitadas por padrão nas configurações do cliente. No entanto, se você não definir a configuração do cliente **Habilitar as atualizações de software em clientes** para **Não** para desabilitar as atualizações de software em um coleção ou nas configurações padrão, o local dos pontos de atualização de software não será enviado aos clientes associados. Para obter detalhes, veja [Configurações do cliente para atualizações de software](../../core/clients/deploy/about-client-settings.md#software-updates).  
 
-### <a name="synchronization-on-the-top-level-site"></a>顶层站点上的同步  
- 顶层站点上的软件更新同步过程从 Microsoft 更新中检索满足你在软件更新点组件属性中所指定条件的软件更新元数据。 你只能在顶层站点上配置条件。  
+ Depois que o cliente recebe a política, ele inicia uma verificação da conformidade das atualizações de software e grava as informações no WMI (Windows Management Instrumentation). Em seguida, as informações de conformidade são enviadas ao ponto de gerenciamento que, por sua vez, envia as informações ao servidor do site. Para obter mais informações sobre avaliação de conformidade, consulte a seção [Software updates compliance assessment](#BKMK_SUMCompliance) neste tópico.  
+
+ É possível instalar vários pontos de atualização de software em um site primário. O primeiro ponto de atualização de software que você instala é configurado como a origem da sincronização. A sincronização acontece no Microsoft Update ou em um servidor WSUS, não na hierarquia do Configuration Manager. Os outros pontos de atualização de software do site usam o primeiro ponto de atualização de software como a origem da sincronização.  
 
 > [!NOTE]  
->  你可以将不在 Configuration Manager 层次结构中的现有 WSUS 服务器（而不是 Microsoft 更新）指定为同步源。  
+>  Quando o processo de sincronização de atualizações de software termina no site de nível superior, os metadados das atualizações de software são replicados nos sites filho por meio da replicação de banco de dados. Ao conectar um console do Configuration Manager ao site filho, o Configuration Manager exibe os metadados das atualizações de software. No entanto, até você instalar e configurar um ponto de atualização de software no site, os clientes não verificarão a conformidade das atualizações de software, não relatarão informações de conformidade para o Configuration Manager, e você não poderá implantar atualizações de software com êxito.  
 
- 以下列表描述顶层站点上的同步过程的基本步骤：  
+### <a name="synchronization-on-the-top-level-site"></a>Sincronização no site de nível superior  
+ O processo de sincronização de atualizações de software no site de nível superior recupera do Microsoft Update os metadados das atualizações de software que atendem aos critérios especificados em Propriedades do Componente de Ponto de Atualização de Software. Você define os critérios apenas no site de nível superior.  
 
-1.  软件更新同步开始。  
+> [!NOTE]  
+>  É possível especificar um servidor WSUS existente que não está na hierarquia do Configuration Manager, em vez de Microsoft Updates como a origem da sincronização.  
 
-2.  WSUS Synchronization Manager 向运行在软件更新点上的 WSUS 发送请求，以开始与 Microsoft 更新的同步。  
+ A lista a seguir descreve as etapas básicas do processo de sincronização no site de nível superior:  
 
-3.  将从 Microsoft 更新同步软件更新元数据，并在 WSUS 数据库中插入或更新任何更改。  
+1.  A sincronização de atualizações de software inicia.  
 
-4.  当 WSUS 完成同步时，WSUS Synchronization Manager 会将软件更新元数据从 WSUS 数据库同步到 Configuration Manager 数据库，并在站点数据库中插入或更新上一次同步后的任何更改。 软件更新元数据以配置项目的形式存储在站点数据库中。  
+2.  O Gerenciador de Sincronização do WSUS envia uma solicitação ao WSUS em execução no ponto de atualização de software para iniciar a sincronização com o Microsoft Update.  
 
-5.  将使用数据库复制将软件更新配置项目发送到子站点。  
+3.  Os metadados das atualizações de software são sincronizados no Microsoft Update e as alterações são inseridas ou atualizadas no banco de dados do WSUS.  
 
-6.  同步成功完成后，WSUS Synchronization Manager 将创建状态消息 6702。  
+4.  Quando o WSUS termina a sincronização, o Gerenciador de Sincronização do WSUS sincroniza os metadados das atualizações de software do banco de dados do WSUS com o banco de dados do Configuration Manager, e as alterações após a última sincronização são inseridas ou atualizadas no banco de dados do site. Os metadados das atualizações de software são armazenados no banco de dados do site como item de configuração.  
 
-7.  WSUS Synchronization Manager 将同步请求发送到所有子站点。  
+5.  Os itens de configuração das atualizações de software são enviados aos sites filho por meio da replicação de banco de dados.  
 
-8.  WSUS Synchronization Manager 以一次一个的形式将请求发送到运行在站点的其他软件更新点上的 WSUS。 其他软件更新点上的 WSUS 服务器被配置为运行在站点的默认软件更新点上的 WSUS 的副本。  
+6.  Quando a sincronização termina com êxito, o Gerenciador de Sincronização do WSUS cria a mensagem de status 6702.  
 
-### <a name="synchronization-on-child-primary-and-secondary-sites"></a>子主站点和辅助站点上的同步  
- 在顶层站点上的软件更新同步过程中，将通过使用数据库复制将软件更新配置项目复制到子站点。 该过程结束时，顶层站点会向子站点发送同步请求，并且子站点将开始 WSUS 同步。 以下列表提供子主站点或辅助站点上的同步过程的基本步骤：  
+7.  O Gerenciador de Sincronização do WSUS envia uma solicitação de sincronização para todos os sites filho.  
 
-1.  WSUS Synchronization Manager 收到来自顶层站点的同步请求。  
+8.  O Gerenciador de Sincronização do WSUS envia uma solicitação por vez ao WSUS em execução em outros pontos de atualização de software do site. Os servidores WSUS dos outros pontos de atualização de software são configurados para serem réplicas do WSUS em execução no ponto de atualização de software padrão do site.  
 
-2.  软件更新同步开始。  
+### <a name="synchronization-on-child-primary-and-secondary-sites"></a>Sincronização em sites primários e secundários filho  
+ Durante o processo de sincronização de atualizações de software no site de nível superior, os itens de configuração das atualizações de software são replicados nos sites filho por meio da replicação de banco de dados. No fim do processo, o site de nível superior envia uma solicitação de sincronização ao site filho, que inicia a sincronização do WSUS. A lista a seguir fornece as etapas básicas do processo de sincronização em um site primário ou secundário filho:  
 
-3.  WSUS Synchronization Manager 向运行在软件更新点上的 WSUS 发送请求以开始同步。  
+1.  O Gerenciador de Sincronização do WSUS recebe uma solicitação de sincronização do site de nível superior.  
 
-4.  运行在子站点的软件更新点上的 WSUS 从运行在父站点的软件更新点上的 WSUS 中同步软件更新元数据。  
+2.  A sincronização de atualizações de software inicia.  
 
-5.  同步成功完成后，WSUS Synchronization Manager 将创建状态消息 6702。  
+3.  O Gerenciador de Sincronização do WSUS faz uma solicitação para o WSUS em execução no ponto de atualização de software para iniciar a sincronização.  
 
-6.  WSUS Synchronization Manager 从主站点中向任何子辅助站点发送同步请求。 辅助站点开始与父主站点的软件更新同步。 辅助站点被配置为运行在父站点上的 WSUS 的副本。  
+4.  O WSUS em execução no ponto de atualização de software no site filho sincroniza os metadados de atualizações de software do WSUS em execução no ponto de atualização de software no site pai.  
 
-7.  WSUS Synchronization Manager 以一次一个的形式将请求发送到运行在站点的其他软件更新点上的 WSUS。 其他软件更新点上的 WSUS 服务器被配置为运行在站点的默认软件更新点上的 WSUS 的副本。  
+5.  Quando a sincronização termina com êxito, o Gerenciador de Sincronização do WSUS cria a mensagem de status 6702.  
+
+6.  Em um site primário, o Gerenciador de Sincronização do WSUS envia uma solicitação de sincronização para qualquer site secundário filho. O site secundário inicia a sincronização das atualizações de software com o site primário pai. O site secundário é configurado como uma réplica do WSUS em execução no site pai.  
+
+7.  O Gerenciador de Sincronização do WSUS envia uma solicitação por vez ao WSUS em execução em outros pontos de atualização de software do site. Os servidores WSUS dos outros pontos de atualização de software são configurados para serem réplicas do WSUS em execução no ponto de atualização de software padrão do site.  
 
 ##  <a name="BKMK_SUMCompliance"></a> Software updates compliance assessment  
- 在将软件更新部署到 Configuration Manager 中的客户端计算机之前，请在客户端计算机上启动软件更新符合性扫描。 对于每个软件更新，将创建一条状态消息，其中包含该更新的符合性状态。 状态消息将成批发送到管理点，并随后发送到站点服务器，在站点服务器中，会将符合性状态插入站点数据库。 软件更新的符合性状态显示在 Configuration Manager 控制台中。 你可以在需要更新的计算机上部署和安装软件更新。 下列部分提供有关符合性状态的信息，并描述用于扫描软件更新符合性的过程。  
+ Antes de você implantar atualizações de software em computadores cliente no Configuration Manager, inicie a verificação da conformidade das atualizações de software nos computadores cliente. Para cada atualização de software, uma mensagem de estado é criada contendo o estado de conformidade da atualização. As mensagens de estado são enviadas em massa para o ponto de gerenciamento e depois para o servidor do site, onde o estado de conformidade é inserido no banco de dados do site. O estado de conformidade das atualizações de software é exibido no console do Configuration Manager. Você pode implantar e instalar atualizações de software nos computadores que precisam dessas atualizações. As seções a seguir fornecem informações sobre os estados de conformidade e descreve o processo da verificação da conformidade das atualizações de software.  
 
-### <a name="software-updates-compliance-states"></a>软件更新符合性状态  
- 下面列出并描述了 Configuration Manager 控制台中显示的各个软件更新符合性状态。  
+### <a name="software-updates-compliance-states"></a>Estados de conformidade das atualizações de software  
+ A seguir veja uma lista e descrição de cada estado de conformidade que é exibido no console do Configuration Manager para as atualizações de software.  
 
--   **必需**  
+-   **Necessária**  
 
-     指定软件更新在客户端计算机上适用且为必需。 如果软件更新状态为“必需” ，则可能存在以下情况：  
+     Especifica que a atualização de software é aplicável e necessária no computador cliente. Qualquer uma das condições a seguir pode ser válida quando o estado da atualização de software é **Necessária**:  
 
-    -   软件更新未部署到客户端计算机。  
+    -   A atualização de software não foi implantada no computador cliente.  
 
-    -   软件更新已安装在客户端计算机上。 但尚未将最新的状态消息插入站点服务器上的数据库。 客户端计算机将在安装完成后重新扫描更新。 在客户端将更新的状态发送到管理点（管理点随后将更新的状态转发到站点服务器）之前，可能会有最多两分钟的延迟。  
+    -   A atualização de software foi instalada no computador cliente. No entanto, a mensagem de estado mais recente ainda não foi inserida no banco de dados do servidor do site. O computador cliente repete a verificação da atualização após o término da instalação. Pode haver um atraso de até dois minutos para o cliente enviar o estado atualizado ao ponto de gerenciamento que, por sua vez, encaminha o estado atualizado ao servidor do site.  
 
-    -   软件更新已安装在客户端计算机上。 但在更新完成之前软件更新安装要求计算机重启。  
+    -   A atualização de software foi instalada no computador cliente. No entanto, a instalação da atualização de software requer a reinicialização do computador para ser concluída.  
 
-    -   软件更新已部署到客户端计算机，但尚未安装。  
+    -   A atualização de software foi implantada no computador cliente, mas ainda não foi instalada.  
 
--   **不需要**  
+-   **Não necessário**  
 
-     指定软件更新在客户端计算机上不适用。 因此不需要该软件更新。  
+     Especifica que a atualização de software não é aplicável no computador cliente. Portanto, a atualização de software não é necessária.  
 
--   **已安装**  
+-   **Instalado**  
 
-     指定软件更新在客户端计算机上适用，并且客户端计算机已安装了该软件更新。  
+     Especifica que a atualização de software é aplicável ao computador cliente e que o computador cliente já tem a atualização de software instalada.  
 
--   **未知**  
+-   **Desconhecida**  
 
-     指定站点服务器尚未收到来自客户端计算机的状态消息，通常是下列原因之一导致的：  
+     Especifica que o servidor do site não recebeu uma mensagem de estado do computador cliente, normalmente porque:  
 
-    -   客户端计算机未成功扫描软件更新符合性。  
+    -   O computador cliente não verificou com êxito a conformidade das atualizações de software.  
 
-    -   扫描已在客户端计算机上成功完成。 但由于状态消息积压的原因，状态消息尚未在站点服务器上得到处理。  
+    -   A verificação foi concluída com êxito no computador cliente. No entanto, a mensagem de estado ainda não foi processada no servidor do site, talvez devido a um acúmulo de mensagens de estado.  
 
-    -   扫描在客户端计算机上成功完成，但尚未收到来自子站点的状态消息。  
+    -   A verificação foi concluída com êxito no computador cliente, mas a mensagem de estado não foi enviada pelo site filho.  
 
-    -   扫描在客户端计算机上成功完成，但状态消息文件在某些方面已损坏并且无法处理。  
+    -   A verificação foi concluída com êxito no computador cliente, mas o arquivo da mensagem de estado foi corrompido de alguma maneira e não pôde ser processado.  
 
-### <a name="scan-for-software-updates-compliance-process"></a>扫描软件更新符合性过程  
- 安装并同步了软件更新点之后，将创建一个站点范围的计算机策略，该策略告知客户端计算机已为站点启用了 Configuration Manager 软件更新。 客户端收到该计算机策略后，会计划在接下来的两个小时内随机启动符合性评估扫描。 扫描启动后，软件更新客户端代理过程将清除扫描历史记录，提交请求以查找应用于扫描的 WSUS 服务器，并使用 WSUS 服务器位置更新本地组策略。  
+### <a name="scan-for-software-updates-compliance-process"></a>Examinar o processo de conformidade das atualizações de software  
+ Quando o ponto de atualização de software é instalado e sincronizado, uma política de computador de todo o site é criada, informando aos computadores cliente de que as atualizações de software do Configuration Manager foram habilitadas para o site. Quando um cliente recebe a política de computador, uma verificação de avaliação de conformidade é agendada para iniciar aleatoriamente nas próximas duas horas. Quando a verificação é iniciada, um processo do Agente Cliente de Atualizações de Software apaga o histórico de verificações, envia uma solicitação para localizar o servidor WSUS que deve ser usado na verificação e atualiza a Política de Grupo local com o local do servidor WSUS.  
 
 > [!NOTE]  
->  基于 Internet 的客户端必须使用 SSL 连接到 WSUS 服务器。  
+>  Clientes baseados na Internet devem se conectar ao servidor do WSUS usando SSL.  
 
- 扫描请求传递到 Windows 更新代理 (WUA)。 然后，WUA 连接到本地策略中列出的 WSUS 服务器位置，检索在 WSUS 服务器上同步的软件更新元数据，并在客户端计算机中扫描更新。 软件更新客户端代理进程检测到符合性扫描已完成，并且会为上次扫描之后符合性状态发生更改的每个软件更新创建状态消息。 状态消息每 15 分钟向管理点批量发送一次。 然后管理点将状态消息转发给站点服务器，在站点服务器中，会将状态消息插入站点服务器数据库。  
+ Uma solicitação de verificação é passada para o WUA (Windows Update Agent). O WUA, em seguida, conecta-se ao local do servidor do WSU que está listado na política local, recupera os metadados de atualizações de software sincronizados no servidor do WSUS e verifica as atualizações no computador do cliente. Um processo do Agente Cliente de Atualizações de Software detecta que a verificação de conformidade foi concluída e cria mensagens de estado para cada atualização que foi alterada em conformidade com o estado, após a última verificação. As mensagens de estado são enviadas para o ponto de gerenciamento em massa a cada 15 minutos. O ponto de gerenciamento, em seguida, encaminha as mensagens de estado para o servidor do site, onde são inseridas no banco de dados do servidor do site.  
 
- 初次扫描软件更新符合性之后，会按照配置的扫描计划开始扫描。 但是，如果客户端在生存时间 (TTL) 值所指明的时间范围内扫描了软件更新符合性，则客户端会使用本地存储的软件更新元数据。 当上一次扫描在 TTL 之外时，客户端必须连接到在软件更新点上运行的 WSUS，并更新存储在客户端上的软件更新元数据。  
+ Após a verificação inicial de conformidade das atualizações de software, a verificação é iniciada na agenda de verificação configurada. No entanto, se o cliente tiver verificado a conformidade das atualizações de software no período de tempo indicado pelo valor TTL (Vida Útil), usará o software de metadados de atualizações que é armazenado localmente. Quando a última verificação estiver fora do TTL, o cliente deverá se conectar ao WSUS em execução no ponto de atualização de software e atualizar os metadados de atualizações de software armazenados no cliente.  
 
- 包括扫描计划，软件更新符合性扫描可以用下列方法启动：  
+ Incluindo o agendamento da verificação, a verificação de conformidade das atualizações de software pode ter início das seguintes maneiras:  
 
--   **软件更新扫描计划**：软件更新符合性扫描按照软件更新客户端代理设置中配置的扫描计划开始。 有关如何配置软件更新客户端设置的详细信息，请参阅[软件更新客户端设置](../../core/clients/deploy/about-client-settings.md#software-updates)。  
+-   **Agendamento de verificação das atualizações de software**: a verificação de conformidade das atualizações de software começa no agendamento de verificação definido nas configurações do Agente Cliente de Atualizações de Software. Para obter mais informações sobre como definir as configurações do cliente de Atualizações de Software, veja [Configurações do cliente de Atualizações de Software](../../core/clients/deploy/about-client-settings.md#software-updates).  
 
--   **Configuration Manager 属性操作**：用户可以在客户端计算机上的“Configuration Manager 属性”  对话框内的“操作”  选项卡上启动“软件更新扫描周期”  或“软件更新部署评估周期”  操作。  
+-   **Ação Propriedades do Configuration Manager**: o usuário pode iniciar a ação **Ciclo de Verificação de Atualizações de Software** ou **Ciclo de Avaliação de Implantação de Atualizações de Software** na guia **Ação** na caixa de diálogo **Propriedades do Configuration Manager** no computador cliente.  
 
--   **部署重估计划**：软件更新符合性的部署重估和扫描按照软件更新客户端代理设置中配置的部署重估计划开始。 有关软件更新客户端设置的详细信息，请参阅[软件更新客户端设置](../../core/clients/deploy/about-client-settings.md#software-updates)。  
+-   **Agendamento de reavaliação da implantação**: a avaliação da implantação e a verificação de conformidade das atualizações de software começam no agendamento de reavaliação da implantação definido nas configurações do Agente Cliente de Atualizações de Software. Para obter mais informações sobre as configurações do cliente de Atualizações de Software, veja [Configurações do cliente de Atualizações de Software](../../core/clients/deploy/about-client-settings.md#software-updates).  
 
--   **下载更新文件之前**：当客户端计算机收到新的所需部署的分配策略时，软件更新客户端代理会将软件更新文件下载到本地客户端缓存。 下载软件更新文件之前，客户端代理将启动扫描以验证是否仍然需要软件更新。  
+-   **Antes de baixar arquivos de atualização**: quando um computador cliente recebe uma política de atribuição de uma nova implantação necessária, o Agente Cliente de Atualizações de Software baixa os arquivos de atualização no cache local do cliente. Para baixar os arquivos de atualização de software, o agente cliente inicia uma varredura para verificar se a atualização de software ainda é necessária.  
 
--   **在软件更新安装之前**：在软件更新安装之前，软件更新客户端代理将启动扫描以验证是否仍然需要软件更新。  
+-   **Antes da instalação da atualização de software**: logo antes da instalação da atualização de software, o Agente Cliente de Atualizações de Software inicia uma verificação para confirmar se as atualizações de software ainda são necessárias.  
 
--   **在软件更新安装之后**：软件更新安装完成之后，软件更新客户端代理将启动扫描以验证是否不再需要软件更新，并创建新状态消息来表明已安装了软件更新。 如果完成了安装，但需要重启，则状态消息会指明客户端计算机正在等待重启。  
+-   **Após a instalação da atualização de software**: logo após uma instalação de atualização de software ser concluída, o Agente Cliente de Atualizações de Software inicia uma verificação para confirmar se as atualizações não são mais necessárias e cria uma nova mensagem de estado que indica que a atualização de software foi instalada. Quando a instalação é concluída, mas uma reinicialização é necessária, a mensagem de estado indica que uma reinicialização está pendente no computador cliente.  
 
--   **在系统重启之后**：当客户端计算机等待系统重启以完成软件更新安装时，软件更新客户端代理将在重启后启动扫描以验证是否不再需要软件更新，并创建一条状态消息来表明已安装了软件更新。  
+-   **Após a reinicialização do sistema**: quando uma reinicialização do sistema está pendente no computador cliente para que a instalação da atualização de software seja concluída, o Agente Cliente de Atualizações de Software inicia uma verificação após a reinicialização para confirmar se a atualização de software não é mais necessária e cria uma mensagem de estado que indica que a atualização de software está instalada.  
 
-#### <a name="time-to-live-value"></a>生存时间值  
- 扫描软件更新符合性所需的软件更新元数据存储在本地客户端计算机上，默认情况下其相关性时间最长为 24 小时。 此值称为生成时间 (TTL)。  
+#### <a name="time-to-live-value"></a>Valor de vida útil  
+ Os metadados de atualizações de software necessários na verificação de conformidade das atualizações são armazenados no computador cliente local e, por padrão, são relevantes por até 24 horas. Esse valor é conhecido como TTL (Vida Útil).  
 
-#### <a name="scan-for-software-updates-compliance-types"></a>扫描软件更新符合性类型  
- 客户端将使用联机或脱机扫描以及强制或非强制扫描来扫描软件更新符合性，具体取决于启动软件更新符合性扫描的方式。 下面描述哪些扫描启动方法是联机或脱机方法，那些扫描是强制或非强制扫描。  
+#### <a name="scan-for-software-updates-compliance-types"></a>Examinar os tipos de conformidade das atualizações de software  
+ O cliente verifica a conformidade das atualizações de software usando uma verificação online ou offline e uma verificação forçada ou não forçada, dependendo da forma pela qual a conformidade das atualizações de software é iniciada. A seguir há uma descrição dos métodos online ou offline para iniciar a verificação e se ela é forçada ou não forçada.  
 
--   **软件更新扫描计划**（非强制联机扫描）  
+-   **Agendamento da verificação das atualizações de software** (verificação online não forçada)  
 
-     按照配置的扫描计划，客户端将连接到在软件更新点上运行的 WSUS，以仅当上次扫描在 TTL 外时检索软件更新元数据。  
+     No agendamento de verificação configurado, o cliente só se conecta ao WSUS em execução no ponto de atualização de software para recuperar os metadados das atualizações de software quando a última verificação está fora do TTL.  
 
--   **软件更新扫描周期**或**软件更新部署评估周期**（强制联机扫描）  
+-   **Ciclo de Verificação de Atualizações de Software** ou **Ciclo de Avaliação de Implantação de Atualizações de Software** (verificação online forçada)  
 
-     客户端计算机始终连接到在软件更新点上运行的 WSUS，以在客户端计算机扫描软件更新符合性之前检索软件更新元数据。 完成扫描后，TTL 计数器将重置。 例如，TTL 为 24 小时，在用户启动软件更新符合性扫描之后，TTL 将重置为 24 小时。  
+     O computador cliente sempre se conecta ao WSUS em execução no ponto de atualização de software para recuperar os metadados das atualizações de software antes de o computador cliente verificar a conformidade das atualizações de software. Após a conclusão da verificação, o contador de TTL é redefinido. Por exemplo, se o TTL for 24 horas, depois que um usuário inicia uma verificação de conformidade das atualizações de software o TTL é redefinido para 24 horas.  
 
--   **部署重估计划**（非强制联机扫描）  
+-   **Agendamento de reavaliação da implantação** (verificação online não forçada)  
 
-     按照配置的部署重估计划，客户端将连接到在软件更新点上运行的 WSUS，以仅当上次扫描在 TTL 外时检索软件更新元数据。  
+     No agendamento de reavaliação da implantação configurado, o cliente só se conecta ao WSUS em execução no ponto de atualização de software para recuperar os metadados das atualizações de software quando a última verificação está fora do TTL.  
 
--   **下载更新文件之前**（非强制联机扫描）  
+-   **Antes de baixar arquivos de atualização** (verificação online não forçada)  
 
-     在客户端能够下载所需部署中的更新之前，客户端将连接到在软件更新点上运行的 WSUS，以仅当上次扫描在 TTL 外时检索软件更新元数据。  
+     Para que o cliente possa baixar os arquivos de atualização em implantações necessárias, ele só se conecta ao WSUS em execução no ponto de atualização de software para recuperar os metadados das atualizações de software quando a última verificação está fora do TTL.  
 
--   **在软件更新安装之前**（非强制联机扫描）  
+-   **Antes da instalação da atualização de software** (verificação online não forçada)  
 
-     在客户端安装所需部署中的软件更新之前，客户端将连接到在软件更新点上运行的 WSUS，以仅当上次扫描在 TTL 外时检索软件更新元数据。  
+     Para que o cliente instale as atualização de software em implantações necessárias, ele só se conecta ao WSUS em execução no ponto de atualização de software para recuperar os metadados das atualizações de software quando a última verificação está fora do TTL.  
 
--   **在软件更新安装之后**（强制脱机扫描）  
+-   **Antes da instalação da atualização de software** (verificação offline forçada)  
 
-     安装了软件更新之后，软件更新客户端代理使用本地元数据启动扫描。 客户端从不连接到在软件更新点上运行的 WSUS 以检索软件更新元数据。  
+     Depois que uma atualização de software é instalada, o Agente Cliente de Atualizações de Software inicia uma verificação usando os metadados locais. O cliente nunca se conecta ao WSUS em execução no ponto de atualização de software para recuperar metadados de atualizações de software.  
 
--   **在系统重启之后**（强制脱机扫描）  
+-   **Após a reinicialização do sistema** (verificação offline forçada)  
 
-     安装了软件更新并且重启计算机之后，软件更新客户端代理使用本地元数据启动扫描。 客户端从不连接到在软件更新点上运行的 WSUS 以检索软件更新元数据。  
+     Depois que uma atualização de software é instalada e o computador é reiniciado, o Agente Cliente de Atualizações de Software inicia uma verificação usando os metadados locais. O cliente nunca se conecta ao WSUS em execução no ponto de atualização de software para recuperar metadados de atualizações de software.  
 
-##  <a name="BKMK_DeploymentPackages"></a> 软件更新部署包  
- 软件更新部署包是用于将软件更新下载到网络共享文件夹的载体，并将软件更新源文件复制到站点服务器上的内容库，以及部署中定义的分发点上的内容库。 通过使用下载更新向导，你可以下载软件更新并在部署它们之前将其添加到部署包。 此向导允许你设置分发点上的软件更新，以及在将软件更新部署到客户端之前验证此部分部署过程是否成功。  
+##  <a name="BKMK_DeploymentPackages"></a> Pacotes de implantação de atualização de software  
+ Um pacote de implantação de atualização de software é o veículo usado para baixar atualizações de software para uma pasta de rede compartilhada, e copiar os arquivos de origem de atualização na biblioteca de conteúdo em servidores de site e nos pontos de distribuição definidos na implantação. Ao usar o Assistente de Atualizações de Downloads, você pode baixar atualizações de software e adicioná-las aos pacotes de implantação antes de implantá-la. Este assistente permite que você provisione atualizações de software nos pontos de distribuição e verifique se esta parte do processo de implantação foi bem-sucedida antes de implantar as atualizações de software nos clientes.  
 
- 使用部署软件更新向导来部署下载的软件更新之前，部署会自动使用包含软件更新的部署包。 部署尚未下载的软件更新时，你必须在部署软件更新向导中指定新的或现有的部署包，完成向导时将下载软件更新。  
-
-> [!IMPORTANT]  
->  在向导中指定共享网络文件夹之前，必须为部署包源文件创建该文件夹。 每个部署包必须使用不同的共享网络文件夹。  
+ Quando você implanta atualizações de software baixadas usando o Assistente para Implantar Atualizações de Software, a implantação usa automaticamente o pacote de implantação que contém as atualizações de software. Quando atualizações de software que não foram baixadas são implantadas, você deve especificar um pacote de implantação novo ou existente no Assistente para Implantar Atualizações de Software e as atualizações de software são baixadas quando o assistente é concluído.  
 
 > [!IMPORTANT]  
->  SMS 提供程序计算机帐户和实际下载软件更新的管理用户都需要对包源具有“写”  权限。 限制对此包源的访问，以减少攻击者在包源中篡改软件更新源文件的风险。  
+>  Você deve criar a pasta de rede compartilhada manualmente para os arquivos de origem do pacote de implantação antes de especificá-los no assistente. Cada pacote de implantação deve usar uma pasta de compartilhamento de rede diferente.  
 
- 如果创建新部署包，则在下载任何软件更新之前会将内容版本设置为 1。 使用包下载软件更新文件时，内容版本递增至 2。 因此，所有新部署包从内容版本 2 开始。 每次部署包中内容更改时，内容版本值递增 1。 有关详细信息，请参阅[内容管理的基本概念](../../core/plan-design/hierarchy/fundamental-concepts-for-content-management.md)。  
+> [!IMPORTANT]  
+>  A conta de computador do Provedor de SMS e o usuário administrativo que baixa as atualizações de software, ambos requerem permissões de **Gravação** na origem do pacote. Restrinja o acesso à origem do pacote para reduzir o risco de ataques aos arquivos de origem de atualizações de software na origem do pacote.  
 
- 客户端使用具有可用软件更新的任何分发点来安装部署中的软件更新，无部署包无关。 即使为活动部署删除了部署包，只要每个更新已至少下载到一个其他部署包，并且在可从客户端访问的分发点上可用，客户端也仍然可以在部署中安装软件更新。 如果删除了包含软件更新的上一个部署包，则在将更新下载到部署包之前，客户端计算机无法检索软件更新。 当更新文件不在任何部署包中时，将在 Configuration Manager 控制台中用红色箭头来显示软件更新。 如果部署在此条件下包含任何更新，则用双红色箭头来显示部署。  
+ Quando um novo pacote de implantação é criado, a versão do conteúdo é definida como 1 antes que qualquer atualização de software seja baixada. Quando os arquivos de atualização de software forem baixados com o uso do pacote, a versão do conteúdo é incrementada para 2. Portanto, todos os novos pacotes de implantação começam com uma versão de conteúdo de 2. Sempre que o conteúdo é alterado em um pacote de implantação, a versão do conteúdo é incrementada em 1. Para mais informações, consulte [Conceitos fundamentais para o gerenciamento de conteúdo](../../core/plan-design/hierarchy/fundamental-concepts-for-content-management.md).  
 
-##  <a name="BKMK_DeploymentWorkflows"></a> 软件更新部署工作流  
- 在你的环境中部署软件更新有两个主要方案，即手动部署和自动部署。 通常，你手动部署软件更新以为客户端计算机创建基线，然后使用自动部署在客户端上管理软件更新。 下列部分提供有关软件更新的手动和自动部署工作流的概要。  
+ Os clientes instalam atualizações de software em uma implantação usando qualquer ponto de distribuição que tem as atualizações de software disponíveis, independentemente do pacote de implantação. Mesmo que um pacote de implantação seja excluído para uma implantação ativa, os clientes ainda podem instalar as atualizações de software na implantação, desde que cada atualização seja baixada para pelo menos outro pacote de implantação e esteja disponível em um ponto de distribuição que possa ser acessado pelo cliente. Quando o último pacote de implantação que contém uma atualização de software é excluído, os computadores cliente não podem recuperar a atualização de software até que a atualização seja baixada novamente em um pacote de implantação. As atualizações de software aparecem com uma seta vermelha no console do Configuration Manager quando os arquivos de atualização não estão nos pacotes de implantação. As implantações serão exibidas com uma seta vermelha dupla se contiverem as atualizações nessa condição.  
 
-###  <a name="BKMK_ManualDeployment"></a> 软件更新的手动部署  
- 软件更新手动部署是在 Configuration Manager 控制台中选择软件更新并手动启动部署过程的过程。 在创建将管理进行中的每月软件更新部署的自动部署规则之前，你通常将使用此部署方法以用所需的软件更新使客户端计算机保持最新，并部署带外软件更新要求。 以下列表提供手动部署软件更新的一般工作流：  
+##  <a name="BKMK_DeploymentWorkflows"></a> Fluxos de trabalho de implantação de atualização de software  
+ Há dois cenários principais para implantar atualizações de software em seu ambiente, a implantação manual e a implantação automática. Em geral, você implanta atualizações de software manualmente para criar uma linha de base para seus computadores cliente; em seguida, você gerencia as atualizações de software nos clientes usando a implantação automática. As seções a seguir fornecem um resumo do fluxo de trabalho de implantação manual e automática das atualizações de software.  
 
-1.  使用特定要求的软件更新的筛选。 例如，你可以提供条件，以检索在 50 多台客户端设备上所需要的所有安全或严重软件更新。  
+###  <a name="BKMK_ManualDeployment"></a> Implantação manual de atualizações de software  
+ Uma implantação manual de atualizações de software é o processo de selecionar atualizações de software no console do Configuration Manager e iniciar manualmente o processo de implantação. Esse método de implantação é usado geralmente para ter os computadores cliente em dia com as atualizações de software necessárias antes de serem criadas regras de implantação automáticas que gerenciam as implantações de atualização de software mensalmente e continuamente e para implantar requisitos de atualização de software fora da banda. A lista seguinte fornece o fluxo de trabalho geral para implantação manual das atualizações de software:  
 
-2.  创建包含软件更新的软件更新组。  
+1.  Filtro para atualizações de software que usam requisitos específicos. Por exemplo, você pode fornecer critérios que recuperam toda a segurança ou atualizações críticas de software que são necessárias em mais de 50 computadores cliente.  
 
-3.  下载软件更新组中的软件更新的内容。  
+2.  Crie um grupo de atualização de software que contém as atualizações de software.  
 
-4.  手动部署软件更新组。  
+3.  Baixe o conteúdo das atualizações de software no grupo de atualização de software.  
 
-###  <a name="BKMK_AutomaticDeployment"></a> 软件更新的自动部署  
- 通过使用自动部署规则 (ADR).配置自动软件更新部署。 你通常将此部署方法用于每月软件更新（通称为周二补丁日）以及管理定义更新。 规则运行时，软件更新将从软件更新组中删除（如果使用现有组），将符合指定条件（例如，在最后一周中发布的所有安全软件更新）的软件更新添加到软件更新组中，软件更新的内容文件将下载和复制到分发点，并将软件更新部署到目标集合中的客户端计算机。 以下列表提供自动部署软件更新的一般工作流：  
+4.  Implante manualmente o grupo de atualização de software.  
 
-1.  创建 ADR 以指定部署设置，如：  
+###  <a name="BKMK_AutomaticDeployment"></a> Implantação automática de atualizações de software  
+ A implantação automática de atualizações de software é configurada usando uma ADR (regra de implantação automática). Esse método de implantação geralmente é usado para suas atualizações de software mensais (geralmente conhecidas como "Patch Tuesday") e para o gerenciamento de atualizações de definição. Quando a regra é executada, as atualizações são removidas do grupo de atualização de software (se estiver usar um arquivo de grupo) de software, as atualizações de software que atendem aos critérios especificados (por exemplo, todas as atualizações de software de segurança lançados na última semana) são adicionadas a um grupo de atualização de software, os arquivos de conteúdo das atualizações de software são baixados e copiados nos pontos de distribuição e as atualizações de software são implantadas em computadores clientes na coleção de destino. A lista seguinte fornece o fluxo de trabalho geral para implantação automática das atualizações de software:  
 
-    -   目标集合  
+1.  Crie uma ADR que especifica as configurações de implantação, como as seguintes:  
 
-    -   确定对目标集合中的客户端计算机是启用部署还是报告软件更新符合性  
+    -   Coleção de destino  
 
-    -   软件更新条件  
+    -   Decida se deseja habilitar a implantação ou relatório em conformidade de atualizações de software para os computadores cliente na coleção de destino  
 
-    -   评估和部署计划  
+    -   Critérios de atualizações de software  
 
-    -   用户体验  
+    -   Agendamento de avaliação e implantação  
 
-    -   下载属性  
+    -   Experiência do usuário  
 
-2.  软件更新会添加到软件更新组中。  
+    -   Propriedades do download  
 
-3.  如果已指定软件更新组，则将其部署到目标集合中的客户端计算机。  
+2.  As atualizações de software são adicionadas a um grupo de atualização de software.  
 
- 必须确定要在环境中使用的部署策略。 例如，你可以创建 ADR 并以测试客户端集合为目标。 验证在测试组上是否安装了软件更新之后，你可以在规则中添加新部署或将现有部署中的集合更改为包含更大客户端集的目标集合。 ADR 所创建的软件更新对象具有交互性。  
+3.  O grupo de atualização de software é implantado nos computadores cliente na coleção de destino, se especificada.  
 
--   使用 ADR 部署的软件更新会自动部署到已添加到目标集合的新客户端。  
+ Você deve determinar qual estratégia de implantação usar no seu ambiente. Por exemplo, é possível criar a ADR e ter com alvo uma coleção de clientes de teste. Depois de verificar se as atualizações de software estão instaladas no grupo de teste, é possível adicionar uma nova implantação à regra ou alterar a coleção na implantação existente para uma coleção de destino que inclua um conjunto maior de clientes. Os objetos de atualização de software que são criados pelas ADRs são interativos.  
 
--   添加到软件更新组的新软件更新会自动部署到目标集合中的客户端。  
+-   As atualizações de software implantadas usando uma ADR são automaticamente implantadas nos novos clientes adicionados à coleção de destino.  
 
--   你可以针对 ADR 随时启用或禁用部署。  
+-   Novas atualizações de software adicionadas a um grupo de atualização de software são automaticamente implantadas em clientes na coleção de destino.  
 
- 创建 ADR 后，可以将其他部署添加到规则。 这可以帮助你管理将不同更新部署到不同集合的复杂性。 每个新部署均具有完整的功能和部署监视体验，且你添加的每个新部署具有以下特性：  
+-   É possível habilitar ou desabilitar as implantações a qualquer momento para a ADR.  
 
--   使用的更新组和包与在 ADR 首次运行时创建的更新组和包相同  
+ Depois de criar uma ADR, é possível adicionar outras implantações à regra. Isso pode ajudá-lo a gerenciar a complexidade de implantar diferentes atualizações em diferentes coleções. Cada nova implantação tem a gama completa da funcionalidade e da experiência de monitoramento da implantação, e cada nova implantação que você adicionar:  
 
--   可以指定不同的集合  
+-   Usa o mesmo grupo e pacote de atualização que é criado quando o ADR é executado pela primeira vez  
 
--   支持唯一部署属性，包括：  
+-   Pode especificar uma coleção diferente  
 
-    -   激活时间  
+-   Dá suporte a propriedades de implantação exclusivas, incluindo:  
 
-    -   截止时间  
+    -   Tempo de ativação  
 
-    -   显示或隐藏最终用户体验  
+    -   Prazo  
 
-    -   针对此部署的单独警报  
+    -   Mostrar ou ocultar a experiência do usuário final  
 
-##  <a name="BKMK_DeploymentProcess"></a> 软件更新部署过程  
- 部署软件更新之后或在自动部署规则运行和部署软件更新时，会将部署分配策略添加到站点的计算机策略中。 系统会将软件更新从下载位置（Internet 或网络共享文件夹）下载到包源。 系统会从包源中将软件更新复制到站点服务器上的内容库，然后复制到分发点上的内容库。  
+    -   Alertas separados para esta implantação  
 
- 当部署的目标集合中的客户端计算机收到计算机策略时，软件更新客户端代理会启动评估扫描。 客户端代理在收到部署后不久会将分发点中所需软件更新的内容下载到本地客户端缓存，但会等到部署的“软件可用时间”  设置之后才能安装软件更新。 在用户手动启动安装之前，不会下载可选部署（没有安装截止时间的部署）中的软件更新。  
+##  <a name="BKMK_DeploymentProcess"></a> Processo de implantação de atualização de software  
+ Depois de implantar as atualizações de software ou quando uma regra de implementação automática executa e implanta atualizações de software, uma política de atribuição de implantação é adicionada à política do computador para o site. As atualizações de software são baixadas por meio do local de download, a Internet, ou de uma pasta de rede compartilhada, na origem do pacote. As atualizações de software são copiadas da origem do pacote para a biblioteca de conteúdo no servidor do site, e depois copiadas na biblioteca de conteúdo no ponto de distribuição.  
 
- 过了配置的截止时间之后，软件更新客户端代理将执行扫描以验证是否仍然需要软件更新。 然后，它会检查客户端计算机上的本地缓存，以验证软件更新源文件是否仍然可用。 最后，客户端安装软件更新。 如果为了为其他部署腾出空间而从客户端缓存中删除了内容，则客户端会将分发点中的软件更新重新下载到客户端缓存。 软件更新将始终下载到客户端缓存，而不考虑配置的最大客户端缓存大小。 当安装完成时，客户端代理会验证是否不再需要软件更新，然后将状态消息发送给管理点，以指明客户端上现在已经安装了软件更新。  
+ Quando um computador cliente na coleção de destino da implantação recebe a política do computador, o Agente Cliente de Atualizações de Software começa uma verificação de avaliação. O agente cliente baixa o conteúdo das atualizações de software necessárias de um ponto de distribuição para o cache do cliente local logo depois de receber a implantação, mas aguarda a configuração do **Tempo disponível do software** da implantação para que as atualizações de software estejam disponíveis para serem instaladas. As atualizações de software em implantações opcionais (implantações que não têm um prazo de instalação) não são baixadas até que um usuário inicie manualmente a instalação.  
 
-### <a name="required-system-restart"></a>需要重启系统  
- 默认情况下，如果在客户端计算机上安装了所需部署中的软件更新，并且需要重启系统才能完成安装，则会开始系统重启。 对于在截止时间之前安装的软件更新，自动系统重启会延迟到截止时间进行，除非由于其他原因在该时间之前重启了计算机。 对于服务器和工作站，可以抑制系统重启。 这些设置是在部署软件更新向导或创建自动更新规则向导的“用户体验”  页中配置的。  
+ Quando o prazo configurado passa, o Agente Cliente de Atualizações de Software realiza uma varredura para verificar se as atualizações de software ainda são necessárias. Em seguida, ele verifica o cache local no computador cliente para ver se os arquivos de origem da atualização ainda estão disponíveis. Por fim, o cliente instala as atualizações de software. Se o conteúdo tiver sido excluído do cache do cliente para liberar espaço para outra implantação, o cliente baixará as atualizações de software do ponto de distribuição no cache. As atualizações de software são sempre baixadas no cache do cliente independentemente do tamanho máximo do cache do cliente configurado. Quando a instalação é concluída, o agente cliente verifica se as atualizações de software não são mais necessárias e, em seguida, envia uma mensagem de estado para o ponto de gerenciamento para indicar que as atualizações estão instaladas no cliente.  
 
-### <a name="deployment-reevaluation-cycle"></a>部署重估周期  
- 默认情况下，客户端计算机每 7 天开始部署重估周期。 在此评估周期期间，客户端计算机会扫描以前部署和安装的软件更新。 如果缺少任何软件更新，则会从本地缓存中重新安装软件更新。 如果软件更新在本地缓存中不再可用，则会从分发点中下载软件更新，然后安装该软件更新。 你可以在“软件更新”  页上的站点客户端设置中配置重新评估计划。  
+### <a name="required-system-restart"></a>Reinicialização necessária do sistema  
+ Por padrão, quando as atualizações de software de uma implantação necessária são instaladas em um computador cliente e é necessário reiniciar o sistema para a instalação concluir, o sistema é reiniciado. Para atualizações de software instalados antes do prazo, a reinicialização automática do sistema é adiada até prazo, a menos que o computador seja reiniciado antes disso, por algum outro motivo. A reinicialização do sistema pode ser suprimida para servidores e estações de trabalho. Estas definições são configuradas na página **Experiência do Usuário** do assistente para Implantar Atualizações de Software ou Criar Assistente de Regra de Implantação Automática.  
 
-##  <a name="BKMK_EmbeddedDevices"></a> 对使用写入筛选器的 Windows Embedded 设备的支持  
- 将软件更新部署到启用了写入筛选器的 Windows Embedded 设备时，你可以指定是否在部署过程中对设备禁用写入筛选器，然后在部署后重启设备。 如果未禁用写入筛选器，则软件会部署到临时覆盖区，并且重启设备后将不再安装软件，除非另一部署强制保留更改。  
+### <a name="deployment-reevaluation-cycle"></a>Ciclo de reavaliação de implantação  
+ Por padrão, os computadores cliente iniciam um ciclo de reavaliação de implantação a cada 7 dias. Durante esse ciclo de avaliação, o computador cliente verifica atualizações de software que foram implantadas e instaladas anteriormente. Se faltarem atualizações de software, elas serão reinstaladas por meio do cache local. Se uma atualização de software não estiver mais disponível no cache local, será baixada de um ponto de distribuição e depois instalada. Você pode configurar o agendamento da reavaliação na página **Atualizações de Software** nas configurações do cliente para o site.  
+
+##  <a name="BKMK_EmbeddedDevices"></a> Suporte para dispositivos Windows Embedded que usam filtros de gravação  
+ Quando você implanta atualizações de software em dispositivos Windows Embedded habilitados com filtro de gravação, pode especificar se quer desabilitar o filtro de gravação no dispositivo durante a implantação e reiniciá-lo após a implantação. Se o filtro de gravação não for desabilitado, o software será implantado em uma sobreposição temporária e não será mais instalado quando o dispositivo for reiniciado, a menos que outras alterações de forças de implantação sejam persistidas.  
 
 > [!NOTE]  
->  将软件更新部署到 Windows Embedded 设备时，确保设备是配置了维护时段的集合的成员。 这样，你可以管理禁用和启用写入筛选器的时间，以及设备重启的时间。  
+>  Ao implantar uma atualização de software em um dispositivo Windows Embedded, verifique se o dispositivo é membro de uma coleção com uma janela de manutenção configurada. Isso permite que você gerencie se o filtro de gravação é desabilitado e habilitado na reinicialização do dispositivo.  
 
- 控制写入筛选器行为的用户体验设置是一个名为“在截止时间或在维护时段内提交更改(需要重启)” 的复选框。  
+ A configuração de experiência do usuário que controla o comportamento do filtro de gravação é uma caixa de seleção denominada **Confirmar as alterações no prazo ou durante uma janela de manutenção (requer reinicializações)**.  
 
- 有关 Configuration Manager 如何管理使用写入筛选器的嵌入式设备的详细信息，请参阅[规划 Windows Embedded 设备的客户端部署](../../core/clients/deploy/plan/planning-for-client-deployment-to-windows-embedded-devices.md)。  
+ Para obter mais informações sobre como o Configuration Manager gerencia dispositivos inseridos que usam filtros de gravação, veja [Planejamento para implantação do cliente em dispositivos Windows Embedded](../../core/clients/deploy/plan/planning-for-client-deployment-to-windows-embedded-devices.md).  
 
-##  <a name="BKMK_ExtendSoftwareUpdates"></a> 在 Configuration Manager 中扩展软件更新  
- 使用 Configuration Manager 管理 Microsoft 更新中不可用的软件更新。 将软件更新发布到更新服务器并在 Configuration Manager 中同步软件更新之后，你可以将软件更新部署到 Configuration Manager 客户端。 有关更新发布服务器的详细信息，请参阅 [Updates Publisher 2011](http://go.microsoft.com/fwlink/p/?LinkId=252947)。  
+##  <a name="BKMK_ExtendSoftwareUpdates"></a> Estender as atualizações de software no Configuration Manager  
+ Use System Center Updates Publisher para gerenciar atualizações de software que não estão disponíveis no Microsoft Update. Depois de publicar as atualizações de software no servidor de atualização e sincronizá-las no Configuration Manager, você pode implantar as atualizações de software nos clientes do Configuration Manager. Para obter mais informações sobre o Updates Publisher, consulte [Updates Publisher 2011](http://go.microsoft.com/fwlink/p/?LinkId=252947).  
 
-## <a name="next-steps"></a>后续步骤
-[规划软件更新](../plan-design/plan-for-software-updates.md)
+## <a name="next-steps"></a>Próximas etapas
+[Planejar atualizações de software](../plan-design/plan-for-software-updates.md)

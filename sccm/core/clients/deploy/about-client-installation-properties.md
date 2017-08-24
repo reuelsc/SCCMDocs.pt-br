@@ -1,6 +1,6 @@
 ---
-title: "客户端安装属性 | Microsoft Docs"
-description: "了解 System Center Configuration Manager 中的客户端安装属性。"
+title: "Propriedades de instalação do cliente | Microsoft Docs"
+description: "Aprenda sobre as propriedades de instalação do cliente no System Center Configuration Manager."
 ms.custom: na
 ms.date: 01/04/2017
 ms.prod: configuration-manager
@@ -17,134 +17,134 @@ manager: angrobe
 ms.openlocfilehash: 36bcbbca4fdee3e95d293c436a105a41a6e3953e
 ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
 ms.translationtype: HT
-ms.contentlocale: zh-CN
+ms.contentlocale: pt-BR
 ms.lasthandoff: 08/07/2017
 ---
-# <a name="about-client-installation-properties-in-system-center-configuration-manager"></a>关于 System Center Configuration Manager 中的客户端安装属性
+# <a name="about-client-installation-properties-in-system-center-configuration-manager"></a>Sobre as propriedades de instalação do cliente no System Center Configuration Manager
 
-*适用范围：System Center Configuration Manager (Current Branch)*
+*Aplica-se a: System Center Configuration Manager (Branch Atual)*
 
-使用 System Center Configuration Manager CCMSetup.exe 命令手动安装 Configuration Manager 客户端。  
+Use o comando CCMSetup.exe do System Center Configuration Manager para instalar manualmente o cliente do Configuration Manager.  
 
-##  <a name="aboutCCMSetup"></a> 关于 CCMSetup.exe  
- CCMSetup.exe 命令从管理点或源位置下载所需的文件以安装客户端。 这些文件可能包括：  
+##  <a name="aboutCCMSetup"></a> Sobre o CCMSetup.exe  
+ O comando CCMSetup.exe baixa os arquivos necessários para instalar o cliente de um ponto de gerenciamento ou local de origem. Esses arquivos podem incluir:  
 
--   安装客户端软件的 Windows Installer 包 Client.msi。  
+-   O Client.msi do pacote do Windows Installer que instala o software cliente.  
 
--   Microsoft 后台智能传输服务 (BITS) 安装文件。  
+-   Arquivos de instalação do BITS (Serviço de Transferência Inteligente em Segundo Plano) da Microsoft.  
 
--   Windows Installer 安装文件。  
+-   Arquivos de instalação do Windows Installer.  
 
--   Configuration Manager 客户端的更新和修补程序。  
+-   Atualizações e correções para o cliente do Configuration Manager.  
 
 > [!NOTE]  
->  在 Configuration Manager 中，不能直接运行 Client.msi 文件。  
+>  No Configuration Manager, não é possível executar o arquivo Client.msi diretamente.  
 
- CCMSetup.exe 提供了可自定义安装的[命令行属性](#ccmsetup-exe-command-line-properties)。 还可以指定属性以修改 CCMSetup.exe 命令行中的 Client.msi 行为。  
+ O CCMSetup.exe fornece [propriedades de linha de comando](#ccmsetup-exe-command-line-properties) para personalizar a instalação. Também é possível especificar propriedades para modificar o comportamento do Client.msi na linha de comando CCMSetup.exe.  
 
 > [!IMPORTANT]  
->  指定 Client.msi 的属性之前指定 CCMSetup 属性。  
+>  Especifique as propriedades do CCMSetup antes de especificar as propriedades do Client.msi.  
 
- CCMSetup.exe 及其支持文件位于 Configuration Manager 站点服务器上 Configuration Manager 安装文件夹内的“Client”文件夹中。 该文件夹以 **&lt;站点服务器名称\>\SMS_&lt;站点代码 \>\Client** 的形式在网络上共享。  
+ CCMSetup.exe e seus arquivos de suporte estão localizados no servidor do site do Configuration Manager na pasta **Cliente** da pasta de instalação do Configuration Manager. Essa pasta é compartilhada na rede como **&lt;Nome do Servidor do Site\>\SMS_&lt;Código do Site\>\Cliente**.  
 
- 在命令提示符处，CCMSetup.exe 命令使用下列格式：  
+ No prompt de comando, o comando CCMSetup.exe usa o seguinte formato:  
 
  `CCMSetup.exe [<Ccmsetup properties>] [<client.msi setup properties>]`  
 
- 例如：  
+ Exemplo:  
 
- 'CCMSetup.exe /mp:SMSMP01 /logon SMSSITECODE=S01 FSP=SMSFSP01`  
+ “CCMSetup.exe /mp:SMSMP01 /logon SMSSITECODE=S01 FSP=SMSFSP01”  
 
- 此示例将执行以下操作：  
+ Esse exemplo faz o seguinte:  
 
--   指定名为 SMSMP01 的管理点以请求用于下载客户端安装文件的分发点列表。  
+-   Especifica o ponto de gerenciamento chamado SMSMP01 para solicitar uma lista de pontos de distribuição para baixar os arquivos de instalação do cliente.  
 
--   指定在计算机已有客户端的某个版本时停止安装。  
+-   Especifica se a instalação deverá ser interrompida se já houver uma versão do cliente no computador.  
 
--   指示 client.msi 将客户端分配到站点代码 S01。  
+-   Instrui o client.msi a atribuir o cliente ao código do site S01.  
 
--   指示 client.msi 使用名为 SMSFP01 的回退状态点。  
+-   Instrui o client.msi a usar o ponto de status de fallback chamado SMSFP01.  
 
 > [!NOTE]  
->  如果属性包含空格，则用引号括起来。  
+>  Se uma propriedade contiver espaços, coloque-a entre aspas.  
 
 
 > [!IMPORTANT]  
->  如果已经为 Configuration Manager 扩展了 Active Directory 架构，则许多客户端安装属性都在 Active Directory 域服务中发布并由 Configuration Manager 客户端自动读取。 有关 Active Directory 域服务中发布的客户端安装属性列表，请参阅 [关于 System Center Configuration Manager 中的发布到 Active Directory 域服务的客户端安装属性](about-client-installation-properties-published-to-active-directory-domain-services.md)。  
+>  Se você tiver estendido o esquema do Active Directory para o Configuration Manager, muitas propriedades da instalação do cliente serão publicadas no Active Directory Domain Services e serão lidas automaticamente pelo cliente do Configuration Manager. Para obter uma lista das propriedade de instalação do cliente publicadas nos Serviços de Domínio do Active Directory, veja [Sobre as propriedades de instalação de cliente publicadas nos Serviços de Domínio do Active Directory no System Center Configuration Manager](about-client-installation-properties-published-to-active-directory-domain-services.md)  
 
-##  <a name="ccmsetupexe-command-line-properties"></a>CCMSetup.exe 命令行属性  
+##  <a name="ccmsetupexe-command-line-properties"></a>Propriedades de linha de comando do CCMSetup.exe  
 
 ### <a name=""></a>/?  
 
-打开显示 ccmsetup.exe 的命令行属性的“CCMSetup”  对话框。  
+Abre a caixa de diálogo **CCMSetup** mostrando as propriedades de linha de comando para ccmsetup.exe.  
 
-示例： **ccmsetup.exe /?**  
+Exemplo: **ccmsetup.exe /?**  
 
-### <a name="sourceltpath"></a>/source:&lt;路径\>  
+### <a name="sourceltpath"></a>/source:&lt;Caminho\>  
 
- 指定文件下载位置。 使用本地路径或 UNC 路径。 使用服务器消息块 (SMB) 协议下载文件。  若要使用 **/source**，用于客户端安装的 Windows 用户帐户对位置必须具有读取权限。
+ Especifica o local de download do arquivo. Use um caminho local ou UNC. Os arquivos são baixados usando o protocolo SMB.  Para usar **/source**, a conta de usuário do Windows da instalação do cliente deve ter permissões de Leitura do local.
 
 > [!NOTE]  
->  可以在命令行上多次使用 **/source** 属性，以指定备用下载位置。  
+>  É possível usar a propriedade **/source** várias vezes em uma linha de comando para especificar locais de download alternativos.  
 
- 示例：**ccmsetup.exe /source:"\\\computer\folder"**  
+ Exemplo: **ccmsetup.exe /source:"\\\computer\folder"**  
 
-### <a name="mpltcomputer"></a>/mp:&lt;计算机\>
+### <a name="mpltcomputer"></a>/mp:&lt;Computador\>
 
- 指定供计算机连接到的源管理点，以便计算机能够找到最近的分发点用于下载文件。 如果没有分发点或者计算机在 4 个小时后无法从分发点下载文件，则客户端将从指定的管理点下载文件。  
+ Especifica um ponto de gerenciamento de origem para os computadores se conectarem, para que eles possam encontrar o ponto de distribuição mais próximo dos arquivos de instalação. Se não houver pontos de distribuição ou os computadores não conseguirem baixar os arquivos dos pontos de distribuição após 4 horas, os clientes baixarão do ponto de gerenciamento especificado.  
 
 > [!IMPORTANT]  
->  此属性用于指定初始管理点，以供计算机，查找下载源，此管理点可以是任何站点中的任何管理点。 它不会向管理点*分配*客户端。   
+>  Essa propriedade é usada para especificar um ponto de gerenciamento inicial para os computadores encontrarem uma fonte de download e pode ser qualquer ponto de gerenciamento em qualquer site. Ela não *atribui* o cliente a um ponto de gerenciamento.   
 
- 计算机通过 HTTP 或 HTTPS 连接下载文件，具体情况视客户端连接的站点系统角色配置而定。 下载将使用 BITS 限制（如果已配置）。 如果所有分发点和管理点都仅针对 HTTPS 客户端连接进行配置，则需验证客户端计算机是否具有有效的客户端证书。  
+ Os computadores baixarão os arquivos por meio de uma conexão HTTP ou HTTPS, dependendo da configuração da função do sistema de site para as conexões do cliente. O download usa a limitação do BITS, se configurada. Se todos os pontos de distribuição e de gerenciamento estiverem configurados somente para conexões HTTPS do cliente, verifique se o computador cliente tem um certificado de cliente válido.  
 
-你可以使用“/mp”  命令行属性来指定多个管理点，以便在计算机无法连接到第一个管理点的情况下尝试下一个管理点，依次类推。 在指定多个管理点时，请使用分号分隔各个值。
+Você pode usar a propriedade de linha de comando **/mp** para especificar vários pontos de gerenciamento para que se houver falha na conexão do computador ao primeiro, será feita uma nova tentativa de conexão ao segundo e assim por diante. Ao especificar vários pontos de gerenciamento, separe os valores por ponto-e-vírgula.
 
-如果客户端使用 HTTPS 连接到管理点，通常必须指定 FQDN，而不是计算机名。 值必须匹配管理点的 PKI 证书使用者或使用者备用名称。 尽管 Configuration Manager 对于 Intranet 上的连接支持使用证书中的计算机名，但作为最佳安全方案，建议使用 FQDN。
+Se o cliente se conectar a um ponto de gerenciamento usando HTTPS, normalmente, será necessário especificar o FQDN, não o nome do computador. O valor deve corresponder ao Nome Alternativo da Entidade ou à Entidade do certificado PKI do ponto de gerenciamento. Embora o Configuration Manager dê suporte ao uso de um nome do computador no certificado para conexões na intranet, como uma prática recomendada de segurança, recomenda-se o uso de um FQDN.
 
-使用计算机名称时的示例：`ccmsetup.exe /mp:SMSMP01`  
+Exemplo de uso do nome do computador: `ccmsetup.exe /mp:SMSMP01`  
 
-使用 FQDN 时的示例：`ccmsetup.exe /mp:smsmp01.contoso.com`  
+Exemplo de uso do FQDN: `ccmsetup.exe /mp:smsmp01.contoso.com`  
 
-### <a name="retryltminutes"></a>/retry:&lt;分钟数\>
+### <a name="retryltminutes"></a>/retry:&lt;Minutos\>
 
-CCMSetup.exe 无法下载安装文件时的重试间隔。  在达到 **downloadtimeout** 属性中指定的限制之前，CCMSetup 将不断重试。  
+O intervalo de repetição se o CCMSetup.exe falhar ao baixar os arquivos de instalação.  O CCMSetup continuará tentando até atingir o limite especificado na propriedade **downloadtimeout**.  
 
-示例：`ccmsetup.exe /retry:20`  
+Exemplo: `ccmsetup.exe /retry:20`  
 
 ### <a name="noservice"></a>/noservice
 
-默认情况下阻止 CCMSetup 以服务方式运行。 CCMSetup 以服务方式运行时，它将在计算机的“本地系统”帐户的上下文中运行，该帐户可能没有足够的权限来访问安装所需的网络资源。 借助 **/noservice**，CCMSetup.exe 将在你用于启动安装过程的用户帐户的上下文中运行。 此外，如果使用脚本来运行带 **/service** 属性的 CCMSetup.exe，CCMSetup.exe 将在服务启动后退出，并且可能无法正确报告安装详细信息。   
+Impede que o CCMSetup seja executado como um serviço, que é o padrão. Quando o CCMSetup é executado como um serviço, ele é executado no contexto da conta Sistema Local do computador, que pode não ter direitos suficientes para acessar os recursos da rede necessários para a instalação. Com **/noservice**, o CCMSetup.exe é executado no contexto da conta de usuário usada para iniciar a instalação. Além disso, se você pretende usar um script para executar o CCMSetup.exe com a propriedade **/service**, o CCMSetup.exe é fechado após a inicialização do serviço e pode não relatar os detalhes da instalação corretamente.   
 
-示例：`ccmsetup.exe /noservice`  
+Exemplo: `ccmsetup.exe /noservice`  
 
 ### <a name="service"></a>/service
 
-指定 CCMSetup 应作为使用本地系统帐户的服务运行。  
+Especifica que o CCMSetup deverá ser executado como um serviço que usa a conta Sistema Local.  
 
-示例：`ccmsetup.exe /service`  
+Exemplo: `ccmsetup.exe /service`  
 
 ### <a name="uninstall"></a>/uninstall
 
-指定应卸载的客户端软件。 有关详细信息，请参阅 [How to manage clients in System Center Configuration Manager](../manage/manage-clients.md)。  
+Especifica se o software cliente deverá ser desinstalado. Para obter mais informações, consulte [How to manage clients in System Center Configuration Manager](../manage/manage-clients.md).  
 
-示例：`ccmsetup.exe /uninstall`  
+Exemplo: `ccmsetup.exe /uninstall`  
 
 ### <a name="logon"></a>/logon
 
-在已安装客户端的任何版本的情况下，指定应停止客户端安装。  
+Especifica se a instalação do cliente deverá ser interrompida caso uma versão do cliente já esteja instalada.  
 
-示例：`ccmsetup.exe /logon`  
+Exemplo: `ccmsetup.exe /logon`  
 
 ### <a name="forcereboot"></a>/forcereboot
 
- 指定如果需要重启才能完成安装，则 CCMSetup 应强制客户端计算机重启。 如果未指定，则 CCMSetup 将在需要重启时退出，然后在下一次手动重启后继续。  
+ Especifica se o CCMSetup deverá forçar o computador cliente a ser reiniciado se isso for necessário para concluir a instalação. Se essa opção não for especificada, o CCMSetup será fechado quando uma reinicialização for necessária e continuará após a próxima reinicialização manual.  
 
- 示例：`CCMSetup.exe /forcereboot`  
+ Exemplo: `CCMSetup.exe /forcereboot`  
 
-### <a name="bitspriorityltpriority"></a>/BITSPriority:&lt;优先级\>
+### <a name="bitspriorityltpriority"></a>/BITSPriority:&lt;Prioridade\>
 
- 指定通过 HTTP 连接下载客户端安装文件时的下载优先级。 可能的值如下：  
+ Especifica a prioridade de download, quando os arquivos de instalação do cliente são baixados por meio de uma conexão HTTP. Os valores possíveis são:  
 
 -   FOREGROUND  
 
@@ -154,429 +154,429 @@ CCMSetup.exe 无法下载安装文件时的重试间隔。  在达到 **download
 
 -   LOW  
 
- 默认值为 NORMAL。  
+ O valor padrão é NORMAL.  
 
- 示例：`ccmsetup.exe /BITSPriority:HIGH`  
+ Exemplo: `ccmsetup.exe /BITSPriority:HIGH`  
 
-### <a name="downloadtimeoutltminutes"></a>/downloadtimeout:&lt;分钟数\>
+### <a name="downloadtimeoutltminutes"></a>/downloadtimeout:&lt;Minutos\>
 
-CCMSetup 放弃下载客户端安装文件之前将尝试的时间长度 - 以分钟为单位。 默认值为 **1440** 分钟（1 天）。  
+A duração em minutos que o CCMSetup tentará baixar os arquivos de instalação antes de interromper o processo. O valor padrão é **1440** minutos (1 dia).  
 
-示例：`ccmsetup.exe /downloadtimeout:100`  
+Exemplo: `ccmsetup.exe /downloadtimeout:100`  
 
 ### <a name="usepkicert"></a>/UsePKICert
 
- 如果指定，则客户端将使用包括客户端身份验证的 PKI 证书（如果证书可用）。 如果找不到有效的证书，客户端可使用 HTTP 连接和自签名的证书，这也是不使用此属性所采取的行为。
+ Quando especificado, o cliente usa um certificado PKI que inclui a autenticação de cliente, se disponível. Se um certificado válido não for encontrado, o cliente usará uma conexão HTTP e um certificado autoassinado, que também é o comportamento quando essa propriedade não é usada.
 
 > [!NOTE]  
->  某些情况下，安装客户端时不必指定此属性，并且仍可使用客户端证书。 这些情况包括使用客户端请求安装客户端以及基于软件更新点的客户端安装。 但是，无论何时你手动安装客户端并使用 **/mp** 属性指定配置为仅接受 HTTPS 客户端连接的管理点时，都必须指定此属性。 使用 CCMALWAYSINF=1 属性（与用于基于 Internet 的管理点和站点代码的属性一起）为仅 Internet 的通信安装客户端时，也必须指定此属性。 有关基于 Internet 的客户端管理的详细信息，请参阅 [System Center Configuration Manager 中终结点之间的通信](../../plan-design/hierarchy/communications-between-endpoints.md)中的[来自 Internet 或不受信任林的客户端通信的注意事项](../../plan-design/hierarchy/communications-between-endpoints.md#BKMK_clientspan)。  
+>  Em alguns cenários, você não precisa especificar essa propriedade ao instalar um cliente e ainda usar um certificado do cliente. Esses cenários incluem a instalação de um cliente usando a instalação do cliente por push e a instalação do cliente baseada em ponto de atualização de software. No entanto, será necessário especificar essa propriedade sempre que instalar um cliente e usar a propriedade **/mp** para especificar um ponto de gerenciamento que seja configurado para aceitar somente conexões de clientes via HTTPS. Você também deverá especificar essa propriedade ao instalar um cliente para comunicação apenas da Internet, usando a propriedade CCMALWAYSINF=1 (junto às propriedades do ponto de gerenciamento baseado na Internet e o código do site). Para obter mais informações sobre o gerenciamento de clientes baseado em Internet, consulte [Considerações sobre a comunicação do cliente da Internet ou de uma floresta não confiável](../../plan-design/hierarchy/communications-between-endpoints.md#BKMK_clientspan) em [Comunicação entre pontos de extremidade no System Center Configuration Manager](../../plan-design/hierarchy/communications-between-endpoints.md).  
 
- 示例：`CCMSetup.exe /UsePKICert`  
+ Exemplo: `CCMSetup.exe /UsePKICert`  
 
 ### <a name="nocrlcheck"></a>/NoCRLCheck
 
- 指定客户端在使用 PKI 证书通过 HTTPS 进行通信时应不检查证书吊销列表 (CRL)。  
+ Especifica se um cliente não deverá verificar a CRL (lista de certificados revogados) ao se comunicar por uma conexão HTTPS com um certificado PKI.  
 
- 如果未指定，则客户端将在建立 HTTPS 连接之前检查 CRL。  
+ Quando não especificado, o cliente verifica a CRL antes de estabelecer uma conexão HTTPS.  
 
- 有关客户端 CRL 检查的详细信息，请参阅 [Plan for Security 中的 System Center Configuration Manager](../../plan-design/security/plan-for-security.md#BKMK_PlanningForCRLs) 中的[Plan for security 中的 System Center Configuration Manager](../../plan-design/security/plan-for-security.md)。  
+ Para obter mais emformações sobre a verificação de CRL, veja [Plannemg for PKI certificate revocation](../../plan-design/security/plan-for-security.md#BKMK_PlanningForCRLs) em[Plan for security em System Center Configuration Manager](../../plan-design/security/plan-for-security.md).  
 
- 示例：`CCMSetup.exe /UsePKICert /NoCRLCheck`  
+ Exemplo: `CCMSetup.exe /UsePKICert /NoCRLCheck`  
 
-### <a name="configltconfiguration-file"></a>/config:&lt;配置文件\>
+### <a name="configltconfiguration-file"></a>/config:&lt;arquivo de configuração\>
 
-指定包含客户端安装属性的文本文件的名称。
+Especifica o nome de um arquivo de texto que contém as propriedades de instalação do cliente.
 
-- 如果不指定 **/noservice** CCMSetup 属性，此文件必须位于 CCMSetup 文件夹，对于 32 位和 64 位操作系统，为 %Windir%\\Ccmsetup。
-- 如果指定 **/noservice** 属性，此文件必须位于你从中运行 CCMSetup.exe 的相同文件夹中。  
+- Se a propriedade **/noservice** do CCMSetup não for especificada, esse arquivo deverá estar localizado na pasta do CCMSetup, que é %Windir%\\Ccmsetup nos sistemas operacionais de 32 e 64 bits.
+- Se você especificar a propriedade **/noservice** , esse arquivo será localizado na mesma pasta em que o CCMSetup.exe será executado.  
 
-示例：`CCMSetup.exe /config:&lt;Configuration File Name.txt\>`  
+Exemplo: `CCMSetup.exe /config:&lt;Configuration File Name.txt\>`  
 
-使用站点服务器计算机上 &lt;Configuration Manager 目录\>\\bin\\&lt;平台\>文件夹中的 mobileclienttemplate.tcf 文件提供正确的文件格式。 此文件也包含有关各个部分及其使用方式的注释。 指定 [Client Install] 部分中的客户端安装属性，其后紧跟下列文本： **Install=INSTALL=ALL**。  
+Use o arquivo mobileclienttemplate.tcf na pasta &lt;Configuration Manager directory\>\\bin\\&lt;platform\> do computador do servidor do site para fornecer o formato de arquivo correto. Esse arquivo também contém comentários sobre as seções e como elas são usadas. Especifique as propriedades de instalação do cliente na seção [Instalação do cliente], após o seguinte texto: **Install=INSTALL=ALL**.  
 
-[Client Install] 部分条目示例：`Install=INSTALL=ALL SMSSITECODE=ABC SMSCACHESIZE=100`  
+Entrada de seção de exemplo [Instalação do Cliente]: `Install=INSTALL=ALL SMSSITECODE=ABC SMSCACHESIZE=100`  
 
-### <a name="skipprereqltfilename"></a>/skipprereq:&lt;文件名\>
+### <a name="skipprereqltfilename"></a>/skipprereq:&lt;nome do arquivo\>
 
- 指定在安装 Configuration Manager 客户端时 CCMSetup.exe 不得安装指定的必备程序。 此属性支持输入多个值。 使用分号字符 (;) 来分隔各个值。  
+ Especifica que CCMSetup.exe não deve instalar o programa de pré-requisitos especificado quando o cliente do Configuration Manager for instalado. Essa propriedade oferece suporte à inserção de diversos valores. Use o caractere ponto-e-vírgula (;) para separar cada valor.  
 
 
- 示例：`CCMSetup.exe /skipprereq:silverlight.exe` 或 `CCMSetup.exe /skipprereq:dotnetfx40_client_x86_x64.exe;Silverlight.exe`  
+ Exemplos: `CCMSetup.exe /skipprereq:silverlight.exe` ou `CCMSetup.exe /skipprereq:dotnetfx40_client_x86_x64.exe;Silverlight.exe`  
 
 ### <a name="forceinstall"></a>/forceinstall
 
- 指定将卸载的任何现有客户端，以及将安装的新客户端。  
+ Especifica se um cliente existente será desinstalado e um novo cliente será instalado.  
 
-### <a name="excludefeaturesltfeature"></a>/ ExcludeFeatures:&lt;功能\>
+### <a name="excludefeaturesltfeature"></a>/ExcludeFeatures:&lt;recurso\>
 
-指定在安装客户端时 CCMSetup.exe 将不安装指定的功能。  
+Especifica se o CCMSetup.exe não instalará o recurso especificado quando o cliente for instalado.  
 
-示例：`CCMSetup.exe /ExcludeFeatures:ClientUI` 将不会在客户端上安装软件中心。  
+Exemplo: `CCMSetup.exe /ExcludeFeatures:ClientUI` não instalará o Centro de Software no cliente.  
 
 > [!NOTE]  
->  对于此版本，“ClientUI”  是 **/ExcludeFeatures** 属性唯一支持的值。  
+>  Nessa versão, **ClientUI** é o único valor com suporte da propriedade **/ExcludeFeatures** .  
 
-##  <a name="ccmsetupReturnCodes"></a> CCMSetup.exe 返回代码  
- CCMSetup.exe 命令完成时提供以下返回代码。 若要进行故障排除，请查看客户端计算机上的 ccmsetup.log 文件，以获取返回代码的上下文以及其他详细信息。  
+##  <a name="ccmsetupReturnCodes"></a> Códigos de retorno de CCMSetup.exe  
+ O comando CCMSetup.exe fornece os códigos de retorno concluídos a seguir. Para solucionar problemas, examine o contexto e detalhes adicionais sobre códigos de retorno no arquivo ccmsetup.log do computador cliente.  
 
-|返回代码|含义|  
+|Código de retorno|Significado|  
 |-----------------|-------------|  
-|0|成功|  
-|6|错误|  
-|7|需要重新启动|  
-|8|安装程序已在运行|  
-|9|先决条件评估失败|  
-|10|安装程序清单哈希验证失败|  
+|0|Êxito|  
+|6|Erro|  
+|7|Reinicialização necessária|  
+|8|Instalação já em execução|  
+|9|Falha na avaliação de pré-requisito|  
+|10|Falha na validação do hash do manifesto de Instalação|  
 
-##  <a name="clientMsiProps"></a> client.msi 属性  
- 下面的属性可修改 client.msi 的安装行为。 如果使用客户端请求安装方法，则也可以在“客户端请求安装属性”  对话框的“客户端”  选项卡中指定这些属性。  
+##  <a name="clientMsiProps"></a> Propriedades do Client.msi  
+ As propriedades a seguir podem modificar o comportamento da instalação do client.msi. Se você usar o método de instalação por push do cliente, também será possível especificar as propriedades na guia **Cliente** da caixa de diálogo **Propriedades de Instalação por Push do Cliente** .  
 
 ### <a name="ccmadmins"></a>CCMADMINS  
 
-指定可访问客户端设置和策略的一个或多个 Windows 用户帐户或组。 这在 Configuration Manager 管理员对客户端计算机没有本地管理凭据时很有用。 指定由分号分隔的帐户列表。  
+Especifica uma ou mais contas de usuário Windows ou grupos para terem acesso às configurações e políticas do cliente. Isso é útil quando o administrador do Configuration Manager não tem credenciais administrativas locais no computador cliente. Especifique uma lista de contas separadas por ponto-e-vírgula.  
 
-示例：`CCMSetup.exe CCMADMINS="Domain\Account1;Domain\Group1"`  
+Exemplo: `CCMSetup.exe CCMADMINS="Domain\Account1;Domain\Group1"`  
 
 ### <a name="ccmallowsilentreboot"></a>CCMALLOWSILENTREBOOT
 
-指定在客户端安装之后允许重启的计算机（如果需要）。  
+Especifica se o computador poderá ser reiniciado após a instalação do cliente, se necessário.  
 
 > [!IMPORTANT]  
->  即使用户已登录，计算机也将重启而不会发出警告。  
+>  O computador será reiniciado sem nenhum aviso, mesmo se um usuário estiver conectado.  
 
-示例： **CCMSetup.exe  CCMALLOWSILENTREBOOT**  
+Exemplo: **CCMSetup.exe  CCMALLOWSILENTREBOOT**  
 
 ### <a name="ccmalwaysinf"></a>CCMALWAYSINF
 
- 设置为 1 以指定客户端将始终基于 Internet 并永远不会连接到 Intranet。 客户端的连接类型显示为“始终连接 Internet” 。  
+ Definida como 1 para especificar se o cliente será sempre baseado na Internet e nunca se conectará à intranet. O tipo de conexão do cliente exibe **Sempre Internet**.  
 
- 此属性应该与 CCMHOSTNAME（指定基于 Internet 的管理点的 FQDN）结合使用。 还应该与 CCMSetup 属性 /UsePKICert 以及站点代码结合使用。  
+ Essa propriedade deve ser usada em conjunto com CCMHOSTNAME, que especifica o FQDN do ponto de gerenciamento baseado na Internet. Ela também deve ser usada em conjunto com a propriedade /UsePKICert do CCMSetup e com o código do site.  
 
- 有关基于 Internet 的客户端管理的详细信息，请参阅 [System Center Configuration Manager 中终结点之间的通信](../../plan-design/hierarchy/communications-between-endpoints.md)中的[来自 Internet 或不受信任林的客户端通信的注意事项](../../plan-design/hierarchy/communications-between-endpoints.md#BKMK_clientspan)。  
+ Para obter mais informações sobre o gerenciamento de clientes baseado em Internet, consulte [Considerações sobre a comunicação do cliente da Internet ou de uma floresta não confiável](../../plan-design/hierarchy/communications-between-endpoints.md#BKMK_clientspan) em [Comunicação entre pontos de extremidade no System Center Configuration Manager](../../plan-design/hierarchy/communications-between-endpoints.md).  
 
- 示例：`CCMSetup.exe /UsePKICert  CCMALWAYSINF=1 CCMHOSTNAME=SERVER3.CONTOSO.COM SMSSITECODE=ABC`  
+ Exemplo: `CCMSetup.exe /UsePKICert  CCMALWAYSINF=1 CCMHOSTNAME=SERVER3.CONTOSO.COM SMSSITECODE=ABC`  
 
 ### <a name="ccmcertissuers"></a>CCMCERTISSUERS
 
- 指定证书颁发者列表，该列表是 Configuration Manager 站点信任的受信任根证书 (CA) 的列表。  
+ Especifica a lista de emissores de certificados, que é uma lista de certificados AC (Certificação de Raiz Confiável) em que o site do Configuration Manager confia.  
 
- 有关证书颁发者列表以及客户端如何在证书选择过程中使用该列表的详细信息，请参阅 [Plan for Security 中的 System Center Configuration Manager](../../plan-design/security/plan-for-security.md#BKMK_PlanningForClientCertificateSelection) 中的 [Plan for security 中的 System Center Configuration Manager](../../plan-design/security/plan-for-security.md)。  
+ Para obter mais emformações sobre a lista de emissores de certificado e como os clientes podem usá-los durante o processo de seleção de certificado, veja [Plannemg for PKI client certificate selection](../../plan-design/security/plan-for-security.md#BKMK_PlanningForClientCertificateSelection) em [Plan for security em System Center Configuration Manager](../../plan-design/security/plan-for-security.md).  
 
- 这是根 CA 证书中的使用者属性的区分大小写的匹配项。 属性可由逗号 (,) 或分号 (;) 分隔。 可通过使用分隔条来指定多个根 CA 证书。 例如：  
+ Esta é uma correspondência com diferenciação de maiúsculas e minúsculas dos atributos da entidade no certificado de CA raiz. Os atributos podem ser separados por uma vírgula (,) ou por um ponto-e-vírgula (;). Vários certificados de autoridade de certificação raiz podem ser especificados por meio de uma barra de separação. Exemplo:  
 
  `CCMCERTISSUERS=”CN=Contoso Root CA; OU=Servers; O=Contoso, Ltd; C=US &#124; CN=Litware Corporate Root CA; O=Litware, Inc.”`  
 
 > [!TIP]  
->  引用站点服务器计算机上 &lt;Configuration Manager directory\>\bin\\&lt;平台\> 文件夹中的 mobileclient.tcf 文件，以复制为该站点配置的 **CertificateIssuers=&lt;string\>**。  
+>  Faça referência ao arquivo mobileclient.tcf na pasta &lt;Diretório do Configuration Manager\>\bin\\&lt;plataforma\> no computador do servidor do site para copiar **CertificateIssuers=&lt;cadeia de caracteres\>** configurado para o site.  
 
 ### <a name="ccmcertsel"></a>CCMCERTSEL
 
- 如果客户端有多个可用于 HTTPS 通信的证书（包括客户端身份验证功能的有效证书），则指定证书选择条件。  
+ Especifica os critérios de seleção de certificado se o cliente tem mais de um certificado para a comunicação HTTPS (um certificado válido que inclui a capacidade de autenticação de cliente).  
 
- 可以在“使用者名称”或者“使用者可选名称”中搜索完全匹配（使用 **Subject:**），或者搜索部分匹配（使用 **SubjectStr:**）。 例如：  
+ É possível pesquisar uma correspondência exata (use **Subject:**) ou uma correspondência parcial (use **SubjectStr:)** no Nome da Entidade ou no Nome Alternativo da Entidade. Exemplos:  
 
- `CCMCERTSEL="Subject:computer1.contoso.com"` 搜索在“使用者名称”或者“使用者备用名称”中与计算机名称“computer1.contoso.com”完全匹配的证书。  
+ `CCMCERTSEL="Subject:computer1.contoso.com"` pesquisa um certificado com uma correspondência exata para o nome do computador “computer1.contoso.com” no Nome da Entidade ou no Nome Alternativo da Entidade.  
 
- `CCMCERTSEL="SubjectStr:contoso.com"` 搜索在“使用者名称”或者“使用者备用名称”中包含“contoso.com”的证书。  
+ `CCMCERTSEL="SubjectStr:contoso.com"` pesquisa um certificado que contém “contoso.com” no Nome da Entidade ou no Nome Alternativo da Entidade.  
 
- 您还可以在“使用者名称”或者“使用者备用名称”属性中使用对象标识符 (OID) 或可分辨名称属性，例如：  
+ Você também pode usar o OID (identificador de objeto) ou nomes de objetos diferenciados nos atributos do Nome da Entidade ou do Nome Alternativo da Entidade, por exemplo:  
 
- `CCMCERTSEL="SubjectAttr:2.5.4.11 = Computers"` 搜索以对象标识符表示且名为 Computers 的组织单位属性。  
+ `CCMCERTSEL="SubjectAttr:2.5.4.11 = Computers"` pesquisa o atributo da unidade organizacional expresso como um identificador de objeto e os Computadores nomeados.  
 
- `CCMCERTSEL="SubjectAttr:OU = Computers"` 搜索以可分辨名称表示且名为 Computers 的组织单位属性。  
+ `CCMCERTSEL="SubjectAttr:OU = Computers"` pesquisa o atributo da unidade organizacional expresso como um nome diferenciado e os Computadores nomeados.  
 
 > [!IMPORTANT]  
->  如果使用“使用者名称框”，则 **Subject:** 区分大小写，而 **SubjectStr:** 不区分大小写。  
+>  Se você usar a caixa Nome da Entidade, **Subject:** diferenciará maiúsculas de minúsculas e **SubjectStr:** não diferenciará maiúsculas de minúsculas.  
 >   
->  如果使用“使用者备用名称”框，**Subject:** 和 **SubjectStr:** 均不区分大小写。  
+>  Se você usar a caixa Nome Alternativo da Entidade, **Subject:** e **SubjectStr:** não diferenciarão maiúsculas de minúsculas.  
 
- 可用于证书选择的完整属性列表在 [对于 PKI 证书选择条件支持的属性值](#BKMK_attributevalues)中列出。  
+ A lista completa de atributos que você pode usar para seleção de certificado está listada na [Valores de atributo com suporte para os critérios de seleção de certificado PKI](#BKMK_attributevalues).  
 
- 如果多个证书与搜索相符，并且属性 CCMFIRSTCERT 已设置为 1，则选择有效期最长的证书。  
+ Se mais de um certificado corresponder à pesquisa e a propriedade CCMFIRSTCERT for definida como 1, o certificado com o período de validade mais longo será selecionado.  
 
 ### <a name="ccmcertstore"></a>CCMCERTSTORE
 
- 如果用于 HTTPS 的客户端证书不在计算机存储的默认“个人”证书存储中，则指定备用证书存储名称。  
+ Especifica um nome alternativo de repositório de certificados se o certificado do cliente para HTTPS não está localizado no repositório de certificados padrão **Pessoal** no repositório do Computador.  
 
- 示例：`CCMSetup.exe /UsePKICert CCMCERTSTORE="ConfigMgr"`  
+ Exemplo: `CCMSetup.exe /UsePKICert CCMCERTSTORE="ConfigMgr"`  
 
 ### <a name="ccmdebuglogging"></a>CCMDEBUGLOGGING
 
-  启用调试日志记录。 可将该值设置为 0（关 - 默认）或 1（开）。 这将使客户端记录有助于故障排除的低级信息。 应尽量避免在生产站点中使用此属性，因为这样可能会产生过多的日志记录，使得难以在日志文件中查找相关信息。 还必须将 CCMENABLELOGGING 设置为 TRUE 以启用调试日志记录。  
+  Habilita o log de depuração. Os valores podem ser definidos como 0 (desativado, padrão) ou 1 (ativado). Isso faz com que o cliente registre informações de baixo nível para solução de problemas. Como prática recomendada, evite usar essa propriedade em sites de produção, pois pode ocorrer registro em log excessivo, dificultando a localização de informações importantes nos arquivos de log. CCMENABLELOGGING também deve ser definido como TRUE para habilitar o log de depuração.  
 
-  示例：`CCMSetup.exe CCMDEBUGLOGGING=1`  
+  Exemplo: `CCMSetup.exe CCMDEBUGLOGGING=1`  
 
 ### <a name="ccmenablelogging"></a>CCMENABLELOGGING
 
-  默认情况下，将设置为 TRUE 以启用日志记录。 日志文件存储在 Configuration Manager 客户端安装文件夹的**日志**文件夹中。 默认情况下，此文件夹为 %Windir%\CCM\Logs。  
+  Por padrão, defina como TRUE para habilitar o log. Os arquivos de log são armazenados na pasta **Logs** da pasta de instalação do cliente do Configuration Manager. Por padrão, essa pasta é %Windir%\CCM\Logs.  
 
-  示例：`CCMSetup.exe CCMENABLELOGGING=TRUE`  
+  Exemplo: `CCMSetup.exe CCMENABLELOGGING=TRUE`  
 
 ### <a name="ccmevalinterval"></a>CCMEVALINTERVAL  
 
- 客户端运行状况评估工具 (ccmeval.exe) 运行时的频率。 可以是 **1** 到 **1440** 分钟。 默认情况下，每天运行一次。  
+ A frequência na qual a ferramenta de avaliação de integridade do cliente (ccmeval.exe) é executada. Pode ser de **1** a **1440** minutos. Por padrão, é executada uma vez por dia.  
 
 ### <a name="ccmevalhour"></a>CCMEVALHOUR
 
- 客户端运行状况评估工具 (ccmeval.exe) 运行时的小时，在 **0** 点（午夜）和 **23** 点（晚上 11 点）之间。 默认情况下在午夜运行。  
+ A hora em que a ferramenta de avaliação de integridade do cliente (ccmeval.exe) é executada, entre **0** (meia-noite) e **23** (23h). É executada à meia-noite por padrão.  
 
 ### <a name="ccmfirstcert"></a>CCMFIRSTCERT
 
- 如果设置为 1，则此属性指定客户端应选择有效期最长的 PKI 证书。 如果将网络访问保护与 IPsec 强制配合使用，则可能需要此设置。  
+ Se definida como 1, essa propriedade especifica que o cliente deve selecionar o certificado PKI com o período de validade mais longo. Essa configuração poderá ser necessária se você estiver usando Proteção de Acesso à Rede com imposição IPsec.  
 
- 示例：`CCMSetup.exe /UsePKICert CCMFIRSTCERT=1`  
+ Exemplo: `CCMSetup.exe /UsePKICert CCMFIRSTCERT=1`  
 
 ### <a name="ccmhostname"></a>CCMHOSTNAME
 
- 如果客户端是通过 Internet 进行管理，则指定基于 Internet 的管理点 FQDN。  
+ Especifica o FQDN do ponto de gerenciamento baseados na Internet, se o cliente for gerenciado pela Internet.  
 
- 不要将此选项与 SMSSITECODE=AUTO 安装属性一起指定。 基于 Internet 的客户端必须直接分配到基于 Internet 的站点。  
+ Não especifique essa opção com a propriedade de instalação SMSSITECODE=AUTO. Clientes baseados na Internet devem ser atribuídos diretamente a seus sites baseados na Internet.  
 
- 示例：`CCMSetup.exe  /UsePKICert/ CCMHOSTNAME="SMSMP01.corp.contoso.com"`  
+ Exemplo: `CCMSetup.exe  /UsePKICert/ CCMHOSTNAME="SMSMP01.corp.contoso.com"`  
 
 ### <a name="ccmhttpport"></a>CCMHTTPPORT
 
- 指定客户端在通过 HTTP 与站点系统服务器通信时应该使用的端口。 默认情况下设置为端口 80。  
+ Especifica a porta que o cliente deve usar ao se comunicar por HTTP com servidores do sistema de site. Definida como a Porta 80 por padrão.  
 
- 示例：`CCMSetup.exe CCMHTTPPORT=80`  
+ Exemplo: `CCMSetup.exe CCMHTTPPORT=80`  
 
 ### <a name="ccmhttpsport"></a>CCMHTTPSPORT
 
-指定客户端在通过 HTTPS 与站点系统服务器通信时应该使用的端口。 默认情况下设置为端口 443。  
+Especifica a porta que o cliente deve usar ao se comunicar por HTTPS com servidores do sistema de site. Definida como a Porta 443 por padrão.  
 
-示例：`CCMSetup.exe /UsePKICert CCMHTTPSPORT=443`  
+Exemplo: `CCMSetup.exe /UsePKICert CCMHTTPSPORT=443`  
 
 ### <a name="ccminstalldir"></a>CCMINSTALLDIR
 
- 确定在其中安装 Configuration Manager 客户端文件的文件夹，默认为 *%Windir%*\CCM。 无论这些文件安装在哪个文件夹中，Ccmcore.dll 文件都始终安装在 *%Windir%\System32* 文件夹中。 此外，在 64 位操作系统上，会始终在 *%Windir%*\SysWOW64 文件夹中安装 Ccmcore.dll 文件的副本，以支持使用 Configuration Manager 软件开发工具包 (SDK) 中的 32 位版本 Configuration Manager 客户端 API 的 32 位应用程序。  
+ Identifica a pasta na qual os arquivos do cliente do Configuration Manager são instalados, *%Windir%*\CCM por padrão. Independentemente do local em que esses arquivos são instalados, o arquivo Ccmcore.dll é sempre instalado na pasta *%Windir%\System32*. Além disso, em sistemas operacionais de 64 bits, uma cópia do arquivo Ccmcore.dll sempre é instalada na pasta *%Windir%*\SysWOW64 para dar suporte aos aplicativos de 32 bits que usam a versão de 32 bits das APIs do cliente do Configuration Manager por meio do SDK (Software Developer Kit) do Configuration Manager.  
 
- 示例：`CCMSetup.exe CCMINSTALLDIR="C:\ConfigMgr"`  
+ Exemplo: `CCMSetup.exe CCMINSTALLDIR="C:\ConfigMgr"`  
 
 ### <a name="ccmloglevel"></a>CCMLOGLEVEL
 
-指定要写入 Configuration Manager 日志文件的详细级别。 指定 0 到 3 之间的一个整数，其中 0 表示最详细的日志记录，3 表示只记录错误。 默认值为 1。  
+Especifica o nível de detalhe a ser gravado nos arquivos de log do Configuration Manager. Especifique um inteiro de 0 a 3, em que 0 corresponde ao log mais detalhado e 3 registra apenas os erros. O padrão é 1.  
 
-示例：`CCMSetup.exe CCMLOGLEVEL=3`  
+Exemplo: `CCMSetup.exe CCMLOGLEVEL=3`  
 
 ### <a name="ccmlogmaxhistory"></a>CCMLOGMAXHISTORY
 
-当 Configuration Manager 日志文件的大小达到 250000 字节（或属性 CCMLOGMAXSIZE 指定的值）时，就会重命名为备份，并会创建新的日志文件。  
+Quando um arquivo de log do Configuration Manager chega a 250000 bytes de tamanho (ou ao valor especificado pela propriedade CCMLOGMAXSIZE), ele é renomeado como um backup e um novo arquivo de log é criado.  
 
-此属性指定保留多少个先前版本的日志文件。 默认值为 1。 如果值设置为 0，则不保留任何旧的日志文件。  
+Essa propriedade especifica quantas versões anteriores do arquivo de log serão mantidas. O valor padrão é 1. Se o valor for definido como 0, nenhum arquivo de log antigo será mantido.  
 
-示例：`CCMSetup.exe CCMLOGMAXHISTORY=0`  
+Exemplo: `CCMSetup.exe CCMLOGMAXHISTORY=0`  
 
 ### <a name="ccmlogmaxsize"></a>CCMLOGMAXSIZE
 
-日志文件的最大大小（以字节为单位）。 当日志达到指定大小时，该日志将重命名为一个历史记录文件，同时创建一个新文件。 此属性至少必须设置为 10000 字节。 默认值为 250000 字节。  
+O tamanho máximo do arquivo de log em bytes. Quando um log chega ao tamanho especificado, ele é renomeado como um arquivo de histórico e um novo arquivo é criado. Essa propriedade deve ser definida como pelo menos 10000 bytes. O valor padrão é 250000 bytes.  
 
-示例：`CCMSetup.exe CCMLOGMAXSIZE=300000`  
+Exemplo: `CCMSetup.exe CCMLOGMAXSIZE=300000`  
 
 ### <a name="disablesiteopt"></a>DISABLESITEOPT
 
- 如果设置为 TRUE，则禁止对客户端计算机具有管理凭据的最终用户，更改在客户端控制面板中的“Configuration Manager”中分配的站点。  
+ Se definido como TRUE, desabilita a capacidade de os usuários finais com credenciais administrativas no computador cliente alterarem o site atribuído do Configuration Manager em **Configuration Manager** no Painel de Controle do cliente.  
 
- 示例： **CCMSetup.exe DISABLESITEOPT=TRUE**  
+ Exemplo: **CCMSetup.exe DISABLESITEOPT=TRUE**  
 
 ### <a name="disablecacheopt"></a>DISABLECACHEOPT
 
-如果设置为 TRUE，则对客户端计算机具有管理凭据的最终用户将无法在客户端计算机的控制面板中使用 Configuration Manager 来更改 Configuration Manager 客户端的客户端缓存文件夹设置。  
+Se definido como TRUE, desabilitará a capacidade de os usuários finais com credenciais administrativas no computador cliente alterarem as configurações da pasta de cache do cliente para o cliente do Configuration Manager usando o Configuration Manager no Painel de Controle do computador cliente.  
 
-示例：`CCMSetup.exe DISABLECACHEOPT=TRUE`  
+Exemplo: `CCMSetup.exe DISABLECACHEOPT=TRUE`  
 
 ### <a name="dnssuffix"></a>DNSSUFFIX
 
- 为客户端指定 DNS 域以查找在 DNS 中发布的管理点。 找到管理点后，该管理点将告知客户端有关层次结构中其他管理点的信息。 这意味着通过使用 DNS 发布找到的管理点不必来自客户端的站点，而可以是层次结构中的任何管理点。  
+ Especifica um domínio DNS de clientes para localizar os pontos de gerenciamento publicados no DNS. Quando um ponto de gerenciamento é localizado, ele informa o cliente sobre outros pontos de gerenciamento na hierarquia. Isso significa que o ponto de gerenciamento localizado usando a publicação de DNS não precisa ser do site do cliente, mas pode ser qualquer ponto de gerenciamento na hierarquia.  
 
 > [!NOTE]  
->  如果客户端与发布的管理点位于同一域中，则不必指定此属性。 在此情况下，会自动使用客户端的域来搜索 DNS 以查找管理点。  
+>  Você não precisará especificar essa propriedade se o cliente estiver no mesmo domínio que o ponto de gerenciamento publicado. Nesse caso, o domínio do cliente é usado automaticamente para pesquisar pontos de gerenciamento no DNS.  
 
- 有关 DNS 发布作为 Configuration Manager 客户端服务定位方法的详细信息，请参阅[了解客户端如何查找 System Center Configuration Manager 的站点资源和服务](../../plan-design/hierarchy/understand-how-clients-find-site-resources-and-services.md)中的[服务定位和客户端如何确定向其分配的管理点](../../plan-design/hierarchy/understand-how-clients-find-site-resources-and-services.md#BKMK_Plan_Service_Location)。  
+ Para obter mais informações sobre a publicação de DNS como um método de local de serviço para clientes do Configuration Manager, consulte [Local do serviço e como os clientes determinam seu ponto de gerenciamento atribuído](../../plan-design/hierarchy/understand-how-clients-find-site-resources-and-services.md#BKMK_Plan_Service_Location) em [Entender como os clientes encontram serviços e recursos do site para o System Center Configuration Manager](../../plan-design/hierarchy/understand-how-clients-find-site-resources-and-services.md).  
 
 > [!NOTE]  
->  默认情况下，在 Configuration Manager 中未启用 DNS 发布。  
+>  Por padrão, a publicação de DNS não está habilitada no Configuration Manager.  
 
- 示例：`CCMSetup.exe SMSSITECODE=ABC DNSSUFFIX=contoso.com`  
+ Exemplo: `CCMSetup.exe SMSSITECODE=ABC DNSSUFFIX=contoso.com`  
 
 ### <a name="fsp"></a>FSP
 
-指定接收和处理 Configuration Manager 客户端计算机发送的状况消息的回退状态点。  
+Especifica o ponto de status de fallback que recebe e processa mensagens de estado enviadas por computadores cliente do Configuration Manager.  
 
-有关回退状态点的详细信息，请参阅[确定是否需要回退状态点](/sccm/core/clients/deploy/plan#determine-if-you-need-a-fallback-status-point)。  
+Para obter mais informações sobre o ponto de status de fallback, consulte [Determinar se você precisa de um ponto de status de fallback](/sccm/core/clients/deploy/plan#determine-if-you-need-a-fallback-status-point).  
 
-示例：`CCMSetup.exe FSP=SMSFP01`  
+Exemplo: `CCMSetup.exe FSP=SMSFP01`  
 
 ### <a name="ignoreappvversioncheck"></a>IGNOREAPPVVERSIONCHECK
 
- 指定在安装客户端之前不检查是否存在 Microsoft Application Virtualization (App-V) 的最低所需版本。  
+ Especifica se a presença da versão mínima necessária do App-V (Microsoft Application Virtualization) não é verificada antes da instalação do cliente.  
 
 > [!IMPORTANT]  
->  如果在未安装 App-V 的情况下安装 Configuration Manager 客户端，将无法部署虚拟应用程序。  
+>  Se instalar o cliente do Configuration Manager sem instalar o App-V, você não poderá implantar aplicativos virtuais.  
 
- 示例：`CCMSetup.exe IGNOREAPPVVERSIONCHECK=TRUE`  
+ Exemplo: `CCMSetup.exe IGNOREAPPVVERSIONCHECK=TRUE`  
 
 ### <a name="notifyonly"></a>NOTIFYONLY
 
-指定客户端状态将报告而不修正找到的客户端问题。  
+Especifica se o status do cliente relatará, mas não corrigirá os problemas encontrados no cliente.  
 
-示例：`CCMSetup.exe NOTIFYONLY=TRUE`  
+Exemplo: `CCMSetup.exe NOTIFYONLY=TRUE`  
 
-有关详细信息，请参阅 [How to configure client status in System Center Configuration Manager](configure-client-status.md)。  
+Para obter mais informações, consulte [How to configure client status in System Center Configuration Manager](configure-client-status.md).  
 
 ### <a name="resetkeyinformation"></a>RESETKEYINFORMATION
 
- 如果 Configuration Manager 客户端具有错误的 Configuration Manager 信任的根密钥，不能与受信任的管理点联系以接收受信任的新根密钥，则必须使用此属性手动删除旧的受信任的根密钥。 此情况可能在将客户端从一个站点层次结构移至另一个站点层次结构时发生。 此属性适用于使用 HTTP 和 HTTPS 客户端通信的客户端。  
+ Se um cliente do Configuration Manager tiver a chave de raiz confiável incorreta do Configuration Manager e não puder contatar um ponto de gerenciamento confiável para receber a nova chave de raiz confiável, será necessário remover a chave de raiz confiável antiga manualmente usando essa propriedade. Essa situação poderá ocorrer quando um cliente for movido de uma hierarquia de site para outra. Essa propriedade se aplica a clientes que usam a comunicação de cliente por HTTP e HTTPS.  
 
- 示例：`CCMSetup.exe RESETKEYINFORMATION=TRUE`  
+ Exemplo: `CCMSetup.exe RESETKEYINFORMATION=TRUE`  
 
 ### <a name="sitereassign"></a>SITEREASSIGN
 
-与 [SMSSITECODE](#smssitecode)=AUTO 一起使用时，启用自动站点重新分配进行客户端升级。
+Habilita a atribuição automática de site para as atualizações do cliente quando usado com [SMSSITECODE](#smssitecode)=AUTO.
 
-示例：`CCMSetup.exe SMSSITECODE=AUTO SITEREASSIGN=TRUE`
+Exemplo: `CCMSetup.exe SMSSITECODE=AUTO SITEREASSIGN=TRUE`
 
 ### <a name="smscachedir"></a>SMSCACHEDIR
 
-指定客户端计算机上用于存储临时文件的客户端缓存文件夹的位置。 默认情况下，此位置为 *%Windir\ccmcache*。  
+Especifica o local da pasta cache do cliente no computador cliente, o qual armazena arquivos temporários. Por padrão, o local é *%Windir \ccmcache*.  
 
-示例：`CCMSetup.exe SMSCACHEDIR="C:\Temp"`  
+Exemplo: `CCMSetup.exe SMSCACHEDIR="C:\Temp"`  
 
-此属性可以与 SMSCACHEFLAGS 属性结合使用，以控制客户端缓存文件夹位置。  
+Essa propriedade pode se usada em conjunto com a propriedade SMSCACHEFLAGS para controlar o local da pasta de cache do cliente.  
 
-示例：`CCMSetup.exe SMSCACHEDIR=Cache SMSCACHEFLAGS=MAXDRIVE` 将客户端缓存文件夹安装在最大的可用客户端磁盘驱动器上。  
+Exemplo: `CCMSetup.exe SMSCACHEDIR=Cache SMSCACHEFLAGS=MAXDRIVE` instala a pasta de cache do cliente na maior unidade de disco do cliente disponível.  
 
 ### <a name="smscacheflags"></a>SMSCACHEFLAGS
 
-指定客户端缓存文件夹的进一步安装详细信息。 可以单独或组合使用 SMSCACHEFLAGS 属性，组合使用时须以分号隔开。 如果未指定此属性，客户端缓存文件夹将依据 SMSCACHEDIR 属性进行安装，该文件夹将不会压缩，并且 SMSCACHESIZE 值将用作文件夹的大小（以 MB 为单位）。  
+Especifica ainda mais detalhes sobre a instalação da pasta cache do cliente. Você pode usar propriedades SMSCACHEFLAGS individualmente ou em combinação, separadas por ponto-e-vírgula. Se essa propriedade não for especificada, a pasta cache do cliente será instalada de acordo com a propriedade SMSCACHEDIR, a pasta não será compactada e o valor SMSCACHESIZE será usado como o tamanho em MB da pasta.  
 
-升级现有的客户端时忽略此设置。  
+Essa configuração será ignorada quando um cliente existente for atualizado.  
 
-属性:  
+Propriedades:  
 
--   PERCENTDISKSPACE：以总磁盘空间的百分比的形式指定文件夹大小。 如果指定此属性，则还必须以要使用的百分比值指定属性 SMSCACHESIZE。  
+-   PERCENTDISKSPACE: especifica o tamanho da pasta como um percentual do espaço total em disco. Se você especificar essa propriedade, será necessário especificar a propriedade SMSCACHESIZE como o valor da porcentagem a ser usado.  
 
--   PERCENTFREEDISKSPACE：以可用磁盘空间的百分比指定文件夹大小。 如果指定此属性，则还必须以要使用的百分比值指定属性 SMSCACHESIZE。 例如，如果磁盘具有 10 MB 的可用空间且 SMSCACHESIZE 指定为 50，则文件夹大小将设置为 5 MB。 您不能将此属性与 PERCENTDISKSPACE 属性结合使用。  
+-   PERCENTFREEDISKSPACE: especifica o tamanho da pasta como um percentual do espaço em disco livre. Se você especificar essa propriedade, será necessário especificar a propriedade SMSCACHESIZE como o valor da porcentagem a ser usado. Por exemplo, se o disco tiver 10 MB livres e a propriedade SMSCACHESIZE for especificada como 50, o tamanho da pasta será definido como 5 MB. Não é possível usar essa propriedade com a propriedade PERCENTDISKSPACE.  
 
--   MAXDRIVE：指定文件夹应该安装在最大的可用磁盘上。 如果已使用 SMSCACHEDIR 属性指定路径，则将忽略此值。  
+-   MAXDRIVE: especifica que a pasta deve ser instalada no maior disco disponível. Esse valor será ignorado se for especificado um caminho com a propriedade SMSCACHEDIR.  
 
--   MAXDRIVESPACE：指定文件夹应该安装在具有最多可用空间的磁盘驱动器上。 如果已使用 SMSCACHEDIR 属性指定路径，则将忽略此值。  
+-   MAXDRIVESPACE: especifica que a pasta deve ser instalada na unidade de disco com mais espaço livre. Esse valor será ignorado se for especificado um caminho com a propriedade SMSCACHEDIR.  
 
--   NTFSONLY：指定文件夹只能在 NTFS 磁盘驱动器上安装。 如果已使用 SMSCACHEDIR 属性指定路径，则将忽略此值。  
+-   NTFSONLY: especifica se a pasta pode ser instalada somente em unidades de disco NTFS. Esse valor será ignorado se for especificado um caminho com a propriedade SMSCACHEDIR.  
 
--   COMPRESS：指定文件夹应该以压缩方式存储。  
+-   COMPRESS: especifica se a pasta deve ser armazenada em um formato compactado.  
 
--   FAILIFNOSPACE：指定如果没有足够的空间来安装文件夹，则应删除客户端软件。  
+-   FAILIFNOSPACE: especifica que o software cliente deve ser removido se não houver espaço suficiente para instalar a pasta.  
 
-示例：`CCMSetup.exe SMSCACHEFLAGS=NTFSONLY;COMPRESS`  
+Exemplo: `CCMSetup.exe SMSCACHEFLAGS=NTFSONLY;COMPRESS`  
 
 
 ### <a name="smscachesize"></a>SMSCACHESIZE
 
 > [!IMPORTANT]
-> 从 Configuration Manager 版本 1606 开始，新的客户端设置可用于指定客户端缓存文件夹的大小。 添加这些客户端设置有效地替代了使用 SMSCACHESIZE 作为 client.msi 属性指定客户端缓存的大小。 有关详细信息，请参阅[有关缓存大小的客户端设置](about-client-settings.md#client-cache-settings)。  
+> A partir do Configuration Manager versão 1606, novas configurações de cliente estão disponíveis para especificar o tamanho da pasta de cache do cliente. O acréscimo dessas configurações de cliente substitui com eficiência o uso de SMSCACHESIZE como uma propriedade client.msi para especificar o tamanho do cache do cliente. Para obter mais informações, consulte as [configurações de cliente para tamanho de cache](about-client-settings.md#client-cache-settings).  
 
-对于 1602 及早期版本，当 SMSCACHESIZE 与 PERCENTDISKSPACE 或 PERCENTFREEDISKSPACE 属性结合使用时，以 MB 为单位或以百分比的形式指定客户端缓存文件夹的大小。 如果未设置此属性，则文件夹的默认最大大小为 5120 MB。 可指定的最低值为 1 MB。  
-
-> [!NOTE]  
->  如果必须下载的新包将导致文件夹超出其最大大小，并且无法通过清除文件夹来提供足够的可用空间，则此包下载将会失败，程序或应用程序也将无法运行。  
-
-在升级现有客户端和客户端下载软件更新时将忽略此设置。  
-
-示例：`CCMSetup.exe SMSCACHESIZE=100`  
+Para o 1602 e anteriores, SMSCACHESIZE especifica o tamanho da pasta cache do cliente em megabytes (MB) ou como uma percentual quando usada com a propriedade PERCENTDISKSPACE ou PERCENTFREEDISKSPACE. Se essa propriedade não for definida, a pasta usará por padrão o tamanho máximo de 5120 MB. O menor valor que pode ser especificado é 1 MB.  
 
 > [!NOTE]  
->  如果重新安装客户端，你无法使用 SMSCACHESIZE 或 SMSCACHEFLAGS 安装属性将缓存大小设置为小于以前的值。 如果试图这样做，则会忽略你的值，并且会将缓存大小自动设置为以前的大小。  
+>  Se um novo pacote que deve ser baixado fizer com que a pasta exceda o tamanho máximo e se a pasta não puder ser removida para criar espaço suficiente disponível, o download do pacote falhará e o programa ou o aplicativo não será executado.  
+
+Essa configuração será ignorada quando você atualizar um cliente existente e quando o cliente baixar as atualizações de software.  
+
+Exemplo: `CCMSetup.exe SMSCACHESIZE=100`  
+
+> [!NOTE]  
+>  Se você reinstalar um cliente, você não poderá usar as propriedade de instalação SMSCACHESIZE ou SMSCACHEFLAGS para definir o tamanho do cache para que seja menor do que era anteriormente. Se você tentar fazer isso, o valor será ignorado e o tamanho do cache será definido automaticamente com o tamanho anterior.  
 
 ### <a name="smsconfigsource"></a>SMSCONFIGSOURCE
 
-指定 Configuration Manager 安装程序检查配置设置的位置和顺序。 此属性是一个包含一个或多个字符的字符串，其中每个字符都定义了一个特定的配置源。 单独或组合使用字符值 R、P、M 和 U：  
+Especifica o local e a ordem em que o instalador do Configuration Manager verificará as definições de configuração. A propriedade é uma cadeia de caracteres que contém um ou mais caracteres, cada um definindo uma fonte de configuração específica. Use os valores de caractere R, P, M e U, sozinhos ou em combinação:  
 
--   R：检查注册表中的配置设置。  
+-   R: verificar as definições de configurações no Registro.  
 
-   有关详细信息，请参阅[有关在注册表中存储客户端安装属性的信息](https://technet.microsoft.com/library/gg712298.aspx#BKMK_Provision)。  
+   Para obter mais informações, consulte [informações sobre como armazenar propriedades de instalação do cliente no Registro](https://technet.microsoft.com/library/gg712298.aspx#BKMK_Provision).  
 
--   P：检查在命令提示符处提供的安装属性中的配置设置。  
+-   P: verificar as definições de configuração nas propriedades de instalação fornecidas no prompt de comando.  
 
--   M：检查用 Configuration Manager 客户端软件升级旧版客户端时的现有设置。  
+-   M: verificar as configurações existentes ao atualizar um cliente mais antigo com o software cliente do Configuration Manager.  
 
--   U：将安装的客户端升级为较新版本（并使用分配的站点代码）。  
+-   U: atualizar o cliente instalado para uma versão mais recente (e usa o código do site atribuído).  
 
- 默认情况下，客户端安装使用 `PU` 先检查安装属性，然后再检查现有设置。  
+ Por padrão, a instalação do cliente usa `PU` para verificar primeiro as propriedades de instalação e depois as configurações existentes.  
 
- 示例：`CCMSetup.exe SMSCONFIGSOURCE=RP`  
+ Exemplo: `CCMSetup.exe SMSCONFIGSOURCE=RP`  
 
 ### <a name="smsdirectorylookup"></a>SMSDIRECTORYLOOKUP
 
- 指定客户端是否能使用 Windows Internet 名称服务 (WINS) 来查找接受 HTTP 连接的管理点。 如果客户端无法查找 Active Directory 域服务或 DNS 中的管理点，则会使用此方法。  
+ Especifica se o cliente pode usar o WINS (serviço de cadastramento na Internet do Windows) para localizar um ponto de gerenciamento que aceite conexões HTTP. Os clientes usam esse método quando não conseguem encontrar um ponto de gerenciamento nos Serviços de Domínio Active Directory ou no DNS.  
 
- 此属性对客户端是否将 WINS 用于名称解析没有影响。  
+ Essa propriedade não afeta o uso do WINS pelo cliente para a resolução de nomes.  
 
- 可以为此属性配置两种不同的模式：  
+ Você pode configurar dois modos diferentes para essa propriedade:  
 
--   NOWINS：这是此属性最安全的设置，可防止客户端查找 WINS 中的管理点。  如果你使用此设置，客户端必须有备用方法来查找 Intranet 上的管理点，例如 Active Directory 域服务或通过使用 DNS 发布。  
+-   NOWINS: essa é a configuração mais segura para essa propriedade e impede que os clientes encontrem um ponto de gerenciamento no WINS.  Quando você usar essa configuração, os clientes deverão ter um método alternativo para localizar um ponto de gerenciamento na intranet, como os Serviços de Domínio Active Directory ou usando a publicação DNS.  
 
--   WINSSECURE（默认）：在此模式中，使用 HTTP 通信的客户端可使用 WINS 来查找管理点。 但是，该客户端必须具有受信任的根密钥的副本，然后才能成功地连接到管理点。 有关详细信息，请参阅 [Plan for Security 中的 System Center Configuration Manager](../../plan-design/security/plan-for-security.md#BKMK_PlanningForRTK) 中的 [Plan for security 中的 System Center Configuration Manager](../../plan-design/security/plan-for-security.md)。  
+-   WINSSECURE (padrão): nesse modo, um cliente que usa a comunicação HTTP pode usar o WINS para localizar um ponto de gerenciamento. No entanto, o cliente deverá ter uma cópia da chave de raiz confiável antes de se conectar com êxito a ponto de gerenciamento. Para obter mais emformações, veja [Plannemg for the Trusted Root Key](../../plan-design/security/plan-for-security.md#BKMK_PlanningForRTK) em [Plan for security em System Center Configuration Manager](../../plan-design/security/plan-for-security.md).  
 
 
- 示例：`CCMSetup.exe SMSDIRECTORYLOOKUP=NOWINS`  
+ Exemplo: `CCMSetup.exe SMSDIRECTORYLOOKUP=NOWINS`  
 
 ### <a name="smsmp"></a>SMSMP
 
-指定供 Configuration Manager 客户端使用的初始管理点。  
+Especifica um ponto de gerenciamento inicial para o cliente do Configuration Manager usar.  
 
 > [!IMPORTANT]  
->  如果管理点仅接受通过 HTTPS 进行的客户端连接，则必须为管理点名称加上前缀 https://。  
+>  Se o ponto de gerenciamento aceitar somente conexões de cliente por HTTPS, será necessário prefixar o nome do ponto de gerenciamento com https://.  
 
-示例：`CCMSetup.exe SMSMP=smsmp01.contoso.com`
+Exemplo: `CCMSetup.exe SMSMP=smsmp01.contoso.com`
 
-示例：`CCMSetup.exe SMSMP=https://smsmp01.contoso.com`  
+Exemplo: `CCMSetup.exe SMSMP=https://smsmp01.contoso.com`  
 
 ### <a name="smspublicrootkey"></a>SMSPUBLICROOTKEY
 
- 在无法从 Active Directory 域服务中检索 Configuration Manager 信任的根密钥时，请指定此根密钥。 此属性适用于使用 HTTP 和 HTTPS 客户端通信的客户端。 有关详细信息，请参阅 [Plan for Security 中的 System Center Configuration Manager](../../plan-design/security/plan-for-security.md#BKMK_PlanningForRTK) 中的 [Plan for security 中的 System Center Configuration Manager](../../plan-design/security/plan-for-security.md)。  
+ Especifica a chave de raiz confiável do Configuration Manager quando ela não pode ser recuperada do Active Directory Domain Services. Essa propriedade se aplica a clientes que usam a comunicação de cliente por HTTP e HTTPS. Para obter mais emformações, veja [Plannemg for the Trusted Root Key](../../plan-design/security/plan-for-security.md#BKMK_PlanningForRTK) em [Plan for security em System Center Configuration Manager](../../plan-design/security/plan-for-security.md).  
 
- 示例：`CCMSetup.exe SMSPUBLICROOTKEY=&lt;key\>`  
+ Exemplo: `CCMSetup.exe SMSPUBLICROOTKEY=&lt;key\>`  
 
 ### <a name="smsrootkeypath"></a>SMSROOTKEYPATH
 
- 用于重新安装 Configuration Manager 信任的根密钥。 为包含受信任的根密钥的文件指定完整路径和文件名。 此属性适用于使用 HTTP 和 HTTPS 客户端通信的客户端。 有关详细信息，请参阅 [Plan for Security 中的 System Center Configuration Manager](../../plan-design/security/plan-for-security.md#BKMK_PlanningForRTK) 中的 [Plan for security 中的 System Center Configuration Manager](../../plan-design/security/plan-for-security.md)。  
+ Usada para reinstalar a chave de raiz confiável do Configuration Manager. Especifica o caminho completo e o nome do arquivo para um arquivo que contém a chave de raiz confiável. Essa propriedade se aplica a clientes que usam a comunicação de cliente por HTTP e HTTPS. Para obter mais emformações, veja [Plannemg for the Trusted Root Key](../../plan-design/security/plan-for-security.md#BKMK_PlanningForRTK) em [Plan for security em System Center Configuration Manager](../../plan-design/security/plan-for-security.md).  
 
- 示例：CCMSetup.exe SMSROOTKEYPATH=&lt;完整路径和文件名\>`  
+ Exemplo: “CCMSetup.exe SMSROOTKEYPATH=&lt;Caminho completo e nome do arquivo\>`”  
 
 ### <a name="smssigncert"></a>SMSSIGNCERT
 
- 在站点服务器上指定导出的自签名证书的完整路径和 .cer 文件名。  
+ Especifica o caminho completo e o nome do arquivo .cer do certificado autoassinado exportado do servidor do site.  
 
- 此证书存储在“SMS”  证书存储中，并且具有“站点服务器”  使用者名称以及“站点服务器签名证书” 友好名称。  
+ Esse certificado é armazenado no repositório de certificados **SMS** e tem como nome da Entidade **Servidor do Site** e como nome amigável **Certificado de Autenticação do Servidor do Site**.  
 
- 示例：**CCMSetup.exe /UsePKICert SMSSIGNCERT=&lt;完整路径和文件名\>**  
+ Exemplo: **CCMSetup.exe /UsePKICert SMSSIGNCERT=&lt;Caminho completo e nome do arquivo\>**  
 
 ### <a name="smssitecode"></a>SMSSITECODE
 
- 指定要将 Configuration Manager 客户端分配到的 Configuration Manager 站点。 这可能是三个字符的站点代码或单词 AUTO。 如果指定了 AUTO 或者未指定此属性，则客户端将尝试从 Active Directory 域服务或指定的管理点中确定其 Configuration Manager 站点分配。 若要启用 AUTO 进行客户端升级，还必须将 [SITEREASSIGN](#sitereassign) 设置为 TRUE。    
+ Especifica o site do Configuration Manager ao qual atribuir o cliente do Configuration Manager. Isso pode ser um código do site de três caracteres ou a palavra AUTO. Se AUTO for especificado, ou se essa propriedade não for especificada, o cliente tentará determinar sua atribuição de site do Configuration Manager usando o Active Directory Domain Services ou um ponto de gerenciamento especificado. Para habilitar AUTO para atualizações de cliente, você também deve definir [SITEREASSIGN](#sitereassign) como TRUE.    
 
 > [!NOTE]  
->  如果还指定基于 Internet 的管理点 (CCMHOSTNAME)，请不要使用 AUTO。 在这种情况下，必须将客户端直接分配到其站点。  
+>  Não use AUTOMÁTICO se você também especificar o ponto de gerenciamento da Internet (CCMHOSTNAME). Nesse caso, você deve atribuir diretamente o cliente ao site.  
 
- 示例：`CCMSetup.exe SMSSITECODE=XZY`  
+ Exemplo: `CCMSetup.exe SMSSITECODE=XZY`  
 
-##  <a name="BKMK_attributevalues"></a> 对于 PKI 证书选择条件支持的属性值  
- 对于 PKI 证书选择条件，Configuration Manager 支持 下列属性值：  
+##  <a name="BKMK_attributevalues"></a> Valores de atributo com suporte para os critérios de seleção de certificado PKI  
+ O Configuration Manager dá suporte aos seguintes valores de atributo dos critérios de seleção de certificado PKI:  
 
-|OID 属性|可分辨名称属性|属性定义|  
+|Atributo OID|Atributo de nome diferenciado|Definição de atributo|  
 |-------------------|----------------------------------|--------------------------|  
-|0.9.2342.19200300.100.1.25|DC|域组件|  
-|1.2.840.113549.1.9.1|E 或 E-mail|电子邮件地址|  
-|2.5.4.3|CN|公用名|  
-|2.5.4.4|SN|使用者名称|  
-|2.5.4.5|SERIALNUMBER|序列号|  
-|2.5.4.6|C|国家/地区代码|  
-|2.5.4.7|L|区域|  
-|2.5.4.8|S 或 ST|省或自治区名称|  
-|2.5.4.9|STREET|街道地址|  
-|2.5.4.10|O|组织名称|  
-|2.5.4.11|OU|组织单位|  
-|2.5.4.12|T 或 Title|标题|  
-|2.5.4.42|G 或 GN 或 GivenName|给定名称|  
-|2.5.4.43|I 或 Initials|缩写|  
-|2.5.29.17|（没有值）|使用者可选名称|  
+|0.9.2342.19200300.100.1.25|DC|Componente do domínio|  
+|1.2.840.113549.1.9.1|E ou email|Endereço de email|  
+|2.5.4.3|CN|Nome comum|  
+|2.5.4.4|SN|Nome da entidade|  
+|2.5.4.5|SERIALNUMBER|Número de série|  
+|2.5.4.6|C|Código do país|  
+|2.5.4.7|L|Localidade|  
+|2.5.4.8|S ou ST|Nome do estado ou província|  
+|2.5.4.9|RUA|Endereço|  
+|2.5.4.10|O|Nome da organização|  
+|2.5.4.11|OU|Unidade organizacional|  
+|2.5.4.12|T ou Título|Título|  
+|2.5.4.42|G ou GN ou GivenName|Nome|  
+|2.5.4.43|I ou Iniciais|Iniciais|  
+|2.5.29.17|(nenhum valor)|Nome alternativo da entidade|  

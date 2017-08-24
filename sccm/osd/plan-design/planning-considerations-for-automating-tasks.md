@@ -1,6 +1,6 @@
 ---
-title: "自动执行任务的规划注意事项 | Microsoft Docs"
-description: "在 System Center Configuration Manager 中自动执行任务之前进行规划。"
+title: "Considerações sobre o planejamento para automatizar tarefas | Microsoft Docs"
+description: Planeje antes de automatizar tarefas no System Center Configuration Manager.
 ms.custom: na
 ms.date: 10/06/2016
 ms.prod: configuration-manager
@@ -18,307 +18,307 @@ manager: angrobe
 ms.openlocfilehash: 830f715b688cc9929a179da94eba9c81de8db11a
 ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
 ms.translationtype: HT
-ms.contentlocale: zh-CN
+ms.contentlocale: pt-BR
 ms.lasthandoff: 08/07/2017
 ---
-# <a name="planning-considerations-for-automating-tasks-in-system-center-configuration-manager"></a>System Center Configuration Manager 中自动执行任务的规划注意事项
+# <a name="planning-considerations-for-automating-tasks-in-system-center-configuration-manager"></a>Considerações de planejamento para automatizar tarefas no System Center Configuration Manager
 
-*适用范围：System Center Configuration Manager (Current Branch)*
+*Aplica-se a: System Center Configuration Manager (Branch Atual)*
 
-可以创建任务序列，以在 System Center Configuration Manager 环境中自动执行任务。 这些任务涉及从捕获引用计算机上的操作系统到向一个或多个目标计算机部署操作系统在内的各种任务。 序列的各个步骤中定义了任务序列的操作。 运行任务序列时，每个步骤的操作都在本地系统上下文中的命令行级别执行，无需用户干预。 使用下列部分来帮助规划在 Configuration Manager 中自动执行任务。
+É possível criar sequências de tarefas para automatizar tarefas no seu ambiente do System Center Configuration Manager. Essas tarefas vão da captura de um sistema operacional em um computador de referência à implantação do sistema operacional em um ou mais computadores de destino. As ações da sequência de tarefas são definidas nas etapas individuais da sequência. Quando a sequência de tarefas é executada, as ações de cada etapa são executadas no nível de linha de comando no contexto do Sistema Local sem a necessidade de intervenção do usuário. Use as seções a seguir para ajudar a planejar a automação de tarefas no Configuration Manager.
 
-##  <a name="BKMK_TSStepsActions"></a>任务序列步骤和操作  
- 步骤是任务序列的基本组件。 它们可以包含配置和捕获引用计算机操作系统的命令，或者包含在目标计算机上安装操作系统、驱动程序、Configuration Manager 客户端和软件的命令。 任务序列步骤的命令由步骤的操作来定义。 有两种类型的操作。 你使用命令行字符串定义的操作称为自定义操作。 Configuration Manager 预定义的操作称为内置操作。 任务序列可以执行自定义和内置操作的任意组合。  
+##  <a name="BKMK_TSStepsActions"></a> Etapas e ações de sequências de tarefas  
+ Etapas são os componentes básicos de uma sequência de tarefas. Elas podem conter comandos que configuram e capturam o sistema operacional de um computador de referência, ou podem conter comandos que instalam o sistema operacional, drivers, o cliente do Configuration Manager e softwares no computador de destino. Os comandos de uma etapa da sequência de tarefas são definidos pelas ações da etapa. Existem dois tipos de ações. A ação que você define usando uma cadeia de caracteres de linha de comando é conhecida como ação personalizada. Uma ação predefinida pelo Configuration Manager é conhecida como ação interna. Uma sequência de tarefas pode executar qualquer combinação de ações personalizadas e internas.  
 
- 任务序列步骤也可以包含控制步骤行为方式（如在出错的情况下停止任务序列或继续任务序列）的条件。 系统通过在步骤中包括任务序列变量，从而将条件添加到步骤中。 例如，你可以使用 **SMSTSLastActionRetCode** 变量测试上一个步骤的条件。 变量可以添加到单个或一组步骤中。  
+ As etapas da sequência de tarefas também podem incluir condições que controlam como a etapa se comporta, como interromper ou continuar a sequência de tarefas em caso de erro. Condições são adicionadas à etapa incluindo uma variável de sequência de tarefas na etapa. Por exemplo, você poderia usar variável **SMSTSLastActionRetCode** para testar a condição da etapa anterior. Variáveis podem ser adicionados a uma única etapa ou a um grupo de etapas.  
 
- 按顺序处理任务序列步骤，这包括步骤的操作以及分配给步骤的任何条件。 在 Configuration Manager 开始处理任务序列步骤时，直到上一个操作完成，才会开始下一个步骤。 完成所有任务序列步骤时，或者失败的步骤造成 Configuration Manager 在完成其所有步骤之前停止运行任务序列时，任务序列被视为完成。 例如，任务序列的步骤无法在分发点上定位引用的映像或包，那么任务序列包含损坏的引用，并且 Configuration Manager 会在该点停止运行任务序列，除非失败的步骤具有在出错时继续的条件。  
-
-> [!IMPORTANT]  
->  默认情况下，一个步骤或操作失败，将导致任务序列失败。 如果要在步骤失败后继续执行任务序列，请编辑任务序列，单击“选项”选项卡，然后选择“出错时继续”。  
-
- 有关可添加到任务序列中的步骤的详细信息，请参阅[任务序列步骤](../understand/task-sequence-steps.md)。  
-
-##  <a name="BKMK_TSGroups"></a> 任务序列组  
- “组” 是任务序列内的多个步骤。 任务序列组包含名称、可选说明以及在任务序列继续下一步骤之前作为单元进行评估的任何可选条件。 组可以相互嵌套，可以包含步骤和子组的混合。 组对于合并共享公用条件的多个步骤十分有用。  
+ As etapas da sequência de tarefas são processadas sequencialmente, o que inclui a ação da etapa e as condições atribuídas à etapa. Quando o Configuration Manager começa a processar uma etapa da sequência de tarefas, a etapa seguinte não é iniciada até que a ação anterior seja concluída. Uma sequência de tarefas é considerada concluída quando todas as suas etapas terminam ou quando uma falha de uma etapa faz com que o Configuration Manager interrompa a execução da sequência de tarefas antes do término de todas as etapas. Por exemplo, se a etapa de uma sequência de tarefas não conseguir localizar uma imagem ou um pacote referenciado em um ponto de distribuição, então a sequência de tarefas conterá uma referência corrompida e o Configuration Manager interromperá a execução da sequência de tarefas nesse ponto, a menos que a etapa que falhou tenha uma condição para continuar em caso de erro.  
 
 > [!IMPORTANT]  
->  默认情况下，如果任务序列组中的任何步骤或嵌入的组失败，将导致此任务序列组失败。 如果要在步骤或嵌入的组失败后继续进行任务序列，请编辑任务序列：单击“选项”选项卡，然后选择“出错时继续”。  
+>  Por padrão, uma sequência de tarefas falha após a falha de uma etapa ou ação. Se desejar que a sequência de tarefas continue mesmo quando uma etapa falhar, edite a sequência de tarefas, clique na guia **Opções** e selecione **Continuar se houver erro**.  
 
- 下表显示了组合步骤时“出错时继续” 选项是如何工作的。  
+ Para obter mais informações sobre as etapas que podem ser adicionadas a uma sequência de tarefas, consulte [Etapas de sequência de tarefas](../understand/task-sequence-steps.md).  
 
- 在此示例中，有两组任务序列，各包含三个任务序列步骤。  
+##  <a name="BKMK_TSGroups"></a> Grupos de sequências de tarefas  
+ **Grupos** são várias etapas dentro de uma sequência de tarefas. Um grupo de sequências de tarefas consiste em um nome, uma descrição opcional e condições opcionais que são avaliadas como uma unidade antes de essa sequência de tarefas seguir para a próxima etapa. Os grupos podem ser aninhados um dentro do outro, e um grupo pode conter uma combinação de etapas e subgrupos. Os grupos são úteis para combinar várias etapas que compartilham uma condição comum.  
 
-|任务序列组或步骤|“出错时继续”设置|  
+> [!IMPORTANT]  
+>  Por padrão, um grupo de sequências de tarefas falha quando alguma etapa ou grupo inserido no grupo falha. Se desejar que a sequência de tarefas continue após ocorrer uma falha em uma etapa ou grupo interno, edite a sequência de tarefas, clique na guia **Opções** e selecione **Continuar se houver erro**.  
+
+ A tabela a seguir mostra como a opção **Continuar se houver erro** funciona quando você agrupa as etapas.  
+
+ Neste exemplo, há dois grupos de sequências de tarefas que contêm três etapas cada.  
+
+|Grupo de sequências de tarefas ou etapa|Opção Continuar se houver erro|  
 |---------------------------------|-------------------------------|  
-|**任务序列组 1**|**已选中“出错时继续”** 。|  
-|任务序列步骤 1|**已选中“出错时继续”** 。|  
-|任务序列步骤 2|未设置。|  
-|任务序列步骤 3|未设置。|  
-|**任务序列组 2**|未设置。|  
-|任务序列步骤 4|未设置。|  
-|任务序列步骤 5|未设置。|  
-|任务序列步骤 6|未设置。|  
+|**Grupo de Sequências de Tarefas 1**|**Continuar se houver erro** selecionado.|  
+|Etapa da Sequência de Tarefas 1|**Continuar se houver erro** selecionado.|  
+|Etapa da Sequência de Tarefas 2|Não definida.|  
+|Etapa da Sequência de Tarefas 3|Não definida.|  
+|**Grupo de Sequência de Tarefas 2**|Não definida.|  
+|Etapa da Sequência de Tarefas 4|Não definida.|  
+|Etapa da Sequência de Tarefas 5|Não definida.|  
+|Etapa da Sequência de Tarefas 6|Não definida.|  
 
--   如果任务序列步骤 1 失败，任务序列将继续执行任务序列步骤 2。  
+-   Se a etapa da sequência de tarefas 1 falhar, a sequência de tarefas continuará com a etapa 2.  
 
--   如果任务序列步骤 2 失败，任务序列将不运行任务序列步骤 3，而继续运行不同任务序列组中的任务序列步骤 4 和 5。  
+-   Se a etapa da sequência de tarefas 2 falhar, a sequência de tarefas não executará a etapa 3, mas continuará a execução das etapas 4 e 5, que estão em um grupo de sequências de tarefas diferente.  
 
--   如果任务序列步骤 4 失败，则不再运行其他步骤，任务序列将失败，因为尚未为任务序列组 2 配置“出错时继续”设置。  
+-   Se a etapa da sequência de tarefas 4 falhar, nenhuma outra etapa será executada e a sequência de tarefas falhará porque a opção **Continuar se houver erro** não foi configurada para o grupo de sequências de tarefas 2.  
 
- 虽然组名称不必唯一，但必须为任务序列组分配一个名称。 你还可以为任务序列组提供可选描述。  
+ É necessário atribuir um nome aos grupos de sequências de tarefas, embora o nome do grupo não tenha de ser exclusivo. Também é possível fornecer uma descrição opcional para o grupo de sequências de tarefas.  
 
-##  <a name="BKMK_TSVariables"></a> 任务序列变量  
- 任务序列变量是一组名称和值对，为 Configuration Manager 客户端计算机上的计算机、操作系统和用户状态配置任务提供配置和操作系统部署设置。 任务序列变量提供了一种机制来配置和自定义任务序列中的步骤。  
+##  <a name="BKMK_TSVariables"></a> Variáveis de sequência de tarefas  
+ Variáveis de sequência de tarefas são um conjunto de pares de nome e valore que fornecem a configuração e os parâmetros de implantação do sistema operacional para tarefas de configuração do computador, sistema operacional e estado do usuário em um computador cliente do Configuration Manager. As variáveis de sequência de tarefas fornecem um mecanismo para configurar e personalizar as etapas de uma sequência de tarefas.  
 
- 运行任务序列时，许多任务序列设置会存储为环境变量。 你可以访问或更改内置任务序列变量的值，并且你可以创建新任务序列变量以自定义任务序列在目标计算机运行的方式。  
+ Quando você executa uma sequência de tarefas, muitas das configurações da sequência de tarefas são armazenadas como variáveis do ambiente. Você pode acessar ou alterar os valores das variáveis de sequência de tarefas internas, além de poder criar novas variáveis de sequência de tarefa para personalizar a forma com que a sequência de tarefas é executada em um computador de destino.  
 
- 你可以使用任务序列环境中的任务序列变量来执行以下操作：  
+ É possível usar variáveis de sequência de tarefas no ambiente da sequência de tarefas para executar as seguintes ações:  
 
--   配置任务序列操作的设置  
+-   Configurar os parâmetros de uma ação da sequência de tarefas  
 
--   提供任务序列步骤的命令行参数  
+-   Fornecer argumentos de linha de comando para uma etapa da sequência de tarefas  
 
--   评估条件以确定是运行任务序列步骤还是组  
+-   Avaliar uma condição que determina se uma etapa ou um grupo de sequências de tarefas é executada(o)  
 
--   为任务序列中使用的自定义脚本提供值  
+-   Fornecer valores de scripts personalizados usados em uma sequência de tarefas  
 
- 例如，可能具有一个包含“加入域或工作组”任务序列步骤的任务序列。 此任务序列可以部署到集合成员资格由域成员身份来决定的不同集合。 在这种情况下，可以为每个集合的域名指定每集合任务序列变量，然后使用该任务序列变量在任务序列中提供合适的域名。  
+ Por exemplo, você pode ter uma sequência de tarefas que inclui a etapa **Ingressar no Domínio ou Grupo de Trabalho**. A sequência de tarefas pode ser implantada em coleções diferentes, onde a associação da coleção é determinada pela associação do domínio. Nesse caso, você pode especificar uma variável de sequência de tarefas por coleção para cada nome de domínio da coleção e depois usar essa variável de sequência de tarefas para fornecer o nome de domínio apropriado na sequência de tarefas.  
 
-###  <a name="BKMK_TSCreateVariables"></a> 创建任务序列变量  
- 你可以添加新任务序列变量以自定义和控制任务序列中的步骤。 例如，你可以创建任务序列变量以替代内置任务序列步骤的设置。 你也可以创建自定义任务序列变量以与任务序列中的条件、命令行或自定义步骤一起使用。 创建任务序列变量时，任务序列变量和关联的值将保留在任务序列环境中，即使该序列重启目标计算机也不例外。 可以跨不同操作系统环境在任务序列中使用变量及其值。 例如，可以在整个 Windows 操作系统以及 Windows PE 环境中使用变量。  
+###  <a name="BKMK_TSCreateVariables"></a> Criar variáveis de sequência de tarefas  
+ É possível adicionar novas variáveis de sequência de tarefas para personalizar e controlar as etapas em uma sequência de tarefas. Por exemplo, é possível criar uma variável de sequência de tarefas para anular uma configuração de uma etapa de sequência de tarefas interna. Também é possível criar uma variável de sequência de tarefas personalizada para usar com condições, linhas de comando ou etapas personalizadas na sequência de tarefas. Ao criar uma variável de sequência de tarefas, essa variável e o valor associado são preservados no ambiente da sequência de tarefas, mesmo quando a sequência reinicia o computador de destino. A variável e seu valor podem ser usados na sequência de tarefas em ambientes de sistema operacional diferentes. Por exemplo, ela pode ser usada em um sistema operacional Windows completo e no ambiente do Windows PE.  
 
- 下表描述了用于创建任务序列变量和其他使用情况信息的方法。  
+ A tabela a seguir descreve os métodos para criar uma variável de sequência de tarefas e informações adicionais de uso.  
 
-|创建方法|用法|  
+|Método de criação|Uso|  
 |-------------------|-----------|  
-|使用任务序列编辑器设置任务序列步骤中的字段|指定任务序列步骤的默认值。 只有在任务序列中运行步骤时才可以访问变量和值。 它们不是整体序列环境中的一部分，任务序列中的其他任务序列步骤无法访问它们。<br /><br /> 关于内置变量及其关联的操作的列表，请参阅 [Task sequence action variables](../understand/task-sequence-action-variables.md)（任务序列操作变量）。|  
-|在任务序列中添加设置的任务序列变量步骤|当运行任务序列中的任务序列步骤时指定任务序列环境中的任务序列变量和值。 所有后续任务序列步骤都可以访问该环境变量及其值。|  
-|定义每集合变量|为计算机集合指定任务序列变量和值。 针对此集合的所有任务序列都可以访问任务序列变量及其值。|  
-|定义每计算机变量|为特定计算机指定任务序列变量和值。 针对此计算机的所有任务序列都可以访问任务序列变量及其值。|  
-|在任务序列媒体向导的“自定义”页上添加任务序列变量|为从可以访问任务序列变量及其值的媒体中运行的任务序列指定任务序列变量和值。|  
+|Configurar campos nas etapas da sequência de tarefas usando o Editor de Sequência de Tarefas|Especifica os valores padrão para a etapa da sequência de tarefas. A variável e o valor são acessíveis somente quando a etapa é executada na sequência de tarefas. Eles não fazem parte do ambiente da sequência em geral, e não são acessíveis por outras etapas da sequência de tarefas.<br /><br /> Para obter uma lista das variáveis internas e as ações associadas a elas, consulte [Variáveis de ação de sequência de tarefas](../understand/task-sequence-action-variables.md).|  
+|Adicionar uma etapa de variável de sequência de tarefas em uma sequência de tarefas|Especifica a variável de sequência de tarefas e o valor no ambiente da sequência de tarefas quando a etapa da sequência de tarefas é executada como parte da sequência. Todas as etapas subsequentes da sequência de tarefas podem acessar a variável do ambiente e seu valor.|  
+|Definir uma variável por coleção|Especifica variáveis de sequência de tarefas e valores para uma coleção de computadores. Todas as sequências de tarefas voltadas para a coleção podem acessar as variáveis de sequência de tarefas e seus valores.|  
+|Definir uma variável por computador|Especifica variáveis de sequência de tarefas e valores para determinado computador. Todas as sequências de tarefas voltadas para o computador podem acessar as variáveis de sequência de tarefas e seus valores.|  
+|Adicionar uma variável ​​de sequência de tarefas na página **Personalização** do Assistente de Mídia de Sequência de Tarefas|Especifica variáveis de sequência de tarefas e valores para a sequência de tarefas que é executada por meio da mídia que pode acessar a variável de sequência de tarefas e seu valor.|  
 
- 要替代内置任务序列变量的默认值，你必须定义与该内置任务序列变量同名的任务序列变量。 关于内置任务序列变量及其关联的操作和使用情况的列表，请参阅[任务序列内置变量](../understand/task-sequence-built-in-variables.md)。  
+ Para anular o valor padrão para uma variável de sequência de tarefas interna, é necessário definir uma variável de sequência de tarefas de mesmo nome como a variável de sequência de tarefas interna. Para obter uma lista de variáveis internas de sequência de tarefas com as ações e o uso associado a elas, consulte [Variáveis internas de sequência de tarefas](../understand/task-sequence-built-in-variables.md).  
 
- 你可以使用创建任务序列变量的方法从任务序列环境中删除任务序列变量。 在此情况下，要从任务序列环境中删除变量，你可以将任务序列变量值设置为空字符串。  
+ Você pode excluir uma variável de sequência de tarefas do ambiente da sequência de tarefas usando os mesmos métodos da criação de uma variável de sequência de tarefas. Nesse caso, para excluir uma variável do ambiente da sequência de tarefas, você configura o valor da variável de sequência de tarefas como uma cadeia de caracteres vazia.  
 
- 你可以组合方法以将环境任务序列变量设置为相同序列的不同值。 在高级方案中，你可以使用任务序列编辑器为序列中的步骤设置默认值，然后使用默认创建方法设置自定义变量值。 以下列表描述的规则用于确定使用多种方法创建任务序列变量时使用的值。  
+ Você pode combinar métodos para configurar uma variável de sequência de tarefas do ambiente com valores diferentes para a mesma sequência. Em um cenário avançado, você pode configurar os valores padrão para etapas de uma sequência usando o Editor de Sequência de Tarefas e depois configurar um valor de variável personalizado usando os diferentes métodos de criação. A lista a seguir descreve as regras que determinam o valor que é usado quando uma variável de sequência de tarefas é criada usando mais de um método.  
 
-1.  “设置任务序列变量”步骤会替代所有其他创建方法。  
+1.  A etapa **Definir Variável de Sequência de Tarefas** substitui todos os outros métodos de criação.  
 
-2.  每计算机变量优先于每集合变量。 如果为每计算机变量和每集合变量指定相同的任务序列变量名称，则当目标计算机运行部署的任务序列时将使用每计算机变量值。  
+2.  Variáveis por computador têm precedência sobre variáveis por coleção. Se você especificar o mesmo nome de variável de sequência de tarefas para uma variável por computador e para uma variável por coleção, a variável por computador será usada quando o computador de destino executar a sequência de tarefas implantada.  
 
-3.  可以从媒体中运行任务序列。 使用媒体变量替代每集合变量或每计算机变量。 如果正在从媒体运行任务序列，则不应用也不使用每计算机变量和每集合变量。 而是改用任务序列媒体向导的“自定义”页上定义的任务序列变量设置特定于从媒体中运行的任务序列的值  
+3.  As sequências de tarefas podem ser executadas por meio de uma mídia. Use as variáveis de mídia em vez de variáveis por coleção ou por computador. Se a sequência de tarefas for executada por meio de uma mídia, as variáveis por computador e por coleção não se aplicarão e não serão usadas. Em vez disso, as variáveis de sequência de tarefas definidas na página **Personalização** do assistente de Mídia de Sequência de Tarefas são usadas para definir valores específicos para uma sequência de tarefas que é executada por meio de uma mídia  
 
-4.  如果未在整体序列环境中设置任务序列变量值，则内置操作使用在任务序列编辑器中设置的步骤的默认值。  
+4.  Se uma variável de sequência de tarefas não for definida no ambiente da sequência em geral, as ações internas usarão o valor padrão para a etapa, conforme definido no Editor de Sequência de Tarefas.  
 
- 除了替代内置任务序列步骤设置的值之外，你还可以创建新环境变量以在任务序列步骤、脚本、命令行或条件中使用。 为新任务序列变量指定名称时，请遵循以下准则：  
+ Além de anular os valores das configurações da etapa da sequência de tarefas interna, você também pode criar uma nova variável de ambiente para usar em uma etapa, um script, uma linha de comando ou condição da sequência de tarefas. Quando você for especificar um nome para a nova variável de sequência de tarefas, siga estas diretrizes:  
 
--   指定的任务序列变量名称可以包含字母、数字、下划线字符 (_) 和连字符 (-)。  
+-   O nome da variável de sequência de tarefas que você especificar pode conter letras, números, o caractere underscore (_) e hífen (-).  
 
--   任务序列变量名称长度至少为 1 个字符，最多为 256 个字符。  
+-   Os nomes das variáveis de sequência de tarefas podem ter no mínimo 1 e no máximo 256 caracteres.  
 
--   用户定义的变量必须以字母（A 到 Z 或 a 到 z）开头。  
+-   As variáveis definidas pelo usuário devem começar com uma letra (A-Z ou a-z).  
 
--   用户定义的变量名称不能以下划线字符开头。 只有只读任务序列变量前面才有下划线字符  
+-   Os nomes das variáveis definidas pelo usuário não podem começar com o caractere underscore. Somente variáveis de sequência de tarefas somente leitura são precedidas pelo caractere underscore  
 
     > [!NOTE]  
-    >  只读任务序列变量可由任务序列中的任务序列步骤读取，但它们无法被设置。 例如，可以使用只读任务序列变量作为“运行命令行”任务序列操作变量的命令行的一部分，但无法使用“设置任务序列变量”操作变量设置只读变量。  
+    >  As variáveis de sequência de tarefas somente leitura podem ser lidas pelas etapas de uma sequência de tarefas, mas não podem ser configuradas. Por exemplo, você pode usar uma variável de sequência de tarefas somente leitura como parte da linha de comando de uma variável de ação de sequência de tarefas **Executar Linha de Comando**, mas não pode configurar uma variável somente leitura usando a variável de ação **Definir Variável de Sequência de Tarefas**.  
 
--   任务序列变量名称不区分大小写。 例如，OSDVAR 和 osdvar 表示同一任务序列变量。  
+-   Os nomes das variáveis de sequência de tarefas não diferenciam maiúsculas de minúsculas. Por exemplo, OSDVAR e osdvar representam a mesma variável de sequência de tarefas.  
 
--   任务序列变量名称不能以空格开头或结尾，也不能包含嵌入的空格。 任务序列变量名称开头或结尾的空格会被忽略。  
+-   Os nomes das variáveis de sequência de tarefas não podem começar nem terminar com um espaço, nem conter espaços inseridos. Os espaços deixados no começo ou no fim do nome de uma variável de sequência de tarefas serão ignorados.  
 
- 下表显示用户指定的有效和无效任务序列变量的示例。  
+ A tabela a seguir exibe exemplos de variáveis de sequência de tarefas válidas e não válidas especificadas pelo usuário.  
 
-|用户指定的有效变量名称的示例|用户指定的无效变量名称的示例|  
+|Exemplos de nNames de variável válida especificados pelo usuário|Exemplos de nomes de variável não válida especificadas pelo usuário|  
 |-------------------------------------------------------|----------------------------------------------------------|  
-|MyVariable|1Variable<br /><br /> 用户指定的任务序列变量不能以数字开头。|  
-|My_Variable|MyV@riable<br /><br /> 用户指定的任务序列变量不能包含 @ 符号。|  
-|My_Variable_2|_MyVariable<br /><br /> 用户指定的任务序列变量不能以下划线开头。|  
+|MyVariable|1Variable<br /><br /> Variáveis de sequência de tarefas especificadas pelo usuário não podem começar com um número.|  
+|My_Variable|MyV@riable<br /><br /> Variáveis de sequência de tarefas especificadas pelo usuário não podem conter o símbolo @.|  
+|My_Variable_2|_MyVariable<br /><br /> Variáveis de sequência de tarefas especificadas pelo usuário não podem começar com um sublinhado.|  
 
- 任务序列变量的一般限制：  
+ Limitações gerais para variáveis de sequência de tarefas:  
 
--   任务序列变量值不能超过 4000 个字符。  
+-   Valores de variáveis de sequência de tarefas não podem ter mais de 4.000 caracteres.  
 
--   不能创建或重写只读的任务序列变量。 只读变量用以下划线 (_) 字符开头的名称来指定。 你可以访问任务序列中只读任务序列变量的值；但是不能更改相关联的值。  
+-   Não é possível criar nem substituir uma variável de sequência de tarefas somente leitura. Variáveis somente leitura são designadas por nomes que começam com um caractere de sublinhado (_). Você pode acessar o valor de variáveis de sequência de tarefas ​​somente leitura em sua sequência de tarefas; no entanto, não é possível alterar seus valores associados.  
 
--   任务序列变量值可能区分大小写，具体情况视值的使用情况而定。 大多数情况下，任务序列变量值不区分大小写。 但是，某些值可能区分大小写，例如包含密码的变量。  
+-   Os valores das variáveis de sequência de tarefas podem diferenciar maiúsculas de minúsculas dependendo do uso do valor. Na maioria dos casos, os valores das variáveis de sequência de tarefas não diferenciam maiúsculas de minúsculas. No entanto, alguns valores podem diferenciar maiúsculas de minúsculas, como uma variável que contém uma senha.  
 
--   对于可以创建的任务序列变量数量没有限制。 但是，变量数受任务序列环境大小的限制。 任务序列环境的总大小限制为 32 MB。  
+-   Não há um limite para quantas variáveis de sequência de tarefas podem ser criadas. No entanto, o número de variáveis é limitado pelo tamanho do ambiente de sequência de tarefas. O limite do tamanho total para o ambiente da sequência de tarefas é de 32 MB.  
 
-###  <a name="BKMK_TSEnvironmentVariables"></a> 访问环境变量  
- 使用上一部分中的方法之一指定任务序列变量及其值之后，你可以在任务序列中使用环境变量值。 你可以访问内置任务序列变量的默认值，指定内置变量的新值，以及在命令行或脚本中使用自定义的任务序列变量。  
+###  <a name="BKMK_TSEnvironmentVariables"></a> Variáveis de ambiente de acesso  
+ Depois de especificar a variável de sequência de tarefas e seu valor usando um dos métodos da seção anterior, você pode usar o valor da variável do ambiente em suas sequências de tarefas. Você pode acessar os valores padrão para variáveis ​​de sequência de tarefas internas, especificar um novo valor para uma variável interna ou usar uma variável de sequência de tarefas personalizada em uma linha de comando ou script.  
 
- 下表列出了可通过访问任务序列环境变量来执行的任务序列操作。  
+ A tabela a seguir resume as operações de sequência de tarefas que podem ser realizadas acessando as variáveis ​​do ambiente de sequência de tarefas.  
 
-|任务序列操作|用法|  
+|Operação de sequência de tarefas|Uso|  
 |-----------------------------|-----------|  
-|配置操作设置|你可以指定在序列运行时由变量值来提供任务序列步骤设置。<br /><br /> 要使用任务序列环境变量来提供任务序列步骤设置，请使用任务序列编辑器编辑步骤并将变量名称指定为字段值。 变量名称必须括在百分号 (%) 中以指明它是一个环境变量。|  
-|提供命令行参数|你可以使用环境变量值来指定部分或整个自定义命令行。<br /><br /> 要使用环境变量来提供命令行设置，请将变量名称用作“运行命令行”任务序列步骤的“命令行”字段的一部分。 变量名称必须括在百分号 (%) 中。<br /><br /> 例如，以下命令行使用内置环境变量将计算机名写入到 C:\File.txt。<br /><br /> <br /><br /> **Cmd /C %_SMSTSMachineName% > C:\File.txt**|  
-|计算步骤条件|你可以使用内置或自定义任务序列环境变量作为任务序列步骤或组条件的一部分。 将在运行任务序列步骤或组之前计算环境变量值。<br /><br /> 要添加计算变量值的条件，请执行下列操作：<br /><br /> 1.选择要将条件添加到的步骤或组。<br />2.在步骤或组的“选项” 选项卡上，从“添加条件”下拉列表中选择“任务序列变量” 。<br />3.在“任务序列变量”对话框中，指定变量的名称、测试的条件以及变量的值。|  
-|为自定义脚本提供信息|可以在运行任务序列时使用 Microsoft.SMS.TSEnvironment COM 对象读写任务序列变量。<br /><br /> 以下示例说明了 Visual Basic 脚本文件，此脚本文件查询 **_SMSTSLogPath** 任务序列变量以获取当前日志位置。 该脚本还设置自定义变量。<br /><br /> <br /><br /> **dim osd: set env = CreateObject("Microsoft.SMS.TSEnvironment")**<br /><br /> <br /><br /> **dim logPath**<br /><br /> <br /><br /> **可以查询环境以获取现有变量。**<br /><br /> **logPath = env("_SMSTSLogPath")**<br /><br /> <br /><br /> **还可以在 OSD 环境中设置变量。**<br /><br /> **env("MyCustomVariable") = "varname"**<br /><br /> <br /><br /> 有关如何在脚本中使用任务序列变量的详细信息，请参阅 SDK 文档|  
+|Definir as configurações de ação|Você pode especificar que uma configuração de etapa de sequência de tarefas seja fornecida por um valor de variável durante a execução da sequência.<br /><br /> Para fornecer uma configuração de etapa de sequência de tarefas usando uma tarefa variável de ambiente, use o Editor de Sequência de Tarefas para editar a etapa e especificar o nome da variável como o valor do campo. O nome da variável deve ser delimitado por sinais de porcentagem (%) para indicar que é uma variável de ambiente.|  
+|Fornecer argumentos de linha de comando|Você pode especificar parte ou toda uma linha de comando personalizada usando um valor de variável de ambiente.<br /><br /> Para fornecer uma configuração de linha de comando usando uma variável de ambiente, use o nome da variável como parte do campo **Linha de Comando** da etapa de sequência de tarefas **Executar Linha de Comando**. O nome da variável deve estar entre sinais de porcentagem (%).<br /><br /> Por exemplo, a seguinte linha de comando usa uma variável de ambiente interna para gravar o nome do computador em C:\File.txt.<br /><br /> <br /><br /> **Cmd /C %_SMSTSMachineName% > C:\File.txt**|  
+|Avaliar uma condição da etapa|Você pode variáveis de ambiente de sequência de tarefas internas ou personalizadas como parte de uma etapa de sequência de tarefas ou condição de grupo. O valor da variável de ambiente será avaliado antes da etapa de sequência de tarefas ou execuções do grupo.<br /><br /> Para adicionar uma condição que avalia um valor de variável, faça o seguinte:<br /><br /> 1.  Selecione a etapa ou grupo ao qual você deseja adicionar a condição.<br />2.  Na guia **Opções** da etapa ou grupo, selecione **Variável de Sequência de Tarefas** na lista suspensa **Adicionar Condição**.<br />3.  Na caixa de diálogo **Variável de Sequência de Tarefas**, especifique o nome da variável, a condição testada e o valor da variável.|  
+|Fornecer informações para um script personalizado|As variáveis da sequência de tarefas podem ser lidas e gravadas usando o objeto COM do Microsoft.SMS.TSEnvironment enquanto a sequência de tarefas está em execução.<br /><br /> O exemplo a seguir ilustra um arquivo de script do Visual Basic que consulta a variável da sequência de tarefas **_SMSTSLogPath** para obter o local do log atual. O script também define uma variável personalizada.<br /><br /> <br /><br /> **dim osd: set env = CreateObject("Microsoft.SMS.TSEnvironment")**<br /><br /> <br /><br /> **dim logPath**<br /><br /> <br /><br /> **' Você pode consultar o ambiente para obter uma variável existente.**<br /><br /> **logPath = env("_SMSTSLogPath")**<br /><br /> <br /><br /> **' Você também pode definir uma variável no ambiente do OSD.**<br /><br /> **env("MyCustomVariable") = "varname"**<br /><br /> <br /><br /> Para obter mais informações sobre como usar variáveis de sequência de tarefas em scripts, consulte a documentação do SDK|  
 
-###  <a name="BKMK_ComputerCollectionVariables"></a> 计算机和集合变量  
- 你可以将任务序列配置为在多个计算机或集合上同时运行。 你可以指定唯一的每计算机或每集合信息，如指定唯一的操作系统产品密钥，或者将集合的所有成员加入到指定的域中。  
+###  <a name="BKMK_ComputerCollectionVariables"></a> Variáveis de computador e coleção  
+ Você pode configurar sequências de tarefas para serem executadas simultaneamente em vários computadores ou coleções. Você pode especificar informações exclusivas por computador ou coleção, como uma chave única de produto de sistema operacional ou associar todos os membros de uma coleção a um domínio especificado.  
 
- 你可以将任务序列变量分配给单一计算机或集合。 当任务序列开始在目标计算机或集合上运行时，会将指定的值应用于目标计算机或集合。  
+ Você pode atribuir variáveis de sequência de tarefas a um único computador ou coleção. Quando a sequência de tarefas começa a ser executada no computador ou na coleção de destino, os valores especificados são aplicados ao computador ou à coleção de destino.  
 
- 你可以指定单一计算机或集合的任务序列变量。 当任务序列开始在目标计算机或集合上运行时，会将指定的变量添加到环境中，并且会向任务序列中的所有任务序列步骤提供值。  
+ Você pode especificar variáveis de sequência de tarefas para um único computador ou coleção. Quando a sequência de tarefas começa a ser executada no computador ou na coleção de destino, as variáveis ​​especificadas são adicionadas ao ambiente e os valores ficam disponíveis para todas as etapas da sequência de tarefas na sequência.  
 
 > [!WARNING]  
->  如果为每集合变量和每计算机变量使用相同的变量名称，则计算机变量值优先于集合变量。 分配给集合的任务序列变量优先于内置任务序列变量。  
+>  Se você usar o mesmo nome de variável por coleção ou por computador, o valor de variável do computador terá precedência sobre a variável de coleção. Variáveis de sequência de tarefas que você atribui a coleções têm precedência sobre variáveis de sequência de tarefas internas.  
 
- 有关如何为计算机和集合创建任务序列变量的详细信息，请参阅[为计算机和集合创建任务序列变量](../deploy-use/manage-task-sequences-to-automate-tasks.md#BKMK_CreateTSVariables)。  
+ Para obter mais informações sobre como criar variáveis ​​de sequência de tarefas para computadores e coleções, consulte [Criar variáveis de sequência de tarefas em computadores e coleções](../deploy-use/manage-task-sequences-to-automate-tasks.md#BKMK_CreateTSVariables).  
 
-###  <a name="BKMK_TSMediaVariables"></a> 任务序列媒体变量  
- 你可以指定从媒体中运行的任务序列的任务序列变量。 使用媒体部署操作系统时，你添加任务序列变量，并在创建媒体时指定其值；变量及其值存储在媒体上。  
+###  <a name="BKMK_TSMediaVariables"></a> Variáveis de mídia de sequência de tarefas  
+ Você pode especificar variáveis de sequência de tarefas para sequências de tarefas executadas por meio da mídia. Ao usar mídia para implantar o sistema operacional, você adiciona as variáveis ​​da sequência de tarefas e especifica seus valores ao criar a mídia; as variáveis ​​e seus valores são armazenados na mídia.  
 
 > [!NOTE]  
->  任务序列存储在独立媒体上。 但是，所有其他类型的媒体，如预留媒体，会从管理点中检索任务序列。  
+>  As sequências de tarefas são armazenadas em mídia autônoma. No entanto, todos os outros tipos de mídia, tais como mídia em pré-teste, recuperam a sequência de tarefas por meio de um ponto de gerenciamento.  
 
- 可以在任务序列媒体向导的“自定义”页上指定任务序列变量。 有关如何创建媒体的信息，请参阅[创建任务序列媒体](../deploy-use/create-task-sequence-media.md)。  
+ É possível especificar as variáveis ​​de sequência de tarefas na página **Personalização** do Assistente de Mídia de Sequência de Tarefas. Para obter informações sobre como criar mídia, veja [Criar mídia de sequência de tarefas](../deploy-use/create-task-sequence-media.md).  
 
 > [!TIP]  
->  任务序列会将包 ID 和预启动命令行（包括任何任务序列变量的值）写入到运行 Configuration Manager 控制台的计算机上的 CreateTSMedia.log 日志文件。 你可以查看此日志文件以验证任务序列变量的值。  
+>  A sequência de tarefas grava a ID do pacote e a linha de comando prestart, incluindo o valor das variáveis de sequência de tarefas, no arquivo de log CreateTSMedia.log, no computador que executa o console do Configuration Manager. Você poderá analisar esse arquivo de log para verificar o valor das variáveis de sequência de tarefas.  
 
-##  <a name="BKMK_TSCreate"></a> 创建任务序列  
- 你可以通过创建任务序列向导创建任务序列。 此向导可以创建执行特定任务的内置任务序列，或创建可执行许多不同任务的自定义任务序列。  
+##  <a name="BKMK_TSCreate"></a> Criar uma sequência de tarefas  
+ Você pode criar sequências de tarefas usando o Assistente para Criar Sequência de Tarefas. O assistente pode criar sequências de tarefas internas que executam tarefas específicas ou sequências de tarefas personalizadas que podem realizar muitas tarefas diferentes.  
 
- 例如，你可以创建构建并捕获引用计算机的操作系统映像包的任务序列、在目标计算机上安装现有操作系统映像包，或者创建执行自定义任务的任务序列。 可以使用自定义任务序列执行特殊的操作系统部署。  
+ Por exemplo, você pode criar sequências de tarefas que criam e capturam uma imagem do sistema operacional de um computador de referência, instalar uma imagem de um sistema operacional existente em um computador de destino ou criar uma sequência de tarefas personalizada que executa uma tarefa personalizada. Você pode usar sequências de tarefas personalizadas para realizar implantações de sistemas operacionais especializados.  
 
- 有关如何创建任务序列的详细信息，请参阅[创建任务序列](../deploy-use/manage-task-sequences-to-automate-tasks.md#BKMK_CreateTaskSequence)。  
+ Para obter mais informações sobre como criar sequências de tarefas, consulte [Criar sequências de tarefas](../deploy-use/manage-task-sequences-to-automate-tasks.md#BKMK_CreateTaskSequence).  
 
-##  <a name="BKMK_TSEdit"></a> 编辑任务序列  
- 可以使用“任务序列编辑器”编辑任务序列。 编辑器可以对任务序列进行以下更改：  
+##  <a name="BKMK_TSEdit"></a> Editar uma sequência de tarefas  
+ Edite a sequência de tarefas usando o **Editor de Sequência de Tarefas**. O editor pode fazer as seguintes alterações na sequência de tarefas:  
 
--   你可以在任务序列中添加或删除步骤。  
+-   Adicionar ou remover etapas da sequência de tarefas.  
 
--   你可以更改任务序列的步骤的顺序。  
+-   Alterar a ordem das etapas da sequência de tarefas.  
 
--   你可以添加或删除步骤的组。  
+-   Adicionar ou remover grupos de etapas.  
 
--   你可以指定发生错误时任务序列是否继续。  
+-   Especificar se a sequência de tarefas continua quando ocorre um erro.  
 
--   你可以将条件添加到任务序列的步骤和组中。  
-
-> [!IMPORTANT]  
->  如果由于编辑而造成任务序列具有对包或程序的任何无关引用，则你必须更正引用、删除任务序列中未引用的程序，或暂时禁用失败的任务序列步骤，直到损坏的引用已更正或删除为止。  
-
- 有关如何编辑任务序列的信息，请参阅[编辑任务序列](../deploy-use/manage-task-sequences-to-automate-tasks.md#BKMK_ModifyTaskSequence)。  
-
-##  <a name="BKMK_TSDeploy"></a> 部署任务序列  
- 可以向位于任何 Configuration Manager 集合中的目标计算机部署任务序列。 这包括用于将操作系统部署到未知计算机的“所有未知计算机”集合。 但是，你不能将任务序列部署到用户集合。  
+-   Adicionar condições às etapas e aos grupos de uma sequência de tarefas.  
 
 > [!IMPORTANT]  
->  不要将安装操作系统的任务序列部署到不适合的集合，例如“所有系统”集合。 请确保任务序列部署到的集合仅包含想在其中安装操作系统的那些计算机。 为帮助避免不需要的操作系统部署，你可以管理部署设置。 有关详细信息，请参阅[用于管理高风险部署的设置](../../protect/understand/settings-to-manage-high-risk-deployments.md)。  
+>  Se a sequência de tarefas tiver quaisquer referências não associadas a um pacote ou um programa como um resultado da edição, você deve corrigir a referência, excluir o programa sem referência da sequência de tarefas ou desabilitar temporariamente a etapa da sequência de tarefas com erro até que a referência seja corrigida ou removida.  
 
- 每个接收任务序列的目标计算机将根据部署中指定的设置运行该任务序列。 任务序列本身不包含关联的文件或程序。 任务序列引用的任何文件都必须已经存在于目标计算机上或位于客户端可访问的分发点上。 此外，任务序列会安装程序所引用的包，即使已在目标计算机上安装了程序或包也不例外。  
+ Para obter mais informações sobre como editar sequências de tarefas, consulte [Editar uma sequência de tarefas](../deploy-use/manage-task-sequences-to-automate-tasks.md#BKMK_ModifyTaskSequence).  
+
+##  <a name="BKMK_TSDeploy"></a> Implantar uma sequência de tarefas  
+ É possível implantar uma sequência de tarefas em computadores de destino que estiverem em qualquer coleção do Configuration Manager. Isso inclui a coleção **Todos os Computadores Desconhecidos** que é usada para implantar sistemas operacionais em computadores desconhecidos. No entanto, você não pode implantar uma sequência de tarefas em coleções de usuário.  
+
+> [!IMPORTANT]  
+>  Não implante sequências de tarefas que instalam sistemas operacionais em coleções inadequadas, como, a coleção **Todos os Sistemas** . Certifique-se de que a coleção na qual irá você implantar a sequência de tarefas contenha somente computadores em que você deseja que o sistema operacional seja instalado. Para evitar uma implantação de sistema operacional indesejada, é possível gerenciar as configurações de implantação. Para obter mais informações, consulte [Configurações para gerenciar implantações de alto risco](../../protect/understand/settings-to-manage-high-risk-deployments.md).  
+
+ Cada computador de destino que recebe a sequência de tarefas executa a sequência de acordo com as configurações especificadas na implantação. As sequências de tarefas em si não contêm arquivos ou programas associados. Os arquivos referenciados por uma sequência de tarefas já devem estar presentes no computador de destino ou residir em um ponto de distribuição que os clientes podem acessar. Além disso, a sequência de tarefas instala os pacotes que são referenciados por programas, mesmo que o programa ou o pacote já esteja instalado no computador de destino.  
 
 > [!NOTE]  
->  与包和程序相比，如果任务序列安装应用程序，则只有在满足应用程序的要求规则并且还没有安装应用程序时，才会根据为应用程序指定的检测方法来安装该应用程序。  
+>  Em comparação com pacotes e programas, se a sequência de tarefas instalar um aplicativo, o aplicativo só será instalado se as regras de requisitos do aplicativo forem atendidas e se o aplicativo ainda não estiver instalado, com base no método de detecção especificado para ele.  
 
- Configuration Manager 客户端在下载客户端策略后会运行任务序列部署。 要启动此操作而不是等到下一个轮询周期，请参阅[为 Configuration Manager 客户端启动策略检索](../../core/clients/manage/manage-clients.md#BKMK_PolicyRetrieval)。  
+ O cliente do Configuration Manager executa uma implantação da sequência de tarefas quando baixa a política do cliente. Para iniciar esta ação, em vez de esperar até o próximo ciclo de sondagem, consulte [Iniciar recuperação de política para um cliente do Configuration Manager](../../core/clients/manage/manage-clients.md#BKMK_PolicyRetrieval).  
 
- 将任务序列部署到启用了写入筛选器的 Windows Embedded 设备时，你可以指定是否在部署过程中对设备禁用写入筛选器，然后在部署后重启设备。 如果未禁用写入筛选器，则任务序列会部署到临时覆盖区，并且在重启设备时将不可用。  
+ Ao implantar sequências de tarefas em dispositivos Windows Embedded com filtro de gravação habilitado, é possível especificar se deseja desabilitar o filtro de gravação no dispositivo durante a implantação e reiniciá-lo após a implantação. Se o filtro de gravação não for desabilitado, a sequência de tarefas será implantada em uma sobreposição temporária e não estará disponível quando o dispositivo for reiniciado.  
 
 > [!NOTE]  
->  将任务序列部署到 Windows Embedded 设备时，确保设备是配置了维护时段的集合的成员。 这样，你可以管理禁用和启用写入筛选器的时间，以及设备重启的时间。  
+>  Ao implantar uma sequência de tarefas em um dispositivo Windows Embedded, verifique se o dispositivo é membro de uma coleção com uma janela de manutenção configurada. Isso permite que você gerencie quando o filtro de gravação está desabilitado e habilitado e quando o dispositivo é reiniciado.  
 >   
->  如果客户端在维护时段之外下载任务序列，则会下载两次任务序列。 在此方案中，客户端将下载任务序列、禁用写入筛选器、重启计算机，然后再次下载任务序列，因为任务序列以前下载到了临时覆盖区，设备重启时会清除该覆盖区。  
+>  Se clientes baixarem sequências de tarefas fora de uma janela de manutenção, a sequência de tarefas será baixada duas vezes. Neste cenário, os clientes irão baixar a sequência de tarefas, desabilitar os filtros de gravação, reiniciar o computador e depois baixar a sequência de tarefas novamente, porque ela foi baixada em uma sobreposição temporária que é apagada quando o dispositivo é reiniciado.  
 
- 有关如何部署任务序列的详细信息，请参阅[部署任务序列](../deploy-use/manage-task-sequences-to-automate-tasks.md#BKMK_DeployTS)。  
+ Para obter mais informações sobre como implantar sequências de tarefas, consulte [Implantar uma sequência de tarefas](../deploy-use/manage-task-sequences-to-automate-tasks.md#BKMK_DeployTS).  
 
-##  <a name="BKMK_TSExportImport"></a> 导出和导入任务序列  
- Configuration Manager 允许导出和导入任务序列。 导出任务序列时，可以包括任务序列引用的对象。 这些对象包括操作系统映像包、启动映像、客户端代理包、驱动程序包以及具有依赖关系的应用程序。  
-
-> [!NOTE]  
->  任务序列的导出和导入过程与 Configuration Manager 中应用程序的导出和导入过程非常相似。  
-
- 有关如何导出和导入任务序列的详细信息，请参阅[导出和导入任务序列](../deploy-use/manage-task-sequences-to-automate-tasks.md#BKMK_ExportImport)。  
-
-##  <a name="BKMK_TSRun"></a> 运行任务序列  
- 默认情况下，任务序列始终使用本地系统帐户运行。 利用任务序列命令行步骤，你能够用其他帐户运行任务序列。 运行任务序列时，Configuration Manager 客户端首先检查任何引用的包，然后会启动任务序列的步骤。 如果分发点上的引用包未经验证或不可用，则任务序列将为关联任务序列步骤返回错误。  
-
- 如果将分发任务序列配置为下载并运行，则所有从属包和应用程序将被下载到 Configuration Manager 客户端缓存。 所需的包和应用程序从分发点获得，如果 Configuration Manager 客户端缓存太小或找不到包或应用程序，则任务序列将失败并生成一则状态消息。 在选择“需要时通过运行任务序列本地下载内容”时，也可以指定客户端仅在需要内容时下载内容，或者可以使用“从分发点运行程序”选项来指定客户端直接从分发点安装文件而不先将其下载到缓存。 只有在“包”属性的“数据访问”选项卡上为引用的包启用“将此包中的内容复制到分发点上的包共享中”设置，才可以使用“从分发点运行程序”选项。  
-
- 如果运行任务序列的客户端找不到从属包或应用程序，则客户端在部署被配置为“可用”时会立即发送错误。 但是，如果部署被配置为“必需”，则在内容尚未复制到客户端可访问的分发点的情况下，Configuration Manager 客户端会在截止时间前等待并重新尝试下载内容。  
-
- 无论任务序列成功完成与否，Configuration Manager 都会在Configuration Manager 客户端历史记录中记录此情况。 在计算机上启动任务序列后，你无法取消或停止该序列。  
-
-> [!IMPORTANT]  
->  如果任务序列步骤要求重启客户端计算机，则客户端必须能够启动到格式化的磁盘分区。 否则，任务序列将失败，而与任务序列指定的任何错误处理无关。  
-
- 当软件分发包等任务序列从属对象更新到较新版本时，系统将自动更新引用包的任何任务序列并引用最新版本，而与部署的更新数目无关。  
+##  <a name="BKMK_TSExportImport"></a> Exportar e importar uma sequência de tarefas  
+ O Configuration Manager permite exportar e importar sequências de tarefas. Quando você exporta uma sequência de tarefas, pode incluir os objetos que são referenciados pela sequência. Esses incluem uma imagem do sistema operacional, uma imagem de inicialização, um pacote de agente de cliente, um pacote de drivers e aplicativos com dependências.  
 
 > [!NOTE]  
->  在 Configuration Manager 客户端运行任务序列之前，客户端会在分发点上检查所有任务序列，看是否有可能的依赖关系及其可用性。 如果客户端发现任务序列所依赖的对象已被删除，则客户端会生成错误，并且不运行任务序列。  
+>  O processo de exportação e importação de sequências de tarefas é muito semelhante ao processo de exportação e importação de aplicativos no Configuration Manager.  
 
-###  <a name="BKMK_RunProgram"></a> 运行任务序列之前运行程序  
- 你可以选择在运行任务序列之前运行的程序。 要指定要首先运行的程序，请打开任务序列的“属性”对话框，并选择“高级” 选项卡以设置以下选项：  
+ Para obter mais informações sobre como exportar e importar sequências de tarefas, consulte [Exportar e importar sequências de tarefas](../deploy-use/manage-task-sequences-to-automate-tasks.md#BKMK_ExportImport).  
+
+##  <a name="BKMK_TSRun"></a> Executar uma sequência de tarefas  
+ Por padrão, as sequências de tarefas são sempre executadas usando a conta Sistema Local. A etapa de linha de comando da sequência de tarefas fornece a capacidade de executar a sequência de tarefas como uma conta diferente. Quando a sequência de tarefas é executada, o cliente do Configuration Manager verifica primeiro se há pacotes referenciados antes de começar as etapas da sequência de tarefas. Se um pacote referenciado não for validado ou não estiver disponível em um ponto de distribuição, a sequência de tarefas retornará um erro para a etapa da sequência de tarefas associada.  
+
+ Se uma sequência de tarefas distribuída estiver configurada para ser baixada e executada, todos os pacotes e aplicativos dependentes serão baixados para o cache do cliente do Configuration Manager. Os pacotes e aplicativos necessários serão obtidos dos pontos de distribuição e, se o tamanho do cache do cliente do Configuration Manager for muito pequeno ou o pacote ou aplicativo não puder ser encontrado, a sequência de tarefas falhará e uma mensagem de status será gerada. Você também pode especificar que o cliente baixe o conteúdo apenas quando necessário quando você selecionar **Baixar conteúdo localmente quando necessário, executando a sequência de tarefas**, ou pode usar a opção **Executar programa do ponto de distribuição** para especificar que o cliente instale os arquivos diretamente do ponto de distribuição sem baixá-los para o cache primeiro. A opção **Executar programa do ponto de distribuição** só estará disponível se os pacotes referenciados tiverem a configuração **Copiar o conteúdo deste pacote em um compartilhamento de pacote nos pontos de distribuição** habilitada na guia **Acesso a Dados** nas propriedades do **Pacote**.  
+
+ Se um aplicativo ou pacote dependente não puder ser localizado pelo cliente que executa a sequência de tarefas, o cliente enviará imediatamente uma mensagem de erro quando a implantação for configurada como **Disponível**. No entanto, se a implantação estiver configurada como **Obrigatória**, o cliente do Configuration Manager esperará e tentará baixar o conteúdo até o prazo, no caso de o conteúdo ainda não ter sido replicado para um ponto de distribuição que o cliente possa acessar.  
+
+ Quando uma sequência de tarefas é concluída com êxito ou falha, o Configuration Manager registra isso em seu histórico do cliente. Não é possível cancelar nem parar uma sequência de tarefas depois que ela é iniciada em um computador.  
 
 > [!IMPORTANT]  
->  若要在运行任务序列之前运行程序，任务序列的所有内容和程序必须在包共享上可供包使用。 可以在包属性的“数据访问”选项卡上配置包共享。  
+>  Se uma etapa de sequência de tarefas exigir que o computador cliente seja reiniciado, o cliente deverá ser capaz de inicializar a partir de uma partição de disco formatada. Caso contrário, a sequência de tarefas falhará, independentemente de qualquer manipulação de erro especificada pela sequência.  
 
--   **首先运行其他程序**：指定想在运行任务序列之前运行其他程序。  
+ Quando um objeto dependente de uma sequência de tarefas, como um pacote de distribuição de software, é atualizado para uma versão mais recente, qualquer sequência de tarefas que referencia o pacote é atualizada automaticamente e faz referência à versão mais recente, independentemente de quantas atualizações foram implantadas.  
+
+> [!NOTE]  
+>  Para que um cliente do Configuration Manager execute uma sequência de tarefas, ele verifica todas as sequências de tarefas quanto a possíveis dependências e quanto à disponibilidade dessas dependências em um ponto de distribuição. Se o cliente encontrar um objeto excluído do qual a sequência de tarefas depende, o cliente gerará um erro e não executará a sequência de tarefas.  
+
+###  <a name="BKMK_RunProgram"></a> Executar um programa antes que a sequência de tarefas seja executada  
+ Você pode selecionar um programa que seja executado para que a sequência de tarefas seja executada. Para especificar um programa para ser executado primeiro, abra a caixa de diálogo **Propriedades** da sequência de tarefas e selecione a guia **Avançado** para definir as seguintes opções:  
+
+> [!IMPORTANT]  
+>  Para executar um programa para que a sequência de tarefas seja executada, todo o conteúdo da sequência de tarefas e do programa deve estar disponível em um compartilhamento de pacotes. Você pode configurar o compartilhamento de pacotes na guia **Acesso a Dados** nas propriedades do pacote.  
+
+-   **Executar outro programa primeiro**: especifique que você quer que outro programa seja executado antes que a sequência de tarefas seja executada.  
 
     > [!IMPORTANT]  
-    >  此设置仅适用于在完整操作系统中运行的任务序列。 如果使用 PXE 或启动媒体启动任务序列，则 Configuration Manager 将忽略此设置。  
+    >  Esta configuração aplica-se apenas às sequências de tarefas que são executadas no sistema operacional completo. O Configuration Manager ignorará esta configuração se a sequência de tarefas for iniciada usando o PXE ou a mídia de inicialização.  
 
--   **包**：指定包含程序的包。  
+-   **Pacote**: especifique o pacote que contém o programa.  
 
--   **程序**：指定要运行的程序。  
+-   **Programa**: especifique o programa a ser executado.  
 
--   **始终先运行此程序**：指定 Configuration Manager 每次在同一个客户端上运行任务序列时运行此程序。 默认情况下，在某个程序成功运行之后，如果在同一个客户端上再次运行任务序列，则不会再次运行此程序。  
+-   **Sempre executar este programa primeiro**: especifique que você deseja que o Configuration Manager execute este programa cada vez que executar a sequência de tarefas no mesmo cliente. Por padrão, depois que um programa é executado com sucesso, ele não será executado novamente se a sequência de tarefas for reexecutada no mesmo cliente.  
 
- 如果所选的程序在客户端上运行失败，则不会运行任务序列。  
+ Se o programa selecionado não for executado em um cliente, a sequência de tarefas não será executada.  
 
-##  <a name="BKMK_TSMaintenanceWindow"></a> 使用维护时段指定任务序列何时可以运行  
- 通过为包含目标计算机的集合定义维护时段，可以指定任务序列何时可以运行。 将会配置维护时段的开始日期、开始和完成时间以及定期模式。 此外，在为维护时段设置计划时，可以指定维护时段仅应用于任务序列。 有关详细信息，请参阅[如何使用维护时段](../../core/clients/manage/collections/use-maintenance-windows.md)。  
+##  <a name="BKMK_TSMaintenanceWindow"></a> Usar uma janela de manutenção para especificar quando uma sequência de tarefas pode ser executada  
+ Você pode especificar quando a sequência de tarefas pode ser executada definindo uma janela de manutenção para a coleção que contém os computadores de destino. As janelas de manutenção são configuradas com uma data de início, hora de início e término e um padrão de recorrência. Além disso, quando você define a agenda para a janela de manutenção, pode especificar que a janela de manutenção aplique-se apenas àquela sequências de tarefas. Para obter mais informações, consulte [Como usar janelas de manutenção](../../core/clients/manage/collections/use-maintenance-windows.md).  
 
 > [!IMPORTANT]  
->  在配置维护时段以运行任务序列时，一旦任务序列启动，即使维护时段结束，它也会继续运行。 任务序列要么成功完成，要么失败。  
+>  Quando você configura uma janela de manutenção para executar uma sequência de tarefas, uma vez que as sequências de tarefas iniciam, continuam a ser executadas mesmo depois que a janela de manutenção é fechada. A sequência de tarefas será concluída com êxito ou erro.  
 
-##  <a name="BKMK_TSNetworkAccessAccount"></a> 任务序列和网络访问帐户  
- 虽然任务序列仅在本地系统帐户的上下文中运行，但在下列情况下，你可能需要配置网络访问帐户：  
+##  <a name="BKMK_TSNetworkAccessAccount"></a> Sequências de tarefas e Conta de acesso de rede  
+ Embora as sequências de tarefas sejam executadas apenas no contexto da conta do Sistema Local, pode ser necessário configurar a conta de acesso à rede nas seguintes circunstâncias:  
 
--   必须正确配置网络访问帐户，否则，如果任务序列为了完成其任务而尝试访问分发点上的 Configuration Manager 包，它将会失败。 有关网络访问帐户的详细信息，请参阅[网络访问帐户](../../core/plan-design/hierarchy/manage-accounts-to-access-content.md#a-namebkmknaaa-network-access-account)。  
+-   Você precisa configurar a Conta de Acesso à Rede corretamente ou a sequência de tarefas falhará se tentar acessar os pacotes do Configuration Manager nos pontos de distribuição para concluir a tarefa. Para obter mais informações sobre a Conta de Acesso à Rede, consulte [Conta de Acesso à Rede](../../core/plan-design/hierarchy/manage-accounts-to-access-content.md#a-namebkmknaaa-network-access-account).  
 
     > [!NOTE]  
-    >  网络访问帐户从不用作用于运行程序、安装应用程序、安装更新或运行任务序列的安全性上下文，但可用于访问网络上的关联资源。  
+    >  A Conta de Acesso à Rede nunca é usada como contexto de segurança para a execução de programas, instalação de aplicativos, instalação de atualizações, ou execução de sequências de tarefas; no entanto, a Conta de Acesso à Rede é usada para acessar recursos associados à rede.  
 
--   当使用启动映像来启动操作系统部署时，Configuration Manager 使用 Windows PE 环境，它不是一个完整的操作系统。 Windows PE 环境使用自动生成的随机名称，该名称不是任何域的成员。 如果未正确配置网络访问帐户，则计算机可能没有访问所需的 Configuration Manager 包以完成任务序列的必需权限。  
+-   Quando você usa uma imagem de inicialização para iniciar uma implantação de sistema operacional, o Configuration Manager usa o ambiente do Windows PE, que não é um sistema operacional completo. O ambiente do Windows PE usa um nome aleatório gerado automaticamente, que não é membro de nenhum domínio. Se você não configurar a Conta de Acesso à Rede corretamente, o computador poderá não ter as permissões necessárias para acessar os pacotes exigidos do Configuration Manager para concluir a sequência de tarefas.  
 
-##  <a name="BKMK_TSCreateMedia"></a> 为任务序列创建媒体  
- 可以将任务序列及其相关的文件和依赖关系写入到多种类型的媒体中。 这包括写入到可移动媒体（例如捕获、独立和可启动媒体的 DVD 或 CD 集或者 USB 闪存驱动器）中，或者写入到预留媒体的 Windows 映像格式 (WIM) 文件中。  
+##  <a name="BKMK_TSCreateMedia"></a> Criar mídia para sequências de tarefas  
+ Você pode gravar sequências de tarefas e seus arquivos relacionados e dependências em vários tipos de mídia. Isso inclui a gravação em mídia removível, como um conjunto de DVD ou CD ou unidade flash USB para mídia de captura, autônoma e inicializável, ou gravação em um arquivo WIM (Windows Imaging Format) para mídia em pré-teste.  
 
- 可以创建下列类型的媒体：  
+ Você pode criar os seguintes tipos de mídia:  
 
--   **捕获媒体**。 捕获媒体捕获在 Configuration Manager 基础结构以外配置和创建的操作系统映像。 捕获媒体可以包含可在任务序列运行之前运行的自定义程序。 自定义程序可以与桌面交互、提示用户输入值，或创建任务序列将使用的变量。  
+-   **Mídia de captura**. Esse tipo de mídia captura uma imagem do sistema operacional configurada e criada fora da infraestrutura do Configuration Manager. Mídia de captura pode conter programas personalizados que podem ser executados antes da execução de uma sequência de tarefas. O programa personalizado pode interagir com a área de trabalho, solicitar valores de entrada ao usuário ou criar variáveis ​​para serem usadas pela sequência de tarefas.  
 
-     有关详细信息，请参阅[创建捕获媒体](../deploy-use/create-capture-media.md)。  
+     Para obter mais informações, consulte [Criar mídia de captura](../deploy-use/create-capture-media.md).  
 
--   **独立媒体**。 独立媒体包含任务序列，以及运行任务序列所必需的所有关联对象。 当 Configuration Manager 的网络连接受限或者没有网络连接时，独立媒体任务序列可以运行。 可以通过下列方式运行独立媒体：  
+-   **Mídia autônoma**. Mídia autônoma contém a sequência de tarefas e todos os objetos associados necessários para a execução da sequência de tarefas. Sequências de tarefas de mídia autônoma podem ser executadas quando o Configuration Manager tem conectividade limitada ou nenhuma conectividade com a rede. Mídia autônoma pode ser executada das seguintes maneiras:  
 
-    -   如果没有启动目标计算机，则将从独立媒体中使用与任务序列关联的 Windows PE 映像，而且任务序列开始运行。  
+    -   Se o computador de destino não for inicializado, a imagem do Windows PE associada à sequência de tarefas será usada por meio da mídia autônoma e a sequência de tarefas terá início.  
 
-    -   如果用户登录网络并启动安装，则可以手动启动独立媒体。  
+    -   A mídia autônoma pode ser iniciada manualmente se um usuário estiver conectado à rede e iniciar a instalação.  
 
     > [!IMPORTANT]  
-    >  独立媒体任务序列的步骤必须能够在无需从网络中检索任何数据的情况下运行，否则，尝试检索数据的任务序列步骤将会失败。 例如，需要访问分发点以获取包的任务序列步骤将失败；但是，如果独立媒体上包含必需的包，则任务序列步骤将成功。  
+    >  As etapas de uma sequência de tarefas de mídia autônoma devem ser capazes de executar sem recuperar dados da rede; caso contrário, a etapa que tenta recuperar os dados falhará. Por exemplo, uma etapa de sequência de tarefas que requer um ponto de distribuição para obter um pacote falha; no entanto, se o pacote necessário estiver contido na mídia autônoma, a etapa terá êxito.  
 
-     有关详细信息，请参阅[创建独立媒体](../deploy-use/create-stand-alone-media.md)。  
+     Para obter mais informações, consulte [Criar mídia autônoma](../deploy-use/create-stand-alone-media.md).  
 
--   **可启动媒体**。 可启动媒体包含启动目标计算机所需的文件，以便此计算机能够连接到 Configuration Manager 基础结构，然后根据它的集合成员身份确定要运行的任务序列。 媒体上不包含任务序列和从属对象；但 Configuration Manager 客户端的网络上包含它们。 对于新计算机或裸机部署，或者当目标计算机上没有 Configuration Manager 客户端或操作系统时，此方法很有用。  
+-   **Mídia inicializável**. A mídia inicializável contém os arquivos necessários para iniciar um computador de destino para que ele possa se conectar à infraestrutura do Configuration Manager para determinar qual sequência de tarefas será executada com base na sua associação a uma coleção. A sequência de tarefas e os objetos dependentes não estão contidos na mídia. Em vez disso, eles são obtidos pela rede por meio do cliente do Configuration Manager. Esse método é útil para novos computadores ou implantações bare-metal, ou quando não há nenhum cliente ou sistema operacional do Configuration Manager no computador de destino.  
 
-     有关详细信息，请参阅[创建可启动媒体](../deploy-use/create-bootable-media.md)。  
+     Para obter mais informações, consulte [Criar mídia inicializável](../deploy-use/create-bootable-media.md).  
 
--   **预留媒体**。 预留媒体将操作系统映像部署到未设置的目标计算机。 预留媒体存储为 Windows 映像格式 (WIM) 文件，可以由制造商安装在裸机上，也可以安装在未连接到 Configuration Manager 环境的企业暂存中心。  
+-   **Mídia pré-configurada**. Mídia em pré-teste implanta uma imagem do sistema operacional em um computador de destino que não está provisionado. A mídia pré-configurada é armazenada como um arquivo em formato WIM (Windows Imaging) que pode ser instalado em um computador bare-metal pelo fabricante ou em um centro de preparo corporativo que não está conectado ao ambiente do Configuration Manager.  
 
-     有关详细信息，请参阅[创建预留媒体](../deploy-use/create-prestaged-media.md)。  
+     Para mais informações, consulte [Criar mídia pré-configurada](../deploy-use/create-prestaged-media.md).  
 
- 在创建媒体时，可以为媒体指定密码，以控制对媒体上包含的文件的访问。 如果指定密码，则在任务序列运行时，用户必须在目标计算机上输入密码。  
+ Ao criar mídia, especifique uma senha para a mídia para controlar o acesso aos arquivos contidos nela. Se você especificar uma senha, um usuário deverá estar presente para digitar a senha no computador de destino quando a sequência de tarefas for executada.  
 
- 使用媒体运行任务序列时，将不会识别媒体上包含的指定的计算机芯片体系结构，而且，即使指定的体系结构与目标计算机上实际安装的体系结构不匹配，任务序列也会尝试运行。 如果媒体上包含的芯片体系结构与目标计算机上安装的芯片体系结构不匹配，安装将失败。  
+ Quando você executa uma sequência de tarefas usando mídia, a arquitetura do chip do computador especificado contido na mídia não será reconhecida e a sequência tarefa tentará ser executada, mesmo que a arquitetura especificada não corresponda à que está atualmente instalada no computador de destino. Se a arquitetura do chip contido na mídia não corresponder à arquitetura do chip instalado no computador de destino, a instalação falhará.  
 
- 有关如何使用媒体来部署操作系统的详细信息，请参阅[创建任务序列](../deploy-use/create-task-sequence-media.md)。  
+ Para obter mais informações sobre como implantar sistemas operacionais usando a mídia, consulte [Criar mídia de sequência de tarefas](../deploy-use/create-task-sequence-media.md).  

@@ -1,6 +1,6 @@
 ---
-title: "测试客户端升级预生产集合 | Microsoft Docs"
-description: "在 System Center Configuration Manager 中的预生产集合中测试客户端升级。"
+title: "Testar atualizações do cliente em uma coleção de pré-produção | Microsoft Docs"
+description: "Teste atualizações do cliente em uma coleção de pré-produção no System Center Configuration Manager."
 ms.custom: na
 ms.date: 05/04/2017
 ms.prod: configuration-manager
@@ -18,70 +18,70 @@ manager: angrobe
 ms.openlocfilehash: 572ef13883f7930e69ec1f1f53c9bfe029898c81
 ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
 ms.translationtype: HT
-ms.contentlocale: zh-CN
+ms.contentlocale: pt-BR
 ms.lasthandoff: 08/07/2017
 ---
-# <a name="how-to-test-client-upgrades-in-a-pre-production-collection-in-system-center-configuration-manager"></a>如何在 System Center Configuration Manager 中的预生产集合中测试客户端升级
+# <a name="how-to-test-client-upgrades-in-a-pre-production-collection-in-system-center-configuration-manager"></a>Como testar atualizações do cliente em uma coleção de pré-produção no System Center Configuration Manager
 
-*适用范围：System Center Configuration Manager (Current Branch)*
+*Aplica-se a: System Center Configuration Manager (Branch Atual)*
 
-可以在升级站点的其余部分之前，在预生产集合中测试新 Configuration Manager 客户端版本。  执行此操作时，仅升级属于测试集合的设备。 只要有机会测试客户端，就可以提升客户端，使客户端软件的新版本可用于该站点的其余部分。
+É possível testar uma nova versão do cliente do Configuration Manager em uma coleção de pré-produção antes de atualizar o restante do site com ele.  Quando você fizer isso, apenas os dispositivos que fazem parte da coleção de teste serão atualizados. Depois de ter a oportunidade de testar o cliente você pode promover o cliente, o que torna a nova versão do software cliente disponível para o restante do site.
 
 > [!NOTE]
-> 若要将测试客户端提升至生产，则必须作为具有**完全权限管理员**安全角色和**全部**安全作用域的用户登录。 有关详细信息，请参阅[基于角色的管理基础](/sccm/core/understand/fundamentals-of-role-based-administration)。 还必须登录到连接到管理中心站点或顶级独立主站点的服务器。
+> Para promover um cliente de teste para a produção, você deve estar conectado como um usuário com a função de segurança de **administrador completo** e um escopo de segurança de **Tudo**. Para obter mais informações, consulte [Fundamentos da administração baseada em funções](/sccm/core/understand/fundamentals-of-role-based-administration). Você também deve estar conectado a um servidor conectado ao site da administração central ou a um site primário autônomo de nível superior.
 
- 在预生产环境中测试客户端包含 3 个基本步骤。  
+ Há três etapas básicas para testar os clientes em pré-produção.  
 
-1.  配置自动客户端升级以使用预生产集合。  
+1.  Configurar atualizações automáticas do cliente para usar uma coleção de pré-produção.  
 
-2.  安装包括新版本客户端的 Configuration Manager 更新。  
+2.  Instalar uma atualização do Configuration Manager que inclui uma nova versão do cliente.  
 
-3.  将新客户端提升为生产客户端。  
+3.  Promover o novo cliente para produção.  
 
-##  <a name="to-configure-automatic-client-upgrades-to-use-a-pre-production-collection"></a>配置自动客户端升级以使用预生产集合  
+##  <a name="to-configure-automatic-client-upgrades-to-use-a-pre-production-collection"></a>Para configurar atualizações automáticas do cliente para usar uma coleção de pré-produção  
 
-1. [设置](..\collections\create-collections.md)包含想要向其部署预生产客户端的计算机的集合。 不要在预生产集合中包含工作组计算机。 工作组计算机无法使用分发点需要的身份验证来访问预生产客户端包。   
+1. [Configure uma coleção](..\collections\create-collections.md) que contém os computadores nos quais você deseja implantar o cliente de pré-produção. Não inclua computadores de grupo de trabalho em coleções de pré-produção. Eles não podem usar a autenticação necessária para o ponto de distribuição acessar o pacote de cliente de pré-produção.   
 
-1.  在 Configuration Manager 控制台中，打开“管理” > “站点配置” > “站点”，选择“层次结构设置”。  
+1.  No console do Configuration Manager, abra **Administração** > **Configuração do Site** > **Sites** e selecione **Configurações da Hierarquia**.  
 
-     在“层次结构设置属性”  的“客户端升级” 选项卡上：  
+     Na guia **Atualização de cliente** das **Propriedades de configurações de hierarquia**:  
 
-    -   选择“使用预生产客户端自动升级预生产集合中的全部客户端”   
+    -   Selecione **Atualizar todos os clientes na coleção de pré-produção automaticamente usando o cliente de pré-produção**  
 
-    -   输入要用作预生产集合的集合的名称  
+    -   Digite o nome de uma coleção para usar como uma coleção de pré-produção  
 
-![测试客户端升级](media/test-client-upgrades.png)
+![Testar atualizações do cliente](media/test-client-upgrades.png)
 
 >[!NOTE]
->要更改这些设置，你的帐户必须是**完全权限管理员**安全角色和**所有**安全范围的成员。
+>Para alterar essas configurações, sua conta deverá ser um membro da função de segurança **Administrador Completo** e o escopo de segurança **Tudo**.
 
 
-##  <a name="to-install-a-configuration-manager-update-that-includes-a-new-version-of-the-client"></a>若要安装包括新版本客户端的 Configuration Manager 更新  
+##  <a name="to-install-a-configuration-manager-update-that-includes-a-new-version-of-the-client"></a>Para instalar uma atualização do Configuration Manager que inclui uma nova versão do cliente  
 
-1.  在 Configuration Manager 控制台中，打开“管理” > “更新和服务”，选择“可用”更新，然后选择“安装更新包”。 （在版本 1702 之前，“更新和服务”在“管理” > “云服务”下。）
+1.  No console do Configuration Manager, abra **Administração** > **Atualizações e Serviços**, selecione uma atualização **Disponível** e escolha **Instalar Pacote de Atualização**. (Antes da versão 1702, Atualizações e Manutenção ficava em **Administração** > **Serviços de Nuvem**.)
 
-     有关安装更新的详细信息，请参阅 [System Center Configuration Manager 的更新](../../../../core/servers/manage/updates.md)  
+     Para obter mais informações, consulte [Atualizações para o System Center Configuration Manager](../../../../core/servers/manage/updates.md)  
 
-2.  在安装更新的过程中，在向导的“客户端选项”页面中，选择“在预生产集合中测试”。  
+2.  Durante a instalação da atualização, na página do assistente **Opções de Cliente**, selecione **Teste na coleção de pré-produção**.  
 
-3.  完成向导中的其余步骤，安装更新包。  
+3.  Conclua o restante do assistente e instale o pacote de atualização.  
 
-     完成向导后，预生产集合中的客户端将开始部署更新的客户端。 你可以通过转到“监视” > “客户端状态” > “预生产客户端部署”监视已升级客户端的部署。 有关详细信息，请参阅[如何在 System Center Configuration Manager 中监视客户端部署状态](../../../../core/clients/deploy/monitor-client-deployment-status.md)。
+     Depois que o assistente for concluído, os clientes na coleção de pré-produção começarão a implantar o cliente atualizado. Você pode monitorar a implantação de clientes atualizados acessando **Monitoramento** > **Status do Cliente** > **Implantação de Cliente de Pré-produção**. Para obter mais informações, consulte [Como monitorar o status de implantação do cliente no System Center Configuration Manager](../../../../core/clients/deploy/monitor-client-deployment-status.md).
 
     > [!NOTE]
-    > 即使在已成功部署客户端时，托管预生产集合中站点系统角色的计算机上的部署状态也可能被报告为“不符合”。 当你将客户端提升为生产时，则会正常报告部署状态。
+    > O status da implantação em computadores que hospedam funções de sistema de sites em uma coleção de pré-produção pode ser relatado como **Não compatível** mesmo que o cliente tenha sido implantado com êxito. Quando você promove o cliente para produção, o status da implantação é relatado corretamente.
 
-##  <a name="to-promote-the-new-client-to-production"></a>若要将新客户端提升至生产  
+##  <a name="to-promote-the-new-client-to-production"></a>Para promover o novo cliente para produção  
 
-1.  在 Configuration Manager 控制台中，打开“管理” > “更新和服务”，然后选择“提升预生产客户端”。 （在版本 1702 之前，“更新和服务”在“管理” > “云服务”下。）
+1.  No console do Configuration Manager, abra **Administração** > **Atualizações e Manutenção** e escolha **Promover o Cliente de Pré-produção**. (Antes da versão 1702, Atualizações e Manutenção ficava em **Administração** > **Serviços de Nuvem**.)
 
     > [!TIP]
-    > 在控制台中通过“监视” > 客户端状态” > “预生产客户端部署”监视客户端部署时，还可使用“提升预生产客户端”按钮。
+    > O botão **Promover o Cliente de Pré-produção** também está disponível quando você está monitorando implantações de cliente no console em **Monitoramento** > **Status do Cliente** > **Implantação de Cliente de Pré-produção**.
 
-2.  查看生产和预生产中的客户端版本，确保已指定正确的预生产集合，然后依次单击“提升”、“是”。  
+2.  Examine as versões de cliente em produção e pré-produção, verifique se a coleção correta de pré-produção está especificada, clique em **Promover** e, em seguida, em **Sim**.  
 
-3.  对话框关闭后，更新的客户端版本将替代在你的层次结构中使用的客户端版本。 然后可以为整个站点升级客户端。 有关详细信息，请参阅[如何在 System Center Configuration Manager 中升级 Windows 计算机的客户端](../../../../core/clients/manage/upgrade/upgrade-clients-for-windows-computers.md)。  
+3.  Após a caixa de diálogo fechar, a versão atualizada do cliente substituirá a versão do cliente em uso na sua hierarquia. Em seguida, você poderá atualizar os clientes de todo o seu site. Consulte [Como atualizar clientes para computadores Windows no System Center Configuration Manager](../../../../core/clients/manage/upgrade/upgrade-clients-for-windows-computers.md) para obter mais informações.  
 
 >[!NOTE]
->要启用预生产客户端，或者将预生产客户端升级到生产客户端，你的帐户必须是安全角色的成员，该角色具有**读取**和**修改**  **Update Packages** 对象的权限。
->客户端升级按已配置的任意 Configuration Manager 维护时段进行。
+>Para habilitar o cliente de pré-produção ou promover um cliente de pré-produção para um cliente de produção, sua conta deverá ser membro da função de segurança que tem as permissões **Leitura** e **Modificar** para o objeto **Atualizar Pacotes**.
+>As atualizações de cliente aceitam todas as janelas de manutenção do Configuration Manager que você configurar.

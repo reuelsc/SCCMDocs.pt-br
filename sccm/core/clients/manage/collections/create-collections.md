@@ -1,6 +1,6 @@
 ---
-title: "创建集合 | Microsoft Docs"
-description: "在 System Center Configuration Manager 中创建集合以更轻松地管理用户和设备的分组。"
+title: "Criar coleções | Microsoft Docs"
+description: "Crie coleções no System Center Configuration Manager para gerencie mais facilmente os grupos de usuários e dispositivos."
 ms.custom: na
 ms.date: 2/22/2017
 ms.prod: configuration-manager
@@ -18,84 +18,84 @@ manager: angrobe
 ms.openlocfilehash: 44b4707b1a40624c51decf548d23ddd2164c5833
 ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
 ms.translationtype: HT
-ms.contentlocale: zh-CN
+ms.contentlocale: pt-BR
 ms.lasthandoff: 08/07/2017
 ---
-# <a name="how-to-create-collections-in-system-center-configuration-manager"></a>如何在 System Center Configuration Manager 中创建集合
+# <a name="how-to-create-collections-in-system-center-configuration-manager"></a>Como criar coleções no System Center Configuration Manager
 
-*适用范围：System Center Configuration Manager (Current Branch)*
+*Aplica-se a: System Center Configuration Manager (Branch Atual)*
 
-集合是用户组或设备组。 可使用集合执行任务，包括应用程序管理、部署符合性设置或安装软件更新。 还可以使用集合来管理客户端设置的组，或将它们与基于角色的管理结合使用来指定管理用户可以访问的资源。 Configuration Manager 包含几个内置集合。 有关详细信息，请参阅 [System Center Configuration Manager 中的集合简介](../../../../core/clients/manage/collections/introduction-to-collections.md)。  
+Coleções são grupos de usuários ou dispositivos. Use coleções para tarefas como gerenciamento de aplicativos, configurações de conformidade de implantação ou instalação de atualizações de software. Você também pode usar coleções para gerenciar grupos de configurações do cliente ou usá-las com a administração baseada em funções para especificar os recursos que um usuário administrativo pode acessar. O Configuration Manager contém várias coleções internas. Para obter mais informações, consulte [Introdução às coleções no System Center Configuration Manager](../../../../core/clients/manage/collections/introduction-to-collections.md).  
 
 > [!NOTE]  
->  集合可以包含用户或设备，但不能同时包含两者。  
+>  Uma coleção pode conter usuários ou dispositivos, mas não ambos.  
 
- 下表列出了可用于在 Configuration Manager 中配置集合的成员的规则。  
+ A tabela a seguir lista as regras que você pode usar para configurar os membros de uma coleção no Configuration Manager.  
 
-|成员身份规则类型|更多信息|  
+|Tipo de regra de associação|Mais informações|  
 |--------------------------|----------------------|  
-|直接规则|用于选择要添加到集合的用户或计算机。 除非从 Configuration Manager 中删除资源，否则此成员身份不会更改。 Configuration Manager 必须已发现资源，否则则必须先导入资源，才能将资源添加到直接规则集合。 直接规则集合的管理开销高于查询规则集合，因为前者需要手动更改。|  
-|查询规则|基于 Configuration Manager 按计划运行的查询来动态更新集合的成员身份。 例如，可以创建一个用户集合，其中的用户是 Active Directory 域服务中的人力资源组织单位的成员。 此集合会在向人力资源组织单位添加新用户或从中删除用户时自动更新。<br /><br /> 有关可用于构建集合的示例查询，请参阅[如何在 System Center Configuration Manager 中创建查询](../../../../core/servers/manage/create-queries.md)。|  
-|包括集合规则|在 Configuration Manager 集合中包括其他集合的成员。如果所包括的集合有所更改，则当前集合的成员身份会按计划进行更新。<br /><br /> 可以向集合添加多个包括集合规则。<br /> |  
-|排除集合规则|通过排除集合规则，可以从一个 Configuration Manager 集合中排除其他集合的成员。 如果排除的集合有所更改，则当前集合的成员身份会按计划进行更新。<br /><br /> 可以向集合添加多个排除集合规则。 如果集合同时包含集合和排除集合规则，并且存在冲突，则排除集合规则具有优先级。<br />              **示例：** 创建一个集合，它具有一个包括集合规则和一个排除集合规则。 包括集合规则用于 Dell 台式机的集合。 排除集合用于具有 4 GB 以下 RAM 的计算机的集合。 新集合将包含至少具有 4 GB RAM 的 Dell 台式机。|  
+|Regra direta|Use para escolher os usuários ou computadores que você deseja adicionar a uma coleção. Esta associação não é alterada a menos que você remova um recurso do Configuration Manager. O Configuration Manager deve ter descoberto os recursos ou é necessário importar os recursos antes de poder adicioná-los a uma coleção de regra direta. As coleções de regras diretas têm uma maior sobrecarga administrativa que as coleções de regras de consulta, porque requerem alterações manuais.|  
+|Regra de consulta|Atualizam dinamicamente a associação de uma coleção com base em uma consulta executada pelo Configuration Manager em um agendamento. Por exemplo, é possível criar uma coleção de usuários que são membros da unidade organizacional dos Recursos Humanos nos Serviços de Domínio do Active Directory. Essa coleção é atualizada automaticamente quando novos usuários são adicionados ou removidos da unidade organizacional Recursos Humanos.<br /><br /> Por exemplo, consultas que você pode usar para criar coleções, consulte [Como criar consultas no System Center Configuration Manager](../../../../core/servers/manage/create-queries.md).|  
+|Regra de coleção de inclusão|Incluir os membros de outra coleção em uma coleção do Configuration Manager. A associação atual da coleção atual será atualizada em um agendamento se a coleção incluída for alterada.<br /><br /> Você pode adicionar várias regras de coleção de inclusão a uma coleção.<br /> |  
+|Regra de coleção de exclusão|A regra de coleta de exclusão permite que você exclua os membros de outra coleção de uma coleção do Configuration Manager. A associação da coleção atual será atualizada em um agendamento se a coleção excluída for alterada.<br /><br /> Você pode adicionar várias regras de coleção de exclusão a uma coleção. Se uma coleção incluir regras de coleção de inclusão e de coleção de exclusão e houver um conflito, a regra de coleção de exclusão terá prioridade.<br />              **Exemplo:** você cria uma coleção que contém uma regra de coleção de inclusão e uma regra de coleção de exclusão. A regra de coleção de inclusão destina-se a uma coleção de desktops da Dell. A coleção de exclusão destina-se a uma coleção de computadores com menos de 4 GB de RAM. A nova coleção conterá desktops da Dell que têm, pelo menos, 4 GB de RAM.|  
 
- 使用以下过程有助于在 Configuration Manager 中创建集合。 还可以导入在此 Configuration Manager 站点或其他 Configuration Manager 站点上创建的集合。 有关如何导出和导入集合的信息，请参阅[如何在 System Center Configuration Manager 中管理集合](../../../../core/clients/manage/collections/manage-collections.md)。  
+ Use os procedimentos a seguir para ajudá-lo a criar coleções no Configuration Manager. Também é possível importar coleções que foram criadas neste ou em outro site do Configuration Manager. Para obter informações sobre como exportar e importar coleções, consulte [Como gerenciar coleções no System Center Configuration Manager](../../../../core/clients/manage/collections/manage-collections.md).  
 
- 有关为运行 Linux 和 UNIX 的计算机创建集合的信息，请参阅 [How to manage clients for Linux and UNIX servers in System Center Configuration Manager](../../../../core/clients/manage/manage-clients-for-linux-and-unix-servers.md)（如何在 System Center Configuration Manager 中管理 Linux 和 UNIX 服务器的客户端）。  
+ Para obter informações sobre como criar coleções para computadores com Linux e UNIX, consulte [Como gerenciar clientes para servidores Linux e UNIX no System Center Configuration Manager](../../../../core/clients/manage/manage-clients-for-linux-and-unix-servers.md).  
 
-##  <a name="BKMK_1"></a> 若要创建设备集合  
+##  <a name="BKMK_1"></a> Para criar uma coleção de dispositivos  
 
-1.  在 Configuration Manager 控制台中，选择“资产和符合性” > “设备集合”。  
+1.  No console do Configuration Manager, escolha **Ativos e Conformidade** > **Coleções de Dispositivos**.  
 
-3.  在“主页”选项卡上的“创建”组中，选择“创建设备集合”。  
+3.  Na guia **Início**, no grupo **Criar**, escolha **Criar Coleção de Dispositivos**.  
 
-4.  在“常规”页面上，提供“名称”和“注释”。 然后在“限定集合”中，选择“浏览”以选择限定集合。 集合将仅包含来自限定集合的成员。  
+4.  Na página **Geral** forneça um **Nome** e um **Comentário**. Em seguida, em **Limitação de coleção**, escolha **Procurar** para selecionar uma limitação de coleção. A coleção conterá somente os membros da coleção de limitação.  
 
-5.  在“创建设备集合向导”的“成员身份规则”页上的“添加规则”列表中，选择想用于此集合的成员身份规则的类型。 可以为每个集合配置多个规则。  
+5.  Na página **Regras de Associação** do **Assistente de Criação de Coleção de Dispositivos**, na lista **Adicionar Regra**, selecione o tipo de regra de associação que você deseja usar para esta coleção. É possível configurar várias regras para cada coleção.  
 
         
-##### <a name="to-configure-a-direct-rule"></a>若要配置直接规则  
+##### <a name="to-configure-a-direct-rule"></a>Para configurar uma regra direta  
 
-1.  在“创建直接成员身份规则向导”  的“搜索资源” 页上，指定以下信息：  
+1.  Na página **Pesquisar Recursos** do **Assistente para Criar Regra de Associação Direta**, especifique as seguintes informações:  
 
--   **资源类**：选择要搜索并添加到集合的资源的类型。 从“系统资源”  值进行选择以搜索从客户端计算机返回的清单数据，或从“未知计算机”  进行选择以选择未知计算机返回的值。  
+-   **Classe de recurso**: selecione o tipo de recurso que você deseja pesquisar e adicione à coleção. Selecione um dos valores de **Recursos do Sistema** para pesquisar dados de inventário retornados de computadores cliente ou **Computador Desconhecido** para selecionar valores retornados por computadores desconhecidos.  
 
--   **属性名称**：选择与要搜索的所选资源类关联的属性。 例如，如果要按其 NetBIOS 名称来选择计算机，则在“资源类”  列表中选择“系统资源”  ，并在“属性名称”  列表中选择“NetBIOS 名称”  。  
+-   **Nome do atributo**: selecione o atributo associado à classe de recurso selecionada que você deseja pesquisar. Por exemplo, se quiser selecionar computadores por seu nome NetBIOS, selecione **Recurso do Sistema** na lista **Classe de recurso** e **Nome NetBIOS** na lista **Nome do atributo** .  
 
--   **排除标记为已过时的资源** - 如果某个客户端计算机被标记为已过时，则不会在搜索结果中包括此值。  
+-   **Excluir recursos marcados como obsoletos** – se um computador cliente estiver marcado como obsoleto, não inclua esse valor nos resultados da pesquisa.  
 
--   **排除未安装 Configuration Manager 客户端的资源** - 这些资源不会显示在搜索结果中。  
+-   **Excluir recursos que não têm o cliente do Configuration Manager instalado** – eles não serão exibidos nos resultados da pesquisa.  
 
--   **值** ：输入你要在所选属性名称搜索的值。 可以使用百分比字符 **%** 作为通配符。 例如，若要搜索 NetBIOS 名称以“M”开头的计算机，请在此字段中输入“M%”。  
+-   **Valor:** insira um valor que deseja procurar no nome do atributo selecionado. Você pode usar o caractere de porcentagem **%** como um curinga. Por exemplo, para pesquisar computadores que têm um nome NetBIOS que começa com “M”, digite **M%** nesse campo.  
 
-2.  在“选择资源”页上，在“资源”列表中选择要添加到集合的资源，然后选择“下一步”。  
+2.  Na página **Selecionar Recursos**, selecione os recursos que você deseja adicionar à coleção na lista **Recursos** e escolha **Avançar**.  
 
 
-##### <a name="to-configure-a-query-rule"></a>若要配置查询规则  
+##### <a name="to-configure-a-query-rule"></a>Para configurar uma regra de consulta  
 
-1.  在“查询规则属性”  对话框中，指定以下信息：  
+1.  Na caixa de diálogo **Propriedades de Regra de Consulta** , especifique as seguintes informações:  
 
--   “名称”：指定唯一名称。  
+-   **Nome**: especifique um nome exclusivo.  
 
--   **导入查询语句** - 打开“浏览查询”对话框，在其中可以选择要用作集合的查询规则的 [Configuration Manager 查询](../../../../core/servers/manage/create-queries.md)。   
+-   **Importar Instrução de Consulta** – Abre a caixa de diálogo **Procurar Consulta**, em que é possível selecionar uma [consulta do Configuration Manager](../../../../core/servers/manage/create-queries.md) a ser usada como a regra de consulta para a coleção.   
 
--   **资源类：**选择要搜索并添加到集合的资源的类型。 从“系统资源”  值中选择值以搜索从客户端计算机返回的清单数据，或从“未知计算机”  进行选择以选择未知计算机返回的值。  
+-   **Classe de recurso:** selecione o tipo de recurso que você deseja pesquisar e adicione à coleção. Selecione um dos valores de **Recursos do Sistema** para pesquisar dados de inventário retornados de computadores cliente ou **Computador Desconhecido** para selecionar valores retornados por computadores desconhecidos.  
 
--   **编辑查询语句** - 打开“查询语句属性”对话框，在其中可以创作要用作集合的规则的查询。 有关查询的详细信息，请参阅 [System Center Configuration Manager 的查询技术参考](../../../../core/servers/manage/queries-technical-reference.md)。  
+-   **Editar Instrução de Consulta** – Abre a caixa de diálogo **	Propriedades da Instrução da Consulta**, em que é possível criar uma consulta a ser usada como a regra para a coleção. Para obter mais informações sobre consultas, consulte [Referência técnica de consultas no System Center Configuration Manager](../../../../core/servers/manage/queries-technical-reference.md).  
 
     
-##### <a name="to-configure-an-include-collection-rule"></a>若要配置包括集合规则  
+##### <a name="to-configure-an-include-collection-rule"></a>Para configurar uma regra de coleção de inclusão  
 
-在“选择集合”对话框中，选择要包括在新集合中的集合，然后选择“确定”。  
+Na caixa de diálogo **Selecionar Coleções**, selecione as coleções que você deseja incluir na nova coleção e, em seguida, escolha **OK**.  
 
-##### <a name="to-configure-an-exclude-collection-rule"></a>若要配置排除集合规则  
+##### <a name="to-configure-an-exclude-collection-rule"></a>Para configurar uma regra de coleção de exclusão  
 
-在“选择集合”对话框中，选择要从新集合中排除的集合，然后选择“确定”。  
+Na caixa de diálogo **Selecionar Coleções**, selecione as coleções que você deseja excluir da nova coleção e, em seguida, escolha **OK**.  
 
--   **对此集合使用增量更新** - 选择此选项可定期从以前的集合评估中只扫描新资源或更改的资源，而与完全集合评估无关。 增量更新按 10 分钟间隔进行。  
+-   **Usar atualizações incrementais para esta coleção** – Selecione esta opção para examinar periodicamente apenas recursos novos ou alterados da avaliação da coleção anterior, independentemente de uma avaliação completa da coleção. Atualizações incrementais ocorrem em intervalos de 10 minutos.  
 
 > [!IMPORTANT]  
->  借助使用以下类的查询规则配置的集合不支持增量更新：  
+>  As coleções configuradas usando regras de consulta que usam as seguintes classes não dão suporte a atualizações incrementais:  
 >   
 > -   SMS_G_System_CollectedFile  
 > -   SMS_G_System_LastSoftwareScan  
@@ -104,70 +104,70 @@ ms.lasthandoff: 08/07/2017
 > -   SMS_G_System_DCMDeploymentErrorAssetDetails  
 > -   SMS_G_System_DCMDeploymentCompliantAssetDetails  
 > -   SMS_G_System_DCMDeploymentNonCompliantAssetDetails  
-> -   SMS_G_User_DCMDeploymentCompliantAssetDetails（仅用于用户集合）  
-> -   SMS_G_User_DCMDeploymentNonCompliantAssetDetails（仅用于用户集合）  
+> -   SMS_G_User_DCMDeploymentCompliantAssetDetails (somente para coleções de usuários)  
+> -   SMS_G_User_DCMDeploymentNonCompliantAssetDetails (somente para coleções de usuários)  
 > -   SMS_G_System_SoftwareUsageData  
 > -   SMS_G_System_CI_ComplianceState  
 > -   SMS_G_System_EndpointProtectionStatus  
 > -   SMS_GH_System_*  
 > -   SMS_GEH_System_*  
 
--   **对此集合计划完全更新** - 选择集合成员身份的定期完全评估。  
+-   **Agendar uma atualização completa para esta coleção** – Agende uma avaliação completa regular da associação da coleção.  
 
-6.  完成向导以创建新集合。 新集合会显示在“资产和符合性”  工作区的“设备集合”  节点中。  
+6.  Conclua o assistente para criar a nova coleção. A nova coleção é exibida no nó **Coleções de Dispositivos** do espaço de trabalho **Ativos e Conformidade** .  
 
 > [!NOTE]  
->  必须刷新或重新加载 Configuration Manager 控制台才能查看集合成员。 但是，直到进行首次计划更新，或是如果为集合手动选择“更新成员身份”之后，成员才会出现在集合中。 可能需要几分钟时间才能完成集合更新。  
+>  É necessário atualizar ou recarregar o console do Configuration Manager para ver os membros da coleção. No entanto, os membros não aparecerão na coleção até depois da primeira atualização agendada ou se você selecionar manualmente **Atualizar Associação** para a coleção. Pode levar alguns minutos para concluir uma atualização da coleção.  
 
-##  <a name="BKMK_2"></a> 若要创建用户集合  
+##  <a name="BKMK_2"></a> Para criar uma coleção de usuários  
 
-1.  在 Configuration Manager 控制台中，选择“资产和符合性” > “用户集合”。  
+1.  No console do Configuration Manager, escolha **Ativos e Conformidade** > **Coleções de Usuários**.  
 
-3.  在“主页”选项卡上的“创建”组中，选择“创建用户集合”。  
+3.  Na guia **Início**, no grupo **Criar**, escolha **Criar Coleção do Usuário**.  
 
-4.  在向导的“常规”页面上，提供“名称”和“注释”。 然后在“限定集合”中，选择“浏览”以选择限定集合。 集合将仅包含来自限定集合的成员。  
+4.  Na página **Geral** do assistente, forneça um **Nome** e um **Comentário**. Em seguida, em **Limitação de coleção**, escolha **Procurar** para selecionar uma limitação de coleção. A coleção que você está criando conterá somente os membros da coleção de limitação.  
 
-5.  在“成员身份规则”页上，指定以下内容：  
+5.  Na página **Regras de Associação**, especifique o seguinte:  
 
-    -   在“添加规则”  列表中，选择要用于此集合的成员身份规则的类型。 可以为每个集合配置多个规则。  
+    -   Na lista **Adicionar Regra** , selecione o tipo de regra de associação que deseja usar para esta coleção. É possível configurar várias regras para cada coleção.  
 
-##### <a name="to-configure-a-direct-rule"></a>若要配置直接规则  
+##### <a name="to-configure-a-direct-rule"></a>Para configurar uma regra direta  
 
-1.  在“创建直接成员身份规则向导”的“搜索资源”页上，指定：  
+1.  Na página **Pesquisar Recursos** do **Assistente de Criação de Regra de Associação Direta**, especifique:  
 
--   **资源类**：选择要搜索并添加到集合的资源的类型。 从“用户资源”值中进行选择以搜索 Configuration Manager 收集的用户信息，或从“用户组资源”中进行选择以搜索 Configuration Manager 收集的用户组信息。  
+-   **Classe de recurso**: selecione o tipo de recurso que você deseja pesquisar e adicione à coleção. Selecione os valores de **Recurso de Usuário** para pesquisar informações de usuário coletadas pelo Configuration Manager ou de **Recurso do Grupo de Usuários** para pesquisar informações de grupo de usuários coletadas pelo Configuration Manager.  
 
--   **属性名称**：选择与要搜索的资源类关联的属性。 例如，如果要按其组织单位 (OU) 名称来选择用户，则在“资源类”  列表中选择“用户资源”  ，并在“属性名称”  列表中选择“用户组织单位名称”  。  
+-   **Nome do atributo**: selecione o atributo associado à classe de recurso que você deseja pesquisar. Por exemplo, se quiser selecionar os usuários por nome de UO (Unidade Organizacional), selecione **Recurso de Usuário** na lista **Classe de recurso** e **Nome de UO de usuário** na lista **Nome do atributo** .  
 
--   **值：**输入想要搜索的值。 可以使用百分比字符 **%** 作为通配符。 例如，如果要搜索 Contoso OU 中的用户，请在此字段中输入“Contoso”。  
+-   **Valor:** insira um valor que você deseja pesquisar. Você pode usar o caractere de porcentagem **%** como um curinga. Por exemplo, para pesquisar usuários na UO da Contoso, digite **Contoso** neste campo.  
 
-2.  在“选择资源”页上，在“资源”列表中选择要添加到集合的资源。  
+2.  Na página **Selecionar Recursos**, selecione os recursos que você deseja adicionar à coleção na lista **Recursos**.  
 
-##### <a name="to-configure-a-query-rule"></a>若要配置查询规则  
+##### <a name="to-configure-a-query-rule"></a>Para configurar uma regra de consulta  
 
-1.  在“查询规则属性”对话框中，提供：  
+1.  Na caixa de diálogo **Propriedades da Regra de consulta**, forneça:  
 
--   **名称**：唯一名称。  
+-   **Nome**: um nome exclusivo.  
 
--   **导入查询语句** - 打开“浏览查询”对话框，在其中可以选择要用作集合的查询规则的 [Configuration Manager 查询](../../../../core/servers/manage/queries-technical-reference.md)。  
+-   **Importar Instrução de Consulta** – Abre a caixa de diálogo **Procurar Consulta**, em que é possível selecionar uma [consulta do Configuration Manager](../../../../core/servers/manage/queries-technical-reference.md) a ser usada como a regra de consulta para a coleção.  
 
--   **资源类**：选择要搜索并添加到集合的资源的类型。 从“用户资源”值中进行选择以搜索 Configuration Manager 收集的用户信息，或从“用户组资源”中进行选择以搜索 Configuration Manager 收集的用户组信息。  
+-   **Classe de recurso**: selecione o tipo de recurso que você deseja pesquisar e adicione à coleção. Selecione os valores de **Recurso de Usuário** para pesquisar informações de usuário coletadas pelo Configuration Manager ou de **Recurso do Grupo de Usuários** para pesquisar informações de grupo de usuários coletadas pelo Configuration Manager.  
 
--   **编辑查询语句** - 打开“查询语句属性”对话框，在其中可以[创作查询](../../../../core/servers/manage/queries-technical-reference.md)以将其用作集合的规则。  
+-   **Editar Instrução de Consulta** – Abre a caixa de diálogo **Propriedades da Instrução da Consulta**, em que é possível [criar uma consulta](../../../../core/servers/manage/queries-technical-reference.md) a ser usada como a regra para a coleção.  
 
-##### <a name="to-configure-an-include-collection-rule"></a>若要配置包括集合规则  
+##### <a name="to-configure-an-include-collection-rule"></a>Para configurar uma regra de coleção de inclusão  
 
-在“选择集合”对话框中，选择要包括在新集合中的集合，然后选择“确定”。  
+Na caixa de diálogo **Selecionar Coleções**, selecione as coleções que você deseja incluir na nova coleção e, em seguida, escolha **OK**.  
 
-##### <a name="to-configure-an-exclude-collection-rule"></a>若要配置排除集合规则  
+##### <a name="to-configure-an-exclude-collection-rule"></a>Para configurar uma regra de coleção de exclusão  
 
-在“选择集合”对话框中，选择要从新集合中排除的集合，然后选择“确定”。  
+Na caixa de diálogo **Selecionar Coleções**, selecione as coleções que você deseja excluir da nova coleção e, em seguida, escolha **OK**.  
 
 
--   **对此集合使用增量更新** - 选择此选项可定期从以前的集合评估中只扫描新资源或更改的资源，而与完全集合评估无关。 增量更新按 10 分钟间隔进行。  
+-   **Usar atualizações incrementais para esta coleção** – Selecione esta opção para examinar periodicamente apenas recursos novos ou alterados da avaliação da coleção anterior, independentemente de uma avaliação completa da coleção. Atualizações incrementais ocorrem em intervalos de 10 minutos.  
 
 > [!IMPORTANT]  
->  借助使用以下类的查询规则配置的集合不支持增量更新：  
+>  As coleções configuradas usando regras de consulta que usam as seguintes classes não dão suporte a atualizações incrementais:  
 >   
 > -   SMS_G_System_CollectedFile  
 > -   SMS_G_System_LastSoftwareScan  
@@ -176,32 +176,32 @@ ms.lasthandoff: 08/07/2017
 > -   SMS_G_System_DCMDeploymentErrorAssetDetails  
 > -   SMS_G_System_DCMDeploymentCompliantAssetDetails  
 > -   SMS_G_System_DCMDeploymentNonCompliantAssetDetails  
-> -   SMS_G_User_DCMDeploymentCompliantAssetDetails（仅用于用户集合）  
-> -   SMS_G_User_DCMDeploymentNonCompliantAssetDetails（仅用于用户集合）  
+> -   SMS_G_User_DCMDeploymentCompliantAssetDetails (somente para coleções de usuários)  
+> -   SMS_G_User_DCMDeploymentNonCompliantAssetDetails (somente para coleções de usuários)  
 > -   SMS_G_System_SoftwareUsageData  
 > -   SMS_G_System_CI_ComplianceState  
 > -   SMS_G_System_EndpointProtectionStatus  
 > -   SMS_GH_System_*  
 > -   SMS_GEH_System_*  
 
--   **对此集合计划完全更新** - 选择集合成员身份的定期完全评估。  
+-   **Agendar uma atualização completa para esta coleção** – Agende uma avaliação completa regular da associação da coleção.  
 
-6.  完成向导。 新集合会显示在“资产和符合性”  工作区的“用户集合”  节点中。  
+6.  Conclua o assistente. A nova coleção é exibida no nó **Coleções de Usuários** do espaço de trabalho **Ativos e Conformidade** .  
 
 > [!NOTE]  
->  必须刷新或重新加载 Configuration Manager 控制台才能查看集合成员。 但是，直到进行首次计划更新，或是你为集合手动选择“更新成员身份”  之后，成员才会出现在集合中。 可能需要几分钟时间才能完成集合更新。  
+>  É necessário atualizar ou recarregar o console do Configuration Manager para ver os membros da coleção. No entanto, os membros não aparecerão na coleção até após a primeira atualização agendada ou selecionar manualmente **Atualizar Associação** para a coleção. Pode levar alguns minutos para concluir uma atualização da coleção.  
 
-##  <a name="BKMK_3"></a> 若要导入集合  
+##  <a name="BKMK_3"></a> Para importar uma coleção  
 
-1.  在 Configuration Manager 控制台中，依次选择“资产和符合性” > “用户集合”或“设备集合”。  
+1.  No console do Configuration Manager, escolha **Ativos e Conformidade** > **Coleções de Usuários** ou **Coleções de Dispositivos**.  
 
-3.  在“主页”选项卡上的“创建”组中，选择“导入集合”。  
+3.  Na guia **Início**, no grupo **Criar**, escolha **Importar Coleções**.  
 
-4.  在“导入集合向导” 的“常规”页上，选择“下一步”。  
+4.  Na página **Geral** do **Assistente de Importação de Coleções**, escolha **Avançar**.  
 
-5.  在“MOF 文件名”页上，选择“浏览”，然后浏览到包含要导入的集合信息的 MOF 文件。  
+5.  Na página **Nome do Arquivo MOF**, escolha **Procurar** e, em seguida, navegue até o arquivo MOF que contém as informações de coleção que você deseja importar.  
 
     > [!NOTE]  
-    >  要导入的文件必须已从运行与此相同的 Configuration Manager 版本的站点导出。 有关导出集合的详细信息，请参阅[如何在 System Center Configuration Manager 中管理集合](../../../../core/clients/manage/collections/manage-collections.md)。  
+    >  O arquivo que você deseja importar deve ter sido exportado de um site que executa a mesma versão do Configuration Manager que esse. Para obter mais informações sobre como exportar coleções, consulte [Como gerenciar coleções no System Center Configuration Manager](../../../../core/clients/manage/collections/manage-collections.md).  
 
-6.  完成向导以导入集合。 新集合会显示在“资产和符合性”  工作区的“用户集合”  或“设备集合”  节点中。 刷新或重新加载 Configuration Manager 控制台才能查看新导入的集合的集合成员。  
+6.  Conclua o assistente para importar a coleção. A nova coleção é exibida no nó **Coleções de Usuários** ou **Coleções de Dispositivos** do espaço de trabalho **Ativos e Conformidade** . Atualize ou recarregue o console do Configuration Manager para ver os membros da coleção recém-importada.  

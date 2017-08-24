@@ -1,6 +1,6 @@
 ---
-title: "内容源位置 | Microsoft Docs"
-description: "了解如何设置 System Center Configuration Manager，使客户端在慢速网络上查找内容。"
+title: "Localização de fonte de conteúdo | Microsoft Docs"
+description: "Saiba mais sobre as configurações do System Center Configuration Manager que permitem que os clientes localizem conteúdo em uma rede lenta."
 ms.custom: na
 ms.date: 1/3/2017
 ms.reviewer: na
@@ -17,239 +17,239 @@ manager: angrobe
 ms.openlocfilehash: a823458dc3b891b1c32d1cb44a96e8cafd376ed5
 ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
 ms.translationtype: HT
-ms.contentlocale: zh-CN
+ms.contentlocale: pt-BR
 ms.lasthandoff: 08/07/2017
 ---
-# <a name="content-source-location-scenarios-in-system-center-configuration-manager"></a>System Center Configuration Manager 中内容源位置方案
+# <a name="content-source-location-scenarios-in-system-center-configuration-manager"></a>Cenários de local de origem de conteúdo no System Center Configuration Manager
 
-*适用范围：System Center Configuration Manager (Current Branch)*
+*Aplica-se a: System Center Configuration Manager (Branch Atual)*
 
-在 1610 版之前，System Center Configuration Manager 支持将几个设置结合起来，以便定义网络较慢时，客户端查找内容的方式和位置。 可能的组合会影响客户端使用内容位置，以及在首选内容的源不可用时它们是否可以使用回退位置。  
+Nas versões anteriores à 1610, o System Center Configuration Manager dava suporte a várias configurações que se combinavam para definir como e onde os clientes encontravam conteúdo quando estivessem em uma rede lenta. As combinações possíveis afetam o local do conteúdo que os clientes usam e se eles podem usar um local de fallback com êxito quando uma origem preferencial de conteúdo não estiver disponível.  
 
 > [!IMPORTANT]  
-> **如果站点运行版本 1511、1602 或 1606**，则本主题中的信息适用于用户的基础结构。 另请参阅[版本 1511、1602 和 1606 的边界组](/sccm/core/servers/deploy/configure/boundary-groups-for-1511-1602-and-1606)，了解特定于这些版本的 Configuration Manager 的边界组的信息。
+> **Se seus sites executam a versão 1511, 1602 ou 1606**, as informações neste tópico aplicam-se à sua infraestrutura. Consulte também [Grupos de limites para as versões 1511, 1602 e 1606](/sccm/core/servers/deploy/configure/boundary-groups-for-1511-1602-and-1606) para obter informações específicas para grupos de limites com essas versões do Configuration Manager.
 >
-> **如果站点运行版本 1610 或更高版本**，请使用[为 System Center Configuration Manager 定义站点边界和边界组](/sccm/core/servers/deploy/configure/define-site-boundaries-and-boundary-groups#boundary-groups)中的信息，了解客户端如何查找包含可用内容的分发点。
+> **Se seus sites executam a versão 1610 ou posterior**, use as informações em [Definir limites de site e grupos de limites para o System Center Configuration Manager](/sccm/core/servers/deploy/configure/define-site-boundaries-and-boundary-groups#boundary-groups) para entender como os clientes localizam pontos de distribuição com conteúdo disponível.
 
 
 
 
 
-**以下三个设置定义了在客户端请求内容时的行为：**
+**As três configurações a seguir definem o comportamento quando os clientes solicitam conteúdo:**
 
--  **允许内容源位置回退**（已启用或未启用）：这是可以在分发点的“边界组”选项卡上启用的选项。 这使客户端可以使用配置为在内容在首选分发点上不可用时的回退位置的分发点。  
+-  **Permitir local de origem de fallback para conteúdo** (habilitada ou não habilitada): essa é uma opção que você pode habilitar na guia **Grupos de Limites** de um ponto de distribuição. Isso permite que o cliente use um ponto de distribuição configurado como um local de fallback quando o conteúdo não estiver disponível em um ponto de distribuição preferencial.  
 
- - **网络连接速度的部署行为**：每个部署都使用在分发点连接速度较慢时要使用的以下行为之一进行配置：  
+ - **Comportamento de implantação para velocidade de conexão de rede**: cada implantação é configurada com um dos seguintes comportamentos a ser usado quando a conexão com o ponto de distribuição estiver lenta:  
 
-    -   **从分发点下载内容并在本地运行**  
+    -   **Baixar conteúdo do ponto de distribuição e executá-lo localmente**  
 
-    -   **不下载内容**：仅当客户端使用回退位置获取内容时，才使用此选项。  
+    -   **Não baixar conteúdo**: essa opção é usada apenas quando um cliente usa um local de fallback para obter conteúdo.  
 
-    分发点的连接速度在边界组的“引用”选项卡上进行配置，特定于该边界组。  
+    A velocidade da conexão para um ponto de distribuição é configurada na guia **Referências** de um grupo de limites e é específica a esse grupo de limites.  
 
- -  **按需包分发**（分发到首选分发点）：在包或应用程序属性的“分发设置”选项卡上选择选项“将此包的内容分发到首选分发点”时，会启用此选项。 启用时，此选项会指示 Configuration Manager 在客户端从首选分发点请求内容之后自动将该内容复制到尚未获得该内容的该分发点。  
+ -  **Distribuição de pacote sob demanda** (a pontos de distribuição preferenciais): isso é habilitado quando você seleciona a opção **Distribuir o conteúdo deste pacote para os pontos de distribuição preferenciais** na guia **Configurações de Distribuição** das propriedades de um pacote ou de um aplicativo. Quando habilitada, essa opção orienta o Configuration Manager a copiar automaticamente o conteúdo para um ponto de distribuição preferencial que ainda não tem o conteúdo depois que um cliente solicita esse conteúdo desse ponto de distribuição.  
 
 
- **将以下要求应用到所有方案：**
+ **Os seguintes requisitos se aplicam a todos os cenários:**
 
 
--   内容在回退分发点上可用  
+-   O conteúdo está disponível em um ponto de distribuição de fallback  
 
--   分发点处于联机状态且可以访问  
+-   Os pontos de distribuição estão online e acessíveis  
 
 
-## <a name="scenario-1"></a>方案 1  
- 在以下配置存在时适用：  
+## <a name="scenario-1"></a>Cenário 1  
+ Aplica-se na seguinte configuração:  
 
--   **内容在首选分发点上可用**  
+-   **O conteúdo está disponível em um ponto de distribuição preferencial**  
 
--   **允许回退**：未启用  
+-   **Permitir fallback**: não habilitada  
 
--   **慢速网络的部署行为**：任何部署  
+-   **Comportamento de implantação para rede lenta**: qualquer configuração  
 
 
-**详细信息：**（按需包分发的包配置与此方案无关。）  
+**Detalhes:** (a configuração de distribuição de pacote sob demanda não é relevante nesse cenário).  
 
-1.  客户端向管理点发送内容请求。  
+1.  O cliente envia uma solicitação de conteúdo para o ponto de gerenciamento.  
 
-2.  管理点将内容位置列表返回到客户端，其中包含具有内容的首选分发点。  
+2.  Uma lista do local do conteúdo é devolvida ao cliente do ponto de gerenciamento com os pontos de distribuição preferenciais que contêm o conteúdo.  
 
-3.  客户端从列表上的首选分发点中下载内容。  
+3.  O cliente baixa o conteúdo de um ponto de distribuição preferencial na lista.  
 
-## <a name="scenario-2"></a>方案 2  
- 以下配置存在：  
+## <a name="scenario-2"></a>Cenário 2  
+ A configuração é a seguinte:  
 
--   **内容在首选分发点上可用**  
+-   **O conteúdo está disponível em um ponto de distribuição preferencial**  
 
--   **允许回退**：已启用  
+-   **Permitir fallback**: habilitada  
 
--   **慢速网络的部署行为**：不下载内容  
+-   **Comportamento de implantação para rede lenta**: não baixar conteúdo  
 
 
-**详细信息：**（按需包分发的包配置与此方案无关。）  
+**Detalhes:** (a configuração de distribuição de pacote sob demanda não é relevante nesse cenário).  
 
-1.  客户端向管理点发送内容请求。 客户端随请求包括一个标志，该标志指明允许回退分发点。  
+1.  O cliente envia uma solicitação de conteúdo para o ponto de gerenciamento. O cliente inclui um sinalizador com a solicitação que indica que pontos de distribuição de fallback são permitidos.  
 
-2.  管理点将内容位置列表返回到客户端，其中包含具有内容的首选分发点和回退分发点。  
+2.  Uma lista do local do conteúdo é devolvida ao cliente do ponto de gerenciamento com os pontos de distribuição preferenciais e os pontos de distribuição de fallback que contêm o conteúdo.  
 
-3.  客户端从列表上的首选分发点中下载内容。  
+3.  O cliente baixa o conteúdo de um ponto de distribuição preferencial na lista.  
 
-## <a name="scenario-3"></a>方案 3  
- 以下配置存在：  
+## <a name="scenario-3"></a>Cenário 3:  
+ A configuração é a seguinte:  
 
--   **内容在首选分发点上可用**  
+-   **O conteúdo está disponível em um ponto de distribuição preferencial**  
 
--   **允许回退**：已启用  
+-   **Permitir fallback**: habilitada  
 
--   **慢速网络的部署行为**：下载和安装内容  
+-   **Comportamento de implantação para rede lenta**: baixar e instalar conteúdo  
 
 
-**详细信息：**（按需包分发的包配置与此方案无关。）  
+**Detalhes:** (a configuração de distribuição de pacote sob demanda não é relevante nesse cenário).  
 
-1.  客户端向管理点发送内容请求。 客户端随请求包括一个标志，该标志指明允许回退分发点。  
+1.  O cliente envia uma solicitação de conteúdo para o ponto de gerenciamento. O cliente inclui um sinalizador com a solicitação que indica que pontos de distribuição de fallback são permitidos.  
 
-2.  管理点将内容位置列表返回到客户端，其中包含具有内容的首选分发点和回退分发点。  
+2.  Uma lista do local do conteúdo é devolvida ao cliente do ponto de gerenciamento com os pontos de distribuição preferenciais e os pontos de distribuição de fallback que contêm o conteúdo.  
 
-3.  客户端从列表上的首选分发点中下载内容。  
+3.  O cliente baixa o conteúdo de um ponto de distribuição preferencial na lista.  
 
-## <a name="scenario-4"></a>方案 4  
- 以下配置存在：  
+## <a name="scenario-4"></a>Cenário 4  
+ A configuração é a seguinte:  
 
--   **内容在首选分发点上不可用**  
+-   **O conteúdo não está disponível em um ponto de distribuição preferencial**  
 
--   **将此包的内容分发到首选分发点**：未启用  
+-   **Distribuir o conteúdo deste pacote para os pontos de distribuição preferenciais** não está habilitada  
 
--   **允许回退**：未启用  
+-   **Permitir fallback**: não habilitada  
 
--   **慢速网络的部署行为**：任何部署  
+-   **Comportamento de implantação para rede lenta**: qualquer configuração  
 
 
-**详细信息：**  
+**Detalhes:**  
 
-1.  客户端向管理点发送内容请求。  
+1.  O cliente envia uma solicitação de conteúdo para o ponto de gerenciamento.  
 
-2.  管理点将内容位置列表返回到客户端，其中包含具有内容的首选分发点。 列表中没有首选分发点。  
+2.  Uma lista do local do conteúdo é devolvida ao cliente do ponto de gerenciamento com os pontos de distribuição preferenciais que têm o conteúdo. Não há pontos de distribuição preferenciais na lista.  
 
-3.  客户端失败，出现消息“内容不可用”  ，并进入重试模式。 新内容请求每小时启动一次。  
+3.  O cliente falha com a mensagem **O conteúdo não está disponível** e entra no modo de repetição. Uma nova solicitação de conteúdo é iniciada a cada hora.  
 
-## <a name="scenario-5"></a>方案 5  
- 以下配置存在：  
+## <a name="scenario-5"></a>Cenário 5  
+ A configuração é a seguinte:  
 
--   **内容在首选分发点上不可用**  
+-   **O conteúdo não está disponível em um ponto de distribuição preferencial**  
 
--   **将此包的内容分发到首选分发点**：未启用  
+-   **Distribuir o conteúdo deste pacote para os pontos de distribuição preferenciais** não está habilitada  
 
--   **允许回退**：已启用  
+-   **Permitir fallback**: habilitada  
 
--   **慢速网络的部署行为**：不下载内容  
+-   **Comportamento de implantação para rede lenta**: não baixar conteúdo  
 
 
-**详细信息：**  
+**Detalhes:**  
 
-1.  客户端向管理点发送内容请求。 客户端随请求包括一个标志，该标志指明允许回退分发点。  
+1.  O cliente envia uma solicitação de conteúdo para o ponto de gerenciamento. O cliente inclui um sinalizador com a solicitação que indica que pontos de distribuição de fallback são permitidos.  
 
-2.  管理点将内容位置列表返回到客户端，其中包含具有内容的首选分发点和回退分发点。 没有具有内容的首选分发点，但至少一个回退分发点具有内容。  
+2.  Uma lista do local do conteúdo é devolvida ao cliente do ponto de gerenciamento com os pontos de distribuição preferenciais e os pontos de distribuição de fallback que têm o conteúdo. Não há pontos de distribuição preferenciais que têm o conteúdo, mas pelo menos um ponto de distribuição de fallback possui o conteúdo.  
 
-3.  不会下载内容，原因是当客户端使用回退分发点时的部署属性设置为“不下载内容”（这在客户端进行回退以获取内容时使用）。 客户端失败，出现消息“内容不可用”  ，并进入重试模式。 客户端每小时发送一次新内容请求。  
+3.  O conteúdo não é baixado, pois a propriedade de implantação referente a quando o cliente usa um ponto de distribuição de fallback está definida como **Não baixar conteúdo** (que é usada quando os clientes fazem fallback para obter o conteúdo). O cliente falha com a mensagem **O conteúdo não está disponível** e entra no modo de repetição. O cliente faz uma nova solicitação de conteúdo a cada hora.  
 
-## <a name="scenario-6"></a>方案 6  
- 以下配置存在：  
+## <a name="scenario-6"></a>Cenário 6  
+ A configuração é a seguinte:  
 
--   **内容在首选分发点上不可用**  
+-   **O conteúdo não está disponível em um ponto de distribuição preferencial**  
 
--   **将此包的内容分发到首选分发点**：未启用  
+-   **Distribuir o conteúdo deste pacote para os pontos de distribuição preferenciais** não está habilitada  
 
--   **允许回退**：已启用  
+-   **Permitir fallback**: habilitada  
 
--   **慢速网络的部署行为**：下载和安装内容  
+-   **Comportamento de implantação para rede lenta**: baixar e instalar conteúdo  
 
 
-**详细信息：**  
+**Detalhes:**  
 
-1.  客户端向管理点发送内容请求。 客户端随请求包括一个标志，该标志指明启用了回退分发点。  
+1.  O cliente envia uma solicitação de conteúdo para o ponto de gerenciamento. O cliente inclui um sinalizador com a solicitação que indica que pontos de distribuição de fallback estão habilitados.  
 
-2.  管理点将内容位置列表返回到客户端，其中包含具有内容的首选分发点和回退分发点。 没有具有内容的首选分发点，但有至少一个具有内容的回退分发点。  
+2.  Uma lista do local do conteúdo é devolvida ao cliente do ponto de gerenciamento com os pontos de distribuição preferenciais e os pontos de distribuição de fallback que têm o conteúdo. Não há pontos de distribuição preferenciais que têm o conteúdo, mas pelo menos um ponto de distribuição de fallback que possui o conteúdo.  
 
-3.  将从列表上的回退分发点中下载内容，原因是当客户端使用回退分发点时的部署属性设置为“下载和安装内容” 。  
+3.  O conteúdo é baixado de um ponto de distribuição de fallback na lista, pois a propriedade de implantação referente a quando o cliente usa um ponto de distribuição de fallback está definida como **Baixar e instalar o conteúdo**.  
 
-## <a name="scenario-7"></a>方案 7  
- 以下配置存在：  
+## <a name="scenario-7"></a>Cenário 7  
+ A configuração é a seguinte:  
 
--   **内容在首选分发点上不可用**  
+-   **O conteúdo não está disponível em um ponto de distribuição preferencial**  
 
--   **将此包的内容分发到首选分发点**：已启用  
+-   **Distribuir o conteúdo deste pacote para os pontos de distribuição preferenciais** está habilitada  
 
--   **允许回退**：未启用  
+-   **Permitir fallback**: não habilitada  
 
--   **慢速网络的部署行为**：任何部署  
+-   **Comportamento de implantação para rede lenta**: qualquer configuração  
 
 
-**详细信息：**  
+**Detalhes:**  
 
-1.  客户端向管理点发送内容请求。  
+1.  O cliente envia uma solicitação de conteúdo para o ponto de gerenciamento.  
 
-2.  管理点将内容位置列表返回到客户端，其中包含具有内容的首选分发点。 没有具有内容的首选分发点。  
+2.  Uma lista do local do conteúdo é devolvida ao cliente do ponto de gerenciamento com os pontos de distribuição preferenciais que têm o conteúdo. Não há nenhum ponto de distribuição preferencial que tenha o conteúdo.  
 
-3.  客户端失败，出现消息“内容不可用”  ，并进入重试模式。 新内容请求每小时进行一次。  
+3.  O cliente falha com a mensagem **O conteúdo não está disponível** e entra no modo de repetição. Uma nova solicitação de conteúdo é feita a cada hora.  
 
-4.  管理点会为分发管理器创建一个触发器，以针对进行内容请求的客户端将内容分发给所有首选分发点。  
+4.  O ponto de gerenciamento cria um gatilho para que o Gerenciador de Distribuição distribua o conteúdo a todos os pontos de distribuição do cliente que fez a solicitação de conteúdo.  
 
-5.  分发管理器将内容分发给所有首选分发点。 大多数情况下会在一小时之内将内容成功分发到首选分发点。  
+5.  O Gerenciador de Distribuição distribui o conteúdo para todos os pontos de distribuição preferenciais. Na maioria dos casos, o conteúdo é distribuído com êxito para os pontos de distribuição preferenciais em até uma hora.  
 
-6.  客户端向管理点发出一个新的内容请求。  
+6.  Uma nova solicitação de conteúdo é iniciada pelo cliente para o ponto de gerenciamento.  
 
-7.  管理点将内容位置列表返回到客户端，其中包含具有内容的首选分发点。 客户端从列表上的首选分发点中下载内容。  
+7.  Uma lista do local do conteúdo é devolvida ao cliente do ponto de gerenciamento com os pontos de distribuição preferenciais que têm o conteúdo. O cliente baixa o conteúdo de um ponto de distribuição preferencial na lista.  
 
-## <a name="scenario-8"></a>方案 8  
- 以下配置存在：  
+## <a name="scenario-8"></a>Cenário 8  
+ A configuração é a seguinte:  
 
--   **内容在首选分发点上不可用**  
+-   **O conteúdo não está disponível em um ponto de distribuição preferencial**  
 
--   **将此包的内容分发到首选分发点**：已启用  
+-   **Distribuir o conteúdo deste pacote para os pontos de distribuição preferenciais** está habilitada  
 
--   **允许回退**：已启用  
+-   **Permitir fallback**: habilitada  
 
--   **慢速网络的部署行为**：不下载内容  
+-   **Comportamento de implantação para rede lenta**: não baixar conteúdo  
 
 
-**详细信息：**  
+**Detalhes:**  
 
-1.  客户端向管理点发送内容请求。 客户端随请求包括一个标志，该标志指明允许回退分发点。  
+1.  O cliente envia uma solicitação de conteúdo para o ponto de gerenciamento. O cliente inclui um sinalizador com a solicitação que indica que pontos de distribuição de fallback são permitidos.  
 
-2.  管理点将内容位置列表返回到客户端，其中包含具有内容的首选分发点和回退分发点。 没有具有内容的首选分发点，但至少一个回退分发点具有内容。  
+2.  Uma lista do local do conteúdo é devolvida ao cliente do ponto de gerenciamento com os pontos de distribuição preferenciais e os pontos de distribuição de fallback que têm o conteúdo. Não há pontos de distribuição preferenciais que têm o conteúdo, mas pelo menos um ponto de distribuição de fallback possui o conteúdo.  
 
-3.  不会下载内容，原因是当客户端使用回退分发点时的部署属性设置为“不要下载” 。 客户端失败，出现消息“内容不可用”  ，并进入重试模式。 客户端每小时发送一次新内容请求。  
+3.  O conteúdo não é baixado, pois a propriedade de implantação referente a quando o cliente usa um ponto de distribuição de fallback está definida como **Não baixar**. O cliente falha com a mensagem **O conteúdo não está disponível** e entra no modo de repetição. O cliente faz uma nova solicitação de conteúdo a cada hora.  
 
-4.  管理点会为分发管理器创建一个触发器，以针对进行内容请求的客户端将内容分发给所有首选分发点。  
+4.  O ponto de gerenciamento cria um gatilho para que o Gerenciador de Distribuição distribua o conteúdo a todos os pontos de distribuição do cliente que fez a solicitação de conteúdo.  
 
-5.  分发管理器将内容分发给所有首选分发点。 大多数情况下会在一小时之内将内容成功分发到首选分发点。  
+5.  O Gerenciador de Distribuição distribui o conteúdo para todos os pontos de distribuição preferenciais. Na maioria dos casos, o conteúdo é distribuído com êxito para os pontos de distribuição preferenciais em até uma hora.  
 
-6.  客户端向管理点发出一个新的内容请求。  
+6.  Uma nova solicitação de conteúdo é iniciada pelo cliente para o ponto de gerenciamento.  
 
-7.  管理点将内容位置列表返回到客户端，其中包含具有内容的首选分发点。  
+7.  Uma lista do local do conteúdo é devolvida ao cliente do ponto de gerenciamento com os pontos de distribuição preferenciais que têm o conteúdo.  
 
-8.  客户端从列表上的首选分发点中下载内容。  
+8.  O cliente baixa o conteúdo de um ponto de distribuição preferencial na lista.  
 
-## <a name="scenario-9"></a>方案 9  
- 以下配置存在：  
+## <a name="scenario-9"></a>Cenário 9  
+ A configuração é a seguinte:  
 
--   **内容在首选分发点上不可用**  
+-   **O conteúdo não está disponível em um ponto de distribuição preferencial**  
 
--   **将此包的内容分发到首选分发点**：已启用  
+-   **Distribuir o conteúdo deste pacote para os pontos de distribuição preferenciais** está habilitada  
 
--   **允许回退**：已启用  
+-   **Permitir fallback**: habilitada  
 
--   **慢速网络的部署行为**：下载和安装内容  
+-   **Comportamento de implantação para rede lenta**: baixar e instalar conteúdo  
 
 
-**详细信息：**  
+**Detalhes:**  
 
-1.  客户端向管理点发送内容请求。 客户端随请求包括一个标志，该标志指明允许回退分发点。  
+1.  O cliente envia uma solicitação de conteúdo para o ponto de gerenciamento. O cliente inclui um sinalizador com a solicitação que indica que pontos de distribuição de fallback são permitidos.  
 
-2.  管理点将内容位置列表返回到客户端，其中包含具有内容的首选分发点和回退分发点。 没有具有内容的首选分发点，但至少一个回退分发点具有内容。  
+2.  Uma lista do local do conteúdo é devolvida ao cliente do ponto de gerenciamento com os pontos de distribuição preferenciais e os pontos de distribuição de fallback que têm o conteúdo. Não há pontos de distribuição preferenciais que têm o conteúdo, mas pelo menos um ponto de distribuição de fallback possui o conteúdo.  
 
-3.  将从列表上的回退分发点中下载内容，原因是当客户端使用回退分发点时的部署属性设置为“下载和安装内容” 。 此部署设置启用了一个客户端，该客户端必须使用回退内容位置以从该位置获取内容。  
+3.  O conteúdo é baixado de um ponto de distribuição de fallback na lista, pois a propriedade de implantação referente a quando o cliente usa um ponto de distribuição de fallback está definida como **Baixar e instalar o conteúdo**. Essa configuração de implantação habilita um cliente que deve usar um local de fallback de conteúdo, a obter o conteúdo desse local.  
 
-4.  管理点会为分发管理器创建一个触发器，以针对进行内容请求的客户端将内容分发给所有首选分发点。  
+4.  O ponto de gerenciamento cria um gatilho para que o Gerenciador de Distribuição distribua o conteúdo a todos os pontos de distribuição do cliente que fez a solicitação de conteúdo.  
 
-5.  分发管理器会将内容分发给所有首选分发点，从而使其他客户端可以在不使用回退分发点的情况下获取内容。  
+5.  O Gerenciador de Distribuição distribui o conteúdo a todos os pontos de distribuição preferenciais, o que permite que clientes adicionais obtenham o conteúdo sem usar um ponto de distribuição de fallback.  

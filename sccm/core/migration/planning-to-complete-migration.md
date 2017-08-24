@@ -1,6 +1,6 @@
 ---
-title: "完成迁移 | Microsoft Docs"
-description: "了解如何在源层次结构不再包含数据后，完成到 System Center Configuration Manager 目标层次结构的迁移。"
+title: "Concluir a migração | Microsoft Docs"
+description: "Saiba como concluir a migração para uma hierarquia de destino do System Center Configuration Manager depois que uma hierarquia de origem não contiver dados."
 ms.custom: na
 ms.date: 1/12/2017
 ms.prod: configuration-manager
@@ -18,43 +18,43 @@ manager: angrobe
 ms.openlocfilehash: eb1d2e320df02b26423ed4341d5bd1568b9444ad
 ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
 ms.translationtype: HT
-ms.contentlocale: zh-CN
+ms.contentlocale: pt-BR
 ms.lasthandoff: 08/07/2017
 ---
-# <a name="plan-to-complete-migration-in-system-center-configuration-manager"></a>规划在 System Center Configuration Manager 中完成迁移
+# <a name="plan-to-complete-migration-in-system-center-configuration-manager"></a>Planejamento da conclusão da migração no System Center Configuration Manager
 
-*适用范围：System Center Configuration Manager (Current Branch)*
+*Aplica-se a: System Center Configuration Manager (Branch Atual)*
 
-对于 System Center Configuration Manager，当源层次结构不再包含要迁移到目标层次结构的数据时，可以完成迁移过程。 完成迁移包括下列常规步骤：  
+Com o System Center Configuration Manager, é possível concluir o processo de migração quando a hierarquia de origem já não contiver mais dados que você queira migrar para a hierarquia de destino. A conclusão da migração inclui as seguintes etapas gerais:  
 
--   确保已迁移所需的数据。 从源层次结构中完成迁移之前，请确保已经从源层次结构中成功迁移了目标层次结构中所需的所有资源。 这可以包括数据和客户端。  
+-   Verificar se os dados necessários foram migrados. Antes de concluir a migração de uma hierarquia de origem, verifique se todos os recursos de que você necessita foram migrados com êxito da hierarquia de origem para a hierarquia de destino. Isso pode incluir dados e clientes.  
 
--   停止从源站点收集数据。 若要从源层次结构中完成迁移，必须首先停止从源站点收集数据。  
+-   Pare a coleta de dados dos sites de origem. Para concluir a migração de uma hierarquia de origem, primeiro você deverá parar a coleta de dados dos sites de origem.  
 
--   清理迁移数据。 从源层次结构内的所有源站点中停止收集数据后，可以从目标层次结构的数据库中删除关于迁移过程和源层次结构的数据。  
+-   Limpar dados de migração. Depois de parar a coleta de dados de todos os sites de origem em uma hierarquia de origem, você poderá remover os dados sobre o processo de migração e sobre a hierarquia de origem do banco de dados da hierarquia de destino.  
 
--   解除源层次结构授权。 从源层次结构中完成迁移并且该层次结构不再包含你管理的资源之后，可以解除该源层次结构中站点的授权以及从环境中删除相关的基础结构。 有关如何解除站点和源层次结构授权的信息，请查阅该 Configuration Manager 版本的文档。  
+-   Encerre a hierarquia de origem. Depois de concluir a migração de uma hierarquia de origem e essa hierarquia não contiver mais recursos que você gerencia, você poderá encerrar os sites na hierarquia de origem e remover de seu ambiente a infraestrutura relacionada. Para obter informações sobre como encerrar sites e hierarquias de origem, consulte a documentação dessa versão do Configuration Manager.  
 
-使用下列部分来帮助你通过停止数据收集并清理迁移数据以规划在源层次结构中完成迁移：  
+Use as seguintes seções para ajudá-lo a planejar a conclusão da migração de uma hierarquia de origem, parando a coleta de dados e limpando os dados de migração:  
 
--   [计划停止收集数据](#Plan_to_Stop_Data_Gath)  
+-   [Planejar a interrupção da coleta de dados](#Plan_to_Stop_Data_Gath)  
 
--   [计划清理迁移数据](#Plan_to_clean_up)  
+-   [Planejar a limpeza dos dados de migração](#Plan_to_clean_up)  
 
-##  <a name="Plan_to_Stop_Data_Gath"></a>计划停止收集数据  
- 完成迁移以及清理迁移数据之前，必须停止从源层次结构内的每个源站点中收集数据。 要停止从每个源站点中收集数据，必须在底层源站点上执行“停止收集数据”  命令，然后在每个父站点重复该过程。 源层次结构的顶层站点必须是你执行停止收集数据操作的最后一个站点。 在父站点上执行此命令之前，必须在每个子站点上停止数据收集。 通常，只有在准备好完成迁移过程时才停止收集数据。  
+##  <a name="Plan_to_Stop_Data_Gath"></a> Planejar a interrupção da coleta de dados  
+ Antes de concluir a migração e limpar os dados da migração, pare a coleta de dados de cada site de origem na hierarquia de origem. Para interromper a coleta de dados de cada site de origem, execute o comando **Parar Coleta de Dados** na parte inferior da camada dos sites de origem e repita o processo em cada site pai. O site de nível superior da hierarquia de origem deve ser o último site em que a coleta de dados seja interrompida. Você deve parar a coleta de dados em cada site filho para poder executar esse comando em um site pai. Normalmente, você interrompe a coleta de dados somente quando está pronto para concluir o processo de migração.  
 
- 停止从源站点中收集数据之后，该站点中的共享分发点不再可用作目标层次结构中客户端的内容位置。 因此，请使用以下选项之一确保目标层次结构中的客户端需要访问的任何迁移内容仍然可用：  
+ Depois de parar a coleta de dados de um local de origem, pontos de distribuição compartilhados daquele site não estarão mais disponíveis como locais de conteúdo para clientes na hierarquia de destino. Portanto, certifique-se que qualquer conteúdo migrado que os clientes precisem acessar na hierarquia de destino permaneça disponível, usando uma das seguintes opções:  
 
--   在目标层次结构中，将内容分发到至少一个分发点。  
+-   Na hierarquia de destino, distribua o conteúdo a pelo menos um ponto de distribuição.  
 
--   在停止从源站点收集数据之前，请升级或重新分配具有所需内容的共享分发点。 有关升级或重新分配共享的分发点的详细信息，请参阅[在 System Center Configuration Manager 中规划内容部署迁移策略](../../core/migration/planning-a-content-deployment-migration-strategy.md)中的适用部分。  
+-   Antes de interromper a coleta de dados de um site de origem, atualize ou reatribua pontos de distribuição compartilhados que tenham o conteúdo necessário. Para obter informações sobre a atualização ou reatribuição dos pontos de distribuição compartilhados, consulte as seções que se aplicam em [Planejando uma estratégia de migração de implantação de conteúdo no System Center Configuration Manager](../../core/migration/planning-a-content-deployment-migration-strategy.md).  
 
-从源层次结构内的每个源站点中停止收集数据之后，你可以清理迁移数据。 在清理迁移数据之前，已经运行或者计划运行的每个迁移作业在 Configuration Manager 控制台中仍处于可访问状态。  
+Depois de parar a coleta de dados de cada site de origem na hierarquia de origem, você poderá limpar os dados de migração. Até você limpar os dados de migração, cada tarefa de migração executada ou programada para ser executada permanecerá acessível no console do Configuration Manager.  
 
-有关源站点和数据收集的详细信息，请参阅[在 System Center Configuration Manager 中规划源层次结构策略](../../core/migration/planning-a-source-hierarchy-strategy.md)。  
+Para mais informações sobre sites de origem e coleta de dados, consulte [Planejando uma estratégia de hierarquia de origem no System Center Configuration Manager](../../core/migration/planning-a-source-hierarchy-strategy.md).  
 
-##  <a name="Plan_to_clean_up"></a>计划清理迁移数据  
- 完成迁移所需的最后一步是清理迁移数据。 在停止收集源层次结构中每个源站点的数据之后，你可以使用“清理迁移数据”  命令。 此可选操作将从目标层次结构的数据库中删除有关当前源层次结构的数据。  
+##  <a name="Plan_to_clean_up"></a> Planejar a limpeza dos dados de migração  
+ A última etapa necessária para concluir a migração é limpar os dados de migração. É possível usar o comando **Limpar Dados de Migração** depois de interromper a coleta de dados de cada site de origem na hierarquia de origem. Essa ação opcional remove dados sobre a hierarquia de origem atual do banco de dados da hierarquia de destino.  
 
- 清理迁移数据时，会从目标层次结构的数据库中删除有关迁移的大部分数据。 但是，有关迁移对象的详细信息将会保留。 通过这些详细信息，可以使用“迁移”工作区重新配置包含已迁移的数据的源层次结构，以恢复从该源层次结构进行迁移，或者查看以前迁移的对象的对象和站点所有权。  
+ Quando você limpa dados de migração, a maior parte dos dados é removida do banco de dados da hierarquia de destino. No entanto, detalhes sobre os objetos migrados são mantidos. Com esses detalhes, você pode usar o espaço de trabalho **Migração** para reconfigurar a hierarquia de origem que contém os dados que foram migrados para retomar a migração daquela hierarquia de origem ou examinar objetos ou a propriedade do site dos objetos migrados anteriormente.  

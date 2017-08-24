@@ -1,6 +1,6 @@
 ---
-title: "如何创建 Wi-Fi 配置文件 | Microsoft Docs"
-description: "了解如何在 System Center Configuration Manager 中使用 Wi-Fi 配置文件为组织中的用户部署无线网络设置。"
+title: Como criar perfis de Wi-Fi | Microsoft Docs
+description: "Saiba como usar perfis de Wi-Fi no System Center Configuration Manager para implantar as configurações de rede sem fio para usuários em sua organização."
 ms.custom: na
 ms.date: 12/11/2016
 ms.prod: configuration-manager
@@ -18,111 +18,111 @@ manager: angrobe
 ms.openlocfilehash: f1ae976899de1fd3efcbde0c7268f071a5d0218b
 ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
 ms.translationtype: HT
-ms.contentlocale: zh-CN
+ms.contentlocale: pt-BR
 ms.lasthandoff: 08/07/2017
 ---
-# <a name="create-wi-fi-profiles"></a>创建 Wi-Fi 配置文件
+# <a name="create-wi-fi-profiles"></a>Criar perfis de Wi-Fi
 
-*适用范围：System Center Configuration Manager (Current Branch)*
+*Aplica-se a: System Center Configuration Manager (Branch Atual)*
 
 
-在 System Center Configuration Manager 中使用 Wi-Fi 配置文件将无线网络设置部署到组织中的用户。 通过部署这些设置，可以让用户很方便地连接到 Wi-Fi。  
+Use perfis de Wi-Fi no System Center Configuration Manager para implantar as configurações de rede sem fio para usuários na sua organização. Ao implantar essas configurações, você facilita que os usuários se conectem ao Wi-Fi.  
 
- 例如，你有一个 Wi-Fi 网络并想让所有 iOS 设备都能够连接到该网络。 创建 Wi-Fi 配置文件，其中包含连接到无线网络所必需的设置。 然后，将该配置文件部署到在层次结构中拥有 iOS 设备的所有用户。 IOS 设备的用户可以在无线网络列表中看到公司网络，并且可以容易地连接到此网络。  
+ Por exemplo, você tem uma rede Wi-Fi que deseja habilitar para a conexão de todos os dispositivos iOS. Crie um perfil de Wi-Fi contendo as configurações necessárias para conectar-se à rede sem fio. Em seguida, implante o perfil para todos os usuários com dispositivos iOS na sua hierarquia. Os usuários de dispositivos iOS veem a rede da empresa na lista de redes sem fio e prontamente podem se conectar a essa rede.  
 
- 你可以使用 Wi-fi 配置文件配置下列设备类型：  
+ Você pode configurar os seguintes tipos de dispositivo com perfis Wi-Fi:  
 
--   运行 Windows 8.1 (32 位) 的设备  
+-   Dispositivos que executam o Windows 8.1 32 bits  
 
--   运行 Windows 8.1 (64 位) 的设备  
+-   Dispositivos que executam o Windows 8.1 64-bit  
 
--   运行 Windows RT 8.1 的设备  
+-   Dispositivos que executam o Windows RT 8.1  
 
--   运行 Windows 10 桌面或移动版的设备  
+-   Dispositivos que executam o Windows 10 Desktop ou Mobile  
 
-如需深入了解如何在 System Center Configuration Manager 中使用 Wi-Fi 配置文件将无线网络设置部署到移动设备用户，请参阅[针对移动设备创建 Wi-Fi 配置文件](../../mdm/deploy-use/create-wifi-profiles.md)。
+[Criar perfis de Wi-Fi para dispositivos móveis](../../mdm/deploy-use/create-wifi-profiles.md) fornece informações sobre como usar os perfis de Wi-Fi no Configuration Manager para implantar as configurações de rede sem fio para usuários de dispositivo móvel."
 
 > [!IMPORTANT]  
->  若要将配置文件部署到 Android、iOS、Windows Phone 和注册的 Windows 8.1 或更高版本设备，这些设备必须在 Microsoft Intune 中注册。 有关如何注册设备的信息，请参阅[在 Intune 中注册设备以进行管理](https://docs.microsoft.com/intune/deploy-use/enroll-devices-in-microsoft-intune)。  
+>  Para implantar perfis em dispositivos Android, iOS, Windows Phone e em dispositivos registrados Windows 8.1 ou posteriores, esses dispositivos devem ser registrados no Microsoft Intune. Para obter informações sobre como registrar seus dispositivos, consulte [Registrar dispositivos para gerenciamento no Intune](https://docs.microsoft.com/intune/deploy-use/enroll-devices-in-microsoft-intune).  
 
- 在创建 Wi-Fi 配置文件时，你可以纳入各种各样的安全设置。 其中包括已通过使用 Configuration Manager 证书配置文件推送的服务器验证和客户端身份验证证书。 有关证书配置文件的详细信息，请参阅 [System Center Configuration Manager 中的证书配置文件](introduction-to-certificate-profiles.md)。  
+ Ao criar um perfil Wi-Fi, você pode incluir uma várias configurações de segurança. Essas configurações incluem os certificados para validação de servidor e autenticação de cliente que foram enviados por push usando os perfis de certificado do Configuration Manager. Para obter mais informações sobre perfis de certificado, consulte [Perfis de certificado do System Center Configuration Manager](introduction-to-certificate-profiles.md).  
 
-## <a name="create-a-wi-fi-profile"></a>创建 Wi-Fi 配置文件  
+## <a name="create-a-wi-fi-profile"></a>Criar um perfil de Wi-Fi  
 
-1.  在 Configuration Manager 控制台中，选择“资产和符合性” > “符合性设置” >  “公司资源访问” > “Wi-Fi 配置文件”。  
+1.  No console do Configuration Manager, escolha **Ativos e Conformidade** > **Configurações de Conformidade** >  **Acesso a Recursos da Empresa** > **Perfis de Wi-Fi**.  
 
-3.  在“主页”选项卡上的“创建”组中，选择“创建 Wi-Fi 配置文件”。  
+3.  Na guia **Início**, no grupo **Criar**, clique em **Criar Perfil Wi-Fi**.  
 
-1.  在“常规”页中，为 Wi-Fi 配置文件输入唯一名称和说明。  如果想要使用另一个 Wi-fi 配置文件中的设置，请选择“从文件中导入现有的 Wi-fi 配置文件项”。  
-
-    > [!IMPORTANT]  
-    >  确保导入的 Wi-fi 配置文件包含 Wi-fi 配置文件的有效 XML。 导入文件时，Configuration Manager 不会验证该配置文件。  
-
-3.  在**报表的不符合性严重程度**中，指定在客户端设备上发现 Wi-Fi 配置文件不符合（例如，配置文件安装失败）时报告的严重性级别。 可用的严重性级别如下：  
-
-    -   **无**：对于 Configuration Manager 报表，不符合此合规性规则的设备不报告故障严重性。  
-
-    -   **信息**：对于 Configuration Manager 报表，不符合此合规性规则的计算机将报告故障严重性**信息**。  
-
-    -   **警告**：对于 Configuration Manager 报表，不符合此合规性规则的计算机将报告故障严重性**警告**。  
-
-    -   **严重**：对于 Configuration Manager 报表，不符合此合规性规则的计算机将报告故障严重性**严重**。  
-
-    -   **事件严重**：对于 Configuration Manager 报表，不符合此合规性规则的计算机将报告故障严重性**严重**。 应用程序事件日志中也会以 Windows 事件的形式记录此严重性级别。  
-
-1.  在“Wi-Fi 配置文件”页，提供设备会将其显示为网络名称的名称。  
+1.  Na página **Geral**, insira um nome exclusivo e uma descrição para o perfil de Wi-Fi.  Se quiser usar as configurações de outro perfil de Wi-Fi, selecione **Importar um item de perfil Wi-Fi existente de um arquivo**.  
 
     > [!IMPORTANT]  
-    >  Configuration Manager 不支持在网络名称中使用单引号 (**â€˜**) 或逗号 (**,**) 字符。  
+    >  Verifique se o perfil de Wi-Fi importado contém um XML válido para um perfil de Wi-Fi. O Configuration Manager não valida o perfil quando você importa o arquivo.  
 
-2.  指定区分大小写的 **SSID**
-3.  选择其他适当的连接选项，包括：   如果有可能隐藏了 SSID，则**在网络未广播其名称 (SSID) 时连接**  
+3.  Em **Gravidade de não conformidade dos relatórios**, especifique o nível de gravidade relatado se o perfil Wi-Fi for considerado como não compatível nos dispositivos cliente (por exemplo, se a instalação do perfil falhar). Os níveis de severidade disponíveis são os seguintes:  
 
-4.  在“安全配置”选择无线网络使用的安全协议；如果网络无安全保护，则选择“无身份验证(开放式)”。
+    -   **Nenhum**: computadores que não cumprem essa regra de conformidade não relatam uma severidade de falha em relatórios do Configuration Manager.  
+
+    -   **Informações**: computadores que não cumprem essa regra de conformidade relatam uma severidade de falha de **Informações** em relatórios do Configuration Manager.  
+
+    -   **Aviso**: computadores que não cumprem essa regra de conformidade relatam uma severidade de falha de **Aviso** em relatórios do Configuration Manager.  
+
+    -   **Crítico**: computadores que não cumprem essa regra de conformidade relatam uma severidade de falha de **Crítico** em relatórios do Configuration Manager.  
+
+    -   **Crítico com evento**: computadores que não cumprem essa regra de conformidade relatam uma severidade de falha de **Crítico** em relatórios do Configuration Manager. Esse nível de severidade também é registrado como um evento do Windows no log de eventos de aplicativos.  
+
+1.  Na página **Perfil de Wi-Fi** forneça o nome que os dispositivos exibirão como o nome da rede.  
+
     > [!IMPORTANT]  
-    >  如果你正在为本地移动设备管理创建 Wi-Fi 配置文件，Configuration Manager 的 Current Branch 仅支持以下 Wi-Fi 安全性配置：  
+    >  O Configuration Manager não dá suporte ao uso de apóstrofos (**â€˜**) ou vírgulas (**,**) no nome da rede.  
+
+2.  Especifique a **SSID** que diferencia maiúsculas de minúsculas
+3.  Escolha também as outras opções de conectividade apropriadas.   **Conectar-se quando a rede não estiver transmitindo seu nome (SSID)**, se houver uma possibilidade de que o SSID esteja oculto  
+
+4.  Na página **Configuração de Segurança**, selecione o protocolo de segurança usado pela rede sem fio ou selecione **Sem autenticação (Aberta)** se a rede não for segura.
+    > [!IMPORTANT]  
+    >  Se você estiver criando um perfil de Wi-Fi para o Gerenciamento de Dispositivo Móvel Local, o branch atual do Configuration Manager dará suporte somente às seguintes configurações de segurança de Wi-Fi:  
     >   
-    >  安全类型：“WPA2 企业”  或“WPA2 个人”   
-    > 加密类型：“AES”  或“TKIP”   
-    > EAP 类型：“智能卡或其他证书”  或“PEAP”   
+    >  Tipos de segurança: **WPA2 Enterprise** ou **WPA2 Personal**  
+    > Tipos de criptografia: **AES** ou **TKIP**  
+    > Tipos de EAP: **Cartão inteligente ou outro certificado** ou **PEAP**  
 
-    > 仅限 Android 设备，不支持安全类型“WPA – 个人”、“WPA2 – 个人”和“WEP”。  
+    > Para dispositivos Android, os tipos de segurança **WPA Pessoal**, **WPA2 Pessoal** e **WEP** não têm suporte.  
 
-2.  选择无线网络使用的加密方法。  
+2.  selecione o método de criptografia usado pela rede sem fio.  
 
-3.  选择用于向无线网络进行验证的 EAP 类型。  
+3.  selecione o tipo de EAP usado para autenticação na rede sem fio.  
 
-     仅限 Windows Phone 设备：不支持 EAP 类型“LEAP”  和“EAP-FAST”  。  
+     Somente para dispositivos Windows Phone: os tipos de EAP **LEAP** e **EAP-FAST** não têm suporte.  
 
-4.  单击“配置”  ，为所选的 EAP 类型指定属性。 对于某些所选的 EAP 类型，此选项可能不可用。  
+4.  Clique em **Configurar** para especificar as propriedades para o tipo de EAP selecionada. Essa opção pode não estar disponível para alguns tipos de EAP selecionados.  
 
     > [!IMPORTANT]  
-    >  单击“配置” 时，打开的对话框是 Windows 对话框。 因此，必须确保运行 Configuration Manager 控制台的计算机的操作系统支持配置所选的 EAP 类型。  
+    >  Ao clicar em **Configurar**, a caixa de diálogo que abre é uma do Windows. Por isso, você deve verificar se o sistema operacional do computador que executa o console do Configuration Manager dá suporte à configuração do tipo de EAP selecionado.  
     >   
-    >  对于 iOS 设备，如果你选择非 EAP 方法用于身份验证，那么无论你选择何种方法，都将使用 MS-CHAP v2 进行连接。  
+    >  Para dispositivos do iOS, se você escolher um método não EAP para autenticação, independentemente do método escolhido, o MS-CHAP v2 será usado para a conexão.  
 
-5.  如果你想要存储用户凭据，以便用户无需在每次登录时输入凭据，请选择“在每次登录时记住用户凭据” 。  
+5.  Se você quiser armazenar as credenciais de usuários para que eles não precisem inseri-las a cada logon, selecione **Lembrar as credenciais do usuário a cada logon**.  
 
-6. **仅适用于 iOS 设备：**  
- 配置 Wi-Fi 连接所需的任何证书的信息。 必须配置客户端证书以及受信任的服务器证书名称或根证书，如下所示：  
+6. **Apenas para dispositivos iOS:**  
+ configure informações de todos os certificados necessários para a conexão Wi-Fi. Você deve configurar o certificado de cliente e o nome do certificado de servidor confiável ou o certificado raiz, da seguinte maneira:  
 
-    -   **受信任的服务器证书名称**：如果设备连接到的服务器使用服务器身份验证证书来识别服务器并帮助保护信道的安全，请在该证书的使用者名称或使用者备用名称中输入一个或多个名称。 名称通常为服务器完全限制的域名。 例如，服务器证书在证书使用者中具有公用名 srv1.contoso.com，则输入“srv1.contoso.com” 。 如果服务器证书具有多个在使用者可选名称中指定的名称，请输入每个名称，以分号分隔。  
+    -   **Nomes de certificado de servidor confiável**: se o servidor ao qual o dispositivo se conecta usar um certificado de autenticação de servidor para identificar o servidor e ajudar a proteger o canal de comunicação, insira os nomes que aparecem no nome da entidade ou no nome alternativo da entidade desse certificado. O nome ou os nomes são normalmente o nome de domínio totalmente qualificado do servidor. Por exemplo, se o certificado do servidor tiver um nome comum de srv1.contoso.com na entidade do certificado, digite **srv1.contoso.com**. Se houver vários nomes especificados para o certificado do servidor no nome alternativo da entidade, insira cada nome, separado por ponto-e-vírgula.  
 
     > [!TIP]  
-    >  如果将使用你为 iOS 设备 EAP 或客户端身份验证选择的客户端证书来向远程身份验证拨入用户服务 (RADIUS) 服务器（例如正在运行网络策略服务器的服务器）进行验证，则你必须将使用者可选名称设置为用户主体名称。  
+    >  Se o certificado de cliente selecionado para autenticação de cliente ou EAP para um dispositivo iOS for usado para autenticação em um servidor RADIUS, como um servidor que executa o Servidor de Políticas de Rede, o Nome Alternativo da Entidade deverá ser definido como o UPN.  
 
-    -   “选择用于服务器验证的根证书”：如果设备连接到的服务器使用设备不信任的服务器身份验证证书，请选择包含服务器证书的根证书的证书配置文件，以在设备上创建证书信任链。  
+    -   **Selecionar certificados raiz para validação do servidor**: se o servidor ao qual o dispositivo se conecta usar um certificado de autenticação de servidor não confiável para o dispositivo, selecione o perfil de certificado que contém o certificado raiz do certificado do servidor, a fim de criar uma cadeia de certificados de confiança no dispositivo.  
 
-    -   **选择用于客户端身份验证的客户端证书**：如果服务器或网络设备需要客户端证书来验证连接设备，请选择包含客户端身份验证证书的证书配置文件。  
+    -   **Selecionar um certificado do cliente para autenticação do cliente**: se o servidor ou o dispositivo de rede exigir um certificado de cliente para autenticar o dispositivo que está sendo conectado, selecione o perfil de certificado que contém o certificado de autenticação de cliente.  
 
     > [!NOTE]  
-    >  必须首先以证书配置文件的形式配置和部署根证书和客户端证书，然后你才能选择这些证书。 有关证书配置文件的详细信息，请参阅 [System Center Configuration Manager 中的证书配置文件](introduction-to-certificate-profiles.md)。  
+    >  Antes de selecionar o certificado raiz e o certificado de cliente, você deve configurá-los e implantá-los como um perfil de certificado. Para obter mais informações sobre perfis de certificado, consulte [Perfis de certificado do System Center Configuration Manager](introduction-to-certificate-profiles.md).  
 
-7.  在“高级设置”页上，指定 Wi-Fi 配置文件的高级设置，例如身份验证模式、单一登录选项以及（美国）联邦信息处理标准符合性。 有关这些选项的详细信息，请参阅 Windows 文档。 高级设置可能不可用或可能会有所不同，具体情况视你在向导的“安全性配置”  页上所选的选项而定。  
+7.  Na página **Configurações Avançadas**, especifique configurações avançadas para o perfil Wi-Fi, como o modo de autenticação, as opções de logon único e a conformidade com FIPS (Federal Information Processing Standards). Para obter mais informações sobre essas opções, consulte a documentação do Windows. É possível que não haja configurações avançadas disponíveis ou elas poderão variar, dependendo das opções selecionadas na página **Configuração de Segurança** do assistente.  
 
-1.  在“代理设置”页上，如果无线网络使用代理服务器，请选择“配置此 Wi-Fi 配置文件的代理设置”，然后提供配置信息。  
+1.  Na página **Configurações de Proxy**, selecione **Definir configurações de proxy para este perfil Wi-Fi** se sua rede sem fio usa um servidor proxy e, em seguida, forneça as informações de configuração.  
 
-2. 在“支持的平台”页上，选择将在其中安装 Wi-Fi 配置文件的操作系统。 或者单击“全选”  以将 Wi-Fi 配置文件安装到所有可用的操作系统。  
+2. Na página **Plataformas com Suporte**, selecione os sistemas operacionais nos quais você deseja instalar o perfil Wi-Fi. Opcionalmente, clique em **Selecionar tudo** para instalar o perfil Wi-Fi em todos os sistemas operacionais disponíveis.  
 
-### <a name="next-steps"></a>后续步骤
- 有关如何部署 Wi-Fi 配置文件的信息，请参阅[如何在 System Center Configuration Manager 中部署 Wi-Fi 配置文件](deploy-wifi-vpn-email-cert-profiles.md)。  
+### <a name="next-steps"></a>Próximas etapas
+ Para obter informações sobre como implantar o perfil Wi-Fi, consulte [Como implantar perfis de Wi-Fi no System Center Configuration Manager](deploy-wifi-vpn-email-cert-profiles.md).  

@@ -1,6 +1,6 @@
 ---
-title: "规划报告 | Microsoft Docs"
-description: "从安装详细信息到安全性和网络带宽，规划 Configuration Manager 中的报表至关重要。"
+title: "Planejando os relatórios | Microsoft Docs"
+description: "Dos detalhes da instalação à segurança e largura de banda de rede, é importante planejar os relatórios no Configuration Manager."
 ms.custom: na
 ms.date: 10/06/2016
 ms.prod: configuration-manager
@@ -17,52 +17,52 @@ manager: angrobe
 ms.openlocfilehash: 119f501057bf44e483be31db20b88326b3d05ebb
 ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
 ms.translationtype: HT
-ms.contentlocale: zh-CN
+ms.contentlocale: pt-BR
 ms.lasthandoff: 08/07/2017
 ---
-# <a name="planning-for-reporting-in-system-center-configuration-manager"></a>规划 System Center Configuration Manager 中的报告
+# <a name="planning-for-reporting-in-system-center-configuration-manager"></a>Planejamento para emissão de relatórios no System Center Configuration Manager
 
-*适用范围：System Center Configuration Manager (Current Branch)*
+*Aplica-se a: System Center Configuration Manager (Branch Atual)*
 
-System Center Configuration Manager 提供了一组工具和资源，可帮助你使用 SQL Server Reporting Services 的高级报表功能。 使用以下部分协助规划 Configuration Manager 中的报表。  
+Os relatórios no System Center Configuration Manager fornecem um conjunto de ferramentas e recursos que ajudam a usar as funcionalidades de relatórios avançadas do SQL Server Reporting Services. Use as seções a seguir para ajudá-lo a planejar os relatórios no Configuration Manager.  
 
-##  <a name="BKMK_InstallReportingServicesPoint"></a> 确定 Reporting Services 点的安装位置  
- 当在站点中运行 Configuration Manager 报表时，报表可以访问所连接的站点数据库中的信息。 使用下列部分来帮助你确定 Reporting Services 点的安装位置和要使用的数据源。  
-
-> [!NOTE]  
->  有关在 Configuration Manager 中规划站点系统的详细信息，请参阅[添加站点系统角色](../deploy/configure/add-site-system-roles.md)。  
-
-###  <a name="BKMK_SupportedSiteServers"></a> 支持的站点系统服务器  
- 可以将 Reporting Services 点安装在管理中心站点和主站点上，以及安装在层次结构中的某个站点和其他站点的多个站点系统上。 在辅助站点上不支持 Reporting Services 点。 站点中的第一个 Reporting Services 点被配置为默认报表服务器。 可以在一个站点中添加更多的 Reporting Services 点，但 Configuration Manager 报表主要使用每个站点中的默认报表服务器。 可以将 Reporting Services 点安装在站点服务器或远程站点系统上。 但是，出于性能方面的原因，最佳方案是在远程站点系统服务器上使用 Reporting Services。  
-
-###  <a name="BKMK_DataReplication"></a> 数据复制注意事项  
- Configuration Manager 将它复制的数据分为全局数据和站点数据两类。 全局数据是指由管理用户创建并复制到整个层次结构中的所有站点的对象，不过辅助站点仅会获得部分全局数据。 全局数据的例子包括：软件部署、软件更新、集合和基于角色的管理安全作用域。 站点数据是指 Configuration Manager 主站点和向主站点报告的客户端创建的操作信息。 站点数据复制到管理中心站点，但不复制到其他主站点。 站点数据的例子包括：硬件清单数据、状态消息、警报和基于查询的集合的结果。 站点数据仅在管理中心站点和它源自的主站点中可见。  
-
- 请考虑下列因素，以帮助你确定 Reporting Services 点的安装位置：  
-
--   使用管理中心站点数据库作为报表数据源的 Reporting Services 点可以访问 Configuration Manager 层次结构中的所有全局和站点数据。 如果需要包含层次结构中多个站点的站点数据的报表，请考虑在管理中心站点中的站点系统上安装 Reporting Services 点，并使用管理中心站点的数据库作为报表数据源。  
-
--   使用子主站点数据库作为报表数据源的 Reporting Services 点只能访问本地主站点和任何子辅助站点的全局数据及站点数据。 Configuration Manager 层次结构中的其他主站点的站点数据均不会复制到主站点，因此 Reporting Services 无法访问这些数据。 如果需要包含特定主站点的站点数据或全局数据的报表，但不希望报表用户能够访问其他主站点中的站点数据，请在主站点中的站点系统上安装 Reporting Services 点，并使用主站点的数据库作为报表数据源。  
-
-###  <a name="BKMK_NetworkBandwidth"></a> 网络带宽注意事项  
- 同一个站点中的站点系统服务器使用服务器消息块 (SMB)、HTTP 或 HTTPS 相互通信，具体取决于你如何配置站点。 由于这些通信不受管理，而且可能随时发生，同时不会对网络带宽进行控制，因此，在将 Reporting Services 点角色安装到站点系统上之前，请查看可用的网络带宽。  
+##  <a name="BKMK_InstallReportingServicesPoint"></a> Determinar onde instalar o ponto do Reporting Services  
+ Quando você executa relatórios do Configuration Manager em um site, eles têm acesso às informações no banco de dados do site ao qual estão conectados. Use as seções a seguir para ajudá-lo a determinar onde instalar o ponto do Reporting Services e qual fonte de dados usar.  
 
 > [!NOTE]  
->  有关规划站点系统的详细信息，请参阅[添加站点系统角色](../deploy/configure/add-site-system-roles.md)。  
+>  Para obter mais informações sobre o planejamento de sistemas de sites no Configuration Manager, consulte [Add site system roles (Adicionar funções do sistema de sites)](../deploy/configure/add-site-system-roles.md).  
 
-##  <a name="BKMK_RoleBaseAdministration"></a> 针对报告规划基于角色的管理  
- 报表安全与 Configuration Manager 中的其他角色很相似，具体而言，可以将安全角色和权限分配给管理用户。 管理用户只能运行和修改他们具有相应安全权限的报表。 要运行 Configuration Manager 控制台中的报表，必须具有对“站点”许可和为特定对象配置的许可的“读取”权限。  
+###  <a name="BKMK_SupportedSiteServers"></a> Servidores de sistema de site com suporte  
+ Você pode instalar o ponto do Reporting Services em um site de administração central, em sites primários, em diversos sistemas de site em um site e em outros sites na hierarquia. Não há suporte para o ponto do Reporting Services em sites secundários. O primeiro ponto do Reporting Services em um site é configurado como o servidor de relatório padrão. É possível adicionar mais pontos do Reporting Services em um site, mas o servidor de relatório padrão em cada site é usado ativamente para relatórios do Configuration Manager. É possível instalar o ponto do Reporting Services no servidor de site ou em um sistema de site remoto. No entanto, como uma prática recomendada por motivos de desempenho, use o Reporting Services em um servidor de sistema de site remoto.  
 
- 但是，与 Configuration Manager 中的其他对象不同的是，对于在 Configuration Manager 控制台中为管理用户设置的安全权限，也必须在 Reporting Services 中配置这些权限。 在 Configuration Manager 控制台中配置安全权限时，Reporting Services 点会连接到 Reporting Services 并为报表设置适当的权限。 例如，“软件更新管理员”  安全角色具有关联的“运行报表”  和“修改报表”  权限。 仅获分配“软件更新管理员”  角色的管理用户只能运行和修改软件更新的报表。 其他对象的报表不会显示在 Configuration Manager 控制台中。 这方面的例外是，某些报表并未与特定的 Configuration Manager 安全对象关联。 对于这些报表，管理用户必须具有“站点”  权限的“读取”  权才能运行报表，以及“站点”  权限的“修改”  权才能修改报表。  
+###  <a name="BKMK_DataReplication"></a> Considerações sobre a replicação de dados  
+ O Configuration Manager classifica os dados replicados como dados globais ou do site. Os dados globais referem-se a objetos criados pelos usuários administrativos e replicados a todos os sites por meio da hierarquia, enquanto os sites secundários recebem somente um subconjunto de dados globais. Exemplos de dados globais incluem implantações e atualizações de software, coleções, e escopos de segurança de administração baseada em funções. Os dados de site referem-se a informações operacionais criadas pelos sites primários do Configuration Manager e pelos clientes que relatam aos sites primários. Os dados do site replicam para o site de administração central, mas não para outros sites primários. Dados de inventário de hardware, mensagens de status, alertas e resultados de coleções baseadas em consulta são exemplos de dados do site. Os dados de site são visíveis somente no site de administração central e no site primário de onde os dados são originários.  
 
- 对于基于角色的管理，报表已完全启用。 将根据运行报表的管理用户的权限对 Configuration Manager 附带的所有报表数据进行筛选。 具有特定角色的管理用户只能查看为其角色定义的信息。  
+ Considere os fatores a seguir para ajudá-lo a determinar onde instalar seus pontos do Reporting Services:  
 
- 有关报表的安全权限的详细信息，请参阅[配置报表](configuring-reporting.md)。  
+-   Um ponto do Reporting Services com o banco de dados do site de administração central como sua fonte de dados de relatório tem acesso a todos os dados globais e do site na hierarquia do Configuration Manager. Se você precisar de relatórios que contenham dados de site para diversos sites em uma hierarquia, instale o ponto do Reporting Services em um sistema de sites no site de administração central e use o banco de dados deste como fonte de dados de relatório.  
 
- 有关 Configuration Manager 中规划站点系统的详细信息，请参阅[配置基于角色的管理](../deploy/configure/configure-role-based-administration.md)。  
+-   Um ponto do Reporting Services com o banco de dados do site primário filho como sua fonte de dados de relatório possui acesso aos dados globais e de site somente do site primário local e de quaisquer sites secundários filho. Os dados do site para outros sites primários na hierarquia do Configuration Manager não são replicados para o site primário. Portanto, o ponto do Reporting Services não pode acessá-los. Se você precisa de relatórios que contenham dados do site de um site primário específico ou dados globais, mas não deseja que o usuário do relatório tenha acesso aos dados do site por meio de outros sites primários, instale um ponto do Reporting Services em um sistema de sites no site primário e use o banco de dados do site primário como fonte de dados de relatório.  
 
-## <a name="next-steps"></a>后续步骤  
- 下列的附加主题可帮助你在 Configuration Manager 中规划报表：  
+###  <a name="BKMK_NetworkBandwidth"></a> Considerações sobre a largura de banda da rede  
+ Os servidores do sistema de site no mesmo site se comunicam entre si usando protocolo SMB, HTTP ou HTTPS, dependendo de como você configurou o site. Como essas comunicações não são gerenciadas e podem ocorrer a qualquer momento sem o controle da largura de banda da rede, examine a largura de banda da rede disponível antes de instalar a função do ponto do Reporting Services em um sistema de site.  
 
--   [System Center Configuration Manager 中报表的先决条件](../../../core/servers/manage/prerequisites-for-reporting.md)  
--   [System Center Configuration Manager 中报表的最佳做法](../../../core/servers/manage/best-practices-for-reporting.md)  
+> [!NOTE]  
+>  Para obter mais informações sobre o planejamento de sistemas de sites, consulte [Add site system roles (Adicionar funções do sistema de sites)](../deploy/configure/add-site-system-roles.md).  
+
+##  <a name="BKMK_RoleBaseAdministration"></a> Planejamento para administração baseada em funções para relatórios  
+ A segurança para relatórios é muito parecida com a de outros objetos no Configuration Manager, em que é possível atribuir funções de segurança e permissões a usuários administrativos. Os usuários administrativos podem executar e modificar somente os relatórios para os quais têm direitos de segurança apropriados. Para executar relatórios no console do Configuration Manager, é necessário ter direito de **Leitura** para a permissão do **Site** e as permissões configuradas para objetos específicos.  
+
+ No entanto, diferentes de outros objetos no Configuration Manager, os direitos de segurança que você define para usuários administrativos no console do Configuration Manager também devem ser configurados no Reporting Services. Quando você configura os direitos de segurança no console do Configuration Manager, o ponto do Reporting Services se conecta ao Reporting Services e define as permissões apropriadas para relatórios. Por exemplo, a função de segurança do **Gerenciador de Atualização de Software** possui as permissões de **Executar Relatório** e **Modificar Relatório** associadas a ele. Usuários administrativos que são atribuídos somente à função de **Gerenciador de Atualização de Software** podem executar e modificar relatórios apenas para atualizações de software. Relatórios para outros objetos não são exibidos no console do Configuration Manager. A exceção a isso é que alguns relatórios não estão associados a objetos protegíveis específicos do Configuration Manager. Para esses relatórios, o usuário administrativo deve ter o direito de **Leitura** para a permissão do **Site** de executar os relatórios e o direito de **Modificar** para a permissão do **Site** de modificar os relatórios.  
+
+ Os relatórios agora são totalmente habilitados para administração baseada em função. Os dados para todos os relatórios incluídos com o Configuration Manager são filtrados com base nas permissões do usuário administrativo que executa o relatório. Usuários administrativos com funções específicas só podem visualizar informações definidas para suas funções.  
+
+ Para obter mais informações sobre direitos de segurança para relatórios, consulte [Configure reporting (Configurar relatórios)](configuring-reporting.md).  
+
+ Para obter mais informações sobre administração baseada em funções no Configuration Manager, consulte [Configure role-based administration (Configurar administração baseada em funções)](../deploy/configure/configure-role-based-administration.md).  
+
+## <a name="next-steps"></a>Próximas etapas  
+ Use os tópicos adicionais a seguir para ajudá-lo a planejar os relatórios no Configuration Manager:  
+
+-   [Pré-requisitos para relatórios no System Center Configuration Manager](../../../core/servers/manage/prerequisites-for-reporting.md)  
+-   [Melhores práticas para relatórios no System Center Configuration Manager](../../../core/servers/manage/best-practices-for-reporting.md)  

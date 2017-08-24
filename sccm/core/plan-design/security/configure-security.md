@@ -1,6 +1,6 @@
 ---
-title: "配置 System Center Configuration Manager 中的安全性 | Microsoft Docs"
-description: "配置 System Center Configuration Manager 的安全相关选项。"
+title: "Configurar a segurança no System Center Configuration Manager | Microsoft Docs"
+description: "Configure as opções de segurança no System Center Configuration Manager."
 ms.custom: na
 ms.date: 12/30/2016
 ms.prod: configuration-manager
@@ -17,112 +17,112 @@ manager: angrobe
 ms.openlocfilehash: 0034381a7a388ddc3eda5e774f3c63d741336301
 ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
 ms.translationtype: HT
-ms.contentlocale: zh-CN
+ms.contentlocale: pt-BR
 ms.lasthandoff: 08/07/2017
 ---
-# <a name="configure-security-in-system-center-configuration-manager"></a>配置 System Center Configuration Manager 中的安全性
+# <a name="configure-security-in-system-center-configuration-manager"></a>Configurar a segurança no System Center Configuration Manager
 
-*适用范围：System Center Configuration Manager (Current Branch)*
+*Aplica-se a: System Center Configuration Manager (Branch Atual)*
 
-使用本主题中的信息来帮助为 System Center Configuration Manager 配置以下安全相关选项。  
+Use as informações neste artigo para ajudá-lo a configurar as opções relacionadas à segurança para o System Center Configuration Manager.  
 
-##  <a name="BKMK_ConfigureClientPKI"></a> 为客户端 PKI 证书配置设置  
-如果要为与使用 Internet Information Services (IIS) 的站点系统的客户端连接使用公钥基础架构 (PKI) 证书，请使用下列过程来为这些证书配置设置。  
+##  <a name="BKMK_ConfigureClientPKI"></a> Definir configurações para certificados PKI de clientes  
+Se você quiser usar certificados PKI (infraestrutura de chave pública) para conexões de clientes a sistemas de site que usam IIS (Serviços de Informações da Internet), use o procedimento a seguir para definir as configurações para esses certificados.  
 
-#### <a name="to-configure-client-pki-certificate-settings"></a>配置客户端 PKI 证书设置  
+#### <a name="to-configure-client-pki-certificate-settings"></a>Para definir configurações de certificados PKI de clientes  
 
-1.  在 Configuration Manager 控制台中，选择“管理”。  
+1.  No console do Configuration Manager, escolha **Administração**.  
 
-2.  在“管理”工作区中，展开“站点配置” ，选择“站点”，然后选择要配置的主站点。  
+2.  No espaço de trabalho **Administração**, expanda **Configuração de Site**, escolha **Sites** e, em seguida, escolha o site primário a ser configurado.  
 
-3.  在“主页”选项卡上的“属性”组中，选择“属性”，然后选择“客户端计算机通信”选项卡。  
+3.  Na guia **Início**, no grupo **Propriedades**, escolha **Propriedades** e, em seguida, escolha a guia **Comunicação de Computador Cliente**.  
 
-    此选项卡仅在主站点上可用。 如果看不到“客户端计算机通信”  选项卡，请检查你是否未连接到管理中心站点或辅助站点。  
+    Essa guia está disponível somente em site primário. Se você não vir a guia **Comunicação de Computador Cliente** , verifique se você não está conectado a um site de administração central ou um site secundário.  
 
-4.  如果希望分配给站点的客户端在连接到使用 IIS 的站点系统时始终使用客户端 PKI 证书，请选择“仅 HTTPS”。 或者，如果不需要客户端使用 PKI 证书，请选择“HTTPS 或 HTTP”。  
+4.  Escolha **Somente HTTPS** quando quiser que os clientes atribuídos ao site sempre usem um certificado PKI de cliente ao se conectarem a sistemas de site que usam IIS. Ou escolha **HTTPS ou HTTP** quando você não exigir que os clientes usem certificados PKI.  
 
-5.  如果选择了“HTTPS 或 HTTP”，请在希望为 HTTP 连接使用客户端 PKI 证书时选择“使用客户端 PKI 证书(客户端身份验证功能)(如果可用)”。 客户端使用此证书（而不是自签名证书）来向站点系统验证自身。 如果选择“仅 HTTPS”，则会自动选择此选项。  
+5.  Se você escolheu **HTTPS ou HTTP**, escolha **Usar certificado PKI de cliente (funcionalidade de autenticação de cliente) quando disponível** quando quiser usar um certificado PKI de cliente para conexões HTTP. O cliente usa esse certificado em vez de um certificado autoassinado para se autenticar para sistemas de site. Esta opção será escolhida automaticamente se você escolher **Somente HTTPS**.  
 
-    如果检测到客户端位于 Internet 上，或者针对仅限 Internet 的客户端管理配置了客户端，则客户端始终使用客户端 PKI 证书。  
+    Quando os clientes são detectados na Internet ou estão configurados para gerenciamento de cliente apenas de Internet, eles sempre usam um certificado PKI de cliente.  
 
-6.  选择“修改”，为一个客户端上有多个有效 PKI 客户端证书的情况配置所选客户端选择方法，然后选择“确定”。  
+6.  Escolha **Modificar** para configurar o método de seleção de cliente escolhido para quando houver mais de um certificado de cliente PKI válido disponível em um cliente e, em seguida, escolha **OK**.  
 
-    有关客户端证书选择方法的详细信息，请参阅[规划 PKI 客户端证书选择](../../../core/plan-design/security/plan-for-security.md#BKMK_PlanningForClientCertificateSelection)。  
+    Para saber mais sobre o método de seleção de certificado de cliente, consulte [Planejando a seleção de certificado PKI de cliente](../../../core/plan-design/security/plan-for-security.md#BKMK_PlanningForClientCertificateSelection).  
 
-7.  选中或清除客户端的复选框以检查证书吊销列表 (CRL)。  
+7.  Marque ou desmarque a caixa de seleção para os clientes verificarem a CRL (lista de certificados revogados).  
 
-    有关客户端 CRL 检查的详细信息，请参阅[规划 PKI 证书吊销](../../../core/plan-design/security/plan-for-security.md#BKMK_PlanningForCRLs)。  
+    Para saber mais sobre a verificação de CRL para clientes, consulte [Planejando a revogação de certificado PKI](../../../core/plan-design/security/plan-for-security.md#BKMK_PlanningForCRLs).  
 
-8.  如果必须为客户端指定受信任根证书颁发机构 (CA)，请选择“设置”，导入根 CA 证书文件，然后选择“确定”。  
+8.  Se for necessário especificar certificados de autoridade de certificação (AC) raiz confiáveis para clientes, escolha **Definir**, importe os arquivos de certificado AC raiz e escolha **OK**.  
 
-    有关此设置的详细信息，请参阅[规划 PKI 受信任的根证书和证书颁发者列表](../../../core/plan-design/security/plan-for-security.md#BKMK_PlanningForRootCAs)。  
+    Para saber mais sobre essa configuração, consulte [Planejando certificados PKI de Raiz Confiável e a Lista de emissores de certificados](../../../core/plan-design/security/plan-for-security.md#BKMK_PlanningForRootCAs).  
 
-9. 单击“确定”以关闭站点的属性对话框。  
+9. Escolha **OK** para fechar a caixa de diálogo de propriedades do site.  
 
-为层次结构中的所有主站点重复此过程。  
+Repita esse procedimento para todos os sites primários da hierarquia.  
 
-##  <a name="BKMK_ConfigureSigningEncryption"></a> 配置签名和加密  
-为站点系统配置站点中的所有客户端可支持的最安全签名和加密设置。 当你让客户端通过使用 HTTP 上的自签名证书与站点系统通信时，这些设置特别重要。  
+##  <a name="BKMK_ConfigureSigningEncryption"></a> Configurar assinatura e criptografia  
+Defina as configurações de assinatura e criptografia mais seguras para sistemas de site, às quais todos os clientes do site deem suporte. Essas configurações são especialmente importantes quando você permite que os clientes se comuniquem com sistemas de site usando certificados autoassinados por meio de HTTP.  
 
-#### <a name="to-configure-signing-and-encryption-for-a-site"></a>为站点配置签名和加密  
+#### <a name="to-configure-signing-and-encryption-for-a-site"></a>Para configurar assinatura e criptografia para um site  
 
-1.  在 Configuration Manager 控制台中，选择“管理”。  
+1.  No console do Configuration Manager, escolha **Administração**.  
 
-2.  在“管理”工作区中，展开“站点配置” ，选择“站点”，然后选择要配置的主站点。  
+2.  No espaço de trabalho **Administração**, expanda **Configuração de Site**, escolha **Sites** e, em seguida, escolha o site primário a ser configurado.  
 
-3.  在“主页”选项卡上的“属性”组中，选择“属性”，然后选择“签名和加密”选项卡。  
+3.  Na guia **Início**, no grupo **Propriedades**, escolha **Propriedades** e, em seguida, escolha a guia **Assinatura e Criptografia**.  
 
-    此选项卡仅在主站点上可用。 如果看不到“签名和加密”  选项卡，请检查你是否未连接到管理中心站点或辅助站点。  
+    Essa guia está disponível somente em site primário. Se você não vir a guia **Assinatura e Criptografia** , verifique se você não está conectado a um site de administração central ou um site secundário.  
 
-4.  配置所需的签名和加密选项，然后选择“确定”。  
+4.  Configure as opções de assinatura e criptografia desejadas e escolha **OK**.  
 
     > [!WARNING]  
-    >  在未先检查可能分配给站点的所有客户端是否可支持此哈希算法并且它们具有有效的 PKI 客户端认证证书的情况下，请不要选择“需要 SHA-256” 。 你可能必须在客户端上安装更新或修补程序来支持 SHA-256。 例如，运行 Windows Server 2003 SP2 的计算机必须安装 [知识库文章 938397](http://go.microsoft.com/fwlink/p/?LinkId=226666)中引用的修补程序。  
+    >  Não escolha **Exigir SHA-256** sem antes verificar se todos os clientes que podem ser atribuídos ao site oferecem suporte a esse algoritmo de hash ou se eles têm um certificado de autenticação de cliente PKI válido. Talvez você precise instalar atualizações ou hotfixes nos clientes para dar suporte ao SHA-256. Por exemplo, computadores que executam Windows Server 2003 SP2 devem instalar um hotfix que é referido no [KB artigo 938397](http://go.microsoft.com/fwlink/p/?LinkId=226666).  
     >   
-    >  如果选择此选项，而客户端无法支持 SHA-256 和使用自签名证书，则 Configuration Manager 将拒绝这些客户端。 在此方案中，SMS_MP_CONTROL_MANAGER 组件记录消息 ID 5443。  
+    >  Se você escolher essa opção e os clientes não oferecerem suporte ao SHA-256 e usarem certificados autoassinados, o Configuration Manager os rejeitará. Nesse cenário, o componente SMS_MP_CONTROL_MANAGER registra a identificação 5443 da mensagem.  
 
-5.  单击“确定”以关闭站点的“属性”对话框。  
+5.  Escolha **OK** para fechar a caixa de diálogo de **Propriedades** do site.  
 
-为层次结构中的所有主站点重复此过程。  
+Repita esse procedimento para todos os sites primários da hierarquia.  
 
-##  <a name="BKMK_ConfigureRBA"></a> 配置基于角色的管理  
-基于角色的管理结合了安全角色、安全作用域和分配的集合来定义每个管理用户的管理作用域。 管理作用域包括管理用户可在 Configuration Manager 控制台中查看的对象，以及管理用户有权执行的与这些对象相关的任务。 基于角色的管理配置应用于层次结构中的每个站点。  
+##  <a name="BKMK_ConfigureRBA"></a> Configurar administração baseada em funções  
+A administração baseada em funções combina funções de segurança, escopos de segurança e coleções atribuídas para definir o escopo administrativo para cada usuário administrativo. Um escopo administrativo inclui os objetos que um usuário administrativo pode exibir no console do Configuration Manager e as tarefas relacionadas a esses objetos que o usuário administrativo tem permissão para realizar. As configurações de administração baseada em funções são aplicadas em cada site de uma hierarquia.  
 
-以下链接指向[为 System Center Configuration Manager 配置基于角色的管理](../../../core/servers/deploy/configure/configure-role-based-administration.md)一文中的相关章节：  
+Os links a seguir destinam-se às seções relevantes do artigo [Configurar administração baseada em funções para o System Center Configuration Manager](../../../core/servers/deploy/configure/configure-role-based-administration.md):  
 
--   [创建自定义安全角色](../../../core/servers/deploy/configure/configure-role-based-administration.md#BKMK_CreateSecRole)  
+-   [Criar funções de segurança personalizadas](../../../core/servers/deploy/configure/configure-role-based-administration.md#BKMK_CreateSecRole)  
 
--   [配置安全角色](../../../core/servers/deploy/configure/configure-role-based-administration.md#BKMK_ConfigSecRole)  
+-   [Configurar funções de segurança](../../../core/servers/deploy/configure/configure-role-based-administration.md#BKMK_ConfigSecRole)  
 
--   [配置对象的安全作用域](../../../core/servers/deploy/configure/configure-role-based-administration.md#BKMK_ConfigSecScope)  
+-   [Configurar escopos de segurança para um objeto](../../../core/servers/deploy/configure/configure-role-based-administration.md#BKMK_ConfigSecScope)  
 
--   [配置集合来管理安全性](../../../core/servers/deploy/configure/configure-role-based-administration.md#BKMK_ConfigColl)  
+-   [Configurar coleções para gerenciar a segurança](../../../core/servers/deploy/configure/configure-role-based-administration.md#BKMK_ConfigColl)  
 
--   [创建新管理用户](../../../core/servers/deploy/configure/configure-role-based-administration.md#BKMK_Create_AdminUser)  
+-   [Criar um novo usuário administrativo](../../../core/servers/deploy/configure/configure-role-based-administration.md#BKMK_Create_AdminUser)  
 
--   [修改管理用户的管理作用域](../../../core/servers/deploy/configure/configure-role-based-administration.md#BKMK_ModAdminUser)  
+-   [Modificar o escopo administrativo de um usuário administrativo](../../../core/servers/deploy/configure/configure-role-based-administration.md#BKMK_ModAdminUser)  
 
 > [!IMPORTANT]  
->  你自己的管理作用域定义你在为另一个管理用户配置基于角色的管理时可分配的对象和设置。 有关规划基于角色的管理的信息，请参阅 [System Center Configuration Manager 的基于角色的管理基础](../../../core/understand/fundamentals-of-role-based-administration.md)。  
+>  Seu próprio escopo administrativo define os objetos e as configurações que você pode atribuir ao configurar a administração baseada em funções para outro usuário administrativo. Para obter informações sobre como planejar a administração baseada em funções, consulte [Fundamentos de administração baseada em funções para o System Center Configuration Manager](../../../core/understand/fundamentals-of-role-based-administration.md).  
 
-##  <a name="BKMK_ManageAccounts"></a> 管理 Configuration Manager 使用的帐户  
-Configuration Manager 支持为许多不同任务和用途使用 Windows 帐户。  
+##  <a name="BKMK_ManageAccounts"></a> Gerenciar contas usadas pelo Configuration Manager  
+O Configuration Manager dá suporte a contas do Windows para várias tarefas e usos diferentes.  
 
-使用以下过程来查看为不同任务配置的帐户，以及管理 Configuration Manager 用于每个帐户的密码。  
+Use o procedimento a seguir para exibir as contas que estão configuradas para tarefas diferentes e para gerenciar a senha que o Configuration Manager usa para cada conta.  
 
-#### <a name="to-manage-accounts-that-are-used-by-configuration-manager"></a>若要管理 Configuration Manager 使用的帐户  
+#### <a name="to-manage-accounts-that-are-used-by-configuration-manager"></a>Para gerenciar contas usadas pelo Gerenciador de Configurações  
 
-1.  在 Configuration Manager 控制台中，选择“管理”。  
+1.  No console do Configuration Manager, escolha **Administração**.  
 
-2.  在“管理”工作区中，展开“安全”，然后选择“帐户”以查看为 Configuration Manager 配置的帐户。  
+2.  No espaço de trabalho **Administração**, expanda **Segurança** e, em seguida, escolha **Contas** para exibir as contas que estão configuradas para o Configuration Manager.  
 
-3.  要更改为 Configuration Manager 配置的帐户的密码，请选择该帐户。  
+3.  Para alterar a senha de uma conta que está configurada para o Configuration Manager, escolha a conta.  
 
-4.  在“主页”选项卡上的“属性”组中，选择“属性”。  
+4.  Na guia **Início**, no grupo **Propriedades**, clique em **Propriedades**.  
 
-5.  选择“设置”打开“Windows 用户帐户”对话框，并指定 Configuration Manager 用于该帐户的新密码。  
+5.  Escolha **Definir** para abrir a caixa de diálogo **Conta de Usuário do Windows** e especifique a nova senha para o Configuration Manager usar para a conta.  
 
     > [!NOTE]  
-    >  你指定的密码必须与在 Active Directory 用户和计算机中为帐户指定的密码匹配。  
+    >  A senha que você especificar deverá corresponder à senha especificada para a conta em Usuários e Computadores do Active Directory.  
 
-6.  选择“确定”完成该过程。  
+6.  Escolha **OK** para concluir o procedimento.  

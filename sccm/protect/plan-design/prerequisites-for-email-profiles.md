@@ -1,6 +1,6 @@
 ---
-title: "电子邮件配置文件的先决条件 | Microsoft Docs"
-description: "了解 System Center Configuration Manager 中的电子邮件配置文件及其在产品外部和内部的依赖关系。"
+title: "Pré-requisitos para perfis de email | Microsoft Docs"
+description: "Saiba mais sobre os perfis de email no System Center Configuration Manager e suas dependências externas e dependências dentro do produto."
 ms.custom: na
 ms.date: 10/06/2016
 ms.prod: configuration-manager
@@ -18,24 +18,24 @@ manager: angrobe
 ms.openlocfilehash: 451317db1d7aab888c03d1a099b9ce25311e06d0
 ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
 ms.translationtype: HT
-ms.contentlocale: zh-CN
+ms.contentlocale: pt-BR
 ms.lasthandoff: 08/07/2017
 ---
-# <a name="email-profile-prerequisites"></a>电子邮件配置文件先决条件
+# <a name="email-profile-prerequisites"></a>Pré-requisitos para perfis de email
 
-*适用范围：System Center Configuration Manager (Current Branch)*
+*Aplica-se a: System Center Configuration Manager (Branch Atual)*
 
-System Center Configuration Manager 中的电子邮件配置文件在产品外部与内部均有依赖关系。  
+Os perfis de email no System Center Configuration Manager têm dependências externas e dependências dentro do produto.  
 
-## <a name="configuration-manager-dependencies"></a>Configuration Manager 依赖关系  
+## <a name="configuration-manager-dependencies"></a>Dependências do Configuration Manager  
 
-|依赖关系|更多信息|  
+|Dependência|Mais informações|  
 |----------------|----------------------|  
-|必须授予特定的安全权限来管理电子邮件配置文件|你必须具有以下安全权限才能管理公司资源访问设置，例如电子邮件配置文件：<br /><br /> - 若要查看和管理电子邮件配置文件的警报和报表：需要对“警报”对象的“创建”、“删除”、“修改”、“修改报表”、“读取”和“运行报表”权限。<br /><br /> - 若要创建和管理证书配置文件：需要对“证书配置文件”对象的“创作策略”、“修改报表”、“读取”和“运行报表”权限。<br /><br /> - 若要管理电子邮件配置文件部署：需要对“集合”对象的“部署配置策略”、“修改客户端状态警报”、“读取”和“读取资源”权限。<br /><br /> - 若要管理所有配置策略：需要对“配置策略”对象的“创建”、“删除”、“修改”、“读取”和“设置安全作用域”权限。<br /><br /> - 若要运行与电子邮件配置文件相关的查询：需要对“查询”对象的“读取”权限。<br /><br /> - 若要在 System Center Configuration Manager 控制台中查看电子邮件配置文件信息：需要对“站点”对象的“读取”权限。<br /><br /> - 若要查看电子邮件配置文件的状态消息：需要对“状态消息”对象的“读取”权限 。<br /><br /> - 若要创建和管理电子邮件配置文件：需要对“通信设置配置文件”对象的“创作策略”、“修改报表”、“读取”和“运行报表”权限。<br /><br /> **公司资源访问管理器**安全角色包括在 System Center Configuration Manager 中管理电子邮件配置文件所需的这些权限。 有关详细信息，请参阅[在 System Center Configuration Manager 中配置安全性](../../core/plan-design/security/configure-security.md)。|  
-|Active directory 中的邮件属性|如果要使用用户的主 SMTP 地址生成电子邮件配置文件中的用户电子邮件地址，则必须配置 System Center Configuration Manager 用户发现以从 Active Directory 中发现“邮件”属性（此为默认配置）。|  
+|Permissões de segurança específicas devem ser concedidas para gerenciar perfis de email|Você deve ter as seguintes permissões de segurança para gerenciar configurações de acesso aos recursos da empresa, como perfis de email:<br /><br /> ‑ Para exibir e gerenciar alertas e relatórios para perfis de email: permissões para **Criar**, **Excluir**, **Modificar**, **Modificar Relatório**, **Ler** e **Executar Relatório** para o objeto **Alertas**.<br /><br /> ‑ Para criar e gerenciar perfis de certificado: permissões para **Criar Política**, **Modificar Relatório**, **Ler** e **Executar Relatório** para o objeto **Perfil de Certificado**.<br /><br /> ‑ Para gerenciar implantações de perfil de email: permissões para **Implantar Políticas de Configuração**, **Modificar Alerta de Status do Cliente**, **Ler** e **Ler Recurso** para o objeto **Coleção**.<br /><br /> ‑ Para gerenciar todas as políticas de configuração: permissões **Criar**, **Excluir**, **Modificar**, **Ler** e **Definir Escopo de Segurança** para o objeto **Política de Configuração**.<br /><br /> ‑ Para executar consultas relacionadas aos perfis de email: permissão para **Ler** para o objeto **Consulta**.<br /><br /> ‑ Para exibir as informações de perfis de certificado no console do System Center Configuration Manager: permissão para **Ler** o objeto **Site**.<br /><br /> ‑ Para exibir mensagens de status para perfis de email: permissão para **Ler** para o objeto **Mensagens de Status**.<br /><br /> ‑ Para criar e gerenciar perfis de email: permissões para **Criar Política**, **Modificar Relatório**, **Ler** e **Executar Relatório** para o objeto **Perfil de Provisionamento de Comunicação**.<br /><br /> A função de segurança do **Gerente de Acesso de Recurso da Empresa** inclui essas permissões que são necessárias para gerenciar os perfis de email no System Center Configuration Manager. Para mais informações, consulte [Configurar segurança no System Center Configuration Manager](../../core/plan-design/security/configure-security.md).|  
+|Atributo mail no active directory|Se você deseja gerar o endereço de email de usuários em um perfil de email usando o endereço SMTP primário do usuário, a descoberta de usuário do System Center Configuration Manager deve ser configurada para descobrir o atributo **mail** do Active Directory (isso é configurado por padrão).|  
 
-## <a name="external-dependencies"></a>外部依赖关系  
+## <a name="external-dependencies"></a>Dependências externas  
 
-|依赖关系|更多信息|  
+|Dependência|Mais informações|  
 |----------------|----------------------|  
-|Active directory 中的邮件属性|如果想要通过使用用户的主 SMTP 地址生成电子邮件配置文件中的用户电子邮件地址，则此地址必须存在于 Active Directory 的“邮件”属性中。<br /><br /> 有关详细信息，请参阅 Windows Server 文档。|
+|Atributo mail no active directory|Se você deseja gerar os endereços de email de usuários em um perfil de email usando o endereço de SMTP primário do usuário, esse endereço deve existir no atributo **mail** no Active Directory.<br /><br /> Para obter mais informações, consulte a documentação do Windows Server.|

@@ -1,6 +1,6 @@
 ---
-title: "准备软件更新管理 | Microsoft Docs"
-description: "若要准备管理更新，请完成以下任务以显示 System Center Configuration Manager 控制台中的符合性评估数据。"
+title: "Preparar para o gerenciamento de atualização de software | Microsoft Docs"
+description: "Para preparar-se para gerenciar atualizações, conclua essas tarefas para exibir os dados de avaliação de conformidade no console do System Center Configuration Manager."
 keywords: 
 author: dougeby
 ms.author: dougeby
@@ -14,23 +14,23 @@ ms.assetid: 01907900-e28b-4cd7-9479-42906416707b
 ms.openlocfilehash: 5c34bd1ea108dffda10c30281fb9c97ba38ae1ae
 ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
 ms.translationtype: HT
-ms.contentlocale: zh-CN
+ms.contentlocale: pt-BR
 ms.lasthandoff: 08/07/2017
 ---
-# <a name="prepare-for-software-updates-management"></a>准备软件更新管理
+# <a name="prepare-for-software-updates-management"></a>Preparar-se para o gerenciamento de atualização de software
 
-*适用范围：System Center Configuration Manager (Current Branch)*
+*Aplica-se a: System Center Configuration Manager (Branch Atual)*
 
-在软件更新的符合性评估数据显示在 System Center Configuration Manager 控制台中之前，以及在可以将软件更新部署到客户端计算机之前，必须完成以下部分中的步骤。
+Para que os dados da avaliação de conformidade da atualização de software sejam exibidos no console do System Center Configuration Manager e para poder implantar as atualizações de software nos computadores cliente, é necessário concluir as etapas nas seções a seguir.
 
-## <a name="step-1-install-a-software-update-point"></a>步骤 1：安装软件更新点  
-管理中心站点或独立主站点以及主站点上需要软件更新点，以便启用软件更新符合性评估以及将软件更新部署到客户端。 软件更新点在辅助站点上是可选的。 更多详细信息，请参阅 [Install a software update point](install-a-software-update-point.md)（安装软件更新点）  
+## <a name="step-1-install-a-software-update-point"></a>Etapa 1: Instalar um ponto de atualização de software  
+O ponto de atualização de software é necessário no site de administração central, ou site primário autônomo, e nos sites primários para habilitar a avaliação de conformidade das atualizações de software e implantar atualizações de software em clientes. O ponto de atualização de software é opcional em sites secundários. Para ver os detalhes, consulte [Instalar um ponto de atualização de software](install-a-software-update-point.md)  
 
-## <a name="step-2-synchronize-software-updates"></a>步骤 2：同步软件更新
-软件更新同步是指检索满足配置条件的软件更新元数据的过程。 同步软件更新后，软件更新才会显示在 Configuration Manager 控制台中。 有关详细信息，请参阅[同步软件更新](synchronize-software-updates.md)。   
+## <a name="step-2-synchronize-software-updates"></a>Etapa 2: Sincronizar atualizações de software
+A sincronização de atualização de software é o processo de recuperar metadados de atualização de software que atendem aos critérios configurados. Atualizações de software não são exibidas no console do Configuration Manager até que você sincronize as atualizações de software. Para ver mais detalhes, consulte [Sincronizar atualizações de software](synchronize-software-updates.md).   
 
-## <a name="step-3-configure-classifications-and-products-to-synchronize"></a>步骤 3：配置要同步的分类和产品
-在管理中心站点或独立主站点上执行此配置。 第一次同步软件更新后，Configuration Manager 将检索分类和产品的更新列表。 现在，可以在“软件更新点组件”属性中选择新的选项。 配置新的分类和产品后，请重复步骤 2，以启动软件更新同步在新的条件下检索软件更新元数据。 有关详细信息，请参阅 [Configure classifications and products to synchronize](configure-classifications-and-products.md)（配置要同步的分类和产品）。
+## <a name="step-3-configure-classifications-and-products-to-synchronize"></a>Etapa 3: Configurar classificações e produtos para sincronizar
+Execute essa configuração no site da administração central ou no site primário autônomo. Depois de sincronizar atualizações de software na primeira vez, o Configuration Manager recupera uma lista atualizada de produtos e classificações. Agora, você pode selecionar entre as novas opções nas propriedades do Componente de Ponto de Atualização de Software. Depois de configurar as novas classificações e produtos, repita a etapa 2 para iniciar a sincronização de atualizações de software para recuperar metadados de atualizações de software para os novos critérios. Para ver os detalhes, consulte [Configurar classificações e produtos para sincronizar](configure-classifications-and-products.md).
 
-## <a name="step-4-manage-settings-for-software-updates"></a>步骤 4：管理软件更新的设置
-同步软件更新后，在部署软件更新之前请验证 Configuration Manager 客户端设置、组策略配置和软件更新设置。 更多详细信息，请参阅 [Manage settings for software updates](manage-settings-for-software-updates.md)（管理软件更新的设置）。
+## <a name="step-4-manage-settings-for-software-updates"></a>Etapa 4: Gerenciar configurações de atualizações de software
+Depois de sincronizar atualizações de software, verifique as configurações de cliente do Configuration Manager, as configurações de política de grupo e as configurações de atualizações de software antes de implantar as atualizações de software. Para ver os detalhes, consulte [Gerenciar configurações de atualizações de software](manage-settings-for-software-updates.md).

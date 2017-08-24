@@ -1,6 +1,6 @@
 ---
-title: "使用 PXE 通过网络部署 Windows | Microsoft Docs"
-description: "使用启动了 PXE 的操作系统部署来刷新计算机的操作系统或在一台新的计算机上安装新版本的 Windows。"
+title: Usar PXE para implantar o Windows na rede | Microsoft Docs
+description: "Use implantações de sistema operacional iniciadas pelo PXE para atualizar o sistema operacional de um computador ou para instalar uma nova versão do Windows em um novo computador."
 ms.custom: na
 ms.date: 06/15/2017
 ms.prod: configuration-manager
@@ -18,89 +18,89 @@ manager: angrobe
 ms.openlocfilehash: b88ab3799027c78a8c605e934b247097b31e1d21
 ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
 ms.translationtype: HT
-ms.contentlocale: zh-CN
+ms.contentlocale: pt-BR
 ms.lasthandoff: 08/07/2017
 ---
-# <a name="use-pxe-to-deploy-windows-over-the-network-with-system-center-configuration-manager"></a>使用 PXE 与 System Center Configuration Manager 一起通过网络部署 Windows
+# <a name="use-pxe-to-deploy-windows-over-the-network-with-system-center-configuration-manager"></a>Use o PXE para implantar o Windows pela rede com o System Center Configuration Manager
 
-*适用范围：System Center Configuration Manager (Current Branch)*
+*Aplica-se a: System Center Configuration Manager (Branch Atual)*
 
-System Center Configuration Manager 中启动了预启动执行环境 (PXE) 的操作系统部署允许客户端计算机通过网络请求和部署操作系统。 在此部署方案中，将操作系统映像以及 x86 和 x64 Windows PE 启动映像发送到配置为接受 PXE 启动请求的分发点。
+As implantações de sistema operacional iniciadas pelo PXE (Pre-Boot Execution Environment) no System Center Configuration Manager permitem que os computadores cliente solicitem e implantem sistemas operacionais pela rede. Nesse cenário de implantação, você envia a imagem do sistema operacional e as imagens de inicialização do x86 e x64 do Windows PE a um ponto de distribuição configurado para aceitar solicitações de inicialização PXE.
 
 > [!NOTE]  
->  当创建一个仅针对 x64 BIOS 计算机的操作系统部署时，x64 启动映像和 x86 启动映像都必须在分发点上可用。
+>  Quando você cria uma implantação de sistema operacional que se destina somente a computadores com BIOS x64, ambas as imagens de inicialização x64 e x86 devem estar disponíveis no ponto de distribuição.
 
-你可以在以下操作系统部署方案中使用启动了 PXE 的操作系统部署：
+É possível usar implantações de sistema operacional iniciadas pelo PXE nos seguintes cenários de implantação de sistema operacional:
 
--   [使用新版的 Windows 刷新现有的计算机](refresh-an-existing-computer-with-a-new-version-of-windows.md)  
+-   [Atualizar um computador existente com uma nova versão do Windows](refresh-an-existing-computer-with-a-new-version-of-windows.md)  
 
--   [在新计算机（裸机）上安装新版的 Windows](install-new-windows-version-new-computer-bare-metal.md)  
+-   [Instalar uma nova versão do Windows em um novo computador (sem sistema operacional)](install-new-windows-version-new-computer-bare-metal.md)  
 
-完成其中一个操作系统部署方案中的步骤，然后使用以下部分来准备启动了 PXE 的部署。
+Conclua as etapas em um dos cenários de implantação de sistema operacional e use as seções a seguir para preparar implantações iniciadas pelo PXE.
 
-##  <a name="BKMK_Configure"></a> 配置至少一个分发点以接受 PXE 请求
-要将操作系统部署到发出 PXE 启动请求的客户端，请使用一个或多个配置为响应 PXE 启动请求的分发点。 有关在分发点上启用 PXE 的步骤，请参阅[配置分发点以接受 PXE 请求](../get-started/prepare-site-system-roles-for-operating-system-deployments.md#BKMK_PXEDistributionPoint)。
+##  <a name="BKMK_Configure"></a> Configurar pelo menos um ponto de distribuição para aceitar solicitações PXE
+Para implantar sistemas operacionais em clientes que fazem solicitações de inicialização PXE, use um ou mais pontos de distribuição configurados para responder às solicitações de inicialização PXE. Para obter as etapas necessárias para habilitar o PXE em um ponto de distribuição, consulte [Configuring distribution points to accept PXE requests (Configurando pontos de distribuição para aceitar solicitações PXE)](../get-started/prepare-site-system-roles-for-operating-system-deployments.md#BKMK_PXEDistributionPoint).
 
-## <a name="prepare-a-pxe-enabled-boot-image"></a>准备 PXE 启用的启动映像
-若要使用 PXE 来部署操作系统，必须将已启用 PXE 的 x86 和 x64 启动映像分发到一个或多个已启用 PXE 的分发点。 使用信息在启动映像上启用 PXE 并将启动映像分发到分发点：
+## <a name="prepare-a-pxe-enabled-boot-image"></a>Preparar uma imagem de inicialização habilitada para PXE
+Para usar PXE para implantar um sistema operacional, você precisa ter imagens de inicialização x86 e x64 habilitadas para PXE distribuídas para um ou mais pontos de distribuição habilitados para PXE. Use as informações para habilitar o PXE em uma imagem de inicialização e distribuí-la para pontos de distribuição:
 
--   要在启动映像上启用 PXE，请从启动映像属性中的“数据源”选项卡中，选择“从已启用 PXE 的分发点部署此启动映像”。
+-   Para habilitar o PXE em uma imagem de inicialização, selecione **Implantar esta imagem de inicialização do ponto de distribuição habilitado para PXE** na guia **Fonte de Dados** nas propriedades da imagem de inicialização.
 
--   如果更改启动映像的属性，请将启动映像重新分发到分发点。 有关详细信息，请参阅[分发内容](../../core/servers/deploy/configure/deploy-and-manage-content.md#a-namebkmkdistributea-distribute-content)。
+-   Se você alterar as propriedades da imagem de inicialização, distribua novamente a imagem de inicialização para os pontos de distribuição. Para obter mais informações, consulte [Distribuir conteúdo](../../core/servers/deploy/configure/deploy-and-manage-content.md#a-namebkmkdistributea-distribute-content).
 
-##  <a name="BKMK_PXEExclusionList"></a> 创建 PXE 部署的排除列表
-使用 PXE 部署操作系统时，可以在每个分发点上创建一个排除列表。 将 MAC 地址添加到你希望分发点忽略的计算机的排除列表中。 列出的计算机将不接收 Configuration Manager 用于 PXE 部署的部署任务序列。
+##  <a name="BKMK_PXEExclusionList"></a> Criar uma lista de exclusões para implantações PXE
+Ao implantar sistemas operacionais com o PXE, você pode criar uma lista de exclusões em cada ponto de distribuição. Adicione os endereços MAC à lista de exclusões dos computadores dos quais o ponto de distribuição você quer ignorar. Computadores listados não receberão sequências de tarefas de implantação usadas pelo Configuration Manager para a implantação PXE.
 
-#### <a name="to-create-the-exclusion-list"></a>创建排除列表
+#### <a name="to-create-the-exclusion-list"></a>Para criar a lista de exclusão
 
-1.  在针对 PXE 启用的分发点上创建一个文本文件。 例如，将此文本文件命名为 **pxeExceptions.txt**。
+1.  Crie um arquivo de texto no ponto de distribuição habilitado para PXE. Por exemplo, nomeie esse arquivo de texto **pxeExceptions.txt**.
 
-2.  使用纯文本编辑器（例如记事本）添加要由启用 PXE 的分发点忽略的计算机的 MAC 地址。 用冒号分隔 MAC 地址值，每行输入一个地址。 例如： `01:23:45:67:89:ab`
+2.  Use um editor de texto sem formatação, como o Bloco de Notas, e adicione os endereços MAC dos computadores a serem ignorados pelo ponto de distribuição habilitado para PXE. Separe os valores de endereço MAC por dois-pontos e, em seguida, digite cada endereço em uma linha separada. Por exemplo: `01:23:45:67:89:ab`
 
-3.  将该文本文件保存在启用 PXE 的分发点站点系统服务器上。 可将该文本文件保存到服务器上的任何位置。
+3.  Salve o arquivo de texto no servidor do sistema de site do ponto de distribuição habilitado para PXE. O arquivo de texto pode ser salvo em qualquer local no servidor.
 
-4.  编辑启用 PXE 的分发点的注册表以创建 MACIgnoreListFile 注册表项。 在启用 PXE 的分发点站点系统服务器上添加该文本文件完整路径的字符串值。 使用以下注册表路径：
+4.  Edite o registro do ponto de distribuição habilitado para PXE para criar uma chave do Registro **MACIgnoreListFile**. Adicione o valor de cadeia de caracteres do caminho completo até o arquivo de texto no servidor do sistema de sites do ponto de distribuição habilitado para PXE. Use o seguinte caminho do registro:
 
      **HKLM\Software\Microsoft\SMS\DP**  
 
     > [!WARNING]  
-    >  如果不正确地使用注册表编辑器，可能会导致也许需要你重新安装操作系统的严重问题。 Microsoft 不保证能够解决因注册表编辑器使用不当而导致的问题。 使用注册表编辑器的风险由您自己承担。
+    >  Se você usar o Editor do Registro incorretamente, você poderá causar sérios problemas e possivelmente precisará reinstalar o sistema operacional. A Microsoft não garante que você conseguirá resolver os problemas resultantes do uso incorreto do Editor do Registro. Use o Editor do Registro por sua conta e risco.
 
-     进行此注册表更改后，无需重启服务器。
+     Não é necessário reiniciar o servidor após você alterar esse registro.
 
-##  <a name="BKMK_RamDiskTFTP"></a> RamDisk TFTP 块大小和窗口大小
-可以为启用 PXE 的分发点自定义 RamDisk TFTP 块大小和窗口大小（从 Configuration Manager 1606 版本开始）。 如果自定义了网络，则可能导致启动映像下载由于超时错误而失败，因为块大小或窗口大小太大。 通过 RamDisk TFTP 块大小和窗口大小自定义可以在使用 PXE 时优化 TFTP 流量，以满足特定网络要求。 在环境中测试自定义设置以确定最高效的方法。 有关详细信息，请参阅[在启用 PXE 的分发点上自定义 RamDisk TFTP 块大小和窗口大小](../get-started/prepare-site-system-roles-for-operating-system-deployments.md#BKMK_RamDiskTFTP)。
+##  <a name="BKMK_RamDiskTFTP"></a> Tamanho do bloco e da janela do RamDisk TFTP
+É possível personalizar o tamanho do bloco e da janela do RamDisk TFTP, e partir do Configuration Manager versão 1606, o tamanho da janela para pontos de distribuição habilitados pelo PXE. Se você tiver personalizado sua rede, isso poderá fazer com que o download da imagem de inicialização falhe com um erro de tempo limite devido ao tamanho muito grande do bloco ou da janela. A personalização do tamanho do bloco e da janela do RamDisk TFTP permite otimizar o tráfego TFTP ao usar o PXE para atender aos seus requisitos de rede específicos. Teste as configurações personalizadas no ambiente para determinar o método mais eficiente. Para obter mais informações, consulte [Personalizar o tamanho do bloco e da janela do RamDisk TFTP nos pontos de distribuição habilitados para PXE](../get-started/prepare-site-system-roles-for-operating-system-deployments.md#BKMK_RamDiskTFTP).
 
-## <a name="configure-deployment-settings"></a>配置部署设置
-若要使用启动了 PXE 的操作系统部署，必须配置该部署以使操作系统对 PXE 启动请求可用。 可以在“部署软件向导”的“部署设置”页或部署属性的“部署设置”选项卡上配置可用的操作系统。 对于“可用于以下项目”  设置，请配置下述内容之一：
+## <a name="configure-deployment-settings"></a>Definir configurações de implantação
+Para usar uma implantação de sistema operacional iniciada pelo PXE, é necessário configurar a implantação para disponibilizar o sistema operacional para solicitações de inicialização PXE. Você pode configurar os sistemas operacionais disponíveis na página **Configurações de implantação** do Assistente de implantação de Software ou na guia **Configurações de implantação** nas propriedades de implantação. Para a configuração **Tornar disponível para o seguinte** , defina uma das seguintes opções:
 
--   Configuration Manager 客户端、媒体和 PXE
+-   Clientes do Configuration Manager, mídia e PXE
 
--   仅媒体和 PXE
+-   Somente mídia e PXE
 
--   仅媒体和 PXE（隐藏）
+-   Somente mídia e PXE (oculto)
 
-##  <a name="BKMK_Deploy"></a> 部署任务序列
-将操作系统部署到目标集合。 有关详细信息，请参阅 [Deploy a task sequence](manage-task-sequences-to-automate-tasks.md#BKMK_DeployTS)。 当使用 PXE 部署操作系统时，你可以将部署配置为必需或可用。
+##  <a name="BKMK_Deploy"></a> Implantar a sequência de tarefas
+Implantar o sistema operacional em uma coleção de destino. Para obter mais informações, consulte [Deploy a task sequence](manage-task-sequences-to-automate-tasks.md#BKMK_DeployTS). Ao implantar sistemas operacionais usando o PXE, é possível configurar se a implantação será necessária ou estará disponível.
 
--   所需的部署：所需的部署将使用 PXE，无需任何用户干预。 用户不能绕过 PXE 启动。 但是，如果用户在分发点响应之前取消 PXE 启动，则不会部署操作系统。
+-   **Implantação necessária**: as implantações necessárias usam o PXE sem nenhuma intervenção do usuário. O usuário não poderá ignorar a inicialização PXE. No entanto, se o usuário cancelar a inicialização PXE antes de o ponto de distribuição responder, o sistema operacional não será implantado.
 
--   **可用部署**：可用部署要求用户在目标计算机旁，以便他们能够按 F12 键以继续进行 PXE 启动过程。 如果由于没有用户在场而未按 F12，则计算机将启动到当前操作系统，或者将从下一个可用启动设备启动计算机。
+-   **Implantação disponível**: as implantações disponíveis requerem que o usuário esteja presente no computador de destino para que o usuário pressione a tecla F12 para continuar o processo de inicialização PXE. Se o usuário não estiver presente para pressionar F12, o computador será inicializado no atual sistema operacional ou do próximo dispositivo de inicialização disponível.
 
-通过清除分配给 Configuration Manager 集合或计算机的上一个 PXE 部署的状态，可以重新部署所需的 PXE 部署。 此操作将重置该部署的状态并重新安装最新的所需部署。
+É possível reimplantar uma implantação PXE necessária apagando o status da última implantação PXE atribuída a uma coleção do Configuration Manager ou a um computador. Essa ação redefine o status dessa implantação e reinstala as implantações necessárias mais recentes.
 
 > [!IMPORTANT]
-> PXE 协议不安全。 请确保 PXE 服务器和 PXE 客户端位于物理安全网络上，如在数据中心，以防止未经授权就访问你的站点。
+> O protocolo PXE não é seguro. Verifique se o servidor PXE e o cliente PXE estão localizados em uma rede fisicamente segura, como um data center, para evitar acesso não autorizado ao site.
 
-##  <a name="how-is-the-boot-image-selected-for-clients-booting-with-pxe"></a>如何为通过 PXE 启动的客户端选择启动映像？
-当客户端通过 PXE 启动时，Configuration Manager 会提供一个启动映像给该客户端使用。 从 Configuration Manager 版本 1606 开始，Configuration Manager 将使用体系结构精确匹配的启动映像。 如果没有可用的体系结构精确匹配的启动映像，则 Configuration Manager 会使用具有兼容体系结构的启动映像。 下表提供了有关如何为通过 PXE 启动的客户端选择启动映像的详细信息。
-1. Configuration Manager 会在站点数据库中查找与尝试启动的客户端的 MAC 地址或 SMBIOS 相匹配的系统记录。  
+##  <a name="how-is-the-boot-image-selected-for-clients-booting-with-pxe"></a>Como a imagem de inicialização é selecionada para clientes sendo inicializados com o PXE?
+Quando um cliente é inicializado com o PXE, o Configuration Manager fornece ao cliente uma imagem de inicialização para usar. A partir do Configuration Manager versão 1606, o Configuration Manager usará uma imagem de inicialização com uma correspondência de arquitetura exata. Se uma imagem de inicialização com a arquitetura exata não estiver disponível, o Configuration Manager usará uma imagem de inicialização com uma arquitetura compatível. A lista a seguir fornece detalhes sobre como uma imagem de inicialização é selecionada para clientes sendo inicializados com o PXE.
+1. O Configuration Manager examina o banco de dados do site para o registro do sistema que coincide com o endereço MAC ou o SMBIOS do cliente que está tentando inicializar.  
 
     > [!NOTE]
-    > 如果分配到站点的计算机启动到另一站点的 PXE，则策略对该计算机不可见。 例如，如果已将客户端分配到站点 A，则站点 B 的管理点和分发点将不能从站点 A 访问策略，且客户端无法成功进行 PXE 启动。
+    > Se um computador atribuído a um site inicializar para PXE para um site diferente, as políticas não estarão visíveis para o computador. Por exemplo, se um cliente já estiver atribuído ao site A, o ponto de gerenciamento e o ponto de distribuição para o site B não poderão acessar as políticas do site A. O cliente não fará a inicialização PXE com êxito.
 
-2. Configuration Manager 会查找部署到步骤 1 中找到的系统记录中的任务序列。
+2. O Configuration Manager procura sequências de tarefas implantadas no registro do sistema encontradas na etapa 1.
 
-3. 在步骤 2 中找到的任务序列列表中，Configuration Manager 会查找与尝试启动的客户端体系结构相匹配的启动映像。 如果找到具有相同体系结构的启动映像，则会使用该启动映像。
+3. Na lista de sequências de tarefas encontrada na etapa 2, o Configuration Manager procura uma imagem de inicialização que corresponde à arquitetura do cliente que está tentando inicializar. Se uma imagem de inicialização é encontrada com a mesma arquitetura, ela é usada.
 
-4. 如果未找到具有相同体系结构的启动映像，Configuration Manager 会查找与客户端体系结构兼容的启动映像。 它查找在步骤 2 中发现的任务序列列表。 例如，64 位客户端兼容 32 位和 64 位启动映像。 32 位客户端仅兼容 32 位启动映像。 UEFI 客户端仅兼容 64 位启动映像。
+4. Se uma imagem de inicialização não for encontrada com a mesma arquitetura, o Configuration Manager procurará uma imagem de inicialização compatível com a arquitetura do cliente. Ele procura na lista de sequências de tarefas encontrada na etapa 2. Por exemplo, um cliente de 64 bits é compatível com imagens de inicialização de 32 bits e 64 bits. Um cliente de 32 bits é compatível apenas com imagens de inicialização de 32 bits. Um cliente UEFI é compatível apenas com imagens de inicialização de 64 bits.

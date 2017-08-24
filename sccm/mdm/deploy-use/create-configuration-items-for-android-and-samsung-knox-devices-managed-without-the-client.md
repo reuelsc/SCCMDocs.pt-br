@@ -1,6 +1,6 @@
 ---
-title: "为使用 Intune 管理的 Android 和 Samsung KNOX 标准版设备创建配置项 | Microsoft Docs"
-description: "使用 System Center Configuration Manager Android 和 Samsung KNOX 标准版配置项目管理设备的设置。"
+title: "Criar itens de configuração para dispositivos Android e Samsung KNOX Standard gerenciados com o Intune | Microsoft Docs"
+description: "Use o item de configuração do Android e Samsung KNOX Standard no System Center Configuration Manager para gerenciar as configurações dos dispositivos."
 ms.custom: na
 ms.date: 03/27/2017
 ms.prod: configuration-manager
@@ -18,199 +18,199 @@ manager: angrobe
 ms.openlocfilehash: c9961c2e9866199571a1b39a7b185cb6bb96f998
 ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
 ms.translationtype: HT
-ms.contentlocale: zh-CN
+ms.contentlocale: pt-BR
 ms.lasthandoff: 08/07/2017
 ---
-# <a name="how-to-create-configuration-items-for-android-and-samsung-knox-devices-managed-without-the-system-center-configuration-manager-client"></a>如何为没有使用 System Center Configuration Manager 客户端管理的 Android 和 Samsung KNOX 设备创建配置项目
+# <a name="how-to-create-configuration-items-for-android-and-samsung-knox-devices-managed-without-the-system-center-configuration-manager-client"></a>Como criar itens de configuração para dispositivos Android e Samsung KNOX gerenciados sem o cliente do System Center Configuration Manager
 
-使用 System Center Configuration Manager **Android 和 Samsung KNOX** 配置项目管理在 Microsoft Intune 中注册或者由 Configuration Manager 在本地进行管理的 Android 和 Samsung KNOX 设备的设置。  
+Use o item de configuração **Android e Samsung KNOX** do System Center Configuration Manager para gerenciar as configurações para os dispositivos Android e Samsung KNOX que estão registrados no Microsoft Intune ou são gerenciados localmente pelo Configuration Manager.  
 
-#### <a name="to-create-an-android-and-samsung-knox-configuration-item"></a>若要创建 Android 和 Samsung KNOX 配置项目  
+#### <a name="to-create-an-android-and-samsung-knox-configuration-item"></a>Para criar um item de configuração do Android e Samsung KNOX  
 
-1. 在 Configuration Manager 控制台中，选择“资产和符合性”。  
+1. No console do Configuration Manager, escolha **Ativos e Conformidade**.  
 
-2. 在“资产和符合性”工作区中，展开“符合性设置”，然后选择“配置项目”。  
+2. No espaço de trabalho **Ativos e Conformidade** , expanda **Configurações de Conformidade**e escolha em **Itens de Configuração**.  
 
-3. 在“主页”选项卡上的“创建”组中，选择“创建配置项目”。  
+3. Na guia **Início**, no grupo **Criar**, clique em **Criar Item de Configuração**.  
 
-4. 在“创建配置项目向导”的“常规”页面上，指定配置项目的名称和可选描述。  
+4. Na página **Geral** do Assistente para Criar Item de Configuração, especifique um nome e uma descrição opcional para o item de configuração.  
 
-5. 在“指定要创建的配置项目类型”下，选择“Android 和 Samsung KNOX”。  
+5. Em **Especificar o tipo de item de configuração que deseja criar**, escolha **Android e Samsung KNOX**.  
 
-6. 如果创建并分配类别以帮助在 Configuration Manager 控制台中搜索和筛选配置项目，请选择“类别”。  
+6. Escolha **Categorias** se você criar e atribuir categorias para ajudá-lo a pesquisar e filtrar os itens de configuração no console do Configuration Manager.  
 
-7. 在向导的“支持的平台”页面上，选择将评估配置项目的特定 Android 或 Samsung KNOXs 平台。  
+7. Na página **Plataformas com Suporte** do assistente, escolha as plataformas específicas do Android ou Samsung KNOX que avaliarão o item de configuração.  
 
-8. 在向导的“设备设置”页面上，选择要配置的设置组。 请参阅本主题中的 [Android 和 Samsung KNOX 配置项目设置参考](#BKMK_setref)以了解详细信息，然后选择“下一步”。  
-
-    > [!TIP]  
-    >  如果所需设置未列出，请选中“配置默认设置组以外的其他设置”框。  
-
-9. 在每个设置页上，配置所需的设置。 此外，选择是否要在它们在设备上不符合要求时进行修正（如果支持这样做）。  
-
-10. 对于每个设置组，还可以配置在发现配置项目不符合要求时将要报告的严重性：  
-
-    - **不报告**。 对于 Configuration Manager 报表，不符合此符合性规则的设备不报告故障严重性。  
-
-    - **信息**。 对于 Configuration Manager 报表，不符合此符合性规则的设备将故障严重性报告为**信息**。  
-
-    - **警告**。 对于 Configuration Manager 报表，不符合此符合性规则的设备将故障严重性报告为**警告**。  
-
-    - **严重**。 对于 Configuration Manager 报表，不符合此符合性规则的设备将故障严重性报告为**严重**。  
-
-    - **严重事件**。 对于 Configuration Manager 报表，不符合此符合性规则的设备将故障严重性报告为**严重**。 应用程序事件日志中也会以 Windows 事件的形式记录此严重性级别。  
-
-11. 在向导的“平台适用性”页面上，查看任何与先前选择的受支持平台不兼容的设置。 你可以返回并删除这些设置，也可以继续。  
+8. Na página **Configurações do Dispositivo** do assistente, escolha o grupo de configurações que você deseja configurar. Veja a [Referência de configurações do item de configuração para Android e Samsung KNOX](#BKMK_setref) neste tópico para obter detalhes e escolha **Avançar**.  
 
     > [!TIP]  
-    >  不会对不受支持的设置评估符合性。  
+    >  Se a configuração desejada não estiver na lista, marque a caixa **Definir configurações adicionais que não estão nos grupos de configuração padrão**.  
 
-12. 完成该向导。  
+9. Em cada página de configurações, defina as configurações necessárias. E mais, escolha se deseja corrigi-las quando não estiverem em conformidade nos dispositivos (quando houver suporte).  
 
- 可以在“资产和符合性”  工作区的“配置项目”  节点中查看新配置项目。  
+10. Para cada grupo de configurações, você também pode configurar a severidade que será relatada quando um item de configuração for considerado em não conformidade:  
 
-## <a name="android-and-samsung-knox-configuration-item-settings-reference"></a>Android 和 Samsung KNOX 配置项目设置参考  
+    - **Nenhum**. Os dispositivos que não cumprem essa regra de conformidade não relatam uma severidade de falha nos relatórios do Configuration Manager.  
 
-### <a name="password"></a>Password  
-这些设置适用于 Android 和 Samsung KNOX 设备。  
+    - **Informações**. Os dispositivos que não cumprem essa regra de conformidade relatam uma severidade de falha **Informações** nos relatórios do Configuration Manager.  
 
-|设置|详细信息|  
+    - **Aviso**. Os dispositivos que não cumprem essa regra de conformidade relatam uma severidade de falha **Aviso** nos relatórios do Configuration Manager.  
+
+    - **Crítico**. Os dispositivos que não cumprem essa regra de conformidade relatam uma severidade de falha **Crítico** nos relatórios do Configuration Manager.  
+
+    - **Crítico com evento**. Os dispositivos que não cumprem essa regra de conformidade relatam uma severidade de falha **Crítico** nos relatórios do Configuration Manager. Esse nível de severidade também é registrado como um evento do Windows no log de eventos de aplicativos.  
+
+11. Na página **Aplicabilidade da Plataforma** do assistente, examine as configurações incompatíveis com as plataformas com suporte selecionadas anteriormente. Você pode voltar e remover essas configurações ou pode continuar.  
+
+    > [!TIP]  
+    >  As configurações sem suporte não são avaliadas quanto à conformidade.  
+
+12. Conclua o assistente.  
+
+ Você pode exibir o novo item de configuração no nó **Itens de Configuração** do espaço de trabalho **Ativos e Conformidade** .  
+
+## <a name="android-and-samsung-knox-configuration-item-settings-reference"></a>Referência de configurações do item de configuração para o Android e Samsung KNOX  
+
+### <a name="password"></a>Senha  
+Essas configurações se aplicam aos dispositivos Android e Samsung KNOX.  
+
+|Configuração|Detalhes|  
 |-------------|-------------|  
-|**设备上需要密码设置**|支持的设备上需要密码。|  
-|**最短密码长度（字符）**|指定密码的最短长度。|  
-|**密码过期天数**|指定必须更改密码前的天数。|  
-|**记住的密码数**|防止重复使用以前用过的密码。|  
-|**擦除设备前的失败登录尝试次数**|如果此数目的登录尝试均失败，则擦除该设备。|  
-|**锁定设备前的空闲时间**|指定在未使用设备的情况下设备锁定前的时间。|
-|**密码质量**|指定所需的密码复杂性级别以及是否可以使用生物识别设备。|  
-|**允许 Smart Lock 和其他信任代理**|让你能够控制兼容的 Android 设备上的 Smart Lock 功能。 如果设备处于可信位置（例如当它连接到特定蓝牙设备时，或者在 NFC 标记附近时），则此手机功能使你可以禁用或绕过设备锁屏界面密码。 可以使用此设置防止用户配置 Smart Lock。|
-|**用于解锁的指纹 (KNOX 5.0+)**|允许使用指纹解锁兼容设备。|
+|**Exigir configurações de senha em dispositivos**|Requer uma senha nos dispositivos com suporte.|  
+|**Comprimento mínimo da senha (caracteres)**|Especifica o comprimento mínimo da senha.|  
+|**Validade da senha em dias**|Especifica o número de dias antes de uma senha precisar ser alterada.|  
+|**Número de senhas lembradas**|Impede a reutilização de senhas usadas anteriormente.|  
+|**Número de tentativas de logon com falha antes de o dispositivo ser apagado**|Apaga o dispositivo se houver falha neste número de tentativas de logon.|  
+|**Tempo ocioso antes que o dispositivo móvel seja bloqueado**|Especifica o período até que o dispositivo seja bloqueado se não estiver sendo usado.|
+|**Qualidade da senha**|Especifica o nível necessário de complexidade da senha e também se os dispositivos biométricos podem ser usados.|  
+|**Permitir Smart Lock e outros agentes de confiança**|Permite controlar o recurso Smart Lock em dispositivos Android compatíveis. Essa capacidade do telefone permite desabilitar ou ignorar a senha da tela de bloqueio do dispositivo, caso o dispositivo esteja em um local confiável, como quando ele está conectado a um dispositivo Bluetooth específico ou quando está perto de uma marcação NFC. É possível usar essa configuração para impedir que os usuários configurem o Smart Lock.|
+|**Impressão digital de desbloqueio (KNOX 5.0+)**|Permite usar uma impressão digital para desbloquear os dispositivos compatíveis.|
 
-### <a name="device"></a>设备   
+### <a name="device"></a>Dispositivo   
 
-|设置|详细信息|  
+|Configuração|Detalhes|  
 |------------------|-------------|  
-|**语音拨号**|启用或禁用设备上的语音拨号功能。|
-|**语音助手**|允许在设备上使用语音助手软件。|
-|**屏幕捕获**|允许用户以图像形式捕捉屏幕内容。|
-|**诊断数据提交**|允许设备向 Google 提交诊断信息。|
-|**地理位置**|允许设备使用位置信息。|
-|**复制和粘贴**|允许设备上的复制和粘贴功能。|
-|**恢复出厂设置**|允许用户对设备执行恢复出厂设置。|  |
-|**应用程序之间的剪贴板共享**|允许用户使用剪贴板在应用之间进行复制和粘贴。|  |
-|**蓝牙**|允许在设备上使用蓝牙。|
+|**Discagem de voz**|Habilita ou desabilita o recurso de discagem de voz no dispositivo.|
+|**Assistente de voz**|Permite o uso do software Assistente de voz no dispositivo.|
+|**Captura de tela**|Permite ao usuário capturar o conteúdo da tela como uma imagem.|
+|**Envio de dados de diagnóstico**|Permite que o dispositivo envie informações de diagnóstico ao Google.|
+|**Localização geográfica**|Permite que o dispositivo use informações de localização.|
+|**Copiar e colar**|Permite as funções de copiar e colar no dispositivo.|
+|**Redefinição de fábrica**|Permite que o usuário execute uma redefinição de fábrica no dispositivo.|  |
+|**Permitir compartilhamento de área de transferência entre aplicativos**|Permite que o usuário use a área de transferência para copiar e colar entre os aplicativos.|  |
+|**Bluetooth**|Permite o uso de Bluetooth no dispositivo.|
 
-### <a name="store"></a>存储
+### <a name="store"></a>Repositório
 
-|设置|详细信息|  
+|Configuração|Detalhes|  
 |------------------|-------------|  
-|**应用商店**|允许用户在设备上访问 Google Play 商店。|
+|**Armazenamento de aplicativos**|Permite que o usuário acesse o armazenamento do Google Play no dispositivo.|
 
-### <a name="browser"></a>浏览器
+### <a name="browser"></a>Navegador
 
-|设置|详细信息|  
+|Configuração|Detalhes|  
 |------------------|-------------|  
-|**允许使用 Web 浏览器**|允许使用设备的默认 Web 浏览器。|
-|**自动填充**|允许使用 Web 浏览器的自动填充功能。|
-|**活动脚本**|允许设备的 Web 浏览器使用活动脚本。|
-|**弹出窗口阻止程序**|允许在 Web 浏览器中使用弹出窗口阻止程序。|
-|**Cookie**|允许设备的 Web 浏览器使用 cookie。|
+|**Permitir navegador da Web**|Permite que o navegador da Web padrão do dispositivo seja usado.|
+|**Preenchimento automático**|Permite o uso da função de preenchimento automático do navegador da Web.|
+|**Script ativo**|Permite que o navegador da Web do dispositivo use o script ativo.|
+|**Bloqueador de pop-up**|Permite o uso de um bloqueador de pop-up no navegador da Web.|
+|**Cookies**|Permite que o navegador da Web do dispositivo use cookies.|
 
-### <a name="cloud"></a>云  
+### <a name="cloud"></a>Nuvem  
 
-|设置|详细信息|  
+|Configuração|Detalhes|  
 |-------------|-------------|  
-|**Google 备份**|允许使用 Google 备份。|  
-|**Google 帐户自动同步**|允许 Google 帐户设置自动同步。|  
+|**Backup do Google**|Permite o uso de backup do Google.|  
+|**Sincronização automática da conta do Google**|Permite que as configurações de conta do Google sejam sincronizadas automaticamente.|  
 
-### <a name="security"></a>安全  
+### <a name="security"></a>Segurança  
 
-|设置|详细信息|  
+|Configuração|Detalhes|  
 |-------------|-------------|  
-|**SMS 和 MMS 消息**|允许在设备上使用 SMS 和 MMS 消息。|
-|**可移动存储**|允许设备使用可移动存储，如 SD 卡。|
-|**照相机**|允许使用设备相机。<br /><br /> 适用于 Android 和 Samsung KNOX 设备。|
-|**近场通信 (NFC)**|允许使用近场通信的任务（如果设备支持）。|
-|**YouTube**|允许在设备上使用 YouTube 应用。<br /><br /> 仅适用于 Samsung KNOX 设备。|  
-|**关机**|允许设备关机。<br /><br /> 仅适用于 Samsung KNOX 设备。|  
+|**Mensagens SMS e MMS**|Permite o uso de mensagens SMS e MMS no dispositivo.|
+|**Armazenamento removível**|Permite que o dispositivo use o armazenamento removível, como um cartão SD.|
+|**Câmera**|Permite o uso da câmera do dispositivo.<br /><br /> Aplica-se a dispositivos Android e Samsung KNOX.|
+|**Comunicação a curta distância (NFC)**|Permite operações que usam comunicação de curta distância, caso o dispositivo ofereça suporte.|
+|**YouTube**|Permite o uso do aplicativo YouTube no dispositivo.<br /><br /> Aplica-se somente a dispositivos Samsung KNOX.|  
+|**Desligar**|Permite que o dispositivo seja desligado.<br /><br /> Aplica-se somente a dispositivos Samsung KNOX.|  
 
-### <a name="roaming"></a>漫游
+### <a name="roaming"></a>Roaming
 
-|设置|详细信息|  
+|Configuração|Detalhes|  
 |-------------|-------------|  
-|语音漫游|设备位于移动电话网络时，允许语音漫游。|
-|数据漫游|设备位于移动电话网络时，允许数据漫游。|
+|Roaming de voz|Permite o roaming de voz quando o dispositivo estiver em uma rede de celular.|
+|Roaming de dados|Permite o roaming de dados quando o dispositivo estiver em uma rede de celular.|
 
 
-### <a name="encryption"></a>加密  
- 这些设置适用于 Android 和 Samsung KNOX 设备。  
+### <a name="encryption"></a>Criptografia  
+ Essas configurações se aplicam aos dispositivos Android e Samsung KNOX.  
 
-|设置|详细信息|  
+|Configuração|Detalhes|  
 |-------------|-------------|  
-|**存储卡加密**|要求设备存储卡加密。|
-|**设备上的文件加密**|要求对移动设备上的文件进行加密。|  
+|**Criptografia de cartão de memória**|Exige que o cartão de armazenamento do dispositivo seja criptografado.|
+|**Criptografia de arquivo no dispositivo**|Requer que os arquivos no dispositivo móvel sejam criptografados.|  
 
-### <a name="wireless-communications"></a>无线通信
+### <a name="wireless-communications"></a>Comunicações sem fio
 
-|设置|详细信息|  
+|Configuração|Detalhes|  
 |-------------|-------------|  
-|**无线网络连接**|允许使用设备的 Wi-Fi 功能。|
-|**Wi-Fi Tethering**|允许在设备上使用 Wi-Fi Tethering。|
+|**Conexão de rede sem fio**|Permite o uso dos recursos de Wi-Fi do dispositivo.|
+|**Compartilhamento da Internet por Wi-Fi**|Permite o uso de compartilhamento de Internet por Wi-Fi no dispositivo.|
 
 
-### <a name="compliant-and-noncompliant-apps-android"></a>符合和不符合应用 (Android)  
-你可以指定公司中符合或不符合的 Android 应用的列表。 然后可使用报表来显示安装了不符合应用的设备和关联的用户。  
+### <a name="compliant-and-noncompliant-apps-android"></a>Aplicativos compatíveis e não compatíveis (Android)  
+É possível especificar uma lista de aplicativos Android que não estão em conformidade ou não em sua empresa. Então, você pode usar relatórios para exibir os dispositivos que contêm aplicativos em não conformidade instalados e o usuário associado.  
 
-不能在同一配置项目中同时指定符合和不符合应用。  
+Não é possível especificar aplicativos compatíveis e não compatíveis no mesmo item de configuração.  
 
-#### <a name="to-specify-the-compliant-or-noncompliant-apps-list"></a>指定符合和不符合应用列表  
+#### <a name="to-specify-the-compliant-or-noncompliant-apps-list"></a>Para especificar a lista de aplicativos compatíveis ou não compatíveis  
 
-在  “符合和不符合应用 (Android)”页上，指定以下信息：  
+Na página **Aplicativos Compatíveis e Não Compatíveis (Android)** , especifique as seguintes informações:  
 
-|设置|更多信息|  
+|Configuração|Mais informações|  
 |-------------|----------------------|  
-|**不符合应用列表**|指定如果用户安装，将报告为不符合应用的应用列表。|  
-|**符合应用列表**|指定允许用户安装的应用列表。 安装的任何其他应用将报告为不相容。|  
-|**添加**|将应用添加到选定的列表。 在应用商店中指定你选择的名称（可选择使用应用发布者）和应用的 URL。<br /><br /> 若要从 [Google Play 应用部分](https://play.google.com/store/apps)指定 URL，请搜索想要使用的应用。<br /><br /> 打开应用页面，并将该 URL 复制到剪贴板。 你现在可以在符合或不符合要求的应用列表中使用这个 URL。<br /><br /> **示例：** 在 Google Play 中搜索 **Microsoft Office Mobile**。 你使用的 URL 将为 **https://play.google.com/store/apps/details?id=com.microsoft.office.officehub**。|  
-|**编辑**|使你能够编辑选定应用的名称、发布者和 URL。|  
-|**移除**|从列表中删除选定的应用。|  
-|**导入**|导入你已在逗号分隔值文件中指定的应用列表。 在文件中使用格式应用程序名称、发布者和应用 URL。|  
+|**Lista de aplicativos não compatíveis**|Especifica uma lista de aplicativos que serão relatados como em não conformidade se forem instalados pelos usuários.|  
+|**Lista de aplicativos compatíveis**|Especifica uma lista de aplicativos que os usuários têm permissão de instalar. Todos os outros aplicativos instalados serão relatados como não compatíveis.|  
+|**Adicionar**|Adiciona um aplicativo à lista selecionada. Especifique um nome da sua preferência, opcionalmente o editor do aplicativo, e a URL para o aplicativo na loja de aplicativos.<br /><br /> Para especificar a URL, na [seção de aplicativos do Google Play](https://play.google.com/store/apps), procure o aplicativo que deseja usar.<br /><br /> Abra a página do aplicativo e copie a URL para a área de transferência. Agora você pode usar essa URL na lista de aplicativos compatíveis ou incompatíveis.<br /><br /> **Exemplo:** pesquise o **Microsoft Office Mobile**na Google Play. A URL usada será **https://play.google.com/store/apps/details?id=com.microsoft.office.officehub**.|  
+|**Editarar**|Permite editar o nome, editor e URL do aplicativo selecionado.|  
+|**Removerr**|Exclui o aplicativo selecionado da lista.|  
+|**Importarar**|Importa uma lista dos aplicativos que você especificou em um arquivo de valores separados por vírgulas. Use o formato, nome do aplicativo, editor e URL do aplicativo no arquivo.|  
 
-## <a name="android-for-work-configuration-items"></a>Android for Work 配置项
-Android for Work 具有配置项的两个设置组：
+## <a name="android-for-work-configuration-items"></a>Itens de configuração do Android for Work
+O Android for Work tem dois grupos de configuração para itens de configuração:
 
-- **密码**。 与 Android“经典”的设置相同。
+- **Senha**. Idêntica às configurações para o Android "clássico".
 
-- **工作配置文件**。 启用以下 Android for Work 设置：
-  - **允许在工作和个人配置文件之间共享数据**
-  - **在设备处于锁定状态时隐藏工作配置文件通知** (Android 6.0 +)
-  - **设置默认应用权限策略** (Android 6.0+)
+- **Perfil de Trabalho**. Habilita as seguintes configurações do Android for Work:
+  - **Permitir o compartilhamento de dados entre perfis pessoais e de trabalho**
+  - **Ocultar notificações de perfil de trabalho quando o dispositivo é bloqueado** (Android 6.0+)
+  - **Configurar a política de permissão de aplicativo padrão** (Android 6.0+)
 
-要在 Android 工作配置文件中创建配置项目，请在“常规”页上选择“Android for Work”，并配置每个设置组的设置。 像往常一样将配置项添加到基准并进行部署。 这些设置仅适用于注册为 Android for Work 的设备，不适用于注册为 Android 的设备。
+Para criar um item de configuração no perfil de trabalho do Android, escolha **Android for Work** na página **Geral** e defina as configurações de cada um dos grupos de configuração. Adicione o item de configuração a uma linha de base e implante como de costume. Essas configurações serão aplicadas somente nos dispositivos registrados como Android for Work, e não nos registrados como Android.
 
-### <a name="kiosk-mode-samsung-knox-only"></a>站台模式（仅限 Samsung KNOX）  
-可以使用展台模式锁定设备以只允许某些功能工作。 例如，可以让设备只运行一个指定的托管应用，也可以禁用设备上的音量按钮。 这些设置可用于设备的演示模型。 也可将其用于专门执行一个功能的设备（如销售点设备）。  
+### <a name="kiosk-mode-samsung-knox-only"></a>Modo de quiosque (apenas Samsung KNOX)  
+É possível usar o modo de quiosque para bloquear um dispositivo para permitir que somente alguns recursos funcionem. Por exemplo, você pode permitir que um dispositivo execute apenas um aplicativo gerenciado especificado ou desabilitar os botões de volume em um dispositivo. Essas configurações podem ser usadas para um modelo de demonstração de um dispositivo. Ou podem ser usadas para um dispositivo que é dedicado a apenas uma função, como um dispositivo de ponto de venda.  
 
-#### <a name="to-configure-kiosk-mode-for-a-samsung-knox-device"></a>为 Samsung KNOX 设备配置展台模式  
+#### <a name="to-configure-kiosk-mode-for-a-samsung-knox-device"></a>Para configurar o modo de quiosque para dispositivos Samsung KNOX  
 
-1. 在“创建配置项目向导”的“为 Samsung KNOX 设备配置展台模式设置”页上，指定以下信息：  
+1. Na página **Definir Configurações do Modo de Quiosque para Dispositivos Samsung KNOX** do Assistente para Criar o Item de Configuração, especifique as seguintes informações:  
 
-   |设置|更多信息|  
+   |Configuração|Mais informações|  
    |-------------|----------------------|  
-   |**选择应用**|选择“浏览”以选择 Configuration Manager Android 应用程序（扩展名为 **.apk**），当设备处于展台模式时将允许该应用程序运行。 不允许在设备上运行其他应用。|  
-   |**音量按钮**|启用或禁用设备上的音量按钮。|  
-   |**屏幕睡眠和唤醒按钮**|启用或禁用设备上的屏幕睡眠唤醒按钮。|  
+   |**Selecionar aplicativo**|Escolha em **Procurar** para selecionar um aplicativo Android do Configuration Manager (com a extensão **.apk**) que poderá ser executado quando o dispositivo estiver no modo de quiosque. Nenhum outro aplicativo poderá ser executado no dispositivo.|  
+   |**Botões de volume**|Habilita ou desabilita o uso dos botões de volume no dispositivo.|  
+   |**Suspensão e botão de ativação da tela**|Habilita ou desabilita o botão de ativação e suspensão da tela no dispositivo.|  
 
-2. 完成后，请选择“下一步”。  
+2. Quando tiver terminado, escolha **Avançar**.  
 
-## <a name="reports-for-monitoring"></a>监视报表
-你可以使用以下任一报表监视符合和不符合应用：  
+## <a name="reports-for-monitoring"></a>Relatórios para monitoramento
+Você pode usar um dos seguintes relatórios para monitorar aplicativos com e sem conformidade:  
 
-- **指定用户的不符合应用和设备的列表**。 显示有关安装了不符合指定策略的应用的用户和设备的信息。  
+- **Lista de Aplicativos e Dispositivos sem conformidade para um usuário específico**. Mostra informações sobre os usuários e dispositivos que têm aplicativos instalados e não estão em conformidade com uma política especificada.  
 
-- **具有不符合应用的用户的摘要**。 显示有关安装了不符合指定策略的应用的用户的信息。  
+- **Resumo dos Usuários com Aplicativos em Não Conformidade**. Mostra informações sobre os usuários que têm aplicativos instalados que não estão em conformidade com uma política especificada.  
 
-有关如何使用报表的信息，请参阅 [System Center Configuration Manager 中的报表](../../core/servers/manage/reporting.md)。  
+Para obter informações sobre como usar relatórios, consulte [Relatórios no System Center Configuration Manager](../../core/servers/manage/reporting.md).  
 
-## <a name="see-also"></a>另请参阅  
-[未使用 System Center Configuration Manager 客户端管理的设备的配置项目](../../compliance/deploy-use/configuration-items-for-devices-managed-without-the-client.md)
+## <a name="see-also"></a>Consulte também  
+[Itens de configuração de dispositivos gerenciados sem o cliente do System Center Configuration Manager](../../compliance/deploy-use/configuration-items-for-devices-managed-without-the-client.md)

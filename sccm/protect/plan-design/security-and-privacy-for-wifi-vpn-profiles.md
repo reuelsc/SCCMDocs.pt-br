@@ -1,6 +1,6 @@
 ---
-title: "Wi-Fi 和 VPN 配置文件安全和隐私 | Microsoft Docs"
-description: "了解在 System Center Configuration Manager 中管理设备的 Wi-Fi 和 VPN 配置文件的安全最佳做法。"
+title: "Segurança e privacidade de perfis de Wi-Fi e VPN | Microsoft Docs"
+description: "Saiba mais sobre as práticas recomendadas de segurança para gerenciar perfis de Wi-Fi e VPN para dispositivos no System Center Configuration Manager."
 ms.custom: na
 ms.date: 12/28/2016
 ms.prod: configuration-manager
@@ -18,23 +18,23 @@ manager: angrobe
 ms.openlocfilehash: 6d1d0a393a2ce614ae5f819475bd47b05e699b45
 ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
 ms.translationtype: HT
-ms.contentlocale: zh-CN
+ms.contentlocale: pt-BR
 ms.lasthandoff: 08/07/2017
 ---
-# <a name="security-and-privacy-for-wi-fi-and-vpn-profiles-in-system-center-configuration-manager"></a>System Center Configuration Manager 中 Wi-Fi 和 VPN 配置文件的安全性和隐私
+# <a name="security-and-privacy-for-wi-fi-and-vpn-profiles-in-system-center-configuration-manager"></a>Segurança e privacidade de perfis Wi-Fi e VPN no System Center Configuration Manager
 
-*适用范围：System Center Configuration Manager (Current Branch)*
+*Aplica-se a: System Center Configuration Manager (Branch Atual)*
 
-##  <a name="security-best-practices-for-wi-fi--and-vpn-profiles"></a>Wi-Fi 和 VPN 配置文件的安全最佳做法  
- 在管理设备的 Wi-Fi 和 VPN 配置文件时，请使用下列安全最佳做法。  
+##  <a name="security-best-practices-for-wi-fi--and-vpn-profiles"></a>Práticas recomendadas de segurança para perfis de Wi-Fi e VPN  
+ Use as seguintes práticas recomendadas de segurança ao gerenciar perfis de Wi-Fi e VPN para dispositivos.  
 
-|最佳安全方案|更多信息|  
+|Prática recomendada de segurança|Mais informações|  
 |----------------------------|----------------------|  
-|请尽可能选择 Wi-Fi 和 VPN 基础结构和客户端操作系统支持的最安全选项。|Wi-Fi 和 VPN 配置文件提供了一种简便的方法来集中分发和管理设备已支持的 Wi-Fi 和 VPN 设置。 Configuration Manager 不会添加 Wi-Fi 或 VPN 功能。<br /><br /> 确定、实施和遵循已为你的设备和基础结构推荐的任何最佳安全方案。|  
+|Sempre que possível, escolha as opções mais seguras para as quais sua infraestrutura de Wi-Fi e VPN e sistemas operacionais cliente podem dar suporte.|Os perfis de Wi-Fi e VPN fornecem um método conveniente para distribuir e gerenciar de maneira centralizada as configurações de Wi-Fi e VPN que já têm suporte dos dispositivos. O Configuration Manager não adiciona a funcionalidade de Wi-Fi ou VPN.<br /><br /> Identifique, implemente e siga as práticas recomendadas de segurança que foram sugeridas para os dispositivos e a infraestrutura.|  
 
-## <a name="privacy-information-for-wi-fi-profiles"></a>Wi-Fi 配置的隐私信息  
- 可以使用 Wi-Fi 和 VPN 配置文件来配置客户端设备以连接到 Wi-Fi 和 VPN 服务器，然后评估这些设备在应用配置文件后是否具有符合性。 管理点会将符合性信息发送到站点服务器，该信息存储在站点数据库中。 设备在将信息发送到管理点时会对其进行加密，但信息不会以加密格式存储在站点数据库中。 数据库将保留该信息，直到站点维护任务“删除过期的配置管理数据”  将其删除为止。 默认删除间隔是 90 天，但你可以更改它。 符合性信息不会被发送到 Microsoft。  
+## <a name="privacy-information-for-wi-fi-profiles"></a>Informações de privacidade para perfis Wi-Fi  
+ Você pode usar perfis Wi-Fi e VPN para configurar os dispositivos cliente que se conectam a servidores Wi-Fi e VPN e avaliar se esses dispositivos são compatíveis depois que os perfis forem aplicados. O ponto de gerenciamento envia informações de conformidade ao servidor do site, e essas informações são armazenadas no banco de dados do site. As informações são criptografadas quando os dispositivos as enviam para o ponto de gerenciamento, mas não são armazenadas em formato criptografado no banco de dados do site. O banco de dados mantém as informações até que a tarefa de manutenção de site **Excluir Dados Antigos de Gerenciamento da Configuração** as exclua. O intervalo de exclusão padrão é de 90 dias, mas você pode alterá-lo. As informações de conformidade não são enviadas à Microsoft.  
 
- 默认情况下，设备不评估 Wi-Fi 和 VPN 配置文件。 此外，必须对配置文件进行配置，然后将其部署到用户。  
+ Por padrão, os dispositivos não avaliam os perfis Wi-Fi e VPN. Além disso, você deve configurar os perfis e implantá-los nos usuários.  
 
- 配置 Wi-Fi 或 VPN 配置文件前，请考虑隐私要求。  
+ Antes de configurar os perfis Wi-Fi e VPN, considere seus requisitos de privacidade.  

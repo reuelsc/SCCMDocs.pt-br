@@ -1,6 +1,6 @@
 ---
-title: "配置选项 | Microsoft Docs"
-description: "配置选项以使用 System Center Updates Publisher"
+title: "Configurar opções | Microsoft Docs"
+description: "Configurar opções para usar o System Center Updates Publisher"
 ms.custom: na
 ms.date: 4/29/2017
 ms.prod: configuration-manager
@@ -18,135 +18,135 @@ robots: NOINDEX, NOFOLLOW
 ms.openlocfilehash: b66ed0a5e1c87d8c82853da86e3d55b0e2c043bb
 ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
 ms.translationtype: HT
-ms.contentlocale: zh-CN
+ms.contentlocale: pt-BR
 ms.lasthandoff: 08/07/2017
 ---
-# <a name="configure-options-for-updates-publisher"></a>为 Updates Publisher 配置选项
+# <a name="configure-options-for-updates-publisher"></a>Configurar opções para o Updates Publisher
 
-*适用范围：System Center Updates Publisher*
+*Aplica-se ao: System Center Updates Publisher*
 
-检查并配置影响 Updates Publisher 操作的选项和相关设置。
+Analise e defina as opções e configurações relacionadas que afetam a operação do Updates Publisher.
 
-若要访问 Updates Publisher 选项，请单击控制台左上角的“Updates Publisher 属性”选项卡，然后选择“选项”。
+Para acessar as opções do Updates Publisher, no canto superior esquerdo do console, clique em **Updates Publisher**, guia **Propriedades** e escolha **Opções**.
 
-![选项](media/properties1.png)   
+![Opções](media/properties1.png)   
 
 
-选项的分类如下：
+As opções estão divididas assim:
 
--   更新服务器
--   ConfigMgr 服务器
--   代理设置
--   受信任的发行者
--   高级
--   更新
--   日志记录
+-   Update Server
+-   ConfigMgr Server
+-   Configurações Proxy
+-   Editores Confiáveis
+-   Avançado
+-   Atualizações
+-   Registrando em log
 
-## <a name="update-server"></a>更新服务器
-必须先将 Updates Publisher 配置为与 Windows Server Update Services (WSUS) 等更新服务器协同工作，然后才能[发布更新](/sccm/sum/tools/manage-updates-with-updates-publisher#publish-updates-and-bundles)。 这包括指定服务器、用于连接远离控制台的服务器的方法，以及用于对你发布的更新进行数字签名的证书。
+## <a name="update-server"></a>Update Server
+Você deve configurar o Updates Publisher para trabalhar com um servidor de atualização como o Windows Server Update Services (WSUS) antes de poder [publicar atualizações](/sccm/sum/tools/manage-updates-with-updates-publisher#publish-updates-and-bundles). Isso inclui a especificação do servidor, métodos para se conectar a esse servidor quando ele for remoto com relação ao console e um certificado a ser usado para assinar digitalmente as atualizações publicadas.
 
--   **配置更新服务器**。 配置更新服务器时，请选择 Configuration Manager 层次结构中的顶层 WSUS 服务器（更新服务器），以便所有子网站均有权访问你发布的更新。
+-   **Configurar um servidor de atualização**. Ao configurar um servidor de atualização, selecione o servidor WSUS de nível superior (servidor de atualização) em sua hierarquia do Configuration Manager para que todos os sites filho tenham acesso às atualizações que você publicar.
 
-  如果更新服务器远离 Updates Publisher 服务器，请指定服务器的完全限定的域名 (FQDN) 以及是否通过 SSL 连接。 通过 SSL 连接时，默认端口介于 8530 到 8531 之间。 请确保设置的端口与更新服务器使用的端口一致。
+  Se o servidor de atualização for remoto com relação ao seu servidor do Updates Publisher, especifique o FQDN (Nome de domínio totalmente qualificado) do servidor e se você se conectará por SSL. Quando você se conecta por SSL, a porta padrão muda de 8530 para 8531. Certifique-se de que a porta configurada corresponda à porta que está sendo usada por seu servidor de atualização.
 
     > [!TIP]  
-    > 如果未配置更新服务器，仍可以使用 Updates Publisher 编写软件更新。
+    > Se você não configurar um servidor de atualização, ainda poderá usar o Updates Publisher para criar atualizações de software.
 
--   **配置签名证书**。 必须先配置并成功连接更新服务器，然后才能配置签名证书。
+-   **Configure o certificado de autenticação**. Você deve configurar e conectar-se com êxito a um servidor de atualização antes de poder configurar o certificado de autenticação.
 
-    Updates Publisher 使用签名证书对发布到更新服务器的软件更新进行签名。 如果更新服务器或运行 Updates Publisher 的计算机的证书存储中没有数字证书，那么发布将失败。
+    O Updates Publisher usa o certificado de autenticação para assinar as atualizações de software que são publicadas no servidor de atualização. A publicação falhará se o certificado digital não estiver disponível no repositório de certificados do servidor de atualização ou no computador que executa o Updates Publisher.
 
-    若要详细了解如何向证书存储添加证书，请参阅 [Updates Publisher 中的证书和安全性](/sccm/sum/tools/updates-publisher-security)。
+    Para saber mais sobre como adicionar o certificado ao repositório de certificados, confira [Certificados e segurança para o Updates Publisher](/sccm/sum/tools/updates-publisher-security).
 
-    如果没有设置为更新服务器自动检测数字证书，请选择以下选项之一：
+    Se um certificado digital não for detectado automaticamente para o servidor de atualização, escolha uma das seguintes opções:
 
-    -   浏览：仅在运行控制台的服务器上安装了更新服务器后，“浏览”才可用。 选择证书后，必须选择“创建”，才能将证书添加到更新服务器上的 WSUS 证书存储中。 必须为通过此方法选择的证书输入 **.pfx** 文件密码。
+    -   **Procurar**: a opção de procurar só estará disponível quando o servidor de atualização for instalado no servidor onde você executa o console. Depois de selecionar um certificado você deve escolher **Criar** para adicionar o certificado ao repositório de certificados do WSUS no servidor de atualização. Você deve inserir a senha do arquivo **.pfx** para os certificados selecionados por esse método.
 
-    -   创建：选择此选项可新建证书。 还可以将证书添加到更新服务器上的 WSUS 证书存储中。
+    -   **Criar:** use essa opção para criar um novo certificado. Isso também adiciona o certificado ao repositório de certificados do WSUS no servidor de atualização.
 
-    **如果创建你自己的签名证书**，请配置以下选项：
+    **Se você criar seu próprio certificado de autenticação**, configure o seguinte:
 
-    -   启用“允许导出私钥”选项。
+    -   Habilite a opção **Permitir que a chave privada seja exportada**.
 
-    -   为数字签名设置“密钥用法”。
+    -   Defina **Uso de Chave** como assinatura digital.
 
-    -   将“最小密钥大小”设置为不小于 2048 位的值。
+    -   Defina **Tamanho mínimo da chave** como um valor igual ou maior do que 2048 bits.
 
-    使用“删除”选项可从 WSUS 证书存储中删除证书。 当更新服务器位于所使用的 Updates Publisher 控制台附近，或通过 **SSL** 连接远程更新服务器时，此选项可用。
+    Use a opção **Remover** para remover um certificado do repositório de certificados do WSUS. Essa opção estará disponível quando o servidor de atualização for local com relação ao console do Updates Publisher usado, ou quando você usar **SSL** para se conectar a um servidor de atualização remoto.
 
-## <a name="configmgr-server"></a>ConfigMgr 服务器
-将 Configuration Manager 与 Updates Publisher 结合使用时，请配置下面这些选项。
+## <a name="configmgr-server"></a>ConfigMgr Server
+Use essas opções ao usar o Configuration Manager com o Updates Publisher.
 
--   指定 Configuration Manager 服务器：启用对 Configuration Manager 的支持后，指定 Configuration Manager 层次结构中的顶层网站服务器的位置。 如果此服务器远离 Updates Publisher 安装项，请指定网站服务器的 FQDN。 选择“测试连接”，以确保可以连接网站服务器。
+-   **Especifique o servidor do Configuration Manager:** depois de habilitar o suporte para o Configuration Manager, especifique o local do servidor de site de nível superior de sua hierarquia do Configuration Manager. Se esse servidor for remoto com relação à instalação do Updates Publisher, especifique o FQDN do servidor do site. Escolha **Conexão de Teste** para garantir que você possa se conectar ao servidor do site.
 
--   配置阈值：如果发布的更新的发布项类型为“自动”，需要使用阈值。 阈值有助于确定何时发布更新的完整内容，而不是只发布元数据。 若要详细了解发布项类型，请参阅[将更新分配给发布项](/sccm/sum/tools/manage-updates-with-updates-publisher#assign-updates-and-bundles-to-a-publication)
+-   **Configurar limites:** os limites são usados quando você publica atualizações com um tipo de publicação Automática. Os valores do limite ajudam a determinar quando o conteúdo completo de uma atualização é publicado em vez de apenas os metadados. Para conhecer mais tipos de publicação, veja [Atribuir atualizações a uma publicação](/sccm/sum/tools/manage-updates-with-updates-publisher#assign-updates-and-bundles-to-a-publication)
 
-    可以使用以下阈值之一，也可以两种阈值都使用：
+    Habilite um ou os dois limites a seguir:
 
-    -   请求客户端计数阈值：此阈值定义了必须有多少个客户端请求更新，Updates Publisher 才能自动发布更新的完整内容。 如果没有指定数量的客户端请求更新，只会发布更新元数据。
+    -   **Limite de contagem de solicitação do cliente:** define quantos clientes devem solicitar uma atualização antes que o Updates Publisher possa publicar automaticamente o conjunto completo de conteúdo para essa atualização. Até que o número especificado de clientes solicite a atualização, apenas os metadados das atualizações são publicados.
 
-    -   包源大小阈值(MB)：此阈值可阻止自动发布超出指定大小的更新。 如果更新的大小超出此阈值，只会发布元数据。 如果更新的大小小于指定阈值，可以发布更新的完整内容。
+    -   **Limite de tamanho de origem do pacote (MB):** isso impede a publicação automática de atualizações que ultrapassam o tamanho especificado. Se o tamanho das atualizações ultrapassar esse valor, apenas os metadados serão publicados. Atualizações menores do que o tamanho especificado podem ter seu conteúdo completo publicado.
 
-## <a name="proxy-settings"></a>代理设置
-从 Internet 导入软件目录或向 Internet 发布更新时，Updates Publisher 使用代理设置。
+## <a name="proxy-settings"></a>Configurações Proxy
+O Updates Publisher usa as configurações de proxy quando você importa catálogos de software da Internet ou publica atualizações na Internet.
 
--   指定代理服务器的 FQDN 或 IP 地址。 支持 IPv4 和 IPv6。
+-   Especifique o endereço IP ou FQDN de um servidor proxy. Há suporte para IPv4 e IPv6.
 
--   如果代理服务器验证用户是否有权访问 Internet，必须指定 Windows 名称。 不支持通用主体名称 (UPN)。
+-   Se o servidor proxy autenticar os usuários para acesso à Internet, especifique o nome do Windows. Não há suporte para um nome UPN (nome de entidade universal).
 
-## <a name="trusted-publishers"></a>受信任的发行者
-如果导入更新目录，目录（基于证书）的源被添加为受信任的发布者。 同样，如果发布更新，更新证书的源被添加为受信任的发布者。
+## <a name="trusted-publishers"></a>Editores Confiáveis
+Quando você importar um catálogo de atualizações, a origem desse catálogo (com base em seu certificado), será adicionada como um editor confiável. Da mesma forma, quando você publica uma atualização, a origem do certificado de atualizações é adicionada como um editor confiável.
 
-可以查看每个发布者的证书详细信息，并从受信任的发布者列表中删除发布者。
+Você pode exibir detalhes do certificado para cada editor e remover um editor da lista de editores confiáveis.
 
-不受信任的发布者发布的内容可能会在客户端扫描更新时损坏客户端计算机。 应只接受你信任的发布者发布的内容。
+O conteúdo de editores não confiáveis pode danificar os computadores dos clientes quando o cliente verifica se há atualizações. Aceite o conteúdo somente de editores confiáveis.
 
-## <a name="advanced"></a>高级
-高级选项如下：
+## <a name="advanced"></a>Avançado
+As opções avançadas incluem as seguintes:
 
--   存储库位置：查看和修改数据库文件 **scupdb.sdf** 的位置。 此文件是 Updates Publisher 存储库。
+-   **Local do repositório:** veja e modifique o local do arquivo de Banco de Dados, **scupdb.sdf**. Esse arquivo é o repositório para o Updates Publisher.
 
--   时间戳：启用后，时间戳会添加到签名的更新中，以标识签名时间。 在证书有效时签名的更新可以在签名证书过期后继续使用。 默认情况下，无法部署签名证书过期的软件更新。
+-   **Carimbo de hora:** quando habilitado, um carimbo de hora é adicionado às atualizações assinadas por você, identificando quando foram assinadas. Uma atualização que foi assinada enquanto um certificado era válido pode ser usada após a expiração desse certificado de autenticação. Por padrão, as atualizações de software não podem ser implantadas após a expiração do certificado de assinatura.
 
--   检查已订阅目录的最新动态：每次启动时，Updates Publisher 都可以自动检查已订阅目录的最新动态。 发现的目录最新动态会在“更新工作区”的“概述”窗口中以“最新警报”的形式详细显示。
+-   **Verificar se há atualizações nos catálogos inscritos:** sempre que o Updates Publisher é iniciado, ele pode procurar automaticamente por atualizações para os catálogos nos quais você se inscreveu. Quando uma atualização de catálogo é encontrada, os detalhes são fornecidos como **Alertas Recentes** na janela **Visão Geral** do **Espaço de Trabalho de Atualizações**.
 
--   证书吊销：选择此选项可以启用证书吊销检查。
+-   **Revogação de certificado:** escolha esta opção para habilitar verificações de revogação de certificado.
 
--   本地源发布：从 Internet 下载要发布的更新前，Updates Publisher 可以先使用它的本地副本。 位置必须是运行 Updates Publisher 的计算机上的文件夹。 默认情况下，此位置是 **My Documents\LocalSourcePublishing**。 如果以前下载过一个或多个更新，或对要部署的更新进行了修改，请选择此选项。
+-   **Publicação de origem local:** o Updates Publisher pode usar uma cópia local de uma atualização que você está publicando antes de baixar essa atualização da Internet. O local deve ser uma pasta no computador que executa o Updates Publisher. Por padrão, esse local é **Meus Documents\LocalSourcePublishing.** Use isso quando você tiver baixado anteriormente uma ou mais atualizações ou tiver feito modificações em uma atualização que você deseja implantar.
 
--   软件更新清理向导：启动更新清理向导。 此向导会终止更新服务器上有、但 Updates Publisher 存储库中没有的更新。 请参阅[终止未引用的软件更新](#expire-unreferenced-software-updates)，了解更多详情。
+-   **Assistente para Limpeza de Atualizações de Software:** inicie o assistente para limpeza de atualizações. O assistente expira atualizações que estão no servidor de atualização, mas que não estão no repositório do Updates Publisher. Consulte [Expirar atualizações sem referência](#expire-unreferenced-software-updates) para obter mais detalhes.
 
-## <a name="updates"></a>更新
- Updates Publisher 可以在每次打开时自动检查是否有新更新。 也可以选择接收 Updates Publisher 的预览版。
+## <a name="updates"></a>Atualizações
+ O Updates Publisher pode verificar automaticamente novas atualizações sempre que é aberto. Você também pode aceitar receber builds de visualização do Updates Publisher.
 
-若要手动检查更新，请单击 Updates Publisher 控制台中的“属性”![](media/properties2.png)，  
-打开“Updates Publisher 属性”，然后选择“检查更新”。
+Para verificar manualmente se há atualizações no console do Updates Publisher, clique em ![Propriedades](media/properties2.png)  
+para abrir as **Propriedades do Updates Publisher** e escolha **Verificar se há atualização**.
 
-找到新更新后，Updates Publisher 会在“更新可用”窗口中进行显示，然后你可以选择安装。 如果选择不安装更新，将在下次打开控制台时看到安装提示。
+Quando o Updates Publisher encontra uma nova atualização, ele exibe a janela **Atualização Disponível** e você pode optar por instalá-la. Se você optar por não instalar a atualização, ela será oferecida na próxima vez que você abrir o console.
 
-## <a name="logging"></a>日志记录
-Updates Publisher 将 Updates Publisher 的基本信息记录到 **&lt;*路径*&gt;\Windows\Temp\UpdatesPublisher.log**。
+## <a name="logging"></a>Registrando em log
+O Updates Publisher registra informações básicas sobre o Updates Publisher em **&lt;* caminho*&gt;\Windows\Temp\UpdatesPublisher.log**.
 
-使用记事本或 **CMTrace** 可以查看日志。 CMTrace 是 Configuration Manager 日志文件工具，位于 Configuration Manager 源媒体的 **\SMSSetup\Tools** 文件夹中。
+Use o bloco de notas ou o **CMTrace** para exibir o log. CMTrace é a ferramenta de arquivo de log do Configuration Manager localizada na pasta **\SMSSetup\Tools** da mídia de origem do Configuration Manager.
 
-可以更改日志大小及其详细程度。
+Você pode alterar o tamanho do log e seu nível de detalhes.
 
-启用数据库日志记录后，将包括对 Updates Publisher 数据库运行的查询的相关信息。 使用数据库日志记录可能会导致 Updates Publisher 计算机的性能下降。
+Quando você habilita o registro em log de banco de dados, as informações sobre as consultas executadas no banco de dados do Updates Publisher são incluídas. O uso do registro em log de banco de dados pode diminuir o desempenho do computador com o Updates Publisher.
 
-若要查看日志文件，请单击控制台中的“属性”![](media/properties2.png)，打开“Updates Publisher 属性”，然后选择“查看日志文件”。
+Para exibir o arquivo de log, no console, clique em ![Propriedades](media/properties2.png) para abrir as **Propriedades do Updates Publisher** e, em seguida, escolha **Exibir arquivo de log**.
 
-## <a name="expire-unreferenced-software-updates"></a>终止未引用的软件更新
-可以运行“软件更新清理向导”，终止更新服务器上有、但 Updates Publisher 存储库中没有的更新。 这会通知 Configuration Manager，然后它会从任何未来部署中删除这些更新。
+## <a name="expire-unreferenced-software-updates"></a>Expirar atualizações de software sem referência
+Você pode executar o **Assistente para Limpeza de Atualização de Software** para expirar atualizações que estão em seu servidor de atualização, mas não no repositório do Updates Publisher. Isso notifica o Configuration Manager, que remove essas atualizações de quaisquer implantações futuras.
 
-终止更新的操作无法撤回。 只有在确认组织不再需要你选择的软件更新时，才能执行此任务。
+O ato de expiração de uma atualização não pode ser revertido. Apenas execute essa tarefa quando tiver certeza de que as atualizações de software selecionadas não são mais necessárias para sua organização.
 
-### <a name="to-remove-expired-software-updates"></a>如何删除已终止的软件更新
-1.  在 Updates Publisher 控制台中，单击“属性”![](media/properties2.png)，打开“Updates Publisher 属性”，然后选择“选项”。
+### <a name="to-remove-expired-software-updates"></a>Para remover as atualizações de software expiradas
+1.  No console do Updates Publisher, clique em ![Propriedades](media/properties2.png) para abrir as **Propriedades do Updates Publisher** e escolha **Opções**.
 
-2.  依次选择“高级”和“软件更新清理向导”下的“启动”。
+2.  Escolha **Avançado** e, em **Assistente para Limpeza de Atualização de Software,** escolha **Iniciar**.
 
-3.  选择要终止的软件更新，然后选择“下一步”。
+3.  Selecione as atualizações de software que você deseja expirar e depois escolha **Avançar**.
 
-4.  检查选择的更新后，选择“下一步”，接受选择并终止这些更新。
+4.  Depois de revisar suas seleções, escolha **Avançar** para aceitar as seleções e expirar essas atualizações.
 
-5.  此向导完成后，选择“关闭”，完成向导。
+5.  Após a conclusão do assistente, escolha **Fechar** para concluir o assistente.

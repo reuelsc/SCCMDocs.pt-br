@@ -1,6 +1,6 @@
 ---
-title: "基于风险限制访问权限 | Microsoft Docs"
-description: "根据设备、网络和应用程序风险限制对公司资源的访问权限。"
+title: Restringir o acesso com base no risco | Microsoft Docs
+description: Restrinja o acesso aos recursos da empresa com base em risco de dispositivo, rede e aplicativo.
 ms.custom: na
 ms.date: 04/25/2017
 ms.prod: configuration-manager
@@ -17,78 +17,78 @@ manager: angrobe
 ms.openlocfilehash: 21841d97387f07f53993d957641f9ad892d723c2
 ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
 ms.translationtype: HT
-ms.contentlocale: zh-CN
+ms.contentlocale: pt-BR
 ms.lasthandoff: 08/07/2017
 ---
-# <a name="manage-access-to-company-resource-based-on-device-network-and-application-risk"></a>根据设备、网络和应用程序风险管理对公司资源的访问权限
+# <a name="manage-access-to-company-resource-based-on-device-network-and-application-risk"></a>Gerenciar o acesso aos recursos da empresa com base em risco de dispositivo, rede e aplicativo
 
-*适用范围：System Center Configuration Manager (Current Branch)*
+*Aplica-se a: System Center Configuration Manager (Branch Atual)*
 
-根据 Lookout （一种与 Microsoft Intune 集成的设备威胁防护解决方案）所做的风险评估，可以控制从移动设备对公司资源进行访问的权限。 风险基于 Lookout 服务从设备的操作系统 (OS) 漏洞、已安装恶意应用以及恶意网络配置文件收集的遥测。 
+É possível controlar o acesso de dispositivos móveis aos recursos corporativos, com base na avaliação de risco realizada pelo Lookout, uma solução de proteção contra ameaças ao dispositivo integrada ao Microsoft Intune. O risco se baseia na telemetria que o serviço Lookout coleta dos dispositivos em relação às vulnerabilidades do sistema operacional, aos aplicativos mal-intencionados instalados e aos perfis de rede mal-intencionados. 
 
-根据通过 System Center Configuration Manager (SCCM) 合规性策略启用的 Lookout 所报告的风险评估，可以配置条件访问策略并允许或阻止因在其上检测到威胁而确定为不合规的那些设备。
+Com base na avaliação de risco relatada do Lookout, habilitada por meio das políticas de conformidade do SCCM (System Center Configuration Manager), é possível configurar políticas de acesso condicional e permitir ou bloquear dispositivos se for determinado que eles não estão em conformidade, devido a ameaças detectadas nesses dispositivos.
 
-[混合 MDM 部署（SCCM 与 Intune）](https://docs.microsoft.com/sccm/mdm/understand/choose-between-standalone-intune-and-hybrid-mobile-device-management)根据诸如 Lookout 等设备威胁防护解决方案所提供的风险评估，让你能够控制对公司资源的访问。
+A [implantação de MDM híbrida (SCCM com o Intune)](https://docs.microsoft.com/sccm/mdm/understand/choose-between-standalone-intune-and-hybrid-mobile-device-management) oferece a você a capacidade de controlar o acesso aos recursos e dados da empresa com base na avaliação de risco fornecida por soluções de proteção contra ameaças ao dispositivo como o Lookout.
 
-## <a name="how-do-the-hybrid-mdm-deployment-and-lookout-device-threat-protection-help-protect-company-resources"></a>混合 MDM 部署和 Lookout 设备威胁防护如何帮助保护公司资源？
-在移动设备上运行的 Lookout 移动应用 (Lookout for work) 可捕获文件系统、网络堆栈、设备和应用程序遥测（如果可用），并将其发送到 Lookout 设备威胁防护云服务，以便计算移动威胁的合计设备风险。 还可以在 Lookout 控制台中更改威胁的风险级别分类来满足要求。  
+## <a name="how-do-the-hybrid-mdm-deployment-and-lookout-device-threat-protection-help-protect-company-resources"></a>Como a implantação de MDM híbrida e a proteção contra ameaças ao dispositivo do Lookout ajudam a proteger os recursos da empresa?
+O aplicativo móvel do Lookout (Lookout for Work), executado em dispositivos móveis, captura o sistema de arquivos, a pilha de rede, a telemetria de dispositivos e aplicativos (quando disponível) e envia todos eles para o serviço de nuvem de proteção contra ameaças ao dispositivo do Lookout, a fim de calcular um risco ao dispositivo agregado de ameaças móveis. Também é possível alterar a classificação do nível de risco das ameaças no console do Lookout, de acordo com suas necessidades.  
 
-SCCM 中的合规性策略现在包含针对 Lookout Mobile Threat Protection 的新规则，其基于 Lookout 威胁风险评估。 启用此规则后，将会评估设备的合规性。
+A política de conformidade do SCCM agora inclui uma nova regra do Lookout Mobile Threat Protection, que se baseia na avaliação de risco de ameaças ao dispositivo do Lookout. Quando essa regra é habilitada, a conformidade do dispositivo é avaliada.
 
-如果确定设备不符合合规性策略，则可使用条件访问策略阻止对 Exchange Online 和 SharePoint Online 等资源的访问。 阻止访问后，会向最终用户提供演练以帮助解决此问题，从而获取对公司资源的访问权限。 该演练通过 Lookout for Work 应用推出。
+Se for determinado que o dispositivo não está em conformidade com a política de conformidade, o acesso a recursos como Exchange Online e SharePoint Online poderá ser bloqueado usando políticas de acesso condicional. Quando o acesso é bloqueado, os usuários finais recebem um passo a passo para ajudar a resolver o problema e obter acesso aos recursos da empresa. Esse passo a passo é iniciado por meio do aplicativo Lookout for Work.
 
-## <a name="supported-platforms"></a>支持的平台：
-* **Android 4.1 及更高版本**，且在 Microsoft Intune 中注册。
-* **iOS 8 及更高版本**，且在 Microsoft Intune 中注册。
-有关 Lookout 支持的平台和语言的信息，请参阅此[文章](https://personal.support.lookout.com/hc/en-us/articles/114094140253)。
+## <a name="supported-platforms"></a>Plataformas com suporte:
+* **Android 4.1 e posterior**, registrado no Microsoft Intune.
+* **iOS 8 e posterior**, registrado no Microsoft Intune.
+Para obter informações sobre as plataformas e os idiomas com suporte no Lookout, consulte este [artigo](https://personal.support.lookout.com/hc/en-us/articles/114094140253).
 
-## <a name="prerequisites"></a>先决条件：
-* [混合 MDM 部署](https://docs.microsoft.com/sccm/mdm/understand/choose-between-standalone-intune-and-hybrid-mobile-device-management)
-* 订阅 Microsoft Intune 和 Azure Active Directory。
-* 对 Lookout Mobile Endpoint Security 的企业订阅。  有关详细信息，请参阅 [Lookout Mobile Endpoint Security](https://www.lookout.com/products/mobile-endpoint-security)
+## <a name="prerequisites"></a>Pré-requisitos:
+* [Implantação de MDM híbrida](https://docs.microsoft.com/sccm/mdm/understand/choose-between-standalone-intune-and-hybrid-mobile-device-management)
+* Uma assinatura do Microsoft Intune e o Azure Active Directory.
+* Uma assinatura empresarial do Lookout Mobile EndPoint Security.  Para obter mais informações, consulte [Lookout Mobile Endpoint Security](https://www.lookout.com/products/mobile-endpoint-security)
 
-## <a name="example-scenarios"></a>方案示例
-以下是一些常见方案：
-### <a name="control-access-based-on-threat-from-malicious-apps"></a>根据来自恶意应用的威胁控制访问权限：
-在设备上检测到恶意软件等恶意应用时，可阻止此类设备执行以下操作：
-* 解决威胁前连接到公司电子邮件。
-* 使用 OneDrive for Work 应用同步公司文件。
-* 访问业务关键应用。
+## <a name="example-scenarios"></a>Cenários de exemplo
+Estes são alguns cenários comuns:
+### <a name="control-access-based-on-threat-from-malicious-apps"></a>Controlar o acesso com base em ameaças de aplicativos mal-intencionados:
+Quando aplicativos mal-intencionados, como malware, são detectados no dispositivo, é possível impedir que esses dispositivos:
+* Conectem-se ao email corporativo antes de resolver a ameaça.
+* Sincronizem arquivos corporativos usando o aplicativo OneDrive for Work.
+* Acessem aplicativos críticos para os negócios.
 
-**检测到恶意应用时阻止访问：**
+**Bloqueio do acesso quando aplicativos mal-intencionados forem detectados:**
 
-![关系图：显示在设备因其上的恶意应用而被确定为不合规时阻止访问的条件访问策略](media/config-mgr-maliciousapps_blocked.png)
+![Diagrama que mostra a política de acesso condicional bloqueando o acesso quando for determinado que o dispositivo não está em conformidade, devido a aplicativos mal-intencionados no dispositivo](media/config-mgr-maliciousapps_blocked.png)
 
-**修正威胁时取消阻止设备并能够访问公司资源：**
+**Desbloqueio do dispositivo e permissão para acessar os recursos da empresa quando a ameaça é corrigida:**
 
-![关系图：显示设备在修正后被确定为合规时授予访问权限的条件访问策略](media/config-mgr-maliciousapps-unblocked.png)
-### <a name="control-access-based-on-threat-to-network"></a>根据网络威胁控制访问权限：
-检测到中间人攻击等网络威胁时，根据设备风险限制对 WiFi 网络的访问。
+![diagrama que mostra a política de acesso condicional concedendo o acesso quando for determinado que o dispositivo está em conformidade após a correção](media/config-mgr-maliciousapps-unblocked.png)
+### <a name="control-access-based-on-threat-to-network"></a>Controlar o acesso com base em ameaças à rede:
+Detecte as ameaças à sua rede, como ataques “man-in-the-middle”, e restrinja o acesso às redes WiFi com base no risco ao dispositivo.
 
-**阻止通过 WiFi 访问网络的权限：**
+**Bloqueio do acesso à rede por meio de WiFi:**
 
-![关系图：显示根据网络威胁阻止 WiFi 访问的条件访问策略](media/config-mgr-network-wifi-blocked.png)
+![Diagrama que mostra o acesso condicional bloqueando o acesso a WiFi com base em ameaças à rede](media/config-mgr-network-wifi-blocked.png)
 
-**修正后授予访问权限：**
+**Concessão do acesso após a correção:**
 
-![关系图：显示修正威胁后允许访问的条件访问策略](media/config-mgr-network-wifi-unblocked.png)
-### <a name="control-access-to-sharepoint-online-based-on-threat-to-network"></a>根据网络威胁控制对 SharePoint Online 的访问：
+![Diagrama que mostra o acesso condicional permitindo o acesso após a correção da ameaça](media/config-mgr-network-wifi-unblocked.png)
+### <a name="control-access-to-sharepoint-online-based-on-threat-to-network"></a>Controlar o acesso ao SharePoint Online com base em ameaças à rede:
 
-检测到中间人攻击等网络威胁时，根据设备风险阻止对公司文件进行同步。
+Detecte ameaças à sua rede, como ataques “man-in-the-middle”, e previna a sincronização de arquivos corporativos com base no risco ao dispositivo.
 
-**根据设备上检测到的网络威胁阻止对 SharePoint Online 的访问：**
+**Bloqueio do acesso ao SharePoint Online com base em ameaças à rede detectadas no dispositivo:**
 
-![关系图：显示根据威胁检测阻止设备访问 SharePoint Online 的条件访问策略](media/config-mgr-network-spo-blocked.png)
+![Diagrama mostrando o acesso condicional, bloqueando o acesso de dispositivo no SharePoint Online com base na detecção de ameaças](media/config-mgr-network-spo-blocked.png)
 
 
-**修正后授予访问权限：**
+**Concessão do acesso após a correção:**
 
-![关系图：显示修正网络威胁后允许访问的条件访问策略](media/config-mgr-network-spo-unblocked.png)
+![Diagrama que mostra o acesso condicional permitindo o acesso após a correção da ameaça à rede](media/config-mgr-network-spo-unblocked.png)
 
-## <a name="next-steps"></a>后续步骤
-以下是实现此解决方案必须执行的主要步骤：
-1.  [使用 Lookout 移动威胁保护设置订阅](set-up-your-subscription-with-lookout.md)
-2.  [在 Intune 中启用 Lookout MTP 连接](enable-lookout-connection-in-intune.md)
-3.  [配置和部署 Lookout for Work 应用程序](configure-and-deploy-lookout-for-work-apps.md)
-4.  [配置合规性策略](enable-device-threat-protection-rule-compliance-policy.md)
-5.  [对 Lookout 集成进行故障排除](troubleshoot-lookout-integration.md)
+## <a name="next-steps"></a>Próximas etapas
+Estas são as principais etapas que devem ser seguidas para implementar essa solução:
+1.  [Configurar sua assinatura do Lookout Mobile Threat Protection](set-up-your-subscription-with-lookout.md)
+2.  [Habilitar a conexão do Lookout MTP no Intune](enable-lookout-connection-in-intune.md)
+3.  [Configurar e implantar o aplicativo Lookout for Work](configure-and-deploy-lookout-for-work-apps.md)
+4.  [Configurar a política de conformidade](enable-device-threat-protection-rule-compliance-policy.md)
+5.  [Solucionar problemas de integração do Lookout](troubleshoot-lookout-integration.md)

@@ -1,6 +1,6 @@
 ---
-title: "虚拟桌面基础结构 (VDI) 客户端管理 | Microsoft Docs "
-description: "在虚拟桌面基础结构 (VDI) 中管理 System Center Configuration Manager 客户端。"
+title: 'Gerenciamento de cliente da VDI (Virtual Desktop Infrastructure) | Microsoft Docs '
+description: Gerenciar clientes do System Center Configuration Manager em uma VDI (Virtual Desktop Infrastructure).
 ms.custom: na
 ms.date: 04/23/2017
 ms.prod: configuration-manager
@@ -18,32 +18,32 @@ manager: angrobe
 ms.openlocfilehash: d73daf6427b8c58d21d579f3b41df513cc3e3b0b
 ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
 ms.translationtype: HT
-ms.contentlocale: zh-CN
+ms.contentlocale: pt-BR
 ms.lasthandoff: 08/07/2017
 ---
-# <a name="considerations-for-managing-system-center-configuration-manager-clients--in-a-virtual-desktop-infrastructure-vdi"></a>关于在虚拟桌面基础结构 (VDI) 中管理 System Center Configuration Manager 客户端的注意事项
+# <a name="considerations-for-managing-system-center-configuration-manager-clients--in-a-virtual-desktop-infrastructure-vdi"></a>Considerações para gerenciar clientes do System Center Configuration Manager em uma VDI (Virtual Desktop Infrastructure)
 
-*适用范围：System Center Configuration Manager (Current Branch)*
+*Aplica-se a: System Center Configuration Manager (Branch Atual)*
 
-System Center Configuration Manager 支持在以下虚拟桌面基础结构 (VDI) 方案中安装 Configuration Manager 客户端：  
+O System Center Configuration Manager dá suporte à instalação de cliente do Configuration Manager nos seguintes cenários de VDI (Virtual Desktop Infrastructure):  
 
--   **个人虚拟机** - 若要确保在会话之间在虚拟机上维护用户数据和设置时，通常使用个人虚拟机。  
+-   **Máquinas virtuais pessoais** – As máquinas virtuais pessoais geralmente são usadas quando você deseja verificar se os dados do usuário são mantidos nas máquinas virtuais entre sessões.  
 
--   **远程桌面服务会话** - 远程桌面服务使服务器能够承载多个并发客户端会话。 用户可以连接到会话，然后在该服务器上运行应用程序。  
+-   **Sessões de Serviços de Área de Trabalho Remota** – Os Serviços de Área de Trabalho Remota permitem que um servidor hospede várias sessões do cliente simultaneamente. Os usuários podem se conectar a uma sessão e, em seguida, executar aplicativos nesse servidor.  
 
--   **共用的虚拟机** - 在会话之间不保留共用的虚拟机。 当关闭会话时，将丢弃所有数据和设置。 当无法使用远程桌面服务时（因为所需的业务应用程序无法在承载客户端会话的 Windows Server 上运行），共用的虚拟机很有用。  
+-   **Máquinas virtuais em pool** – As máquinas virtuais em pool não são mantidas entre sessões. Quando uma sessão for fechada, todos os dados e configurações serão descartados. As máquinas virtuais em pool são úteis quando os Serviços de Área de Trabalho Remota não podem ser usados porque um aplicativo de negócios exigido não pode ser executado no Windows Server que hospeda as sessões do cliente.  
 
- 下表列出了关于在虚拟桌面基础结构中管理 Configuration Manager 客户端的考虑事项。  
+ A tabela a seguir lista considerações para gerenciar o cliente do Configuration Manager em uma infraestrutura de área de trabalho virtual.  
 
-|虚拟机类型|注意事项|  
+|Tipo de máquina virtual|Considerações|  
 |--------------------------|--------------------|  
-|个人虚拟机|Configuration Manager 将个人虚拟机同等地视为物理计算机。 可以在虚拟机映像上预先安装 Configuration Manager 客户端，或者在预配虚拟机之后部署该客户端。|  
-|远程桌面服务|不会为单个远程桌面会话安装 Configuration Manager 客户端。 而是在远程桌面服务服务器上仅一次性地安装客户端。 在远程桌面服务服务器上可以使用所有的 Configuration Manager 功能。|  
-|共用的虚拟机|当共用的虚拟机被解除授权时，使用 Configuration Manager 所做的任何更改都会丢失。<br /><br /> Configuration Manager 功能（如硬件清单、软件清单和软件计数）返回的数据可能与用户的需求无关，因为虚拟机可能仅运行很短一段时间。 请考虑从清单任务中排除共用的虚拟机。|  
+|Máquinas virtuais pessoais|O Configuration Manager trata máquinas virtuais pessoais da mesma maneira que um computador físico. O cliente do Configuration Manager pode ser pré-instalado na imagem da máquina virtual ou implantado depois que a máquina virtual for provisionada.|  
+|Serviços de área de trabalho remota|O cliente do Configuration Manager não é instalado para sessões da Área de Trabalho Remota. Em vez disso, o cliente é instalado somente uma vez no servidor de Serviços de Área de Trabalho Remota. Todos os recursos do Configuration Manager podem ser usados no servidor de Serviços de Área de Trabalho Remota.|  
+|Máquinas virtuais em pool|Quando uma máquina virtual em pool é encerrada, todas as alterações feitas usando o Configuration Manager são perdidas.<br /><br /> Os dados retornados dos recursos do Configuration Manager, como inventário de hardware e de software, e medição de software podem não ser relevantes a suas necessidades, pois a máquina virtual pode estar operacional somente por um curto período. Considere a exclusão de máquinas virtuais em pool das tarefas de inventário.|  
 
- 因为虚拟化支持在同一物理计算机上运行多个 Configuration Manager 客户端，所以对于计划操作（如硬件和软件清单、反恶意软件扫描、软件安装和软件更新扫描），许多客户端操作都具有内置的随机化延迟。 对于具有运行 Configuration Manager 客户端的多个虚拟机的计算机，此延迟有助于分发 CPU 处理以及数据传输。  
+ Como a virtualização dá suporte a vários clientes do Configuration Manager no mesmo computador físico, muitas operações co cliente têm um atraso aleatório interno para ações agendadas, como inventário de hardware e de software, varreduras antimalware, instalações de software e varreduras de atualização de software. Esse atraso ajuda a distribuir o processamento da CPU e a transferência de dados para um computador com várias máquinas virtuais que executam o cliente do Configuration Manager.  
 
 > [!NOTE]  
->  除了处于维护模式的 Windows Embedded 客户端之外，未在虚拟化环境中运行的 Configuration Manager 客户端也使用此随机化延迟。 如果具有许多部署的客户端，则此行为有助于避免网络带宽高峰，并且可以在 Configuration Manager 站点系统（如管理点和站点服务器）上减少 CPU 处理要求。 延迟间隔因 Configuration Manager 功能而异。  
+>  Com exceção de clientes Windows Embedded em modo de manutenção, os clientes do Configuration Manager que não são executados em ambientes virtualizados também usam esse atraso aleatório. Quando você têm muitos clientes implantados, esse comportamento ajuda a evitar picos na largura de banda de rede e reduz o requisito de processamento da CPU nos sistemas de site do Configuration Manager, como o ponto de gerenciamento e o servidor do site. O intervalo de atraso varia de acordo com a capacidade do Configuration Manager.  
 >   
->  默认情况下，使用以下客户端设置为所需软件更新和所需应用程序部署禁用了随机延迟：“计算机代理” ：“禁用截止时间随机性” 
+>  O atraso aleatório é desabilitado por padrão para atualizações de software e implantações de aplicativos necessárias usando a seguinte configuração do cliente: **Agente de Computador**: **Desabilitar data limite aleatória**.

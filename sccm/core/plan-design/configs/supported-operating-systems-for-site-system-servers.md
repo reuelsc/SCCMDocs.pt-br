@@ -1,6 +1,6 @@
 ---
-title: "支持的站点系统服务器 | Microsoft Docs"
-description: "了解可用来托管 System Center Configuration Manager 站点或站点系统角色的 Windows 版本。"
+title: Servidores de sistema de sites com suporte | Microsoft Docs
+description: "Saiba quais versões do Windows você pode usar para hospedar um site ou função de sistema de sites do System Center Configuration Manager."
 ms.custom: na
 ms.date: 06/27/2017
 ms.prod: configuration-manager
@@ -17,298 +17,298 @@ manager: angrobe
 ms.openlocfilehash: be635e4df79b57b6f650287fa3774d2c10613cee
 ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
 ms.translationtype: HT
-ms.contentlocale: zh-CN
+ms.contentlocale: pt-BR
 ms.lasthandoff: 08/07/2017
 ---
-# <a name="supported-operating-systems-for-system-center-configuration-manager-site-system-servers"></a>System Center Configuration Manager 站点系统服务器支持的操作系统
+# <a name="supported-operating-systems-for-system-center-configuration-manager-site-system-servers"></a>Sistemas operacionais com suporte para servidores do sistema de sites do System Center Configuration Manager
 
-*适用范围：System Center Configuration Manager (Current Branch)*
-
-
-本文详细介绍了可用于托管 System Center Configuration Manager 站点或站点系统角色的 Windows 版本。
+*Aplica-se a: System Center Configuration Manager (Branch Atual)*
 
 
-将本主题中的信息和以下文章中的信息一起使用：
--   [用于 Configuration Manager 的推荐硬件](../../../core/plan-design/configs/recommended-hardware.md)
--   [用于 Configuration Manager 的站点和站点系统先决条件](../../../core/plan-design/configs/site-and-site-system-prerequisites.md)
--   [用于 Configuration Manager 的大小和扩展数量](../../../core/plan-design/configs/size-and-scale-numbers.md)
+Este artigo detalha as versões do Windows você pode usar para hospedar um site ou função de sistema de sites do System Center Configuration Manager.
+
+
+Use as informações neste tópico com as informações nos seguintes artigos:
+-   [Hardware recomendado para o Configuration Manager](../../../core/plan-design/configs/recommended-hardware.md)
+-   [Pré-requisitos de site e sistema de sites para o Configuration Manager](../../../core/plan-design/configs/site-and-site-system-prerequisites.md)
+-   [Números de tamanho e escala para o Configuration Manager](../../../core/plan-design/configs/size-and-scale-numbers.md)
 
 
 
-## <a name="windows-server-2016-standard-and-datacenter"></a>Windows Server 2016：标准版和数据中心版
-从带有 KB3186654 中的修补程序汇总的版本 1606（或 2016 年 10 月发布的 1606 基线版本）开始，以下各项支持该操作系统：
+## <a name="windows-server-2016-standard-and-datacenter"></a>Windows Server 2016: Standard e Datacenter
+A partir da versão 1606, com o pacote cumulativo de atualizações do hotfix do KB3186654 (ou a versão de linha de base do 1606, liberada em outubro de 2016), este sistema operacional é compatível com o seguinte:
 
-**站点服务器：**  
+**Servidores do site:**  
 
--   管理中心站点  
+-   Site de administração central  
 
--   主站点  
+-   Site primário  
 
--   辅助站点  
+-   Site secundário  
 
-**站点系统服务器：**  
+**Servidores de sistema de sites:**  
 
--   应用程序目录 Web 服务点  
+-   Ponto de serviços Web do Catálogo de Aplicativos  
 
--   应用程序目录网站点  
+-   Ponto de sites da Web do catálogo de aplicativos  
 
--   资产智能同步点  
+-   Ponto de sincronização do Asset Intelligence  
 
--   证书注册点  
+-   Ponto de registro de certificado  
 
--   分发点  
+-   Ponto de distribuição  
 
-     分发点支持多种不同的配置，每种配置都有不同的要求。 在某些情况下，这些配置不仅支持在服务器上安装，而且支持在客户端操作系统上安装。 有关分发点可用选项的详细信息，请参阅[为 System Center Configuration Manager 管理内容和内容基础结构](../../../core/servers/deploy/configure/manage-content-and-content-infrastructure.md)。  
+     Os pontos de distribuição dão suporte a várias configurações diferentes que têm diferentes requisitos. Em alguns casos, essas configurações dão suporte à instalação não apenas em servidores, mas em sistemas operacionais cliente. Para obter mais informações sobre as opções disponíveis para pontos de distribuição, consulte [Manage content and content infrastructure for System Center Configuration Manager](../../../core/servers/deploy/configure/manage-content-and-content-infrastructure.md) (Gerenciar o conteúdo e a infraestrutura de conteúdo do System Center Configuration Manager).  
 
--   Endpoint Protection 点  
+-   Ponto do Endpoint Protection  
 
--   注册点  
+-   Ponto de registro  
 
--   注册代理点  
+-   Ponto proxy do registro  
 
--   回退状态点  
+-   Ponto de status de fallback  
 
--   管理点
+-   Ponto de gerenciamento
 
--   Reporting Services 点  
+-   Ponto do Reporting Services  
 
--   服务连接点  
+-   Ponto de conexão de serviço  
 
--   站点数据库服务器  
+-   Servidor de banco de dados do site  
 
-     只读域控制器 (RODC) 上不支持站点数据库服务器。 有关详细信息，请参阅 Microsoft 知识库中的 [You may encounter problems when installing SQL Server on a domain controller（在域控制器上安装 SQL Server 时可能会遇到问题）](http://go.microsoft.com/fwlink/p/?LinkId=264856) 。 此外，任何域控制器上都不支持辅助站点服务器。  
-
--   SMS_Provider  
-
--   软件更新点  
-
--   状态迁移点
-
-## <a name="windows-server-2012-r2-x64-standard-and-datacenter"></a>Windows Server 2012 R2 (x64)：标准版和数据中心版  
-**站点服务器：**  
-
--   管理中心站点  
-
--   主站点  
-
--   辅助站点  
-
-**站点系统服务器：**  
-
--   应用程序目录 Web 服务点  
-
--   应用程序目录网站点  
-
--   资产智能同步点  
-
--   证书注册点  
-
--   分发点  
-
-     分发点支持多种不同的配置，每种配置都有不同的要求。 在某些情况下，这些配置不仅支持在服务器上安装，而且支持在客户端操作系统上安装。 有关分发点可用选项的详细信息，请参阅[为 System Center Configuration Manager 管理内容和内容基础结构](../../../core/servers/deploy/configure/manage-content-and-content-infrastructure.md)。  
-
--   Endpoint Protection 点  
-
--   注册点  
-
--   注册代理点  
-
--   回退状态点  
-
--   管理点
-
--   Reporting Services 点  
-
--   服务连接点  
-
--   站点数据库服务器  
-
-     只读域控制器 (RODC) 上不支持站点数据库服务器。 有关详细信息，请参阅 Microsoft 知识库中的 [You may encounter problems when installing SQL Server on a domain controller（在域控制器上安装 SQL Server 时可能会遇到问题）](http://go.microsoft.com/fwlink/p/?LinkId=264856) 。 此外，任何域控制器上都不支持辅助站点服务器。  
+     Não há suporte para servidores de banco de dados de sites em um RODC (controlador de domínio somente leitura). Para obter mais informações, consulte [Você pode encontrar problemas ao instalar o SQL Server em um controlador de domínio](http://go.microsoft.com/fwlink/p/?LinkId=264856) na Base de Dados de Conhecimento Microsoft. Além disso, os servidores do site secundário não têm suporte em qualquer controlador de domínio.  
 
 -   SMS_Provider  
 
--   软件更新点  
+-   Ponto de atualização de software  
 
--   状态迁移点  
+-   Ponto de migração de estado
 
-## <a name="windows-server-2012-x64-standard-and-datacenter"></a>Windows Server 2012 (x64)：标准版和数据中心版  
-**站点服务器：**  
+## <a name="windows-server-2012-r2-x64-standard-and-datacenter"></a>Windows Server 2012 R2 (x64): Standard e Datacenter  
+**Servidores do site:**  
 
--   管理中心站点  
+-   Site de administração central  
 
--   主站点  
+-   Site primário  
 
--   辅助站点  
+-   Site secundário  
 
-**站点系统服务器：**  
+**Servidores de sistema de sites:**  
 
--   应用程序目录 Web 服务点  
+-   Ponto de serviços Web do Catálogo de Aplicativos  
 
--   应用程序目录网站点  
+-   Ponto de sites da Web do catálogo de aplicativos  
 
--   资产智能同步点  
+-   Ponto de sincronização do Asset Intelligence  
 
--   证书注册点  
+-   Ponto de registro de certificado  
 
--   分发点  
+-   Ponto de distribuição  
 
-     分发点支持多种不同的配置，每种配置都有不同的要求。 在某些情况下，这些配置不仅支持在服务器上安装，而且支持在客户端操作系统上安装。 有关分发点可用选项的详细信息，请参阅[为 System Center Configuration Manager 管理内容和内容基础结构](../../../core/servers/deploy/configure/manage-content-and-content-infrastructure.md)。  
+     Os pontos de distribuição dão suporte a várias configurações diferentes que têm diferentes requisitos. Em alguns casos, essas configurações dão suporte à instalação não apenas em servidores, mas em sistemas operacionais cliente. Para obter mais informações sobre as opções disponíveis para pontos de distribuição, consulte [Manage content and content infrastructure for System Center Configuration Manager](../../../core/servers/deploy/configure/manage-content-and-content-infrastructure.md) (Gerenciar o conteúdo e a infraestrutura de conteúdo do System Center Configuration Manager).  
 
--   Endpoint Protection 点  
+-   Ponto do Endpoint Protection  
 
--   注册点  
+-   Ponto de registro  
 
--   注册代理点  
+-   Ponto proxy do registro  
 
--   回退状态点  
+-   Ponto de status de fallback  
 
--   管理点
+-   Ponto de gerenciamento
 
--   Reporting Services 点  
+-   Ponto do Reporting Services  
 
--   服务连接点  
+-   Ponto de conexão de serviço  
 
--   站点数据库服务器  
+-   Servidor de banco de dados do site  
 
-     只读域控制器 (RODC) 上不支持站点数据库服务器。 有关详细信息，请参阅 Microsoft 知识库中的 [You may encounter problems when installing SQL Server on a domain controller（在域控制器上安装 SQL Server 时可能会遇到问题）](http://go.microsoft.com/fwlink/p/?LinkId=264856) 。 此外，任何域控制器上都不支持辅助站点服务器。  
-
--   SMS_Provider  
-
--   软件更新点  
-
--   状态迁移点  
-
-## <a name="windows-server-2008-r2-with-sp1-x64-standard-enterprise-and-datacenter"></a>Windows Server 2008 R2 SP1 (x64)：标准版、企业版和数据中心版  
- 根据 [Microsoft 支持生命周期](https://support.microsoft.com/lifecycle)中的详细信息，Windows Server 2008 R2 现处于外延支持，不再处于主流支持。 若要详细了解将来对这些操作系统作为具有 Configuration Manager 的站点系统服务器的支持，请参阅 [System Center Configuration Manager 的已删除和已弃用的功能](../../../core/plan-design/changes/removed-and-deprecated-features.md)。  
-
- 从 Configuration Manager 版本 1702 开始，此操作系统不支持站点服务器或大部分站点系统角色，但仍会继续支持分发点站点系统角色（包括请求分发点、PXE 和多播）。
-
- 1702 之前的版本继续支持使用以下服务器。
-
-
-**站点服务器：**  
-
--   管理中心站点  
-
--   主站点  
-
--   辅助站点  
-
-**站点系统服务器：**  
-
--   应用程序目录 Web 服务点  
-
--   应用程序目录网站点  
-
--   资产智能同步点  
-
--   证书注册点  
-
--   分发点  
-
-     分发点支持多种不同的配置，每种配置都有不同的要求。 在某些情况下，这些配置不仅支持在服务器上安装，而且支持在客户端操作系统上安装。 有关分发点可用选项的详细信息，请参阅[为 System Center Configuration Manager 管理内容和内容基础结构](../../../core/servers/deploy/configure/manage-content-and-content-infrastructure.md)。  
-
--   Endpoint Protection 点  
-
--   注册点  
-
--   注册代理点  
-
--   回退状态点  
-
--   管理点
-
--   Reporting Services 点  
-
--   服务连接点  
-
--   站点数据库服务器  
-
-     只读域控制器 (RODC) 上不支持站点数据库服务器。 有关详细信息，请参阅 Microsoft 知识库中的 [You may encounter problems when installing SQL Server on a domain controller（在域控制器上安装 SQL Server 时可能会遇到问题）](http://go.microsoft.com/fwlink/p/?LinkId=264856) 。 此外，任何域控制器上都不支持辅助站点服务器。  
+     Não há suporte para servidores de banco de dados de sites em um RODC (controlador de domínio somente leitura). Para obter mais informações, consulte [Você pode encontrar problemas ao instalar o SQL Server em um controlador de domínio](http://go.microsoft.com/fwlink/p/?LinkId=264856) na Base de Dados de Conhecimento Microsoft. Além disso, os servidores do site secundário não têm suporte em qualquer controlador de domínio.  
 
 -   SMS_Provider  
 
--   软件更新点  
+-   Ponto de atualização de software  
 
--   状态迁移点  
+-   Ponto de migração de estado  
 
-## <a name="windows-server-2008-with-sp2-x86-x64-standard-enterprise-and-datacenter"></a>Windows Server 2008 SP2（x86、x64）：标准版、企业版和数据中心版  
- 根据 [Microsoft 支持生命周期](https://support.microsoft.com/lifecycle)中的详细信息，Windows Server 2008 现处于外延支持，不再处于主流支持。 若要详细了解将来对这些操作系统作为具有 Configuration Manager 的站点系统服务器的支持，请参阅 [System Center Configuration Manager 的已删除和已弃用的功能](../../../core/plan-design/changes/removed-and-deprecated-features.md)。  
+## <a name="windows-server-2012-x64-standard-and-datacenter"></a>Windows Server 2012 (x64): Standard e Datacenter  
+**Servidores do site:**  
 
-除分发点和拉取分发点外，站点服务器或站点系统角色均不支持此操作系统。 你可以继续使用操作系统作为分发点，直到此支持被宣布弃用或者此操作系统的扩展支持期到期为止。 有关详细信息，请参阅 [Installation of System Center Configuration Manager CB and LTSB fails on Windows Server 2008](https://support.microsoft.com/help/4015095)（在 Windows Server 2008 上安装 System Center Configuration Manager CB 和 LTSB 失败）。
+-   Site de administração central  
 
-**站点系统服务器：**  
--   分发点  
+-   Site primário  
 
-    -   此操作系统上的分发点不支持多播。  
+-   Site secundário  
 
-    -   此操作系统上的分发点受 PXE 支持，但它们不支持 EFI 模式下客户端计算机的网络启动。 支持具有 BIOS 或具有旧模式下的 EFI 启动的客户端计算机。  
+**Servidores de sistema de sites:**  
 
-    -   分发点支持多种不同的配置，每种配置都有不同的要求。 在某些情况下，这些配置不仅支持在服务器上安装，而且支持在客户端操作系统上安装。 有关分发点可用选项的详细信息，请参阅[为 System Center Configuration Manager 管理内容和内容基础结构](../../../core/servers/deploy/configure/manage-content-and-content-infrastructure.md)。  
+-   Ponto de serviços Web do Catálogo de Aplicativos  
 
+-   Ponto de sites da Web do catálogo de aplicativos  
 
+-   Ponto de sincronização do Asset Intelligence  
 
-## <a name="windows-10-x86-x64-pro-and-enterprise"></a>Windows 10（x86、x64）：专业版和企业版  
-**站点系统服务器：**  
+-   Ponto de registro de certificado  
 
--   分发点  
+-   Ponto de distribuição  
 
-    -   此操作系统上的分发点不受 PXE 支持。  
+     Os pontos de distribuição dão suporte a várias configurações diferentes que têm diferentes requisitos. Em alguns casos, essas configurações dão suporte à instalação não apenas em servidores, mas em sistemas operacionais cliente. Para obter mais informações sobre as opções disponíveis para pontos de distribuição, consulte [Manage content and content infrastructure for System Center Configuration Manager](../../../core/servers/deploy/configure/manage-content-and-content-infrastructure.md) (Gerenciar o conteúdo e a infraestrutura de conteúdo do System Center Configuration Manager).  
 
-    -   此操作系统版本上的分发点不支持多播。  
+-   Ponto do Endpoint Protection  
 
-    -   分发点支持多种不同的配置，每种配置都有不同的要求。 在某些情况下，这些配置不仅支持在服务器上安装，而且支持在客户端操作系统上安装。 有关分发点可用选项的详细信息，请参阅[为 System Center Configuration Manager 管理内容和内容基础结构](../../../core/servers/deploy/configure/manage-content-and-content-infrastructure.md)。  
+-   Ponto de registro  
 
-## <a name="windows-81-x86-x64-professional-and-enterprise"></a>Windows 8.1（x86、x64）：专业版和企业版  
-**站点系统服务器：**  
+-   Ponto proxy do registro  
 
--   分发点  
+-   Ponto de status de fallback  
 
-    -   此操作系统上的分发点不受 PXE 支持。  
+-   Ponto de gerenciamento
 
-    -   此操作系统版本上的分发点不支持多播。  
+-   Ponto do Reporting Services  
 
-    -   分发点支持多种不同的配置，每种配置都有不同的要求。 在某些情况下，这些配置不仅支持在服务器上安装，而且支持在客户端操作系统上安装。 有关分发点可用选项的详细信息，请参阅[为 System Center Configuration Manager 管理内容和内容基础结构](../../../core/servers/deploy/configure/manage-content-and-content-infrastructure.md)。  
+-   Ponto de conexão de serviço  
 
-## <a name="windows-8-x86-x64-professional-and-enterprise"></a>Windows 8（x86、x64）：专业版和企业版
-**站点系统服务器：**  
+-   Servidor de banco de dados do site  
 
--   分发点  
+     Não há suporte para servidores de banco de dados de sites em um RODC (controlador de domínio somente leitura). Para obter mais informações, consulte [Você pode encontrar problemas ao instalar o SQL Server em um controlador de domínio](http://go.microsoft.com/fwlink/p/?LinkId=264856) na Base de Dados de Conhecimento Microsoft. Além disso, os servidores do site secundário não têm suporte em qualquer controlador de domínio.  
 
-    -   此操作系统上的分发点不受 PXE 支持。  
+-   SMS_Provider  
 
-    -   此操作系统版本上的分发点不支持多播。  
+-   Ponto de atualização de software  
 
-    -   分发点支持多种不同的配置，每种配置都有不同的要求。 在某些情况下，这些配置不仅支持在服务器上安装，而且支持在客户端操作系统上安装。 有关分发点可用选项的详细信息，请参阅[为 System Center Configuration Manager 管理内容和内容基础结构](../../../core/servers/deploy/configure/manage-content-and-content-infrastructure.md)。  
+-   Ponto de migração de estado  
 
-## <a name="windows-7-with-sp1-x86-x64-professional-enterprise-and-ultimate"></a>Windows 7 SP1（x86、x64）：专业版、企业版和旗舰版  
-**站点系统服务器：**  
+## <a name="windows-server-2008-r2-with-sp1-x64-standard-enterprise-and-datacenter"></a>Windows Server 2008 R2 com SP1 (x64): Standard, Enterprise e Datacenter  
+ Agora o Windows Server 2008 R2 está com suporte estendido e não mais com suporte base, conforme detalhado na [Política de Ciclo de Vida da Microsoft](https://support.microsoft.com/lifecycle). Para obter mais informações sobre o suporte futuro para esses sistemas operacionais como servidores do sistema de sites com o Configuration Manager, consulte [Recursos removidos e preteridos do System Center Configuration Manager](../../../core/plan-design/changes/removed-and-deprecated-features.md).  
 
--   分发点  
+ A partir do Configuration Manager versão 1702, este sistema operacional não oferece suporte a servidores de site ou a maioria das funções de sistema de site, mas permanece com suporte para a função do sistema de sites de ponto de distribuição (incluindo pontos de distribuição pull e para PXE e multicast).
 
-    -   此操作系统上的分发点不受 PXE 支持。  
-
-    -   此操作系统版本上的分发点不支持多播。  
-
-    -   分发点支持多种不同的配置，每种配置都有不同的要求。 在某些情况下，这些配置不仅支持在服务器上安装，而且支持在客户端操作系统上安装。 有关分发点可用选项的详细信息，请参阅[为 System Center Configuration Manager 管理内容和内容基础结构](../../../core/servers/deploy/configure/manage-content-and-content-infrastructure.md)。  
+ Versões anteriores à 1702 continuam a dar suporte ao seu uso para o seguinte.
 
 
-## <a name="the-server-core-installation-of-windows-server-2016"></a>Windows Server 2016 的 Server Core 安装
-从包含自 KB3186654 以来的修补程序汇总的版本 1606（或发布于 2016 年 10 月的 1606 的基准版本）开始，支持将此操作系统用作具有以下限制的分发点：  
-  -   仅支持 x64 位版本。
-  -   此操作系统上的分发点不支持 PXE 或多播。  
+**Servidores do site:**  
+
+-   Site de administração central  
+
+-   Site primário  
+
+-   Site secundário  
+
+**Servidores de sistema de sites:**  
+
+-   Ponto de serviços Web do Catálogo de Aplicativos  
+
+-   Ponto de sites da Web do catálogo de aplicativos  
+
+-   Ponto de sincronização do Asset Intelligence  
+
+-   Ponto de registro de certificado  
+
+-   Ponto de distribuição  
+
+     Os pontos de distribuição dão suporte a várias configurações diferentes que têm diferentes requisitos. Em alguns casos, essas configurações dão suporte à instalação não apenas em servidores, mas em sistemas operacionais cliente. Para obter mais informações sobre as opções disponíveis para pontos de distribuição, consulte [Manage content and content infrastructure for System Center Configuration Manager](../../../core/servers/deploy/configure/manage-content-and-content-infrastructure.md) (Gerenciar o conteúdo e a infraestrutura de conteúdo do System Center Configuration Manager).  
+
+-   Ponto do Endpoint Protection  
+
+-   Ponto de registro  
+
+-   Ponto proxy do registro  
+
+-   Ponto de status de fallback  
+
+-   Ponto de gerenciamento
+
+-   Ponto do Reporting Services  
+
+-   Ponto de conexão de serviço  
+
+-   Servidor de banco de dados do site  
+
+     Não há suporte para servidores de banco de dados de sites em um RODC (controlador de domínio somente leitura). Para obter mais informações, consulte [Você pode encontrar problemas ao instalar o SQL Server em um controlador de domínio](http://go.microsoft.com/fwlink/p/?LinkId=264856) na Base de Dados de Conhecimento Microsoft. Além disso, os servidores do site secundário não têm suporte em qualquer controlador de domínio.  
+
+-   SMS_Provider  
+
+-   Ponto de atualização de software  
+
+-   Ponto de migração de estado  
+
+## <a name="windows-server-2008-with-sp2-x86-x64-standard-enterprise-and-datacenter"></a>Windows Server 2008 com SP2 (x86, x64): Standard, Enterprise e Datacenter  
+ Agora o Windows Server 2008 está com suporte estendido e não mais com suporte base, conforme detalhado na [Política de Ciclo de Vida da Microsoft](https://support.microsoft.com/lifecycle). Para obter mais informações sobre o suporte futuro para esses sistemas operacionais como servidores do sistema de sites com o Configuration Manager, consulte [Recursos removidos e preteridos do System Center Configuration Manager](../../../core/plan-design/changes/removed-and-deprecated-features.md).  
+
+Não há suporte para esse sistema operacional para servidores do site ou funções do sistema de sites, com exceção do ponto de distribuição e do ponto de distribuição pull. Você pode continuar a usar esse sistema operacional como um ponto de distribuição até que a substituição desse suporte seja anunciada ou o período de suporte estendido do sistema operacional expire. Para obter mais informações, consulte [Installation of System Center Configuration Manager CB and LTSB fails on Windows Server 2008](https://support.microsoft.com/help/4015095) (A instalação do CB e do LTSB do System Center Configuration Manager falha no Windows Server 2008).
+
+**Servidores de sistema de sites:**  
+-   Ponto de distribuição  
+
+    -   Os pontos de distribuição neste sistema operacional não dão suporte a Multicast.  
+
+    -   Há suporte para PXE para os pontos de distribuição neste sistema operacional, mas não para a inicialização de rede de computadores cliente no modo EFI. Há suporte para computadores cliente com BIOS ou inicialização EFI no modo herdado.  
+
+    -   Os pontos de distribuição dão suporte a várias configurações diferentes que têm diferentes requisitos. Em alguns casos, essas configurações dão suporte à instalação não apenas em servidores, mas em sistemas operacionais cliente. Para obter mais informações sobre as opções disponíveis para pontos de distribuição, consulte [Manage content and content infrastructure for System Center Configuration Manager](../../../core/servers/deploy/configure/manage-content-and-content-infrastructure.md) (Gerenciar o conteúdo e a infraestrutura de conteúdo do System Center Configuration Manager).  
 
 
-## <a name="the-server-core-installation-of-windows-server-2012-r2"></a>Windows Server 2012 R2 的 Server Core 安装  
- 除了之前列出的操作系统之外，还支持将 Windows Server 2012 R2 的服务器核心安装用作具有以下限制的分发点：  
 
--   仅支持 x64 位版本。
+## <a name="windows-10-x86-x64-pro-and-enterprise"></a>Windows 10 (x86, x64): Pro e Enterprise  
+**Servidores de sistema de sites:**  
 
--   此操作系统上的分发点不支持 PXE 或多播。  
+-   Ponto de distribuição  
 
-## <a name="the-server-core-installation-of-windows-server-2012"></a>Windows Server 2012 的 Server Core 安装  
- 除了之前列出的操作系统之外，还支持将 Windows Server 2012 的服务器核心安装用作具有以下限制的分发点：  
+    -   Não há suporte do PXE para pontos de distribuição neste sistema operacional.  
 
--   仅支持 64 位版本。  
+    -   Os pontos de distribuição nesta versão de sistema operacional não dão suporte a Multicast.  
 
--   此操作系统上的分发点不支持 PXE 或多播。
+    -   Os pontos de distribuição dão suporte a várias configurações diferentes que têm diferentes requisitos. Em alguns casos, essas configurações dão suporte à instalação não apenas em servidores, mas em sistemas operacionais cliente. Para obter mais informações sobre as opções disponíveis para pontos de distribuição, consulte [Manage content and content infrastructure for System Center Configuration Manager](../../../core/servers/deploy/configure/manage-content-and-content-infrastructure.md) (Gerenciar o conteúdo e a infraestrutura de conteúdo do System Center Configuration Manager).  
+
+## <a name="windows-81-x86-x64-professional-and-enterprise"></a>Windows 8.1 (x86, x64): Professional e Enterprise  
+**Servidores de sistema de sites:**  
+
+-   Ponto de distribuição  
+
+    -   Não há suporte do PXE para pontos de distribuição neste sistema operacional.  
+
+    -   Os pontos de distribuição nesta versão de sistema operacional não dão suporte a Multicast.  
+
+    -   Os pontos de distribuição dão suporte a várias configurações diferentes que têm diferentes requisitos. Em alguns casos, essas configurações dão suporte à instalação não apenas em servidores, mas em sistemas operacionais cliente. Para obter mais informações sobre as opções disponíveis para pontos de distribuição, consulte [Manage content and content infrastructure for System Center Configuration Manager](../../../core/servers/deploy/configure/manage-content-and-content-infrastructure.md) (Gerenciar o conteúdo e a infraestrutura de conteúdo do System Center Configuration Manager).  
+
+## <a name="windows-8-x86-x64-professional-and-enterprise"></a>Windows 8 (x86, x64): Professional e Enterprise
+**Servidores de sistema de sites:**  
+
+-   Ponto de distribuição  
+
+    -   Não há suporte do PXE para pontos de distribuição neste sistema operacional.  
+
+    -   Os pontos de distribuição nesta versão de sistema operacional não dão suporte a Multicast.  
+
+    -   Os pontos de distribuição dão suporte a várias configurações diferentes que têm diferentes requisitos. Em alguns casos, essas configurações dão suporte à instalação não apenas em servidores, mas em sistemas operacionais cliente. Para obter mais informações sobre as opções disponíveis para pontos de distribuição, consulte [Manage content and content infrastructure for System Center Configuration Manager](../../../core/servers/deploy/configure/manage-content-and-content-infrastructure.md) (Gerenciar o conteúdo e a infraestrutura de conteúdo do System Center Configuration Manager).  
+
+## <a name="windows-7-with-sp1-x86-x64-professional-enterprise-and-ultimate"></a>Windows 7 com SP1 (x86, x64): Professional, Enterprise e Ultimate  
+**Servidores de sistema de sites:**  
+
+-   Ponto de distribuição  
+
+    -   Não há suporte do PXE para pontos de distribuição neste sistema operacional.  
+
+    -   Os pontos de distribuição nesta versão de sistema operacional não dão suporte a Multicast.  
+
+    -   Os pontos de distribuição dão suporte a várias configurações diferentes que têm diferentes requisitos. Em alguns casos, essas configurações dão suporte à instalação não apenas em servidores, mas em sistemas operacionais cliente. Para obter mais informações sobre as opções disponíveis para pontos de distribuição, consulte [Manage content and content infrastructure for System Center Configuration Manager](../../../core/servers/deploy/configure/manage-content-and-content-infrastructure.md) (Gerenciar o conteúdo e a infraestrutura de conteúdo do System Center Configuration Manager).  
+
+
+## <a name="the-server-core-installation-of-windows-server-2016"></a>A instalação Server Core do Windows Server 2016
+A partir da versão 1606, com o pacote cumulativo de atualizações do hotfix do KB3186654 (ou a versão de linha de base do 1606, liberada em outubro de 2016), este sistema operacional é compatível para uso como ponto de distribuição com as seguintes limitações:  
+  -   Há suporte apenas para a versão de x64 bits.
+  -   Os pontos de distribuição nesse sistema operacional não dão suporte a PXE nem a Multicast.  
+
+
+## <a name="the-server-core-installation-of-windows-server-2012-r2"></a>A instalação Server Core do Windows Server 2012 R2  
+ Além dos sistemas operacionais anteriores listados, há suporte para a instalação Server Core do Windows Server 2012 R2 para uso como um ponto de distribuição com as seguintes limitações:  
+
+-   Há suporte apenas para a versão de x64 bits.
+
+-   Os pontos de distribuição nesse sistema operacional não dão suporte a PXE nem a Multicast.  
+
+## <a name="the-server-core-installation-of-windows-server-2012"></a>A instalação Server Core do Windows Server 2012  
+ Além dos sistemas operacionais anteriores listados, há suporte para a instalação Server Core do Windows Server 2012 para uso como um ponto de distribuição com as seguintes limitações:  
+
+-   Há suporte apenas para a versão de 64 bits.  
+
+-   Os pontos de distribuição nesse sistema operacional não dão suporte a PXE nem a Multicast.

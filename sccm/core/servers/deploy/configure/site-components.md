@@ -1,6 +1,6 @@
 ---
-title: "Configuration Manager 的站点组件 | Microsoft Docs"
-description: "了解如何配置站点组件来修改站点系统角色和站点状态报告的行为。"
+title: Componentes do site do Configuration Manager | Microsoft Docs
+description: "Saiba como configurar os componentes do site para modificar o comportamento de funções do sistema de sites e o relatório de status do site."
 ms.custom: na
 ms.date: 10/06/2016
 ms.prod: configuration-manager
@@ -17,106 +17,106 @@ manager: angrobe
 ms.openlocfilehash: 83550fbf0ef1f9adb0bb2c51a4f3c26a7500d352
 ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
 ms.translationtype: HT
-ms.contentlocale: zh-CN
+ms.contentlocale: pt-BR
 ms.lasthandoff: 08/07/2017
 ---
-# <a name="site-components-for-system-center-configuration-manager"></a>System Center Configuration Manager 的站点组件
+# <a name="site-components-for-system-center-configuration-manager"></a>Componentes do site para o System Center Configuration Manager
 
-*适用范围：System Center Configuration Manager (Current Branch)*
+*Aplica-se a: System Center Configuration Manager (Branch Atual)*
 
-在每个 System Center Configuration Manager 站点上，均可设置站点组件来修改站点系统角色和站点状态报告的行为。 站点组件配置适用于站点以及站点中适用的站点系统角色的每个实例。  
+Em cada site do System Center Configuration Manager, é possível configurar os componentes do site para modificar o comportamento de funções do sistema de sites e o relatório de status do site. As configurações de componente do site aplicam-se a um site e a cada instância de uma função do sistema de sites aplicável no site.  
 
-## <a name="about-site-components"></a>有关站点组件  
- 在 Configuration Manager 控制台中查看时，各种站点组件的大多选项均一目了然。 但是，以下详细信息有助于解释一些更复杂的配置，或将指引你找到对其进行说明的附加内容。  
+## <a name="about-site-components"></a>Sobre componentes do site  
+ A maioria das opções para os vários componentes de site é autoexplicativa quando visualizada no console do Configuration Manager. No entanto, os detalhes a seguir podem ajudar a explicar algumas das configurações mais complexas ou direcioná-lo para conteúdo adicional que as explique.  
 
-### <a name="software-distribution"></a>软件分发  
+### <a name="software-distribution"></a>Distribuição de software  
 
--   **内容分发设置：**可以指定设置，该设置可修改站点服务器将内容传输到其分发点的方式。 当增加用于并发分发设置的值时，内容分发可以使用更多的网络带宽。  
+-   **Configurações de distribuição de conteúdo:** você pode especificar configurações que modificam o modo como o servidor do site transfere o conteúdo para seus pontos de distribuição. Quando você aumenta os valores usados para configurações de distribuição simultânea, a distribuição de conteúdo pode usar mais largura de banda de rede.  
 
--   **网络访问帐户：**有关设置和使用网络访问帐户的信息，请参阅[网络访问帐户](../../../../core/plan-design/hierarchy/manage-accounts-to-access-content.md#bkmk_NAA)。  
+-   **Conta de acesso à rede:** para obter informações sobre como configurar e usar a conta de acesso à rede, consulte [Conta de Acesso à Rede](../../../../core/plan-design/hierarchy/manage-accounts-to-access-content.md#bkmk_NAA).  
 
-### <a name="software-update-point"></a>软件更新点  
+### <a name="software-update-point"></a>Ponto de atualização de software  
 
--   若要了解软件更新点组件的配置选项，请参阅[安装软件更新点](../../../../sum/get-started/install-a-software-update-point.md)。  
+-   Para obter informações sobre as opções de configuração para o componente do ponto de atualização de software, consulte [Instalar um ponto de atualização de software](../../../../sum/get-started/install-a-software-update-point.md).  
 
-### <a name="management-point"></a>管理点  
+### <a name="management-point"></a>Ponto de gerenciamento  
 
--   **管理点：**可设置站点，将有关其管理点的信息发布到 Active Directory 域服务。  
+-   **Pontos de gerenciamento:** você pode configurar o site para publicar informações sobre seus pontos de gerenciamento no Active Directory Domain Services.  
 
-     Configuration Manager 客户端使用管理点查找服务，并查找站点信息（例如边界组成员身份和 PKI 证书选择选项）。 此外，客户端还使用管理点查找站点中的其他管理点以及从中下载软件的分发点。 管理点还可帮助客户端完成站点分配、下载客户端策略和上传客户端信息。  
+     Os clientes do Configuration Manager usam pontos de gerenciamento para localizar serviços e para encontrar informações do site, como associação do grupo de limites e as opções de seleção de certificado PKI. Os clientes também usam pontos de gerenciamento para localizar outros pontos de gerenciamento no site, bem como pontos de distribuição dos quais é possível baixar o software. Os pontos de gerenciamento também ajudam os clientes a concluir a atribuição de site e baixar a política do cliente e carregar as informações do cliente.  
 
-     由于客户端查找管理点的最安全方法是在 Active Directory 域服务中发布它们，因此你通常会始终选择所有正常运行的管理点以发布到 Active Directory 域服务。 但是，此服务定位方法需要以下内容为 true：
+     Como o método mais seguro para localizar pontos de gerenciamento é publicá-los nos Serviços de Domínio Active Directory, geralmente, você sempre selecionará todos os pontos de gerenciamento em funcionamento para publicar nos Serviços de Domínio Active Directory. No entanto, esse método de localização de serviço exige que o seguinte seja verdadeiro:
 
-     - 为 Configuration Manager 扩展架构。
-     - 存在具有相应安全权限的“系统管理”容器，以便站点服务器发布到此容器。
-     - 已设置 Configuration Manager 站点，可发布到 Active Directory 域服务。
-     - 客户端与站点服务器林属于相同的 Active Directory 林。  
+     - O esquema é estendido para o Configuration Manager.
+     - Há um contêiner **Gerenciamento do Sistema**, com permissões de segurança apropriadas para o servidor do site para publicar nesse contêiner.
+     - O site do Configuration Manager é configurado para publicar no Active Directory Domain Services.
+     - Os clientes pertencem à mesma floresta do Active Directory que a floresta do servidor do site.  
 
-     如果 Intranet 上的客户端无法使用 Active Directory 域服务查找管理点，请改为使用 [DNS](../../../../core/plan-design/hierarchy/understand-how-clients-find-site-resources-and-services.md#bkmk_dns) 发布。  
+     Quando os clientes na intranet não podem usar o Active Directory Domain Services para localizar pontos de gerenciamento, use a publicação [DNS](../../../../core/plan-design/hierarchy/understand-how-clients-find-site-resources-and-services.md#bkmk_dns).  
 
- 有关服务定位的信息，请参阅 [了解客户端如何查找 System Center Configuration Manager 的站点资源和服务](../../../../core/plan-design/hierarchy/understand-how-clients-find-site-resources-and-services.md)。  
+ Para obter informações gerais sobre o local do serviço, consulte [Understand how clients find site resources and services for System Center Configuration Manager (Entender como os clientes encontram serviços e recursos do site para o System Center Configuration Manager)](../../../../core/plan-design/hierarchy/understand-how-clients-find-site-resources-and-services.md).  
 
--   **在 DNS 中发布所选的 Intranet 管理点：**如果 Intranet 上的客户端无法从 Active Directory 域服务中查找管理点，请指定此选项。 但它们可以使用 DNS 服务定位资源记录 (SRV RR) 在为其分配的站点中查找管理点。  
+-   **Publicar pontos de gerenciamento selecionados da intranet em DNS:** especifique essa opção quando os clientes na intranet não conseguem localizar os pontos de gerenciamento do Active Directory Domain Services. Em vez disso, eles podem usar um registro de recurso de local do serviço (SRV RR) DNS para localizar um ponto de gerenciamento em seu site atribuído.  
 
-    要使 Configuration Manager 能够将 Intranet 管理点发布到 DNS，必须满足下列所有条件：  
+    Para o Configuration Manager publicar pontos de gerenciamento da intranet no DNS, todas as seguintes condições devem ser atendidas:  
 
-    -   你的 DNS 服务器的 BIND 版本为 8.1.2 或更高。  
+    -   Os servidores DNS têm uma versão de BIND 8.1.2 ou posterior.  
 
-    -   你的 DNS 服务器已设置为自动更新并支持服务定位资源记录。  
+    -   Servidores DNS são configurados para atualizações automáticas e dar suporte a registros de recurso de local do serviço.  
 
-    -   Configuration Manager 中管理点的指定完全限定域名 (FQDN) 在 DNS 中具有主机条目（A 或 AAA 记录）。  
+    -   Os FQDNs (nomes de domínio totalmente qualificados) especificados para os pontos de gerenciamento no Configuration Manager têm entradas de host (registros A ou AAA) no DNS.  
 
     > [!WARNING]  
-    >  为了使客户端能够查找 DNS 中发布的管理点，必须将客户端分配给特定站点（而不是使用自动站点分配）。 将这些客户端设置为使用具有其管理点的域后缀的站点代码。 有关详细信息，请参阅[如何在 System Center Configuration Manager 中将客户端分配到一个站点](/sccm/core/clients/deploy/assign-clients-to-a-site)中的[定位管理点](/sccm/core/clients/deploy/assign-clients-to-a-site#locating-management-points)。  
+    >  Para os clientes encontrarem pontos de gerenciamento publicados no DNS, você deve atribuir os clientes a um site específico (em vez de usar a atribuição de site automática). Configure esses clientes para usar o código do site com o sufixo de domínio de seu ponto de gerenciamento. Para obter informações, consulte [Localizando pontos de gerenciamento](/sccm/core/clients/deploy/assign-clients-to-a-site#locating-management-points) em [Como atribuir clientes a um site no System Center Configuration Manager](/sccm/core/clients/deploy/assign-clients-to-a-site).  
 
-     如果 Configuration Manager 客户端无法使用 Active Directory 域服务或 DNS 在 Intranet 上查找管理点，它们将使用 [WINS](../../../../core/plan-design/hierarchy/understand-how-clients-find-site-resources-and-services.md#bkmk_wins)。 如果为站点安装的第一个管理点设置为接受 Intranet 上的 HTTP 客户端连接，则它将自动发布到 WINS。  
+     Se os clientes do Configuration Manager não puderem usar o Active Directory Domain Services ou o DNS para localizar pontos de gerenciamento na intranet, eles usarão o [WINS](../../../../core/plan-design/hierarchy/understand-how-clients-find-site-resources-and-services.md#bkmk_wins). O primeiro ponto de gerenciamento instalado para o site é automaticamente publicado para o WINS quando ele é configurado para aceitar conexões de cliente HTTP na intranet.  
 
-### <a name="status-reporting"></a>状态报告  
+### <a name="status-reporting"></a>Relatório de status  
 
--   这些设置直接设置详细级别（包括在来自站点和客户端的状态报告中）。  
+-   Essas configurações definem diretamente o nível de detalhes incluído nos relatórios de status de sites e clientes.  
 
-### <a name="email-notification"></a>电子邮件通知  
+### <a name="email-notification"></a>Notificação por email  
 
--   指定帐户和电子邮件服务器的详细信息以启用 Configuration Manager 发送电子邮件警报通知。  
+-   Especifique os detalhes de conta e do servidor de email para habilitar o Configuration Manager a enviar notificações por email para alertas.  
 
-### <a name="collection-membership-evaluation"></a>集合成员身份评估  
+### <a name="collection-membership-evaluation"></a>Avaliação de associação da coleção  
 
--   使用此任务来设置以增量方式对集合成员身份进行评估的频率。 增量评估仅使用新资源或已更改资源来更新集合成员身份。  
+-   Use essa tarefa para definir a frequência com que a associação da coleção é incrementalmente avaliada. A avaliação incremental atualiza uma associação de coleção apenas com recursos novos ou alterados.  
 
-### <a name="edit-the-site-components-at-a-site"></a>编辑站点上的站点组件  
+### <a name="edit-the-site-components-at-a-site"></a>Para editar os componentes do site em um site  
 
-使用以下步骤编辑站点组件：
+Use as etapas a seguir para editar os componentes do site:
 
-1.  在 Configuration Manager 控制台中，单击“管理” > “站点配置” > “站点”，然后选择具备要配置的站点组件的站点。  
+1.  No console do Configuration Manager, clique em **Administração** > **Configuração de Site** > **Sites** e depois selecione o site que tem os componentes de site que você deseja configurar.  
 
-2.  在“主页”选项卡上的“设置”组中，单击“配置站点组件”。 然后选择要配置的站点组件。  
+2.  Na guia **Início**, no grupo **Configurações**, clique em **Configurar Componentes do Site**. Em seguida, selecione o componente do site que deseja configurar.  
 
-##  <a name="BKMK_ServiceMgr"></a> 使用 Configuration Manager 服务管理器管理站点组件  
-可以使用 Configuration Manager Service Manager 控制 Configuration Manager 服务，以及查看任何 Configuration Manager 服务或工作线程（统称为 Configuration Manager 组件）的状态。 了解以下关于 Configuration Manager 组件的内容：  
+##  <a name="BKMK_ServiceMgr"></a> Use o Configuration Manager Service Manager para gerenciar os componentes do site  
+É possível usar o Configuration Manager Service Manager para controlar os serviços do Configuration Manager e exibir o status de qualquer serviço do Configuration Manager ou o thread de trabalho (chamados coletivamente de componentes do Configuration Manager). Compreenda o seguinte sobre componentes do Configuration Manager:  
 
--   组件可在任何站点系统上运行。  
+-   Os componentes podem ser executados em qualquer sistema de sites.  
 
--   管理组件的方式与在 Windows 中管理服务的方式相同。 可以启动、停止、暂停、恢复或查询 Configuration Manager 组件。  
+-   Os componentes são gerenciados da mesma maneira que você gerencia os serviços no Windows. Você pode iniciar, parar, pausar, retomar ou consultar componentes do Configuration Manager.  
 
-Configuration Manager 服务会在其有要执行的操作时（通常，在将配置文件写入组件的收件箱时）运行。 如果必须确定操作中涉及的组件，可以使用 Configuration Manager 服务管理器操作各种服务和线程。 然后查看 Configuration Manager 的行为中因此所发生的变化。 例如，可以一次停止一个 Configuration Manager 服务，直至排除特定响应为止。 通过这样做，你将能够确定哪个服务导致了该行为。  
+O serviço do Configuration Manager é executado quando há algo para ele fazer (geralmente, quando um arquivo de configuração é gravado na caixa de entrada de algum componente). Se for necessário identificar o componente envolvido em uma operação, você poderá usar o Configuration Manager Service Manager para manipular vários serviços e threads. Você pode então exibir a alteração resultante no comportamento do Configuration Manager. Por exemplo, é possível parar os serviços do Configuration Manager, um de cada vez, até que determinada resposta seja eliminada. Isso permite que você determine qual serviço causa o comportamento.  
 
 > [!TIP]  
->  可以使用下列过程来操作 Configuration Manager 组件操作。  
+>  O procedimento a seguir pode ser usado para manipular a operação dos componentes do Configuration Manager.  
 
-### <a name="use-the-configuration-manager-service-manager"></a>使用 Configuration Manager 服务管理器  
+### <a name="use-the-configuration-manager-service-manager"></a>Usar o Configuration Manager Service Manager  
 
-1.  在 Configuration Manager 控制台中，单击“监视” >  “系统状态”然后单击“组件状态”。  
+1.  No console do Configuration Manager, clique em **Monitoramento** >  **Status do Sistema** e depois clique em **Status do componente**.  
 
-2.  在“主页”选项卡上的“组件”组中，单击“启动”。 然后选择“Configuration Manager 服务管理器”。  
+2.  Na guia **Início**, no grupo **Componente**, clique em **Iniciar**. Em seguida, selecione **Configuration Manager Service Manager**.  
 
-3.  当 Configuration Manager 服务管理器打开时，连接到要管理的站点。  
+3.  Quando o Configuration Manager Service Manager abrir, conecte-se ao site que deseja gerenciar.  
 
-     如果看不到要管理的站点，请单击“站点” ，单击“连接” ，然后输入正确的站点的站点服务器的名称。  
+     Se você não vir o site que deseja gerenciar, clique em **Site**, clique em **Conectar**e insira o nome do servidor do site correto.  
 
-4.  展开站点并导航到“组件”  或“服务器” ，具体情况视你要管理的组件位于何处而定。  
+4.  Expanda o site e navegue até **Componentes** ou **Servidores**, dependendo de onde estejam localizados os componentes que você quer gerenciar.  
 
-5.  在右侧窗格中，选择一个或多个组件。 然后在“组件”菜单上单击“查询”，更新所选组件的状态。  
+5.  No painel direito, selecione um ou mais componentes. Em seguida, no menu **Componente**, clique em **Consultar** para atualizar o status da seleção.  
 
-6.  更新组件状态后，可使用“组件”菜单上四个基于操作的选项之一来修改组件操作。 请求操作之后，你必须查询组件以显示组件的新状态。  
+6.  Atualizado o status do componente, use uma das quatro opções com base em ações no menu **Componente** para modificar a operação dos componentes. Depois de solicitar uma ação, você deverá consultar o componente para exibir o novo status dele.  
 
-7.  修改完组件的操作状态后，关闭 Configuration Manager Service Manager。  
+7.  Feche o Configuration Manager Service Manager depois de concluir a modificação do status operacional dos componentes.  

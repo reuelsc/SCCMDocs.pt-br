@@ -1,6 +1,6 @@
 ---
-title: "升级本地基础结构 | Microsoft Docs"
-description: "了解如何升级基础结构（例如 SQL Server）和站点系统的站点操作系统。"
+title: Atualizar infraestrutura local | Microsoft Docs
+description: Saiba como atualizar a infraestrutura, como o SQL Server e o sistema operacional do site dos sistemas de sites.
 ms.custom: na
 ms.date: 06/05/2017
 ms.prod: configuration-manager
@@ -18,194 +18,194 @@ manager: angrobe
 ms.openlocfilehash: 188b7f2537dd0e569a5c00995620124512cf311b
 ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
 ms.translationtype: HT
-ms.contentlocale: zh-CN
+ms.contentlocale: pt-BR
 ms.lasthandoff: 08/07/2017
 ---
-# <a name="upgrade-on-premises-infrastructure-that-supports-system-center-configuration-manager"></a>升级支持 System Center Configuration Manager 的本地基础结构
+# <a name="upgrade-on-premises-infrastructure-that-supports-system-center-configuration-manager"></a>Atualizar infraestrutura local que dá suporte ao System Center Configuration Manager
 
-*适用范围：System Center Configuration Manager (Current Branch)*
+*Aplica-se a: System Center Configuration Manager (Branch Atual)*
 
-使用本主题中的信息来帮助升级运行 System Center Configuration Manager 的服务器基础结构。  
+Use as informações descritas neste tópico para ajudá-lo a atualizar a infraestrutura de servidor que executa o System Center Configuration Manager.  
 
- - 如果想要从早期版本的 Configuration Manager 升级到 System Center Configuration Manager，请参阅[升级到 System Center Configuration Manager](/sccm/core/servers/deploy/install/upgrade-to-configuration-manager)。
+ - Se desejar atualizar de uma versão anterior do Configuration Manager para o System Center Configuration Manager, consulte [Atualização para o System Center Configuration Manager](/sccm/core/servers/deploy/install/upgrade-to-configuration-manager).
 
-- 如果想要将 System Center Configuration Manager 基础结构更新为新版本，请参阅 [System Center Configuration Manager 的更新](/sccm/core/servers/manage/updates)。
+- Se desejar atualizar a infraestrutura do System Center Configuration Manager para uma nova versão, consulte [Atualizações para o System Center Configuration Manager](/sccm/core/servers/manage/updates).
 
-##  <a name="BKMK_SupConfigUpgradeSiteSrv"></a>升级站点系统的操作系统  
- Configuration Manager 在以下情况中支持托管站点服务器的服务器操作系统和托管任何站点系统角色的远程服务器操作系统的就地升级：  
+##  <a name="BKMK_SupConfigUpgradeSiteSrv"></a> Atualizar o sistema operacional dos sistemas de sites  
+ O Configuration Manager dá suporte à atualização in-loco do sistema operacional dos servidores que hospedam um servidor do site e dos servidores remotos que hospedam qualquer função do sistema de site, nas seguintes situações:  
 
--   如果生成的 Windows 服务包级别仍受 Configuration Manager 支持，则会就地升级到更高版本的 Windows Server 服务包。  
--   就地升级：
-    - 从 Windows Server 2012 R2 到 Windows Server 2016（[查看其他详细信息](#bkmk_2016)）。
-    - Windows Server 2012 到 Windows Server 2016（[请参阅其他详细信息](#bkmk_2016)）。
-    - 从 Windows Server 2012 到 Windows Server 2012 R2（[查看其他详细信息](#bkmk_2012r2)）。
-    - 使用 Configuration Manager 版本 1602 或更高版本时，还支持将 Windows Server 2008 R2 升级到 Windows Server 2012 R2（[请参阅其他详细信息](#bkmk_from2008r2)）。
+-   Atualização in-loco para um service pack posterior do Windows Server, se o nível do service pack do Windows resultante tiver suporte do Configuration Manager.  
+-   Atualização in-loco de:
+    - Windows Server 2012 R2 para Windows Server 2016 ([Ver detalhes adicionais](#bkmk_2016)).
+    - Windows Server 2012 para Windows Server 2016 ([Ver detalhes adicionais](#bkmk_2016)).
+    - Windows Server 2012 para Windows Server 2012 R2 ([Ver detalhes adicionais](#bkmk_2012r2)).
+    - Quando você usa o Configuration Manager versão 1602 ou posterior, também há suporte para atualizar o Windows Server 2008 R2 para o Windows Server 2012 R2 ([Ver detalhes adicionais](#bkmk_from2008r2)).
 
     > [!WARNING]  
-    >  升级到 Windows Server 2012 R2 之前， *必须从服务器中卸载 WSUS 3.2* 。  
+    >  Antes de atualizar para o Windows Server 2012 R2, *você deve desinstalar o WSUS 3.2* do servidor.  
     >   
-    >  有关此关键步骤的信息，请参阅 Windows Server 文档中 [Windows Server Update Services 概述](https://technet.microsoft.com/library/hh852345.aspx)中的“新增和更改的功能”部分。  
+    >  Para obter informações sobre esta etapa crítica, confira a seção "Funcionalidade nova e alterada" em ["Visão geral do Windows Server Update Services"](https://technet.microsoft.com/library/hh852345.aspx) na documentação do Windows Server.  
 
-若要升级服务器，请使用要升级到的目标操作系统所提供的升级过程。  参阅以下内容：
-  -  Windows Server 文档中的 [Windows Server 2012 R2 的升级选项](https://technet.microsoft.com/library/dn303416.aspx)。  
-  - Windows Server 文档中的 [Upgrade and conversion options for Windows Server 2016](https://technet.microsoft.com/windows-server-docs/get-started/supported-upgrade-paths)（Windows Server 2016 升级和转换选项）。
+Para atualizar um servidor, use os procedimentos de atualização fornecidos pelo sistema operacional para o qual você está atualizando.  Veja o seguinte:
+  -  [Opções de atualização para o Windows Server 2012 R2](https://technet.microsoft.com/library/dn303416.aspx) na documentação do Windows Server.  
+  - [Opções de atualização e conversão para o Windows Server 2016](https://technet.microsoft.com/windows-server-docs/get-started/supported-upgrade-paths) na documentação do Windows Server.
 
-### <a name="bkmk_2016"></a>  将 Windows Server 2012 或 Windows Server 2012 R2 升级到 2016
-将 Windows Server 2012 或 Windows Server 2012 R2 升级到 Windows Server 2016 时，下列规则适用：
+### <a name="bkmk_2016"></a> Atualizar o Windows Server 2012 ou o Windows Server 2012 R2 para 2016
+Quando você atualiza o Windows Server 2012 ou Windows Server 2012 R2 para Windows Server 2016, o seguinte se aplica:
 
 
-**升级之前：**  
--   删除 System Center Endpoint Protection (SCEP) 客户端。 Windows Server 2016 具有内置的 Windows Defender，它会代替 SCEP 客户端。 SCEP 客户端的存在会阻止升级到 Windows Server 2016。
+**Antes da atualização:**  
+-   Remova o cliente do SCEP (System Center Endpoint Protection). O Windows Server 2016 tem o Windows Defender interno, que substitui o cliente do SCEP. A presença do cliente do SCEP pode impedir uma atualização para o Windows Server 2016.
 
-**升级之后：**
--   确保 Windows Defender 已启用、设置为自动启动且正在运行。
--   确保正在运行以下 Configuration Manager 服务：
+**Após a atualização:**
+-   Certifique-se de que o Windows Defender esteja habilitado, configurado para o início automático e em execução.
+-   Certifique-se de que os seguintes serviços do Configuration Manager estejam em execução:
   -     SMS_EXECUTIVE
   -     SMS_SITE_COMPONENT_MANAGER
 
 
--   确保针对以下站点系统角色，**Windows Process Activation** 和 **WWW/W3svc** 服务已启用、设置为自动启动且正在运行（升级期间会禁用这些服务）：
-  -     站点服务器
-  -     管理点
-  -     应用程序目录 Web 服务点
-  -     应用程序目录网站点
+-   Verifique se os serviços de **Ativação de Processos do Windows** e **WWW/W3svc** estão habilitados, configurados para o início automático e em execução para as seguintes funções de sistema de site (esses serviços são desabilitados durante a atualização):
+  -     Servidor do site
+  -     Ponto de gerenciamento
+  -     Ponto de serviços Web do Catálogo de Aplicativos
+  -     Ponto de sites da Web do Catálogo de Aplicativos
 
--   确保用于托管站点系统角色的每个服务器继续满足所有在该服务器上运行的[站点系统角色的所有先决条件](/sccm/core/plan-design/configs/site-and-site-system-prerequisites)。 例如，可能需要重新安装 BITS、WSUS 或为 IIS 配置特定设置。
+-   Certifique-se de que cada servidor que hospeda uma função de sistema de sites continue atendendo a todos os [pré-requisitos das funções de sistema de sites](/sccm/core/plan-design/configs/site-and-site-system-prerequisites) que são executadas no servidor. Por exemplo, talvez seja necessário reinstalar o BITS, o WSUS ou definir configurações específicas para o IIS.
 
--   恢复缺少的先决条件后，再次重启该服务器，以确保所有服务已启动并可操作。
+-   Após restaurar os pré-requisitos ausentes, inicie o servidor mais uma vez para garantir que os serviços estejam iniciados e operacionais.
 
-**远程 Configuration Manager 控制台的已知问题：**  
-将托管 SMS_Provider 实例的站点服务器或服务器升级到 Windows Server 2016 后，管理员用户可能无法将 Configuration Manager 控制台连接到该站点。 若要解决此问题，必须手动还原 WMI 中 SMS 管理员组的权限。 必须在此站点服务器以及每个托管 SMS_Provider 实例的远程服务器上设置权限：
+**Problema conhecido para consoles remotos do Configuration Manager:**  
+Após atualizar o servidor do site ou um servidor que hospeda uma instância de SMS_Provider para o Windows Server 2016, talvez os usuários administrativos não possam conectar um console do Configuration Manager ao site. Para contornar esse problema, você precisa restaurar manualmente as permissões para o grupo de Administradores de SMS no WMI. As permissões devem ser definidas no servidor do site e, em cada servidor remoto que hospeda uma instância do SMS_Provider:
 
-1. 在适用的服务器上，打开 Microsoft 管理控制台 (MMC)，为“WMI 控件”添加管理单元，然后选择“本地计算机”。
-2. 在 MMC 中，打开“WMI 控件(本地)”的“属性”，然后选择“安全”选项卡。
-3. 展开“根”下的树形，选择“SMS”节点，然后选择“安全”。  确保“SMS 管理员”组具有下列权限：
-  -     启用帐户
-  -     远程启用
-4. 在“SMS”节点下方的“安全”选项卡中，选择“site_&lt;sitecode>”节点，然后选择“安全”。 确保“SMS 管理员”组具有下列权限：
-  -   执行方法
-  -   提供程序写入
-  -   启用帐户
-  -   远程启用
-5. 保存权限以还原 Configuration Manager 控制台的访问权限。
+1. Nos servidores aplicáveis, abra o MMC (Console de Gerenciamento Microsoft) e adicione o snap-in para **Controle WMI** e depois selecione **Computador local**.
+2. No MMC, abra as **Propriedades** de **Controle WMI (Local)** e selecione a guia **Segurança**.
+3. Expanda a árvore abaixo da Raiz, selecione o nó **SMS** e clique em **Segurança**.  Verifique se o grupo **Administradores de SMS** tem as seguintes permissões:
+  -     Habilitar conta
+  -     Habilitação remota
+4. Na guia **Segurança**, abaixo do nó **SMS**, selecione o nó **site_&lt;sitecode**> e escolha **Segurança**. Verifique se o grupo **Administradores de SMS** tem as seguintes permissões:
+  -   Executar métodos
+  -   Gravação do provedor
+  -   Habilitar conta
+  -   Habilitação remota
+5. Salve as permissões para restaurar o acesso do console do Configuration Manager.
 
-### <a name="bkmk_2012r2"></a> Windows Server 2012 到 Windows Server 2012 R2
+### <a name="bkmk_2012r2"></a> Windows Server 2012 para Windows Server 2012 R2
 
-**升级之前：**
--  不同于支持的其他方案，此方案升级前没有特别的注意事项。
+**Antes da atualização:**
+-  Diferente dos outros cenários com suporte, este cenário não requer considerações adicionais antes da atualização.
 
-**升级之后：**
-  - 请确保针对以下站点系统角色，Windows 部署服务已启动，且正在运行（升级期间会停止该服务）：
-    - 站点服务器
-    - 管理点
-    - 应用程序目录 Web 服务点
-    - 应用程序目录网站点
+**Após a atualização:**
+  - Certifique-se de que o Serviço de Implantação do Windows esteja iniciado e em execução para as seguintes funções de sistema de site (o serviço é interrompido durante a atualização):
+    - Servidor do site
+    - Ponto de gerenciamento
+    - Ponto de serviços Web do Catálogo de Aplicativos
+    - Ponto de sites da Web do Catálogo de Aplicativos
 
-  -     确保针对以下站点系统角色，**Windows Process Activation** 和 **WWW/W3svc** 服务已启用、设置为自动启动且正在运行（升级期间会禁用这些服务）：
-    -   站点服务器
-    -   管理点
-    -   应用程序目录 Web 服务点
-    -   应用程序目录网站点
-
-
-  -     确保用于托管站点系统角色的每个服务器继续满足所有在该服务器上运行的[站点系统角色的所有先决条件](/sccm/core/plan-design/configs/site-and-site-system-prerequisites)。 例如，可能需要重新安装 BITS、WSUS 或为 IIS 配置特定设置。
-
-  恢复缺少的先决条件后，再次重启该服务器，以确保所有服务已启动并可操作。
-
-### <a name="bkmk_from2008r2"></a>  将 Windows Server 2008 R2 升级到 Windows Server 2012 R2
-此操作系统升级方案需满足以下条件：  
-
-**升级之前：**
--   卸载 WSUS 3.2。  
-    将服务器操作系统升级到 Windows Server 2012 R2 之前，必须从服务器中卸载 WSUS 3.2。 有关此关键步骤的信息，请参阅 Windows Server 文档中 Windows Server 更新服务概述中的“新增和更改的功能”部分。
-
-**升级之后：**
-  - 请确保针对以下站点系统角色，Windows 部署服务已启动，且正在运行（升级期间会停止该服务）：
-    - 站点服务器
-    - 管理点
-    - 应用程序目录 Web 服务点
-    - 应用程序目录网站点
+  -     Verifique se os serviços de **Ativação de Processos do Windows** e **WWW/W3svc** estão habilitados, configurados para o início automático e em execução para as seguintes funções de sistema de site (esses serviços são desabilitados durante a atualização):
+    -   Servidor do site
+    -   Ponto de gerenciamento
+    -   Ponto de serviços Web do Catálogo de Aplicativos
+    -   Ponto de sites da Web do Catálogo de Aplicativos
 
 
-  -     确保针对以下站点系统角色，**Windows Process Activation** 和 **WWW/W3svc** 服务已启用、设置为自动启动且正在运行（升级期间会禁用这些服务）：
-    -   站点服务器
-    -   管理点
-    -   应用程序目录 Web 服务点
-    -   应用程序目录网站点
+  -     Certifique-se de que cada servidor que hospeda uma função de sistema de sites continue atendendo a todos os [pré-requisitos das funções de sistema de sites](/sccm/core/plan-design/configs/site-and-site-system-prerequisites) que são executadas no servidor. Por exemplo, talvez seja necessário reinstalar o BITS, o WSUS ou definir configurações específicas para o IIS.
+
+  Após restaurar os pré-requisitos ausentes, inicie o servidor mais uma vez para garantir que os serviços estejam iniciados e operacionais.
+
+### <a name="bkmk_from2008r2"></a> Atualizar o Windows Server 2008 R2 para o Windows Server 2012 R2
+Este cenário de atualização do sistema operacional tem as seguintes condições:  
+
+**Antes da atualização:**
+-   Desinstale o WSUS 3.2.  
+    Antes de atualizar o sistema operacional de um servidor para o Windows Server 2012 R2, você precisa desinstalar o WSUS 3.2 do servidor. Para obter informações sobre esta etapa crítica, confira a seção "Funcionalidade nova e alterada" em "Visão geral do Windows Server Update Services" na documentação do Windows Server.
+
+**Após a atualização:**
+  - Certifique-se de que o Serviço de Implantação do Windows esteja iniciado e em execução para as seguintes funções de sistema de site (o serviço é interrompido durante a atualização):
+    - Servidor do site
+    - Ponto de gerenciamento
+    - Ponto de serviços Web do Catálogo de Aplicativos
+    - Ponto de sites da Web do Catálogo de Aplicativos
 
 
-  -     确保每个托管站点系统角色的服务器将继续满足在该服务器上运行的[站点系统角色的所有先决条件](/sccm/core/plan-design/configs/site-and-site-system-prerequisites)。 例如，可能需要重新安装 BITS、WSUS 或为 IIS 配置特定设置。
-
-  恢复缺少的先决条件后，再次重启该服务器，以确保所有服务已启动并可操作。
-
-
-### <a name="unsupported-upgrade-scenarios"></a>不支持的升级方案
-以下 Windows Server 升级方案经常被问及，但不受 Configuration Manager 支持：  
-
--   Windows Server 2008 到 Windows Server 2012 或更高版本  
--   Windows Server 2008 R2 到 Windows Server 2012
+  -     Verifique se os serviços de **Ativação de Processos do Windows** e **WWW/W3svc** estão habilitados, configurados para o início automático e em execução para as seguintes funções de sistema de site (esses serviços são desabilitados durante a atualização):
+    -   Servidor do site
+    -   Ponto de gerenciamento
+    -   Ponto de serviços Web do Catálogo de Aplicativos
+    -   Ponto de sites da Web do Catálogo de Aplicativos
 
 
+  -     Certifique-se de que cada servidor que hospeda uma função de sistema de sites continue atendendo a todos os [pré-requisitos das funções de sistema de sites](/sccm/core/plan-design/configs/site-and-site-system-prerequisites) que são executadas no servidor. Por exemplo, talvez seja necessário reinstalar o BITS, o WSUS ou definir configurações específicas para o IIS.
 
-##  <a name="BKMK_SupConfigUpgradeClient"></a>升级 Configuration Manager 客户端的操作系统  
- 以下情况中，Configuration Manager 支持就地升级 Configuration Manager 客户端的操作系统：  
+  Após restaurar os pré-requisitos ausentes, inicie o servidor mais uma vez para garantir que os serviços estejam iniciados e operacionais.
 
--   如果生成的服务包级别仍受 Configuration Manager 支持，则会就地升级到更高版本的 Windows 服务包。  
 
--   从支持的版本到 Windows 10 的 Windows 就地升级。 有关详细信息，请参阅[使用 System Center Configuration Manager 将 Windows 升级到最新版本](../../../osd/deploy-use/upgrade-windows-to-the-latest-version.md)。  
+### <a name="unsupported-upgrade-scenarios"></a>Cenários de atualização sem suporte
+Os seguintes cenários de atualização do Windows Server são consultados com frequência, mas não têm suporte do Configuration Manager:  
 
--   Windows 10 的内部版本到内部版本服务升级。  有关详细信息，请参阅[使用 System Center Configuration Manager 将 Windows 作为服务进行管理](../../../osd/deploy-use/manage-windows-as-a-service.md)。  
+-   Windows Server 2008 para Windows Server 2012 ou posterior  
+-   Windows Server 2008 R2 para Windows Server 2012
 
-##  <a name="BKMK_SupConfigUpgradeDBSrv"></a>升级站点数据库服务器上的 SQL Server  
-  Configuration Manager 在站点数据库服务器上支持将 SQL Server 从受支持的 SQL 版本就地升级。 本节中的 SQL Server 升级方案均受 Configuration Manager 支持，并且包括每个方案的要求。
 
- 有关 Configuration Manager 支持的 SQL Server 版本的详细信息，请参阅[对 System Center Configuration Manager 的 SQL Server 版本支持](../../../core/plan-design/configs/support-for-sql-server-versions.md)。  
 
- **升级 SQL Server 的服务包版本：**    
- 如果生成的 SQL Server 服务包级别仍受 Configuration Manager 支持，则 Configuration Manager 支持将 SQL Server 就地升级到更高的服务包版本。
+##  <a name="BKMK_SupConfigUpgradeClient"></a> Atualizar o sistema operacional de clientes do Configuration Manager  
+ O Configuration Manager dá suporte a uma atualização in-loco do sistema operacional para clientes do Configuration Manager nas seguintes situações:  
 
- 层次结构中有多个 Configuration Manager 站点时，每个站点可以运行不同的 SQL Server 的服务包版本，并且站点升级用于站点数据库的 SQL Server 的 Service Pack 版本没有顺序限制。
+-   Atualização in-loco para um service pack posterior do Windows, se o nível do service pack resultante tiver suporte do Configuration Manager.  
 
- **升级到新版本的 SQL Server：**   
- Configuration Manager 支持将 SQL Server 就地升级到以下版本：
+-   Atualização in-loco do Windows de uma versão com suporte para Windows 10. Para obter mais informações, consulte [Atualizar o Windows para a versão mais recente com o System Center Configuration Manager](../../../osd/deploy-use/upgrade-windows-to-the-latest-version.md).  
+
+-   Atualizações de serviços de compilação a compilação do Windows 10.  Consulte [Gerenciar o Windows como um serviço usando o System Center Configuration Manager](../../../osd/deploy-use/manage-windows-as-a-service.md) para obter mais informações.  
+
+##  <a name="BKMK_SupConfigUpgradeDBSrv"></a> Atualizar o SQL Server no servidor de banco de dados do site  
+  O Configuration Manager dá suporte a uma atualização in-loco do SQL Server de uma versão com suporte do SQL no servidor de banco de dados do site. Os cenários de atualização do SQL Server nesta seção têm suporte do Configuration Manager e incluem requisitos para cada cenário.
+
+ Para obter informações sobre as versões do SQL Server que têm suporte do Configuration Manager, consulte [Suporte para versões do SQL Server para o System Center Configuration Manager](../../../core/plan-design/configs/support-for-sql-server-versions.md).  
+
+ **Atualizar a versão do service pack do SQL Server:**    
+ O Configuration Manager dará suporte à atualização in-loco do SQL Server para um service pack posterior se o nível do service pack resultante do SQL Server tiver suporte do Configuration Manager.
+
+ Quando você tem vários sites do Configuration Manager em uma hierarquia, cada site pode executar uma versão diferente do service pack do SQL Server, e não há limitação quanto à ordem em que os sites são atualizados para a versão do service pack do SQL Server que é usada para o banco de dados do site.
+
+ **Atualizar para uma nova versão do SQL Server:**   
+ O Configuration Manager dá suporte à atualização in-loco do SQL Server para as seguintes versões:
 
  - SQL Server 2012  
  - SQL Server 2014  
  - SQL Server 2016  
 
-升级托管站点数据库的 SQL Server 的版本时，必须在站点按以下顺序升级使用的 SQL Server 版本：
+Ao atualizar a versão do SQL Server que hospeda o banco de dados do site, é necessário atualizar a versão do SQL Server que é usada nos sites na seguinte ordem:
 
- 1. 首先升级管理中心站点上的 SQL Server。
- 2. 升级辅助站点，然后再升级辅助站点的父主站点。
- 3. 最后升级父主站点。 这包括向管理中心站点报告的子主站点和是层次结构的顶层站点的独立主站点。
+ 1. Atualize o SQL Server no site de administração central primeiro.
+ 2. Atualize os sites secundários antes de atualizar o site primário pai de um site secundário.
+ 3. Atualize os sites primários pai por último. Isso inclui os sites primários filho que relatam para um site de administração central e os sites primários autônomos que são o site de nível superior de uma hierarquia.
 
-**SQL Server 基数估计级别和站点数据库：**   
-从 SQL Server 早期版本升级站点数据库时，如果现有 SQL基数估计 (CE) 级别是此 SQL Server 实例允许的最小级别，则数据库会保留此级别。 使用兼容级别低于允许级别的数据库升级 SQL Server 会自动将数据库设置为 SQL Server 允许的最低兼容级别。
+**Nível de estimativa de cardinalidade do SQL Server e o banco de dados do site:**   
+Quando um banco de dados do site for atualizado de uma versão anterior do SQL Server, o banco de dados manterá seu nível de CE (Estimativa de Cardinalidade) do SQL existente se ele estiver no mínimo permitido para a instância do SQL Server. Atualizar o SQL Server com um banco de dados em um nível de compatibilidade menor do que o nível permitido automaticamente define o banco de dados para o nível de compatibilidade mais baixo permitido pelo SQL Server.
 
-下表列出了 Configuration Manager 站点数据库的建议兼容级别：
+A tabela a seguir identifica os níveis de compatibilidade recomendados para bancos de dados do site do Configuration Manager:
 
-|SQL Server 版本 | 受支持的兼容级别 |推荐级别|
+|Versão do SQL Server | Níveis de compatibilidade com suporte |Nível recomendado|
 |----------------|--------------------|--------|
 | SQL Server 2016| 130, 120, 110, 100 | 130|
 | SQL Server 2014| 120, 110, 100      | 110|
 
-若要标识站点数据库使用的 SQL Server CE 兼容级别，请在站点数据库服务器上运行以下 SQL 查询：**SELECT name, compatibility_level FROM sys.databases**
+Para identificar o nível de compatibilidade CE do SQL Server em uso para seu banco de dados do site, execute a seguinte consulta SQL no servidor de banco de dados do site: **SELECT name, compatibility_level FROM sys.databases**
 
- 有关 SQL CE 兼容级别及其设置方法的详细信息，请参阅 [ALTER DATABASE 兼容级别 (Transact-SQL)](https://msdn.microsoft.com/library/bb510680.aspx)。
-
-
-有关 SQL Server 的详细信息，请参阅 TechNet 上的 SQL Server 文档：
--   [升级到 SQL Server 2012](http://technet.microsoft.com/library/ms143393\(v=sql.110))
--   [升级到 SQL Server 2014](http://technet.microsoft.com/library/ms143393\(v=sql.120))  
--   [升级到 SQL Server 2016](https://technet.microsoft.com/library/bb677622(v=sql.130))
+ Para obter mais informações sobre níveis de compatibilidade CE do SQL e como configurá-los, consulte [Nível de compatibilidade de ALTER DATABASE (Transact-SQL)](https://msdn.microsoft.com/library/bb510680.aspx).
 
 
+Para obter mais informações sobre o SQL Server, consulte a documentação sobre o SQL Server no TechNet:
+-   [Atualização para o SQL Server 2012](http://technet.microsoft.com/library/ms143393\(v=sql.110))
+-   [Atualização para o SQL Server 2014](http://technet.microsoft.com/library/ms143393\(v=sql.120))  
+-   [Atualização para o SQL Server 2016](https://technet.microsoft.com/library/bb677622(v=sql.130))
 
-### <a name="to-upgrade-sql-server-on-the-site-database-server"></a>在站点数据库服务器上升级 SQL Server  
 
-1.  停止站点上所有的 Configuration Manager 服务。  
-2.  将 SQL Server 升级到支持的版本。  
-3.  重新启动 Configuration Manager 服务。  
+
+### <a name="to-upgrade-sql-server-on-the-site-database-server"></a>Para atualizar o SQL Server no servidor de banco de dados do site  
+
+1.  Pare todos os serviços do Configuration Manager no site.  
+2.  Atualize o SQL Server para uma versão com suporte.  
+3.  Reinicie os serviços do Configuration Manager.  
 
 > [!NOTE]  
->  在管理中心站点上将使用的 SQL Server 版本从 Standard Edition 更改为 Datacenter 或 Enterprise Edition 时，限制层次结构支持的客户端数量的数据库分区不会更改。
+>  Ao alterar a edição do SQL Server em uso no site de administração central de uma Standard Edition para uma Datacenter ou Enterprise Edition, a partição do banco de dados que limita o número de clientes com suporte da hierarquia não é alterada.

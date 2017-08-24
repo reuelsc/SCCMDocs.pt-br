@@ -1,6 +1,6 @@
 ---
-title: "报告简介 | Microsoft Docs"
-description: "了解在 Configuration Manager 中管理报表可使用的工具和资源集。"
+title: "Introdução aos relatórios | Microsoft Docs"
+description: "Saiba mais sobre o conjunto de ferramentas e recursos disponível para gerenciar relatórios no Configuration Manager."
 ms.custom: na
 ms.date: 10/06/2016
 ms.prod: configuration-manager
@@ -17,96 +17,96 @@ manager: angrobe
 ms.openlocfilehash: 5846ca3c91626491b03b36dd17b454bb9382a8dc
 ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
 ms.translationtype: HT
-ms.contentlocale: zh-CN
+ms.contentlocale: pt-BR
 ms.lasthandoff: 08/07/2017
 ---
-# <a name="introduction-to-reporting-in-system-center-configuration-manager"></a>System Center Configuration Manager 中的报表简介
+# <a name="introduction-to-reporting-in-system-center-configuration-manager"></a>Introdução à emissão de relatórios no System Center Configuration Manager
 
-*适用范围：System Center Configuration Manager (Current Branch)*
+*Aplica-se a: System Center Configuration Manager (Branch Atual)*
 
-System Center Configuration Manager 中的报表提供了一套工具和资源，可帮助用户使用 SQL Server Reporting Services (SSRS) 的高级报表功能和 Reporting Services 报表生成器提供的丰富创作体验。 报表有助于收集、整理和显示组织中用户、硬件和软件清单、软件更新、应用程序、站点状态和其他 Configuration Manager 操作的相关信息。 “报表”为你提供了许多预定义的报表，你可以使用这些报表而不用做任何更改，或者可以进行修改以满足你的需求，并且，你可以创建自定义报表。 使用以下部分有助于在 Configuration Manager 中管理报表。  
+Os relatórios no System Center Configuration Manager fornece um conjunto de ferramentas e recursos que ajudam a usar os recursos avançados de relatórios do SSRS (SQL Server Reporting Services) e a sofisticada experiência de criação que o Reporting Services Report Builder oferece. Os relatórios ajudam a coletar, organizar e apresentar informações sobre usuários, inventário de hardware e software, atualizações de software, aplicativos, status do site e outras operações do Configuration Manager na sua organização. A geração de relatórios fornece vários relatórios predefinidos que você pode usar sem alterações ou que você pode modificar para atender a seus requisitos, e você pode criar relatórios personalizados. Use as seções a seguir para ajudá-lo a gerenciar os relatórios no Configuration Manager.  
 
 ##  <a name="BKMK_SQLServerReportingServices"></a> SQL Server Reporting Services  
- SQL Server Reporting Services 提供大量可以使用的工具和服务以帮助你创建、部署和管理组织的报表，并且提供了编程功能，允许你扩展和自定义报表功能。 Reporting Services 是基于服务器的报表平台，它为各种数据源提供综合性报表功能。  
+ O SQL Server Reporting Services oferece uma gama completa de ferramentas e serviços prontos para uso para ajudá-lo a criar, implantar e gerenciar relatórios para sua organização, além de recursos de programação que permitem estender e personalizar sua funcionalidade de geração de relatórios. O Reporting Services é uma plataforma de relatórios baseada em servidor que oferece funcionalidade de relatório abrangente para uma variedade de fontes de dados.  
 
- Configuration Manager 将 SQL Server Reporting Services 用作其报表解决方案。 与 Reporting Services 的集成提供了以下优点：  
+ O Configuration Manager usa o SQL Server Reporting Services como sua solução de relatórios. A integração com o Reporting Services fornece as seguintes vantagens:  
 
--   使用行业标准报告系统查询 Configuration Manager 数据库。  
+-   Usa um sistema de relatórios padrão para consultar o banco de dados do Configuration Manager.  
 
--   使用 Configuration Manager 报表查看器或报表管理器显示报表，这是基于 Web 连接到报表的连接。  
+-   Exibe relatórios usando o Visualizador de Relatórios do Configuration Manager ou o Gerenciador de Relatórios, uma conexão baseada na Web com o relatório.  
 
--   提供高性能、可用性和可伸缩性。  
+-   Oferece escalabilidade, disponibilidade e alto desempenho.  
 
--   提供用户可订阅的报表的订阅；例如，经理可以订阅以每天自动通过电子邮件接收详述软件更新发布状态的报表。  
+-   Fornece assinaturas para relatórios que os usuários podem assinar; por exemplo, um gerente pode assinar para receber automaticamente um relatório por email todo dia e que detalhe o status de uma distribuição de atualização de software.  
 
--   导出用户可以选择的各种常见格式的报表。  
+-   Exporta relatórios que os usuários podem selecionar em uma variedade de formatos populares.  
 
- 有关 Reporting Services 的详细信息，请参阅 SQL Server 2008 联机丛书中的 [SQL Server Reporting Services](http://go.microsoft.com/fwlink/p/?LinkID=212032) 。  
+ Para obter mais informações sobre o Reporting Services, consulte [SQL Server Reporting Services](http://go.microsoft.com/fwlink/p/?LinkID=212032) nos Manuais Online do SQL Server 2008.  
 
-##  <a name="BKMK_ReportingServicesPoint"></a> Reporting Services 点  
- Reporting Services 点是安装在运行 Microsoft SQL Server Reporting Services 的服务器上的站点系统角色。 Reporting Services 点将 Configuration Manager 报表定义复制到 Reporting Services，基于报表类别创建报表文件夹，根据 Configuration Manager 管理用户基于角色的权限对报表文件夹和报表设置安全策略。 Reporting Services 点按 10 分钟的间隔连接到 Reporting Services 以重新应用更改的安全策略，例如通过使用报表管理器来应用。 有关如何规划和安装 Reporting Services 点的详细信息，请参阅以下文档：  
+##  <a name="BKMK_ReportingServicesPoint"></a> Ponto do Reporting Services  
+ O ponto do Reporting Services é uma função do sistema de site que está instalada em um servidor com o Microsoft SQL Server Reporting Services. O ponto do Reporting Services copia as definições de relatório do Configuration Manager para o Reporting Services, cria pastas de relatórios baseadas em categorias de relatório e define políticas de segurança nessas pastas e relatórios com base nas permissões baseadas em funções para usuários administrativos do Configuration Manager. Em um intervalo de 10 minutos, o ponto do Reporting Services conecta-se ao Reporting Services para reaplicar a política de segurança caso ele tenha sido alterada, por exemplo, usando o Gerenciador de Relatórios. Para obter mais informações sobre como planejar e instalar um ponto do Reporting Services, consulte a documentação a seguir:  
 
--   [规划 System Center Configuration Manager 中的报表](planning-for-reporting.md)  
+-   [Planejamento para emissão de relatórios no System Center Configuration Manager](planning-for-reporting.md)  
 
--   [配置 System Center Configuration Manager 中的报表](configuring-reporting.md)  
+-   [Configurando relatórios no System Center Configuration Manager](configuring-reporting.md)  
 
-##  <a name="BKMK_ConfigurationManagerReports"></a> Configuration Manager 报表  
- Configuration Manager 为 50 多个报表文件夹中的 400 多个报表提供报表定义，并在 Reporting Services 点安装过程中将其复制到 SQL Server Reporting Services 内的根报表文件夹。 这些报表显示在 Configuration Manager 控制台中，并根据报表类别在子文件夹中进行组织。 报表不会在 Configuration Manager 层次结构中向上或向下传播，它们只能针对创建报表的站点上的数据库运行。 但是，因为 Configuration Manager 在整个层次结构中复制全局数据，所以用户可以访问层次结构范围的信息。 当报表从站点数据库中检索数据时，它可以访问当前站点和子站点的站点数据，以及层次结构中每个站点的全局数据。 与其他 Configuration Manager 对象一样，管理用户必须具有合适的权限来运行或修改报表。 为了运行报表，管理用户必须具有对对象的“运行报表”  权限。 为了创建或修改报表，管理用户必须具有对对象的“修改报表”  权限。  
+##  <a name="BKMK_ConfigurationManagerReports"></a> Relatórios do Configuration Manager  
+ O Configuration Manager fornece definições de relatório para mais de 400 relatórios em mais de 50 pastas de relatório, que são copiadas para a pasta de relatório raiz no SQL Server Reporting Services durante o processo de instalação do ponto do Reporting Services. Os relatórios são exibidos no console do Configuration Manager e organizados em subpastas com base na categoria do relatório. Os relatórios não são propagados para cima nem para baixo na hierarquia do Configuration Manager; eles são executados somente contra o banco de dados do site em que são criados. Entretanto, como o Configuration Manager replica dados globais em toda a hierarquia, você tem acesso a informações de toda a hierarquia. Quando um relatório recupera dados de um banco de dados do site, ele tem acesso aos dados do site para o site atual e sites filho, além de dados globais para cada site na hierarquia. Assim como outros objetos do Configuration Manager, um usuário administrativo deve ter as permissões apropriadas para executar ou modificar relatórios. Para executar um relatório, um usuário administrativo deve ter a permissão **Executar Relatório** para o objeto. Para criar ou modificar um relatório, um usuário administrativo deve ter a permissão **Modificar Relatório** para o objeto.  
 
-###  <a name="BKMK_CreatingReports"></a> 创建和修改报表  
- Configuration Manager 使用 Microsoft SQL Server 报表生成器作为创作和编辑基于模型和 SQL 的报表的专用工具。 在 Configuration Manager 控制台中创建或编辑报表时，会打开报表生成器。 有关管理报表的详细信息，请参阅 [System Center Configuration Manager 中报表的操作和维护](operations-and-maintenance-for-reporting.md)。  
+###  <a name="BKMK_CreatingReports"></a> Criando e modificando relatórios  
+ O Configuration Manager usa o Construtor de Relatórios do Microsoft SQL Server como ferramenta exclusiva de criação e edição para relatórios baseados em modelo e em SQL. Quando você cria ou edita um relatório no console do Configuration Manager, o Construtor de Relatórios é aberto. Para obter mais informações sobre como gerenciar relatórios, consulte [Operações e manutenção de relatórios no System Center Configuration Manager](operations-and-maintenance-for-reporting.md).  
 
-###  <a name="BKMK_RunningReports"></a> 运行报表  
- 在 Configuration Manager 控制台中运行报表时，报表查看器将会打开并连接到 Reporting Services。 指定任何所需报表参数后，那么 Reporting Services 会检索数据并在查看器中显示结果。 你也可以连接到 SQL Services Reporting Services，连接到站点的数据源，以及运行报表。  
+###  <a name="BKMK_RunningReports"></a> Executando relatórios  
+ Quando você executa um relatório no console do Configuration Manager, o Visualizador de Relatórios é aberto e se conecta ao Reporting Services. Depois que você especifica os parâmetros de relatório necessários, o Reporting Services irá recuperar os dados e exibir os resultados no visualizador. Você também pode conectar-se ao SQL Services Reporting Services, conectar-se à fonte de dados do site e executar relatórios.  
 
-###  <a name="BKMK_ReportPrompts"></a> 报表提示  
- Configuration Manager 中的报表提示或报表参数是可以在创建或修改报表时配置的报表属性。 系统创建报表提示以限制报表检索的数据或确定报表检索的目标数据。 只要提示名称唯一且只包含符合标识符的 SQL Server 规则的字母数字字符，报表就可以包含多个提示。  
+###  <a name="BKMK_ReportPrompts"></a> Solicitações de relatório  
+ Uma solicitação de relatório ou um parâmetro de relatório no Configuration Manager é uma propriedade do relatório que você configura quando um relatório é criado ou modificado. As solicitações de relatório são criadas para limitar ou apontar os dados que um relatório recupera. Um relatório pode conter mais de uma solicitação desde que os nomes da solicitação seja únicos e contenham somente caracteres alfanuméricos de acordo com as regras do SQL Server para identificadores.  
 
- 运行报表时，提示会请求输入所需参数的值，并根据该值检索报表数据。 例如，?特定计算机的计算机信息?  报表检索特定计算机的计算机信息，并提示管理用户输入计算机名称。 Reporting Services 将指定的值传递给在报表的 SQL 语句中定义的变量。  
+ Quando você executa um relatório, a solicitação requer um valor para o parâmetro solicitado e, com base no valor, recupera os dados do relatório. Por exemplo, o relatório **Informações de um computador específico** recupera as informações de um computador específico e solicita ao usuário administrativo um nome do computador. O Reporting Services passa o valor específico para uma variável definida na instrução SQL do relatório.  
 
-###  <a name="BKMK_ReportLinks"></a> 报表链接  
- Configuration Manager 中的报表链接用于源报表，供管理用户轻松地访问其他数据，如关于源报表中每个项的更多详细信息。 如果目标报表需要运行一个或多个提示，则源报表必须包含一个具有每个提示的合适值的列。 你必须指定为提示提供值的列号。 例如，你可以将列出最近发现的计算机的报表链接至列出针对特定计算机接收的最近消息的列表。 创建链接时，你可以指定源报表中的列 2 包含计算机名称，这是一个必需的提示，用于提示输入目标报表。 运行源报表时，链接图标会出现在每个数据行的左边。 当你单击行上的图标时，报表查看器会针对该行传递指定列中的值，并将其作为显示目标报表所需的提示值。 可以将报表配置为只包含一个链接，该链接仅连接到单一目标资源。  
+###  <a name="BKMK_ReportLinks"></a> Links de relatório  
+ Os links de relatório no Configuration Manager são usados em um relatório de origem para fornecer aos usuários administrativos fácil acesso a dados adicionais, como informações mais detalhadas sobre cada item no relatório de origem. Se o relatório de destino requerer a execução de uma ou mais solicitações, o relatório de origem deverá conter uma coluna com os valores apropriados para cada solicitação. Você deve especificar o número da coluna que fornece o valor para a solicitação. Por exemplo, você pode vincular um relatório que lista computadores descobertos recentemente a um relatório que lista as últimas mensagens recebidas de um computador específicos. Quando o link é criado, você pode especificar que a coluna 2 no relatório de origem contém nomes de computadores, que é uma solicitação necessária para o relatório de destino. Quando o relatório de origem é executado, ícones do link aparecem à esquerda de cada linha de dados. Quando você clica no ícone em uma linha, o Visualizador de Relatórios passa o valor na coluna especificada para a linha como o valor da solicitação necessário para exibir o relatório de destino. Um relatório pode ser configurado somente com um link, e esse link pode se conectar somente a um recurso de destino.  
 
 > [!WARNING]  
->  如果将目标报表移到其他报表文件夹，则目标报表的位置会发生更改。 系统未使用新位置自动更新源报表中的报表链接，此报表链接在源报表中将不工作。  
+>  Se você mover um relatório de destino para outra pasta de relatório, o local do relatório de destino será alterado. O link do relatório no relatório de origem não é atualizado automaticamente com o novo local, e o link do relatório não funcionará no relatório de origem.  
 
-##  <a name="BKMK_ReportFolders"></a> 报表文件夹  
- System Center Configuration Manager 中的报表文件夹提供了一种对 Reporting Services 中存储的报表进行排序和筛选的方法。 当有许多报表要管理时，报表文件夹特别有用。 安装 Reporting Services 点时，报表将复制到 Reporting Services 并组织成 50 多个报表文件夹。 报表文件夹是只读的。 无法在 Configuration Manager 控制台中修改它们。  
+##  <a name="BKMK_ReportFolders"></a> Pastas de relatório  
+ As pastas de relatório no System Center Configuration Manager fornecem um método para classificar e filtrar relatórios armazenados no Reporting Services. As pastas de relatório são especialmente úteis quando você tem vários relatórios para gerenciar. Quando você instala um ponto do Reporting Services, os relatórios são copiados para o Reporting Services e organizados em mais de 50 pastas de relatório. As pastas de relatório são somente leitura. Não é possível modificá-las no console do Configuration Manager.  
 
-##  <a name="BKMK_ReportSubscriptions"></a> 报表订阅  
- Reporting Services 中的报表订阅是一个定期请求，此请求用于请求在特定时间提供报表或者响应某个事件，并且采用你在订阅中指定的应用程序文件格式。 订阅提供按需运行报表的一种替代方法。 按需报表要求你在每次想要查看报表时有效地选择报表。 相比之下，订阅可用于进行计划，然后自动提供报表。  
+##  <a name="BKMK_ReportSubscriptions"></a> Assinaturas de relatório  
+ Uma assinatura de relatório no Reporting Services é uma solicitação recorrente para entregar um relatório em uma hora específica ou em resposta a um evento, e em um formato de arquivo do aplicativo especificado na assinatura. As assinaturas oferecem uma alternativa para executar um relatório sob demanda. Os relatórios sob demanda requerem que você selecione ativamente o relatório sempre que desejar exibir o relatório. Por outro lado, as assinaturas podem ser usadas para agendar e automatizar a entrega de um relatório.  
 
- 可以在 Configuration Manager 控制台中管理报表订阅。 它们是在报表服务器上处理的。 系统使用部署在服务器上的传递扩展插件分发订阅。 默认情况下，你可以创建订阅以将报表发送到共享文件夹或发送到电子邮件地址。 有关管理报表订阅的详细信息，请参阅 [System Center Configuration Manager 中报表的操作和维护](operations-and-maintenance-for-reporting.md)。  
+ É possível gerenciar assinaturas de relatório no console do Configuration Manager. Elas são processadas no servidor de relatório. As assinaturas são distribuídas com o uso de extensões de entrega que são implantadas no servidor. Por padrão, você pode criar assinaturas que enviam relatórios a uma pasta compartilhada ou a um endereço de email. Para obter mais informações sobre como gerenciar inscrições em relatórios, consulte [Operações e manutenção de relatórios no System Center Configuration Manager](operations-and-maintenance-for-reporting.md).  
 
-##  <a name="BKMK_ReportBuilder"></a> 报表生成器  
- Configuration Manager 使用 Microsoft SQL Server Reporting Services 报表生成器作为创作和编辑基于模型和 SQL 的报表的专用工具。 启动操作在 Configuration Manager 控制台中创建或编辑报表时，会打开报表生成器。 首次创建或修改报表时，会自动安装报表生成器。 当运行或编辑报表时，会打开与安装的 SQL Server 版本关联的报表生成器版本。  
+##  <a name="BKMK_ReportBuilder"></a> Construtor de Relatórios  
+ O Configuration Manager usa o Construtor de Relatórios do Microsoft SQL Server Reporting Services como ferramenta exclusiva de criação e edição para relatórios baseados em modelo e em SQL. Quando você inicia a ação de criar ou editar um relatório no console do Configuration Manager, o Construtor de Relatórios é aberto. Quando você cria ou modifica um relatório pela primeira vez, o Construtor de Relatórios é instalado automaticamente. A versão do Construtor de Relatórios associada à versão instalada do SQL Server é aberta quando você executa ou edita relatórios.  
 
- 报表生成器安装会为 20 多种语言添加支持。 运行报表生成器时，它会以本地计算机上运行的操作系统的语言来显示数据。 如果报表生成器不支持该语言，则会用英文显示数据。 报表生成器支持 SQL Server 2008 Reporting Services 的所有功能，包括以下功能：  
+ A instalação do Construtor de Relatórios adiciona suporte para mais de 20 idiomas. Quando você executa o Construtor de Relatórios, ele exibe dados no idioma do sistema operacional executado no computador local. Se o Construtor de Relatórios não oferecer suporte ao idioma, os dados serão exibidos em inglês. O Construtor de Relatórios oferece suporte a todos os recursos do SQL Server 2008 Reporting Services, que inclui os seguintes recursos:  
 
--   提供一个直观的报表创作环境，其外观与 Microsoft Office 的外观类似。  
+-   Oferece um ambiente de criação de relatórios intuitivos com uma aparência semelhante ao Microsoft Office.  
 
--   提供了 SQL Server 2008 报表定义语言 (RDL) 的灵活报表布局。  
+-   Oferece o layout flexível de relatório da RDL (Linguagem de Definição de Relatório) do SQL Server 2008.  
 
--   提供了各种形式的数据可视化，包括图表和仪表。  
+-   Fornece várias formas de visualização de dados, incluindo gráficos e medidores.  
 
--   提供了格式丰富的文本框。  
+-   Fornece caixas de texto com formatação sofisticada.  
 
--   导出到 Microsoft Word 格式。  
+-   Exporta para o formato do Microsoft Word.  
 
- 你还可以从 SQL Server Reporting Services 打开报表生成器。  
+ Você também pode abrir o Construtor de Relatórios do SQL Server Reporting Services.  
 
-##  <a name="BKMK_ReportModels"></a> SQL Server Reporting Services 中的报表模型  
- Configuration Manager 中的 SQL Reporting Services 使用报表模型帮助管理用户从数据库中选择要包含在基于模型的报表中的项。 对于生成报表的管理用户，报表模型仅公开指定的视图和项以供选择。 要创建基于模型的报表，至少必须有一个报表模型可用。 报表模型具有以下功能：  
+##  <a name="BKMK_ReportModels"></a> Modelos de relatório no SQL Server Reporting Services  
+ O SQL Reporting Services no Configuration Manager usa modelos de relatório para ajudar usuários administrativos a selecionar itens do banco de dados para incluir nos relatórios baseados em modelos. Para o usuário administrativo que está criando o relatório, os modelos de relatório expõem somente exibições e itens especificados dos quais escolher. Para criar relatórios baseados em modelos, pelo menos um modelo de relatório deve estar disponível. Os modelos de relatório têm os seguintes recursos:  
 
--   你可以提供数据库字段和视图逻辑业务名称，以便于生成报表。 生成报表不需要了解数据库结构。  
+-   Você pode dar nomes de negócios lógicos a campos e exibições de banco de dados para facilitar a produção de relatórios. Não é necessário conhecimento da estrutura de banco de dados para produzir relatórios.  
 
--   项目可以进行逻辑分组。  
+-   Você pode agrupar itens logicamente.  
 
--   你可以定义项之间的关系。  
+-   Você pode definir relações entre itens.  
 
--   你可以保护模型元素，以便管理用户只能看到他们有权查看的数据。  
+-   Você pode proteger elementos do modelo para que usuários administrativos possam ver somente os dados aos quais eles têm permissão para ver.  
 
- 虽然 Configuration Manager 提供了样本报表模型，但也可以定义报表模型来满足自己的业务要求。 有关如何创建报表模型的详细信息，请参阅[在 SQL Server Reporting Services 中对 System Center Configuration Manager 创建自定义报表模型](creating-custom-report-models-in-sql-server-reporting-services.md)。  
+ Embora o Configuration Manager forneça exemplo dos modelos de relatório, também é possível definir modelos de relatório para atender a seus requisitos de negócios. Para obter mais informações sobre como criar modelos de relatório, veja [Creating custom report models for System Center Configuration Manager in SQL Server Reporting Services](creating-custom-report-models-in-sql-server-reporting-services.md) (Criando modelos de relatório personalizados para o System Center Configuration Manager no SQL Server Reporting Services).  
 
-## <a name="next-steps"></a>后续步骤
-[规划报表](planning-for-reporting.md)
+## <a name="next-steps"></a>Próximas etapas
+[Planejamento para relatórios](planning-for-reporting.md)

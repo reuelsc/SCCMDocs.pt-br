@@ -1,6 +1,6 @@
 ---
-title: "迁移内容 | Microsoft Docs"
-description: "将数据迁移到 System Center Configuration Manager 目标层次结构中时，使用分发点来管理内容。"
+title: "Migrar o conteúdo | Microsoft Docs"
+description: "Use pontos de distribuição para gerenciar o conteúdo ao migrar dados para uma hierarquia de destino do System Center Configuration Manager."
 ms.custom: na
 ms.date: 12/30/2016
 ms.prod: configuration-manager
@@ -18,193 +18,193 @@ manager: angrobe
 ms.openlocfilehash: 25619d91522193178e0415f649ca4b34c94ecc89
 ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
 ms.translationtype: HT
-ms.contentlocale: zh-CN
+ms.contentlocale: pt-BR
 ms.lasthandoff: 08/07/2017
 ---
-# <a name="plan-a-content-deployment-migration-strategy-in-system-center-configuration-manager"></a>在 System Center Configuration Manager 中规划内容部署迁移策略
+# <a name="plan-a-content-deployment-migration-strategy-in-system-center-configuration-manager"></a>Planejar uma estratégia de migração de implantação de conteúdo no System Center Configuration Manager
 
-*适用范围：System Center Configuration Manager (Current Branch)*
+*Aplica-se a: System Center Configuration Manager (Branch Atual)*
 
-以主动方式将数据迁移到 System Center Configuration Manager 目标层次结构时，源和目标层次结构中的 Configuration Manager 客户端都能继续访问在源层次结构中部署的内容。 还可使用迁移升级或重新分配源层次结构中的分发点，以成为目标层次结构中的分发点。 在共享和升级或重新分配分发点时，此策略使你不必为你迁移的客户端将内容重新部署到目标层次结构中的新服务器。  
+Enquanto você migrar dados ativamente para uma hierarquia de destino do System Center Configuration Manager, os clientes do Configuration Manager nas hierarquias de origem e de destino podem manter o acesso ao conteúdo implantado na hierarquia de origem. Também é possível usar a migração para atualizar ou transferir os pontos de distribuição da hierarquia de origem para tornarem-se pontos de distribuição na hierarquia de destino. Quando você compartilha e atualiza ou reatribui os pontos de distribuição, essa estratégia pode ajudá-lo a evitar ter de reimplantar conteúdo em novos servidores na hierarquia de destino para os clientes que você migrar.  
 
-尽管你可以在目标层次结构中重新创建和分发内容，但你也可以使用下列选项来管理此内容：  
+Embora você possa recriar e distribuir conteúdo na hierarquia de destino, também é possível usar as seguintes opções para gerenciar esse conteúdo:  
 
--   将源层次结构中的分发点与目标层次结构中的客户端共享。  
+-   Compartilhar pontos de distribuição na hierarquia de origem com clientes na hierarquia de destino.  
 
--   将源层次结构中的独立 Configuration Manager 2007 分发点或 Configuration Manager 2007 辅助站点升级成为目标层次结构中的分发点。  
+-   Atualizar pontos de distribuição autônomos do Configuration Manager 2007 ou sites secundários do Configuration Manager 2007 na hierarquia de origem para tornarem-se pontos de distribuição na hierarquia de destino.  
 
--   将分发点从 System Center Configuration Manager 源层次结构重新分配到目标层次结构中的站点。  
+-   Reatribua os pontos de distribuição de uma hierarquia de origem do System Center Configuration Manager ou a um site na hierarquia de destino.  
 
-使用下列部分来帮助你在迁移过程中规划内容部署：  
+Use as seções a seguir como auxílio para planejar a implantação de conteúdo durante a migração:  
 
--   [在源和目标层次结构之间共享分发点](#About_Shared_DPs_in_Migration)  
+-   [Compartilhar pontos de distribuição entre hierarquias de origem e destino](#About_Shared_DPs_in_Migration)  
 
--   [计划升级 Configuration Manager 2007 共享的分发点](#Planning_to_Upgrade_DPs)  
+-   [Planejar para atualizar pontos de distribuição compartilhados do Configuration Manager 2007](#Planning_to_Upgrade_DPs)  
 
-    -   [分发点升级过程](#BKIMK_UpgradeProcess)  
+    -   [Processo de atualização do ponto de distribuição](#BKIMK_UpgradeProcess)  
 
-    -   [计划升级 Configuration Manager 2007 辅助站点](#BKMK_UpgradeSS)  
+    -   [Planejar para atualizar sites secundários do Configuration Manager 2007](#BKMK_UpgradeSS)  
 
--   [计划重新分配 System Center Configuration Manager 分发点](#BKMK_ReassignDistPoint)  
+-   [Planejar para transferir pontos de distribuição do System Center Configuration Manager](#BKMK_ReassignDistPoint)  
 
-    -   [分发点重新分配过程](#BKMK_ReassignProcess)  
+    -   [Processo de reatribuição de pontos de distribuição](#BKMK_ReassignProcess)  
 
--   [迁移内容时的内容所有权](#About_Migrating_Content)  
+-   [Propriedade do conteúdo durante a migração de conteúdo](#About_Migrating_Content)  
 
-##  <a name="About_Shared_DPs_in_Migration"></a> 在源和目标层次结构之间共享分发点  
-在迁移过程中，你可以将源层次结构中的分发点与目标层次结构共享。 你可以使用共享的分发点，在不必重新创建内容的情况下使从源层次结构中迁移的内容立即可供目标层次结构中的客户端使用，然后将其分发给目标层次结构中的新分发点。 当目标层次结构中的客户端请求部署到你已共享的分发点的内容时，可将共享的分发点提供给客户端作为有效的内容位置。  
+##  <a name="About_Shared_DPs_in_Migration"></a> Compartilhar pontos de distribuição entre hierarquias de origem e destino  
+Durante a migração, é possível compartilhar pontos de distribuição de uma hierarquia de origem com a hierarquia de destino. É possível usar pontos de distribuição compartilhados para tornar o conteúdo migrado de uma hierarquia de origem imediatamente disponível para clientes na hierarquia de destino sem ter de recrear esse conteúdo, e depois distribuí-lo para novos pontos de distribuição na hierarquia de destino. Quando clientes na hierarquia de destino solicitam conteúdo implantado em pontos de distribuição compartilhados, os pontos de distribuição compartilhados podem ser oferecidos aos clientes como locais de conteúdo válidos.  
 
- 除了成为目标层次结构中客户端的有效内容位置外，从源层次结构中进行的迁移仍在进行时，还可以将分发点升级或重新分配到目标层次结构。 可以升级 Configuration Manager 2007 共享的分发点并重新分配 System Center 2012 Configuration Manager 共享分发点。 在升级或重新分配共享的分发点时，该分发点将被从源层次结构中删除并成为目标层次结构中的分发点。 升级或重新分配共享的分发点后，你可以在从源层次结构迁移完成后继续使用目标层次结构中的分发点。 有关如何升级共享分发点的详细信息，请参阅[计划升级 Configuration Manager 2007 共享的分发点](#Planning_to_Upgrade_DPs)。 有关如何重新分配共享分发点的详细信息，请参阅[计划重新分配 System Center Configuration Manager 分发点](#BKMK_ReassignDistPoint)。  
+ Além de ser um local de conteúdo válido para clientes na hierarquia de destino enquanto a migração da hierarquia de origem permanece ativa, é possível atualizar ou transferir um ponto de distribuição para a hierarquia de destino. Você pode atualizar pontos de distribuição compartilhados do Configuration Manager 2007 e reatribuir pontos de distribuição compartilhados do System Center 2012 Configuration Manager. Quando você atualiza ou reatribui um ponto de distribuição compartilhado, o ponto de distribuição é removido da hierarquia de origem e torna-se um ponto de distribuição na hierarquia de destino. Depois de atualizar ou reatribuir um ponto de distribuição compartilhado, é possível continuar a usar o ponto de distribuição na hierarquia de destino após a conclusão da migração da hierarquia de origem. Para saber mais sobre como atualizar um ponto de distribuição compartilhado, consulte [Planejar para atualizar pontos de distribuição compartilhados do Configuration Manager 2007](#Planning_to_Upgrade_DPs). Para saber mais sobre como transferir um ponto de distribuição compartilhado, consulte [Planejar para transferir pontos de distribuição do System Center Configuration Manager](#BKMK_ReassignDistPoint).  
 
- 你可以选择共享源层次结构的任何源站点中的分发点。 为源站点共享分发点时，会在该主站点和每个其他主站点上的所有符合条件的分发点上共享子辅助站点。 要符合作为共享分发点的条件，托管分发点的站点系统服务器必须设置为具有完全限定的域名 (FQDN)。 将忽略设置为具有 NetBIOS 名称的任何分发点。  
+ Você pode optar por compartilhar pontos de distribuição de qualquer site de origem da hierarquia de origem. Quando você compartilha pontos de distribuição para um site de origem, sites secundários filho são compartilhados em cada ponto de distribuição qualificado nesse site primário e em cada um dos sites primários. Para qualificar-se para ser um ponto de distribuição compartilhado, o servidor de sistema de site que hospeda o ponto de distribuição deve ser configurado com um FQDN (nome de domínio totalmente qualificado). Os pontos de distribuição configurados com um nome NetBIOS são desconsiderados.  
 
 > [!TIP]  
->  Configuration Manager 2007 不需要为站点系统服务器设置 FQDN。  
+>  O Configuration Manager 2007 não requer a configuração de um FQDN para servidores do sistema de sites.  
 
-使用下列信息来帮助你规划共享的分发点：  
+Use as seguintes informações como auxílio para o planejamento de pontos de distribuição compartilhados:  
 
--   你共享的分发点必须满足共享的分发点的先决条件。 有关这些先决条件的详细信息，请参阅 [System Center Configuration Manager 中迁移的先决条件](../../core/migration/prerequisites-for-migration.md)中的[迁移所需配置](../../core/migration/prerequisites-for-migration.md#BKMK_Required_Configurations)。  
+-   Os pontos de distribuição que você compartilhar deverão atender aos pré-requisitos para pontos de distribuição compartilhados. Para mais informações sobre esses pré-requisitos, veja [Configurações necessárias para a migração](../../core/migration/prerequisites-for-migration.md#BKMK_Required_Configurations) em [Pré-requisitos da migração no System Center Configuration Manager](../../core/migration/prerequisites-for-migration.md).  
 
--   共享分发点操作是站点范围的设置，它共享源站点和任何直接子辅助站点上的所有符合条件的分发点。 在启用分发点共享时，你无法选择单独的分发点进行共享。  
+-   A ação de compartilhar pontos de distribuição é uma configuração que abrange todo o site que compartilha todos os pontos de distribuição qualificados em um site de origem e em qualquer site secundário filho direto. Não é possível selecionar pontos de distribuição individuais para compartilhar quando se habilita o compartilhamento de pontos de distribuição.  
 
--   目标层次结构中的客户端可接收包的内容位置信息，这些包分发到从源层次结构中共享的分发点上。 对于 Configuration Manager 2007 源层次结构中的分发点，这包括分支分发点、服务器共享上的分发点以及标准分发点。  
+-   Os clientes na hierarquia de destino podem receber informações do local do conteúdo para pacotes que são distribuídos em pontos de distribuição compartilhados da hierarquia de origem. No caso de pontos de distribuição de uma hierarquia de origem do Configuration Manager 2007, isso inclui pontos de distribuição secundários, em compartilhamentos de servidores e padrão.  
 
     > [!WARNING]  
-    >  如果你更改源层次结构，原始源层次结构中的共享的分发点将不再可用，并且无法作为内容位置提供给目标层次结构中的客户端。 如果重新配置迁移以使用原始源层次结构，则会还原以前共享的分发点作为有效的内容位置服务器。  
+    >  Se você alterar a hierarquia de origem, os pontos de distribuição compartilhados da hierarquia de origem não estarão mais disponíveis e não poderão ser oferecidos como locais de conteúdo para clientes na hierarquia de destino. Se você reconfigurar a migração para usar a hierarquia de origem, os pontos de distribuição compartilhados anteriormente serão restaurados como servidores de locais de conteúdo válidos.  
 
--   当你迁移共享的分发点上承载的包时，包版本在源层次结构和目标层次结构中必须相同。 如果包版本在源层次结构和目标层次结构中不相同，则目标层次结构中的客户端无法从共享的分发点中检索该内容。 因此，如果更新源层次结构中的包，你必须重新迁移包数据，然后目标层次结构中的客户端才能从共享的分发点中检索该内容。  
-
-    > [!NOTE]  
-    >  查看共享分发点上托管的包的详细信息时，不会更新源站点“共享的分发点”选项卡上显示为“托管的迁移包”的包数量，直至下一个数据收集周期完成为止。  
-
--   可以从“管理”作区的“源层次结构”中查看共享的分发点及其属性，该工作区位于连接到目标层次结构的 Configuration Manager 控制台中。  
-
--   无法使用 Configuration Manager 2007 源层次结构中的共享的分发点来承载 Microsoft Application Virtualization (App-V) 的包。 App-V 包必须迁移并进行转换才能供目标层次结构中的客户端使用。 但是，可以使用 System Center 2012 Configuration Manager 或 System Center Configuration Manager 源层次结构中的共享的分发点为目标层次结构中的客户端承载 App-V 包。  
-
--   在共享 Configuration Manager 2007 源层次结构中的受保护分发点时，目标层次结构将创建一个边界组，其中包括该分发点的受保护网络位置。 无法在目标层次结构中更改此边界组。 但是，如果为 Configuration Manager 2007 源层次结构中的分发点更改受保护边界信息，在下一个数据收集周期完成后，该更改将反映在目标层次结构中。  
+-   Quando você migra um pacote hospedado em um ponto de distribuição compartilhado, a versão do pacote deve permanecer a mesma nas hierarquias de origem e destino. Quando uma versão do pacote não é a mesma nas hierarquias de origem e destino, os clientes na hierarquia de destino não podem recuperar o conteúdo do ponto de distribuição compartilhado. Portanto, se você atualizar um pacote na hierarquia de origem, deverá migrar novamente os dados do pacote para que os clientes da hierarquia de destino possam recuperar esse conteúdo de um ponto de distribuição compartilhado.  
 
     > [!NOTE]  
-    >  System Center 2012 Configuration Manager 和 System Center Configuration Manager 站点使用首选分发点（而不是受保护分发点）的概念。 这种情况仅适用于从 Configuration Manager 2007 源站点中共享的分发点。  
+    >  Quando você exibe detalhes de um pacote hospedado em um ponto de distribuição compartilhado, o número de pacotes exibidos como **Pacotes Migrados Hospedados** na guia **Pontos de Distribuição Compartilhados** nos sites de origem não é atualizado até a conclusão do próximo ciclo de coleta de dados.  
 
-从源站点中共享分发点前，Configuration Manager 控制台中不会显示合格的分发点。 共享分发点之后，只会列出成功共享的分发点。  
+-   É possível exibir os pontos de distribuição compartilhados e suas propriedades no nó **Hierarquia de Origem** do espaço de trabalho **Administração** no console do Configuration Manager que se conecta à hierarquia de destino.  
 
-共享了分发点之后，你可以在源层次结构中更改任何共享的分发点的配置。 对分发点的配置所做的更改将在下一个数据收集周期后反映在目标层次结构中。 你更新为符合共享条件的分发点会自动共享，而不再符合条件的那些分发点则会停止共享分发点。 例如，你可能有一个分发点，该分发点未设置为具有 Intranet FQDN，并且最初未与目标层次结构共享。 为该分发点设置 FQDN 之后，下一个数据收集周期将识别此配置，随后与目标层次结构共享该分发点。  
+-   Não é possível usar um ponto de distribuição compartilhado de uma hierarquia de origem do Configuration Manager 2007 para hospedar pacotes do Microsoft Application Virtualization (App-V). Os pacotes do App-V devem ser migrados e convertidos para uso pelos clientes na hierarquia de destino. No entanto, é possível usar um ponto de distribuição compartilhado de uma hierarquia de origem do System Center 2012 Configuration Manager ou System Center Configuration Manager para hospedar pacotes do App-V para clientes em uma hierarquia de destino.  
 
-##  <a name="Planning_to_Upgrade_DPs"></a>计划升级 Configuration Manager 2007 共享的分发点  
-在从 Configuration Manager 2007 源层次结构中迁移时，可以升级共享的分发点以使其成为 System Center Configuration Manager 分发点。 可在主站点和辅助站点上升级分发点。 升级过程将从 Configuration Manager 2007 层次结构中删除分发点，并使其成为目标层次结构中的站点系统服务器。 此过程还会将分发点上的现有内容复制到分发点计算机上的新位置。 然后，升级过程将修改内容的副本，创建单一实例存储以用于目标层次结构中的内容部署。 因此，在升级分发点时，不必重新分发 Configuration Manager 2007 分发点上承载的已迁移内容。  
+-   Quando você compartilha um ponto de distribuição protegido de uma hierarquia de origem do Configuration Manager 2007, a hierarquia de destino cria um grupo de limites que inclui os locais de rede protegidos desse pronto de distribuição. Não é possível alterar esse grupo de limites na hierarquia de destino. No entanto, se você alterar as informações de limites protegidos do ponto de distribuição na hierarquia de origem do Configuration Manager 2007, essa alteração será refletida na hierarquia de destino após a conclusão do próximo ciclo de coleta de dados.  
 
-Configuration Manager 将内容转换为单实例存储后，Configuration Manager 会删除分发点计算机上的原始源内容以释放磁盘空间。 Configuration Manager 不会使用原始源内容位置。  
+    > [!NOTE]  
+    >  Os sites do System Center 2012 Configuration Manager e do System Center Configuration Manager usam o conceito de pontos de distribuição preferidos em vez de pontos de distribuição protegidos. Essa condição só se aplica aos pontos de distribuição compartilhados de sites de origem do Configuration Manager 2007.  
 
-并非所有可以共享的 Configuration Manager 2007 分发点都适合升级到 System Center Configuration Manager。 为了具有升级资格，Configuration Manager 2007 分发点必须满足升级条件。 这些条件包括安装了分发点的站点系统服务器，以及安装的 Configuration Manager 2007 分发点的类型。 例如，你无法升级安装在主站点的站点服务器计算机上的任何类型的分发点，但可以升级安装在辅助站点的站点服务器计算机上的标准分发点。  
+Os pontos de distribuição qualificados não ficam visíveis no console do Configuration Manager antes que você compartilhe pontos de distribuição de um site de origem. Depois de compartilhar pontos de distribuição, somente os pontos de distribuição compartilhados com êxito são listados.  
+
+Depois de compartilhar pontos de distribuição, é possível alterar a configuração de qualquer ponto de distribuição compartilhado na hierarquia de origem. As alterações feitas na configuração de um ponto de distribuição são refletidas na hierarquia de destino após o próximo ciclo de coleta de dados. Os pontos de distribuição atualizados para qualificação para compartilhamento são compartilhados automaticamente, enquanto aos que não se qualificam mais param de compartilhar pontos de distribuição. Por exemplo, é possível ter um ponto de distribuição que não é configurado com um FQDN de intranet e não foi compartilhado inicialmente com a hierarquia de destino. Depois de configurar o FQDN para esse ponto de distribuição, o próximo ciclo de coleta de dados identifica essa configuração e o ponto de distribuição é compartilhado com a hierarquia de destino.  
+
+##  <a name="Planning_to_Upgrade_DPs"></a> Planejar para atualizar pontos de distribuição compartilhados do Configuration Manager 2007  
+Ao migrar de uma hierarquia de origem do Configuration Manager 2007, é possível atualizar um ponto de distribuição compartilhado para transformá-lo em um ponto de distribuição do System Center Configuration Manager. É possível atualizar pontos de distribuição em sites primários e secundários. O processo de atualização remove o ponto de distribuição da hierarquia do Configuration Manager 2007 e o transforma em um servidor de sistema de sites na hierarquia de destino. Esse processo também copia o conteúdo existente que está no ponto de distribuição para um novo local no computador do ponto de distribuição. Em seguida, o processo de atualização modifica a cópia do conteúdo para criar a instância única para usar com a implantação de conteúdo na hierarquia de destino. Portanto, ao atualizar um ponto de distribuição, você não precisa redistribuir o conteúdo migrado hospedado no ponto de distribuição do Configuration Manager 2007.  
+
+Depois que o Configuration Manager converter o conteúdo para o Single Instance Store, exclui o conteúdo de origem original no computador do ponto de distribuição para liberar espaço em disco. O Configuration Manager não usa o local original do conteúdo de origem.  
+
+Nem todos os pontos de distribuição do Configuration Manager 2007 que você pode compartilhar são qualificados para a atualização para o System Center Configuration Manager. Para ser qualificado para atualização, um ponto de distribuição do Configuration Manager 2007 deve atender às condições para atualização. Essas condições incluem o servidor do sistema de sites em que o ponto de distribuição está instalado e o tipo de ponto de distribuição instalado do Configuration Manager 2007. Por exemplo, não é possível atualizar qualquer tipo de ponto de distribuição instalado no computador do servidor do site em um site primário, mas é possível atualizar um ponto de distribuição padrão instalado no computador do servidor do site em um site secundário.  
 
 > [!NOTE]  
->  只能升级运行的操作系统版本对于目标层次结构中的分发点受支持的计算机上的那些 Configuration Manager 2007 共享的分发点。 例如，尽管可以共享运行 Windows Vista 的计算机上的 Configuration Manager 2007 分发点，但无法升级共享的此分发点，因为 System Center Configuration Manager 不支持将此操作系统用作分发点。  
+>  É possível atualizar somente os pontos de distribuição compartilhados do Configuration Manager 2007 que estão em um computador que executa uma versão de sistema operacional com suporte para pontos de distribuição na hierarquia de destino. Por exemplo, embora seja possível compartilhar um ponto de distribuição do Configuration Manager 2007 que esteja em um computador que executa o Windows Vista, não é possível atualizar esse ponto de distribuição compartilhado, pois não há suporte do System Center Configuration Manager para o sistema operacional para uso como um ponto de distribuição.  
 
-下表列出了可升级的每种类型的 Configuration Manager 2007 分发点的受支持位置。  
+A tabela a seguir lista os locais com suporte para cada tipo de ponto de distribuição do Configuration Manager 2007 que pode ser atualizado.  
 
-|分发点的类型|位于站点系统计算机（而不是站点服务器）上的分发点|位于站点系统计算机（而不是站点服务器）上并承载其他站点系统角色的分发点|位于辅助站点服务器上的分发点|  
+|Tipo de ponto de distribuição|Ponto de distribuição em um computador de sistema de site diferente do servidor do site|Ponto de distribuição em um computador de sistema de site diferente do servidor do site e que hospeda outras funções de sistema de site|Ponto de distribuição em um servidor do site secundário|  
 |--------------------------------|-----------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------------------------|---------------------------------------------------|  
-|标准分发点|是|否|是|  
-|位于服务器共享上的分发点<sup>1</sup>|是|否|否|  
-|分支分发点|是|否|否|  
+|Ponto de distribuição padrão|Sim|Não|Sim|  
+|Ponto de distribuição em compartilhamentos do servidor<sup>1</sup>|Sim|Não|Não|  
+|Ponto de distribuição secundário|Sim|Não|Não|  
 
- <sup>1</sup> System Center Configuration Manager 对于站点系统不支持服务器共享，但支持升级位于服务器共享上的 Configuration Manager 2007 分发点。 在升级位于服务器共享上的 Configuration Manager 2007 分发点时，分发点类型会自动转换为服务器，并且必须选择将存储单一实例内容存储的分发点计算机上的驱动器。  
+ <sup>1</sup> O System Center Configuration Manager não dá suporte aos compartilhamentos de servidor para sistemas de sites, mas dá suporte à atualização de um ponto de distribuição do Configuration Manager 2007 que está em um compartilhamento de servidor. Ao atualizar um ponto de distribuição do Configuration Manager 2007 que está em um compartilhamento do servidor, o tipo de ponto de distribuição é automaticamente convertido em um servidor, e você deve selecionar a unidade no computador do ponto de distribuição que armazenará o repositório de conteúdo de instância única.  
 
 > [!WARNING]  
->  在升级分支分发点之前，请卸载 Configuration Manager 2007 客户端软件。 在升级安装了 Configuration Manager 2007 客户端软件的分支分发点时，将从计算机中删除以前部署到计算机的内容，并且分发点的升级将失败。  
+>  Antes de atualizar um ponto de distribuição secundário, desinstale o software cliente do Configuration Manager 2007. Ao atualizar um ponto de distribuição secundário que tem o software cliente do Configuration Manager 2007 instalado, o conteúdo implantado anteriormente é removido do computador, e ocorre falha na atualização do ponto de distribuição.  
 
-若要标识适合于 Configuration Manager 控制台（位于“源层次结构”节点）中的升级的分发点，请选择源站点，然后选择“共享的分发点”选项卡。 适合的分发点在“适合升级”  列中显示“是”  。  
+Para identificar os pontos de distribuição qualificados para atualização no console do Configuration Manager no nó **Hierarquia de Origem**, selecione um site de origem e a guia **Pontos de Distribuição Compartilhados**. Os pontos de distribuição qualificados são exibidos com **Sim** na coluna **Qualificado para Atualização** .  
 
-在升级 Configuration Manager 2007 辅助站点服务器上安装的分发点时，将从源层次结构中卸载辅助站点。 尽管此方案称为辅助站点升级，但这种情况仅适用于分发点站点系统角色。 结果是不会升级辅助站点，而是会将其卸载。 这会在曾经是辅助站点服务器的计算机上留下一个目标层次结构中的分发点。 如果计划升级辅助站点上的分发点，请参阅本主题中的[计划升级 Configuration Manager 2007 辅助站点](#BKMK_UpgradeSS)。  
+Ao atualizar um ponto de distribuição instalado em um servidor de site secundário do Configuration Manager 2007, o site secundário é desinstalado da hierarquia de origem. Embora este cenário seja chamado de uma atualização de site secundária, ele se aplica somente à função de sistema de site do ponto de distribuição. Como resultado, o site secundário não é atualizado e, em vez disso, é desinstalado. Isso deixa um ponto de distribuição da hierarquia de destino no computador que era o servidor do site secundário. Se você pretende atualizar o ponto de distribuição em um site secundário, consulte [Planejar para atualizar sites secundários do Configuration Manager 2007](#BKMK_UpgradeSS) neste tópico.  
 
-###  <a name="BKIMK_UpgradeProcess"></a> 分发点升级过程  
-可以使用 Configuration Manager 控制台来升级已与目标层次结构共享的 Configuration Manager 2007 分发点。 升级共享分发点时，会从 Configuration Manager 2007 站点中卸载分发点。 然后其作为附加到目标层次结构中指定的主站点或辅助站点的分发点安装。 升级过程将创建在分发点存储的迁移内容副本，然后将此副本转换为单一实例的内容存储。 Configuration Manager 将某个包转换为单一实例内容存储时，会从分发点计算机上的 SMSPKG 共享删除该包，除非该包具有一个或多个设置为“从分发点运行程序”的播发。  
+###  <a name="BKIMK_UpgradeProcess"></a> Processo de atualização do ponto de distribuição  
+Você pode usar o console do Configuration Manager para atualizar os pontos de distribuição do Configuration Manager 2007 que você compartilhou com a hierarquia de destino. Quando você atualiza um ponto de distribuição compartilhado, o ponto de distribuição é desinstalado do site do Configuration Manager 2007. Em seguida, ele é instalado como um ponto de distribuição que é anexado a um site primário ou secundário que você especifica na hierarquia de destino. O processo de atualização cria uma cópia do conteúdo migrado que é armazenado no ponto de distribuição e converte essa cópia em um single instance content store. Quando o Configuration Manager converte um pacote para o repositório de conteúdo de instância única, ele exclui esse pacote do compartilhamento SMSPKG no computador do ponto de distribuição a menos que o pacote tenha um ou mais anúncios que estão definidos para **Executar programa do ponto de distribuição**.  
 
-为升级分发点，Configuration Manager 会使用设置的“源站点访问帐户”从源站点的 SMS 提供程序收集数据。 尽管此帐户仅要求具有站点对象的“读取”权限即可从源站点收集数据，但是它必须还具有“站点”类的“删除”和“修改”权限才能在升级过程中从 Configuration Manager 2007 站点成功删除分发点。  
+Para atualizar o ponto de distribuição, o Configuration Manager usa a **Conta de Acesso do Site de Origem** que está configurada para coletar dados do Provedor de SMS do site de origem. Embora essa conta requeira apenas permissão de **Leitura** de objetos do site para coletar dados do site de origem, ela também deve ter as permissões **Excluir** e **Modificar** para a classe **Site** para remover com êxito o ponto de distribuição do site do Configuration Manager 2007 durante a atualização.  
 
 > [!NOTE]  
->  Configuration Manager 一次仅可以将内容转化为一个分发点上的单一实例存储。 设置多个分发点升级时，分发点将排队等待升级并且一次处理一个分发点。  
+>  O Configuration Manager pode converter o conteúdo para o single instance store em apenas um ponto de distribuição por vez. Quando você configura várias atualizações de pontos de distribuição, eles são enfileirados para a atualização e processados ​​um de cada vez.  
 
-在升级共享分发点之前，确保已迁移部署到分发点的所有内容。 对于在升级分发点前未迁移的内容，在升级之后，它们将在目标层次结构中不可用。 当你升级分发点时，迁移的包中的内容会转换为与目标层次结构的单一实例存储兼容的格式。  
+Para atualizar um ponto de distribuição compartilhado, verifique se todo o conteúdo implantado no ponto de distribuição é migrado. O conteúdo que você não migrar antes de atualizar o ponto de distribuição não estará disponível na hierarquia de destino após a atualização. Quando você atualiza um ponto de distribuição, o conteúdo dos pacotes migrados é convertido em um formato compatível com o single instance store da hierarquia de destino.  
 
-若要从 Configuration Manager 控制台中升级分发点，Configuration Manager 2007 站点系统服务器必须满足下列条件：  
+Para atualizar um ponto de distribuição por meio do console do Configuration Manager, o servidor do sistema de sites do Configuration Manager 2007 deve atender às seguintes condições:  
 
--   分发点配置和位置必须适合升级。  
+-   A configuração do ponto de distribuição e o local devem ser qualificados para atualização.  
 
--   分发点计算机必须具有足够的磁盘空间才能使内容从 Configuration Manager 2007 内容存储格式转换为单一实例存储格式。 此转换要求可用磁盘空间等于在分发点上存储的最大包的大小。  
+-   O computador do ponto de distribuição deve ter espaço em disco suficiente para que o conteúdo seja convertido do formato de armazenamento de conteúdo do Configuration Manager 2007 em um formato single instance store. Essa conversão necessita de espaço disponível em disco livre igual ao tamanho do maior pacote armazenado no ponto de distribuição.  
 
--   作为目标层次结构中的分发点，分发点计算机所运行的操作系统版本必须受支持。  
+-   O computador do ponto de distribuição deve executar uma versão do sistema operacional que tenha suporte como um ponto de distribuição na hierarquia de destino.  
 
     > [!NOTE]  
-    >  当 Configuration Manager 检查分发点是否符合升级条件时，它不会验证分发点计算机的操作系统版本。  
+    >  Quando o Configuration Manager verifica a elegibilidade de um ponto de distribuição para atualização, ele não valida a versão do sistema operacional do computador do ponto de distribuição.  
 
-若要升级分发点，请在“管理”工作区中依次展开“迁移”、“源层次结构”节点，然后选择包含要升级的分发点的站点。 接下来，在“详细信息”窗格中“共享的分发点”  选项卡上，选择要升级的分发点。  
+Para atualizar um ponto de distribuição, no espaço de trabalho **Administração**, expanda **Migração**, expanda o nó **Hierarquia de Origem** e, em seguida, selecione o site que contém o ponto de distribuição que você deseja atualizar. Em seguida, no painel de detalhes, na guia **Pontos de Distribuição Compartilhados** , selecione o ponto de distribuição que você quer atualizar.  
 
-通过查看“适合重新分配”  列中的状态，可以确认分发点已准备好进行升级。  接下来，在 Configuration Manager 控制台功能区的“分发点”选项卡上，选择“分发点”组中的“重新分配”。 这将打开用于完成分发点升级的向导。  
+Você pode verificar se o ponto de distribuição está pronto para atualização exibindo o status na coluna **Qualificado para Reatribuição** .  Em seguida, na faixa de opções do console do Configuration Manager, na guia **Pontos de Distribuição**, no grupo **Ponto de Distribuição**, selecione **Transferir**. Isso abre um assistente que você usa para concluir a atualização do ponto de distribuição.  
 
-在升级共享分发点时，必须将分发点分配给你在目标层次结构中选择的主站点或辅助站点。 升级分发点后，可与管理任何其他分发点一样，将分发点作为目标层次结构中的分发点进行管理。  
+Ao atualizar um ponto de distribuição compartilhado, você deve atribuir o ponto de distribuição a um site primário ou secundário de sua escolha na hierarquia de destino. Depois que o ponto de distribuição é atualizado, você o gerencia como um ponto de distribuição na hierarquia do destino da mesma maneira que qualquer outro ponto de distribuição.  
 
-通过选择“分发点迁移”节点（位于“管理”工作区的“迁移”节点下），可以在 Configuration Manager 控制台中监视分发点升级的进度。 你还可以在目标层次结构的管理中心站点服务器上查看 **Migmctrl.log** 中的信息，或者也可以在负责管理已升级分发点的目标层次结构中的站点服务器上查看 **distmgr.log** 中的信息。  
+Você pode monitorar o progresso de uma atualização de ponto de distribuição no console do Configuration Manager selecionando o nó **Migração do Ponto de Distribuição** no nó **Migração** do espaço de trabalho **Administração**. Você também pode exibir informações no **Migmctrl.log** , no servidor do site de administração central da hierarquia de destino, ou no **distmgr.log** no servidor do site na hierarquia de destino que controla o ponto de distribuição atualizado.  
 
 > [!NOTE]  
->  将分发点升级到目标层次结构时，将从 Configuration Manager 2007 源站点中删除分发点站点系统角色。 但是，已发送至分发点的包不会在 Configuration Manager 2007 层次结构中更新。 在 Configuration Manager 2007 控制台中，已发送至分发点的包会继续将站点系统计算机列为“未知”“类型”的分发点。 如果对 Configuration Manager 2007 中的包进行后续更新，则将导致在站点尝试更新未知站点系统上的包时，该站点的 distmgr.log 中会出现分发管理器报表错误。  
+>  Quando você atualiza um ponto de distribuição na hierarquia de destino, a função do sistema de sites do ponto de distribuição é removida do site de origem do Configuration Manager 2007. No entanto, os pacotes enviados para o ponto de distribuição não são atualizados na hierarquia do Configuration Manager 2007. No console do Configuration Manager 2007, os pacotes que haviam sido enviados para o ponto de distribuição continuam a listar o computador do sistema de sites como um ponto de distribuição com um **Tipo** **Desconhecido**. Atualizações subsequentes do pacote no Configuration Manager 2007 resultam em erros de relatórios do Gerenciador de Distribuição no distmgr.log desse site quando o site tenta atualizar o pacote no sistema de sites desconhecido.  
 
-如果决定不升级共享的分发点，则仍然可以在以前的 Configuration Manager 2007 分发点上安装一个目标层次结构中的分发点。 必须首先从分发点计算机上卸载所有 Configuration Manager 2007 站点系统角色，然后才能安装新的分发点。 如果这是站点服务器计算机，则这包括 Configuration Manager 2007 站点。 卸载 Configuration Manager 2007 分发点时，不会从计算机中删除部署到分发点的内容。  
+Se você decidir não atualizar um ponto de distribuição compartilhado, ainda poderá instalar um ponto de distribuição da hierarquia de destino em um antigo ponto de distribuição do Configuration Manager 2007. Para instalar o novo ponto de distribuição, você deve primeiro desinstalar todas as funções do sistema de sites do Configuration Manager 2007 do computador do ponto de distribuição. Isso incluirá o site do Configuration Manager 2007 se ele for o computador do servidor do site. Quando você desinstala um ponto de distribuição do Configuration Manager 2007, o conteúdo implantado no ponto de distribuição não é excluído do computador.  
 
-###  <a name="BKMK_UpgradeSS"></a>计划升级 Configuration Manager 2007 辅助站点  
- 使用迁移来升级 Configuration Manager 2007 辅助站点服务器上托管的共享分发点时，Configuration Manager 会将分发点站点系统角色升级到目标层次结构中的分发点。 还会从源层次结构中卸载辅助站点。 结果是 System Center Configuration Manager 分发点，而非辅助站点。  
+###  <a name="BKMK_UpgradeSS"></a> Planejar para atualizar sites secundários do Configuration Manager 2007  
+ Quando você usa a migração para atualizar um ponto de distribuição compartilhado hospedado em um servidor de site secundário do Configuration Manager 2007, o Configuration Manager atualiza a função do sistema de sites do ponto de distribuição para ser um ponto de distribuição na hierarquia de destino. Ele também desinstala o site secundário da hierarquia de origem. O resultado é um ponto de distribuição do System Center Configuration Manager, mas nenhum site secundário.  
 
- 为使站点服务器计算机上的分发点适合升级，Configuration Manager 必须能够卸载辅助站点，以及该计算机上的每个站点系统角色。 通常，Configuration Manager 2007 服务器共享上的共享分发点适合升级。 但是，当辅助站点服务器上存在服务器共享时，辅助站点和该计算机上的任何共享分发点均不适合升级。 这是因为该流程尝试卸载辅助站点时，会将服务器共享视为附加站点系统对象，并且该流程无法卸载此对象。 在这种情况下，你可以在辅助站点服务器上启用标准分发点，然后将内容重新分发到该标准分发点。 此流程不占用网络带宽，完成时，你可以卸载服务器共享上的分发点、删除服务器共享，然后升级分发点和辅助站点。  
+ Para que um ponto de distribuição no computador servidor do site seja qualificado para atualização, o Configuration Manager deve ser capaz de desinstalar o site secundário e cada uma das funções do sistema de sites nesse computador. Geralmente, um ponto de distribuição compartilhado em um servidor compartilhado do Configuration Manager 2007 é qualificado para atualização. No entanto, quando um compartilhamento de servidor existe no servidor do site secundário, o site secundário e quaisquer pontos de distribuição compartilhados naquele computador não são elegíveis para atualização. Isso porque o compartilhamento do servidor é tratado como um objeto adicional do sistema de sites, quando o processo tenta desinstalar o site secundário e esse processo não pode desinstalar esse objeto. Nesse cenário, você pode ativar um ponto de distribuição padrão no servidor do site secundário e depois redistribuir o conteúdo a esse ponto de distribuição padrão. Esse processo não usa largura de banda de rede e, quando concluído, você pode desinstalar o ponto de distribuição no compartilhamento do servidor, remover o compartilhamento do servidor e depois atualizar o ponto de distribuição e o site secundário.  
 
- 在升级共享分发点之前，审阅 Configuration Manager 2007 中的分发点配置以免升级仍要与 Configuration Manager 2007 一起使用的辅助站点上的分发点。 这是不错的做法，因为升级辅助站点服务器上的共享分发点之后，将从 Configuration Manager 2007 层次结构中删除站点系统服务器，并且不再可与该层次结构一起使用。 如果删除了辅助站点，该辅助站点上的任何其余分发点将会孤立。 这意味着，它们将脱离 Configuration Manager 2007 的管理，并且不再共享或适合升级。  
+ Para atualizar um ponto de distribuição compartilhado, examine a configuração do ponto de distribuição no Configuration Manager 2007 para evitar a atualização de um ponto de distribuição em um site secundário que você ainda queira usar com o Configuration Manager 2007. Essa é uma boa prática, porque depois de atualizar um ponto de distribuição compartilhado que está em um servidor de site secundário, o servidor do sistema do sites é retirado da hierarquia do Configuration Manager 2007 e não fica mais disponível para uso com essa hierarquia. Quando o site secundário é removido, quaisquer pontos de distribuição restantes nesse site secundário ficam órfãos. Isso significa que eles se tornam não gerenciados do Configuration Manager 2007 e não são mais compartilhados ou qualificados para atualização.  
 
 > [!WARNING]  
->  在 Configuration Manager 控制台中查看共享分发点时，对于共享分发点位于远程站点系统服务器还是位于辅助站点服务器，没有可见的指示。  
+>  Quando você exibe pontos de distribuição compartilhados no console do Configuration Manager, não há nenhuma indicação visível de que um ponto de distribuição compartilhado está em um servidor do sistema de sites remoto ou no servidor do site secundário.  
 
- 如果具有位于远程网络位置中的辅助站点，并且该辅助站点主要用于控制到该远程位置的内容部署，则考虑升级带共享分发点的辅助站点。 由于可就何时将内容分配到 System Center Configuration Manager 分发点进行带宽控制设置，因此可以经常将辅助站点升级为分发点、为带宽控制设置分发点，并避免在目标层次结构的该网络位置上安装辅助站点。  
+ Quando existe um site secundário em um local de rede remoto que é usado principalmente para controlar a implantação de conteúdo nesse local remoto, considere atualizar sites secundários que têm um ponto de distribuição compartilhado. Como é possível configurar o controle de largura de banda para quando você distribui o conteúdo para um ponto de distribuição do System Center Configuration Manager, muitas vezes você pode atualizar um site secundário para um ponto de distribuição, configurar o ponto de distribuição para controles de largura de banda e evitar a instalação de um site secundário nesse local de rede na hierarquia de destino.  
 
- 用于升级辅助站点服务器上的共享分发点的流程与任何其他共享分发点升级的流程相同。 内容会复制并转换到目标层次结构正在使用的单一实例存储。 但是，升级辅助站点服务器上的共享分发点时，升级过程还会卸载管理点（如果存在），然后从服务器中卸载辅助站点。 结果，辅助站点会从 Configuration Manager 2007 层次结构中删除。 若要卸载辅助站点，Configuration Manager 会使用设置的帐户从源站点收集数据。  
+ O processo para atualizar um ponto de distribuição compartilhado em um servidor de site secundário é o mesmo que qualquer outra atualização do ponto de distribuição compartilhado. O conteúdo é copiado e convertido para o single instance store em uso pela hierarquia de destino. No entanto, quando você atualiza um ponto de distribuição compartilhado que está em um servidor de site secundário, o processo de atualização também desinstala o ponto de gerenciamento, se estiver presente e, em seguida, desinstala o site secundário do servidor. O resultado é que o site secundário é removido da hierarquia do Configuration Manager 2007. Para desinstalar o site secundário, o Configuration Manager usa a conta que é configurada para coletar dados do site de origem.  
 
- 升级过程中，在卸载 Configuration Manager 2007 辅助站点后会出现一段延迟，然后才会开始在目标层次结构中安装分发点。 数据收集周期确定此延迟最高达四小时。 延迟旨在为辅助站点提供新分发点安装开始前进行卸载的时间。  
+ Durante a atualização, existe um atraso entre quando o site secundário do Configuration Manager 2007 é desinstalado e quando a instalação do ponto de distribuição na hierarquia de destino começa. O ciclo de coleta de dados determina esse atraso de até quatro horas. O atraso tem por objetivo proporcionar tempo para o site secundário ser desinstalado antes que a nova instalação do ponto de distribuição comece.  
 
- 有关如何升级共享分发点的详细信息，请参阅[计划升级 Configuration Manager 2007 共享的分发点](#Planning_to_Upgrade_DPs)。  
+ Para saber mais sobre como atualizar um ponto de distribuição compartilhado, consulte [Planejar para atualizar pontos de distribuição compartilhados do Configuration Manager 2007](#Planning_to_Upgrade_DPs).  
 
-##  <a name="BKMK_ReassignDistPoint"></a>计划重新分配 System Center Configuration Manager 分发点  
- 当从 System Center 2012 Configuration Manager 的支持版本迁移到同一版本的层次结构时，可以将共享分发点从源层次结构重新分配到目标层次结构中的站点。 这类似于将 Configuration Manager 2007 分发点升级成为目标层次结构中的分发点的概念。 可从主站点和辅助站点中重新分配分发点。 重新分配分发点的操作会从源层次结构中删除分发点，并使计算机及其分发点成为目标层次结构中所选站点的站点系统服务器。  
+##  <a name="BKMK_ReassignDistPoint"></a> Planejar para transferir pontos de distribuição do System Center Configuration Manager  
+ Ao migrar de uma versão com suporte do System Center 2012 Configuration Manager para uma hierarquia da mesma versão, você pode reatribuir um ponto de distribuição compartilhado da hierarquia de origem a um site na hierarquia de destino. Isso é semelhante ao conceito de atualizar um ponto de distribuição do Configuration Manager 2007 para se tornar um ponto de distribuição na hierarquia de destino. É possível transferir pontos de distribuição de sites primários e secundários. A ação de transferir um ponto de distribuição remove o ponto de distribuição da hierarquia de origem e torna o computador e seu ponto de distribuição um servidor de sistema de sites do site que você selecionou na hierarquia de destino.  
 
- 在重新分配分发点时，你不必重新分发在源站点的分发点上承载的已迁移内容。 此外，与 Configuration Manager 2007 分发点的升级不同，分发点的重新分配不需要分发点计算机上的额外磁盘空间。 这是因为，从 System Center 2012 Configuration Manager 开始，分发点使用内容的单一实例存储格式。 在层次结构之间重新分配分发点时，不需要转换分发点计算机上的内容。  
+ Quando você reatribui um ponto de distribuição, não é necessário redistribuir conteúdo migrado que estava hospedado no ponto de distribuição do site de origem. Além disso, ao contrário da atualização de um ponto de distribuição do Configuration Manager 2007, a reatribuição de um ponto de distribuição não requer espaço em disco adicional no computador do ponto de distribuição. Isso ocorre porque, a partir do System Center 2012 Configuration Manager, os pontos de distribuição usam o formato single instance store para conteúdo. O conteúdo no computador do ponto de distribuição não precisa ser convertido quando o ponto de distribuição é transferido entre hierarquias.  
 
- 要使 System Center 2012 Configuration Manager 分发点适合于重新分配，它必须满足下列条件：  
+ Para que um ponto de distribuição do System Center 2012 Configuration Manager seja qualificado para reatribuição, ele deve atender aos seguintes critérios:  
 
--   必须在除站点服务器外的计算机上安装共享分发点。  
+-   Um ponto de distribuição compartilhado deve ser instalado em um computador diferente do servidor do site.  
 
--   共享分发点不能与任何附加站点系统角色共存。  
+-   Um ponto de distribuição compartilhado não pode ser co-localizado com funções adicionais do sistema de site.  
 
-若要标识适合于 Configuration Manager 控制台（位于“源层次结构”节点）中的重新分配的分发点，请选择源站点，然后选择“共享的分发点”选项卡。 适合的分发点在“适合重新分配”列（在 System Center 2012 R2 Configuration Manager 之前的版本中，此列名为“适合升级”）中显示“是”。  
+Para identificar os pontos de distribuição qualificados para reatribuição no console do Configuration Manager no nó **Hierarquia de Origem**, selecione um site de origem e a guia **Pontos de Distribuição Compartilhados**. Os pontos de distribuição qualificados exibem **Sim** na coluna **Qualificado para Transferência** (essa coluna se chamava **Qualificado para Atualização** antes do System Center 2012 R2 Configuration Manager).  
 
-###  <a name="BKMK_ReassignProcess"></a> 分发点重新分配过程  
- 可以使用 Configuration Manager 控制台重新分配从活动的源层次结构中共享的分发点。 重新分配共享的分发点时，分发点会从其源站点中卸载，然后作为与你在目标层次结构中指定的主站点或辅助站点相连的分发点进行安装。  
+###  <a name="BKMK_ReassignProcess"></a> Processo de reatribuição de pontos de distribuição  
+ Você pode usar o console do Configuration Manager para reatribuir pontos de distribuição que você compartilhou de uma hierarquia de origem ativa. Quando você transfere um ponto de distribuição compartilhado, o ponto de distribuição é desinstalado do site de origem e instalado como um ponto de distribuição anexado a um site primário ou secundário que você especifica na hierarquia de destino.  
 
- 为重新分配分发点，目标层次结构会使用设置的“源站点访问帐户”从源站点的 SMS 提供程序收集数据。 有关必需的权限和附加的先决条件的信息，请参阅 [System Center Configuration Manager 中迁移的先决条件](../../core/migration/prerequisites-for-migration.md)。  
+ Para transferir o ponto de distribuição, a hierarquia de destino usa a Conta de Acesso do Site de Origem configurada para coletar dados do Provedor de SMS do site de origem. Para obter informações sobre as permissões necessárias e pré-requisitos adicionais, confira [Prerequisites for migration in System Center Configuration Manager](../../core/migration/prerequisites-for-migration.md) (Pré-requisitos para migração no System Center Configuration Manager).  
 
-## <a name="migrate-multiple-shared-distribution-points-at-the-same-time"></a>同时迁移多个共享分发点
-从 1610 版起，可使用“重新分配分发点”以便 Configuration Manager 可同时并行处理最多 50 个共享分发点的重新分配。 这包括支持的源站点中运行以下项的共享分发点：  
+## <a name="migrate-multiple-shared-distribution-points-at-the-same-time"></a>Migrar vários pontos de distribuição compartilhados ao mesmo tempo
+A partir da versão 1610, você pode usar **Transferir Ponto de Distribuição** para que Configuration Manager processe em paralelo a transferência de até 50 pontos de distribuição compartilhados ao mesmo tempo. Isso inclui pontos de distribuição compartilhados de sites de origem com suporte que executam:  
 - Configuration Manager 2007
 - System Center 2012 Configuration Manager
 - System Center 2012 R2 Configuration Manager
-- System Center Configuration Manager (Current Branch)
+- System Center Configuration Manager (Branch Atual)
 
-重新分配分发点时，必须将每个分发点限定为已升级或已重新分配。 所涉及操作和过程的名称（升级或重新分配）取决于源站点运行的 Configuration Manager 版本。 这两种操作的最终结果是相同的：分发点及其内容就地分配给其中一个 Current Branch 站点。
+Quando você transfere os pontos de distribuição, cada ponto de distribuição deve estar qualificado para ser atualizado ou transferido. O nome da ação e do processo envolvidos (atualizar ou transferir) depende de qual versão do Configuration Manager o site de origem executa. Os resultados finais para as duas ações são os mesmos: o ponto de distribuição é atribuído a um de seus sites do Branch Atual com seu conteúdo no local.
 
-1610 版之前，Configuration Manager 一次只能处理一个分发点。 现在可以随意重新分配多个分发点，但会出现以下警告：  
-- 尽管不可选择要重新分配的多个分发点，但有多个分发点排队等候处理时，Configuration Manager 将采用并行处理，而不会等待当前处理完成后才开始下一个。  
-- 默认情况下，最多可同时并行处理 50 个分发点。 第一个分发点的重新分配完成后，Configuration Manager 将开始处理第 51 个，依次类推。  
-- 使用 Configuration Manager SDK 时，可以更改 **SharedDPImportThreadLimit** 以调整 Configuration Manager 可以并行处理重新分配的分发点数量。
+Antes da versão 1610, o Configuration Manager podia processar apenas um ponto de distribuição por vez. Agora, você pode transferir quantos pontos de distribuição desejar com as seguintes ressalvas:  
+- Embora você não possa selecionar vários pontos de distribuição para serem transferidos, quando tiver colocado mais de um em fila, o Configuration Manager os processará em paralelo em vez de esperar completar um antes de iniciar o próximo.  
+- Por padrão, são processados até 50 pontos de distribuição em paralelo de uma vez. Após a conclusão da transferência do primeiro ponto de distribuição, o Configuration Manager começará a processar o 51º e assim por diante.  
+- Quando você usa o SDK do Configuration Manager, pode alterar a **SharedDPImportThreadLimit** para ajustar o número de pontos de distribuição transferidos que o Configuration Manager pode processar em paralelo.
 
 
-##  <a name="About_Migrating_Content"></a>迁移内容时分配内容所有权  
- 在为部署迁移内容时，你必须将内容对象分配给目标层次结构中的站点。 此站点随后将成为目标层次结构中该内容的所有者。 尽管目标层次结构的顶层站点是迁移内容元数据的站点，但却是通过网络使用内容的原始源文件的已分配站点。  
+##  <a name="About_Migrating_Content"></a> Atribuir propriedade do conteúdo durante a migração de conteúdo  
+ Ao migrar conteúdo para implantações, você deverá atribuir o objeto do conteúdo a um site na hierarquia de destino. Esse site, então, torna-se o proprietário desse conteúdo na hierarquia de destino. Embora o site de nível superior da hierarquia de destino seja o site que migra os metadados de conteúdo, é o site atribuído que usa os arquivos de origem originais de conteúdo em toda a rede.  
 
- 为了最大程度地减少迁移内容时使用的网络带宽，请考虑将内容的所有权转让给目标层次结构中的站点，该站点在网络上与源层次结构中的内容位置接近。 由于有关目标层次结构中的内容的信息是全局共享的，因此该信息将在每个站点上可用。  
+ Para minimizar a largura de banda de rede usada quando você migra conteúdo, considere transferir a propriedade do conteúdo para um site na hierarquia de destino que está fechada na rede para o local de conteúdo na hierarquia de origem. Como as informações de conteúdo na hierarquia de destino são compartilhadas globalmente, elas estarão disponíveis em todos os sites.  
 
- 尽管有关内容的信息是通过使用数据库复制共享到所有站点的，但分配给主站点并随后部署到其他主站点上的分发点的任何内容将通过基于文件的复制传输。 此传输将经过管理中心站点，并随后传送到其他主站点。 分配站点作为内容所有者时，通过在迁移之前/过程中将你打算分发到多个主站点的包集中在一起，可减少低带宽网络上的数据传输。
+ Embora as informações de conteúdo sejam compartilhadas com todos os sites usando a replicação de banco de dados, qualquer conteúdo que você atribui a um site primário e depois implanta nos pontos de distribuição em outros sites primários é transferido por meio da replicação baseada em arquivo. Essa transferência é roteada através do site de administração central e, em seguida, para o site primário adicional. É possível reduzir a transferência de dados por meio de redes de baixa largura de banda ao centralizar pacotes que você pretende distribuir para vários sites primários antes ou durante a migração quando você atribui um site como o proprietário do conteúdo.

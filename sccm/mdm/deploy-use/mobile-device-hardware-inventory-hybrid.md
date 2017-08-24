@@ -1,6 +1,6 @@
 ---
-title: "配置硬件清单 | Microsoft Docs | 移动设备"
-description: "配置通过 Microsoft Intune 和 System Center Configuration Manager 注册的移动设备的硬件清单。"
+title: "Configurar o inventário de hardware | Microsoft Docs | dispositivos móveis"
+description: "Configurar o inventário de hardware para dispositivos móveis registrados pelo Microsoft Intune e pelo System Center Configuration Manager."
 ms.custom: na
 ms.date: 03/05/2017
 ms.prod: configuration-manager
@@ -17,123 +17,123 @@ manager: angrobe
 ms.openlocfilehash: 7ab9042a525e07b8e3107479cedeec6b99f7bc86
 ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
 ms.translationtype: HT
-ms.contentlocale: zh-CN
+ms.contentlocale: pt-BR
 ms.lasthandoff: 08/07/2017
 ---
-# <a name="how-to-configure-hardware-inventory-for-mobile-devices-enrolled-by-microsoft-intune-and-system-center-configuration-manager"></a>如何配置通过 Microsoft Intune 和 System Center Configuration Manager 注册的移动设备的硬件清单
+# <a name="how-to-configure-hardware-inventory-for-mobile-devices-enrolled-by-microsoft-intune-and-system-center-configuration-manager"></a>Como configurar o inventário de hardware para dispositivos móveis registrados pelo Microsoft Intune e pelo System Center Configuration Manager
 
-*适用范围：System Center Configuration Manager (Current Branch)*
+*Aplica-se a: System Center Configuration Manager (Branch Atual)*
 
-在 Configuration Manager 中，可以使用 Microsoft Intune 连接器收集 iOS、Android 和 Windows 设备上的硬件清单。 有关如何配置硬件清单的信息，请参阅[如何在 System Center Configuration Manager 中扩展硬件清单](../../core/clients/manage/inventory/extend-hardware-inventory.md)。  
+No Configuration Manager, você pode coletar o inventário de hardware em dispositivos iOS, Android e Windows usando o conector do Microsoft Intune. Para obter informações sobre como configurar o inventário de hardware personalizado, consulte [Como estender o inventário de hardware no System Center Configuration Manager](../../core/clients/manage/inventory/extend-hardware-inventory.md).  
 
- 若要了解如何在 Microsoft Intune 中注册设备的信息，请参阅[使用 Microsoft Intune 管理移动设备](https://technet.microsoft.com/en-us/library/dn646962.aspx)。  
+ Para obter informações sobre como registrar dispositivos no Microsoft Intune, consulte [Gerenciar dispositivos móveis com o Microsoft Intune](https://technet.microsoft.com/en-us/library/dn646962.aspx).  
 
-## <a name="hardware-inventory-for-mobile-devices"></a>移动设备的硬件清单  
- 下表列出了跨常用移动平台可用于硬件清单的清单类。  
+## <a name="hardware-inventory-for-mobile-devices"></a>Inventário de hardware para dispositivos móveis  
+ As tabelas a seguir listam as classes de inventário de hardware disponíveis em plataformas móveis comumente usadas.  
 
  **iOS**  
 
-|硬件清单类|iOS|  
+|Classe de inventário de hardware|iOS|  
 |------------------------------|---------|  
-|Name|Device_ComputerSystem.DeviceName|  
-|唯一的设备 ID|Device_ComputerSystem.UDID|  
-|序列号|Device_ComputerSystem.SerialNumber|  
-|电子邮件地址|Device_Email.OwnerEmailAddress|  
-|操作系统类型|不适用|  
-|操作系统版本|Device_OSInformation.OSVersion|  
-|内部版本|不适用|  
-|Service Pack 主要版本|不适用|  
-|Service Pack 次要版本|不适用|  
-|操作系统语言|不适用|  
-|总存储空间|Device_Memory.DeviceCapacity|  
-|可用存储空间|Device_Memory.AvailableDeviceCapacity|  
-|国际移动设备标识或 IMEI (IMEI)|Device_ComputerSystem.IMEI|  
-|移动设备标识符 (MEID)|Device_ComputerSystem.MEID|  
-|制造商|不适用|  
-|型号|型号名称|  
-|电话号码<sup>1</sup>|Device_ComputerSystem.PhoneNumber|  
-|用户载波|Device_ComputerSystem.SubscriberCarrierNetwork|  
-|移动电话技术|Device_ComputerSystem.CellularTechnology|  
-|Wi-Fi MAC|Device_WLAN.WiFiMAC|  
+|Nome|Device_ComputerSystem.DeviceName|  
+|Identificação de dispositivo exclusivo|Device_ComputerSystem.UDID|  
+|Número de Série|Device_ComputerSystem.SerialNumber|  
+|Endereço de email|Device_Email.OwnerEmailAddress|  
+|Tipo de sistema operacional|Não aplicável|  
+|Versão do Sistema Operacional|Device_OSInformation.OSVersion|  
+|Versão da compilação|Não aplicável|  
+|Versão principal do service pack|Não aplicável|  
+|Versão secundária do service pack|Não aplicável|  
+|Idioma do sistema operacional|Não aplicável|  
+|Espaço de armazenamento total|Device_Memory.DeviceCapacity|  
+|Espaço livre de armazenamento|Device_Memory.AvailableDeviceCapacity|  
+|Identidade de Equipamentos Móveis Internacional ou IMEI (IMEI)|Device_ComputerSystem.IMEI|  
+|Identificador de equipamentos móveis (MEID)|Device_ComputerSystem.MEID|  
+|Fabricante|Não aplicável|  
+|Modelo|ModelName|  
+|Número de telefone<sup>1</sup>|Device_ComputerSystem.PhoneNumber|  
+|Operadora do assinante|Device_ComputerSystem.SubscriberCarrierNetwork|  
+|Tecnologia celular|Device_ComputerSystem.CellularTechnology|  
+|MAC Wi-Fi|Device_WLAN.WiFiMAC|  
 
- **Outlook Web Access (OWA)**  
+ **Android**  
 
 > [!NOTE]  
->  **注意：**使用 Android 公司门户应用时，Android 清单类可用。  
+>  **Observação:** classes de inventário Android estão disponível ao usar o aplicativo Portal da Empresa do Android.  
 
-|硬件清单类|Android|  
+|Classe de inventário de hardware|Android|  
 |------------------------------|-------------|  
-|Name|不适用|  
-|唯一的设备 ID|不适用|  
-|序列号|Device_ComputerSystem.SerialNumber|  
-|电子邮件地址|不适用|  
-|操作系统类型|Device_OSInformation.Platform|  
-|操作系统版本|Device_OSInformation.Version|  
-|内部版本|不适用|  
-|Service Pack 主要版本|不适用|  
-|Service Pack 次要版本|不适用|  
-|操作系统语言|不适用|  
-|总存储空间|Device_Memory.StorageTotal|  
-|可用存储空间|Device_Memory.StorageFree|  
-|国际移动设备标识或 IMEI (IMEI)|Device_ComputerSystem.IMEI|  
-|移动设备标识符 (MEID)|不适用|  
-|制造商|Device_Info.Manufacturer|  
-|型号|Device_Info.Model|  
-|电话号码<sup>1</sup>|Device_ComputerSystem.PhoneNumber|  
-|用户载波|Device_ComputerSystem.SubscriberCarrierNetwork|  
-|移动电话技术|Device_ComputerSystem.CellularTechnology|  
-|Wi-Fi MAC|Device_WLAN.WiFiMAC|  
+|Nome|Não aplicável|  
+|Identificação de dispositivo exclusivo|Não aplicável|  
+|Número de Série|Device_ComputerSystem.SerialNumber|  
+|Endereço de email|Não aplicável|  
+|Tipo de sistema operacional|Device_OSInformation.Platform|  
+|Versão do Sistema Operacional|Device_OSInformation.Version|  
+|Versão da compilação|Não aplicável|  
+|Versão principal do service pack|Não aplicável|  
+|Versão secundária do service pack|Não aplicável|  
+|Idioma do sistema operacional|Não aplicável|  
+|Espaço de armazenamento total|Device_Memory.StorageTotal|  
+|Espaço livre de armazenamento|Device_Memory.StorageFree|  
+|Identidade de Equipamentos Móveis Internacional ou IMEI (IMEI)|Device_ComputerSystem.IMEI|  
+|Identificador de equipamentos móveis (MEID)|Não aplicável|  
+|Fabricante|Device_Info.Manufacturer|  
+|Modelo|Device_Info.Model|  
+|Número de telefone<sup>1</sup>|Device_ComputerSystem.PhoneNumber|  
+|Operadora do assinante|Device_ComputerSystem.SubscriberCarrierNetwork|  
+|Tecnologia celular|Device_ComputerSystem.CellularTechnology|  
+|MAC Wi-Fi|Device_WLAN.WiFiMAC|  
 
  **Windows Phone 8/8.1**  
 
-|硬件清单类|Windows Phone 8 和 Windows Phone 8.1|  
+|Classe de inventário de hardware|Windows Phone 8 e Windows Phone 8.1|  
 |------------------------------|-------------------------------------------|  
-|Name|Device_ComputerSystem.DeviceName|  
-|唯一的设备 ID|Device_ComputerSystem.DeviceClientID|  
-|序列号|不适用|  
-|电子邮件地址|Device_Email.OwnerEmailAddress|  
-|操作系统类型|Device_OSInformation.Platform|  
-|操作系统版本|Device_ComputerSystem.SoftwareVersion|  
-|内部版本|不适用|  
-|Service Pack 主要版本|不适用|  
-|Service Pack 次要版本|不适用|  
-|操作系统语言|Device_OSInformation.Language|  
-|总存储空间|不适用|  
-|可用存储空间|不适用|  
-|国际移动设备标识或 IMEI (IMEI)|不适用|  
-|移动设备标识符 (MEID)|不适用|  
-|制造商|Device_ComputerSystem.DeviceManufacturer|  
-|型号|Device_ComputerSystem.DeviceModel|  
-|电话号码<sup>1</sup>|不适用|  
-|用户载波|不适用|  
-|移动电话技术|不适用|  
-|Wi-Fi MAC|不适用|  
+|Nome|Device_ComputerSystem.DeviceName|  
+|Identificação de dispositivo exclusivo|Device_ComputerSystem.DeviceClientID|  
+|Número de Série|Não aplicável|  
+|Endereço de email|Device_Email.OwnerEmailAddress|  
+|Tipo de sistema operacional|Device_OSInformation.Platform|  
+|Versão do Sistema Operacional|Device_ComputerSystem.SoftwareVersion|  
+|Versão da compilação|Não aplicável|  
+|Versão principal do service pack|Não aplicável|  
+|Versão secundária do service pack|Não aplicável|  
+|Idioma do sistema operacional|Device_OSInformation.Language|  
+|Espaço de armazenamento total|Não aplicável|  
+|Espaço livre de armazenamento|Não aplicável|  
+|Identidade de Equipamentos Móveis Internacional ou IMEI (IMEI)|Não aplicável|  
+|Identificador de equipamentos móveis (MEID)|Não aplicável|  
+|Fabricante|Device_ComputerSystem.DeviceManufacturer|  
+|Modelo|Device_ComputerSystem.DeviceModel|  
+|Número de telefone<sup>1</sup>|Não aplicável|  
+|Operadora do assinante|Não aplicável|  
+|Tecnologia celular|Não aplicável|  
+|MAC Wi-Fi|Não aplicável|  
 
  **Windows RT**  
 
-|硬件清单类|Windows RT|  
+|Classe de inventário de hardware|Windows RT|  
 |------------------------------|----------------|  
-|Name|Device_ComputerSystem.DeviceName|  
-|唯一的设备 ID|Device_ComputerSystem.DeviceName|  
-|序列号|不适用|  
-|电子邮件地址|Device_Email.OwnerEmailAddress|  
-|操作系统类型|CCM_OperatingSystem .SystemType|  
-|操作系统版本|Win32_OperatingSystem.Version|  
-|内部版本|Win32_OperatingSystem.BuildNumber|  
-|Service Pack 主要版本|Win32_OperatingSystem.ServicePackMajorVersion|  
-|Service Pack 次要版本|Win32_OperatingSystem.ServicePackMinorVersion|  
-|操作系统语言|不适用|  
-|总存储空间|Win32_PhysicalMemory.Capacity|  
-|可用存储空间|Win32_OperatingSystem.FreePhysicalMemory|  
-|国际移动设备标识或 IMEI (IMEI)|不适用|  
-|移动设备标识符 (MEID)|不适用|  
-|制造商|Win32_ComputerSystem.Manufacturer|  
-|型号|Win32_ComputerSystem.Model|  
-|电话号码<sup>1</sup>|不适用|  
-|用户载波|不适用|  
-|移动电话技术|不适用|  
-|Wi-Fi MAC|Win32_NetworkAdapter.MACAddress|  
+|Nome|Device_ComputerSystem.DeviceName|  
+|Identificação de dispositivo exclusivo|Device_ComputerSystem.DeviceName|  
+|Número de Série|Não aplicável|  
+|Endereço de email|Device_Email.OwnerEmailAddress|  
+|Tipo de sistema operacional|CCM_OperatingSystem.SystemType|  
+|Versão do Sistema Operacional|Win32_OperatingSystem.Version|  
+|Versão da compilação|Win32_OperatingSystem.BuildNumber|  
+|Versão principal do service pack|Win32_OperatingSystem.ServicePackMajorVersion|  
+|Versão secundária do service pack|Win32_OperatingSystem.ServicePackMinorVersion|  
+|Idioma do sistema operacional|Não aplicável|  
+|Espaço de armazenamento total|Win32_PhysicalMemory.Capacity|  
+|Espaço livre de armazenamento|Win32_OperatingSystem.FreePhysicalMemory|  
+|Identidade de Equipamentos Móveis Internacional ou IMEI (IMEI)|Não aplicável|  
+|Identificador de equipamentos móveis (MEID)|Não aplicável|  
+|Fabricante|Win32_ComputerSystem.Manufacturer|  
+|Modelo|Win32_ComputerSystem.Model|  
+|Número de telefone<sup>1</sup>|Não aplicável|  
+|Operadora do assinante|Não aplicável|  
+|Tecnologia celular|Não aplicável|  
+|MAC Wi-Fi|Win32_NetworkAdapter.MACAddress|  
 
- <sup>1</sup> 除了最后 4 位数字之外，其余电话号码用 * 屏蔽了。  
+ <sup>1</sup> O número do telefone é mascarado com *, exceto os últimos 4 dígitos.  
 
- 若要让清单收集电话号码，设备必须插入 SIM 卡并有该 SIM 的运营商预配的电话号码。  
+ Para o inventário coletar o número de telefone, o dispositivo deve ter um cartão SIM inserido e um número de telefone provisionado pela carrier ao SIM.  

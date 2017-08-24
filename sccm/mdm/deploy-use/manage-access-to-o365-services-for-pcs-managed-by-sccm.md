@@ -1,6 +1,6 @@
 ---
-title: "为托管的电脑管理对 O365 服务的访问 | Microsoft Docs"
-description: "了解如何为由 System Center Configuration Manager 管理的电脑配置条件访问。"
+title: "Gerenciar o acesso aos serviços do O365 para computadores gerenciados | Microsoft Docs"
+description: Saiba como configurar o acesso condicional para computadores gerenciados pelo System Center Configuration Manager.
 ms.custom: na
 ms.date: 03/05/2017
 ms.prod: configuration-manager
@@ -17,35 +17,35 @@ manager: angrobe
 ms.openlocfilehash: aede531a0406c3d30c9cca957896e002ed22ae51
 ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
 ms.translationtype: HT
-ms.contentlocale: zh-CN
+ms.contentlocale: pt-BR
 ms.lasthandoff: 08/07/2017
 ---
-# <a name="manage-access-to-o365-services-for-pcs-managed-by-system-center-configuration-manager"></a>管理对由 System Center Configuration Manager 管理的电脑的 O365 服务的访问
+# <a name="manage-access-to-o365-services-for-pcs-managed-by-system-center-configuration-manager"></a>Gerenciar o acesso aos serviços O365 para PCs gerenciados pelo System Center Configuration Manager.
 
-*适用范围：System Center Configuration Manager (Current Branch)*
+*Aplica-se a: System Center Configuration Manager (Branch Atual)*
 
-从 Configuration Manager 的版本 1602 开始，可以为 System Center Configuration Manager 管理的电脑配置条件访问。  
+A partir da versão 1602 do Configuration Manager, é possível configurar o acesso condicional para computadores gerenciados pelo System Center Configuration Manager.  
 
 > [!IMPORTANT]  
-> 这是更新 1602、更新 1606 和更新 1610 中提供的预发布功能。 预发行功能包含在产品中，用于在生产环境中进行早期测试，但不应将其视为生产就绪。 有关详细信息，请参阅[使用更新中的预发行功能](../../core/servers/manage/install-in-console-updates.md#bkmk_prerelease)。
-> - 安装更新 1602 之后，功能类型显示为已发行，即使它是预发行。
-> - 如果随后从 1602 更新到 1606，则功能类型显示为已发行，即使它仍保持预发行。
-> - 如果从版本 1511 直接更新到 1606，则功能类型显示为预发行。
+> Esse é um recurso de pré-lançamento disponível nas atualizações 1602, 1606 e 1610. Os recursos de pré-lançamento foram incluídos no produto para testes iniciais em um ambiente de produção, mas não devem ser considerados prontos para produção. Para obter mais informações, consulte [Usar recursos de pré-lançamento de atualizações](../../core/servers/manage/install-in-console-updates.md#bkmk_prerelease).
+> - Depois de instalar a atualização 1602, o tipo de recurso é exibido como liberado apesar de ser pré-lançamento.
+> - Se você atualiza da 1602 para a 1606, o tipo de recurso é exibido como liberado apesar de continuar sendo pré-lançamento.
+> - Se você atualiza da versão 1511 diretamente para a 1606, o tipo de recurso é exibido como pré-lançamento.
 
-如果你在查找有关如何为 Intune 注册和管理的设备或是已加入域但是没有评估其合规性的电脑配置条件访问，请参阅[管理在 System Center Configuration Manager 中的访问服务](../../protect/deploy-use/manage-access-to-services.md)。
+Se você estiver procurando informações sobre como configurar o acesso condicional para dispositivos registrados e gerenciados pelo Intune, ou para PCs que ingressaram no domínio e não são avaliados com relação à conformidade, consulte [Gerenciar o acesso a serviços no System Center Configuration Manager](../../protect/deploy-use/manage-access-to-services.md).
 
-## <a name="supported-services"></a>支持的服务  
+## <a name="supported-services"></a>Serviços com suporte  
 
 -   Exchange Online
 -   SharePoint Online
 
-## <a name="supported-pcs"></a>支持的电脑  
+## <a name="supported-pcs"></a>PCs com suporte  
 
 -   Windows 7
 -   Windows 8.1
 -   Windows 10
 
-## <a name="supported-windows-servers"></a>支持的 Windows 服务器
+## <a name="supported-windows-servers"></a>Servidores Windows com Suporte
 
 -   2008 R2
 -   2012
@@ -53,89 +53,89 @@ ms.lasthandoff: 08/07/2017
 -   2016
 
     > [!IMPORTANT]
-    > 对于可能有多个用户同时登录的 Windows 服务器，必须将相同的条件访问策略部署到所有登录用户。
+    > Para Servidores Windows que possam ter vários usuários conectados ao mesmo tempo, as mesmas políticas de acesso condicional devem ser implantadas para todos os usuários conectados.
 
-## <a name="configure-conditional-access"></a>配置条件访问  
- 若要设置条件访问，必须先创建合规性策略并配置条件访问策略。 为电脑配置条件访问策略时，可以要求电脑符合合规性策略，以便能够访问 Exchange Online 和 SharePoint Online 服务。  
+## <a name="configure-conditional-access"></a>Configurar o acesso condicional  
+ Para configurar o acesso condicional, primeiro você precisa criar uma política de conformidade e configurar a política de acesso condicional. Ao configurar as políticas de acesso condicional para PCs, você pode exigir que os PCs estejam em conformidade com a política de conformidade a fim de acessar os serviços do Exchange Online e do SharePoint Online.  
 
-### <a name="prerequisites"></a>先决条件  
+### <a name="prerequisites"></a>Pré-requisitos  
 
--   ADFS 同步和 O365 订阅。 O365 订阅用于设置 Exchange Online 和 SharePoint Online。  
+-   Sincronização do ADFS e uma assinatura de O365. A assinatura de O365 serve para configurar o Exchange Online e o SharePoint Online.  
 
--   Microsoft Intune 订阅。 应在 Configuration Manager 控制台中配置 Microsoft Intune 订阅。 Intune 订阅用于将设备符合性状态中继到 Azure Active Directory 和用户授权。  
+-   Uma assinatura do Microsoft Intune. A assinatura do Microsoft Intune deve ser configurada no console do Configuration Manager. A assinatura do Intune é usada para transmitir o estado de conformidade do dispositivo para o Azure Active Directory e para o licenciamento do usuário.  
 
- 电脑必须满足以下要求：  
+ Os PCs devem atender aos seguintes requisitos:  
 
--   将设备自动注册到 Azure Active Directory 所要满足的[先决条件](https://azure.microsoft.com/en-us/documentation/articles/active-directory-conditional-access-automatic-device-registration/?rnd=1)   
+-   [Pré-requisitos](https://azure.microsoft.com/en-us/documentation/articles/active-directory-conditional-access-automatic-device-registration/?rnd=1) para registro automático do dispositivo com o Azure Active Directory  
 
-     可以通过合规性策略向 Azure AD 注册电脑。  
+     Você pode registrar os PCs com o Azure AD por meio da política de conformidade.  
 
-    -   对于 Windows 8.1 和 Windows 10 电脑，你可以使用 Active Directory 组策略将设备配置为自动注册到 Azure AD。  
+    -   Para PCs com Windows 8.1 e Windows 10, você pode usar uma Política de Grupo do Active Directory para configurar os dispositivos a fim de registrar automaticamente no Azure AD.  
 
-    -   对于 Windows 7 电脑，必须通过 System Center Configuration Manager 将设备注册软件包部署到 Windows 7 电脑。 [将已加入 Windows 域的设备自动注册到 Azure Active Directory](https://azure.microsoft.com/en-us/documentation/articles/active-directory-conditional-access-automatic-device-registration/?rnd=1) 主题包含更多详细信息。  
+    -   o   Para PCs com Windows 7, você deve implantar o pacote do software de registro de dispositivo para seu PC com Windows 7 por meio do System Center Configuration Manager. O tópico [Registro de dispositivo automático com o Azure Active Directory para dispositivos ingressados no domínio do Windows](https://azure.microsoft.com/en-us/documentation/articles/active-directory-conditional-access-automatic-device-registration/?rnd=1) traz mais detalhes.  
 
--   必须使用启用了[](https://support.office.com/en-US/article/Using-Office-365-modern-authentication-with-Office-clients-776c0036-66fd-41cb-8928-5495c0f9168a)新式验证的 Office 2013 或 Office 2016。  
+-   É necessário usar o Office 2013 ou Office 2016 com a autenticação moderna [habilitada](https://support.office.com/en-US/article/Using-Office-365-modern-authentication-with-Office-clients-776c0036-66fd-41cb-8928-5495c0f9168a).  
 
- 下面介绍的步骤适用于 Exchange Online 和 SharePoint Online  
+ As etapas descritas abaixo se aplicam ao Exchange Online e ao SharePoint Online  
 
-### <a name="step-1-configure-compliance-policy"></a>步骤 1。 配置合规性策略  
- 在 Configuration Manager 控制台中，使用以下规则创建合规性策略：  
+### <a name="step-1-configure-compliance-policy"></a>Etapa 1. Configurar a política de conformidade  
+ No Console do Configuration Manager, crie uma política de conformidade com as regras a seguir:  
 
--   需要在 Azure ActiveDirectory 中注册：此规则检查用户的设备是否在加入到 Azure AD 的地方运行，如果不是，则在 Azure AD 中自动注册该设备。 仅 Windows 8.1 支持自动注册。 对于 Windows 7 PC，请部署 MSI 来执行自动注册。 有关更多详细信息，请参阅[将设备自动注册到 Azure Active Directory](https://azure.microsoft.com/en-us/documentation/articles/active-directory-conditional-access-automatic-device-registration/?rnd=1)  
+-   Requer registro no Azure Active Directory: essa regra verifica se o dispositivo do usuário é o local de trabalho associado ao Azure AD; se não, o dispositivo será registrado automaticamente no Azure AD. O registro automático só tem suporte no Windows 8.1. Para PCs com Windows 7, implante um MSI para realizar o registro automático. Para obter mais detalhes, consulte [Registro de dispositivo automático com o Azure Active Directory](https://azure.microsoft.com/en-us/documentation/articles/active-directory-conditional-access-automatic-device-registration/?rnd=1)  
 
--   **在晚于特定天数的截止日期之前安装所有必需的更新：**此规则检查用户的设备是否在截止日期及你指定的宽限期内具有所需的所有更新（在所需的自动更新规则中指定），并自动安装任何挂起的所需更新。  
+-   **Todas as atualizações necessárias instaladas com um prazo superior a determinado número de dias:** essa regra verifica se o dispositivo do usuário tem todas as atualizações necessárias (especificadas na regra Atualizações automáticas necessárias) dentro do prazo e período de carência especificado por você e instala automaticamente quaisquer atualizações necessárias.  
 
--   **需要使用 BitLocker 驱动器加密功能：**此规则检查设备的主驱动器（例如 C:\\）是否使用 BitLocker 进行了加密。 如果主驱动器上未启用 Bitlocker 加密，则将阻止设备对电子邮件和 SharePoint 服务的访问。  
+-   **Exigir criptografia de unidade de disco BitLocker:** essa é uma verificação para ver se a unidade principal (por exemplo, C:\\) no dispositivo é criptografada pelo BitLocker. Se a criptografia Bitlocker não estiver habilitada no dispositivo primário, o acesso aos serviços de email e do SharePoint será bloqueado.  
 
--   **需要反恶意软件：**此规则检查是否已启用并正在运行反恶意软件（仅限 System Center Endpoint Protection 或 Windows Defender）。 如果未启用，则将阻止对电子邮件和 SharePoint 服务的访问。  
+-   **Exigir Antimalware:** essa é uma verificação para ver se o software antimalware (somente System Center Endpoint Protection ou Windows Defender) está habilitado e em execução. Se não estiver habilitado, o acesso aos serviços de email e do SharePoint estará bloqueado.  
 
-### <a name="step-2-evaluate-the-effect-of-conditional-access"></a>步骤 2。 评估条件访问的影响  
- 运行条件访问符合性报表。 可以在“报表”>“符合性和设置管理”下的“监视”部分中找到它。 这会显示所有设备的符合性状态。  会阻止报告为不符合的设备访问 Exchange Online 和 SharePoint Online。  
+### <a name="step-2-evaluate-the-effect-of-conditional-access"></a>Etapa 2. Avaliar o efeito do acesso condicional  
+ Execute o Relatório de conformidade de acesso condicional. Ele pode ser encontrado na seção Monitoramento em Relatórios > Gerenciamento de Conformidade e Configurações. Isso exibe o status de conformidade para todos os dispositivos.  Dispositivos reportados como não compatíveis serão impedidos de acessar o Exchange Online e o SharePoint Online.  
 
  ![CA&#95;compliance&#95;report](media/CA_compliance_report.png)  
 
-### <a name="configure-active-directory-security-groups"></a>配置 Active Directory 安全组  
- 根据策略类型将条件访问策略的目标设定为用户组。 这些组包含将作为目标的用户，或从策略中免除的用户。 如果将某个用户设定为策略的目标，则其使用的每个设备必须合规才能访问服务。  
+### <a name="configure-active-directory-security-groups"></a>Configurar grupos de segurança do Active Directory  
+ Você direciona políticas de acesso condicional a grupos de usuários de acordo com os tipos de política. Esses grupos contêm os usuários que serão afetados ou que ficarão isentos da política. Quando um usuário é afetado por uma política, cada dispositivo que ele usa deve ser compatível para que possa acessar o serviço.  
 
- Active Directory 安全用户组 这些用户组应同步到 Azure Active Directory。 你还可以在 Office 365 管理中心或 Intune 帐户门户中配置这些组。  
+ Grupos de usuário de segurança do Active Directory Esses grupos de usuário devem ser sincronizados com o Azure Active Directory. Você também pode configurar esses grupos no Centro de administração do Office 365 ou no Portal de conta do Intune.  
 
- 可以在每个策略中指定两种组类型。 ：  
+ É possível especificar dois tipos de grupo em cada política. :  
 
--   **目标组** - 策略应用到的用户组。 同一个组应同时用于合规性和条件访问策略。  
+-   **Grupos de destino** – grupos de usuários aos quais a política é aplicada. O mesmo grupo deve ser usado para as políticas de conformidade e de acesso condicional.  
 
--   **被免除的组** - 从策略中免除的用户组（可选）  
-    如果用户位于两个组中，则会将其从策略中免除。  
+-   **Grupos isentos** – Grupos de usuários isentos da política (opcional)  
+    Se um usuário estiver nas duas, ele ficará isento da política.  
 
-     仅会评估设定为条件访问策略的目标的组。  
+     Somente os grupos que são afetados pela política de acesso condicional são avaliados.  
 
-### <a name="step-3--create-a-conditional-access-policy-for-exchange-online-and-sharepoint-online"></a>步骤 3。  为 Exchange Online 和 SharePoint Online 创建条件访问策略  
+### <a name="step-3--create-a-conditional-access-policy-for-exchange-online-and-sharepoint-online"></a>Etapa 3.  Criar uma política de acesso condicional para o Exchange Online e o SharePoint Online.  
 
-1.  在 Configuration Manager 控制台中，单击“资产和符合性”。  
+1.  No console do Configuration Manager, clique em **Ativos e Conformidade**.  
 
-2.  若要为 Exchange Online 创建策略，请选择“启用 Exchange Online 的条件访问策略”。  
+2.  Para criar uma política para o Exchange Online, selecione **Habilitar política de acesso condicional para o Exchange Online**.  
 
-     若要为 SharePoint Online 创建策略，请选择“启用 Exchange Online 的条件访问策略”。  
+     Para criar uma política para o SharePoint Online, selecione **Habilitar política de acesso condicional para o Exchange Online**.  
 
-3.  在“主页”选项卡的“链接”组，单击“在 Intune 控制台中配置条件性访问策略”。 你可能需要提供用于连接 Configuration Manager 和 Intune 的帐户的用户名和密码。  
+3.  Na guia **Início** , no grupo **Links** , clique em **Configurar Política de Acesso Condicional no Console do Intune**. Talvez seja necessário fornecer o nome de usuário e a senha da conta usada para conectar o Configuration Manager ao Intune.  
 
-     随即将打开 Intune 管理控制台。  
+     O console de administração do Intune será aberto.  
 
-4.  对于 Exchange Online，在 Microsoft Intune 管理控制台中，单击“策略”>“条件访问”>“Exchange Online 策略”。  
+4.  Para o Exchange Online, no console de administração do Microsoft Intune, clique em **Política > Acesso Condicional > Política do Exchange Online**.  
 
-     对于 SharePoint Online，在 Microsoft Intune 管理控制台中，单击“策略”>“条件访问”>“SharePoint Online 策略”。  
+     Para o SharePoint Online, no console de administração do Microsoft Intune, clique em **Política > Acesso Condicional > Política do SharePoint Online**.  
 
-5.  将 Windows 电脑要求设置为**设备必须是合规的选项**。  
+5.  Defina o requisito de PC com Windows com a opção**Dispositivos devem ser compatíveis**.  
 
-6.  在“目标组”下，单击“修改”以选择将应用策略的 Azure Active Directory 安全组。  
+6.  Em **Grupos de Destino**, clique em **Modificar** para selecionar os grupos de segurança do Azure Active Directory aos quais a política será aplicada.  
 
     > [!NOTE]  
-    >  同一安全用户组应用于部署合规性策略，目标组应用于条件访问策略。  
+    >  O mesmo grupo de usuários de segurança deve ser usado para implantar a política de conformidade e o Grupo de Destino para a política de acesso condicional.  
 
-     在“免除组”下，可以选择“修改”以选择从此策略中免除的 Azure Active Directory 安全组。  
+     Opcionalmente, em **Grupos isentos**, clique em **Modificar** para selecionar os grupos de segurança do Azure Active Directory que são isentos dessa política.  
 
-7.  单击“保存”以创建和保存策略  
+7.  Clique em **Salvar** para criar e salvar a política  
 
- 因不合规而被阻止的最终用户将在 System Center Configuration Manager 软件中心查看合规性信息，并且在纠正合规性问题之后启动新的策略评估。  
+ Usuários finais bloqueados por falta de conformidade verão informações de conformidade no Centro de Software do System Center Configuration Manager e iniciarão uma nova avaliação de política quando problemas de conformidade forem corrigidos.  
 
 <!---
 ##  <a name="bkmk_KnownIssues"></a> Known issues  
@@ -147,7 +147,7 @@ ms.lasthandoff: 08/07/2017
 
 -   Windows 10 users may see multiple access failures when trying to reach O365 and/or SharePoint online resources. Note that conditional access is not fully supported for Windows 10.  
 --->
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>Consulte também
 
-- [使用 System Center Configuration Manager 保护数据和站点基础结构](../../protect/understand/protect-data-and-site-infrastructure.md)
-- [Configuration Manager 条件访问疑难解答流程图](https://gallery.technet.microsoft.com/Conditional-access-fd747c1a?redir=0)
+- [Proteger a infraestrutura de dados e do site com o System Center Configuration Manager](../../protect/understand/protect-data-and-site-infrastructure.md)
+- [Fluxograma de solução de problemas de acesso condicional para o Configuration Manager](https://gallery.technet.microsoft.com/Conditional-access-fd747c1a?redir=0)

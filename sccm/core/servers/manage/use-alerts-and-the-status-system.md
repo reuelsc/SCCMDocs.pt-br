@@ -1,6 +1,6 @@
 ---
-title: "警报和状态系统 | Microsoft Docs"
-description: "配置警报，并使用状态系统以保持对 Configuration Manager 部署状态的实时了解。"
+title: Alertas e o sistema de status | Microsoft Docs
+description: "Configure alertas e use o sistema de status para ficar informado quanto ao estado da sua implantação do Configuration Manager."
 ms.custom: na
 ms.date: 10/06/2016
 ms.prod: configuration-manager
@@ -17,295 +17,295 @@ manager: angrobe
 ms.openlocfilehash: ed692bdea055775890535d2666f09ba5f5c7c4e1
 ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
 ms.translationtype: HT
-ms.contentlocale: zh-CN
+ms.contentlocale: pt-BR
 ms.lasthandoff: 08/07/2017
 ---
-# <a name="use-alerts-and-the-status-system-for-system-center-configuration-manager"></a>使用 System Center Configuration Manager 的警报和状态系统
+# <a name="use-alerts-and-the-status-system-for-system-center-configuration-manager"></a>Usar alertas e o sistema de status para o System Center Configuration Manager
 
-*适用范围：System Center Configuration Manager (Current Branch)*
+*Aplica-se a: System Center Configuration Manager (Branch Atual)*
 
-配置警报，并使用内置状态系统以保持对 System Center Configuration Manager 部署状态的实时了解。  
+Configure alertas e use o sistema de status interno para ficar informado quanto ao estado da sua implantação do System Center Configuration Manager.  
 
 
-##  <a name="bkmk_Status"></a> 系统状态  
- 所有主要站点组件都会生成状态消息，以提供有关站点和层次结构操作的反馈。    此信息可以使你保持对不同站点进程的运行状况的了解。 你可以将警报系统调整为忽略已知问题的干扰，同时增加对可能需要你关注的其他问题提前预见性。  
+##  <a name="bkmk_Status"></a> Sistema de status  
+ Todos os principais componentes do site geram mensagens de status que fornecem feedback sobre operações de site e hierarquia.    Essas informações podem mantê-lo informado sobre a integridade dos diferentes processos do site. Você pode ajustar o sistema de alerta para ignorar ruídos de problemas enquanto aumenta a visibilidade inicial de outras questões que precisam de atenção.  
 
- 默认情况下，通过使用适用于大多数环境的设置，Configuration Manager 状态系统无需配置即可工作。 不过，可以配置下列几项：  
+ Por padrão, o sistema de status do Configuration Manager funciona sem configuração, usando as configurações apropriadas para a maioria dos ambientes. No entanto, você pode configurar:  
 
--   **状态摘要生成器：** 可以在每个站点编辑状态摘要生成器，以控制为以下四种摘要生成器生成状态指示器更改的状态消息频率：  
+-   **Status summarizers:** você pode editar os status summarizers em cada site para controlar a frequência das mensagens de status que geram uma alteração de indicador de status para os quatro summarizers a seguir:  
 
-    -   应用程序部署摘要生成器  
+    -   Summarizer de implantação de aplicativos  
 
-    -   应用程序统计摘要生成器  
+    -   Summarizer de estatística de aplicativos  
 
-    -   组件状态摘要生成器  
+    -   Summarizer de Status do Componente  
 
-    -   站点系统状态摘要生成器  
+    -   Summarizer de status do sistema de site  
 
--   **状态筛选规则：** 可以在每个站点创建新的状态筛选规则、修改规则的优先级、禁用或启用规则以及删除未使用的规则。  
+-   **Regras de filtro de status:** você pode criar novas regras de filtro de status, modificar a prioridade das regras, desabilitar ou habilitar regras e excluir regras não usadas em cada site.  
 
     > [!NOTE]  
-    >  状态筛选规则不支持使用环境变量来运行外部命令。  
+    >  As regras de filtro de estado não oferecem suporte a uso de variáveis de ambiente para executar comandos externos.  
 
--   **状态报告：**可以配置服务器和客户端组件报告以修改将状态消息报告给 Configuration Manager 状态系统的方式，并指定发送状态消息的位置。  
+-   **Relatórios de status:** você pode configurar relatórios dos componentes do servidor e do cliente para modificar a forma como as mensagens de status são relatadas para o sistema de status do Configuration Manager e especificar para onde são enviadas as mensagens de status.  
 
     > [!WARNING]  
-    >  由于默认的报告设置适用于大多数环境，因此请小心更改这些设置。 在通过选择报告所有状态详细信息来提高状态报告的级别时，可能会增加要处理的状态消息的数量，从而增加 Configuration Manager 站点上的处理负载。 如果降低状态报告的级别，则可能会限制状态摘要生成器的实用性。  
+    >  Como as configurações de relatório padrão são apropriadas para a maioria dos ambientes, altere-as com cuidado. Quando aumenta o nível do relatório de status escolhendo relatar todos os detalhes de status, você pode aumentar a quantidade de mensagens de status a serem processadas, o que aumenta a carga de processamento no site do Configuration Manager. Se diminuir o nível de relatório de status, você poderá limitar a utilidade do status summarizers.  
 
-由于状态系统会为每个站点维护独立的配置，因此必须逐个编辑每个站点。  
+Como o sistema de status mantém configurações separadas para cada site, você deve editar cada site individualmente.  
 
-###  <a name="bkmk_configstatus"></a> 配置状态系统的过程  
+###  <a name="bkmk_configstatus"></a> Procedimentos para configurar o sistema de status  
 
-##### <a name="to-configure-status-summarizers"></a>配置状态摘要生成器  
+##### <a name="to-configure-status-summarizers"></a>Para configurar os status summarizers  
 
-1.  在 Configuration Manager 控制台中，依次导航到“管理” > “站点配置” >“站点”，然后选择要为其配置状态系统的站点。  
+1.  No console do Configuration Manager, navegue até **Administração** > **Configuração de Site** >**Sites** e selecione o site para o qual deseja configurar o sistema de status.  
 
-2.  在“主页”  选项卡上的“设置”  组中，单击“状态摘要生成器” 。  
+2.  Na guia **Início** , no grupo **Configurações** , clique em **Summarizers de Status**.  
 
-3.  在“状态摘要生成器”  对话框中，选择要配置的状态摘要生成器，然后单击“编辑”  以打开该摘要生成器的属性。 如果你正在编辑应用程序部署或应用程序统计摘要生成器，请继续执行步骤 5。 如果你正在编辑组件状态，请跳到步骤 6。 如果你正在编辑站点系统状态摘要生成器，请跳到步骤 7。  
+3.  Na caixa de diálogo **Summarizers de Status** , selecione o status summarizer que você deseja configurar e clique em **Editar** para abrir as propriedades desse summarizer. Se estiver editando o summarizer de Implantação de Aplicativos ou de Estatística de Aplicativos, vá para a etapa 5. Se estiver editando o Status do Componente, vá para a etapa 6. Se estiver editando o summarizer de Status do Sistema de Sites, vá para a etapa 7.  
 
-4.  在打开应用程序部署摘要生成器或应用程序统计摘要生成器的属性页面之后，执行下列步骤：  
+4.  Use as etapas a seguir depois de abrir a página de propriedades do summarizer de implantação de aplicativos ou do summarizer de estatística de aplicativos:  
 
-    1.  在摘要生成器属性页面的“常规”  选项卡上，配置摘要间隔，然后单击“确定”  以关闭属性页面。  
+    1.  Na guia **Geral** da página de propriedades dos summarizers, configure os intervalos de resumo e clique em **OK** para fechar a página de propriedades.  
 
-    2.  单击“确定”  以关闭“状态摘要生成器”  对话框和完成本过程。  
+    2.  Clique em **OK** para fechar a caixa de diálogo **Summarizers de Status** e conclua esse procedimento.  
 
-5.  在打开组件状态摘要生成器的属性页面之后，执行下列步骤：  
+5.  Depois de abrir as páginas de propriedades para o Summarizer de Status do Componente, use as seguintes etapas:  
 
-    1.  在摘要生成器属性页面的“常规”选项卡上，配置复制和阈值期的值。  
+    1.  Na guia **Geral** da página de propriedades dos summarizers, configure os valores de período de limite e replicação.  
 
-    2.  在“阈值”  选项卡上，选择要配置的“消息类型”  ，然后在“阈值”  列表中单击组件的名称。  
+    2.  Na guia **Limites** , selecione o **Tipo de mensagem** que deseja configurar e então clique no nome de um componente na lista **Limites** .  
 
-    3.  在“状态阈值属性”  对话框中，编辑警告阈值和关键阈值的值，然后单击“确定” 。  
+    3.  Na caixa de diálogo **Propriedades de Limite de Status** , edite os valores de aviso e limite crítico e clique em **OK**.  
 
-    4.  根据需要重复步骤 6.b 和 6.c。在完成时，单击“确定”  以关闭摘要生成器属性页面。  
+    4.  Repita as etapas 6.b e 6.c conforme necessário e, quando tiver concluído, clique em **OK** para fechar as propriedades do summarizer.  
 
-    5.  单击“确定”  以关闭“状态摘要生成器”  对话框和完成本过程。  
+    5.  Clique em **OK** para fechar a caixa de diálogo **Summarizers de Status** e conclua esse procedimento.  
 
-6.  在打开站点系统状态摘要生成器的属性页面之后，执行下列步骤：  
+6.  Depois de abrir as páginas de propriedades para o summarizer de status do sistema de site, use as seguintes etapas:  
 
-    1.  在摘要生成器属性页面的“常规”选项卡上，配置复制和计划的值。  
+    1.  Na guia **Geral** da página de propriedades dos summarizers, configure os valores de replicação e de agendamento.  
 
-    2.  在“阈值”  选项卡上，指定“默认阈值”  的值，以配置关键和警告状态显示的默认阈值。  
+    2.  Na guia **Limites** , especifique valores para os **Limites padrão** para configurar os limites padrão para exibições de status crítico e de aviso.  
 
-    3.  若要编辑特定“存储对象” 的值，请从“特定阈值”  列表中选择对象，然后单击“属性”  按钮，以访问和编辑存储对象的警告阈值和关键阈值。 单击“确定”  以关闭存储对象属性页面。  
+    3.  Para editar os valores para **Objetos de armazenamento**específicos, selecione o objeto na lista **Limites específicos** , então clique no botão **Propriedades** para acessar e editar limites de aviso e críticos dos objetos de armazenamento. Clique em **OK** para fechar as propriedades dos objetos de armazenamento.  
 
-    4.  若要创建新的存储对象，请单击“创建对象”  按钮，然后指定存储对象的值。 单击“确定”  以关闭对象属性页面。  
+    4.  Para criar um novo objeto de armazenamento, clique no botão **Criar Objeto** e especifique os valores de objetos de armazenamento. Clique em **OK** para fechar as propriedades dos objetos.  
 
-    5.  若要删除存储对象，请选择对象，然后单击“删除”  按钮。  
+    5.  Para excluir um objeto de armazenamento, selecione o objeto e então clique no botão **Excluir** .  
 
-    6.  重复步骤 7.b 到 7.e （根据需要）。 在完成时，单击“确定”  以关闭摘要生成器属性页面。  
+    6.  Repita as etapas de 7.b até 7.e conforme necessário. Quando tiver terminado, clique em **OK** para fechar as propriedades do summarizer.  
 
-    7.  单击“确定”  以关闭“状态摘要生成器”  对话框和完成本过程。  
+    7.  Clique em **OK** para fechar a caixa de diálogo **Summarizers de Status** e conclua esse procedimento.  
 
-##### <a name="to-create-a-status-filter-rule"></a>创建状态筛选规则  
+##### <a name="to-create-a-status-filter-rule"></a>Para criar uma regra de filtro de estado  
 
-1.  在 Configuration Manager 控制台中，依次导航到“管理” > “站点配置” >“站点”，然后选择要对其配置状态系统的站点。  
+1.  No console do Configuration Manager, navegue até **Administração** > **Configuração de Site** >**Sites** e selecione o site em que deseja configurar o sistema de status.  
 
-2.  在“主页”  选项卡上的“设置”  组中，单击“状态筛选规则” 。 此时打开“状态筛选规则”  对话框。  
+2.  Na guia **Início** , no grupo **Configurações** , clique em **Regras de Filtros de Status**. A caixa de diálogo **Regras de Filtro de Status** é aberta.  
 
-3.  单击 **“创建”**。  
+3.  Clique em **Criar**.  
 
-4.  在“创建状态筛选规则向导” 中，在“常规”  页上指定新的状态筛选规则的名称和规则的消息匹配条件，然后单击“下一步” 。  
+4.  No **Assistente para Criar Regra de Filtro de Status**, na página **Geral** , especifique um nome para a nova regra de filtro de estado e critérios de correspondência de mensagem para a regra, e então clique em **Avançar**.  
 
-5.  在“操作”  页上，指定在状态消息匹配筛选规则时要执行的操作，然后单击“下一步” 。  
+5.  Na página **Ações** , especifique as ações a serem realizadas quando as mensagens de status correspondem à regra de filtro, e clique em **Avançar**.  
 
-6.  在“摘要”  页上，查看新规则的详细信息，然后完成此向导。  
+6.  Na página **Resumo** , examine os detalhes da nova regra e conclua o assistente.  
 
     > [!NOTE]  
-    >  Configuration Manager 仅要求新的状态筛选规则具有名称。 如果创建了规则，但没有指定任何条件以处理状态消息，则状态筛选规则将无效。 利用此行为，你可以在为每个规则配置状态筛选条件之前创建并组织规则。  
+    >  O Configuration Manager requer apenas que a nova regra de filtro de status tenha um nome. Se a regra for criada mas você não especificar nenhum critério para processar mensagens de status, a regra de filtro de estado não terá efeito. Esse comportamento permite que você crie e organize regras antes de configurar os critérios de filtro de estado para cada regra.  
 
-##### <a name="to-modify-or-delete-a-status-filter-rule"></a>修改或删除状态筛选规则  
+##### <a name="to-modify-or-delete-a-status-filter-rule"></a>Para modificar ou excluir uma regra de filtro de estado  
 
-1.  在 Configuration Manager 控制台中，依次导航到“管理” > “站点配置” >“站点”，然后选择要对其配置状态系统的站点。  
+1.  No console do Configuration Manager, navegue até **Administração** > **Configuração de Site** >**Sites** e selecione o site em que deseja configurar o sistema de status.  
 
-2.  在“主页”  选项卡上的“设置”  组中，单击“状态筛选规则” 。  
+2.  Na guia **Início** , no grupo **Configurações** , clique em **Regras de Filtros de Status**.  
 
-3.  在“状态筛选规则”  对话框中，选择要修改的规则，然后执行下列操作之一：  
+3.  Na caixa de diálogo **Regras de Filtros de Status** , selecione a regra que deseja modificar e então execute uma das ações a seguir:  
 
-    -   单击“提高优先级”  或“降低优先级”  ，以更改状态筛选规则的处理顺序。 然后，选择另一项操作，或者转到本过程的步骤 8 以完成此任务。  
+    -   Clique em **Aumentar Prioridade** ou **Diminuir Prioridade** para alterar a ordem de processamento da regra de filtro de estado. Em seguida, selecione outra ação ou vá para a etapa 8 deste procedimento para concluir essa tarefa.  
 
-    -   单击“禁用”  或“启用”  以更改规则状态。 在更改规则状态之后，选择另一项操作，或者转到本过程的步骤 8 以完成此任务。  
+    -   Clique em **Desabilitar** ou **Habilitar** para alterar o estado da regra. Depois de alterar o estado da regra, selecione outra ação ou vá para a etapa 8 deste procedimento para concluir essa tarefa.  
 
-    -   如果想从此站点中删除状态筛选规则，则单击“删除”  ，再单击“是”  以确认操作。 在删除规则之后，选择另一项操作，或者转到本过程的步骤 8 以完成此任务。  
+    -   Clique em **Excluir** se deseja excluir a regra de filtro de estado desse site, e clique em **Sim** para confirmar a ação. Depois de excluir uma regra, selecione outra ação ou vá para a etapa 8 deste procedimento para concluir essa tarefa.  
 
-    -   如果想更改状态消息规则的条件，则单击“编辑”  ，然后继续执行本过程的步骤 5。  
+    -   Clique em **Editar** se deseja alterar os critérios da regra de mensagem de estado e continue na etapa 5 deste procedimento.  
 
-4.  在状态筛选规则属性对话框的“常规”  选项卡上，修改规则和消息匹配条件。  
+4.  Na guia **Geral** da caixa de diálogo propriedades de regra de filtro de status, modifique a regra e os critérios de correspondência de mensagem.  
 
-5.  在“操作”  选项卡上，修改在状态消息匹配筛选规则时要执行的操作。  
+5.  Na guia **Ações** , modifique as ações a serem realizadas quando as mensagens de status correspondem à regra de filtro.  
 
-6.  单击“确定”  以保存更改。  
+6.  Clique em **OK** para salvar as alterações.  
 
-7.  单击“确定”  以关闭“状态筛选规则”  对话框。  
+7.  Clique em **OK** para fechar a caixa de diálogo **Regras de Filtros de Status** .  
 
-##### <a name="to-configure-status-reporting"></a>配置状态报告  
+##### <a name="to-configure-status-reporting"></a>Para configurar o relatório de status  
 
-1.  在 Configuration Manager 控制台中，依次导航到“管理” > “站点配置” > “站点”，然后选择要对其配置状态系统的站点。  
+1.  No console do Configuration Manager, navegue até **Administração** > **Configuração de Site** > **Sites** e selecione o site em que deseja configurar o sistema de status.  
 
-2.  在“主页”  选项卡上的“设置”  组中，单击“配置站点组件” ，然后选择“状态报告” 。  
+2.  Na guia **Início** , no grupo **Configurações** , clique em **Configurar Componentes do Site**e selecione **Relatório de Status**.  
 
-3.  在“状态报告组件属性”  对话框中，指定要报告或记录的服务器和客户端组件状态消息：  
+3.  Na caixa de diálogo **Propriedades do Componente de Relatório de Status** , especifique as mensagens de status do componente servidor e cliente que deseja relatar ou registrar em log:  
 
-    1.  将“报表”配置为向 Configuration Manager 状态消息系统发送状态消息。  
+    1.  Configure o **Relatório** para enviar mensagens de status para o sistema de mensagens de status do Configuration Manager.  
 
-    2.  配置“日志”  ，以便将状态消息的类型和严重性写入到 Windows 事件日志中。  
+    2.  Configure **Log** para gravar o tipo e a gravidade das mensagens de status para o log de eventos do Windows.  
 
-4.  单击" **确定**"。  
+4.  Clique em **OK**.  
 
-###  <a name="BKMK_MonitorSystemStatus"></a> 监视 Configuration Manager 的状态系统  
- Configuration Manager 中的“系统状态”提供了层次结构的一般站点操作和站点服务器操作的概览。 它可以揭示站点系统服务器或组件的操作问题，并且你可以使用系统状态来查看不同 Configuration Manager 操作的特定详细信息。 从 Configuration Manager 控制台中“监视”工作区的“系统状态”节点监视系统状态。  
+###  <a name="BKMK_MonitorSystemStatus"></a> Monitorar o sistema de status do Gerenciador de Configurações  
+ O**status do sistema** no Configuration Manager fornece uma visão geral das operações gerais de sites e de servidor do site de sua hierarquia. Ele pode revelar problemas operacionais de componentes ou servidores do sistema de sites, e você pode usar o status do sistema para analisar detalhes específicos de diferentes operações do Configuration Manager. Você monitora o status do sistema no nó **Status do Sistema** do espaço de trabalho **Monitoramento** no console do Configuration Manager.  
 
- 大多数 Configuration Manager 站点系统角色和组件都会生成状态消息。 状态消息详细信息记录在每个组件操作日志中，但也会提交到站点数据库，在站点数据库中，将对这些详细信息进行汇总，并呈现在每个组件的一般性汇总或站点系统运行状况中。 这些状态消息汇总提供正常操作的信息详情以及警告和错误详细信息。 你可以配置触发警告或错误时的阈值，并对系统进行微调以确保汇总信息忽略与你不相关的已知问题，同时引起对你可能需要调查的服务器或组件操作实际问题的关注。  
+ A maioria dos componentes e funções do sistema de sites do Configuration Manager gera mensagens de status. Os detalhes das mensagens de status são registrados em cada log operacional de componentes, mas também enviados ao banco de dados do site onde estão resumidos e apresentados em um pacote cumulativo de atualizações geral de cada componente ou da integridade do sistema de site. Esses pacotes cumulativos de atualizações de mensagens de status fornecem detalhes sobre informações de operações normais e os detalhes de avisos e erros. Você pode configurar os limites em que os avisos e erros são acionados e ajustar o sistema para garantir que as informações de pacote cumulativo de atualizações ignorem os problemas conhecidos que não são relevantes para você enquanto chama a atenção para problemas reais em servidores e operações de componentes que você talvez precise investigar.  
 
- 系统状态将以站点数据（而非全局数据）的形式复制到层次结构中的其他站点。 这意味着，只能看到 Configuration Manager 控制台连接到的站点以及该站点下的任何子站点的状态。 因此，在查看系统状态时，请考虑将 Configuration Manager 控制台连接到层次结构的顶层站点。  
+ O status do sistema é replicado para outros sites em uma hierarquia como dados do site e não dados globais. Isso significa que você vê somente o status do site ao qual seu console do Configuration Manager se conecta e dos sites filho abaixo desse site. Portanto, considere conectar seu console do Configuration Manager ao site de nível superior de sua hierarquia ao exibir o status do sistema.  
 
- 使用下表来确定不同的系统状态视图以及何时使用各个视图。  
+ Use a tabela a seguir para identificar e saber quando usar as diferentes exibições de status do sistema.  
 
-|节点|更多信息|  
+|Nó|Mais informações|  
 |----------|----------------------|  
-|站点状态|使用此节点来查看每个站点系统的状态汇总，以查看每个站点系统服务器的运行状况。 站点系统运行状况由你在“站点系统状态摘要生成器” 中为每个站点配置的阈值确定。<br /><br /> 你可以查看每个站点系统的状态消息、为状态消息设置阈值，以及使用“Configuration Manager 服务管理器” 来管理站点系统上组件的操作。|  
-|组件状态|使用此节点来查看每个 Configuration Manager 组件的状态汇总，以查看组件的操作运行状况。 组件运行状况由你在“组件状态摘要生成器” 中为每个站点配置的阈值确定。<br /><br /> 你可以查看每个组件的状态消息、为状态消息设置阈值，以及使用“Configuration Manager 服务管理器” 来管理组件的操作。|  
-|冲突的记录|使用此节点来查看有关可能具有冲突记录的客户端的状态消息。<br /><br /> Configuration Manager 使用硬件 ID 来尝试标识可能重复的客户端，并发出有关冲突的记录的警报。 例如，如果必须重新安装计算机，则硬件 ID 将相同，但 Configuration Manager 使用的 GUID 可能已更改。|  
-|状态消息查询|使用此节点来查询状态消息以了解特定事件和相关详细信息。 你可以使用状态消息查询来查找与特定事件相关的状态消息。<br /><br /> 通常可使用状态消息查询来确定特定组件、操作或 Configuration Manager 对象的修改时间，以及用于进行修改的帐户。 例如，你可以运行针对“已创建、已修改或已删除的集合”  的内置查询来确定特定集合的创建时间，以及用于创建该集合的用户帐户。|  
+|Status do site|Use esse nó para exibir um pacote cumulativo de atualizações do status de cada sistema de site para analisar a integridade de cada servidor do sistema de site. A integridade do sistema de site é determinada pelos limites que você configura para cada site no **Summarizer de Status do Sistema de Site**.<br /><br /> Você pode exibir as mensagens de status para cada sistema de site, definir limites para as mensagens de status e gerenciar a operação dos componentes em sistemas de site usando o **Configuration Manager Service Manager**.|  
+|Status do componente|Use esse nó para ver um pacote cumulativo de atualizações do status de cada componente do Configuration Manager para analisar a integridade operacional do componente. A integridade do componente é determinada pelos limites que você configura para cada site no **Summarizer de Status do Componente**.<br /><br /> Você pode exibir as mensagens de status para cada componente, definir limites para as mensagens de status e gerenciar a operação dos componentes usando o **Configuration Manager Service Manager**.|  
+|Registros conflitantes|Use esse nó para exibir mensagens de status sobre clientes que podem ter registros conflitantes.<br /><br /> O Configuration Manager usa a ID de hardware para tentar identificar clientes que possam ser duplicatas e alertar você quando houver registros conflitantes. Por exemplo, se você precisar reinstalar um computador, a ID de hardware será a mesma, mas o GUID que o Configuration Manager usa poderá ser alterado.|  
+|Consultas de mensagens de status|Use esse nó para consultar mensagens de status sobre eventos específicos e os detalhes relacionados. Você pode usar consultas de mensagens de status para localizar as mensagens de status relacionadas a eventos específicos.<br /><br /> É possível usar com frequência as consultas de mensagens de status para identificar quando um componente, uma operação ou um objeto específico do Configuration Manager foi modificado, bem como a conta que foi usada para fazer a modificação. Por exemplo, você pode executar uma consulta interna em **Coleções Criadas, Modificadas ou Excluídas** para identificar quando uma coleção específica foi criada e a conta de usuário usada para criá-la.|  
 
-####  <a name="bkmk_managestatus"></a> 管理站点状态和组件状态  
- 使用以下信息来管理站点状态和组件状态：  
+####  <a name="bkmk_managestatus"></a> Gerenciar o status do site e do componente  
+ Use as seguintes informações para gerenciar o status do site e do componente:  
 
--   要为状态系统配置阈值，请参阅 [配置状态系统的过程](#bkmk_configstatus)。  
+-   Para configurar os limites para o status do sistema, consulte [Procedimentos para configurar o sistema de status](#bkmk_configstatus).  
 
--   若要管理 Configuration Manager 中的各个组件，请使用 **Configuration Manager Service Manager**。  
+-   Para gerenciar componentes individuais no Configuration Manager, use o **Configuration Manager Service Manager**.  
 
-####  <a name="bkmk_view"></a> 查看状态消息  
- 你可以查看单独的站点系统服务器和组件的状态消息。  
+####  <a name="bkmk_view"></a> Exibir mensagens de status  
+ Você pode exibir as mensagens de status para servidores do sistema de site individuais e componentes.  
 
- 若要在 Configuration Manager 控制台中查看状态消息，请选择特定站点系统服务器或组件，然后单击“显示消息”。 在查看消息时，你可以选择查看特定消息类型或指定时间段中的消息，并且可以基于状态消息详细信息对结果进行筛选。  
+ Para exibir as mensagens de status no console do Configuration Manager, selecione um componente ou servidor específico do sistema de sites e clique em **Mostrar Mensagens**. Ao exibir mensagens, você pode selecionar para exibir tipos específicos de mensagens ou mensagens de um período de tempo especificado e também pode filtrar os resultados baseados nos detalhes de mensagens de status.  
 
-##  <a name="bkmk_Alerts"></a> 警报  
- Configuration Manager 警报由在特定情况下发生的某些操作生成。  
+##  <a name="bkmk_Alerts"></a> Alertas  
+ Os alertas do Configuration Manager são gerados por algumas operações quando ocorre uma condição específica.  
 
--   通常，在发生必须解决的错误时，将会生成警报  
+-   Normalmente, os alertas são gerados quando ocorre um erro que você deve resolver.  
 
--   可能会生成警报来警告你存在某种情况，以便继续对该情况进行监视  
+-   Podem ser gerados alertas para alertá-lo de que uma condição existe, para que você possa continuar a monitorar a situação.  
 
--   你可以配置某些警报（例如针对 Endpoint Protection 和客户端状态的警报），而其他警报将自动配置  
+-   Alguns alertas são configurados por você, como alertas de status do cliente e do Endpoint Protection, enquanto outros são configurados automaticamente  
 
--   你可以将订阅配置为随后可通过电子邮件发送详细信息的警报，从而提高对关键问题的感知  
+-   Você pode configurar assinaturas para alertas, que por sua vez podem enviar detalhes por email, aumentando o conhecimento dos principais problemas  
 
- 使用下表来了解有关如何在 Configuration Manager 中配置警报和警报订阅的信息：  
+ Use a tabela a seguir para encontrar informações sobre como configurar alertas e inscrições de alerta no Configuration Manager:  
 
 
-|操作|更多信息|  
+|Ação|Mais informações|  
 |------------|----------------------|  
-|为集合配置 Endpoint Protection 警报|请参阅[在 System Center Configuration Manager 中配置 Endpoint Protection](../../../protect/deploy-use/configure-endpoint-protection.md)中的**如何为 Configuration Manager 中的 Endpoint Protection 配置警报**|  
-|为集合配置客户端状态警报|请参阅[如何在 System Center Configuration Manager 中配置客户端状态](../../../core/clients/deploy/configure-client-status.md)。|  
-|管理 Configuration Manager 警报|请参阅本主题中的 [Management tasks for alerts](#BKMK_Manage) 部分。|  
-|配置对警报的电子邮件订阅|请参阅本主题中的 [Management tasks for alerts](#BKMK_Manage) 部分。|  
-|监视器警报|请参阅本主题中的 [监视器警报](#BKMK_MonitorAlerts)|  
+|Configurar alertas do Endpoint Protection para uma coleção|Consulte **Como configurar alertas para o Endpoint Protection no Configuration Manager** em [Configurando o Endpoint Protection no System Center Configuration Manager](../../../protect/deploy-use/configure-endpoint-protection.md)|  
+|Configurar alertas de status do cliente para uma coleção|Consulte [Como configurar o status do cliente no System Center Configuration Manager](../../../core/clients/deploy/configure-client-status.md).|  
+|Gerenciar alertas do Configuration Manager|Consulte a seção [Management tasks for alerts](#BKMK_Manage) neste tópico.|  
+|Configurar assinaturas de email para alertas|Consulte a seção [Management tasks for alerts](#BKMK_Manage) neste tópico.|  
+|Monitorar alertas|Consulte a seção [Monitorar alertas](#BKMK_MonitorAlerts)|  
 
 ###  <a name="BKMK_Manage"></a> Management tasks for alerts  
 
-##### <a name="to-manage-general-alerts"></a>若要管理常规警报  
+##### <a name="to-manage-general-alerts"></a>Para gerenciar alertas gerais  
 
-1.  在 Configuration Manager 控制台中，依次导航到“监视” > “警报”，然后选择管理任务。  
+1.  No console do Configuration Manager, navegue até **Monitoramento** > **Alertas** e selecione uma tarefa de gerenciamento.  
 
-  使用下表以详细了解可能需要一些信息才能让你选择的管理任务。  
+  Use a tabela a seguir para obter mais informações sobre as tarefas de gerenciamento que podem requerer informações adicionais antes de você selecioná-las.  
 
-|管理任务|详细信息|  
+|Tarefa de gerenciamento|Detalhes|  
     |---------------------|-------------|  
-    |**将“报表”**|打开&lt;警报名称\>“属性”对话框，在该对话框中，可以修改所选警报的名称、严重性和阈值。 如果更改警报的严重性，此配置会影响警报在 Configuration Manager 控制台中的显示方式。|  
-    |**编辑注释**|为所选警报输入注释。 这些注释与警报一同显示在 Configuration Manager 控制台中。|  
-    |**推迟**|挂起警报监视，直至达到指定的日期。 达到指定日期时，将更新警报的状态。<br /><br /> 仅当启用了警报后，才能推迟警报。|  
-    |**创建订阅**|打开“新建订阅”  对话框，在该对话框中，你可以创建针对所选警报的电子邮件订阅。|  
+    |**Configure**|Abra a caixa de diálogo *&lt;nome do alerta*\>**Propriedades**, em que você pode modificar o nome, a severidade e os limites do alerta selecionado. Se você alterar a severidade do alerta, essa configuração afetará a forma como os alertas são exibidos no console do Configuration Manager.|  
+    |**Editar comentário**|Insira um comentário para os alertas selecionados. Esses comentários são exibidos com o alerta no console do Configuration Manager.|  
+    |**Adiar**|Suspende o monitoramento do alerta até a data especificada. Nessa data, o estado do alerta será atualizado.<br /><br /> Você só pode adiar um alerta quando ele estiver ativo.|  
+    |**Criar assinatura**|Abre a caixa de diálogo **Nova Assinatura** , em que você pode criar uma assinatura de email para o alerta selecionado.|  
 
-##### <a name="to-configure-endpoint-protection-alerts-for-a-collection"></a>若要为集合配置 Endpoint Protection 警报  
+##### <a name="to-configure-endpoint-protection-alerts-for-a-collection"></a>Para configurar alertas do Endpoint Protection para uma coleção  
 
-1.  挂起  
+1.  pendente  
 
-##### <a name="to-configure-client-status-alerts-for-a-collection"></a>若要为集合配置客户端状态警报  
+##### <a name="to-configure-client-status-alerts-for-a-collection"></a>Para configurar alertas de status do cliente para uma coleção  
 
-1.  在 Configuration Manager 控制台中，依次单击“资产和符合性” >   “设备集合”。  
+1.  No console do Configuration Manager, clique em **Ativos e Conformidade** >   **Coleções de Dispositivos**.  
 
-2.  在“设备集合”  列表中，选择要为其配置警报的集合，然后，在“主页”  选项卡中，在“属性”  组中单击“属性” 。  
-
-    > [!NOTE]  
-    >  无法为用户集合配置警报。  
-
-3.  在&lt;集合名称\>“属性”对话框的“警报”选项卡上，单击“添加”。  
+2.  Na lista **Coleções de Dispositivos** , selecione a coleção para a qual deseja configurar alertas e, então, na guia **Início** , no grupo **Propriedades** , clique em **Propriedades**.  
 
     > [!NOTE]  
-    >  仅在与你关联的安全角色具有警报的权限时，“警报”  选项卡才可见。  
+    >  Você não pode configurar alertas para coleções de usuário.  
 
-4.  在“添加新的集合警报”  对话框中，选择要在客户端状态阈值低于特定值时生成的警报，然后单击“确定” 。  
-
-5.  在“警报”  选项卡的“条件”  列表中，选择每个客户端状态警报，然后指定下列信息。  
-
-    -   **警报名称** - 接受默认名称，或者输入新的警报名称。  
-
-    -   **警报严重性** – 从下拉列表中，选择将显示在 Configuration Manager 控制台中的警报级别。  
-
-    -   **引发警报** - 指定警报的阈值百分比。  
-
-6.  单击“确定”关闭&lt;集合名称\>“属性”对话框。  
-
-##### <a name="to-configure-email-notification-for-alerts"></a>若要为警报配置电子邮件通知  
-
-1.  在 Configuration Manager 控制台中，依次导航至“监视” > “警报” > “订阅”。  
-
-2.  在“主页”  选项卡上的“创建”  组中，单击“配置电子邮件通知” 。  
-
-3.  在“电子邮件通知组件属性”  对话框中，指定以下信息：  
-
-    -   **启用警报电子邮件通知**：选中此复选框可允许 Configuration Manager 使用 SMTP 服务器发送电子邮件警报。  
-
-    -   “用于发送电子邮件警报的 SMTP 服务器的 FQDN 或 IP 地址”：输入希望用于发送这些警报的电子邮件服务器的完全限定域名 (FQDN) 或 IP 地址和 SMTP 端口。  
-
-    -   **SMTP 服务器连接帐户**：为将用于连接电子邮件服务器的 Configuration Manage 指定身份验证方法。  
-
-    -   **电子邮件警报的发件人地址**：指定从其发送警报电子邮件的电子邮件地址。  
-
-    -   “测试 SMTP 服务器”：向“电子邮件警报的发件人地址” 中指定的电子邮件地址发送一封测试电子邮件。  
-
-4.  单击“确定”  以保存设置并关闭“电子邮件设置组件属性”  对话框。  
-
-##### <a name="to-subscribe-to-email-alerts"></a>若要订阅电子邮件警报  
-
-1.  在 Configuration Manager 控制台中，依次导航至“监视” > “警报”。  
-
-2.  选择一个警报，然后在“主页”  选项卡上的“订阅”  组中，单击“创建订阅” 。  
-
-3.  在“新建订阅”  对话框中，指定下列信息：  
-
-    -   “名称”：输入一个名称以标识此电子邮件订阅。 最多可以使用 255 个字符。  
-
-    -   “电子邮件地址”：输入你希望将警报发送到的电子邮件地址。 可以使用分号分隔多个电子邮件地址。  
-
-    -   “电子邮件语言”：在列表中，指定电子邮件的语言。  
-
-4.  单击“确定”  关闭“新建订阅”  对话框并创建电子邮件订阅。  
+3.  Na guia **Alertas** da caixa de diálogo *&lt;Nome da Coleção*\>**Propriedades**, clique em **Adicionar**.  
 
     > [!NOTE]  
-    >  你可以展开“警报”  节点，然后单击其中的“订阅”  节点，删除和编辑“监视”  工作区中的订阅。  
+    >  A guia **Alertas** torna-se visível somente se a função de segurança com a qual você está associado tiver permissões para alertas.  
 
-###  <a name="BKMK_MonitorAlerts"></a> 监视器警报  
- 你可以在“监视”  工作区的“警报”  节点中查看警报。 警报具有以下警报状态之一：  
+4.  Na caixa de diálogo **Adicionar Novas Alertas da Coleção** , escolha os alertas que você deseja que sejam gerados quando os limites de status do cliente ficarem abaixo de um valor específico, então clique em **OK**.  
 
--   “从未触发”：未满足警报的条件。  
+5.  Na lista **Condições** da guia **Alertas** , selecione cada alerta de status do cliente e então especifique as informações a seguir.  
 
--   “活跃”：已满足警报的条件。  
+    -   **Nome do Alerta** – Aceite o nome padrão ou insira um novo nome para o alerta.  
 
--   “已取消”：不再满足活跃警报的条件。 此状态指示导致警报的情况现在已解决。  
+    -   **Severidade do Alerta** – Na lista suspensa, escolha o nível de alerta que será exibido no console do Configuration Manager.  
 
--   **已推迟**：管理用户已配置 Configuration Manager，以便稍后评估警报的状态。  
+    -   **Gerar alerta** – Especifique o percentual de limite para o alerta.  
 
--   “已禁用”：管理用户已禁用了警报。 当警报处于此状态时，即使警报的状态发生更改，Configuration Manager 也不会更新警报。  
+6.  Clique em **OK** para fechar a caixa de diálogo *&lt;Nome da Coleção*\>**Propriedades**.  
 
- Configuration Manager 生成警报时，可以执行以下操作之一：  
+##### <a name="to-configure-email-notification-for-alerts"></a>Para configurar notificações por email para alertas  
 
--   解决导致警报的情况，例如，解决生成警报的网络问题或配置问题。 Configuration Manager 检测到问题不再存在之后，警报状态更改为“取消”。  
+1.  No console do Configuration Manager, navegue para **Monitoramento** > **Alertas** > **Assinaturas**.  
 
--   如果警报为已知问题，你可以将警报推迟特定的一段时间。 在那时，Configuration Manager 会将警报更新为其当前状态。  
+2.  Na guia **Início** , no grupo **Criar** , clique em **Configurar Notificação de Email**.  
 
-     只有当警报处于活动状态时，你才能将其推迟。  
+3.  Na caixa de diálogo **Propriedades do Componente de Notificação de Email** , especifique as seguintes informações:  
 
--   你可以编辑警报的“备注”  ，以便其他管理用户可以看到你察觉到了该警报。 例如，你可以在备注中确定如何解决该情况，提供有关该情况的当前状态的信息，或解释推迟警报的原因。  
+    -   **Habilitar notificação por email de alertas**: marque esta caixa de seleção para habilitar o Configuration Manager a usar um servidor SMTP para enviar alertas por email.  
+
+    -   **FQDN ou Endereço IP do servidor SMTP para enviar alertas de email**: insira o FQDN (nome de domínio totalmente qualificado) ou o endereço IP e a porta SMTP do servidor de email que você deseja usar para esses alertas.  
+
+    -   **Conta de Conexão de Servidor SMTP**: especifique o método de autenticação que o Configuration Manager deve usar para conectar o servidor de email.  
+
+    -   **Endereço de remetente para alertas de email**: especifique o endereço de email do qual os emails de alerta são enviados.  
+
+    -   **Testar Servidor SMTP**: envia um email de teste para o endereço de email especificado em **Endereço de remetente para alertas de email**.  
+
+4.  Clique em **OK** para salvar as configurações e fechar a caixa de diálogo **Propriedades dos Componentes de Configuração de Email** .  
+
+##### <a name="to-subscribe-to-email-alerts"></a>Para se inscrever em alertas de email  
+
+1.  No console do Configuration Manager, navegue até **Monitoramento** > **Alertas**.  
+
+2.  Selecione um alerta e, na guia **Início** , no grupo **Assinatura** , clique em **Criar assinatura**.  
+
+3.  Na caixa de diálogo **Nova Assinatura** , especifique as seguintes informações:  
+
+    -   **Nome**: forneça um nome para identificar a assinatura de email. Você pode usar até 255 caracteres.  
+
+    -   **Endereço de email**: insira os endereços de email para os quais deseja que o alerta seja enviado. Você pode separar vários endereços de email usando ponto-e- vírgula.  
+
+    -   **Idioma do email**: na lista, especifique o idioma do email.  
+
+4.  Clique em **OK** para fechar a caixa de diálogo **Nova Assinatura** e criar a assinatura de email.  
+
+    > [!NOTE]  
+    >  Você pode excluir e editar assinaturas no espaço de trabalho **Monitoramento** expandindo o nó **Alertas** e clicando no nó **Assinaturas** .  
+
+###  <a name="BKMK_MonitorAlerts"></a> Monitorar alertas  
+ Você pode exibir alertas no nó **Alertas** no espaço de trabalho **Monitoramento** . Alertas têm um dos seguintes estados de alerta:  
+
+-   **Nunca disparado**: a condição do alerta ainda não foi atendida.  
+
+-   **Ativo**: a condição do alerta foi atendida.  
+
+-   **Cancelado**: a condição de um alerta ativo deixou de ser atendida. Esse estado indica que a condição que causou o alerta agora está resolvida.  
+
+-   **Adiado**: um usuário administrativo configurou o Configuration Manager para avaliar o estado do alerta posteriormente.  
+
+-   **Desabilitado**: o alerta foi desabilitado por um usuário administrativo. Quando um alerta está nesse estado, o Configuration Manager não atualiza o alerta mesmo que o estado do alerta seja alterado.  
+
+ Você pode executar uma das ações a seguir quando o Configuration Manager gerar um alerta:  
+
+-   Resolva a condição que causou o alerta, por exemplo, você resolve um problema de rede ou de configuração que gerou o alerta. Após o Configuration Manager detectar que o problema não existe mais, o estado do alerta mudará para **Cancelado**.  
+
+-   Se o alerta é um problema conhecido, você pode adiar o alerta para um período específico. No período especificado, o Configuration Manager atualizará o alerta para seu estado atual.  
+
+     Você pode adiar um alerta apenas quando ele está ativo.  
+
+-   Você pode editar o **Comentário** de um alerta para que os outros usuários administrativos possam ver que você está ciente do alerta. Por exemplo, no comentário você pode identificar como resolver a condição, fornecer informações sobre o status atual da condição ou explicar o motivo de ter adiado o alerta.  

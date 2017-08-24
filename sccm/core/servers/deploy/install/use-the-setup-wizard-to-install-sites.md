@@ -1,5 +1,5 @@
 ---
-title: "安装向导 | Microsoft Docs"
+title: "Assistente de instalação | Microsoft Docs"
 ms.custom: na
 ms.date: 7/24/2017
 ms.prod: configuration-manager
@@ -16,93 +16,93 @@ manager: angrobe
 ms.openlocfilehash: 678f1b35fe6f7649dacb766f7c671f4ec8ea1435
 ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
 ms.translationtype: HT
-ms.contentlocale: zh-CN
+ms.contentlocale: pt-BR
 ms.lasthandoff: 08/07/2017
 ---
-# <a name="use-the-setup-wizard-to-install-system-center-configuration-manager-sites"></a>使用安装向导安装 System Center Configuration Manager 站点
+# <a name="use-the-setup-wizard-to-install-system-center-configuration-manager-sites"></a>Use o Assistente de Instalação para instalar sites do System Center Configuration Manager
 
-*适用范围：System Center Configuration Manager (Current Branch)*
+*Aplica-se a: System Center Configuration Manager (Branch Atual)*
 
 
-若要使用引导式用户界面安装新的 System Center Configuration Manager 站点，请使用 Configuration Manager 安装向导 (setup.exe)。 该向导支持安装主站点或管理中心站点。 还可使用该向导将 Configuration Manager 的[评估安装升级](../../../../core/servers/deploy/install/upgrade-an-evaluation-install-to-a-full-install.md)为完全许可的安装。 如果不想使用此向导，可改用[安装脚本](../../../../core/servers/deploy/install/use-a-command-line-to-install-sites.md)并运行无人参与的命令行安装。
+Para instalar um novo site do System Center Configuration Manager usando uma interface do usuário interativa, use o Assistente de Instalação do Configuration Manager (setup.exe). O assistente dá suporte à instalação de um site primário ou de um site de administração central. Você também usa o assistente para [atualizar uma instalação de avaliação](../../../../core/servers/deploy/install/upgrade-an-evaluation-install-to-a-full-install.md) do Configuration Manager para uma instalação totalmente licenciada. Quando não quiser usar o assistente, você pode usar um [script de instalação](../../../../core/servers/deploy/install/use-a-command-line-to-install-sites.md) e executar uma instalação de linha de comando autônoma.
 
-若要安装辅助站点，必须在 Configuration Manager 控制台内安装该站点。 辅助站点不支持脚本化的命令行安装。
+Para instalar um site secundário, você precisa instalar o site de dentro do console do Configuration Manager. Sites secundários não dão suporte a uma instalação de linha de comando com scripts.
 
-## <a name="bkmk_primary"></a>安装管理中心站点或主站点
-使用下列过程安装管理中心站点或主站点，或者将评估站点升级到完全许可的 Configuration Manager 站点。   
+## <a name="bkmk_primary"></a> Instalar um site de administração central ou site primário
+Use o procedimento a seguir para instalar um site de administração central, um site primário ou para atualizar um site de avaliação para um site do Configuration Manager totalmente licenciado.   
 
-开始安装站点前，请先熟悉以下文章中的详细信息：
- -  [安装站点的准备工作](../../../../core/servers/deploy/install/prepare-to-install-sites.md)
- -  [安装站点的先决条件](../../../../core/servers/deploy/install/prerequisites-for-installing-sites.md)
+Antes de iniciar a instalação do site, familiarize-se com os detalhes fornecidos nos seguintes artigos:
+ -  [Preparar para instalar sites](../../../../core/servers/deploy/install/prepare-to-install-sites.md)
+ -  [Pré-requisitos para instalar sites](../../../../core/servers/deploy/install/prerequisites-for-installing-sites.md)
 
-如果要在站点扩展方案期间安装管理中心站点，请在执行以下步骤前查看本主题中的[扩展独立主站点](../../../../core/servers/deploy/install/use-the-setup-wizard-to-install-sites.md#bkmk_expand)部分。
+Se você estiver instalando um site de administração central como parte de um cenário de expansão de site, examine a seção [Expandir um site primário autônomo](../../../../core/servers/deploy/install/use-the-setup-wizard-to-install-sites.md#bkmk_expand) neste tópico antes de usar o procedimento a seguir.
 
-### <a name="bkmk_installpri"></a>安装主站点或管理中心站点
+### <a name="bkmk_installpri"></a> Para instalar um site de administração central ou primário
 
-1.  在想要安装该站点的计算机上，运行 **&lt;InstallationMedia\>\SMSSETUP\BIN\X64\Setup.exe** 以启动“System Center Configuration Manager 安装向导”。  
+1.  No computador no qual deseja instalar o site, execute **&lt;InstallationMedia\>\SMSSETUP\BIN\X64\Setup.exe** para iniciar o **Assistente de Instalação do System Center Configuration Manager**.  
 
     > [!NOTE]  
-    > 若要安装管理中心站点以便展开独立主站点，或在现有层次结构中安装新的子主站点，必须使用与现有站点或站点版本匹配的安装媒体（源文件）。 如果安装的控制台内部更新更改了以前安装的站点版本，请勿使用原始安装介质。 请改用已更新站点的 [CD.Latest 文件夹](../../../../core/servers/manage/the-cd.latest-folder.md)中的源文件。 Configuration Manager 要求所用的源文件必须与新站点要连接到的现有站点版本相匹配。  
+    > Quando instala um site de administração central para expandir um site primário autônomo ou instala um novo site primário filho em uma hierarquia existente, você precisa usar a mídia de instalação (arquivos de origem) que corresponde à versão do site ou sites existentes. Se você tiver instalado atualizações no console que alteraram a versão dos sites instalados anteriormente, não use a mídia de instalação original. Em vez disso, use os arquivos de origem da [pasta CD.Latest](../../../../core/servers/manage/the-cd.latest-folder.md) de um site atualizado. O Configuration Manager exige que você use arquivos de origem que correspondam à versão do site existente ao qual seu novo site se conectará.  
 
-2.  在“开始之前”页上，选择“下一步”。  
+2.  Na página **Antes de Começar** escolha **Avançar**.  
 
-3.  在“入门”页面上，选择要安装的站点类型：  
+3.  Na página **Introdução**, escolha o tipo de site que deseja instalar:  
 
-    -   **管理中心站点** - 作为新层次结构的第一个站点，或在扩展独立主站点时使用：  
+    -   **Site de administração central**, como o primeiro site de uma nova hierarquia ou ao expandir um site primário autônomo:  
 
-        选择“安装 Configuration Manager 管理中心站点”。  
+        Selecione **Instalar um site de administração central do Configuration Manager**.  
 
-         在此过程的后续步骤中，你可以选择安装管理中心站点作为新层次结构的第一个站点，或者安装管理中心站点以扩展独立主站点。  
+         Durante uma etapa posterior desse procedimento, você terá a opção de instalar um site de administração central como o primeiro site de uma nova hierarquia ou instalar um site de administração central para expandir um site primário autônomo.  
 
-    -    **主站点** - 作为独立主站点（即新层次结构的第一个站点），或作为子主站点：  
+    -    **Site primário**, como um site primário autônomo que é o primeiro site de uma nova hierarquia ou como um primário filho:  
 
-        选择“安装 Configuration Manager 主站点”。  
+        Selecione **Instalar um site primário do Configuration Manager**.  
 
         > [!TIP]  
-        > 通常，当想要在测试环境中安装独立主站点时，你只需选择“为独立主站点使用典型安装选项”  选项即可。 选择此选项时，安装程序会：  
+        > Normalmente, você seleciona apenas **Usar opções de instalação típicas de um site primário autônomo** quando deseja instalar o site primário autônomo em um ambiente de teste. Quando você seleciona essa opção, a Instalação:  
 
-        > -   将站点自动配置为独立主站点。  
-        > -   使用默认安装路径。  
-        > -   对站点数据库使用 SQL Server 默认实例的本地安装。  
-        > -   在站点服务器计算机上安装管理点和分发点。  
-        > -   使用英语以及主站点服务器上操作系统的显示语言配置站点（如果它匹配 Configuration Manager 支持的其中一种语言）。  
+        > -   Configura automaticamente o site como um site primário autônomo.  
+        > -   Usa um caminho de instalação padrão.  
+        > -   Usa uma instalação local da instância padrão do SQL Server para o banco de dados do site.  
+        > -   Instala um ponto de gerenciamento e um ponto de distribuição no computador do servidor do site.  
+        > -   Configura o site com o idioma inglês e o idioma de exibição do sistema operacional no servidor do site primário, se ele corresponder a um dos idiomas a que o Configuration Manager dá suporte.  
 
-4.  “产品密钥”页：
-    - 选择将 Configuration Manager 安装为评估版还是许可版。  
+4.  Na página **Chave do Produto (Product Key)**:
+    - escolha se deseja instalar o Configuration Manager como uma edição de avaliação ou uma edição licenciada.  
 
-      -   如果选择许可版，请输入你的产品密钥，然后选择“下一步”。  
+      -   Se você selecionar uma edição licenciada, insira a chave do produto (Product Key) e escolha **Avançar**.  
 
-      -   如果选择评估版，请选择“下一步”。 （随后可将评估版安装升级为完整版安装。）  
-    - 自 2016 年 10 月发布 System Center Configuration Manager 的 1606 版基线介质起，可指定软件保障协议的到期日期。 在此页上，可选择指定许可协议的**软件保障到期日期**，以便接收该日期的提醒。 如果在设置期间未输入此信息，则稍后可在 Configuration Manager 控制台中指定。
+      -   Se você selecionar uma edição de avaliação, escolha **Avançar**. (Você pode atualizar uma instalação de avaliação para uma instalação completa posteriormente.)  
+    - Começando com a versão de outubro de 2016 da mídia de linha de base da versão 1606 do System Center Configuration Manager, você pode especificar a data de validade do contrato do Software Assurance. Nessa página, você tem a opção de especificar a **Data de validade do Software Assurance** do seu contrato de licença como um lembrete conveniente dessa data. Se não inserir essa informação durante a Instalação, você poderá especificá-la posteriormente no console do Configuration Manager.
 
       > [!NOTE]   
-      > Microsoft 不会验证所输入的到期日期，且不会使用此日期验证许可证。 相反，可以使用该日期作为到期日期提醒。 这很有用，因为 Configuration Manager 会定期检查在线提供的新软件更新，而软件保障许可证应为最新状态，才有资格使用这些额外的更新。    
+      > A Microsoft não valida a data de validade inserida e não usará essa data para validação da licença. No entanto, você pode usá-la como um lembrete da data de vencimento. Isso é útil porque o Configuration Manager verifica periodicamente se há novas atualizações de software oferecidas online e o status de licença do Software Assurance deve estar atualizado para que você esteja qualificado para usar essas atualizações adicionais.    
 
-      有关详细信息，请参阅 [System Center Configuration Manager 的许可和分支](/sccm/core/understand/learn-more-editions)。
+      Para mais informações, consulte [Licenciamento e branches do System Center Configuration Manager](/sccm/core/understand/learn-more-editions).
 
-5.  在“Microsoft 软件许可条款”  页上，阅读并接受许可条款。  
+5.  Na página **Termos de Licença para Software Microsoft** , leia e aceite os termos de licença.  
 
-6.  在“先决条件许可证”  页上，阅读并接受必备软件的许可条款。 安装程序将在必需时下载该软件并将其自动安装到站点系统或客户端上。 必须勾选所有框，然后才能转到下一页。  
+6.  Na página **Licenças de Pré-requisito** , leia e aceite os termos de licença do software de pré-requisito. A Instalação baixa e instala automaticamente o software nos clientes ou sistemas do site quando necessário. Você deve marcar todas as caixas antes de poder avançar para a próxima página.  
 
-7.  在“先决条件下载”  页上，指定安装程序是必须从 Internet 下载最新的必备软件可再发行文件还是使用以前下载的文件：  
+7.  Na página **Downloads de Pré-requisitos** , especifique se a instalação deve baixar os arquivos redistribuíveis de pré-requisitos mais recentes da Internet ou usar os arquivos baixados anteriormente:  
 
-    -   如果想要安装程序现在下载文件，请选择“下载所需的文件”  并指定存储文件的位置。  
+    -   Se você desejar que a instalação baixe os arquivos neste momento, selecione **Baixar arquivos necessários** e especifique um local para armazenar os arquivos.  
 
-    -   如果以前通过使用[安装程序下载程序](../../../../core/servers/deploy/install/setup-downloader.md)下载了文件，请选择“使用以前下载的文件”并指定下载文件夹。  
+    -   Se você tiver baixado os arquivos usando o [Downloader de Instalação](../../../../core/servers/deploy/install/setup-downloader.md), selecione **Usar arquivos baixados anteriormente** e especifique a pasta de download.  
 
         > [!TIP]  
-        > 如果使用以前下载的文件，请验证下载文件夹的路径是否包含文件的最新版本。  
+        > Se você usar os arquivos baixados anteriormente, verifique se o caminho para a pasta de download contém a versão mais recente dos arquivos.  
 
-8.  在“服务器语言选择”页面中，选择可用于 Configuration Manager 控制台和报表的语言。 （默认选中“英语”且不可删除。）  
+8.  Na página **Seleção do Idioma do Servidor**, selecione os idiomas que estão disponíveis para o console do Configuration Manager e para os relatórios. (O inglês é selecionado por padrão e não pode ser removido.)  
 
-9. 在“客户端语言选择”页上，选择可用于客户端计算机的语言，并指定是否为移动设备客户端启用所有客户端语言。 （默认选中“英语”且不可删除。）  
+9. Na página **Seleção do Idioma do Cliente**, selecione os idiomas que estão disponíveis em computadores cliente e especifique se deseja habilitar todos os idiomas do cliente para clientes de dispositivos móveis. (O inglês é selecionado por padrão e não pode ser removido.)  
 
     > [!IMPORTANT]  
-    > 使用管理中心站点时，请确保管理中心站点处配置的客户端语言包含各子主站点处所配置的全部客户端语言。 这是因为从分发点安装的客户端具有从顶层站点访问客户端语言的权限，而从管理点安装的客户端具有从其已分配的主站点访问客户端语言的权限。  
+    > Quando usar um site de administração central, verifique se os idiomas do cliente que você configurou no site de administração central incluem todos os idiomas do cliente que você configurou em cada site primário filho. Isso é recomendado porque os clientes que são instalados por meio de um ponto de distribuição têm acesso aos idiomas do cliente por meio do site de nível superior, enquanto os clientes que são instalados de um ponto de gerenciamento têm acesso aos idiomas do cliente por meio do site primário atribuído a eles.  
 
-10. 在“站点和安装设置”页上，为要安装的新站点指定以下内容：  
+10. Na página **Configurações do Site e de Instalação**, especifique o seguinte para o novo site que você está instalando:  
 
-    -   **站点代码**：[层次结构中的每个站点代码必须唯一](../../../../core/servers/deploy/install/prepare-to-install-sites.md#bkmk_sitecodes)，且由 3 个字母数字（A 到 Z 和 0 到 9）组成。 由于文件夹名称中使用了站点代码，因此请勿在站点中使用 Windows 保留的名称，包括：    
+    -   **Código do site:** [cada código do site em uma hierarquia deve ser exclusivo](../../../../core/servers/deploy/install/prepare-to-install-sites.md#bkmk_sitecodes) e composto por três dígitos alfanuméricos (A até Z e 0 até 9). Como o código do site é usado em nomes de pasta, não use nomes reservados do Windows para o site, incluindo:    
         -   AUX  
         -   CON    
         -   NUL    
@@ -110,161 +110,161 @@ ms.lasthandoff: 08/07/2017
         -   SMS  
 
         > [!NOTE]  
-        > 安装程序不会验证所指定的站点代码是否未被使用，或者它是否具有保留名称。  
+        > A instalação não verifica se o código do site especificado já está em uso ou se tem um nome reservado.  
 
-    -   **站点名称：**每个站点都需要此友好名称，它可帮助你标识站点。  
+    -   **Nome do site:** cada site requer esse nome amigável, o qual pode ajudar a identificar o site.  
 
-    -   **安装文件夹：**这是 Configuration Manager 安装的文件夹路径。 安装站点后，无法更改位置。 此外，该路径不能包含 Unicode 字符或尾随空格。  
+    -   **Pasta de instalação**: é o caminho de pasta para a instalação do Configuration Manager. Você não pode alterar o local depois de instalar o site. Além disso, o caminho não pode conter espaços à direita ou caracteres Unicode.  
 
-11. 在“站点安装”页上，使用与你的方案匹配的以下选项：  
+11. Na página **Instalação do Site**, use a opção a seguir que corresponde ao seu cenário:  
 
-    -   **正在安装管理中心站点：**  
+    -   **Estou instalando um site de administração central:**  
 
-         在“管理中心站点安装”页上，选择“安装为新层次结构中的第一个站点”，然后选择“下一步”继续操作。  
+         Na página **Instalação do Site de Administração Central**, selecione **Instalar como o primeiro site em uma nova hierarquia** e escolha **Avançar** para continuar.  
 
-    -   **正在将独立主站点扩展到包含管理中心站点的层次结构中：**  
+    -   **Estou expandindo um site primário autônomo em uma hierarquia com um site de administração central:**  
 
-         在“管理中心站点安装”页上，选择“将现有的独立主站点扩展到层次结构中”，指定独立主站点服务器的 FQDN，然后选择“下一步”继续操作。  
+         Na página **Instalação do Site de Administração Central**, selecione **Expandir um primário autônomo existente em uma hierarquia**, especifique o FQDN do servidor do site primário autônomo e escolha **Avançar** para continuar.  
 
-         安装新的管理中心站点时所用的介质必须与主站点的版本相匹配。  
+         A mídia que você usa para instalar o novo site de administração central deve corresponder à versão do site primário.  
 
-    -   **正在安装独立主站点：**  
+    -   **Estou instalando um site primário autônomo:**  
 
-         在“主站点安装”页上，选择“以独立站点形式安装主站点”，然后选择“下一步”。  
+         Na página **Instalação de Site Primário**, selecione **Instalar o site primário como site autônomo** e escolha **Avançar**.  
 
-    -   **正在安装子主站点：**  
+    -   **Estou instalando um site primário filho:**  
 
-         在“主站点安装”页上，选择“将主站点加入到现有层次结构”，指定管理中心站点的 FQDN，然后选择“下一步”。  
+         Na página **Instalação de Site Primário**, selecione **Ingressar o site primário em uma hierarquia existente**, especifique o FQDN para o site de administração central e escolha **Próximo**.  
 
-12. 在“数据库信息”页面中，指定下列信息：  
+12. Na página **Informações do Banco de Dados**, especifique as informações a seguir:  
 
-    -   **SQL Server 名称 (FQDN)：** 默认情况下，此项设置为站点服务器计算机。
+    -   **Nome do SQL Server (FQDN):** por padrão, é definido para ser o computador do servidor do site.
 
-     如果使用自定义端口，请将该端口添加到 SQL Server 的 FQDN。 若要执行此操作，请在后续服务器的 FQDN 后附加逗号，然后附加端口号。   例如，对于服务器 SQLServer1.fabrikam.com，使用以下语句指定端口 1551：SQLServer1.fabrikam.com,1551
+     Se você usar uma porta personalizada, adicione-a ao FQDN do SQL Server. Para fazer isso, siga o FQDN do servidor de sequência com uma vírgula e o número da porta.   Por exemplo, para o servidor *SQLServer1.fabrikam.com*, use o seguinte para especificar a porta *1551*: **SQLServer1.fabrikam.com,1551**
 
-    -   **实例名称：**此项默认为空。 它在站点服务器计算机上使用 SQL 的默认实例。  
+    -   **Nome da instância:** por padrão, fica em branco. Ele usa a instância padrão do SQL no computador do servidor do site.  
 
-    -   **数据库名称：**默认情况下，将此设置为 CM_&lt;Sitecode\>。 可随意使用所指定的其他名称。  
+    -   **Nome do banco de dados:** por padrão, é definido como CM_&lt;Código do site\>. Você é livre para usar um nome diferente que você especificar.  
 
-    -   **Service Broker 端口**：默认情况下，设置为使用默认 SQL Server Service Broker (SSB) 端口 4022。 SQL 通过该端口与其他站点的站点数据库直接通信。  
+    -   **Porta do Service Broker:** por padrão, isso é definido para usar a porta do SQL SSB (Server Service Broker) padrão de 4022. O SQL a usa para se comunicar diretamente com o banco de dados do site em outros sites.  
 
-13. 在第二个“数据库信息”页面上，可为站点数据库指定 SQL Server 数据文件和 SQL Server 日志文件的非默认位置：  
+13. Na segunda página **Informações do Banco de Dados**, você pode especificar locais não padrão para o arquivo de dados do SQL Server e o arquivo de log do SQL Server para o banco de dados do site:  
 
-    -   提供了 SQL Server 的默认文件位置。  
+    -   Locais de arquivo padrão para o SQL Server são fornecidos.  
 
-    -   使用 SQL Server 群集时，不可指定非默认文件位置。  
+    -   A opção de especificar locais de arquivo não padrão não está disponível quando você usa um cluster do SQL Server.  
 
-    -   先决条件检查程序不会检查非默认文件位置的可用磁盘空间。  
+    -   O verificador de pré-requisitos não executa uma verificação de espaço livre em disco para locais de arquivo não padrão.  
 
-14. 在“SMS 提供程序设置”  页上，指定要在其上安装 SMS 提供程序的服务器的 FQDN。  
+14. Na página **Configurações do Provedor de SMS** , especifique o FQDN para o servidor no qual você deseja instalar o provedor de SMS.  
 
-    -   默认情况下，已指定站点服务器。  
+    -   Por padrão, o servidor do site é especificado.  
 
-    -   安装站点后，可配置其他 SMS 提供程序。  
+    -   Depois de instalar o site, você pode configurar outros Provedores de SMS.  
 
-15. 在“客户端通信设置”  页上，选择是将所有站点系统配置为仅接受来自客户端的 HTTPS 通信，还是接受为每个站点系统角色配置的通信方法所传输的信息。  
+15. Na página **Configurações de Comunicação do Cliente** , escolha se é para configurar todos os sistemas de sites para aceitar somente a comunicação HTTPS de clientes ou se o método de comunicação deve ser configurado para cada função do sistema de sites.  
 
-    如果选择“所有站点系统角色仅接受来自客户端的 HTTPS 通信”，则客户端计算机必须具有有效的 PKI 证书才可进行客户端身份验证。 有关 PKI 证书要求的详细信息，请参阅 [Configuration Manager 的 PKI 证书要求](https://technet.microsoft.com/library/gg699362.aspx)。  
-
-    > [!NOTE]  
-    > 此步骤仅在安装主站点时适用。 如果要安装管理中心站点，则跳过此步骤。  
-
-16. 在“站点系统角色”  页上，选择是要安装管理点还是安装分发点。 对于每个选择使用安装程序安装的角色：  
-
-    -   必须输入要托管角色的计算机的“FQDN”，并选择服务器将支持的客户端连接方法（HTTP 或 HTTPS）。  
-
-    -   如果在上一页上选择了“所有站点系统角色仅接受来自客户端的 HTTPS 通信”，则会针对 HTTPS 自动配置客户端连接设置，且只有返回去才可更改此设置。  
+    Ao selecionar **Todas as funções do sistema de sites aceitam apenas comunicação HTTPS de clientes**, o computador cliente deverá ter um certificado PKI válido para autenticação do cliente. Para obter mais informações sobre os requisitos de certificado PKI, consulte [Requisitos de certificado PKI para o Configuration Manager](https://technet.microsoft.com/library/gg699362.aspx).  
 
     > [!NOTE]  
-    > 此步骤仅在安装主站点时适用。 如果要安装管理中心站点，则跳过此步骤。  
+    > Esta etapa se aplica somente quando você instala um site primário. Se você estiver instalando um site de administração central, ignore esta etapa.  
+
+16. Na página **Funções do Sistema de Site** , escolha se é para instalar um ponto de gerenciamento ou um ponto de distribuição. Para cada função que você opta que o programa de Instalação instale:  
+
+    -   Você deve inserir o **FQDN** do computador que hospedará a função e escolher o método de conexão do cliente ao qual o servidor dará suporte (HTTP ou HTTPS).  
+
+    -   Se você selecionou **Todas as funções do sistema de sites aceitam apenas comunicação HTTPS de clientes** na página anterior, as definições de conexão do cliente serão automaticamente configuradas para HTTPS e não poderão ser alteradas a menos que você volte e mude a configuração.  
 
     > [!NOTE]  
-    > 若要安装站点系统角色，安装程序将使用“站点系统安装帐户” 。 默认情况下，这将使用主站点的计算机帐户。 此帐户必须是远程计算机上的本地管理员才能安装站点系统角色。 如果此帐户缺少所需的权限，则在配置其他帐户用作站点系统安装帐户之后，取消选中站点系统角色，并在以后从 Configuration Manager 中安装它们。  
-
-17. 在“使用情况数据”页上，查看 Microsoft 收集的相关数据信息，然后选择“下一步”。  
-
-18. “服务连接点设置”页面仅在设置期间可用：  
-
-    -   在要安装独立主站点时。  
-
-    -   在要安装管理中心站点时。  
+    > Esta etapa se aplica somente quando você instala um site primário. Se você estiver instalando um site de administração central, ignore esta etapa.  
 
     > [!NOTE]  
-    > 如果要安装子级主站点，则跳过此步骤（此页面不可用）。  
+    > Para instalar funções do sistema de sites, a instalação usa a **conta de instalação do sistema de sites**. Por padrão, a conta de computador do site primário é usada. Para instalar a função do sistema de sites, essa conta deve ser um administrador local em um computador remoto. Se essa conta não tiver as permissões necessárias, desmarque as funções do sistema de sites e instale-as mais tarde usando o console do Configuration Manager depois de configurar contas adicionais a serem usadas como contas de instalação do sistema de sites.  
 
-     如果要在站点扩展方案期间安装管理中心站点，且已在独立主站点上安装此角色，则必须从独立主站点中卸载此角色。 层次结构中只可存在此角色的一个实例，且该实例仅可位于层次结构的顶层站点。  
+17. Na página **Dados de Uso**, examine as informações sobre os dados que a Microsoft coleta e escolha **Avançar**.  
 
-     选择“服务连接点”的配置后，选择“下一步”。 （安装程序完成后，可以在 Configuration Manager 控制台中更改此配置。）  
+18. A página **Instalação do Ponto de Conexão de Serviço** está disponível apenas durante a Instalação:  
 
-19. 在“设置摘要”页上，查看所选的设置。 准备就绪后，选择“下一步”以启动必备组件检查程序。  
+    -   Quando você estiver instalando um site primário autônomo.  
 
-20. 在“先决条件安装检查”页上，将列出可识别的任何问题。  
+    -   Quando você estiver instalando um site de administração central.  
 
-    -   如果必备组件检查程序发现问题，请选择列表中的项目，详细了解如何解决该问题。  
+    > [!NOTE]  
+    > Se você estiver instalando um site primário filho, ignore esta etapa (esta página não estará disponível).  
 
-    -   必须处理所有状态为“失败”的项目，才能继续安装站点。 需处理状态为“警告”的项目，但它们不会阻止站点的安装。  
+     Se você estiver instalando um site de administração central como parte de um cenário de expansão do site e essa função já estiver instalada no site primário autônomo, desinstale a função do site primário autônomo. Apenas uma instância dessa função é permitida em uma hierarquia, sendo permitida somente no site da camada superior da hierarquia.  
 
-    -   解决问题后，选择“运行检查”以重新运行必备组件检查程序。  
+     Depois de selecionar uma configuração para o **Ponto de Conexão de Serviço**, escolha **Avançar**. (Após a conclusão da Instalação, você poderá alterar essa configuração no console do Configuration Manager.)  
 
-     如果必备组件检查程序运行后检查均未收到“失败”状态，则可选择“开始安装”以启动站点安装。  
+19. Na página **Resumo das Configurações**, examine as configurações que você selecionou. Quando você estiver pronto, escolha **Avançar** para iniciar o Verificador de Pré-requisitos.  
+
+20. Na página **Verificação de Instalação de Pré-requisitos**, todos os problemas que podem ser identificados são listados.  
+
+    -   Quando o Verificador de Pré-requisitos encontrar um problema, escolha um item da lista para exibir os detalhes sobre como solucionar o problema.  
+
+    -   Você deve resolver todos os itens com status de **Falha** antes de continuar a instalar o site. Itens com o status de **Aviso** devem ser resolvidos, mas não bloqueiam a instalação do site.  
+
+    -   Depois de resolver os problemas, escolha **Executar Verificação** para executar novamente o Verificador de Pré-requisitos.  
+
+     Se o Verificador de Pré-requisitos for executado e nenhuma verificação receber um status de **Falha**, você poderá escolher **Iniciar Instalação** para iniciar a instalação do site.  
 
     > [!TIP]  
-    > 除了向导中提供的反馈，当在计算机系统驱动器的根目录中查看要在其上安装的“ConfigMgrPrereq.log”文件时，可找到有关先决条件问题的其他信息。 有关安装先决条件规则和描述的列表，请参阅 [System Center Configuration Manager 的先决条件检查列表](../../../../core/servers/deploy/install/list-of-prerequisite-checks.md)。  
+    > Além dos comentários fornecidos no assistente, você pode encontrar informações adicionais sobre problemas de pré-requisito ao exibir o arquivo **ConfigMgrPrereq.log** na raiz da unidade do sistema do computador que está instalando. Para obter uma lista das regras e descrições dos pré-requisitos de instalação, consulte [Lista de verificações de pré-requisitos para o System Center Configuration Manager](../../../../core/servers/deploy/install/list-of-prerequisite-checks.md).  
 
-21. 在“安装”  页上，安装程序将显示安装状态。 核心站点服务器安装完成后，可选择**关闭**安装向导。 关闭向导后，将在后台继续进行安装和初始站点配置。  
+21. Na página **Instalação** , o programa de instalação exibe o status da instalação. Quando a instalação do servidor do site principal for concluída, você terá a opção de **Fechar** o assistente de instalação. Quando você fecha o assistente, a instalação e as configurações iniciais do site continuam em segundo plano.  
 
-    -   在安装完成前，可将 Configuration Manager 控制台连接到该站点。 此控制台将作为只读连接，并允许你查看对象和设置，但不能引入编辑。  
+    -   Você pode conectar um console do Configuration Manager ao site antes de a Instalação ser concluída. Esse console se conecta no modo somente leitura e permite a exibição de objetos e de configurações, mas você não pode introduzir edições.  
 
-    -   安装完成后，将能够连接可编辑对象和设置的控制台。  
-
-
-## <a name="bkmk_expand"></a>扩展独立主站点
-安装好独立主站点作为第一个站点后，稍后可通过安装管理中心站点将该站点扩展到更大的层次结构中。   
-
-扩展独立主站点时，将会安装新的管理中心站点，此站点使用现有独立主站点的数据库作为引用。 安装新管理中心站点后，独立主站点将充当子级主站点。
-
--   仅可以将独立主站点扩展到新层次结构中。  
-
--   并且仅可以将一个独立主站点扩展到特定层次结构中。 此选项不能用于将其他独立主站点加入同一层次结构中。 相反，可以使用“迁移”将数据从一个层次结构迁移到另一个层次结构中。  
-
--   将独立站点扩展到包含管理中心站点的层次结构中后，可以添加其他子级主站点。  
-
--   若要从具有管理中心站点的层次结构中删除主站点，则必须卸载此主站点。  
-
-若要扩展该站点，请使用 System Center Configuration Manager 安装向导以安装新的管理中心站点，但必须注意以下几点：  
-
--   必须使用相同版本的 Configuration Manager 将管理中心站点安装为独立主站点。  
-
--   在安装向导的“入门”页上，选择用于安装管理中心站点的选项。 在安装的后面阶段，选择用于扩展现有独立主站点的选项。  
-
--   在配置新的管理中心站点的“客户端语言选择”页面时，选择的客户端语言必须与为要扩展的独立主站点配置的客户端语言相同。  
-
--   在“站点安装”页上，选择扩展独立主站点的选项。  
-
-若要扩展独立主站点，请首先查看[扩展站点的先决条件](/sccm/core/servers/deploy/install/prerequisites-for-installing-sites#bkmk_expand)，然后使用本文前面部分介绍的过程 *[ 安装主站点或管理中心站点 ](../../../../core/servers/deploy/install/use-the-setup-wizard-to-install-sites.md#bkmk_installpri)*。
+    -   Após a conclusão da instalação, você poderá conectar um console que permite a edição de objetos e de configurações.  
 
 
-## <a name="bkmk_secondary"></a>安装辅助站点
- 使用 Configuration Manager 控制台安装辅助站点。  
+## <a name="bkmk_expand"></a> Expandir um site primário autônomo
+Ao instalar um site primário autônomo como seu primeiro site, você tem a opção de expandir posteriormente o site em uma hierarquia maior instalando um site de administração central.   
 
--   如果使用的控制台未连接到将充当新辅助站点的父级站点的主站点，则安装该站点的命令将被复制到正确的主站点。  
+Ao expandir um site primário autônomo, você pode instalar um novo site de administração central que usa o banco de dados do site primário autônomo existente como referência. Depois de instalar o novo site de administração central, o site primário autônomo funciona como um site primário filho.
 
--   在开始站点安装之前，确保你的用户帐户具有必备权限，并且托管新辅助站点的计算机满足充当辅助站点服务器的所有先决条件。  
+-   Somente um site primário autônomo pode ser expandido em uma nova hierarquia.  
 
--   安装辅助站点时，Configuration Manager 将配置新站点以使用父级主站点上配置的客户端通信端口。  
+-   Somente um site primário autônomo pode ser expandido em uma hierarquia específica. Você não pode usar essa opção para adicionar mais sites primários autônomos à mesma hierarquia. Em vez disso, use a Migração para migrar dados de uma hierarquia para outra.  
 
-### <a name="bkmk_installsecondary"></a>安装辅助站点  
+-   Depois de expandir um site autônomo em uma hierarquia com um site de administração central, você pode adicionar mais sites primários filhos.  
+
+-   Para remover um site primário de uma hierarquia com um site de administração central, desinstale o site primário.  
+
+Para expandir o site, use o Assistente de Instalação do System Center Configuration Manager para instalar um novo site de administração central com as seguintes condições:  
+
+-   Instale o site de administração central usando a mesma versão do Configuration Manager que o site primário autônomo.  
+
+-   Na página de **Introdução** do Assistente de Instalação, selecione a opção para instalar um site de administração central. Em um estágio posterior da Instalação, você escolherá uma opção para expandir um site primário autônomo existente.  
+
+-   Ao configurar a página **Seleção do Idioma do Cliente** para o novo site de administração central, você deve selecionar os mesmos idiomas do cliente que estão configurados para o site primário autônomo que você está expandindo.  
+
+-   Na página **Instalação do Site**, selecione a opção para expandir o site primário autônomo.  
+
+Para expandir um site primário autônomo, primeiro consulte os [pré-requisitos para expandir um site](/sccm/core/servers/deploy/install/prerequisites-for-installing-sites#bkmk_expand) e, em seguida use o procedimento *[Para instalar um site de administração central ou primário](../../../../core/servers/deploy/install/use-the-setup-wizard-to-install-sites.md#bkmk_installpri)*, anteriormente neste artigo.
 
 
-1.  在 Configuration Manager 控制台中，导航到“管理” > “站点配置” > “站点”。 选择将成为新辅助站点的父主站点的站点。  
+## <a name="bkmk_secondary"></a> Instalar um site secundário
+ Use o console do Configuration Manager para instalar um site secundário.  
 
-2.  选择“创建辅助站点”以启动“创建辅助站点向导”。  
+-   Se o console usado não estiver conectado ao site primário que será o site pai do novo site secundário, o comando para instalar o site será replicado para o site primário correto.  
 
-3.  在“开始之前”页上，确认列出的主站点是你想让其成为新辅助站点父级的站点。 然后选择“下一步”。  
+-   Antes de iniciar a instalação do site, verifique se sua conta de usuário tem as permissões de pré-requisito e se o computador que hospedará o novo site secundário cumpre todos os pré-requisitos para uso como um servidor do site secundário.  
 
-4.  在“常规”  页面上，指定下列值：  
+-   Quando você instala o site secundário, o Configuration Manager configura o novo site para usar as portas de comunicação do cliente configuradas no site primário pai.  
 
-    -   **站点代码**：层次结构中的每个站点代码必须唯一，且由 3 个字母数字（A 到 Z 和 0 到 9）组成。 由于文件夹名称中使用了站点代码，因此请勿在站点中使用 Windows 保留的名称，包括：  
+### <a name="bkmk_installsecondary"></a> Para instalar um site secundário  
+
+
+1.  No console do Configuration Manager, navegue até **Administração** > **Configuração de Site** > **Sites**. Selecione o site que será o site primário pai do novo site secundário.  
+
+2.  Escolha **Criar Site Secundário** para iniciar o **Assistente de Criação de Site Secundário**.  
+
+3.  Na página **Antes de Começar**, confirme se o site primário listado é o site que você deseja que seja o pai do novo site secundário. Em seguida, escolha **Avançar**.  
+
+4.  Na página **Geral** , especifique o seguinte:  
+
+    -   **Código do site**: cada código do site em uma hierarquia deve ser exclusivo e composto por três dígitos alfanuméricos (A até Z e 0 até 9). Como o código do site é usado em nomes de pasta, não use nomes reservados do Windows para o site, incluindo:  
 
         -   AUX    
         -   CON    
@@ -273,119 +273,119 @@ ms.lasthandoff: 08/07/2017
         -   SMS  
 
        > [!NOTE]  
-       > 安装程序不会验证你指定的站点代码是否未被使用，或者它是否具有保留名称。  
+       > A instalação não verifica se o código do site especificado já está em uso ou se é um nome reservado.  
 
-    -   **站点服务器名称**：这是新辅助站点将在其中安装的服务器的 FQDN。  
+    -   **Nome do servidor do site**: esse é o FQDN do servidor no qual o novo site secundário será instalado.  
 
-    -   **站点名称**：每个站点都需要此友好名称，它可帮助你标识站点。  
+    -   **Nome do site**: cada site requer esse nome amigável, o qual pode ajudar a identificar o site.  
 
-    -   **安装文件夹**：这是 Configuration Manager 安装的文件夹路径。 安装站点后，无法更改位置。 该路径不能包含 Unicode 字符或尾随空格。  
+    -   **Pasta de instalação**: esse é o caminho de pasta para a instalação do Configuration Manager. Você não pode alterar o local depois de instalar o site. O caminho não pode conter espaços à direita ou caracteres Unicode.  
 
     > [!IMPORTANT]  
-    > 在此页上指定详细信息后，可选择“摘要”以对其余的辅助站点选项使用默认设置，并直接转到向导的“摘要”页面。  
+    > Depois de especificar detalhes nesta página, você pode escolher **Resumo** para usar as configurações padrão para o restante das opções de site secundário e ir diretamente para a página **Resumo** do assistente.  
 
-    > -   仅当熟悉此向导中的默认设置，并且它们是你想要使用的设置时，才使用此选项。  
-    > -   如果使用默认设置，则边界组与分发点无关。 因此，在配置含有辅助站点服务器的边界组之前，客户端不会将此辅助站点上安装的分发点用作内容源位置。  
+    > -   Use essa opção apenas quando estiver familiarizado com as configurações padrão do assistente e elas forem as configurações que você deseja usar.  
+    > -   Grupos de limites não são associados ao ponto de distribuição quando você usa as configurações padrão. Portanto, até que você configure grupos de limites que incluam o servidor do site secundário, os clientes não usarão o ponto de distribuição que está instalado no site secundário como um local de origem do conteúdo.  
 
-5.  在“安装源文件”  页上，选择辅助站点计算机如何获取用于安装该站点的源文件。  
+5.  Na página **Arquivos de Origem de Instalação** , escolha como o computador do site secundário obtém os arquivos de origem para instalar o site.  
 
-     使用网络或辅助站点计算机上存储的源文件时：  
+     Quando você usa arquivos de origem que são armazenados na rede ou armazenados no computador do site secundário:  
 
-    -   源文件位置必须包含一个“Redist”文件夹，内附以前使用安装程序下载程序下载的所有文件。  
+    -   O local do arquivo de origem deve incluir uma pasta chamada **Redist** que inclui todos os arquivos que foram baixados anteriormente usando o Downloader de Instalação.  
 
-    -   如果“Redist”中的所有文件都不可用，安装程序将无法安装辅助站点。  
+    -   Se qualquer um dos arquivos de **Redist** não estiver disponível, haverá falha na instalação do site secundário.  
 
-    -   辅助站点计算机的计算机帐户必须具有对源文件文件夹和共享的 **读取** 权限。  
+    -   A conta de computador do computador do site secundário deve ter permissões de **Leitura** para o compartilhamento e a pasta do arquivo de origem.  
 
-6.  在“SQL Server 设置”  页上，指定要使用的 SQL Server 版本，然后配置相关设置。  
+6.  Na página **Configurações do SQL Server** , especifique a versão do SQL Server a ser usada e defina as configurações relacionadas.  
 
     > [!NOTE]  
-    > 开始安装前，安装程序不会验证你在此页上输入的信息。 在继续之前，请验证这些设置。  
+    > A Instalação não valida as informações inseridas nesta página até que se inicie a instalação. Antes de prosseguir, verifique essas configurações.  
 
-     **在辅助站点计算机上安装和配置 SQL Express 的本地副本**  
+     **Instalar e configurar uma cópia local do SQL Express no computador do site secundário**  
 
-    -   **SQL Server 服务端口**：指定供 SQL Server Express 使用的 SQL Server 服务端口。 通常，此服务端口被配置为使用 TCP 端口 1433，但你可以配置其他端口。  
+    -   **Porta do Serviço SQL Server**: especifique a porta do serviço SQL Server para o SQL Server Express a ser usado. A porta de serviço geralmente é configurada para usar a porta TCP 1433, mas você pode configurar outra porta.  
 
-    -   **SQL Server Broker 端口**：指定供 SQL Server Express 使用的 SQL Server Service Broker (SSB) 端口。 通常，Service Broker 被配置为使用 TCP 端口 4022，但你可以配置其他端口。 必须指定其他站点/服务均未使用且防火墙限制均未阻止的有效端口。  
+    -   **Porta do SQL Server Broker**: especifique a porta do SSB (SQL Server Service Broker) a ser usada pelo SQL Server Express. O Service Broker geralmente é configurado para usar a porta TCP 4022, mas você pode configurar outra porta. É necessário especificar uma porta válida que nenhum outro site ou serviço esteja usando e que nenhuma restrição de firewall esteja bloqueando.  
 
     > [!IMPORTANT]  
-    > 当 Configuration Manager 安装 SQL Server Express 时，它会安装不带 service pack 的 SQL Server Express 2012：  
+    > Quando o Configuration Manager instala o SQL Server Express, ele instala o SQL Server Express 2012 sem service pack:  
 
-    > -   若要让辅助站点受到支持，必须在安装站点后将 SQL Server Express 2012 升级到[受支持的版本](/sccm/core/plan-design/configs/support-for-sql-server-versions#bkmk_SQLVersions)。
-    > -   此外，如果无法完成新辅助站点安装，但先完成了 SQL Server Express 2012 的安装，则必须先更新 SQL Server Express 实例，才能使 Configuration Manager 成功重试辅助站点安装。  
+    > -   Para que o site secundário tenha suporte, após a instalação, é necessário atualizar o SQL Server Express 2012 para [uma versão com suporte](/sccm/core/plan-design/configs/support-for-sql-server-versions#bkmk_SQLVersions).
+    > -   Além disso, se a instalação do novo site secundário falhar ao concluir, mas primeiro concluir a instalação do SQL Server Express 2012, você deverá atualizar essa instância do SQL Server Express antes que o Configuration Manager possa tentar novamente a instalação do site secundário com êxito.  
 
-     **使用现有的 SQL Server 实例**  
+     **Usar uma instância existente do SQL Server**  
 
-    -   **SQL Server FQDN**：查看运行 SQL Server 的计算机的 FQDN。 必须使用运行 SQL Server 的本地服务器托管辅助站点数据库，且此设置不可修改。  
+    -   **FQDN do SQL Server**: examine o FQDN do computador executando o SQL Server. É necessário usar um servidor local executando o SQL Server para hospedar o banco de dados do site secundário e não é possível modificar essa configuração.  
 
-    -   **SQL Server 实例**：指定要用作辅助站点数据库的 SQL Server 实例。 将此选项留空以使用默认实例。  
+    -   **Instância do SQL Server**: especifique a instância do SQL Server a ser usada como o banco de dados do site secundário. Deixe essa opção em branco para usar a instância padrão.  
 
-    -   **ConfigMgr 站点数据库名称**：指定要用于辅助站点数据库的名称。  
+    -   **Nome do banco de dados do site do ConfigMgr**: especifique o nome a ser usado para o banco de dados do site secundário.  
 
-    -   **SQL Server Broker 端口**：指定供 SQL Server 使用的 SQL Server Service Broker (SSB) 端口。 你必须指定没有其他站点或服务使用或没有防火墙限制阻止的有效端口。  
+    -   **Porta do SQL Server Broker**: especifique a porta do SSB (SQL Server Service Broker) a ser usada pelo SQL Server. É necessário especificar uma porta válida que nenhum outro site ou serviço esteja usando, e sem bloqueio por restrições de firewall.  
 
     > [!TIP]  
-    > 关于 System Center Configuration Manager 所支持的 SQL Server 版本的列表，请参阅[支持的 SQL Server 版本](../../../../core/plan-design/configs/support-for-sql-server-versions.md)。  
+    > Consulte [Versões do SQL Server com suporte](../../../../core/plan-design/configs/support-for-sql-server-versions.md) para obter uma lista das versões do SQL Server com suporte pelo System Center Configuration Manager.  
 
-7.  在“分发点”  页上，配置将在辅助站点服务器上安装的分发点的设置。  
+7.  Na página **Ponto de Distribuição** , defina as configurações para o ponto de distribuição que será instalado no servidor do site secundário.  
 
-     **必需设置：**  
+     **Configurações obrigatórias:**  
 
-    -   **指定客户端设备与分发点通信的方式**：选择 HTTP 或 HTTPS。  
+    -   **Especificar como os dispositivos cliente se comunicam com o ponto de distribuição**: escolha entre HTTP e HTTPS.  
 
-    -   **创建自签名证书或导入 PKI 客户端证书**：选择使用自签名证书（该证书允许从 Configuration Manager 客户端匿名连接到内容库）或者从 PKI 导入证书。  
+    -   **Criar um certificado autoassinado ou importar um certificado de cliente PKI**: escolha entre usar um certificado autoassinado (que possibilita também permitir conexões anônimas de clientes do Configuration Manager à biblioteca de conteúdo) ou importar um certificado de sua PKI.  
 
-         在分发点发送状态消息之前，此证书用于向管理点验证分发点。  
+         Esse certificado é usado para autenticar o ponto de distribuição para um ponto de gerenciamento antes que o ponto de distribuição envie mensagens de status.  
 
-         有关证书要求的信息，请参阅 [Configuration Manager 的 PKI 证书要求](https://technet.microsoft.com/library/gg699362.aspx)。  
+         Para obter informações sobre os requisitos de certificado, consulte [Requisitos de certificado PKI para o Configuration Manager](https://technet.microsoft.com/library/gg699362.aspx).  
 
-    **可选设置：**  
+    **Configurações opcionais:**  
 
-    -   **在 Configuration Manager 要求的情况下安装和配置 IIS**：选择此设置，让 Configuration Manager 在服务器上安装和配置 Internet 信息服务 (IIS)（如果尚未安装）。 必须在所有分发点上安装 IIS。  
+    -   **Instalar e configurar o IIS se exigido pelo Configuration Manager**: selecione esta configuração para permitir que o Configuration Manager instale e configure o IIS (Serviços de Informações da Internet) no servidor se ele ainda não estiver instalado. O IIS deve ser instalado em todos os pontos de distribuição.  
 
         > [!NOTE]  
-        > 虽然此设置是可选的，但必须先在服务器上安装 IIS 才能成功安装分发点。  
+        > Embora essa configuração seja opcional, o IIS deve ser instalado no servidor antes de um ponto de distribuição ser instalado com êxito.  
 
-    -   **启用和配置此分发点的 BranchCache**。  
+    -   **Habilitar e configurar o BranchCache para este ponto de distribuição**.  
 
-    -   **说明**。 这是分发点的易懂描述，可帮助理解。  
+    -   **Descrição**. Essa é uma descrição amigável do ponto de distribuição para ajudá-lo a reconhecê-lo.  
 
-    -   **为预留内容启用此分发点**。  
+    -   **Habilitar este ponto de distribuição para conteúdo pré-teste**.  
 
-8.  在“驱动器设置”  页上，指定辅助站点分发点的驱动器设置。  
+8.  Na página **Configurações de Unidade** , especifique as configurações da unidade para o ponto de distribuição do site secundário.  
 
-     可以为内容库和包共享分别配置最多两个磁盘驱动器。 但是，当前两个驱动器达到配置的驱动器空间预留量时，Configuration Manager 可使用其他驱动器。 在“驱动器设置”页中，可配置磁盘驱动器的优先级以及各磁盘驱动器上剩余的可用磁盘空间量。  
+     Você pode configurar até duas unidades de disco para a biblioteca de conteúdo e duas unidades de disco para o compartilhamento de pacote. No entanto, o Configuration Manager pode usar outras unidades quando as duas primeiras atingirem a reserva de espaço de unidade configurada. A página **Configurações de Unidade** é o local em que você configura a prioridade das unidades de disco e a quantidade de espaço livre em disco a permanecer em cada unidade de disco.  
 
-    -   **保留的驱动器空间 (MB)**：在 Configuration Manager 选择其他驱动器并对其继续执行复制过程之前，为此设置配置的值会确定驱动器上的可用空间量。 内容文件可以跨多个驱动器。  
+    -   **Reserva de espaço de unidade (MB)**: o valor que você define para esta configuração determina a quantidade de espaço livre na unidade antes que o Configuration Manager escolha uma unidade diferente e continue o processo de cópia nessa unidade. Arquivos de conteúdo podem abranger várias unidades.  
 
-    -   **内容位置**：指定内容库和包共享的内容位置。 Configuration Manager 会将内容复制到主内容位置，直到可用空间量达到指定的“保留的驱动器空间 (MB)”值。
+    -   **Locais de Conteúdo**: Especifique os locais de conteúdo para a biblioteca de conteúdo e o compartilhamento de pacotes. O Configuration Manager copia conteúdo para o local de conteúdo primário até que a quantidade de espaço livre atinja o valor especificado para **Reserva de espaço de unidade (MB)**.
 
-     默认情况下，内容位置设置为“自动” 。 主内容位置设置为安装时具有最多磁盘空间的磁盘驱动器。 辅助位置设置为次于主驱动器但具有最多可用磁盘空间的磁盘驱动器。 当主驱动器和辅助驱动器达到保留的驱动器空间时，Configuration Manager 将选择另一个具有最多可用磁盘空间的可用驱动器，并继续执行复制过程。  
+     Por padrão, os locais de conteúdo são definidos para **Automático**. O local do conteúdo primário é definido como a unidade de disco com mais espaço em disco no momento da instalação. O local secundário é definido como a unidade de disco que tem o maior espaço em disco após a unidade primária. Quando as unidades primárias e secundárias atingirem a reserva de espaço de unidade, o Configuration Manager selecionará outra unidade disponível com o maior espaço em disco e continuará o processo de cópia.  
 
-9. 在“内容验证”  页上，指定是否验证分发点上的内容文件的完整性。  
+9. Na página **Validação de Conteúdo** , especifique se a integridade dos arquivos de conteúdo no ponto de distribuição deve ser validada.  
 
-    -   如果按计划启用内容验证，Configuration Manager 将在计划的时间启动过程，并且会验证分发点上的所有内容。  
+    -   Quando você habilita a validação de conteúdo segundo um cronograma, o Configuration Manager inicia o processo no horário agendado e todo o conteúdo no ponto de distribuição é verificado.  
 
-    -   你还可以配置“内容验证优先级” 。  
+    -   Também é possível configurar a **Prioridade de validação de conteúdo**.  
 
-    -   若要查看内容验证过程的结果，请在 Configuration Manager 控制台中，导航到“监视” > “分发状态” > “内容状态”。 将显示每种包类型（例如，应用程序、软件更新包以及启动映像）的内容。  
+    -   Para exibir os resultados do processo de validação de conteúdo, no console do Configuration Manager, navegue até **Monitoramento** > **Status da Distribuição** > **Status do Conteúdo**. O conteúdo de cada tipo de pacote (por exemplo, aplicativo, pacote de atualização de software e imagem de inicialização) é exibido.  
 
-10. 在“边界组”页上，管理此分发点分配到的边界组：  
+10. Na página **Grupos de Limite**, gerencie os grupos de limite aos quais esse ponto de distribuição está atribuído:  
 
-    -   在内容部署过程中，客户端必须位于与分发点关联的边界组中，才能将其用作内容的源位置。  
+    -   Durante a implantação do conteúdo, os clientes devem estar em um grupo de limites associado ao ponto de distribuição para usá-lo como um local de origem para conteúdo.  
 
-    -   你可以选择“允许内容源位置回退”  选项，以便在没有首选分发点可用时让这些边界组外部的客户端回退并使用分发点作为内容的源位置。  
+    -   Você pode selecionar a opção **Permitir local de origem de fallback para conteúdo** para permitir que clientes fora desses grupos de limites façam fallback e usem o ponto de distribuição como um local de origem para conteúdo quando não houver disponíveis pontos de distribuição preferenciais.  
 
-     有关首选分发点的详细信息，请参阅[内容管理的基本概念](../../../../core/plan-design/hierarchy/fundamental-concepts-for-content-management.md)主题。  
+     Para obter informações sobre os pontos de distribuição preferenciais, consulte o tópico [Conceitos fundamentais para o gerenciamento de conteúdo](../../../../core/plan-design/hierarchy/fundamental-concepts-for-content-management.md).  
 
-11. 在“摘要”页上，验证设置，然后选择“下一步”以安装辅助站点。 当向导显示“完成”页面时，可以关闭向导。 辅助站点安装将在后台继续进行。  
+11. Na página **Resumo**, verifique as configurações e escolha **Avançar** para instalar o site secundário. Quando o assistente apresentar a página **Conclusão**, você poderá fechar o assistente. A instalação do site secundário continua em segundo plano.  
 
 
-### <a name="bkmk_verify"></a>验证辅助站点安装状态  
+### <a name="bkmk_verify"></a> Para verificar o status da instalação do site secundário  
 
-1.  在 Configuration Manager 控制台中，导航到“管理” > “站点配置” > “站点”。  
+1.  No console do Configuration Manager, navegue até **Administração** > **Configuração de Site** > **Sites**.  
 
-2.  选择要安装的辅助站点服务器，然后选择“显示安装状态”。  
+2.  Selecione o servidor do site secundário que você está instalando e escolha **Mostrar Status da Instalação**.  
 
     > [!TIP]  
-    > 同时安装多个辅助站点时，必备组件检查程序一次针对一个站点运行，且必须在完成一个站点后才可开始检查下一站点。  
+    > Quando você instala mais de um site secundário de cada vez, o Verificador de Pré-requisitos executado em um único site por vez e deve ser concluído antes da verificação do próximo site.  

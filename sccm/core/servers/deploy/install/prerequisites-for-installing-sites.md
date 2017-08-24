@@ -1,6 +1,6 @@
 ---
-title: "站点的先决条件 | Microsoft Docs"
-description: "了解安装不同类型的 System Center Configuration Manager 站点所需的先决条件。"
+title: "Pré-requisitos de sites | Microsoft Docs"
+description: "Saiba mais sobre os pré-requisitos para instalar os diferentes tipos de sites do System Center Configuration Manager."
 ms.custom: na
 ms.date: 7/31/2017
 ms.prod: configuration-manager
@@ -17,113 +17,113 @@ manager: angrobe
 ms.openlocfilehash: d46a8b66ace45d25da9d86f2e91b19ae1d6875ab
 ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
 ms.translationtype: HT
-ms.contentlocale: zh-CN
+ms.contentlocale: pt-BR
 ms.lasthandoff: 08/07/2017
 ---
-# <a name="prerequisites-for-installing-system-center-configuration-manager-sites"></a>安装 System Center Configuration Manager 站点的先决条件
+# <a name="prerequisites-for-installing-system-center-configuration-manager-sites"></a>Pré-requisitos para instalar sites do System Center Configuration Manager
 
-*适用范围：System Center Configuration Manager (Current Branch)*
+*Aplica-se a: System Center Configuration Manager (Branch Atual)*
 
-在开始站点安装之前，最好先了解安装不同类型的 System Center Configuration Manager 站点的先决条件。
+Antes de começar a instalação do site, é uma boa ideia aprender sobre os pré-requisitos para instalar os diferentes tipos de sites do System Center Configuration Manager.
 
-## <a name="primary-sites-and-the-central-administration-site"></a>主站点和管理中心站点
-以下先决条件适用于将管理中心站点安装为层次结构的第一个站点、安装独立主站点或子主站点。 如果在层次结构扩展期间安装管理中心站点，请参阅本主题中的[扩展独立主站点](../../../../core/servers/deploy/install/prerequisites-for-installing-sites.md#bkmk_expand)。
+## <a name="primary-sites-and-the-central-administration-site"></a>Site de administração central e sites primários
+Os pré-requisitos a seguir se aplicam à instalação de um site de administração central como o primeiro site de uma hierarquia, instalação de um site primário autônomo ou instalação de um site primário filho. Se você estiver instalando um site de administração central como parte de uma expansão da hierarquia, consulte [Expansão de um site primário autônomo](../../../../core/servers/deploy/install/prerequisites-for-installing-sites.md#bkmk_expand) neste tópico.
 
-###  <a name="bkmk_PrereqPri"></a>安装主站点或管理中心站点的先决条件  
+###  <a name="bkmk_PrereqPri"></a> Pré-requisitos para instalar um site primário ou um site de administração central  
 
--   安装站点的用户帐户必须具有以下权限：  
+-   A conta de usuário que instala o site deve ter os seguintes direitos:  
 
-    -   站点服务器计算机上的**管理员**权限  
-    -   各计算机上将托管**站点数据库**或站点的 **SMS 提供程序**实例的**管理员**  
-    -   托管站点数据库的 SQL Server 实例上的 **Sysadmin**  
-
-        > [!IMPORTANT]  
-        >  安装完成后，运行安装程序的用户帐户和站点服务器计算机帐户都必须保留 SQL Server 的 sysadmin 权限。 不要从这些帐户中删除 sysadmin 权限。  
-
--   如果安装的是主站点，则需要下列附加权限：  
-    -  要安装初始管理点和分发点的其他计算机上的**管理员**权限（若不在站点服务器上）  
-
--   如果在管理中心站点下安装新的子级主站点，需要下列附加权限：  
-
-    -   托管管理中心站点的计算机上的**管理员**权限  
-
-    -   Configuration Manager 中基于角色的管理权限，这些权限相当于**基础结构管理员**或**完全权限管理员**的安全角色  
-
--   必须使用正确的安装介质（源文件），并从该位置运行安装程序。 若要了解用于安装不同站点类型的适当源文件，请参阅[安装站点的准备工作](../../../../core/servers/deploy/install/prepare-to-install-sites.md)主题中的[不同类型站点的安装选项](../../../../core/servers/deploy/install/prepare-to-install-sites.md#bkmk_options)。
-
--   站点服务器计算机必须可通过以下某种方式访问更新的 Microsoft 安装程序文件：
-    -  开始安装前，可通过[安装程序下载程序](../../../../core/servers/deploy/install/setup-downloader.md)在本地网络上下载这些文件并存储其副本。
-    -  如果这些文件的本地副本不可用，站点服务器必须具有 Internet 访问权限，以便可在安装过程中从 Microsoft 下载这些文件。
-
-- 在扩展安装了服务连接点站点系统角色的独立主站点之前，必须卸载服务连接点。 层次结构中仅允许存在此角色的一个实例，并且只允许在层次结构的顶层站点使用。 你将有机会在管理中心站点的安装过程中重新安装角色。
-- 站点服务器和站点数据库计算机必须满足所有先决条件配置。 在启动安装程序之前，可[手动运行必备组件检查程序](../../../../core/servers/deploy/install/prerequisite-checker.md)以识别并修复问题。  
-
-
-### <a name="bkmk_expand"></a> 扩展独立主站点的先决条件
-在你将独立主站点扩展到带管理中心站点的层次结构之前，独立主站点必须满足下列先决条件：
-
--   **必须使用与独立主站点版本匹配的 CD.Latest 文件夹（其中包含源文件）中的介质来安装新的管理中心站点安装**
-
- 要确保版本匹配，请使用独立主站点上 [CD.Latest 文件夹](/sccm/core/servers/manage/the-cd.latest-folder)中找到的源文件。
-
- 若要详细了解用于安装不同站点的适当源文件，请参阅[安装站点的准备工作](../../../../core/servers/deploy/install/prepare-to-install-sites.md)主题中的[不同类型站点的安装选项](../../../../core/servers/deploy/install/prepare-to-install-sites.md#bkmk_options)。
-
-
--   **无法将独立主站点配置为从另一 Configuration Manager 层次结构迁移数据**  
-
-     必须停止从其他 Configuration Manager 层次结构活动迁移到独立主站点，并删除迁移的所有配置。 这包括尚未完成的迁移作业、数据收集以及活动源层次结构的配置。  
-
-     这是必须的，因为迁移操作由层次结构的顶层站点执行，并且在扩展独立主站点时，迁移配置不会传输到管理中心站点。  
-
-     扩展独立主站点后，如果在主站点上重新配置迁移，管理中心站点将执行与迁移相关的操作。 若要深入了解如何配置迁移，请参阅[配置源层次结构和源站点以迁移到 System Center Configuration Manager](../../../../core/migration/configuring-source-hierarchies-and-source-sites-for-migration.md)。  
-
--   **要托管新管理中心站点的计算机的计算机帐户必须隶属于独立主站点上的“管理员”用户组**  
-
-     若要成功扩展独立主站点，新管理中心站点的计算机帐户必须具有独立主站点的“管理员”权限。 仅在站点扩展期间需要。 站点扩展完成后，可从主站点的用户组中删除该帐户。  
-
--   **运行安装程序以安装新管理中心站点的用户帐户必须在独立主站点上具有基于角色的管理权限**  
-
-     若要在站点扩展期间安装管理中心站点，必须在独立主站点的基于角色的管理中，将运行安装程序以安装管理中心站点的用户帐户定义为“完全权限管理员”或“基础结构管理员”。  
-
--   **必须先从独立主站点中卸载下列站点系统角色才能扩展站点：**  
-
-    -   资产智能同步点  
-    -   Endpoint Protection 点  
-    -   服务连接点  
-
-   仅在层次结构的顶层站点中才会支持这些站点系统角色。 因此，必须先卸载这些站点系统角色才能扩展独立主站点。 在扩展站点后，你可以在管理中心站点重新安装这些站点系统角色。  
-
-    所有其他站点系统角色仍然可以安装在主站点中。  
-
--   **在独立主站点和要安装管理中心站点的计算机之间，SQL Server Service Broker (SSB) 的端口必须打开：**  
-
-     若要在管理中心站点和主站点之间成功复制数据，Configuration Manager 需要在两个站点之间打开端口以供 SSB 使用。 在安装管理中心站点并扩展独立主站点时，先决条件检查不会验证为 SSB 指定的端口是否在主站点上打开。  
-
-**配置 Azure 服务后的已知问题：**  
-将以下任一 Azure 服务与 Configuration Manager 配合使用，并计划扩展站点时，扩展站点后必须删除指向该服务的连接并重新创建连接。
-
-服务：  
--       [Operations Manager Suite](/sccm/core/clients/manage/sync-data-microsoft-operations-management-suite)   (OMS)
--       [升级就绪情况](/sccm/core/clients/manage/upgrade/upgrade-analytics)
--       [适用于企业的 Windows 应用商店](/sccm/apps/deploy-use/manage-apps-from-the-windows-store-for-business)
-
-请执行以下步骤，解决此问题：
- 1.    在 Configuration Manager 控制台中，从 Azure 服务节点删除 Azure 服务。
- 2.    在 Azure 门户中，从 Azure Active Directory 租户节点删除与该服务关联的租户。  这还会删除与该服务关联的 Azure AD Web 应用。  
- 3.   重新配置与 Azure 服务的连接，用于 Configuration Manager。
-
-
-## <a name="bkmk_secondary"></a>辅助站点
-以下是安装辅助站点的先决条件：
--   在 Configuration Manager 控制台中配置辅助站点安装的管理员必须具有基于角色的管理权限，且这些权限相当于“基础结构管理员”或“完全权限管理员”的安全角色。  
--   父级主站点的计算机帐户必须是辅助站点服务器计算机上的**管理员**。  
--   当辅助站点使用以前安装的 SQL Server 实例承载辅助站点数据库时：  
-
-    -   父级主站点的 **计算机帐户** 必须具有对辅助站点服务器计算机上 SQL Server 实例的 **sysadmin** 权限。  
-
-    -   辅助站点服务器计算机的 **本地系统** 帐户必须具有对辅助站点服务器计算机上 SQL Server 实例的 **sysadmin** 权限。  
+    -   **Administrador** no computador do servidor do site  
+    -   **Administrador** em cada computador que hospedará o **banco de dados do site** ou uma instância do **Provedor de SMS** para o site  
+    -   **Sysadmin** na instância do SQL Server que hospeda o banco de dados do site  
 
         > [!IMPORTANT]  
-        >  安装完成后，两个帐户都必须保留 SQL Server 的 sysadmin 权限。 不要从这些帐户中删除 sysadmin 权限。  
+        >  Quando a Instalação for concluída, tanto a conta do usuário que executa a Instalação quanto a conta do computador do servidor do site devem manter os direitos de sysadmin no SQL Server. Não remova os direitos sysadmin dessas contas.  
 
--   辅助站点服务器计算机必须满足所有必备配置，其中包括 SQL Server 及管理点和分发点的默认站点系统角色。  
+-   Se você estiver instalando um site primário, precisará dos seguintes direitos adicionais:  
+    -  **Administrador** em computadores adicionais nos quais você instalará o ponto de gerenciamento inicial e o ponto de distribuição, se não estiver no servidor do site  
+
+-   Se você estiver instalando um novo site primário filho abaixo de um site de administração central, precisará dos seguintes direitos adicionais:  
+
+    -   **Administrador** no computador que hospeda o site de administração central  
+
+    -   Direitos de administração baseada em funções no Configuration Manager equivalentes à função de segurança de **Administrador de Infraestrutura** ou **Administrador Completo**  
+
+-   É necessário usar a mídia de instalação correta (arquivos de origem) e executar a Instalação nesse local. Para obter informações sobre os arquivos de origem corretos a serem usados para instalar diferentes tipos de sites, consulte [Opções de instalação de diferentes tipos de sites](../../../../core/servers/deploy/install/prepare-to-install-sites.md#bkmk_options), no tópico [Preparar para instalar sites](../../../../core/servers/deploy/install/prepare-to-install-sites.md).
+
+-   O computador do servidor do site deve ter acesso aos arquivos de Instalação atualizados da Microsoft, de uma das seguintes maneiras:
+    -  Antes de iniciar a instalação, será possível baixar e armazenar uma cópia desses arquivos em sua rede local usando o [Downloader de Instalação](../../../../core/servers/deploy/install/setup-downloader.md).
+    -  Se uma cópia local desses arquivos não estiver disponível, o servidor do site deverá ter acesso à Internet para que ele possa baixar esses arquivos da Microsoft durante a instalação.
+
+- Para expandir um site primário autônomo que tenha uma função do sistema de sites de ponto de conexão de serviço instalada, você deve desinstalar o ponto de conexão de serviço. Apenas uma instância dessa função é permitida em uma hierarquia, sendo permitida somente no site da camada superior da hierarquia. Você terá a oportunidade de reinstalar a função durante a instalação do site de administração central.
+- O servidor do site e os computadores de banco de dados do site devem atender a todas as configurações de pré-requisito. Antes de iniciar a Instalação, será possível [executar manualmente o Verificador de Pré-requisitos](../../../../core/servers/deploy/install/prerequisite-checker.md) para identificar e corrigir problemas.  
+
+
+### <a name="bkmk_expand"></a> Pré-requisitos para expandir um site primário autônomo
+Um site primário autônomo deve atender aos seguinte pré-requisitos para que você possa expandi-lo para uma hierarquia com um site de administração central:
+
+-   **É necessário instalar o novo site de administração central usando mídia de um CD. A última pasta (que contém os arquivos de origem) que corresponde à versão do site primário autônomo**
+
+ Para garantir a correspondência de versões, use os arquivos de origem encontrados na [pasta CD.Latest](/sccm/core/servers/manage/the-cd.latest-folder) no site primário autônomo.
+
+ Para obter mais informações sobre os arquivos de origem corretos a serem usados para instalar diferentes sites, consulte [Opções de instalação de diferentes tipos de sites](../../../../core/servers/deploy/install/prepare-to-install-sites.md#bkmk_options), no tópico [Preparar para instalar sites](../../../../core/servers/deploy/install/prepare-to-install-sites.md).
+
+
+-   **O site primário autônomo não pode ser configurado para migrar dados de outra hierarquia do Configuration Manager**  
+
+     É necessário interromper a migração ativa para o site primário autônomo de outras hierarquias do Configuration Manager e remover todas as configurações de migração. Isso inclui trabalhos de migração que não foram concluídos, coleta de dados e a configuração da hierarquia de origem ativa.  
+
+     Isso é necessário porque as operações de migração são realizadas pelo site de camada superior da hierarquia e as configurações para migração não são transferidas ao site de administração central quando você expande um site primário autônomo.  
+
+     Depois de expandir o site primário autônomo, se você reconfigurar a migração no site primário, o site de administração central executará as operações relacionadas à migração. Para obter mais informações sobre como configurar a migração, consulte [Configurar hierarquias de origem e sites de origem para migração para o System Center Configuration Manager](../../../../core/migration/configuring-source-hierarchies-and-source-sites-for-migration.md).  
+
+-   **A conta de computador do computador que hospedará o novo site de administração central deve ser um membro do grupo de usuários Administradores no site primário autônomo**  
+
+     Para expandir com êxito o site primário autônomo, a conta de computador do novo site de administração central deve ter direitos de **Administrador** no site primário autônomo. Isso é necessário somente durante a expansão do site. A conta poderá ser removida do grupo de usuários no site primário quando a expansão do site for concluída.  
+
+-   **A conta de usuário que executa a Instalação do novo site de administração central deve ter direitos de administração baseada em função no site primário autônomo**  
+
+     Para instalar um site de administração central como parte de uma expansão de site, a conta de usuário que executa a instalação do site de administração central deve ser definida em administração baseada em função no site primário autônomo como um **Administrador Completo** ou um **Administrador de Infraestrutura**.  
+
+-   **Para expandir o site, será necessário desinstalar as seguintes funções do sistema de site do site primário autônomo:**  
+
+    -   Ponto de sincronização do Asset Intelligence  
+    -   Ponto do Endpoint Protection  
+    -   Ponto de Conexão de Serviço  
+
+   Essas funções do sistema de site têm suporte apenas no site de camada superior da hierarquia. Portanto, é necessário desinstalar essas funções do sistema de sites antes de expandir o site primário autônomo. Depois de expandir o site, você poderá reinstalar essas funções do sistema de site no site de administração central.  
+
+    Todas as outras funções do sistema de site podem permanecer instaladas no site primário.  
+
+-   **A porta para o SQL SSB (Server Service Broker) entre o site primário autônomo e o computador que instalará o site de administração central deve estar aberta**  
+
+     Para replicar dados de maneira bem sucedida entre o site de administração central e um site primário, o Configuration Manager requer uma porta aberta entre os dois sites para o SSB usar. Ao instalar um site de administração central e expandir um site primário autônomo, a verificação de pré-requisitos não verifica se a porta especificada para o SSB está aberta no site primário.  
+
+**Problemas conhecidos quando você configurou os serviços do Azure:**  
+Quando você usar um dos seguintes serviços do Azure com o Configuration Manager e planejar expandir um site, depois de expandi-lo, será necessário remover e recriar a conexão para esse serviço.
+
+Serviços:  
+-       [OMS](/sccm/core/clients/manage/sync-data-microsoft-operations-management-suite) (Operations Manager Suite)
+-       [Upgrade Readiness](/sccm/core/clients/manage/upgrade/upgrade-analytics)
+-       [Windows Store para Empresas](/sccm/apps/deploy-use/manage-apps-from-the-windows-store-for-business)
+
+Siga as etapas a seguir para resolver esse problema:
+ 1.    No console do Configuration Manager, exclua o serviço do Azure do nó de serviços do Azure.
+ 2.    No Portal do Azure, exclua o locatário associado ao serviço do nó de locatários do Azure Active Directory.  Isso também exclui o aplicativo Web do Azure AD associado ao serviço.  
+ 3.   Reconfigure a conexão para o serviço do Azure para uso com o Configuration Manager.
+
+
+## <a name="bkmk_secondary"></a> Sites secundários
+A seguir encontram-se os pré-requisitos para instalar sites secundários:
+-   O administrador que configura a instalação do site secundário no console do Configuration Manager deve ter direitos de administração baseada em funções equivalentes à função de segurança **Administrador de Infraestrutura** ou **Administrador Completo**.  
+-   A conta de computador do site primário pai deve ser de **Administrador** no computador do servidor do site secundário.  
+-   Quando o site secundário usa uma instância do SQL Server previamente instalada para hospedar o banco de dados do site secundário:  
+
+    -   A **conta de computador** do site primário pai deve ter direitos **sysadmin** na instância do SQL Server no computador do servidor do site secundário.  
+
+    -   A conta **Sistema Local** do computador do servidor do site secundário deve ter direitos **sysadmin** na instância do SQL Server no computador do servidor do site secundário.  
+
+        > [!IMPORTANT]  
+        >  Quando a Instalação terminar, ambas as contas devem manter os direitos sysadmin no SQL Server. Não remova os direitos sysadmin dessas contas.  
+
+-   O computador do servidor do site secundário deve cumprir todas as configurações de pré-requisito, que inclui o SQL Server e as funções padrão do sistema de sites do ponto de gerenciamento e do ponto de distribuição.  

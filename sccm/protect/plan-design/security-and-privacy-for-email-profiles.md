@@ -1,6 +1,6 @@
 ---
-title: "电子邮件配置文件安全和隐私 | Microsoft Docs"
-description: "了解在 System Center Configuration Manager 中管理设备的电子邮件配置文件的最佳安全方案。"
+title: "Segurança e privacidade do perfil de email | Microsoft Docs"
+description: "Saiba mais sobre as práticas recomendadas de segurança para gerenciar perfis de email para dispositivos no System Center Configuration Manager."
 ms.custom: na
 ms.date: 12/28/2016
 ms.prod: configuration-manager
@@ -18,21 +18,21 @@ manager: angrobe
 ms.openlocfilehash: 17707f931a4fa58b225ce14f04c2a19648585bc4
 ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
 ms.translationtype: HT
-ms.contentlocale: zh-CN
+ms.contentlocale: pt-BR
 ms.lasthandoff: 08/07/2017
 ---
-# <a name="security-and-privacy-for-email-profiles-in-system-center-configuration-manager"></a>System Center Configuration Manager 中电子邮件配置文件的安全和隐私
+# <a name="security-and-privacy-for-email-profiles-in-system-center-configuration-manager"></a>Segurança e privacidade de perfis de email no System Center Configuration Manager
 
-*适用范围：System Center Configuration Manager (Current Branch)*
+*Aplica-se a: System Center Configuration Manager (Branch Atual)*
 
-## <a name="security-best-practices-for-email-profiles"></a>电子邮件配置文件的最佳安全方案  
- 在为设备管理电子邮件配置文件时，请使用下列最佳安全方案。  
+## <a name="security-best-practices-for-email-profiles"></a>Práticas recomendadas de segurança para perfis de email  
+ Use as seguintes práticas recomendadas de segurança ao gerenciar perfis de email para dispositivos.  
 
-|最佳安全方案|更多信息|  
+|Prática recomendada de segurança|Mais informações|  
 |----------------------------|----------------------|  
-|请尽可能选择电子邮件基础结构和客户端操作系统可支持的最安全选项。|电子邮件配置文件提供了一种简便的方法来集中分发和管理你的设备已支持的电子邮件设置。 Configuration Manager 不会添加电子邮件功能。<br /><br /> 确定、实施和遵循已为你的设备和电子邮件基础结构推荐的任何最佳安全方案。|  
+|Sempre que possível, escolha as opções mais seguras às quais sua infraestrutura de email e seus sistemas operacionais cliente podem dar suporte.|Perfis de email fornecem um método conveniente para distribuir e gerenciar configurações de email que já suportam os dispositivos centralmente. O Configuration Manager não adiciona a funcionalidade de email.<br /><br /> Identifique, implemente e siga as práticas recomendadas de segurança que foram sugeridas para os dispositivos e a infraestrutura de email.|  
 
-## <a name="privacy-information-for-email-profiles"></a>电子邮件配置文件的隐私信息  
- 默认情况下，设备不评估电子邮件配置文件。 此外，你必须配置电子邮件配置文件，然后将它们部署到用户。  
+## <a name="privacy-information-for-email-profiles"></a>Informações de privacidade para perfis de email  
+ Por padrão, os dispositivos não avaliam perfis de email. Além disso, você deve configurar os perfis de email e implantá-los para os usuários.  
 
- 在配置电子邮件配置文件之前，请考虑隐私要求。  
+ Para configurar perfis de email, considere seus requisitos de privacidade.  

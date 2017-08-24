@@ -1,6 +1,6 @@
 ---
-title: "测试数据库更新 | Microsoft Docs"
-description: "安装 Configuration Manager 更新时测试站点数据库升级。"
+title: "Testar a atualização do banco de dados | Microsoft Docs"
+description: "Teste a atualização do banco de dados do site ao instalar as atualizações para o Configuration Manager."
 ms.custom: na
 ms.date: 06/13/2017
 ms.prod: configuration-manager
@@ -17,54 +17,54 @@ manager: angrobe
 ms.openlocfilehash: 6b76c97cd205bb02683a7bfa1eb378471a75551d
 ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
 ms.translationtype: HT
-ms.contentlocale: zh-CN
+ms.contentlocale: pt-BR
 ms.lasthandoff: 08/07/2017
 ---
-# <a name="test-the-database-upgrade-when-installing-an-update"></a>安装更新时测试数据库升级
+# <a name="test-the-database-upgrade-when-installing-an-update"></a>Testar a atualização do banco de dados ao instalar uma atualização
 
-*适用范围：System Center Configuration Manager (Current Branch)*
+*Aplica-se a: System Center Configuration Manager (Branch Atual)*
 
-本主题中的信息可以帮助你在为 Configuration Manager 的当前分支安装控制台内更新之前，运行测试数据库升级。 但是，测试升级不再是必需的或建议的步骤，除非你的数据库处于可疑状态，或由 Configuration Manager 未显式支持的自定义项进行了修改。
+As informações neste tópico podem ajudá-lo a executar uma atualização de banco de dados de teste antes de instalar uma atualização no console para a ramificação atual do Configuration Manager. No entanto, a atualização de teste não é mais uma etapa necessária ou recomendável, a menos que seu banco de dados seja suspeito ou esteja modificado por personalizações que não tenham suporte explícito do Configuration Manager.
 
-## <a name="do-i-need-to-run-a-test-upgrade"></a>是否需要运行测试升级？
-由于 System Center Configuration Manager 引入了更改，可能会弃用此升级测试。 这些更改简化了将生产环境更新为较新版本的过程和速度。 这种重新设计是为了帮助客户在安装每个新更新时保持最新状态，并将风险级别和运营开销保持在较低水平。
+## <a name="do-i-need-to-run-a-test-upgrade"></a>É necessário executar uma atualização de teste?
+A substituição desse teste de atualização é possibilitada devido a alterações que foram introduzidas com o System Center Configuration Manager. Essas alterações simplificam o processo e a velocidade pela qual um ambiente de produção pode ser atualizado para versões mais recentes. Essa reestruturação foi feita para ajudar os clientes a se manterem atualizados com menos risco e menos sobrecarga operacional durante a instalação de cada nova atualização.
 
-这些更改涉及如何安装更新，包括无需运行站点恢复即可自动回滚失败的更新的逻辑。 这些更改实现了使用控制台来管理更新安装，且包括[重试失败更新的安装](/sccm/core/servers/manage/install-in-console-updates#bkmk_retry)选项。
+Há alterações para o modo como as atualizações são instaladas, incluindo a lógica que reverterá automaticamente uma atualização com falha sem a necessidade de executar uma recuperação de site. Essas alterações permitem o uso do console para gerenciar instalações de atualização e incluem uma opção para [repetir a instalação de uma atualização com falha](/sccm/core/servers/manage/install-in-console-updates#bkmk_retry).
 
 > [!TIP]
-> 从较旧的产品（如 System Center 2012 Configuration Manager）升级到 System Center Configuration Manager 时，[测试数据库升级仍是建议的步骤](/sccm/core/servers/deploy/install/upgrade-to-configuration-manager#a-namebkmktesta-test-the-site-database-upgrade)。
+> Quando você atualizar para o System Center Configuration Manager de um produto mais antigo, como o System Center 2012 Configuration Manager, [as atualizações de banco de dados de teste continuarão sendo uma etapa recomendada](/sccm/core/servers/deploy/install/upgrade-to-configuration-manager#a-namebkmktesta-test-the-site-database-upgrade).
 
-如果你仍计划在安装控制台内更新时测试站点数据库的升级，可使用以下信息作为对[有关安装控制台内更新的指导](/sccm/core/servers/manage/install-in-console-updates#a-namebkmkinstalla-install-in-console-updates)的补充。
+Se quiser planejar para testar a atualização de um banco de dados do site quando você instala uma atualização no console, as informações a seguir complementam a [orientação sobre como instalar uma atualização no console](/sccm/core/servers/manage/install-in-console-updates#a-namebkmkinstalla-install-in-console-updates).
 
-## <a name="prepare-to-run-a-test-database-upgrade"></a>准备运行测试数据库升级  
-在层次结构中安装新的更新（如更新 1702）之前，可以测试站点数据库的升级。
+## <a name="prepare-to-run-a-test-database-upgrade"></a>Preparar para executar uma atualização de banco de dados de teste  
+Antes de instalar uma nova atualização em sua hierarquia, como a atualização para a versão 1702, você pode testar a atualização de seu banco de dados do site.
 
-若要运行升级测试，请从运行你要更新到的 Configuration Manager 版本的站点的 [CD.Latest 文件夹](/sccm/core/servers/manage/the-cd.latest-folder)的源文件中使用 Configuration Manager 安装程序。 此要求意味着要对 1702 更新测试数据库更新，必须考虑以下事项：
--   必须至少有一个运行版本 1702 的站点，这样你可以从中获取该 CD.Latest 文件夹。
--   如果你没有用于运行所需版本的站点，请考虑在实验室环境中安装站点，然后将该站点更新到新版本。 这将使用正确版本的源文件创建 CD.Latest 文件夹。
+Para executar o teste de atualização, use a instalação do Configuration Manager dos arquivos de origem da [pasta CD.Latest](/sccm/core/servers/manage/the-cd.latest-folder) de um site que executa a versão do Configuration Manager para a qual você está atualizando. Esse requisito significa que, para testar a atualização do banco de dados para atualização 1702:
+-   Você deve ter pelo menos um site que executa a versão 1702 do qual você pode obter essa pasta CD.Latest.
+-   Se você não tiver um site que executa a versão necessária, instale um site em um ambiente de laboratório e, em seguida, atualize o site para a nova versão. Isso cria a pasta CD.Latest com a versão correta dos arquivos de origem.
 
-针对你还原到 SQL Server 独立实例的站点数据库的备份运行升级测试。  使用 testdbupgrade 命令行开关从 CD.Latest 文件夹运行安装程序以测试还原了数据库副本的升级。 测试升级完成后，将放弃升级后的数据库。 它不能由 Configuration Manager 站点使用。
+O teste de atualização é executado em um backup do seu banco de dados do site que você restaurou para uma instância separada do SQL Server.  Execute a Instalação a partir da pasta **CD.Latest** com a opção da linha de comando **testdbupgrade** para testar a atualização que restaurou a cópia do banco de dados. Após a atualização de teste ser concluída, o banco de dados atualizado será descartado. Ele não pode ser usado por um site do Configuration Manager.
 
-如果更新安装失败，应该不需要恢复站点。 但可以从控制台中重试更新的安装。
+Se a instalação da atualização falhar, você não precisará recuperar o site. Em vez disso, você pode repetir a instalação da atualização de dentro do console.
 
-##  <a name="run-the-test-upgrade"></a>运行测试升级    
-1.  使用 Configuration Manager 安装程序以及运行你计划更新到的版本的站点的 CD.Latest 文件夹中的源文件。  
+##  <a name="run-the-test-upgrade"></a>Executar a atualização de teste    
+1.  Use a Instalação do Configuration Manager e os arquivos de origem da pasta **CD.Latest** de um site que executa a versão para a qual você planeja atualizar.  
 
-2.  将 CD.Latest 文件夹复制到要用于运行测试数据库升级的 SQL Server 实例上的某个位置。
+2.  Copie a pasta **CD.Latest** para um local na instância do SQL Server que você usará para executar a atualização do banco de dados de teste.
 
-3.  为要测试升级的站点数据库创建备份。 接下来，将数据库的副本还原到未托管 Configuration Manager 站点的 SQL Server 实例。 该 SQL Server 实例使用的 SQL Server 版本必须与站点数据库相同。  
+3.  Crie um backup do banco de dados do site que você deseja testar a atualização. Em seguida, restaure uma cópia do banco de dados para uma instância do SQL Server que não hospede um site do Configuration Manager. A instância do SQL Server deve usar a mesma edição do SQL Server que seu banco de dados do site.  
 
-4.  还原数据库副本之后，从包含要更新到的版本的源文件的 CD.Latest 文件夹中运行安装程序。 运行安装程序时，使用 **/TESTDBUPGRADE** 命令行选项。 如果托管数据库副本的 SQL Server 实例不是默认实例，请提供命令行参数以确定托管站点数据库副本的实例。   
+4.  Depois de restaurar a cópia do banco de dados, execute a **Instalação** da pasta CD.Latest que contém os arquivos de origem da versão para a qual você está atualizando. Ao executar a Instalação, use a opção de linha de comando **/TESTDBUPGRADE** . Se a instância do SQL Server que hospeda a cópia do banco de dados não for a instância padrão, forneça também os argumentos da linha de comando para identificar a instância que hospeda a cópia do banco de dados do site.   
 
-  例如，已有数据库名称为 SMS_ABC 的站点数据库。 你将此站点数据库的副本还原到实例名称为 DBTest 的受支持 SQL Server 实例。 要测试站点数据库的此副本的升级，请使用以下命令行：**Setup.exe /TESTDBUPGRADE DBtest\CM_ABC**。  
+  Por exemplo, você tem um banco de dados do site com o nome de banco de dados *SMS_ABC*. Você restaura uma cópia desse banco de dados do site para uma instância com suporte do SQL Server com o nome de instância *DBTest*. Para testar uma atualização dessa cópia do banco de dados do site, use a linha de comando a seguir: **Setup.exe /TESTDBUPGRADE DBtest\CM_ABC**.  
 
-  可以在 System Center Configuration Manager 的源媒体上的下列位置中找到 Setup.exe：**SMSSETUP\BIN\X64**。  
+  Você pode encontrar Setup.exe no seguinte local na mídia de origem do System Center Configuration Manager: **SMSSETUP\BIN\X64**.  
 
-5.  在运行升级测试的 SQL Server 实例上，监视系统驱动器根目录中的 ConfigMgrSetup.log 以了解进度和成功与否。  
+5.  Na instância do SQL Server em que você executa o teste de atualização, monitore o arquivo *ConfigMgrSetup.log* na raiz da unidade do sistema para verificar o andamento e o êxito.  
 
-     如果测试升级失败，请修复与站点数据库升级失败相关的任何问题。 然后，新建站点数据库的备份并测试数据库的新副本升级。  
+     Se o teste de atualização falhar, corrija os problemas relacionados à falha de atualização do banco de dados do site. Em seguida, crie um novo backup do banco de dados do site e teste a atualização da nova cópia do banco de dados.  
 
 
 
-## <a name="next-steps"></a>后续步骤
-测试数据库更新成功完成后，放弃已更新的数据库。 它不能由 Configuration Manager 站点使用。 随后你可以返回到活动站点并[开始执行更新安装](/sccm/core/servers/manage/install-in-console-updates)。
+## <a name="next-steps"></a>Próximas etapas
+Após a atualização do banco de dados de teste ser concluída com êxito, descarte o banco de dados atualizado. Ele não pode ser usado por um site do Configuration Manager. Você pode retornar a seu site ativo e [começar a instalação da atualização](/sccm/core/servers/manage/install-in-console-updates).

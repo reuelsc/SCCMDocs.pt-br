@@ -1,6 +1,6 @@
 ---
-title: "操作系统部署的安全和隐私 | Microsoft Docs"
-description: "了解 System Center Configuration Manager 中的操作系统部署的安全和隐私最佳方案。"
+title: "Segurança e privacidade para implantação de sistema operacional | Microsoft Docs"
+description: "Saiba sobre as práticas recomendadas de segurança e privacidade para a implantação de sistema operacional no System Center Configuration Manager."
 ms.custom: na
 ms.date: 10/06/2016
 ms.prod: configuration-manager
@@ -18,191 +18,191 @@ manager: angrobe
 ms.openlocfilehash: 5632a753fc565312a80b2ed69ce438335b3fad50
 ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
 ms.translationtype: HT
-ms.contentlocale: zh-CN
+ms.contentlocale: pt-BR
 ms.lasthandoff: 08/07/2017
 ---
-# <a name="security-and-privacy-for-operating-system-deployment-in-system-center-configuration-manager"></a>System Center Configuration Manager 中的操作系统部署的安全和隐私
+# <a name="security-and-privacy-for-operating-system-deployment-in-system-center-configuration-manager"></a>Segurança e privacidade para a implantação de sistema operacional no System Center Configuration Manager
 
-*适用范围：System Center Configuration Manager (Current Branch)*
+*Aplica-se a: System Center Configuration Manager (Branch Atual)*
 
-本主题包含有关 System Center Configuration Manager 中的操作系统部署的安全和隐私信息。  
+Este tópico contém informações de segurança e privacidade para a implantação de sistema operacional no System Center Configuration Manager.  
 
-##  <a name="BKMK_Security_HardwareInventory"></a>操作系统部署的最佳安全方案  
- 在使用 Configuration Manager 部署操作系统时，请使用以下最佳安全方案：  
+##  <a name="BKMK_Security_HardwareInventory"></a> Práticas recomendadas de segurança para a implantação de sistema operacional  
+ Use as práticas recomendadas de segurança a seguir para quando você implantar sistemas operacionais com o Configuration Manager:  
 
--   **实现访问控制来保护可启动媒体**  
+-   **Implementar controles de acesso para proteger a mídia inicializável**  
 
-     创建可启动媒体时，请始终分配密码来帮助保护该媒体。 但是，即使使用密码，也只是对包含敏感信息的文件进行加密，并且可以覆盖所有文件。  
+     Ao criar uma mídia inicializável, sempre atribua uma senha para ajudar a proteger a mídia. No entanto, mesmo com uma senha, somente os arquivos que contêm informações confidenciais são criptografados, e todos os arquivos pode ser substituídos.  
 
-     请控制对媒体的物理访问，以阻止攻击者使用密码攻击获取客户端身份验证证书。  
+     Controle o acesso físico à mídia para impedir que um invasor use ataques de criptografia para obter o certificado de autenticação de cliente.  
 
-     为了阻止客户端安装已被篡改的内容或内容策略，内容将进行哈希处理并与原始策略一起使用。  如果内容哈希失败，或者关于内容是否与策略匹配的检查失败，则客户端将不使用可启动的媒体。 系统只对内容进行哈希处理；不对策略进行，但如果你指定密码，则会加密和保护策略，这会使攻击者更难成功地修改策略。  
+     Para ajudar a impedir que um cliente instale algum conteúdo ou alguma política do cliente que foi violada, o conteúdo contém um hash e deve ser usado com a política original.  Se o hash de conteúdo falhar ou a verificação do conteúdo corresponder à política, o cliente não usará a mídia inicializável. Somente o conteúdo está com hash; a política não, mas está criptografada e protegida quando você especifica uma senha, o que dificulta mais a ação de um invasor para modificar a política com êxito.  
 
--   **创建操作系统映像媒体时使用安全的位置**  
+-   **Usar um local seguro quando você cria mídia para imagens do sistema operacional**  
 
-     如果未经授权的用户能够访问此位置，则他们可以篡改你创建的文件，并且也可以使用所有可用的磁盘空间，因此媒体创建会失败。  
+     Se usuários não autorizados tiverem acesso ao local, eles poderão violar os arquivos que você cria e usar todo o espaço em disco disponível para que ocorra falha na criação da mídia.  
 
--   **请使用强密码保护证书文件 (.pfx)，如果将文件存储在网络上，请在将文件导入 Configuration Manager 中时保护网络通道的安全**  
+-   **Proteger arquivos (.pfx) do certificado com uma senha forte e, se você armazená-los na rede, proteger o canal de rede ao importá-los para o Configuration Manager**  
 
-     当你需要密码来导入用于可启动的媒体的客户端身份验证证书时，这可帮助保护证书免受攻击者的攻击。  
+     Quando você requer uma senha para importar o certificado de autenticação de cliente que você usa para a mídia inicializável, isso ajuda a proteger o certificado de um invasor.  
 
-     在网络位置和站点服务器之间使用 SMB 签名或 IPsec 以防止攻击者篡改证书文件。  
+     Use a assinatura SMB ou o IPsec entre o local de rede e o servidor de site para impedir que um invasor viole o arquivo de certificado.  
 
--   **如果泄露了客户端证书，请从 Configuration Manager 中阻止该证书，如果此证书是 PKI 证书，请吊销该证书**  
+-   **Se o certificado do cliente estiver comprometido, bloqueie o certificado do Configuration Manager e revogue-o se ele for um certificado PKI**  
 
-     若要使用可启动的媒体和 PXE 启动来部署操作系统，必须指定一个具有私钥的客户端身份验证证书。 如果泄露了该证书，请在“管理”  工作区“安全”  节点内“证书”  节点中阻止该证书。  
+     Para implantar um sistema operacional usando a mídia inicializável e a inicialização PXE, você deve ter um certificado de autenticação de cliente com uma chave privada. Se esse certificado estiver comprometido, bloqueie-o no nó **Certificados** no espaço de trabalho **Administração** , no nó **Segurança** .  
 
--   **当 SMS 提供程序在非站点服务器的一个或多个计算机上时，请保护通信通道的安全以保护启动映像**  
+-   **Quando o Provedor de SMS está em um computador ou computadores diferentes do servidor do site, proteger o canal de comunicação para proteger imagens de inicialização**  
 
-     如果修改了启动映像，并且 SMS 提供程序在非站点服务器的服务器上运行，则启动映像易受到攻击。 使用 SMB 签名或 IPsec 保护这些计算机之间的网络通道。  
+     Quando imagens de inicialização são modificadas e o Provedor de SMS é executado em um servidor que não é o servidor do site, as imagens de inicialização estão vulneráveis a ataque. Proteja o canal de rede entre esses computadores usando a assinatura SMB ou IPsec.  
 
--   **只在安全的网络段上为 PXE 客户端通信启用分发点**  
+-   **Habilitar pontos de distribuição para comunicação do cliente PXE apenas em segmentos de rede segura**  
 
-     当客户端发送 PXE 启动请求时，你无法确保启用 PXE 的有效分发点可满足请求。 此方案有下列安全风险：  
+     Quando um cliente enviar uma solicitação de inicialização PXE, você não tem como verificar se a solicitação é atendida por um ponto de distribuição válido habilitado para PXE. Esse cenário tem os seguintes riscos de segurança:  
 
-    -   响应 PXE 请求的恶意分发点可能会向客户端提供篡改过的映像。  
+    -   Um ponto de distribuição não autorizado que responde às solicitações de PXE pode fornecer uma imagem violada aos clientes.  
 
-    -   攻击者可以对 PXE 使用的 TFTP 协议发起中间人攻击，并且可以随操作系统文件一起发送恶意代码，或者，她可以创建一个恶意客户端以直接向分发点提出 TFTP 请求。  
+    -   Um invasor pode iniciar um ataque de falsificação contra o protocolo TFTP que é usado pelo PXE e enviar código mal-intencionado com os arquivos do sistema operacional, ou pode criar um cliente não autorizado para fazer solicitações do TFTP diretamente ao ponto de distribuição.  
 
-    -   攻击者可以使用恶意客户端对分发点启动拒绝服务攻击。  
+    -   Um invasor pode usar um cliente mal-intencionado para iniciar um ataque de negação de serviço contra o ponto de distribuição.  
 
-     使用深度防御来保护网络段，客户端将在这些网络段中访问 PXE 请求的分发点。  
+     Use proteção abrangente para proteger os segmentos de rede onde os clientes terão acesso a pontos de distribuição para solicitações de PXE.  
 
     > [!WARNING]  
-    >  由于这些安全风险的缘故，当分发点在不受信任的网络（如外围网络）中时，请不要为 PXE 通信启用该分发点。  
+    >  Por conta desses riscos de segurança, não habilite um ponto de distribuição para comunicação PXE quando ele estiver em uma rede não confiável, como uma rede de perímetro.  
 
--   **将启用 PXE 的分发点配置为仅在指定的网络接口上响应 PXE 请求**  
+-   **Configurar pontos de distribuição habilitados para PXE para responder às solicitações de PXE somente em interfaces de rede especificadas**  
 
-     如果允许分发点在所有网络接口上响应 PXE 请求，则此配置可能会向不受信任的网络公开 PXE 服务  
+     Se você permitir que o ponto de distribuição responda às solicitações de PXE em todas as interfaces de rede, essa configuração pode expor o serviço PXE a redes não confiáveis.  
 
--   **PXE 启动需要密码**  
+-   **Exigir uma senha para a inicialização PXE**  
 
-     如果你要求提供密码来进行 PXE 启动，则此配置会为 PXE 启动过程额外添加一层安全保护，以帮助预防恶意客户端加入 Configuration Manager 层次结构。  
+     Quando você exige uma senha para a inicialização PXE, essa configuração adiciona um nível extra de segurança ao processo de inicialização PXE, para ajudar a proteger contra clientes não autorizados que ingressam na hierarquia do Configuration Manager.  
 
--   **不要将包含敏感数据的业务线应用程序或软件纳入到将用于 PXE 启动或多播的映像**  
+-   **Não incluir aplicativos de linha de negócios ou software que contenha dados confidenciais em uma imagem que será usada para inicialização PXE ou multicast**  
 
-     由于与 PXE 启动或多播相关的固有安全风险的缘故，因此，如果恶意计算机下载操作系统映像，请减小风险。  
+     Por conta dos riscos de segurança inerentes envolvidos com a inicialização PXE e multicast, reduza is riscos se o computador não autorizado baixar a imagem do sistema operacional.  
 
--   **不要将包含敏感数据的业务线应用程序或软件纳入到使用任务序列变量安装的软件包**  
+-   **Não incluir aplicativos de linha de negócios ou software que contenha dados confidenciais em pacotes de software instalados usando variáveis de sequências de tarefas**  
 
-     如果使用任务序列变量部署软件包，则可以在计算机上或者为无权接收该软件的用户安装该软件。  
+     Quando você implanta pacotes de software usando variáveis de sequências de tarefas, o software pode ser instalado em computadores e usuários que não estão autorizados a receber esse software.  
 
--   **迁移用户状态时，使用 SMB 签名或 IPsec 保护客户端与状态迁移点之间的网络通道**  
+-   **Quando você migra o estado do usuário, proteja o canal de rede entre o cliente e o ponto de migração do estado usando assinatura SMB ou IPsec**  
 
-     通过 HTTP 初次连接后，会使用 SMB 传输用户状态迁移数据。  如果未保护网络通道，则攻击者可以读取和修改此数据。  
+     Após a conexão inicial sobre HTTP, os dados de migração de estado do usuário serão transferidos usando SMB.  Se você não proteger o canal de rede, um invasor poderá ler e modificar esses dados.  
 
--   **使用 Configuration Manager 支持的最新版本的用户状态迁移工具 (USMT)**  
+-   **Usar a versão mais recente da USMT (Ferramenta de Migração do Usuário) à qual o Configuration Manager dá suporte**  
 
-     最新版本的 USMT 提供了安全增强功能，并且加强了对用户状态数据的迁移时间的控制。  
+     A versão mais recente da USMT fornece aprimoramentos de segurança e mais controle para quando você migrar dados de estado do usuário.  
 
--   **对状态迁移点上的文件夹解除授权后手动删除这些文件夹**  
+-   **Excluir manualmente as pastas no ponto de migração de estado quando elas são encerradas**  
 
-     在 Configuration Manager 控制台中的状态迁移点属性上删除状态迁移点文件夹时，未删除物理文件夹。 为了防止用户状态迁移数据信息泄露，你必须手动删除网络共享并删除文件夹。  
+     Quando você remove uma pasta do ponto de migração de estado no console do Configuration Manager nas propriedades do ponto de migração de estado, a pasta física não é excluída. Para proteger os dados de migração de estado contra divulgação de informações, você deve remover manualmente o compartilhamento de rede e excluir a pasta.  
 
--   **不将删除策略配置为立即删除用户状态**  
+-   **Não configurar a política de exclusão para excluir imediatamente o estado do usuário**  
 
-     如果将状态迁移点上的删除策略配置为立即删除标记为要删除的数据，并且如果攻击者在有效计算机检索用户状态数据之前设法执行了此操作，则将立即删除用户状态数据。 将“在下列时间之后删除”  间隔设置得足够长，以验证是否成功还原了用户状态数据。  
+     Se você configurar a política de exclusão no ponto de migração de estado para remover dados marcados para exclusão imediatamente e se um invasor recuperar os dados de estado do usuário antes que o computador válido, os dados de estado do usuário serão excluídos imediatamente. Defina o intervalo **Excluir depois** para que seja longo o suficiente para verificar a restauração com êxito dos dados de estado do usuário.  
 
--   **在完成并验证了用户状态迁移数据还原之后手动删除计算机关联**  
+-   **Excluir manualmente as associações de computador quando a restauração de dados de migração de estado do usuário for concluída e verificada**  
 
-     Configuration Manager 不自动删除计算机关联。 通过手动删除不再需要的计算机关联来帮助保护用户状态数据的标识。  
+     O Configuration Manager não remove automaticamente as associações de computador. Ajude a proteger a identidade dos dados de estado do usuário excluindo manualmente associações de computador que não são mais necessárias.  
 
--   **在状态迁移点上手动备份用户状态迁移数据**  
+-   **Fazer backup dos dados de migração de estado do usuário manualmente no ponto de migração de estado**  
 
-     Configuration Manager 备份未包括用户状态迁移数据。  
+     O backup do Configuration Manager não inclui os dados de migração de estado do usuário.  
 
--   **请记住在安装操作系统之后启用 BitLocker**  
+-   **Lembre-se de habilitar o BitLocker depois que o sistema operacional for instalado**  
 
-     若计算机支持 BitLocker，要以无人参与的方式安装操作系统，就必须使用任务序列步骤来禁用它。 Configuration Manager 不会在安装操作系统之后启用 BitLocker，因此你必须手动重新启用 BitLocker。  
+     Se um computador der suporte ao BitLocker, você deverá desabilitá-lo usando uma etapa de sequência de tarefas se desejar instalar o sistema operacional autônomo. O Configuration Manager não habilita o BitLocker após a instalação do sistema operacional, por isso você deve habilitar o BitLocker novamente.  
 
--   **实现访问控制来保护预留的媒体**  
+-   **Implementar controles de acesso para proteger a mídia em pré-teste**  
 
-     请控制对媒体的物理访问，以阻止攻击者使用密码攻击获取客户端身份验证证书和敏感数据。  
+     Controle o acesso físico à mídia para impedir que um invasor use ataques de criptografia para obter o certificado de autenticação de cliente e dados confidenciais.  
 
--   **实现访问控制来保护引用计算机映像过程**  
+-   **Implementar controles de acesso para proteger o processo de geração de imagens do computador de referência**  
 
-     使用合适的访问控制来确保用于捕获操作系统映像的引用计算机在安全环境中，以便无法安装意外或恶意的软件，并且不会无意中将其包含在捕获的映像中。 捕获映像时，请确保目标网络文件共享位置是安全位置，以便无法在捕获映像后篡改映像。  
+     Verifique se o computador de referência usado para capturar imagens do sistema operacional está em um ambiente seguro com controles de acesso apropriados para que nenhum software inesperado ou mal-intencionado seja instalado e incluído inadvertidamente na imagem capturada. Ao capturar a imagem, verifique se o local do compartilhamento do arquivo de destino na rede está protegido para que a imagem não seja violada depois de ser capturada.  
 
--   **始终在引用计算机上安装最新安全更新**  
+-   **Sempre instalar as atualizações de segurança mais recentes no computador de referência**  
 
-     如果引用计算机具有当前安全更新，则它有助于在首次启动新计算机时缩小新计算机的漏洞窗口。  
+     Quando o computador de referência tem atualizações de segurança, ele ajuda a reduzir a janela de vulnerabilidade para novos computadores quando são inicializados pela primeira vez.  
 
--   **如果必须将操作系统部署到未知计算机，请实现访问控制以防止未授权的计算机连接到网络**  
+-   **Se você tiver de implantar sistemas operacionais em um computador desconhecido, implemente controles de acesso para impedir que computadores não autorizados se conectem à rede**  
 
-     虽然设置未知计算机可以提供一种方便的方法以根据需要部署新计算机，但此操作也允许攻击者有效地成为网络上的受信任的客户端。 限制对网络的物理访问，并监视客户端以检测未授权的计算机。 此外，响应 PXE 启动的操作系统部署的计算机在操作系统部署期间可能会毁坏所有数据，这可能导致无法使用无意中重新格式化的系统。  
+     Embora o provisionamento de computadores desconhecidos forneça um método conveniente para implantar novos computadores sob demanda, ele também pode permitir que um invasor se torne um cliente confiável na sua rede. Restrinja o acesso físico à rede e monitore os clientes para detectar computadores não autorizados. Além disso, computadores que respondem à implantação de sistema operacional iniciada por PXE devem ter todos os dados destruídos durante a implantação, o que pode resultar em perda de disponibilidade de sistemas reformatados inadvertidamente.  
 
--   **启用多播包加密**  
+-   **Habilitar a criptografia de pacotes multicast**  
 
-     对于每个操作系统部署包，你可以选择在 Configuration Manager 使用多播传输包时启用加密。 此配置有助于防止恶意计算机加入多播会话，以及有助于防止攻击者篡改传输。  
+     Para cada pacote de implantação de sistema operacional, você tem a opção de habilitar a criptografia quando o Configuration Manager transfere o pacote usando multicast. Essa configuração ajuda a impedir que computadores não autorizados ingressem na sessão multicast e ajuda a impedir que invasores violem a transmissão.  
 
--   **监视启用多播的未经授权分发点**  
+-   **Monitorar pontos de distribuição não autorizados habilitados para multicast**  
 
-     如果攻击者可以访问你的网络，则他们可以将恶意多播服务器配置为欺骗操作系统部署。  
+     Se os invasores puderem ter acesso à rede, eles poderão configurar servidores multicast não autorizados para falsificar a implantação de sistema operacional.  
 
--   **当你将任务序列导出到网络位置时，请保护该位置和网络通道的安全**  
+-   **Quando você exporta sequências de tarefas para um local de rede, proteja o local e o canal de rede**  
 
-     限制可访问网络文件夹的人员。  
+     Restrinja quem pode acessar a pasta de rede.  
 
-     在网络位置和站点服务器之间使用 SMB 签名或 IPsec 以防止攻击者篡改导出的任务序列。  
+     Use a assinatura SMB ou o IPsec entre o local de rede e o servidor do site para impedir que um invasor viole a sequência de tarefas exportada.  
 
--   **将虚拟硬盘上载到 Virtual Machine Manager 时，请保护信道的安全**  
+-   **Proteger o canal de comunicação ao carregar um disco rígido virtual no Virtual Machine Manager.**  
 
-     为了防止数据在通过网络传输时被篡改，请在运行 Configuration Manager 控制台的计算机和运行 Virtual Machine Manager 的计算机之间使用 Internet 协议安全性 (IPsec) 或服务器消息块 (SMB)。  
+     Para prevenir a violação de dados durante a transferência pela rede, use o IPsec (segurança do Protocolo Internet) ou SMB (protocolo SMB) entre o computador que executa o console do Configuration Manager e o computador executando o Virtual Machine Manager.  
 
--   **如果你必须使用任务序列运行方式帐户，请采取额外的安全措施**  
+-   **Se você tiver de usar a Execução de Sequência de Tarefas como Conta, tome precauções de segurança adicionais**  
 
-     如果你使用任务序列运行方式帐户，请采取以下预防措施：  
+     Se você usar a Execução de Sequência de Tarefas como Conta, siga estas etapas de precaução:  
 
-    -   使用具有最低权限的帐户。  
+    -   Use uma conta com o mínimo possível de permissões.  
 
-    -   请勿将网络访问帐户用于此帐户。  
+    -   Não use a Conta de Acesso à Rede para essa conta.  
 
-    -   切勿使此帐户成为域管理员。  
+    -   Nunca faça da conta um administrador de domínio.  
 
-     此外：  
+     Além disso:  
 
-    -   切勿为此帐户配置漫游配置文件。 在任务序列运行时，它将下载此帐户的漫游配置文件，从而导致很容易就能在本地计算机上访问该配置文件。  
+    -   Nunca configure perfis móveis para esta conta. Quando a sequência de tarefas for executada, ela baixará o perfil móvel da conta, o que deixará o perfil vulnerável a acesso no computador local.  
 
-    -   要限制此帐户的作用域。 例如，为每个任务序列创建不同的任务序列运行方式帐户，以便在某个帐户受到侵害时，只会损害该帐户能够访问的客户端计算机。 如果命令行需要计算机上的管理权限，请考虑在所有将运行任务序列的计算机上为任务序列运行方式帐户单独创建一个本地管理员帐户，并且在不再需要该帐户时立即删除它。  
+    -   Limite o escopo da conta. Por exemplo, crie uma Execução de Sequência de Tarefas como Contas para cada sequência de tarefas; desse modo, se uma conta for comprometida, somente os computadores cliente aos quais a conta tem acesso ficarão comprometidos. Se a linha de comando exigir acesso administrativo no computador, considere a criação de uma conta de administrador local exclusivamente para a Execução de Sequência de Tarefas como Conta em todos os computadores que executarão a sequência de tarefas e exclua a conta assim que ele não for mais necessária.  
 
--   **限制和监视被授予操作系统部署管理员安全角色的管理用户**  
+-   **Restringir e monitorar os usuários administrativos que recebem a função de segurança do Gerenciador de Implantação de Sistema Operacional**  
 
-     被授予操作系统部署管理员安全角色的管理用户可以创建自签名证书，然后使用这些证书模拟客户端并从 Configuration Manager 中获取客户端策略。  
+     Os usuários administrativos que recebem a função de segurança do Gerenciador de Implantação de Sistema Operacional podem criar certificados autoassinados que podem ser usados para representar um cliente e obter a política do cliente do Configuration Manager.  
 
-### <a name="security-issues-for-operating-system-deployment"></a>操作系统部署的安全问题  
- 虽然操作系统部署可能是为网络上的计算机部署最安全操作系统和配置的一种方便的方法，但它具有以下安全风险：  
+### <a name="security-issues-for-operating-system-deployment"></a>Problemas de segurança da implantação de sistema operacional  
+ Embora a implantação de sistema operacional possa ser uma forma conveniente de implantar os sistemas operacionais e as configurações mais seguras para computadores em sua rede, ela tem os seguintes riscos de segurança:  
 
--   信息泄露和拒绝服务  
+-   Divulgação de informações e negação de serviço  
 
-     如果攻击者可以获得 Configuration Manager 基础结构的控制权，则她可以运行任何任务序列，这可能包括格式化所有客户端计算机的硬件。 可以将任务序列配置为包含敏感信息，如有权加入域的帐户和批量许可密钥。  
+     Se um invasor tiver controle da sua infraestrutura do Configuration Manager, ele poderá executar sequências de tarefas, o que poderá incluir formatação dos discos rígidos de todos os computadores cliente. As sequências de tarefas podem ser configuradas para conter informações confidenciais, como contas que têm permissões para ingressar no domínio e nas chaves de licenciamento por volume.  
 
--   特权的模拟和提升  
+-   Representação e elevação de privilégios  
 
-     任务序列可以将计算机加入到域中，这可能会为恶意计算机提供经过身份验证的网络访问权限。 操作系统部署的另一个重要的安全注意事项是保护用于可启动任务序列媒体和 PXE 启动部署的客户端身份验证证书。 捕获客户端身份验证证书时，这会为攻击者提供获取证书中的私钥然后模拟网络上的有效客户端的机会。  
+     As sequências de tarefas podem ingressar em um computador para o domínio, o que pode fornecer a um computador não autorizado acesso autenticado à rede. Outra consideração de segurança importante para implantação de sistema operacional é proteger o certificado de autenticação de cliente usado para mídia inicializável de sequência de tarefas e para implantação de inicialização PXE. Quando você captura um certificado de autenticação de cliente, isso permite que um invasor tenha a oportunidade de obter a chave privada no certificado e represente um cliente válido na rede.  
 
-     如果攻击者获取用于可启动任务序列媒体和 PXE 启动部署的客户端证书，则此证书可用于针对 Configuration Manager 模拟有效客户端。 在此情况下，恶意计算机可以下载策略，此策略可能包含敏感数据。  
+     Se um invasor obtiver o certificado do cliente usado para mídia inicializável da sequência de tarefas e para implantação de inicialização PXE, esse certificado poderá ser usado para representar um cliente válido para o Configuration Manager. Nesse cenário, o computador não autorizado pode baixar a política, que pode conter dados confidenciais.  
 
-     如果客户端使用网络访问帐户来访问存储在状态迁移点上的数据，则这些客户端会有效地共享相同的标识，并且可以从使用网络访问帐户的另一个客户端中访问状态迁移数据。 系统会对此数据进行加密，以便只有原始客户端才能读取该数据，但此数据可能会被篡改或删除。  
+     Se os clientes usam a conta de acesso à rede para acessar dados armazenados no ponto de migração de estado, eles compartilham efetivamente a mesma identidade e podem acessar os dados de migração de estado de outro cliente que utiliza a conta de acesso à rede. Os dados são criptografados para que somente o cliente original possa lê-los, mas os dados podem ser violados ou excluídos.  
 
--   通过使用管理点颁发的 Configuration Manager 令牌对连接到状态迁移点的客户端进行身份验证。  
+-   A autenticação do cliente no ponto de migração de estado é obtida usando um token do Configuration Manager emitido pelo ponto de gerenciamento.  
 
-     此外，Configuration Manager 不会限制或管理在状态迁移点上存储的数据量，因此，攻击者可能会填满可用的磁盘空间，并造成拒绝服务问题。  
+     Além disso, o Configuration Manager não limita nem gerencia o volume de dados armazenado no ponto de migração de estado e um invasor pode preencher o espaço em disco disponível e causar uma negação de serviço.  
 
--   如果使用集合变量，本地管理员可以读取可能敏感的信息  
+-   Se você usar variáveis da coleção, os administradores locais poderão ler as informações potencialmente confidenciais  
 
-     虽然集合变量提供了灵活地部署操作系统的方法，但这可能会导致信息泄露。  
+     Embora as variáveis da coleção ofereçam um método flexível para implantar sistemas operacionais, isso pode resultar em divulgação de informações confidenciais.  
 
-##  <a name="BKMK_Privacy_HardwareInventory"></a>操作系统部署的隐私信息  
- Configuration Manager 除了可用于向没有操作系统的计算机部署操作系统之外，它还可用于在计算机之间迁移用户的文件和设置。 管理员配置要转移的信息，包括个人数据文件、配置的设置和浏览器 Cookie。  
+##  <a name="BKMK_Privacy_HardwareInventory"></a> Informações de privacidade da implantação de sistema operacional  
+ Além de implantar sistemas operacionais em computadores sem sistema operacional, o Configuration Manager pode ser usado para migrar arquivos e configurações de usuários de um computador para outro. O administrador configura quais informações transferir, incluindo arquivos de dados pessoais, configurações e cookies do navegador.  
 
- 这些信息存储在状态迁移点上，而且在传输和存储期间被加密。 与状态信息关联的新计算机可以检索这些信息。 如果新计算机丢失了用于检索这些信息的密钥，则具有计算机关联实例对象的“查看恢复信息”权限的 Configuration Manager 管理员可以访问这些信息，并将它们与新计算机关联。 在新计算机还原状态信息后，默认情况下它会在一天后删除这些数据。 你可以配置状态迁移点何时删除标记为要删除的数据。 状态迁移信息并不存储在站点数据库中，而且不发送给 Microsoft。  
+ As informações são armazenadas em um ponto de migração de estado e criptografadas durante a transmissão e o armazenamento. As informações podem ser recuperadas pelo novo computador associado às informações de estado. Se o novo computador perder a chave para recuperar as informações, um administrador do Configuration Manager com o direito para Exibir Informações de Recuperação em objetos de instância da associação do computador poderá acessar as informações e associá-las a um novo computador. Depois que o novo computador restaura as informações de estado, por padrão ele exclui os dados depois de um dia. A configuração pode ser feita quando o ponto de migração de estado remove os dados marcados para exclusão. As informações de migração de estado não são armazenadas no banco de dados do site e não são enviadas à Microsoft.  
 
- 如果使用启动媒体来部署操作系统映像，请始终使用默认的选项（要设置密码）来保护启动媒体。 密码对任务序列中存储的任何变量进行加密，但不存储在变量中的任何信息可能会容易泄露。  
+ Se você usar a mídia de inicialização para implantar as imagens do sistema operacional, sempre utilize a opção padrão para proteger por senha a mídia de inicialização. A senha criptografa quaisquer variáveis armazenadas na sequência de tarefas, mas as informações não armazenadas em uma variável podem estar vulneráveis à divulgação.  
 
- 在部署过程中，操作系统部署可以使用任务序列来执行许多不同的任务，包括安装应用程序和软件更新等。 在配置任务序列时，还应注意到安装软件对隐私的影响。  
+ A implantação de sistema operacional pode usar as sequências de tarefas para executar muitas tarefas diferentes durante o processo de implantação, inclusive a instalação de aplicativos e atualizações de software. Ao configurar as sequências de tarefas, você deve estar ciente das implicações de privacidade da instalação de software.  
 
- 如果未先使用 Sysprep 清理映像就将虚拟硬盘上载到 Virtual Machine Manager，则上载的虚拟硬盘可能包含原始映像中的个人数据。  
+ Se você carregar um disco rígido virtual para o Virtual Machine Manager sem primeiro usar o Sysprep para limpar a imagem, o disco rígido virtual carregado pode conter dados pessoais da imagem original.  
 
- Configuration Manager 并不实施操作系统部署，而且，在你收集用户状态信息或者创建任务序列或启动映像之前，它需要执行几个配置步骤。  
+ O Configuration Manager não implementa implantações de sistema operacional por padrão e exige diversas etapas de configuração antes de você coletar informações do estado do usuário ou criar sequências de tarefas ou imagens de inicialização.  
 
- 在配置操作系统部署之前，请考虑隐私要求。  
+ Antes de configurar a implantação de sistema operacional, considere seus requisitos de privacidade.  

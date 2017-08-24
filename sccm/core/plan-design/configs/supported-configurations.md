@@ -1,6 +1,6 @@
 ---
-title: "支持的配置 | Microsoft Docs"
-description: "标识重要配置和要求，以便可以规划、部署和维护功能性 System Center Configuration Manager 部署。"
+title: "Configurações com suporte | Microsoft Docs"
+description: "Identifique as principais configurações e requisitos para que você possa planejar, implantar e manter uma implantação funcional do System Center Configuration Manager."
 ms.custom: na
 ms.date: 10/06/2016
 ms.prod: configuration-manager
@@ -18,56 +18,56 @@ manager: angrobe
 ms.openlocfilehash: aad46e9ab893b9bb3e32d35c17b9678b3a265c99
 ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
 ms.translationtype: HT
-ms.contentlocale: zh-CN
+ms.contentlocale: pt-BR
 ms.lasthandoff: 08/07/2017
 ---
-# <a name="supported-configurations-for-system-center-configuration-manager"></a>System Center Configuration Manager 支持的配置
+# <a name="supported-configurations-for-system-center-configuration-manager"></a>Configurações com suporte para o System Center Configuration Manager
 
-*适用范围：System Center Configuration Manager (Current Branch)*
+*Aplica-se a: System Center Configuration Manager (Branch Atual)*
 
-作为本地解决方案，System Center Configuration Manager 会使用服务器、客户端、网络配置和其他产品（如 Microsoft Intune、SQL Server 和 Azure）。
+Como uma solução local, o System Center Configuration Manager usa seus servidores, clientes, configurações de rede e outros produtos como Microsoft Intune, SQL Server e Azure.
 
-对于标识重要配置、要求和限制，以便可以规划、部署和维护功能性 Configuration Manager 部署，本主题及后续主题中的信息至关重要。  此信息特定于 Configuration Manager 站点、层次结构和托管设备的基础结构。
+As informações descritas neste e nos tópicos a seguir são essenciais para ajudá-lo a identificar as principais configurações, os requisitos e as limitações, para que você possa planejar, implantar e manter uma implantação funcional do Configuration Manager.  Essas informações são específicas à infraestrutura dos sites, das hierarquia e dos dispositivos gerenciados do Configuration Manager.
 
-如果 Configuration Manager 功能需要更具体的配置，相关信息会包含在特定于功能的文档中，作为对较通用配置详细信息的补充。  
+Quando um recurso ou uma funcionalidade do Configuration Manager exige configurações mais específicas, essas informações são incluídas na documentação específica ao recurso e são complementares aos detalhes de configuração mais gerais.  
 
- 以下各主题中所述的产品和技术受 Configuration Manager 支持。 但是，它们包括在此内容中并不表示对任何超出该产品个体支持生命周期的产品的扩展支持。 不支持将超出其支持生命周期的产品与 Configuration Manager 一起使用。 有关 Microsoft 支持生命周期的详细信息，请访问 [Microsoft 支持生命周期](http://go.microsoft.com/fwlink/p/?LinkId=208270) 网站。  
+ No Configuration Manager, há suporte para os produtos e as tecnologias descritos nos tópicos a seguir. No entanto, sua inclusão neste conteúdo não implica uma extensão de suporte para um produto além do ciclo de vida de suporte individual desse produto. Os produtos além de seu ciclo de vida de suporte não têm suporte para uso com o Configuration Manager. Para obter mais informações sobre os Ciclos de vida de suporte da Microsoft, visite o site [Ciclo de Vida do Suporte da Microsoft](http://go.microsoft.com/fwlink/p/?LinkId=208270) .  
 
 > [!NOTE]  
->  有关 Microsoft 支持生命周期策略的信息，请转到 Microsoft 支持生命周期支持策略常见问题网站：[Microsoft 支持生命周期策略常见问题](http://go.microsoft.com/fwlink/p/?LinkId=31976)。  
+>  Para obter informações sobre a política de ciclo de vida de suporte da Microsoft, acesse o site de perguntas frequentes sobre a Política de Ciclo de Vida do Suporte da Microsoft em [Microsoft Support Lifecycle Policy FAQ (Perguntas frequentes sobre a Política de Ciclo de Vida do Suporte da Microsoft)](http://go.microsoft.com/fwlink/p/?LinkId=31976).  
 
- 此外，System Center Configuration Manager 不支持以下主题中未列出的产品和产品版本，除非它们已在[企业移动性和安全性博客](https://blogs.technet.microsoft.com/enterprisemobility/)上公布。  此博客上的内容有时会早于本文档正文的更新。
+ Além disso, os produtos e versões do produto que não estão listados nos tópicos a seguir não têm suporte com o System Center Configuration Manager, a menos que eles tenham sido apresentados no [Enterprise Mobility and Security Blog (Blog do Enterprise Mobility and Security)](https://blogs.technet.microsoft.com/enterprisemobility/).  Às vezes, o conteúdo desse blog precede uma atualização neste corpo da documentação.
 
 
--  [大小和扩展数量](../../../core/plan-design/configs/size-and-scale-numbers.md)  
-了解 Configuration Manager 的不同层次结构设计中支持的站点数、每个站点的站点系统角色数以及客户端或设备数。
+-  [Números de tamanho e escala](../../../core/plan-design/configs/size-and-scale-numbers.md)  
+Saiba mais sobre quantos sites, funções do sistema de sites por site e clientes ou dispositivos têm suporte em diferentes designs de hierarquia do Configuration Manager.
 
--  [站点和站点系统先决条件](../../../core/plan-design/configs/site-and-site-system-prerequisites.md)  
-了解 Windows Server 支持不同站点类型和站点系统角色所需的配置。
+-  [Pré-requisitos de sites e do sistema de sites](../../../core/plan-design/configs/site-and-site-system-prerequisites.md)  
+Saiba mais sobre as configurações necessárias em um Windows Server para dar suporte a diferentes tipos de site e funções do sistema de sites.
 
--  [站点系统服务器支持的操作系统](../../../core/plan-design/configs/supported-operating-systems-for-site-system-servers.md)  
-了解可以用作站点服务器或站点系统服务器的操作系统。
+-  [Sistemas operacionais com suporte para servidores de sistema de sites](../../../core/plan-design/configs/supported-operating-systems-for-site-system-servers.md)  
+Saiba quais sistemas operacionais podem ser usados como um servidor do site ou servidor do sistema de sites.
 
--  [客户端和设备支持的操作系统](../../../core/plan-design/configs/supported-operating-systems-for-clients-and-devices.md)  
-了解可以使用 Configuration Manager 进行管理的操作系统，包括 Windows、Windows Embedded、Linux 和 UNIX、Mac 以及移动设备。
+-  [Sistemas operacionais com suporte para clientes e dispositivos](../../../core/plan-design/configs/supported-operating-systems-for-clients-and-devices.md)  
+Saiba quais sistemas operacionais podem ser gerenciados com o Configuration Manager, incluindo Windows, Windows Embedded, Linux e UNIX, Mac e dispositivos móveis.
 
--  [控制台支持的操作系统](../../../core/plan-design/configs/supported-operating-systems-consoles.md)  
-了解可以托管 Configuration Manager 控制台以便为管理部署提供访问点的操作系统。  
+-  [Sistemas operacionais com suporte para o console](../../../core/plan-design/configs/supported-operating-systems-consoles.md)  
+Saiba quais sistemas operacionais podem hospedar o console do Configuration Manager para fornecer um ponto de acesso para gerenciar sua implantação.  
 
--  [支持 SQL Server 版本](../../../core/plan-design/configs/support-for-sql-server-versions.md)  
-了解哪些版本的 SQL Server 可以托管站点数据库和报表数据库，以及了解必需配置和可以使用的可选配置。
+-  [Suporte para versões do SQL Server](../../../core/plan-design/configs/support-for-sql-server-versions.md)  
+Saiba quais versões do SQL Server podem hospedar o banco de dados do site e o banco de dados de relatório, bem como as configurações obrigatórias e opcionais que podem ser usadas.
 
--  [高可用性选项](../../../protect/understand/high-availability-options.md)  
-了解设计环境以帮助为 Configuration Manager 部署维护高可用服务级别时可以实现的选项。
+-  [Opções de alta disponibilidade](../../../protect/understand/high-availability-options.md)  
+Conheça as opções que você pode implementar ao criar seu ambiente para ajudar a manter um alto nível de serviço disponível para sua implantação do Configuration Manager.
 
--  [推荐硬件](../../../core/plan-design/configs/recommended-hardware.md)  
-了解有关可帮助确定适合于托管 Configuration Manager 站点和关键服务的硬件和配置的指导。
+-  [Hardware recomendado](../../../core/plan-design/configs/recommended-hardware.md)  
+Saiba mais sobre as diretrizes que podem ajudá-lo a identificar o hardware e as configurações certas para hospedar seus sites e principais serviços do Configuration Manager.
 
--  [对 Active Directory 域的支持](../../../core/plan-design/configs/support-for-active-directory-domains.md)  
-了解 Configuration Manager 需要和支持的受支持 Active Directory 域配置。
+-  [Suporte para domínios do Active Directory](../../../core/plan-design/configs/support-for-active-directory-domains.md)  
+Saiba mais sobre as configurações de domínio do Active Directory com suporte que o Configuration Manager exige e às quais ele dá suporte.
 
--  [对 Windows 功能和网络的支持](../../../core/plan-design/configs/support-for-windows-features-and-networks.md)  
-了解支持的 Windows 技术（如 BranchCache 和重复数据删除）以及与 Configuration Manager 配合使用的限制。
+-  [Suporte para redes e recursos do Windows](../../../core/plan-design/configs/support-for-windows-features-and-networks.md)  
+Saiba mais sobre as tecnologias do Windows com suporte (como BranchCache e eliminação de duplicação de dados) e as limitações de seu uso com o Configuration Manager.
 
--  [对虚拟化环境的支持](../../../core/plan-design/configs/support-for-virtualization-environments.md)  
-深入了解如何使用支持的虚拟机技术。
+-  [Suporte para ambientes de virtualização](../../../core/plan-design/configs/support-for-virtualization-environments.md)  
+Saiba mais sobre como usar as tecnologias de máquina virtual com suporte.

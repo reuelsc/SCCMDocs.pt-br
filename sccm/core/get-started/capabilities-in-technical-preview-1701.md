@@ -1,6 +1,6 @@
 ---
-title: "Technical Preview 1701 Configuration Manager 中的功能"
-description: "了解 System Center Configuration Manager Technical Preview（版本 1701）中的可用功能。"
+title: Funcionalidades no Technical Preview 1701 do Configuration Manager
+description: "Saiba mais sobre os recursos disponíveis no Technical Preview do System Center Configuration Manager, versão 1701."
 ms.custom: na
 ms.date: 01/23/2017
 ms.prod: configuration-manager
@@ -17,140 +17,140 @@ manager: angrobe
 ms.openlocfilehash: b330c97a0853d1673f1cf7e0691891b72407fa51
 ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
 ms.translationtype: HT
-ms.contentlocale: zh-CN
+ms.contentlocale: pt-BR
 ms.lasthandoff: 08/07/2017
 ---
-# <a name="capabilities-in-technical-preview-1701-for-system-center-configuration-manager"></a>System Center Configuration Manager Technical Preview 1701 中的功能
+# <a name="capabilities-in-technical-preview-1701-for-system-center-configuration-manager"></a>Funcionalidades no Technical Preview 1701 do System Center Configuration Manager
 
-*适用范围：System Center Configuration Manager (Technical Preview)*
-
-
-
-本文介绍了 System Center Configuration Manager Technical Preview（版本 1701）中的可用功能。 可以安装此版本以更新 Configuration Manager Technical Preview 站点的功能并向其添加新功能。 在安装此版本的 Technical Preview 前，请查看介绍性主题 [System Center Configuration Manager Technical Preview](../../core/get-started/technical-preview.md)，以熟悉使用 Technical Preview 的常规要求和限制、如何在版本之间进行更新，以及如何提供关于 Technical Preview 中的功能的反馈。    
+*Aplica-se a: System Center Configuration Manager (Technical Preview)*
 
 
-**以下是可以试用的此版本的新功能。**  
 
-## <a name="boundary-groups-improvements-for-software-update-points"></a>软件更新点的边界组改进
-从此预览版开始，现在可使用边界组将客户端与软件更新点关联。 这属于将边界组更改扩展到管理其他站点系统角色的持续工作中的一部分。  Technical Preview 1609 和版本 1610 中的 Current Branch 首次引入了边界组更改。  
-
-在此预览版中，可使用新边界组行为管理客户可使用的软件更新点，方法类似于管理客户端可使用的分发点：  
-
-- 配置边界组，使其与一个或多个托管软件更新点的服务器关联。
-- 正在寻找新软件更新点的客户端将尝试使用与其当前边界组关联的软件更新点。
-- 如果客户端无法获取当前软件更新点，并无法从当前边界组找到软件更新点，客户端会使用“回退”行为扩展可使用的软件更新点的可用池。    
-
-若要深入了解边界组，请参阅 Current Branch 内容中的[边界组](/sccm/core/servers/deploy/configure/boundary-groups)。
-
-但是在此预览版中，仅部分实现了软件更新点的边界组。 可添加软件更新点和配置包含软件更新点的邻居边界组，但是尚不支持软件更新点的回退时间，并且在启动回退前，客户端需要等待 2 个小时。
-
-下面介绍了此 Technical Preview 中软件更新点的行为：  
-
--   **新客户端使用边界组选择软件更新点，**安装版本 1701 后所安装的客户端从那些与客户端边界组关联的软件更新点中选取一个。
-
-  这将替代以前的行为，即客户端从共享客户端林的软件更新点列表中随机选取一个。   
-
--   **以前安装的客户端继续使用当前的软件更新点，直到它们回退找到新的软件更新点。**
-回退前，以前安装的客户端以及已具有软件更新点的客户端将继续使用该软件更新点。 这包括未与客户端当前边界组关联的软件更新点。 它们不会直接尝试从当前边界组查找和使用软件更新点。
-
-  仅在客户端无法获取其当前软件更新点和启动回退时，已具有软件更新点的客户端才会开始使用这个新边界组行为。
-切换到新行为时发生这种延迟是故意为之的。 原因在于软件更新点的更改可导致网络带宽的大量使用，因为客户端会与新软件更新点同步数据。 过渡中的延迟有助于在所有客户端同时切换到新软件更新点时避免网络饱和。
-
--   **回退时间配置：**此 Technical Preview 中不支持配置客户端启动回退以搜索新软件更新点的时间。 这包括配置“回退时间(以分钟为单位)”和“从不回退”，可以针对不同边界组关系进行配置。
-
-  但是，客户端可将客户端尝试连接到其当前软件更新点的当前行为保留 2 小时，然后再启动回退以查找可用的新软件更新点。
-
-  客户端使用回退时，将使用回退的边界组配置创建可用软件更新点的池。 该池包括客户端当前边界组、邻居边界组和客户端站点默认边界组中的所有软件更新点。
-
-- **配置默认站点边界组：**  
- 考虑将软件更新点添加到 Default-Site-Boundary-Group&lt;sitecode>。 这可确保非另一边界组成员的客户端可回退以查找软件更新点。
+Este artigo apresenta os recursos disponíveis no Technical Preview do System Center Configuration Manager, versão 1701. Você pode instalar esta versão para atualizar e adicionar novas funcionalidades ao seu site do Configuration Manager Technical Preview. Antes de instalar esta versão do technical preview, consulte o tópico introdutório, [Technical Preview do System Center Configuration Manager](../../core/get-started/technical-preview.md), para se familiarizar com os requisitos e limitações gerais de uso de um technical preview, como atualizar entre versões e como fornecer comentários sobre os recursos em um technical preview.    
 
 
-若要管理边界组的软件更新点，请使用 [Current Branch 文档中的流程](/sccm/core/servers/deploy/configure/define-site-boundaries-and-boundary-groups#procedures-for-boundary-groups)，但请记住，你可以配置的回退时间还不能用于软件更新点。
+**Veja a seguir os novos recursos que você pode experimentar nesta versão.**  
+
+## <a name="boundary-groups-improvements-for-software-update-points"></a>Aprimoramentos de grupos de limites para os pontos de atualização de software
+A partir dessa visualização, você agora pode usar grupos de limites para associar os clientes com pontos de atualização de software. Isso faz parte do trabalho contínuo para expandir as alterações de grupos de limites para gerenciar funções de sistema de site adicionais.  As alterações de grupos de limites foram introduzidas no Technical Preview 1609 e no Branch Atual, na versão 1610.  
+
+Com essa visualização, você deve usar o novo comportamento de grupo de limite para gerenciar quais pontos de atualização de software um cliente pode usar, semelhante a como gerenciar qual ponto de distribuição um cliente pode usar:  
+
+- Configure os grupos de limites para associar um ou mais servidores que hospedam um ponto de atualização de software.
+- Os clientes que buscam um novo ponto de atualização de software tentarão usar um associado a seu grupo de limite atual.
+- Quando o cliente não conseguir acessar seu ponto de atualização de software atual e não conseguir localizar um de seus grupos de limite atual, o cliente usará o comportamento de Fallback para expandir o pool disponível de pontos de atualização de software que pode ser usado.    
+
+Para obter mais informações sobre grupos de limites, consulte [Grupos de limites](/sccm/core/servers/deploy/configure/boundary-groups) no conteúdo do Branch Atual.
+
+No entanto, com essa visualização, grupos de limites para pontos de atualização de software são apenas parcialmente implementados. Você pode adicionar pontos de atualização de software e configurar grupos de limites vizinhos que contêm pontos de atualização de software, mas o tempo de fallback para pontos de atualização de software ainda não tem suporte e os clientes aguardarão duas horas antes de iniciar o fallback.
+
+O seguinte descreve o comportamento de pontos de atualização de software com essa visualização técnica:  
+
+-   **Novos clientes usam grupos de limites para selecionar pontos de atualização de software**. Um cliente instalado após a instalação da versão 1701selecione um ponto de atualização de software dos associados ao grupo de limite do cliente.
+
+  Isso substitui o comportamento anterior em que os clientes selecionavam um ponto de atualização de software aleatoriamente de uma lista dos que compartilham a floresta de clientes.   
+
+-   **Clientes instalados anteriormente continuam a usar seu atual ponto de atualização de software até fazerem fallback para localizar um novo.**
+Clientes que foram instalados anteriormente e que já têm um ponto de atualização de software continuarão a usar o ponto de atualização de software até fazerem fallback. Isso inclui pontos de atualização de software que não estão associados ao grupo de limite atual do cliente. Eles não tentam localizar e usar imediatamente um ponto de atualização de software do grupo de limite atual.
+
+  Um cliente que já tem um ponto de atualização de software começa a usar esse novo comportamento de grupo de limite somente após o cliente não conseguir acessar seu ponto de atualização de software atual e iniciar um fallback.
+Esse atraso para alternar para o novo comportamento é intencional. Isso ocorre porque uma alteração do ponto de atualização de software pode resultar em um grande uso de largura de banda de rede à medida que o cliente sincroniza dados com o novo ponto de atualização de software. O atraso na transição pode ajudar a evitar a saturação de sua rede se todos os clientes mudarem para os novos pontos de atualização de software ao mesmo tempo.
+
+-   **Configurações de tempo de fallback:** configurações para quando os clientes iniciarem fallback para pesquisar um novo ponto de atualização de software a clientes não têm suporte neste technical preview. Isso inclui configurações para **Tempos de fallback (em minutos)** e **Nunca realizar fallback**, que você pode configurar para relacionamentos de grupo de limite diferentes.
+
+  Em vez disso, os clientes mantêm seu comportamento atual no qual um cliente tenta se conectar ao seu ponto de atualização de software atual por duas horas antes de começar o fallback, para localizar um novo ponto de atualização de software que pode ser usado.
+
+  Quando um cliente usa o fallback, ele usará as configurações de grupo de limite para realizar fallback para criar um pool de pontos de atualização de software disponíveis. Esse pool inclui todos os pontos de atualização de software do *grupo de limite atual* e dos *grupos de limite vizinho* do cliente e do *grupo de limite padrão do site* do cliente.
+
+- **Configure o grupo de limite do site padrão:**  
+ Considere adicionar um ponto de atualização de software para *Default-Site-Boundary-Group&lt;sitecode>*. Isso garante que os clientes que não são membros de outro grupo de limite possam realizar fallback para localizar um ponto de atualização de software.
 
 
-## <a name="hardware-inventory-collects-uefi-information"></a>硬件清单将收集 UEFI 信息
-新的硬件清单类 (**SMS_Firmware**) 和属性 (**UEFI**) 可帮助确定是否以 UEFI 模式启动计算机。 如果以 UEFI 模式启动计算机，则 **UEFI** 属性设为 **TRUE**。 默认情况下，这在硬件清单中处于启用状态。 有关硬件清单的详细信息，请参阅[如何配置硬件清单](/sccm/core/clients/manage/inventory/configure-hardware-inventory)。
+Para gerenciar pontos de atualização de software para grupos de limite, use os [procedimentos da documentação do Branch Atual](/sccm/core/servers/deploy/configure/define-site-boundaries-and-boundary-groups#procedures-for-boundary-groups), mas se lembre de que os tempos de fallback que você deve configurar ainda não são usados para pontos de atualização de software.
 
-## <a name="improvements-to-operating-system-deployment"></a>对操作系统部署的改进
-我们对操作系统部署做了以下改进，大部分改进根据用户语音反馈进行的。
-- [**支持更多应用程序执行“安装应用程序”任务序列步骤**](https://configurationmanager.uservoice.com/forums/300492-ideas/suggestions/17062207-task-sequence-allow-more-than-9-applications-in-t)：增加了应用程序的最大数量，因此可以在“安装应用程序”任务序列步骤中安装最多 99 个应用程序。 以前的最大数量为 9 个应用程序。
-- [**在“安装应用”任务序列步骤中选择多个应用**](https://configurationmanager.uservoice.com/forums/300492-ideas/suggestions/15459978-when-adding-items-to-an-install-application-step)：在任务序列编辑器中向“安装应用程序”任务序列步骤添加应用程序时，现在可从“选择要安装的应用程序”面板选择多个应用程序。
-- [**过期独立介质**](https://configurationmanager.uservoice.com/forums/300492-ideas/suggestions/14448564-provide-a-method-for-expiring-standalone-media)：创建独立介质时，可使用新选项对介质设置可选开始日期和到期日期。 默认情况下，这些设置处于禁用状态。 独立介质运行前，该日期将与计算机上的系统时间进行比较。 如果系统时间早于开始时间或晚于过期时间，则独立介质不会启动。 也可通过使用 New-CMStandaloneMedia PowerShell cmdlet 启用这些选项。
-- [**独立介质中支持额外内容**](https://configurationmanager.uservoice.com/forums/300492-ideas/suggestions/8341257-support-installation-of-packages-apps-via-dynamic)：独立介质中现在支持额外内容。 可选择将额外的包、驱动程序包和应用程序，以及任务序列中引用的其他内容暂存在介质中。 以前，仅任务序列中引用的内容才暂存在独立介质中。
-- [**“自动应用驱动程序”任务序列步骤可配置超时**](https://configurationmanager.uservoice.com/forums/300492-ideas/suggestions/17153660-auto-apply-driver-timeout)：在发出 HTTP 目录请求时，新任务序列变量现在可在“自动应用驱动程序”任务序列步骤中配置超时值。 下面是可用的变量和默认值（以秒为单位）：
-   - SMSTSDriverRequestResolveTimeOut 默认值：60
-   - SMSTSDriverRequestConnectTimeOut 默认值：60
-   - SMSTSDriverRequestSendTimeOut 默认值：60
-   - SMSTSDriverRequestReceiveTimeOut 默认值：480
-- [**任务序列步骤现在会显示包 ID**](https://configurationmanager.uservoice.com/forums/300492-ideas/suggestions/16167430-display-packageid-when-viewing-a-task-sequence-ste)：任何引用包、驱动程序包、操作系统映像、启动映像或操作系统升级包的任务序列步骤现在将显示引用对象的包 ID。 任务序列步骤引用应用程序时，将显示对象 ID。
-- **通过内部版本号跟踪 Windows 10 ADK**：现在可通过内部版本号跟踪 Windows 10 ADK，确保自定义 Windows 10 启动映像时有更多受支持的体验。 例如，如果站点使用适用于 Windows 10 的 Windows ADK（版本 1607），那么控制台中仅可自定义版本号为 10.0.14393 的启动映像。 若要深入了解如何自定义 WinPE 版本，请参阅[自定义启动映像](/sccm/osd/get-started/customize-boot-images)。
-- **默认启动映像源路径无法再进行更改**：默认启动映像由 Configuration Manager 托管，并且无法再在 Configuration Manager 控制台中或通过使用 Configuration Manager SDK 更改默认启动映像源路径。 可继续为自定义启动映像配置自定义源路径。
 
-## <a name="host-software-updates-on-cloud-based-distribution-points"></a>使用基于云的分发点托管软件更新
-从此预览版本开始，可使用基于云的分发点来托管软件更新包。 但是，因为可将客户端配置为从 Microsoft 更新直接下载软件更新，所以请考虑将软件更新包部署到基于云的分发点时将产生的额外费用。
+## <a name="hardware-inventory-collects-uefi-information"></a>O inventário de hardware coleta informações de UEFI
+Uma nova classe de inventário de hardware (**SMS_Firmware**) e a propriedade (**UEFI**) estão disponíveis para ajudá-lo a determinar se um computador é iniciado no modo UEFI. Quando um computador é iniciado no modo UEFI, a propriedade **UEFI** é definida como **TRUE**. Isso é habilitado no inventário de hardware por padrão. Para obter mais informações sobre o inventário de hardware, consulte [Como configurar o inventário de hardware](/sccm/core/clients/manage/inventory/configure-hardware-inventory).
 
-若要深入了解如何使用基于云的分发点，请参阅 Configuration Manager 的 Current Branch 内容中的[使用基于云的分发点](/sccm/core/plan-design/hierarchy/use-a-cloud-based-distribution-point)。
+## <a name="improvements-to-operating-system-deployment"></a>Melhorias na implantação do sistema operacional
+Fizemos as seguintes melhorias para a implantação de sistema operacional, muitas das quais foram resultado dos comentários dos usuários.
+- [**Suporte para mais aplicativos para a etapa de sequência de tarefas Instalar Aplicativos**](https://configurationmanager.uservoice.com/forums/300492-ideas/suggestions/17062207-task-sequence-allow-more-than-9-applications-in-t): aumentamos o número máximo de aplicativos que você pode instalar para 99 na etapa da sequência de tarefas **Instalar Aplicativos**. O número máximo anterior era de 9 aplicativos.
+- [**Selecione vários aplicativos na etapa da sequência de tarefas Instalar Aplicativos**](https://configurationmanager.uservoice.com/forums/300492-ideas/suggestions/15459978-when-adding-items-to-an-install-application-step): ao adicionar aplicativos à etapa da sequência de tarefas Instalar Aplicativos no editor de sequência de tarefas, agora você pode selecionar vários aplicativos no painel **Selecionar aplicativo para instalar**.
+- [**Expirar mídia autônoma**](https://configurationmanager.uservoice.com/forums/300492-ideas/suggestions/14448564-provide-a-method-for-expiring-standalone-media): quando você cria mídia autônoma, há novas opções para definir datas de início e vencimento opcionais na mídia. Essas configurações estão desabilitadas por padrão. As datas são comparadas com a hora do sistema no computador antes de a mídia autônoma ser executada. Quando a hora do sistema for anterior à hora de início ou posterior à hora de expiração, a mídia autônoma não será iniciada. Essas opções também estão disponíveis usando o cmdlet New-CMStandaloneMedia PowerShell.
+- [**Suporte para conteúdo adicional na mídia autônoma**](https://configurationmanager.uservoice.com/forums/300492-ideas/suggestions/8341257-support-installation-of-packages-apps-via-dynamic): o conteúdo adicional agora tem suporte na mídia autônoma. Você pode selecionar pacotes adicionais, pacotes de driver e aplicativos para obter preparação na mídia junto com outros conteúdos referenciados na sequência de tarefas. Anteriormente, somente o conteúdo referenciado na sequência de tarefas era preparado na mídia autônoma.
+- [**Tempo limite configurável para a etapa de sequência de tarefas do Driver de aplicação automática**](https://configurationmanager.uservoice.com/forums/300492-ideas/suggestions/17153660-auto-apply-driver-timeout): novas variáveis de sequência de tarefas estão agora disponíveis para configurar o valor de tempo limite na etapa de sequência de tarefas do Driver de aplicação automática ao fazer solicitações do catálogo HTTP. As seguintes variáveis e valores padrão (em segundos) estão disponíveis:
+   - SMSTSDriverRequestResolveTimeOut Default: 60
+   - SMSTSDriverRequestConnectTimeOut Default: 60
+   - SMSTSDriverRequestSendTimeOut Default: 60
+   - SMSTSDriverRequestReceiveTimeOut Default: 480
+- [**A ID do pacote agora é exibida nas etapas da sequência de tarefas**](https://configurationmanager.uservoice.com/forums/300492-ideas/suggestions/16167430-display-packageid-when-viewing-a-task-sequence-ste): qualquer etapa de sequência da tarefa que faz referência a um pacote, pacote de driver, imagem do sistema operacional, imagem de inicialização ou pacote de atualização do sistema operacional agora exibirá a ID do pacote do objeto referenciado. Quando uma etapa de sequência de tarefas fizer referência a um aplicativo, ela exibirá a ID do objeto.
+- **Windows 10 ADK controlado pela versão de build**: o Windows 10 ADK agora é controlado pela versão de build para garantir uma experiência com mais suporte ao personalizar imagens de inicialização do Windows 10. Por exemplo, se o site usa o Windows ADK para Windows 10, versão 1607, somente as imagens de inicialização com a versão 10.0.14393 poderão ser personalizadas no console. Para obter detalhes sobre como personalizar as versões WinPE, consulte [Personalizar imagens de inicialização](/sccm/osd/get-started/customize-boot-images).
+- **O caminho de origem da imagem de inicialização padrão não pode mais ser alterado**: as imagens de inicialização padrão são gerenciadas pelo Configuration Manager e o caminho de origem da imagem de inicialização padrão não pode mais ser alterado no console do Configuration Manager ou ao usar o SDK do Configuration Manager. Você pode continuar a configurar um caminho de origem personalizado para imagens de inicialização personalizadas.
 
-## <a name="validate-device-health-attestation-data-via-management-points"></a>通过管理点验证设备运行状况证明数据
+## <a name="host-software-updates-on-cloud-based-distribution-points"></a>Hospede as atualizações de software nos pontos de distribuição baseados em nuvem
+A partir da versão de visualização, você pode usar um ponto de distribuição baseado em nuvem para hospedar um pacote de atualização de software. No entanto, como você pode configurar clientes para baixar atualizações de software diretamente do Microsoft Update, considere que pode haver custos adicionais da implantação de um pacote de atualização de software para um ponto de distribuição baseado em nuvem.
 
-从此预览版本开始，可配置管理点以验证云或本地运行状况证明服务的运行状况证明报告数据。 通过“管理点组件属性”对话框中的新“高级选项”，可“添加”、“编辑”或“删除”“本地设备运行状况证明服务 URL”。 还可将客户端代理的“自定义设备设置”指定为“使用本地运行状况证明服务”。  将此设置设为“是”将启用向本地管理点（而不是基于云的服务）报告。
+Para obter informações sobre como usar pontos de distribuição baseados em nuvem, consulte [Usar um ponto de distribuição baseado em nuvem](/sccm/core/plan-design/hierarchy/use-a-cloud-based-distribution-point) no conteúdo do Branch Atual do Configuration Manager.
 
-### <a name="try-it-out"></a>试试看
+## <a name="validate-device-health-attestation-data-via-management-points"></a>Validar dados de atestado de integridade do dispositivo por meio de pontos de gerenciamento
 
-- **在管理点上启用本地设备运行状况证明**<br>  在 Configuration Manager 控制台中，导航到管理点，打开“管理点组件属性”，然后单击“高级选项”选项卡。 单击“添加”，然后为“本地设备运行状况证明服务 URL”指定本地 URL（例如 https://10.10.10.10）。
-- **为客户端代理启用本地管理点运行状况证明报告**<br>在 Configuration Manager 控制台中，选择“管理” > “客户端设置”，然后双击或创建新的“自定义设备设置”。 选择“计算机代理”，然后将“使用本地运行状况证明服务”设为“是”。 如果将“启用与设备运行状况证明服务的通信”设为“是”，并将“使用本地运行状况证明”设为“否”，则管理点将使用基于云的设备运行状况证明服务。
+A partir dessa versão de visualização, você pode configurar pontos de gerenciamento para validar dados de relatório de atestado de integridade para serviços de atestado de integridade locais ou na nuvem. Uma nova guia **Opções Avançadas** na caixa de diálogo **Propriedades do Componente de Ponto de Gerenciamento** permite a você **Adicionar**, **Editar** ou **Remover** a **URL de serviço do atestado de integridade do dispositivo local**. Você também pode especificar **Configurações Personalizadas do Dispositivo** para o agente cliente para **Usar serviço de Atestado de Integridade local**.  Definir **Sim** para essa configuração permitirá a criação de relatórios para o ponto de gerenciamento local em vez do serviço baseado em nuvem.
 
-## <a name="use-the-oms-connector-for-microsoft-azure-government-cloud"></a>将 OMS 连接器用于 Microsoft Azure 政府云
-在此 Technical Preview 中，现在可使用 Microsoft Operations Management Suite (OMS) 连接器连接 Microsoft Azure 政府云上的 OMS 工作区。  
+### <a name="try-it-out"></a>Experimente
 
-为此，请修改配置文件，使其指向政府云，然后安装 OMS 连接器。
+- **Habilitar atestado de integridade de dispositivo local em um ponto de gerenciamento**<br>  No console do Configuration Manager, acesse o ponto de gerenciamento e abra **Propriedades do Componente do Ponto de Gerenciamento** e, em seguida, clique na guia **Opções Avançadas**. Clique em **Adicionar** e especifique a URL local (por exemplo, https://10.10.10.10) para **URLs de serviço de atestado de integridade do dispositivo local**.
+- **Habilitar relatórios de atestado de integridade do ponto de gerenciamento local para o agente cliente**<br>No console do Configuration Manager, selecione **Administração** > **Configurações do Cliente** e clique duas vezes ou crie uma nova **Configuração Personalizada de Dispositivo**. Selecione **Agente do Computador** e defina **Usar Serviço de Atestado Integridade Local** como **Sim**. Se **Habilitar comunicação com o serviço de atestado de integridade do dispositivo** estiver definido como **Sim** e **Usar atestado de integridade local** estiver definido como **Não**, o ponto de gerenciamento usará o serviço de atestado de integridade do dispositivo baseado em nuvem.
 
-### <a name="set-up-an-oms-connector-to-microsoft-azure-government-cloud"></a>设置连接到 Microsoft Azure 政府云的 OMS 连接器
-1.  在任何安装了 Configuration Manager 控制台的计算机上，编辑以下配置文件，使其指向政府云：***&lt;CM 安装路径>\AdminConsole\bin\Microsoft.configurationManagmenet.exe.config***
+## <a name="use-the-oms-connector-for-microsoft-azure-government-cloud"></a>Usar o conector do OMS para nuvem Microsoft Azure Governamental
+Com esse technical preview, agora você pode usar o conector do OMS (Microsoft Operations Management Suite) para se conectar a um espaço de trabalho do OMS que está na nuvem Microsoft Azure Governamental.  
 
-  **编辑：**
+Para fazer isso, modifique um arquivo de configuração para apontar para a nuvem Governamental e, em seguida, instale o conector do OMS.
 
-    将设置名称 FairFaxArmResourceID 的值更改为等于“https://management.usgovcloudapi.net/”
+### <a name="set-up-an-oms-connector-to-microsoft-azure-government-cloud"></a>Instalar um conector do OMS na nuvem Microsoft Azure Governamental
+1.  Em qualquer computador que tenha o console do Configuration Manager instalado, edite o seguinte arquivo de configuração para apontar para a nuvem governamental: ***&lt;CM install path>\AdminConsole\bin\Microsoft.configurationManagmenet.exe.config***
 
-   - **初始：**&lt;setting name="FairFaxArmResourceId" serializeAs="String">   
+  **Edições:**
+
+    Altere o valor do nome da configuração *FairFaxArmResourceID* para que seja igual a “https://management.usgovcloudapi.net/”
+
+   - **Original:** &lt;setting name="FairFaxArmResourceId" serializeAs="String">   
       &lt;value>&lt;/value>   
       &lt;/setting>
 
-   - **编辑后：**     
+   - **Editado:**     
       &lt;setting name="FairFaxArmResourceId" serializeAs="String"> &lt;value>https://management.usgovcloudapi.net/&lt;/value>  
       &lt;/setting>
 
-  将设置名称 FairFaxAuthorityResource 的值更改为等于“https://login.microsoftonline.com/”
+  Altere o valor para o nome da configuração *FairFaxAuthorityResource* para que seja igual a "https://login.microsoftonline.com/"
 
-  - **原始：**&lt;setting name="FairFaxAuthorityResource" serializeAs="String">   
+  - **Original:**&lt;setting name="FairFaxAuthorityResource" serializeAs="String">   
     &lt;value>&lt;/value>
 
-    - **编辑后：**&lt;setting name="FairFaxAuthorityResource" serializeAs="String">   
+    - **Editado:**&lt;setting name="FairFaxAuthorityResource" serializeAs="String">   
     &lt;value>https://login.microsoftonline.com/&lt;/value>
 
-2.  保存包含这两种更改的文件后，请在同一台计算机上重启 Configuration Manager 控制台，然后使用该控制台安装 OMS 连接器。 若要安装连接器，请使用[将数据从 Configuration Manager 同步到 Microsoft Operations Management Suite](/sccm/core/clients/manage/sync-data-microsoft-operations-management-suite) 中的信息，选择 Microsoft Azure 政府云上的 **Microsoft Operations Management Suite**。
+2.  Depois de salvar o arquivo com as duas alterações, reinicie o console do Configuration Manager no mesmo computador e, em seguida, use esse console para instalar o conector do OMS. Para instalar o conector, use as informações em [Sincronizar dados do Configuration Manager para o Microsoft Operations Management Suite](/sccm/core/clients/manage/sync-data-microsoft-operations-management-suite) e selecione o **Espaço de trabalho do Operations Management Suite** que está na nuvem Microsoft Azure Governamental.
 
-3.  OMS 连接器安装后，使用任何连接到站点的控制台时，可使用与政府云的连接。
+3.  Após instalar o conector do OMS, a conexão com a nuvem Governamental estará disponível quando você usar um console que se conecta ao site.
 
-## <a name="android-and-ios-versions-are-no-longer-targetable-in-creation-wizards-for-hybrid-mdm"></a>在混合 MDM 的创建向导中，不再以 Android 和 iOS 版本为目标
+## <a name="android-and-ios-versions-are-no-longer-targetable-in-creation-wizards-for-hybrid-mdm"></a>As versões do Android e iOS não precisam mais ser direcionadas nos assistentes de criação do MDM híbrido
 
-自用于混合移动设备管理 (MDM) 的此技术预览起，为 Intune 托管设备创建新策略和配置文件时，无需再将特定版本的 Android 和 iOS 作为目标。 转而选择下述某个设备类型：
+Começando nesta visualização técnica para MDM (gerenciamento de dispositivo móvel) híbrido, você não precisa mais direcionar a versões específicas do Android e do iOS ao criar novas políticas e perfis de dispositivos gerenciados pelo Intune. Em vez disso, escolha um dos seguintes tipos de dispositivo:
 
 - Android
-- Samsung KNOX 标准版 4.0 及更高版本
+- Samsung KNOX Standard 4.0 e superior
 - iPhone
 - iPad
 
-此更改会影响以下项的创建向导：
+Essa alteração afeta os assistentes de criação dos seguintes itens:
 
-- 配置项目
-- 相容性策略
-- 证书配置文件
-- 电子邮件配置文件
-- VPN 配置文件
-- Wi-Fi 配置文件
+- Itens de configuração
+- Políticas de conformidade
+- Perfis de certificado
+- Perfis de email
+- Perfis de VPN
+- Perfis de Wi-Fi
 
-由于此更改，混合部署可为 Android 和 iOS 新版本更快提供支持，无需新的 Configuration Manager 版本或扩展。 Intune 独立版中支持新版本后，用户就可将其移动设备升级到此版本。
+Com essa alteração, as implantações híbridas podem fornecer suporte com mais rapidez para novas versões do Android e do iOS sem precisar de uma nova versão ou extensão do Configuration Manager. Assim que uma nova versão passar a ter suporte no Intune autônomo, os usuários poderão atualizar seus dispositivos móveis para essa versão.
 
-为防止从 Configuration Manager 先前版本升级时出现问题，移动操作系统版本仍在这些项的属性页中可用。 如果仍需以特定版本为目标，可创建新项，然后在新创建的项的属性页上指定目标版本。
+Para evitar problemas ao atualizar de versões anteriores do Configuration Manager, as versões dos sistemas operacionais móveis ainda estarão disponíveis nas páginas de propriedades desses itens. Se você ainda precisar direcionar a uma versão específica, crie o novo item e especifique a versão de destino na página de propriedades do item recém-criado.

@@ -1,6 +1,6 @@
 ---
-title: "手动部署软件更新 | Microsoft Docs"
-description: "若要手动部署更新，请从 Configuration Manager 控制台选择更新并进行手动部署，或者将更新添加到一个更新组并部署该组。"
+title: "Implantar manualmente atualizações de software | Microsoft Docs"
+description: "Para implantar atualizações manualmente, selecione atualizações no console do Configuration Manager e implante-as manualmente ou adicione atualizações a um grupo de atualização e implante o grupo."
 keywords: 
 author: dougeby
 ms.author: dougeby
@@ -14,68 +14,68 @@ ms.assetid: 57184274-5fea-4d79-a2b4-22e08ed26daf
 ms.openlocfilehash: 2a0d5f12b99689749833c109d4fa399f99451d8a
 ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
 ms.translationtype: HT
-ms.contentlocale: zh-CN
+ms.contentlocale: pt-BR
 ms.lasthandoff: 08/07/2017
 ---
-#  <a name="BKMK_ManualDeploy"></a>手动部署软件更新  
+#  <a name="BKMK_ManualDeploy"></a> Implantar atualizações de software manualmente  
 
-*适用范围：System Center Configuration Manager (Current Branch)*
+*Aplica-se a: System Center Configuration Manager (Branch Atual)*
 
- 手动软件更新部署是从 Configuration Manager 控制台中选择软件更新并手动启动部署过程的过程。 或者，你可以将选择的软件更新添加到更新组，然后手动部署更新组。 在创建将管理进行中的每月软件更新部署的 ADR 之前，你通常将使用手动部署以用所需的软件更新使客户端设备保持最新。 你还将使用手动方法来部署带外软件更新。 如果需要帮助以确定适合的部署方式，请参阅[部署软件更新](deploy-software-updates.md)。
+ Uma implantação manual de atualização de software é o processo de selecionar atualizações de software no console do Configuration Manager e iniciar manualmente o processo de implantação. Ou, você pode adicionar atualizações de software selecionadas a um grupo de atualização e implantar manualmente o grupo de atualização. Geralmente, você usará a implantação manual para atualizar os dispositivos do cliente com as atualizações de software necessárias antes de criar ADRs que gerenciarão implantações mensais e contínuas de atualização de software. Você também usará um método manual para implantar atualizações de software fora de banda. Se você precisar de ajuda para determinar qual método de implantação é adequado para você, consulte [Implantar atualizações de software](deploy-software-updates.md).
 
- 以下部分提供手动部署软件更新的步骤。  
+ As seções a seguir fornecem as etapas para implantar atualizações de software manualmente.  
 
-##  <a name="BKMK_1SearchCriteria"></a>步骤 1：指定软件更新的搜索条件  
- Configuration Manager 控制台中可能会显示数千个软件更新。 手动部署软件更新的工作流中的第一步是标识想要部署的软件更新。 例如，你可以提供条件，以检索在 50 多台客户端设备上所需要的具有“安全”或“严重”软件更新分类的所有软件更新。  
+##  <a name="BKMK_1SearchCriteria"></a> Etapa 1: Especificar critérios de pesquisa para atualizações de software  
+ Potencialmente, existem milhares de atualizações de software exibidas no console do Configuration Manager. A primeira etapa no fluxo de trabalho para implantar manualmente atualizações de software é identificar aquelas que você deseja implantar. Por exemplo, você pode fornecer critérios que recuperam todas as atualizações de software necessárias em mais de 50 dispositivos de clientes e que têm uma classificação de atualização de software de **Segurança** ou **Crítico** .  
 
 > [!IMPORTANT]  
->  可包含在单一软件更新部署中的软件更新的最大数目为 1000。  
+>  O número máximo de atualizações de software que podem ser incluídas em uma única implantação de atualização de software é 1000.  
 
-#### <a name="to-specify-search-criteria-for-software-updates"></a>指定软件更新的搜索条件  
+#### <a name="to-specify-search-criteria-for-software-updates"></a>Para especificar critérios de pesquisa para atualizações de software  
 
-1.  在 Configuration Manager 控制台中，单击“软件库”。  
+1.  No console do Configuration Manager, clique em **Biblioteca de Software**.  
 
-2.  在“软件库”工作区中，展开“软件更新”，并单击“所有软件更新”。 此时会显示同步的软件更新。  
+2.  No espaço de trabalho Biblioteca de Software, expanda **Atualizações de Software**e clique em **Todas as Atualizações de Software**. As atualizações de software sincronizadas são exibidas.  
 
     > [!NOTE]  
-    >  在“所有软件更新”节点上，Configuration Manager 只显示分类为“严重”和“安全”并且已在过去 30 天内发布的软件更新。  
+    >  No nó **Todas as Atualizações de Software**, o Configuration Manager exibe somente atualizações de software com uma classificação **Crítico** e **Segurança** e que foram liberadas nos últimos 30 dias.  
 
-3.  在搜索窗格中，使用以下一个或两个步骤进行筛选以标识所需的软件更新：  
+3.  No painel de pesquisa, filtre para identificar as atualizações de software de que você precisa usando uma ou ambas das etapas a seguir:  
 
-    -   在搜索文本框中，键入将筛选软件更新的搜索字符串。 例如，键入特定软件更新的文章 ID 或公告 ID，或者输入将出现在一些软件更新的标题中的字符串。  
+    -   Na caixa de texto de pesquisa, digite uma cadeia de caracteres de pesquisa que filtrará as atualizações de software. Por exemplo, digite a ID do artigo ou do boletim de uma atualização de software específica ou insira uma cadeia de caracteres que apareceria em um título para várias atualizações de software.  
 
-    -   单击“添加条件”，选择想要用于筛选软件更新的条件，单击“添加”，然后为此条件提供值。  
+    -   Clique em **Adicionar Critério**, selecione os critérios que deseja usar para filtrar atualizações de software, clique em **Adicionar**e forneça os valores para os critérios.  
 
-4.  单击“搜索”以筛选软件更新。  
+4.  Clique em **Pesquisar** para filtrar as atualizações de software.  
 
     > [!TIP]  
-    >  你可以选择在“搜索”选项卡上以及在“保存”组中保存筛选条件。  
+    >  Você tem a opção de salvar os critérios de filtro na guia **Pesquisar** no grupo **Salvar** .  
 
-##  <a name="BKMK_2UpdateGroup"></a>步骤 2：创建包含软件更新的软件更新组  
- 软件更新组提供了一种有效方法，供你在准备部署过程中组织软件更新。 可将软件更新手动添加到软件更新组，或者，Configuration Manager 可以使用 ADR 将软件更新自动添加到新的或现有的软件更新组。 使用以下过程将软件更新手动添加到新软件更新组中。  
+##  <a name="BKMK_2UpdateGroup"></a> Etapa 2: Criar um grupo de atualização de software que contém as atualizações do software  
+ Os grupos de atualização de software fornecem um método eficaz para organizar as atualizações de software em preparação para implantação. É possível adicionar as atualizações de software manualmente a um grupo de atualização de software ou o Configuration Manager pode adicioná-las automaticamente a um grupo de atualização de software novo ou existente usando uma ADR. Use os procedimentos a seguir para adicionar manualmente as atualizações de software a um novo grupo de atualização de software.  
 
-#### <a name="to-manually-add-software-updates-to-a-new-software-update-group"></a>将软件更新手动添加到新软件更新组中  
+#### <a name="to-manually-add-software-updates-to-a-new-software-update-group"></a>Para adicionar manualmente atualizações de software a um novo grupo de atualização de software  
 
-1.  在 Configuration Manager 控制台中，单击“软件库”。  
+1.  No console do Configuration Manager, clique em **Biblioteca de Software**.  
 
-2.  在“软件库”工作区中，单击“软件更新”。  
+2.  No espaço de trabalho Biblioteca de Software, clique em **Atualizações de Software**.  
 
-3.  选择要添加到新软件更新组中的软件更新。  
+3.  Selecione as atualizações de software a serem adicionadas ao novo grupo de atualização de software.  
 
-4.  在“主页”选项卡上的“更新”组中，单击“创建软件更新组”。  
+4.  Na guia **Início** , no grupo **Atualizar** , clique em **Criar Grupo de Atualização de Software**.  
 
-5.  指定软件更新组的名称并根据需要提供描述。 使用名称和描述提供足够的信息，供你确定软件更新组中软件更新的类型。 要继续，请单击“创建”。  
+5.  Especifique o nome do grupo de atualização de software e, opcionalmente, forneça uma descrição. Use o nome e a descrição que fornece informações suficientes para que você determine qual tipo de atualizações de software está no grupo de atualização de software. Para continuar, clique em **Criar**.  
 
-6.  单击“软件更新组”节点以显示新软件更新组。  
+6.  Clique no nó **Grupos de Atualização de Software** para exibir o novo grupo de atualização de software.  
 
-7.  选择软件更新组，在“主页”选项卡内的“更新”组中，单击“显示成员”以显示组中所包含的软件更新的列表。  
+7.  Selecione o grupo de atualização de software e, na guia **Início** , no grupo **Atualizar** , clique em **Mostrar Membros** para exibir uma lista de atualizações de software que estão incluídas no grupo.  
 
-##  <a name="BKMK_3DownloadContent"></a>步骤 3：下载软件更新组的内容  
- 根据需要，在部署软件更新之前，你可以下载包含在软件更新组中的软件更新的内容。 你可以选择执行此操作，以便能够在部署软件更新之前验证内容在分发点上是否可用。 这将有助于你避免内容交付的任何意外问题。 你可以跳过此步骤，内容将在部署过程中下载和复制到分发点。 使用以下过程下载软件更新组中的软件更新的内容。  
+##  <a name="BKMK_3DownloadContent"></a> Etapa 3: Baixar o conteúdo para o grupo de atualização de software  
+ Opcionalmente, para implantar as atualizações de software, você pode baixar o conteúdo para as atualizações de software incluídas no grupo de atualizações de software. Você pode optar por fazer isso para verificar se o conteúdo está disponível nos pontos de distribuição antes de implantar as atualizações de software. Isso ajudará a evitar problemas inesperados com o fornecimento de conteúdo. Você pode ignorar essa etapa, e o conteúdo será baixado e copiado para os pontos de distribuição como parte do processo de implantação. Use o procedimento a seguir para baixar o conteúdo para atualizações de software no grupo de atualização de software.  
 
 
 
-#### <a name="to-download-content-for-the-software-update-group"></a>下载软件更新组的内容
+#### <a name="to-download-content-for-the-software-update-group"></a>Para baixar conteúdo para o grupo de atualização de software
 [!INCLUDE[downloadupdates](..\includes\downloadupdates.md)]
 <!--- 1.  In the Configuration Manager console, click **Software Library**.  
 
@@ -148,167 +148,167 @@ ms.lasthandoff: 08/07/2017
 
 11. On the Completion page, verify that the software updates were successfully downloaded, and then click **Close**. --->
 
-#### <a name="to-monitor-content-status"></a>监视内容状态
-1. 若要监视软件更新的内容状态，请单击 Configuration Manager 控制台中的“监视”。  
+#### <a name="to-monitor-content-status"></a>Para monitorar o status do conteúdo
+1. Para monitorar o status do conteúdo das atualizações de software, clique em **Monitoramento** no console do Configuration Manager.  
 
-2. 在“监视”工作区中，展开“分发状态”，然后单击“内容状态”。  
+2. No espaço de trabalho Monitoramento, expanda **Status de Distribuição**e clique em **Status do Conteúdo**.  
 
-3. 选择以前标识的软件更新包，以下载软件更新组中的软件更新。  
+3. Selecione o pacote e atualização de software que você identificou anteriormente para baixar as atualizações de software no grupo de atualização de software.  
 
-4. 在“主页”选项卡上的“内容”组中，单击“查看状态”。  
+4. Na guia **Início** , no grupo **Conteúdo** , clique em **Exibir Status**.  
 
-##  <a name="BKMK_4DeployUpdateGroup"></a>步骤 4：部署软件更新组  
- 确定想要部署的软件更新并将这些软件更新添加到软件更新组中之后，你可以手动部署软件更新组中的软件更新。 使用以下过程手动部署软件更新组中的软件更新。  
+##  <a name="BKMK_4DeployUpdateGroup"></a> Etapa 4: Implantar o grupo de atualização de software  
+ Depois de determinar quais atualizações de software você pretende implantar e adicioná-las a um grupo de atualização de software, você poderá implantar manualmente as atualizações de software no grupo de atualização de software. Use o procedimento a seguir para implantar manualmente as atualizações de software em um grupo de atualização de software.  
 
-#### <a name="to-manually-deploy-the-software-updates-in-a-software-update-group"></a>手动部署软件更新组中的软件更新  
+#### <a name="to-manually-deploy-the-software-updates-in-a-software-update-group"></a>Para implantar manualmente as atualizações de software em um grupo de atualização de software  
 
-1.  在 Configuration Manager 控制台中，单击“软件库”。  
+1.  No console do Configuration Manager, clique em **Biblioteca de Software**.  
 
-2.  在“软件库”工作区中，展开“软件更新”，并单击“软件更新组”。  
+2.  No espaço de trabalho Biblioteca de Software, expanda **Atualizações de Software**e clique em **Grupos de Atualização de Software**.  
 
-3.  选择打算部署的软件更新组。  
+3.  Selecione o grupo de atualização de software que você deseja implantar.  
 
-4.  在“主页”选项卡上的“部署”组中，单击“部署”。 “部署软件更新向导”将会打开。  
+4.  Na guia **Início** , no grupo **Implantação** , clique em **Implantar**. O **Assistente para Implantar Atualizações de Software** se abre.  
 
-5.  在“常规”页上，配置下列设置：  
+5.  Na página Geral, defina as seguintes configurações:  
 
-    -   名称：指定部署的名称。 部署必须具有唯一名称，以描述部署的目的以及将其与 Configuration Manager 站点中的其他部署区分开来。 默认情况下，Configuration Manager 会用以下格式为部署自动提供名称：**Microsoft 软件更新 -** <日期><时间>  
+    -   **Nome**: especifique o nome da implantação. A implantação deve ter um nome exclusivo que descreva a finalidade da implantação e diferencie-a de outras implantações no site do Configuration Manager. Por padrão, o Configuration Manager fornece automaticamente um nome para a implantação no seguinte formato: **Atualizações de software da Microsoft -** <*data*><*hora*>  
 
-    -   说明：指定部署的说明。 描述概述了部署和任何其他相关信息，以帮助在 Configuration Manager 站点内的其他项中标识和区分该部署。 描述字段是可选字段，最多不超过 256 个字符，默认情况下具有空白值。  
+    -   **Descrição:**especifique uma descrição para a implantação. A descrição fornece uma visão geral da implantação e qualquer outra informação relevante que ajude a identificá-la e a diferenciá-la entre outras no site do Configuration Manager. O campo de descrição é opcional, tem um limite de 256 caracteres e um valor em branco por padrão.  
 
-    -   软件更新/软件更新组：验证所显示的软件更新组或软件更新是否正确。  
+    -   **Atualização de Software/Grupo de Atualização de Software**: verifique se o grupo de atualização de software exibido ou a atualização de software está correta.  
 
-    -   选择部署模板：指定是否要应用以前保存的部署模板。 你可以将部署模板配置为包含多个公用软件更新部署属性，然后在部署后续软件更新时应用模板，以确保类似部署保持一致并节省时间。  
+    -   **Selecionar Modelo de Implantação**: especifique se deseja aplicar um modelo de implantação salvo anteriormente. Você pode configurar um modelo de implantação para conter várias propriedades de implantação da atualização de software e aplicar o modelo ao implantar atualizações de software subsequentes para garantir a consistência em implantações semelhantes e economizar tempo.  
 
-    -   集合：指定部署的集合（如果适用）。 集合的成员会收到部署中定义的软件更新。  
+    -   **Coleção**: especifique a coleção para a implantação, conforme aplicável. Os membros da coleção recebem as atualizações de software que são definidas na implantação.  
 
-6.  在“部署设置”页上配置下列设置：  
+6.  Na página Configurações de Implantação, defina as seguintes configurações:  
 
-    -   署类型：指定软件更新部署的部署类型。 选择“必需”以创建强制性软件更新部署，部署会在配置的安装截止时间之前在客户端上自动安装软件更新。 选择“可用”以创建可供用户从软件中心中安装的可选软件更新部署。  
+    -   **Tipo de implantação**: especifique o tipo de implantação para a implantação de atualização do software. Selecione **Necessário** para criar uma implantação de atualização de software obrigatória na qual as atualizações de software são instaladas automaticamente em clientes antes do prazo de uma instalação configurada. Selecione **Disponível** para criar uma implantação de atualização de software opcional que esteja disponível para que os usuários instalem do Centro de Software.  
 
         > [!IMPORTANT]  
-        >  创建软件更新部署之后，你稍后无法更改部署的类型。  
+        >  Depois de criar a implantação de atualização de software, você não poderá alterar o tipo de implantação.  
 
         > [!NOTE]  
-        >  部署为“所需”的软件更新组将在后台下载，并且享有 BITS 设置（如果配置）。  
-        > 但是，部署为“可用”的软件更新组将在前台下载，并且将忽略 BITS 设置。  
+        >  Um grupo de atualização de software implantado como **Obrigatório** será baixado em segundo plano e atenderá às configurações do BITS, se configurado.  
+        > No entanto, os grupos de atualização de software implantados como **Disponíveis** serão baixados em primeiro plano e ignorarão as configurações de BITS.  
 
-    -   “使用 LAN 唤醒来唤醒所需部署的客户端”：指定在截止时间是否启用 LAN 唤醒，以将唤醒数据包发送到需要部署中的一个或多个软件更新的计算机。 在安装截止时间处于睡眠模式的任何计算机将被唤醒，以便软件更新安装可以启动。 处于睡眠模式且不需要部署中的任何软件更新的客户端不会启动。 默认情况下，此设置未启用，并且只有将“部署类型”设置为“必需”时才可用。  
+    -   **Usar Wake-on-LAN para ativar clientes para implantações obrigatórias**: especifique se o Wake on LAN deve ser habilitado no prazo para enviar pacotes de ativação para os computadores que exigem uma ou mais atualizações de software na implantação. Todos os computadores que estão no modo de suspensão no momento da instalação serão ativados para que a instalação da atualização de software seja iniciada. Clientes que estão no modo de suspensão e que não necessitam de atualizações de software na implantação não são iniciados. Por padrão, essa configuração não está habilitada e está disponível somente quando **Tipo de implantação** está definido como **Necessário**.  
 
         > [!WARNING]  
-        >  必须针对“LAN 唤醒”配置计算机和网络，然后才能使用此选项。  
+        >  Para usar essa opção, os computadores e as redes devem ser configurados para Wake on LAN.  
 
-    -   详细信息级别：指定客户端计算机报告的状态消息的详细信息级别。  
+    -   **Nível de detalhe**: especifique o nível de detalhe para as mensagens de estado que são relatadas pelos computadores cliente.  
 
-7.  在“计划”页上，配置下列设置：  
+7.  Na página Agendamento, defina as seguintes configurações:  
 
-    -   **计划评估**：指定是按照 UTC 还是按照运行 Configuration Manager 控制台的计算机的本地时间来计算可用的时间和安装截止时间。  
-
-        > [!NOTE]  
-        >  选择本地时间，并为“软件可用时间”或“安装截止时间”选择“尽快”时，将使用运行 Configuration Manager 控制台的计算机上的当前时间来计算更新可用的时间或在客户端上安装更新的时间。 如果客户端位于其他时区，当客户端的时间达到评估时间时将发生这些操作。  
-
-    -   软件可用时间：选择以下设置之一以指定将向客户端提供软件更新的时间：  
-
-        -   尽快：选择此设置以尽快向客户端提供部署中的软件更新。 创建部署时，会更新客户端策略，通知客户端在其下一个客户端策略轮询周期进行部署，然后为安装提供软件更新。  
-
-        -   特定时间：选择此设置以在特定日期和时间向客户端提供部署中的软件更新。 创建部署时，会更新客户端策略，通知客户端在其下一个客户端策略轮询周期进行部署。 但是，直到过了指定的日期和时间，才可以安装部署中的软件更新。  
-
-    -   安装截止时间：选择以下设置之一以指定部署中的软件更新的安装截止时间。  
+    -   **Avaliação do agendamento**: especifique se os horários e prazos de instalação disponíveis são avaliados de acordo com a UTC ou no horário local do computador que executa o console do Configuration Manager.  
 
         > [!NOTE]  
-        >  只有在“部署设置”页上将“部署类型”设置为“必需”时才可以配置安装截止时间设置。  
+        >  Quando você seleciona a hora local e seleciona **O mais breve possível** para o **Tempo disponível do software** ou o **Prazo de instalação**, a hora atual no computador que executa o console do Configuration Manager é usada para avaliar quando as atualizações estarão disponíveis ou quando serão instaladas em um cliente. Se o cliente estiver em um fuso horário diferente, essas ações ocorrerão quando o tempo do cliente atingir o tempo de avaliação.  
 
-        -   尽快：选择此设置以尽快自动安装部署中的软件更新。  
+    -   **Tempo disponível do software**: selecione uma das configurações a seguir para especificar quando as atualizações de software estarão disponíveis para clientes:  
 
-        -   特定时间：选择此设置以在特定日期和时间自动安装部署中的软件更新。  
+        -   **O mais breve possível**: selecione essa configuração para disponibilizar as atualizações de software na implantação aos clientes o mais breve possível. Quando a implantação é criada, a política de cliente é atualizada, os clientes são informados sobre a implantação no próximo ciclo de sondagem de política do cliente e as atualizações de software são disponibilizadas para instalação.  
+
+        -   **Horário específico**: selecione essa configuração para disponibilizar as atualizações de software na implantação aos clientes, em uma data e hora específica. Quando a implantação é criada, a política do cliente é atualizada e os clientes são informados sobre a implantação em seu próximo ciclo de sondagem de política do cliente. No entanto, as atualizações de software na implantação não estão disponíveis para instalação até após a data e hora especificadas.  
+
+    -   **Prazo de instalação**: selecione uma das seguintes configurações para especificar o prazo de instalação das atualizações de software na implantação:  
 
         > [!NOTE]  
-        >  实际安装截止时间是你配置的特定时间加上随机的一段时间（最多为 2 小时）。 这可以减少目标集合中同时安装部署中软件更新的所有客户端计算机的潜在影响。  
+        >  Você só pode configurar a definição do prazo de instalação quando **Tipo de implantação** está definido como **Obrigatório** na página Configurações de Implantação.  
+
+        -   **O mais breve possível**: selecione essa configuração para instalar automaticamente as atualizações de software na implantação o mais breve possível.  
+
+        -   **Horário específico**: selecione essa configuração para instalar automaticamente as atualizações de software na implantação, em uma data e hora específica.  
+
+        > [!NOTE]  
+        >  O prazo real de instalação é o horário específico que você configura mais um período de tempo aleatório de até 2 horas. Isso reduz o impacto potencial de todos os computadores cliente na coleção de destino que está instalando as atualizações de software na implantação ao mesmo tempo.  
         >   
-        >  你可以配置“计算机代理”客户端设置和“禁用截止时间随机化”，以对所需的软件更新禁用安装随机化延迟。 有关详细信息，请参阅 [Computer Agent](../../core/clients/deploy/about-client-settings.md#computer-agent)。  
+        >  É possível configurar a definição do cliente **Agente de Computador** , **Desativar data limite aleatória** para desabilitar o atraso de aleatoriedade das atualizações de software necessárias. Para obter mais informações, consulte [Computer Agent](../../core/clients/deploy/about-client-settings.md#computer-agent).  
 
-8.  在“用户体验”页上，请配置下列设置：  
+8.  Na página Experiência do Usuário, defina as seguintes configurações:  
 
-    -   用户通知：指定是否在配置的“软件可用时间”在客户端计算机上软件中心中显示软件更新通知，以及是否在客户端计算机上显示用户通知。 在“部署设置”页上将“部署类型”设置为“可用”时，你无法选择“在软件中心和所有通知中隐藏”。  
+    -   **Notificações ao usuário**: especifique se quer exibir notificações das atualizações de software no Centro de Software no computador cliente no **Tempo disponível do software** configurado e se deseja exibir as notificações ao usuário nos computadores cliente. Quando o **Tipo de implantação** está definido como **Disponível** na página Configurações de implantação, não é possível selecionar **Ocultar no Centro de Software e todas as notificações**.  
 
-    -   截止时间行为：*仅当“部署设置”页上的“部署类型”设置为“必需”时才可用。*    
-    指定到达软件更新部署的截止时间时要发生的行为。 指定是否安装部署中的软件更新。 另外，指定是否在安装软件更新后执行系统重启而不考虑配置的维护时段。 有关维护时段的详细信息，请参阅[如何使用维护时段](../../core/clients/manage/collections/use-maintenance-windows.md)。  
+    -   **Comportamento do prazo**: *disponível apenas quando o **Tipo de implantação** *estiver definido como **Obrigatório** *na página Configurações de Implantação.*   
+    Especifique o comportamento que deve ocorrer quando o prazo é alcançado para a implantação da atualização de software. Especifique se deseja instalar as atualizações de software na implantação. Especifique também se o sistema deve ser reiniciado após a instalação da atualização de software, independentemente de uma janela de manutenção configurada. Para obter mais informações sobre janelas de manutenção, consulte [Como usar janelas de manutenção](../../core/clients/manage/collections/use-maintenance-windows.md).  
 
-    -   设备重启行为：*仅当部署设置页上的部署类型*设置为“必需”时才可用。    
-    指定安装软件更新后是否在服务器和工作站上抑制系统重启，以及是否需要重启系统以完成安装。  
+    -   **Comportamento de reinício de dispositivo**: *disponível apenas quando o **Tipo de implantação** *estiver definido como **Obrigatório** *na página Configurações de Implantação.*    
+    Especifique se uma reinicialização do sistema em servidores e estações de trabalho deve ser suprimida depois que as atualizações de software são instaladas e uma reinicialização do sistema é necessária para concluir a instalação.  
 
         > [!IMPORTANT]  
-        >  在服务器环境中，或者在不希望默认重启安装软件更新的计算机的情况下，抑制系统重启可能很有用。 但是，执行此操作可能会使计算机处于不安全状态，而允许强制重启有助于确保立即完成软件更新安装。
+        >  A supressão das reinicializações do sistema pode ser útil em ambientes de servidor ou para casos em que você não quer que os computadores que estão instalando as atualizações de software reiniciem por padrão. No entanto, isso pode deixar os computadores em um estado inseguro, ao passo que permitir uma reinicialização forçada ajuda a garantir a conclusão imediata da instalação da atualização de software.
 
-    -   **Windows Embedded 设备的写入筛选器处理**：将软件更新部署到启用了写入筛选器的 Windows Embedded 设备时，你可以指定将软件更新安装在临时覆盖区上并稍后提交更改，或者在安装截止时或在维护时段内提交更改。 如果在安装截止时或在维护时段内提交更改，则需要重新启动，而且更改将保留在设备上。  
+    -   **Manuseio de filtro de gravação para dispositivos Windows Embedded**: ao implantar atualizações de software em dispositivos Windows Embedded com filtro de gravação habilitado, é possível especificar que a atualização de software seja instalada na sobreposição temporária e que as alterações sejam confirmadas mais tarde, na data limite da instalação ou durante uma janela de manutenção. Ao confirmar as alterações na data limite da instalação ou durante uma janela de manutenção, é necessário reinicializar. Dessa forma, as alterações permanecem no dispositivo.  
 
         > [!NOTE]  
-        >  将软件更新部署到 Windows Embedded 设备时，确保设备是配置了维护时段的集合的成员。  
+        >  Ao implantar uma atualização de software em um dispositivo Windows Embedded, verifique se o dispositivo é membro de uma coleção com uma janela de manutenção configurada.  
 
-    - **重启时的软件更新部署重新评估行为**：从 Configuration Manager 版本 1606 开始，选择此设置可配置软件更新部署，使客户端在安装软件更新并重启后立即运行软件更新符合性扫描。 这使客户端可以检查在客户端重新启动之后成为适用状态的其他软件更新，以及随后在相同维护时段期间安装它们（并成为符合状态）。
+    - **Comportamento de reavaliação da implantação de atualizações de software na reinicialização**: começando com a versão 1606 do Configuration Manager, é possível selecionar este ajuste para configurar as implantações de atualização de software para que os clientes executem uma verificação de conformidade de atualizações de software imediatamente após um cliente instalar atualizações de software e reiniciar. Isso permite que os clientes verifiquem atualizações de software adicionais que se tornam aplicáveis depois que eles são reiniciados e as instalem (e se tornem compatíveis) durante a mesma janela de manutenção.
 
-9. 在“警报”页上，配置 Configuration Manager 和 System Center Operations Manager 为此部署生成警报的方式。 只有在“部署设置”页上将“部署类型”设置为“必需”时，才可以配置警报。  
-
-    > [!NOTE]  
-    >  你可以从“软件库”工作区的“软件更新”节点中查看最新软件更新警报。  
-
-10. 在“下载设置”页上配置下列设置：  
-
-    - 指定当客户端连接到慢速网络或正在使用回退内容位置时是否将下载和安装软件更新。  
-
-    - 指定当软件更新的内容在首选分发点上不可用时客户端是否下载和安装回退分发点中的软件更新。  
-
-    - **允许客户端与同一子网上的其他客户端共享内容**：指定是否为内容下载启用 BranchCache。 有关 BranchCache 的详细信息，请参阅[内容管理的基本概念](../../core/plan-design/hierarchy/fundamental-concepts-for-content-management.md#branchcache)。  
-
-    - 如果软件更新当前在分发点上不可用，邻域或站点组从 Microsoft 更新下载内容：如果软件更新在分发点上不可用，选择此设置，可使连接到 Intranet 的客户端从 Microsoft 更新下载软件。 基于 Internet 的客户端可随时访问 Microsoft 更新，获取软件更新内容。
-
-    - 指定是否允许客户端在安装截止日期之后下载内容（如果客户端使用按流量计费的 Internet 连接）。 Internet 提供商有时根据你在按流量计费的 Internet 连接上发送和接收的数据量计费。  
+9. Na página Alertas, configure como o Configuration Manager e o System Center Operations Manager gerarão alertas para essa implantação. Você só pode configurar alertas quando o **Tipo de implantação** está definido como **Obrigatório** na página Configurações de Implantação.  
 
     > [!NOTE]  
-    >  客户端请求部署中的软件更新的管理点中的内容位置。 下载行为取决于在此页面上配置分发点、部署包和设置的方式。 有关详细信息，请参阅 [Content source location scenarios](../../core/plan-design/hierarchy/content-source-location-scenarios.md)。  
+    >  Você pode verificar os alertas de atualizações de software recentes no nó **Atualizações de Software** no espaço de trabalho **Biblioteca de Software** .  
 
-11. 如果已经执行[步骤 3：下载软件更新组的内容](#BKMK_3DownloadContent)，则不会显示“部署包”、“分发点”和“语言选择”页，并且可以跳到向导的步骤 15。  
+10. Na página Configurações de Download, defina as seguintes configurações:  
+
+    - Especifique se o cliente irá baixar e instalar as atualizações de software quando estiver conectado a uma rede lenta ou usando um local de conteúdos de fallback.  
+
+    - Especifique se o cliente deve baixar e instalar as atualizações de software por meio de um ponto de distribuição de fallback quando o conteúdo das atualizações de software não está disponível ou de um ponto de distribuição preferencial.  
+
+    - **Permitir que os clientes compartilhem conteúdo com outros clientes na mesma sub-rede**: especifique se deseja habilitar o uso do BranchCache para downloads de conteúdo. Para obter mais informações sobre o BranchCache, consulte [Fundamental concepts for content management (Conceitos fundamentais para o gerenciamento de conteúdo)](../../core/plan-design/hierarchy/fundamental-concepts-for-content-management.md#branchcache).  
+
+    - **Se as atualizações de software não estiverem disponíveis no ponto de distribuição nos grupos de site, atuais ou vizinhos, baixe o conteúdo do Microsoft Updates**: selecione essa configuração para que os clientes que estiverem conectados à intranet baixem as atualizações de software do Microsoft Update se as atualizações de software não estiverem disponíveis nos pontos de distribuição. Os clientes baseados na Internet sempre podem ir para o Microsoft Update para obter o conteúdo das atualizações de software.
+
+    - Especifique se os clientes têm permissão para baixar após o prazo de uma instalação quando usam conexão de Internet limitada. Provedores de Internet ocasionalmente cobram por quantidade de dados que você envia e recebe quando está em uma conexão de Internet limitada.  
+
+    > [!NOTE]  
+    >  Os clientes solicitam o local do conteúdo de um ponto de gerenciamento de atualizações de software em uma implantação. O comportamento do download depende de como você configurou o ponto de distribuição, o pacote de implantação e as configurações desta página. Para obter mais informações, consulte [Content source location scenarios](../../core/plan-design/hierarchy/content-source-location-scenarios.md).  
+
+11. Se você realizou o [Etapa 3: Baixar o conteúdo para o grupo de atualização de software](#BKMK_3DownloadContent), as páginas Pacote de Implantação, Pontos de Distribuição e Seleção de Idioma não são exibidas, e você pode passar para a etapa 15 do assistente.  
 
     > [!IMPORTANT]  
-    >  不会重新下载以前已经下载到站点服务器上的内容库中的软件更新。 甚至当你为软件更新创建新的部署包时也是如此。 如果以前已经下载了所有软件更新，则向导将跳到“语言选择”页（步骤 15）。  
+    >  As atualizações de software previamente baixadas na biblioteca de conteúdo no servidor do site não são baixadas novamente. Isso é verdadeiro mesmo quando você cria um novo pacote de implantação para as atualizações de software. Se todas as atualizações de software já foram previamente baixadas, o assistente vai para a página **Seleção de Idioma** (etapa 15).  
 
-12. 在“部署包”页上，选择现有部署包，或者配置以下设置以指定新部署包：  
+12. Na página do Pacote de Implantação, selecione um pacote de implantação existente ou configure as seguintes definições para especificar um novo pacote de implantação:  
 
-    1.  名称：指定部署包的名称。 这必须是描述包内容的唯一名称。 它被限制为不超过 50 个字符。  
+    1.  **Nome**: especifique o nome do pacote de implantação. Deve ser um nome exclusivo que descreva o conteúdo do pacote. Ele é limitado a 50 caracteres.  
 
-    2.  说明：指定提供有关该部署包的信息的说明。 该说明仅限于 127 个字符。  
+    2.  **Descrição**: especifique uma descrição que forneça informações sobre o pacote de implantação. A descrição é limitada a 127 caracteres.  
 
-    3.  “包源”：指定软件更新源文件的位置。  键入源位置的网络路径，例如 **\\\server\sharename\path**，或单击“浏览”来查找网络位置。 在进入到下一页之前，必须为部署包源文件创建共享文件夹。  
+    3.  **Origem do pacote**: especifique o local dos arquivos de origem de atualização do software.  Digite um caminho de rede para o local de origem, por exemplo, **\\\servidor\nome do compartilhamento\caminho**ou clique em **Procurar** para encontrar o local na rede. É necessário criar a pasta compartilhada para os arquivos de origem do pacote de implantação antes de ir para a próxima página.  
 
         > [!NOTE]  
-        >  其他软件部署包不能使用你指定的部署包源位置。  
+        >  O local de origem do pacote de implantação especificado não poderá ser usado por outro pacote de implantação de software.  
 
         > [!IMPORTANT]  
-        >  SMS 提供程序计算机帐户和运行向导下载软件更新的用户都必须对下载位置具有“写” NTFS 权限。 你应该仔细限制对此下载位置的访问，以减少攻击者篡改软件更新源文件的风险。  
+        >  A conta do computador Provedor de SMS e o usuário que estiver executando o assistente para baixar as atualizações de software deverão ter permissões NTFS de **Gravação** no local de download. É necessário restringir o acesso ao local de download com atenção, para reduzir o risco de ataques de adulteração nos arquivos de origem de atualização de software.  
 
         > [!IMPORTANT]  
-        >  在 Configuration Manager 创建部署包之后，可在部署包属性中更改包源位置。 但是，如果你执行此操作，则必须首先将原始包源中的内容复制到新包源位置。  
+        >  Será possível alterar o local de origem do pacote nas propriedades do pacote de implantação depois que o Configuration Manager criar o pacote de implantação. Mas ao fazer isso, é necessário primeiro copiar o conteúdo da fonte da origem do pacote para o seu novo local de origem.  
 
-    4.  发送优先级：指定部署包的发送优先级。 Configuration Manager 在将包发送到分发点时将使用部署包的发送优先级。 部署包按优先级顺序发送：高、中或低。 具有相同优先级的包按照其创建顺序发送。 如果没有囤积，则将立即处理包，而不考虑其优先级。  
+    4.  **Prioridade de envio**: especifique a prioridade de envio do pacote de implantação. O Configuration Manager usa a prioridade de envio do pacote de implantação quando envia o pacote para pontos de distribuição. Os pacotes de implantação são enviados por ordem de prioridade: Alta, Média, ou Baixa. Pacotes com prioridades idênticas são enviados na ordem em que foram criados. Se não houver uma lista de pendências, o pacote será processado imediatamente, não importando qual seja a prioridade.  
 
-13. 在“分发点”页上，指定将承载软件更新文件的分发点或分发点组。 有关分发点的详细信息，请参阅[分发点配置](../../core/servers/deploy/configure/install-and-configure-distribution-points.md#bkmk_configs)。  
+13. Na página Pontos de Distribuição, especifique os pontos de distribuição ou grupos de pontos de distribuição que irão hospedar os arquivos de atualização de software. Para obter mais informações sobre pontos de distribuição, consulte [Configurações de ponto de distribuição](../../core/servers/deploy/configure/install-and-configure-distribution-points.md#bkmk_configs).  
 
-14. 在“下载位置”页上，指定是从 Internet 中还是从本地网络中下载软件更新文件。 配置下列设置：  
+14. Na página Local de Download, especifique se deseja baixar os arquivos de atualização de software da Internet ou de sua rede local. Defina as seguintes configurações:  
 
-    -   从 Internet 下载软件更新：选择此设置以从 Internet 上的指定位置下载软件更新。 默认情况下将启用此设置。  
+    -   **Baixe as atualizações de software da Internet**: selecione essa configuração para baixar as atualizações de software de um local específico na Internet. Essa configuração é habilitada por padrão.  
 
-    -   从本地网络上的位置下载软件更新：选择此设置以从本地文件夹或共享的网络文件夹下载软件更新。 当运行向导的计算机无法访问 Internet 时，此设置很有用。 能够访问 Internet 的任何计算机可以先下载软件更新，然后将它们存储本地网络上的某个位置，以便在以后安装时访问。  
+    -   **Baixar atualizações de software de um local na rede local**: selecione essa configuração para baixar atualizações de software de uma pasta local ou uma pasta de rede compartilhada. Essa configuração é útil quando o computador que executa o assistente não tem acesso à Internet. As atualizações de software podem ser baixadas preliminarmente de qualquer computador que tenha acesso à Internet e armazenadas em um local na rede local para acesso subsequente na instalação.  
 
-15. 在“语言选择”页上，为已选定要下载的软件更新选择语言。 只有在提供了与选择的语言对应的软件更新时才能下载软件更新。 并非特定于语言的软件更新是随时都能下载的。 默认情况下，向导会选择你已在软件更新点的属性中配置的语言。 在继续进入下一页之前，必须选择至少一种语言。 如果仅选择软件更新不支持的语言，则软件更新的下载将会失败。  
+15. Na página Seleção de Idioma, selecione os idiomas para os quais as atualizações de software selecionadas são baixadas. As atualizações de software só serão baixadas se estiverem disponíveis nos idiomas selecionados. Atualizações de software que não são específicas do idioma são sempre baixadas. Por padrão, o assistente seleciona os idiomas que você configurou nas propriedades de ponto de atualização de software. Pelo menos um idioma deve ser selecionado para ir para a próxima página. Quando você seleciona apenas os idiomas que não têm suporte de uma atualização de software, o download irá falhar para a atualização.  
 
-16. 在“摘要”页上查看设置。 若要将设置保存到部署模板中，请单击“另存为模板”，输入名称并选择要包括在模板中的设置，然后单击“保存”。 若要更改已配置的设置，请单击关联的向导页面，然后更改设置。  
+16. Na página Resumo, verifique as configurações. Para salvar as configurações em um modelo de implementação, clique em **Salvar como Modelo**, digite um nome e selecione as configurações que você quer incluir no modelo e clique **Salvar**. Para alterar uma configuração, clique na página do assistente associado e altere a configuração.  
 
     > [!WARNING]  
-    >  模板名称可以包含字母数字 ASCII 字符，以及 **\\**（反斜杠）或 **‘**（单引号）。  
+    >  O nome do modelo pode consistir em caracteres ASCII alfanuméricos, bem como em **\\** (barra invertida) ou **‘** (aspa simples).  
 
-17. 单击“下一步”以部署软件更新。  
+17. Clique em **Próximo** para implantar a atualização de software.  
 
- 完成向导后，Configuration Manager 会将软件更新下载到站点服务器上的内容库、将软件更新分发到已配置的分发点，然后将软件更新组部署到目标集合中的客户端。 有关部署过程的详细信息，请参阅 [Software update deployment process](../understand/software-updates-introduction.md#BKMK_DeploymentProcess)。
+ Depois de concluir o assistente, o Configuration Manager baixará as atualizações de software na biblioteca de conteúdo no servidor do site, distribuirá as atualizações de software para os pontos de distribuição configurados e depois implantará o grupo de atualização de software dos clientes na coleção de destino. Para obter mais informações sobre o processo de implantação, veja [Software update deployment process](../understand/software-updates-introduction.md#BKMK_DeploymentProcess).
 
-## <a name="next-steps"></a>后续步骤
-[监视软件更新](monitor-software-updates.md)
+## <a name="next-steps"></a>Próximas etapas
+[Monitorar atualizações de software](monitor-software-updates.md)

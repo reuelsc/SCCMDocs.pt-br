@@ -1,6 +1,6 @@
 ---
-title: "配置基线的常见任务 - Configuration Manager | Microsoft Docs"
-description: "了解如何创建和部署 System Center Configuration Manager 配置基线。"
+title: "Tarefas comuns para linhas de base de configuração – Configuration Manager | Microsoft Docs"
+description: "Saiba como criar e implantar as linhas de base de configuração no System Center Configuration Manager."
 ms.custom: na
 ms.date: 07/12/2017
 ms.prod: configuration-manager
@@ -18,70 +18,70 @@ manager: angrobe
 ms.openlocfilehash: 5bf4457af6bedf7bc9cd73c879f1857209c0725d
 ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
 ms.translationtype: HT
-ms.contentlocale: zh-CN
+ms.contentlocale: pt-BR
 ms.lasthandoff: 08/07/2017
 ---
-# <a name="common-tasks-for-creating-and-deploying-configuration-baselines-with-system-center-configuration-manager"></a>System Center Configuration Manager 用于创建和部署配置基线的常见任务
+# <a name="common-tasks-for-creating-and-deploying-configuration-baselines-with-system-center-configuration-manager"></a>Tarefas comuns para criar e implantar linhas de base de configuração com o System Center Configuration Manager
 
-*适用范围：System Center Configuration Manager (Current Branch)*
+*Aplica-se a: System Center Configuration Manager (Branch Atual)*
 
-本主题包含帮助了解有关如何创建和部署 System Center Configuration Manager 配置基线的常用方案。  
+Este tópico contém cenários comuns para ajudar a saber mais sobre como criar e implantar linhas de base de configuração do System Center Configuration Manager.  
 
- 如果已熟悉符合性设置，可以在[创建配置基线](../../compliance/deploy-use/create-configuration-baselines.md)和[部署配置基线](../../compliance/deploy-use/deploy-configuration-baselines.md)主题中找到有关你使用的所有功能的详细文档。  
+ Se você já está familiarizado com as configurações de conformidade, é possível encontrar a documentação detalhada sobre todos os recursos que podem ser usados nos tópicos [Criar linhas de base de configuração](../../compliance/deploy-use/create-configuration-baselines.md) e [Implantar linhas de base de configuração](../../compliance/deploy-use/deploy-configuration-baselines.md).  
 
- 在开始之前，请阅读 [System Center Configuration Manager 中的符合性设置入门](../../compliance/get-started/get-started-with-compliance-settings.md)以了解有关符合性设置的一些基础知识，另请阅读[规划和配置符合性设置](../../compliance/plan-design/plan-for-and-configure-compliance-settings.md)来实施任何必要的先决条件。  
+ Antes de começar, leia a [Introdução às configurações de conformidade no System Center Configuration Manager](../../compliance/get-started/get-started-with-compliance-settings.md) para aprender algumas noções básicas sobre as configurações de conformidade e [Planejar e definir as configurações de conformidade](../../compliance/plan-design/plan-for-and-configure-compliance-settings.md) para implementar os pré-requisitos necessários.  
 
-## <a name="create-a-configuration-baseline"></a>创建配置基线  
- 在本例中，已创建了仅针对运行 Configuration Manager 客户端的 Windows 10 电脑的配置项目。  
+## <a name="create-a-configuration-baseline"></a>Criar uma linha de base de configuração  
+ Neste exemplo, você criou um item de configuração apenas para computadores com Windows 10 que executam o cliente do Configuration Manager.  
 
- 此配置项目强制要求在 Windows 10 电脑上输入至少 6 位字符的密码。 配置项目名为“Windows 10 密码实施” 。  
+ Este item de configuração impõe uma senha necessária de, pelo menos, 6 caracteres em PCs com Windows 10. O item de configuração é nomeado **Imposição de Senha do Windows 10**.  
 
-使用下面的过程了解如何将此配置项目添加到配置基线以准备部署。  
+Use o procedimento a seguir para aprender a adicionar este item de configuração a uma linha de base de configuração para prepará-lo para implantação.  
 
-1.  在 Configuration Manager 控制台中，单击“资产和符合性” > “符合性设置” > “配置基线”。  
+1.  No console do Configuration Manager, clique em **Ativos e Conformidade** > **Configurações de Conformidade** > **Linhas de Base de Configuração**.  
 
-3.  在“主页”  选项卡上的“创建”  组中，单击“创建配置基线” 。  
+3.  Na guia **Início** , no grupo **Criar** , clique em **Criar Linha de Base de Configuração**.  
 
-4.  在“创建配置基线”  对话框中，配置以下设置：  
+4.  Na caixa de diálogo **Criar Linha de Base de Configuração**, defina as seguintes configurações:  
 
-    -   **名称** – 输入 **Windows 10 密码** （或你选择的另一名称）  
+    -   **Nome** -Digite **Senhas do Windows 10** (ou outro nome de sua escolha)  
 
-5.  单击“添加”  > 。  
+5.  Clique em **Adicionar** > **Itens de Configuração**.  
 
-6.  在“添加配置项目”  对话框中，选择之前创建的“Windows 10 密码实施”  配置项目，然后单击“添加” 。  
+6.  Na caixa de diálogo **Adicionar Itens de Configuração** , selecione o item de configuração **Imposição de Senha do Windows 10** que você criou anteriormente e clique em **Adicionar**.  
 
-7.  单击“确定”以关闭“添加配置项目”  对话框并返回到“创建配置基线”  对话框。
+7.  Clique em OK para fechar a caixa de diálogo **Adicionar Itens de Configuração** e voltar para a caixa de diálogo **Criar Linha de Base de Configuração**.
 
-8.  单击“确定”  以关闭“创建配置基线”  对话框。  
+8.  Clique em **OK** para fechar a caixa de diálogo **Criar Linha de Base de Configuração** .  
 
- 现在，可以看到在 Configuration Manager 控制台的“配置基线”节点中创建的配置基线。  
+ Agora você pode ver a linha de base de configuração no nó **Linhas de Base de Configuração** do console do Configuration Manager.  
 
-## <a name="deploy-the-configuration-baseline"></a>部署配置基线  
- 在本例中，会将前一过程中创建的配置基线部署到计算机集合中。  
+## <a name="deploy-the-configuration-baseline"></a>Implantar a linha de base de configuração  
+ Neste exemplo, você implantará a linha de base de configuração criada no procedimento anterior em uma coleção de computadores.  
 
-1.  在 Configuration Manager 控制台中，单击“资产和符合性” > “符合性设置” > “配置基线”。  
+1.  No console do Configuration Manager, clique em **Ativos e Conformidade** > **Configurações de Conformidade** > **Linhas de Base de Configuração**.  
 
-3.  从配置基线列表中选择“Windows 10 密码” 。  
+3.  Na lista de linhas de base de configuração, selecione **Senhas do Windows 10**.  
 
-4.  在“主页”  选项卡上的“部署”  组中，单击“部署” 。  
+4.  Na guia **Início** , no grupo **Implantação** , clique em **Implantar**.  
 
-5.  在“部署配置基线”  对话框中，配置以下设置：  
+5.  Na caixa de diálogo **Implantar Linhas de Base de Configuração**, defina as seguintes configurações:  
 
-    -   **所选配置基线** – 确保“Windows 10 密码”  配置基线已自动添加到此列表中。  
+    -   **Linhas de base de configuração selecionadas** - Verifique se a linha de base de configuração das **Senhas do Windows 10** foi automaticamente adicionada a essa lista.  
 
-    -   **修正非符合性规则(如果支持)** - 勾选此框，以确保如果目标设备上没有正确的设置，则通过 Configuration Manager 进行修正。  
+    -   **Corrigir regras não compatíveis quando possível** – Marque esta caixa para garantir que, se as configurações corretas não estiverem presentes nos dispositivos de destino, elas serão corrigidas pelo Configuration Manager.  
 
-    -   **集合** – 单击“浏览”  以选择在其上评估配置基线并针对符合性进行修正的计算机集合。 在本例中，已将配置基线部署到内置“所有台式计算机和服务器客户端”  集合。  
+    -   **Coleção** – Clique em **Procurar** para escolher a coleção de computadores em que a linha de base de configuração será avaliada e corrigida quanto à conformidade. Neste exemplo, a linha de base de configuração foi implantada na coleção interna **Todos os Clientes de Desktop e de Servidor** .  
 
         > [!TIP]  
-        >  不要担心选择的集合是否包含不运行 Windows 10 的计算机或设备。 只要在创建的配置项目中配置支持的平台，则只针对 Windows 10 电脑评估符合性。  
+        >  Não se preocupe se a coleção que você escolher contém computadores ou dispositivos que não executam o Windows 10. Já que você configurou as plataformas com suporte no item de configuração criado, somente os PCs com Windows 10 serão avaliados quanto à conformidade.  
 
-    -   如有必要，配置用于评估配置基线的计划。 否则，请保留默认值“7 天” 。  
+    -   Se necessário, configure o agendamento pelo qual a linha de base de configuração será avaliada. Caso contrário, mantenha o padrão de **7 Dias**.  
 
-7.  单击“确定”  以关闭“部署配置基线”  对话框并创建部署。  
+7.  Clique em **OK** para fechar a caixa de diálogo **Implantar Linhas de Base de Configuração** e criar a implantação.  
 
- 如果想要快速了解此部署的合规性统计信息，请在“监视”  工作区中，单击“部署” 。 在屏幕底部，可看到“符合性统计信息”图表。  
+ Se quiser dar uma olhada rápida nas estatísticas de conformidade dessa implantação, no espaço de trabalho **Monitoramento** , clique em **Implantações**. Na parte inferior da tela, você verá um gráfico **Estatísticas de Conformidade** .  
 
-## <a name="next-steps"></a>后续步骤 
+## <a name="next-steps"></a>Próximas etapas 
 
-有关如何监视配置基线的详细信息，请参阅[监视符合性设置](../../compliance/deploy-use/monitor-compliance-settings.md)。  
+Para obter informações mais detalhadas sobre como monitorar linhas de base de configuração, confira [Monitorar configurações de conformidade](../../compliance/deploy-use/monitor-compliance-settings.md).  

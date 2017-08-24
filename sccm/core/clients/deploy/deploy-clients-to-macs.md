@@ -1,6 +1,6 @@
 ---
-title: "部署 Mac 客户端 | Microsoft Docs"
-description: "了解如何在 System Center Configuration Manager 中将客户端部署到 Mac 计算机。"
+title: Implantar os clientes Mac | Microsoft Docs
+description: Saiba como implantar clientes em computadores Mac no System Center Configuration Manager.
 ms.custom: na
 ms.date: 05/04/2017
 ms.prod: configuration-manager
@@ -17,312 +17,312 @@ manager: angrobe
 ms.openlocfilehash: 6ce212c6745b70a47553891e5dbc124b4c4e50fa
 ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
 ms.translationtype: HT
-ms.contentlocale: zh-CN
+ms.contentlocale: pt-BR
 ms.lasthandoff: 08/07/2017
 ---
 # <a name="how-to-deploy-clients-to-macs"></a>How to deploy clients to Macs
 
-*适用范围：System Center Configuration Manager (Current Branch)*
+*Aplica-se a: System Center Configuration Manager (Branch Atual)*
 
-本主题介绍在 Mac 计算机上部署和维护 Configuration Manager 客户端的方法。 若要了解将客户端部署到 Mac 计算机之前需要配置的内容，请参阅[将客户端软件部署到 Macs 的准备工作](/sccm/core/clients/deploy/prepare-to-deploy-mac-clients)。
+Este tópico descreve como implantar e manter o cliente do Configuration Manager em computadores Mac. Para saber mais sobre o que você precisa configurar antes de implantar clientes em computadores Mac, consulte [Preparar para implantar o software cliente em Macs](/sccm/core/clients/deploy/prepare-to-deploy-mac-clients).
 
-当你为 Mac 计算机安装新客户端时，你可能还需要安装 Configuration Manager 更新以反映 Configuration Manager 控制台中的新客户端信息。
+Quando instala um novo cliente para computadores Mac, talvez você também precise instalar atualizações do Configuration Manager para refletir as novas informações de cliente no console do Configuration Manager.
 
-在这些过程中，有两个选项可用于安装客户端证书。 在[将客户端软件部署到 Macs 的准备工作](/sccm/core/clients/deploy/prepare-to-deploy-mac-clients#certificate-requirements)中阅读用于 Macs 的客户端证书的相关详细信息。  
+Nesses procedimentos, há duas opções para instalar certificados de cliente. Leia mais sobre os certificados de cliente para Macs no [Preparar para implantar o software cliente em Macs](/sccm/core/clients/deploy/prepare-to-deploy-mac-clients#certificate-requirements).  
 
--   通过使用 [CMEnroll 工具](#install-the-client-and-then-enroll-the-client-certificate-on-the-mac)注册 Configuration Manager。 注册过程不支持自动证书续订，因此你必须在安装的证书过期之前重新注册 Mac 计算机。    
+-   Usar o registro do Configuration Manager usando a [ferramenta CMEnroll](#install-the-client-and-then-enroll-the-client-certificate-on-the-mac). O processo de registro não oferece suporte à renovação automática de certificados, portanto, é necessário registrar novamente os computadores Mac antes de o certificado instalado expirar.    
 
--   [使用与 Configuration Manager 无关的证书请求和安装方法](#use-a-certificate-request-and-installation-method-that-is-independent-from-configuration-manager)。 
+-   [Usar um método de solicitação e de instalação de certificado independente do Configuration Manager](#use-a-certificate-request-and-installation-method-that-is-independent-from-configuration-manager). 
 
 >[!IMPORTANT]
->  若要将客户端部署到运行 macOS Sierra 的设备上，必须正确配置管理点证书的使用者名称（例如，使用管理点服务器的 FQDN）。
+>  Para implantar o cliente em dispositivos com macOS Sierra, o nome da entidade do certificado do ponto de gerenciamento deve estar configurado corretamente, por exemplo, usando o FQDN do servidor de ponto de gerenciamento.
 
 
-## <a name="configure-client-settings-for-enrollment"></a>配置客户端设置以进行注册  
- 必须使用[默认客户端设置](../../../core/clients/deploy/about-client-settings.md)来为 Mac 计算机配置注册；无法使用自定义客户端设置。  
+## <a name="configure-client-settings-for-enrollment"></a>Defina as configurações do cliente para o registro  
+ É necessário usar as [configurações de cliente padrão](../../../core/clients/deploy/about-client-settings.md) para configurar o registro para computadores Mac; não é possível usar configurações de cliente personalizadas.  
 
- Configuration Manager 需要此步骤以便在 Mac 上请求和安装证书。  
+ Isso é necessário para que o Configuration Manager solicite e instale o certificado no Mac.  
 
-### <a name="to-configure-the-default-client-settings-for-configuration-manager-to-enroll-certificates-for-macs"></a>为 Configuration Manager 配置默认客户端设置以便为 Mac 注册证书  
+### <a name="to-configure-the-default-client-settings-for-configuration-manager-to-enroll-certificates-for-macs"></a>Para definir as configurações de cliente padrão para o Configuration Manager registrar certificados para Mac  
 
-1.  在 Configuration Manager 控制台中，选择“管理” >  “客户端设置” > “默认客户端设置”。  
+1.  No console do Configuration Manager, escolha **Administração** >  **Configurações do Cliente** > **Configurações do Cliente Padrão**.  
 
-4.  在“主页”选项卡上的“属性”组中，选择“属性”。  
+4.  Na guia **Início**, no grupo **Propriedades**, clique em **Propriedades**.  
 
-5.  选择“注册”部分，然后配置以下设置：  
+5.  Selecione a seção **Registro** e defina essas configurações:  
 
-    1.  **允许用户注册移动设备和 Mac 计算机：是**  
+    1.  **Permitir que os usuários registrem dispositivos móveis e computadores Mac: Sim**  
 
-    2.  “注册配置文件：”选择“设置配置文件”。  
+    2.  **Perfil de registro:** escolha **Definir Perfil**.  
 
-6.  在“移动设备注册配置文件”对话框中，选择“创建”。  
+6.  Na caixa de diálogo **Perfil de Registro do Dispositivo Móvel** escolha **Criar**.  
 
-7.  在“创建注册配置文件”  对话框中，输入此注册配置文件的名称，然后配置“管理站点代码” 。 选择包含将管理 Mac 计算机的管理点的 Configuration Manager 主站点。  
+7.  Na caixa de diálogo **Criar Perfil de Registro** , insira um nome para esse perfil de registro e configure o **Código do site de gerenciamento**. Selecione o site primário do Configuration Manager que contém os pontos de gerenciamento que gerenciarão os computadores Mac.  
 
     > [!NOTE]  
-    >  如果无法选择站点，则检查是否将站点中的至少一个管理点配置为支持移动设备。  
+    >  Caso não consiga selecionar o site, verifique se pelo menos um ponto de gerenciamento no site está configurado para dar suporte a dispositivos móveis.  
 
-8.  选择“添加”。  
+8.  Escolha **Adicionar**.  
 
-9. 在“添加移动设备证书颁发机构”对话框中，选择将向 Mac 计算机颁发证书的证书颁发机构 (CA) 服务器。  
+9. Na caixa de diálogo **Adicionar Autoridade de Certificação para Dispositivos Móveis**, selecione o servidor da AC (autoridade de certificação) que emitirá certificados para computadores Mac.  
 
-10. 在“创建注册配置文件”对话框中，选择在步骤 3 中创建的 Mac 计算机证书模板。  
+10. Na caixa de diálogo **Criar Perfil de Registro**, selecione o modelo de certificado do computador Mac criado na Etapa 3.  
 
-11. 单击“确定”以关闭“注册配置文件”对话框，然后关闭“默认客户端设置”对话框。  
+11. Clique em **OK** para fechar a caixa de diálogo **Perfil de Registro** e a caixa de diálogo **Configurações do Cliente Padrão**.  
 
     > [!TIP]  
-    >  如果想要更改客户端策略间隔，请使用“客户端策略”客户端设置组中的“客户端策略轮询间隔”。  
+    >  Se desejar alterar o intervalo da política do cliente use o **Intervalo de sondagem da política do cliente** no grupo de configuração do cliente **Política do Cliente**.  
 
- 所有用户下次下载客户端策略时，将使用这些设置进行配置。 要为单个客户端启动策略检索，请参阅[为 Configuration Manager 客户端启动策略检索](../../../core/clients/manage/manage-clients.md#BKMK_PolicyRetrieval)。  
+ Todos os usuários serão configurados com essas definições na próxima vez que baixarem a política do cliente. Para iniciar a recuperação de política para um cliente individual, consulte [Iniciar a recuperação de política para um cliente do Configuration Manager](../../../core/clients/manage/manage-clients.md#BKMK_PolicyRetrieval).  
 
- 除了注册客户端设置之外，请确保配置了以下客户端设备设置：  
+ Além das configurações do cliente de registro, verifique se você definiu as seguintes configurações do dispositivo do cliente:  
 
--   “硬件清单”：如果要从 Mac 和 Windows 客户端计算机中收集硬件清单，请启用和配置此设置。 有关详细信息，请参阅[如何在 System Center Configuration Manager 中扩展硬件清单](../../../core/clients/manage/inventory/extend-hardware-inventory.md)。  
+-   **Inventário de hardware**: habilite e configure isso se desejar coletar inventário de hardware dos computadores cliente Mac e Windows. Para obter mais informações, consulte [Como estender o inventário de hardware no System Center Configuration Manager](../../../core/clients/manage/inventory/extend-hardware-inventory.md).  
 
--   “符合性设置”：如果要评估和修正 Mac 和 Windows 客户端计算机上的设置，请启用和配置此设置。 有关详细信息，请参阅[规划和配置符合性设置](../../../compliance/plan-design/plan-for-and-configure-compliance-settings.md)。  
+-   **Configurações de conformidade**: habilite e configure isso se desejar avaliar e corrigir configurações em computadores cliente Mac e Windows. Para obter mais informações, consulte [Planejar e definir configurações de conformidade](../../../compliance/plan-design/plan-for-and-configure-compliance-settings.md).  
 
 > [!NOTE]  
->  有关 Configuration Manager 客户端设置的详细信息，请参阅[如何在 System Center Configuration Manager 中配置客户端设置](../../../core/clients/deploy/configure-client-settings.md)。  
+>  Para obter mais informações sobre as configurações do cliente do Configuration Manager, consulte [Como definir as configurações do cliente no System Center Configuration Manager](../../../core/clients/deploy/configure-client-settings.md).  
 
-## <a name="download-the-client-source-files-for-macs"></a>为 Mac 下载客户端源文件  
+## <a name="download-the-client-source-files-for-macs"></a>Baixar os arquivos de origem do cliente para Mac  
 
-1.  下载 Mac OS X 客户端文件包“ConfigmgrMacClient.msi” 并将其保存在运行 Windows 的计算机上。  
+1.  Baixe o pacote de arquivos do cliente Mac OS X, **ConfigmgrMacClient.msi**e salve-o em um computador que executa o Windows.  
 
-     Configuration Manager 安装媒体上不提供此文件。 可以从 [Microsoft Download Center（Microsoft 下载中心）](http://go.microsoft.com/fwlink/?LinkID=525184)下载此文件。  
+     Esse arquivo não é fornecido na mídia de instalação do Configuration Manager. Você pode baixar o arquivo do [Centro de Download da Microsoft](http://go.microsoft.com/fwlink/?LinkID=525184).  
 
-2.  在 Windows 计算机上运行 **ConfigmgrMacClient.msi**，以将 Mac 客户端包 Macclient.dmg 提取到本地磁盘上的文件夹（默认位置为 **C:\Program Files (x86)\Microsoft\System Center 2012 Configuration Manager Mac Client\\**）。  
+2.  No computador Windows, execute **ConfigmgrMacClient.msi** para extrair o pacote Macclient.dmg do cliente Mac para uma pasta no disco local (por padrão **C:\Program Files (x86)\Microsoft\System Center 2012 Configuration Manager Mac Client\\**).  
 
-3.  将 Macclient.dmg 文件复制到 Mac 计算机上的文件夹中。  
+3.  Copie o arquivo Macclient.dmg para uma pasta no computador Mac.  
 
-4.  在 Mac 计算机上，运行 Macclient.dmg 文件以将文件提取到本地磁盘上的文件夹中。  
+4.  No computador Mac, execute o arquivo Macclient.dmg para extrair os arquivos para uma pasta no disco local.  
 
-5.  在此文件夹中，请确保提取 Ccmsetup 和 CMClient.pkg 文件，并且创建一个包含 CMDiagnostics、CMUninstall、CMAppUtil 和 CMEnroll 工具的名称为“工具”的文件夹。
+5.  Na pasta, verifique se os arquivos Ccmsetup e CMClient.pkg foram extraídos e se uma pasta chamada Ferramentas foi criada e contém as ferramentas CMDiagnostics, CMUninstall, CMAppUtil e CMEnroll.
 
-    -  **Ccmsetup**：在 Mac 计算机上安装 Configuration Manager 客户端。  
+    -  **Ccmsetup**: instala o cliente do Configuration Manager nos seus computadores Mac.  
 
-    -   **CMDiagnostics**：在 Mac 计算机上收集与 Configuration Manager 客户端相关的诊断信息。  
+    -   **CMDiagnostics**: coleta informações de diagnóstico relacionadas ao cliente do Configuration Manager em seus computadores Mac.  
 
-    -   **CMUninstall**：从 Mac 计算机上卸载客户端。  
+    -   **CMUninstall**: desinstala o cliente de seus computadores Mac.  
 
-    -   **CMAppUtil**：将 Apple 应用程序包转换为可部署为 Configuration Manager 应用程序的格式。  
+    -   **CMAppUtil**: converte pacotes de aplicativos da Apple em um formato que possa ser implantado como um aplicativo do Configuration Manager.  
 
-    -   **CMEnroll**：请求和安装 Mac 计算机的客户端证书，以便以后可以安装 Configuration Manager 客户端。   
+    -   **CMEnroll**: solicita e instala o certificado do cliente em um computador Mac para que você possa instalar o cliente do Configuration Manager.   
 
-## <a name="install-the-client-and-then-enroll-the-client-certificate-on-the-mac"></a>在 Mac 上安装客户端，然后注册客户端证书  
+## <a name="install-the-client-and-then-enroll-the-client-certificate-on-the-mac"></a>Instalar o cliente e registrar o certificado do cliente no computador Mac  
 
-可以使用 [Mac 计算机注册向导](#enroll-the-client-with-the-mac-computer-enrollment-wizard)注册单个客户端。
+É possível registrar clientes individuais com o [Assistente de Registro de Computador Mac](#enroll-the-client-with-the-mac-computer-enrollment-wizard).
 
-有关可实现注册多个客户端的自动化操作，请使用 [CMEnroll 工具](#client-and-certificate-automation-with-cmenroll)。   
+Para uma automação que habilita o registro de muitos clientes, use a [ferramenta CMEnroll](#client-and-certificate-automation-with-cmenroll).   
 
 
-###  <a name="enroll-the-client-with-the-mac-computer-enrollment-wizard"></a>使用“Mac 计算机注册向导”注册客户端  
+###  <a name="enroll-the-client-with-the-mac-computer-enrollment-wizard"></a>Registrar o cliente com o Assistente de Registro de Computador Mac  
 
-1.  安装完客户端后，“计算机注册向导”将打开。 如果向导未打开或者无意中关闭了向导，请单击“Configuration Manager”首选项页中的“注册”以打开向导。  
+1.  Depois de concluir a instalação do cliente, o Assistente de Registro de Computador é aberto. Se o assistente não abrir ou se você fechá-lo acidentalmente, clique em **Registrar** na página de preferências do **Configuration Manager** para abri-lo.  
 
-2.  在向导的第二页上，提供：  
+2.  Na segunda página do assistente, forneça:  
 
-    -   **用户名** - 用户名可以是以下格式：  
+    -   **Nome de usuário** - O nome de usuário pode estar nos seguintes formatos:  
 
-        -   “域\名称”。 例如：“contoso\mnorth”  
+        -   'domínio\nome’. Por exemplo: 'contoso\mnorth'  
 
-        -   'user@domain'. 例如：“mnorth@contoso.com”  
+        -   'user@domain'. Por exemplo: 'mnorth@contoso.com'  
 
             > [!IMPORTANT]  
-            >  使用电子邮件地址填充“用户名”字段时，Configuration Manager 将自动使用该电子邮件地址的域名和注册代理点服务器的默认名称填充“服务器名称”字段。 如果此域名和服务器名称与注册代理点服务器的名称不匹配，请告知用户在注册其 Mac 计算机时要使用的正确名称。  
+            >  Quando você usa um endereço de email para popular o campo **Nome de usuário**, o Configuration Manager usa automaticamente o nome de domínio do endereço de email e o nome padrão do servidor do ponto proxy do registro para popular o campo **Nome do servidor**. Se o nome de domínio e o nome do servidor não corresponderem ao nome do servidor do ponto proxy do registro, diga aos usuários o nome correto a ser usado ao registrar seus computadores Mac.  
 
-         用户名和对应的密码必须与被授予 Mac 客户端证书模板的“读取”和“注册”权限的 Active Directory 用户帐户匹配。  
+         O nome de usuário e a senha correspondente devem ser compatíveis com uma conta de usuário do Active Directory com permissões de Leitura e Registro no modelo de certificado do cliente Mac.  
 
-    -   **密码** - 为指定的用户名输入对应的密码。  
+    -   **Senha** – insira uma senha correspondente ao nome de usuário especificado.  
 
-    -   **服务器名称** - 输入注册代理点服务器的名称。  
+    -   **Nome do servidor** – insira o nome do servidor do ponto proxy do registro.  
 
 
-### <a name="client-and-certificate-automation-with-cmenroll"></a>使用 CMEnroll 实现的客户端和证书自动化  
+### <a name="client-and-certificate-automation-with-cmenroll"></a>Automação de cliente e certificado com o CMEnroll  
 
-使用此过程，借助 CMEnroll 工具，实现客户端安装以及客户端证书请求和注册的自动化。 要运行此工具，必须有 Active Directory 用户帐户。
+Use este procedimento para automação da instalação do cliente e solicitação de registro de certificados de cliente com a ferramenta CMEnroll. Para executar a ferramenta você precisa ter uma conta de usuário do Active Directory.
 
-1.  在相同的 Mac 计算机上，导航到在其中提取 Macclient.dmg 文件内容的文件夹。  
+1.  No computador Mac, navegue até a pasta em que você extraiu o conteúdo do arquivo Macclient.dmg.  
 
-2.  输入以下命令行： **sudo ./ccmsetup**  
+2.  Digite a seguinte linha de comando: **sudo ./ccmsetup**  
 
-3.  请一直等到看到“已完成安装”  消息。 虽然安装程序显示一条表明现在必须重启的消息，但请不要重启，而是继续进行下一步。  
+3.  Aguarde até que você veja a mensagem **Instalação concluída** . Embora o instalador exiba uma mensagem para que você reinicie agora, não reinicie, e passe para a etapa seguinte.  
 
-4.  从 Mac 计算机上的工具文件夹中，键入以下内容：**sudo ./CMEnroll -s &lt;注册代理服务器名称> -ignorecertchainvalidation -u &lt;用户名'>**  
+4.  Na pasta Ferramentas no computador Mac, digite o seguinte: **sudo ./CMEnroll -s &lt;nome_servidor_proxy_registro> -ignorecertchainvalidation -u &lt;'nome de usuário'>**  
 
-    客户端安装后，Mac 计算机注册向导将在客户端安装后打开，以帮助你注册 Mac 计算机。 要用此方法注册客户端，请参见此主题中的 [To enroll the client by using the Mac Computer Enrollment Wizard](#BKMK_EnrollR2) 。  
+    Após a instalação do cliente, o assistente de Registro de Computador Mac é aberto para ajudá-lo a registrar o computador Mac. Para registrar o cliente por esse método, consulte [To enroll the client by using the Mac Computer Enrollment Wizard](#BKMK_EnrollR2) neste tópico.  
 
-5. 键入 Active Directory 用户帐户的密码。  输入此命令时，系统会要求输入两个密码：第一个提示用于运行命令的超级用户帐户。 第二个提示用于 Active Directory 用户帐户。 提示看起来相同，因此请确保按正确的顺序指定它们。  
+5. Digite a senha para a conta de usuário do Active Directory.  Quando você digitar esse comando, serão solicitadas duas senhas: o primeiro prompt destina-se à conta de superusuário para executar o comando. O segundo prompt destina-se à conta de usuário do Active Directory. Os prompts parecem idênticos, portanto certifique-se de especificá-los na sequência correta.  
 
-    用户名可以是以下格式：  
+    O nome de usuário pode estar nos seguintes formatos:  
 
-    -   “域\名称”。 例如：“contoso\mnorth”  
+    -   'domínio\nome’. Por exemplo: 'contoso\mnorth'  
 
-    -   'user@domain'. 例如：“mnorth@contoso.com”  
+    -   'user@domain'. Por exemplo: 'mnorth@contoso.com'  
 
-     用户名和对应的密码必须与被授予 Mac 客户端证书模板的“读取”和“注册”权限的 Active Directory 用户帐户匹配。  
+     O nome de usuário e a senha correspondente devem ser compatíveis com uma conta de usuário do Active Directory com permissões de Leitura e Registro no modelo de certificado do cliente Mac.  
 
-     示例：如果注册代理点服务器名为 **server02.contoso.com**，并且向 **contoso\mnorth** 用户名授予了对 Mac 客户端证书模板的权限，请键入以下内容： **sudo ./CMEnroll -s server02.contoso.com -ignorecertchainvalidation -u 'contoso\mnorth'**  
+     Exemplo: se o nome do servidor do ponto proxy do registro for **server02.contoso.com** e um nome de usuário **contoso\mnorth** tiver recebido permissões para o modelo de certificado do cliente Mac, digite o seguinte: **sudo ./CMEnroll -s server02.contoso.com -ignorecertchainvalidation -u 'contoso\mnorth'**  
 
     > [!NOTE]  
-    >  如果用户名包含以下任一字符：**&lt;>"+=,**，则注册将失败。 获取带有不包含这些字符的用户名的带外证书。  
+    >  Se o nome de usuário contiver os caracteres **&lt;>"+=,** o registro falhará. Obtenha um certificado fora de banda com um nome de usuário que não contenha esses caracteres.  
     >  
-    >  为了获得更加完美的用户体验，你可以对安装步骤和命令编写脚本，以便用户只须提供其用户名和密码。  
+    >  Para uma experiência melhor do usuário, você pode e escrever as etapas e os comandos de instalação para que os usuários só precisem fornecer o nome de usuário a senha.  
 
-5.  请一直等到看到“已成功注册”  消息。  
+5.  Aguarde até que você veja a mensagem **Registrado com êxito** .  
 
-6.  若要将注册的证书限制在 Configuration Manager 范围内，请在 Mac 计算机上打开终端窗口并进行以下更改：  
+6.  Para limitar o certificado registrado ao Configuration Manager, no computador Mac, abra uma janela do terminal e faça as seguintes alterações:  
 
-    a.  输入命令 **sudo /Applications/Utilities/Keychain\ Access.app/Contents/MacOS/Keychain\ Access**  
+    a.  Digite o comando **sudo /Aplicativos/Utilitários/Keychain\ Access.app/Contents/MacOS/Keychain\ Access**  
 
-    b.  在“密钥链访问”对话框中的“密钥链”部分中，选择“系统”，然后在“类别”部分中，选择“密钥”。  
+    b.  Na caixa de diálogo **Acesso ao Conjunto de Chaves**, na seção **Conjuntos de Chaves**, escolha **Sistema** e, na seção **Categoria**, escolha **Chaves**.  
 
-    c.  展开密钥以查看客户端证书。 标识了具有刚才安装的私钥的证书后，双击密钥。  
+    c.  Expanda as chaves para exibir os certificados do cliente. Quando você tiver identificado o certificado com uma chave privada recém-instalada, clique duas vezes na chave.  
 
-    d.  在“访问控制”选项卡上，选择“在允许访问前确认”。  
+    d.  Na guia **Controle de Acesso**, escolha **Confirmar antes de permitir acesso**.  
 
-    e.  浏览到 **/Library/Application Support/Microsoft/CCM**，选择“CCMClient”，然后选择“添加”。  
+    e.  Navegue até **/Library/Application Support/Microsoft/CCM**, selecione **CCMClient** e escolha **Adicionar**.  
 
-    f.  选择“保存更改”并关闭“密钥链访问”对话框。  
+    f.  Escolha **Salvar Alterações** e feche a caixa de diálogo **Acesso ao Conjunto de Chaves**.  
 
-7.  重新启动 Mac 计算机。  
+7.  Reinicie o computador Mac.  
 
- 在 Mac 计算机上的“系统首选项”  中打开“Configuration Manager”  项以验证客户端安装是否成功。 也可以更新和查看“所有系统”  集合，以确认现在 Mac 计算机在此集合中显示为托管客户端。  
+ Verifique se a instalação do cliente teve êxito abrindo o item **Configuration Manager** nas **Preferências do Sistema** no computador Mac. Você também pode atualizar e exibir a coleção **Todos os Sistemas** para confirmar se os computadores Mac agora aparecem nessa coleção como um cliente gerenciado.  
 
 > [!TIP]  
->  为了帮助排查 Mac 客户端的问题，可以使用 Mac OS X 客户端包附带的 CMDiagnostics 程序收集以下诊断信息：  
+>  Para ajudar a solucionar problemas do cliente Mac, você pode usar o programa CMDiagnostics incluído no pacote do cliente Mac OS X para coletar as seguintes informações de diagnóstico:  
 >   
->  -   运行的进程的列表  
-> -   Mac OS X 操作系统版本  
-> -   与 Configuration Manager 客户端相关的 Mac OS X 故障报告包括 **CCM\*.crash** 和 **System Preference.crash**。  
-> -   Configuration Manager 客户端安装创建的物料清单 (BOM) 文件和属性列表 (.plist) 文件。  
-> -   /Library/Application Support/Microsoft/CCM/Logs 文件夹的内容。  
+>  -   Uma lista de processos em execução  
+> -   A versão do sistema operacional Mac OS X  
+> -   Relatórios de falha do Mac OS X relacionados ao cliente do Configuration Manager, incluindo **CCM\*.crash** e **System Preference.crash**.  
+> -   O arquivo da BOM (Lista de Materiais) e o arquivo da lista de propriedades (.plist) criados pela instalação do cliente do Configuration Manager.  
+> -   O conteúdo da pasta /Library/Application Support/Microsoft/CCM/Logs.  
 >   
->  CmDiagnostics 收集的信息会添加到一个 zip 文件中，该文件将保存到计算机的桌面上并且名为 cmdiag-*<主机名\>***-***&gt;日期和时间\>*.zip。***
+>  As informações coletadas por CmDiagnostics são adicionadas a um arquivo zip, que é salvo na área de trabalho do computador e que tem o nome cmdiag-*<nome do host\>***-***&gt;data e hora\>*.zip.***
 
 
-##  <a name="use-a-certificate-request-and-installation-method-that-is-independent-from-configuration-manager"></a>使用与 Configuration Manager 无关的证书请求和安装方法  
+##  <a name="use-a-certificate-request-and-installation-method-that-is-independent-from-configuration-manager"></a>Usar uma solicitação de certificado e o método de instalação que é independente do Configuration Manager  
 
-首先，执行[将客户端软件部署到 Macs 的准备工作](/sccm/core/clients/deploy/prepare-to-deploy-mac-clients)中的这些特定任务：
+Primeiro, execute estas tarefas específicas de [Preparar para implantar o software cliente em Macs](/sccm/core/clients/deploy/prepare-to-deploy-mac-clients):
 
-1. [将 Web 服务器证书部署到站点系统服务器](/sccm/core/clients/deploy/prepare-to-deploy-mac-clients#deploy-a-web-server-certificate-to-site-system-servers)
+1. [Implantar um certificado do servidor Web nos servidores do sistema de sites](/sccm/core/clients/deploy/prepare-to-deploy-mac-clients#deploy-a-web-server-certificate-to-site-system-servers)
 
-2. [将客户端身份验证证书部署到站点系统服务器](/sccm/core/clients/deploy/prepare-to-deploy-mac-clients#deploy-a-client-authentication-certificate-to-site-system-servers)
+2. [Implantar um certificado de autenticação de cliente nos servidores do sistema de sites](/sccm/core/clients/deploy/prepare-to-deploy-mac-clients#deploy-a-client-authentication-certificate-to-site-system-servers)
 
-3. [配置管理点和分发点](/sccm/core/clients/deploy/prepare-to-deploy-mac-clients#configure-the-management-point-and-distribution-point)
+3. [Configurar o ponto de gerenciamento e o ponto de distribuição](/sccm/core/clients/deploy/prepare-to-deploy-mac-clients#configure-the-management-point-and-distribution-point)
 
-4. [可选：安装 Reporting Services 点](/sccm/core/clients/deploy/prepare-to-deploy-mac-clients#install-the-reporting-services-point)
+4. [Opcional: instalar o ponto do Reporting Services](/sccm/core/clients/deploy/prepare-to-deploy-mac-clients#install-the-reporting-services-point)
 
-然后，执行这些任务：
+Em seguida, execute estas tarefas:
 
-5. [为 Mac 下载客户端源文件](#download-the-client-source-files-for-macs)。  
-6. 请使用所选证书部署方法附带的说明在 Mac 计算机上请求和安装客户端证书。  
-7.  导航到文件夹，你在该文件夹中已经提取了从 Microsoft 下载中心下载的 macclient.dmg 文件的内容。  
+5. [Baixar os arquivos de origem do cliente para Mac](#download-the-client-source-files-for-macs).  
+6. Use as instruções que acompanham o método de implantação do certificado escolhido para solicitar e instalar o certificado do cliente em um computador Mac.  
+7.  Navegue até a pasta onde você extraiu o conteúdo do arquivo macclient.dmg baixado do Centro de Download da Microsoft.  
 
-3.  输入以下命令行：**sudo ./ccmsetup -MP <management point Internet FQDN\> -SubjectName <certificate subject value\>**。  证书使用者值区分大小写，因此请键入与证书详细信息中显示的值完全相同的值。  
+3.  Digite a seguinte linha de comando: **sudo ./ccmsetup -MP <FQDN da Internet do ponto de gerenciamento\> -SubjectName <valor da entidade do certificado\>**.  O valor da entidade do certificado diferencia maiúsculas de minúsculas, por isso digite-o exatamente como ele aparece nos detalhes do certificado.  
 
-     示例：如果站点系统属性中的 Internet FQDN 为 **server03.contoso.com**，并且 Mac 客户端证书以 **mac12.contoso.com** 的 FQDN 作为证书使用者中的公用名，请键入：**sudo ./ccmsetup -MP server03.contoso.com -SubjectName mac12.contoso.com**  
+     Exemplo: se o FQDN da Internet nas propriedades do sistema de sites for **server03.contoso.com** e o certificado do cliente Mac tiver o FQDN **mac12.contoso.com** como nome comum na entidade do certificado, digite: **sudo ./ccmsetup -MP server03.contoso.com -SubjectName mac12.contoso.com**  
 
-4.  请一直等到看到“已完成安装”  消息，然后重启 Mac 计算机。  
+4.  Aguarde até ver a mensagem **Instalação concluída** e reinicie o computador Mac.  
 
-5.  要确保 Configuration Manager 可以访问此证书，请在 Mac 计算机上打开终端窗口并进行以下更改：  
+5.  Para verificar se esse certificado é acessível para o Configuration Manager, no computador Mac, abra uma janela do terminal e faça essas alterações:  
 
-    a.  输入命令 **sudo /Applications/Utilities/Keychain\ Access.app/Contents/MacOS/Keychain\ Access**  
+    a.  Digite o comando **sudo /Aplicativos/Utilitários/Keychain\ Access.app/Contents/MacOS/Keychain\ Access**  
 
-    b.  在“密钥链访问”对话框中的“密钥链”部分中，选择“系统”，然后在“类别”部分中，选择“密钥”。  
+    b.  Na caixa de diálogo **Acesso ao Conjunto de Chaves**, na seção **Conjuntos de Chaves**, escolha **Sistema** e, na seção **Categoria**, escolha **Chaves**.  
 
-    c.  展开密钥以查看客户端证书。 标识了具有刚才安装的私钥的证书后，双击密钥。  
+    c.  Expanda as chaves para exibir os certificados do cliente. Quando você tiver identificado o certificado com uma chave privada recém-instalada, clique duas vezes na chave.  
 
-    d.  在“访问控制”选项卡上，选择“在允许访问前确认”。  
+    d.  Na guia **Controle de Acesso**, escolha **Confirmar antes de permitir acesso**.  
 
-    e.  浏览到 **/Library/Application Support/Microsoft/CCM**，选择“CCMClient”，然后选择“添加”。  
+    e.  Navegue até **/Library/Application Support/Microsoft/CCM**, selecione **CCMClient** e escolha **Adicionar**.  
 
-    f.  选择“保存更改”并关闭“密钥链访问”对话框。  
+    f.  Escolha **Salvar Alterações** e feche a caixa de diálogo **Acesso ao Conjunto de Chaves**.  
 
-6.  如果有多个包含同一使用者值的证书，你必须指定证书序列号以标识要用于 Configuration Manager 客户端的证书。 若要执行此操作，请使用下列命令：**sudo defaults write com.microsoft.ccmclient SerialNumber -data "<序列号\>"**。  
+6.  Se tiver mais de um certificado contendo o mesmo valor de entidade, especifique o número de série do certificado para identificar o certificado que deseja usar para o cliente do Configuration Manager. Para fazer isso, use o seguinte comando: **sudo defaults write com.microsoft.ccmclient SerialNumber -data "<número de série\>"**.  
 
-     例如： **sudo defaults write com.microsoft.ccmclient SerialNumber -data "17D4391A00000003DB"**  
+     Por exemplo: **sudo defaults write com.microsoft.ccmclient SerialNumber -data "17D4391A00000003DB"**  
 
- 在 Mac 的“系统首选项”中打开“Configuration Manager”项以验证客户端安装是否成功。 也可以更新和查看“所有系统”集合，以确认 Mac 在此集合中显示为托管客户端。  
+ Verifique se a instalação do cliente teve êxito abrindo o item **Configuration Manager** nas **Preferências do Sistema** no Mac. Você também pode atualizar e exibir a coleção **Todos os Sistemas** para confirmar se o Mac agora aparece nessa coleção como um cliente gerenciado.  
 
-## <a name="renewing-the-mac-client-certificate"></a>续订 Mac 客户端证书  
- 在 Mac 计算机上续订计算机证书之前，请使用以下过程。  
+## <a name="renewing-the-mac-client-certificate"></a>Renovando o certificado do cliente Mac  
+ Use o procedimento a seguir antes de renovar o certificado do computador em computadores Mac.  
 
- 此过程会删除客户端在 Mac 计算机上使用新证书或续订的证书所需的 SMSID。  
+ Este procedimento remove o SMSID, que é necessário para que o cliente use um certificado novo ou renovado no computador Mac.  
 
 > [!IMPORTANT]  
->  如果删除和替换客户端 SMSID，则从 Configuration Manager 控制台中删除客户端之后会删除诸如清单之类的任何存储的客户端历史记录。  
+>  Quando você remove e substitui o SMSID do cliente, todo o histórico armazenado do cliente, como o inventário, é excluído depois que você excluir o cliente do console do Configuration Manager.  
 
-### <a name="to-renew-the-mac-client-certificate"></a>要续订 Mac 客户端证书  
+### <a name="to-renew-the-mac-client-certificate"></a>Para renovar o certificado do cliente Mac  
 
-1.  为必须续订计算机证书的 Mac 计算机创建和填充设备集合。  
+1.  Crie e popule uma coleção de dispositivos para os computadores Mac que devem renovar os certificados do computador.  
 
-2.  在“资产和符合性”  工作区中，启动“创建配置项目向导” 。  
+2.  No espaço de trabalho **Ativos e Conformidade** , inicie o **Assistente de Criação de Item de Configuração**.  
 
-3.  在向导的“常规”  页上，指定下列信息：  
+3.  Na página **Geral** do assistente, especifique as seguintes informações:  
 
-    -   **名称：删除 Mac 的 SMSID**  
+    -   **Nome:remover SMSID para Mac**  
 
-    -   **类型：Mac OS X**  
+    -   **Tipo:Mac OS X**  
 
-4.  在向导的“支持的平台”  页上，确保选择所有的 Mac OS X 版本。  
+4.  Na página **Plataforma com suporte** do assistente, verifique se todas as versões do Mac OS X foram selecionadas.  
 
-5.  在向导的“设置”  页上，单击“新建”  ，然后在“创建设置”  对话框中指定以下信息：  
+5.  Na página **Configurações** do assistente, clique em **Novo** e na caixa de diálogo **Criar Configuração** , especifique as seguintes informações:  
 
-    -   **名称：删除 Mac 的 SMSID**  
+    -   **Nome:remover SMSID para Mac**  
 
-    -   **设置类型：脚本**  
+    -   **Tipo de configuração:script**  
 
-    -   **数据类型：字符串**  
+    -   **Tipo de dados:cadeia de caracteres**  
 
-6.  在“创建设置”  对话框中，对于“发现脚本” ，请单击“添加脚本”  以指定发现配置有 SMSID 的 Mac 计算机的脚本。  
+6.  Na caixa de diálogo **Criar Configuração** , para **Script de descoberta**, clique em **Adicionar script** para especificar um script que descobre computadores Mac com um SMSID configurado.  
 
-7.  在“编辑发现脚本”  对话框中，输入以下外壳脚本：  
+7.  Na caixa de diálogo **Editar Script de Descoberta** , insira o seguinte Script de Shell:  
 
     ```  
     defaults read com.microsoft.ccmclient SMSID  
     ```  
 
-8.  选择“确定”以关闭“编辑发现脚本”对话框。  
+8.  Escolha **OK** para fechar a caixa de diálogo **Editar Script de Descoberta**.  
 
-9. 在“创建设置”对话框中，对于“修正脚本(可选)”，请选择“添加脚本”以指定在 Mac 计算机上发现 SMSID 时将其删除的脚本。  
+9. Na caixa de diálogo **Criar Configuração**, para **Script de correção (opcional)**, escolha **Adicionar script** para especificar um script que remove o SMSID quando ele é encontrado em computadores Mac.  
 
-10. 在“创建修正脚本”  对话框中，输入以下外壳脚本：  
+10. Na caixa de diálogo **Criar Script de Correção** , insira o seguinte Script de Shell:  
 
     ```  
     defaults delete com.microsoft.ccmclient SMSID  
     ```  
 
-11. 选择“确定”以关闭“创建修正脚本”对话框。  
+11. Escolha **OK** para fechar a caixa de diálogo **Criar Script de Correção**.  
 
-12. 在向导的“符合性规则”页上，选择“新建”，然后在“创建规则”对话框中指定以下信息：  
+12. Na página do assistente **Regras de Conformidade**, escolha **Novo** e, na caixa de diálogo **Criar Regra**, especifique as seguintes informações:  
 
-    -   **名称：删除 Mac 的 SMSID**  
+    -   **Nome:remover SMSID para Mac**  
 
-    -   **选择的设置：**选择“浏览”，然后选择先前指定的发现脚本。  
+    -   **Configuração selecionada:** escolha **Procurar** e selecione o script de descoberta especificado anteriormente.  
 
-    -   在**“以下值”** 字段中，输入 **“域/默认值对 (com.microsoft.ccmclient, SMSID) 不存在”**。  
+    -   Em **os seguintes valores** digite **O par domínio/padrão (com.microsoft.ccmclient, SMSID) não existe**.  
 
-    -   启用“当此设置不符合时运行指定的修正脚本” 选项。  
+    -   Habilite a opção **Executar o script de correção especificado quando esta configuração não for compatível**.  
 
-13. 完成“创建配置项目向导”。  
+13. Conclua o Assistente de Criação de Item de Configuração.  
 
-14. 创建一个包含你刚刚创建的配置项目的配置基线，然后将它部署到你在步骤 1 中创建的设备集合。  
+14. Crie uma linha de base de configuração que contenha o item de configuração criado recentemente e implante-a na coleção de dispositivos criada na etapa 1.  
 
-     有关如何创建和部署配置基线的详细信息，请参阅[如何在 System Center Configuration Manager 中创建配置基线](../../../compliance/deploy-use/create-configuration-baselines.md)。  
+     Para obter mais informações sobre como criar e implantar linhas de base de configuração, consulte [Como criar linhas de base de configuração no System Center Configuration Manager](../../../compliance/deploy-use/create-configuration-baselines.md).  
 
-15. 在删除了 SMSID 的 Mac 计算机上安装了新的证书后，运行以下命令，以便将客户端配置为使用此新证书：  
+15. Após instalar um novo certificado em computadores Mac que tiveram o SMSID removido, execute o comando a seguir para configurar o cliente para usar o novo certificado:  
 
     ```  
     sudo defaults write com.microsoft.ccmclient SubjectName -string <Subject_Name_of_New_Certificate>  
     ```  
 
-16. 如果有多个包含同一使用者值的证书，你必须指定证书序列号以标识要用于 Configuration Manager 客户端的证书。 若要执行此操作，请使用下列命令：**sudo defaults write com.microsoft.ccmclient SerialNumber -data "<序列号\>"**。  
+16. Se tiver mais de um certificado contendo o mesmo valor de entidade, especifique o número de série do certificado para identificar o certificado que deseja usar para o cliente do Configuration Manager. Para fazer isso, use o seguinte comando: **sudo defaults write com.microsoft.ccmclient SerialNumber -data "<número de série\>"**.  
 
-     例如： **sudo defaults write com.microsoft.ccmclient SerialNumber -data "17D4391A00000003DB"**  
+     Por exemplo: **sudo defaults write com.microsoft.ccmclient SerialNumber -data "17D4391A00000003DB"**  
 
-17. 重启。  
+17. Reiniciar.  
 
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>Consulte também
 
-[维护 Mac 客户端](/sccm/core/clients/manage/maintain-mac-clients)
+[Manter os clientes Mac](/sccm/core/clients/manage/maintain-mac-clients)

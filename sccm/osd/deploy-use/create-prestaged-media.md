@@ -1,6 +1,6 @@
 ---
-title: "使用 System Center Configuration Manager 创建预留媒体 | Microsoft Docs"
-description: "在 System Center Configuration Manager 中创建预留媒体来简化几个方案中的 Windows 部署。"
+title: "Criar mídia pré-configurada com o System Center Configuration Manager | Microsoft Docs"
+description: "Crie mídia em pré-teste no System Center Configuration Manager para simplificar a implantação do Windows em vários cenários."
 ms.custom: na
 ms.date: 04/11/2017
 ms.prod: configuration-manager
@@ -17,128 +17,128 @@ manager: angrobe
 ms.openlocfilehash: 33abf3853d912d423e427db4d35fb4a16167164e
 ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
 ms.translationtype: HT
-ms.contentlocale: zh-CN
+ms.contentlocale: pt-BR
 ms.lasthandoff: 08/07/2017
 ---
-# <a name="create-prestaged-media-with-system-center-configuration-manager"></a>使用 System Center Configuration Manager 创建预留媒体
+# <a name="create-prestaged-media-with-system-center-configuration-manager"></a>Criar mídia pré-configurada com o System Center Configuration Manager
 
-*适用范围：System Center Configuration Manager (Current Branch)*
+*Aplica-se a: System Center Configuration Manager (Branch Atual)*
 
-System Center Configuration Manager 中的预留媒体是 Windows 映像格式 (WIM) 文件，可以由制造商安装在裸机上，也可以安装在未连接到 Configuration Manager 环境的企业暂存中心。  
-预留媒体包含用于启动目标计算机的启动映像，以及应用到目标计算机的操作系统映像。 你还可以指定要作为预留媒体的一部分包含的应用程序、包和驱动程序包。 此媒体不包含用于部署操作系统的任务序列。 在将新计算机发送给最终用户之前，预留媒体将应用到此计算机的硬盘驱动器。 为以下操作系统部署方案使用预留媒体：  
+A mídia pré-testada no System Center Configuration Manager é um arquivo em formato WIM (Windows Imaging) que pode ser instalado em um computador bare-metal pelo fabricante ou em um centro de preparo corporativo que não está conectado ao ambiente do Configuration Manager.  
+A mídia em pré-teste contém a imagem de inicialização usada para iniciar o computador de destino e a imagem do sistema operacional aplicada ao computador de destino. Também é possível especificar aplicativos, pacotes e pacotes de driver para incluir como parte da mídia pré-configurada. A sequência de tarefas que implanta o sistema operacional não está incluída na mídia. A mídia pré-testada é aplicada à unidade de disco rígido de um novo computador antes do computador ser enviado ao usuário final. Use mídia pré-testada para os seguintes cenários de implantação de sistema operacional:  
 
--   [为工厂中的 OEM 或本地 depot 创建映像](../../osd/deploy-use/create-an-image-for-an-oem-in-factory-or-a-local-depot.md)  
+-   [Criar uma imagem de um OEM na fábrica ou em um repositório local](../../osd/deploy-use/create-an-image-for-an-oem-in-factory-or-a-local-depot.md)  
 
--   [在新计算机（裸机）上安装新版的 Windows](install-new-windows-version-new-computer-bare-metal.md)  
+-   [Instalar uma nova versão do Windows em um novo computador (sem sistema operacional)](install-new-windows-version-new-computer-bare-metal.md)  
 
--   [部署 Windows To Go](deploy-windows-to-go.md)  
+-   [Implantar o Windows to Go](deploy-windows-to-go.md)  
 
- 在应用预留媒体后第一次启动计算机时，计算机会启动到 Windows PE 并连接到管理点，以查找将完成操作系统部署过程的任务序列。 你可以指定要作为预留媒体的一部分包含的应用程序、包和驱动程序包。 在部署使用预留媒体的任务序列时，向导会首先检查本地任务序列缓存以查找有效的内容，如果无法找到内容或内容已被修改，则向导会从分发点下载内容。  
+ Quando o computador é iniciado pela primeira vez depois de a mídia pré-configurada ter sido aplicada, o computador é iniciado com o Windows PE e conecta-se a um ponto de gerenciamento para localizar a sequência de tarefas que conclui o processo de implantação de sistema operacional. Você pode especificar aplicativos, pacotes e pacotes de driver para incluir como parte da mídia pré-testada. Quando você implanta uma sequência de tarefa que utiliza mídia pré-testada, o assistente verifica o cache de sequência de tarefas local quanto a conteúdo válido primeiro, e se o conteúdo não puder ser localizado ou não for revisado, o assistente baixa o conteúdo do ponto de distribuição.  
 
-##  <a name="BKMK_CreatePrestagedMedia"></a> 如何创建预留媒体  
- 在使用“创建任务序列媒体向导”创建预留媒体之前，请确保满足以下所有条件：  
+##  <a name="BKMK_CreatePrestagedMedia"></a> Como criar mídia em pré-teste  
+ Antes de criar a mídia pré-testada usando o Assistente para Criar Mídia de Sequência de Tarefas, verifique se as seguintes condições foram atendidas:  
 
-|任务|描述|  
+|Tarefa|Descrição|  
 |----------|-----------------|  
-|启动映像|请考虑以下将用于在任务序列中部署操作系统的启动映像的相关事项：<br /><br /> -   启动映像的体系结构必须适合于目标计算机的体系结构。 例如，x64 目标计算机可启动和运行 x86 或 x64 启动映像。 但是，x86 目标计算机只能启动和运行 x86 启动映像。<br />-   确保启动映像包含预配目标计算机所需的网络和大容量存储驱动程序。|  
-|创建用于部署操作系统的任务序列|作为预留媒体的一部分，必须指定用于部署操作系统的任务序列。<br /><br /> -   有关创建新任务序列的步骤，请参阅[创建用于安装操作系统的任务序列](../../osd/deploy-use/create-a-task-sequence-to-install-an-operating-system.md)。<br />-   有关任务序列的详细信息，请参阅[Manage task sequences to automate tasks](../../osd/deploy-use/manage-task-sequences-to-automate-tasks.md)（管理任务序列以自动执行任务）。|  
-|分发与任务序列关联的所有内容|必须将任务序列所需的所有内容至少分发到一个分发点。 这包括启动映像、操作系统映像和其他相关联的文件。 向导在创建独立媒体时从分发点中收集信息。 必须具有对该分发点上的内容库的 **读取** 访问权限。  有关详细信息，请参阅[关于内容库](../../core/plan-design/hierarchy/the-content-library.md)。|  
-|目标计算机上的硬盘驱动器|在将预留媒体暂存到计算机的硬盘驱动器上之前，必须对目标计算机的硬盘驱动器进行格式化。 如果在应用媒体时硬盘驱动器未格式化，则部署操作系统的任务序列将在尝试启动目标计算机时失败。|  
+|Imagem de inicialização|Considere o seguinte sobre a imagem de inicialização que você usará na sequência de tarefas para implantar o sistema operacional:<br /><br /> -   A arquitetura da imagem de inicialização deve ser apropriada para a arquitetura do computador de destino. Por exemplo, um computador de destino x64 pode iniciar e executar uma imagem de inicialização x86 ou x64. No entanto, um computador de destino x86 pode iniciar e executar apenas uma imagem de inicialização x86.<br />-   Verifique se a imagem de inicialização contém os drivers de rede e armazenamento em massa necessários para provisionar o computador de destino.|  
+|Criar uma sequência de tarefas para implantar um sistema operacional|Como parte da mídia pré-testada, você deve especificar a sequência de tarefas para implantar o sistema operacional.<br /><br /> -   Para ver as etapas para criar uma nova sequência de tarefas, consulte [Criar uma sequência de tarefas para instalar um sistema operacional](../../osd/deploy-use/create-a-task-sequence-to-install-an-operating-system.md).<br />-   Para obter mais informações sobre sequências de tarefas, consulte [Gerenciar sequências de tarefas para automatizar tarefas](../../osd/deploy-use/manage-task-sequences-to-automate-tasks.md).|  
+|Distribuir todo o conteúdo associado à sequência de tarefas|Você deve distribuir todo o conteúdo exigido pela sequência de tarefas para pelo menos um ponto de distribuição. Isso inclui a imagem de inicialização, a imagem do sistema operacional e outros arquivos associados. O assistente reúne as informações do ponto de distribuição quando ele cria a mídia autônoma. Você deve ter direitos de acesso de **Leitura** à biblioteca de conteúdo no ponto de distribuição.  Para obter detalhes, consulte [Sobre a biblioteca de conteúdo](../../core/plan-design/hierarchy/the-content-library.md).|  
+|Disco rígido no computador de destino|O disco rígido do computador de destino deve ser formatado antes que a mídia pré-configurada seja preparada no disco rígido do computador. Se o disco rígido não estiver formatado quando a mídia for aplicada, a sequência de tarefas que implanta o sistema operacional falhará quando tentar iniciar o computador de destino.|  
 
 > [!NOTE]  
->  “创建任务序列媒体向导”在媒体上设置以下任务序列变量条件：**_SMSTSMediaType = OEMMedia**。 你可以在任务序列中使用此条件。  
+>  O Assistente para Criar Mídia de Sequência de Tarefas define a seguinte condição de variável de sequência de tarefas na mídia: **_SMSTSMediaType = OEMMedia**. Você pode usar essa condição em toda a sequência de tarefas.  
 
- 使用以下过程来创建预留媒体。  
+ Use o procedimento a seguir para criar mídia em pré-teste.  
 
-#### <a name="to-create-prestaged-media"></a>创建预留媒体  
+#### <a name="to-create-prestaged-media"></a>Para criar mídia em pré-teste  
 
-1.  在 Configuration Manager 控制台中，单击“软件库” 。  
+1.  No console do Configuration Manager, clique em **Biblioteca de Software**.  
 
-2.  在“软件库”工作区中，展开“操作系统”，然后单击“任务序列”。  
+2.  No espaço de trabalho **Biblioteca de Software** , expanda **Sistemas Operacionais**e clique em **Sequências de Tarefas**.  
 
-3.  在“主页”  选项卡上的“创建”  组中，单击“创建任务序列媒体”  以启动创建任务序列媒体向导。  
+3.  Na guia **Início** , no grupo **Criar** , clique em **Criar Mídia de Sequência de Tarefas** para iniciar o Assistente para Criar Mídia de Sequência de Tarefas.  
 
-4.  在“选择媒体类型”  页上，指定以下信息，然后单击“下一步” 。  
+4.  Na página **Selecionar o Tipo de Mídia** , especifique as informações a seguir e clique em **Próximo**.  
 
-    -   选择“预留媒体” 。  
+    -   Selecione **Mídia em pré-teste**.  
 
-    -   （可选）如果你希望允许在不需要用户输入的情况下部署操作系统，则选择“允许无人参与的操作系统部署” 。 如果选择此选项，则不会提示用户输入网络配置信息或指定可选的任务序列。 但是，如果针对密码保护配置了媒体，则仍会提示用户输入密码。  
+    -   Opcionalmente, se você quiser permitir que o sistema operacional seja implantado sem exigir a entrada do usuário, selecione **Permitir implantação autônoma do sistema operacional**. Quando você seleciona essa opção, o usuário não precisa inserir informações de configuração de rede nem sequências de tarefas opcionais. No entanto, ainda será solicitada ao usuário uma senha, se a mídia estiver configurada para proteção por senha.  
 
-5.  在“媒体管理”  页上，指定以下信息，然后单击“下一步” 。  
+5.  Na página **Gerenciamento de Mídia** , especifique as informações a seguir e clique em **Próximo**.  
 
-    -   如果要允许管理点根据客户端在站点边界中的位置将媒体重定向到另一个管理点，请选择“动态媒体”  。  
+    -   Selecione **Mídia dinâmica** se quiser permitir que um ponto de gerenciamento redirecione a mídia para outro ponto de gerenciamento, baseado no local do cliente nos limites do site.  
 
-    -   如果希望媒体仅与指定的管理点联系，请选择“基于站点的媒体”  。  
+    -   Selecione **Mídia de site** se quiser que a mídia tenha contato apenas com o ponto de gerenciamento especificado.  
 
-6.  在“媒体属性”   页上，指定以下信息，然后单击“下一步” 。  
+6.  Na página **Propriedades de mídia**  , especifique as informações a seguir e clique em **Próximo**.  
 
-    -   **创建者**：指定创建媒体的人员。  
+    -   **Criado por**: especifique quem criou a mídia.  
 
-    -   **版本**：指定媒体的版本号。  
+    -   **Versão**: especifique o número de versão da mídia.  
 
-    -   **注释**：指定媒体用途的唯一说明。  
+    -   **Comentário**: especifique uma descrição exclusiva da finalidade da mídia.  
 
-    -   **媒体文件**：指定输出文件的名称和路径。 向导会将输出文件写入到此位置。 例如：**\\\servername\folder\outputfile.wim**  
+    -   **Arquivo de mídia**: especifique o nome e o caminho dos arquivos de saída. O assistente grava os arquivos de saída nesse local. Por exemplo: **\\\nomedoservidor\pasta\arquivodesaída.wim**  
 
-7.  在“安全”  页上，指定以下信息，然后单击“下一步” 。  
+7.  Na página **Segurança** , especifique as informações a seguir e clique em **Próximo**.  
 
-    -   选中“启用未知计算机支持”复选框，使媒体能够将操作系统部署到不是由 Configuration Manager 托管的计算机。 Configuration Manager 数据库中没有这些计算机的记录。  有关详细信息，请参阅[准备未知计算机部署](../get-started/prepare-for-unknown-computer-deployments.md)。  
+    -   Marque a caixa de seleção **Habilitar suporte a computadores desconhecidos** para permitir que a mídia implante um sistema operacional em um computador não gerenciado pelo Configuration Manager. Não há registro desses computadores no banco de dados do Configuration Manager.  Para obter mais informações, consulte [Preparar implantações de computador desconhecido](../get-started/prepare-for-unknown-computer-deployments.md).  
 
-    -   选中“使用密码保护媒体”  复选框，并输入强密码来帮助防止未经授权访问媒体。 如果指定密码，则用户必须提供该密码才能使用预留媒体。  
+    -   Marque a caixa de seleção **Proteger mídia com senha** e digite uma senha forte como auxílio para proteger a mídia contra o acesso não autorizado. Quando você especificar uma senha, o usuário deverá fornecer essa senha para usar a mídia em pré-teste.  
 
         > [!IMPORTANT]  
-        >  作为最佳安全方案，请始终分配密码来帮助保护预留媒体。  
+        >  Como prática recomendada de segurança, atribua sempre uma senha para ajudar a proteger a mídia em pré-teste.  
 
-    -   对于 HTTP 通信，选择“创建自签名媒体证书” ，然后指定该证书的开始日期和到期日期。  
+    -   Para comunicações HTTP, selecione **Criar certificado de mídia autoassinado**e especifique as datas de início e vencimento do certificado.  
 
-    -   对于 HTTPS 通信，选择“导入 PKI 证书” ，然后指定要导入的证书及其密码。  
+    -   Para comunicações HTTPS, selecione **Importar certificado PKI**e especifique o certificado a ser importado e a respectiva senha.  
 
-         有关用于启动映像的此客户端证书的详细信息，请参阅 [PKI 证书要求](../../core/plan-design/network/pki-certificate-requirements.md)。  
+         Para obter mais informações sobre o certificado de cliente que é usado para imagens de inicialização, consulte [Requisitos do certificado PKI](../../core/plan-design/network/pki-certificate-requirements.md).  
 
-    -   **用户设备相关性**：若要在 Configuration Manager 中支持以用户为中心的管理，请指定希望媒体如何将用户与目标计算机相关联。 有关操作系统部署如何支持用户设备相关性的详细信息，请参阅[如何将用户与目标计算机相关联](../get-started/associate-users-with-a-destination-computer.md)。  
+    -   **Afinidade de Dispositivo de Usuário**: para dar suporte ao gerenciamento centrado no usuário no Configuration Manager, especifique como você quer que a mídia associe usuários ao computador de destino. Para obter mais informações sobre como a implantação de sistema operacional dá suporte à afinidade de dispositivo de usuário, consulte [Associar usuários a um computador de destino](../get-started/associate-users-with-a-destination-computer.md).  
 
-        -   如果你希望媒体自动将用户与目标计算机关联，请指定“通过自动批准允许用户设备相关性”  。 此功能以部署操作系统的任务序列的操作为基础。 在此方案中，当任务序列将操作系统部署到目标计算机时，它会在指定的用户和目标计算机之间创建关系。  
+        -   Especifique **Permitir afinidade de dispositivo de usuário com aprovação automática** se você quiser que a mídia associe automaticamente os usuários ao computador de destino. Essa funcionalidade é baseada nas ações da sequência de tarefas que implanta o sistema operacional. Nesse cenário, a sequência de tarefas cria uma relação entre os usuários especificados e o computador de destino quando implanta o sistema operacional no computador de destino.  
 
-        -   如果希望媒体获得批准后将用户与目标计算机关联，请指定“允许用户设备相关性挂起管理员批准”  。 此功能以部署操作系统的任务序列的作用域为基础。 在此方案中，任务序列在指定用户和目标计算机之间创建关系，但在部署操作系统之前等待管理用户的批准。  
+        -   Especifique **Permitir afinidade de dispositivo de usuário pendente de aprovação de administrador** se você quiser que a mídia associe os usuários ao computador de destino após a aprovação ser concedida. Essa funcionalidade é baseada no escopo da sequência de tarefas que implanta o sistema operacional. Neste cenário, a sequência de tarefas cria uma relação entre os usuários especificados e o computador de destino, mas aguarda a aprovação de um usuário administrativo antes da implantação do sistema operacional.  
 
-        -   如果不希望媒体将用户与目标计算机关联，请指定“不允许用户设备相关性”  。 在此方案中，当任务序列部署操作系统时，它不会将用户与目标计算机关联。  
+        -   Especifique **Não permitir afinidade de dispositivo de usuário** se você quiser que a mídia associe os usuários ao computador de destino. Neste cenário, a sequência de tarefas não associa os usuários ao computador de destino quando implanta o sistema operacional.  
 
-8.  在“任务序列”  页上，指定将在目标计算机上运行的任务序列。 任务序列引用的内容在“此任务序列引用了下列内容” 中显示。 验证内容，然后单击“下一步” 。  
+8.  Na página **Sequência de Tarefas** , especifique a sequência de tarefas que será executada no computador de destino. O conteúdo referenciado pela sequência de tarefas é exibido em **Esta sequência de tarefas faz referência ao seguinte conteúdo**. Verifique o conteúdo e clique em **Avançar**.  
 
-9. 在“启动映像包”  页上，指定以下信息，然后单击“下一步” 。  
+9. Na página **Imagem de inicialização** , especifique as informações a seguir e clique em **Próximo**.  
 
     > [!IMPORTANT]  
-    >  分发的启动映像的体系结构必须适合于目标计算机的体系结构。 例如，x64 目标计算机可启动和运行 x86 或 x64 启动映像。 但是，x86 目标计算机只能启动和运行 x86 启动映像。  
+    >  A arquitetura da imagem de inicialização distribuída deve ser apropriada para a arquitetura do computador de destino. Por exemplo, um computador de destino x64 pode iniciar e executar uma imagem de inicialização x86 ou x64. No entanto, um computador de destino x86 pode iniciar e executar apenas uma imagem de inicialização x86.  
 
-    -   在“启动映像包”  框中，指定用于启动目标计算机的启动映像。 有关详细信息，请参阅[管理启动映像](../get-started/manage-boot-images.md)。  
+    -   Na caixa **Imagem de inicialização** , especifique a imagem de inicialização para iniciar o computador de destino. Para obter mais informações, consulte [Gerenciar imagens de inicialização](../get-started/manage-boot-images.md).  
 
-    -   在“分发点”  框中，指定启动映像所在的分发点。 向导将从分发点中检索启动映像并将其写入媒体。  
+    -   Na caixa **Ponto de distribuição** , especifique o ponto de distribuição onde a imagem de inicialização reside. O assistente recupera a imagem de inicialização do ponto de distribuição e a grava na mídia.  
 
         > [!NOTE]  
-        >  你必须对分发点上的内容库具有 **读取** 访问权限。 有关详细信息，请参阅[关于内容库](../../core/plan-design/hierarchy/the-content-library.md)。  
+        >  É necessário ter direitos de acesso de **leitura** à biblioteca de conteúdo no ponto de distribuição. Para mais informações, consulte [Sobre a biblioteca de conteúdo](../../core/plan-design/hierarchy/the-content-library.md).  
 
-    -   如果在此向导的“媒体管理”  页上选择了“基于站点的媒体”  ，请在“管理点”  框中指定主站点中的管理点。  
+    -   Se você selecionou **Mídia de site** na página **Gerenciamento de Mídia** do assistente, na caixa **Ponto de gerenciamento** , especifique um ponto de gerenciamento de um site primário.  
 
-    -   如果在此向导的“媒体管理”  页上选择了“动态媒体”  ，请在“关联的管理点”  框中指定要使用的主站点管理点以及初始通信的优先级顺序。  
+    -   Se você selecionou **Mídia dinâmica** na página **Gerenciamento de Mídia** do assistente, na caixa **Pontos de gerenciamento associados** , especifique os pontos de gerenciamento do site primário a ser usados e uma ordem de prioridade para a comunicação inicial.  
 
-10. 在“映像”  页上，指定以下信息，然后单击“下一步” 。  
+10. Na página **Imagens** , especifique as informações a seguir e clique em **Próximo**.  
 
-    -   在“映像包”  框中，指定操作系统映像。 有关详细信息，请参阅[管理操作系统映像](../get-started/manage-operating-system-images.md)。  
+    -   Na caixa **Pacote da imagem** , especifique a imagem do sistema operacional. Para obter mais informações, consulte [Gerenciar imagens do sistema operacional](../get-started/manage-operating-system-images.md).  
 
-    -   如果该包中包含多个操作系统映像，请在“映像索引”  框中指定要部署的映像。  
+    -   Se o pacote contiver várias imagens de sistemas operacionais, na caixa **Índice de imagens** , especifique a imagem a ser implantada.  
 
-    -   在“分发点”  框中，指定操作系统映像包所在的分发点。 向导将从分发点中检索操作系统映像并将其写入媒体。  
+    -   Na caixa **Ponto de distribuição** , especifique o ponto de distribuição onde o pacote da imagem do sistema operacional reside. O assistente recupera a imagem do sistema operacional do ponto de distribuição e a grava na mídia.  
 
-11. 在“自定义”  页上，指定以下信息，然后单击“下一步” 。  
+11. Na página **Personalização** , especifique as informações a seguir e clique em **Próxima**.  
 
-    -   指定任务序列用于部署操作系统的变量。  
+    -   Especifique as variáveis que a sequência de tarefas usa para implantar o sistema operacional.  
 
-    -   指定想要在运行任务序列之前运行的任何预启动命令。 预启动命令是一个脚本或可执行文件，它可以在任务序列运行以安装操作系统之前在 Windows PE 中与用户交互。 有关用于媒体的预启动命令的详细信息，请参阅[任务序列媒体的预启动命令](../understand/prestart-commands-for-task-sequence-media.md)。  
+    -   Especifique os comandos prestart que deseja executar antes de executar a sequência de tarefas. Os comandos prestart são um script ou um executável que podem interagir com o usuário no Windows PE antes da execução da sequência de tarefas para instalar o sistema operacional. Para obter mais informações sobre comandos prestart para mídia, consulte [Comandos prestart para mídia de sequência de tarefas](../understand/prestart-commands-for-task-sequence-media.md).  
 
         > [!TIP]  
-        >  在任务序列媒体创建过程中，任务序列会将包 ID 和预启动命令行（包括任何任务序列变量的值）写入到运行 Configuration Manager 控制台的计算机上的 CreateTSMedia.log 日志文件。 你可以查看此日志文件以验证任务序列变量的值。  
+        >  Durante a criação de mídia de sequência de tarefas, a sequência de tarefas grava a ID do pacote e a linha de comando prestart, que inclui o valor de quaisquer variáveis de sequência de tarefas, no arquivo de log CreateTSMedia.log no computador que executa o console do Configuration Manager. Você poderá analisar esse arquivo de log para verificar o valor das variáveis de sequência de tarefas.  
 
-12. 完成向导。  
+12. Conclua o assistente.  
 
-## <a name="next-steps"></a>后续步骤
-[部署企业版操作系统的方案](scenarios-to-deploy-enterprise-operating-systems.md)
+## <a name="next-steps"></a>Próximas etapas
+[Cenários para implantar sistemas operacionais corporativos](scenarios-to-deploy-enterprise-operating-systems.md)

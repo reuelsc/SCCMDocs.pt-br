@@ -1,6 +1,6 @@
 ---
-title: "证书配置文件简介 | Microsoft Docs"
-description: "了解 System Center Configuration Manager 中的证书配置文件如何与 Active Directory 证书服务一起使用。"
+title: "Introdução aos perfis de certificado | Microsoft Docs"
+description: "Saiba como os perfis de certificado no System Center Configuration Manager funcionam com Serviços de Certificados do Active Directory."
 ms.custom: na
 ms.date: 07/25/2017
 ms.prod: configuration-manager
@@ -17,54 +17,54 @@ manager: angrobe
 ms.openlocfilehash: 7b1c0e449f3d1ef42e279e8707df6bf1df163b3f
 ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
 ms.translationtype: HT
-ms.contentlocale: zh-CN
+ms.contentlocale: pt-BR
 ms.lasthandoff: 08/07/2017
 ---
-# <a name="introduction-to-certificate-profiles-in-system-center-configuration-manager"></a>System Center Configuration Manager 中的证书配置文件简介
+# <a name="introduction-to-certificate-profiles-in-system-center-configuration-manager"></a>Introdução aos perfis de certificado no System Center Configuration Manager
 
-*适用范围：System Center Configuration Manager (Current Branch)*
-
-
-证书配置文件使用 Active Directory 证书服务和网络设备注册服务角色设置托管设备的身份验证证书，以便用户能够无缝地访问公司资源。 例如，可以创建和部署证书配置文件来为用户提供必要的证书，从而启动 VPN 和无线连接。 
-
-证书配置文件可自动配置用户设备，以便能够访问诸如 Wi-Fi 网络和 VPN 服务器等公司资源，而不必手动安装证书或使用带外进程。 证书配置文件还有助于保持公司资源的安全，因为你可使用受企业公钥基础结构 (PKI) 支持的更安全的设置。 例如，你可以要求对所有 Wi-fi 和 VPN 连接进行服务器身份验证，因为你已经在托管设备上设置了所需证书。   
-
-证书配置文件提供以下管理功能：  
-
--   通过企业证书颁发机构 (CA) 为运行 iOS、Windows 8.1、Windows RT 8.1、Windows 10 桌面和移动版以及 Android 的设备注册和续订证书。 这些证书随后可用于 Wi-Fi 和 VPN 连接。  
-
--   部署受信任的根 CA 证书和中间 CA 证书，以在需要服务器身份验证时针对 VPN 和 Wi-Fi 连接在设备上配置一个信任链。  
-
--   监视并报告已安装的证书。  
-
-**例如：** 所有员工都必须能够连接到多个公司位置的 Wi-fi 热点。 部署连接 Wi-Fi 所需的证书并部署引用该证书以实现无缝用户连接的 Wi-Fi 配置文件。  
-
-**例如：** 你有 PKI 并且想迁移到更灵活、更安全的证书设置方法，可使用户在不影响安全性的情况下从个人设备访问公司资源。 使用特定设备平台支持的设置和协议配置证书配置文件。 随后设备可从面向 Internet 的注册服务器自动请求这些证书。 然后，配置 VPN 配置文件以使用这些证书，以便设备能够访问公司资源。  
-
-## <a name="types-of-certificate-profiles"></a>证书配置文件的类型  
- 有 3 种类型的证书配置文件：  
-
--   **可信 CA 证书** - 可部署受信任的根 CA 或中间 CA 证书，以便在设备必须验证服务器时形成证书信任链。  
-
--   **简单证书注册协议 (SCEP)** - 可通过在运行 Windows Server 2012 R2 的服务器上使用 SCEP 协议和网络设备注册服务，为设备或用户请求一个证书。
-
-    首先创建“受信任的 CA 证书”证书配置文件，然后才能创建“简单证书注册协议(SCEP)”证书配置文件。
-
--   **个人信息交换 (.pfx)** - 可为设备或用户请求一个 .pfx（又称 PKCS #12）证书。
-
-    可以通过从现有证书[导入凭据](/sccm/mdm/deploy-use/import-pfx-certificate-profiles.md)或[定义证书](/sccm/mdm/deploy-use/create-pfx-certificate-profiles.md)颁发机构来处理请求的方式创建 PFX 证书配置文件。
-
-    从版本 1706 开始，可以将 Microsoft 或 Entrust 用作“个人信息交换 (.pfx)”证书的证书颁发机构。
+*Aplica-se a: System Center Configuration Manager (Branch Atual)*
 
 
-## <a name="requirements-and-supported-platforms"></a>要求和支持的平台  
-若要部署使用 SCEP 的证书配置文件，必须在管理中心站点或主站点中的站点系统服务器上安装证书注册点。 还必须在运行 Windows Server 2012 R2（包含 Active Directory 证书服务角色和有效的 NDES）的服务器上安装 NDES 策略模块，即 Configuration Manager 策略模块，在需要证书的设备中可以访问该模块。 对于通过 Microsoft Intunee 注册的设备，则要求 NDES 可从 Internet 中访问，例如，位于外围子网（也称为 DMZ）中。  
+Os perfis de certificado funcionam com os Serviços de Certificados do Active Directory e com a função Serviço de Registro de Dispositivo de Rede para provisionar certificados de autenticação para os dispositivos gerenciados para que os usuários possam acessar perfeitamente os recursos da empresa. Por exemplo, você pode criar e implantar perfis de certificado para fornecer os certificados necessários para que os usuários iniciem conexões VPN e sem fio. 
 
-PFX 证书还要求在管理中心站点或主站点中的站点系统服务器上具有证书注册点。  此外，还必须为证书指定证书颁发机构 (CA) 和相关访问凭据。  从版本 1706 开始，可以将 Microsoft 或 Entrust 指定为证书颁发机构。  
+Os perfis de certificado podem configurar automaticamente dispositivos de usuários para que os recursos da empresa, como redes Wi-Fi e servidores VPN, possam ser acessados sem a necessidade de instalar certificados manualmente ou usar um processo fora da banda. Perfis de certificado também podem ajudar a manter os recursos da empresa protegidos, porque você pode usar configurações mais seguras que têm suporte por sua infraestrutura de chave pública (PKI) corporativa. Por exemplo, você pode exigir autenticação de servidor para todas as conexões VPN e Wi-Fi porque provisionou os certificados necessários nos dispositivos gerenciados.   
 
-有关网络设备注册服务如何支持策略模块以便 Configuration Manager 可以部署证书的详细信息，请参阅[结合使用策略模块和网络设备注册服务](http://go.microsoft.com/fwlink/p/?LinkId=328657)。  
+Os perfis de certificado oferecem os seguintes recursos de gerenciamento:  
 
-Configuration Manager 支持将证书部署到不同的证书存储，具体情况视要求、设备类型和操作系统而定。 支持下列设备和操作系统：  
+-   Registro de certificado e renovação de uma AC (autoridade de certificação) corporativa para dispositivos que executam iOS, Windows 8.1, Windows RT 8.1, Windows 10 Desktop e Mobile e Android. Esses certificados podem ser usados para conexões Wi-Fi e VPN.  
+
+-   Implantação de certificados de autoridade de certificação raiz confiável e certificados de autoridade de certificação intermediários para configurar uma cadeia de confiança em dispositivos para conexões VPN e Wi-Fi, quando a autenticação de servidor for exigida.  
+
+-   Monitorar e emitir relatórios sobre os certificados instalados.  
+
+**Exemplo:** Todos os funcionários devem conseguir se conectar aos pontos de acesso Wi-Fi em vários locais corporativos. Implantar os certificados necessários para se conectar ao Wi-Fi e implantar perfis de Wi-Fi que referenciam o certificado para habilitar conexão sem interrupções para o usuário.  
+
+**Exemplo:** Você tem uma PKI implementada e desejar mover para um método mais flexível e seguro de provisionamento de certificados que permite aos usuários acessar os recursos da empresa em seus dispositivos pessoais sem comprometer a segurança. Configurar perfis de certificado com configurações e protocolos com suporte pela plataforma específica do dispositivo. Os dispositivos podem solicitar automaticamente esses certificados de um servidor de registro da Internet. Em seguida, configurar perfis VPN para usar esses certificados para que o dispositivo possa acessar os recursos da empresa.  
+
+## <a name="types-of-certificate-profiles"></a>Tipos de perfis de certificado  
+ Há três tipos de perfis de certificado:  
+
+-   **Certificado de AC confiável** - permite implantar uma AC de raiz ou intermediária confiável para formar uma cadeia de certificados de confiança quando o dispositivo precisar autenticar-se em um servidor.  
+
+-   **Protocolo SCEP** – permite solicitar um certificado para um dispositivo ou usuário usando o protocolo SCEP e o Serviço de Registro de Dispositivo de Rede em um servidor que executa o Windows Server 2012 R2.
+
+    Para criar um perfil de certificado **SCEP (Protocolo de Registro de Certificado Simples)**, primeiro crie um perfil **Certificado AC confiável**.
+
+-   **Troca de informações pessoais (.pfx)** – permite que você solicite um certificado .pfx (também conhecido como PKCS #12) para um dispositivo ou usuário.
+
+    Você pode criar perfis de certificado PFX [importando credenciais](/sccm/mdm/deploy-use/import-pfx-certificate-profiles.md) de certificados existentes ou [definindo uma autoridade de certificação](/sccm/mdm/deploy-use/create-pfx-certificate-profiles.md) para processar solicitações.
+
+    A partir da versão 1706, você pode usar Microsoft ou Entrust como autoridades de certificação para certificados **Troca de informações pessoais (.pfx)**.
+
+
+## <a name="requirements-and-supported-platforms"></a>Requisitos e plataformas com suporte  
+Para implantar perfis de certificado que usam o protocolo SCEP, você deve instalar o ponto de registro de certificado em um servidor do sistema de sites no site de administração central ou em um site primário. Além disso, você deve instalar um módulo para NDES, o Módulo de Política do Configuration Manager, em um servidor que executa o Windows Server 2012 R2 com a função de Serviços de Certificados do Active Directory e um NDES operacional que possa ser acessado pelos dispositivos que exigem os certificados. Para dispositivos registrados pelo Microsoft Intune, isso requer que o NDES esteja acessível pela Internet, por exemplo, em uma sub-rede filtrada (também conhecida como DMZ).  
+
+Certificados PFX também exigem um ponto de registro de certificado em um servidor do sistema de sites no site de administração central ou em um site primário.  Você também deve especificar a AC (autoridade de certificação) para o certificado e especificar credenciais de acesso relevantes.  A partir da versão 1706, você pode especificar a Microsoft ou Entrust como autoridades de certificação.  
+
+Para obter mais informações sobre como o Serviço de Registro de Dispositivo de Rede dá suporte a um módulo de política para que o Configuration Manager possa implantar certificados, consulte [Usando um Módulo de Política com o Serviço de Registro de Dispositivo de Rede](http://go.microsoft.com/fwlink/p/?LinkId=328657).  
+
+O Configuration Manager dá suporte à implantação de certificados em repositórios de certificado diferentes, dependendo dos requisitos, do tipo de dispositivo e do sistema operacional. Os seguintes dispositivos e sistemas operacionais têm suporte:  
 
 -   Windows RT 8.1  
 
@@ -72,36 +72,36 @@ Configuration Manager 支持将证书部署到不同的证书存储，具体情�
 
 -   Windows Phone 8.1  
 
--   Windows 10 桌面和移动版  
+-   Windows 10 Desktop e Mobile  
 
 -   iOS  
 
 -   Android  
 
 > [!IMPORTANT]  
->  若要将配置文件部署到 Android、iOS、Windows Phone 和注册的 Windows 8.1 或更高版本设备，这些设备必须[在 Microsoft Intune 中注册](https://technet.microsoft.com/en-us/library/dn646962.aspx)。   
+>  Para implantar perfis em dispositivos Android, iOS, Windows Phone e em dispositivos registrados Windows 8.1 ou posteriores, esses dispositivos devem ser [registrados no Microsoft Intune](https://technet.microsoft.com/en-us/library/dn646962.aspx).   
 
-System Center Configuration Manager 的一个典型方案是，在连接使用 EAP-TLS、EAP-TTLS 和 PEAP 身份验证协议以及 IKEv2、L2TP/IPsec 和 Cisco IPsec VPN 隧道协议时，安装受信任的根 CA 证书以验证 Wi-Fi 和 VPN 服务器。  
+Um cenário típico do System Center Configuration Manager é instalar certificados de AC raiz confiável para autenticar servidores Wi-Fi e VPN quando a conexão usa protocolos de autenticação EAP-TLS, EAP-TTLS e PEAP, além de protocolos de túnel IKEv2, L2TP/IPsec e Cisco IPsec VPN.  
 
-你必须确保在设备上安装企业根 CA 证书，然后设备才能使用 SCEP 证书配置文件请求证书。  
+Você deve verificar se um certificado de autoridade de certificação raiz corporativo está instalado no dispositivo para que ele possa solicitar certificados usando um perfil de certificado SCEP.  
 
-你可以在 SCEP 证书配置文件中指定各种设置，以便针对不同的环境或连接要求请求自定义证书。 “创建证书配置文件向导”  包含两个注册参数页面。 首先，“SCEP 注册” 包含有关注册请求以及在何处安装证书的设置。 其次，“证书属性” 本身描述了请求的证书。  
+Você pode especificar uma variedade de configurações em um perfil de certificado do protocolo SCEP para solicitar certificados personalizados para diferentes ambientes ou requisitos de conectividade. O **Assistente para Criar Perfil de Certificado** contém duas páginas de parâmetros de registro. A primeira, **Registro de SCEP**, contém as configurações da solicitação de registro e o local onde o certificado deve ser instalado. A segunda, **Propriedades do Certificado**, descreve o certificado solicitado.  
 
-## <a name="deploying-certificate-profiles"></a>部署证书配置文件  
- 在部署证书配置文件时，配置文件内的证书文件安装在客户端设备上。 还将部署任何 SCEP 参数，并且将在客户端设备上处理 SCEP 请求。 可将证书配置文件部署到用户或设备集合，并为每个证书指定目标存储。 适用性规则确定证书是否可安装在设备上。 将证书配置文件部署到用户集合时，用户设备相关性确定用户的哪台设备将安装证书。 将包含用户证书的证书配置文件部署到设备集合时，默认情况下证书将安装在用户的每台主设备上。 可在“创建证书配置文件向导” 的“SCEP 注册”页上修改此行为，以将证书安装在用户的任何设备上。 此外，如果设备是工作组计算机，则不会将用户证书部署到这些设备。  
+## <a name="deploying-certificate-profiles"></a>Implantando de perfis de certificado  
+ Quando você implanta um perfil de certificado, os arquivos de certificado dentro do perfil são instalados em dispositivos clientes. Todos os parâmetros SCEP também serão implantados, e as solicitações de SCEP serão processadas no dispositivo cliente. Você pode implantar perfis de certificado em coleções de usuários ou de dispositivos e especificar o armazenamento de destino para cada certificado. Regras de aplicabilidade determinam se os certificados podem ser instalados no dispositivo. Quando os perfis de certificado são implantados em coleções de usuários, a afinidade de dispositivo de usuário determina quais dos dispositivos de usuários instalarão os certificados. Quando os perfis de certificado que contêm certificados de usuário são implantados em coleções de dispositivos, por padrão, os certificados serão instalados em cada um dos dispositivos primários dos usuários. Você pode modificar esse comportamento para instalar o certificado em qualquer um dos dispositivos dos usuários na página **Registro do protocolo SCEP** do **Assistente para Criar Perfil de Certificado**. Além disso, os certificados de usuário não serão implantados em dispositivos se eles forem computadores de grupo de trabalho.  
 
-## <a name="monitoring-certificate-profiles"></a>监视证书配置文件  
+## <a name="monitoring-certificate-profiles"></a>Monitorando perfis de certificado  
 
-可通过查看符合性结果或报表来监视证书配置文件部署。 [如何监视证书配置文件](/sccm/protect/deploy-use/monitor-certificate-profiles)中介绍了这些方法。
+Você pode monitorar implantações de perfil de certificado exibindo resultados de conformidade ou relatórios. Essas abordagens estão descritas em [Como monitorar perfis de certificado](/sccm/protect/deploy-use/monitor-certificate-profiles).
 
 
-## <a name="automatic-revocation-of-certificates"></a>自动吊销证书  
- System Center Configuration Manager 在以下情况下会自动撤销使用证书配置文件部署的用户和计算机证书：  
+## <a name="automatic-revocation-of-certificates"></a>Revogação automática de certificados  
+ O System Center Configuration Manager revoga automaticamente os certificados de usuário e do computador implantados usando perfis de certificado nas seguintes circunstâncias:  
 
--   设备已从 System Center Configuration Manager 管理停用。  
+-   O dispositivo é desativado do gerenciamento do System Center Configuration Manager.  
 
--   有选择地擦除了设备。  
+-   O dispositivo é apagado seletivamente.  
 
--   设备在 System Center Configuration Manager 层次结构中受阻止。  
+-   O dispositivo é bloqueado da hierarquia do System Center Configuration Manager.  
 
- 为了吊销证书，站点服务器会将吊销命令发送至证书颁发机构。 吊销原因是“停止操作” 。  
+ Para revogar os certificados, o servidor do site envia um comando de revogação para a autoridade de certificação emissora. O motivo da revogação é **Cessação da Operação**.  

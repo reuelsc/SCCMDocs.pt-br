@@ -1,6 +1,6 @@
 ---
-title: "Technical Preview 1705 | Microsoft 文档"
-description: "了解在 System Center Configuration Manager 的 Technical Preview 1705 中的可用功能。"
+title: "Visualização Técnica 1705 | Microsoft Docs"
+description: "Saiba mais sobre os recursos disponíveis na Visualização Técnica versão 1705 do System Center Configuration Manager."
 ms.custom: na
 ms.date: 06/02/2017
 ms.prod: configuration-manager
@@ -16,19 +16,19 @@ manager: angrobe
 ms.openlocfilehash: b977a79baec73999caa21648adcb6fcfec4a4935
 ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
 ms.translationtype: HT
-ms.contentlocale: zh-CN
+ms.contentlocale: pt-BR
 ms.lasthandoff: 08/07/2017
 ---
-# <a name="capabilities-in-technical-preview-1705-for-system-center-configuration-manager"></a>在 System Center Configuration Manager 的 Technical Preview 1705 中的功能
+# <a name="capabilities-in-technical-preview-1705-for-system-center-configuration-manager"></a>Funcionalidades na Visualização Técnica 1705 do System Center Configuration Manager
 
-*适用范围：System Center Configuration Manager（Technical Preview）*
+*Aplica-se a: System Center Configuration Manager (Technical Preview)*
 
-本文介绍了在 System Center Configuration Manager 的 Technical Preview 1705 中的可用功能。 可以安装此版本以更新 Configuration Manager Technical Preview 站点的功能并向其添加新功能。 在安装此 Technical Preview 前，请查看 [System Center Configuration Manager 的 Technical Preview](../../core/get-started/technical-preview.md)，熟悉使用 Technical Preview 的常规要求和限制，如何在两版本之间进行更新，以及如何对 Technical Preview 中的有关功能提供反馈。    
+Este artigo apresenta os recursos disponíveis na Visualização Técnica do System Center Configuration Manager, versão 1705. Você pode instalar esta versão para atualizar e adicionar novas funcionalidades ao seu site do Configuration Manager Technical Preview. Antes de instalar esta versão da visualização técnica, veja [Visualização Técnica do System Center Configuration Manager](../../core/get-started/technical-preview.md), para se familiarizar com os requisitos e limitações gerais de uso de uma visualização técnica, como atualizar entre versões e como fornecer comentários sobre os recursos em uma visualização técnica.    
 
-**此 Technical Preview 中的已知问题：**
--   **Operations Manager 套件连接器不升级**。 从配置了 OMS 连接器的 Technical Preview 之前版本升级时，该连接器不会升级且在控制台中变得不再可用。 在升级后，必须[使用 Azure 服务向导](capabilities-in-technical-preview-1705.md#use-azure-services-wizard-to-configure-a-connection-to-oms)并重新建立到 OMS 工作区的连接。
--   **Surface 驱动程序无法成功同步**。 即使支持 Technical Preview 的 Configuration Manager 控制台“新增功能”中所列的 Surface 驱动程序，此功能也无法按预期方式工作。
--   **无法创建 Windows Update for Business 延迟策略**。 即使在 Technical Preview 的 Configuration Manager 控制台“新增功能”中列出了配置 Windows Update for Business 延迟策略的功能，向导也不会打开，且无法配置任何策略。
+**Problemas conhecidos nesse Technical Preview:**
+-   **O conector do Operations Manager Suite não é atualizado**. Quando você atualiza de uma versão anterior da Visualização Técnica que tinha o conector do OMS configurado, esse conector não é atualizado e não está mais disponível no console. Após a atualização, você deve [usar o Assistente dos Serviços do Azure](capabilities-in-technical-preview-1705.md#use-azure-services-wizard-to-configure-a-connection-to-oms) e restabelecer a conexão com seu espaço de trabalho do OMS.
+-   **Os drivers do Surface não são sincronizados com êxito**. Embora o suporte para drivers do Surface estejam listados em **Novidades** no console do Configuration Manager para a visualização técnica, esse recurso ainda não funciona conforme o esperado.
+-   **Não foi possível criar políticas de adiamento do Windows Update for Business**. Embora a capacidade de configurar as políticas de adiamento do Windows Update for Business esteja listada em **Novidades** no console do Configuration Manager para a visualização técnica, o assistente não abre e não é possível configurar as políticas.
 
 
 <!--  Known Issues Template
@@ -37,7 +37,7 @@ ms.lasthandoff: 08/07/2017
     Workaround details.
 -->
 
-**以下是可以试用的此版本的新功能。**  
+**Veja a seguir os novos recursos que você pode experimentar nesta versão.**  
 
 <!--  Rough Section Template
 ##  FEATURE
@@ -49,253 +49,253 @@ ms.lasthandoff: 08/07/2017
  -  Task 2              
 -->
 
-## <a name="update-reset-tool"></a>更新重置工具  
-在控制台内更新出现下载或复制问题时，可以使用 Configuration Manager 更新重置工具 CMUpdateReset.exe 修复这些问题。 Technical Preview 1705 中提供了此工具。 在 \cd.latest\SMSSETUP\TOOLS 文件夹中安装预览版后，可以在 Technical Preview 站点的站点服务器上找到此工具。
+## <a name="update-reset-tool"></a>Ferramenta de redefinição de atualização  
+Você pode usar a Ferramenta de Redefinição de Atualização do Configuration Manager, **CMUpdateReset.exe**, para corrigir problemas quando as atualizações no console tiverem problemas ao baixar ou replicar. Essa ferramenta está incluída na versão 1705 da Visualização Técnica. Você pode localizá-lo no servidor do seu site da visualização técnica depois de instalar a visualização na pasta ***\cd.latest\SMSSETUP\TOOLS***.
 
-你可以在 Technical Preview 1606 或更高版本中使用此工具。 此工具提供向后支持，因此，它可与一系列 Technical Preview 的更新方案一起使用，而无需等到推出下一个 Technical Preview。
+Você pode usar essa ferramenta com as versões 1606 ou posteriores da Visualização Técnica. Esse suporte a versões anteriores é fornecido para que a ferramenta possa ser usada com vários cenários de atualização da visualização técnica e sem ter de esperar até a próxima visualização técnica ficar disponível.
 
-控制台内更新尚未安装且处于失败状态时，可以使用此工具。 失败状态可能意味着更新下载仍在进行，但处于停滞状态，且花费了相当长的时间，与类似大小的更新包所花费的历史预期时间相比，可能还要长数小时。 另外，也可能是无法将更新复制到子主站点。  
+Você pode usar essa ferramenta quando uma atualização no console ainda não estiver instalada e estiver em um estado de falha. Um estado de falha pode significar que o download da atualização permanece em andamento, mas está preso e demora muito tempo, talvez horas além de suas expectativas históricas para pacotes de atualização de tamanho semelhante. Também pode ter havido uma falha ao replicar a atualização para os sites primários filhos.  
 
-运行此工具时，它会基于你指定的更新运行。 默认情况下，该工具不会删除已成功安装或下载的更新。  
+Quando você executa a ferramenta, ela é executada em relação à atualização que você especificar. Por padrão, a ferramenta não exclui com sucesso atualizações baixadas ou instaladas.  
 
-### <a name="prerequisites"></a>先决条件
-用于运行此工具的帐户需要具有以下权限：
--   对管理中心站点和层次结构中每个主站点的站点数据库的“读取”和“写入”权限。 若要设置这些权限，可以将用户帐户添加为每个站点的 Configuration Manager 数据库上 db_datawriter 和 db_datareader[固定数据库角色](/sql/relational-databases/security/authentication-access/database-level-roles#fixed-database-roles)的成员。 该工具不与辅助站点进行交互。
--   在层次结构的顶层站点上为“本地管理员”。
--   在托管服务连接点的计算机上为“本地管理员”。
+### <a name="prerequisites"></a>Pré-requisitos
+A conta usada para executar a ferramenta requer as seguintes permissões:
+-   Permissões de **leitura** e **gravação** para o banco de dados do site de administração central e cada site primário em sua hierarquia. Para definir essas permissões, você poderá adicionar a conta de usuário como membro das [funções de banco de dados fixas](/sql/relational-databases/security/authentication-access/database-level-roles#fixed-database-roles) **db_datawriter** e **db_datareader** no banco de dados do Configuration Manager de cada site. A ferramenta não consegue interagir com os sites secundários.
+-   **Administrador local** no site de nível superior da sua hierarquia.
+-   **Administrador local** no computador que hospeda o ponto de conexão de serviço.
 
-需要你希望进行重置的更新包的 GUID。 要获取 GUID，请执行以下操作：
--   在控制台中，转到“管理” > “更新和服务”，然后在显示窗格中，右键单击某一列的标题（如“状态”），然后选择“包 GUID”。 这会将该列添加到显示中，并且该列会显示更新包 GUID。
+Você precisará da interface gráfica do usuário do pacote de atualização que você deseja redefinir. Para obter a interface gráfica do usuário:
+-   No console, acesse **Administração** > **Atualizações e Manutenção** e, em seguida, no painel de exibição, clique com o botão direito no título de uma das colunas (como **Estado**), em seguida, selecione **Interface gráfica do usuário do Pacote**. Isso adiciona essa coluna à exibição e a coluna mostra a interface gráfica do usuário do pacote de atualização.
 
 > [!TIP]  
-> 若要复制此 GUID，请选择想要重置的更新包的行，然后使用 CTRL+C 复制该行。 如果将复制的选定内容粘贴到文本编辑器，则可以在运行该工具时仅复制 GUID 用作命令行参数。
+> Para copiar a interface gráfica do usuário, selecione a linha para o pacote de atualização que deseja redefinir e, em seguida, use CTRL+C para copiar essa linha. Se você colar a seleção copiada em um editor de texto, poderá copiar somente a interface gráfica do usuário para usar como um parâmetro de linha de comando quando você executar a ferramenta.
 
-### <a name="run-the-tool"></a>运行该工具    
-该工具必须在层次结构的顶层站点上运行。
+### <a name="run-the-tool"></a>Executar a ferramenta    
+A ferramenta deve ser executada no site de nível superior da hierarquia.
 
-在运行该工具时，使用命令行参数来指定层次结构的顶层站点的 SQL Server、站点数据库名称以及想要重置的更新包的 GUID。 然后，该工具根据更新状态确定它需要访问的其他服务器。   
+Quando você executa a ferramenta, usa parâmetros de linha de comando para especificar o SQL Server no site de nível superior da hierarquia, o nome do banco de dados do site e a interface gráfica do usuário do pacote de atualização que você deseja redefinir. A ferramenta em seguida identifica os servidores adicionais necessários para acessar, com base no status das atualizações.   
 
-如果更新包处于下载后状态，则该工具不会清理此包。 或者，也可以使用强制删除参数强制删除已成功下载的更新（请参阅本主题后续介绍的命令行参数）。
+Se o pacote de atualização estiver em um estado de *pós-download*, a ferramenta não limpará o pacote. Como opção, você pode forçar a remoção de uma atualização que baixou com êxito usando o parâmetro force delete (confira os parâmetros de linha de comando posteriormente neste tópico).
 
-运行该工具后：
--   如果包被删除，请重启顶层站点 SMS_Executive 服务，然后再次检查更新以下载此包。
--   如果包未被删除，则无需执行任何操作，因为此更新将重新初始化并重新开始复制或安装。
+Depois que a ferramenta é executada:
+-   Se um pacote foi excluído, reinicie o serviço SMS_Executive de sites de nível superior e, em seguida, verifique se há atualizações para baixar o pacote novamente.
+-   Se um pacote não tiver sido excluído, você não precisará realizar nenhuma ação, porque a atualização será reinicializada e reiniciará a instalação ou replicação.
 
-**命令行参数：**  
+**Parâmetros da linha de comando:**  
 
-| 参数        |描述                 |  
+| Parâmetro        |Descrição                 |  
 |------------------|----------------------------|  
-|**-S &lt;顶层站点的 SQL Server 的 FQDN>** | *必需* <br> 必须指定为层次结构的顶层站点托管站点数据库的 SQL Server 的 FQDN。    |  
-| **-D &lt;数据库名称>**                        | *必需* <br> 必须指定顶层站点数据库的名称。  |  
-| **-P &lt;包 GUID>**                         | *必需* <br> 必须指定想要重置的更新包的 GUID。   |  
-| **-I &lt;SQL Server 实例名称>**             | *可选* <br> 使用此参数确定托管站点数据库的 SQL Server 的实例。 |
-| **-FDELETE**                              | *可选* <br> 使用此参数强制删除已成功下载的更新包。 |  
- **示例：**  
- 在一个典型方案中，你想要重置具有下载问题的更新。 SQL Server FQDN 是 server1.fabrikam.com，站点数据库是 CM_XYZ，包 GUID 是 61F16B3C-F1F6-4F9F-8647-2A524B0C802C。  可以运行：CMUpdateReset.exe -S server1.fabrikam.com -D CM_XYZ -P 61F16B3C-F1F6-4F9F-8647-2A524B0C802C
+|**-S &lt;Nome de domínio totalmente qualificado do SQL Server do seu site de nível superior>** | *Necessária* <br> Você deve especificar o nome de domínio totalmente qualificado do SQL Server que hospeda o banco de dados do site para o site de nível superior da sua hierarquia.    |  
+| **-D &lt;Nome do banco de dados>**                        | *Necessária* <br> Você deve especificar o nome do banco de dados de sites de nível superior.  |  
+| **-P &lt;Interface gráfica do usuário do pacote>**                         | *Necessária* <br> Você deve especificar a interface gráfica do usuário para o pacote de atualização que você deseja redefinir.   |  
+| **-I &lt;Nome da instância do SQL Server>**             | *Opcional* <br> Use isso para identificar a instância do SQL Server que hospeda o banco de dados do site. |
+| **-FDELETE**                              | *Opcional* <br> Use isto para forçar a exclusão de um pacote de atualização baixado com êxito. |  
+ **Exemplos:**  
+ Em um cenário típico, você deve redefinir uma atualização que apresenta problemas de download. O FQDN do seu SQL Server é *server1.fabrikam.com*, o banco de dados do site é *CM_XYZ* e a GUID do pacote é *61F16B3C-F1F6-4F9F-8647-2A524B0C802C*.  Execute: ***CMUpdateReset.exe -S server1.fabrikam.com -D CM_XYZ -P 61F16B3C-F1F6-4F9F-8647-2A524B0C802C***
 
- 在比较极端的情形下，你希望强制删除存在问题的更新包。 SQL Server FQDN 是 server1.fabrikam.com，站点数据库是 CM_XYZ，包 GUID 是 61F16B3C-F1F6-4F9F-8647-2A524B0C802C。  可以运行：CMUpdateReset.exe  -FDELETE -S server1.fabrikam.com -D CM_XYZ -P 61F16B3C-F1F6-4F9F-8647-2A524B0C802C
+ Em um cenário mais complexo, você deve forçar a exclusão do pacote de atualização problemático. O FQDN do seu SQL Server é *server1.fabrikam.com*, o banco de dados do site é *CM_XYZ* e a GUID do pacote é *61F16B3C-F1F6-4F9F-8647-2A524B0C802C*.  Execute: ***CMUpdateReset.exe  -FDELETE -S server1.fabrikam.com -D CM_XYZ -P 61F16B3C-F1F6-4F9F-8647-2A524B0C802C***
 
-### <a name="test-the-tool-with-the-technical-preview"></a>使用 Technical Preview 测试此工具  
-你可以在 Technical Preview 1606 或更高版本中使用此工具。 此工具提供向后支持，因此，它可与很多 Technical Preview 的更新方案一起使用，而无需等到推出下一个 Technical Preview。
+### <a name="test-the-tool-with-the-technical-preview"></a>Teste a ferramenta com a Visualização Técnica  
+Você pode usar essa ferramenta com as versões 1606 ou posteriores da Visualização Técnica. Esse suporte a versões anteriores é fornecido para que a ferramenta possa ser usada com um número maior de cenários de atualização da visualização técnica, sem ter de esperar até a próxima versão de visualização técnica estar disponível.
 
-在更新完成其先决条件检查之前，在 Technical Preview 的更新包上运行该工具。 在“管理” > “更新和维护服务”中，通过包的以下状态之一来确定已完成的先决条件检查状态：  
--   **已通过先决条件检查**
--   **已通过先决条件检查，但有警告**
--   **先决条件检查失败**
-
-
-## <a name="high-dpi-console-support"></a>高 DPI 控制台支持
-
-使用此版本，应能修复在高 DPI 设备（如 Surface Book）上进行查看时，Configuration Manager 控制台如何缩放和显示 UI 不同部分的问题。
+Execute a ferramenta em um pacote de atualização para uma versão de visualização técnica anterior a essa atualização concluir sua verificação de pré-requisitos. Um estado de verificação de pré-requisitos concluído é identificado por um dos seguintes status para o pacote em **Administração** > **Atualizações e Manutenção**:  
+-   **Verificação de pré-requisitos aprovada**
+-   **Verificação de pré-requisitos aprovada com aviso**
+-   **Verificação de pré-requisitos reprovada**
 
 
-## <a name="peer-cache-improvements"></a>对等缓存功能改进
-从该 Technical Preview 开始，对等缓存功能[不再使用网络访问帐户](/sccm/core/plan-design/hierarchy/client-peer-cache)来验证对等项的下载请求。
+## <a name="high-dpi-console-support"></a>Suporte de console com alto DPI
+
+Com esta versão, devem ser corrigidos os problemas com o modo como o console do Configuration Manager pode ser expandido e exibe diferentes partes da interface do usuário quando é exibido em dispositivos de DPI alto (como um livro do Surface).
 
 
-## <a name="improvements-for-sql-server-always-on-availability-groups"></a>SQL Server Always On 可用性组改进  
-借助此版本，现在可以在与 Configuration Manager 配合使用的 SQL Server AlwaysOn 可用性组中使用异步提交副本。  这意味着，你可以将其他副本添加到可用性组，用作场外（远程）备份，然后在灾难恢复方案中使用它们。  
+## <a name="peer-cache-improvements"></a>Aprimoramentos de cache de pares
+A partir dessa visualização técnica, o cache par [não usa mais a conta de acesso de rede](/sccm/core/plan-design/hierarchy/client-peer-cache) para autenticar solicitações de download dos pares.
 
--   Configuration Manager 支持使用异步提交副本来恢复同步副本。  请参阅备份和恢复主题中的[站点数据库恢复选项](/sccm/protect/understand/backup-and-recovery#BKMK_SiteDatabaseRecoveryOption)，了解有关如何实现此操作的信息。
 
--   此版本不支持故障转移后使用异步提交副本作为站点数据库。
+## <a name="improvements-for-sql-server-always-on-availability-groups"></a>Aprimoramentos para Grupos de Disponibilidade AlwaysOn do SQL Server  
+Com esta versão, agora você pode usar réplicas de confirmação assíncrona nos grupos de disponibilidade AlwaysOn do SQL Server usados com o Configuration Manager.  Isso significa que você pode adicionar mais réplicas a seus grupos de disponibilidade para usar como backups fora do local (remotos) e, em seguida, usá-los em um cenário de recuperação de desastres.  
+
+-   O Configuration Manager dá suporte ao uso de réplica de confirmação assíncrona para recuperar sua réplica síncrona.  Confira [Opções de recuperação do banco de dados do site](/sccm/protect/understand/backup-and-recovery#BKMK_SiteDatabaseRecoveryOption) no tópico Backup e recuperação para obter informações sobre como fazer isso.
+
+-   Esta versão não dá suporte a failover para usar a réplica de confirmação assíncrona como seu banco de dados do site.
 > [!CAUTION]  
-> 由于 Configuration Manager 不会验证异步提交副本的状态来确认它是否为最新，而[此类副本设计可以为不同步](https://msdn.microsoft.com/library/ff877884(SQL.120).aspx(d=robot)#Availability%20Modes)，因此，使用异步提交副本作为站点数据库可能会危及站点和数据的完整性。  
+> Como o Configuration Manager não valida o estado da réplica de confirmação assíncrona para confirmar que é atual, e [por design essa réplica pode estar fora de sincronia](https://msdn.microsoft.com/library/ff877884(SQL.120).aspx(d=robot)#Availability%20Modes), o uso de uma réplica de confirmação assíncrona como o banco de dados do site pode colocar em risco a integridade do site e dos dados.  
 
--   可以在可用性组中使用与所用 SQL Server 版本支持的数量和类型相同的副本。   （先前支持限制为两个同步提交副本。）
+-   Você pode usar o mesmo número e tipo de réplicas em um grupo de disponibilidade como compatível com a versão do SQL Server que você usa.   (O suporte anterior foi limitado a duas réplicas de confirmação síncronas).
 
-### <a name="configure-an-asynchronous-commit-replica"></a>配置异步提交副本
-若要将异步副本添加到[与 Configuration Manager 配合使用的可用性组](/sccm/core/servers/deploy/configure/sql-server-alwayson-for-a-highly-available-site-database)，则不需要运行配置同步副本所需的配置脚本。 （这是因为不支持将该异步副本用作站点数据库。）请参阅 [SQL Server 文档](https://msdn.microsoft.com/library/hh213247(v=sql.120).aspx(d=robot))，了解有关如何将辅助副本添加到可用性组的信息。
+### <a name="configure-an-asynchronous-commit-replica"></a>Configurar uma réplica de confirmação assíncrona
+Para adicionar uma réplica assíncrona a um [grupo de disponibilidade que você usa com o Configuration Manager](/sccm/core/servers/deploy/configure/sql-server-alwayson-for-a-highly-available-site-database), você não precisa executar os scripts de configuração necessários para configurar uma réplica síncrona. (Isso ocorre porque não há suporte para usar essa réplica assíncrona como o banco de dados do site). Veja [a documentação do SQL Server](https://msdn.microsoft.com/library/hh213247(v=sql.120).aspx(d=robot)) para obter informações sobre como adicionar réplicas secundárias a grupos de disponibilidade.
 
-### <a name="use-the-asynchronous-replica-to-recover-your-site"></a>使用异步副本恢复站点
-使用异步副本恢复站点数据库之前，必须停止活动主站点，防止到站点数据库的其他写入。 停止站点后，可以使用异步副本替代[手动恢复的数据库](/sccm/protect/understand/backup-and-recovery#BKMK_SiteDatabaseRecoveryOption)。
+### <a name="use-the-asynchronous-replica-to-recover-your-site"></a>Usar a réplica assíncrona para recuperar o site
+Antes de usar uma réplica assíncrona para recuperar o banco de dados do site, você deverá parar o site primário ativo para impedir gravações adicionais no banco de dados do site. Depois de parar o site, você poderá usar uma réplica assíncrona em vez de usar um [banco de dados recuperado manualmente](/sccm/protect/understand/backup-and-recovery#BKMK_SiteDatabaseRecoveryOption).
 
-若要停止该站点，可以使用[层次结构维护工具](/sccm/core/servers/manage/hierarchy-maintenance-tool-preinst.exe)来停止站点服务器上的密钥服务。 使用命令行：Preinst.exe /stopsite   
+Para parar o site, você poderá usar a [ferramenta de manutenção de hierarquia](/sccm/core/servers/manage/hierarchy-maintenance-tool-preinst.exe) para interromper os principais serviços no servidor do site. Use a linha de comando: **Preinst.exe /stopsite**   
 
-停止站点相当于停止站点服务器上后跟 SMS_Executive 服务的站点组件管理器服务 (sitecomp)。
+Parar o site é equivalente a interromper o serviço do Gerenciador de Componentes de Site (sitecomp) seguido pelo serviço SMS_Executive, no servidor do site.
 
 > [!TIP]  
-> 如果使用主被动副本（作为[站点服务器角色高可用性](#site-server-role-high-availability)引入此 Technical Preview），则无需停止被动副本。 只需停止活动主站点。
+> Se você usar uma réplica primária passiva (introduzida nesta Visualização Técnica como [Alta disponibilidade da função de servidor do site](#site-server-role-high-availability)), não precisará interromper a réplica passiva. Somente o site primário ativo deve ser interrompido.
 
 
 
-## <a name="improved-user-notifications-for-office-365-updates"></a>改进了 Office 365 更新的用户通知
-已进行了改进，在客户端安装 Office 365 更新时利用 Office 即点即用用户体验。 这包括弹出通知、应用内通知以及倒计时体验。 在此版本之前，在向客户端发送 Office 365 更新时，之前打开的 Office 应用程序会自动关闭而不发出警告。 此更新后，Office 应用程序将不会再意外关闭。
+## <a name="improved-user-notifications-for-office-365-updates"></a>Notificações de usuário aprimoradas para atualizações do Office 365
+Melhorias foram feitas para aproveitar a experiência de usuário do Office com Clique para Executar quando um cliente instala uma atualização do Office 365. Isso inclui notificações pop-up e no aplicativo, e uma experiência de contagem regressiva. Antes desta versão, quando uma atualização do Office 365 era enviada para um cliente, os aplicativos do Office que estavam abertos eram fechados automaticamente sem aviso. Após essa atualização, os aplicativos do Office não serão mais fechados inesperadamente.
 
-### <a name="prerequisites"></a>先决条件
-此更新适用于 Office 365 ProPlus 客户端。
+### <a name="prerequisites"></a>Pré-requisitos
+Esta atualização aplica-se a clientes do Office 365 ProPlus.
 
-### <a name="known-issues"></a>已知问题
-如果客户端是首次评估 Office 365 更新分配，且更新具有在过去计划的截止时间、立即计划的截止时间或在 30 分钟内计划的截止时间，Office 365 用户体验可能会不一致。 例如，客户端可能会收到用于更新的一个 30 分钟倒计时对话框，但实际的强制措施可能会在倒计时结束之前启动。 若要避免此行为，请考虑以下方面的内容：
-- 部署具有截止时间的 Office 365 更新，该截止时间计划比当前时间提前超过 60 分钟。
-- 配置非营业时间的收集维护时段或配置部署的实施宽限期。
+### <a name="known-issues"></a>Problemas conhecidos
+Quando um cliente avalia uma atribuição de atualização do Office 365 pela primeira vez e a atualização tem um prazo agendado no passado, agendado imediatamente ou programado dentro de 30 minutos, a experiência de usuário do Office 365 pode ser divergente. Por exemplo, o cliente pode receber uma caixa de diálogo de contagem regressiva de 30 minutos para a atualização, mas a imposição real poderia iniciar antes do final da contagem regressiva. Para evitar esse comportamento, considere o seguinte:
+- Implante a atualização do Office 365 com um prazo final agendado para mais de 60 minutos depois da hora atual.
+- Configure uma janela de manutenção durante o horário não comercial na coleção ou configure um período de cortesia de imposição na implantação.
 
-### <a name="try-it-out"></a>试试看！
-请尝试完成以下任务，然后从功能区的“主页”选项卡向我们发送“反馈”，让我们了解它的工作状况：
-- 将客户端部署到具有以下截止时间的 Office 365 更新，该截止时间设置为比当前时间至少提前 60 分钟的时间。 观察客户端上的新行为。
-
-
-## <a name="configure-and-deploy-windows-defender-application-guard-policies"></a>配置和部署 Windows Defender 应用程序防护策略
-
-[Windows Defender 应用程序防护](https://blogs.windows.com/msedgedev/2016/09/27/application-guard-microsoft-edge/#XLxEbcpkuKcFebrw.97)是一项新的 Windows 功能，通过在操作系统的其他部分无法访问的安全隔离容器中打开不受信任的网站来帮助保护用户安全。 在此 Technical Preview 版中，我们使用在配置后部署到集合的 Configuration Manager 符合性设置增加了对配置此功能的支持。
-此功能将在 64 位版本的 Windows 10 创意者更新预览版 (codename: RS2) 中发布。 现在，若要测试此功能，必须使用此更新的预览版本。
+### <a name="try-it-out"></a>Experimente!
+Tente concluir as tarefas a seguir e, depois, envie-nos **Comentários** usando a guia **Início** da Faixa de Opções para nos contar foi:
+- Implante em um cliente uma atualização do Office 365 com um prazo final definido para um horário de pelo menos 60 minutos depois da hora atual. Observe o novo comportamento no cliente.
 
 
-### <a name="before-you-start"></a>开始之前
+## <a name="configure-and-deploy-windows-defender-application-guard-policies"></a>Configurar e implantar políticas de Proteção de Aplicativos do Windows Defender
 
-若要创建和部署 Windows Defender 应用程序防护策略，必须使用网络隔离策略配置要部署此策略的 Windows 10 设备。 有关更多详细信息，请参阅稍后引用的博客文章。
-此功能仅适用于当前的 Windows 10 预览体验成员版本。 若要对其进行测试，客户端必须运行最新的 Windows 10 预览体验成员版本。
-
-### <a name="try-it-out"></a>试试看！
-
-请务必阅读博客文章，以便了解有关 Windows Defender 应用程序防护的基础知识。
-
-若要创建策略，并浏览可用设置，请执行以下操作：
-
-1.  在 Configuration Manager 控制台中，选择“资产和符合性”。
-2.  在“资产和符合性”工作区中，选择“概述” > “终结点保护” > “Windows Defender 应用程序防护”。
-3.  在“主页”选项卡的“创建”组中，单击“创建 Windows Defender 应用程序防护策略”。
-4.  将此博客文章用作参考，可以浏览和配置可用的设置来试用此功能。
-5.  结束后，完成向导操作，并将策略部署到一个或多个 Windows 10 设备。
-
-### <a name="further-reading"></a>延伸阅读
-
-若要了解有关 Windows Defender 应用程序防护的详细信息，请参阅[这篇博客文章]( https://blogs.windows.com/msedgedev/2016/09/27/application-guard-microsoft-edge/#BmJGKPfSjHHzsMmI.97)。
-此外，若要详细了解 Windows Defender 应用程序防护独立模式，请参阅[这篇博客文章](https://techcommunity.microsoft.com/t5/Windows-Insider-Program/Windows-Defender-Application-Guard-Standalone-mode/td-p/66903)。
+O [Windows Defender Application Guard](https://blogs.windows.com/msedgedev/2016/09/27/application-guard-microsoft-edge/#XLxEbcpkuKcFebrw.97) é um novo recurso do Windows que ajuda a proteger os usuários através da abertura de sites não confiáveis em um contêiner isolado seguro que não esteja acessível por outras partes do sistema operacional. Nesse visualização técnica, adicionamos suporte para configurar esse recurso usando as configurações de conformidade do Configuration Manager que você configura e, em seguida, implanta em uma coleção.
+Este recurso será lançado na versão prévia para a versão de 64 bits da atualização do criador do Windows 10 (codinome: RS2). Para testar esse recurso agora, você deverá estar usando uma versão prévia desta atualização.
 
 
+### <a name="before-you-start"></a>Antes de começar
+
+Para criar e implantar as políticas do Windows Defender Application Guard, os dispositivos do Windows 10 nos quais você implantará a política deverão ser configurados com uma política de isolamento de rede. Para obter mais detalhes, veja a postagem no blog mencionado posteriormente.
+Esse recurso só funciona com versões atuais do Windows 10 Insider. Para testá-lo, os clientes deverão estar executando uma versão recente do Windows 10 Insider.
+
+### <a name="try-it-out"></a>Experimente!
+
+Verifique se você leu a postagem no blog para entender as noções básicas sobre o Windows Defender Application Guard.
+
+Para criar uma política e procurar as configurações disponíveis:
+
+1.  No console do Configuration Manager, escolha **Ativos e Conformidade**.
+2.  No espaço de trabalho **Ativos e Conformidade**, escolha **Visão Geral** > **Endpoint Protection** > **Windows Defender Application Guard**.
+3.  Na guia **Início**, no grupo **Criar**, clique em **Criar Política do Windows Defender Application Guard**.
+4.  Usando a postagem no blog como referência, você pode procurar e definir as configurações disponíveis para experimentar o recurso.
+5.  Quando tiver terminado, conclua o assistente e implante a política para um ou mais dispositivos Windows 10.
+
+### <a name="further-reading"></a>Leitura adicional
+
+Para saber mais sobre o Windows Defender Application Guard, veja [esta postagem no blog]( https://blogs.windows.com/msedgedev/2016/09/27/application-guard-microsoft-edge/#BmJGKPfSjHHzsMmI.97).
+Além disso, para saber mais sobre o modo autônomo do Windows Defender Application Guard, veja [esta postagem no blog](https://techcommunity.microsoft.com/t5/Windows-Insider-Program/Windows-Defender-Application-Guard-Standalone-mode/td-p/66903).
 
 
-## <a name="new-capabilities-for-azure-ad-and-cloud-management"></a>Azure AD 和云管理的新功能
-
-在此版本中，可以配置云服务以使用 Azure AD 来支持以下方案：
-
-- 从 Internet 手动安装 Configuration Manager 客户端，并将其分配到 Configuration Manager 站点。
-- 使用 Intune 将 Configuration Manager 客户端部署到 Internet 上的设备。
-
-### <a name="advantages"></a>优点
-
-使用云服务和 Azure AD，而无需再使用客户端身份验证证书。
-
-可以在站点中发现 Azure AD 用户，从而在集合和其他 Configuration Manager 操作中使用。
-
-### <a name="before-you-start"></a>开始之前
-
-- 必须具有 Azure AD 租户。
-- 设备必须运行 Windows 10，并加入 Azure AD。  除加入 Azure AD 外，客户端还可以加入域。
-- 除了管理点站点系统角色的[现有先决条件](/sccm/core/plan-design/configs/site-and-site-system-prerequisites)外，还必须确保 ASP.NET 4.5（和随此项自动选择的任何其他选项）在托管此站点系统角色的计算机上启用。
-- 若要使用 Microsoft Intune 部署 Configuration Manager 客户端，请按照以下步骤操作：
-    - 必须具有有效的 Intune 租户（不需要连接 Configuration Manager 和 Intune）。
-    - 在 Intune 中，创建并部署包含 Configuration Manager 客户端的应用。 有关如何执行此操作的详细信息，请参阅“如何将客户端安装到 Intune MDM 托管的 Windows 设备”。
-- 若要使用 Configuration Manager 部署客户端，请按照以下步骤操作：
-    - 必须至少为 HTTPS 模式配置一个管理点。
-    - 必须设置云管理网关。
 
 
-### <a name="set-up-the-cloud-management-gateway"></a>设置云管理网关
+## <a name="new-capabilities-for-azure-ad-and-cloud-management"></a>Novos recursos do Azure AD e gerenciamento de nuvem
 
-设置云管理网关，以让客户端从 Internet 访问 Configuration Manager 站点，而无需使用证书。
+Nesta versão, você pode configurar os serviços de nuvem para usar o Azure AD para dar suporte ao cenário a seguir:
 
-可以在以下主题中找到有关如何执行此操作的帮助：
+- Instalar manualmente o cliente do Configuration Manager pela Internet e que ele seja atribuído a um site do Configuration Manager.
+- Usar o Intune para implantar o cliente do Configuration Manager em dispositivos na Internet.
 
-- [在 Configuration Manager 中规划云管理网关](/sccm/core/clients/manage/plan-cloud-management-gateway)。
-- [为 Configuration Manager 设置云管理网关](/sccm/core/clients/manage/setup-cloud-management-gateway)。
-- [在 Configuration Manager 中监视云管理网关](/sccm/core/clients/manage/monitor-clients-cloud-management-gateway)。
+### <a name="advantages"></a>Vantagens
 
-### <a name="set-up-the-azure-services-app-in-configuration-manager-cloud-services"></a>在 Configuration Manager 云服务中设置 Azure 服务应用
+Usar os serviços de nuvem e o Azure AD elimina a necessidade de usar certificados de autenticação de cliente.
 
-这会将 Configuration Manager 站点连接到 Azure AD，这也是本节中所有其他操作的先决条件。 要执行此操作：
+Você pode descobrir os usuários do Azure AD em seu site para usar nas coleções e outras operações do Configuration Manager.
 
-1.  在 Configuration Manager 控制台的“管理”工作区中，展开“云服务”，然后单击“Azure 服务”。
-2.  在“主页”选项卡上的“Azure 服务”组中，单击“配置 Azure 服务”。
-3.  在 Azure 服务向导的“Azure 服务”页上，选择“云管理”以允许客户端使用 Azure AD 对层次结构进行身份验证。
-4.  在向导的“常规”页上，指定一个名称和 Azure 服务的说明。
-5.  在向导的“应用”页上，从列表中选择 Azure 环境，然后单击“浏览”以选择将用于配置 Azure 服务的服务器和客户端应用：
-    - 在“服务器应用”窗口中，选择要使用的服务器应用，然后单击“确定”。 服务器应用是包含 Azure 帐户配置的 Azure Web 应用，包括客户端的租户 ID、客户端 ID 和密钥。 如果没有可用的服务器应用，请使用以下操作之一：
-        - **创建**：若要创建新的服务器应用，请单击“创建”。 为应用和租户提供友好名称。 然后，登录 Azure 后，Configuration Manager 将在 Azure 中为用户创建 Web 应用，包括用于 Web 应用的客户端 ID 和密钥。 之后，可在 Azure 门户中查看这些内容。
-        - **导入**：若要使用 Azure 订阅中已存在的 Web 应用，请单击“导入”。 为应用和租户提供友好名称，然后为 Configuration Manager 要使用的 Azure Web 应用指定租户 ID、客户端 ID 和密钥。 验证此信息后，单击“确定”以继续。 此选项当前在此 Technical Preview 中不可用。
-    - 为客户端应用重复相同的过程。
+### <a name="before-you-start"></a>Antes de começar
 
-  在使用“应用程序导入”时，需要授予“读取目录数据”应用程序权限以在门户中设置正确的权限。 如果使用“应用程序创建”，则权限将自动随应用程序创建，但仍需要在 Azure 门户中同意该应用程序。
-6.  在向导的“发现”页上，根据需要选择“启用 Azure Active Directory 用户发现”，然后单击“设置”。
-在“Azure AD 用户发现设置”对话框中，配置出现发现的时间计划。 此外，还可以启用增量发现，用于仅查看 Azure AD 中新增或更改的帐户。
-7.  完成向导。
-
-此时，已将 Configuration Manager 站点连接到 Azure AD。
+- Você deve ter um locatário do Azure AD.
+- Seus dispositivos devem executar o Windows 10 e ser unidos ao Azure AD.  Os clientes também podem ser ingressados ao domínio além de ingressados ao Azure AD).
+- Além de [pré-requisitos existentes](/sccm/core/plan-design/configs/site-and-site-system-prerequisites) para a função do sistema de site do ponto de gerenciamento, você deverá garantir que o **ASP.NET 4.5** (e as outras opções que estiverem automaticamente selecionadas com esse) esteja habilitado no computador que hospeda esta função do sistema de site.
+- Para usar o Microsoft Intune para implantar o cliente do Configuration Manager:
+    - Você deve ter um locatário do Intune em funcionamento (o Configuration Manager e o Intune não precisam estar conectados).
+    - No Intune, você criou e implantou um aplicativo que contém o cliente do Configuration Manager. Para obter detalhes sobre como fazer isso, veja Como instalar clientes em dispositivos do Windows gerenciados por MDM.
+- Para usar o Configuration Manager para implantar o cliente:
+    - Pelo menos um ponto de gerenciamento deve ser configurado para o modo HTTPS.
+    - Você deve configurar um Gateway de Gerenciamento de Nuvem.
 
 
-### <a name="install-the-cm-client-from-the-internet"></a>从 Internet 安装 CM 客户端
+### <a name="set-up-the-cloud-management-gateway"></a>Configurar o Gateway de Gerenciamento de Nuvem
 
-在开始之前，请确保客户端安装源文件已本地存储在用于安装此客户端的设备上。
-然后，使用[如何将客户端部署到 System Center Configuration Manager 中的 Windows 计算机](/sccm/core/clients/deploy/deploy-clients-to-windows-computers#a-namebkmkmanuala-how-to-install-clients-manually)中的说明，使用以下安装命令行（将示例中的值替换为你自己的值）：
+Configure o Gateway de Gerenciamento de Nuvem para permitir que clientes acessem seu site do Configuration Manager pela Internet sem o uso de certificados.
+
+Você encontrará ajuda sobre como fazer isso nos tópicos a seguir:
+
+- [Planejar o gateway de gerenciamento de nuvem no Configuration Manager](/sccm/core/clients/manage/plan-cloud-management-gateway).
+- [Configurar o gateway de gerenciamento de nuvem para o Configuration Manager](/sccm/core/clients/manage/setup-cloud-management-gateway).
+- [Monitorar o gateway de gerenciamento de nuvem no Configuration Manager](/sccm/core/clients/manage/monitor-clients-cloud-management-gateway).
+
+### <a name="set-up-the-azure-services-app-in-configuration-manager-cloud-services"></a>Configurar o aplicativo dos Serviços do Azure em serviços de nuvem do Configuration Manager
+
+Isso conecta o site do Configuration Manager ao Azure AD e é um pré-requisito para todas as outras operações nesta seção. Para fazer isso:
+
+1.  No espaço de trabalho **Administração** do console do Configuration Manager, expanda **Serviços de Nuvem** e clique em **Serviços do Azure**.
+2.  Na guia **Página Inicial**, no grupo **Serviços do Azure**, clique em **Configurar os Serviços do Azure**.
+3.  Na página **Serviços do Azure** do Assistente de Serviços do Azure, selecione **Gerenciamento de Nuvem** para permitir que os clientes sejam autenticados com a hierarquia usando o Azure AD.
+4.  Na página **Geral** do assistente, especifique um nome e uma descrição para o serviço do Azure.
+5.  Na página **Aplicativo** do assistente, selecione o seu ambiente do Azure na lista e clique em **Procurar** para selecionar os aplicativos de cliente e servidor que serão usados para configurar o serviço do Azure:
+    - Na janela do **aplicativo de servidor**, selecione o aplicativo de servidor que você deseja usar e depois clique em **OK**. Aplicativos de servidor são os aplicativos Web do Azure que contêm as configurações da sua conta do Azure, incluindo sua ID de locatário, ID de cliente e uma chave secreta para clientes. Se você não tiver um aplicativo de servidor disponível, use um dos seguintes:
+        - **Criar**: Para criar um novo aplicativo de servidor, clique em **Criar**. Forneça um nome amigável para o aplicativo e o locatário. Em seguida, depois que você entrar no Azure, o Configuration Manager cria o aplicativo Web do Azure para você, incluindo a ID do cliente e a chave secreta para uso com o aplicativo Web. Posteriormente, você pode exibi-las no portal do Azure.
+        - **Importar**: Para usar um aplicativo Web que já existe em sua assinatura do Azure, clique em **Importar**. Forneça um nome amigável para o aplicativo e o locatário e especifique a ID de locatário, ID do cliente e a chave secreta para o aplicativo Web do Azure que você deseja que o Configuration Manager use. Depois que você verificar as informações, clique em **OK** para continuar. Esta opção não está disponível atualmente nessa versão prévia.
+    - Repita o mesmo processo para o aplicativo cliente.
+
+  Você precisa conceder a permissão de aplicativo *Ler dados do diretório* quando você usar a Importação de Aplicativo, para definir as permissões corretas no portal. Se você usar a criação de aplicativos, as permissões serão criadas automaticamente com o aplicativo, mas você ainda precisará dar consentimento para o aplicativo no portal do Azure.
+6.  Na página **Descoberta** do assistente, opcionalmente escolha **Ativar a Descoberta de Usuário do Azure Active Directory** e, em seguida, clique em **Configurações**.
+Na caixa de diálogo **Configurações de Descoberta de Usuário do Azure AD**, configure um agendamento para quando ocorrer a descoberta. Você também pode habilitar a descoberta delta que verifica apenas as contas novas ou alteradas no Azure AD.
+7.  Conclua o assistente.
+
+Neste ponto, você se conectou a seu site do Configuration Manager para o Azure AD.
+
+
+### <a name="install-the-cm-client-from-the-internet"></a>Instalar o cliente CM pela Internet
+
+Antes de começar, verifique se os arquivos de origem de instalação do cliente estão armazenados localmente no dispositivo para o qual você deseja instalar o cliente.
+Em seguida, use as instruções em [Como implantar clientes em computadores com Windows no System Center Configuration Manager](/sccm/core/clients/deploy/deploy-clients-to-windows-computers#a-namebkmkmanuala-how-to-install-clients-manually) usando a seguinte linha de comando de instalação (substitua os valores de exemplo pelos seus próprios valores):
 
 **ccmsetup.exe /NoCrlCheck /Source:C:\CLIENT  CCMHOSTNAME=SCCMPROXYCONTOSO.CLOUDAPP.NET/CCM_Proxy_ServerAuth/72457598037527932 SMSSiteCode=HEC AADTENANTID=780433B5-E05E-4B7D-BFD1-E8013911E543 AADTENANTNAME=contoso  AADCLIENTAPPID=<GUID> AADRESOURCEURI=https://contososerver**
 
-- **/NoCrlCheck**：如果管理点或云管理网关使用非公共服务器证书，则客户端可能无法访问 CRL 位置。
-- **/Source**：本地文件夹 - 客户端安装文件的位置。
-- **CCMHOSTNAME**：Internet 管理点的名称。 可以通过从托管客户端的命令提示符处运行 gwmi -namespace root\ccm\locationservices -class SMS_ActiveMPCandidate 找到此名称。
-- **SMSMP**：查找管理点的名称，这可以是在 Intranet 上。
-- **SMSSiteCode**：Configuration Manager 站点的站点代码。
-- **AADTENANTID**、**AADTENANTNAME**：链接到 Configuration Manager 的 Azure AD 租户的 ID 和名称。 可以通过从加入 Azure AD 的设备上的命令提示符处运行 dsregcmd.exe /status 找到上述内容。
-- **AADCLIENTAPPID**：Azure AD 客户端应用 ID。 有关查找此内容的帮助，请参阅[使用门户创建可访问资源的 Azure Active Directory 应用程序和服务主体](https://docs.microsoft.com/azure/azure-resource-manager/resource-group-create-service-principal-portal#get-application-id-and-authentication-key)。
-- **AADResourceUri**：载入的 Azure AD 服务器应用的标识符 URI。
+- **/NoCrlCheck**: se o gateway de gerenciamento de nuvem ou ponto de gerenciamento usar um certificado do servidor não público, o cliente poderá não ser capaz de alcançar o local da CRL.
+- **/Source**: Pasta local: local dos arquivos de instalação do cliente.
+- **CCMHOSTNAME**: o nome do seu ponto de gerenciamento da Internet. Você pode encontrá-lo executando **gwmi -namespace root\ccm\locationservices -class SMS_ActiveMPCandidate** de um prompt de comando em um cliente gerenciado.
+- **SMSMP**: o nome do seu ponto de gerenciamento de pesquisa – pode ser em sua intranet.
+- **SMSSiteCode**: o código do site do Configuration Manager.
+- **AADTENANTID**, **AADTENANTNAME**: a ID e o nome do locatário do Azure AD vinculado ao Configuration Manager. Você pode localizar isso executando dsregcmd.exe /status em um prompt de comando em um dispositivo unido do Azure AD.
+- **AADCLIENTAPPID**: a ID do aplicativo cliente do Azure AD. Para obter ajuda sobre como localizar isso, veja [Usar o portal para criar um aplicativo e uma entidade de serviço do Azure Active Directory que pode acessar recursos](https://docs.microsoft.com/azure/azure-resource-manager/resource-group-create-service-principal-portal#get-application-id-and-authentication-key).
+- **AADResourceUri**: o URI do identificador do aplicativo de servidor integrado do Azure AD.
 
-## <a name="use-azure-services-wizard-to-configure-a-connection-to-oms"></a>使用 Azure 服务向导配置与 OMS 的连接
-从 Technical Preview 1705 版本开始，可以使用 Azure 服务向导配置从 Configuration Manager 到 Operations Management Suite (OMS) 云服务的连接。 向导将替换以前的工作流，以配置此连接。
+## <a name="use-azure-services-wizard-to-configure-a-connection-to-oms"></a>Use o Assistente para Serviços do Azure para configurar uma conexão para OMS
+A partir da versão de visualização técnica 1705, use o **Assistente de Serviços do Azure** para configurar sua conexão do Configuration Manager para o serviço de nuvem do Operations Management Suite (OMS). O assistente substitui os fluxos de trabalho anteriores para configurar essa conexão.
 
--   该向导用于配置适用于 Configuration Manager 的云服务，如 OMS、适用于企业的 Windows 应用商店 (WSfB) 和 Azure Active Directory (Azure AD)。  
+-   O assistente é usado para configurar os serviços de nuvem para o Configuration Manager, como o OMS, o Windows Store for Business (WSfB) e o Azure Active Directory (Azure AD).  
 
--   Configuration Manager 连接到 OMS 以实现[日志分析](/sccm/core/clients/manage/sync-data-microsoft-operations-management-suite)或[升级就绪情况](/sccm/core/clients/manage/upgrade/upgrade-analytics)等功能。
+-   O Configuration Manager conecta-se ao OMS para recursos como [Log Analytics](/sccm/core/clients/manage/sync-data-microsoft-operations-management-suite) ou [Upgrade Readiness](/sccm/core/clients/manage/upgrade/upgrade-analytics).
 
-### <a name="prerequisites-for-the-oms-connector"></a>OMS 连接器的先决条件
-配置与 OMS 的连接的先决条件与 [Current Branch 版本 1702 中记录的](/sccm/core/clients/manage/sync-data-microsoft-operations-management-suite#prerequisites)先决条件并无任何区别。 此处重复了该信息：  
+### <a name="prerequisites-for-the-oms-connector"></a>Pré-requisitos para o Conector do OMS
+Os pré-requisitos para configurar uma conexão para o OMS são os mesmos dos [documentados para a versão Branch Atual 1702](/sccm/core/clients/manage/sync-data-microsoft-operations-management-suite#prerequisites). Essa informação é repetida aqui:  
 
--   向 OMS 提供 Configuration Manager 权限。
+-   Fornecendo a permissão do Configuration Manager para o OMS.
 
--   必须在托管[联机模式](/sccm/core/servers/deploy/configure/about-the-service-connection-point#a-namebkmkmodesa-modes-of-operation)下的[服务连接点](/sccm/core/servers/deploy/configure/about-the-service-connection-point)的计算机上安装 OMS 连接器。
+-   O conector do OMS deve ser instalado no computador que hospeda um [ponto de conexão de serviço](/sccm/core/servers/deploy/configure/about-the-service-connection-point) no [modo online](/sccm/core/servers/deploy/configure/about-the-service-connection-point#a-namebkmkmodesa-modes-of-operation).
 
--   必须为在服务连接点上安装的 OMS 安装 Microsoft Monitoring Agent 以及 OMS 连接器。 必须将代理和 OMS 连接器配置为使用相同的 **OMS 工作区**。 若要安装代理，请参阅 OMS 文档中的[下载并安装代理](/azure/log-analytics/log-analytics-sccm#download-and-install-the-agent)。
--   安装连接器和代理后，必须配置 OMS 以使用 Configuration Manager 数据。 为此，请在 OMS 门户中[导入 Configuration Manager 集合](/azure/log-analytics/log-analytics-sccm#import-collections)。
+-   Você deve instalar um Agente de Monitoramento da Microsoft para o OMS instalado no ponto de conexão de serviço junto com o conector do OMS. O agente e o conector do OMS devem ser configurados para usar o mesmo **espaço de trabalho do OMS**. Para instalar o agente, veja [Baixar e instalar o agente](/azure/log-analytics/log-analytics-sccm#download-and-install-the-agent) na documentação do OMS.
+-   Depois de instalar o conector e o agente, você deverá configurar o OMS para usar dados do Configuration Manager. Para fazer isso, no Portal do OMS, veja [Importar as coleções do Configuration Manager](/azure/log-analytics/log-analytics-sccm#import-collections).
 
-### <a name="use-the-azure-services-wizard-to-configure-the-connection-to-oms"></a>使用 Azure 服务向导配置与 OMS 的连接
+### <a name="use-the-azure-services-wizard-to-configure-the-connection-to-oms"></a>Use o Assistente para Serviços do Azure para configurar a conexão para OMS
 
-1.  在控制台中，转到“管理” > “概述” > “云服务” > “Azure 服务”，然后从功能区的“主页”选项卡上选择“配置 Azure 服务”，以启动“Azure 服务向导”。
+1.  No console, acesse **Administração** > **Visão geral** > **Serviços de Nuvem** > **Serviços do Azure** e, em seguida, escolha **Configurar Serviços do Azure**, na guia **Início** da faixa de opções, para iniciar o **Assistente de Serviços do Azure**.
 
-2.  在“Azure 服务”页上，选择 Operation Management Suite 云服务。 提供“Azure 服务名称”的友好名称和可选说明，然后单击“下一步”。
+2.  Na página **Serviços do Azure**, selecione o serviço de nuvem do Operation Management Suite. Forneça um nome amigável para o **Nome do serviço do Azure** e uma descrição opcional e clique **Próxima**.
 
-3.  在“应用”页上，指定 Azure 环境（Technical Preview 仅支持公有云）。 然后，单击“浏览”以打开“服务器应用”窗口。
+3.  Na página **Aplicativo**, especifique seu Ambiente do Azure (a visualização técnica oferece suporte somente à nuvem pública). Em seguida, clique em **Procurar** para abrir a janela do Aplicativo do Servidor.
 
-4.  选择 Web 应用：
+4.  Selecione um aplicativo Web:
 
-    -   **导入**：若要使用 Azure 订阅中已存在的 Web 应用，请单击“导入”。 为应用和租户提供友好名称，然后为 Configuration Manager 要使用的 Azure Web 应用指定租户 ID、客户端 ID 和密钥。 “验证”信息后，单击“确定”以继续。   
+    -   **Importar**: Para usar um aplicativo Web que já existe em sua assinatura do Azure, clique em **Importar**. Forneça um nome amigável para o aplicativo e o locatário e especifique a ID de locatário, ID do cliente e a chave secreta para o aplicativo Web do Azure que você deseja que o Configuration Manager use. Depois que você **verificar** as informações, clique em **OK** para continuar.   
 
     > [!NOTE]   
-    > 在使用此预览配置 OMS 时，OMS 仅支持 Web 应用的导入功能。 不支持创建新的 Web 应用。 同样，无法为 OMS 重用现有的应用。
+    > Quando você configura o OMS com essa visualização, o OMS oferece suporte somente à função *import* função para um aplicativo Web. Não há suporte para a criação de um novo aplicativo Web. Da mesma forma, não é possível reutilizar um aplicativo existente para o OMS.
 
-5.  如果已成功完成所有其他过程，则“OMS 连接配置”屏幕上的信息将自动显示在此页上。 应显示“Azure 订阅”、“Azure 资源组”和“Operations Management Suite 工作区”的连接设置的信息。
+5.  Se você concluiu todos os outros procedimentos com êxito, as informações na tela **Configuração de Conexão de OMS** aparecerão automaticamente nesta página. As informações para as configurações de conexão devem aparecer para sua **Assinatura do Azure**, **Grupo de recursos do Azure** e **Espaço de trabalho do Operations Management Suite**.
 
-6.  向导使用输入的信息连接到 OMS 服务。 选择想要与 OMS 同步的设备集合，然后单击“添加”。
+6.  O assistente conecta-se ao serviço do OMS usando as informações que você inseriu. Selecione as coleções de dispositivos que você deseja sincronizar com o OMS e, em seguida, clique em **Adicionar**.
 
-7.  在“摘要”屏幕上验证连接设置，然后选择“下一步”。 “进度”屏幕会显示连接状态，然后应显示“完成”。
+7.  Verifique suas configurações de conexão na tela **Resumo** e, em seguida, selecione **Avançar**. A tela **Andamento** mostra o status da conexão e, em seguida, clique em **Concluir**.
 
-8.  完成向导后，Configuration Manager 控制台会显示已将“Operation Management Suite”配置为“云服务类型”。
+8.  Após concluir o assistente, o console do Configuration Manager mostra que você configurou o **Operations Management Suite** como um **Tipo de Serviço de Nuvem**.

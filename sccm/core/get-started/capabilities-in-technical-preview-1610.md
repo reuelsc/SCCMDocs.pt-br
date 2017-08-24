@@ -1,6 +1,6 @@
 ---
-title: "Technical Preview 1610 Configuration Manager 中的功能"
-description: "了解 System Center Configuration Manager Technical Preview 1610 版中的可用功能。"
+title: Funcionalidades no Technical Preview 1610 do Configuration Manager
+description: "Saiba mais sobre os recursos disponíveis no Technical Preview do System Center Configuration Manager, versão 1610."
 ms.custom: na
 ms.date: 01/23/2017
 ms.reviewer: na
@@ -17,148 +17,148 @@ manager: angrobe
 ms.openlocfilehash: 59633ce68e2bb2d722900215751f345d6d098721
 ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
 ms.translationtype: HT
-ms.contentlocale: zh-CN
+ms.contentlocale: pt-BR
 ms.lasthandoff: 08/07/2017
 ---
-# <a name="capabilities-in-technical-preview-1610-for-system-center-configuration-manager"></a>System Center Configuration Manager Technical Preview 1610 版中的功能
+# <a name="capabilities-in-technical-preview-1610-for-system-center-configuration-manager"></a>Funcionalidades no Technical Preview 1610 do System Center Configuration Manager
 
-*适用范围：System Center Configuration Manager (Technical Preview)*
-
-
-
-本文介绍 System Center Configuration Manager Technical Preview 1610 版中的可用功能。 可以安装此版本以更新 Configuration Manager Technical Preview 站点的功能并向其添加新功能。      在安装此版本的 Technical Preview 前，请查看介绍性主题 [System Center Configuration Manager Technical Preview](../../core/get-started/technical-preview.md)，以熟悉使用 Technical Preview 的常规要求和限制、如何在版本之间进行更新，以及如何提供关于 Technical Preview 中的功能的反馈。    
+*Aplica-se a: System Center Configuration Manager (Technical Preview)*
 
 
-**以下是可以试用的此版本的新功能。**  
-## <a name="filter-by-content-size-in-automatic-deployment-rules"></a>按自动部署规则中的内容大小进行筛选
-现在可以对自动部署规则中软件更新的内容大小进行筛选。 例如，可以将“内容大小 (KB)”筛选器设置为 **< 2048**，以仅下载小于 2 MB 的软件更新。 使用此筛选器可防止自动下载较大的软件更新，以便在带宽受到限制时更好地支持简化的 Windows 低级别维护。 有关详细信息，请参阅[低级别操作系统上的 Configuration Manager 和简化的 Windows 维护](https://blogs.technet.microsoft.com/enterprisemobility/2016/10/07/configuration-manager-and-simplified-windows-servicing-on-down-level-operating-systems/)。
 
-#### <a name="to-configure-the-content-size-field"></a>配置内容大小字段
-若要配置“内容大小 (KB)”字段，请在创建 ADR 时转到“创建自动部署规则向导”中的“软件更新”页面，或转到现有 ADR 的属性中的“软件更新”选项卡。
-
-![内容大小字段](media/contentsizefield.png)
-
-## <a name="improved-functionality-for-required-software-dialogs"></a>改进了“所需软件”对话框功能
-当用户收到来自“暂停并提醒我：”设置的所需软件后，可以从下面的下拉值列表中进行选择：
-- 以后：指定根据客户端代理设置中配置的通知设置安排通知。
-- 固定时间：指定在选定时间之后再次显示通知。 例如，如果用户选择 30 分钟，通知将在 30 分钟后再次显示。
-
-![客户端代理设置中的计算机代理页](media/computeragentsettings.png)
-
-最长暂停时间始终基于沿部署时间轴推移的客户端代理设置中配置的通知值。 例如，如果将计算机代理页上的“部署截止时间大于 24 小时，请提醒用户，提醒间隔时间（小时）为”设置配置为 10 小时，且对话框启动时距离截止时间超过 24 小时，则用户将看到一组暂停选项，暂停时间最多不超过 10小时。 随着截止时间的临近，对话框显示的选项会变少，与部署时间轴的每个组件的相关客户端代理设置相一致。
-
-此外，对于高风险部署，如用于部署操作系统的任务序列，最终用户会更频繁地收到通知。 这不是临时性的任务栏通知，每次通知用户需要维护关键软件后，用户的电脑上会显示类似于以下对话框：
-
-![所需软件对话框](media/requiredsoftwaredialog.png)
+Este artigo apresenta os recursos disponíveis no Technical Preview do System Center Configuration Manager, versão 1610. Você pode instalar esta versão para atualizar e adicionar novas funcionalidades ao seu site do Configuration Manager Technical Preview.      Antes de instalar esta versão do technical preview, consulte o tópico introdutório, [Technical Preview do System Center Configuration Manager](../../core/get-started/technical-preview.md), para se familiarizar com os requisitos e limitações gerais de uso de um technical preview, como atualizar entre versões e como fornecer comentários sobre os recursos em um technical preview.    
 
 
-更多相关信息：
-- [用于管理高风险部署的设置](../../protect/understand/settings-to-manage-high-risk-deployments.md)
-- [如何配置客户端设置](../clients/deploy/configure-client-settings.md)
+**Veja a seguir os novos recursos que você pode experimentar nesta versão.**  
+## <a name="filter-by-content-size-in-automatic-deployment-rules"></a>Filtrar por tamanho do conteúdo em regras de implantação automática
+Agora, você pode filtrar o tamanho do conteúdo para atualizações de software em regras de implantação automática. Por exemplo, você pode definir o filtro **Tamanho do Conteúdo (KB)** como **< 2048** para baixar apenas atualizações de software menores que 2 MB. Usar esse filtro impede que atualizações de software grandes sejam baixadas automaticamente, para dar melhor suporte à manutenção simplificada de nível inferior do Windows quando a largura de banda de rede é limitada. Para obter detalhes, consulte [Configuration Manager and Simplified Windows Servicing on Down Level Operating Systems](https://blogs.technet.microsoft.com/enterprisemobility/2016/10/07/configuration-manager-and-simplified-windows-servicing-on-down-level-operating-systems/) (Configuration Manager e Serviço do Windows simplificado em sistemas operacionais de nível inferior).
 
-## <a name="deny-previously-approved-application-requests"></a>拒绝以前批准的应用程序请求
+#### <a name="to-configure-the-content-size-field"></a>Para configurar o campo Tamanho do Conteúdo
+Para configurar o campo **Tamanho do Conteúdo (KB)**, vá até a página **Atualizações de Software** no Assistente Criar Regra de Implantação Automática quando você cria uma ADR ou vá até a guia **Atualizações de Software** nas propriedades de uma ADR existente.
 
-作为管理员，现在可以拒绝以前批准的应用程序请求。 一旦拒绝，用户以后再安装此应用程序时必须重新提交请求。 拒绝不会卸载该应用程序，而是在用户针对该应用程序发送新请求时强制执行审批操作。 以前，应用程序请求拒绝仅适用于尚未批准的应用程序请求。
+![Campo Tamanho do Conteúdo](media/contentsizefield.png)
 
-#### <a name="try-it-out"></a>试试看
-拒绝已批准的应用程序请求：
+## <a name="improved-functionality-for-required-software-dialogs"></a>Funcionalidade aprimorada para caixas de diálogo do software necessárias
+Quando um usuário receber software obrigatório, na configuração **Suspender e lembrar dentro de:** ele pode selecionar na seguinte lista suspensa de valores:
+- Mais tarde: especifica que as notificações são agendadas com base nas configurações de notificação definidas nas configurações do Agente Cliente.
+- Tempo fixo: especifica que a notificação será agendada para ser exibida novamente após o tempo selecionado. Por exemplo, se o usuário selecionar 30 minutos, a notificação será exibida novamente em 30 minutos.
 
-1.  在 Configuration Manager 控制台中，[创建和部署需要批准的应用程序](https://docs.microsoft.com/en-us/sccm/apps/deploy-use/create-applications)。
-2.  在客户端计算机上，打开“软件中心”并提交应用程序请求。
-3.  在 Configuration Manager 控制台中，批准应用程序请求。
-4.  拒绝已批准的应用程序请求：在 Configuration Manager 控制台中，导航到“软件库” > “概述” > “应用程序管理” > “批准请求”，然后选择要拒绝的应用程序请求。  在功能区上，单击“拒绝”。
+![Página do Agente de Computador nas configurações do Agente Cliente](media/computeragentsettings.png)
 
-## <a name="exclude-clients-from-automatic-upgrade"></a>从自动升级中排除客户端
-Technical Preview 1610 引入了一种新设置，可用于排除客户端集合，使其不会自动安装更新后的客户端版本。  这适用于自动升级以及其他方法，例如基于软件更新的升级、登录脚本和组策略。 这可以用于在升级客户端时需格外谨慎的计算机的集合。 排除集合中的客户端会忽略安装更新客户端软件的请求。
+O tempo máximo de adiamento sempre se baseia nos valores de notificação definidos nas configurações do Agente Cliente em cada ponto na linha do tempo de implantação. Por exemplo, se a configuração **Prazo de implantação superior a 24 horas, lembrar o usuário a cada (horas)** na página do Agente de Computador estiver definida como 10 horas e demorar mais de 24 horas até o prazo em que a caixa de diálogo será iniciada, o usuário verá um conjunto de opções de adiamento de até 10 horas, mas nunca superior a esse valor. Conforme o prazo se aproximar, a caixa de diálogo mostrará menos opções, consistentes com as configurações do Agente Cliente relevantes para cada componente da linha do tempo de implantação.
 
-### <a name="configure-exclusion-from-automatic-upgrade"></a>配置自动升级排除
-配置自动升级排除：
-1.  在 Configuration Manager 控制台中，打开“管理”>“站点配置”>“站点”下的“层次结构设置”，然后选择“客户端升级”选项卡。
-2.  选中“从升级中排除指定的客户端”复选框，然后选中“排除集合”，然后选择要排除的集合。 只能选择排除单个集合。
-3.  单击“确定”以关闭并保存配置。 然后，客户端更新策略后，排除集合中的客户端将不再自动安装客户端软件更新。
+Além disso, para uma implantação de alto risco, como uma sequência de tarefas que implanta um sistema operacional, a experiência de notificação do usuário final agora será mais invasiva. Em vez de uma notificação transitória na barra de tarefas, cada vez que o usuário for notificado de que uma manutenção de software crítica é necessária, uma caixa de diálogo como a seguinte será exibida no computador:
 
-  ![用于自动升级排除的设置](media/automatic_upgrade_exclusion.png)
+![Caixa de diálogo Software Exigido](media/requiredsoftwaredialog.png)
 
-> [!NOTE]
-> 尽管用户界面声明无法通过任何方法升级客户端，但仍有两种方法可用于替代这些设置。 可使用客户端请求安装和手动客户端安装替代此配置。 有关更多详细信息，请参阅以下部分。
 
-### <a name="how-to-upgrade-a-client-that-is-in-an-excluded-collection"></a>如何升级排除集合中的客户端
-只要某个集合被配置为排除，则只能通过上述两种方法中的一种来升级集合成员的客户端软件，它会替代排除设置：
- - **客户端请求安装** – 可以使用“客户端请求安装”来升级排除集合中的客户端。 由于该操作被视为管理员的意图，因此可以此升级客户端，而无需将整个集合从排除设置中删除。       
- - **手动客户端安装** – 可以手动升级排除集合中的客户端，方法是结合使用后列命令行开关和 ccmsetup：***/ignoreskipupgrade***
+Para obter mais informações:
+- [Configurações para gerenciar implantações de alto risco](../../protect/understand/settings-to-manage-high-risk-deployments.md)
+- [Como definir as configurações do cliente](../clients/deploy/configure-client-settings.md)
 
-  如果尝试在不使用此开关的情况下手动升级排除集合中的客户端，客户端将不会安装新的客户端软件。 有关详细信息，请参阅[如何手动安装 Configuration Manager 客户端](/sccm/core/clients/deploy/deploy-clients-to-windows-computers#a-namebkmkmanuala-how-to-install-configuration-manager-clients-manually)。
+## <a name="deny-previously-approved-application-requests"></a>Negar solicitações de aplicativos aprovadas anteriormente
 
-有关客户端安装方法的详细信息，请参阅[如何在 System Center Configuration Manager 中将客户端部署到 Windows 计算机](/sccm/core/clients/deploy/deploy-clients-to-windows-computers)。
+Como administrador, agora você pode negar uma solicitação de aplicativo aprovada anteriormente. Uma vez que a solicitação for negada, para instalar o aplicativo posteriormente os usuários precisarão reenviar a solicitação. A negação não desinstala o aplicativo, ela apenas força a reaprovação de qualquer nova solicitação do aplicativo em questão para o usuário. Anteriormente, a negação de solicitação do aplicativo só estava disponível para solicitações de aplicativos que não tinham sido aprovadas.
 
-## <a name="windows-defender-configuration-settings"></a>Windows Defender 配置设置
+#### <a name="try-it-out"></a>Experimente
+Para negar uma solicitação de aplicativo aprovada:
 
-现在可以在 Configuration Manager 控制台中，使用配置项目在注册有 Intune 的 Windows 10 计算机上配置 Windows Defender 客户端设置。
+1.  No console do Configuration Manager, [crie e implante um aplicativo](https://docs.microsoft.com/en-us/sccm/apps/deploy-use/create-applications) que requer aprovação.
+2.  Em um computador cliente, abra o Centro de Software e envie uma solicitação para o aplicativo.
+3.  No console do Configuration Manager, aprove a solicitação do aplicativo.
+4.  Negue a solicitação do aplicativo aprovado: no console do Configuration Manager, navegue até **Biblioteca de Software** > **Visão Geral** > **Gerenciamento de Aplicativo** > **solicitações de aprovação** e selecione a solicitação de aplicativo que deseja negar.  Na faixa de opções, clique em **Negar**.
 
-具体而言，可配置以下 Windows Defender 设置：
-- 允许实时监视
-- 允许行为监视
-- 启用网络检查系统
-- 扫描所有下载
-- 允许脚本扫描
-- 监视文件和程序活动
-  - 受监视的文件
-- 跟踪已解决的恶意软件的天数
-- 允许客户端 UI 访问
-- 计划系统扫描
-  - 计划日期
-  - 计划时间
-- 计划每日一次快速扫描
-  - 计划时间
-- 在扫描存档文件期间限制 CPU 使用率
-- 扫描电子邮件
-- 扫描可移动驱动器
-- 扫描映射驱动器
-- 扫描从网络共享打开的文件
-- 签名更新间隔
-- 允许云保护
-- 提示用户提供示例
-- 潜在风险性应用程序检测
-- 排除的文件/文件夹
-- 排除的文件扩展名
-- 排除的进程
+## <a name="exclude-clients-from-automatic-upgrade"></a>Excluir clientes da atualização automática
+O Technical Preview 1610 apresenta uma nova configuração que você pode usar para excluir uma coleção de clientes e impedir que instalem automaticamente versões atualizadas dos clientes.  Ela se aplica à atualização automática, bem como a outros métodos, como a atualização baseada na atualização de software, scripts de logon e políticas de grupo. Pode ser usada para uma coleção de computadores que precisam de maior atenção ao atualizar o cliente. Um cliente que estiver em uma coleção excluída ignorará todas as solicitações para instalar o software cliente atualizado.
+
+### <a name="configure-exclusion-from-automatic-upgrade"></a>Configurar a exclusão da atualização automática
+Para configurar exclusões de atualizações automáticas:
+1.  No console do Configuration Manager, abra **Configurações da Hierarquia** em **Administração > Configuração do Site > Sites** e selecione a guia **Atualizar Cliente**.
+2.  Marque a caixa de seleção **Excluir clientes especificados da atualização** e, para **Coleção de exclusão**, selecione a coleção que deseja excluir. É possível selecionar apenas uma coleção para exclusão.
+3.  Clique em **OK** para fechar e salvar a configuração. Em seguida, após os clientes atualizarem a política, os clientes na coleção excluída não instalarão automaticamente as atualizações no software cliente.
+
+  ![Configurações para exclusão de atualizações automáticas](media/automatic_upgrade_exclusion.png)
 
 > [!NOTE]
-> 仅可在运行 Windows 10 十一月更新 (1511) 及更高版本的客户端计算机上配置这些设置。
+> Embora a interface do usuário afirme que os clientes não serão atualizados por meio de nenhum método, dois métodos podem ser usados para substituir essas configurações. A instalação do cliente por push e uma instalação manual do cliente podem ser usadas para substituir essa configuração. Para obter mais detalhes, veja a seção seguir.
 
-### <a name="try-it-out"></a>试试看！
+### <a name="how-to-upgrade-a-client-that-is-in-an-excluded-collection"></a>Como atualizar um cliente que está em uma coleção excluída
+Desde que uma coleção esteja configurada para ser excluída, os membros dessa coleção só poderão atualizar o software cliente usando um dos dois métodos, que substituem a exclusão:
+ - **Instalação do cliente por push** – você pode usar a instalação do cliente por push para atualizar um cliente que está em uma coleção excluída. Isso é permitido pois é considerado que seja a intenção do administrador, e permite que você atualize os clientes sem remover toda a coleção da exclusão.       
+ - **Instalação manual do cliente** – você pode atualizar manualmente os clientes que estão em uma coleção excluída quando usa a seguinte opção de linha de comando com ccmsetup:  ***/ignoreskipupgrade***
 
-1.  在 Configuration Manager 控制台中，转到“资产和合规性” > “概述” > “合规性设置” > >“配置项”，然后创建新的“配置项”。
-2.  输入名称，然后在**不通过 Configuration Manager 客户端托管的设备的设置**下选择“Windows 8.1 和 Windows 10”，然后单击“下一步”。
-3.  确保在“支持平台”页面上选中“所有 Windows 10 (64 位)”和“所有 Windows 10 (32位)”，然后单击“下一步”。
-4.  选择 **Windows Defender** 设置组，然后单击“下一步”。
-5.  在此页上配置所需设置，然后单击“下一步”。
-6.  完成向导。
-7.  将此配置项添加到配置基线，并将此基线部署到运行 Windows 10 十一月更新 (1511) 或更高版本的计算机。
+  Se você tentar atualizar manualmente um cliente que é um membro da coleção excluída e não usar essa opção, o cliente não instalará o novo software cliente. Para obter mais informações, consulte [Como instalar manualmente os clientes do Configuration Manager](/sccm/core/clients/deploy/deploy-clients-to-windows-computers#a-namebkmkmanuala-how-to-install-configuration-manager-clients-manually).
+
+Para obter mais informações sobre os métodos de instalação de clientes, consulte [Como implantar clientes em computadores Windows no System Center Configuration Manager](/sccm/core/clients/deploy/deploy-clients-to-windows-computers).
+
+## <a name="windows-defender-configuration-settings"></a>Definições de configuração do Windows Defender
+
+Agora você pode definir as configurações de cliente do Windows Defender em computadores Windows 10 registrados no Intune usando itens de configuração no console do Configuration Manager.
+
+Especificamente, você pode definir as seguintes configurações do Windows Defender:
+- Permitir monitoramento em tempo real
+- Permitir o monitoramento de comportamento
+- Ativar o sistema de inspeção de rede
+- Verificar todos os downloads
+- Permitir a verificação de script
+- Monitorar a atividade de arquivos e programas
+  - Arquivos monitorados
+- Dias para rastrear malwares resolvidos
+- Permitir acesso à interface do usuário do cliente
+- Agendar uma verificação do sistema
+  - Dia do agendamento
+  - Hora do agendamento
+- Agendar uma verificação rápida diária
+  - Hora do agendamento
+- Limitar o percentual de uso da CPU durante uma verificação de arquivos mortos
+- Verificar mensagens de email
+- Verificar unidades removíveis
+- Verificar unidades mapeadas
+- Verificar arquivos abertos em compartilhamentos de rede
+- Intervalo de atualização de assinatura
+- Permitir proteção da nuvem
+- Solicitar amostras aos usuários
+- Detecção de aplicativos potencialmente indesejados
+- Arquivos/pastas excluídos
+- Extensões de arquivo excluídos
+- Processos excluídos
 
 > [!NOTE]
-> 请记住，在部署配置基线时选中“修正不符合要求的设置”复选框。
+> Essas configurações podem ser definidas apenas em computadores cliente que executam o Windows 10 com a Atualização de novembro (1511) e superior.
 
-## <a name="request-policy-sync-from-administrator-console"></a>从管理员控制台请求策略同步
+### <a name="try-it-out"></a>Experimente!
 
-现在可从 Configuration Manager 控制台对移动设备请求策略同步，而无需从设备本身请求同步。 同步请求状态信息可用作设备视图中的新列，称为**远程同步状态**。 状态也会在每个移动设备的“属性”对话框的“发现数据”部分中显示。
+1.  No console do Configuration Manager, clique em **Ativos e Conformidade** > **Visão Geral** > **Configurações de Conformidade** > **Itens de Configuração** e crie um novo **Item de Configuração**.
+2.  Insira um nome, selecione **Windows 8.1 e Windows 10** em **Configurações para dispositivos gerenciados sem o cliente do Configuration Manager** e clique em **Avançar**.
+3.  Verifique se **Todos os Windows 10 (64 bits)** e **Todos os Windows 10 (32 bits)** estão selecionados na página **Plataformas com Suporte** e, em seguida, clique em **Avançar**.
+4.  Selecione o grupo de configurações **Windows Defender** e clique em **Avançar**.
+5.  Defina as configurações desejadas nesta página e clique em **Avançar**.
+6.  Conclua o assistente.
+7.  Adicione este item de configuração a uma linha de base de configuração e implante essa linha de base em computadores que executam o Windows 10 com Atualização de novembro (1511) ou superior.
 
-### <a name="try-it-out"></a>试试看！
+> [!NOTE]
+> Lembre-se de marcar a caixa de seleção **Corrigir as configurações não compatíveis** ao implantar a linha de base de configuração.
 
-1.  在 Configuration Manager 控制台中，转到“资产和合规性” > “概览”>“设备”。
-2.  在“远程设备操作”菜单中，选择“发送同步请求”。
+## <a name="request-policy-sync-from-administrator-console"></a>Solicitar sincronização de política no console do administrador
 
-同步可能需要 5 到 10 分钟。 策略中的任何更改都将同步到设备。 可以在“设备”视图的“远程同步状态”列或设备的“属性”对话框中跟踪同步请求的状态。
+Agora você pode solicitar uma sincronização de política em um dispositivo móvel no console do Configuration Manager, em vez de precisar solicitar uma sincronização no próprio dispositivo. As informações de estado da solicitação de sincronização ficam disponíveis como uma nova coluna as exibições do dispositivo, chamada **Estado de Sincronização Remota**. O estado também aparece na seção **Dados de descoberta** na caixa de diálogo **Propriedades** para cada dispositivo móvel.
 
-## <a name="additional-security-role-support"></a>其他安全角色支持
+### <a name="try-it-out"></a>Experimente!
 
-除了完全权限管理员之外，以下内置安全角色现在对“所有企业拥有的设备”节点中的项具有完全访问权限，包括**预声明设备**、**iOS 注册配置文件**以及 **Windows 注册配置文件**：•   **资产管理员** •   **公司资源资产管理员**
+1.  No console do Configuration Manager, acesse **Ativos e Conformidade** > **Visão Geral** > Dispositivos.
+2.  No menu **Ações de Dispositivo Remoto**, selecione **Enviar Solicitação de Sincronização**.
 
-对 Configuration Manager 控制台中这些区域的只读访问权限仍授予给**只读分析员**角色。
+A sincronização pode levar de cinco a dez minutos. Todas as alterações em políticas são sincronizadas com o dispositivo. Você pode acompanhar o estado da solicitação de sincronização na coluna **Estado de Sincronização Remota** na exibição **Dispositivos** ou na caixa de diálogo **Propriedades** do dispositivo.
 
-## <a name="conditional-access-for-windows-10-vpn-profiles"></a>Windows 10 VPN 配置文件的条件访问
+## <a name="additional-security-role-support"></a>Suporte a funções de segurança adicionais
 
-现在可要求在 Azure Active Directory 中注册的 Windows 10 设备符合要求，以通过在 Configuration Manager 控制台中创建的 Windows 10 VPN 配置文件具有 VPN 访问权限。 这可通过 VPN 配置文件向导中“身份验证方法”页上新的“对此 VPN 连接启用条件性访问”复选框，和 Windows 10 VPN 配置文件的 VPN 配置文件属性来实现。 如果对配置文件启用条件性访问，还可以对单一登录身份验证指定一个单独的证书。
+Além de Administrador Completo, as seguintes funções de segurança internas agora têm acesso completo aos itens no nó **Todos os dispositivos corporativos**, incluindo **Dispositivos Pré-Declarados**, **Perfis de Registro do iOS** e **Perfis de Registro do Windows**: •   **Gerenciador de Ativos** •   **Gerenciador de Acesso ao Recurso da Empresa**
 
-## <a name="see-also"></a>另请参阅
-[System Center Configuration Manager Technical Preview](../../core/get-started/technical-preview.md)
+O acesso somente leitura para essas áreas do console do Configuration Manager ainda é concedido à função de **Analista somente leitura**.
+
+## <a name="conditional-access-for-windows-10-vpn-profiles"></a>Acesso condicional para perfis de VPN do Windows 10
+
+Agora é possível exigir que dispositivos Windows 10, registrados no Azure Active Directory, sejam compatíveis para terem acesso VPN por meio de perfis de VPN do Windows 10 criados no console do Configuration Manager. Isso é possibilitado pela nova caixa de seleção **Habilitar o acesso condicional para esta conexão VPN** na página **Método de Autenticação** no assistente de perfil VPN e nas propriedades de perfil VPN para perfis VPN do Windows 10. Também será possível especificar um certificado diferente para autenticação de logon único se você habilitar o acesso condicional para o perfil.
+
+## <a name="see-also"></a>Consulte também
+[Technical Preview do System Center Configuration Manager](../../core/get-started/technical-preview.md)

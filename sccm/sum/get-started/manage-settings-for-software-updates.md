@@ -1,6 +1,6 @@
 ---
-title: "管理软件更新的设置 | Microsoft Docs"
-description: "了解安装软件更新点后适用于你的站点的软件更新的客户端设置。"
+title: "Gerenciar configurações de atualizações de software | Microsoft Docs"
+description: "Saiba mais sobre as configurações do cliente que são apropriadas para as atualizações de software em seu site depois de instalar o ponto de atualização de software."
 keywords: 
 author: dougeby
 ms.author: dougeby
@@ -14,125 +14,125 @@ ms.assetid: 0d484c1a-e903-4bff-9e9b-e452c62e38a8
 ms.openlocfilehash: fe4a8f56e0b554e206bcc4503a0268dc761ded81
 ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
 ms.translationtype: HT
-ms.contentlocale: zh-CN
+ms.contentlocale: pt-BR
 ms.lasthandoff: 08/07/2017
 ---
-#  <a name="BKMK_ManageSUSettings"></a>管理软件更新的设置  
+#  <a name="BKMK_ManageSUSettings"></a> Gerenciar configurações de atualizações de software  
 
-*适用范围：System Center Configuration Manager (Current Branch)*
+*Aplica-se a: System Center Configuration Manager (Branch Atual)*
 
-在 Configuration Manager 中同步软件更新后，配置并验证以下部分中的设置。
+Depois de sincronizar as atualizações de software no Configuration Manager, defina e verifique as configurações nas seções a seguir.
 
-##  <a name="BKMK_ClientSettings"></a> 软件更新的客户端设置  
-安装软件更新点之后，默认情况下会在客户端上启用软件更新，而且客户端设置中的  “软件更新”页上的设置具有默认值。 客户端设置将用于整个站点，且会影响扫描软件更新以检查其符合性的时间以及在客户端计算机上安装软件更新的方式和时间。 部署软件更新前，请验证客户端设置是否适用于站点中的软件更新。  
+##  <a name="BKMK_ClientSettings"></a> Configurações do cliente para atualizações de software  
+Após a instalação do ponto de atualização de software, as atualizações de software serão habilitadas em clientes por padrão e as configurações na página **Atualizações de Software** nas configurações do cliente terão valores padrão. As configurações de cliente são usadas em todo o site e afetam a frequência com que as atualizações de software são verificadas quanto à conformidade, bem como o modo e a frequência com que as atualizações de software são instaladas em computadores cliente. Antes de você implantar atualizações de software, verifique se as configurações do cliente são apropriadas para as atualizações de software em seu site.  
 
 > [!IMPORTANT]  
->  默认情况下会启用“在客户端上启用软件更新”  设置。 如果清除此设置，Configuration Manager 会从客户端中删除现有的部署策略。  
+>  A configuração **Habilitar as atualizações de software em clientes** é habilitada por padrão. Se você desmarcar essa configuração, o Configuration Manager removerá as políticas de implantação existentes do cliente.  
 
-有关如何配置客户端设置的信息，请参阅[如何配置客户端设置](../../core/clients/deploy/configure-client-settings.md)。  
+Para obter informações sobre como definir as configurações do cliente, consulte [Como definir as configurações do cliente](../../core/clients/deploy/configure-client-settings.md).  
 
-有关客户端设置的详细信息，请参阅[关于客户端设置](../../core/clients/deploy/about-client-settings.md)。  
+Para mais informações sobre essas configurações do cliente, consulte [Sobre as configurações do cliente](../../core/clients/deploy/about-client-settings.md).  
 
-##  <a name="BKMK_GroupPolicy"></a> 软件更新的组策略设置  
-客户端计算机上的 Windows 更新代理 (WUA) 使用特定的组策略设置来连接到在软件更新点上运行的 WSUS。 这些组策略设置还用于成功扫描软件更新的符合性，以及自动更新软件更新和 WUA。
+##  <a name="BKMK_GroupPolicy"></a> Configurações de política de grupo para atualizações de software  
+Há configurações específicas de política de grupo que são usadas pelo WUA (Windows Update Agent) em computadores cliente para se conectar ao WSUS que é executado no ponto de atualização de software. Essas configurações de política de grupo também são usadas para verificar com êxito a conformidade da atualização de software e atualizar automaticamente as atualizações de software e o WUA.
 
-### <a name="specify-intranet-microsoft-update-service-location-local-policy"></a>“指定 Intranet Microsoft 更新服务位置”本地策略  
-在为站点创建软件更新点时，客户端会获得计算机策略，此策略提供软件更新点服务器的名称，并且在计算机上配置“指定 Intranet Microsoft 更新服务位置”  本地策略。 WUA 检索在“设置检测更新的 Intranet 更新服务”  设置中指定的服务器名称，之后，它在扫描软件更新符合性时会连接到此服务器。 在为“指定 Intranet Microsoft 更新服务位置”  设置创建域策略时，它将替代本地策略，而且 WUA 可能会连接到软件更新点以外的服务器。 如果出现此情况，客户端可能会根据不同的产品、分类和语言扫描软件更新符合性。 因此，不应为客户端计算机配置 Active Directory 策略。  
+### <a name="specify-intranet-microsoft-update-service-location-local-policy"></a>Política local Especificar o local do serviço do Microsoft Update na intranet  
+Quando o ponto de atualização de software é criado para um site, os clientes recebem uma política de computador que fornece o nome do servidor do ponto de atualização de software e configurar a política local **Especificar o local do serviço de atualização na intranet da Microsoft** no computador. O WUA recupera o nome do servidor que está especificado na política **Configurar o serviço de atualização da intranet para detectar atualizações** e se conecta a esse servidor quando verifica a conformidade das atualizações de software. Quando uma política de domínio é criada para a configuração **Especificar o local do serviço do Microsoft Update na intranet** , ela substitui a política local e o WUA provavelmente se conecta a outro servidor que não seja o ponto de atualização de software. Se isso acontecer, é provável que o cliente verifique a conformidade da atualização de software baseado em diferentes produtos, classificações e idiomas. Portanto, você não deve configurar a política do Active Directory para computadores cliente.  
 
-### <a name="allow-signed-content-from-intranet-microsoft-update-service-location-group-policy"></a>“允许来自 Intranet Microsoft 更新服务位置的签名内容”组策略  
-在计算机上的 WUA 扫描已创建并利用 System Center Updates Publisher 发布的软件更新之前，你必须启用“允许来自 Intranet Microsoft 更新服务位置的签名内容”  组策略设置。 在启用此策略设置时，如果在本地计算机上的“受信任的发布者”  证书存储中签署软件更新，则 WUA 将接受通过 Intranet 位置收到的这些软件更新。 有关 Updates Publisher 所需的组策略设置的详细信息，请参阅 [Updates Publisher 2011 文档库](http://go.microsoft.com/fwlink/p/?LinkId=232476)。  
+### <a name="allow-signed-content-from-intranet-microsoft-update-service-location-group-policy"></a>Política de grupo Permitir conteúdo assinado do local do serviço do Microsoft Update da intranet  
+Você deve habilitar a configuração da Política de Grupo **Permitir conteúdo assinado do local do serviço de atualização da intranet da Microsoft** antes do WUA verificar as atualizações de software que foram criadas e publicadas com o System Center Updates Publisher. Habilitada a configuração de política, o WUA aceitará as atualizações de software que foram recebidas através de um local de intranet se as atualizações de software são assinadas no repositório de certificados de **Editores Confiáveis** no computador local. Para obter mais informações sobre as configurações de Política de Grupo necessárias para o Updates Publisher, consulte [Biblioteca de documentação do Updates Publisher 2011](http://go.microsoft.com/fwlink/p/?LinkId=232476).  
 
-### <a name="automatic-updates-configuration"></a>自动更新的配置  
-自动更新允许在客户端计算机上接收安全更新和其他重要的下载内容。 若要配置自动更新，可通过“配置自动更新”  组策略设置或本地计算机上的“控制面板”进行。 在启用自动更新时，客户端计算机将收到更新通知，而且，视已配置的设置而定，客户端计算机将下载并安装所需的更新。 在自动更新与软件更新共存时，每台客户端计算机都可能会为同一个更新显示通知图标和弹出通知窗口。 而且，在需要重新启动时，每台客户端计算机都可能会为同一个更新显示重新启动对话框。  
+### <a name="automatic-updates-configuration"></a>Configuração de atualizações automáticas  
+As Atualizações Automáticas permitem que as atualizações de segurança e outros downloads importantes sejam recebidos em computadores cliente. As Atualizações Automáticas são definidas na configuração da Política de Grupo **Configurar Atualizações Automáticas** ou no Painel de Controle no computador local. Quando as Atualizações Automáticas são habilitadas, os computadores cliente recebem notificações de atualização e, dependendo das configurações definidas, eles baixam e instalam as atualizações necessárias. Quando as Atualizações Automáticas coexistem com as atualizações de software, é possível que cada computador cliente exiba ícones de notificação e notificações de exibição pop-up para a mesma atualização. Além disso, quando é necessário reiniciar, cada computador cliente pode exibir uma caixa de diálogo de reinicialização para a mesma atualização.  
 
-### <a name="self-update"></a>自我更新  
-在客户端计算机上启用自动更新时，如果有可用的更新版本，或者如果 WUA 组件出现问题，则 WUA 会自动执行自我更新。 在未配置或禁用自动更新，而且客户端计算机具有较早版本的 WUA 时，客户端计算机必须运行 WUA 安装文件。  
+### <a name="self-update"></a>Autoatualização  
+Quando as Atualizações Automáticas são habilitadas em computadores cliente, o WUA executa automaticamente uma autoatualização quando uma versão mais recente está disponível ou quando há problemas com um componente do WUA. Quando as Atualizações Automáticas não são configuradas ou são desabilitadas e os computadores cliente têm uma versão mais recente do WUA, os computadores cliente devem executar o arquivo de instalação do WUA.  
 
-## <a name="software-updates-properties"></a>软件更新属性
-软件更新属性提供了有关软件更新和相关内容的信息。 你也可以使用这些属性为软件更新配置设置。 打开多个软件更新的属性时，仅显示“最大运行时间”  和“自定义严重性”  选项卡。   
+## <a name="software-updates-properties"></a>Propriedades de atualizações de software
+As propriedades de atualização de software fornecem informações sobre atualizações de software e conteúdo associado. Você também pode usar essas propriedades para definir configurações para atualizações de software. Ao abrir as propriedades das diversas atualizações de software, somente as guias **Tempo Máximo de Execução** e **Severidade Personalizada** serão exibidas.   
 
-使用下面的过程打开软件更新属性。  
+Use o procedimento a seguir para abrir as propriedades de atualização de software.  
 
-#### <a name="to-open-software-update-properties"></a>打开软件更新属性  
+#### <a name="to-open-software-update-properties"></a>Para abrir as propriedades de atualização de software  
 
-1.  在 Configuration Manager 控制台中，单击“软件库” 。  
-2.  在“软件库”工作区中，展开“软件更新” ，并单击“所有软件更新” 。  
-3.  选择一个或多个软件更新，然后在“主页”  选项卡上的“属性”  组中，单击“属性”  。  
+1.  No console do Configuration Manager, clique em **Biblioteca de Software**.  
+2.  No espaço de trabalho Biblioteca de Software, expanda **Atualizações de Software**e clique em **Todas as Atualizações de Software**.  
+3.  Selecione uma ou mais atualizações de software e clique na guia **Início** e clique em **Propriedades** no grupo **Propriedades** .  
 
    > [!NOTE]  
-   >  在“所有软件更新”节点上，Configuration Manager 只显示分类为“严重”和“安全”且在过去 30 天内发布的软件更新。  
+   >  No nó **Todas as Atualizações de Software**, o Configuration Manager exibirá somente atualizações de software com classificação **Crítica** e **Segurança** e que foram lançadas nos últimos 30 dias.  
 
-###  <a name="BKMK_SoftwareUpdatesInformation"></a> 查看软件更新信息  
-在软件更新属性中，你可以查看关于软件更新的详细信息。 当你选择多个软件更新时，不会显示详细信息。 以下部分描述可用于所选软件更新的信息。  
+###  <a name="BKMK_SoftwareUpdatesInformation"></a> Examinar informações de atualizações de software  
+Nas propriedades de atualização de software, você pode analisar informações detalhadas sobre uma atualização de software. As informações detalhadas não serão exibidas quando você selecionar mais de uma atualização de software. As seções a seguir descrevem as informações disponíveis para uma atualização de software selecionada.  
 
-####  <a name="BKMK_SoftwareUpdateDetails"></a> 软件更新详细信息  
-在“更新详细信息”  选项卡中，你可以查看关于所选软件更新的以下摘要信息：  
+####  <a name="BKMK_SoftwareUpdateDetails"></a> Detalhes da atualização de software  
+Na guia **Detalhes da Atualização** , é possível exibir as seguintes informações de resumo sobre a atualização de software selecionada:  
 
-- “公告 ID”：指定与安全软件更新相关联的公告 ID。 通过在 [Microsoft Security Bulletin Search（Microsoft 安全公告搜索）](http://go.microsoft.com/fwlink/p/?LinkId=58313) 网页上根据公告 ID 进行搜索，你可以查找安全公告详细信息。  
+- **ID do Boletim**: especifica a ID do boletim associada às atualizações do software de segurança. Você pode encontrar detalhes do boletim de segurança pesquisando a ID do boletim na página da Web [Pesquisa de boletim de segurança da Microsoft](http://go.microsoft.com/fwlink/p/?LinkId=58313) .  
 
-- “文章 ID”：指定软件更新的文章 ID。 引用的文章提供了关于软件更新以及软件更新所修复或改进的问题的更多详细信息。  
+- **ID do Artigo**: especifica a ID do artigo para a atualização do software. O artigo referenciado fornece informações mais detalhadas sobre a atualização do software e o problema que essa atualização corrige ou melhora.  
 
-- “修订日期”：指定软件更新的上次修改日期。  
+- **Data de revisão**: especifica a data em que a atualização de software foi modificada pela última vez.  
 
-- “最大严重性分级”：指定软件更新的供应商定义的严重性分级。  
+- **Classificação de severidade máxima**: especifica a classificação de severidade definida pelo fornecedor para a atualização de software.  
 
-- “说明”：概述软件更新所修复或改进的情况。  
+- **Descrição**: fornece uma visão geral sobre qual condição a atualização de software corrige ou melhora.  
 
-- “适用的语言”：列出软件更新适用的语言。  
+- **Idiomas aplicáveis**: lista os idiomas para os quais a atualização de software é aplicável.  
 
-- “受影响产品”：列出软件更新适用的产品。  
+- **Produtos afetados**: lista os produtos para os quais a atualização de software é aplicável.  
 
-####  <a name="BKMK_ContentInformation"></a> 内容信息  
-在“内容信息”  选项卡中，查看与选定软件更新关联内容有关的下列信息：  
+####  <a name="BKMK_ContentInformation"></a> Informações de conteúdo  
+Na guia **Informações de Conteúdo** , revise as seguintes informações sobre o conteúdo associado à atualização de software selecionada:  
 
--   “内容 ID”：指定软件更新的内容 ID。  
+-   **ID do Conteúdo**: especifica a ID do conteúdo de atualização do software.  
 
--   **已下载**：指示 Configuration Manager 是否已下载软件更新文件。  
+-   **Baixado**: indica se o Configuration Manager baixou os arquivos de atualização do software.  
 
--   “语言”：指定软件更新的语言。  
+-   **Idioma**: especifica os idiomas para a atualização do software.  
 
--   “源路径”：指定软件更新源文件的路径。  
+-   **Caminho de Origem**: especifica o caminho para os arquivos de origem de atualização do software.  
 
--   **大小(MB)**：指定软件更新源文件的大小。  
+-   **Tamanho (MB)**: especifica o tamanho dos arquivos de origem de atualização do software.  
 
-####  <a name="BKMK_CustomBundleInformation"></a> 自定义捆绑信息  
-在“自定义捆绑信息”  选项卡中，查看软件更新的自定义捆绑信息。 当选定软件更新包含在软件更新文件中所包含的捆绑软件更新时，它们会显示在“捆绑信息”  部分。 此选项卡不会显示在“内容信息”  选项卡中显示的捆绑软件更新，如不同语言的更新文件。  
+####  <a name="BKMK_CustomBundleInformation"></a> Informações do grupo personalizado  
+Na guia **Informações do Grupo Personalizado** , revise as informações do grupo personalizado para a atualização de software. Quando a atualização de software selecionada contém atualizações de software agrupadas que estão contidas no arquivo de atualização de software, elas são exibidas na seção **Informações do grupo** . Essa guia não exibe atualizações de software agrupadas que são exibidas na guia **Informações de Conteúdo** , como arquivos de atualização para idiomas diferentes.  
 
-####  <a name="BKMK_SupersedenceInformation"></a> 取代信息  
-在“取代信息”  选项卡中，你可以查看关于软件更新取代的下列信息：  
+####  <a name="BKMK_SupersedenceInformation"></a> Informações da substituição  
+Na guia **Informações da Substituição** , você pode exibir as seguintes informações sobre a substituição da atualização de software:  
 
-- “此更新已由下列更新取代”：指定取代此更新的软件更新，这意味着所列的更新较新。 在大多数情况下，你将部署取代该软件更新的其中一项软件更新。 在列表中显示的软件更新包含提供详细软件更新信息的网页超链接。 当此更新未取代时，将显示“无”  。  
+- **Esta atualização foi substituída pelas seguintes atualizações**: especifica as atualizações de software que substituem essa atualização, o que significa que as atualizações listadas são mais recentes. Na maioria dos casos, você implantará uma das atualizações de software que substitui a atualização de software. As atualizações de software exibidas na lista contêm hiperlinks para páginas da Web que fornecem mais informações sobre as atualizações de software. Quando essa atualização não é substituída, **Nenhum** é exibido.  
 
-- “此更新会取代下列更新”：指定由此软件更新所取代的软件更新，这意味着此软件更新较新。 在大多数情况下，你将会部署此软件更新以替换取代的软件更新。 在列表中显示的软件更新包含提供详细软件更新信息的网页超链接。 当此更新未取代任何其他更新时，将显示“无”  。  
+- **Esta atualização substitui as seguintes atualizações**: especifica as atualizações de software que são substituídas por essa atualização de software, o que significa que essa atualização é mais recente. Na maioria dos casos, você implantará essa atualização de software para substituir as atualizações de software obsoletas. As atualizações de software exibidas na lista contêm hiperlinks para páginas da Web que fornecem mais informações sobre as atualizações de software. Quando essa atualização não substitui nenhuma outra atualização, **Nenhum** é exibido.  
 
-###  <a name="BKMK_SoftwareUpdatesSettings"></a> 配置软件更新设置  
-在属性中，你可以为一个或多个软件更新配置软件更新设置。 你仅可以在管理中心站点或独立主站点中配置大多数软件更新设置。 下列部分将帮助你配置软件更新的设置。  
+###  <a name="BKMK_SoftwareUpdatesSettings"></a> Definir as configurações de atualizações de software  
+Em propriedades, você pode definir as configurações de atualização de software para uma ou mais atualizações de software. Você pode definir a maioria das configurações de atualização de software somente no site de administração central ou no site primário autônomo. As seções a seguir ajudarão você a definir as configurações para atualizações de software.  
 
-####  <a name="BKMK_SetMaxRunTime"></a> 设置最长运行时间  
-在“最长运行时间”  选项卡中，设置对在客户端计算机上完成某软件更新所分配的最长时间。 如果更新所用时间比最长运行时值更长，Configuration Manager 将创建状态消息并停止监视软件更新安装的部署。 你仅可以在管理中心站点或独立主站点中配置此设置。  
+####  <a name="BKMK_SetMaxRunTime"></a> Definir tempo de execução máximo  
+Na guia **Tempo Máximo de Execução** , defina a quantidade máxima de tempo que uma atualização de software tem alocada para ser concluída em computadores cliente. Se a atualização demorar mais do que o valor máximo do tempo de execução, o Configuration Manager criará uma mensagem de status e interromperá o monitoramento da implantação da instalação das atualizações de software. Você pode definir essa configuração somente no site de administração central ou em um site primário autônomo.  
 
-Configuration Manager 还使用此设置来确定是否在配置的维护时段中启动软件更新安装。 如果最长运行时间的值大于维护时段中的可用剩余时间，则软件更新安装会延迟，直到下个维护时段开始。 当要在具有配置的维护时段（时间段）的客户端计算机上安装多个软件更新时，首先将安装最长运行时间最短的软件更新，然后安装下一个最长运行时间最短的软件更新，并照此类推。 在其安装每个软件更新之前，客户端将验证可用的维护时段是否提供足够时间来安装软件更新。 在软件更新开始安装后，即使安装超过维护时段的结束时间，也将仍然继续安装。 有关维护时段的详细信息，请参阅[如何在 System Center Configuration Manager 中使用维护时段](../../core/clients/manage/collections/use-maintenance-windows.md)。  
+O Configuration Manager também usa essa configuração para determinar se deve iniciar a instalação da atualização de software dentro de uma janela de manutenção configurada. Se o valor máximo do tempo de execução for maior do que o tempo restante disponível na janela de manutenção, a instalação das atualizações de software serão adiadas até o início da próxima janela de manutenção. Quando existirem várias atualizações de software para serem instaladas em um computador cliente com uma janela de manutenção configurada (período), a atualização de software com o tempo máximo de execução mais baixo será instalada primeiro; em seguida, a atualização de software com o próximo tempo máximo de execução mais baixo será instalada e assim por diante. Antes da instalação de cada atualização de software, o cliente verifica se a janela de manutenção disponível fornecerá tempo suficiente para a instalar a atualização de software. Após o início da instalação da atualização de software, ela continuará sendo instalada mesmo se a instalação ultrapassar o final da janela de manutenção. Para obter mais informações sobre janelas de manutenção, consulte [Como usar janelas de manutenção no System Center Configuration Manager](../../core/clients/manage/collections/use-maintenance-windows.md).  
 
-在“最长运行时间”  选项卡上，你可以查看和配置下列设置：  
+Na guia **Tempo Máximo de Execução** , você pode exibir e definir as seguintes configurações:  
 
-- **最长运行时间**：指定为完成软件更新安装分配的最大分钟数，在此时段后，Configuration Manager 将不再监视安装。 此设置还用于确定在维护时段结束前是否有足够的可用剩余时间来安装更新。 对于 Service Pack，默认设置为 60 分钟。 对于其他类型的软件更新，如果你执行了 Configuration Manager 版本 1511 或更高版本的全新安装，则默认时间为 10 分钟，如果从之前的版本升级，则默认时间为 5 分钟。 值可以介于 5 至 9999 分钟之间。  
+- **Tempo de execução máximo**: especifica o número máximo de minutos alocado para que uma instalação de atualização de software seja concluída antes que ela deixe de ser monitorada pelo Configuration Manager. Essa configuração também é usada para determinar se há tempo disponível suficiente restante para instalar a atualização antes do final de uma janela de manutenção. A configuração padrão é 60 minutos para service packs. Para outros tipos de atualização de software, o padrão será 10 minutos, se você tiver feito uma instalação nova do Configuration Manager versão 1511 ou posterior e 5 minutos quando você tiver atualizado de uma versão anterior. Os valores podem variar de 5 a 9999 minutos.  
 
 > [!IMPORTANT]  
->  确保设置小于配置的维护时段时间的最长运行时间值。 否则，将永远无法启动软件更新安装。  
+>  Verifique se você definiu o valor do tempo máximo de execução como inferior ao tempo da janela de manutenção configurada. Caso contrário, a instalação da atualização de software nunca será iniciada.  
 
-####  <a name="BKMK_SetCustomSeverity"></a> 设置自定义严重性  
-在软件更新属性中，你可以使用“自定义严重性”  选项卡来配置软件更新的自定义严重性值。 如果预定义的严重性值不能满足你的需要，则这项操作可能必不可少。 Configuration Manager 控制台的“自定义严重性”列中列出了自定义值。 你可按定义的自定义严重性值对软件更新排序，并且还可以创建可对这些值进行筛选的查询和报表。 你仅可以在管理中心站点或独立主站点中配置此设置。  
+####  <a name="BKMK_SetCustomSeverity"></a> Definir severidade personalizada  
+Nas propriedades de uma atualização de software, você pode usar a guia **Severidade Personalizada** para configurar valores de severidade personalizada para as atualizações de software. Isso pode ser necessário se os valores de severidade predefinidos não atenderem às suas necessidades. Os valores personalizados estão listados na coluna **Severidade Personalizada** no console do Configuration Manager. Você pode classificar as atualizações de software pelos valores de severidade personalizada definidos e também pode criar consultas e relatórios que podem filtrar esses valores. Você pode definir essa configuração somente no site de administração central ou no site primário autônomo.  
 
-你可以在“自定义严重性”  选项卡上配置下列设置。  
+Você pode definir as configurações a seguir na guia **Severidade Personalizada** .  
 
-- “自定义严重性”：为软件更新设置自定义的严重性值。 从列表中选择“严重” 、“重要” 、“中” 或“低”  。 默认情况下，自定义严重性值为空。
+- **Severidade personalizada**: define um valor de severidade personalizada para as atualizações de software. Selecione **Crítico**, **Importante**, **Moderado**ou **Baixo** na lista. Por padrão, o valor da severidade personalizada está vazio.
 
-## <a name="crl-checking-for-software-updates"></a>软件更新的 CRL 检查
-默认情况下，在验证 System Center Configuration Manager 软件更新上的签名时不会检查证书吊销列表 (CRL)。 如果在每次使用证书时都检查 CRL，则能更好地抵御因使用已吊销的证书而造成的安全威胁，但这样做会使连接出现延迟，并在执行 CRL 检查的计算机上引发额外的处理操作。  
+## <a name="crl-checking-for-software-updates"></a>Verificação de CRL para atualizações de software
+Por padrão, a CRL (lista de certificados revogados) não é verificada ao checar a assinatura nas atualizações de software do System Center Configuration Manager. Verificar a CRL sempre que um certificado é usado oferece mais segurança contra o uso de certificado revogado, mas gera atraso de conexão e incorre em processamentos adicionais no computador em que a verificação é executada.  
 
-如果使用，则必须在处理软件更新的 Configuration Manager 控制台上启用 CRL 检查。  
+Se usada, a verificação da CRL deverá ser habilitada nos consoles do Configuration Manager que processam atualizações de software.  
 
-#### <a name="to-enable-crl-checking"></a>启用 CRL 检查  
-在执行 CRL 检查的计算机上，从产品 DVD 上的命令提示符运行以下命令：**\SMSSETUP\BIN\X64\\**<*language*>**\UpdDwnldCfg.exe /checkrevocation**。  
+#### <a name="to-enable-crl-checking"></a>Para habilitar a verificação da CRL  
+No computador que executa a verificação de CRL, no DVD do produto, execute o seguinte prompt de comando: **\SMSSETUP\BIN\X64\\**<*idioma*>**\UpdDwnldCfg.exe /checkrevocation**.  
 
-例如，对于英语（美国），运行 **\SMSSETUP\BIN\X64\00000409\UpdDwnldCfg.exe /checkrevocation**  
+Por exemplo, para inglês (EUA), execute **\SMSSETUP\BIN\X64\00000409\UpdDwnldCfg.exe /checkrevocation**  

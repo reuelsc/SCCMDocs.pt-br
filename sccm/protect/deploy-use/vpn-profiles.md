@@ -1,6 +1,6 @@
 ---
-title: "System Center Configuration Manager 中的 VPN 配置文件 | Microsoft Docs"
-description: "了解如何使用 System Center Configuration Manager 中的 VPN 配置文件将 VPN 设置部署到组织中的用户。"
+title: Perfis VPN no System Center Configuration Manager | Microsoft Docs
+description: "Saiba como usar perfis de VPN no System Center Configuration Manager para implantar as configurações de VPN para usuários em sua organização."
 ms.custom: na
 ms.date: 11/27/2016
 ms.prod: configuration-manager
@@ -18,43 +18,43 @@ manager: angrobe
 ms.openlocfilehash: e07a80c1a59043b74cda7219f78c5fef66989ba8
 ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
 ms.translationtype: HT
-ms.contentlocale: zh-CN
+ms.contentlocale: pt-BR
 ms.lasthandoff: 08/07/2017
 ---
-# <a name="vpn-profiles-in-system-center-configuration-manager"></a>System Center Configuration Manager 中的 VPN 配置文件
+# <a name="vpn-profiles-in-system-center-configuration-manager"></a>Perfis VPN no System Center Configuration Manager
 
-*适用范围：System Center Configuration Manager (Current Branch)*
+*Aplica-se a: System Center Configuration Manager (Branch Atual)*
 
 
-使用 System Center Configuration Manager（也称为 ConfigMgr 或 SCCM）中的 VPN 配置文件将 VPN 设置部署到组织中的用户。 通过部署这些设置，你可以最大限度减少最终用户连接到公司网络资源需要进行的工作。  
+Use os perfis de VPN no System Center Configuration Manager (também conhecido como ConfigMgr ou SCCM) para implantar as configurações de VPN para usuários em sua organização. Ao implantar essas configurações, você minimiza o esforço do usuário final necessário para conectar-se aos recursos na rede da empresa.  
 
- 例如，你想要用连接到公司网络上的文件共享所需的设置来设置所有运行 Windows RT 操作系统的设备。 你可以创建一个 VPN 配置文件，在其中包含连接到公司网络所需的设置，然后将此配置文件部署到你的层次结构中使用运行 Windows RT 的设备的所有用户。 Windows RT 设备用户可在可用网络列表中看到 VPN 连接，并可通过最少量的工作连接到此网络。  
+ Por exemplo, você deseja provisionar todos os dispositivos que executam o sistema operacional Windows RT com as configurações necessárias para se conectar ao compartilhamento de arquivos na rede corporativa. Você pode criar um perfil VPN que contém as configurações necessárias para conectar-se à rede corporativa e implantar esse perfil a todos os usuários que possuem dispositivos que executam o Windows RT na sua hierarquia. Os usuários de dispositivos com Windows RT veem a conexão VPN na lista de redes disponíveis e podem se conectar a essa rede com o mínimo de esforço.  
 
- 在创建 VPN 配置文件时，你可以纳入各种各样的安全设置，其中包括已通过使用 System Center Configuration Manager 证书配置文件预配的服务器验证和客户端身份验证证书。 有关证书配置文件的详细信息，请参阅 [System Center Configuration Manager 中的证书配置文件](introduction-to-certificate-profiles.md)。  
+ Quando você cria um perfil VPN, pode incluir uma grande variedade de configurações de segurança, inclusive certificados para validação de servidor e autenticação cliente que foram provisionados usando os perfis de certificado do System Center Configuration Manager. Para obter mais informações sobre perfis de certificado, consulte [Perfis de certificado do System Center Configuration Manager](introduction-to-certificate-profiles.md).  
 
- 以下各部分介绍了在使用 Configuration Manager 时可向哪些设备配置 VPN 配置文件。
+ As seções a seguir explicam quais dispositivos você poderá configurar com perfis de VPN se usar o Configuration Manager.
 
- 若要查看通过 Microsoft Intune 使用 Configuration Manager 时可配置的设备，请参阅[移动设备上的 VPN 配置文件](/sccm/mdm/deploy-use/create-vpn-profiles)。  
+ Confira [Perfis de VPN em dispositivos móveis](/sccm/mdm/deploy-use/create-vpn-profiles) para examinar os dispositivos que você pode configurar durante o uso do Configuration Manager com o Microsoft Intune.  
 
-## <a name="vpn-profiles-when-using-configuration-manager"></a>使用 Configuration Manager 时的 VPN 配置文件  
- 下表介绍了可为各种设备平台配置的 VPN 配置文件。  
+## <a name="vpn-profiles-when-using-configuration-manager"></a>Perfis de VPN usando o Configuration Manager  
+ A tabela a seguir descreve os perfis de VPN que você pode configurar para várias plataformas de dispositivo.  
 
-|连接类型|Windows 8.1|Windows RT|Windows RT 8.1|Windows 10|  
+|Tipo de conexão|Windows 8.1|Windows RT|Windows RT 8.1|Windows 10|  
 |---------------------|-----------------|----------------|--------------------|----------------|  
-|**Cisco AnyConnect**|否|否|否|否|  
-|**Pulse Secure**|是|否|是|是|  
-| **F5 Edge Client**|是|否|是|是|  
-|**Dell SonicWALL Mobile Connect**|是|否|是|是|  
-|**Check Point Mobile VPN**|是|否|是|是|  
-|**Microsoft SSL (SSTP)**|是|是|是|否|  
-|**Microsoft Automatic**|是|是|是|否|  
-|**IKEv2**|是|是|是|否|  
-|**PPTP**|是|是|是|否|  
-|**L2TP**|是|是|是|否|  
+|**Cisco AnyConnect**|Não|Não|Não|Não|  
+|**Pulse Secure**|Sim|Não|Sim|Sim|  
+|**F5 Edge Client**|Sim|Não|Sim|Sim|  
+|**Dell SonicWALL Mobile Connect**|Sim|Não|Sim|Sim|  
+|**Check Point Mobile VPN**|Sim|Não|Sim|Sim|  
+|**Microsoft SSL (SSTP)**|Sim|Sim|Sim|Não|  
+|**Microsoft Automatic**|Sim|Sim|Sim|Não|  
+|**IKEv2**|Sim|Sim|Sim|Não|  
+|**PPTP**|Sim|Sim|Sim|Não|  
+|**L2TP**|Sim|Sim|Sim|Não|  
 
-### <a name="next-steps"></a>后续步骤  
- 可以使用下列主题来规划、配置、操作和维护 Configuration Manager 中的 VPN 配置文件。  
+### <a name="next-steps"></a>Próximas etapas  
+ Use os tópicos a seguir para ajudar a planejar, configurar, operar e manter perfis de VPN no Configuration Manager.  
 
--   [System Center Configuration Manager 中 VPN 配置文件的先决条件](../plan-design/prerequisites-for-wifi-vpn-profiles.md)  
+-   [Pré-requisitos para perfis de VPN no System Center Configuration Manager](../plan-design/prerequisites-for-wifi-vpn-profiles.md)  
 
--   [System Center Configuration Manager 中 VPN 配置文件的安全和隐私](../plan-design/security-and-privacy-for-wifi-vpn-profiles.md)
+-   [Segurança e privacidade para perfis de VPN no System Center Configuration Manager](../plan-design/security-and-privacy-for-wifi-vpn-profiles.md)

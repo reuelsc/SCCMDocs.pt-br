@@ -1,6 +1,6 @@
 ---
-title: "创建用于捕获操作系统的任务序列 | Microsoft Docs"
-description: "“构建和捕获”任务序列将构建可以包括特定驱动程序和软件更新，以及操作系统的引用计算机。"
+title: "Criar uma sequência de tarefas para capturar um sistema operacional | Microsoft Docs"
+description: "Uma sequência de tarefas de montagem e captura cria um computador de referência que pode incluir drivers específicos e atualizações de software juntamente com o sistema operacional."
 ms.custom: na
 ms.date: 10/06/2016
 ms.prod: configuration-manager
@@ -18,216 +18,216 @@ manager: angrobe
 ms.openlocfilehash: e9320e40b8e5031ffa3da5e5149c7da718cc87d5
 ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
 ms.translationtype: HT
-ms.contentlocale: zh-CN
+ms.contentlocale: pt-BR
 ms.lasthandoff: 08/07/2017
 ---
-# <a name="create-a-task-sequence-to-capture-an-operating-system-in-system-center-configuration-manager"></a>创建任务序列来捕获 System Center Configuration Manager 中的操作系统
+# <a name="create-a-task-sequence-to-capture-an-operating-system-in-system-center-configuration-manager"></a>Criar uma sequência de tarefas para capturar um sistema operacional no System Center Configuration Manager
 
-*适用范围：System Center Configuration Manager (Current Branch)*
+*Aplica-se a: System Center Configuration Manager (Branch Atual)*
 
-当使用任务序列将操作系统部署到 System Center Configuration Manager 中的计算机时，该计算机会安装在任务序列中指定的操作系统映像。 若要自定义操作系统映像以使其包含特定的驱动程序、应用程序、软件更新等，需要使用构建和捕获任务序列来构建引用计算机，然后从该引用计算机捕获操作系统映像。 如果已具有可进行捕获的引用计算机，你可以创建用于捕获操作系统的自定义任务序列。 使用以下部分来捕获自定义操作系统。  
+Quando você usa uma sequência de tarefas para implantar um sistema operacional em um computador no System Center Configuration Manager, o computador instala a imagem do sistema operacional que você especificar na sequência de tarefas. Para personalizar a imagem do sistema operacional para que ela inclua drivers específicos, aplicativos, atualizações de software, etc., você pode usar uma sequência de tarefas de criação e captura para criar um computador de referência e, em seguida, capturar a imagem do sistema operacional do computador de referência. Se você já tiver um computador de referência disponível para capturar, você pode criar uma sequência de tarefas personalizadas para capturar o sistema operacional. Use as seções a seguir para capturar um sistema operacional personalizado.  
 
-##  <a name="BKMK_BuildCaptureTS"></a> 使用任务序列来构建和捕获引用计算机  
- “构建和捕获”任务序列对引用计算机进行分区和格式化，安装操作系统以及 Configuration Manager 客户端、应用程序和软件更新，然后从引用计算机捕获操作系统。 在分发点上与任务序列（如应用程序）相关联的包必须可用，然后才能创建构建和捕获任务序列。  
+##  <a name="BKMK_BuildCaptureTS"></a> Use uma sequência de tarefas para criar e capturar um computador de referência  
+ A sequência de tarefas de montagem e captura particiona e formata o computador de referência, instala o sistema operacional, bem como o cliente do Configuration Manager, aplicativos e atualizações de software e, em seguida, captura o sistema operacional do computador de referência. Os pacotes associados à sequência de tarefas, como aplicativos, devem estar disponíveis nos pontos de distribuição antes de criar a compilação e capturar a sequência de tarefas.  
 
-###  <a name="BKMK_CreatePackages"></a> 准备操作系统部署  
- 有大量方案可用于将操作系统部署到环境中的计算机。 在大多数情况下，将创建任务序列并在“创建任务序列向导”中选择 **安装现有映像包** 来安装操作系统、迁移用户设置、应用软件更新和安装应用程序。 在创建任务序列以安装操作系统之前，以下方面必须已到位：  
+###  <a name="BKMK_CreatePackages"></a> Preparando-se para as implantações de sistema operacional  
+ Há muitos cenários para implantar um sistema operacional em computadores em seu ambiente. Na maioria dos casos, você vai criar uma sequência de tarefas e selecionar **instalar um pacote de imagem existente** no assistente Criar Sequência de Tarefas para instalar o sistema operacional, migrar as configurações do usuário, aplicar atualizações de software e instalar aplicativos. Antes de criar uma sequência de tarefas para instalar um sistema operacional, o seguinte deve estar disponível:  
 
--   **必需**  
+-   **Necessária**  
 
-    -   [启动映像](../get-started/manage-boot-images.md)在 Configuration Manager 控制台中必须可用。  
+    -   A [imagem de inicialização](../get-started/manage-boot-images.md) deve estar disponível no console do Configuration Manager.  
 
-    -   [操作系统映像](../get-started/manage-operating-system-images.md)在 Configuration Manager 控制台中必须可用。  
+    -   Uma [imagem do sistema operacional](../get-started/manage-operating-system-images.md) deve estar disponível no console do Configuration Manager.  
 
--   **必需（若使用）**  
+-   **Necessário (se usado)**  
 
-    -   [驱动程序包](../get-started/manage-drivers.md)在 Configuration Manager 控制台中必须可用，该程序包包含必要的 Windows 驱动程序以支持引用计算机上的硬件。 有关管理驱动程序的任务序列步骤的详细信息，请参阅[使用任务序列安装设备驱动器](../get-started/manage-drivers.md#BKMK_TSDrivers)。  
+    -   Os [pacotes de driver](../get-started/manage-drivers.md) que contêm os drivers do Windows necessários para dar suporte ao hardware no computador de referência devem estar disponíveis no console do Configuration Manager. Para obter mais informações sobre as etapas de sequência de tarefas para gerenciar drivers, veja [Usar sequências de tarefas para instalar drivers de dispositivo](../get-started/manage-drivers.md#BKMK_TSDrivers).  
 
-    -   必须在 Configuration Manager 控制台中同步[软件更新](../../sum/get-started/synchronize-software-updates.md)。  
+    -   As [atualizações de software](../../sum/get-started/synchronize-software-updates.md) devem estar sincronizadas no console do Configuration Manager.  
 
-    -   必须将[应用程序](../../apps/deploy-use/create-applications.md)添加到 Configuration Manager 控制台。  
+    -   Os [aplicativos](../../apps/deploy-use/create-applications.md) devem ser adicionados ao console do Configuration Manager.  
 
-###  <a name="BKMK_CreateBuildCaptureTS"></a> 创建一个构建和捕获任务序列  
- 使用下列过程使用任务序列构建引用计算机和捕获操作系统。  
+###  <a name="BKMK_CreateBuildCaptureTS"></a> Criar uma sequência de tarefas de montagem e captura  
+ Use o procedimento a seguir para usar uma sequência de tarefas para criar um computador de referência e capturar o sistema operacional.  
 
-#### <a name="to-create-a-task-sequence-that-builds-and-captures-an-operating-system-image"></a>创建用于构建和捕获操作系统映像的任务序列  
+#### <a name="to-create-a-task-sequence-that-builds-and-captures-an-operating-system-image"></a>Para criar uma sequência de tarefas que monta e captura uma imagem de sistema operacional  
 
-1.  在 Configuration Manager 控制台中，单击“软件库” 。  
+1.  No console do Configuration Manager, clique em **Biblioteca de Software**.  
 
-2.  在“软件库”  工作区中，展开“操作系统” ，然后单击“任务序列” 。  
+2.  No espaço de trabalho **Biblioteca de Software** , expanda **Sistemas Operacionais**e clique em **Sequências de Tarefas**.  
 
-3.  在“主页”  选项卡上的“创建”  组中，单击“创建任务序列”  以启动创建任务序列向导。  
+3.  Na guia **Início** , no grupo **Criar** , clique em **Criar Sequência de Tarefas** para iniciar o Assistente para Criar Sequência de Tarefas.  
 
-4.  在“创建新的任务序列”  页上，选择“构建并捕获引用操作系统映像包” 。  
+4.  Na página **Criar uma Nova Sequência de Tarefas** , selecione **Montar e capturar uma imagem do sistema operacional de referência**.  
 
-5.  在“任务序列信息”  页上，指定以下设置，然后单击“下一步” 。  
+5.  Na página **Informações da Sequência de Tarefas** , especifique as seguintes configurações e clique em **Próximo**.  
 
-    -   “任务序列名称”：指定用于标识任务序列的名称。  
+    -   **Nome da sequência de tarefas**: especifique um nome que identifique a sequência de tarefas.  
 
-    -   “描述”：指定由该任务序列所执行的任务描述，例如任务序列创建的操作系统的描述。  
+    -   **Descrição**: especifique uma descrição da tarefa executada pela sequência de tarefas, como, por exemplo, uma descrição do sistema operacional que é criada pela sequência de tarefas.  
 
-    -   “启动映像”：指定用于安装操作系统映像的启动映像。  
-
-        > [!IMPORTANT]  
-        >  启动映像的体系结构必须与目标计算机的硬件体系结构兼容。  
-
-6.  在“安装 Windows”  页上，指定以下设置，然后单击“下一步” 。  
-
-    -   **映像包**：指定包含安装操作系统所需文件的操作系统映像包。  
-
-    -   “映像索引”：指定要安装的操作系统。 如果操作系统映像包含多个版本，则选择你想要安装的版本。  
-
-    -   “产品秘钥”：指定要安装的 Windows 操作系统的产品密钥。 你可以指定编码的批量许可证密钥和标准产品密钥。 如果使用非编码的产品密钥，则必须通过短划线 (-) 分隔每组 5 个字符。 例如： *XXXXX-XXXXX-XXXXX-XXXXX-XXXXX*  
-
-    -   “服务器授权模式”：指定服务器许可证为“每客户” , 或未指定许可证。 如果服务器许可证为“每服务器” ，则还需指定服务器连接的最大数量。  
-
-    -   指定如何处理在部署操作系统时使用的管理员帐户。  
-
-        -   “随机生成本地管理员密码并禁用所有支持的平台上的帐户”：指定是否使用 Configuration Manager 创建本地管理员帐户的随机密码并在部署操作系统时禁用该帐户。  
-
-        -   “启用该账户并指定本地管理员密码”：指定是否在部署了操作系统的所有计算机上使用相同的本地管理员帐户密码。  
-
-7.  在“配置网络”  页上，指定以下设置，然后单击“下一步” 。  
-
-    -   “加入工作组”：指定是否在部署操作系统时将目标计算机添加到工作组。  
-
-    -   “加入域”：指定是否在部署操作系统时将目标计算机添加到域。 在“域” 中，指定域的名称。  
+    -   **Imagem de inicialização**: especifique a imagem de inicialização que instala a imagem da sistema operacional.  
 
         > [!IMPORTANT]  
-        >  你可以浏览以查找本地林中的域，但对于远程林则必须指定域名。  
+        >  A arquitetura da imagem de inicialização deve ser compatível com a arquitetura de hardware do computador de destino.  
 
-         你还可以指定组织单位 (OU)。 这是一项可选设置，用于指定在其中创建计算机帐户的 OU 的 LDAP X.500 可分辨名称（如果尚未存在）。  
+6.  Na página **Instalar Windows** , especifique as seguintes configurações e clique em **Próximo**.  
 
-    -   “帐户”：指定具有加入指定域的权限的帐户的用户名和密码。 例如： *domain\user* 或 *%variable%*。  
+    -   **Pacote de imagens**: especifique o pacote de imagens do sistema operacional, que contém os arquivos necessários para instalar o sistema operacional.  
+
+    -   **Índice de imagem**: especifique o sistema operacional para instalar. Se a imagem do sistema operacional tiver várias versões, selecione a versão que você deseja instalar.  
+
+    -   **Chave do produto (Product Key)**: especifique a chave do produto (Product Key) do sistema operacional Windows que será instalada. Você pode especificar as chaves de licença de volume codificadas e as chaves do produto padrão. Se você usar uma chave de produto sem codificação, cada grupo de 5 caracteres deverá ser separado por um traço (-). Por exemplo: *XXXXX-XXXXX-XXXXX-XXXXX-XXXXX*  
+
+    -   **Modo de licenciamento do servidor**: especifique se a licença do servidor é **Por estação**, **Por servidor**ou se nenhuma licença está especificada. Se a licença do servidor for **Por servidor**, especifique também o número máximo de conexões de servidor.  
+
+    -   Especifique como lidar com a conta de administrador usada quando o sistema operacional é implantado.  
+
+        -   **Gerar aleatoriamente a senha do administrador local e desabilitar a conta em todas as plataformas com suporte**: especifique se deseja que o Configuration Manager crie uma senha aleatória para a conta de administrador local e desabilite a conta quando o sistema operacional for implantado.  
+
+        -   **Ativar a conta e especificar a senha do administrador local**: especifique se a mesma senha deve ser usada para a conta do administrador local em todos os computadores nos quais o sistema operacional será implantado.  
+
+7.  Na página **Configurar a Rede** , especifique as seguintes configurações e clique em **Próximo**.  
+
+    -   **Ingressar no grupo de trabalho**: especifique se deseja adicionar o computador de destino a um grupo de trabalho quando o sistema operacional é implantado.  
+
+    -   **Ingressar em um domínio**: especifique se deseja adicionar o computador de destino a um domínio quando o sistema operacional for implantado. Em **Domínio**, especifique o nome do domínio.  
 
         > [!IMPORTANT]  
-        >  如果打算迁移域设置或工作组设置，你必须输入适当的域凭据。  
+        >  Você pode localizar os domínios na floresta local, mas, para tanto, é necessário especificar o nome de domínio para uma floresta remota.  
 
-8.  在“安装 Configuration Manager”页上，指定 Configuration Manager 客户端包（其中包含要安装 Configuration Manager 客户端的源文件），并添加安装客户端所需的任何其他属性，然后单击“下一步”。  
+         Você também pode especificar uma UO (unidade organizacional). Essa configuração opcional especifica o nome diferenciado do LDAP X.500 da UO na qual a conta do computador será criada, se ela ainda não existir.  
 
-     有关可用于安装客户端的属性的详细信息，请参阅[关于客户端安装属性](../../core/clients/deploy/about-client-installation-properties.md)。  
+    -   **Conta**: especifique o nome de usuário e senha para a conta que tenha permissões para ingressar no domínio especificado. Por exemplo: *domain\user* ou *%variable%*.  
 
-9. 在“包括更新”  页上，指定是安装必需的软件更新、所有软件更新还是不安装软件更新，然后单击“下一步” 。 如果指定要安装软件更新，Configuration Manager 将只会安装以包含目标计算机的集合为目标的那些软件更新。  
+        > [!IMPORTANT]  
+        >  Você deve inserir as credenciais de domínio adequadas se planeja migrar as configurações de domínio ou as configurações do grupo de trabalho.  
 
-10. 在“安装应用程序”  页上，指定要安装在目标计算机上的应用程序，然后单击“下一步” 。 如果指定多个应用程序，你也可以指定任务序列在特定应用程序的安装失败时继续进行。  
+8.  Na página **Instalar o Configuration Manager**, especifique o pacote do cliente do Configuration Manager que contém os arquivos de origem para instalar o cliente do Configuration Manager, acrescente propriedades adicionais necessárias para instalar o cliente e clique em **Próximo**.  
 
-11. 在“系统准备”  页上，指定以下设置，然后单击“下一步” 。  
+     Para obter mais informações sobre as propriedades que podem ser usadas para instalar um cliente, consulte [Sobre as propriedades de instalação do cliente](../../core/clients/deploy/about-client-installation-properties.md).  
 
-    -   **包**：指定 Configuration Manager 包，其中包含要用于捕获引用计算机设置的适当版本的 Sysprep。  
+9. Na página **Incluir Atualizações** , especifique se deseja instalar as atualizações de software necessárias, todas as atualizações ou nenhuma e clique em **Próximo**. Se optar pela instalação das atualizações de software, o Configuration Manager instalará somente aquelas que fizerem parte das coleções das quais o computador de destino é membro.  
 
-         如果你运行的操作系统版本是 Windows Vista 或更高版本，则 Sysprep 自动安装在计算机上，而且你不必指定包。  
+10. Na página **Instalar Aplicativos** , especifique os aplicativos a instalar no computador de destino e clique em **Próximo**. Se você especificar vários aplicativos, será possível também definir a continuação da sequência de tarefas em caso de falha na instalação de algum aplicativo.  
 
-12. 在“映像属性”  页上，指定以下操作系统映像设置，然后单击“下一步” 。  
+11. Na página **Preparação do Sistema** , especifique as seguintes configurações e clique em **Próximo**.  
 
-    -   “创建者”：指定创建操作系统映像的用户的名称。  
+    -   **Pacote**: especifique o pacote do Configuration Manager que contém a versão apropriada do Sysprep a usar para capturar as configurações do computador de referência.  
 
-    -   “版本”：指定与操作系统映像关联的用户定义版本号。  
+         Se a versão do sistema operacional em execução for o Windows Vista ou posterior, o Sysprep será instalado automaticamente no computador e não haverá necessidade de especificar um pacote.  
 
-    -   “描述”：指定操作系统计算机映像的用户定义描述。  
+12. Na página **Propriedades da Imagem** , especifique as seguintes configurações para a imagem do sistema operacional e clique em **Próximo**.  
 
-13. 在“捕获映像”  页上，指定以下设置，然后单击“下一步” 。  
+    -   **Criado por**: especifique o nome do usuário que criou a imagem do sistema operacional.  
 
-    -   “路径”：指定存储输出 .WIM 文件的共享网络文件夹。 此文件包含以你通过使用此向导指定的设置为基础的操作系统映像。 如果指定包含现有 .WIM 文件的文件夹，则会覆盖现有文件。  
+    -   **Versão**: especifique um número de versão definido pelo usuário que está associado à imagem do sistema operacional.  
 
-    -   “账户”：指定对存储映像的网络共享具有权限的 Windows 帐户。  
+    -   **Descrição**: especifique uma descrição definida pelo usuário da imagem de computador do sistema operacional.  
 
-14. 完成向导。  
+13. Na página **Capturar Imagem** , especifique as seguintes configurações e clique em **Próximo**.  
 
-15. 要向任务序列中添加其他步骤，请选择所创建的任务序列并单击“编辑” 。 有关如何编辑任务序列的信息，请参阅[编辑任务序列](manage-task-sequences-to-automate-tasks.md#BKMK_ModifyTaskSequence)。  
+    -   **Caminho**: especifique uma pasta de rede compartilhada em que o arquivo de saída .WIM será armazenado. Esse arquivo contém a imagem do sistema operacional baseada nas configurações especificadas neste assistente. Se você especificar uma pasta que já contém um arquivo .WIM, o arquivo existente será substituído.  
 
- 采用以下其中一种方式将任务序列部署到引用计算机：  
+    -   **Conta**: especifique a conta do Windows que tem permissões para o compartilhamento de rede em que a imagem está armazenada.  
 
--   如果引用计算机为 Configuration Manager 客户端，则可以将构建和捕获任务序列部署到包含引用计算机的集合。 有关如何部署操作系统映像的信息，请参阅 [Create a task sequence to install an operating system](create-a-task-sequence-to-install-an-operating-system.md)（创建任务序列以安装操作系统）。  
+14. Conclua o assistente.  
+
+15. Para adicionar etapas adicionais à sequência de tarefas, selecione a sequência de tarefas criada e clique em **Editar**. Para obter informações sobre como editar uma sequência de tarefas, veja [Editar uma sequência de tarefas](manage-task-sequences-to-automate-tasks.md#BKMK_ModifyTaskSequence).  
+
+ Implante a sequência de tarefas em um computador de referência em uma das seguintes maneiras:  
+
+-   Se o computador de referência for um cliente do Configuration Manager, você poderá implantar a sequência de tarefas de montagem e captura na coleção que contém o computador de referência. Para obter informações sobre como implantar a imagem do sistema operacional, veja [Criar uma sequência de tarefas para instalar um sistema operacional](create-a-task-sequence-to-install-an-operating-system.md).  
 
     > [!NOTE]  
-    >  如果任务序列具有磁盘分区任务序列步骤，请不要在部署任务序列时选择“下载程序”  选项。  
+    >  Se a sequência de tarefas tiver uma etapa da sequência de tarefas de particionamento de disco, não selecione a opção **Baixar Programa** quando implantar a sequência de tarefas.  
 
--   如果引用计算机不是 Configuration Manager 客户端，或者如果想手动在引用计算机上运行任务序列，则请运行“创建任务序列媒体向导”以创建可启动媒体。 有关如何创建可启动媒体的信息，请参阅[创建可启动媒体](create-bootable-media.md)。  
+-   Se o computador de referência não for um cliente do Configuration Manager ou se você desejar executar manualmente a sequência de tarefas no computador referência, execute o **Assistente para Criar Mídia de Sequência de Tarefas** para criar uma mídia inicializável. Para obter informações sobre como criar a mídia inicializável, consulte [Criar mídia inicializável](create-bootable-media.md).  
 
-##  <a name="BKMK_CaptureExistingRefComputer"></a> 从现有引用计算机中捕获操作系统映像  
- 如果已具有可随时用于捕获的引用计算机，则可以创建用于从引用计算机捕获操作系统的任务序列。 将使用“捕获操作系统映像”  任务序列步骤可从引用计算机捕获一个或多个映像，并将它们存储在指定网络共享上的映像文件 (wim) 文件中。 在 Windows PE 中使用启动映像启动引用计算机，将引用计算机上的每个硬盘驱动器作为 .wim 文件中的单独映像进行捕获。 如果引用计算机有多个驱动器，则生成的 .wim 文件对于每个卷将包含单独的映像。 仅捕获格式化为 NTFS 或 FAT32 的卷。 其他格式的卷和 USB 卷会被忽略。  
+##  <a name="BKMK_CaptureExistingRefComputer"></a> Capturar uma imagem de sistema operacional de um computador de referência existente  
+ Quando você tiver um computador de referência pronto para capturar, você pode criar uma sequência de tarefas que captura o sistema operacional do computador de referência. Você usará a etapa da sequência de tarefas **Capturar imagem do sistema operacional** para capturar imagens de um ou mais computadores de referência e armazená-las em um arquivo de imagem (.wim) no compartilhamento de rede especificado. O computador de referência é iniciado no Windows PE usando uma imagem de inicialização, cada disco rígido no computador de referência é capturado como uma imagem separada no arquivo. wim. Se o computador de referência tiver várias unidades, o arquivo .wim resultante conterá uma imagem separada para cada volume. Apenas volumes formatados como NTFS ou FAT32 são capturados. Volumes com outros formatos e USB são ignorados.  
 
- 使用以下过程从现有引用计算机中捕获操作系统映像。  
+ Use o procedimento a seguir para capturar uma imagem do sistema operacional de um computador de referência existente.  
 
-#### <a name="to-capture-an-operating-system-from-an-existing-reference-computer"></a>从现有引用计算机中捕获操作系统  
+#### <a name="to-capture-an-operating-system-from-an-existing-reference-computer"></a>Para capturar um sistema operacional de um computador de referência existente  
 
-1.  在 Configuration Manager 控制台中，单击“软件库” 。  
+1.  No console do Configuration Manager, clique em **Biblioteca de Software**.  
 
-2.  在“软件库”  工作区中，展开“操作系统” ，然后单击“任务序列” 。  
+2.  No espaço de trabalho **Biblioteca de Software** , expanda **Sistemas Operacionais**e clique em **Sequências de Tarefas**.  
 
-3.  在“主页”  选项卡上的“创建”  组中，单击“创建任务序列”  以启动创建任务序列向导。  
+3.  Na guia **Início** , no grupo **Criar** , clique em **Criar Sequência de Tarefas** para iniciar o Assistente para Criar Sequência de Tarefas.  
 
-4.  在“创建新的任务序列”  页面上，选择“创建新的自定义任务序列” 。  
+4.  Na página **Criar uma nova sequência de tarefas** , selecione **Criar uma nova sequência de tarefas personalizada**.  
 
-5.  在“任务序列信息”  页面上，指定任务序列的名称和任务序列的描述。  
+5.  Na página **Informações da Sequência de Tarefas** , especifique um nome e uma descrição para a sequência de tarefas.  
 
-6.  指定任务序列的启动映像。 此启动映像用于使用 Windows PE 启动引用计算机。  有关详细信息，请参阅[管理启动映像](../get-started/manage-boot-images.md)。  
+6.  Especifique uma imagem de inicialização para a sequência de tarefas. Esta imagem de inicialização é usada para iniciar o computador de referência com o Windows PE.  Para obter mais informações, consulte [Gerenciar imagens de inicialização](../get-started/manage-boot-images.md).  
 
-7.  完成向导。  
+7.  Conclua o assistente.  
 
-8.  在“任务序列” 中，选择自定义任务序列，然后在“任务序列”  组中的“主页”  选项卡上，单击“编辑”  ，以打开任务序列编辑器。  
+8.  Em **Sequências de Tarefas**, selecione a sequência de tarefas personalizada e, em seguida, na guia **Início** no grupo **Sequência de Tarefas** , clique em **Editar** para abrir o editor de sequência de tarefas.  
 
-9. 仅当引用计算机上安装了 Configuration Manager 客户端时才使用此步骤。  
+9. Use esta etapa apenas se o cliente Configuration Manager estiver instalado no computador de referência.  
 
-     依次单击**添加**和**映像**，然后单击[准备 ConfigMgr 客户端以便捕获](../understand/task-sequence-steps.md#BKMK_PrepareConfigMgrClientforCapture)。 此任务序列步骤在引用计算机上获得 Configuration Manager 客户端，并且准备该客户端用于进行捕获（这是映像创建过程的一部分）。  
+     Clique em **Adicionar**, depois em **Imagens** e, em seguida, clique em [Preparar o Cliente do ConfigMgr para Captura](../understand/task-sequence-steps.md#BKMK_PrepareConfigMgrClientforCapture). Esta etapa usa o cliente do Configuration Manager no computador de referência e o prepara para a captura como parte do processo de geração de imagens.  
 
-10. 依次单**添加**和**映像**，然后单击[准备 Windows 以便捕获](../understand/task-sequence-steps.md#BKMK_PrepareWindowsforCapture)。 此任务序列操作运行 Sysprep，然后将计算机重新启动到为该任务序列指定的 Windows PE 启动映像。 要使此操作成功完成，引用计算机不可加入域。  
+10. Clique em **Adicionar**, depois em **Imagens** e, em seguida, clique em [Preparar o Windows para Captura](../understand/task-sequence-steps.md#BKMK_PrepareWindowsforCapture). Esta ação de sequência de tarefas executa o Sysprep e reinicia o computador na imagem de inicialização do Windows PE especificado para a sequência de tarefas. O computador de referência não deve estar associado a um domínio para essa ação ser concluída com êxito.  
 
-11. 依次单击**添加**和**映像**，然后单击[捕获操作系统映像](../understand/task-sequence-steps.md#BKMK_CaptureOperatingSystemImage)。  此任务序列步骤将仅从 Windows PE 运行，以捕获引用计算机上的硬盘驱动器。 对任务序列步骤配置下列设置。  
+11. Clique em **Adicionar**, depois em **Imagens** e, em seguida, clique em [Capturar Imagem do Sistema Operacional](../understand/task-sequence-steps.md#BKMK_CaptureOperatingSystemImage).  Essa etapa só será executada no Windows PE para capturar os discos rígidos no computador de referência. Defina as seguintes configurações para a etapa de sequência de tarefas.  
 
-    -   “名称” 和“描述” : Optionally, you can change the name of the task sequence step 和“描述” provide a description.  
+    -   **Nome** e **Descrição**: se desejar, você pode alterar o nome da etapa de sequência de tarefas e fornecer uma descrição.  
 
-    -   “目标”：指定存储输出 .WIM 文件的共享网络文件夹。 此文件包含以你通过使用此向导指定的设置为基础的操作系统映像。 如果指定包含现有 .WIM 文件的文件夹，则会覆盖现有文件。  
+    -   **Destino**: especifique uma pasta de rede compartilhada em que o arquivo de saída .WIM será armazenado. Esse arquivo contém a imagem do sistema operacional baseada nas configurações especificadas neste assistente. Se você especificar uma pasta que já contém um arquivo .WIM, o arquivo existente será substituído.  
 
-    -   “描述”, 和“创建者” （可选）提供有关将捕获的映像的详细信息。  
+    -   **Descrição**, **Versão**e **Criado por**: você também pode fornecer detalhes sobre a imagem que vai capturar.  
 
-    -   “捕获操作系统映像帐户”：指定对指定的网络共享具有权限的 Windows 帐户。 单击“设置”  以指定该 Windows 帐户的名称。  
+    -   **Capturar conta de imagem de sistema operacional**: especifique a conta do Windows que tem permissão para o compartilhamento de rede especificado. Clique em **Definir** para especificar o nome dessa conta do Windows.  
 
-     单击“确定”  关闭任务序列编辑器。  
+     Clique em **OK** para fechar do editor de sequência de tarefas.  
 
- 采用以下其中一种方式将任务序列部署到引用计算机：  
+ Implante a sequência de tarefas em um computador de referência em uma das seguintes maneiras:  
 
--   如果引用计算机为 Configuration Manager 客户端，则可以将任务序列部署到包含引用计算机的集合。 有关如何部署操作系统映像的信息，请参阅 [Create a task sequence to install an operating system](create-a-task-sequence-to-install-an-operating-system.md)（创建任务序列以安装操作系统）。  
+-   Se o computador de referência for um cliente do Configuration Manager, você poderá implantar a sequência de tarefas na coleção que contém o computador de referência. Para obter informações sobre como implantar a imagem do sistema operacional, veja [Criar uma sequência de tarefas para instalar um sistema operacional](create-a-task-sequence-to-install-an-operating-system.md).  
 
--   如果引用计算机不是 Configuration Manager 客户端，或者如果想手动在引用计算机上运行任务序列，则请运行“创建任务序列媒体向导”以创建可启动媒体。 有关如何创建可启动媒体的信息，请参阅[创建可启动媒体](create-bootable-media.md)。  
+-   Se o computador de referência não for um cliente do Configuration Manager ou se você desejar executar manualmente a sequência de tarefas no computador referência, execute o **Assistente para Criar Mídia de Sequência de Tarefas** para criar uma mídia inicializável. Para obter informações sobre como criar a mídia inicializável, consulte [Criar mídia inicializável](create-bootable-media.md).  
 
-##  <a name="BKMK_BuildandCaptureTSExample"></a> 用于构建和捕获操作系统映像的任务序列示例  
- 使用下表作为创建任务序列以构建和捕获操作系统映像时的指导。 该表将帮助您决定任务序列步骤的常规顺序，以及如何将这些任务序列步骤组织并构建成逻辑组。 你创建的任务序列可能与此示例有所不同，可以包含更多或较少的任务序列步骤和组。  
+##  <a name="BKMK_BuildandCaptureTSExample"></a> Sequências de tarefas para compilar e capturar uma imagem do sistema operacional  
+ Use a tabela a seguir como um guia conforme você cria uma sequência de tarefas que compila e captura uma imagem do sistema operacional. A tabela ajudará você a decidir a sequência geral de etapas da sequência de tarefas e como organizar e estruturar essas etapas de sequência de tarefas em grupos lógicos. A sequência de tarefas que você criar pode variar por meio desta amostra e pode conter mais ou menos grupos e etapas da sequência de tarefas.  
 
 > [!IMPORTANT]  
->  始终使用“创建任务序列向导”来创建此类型的任务序列。  
+>  Sempre use o assistente Criar sequência de tarefas para criar esse tipo de sequência de tarefas.  
 
- 使用“新任务序列”  创建此新任务序列时，如果您手动将这些任务序列步骤添加至现有任务序列，则某些任务序列步骤名称可能与应使用的名称不同。 下表显示了命名差异：  
+ Quando você usa a opção **Nova Sequência de Tarefas** para criar essa nova sequência de tarefas, alguns nomes desta etapa serão diferentes do que seriam se você adicionasse essas etapas de sequência de tarefas manualmente a uma sequência de tarefas existente. A tabela a seguir exibe as diferenças de nomenclatura:  
 
-|新建任务序列向导任务序列步骤名称|相当的任务序列编辑器步骤名称|  
+|Novo nome de etapa de sequência de tarefas do assistente Sequência de tarefas|Nome da etapa equivalente do Editor de sequência de tarefas|  
 |------------------------------------------------------|-----------------------------------------------|  
-|在 Windows PE 中重新启动|重新启动到 Windows PE 或硬盘|  
-|对磁盘 0 分区|格式化磁盘并分区|  
-|应用设备驱动程序|自动应用驱动程序|  
-|安装更新|安装软件更新|  
-|加入工作组|加入域或工作组|  
-|准备 ConfigMgr 客户端|Prepare ConfigMgr Client for Capture|  
-|准备操作系统|Prepare Windows for Capture|  
-|捕获引用计算机|捕获操作系统映像|  
+|Reiniciar no Windows PE|Reinicialize no Windows PE ou o disco rígido|  
+|Particionar Disco 0|Formatar e Particionar Disco|  
+|Aplicar Drivers de Dispositivo|Drivers de Aplicação Automática|  
+|Instalar atualizações|Instalar Atualizações de Software|  
+|Ingressar em grupo de trabalho|Ingressar no Domínio ou Grupo de Trabalho|  
+|Preparar cliente ConfigMgr|Prepare ConfigMgr Client for Capture|  
+|Preparar o sistema operacional|Prepare Windows for Capture|  
+|Capturar o computador de referência|Capturar imagem do sistema operacional|  
 
-|任务序列组/步骤|参考|  
+|Grupo/etapa de sequência de tarefas|Referência|  
 |-------------------------------|---------------|  
-|构建引用计算机 - **（新建任务序列组）**|创建任务序列组。 任务序列组将类似的任务序列步骤放在一起，以获得更佳的组织和错误控制。<br /><br /> 此组包含构建引用计算机所需的操作。|  
-|在 Windows PE 中重新启动|使用此任务序列步骤指定目标计算机的重新启动选项。 此步骤会向用户显示一则消息，指出将重新启动计算机以便可以继续安装。<br /><br /> 此步骤使用只读 **_SMSTSInWinPE** 任务序列变量。 如果关联值等于 **false** ，该任务序列步骤将继续。|  
-|对磁盘 0 分区|使用此任务序列步骤指定格式化目标计算机上的硬盘时所需的操作。 默认磁盘编号为 **0**。<br /><br /> 此步骤使用只读的 **_SMSTSClientCache** 任务序列变量。 如果 Configuration Manager 客户端缓存不存在，则会运行此步骤。|  
-|应用操作系统|使用此任务序列步骤在目标计算机上安装指定的操作系统映像。 此步骤首先删除目标计算机上相应的顺序磁盘卷上的所有文件（特定于 Configuration Manager 的控制文件除外），然后将 WIM 文件中包含的所有卷映像应用到该顺序磁盘卷。|  
-|应用 Windows 设置|使用此任务序列步骤配置目标计算机的 Windows 设置配置信息。|  
-|应用网络设置|使用此任务序列步骤指定目标计算机的网络或工作组配置信息。|  
-|应用设备驱动程序|使用此任务序列步骤匹配驱动程序，并将其作为操作系统部署的一部分进行安装。 你可以通过选择“考虑所有类别的驱动程序”  允许 Windows 安装程序搜索所有现有的驱动程序类别；或者选择“将驱动程序匹配限制为仅考虑所选类别的驱动程序” 以限制 Windows 安装程序搜索的驱动程序类别。<br /><br /> 此步骤使用只读 **_SMSTSMediaType** 任务序列变量。 如果关联值不等于 **FullMedia** ，则将运行此任务序列步骤。|  
-|安装 Windows 和 ConfigMgr|使用此任务序列步骤安装 Configuration Manager 客户端软件。 Configuration Manager 安装和注册 Configuration Manager 客户端 GUID。 你可以在“安装属性”  窗口中分配必要的安装参数。|  
-|安装更新|使用此任务序列步骤指定如何在目标计算机上安装软件更新。 在运行此任务序列步骤时，才会评估目标计算机是否有适用的软件更新。 此时，会与其他 Configuration Manager 托管客户端一样，评估目标计算机是否有合适的软件更新。<br /><br /> 此步骤使用只读 **_SMSTSMediaType** 任务序列变量。 如果关联值不等于 **FullMedia** ，则将运行此任务序列步骤。|  
-|捕获引用计算机 - **（新建任务序列组）**|创建其他任务序列组。 此组包含准备和捕获引用计算机的必需步骤。|  
-|加入工作组|使用此任务序列步骤来指定使目标计算机加入工作组需要的信息。|  
-|Prepare ConfigMgr Client for Capture|使用此步骤在引用计算机上获得 Configuration Manager 客户端，并且使其准备好以便捕获（这是映像创建过程的一部分）|  
-|准备操作系统|使用此任务序列步骤来指定当从引用计算机捕获 Windows 设置时要使用的 Sysprep 选项。 此任务序列步骤运行 Sysprep，然后将计算机重新启动到为该任务序列指定的 Windows PE 启动映像。|  
-|捕获操作系统映像|使用此任务序列步骤来访问特定的现有网络共享和在保存映像时使用的 .WIM 文件。 当使用“添加操作系统映像包向导” 添加操作系统映像包时，此位置用作包源位置。|  
+|Criar o computador de referência - **(novo grupo de sequências de tarefas)**|Criar um grupo de sequências de tarefas. Um grupo de sequências de tarefas mantém as etapas de sequência de tarefas semelhantes juntas para melhor organização e controle de erro.<br /><br /> Esse grupo contém as ações necessárias para criar um computador de referência.|  
+|Reiniciar no Windows PE|Use esta etapa para especificar as opções de reinicialização do computador de destino. Esta etapa exibirá uma mensagem para o usuário que o computador será reiniciado para que a instalação possa continuar.<br /><br /> Esta etapa usa a variável de sequência de tarefas **_SMSTSInWinPE** de somente leitura. Se o valor associado for igual a **falso** a etapa de sequência de tarefas continuará.|  
+|Particionar Disco 0|Use esta etapa para especificar as ações necessárias para formatar o disco rígido no computador de destino. O número de disco padrão é **0**.<br /><br /> Esta etapa usa a variável de sequência de tarefas **_SMSTSClientCache** de somente leitura. Esta etapa será executada se o cache do cliente do Configuration Manager não existir.|  
+|Aplicar Sistema Operacional|Use essa etapa de sequência de tarefas para instalar uma imagem especificada de sistema operacional no computador de destino. Essa etapa se aplica a todas as imagens de volume contidas no arquivo WIM para o volume de disco sequencial correspondente no computador de destino após o primeiro excluir todos os arquivos no volume (com exceção de arquivos de controle específicos do Configuration Manager).|  
+|Aplicar as Configurações do Windows|Use essa etapa de sequência de tarefas para ajustar as informações de definição das configurações do Windows no computador de destino.|  
+|Aplicar Configurações de Rede|Use esta etapa para especificar as informações de configuração de rede ou grupo de trabalho do computador de destino.|  
+|Aplicar Drivers de Dispositivo|Use esta etapa para corresponder e instalar unidades como parte da implantação do sistema operacional. Você pode permitir que a Instalação do Windows pesquise todas as categorias de driver existentes selecionando a opção **Considerar drivers de todas as categorias** ou limitar quais categorias de driver de Instalação do Windows pesquisarão ao selecionar a opção **Limitar a correspondência de driver para considerar somente os drivers em categorias selecionadas**.<br /><br /> Esta etapa usa a variável de sequência de tarefas **_SMSTSMediaType** somente leitura. Se o valor associado não for igual a **FullMedia** , essa etapa será executada.|  
+|Instalar Windows e ConfigMgr|Use essa etapa de sequência de tarefas para instalar o software cliente do Configuration Manager. O Configuration Manager instala e registra o GUID do cliente do Configuration Manager. Você pode atribuir os parâmetros necessários para a instalação na janela **Propriedades de instalação** .|  
+|Instalar atualizações|Use esta etapa de sequência de tarefas para especificar como as atualizações de software serão instaladas no computador de destino. O computador de destino não é avaliado para atualizações de software aplicáveis até que essa etapa de sequência de tarefas seja executada. Nesse momento, o computador de destino é avaliado para atualizações de software semelhantes a qualquer outro cliente gerenciado do Configuration Manager.<br /><br /> Esta etapa usa a variável de sequência de tarefas **_SMSTSMediaType** somente leitura. Se o valor associado não for igual a **FullMedia** , essa etapa será executada.|  
+|Capture o computador de referência - **(novo grupo de sequências de tarefas)**|Crie outro grupo de sequências de tarefas. Esse grupo contém as etapas necessárias para preparar e capturar um computador de referência.|  
+|Ingressar em grupo de trabalho|Use esta etapa de sequência de tarefas para especificar as informações necessárias para o computador de destino ingressar em um grupo de trabalho.|  
+|Prepare ConfigMgr Client for Capture|Use esta etapa para levar o cliente do Configuration Manager no computador de referência e prepará-lo para a captura como parte do processo de geração de imagens|  
+|Preparar o sistema operacional|Use esta etapa para especificar as opções do Sysprep para usar ao capturar configurações do Windows no computador de referência. Esta etapa de sequência de tarefas executa o Sysprep e reinicia o computador na imagem de inicialização do Windows PE especificado para a sequência de tarefas.|  
+|Capturar imagem do sistema operacional|Use essa etapa para inserir um compartilhamento de rede existente específico e um arquivo .WIM para usar ao salvar a imagem. Esse local é usado como o lugar de origem do pacote ao adicionar um pacote de imagem de sistema operacional usando o assistente **Adicionar de Pacote de Imagem de Sistema Operacional**.|  
 
- 从引用计算机中捕获了映像后，请不要从该引用计算机中捕获另一个操作系统映像，因为在初始配置过程中会创建注册表项。 请在每次捕获操作系统映像时创建新引用计算机。 如果计划使用同一引用计算机来创建将来的操作系统映像，请首先卸载 Configuration Manager 客户端，然后重新安装 Configuration Manager 客户端。  
+ Depois de capturar uma imagem de um computador de referência, não capture outra imagem do sistema operacional do computador de referência, pois as entradas do Registro são criadas durante a configuração inicial. Crie um novo computador de referência sempre que capturar a imagem do sistema operacional. Se você planeja usar o mesmo computador de referência para criar imagens futuras do sistema operacional, primeiramente, desinstale o cliente do Configuration Manager e depois instale-o novamente.  
 
-## <a name="next-steps"></a>后续步骤  
-[部署企业版操作系统的方法](methods-to-deploy-enterprise-operating-systems.md)
+## <a name="next-steps"></a>Próximas etapas  
+[Métodos para implantar sistemas operacionais corporativos](methods-to-deploy-enterprise-operating-systems.md)

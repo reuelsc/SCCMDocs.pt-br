@@ -1,6 +1,6 @@
 ---
-title: "规划本地 MDM | Microsoft Docs"
-description: "在 System Center Configuration Manager 中规划本地移动设备管理以管理移动设备。"
+title: Planejar o MDM local | Microsoft Docs
+description: "Planeje o Gerenciamento de Dispositivo Móvel local para gerenciar dispositivos móveis no System Center Configuration Manager."
 ms.custom: na
 ms.date: 03/05/2017
 ms.prod: configuration-manager
@@ -18,104 +18,104 @@ manager: angrobe
 ms.openlocfilehash: 544c3bea0c7df96887ee1717f061c39c64b82d01
 ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
 ms.translationtype: HT
-ms.contentlocale: zh-CN
+ms.contentlocale: pt-BR
 ms.lasthandoff: 08/07/2017
 ---
-# <a name="plan-for-on-premises-mobile-device-management-in-system-center-configuration-manager"></a>在 System Center Configuration Manager 中规划本地移动设备管理
+# <a name="plan-for-on-premises-mobile-device-management-in-system-center-configuration-manager"></a>Planejar o gerenciamento de dispositivo móvel local no System Center Configuration Manager
 
-*适用范围：System Center Configuration Manager (Current Branch)*
+*Aplica-se a: System Center Configuration Manager (Branch Atual)*
 
-在准备 Configuration Manager 基础结构以处理本地移动设备管理之前，请考虑以下要求。
+Considere os seguintes requisitos antes de preparar a infraestrutura do Configuration Manager para manipular o Gerenciamento de dispositivo móvel local.
 
-##  <a name="bkmk_devices"></a>支持的设备  
- 本地移动设备管理允许你使用内置于设备操作系统的管理功能来管理移动设备。  该管理功能基于开放移动联盟 (OMA) 设备管理 (DM) 标准，许多设备平台都使用此标准来允许对设备进行管理。  我们将它们称为“新式设备”（在文档和 Configuration Manager 控制台用户界面中），以将它们与其他需要 Configuration Manager 客户端来进行管理的设备区别开来。  
+##  <a name="bkmk_devices"></a> Dispositivos com suporte  
+ O Gerenciamento de Dispositivo Móvel local permite gerenciar dispositivos móveis usando os recursos de gerenciamento inseridos nos sistemas operacionais dos dispositivos.  A funcionalidade de gerenciamento baseia-se no padrão OMA DM (Gerenciamento de Dispositivo da Open Mobile Alliance), e várias plataformas de dispositivo usam esse padrão para permitir que os dispositivos sejam gerenciados.  Nós os chamamos de **dispositivos modernos** (na documentação e na interface do usuário do console do Configuration Manager) para diferenciá-los de outros dispositivos que exigem o cliente do Configuration Manager para gerenciá-los.  
 
  > [!NOTE]  
->  Configuration Manager 的 Current Branch 支持针对运行以下操作系统的设备的本地移动设备管理中的注册：  
+>  O branch atual do Configuration Manager dá suporte ao registro no Gerenciamento de Dispositivo Móvel Local para dispositivos que executam os seguintes sistemas operacionais:  
 >   
-> -  Windows 10 企业版  
-> -   Windows 10 专业版  
-> -   Windows 10 协同版\(自 Configuration Manager 版本 1602 起\)  
-> -   Windows 10 移动版  
-> -   Windows 10 移动企业版
-> -   Windows 10 IoT 企业版   
+> -  Windows 10 Enterprise  
+> -   Windows 10 Pro  
+> -   Windows 10 Team \(a partir do Configuration Manager versão 1602\)  
+> -   Windows 10 Mobile  
+> -   Windows 10 Mobile Enterprise
+> -   Windows 10 IoT Enterprise   
 
-##  <a name="bkmk_intune"></a>使用 Microsoft Intune 订阅  
- 若要开始使用本地移动设备管理，你需要 Microsoft Intune 订阅。 仅跟踪设备授权时需要订阅，订阅不用于管理或储存设备的管理信息。 所有管理均由你组织的企业使用本地 Configuration Manager 基础结构来进行。  
+##  <a name="bkmk_intune"></a> Uso da assinatura do Microsoft Intune  
+ Para começar a usar o Gerenciamento de dispositivo móvel local, você precisará de uma assinatura do Microsoft Intune. A assinatura apenas é necessária para acompanhar o licenciamento dos dispositivos e não é usada para gerenciar ou armazenar informações de gerenciamento dos dispositivos. Todo o gerenciamento é manipulado na empresa de sua organização usando a infraestrutura do Configuration Manager local.  
 
  > [!NOTE]  
- > 从版本 1610 开始，Configuration Manager 支持同时使用 Microsoft Intune 和本地 Configuration Manager 基础结构管理移动设备。   
+ > Com início na versão 1610, o Configuration Manager dá suporte ao gerenciamento de dispositivos móveis usando o Microsoft Intune e a infraestrutura local do Configuration Manager ao mesmo tempo.   
 
- 如果你的站点拥有具 Internet 连接性的设备，可使用 Intune 服务通知设备检查设备管理点是否有策略更新。 Intune 的这种用法仅限用于对面向 Internet 的设备进行通知。 无 Internet 连接（且不能由 Intune 连接）的设备依靠配置的轮询间隔来签入站点系统角色，从而实现管理功能。  
+ Se o site tiver dispositivos com conectividade com a Internet, o serviço do Intune poderá ser usado para notificar os dispositivos para verificar se há atualizações de política no ponto de gerenciamento de dispositivos. Esse uso do Intune é destinado estritamente à notificação somente de dispositivos conectados à Internet. Dispositivos sem conexão à Internet (e que não podem ser contatados pelo Intune) dependem do intervalo de sondagem configurado para fazer check-in nas funções do sistema de sites para executar funções de gerenciamento.  
 
 > [!TIP]  
->  我们建议先设置 Intune，然后再设置所需的站点系统角色，以最小化站点系统角色开始正常运行所需的时间。  
+>  Recomendamos que você configure o Intune antes de configurar as funções do sistema de sites necessárias para minimizar o tempo exigido para as funções do sistema de sites se tornarem funcionais.  
 
- 有关如何设置 Intune 订阅的信息，请参阅[在 System Center Configuration Manager 中为本地移动设备管理设置 Microsoft Intune 订阅](../../mdm/get-started/set-up-intune-subscription-on-premises-mdm.md)。  
+ Para obter informações sobre como configurar a assinatura do Intune, consulte [Configure uma assinatura do Microsoft Intune para o gerenciamento de dispositivo móvel local no System Center Configuration Manager](../../mdm/get-started/set-up-intune-subscription-on-premises-mdm.md).  
 
-##  <a name="bkmk_roles"></a>所需站点系统角色  
- 本地移动设备管理需要至少一个以下站点系统角色：  
+##  <a name="bkmk_roles"></a> Funções do sistema de sites necessárias  
+ O Gerenciamento de Dispositivo Móvel local requer, pelo menos, uma de cada uma das seguintes funções do sistema de sites:  
 
--   **注册代理点** ，用于支持注册请求。  
+-   **Ponto proxy do registro** para dar suporte a solicitações de registro.  
 
--   **注册点** ，用于支持设备注册。  
+-   **Ponto de registro** para dar suporte ao registro de dispositivo.  
 
--   **设备管理点** ，用于策略传递。 此站点系统角色是管理点角色的变体，后者已配置为允许移动设备管理。  
+-   **Ponto de gerenciamento de dispositivos** para a entrega da política. Essa função do sistema de sites é uma variação da função do ponto de gerenciamento que foi configurada para permitir o gerenciamento de dispositivo móvel.  
 
--   **分发点** ，用于内容传递。  
+-   **Ponto de distribuição** para entrega do conteúdo.  
 
--   **服务连接点**，用于连接到 Intune 以通知位于防火墙外的设备。  
+-   **Ponto de conexão de serviço** para se conectar ao Intune para notificar dispositivos fora do firewall.  
 
- 这些站点系统角色可以安装在单个站点系统服务器上，或者根据组织的需要分别运行在不同的服务器上。 用于本地移动设备管理的每个站点系统服务器都必须配置为 HTTPS 终结点，以便与受信任的设备通信。 有关详细信息，请参阅 [所需受信任的通信](#bkmk_trustedComs)。  
+ Essas funções do sistema de sites podem ser instaladas no único servidor de sistema de sites ou podem ser executadas separadamente em servidores diferentes de acordo com as necessidades de sua organização. Cada servidor do sistema de sites usado para o Gerenciamento de Dispositivo Móvel local deve ser configurado como um ponto de extremidade HTTPS para a comunicação com dispositivos confiáveis. Para obter mais informações, consulte [Comunicação confiável necessária](#bkmk_trustedComs).  
 
- 有关规划站点系统角色的详细信息，请参阅 [为 System Center Configuration Manager 规划站点系统服务器和站点系统角色](../../core/plan-design/hierarchy/plan-for-site-system-servers-and-site-system-roles.md)。  
+ Para obter mais informações sobre como planejar funções do sistema de sites, veja [Planejamento para servidores de sistema de sites e funções de sistema de sites no System Center Configuration Manager](../../core/plan-design/hierarchy/plan-for-site-system-servers-and-site-system-roles.md).  
 
- 有关如何添加所需站点系统角色的详细信息，请参阅 [在 System Center Configuration Manager 中为本地移动设备管理安装站点系统角色](../../mdm/get-started/install-site-system-roles-for-on-premises-mdm.md)。  
+ Para obter mais informações sobre como adicionar as funções do sistema de sites necessárias, veja [Instalar funções do sistema de sites para o gerenciamento de dispositivo móvel local no System Center Configuration Manager](../../mdm/get-started/install-site-system-roles-for-on-premises-mdm.md).  
 
-##  <a name="bkmk_trustedComs"></a>所需受信任的通信  
- 本地移动设备管理要求启用站点系统角色以进行 HTTPS 通信。 根据需要，你可以使用企业的证书颁发机构 (CA) 在服务器和设备之间建立受信任的连接，或者使用公开发布的 CA 作为受信任的颁发机构。  无论哪种方式，你都需要在托管所需站点系统角色的站点系统服务器上用 IIS 配置 Web 服务器证书，并且需要在要连接到那些服务器的设备上安装该 CA 的根证书。  
+##  <a name="bkmk_trustedComs"></a> Comunicação confiável necessária  
+ O Gerenciamento de Dispositivo Móvel local exige que as funções do sistema de sites sejam habilitadas para a comunicação HTTPS. Dependendo de suas necessidades, é possível usar a AC (autoridade de certificação) de sua empresa para estabelecer as conexões confiáveis entre servidores e dispositivos ou usar uma AC disponível publicamente para ser a autoridade confiável.  De qualquer forma, você precisará que um certificado de servidor Web seja configurado com o IIS nos servidores do sistema de sites que hospedam as funções do sistema de sites necessárias; além disso, você precisará do certificado raiz da AC instalado nos dispositivos que precisam se conectar aos servidores.  
 
- 如果你使用企业的 CA 建立受信任的通信，则需要执行下列任务：  
+ Se você usar a AC de sua empresa para estabelecer uma comunicação confiável, será necessário realizar as seguintes tarefas:  
 
--   在 CA 上创建和颁发 Web 服务器证书模板。  
+-   Crie e emita o modelo de certificado do servidor Web na AC.  
 
--   为托管所需站点系统角色的每个站点系统服务器请求一个 Web 服务器证书。  
+-   Solicite um certificado do servidor Web para cada servidor do sistema de sites que hospeda uma função do sistema de sites necessária.  
 
--   在站点系统服务器上配置 IIS 以使用所需的 Web 服务器证书。  
+-   Configure o IIS no servidor do sistema de sites para usar o certificado de servidor Web solicitado.  
 
- 对于已加入企业 Active Directory 域的设备，企业 CA 的根证书在受信任连接的设备上已经可用。 这意味着使用站点系统服务器的 HTTPS 连接将自动信任已加入域的设备（如台式计算机）。 但是，未加入域的设备（通常为移动设备）将不安装所需根证书。 将需要在这些设备上手动安装根证书，才能与支持本地移动设备管理的站点系统服务器成功通信。  
+ Para dispositivos ingressados no domínio do Active Directory corporativo, o certificado raiz da AC corporativa já está disponível no dispositivo para conexões confiáveis. Isso significa que os dispositivos ingressados no domínio (como computadores desktop) serão automaticamente confiáveis para conexões HTTPS com os servidores do sistema de sites. No entanto, dispositivos não ingressados no domínio (normalmente móveis) não terão o certificado raiz necessário instalado. Esses dispositivos exigirão a instalação manual do certificado raiz para que eles se comuniquem com êxito com os servidores do sistema de sites que dão suporte ao Gerenciamento de Dispositivo Móvel local.  
 
- 你必须导出所颁发 CA 的根证书供各设备使用。 要获取根证书文件，你可以使用 CA 导出它，或者采用更简单的方法，即使用由 CA 颁发的 Web 服务器证书提取根目录并创建根证书文件。   然后，必须将根证书传递到设备。  传递方法示例包括  
+ É necessário exportar o certificado raiz da AC emissora para uso pelos dispositivos individuais. Para obter o arquivo do certificado raiz, é possível exportá-lo usando a AC; outro método mais simples é usar o certificado do servidor Web emitido pela AC para extrair a raiz e criar um arquivo do certificado raiz.   Em seguida, o certificado raiz deve ser entregue ao dispositivo.  Alguns métodos de entrega de exemplo incluem  
 
--   文件系统  
+-   Sistema de arquivos  
 
--   电子邮件附件  
+-   Anexo de email  
 
--   内存卡  
+-   Cartão de memória  
 
--   受限设备  
+-   Dispositivo vinculado  
 
--   云存储（例如 OneDrive）  
+-   Armazenamento em nuvem (como OneDrive)  
 
--   近场通信 (NFC) 连接  
+-   Conexão NFC (comunicação a curta distância)  
 
--   条形码扫描程序  
+-   Scanner de código de barras  
 
--   现成体验 (OOBE) 预配包  
+-   Pacote de provisionamento OOBE (tela de apresentação)  
 
- 有关详细信息，请参阅 [Set up certificates for trusted communications for On-premises Mobile Device Management in System Center Configuration Manager](../../mdm/get-started/set-up-certificates-on-premises-mdm.md)。  
+ Para obter mais informações, consulte [Set up certificates for trusted communications for On-premises Mobile Device Management in System Center Configuration Manager](../../mdm/get-started/set-up-certificates-on-premises-mdm.md)  
 
-##  <a name="bkmk_enrollment"></a>注册注意事项  
- 若要为本地移动设备管理启用设备注册，必须向用户授予注册权限，且其设备必须能够与承载所需站点系统角色的站点系统服务器实现受信任的通信。  
+##  <a name="bkmk_enrollment"></a> Considerações sobre registro  
+ Para habilitar o registro de dispositivo para o Gerenciamento de Dispositivo Móvel local, os usuários devem ter permissão de registro e seus dispositivos devem poder ter uma comunicação confiável com os servidores do sistema de sites que hospedam as funções do sistema de sites necessárias.  
 
- 可以通过在 Configuration Manager 客户端设置中设置注册配置文件，来授予用户注册权限。 你可以使用默认客户端设置将注册配置文件推送到所有已发现的用户；或者在自定义客户端设置中设置注册配置文件，并将设置推送到一个或多个用户集合。  
+ A concessão da permissão de registro de usuário pode ser obtida por meio da configuração de um perfil de registro nas configurações do cliente do Configuration Manager. É possível usar as configurações padrão do cliente para enviar por push o perfil de registro para todos os usuários descobertos ou configurar o perfil de registro nas configurações personalizadas do cliente e enviar por push as configurações para uma ou mais coleções de usuários.  
 
- 授予用户注册权限后，用户即可注册其自己的设备。 要进行注册，用户的设备必须具有颁发托管站点系统角色的站点系统服务器上所用 Web 服务器证书的证书颁发机构 (CA) 的根证书。  
+ Com a permissão de registro de usuário concedida, os usuários podem registrar seus próprios dispositivos. Para ser registrado, o dispositivo do usuário deve ter o certificado raiz da AC (autoridade de certificação) que emitiu o certificado do servidor Web usado nos servidores do sistema de sites que hospedam as funções do sistema de sites necessárias.  
 
- 除用户启动的注册外，你还可以设置一个允许在没有用户干预的情况下注册设备的批量注册包。 可在最初配置此注册包以供使用之前，或在设备完成其 OOBE 流程之后将此注册包传递到设备。  
+ Como uma alternativa ao registro iniciado pelo usuário, é possível configurar um pacote de registro em massa que permite que o dispositivo seja registrado sem a intervenção do usuário. Esse pacote pode ser entregue ao dispositivo antes que ele seja inicialmente provisionado para uso ou depois que o dispositivo passar pelo processo OOBE.  
 
- 有关如何设置和注册设备的详细信息，请参阅  
+ Para obter mais informações sobre como configurar e registrar dispositivos, veja  
 
--   [在 System Center Configuration Manager 中为本地移动设备管理设置设备注册](../../mdm/get-started/set-up-device-enrollment-on-premises-mdm.md)  
+-   [Configurar o registro de dispositivo para o gerenciamento de dispositivo móvel local no System Center Configuration Manager](../../mdm/get-started/set-up-device-enrollment-on-premises-mdm.md)  
 
--   [在 System Center Configuration Manager 中为本地移动设备管理注册设备](../../mdm/deploy-use/enroll-devices-on-premises-mdm.md)  
+-   [Registrar dispositivos para o gerenciamento de dispositivo móvel local no System Center Configuration Manager](../../mdm/deploy-use/enroll-devices-on-premises-mdm.md)  

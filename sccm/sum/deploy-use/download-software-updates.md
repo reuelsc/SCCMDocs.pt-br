@@ -1,6 +1,6 @@
 ---
-title: "下载软件更新 - Configuration Manager | Microsoft Docs"
-description: "使用下载软件更新向导下载软件更新，并将它们分发到分发点，以准备部署到客户端。"
+title: "Baixar atualizações de software – Configuration Manager | Microsoft Docs"
+description: "Use o assistente para baixar atualizações de software e distribuí-las aos pontos de distribuição para estarem prontas para implantação nos clientes."
 keywords: 
 author: dougeby
 ms.author: dougeby
@@ -14,21 +14,21 @@ ms.assetid: de78e8d3-043f-4cd3-97e0-4dfb824fd3fb
 ms.openlocfilehash: f38f72f9f547b82c92789f02975cbd0193b79b2d
 ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
 ms.translationtype: HT
-ms.contentlocale: zh-CN
+ms.contentlocale: pt-BR
 ms.lasthandoff: 08/07/2017
 ---
-# <a name="download-software-updates"></a>下载软件更新  
+# <a name="download-software-updates"></a>Baixar atualizações de software  
 
-*适用范围：System Center Configuration Manager (Current Branch)*
+*Aplica-se a: System Center Configuration Manager (Branch Atual)*
 
-你可以使用一些方法在 Configuration Manager 中下载软件更新。 创建自动部署规则 (ADR) 或手动部署软件更新时，软件更新会下载到站点服务器上的内容库。 随后软件更新会复制到与配置的部署包关联的分发点上的内容库。 如果要在部署软件更新之前下载软件更新，则可以使用下载更新向导。 通过执行此操作，你可以在将软件更新部署到客户端计算机之前验证软件更新在分发点上是否可用。  
+Existem diversos métodos disponíveis para baixar atualizações de software no Configuration Manager. Quando você cria uma ADR (regra de implantação automática) ou implanta manualmente atualizações de software, as atualizações de software são baixadas para a biblioteca de conteúdo no servidor do site. Em seguida, as atualizações de software são copiadas para a biblioteca de conteúdo nos pontos de distribuição que estão associados ao pacote de implantação configurado. Se você quiser baixar as atualizações de software antes de implantá-las, você poderá usar o Assistente de Atualizações de Download. Isso permitirá verificar se as atualizações de software estão disponíveis nos pontos de distribuição antes da implantação das atualizações de software nos computadores cliente.  
 
 > [!NOTE]  
->  有关监视内容状态的信息，请参阅 [Content status monitoring](../deploy-use/monitor-software-updates.md#BKMK_ContentStatus)。  
+>  Para obter informações sobre como monitorar o status do conteúdo, veja [Content status monitoring](../deploy-use/monitor-software-updates.md#BKMK_ContentStatus).  
 
-使用以下过程和下载软件更新向导下载软件更新。  
+Use o procedimento a seguir para baixar atualizações de software usando o Assistente para Baixar Atualizações de Software.  
 
-#### <a name="to-download-software-updates"></a>下载软件更新  
+#### <a name="to-download-software-updates"></a>Para baixar atualizações de software  
 [!INCLUDE[downloadupdates](..\includes\downloadupdates.md)]
 <!---
 1.  In the Configuration Manager console, navigate to **Software Library** > **Software Updates**.  

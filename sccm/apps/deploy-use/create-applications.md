@@ -1,6 +1,6 @@
 ---
-title: "创建应用程序 | Microsoft Docs"
-description: "使用 System Center Configuration Manager 创建和部署应用程序和部署类型。"
+title: Criar aplicativos | Microsoft Docs
+description: "Criar e implantar aplicativos e tipos de implantação com o System Center Configuration Manager."
 ms.custom: na
 ms.date: 10/06/2016
 ms.prod: configuration-manager
@@ -18,460 +18,460 @@ manager: angrobe
 ms.openlocfilehash: 4d048d4f9ab01b28e6c21a38cca4d82c85030618
 ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
 ms.translationtype: HT
-ms.contentlocale: zh-CN
+ms.contentlocale: pt-BR
 ms.lasthandoff: 08/07/2017
 ---
-# <a name="create-applications-with-system-center-configuration-manager"></a>使用 System Center Configuration Manager 创建应用程序
+# <a name="create-applications-with-system-center-configuration-manager"></a>Criar aplicativos com o System Center Configuration Manager
 
-*适用范围：System Center Configuration Manager (Current Branch)*
+*Aplica-se a: System Center Configuration Manager (Branch Atual)*
 
-System Center Configuration Manager 应用程序具有将软件部署到设备所需的文件和信息。 应用程序具有一个或多个构成安装文件的部署类型以及安装软件所需的信息。 部署类型还具有指定软件的部署时间和方法的规则。  
+Um aplicativo do System Center Configuration Manager tem os arquivos e as informações que são necessários para implantar o software em um dispositivo. Um aplicativo tem um ou mais tipos de implantação que abrangem os arquivos de instalação e as informações que são necessários para instalar o software. Um tipo de implantação também tem regras que especificam quando e como o software é implantado.  
 
- 可以使用下列方法创建应用程序：  
+ Você pode criar aplicativos com os seguintes métodos:  
 
--   通过读取应用程序安装文件来自动创建应用程序和部署类型。  
+-   Crie automaticamente os aplicativos e tipos de implantação, lendo os arquivos de instalação do aplicativo.  
 
--   手动创建应用程序并稍后添加部署类型。  
+-   Crie manualmente o aplicativo e adicione tipos de implantação posteriormente.  
 
--   从文件导入应用程序。  
+-   Importe um aplicativo de um arquivo.  
 
 > [!NOTE]  
->  [针对移动设备创建应用程序](../../mdm/deploy-use/create-applications.md)详细介绍了如何创建 iOS、Windows Phone 和 Android 应用程序。  
+>  [Criar aplicativos para dispositivos móveis ](../../mdm/deploy-use/create-applications.md) fornece informações detalhadas sobre a criação de aplicativos para Android, Windows Phone e iOS.  
 
-使用下列步骤创建 Configuration Manager 应用程序和部署类型。  
+Use as seguintes etapas para criar aplicativos e tipos de implantação do Configuration Manager.  
 
-## <a name="start-the-create-application-wizard"></a>启动创建应用程序向导  
+## <a name="start-the-create-application-wizard"></a>Iniciar o assistente para criar aplicativo  
 
-1.  在 Configuration Manager 控制台中，选择“软件库” > “应用程序管理” > “应用程序”。  
+1.  No console do Configuration Manager, escolha **Biblioteca de Software** > **Gerenciamento de Aplicativos** > **Aplicativos**.  
 
-3.  在“主页”选项卡上的“创建”组中，选择“创建应用程序”。  
+3.  Na guia **Início**, no grupo **Criar**, escolha **Criar Aplicativo**.  
 
-## <a name="specify-whether-you-want-to-automatically-detect-application-information-or-manually-define-the-information"></a>指定是要自动检测应用程序信息还是手动定义该信息  
+## <a name="specify-whether-you-want-to-automatically-detect-application-information-or-manually-define-the-information"></a>Especifique se deseja detectar automaticamente ou definir manualmente as informações do aplicativo  
 
--   如果要创建具有单一部署类型（例如没有依赖关系或要求的 Windows Installer 文件）的简单应用程序，请使用“自动检测应用程序信息”。 使用此过程创建了应用程序后，你可以根据需要对其进行编辑，以便添加或更改部署类型以及添加检测方法、依赖关系或要求。  
+-   Detecte automaticamente as informações do aplicativo para criar um aplicativo simples com um único tipo de implantação, como um arquivo do Windows Installer sem dependências ou requisitos. Criado o aplicativo com esse procedimento, você pode editá-lo conforme necessário para adicionar ou alterar os tipos de implantação e adicionar métodos de detecção, dependências ou requisitos.  
 
--   使用“手动指定应用程序信息”来创建具有多个部署类型、依赖关系、检测方法或要求的更复杂的应用程序。  
+-   Especifique manualmente as informações do aplicativo para criar aplicativos mais complexos e com vários tipos de implantação, dependências, métodos de detecção ou requisitos.  
 
-### <a name="automatically-detect-application-information"></a>自动检测应用程序信息  
+### <a name="automatically-detect-application-information"></a>Detectar automaticamente as informações do aplicativo  
 
-1.  在“创建应用程序向导”的“常规”  页上，选择“自动检测安装文件中有关此应用程序的信息” 。  
+1.  Na página **Geral** do Assistente para Criar Aplicativo, selecione **Detectar automaticamente informações sobre este aplicativo em arquivos de instalação**.  
 
-2.  在“类型”  下拉列表中，选择要用于检测应用程序信息的应用程序安装文件类型。 有关可用安装类型的信息，请参阅本主题中的 [Configuration Manager 支持的部署类型](/sccm/apps/deploy-use/create-applications#deployment-types-supported-by-configuration-manager)。  
+2.  Na lista suspensa **Tipo** , selecione o tipo de arquivo de instalação do aplicativo que deseja usar para detectar as informações do aplicativo. Para obter informações sobre os tipos de instalação disponíveis, consulte [Tipos de implantação com suporte do Configuration Manager](/sccm/apps/deploy-use/create-applications#deployment-types-supported-by-configuration-manager) neste tópico.  
 
-3.  在“位置”框中，（以 *\\\\server\\share\\\filename* 格式）指定 UNC 路径或指定要用来检测应用程序信息的应用程序安装文件的存储链接。 或者，单击“浏览”以浏览到安装文件。  
+3.  Na caixa **Local**, especifique o caminho UNC (no formato *\\\\servidor\\compartilhamento\\\nome do arquivo*) ou o link do repositório para o arquivo de instalação do aplicativo que você deseja usar para detectar informações do aplicativo. Como alternativa, clique em **Procurar** para localizar o arquivo de instalação.  
 
     > [!IMPORTANT]  
-    >  如果选择“Windows Installer(\*.msi 文件)”作为应用程序类型，则指定文件夹中的所有文件都将随应用程序导入，并将发送到分发点。 请确保指定的文件夹中只有安装应用程序所必需的文件。 Configuration Manager 经测试可支持应用程序包中多达 20,000 个应用程序文件。 如果应用程序具有更多文件，请考虑创建具有较少数量文件的多个应用程序。  
+    >  Quando você seleciona **Windows Installer (arquivo \*.msi)** como um tipo de aplicativo, todos os arquivos da pasta especificada serão importados com o aplicativo e enviados aos pontos de distribuição. Verifique se a pasta especificada contém apenas os arquivos necessários instalar o aplicativo. O Configuration Manager foi testado para dar suporte a até 20.000 arquivos de aplicativo no pacote do aplicativo. Se o aplicativo tiver mais arquivos, considere a criação de vários aplicativos com um número menor de arquivos.  
 
-    >  对于包含应用程序的 UNC 路径以及包含应用程序内容的任何子文件夹，用户必须具有访问权限。  
+    >  Você deve ter acesso ao caminho UNC que contém o aplicativo e a todas as subpastas que contêm o conteúdo do aplicativo.  
 
-4.  在“创建应用程序向导”的“导入信息”页上，查看已导入的信息，然后选择“下一步”。 如有必要，可以选择“上一步”以返回并修复任何错误。  
+4.  Na página **Importar Informações** do Assistente para Criar Aplicativo, examine as informações que foram importadas e, em seguida, escolha **Avançar**. Caso seja necessário, escolha **Anterior** para voltar e corrigir quaisquer erros.  
 
-5.  在“创建应用程序向导”的“常规信息”页上，指定以下信息：  
+5.  Na página **Informações Gerais** do Assistente para Criar Aplicativo, especifique as seguintes informações:  
 
     > [!NOTE]  
-    >  如果已从应用程序安装文件中自动获取了其中的一些信息，这些信息可能已填充。 此外，显示的选项可能会因创建的应用程序类型而异。  
+    >  Algumas dessas informações já podem estar fornecidas se foram obtidas automaticamente dos arquivos de instalação do aplicativo. Além disso, as opções exibidas podem ser diferentes dependendo do tipo de aplicativo que você criar.  
 
-    -   有关应用程序的常规信息（例如应用程序名称、备注、版本以及可选的引用）有助于在 Configuration Manager 控制台中查找应用程序。  
+    -   Informações gerais sobre o aplicativo, como nome do aplicativo, comentários, versão e uma referência opcional para ajudá-lo a localizar o aplicativo no console do Configuration Manager.  
 
-    -   **安装程序** - 指定安装应用程序部署类型所需的安装程序和任何必需属性。  
+    -   **Programa de instalação** – especifique o programa de instalação e as propriedades necessárias para instalar o tipo de implantação do aplicativo.  
 
         > [!TIP]  
-        >  如果未显示安装程序，请选择“浏览”并浏览到安装程序位置。  
+        >  Se o programa de instalação não aparecer, escolha **Procurar** e procure local do programa de instalação.  
 
-    -   **安装行为** - 指定是仅为当前已登录用户还是为所有用户安装应用程序部署类型。 你也可以指定为所有用户安装部署类型（如果部署到设备）或仅安装到指定用户（如果部署到用户）。  
+    -   **Comportamento da instalação** – especifique se o tipo de implantação do aplicativo será instalado somente para o usuário conectado no momento ou para todos os usuários. Você também poderá especificar se o tipo de implantação será instalado para todos os usuários se for implantado em um dispositivo ou somente para um usuário específico se for implantado para um usuário.  
 
-    -   **使用自动 VPN 连接(若已配置)** - 如果向启动应用程序的设备部署了 VPN 配置文件，则在应用启动时启动 VPN 连接（仅适用于 Windows 8.1 和 Windows Phone 8.1）。  
+    -   **Usar uma conexão VPN automática (se estiver configurada)** – se houver um perfil VPN implantado no dispositivo no qual o aplicativo será iniciado, inicie a conexão VPN quando o aplicativo for iniciado (somente Windows 8.1 e Windows Phone 8.1).  
 
-         在 Windows Phone 8.1 设备上，如果有多个 VPN 配置文件部署到设备，则不支持自动 VPN 连接。  
+         Em dispositivos Windows Phone 8.1, não há suporte para conexões VPN automáticas se mais de um perfil VPN tiver sido implantado no dispositivo.  
 
-         有关 VPN 配置文件的详细信息，请参阅 [VPN 配置文件](../../protect/deploy-use/vpn-profiles.md)。  
+         Para obter mais informações sobre perfis VPN, consulte [perfis VPN](../../protect/deploy-use/vpn-profiles.md).  
 
-6.  选择“下一步” ，查看“摘要”页上的应用程序信息，然后完成“创建应用程序向导”。  
+6.  Escolha **Avançar**, examine as informações do aplicativo na página **Resumo** e, em seguida, conclua o Assistente para Criar Aplicativo.  
 
-新的应用程序显示在 Configuration Manager 控制台中的“应用程序”节点中，你已经完成创建应用程序。 如果想要将更多部署类型添加到应用程序，请参阅本主题中的[为应用程序创建部署类型](/sccm/apps/deploy-use/create-applications#create-deployment-types-for-the-application)。  
+O novo aplicativo aparece no nó **Aplicativos** no console do Configuration Manager e você concluiu o processo de criação de aplicativo. Se quiser adicionar mais tipos de implantação ao aplicativo, consulte [Criar tipos de implantação para o aplicativo](/sccm/apps/deploy-use/create-applications#create-deployment-types-for-the-application) neste tópico.  
 
-### <a name="manually-specify-application-information"></a>手动指定应用程序信息  
+### <a name="manually-specify-application-information"></a>Especificar manualmente as informações do aplicativo  
 
-1.  在“创建应用程序向导”的“常规”页上，选择“手动指定应用程序信息”，然后选择“下一步”。  
+1.  Na página **Geral** do Assistente para Criar Aplicativo, selecione **Especificar manualmente as informações do aplicativo** e escolha **Avançar**.  
 
-2.  指定有关应用程序的常规信息（例如应用程序名称、备注、版本以及可选的引用）有助于在 Configuration Manager 控制台中查找应用程序。  
+2.  Especifica informações gerais sobre o aplicativo, como nome do aplicativo, comentários, versão e uma referência opcional para ajudá-lo a localizar o aplicativo no console do Configuration Manager.  
 
-3.  在“创建应用程序向导”的“应用程序目录”页上，指定以下信息：  
+3.  Na página **Catálogo de Aplicativos** do Assistente para Criar Aplicativo, especifique as seguintes informações:  
 
-    -   **所选语言** - 在下拉列表中选择要设置的应用程序的语言版本。 选择“添加/删除”，为此应用程序设置更多语言。  
+    -   **Idioma Selecionado** – na lista suspensa, selecione a versão de idioma do aplicativo que deseja configurar. Escolha **Adicionar/Remover** para configurar mais idiomas para esse aplicativo.  
 
-    -   **本地化的应用程序名称** - 以在“所选语言”下拉列表中选择的语言指定应用程序名称。  
+    -   **Nome do aplicativo localizado** – especifique o nome do aplicativo no idioma que você selecionou na lista suspensa **Idioma selecionado**.  
 
         > [!IMPORTANT]  
-        >  用户必须为设置的每个语言版本指定一个本地化应用程序名称。  
+        >  Você deve especificar um nome de aplicativo localizado para cada versão do idioma configurado.  
 
-    -   **用户类别** - 选择“编辑”以使用“所选语言”下拉列表中选择的语言指定应用程序类别。 软件中心的用户可以使用这些所选类别来帮助对可用应用程序进行筛选和排序。  
+    -   **Categorias de usuário** – escolha **Editar** para especificar as categorias de aplicativo no idioma que você selecionou na lista suspensa **Idioma Selecionado**. Os usuários do Centro de Software podem usar essas categorias selecionadas para ajudar a filtrar e classificar os aplicativos disponíveis.  
 
-    -   **用户文档** - 选择“浏览”指定文件的 URL 或 UNC 路径和文件名，软件中心的用户可阅读该文件来获取有关此应用程序的详细信息。  
+    -   **Documentação do usuário** – escolha **Procurar** para especificar a URL ou o caminho UNC e o nome do arquivo que os usuários do Centro de Software podem ler para obter mais informações sobre este aplicativo.  
 
-    -   **链接文本** - 指定将取代应用程序的 URL 显示的文本。  
+    -   **Texto do link** – especifique o texto que será exibido no lugar da URL do aplicativo.  
 
-    -   **应用程序隐私 URL** - 指定链接到应用程序的隐私声明的 URL。  
+    -   **URL de Privacidade do Aplicativo** – especifique uma URL que vincule à política de privacidade do aplicativo.  
 
-    -   **本地化的描述** - 以在“所选语言”下拉列表中选择的语言为此应用程序输入描述。  
+    -   **Descrição localizada** – insira uma descrição para este aplicativo no idioma que você selecionou na lista suspensa **Idioma Selecionado**.  
 
-    -   **关键字** - 以在“所选语言”下拉列表中选择的语言输入关键字的列表。 这些关键字将帮助软件中心的用户搜索应用程序。  
+    -   **Palavras-chave** – insira uma lista de palavras-chave no idioma que você selecionou na lista suspensa **Idioma Selecionado**. Essas palavras-chave ajudarão os usuários na pesquisa do aplicativo no Centro de Software.  
 
-    -   **图标** - 选择“浏览”从可用图标中为此应用程序选择一个图标。 如果不指定图标，则会为此应用程序使用默认图标。  
+    -   **Ícone** – escolha **Procurar** para selecionar um ícone para esse aplicativo entre os ícones disponíveis. Se você não especificar um ícone, um ícone padrão será usado para esse aplicativo.  
 
-    -   **将此应用显示为特色应用并在公司门户中突出显示** - 选择此选项可在公司门户中突出显示应用。  
+    -   **Exibir como um aplicativo em destaque e realçá-lo no portal da empresa** – selecione essa opção para exibir o aplicativo em destaque no portal da empresa.  
 
-4.  在“创建应用程序”向导的“部署类型”页上，选择“添加”创建一个新部署类型。  
+4.  Na página **Tipos de Implantação** do Assistente para Criar Aplicativo, escolha **Adicionar** para criar um novo tipo de implantação.  
 
- 有关详细信息，请参阅[为应用程序创建部署类型](/sccm/apps/deploy-use/create-applications#create-deployment-types-for-the-application)。  
+ Para obter mais informações, consulte [Criar tipos de implantação para o aplicativo](/sccm/apps/deploy-use/create-applications#create-deployment-types-for-the-application).  
 
-5.  选择“下一步” ，查看“摘要”页上的应用程序信息，然后完成“创建应用程序向导”。  
+5.  Escolha **Avançar**, examine as informações do aplicativo na página **Resumo** e, em seguida, conclua o Assistente para Criar Aplicativo.  
 
-新应用程序会出现在 Configuration Manager 控制台的“应用程序”节点中。  
+O novo aplicativo aparece no nó **Aplicativos** do console do Configuration Manager.  
 
-##  <a name="create-deployment-types-for-the-application"></a>为应用程序创建部署类型  
- 如果在“创建部署类型向导”的“常规”页上选择“从安装文件中自动识别有关此部署类型的信息”，则可能无需完成下列过程中的某些步骤。  
+##  <a name="create-deployment-types-for-the-application"></a>Criar tipos de implantação para o aplicativo  
+ Se você selecionar **Identificar automaticamente as informações sobre esse tipo de implantação nos arquivos de instalação** na página **Geral** do Assistente para Criar Tipo de Implantação, talvez não seja necessário concluir algumas das etapas nos procedimentos a seguir.  
 
-## <a name="start-the-create-deployment-type-wizard"></a>启动创建部署类型向导  
+## <a name="start-the-create-deployment-type-wizard"></a>Iniciar o assistente para criar tipo de implantação  
 
-1.  在 Configuration Manager 控制台中，选择“软件库” > “应用程序管理” > “应用程序”。  
+1.  No console do Configuration Manager, escolha **Biblioteca de Software** > **Gerenciamento de Aplicativos** > **Aplicativos**.  
 
-3.  选择应用程序，然后在“主页”选项卡上的“应用程序”组中，选择“创建部署类型”。  
+3.  Selecione um aplicativo e, em seguida, na guia **Início**, no grupo **Aplicativo**, escolha **Criar Tipo de Implantação**.  
 
 > [!TIP]  
->  还可以从“创建应用程序向导”和“<应用程序名称\> 属性”对话框的“部署类型”选项卡中启动创建部署类型向导。  
+>  Você também pode iniciar o Assistente para Criar Tipo de Implantação no Assistente para Criar Aplicativo e na guia **Tipos de Implantação** da caixa de diálogo **Propriedades** do *<nome do aplicativo\>*.  
 
-## <a name="specify-whether-you-want-to-automatically-detect-deployment-type-information-or-manually-set-up-the-information"></a>指定是要自动检测部署类型信息还是手动设置该信息  
- 使用下列过程之一来自动检测或手动设置部署类型信息。  
+## <a name="specify-whether-you-want-to-automatically-detect-deployment-type-information-or-manually-set-up-the-information"></a>Especifique se deseja detectar automaticamente as informações do tipo de implantação ou configurar as informações manualmente  
+ Use um dos procedimentos a seguir para detectar automaticamente ou definir manualmente as informações do tipo de implantação.  
 
-### <a name="automatically-detect-deployment-type-information"></a>自动检测部署类型信息  
+### <a name="automatically-detect-deployment-type-information"></a>Detectar automaticamente as informações do tipo de implantação  
 
-1.  在“创建部署类型向导”的“常规”页上，选择“从安装文件中自动识别有关此部署类型的信息”。  
+1.  Na página **Geral** do Assistente para Criar Tipo de Implantação, selecione **Identificar automaticamente as informações sobre esse tipo de implantação nos arquivos de instalação**.  
 
-2.  在“类型”框中，选择要用于检测部署类型信息的应用程序安装文件类型。  
+2.  Na caixa **Tipo**, selecione o tipo de arquivo de instalação de aplicativo que deseja usar para detectar as informações do tipo de implantação.  
 
-3.  在“位置”框中，（以 *\\\\server\\share\\filename* 格式）指定 UNC 路径或指定要用来检测部署类型信息的应用程序安装文件和内容的存储链接。 还可以选择“浏览”以找到安装文件。  
-
-    > [!NOTE]  
-    >  对于具有应用程序的 UNC 路径以及包含应用程序内容的任何子文件夹，用户必须具有访问权限。  
-
-4.  在“创建部署类型向导”的“导入信息”页上，查看已导入的信息，然后选择“下一步”。 还可以选择“上一步”以返回并修复任何错误。  
-
-5.  在“创建部署类型向导”的“常规信息”页上，指定以下信息：  
+3.  No caixa **Local**, especifique o caminho UNC (no formato *\\\\servidor\\compartilhamento\\nome do arquivo*) ou especifique o link do repositório para os arquivos de instalação do aplicativo e o conteúdo que deseja usar para detectar as informações do tipo de implantação. Você também pode escolher **Procurar** para localizar o arquivo de instalação.  
 
     > [!NOTE]  
-    >  如果从应用程序安装文件中读取了某些部署类型信息，则可能已经存在这些信息。 此外，显示的选项可能会因创建的部署类型而异。  
+    >  Você deve ter acesso ao caminho UNC que contém o aplicativo e a todas as subpastas que contêm o conteúdo do aplicativo.  
 
-    -   有关部署类型的常规信息，例如名称、管理员备注和可用语言。  
+4.  Na página **Importar Informações** do Assistente para Criar Tipo de Implantação, examine as informações que foram importadas e escolha **Avançar**. Você também pode escolher **Anterior** para voltar e corrigir quaisquer erros.  
 
-    -   **安装程序** - 指定安装部署类型所需的安装程序和任何属性。  
+5.  Na página **Informações Gerais** do Assistente para Criar Tipo de Implantação, especifique as seguintes informações:  
 
-    -   **安装行为** - 指定是为当前用户还是为所有用户安装部署类型。 你也可以指定是为所有用户安装部署类型（如果部署到设备），还是仅为某个用户安装部署类型（如果部署到用户）。  
+    > [!NOTE]  
+    >  Algumas das informações do tipo de implantação podem já estar presentes se elas tiverem sido lidas dos arquivos de instalação do aplicativo. Além disso, as opções exibidas podem diferir, dependendo do tipo de implantação que você está criando.  
 
-    -   **使用自动 VPN 连接(若已配置)** - 如果向启动应用程序的设备部署了 VPN 配置文件，则在应用启动时启动 VPN 连接（仅适用于 Windows 8.1 和 Windows Phone 8.1）。 如果已将多个 VPN 配置文件部署到 Windows 8.1 设备，则默认情况下使用第一个部署的 VPN 配置文件。  
+    -   Informações gerais sobre o tipo de implantação, como nome, comentários do administrador e idiomas disponíveis.  
 
-         在 Windows Phone 8.1 设备上，如果有多个 VPN 配置文件部署到设备，则不支持自动 VPN 连接。  
+    -   **Programa de instalação** – especifique o programa de instalação e quaisquer propriedades necessárias para instalar o tipo de implantação.  
 
-         有关 VPN 配置文件的详细信息，请参阅 [System Center Configuration Manager 中的 VPN 配置文件](../../protect/deploy-use/vpn-profiles.md)。  
+    -   **Comportamento da instalação** – especifique se deseja instalar o tipo de implantação para o usuário atual ou para todos os usuários. É possível especificar o tipo de implantação a ser instalado para todos os usuários se ele estiver implantado em um dispositivo ou para um usuário somente se ele estiver implantado para um usuário.  
 
-6.  选择“下一步” ，然后继续[为部署类型指定内容选项](/sccm/apps/deploy-use/create-applications#specify-content-options-for-the-deployment-type)。  
+    -   **Usar uma conexão VPN automática (se estiver configurada)** – se houver um perfil VPN implantado no dispositivo no qual o aplicativo será iniciado, inicie a conexão VPN quando o aplicativo for iniciado (somente Windows 8.1 e Windows Phone 8.1). Se vários perfis VPN foram implantados em um dispositivo Windows 8.1, o primeiro perfil VPN implantado será usado por padrão.  
 
-### <a name="manually-set-up-the-deployment-type-information"></a>手动设置部署类型信息  
+         Em dispositivos Windows Phone 8.1, não há suporte para conexões VPN automáticas se mais de um perfil VPN tiver sido implantado no dispositivo.  
 
-1.  在“创建部署类型向导”的“常规”页上，选择“手动指定部署类型信息”。  
+         Para obter mais informações sobre perfis VPN, consulte [Perfis VPN no System Center Configuration Manager](../../protect/deploy-use/vpn-profiles.md).  
 
-2.  在“类型”框中，选择要用于检测部署类型信息的应用程序安装文件类型。 可以选择将在自动检测部署类型信息时使用的相同安装类型，还可以指定用于安装部署类型的脚本。  
+6.  Escolha **Avançar** e continue para [Especificar as opções de conteúdo para o tipo de implantação](/sccm/apps/deploy-use/create-applications#specify-content-options-for-the-deployment-type).  
 
-3.  在“创建部署类型向导”的“常规信息”页上，指定部署类型的名称、可选描述、提供此部署类型所要采用的语言，然后选择“下一步”。  
+### <a name="manually-set-up-the-deployment-type-information"></a>Configurar manualmente as informações do tipo de implantação  
 
-4.  转至[为部署类型指定内容选项](/sccm/apps/deploy-use/create-applications#specify-content-options-for-the-deployment-type)。  
+1.  Na página **Geral** do Assistente para Criar Tipo de Implantação, selecione **Especificar manualmente as informações do tipo de implantação**.  
 
-##  <a name="specify-content-options-for-the-deployment-type"></a>为部署类型指定内容选项  
+2.  Na caixa **Tipo**, escolha o tipo de arquivo de instalação do aplicativo que deseja usar para detectar as informações do tipo de implantação. Você pode escolher os mesmos tipos de instalação que usaria para detectar automaticamente as informações do tipo de implantação e também pode especificar um script para instalar o tipo de implantação.  
 
-1.  在“创建部署类型向导”的“内容”页上，指定以下信息：  
+3.  Na página **Informações Gerais** do Assistente para Criar Tipo de Implantação, especifique o nome do tipo de implantação, uma descrição opcional e os idiomas que deseja disponibilizar para esse tipo de implantação e escolha **Avançar**.  
 
-    -   **内容位置** - 为此部署类型的内容指定位置，或选择“浏览”以选择部署类型内容文件夹。  
+4.  Continuar para [Especificar as opções de conteúdo para o tipo de implantação](/sccm/apps/deploy-use/create-applications#specify-content-options-for-the-deployment-type).  
+
+##  <a name="specify-content-options-for-the-deployment-type"></a>Especificar as opções de conteúdo para o tipo de implantação  
+
+1.  Na página **Conteúdo** do Assistente para Criar Tipo de Implantação, especifique as seguintes informações:  
+
+    -   **Local do conteúdo** – especifique o local do conteúdo para esse tipo de implantação ou selecione **Procurar** para escolher a pasta de conteúdo do tipo de implantação.  
 
         > [!IMPORTANT]  
-        >  站点服务器计算机的系统帐户必须具有所指定内容位置的权限。  
+        >  A Conta do Sistema do computador do servidor do site deve ter permissões ao local do conteúdo que você especifica.  
 
-    -   “卸载内容设置” - 指定以下选项之一：
-        - “与安装内容相同” - 如果安装和卸载内容相同，请选择此选项。 此为默认行为。
-        - “无卸载内容” - 如果应用程序不需要卸载内容，请选择此选项。
-        - “与安装内容不同” - 如果卸载内容与安装内容不同，请选择此选项。
+    -   **Desinstalar as configurações do conteúdo**--Especifique uma das seguintes opções:
+        - **Mesmo que o conteúdo de instalação**--Selecione esta opção se o conteúdo de instalação e desinstalação forem os mesmos. Esse é o comportamento padrão.
+        - **Sem conteúdo de instalação**--Selecione esta opção se o seu aplicativo não precisar de conteúdo para desinstalação.
+        - **Diferente do conteúdo da instalação**--Selecione esta opção se o conteúdo de desinstalação for diferente do conteúdo de instalação.
 
-4. 如果你选择“与安装内容不同”，则浏览到或输入用于卸载应用程序的应用程序内容的位置。
-5. 单击“确定”以关闭部署类型属性对话框。
+4. Se você tiver selecionado **Diferente do conteúdo de instalação**, procure, ou insira, o local do conteúdo do aplicativo que será usado para desinstalar o aplicativo.
+5. Clique em **OK** para fechar a caixa de diálogo Propriedades do tipo de implantação.
 
-    -   **保留客户端缓存中的内容** - 选择此选项，指定是否应将内容无限期保留在客户端计算机上的缓存中（即使它已运行）。 尽管此选项对于某些部署（例如基于 Windows Installer 的软件，该软件需要有本地源副本才能应用更新）可能很有用，但它会减少可用缓存空间。 如果选择此选项，在缓存没有足够的可用空间的情况下，将可能会导致大型部署稍后失败。  
+    -   **Manter o conteúdo no cache do cliente** – selecione essa opção para especificar se o conteúdo deve ser mantido no cache do computador cliente por tempo indeterminado, mesmo após sua execução. Embora essa opção seja útil em algumas implantações, como do software baseado no Windows Installer que precisa de uma cópia de origem local disponível para aplicar atualizações, ela reduz o espaço em cache disponível. Selecionar essa opção pode causar uma falha em uma implantação grande posteriormente se o cache não tiver espaço suficiente.  
 
-    -   **允许客户端与同一子网上的其他客户端共享内容** - 选择此选项，通过允许客户端从网络上已下载并缓存了内容的其他本地客户端下载内容来减轻网络上的负载。 此选项使用 Windows BranchCache 技术。  
+    -   **Permitir que os clientes compartilhem conteúdo com outros clientes na mesma sub-rede** – selecione essa opção para reduzir a carga na rede, permitindo que os clientes baixem conteúdo de outros clientes locais na rede que já tenham baixado e armazenado o conteúdo em cache. Essa opção utiliza a tecnologia Windows BranchCache.  
 
-    -   **安装程序** - 指定安装程序的名称和任何所需安装参数，或选择“浏览”以找到安装文件。  
+    -   **Programa de instalação** – especifique o nome do programa de instalação e todos os parâmetros de instalação necessários ou escolha **Procurar** para localizar o arquivo de instalação.  
 
-    -   **安装开始于** - （可选）指定具有部署类型安装程序的文件夹。 此文件夹可以是客户端上的绝对路径，或具有安装文件的分发点文件夹的路径。  
+    -   **Instalação inicia em** – opcionalmente, especifique a pasta que contém o programa de instalação para o tipo de implantação. Essa pasta pode ser um caminho absoluto no cliente ou um caminho para a pasta do ponto de distribuição que contém os arquivos de instalação.  
 
-    -   **卸载程序** - （可选）指定卸载程序的名称和任何所需参数，或选择“浏览”以找到它。  
+    -   **Desinstalar programa** – opcionalmente, especifique o nome do programa de desinstalação e todos os parâmetros necessários ou escolha **Procurar** para localizá-lo.  
 
-    -   **卸载开始于** - （可选）指定具有部署类型卸载程序的文件夹。 此文件夹可以是客户端上的绝对路径，也可以是具有包的分发点文件夹的相对路径。  
+    -   **Desinstalação inicia em** – opcionalmente, especifique a pasta que contém o programa de desinstalação para o tipo de implantação. Essa pasta pode ser um caminho absoluto no cliente ou um caminho relativo à pasta do ponto de distribuição que contém o pacote.  
 
-    -   **在 64 位客户端上以 32 位进程形式运行安装和卸载计划** - 使用基于 Windows 的计算机上的 32 位文件和注册表位置来运行部署类型的安装程序。  
+    -   **Executar programa de instalação e desinstalação como um processo de 32 bits em clientes de 64 bits** – use o arquivo de 32 bits e os locais do Registro em computadores baseados em Windows para executar o programa de instalação para o tipo de implantação.  
 
-2.  选择“下一步”。  
+2.  Escolha **Próxima**.  
 
-## <a name="set-up-detection-methods-to-indicate-the-presence-of-the-deployment-type-windows-pcs-only"></a>将检测方法设为指明部署类型的状态（仅适用于 Windows PC）  
- 此过程设置用于指示部署类型是否已安装的检测方法。  
+## <a name="set-up-detection-methods-to-indicate-the-presence-of-the-deployment-type-windows-pcs-only"></a>Configurar métodos de detecção para indicar a presença do tipo de implantação (somente computadores Windows)  
+ Este procedimento configura um método de detecção que indica se o tipo de implantação já está instalado.  
 
-1.  在“创建部署类型向导”的“检测方法”页上，选择“配置对此部署类型的状态进行检测的规则”，然后选择“添加子句”。  
+1.  Na página **Método de Detecção** do Assistente para Criar Tipo de Implantação, selecione **Configurar regras para detectar a presença desse tipo de implantação** e escolha **Adicionar Cláusula**.  
 
     > [!NOTE]  
-    >  你也可以选择“使用自定义脚本检测此部署类型的状态”。 有关详细信息，请参阅[使用自定义脚本检查部署类型的状态](/sccm/apps/deploy-use/create-applications#Use-a-custom-script-to-check-for-the-presence-of-a-deployment-type)。  
+    >  Você também pode selecionar **Usar um script personalizado para detectar a presença desse tipo de implantação**. Para obter mais informações, consulte [Usar um script personalizado para verificar a presença de um tipo de implantação](/sccm/apps/deploy-use/create-applications#Use-a-custom-script-to-check-for-the-presence-of-a-deployment-type).  
 
-2.  在“检测规则”对话框的“设置类型”下拉列表中，选择要用于检测部署类型的状态的方法。 你可以从下列可用的方法中选择：  
+2.  Na caixa de diálogo **Regra de Detecção**, na lista suspensa **Tipo de configuração**, selecione o método que você quer usar para detectar a presença do tipo de implantação. Você pode escolher entre os seguintes métodos disponíveis:  
 
-    -   **文件系统** - 使用此方法检测客户端设备上是否存在指定的文件或文件夹，从而指明已经安装了应用程序。  
+    -   **Sistema de Arquivos** – use esse método para detectar se um arquivo ou uma pasta especificada existe em um dispositivo cliente, indicando que o aplicativo está instalado.  
 
         > [!NOTE]  
-        >  “文件系统”  设置类型不支持在“路径”字段中指定网络共享的 UNC 路径。 你只能指定客户端设备上的本地路径。  
+        >  O tipo de configuração **Sistema de arquivos** não dá suporte à especificação de um caminho UNC para um compartilhamento de rede no campo Caminho. Você só pode especificar um caminho local no dispositivo do cliente.  
         >   
-        >  若要检查 32 位文件位置中是否有指定的文件或文件夹，请首先选择“此文件或文件夹与 64 位系统中的 32 位应用程序相关联”选项。 如果未找到此文件或文件夹，则将搜索 64 位位置。  
+        >  Para marcar locais de arquivo de 32 bits para o arquivo ou a pasta especificada, primeiro selecione a opção **Esse arquivo ou pasta está associada a um aplicativo de 32 bits em sistemas de 64 bits**. Se o arquivo ou pasta não for encontrado, os locais de 64 bits serão pesquisados.  
 
-    -   **注册表** - 使用此方法可检测客户端设备上是否存在指定的注册表项或注册表值，从而指明已经安装了应用程序。  
+    -   **Registro** – use esse método para detectar se uma chave do Registro ou um valor do Registro especificado existe em um dispositivo cliente, indicando assim que o aplicativo está instalado.  
 
         > [!NOTE]  
-        >  若要检查 32 位注册表位置中是否有指定的注册表项，请首先选择“此注册表项与 64 位系统上的 32 位应用程序相关联” 选项。 如果未找到此注册表项，则将搜索 64 位位置。  
+        >  Para marcar locais do Registro de 32 bits para a chave do Registro especificada, primeiro selecione a opção **Essa chave do Registro está associada a um aplicativo de 32 bits em sistemas de 64 bits**. Se a chave do Registro não for encontrada, os locais de 64 bits serão pesquisados.  
 
-    -   **Windows Installer** - 使用此方法可检测客户端设备上是否存在指定的 Windows Installer 文件，从而指明已经安装了应用程序。  
+    -   **Windows Installer** – use esse método para detectar se um arquivo do Windows Installer especificado existe em um dispositivo cliente, indicando assim que o aplicativo está instalado.  
 
-3.  指定想要用于检测是否安装了此部署类型的项目的详细信息。 例如，可以使用文件、文件夹、注册表项、注册表值或者 Windows Installer 产品代码。  
+3.  Especificar detalhes sobre o item que você quer usar para detectar se esse tipo de implantação está instalado. Por exemplo, você pode usar um arquivo, uma pasta, uma chave do Registro ou um valor de Registro, ou um código de produto do Windows Installer.  
 
-4.  指定想要按照项目（用于检测是否安装了此部署类型）评估的值的详细信息。 例如，如果使用文件来检查是否安装了部署类型，则可以选择“为了指明此应用程序的状态，目标系统上必须存在文件系统设置”。  
+4.  Especificar detalhes sobre o valor que você quer avaliar em relação ao item que usa para detectar se esse tipo de implantação está instalado. Por exemplo, se você usar um arquivo para verificar se o tipo de implantação está instalado, selecione **A configuração do sistema de arquivos deve existir no sistema de destino para indicar a presença deste aplicativo**.  
 
-5.  选择“下一步”以关闭“检测规则”对话框。  
+5.  Escolha **Avançar** para fechar a caixa de diálogo **Regra de Detecção**.  
 
-###  <a name="use-a-custom-script-to-check-for-the-presence-of-a-deployment-type"></a>使用自定义脚本检查部署类型的状态  
+###  <a name="use-a-custom-script-to-check-for-the-presence-of-a-deployment-type"></a>Use um script personalizado para verificar a presença de um tipo de implantação  
 
-1.  在“创建部署类型向导”的“检测方法”页上，选中“使用自定义脚本检测此部署类型的状态”框，然后选择“编辑”。  
+1.  Na página **Método de Detecção** do Assistente para Criar Tipo de Implantação, selecione a caixa **Usar um script personalizado para detectar a presença desse tipo de implantação** e, em seguida, escolha **Editar**.  
 
-2.  在“脚本编辑器”对话框的“脚本类型”下拉列表中，选择要用于检测部署类型的脚本语言。  
+2.  Na caixa de diálogo **Editor de Scripts**, na lista suspensa **Tipo de script** selecione a linguagem de script que você quer usar para detectar o tipo de implantação.  
 
-3.  在“脚本内容”框中，输入要使用的脚本。 还可以将现有脚本的内容粘贴在此字段中，或选择“打开”以浏览到现有的已保存脚本。 Configuration Manager 通过读取写入到“标准输出 (STDOUT)”输出流、“标准错误 (STDERR)”输出流和来自脚本的退出代码的值来检查从脚本得到的结果。 如果退出代码为非零值，则脚本已经失败，并且应用程序检测状态为未知。 如果退出代码为零，并且 STDOUT 具有数据，则应用程序检测状态为“已安装”。  
+3.  Na caixa **Conteúdo de script**, insira o script que deseja usar. Você também pode colar o conteúdo de um script existente nesse campo ou escolher **Abrir** para procurar um script salvo existente. O Configuration Manager verifica os resultados do script lendo os valores que são gravados no fluxo de saída STDOUT (Saída Padrão), no fluxo de saída STDERR (Erro Padrão) e no código de saída do script. Se o código de saída for um valor diferente de zero, então o script terá falhado e o status de detecção do aplicativo será desconhecido. Se o código de saída for zero e STDOUT tiver dados, o status de detecção do aplicativo será Instalado.  
 
- 使用下表了解如何使用脚本输出来检查是否安装了应用程序。  
+ Use a tabela a seguir para saber como usar a saída de um script para verificar se um aplicativo está instalado.  
 
-|脚本退出代码|详细信息|
+|Código de saída do script|Detalhes|
 |--------------------------------|-----------------|
-|0|**从 STDOUT 中读取的数据** - 空<br /><br /> **从 STDERR 中读取的数据** - 空<br /><br /> **脚本结果** - 成功<br /><br /> **应用程序检测状态** - 未安装|  
-|0|**从 STDOUT 中读取的数据** - 空<br /><br /> **从 STDERR 中读取的数据** - 不为空<br /><br /> **脚本结果** - 失败<br /><br /> **应用程序检测状态** - 未知|  
-|0|**从 STDOUT 中读取的数据** - 不为空<br /><br /> **从 STDERR 中读取的数据** - 空<br /><br /> **脚本结果** - 成功<br /><br /> **应用程序检测状态** - 已安装|  
-|0|**从 STDOUT 中读取的数据** - 不为空<br /><br /> **从 STDERR 中读取的数据** - 不为空<br /><br /> **脚本结果** - 成功<br /><br /> **应用程序检测状态** - 已安装|  
-|非零值|**从 STDOUT 中读取的数据** - 空<br /><br /> **从 STDERR 中读取的数据** - 空<br /><br /> **脚本结果** - 失败<br /><br /> **应用程序检测状态** - 未知|  
-|非零值|**从 STDOUT 中读取的数据** - 空<br /><br /> **从 STDERR 中读取的数据** - 不为空<br /><br /> **脚本结果** - 失败<br /><br /> **应用程序检测状态** - 未知|  
-|非零值|**从 STDOUT 中读取的数据** - 不为空<br /><br /> **从 STDERR 中读取的数据** - 空<br /><br /> **脚本结果** - 失败<br /><br /> **应用程序检测状态** - 未知|  
-|非零值|**从 STDOUT 中读取的数据** - 不为空<br /><br /> **从 STDERR 中读取的数据** - 不为空<br /><br /> **脚本结果** - 失败<br /><br /> **应用程序检测状态** - 未知|  
+|0|**Dados lidos de STDOUT** – vazio<br /><br /> **Dados lidos de STDERR** – vazio<br /><br /> **Resultado do script** – êxito<br /><br /> **Estado de detecção do aplicativo** – não instalado|  
+|0|**Dados lidos de STDOUT** – vazio<br /><br /> **Dados lidos de STDERR** – não vazio<br /><br /> **Resultado do script** – falha<br /><br /> **Estado de detecção do aplicativo** – desconhecido|  
+|0|**Dados lidos de STDOUT** – não vazio<br /><br /> **Dados lidos de STDERR** – vazio<br /><br /> **Resultado do script** – êxito<br /><br /> **Estado de detecção do aplicativo** – instalado|  
+|0|**Dados lidos de STDOUT** – não vazio<br /><br /> **Dados lidos de STDERR** – não vazio<br /><br /> **Resultado do script** – êxito<br /><br /> **Estado de detecção do aplicativo** – instalado|  
+|Valor diferente de zero|**Dados lidos de STDOUT** – vazio<br /><br /> **Dados lidos de STDERR** – vazio<br /><br /> **Resultado do script** – falha<br /><br /> **Estado de detecção do aplicativo** – desconhecido|  
+|Valor diferente de zero|**Dados lidos de STDOUT** – vazio<br /><br /> **Dados lidos de STDERR** – não vazio<br /><br /> **Resultado do script** – falha<br /><br /> **Estado de detecção do aplicativo** – desconhecido|  
+|Valor diferente de zero|**Dados lidos de STDOUT** – não vazio<br /><br /> **Dados lidos de STDERR** – vazio<br /><br /> **Resultado do script** – falha<br /><br /> **Estado de detecção do aplicativo** – desconhecido|  
+|Valor diferente de zero|**Dados lidos de STDOUT** – não vazio<br /><br /> **Dados lidos de STDERR** – não vazio<br /><br /> **Resultado do script** – falha<br /><br /> **Estado de detecção do aplicativo** – desconhecido|  
 
-下表包含可用于编写自己的应用程序检测脚本的 Microsoft Visual Basic (VB) 示例脚本。  
+A tabela a seguir apresenta scripts de exemplo do Microsoft VB (Visual Basic) que você pode usar para gravar seus próprios scripts de detecção de aplicativo.  
 
-|Visual Basic 示例脚本|描述|  
+|Script de exemplo do Visual Basic|Descrição|  
 |--------------------------------|-----------------|  
-|**WScript.Quit(1)**|此脚本返回不为零的退出代码，这表示它未成功运行。 在这种情况下，应用程序检测状态为未知。|  
-|**WScript.StdErr.Write "Script failed"**<br /><br /> **WScript.Quit(0)**|此脚本返回零退出代码，但是 STDERR 的值不为空，这表示脚本未成功运行。 在这种情况下，应用程序检测状态为未知。|  
-|**WScript.Quit(0)**|此脚本返回零退出代码，这表示它已成功运行。 但是，STDOUT 的值为空，这表示未安装应用程序。|  
-|**WScript.StdOut.Write "The application is installed"**<br /><br /> **WScript.Quit(0)**|此脚本返回零退出代码，这表示它已成功运行。 STDOUT 的值不为空，这表示安装了应用程序。|  
-|**WScript.StdOut.Write "The application is installed"**<br /><br /> **WScript.StdErr.Write "Completed"**<br /><br /> **WScript.Quit(0)**|此脚本返回零退出代码，这表示它已成功运行。 STDOUT 和 STDERR 的值不为空，这表示安装了应用程序。|  
+|**WScript.Quit(1)**|O script retorna um código de saída que não é zero, o que indica que ele não foi executado com êxito. Nesse caso, o estado de detecção do aplicativo é desconhecido.|  
+|**WScript.StdErr.Write "Falha de script"**<br /><br /> **WScript.Quit(0)**|O script retorna um código de saída zero, mas o valor de STDERR não está vazio, o que indica que o script não foi executado com êxito. Nesse caso, o estado de detecção do aplicativo é desconhecido.|  
+|**WScript.Quit(0)**|O script retorna um código de saída igual a zero, o que indica que ele foi executado com êxito. No entanto, o valor para STDOUT está vazio, que indica que o aplicativo não está instalado.|  
+|**WScript.StdOut.Write "O aplicativo está instalado"**<br /><br /> **WScript.Quit(0)**|O script retorna um código de saída igual a zero, o que indica que ele foi executado com êxito. O valor para STDOUT não está vazio, o que indica que o aplicativo está instalado.|  
+|**WScript.StdOut.Write "O aplicativo está instalado"**<br /><br /> **WScript.StdErr.Write "Concluído"**<br /><br /> **WScript.Quit(0)**|O script retorna um código de saída igual a zero, o que indica que ele foi executado com êxito. Os valores para STDOUT e STDERR não está vazios, o que indica que o aplicativo está instalado.|  
 
  > [!NOTE]  
- >  可用于脚本的最大大小为 32 KB。  
+ >  O tamanho máximo que você pode usar para um script é 32 quilobytes (KB).  
 
-4.  选择“确定”以关闭“脚本编辑器”对话框。  
+4.  Escolha **OK** para fechar a caixa de diálogo **Editor de Scripts**.  
 
-## <a name="specify-user-experience-options-for-the-deployment-type"></a>指定部署类型的用户体验选项  
- 这些设置指定将应用程序安装到设备上的方式和用户将看到的内容。  
+## <a name="specify-user-experience-options-for-the-deployment-type"></a>Especificar opções de experiência do usuário para o tipo de implantação  
+ Essas configurações especificam como o aplicativo será instalado nos dispositivos e o que o usuário verá.  
 
-1.  在“创建部署类型向导”的“用户体验”页上，指定下列信息：  
+1.  Na página **Experiência do Usuário** do Assistente para Criar Tipo de Implantação, especifique as seguintes informações:  
 
-    -   **安装行为** - 在下拉列表中选择以下选项之一：  
+    -   **Comportamento da instalação** – na lista suspensa, selecione uma das seguintes opções:  
 
-        -   **针对用户安装** - 仅针对应用程序所部署到的用户安装应用程序。  
+        -   **Instalar para o Usuário** – o aplicativo é instalado somente para o usuário para o qual ele será implantado.  
 
-        -   **针对系统安装** - 应用程序仅安装一次并且可供所有用户使用。  
+        -   **Instalar para o Sistema** – o aplicativo é instalado apenas uma vez e fica disponível para todos os usuários.  
 
-        -   **如果资源是设备，则针对系统安装；否则针对用户安装** - 如果将应用程序部署到设备，则将为所有用户安装它。 如果将应用程序部署到用户，则将仅为该用户安装应用程序。  
+        -   **Instalar para o sistema se o recurso for dispositivo, caso contrário, instalar como usuário** – se o aplicativo for implantado em um dispositivo, ele será instalado para todos os usuários. Se o aplicativo for implantado para um usuário, então ele será instalado somente para esse usuário.  
 
-    -   **登录要求** - 从以下选项中指定此部署类型的登录要求：  
+    -   **Requisito de logon** – especifique os requisitos de logon para esse tipo de implantação entre as seguintes opções:  
 
-        -   **仅当用户登录时**  
+        -   **Somente quando um usuário tiver efetuado logon**  
 
-        -   **无论用户是否登录**  
+        -   **Se um usuário tiver ou não efetuado logon**  
 
-        -   **仅当无用户登录时**  
-
-        > [!NOTE]  
-        >  此选项默认为“仅当用户登录时” ，如果在“安装行为”  下拉列表中选择了“针对用户安装”  ，则无法更改它。  
-
-    -   **安装程序可见性** - 指定部署类型在客户端设备上运行将处于的模式。 可用选项如下：  
-
-        -   **最大化** - 部署类型在客户端设备上以最大化模式运行。 用户将看到所有安装活动。  
-
-        -   **正常** - 部署类型基于系统和程序默认值在正常模式下运行。 此为默认模式。  
-
-        -   **最小化** - 部署类型在客户端设备上以最小化模式运行。 用户可能会在通知区域或任务栏中看到安装活动。  
-
-        -   **隐藏** - 部署类型在客户端设备上以隐藏模式运行，用户将看不到安装活动。  
-
-    -   **允许用户查看程序安装并与其交互** - 指定用户是否可以与部署类型安装交互以设置安装选项。  
+        -   **Somente quando nenhum usuário tiver efetuado logon**  
 
         > [!NOTE]  
-        >  如果在“安装行为”  下拉列表中选择了“针对用户安装”  选项，则默认情况下启用此选项。  
+        >  Essa opção assume o padrão de **Somente quando um usuário tiver efetuado logon**, e não poderá ser alterada se você selecionou **Instalar para o usuário** na lista suspensa **Comportamento da instalação** .  
 
-    -   **最大允许运行时间(分钟)** - 指定程序在客户端上预计运行的最长时间。 你可以将此设置指定为一个大于零的整数。 默认设置为 120 分钟。  
+    -   **Visibilidade do programa de instalação** – especifique o modo no qual o tipo de implantação será executado em dispositivos clientes. As seguintes opções estão disponíveis:  
 
-         此值用于：  
+        -   **Maximizado** – o tipo de implantação é executado maximizado em dispositivos clientes. Os usuários verão todas as atividades da instalação.  
 
-        -   监视部署类型中的结果。  
+        -   **Normal** – o tipo de implantação é executado no modo normal com base nos padrões do sistema e do programa. Este é o modo padrão.  
 
-        -   检查在客户端设备上定义维护时段时是否将安装部署类型。 当处于维护时段时，只有在维护时段中有足够的可用时间来适应“最大允许运行时间”  设置时，程序才会运行。  
+        -   **Minimizado** – o tipo de implantação é executado minimizado em dispositivos clientes. Os usuários podem ver a atividade de instalação na área de notificação ou na barra de tarefas.  
+
+        -   **Oculto** – o tipo de implantação é executado oculto em dispositivos clientes e os usuários não verão nenhuma atividade de instalação.  
+
+    -   **Permitir que os usuários exibam e interajam com o programa de instalação** – especifique se um usuário pode interagir com a instalação do tipo de implantação para configurar as opções de instalação.  
+
+        > [!NOTE]  
+        >  Essa opção é habilitada por padrão, se você selecionou a opção **Instalar para o usuário** na lista suspensa **Comportamento da instalação** .  
+
+    -   **Tempo de execução máximo permitido (minutos)** – especifique o tempo máximo em que o programa deverá ser executado no computador cliente. Essa configuração pode ser definida como um número inteiro maior que zero. A configuração padrão é 120 minutos.  
+
+         Esse valor é usado para:  
+
+        -   Monitore os resultados do tipo de implantação.  
+
+        -   Verifique se um tipo de implantação será instalado quando houver janelas de manutenção definidas em dispositivos clientes. Quando uma janela de manutenção está ativa, um programa será iniciado somente se houver tempo suficiente disponível na janela de manutenção para acomodar a configuração **Tempo de Execução Máximo Permitido** .  
 
         > [!IMPORTANT]  
-        >  如果“最大允许运行时间”  比计划维护时段长，则可能会发生冲突。 如果用户设置的最大运行时间超过了任何可用维护时段，该部署类型将不会运行。  
+        >  Um conflito poderá ocorrer se o **Tempo de execução máximo permitido** for maior do que a janela de manutenção agendada. Se o tempo de execução máximo for definido pelo usuário para um período que exceda o tamanho de qualquer janela de manutenção disponível, esse tipo de implantação não será executado.  
 
-2.  **估计安装时间(分钟)** - 指定安装部署类型将需要的估计时间。 将向软件中心的用户显示此项。  
+2.  **Tempo estimado para instalação (minutos)** – especifique o tempo estimado para a instalação do tipo de implantação. Isso é exibido aos usuários do Centro de Software.  
 
-## <a name="specify-requirements-for-the-deployment-type"></a>指定部署类型的要求  
+## <a name="specify-requirements-for-the-deployment-type"></a>Especificar os requisitos para o tipo de implantação  
 
-1.  在“创建部署类型向导”的“要求”页上，选择“添加”以打开“创建要求”对话框，然后添加新要求。  
+1.  Na página **Requisitos** do Assistente para Criar Tipo de Implantação, escolha **Adicionar** para abrir a caixa de diálogo **Criar Requisito** e adicione um novo requisito.  
 
     > [!NOTE]  
-    >  还可以在“<部署类型名称\> 属性”对话框的“要求”选项卡上添加新要求。  
+    >  Você também pode adicionar novos requisitos na guia **Requisitos** da caixa de diálogo **Propriedades** do *<nome do tipo de implantação\>*.  
 
-2.  在“类别”下拉列表中，选择此要求是用于设备还是用于用户，或者选择“自定义”以使用以前创建的全局条件。 选择“自定义”时，也可以选择“创建”以创建新的全局条件。 有关全局条件的详细信息，请参阅[如何创建全局条件](../../apps/deploy-use/create-global-conditions.md)。  
+2.  Na lista suspensa **Categoria**, selecione se esse requisito é para um dispositivo ou um usuário, ou selecione **Personalizar** para usar uma condição global criada anteriormente. Ao selecionar **Personalizar**, você também pode escolher **Criar** para criar uma nova condição global. Para obter mais informações sobre condições globais, consulte [Como criar condições globais no Configuration Manager](../../apps/deploy-use/create-global-conditions.md).  
 
     > [!IMPORTANT]  
-    >  如果将应用程序部署到设备集合，则将忽略“用户”类别和“主要设备”条件的任何要求。  
+    >  Todos os requisitos da categoria **Usuário** e da condição **Dispositivo Primário** serão ignorados se você implantar o aplicativo em uma coleção de dispositivos.  
     >   
-    >  如果你已创建 Windows 程序包和程序或任务序列（其将 Windows 10 作为使用 System Center 2012 R2 Configuration Manager SP1 的要求），然后升级至 System Center Configuration Manager，则针对于 Windows 10 的要求可能会被删除。 若要解决此问题，请再次指定要求。 请注意：虽然已从要求显示中删除要求，但设备上仍对其正确处理。  
+    >  Se você tiver criado um pacote do Windows e um programa ou sequência de tarefas que tenha o Windows 10 como um requisito usando o System Center 2012 R2 Configuration Manager SP1 e, em seguida, atualizar para o System Center Configuration Manager, os requisitos para o Windows 10 poderão ser removidos. Para corrigir esse problema, especifique os requisitos novamente. Observe que, embora o requisito tenha sido removido da exibição de requisitos, ele ainda é processado corretamente nos dispositivos.  
 
-3.  在“条件”  下拉列表中，选择想要用于评估用户或设备是否满足安装要求的条件。 根据所选类别，此列表的内容会有所不同。  
+3.  Na lista suspensa **Condição** , selecione a condição que você deseja usar para avaliar se o usuário ou o dispositivo atende aos requisitos de instalação. O conteúdo desta lista varia dependendo da categoria selecionada.  
 
-4.  在“运算符”  下拉列表中，选择运算符，此运算符用于将所选条件与指定值进行比较以评估用户或设备是否满足安装要求。 可用运算符将因所选条件而异。  
+4.  Na lista suspensa **Operador** , escolha o operador que será usado para comparar a condição selecionada ao valor especificado para avaliar se o usuário ou o dispositivo atende aos requisitos de instalação. Os operadores disponíveis variam dependendo da condição selecionada.  
 
     > [!IMPORTANT]  
-    >  可用要求因部署类型所使用的设备类型而异。  
+    >  Os requisitos disponíveis variam dependendo do tipo de dispositivo que o tipo de implantação usa.  
 
-5.  在“值”框中，指定值，这些值将与所选条件和运算符一起用于评估用户或设备是否满足安装要求。 可用值将因所选条件和所选运算符而异。  
+5.  Na caixa **Valor**, especifique os valores que serão usados com a condição e o operador selecionados para avaliar se o usuário ou o dispositivo atende aos requisitos de instalação. Os valores disponíveis irão variar dependendo da condição selecionada e do operador selecionado.  
 
-6.  选择“确定”以保存要求并关闭“创建要求”对话框。  
+6.  Escolha **OK** para salvar o requisito e feche a caixa de diálogo **Criar Requisito**.  
 
-## <a name="specify-dependencies-for-the-deployment-type"></a>指定部署类型的依赖关系  
- 依赖关系定义在安装部署类型之前必须先安装的另一应用程序中的部署类型。 可以将相关部署类型设置为在安装部署类型之前自动安装。  
+## <a name="specify-dependencies-for-the-deployment-type"></a>Especificar as dependências para o tipo de implantação  
+ As dependências definem um ou mais tipos de implantação de outro aplicativo que deve ser instalado antes um tipo de implantação ser instalado. Você pode configurar os tipos de implantação dependentes para instalar automaticamente antes que um tipo de implantação seja instalado.  
 
 > [!IMPORTANT]  
->  在某些情况下，部署类型依赖于同时具有依赖关系的部署类型。 链中受支持的依赖关系链的最大数量为 5。  
+>  Em alguns casos, um tipo de implantação é dependente de um tipo de implantação que também tem dependências. O número máximo de dependências com suporte na cadeia é cinco.  
 
-1.  在“创建部署类型向导”的“依赖关系”页上，如果要指定在安装此部署类型之前必须安装的部署类型，请选择“添加”。  
+1.  Na página **Dependências** do Assistente para Criar Tipo de Implantação, escolha **Adicionar** se desejar especificar os tipos de implantação que devem ser instalados antes da instalação desse tipo de implantação.  
 
     > [!IMPORTANT]  
-    >  还可以在“<部署类型名称\>属性”对话框的“依赖关系”选项卡上添加新依赖项。  
+    >  Você também pode adicionar novas dependências na guia **Dependências** da caixa de diálogo **Propriedades** do *<nome do tipo de implantação\>*.  
 
-2.  在“添加依赖关系”对话框中，选择“添加”。  
+2.  Na caixa de diálogo **Adicionar Dependência**, escolha **Adicionar**.  
 
-3.  在“指定所需的应用程序”  对话框中，选择要用作依赖关系的现有应用程序和应用程序部署类型之一。  
+3.  Na caixa de diálogo **Especificar Aplicativo Necessário** , selecione um aplicativo existente e um dos tipos de implantação de aplicativos para usar como uma dependência.  
 
     > [!TIP]  
-    >  可以选择“查看”以显示所选应用程序或部署类型的属性。  
+    >  Você pode escolher **Exibir** para exibir as propriedades do tipo de aplicativo ou de implantação selecionado.  
 
-4.  选择“确定”关闭“指定所需的应用程序”对话框。  
+4.  Escolha **OK** para fechar a caixa de diálogo **Especificar aplicativo necessário**.  
 
-5.  如果想要自动安装相关的应用程序，请选择相关应用程序旁边的“自动安装”  。  
+5.  Se você deseja que um aplicativo dependente seja instalado automaticamente, selecione **Instalação Automática** ao lado do aplicativo dependente.  
 
     > [!NOTE]  
-    >  若要自动安装，则不需要部署相关应用程序。  
+    >  Um aplicativo dependente não precisa ser implantado para ser instalado automaticamente.  
 
-6.  在“依赖关系组名称”下的“添加依赖关系”对话框中，输入名称以引用此应用程序依赖关系组。  
+6.  Na caixa de diálogo **Adicionar Dependência**, em **Nome do grupo de dependências**, insira um nome para indicar esse grupo de dependências de aplicativo.  
 
-7.  根据需要使用“提高优先级”  和“降低优先级”  按钮，以更改每个依赖关系的计算顺序。  
+7.  Opcionalmente, use os botões **Aumentar Prioridade** e **Diminuir Prioridade** para alterar a ordem em que cada dependência é avaliada.  
 
-8.  选择“确定”以关闭“添加依赖关系”对话框。  
+8.  Escolha **OK** para fechar a caixa de diálogo **Adicionar Dependência**.  
 
-## <a name="confirm-the-deployment-type-settings-and-finish-the-wizard"></a>确认部署类型设置，然后完成向导  
+## <a name="confirm-the-deployment-type-settings-and-finish-the-wizard"></a>Confirme as configurações de tipo de implantação e conclua o assistente  
 
-1.  在“创建部署类型向导”的“摘要”页上，查看向导将采取的操作。 选择“下一步”以创建部署类型，或者选择“上一步”以返回并更改部署类型设置。  
+1.  Na página **Resumo** do Assistente para Criar Tipo de Implantação, examine as ações que o assistente executará. Escolha **Avançar** para criar o tipo de implantação ou escolha **Anterior** para voltar e alterar as configurações do tipo de implantação.  
 
-2.  在“进度”页面完成之后，查看向导已采取的操作，然后选择“关闭”以完成向导。  
+2.  Após a conclusão da página **Andamento** do assistente, examine as ações executadas por ele e escolha **Fechar** para concluí-lo.  
 
-3.  如果从“创建应用程序向导”中启动了“创建部署类型向导”，则将返回到“创建应用程序向导”的“部署类型”页。  
+3.  Se você tiver iniciado o Assistente para Criar Tipo de Implantação no Assistente para Criar Aplicativo, você retornará à página **Tipos de Implantação** do Assistente para Criar Aplicativo.  
 
-## <a name="set-up-additional-options-for-deployment-types-that-contain-virtual-applications"></a>设置包含虚拟应用程序的部署类型的其他选项  
- 使用以下过程设置包含虚拟应用程序的部署类型的其他选项。  
+## <a name="set-up-additional-options-for-deployment-types-that-contain-virtual-applications"></a>Configurar opções adicionais para tipos de implantação que contêm aplicativos virtuais  
+ Use os procedimentos a seguir para configurar opções adicionais para tipos de implantação que contêm aplicativos virtuais.  
 
-### <a name="set-up-content-options-for-application-virtualization-app-v-deployment-types"></a>设置 Application Virtualization (App-V) 部署类型的内容选项  
+### <a name="set-up-content-options-for-application-virtualization-app-v-deployment-types"></a>Configurar opções de conteúdo para tipos de implantação do App-V (Application Virtualization)  
 
-1.  在 Configuration Manager 控制台中，选择“软件库” > “应用程序”。  
+1.  No console do Configuration Manager, escolha **Biblioteca de Software** > **Aplicativos**.  
 
-2.  在“应用程序”列表中，选择具有 App-V 部署类型的应用程序。 然后，在“主页”选项卡上的“属性”组中，选择“属性”。  
+2.  Na lista **Aplicativos**, selecione um aplicativo que tenha um tipo de implantação do App-V. Em seguida, na guia **Início**, no grupo **Propriedades**, escolha **Propriedades**.  
 
-3.  在“<应用程序名称\> 属性”对话框的“部署类型”选项卡上，选择 App-V 部署类型，然后选择“编辑”。  
+3.  Na caixa de diálogo **Propriedades** do *<Nome do Aplicativo\>*, na guia **Tipos de Implantação**, selecione um tipo de implantação do App-V e escolha **Editar**.  
 
-4.  在“<部署类型名称\> 属性”对话框中，在“内容”选项卡上设置以下选项（如有需要）：  
+4.  Na caixa de diálogo **Propriedades** do *<Nome do Tipo de Implantação\>*, na guia **Conteúdo**, configure as seguintes opções, se necessário:  
 
-    -   **保留客户端缓存中的内容** - 选择此选项以确保不从 Configuration Manager 客户端缓存中删除此部署类型的内容。  
+    -   **Manter o conteúdo no cache do cliente** – selecione essa opção para garantir que o conteúdo desse tipo de implantação não seja excluído do cache do cliente Configuration Manager.  
 
-    -   **启动前将内容加载到 App-V 缓存中** - 选择此选项以确保在启动应用程序之前将虚拟应用程序的所有内容都加载到 App-V 缓存中。 选择此选项还可以确保不在缓存中固定应用程序内容，并且可以根据需要删除该应用程序内容。  
+    -   **Carregar conteúdo no cache do App-V antes de iniciar** – selecione essa opção para garantir que todo o conteúdo do aplicativo virtual seja carregado no cache do App-V antes que o aplicativo seja iniciado. Essa opção também garante que o conteúdo do aplicativo não seja fixado no cache e possa ser excluído se necessário.  
 
-5.  单击“确定”以关闭“<部署类型名称\> 属性”对话框。  
+5.  Escolha **OK** para fechar a caixa de diálogo **Propriedades** do *<Nome do Tipo de Implantação\>*.  
 
-6.  选择“确定”关闭 <Application Name\>“属性”对话框。  
+6.  Escolha **OK** para fechar a caixa de diálogo *<Nome do Aplicativo\>* **Propriedades**.  
 
-### <a name="set-up-publishing-options-for-app-v-deployment-types"></a>设置 App-V 部署类型的发布选项  
+### <a name="set-up-publishing-options-for-app-v-deployment-types"></a>Configurar opções de publicação dos tipos de implantação do App-V  
 
-1.  在 Configuration Manager 控制台中，选择“软件库” > “应用程序”。  
+1.  No console do Configuration Manager, escolha **Biblioteca de Software** > **Aplicativos**.  
 
-3.  在“应用程序”列表中，选择具有 App-V 部署类型的应用程序。 然后，在“主页”选项卡上的“属性”组中，选择“属性”。  
+3.  Na lista **Aplicativos**, selecione um aplicativo que tenha um tipo de implantação do App-V. Em seguida, na guia **Início**, no grupo **Propriedades**, escolha **Propriedades**.  
 
-4.  在“<应用程序名称\> 属性”对话框的“部署类型”选项卡上，选择 App-V 部署类型，然后选择“编辑”。  
+4.  Na caixa de diálogo **Propriedades** do *<Nome do Aplicativo\>*, na guia **Tipos de Implantação**, selecione um tipo de implantação do App-V e escolha **Editar**.  
 
-5.  在“<部署类型名称\> 属性”对话框的“发布”选项卡上，选择想要发布的虚拟应用程序中的项目。  
+5.  Na caixa de diálogo **Propriedades** do *<Nome do Tipo de Implantação\>*, na guia **Publicação**, selecione os itens no aplicativo virtual que deseja publicar.  
 
-6.  单击“确定”以关闭“<部署类型名称\> 属性”对话框。  
+6.  Escolha **OK** para fechar a caixa de diálogo **Propriedades** do *<Nome do Tipo de Implantação\>*.  
 
-7.  选择“确定”关闭 <Application Name\>“属性”对话框。  
+7.  Escolha **OK** para fechar a caixa de diálogo *<Nome do Aplicativo\>* **Propriedades**.  
 
-## <a name="import-an-application"></a>导入应用程序  
- 使用下列过程将应用程序导入 Configuration Manager。 有关如何导出应用程序的信息，请参阅 [System Center Configuration Manager 应用程序的管理任务](../../apps/deploy-use/management-tasks-applications.md)。  
+## <a name="import-an-application"></a>Importar um aplicativo  
+ Use o procedimento a seguir para importar um aplicativo para o Configuration Manager. Para obter informações sobre como exportar um aplicativo, consulte [Tarefas de gerenciamento para aplicativos do System Center Configuration Manager](../../apps/deploy-use/management-tasks-applications.md).  
 
-1.  在 Configuration Manager 控制台中，选择“软件库” > “应用程序管理” > “应用程序”。   
+1.  No console do Configuration Manager, escolha **Biblioteca de Software** > **Gerenciamento de Aplicativos** > **Aplicativos**.   
 
-3.  在“主页”选项卡的“创建”组中，选择“导入应用程序”。  
+3.  Na guia **Início**, no grupo **Criar**, escolha **Importar Aplicativo**.  
 
-4.  在“导入应用程序向导”的“常规”页上，选择“浏览”，然后指定 zip 文件的 UNC 路径，该路径具有要导入的应用程序。  
+4.  Na página **Geral** do **Assistente para Importar Aplicativo**, escolha **Procurar** e especifique um caminho UNC para o arquivo .zip que contém o aplicativo que deseja importar.  
 
-5.  在“文件内容”页上，选择在尝试导入的应用程序与现有应用程序重复的情况下将进行的操作。 用户可以创建新应用程序，或忽略重复项并将新的修订添加到现有应用程序。  
+5.  Na página **Conteúdo do Arquivo**, selecione a ação a ser tomada se o aplicativo que você está tentando importar for uma duplicata de um aplicativo existente. Você pode criar um novo aplicativo ou ignorar o duplicado e adicionar uma nova revisão do aplicativo existente.  
 
-6.  在“摘要”页上，查看要执行的操作，然后完成向导。  
+6.  Na página **Resumo**, examine as ações a serem executadas e conclua o assistente.  
 
- 新应用程序会出现在“应用程序”节点中。  
+ O novo aplicativo aparece no nó **Aplicativos**.  
 
 > [!TIP]  
->  Windows PowerShell cmdlet **Import-CMApplication** 具有与此过程相同的功能。 有关详细信息，请参阅 Microsoft System Center 2012 Configuration Manager SP1 Cmdlet 参考文件中的 [Import-CMApplication](https://technet.microsoft.com/library/jj821738.aspx)。  
+>  O cmdlet do Windows PowerShell **Import-CMApplication** tem a mesma função que esse procedimento. Para obter mais informações, consulte [Import-CMApplication](https://technet.microsoft.com/library/jj821738.aspx) na Referência do Cmdlet do Microsoft System Center 2012 Configuration Manager SP1.  
 
-##  <a name="deployment-types-supported-by-configuration-manager"></a>Configuration Manager 支持的部署类型  
+##  <a name="deployment-types-supported-by-configuration-manager"></a>Tipos de implantação com suporte do Configuration Manager  
 
-|部署类型名称|更多信息|  
+|Nome do tipo de implantação|Mais informações|  
 |--------------------------|----------------------|  
-|**Windows Installer（\*.msi 文件）**|通过 Windows Installer 文件创建部署类型。|  
-|**Windows 应用包（\*.appx、\*.appxbundle）**|通过 Windows 应用包文件或 Windows 应用捆绑包为 Windows 8、Windows RT 或更高版本创建部署类型。|  
-|**Windows 应用包（在 Windows 应用商店中）**|通过指定指向 Windows 应用商店中应用的链接，或通过浏览应用商店选择你需要的应用，为 Windows 8、Windows RT 或更高版本创建部署类型。<br /><br /> 如果要以指向 Windows 应用商店的链接的形式部署应用，请确保组策略设置“关闭应用商店应用程序”  设置为“已禁用”  或“未配置” 。 如果启用此设置，客户端将无法连接到 Windows 应用商店来下载和安装应用程序。<br /><br /> 使用存储链接的 Windows 8 部署类型始终在其他部署类型之前进行评估（不考虑其优先级）。|  
-|**脚本安装程序**|创建一个部署类型，该部署类型指定在客户端设备上运行以安装内容或执行操作的脚本。|  
-|**Microsoft Application Virtualization 4**|通过 Microsoft Application Virtualization 4 清单创建部署类型|  
-|**Microsoft Application Virtualization 5**|通过 Microsoft Application Virtualization 5 包文件创建部署类型。|  
-|**Windows Phone 应用包（\*.xap 文件）**|通过 Windows Phone 应用包文件创建部署类型。|  
-|**Windows Phone 应用包（在 Windows Phone 应用商店中）**|通过指定指向 Windows Phone 应用商店中的应用的链接来创建部署类型。|  
-|**Windows Mobile Cabinet**|通过 Windows Mobile Cabinet (CAB) 文件为 Windows Mobile 设备创建部署类型。|  
-|**iOS 应用包（\*.ipa 文件）**|通过 iOS 应用包文件创建部署类型。|  
-|**App Store 中的 iOS 应用包**|通过指定指向应用商店中的 iOS 应用的链接来创建部署类型。|  
-|**Android 应用包（\*.apk 文件）**|通过 Android 应用包文件创建部署类型。|  
-|**Google Play 上的 Android 应用包**|通过指定指向 Google Play 上的应用的链接来创建部署类型。|  
-|**Mac OS X**|通过你使用 CMAppUtil 工具创建的 .cmmac 文件为 Mac 计算机创建部署类型。<br /><br /> 仅适用于运行 Configuration Manager 客户端的 Mac 计算机。|  
-|**Web 应用程序**|创建一个部署类型，该部署类型指定指向 Web 应用程序的链接。 该部署类型在用户的设备上安装 Web 应用程序的快捷方式。<br /><br /> 如果已在你管理的 iOS 或 Android 设备上安装了 Intune 托管浏览器，则可以确保用户只能使用托管浏览器打开应用。 为此，请在指定应用链接时使用以下格式之一，方法是将 **http:** 替换为 **http-intunemam:** 或将 **https:** 替换为 **https-intunemam:**<br /><br /> - **http-intunemam://<path to web app\>**<br /><br /> - **https-intunemam://<path to web app\>**<br /><br /> 可以使用 Configuration Manager 应用程序要求确保将要与托管浏览器关联的应用仅安装到 iOS 和 Android 设备。<br /><br /> 有关 Intune 托管浏览器的详细信息，请参阅[使用托管浏览器策略管理 Internet 访问](../../apps/deploy-use/manage-internet-access-using-managed-browser-policies.md)。|  
-|**通过 MDM 的 Windows Installer (\*.msi)**|此安装程序类型允许你创建基于 Windows Installer 的应用，并将其部署到运行 Windows 10 的 PC。<br /><br /> 使用此安装程序类型时，需要考虑下列注意事项：<br><br>- 只能上载扩展名为 .msi 的单个文件。<br /><br /> - 该文件的产品代码和产品版本将用于应用检测。<br /><br /> - 将使用该应用的默认重启行为。 Configuration Manager 不对此进行控制。<br /><br /> - 将为单个用户安装每个用户 MSI 包。<br /><br /> - 将为设备上的所有用户安装每个计算机 MSI 包。<br /><br /> - 当前仅为设备上的所有用户安装双模式 MSI 包。<br /><br /> - 当每个版本的 MSI 产品代码相同时，支持应用更新。|  
+|**Windows Installer (arquivo \*.msi)**|Cria um tipo de implantação por meio de um arquivo do Windows Installer.|  
+|**Pacote do aplicativo do Windows (\*.appx, \*.appxbundle)**|Cria um tipo de implantação para o Windows 8, Windows RT ou posterior por meio de um arquivo de pacote de aplicativos do Windows ou de um pacote de lote de aplicativo do Windows.|  
+|**Pacote do aplicativo do Windows (na Windows Store)**|Cria um tipo de implantação do Windows 8, Windows RT ou posterior especificando um link para o aplicativo na Windows Store ou procurando o armazenamento para selecionar o aplicativo de que você precisa.<br /><br /> Se deseja implantar o aplicativo como um link para a Windows Store, verifique se a configuração da Política de Grupo **Desligar o aplicativo da Loja** está definida como **Desabilitada** ou **Não configurada**. Se essa configuração estiver habilitada, os clientes não poderão se conectar à Windows Store para baixar e instalar aplicativos.<br /><br /> Os tipos de implantação do Windows 8 que usam um link para um repositório são sempre avaliados antes de outros tipos de implantação, independentemente de sua prioridade.|  
+|**Instalador de Script**|Cria um tipo de implantação que especifica um script que é executado em dispositivos clientes para instalar o conteúdo ou executar uma ação.|  
+|**Microsoft Application Virtualization 4**|Cria um tipo de implantação por meio de um manifesto do Microsoft Application Virtualization 4|  
+|**Microsoft Application Virtualization 5**|Cria um tipo de implantação de um arquivo de pacote do Microsoft Application Virtualization 5.|  
+|**Pacote do aplicativo do Windows Phone (arquivo \*.xap)**|Cria um tipo de implantação de um arquivo de pacote do aplicativo do Windows Phone.|  
+|**Pacote do aplicativo do Windows Phone (na Loja do Windows Phone)**|Cria um tipo de implantação especificando um link para o aplicativo na Loja do Windows Phone.|  
+|**Gabinete do Windows Mobile**|Cria um tipo de implantação para dispositivos Windows Mobile por meio de um arquivo CAB (Gabinete do Windows Mobile).|  
+|**Pacote de aplicativo para iOS (\*arquivo .ipa)**|Cria um tipo de implantação de um arquivo de pacote de aplicativo do iOS.|  
+|**Pacote de aplicativo para iOS da App Store**|Cria um tipo de implantação especificando um link para o aplicativo do iOS na Loja de Aplicativos.|  
+|**Pacote do aplicativo para Android (arquivo \*.apk)**|Cria um tipo de implantação de um arquivo de pacote de aplicativo do Android.|  
+|**Pacote do aplicativo para Android no Google Play**|Cria um tipo de implantação especificando um link para o aplicativo no Google Play.|  
+|**Mac OS X**|Cria um tipo de implantação para computadores Mac de um arquivo .cmmac criado com a ferramenta CMAppUtil.<br /><br /> Aplica-se somente a computadores Mac que executam o cliente Configuration Manager.|  
+|**Aplicativo Web**|Cria um tipo de implantação que especifica um link para um aplicativo da web. O tipo de implantação instala um atalho para o aplicativo da web no dispositivo do usuário.<br /><br /> Se tiver instalado o navegador gerenciado pelo Intune em dispositivos iOS ou Android que você gerencia, você poderá garantir que os usuários poderão usar somente o navegador gerenciado para abrir o aplicativo. Para fazer isso, use um dos seguintes formatos ao especificar um link para o aplicativo, substituindo **http:** por **http-intunemam:** ou **https:** por **https-intunemam:**<br /><br /> - **http-intunemam://<caminho para o aplicativo Web\>**<br /><br /> - **https-intunemam://<caminho para o aplicativo Web\>**<br /><br /> Você pode usar os requisitos de aplicativo do Configuration Manager para garantir que os aplicativos que deseja associar ao navegador gerenciado sejam instalados apenas em dispositivos iOS e Android.<br /><br /> Para obter mais informações sobre o navegador gerenciado do Intune, consulte [Manage Internet access using managed browser policies](../../apps/deploy-use/manage-internet-access-using-managed-browser-policies.md) (Gerenciar o acesso à Internet usando políticas de navegador gerenciado).|  
+|**Windows Installer por meio do MDM (\*.msi)**|Esse tipo de instalador permite criar e implantar aplicativos baseados no Windows Installer em PCs com o Windows 10.<br /><br /> As seguintes considerações se aplicam quando você usa esse tipo de instalador:<br><br>- Você só pode carregar um único arquivo com a extensão .msi.<br /><br /> - O código do produto do arquivo e a versão do produto são usados para detecção de aplicativo.<br /><br /> - O comportamento de reinicialização padrão do aplicativo será usado. O Configuration Manager não controla isto.<br /><br /> - Serão instalados pacotes do MSI por usuário para um único usuário.<br /><br /> - Serão instalados pacotes do MSI por computador para todos os usuários no dispositivo.<br /><br /> - Atualmente, os pacotes do MSI de modo dual apenas são instalados para todos os usuários no dispositivo.<br /><br /> - As atualizações de aplicativos são permitidas quando o código do produto MSI de cada versão é o mesmo|  

@@ -1,6 +1,6 @@
 ---
-title: "集合先决条件 | Microsoft Docs"
-description: "在 System Center Configuration Manager 中获取使用集合的先决条件。"
+title: "Pré-requisitos de coleções | Microsoft Docs"
+description: "Obter pré-requisitos para usar coleções no System Center Configuration Manager."
 ms.custom: na
 ms.date: 2/22/2017
 ms.prod: configuration-manager
@@ -18,18 +18,18 @@ manager: angrobe
 ms.openlocfilehash: 41fc3eb20a7441939eb0dc80bc121c8f3ea322b2
 ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
 ms.translationtype: HT
-ms.contentlocale: zh-CN
+ms.contentlocale: pt-BR
 ms.lasthandoff: 08/07/2017
 ---
-# <a name="prerequisites-for-collections-in-system-center-configuration-manager"></a>System Center Configuration Manager 中集合的先决条件
+# <a name="prerequisites-for-collections-in-system-center-configuration-manager"></a>Pré-requisitos para coleções no System Center Configuration Manager
 
-*适用范围：System Center Configuration Manager (Current Branch)*
+*Aplica-se a: System Center Configuration Manager (Branch Atual)*
 
-System Center Configuration Manager 中的集合仅包含产品内部的依赖关系。  
+Coleções no System Center Configuration Manager têm dependências somente dentro do produto.  
 
-## <a name="configuration-manager-dependencies"></a>Configuration Manager 依赖关系  
+## <a name="configuration-manager-dependencies"></a>Dependências do Configuration Manager  
 
-|依赖关系|更多信息|  
+|Dependência|Mais informações|  
 |----------------|----------------------|  
-|Reporting Services 点|在运行集合的报表前，必须先安装 Reporting Services 点站点系统角色。 有关详细信息，请参阅 [System Center Configuration Manager 中的报表](../../../../core/servers/manage/reporting.md)。|  
-|必须授予特定的安全权限来管理集合|必须具有以下安全权限才能管理符合性设置：<br /><br /> - 若要创建和管理集合：“集合”对象的“创建”、“删除”、“修改”、“修改文件夹”、“移动对象”、“读取”和“读取资源”。<br /><br /> - 若要管理集合设置：“集合”对象的“修改集合设置”。<br /><br /> 所有集合文件夹（包括根文件夹）都需要“修改文件夹”  权限。|  
+|Ponto do Reporting Services|A função do sistema de sites do ponto do Reporting Services deve estar instalada antes que seja possível executar relatórios para coleções. Para obter mais informações, consulte [Relatórios no System Center Configuration Manager](../../../../core/servers/manage/reporting.md).|  
+|Permissões específicas de segurança devem ter sido concedidas para gerenciar coleções|É necessário ter as seguintes permissões de segurança para gerenciar configurações de conformidade:<br /><br /> ‑ Para criar e gerenciar coleções: **Criar**, **Excluir**, **Modificar**, **Modificar Pasta**, **Mover Objeto**, **Ler** e **Ler Recurso** para o objeto **Coleção**.<br /><br /> ‑ Para gerenciar a configurações de coleção: **Modificar Configuração da Coleção** para o objeto **Coleção**.<br /><br /> A permissão **Modificar Pasta** é necessária para todas as pastas da coleção, incluindo a pasta raiz.|  

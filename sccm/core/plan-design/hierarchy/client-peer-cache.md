@@ -1,6 +1,6 @@
 ---
-title: "客户端对等缓存 | System Center Configuration Manager"
-description: "使用 System Center Configuration Manager 部署内容时，将对等缓存用于客户端内容源位置。"
+title: Cache de pares do cliente | System Center Configuration Manager
+description: "Use cache de pares para locais de fonte de conteúdo do cliente durante a implantação de conteúdo com o System Center Configuration Manager."
 ms.custom: na
 ms.date: 7/31/2017
 ms.reviewer: na
@@ -17,93 +17,93 @@ manager: angrobe
 ms.openlocfilehash: 89fcd16887ae77299f9d18472ee6a1ba56794eca
 ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
 ms.translationtype: HT
-ms.contentlocale: zh-CN
+ms.contentlocale: pt-BR
 ms.lasthandoff: 08/07/2017
 ---
-# <a name="peer-cache-for-configuration-manager-clients"></a>用于 Configuration Manager 客户端的对等缓存
+# <a name="peer-cache-for-configuration-manager-clients"></a>Cache de pares para clientes do Configuration Manager
 
-*适用范围：System Center Configuration Manager (Current Branch)*
+*Aplica-se a: System Center Configuration Manager (Branch Atual)*
 
-从 System Center Configuration Manager 版本 1610 开始，可以使用**对等缓存**来帮助管理向远程位置中客户端的内容部署。 对等缓存是内置 Configuration Manager 解决方案，使客户端能够直接从本地缓存将内容与其他客户端共享。   
+Começando com o System Center Configuration Manager versão 1610, você pode usar o **Cache de pares** para ajudar a gerenciar a implantação de conteúdo para clientes em locais remotos. O Cache de Pares é uma solução interna do Configuration Manager que habilita os clientes a compartilharem conteúdo com outros clientes diretamente do cache local.   
 
 > [!TIP]  
-> 如 1610 版本中所述，对等缓存和“客户端数据源”仪表板均为预发行功能。 若要启用这些功能，请参阅[使用更新中的预发行功能](/sccm/core/servers/manage/pre-release-features)。
+> Apresentado com a versão 1610, o cache de pares e o painel de fontes de dados do cliente são recursos de pré-lançamento. Para habilitá-los, confira [Usar recursos de pré-lançamento de atualizações](/sccm/core/servers/manage/pre-release-features).
 
-## <a name="overview"></a>概述
-对等缓存客户端是能够使用对等缓存功能的 Configuration Manager 客户端。 具有可与其他客户端共享的内容的对等缓存客户端是对等缓存源。
- -  通过客户端设置，可以使客户端能够使用对等缓存。
- -  若要将内容共享为对等缓存源，那么对等缓存客户端需满足以下条件：
-    -  必须已加入域。 但是，未加入域的客户端可以获取已加入域的对等缓存源中的内容。
-    -  必须是正在查找该内容的客户端当前边界组的成员。 客户端使用回退来查找相邻边界组中的内容时，相邻边界组中的对等缓存客户端不包括在可用内容源位置的池中。 有关当前边界组和相邻边界组的详细信息，请参阅[边界组](/sccm/core/servers/deploy/configure/define-site-boundaries-and-boundary-groups##a-namebkmkboundarygroupsa-boundary-groups)。
- - Configuration Manager 客户端缓存中保留的每种类型的内容均可使用对等缓存提供给其他客户端。
- -  对等缓存不会代替其他解决方案（如 BranchCache）的使用，而是并行工作以便提供更多选项，用于扩展传统内容部署解决方案（如分发点）。 这是一种无需依赖于 BranchCache 的自定义解决方案，因此即使不启用或不使用 Windows BranchCache，此解决方案依然可正常运作。
+## <a name="overview"></a>Visão geral
+Um cliente de Cache de mesmo nível é um cliente do Configuration Manager que está habilitado para uso do Cache de mesmo nível. Um cliente de Cache de mesmo nível que possui conteúdo para compartilhamento com outros clientes é uma fonte de Cache de mesmo nível.
+ -  Use as configurações do cliente para habilitar clientes para usar cache de pares.
+ -  Para compartilhar o conteúdo como uma fonte de Cache de mesmo nível, um cliente de Cache de mesmo nível:
+    -  Deve ingressar no domínio. No entanto, um cliente não associado a um domínio pode obter o conteúdo de um domínio ingressado na fonte de Cache de mesmo nível.
+    -  Deve ser membro do grupo de limites atual do cliente que está procurando o conteúdo. Um cliente de Cache de mesmo nível em um grupo de limites vizinho não está incluído no pool de locais de origem de conteúdo disponíveis quando um cliente usa o fallback para buscar o conteúdo de um grupo de limites vizinho. Para obter mais informações sobre grupos de limite atuais e próximos, consulte [Grupos de limites](/sccm/core/servers/deploy/configure/define-site-boundaries-and-boundary-groups##a-namebkmkboundarygroupsa-boundary-groups).
+ - Todo tipo de conteúdo mantido no cache de um cliente do Configuration Manager pode ser servido a outros clientes usando o Cache de Pares.
+ -  O Cache de Pares não substitui o uso de outras soluções como o BranchCache, em vez disso, ele funciona lado a lado com ele para fornecer a você mais opções para estender as soluções tradicionais de implantação de conteúdo, como os pontos de distribuição. Trata-se de uma solução personalizada sem dependência do BranchCache, portanto se você não habilitar nem usar o Windows BranchCache, ele ainda funcionará.
 
-### <a name="operations"></a>操作
+### <a name="operations"></a>Operações
 
-将启用对等缓存的客户端设置部署到集合后，该集合的成员可以充当同一边界组中其他客户端的对等内容源：
- -  充当对等内容源的客户端会将可用缓存内容列表提交到其管理点。
- -  然后，当该边界组中的下一个客户端请求该内容时，具有内容的每个对等缓存源都将作为潜在内容源返回，同时还将返回该边界组中的分发点和其他内容源位置。
- -  根据正常操作过程，查找内容的客户端将从为其提供的源池中选择其中一个内容源，然后继续尝试获取内容。
+Depois de implantar configurações do cliente que habilitam o cache de pares para uma coleção, os membros dessa coleção podem atuar como uma fonte de conteúdo de pares para outros clientes no mesmo grupo de limites:
+ -  Um cliente que opera como fonte de conteúdo de pares envia uma lista do conteúdo disponível armazenado em cache para o ponto de gerenciamento.
+ -  Em seguida, quando o próximo cliente nesse grupo de limite solicita aquele conteúdo, cada fonte de cache de pares que tem o conteúdo é retornada como uma fonte de conteúdo potencial, juntamente com os pontos de distribuição e outros locais de origem de conteúdo nesse grupo de limites.
+ -  De acordo com o processo normal de operação, o cliente que procura o conteúdo seleciona uma fonte de conteúdo do pool de fontes fornecidas e tenta obter o conteúdo.
 
 > [!NOTE]
-> 如果发生了向内容的相邻边界组的回退，则相邻边界组中的对等缓存内容源位置将不会添加到潜在内容源位置的客户端池中。  
+> Se o fallback para um grupo de limites vizinho para conteúdo ocorrer, as localizações das fontes de conteúdo do Cache de Pares no grupo de limites vizinho não serão adicionadas ao pool de possíveis localizações de fontes de conteúdo do cliente.  
 
 
-虽然可以让所有客户端都加入为对等缓存源，但最佳做法还是仅选择最适合作为对等缓存源的那些客户端。  可以根据客户端的底盘类型、磁盘空间、网络连接等评估客户端的适用性。 有关可帮助选择要用于对等缓存的最佳客户端的详细信息，请参阅[这篇由 Microsoft 顾问撰写的博客](https://blogs.technet.microsoft.com/setprice/2016/06/29/pe-peer-cache-custom-reporting-examples/)。
+Mesmo que seja possível fazer com que todos os clientes participem como fonte do cache de pares, é recomendado escolher somente os clientes mais adequados para serem fontes de cache de pares.  A adequação dos clientes pode ser avaliada com base no tipo de chassi do cliente, no espaço em disco, na conectividade de rede e muito mais. Para obter mais informações que podem ajudar você a selecionar os melhores clientes para usar o Cache de Pares, consulte [este blog de um consultor Microsoft](https://blogs.technet.microsoft.com/setprice/2016/06/29/pe-peer-cache-custom-reporting-examples/).
 
-**对对等缓存源的有限访问权限**  
-从版本 1702 开始，当对等缓存源计算机满足以下任一条件时，对等缓存源计算机将拒绝对内容的请求：  
-  -  处于低电量模式。
-  -  请求内容时 CPU 负载超过 80%。
-  -  磁盘 I/O 的 AvgDiskQueueLength 超过 10。
-  -  该计算机没有其他可用连接。   
+**Acesso limitado a uma fonte de cache de pares**  
+A partir da versão 1702, um computador de origem de cache de pares rejeitará uma solicitação de conteúdo quando o computador de origem do cache de pares atender a qualquer uma das seguintes condições:  
+  -  Está no modo de bateria fraca.
+  -  A carga de CPU excede 80% no momento em que o conteúdo é solicitado.
+  -  A E/S de disco tem um *AvgDiskQueueLength* que excede 10.
+  -  Não há mais conexões disponíveis para o computador.   
 
-使用 System Center Configuration Manager SDK 时，可以使用对等源功能的客户端配置服务器 WMI 类 (*SMS_WinPEPeerCacheConfig*) 配置这些设置。
+Você pode definir essas configurações usando a classe do WMI do servidor de configuração de cliente para o recurso de origem par (*SMS_WinPEPeerCacheConfig*) quando usar o SDK do System Center Configuration Manager.
 
-如果计算机拒绝对内容的请求，请求计算机会继续在其可用内容源位置池中的备用源中搜索内容。   
-
-
-
-### <a name="monitoring"></a>monitoring   
-为了帮助了解对等缓存的使用，可以查看“客户端数据源”仪表板。 请参阅[客户端数据源仪表板](/sccm/core/servers/deploy/configure/monitor-content-you-have-distributed#client-data-sources-dashboard)。
-
-从版本 1702 开始，可以使用以下三个报表来查看对等缓存使用。 在控制台中，转到“监视” > “报表” > “报表”。 所有报表均为一种类型的**软件分发内容**：
-1.  **对等缓存源内容拒绝**：  
-使用此报告来了解边界组中对等缓存源拒绝内容请求的频率。
- - **已知问题：**在向下钻取结果（如 *MaxCPULoad* 或 *MaxDiskIO*）时，可能会收到一个错误，表明找不到该报表或详细信息。 若要解决此问题，请使用以下两个直接显示结果的报表。
-
-2. **按条件的对等缓存源内容拒绝**：  
-使用此报告来了解指定边界组的拒绝详细信息或拒绝类型。 你可指定
-
-  - **已知问题：**不能从可用的参数中进行选择，而必须手动输入。 输入*边界组名称*和*拒绝类型*的值，如第一个报表所示。 例如，对于*拒绝类型*，你可以输入 *MaxCPULoad* 或 *MaxDiskIO*。
-
-3. **对等缓存源内容拒绝详细信息**：   
-  使用此报告来了解在被拒绝时所请求的内容。
-
- - **已知问题：**不能从可用的参数中进行选择，而必须手动输入。 输入在第一个报表（对等缓存源内容拒绝）中显示的*拒绝类型*值，然后输入你希望了解相关详细信息的内容源的*资源 ID*。  查找内容源的资源 ID：  
-
-    1. 在第二个报表（按条件的对等缓存源内容拒绝）的结果中查找显示为*对等缓存源*的计算机名称。  
-    2. 接下来，转到“资产和合规性” > “设备”，然后搜索该计算机名称。 使用资源 ID 列中的值。  
+Quando o computador rejeita uma solicitação de conteúdo, o computador solicitante continuará a procurar conteúdo de fontes alternativas em seu pool de locais de fonte de conteúdo disponíveis.   
 
 
-## <a name="requirements-and-considerations-for-peer-cache"></a>对等缓存的要求和注意事项
--   任何支持作为 Configuration Manager 客户端的 Windows 操作系统都支持对等缓存。 对等缓存不支持非 Windows 操作系统。
 
--   客户端只能传输来自其当前边界组中的对等缓存客户端中的内容。
+### <a name="monitoring"></a>monitoramento   
+Para ajudar você a entender o uso do cache de pares, exiba o painel Fontes de Dados do Cliente. Veja o [Painel de fontes de dados do cliente](/sccm/core/servers/deploy/configure/monitor-content-you-have-distributed#client-data-sources-dashboard).
 
--   在版本 1706 之前，客户端在其中使用对等缓存的每个站点必须使用[网络访问帐户](/sccm/core/plan-design/hierarchy/manage-accounts-to-access-content#a-namebkmknaaa-network-access-account)进行配置。 从版本 1706 开始，不再需要帐户，但有一个例外。  例外情况是：客户端使用对等缓存从软件中心获取并运行任务序列，并且该任务序列将客户端重新启动到 WinPE。  在此情况下，如果客户端处于 WinPE 中，则仍需要网络访问帐户，以便它可以访问对等缓存源以获取内容。
+A partir da versão 1702, você pode usar três relatórios para exibir o uso de cache de pares. No console, vá até **Monitoramento** > **Relatórios** > **Relatórios**. Todos os relatórios têm um tipo de **Conteúdo de Distribuição de Software**:
+1.  **Rejeição de conteúdo de origem de cache de pares**:  
+Use esse relatório para entender com que frequência as fontes de cache de pares em um grupo de limites rejeitou uma solicitação de conteúdo.
+ - **Problema conhecido:** ao fazer uma busca detalhada nos resultados como *MaxCPULoad* ou *MaxDiskIO*, você poderá receber um erro que sugere que o relatório ou os detalhes não podem ser encontrados. Para solucionar esse problema, use os seguintes dois relatórios que mostram os resultados diretamente.
 
-    在需要时，对等缓存源计算机使用网络访问帐户对来自对等方的下载请求进行身份验证，且该帐户仅需要域用户权限即可实现此目的。
+2. **Rejeição de conteúdo de origem do cache de pares por condição**:  
+Use esse relatório para entender os detalhes de rejeição para um grupo de limites ou tipo de rejeição especificado. É possível especificar
 
--   因为对等缓存内容源的当前边界由该客户端上次提交的硬件清单决定，所以漫游到网络位置且在其他边界组中的客户端可能仍被视为其以前的边界组成员，以符合对等缓存的目的。 这可能导致提供给客户端的对等缓存内容源不在其直接网络位置中。 建议排除可能有此配置的客户端作为对等缓存源加入。
+  - **Problema conhecido:** não é possível selecionar a partir de parâmetros disponíveis, é preciso digitá-los manualmente. Insira os valores de *Nome do Grupo de Limites* e *Tipo de Rejeição* como visto no primeiro relatório. Por exemplo, para *Tipo de Rejeição*, você pode inserir *MaxCPULoad* ou *MaxDiskIO*.
 
-## <a name="to-configure-client-peer-cache-client-settings"></a>配置客户端对等缓存客户端设置
-1.  在 Configuration Manager 控制台中，转到“管理” > “客户端设置”，然后打开要使用的设备客户端设置对象。 还可以修改默认客户端设置对象。
-2.  从可用设置的列表中，选择“客户端缓存设置”。
-3.  将“在完整的 OS 中启用 Configuration Manager 客户端以共享内容”设置为“是”。
-4.  配置以下设置以定义要用于对等缓存的端口：  
-  -  **初始网络广播的端口**
-  -  **启用 HTTPS，以进行客户端对等通信**
-  -  **用于从对等中下载内容的端口 (HTTP/HTTPS)**
+3. **Detalhes da rejeição de conteúdo de origem de cache de pares**:   
+  Use esse relatório para entender o conteúdo que estava sendo solicitado quando ele foi rejeitado.
 
-在启用了对等缓存的每台计算机上，如果 Windows 防火墙正在使用中，则 Configuration Manager 会将其配置为允许使用所配置的端口。
+ - **Problema conhecido:** não é possível selecionar a partir de parâmetros disponíveis, é preciso digitá-los manualmente. Insira o valor para *Tipo de Rejeição* conforme exibido no primeiro relatório (rejeição de conteúdo de fonte de cache de pares) e insira a *ID de Recurso* para a fonte de conteúdo sobre a qual você deseja obter mais informações.  Para localizar a ID de recurso da fonte de conteúdo:  
+
+    1. Localizar o nome do computador que é exibido como a *Fonte de cache de pares* nos resultados do 2º relatório (rejeição de conteúdo de fonte de cache de pares por condição).  
+    2. Em seguida, vá para **Ativos e Conformidade** > **Dispositivos** e procure o nome desse computador. Use o valor da coluna de ID de Recurso.  
+
+
+## <a name="requirements-and-considerations-for-peer-cache"></a>Requisitos e considerações do Cache de Pares
+-   O Cache de Pares tem suporte em qualquer sistema operacional Windows com suporte como cliente do Configuration Manager. Não há suporte para sistemas operacionais não Windows para o Cache de Pares.
+
+-   Os clientes só podem transferir conteúdo de clientes de cache de pares que estão em seu grupo de limites atual.
+
+-   Antes da versão 1706, cada site em que os clientes usam Cache Par deve ser configurado com uma [Conta de Acesso à Rede](/sccm/core/plan-design/hierarchy/manage-accounts-to-access-content#a-namebkmknaaa-network-access-account). A partir da versão 1706, essa conta não é mais necessária, com uma exceção.  A exceção é quando um cliente usa o cache de pares para obter e executar uma sequência de tarefas no Centro de Software, e essa sequência de tarefas reinicia o cliente no WinPE.  Nesse cenário, o cliente ainda precisa da Conta de Acesso à Rede quando estiver no WinPE, para que possa acessar a fonte de cache de pares para obter o conteúdo.
+
+    Quando é necessária, a Conta de Acesso à Rede é usada pelo computador de origem do Cache Par para autenticar solicitações de download de colegas e exige apenas permissões de usuário de domínio para essa finalidade.
+
+-   Como o limite atual de uma fonte de conteúdo do Cache de Pares é determinado pelo último envio de inventário de hardware daquele cliente, um cliente que usa um perfil móvel para um local de rede e que está em um grupo de limites diferente ainda poderá ser considerado um membro de seu grupo de limites anterior para o Cache de Pares. Isso pode resultar em uma fonte de conteúdo de cache de pares sendo oferecida a um cliente que não está em seu local de rede imediato. É recomendado excluir os clientes que estão sujeitos a essa configuração de participarem como uma fonte do Cache de Pares.
+
+## <a name="to-configure-client-peer-cache-client-settings"></a>Para definir as configurações do cliente do Cache Par
+1.  No console do Configuration Manager, acesse **Administração** > **Configurações do Cliente** e abra o objeto de configurações do cliente do dispositivo que deseja usar. Também é possível alterar o objeto de Configurações Padrão do Cliente.
+2.  Na lista de configurações disponíveis, escolha **Configurações do Cache do Cliente**.
+3.  Defina **Habilitar cliente do Configuration Manager em um SO completo para compartilhar conteúdo** como **Sim**.
+4.  Defina as seguintes configurações para definir as portas que você deseja usar para o cache de pares:  
+  -  **Porta para difusão de rede inicial**
+  -  **Habilitar HTTPS para comunicação de par do cliente**
+  -  **Porta para download de conteúdo de pares (HTTP/HTTPS)**
+
+Em cada computador habilitado para o Cache de Pares, se o Firewall do Windows estiver em uso, o Configuration Manager o configurará para permitir o uso das portas que você configurar.

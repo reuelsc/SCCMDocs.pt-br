@@ -1,6 +1,6 @@
 ---
-title: "更新重置工具 | Microsoft Docs"
-description: "将更新重置工具用于 System Center Configuration Manager 的控制台中更新。"
+title: "Ferramenta de redefinição de atualização | Microsoft Docs"
+description: "Usar a ferramenta de redefinição de atualização para atualizações no console para o System Center Configuration Manager."
 ms.custom: na
 ms.date: 7/31/2017
 ms.prod: configuration-manager
@@ -18,62 +18,62 @@ manager: angrobe
 ms.openlocfilehash: 1960f86e98a957559f379b9eeb6d293f7e4182e5
 ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
 ms.translationtype: HT
-ms.contentlocale: zh-CN
+ms.contentlocale: pt-BR
 ms.lasthandoff: 08/07/2017
 ---
-# <a name="update-reset-tool"></a>更新重置工具
+# <a name="update-reset-tool"></a>Ferramenta de redefinição de atualização
 
-*适用范围：System Center Configuration Manager (Current Branch)*  
+*Aplica-se a: System Center Configuration Manager (Branch Atual)*  
 
 
-从版本 1706 开始，Configuration Manager 主站点和管理中心站点包含 Configuration Manager 更新重置工具，即 CMUpdateReset.exe。 控制台中更新存在下载或复制问题时，使用此工具修复问题。 可在站点服务器的 \cd.latest\SMSSETUP\TOOLS 文件夹中找到此工具。
+A partir da versão 1706, os sites primários do Configuration Manager e os sites de administração central incluem a Ferramenta de Redefinição de Atualização do Configuration Manager, **CMUpdateReset.exe**. Use a ferramenta para corrigir problemas quando as atualizações no console tiverem problemas de download ou replicação. A ferramenta é encontrada na pasta ***\cd.latest\SMSSETUP\TOOLS*** do servidor do site.
 
-可通过当前仍受支持的分支的任意版本使用此工具。
+Você pode usar essa ferramenta com qualquer versão do branch atual que permanece com suporte.
 
-[控制台中更新](/sccm/core/servers/manage/install-in-console-updates)尚未安装且处于失败状态时，使用此工具。 失败状态表示更新下载正在进行，但是处于停滞状态，或者花费的时间过长。 时间过长是指小时数大于对同等大小的更新包的历史预期。 另外，也可能是无法将更新复制到子主站点。  
+Use essa ferramenta quando uma [atualização no console](/sccm/core/servers/manage/install-in-console-updates) ainda não estiver instalada e estiver em um estado de falha. Um estado de falha significa que o download da atualização está em andamento, mas ficou preso ou está demorando muito tempo. Muito tempo significa um período maior do que sua expectativa normal para pacotes de atualização de tamanho similar. Também pode ter havido uma falha ao replicar a atualização para os sites primários filhos.  
 
-运行此工具时，它会基于你指定的更新运行。 默认情况下，该工具不会删除已成功安装或下载的更新。  
+Quando você executa a ferramenta, ela é executada em relação à atualização que você especificar. Por padrão, a ferramenta não exclui com sucesso atualizações baixadas ou instaladas.  
 
-### <a name="prerequisites"></a>先决条件
-用于运行此工具的帐户需要具有以下权限：
--   对管理中心站点和层次结构中每个主站点的站点数据库的“读取”和“写入”权限。 若要设置这些权限，可以将用户帐户添加为每个站点的 Configuration Manager 数据库上 db_datawriter 和 db_datareader[固定数据库角色](/sql/relational-databases/security/authentication-access/database-level-roles#fixed-database-roles)的成员。 该工具不与辅助站点进行交互。
--   在层次结构的顶层站点上为“本地管理员”。
--   在托管服务连接点的计算机上为“本地管理员”。
+### <a name="prerequisites"></a>Pré-requisitos
+A conta usada para executar a ferramenta requer as seguintes permissões:
+-   Permissões de **leitura** e **gravação** para o banco de dados do site de administração central e cada site primário em sua hierarquia. Para definir essas permissões, você poderá adicionar a conta de usuário como membro das [funções de banco de dados fixas](/sql/relational-databases/security/authentication-access/database-level-roles#fixed-database-roles) **db_datawriter** e **db_datareader** no banco de dados do Configuration Manager de cada site. A ferramenta não consegue interagir com os sites secundários.
+-   **Administrador local** no site de nível superior da sua hierarquia.
+-   **Administrador local** no computador que hospeda o ponto de conexão de serviço.
 
-需要你希望进行重置的更新包的 GUID。 要获取 GUID，请执行以下操作：
-  1.   在控制台中，转到“管理” > “更新与服务”。
-  2.   在显示窗格中，右键单击某一列的标题（如“状态”），然后选择“包 GUID”，将该列添加到显示内容中。
-  3.   现在此列显示更新包 GUID。
+Você precisa da interface gráfica do usuário do pacote de atualização que você deseja redefinir. Para obter a interface gráfica do usuário:
+  1.   No console, acesse **Administração** > **Atualizações e Manutenção**.
+  2.   No painel de exibição, clique com o botão direito no título de uma das colunas (como **Estado**), em seguida, selecione **Guia do Pacote** para adicionar essa coluna à exibição.
+  3.   Agora, a coluna mostra o GUID do pacote de atualização.
 
 > [!TIP]  
-> 若要复制此 GUID，请选择想要重置的更新包的行，然后使用 CTRL+C 复制该行。 如果将复制的选定内容粘贴到文本编辑器，则可以在运行该工具时仅复制 GUID 用作命令行参数。
+> Para copiar a interface gráfica do usuário, selecione a linha para o pacote de atualização que deseja redefinir e, em seguida, use CTRL+C para copiar essa linha. Se você colar a seleção copiada em um editor de texto, poderá copiar somente a interface gráfica do usuário para usar como um parâmetro de linha de comando quando você executar a ferramenta.
 
-### <a name="run-the-tool"></a>运行该工具    
-该工具必须在层次结构的顶层站点上运行。
+### <a name="run-the-tool"></a>Executar a ferramenta    
+A ferramenta deve ser executada no site de nível superior da hierarquia.
 
-运行此工具时，使用命令行参数指定以下内容：
-  -   位于层次结构顶层站点的 SQL Server。
-  -   位于顶层站点的站点数据库名称。
-  -   你希望进行重置的更新包的 GUID。
+Ao executar a ferramenta, use os parâmetros de linha de comando para especificar:
+  -   O SQL Server no site de nível superior da hierarquia.
+  -   O nome do banco de dados do site no site de nível superior.
+  -   O GUID do pacote de atualização que você deseja redefinir.
 
-该工具根据更新状态确定它需要访问的其他服务器。   
+Com base no status da atualização, a ferramenta identifica os servidores adicionais os quais precisa acessar.   
 
-如果更新包处于下载后状态，则该工具不会清理此包。 或者，也可以使用强制删除参数强制删除已成功下载的更新（请参阅本主题后续介绍的命令行参数）。
+Se o pacote de atualização estiver em um estado de *pós-download*, a ferramenta não limpará o pacote. Como opção, você pode forçar a remoção de uma atualização que baixou com êxito usando o parâmetro force delete (confira os parâmetros de linha de comando posteriormente neste tópico).
 
-运行该工具后：
--   如果包已被删除，则在顶层站点重启 SMS_Executive 服务。 然后，检查更新，以便可以重新下载此包。
--   如果包未被删除，则无需执行任何操作。 更新将重新进行初始化，然后重新开始复制或安装。
+Depois que a ferramenta é executada:
+-   Se um pacote tiver sido excluído, reinicie o serviço SMS_Executive no site de nível superior. Em seguida, verifique se há atualizações para que você possa baixar o pacote novamente.
+-   Se um pacote não tiver sido excluído, não será necessário realizar qualquer ação. A atualização reinicializa e, depois, reinicia a replicação ou a instalação.
 
-**命令行参数：**  
+**Parâmetros da linha de comando:**  
 
-| 参数        |描述                 |  
+| Parâmetro        |Descrição                 |  
 |------------------|----------------------------|  
-|**-S &lt;顶层站点的 SQL Server 的 FQDN>** | *必需* <br> 指定为层次结构的顶层站点托管站点数据库的 SQL Server 的 FQDN。    |  
-| **-D &lt;数据库名称>**                        | *必需* <br> 指定顶层站点的数据库的名称。  |  
-| **-P &lt;包 GUID>**                         | *必需* <br> 指定想要重置的更新包的 GUID。   |  
-| **-I &lt;SQL Server 实例名称>**             | *可选* <br> 确定托管站点数据库的 SQL Server 的实例。 |
-| **-FDELETE**                              | *可选* <br> 强制删除已成功下载的更新包。 |  
- **示例：**  
- 在一个典型方案中，你想要重置具有下载问题的更新。 SQL Server FQDN 是 server1.fabrikam.com，站点数据库是 CM_XYZ，包 GUID 是 61F16B3C-F1F6-4F9F-8647-2A524B0C802C。  可以运行：CMUpdateReset.exe -S server1.fabrikam.com -D CM_XYZ -P 61F16B3C-F1F6-4F9F-8647-2A524B0C802C
+|**-S &lt;Nome de domínio totalmente qualificado do SQL Server do seu site de nível superior>** | *Necessária* <br> Especifique o nome de domínio totalmente qualificado do SQL Server que hospeda o banco de dados do site para o site de nível superior da sua hierarquia.    |  
+| **-D &lt;Nome do banco de dados>**                        | *Necessária* <br> Especifique o nome do banco de dados no site de nível superior.  |  
+| **-P &lt;Interface gráfica do usuário do pacote>**                         | *Necessária* <br> Especifique a GUID do pacote de atualização que você deseja redefinir.   |  
+| **-I &lt;Nome da instância do SQL Server>**             | *Opcional* <br> Identifique a instância do SQL Server que hospeda o banco de dados do site. |
+| **-FDELETE**                              | *Opcional* <br> Force a exclusão de um pacote de atualização baixado com êxito. |  
+ **Exemplos:**  
+ Em um cenário típico, você deve redefinir uma atualização que apresenta problemas de download. O FQDN do seu SQL Server é *server1.fabrikam.com*, o banco de dados do site é *CM_XYZ* e a GUID do pacote é *61F16B3C-F1F6-4F9F-8647-2A524B0C802C*.  Execute: ***CMUpdateReset.exe -S server1.fabrikam.com -D CM_XYZ -P 61F16B3C-F1F6-4F9F-8647-2A524B0C802C***
 
- 在比较极端的情形下，你希望强制删除存在问题的更新包。 SQL Server FQDN 是 server1.fabrikam.com，站点数据库是 CM_XYZ，包 GUID 是 61F16B3C-F1F6-4F9F-8647-2A524B0C802C。  可以运行：CMUpdateReset.exe  -FDELETE -S server1.fabrikam.com -D CM_XYZ -P 61F16B3C-F1F6-4F9F-8647-2A524B0C802C
+ Em um cenário mais complexo, você deve forçar a exclusão do pacote de atualização problemático. O FQDN do seu SQL Server é *server1.fabrikam.com*, o banco de dados do site é *CM_XYZ* e a GUID do pacote é *61F16B3C-F1F6-4F9F-8647-2A524B0C802C*.  Execute: ***CMUpdateReset.exe  -FDELETE -S server1.fabrikam.com -D CM_XYZ -P 61F16B3C-F1F6-4F9F-8647-2A524B0C802C***

@@ -6,22 +6,20 @@ ms.date: 03/05/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
-ms.technology:
-- configmgr-hybrid
+ms.technology: configmgr-hybrid
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 28115475-e563-4e16-bf30-f4c9fe704754
-caps.latest.revision: 18
-caps.handback.revision: 0
+caps.latest.revision: "18"
+caps.handback.revision: "0"
 author: mtillman
 ms.author: mtillman
 manager: angrobe
-ms.translationtype: HT
-ms.sourcegitcommit: 3c75c1647954d6507f9e28495810ef8c55e42cda
 ms.openlocfilehash: 50c137f159b0ef631f7173b8eec190182ce41cee
-ms.contentlocale: pt-br
-ms.lasthandoff: 07/29/2017
-
+ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
+ms.translationtype: HT
+ms.contentlocale: pt-BR
+ms.lasthandoff: 08/07/2017
 ---
 # <a name="protect-apps-using-mobile-application-management-policies-in-system-center-configuration-manager"></a>Proteger aplicativos usando políticas de gerenciamento de aplicativos móveis no System Center Configuration Manager
 
@@ -179,4 +177,3 @@ Para mais informações, consulte [Gerenciar o acesso à Internet usando políti
 
 ##  <a name="see-a-list-of-available-policy-managed-apps"></a>Veja uma lista dos aplicativos gerenciados por política disponíveis  
  Para obter uma lista dos aplicativos gerenciados pela política que estão disponíveis para dispositivos iOS e Android, consulte [Parceiros de aplicativo do Microsoft Intune](https://www.microsoft.com/cloud-platform/microsoft-intune-partners).  
-

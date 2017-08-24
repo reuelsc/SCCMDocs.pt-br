@@ -1,6 +1,6 @@
 ---
-title: "新版本 1610 |Microsoft Docs"
-description: "获取有关 System Center Configuration Manager 的 1610 版中引入的更改和新功能的详细信息。"
+title: "Nova versão 1610 | Microsoft Docs"
+description: "Veja os detalhes das alterações e os novos recursos introduzidos na versão 1610 do System Center Configuration Manager."
 ms.custom: na
 ms.date: 11/23/2016
 ms.reviewer: na
@@ -17,300 +17,300 @@ ROBOTS: NOINDEX, NOFOLLOW
 ms.openlocfilehash: 8b80f4d14eafa4cbbfb083178a118bc0e71f4019
 ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
 ms.translationtype: HT
-ms.contentlocale: zh-CN
+ms.contentlocale: pt-BR
 ms.lasthandoff: 08/07/2017
 ---
-# <a name="what39s-new-in-version-1610-of-system-center-configuration-manager"></a>System Center Configuration Manager 版本 1610 的新增功能
+# <a name="what39s-new-in-version-1610-of-system-center-configuration-manager"></a>Novidades da versão 1610 do System Center Configuration Manager
 
-*适用范围：System Center Configuration Manager (Current Branch)*
+*Aplica-se a: System Center Configuration Manager (Branch Atual)*
 
-System Center Configuration Manager Current Branch 的更新 1610 作为控制台内更新提供，用于运行版本 1511、1602 或 1606 的以前安装的站点。
+A atualização 1610 da ramificação atual do System Center Configuration Manager está disponível como uma atualização no console para sites instalados anteriormente que executam a versão 1511, 1602 ou 1606.
 
 
 > [!TIP]  
-> 若要安装新站点，必须使用 Configuration Manager 的基准版本。  
->  了解详细信息：    
->  -   [安装新站点](https://technet.microsoft.com/library/mt590197.aspx)  
->  -   [在站点上安装更新](https://technet.microsoft.com/library/mt607046.aspx)  
->  -   [基准和更新版本](/sccm/core/servers/manage/updates#a-namebkmkbaselinesa-baseline-and-update-versions)  
+> Para instalar um novo site, você deve usar uma versão de linha de base do Configuration Manager.  
+>  Saiba mais sobre:    
+>  -   [Instalação de novos sites](https://technet.microsoft.com/library/mt590197.aspx)  
+>  -   [Instalação de atualizações em sites](https://technet.microsoft.com/library/mt607046.aspx)  
+>  -   [Versões de linha de base e atualização](/sccm/core/servers/manage/updates#a-namebkmkbaselinesa-baseline-and-update-versions)  
 
-以下各节提供有关 Configuration Manager 版本 1610 中引入的更改和新功能的详细信息。  
-
-
-## <a name="in-console-monitoring-of-update-installation-status"></a>在控制台内部监视更新安装状态  
-从 1610 版起，当安装更新包并在控制台中监视安装时，会有一个新阶段：**安装后**。 此阶段包括重新启动关键服务和复制监视初始化等任务的状态。 （在站点更新至版本 1610 之前，此阶段在控制台中不可用。）有关更新安装状态的详细信息，请参阅[安装控制台内部更新](/sccm/core/servers/manage/install-in-console-updates#a-namebkmkinstalla-install-in-console-updates)。
+As seções a seguir fornecem detalhes sobre as alterações e novas funcionalidades introduzidas na versão 1610 do Configuration Manager.  
 
 
-## <a name="exclude-clients-from-automatic-upgrade"></a>从自动升级中排除客户端
-可以排除通过新版本客户端软件升级 Windows 客户端。 若要执行此操作，请将客户端计算机包括在指定要从升级中排除的集合中。 排除的集合中的客户端会忽略升级客户端软件的请求。  有关详细信息，请参阅[从升级中排除 Windows 客户端](../../clients/manage/upgrade/exclude-clients-windows.md)。
+## <a name="in-console-monitoring-of-update-installation-status"></a>Monitoramento do status de instalação de atualização no console  
+Começando com a versão 1610, quando você instala um pacote de atualização e monitora a instalação no console, há uma nova fase: **a pós-instalação**. Esta fase inclui o status para tarefas como reiniciar serviços essenciais e inicialização de monitoramento de replicação. (Essa fase não está disponível no console até a instalação das atualizações do site para a versão 1610.) Para obter mais informações sobre o status de instalação da atualização, consulte [Instalar atualizações no console](/sccm/core/servers/manage/install-in-console-updates#a-namebkmkinstalla-install-in-console-updates).
 
 
-## <a name="improvements-for-boundary-groups"></a>边界组的改进
-版本 1610 介绍了对边界组做出的重要更改以及它们如何与分发点配合使用。 这些更改可简化内容基础结构的设计，同时使你更好地控制客户端如何以及何时回退以搜索更多分发点作为内容源位置。 这包括位于本地和基于云的分发点。
-这些改进会替代你可能熟悉的概念和行为（如将分发点配置为快速或慢速）。 新模型应更易设置和维护。 这些更改也是未来更改的基础，以后还将改进与边界组相关联的其他站点系统角色。
-
-在升级到版本 1610 期间，升级将转换你的当前边界组配置，以适应新的模型，以便这些更改不会妨碍现有内容分发配置。
-
-有关详细信息，请参阅[边界组](/sccm/core/servers/deploy/configure/define-site-boundaries-and-boundary-groups#a-namebkmkboundarygroupsa-boundary-groups)。
+## <a name="exclude-clients-from-automatic-upgrade"></a>Excluir clientes da atualização automática
+Você pode excluir os clientes Windows da atualização para novas versões do software cliente. Para fazer isso, você pode incluir os computadores cliente em uma coleção especificada para ser excluída da atualização. Os clientes da coleção excluída ignoram as solicitações para atualizar o software cliente.  Para obter mais informações, consulte [Excluir clientes Windows das atualizações](../../clients/manage/upgrade/exclude-clients-windows.md).
 
 
-## <a name="peer-cache-for-content-distribution-to-clients"></a>用于向客户端进行内容分发的对等缓存
-从 1610 版起，客户端**对等缓存**可帮助管理对远程客户端内容的部署。 对等缓存是内置 Configuration Manager 解决方案，供客户端用于直接从本地缓存将内容与其他客户端共享。
+## <a name="improvements-for-boundary-groups"></a>Aprimoramentos para grupos de limites
+A versão 1610 introduz alterações importantes para os grupos de limites e como eles funcionam com pontos de distribuição. Essas alterações podem simplificar o design da infraestrutura de conteúdo, enquanto proporcionam a você mais controle sobre como e quando os clientes realizam o fallback para pesquisar pontos de distribuição adicionais como locais de fonte de conteúdo. Isso inclui pontos de distribuição baseados em nuvem e locais.
+Esses aprimoramentos substituem conceitos e comportamentos com os quais você pode estar familiarizado, como configurar pontos de distribuição para serem rápidos ou lentos. O novo modelo deve ser mais fácil de configurar e manter. Essas alterações também são bases para alterações futuras, que melhorarão outras funções do sistema de sites associadas aos grupos de limites.
 
-将启用对等缓存的客户端设置部署到集合后，该集合的成员可以充当同一边界组中其他客户端的对等内容源。
+Ao atualizar para a versão 1610, a atualização converte suas configurações de grupo de limites atuais de acordo com o novo modelo para que essas alterações não incomodem suas configurações de distribuição de conteúdo existentes.
 
-还可以使用新的“客户端数据源”仪表板，来了解环境中对等缓存内容源的使用。
+Para obter mais informações, consulte [Grupos de limites](/sccm/core/servers/deploy/configure/define-site-boundaries-and-boundary-groups#a-namebkmkboundarygroupsa-boundary-groups).
+
+
+## <a name="peer-cache-for-content-distribution-to-clients"></a>Cache de Pares para distribuição de conteúdo para clientes
+Começando da versão 1610, o cliente **Cache de Pares** ajuda você a gerenciar a implantação de conteúdo para clientes em locais remotos. O Cache de Pares é uma solução interna do Configuration Manager para clientes compartilharem conteúdo com outros clientes diretamente do cache local.
+
+Depois de implantar configurações do cliente que habilitam o Cache de Pares para uma coleção, os membros dessa coleção poderão atuar como uma fonte de conteúdo par para outros clientes no mesmo grupo de limites.
+
+Você também pode usar o novo painel **Fontes de Dados do Cliente** para entender o uso de fontes de conteúdo de Cache de Pares em seu ambiente.
 
 > [!TIP]  
-> 1610 版本中，对等缓存和“客户端数据源”仪表板均为预发行功能。 若要启用这些功能，请参阅[使用更新中的预发行功能](/sccm/core/servers/manage/install-in-console-updates#bkmk_prerelease)。
+> Com a versão 1610, o cache de pares e o painel de fontes de dados do cliente são recursos de pré-lançamento. Para habilitá-los, confira [Usar recursos de pré-lançamento de atualizações](/sccm/core/servers/manage/install-in-console-updates#bkmk_prerelease).
 
-有关详细信息，请参阅[用于 Configuration Manager 客户端的对等缓存](/sccm/core/plan-design/hierarchy/client-peer-cache)和[客户端数据源仪表板](/sccm/core/servers/deploy/configure/monitor-content-you-have-distributed#client-data-sources-dashboard)。
+Para saber mais, veja [Cache de pares para clientes do Configuration Manager](/sccm/core/plan-design/hierarchy/client-peer-cache) e [Painel Fontes de Dados do Cliente](/sccm/core/servers/deploy/configure/monitor-content-you-have-distributed#client-data-sources-dashboard).
 
 
-## <a name="migrate-multiple-shared-distribution-points-at-the-same-time"></a>同时迁移多个共享分发点
-现在可以通过该选项**重新分配分发点**以便 Configuration Manager 可同时并行处理最多 50 个共享分发点的重新分配。 在此版本之前，每次只能处理一个分发点的重新分配。 有关详细信息，请参阅[同时迁移多个共享分发点](/sccm/core/migration/planning-a-content-deployment-migration-strategy#migrate-multiple-shared-distribution-points-at-the-same-time)。
+## <a name="migrate-multiple-shared-distribution-points-at-the-same-time"></a>Migrar vários pontos de distribuição compartilhados ao mesmo tempo
+Agora você pode usar a opção para **Transferir Ponto de Distribuição** para que o Configuration Manager processe em paralelo a reatribuição de até 50 pontos de distribuição compartilhados ao mesmo tempo. Antes dessa versão, os pontos de distribuição reatribuídos foram processados um de cada vez. Para mais informações, consulte [Migrar vários pontos de distribuição compartilhados ao mesmo tempo](/sccm/core/migration/planning-a-content-deployment-migration-strategy#migrate-multiple-shared-distribution-points-at-the-same-time).
 
-## <a name="cloud-management-gateway-for-managing-internet-based-clients"></a>用于管理基于 Internet 的客户端的云管理网关
+## <a name="cloud-management-gateway-for-managing-internet-based-clients"></a>Gateway de gerenciamento de nuvem para o gerenciamento de clientes baseados na Internet
 
-云管理网关提供一种简单的方法来管理 Internet 上的 Configuration Manager 客户端。 云管理网关服务部署到 Microsoft Azure 且需要 Azure 订阅，它使用名为云管理网关连接点的新角色连接到本地 Configuration Manager 基础结构。 服务完全部署并配置好后，客户端可以与本地 Configuration Manager 站点系统角色和基于云的分发点通信，而不管它们是连接到内部专用网络还是 Internet 上。 有关详细信息，及云管理网关与基于 Internet 的客户端管理之间的比较，请参阅[管理 Internet 上的客户端](/sccm/core/clients/manage/manage-clients-internet)。
+O gateway de gerenciamento de nuvem fornece uma maneira simples de gerenciar clientes do Configuration Manager na Internet. O serviço de gateway de gerenciamento de nuvem, que é implantado no Microsoft Azure e requer uma assinatura do Azure, conecta-se à sua infraestrutura local do Configuration Manager usando uma nova função chamada de ponto de conexão do gateway de gerenciamento de nuvem. Após ser completamente implantado e configurado, os clientes poderão se comunicar com funções locais do sistema de sites do Configuration Manager e com pontos de distribuição baseados em nuvem independentemente de estarem conectados à rede privada interna ou à Internet. Para obter mais informações e ver como o gateway de gerenciamento de nuvem se compara com o gerenciamento de clientes baseado na Internet, consulte [Gerenciar clientes na Internet](/sccm/core/clients/manage/manage-clients-internet).
 
-## <a name="improvements-to-the-windows-10-edition-upgrade-policy"></a>Windows 10 版本升级策略的改进
-在此版本中，已对此策略类型进行了以下改进：
+## <a name="improvements-to-the-windows-10-edition-upgrade-policy"></a>Melhorias na Política de atualização de edição do Windows 10
+Nesta versão, as seguintes melhorias foram feitas neste tipo de política:
 
-- 现在，除了已向 Microsoft Intune 注册的 Windows 10 电脑之外，还可以对运行 Configuration Manager 客户端的 Windows 10 电脑使用版本升级策略。
-- 可以从 Windows 10 专业版升级到与你的硬件兼容的向导中的任何平台。
+- Agora é possível usar a política de atualização de edição com computadores Windows 10 que executam o cliente do Configuration Manager, além de computadores Windows 10 registrados no Microsoft Intune.
+- É possível atualizar do Windows 10 Professional para qualquer uma das plataformas no assistente compatíveis com o hardware.
 
-## <a name="manage-hardware-identifiers"></a>管理硬件标识符
-现在可以提供 Configuration Manager 为实现 PXE 启动和客户端注册而应忽略的硬件 ID 列表。 这可以帮助解决两个常见问题：
+## <a name="manage-hardware-identifiers"></a>Gerenciar os identificadores de hardware
+Agora você pode fornecer uma lista de IDs de hardware que o Configuration Manager deve ignorar para fins de registro de cliente e de inicialização PXE. Há dois problemas comuns que esse procedimento ajuda a resolver:
 
-1. 许多设备（如 Surface Pro 3）不包含板载以太网端口。 为部署操作系统，通常会使用 USB 到以太网适配器来建立有线连接。 但是，出于成本和一般可用性的考虑，这些适配器通常会共享使用。 由于此适配器的 MAC 地址用于标识设备，因此在每次部署之间若无额外的管理员操作，重用适配器就会出现问题。 现在在 Configuration Manager 版本 1610 中，可排除此适配器的 MAC 地址，以便在此种情况下轻松重用该适配器。
-2. 虽然 SMBIOS ID 应是唯一的硬件标识符，但是某些特殊硬件设备自身具有重复 ID。 此问题可能不如上述的 USB 到以太网适配器方案那样常见，但可以通过使用已排除的硬件 ID 列表来解决此问题。
+1. Muitos dispositivos, como o Surface Pro 3, não incluem uma porta Ethernet integrada. Um adaptador USB para Ethernet geralmente é usado para estabelecer uma conexão com fio para fins de implantação do sistema operacional. No entanto, eles costumam ser adaptadores compartilhados, devido ao custo e à usabilidade geral. Como o endereço MAC do adaptador é usado para identificar o dispositivo, reutilizar o adaptador se torna problemático sem ações de administrador adicionais entre cada implantação. Agora no Configuration Manager versão 1610, você pode excluir o endereço MAC desse adaptador para que ele possa ser facilmente reutilizado nesse cenário.
+2. O esperado é que a ID do SMBIOS seja um identificador de hardware exclusivo, mas alguns dispositivos de hardware específicos são criados com IDs duplicadas. Esse problema pode não ser tão comum quanto o cenário do adaptador USB para Ethernet descrito acima, mas você pode solucioná-lo usando a lista de IDs de hardware excluídos.
 
-有关详细信息，请参阅[管理重复硬件标识符](/sccm/core/clients/manage/manage-clients#manage-duplicate-hardware-identifiers)。
+Para mais detalhes, consulte [Gerenciar os identificadores de hardware duplicados](/sccm/core/clients/manage/manage-clients#manage-duplicate-hardware-identifiers).
 
-## <a name="enhancements-to-windows-store-for-business-integration-with-configuration-manager"></a>适用于企业的 Windows 应用商店与 Configuration Manager 集成的增强功能
-此版本中的更改：
-- 以前，你仅可以从适用于企业的 Windows 应用商店部署免费的应用程序。 Configuration Manager 现在还支持部署在线支付许可应用（仅适用于注册了 Intune 的设备）。
-- 现在你可启动适用于企业的 Windows 应用商店和 Configuration Manager 之间的即时同步。
-- 现在可修改从 Azure Active Directory 获取的客户端密钥。
-- 可以删除对应用商店的订阅。
+## <a name="enhancements-to-windows-store-for-business-integration-with-configuration-manager"></a>Aprimoramentos na integração da Windows Store para Empresas com o Configuration Manager
+Alterações nessa versão:
+- Anteriormente, você podia implantar apenas aplicativos gratuitos da Windows Store para Empresas. Agora, o Configuration Manager também dá suporte à implantação de aplicativos licenciados online pagos (apenas para dispositivos registrados do Intune).
+- Agora você pode iniciar uma sincronização imediata entre a Windows Store para Empresas e o Configuration Manager.
+- Agora você pode modificar a chave secreta do cliente obtida do Azure Active Directory.
+- Você pode excluir uma assinatura do repositório.
 
-有关详细信息，请参阅[使用 System Center Configuration Manager 管理来自适用于企业的 Windows 应用商店的应用](/sccm/apps/deploy-use/manage-apps-from-the-windows-store-for-business)。
+Para obter detalhes, confira [Gerenciar aplicativos da Windows Store para Empresas com o System Center Configuration Manager](/sccm/apps/deploy-use/manage-apps-from-the-windows-store-for-business).
 
 
-## <a name="policy-sync-for-intune-enrolled-devices"></a>已注册 Intune 的设备的策略同步
-现在可以从 Configuration Manager 控制台中为已注册 Intune 的设备请求策略同步，而无需在设备本身的公司门户应用中请求同步。 同步请求状态信息可用作设备视图中的新列，称为**远程同步状态**。 每台设备的“属性”对话框的“发现数据”部分也会提供此信息。
-有关详细信息，请参阅[从 Configuration Manager 控制台中远程同步已注册 Intune 的设备上的策略](/sccm/mdm/deploy-use/sync-intune-device)。
+## <a name="policy-sync-for-intune-enrolled-devices"></a>Sincronização de política para dispositivos registrados pelo Intune
+Agora você pode solicitar uma sincronização de política em um dispositivo registrado no Intune pelo console do Configuration Manager, em vez de precisar solicitar uma sincronização no aplicativo do Portal da Empresa no próprio dispositivo. As informações de estado da solicitação de sincronização ficam disponíveis como uma nova coluna as exibições do dispositivo, chamada **Estado de Sincronização Remota**. As informações também aparecem na seção de dados de descoberta na caixa de diálogo **Propriedades** de cada dispositivo móvel.
+Para saber mais, veja [Sincronizar remotamente a política em dispositivos registrados no Intune pelo console do Configuration Manager](/sccm/mdm/deploy-use/sync-intune-device).
 
 
-## <a name="use-compliance-settings-to-configure-windows-defender-settings"></a>使用符合性设置来配置 Windows Defender 设置
-现在可以在 Configuration Manager 控制台中，使用配置项目在注册有 Intune 的 Windows 10 计算机上配置 Windows Defender 客户端设置。
-有关详细信息，请参阅[为不使用 System Center Configuration Manager 客户端管理的 Windows 8.1 和 Windows 10 设备创建配置项目](/sccm/compliance/deploy-use/create-configuration-items-for-windows-8.1-and-windows-10-devices-managed-without-the-client)中的 **Windows Defender** 部分。
+## <a name="use-compliance-settings-to-configure-windows-defender-settings"></a>Use as configurações de conformidade para definir configurações do Windows Defender
+Agora você pode definir as configurações de cliente do Windows Defender em computadores Windows 10 registrados no Intune usando itens de configuração no console do Configuration Manager.
+Para saber mais, veja a seção **Windows Defender** em [Criar itens de configuração para dispositivos Windows 8.1 e Windows 10 gerenciados sem o cliente do System Center Configuration Manager](/sccm/compliance/deploy-use/create-configuration-items-for-windows-8.1-and-windows-10-devices-managed-without-the-client).
 
 
 
-## <a name="general-improvements-to-software-center"></a>对软件中心的一般改进
-- 用户现在可以从软件中心以及应用程序目录中请求应用。
-- 通过改进，现可帮助用户了解哪些是最新且相关的软件。
+## <a name="general-improvements-to-software-center"></a>Melhorias gerais ao Centro de Software
+- Os usuários agora podem solicitar aplicativos do Centro de Software, bem como o Catálogo de Aplicativos.
+- Melhorias para ajudar os usuários a entender qual software é novo e relevante.
 
-## <a name="new-columns-in-device-collection-views"></a>设备集合视图中的新列
-现在，可以在设备集合视图中显示 **IMEI** 和**序列号**（针对 iOS 设备）的列。
-有关详细信息，请参阅[预声明具有 IMEI 或 iOS 序列号的设备](https://docs.microsoft.com/sccm/mdm/deploy-use/predeclare-devices-with-hardware-id)。
+## <a name="new-columns-in-device-collection-views"></a>Novas colunas nas exibições de coleção de dispositivos
+Agora você pode exibir as colunas para **IMEI** e **Número de Série** (para dispositivos iOS) em exibições de coleção de dispositivos.
+Para detalhes, confira [Pré-declarar dispositivos com número de série do iOS ou IMEI](https://docs.microsoft.com/sccm/mdm/deploy-use/predeclare-devices-with-hardware-id).
 
-## <a name="customizable-branding-for-software-center-dialogs"></a>软件中心自定义品牌对话框
-Configuration Manager 版本 1602 中引入了软件中心的自定义品牌。 在版本 1610 中，现已将该品牌功能扩展到所有关联的对话框，以便为软件中心用户提供更一致的体验。
+## <a name="customizable-branding-for-software-center-dialogs"></a>Identidade visual personalizável para caixas de diálogo do Centro de software
+A identidade visual personalizada do Centro de Software foi introduzida no Configuration Manager versão 1602. Na versão 1610, essa identidade visual foi estendida para todas as caixas de diálogo associadas para fornecer uma experiência mais consistente aos usuários do Centro de Software.
 
-根据以下规则应用软件中心的自定义品牌：
+A identidade visual personalizada do Centro de Software é aplicada de acordo com as regras a seguir:
 
-- 如果未安装应用程序目录网站点站点服务器角色，则软件中心将显示“计算机代理”客户端设置 -“软件中心中显示的组织名称” - 中指定的组织名称。 有关说明，请参阅[如何配置客户端设置](../../clients/deploy/configure-client-settings.md)。
+- Se a função de servidor de sites do ponto de sites da Web do Catálogo de aplicativos não estiver instalada, o Centro de software exibe o nome da organização especificado na configuração do cliente **Agente de Computador** chamada **Nome da organização exibido no Centro de Software**. Para ver instruções, consulte [How to configure client settings (Como definir as configurações do cliente)](../../clients/deploy/configure-client-settings.md).
 
-- 如果已安装应用程序目录网站点站点服务器角色，则软件中心将显示在应用程序目录网站点站点服务器角色属性中指定的组织名称和颜色。 有关详细信息，请参阅[应用程序目录网站点的配置选项](/sccm/core/servers/deploy/configure/configuration-options-for-site-system-roles#Application-Catalog-website-point)。
+- Se a função de servidor de sites do ponto de sites da Web do Catálogo de Aplicativos estiver instalada, o Centro de software exibe o nome da organização e a cor especificados nas propriedades da função de servidor de sites do ponto de sites da Web do Catálogo de Aplicativos. Para obter mais informações, consulte [Configuration options for Application Catalog website point (Opções de configuração do ponto de sites da Web do catálogo de aplicativos)](/sccm/core/servers/deploy/configure/configuration-options-for-site-system-roles#Application-Catalog-website-point).
 
-- 如果已配置 Microsoft Intune 订阅并将其连接到 Configuration Manager 环境，则软件中心将显示 Intune 订阅属性中指定的组织名称、颜色和公司徽标。 有关详细信息，请参阅 [Configuring the Microsoft Intune subscription](/sccm/mdm/deploy-use/setup-hybrid-mdm#step-3-configure-intune-subscription)。
+- Se uma assinatura do Microsoft Intune estiver configurada e conectada ao ambiente do Configuration Manager, o Centro de Software exibirá o nome da organização, a cor e o logotipo da empresa especificados nas propriedades da assinatura do Intune. Para obter mais informações, consulte [Configuring the Microsoft Intune subscription](/sccm/mdm/deploy-use/setup-hybrid-mdm#step-3-configure-intune-subscription).
 
 
-## <a name="enforcement-grace-period-for-required-application-and-software-update-deployments"></a>所需的应用程序和软件更新部署的强制宽限期
-在某些情况下，可能会希望为用户提供更多时间（超出所设置的任何截止时间）来安装所需的应用程序部署或软件更新。 例如，当一台计算机关闭的时间过长和计算机需要安装大量应用程序或更新部署时，可能会需要执行这种操作。 例如，如果最终用户刚从假期返回，则他们可能需要等待很长时间，因为安装的应用程序部署已过期。 为了帮助解决此问题，现在可通过将 Configuration Manager 客户端设置部署到集合来定义强制的宽限期。 
+## <a name="enforcement-grace-period-for-required-application-and-software-update-deployments"></a>Período de cortesia para imposição de implantações de atualizações de software e aplicativos obrigatórios
+Em alguns casos, talvez você queira conceder aos usuários mais tempo instalar as atualizações de software ou as implantações de aplicativo obrigatórias além das datas limite definidas. Por exemplo, isso normalmente pode ser necessário quando um computador ficou desligado por um período estendido e precisa reinstalar uma grande quantidade de implantações de atualização ou de aplicativo. Por exemplo, se um usuário final acabou de voltar de férias, eles terá que aguardar um longo período enquanto as implantações de aplicativo atrasadas são instaladas. Para ajudar a resolver esse problema, agora você pode definir um período de carência para a imposição implantando configurações de cliente do Configuration Manager para uma coleção. 
 
-若要配置宽限期，请执行以下操作：
-1.      在客户端设置的“计算机代理”页上，将“部署截止时间后强制的宽限期(小时)”这一新属性的值配置为介于 **1** 和 **120** 小时之间。
-2.      在新的所需应用程序部署中，或在现有部署属性中，在“计划”页上，选中复选框“根据用户首选项延迟此部署的强制执行”，延迟时间以客户端设置中定义的宽限期为依据。 选中了此复选框并针对其中部署了客户端设置的设备的所有部署都将使用此强制宽限期。
+Para configurar o período de carência, execute as seguintes ações:
+1.      Na página **Agente de Computador** das configurações do cliente, configure a nova propriedade **Período de carência para a imposição após a data limite da implantação (horas):** com um valor entre **1** e **120** horas.
+2.      Em uma nova implantação de aplicativo obrigatória ou nas propriedades de uma implantação existente, na página **Agendamento**, marque a caixa de seleção **Atrase a imposição dessa implantação de acordo com as preferências do usuário, até o período de carência definido nas configurações do cliente**. Todas as implantações que têm essa caixa de seleção marcada e que são destinadas a dispositivos nos quais você também implantou as configurações do cliente usarão o período de carência imposto.
 
-如果配置强制宽限期，并选中该复选框，则当到达应用程序安装截止时间后，将在用户按照宽限期配置的第一个非业务窗口中安装该应用程序。 但是，用户仍可打开软件中心并在任何所需时间安装该应用程序。 一旦过了宽限期，对于未完成的部署，强制将恢复为正常行为。 已将类似的选项添加到软件更新部署向导、自动部署规则向导和属性页中。
+Se você configurar um período de carência para a imposição e marcar a caixa de seleção, quando o prazo da instalação do aplicativo for atingido, ele será instalado na primeira janela fora do horário comercial que o usuário configurou até esse período de carência. No entanto, o usuário ainda poderá abrir o Centro de Software e instalar o aplicativo a qualquer momento que desejar. Depois que o período de carência expirar, a imposição retorna ao comportamento normal para implantações atrasadas. Opções semelhantes foram adicionadas ao assistente de implantação de atualizações de software, ao assistente de regras de implantação automática e páginas de propriedades.
 
 
 
-## <a name="improved-functionality-in-dialog-boxes-about-required-software"></a>有关所需软件的对话框的功能改进
-当用户收到来自“暂停并提醒我：”设置的所需软件后，可以从下面的下拉值列表中进行选择： 
-- **以后**。 指定根据客户端代理设置中配置的通知设置安排通知。
-- **固定时间**。 指定在选定时间（比如 30 分钟）之后再次显示通知。
+## <a name="improved-functionality-in-dialog-boxes-about-required-software"></a>Funcionalidade aprimorada em caixas de diálogo do software necessário
+Quando um usuário receber software obrigatório, na configuração **Suspender e lembrar dentro de:** ele pode selecionar na seguinte lista suspensa de valores: 
+- **Mais tarde**. Especifica que as notificações são agendadas com base nas configurações de notificação definidas nas configurações do Agente Cliente.
+- **Tempo fixo**. Especifica que a notificação será agendada para ser exibida novamente após o tempo selecionado (por exemplo, em 30 minutos).
 
-![客户端代理设置中的计算机代理页](media/client-notification-settings.png)
+![Página do Agente de Computador nas configurações do Agente Cliente](media/client-notification-settings.png)
 
-最大暂停时间取决于“客户端代理”设置中配置的通知值。 例如，如果将计算机代理页上的“部署截止时间大于 24 小时，请提醒用户，提醒间隔时间（小时）为”设置配置为 10 小时，且距离截止时间超过 24 小时，则用户将看到一组暂停选项，暂停时间最多不超过 10小时。 随着截止时间的临近，可用的选项会变少，与部署时间轴的每个组件的相关客户端代理设置相一致。
+O tempo máximo de adiamento baseia-se nos valores de notificação definidos nas configurações de Agente Cliente. Por exemplo, se a configuração **Prazo de implantação superior a 24 horas, lembrar o usuário a cada (horas)** na página Agente de Computador estiver definida como 10 horas e demorar mais de 24 horas até o prazo de implantação, o usuário verá um conjunto de opções de adiamento de até 10 horas, mas nunca superior a esse valor. Conforme o prazo se aproximar, a caixa de diálogo mostrará menos opções, consistentes com as configurações do Agente Cliente relevantes para cada componente da linha de tempo da implantação.
 
-此外，对于高风险部署，如用于部署操作系统的任务序列，用户会更频繁地收到通知。 这不是临时性的任务栏通知，每次通知用户需要维护关键软件后，用户的电脑上会显示类似于以下对话框：
+Além disso, para uma implantação de alto risco, como uma sequência de tarefas que implanta um sistema operacional, a experiência de notificação do usuário agora será mais invasiva. Em vez de uma notificação transitória na barra de tarefas, cada vez que o usuário for notificado de que uma manutenção de software crítica é necessária, uma caixa de diálogo como a seguinte será exibida no computador:
 
-![所需软件对话框](media/client-toast-notification.png)
+![Caixa de diálogo Software Exigido](media/client-toast-notification.png)
 
 
-更多相关信息：
-- [用于管理高风险部署的设置](../../../protect/understand/settings-to-manage-high-risk-deployments.md)
-- [如何配置客户端设置](../../clients/deploy/configure-client-settings.md)
+Para obter mais informações:
+- [Configurações para gerenciar implantações de alto risco](../../../protect/understand/settings-to-manage-high-risk-deployments.md)
+- [Como definir as configurações do cliente](../../clients/deploy/configure-client-settings.md)
 
-## <a name="software-updates-dashboard"></a>软件更新仪表板
-可使用新的软件更新仪表板查看组织中设备的当前符合性状态，并快速分析数据以确定哪些设备处于风险中。 若要查看仪表板，请导航到“监视” > “概述” > “安全性” > “软件更新仪表板”。
+## <a name="software-updates-dashboard"></a>Painel de atualizações de software
+É possível usar o novo painel de atualizações de software para exibir o status atual de conformidade dos dispositivos em sua organização e analisar rapidamente os dados para ver quais dispositivos estão em risco. Para exibir o painel, navegue até **Monitoramento** > **Visão Geral** > **Segurança** > **Painel de Atualizações de Software**.
 
-有关详细信息，请参阅[监视软件更新](/sccm/sum/deploy-use/monitor-software-updates)。
+Para ver mais detalhes, consulte [Monitorar atualizações de software](/sccm/sum/deploy-use/monitor-software-updates).
 
 
-## <a name="improvements-to-the-application-request-process"></a>对应用程序请求过程的改进
-批准安装应用程序后，可随后在 Configuration Manager 控制台中通过单击“拒绝”选择拒绝该请求。 以前，批准后此按钮为灰显。
+## <a name="improvements-to-the-application-request-process"></a>Melhorias no processo de solicitação do aplicativo
+Depois de ter aprovado um aplicativo para a instalação, você pode escolher negar a solicitação subsequente clicando em **Negar** no console do Configuration Manager. Anteriormente, esse botão era desabilitado após a aprovação.
 
-执行此操作不会从任何设备卸载应用程序。 但是，它会阻止用户从软件中心安装应用程序的新副本。
+Essa ação não faz com que o aplicativo seja desinstalado de todos os dispositivos. No entanto, ela interrompe os usuários de instalarem novas cópias do aplicativo do Centro de Software.
 
-## <a name="filter-by-content-size-in-automatic-deployment-rules"></a>按自动部署规则中的内容大小进行筛选
-现在可以对自动部署规则中软件更新的内容大小进行筛选。 例如，可以将“内容大小 (KB)”筛选器设置为 **< 2048**，以仅下载小于 2 MB 的软件更新。 使用此筛选器可防止自动下载较大的软件更新，以便在带宽受到限制时更好地支持简化的 Windows 低级别维护。 有关详细信息，请参阅：
-- [Configuration Manager and Simplified Windows Servicing on Down Level Operating Systems](https://blogs.technet.microsoft.com/enterprisemobility/2016/10/07/configuration-manager-and-simplified-windows-servicing-on-down-level-operating-systems/)（低级别操作系统上的 Configuration Manager 和简化的 Windows 维护服务）
-- [自动部署软件更新](/sccm/sum/deploy-use/automatically-deploy-software-updates)
+## <a name="filter-by-content-size-in-automatic-deployment-rules"></a>Filtrar por tamanho do conteúdo em regras de implantação automática
+Agora, você pode filtrar o tamanho do conteúdo para atualizações de software em regras de implantação automática. Por exemplo, para baixar apenas atualizações de software menores que 2 MB, você pode definir o filtro **Tamanho do Conteúdo (KB)** como **< 2048**. Usar esse filtro impede que atualizações de software grandes sejam baixadas automaticamente, para dar melhor suporte à manutenção simplificada de nível inferior do Windows quando a largura de banda de rede é limitada. Para obter detalhes, consulte:
+- [Configuration Manager e Serviço do Windows simplificado em sistemas operacionais de nível inferior](https://blogs.technet.microsoft.com/enterprisemobility/2016/10/07/configuration-manager-and-simplified-windows-servicing-on-down-level-operating-systems/)
+- [Implantar atualizações de software automaticamente](/sccm/sum/deploy-use/automatically-deploy-software-updates)
 
-若要配置“内容大小 (KB)”字段，请执行下列操作之一：
-- 当创建自动部署规则时，请在“创建自动部署规则”向导中转到“软件更新”页。
-- 在现有自动部署规则的属性中，请转到“软件更新”选项卡。
+Para configurar o campo **Tamanho do Conteúdo (KB)**, siga um destes procedimentos:
+- Ao criar uma regra de implantação automática, no Assistente Criar regra de implantação automática, vá para a página **Atualizações de software**.
+- Nas propriedades de uma regra de implantação automática existente, vá para a guia **Atualizações de software**.
 
-## <a name="office-365-client-management-dashboard"></a>Office 365 客户端管理仪表板
-现在可以在 Configuration Manager 控制台中使用 Office 365 客户端管理仪表板。 若要查看该仪表板，请转到“软件库” > “概述” > “Office 365 客户端管理”。
+## <a name="office-365-client-management-dashboard"></a>Painel de gerenciamento de clientes do Office 365
+O painel de Gerenciamento de Clientes do Office 365 agora está disponível no console do Configuration Manager. Para exibir o painel, acesse **Biblioteca de Software** > **Visão Geral** > **Gerenciamento de Cliente do Office 365**.
 
-仪表板显示以下内容的图表：
+O painel exibe gráficos para o seguinte:
 
-- Office 365 客户端数
-- Office 365 客户端版本
-- Office 365 客户端语言
-- Office 365 客户端通道     
+- Número de clientes do Office 365
+- Versões do cliente do Office 365
+- Idiomas do cliente do Office 365
+- Canais do cliente do Office 365     
 
-有关详细信息，请参阅[管理 Office 365 ProPlus 更新](/sccm/sum/deploy-use/manage-office-365-proplus-updates)。
+Para saber mais, veja [Gerenciar atualizações do Office 365 ProPlus](/sccm/sum/deploy-use/manage-office-365-proplus-updates).
 
-## <a name="task-sequence-steps-to-manage-bios-to-uefi-conversion"></a>管理 BIOS 转换为 UEFI 所采用的任务序列步骤
-现在可以使用新的变量 TSUEFIDrive 自定义操作系统部署任务的序列，以便“重启计算机”步骤为到 UEFI 的转换在硬盘驱动器上准备 FAT32 分区。 以下过程提供了有关如何创建任务序列步骤以便为 BIOS 到 UEFI 的转换准备硬盘驱动器的示例。 有关详细信息，请参阅[管理 BIOS 转换为 UEFI 所采用的任务序列步骤](/sccm/osd/deploy-use/task-sequence-steps-to-manage-bios-to-uefi-conversion)。
+## <a name="task-sequence-steps-to-manage-bios-to-uefi-conversion"></a>Etapas de sequência de tarefas para gerenciar o BIOS para a conversão de UEFI
+Agora você pode personalizar uma sequência de tarefas de implantação do sistema operacional com uma nova variável, TSUEFIDrive, para que a etapa **Reiniciar o Computador** prepare uma partição FAT32 no disco rígido para a transição para UEFI. O procedimento a seguir fornece um exemplo de como você pode criar etapas de sequência de tarefas para preparar o disco rígido para a conversão de BIOS para UEFI. Para saber mais, veja [Etapas da sequência de tarefas para gerenciar a conversão de BIOS para UEFI](/sccm/osd/deploy-use/task-sequence-steps-to-manage-bios-to-uefi-conversion).
 
-##  <a name="improvements-to-the-task-sequence-step-prepare-configmgr-client-for-capture"></a>任务序列步骤的改进：准备 ConfigMgr 客户端以便捕获  
-“准备 ConfigMgr 客户端”一步现在将完全删除 Configuration Manager 客户端，而不是仅删除密钥信息。 任务序列每次部署捕获的操作系统映像时，都将安装新的 Configuration Manager 客户端。 有关详细信息，请参阅[任务序列步骤](/sccm/osd/understand/task-sequence-steps#BKMK_PrepareConfigMgrClientforCapture)。
-
-
-
-## <a name="intune-compliance-policy-charts"></a>Intune 合规性策略图表
-现可通过使用 Configuration Manager 控制台中“监视”工作区下的新图表快速查看设备的总体合规性以及不合规的主要原因。 可以单击图表中的某个分区向下钻取，以查看该类别中的设备列表。 有关详细信息，请参阅[监视合规性策略](/sccm/protect/deploy-use/create-compliance-policy#monitor-the-compliance-policy)。
-
-
-## <a name="lookout-integration-for-hybrid-implementations-to-protect-ios-and-android-devices"></a>集成了 Lookout，以获得保护 iOS 和 Android 设备的混合实现
-Microsoft 与 Lookout 的移动威胁防护解决方案集成，通过检测设备上的恶意软件和风险应用等，来保护 iOS 和 Android 移动设备。 Lookout 的解决方案可帮助确定威胁级别，它是可配置的。 可以在 System Center Configuration Manager 中创建合规性策略规则，以根据 Lookout 的风险评估确定设备合规性。 使用条件访问策略，可以根据设备合规性状态允许或阻止对公司资源的访问。 若要了解集成和它的工作原理，请参阅[根据设备、网络和应用程序风险管理访问权限](/sccm/protect/deploy-use/manage-access-based-on-device-network-app-risk)。
-
-系统将提示不合规 iOS 设备的用户进行注册。 将要求这些用户在自己的设备上安装 Lookout for Work 应用、激活应用并修正 Lookout for Work 应用程序中报告的威胁，以获取对公司数据的访问权限。 了解如何[配置和部署 Lookout for Work 应用](/sccm/protect/deploy-use/configure-and-deploy-lookout-for-work-apps)。
-
-
-
-## <a name="new-compliance-settings-for-configuration-items"></a>配置项目的新符合性设置
-可将配置项目中的许多新设置用于各种设备平台。 这些设置之前存在于 Microsoft Intune 的独立配置中，现在结合使用 Intune 和 Configuration Manager 时可以使用这些设置。
-有关详细信息，请参阅[不使用 System Center Configuration Manager 客户端管理的设备配置项目](/sccm/compliance/deploy-use/configuration-items-for-devices-managed-without-the-client)。
-
-### <a name="new-settings-for-android-devices"></a>适用于 Android 设备的新设置
-#### <a name="password-settings"></a>密码设置
-- **记住密码历史**
-- **允许指纹解锁**
-
-#### <a name="security-settings"></a>安全设置
-- **需要对存储卡进行加密**
-- **允许屏幕捕获**
-- **允许提交诊断数据**
-
-#### <a name="browser-settings"></a>浏览器设置
-- **允许使用 Web 浏览器**
-- **允许自动填充**
-- **允许使用弹出窗口阻止程序**
-- **允许使用 Cookie**
-- **允许使用活动脚本**
-
-#### <a name="app-settings"></a>应用设置
-- **允许使用 Google Play 商店**
-
-#### <a name="device-capability-settings"></a>设备功能设置
-- **允许使用可移动存储**
-- **允许使用 Wi-Fi tethering**
-- **允许使用地理位置**
-- **允许使用 NFC**
-- **允许使用蓝牙**
-- **允许语音漫游**
-- **允许数据漫游**
-- **允许 SMS/MMS 消息传送**
-- **允许使用语音助手**
-- **允许语音拨号**
-- **允许复制和粘贴**
-
-### <a name="new-settings-for-ios-devices"></a>适用于 iOS 设备的新设置
-#### <a name="password-settings"></a>密码设置
-- **密码中所需的复杂字符数**
-- **允许简单密码**
-- **需要提供密码之前处于非活动状态的分钟数**
-- **记住密码历史**
-
-### <a name="new-settings-for-mac-os-x-devices"></a>适用于 Mac OS X 设备的新设置
-#### <a name="password-settings"></a>密码设置
-- **密码中所需的复杂字符数**
-- **允许简单密码**
-- **记住密码历史**
-- **屏幕保护程序激活前处于非活动状态的分钟数**
-
-### <a name="new-settings-for-windows-10-desktop-and-mobile-devices"></a>适用于 Windows 10 桌面和移动版设备的新设置
-#### <a name="password-settings"></a>密码设置
-- **最小字符集数**
-- **记住密码历史**
-- **当设备从空闲状态返回时需要密码**
-
-#### <a name="security-settings"></a>安全设置
-- **需要对移动设备加密**
-- **允许手动取消注册**
-
-#### <a name="device-capability-settings"></a>设备功能设置
-- **允许通过移动电话网络使用 VPN**
-- **允许在通过移动电话网络漫游时使用 VPN**
-- **允许重置手机**
-- **允许使用 USB 连接**
-- **允许使用 Cortana**
-- **允许操作中心通知**
-
-### <a name="new-settings-for-windows-10-team-devices"></a>适用于 Windows 10 协同版设备的新设置
-#### <a name="device-settings"></a>设备设置
-- **启用 Azure Operational Insights**
-- **启用 Miracast 无线投影**
-- **选择“欢迎”屏幕上显示的会议信息**
-- **锁屏背景图像 URL**
-
-### <a name="new-settings-for-windows-81-devices"></a>适用于 Windows 8.1 设备的新设置
-#### <a name="applicability-settings"></a>适用性设置
-- **将所有配置应用到 Windows 10**
-
-#### <a name="password-settings"></a>密码设置
-- **所需的密码类型**
-- **最小字符集数**
-- **最短密码长度**
-- **擦除设备前允许的重复登录失败次数**
-- **屏幕关闭前处于不活动状态的分钟数**
-- **密码过期（天数）**
-- **记住密码历史**
-- **防止重用以前的密码**
-- **允许图片密码和 PIN**
-
-#### <a name="browser-settings"></a>浏览器设置
-- **允许自动检测 Intranet 网络**
-
-### <a name="new-settings-for-windows-phone-81-devices"></a>适用于 Windows Phone 8.1 设备的新设置
-#### <a name="applicability-settings"></a>适用性设置
-- **将所有配置应用到 Windows 10**
-
-#### <a name="password-settings"></a>密码设置
-- **最小字符集数**
-- **允许简单密码**
-- **记住密码历史**
-
-#### <a name="device-capability-settings"></a>设备功能设置
-- **允许自动连接到免费 Wi-Fi 热点**
+##  <a name="improvements-to-the-task-sequence-step-prepare-configmgr-client-for-capture"></a>Melhorias na etapa da sequência de tarefas: Preparar o Cliente do ConfigMgr para Captura  
+A etapa Preparar o Cliente do ConfigMgr agora removerá completamente o cliente do Configuration Manager, em vez de apenas remover informações importantes. Quando a sequência de tarefas implanta a imagem capturada do sistema operacional, ela instala um novo cliente do Configuration Manager a cada vez. Para obter detalhes, consulte [Etapas da sequência de tarefas](/sccm/osd/understand/task-sequence-steps#BKMK_PrepareConfigMgrClientforCapture).
+
+
+
+## <a name="intune-compliance-policy-charts"></a>Gráficos da política de conformidade do Intune
+Agora é possível obter uma exibição rápida da conformidade geral dos dispositivos e os principais motivos de não conformidade usando novos gráficos no espaço de trabalho **Monitoramento** no console do Configuration Manager. Você pode clicar em uma seção no gráfico para detalhar uma lista de dispositivos nessa categoria. Para obter detalhes, consulte [Monitorar a política de conformidade](/sccm/protect/deploy-use/create-compliance-policy#monitor-the-compliance-policy).
+
+
+## <a name="lookout-integration-for-hybrid-implementations-to-protect-ios-and-android-devices"></a>Integração do Lookout para implementações híbridas para proteger dispositivos Android e iOS
+A Microsoft está em integração com a solução de proteção de ameaças móveis do Lookout para proteger dispositivos móveis Android e iOS ao detectar malware, aplicativos de risco e muito mais, em dispositivos. A solução do Lookout ajuda a determinar o nível de ameaça, que é configurável. Você pode criar uma regra de política de conformidade no System Center Configuration Manager para determinar a conformidade do dispositivo com base na avaliação de risco feita pelo Lookout. Usando políticas de acesso condicional, você pode permitir ou bloquear o acesso aos recursos da empresa com base no status de conformidade do dispositivo. Para saber mais sobre a integração e como ela funciona, consulte [Gerenciar o acesso com base no dispositivo, na rede e no risco do aplicativo](/sccm/protect/deploy-use/manage-access-based-on-device-network-app-risk).
+
+Os usuários de dispositivos iOS incompatíveis serão solicitados a se registrar. Eles serão solicitados a instalar o aplicativo Lookout for Work em seus dispositivos, ativar o aplicativo e corrigir ameaças relatadas no aplicativo Lookout for Work para obter acesso aos dados da empresa. Saiba como [Configurar e implantar aplicativos Lookout for Work](/sccm/protect/deploy-use/configure-and-deploy-lookout-for-work-apps).
+
+
+
+## <a name="new-compliance-settings-for-configuration-items"></a>Novas configurações de conformidade para itens de configuração
+Há várias novas configurações que você pode usar em seus itens de configuração para várias plataformas de dispositivo. Essas são configurações que anteriormente estavam no Microsoft Intune em uma configuração autônoma e agora estão disponíveis quando você usa o Intune com o Configuration Manager.
+Para mais detalhes, consulte [Itens de configuração para dispositivos gerenciados sem o cliente do System Center Configuration Manager](/sccm/compliance/deploy-use/configuration-items-for-devices-managed-without-the-client).
+
+### <a name="new-settings-for-android-devices"></a>Novas configurações para dispositivos Android
+#### <a name="password-settings"></a>Configurações de senha
+- **Lembrar histórico de senha**
+- **Permitir desbloqueio por impressão digital**
+
+#### <a name="security-settings"></a>Configurações de segurança
+- **Exigir criptografia em cartões de memória**
+- **Permitir captura de tela**
+- **Permitir envio de dados diagnósticos**
+
+#### <a name="browser-settings"></a>Configurações do navegador
+- **Permitir navegador da Web**
+- **Permitir preenchimento automático**
+- **Permitir bloqueador de pop-up**
+- **Permitir cookies**
+- **Permitir script ativo**
+
+#### <a name="app-settings"></a>Configurações do aplicativo
+- **Permitir Google Play Store**
+
+#### <a name="device-capability-settings"></a>Configurações de funcionalidade do dispositivo
+- **Permitir armazenamento removível**
+- **Permitir compartilhamento de Internet por Wi-Fi**
+- **Permitir geolocalização**
+- **Permitir NFC**
+- **Permitir Bluetooth**
+- **Permitir roaming de voz**
+- **Permitir roaming de dados**
+- **Permitir mensagens SMS/MMS**
+- **Permitir assistência de voz**
+- **Permitir discagem por voz**
+- **Permitir copiar e colar**
+
+### <a name="new-settings-for-ios-devices"></a>Novas configurações para dispositivos iOS
+#### <a name="password-settings"></a>Configurações de senha
+- **Número de caracteres complexos necessários na senha**
+- **Permitir senha simples**
+- **Minutos de inatividade antes de a senha ser necessária**
+- **Lembrar histórico de senha**
+
+### <a name="new-settings-for-mac-os-x-devices"></a>Novas configurações para dispositivos Mac OS X
+#### <a name="password-settings"></a>Configurações de senha
+- **Número de caracteres complexos necessários na senha**
+- **Permitir senha simples**
+- **Lembrar histórico de senha**
+- **Minutos de inatividade antes que o protetor de tela seja ativado**
+
+### <a name="new-settings-for-windows-10-desktop-and-mobile-devices"></a>Novas configurações para dispositivos Windows 10 Desktop e Mobile
+#### <a name="password-settings"></a>Configurações de senha
+- **Número mínimo de conjuntos de caracteres**
+- **Lembrar histórico de senha**
+- **Exigir uma senha quando o dispositivo volta do estado ocioso**
+
+#### <a name="security-settings"></a>Configurações de segurança
+- **Exigir criptografia no dispositivo móvel**
+- **Permitir cancelamento de registro manual**
+
+#### <a name="device-capability-settings"></a>Configurações de funcionalidade do dispositivo
+- **Permitir VPN por celular**
+- **Permitir roaming de VPN no celular**
+- **Permitir a redefinição do telefone**
+- **Permitir conexão USB**
+- **Permitir Cortana**
+- **Permitir notificações da central de ações**
+
+### <a name="new-settings-for-windows-10-team-devices"></a>Novas configurações para os dispositivos do Windows 10 Team
+#### <a name="device-settings"></a>Configurações do dispositivo
+- **Habilitar Azure Operational Insights**
+- **Habilitar projeção sem fio Miracast**
+- **Escolher as informações da reunião exibidas na tela de boas-vindas**
+- **URL da imagem de tela de fundo da tela de bloqueio**
+
+### <a name="new-settings-for-windows-81-devices"></a>Novas configurações para dispositivos Windows 8.1
+#### <a name="applicability-settings"></a>Configurações de aplicabilidade
+- **Aplicar todas as configurações ao Windows 10**
+
+#### <a name="password-settings"></a>Configurações de senha
+- **Tipo de senha necessária**
+- **Número mínimo de conjuntos de caracteres**
+- **Tamanho mínimo da senha**
+- **Número de falhas de entrada repetidas permitidas antes que o dispositivo seja apagado**
+- **Minutos de inatividade antes que a tela seja desligada**
+- **Expiração da senha (dias)**
+- **Lembrar histórico de senha**
+- **Evitar a reutilização de senhas anteriores**
+- **Permitir PIN e senha com imagem**
+
+#### <a name="browser-settings"></a>Configurações do navegador
+- **Permitir detecção automática da rede intranet**
+
+### <a name="new-settings-for-windows-phone-81-devices"></a>Novas configurações para dispositivos Windows Phone 8.1
+#### <a name="applicability-settings"></a>Configurações de aplicabilidade
+- **Aplicar todas as configurações ao Windows 10**
+
+#### <a name="password-settings"></a>Configurações de senha
+- **Número mínimo de conjuntos de caracteres**
+- **Permitir senha simples**
+- **Lembrar histórico de senha**
+
+#### <a name="device-capability-settings"></a>Configurações de funcionalidade do dispositivo
+- **Permitir conexão automática a pontos de acesso Wi-Fi gratuitos**

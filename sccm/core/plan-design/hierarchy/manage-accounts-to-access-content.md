@@ -1,6 +1,6 @@
 ---
-title: "访问 System Center Configuration Manager 中的内容的帐户 | Microsoft Docs"
-description: "了解有关客户端用于访问 System Center Configuration Manager 内容的帐户的信息。"
+title: "Contas para acessar conteúdo no System Center Configuration Manager | Microsoft Docs"
+description: "Saiba mais sobre as contas em que os clientes acessam conteúdo do System Center Configuration Manager."
 ms.custom: na
 ms.date: 2/6/2017
 ms.reviewer: na
@@ -17,105 +17,105 @@ manager: angrobe
 ms.openlocfilehash: 0e982d08d54af39b13f553fc531a200f921e94a6
 ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
 ms.translationtype: HT
-ms.contentlocale: zh-CN
+ms.contentlocale: pt-BR
 ms.lasthandoff: 08/07/2017
 ---
-# <a name="manage-accounts-to-access-content-in-system-center-configuration-manager"></a>管理帐户以访问 System Center Configuration Manager 中的内容
+# <a name="manage-accounts-to-access-content-in-system-center-configuration-manager"></a>Gerenciar contas para acessar conteúdo | System Center Configuration Manager
 
-*适用范围：System Center Configuration Manager (Current Branch)*
+*Aplica-se a: System Center Configuration Manager (Branch Atual)*
 
-在 System Center Configuration Manager 中部署内容之前，请考虑客户端将如何从分发点访问该内容。 本文介绍了以下帐户用于实现此目的：
+Antes de implantar o conteúdo no System Center Configuration Manager, considere como os clientes acessarão esse conteúdo nos pontos de distribuição. Este artigo descreve as seguintes contas usadas para essa finalidade:
 
--   **网络访问帐户**。 由客户端用于连接到分发点和访问内容。 默认情况下，客户端将首先尝试其计算机帐户。
+-   **Conta de acesso à rede**. Usada pelos clientes para conectar a um ponto de distribuição e acessar o conteúdo. Por padrão, os clientes tentarão primeiro a conta do computador.
 
-     此帐户还由拉取分发点用于从远程林中的源分发点获取内容。  
+     Essa conta também é usada pelos pontos de distribuição de recepção para obter o conteúdo de um ponto de distribuição de origem em uma floresta remota.  
 
--   **包访问帐户**。 默认情况下，Configuration Manager 向名为“用户”和“管理员”的内置帐户授予对分发点上内容的访问权限。 可以设置其他权限来限制访问。  
+-   **Conta de Acesso ao Pacote**. Por padrão, o Configuration Manager concede acesso ao conteúdo em um ponto de distribuição para as contas internas chamadas de **Usuários** e **Administradores**. Você pode configurar permissões adicionais para restringir o acesso.  
 
--   **多播连接帐户**。 用于操作系统部署。  
+-   **Conta de Conexão Multicast**. Usada para implantações de sistema operacional.  
 
-##  <a name="bkmk_NAA"></a>网络访问帐户  
- 客户端计算机无法使用其本地计算机帐户访问分发点上的内容时，它们则会使用网络访问帐户。 例如，这适用于来自不受信任的域中的工作组客户端和计算机。 当安装操作系统的计算机在域上还没有计算机帐户时，也可能会在操作系统部署过程中使用此帐户。  
+##  <a name="bkmk_NAA"></a> Conta de acesso à rede  
+ Os computadores cliente usam a Conta de acesso à rede quando não podem usar a conta do computador local para acessar conteúdo em pontos de distribuição. Por exemplo, isso se aplica a clientes do grupo de trabalho e computadores de domínios não confiáveis. Essa conta também pode ser usada durante a implantação do sistema operacional quando o computador que está instalando o sistema operacional ainda não tem uma conta de computador no domínio.  
 
--   客户端仅使用网络访问帐户来访问网络上的资源。  
+-   Os clientes usam somente a conta de acesso à rede para acessar recursos na rede.  
 
--   在每个主站点上，你可以设置多个帐户以用作网络访问帐户。  
+-   Você pode configurar várias contas para usar como Conta de acesso à rede em cada site primário.  
 
--   客户端将首先尝试使用其 computername$ 帐户访问分发点上的内容。 如果无法使用此帐户进行访问，它则会尝试使用网络访问帐户。 即使之前使用网络访问帐户访问失败，客户端仍将继续尝试使用它。  
+-   Os clientes primeiro tentam acessar o conteúdo em um ponto de distribuição usando a conta *nomecomputador*$. Se essa conta falhar, eles tentarão usar uma Conta de acesso à rede. Os clientes continuam tentando usar a Conta de acesso à rede mesmo que tenha falhado anteriormente.  
 
-### <a name="permissions"></a>权限
-针对客户端所需的内容，为此帐户授予访问软件的最低合适权限。  
+### <a name="permissions"></a>Permissões
+Conceda a essa conta as permissões mínimas adequadas que o cliente necessita para acessar o software para o conteúdo que o cliente necessita.  
 
--   在该分发点上，帐户必须具有“从网络访问此计算机”  权限。  
+-   A conta deve ter o direito de **Acesso a este computador pela rede** no ponto de distribuição.  
 
--   在任何域中创建将提供资源的所需访问权限的帐户。 网络访问帐户必须始终包含一个域名。 此帐户不支持传递安全性。 如果在多个域中具有分发点，请在受信任的域中创建帐户。  
+-   Crie a conta em qualquer domínio que forneça o acesso necessário aos recursos. A conta de acesso à rede deve incluir sempre um nome de domínio. Não há suporte para segurança de passagem para essa conta. Se houver pontos de distribuição em vários domínios, crie a conta em um domínio confiável.  
 
 > [!TIP]  
->  为了避免帐户锁定，请不要对现有网络访问帐户更改密码。 而是在 Configuration Manager 中创建新帐户并设置此新帐户。 在经过了足够的时间让所有客户端接收新帐户的详细信息之后，请从网络共享文件夹中移除旧帐户并删除该帐户。  
+>  Para evitar bloqueios de conta, não altere a senha em uma conta de acesso à rede existente. Em vez disso, crie uma nova conta e configure-a no Configuration Manager. Quando tiver passado tempo suficiente para que todos os clientes recebam os detalhes da nova conta, remova a conta antiga das pastas de rede compartilhadas e exclua-a.  
 
 > [!IMPORTANT]  
->  不要授予此帐户交互式登录权限。  
+>  Não conceda a essa conta direitos interativos de logon.  
 >   
->  不要授予此帐户将计算机加入到域的权限。 如果在任务序列过程中必须将计算机加入到域中，请使用任务序列编辑器域加入帐户。  
+>  Não conceda a essa conta o direito de ingressar computadores ao domínio. Se tiver de adicionar computadores ao domínio durante uma sequência de tarefas, use a Conta de Adição de Domínio do Editor de Sequência de Tarefas.  
 
-### <a name="to-configure-the-network-access-account"></a>配置网络访问帐户  
+### <a name="to-configure-the-network-access-account"></a>Para configurar a conta de acesso à rede  
 
-1.  在 Configuration Manager 控制台中，选择“管理” >   “站点配置” >  “站点”，然后选择站点。  
+1.  No console do Configuration Manager, clique em **Administração** >   **Configuração do Site** >  **Sites** e selecione o site.  
 
-2.  在“设置”组中，选择“配置站点组件” > “软件分发”。  
+2.  No grupo **Configurações**, clique em **Configurar componentes do site** > **Distribuição de software**.  
 
-3.  选择“网络访问帐户”选项卡。 设置一个或多个帐户，然后选择“确定”。  
+3.  Clique na guia **Conta de acesso à rede**. Configure uma ou mais contas e clique em **OK**.  
 
-##  <a name="bkmk_Paa"></a>包访问帐户  
- 可使用包访问帐户设置 NTFS 文件系统权限，以指定可以访问分发点上的包内容的用户和用户组。 默认情况下，Configuration Manager 仅向通用的“用户”和“管理员”帐户授予访问权限。 但是，你可以通过使用其他的 Windows 帐户或组来控制客户端计算机的访问权限。 移动设备不使用包访问帐户，因为这些设备始终会匿名检索包内容。  
+##  <a name="bkmk_Paa"></a> Contas de Acesso ao Pacote  
+ As Contas de Acesso ao Pacote possibilitam definir permissões do sistema de arquivos NTFS para especificar usuários e grupos de usuários que podem acessar o conteúdo do pacote em pontos de distribuição. Por padrão, o Configuration Manager concede acesso somente a contas de **Usuários** e **Administradores** genéricas. Entretanto, você pode controlar o acesso a computadores cliente usando contas ou grupos do Windows adicionais. Os dispositivos móveis sempre recuperam o conteúdo do pacote anonimamente e, portanto, não usam as Contas de Acesso ao Pacote.  
 
- 默认情况下，当 Configuration Manager 将包中的内容文件复制到分发点时，它会授予对本地“用户”组的“读取”权限以及对本地“管理”组的“完全控制”权限。 所需的实际权限取决于包。 如果你的客户端在工作组或不受信任的林中，则那些客户端会使用网络访问帐户访问包内容。 请使用定义的包访问帐户来确保网络访问帐户具有对包的权限。  
+ Por padrão, quando o Configuration Manager copia os arquivos de conteúdo de um pacote para um ponto de distribuição, ele concede acesso de **Leitura** ao grupo local **Usuários** e **Controle Total** ao grupo local **Administradores**. As permissões reais necessárias dependerão do pacote. Se houver clientes em grupos de trabalho ou em florestas não confiáveis, os clientes usarão a Conta de Acesso à Rede para acessar o conteúdo do pacote. Verifique se a Conta de Acesso à Rede tem permissões para o pacote usando as Contas de Acesso ao Pacote definidas.  
 
- 在域中使用可以访问分发点的帐户。 如果在创建包之后创建或修改帐户，则必须重新分发包。 更新包不会更改对包的 NTFS 文件系统权限。  
+ Use contas em um domínio que possa acessar os pontos de distribuição. Se você criar ou modificar a conta após a criação do pacote, deverá redistribuir o pacote. A atualização do pacote não altera as permissões do sistema de arquivos NTFS no pacote.  
 
- 不必将网络访问帐户添加为包访问帐户，因为“用户”  组的成员身份会自动添加它。 将包访问帐户限制为网络访问帐户不会阻止客户端访问包。  
+ Não é necessário adicionar a Conta de Acesso à Rede como Conta de Acesso ao Pacote, pois a associação do grupo **Usuários** a adiciona automaticamente. Restringir a Conta de Acesso de Pacote somente à Conta de Acesso à Rede não impede que clientes acessem o pacote.  
 
-### <a name="to-manage-access-accounts"></a>管理访问帐户  
+### <a name="to-manage-access-accounts"></a>Para gerenciar as contas de acesso  
 
-1.  在 Configuration Manager 控制台中，选择“软件库”。  
+1.  No console do Configuration Manager, escolha **Biblioteca de Software**.  
 
-2.  在“软件库”工作区中，确定要为其管理访问帐户的内容的类型，并按以下提供的步骤进行操作：  
+2.  No espaço de trabalho **Biblioteca de software**, determine o tipo de conteúdo para o qual você deseja gerenciar as contas de acesso e siga as etapas fornecidas:  
 
-    -   **应用程序**：展开“应用程序管理”，选择“应用程序”，然后选择要为其管理访问帐户的应用程序。  
+    -   **Aplicativos**: expanda **Gerenciamento de aplicativos**, clique em **Aplicativos** e selecione os aplicativos para os quais você quer gerenciar as contas de acesso.  
 
-    -   **包**：展开“应用程序管理”，选择“包”，然后选择要为其管理访问帐户的包。  
+    -   **Pacotes**: expanda **Gerenciamento de aplicativos**, clique em **Pacotes** e selecione os pacotes para os quais você quer gerenciar as contas de acesso.  
 
-    -   **部署包**：展开“软件更新”，选择“部署包”，然后选择要为其管理访问帐户的部署包。  
+    -   **Pacotes de implantação**: expanda **Atualizações de software**, clique em **Pacotes de implantação** e selecione os pacotes de implantação para os quais você quer gerenciar as contas de acesso.  
 
-    -   **驱动程序包**：展开“操作系统”，选择“驱动程序包”，然后选择要为其管理访问帐户的驱动程序包。  
+    -   **Pacotes de driver**: expanda **Sistemas operacionais**, clique em **Pacotes de driver** e selecione os pacotes de drivers para os quais você quer gerenciar as contas de acesso.  
 
-    -   **操作系统映像**：展开“操作系统”，选择“操作系统映像”，然后选择要为其管理访问帐户的操作系统映像。  
+    -   **Imagens do sistema operacional**: expanda **Sistemas operacionais**, clique em **Imagens do sistema operacional** e selecione as imagens do sistema operacional para as quais você quer gerenciar as contas de acesso.  
 
-    -   **操作系统安装程序**：展开“操作系统”，选择“操作系统安装程序”，然后选择要为其管理访问帐户的操作系统安装程序。  
+    -   **Instaladores de sistema operacional**: expanda **Sistemas operacionais**, clique em **Instaladores de sistema operacional** e selecione os instaladores de sistema operacional para os quais você quer gerenciar as contas de acesso.  
 
-    -   **启动映像**：展开“操作系统”，选择“启动映像”，然后选择要为其管理访问帐户的启动映像。  
+    -   **Imagens de inicialização**: expanda **Sistemas operacionais**, clique em **Imagens de inicialização** e selecione as imagens de inicialização para as quais você quer gerenciar as contas de acesso.  
 
-3.  右键单击所选对象，然后选择“管理访问帐户”。  
+3.  Clique com o botão direito no objeto selecionado e clique em **Gerenciar Contas de Acesso**.  
 
-4.  在“添加帐户”  对话框中，指定将为其授予内容访问权限的帐户类型，然后指定与帐户关联的访问权限。  
+4.  Na caixa de diálogo **Adicionar Conta** , especifique o tipo de conta que receberá permissão de acesso ao conteúdo e os direitos de acesso associados à conta.  
 
     > [!NOTE]  
-    >  为帐户添加用户名且 Configuration Manager 发现具有该名称的本地用户帐户和域用户帐户时，Configuration Manager 将为域用户帐户设置访问权限。  
+    >  Quando você adiciona um nome de usuário para a conta e o Configuration Manager encontra uma conta de usuário local e uma conta de usuário de domínio com esse nome, o Configuration Manager estabelece direitos de acesso para a conta de usuário de domínio.  
 
-##  <a name="bkmk_multi"></a>多播连接帐户  
- 为多播设置的分发点使用多播连接帐户从站点数据库中读取信息。  
+##  <a name="bkmk_multi"></a> Conta de Conexão Multicast  
+ A Conta de Conexão Multicast é usada por pontos de distribuição configurados para multicast, para ler as informações do banco de dados do site.  
 
--   指定为多播设置 Configuration Manager 数据库连接时要使用的帐户。  
+-   Especifique uma conta a ser usada ao configurar conexões de banco de dados do Configuration Manager para multicast.  
 
--   默认情况下，会使用分发点的计算机帐户，但是可以改成设置为用户帐户。  
+-   Por padrão, é usada a conta do computador do ponto de distribuição, mas você pode configurar uma conta de usuário, em vez disso.  
 
--   每当站点数据库在不受信任的林中时，都必须指定用户帐户。  
+-   Você deve especificar uma conta de usuário sempre que o banco de dados do site estiver em uma floresta não confiável.  
 
--   该帐户必须具有对站点数据库的**读取**权限。  
+-   A conta deve ter permissões de **Leitura** para o banco de dados do site.  
 
-例如，数据中心具有非站点服务器和站点数据库的林中的外围网络，则可以使用此帐户从站点数据库中读取多播信息。
+Por exemplo, se o seu centro de dados tiver uma rede de perímetro em uma floresta diferente do servidor e do banco de dados do site, você poderá usar essa conta para ler as informações multicast do banco de dados do site.
 
-如果创建此帐户，请在运行 Microsoft SQL Server 的计算机上将此帐户创建为低权限本地帐户。  
+Se você criar essa conta, crie-a com direitos limitados, a conta local no computador que executa o Microsoft SQL Server.  
 
 > [!IMPORTANT]  
->  不要授予此帐户交互式登录权限。  
+>  Não conceda a essa conta direitos interativos de logon.  

@@ -1,6 +1,6 @@
 ---
-title: "示例资产智能常规许可证导入文件 | Microsoft Docs"
-description: "使用示例资产智能常规许可证文件，帮助在 System Center Configuration Manager 中导入软件许可证。"
+title: "Exemplo de arquivo de importação de licença geral do Asset Intelligence | Microsoft Docs"
+description: "Use um exemplo de arquivo de importação de licença geral do Asset Intelligence para ajudar a importar licenças no System Center Configuration Manager."
 ms.custom: na
 ms.date: 2/22/2017
 ms.prod: configuration-manager
@@ -18,24 +18,24 @@ manager: angrobe
 ms.openlocfilehash: 400afbe8c09b80985187a34b0dd0f3f8581c7d4e
 ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
 ms.translationtype: HT
-ms.contentlocale: zh-CN
+ms.contentlocale: pt-BR
 ms.lasthandoff: 08/07/2017
 ---
-# <a name="example-asset-intelligence-general-license-import-file-in-system-center-configuration-manager"></a>在 System Center Configuration Manager 中的资产智能常规许可证导入文件示例
+# <a name="example-asset-intelligence-general-license-import-file-in-system-center-configuration-manager"></a>Exemplo de arquivo de importação de licença geral do Asset Intelligence no System Center Configuration Manager
 
-*适用范围：System Center Configuration Manager (Current Branch)*
+*Aplica-se a: System Center Configuration Manager (Branch Atual)*
 
-本主题中的示例信息可用于创建常规软件许可证文件示例，以通过使用“导入软件许可证向导”将软件许可证导入到资产智能目录中。 你可以将下表复制并粘贴到新的 Microsoft Excel 电子表格中，并采用 .csv 文件扩展名保存，然后将其用作常规软件许可证导入文件示例以进行测试。 在创建许可证导入文件时，只有当电子表格中需要“名称”、“发布者”、“版本”和“有效数量”数据值时，才需要所有标题字段。 有关将软件许可证导入资产智能目录的详细信息，请参阅[在 System Center Configuration Manager 中配置资产智能](../../../../core/clients/manage/asset-intelligence/configuring-asset-intelligence.md)。  
+As informações de exemplo contidas neste tópico podem ser usadas para criar um arquivo de licença de software geral de exemplo para importar licenças de software no catálogo do Asset Intelligence usando o Assistente para Importar Licenças de Software. É possível copiar e colar a tabela a seguir em uma nova planilha do Microsoft Excel e salvá-la com uma extensão de nome de arquivo .csv para ser usado como um arquivo de importação de licença de software geral de exemplo para fins de teste. Ao criar o arquivo de importação de licença, todos os campos de cabeçalho são necessários, enquanto somente os valores de dados Name, Publisher, Version e EffectiveQuantity são necessários na planilha. Para obter mais informações sobre como importar licenças de software para o catálogo do Asset Intelligence, consulte [Configuração do Asset Intelligence no System Center Configuration Manager](../../../../core/clients/manage/asset-intelligence/configuring-asset-intelligence.md).  
 
-|Name|发布者|版本|语言|有效数量|PO 编号|经销商名称|购买日期|购买的支持|支持到期日期|注释|  
+|Nome|Editor|Versão|Linguagem|EffectiveQuantity|PONumber|ResellerName|DateOfPurchase|SupportPurchased|SupportExpirationDate|Comentários|  
 |----------|---------------|-------------|--------------|-----------------------|--------------|------------------|--------------------|----------------------|---------------------------|--------------|  
-|软件标题 1|软件发布者|1.01|英语|1|采购编号|经销商名称|10/10/2010|0|10/10/2012|注释|  
-|软件标题 2|软件发布者|1.02|英语|1|采购编号|经销商名称|10/10/2010|0|10/10/2012|注释|  
-|软件标题 3|软件发布者|1.03|英语|1|采购编号|经销商名称|10/10/2010|0|10/10/2012|注释|  
-|软件标题 4|软件发布者|1.04|英语|1|采购编号|经销商名称|10/10/2010|0|10/10/2012|注释|  
-|软件标题 5|软件发布者|1.05|英语|1|采购编号|经销商名称|10/10/2010|0|10/10/2012|注释|  
-|软件标题 6|软件发布者|1.06|英语|1|采购编号|经销商名称|10/10/2010|0|10/10/2012|注释|  
-|软件标题 7|软件发布者|1.07|英语|1|采购编号|经销商名称|10/10/2010|0|10/10/2012|注释|  
-|软件标题 8|软件发布者|1.08|英语|1|采购编号|经销商名称|10/10/2010|0|10/10/2012|注释|  
-|软件标题 9|软件发布者|1.09|英语|1|采购编号|经销商名称|10/10/2010|0|10/10/2012|注释|  
-|软件标题 10|软件发布者|1.10|英语|1|采购编号|经销商名称|10/10/2010|0|10/10/2012|注释|  
+|Título de software 1|Fornecedor de software|1.01|Inglês|1|Número de compra|Nome do revendedor|10/10/2010|0|10/10/2012|Comentário|  
+|Título de software 2|Fornecedor de software|1.02|Inglês|1|Número de compra|Nome do revendedor|10/10/2010|0|10/10/2012|Comentário|  
+|Título de software 3|Fornecedor de software|1.03|Inglês|1|Número de compra|Nome do revendedor|10/10/2010|0|10/10/2012|Comentário|  
+|Título de software 4|Fornecedor de software|1.04|Inglês|1|Número de compra|Nome do revendedor|10/10/2010|0|10/10/2012|Comentário|  
+|Título de software 5|Fornecedor de software|1.05|Inglês|1|Número de compra|Nome do revendedor|10/10/2010|0|10/10/2012|Comentário|  
+|Título de software 6|Fornecedor de software|1.06|Inglês|1|Número de compra|Nome do revendedor|10/10/2010|0|10/10/2012|Comentário|  
+|Título de software 7|Fornecedor de software|1.07|Inglês|1|Número de compra|Nome do revendedor|10/10/2010|0|10/10/2012|Comentário|  
+|Título de software 8|Fornecedor de software|1.08|Inglês|1|Número de compra|Nome do revendedor|10/10/2010|0|10/10/2012|Comentário|  
+|Título de software 9|Fornecedor de software|1.09|Inglês|1|Número de compra|Nome do revendedor|10/10/2010|0|10/10/2012|Comentário|  
+|Título de software 10|Fornecedor de software|1.10|Inglês|1|Número de compra|Nome do revendedor|10/10/2010|0|10/10/2012|Comentário|  

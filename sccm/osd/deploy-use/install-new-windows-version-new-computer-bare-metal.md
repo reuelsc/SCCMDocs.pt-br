@@ -1,6 +1,6 @@
 ---
-title: "在新计算机上安装 Windows - Configuration Manager | Microsoft Docs"
-description: "通过 PXE、OEM 或独立介质在新计算机（裸机）上使用 Configuration Manager 安装操作系统。"
+title: "Instalar o Windows em um novo computador – Configuration Manager | Microsoft Docs"
+description: "Use o Configuration Manager para instalar um sistema operacional em um novo computador (sem sistema operacional) usando PXE, OEM ou mídia autônoma."
 ms.custom: na
 ms.date: 01/23/2017
 ms.prod: configuration-manager
@@ -17,63 +17,63 @@ manager: angrobe
 ms.openlocfilehash: 584dad7d8b05a2da9f7a66b73028ae99ff1a594f
 ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
 ms.translationtype: HT
-ms.contentlocale: zh-CN
+ms.contentlocale: pt-BR
 ms.lasthandoff: 08/07/2017
 ---
-# <a name="install-a-new-version-of-windows-on-a-new-computer-bare-metal-with-system-center-configuration-manager"></a>使用 System Center Configuration Manager 在新计算机（裸机）上安装新版本的 Windows
+# <a name="install-a-new-version-of-windows-on-a-new-computer-bare-metal-with-system-center-configuration-manager"></a>Instalar uma nova versão do Windows em um novo computador (sem sistema operacional) com o System Center Configuration Manager
 
-*适用范围：System Center Configuration Manager (Current Branch)*
+*Aplica-se a: System Center Configuration Manager (Branch Atual)*
 
-本主题提供了在 System Center Configuration Manager 中在新计算机上安装操作系统的常规步骤。 对于此方案，可以从许多不同的部署方法中选择，如 PXE、OEM、或独立媒体。 如果不确定这是否是正确的操作系统部署方案，请参阅[部署企业版操作系统的方案](scenarios-to-deploy-enterprise-operating-systems.md)。  
+Este tópico fornece as etapas gerais no System Center Configuration Manager para instalar um sistema operacional em um novo computador. Para este cenário, é possível escolher entre vários métodos de implantação diferentes, como PXE, OEM ou mídia autônoma. Se não tiver certeza de que esse é o cenário de implantação de sistema operacional certo para você, consulte [Cenários para implantar sistemas operacionais corporativos](scenarios-to-deploy-enterprise-operating-systems.md).  
 
-采用以下部分内容，使用新版本的 Windows 来刷新现有计算机。  
+Use as seções a seguir para atualizar um computador existente com uma nova versão do Windows.  
 
-##  <a name="BKMK_Plan"></a> 计划  
+##  <a name="BKMK_Plan"></a> Planoo  
 
--   **规划和实现基础结构要求**  
+-   **Planejar e implementar requisitos de infraestrutura**  
 
-     在你可以部署操作系统前，有几个必须实施到位的基础结构要求，例如 Windows ADK、Windows 部署服务 (WDS) 以及支持的硬盘配置等。有关详细信息，请参阅[操作系统部署的基础架构要求](../plan-design/infrastructure-requirements-for-operating-system-deployment.md)。
+     Existem vários requisitos de infraestrutura que devem estar em vigor antes que você possa implantar sistemas operacionais, como Windows ADK, WDS (Serviços de Implantação do Windows), configurações de disco rígido com suporte, etc. Para mais informações, consulte [Requisitos de infraestrutura para implantação do sistema operacional](../plan-design/infrastructure-requirements-for-operating-system-deployment.md).
 
-##  <a name="BKMK_Configure"></a> 配置  
+##  <a name="BKMK_Configure"></a> Configurar  
 
-1.  **准备启动映像**  
+1.  **Preparar uma imagem de inicialização**  
 
-     启动映像将启动 Windows PE 环境（具有有限组件和服务的最小操作系统）中的计算机，然后在该计算机上安装完整的 Windows 操作系统。   在部署操作系统时，必须选择要使用的启动映像并将其分发到分发点。 使用以下方法来准备启动映像：  
+     Imagens de inicialização iniciam um computador em um ambiente do Windows PE (um sistema operacional mínimo com componentes e serviços limitados) que, em seguida, pode instalar um sistema operacional Windows completo no computador.   Ao implantar sistemas operacionais, é necessário selecionar uma imagem de inicialização a ser usada e distribuir a imagem para um ponto de distribuição. Use o seguinte para preparar a imagem de inicialização:  
 
-    -   若要了解有关启动映像的详细信息，请参阅[管理启动映像](../get-started/manage-boot-images.md)。  
+    -   Para saber mais sobre imagens de inicialização, consulte [Gerenciar imagens de inicialização](../get-started/manage-boot-images.md).  
 
-    -   有关如何自定义启动映像的详细信息，请参阅[自定义启动映像](../get-started/customize-boot-images.md)。  
+    -   Para obter mais informações sobre como personalizar uma imagem de inicialização, consulte [Personalizar imagens de inicialização](../get-started/customize-boot-images.md).  
 
-    -   将启动映像分发到分发点 有关详细信息，请参阅[分发内容](../../core/servers/deploy/configure/deploy-and-manage-content.md#a-namebkmkdistributea-distribute-content)。  
+    -   Distribua a imagem de inicialização para pontos de distribuição. Para obter mais informações, consulte [Distribuir conteúdo](../../core/servers/deploy/configure/deploy-and-manage-content.md#a-namebkmkdistributea-distribute-content).  
 
-2.  **准备操作系统映像**  
+2.  **Preparar uma imagem do sistema operacional**  
 
-     操作系统映像包含在目标计算机上安装操作系统所必需的文件。 使用以下方法来准备操作系统映像：  
+     A imagem do sistema operacional contém os arquivos necessários para instalar o sistema operacional no computador de destino. Use o seguinte para preparar a imagem do sistema operacional:  
 
-    -   若要了解有关如何创建操作系统映像的详细信息，请参阅[管理操作系统映像](../get-started/manage-operating-system-images.md)。
+    -   Para saber mais sobre como criar uma imagem do sistema operacional, consulte [Gerenciar imagens do sistema operacional](../get-started/manage-operating-system-images.md).
 
-    -   将操作系统映像分发到分发点。 有关详细信息，请参阅[分发内容](../../core/servers/deploy/configure/deploy-and-manage-content.md#a-namebkmkdistributea-distribute-content)。
+    -   Distribua a imagem do sistema operacional para pontos de distribuição. Para obter mais informações, consulte [Distribuir conteúdo](../../core/servers/deploy/configure/deploy-and-manage-content.md#a-namebkmkdistributea-distribute-content).
 
-3.  **创建任务序列以通过网络部署操作系统**  
+3.  **Criar uma sequência de tarefas para implantar sistemas operacionais na rede**  
 
-     使用任务序列以通过网络自动安装操作系统 使用[创建用于安装操作系统的任务序列](create-a-task-sequence-to-install-an-operating-system.md)中的步骤来创建部署操作系统的任务序列。 可能会有有关任务序列的其他注意事项，具体取决于你所选择的部署方法。  
+     Use uma sequência de tarefas para automatizar a instalação do sistema operacional na rede. Use as etapas em [Criar uma sequência de tarefas para instalar um sistema operacional](create-a-task-sequence-to-install-an-operating-system.md) para criar a sequência de tarefas para implantar o sistema operacional. Dependendo do método de implantação que você escolher, pode haver considerações adicionais para a sequência de tarefas.  
 
-##  <a name="BKMK_Deploy"></a> 部署  
+##  <a name="BKMK_Deploy"></a> Implantar  
 
--   使用下列部署方法之一部署操作系统：  
+-   Use um dos seguintes métodos de implantação para implantar o sistema operacional:  
 
-    -   [使用 PXE 通过网络部署 Windows](use-pxe-to-deploy-windows-over-the-network.md)  
+    -   [Usar PXE para implantar o Windows na rede](use-pxe-to-deploy-windows-over-the-network.md)  
 
-    -   [使用多播通过网络部署 Windows](use-multicast-to-deploy-windows-over-the-network.md)  
+    -   [Usar multicast para implantar o Windows pela rede](use-multicast-to-deploy-windows-over-the-network.md)  
 
-    -   [为工厂中的 OEM 或本地 depot 创建映像](create-an-image-for-an-oem-in-factory-or-a-local-depot.md)  
+    -   [Criar uma imagem de um OEM na fábrica ou em um repositório local](create-an-image-for-an-oem-in-factory-or-a-local-depot.md)  
 
-    -   [使用独立媒体部署 Windows，而不使用网络](use-stand-alone-media-to-deploy-windows-without-using-the-network.md)  
+    -   [Usar a mídia autônoma para implantar o Windows sem uso da rede](use-stand-alone-media-to-deploy-windows-without-using-the-network.md)  
 
-    -   [使用可启动媒体通过网络部署 Windows](use-bootable-media-to-deploy-windows-over-the-network.md)  
+    -   [Use a mídia inicializável para implantar o Windows na rede](use-bootable-media-to-deploy-windows-over-the-network.md)  
 
-## <a name="monitor"></a>监视器  
+## <a name="monitor"></a>Monitor  
 
--   **监视任务序列部署**  
+-   **Monitorar a implantação da sequência de tarefas**  
 
-     若要监视用于安装操作系统的任务序列部署，请参阅[监视操作系统部署](monitor-operating-system-deployments.md)。  
+     Para monitorar a implantação da sequência de tarefas para instalar o sistema operacional, consulte [Monitorar implantações do sistema operacional](monitor-operating-system-deployments.md).  

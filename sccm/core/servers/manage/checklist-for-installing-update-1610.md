@@ -1,6 +1,6 @@
 ---
-title: "1610 的清单 | System Center Configuration Manager"
-description: "了解更新到 System Center Configuration Manager 版本 1610 之前需要执行的操作。"
+title: "Lista de verificação para 1610 | System Center Configuration Manager"
+description: "Conheça as ações a serem executadas antes de atualizar para o System Center Configuration Manager versão 1610."
 ms.custom: na
 ms.date: 6/6/2017
 ms.reviewer: na
@@ -17,108 +17,108 @@ manager: angrobe
 ms.openlocfilehash: 54b243fd33ed13b8ccde48fa5e2525204455d96c
 ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
 ms.translationtype: HT
-ms.contentlocale: zh-CN
+ms.contentlocale: pt-BR
 ms.lasthandoff: 08/07/2017
 ---
-# <a name="checklist-for-installing-update-1610-for-system-center-configuration-manager"></a>用于为 System Center Configuration Manager 安装更新 1610 的清单
+# <a name="checklist-for-installing-update-1610-for-system-center-configuration-manager"></a>Lista de verificação para instalar a atualização 1610 do System Center Configuration Manager
 
-*适用范围：System Center Configuration Manager (Current Branch)*
+*Aplica-se a: System Center Configuration Manager (Branch Atual)*
 
-使用 System Center Configuration Manager 的 Current Branch 时，可安装版本 1610 的控制台内部更新，从版本 1606 更新层次结构。 如果层次结构运行版本 1511、1602 或 1606，则可更新到版本 1610。
+Ao usar a ramificação atual do System Center Configuration Manager, você pode instalar a atualização no console da versão 1610 para atualizar sua hierarquia da versão 1606. Se sua hierarquia executa a versão 1511, 1602 ou 1606, você pode atualizar para a versão 1610.
 
-若要获取版本 1610 的更新，必须在层次结构的顶层站点上使用服务连接点站点系统角色。 其可处于联机或脱机模式。 层次结构从 Microsoft 下载更新包之后，可在“管理”&gt;“概述”&gt;“云服务”&gt;“更新和维护服务”下的控制台中找到它。
+Para obter a atualização da versão 1610, você deve usar uma função do sistema de sites do ponto de conexão de serviço no site de nível superior da hierarquia. Isso pode ser no modo online ou offline. Depois que a hierarquia baixar o pacote de atualização da Microsoft, você o encontrará no console em **Administração &gt; Visão Geral &gt; Serviços de Nuvem &gt; Atualizações e Manutenção**.
 
--   当更新列为“可用”时，此更新即可准备安装。 安装版本 1610, 之前，请查看以下[关于安装更新 1610](#about-installing-update-1610)和[清单](#checklist)信息，了解在开始更新之前要进行的配置。
+-   Quando a atualização for listada como **Disponível**, ela estará pronta para ser instalada. Antes de instalar a versão 1610, examine as seguintes informações [sobre a instalação da atualização 1610](#about-installing-update-1610) e a [lista de verificação](#checklist) para saber quais configurações devem ser feitas antes de iniciar a atualização.
 
--   如果更新显示为“正在下载”且未更改，请查看  **hman.log**  和  **dmpdownloader.log**  是否有误。
+-   Se a atualização for exibida como **Baixando** e não mudar, examine o **hman.log** e o **dmpdownloader.log** para verificar se há erros.
 
-    -   通常情况下，还可以在站点服务器上重启 **SMS_Executive** 服务，以重启更新重新分发文件的下载。
+    -   Normalmente, você também pode reiniciar o serviço **SMS_Executive** no servidor do site para reiniciar o download dos arquivos de redistribuição de atualizações.
 
-    -   当代理服务器设置阻止从 <http://silverlight.dlservice.microsoft.com> 和 <http://download.microsoft.com> 下载时，会出现另一个常见下载问题。
+    -   Outro problema de download comum é devido às configurações do servidor proxy que impedem os downloads de <http://silverlight.dlservice.microsoft.com> e <http://download.microsoft.com>.
 
-有关安装更新的详细信息，请参阅[控制台内部的更新和维护服务](/sccm/core/servers/manage/updates#a-namebkmkinconsolea-in-console-updates-and-servicing)。
+Para obter mais informações de como instalar atualizações, consulte [Atualizações e manutenção no console](/sccm/core/servers/manage/updates#a-namebkmkinconsolea-in-console-updates-and-servicing).
 
-有关 Current Branch 版本的信息，请参阅 [System Center Configuration Manager 更新](/sccm/core/servers/manage/updates#bkmk_Baselines)中的[基线和更新版本](/sccm/core/servers/manage/updates)。
+Para obter informações sobre as versões do Branch Atual, consulte [Versões de linha de base e atualização](/sccm/core/servers/manage/updates#bkmk_Baselines) em [Atualizações para o System Center Configuration Manager](/sccm/core/servers/manage/updates).
 
-## <a name="about-installing-update-1610"></a>关于安装更新 1610
+## <a name="about-installing-update-1610"></a>Sobre a instalação da atualização 1610
 
-**站点：**  
-只能在层次结构的顶层站点上安装更新 1610。 这意味着你需要从管理中心站点（如果有）或从独立主站点启动安装。 在顶层站点安装更新后，子站点具有以下更新行为：
+**Sites:**  
+A atualização 1610 apenas pode ser instalada no site de nível superior da hierarquia. Isso significa que você inicia a instalação no site de administração central, se tiver um, ou no site primário autônomo. Depois que a atualização for instalada no site de camada superior, os sites filho terão o seguinte comportamento de atualização:
 
--   管理中心站点完成更新安装之后，子主站点会自动启动更新。 可以使用服务时段控制站点安装更新的时间。 版本 1606 之前，服务时段被称为维护时段。 有关详细信息，请参阅[站点服务器的服务时段](/sccm/core/servers/manage/service-windows)。
+-   Os sites filho primários iniciam automaticamente a atualização após a conclusão da instalação da atualização no site de administração central. Você pode usar períodos de serviço para controlar quando um site instala atualizações. Antes da versão 1606, as janelas de serviço eram chamadas de janelas de manutenção. Para obter mais informações, consulte [Service windows for site servers](/sccm/core/servers/manage/service-windows) (Períodos de serviço para servidores do site).
 
--   在主父站点完成更新安装之后，必须从 Configuration Manager 控制台中手动更新辅助站点。 不支持辅助站点服务器的自动更新。
+-   Você deve atualizar sites secundários manualmente de dentro do console do Configuration Manager depois que a instalação da atualização estiver concluída no site pai primário. Não há suporte para atualização automática de servidores do site secundário.
 
-**站点系统角色：**  
-站点服务器安装更新时，站点服务器上安装的站点系统角色和远程计算机上安装的那些角色会自动更新。 因此，安装更新之前，请确保每个站点系统服务器满足使用新更新版本进行操作的任何新的先决条件。
+**Funções do sistema de sites:**  
+Quando o servidor do site instala a atualização, as funções de sistema de sites instaladas no servidor do site e as instaladas em computadores remotos são atualizadas automaticamente. Portanto, antes de instalar a atualização, verifique se cada servidor do sistema de sites atende algum dos novos pré-requisitos para operação com a nova versão de atualização.
 
-**Configuration Manager 控制台：**   
-更新完成后首次使用 Configuration Manager 控制台时，系统会提示更新该控制台。 为此，必须在承载该控制台的计算机上运行 Configuration Manager 安装程序，并选择用于更新该控制台的选项。 我们建议不要延迟将更新安装到该控制台。
+**Consoles do Configuration Manager:**   
+Na primeira vez que você usar um console do Configuration Manager após a conclusão da atualização, será solicitada a atualização desse console. Para isso, você deve executar a instalação do Configuration Manager no computador que hospeda o console e escolher a opção para atualizar o console. É recomendável não postergar a instalação da atualização no console.
 
 
 
-## <a name="checklist"></a>清单
+## <a name="checklist"></a>Lista de Verificação
 
-**确保所有站点都运行支持的 System Center Configuration Manager 版本：**开始安装更新 1610 之前，层次结构中的每个站点都必须运行 System Center Configuration Manager 的相同版本（版本 1511、1602 或 1606）。
+**Verifique se todos os sites executam uma versão compatível do System Center Configuration Manager:** antes de iniciar a instalação da atualização 1610, cada site na hierarquia deve executar a mesma versão do System Center Configuration Manager, seja a versão 1511, 1602 ou 1606.
 
-**查看软件保障的状态或等效订阅权限：**   
-必须具有有效的软件保障 (SA) 协议才能安装更新 1610。 安装版本 1610 时，可在“许可”选项卡上选择确认“软件保障到期日期”。
+**Examine o status do seu Software Assurance ou de seus direitos de assinatura equivalentes:**   
+Você precisa ter um contrato de SA (Software Assurance) ativo para instalar a atualização 1610. Ao instalar a versão 1610, haverá uma opção na guia **Licenciamento** para confirmar a **data de expiração do Software Assurance**.
 
-这是一个可选值，可将其指定为许可证到期日期的方便提示，在安装未来更新时显示。 如果从版本 1606 基线介质安装 Configuration Manager，则之前可能在安装时指定此值或在站点安装后，在“层次结构设置”的“许可证”选项卡上指定此值。
+Esse é um valor opcional que você pode especificar como um lembrete conveniente da data de expiração da licença, que ficará visível nas instalações de atualizações futuras. Se você instalou o Configuration Manager da mídia da linha de base da versão 1606, é possível que já tenha especificado esse valor anteriormente durante a instalação ou na guia **Licenciamento** das **Configurações da Hierarquia** após a instalação do site.
 
-有关详细信息，请参阅 [System Center Configuration Manager 的许可和分支](/sccm/core/understand/learn-more-editions)。
+Para mais informações, consulte [Licenciamento e branches do System Center Configuration Manager](/sccm/core/understand/learn-more-editions).
 
-**查看站点系统服务器上安装的 Microsoft.NET 版本：**站点安装更新 1610 时，如果尚未安装 .NET Framework 4.5 或更高版本，则 Configuration Manager 会在承载以下站点系统角色之一的每台计算机上自动安装 .NET Framework 4.5.2：
+**Examine as versões do Microsoft .NET instaladas nos servidores do sistema de sites:** quando um site instala a atualização 1610, o Configuration Manager instala automaticamente o .NET Framework 4.5.2 em cada computador que hospeda uma das seguintes funções do sistema de sites quando o .NET Framework 4.5 ou posterior ainda não está instalado:
 
--   注册代理点
--   注册点
--   管理点
--   服务连接点
+-   Ponto proxy do registro
+-   Ponto de registro
+-   Ponto de gerenciamento
+-   Ponto de Conexão de Serviço
 
-此安装可以将站点系统服务器置于重启挂起状态，并向 Configuration Manager 组件状态查看器报告错误。 此外，服务器上的 .NET 应用程序可能会遇到随机故障，直到重启服务器。
+Essa instalação pode colocar o servidor do sistema de sites em um estado de reinicialização pendente e relatar erros ao visualizador de status de componente do Configuration Manager. Além disso, os aplicativos .NET no servidor podem ter falhas aleatórias até que o servidor seja reinicializado.
 
-有关详细信息，请参阅[站点和站点系统先决条件](/sccm/core/plan-design/configs/site-and-site-system-prerequisites)。
+Para obter mais informações, consulte [Site and site system prerequisites](/sccm/core/plan-design/configs/site-and-site-system-prerequisites) (Pré-requisitos de site e sistema de sites).
 
-**查看站点和层次结构状态，并确认没有未解决的问题：** 更新站点之前，请解决远程计算机上安装的站点服务器、站点数据库服务器和站点系统角色的所有操作问题。 由于现有的操作问题，站点更新可能会失败。
+**Examine o status da hierarquia e do site e verifique se há problemas que não foram resolvidos:** antes de atualizar um site, resolva todos os problemas operacionais do servidor do site, do servidor de banco de dados do site e das funções do sistema de sites que estão instalados nos computadores remotos. Uma atualização de site pode falhar devido a problemas operacionais existentes.
 
-有关详细信息，请参阅 [Use alerts and the status system for System Center Configuration Manager](/sccm/core/servers/manage/use-alerts-and-the-status-system)。
+Para obter mais informações, consulte [Use alerts and the status system for System Center Configuration Manager](/sccm/core/servers/manage/use-alerts-and-the-status-system).
 
-**查看站点之间的文件和数据复制：**   
-确保站点之间的文件和数据库复制正常运行并且处于最新状态。 延迟或积压工作可能会阻止顺利、成功更新。
-对于数据库复制，可以在开始更新之前，使用复制链接分析器来帮助解决问题。
+**Examine a replicação de arquivo e dados entre sites:**   
+Verifique se a replicação de arquivo e banco de dados entre sites está operacional e atualizada. Atrasos ou listas de pendências em qualquer um deles podem impedir uma atualização tranquila ou bem-sucedida.
+Para replicação de banco de dados, você pode usar o Replication Link Analyzer para ajudar na resolução de problemas antes de iniciar a atualização.
 
-有关详细信息，请参阅 [System Center Configuration Manager 中的监视层次结构和复制基础结构](/sccm/core/servers/manage/monitor-hierarchy-and-replication-infrastructure)主题中的[关于复制链接分析器](/sccm/core/servers/manage/monitor-hierarchy-and-replication-infrastructure#BKMK_RLA)。
+Para obter mais informações, consulte [Sobre o Replication Link Analyzer](/sccm/core/servers/manage/monitor-hierarchy-and-replication-infrastructure#BKMK_RLA) no tópico [Monitorar a infraestrutura de hierarquia e de replicação no System Center Configuration Manager](/sccm/core/servers/manage/monitor-hierarchy-and-replication-infrastructure).
 
-**为托管站点、站点数据库服务器和远程站点系统角色的计算机上的操作系统安装所有合适的关键更新：**为 Configuration Manager 安装更新之前，请为每个适用的站点系统安装任何关键更新。 如果安装的更新需要重启，请在启动 Configuration Manager 更新之前重启合适的计算机。
+**Instale todas as atualizações críticas aplicáveis aos sistemas operacionais nos computadores que hospedam o site, o servidor de banco de dados do site e as funções do sistema de site remoto:** antes de instalar uma atualização do Configuration Manager, instale todas as atualizações críticas para cada sistema de sites aplicável. Se uma atualização instalada precisar de uma reinicialização, reinicie os computadores aplicáveis antes de iniciar a atualização do Configuration Manager.
 
-**在主站点上禁用管理点数据库副本：**   
-Configuration Manager 无法成功更新启用了管理点数据库副本的主站点。 安装 Configuration Manager 的更新之前禁用数据库复制。
+**Desabilitar réplicas de banco de dados para pontos de gerenciamento em sites primários:**   
+O Configuration Manager não pode atualizar com êxito um site primário que tenha uma réplica de banco de dados habilitada para pontos de gerenciamento. Desabilite a replicação de banco de dados antes de instalar uma atualização para o Configuration Manager.
 
-有关详细信息，请参阅 [System Center Configuration Manager 管理点的数据库副本](/sccm/core/servers/deploy/configure/database-replicas-for-management-points)。
+Para obter mais informações, consulte [Réplicas de banco de dados para pontos de gerenciamento no System Center Configuration Manager](/sccm/core/servers/deploy/configure/database-replicas-for-management-points).
 
-**将 SQL Server AlwaysOn 可用性组设置为手动故障转移：**   
-在安装更新（例如版本 1610）之前，请确保将可用性组设置为手动故障转移。 站点更新后，可以将故障转移还原为自动进行故障转移。 有关详细信息，请参阅[站点数据库的 SQL Server AlwaysOn](/sccm/core/servers/deploy/configure/sql-server-alwayson-for-a-highly-available-site-database)。
+**Definir Grupos de Disponibilidade AlwaysOn do SQL Server para failover manual:**   
+Antes de instalar atualizações, como a versão 1610, certifique-se de que o grupo de disponibilidade esteja definido para failover manual. Após a atualização do site, você pode restaurar o failover para que ele seja automático. Para saber mais, veja [SQL Server AlwaysOn para um banco de dados do site](/sccm/core/servers/deploy/configure/sql-server-alwayson-for-a-highly-available-site-database).
 
-**重新配置使用 NLB 的软件更新点：**   
-Configuration Manager 无法更新使用网络负载均衡 (NLB) 群集来托管软件更新点的站点。
+**Reconfigure os pontos de atualização de software que usam NLBs:**   
+O Configuration Manager não pode atualizar um site que usa um cluster de NLB (balanceamento de carga de rede) para hospedar pontos de atualização de software.
 
-如果为软件更新点使用 NLB 群集，请使用 Windows PowerShell 删除 NLB 群集。
-有关详细信息，请参阅 [System Center Configuration Manager 的软件更新计划](/sccm/sum/plan-design/plan-for-software-updates)。
+Se você usar clusters NLB para pontos de atualização de software, use o Windows PowerShell para remover o cluster NLB.
+Para obter mais informações, consulte [Planejar atualizações de software no System Center Configuration Manager](/sccm/sum/plan-design/plan-for-software-updates).
 
-**在站点升级安装的过程中，禁用每个站点上的所有站点维护任务：**   
-在安装更新之前，请禁用可能会在更新过程进行时运行的任何站点维护任务。 这包括但不限于以下各项：
+**Desabilite todas as tarefas de manutenção do site em cada site durante a instalação da atualização nesse site:**   
+Antes de instalar a atualização, desabilite todas as tarefas de manutenção do site que possam ser executadas durante o período em que o processo de atualização estiver ativo. Isso inclui, mas não está limitado ao seguinte:
 
--   备份站点服务器
--   删除过期的客户端操作
--   删除过期的发现数据
+-   Servidor do Site de Backup
+-   Excluir Operações Antigas do Cliente
+-   Excluir Dados Antigos de Descoberta
 
-站点数据库维护任务在更新安装过程中运行时，更新安装可能会失败。 在禁用任务之前，请记录该任务的计划，以便在安装更新之后可恢复其配置。
+Há possibilidade de falha na instalação da atualização quando uma tarefa de manutenção do banco de dados do site for executada durante o processo da instalação. Antes de desabilitar uma tarefa, registre o agendamento da tarefa para que você possa restaurá-la depois que a atualização estiver instalada.
 
-有关详细信息，请参阅 [System Center Configuration Manager 的维护任务](/sccm/core/servers/manage/maintenance-tasks)和 [System Center Configuration Manager 维护任务参考](/sccm/core/servers/manage/reference-for-maintenance-tasks)。
+Para obter mais informações, consulte [Tarefas de manutenção do System Center Configuration Manager](/sccm/core/servers/manage/maintenance-tasks) e [Referência para tarefas de manutenção do System Center Configuration Manager](/sccm/core/servers/manage/reference-for-maintenance-tasks).
 
-**在管理中心站点和主站点上创建站点数据库备份：** 更新站点之前，请备份站点数据库，以确保具有用于灾难恢复的成功备份。
+**Crie um backup do banco de dados do site no site de administração central e nos sites primários:** antes de atualizar um site, faça backup do banco de dados do site para garantir que você tenha um backup bem-sucedido a ser usado para recuperação de desastres.
 
-有关详细信息，请参阅 [System Center Configuration Manager 的备份和恢复](/sccm/protect/understand/backup-and-recovery)。
+Para obter mais informações, consulte [Backup e recuperação para o System Center Configuration Manager](/sccm/protect/understand/backup-and-recovery).
 
 <!-- Removed from update guidance 6/6/2017
 **Test the database upgrade on a copy of the most recent site database backup:** 
@@ -139,31 +139,31 @@ Configuration Manager does not support the backup of secondary sites nor does it
 Do not run a test database upgrade on the production site database. Doing so updates the site database and could render your site inoperable. For more information, see [Step 2: Test the database upgrade before installing an update](/sccm/core/servers/manage/install-in-console-updates#bkmk_step2) from **Before you install an in-console update**.
 -->
 
-**规划客户端试点：**   
-安装更新客户端的更新后，可以在新的客户端更新部署和升级所有活动的客户端之前在预生产中对其进行测试。
+**Planeje o cliente piloto:**   
+Ao instalar uma atualização que atualiza o cliente, você pode testar essa nova atualização do cliente em pré-produção antes que ela seja implantada e atualize todos os clientes ativos.
 
-若要利用此选项，在开始安装更新之前必须配置站点，以支持预生产的自动升级。
+Para aproveitar essa opção, antes de começar a instalação da atualização, você deve configurar o site para dar suporte às atualizações automáticas para pré-produção.
 
-有关详细信息，请参阅[在 System Center Configuration Manager 中升级客户端](/sccm/core/clients/manage/upgrade/upgrade-clients)和[如何在 System Center Configuration Manager 中的预生产集合中测试客户端升级](/sccm/core/clients/manage/upgrade/test-client-upgrades)。
+Para obter mais informações, consulte [Atualizar clientes no System Center Configuration Manager](/sccm/core/clients/manage/upgrade/upgrade-clients) e [Como testar atualizações do cliente em uma coleção de pré-produção no System Center Configuration Manager](/sccm/core/clients/manage/upgrade/test-client-upgrades).
 
-**计划使用服务时段控制站点服务器安装更新的时间：**   
-可使用服务时段定义时间段，在该时段内可安装站点服务器的更新。
+**Planeje usar períodos de serviço para controlar quando os servidores do site instalam atualizações:**   
+Você pode usar períodos de serviço para definir um período durante o qual as atualizações de um servidor de sites possam ser instaladas.
 
-这可以帮助你控制层次结构中的站点安装更新的时间。 版本 1606 之前，服务时段被称为维护时段。 有关详细信息，请参阅[站点服务器的服务时段](/sccm/core/servers/manage/service-windows)。
+Isso pode ajudar a controlar quando os sites em sua hierarquia instalam a atualização. Antes da versão 1606, as janelas de serviço eram chamadas de janelas de manutenção. Para obter mais informações, consulte [Service windows for site servers](/sccm/core/servers/manage/service-windows) (Períodos de serviço para servidores do site).
 
-**运行安装程序先决条件检查程序：**   
-当更新在控制台中列为“可用”时，可以独立运行先决条件检查程序，然后再安装更新。 （在站点上安装更新时，会再次运行必备组件检查程序。）
+**Execute o verificador de pré-requisitos de instalação:**   
+Quando a atualização está listada no console como **Disponível**, você pode executar o verificador de pré-requisitos independentemente antes de instalar a atualização. (Ao instalar a atualização no site, o verificador de pré-requisitos é executado novamente).
 
-若要从控制台运行先决条件检查，请转到“管理”>“概述”>“云服务”>“更新和维护服务”。 然后，右键单击“Configuration Manager 1610 更新包”，然后选择“运行先决条件检查”。
+Para executar um verificador de pré-requisitos a partir do console, vá para **Administração > Visão geral > Serviços de Nuvem > Atualizações e Manutenção.** Em seguida, clique com botão direito do mouse em **Pacote de atualização do Configuration Manager 1610** e escolha **Executar verificação de pré-requisitos**.
 
-有关启动并监视先决条件检查的详细信息，请参阅[安装 System Center Configuration Manager 的控制台内部更新](/sccm/core/servers/manage/install-in-console-updates)主题中的**步骤 3：安装更新之前运行先决条件检查程序**。
+Para saber mais sobre como iniciar e monitorar a verificação de pré-requisitos, veja **Etapa 3: executar o verificador de pré-requisitos antes de instalar uma atualização** no tópico [Instalações de atualizações para o System Center Configuration Manager](/sccm/core/servers/manage/install-in-console-updates).
 
 > [!IMPORTANT]  
-> 必备组件检查程序作为更新安装的一部分运行或独立运行时，该过程会更新某些用于站点维护任务的产品源文件。 因此，在运行先决条件检查程序后且安装 1610 更新前，如果需要执行站点维护任务，可从站点服务器上的 CD.Latest 文件夹运行 **Setupwpf.exe**（Configuration Manager 安装程序）。
+> Quando o verificador de pré-requisitos for executado como parte de uma instalação de atualização ou de modo independente, o processo atualizará alguns arquivos de origem do produto que são usados para tarefas de manutenção do site. Portanto, após executar o verificador de pré-requisitos, mas antes de instalar a atualização 1610, se você precisa executar uma tarefa de manutenção de site, execute **Setupwpf.exe** (Instalação do Configuration Manager) na pasta CD.Latest no servidor de sites.
 
-**更新站点：**   
-现已准备好可以为层次结构开始更新安装。 有关安装更新的信息，请参阅[安装控制台内部更新](/sccm/core/servers/manage/install-in-console-updates#a-namebkmkinstalla-install-in-console-updates)
+**Sites de atualização:**   
+Agora você está pronto para iniciar a instalação da atualização para sua hierarquia. Para saber mais sobre como instalar a atualização, veja [Instalação de atualizações no console.](/sccm/core/servers/manage/install-in-console-updates#a-namebkmkinstalla-install-in-console-updates)
 
-我们建议计划在正常业务时间之外为每个站点安装更新，此时安装更新的过程以及其重新安装站点组件和站点系统角色的操作对业务运营的影响最小。
+Recomendamos que você planeje a instalação da atualização fora do horário comercial normal de cada site, quando o processo de instalação da atualização e suas ações de reinstalação dos componentes do site e das funções do sistema de sites terão um efeito mínimo sobre as operações de seu negócio.
 
-有关详细信息，请参阅 [ System Center Configuration Manager 的更新](/sccm/core/servers/manage/updates)。
+Para obter mais informações, consulte [Atualizações para o System Center Configuration Manager](/sccm/core/servers/manage/updates).

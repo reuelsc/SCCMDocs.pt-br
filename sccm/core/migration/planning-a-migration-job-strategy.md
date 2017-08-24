@@ -1,6 +1,6 @@
 ---
-title: "迁移作业规划 | Microsoft Docs"
-description: "使用迁移作业来配置要迁移到 System Center Configuration Manager 环境的数据。"
+title: "Planejamento do trabalho de migração | Microsoft Docs"
+description: "Use os trabalhos de migração para configurar os dados que você deseja migrar para o ambiente do System Center Configuration Manager."
 ms.custom: na
 ms.date: 10/06/2016
 ms.prod: configuration-manager
@@ -19,305 +19,305 @@ robots: noindex
 ms.openlocfilehash: 4c83540db763bea039a92633a1d1a808e60e27ad
 ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
 ms.translationtype: HT
-ms.contentlocale: zh-CN
+ms.contentlocale: pt-BR
 ms.lasthandoff: 08/07/2017
 ---
-# <a name="plan-a-migration-job-strategy-in-system-center-configuration-manager"></a>在 System Center Configuration Manager 中规划迁移作业策略
+# <a name="plan-a-migration-job-strategy-in-system-center-configuration-manager"></a>Planejar a estratégia de trabalho de migração no System Center Configuration Manager
 
-*适用范围：System Center Configuration Manager (Current Branch)*
+*Aplica-se a: System Center Configuration Manager (Branch Atual)*
 
-使用迁移作业来配置要迁移到 System Center Configuration Manager 环境的特定数据。 迁移作业确定你计划迁移的对象，并且在目标层次结构中的顶层站点上运行。 可为每个源站点设置一个或多个迁移作业。 这可以实现一次迁移所有对象，或迁移每个作业的有限数据子集。  
+Use trabalhos de migração para configurar os dados específicos que você deseja migrar para seu ambiente do System Center Configuration Manager. Os trabalhos de migração identificam os objetos que se planeja migrar e também são executados no site de nível superior na hierarquia de destino. É possível configurar um ou mais trabalhos de migração por site de origem. Isso permite migrar todos os objetos de uma só vez ou as sub-redes limitadas de dados com cada trabalho.  
 
- 可以在 Configuration Manager 从源层次结构中的一个或多个站点成功收集数据后创建迁移作业。 你可以按任何顺序从收集了数据的源站点中迁移数据。 对于 Configuration Manager 2007 源站点，只能从在其中创建了对象的站点中迁移数据。 对于运行 System Center 2012 Configuration Manager 或更高版本的源站点，可迁移的所有数据均位于源层次结构的顶层站点上。  
+ É possível criar trabalhos de migração após o Configuration Manager coletar com êxito os dados de um ou mais sites de uma hierarquia de origem. Você pode migrar dados em qualquer sequência dos sites de origem que coletaram os dados. Com um site de origem do Configuration Manager 2007, é possível migrar dados somente de um site onde o objeto foi criado. Com os sites de origem que executam o System Center 2012 Configuration Manager ou posterior, todos os dados que podem ser migrados estão disponíveis no site de nível superior da hierarquia de origem.  
 
- 在层次结构之间迁移客户端之前，请确保客户端使用的对象已迁移，并且这些对象在目标层次结构中可用。 例如，当从 Configuration Manager 2007 SP2 源层次结构中迁移时，可能有部署到带有客户端的自定义集合的内容播发。 在这种情况下，建议在迁移客户端之前迁移集合、播发和关联的内容。 如果在客户端迁移之前未迁移内容、集合和播发，则此数据无法与目标层次结构中的客户端关联。 如果客户端未与之前运行的播发和内容的相关数据关联，则可能会为客户端提供用于在目标层次结构中安装的内容，而这可能是不必要的。 如果客户端在数据已迁移之后迁移，则客户端将与此内容和播发关联，并且，除非播发是重复进行的，否则不会再次为客户端提供已迁移播发的此内容。  
+ Antes de migrar clientes entre hierarquias, assegure-se de que os objetos que os clientes usam foram migrados e que esses objetos estão disponíveis na hierarquia de destino. Por exemplo, ao migrar de uma hierarquia de origem do Configuration Manager 2007 SP2, talvez seja necessário ter um anúncio para o conteúdo que é implantado em uma coleção personalizada que tem um cliente. Nesse cenário, é recomendável migrar a coleção, o anúncio e o conteúdo associado antes de migrar o cliente. Esses dados não poderão ser associados ao cliente na hierarquia de destino se o conteúdo, coleção e anúncio não forem migrados antes da migração do cliente. Se um cliente não está associado aos dados relacionados a um anúncio e conteúdo executados anteriormente, o conteúdo para instalação na hierarquia de destino pode ser oferecido para o cliente, o que talvez seja desnecessário. Quando o cliente migra depois que os dados foram migrados, o cliente é associado a esse conteúdo e anúncio, e a menos que o anúncio seja recorrente, não é oferecido a ele esse conteúdo para a anúncio migrado novamente.  
 
- 某些对象需要将数据多次从源层次结构迁移到目标层次结构。 例如，为了成功将客户端的软件更新迁移到目标层次结构，必须在目标层次结构中部署一个活动软件更新点、配置产品的目录，并将该软件更新点与 Windows Server 更新服务 (WSUS) 同步。  
+ Alguns objetos requerem mais do que a migração de dados da hierarquia da origem para a hierarquia de destino. Por exemplo, para migrar com êxito as atualizações de software para clientes na hierarquia de destino, você deve implantar um ponto de atualização de software ativo, configurar o catálogo de produtos e sincronizar o ponto de atualização de software com um WSUS (Windows Server Update Services) na hierarquia de destino.  
 
- 使用下列部分来帮助你规划迁移作业。  
+ Use as seções a seguir para ajudá-lo a planejar seus trabalhos de migração.  
 
--   [迁移作业的类型](#Types_of_Migration)  
+-   [Tipos de trabalhos de migração](#Types_of_Migration)  
 
--   [所有迁移作业的一般规划](#About_Migration_Jobs)  
+-   [Planejamento geral para todos os trabalhos de migração](#About_Migration_Jobs)  
 
--   [规划集合迁移作业](#About_Collection_Migration)  
+-   [Planejando os trabalhos de migração de coleções](#About_Collection_Migration)  
 
--   [规划对象迁移作业](#About_Object_Migration)  
+-   [Planejando os trabalhos de migração de objetos](#About_Object_Migration)  
 
--   [规划以前迁移的对象迁移作业](#About_Object_Migrations)  
+-   [Planejando trabalhos de migração de objetos migrados anteriormente](#About_Object_Migrations)  
 
-##  <a name="Types_of_Migration"></a>迁移作业的类型  
- Configuration Manager支持以下类型的迁移作业。 每种作业类型都旨在帮助定义你可包括在该作业中的对象。  
+##  <a name="Types_of_Migration"></a> Tipos de trabalhos de migração  
+ O Configuration Manager dá suporte aos seguintes tipos de trabalho de migração. Cada tipo de trabalho foi desenvolvido para ajudar a definir os objetos que você pode incluir nesse trabalho.  
 
- **集合迁移**（仅当从 Configuration Manager 2007 SP2 迁移时受支持）：迁移与所选集合相关的对象。 默认情况下，集合迁移包括与集合成员关联的所有对象。 在使用集合迁移作业时，你可以排除特定对象实例。  
+ **Migração de coleção** (com suporte apenas ao migrar do Configuration Manager 2007 SP2): migre objetos que estão relacionados às coleções selecionadas. Por padrão, a migração da coleção inclui todos os objetos que estão associados aos membros da coleção. Quando você usa um trabalho de migração da coleção, você pode excluir instâncias de objeto específico.  
 
- **对象迁移**：迁移所选的单独对象。 仅选择你希望迁移的特定数据。  
+ **Migração de objeto**: migre objetos individuais selecionados. Você seleciona somente os dados específicos que deseja migrar.  
 
- **以前迁移的对象迁移**：如果以前迁移的对象在迁移之后已在源层次结构中更新，则迁移这些对象。  
+ **Migração de objetos migrados anteriormente**: migre objetos que você migrou anteriormente quando eles forem atualizados na hierarquia de origem após terem sido migrados pela última vez.  
 
-###  <a name="Objects_that_can_migrate"></a>可迁移的对象  
- 并非每个对象都可通过特定类型的迁移作业进行迁移。 以下列表确定你可以使用每种类型的迁移作业迁移的对象的类型。  
+###  <a name="Objects_that_can_migrate"></a> Objetos que você pode migrar  
+ Nem todo objeto pode ser migrado por um tipo específico de trabalho de migração. A lista a seguir identifica o tipo de objeto que pode ser migrado com cada tipo de trabalho de migração.  
 
 > [!NOTE]  
->  只有在从 Configuration Manager 2007 SP2 源层次结构中迁移对象时，集合迁移作业才可用。  
+>  Os trabalhos de migração de coleção estão disponíveis somente ao migrar objetos de uma hierarquia de origem do Configuration Manager 2007 SP2.  
 
- **可以用于迁移每个对象的作业类型**  
+ **Tipos de trabalho que você pode usar para migrar cada objeto**  
 
--   **播发**（可从支持的 Configuration Manager 2007 源站点中迁移）  
+-   **Anúncios** (disponíveis para migrar de sites de origem do Configuration Manager 2007 com suporte)  
 
-    -   集合迁移  
+    -   Migração da coleção  
 
 
--   **资产智能目录**  
+-   **Catálogo do Asset Intelligence**  
 
-    -   对象迁移  
+    -   Migração de objeto  
 
-    -   以前迁移的对象迁移  
+    -   Migração de objetos migrados anteriormente  
 
--   **资产智能硬件要求**  
+-   **Requisitos de hardware do Asset Intelligence**  
 
-    -   对象迁移  
+    -   Migração de objeto  
 
-    -   以前迁移的对象迁移  
+    -   Migração de objetos migrados anteriormente  
 
--   **资产智能软件列表**  
+-   **Lista de softwares do Asset Intelligence**  
 
-    -   对象迁移  
+    -   Migração de objeto  
 
-    -   以前迁移的对象迁移  
+    -   Migração de objetos migrados anteriormente  
 
--   **边界**  
+-   **Limites**  
 
-    -   对象迁移  
+    -   Migração de objeto  
 
-    -   以前迁移的对象迁移  
+    -   Migração de objetos migrados anteriormente  
 
--   **配置基线**  
+-   **Linhas de base de configuração**  
 
-    -   集合迁移  
+    -   Migração da coleção  
 
-    -   对象迁移  
+    -   Migração de objeto  
 
-    -   以前迁移的对象迁移  
+    -   Migração de objetos migrados anteriormente  
 
--   **配置项目**  
+-   **Itens de configuração**  
 
-    -   集合迁移  
+    -   Migração da coleção  
 
-    -   对象迁移  
+    -   Migração de objeto  
 
-    -   以前迁移的对象迁移  
+    -   Migração de objetos migrados anteriormente  
 
--   **维护时段**  
+-   **Janelas de manutenção**  
 
-    -   集合迁移  
+    -   Migração da coleção  
 
 
--   **操作系统部署启动映像**  
+-   **Imagens de inicialização para implantação do sistema operacional**  
 
-    -   集合迁移  
+    -   Migração da coleção  
 
-    -   对象迁移  
+    -   Migração de objeto  
 
-    -   以前迁移的对象迁移  
+    -   Migração de objetos migrados anteriormente  
 
--   **操作系统部署驱动程序包**  
+-   **Pacotes de driver de implantação do sistema operacional**  
 
-    -   集合迁移  
+    -   Migração da coleção  
 
-    -   对象迁移  
+    -   Migração de objeto  
 
-    -   以前迁移的对象迁移  
+    -   Migração de objetos migrados anteriormente  
 
--   **操作系统部署驱动程序**  
+-   **Drivers de implantação do sistema operacional**  
 
-    -   集合迁移  
+    -   Migração da coleção  
 
-    -   对象迁移  
+    -   Migração de objeto  
 
-    -   以前迁移的对象迁移  
+    -   Migração de objetos migrados anteriormente  
 
--   **操作系统部署映像**  
+-   **Imagens de implantação do sistema operacional**  
 
-    -   集合迁移  
+    -   Migração da coleção  
 
-    -   对象迁移  
+    -   Migração de objeto  
 
-    -   以前迁移的对象迁移  
+    -   Migração de objetos migrados anteriormente  
 
--   **操作系统部署包**  
+-   **Pacotes de implantação do sistema operacional**  
 
-    -   集合迁移  
+    -   Migração da coleção  
 
-    -   对象迁移  
+    -   Migração de objeto  
 
-    -   以前迁移的对象迁移  
+    -   Migração de objetos migrados anteriormente  
 
--   **软件分发包**  
+-   **Pacotes de distribuição de software**  
 
-    -   集合迁移  
+    -   Migração da coleção  
 
-    -   对象迁移  
+    -   Migração de objeto  
 
-    -   以前迁移的对象迁移  
+    -   Migração de objetos migrados anteriormente  
 
--   **软件计数规则**  
+-   **Regras de medição de software**  
 
-    -   对象迁移  
+    -   Migração de objeto  
 
-    -   以前迁移的对象迁移  
+    -   Migração de objetos migrados anteriormente  
 
--   **软件更新部署包**  
+-   **Pacotes de implantação de atualização de software**  
 
-    -   集合迁移  
+    -   Migração da coleção  
 
-    -   对象迁移  
+    -   Migração de objeto  
 
-    -   以前迁移的对象迁移  
+    -   Migração de objetos migrados anteriormente  
 
--   **软件更新部署模板**  
+-   **Modelos de implantação de atualização de software**  
 
-    -   集合迁移  
+    -   Migração da coleção  
 
-    -   对象迁移  
+    -   Migração de objeto  
 
-    -   以前迁移的对象迁移  
+    -   Migração de objetos migrados anteriormente  
 
--   **软件更新部署**  
+-   **Implantações de atualização de software**  
 
-    -   集合迁移  
+    -   Migração da coleção  
 
 
--   **软件更新列表**  
+-   **Listas de atualizações de software**  
 
-    -   对象迁移  
+    -   Migração de objeto  
 
-    -   以前迁移的对象迁移  
+    -   Migração de objetos migrados anteriormente  
 
--   **任务序列**  
+-   **Sequências de tarefas**  
 
-    -   集合迁移  
+    -   Migração da coleção  
 
-    -   对象迁移  
+    -   Migração de objeto  
 
-    -   以前迁移的对象迁移  
+    -   Migração de objetos migrados anteriormente  
 
--   **虚拟应用程序包**  
+-   **Pacotes de aplicativos virtuais**  
 
-    -   集合迁移  
+    -   Migração da coleção  
 
-    -   对象迁移  
+    -   Migração de objeto  
 
     > [!IMPORTANT]  
-    >  尽管可通过使用对象迁移来迁移虚拟应用程序包，但无法使用迁移作业类型“以前迁移的对象迁移” 来迁移这些包。 作为替代，你必须从目标站点中删除迁移的虚拟应用程序包，然后创建一个新迁移作业来迁移虚拟应用程序。  
+    >  Embora você possa migrar um pacote de aplicativos virtuais usando a migração de objeto, os pacotes não podem ser migrados usando o tipo de trabalho de migração **Migração de objetos migrados anteriormente**. Em vez disso, é necessário excluir o pacote de aplicativo virtual migrado do site de destino e criar um novo trabalho de migração para migrar o aplicativo virtual.  
 
-##  <a name="About_Migration_Jobs"></a>所有迁移作业的一般规划  
- 使用创建迁移作业向导来创建迁移作业以将对象迁移到目标层次结构。 你创建的迁移作业的类型确定哪些对象可供迁移。 可创建和使用多个迁移作业以从同一源站点或多个源站点中迁移数据。 使用一种类型的迁移作业并不会妨碍使用其他类型的迁移作业。  
+##  <a name="About_Migration_Jobs"></a> Planejamento geral para todos os trabalhos de migração  
+ Use o Assistente para Criar Trabalho de Migração para criar um trabalho de migração para migrar objetos para a hierarquia de destino. O tipo de trabalho de migração que você cria determina quais objetos estão disponíveis para migrar. É possível criar e usar vários trabalhos de migração para migrar dados de um mesmo site de origem ou de vários sites de origem. O uso de um tipo de trabalho de migração não bloqueia o uso de um tipo diferente de trabalho de migração.  
 
- 一个迁移作业运行成功后，其状态将列为“已完成”  ，并且无法再次运行。 但是，你可以创建一个新迁移作业来迁移已由原始作业迁移的任何对象，并且新迁移作业也可包括其他对象。 创建其他迁移作业时，之前已迁移的对象会显示状态“已迁移”。 可选择这些对象以再次迁移它们，但是除非对象在源层次结构中已更新，否则再次迁移这些对象是不必要的。 如果对象在最初迁移后已在源层次结构中更新，你可以在使用迁移作业类型“迁移之后修改的对象” 时标识该对象。  
+ Executado com êxito o trabalho de migração, seu status é listado como **Concluído** e ele não pode ser executado novamente. No entanto, é possível criar um novo trabalho de migração para migrar qualquer objeto migrado pelo trabalho original e o novo trabalho de migração pode também incluir objetos adicionais. Ao criar trabalhos de migração adicionais, os objetos que foram migrados anteriormente mostram o estado de **Migrado**. É possível selecionar esses objetos para migrá-los novamente, mas a menos que o objeto tenha sido atualizado na hierarquia de origem, não é necessário migrar esses objetos novamente. Se o objeto foi atualizado na hierarquia de origem depois que foi migrado originalmente, é possível identificar esse objeto ao usar o tipo de trabalho de migração **Objetos modificados após a migração**.  
 
- 你可以在迁移作业运行之前将其删除。 但是，在迁移作业完成之后，它将一直在 Configuration Manager 控制台中显示，并且无法删除。 每个已完成或尚未运行的迁移作业会一直在 Configuration Manager 控制台中显示，直至完成迁移过程并清理迁移数据为止。  
-
-> [!NOTE]  
->  通过使用“清理迁移数据”操作完成迁移之后，可重新配置与当前源层次结构相同的层次结构，以使之前迁移的对象再次显示。  
-
- 可在 Configuration Manager 控制台中查看任何迁移作业中包含的对象，方式是选中迁移作业，然后选择“作业对象”选项卡。  
-
- 使用下列部分中的信息来帮助你规划所有迁移作业。  
-
-### <a name="data-selection"></a>数据选择  
- 在创建集合迁移作业时，你必须选择一个或多个集合。 选择集合之后，创建迁移作业向导将显示与集合关联的对象。 默认情况下会迁移与所选集合关联的所有对象，但可取消选中不希望使用该作业迁移的对象。 取消选中具有依赖对象的对象时，这些依赖对象也将被取消选中。 会将所有取消选中的对象添加到排除列表。 将来的迁移作业将不会自动选择排除列表中的对象。 你必须手动编辑排除列表以删除要为在将来创建的迁移作业中的迁移自动选择的对象。  
-
-### <a name="site-ownership-for-migrated-content"></a>已迁移内容的站点所有权  
- 在为部署迁移内容时，你必须将内容对象分配给目标层次结构中的站点。 此站点随后将成为目标层次结构中该内容的所有者。 尽管目标层次结构的顶层站点是实际迁移内容元数据的站点，但却是分配的站点在网络上访问内容的原始源文件。  
-
- 为了最大限度地减少迁移期间使用的网络带宽，请考虑将内容的所有权转让给最近的可用站点。 由于有关内容的信息是在 System Center Configuration Manager 中全局共享的，因此该信息将在每个站点上可用。  
-
- 有关内容的信息通过使用数据库复制共享到目标层次结构中的所有站点。 但是，分配给主站点并随后部署到其他主站点上的分发点的任何内容将通过使用基于文件的复制传输。 此传输将经过管理中心站点，并随后传送到每个其他主站点。 在分配站点作为内容所有者时，通过在迁移之前或在迁移过程中将你打算分发到多个主站点的包集中在一起，可减少低带宽网络上的数据传输。  
-
-### <a name="role-based-administration-security-scopes-for-migrated-data"></a>迁移数据的基于角色的管理安全作用域  
- 在将数据迁移到目标层次结构时，你必须为迁移其数据的对象分配一个或多个基于角色的管理安全作用域。 这可确保只有适当的管理用户才能在数据迁移后访问此数据。 你指定的安全作用域由迁移作业定义，并应用于通过该作业迁移的每个对象。 如果需要应用于不同对象集的不同安全作用域，并且要在迁移期间分配这些作用域，则必须通过使用不同的迁移作业迁移不同的对象集。  
-
- 在设置迁移作业之前，请查看 System Center Configuration Manager 中基于角色的管理的工作方式。 在必要时为迁移的数据设置一个或多个安全作用域，以控制谁将具有目标层次结构中已迁移对象的访问权限。  
-
- 若要深入了解安全作用域和基于角色的管理，请参阅 [System Center Configuration Manager 的基于角色的管理基础](../../core/understand/fundamentals-of-role-based-administration.md)。  
-
-### <a name="review-migration-actions"></a>查看迁移操作  
- 在设置迁移作业时，创建迁移作业向导将显示为确保成功迁移所必须执行的操作的列表，以及 Configuration Manager 在所选数据的迁移过程中执行的操作的列表。 请仔细查看此信息以检查预期结果。  
-
-### <a name="schedule-migration-jobs"></a>计划迁移作业  
- 默认情况下，迁移作业将在创建后立即运行。 但是，可在创建作业时指定或通过编辑作业的属性来指定迁移作业何时运行。 可计划迁移作业运行方式，如下所示：  
-
--   立即运行作业  
-
--   在特定的开始时间运行作业  
-
--   不运行作业  
-
-### <a name="specify-conflict-resolution-for-migrated-data"></a>为迁移的数据指定冲突解决方案  
- 默认情况下，除非你将迁移作业配置为跳过或覆盖之前已迁移到目标数据库的数据，否则迁移作业不会覆盖目标数据库中的数据。  
-
-##  <a name="About_Collection_Migration "></a>规划集合迁移作业  
- 只有在从运行受支持的 Configuration Manager 2007 版本的源层次结构中迁移数据时，集合迁移作业才可用。 按集合迁移数据时，必须指定一个或多个要迁移的集合。 对于你指定的每个集合，迁移作业会自动选择要迁移的所有相关对象。 例如，你选择特定的用户集合，那么，之后会识别集合成员，而且你可以迁移与该集合关联的部署。 可以根据需要选择与这些成员关联的、要迁移的其他部署对象。 所有这些选定的项目都将添加到可以迁移的对象的列表中。  
-
- 迁移集合时，System Center Configuration Manager 也会迁移集合设置（包括维护时段和集合变量），但无法迁移有关 AMT 客户端设置的集合设置。  
-
- 使用下列部分中的信息来了解可以应用于基于集合的迁移作业的其他配置。  
-
-### <a name="exclude-objects-from-collection-migration-jobs"></a>从集合迁移作业中排除对象  
- 可以从集合迁移作业中排除特定的对象。 从集合迁移作业中排除特定的对象时，会将该对象添加到全局排除列表中，此列表包含你已经从为当前源层次结构中的任何源站点创建的迁移作业中排除的所有对象。 在未来的作业中，仍然可以迁移排除列表上的对象，但在你创建新的基于集合的迁移作业时，不会自动包括这些对象。  
-
- 可以编辑排除列表，以删除以前排除的对象。 从排除列表中删除对象之后，在创建新的迁移作业期间，如果指定关联的集合，则会自动选择该对象。  
-
-### <a name="unsupported-collections"></a>不支持的集合  
- Configuration Manager 可以从 Configuration Manager 2007 源层次结构中迁移任何默认的用户集合、设备集合和大部分自定义集合。 但是，Configuration Manager 无法迁移包含相同集合中的用户和设备的集合。  
-
- 无法迁移下列集合:  
-
--   包含用户和设备的集合。  
-
--   包含对不同资源类型的集合的引用的集合。 例如，某个基于设备的集合具有子集合，或者包含指向基于用户的集合的链接。 在此例中，只会迁移顶层集合。  
-
--   具有将未知计算机包括在内的规则的集合。 可以迁移此类集合，但不会迁移将未知计算机包括在内的规则。  
-
-### <a name="empty-collections"></a>空集合  
- 空集合是指没有关联的资源的集合。 Configuration Manager 迁移空集合时，它会将集合转换为不包含用户或设备的组织文件夹。 此文件夹使用“用户集合” 或“设备集合”节点下的空集合的名称创建而成，而该节点位于 Configuration Manager 控制台的“资产和符合性”工作区中。  
-
-### <a name="linked-collections-and-subcollections"></a>已链接的集合和子集合  
- 在迁移链接到其他集合或具有子集合的集合时，除了链接的集合和子集合，Configuration Manager 还在“用户集合”或“设备集合” 节点下创建一个文件夹。  
-
-### <a name="collection-dependencies-and-include-objects"></a>集合依赖项和包括对象  
- 在“创建迁移作业向导”中指定要迁移的集合时，会自动选择将包括在作业中的任何依赖的集合。 此行为确保在迁移后可以获得所有必需的资源。  
-
- 例如：为运行 Windows 7 的设备选择了一个命名为 **Win_7** 的集合。 此集合受到包含所有客户端操作系统的集合（命名为 **All_Clients**）的限制。 在迁移时，将会自动选择 **All_Clients** 集合。  
-
-### <a name="collection-limiting"></a>集合限制  
- 凭借 System Center Configuration Manager，集合是全局数据，且在层次结构的每个站点上接受评估。 因此，计划如何在迁移后限制集合的范围。 在迁移期间，可以标识要使用的目标层次结构中的集合，以限制你要迁移的集合的范围，从而确保迁移后的集合不会包含意料之外的成员。  
-
- 例如，在 Configuration Manager 2007 中，将在创建集合的站点和子站点上评估集合。 可以将播发仅部署到一个子站点，这会将播发的范围限制为该子站点。 相比之下，凭借 System Center Configuration Manager，可在每个站点上评估集合，然后为每个站点评估关联的播发。 集合限制可让你根据另一个集合来精简集合成员，以免加入意外的集合成员。  
-
-### <a name="site-code-replacement"></a>站点代码替换  
- 在迁移集合时，如果它包含用于标识 Configuration Manager 2007 站点的条件，则必须指定目标层次结构中的特定站点。 这确保迁移后的集合在目标层次结构中仍然能够正常工作，而且不会扩大作用域。  
-
-### <a name="specify-behavior-for-migrated-advertisements"></a>为迁移的播发指定行为  
- 默认情况下，基于集合的迁移作业会禁用迁移到目标层次结构的播发。 这包括与播发关联的任何程序。 在创建包含播发且基于集合的迁移作业时，会在“创建迁移作业向导”的“设置”页上看到“迁移播发后允许在 Configuration Manager 中部署程序”选项。 如果选择此选项，则在播发迁移后会启用与播发关联的程序。 最好不要选择此选项。 而是改为在播发迁移后且可以验证将接收播发的客户端时启用这些程序。  
+ Você pode excluir um trabalho de migração antes de ele ser executado. No entanto, após a conclusão do trabalho de migração, ele permanece visível no console do Configuration Manager e não pode ser excluído. Cada trabalho de migração que foi concluído ou ainda não foi executado permanece visível no console do Configuration Manager até que você conclua o processo de migração e limpe os dados de migração.  
 
 > [!NOTE]  
->  仅在创建基于集合的迁移作业且迁移作业包含播发时，你才会看到“在迁移播发后允许在 Configuration Manager 中部署程序”选项。  
+>  Após a migração usando a ação **Limpar Dados de Migração** ser concluída, é possível reconfigurar a mesma hierarquia como a hierarquia de origem atual para restaurar a visibilidade dos objetos migrados anteriormente.  
 
- 若要在迁移后启用某个程序，请在该程序的属性的“高级”选项卡上清除“在播发此程序的计算机上禁用此程序”。  
+ É possível exibir os objetos contidos em qualquer trabalho de migração no console do Configuration Manager selecionando o trabalho de migração e escolhendo a guia **Objetos no Trabalho**.  
 
-##  <a name="About_Object_Migration"></a>规划对象迁移作业  
- 与集合迁移不同的是，你必须选择要迁移的每个对象和对象实例。 可以选择单个对象（例如 Configuration Manager 2007 层次结构中的播发或者 System Center 2012 Configuration Manager 或 System Center Configuration Manager 层次结构中的发布），以添加到要为特定迁移作业迁移的对象的列表中。 对象迁移作业不会将你未添加到迁移列表中的任何对象迁移到目标站点。  
+ Use as informações nas seções a seguir para ajudá-lo a planejar todos os trabalhos de migração.  
 
- 除了那些适用于所有迁移作业的配置之外，基于对象的迁移作业并没有任何其他配置需要你加以规划。  
+### <a name="data-selection"></a>Seleção de dados  
+ Quando você cria um trabalho de migração de coleção, você deve selecionar uma ou mais coleções. Após selecionar as coleções, o Assistente para Criar Trabalho de Migração mostra os objetos que estão associados às coleções. Por padrão, todos os objetos associados às coleções selecionadas são migrados, mas é possível desmarcar os objetos que você não deseja migrar com esse trabalho. Quando você desmarca um objeto que tem objetos dependentes, esses objetos dependentes também são desmarcados. Todos os objetos desmarcados são adicionados a uma lista de exclusões. Os objetos em uma lista de exclusão são removidos da seleção automática para trabalhos de migração futuros. Você deve editar manualmente a lista de exclusão para remover objetos que deseja que sejam selecionados automaticamente para migração em trabalhos de migração que você criará no futuro.  
 
-##  <a name="About_Object_Migrations"></a>规划以前迁移的对象迁移作业  
- 在源层次结构中更新你已迁移到目标层次结构的某个对象时，你可以使用“迁移之后修改的对象”  作业类型重新迁移该对象。 例如，在源层次结构中重命名或更新某个包的源文件时，此包的版本在源层次结构中会递增。 在此包的版本递增之后，该作业类型能够确定要迁移此包。  
+### <a name="site-ownership-for-migrated-content"></a>Propriedade do site para o conteúdo migrado  
+ Ao migrar conteúdo para implantações, você deverá atribuir o objeto do conteúdo a um site na hierarquia de destino. Esse site, então, torna-se o proprietário desse conteúdo na hierarquia de destino. Embora o site de nível superior da hierarquia de destino seja o site que realmente migra os metadados de conteúdo, é o site atribuído que acessa os arquivos originais de conteúdo na rede.  
 
- 该作业类型与对象迁移类型相似，但有一点不同：当你选择要迁移的对象时，只能选择那些在由以前的迁移作业迁移后已更新的对象。   
+ Para minimizar a largura de banda de rede usada durante a migração, considere a transferência de propriedade de conteúdo para o site mais próximo disponível. Como as informações de conteúdo são compartilhadas globalmente no System Center Configuration Manager, elas estarão disponíveis em todos os sites.  
 
- 如果选择该作业类型，“创建迁移作业向导”的“设置”页上的冲突解决行为会配置为覆盖以前迁移的对象。 无法更改此设置。  
+ Informações sobre o conteúdo são compartilhadas para todos os sites na hierarquia de destino usando a replicação de banco de dados. No entanto, qualquer conteúdo que você atribui a um site primário e depois implanta nos pontos de distribuição em outros sites primários é transferido usando replicação baseada em arquivo. Essa transferência é roteada através do site de administração central e, em seguida, para cada site primário adicional. Ao centralizar pacotes que pretende distribuir para vários sites primários antes ou durante a migração quando você atribui um site como o proprietário do conteúdo, é possível reduzir a transferência de dados por meio de redes de baixa largura de banda.  
+
+### <a name="role-based-administration-security-scopes-for-migrated-data"></a>Escopos de segurança de administração baseada em funções dados para migrados  
+ Ao migrar dados para uma hierarquia de destino, é necessário atribuir um ou mais escopos de segurança de administração baseada em funções a objetos cujos dados são migrados. Isso garante que apenas os usuários administrativos apropriados tenham acesso a esses dados depois de serem migrados. Os escopos de segurança que você especifica são definidos pelo trabalho de migração e são aplicados a cada objeto migrado por esse trabalho. Se você necessita de escopos de segurança diferentes a serem aplicados a diferentes conjuntos de objetos e deseja atribuir esses escopos durante a migração, você deve migrar os diferentes conjuntos de objetos usando diferentes trabalhos de migração.  
+
+ Antes de configurar um trabalho de migração, examine como a administração baseada em função funciona no System Center Configuration Manager. Se necessário, configure um ou mais escopos de segurança para os dados que você migrar para controlar quem terá acesso aos objetos migrados na hierarquia de destino.  
+
+ Para obter mais informações sobre escopos de segurança e administração baseada em funções, veja [Fundamentos de administração baseada em funções para o System Center Configuration Manager](../../core/understand/fundamentals-of-role-based-administration.md).  
+
+### <a name="review-migration-actions"></a>Examinar as ações de migração  
+ Quando você configura um trabalho de migração, o Assistente para Criar Trabalho de Migração mostra uma lista de ações que você deve executar para garantir uma migração bem-sucedida e uma lista de ações que o Configuration Manager executa durante a migração dos dados selecionados. Examine essas informações cuidadosamente para verificar o resultado esperado.  
+
+### <a name="schedule-migration-jobs"></a>Agendar trabalhos de migração  
+ Por padrão, um trabalho de migração é executado imediatamente após a sua criação. No entanto, é possível especificar quando o trabalho de migração é executado ao criar o trabalho ou editando as propriedades do trabalho. É possível agendar o trabalho de migração para ser executado da seguinte maneira:  
+
+-   Executar o trabalho agora  
+
+-   Executar o trabalho em uma hora de início específica  
+
+-   Não executar o trabalho  
+
+### <a name="specify-conflict-resolution-for-migrated-data"></a>Especificar a resolução de conflitos de dados migrados  
+ Por padrão, os trabalhos de migração não podem substituir dados no banco de dados de destino, a menos que você configure o trabalho de migração para ignorar ou substituir dados que foram migrados anteriormente para o banco de dados de destino.  
+
+##  <a name="About_Collection_Migration "></a> Planejar os trabalhos de migração da coleção  
+ Os trabalhos de migração de coleção estão disponíveis apenas quando você migra dados de uma hierarquia de origem executada em uma versão do Configuration Manager 2007 com suporte. Você deve especificar uma ou mais coleções a serem migradas quando realiza a migração por coleção. Para cada coleção especificada, o trabalho de migração seleciona automaticamente todos os objetos relacionados para migração. Por exemplo, se você selecionar uma coleção específica de usuários, os membros da coleção serão identificados e você poderá migrar as implantações associadas a esta coleção. Como opção, você pode selecionar outros objetos de implantação a serem migrados, que estão associados a esses membros. Todos esses itens selecionados são adicionados à lista de objetos que podem ser migrados.  
+
+ Quando você migra uma coleção, o System Center Configuration Manager também migra as configurações da coleção, inclusive janelas de manutenção e variáveis da coleção, mas ele não pode migrar as configurações da coleção para o provisionamento do cliente AMT.  
+
+ Utilize as informações das seções a seguir para saber mais sobre as configurações adicionais que podem ser aplicadas aos trabalhos de migração baseada em coleção.  
+
+### <a name="exclude-objects-from-collection-migration-jobs"></a>Excluir objetos dos trabalhos de migração de coleção  
+ Você pode excluir objetos específicos de um trabalho de migração de coleção. Quando você exclui um objeto específico de um trabalho de migração de coleção, esse objeto é adicionado a uma lista de exclusões global que contém todos os objetos que você excluiu dos trabalhos de migração, criados para qualquer site de origem da hierarquia de origem atual. Os objetos da lista de exclusão ainda estarão disponíveis para migração em trabalhos futuros e não serão incluídos automaticamente quando você criar um novo trabalho de migração baseada em coleção.  
+
+ Você pode editar a lista de exclusão para remover objetos excluídos anteriormente. Depois que você remove um objeto da lista de exclusão, ele é automaticamente selecionado quando uma coleção associada é especificada durante a criação de um novo trabalho de migração.  
+
+### <a name="unsupported-collections"></a>Coleções sem suporte  
+ O Configuration Manager pode migrar qualquer uma das coleções de usuários padrão, coleções de dispositivos e a maioria das coleções personalizadas de uma hierarquia de origem do Configuration Manager 2007. No entanto, o Configuration Manager não é capaz de migrar coleções que contêm usuários e dispositivos na mesma coleção.  
+
+ As seguintes coleções não podem ser migradas:  
+
+-   Uma coleção que contém usuários e dispositivos.  
+
+-   Uma coleção que contém uma referência a uma coleção de um tipo de recurso diferente. Por exemplo, uma coleção baseada em dispositivo, com uma subcoleção ou um link para uma coleção baseada em usuário. Neste exemplo, apenas a coleção de nível superior é migrada.  
+
+-   Uma coleção que contém uma regra para incluir computadores desconhecidos. A coleção é migrada, mas a regra para incluir computadores desconhecidos não é migrada.  
+
+### <a name="empty-collections"></a>Coleções vazias  
+ Uma coleção vazia não contém recursos associados a ela. Quando o Configuration Manager migra uma coleção vazia, ele converte a coleção em uma pasta organizacional que não contém usuários ou dispositivos. Esta pasta é criada com o nome da coleção vazia no nó **Coleções de Usuários** ou **Coleções de Dispositivos**, no espaço de trabalho **Ativos e Conformidade** do console do Configuration Manager.  
+
+### <a name="linked-collections-and-subcollections"></a>Coleções e subcoleções vinculadas  
+ Quando você migra coleções vinculadas a outras coleções ou que contêm subcoleções, o Configuration Manager cria uma pasta no nó **Coleções de Usuários** ou **Coleções de Dispositivos**, além das coleções e subcoleções vinculadas.  
+
+### <a name="collection-dependencies-and-include-objects"></a>Dependências da coleção e inclusão de objetos  
+ Quando você especifica uma coleção a ser migrada no Assistente para Criar Trabalho de Migração, todas as coleções dependentes são automaticamente selecionadas para serem incluídas no trabalho. Este comportamento garante que todos os recursos necessários estejam disponíveis após a migração.  
+
+ Por exemplo: você seleciona uma coleção de dispositivos que executam o Windows 7, nomeada como **Win_7**. Esta coleção está limitada à coleção que contém os sistemas operacionais de todos os seus clientes, nomeada como **All_Clients**. A coleção **All_Clients** será automaticamente selecionada para migração.  
+
+### <a name="collection-limiting"></a>Limitação da coleção  
+ Com o System Center Configuration Manager, as coleções são dados globais e são avaliadas em cada site na hierarquia. Portanto, planeje como limitar o escopo de uma coleção depois da migração. Durante a migração, você pode identificar uma coleção da hierarquia de destino a ser usada para limitar o escopo da coleção que você está migrando de modo que a coleção migrada não contenha membros não previstos.  
+
+ Por exemplo, no Configuration Manager 2007, as coleções são avaliadas no site que as cria e em sites filho. Um anúncio pode ser implantado apenas em um site filho, e isso limita o escopo do anúncio a esse site filho. Em comparação, com o System Center Configuration Manager, as coleções são avaliadas em cada site e os anúncios associados então são avaliados para cada site. A limitação da coleção permite que você refine os membros da coleção com base em outra coleção para evitar a adição de membros não previstos da coleção.  
+
+### <a name="site-code-replacement"></a>Substituição de código do site  
+ Ao migrar uma coleção que contém critérios que identificam um site do Configuration Manager 2007, você deve determinar um site específico na hierarquia de destino. Isso garante que a coleção migrada permaneça funcional em sua hierarquia de destino e não aumente em escopo.  
+
+### <a name="specify-behavior-for-migrated-advertisements"></a>Especificar o comportamento de anúncios migrados  
+ Por padrão, os trabalhos de migração baseados em coleção desativam anúncios migrados para a hierarquia de destino. Isso inclui todos os programas associados ao anúncio. Quando você cria um trabalho de migração baseada em coleção que contém anúncios, você vê a opção **Habilitar programas para implantação no Configuration Manager depois que um anúncio é migrado** na página **Configurações** do Assistente para Criar Trabalho de Migração. Se você selecionar esta opção, os programas associados aos anúncios serão habilitados depois de migrados. Como prática recomendada, não selecione essa opção. Em vez disso, habilite os programas após a migração quando quiser verificar os clientes que os receberão.  
 
 > [!NOTE]  
->  该迁移作业可以识别源层次结构自动更新的对象，以及管理用户更新的对象。  
+>  Você vê a opção **Habilitar programas para implantação no Configuration Manager depois que um anúncio é migrado** apenas quando cria um trabalho de migração baseada em coleção e o trabalho de migração contém anúncios.  
+
+ Para habilitar um programa após a migração, desmarque **Desabilitar este programa nos computadores em que é anunciado** na guia **Avançado** das propriedades do programa.  
+
+##  <a name="About_Object_Migration"></a> Planejar trabalhos de migração de objetos  
+ Ao contrário da migração de coleção, você deve selecionar cada objeto e instância do objeto que deseja migrar. Você pode selecionar os objetos individuais (como anúncios de uma hierarquia do Configuration Manager 2007 ou uma publicação de uma hierarquia do System Center 2012 Configuration Manager ou do System Center Configuration Manager) para adicionar à lista de objetos a serem migrados para um trabalho de migração específico. Todos os objetos que não forem adicionados à lista de migração não serão migrados para o site de destino pelo trabalho de migração de objeto.  
+
+ Os trabalhos de migração baseada em objeto não têm configurações adicionais a serem planejadas além das aplicáveis a todos os trabalhos de migração.  
+
+##  <a name="About_Object_Migrations"></a> Planejar trabalhos de migração de objetos migrados anteriormente  
+ Quando um objeto que você já migrou para a hierarquia de destino é atualizado na hierarquia de origem, você pode migrá-lo novamente usando o tipo de trabalho **Objetos modificados após a migração** . Por exemplo, quando os arquivos de origem são renomeados ou atualizados para um pacote na hierarquia de origem, a versão do pacote é incrementada na hierarquia de origem. Depois que isso ocorre, o pacote pode ser identificado para migração por este tipo de trabalho.  
+
+ Este tipo de trabalho é semelhante ao tipo de migração de objeto; porém, quando você seleciona os objetos a serem migrados, apenas os objetos atualizados após a migração por um trabalho de migração anterior poderão ser selecionados.   
+
+ Quando você seleciona este tipo de trabalho, o comportamento de resolução de conflitos da página **Configurações** do Assistente para criar trabalho de migração é configurado para substituir os objetos migrados anteriormente. Essa configuração não pode ser alterada.  
+
+> [!NOTE]  
+>  Este trabalho de migração pode identificar os objetos atualizados automaticamente na hierarquia de origem e aqueles atualizados por um usuário administrativo.  

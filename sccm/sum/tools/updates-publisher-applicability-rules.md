@@ -1,6 +1,6 @@
 ---
-title: "适用性规则 |Microsoft 文档"
-description: "管理 System Center Updates Publisher 中的适用性规则"
+title: Regras de aplicabilidade | Microsoft Docs
+description: Gerenciar regras de aplicabilidade para o System Center Updates Publisher
 ms.custom: na
 ms.date: 4/29/2017
 ms.prod: configuration-manager
@@ -18,21 +18,21 @@ robots: NOINDEX, NOFOLLOW
 ms.openlocfilehash: 2925abda07abaa46ad56b9b433ce003c22aede5e
 ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
 ms.translationtype: HT
-ms.contentlocale: zh-CN
+ms.contentlocale: pt-BR
 ms.lasthandoff: 08/07/2017
 ---
-# <a name="manage-applicability-rules-in-updates-publisher"></a>管理 Updates Publisher 中的适用性规则
+# <a name="manage-applicability-rules-in-updates-publisher"></a>Gerenciar regras de aplicabilidade para o Updates Publisher
 
-*适用范围：System Center Updates Publisher*
+*Aplica-se ao: System Center Updates Publisher*
 
-借助 Updates Publisher，适用性规则可定义设备在安装更新之前必须满足的要求。 这些规则还可用于确定计算机是否已安装更新。 包含多个部分的复杂适用性规则被称为“规则集”。
+Com o Updates Publisher, as regras de aplicabilidade definem os requisitos que devem ser atendidos antes que um dispositivo possa instalar uma atualização. As regras também são usadas para determinar se o computador possui uma atualização instalada. Uma regra de aplicabilidade complexa com várias partes é conhecida como um conjunto de regras.
 
-更新捆绑包不使用适用性规则。
+Pacotes de atualização não usam regras de aplicabilidade.
 
-## <a name="overview-of-applicability-rules"></a>适用性规则概述
-可以在“规则工作区”中管理适用性规则。 创建规则时，可指定一个或多个条件。 如果指定多个条件，可以配置条件关系，以便能够依序求值或合并到 **And** 或 **Or** 逻辑语句中。
+## <a name="overview-of-applicability-rules"></a>Visão geral das regras de aplicabilidade
+Gerencie as regras de aplicabilidade no **Espaço de Trabalho de Regras**. Quando você cria uma regra, está especificando uma ou mais condições. Ao especificar várias condições, você pode configurar relações entre as condições para que elas sejam avaliadas sequencialmente ou combinadas em instruções **And** ou **Or** lógicas.
 
-例如，下面是包含三条规则的规则集。 第一条规则验证 *MyFile* 文件是否存在，第二条和第三条规则验证 Windows 操作系统的语言是英语还是日语。
+Por exemplo, veja a seguir um conjunto de regras que contém três regras. A primeira regra verifica se o arquivo *MyFile* existe, e a segunda e a terceira verificam se o idioma do sistema operacional Windows é inglês ou japonês.
 
     And  
       File ‘\[PROGRAM\_FILES\] \\Microsoft\\MyFile’ exists  
@@ -40,54 +40,54 @@ ms.lasthandoff: 08/07/2017
         Windows Language is English   
         Windows Language is Japanese
 
-所有更新都要求至少满足一条适用性规则。 适用性规则应用于已导入的更新。创建你自己的更新时，必须向其添加一条或多条规则。 可以修改和扩展 Updates Publisher 中任意更新的规则。
+Todas as atualizações exigem pelo menos uma regra de aplicabilidade. As atualizações que você importa já têm regras de aplicabilidade aplicadas e, quando você cria suas próprias atualizações, precisa adicionar uma ou mais regras a elas. Você pode modificar e expandir as regras de qualquer atualização no Updates Publisher.
 
-若要查看已创建的规则，请转到“规则工作区”，从“我保存的规则”列表中选择规则。 规则的各个条件和逻辑运算显示在控制台的“适用性规则”窗格中。 对于导入的更新，只有在编辑更新时才能查看并修改其规则。
+Para exibir regras que você criou, no **Espaço de Trabalho de Regras**, selecione uma regra na lista **Minhas regras salvas**. As condições individuais e as operações lógicas dessa são exibidas no painel **Regras de Aplicabilidade** do console. As regras para as atualizações que você importa só podem ser exibidas e modificadas durante a edição dessa atualização.
 
-可以在 Updates Publisher 中的两个位置创建规则：
+Você pode criar regras em dois locais no Updates Publisher:
 
--   在“规则工作区”中，可以创建并**保存**规则集，以供稍后使用。 编辑或创建更新时，可以选择“已保存的规则”作为“规则类型”，然后从预建规则集列表中进行选择。
+-   No **Espaço de Trabalho de Regras** você cria e **salva** conjuntos de regras para usá-los mais tarde. Ao editar ou criar uma atualização, você pode selecionar **Regra salva** como o **Tipo de regra** e, em seguida, selecionar em uma lista de seus conjuntos de regra criados previamente.
 
--   也可以在创建或编辑更新时新建规则。 无法保存通过这种方式创建的规则以供将来使用。
+-   Você também pode criar novas regras no momento da criação ou edição de uma atualização. As regras criadas dessa forma não são salvas para uso futuro.
 
-## <a name="create-applicability-rule"></a>创建适用性规则
-下面介绍的步骤与在[“创建更新向导”](/sccm/sum/tools/create-updates-with-updates-publisher#the-create-update-wizard)中创建规则的方式类似。 与此向导的不同之处在于，可以视需要保存规则集以供将来使用。
+## <a name="create-applicability-rule"></a>Criar uma regra de aplicabilidade
+As informações a seguir são semelhantes à criação de regras no [Assistente para Criar Atualizar](/sccm/sum/tools/create-updates-with-updates-publisher#the-create-update-wizard). Mas, ao contrário do assistente, você tem a opção de salvar seus conjuntos de regras para uso futuro.
 
-1.  在“规则工作区”中，选择“创建”，打开“创建规则”向导。
+1.  No **Espaço de Trabalho de Regras**, escolha **Criar** para abrir o assistente para **Criar Regra**.
 
-2.  指定规则名称，然后单击“新建规则”![](media/newrule.png)。 此时，“适用性规则”页会打开，可以在其中配置规则。
+2.  Especifique um nome para a regra e clique em ![Nova Regra](media/newrule.png). Isso abre a página **Regra de Aplicabilidade**, na qual é possível configurar regras.
 
-3.  对于“规则类型”，请选择下列选项之一。 必须配置的选项因规则类型而异：
+3.  Para **Tipo de regra**, selecione uma das seguintes opções. As opções que você deve configurar variam para cada tipo:
 
-    -   文件 - 使用此规则可要求设备必须包含属性符合你指定的一个或多个条件的文件，然后才能应用此更新。
+    -   **Arquivo** – use essa regra para exigir que um dispositivo tenha um arquivo com propriedades que atendam a um ou mais critérios especificados por você antes que essa atualização possa ser aplicada.
 
-    -   注册表 - 使用此类型可指定必须有注册表详细信息，然后设备才符合此更新的安装条件。
+    -   **Registro –** use este tipo para especificar detalhes do registro que devem estar presentes para que um dispositivo se qualifique para instalar essa atualização.
 
-    -   系统 - 此规则使用系统详细信息来确定适用性。 可以选择定义 Windows 版本、Windows 语言还是处理器体系结构，也可以指定 WMI 查询来标识设备操作系统。
+    -   **Sistema –** essa regra usa os detalhes do sistema para determinar a aplicabilidade. Você pode escolher entre a definição de uma versão do Windows, um idioma do Windows, a arquitetura do processador ou especificar uma consulta no WMI para identificar o sistema operacional dos dispositivos.
 
-    -   Windows Installer - 使用此规则类型可根据已安装的 .MSI 或 Windows Installer 修补程序 (.MSP) 确定适用性。 还可以确定是否已根据要求安装特定组件或功能。
+    -   **Windows Installer –** use esse tipo de regra para determinar a aplicabilidade com base em um .MSI instalado ou em um patch do Windows Installer (.MSP). Você também pode determinar se há recursos ou componentes específicos instalados como parte do requisito.
 
        > [!IMPORTANT]   
-       > 对于受管理设备，Windows 更新代理无法检测针对每个用户安装的 Windows Installer 包。 使用此规则类型时，请配置其他适用性规则（如文件版本或注册项值），以便能够正确地检测 Windows Installer 包，无论是针对每个用户安装，还是针对每个系统安装。
+       > Em dispositivos gerenciados, o Windows Update Agent não pode detectar pacotes de instalação do Windows instalados por usuário. Ao usar esse tipo de regra, configure outras regras de aplicabilidade, como versões de arquivo ou valores de chave do Registro, para que o pacote do Windows Installer possa ser detectado corretamente, independentemente de ter base no usuário ou no sistema.
 
-    -   已保存的规则 - 使用此选项，可以查找和使用以前配置和保存的规则。
+    -   **Salvar regra –** essa opção permite que você localize e use as regras definidas e salvas anteriormente.
 
-4.  根据需要，继续添加并配置其他规则。
+4.  Continue a adicionar e configurar outras regras conforme o desejado.
 
-5.  使用逻辑运算按钮对不同的规则进行排序和分组，以创建更复杂的先决条件检查。
+5.  Use os botões de operação lógica para ordenar e agrupar regras diferentes a fim de criar verificações de pré-requisitos mais complexas.
 
-6.  创建完规则集后，单击“确定”进行保存。 此时，该规则集会出现在“我保存的规则”列表中。
+6.  Quando o conjunto de regras estiver concluído, clique em **OK** para salvá-lo. Agora, o conjunto de regras aparece na lista **Minhas regras salvas**.
 
-## <a name="edit-applicability-rule-sets"></a>编辑适用性规则集
-若要编辑适用性规则，请转到“规则工作区”，选择在“我保存的规则”列表中保存的任意规则，然后从功能区中选择“编辑”。 此时，“编辑规则”向导会打开。
+## <a name="edit-applicability-rule-sets"></a>Editar conjuntos de regras de aplicabilidade
+Para editar uma regra de aplicabilidade, no **Espaço de Trabalho de Regras** selecione qualquer regra salva na lista **Minhas regras salvas** e escolha **Editar** na faixa de opções. Isso abre o assistente para **Editar Regra**.
 
-“编辑规则”向导显示规则集的现有规则。 规则编辑方式与使用“创建规则”向导新建规则的方式相同。 可以使用此向导重命名规则集、删除规则、重新排序规则和关系或添加新规则。
+O assistente para **Editar Regra** exibe as regras atuais para o conjunto de regras. Edite as regras da mesma maneira que você usa o assistente para **Criar Regra** para criar novas regras. Use esse assistente para renomear o conjunto de regras, excluir regras, reordenar as regras e relações ou adicionar novas regras.
 
-执行完更改后，请选择“确定”，保存所做的更改并关闭向导。
+Depois de fazer as alterações, escolha **OK** para salvar as alterações e fechar o assistente.
 
-若要详细了解如何使用规则向导，请参阅[创建更新向导](/sccm/sum/tools/create-updates-with-updates-publisher#the-create-update-wizard)**第 7 步**中的适用性规则页。
+Para obter mais detalhes sobre como usar o assistente de regras, veja a **Etapa 7**, a página de aplicabilidade, do [assistente para Criar Atualização](/sccm/sum/tools/create-updates-with-updates-publisher#the-create-update-wizard).
 
-## <a name="delete-applicability-rules"></a>删除适用性规则
-若要删除已保存的适用性规则，请转到“规则工作区”，从“我保存的规则”列表中选择规则或规则集，然后从功能区中选择“删除”。 这会从 Updates Publisher 中删除已保存的规则或规则集。
+## <a name="delete-applicability-rules"></a>Excluir as regras de aplicabilidade
+Para excluir uma regra de aplicabilidade salva, no **Espaço de Trabalho de Regras** selecione qualquer regra ou conjunto de regras na lista **Minhas regras salvas** e escolha **Excluir** na faixa de opções. Isso remove a regra salva ou o conjunto de regras do Updates Publisher.
 
-必须[编辑更新](/sccm/sum/tools/manage-updates-with-updates-publisher#edit-updates-and-bundles)，才能删除特定更新中的规则。
+Para excluir uma regra de uma atualização específica, [edite a atualização](/sccm/sum/tools/manage-updates-with-updates-publisher#edit-updates-and-bundles).

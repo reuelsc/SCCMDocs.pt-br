@@ -1,6 +1,6 @@
 ---
-title: "监视电子邮件、Wi-Fi 和 VPN 配置文件 | Microsoft Docs"
-description: "了解如何在 System Center Configuration Manager 中监视电子邮件、Wi-Fi 和 VPN 配置文件的符合性状态。"
+title: Monitorar perfis de email, Wi-Fi e VPN | Microsoft Docs
+description: Saiba como monitorar o status de conformidade de perfis de email, Wi-Fi e VPN no System Center Configuration Manager.
 ms.custom: na
 ms.date: 10/06/2016
 ms.prod: configuration-manager
@@ -17,51 +17,51 @@ manager: angrobe
 ms.openlocfilehash: 73d941633d270cf9628f8be14e1e56f3c78624b6
 ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
 ms.translationtype: HT
-ms.contentlocale: zh-CN
+ms.contentlocale: pt-BR
 ms.lasthandoff: 08/07/2017
 ---
-# <a name="monitor-email-wi-fi-and-vpn-profiles-in-system-center-configuration-manager"></a>在 System Center Configuration Manager 中监视电子邮件、Wi-Fi 和 VPN 配置文件
+# <a name="monitor-email-wi-fi-and-vpn-profiles-in-system-center-configuration-manager"></a>Monitorar perfis de email, Wi-Fi e VPN no System Center Configuration Manager
 
-*适用范围：System Center Configuration Manager (Current Branch)*
+*Aplica-se a: System Center Configuration Manager (Branch Atual)*
 
-将 System Center Configuration Manager 电子邮件、Wi-Fi 或 VPN 配置文件部署到层次结构中的用户后，可以使用下列过程来监视配置文件的符合性状态：  
+Depois de implantar perfis de email, Wi-Fi ou VPN do System Center Configuration Manager para usuários na sua hierarquia, você poderá usar os seguintes procedimentos para monitorar o status de conformidade do perfil:  
 
--   [如何在 Configuration Manager 控制台中查看符合性结果](#BKMK_console)  
+-   [Como exibir resultados de conformidade no console do Configuration Manager](#BKMK_console)  
 
--   [如何使用报表来查看符合性结果](#BKMK_Reports)  
+-   [Como exibir resultados de conformidade por meio de relatórios](#BKMK_Reports)  
 
-##  <a name="BKMK_console"></a> 如何在 Configuration Manager 控制台中查看符合性结果  
- 使用此过程在 System Center Configuration Manager 控制台中查看有关所部署配置文件的符合性的详细信息。  
+##  <a name="BKMK_console"></a> Como exibir resultados de conformidade no console do Configuration Manager  
+ Use este procedimento para exibir detalhes sobre a conformidade dos perfis implantados no console do System Center Configuration Manager.  
 
-#### <a name="to-view-compliance-results-in-the-configuration-manager-console"></a>在 Configuration Manager 控制台查看符合性结果  
+#### <a name="to-view-compliance-results-in-the-configuration-manager-console"></a>Para exibir resultados de conformidade no console do Configuration Manager  
 
-1.  在 System Center Configuration Manager 控制台中，单击“监视”。  
+1.  No console do System Center Configuration Manager, clique em **Monitoramento**.  
 
-2.  在“监视”  工作区中，单击“部署” 。  
+2.  No espaço de trabalho **Monitoramento** , clique em **Implantações**.  
 
-3.  在“部署”列表中，选择要查看其符合性信息的配置文件部署。  
+3.  Na lista **Implantações**, selecione a implantação de perfil para a qual você deseja examinar as informações de conformidade.  
 
-4.  可以在主页上查看有关配置文件部署符合性的摘要信息。 若要查看详细信息，请选择配置文件部署，然后在“主页”选项卡上的“部署”组中，单击“查看状态”以打开“部署状态”页。  
+4.  Você pode examinar as informações de resumo sobre a conformidade da implantação do perfil na página principal. Para exibir informações mais detalhadas, selecione a implantação do perfil e, na guia **Início**, no grupo **Implantação**, clique em **Exibir Status** para abrir a página **Status da Implantação**.  
 
-     “部署状态”  页包含下列选项卡：  
+     A página **Status da Implantação** contém as seguintes guias:  
 
-    -   “符合”：显示基于受影响资产数量的配置文件的符合性。 你可以双击规则以在“资产和符合性”  工作区中的“用户”  节点下创建一个临时节点，其中包含符合此配置文件的所有用户。 “资产详细信息”窗格显示符合配置文件的用户。 双击列表中的用户以显示其他信息。  
+    -   **Compatível:** exibe a conformidade do perfil com base no número de ativos afetados. Você pode clicar duas vezes em uma regra para criar um nó temporário no nó **Usuários** no espaço de trabalho **Ativos e Conformidade** , que contém todos os usuários compatíveis com esse perfil. O painel **Detalhes do Ativo** exibe os usuários compatíveis com o perfil. Clique duas vezes em um usuário na lista para exibir informações adicionais.  
 
         > [!IMPORTANT]  
-        >  如果某个配置文件在客户端设备上不适用，则不会评估该配置文件；但是，它返回的状态为符合。  
+        >  Um perfil não será avaliado se ele não for aplicável em um dispositivo cliente; entretanto, ele será devolvido como compatível.  
 
-    -   “错误”：显示基于受影响资产数量的所选配置文件部署的所有错误的列表。 你可以双击规则以在“资产和符合性”  工作区的“用户”  节点下创建一个临时节点，其中包含对于此配置文件生成了错误的所有用户。 当你选择某个用户时，“资产详细信息”  窗格将显示受所选问题影响的用户。 双击列表中的用户以显示有关问题的其他信息。  
+    -   **Erro:** exibe uma lista de todos os erros da implantação do perfil selecionado com base no número de ativos afetados. Você pode clicar duas vezes em uma regra para criar um nó temporário sob o nó **Usuários** do espaço de trabalho **Ativos e Conformidade** , que contém todos os usuários que geraram erros com esse perfil. Quando você seleciona um usuário, o painel **Detalhes do Ativo** exibe os usuários afetados pelo problema selecionado. Clique duas vezes em um usuário na lista para exibir informações adicionais sobre o problema.  
 
-    -   “不符合”：显示基于受影响资产数量的配置文件内所有不符合规则的列表。 你可以双击规则以在“资产和符合性”  工作区的“用户”  节点下创建一个临时节点，其中包含不符合此配置文件的所有用户。 当你选择某个用户时，“资产详细信息”  窗格将显示受所选问题影响的用户。 双击列表中的用户以显示有关问题的进一步信息。  
+    -   **Não Compatível:** exibe uma lista de todas as regras não compatíveis no perfil com base no número de ativos afetados. Você pode clicar duas vezes em uma regra para criar um nó temporário no nó **Usuários** do espaço de trabalho **Ativos e Conformidade** , que contém todos os usuários que não são compatíveis com esse perfil. Quando você seleciona um usuário, o painel **Detalhes do Ativo** exibe os usuários afetados pelo problema selecionado. Clique duas vezes em um usuário na lista para exibir mais informações sobre o problema.  
 
-    -   “未知”：显示所有未报告所选配置文件部署符合性的用户的列表，以及设备的当前客户端状态。  
+    -   **Desconhecido:** exibe uma lista de todos os usuários que não relataram a conformidade para a implantação do perfil selecionado, junto com o status atual do cliente dos dispositivos.  
 
-5.  在“部署状态”页上，可以查看有关所部署的配置文件的符合性的详细信息。 将在“部署”  节点下创建一个临时节点，该节点可帮助你快速再次找到此信息。  
+5.  Na página **Status da Implantação**, você pode examinar informações detalhadas sobre a conformidade do perfil implantado. Um nó temporário é criado no nó **Implantações** , que ajuda você a localizar essas informações novamente com rapidez.  
 
-##  <a name="BKMK_Reports"></a> 如何使用报表来查看符合性结果  
- 符合性设置（包括 System Center Configuration Manager 中的配置文件）还包括一些内置报表，使你能监视有关配置文件的信息。 这些报表的报表类别为“符合性和设置管理” 。  
+##  <a name="BKMK_Reports"></a> Como exibir resultados de conformidade por meio de relatórios  
+ As configurações de conformidade, como os perfis no System Center Configuration Manager, também incluem vários relatórios internos que permitem monitorar as informações sobre perfis. Esses relatórios têm a categoria de relatório de **Gerenciamento de Conformidade e Configurações**.  
 
 > [!IMPORTANT]  
->  在符合性设置报表中使用参数“设备筛选器”  和“用户筛选器”  时，你必须使用通配符 (%) 字符。  
+>  Você deverá usar um caractere curinga (%) ao usar os parâmetros **Filtro de dispositivo** e **Filtro de usuário** nos relatórios de configurações de conformidade.  
 
- 有关如何在 System Center Configuration Manager 中配置报表的详细信息，请参阅 [System Center Configuration Manager 中的报表](../../core/servers/manage/reporting.md)。  
+ Para obter mais informações sobre como configurar relatórios no System Center Configuration Manager, consulte [Relatórios no System Center Configuration Manager](../../core/servers/manage/reporting.md).  

@@ -1,6 +1,6 @@
 ---
-title: "1702 的诊断数据 | System Center Configuration Manager"
-description: "了解 System Center Configuration Manager 版本 1702 收集的诊断和使用情况数据的级别。"
+title: "Dados de diagnóstico para 1702 | System Center Configuration Manager"
+description: "Saiba mais sobre os níveis de dados de diagnóstico e de uso que o System Center Configuration Manager versão 1702 coleta."
 ms.custom: na
 ms.date: 3/27/2017
 ms.prod: configuration-manager
@@ -35,434 +35,434 @@ translation.priority.ht:
 ms.openlocfilehash: 0e1d93712150fb3d6fabc3f057711eba1194c3ad
 ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
 ms.translationtype: HT
-ms.contentlocale: zh-CN
+ms.contentlocale: pt-BR
 ms.lasthandoff: 08/07/2017
 ---
-# <a name="levels-of-diagnostic-usage-data-collection-for-version-1702-of-system-center-configuration-manager"></a>System Center Configuration Manager 版本 1702 的诊断使用情况数据收集的级别
+# <a name="levels-of-diagnostic-usage-data-collection-for-version-1702-of-system-center-configuration-manager"></a>Níveis da coleta de dados de diagnóstico e de uso da versão 1702 do System Center Configuration Manager
 
-*适用范围：System Center Configuration Manager (Current Branch)*
+*Aplica-se a: System Center Configuration Manager (Branch Atual)*
 
-System Center Configuration Manager 版本 1702 收集三个级别的诊断和使用情况数据：**基本**、**增强**和**完全**。 默认情况下，此功能设置为增强级别。 以下部分提供有关每个级别所收集数据的其他详细信息。
+O System Center Configuration Manager versão 1702 coleta três níveis de dados de diagnóstico e de uso: **Básico**, **Avançado** e **Completo**. Por padrão, esse recurso é definido no nível Avançado. As seções a seguir fornecem detalhes adicionais sobre os dados coletados por cada nível.
 
-针对以前版本进行的更改使用 ***[新增]******[已更新]******[已删除]*** 或 ***[已移动]*** 进行了注明。
+Alterações de versões anteriores são indicadas com ***[Novo]*** ou ***[Atualizado]***, ***[Removido]*** ou ***[Movido]***.
 
 
 > [!IMPORTANT]
->  Configuration Manager 不会收集基本或增强级别的站点代码、站点名称、IP 地址、用户名、计算机名、物理地址或电子邮件地址。 在完全级别收集的信息没有目的性，即可能包括在日志文件或内存快照等高级诊断信息中。 Microsoft 不会使用此信息来识别你的身份、与你联系或进行广告宣传。
+>  O Configuration Manager não coleta códigos do site, nomes de site, endereços IP, nomes de usuário, nomes de computador, endereços físicos nem endereços de email nos níveis Básico ou Avançado. Qualquer coleta dessas informações no nível Completo não é proposital, ou seja, é potencialmente incluída nas informações de diagnóstico avançado como arquivos de log ou instantâneos de memória. A Microsoft não usará essas informações para identificá-lo, contatá-lo nem para desenvolver publicidade.
 
 
 
-##  <a name="bkmk_change"></a> 如何更改级别
- 如果管理员具有基于角色的管理作用域，其中包括对**站点**对象类的**修改**权限，则其可以通过 Configuration Manager 控制台中的“诊断和使用数据”设置更改已收集数据的级别。
+##  <a name="bkmk_change"></a> Como alterar o nível
+ Os administradores que têm um escopo administrativo baseado em função que inclui permissões **Modificar** na classe de objeto **Site** podem alterar o nível dos dados coletados nas configurações de Dados de Diagnóstico e de Uso no console do Configuration Manager.
 
-可在控制台中导航至“管理” > “概述” > “站点配置” > “站点”，更改数据集合级别。 打开“层次结构设置”，然后选择要使用的数据级别。  
+Você altera o nível da coleta de dados no console navegando até **Administração** > **Visão Geral** > **Configuração de Site** > **Sites**. Abra **Configurações da Hierarquia** e, em seguida, selecione o nível de dados que você deseja usar.  
 
 
 
-##  <a name="bkmk_level1"></a> 级别 1 - 基本
-基本级别包括层次结构相关数据、帮助改进安装或升级体验所需的数据，以及帮助确定哪些 Configuration Manager 更新适合你的层次结构的数据。
+##  <a name="bkmk_level1"></a> Nível 1 — Básico
+O nível Básico inclui dados sobre sua hierarquia, dados necessários para ajudar a melhorar sua experiência de instalação ou de atualização e dados que ajudam a determinar as atualizações do Configuration Manager aplicáveis à sua hierarquia.
 
-对于 System Center Configuration Manager 版本 1702，此级别包括以下内容：
+Para o System Center Configuration Manager versão 1702, esse nível inclui o seguinte:
 
-- 管理控制台：
-   - 有关控制台连接的统计信息（操作系统版本、语言、SKU 和体系结构、系统内存、逻辑处理器计数、连接站点 ID、已安装的 .NET 版本和控制台语言包）
+- Console de administração:
+   - Estatísticas sobre as conexões do console (versão de sistema operacional, idioma, SKU e arquitetura, memória do sistema, número de processadores lógicos, ID do site de conexão, versões do .NET instaladas e pacotes de idiomas do console)
 
-- 基本应用程序和部署类型计数（应用总数、包含多个部署类型的应用总数、包含依赖项的应用总数、被取代的应用总数和使用中的部署技术数）
+- Contagens básicas de tipo de implantação e de aplicativo (total de aplicativos, total de aplicativos com vários tipos de implantação, total de aplicativos com dependências, total de aplicativos substituídos e contagem de tecnologias de implantação em uso)
 
-- 基本 Configuration Manager 站点层次结构数据（站点列表、类型、版本、状态、客户端计数和时区）
+- Dados básicos da hierarquia de sites do Configuration Manager (lista, tipo, versão, status, contagem de clientes e fuso horário de sites)
 
-- 基本数据库配置（处理器、群集配置和分布式视图配置）
+- Configuração básica do banco de dados (processadores, configuração de cluster e configuração de exibições distribuídas)
 
-- ***[更新]*** 当站点完全使用 Azure Active Directory 服务运行时包括基本发现统计信息（发现计数和最小/最大/平均组大小）。
+- ***[Atualização] *** Estatísticas básicas de descoberta (contagem de descoberta e tamanho de grupo mínimo/máximo/médio) incluindo quando o site está em execução completamente com os serviços de Azure Active Directory.
 
-- 基本 Endpoint Protection 信息（反恶意软件客户端版本）
+- Informações básicas do Endpoint Protection (versões de cliente de antimalware)
 
-- 基本操作系统部署 (OSD) 计数（图像）
+- Contagens básicas de OSD (implantação de sistema operacional) (imagens)
 
-- 基本站点系统服务器信息（使用的站点系统角色、Internet 和 SSL 状态、操作系统、处理器，以及物理计算机或虚拟机）
+- Informações básicas do servidor do sistema de sites (funções do sistema de sites usadas, status de Internet e SSL, sistema operacional, processadores e máquina virtual ou física)
 
-- Configuration Manager 数据库架构（所有对象定义的哈希）
+- Esquema de banco de dados do Configuration Manager (hash de todas as definições de objeto)
 
-- 配置的遥测级别、模式（联机或脱机）和快速更新配置
+- Nível de telemetria configurado, modo (online ou offline) e configuração de atualização rápida
 
-- 客户端语言和区域设置计数
+- Contagem de idiomas e localidades do cliente
 
-- Configuration Manager 客户端版本和操作系统版本的计数
+- Contagem de versões de cliente do Configuration Manager e de versões do sistema operacional
 
-- 托管设备操作系统和 Exchange Connector 所设置策略的计数
+- Contagem de sistemas operacionais em dispositivos gerenciados e políticas definidas pelo Exchange Connector
 
-- Windows 10 设备（按分支和内部版本）计数
+- Contagem de dispositivos com Windows 10 por ramificação e compilação
 
-- 数据库性能指标（复制处理信息、按处理器和磁盘使用情况排在前面的 SQL Server 存储过程）
+- Métricas de desempenho do banco de dados (informações de processamento de replicação, principais procedimentos armazenados do SQL Server por processador e uso de disco)
 
-- 分发点和管理点类型以及基本配置信息（受保护、预留、PXE、多播、SSL 状态、请求/对等分发点、启用 MDM、启用 SSL 等。）
+- Tipos de ponto de distribuição e de ponto de gerenciamento e informações básicas de configuração (protegidas, pré-teste, PXE, multicast, estado de SSL, pontos de distribuição de recepção e de pares, habilitado para MDM, habilitado para SSL, etc.)
 
-- 安装程序信息：
-     - 内部版本、安装类型、语言包、启用的功能   
+- Informações de Instalação:
+     - Build, tipo de instalação, pacotes de idiomas e recursos habilitados   
 
-     - 预发布版本使用、安装程序媒体类型、分支类型
+     - Uso pré-lançamento, tipo de mídia de instalação, tipo de ramificação
 
-     - 软件保障到期日期      
+     - Data de validade do Software Assurance      
 
-     - 更新包部署状态和错误、下载进度和先决条件错误     
+     - Status e erros de implantação do pacote de atualização, andamento do download e erros de pré-requisitos     
 
-     - 更新快速通道的使用
+     - Uso do anel rápido de atualização
 
-     - 升级后脚本的版本
+     - Versão do script pós-atualização
 
-- SQL 版本、服务包级别、版本、排序规则 ID 和字符集     
-- 遥测统计信息（运行时间、运行时、错误）
+- Versão do SQL, nível do service pack, edição, ID de agrupamento e conjunto de caracteres     
+- Estatísticas de telemetria (quando executar, tempo de execução, erros)
 
-- 网络发现的使用（启用或禁用）
+- Uso da Descoberta de Rede (habilitada ou desabilitada)
 
 
 
 
-##  <a name="bkmk_level2"></a> 级别 2 - 增强
-安装完成后，默认级别为增强级别。 此级别包括在基本级别收集的数据，以及特定于功能的数据（频率和持续使用时间）、Configuration Manager 客户端设置（组件名称、状态和轮询间隔等特定设置）和有关软件更新的基本信息。
+##  <a name="bkmk_level2"></a> Nível 2 - Avançado
+O nível Avançado é o padrão após a conclusão da instalação. Esse nível inclui dados coletados no nível Básico, dados específicos ao recurso (frequência e duração de uso), configurações de cliente do Configuration Manager (nome do componente, estado e algumas configurações como intervalos de sondagem) e informações básicas sobre atualizações de software.
 
-此级别为 Microsoft 提供对将来版本的产品和服务进行有用改进所需的最小数据，因此是推荐的级别。 此级别不收集对象名称（站点、用户、计算机或对象）、安全相关对象的详细信息或需要软件更新的系统计数等漏洞。
+Esse nível é recomendado porque fornece à Microsoft o mínimo de dados necessários para fazer melhorias úteis em versões futuras de produtos e serviços. Esse nível não coleta nomes de objeto (sites, usuários, computadores ou objetos), detalhes de objetos relacionados à segurança ou vulnerabilidades, como contagens de sistemas que exigem atualizações de software.
 
-对于 System Center Configuration Manager 版本 1702，此级别包括以下内容：
+Para o System Center Configuration Manager versão 1702, esse nível inclui o seguinte:
 
-- **应用程序管理：**  
+- **Gerenciamento de aplicativos:**  
 
-   - 应用要求（部署技术引用的内置条件计数）
+   - Requisitos de aplicativo (a contagem de condições internas é referenciada por tecnologia de implantação)
 
-   - 应用取代、链的最大深度
+   - Substituição de aplicativo, profundidade máxima da cadeia
 
-   - 应用程序批准统计信息和使用频率
+   - Estatísticas de aprovação de aplicativo e frequência de uso
 
-   - ***[已更新]*** 应用程序部署信息（安装与卸载的使用、需要批准、已启用/禁用用户交互、依赖关系、取代和安装行为功能的使用情况计数）  
+   - ***[Atualizado]*** Informações de implantação de aplicativo (uso de instalação versus desinstalação, exigência de aprovação, habilitação/desabilitação da interação do usuário, dependência, substituição e uso do recurso de contagem do comportamento de instalação)  
 
-   - 应用程序策略大小和复杂性统计信息
+   - Estatísticas de tamanho e complexidade da política de aplicativo
 
-   - 可用应用程序请求统计信息
+   - Estatísticas de solicitação de aplicativo disponíveis
 
-   - ***[新增]*** 包和程序的基本配置信息（部署选项和程序标志）
+   - ***[Novo] *** Informações básicas de configuração para pacotes e programas (opções de implantação e os sinalizadores de programas)
 
-   - 组织内所使用部署类型的基本使用情况/目标信息（用户与目标设备、所需设备与可用设备，以及通用应用）
+   - Informações básicas de uso/direcionamento para os tipos de implantação usados na organização (usuário versus dispositivo direcionado, obrigatório versus disponível e aplicativos universais)
 
-   - 边界组统计信息（快速数量、慢速数量以及每组计数）
+   - Estatísticas de grupos de limites (quantos são rápidos, quantos são lentos e contagem por grupo)
 
-   - App-V 环境和部署属性计数
+   - Contagem de ambientes do App-V e propriedades de implantação
 
-   - 应用程序适用性（按操作系统）计数  
+   - Contagem de aplicabilidade de aplicativo por sistema operacional  
 
-   - ***[新增]*** 按任务序列引用的应用程序计数
+   - ***[Novo] *** Contagem de aplicativos que são referenciados por uma sequência de tarefas
 
-   - 包（按类型）计数  
+   - Contagem de pacotes por tipo  
 
-   - 包/程序部署计数  
+   - Contagem de implantações de pacote/programa  
 
-   - Windows 10 授权应用程序许可证计数  
+   - Contagem de licenças de aplicativos do Windows 10 licenciadas  
 
-   - 适用于企业的 Windows 应用商店应用的计数和同步统计信息（包括汇总的应用类型、许可应用的状态、联机和脱机许可应用的数量）  
+   - Contagem de aplicativos Windows Store para Empresas e estatísticas de sincronização (incluindo tipos de aplicativos resumidos, status de aplicativos licenciados e número de aplicativos licenciados online e offline)  
 
-   - 维护时段类型和持续时间  
+   - Tipo e duração da janela de manutenção  
 
-   - 每个用户/设备在每个时间段的应用程序部署的最大/最小/平均数目
+   - Número mínimo/máximo/médio de implantações de aplicativo por usuário/dispositivo por período
 
-   - ***[新增]*** 按部署技术的最常见应用程序安装错误代码
+   - ***[Novo] *** Códigos de erro mais comuns de instalação de aplicativo por tecnologia de implantação
 
-   - MSI 配置选项和计数
+   - Contagens e opções de configuração do MSI
 
-   - ***[新增]*** 最终用户与所需软件部署的通知交互的统计信息   
+   - ***[Novo] *** Estatísticas na interação do usuário final com notificação para implantações de software necessárias   
 
-   - 通用数据访问 (UDA) 使用情况、创建方式
+   - Uso, como foi criado o UDA (Acesso a Dados Universal)
 
 
 
 
-- **客户端：**  
+- **Cliente:**  
 
-   - 主动管理技术 (AMT) 客户端版本
+   - Versão do cliente do AMT (Active Management Technology)
 
-   - BIOS 使用年限（年）
+   - Idade do BIOS em anos
 
-   - 客户端自动升级：部署配置包括客户端试点和排除使用情况（扩展的互操作性客户端）
+   - Atualização automática do cliente: configuração de implantação, incluindo piloto do cliente e uso de exclusão (cliente de interoperabilidade estendida)
 
-   - 客户端缓存大小配置
+   - Configuração de tamanho do cache do cliente
 
-   - 客户端部署下载错误
+   - Erros de download da implantação do cliente
 
-   - 客户端运行状况统计信息和首要问题摘要
+   - Estatísticas de integridade do cliente e resumo dos principais problemas
 
-   - 客户端通知操作的操作状态（每个操作的运行次数、目标客户端的最大数和平均成功率）
-   - 从每个源位置类型进行的客户端安装计数  
+   - Status da ação de operação de notificação do cliente (quantas vezes cada uma é executada, número máximo de clientes de destino e taxa média de êxito)
+   - Contagem de instalações do cliente de cada tipo de local de origem  
 
-   - 客户端安装失败计数  
+   - Contagem de falhas de instalação do cliente  
 
-   - ***[新增]*** 由 HYPER-V 或 Azure 虚拟化的设备计数  
+   - ***[Novo] *** Contagem de dispositivos virtualizados pelo Hyper-V ou Azure  
 
-   - 软件中心操作计数   
+   - Contagem de ações do Centro de Software   
 
-   - ***[新增]*** 启用了 UEFI 的设备计数
+   - ***[Novo] *** Contagem de dispositivos habilitados para UEFI
 
-   - 用于客户端的部署方法，以及每个部署方法的客户端计数
+   - Métodos de implantação usados para o cliente e contagem de clientes por método de implantação
 
-   - 已启用客户端代理的列表/计数  
+   - Lista/contagem de agentes cliente habilitados  
 
-   - 操作系统使用寿命（月）
+   - Idade do sistema operacional em meses
 
-   - 硬件清单类、软件清单规则和文件收集规则的数量
+   - Número de classes de inventário de hardware, regras de inventário de software e regras de coleta de arquivos
 
-   - ***[新增]*** 设备运行状况证明的统计信息，包括最常见的错误代码、本地服务器数和处于各种状态的设备计数。
+   - ***[Novo] *** Estatísticas de atestado de integridade de dispositivo, incluindo os erros de código mais comuns, número de servidores locais e contagens de dispositivos em vários estados.
 
 
 
-- **云服务：**
+- **Serviços de Nuvem:**
 
-  - 云管理网关的配置和使用情况统计信息
+  - Estatísticas de uso e de configuração do Gateway de Gerenciamento de Nuvem
 
-  - ***[新增]*** 加入 Azure Active Directory 服务的客户端的计数
+  - ***[Novo] *** Contagem de clientes associados aos serviços do Azure Active Directory
 
-  - 同步到 Operations Management Suite 的集合计数
+  - Contagem de coleções sincronizados com o Operations Management Suite
 
-  - 升级分析连接器的计数
+  - Contagem de Conectores do Upgrade Analytics
 
-  - 是否启用 Operations Management Suite 云连接器
+  - Se o conector de nuvem do Operations Management Suite está habilitado
 
 
 
 
-- **集合：**
+- **Coleções:**
 
-    - 集合 ID 使用情况（未用完 ID）
+    - Uso de ID de coleção (com IDs suficientes)
 
-    - 集合评估统计信息（查询时间、已分配与未分配计数、按类型计数、ID 滚动更新和规则使用情况）
+    - Estatísticas de avaliação da coleção (tempo de consulta, contagens de atribuídos versus não atribuídos, contagens por tipo, substituição de ID e uso de regra)
 
-    - 无部署的集合
+    - Coleções sem uma implantação
 
 
 
 
-- **符合性设置：**  
+- **Configurações de conformidade:**  
 
-    - 基本配置基线信息（计数、部署数目和引用数目）  
+    - Informações de linha de base de configuração básica (contagem, número de implantações e número de referências)  
 
-    - 配置项目计数（按类型）  
+    - Contagem de itens de configuração por tipo  
 
-    - 引用内置设置的部署计数（现捕获修正设置）  
+    - Contagem de implantações que fazem referência às configurações internas (a configuração de correção agora é capturada)  
 
-    - 针对自定义设置创建的规则和部署的计数（现捕获修正设置）  
-    -  部署的简单证书注册协议 (SCEP)、VPN、Wi-Fi、证书 (.pfx) 和合规性策略模板的计数
+    - Contagem de regras e implantações criadas para configurações personalizadas (a configuração de correção agora é capturada)  
+    -  Contagem de protocolo SCEP, VPN, WiFi, certificado (.pfx) e modelos de Política de Conformidade implantados
 
-    - SCEP 证书、VPN、Wi-Fi、证书 (.pfx) 和合规性策略部署的计数（按平台）
+    - Contagem implantações de certificados SCEP, VPN, Wi-Fi, certificado (.pfx) e de Política de Conformidade por plataforma
 
-    - Passport for Work 策略（已创建、已部署）
+    - Política do Passport for Work (criada, implantada)
 
 
 
-- **内容：**  
+- **Conteúdo:**  
 
-    - 边界组信息（分配给每个边界组的边界和站点系统的计数）  
+    - Informações de grupo de limites (contagem de limites e de sistemas de sites atribuídos a cada grupo de limites)  
 
-    - 边界组关系和回退配置
+    - Relações de grupos de limites e configuração de fallback
 
-    - 客户端内容下载统计信息
+    - Estatísticas de download do conteúdo do cliente
 
-    - 边界（按类型）计数  
+    - Contagem de limites por tipo  
 
-    - 对等缓存客户端计数和使用情况统计信息
+    - Contagem de clientes em cache de pares e estatísticas de uso
 
-    - 分发管理器配置信息（线程、重试延迟、重试次数和请求分发点设置）  
+    - Informações de configuração do Gerenciador de Distribuição (threads, intervalo de repetição, número de repetições e configurações de pontos de distribuição de recepção)  
 
-    - 分发点配置信息（分支缓存的使用和分发点监视）
+    - Informações de configuração de pontos de distribuição (uso do cache de ramificação e monitoramento do ponto de distribuição)
 
-    - 分发点组信息（分配给每个分发点组的包和分发点的计数）  
+    - Informações de grupo de pontos de distribuição (contagem de pacotes e pontos de distribuição atribuídos a cada grupo de pontos de distribuição)  
 
 
 
-- **Endpoint Protection：**  
+- **Endpoint Protection:**  
 
-   - 高级威胁防护 (ATP) 策略（策略计数和是否已部署策略）
+   - Políticas ATP (Proteção Avançada contra Ameaças) (contagem de políticas e se as políticas são implantadas)
 
-   - 为 Endpoint Protection 功能配置的警报数  
+   - Contagem de alertas configurados para o recurso Endpoint Protection  
 
-   - 选择在 Endpoint Protection 仪表板中显示的集合数  
+   - Contagem de coleções selecionadas para serem exibidas no painel do Endpoint Protection  
 
-   - Endpoint Protection 部署错误（Endpoint Protection 策略部署错误代码计数）  
+   - Erros de implantação do Endpoint Protection (contagem de códigos de erro de implantação da política do Endpoint Protection)  
 
-   - Endpoint Protection 反恶意软件和 Windows 防火墙策略的使用情况（分配给组的唯一策略数）<br /><br /> 这不包括有关策略所含设置的任何信息。  
+   - Uso da política do Firewall do Windows e antimalware do Endpoint Protection (número de políticas exclusivas atribuídas ao grupo)<br /><br /> Isso não inclui informações sobre as configurações incluídas na política.  
 
 
 
-- **迁移：**
+- **Migração:**
 
-  - 已迁移的对象（使用迁移向导）的计数
+  - Contagem de objetos migrados (uso do assistente de migração)
 
 
 
-- **移动设备管理 (MDM)：**  
+- **MDM (Gerenciamento de dispositivo móvel):**  
 
-    - 已发出的移动设备操作计数：锁定、固定剩余部分、擦除、停用和立即同步命令
+    - Contagem de ações de dispositivo móvel emitidas: comandos de bloquear, redefinição de PIN, apagar, desativar e sincronizar agora
 
-    - 移动设备策略计数  
+    - Contagem de políticas de dispositivo móvel  
 
-    - 由 Configuration Manager 和 Microsoft Intune 托管的移动设备计数和这些设备的注册方式（批量、基于用户）  
+    - Contagem de dispositivos móveis gerenciados pelo Configuration Manager e pelo Microsoft Intune e como eles foram registrados (em massa, baseado no usuário)  
 
-    - 具有多个注册移动设备的用户计数  
+    - Contagem de usuários que têm vários dispositivos móveis registrados  
 
-    - 移动设备轮询计划和移动设备签入持续时间的统计信息  
+    - Agendamento de sondagem de dispositivo móvel e estatísticas de duração de check-in de dispositivos móveis  
 
 
 
 
-- **Microsoft Intune 故障排除：**
+- **Solução de problemas do Microsoft Intune:**
 
-    - 复制到 Microsoft Intune 的设备操作（擦除、停用、锁定）、遥测和数据消息的计数和大小
+    - Contagem e tamanho das ações de dispositivo (apagar, desativar, bloquear), telemetria e mensagens de dados replicadas para o Microsoft Intune
 
-    - 从 Microsoft Intune 下载的状况、状态、清单、RDR、DDR、UDX、租户状况、POL、LOG、证书、CRP、重新同步、CFD、RDO、BEX、ISM 和符合性消息的计数和大小
+    - Contagem e tamanho de estado, status, inventário, RDR, DDR, UDX, estado de Locatário, POL, LOG, Cert, CRP, Ressincronização, CFD, RDO, BEX, ISM e mensagens de conformidade baixadas do Microsoft Intune
 
-    - Microsoft Intune 的完全和增量用户同步统计信息
+    - Estatísticas de sincronização de usuário completa e delta para o Microsoft Intune
 
 
 
-- **本地移动设备管理 (MDM)：**  
+- **MDM (Gerenciamento de dispositivo móvel) local:**  
 
-    - Windows 10 批量注册包和配置文件计数  
+    - Contagem de perfis e pacotes de registro em massa do Windows 10  
 
-    - 本地 MDM 应用程序部署的部署成功/失败统计信息  
+    - Estatísticas de êxito/falha de implantação para implantações locais de aplicativo de MDM  
 
 
 
 
-- **操作系统部署：**  
+- **Implantação de sistema operacional:**  
 
-    - 启动映像、驱动程序、驱动程序包、启用多播的分发点、启用 PXE 的分发点以及任务序列的计数  
+    - Contagem de imagens de inicialização, drivers, pacotes de driver, pontos de distribuição habilitados para multicast, pontos de distribuição habilitados para PXE e sequências de tarefas  
 
-    - 版本升级策略的计数
+    - Contagem de políticas de atualização de edição
 
-    - 任务序列步骤使用情况计数
+    - Contagens de uso da etapa de sequência de tarefas
 
 
 
-- **站点更新：**
+- **Atualizações do site:**
 
-    - 已安装的 Configuration Manager 修补程序的版本
+    - Versões de hotfixes do Configuration Manager instalados
 
 
 
-- **软件更新：**  
+- **Atualizações de software:**  
 
-    - 自动部署规则中使用的可用和截止时间增量  
+    - Deltas disponíveis e de data limite usados nas regras de implantação automática  
 
-    - 每个更新的平均和最大分配数  
+    - Número médio e máximo de atribuições por atualização  
 
-    - 客户端更新评估和扫描计划  
+    - Avaliação da atualização de cliente e agendamentos de verificação  
 
-    - 软件更新点同步的分类
+    - Classificações sincronizadas pelo Ponto de Atualização de Software
 
-    - 群集修补统计信息  
+    - Estatísticas de aplicação de patch de cluster  
 
-    - Windows 10 快速更新的配置
+    - Configuração de atualizações expressas do Windows 10
 
-    - 用于活动 Windows 10 服务计划的配置  
+    - Configurações usadas para planos ativos de manutenção do Windows 10  
 
-    - 已部署 Office 365 更新计数  
+    - Contagem de atualizações do Office 365 implantadas  
 
-    - 更新组和分配的计数  
+    - Contagem de grupos de atualização e atribuições  
 
-    - 更新包计数和包的目标分发点的最大/最小/平均数  
+    - Contagem de pacotes de atualização e o número mínimo/máximo/médio de pontos de distribuição direcionados com pacotes  
 
-    - 使用 System Center Update Publisher 创建和部署的更新数  
+    - Contagem de atualizações criadas e implantadas com o System Center Update Publisher  
 
-    - 使用面向企业的 Windows 更新的 Windows 10 客户端计数  
+    - Contagem de clientes do Windows 10 que usam o Windows Update para Empresas  
 
-    - 与同步绑定的自动部署规则数  
+    - Número de regras de implantação automática vinculadas à sincronização  
 
-    - 创建新的更新或将更新添加到现有组的自动部署规则数  
+    - Número de regras de implantação automática que criam ou adicionam atualizações a um grupo existente  
 
-    - 具有多个部署的自动部署规则数  
-    - 更新组的数目和每个组的更新的最小/最大/平均数目  
+    - Número de regras de implantação automática que têm várias implantações  
+    - Número de grupos de atualização e número mínimo/máximo/médio de atualizações por grupo  
 
-    - 更新数和已部署、已过期、被取代、已下载和包含 EULA 的更新所占百分比  
+    - Número de atualizações e percentual de atualizações implantadas, expiradas, substituídas, baixadas e que contêm EULAs  
 
-    - 软件更新点负载平衡统计信息
+    - Estatísticas de balanceamento de carga do ponto de atualização de software
 
-    - 软件更新点同步计划  
+    - Agendamento de sincronização do ponto de atualização de software  
 
-    - 具有软件更新部署的集合总数/平均数和已部署更新的最大数/平均数  
+    - Número total/médio de coleções que têm implantações de atualização de software e número máximo/médio de atualizações implantadas  
 
-    - 更新扫描错误代码和计算机计数  
+    - Códigos de erro de verificação de atualização e contagem de computadores  
 
-    - Windows 10 仪表板内容版本  
+    - Versões de conteúdo do painel do Windows 10  
 
 
 
-- **SQL/性能数据：**  
+- **Dados de desempenho/SQL:**  
 
-    - ***[新增]*** 站点摘要的配置和持续时间
+    - ***[Novo] *** Configuração e duração do resumo do site
 
-    - 最大数据库表计数  
+    - Contagem das maiores tabelas de banco de dados  
 
-    - 发现操作统计信息（找到的对象的计数）
+    - Estatísticas operacionais de descoberta (contagem de objetos encontrados)
 
-    - 启用和计划（完全、增量）的发现类型
+    - Tipos de descoberta, habilitação e agendamento (completo, incremental)
 
-    - SQL AlwaysOn 副本信息、使用情况和运行状况
+    - Uso, status de integridade e informações de réplica do SQL AlwaysOn
 
-    - SQL 更改跟踪性能问题、保持期和自动清理状态
+    - Período de retenção, estado de limpeza automática e problemas de desempenho do controle de alterações do SQL
 
-    - SQL 更改跟踪保持期
+    - Período de retenção do controle de alterações do SQL
 
-    - ***[新增]*** 状态和状态消息性能统计信息包括最常见和开销最大的消息类型
+    - ***[Novo] *** Estatísticas de desempenho de mensagem de estado e status, incluindo tipos de mensagens mais comuns e mais caras
 
 
 
-- **其他**
+- **Diversos**
 
-    - ***[新增]*** 数据仓库服务点的配置，包括同步计划和平均时间
+    - ***[Novo] *** Configuração do ponto de serviço do Data Warehouse incluindo agenda de sincronização e tempo médio
 
-    - 使用 LAN 唤醒 (WOL) 的站点计数
+    - Contagem de sites com WOL (Wake On LAN)
 
-    - 报告使用情况和性能统计信息  
+    - Estatísticas de desempenho e de uso de relatório  
 
 
 
-##  <a name="bkmk_level3"></a> 级别 3 - 完全
-完全级别包括基本和增强级别的所有数据。 它还包括有关 Endpoint Protection、更新符合性百分比和软件更新信息的其他信息。  此级别还可包括系统文件和内存快照（可能包含捕获时存在于内存或日志文件中的个人信息）等高级诊断信息。
+##  <a name="bkmk_level3"></a> Nível 3 - Completo
+O nível Completo inclui todos os dados nos níveis Básico e Avançado. Também inclui informações adicionais sobre o Endpoint Protection, o percentual de conformidade da atualização e as informações de atualização de software.  Esse nível também pode incluir informações de diagnóstico avançado, como arquivos do sistema e instantâneos de memória, que podem incluir informações pessoais que existiam na memória ou nos arquivos de log no momento da captura.
 
-对于 System Center Configuration Manager 版本 1702，此级别包括以下内容：
+Para o System Center Configuration Manager versão 1702, esse nível inclui o seguinte:
 
-- 自动部署规则评估计划信息
+- Informações de agendamento de avaliação da regra de implantação automática
 
-- ATP 运行状况摘要
+- Resumo de Integridade do ATP
 
-- 集合评估与刷新统计信息
+- Avaliação de coleta e estatísticas de atualização
 
-- 符合性设置：SCEP、VPN、Wi-Fi、合规性策略模板配置详细信息以及包含已过期软件更新的组计数
+- Configurações de conformidade: detalhes de configuração de: protocolo SCEP, VPN, Wi-Fi e de modelo de Política de Conformidade. Contagem de grupos que têm atualizações de software expiradas
 
-- System Center Configuration Manager 使用情况的 DCM 配置包
+- Pacote de configuração do DCM para uso do System Center Configuration Manager
 
-- 详细的客户端部署安装错误
-- Endpoint Protection 运行摘要（包括受保护、有风险、未知与不支持客户端的计数）
+- Erros detalhados de instalação de implantação de cliente
+- Resumo de integridade do Endpoint Protection (incluindo contagem de clientes protegidos, em risco, desconhecidos e sem suporte)
 
-- Endpoint Protection 策略设置
+- Configuração da política do Endpoint Protection
 
-- ***[新增]*** 配置了应用程序的安装行为的进程列表
+- ***[Novo] *** Lista de processos configurados com comportamento da instalação para aplicativos
 
-- 上次软件更新扫描后的最小/最大/平均小时数
+- Número mínimo/máximo/médio de horas desde a última verificação de atualização de software
 
-- 软件更新部署集合中停用客户端的最小/最大/平均数目
+- Número mínimo/máximo/médio de clientes inativos em coleções de implantação de atualização de software
 
-- 每个包的软件更新的最小/最大/平均数目
+- Número mínimo/máximo/médio de atualizações de software por pacote
 
-- MSI 产品代码（客户部署的常见应用）
+- Código do produto MSI (aplicativos comuns que os clientes implantam)
 
-- 软件更新部署的总体符合性
+- Conformidade geral de implantações de atualização de software
 
-- 软件更新部署错误代码和计数
+- Contagens e códigos de erro de implantação da atualização de software
 
-- 软件更新部署信息（“针对客户端的部署的百分比与 UTC 时间”、“必需、可选与无提示”以及“重启抑制”）
+- Informações de implantação de atualização de software (percentual de implantações direcionadas com o cliente versus hora UTC, obrigatório versus opcional versus silencioso e supressão de reinicialização)
 
-- 软件更新点同步的软件更新产品
+- Produtos de atualização de software sincronizados pelo Ponto de Atualização de Software
 
-- 软件更新扫描成功百分比
+- Percentuais de êxito de verificação da atualização de software
 
-- 环境中排名前 50 位的 CPU
+- As 50 principais CPUs no ambiente
 
-- Intune 托管设备的 EAS 条件访问策略的类型（阻止或隔离）
+- Tipo de políticas de Acesso Condicional EAS (bloqueio ou quarentena) para dispositivos que o Intune gerencia
 
-- 适用于企业的 Windows 应用商店应用程序详细信息（已同步的应用程序的非聚合列表，包括 AppID、联机或脱机状态，以及购买的许可证总数）
+- Detalhes de aplicativos da Windows Store para Empresas (lista sem agregação de aplicativos sincronizados, incluindo AppID, estado online ou offline e contagem total de licenças compradas)

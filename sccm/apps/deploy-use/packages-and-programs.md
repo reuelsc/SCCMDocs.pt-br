@@ -1,6 +1,6 @@
 ---
-title: "包和程序 | Microsoft Docs"
-description: "支持使用与 System Center Configuration Manager 配合使用的包和程序或应用程序的部署。"
+title: Pacotes e programas | Microsoft Docs
+description: "Suporte para implantações que usam pacotes e programas ou aplicativos com o System Center Configuration Manager."
 ms.custom: na
 ms.date: 10/06/2016
 ms.prod: configuration-manager
@@ -18,348 +18,348 @@ manager: angrobe
 ms.openlocfilehash: 6146bcf4e5aa9df6fe0b8cf71898e488ecf217cc
 ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
 ms.translationtype: HT
-ms.contentlocale: zh-CN
+ms.contentlocale: pt-BR
 ms.lasthandoff: 08/07/2017
 ---
-# <a name="packages-and-programs-in-system-center-configuration-manager"></a>System Center Configuration Manager 中的包和程序
+# <a name="packages-and-programs-in-system-center-configuration-manager"></a>Pacotes e programas no System Center Configuration Manager
 
-*适用范围：System Center Configuration Manager (Current Branch)*
+*Aplica-se a: System Center Configuration Manager (Branch Atual)*
 
-System Center Configuration Manager 继续支持在 Configuration Manager 2007 中使用的包和程序。 部署以下任何一项时，使用包和程序的部署可能比使用某个应用程序的部署更适用：  
+O System Center Configuration Manager continua dando suporte a pacotes e programas usados no Configuration Manager 2007. Uma implantação que usa pacotes e programas pode ser mais adequada do que uma implantação que usa um aplicativo quando você implanta um dos seguintes:  
 
-- 将应用程序部署到 Linux 和 UNIX 服务器
-- 不在计算机上安装应用程序的脚本，如用于对计算机磁盘驱动器进行碎片整理的脚本
-- 不需要持续监视的“一次性”脚本  
-- 按定期计划运行且不能使用全局评估的脚本
+- Aplicativos para servidores Linux e UNIX
+- Scripts que não instalam um aplicativo em um computador, como um script para desfragmentar a unidade de disco do computador
+- Scripts “únicos” que não precisam ser monitorados continuamente  
+- Scripts que são executados em um agendamento recorrente e que não usam a avaliação global
 
-从较早版本的 Configuration Manager 迁移包时，可以将其部署在 Configuration Manager 层次结构中。 迁移完成后，包会出现在“软件库”  工作区的“包”  节点中。
+Quando migra pacotes de uma versão anterior do Configuration Manager, você pode implantá-los em sua hierarquia do Configuration Manager. Após a conclusão da migração, os pacotes são exibidos no nó **Pacotes** do espaço de trabalho **Biblioteca de Software** .
 
-可通过与使用软件分发时相同的方式来修改和部署这些包。 Configuration Manager 中保留了“从定义向导导入包”，以导入旧包。 从 Configuration Manager 2007 迁移到 Configuration Manager 层次结构时，播发将转换为部署。  
+É possível modificar e implantar esses pacotes da mesma maneira como você fez usando a distribuição de software. O **Assistente para Importar Pacote de Definição** permanece no Configuration Manager para importar pacotes herdados. Anúncios são convertidos em implantações quando são migrados do Configuration Manager 2007 para uma hierarquia do Configuration Manager.  
 
 > [!NOTE]  
->  可以使用 Microsoft System Center Configuration Manager Package Conversion Manager 将包和程序转换为 Configuration Manager 应用程序。  
+>  Você pode usar o Package Conversion Manager do Microsoft System Center Configuration Manager para converter pacotes e programas em aplicativos do Configuration Manager.  
 >   
->  有关详细信息，请参阅 [Configuration Manager 包转换管理器](https://technet.microsoft.com/library/hh531519.aspx)。  
+>  Para obter mais informações, veja [Configuration Manager Package Conversion Manager](https://technet.microsoft.com/library/hh531519.aspx).  
 
-包可以使用 Configuration Manager 的一些新功能，包括分发点组和监视。 不能使用 Configuration Manager 中的包和程序分发 Microsoft Application Virtualization (App-V) 应用程序。 若要分发虚拟应用程序，必须将其创建为 Configuration Manager 应用程序。  
+Os pacotes podem usar alguns recursos novos do Configuration Manager, incluindo grupos de pontos de distribuição e monitoramento. Aplicativos do App-V (Microsoft Application Virtualization) não podem ser distribuídos usando pacotes e programas no Configuration Manager. Para distribuir aplicativos virtuais, é necessário criá-los como aplicativos do Configuration Manager.  
 
-##  <a name="create-a-package-and-program"></a>创建包和程序  
- 使用以下过程之一来帮助创建或导入包和程序。  
+##  <a name="create-a-package-and-program"></a>Para criar um pacote e programa  
+ Use um destes procedimentos para ajudá-lo a criar ou importar pacotes e programas.  
 
-### <a name="create-a-package-and-program-using-the-create-package-and-program-wizard"></a>使用“创建包和程序向导”来创建包和程序  
+### <a name="create-a-package-and-program-using-the-create-package-and-program-wizard"></a>Criar um pacote e programa usando o Assistente para Criar Pacote e Programa  
 
-1.  在 Configuration Manager 控制台中，选择“软件库” > “应用程序管理” > “包”。  
+1.  No console do Configuration Manager, escolha **Biblioteca de Software** > **Gerenciamento de Aplicativos** > **Pacotes**.  
 
-3.  在“主页”选项卡的“创建”组中，选择“创建包”。  
+3.  Na guia **Início**, no grupo **Criar**, escolha **Criar Pacote**.  
 
-4.  在上 **包** 页 **创建包和程序向导**, ，指定以下信息：  
+4.  Sobre o **pacote** página do **Criar Assistente de pacote e programa**, especifique as seguintes informações:  
 
-    -   **名称**：指定包的名称，最多 50 个字符。  
+    -   **Nome**: especifique um nome para o pacote com, no máximo, 50 caracteres.  
 
-    -   **描述**：指定此包的描述，最多 128 个字符。  
+    -   **Descrição**: especifique uma descrição para este pacote com, no máximo, 128 caracteres.  
 
-    -   **制造商**（可选）：指定制造商名称有助于在 Configuration Manager 控制台中识别包。 此名称最多包含 32 个字符。
+    -   **Fabricante** (opcional): especifique um nome de fabricante para ajudá-lo a identificar o pacote no console do Configuration Manager. Este nome pode ter, no máximo, 32 caracteres.
 
-    -   **语言**（可选）：指定包的语言版本，最多 32 个字符。  
+    -   **Idioma** (opcional): especifique a versão do idioma do pacote com, no máximo, 32 caracteres.  
 
-    -   **版本**（可选）：指定包的版本号，最多 32 个字符。
+    -   **Versão** (opcional): especifique um número de versão para o pacote com, no máximo, 32 caracteres.
 
-    -   **此包包含源文件**：此设置指示包是否要求在客户端设备上显示源文件。 默认情况下，此复选框处于清除状态，并且 Configuration Manager 不使用包的分发点。 如果选择此复选框，则将使用分发点。  
+    -   **Este pacote contém arquivos de origem**: essa configuração indica se o pacote exige que os arquivos de origem estejam presentes nos dispositivos cliente. Por padrão, essa caixa de seleção fica desmarcada e o Configuration Manager não usa pontos de distribuição para o pacote. Quando esta caixa de seleção estiver marcada, pontos de distribuição serão usados.  
 
-    -   **源文件夹**：如果包包含源文件，请选择“浏览”打开“设置源文件夹”对话框，并指定包的源文件位置。  
+    -   **Pasta de origem**: se o pacote contiver arquivos de origem, escolha **Procurar** para abrir a caixa de diálogo **Definir Pasta de Origem** e especifique o local dos arquivos de origem do pacote.  
 
         > [!NOTE]  
-        >  站点服务器的计算机帐户必须具有对你所指定源文件夹的读取访问权限。  
+        >  A conta de computador do servidor do site deve ter direitos de acesso de leitura para a pasta de origem especificada.  
 
-5.  在“创建包和程序向导”的“程序类型”页上，选择要创建的程序类型，然后选择“下一步”。 你可以为计算机或设备创建程序，也可以跳过此步骤，稍后再进行创建。  
+5.  Na página **Tipo de Programa** do **Assistente para Criar Pacote e Programa**, selecione o tipo de programa a ser criado e escolha **Avançar**. É possível criar um programa para um computador ou dispositivo, ou ignorar esta etapa e criar um programa mais tarde.  
 
     > [!TIP]  
-    >  若要创建现有包的新程序，首先选择包。 然后，在“主页”选项卡的“包”组中，选择“创建程序”以打开“创建程序向导”。  
+    >  Para criar um novo programa para um pacote existente, primeiro selecione o pacote. Em seguida, na guia **Início**, no grupo **Pacote**, escolha **Criar Programa** para abrir o **Assistente para Criar Programa**.  
 
-6.  使用以下过程之一可创建标准程序或设备程序。  
+6.  Use um dos procedimentos a seguir para criar um programa padrão ou um programa do dispositivo.  
 
-    #### <a name="create-a-standard-program"></a>创建标准程序  
+    #### <a name="create-a-standard-program"></a>Criar um programa padrão  
 
-  1.  在“创建包和程序向导”的“程序类型”页上，选择“标准程序”，然后选择“下一步”。     
+  1.  Na página **Tipo de Programa** do **Assistente para Criar Pacote e Programa**, escolha **Programa Padrão** e, em seguida, **Avançar**.     
 
-    2.  在“标准程序”页上，指定下列信息：  
+    2.  Na página **Programa Padrão**, especifique as seguintes informações:  
 
-        -   **名称：** 指定一个最多为 50 个字符的程序的名称。  
+        -   **Nome:** Especifique um nome para o programa com um máximo de 50 caracteres.  
 
             > [!NOTE]  
-            >  程序名称必须是唯一的包中。 在创建程序之后，您无法修改其名称。  
+            >  O nome do programa deve ser exclusivo dentro de um pacote. Depois de criar um programa, não é possível modificar seu nome.  
 
-        -   **命令行**：输入用于启动此程序的命令行，或选择“浏览”以浏览至文件位置。  
+        -   **Linha de Comando**: insira a linha de comando a ser usada para iniciar o programa ou escolha **Procurar** para procurar o local do arquivo.  
 
-            如果文件名没有指定的扩展名，则 Configuration Manager 将尝试使用 .com、.exe 和 .bat 作为可能的扩展名。  
+            Se um nome de arquivo não tiver uma extensão especificada, o Configuration Manager tentará usar .com, .exe e .bat como possíveis extensões.  
 
-             当程序在客户端上运行时，Configuration Manager 将首先在包内搜索命令行文件名，接着在本地 Windows 文件夹中搜索，然后在本地 *%path%* 中搜索。 如果找不到文件，程序将失败。  
+             Quando o programa é executado em um cliente, o Configuration Manager primeiro procura o nome do arquivo de linha de comando no pacote, em seguida, procura na pasta local do Windows e, por fim, procura no local *%path%*. Se o arquivo não for encontrado, o programa falhará.  
 
-        -   **启动文件夹**（可选）：指定程序运行的文件夹，最多 127 个字符。 此文件夹可以是客户端上的绝对路径，或者是相对于包含包的分发点文件夹的路径。
+        -   **Pasta de inicialização** (opcional): especifique a pasta por meio da qual o programa é executado, com até 127 caracteres. Essa pasta pode ser um caminho absoluto no cliente ou um caminho relativo à pasta do ponto de distribuição que contém o pacote.
 
-        -   **运行**：指定程序在客户端计算机上的运行模式。 选择以下选项之一：  
+        -   **Executar**: especifique o modo em que o programa é executado nos computadores cliente. Selecione uma das seguintes opções:  
 
-            -   **普通**：程序以基于系统和程序默认值的普通模式运行。 此为默认模式。  
+            -   **Normal**: o programa é executado no modo normal, de acordo com os padrões do sistema e do programa. Este é o modo padrão.  
 
-            -   **最小化**：程序在客户端设备上以最小化模式运行。 用户可以在通知区域或任务栏中看到安装活动。  
+            -   **Minimizado**: o programa é executado de modo minimizado nos dispositivos cliente. Os usuários podem ver as atividades de instalação na área de notificação ou na barra de tarefas.  
 
-            -   **最大化**：程序在客户端设备上以最大化模式运行。 用户将看到所有安装活动。  
+            -   **Maximizado**: o programa é executado de modo maximizado nos dispositivos cliente. Os usuários veem todas as atividades de instalação.  
 
-            -   **隐藏**：程序在客户端设备上以隐藏模式运行。 用户看不到任何安装活动。  
+            -   **Oculto**: o programa é executado de modo oculto nos dispositivos cliente. Os usuários não veem nenhuma atividade de instalação.  
 
-        -   **程序可以运行**：指定程序是仅当用户登录到客户端计算机时能才运行、仅当无用户登录时才运行、还是无论用户是否登录都运行。  
+        -   **O programa pode ser executado**: especifique se o programa é executado somente quando um usuário está conectado, somente quando nenhum usuário está conectado ou independentemente de um usuário estar conectado ao computador cliente.  
 
-        -   **运行模式**：指定程序是在使用管理权限时还是使用当前登录用户的权限时运行。  
+        -   **Modo de execução**: especifique se o programa é executado com permissões administrativas ou com as permissões do usuário conectado no momento.  
 
-        -   **允许用户查看程序安装并与之交互**：若可用，使用此设置指定是否允许用户与程序安装交互。 仅当为“程序可以运行”选择“仅当无用户登录时”或“无论有无用户登录”，并为“运行模式”选择“使用管理权限运行”时，此复选框才可用。  
+        -   **Permitir que os usuários exibam e interajam com a instalação do programa**: use essa configuração, se disponível, para especificar se deseja permitir que os usuários interajam com a instalação do programa. Essa caixa de seleção só estará disponível quando a opção **Somente quando nenhum usuário estiver conectado** ou **Se um usuário estiver conectado ou não** estiver marcada em **O programa pode ser executado** e quando a opção **Executar com direitos administrativos** estiver marcada em **Modo de execução**.  
 
-        -   **驱动器模式**：指定有关此程序在网络上如何运行的信息。 选择以下选项之一：  
+        -   **Modo de unidade**: especifique as informações sobre como esse programa é executado na rede. Escolha uma das seguintes opções:  
 
-            -   **使用 UNC 名称运行**：指定程序以通用命名约定 (UNC) 名称运行。 此为默认设置。  
+            -   **Executa com nome UNC**: especifique se o programa é executado com um nome UNC. Essa é a configuração padrão.  
 
-            -   **要求驱动器号**：指定程序要求驱动器号完全符合其位置。 对于此设置，Configuration Manager 可以使用客户端上任何可用的驱动器号。  
+            -   **Exige letra da unidade**: especifique se o programa exige uma letra da unidade para qualificar totalmente seu local. Para essa configuração, Configuration Manager pode usar qualquer letra da unidade disponível no cliente.  
 
-            -   **要求特定驱动器号**：指定程序要求所指定的特定驱动器号完全符合其位置（例如，**Z:**）。 如果在客户端上已经使用指定的驱动器号，则不运行该程序。  
+            -   **Exige letra da unidade específica**: especifique se o programa exige uma letra da unidade específica especificada para qualificar totalmente seu local (por exemplo, **Z:**). Se a letra da unidade especificada já é usada em um cliente, o programa não será executado.  
 
-        -   **登录时重新连接到分发点**：使用此复选框指示客户端计算机是否在用户登录时重新连接到分发点。 默认情况下，此复选框已清除。  
+        -   **Reconectar ao ponto de distribuição no logon**: use essa caixa de seleção para indicar se o computador cliente é reconectado ao ponto de distribuição quando o usuário se conecta. Por padrão, essa caixa de seleção está desmarcada.  
 
-  3.  在“创建包和程序向导”的“要求”页上指定以下信息：  
+  3.  Na página **Requisitos** do **Assistente para Criar Pacote e Programa**, especifique as seguintes informações:  
 
-        -   **首先运行其他程序**：可使用此设置标识在此包和程序运行之前运行的包和程序。  
+        -   **Executar outro programa primeiro**: use essa configuração para identificar um pacote e um programa que são executados antes da execução desse pacote e programa.  
 
-        -   **平台要求**：选择“此程序可以在任何平台上运行”或选择“此程序只能在特定平台上运行”，然后选择客户端必须运行才能安装包和程序的操作系统。  
+        -   **Requisitos de plataforma**: selecione **Este programa pode ser executado em qualquer plataforma** ou **Este programa pode ser executado somente nas plataformas especificadas** e, em seguida, escolha os sistemas operacionais que os clientes devem executar para poder instalar o pacote e o programa.  
 
-        -   **估计磁盘空间**：指定软件程序在计算机上运行所需的磁盘空间量。 这可以指定为 **未知** （默认设置） 或作为大于或等于零的整数。 如果指定了值，则也必须指定值的单位。  
+        -   **Espaço em disco estimado**: especifique a quantidade de espaço em disco de que o programa de software precisa para ser executado no computador. Isso pode ser especificado como **desconhecido** (a configuração padrão) ou como um número inteiro maior ou igual a zero. Se um valor for especificado, as unidades para o valor também devem ser especificadas.  
 
-        -   **最大允许运行时间(分钟)**：指定预计程序在客户端计算机上运行的最长时间。 这可以指定为 **未知** （默认设置） 或作为一个大于零的整数。  
+        -   **Tempo de execução máximo permitido (minutos)**: especifique o tempo máximo previsto para que o programa seja executado no computador cliente. Isso pode ser especificado como **desconhecido** (a configuração padrão) ou como um número inteiro maior que zero.  
 
-             默认情况下，此值设置为 120 分钟。  
+             Por padrão, esse valor é definido como 120 minutos.  
 
             > [!IMPORTANT]  
-            >  如果对此程序在其上运行的集合使用维护时段，当“最大允许运行时间”大于计划的维护时段时，则可能发生冲突。 然而，如果将最大运行时间设置为“未知”，则该程序会在维护时段期间开始运行，并在维护时段关闭后根据需要继续运行。 如果用户设置的最大运行时间超过了任何可用维护时段的长度，则程序将不会运行。  
+            >  Se você estiver usando janelas de manutenção para a coleção em que esse programa é executado, poderá ocorrer um conflito se o **Tempo de execução máximo permitido** for maior que a janela de manutenção agendada. No entanto, se o tempo de execução máximo for definido como **Desconhecido**, o programa iniciará sua execução durante a janela de manutenção e continuará sendo executado quando necessário depois que a janela de manutenção for fechada. Se o usuário definir o tempo de execução máximo como um período específico que excede a duração de uma janela de manutenção disponível, o programa não será executado.  
 
-             如果将该设置为“未知”，则 Configuration Manager 会将最大允许运行时间设置为 12 小时（720 分钟）。  
-
-            > [!NOTE]  
-            >  如果超出最大运行时间（无论是由用户设置的值还是默认值），则当选择“使用管理权限运行”且未选择“允许用户查看程序安装并与之交互”时，Configuration Manager 将停止该程序。  
-
-  4.  选择“下一步”。  
-
-    #### <a name="create-a-device-program"></a>创建设备程序  
-
-  1.  在“创建包和程序向导”的“程序类型”页上，选择“设备程序”，然后选择“下一步”。  
-
-  2.  在“设备程序”页上，指定下列信息：  
-
-        -   **名称**：指定程序的名称，最多 50 个字符。  
+             Se o valor for definido como **Desconhecido**, o Configuration Manager definirá o tempo de execução máximo permitido como 12 horas (720 minutos).  
 
             > [!NOTE]  
-            >  程序名称在包中必须是唯一的。 在创建程序之后，您无法修改其名称。  
+            >  Se o tempo de execução máximo (definido pelo usuário ou como o valor padrão) for excedido, o Configuration Manager interromperá o programa se a opção **Executar com direitos administrativos** estiver marcada e a opção **Permitir que os usuários exibam e interajam com a instalação do programa** não estiver marcada.  
 
-        -   **备注**（可选）：指定此设备程序的注释，最多 127 个字符。  
+  4.  Escolha **Próxima**.  
 
-        -   **下载文件夹**：指定 Windows CE 设备上用于存储包源文件的文件夹名称。 默认值为 **\Temp\\**。  
+    #### <a name="create-a-device-program"></a>Criar um programa de dispositivo  
 
-        -   **命令行**：输入用于启动此程序的命令行，或选择“浏览”以浏览至文件位置。  
+  1.  Na página **Tipo de Programa** do **Assistente para Criar Pacote e Programa**, selecione **Programa para dispositivo** e escolha **Avançar**.  
 
-        -   **在下载文件夹中运行命令行**：选择此选项从之前指定的下载文件夹中运行程序。  
+  2.  Na página **Programa para Dispositivo**, especifique o seguinte:  
 
-        -   **从此文件夹中运行命令行**：选择此选项以指定用于运行程序的其他文件夹。  
+        -   **Nome**: especifique um nome para o programa com, no máximo, 50 caracteres.  
 
-    3.  在“要求”页上，指定下列各项：  
+            > [!NOTE]  
+            >  O nome do programa deve ser exclusivo em um pacote. Depois de criar um programa, não é possível modificar seu nome.  
 
-        -   **估计磁盘空间**：指定软件所需的磁盘空间量。 将在移动设备用户安装程序前显示此项。  
+        -   **Comentário** (opcional): especifique um comentário para esse programa de dispositivo com, no máximo, 127 caracteres.  
 
-        -   **下载程序**：指定有关何时可将此程序下载到移动设备的信息。 你可以指定“尽快” 、“仅通过快速网络” 、或“仅当设备插接时” 。  
+        -   **Pasta de download**: especifique o nome da pasta no dispositivo Windows CE na qual serão armazenados os arquivos de origem do pacote. O valor padrão é **\Temp\\**.  
 
-        -   **附加要求**：为此程序指定任何附加要求。 将在用户安装软件前向其显示。 例如，可以通知他们需要在运行该程序之前关闭所有其他应用程序的用户。  
+        -   **Linha de Comando**: insira a linha de comando a ser usada para iniciar o programa ou escolha **Procurar** para procurar o local do arquivo.  
 
-  4.  选择“下一步”。  
+        -   **Executar linha de comando na pasta de download**: selecione essa opção para executar o programa na pasta de download especificada anteriormente.  
 
-  7.  在“摘要”页上，查看将执行的操作，然后完成向导。  
+        -   **Executar linha de comando nesta pasta**: selecione essa opção para especificar outra pasta na qual o programa será executado.  
 
- 验证新的包和程序是否显示在“软件库”工作区的“包”节点中。  
+    3.  Na página **Requisitos**, especifique o seguinte:  
 
-## <a name="create-a-package-and-program-from-a-package-definition-file"></a>从包定义文件创建包和程序  
+        -   **Espaço em disco estimado**: especifique a quantidade de espaço em disco necessária para o software. Isso será exibido aos usuários de dispositivos móveis antes da instalação do programa.  
 
-1.  在 Configuration Manager 控制台中，选择“软件库” > “应用程序管理” > “包”。  
+        -   **Baixar programa**: especifique as informações sobre quando esse programa pode ser baixado em dispositivos móveis. Você pode especificar **O mais rápido possível**, **Somente em uma rede rápida**ou **Somente quando o dispositivo estiver encaixado**.  
 
-3.  在“主页”选项卡的“创建”组中，选择“从定义创建包”。  
+        -   **Requisitos adicionais**: especifique os requisitos adicionais para esse programa. Eles serão exibidos aos usuários antes da instalação do software. Por exemplo, você poderia notificar os usuários que precisam para fechar todos os outros aplicativos antes de executar o programa.  
 
-4.  在“从定义创建包向导”的“包定义”页上，选择现有包定义文件，或选择“浏览”以打开新的包定义文件。 指定新的包定义文件后，从“包定义”列表中选择它，然后选择“下一步”。  
+  4.  Escolha **Próxima**.  
 
-5.  在“源文件”页上，指定包和程序所需的任何源文件的相关信息，然后选择“下一步”。  
+  7.  Na página **Resumo**, examine as ações a serem executadas e conclua o assistente.  
 
-6.  如果包需要源文件，则在“源文件夹”页上指定获取源文件的位置，然后选择“下一步”。  
+ Verifique se o novo pacote e programa são exibidos no nó **Pacotes** do espaço de trabalho **Biblioteca de Software**.  
 
-7.  在“摘要”页上，查看将执行的操作，然后完成向导。 新的包和程序显示在“软件库”工作区的“包”节点中。  
+## <a name="create-a-package-and-program-from-a-package-definition-file"></a>Criar um pacote e programa de um arquivo de definição de pacote  
 
- 有关包定义文件的详细信息，请参阅本主题中的[关于包定义文件格式](/sccm/apps/deploy-use/packages-and-programs#about-the-package-definition-file-format)。  
+1.  No console do Configuration Manager, escolha **Biblioteca de Software** > **Gerenciamento de Aplicativos** > **Pacotes**.  
 
-##  <a name="deploy-packages-and-programs"></a>部署包和程序  
+3.  Na guia **Início**, no grupo **Criar**, escolha **Criar Pacote com base na Definição**.  
 
-1.  在 Configuration Manager 控制台中，选择“软件库” > “应用程序管理” > “包”。  
+4.  Na página **Definição de Pacote** do **Assistente para Criar Pacote com base na Definição**, escolha um arquivo de definição de pacote existente ou escolha **Procurar** para abrir um novo arquivo de definição de pacote. Depois de especificar um novo arquivo de definição de pacote, selecione-o na lista **Definição de pacote** e escolha **Avançar**.  
 
-2.  选择想要部署的包，然后在“主页”选项卡的“部署”组中，选择“部署”。  
+5.  Na página **Arquivos de Origem**, especifique as informações sobre os arquivos de origem necessários para o pacote e o programa e escolha **Avançar**.  
 
-3.  在“部署软件向导”的“常规”页中，指定要部署的包和程序的名称、要部署的包和程序的集合以及部署的可选注释。  
+6.  Se o pacote exigir arquivos de origem, na página **Pasta de Origem**, especifique o local do qual os arquivos de origem devem ser obtidos e escolha **Avançar**.  
 
-     选择 **使用与此集合关联的默认分发点组** 如果想要在集合的默认分发点组上存储包内容。 若未将所选集合与分发点组关联，则该选项不可用。  
+7.  Na página **Resumo**, examine as ações a serem executadas e conclua o assistente. O novo pacote e programa são exibidos no nó **Pacotes** do espaço de trabalho **Biblioteca de Software**.  
 
-4.  在“内容”页上，选择“添加”，然后选择要将与此包和程序关联的内容部署到的分发点或分发点组。  
+ Para obter mais informações sobre arquivos de definição de pacote, consulte [Sobre o formato de arquivo de definição de pacote](/sccm/apps/deploy-use/packages-and-programs#about-the-package-definition-file-format) neste tópico.  
 
-5.  在“部署设置”页上，为此部署选择目的，并为唤醒数据包和按流量计费的连接指定选项：  
+##  <a name="deploy-packages-and-programs"></a>Implantar pacotes e programas  
 
-    -   **目的**：可以选择：  
+1.  No console do Configuration Manager, escolha **Biblioteca de Software** > **Gerenciamento de Aplicativos** > **Pacotes**.  
 
-        -   **可用**：如果应用程序部署到用户，则该用户可在应用程序目录中查看发布的包和程序，并可根据需要请求该应用程序。 如果将包和程序部署到设备，则用户可在软件中心看到它，并可根据需要进行安装。  
+2.  Selecione o pacote que você deseja implantar e, na guia **Início** no grupo **Implantação**, escolha **Implantar**.  
 
-        -   **必需**：包和程序会根据配置的计划自动进行部署。 但是，用户可以跟踪包和程序部署状态并通过使用软件中心在截止时间之前安装它。  
+3.  Na página **Geral** do **Assistente para Implantar Software**, especifique o nome do pacote e do programa que você deseja implantar, a coleção na qual você deseja implantar o pacote e o programa, bem como comentários opcionais para a implantação.  
 
-    -   **发送唤醒数据包**：如果部署目的设置为“必需”并且选择了此选项，则会在安装部署前向计算机发送一个唤醒数据包，以在安装截止时间到达时将计算机从休眠中唤醒。 可以使用此选项之前，必须将计算机配置为 LAN 唤醒。  
+     Selecione **usar grupos de pontos de distribuição padrão associados a esta coleção** se você deseja armazenar o conteúdo do pacote no grupo de ponto de distribuição de coleções padrão. Se você não tiver associado a coleção selecionada a um grupo de pontos de distribuição, essa opção não estará disponível.  
 
-    -  **允许客户端使用按流量计费的 Internet 连接在安装截止时间之后下载内容(这可能会导致附加成本)**：如果需要，可选择此选项。  
+4.  Na página **Conteúdo**, escolha **Adicionar** e selecione os pontos de distribuição ou os grupos de pontos de distribuição nos quais você deseja implantar o conteúdo associado a esse pacote e esse programa.  
+
+5.  Na página **Configurações de Implantação**, escolha uma finalidade para essa implantação e especifique as opções de pacotes de ativação e conexões limitadas:  
+
+    -   **Finalidade**: escolha entre:  
+
+        -   **Disponível**: se o aplicativo for implantado em um usuário, o usuário verá o pacote e o programa publicados no Catálogo de Aplicativos e poderá solicitá-los sob demanda. Se o pacote e o programa forem implantados em um dispositivo, o usuário os verá no Centro de Software e poderá instalá-los sob demanda.  
+
+        -   **Obrigatória**: o pacote e o programa são implantados automaticamente, de acordo com o agendamento configurado. No entanto, um usuário pode acompanhar o status de implantação de pacote e programa e instalá-lo antes do prazo final usando o Centro de Software.  
+
+    -   **Enviar pacotes de ativação**: se a finalidade da implantação estiver definida como **Obrigatória** e essa opção estiver selecionada, um pacote de ativação será enviado aos computadores antes que a implantação seja instalada para ativar o computador da suspensão na hora limite da instalação. Antes de usar essa opção, os computadores devem ser configurados para Wake On LAN.  
+
+    -  **Permitir que os clientes com uma conexão de Internet limitada baixem conteúdo após a hora limite da instalação, o que poderá incorrer custos adicionais**: selecione essa opção, se necessário.  
 
     > [!NOTE]  
-    >  部署包和程序时，“将软件预先部署到用户的主要设备”选项不可用。  
+    >  A opção **Pré-implantar software no dispositivo primário do usuário** não está disponível quando você implanta um pacote e programa.  
 
-6.  在“计划”页上，配置将部署此包和程序或将其提供给客户端设备的时间。  
+6.  Na página **Agendamento**, configure quando este pacote e este programa serão implantados ou ficarão disponíveis para dispositivos clientes.  
 
-     此页上的选项将有所不同，具体取决于将部署操作设置为“可用”还是“必需”。  
+     As opções dessa página variam dependendo se a ação de implantação é definida como **Disponível** ou **Obrigatória**.  
 
-7.  如果将部署目的设置为“必需”，则请通过“重新运行行为”下拉菜单配置程序的重新运行行为。 选择从以下选项：  
+7.  Se a finalidade da implantação for definida como **Obrigatória**, configure o comportamento da nova execução para o programa no menu suspenso **Comportamento da nova execução**. Escolha dentre as seguintes opções:  
 
-    |重新运行行为|更多信息|  
+    |Reexecutar comportamento|Mais informações|  
     |--------------------|----------------------|  
-    |从不重新运行已部署的程序|即使原来程序运行失败或者程序文件已被更改，也不会在客户端上重新运行该程序。|  
-    |始终重新运行程序|即使程序已成功运行，计划部署时程序也将始终在客户端上重新运行。 当你使用在其中程序，例如使用更新的防病毒软件的定期部署时非常有用。|  
-    |如果上次尝试失败则重新运行|只有当上次尝试失败时，才会在计划部署时重新运行程序。|  
-    |如果上次尝试成功则重新运行|仅当上次在客户端上成功运行时才重新运行程序。 当你使用在其中定期更新程序以及其中的每个更新都要求成功安装上一更新的重复播发时，此选项很有用。|  
+    |Nunca executar novamente o programa implantado|O programa não será executado novamente no cliente, mesmo se o programa tiver falhado originalmente ou se os arquivos de programa tiverem sido alterados.|  
+    |Sempre executar novamente o programa|O programa será sempre executado novamente no cliente quando a implantação for agendada, mesmo se o programa já tiver sido executado com êxito. Isso pode ser útil quando você usa implantações recorrentes nas quais o programa é atualizado, por exemplo com um software antivírus.|  
+    |Executar novamente se a tentativa anterior falhar|O programa será executado novamente quando a implantação for agendada somente se ele falhar na tentativa de execução anterior.|  
+    |Executar novamente se a tentativa anterior tiver êxito|O programa será executado novamente somente se tiver sido executado com êxito no cliente anteriormente. Isso é útil ao usar anúncios recorrentes nos quais o programa é atualizado regularmente e, nos quais cada atualização exige que a atualização anterior seja instalada com êxito.|  
 
-8. 在“用户体验”  页上，指定下列信息：  
+8. Na página **Experiência do Usuário** , especifique as seguintes informações:  
 
-    -   **允许用户独立于分配运行程序**：如果启用，用户可以在不考虑任何计划安装时间的情况下从软件中心安装此软件。  
+    -   **Permitir que os usuários executem o programa de forma independente das atribuições**: se essa opção estiver habilitada, os usuários poderão instalar esse software no Centro de Software, independentemente da hora de instalação agendada.  
 
-    -   “软件安装”：允许在任何已配置维护时段外安装软件。  
+    -   **Instalação de software**: permite que o software seja instalado fora de qualquer janela de manutenção configurada.  
 
-    -   **系统重启(若为完成安装所需)**：如果软件安装要求重启设备才能完成，则允许在任何已配置维护时段外执行此操作。  
+    -   **Reinicialização do sistema (se necessário para conclusão da instalação)**: se a instalação do software exigir uma reinicialização do dispositivo para ser concluída, permita que isso ocorra fora das janelas de manutenção configuradas.  
 
-    -   **Embedded 设备**：将包和程序部署到启用了写入筛选器的 Windows Embedded 设备时，可以指定将包和程序安装在临时覆盖区上并稍后提交更改。 或者，在安装截止时间或在维护时段内提交更改。 如果在安装截止时间或维护时段内提交更改，则需要重新启动，且更改将保留在设备上。  
+    -   **Dispositivos inseridos**: ao implantar pacotes e programas em dispositivos Windows Embedded habilitados para filtro de gravação, é possível especificar se os pacotes e os programas serão instalados na sobreposição temporária e confirmar as alterações mais tarde. Como alternativa, confirme as alterações na hora limite da instalação ou durante uma janela de manutenção. Ao confirmar as alterações na hora limite da instalação ou durante uma janela de manutenção, uma reinicialização é necessária e as alterações são persistidas no dispositivo.  
 
         > [!NOTE]  
-        >  在包或程序部署到 Windows Embedded 设备时，请确保设备是已配置的维护时段的集合的成员。 有关向 Windows Embedded 设备部署包和程序时如何使用维护时段的详细信息，请参阅[创建 Windows Embedded 应用程序](../../apps/get-started/creating-windows-embedded-applications.md)。  
+        >  Quando você implanta um pacote ou programa em um dispositivo Windows Embedded, certifique-se de que o dispositivo é um membro de uma coleção com uma janela de manutenção configurada. Para obter mais informações sobre como as janelas de manutenção são usadas na implantação de pacotes e programas em dispositivos Windows Embedded, consulte a seção [Criando aplicativos do Windows Embedded](../../apps/get-started/creating-windows-embedded-applications.md).  
 
-9. 在“分发点”  页上，指定下列信息：  
+9. Na página **Pontos de Distribuição** , especifique as seguintes informações:  
 
-    -   **部署选项**：指定客户端运行程序内容应采取的操作。 您可以在客户端在快速网络边界或慢速或不可靠网络边界中时指定行为。  
+    -   **Opções de implantação**: especifique as ações que um cliente deve executar para executar o conteúdo do programa. Você pode especificar o comportamento quando o cliente está em um limite de rede rápida ou um limite de rede lenta ou não confiável.  
 
-    -   **允许客户端与同一子网上的其他客户端共享内容**：选择此选项可允许客户端从已经下载和缓存内容的网络上的其他客户端下载内容，从而减小网络负荷。 此选项使用 Windows BranchCache 并且可以是运行 Windows Vista SP2 的计算机上使用和更高版本。  
+    -   **Permitir que os clientes compartilhem conteúdo com outros clientes na mesma sub-rede**: selecione essa opção para reduzir a carga na rede, permitindo que os clientes baixem conteúdo de outros clientes na rede que já baixaram e armazenaram em cache o conteúdo. Essa opção utiliza o Windows BranchCache e pode ser usada em computadores que executam o Windows Vista SP2 e posterior.  
 
-    -   **允许客户端使用内容源位置回退**：  
+    -   **Permitir que os clientes usem um local de origem de fallback para o conteúdo**:  
 
-        -  **1610 之前的版本**：可以选中“允许内容源位置回退”复选框，以便在没有其他分发点可用时让这些边界组外部的客户端回退并使用分发点作为内容的源位置。
+        -  **Versões anteriores a 1610**: é possível marcar a caixa de seleção **Permitir local de origem de fallback para o conteúdo** para permitir que os clientes fora desses grupos de limite executem fallback e usem o ponto de distribuição como um local de origem para o conteúdo quando nenhum outro ponto de distribuição estiver disponível.
 
-        - **版本 1610 及更高版本**：用户不能再配置“允许内容源位置回退”。  取而代之的是，可配置边界组之间的关系，以确定客户端何时可以开始搜索有效内容源位置的其他边界组。
+        - **Versão 1610 e posterior**: não é mais possível configurar a opção **Permitir local de origem de fallback para o conteúdo**.  Em vez disso, você configura as relações entre grupos de limite que determinam quando um cliente pode iniciar a pesquisa de uma localização de fonte de conteúdo válida em grupos de limite adicionais.
 
-10. 在“摘要”页上，查看将执行的操作，然后完成向导。  
+10. Na página **Resumo**, examine as ações a serem executadas e conclua o assistente.  
 
-     当你选择部署时，你可以在“监视”  工作区的“部署”  节点和包部署选项卡的详细信息窗格中查看部署。 有关详情，请参阅本主题中的[监视包和程序](/sccm/apps/deploy-use/packages-and-programs#monitor-packages-and-programs)。  
+     Você pode exibir a implantação no nó **Implantações** do espaço de trabalho **Monitoramento** e no painel de detalhes da guia de implantação do pacote ao selecionar a implantação. Para obter mais informações, consulte [Monitorar pacotes e programas](/sccm/apps/deploy-use/packages-and-programs#monitor-packages-and-programs) neste tópico.  
 
 > [!IMPORTANT]  
->  如果已在“部署软件向导”的“分发点”页上配置“从分发点运行程序”选项，请勿取消选择“将此包中的内容复制到分发点上的包共享”选项，因为这将使得无法从分发点运行包。  
+>  Se você tiver configurado a opção **Executar programa do ponto de distribuição** na página **Pontos de Distribuição** do **Assistente para Implantar Software**, não desmarque a opção **Copiar o conteúdo deste pacote para um compartilhamento de pacotes nos pontos de distribuição**, pois isso fará com que o pacote não esteja disponível para ser executado por meio dos pontos de distribuição.  
 
-##  <a name="monitor-packages-and-programs"></a>监视包和程序  
- 若要监视包和程序部署，可以使用与监视应用程序相同的过程，如[监视应用程序](/sccm/apps/deploy-use/monitor-applications-from-the-console)中所详述。  
+##  <a name="monitor-packages-and-programs"></a>Monitorar pacotes e programas  
+ Para monitorar as implantações de pacote e programa, use os mesmos procedimentos adotados para monitorar os aplicativos, conforme detalhado em [Monitorar aplicativos](/sccm/apps/deploy-use/monitor-applications-from-the-console).  
 
- 包和程序还包含大量内置报表，可用于监视有关包和程序部署状态的信息。 这些报表具有报表类别为 **软件分发-包和程序** 和 **软件分发-包和程序部署状态**。  
+ Os pacotes e os programas também incluem vários relatórios internos, que permitem monitorar informações sobre o status da implantação de pacotes e programas. Esses relatórios apresentam a categoria de relatório de **distribuição de Software – pacotes e programas** e **distribuição de Software – o pacote e o Status de implantação de programa**.  
 
- 有关如何在 Configuration Manager 中配置报表的详细信息，请参阅 [System Center Configuration Manager 中的报表](../../core/servers/manage/reporting.md)。  
+ Para obter mais informações sobre como configurar relatórios no Configuration Manager, consulte [Relatórios no System Center Configuration Manager](../../core/servers/manage/reporting.md).  
 
-##  <a name="manage-packages-and-programs"></a>管理包和程序  
- 在“软件库”工作区中，展开“应用程序管理”，选择“包”，选择要管理的包，然后从下表中选择管理任务：  
+##  <a name="manage-packages-and-programs"></a>Gerenciar pacotes e programas  
+ No espaço de trabalho **Biblioteca de Software**, expanda **Gerenciamento de Aplicativos**, escolha **Pacotes**, escolha o pacote que você deseja gerenciar e, em seguida, uma tarefa de gerenciamento na seguinte tabela:  
 
-|任务|更多信息|  
+|Tarefa|Mais informações|  
 |----------|----------------------|  
-|**创建预留内容文件**|打开“创建预留内容文件向导”，该向导可用于创建包含可以手动导入到另一个站点的包内容的文件。 这是在其中您网络带宽较低的站点服务器和分发点之间的情况下很有用。|  
-|**创建程序**|打开“创建程序向导”，该向导可用于创建此包的新程序。|  
-|**导出**|打开“导出包向导”，该向导可用于将所选包及其内容导出到文件。<br /><br /> 有关如何导入包和程序的信息，请参阅本主题中的[创建包和程序](/sccm/apps/deploy-use/packages-and-programs#create-packages-and-programs)。|  
-|**部署**|打开“部署软件向导”，该向导可用于将所选包和程序部署到集合。 有关详细信息，请参阅本主题中的[部署包和程序](/sccm/apps/deploy-use/packages-and-programs#deploy-packages-and-programs)。|  
-|**分发内容**|打开“分发内容向导”，该向导可将与包和程序相关联的内容发送到所选的分发点或分发点组。|  
-|**更新分发点**|为所选包和程序更新具有最新内容的分发点。|  
+|**Criar arquivo de conteúdo de pré-teste**|Abre o **Assistente para Criar Arquivo de Conteúdo Pré-teste**, que permite criar um arquivo que contém o conteúdo do pacote que pode ser importado manualmente para outro site. Isso é útil em situações onde você tem pouca largura de banda entre o servidor do site e o ponto de distribuição.|  
+|**Criar programa**|Abre o **Assistente para Criar Programa**, que permite criar um novo programa para esse pacote.|  
+|**Exportarar**|Abre o **Assistente para Exportar Pacote**, que permite exportar o pacote selecionado e seu conteúdo para um arquivo.<br /><br /> Para obter informações sobre como importar pacotes e programas, consulte [Criar pacotes e programas](/sccm/apps/deploy-use/packages-and-programs#create-packages-and-programs) neste tópico.|  
+|**Implantar**|Abre o **Assistente para Implantar Software**, que permite implantar o pacote e o programa selecionados em uma coleção. Para obter mais informações, consulte [Implantar pacotes e programas](/sccm/apps/deploy-use/packages-and-programs#deploy-packages-and-programs) neste tópico.|  
+|**Distribuir conteúdo**|Abre o **Assistente para Distribuir Conteúdo**, que permite enviar o conteúdo associado ao pacote e ao programa para pontos de distribuição ou grupos de pontos de distribuição selecionados.|  
+|**Atualizar Pontos de Distribuição**|Atualiza os pontos de distribuição com o conteúdo mais recente para o pacote e programa selecionados.|  
 
-##  <a name="about-the-package-definition-file-format"></a>关于包定义文件格式  
- 包定义文件是有助于使用 Configuration Manager 自动创建包和程序的脚本。 它们提供 Configuration Manager 创建包和程序所需的所有信息，包源文件的位置除外。 每个包定义文件均为使用 .ini 文件格式且包含以下各节的 ASCII 或 UTF-8 文本文件：  
+##  <a name="about-the-package-definition-file-format"></a>Sobre o formato de arquivo de definição de pacote  
+ Arquivos de definição de pacote são scripts que você pode usar para ajudar a automatizar a criação de pacote e de programa com o Configuration Manager. Eles fornecem todas as informações de que o Configuration Manager precisa para criar um pacote e um programa, exceto o local dos arquivos de origem do pacote. Cada arquivo de definição de pacote é um arquivo de texto ASCII ou UTF-8 que usa o formato de arquivo .ini e que contém as seguintes seções:  
 
 ###  <a name="pdf"></a>[PDF]  
- 本部分为包定义文件中标识的文件。 它包含以下信息：  
+ Esta seção identifica o arquivo como um arquivo de definição de pacote. Ele contém as seguintes informações:  
 
--   **版本**：指定文件使用的包定义文件格式的版本。 这对应于其所针对的 System Management Server (SMS) 或 Configuration Manager 的版本。 此项是必需的。  
+-   **Versão**: especifique a versão do formato de arquivo de definição de pacote usada pelo arquivo. Isso corresponde à versão do System Management Server (SMS) ou Configuration Manager para que ele foi escrito. Essa entrada é necessária.  
 
 ###  <a name="package-definition"></a>[Package Definition]  
- 指定包和程序的属性。 它提供以下信息：  
+ Especifique as propriedades do pacote e do programa. Ele fornece as seguintes informações:  
 
--   **名称**：包的名称，最多 50 个字符。  
+-   **Nome**: O nome do pacote, até 50 caracteres.  
 
--   **版本**（可选）：包的版本，最多 32 个字符。  
+-   **Versão** (opcional): a versão do pacote, com até 32 caracteres.  
 
--   **图标**（可选）：包含用于此包的图标的文件。 如果指定，此图标将替换 Configuration Manager 控制台中的默认包图标。
+-   **Ícone** (opcional): o arquivo que contém o ícone a ser usado para esse pacote. Se for especificado, esse ícone substituirá o ícone padrão do pacote no console do Configuration Manager.
 
--   **发布者**：包的发布服务器，最多 32 个字符。
+-   **Publisher**: O Editor do pacote, até 32 caracteres.
 
--   **语言**：包的语言版本，最多 32 个字符。
+-   **Idioma**: A versão de idioma do pacote, até 32 caracteres.
 
--   **备注**（可选）：关于包的注释，最多 127 个字符。
+-   **Comentário** (opcional): um comentário sobre o pacote, com até 127 caracteres.
 
--   **ContainsNoFiles**：此项指示源是否与包相关联。  
+-   **ContainsNoFiles**: Essa entrada indica se é ou não uma fonte associada ao pacote.  
 
--   **程序**：为此包定义的程序。 每个程序名称对应于此包定义文件中的一个 **[Program]** 部分。  
+-   **Programas**: os programas definidos para esse pacote. Cada nome de programa corresponde a um **[programa]** seção nesse arquivo de definição de pacote.  
 
-     例如：  
+     Exemplo:  
 
      `Programs=Typical, Custom, Uninstall`  
 
--   **MIFFileName**：包含包状态的管理信息格式 (MIF) 文件的名称，最多 50 个字符。  
+-   **MIFFileName**: O nome do arquivo de formato MIF (Management Information) que contém o status do pacote, até 50 caracteres.  
 
--   **MIFName**：包的名称（与 MIF 匹配），最多 50 个字符。  
+-   **MIFName**: O nome do pacote (para correspondência de MIF), até 50 caracteres.  
 
--   **MIFVersion**：包的版本号（与 MIF 匹配），最多 32 个字符。  
+-   **MIFVersion**: O número de versão do pacote (para correspondência de MIF), até 32 caracteres.  
 
--   **MIFPublisher**：包的软件发布服务器（与 MIF 匹配），最多 32 个字符。  
+-   **MIFPublisher**: O Editor do software do pacote (para correspondência de MIF), até 32 caracteres.  
 
-###  <a name="program"></a>[Program]  
- 对于在 **[Package Definition]** 部分的 **Programs** 项中指定的每个程序，包定义文件必须包含定义该程序的 [Program] 部分。 每个程序一节提供了以下信息：  
+###  <a name="program"></a>[programa]  
+ Para cada programa especificado na entrada **Programas** da seção **[Definição de Pacote]**, o arquivo de definição de pacote deve incluir uma seção [Programa] que define o programa. Cada seção do programa fornece as seguintes informações:  
 
--   **名称**：程序的名称，最多 50 个字符。 此项必须是唯一的包中。 此名称在定义播发时使用。 在客户端计算机上的程序的名称将显示在 **运行播发程序** 控制面板中。  
+-   **Nome**: O nome do programa, até 50 caracteres. Essa entrada deve ser exclusiva dentro de um pacote. Esse nome é usado ao definir anúncios. Em computadores cliente, o nome do programa é mostrado na **executar programas anunciados** no painel de controle.  
 
--   **图标**（可选）：指定包含用于此程序的图标的文件。 如果指定，此图标将替换 Configuration Manager 控制台中的默认程序图标，并且在播发程序时该图标将显示在客户端计算机上。
+-   **Ícone** (opcional): especifique o arquivo que contém o ícone a ser usado para esse programa. Se for especificado, esse ícone substituirá o ícone padrão do programa no console do Configuration Manager e será exibido nos computadores cliente quando o programa for anunciado.
 
--   **备注**（可选）：关于程序的注释，最多 127 个字符。
+-   **Comentário** (opcional): um comentário sobre o programa, com até 127 caracteres.
 
--   **CommandLine**：指定程序的命令行，最多 127 个字符。 命令与包源文件夹有关。
+-   **CommandLine**: especifique a linha de comando para o programa, em até 127 caracteres. O comando é relativo à pasta de origem do pacote.
 
--   **StartIn**：指定程序的工作文件夹，最多 127 个字符。 此项可以是客户端计算机上的绝对路径，也可以是相对于包源文件夹的路径。
+-   **StartIn**: especifique a pasta de trabalho para o programa, em até 127 caracteres. Essa entrada pode ser um caminho absoluto no computador cliente ou um caminho relativo à pasta de origem do pacote.
 
--   **运行**：指定程序运行的程序模式。 可以指定 **Minimized**、 **Maximized**或 **Hidden**。 如果不包括此项，则程序将以普通模式运行。  
+-   **Executar**: especifique o modo de programa no qual o programa é executado. Você pode especificar **minimizado**, **maximizado**, ou **Hidden**. Se essa entrada não for incluída, o programa será executado no modo normal.  
 
--   **AfterRunning**：指定程序成功完成后会发生的任何特殊操作。 可用的选项有 **SMSRestart**、 **ProgramRestart**或 **SMSLogoff**。 如果不包括此项，程序将不会运行特殊操作。  
+-   **AfterRunning**: especifique uma ação especial que ocorre depois que o programa é concluído com êxito. Opções disponíveis são **SMSRestart**, **ProgramRestart**, ou **SMSLogoff**. Se essa entrada não for incluída, o programa não executará uma ação especial.  
 
--   **EstimatedDiskSpace**：指定在计算机上运行软件程序所需的磁盘空间量。 这可以指定为 **未知** （默认设置） 或作为大于或等于零的整数。 如果指定一个值，则还必须指定值的单位的。  
+-   **EstimatedDiskSpace**: especifique a quantidade de espaço em disco de que o programa de software precisa para ser executado no computador. Isso pode ser especificado como **desconhecido** (a configuração padrão) ou como um número inteiro maior ou igual a zero. Se um valor for especificado, as unidades para o valor também devem ser especificadas.  
 
-     例如：  
+     Exemplo:  
 
      `EstimatedDiskSpace=38MB`  
 
--   **EstimatedRunTime**：指定预计程序在客户端计算机上运行的持续时间（以分钟计）。 这可以指定为 **未知** （默认设置） 或作为一个大于零的整数。  
+-   **EstimatedRunTime**: especifique a duração estimada (em minutos) para o programa ser executado no computador cliente. Isso pode ser especificado como **desconhecido** (a configuração padrão) ou como um número inteiro maior que zero.  
 
-     例如：  
+     Exemplo:  
 
      `EstimatedRunTime=25`  
 
--   **SupportedClients**：指定将在其上运行该程序的处理器和操作系统。 指定的平台必须用逗号分隔。 如果不包括此项，则将为此程序禁用支持的平台检查。  
+-   **SupportedClients**: especifique os processadores e sistemas operacionais nos quais esse programa é executado. As plataformas especificadas devem ser separadas por vírgulas. Se essa entrada não for incluída, a verificação de plataforma com suporte será desabilitada para esse programa.  
 
--   **SupportedClientMinVersionX**、**SupportedClientMaxVersionX**：指定在 **SupportedClients** 项中指定的操作系统版本号起止范围。  
+-   **SupportedClientMinVersionX**, **SupportedClientMaxVersionX**: especifique o intervalo inicial e final para os números de versão dos sistemas operacionais especificados na entrada **SupportedClients**.  
 
-     例如：  
+     Exemplo:  
 
     ```  
     SupportedClients=Win NT (I386),Win NT (IA64),Win NT (x64)  
@@ -385,29 +385,29 @@ System Center Configuration Manager 继续支持在 Configuration Manager 2007 �
     Win NT (x64) MaxVersion4=6.00.9999.9999   
     ```  
 
--   **AdditionalProgramRequirements**（可选）：提供客户端计算机的任何其他信息或要求，最多 127 个字符。
+-   **AdditionalProgramRequirements** (opcional): forneça outras informações ou outros requisitos para os computadores cliente, em até 127 caracteres.
 
--   **CanRunWhen**：指定在客户端计算机上运行程序所需的用户状态。 可用的值有 **UserLoggedOn**、 **NoUserLoggedOn**或 **AnyUserStatus**。 默认值为 **UserLoggedOn**。  
+-   **CanRunWhen**: especifique o status do usuário de que o programa precisa para ser executado no computador cliente. Os valores disponíveis são **UserLoggedOn**, **NoUserLoggedOn**, ou **AnyUserStatus**. O valor padrão é **UserLoggedOn**.  
 
--   **UserInputRequired**：指定程序是否需要与用户交互。 可用的值是 **True** 或 **False**。 默认值为 **True**。 如果 **CanRunWhen** 未设置为 **UserLoggedOn** ，则此项将会设置为 **False**。  
+-   **UserInputRequired**: especifique se o programa exige a interação com o usuário. Os valores disponíveis são **True** ou **False**. O valor padrão é **True**. Essa entrada é definida como **False** se **CanRunWhen** não está definido como **UserLoggedOn**.  
 
--   **AdminRightsRequired**：指定程序是否需要计算机的管理凭据才能运行。 可用的值是 **True** 或 **False**。 默认值为 **False**。 如果 **CanRunWhen** 未设置为 **UserLoggedOn** ，则此项将会设置为 **True**。  
+-   **AdminRightsRequired**: especifique se o programa exige credenciais administrativas no computador para ser executado. Os valores disponíveis são **True** ou **False**. O valor padrão é **False**. Essa entrada é definida como **True** se **CanRunWhen** não está definido como **UserLoggedOn**.  
 
--   **UseInstallAccount**：指定程序在客户端计算机上运行时是否使用客户端软件安装帐户。 默认情况下，该值为 **False**。 如果将 **CanRunWhen** 设置为 **UserLoggedOn** ，则该值也为 **False**。  
+-   **UseInstallAccount**: especifique se o programa usa a Conta de Instalação do Software Cliente quando ele é executado nos computadores cliente. Por padrão, esse valor é **False**. Esse valor também está **False** se **CanRunWhen** é definido como **UserLoggedOn**.  
 
--   **DriveLetterConnection**：指定程序是否需要将驱动器号与位于分发点的包文件进行连接。 可以指定 **True** 或 **False**。 默认值为 **False**，这允许程序使用通用命名约定 (UNC) 连接。 当此值设置为 **True** 时，将使用下一个可用的驱动器号（以 Z: 开头并向后继续）。  
+-   **DriveLetterConnection**: especifique se o programa exige uma conexão de letra da unidade para os arquivos de pacote localizados no ponto de distribuição. Você pode especificar **True** ou **False**. O valor padrão é **False**, o que habilita o programa usar uma conexão UNC. Quando esse valor for definido como **True**, a próxima letra da unidade disponível será usada (começando com Z: e continuando com as anteriores).  
 
--   **SpecifyDrive**（可选）：指定程序连接到分发点上的包文件所需的驱动器号。 此规范强制指定的驱动器号用于客户端连接到分发点。
+-   **SpecifyDrive** (opcional): especifique uma letra da unidade de que o programa precisa para se conectar aos arquivos de pacote no ponto de distribuição. Essa especificação força o uso de letra de unidade especificada para conexões de cliente para pontos de distribuição.
 
--   **ReconnectDriveAtLogon**：指定用户登录时，计算机是否重新连接到分发点。 可用的值是 **True** 或 **False**。 默认值为 **False**。  
+-   **ReconnectDriveAtLogon**: especifique se o computador é reconectado ao ponto de distribuição quando o usuário se conecta. Os valores disponíveis são **True** ou **False**. O valor padrão é **False**.  
 
--   **DependentProgram**：指定此包中的程序必须在当前程序之前运行。 此项使用格式 **DependentProgram**=<**ProgramName>**，其中 **<ProgramName\>** 是包定义文件中此程序的 **Name** 项。 如果没有从属程序，则将此项留空。  
+-   **DependentProgram**: especifique um programa nesse pacote que deve ser executado antes do programa atual. Esta entrada usa o formato **DependentProgram**=<**NomeDoPrograma>**, em que **<NomeDoPrograma>\>** é a entrada do **Nome** do programa no arquivo de definição de pacote. Se não houver nenhum programa dependente, deixe essa entrada vazia.  
 
-     例如：  
+     Exemplo:  
 
-     DependentProgram = Admin  
+     DependentProgram = administrador  
     DependentProgram =  
 
--   **分配**：指定如何将程序分配给用户。 此值可以是：**FirstUser**（仅登录到客户端的第一个用户运行程序）或 **EveryUser**（登录到客户端的每个用户都运行程序）。 如果 **CanRunWhen** 未设置为 **UserLoggedOn**，则此项将会设置为 **FirstUser**。  
+-   **Atribuição**: especifique como o programa é atribuído aos usuários. Esse valor pode ser: **FirstUser** (somente o primeiro usuário que se conecta ao cliente executa o programa) ou **EveryUser** (todos os usuários que se conectam executam o programa). Quando **CanRunWhen** não está definido como **UserLoggedOn**, essa entrada é definida como **FirstUser**.  
 
--   **已禁用**：指定是否可将该程序播发给客户端。 可用的值是 **True** 或 **False**。 默认值为 **False**。  
+-   **Desabilitado**: especifique se esse programa pode ser anunciado para os clientes. Os valores disponíveis são **True** ou **False**. O valor padrão é **False**.  

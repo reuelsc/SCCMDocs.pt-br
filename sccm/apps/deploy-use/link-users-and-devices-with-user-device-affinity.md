@@ -1,6 +1,6 @@
 ---
-title: "将用户和设备与用户设备相关性相链接 | Microsoft Docs"
-description: "将用户和设备与用户设备相关性相链接，并自动将应用部署到与用户关联的所有设备。"
+title: "Vincular usuários e dispositivos com a afinidade de dispositivo de usuário | Microsoft Docs"
+description: "Vincule usuários e dispositivos à afinidade de dispositivo de usuário e implante aplicativos automaticamente para todos os dispositivos associados a um usuário."
 ms.custom: na
 ms.date: 10/06/2016
 ms.prod: configuration-manager
@@ -18,122 +18,122 @@ manager: angrobe
 ms.openlocfilehash: 4e8e677851ad9ae7d027ab685e842a8ff5e35573
 ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
 ms.translationtype: HT
-ms.contentlocale: zh-CN
+ms.contentlocale: pt-BR
 ms.lasthandoff: 08/07/2017
 ---
-# <a name="link-users-and-devices-with-user-device-affinity-in-system-center-configuration-manager"></a>在 System Center Configuration Manager 中将用户和设备与用户设备相关性相链接
+# <a name="link-users-and-devices-with-user-device-affinity-in-system-center-configuration-manager"></a>Vincular usuários e dispositivos com a afinidade de dispositivo de usuário no System Center Configuration Manager
 
-*适用范围：System Center Configuration Manager (Current Branch)*
+*Aplica-se a: System Center Configuration Manager (Branch Atual)*
 
-System Center Configuration Manager (Configuration Manager) 中的用户设备相关性将一个用户与一个或多个设备关联。 这样，在将应用程序部署到某用户时无需知道该用户的设备名称。 你将应用程序部署到该用户，而不是部署到该用户的每个设备。 之后，用户设备相关性会自动确保在所有与该用户关联的设备上安装应用程序。  
+A afinidade de dispositivo de usuário no System Center Configuration Manager (Configuration Manager) associa um usuário a um ou mais dispositivos. Isso pode eliminar a necessidade de saber os nomes dos dispositivos de um usuário a fim de implantar um aplicativo nesse usuário. Em vez de implantar o aplicativo em todos os dispositivos do usuário, implante o aplicativo no usuário. Em seguida, a afinidade de dispositivo de usuário garante automaticamente que o aplicativo seja instalado em todos os dispositivos que estão associados a esse usuário.  
 
- 可以定义主要设备，它们通常是用户每天在工作中使用的设备。 当在用户和设备之间创建相关性时，你会获得更多的软件部署选项。 例如，某用户需要 Microsoft Visio，那么，你可以使用 Windows Installer 部署将它安装在该用户的主要设备上。 但是，在不是主要设备的设备上，可能要将 Visio 部署为虚拟应用程序。 在用户未登录时，你还可以使用用户设备相关性将软件预先部署在用户的设备上，以便在用户登录时，应用程序已安装好并且可以运行了。  
+ É possível definir dispositivos primários que normalmente são os dispositivos que os usuários usam diariamente para realizar seu trabalho. Ao criar uma afinidade entre um usuário e um dispositivo, você obtém mais opções de implantação de aplicativo. Por exemplo, se um usuário precisar do Microsoft Visio, será possível instalá-lo no dispositivo primário do usuário usando uma implantação do Windows Installer. No entanto, em um dispositivo que não é o primário, talvez o Visio seja implantado como um aplicativo virtual. Também é possível usar a afinidade de dispositivo de usuário para pré-implantar o software em um dispositivo do usuário quando o usuário não estiver conectado. Quando o usuário se conectar, o aplicativo já estará instalado e pronto para ser executado.  
 
- 必须管理计算机的用户设备相关性信息。 Configuration Manager 会自动为它注册的移动设备管理用户设备相关性。  
+ Você deve gerenciar as informações de afinidade de dispositivo de usuário nos computadores. O Configuration Manager gerencia automaticamente as afinidades de dispositivo de usuário para os dispositivos móveis que ele registra.  
 
-## <a name="manually-set-up-user-device-affinity"></a>手动设置用户设备相关性  
+## <a name="manually-set-up-user-device-affinity"></a>Configurar a afinidade de dispositivo de usuário manualmente  
 
-1.  在 Configuration Manager 控制台中，选择“资产和符合性” > “设备”。  
+1.  No console do Configuration Manager, escolha **Ativos e Conformidade** > **Dispositivos**.  
 
-3.  从列表中选择一个设备。 然后，在“主页”选项卡的“设备”组中选择“编辑主要用户”。  
+3.  Na lista, selecione um dispositivo. Em seguida, na guia **Início**, no grupo **Dispositivo**, escolha **Editar Usuários Primários**.  
 
-4.  在“编辑主要用户”对话框中，搜索并选择要添加为所选设备的主要用户的用户。 选择“添加”。  
-
-    > [!NOTE]  
-    > “主要用户”列表显示已成为此设备的主要用户的用户，以及使用了哪种方法来指定每项用户 - 设备关系。  
-
-## <a name="set-up-primary-devices-for-a-user"></a>设置用户的主要设备  
-
-1.  在 Configuration Manager 控制台中，选择“资产和符合性” > “用户”。  
-
-3.  从列表中选择一个用户。 然后，在“设备”选项卡中选择“编辑主要设备”。  
-
-4.  在“编辑主要设备”对话框中，搜索并选择要添加为所选用户的主要设备的设备。 选择“添加”。  
+4.  Na caixa de diálogo **Editar Usuários Primários**, pesquise e, em seguida, selecione os usuários a serem adicionados como usuários primários para o dispositivo selecionado. Escolha **Adicionar**.  
 
     > [!NOTE]  
-    > “主要设备”列表显示已设置为此用户的主要设备的设备，以及使用了哪种方法来指定每项用户-设备关系。  
+    > A lista **Usuários Primários** mostra os usuários que já são usuários primários desse dispositivo e o método pelo qual a relação usuário-dispositivo foi atribuída.  
 
-## <a name="automatically-create-user-device-affinities-windows-pcs-only"></a>自动创建用户设备相关性（仅针对 Windows PC）  
- Configuration Manager 从 Windows 事件日志中读取有关用户登录的数据。 若要自动创建用户设备相关性，必须在客户端计算机上启用本地安全策略中的这两个选项，以便将登录事件存储在 Windows 事件日志中：  
+## <a name="set-up-primary-devices-for-a-user"></a>Configurar dispositivos primários para um usuário  
 
--   **审核帐户登录事件**  
--   **审核登录事件**  
+1.  No console do Configuration Manager, escolha **Ativos e Conformidade** > **Usuários**.  
 
- 要配置这些设置，请使用 Windows 组策略。  
+3.  Na lista, selecione um usuário. Em seguida, na guia **Dispositivo**, escolha **Editar Dispositivos Primários**.  
+
+4.  Na caixa de diálogo **Editar Dispositivos Primários**, pesquise e selecione os dispositivos a serem adicionados como dispositivos primários para o usuário selecionado. Escolha **Adicionar**.  
+
+    > [!NOTE]  
+    > A lista **Dispositivos Primários** exibe os dispositivos que já estão configurados como dispositivos primários desse usuário e o método pelo qual a relação usuário-dispositivo foi atribuída.  
+
+## <a name="automatically-create-user-device-affinities-windows-pcs-only"></a>Criar afinidades de dispositivo de usuário automaticamente (somente PCs com Windows)  
+ O Configuration Manager lê os dados sobre logons do usuário no log de Eventos do Windows. Para criar afinidades de dispositivo de usuário automaticamente, é necessário ativar estas duas opções na política de segurança local nos computadores cliente para armazenar os eventos de logon no log de Eventos do Windows:  
+
+-   **Eventos de logon de conta de auditoria**  
+-   **Eventos de logon de auditoria**  
+
+ Para definir essas configurações, use a Política de Grupo do Windows.  
 
 > [!IMPORTANT]  
-> 如果错误导致 Windows 事件日志生成大量条目，则可能将创建新的事件日志。 如果出现这种情况，现有的登录事件可能不再可供 Configuration Manager 使用。  
+> Se um erro fizer com que o log de eventos do Windows gere um número elevado de entradas, um novo log de eventos poderá ser criado. Se isso ocorrer, os eventos do logon existentes poderão ficar indisponíveis para o Configuration Manager.  
 >   
-> 在 Windows XP 中打开“审核帐户登录事件”和“审核登录事件”设置时请小心。 默认情况下，保留策略为 7 天，这些事件很有可能将填满安全事件日志。 如果事件日志已满，标准用户将无法登录。 为了避免该问题，对于安全事件日志，请将策略“保留方法”值设置为“按需要覆盖事件”。 为了使用户设备相关性有足够的数据，还要将“安全事件日志大小上限”策略设置为合理的值（例如 5-20 MB）。  
+> Tenha cuidado ao ativar as configurações **Eventos de logon de conta de auditoria** e **Eventos de logon de auditoria** no Windows XP. Por padrão, a política de retenção é de 7 dias e é provável que esses eventos preencherão o log de eventos de segurança. Os usuários padrão não poderão fazer logon se o log de eventos estiver cheio. Para evitar isso, para o log de eventos de segurança, defina o valor do **Método de Retenção** da política como **Substituir eventos quando necessário**. Para ter dados suficientes para a afinidade de dispositivo de usuário, defina também o tamanho do log de eventos de segurança máxima da política com um valor razoável, como 5-20 MB.  
 
-### <a name="set-up-the-site-to-automatically-create-user-device-affinities"></a>将站点设置为自动创建用户设备相关性  
+### <a name="set-up-the-site-to-automatically-create-user-device-affinities"></a>Configurar o site para criar afinidades de dispositivo de usuário automaticamente  
 
-1.  在 Configuration Manager 控制台中，选择“管理” > “客户端设置”。  
+1.  No console do Configuration Manager, escolha **Administração** > **Configurações do Cliente**.  
 
-2.  若要修改默认的客户端设置，请选择“默认客户端设置”，然后，在“主页”选项卡的“属性”组中选择“属性”。 若要创建自定义客户端代理设置，请选择“客户端设置”节点，然后，在“主页”选项卡的“创建”组中选择“创建自定义客户端设备设置”。  
+2.  Para modificar as configurações padrão do cliente, selecione **Configurações do Cliente Padrão** e, na guia **Início**, no grupo **Propriedades**, escolha **Propriedades**. Para criar configurações personalizadas do agente cliente, selecione o nó **Configurações do Cliente** e, na guia **Início**, no grupo **Criar**, escolha **Criar Configurações Personalizadas do Dispositivo Cliente**.  
 
     > [!NOTE]  
-    > 如果修改默认的客户端设置，则它们将部署到层次结构中的所有计算机。 有关配置客户端设置的详细信息，请参阅[如何在 System Center Configuration Manager 中配置客户端设置](../../core/clients/deploy/configure-client-settings.md)。  
+    > Se você modificar as configurações do cliente padrão, elas serão implantadas em todos os computadores na hierarquia. Para obter mais informações sobre configurações de cliente, consulte [Como definir as configurações do cliente no System Center Configuration Manager](../../core/clients/deploy/configure-client-settings.md).  
 
-3.  对于“用户和设备相关性”，进行如下设置：  
+3.  Para **Afinidade de Usuário e Dispositivo**, defina o seguinte:  
 
-    -   **用户设备相关性阈值(分钟)**。 设置在创建用户设备相关性之前使用设备的分钟数。  
+    -   **Limite de afinidade de dispositivo de usuário (minutos)**. Defina o número de minutos de uso do dispositivo antes da criação da afinidade de dispositivo de usuário.  
 
-    -   **用户设备相关性阈值(天)**。 设置基于使用情况的相关性阈值的测量天数。  
+    -   **Limite de afinidade de dispositivo de usuário (dias)**. Defina o número de dias durante os quais o limite de afinidade baseado em uso é medido.  
 
-    -   **利用使用情况数据自动配置用户设备相关性**。 要让站点自动创建用户设备相关性，请从下拉列表中选择 **True**。 如果选择 **False**，则必须批准所有的用户设备相关性分配。  
+    -   **Configurar automaticamente a afinidade de dispositivo de usuário por meio de dados de uso**. Para permitir que o site crie afinidades de dispositivo de usuário automaticamente, na lista suspensa, selecione **Verdadeiro**. Se você selecionar **Falso**, será necessário aprovar todas as atribuições de afinidade de dispositivo de usuário.  
 
     > [!TIP]  
-    > **例如：**如果将“用户设备相关性阈值(分钟)”指定为 **60** 分钟，并将“用户设备相关性阈值(天)”指定为 **5** 天，那么，用户必须在 5 天内使用设备至少 60 分钟，才能自动创建用户设备相关性。  
+    > **Exemplo:** se você definir **Limite de afinidade de dispositivo de usuário (minutos)** como **60** minutos e **Limite de afinidade de dispositivo de usuário (dias)** como **5** dias, o usuário deverá usar o dispositivo durante, pelo menos, 60 minutos em um período de 5 dias para criar uma afinidade de dispositivo de usuário automaticamente.  
 
-在自动创建用户设备相关性之后，Configuration Manager 会继续监视用户设备相关性阈值。 如果用户使用设备的时间降到所设置的阈值以下，则将删除用户设备相关性。 请将“用户设备相关性阈值(天)”的值设置为至少 **7** 天，以避免出现这种情况：在用户未登录时（例如在周末时），可能会丢失自动配置的用户设备相关性。  
+Feita a criação de afinidade de dispositivo de usuário automática, o Configuration Manager continua a monitorar os limites de afinidade de dispositivo de usuário. Se a atividade do usuário para o dispositivo estiver abaixo dos limites definidos, a afinidade de dispositivo de usuário será removida. Defina o **Limite de afinidade de dispositivo de usuário (dias)** com o valor mínimo de **7** dias, para evitar situações em que a afinidade de dispositivo de usuário configurada automaticamente possa ser perdida enquanto o usuário não estiver conectado, por exemplo, durante o fim de semana.  
 
-## <a name="import-user-device-affinities-from-a-file"></a>从文件导入用户设备相关性  
- 若要一次创建许多关系，可以导入具有多个用户设备相关性详细信息的文件。 对本过程而言，主体设备必须已被发现，而且作为 Configuration Manager 数据库中的资源存在，否则本过程将会失败。  
+## <a name="import-user-device-affinities-from-a-file"></a>Importar afinidades de dispositivo de usuário de um arquivo  
+ Para criar várias relações ao mesmo tempo, é possível importar um arquivo que contém os detalhes de várias afinidades de dispositivo de usuário. Para esse procedimento, é necessário que os dispositivos da entidade tenham sido descobertos e existam como recursos no banco de dados do Configuration Manager; caso contrário, o procedimento falhará.  
 
-1.  在 Configuration Manager 控制台中，选择“资产和符合性” > “用户”或“设备”。  
+1.  No console do Configuration Manager, escolha **Ativos e Conformidade** > **Usuários** ou **Dispositivos**.  
 
-2.  在“主页”选项卡的“创建”组中，选择“导入用户设备相关性”。  
+2.  Na guia **Início**, no grupo **Criar**, escolha **Importar Afinidade de Dispositivo de Usuário**.  
 
-3.  在“导入用户设备相关性向导”的“选择映射”页上，设置下列信息：  
+3.  No Assistente de Importação de Afinidade de Dispositivo de Usuário, na página **Escolher Mapeamento**, defina estas informações:  
 
-    -   **文件名**。 指定逗号分隔值 (CSV) 文件，该文件包含要创建用户设备相关性的用户和设备的列表。 在该文件中，每个用户和设备对都必须位于各自的行中，其值由逗号分隔。 使用格式：<*Domain*>&#92;<*user name*>,<*device NetBIOS name*>。  
+    -   **Nome do arquivo**. Especifique um arquivo CSV (valores separados por vírgula) que contém uma lista de usuários e dispositivos entre os quais você deseja criar uma afinidade. Nesse arquivo, cada par dispositivo/usuário deve estar em sua própria linha, com valores separados por uma vírgula. Use este formato: <*Domínio*>&#92;<*nome de usuário*>,<*nome NetBIOS do dispositivo*>.  
 
-    -   **此文件有供参考的列标题**。 如果 .csv 文件具有顶行标题，请选择此选项，在导入过程中将忽略标题行。  
+    -   **Esse arquivo tem cabeçalhos de coluna para fins de referência**. Se o arquivo .csv tiver um cabeçalho de linha superior, selecione essa opção e a linha de cabeçalho será ignorada durante a importação.  
 
-4.  如果导入的文件在每行上包含两个以上的项目，则可以使用“列”和“分配”来指定哪些列代表用户和设备，以及在导入过程中要忽略哪些列。  
+4.  Se o arquivo que está sendo importado tiver mais de dois itens em cada linha, você poderá usar **Coluna** e **Atribuir** para especificar quais colunas representam os usuários e dispositivos e quais colunas devem ser ignoradas durante a importação.  
 
-5.  选择“下一步”，然后完成“导入用户设备相关性向导”。  
+5.  Escolha **Avançar** e conclua o Assistente de Importação de Afinidade de Dispositivo de Usuário.  
 
-## <a name="let-users-create-their-own-device-affinities"></a>让用户创建自己的设备相关性  
- 通过后续过程，你可以设置来让用户可在软件中心应用中创建自己的用户设备相关性。  
+## <a name="let-users-create-their-own-device-affinities"></a>Permitir que os usuários criem suas próprias afinidades de dispositivo  
+ Com os procedimentos a seguir, é possível configurar um usuário para criar sua própria afinidade de dispositivo de usuário no aplicativo Centro de Software.  
 
-### <a name="set-up-the-site-to-allow-user-created-user-device-affinity-requests"></a>将站点设置为允许用户创建的用户设备相关性请求  
+### <a name="set-up-the-site-to-allow-user-created-user-device-affinity-requests"></a>Configurar o site para permitir solicitações de afinidade de dispositivo de usuário criadas pelo usuário  
 
-1.  在 Configuration Manager 控制台中，选择“管理” > “客户端设置”。  
+1.  No console do Configuration Manager, escolha **Administração** > **Configurações do Cliente**.  
 
-2.  若要修改默认的客户端设置，请选择“默认客户端设置”，然后，在“主页”选项卡的“属性”组中选择“属性”。 若要创建自定义客户端代理设置，请选择“客户端设置”节点，然后，在“主页”选项卡的“创建”组中选择“创建自定义客户端用户设置”。  
+2.  Para modificar as configurações padrão do cliente, selecione **Configurações do Cliente Padrão** e, na guia **Início**, no grupo **Propriedades**, escolha **Propriedades**. Para criar configurações personalizadas do agente cliente, selecione o nó **Configurações do Cliente** e, na guia **Início**, no grupo **Criar**, escolha **Criar Configurações Personalizadas do Usuário Cliente**.  
 
     > [!NOTE]  
-    > 如果修改默认的客户端设置，则它们将部署到层次结构中的所有计算机。 有关配置客户端设置的详细信息，请参阅[配置客户端设置](../../core/clients/deploy/configure-client-settings.md)。  
+    > Se você modificar as configurações do cliente padrão, elas serão implantadas em todos os computadores na hierarquia. Para obter mais informações sobre como definir configurações do cliente, veja [Definir configurações do cliente](../../core/clients/deploy/configure-client-settings.md).  
 
-3.  选择客户端设置“用户和设备相关性”  ，然后在“允许用户定义其主要设备”  下拉列表中，选择“真” 。  
+3.  Selecione a configuração do cliente **Afinidade de Dispositivo e de Usuário** e, na lista suspensa **Permitir que o usuário defina seus dispositivos primários** , selecione **True**.  
 
-### <a name="set-up-a-user-device-affinity"></a>设置用户设备相关性  
+### <a name="set-up-a-user-device-affinity"></a>Configurar uma afinidade de dispositivo de usuário  
 
-1.  在“应用程序目录”中，选择“我的系统”。  
+1.  No Catálogo de Aplicativos, escolha **Meus Sistemas**.  
 
-2.  选择“我经常使用此计算机工作”选项。  
+2.  Selecione a opção **Uso regularmente este computador para trabalho**.  
 
-## <a name="manage-user-device-affinity-requests-from-users"></a>管理来自用户的用户设备相关性请求  
- 在将客户端设置“利用使用情况数据自动配置用户设备相关性”  设为“假” 时，你必须批准所有的用户设备相关性分配。  
+## <a name="manage-user-device-affinity-requests-from-users"></a>Gerenciar solicitações de afinidade de dispositivo de usuário dos usuários  
+ Quando a configuração do cliente **Configurar automaticamente a afinidade de dispositivo de usuário por meio de dados de uso** está definida como **False**, é necessário aprovar todas as atribuições de afinidade de dispositivo de usuário.  
 
-### <a name="approve-or-reject-a-user-device-affinity-request"></a>批准或拒绝用户设备相关性请求  
+### <a name="approve-or-reject-a-user-device-affinity-request"></a>Aprovar ou rejeitar uma atribuição de afinidade de dispositivo de usuário  
 
-1.  在 Configuration Manager 控制台中，选择“资产和符合性”。  
+1.  No console do Configuration Manager, escolha **Ativos e Conformidade**.  
 
-2.  在“资产和符合性”  工作区中，选择要为其管理相关性请求的用户或设备集合。  
+2.  No espaço de trabalho **Ativos e Conformidade** , selecione a coleção de usuário ou dispositivo para a qual você deseja gerenciar as solicitações de afinidade.  
 
-3.  在“主页”选项卡的“集合”组中，选择“管理相关性请求”。  
+3.  Na guia **Início**, no grupo **Coleção**, escolha **Gerenciar Solicitações de Afinidade**.  
 
-4.  在“管理用户设备相关性请求”对话框中，选择一个相关性请求，然后选择“批准”或“拒绝”。  
+4.  Na caixa de diálogo **Gerenciar Solicitações de Afinidade de Dispositivo de Usuário**, selecione uma solicitação de afinidade e escolha **Aprovar** ou **Rejeitar**.  

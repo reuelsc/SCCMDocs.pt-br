@@ -1,6 +1,6 @@
 ---
-title: "配置 Endpoint Protection | Microsoft Docs"
-description: "了解如何在 System Center Configuration Manager 中使用 Endpoint protection 选择和配置方法以便使反恶意软件定义在客户端计算机上保持最新状态。"
+title: Configurar o Endpoint Protection | Microsoft Docs
+description: "Saiba como selecionar e configurar os métodos com o Endpoint Protection no System Center Configuration Manager para manter as definições antimalware atualizadas nos computadores cliente."
 ms.custom: na
 ms.date: 02/14/2017
 ms.prod: configuration-manager
@@ -17,55 +17,55 @@ manager: angrobe
 ms.openlocfilehash: b5da7900a4f8e2f330c4dcb2cac00b45099bd909
 ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
 ms.translationtype: HT
-ms.contentlocale: zh-CN
+ms.contentlocale: pt-BR
 ms.lasthandoff: 08/07/2017
 ---
-#  <a name="configure-definition-updates-for-endpoint-protection"></a>为 Endpoint Protection 配置定义更新  
+#  <a name="configure-definition-updates-for-endpoint-protection"></a>Configurar atualizações de definição para o Endpoint Protection  
 
-*适用范围：System Center Configuration Manager (Current Branch)*
+*Aplica-se a: System Center Configuration Manager (Branch Atual)*
 
- 通过 System Center Configuration Manager 中的 Endpoint Protection，你可以使用若干可用方法中的任何方法使反恶意软件定义在层次结构中的客户端计算机上保持最新。 本主题中的信息可以帮助你选择和配置这些方法。
+ Com o Endpoint Protection no System Center Configuration Manager, você pode usar qualquer um dos vários métodos disponíveis para manter as definições antimalware atualizadas nos computadores cliente em sua hierarquia. As informações neste tópico podem ajudá-lo a selecionar e configurar esses métodos.
 
- 若要更新反恶意软件定义，可以使用以下方法中的一种或多种：
+ Para atualizar as definições antimalware, você pode usar um ou mais dos seguintes métodos:
 
--   [从 Configuration Manager 中分发的更新](endpoint-definitions-configmgr.md) - 此方法使用 Configuration Manager 软件更新将定义和引擎更新传送到层次结构中的计算机。
+-   [Atualizações distribuídas do Configuration Manager](endpoint-definitions-configmgr.md) – Esse método usa as atualizações de software do Configuration Manager para fornecer atualizações de mecanismos e definições aos computadores na sua hierarquia.
 
--   [从 Windows Server Update Services (WSUS) 分发的更新](endpoint-definitions-wsus.md) - 此方法使用 WSUS 基础结构将定义和引擎更新传送到计算机。
+-   [Atualizações distribuídas do WSUS (Windows Server Update Services)](endpoint-definitions-wsus.md) – Esse método usa sua infraestrutura do WSUS para fornecer atualizações de definições e de mecanismos aos computadores.
 
--   [从 Microsoft 更新分发的更新](endpoint-definitions-microsoft-updates.md) - 此方法允许计算机直接连接到 Microsoft 更新以下载定义和引擎更新。 对于不经常连接到企业网络的计算机，此方法会很有用。
+-   [Atualizações distribuídas do Microsoft Update](endpoint-definitions-microsoft-updates.md) – Esse método permite que os computadores se conectem diretamente ao Microsoft Update para baixar atualizações de definições e de mecanismos. Esse método pode ser útil para computadores que não estão frequentemente conectados à rede comercial.
 
--   [从 Microsoft 恶意软件防护中心分发的更新](endpoint-definitions-protection-center.md) - 此方法将从 Microsoft 恶意软件防护中心下载定义更新。
+-   [Atualizações distribuídas por meio do Centro de Proteção contra Malware da Microsoft](endpoint-definitions-protection-center.md) – Esse método baixará atualizações de definições por meio do Centro de Proteção contra Malware da Microsoft.
 
--   [来自 UNC 文件共享的更新](endpoint-definitions-network.md) - 使用此方法，你可以将最新的定义和引擎更新保存到网络共享上。 然后客户端便可访问网络以安装更新。
+-   [Atualizações de compartilhamentos de arquivo UNC](endpoint-definitions-network.md) – Com esse método, você pode salvar as atualizações de definições e de mecanismos mais recentes em um compartilhamento na rede. Os clientes podem acessar a rede para instalar as atualizações.
 
- 你可以配置多个定义更新源，并控制对其进行评估和应用的顺序。 将在创建反恶意软件策略时，在“配置定义更新源”  对话框中完成此操作。
+ Você pode configurar várias origens de atualização de definição e controlar a ordem em que elas são avaliadas e aplicadas. Isso é feito na caixa de diálogo **Configurar Origens de Atualização de Definição** quando você cria uma política antimalware.
 
 > [!IMPORTANT]
->  对于 Windows 10 电脑，必须配置 Endpoint Protection 以更新 Windows Defender 的恶意软件定义。
+>  Para computadores Windows 10, você deve configurar o Endpoint Protection para atualizar as definições de malware para o Windows Defender.
 
-## <a name="how-to-configure-definition-update-sources"></a>如何配置定义更新源
- 使用以下过程配置要用于每个反恶意软件策略的定义更新源。
+## <a name="how-to-configure-definition-update-sources"></a>Como configurar origens de atualização de definição
+ Use o procedimento a seguir para configurar origens de atualização de definição a serem usadas para cada política antimalware.
 
-1.  在 Configuration Manager 控制台中，单击“资产和符合性” 。
+1.  No console do Configuration Manager, clique em **Ativos e Conformidade**.
 
-2.  在“资产和符合性”  工作区中，展开“Endpoint Protection” ，然后单击“反恶意软件策略” 。
+2.  No espaço de trabalho **Ativos e Conformidade** , expanda **Endpoint Protection**e clique em **Políticas Antimalware**.
 
-3.  打开“默认反恶意软件策略”  的属性页，或创建新的反恶意软件策略。 有关如何创建反恶意软件策略的详细信息，请参阅[如何在 System Center Configuration Manager 中为 Endpoint Protection 创建和部署反恶意软件策略](endpoint-antimalware-policies.md)。
+3.  Abra a página de propriedades da **Política Antimalware Padrão** ou crie uma nova política antimalware. Para obter mais informações sobre como criar políticas antimalware, consulte [Como criar e implantar políticas antimalware para o Endpoint Protection no System Center Configuration Manager](endpoint-antimalware-policies.md).
 
-4.  在反恶意软件属性对话框的“定义更新”  部分中，单击“设置源” 。
+4.  Na seção **Atualizações de definições** da caixa de diálogo Propriedades antimalware, clique em **Definir Origem**.
 
-5.  在“配置定义更新源”  对话框中，选择要用于定义更新的源。 可以单击“向上”  或“向下”  来修改使用这些源的顺序。
+5.  Na caixa de diálogo **Configurar Origens de Atualização de Definição** , selecione as origens a serem usadas para as atualizações de definições. Você pode clicar em **Para Cima** ou **Para Baixo** para modificar a ordem na qual as origens são usadas.
 
-6.  单击“确定”  以关闭“配置定义更新源”  对话框。
+6.  Clique em **OK** para fechar a caixa de diálogo **Configurar Origens de Atualização de Definição** .
 
-## <a name="configure-endpoint-protection-definitions"></a>配置 Endpoint Protection 定义
+## <a name="configure-endpoint-protection-definitions"></a>Configurar as definições do Endpoint Protection
 
--   [从 Configuration Manager 中分发的更新](endpoint-definitions-configmgr.md) - 此方法使用 Configuration Manager 软件更新将定义和引擎更新传送到层次结构中的计算机。
+-   [Atualizações distribuídas do Configuration Manager](endpoint-definitions-configmgr.md) – Esse método usa as atualizações de software do Configuration Manager para fornecer atualizações de mecanismos e definições aos computadores na sua hierarquia.
 
--   [从 Windows Server Update Services (WSUS) 分发的更新](endpoint-definitions-wsus.md) - 此方法使用 WSUS 基础结构将定义和引擎更新传送到计算机。
+-   [Atualizações distribuídas do WSUS (Windows Server Update Services)](endpoint-definitions-wsus.md) – Esse método usa sua infraestrutura do WSUS para fornecer atualizações de definições e de mecanismos aos computadores.
 
--   [从 Microsoft 更新分发的更新](endpoint-definitions-microsoft-updates.md) - 此方法允许计算机直接连接到 Microsoft 更新以下载定义和引擎更新。 对于不经常连接到企业网络的计算机，此方法会很有用。
+-   [Atualizações distribuídas do Microsoft Update](endpoint-definitions-microsoft-updates.md) – Esse método permite que os computadores se conectem diretamente ao Microsoft Update para baixar atualizações de definições e de mecanismos. Esse método pode ser útil para computadores que não estão frequentemente conectados à rede comercial.
 
--   从 Microsoft 恶意软件防护中心分发的更新 - 此方法将从 Microsoft 恶意软件防护中心下载定义更新。
+-   Atualizações distribuídas por meio do Centro de Proteção contra Malware da Microsoft – Esse método baixará atualizações de definições por meio do Centro de Proteção contra Malware da Microsoft.
 
--   [来自 UNC 文件共享的更新](endpoint-definitions-network.md) - 使用此方法，你可以将最新的定义和引擎更新保存到网络共享上。 然后客户端便可访问网络以安装更新。
+-   [Atualizações de compartilhamentos de arquivo UNC](endpoint-definitions-network.md) – Com esse método, você pode salvar as atualizações de definições e de mecanismos mais recentes em um compartilhamento na rede. Os clientes podem acessar a rede para instalar as atualizações.

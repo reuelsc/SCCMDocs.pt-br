@@ -1,6 +1,6 @@
 ---
-title: "内容库 | Microsoft Docs"
-description: "了解 System Center Configuration Manager 用于减少已分发内容总大小的内容库的信息。"
+title: "A biblioteca de conteúdo | Microsoft Docs"
+description: "Saiba mais sobre a biblioteca de conteúdo que o System Center Configuration Manager usa para reduzir o tamanho geral do conteúdo distribuído."
 ms.custom: na
 ms.date: 2/14/2017
 ms.reviewer: na
@@ -17,50 +17,50 @@ manager: angrobe
 ms.openlocfilehash: 0fa9f431c00476d71b2b08f92f914d76636d1a27
 ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
 ms.translationtype: HT
-ms.contentlocale: zh-CN
+ms.contentlocale: pt-BR
 ms.lasthandoff: 08/07/2017
 ---
-# <a name="the-content-library-in-system-center-configuration-manager"></a>System Center Configuration Manager 中的内容库
+# <a name="the-content-library-in-system-center-configuration-manager"></a>A biblioteca de conteúdo no System Center Configuration Manager
 
-*适用范围：System Center Configuration Manager (Current Branch)*
+*Aplica-se a: System Center Configuration Manager (Branch Atual)*
 
-内容库是内容的单实例存储，System Center Configuration Manager 使用它来减少分发的内容的组合正文的总体大小。 内容库存储软件更新、应用程序、操作系统部署等的所有内容文件。
+A biblioteca de conteúdo é um single instance store de conteúdo que o System Center Configuration Manager usa para reduzir o tamanho geral do corpo de conteúdo combinado que você distribui. A biblioteca de conteúdo armazena todos os arquivos de conteúdo para atualizações de software, aplicativos, implantações de sistema operacional, entre outros.
 
- - 会在每个**站点服务器**和每个**分发点**上自动创建并维护内容库的副本。
+ - Uma cópia da biblioteca de conteúdo é automaticamente criada e mantida em cada **servidor do site** e em cada **ponto de distribuição**.
 
- - 在 Configuration Manager 将内容文件下载到站点服务器或将文件复制到分发点之前，Configuration Manager 会验证每个内容文件是否已在内容库中。
- - 如果有内容文件，则 Configuration Manager 不会复制该文件，而是会将现有内容文件与应用程序或包关联。
+ - Antes de o Configuration Manager baixar arquivos de conteúdo para o servidor do site ou copiar os arquivos para pontos de distribuição, ele verifica se cada arquivo de conteúdo já está na biblioteca de conteúdo.
+ - Se o arquivo de conteúdo estiver disponível, o Configuration Manager não o copiará. Em vez disso, ele associará o arquivo de conteúdo existente ao aplicativo ou pacote.
 
-在安装分发点的计算机上，你可以配置下列内容：
+Em computadores em que você instala um ponto de distribuição, é possível configurar:
 
-- 希望在其上创建内容库的一个或多个磁盘驱动器。
-- 使用的每个驱动器的优先级。
+- Uma ou mais unidades de disco nas quais você deseja criar a biblioteca de conteúdo.
+- Uma prioridade para cada unidade que você usa.
 
-Configuration Manager 复制内容文件时，会将文件复制到优先级最高的驱动器中，直到该驱动器的可用空间小于指定的最小可用空间。
-- 在分发点安装过程中，你可以配置驱动器设置。
-- 安装完成后，无法在分发点属性中配置驱动器设置。
+Quando o Configuration Manager copia os arquivos de conteúdo, ele os copia para a unidade com a prioridade mais alta até que essa unidade contenha menos de uma quantidade mínima de espaço livre especificado.
+- Você pode definir as configurações da unidade durante a instalação do ponto de distribuição.
+- Você não pode definir as configurações da unidade nas propriedades do ponto de distribuição após a conclusão da instalação.
 
 
-有关如何为分发点配置驱动器设置的详细信息，请参阅[为 System Center Configuration Manager 管理内容和内容基础结构](../../../core/servers/deploy/configure/manage-content-and-content-infrastructure.md)。  
+Para obter mais informações sobre como definir as configurações de unidade dos pontos de distribuição, consulte [Gerenciar conteúdo e infraestrutura de conteúdo do System Center Configuration Manager](../../../core/servers/deploy/configure/manage-content-and-content-infrastructure.md).  
 
 
 >  [!IMPORTANT]  
->  若要在安装后将内容库移到分发点上的另一位置，请使用 System Center 2012 R2 Configuration Manager 工具包中的**内容库传输工具**。 可以从 [Microsoft Download Center（Microsoft 下载中心）](http://go.microsoft.com/fwlink/?LinkId=279566)下载此工具包。  
+>  Para mover a biblioteca de conteúdo para um local diferente em um ponto de distribuição após a instalação, use a **ferramenta de Transferência da Biblioteca de Conteúdo** no kit de ferramentas do System Center 2012 R2 Configuration Manager. Você pode baixar o kit de ferramentas do [Centro de Download da Microsoft](http://go.microsoft.com/fwlink/?LinkId=279566).  
 
-## <a name="about-the-content-library-on-the-central-administration-site"></a>关于管理中心站点上的内容库  
- 默认情况下，安装站点时，Configuration Manager 会在管理中心站点上创建内容库。 该内容库放置在具有最多可用磁盘空间的站点服务器驱动器上。 因为无法在管理中心站点上安装分发点，所以无法确定内容库要使用的驱动器的优先级。 类似于其他站点服务器和分发点上的内容库，当包含内容库的驱动器可用磁盘空间不足时，内容库会自动跨越到下一个可用的驱动器。  
+## <a name="about-the-content-library-on-the-central-administration-site"></a>Sobre a biblioteca de conteúdo no site de administração central  
+ Por padrão, o Configuration Manager cria uma biblioteca de conteúdo no site de administração central quando o site é instalado. A biblioteca de conteúdo é colocada na unidade do servidor do site com mais espaço livre em disco. Como não é possível instalar um ponto de distribuição no site de administração central, você não pode priorizar as unidades para uso pela biblioteca de conteúdo. Semelhante à biblioteca de conteúdo em outros servidores de site e em pontos de distribuição, quando a unidade que contém a biblioteca de conteúdo fica sem espaço em disco disponível, a biblioteca de conteúdo passa automaticamente para a próxima unidade disponível.  
 
- Configuration Manager 会在以下情况下使用管理中心站点上的内容库：  
+ O Configuration Manager usa a biblioteca de conteúdo no site de administração central nos seguintes cenários:  
 
--   在管理中心站点上创建内容时。  
+-   Quando você cria conteúdo no site de administração central.  
 
--   迁移另一个 Configuration Manager 站点中的内容，并将管理中心站点指定为将管理该内容的站点时。  
+-   Quando você migra conteúdo de outro site do Configuration Manager e atribui o site de administração central como o site que gerencia esse conteúdo.  
 
 > [!NOTE]  
->  在主站点创建内容，然后将其分发给其他主站点或其他主站点下面的辅助站点，管理中心站点将该内容临时存储在管理中心站点上的计划员收件箱中，但未将该内容添加到其内容库中。  
+>  Quando você cria conteúdo em um site primário e o distribui a um site primário diferente ou site secundário abaixo de um site primário diferente, o site de administração central armazena temporariamente esse conteúdo na caixa de entrada do agendador no site de administração central, mas não adiciona o conteúdo à biblioteca de conteúdo.  
 
- 使用以下选项管理位于管理中心站点上的内容库：  
+ Use as opções a seguir para gerenciar a biblioteca de conteúdo no site de administração central:  
 
--   若要防止在特定驱动器上安装内容库，请在创建内容库前先创建一个名为 **no_sms_on_drive.sms** 的空文件，然后将该文件复制到驱动器的根文件夹。  
+-   Para impedir que a biblioteca de conteúdo seja instalada em uma unidade específica, crie um arquivo vazio chamado **no_sms_on_drive.sms** e copie-o para a pasta raiz da unidade antes de criar a biblioteca de conteúdo.  
 
--   创建内容库之后，请使用 System Center 2012 R2 Configuration Manager 工具套件中的**内容库传输工具**来管理内容库的位置。 可以从 [Microsoft Download Center（Microsoft 下载中心）](http://go.microsoft.com/fwlink/?LinkId=279566)下载此工具包。  
+-   Depois da criação da biblioteca de conteúdo, use a **Ferramenta de Transferência da Biblioteca de Conteúdo** do kit de ferramentas do System Center 2012 R2 Configuration Manager para gerenciar o local da biblioteca de conteúdo. Você pode baixar o kit de ferramentas do [Centro de Download da Microsoft](http://go.microsoft.com/fwlink/?LinkId=279566).  

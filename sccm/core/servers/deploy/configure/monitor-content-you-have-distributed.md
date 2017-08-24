@@ -1,6 +1,6 @@
 ---
-title: "监视内容 | Microsoft Docs"
-description: "了解如何使用 Configuration Manager 控制台监视分发的内容。"
+title: "Monitorar o conteúdo | Microsoft Docs"
+description: "Entenda como monitorar o conteúdo distribuído usando o console do Configuration Manager."
 ms.custom: na
 ms.date: 4/17/2017
 ms.prod: configuration-manager
@@ -17,154 +17,154 @@ manager: angrobe
 ms.openlocfilehash: 7659d5789b8ce4e9e0b585a331c8f68869c9492d
 ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
 ms.translationtype: HT
-ms.contentlocale: zh-CN
+ms.contentlocale: pt-BR
 ms.lasthandoff: 08/07/2017
 ---
-# <a name="monitor-content-you-have-distributed-with-system-center-configuration-manager"></a>使用 System Center Configuration Manager 监视分发的内容
+# <a name="monitor-content-you-have-distributed-with-system-center-configuration-manager"></a>Monitorar o conteúdo que você distribuiu com o System Center Configuration Manager
 
-*适用范围：System Center Configuration Manager (Current Branch)*
+*Aplica-se a: System Center Configuration Manager (Branch Atual)*
 
-使用 System Center Configuration Manager 控制台监视分发的内容，包括：  
+Use o console do System Center Configuration Manager para monitorar o conteúdo distribuído, incluindo:  
 
--   与关联的分发点相关的所有包类型的状态。  
--   包中内容的内容验证状态。  
--   分配给特定分发点组的内容的状态。  
--   分配给分发点的内容的状态。  
--   每个分发点（内容验证、PXE 和多播）可选功能的状态。  
+-   O status de todos os tipos de pacotes em relação aos pontos de distribuição associados.  
+-   O status de validação de conteúdo para o conteúdo de um pacote.  
+-   O status do conteúdo atribuído a um grupo de pontos de distribuição específico.  
+-   O estado do conteúdo atribuído a um ponto de distribuição.  
+-   O status de recursos opcionais de cada ponto de distribuição (validação de conteúdo, PXE e multicast).  
 
 > [!NOTE]  
->  Configuration Manager 仅监视分发点上位于内容库中的内容。 而不会监视存储在分发点上的包或自定义共享中的内容。  
+>  O Configuration Manager monitora somente o conteúdo em um ponto de distribuição que está na biblioteca de conteúdo. O conteúdo armazenado no ponto de distribuição no pacote ou os compartilhamentos personalizados não são monitorados.  
 
-##  <a name="BKMK_ContentStatus"></a> 内容状态监视  
- “监视”  工作区中的“内容状态”  节点提供有关内容包的信息。 在 Configuration Manager 控制台中，你可以查看如下信息：  
+##  <a name="BKMK_ContentStatus"></a> Monitoramento de status do conteúdo  
+ O nó **Status do Conteúdo** no espaço de trabalho **Monitoramento** fornece informações sobre os pacotes de conteúdo. No console do Configuration Manager, você pode examinar informações como:  
 
--   包名称。  
--   类型。  
--   已将包发送到多少个分发点。  
--   符合性比率。  
--   创建包的时间。  
--   包 ID。  
--   源版本。  
+-   O nome do pacote.  
+-   O tipo.  
+-   Para quantos pontos de distribuição um pacote foi enviado.  
+-   A taxa de conformidade.  
+-   Quando o pacote foi criado.  
+-   A ID do pacote.  
+-   A versão de origem.  
 
-还可找到任何包的详细状态信息以及该包的分发状态，包括：  
+Você também encontrará informações detalhadas de status para qualquer pacote, bem como o status de distribuição para o pacote, incluindo:  
 
--   失败次数。  
--   挂起的分发。  
--   安装次数。
+-   A quantidade de falhas.  
+-   As distribuições pendentes.  
+-   O número de instalações.
 
-还可管理仍在向分发点进行的分发或未能成功向分发点分发内容的分发：  
+Você também pode gerenciar as distribuições que continuam em andamento para um ponto de distribuição ou que falharam em distribuir com êxito o conteúdo para um ponto de distribuição:  
 
--   当在“资产详细信息”窗格中查看针对分发点的分发作业的部署状态消息时，可使用取消或重新分发内容选项。 此窗格位于“内容状态”节点的“正在进行”选项卡或“错误”选项卡中。  
--   此外，当在“正在进行”选项卡上查看作业详细信息时，作业详细信息会显示作业完成的百分比。 当查看“错误”选项卡中的作业详细信息时，作业详细信息还会显示作业的剩余重试次数以及下次重试之前的等待时间。  
+-   A opção para cancelar ou redistribuir o conteúdo fica disponível ao exibir a mensagem de status da implantação de um trabalho de distribuição para um ponto de distribuição no painel **Detalhes de Ativo**. Esse painel pode ser encontrado na guia **Em Andamento** ou na guia **Erro** do nó **Status de Conteúdo**.  
+-   Além disso, os detalhes do trabalho exibem a porcentagem do trabalho que foi concluída ao exibir os detalhes de um trabalho na guia **Em Andamento**. Os detalhes do trabalho também exibem a quantidade de tentativas que restam para o trabalho, bem como o tempo para a próxima repetição ao exibir os detalhes de um trabalho que está disponível na guia **Erro**.  
 
-当你取消尚未完成的部署时，用于传输该内容的分发作业将停止：  
+Ao cancelar uma implantação que ainda não foi concluída, o trabalho de distribuição para transferir tal conteúdo é interrompido:  
 
--   部署的状态随后将更新以指示分发失败并且被用户操作取消。  
--   这个新状态出现在“错误”  选项卡中。  
+-   O status da implantação é atualizado para indicar que a distribuição falhou e foi cancelada por uma ação do usuário.  
+-   Esse novo status aparece na guia **Erro** .  
 
 > [!TIP]  
->  当部署接近完成时，用于取消该分发的操作有可能不会在针对分发点的分发完成之前进行。 如果出现这种情况，则会忽略用于取消部署的操作，并且部署的状态显示为成功。  
+>  Quando uma implantação está perto de ser concluída, é possível que a ação para cancelar essa distribuição não seja processada antes que a distribuição para o ponto de distribuição seja concluída. Quando isso ocorre, a ação para cancelar a implantação é ignorada e o status da implantação é exibido como bem-sucedido.  
 
 > [!NOTE]  
->  尽管你可以选择选项来取消针对位于站点服务器上的分发点的分发，但此操作不起作用。 这是因为站点服务器和站点服务器上的分发点共享相同的单一实例内容存储。 没有要取消的实际分发作业。  
+>  Embora seja possível selecionar a opção para cancelar uma distribuição a um ponto de distribuição localizado em um servidor do site, isso não tem efeito. Isso ocorre porque o servidor de sites e o ponto de distribuição em um servidor de sites compartilham o mesmo armazenamento de conteúdo de instância única. Não há nenhum trabalho de distribuição real para cancelar.  
 
-当重新分发以前未能传输到分发点的内容时，Configuration Manager 会立即开始将该内容再次部署到分发点。 Configuration Manager 更新部署的状态以反映重新部署正在进行的状态。  
+Ao redistribuir o conteúdo que, anteriormente, falhou na transferência a um ponto de distribuição, o Configuration Manager imediatamente começa a implantar aquele conteúdo no ponto de distribuição novamente. O Configuration Manager atualiza o status da implantação para mostrar o estado contínuo dessa nova implantação.  
 
-使用下列过程来查看内容状态以及管理仍在进行或失败的分发。  
+Use os procedimentos a seguir para exibir o status do conteúdo e gerenciar as distribuições que permanecem em andamento ou que falharam.  
 
-### <a name="to-monitor-content-status"></a>监视内容状态  
+### <a name="to-monitor-content-status"></a>Para monitorar o status do conteúdo  
 
-1.  在 Configuration Manager 控制台中，单击“监视” 。  
+1.  No console do Configuration Manager, clique em **Monitoramento**.  
 
-2.  在“监视”  工作区中，展开“分发状态” ，然后单击“内容状态” 。 此时会显示包。  
+2.  No espaço de trabalho **Monitoramento** , expanda **Status da Distribuição**e clique em **Status do Conteúdo**. Os pacotes são exibidos.  
 
-3.  选择要查看其详细状态信息的包。  
+3.  Selecione o pacote para o qual você deseja informações detalhadas de status.  
 
-4.  在“主页”  选项卡上，单击“查看状态” 。 此时会显示包的详细状态信息。  
+4.  Na guia **Início** , clique em **Exibir Status**. As informações detalhadas de status para o pacote são exibidas.  
 
-### <a name="to-cancel-a-distribution-that-remains-in-progress"></a>取消仍在进行的分发  
+### <a name="to-cancel-a-distribution-that-remains-in-progress"></a>Para cancelar uma distribuição que permanece em andamento  
 
-1.  在 Configuration Manager 控制台中，单击“监视” 。  
+1.  No console do Configuration Manager, clique em **Monitoramento**.  
 
-2.  在“监视”  工作区中，展开“分发状态” ，然后单击“内容状态” 。 此时会显示包。  
+2.  No espaço de trabalho **Monitoramento** , expanda **Status da Distribuição**e clique em **Status do Conteúdo**. Os pacotes são exibidos.  
 
-3.  选择要管理的包，然后在详细信息窗格中单击“查看状态” 。  
+3.  Selecione o pacote que deseja gerenciar e, no painel de detalhes, clique em **Exibir Status**.  
 
-4.  在“正在进行”选项卡的“资产详细信息”窗格中，右键单击要取消的分发的条目，并选择“取消”。  
+4.  No painel **Detalhes de Ativo** da guia **Em Andamento**, clique com o botão direito do mouse na entrada da distribuição que deseja cancelar e selecione **Cancelar**.  
 
-5.  单击“是”  确认操作并取消针对该分发点的分发作业。  
+5.  Clique em **Sim** para confirmar a ação e cancelar o trabalho de distribuição ao ponto de distribuição.  
 
-### <a name="to-redistribute-content-that-failed-to-distribute"></a>重新分发未能分发的内容  
+### <a name="to-redistribute-content-that-failed-to-distribute"></a>Para redistribuir conteúdo que falhou ao ser distribuído  
 
-1.  在 Configuration Manager 控制台中，单击“监视” 。  
+1.  No console do Configuration Manager, clique em **Monitoramento**.  
 
-2.  在“监视”  工作区中，展开“分发状态” ，然后单击“内容状态” 。 此时会显示包。  
+2.  No espaço de trabalho **Monitoramento** , expanda **Status da Distribuição**e clique em **Status do Conteúdo**. Os pacotes são exibidos.  
 
-3.  选择要管理的包，然后在详细信息窗格中单击“查看状态” 。  
+3.  Selecione o pacote que deseja gerenciar e, no painel de detalhes, clique em **Exibir Status**.  
 
-4.  在“错误”选项卡的“资产详细信息”窗格中，右键单击要重新分发的分发的条目，并选择“重新分发”。  
+4.  No painel **Detalhes de Ativo** da guia **Erro**, clique com o botão direito do mouse na entrada da distribuição que deseja redistribuir e selecione **Redistribuir**.  
 
-5.  单击“是”确认操作并开始针对该分发点的重新分发过程。  
+5.  Clique em **Sim** para confirmar a ação e iniciar o processo de redistribuição ao ponto de distribuição.  
 
-## <a name="distribution-point-group-status"></a>分发点组状态  
-“监视”  工作区中的“分发点组状态”  节点提供有关分发点组的信息。 你可以查看如下信息：  
+## <a name="distribution-point-group-status"></a>Status do grupo de pontos de distribuição  
+O nó **Status do Grupo de Pontos de Distribuição** no espaço de trabalho **Monitoramento** fornece informações sobre grupos de pontos de distribuição. Você pode examinar informações como:  
 
--   分发点组名称。  
--   说明。  
--   属于分发点组成员的分发点数。  
--   已分发到组的包数。  
--   分发点组状态。  
--   符合性比率。  
+-   O nome do grupo de ponto de distribuição.  
+-   A descrição.  
+-   Quantos pontos de distribuição são membros do grupo de pontos de distribuição.  
+-   Quantos pacotes foram atribuídos ao grupo.  
+-   O status do grupo de pontos de distribuição.  
+-   A taxa de conformidade.  
 
-你还可以查看以下项目的详细状态信息：  
+Você também pode exibir informações detalhadas para o seguinte:  
 
--   分发点组错误。  
--   正在进行的分发数。
--   已成功分发的数量。  
+-   Erros do grupo de pontos de distribuição.  
+-   Quantas distribuições estão em andamento.
+-   Quantas distribuições foram distribuídas com êxito.  
 
-### <a name="to-monitor-distribution-point-group-status"></a>监视分发点组状态  
+### <a name="to-monitor-distribution-point-group-status"></a>Para monitorar o status do grupo de pontos de distribuição  
 
-1.  在 Configuration Manager 控制台中，单击“监视” 。  
+1.  No console do Configuration Manager, clique em **Monitoramento**.  
 
-2.  在“监视”  工作区中，展开“分发状态” ，然后单击“分发点组状态” 。 此时会显示分发点组。  
+2.  No espaço de trabalho **Monitoramento** , expanda **Status da Distribuição**e clique em **Status do Grupo de Pontos de Distribuição**. Os grupos de pontos de distribuição são exibidos.  
 
-3.  选择要查看其详细状态信息的分发点组。  
+3.  Selecione o grupo de pontos de distribuição sobre o qual você deseja informações detalhadas de status.  
 
-4.  在“主页”  选项卡上，单击“查看状态” 。 此时会显示分发点组的详细状态信息。  
+4.  Na guia **Início** , clique em **Exibir Status**. As informações detalhadas de status para o grupo de pontos de distribuição são exibidas.  
 
-## <a name="distribution-point-configuration-status"></a>分发点配置状态  
- “监视”  工作区中的“分发点配置状态”  节点提供有关分发点的信息。 可查看为分发点启用的属性（例如 PXE、多播和内容验证）以及分发点的分发状态。 还可以查看分发点的详细状态信息。  
+## <a name="distribution-point-configuration-status"></a>Status de configuração de pontos de distribuição  
+ O nó **Status de Configuração de Pontos de Distribuição** no espaço de trabalho **Monitoramento** fornece informações sobre o ponto de distribuição. É possível verificar quais atributos estão habilitados para o ponto de distribuição, como PXE, multicast e validação de conteúdo, e o status da distribuição para o ponto de distribuição. É possível também exibir informações detalhadas para o ponto de distribuição.  
 
 > [!WARNING]  
->  分发点配置状态是过去 24 小时的状态。 如果分发点出错并恢复，则可能会显示分发点恢复后最多 24 小时的错误状态。  
+>  O status de configuração de pontos de distribuição é relativo às últimas 24 horas. Se ocorrer um erro no ponto de distribuição e ele se recuperar, o status de erro poderá ser exibido por até 24 horas após a recuperação do ponto de distribuição.  
 
-使用下列过程来查看分发点配置状态。  
+Use o procedimento a seguir para exibir o status de configuração de pontos de distribuição.  
 
-### <a name="to-monitor-distribution-point-configuration-status"></a>监视分发点配置状态  
+### <a name="to-monitor-distribution-point-configuration-status"></a>Para monitorar o status de configuração de pontos de distribuição  
 
-1.  在 Configuration Manager 控制台中，单击“监视” 。  
+1.  No console do Configuration Manager, clique em **Monitoramento**.  
 
-2.  在“监视”  工作区中，展开“分发状态” ，然后单击“分发点配置状态” 。 此时会显示分发点。  
+2.  No espaço de trabalho **Monitoramento** , expanda **Status da Distribuição**e clique em **Status de Configuração de Pontos de Distribuição**. Os pontos de distribuição são exibidos.  
 
-3.  选择要查看其分发点状态信息的分发点。  
+3.  Selecione o ponto de distribuição sobre qual você deseja informações de status.  
 
-4.  在结果窗格中，单击“详细信息”  选项卡。 此时会显示分发点的状态信息。  
+4.  No painel de resultados, clique na guia **Detalhes** . As informações de status para o ponto de distribuição são exibidas.  
 
-## <a name="client-data-sources-dashboard"></a>客户端数据源仪表板
-从 1610 版起，可以使用“客户端数据源”仪表板，来帮助了解环境中[对等缓存](/sccm/core/plan-design/hierarchy/client-peer-cache)的使用。 客户端下载内容后，仪表板将开始显示数据，并将该信息报告给网站。 此过程最多可能需要 24 小时。
+## <a name="client-data-sources-dashboard"></a>Painel Fontes de Dados do Cliente
+Começando da versão 1610, é possível usar o painel **Fontes de Dados do Cliente** para ajudar a entender o uso do [Cache de Pares](/sccm/core/plan-design/hierarchy/client-peer-cache) em seu ambiente. O painel começará a exibir os dados após os clientes baixarem o conteúdo e enviarem as informações de volta para o site. Isso pode levar até 24 horas.
 
 > [!TIP]  
-> “客户端对等缓存”和“客户端数据源”仪表板均为 1610 版本中引入的预发行功能。 必须先启用“客户端对等缓存”，“客户端数据源”仪表板才能在控制台中显示。 若要启用“客户端对等缓存”，请参阅[使用更新中的预发行功能](/sccm/core/servers/manage/install-in-console-updates#bkmk_prerelease)。 从启用到开始显示数据，最长需要 24 小时。
+> O **Cache de Pares de Cliente** e o **Painel de Fontes de Dados do Cliente** são recursos de pré-lançamento, apresentados na versão 1610. Você deve habilitar o Cache de mesmo nível do cliente antes do painel de fontes de dados do cliente fica visível no console. Para habilitar o Cache de Pares de Clientes, confira [Usar recursos de pré-lançamento de atualizações](/sccm/core/servers/manage/install-in-console-updates#bkmk_prerelease). Depois de ser habilitado, pode levar até 24 horas para que ele comece a exibir dados.
 
-在控制台中，转到“监视” > “分发状态” > “客户端数据源”。 在此处可以选择要应用于仪表板的时间段。 然后在显示中，可以选择要查看其信息的边界组或包。 查看信息时，可以将鼠标悬停在表面上方，以查看有关不同内容或策略源的更多详细信息。
+No console, acesse **Monitoramento** > **Status de Distribuição** > **Fontes de Dados do Cliente**. Aqui você pode escolher um período de tempo para aplicar ao painel. Em seguida, na exibição, escolha o grupo de limites ou o pacote do qual quer ver informações. Ao exibir as informações, você pode passar o mouse sobre a superfície para ver mais detalhes sobre conteúdo ou as origens da política.
 
-这些详细信息包括以下内容：  
-- **客户端内容源**：显示客户端从其处获取内容的源。
-- **分发点**：显示属于所选边界组的分发点的数量。
-- **使用分发点的客户端**：显示所选边界组中使用了分发点来获取内容的客户端的数量。
-- **对等缓存源**：对于所选的边界组，显示已报出曾进行过下载操作的对等缓存源的数量。
-- “使用对等的客户端”：是所选边界组中的客户端数，显示使用对等缓存源来获取内容的客户端数。
+Esses detalhes incluem o seguinte:  
+- **Fontes de Conteúdo de Cliente**: exibe a origem da qual os clientes obtiveram conteúdos.
+- **Pontos de distribuição**: exibe o número de pontos de distribuição que fazem parte do Grupo de Limites selecionado.
+- **Clientes que usaram um ponto de distribuição**: com base no número de clientes que está no Grupo de Limites selecionado, mostra quantos usaram um ponto de distribuição para obter conteúdo.
+- **Fontes de Cache de Pares**: mostra quantas fontes de cache de pares reportaram histórico de downloads para o Grupo de Limites selecionado.
+- **Clientes que usaram um par**: com base no número de clientes que está no Grupo de Limites selecionado, mostra quantos usaram uma fonte de cache de pares para obter conteúdo.
 
 
 
-还可以使用新报表“客户端数据源 - 摘要”查看每个边界组的客户端数据源摘要。
+Também é possível usar um novo relatório, **Fontes de Dados do Cliente — Resumo**, para exibir um resumo das fontes de dados do cliente de cada grupo de limites.

@@ -1,6 +1,6 @@
 ---
-title: "自动部署软件更新 | Microsoft 文档"
-description: "通过将新的更新添加到与活动部署关联的更新组中或者使用 ADR，可自动部署软件更新。"
+title: "Implantar atualizações de software automaticamente | Microsoft Docs"
+description: "Implante automaticamente as atualizações de software adicionando novas atualizações a um grupo de atualização associado a uma implantação ativa ou usando ADRs."
 keywords: 
 author: dougeby
 ms.author: dougeby
@@ -14,304 +14,304 @@ ms.assetid: b27682de-adf8-4edd-9572-54886af8f7fb
 ms.openlocfilehash: 804a9d7a32cfbdb498c6748c5d99a1874261c231
 ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
 ms.translationtype: HT
-ms.contentlocale: zh-CN
+ms.contentlocale: pt-BR
 ms.lasthandoff: 08/07/2017
 ---
-#  <a name="BKMK_AutoDeploy"></a> 自动部署软件更新  
+#  <a name="BKMK_AutoDeploy"></a> Implantar atualizações de software automaticamente  
 
-*适用范围：System Center Configuration Manager (Current Branch)*
+*Aplica-se a: System Center Configuration Manager (Branch Atual)*
 
- 通过将新软件更新添加到与活动部署关联的更新组中或者使用自动部署规则 (ADR)，可以自动部署软件更新。 通常情况下，将使用 ADR 来部署每月软件更新（通称为周二补丁日更新）以及管理定义更新。 如果需要帮助以确定适合的部署方式，请参阅[部署软件更新](deploy-software-updates.md)
+ Você pode implantar automaticamente as atualizações de software adicionando novas atualizações a um grupo de atualização que tenha uma implantação ativa ou usando ADR (regra de implantação automática). Geralmente, as ADRs são usadas para implantar atualizações de software mensais (geralmente conhecidas como "Patch Tuesday") e para o gerenciamento de atualizações de definições. Se você precisar de ajuda para determinar qual método de implantação é adequado para você, consulte [Implantar atualizações de software](deploy-software-updates.md)
 
-##  <a name="BKMK_AddUpdatesToExistingGroup"></a> 将软件更新添加到已部署的更新组中  
-创建和部署软件更新组之后，可以将软件更新添加到更新组中，系统将自动部署它们。  
+##  <a name="BKMK_AddUpdatesToExistingGroup"></a> Adicionar atualizações de software a um grupo de atualização implantado  
+Depois de criar e implantar um grupo de atualização de software, você pode adicionar novas atualizações ao grupo e elas serão implantadas automaticamente.  
 
 > [!IMPORTANT]  
->  如果将软件更新添加到已经部署的现有软件更新组，则在将其他软件更新添加到部署之前，可能需要等待几分钟时间。  
+>  Quando você adiciona atualizações de software a um grupo de atualização de software existente que já foi implantado, pode levar vários minutos antes que as atualizações sejam adicionadas à implantação.  
 
-使用以下过程将软件更新添加到现有更新组中。  
+Use o procedimento a seguir para adicionar atualizações de software a um grupo de atualização existente.  
 
-#### <a name="to-add-software-updates-to-an-existing-software-update-group"></a>将软件更新添加到现有软件更新组中  
+#### <a name="to-add-software-updates-to-an-existing-software-update-group"></a>Para adicionar atualizações de software a um grupo de atualização de software existente  
 
-1.  在 Configuration Manager 控制台中，导航到“软件库” > “概述” > “软件更新”。  
+1.  No console do Configuration Manager, navegue até **Biblioteca de Software** > **Visão Geral** > **Atualizações de Software**.  
 
-2.  选择要添加到新软件更新组中的软件更新。  
+2.  Selecione as atualizações de software a serem adicionadas ao novo grupo de atualização de software.  
 
-3.  在“主页”选项卡上的“更新”组中，单击“编辑成员身份”。  
+3.  Na guia **Início** , no grupo **Atualizar** , clique em **Editar Associação**.  
 
-4.  选择要将软件更新作为成员添加到其中的软件更新组。  
+4.  Selecione o grupo de atualização de software ao qual você deseja adicionar as atualizações de software como membros.  
 
-5.  单击“软件更新组”节点以显示软件更新组。  
+5.  Clique no nó **Grupos de Atualização de Software** para exibir o grupo de atualização de software.  
 
-6.  单击软件更新组，在“主页”选项卡内的“更新”组中，单击“显示成员”以显示组中的软件更新的列表。  
+6.  Clique no grupo de atualização de software e, na guia **Início** , no grupo **Atualizar** , clique em **Mostrar Membros** para exibir uma lista de atualizações de software no grupo.  
 
-##  <a name="BKMK_CreateAutomaticDeploymentRule"></a> 创建自动部署规则 (ADR)  
-你可以使用 ADR 自动审批和部署软件更新。 可在每次运行规则时，让规则将软件更新添加到新的软件更新组，或者将软件更新添加到现有组。 当规则运行且将软件更新添加到现有组时，该规则删除组中的所有软件更新，然后添加满足对组定义的条件的软件更新。 例如，若要运行 ADR 以查找每天新发布的软件更新并将其部署到客户端，你必须选择用于创建新软件更新组（而不是将软件更新添加到现有组）的选项。  
+##  <a name="BKMK_CreateAutomaticDeploymentRule"></a> Criar uma ADR (regra de implantação automática)  
+É possível aprovar e implantar automaticamente atualizações de software usando uma ADR. Você pode fazer com que a regra adicione atualizações de software para um novo grupo de atualização de software sempre que a regra for executada ou que ao adicionar atualizações de software a um grupo existente. Quando uma regra é executada e adiciona as atualizações de software a um grupo existente, a regra remove todas as atualizações de software do grupo e adiciona as atualizações de software que atendem aos critérios que você definir para o grupo. Para executar uma ADR para encontrar atualizações de software recém-liberadas diariamente e implantá-las nos clientes, por exemplo, é necessário escolher a opção para criar um novo grupo de atualização de software em vez de adicionar as atualizações de software a um grupo existente.  
 
 > [!WARNING]  
->  在首次创建 ADR 之前，请验证站点中是否完成了软件更新同步。 当你运行非英语版的 Configuration Manager 时，这非常重要，因为软件更新分类在首次同步之前以英文显示，在软件更新同步完成之后，则以本地化语言显示。 同步软件更新之前创建的规则在同步之后可能不会正常工作，因为文本字符串可能不匹配。  
+>  Antes de criar uma ADR pela primeira vez, verifique se a sincronização das atualizações de software foi concluída no local. Isso é especialmente importante quando você executa o Configuration Manager com um idioma diferente do inglês, porque classificações de atualização de software são exibidas em inglês antes da primeira sincronização, e depois exibidas no idioma traduzido após a conclusão da sincronização da atualização de software. Regras criadas antes de sincronizar atualizações de software podem não funcionar corretamente após a sincronização, porque a cadeia de texto pode não corresponder.  
 
- 使用下列过程来创建 ADR。  
+ Use o procedimento a seguir para criar uma ADR.  
 
-#### <a name="to-create-an-adr"></a>若要创建 ADR  
+#### <a name="to-create-an-adr"></a>Para criar uma ADR  
 
-1.  在 Configuration Manager 控制台中，导航到“软件库”概述” > “软件更新” > “自动部署规则”。  
+1.  No console do Configuration Manager, navegue até **Biblioteca de Software****Visão Geral** > **Atualizações de Software** > **Regras de Implantação Automáticas**.  
 
-2.  在“主页”选项卡上的“创建”组中，单击“创建自动部署规则”。 “创建自动部署规则向导”将会打开。  
+2.  Na guia **Início** , no grupo **Criar** , clique em **Criar Regra de Implantação Automática**. O Assistente de Criação de Regra de Implantação Automática é aberto.  
 
-3.  在“常规”页上，配置下列设置：  
+3.  Na página **Geral** , defina as seguintes configurações:  
 
-    -   **名称**：指定 ADR 的名称。 此名称必须唯一并且有助于描述规则的目的，并且应与 Configuration Manager 站点中的其他名称区分开来。  
+    -   **Nome**: especifique o nome para a ADR. O nome deve ser exclusivo, deve ajudar a descrever a finalidade da regra e diferenciá-la de outras no site do Configuration Manager.  
 
-    -   **说明**：指定 ADR 的说明。 描述应概述部署规则和任何其他相关信息，以帮助在 Configuration Manager 站点内的其他项中标识和区分该规则。 描述字段是可选字段，最多不超过 256 个字符，默认情况下具有空白值。  
+    -   **Descrição**: especifique uma descrição para a ADR. A descrição deve fornecer uma visão geral da regra de implantação e qualquer outra informação relevante que ajude a identificá-la e a diferenciá-la de outras no site do Configuration Manager. O campo de descrição é opcional, tem um limite de 256 caracteres e um valor em branco por padrão.  
 
-    -   **选择部署模板**：指定是否要应用以前保存的部署模板。 你可以将部署模板配置为包含多个常见软件更新部署属性，以后可以在创建 ADR 时使用这些属性。 这些模板有助于确保类似部署的一致性以及节省时间。  
+    -   **Selecionar Modelo de Implantação**: especifique se deseja aplicar um modelo de implantação salvo anteriormente. É possível configurar um modelo de implantação para conter várias propriedades comuns da implantação de atualização de software que podem ser usadas ​​na criação de ADRs. Esses modelos ajudam a garantir a consistência em implantações semelhantes e economizar tempo.  
 
-         “创建自动部署规则向导”提供了内置软件更新部署模板供你选择。 “定义更新”模板提供在部署定义软件更新时常用的设置。 “周二补丁日”模板提供在逐月部署软件更新时常用的设置。  
+         É possível selecionar entre os modelos internos de implantação de atualização de software do Assistente de Regra de Implantação Automática. O modelo **Atualizações de Definições** fornece configurações comuns a serem usadas durante a implantação das atualizações de definição do software. O modelo **Patch Tuesday** fornece definições comuns a serem usadas ao implantar atualizações de software em um ciclo mensal.  
 
-    -   集合：指定要用于部署的目标集合。 集合的成员会收到部署中定义的软件更新。  
+    -   **Coleção**: especifica a coleção de destino a ser usada na implantação. Os membros da coleção recebem as atualizações de software que são definidas na implantação.  
 
-    -   确定是将软件更新添加到新的还是现有的软件更新组中。 大多数情况下，你可能会选择在运行 ADR 时创建新软件更新组。 但是，如果按照更加主动的计划来运行规则，则可以选择使用现有组。 例如，将对定义更新每日运行规则，则可以将软件更新添加到现有软件更新组中。  
+    -   Decida se deseja adicionar atualizações de software a um grupo de atualização de software novo ou existente. Na maioria dos casos, você provavelmente optará por criar um novo grupo de atualização de software quando a ADR estiver em execução. No entanto, você pode optar por usar um grupo já existente, se a regra for executada em uma programação mais agressiva. Por exemplo, se você executar a regra diária para atualizações de definição, poderá adicionar as atualizações de software a um grupo existente de atualização de software.  
 
-    -   运行此规则后启用部署：指定运行 ADR 后是否启用软件更新部署。 关于该规格，请考虑下列情况：  
+    -   **Habilitar a implantação após a execução desta regra**: especifique se deseja habilitar a implantação de atualização de software após a execução da ADR. Sobre essa especificação, considere o seguinte:  
 
-        -   如果启用部署，则满足规则中定义的条件的软件更新将添加到软件更新组中、根据需要下载软件更新内容、将内容复制到指定的分发点，并将软件更新部署到目标集合中的客户端。  
+        -   Quando você habilita a implantação, as atualizações de software que atendem aos critérios definidos na regra são adicionadas a um grupo de atualização de software, o conteúdo da atualização de software é baixado conforme necessário, o conteúdo é copiado nos pontos de distribuição especificados e as atualizações de software são implantadas nos clientes na coleção de destino.  
 
-        -   如果未启用部署，则满足规则中定义的条件的软件更新将添加到软件更新组中，并且会配置软件更新部署策略，但不将软件更新下载或部署到客户端。 这种情况会根据需要为你提供时间，以便你准备部署软件更新、验证满足条件的软件更新是否合适，以及以后启用部署。  
+        -   Quando você não habilita a implantação, as atualizações de software que atendem aos critérios definidos na regra são adicionadas a um grupo de atualização de software e a política de implantação de atualizações de software é configurada, mas as atualizações não são baixadas nem implantadas nos clientes. Essa situação fornece-lhe o tempo necessário para se preparar para implantar as atualizações de software, verificar se as atualizações que atendem aos critérios são adequadas e permitir a implantação em um momento posterior.  
 
-4.  在“部署设置”页上配置下列设置：  
+4.  Na página Configurações de Implantação, defina as seguintes configurações:  
 
-    -   使用 LAN 唤醒来唤醒所需部署的客户端：指定在截止时间是否启用 LAN 唤醒，以将唤醒数据包发送到需要部署中的一个或多个软件更新的计算机。 在安装截止时间处于睡眠模式的任何计算机将被唤醒，以便软件更新安装可以启动。 处于睡眠模式且不需要部署中的任何软件更新的客户端不会启动。 默认情况下不启用此设置。  
+    -   **Usar Wake-on-LAN para ativar clientes para implantações obrigatórias**: especifica se o Wake on LAN deve ser habilitado no prazo para enviar pacotes de ativação para os computadores que exigem uma ou mais atualizações de software na implantação. Todos os computadores que estão no modo de suspensão na hora do prazo da instalação serão ativados para que a instalação da atualização de software seja iniciada. Clientes que estão no modo de suspensão e que não necessitam de atualizações de software na implantação não são iniciados. Por padrão, essa configuração não está habilitada.  
 
         > [!WARNING]  
-        >  必须针对“LAN 唤醒”配置计算机和网络，然后才能使用此选项。  
+        >  Antes de usar essa opção, você deve configurar computadores e redes para Wake On LAN.  
 
-    -   详细信息级别：指定客户端计算机报告的状态消息的详细信息级别。  
+    -   **Nível de detalhe**: especifique o nível de detalhe para as mensagens de estado que são relatadas pelos computadores cliente.  
 
         > [!IMPORTANT]  
-        >  部署定义更新时，请将详细信息级别设置为“仅限错误”，以让客户端只在定义更新无法传送到客户端时报告状态消息。 否则，客户端将报告大量的状态消息，这可能会影响站点服务器的性能。  
+        >  Ao implantar atualizações de definição, defina o nível de detalhes como **Apenas erro** para que o cliente relate uma mensagem de estado apenas quando uma atualização de definição deixar de ser entregue ao cliente. Caso contrário, o cliente relatará um grande número de mensagens de estado que podem afetar o desempenho no servidor do site.  
 
-    -   许可条款设置：指定是否自动部署具有相关许可条款的软件更新。 某些软件更新包含许可条款，例如 Service Pack。 自动部署软件更新时，未显示许可条款，并且没有接受许可条款的选项。 你可以选择自动部署所有软件更新而不考虑关联的许可条款，或者仅部署无关联许可条款的软件更新。  
+    -   **Configuração dos termos da licença**: especifique se deseja implantar automaticamente atualizações de software com os termos de licença associados. Algumas atualizações de software incluem termos de licença, como um service pack. Quando você implanta atualizações de software automaticamente, os termos da licença não são exibidos e não há uma opção para aceitá-los. Você pode optar por implantar automaticamente todas as atualizações de software, independentemente dos termos de licença associados ou apenas implantar atualizações de software que não têm termos de licença associados.  
 
         > [!NOTE]  
-        >  要查看软件更新的许可条款，你可以在“软件库”工作区的“所有软件更新”节点中选择软件更新，然后在“主页”选项卡上的“更新”组中单击“查看许可证”。  
+        >  Para revisar os termos da licença de uma atualização de software, você pode selecionar a atualização no nó **Todas as Atualizações de Software** do espaço de trabalho **Biblioteca de Softwares** e depois, na guia **Início** , no grupo **Atualizar** , clique em **Revisar Licença**.  
         >   
-        >  要查找带相关许可条款的软件更新，你可以将“许可条款”列添加到“所有软件更新”节点内的结果窗格中，然后单击列标题以按带许可条款的软件更新进行排序。  
+        >  Para encontrar atualizações de software com os termos de licença associados, você pode adicionar a coluna **Termos da Licença** ao painel de resultados no nó **Todas as Atualizações de Software** e, em seguida, clique no cabeçalho da coluna para classificar as atualizações de software, com os termos da licença.  
 
-5.  在“软件更新”页上，配置 ADR 检索并添加到软件更新组中的软件更新的条件。  
+5.  Na página Atualizações de Software, configure os critérios para as atualizações de software que a ADR recupera e adiciona ao grupo de atualização de software.  
 
     > [!IMPORTANT]  
-    >  ADR 中软件更新的限制为 1000 个软件更新。 要确保在此页上指定的条件所检索到的软件更新不到 1000 项，请考虑对“软件库”工作区中的“所有软件更新”节点设置相同的条件。  
+    >  O limite para atualizações de software na ADR é de 1.000. Para garantir que os critérios que você especificar nesta página recuperem menos de 1.000 atualizações de software, considere definir os mesmos critérios no nó **Todas as Atualizações de Software** no espaço de trabalho **Biblioteca de Software** .  
 
     > [!NOTE]
-    > 从 Configuration Manager 版本 1610 开始，可以对自动部署规则中软件更新的内容大小进行筛选。 例如，可以将“内容大小 (KB)”筛选器设置为 **< 2048**，以仅下载小于 2 MB 的软件更新。 使用此筛选器可防止自动下载较大的软件更新，以便在带宽受到限制时更好地支持简化的 Windows 低级别维护。 有关详细信息，请参阅[低级别操作系统上的 Configuration Manager 和简化的 Windows 维护](https://blogs.technet.microsoft.com/enterprisemobility/2016/10/07/configuration-manager-and-simplified-windows-servicing-on-down-level-operating-systems/)。
+    > A partir do Configuration Manager versão 1610, você pode filtrar o tamanho do conteúdo para atualizações de software em regras de implantação automática. Por exemplo, você pode definir o filtro **Tamanho do Conteúdo (KB)** como **< 2048** para baixar apenas atualizações de software menores que 2 MB. Usar esse filtro impede que atualizações de software grandes sejam baixadas automaticamente, para dar melhor suporte à manutenção simplificada de nível inferior do Windows quando a largura de banda de rede é limitada. Para obter detalhes, consulte [Configuration Manager and Simplified Windows Servicing on Down Level Operating Systems](https://blogs.technet.microsoft.com/enterprisemobility/2016/10/07/configuration-manager-and-simplified-windows-servicing-on-down-level-operating-systems/) (Configuration Manager e Serviço do Windows simplificado em sistemas operacionais de nível inferior).
 
-6.  在“评估计划”页上，指定是否启用 ADR 以按计划运行。 启用后，请单击“自定义”以设置定期计划。  
+6.  Na página Agendamento de Avaliação, especifique se deseja habilitar a ADR para ser executada em um agendamento. Quando habilitada, clique em **Personalizar** para definir o agendamento recorrente.  
 
     > [!IMPORTANT]  
-    >  系统会显示软件更新点同步计划，以帮助你确定评估计划的频率。 你决不能设置频率超过软件更新同步计划的评估计划。 计划的开始时间配置基于运行 Configuration Manager 控制台的计算机的本地时间。  
+    >  A agenda de sincronização do ponto de atualização de software é exibida para ajudar a determinar a frequência da agenda de avaliação. Você nunca deve definir a agenda de avaliação com uma frequência que exceda a agenda de sincronização de atualizações de software. A configuração do horário de início da agenda é baseada na hora local do computador que executa o console do Configuration Manager.  
 
     > [!NOTE]  
-    >  要手动运行 ADR，请选择规则，然后在“主页”选项卡上的“自动部署规则”组中，单击“立即运行”。 在手动运行 ADR 之前，请验证自上次运行此规则以来是否运行了软件更新同步。  
+    >  Para executar a ADR manualmente, selecione a regra e clique em **Executar Agora** na guia **Início** do grupo **Regra de Implantação Automática** . Antes de executar a ADR manualmente, verifique se a sincronização das atualizações de software foi executada desde a última vez que a regra foi executada.  
 
     > [!IMPORTANT]  
-    >  ADR 评估的运行频率可以为一天三次。  
+    >  A avaliação da ADR pode ser executada três vezes por dia.  
 
-7.  在“部署计划”页上配置下列设置：  
+7.  Na página Agendamento da Implantação, defina as seguintes configurações:  
 
-    -   计划评估：指定 Configuration Manager 是使用 UTC 还是使用运行 Configuration Manager 控制台的计算机的本地时间来计算可用的时间和安装截止时间。  
-
-        > [!NOTE]  
-        >  选择本地时间，并为“软件可用时间”或“安装截止时间”选择“尽快”时，将使用运行 Configuration Manager 控制台的计算机上的当前时间来计算更新可用的时间或在客户端上安装更新的时间。 如果客户端位于其他时区，当客户端的时间达到评估时间时将发生这些操作。  
-
-    -   软件可用时间：选择以下设置之一以指定向客户端提供软件更新的时间：  
-
-        -   尽快：选择此设置以尽快向客户端计算机提供部署中所包括的软件更新。 创建部署并选择此设置后，Configuration Manager 将更新客户端策略。 然后在下一个客户端策略轮询周期，客户端将注意部署并且可以获得可安装的更新。  
-
-        -   特定时间：选择此设置以在特定日期和时间向客户端计算机提供部署中所包括的软件更新。 创建部署并启用此设置后，Configuration Manager 将更新客户端策略。 然后在下一个客户端策略轮询周期，客户端将注意部署。 但是，直到过了配置的日期和时间，才可以安装部署中的软件更新。  
-
-    -   安装截止时间：选择以下设置之一以指定部署中的软件更新的安装截止时间：  
-
-        -   尽快：选择此设置以尽快自动安装部署中的软件更新。  
-
-        -   特定时间：选择此设置以在特定日期和时间自动安装部署中的软件更新。 通过将已配置的“特定时间”间隔添加到“软件可用时间”，Configuration Manager 可确定安装软件更新的截止时间。  
+    -   **Avaliação do agendamento**: especifique se o Configuration Manager avalia o tempo disponível e os prazos de instalação usando UTC ou a hora local do computador que executa o console do Configuration Manager.  
 
         > [!NOTE]  
-        >  实际安装截止时间是显示的截止时间加上随机的一段时间（最多为 2 小时）。 这可以减少目标集合中同时安装部署中软件更新的所有客户端计算机的潜在影响。  
+        >  Quando você seleciona a hora local e seleciona **O mais breve possível** para o **Tempo disponível do software** ou o **Prazo de instalação**, a hora atual no computador que executa o console do Configuration Manager é usada para avaliar quando as atualizações estarão disponíveis ou quando serão instaladas em um cliente. Se o cliente estiver em um fuso horário diferente, essas ações ocorrerão quando o tempo do cliente atingir o tempo de avaliação.  
+
+    -   **Tempo disponível do software**: selecione uma das configurações a seguir para especificar quando as atualizações de software estão disponíveis aos clientes:  
+
+        -   **O mais breve possível**: selecione essa configuração para disponibilizar as atualizações de software incluídas na implantação aos computadores cliente o mais breve possível. Quando você cria a implantação com essa configuração selecionada, o Configuration Manager atualiza a política de cliente. Então, no próximo ciclo de sondagem da política do cliente, os clientes ficam informados da implantação e podem obter as atualizações disponíveis para instalação.  
+
+        -   **Horário específico**: selecione essa configuração para disponibilizar as atualizações de software incluídas na implantação aos computadores cliente, em uma data e hora específica. Quando você cria a implantação com essa configuração habilitada, o Configuration Manager atualiza a política de cliente. Em seguida, no próximo ciclo de sondagem de política do cliente, os clientes são informados da implantação. No entanto, as atualizações de software na implantação não estão disponíveis para instalação até após a data e hora configuradas.  
+
+    -   **Prazo de instalação**: selecione uma das seguintes configurações para especificar o prazo de instalação das atualizações de software na implantação:  
+
+        -   **O mais breve possível**: selecione essa configuração para instalar automaticamente as atualizações de software na implantação o mais breve possível.  
+
+        -   **Horário específico**: selecione essa configuração para instalar automaticamente as atualizações de software na implantação, em uma data e hora específica. O Configuration Manager determina o prazo para instalar as atualizações de software, adicionando o intervalo **Horário específico** configurado para o **Tempo disponível do software**.  
+
+        > [!NOTE]  
+        >  O prazo real da instalação é o prazo exibido, mais um período de tempo aleatório de até 2 horas. Isso reduz o impacto potencial de todos os computadores cliente na coleção de destino que está instalando as atualizações de software na implantação ao mesmo tempo.  
         >   
-        >  你可以配置“计算机代理”客户端设置和“禁用截止时间随机化”，以对所需的软件更新禁用安装随机化延迟。 有关详细信息，请参阅 [Computer Agent](../../core/clients/deploy/about-client-settings.md#computer-agent)。  
+        >  É possível configurar a definição do cliente **Agente de Computador** , **Desativar data limite aleatória** para desabilitar o atraso de aleatoriedade das atualizações de software necessárias. Para obter mais informações, consulte [Computer Agent](../../core/clients/deploy/about-client-settings.md#computer-agent).  
 
-8. 在“用户体验”页上，请配置下列设置：  
+8. Na página Experiência do Usuário, defina as seguintes configurações:  
 
-    -   用户通知：指定是否在配置的“软件可用时间”在客户端计算机上软件中心中显示软件更新通知，以及是否在客户端计算机上显示用户通知。  
+    -   **Notificações ao usuário**: especifique se quer exibir notificações das atualizações de software no Centro de Software no computador cliente no **Tempo disponível do software** configurado e se deseja exibir as notificações ao usuário nos computadores cliente.  
 
-    -   截止时间行为：指定到达软件更新部署的截止时间时要发生的行为。 指定是否安装部署中的软件更新。 另外，指定是否在安装软件更新后执行系统重启而不考虑配置的维护时段。 有关维护时段的详细信息，请参阅[如何使用维护时段](../../core/clients/manage/collections/use-maintenance-windows.md)。  
+    -   **Comportamento do prazo**: especifique o comportamento que deve ocorrer quando o prazo for alcançado para a implantação de atualização do software. Especifique se deseja instalar as atualizações de software na implantação. Especifique também se o sistema deve ser reiniciado após a instalação da atualização de software, independentemente de uma janela de manutenção configurada. Para obter mais informações sobre janelas de manutenção, consulte [Como usar janelas de manutenção](../../core/clients/manage/collections/use-maintenance-windows.md).  
 
-    -   设备重新启动行为：指定安装软件更新后是否在服务器和工作站上抑制系统重启，以及是否需要重启系统以完成安装。  
+    -   **Comportamento de reinicialização do dispositivo**: especifique se uma reinicialização do sistema em servidores e estações de trabalho deve ser suprimida depois que as atualizações de software são instaladas e uma reinicialização do sistema é necessária para concluir a instalação.  
 
         > [!IMPORTANT]  
-        >  在服务器环境中，或者在不希望默认重启安装软件更新的计算机的情况下，抑制系统重启可能很有用。 但是，执行此操作可能会使计算机处于不安全状态，而允许强制重启有助于确保立即完成软件更新安装。  
+        >  A supressão das reinicializações do sistema pode ser útil em ambientes de servidor ou para casos em que você não quer que os computadores que estão instalando as atualizações de software reiniciem por padrão. No entanto, isso pode deixar os computadores em um estado inseguro, ao passo que permitir uma reinicialização forçada ajuda a garantir a conclusão imediata da instalação da atualização de software.  
 
-    -   **Windows Embedded 设备的写入筛选器处理**：将软件更新部署到启用了写入筛选器的 Windows Embedded 设备时，你可以指定将软件更新安装在临时覆盖区上并稍后提交更改，或者在安装截止时或在维护时段内提交更改。 如果在安装截止时或在维护时段内提交更改，则需要重新启动，而且更改将保留在设备上。  
+    -   **Manuseio de filtro de gravação para dispositivos Windows Embedded**: ao implantar atualizações de software em dispositivos Windows Embedded com filtro de gravação habilitado, é possível especificar que a atualização de software seja instalada na sobreposição temporária e que as alterações sejam confirmadas mais tarde, na data limite da instalação ou durante uma janela de manutenção. Ao confirmar as alterações na data limite da instalação ou durante uma janela de manutenção, é necessário reinicializar. Dessa forma, as alterações permanecem no dispositivo.  
 
         > [!NOTE]  
-        >  将软件更新部署到 Windows Embedded 设备时，确保设备是配置了维护时段的集合的成员。  
+        >  Ao implantar uma atualização de software em um dispositivo Windows Embedded, verifique se o dispositivo é membro de uma coleção com uma janela de manutenção configurada.  
 
-    - **重启时的软件更新部署重新评估行为**：从 Configuration Manager 版本 1606 开始，选择此设置可配置软件更新部署，使客户端在安装软件更新并重启后立即运行软件更新符合性扫描。 这使客户端可以检查在客户端重新启动之后成为适用状态的其他软件更新，以及随后在相同维护时段期间安装它们（并成为符合状态）。
+    - **Comportamento de reavaliação da implantação de atualizações de software na reinicialização**: começando com a versão 1606 do Configuration Manager, é possível selecionar este ajuste para configurar as implantações de atualização de software para que os clientes executem uma verificação de conformidade de atualizações de software imediatamente após um cliente instalar atualizações de software e reiniciar. Isso permite que os clientes verifiquem atualizações de software adicionais que se tornam aplicáveis depois que eles são reiniciados e as instalem (e se tornem compatíveis) durante a mesma janela de manutenção.
 
-9. 在“警报”页上，配置 Configuration Manager 和 System Center Operations Manager 为此部署生成警报的方式。  
-
-    > [!NOTE]  
-    >  你可以从“软件库”工作区的“软件更新”节点中查看最新软件更新警报。  
-
-10. 在“下载设置”页上配置下列设置：  
-
-    - 指定当客户端连接到慢速网络或正在使用回退内容位置时是否将下载和安装软件更新。  
-
-    - 指定当软件更新的内容在首选分发点上不可用时客户端是否下载和安装回退分发点中的软件更新。  
-
-    - 允许客户端与同一子网上的其他客户端共享内容：指定是否为内容下载启用 BranchCache。 有关 BranchCache 的详细信息，请参阅 [Concepts for content management](../../core/plan-design/hierarchy/fundamental-concepts-for-content-management.md#branchcache)。  
-
-    - 如果软件更新当前在分发点上不可用，邻域或站点组从 Microsoft 更新下载内容：如果软件更新在分发点上不可用，选择此设置，可使连接到 Intranet 的客户端从 Microsoft 更新下载软件。 基于 Internet 的客户端可随时访问 Microsoft 更新，获取软件更新内容。
-
-    - 指定是否允许客户端在安装截止日期之后下载内容（如果客户端使用按流量计费的 Internet 连接）。 Internet 提供商有时根据你在按流量计费的 Internet 连接上发送和接收的数据量计费。  
+9. Na página Alertas, configure como o Configuration Manager e o System Center Operations Manager gerarão alertas para essa implantação.  
 
     > [!NOTE]  
-    >  客户端请求部署中的软件更新的管理点中的内容位置。 下载行为取决于在此页面上配置分发点、部署包和设置的方式。 有关详细信息，请参阅 [Content source location scenarios](../../core/plan-design/hierarchy/content-source-location-scenarios.md)。  
+    >  Você pode verificar os alertas de atualizações de software recentes no nó **Atualizações de Software** no espaço de trabalho **Biblioteca de Software** .  
 
-11. 在“部署包”页上，选择现有部署包，或者配置以下设置以创建新部署包：  
+10. Na página Configurações de Download, defina as seguintes configurações:  
 
-    1.  名称：指定部署包的名称。 这必须是描述包内容的唯一名称。 它被限制为不超过 50 个字符。  
+    - Especifique se o cliente irá baixar e instalar as atualizações de software quando estiver conectado a uma rede lenta ou usando um local de conteúdos de fallback.  
 
-    2.  说明：指定提供有关该部署包的信息的说明。 该说明仅限于 127 个字符。  
+    - Especifique se o cliente deve baixar e instalar as atualizações de software por meio de um ponto de distribuição de fallback quando o conteúdo das atualizações de software não está disponível ou de um ponto de distribuição preferencial.  
 
-    3.  包源：指定软件更新源文件的位置。  键入源位置的网络路径，例如 **\\\server\sharename\path**，或单击“浏览”来查找网络位置。 在进入到下一页之前，必须为部署包源文件创建共享文件夹。  
+    - **Permitir que os clientes compartilhem conteúdo com outros clientes na mesma sub-rede**: especifique se deseja habilitar o uso do BranchCache para downloads de conteúdo. Para obter mais informações sobre o BranchCache, veja [Concepts for content management](../../core/plan-design/hierarchy/fundamental-concepts-for-content-management.md#branchcache).  
+
+    - **Se as atualizações de software não estiverem disponíveis no ponto de distribuição nos grupos de site, atuais ou vizinhos, baixe o conteúdo do Microsoft Updates**: selecione essa configuração para que os clientes que estiverem conectados à intranet baixem as atualizações de software do Microsoft Update se as atualizações de software não estiverem disponíveis nos pontos de distribuição. Os clientes baseados na Internet sempre podem ir para o Microsoft Update para obter o conteúdo das atualizações de software.
+
+    - Especifique se os clientes têm permissão para baixar após o prazo de uma instalação quando usam conexão de Internet limitada. Provedores de Internet ocasionalmente cobram por quantidade de dados que você envia e recebe quando está em uma conexão de Internet limitada.  
+
+    > [!NOTE]  
+    >  Os clientes solicitam o local do conteúdo de um ponto de gerenciamento de atualizações de software em uma implantação. O comportamento do download depende de como você configurou o ponto de distribuição, o pacote de implantação e as configurações desta página. Para obter mais informações, consulte [Content source location scenarios](../../core/plan-design/hierarchy/content-source-location-scenarios.md).  
+
+11. Na página do Pacote de Implantação, selecione um pacote de implantação existente ou configure as seguintes definições para criar um novo pacote de implantação:  
+
+    1.  **Nome**: especifique o nome do pacote de implantação. Deve ser um nome exclusivo que descreva o conteúdo do pacote. Ele é limitado a 50 caracteres.  
+
+    2.  **Descrição**: especifique uma descrição que forneça informações sobre o pacote de implantação. A descrição é limitada a 127 caracteres.  
+
+    3.  **Origem do pacote**: especifica o local dos arquivos de origem de atualização do software.  Digite um caminho de rede para o local de origem, por exemplo, **\\\servidor\nome do compartilhamento\caminho**ou clique em **Procurar** para encontrar o local na rede. É necessário criar a pasta compartilhada para os arquivos de origem do pacote de implantação antes de ir para a próxima página.  
 
         > [!NOTE]  
-        >  其他软件部署包不能使用你指定的部署包源位置。  
+        >  O local de origem do pacote de implantação especificado não poderá ser usado por outro pacote de implantação de software.  
 
         > [!IMPORTANT]  
-        >  SMS 提供程序计算机帐户和运行向导下载软件更新的用户都必须对下载位置具有“写” NTFS 权限。 你应该仔细限制对此下载位置的访问，以减少攻击者篡改软件更新源文件的风险。  
+        >  A conta do computador Provedor de SMS e o usuário que estiver executando o assistente para baixar as atualizações de software deverão ter permissões NTFS de **Gravação** no local de download. É necessário restringir o acesso ao local de download com atenção, para reduzir o risco de ataques de adulteração nos arquivos de origem de atualização de software.  
 
         > [!IMPORTANT]  
-        >  在 Configuration Manager 创建部署包之后，可在部署包属性中更改包源位置。 但是，如果你执行此操作，则必须首先将原始包源中的内容复制到新包源位置。  
+        >  Será possível alterar o local de origem do pacote nas propriedades do pacote de implantação depois que o Configuration Manager criar o pacote de implantação. Mas ao fazer isso, é necessário primeiro copiar o conteúdo da fonte da origem do pacote para o seu novo local de origem.  
 
-    4.  发送优先级：指定部署包的发送优先级。 Configuration Manager 在将包发送到分发点时将使用部署包的发送优先级。 部署包按优先级顺序发送：高、中或低。 具有相同优先级的包按照其创建顺序发送。 如果没有囤积，则将立即处理包，而不考虑其优先级。  
+    4.  **Prioridade de envio**: especifique a prioridade de envio do pacote de implantação. O Configuration Manager usa a prioridade de envio do pacote de implantação quando envia o pacote para pontos de distribuição. Os pacotes de implantação são enviados por ordem de prioridade: Alta, Média, ou Baixa. Pacotes com prioridades idênticas são enviados na ordem em que foram criados. Se não houver uma lista de pendências, o pacote será processado imediatamente, não importando qual seja a prioridade.  
 
-12. 在“分发点”页上，指定将承载软件更新文件的分发点或分发点组。 有关分发点的详细信息，请参阅[分发点配置](../../core/servers/deploy/configure/install-and-configure-distribution-points.md#bkmk_configs)。  
-
-    > [!NOTE]  
-    >  只有当你在创建新的软件更新部署包时才能使用本页。  
-
-13. 在“下载位置”页上，指定是从 Internet 中还是从本地网络中下载软件更新文件。 配置下列设置：  
-
-    -   从 Internet 下载软件更新：选择此设置以从 Internet 上的指定位置下载软件更新。 默认情况下将启用此设置。  
-
-    -   从本地网络上的位置下载软件更新：选择此设置以从本地目录或共享的文件夹下载软件更新。 当运行向导的计算机无法访问 Internet 时，此设置很有用。 能够访问 Internet 的任何计算机可以先下载软件更新，然后将它们存储在可从运行向导的计算机中访问的本地网络上的某个位置。  
-
-14. 在“语言选择”页上，为已选定要下载的软件更新选择语言。 只有在提供了与选择的语言对应的软件更新时才能下载软件更新。 并非特定于语言的软件更新是随时都能下载的。 默认情况下，向导会选择你已在软件更新点的属性中配置的语言。 在继续进入下一页之前，必须选择至少一种语言。 如果仅选择软件更新不支持的语言，则软件更新的下载将会失败。  
-
-15. 在“摘要”页上查看设置。 若要将设置保存到部署模板中，请单击“另存为模板”，输入名称并选择要包括在模板中的设置，然后单击“保存”。 若要更改已配置的设置，请单击关联的向导页面，然后更改设置。  
+12. Na página Pontos de Distribuição, especifique os pontos de distribuição ou grupos de pontos de distribuição que irão hospedar os arquivos de atualização de software. Para obter mais informações sobre pontos de distribuição, consulte [Configurações de ponto de distribuição](../../core/servers/deploy/configure/install-and-configure-distribution-points.md#bkmk_configs).  
 
     > [!NOTE]  
-    >  模板名称可以包含字母数字 ASCII 字符，以及 **\\**（反斜杠）或 **‘** （单引号）。  
+    >  A página está disponível somente quando você cria um novo pacote de implantação de atualização de software.  
 
-16. 单击“下一步”以创建 ADR。  
+13. Na página Local de Download, especifique se deseja baixar os arquivos de atualização de software da Internet ou de sua rede local. Defina as seguintes configurações:  
 
- 完成向导后，将会运行 ADR。 它会将符合指定条件的软件更新添加到软件更新组中、将软件更新下载到站点服务器上的内容库、将软件更新分发到已配置的分发点，然后将软件更新组部署到目标集合中的客户端。  
+    -   **Baixe as atualizações de software da Internet**: selecione essa configuração para baixar as atualizações de software de um local específico na Internet. Essa configuração é habilitada por padrão.  
 
-##  <a name="BKMK_AddDeploymentToADR"></a> 将新的部署添加到现有 ADR  
- 创建 ADR 后，可以将其他部署添加到规则。 这可以帮助你管理将不同更新部署到不同集合的复杂性。 每个新部署均具有完整的功能和部署监视体验。  
+    -   **Baixar atualizações de software de um local na rede local**: selecione essa configuração para baixar atualizações de software de um diretório local ou pasta compartilhada. Essa configuração é útil quando o computador que executa o assistente não tem acesso à Internet. Qualquer computador com acesso à Internet pode baixar preliminarmente atualizações de software e armazená-las em um local na rede local que é acessível do computador que executa o assistente.  
 
-#### <a name="to-add-a-new-deployment-to-an-existing-adr"></a>若要将新的部署添加到现有 ADR  
+14. Na página Seleção de Idioma, selecione os idiomas para os quais as atualizações de software selecionadas são baixadas. As atualizações de software só serão baixadas se estiverem disponíveis nos idiomas selecionados. Atualizações de software que não são específicas do idioma são sempre baixadas. Por padrão, o assistente seleciona os idiomas que você configurou nas propriedades de ponto de atualização de software. Pelo menos um idioma deve ser selecionado para ir para a próxima página. Quando você seleciona apenas os idiomas que não têm suporte de uma atualização de software, o download irá falhar para a atualização.  
 
-1.  在 Configuration Manager 控制台中，导航到“软件库” > “概述” > “软件更新” > “自动部署规则”，然后选择所需的规则。  
+15. Na página Resumo, verifique as configurações. Para salvar as configurações em um modelo de implementação, clique em **Salvar como Modelo**, digite um nome e selecione as configurações que você quer incluir no modelo e clique **Salvar**. Para alterar uma configuração, clique na página do assistente associado e altere a configuração.  
 
-2.  在“主页”选项卡上的“自动部署规则”组中，单击“添加部署”。 “添加部署向导”将会打开。  
+    > [!NOTE]  
+    >  O nome do modelo pode consistir em caracteres ASCII alfanuméricos, bem como em **\\** (barra invertida) ou **‘** (aspa simples).  
 
-3.  在“集合”页上，配置下列设置：  
+16. Clique em **Avançar** para criar a ADR.  
 
-    -   集合：指定要用于部署的目标集合。 集合的成员会收到部署中定义的软件更新。  
+ Depois de concluir o assistente, a ADR será executada. Isso adicionará as atualizações de software que atendem aos critérios especificados a um grupo de atualização de software, baixará as atualizações de software na biblioteca atual no servidor do site, distribuirá as atualizações de software aos pontos de distribuição configurados e então implantará o grupo de atualizações de software a clientes em uma coleção de destino.  
 
-    -   运行此规则后启用部署：指定运行 ADR 后是否启用软件更新部署。 关于该规格，请考虑下列情况：  
+##  <a name="BKMK_AddDeploymentToADR"></a> Adicionar uma nova implantação a uma ADR existente  
+ Depois de criar uma ADR, é possível adicionar outras implantações à regra. Isso pode ajudá-lo a gerenciar a complexidade de implantar diferentes atualizações em diferentes coleções. Cada nova implantação tem a gama completa de funcionalidade e experiência de monitoramento da implantação.  
 
-        -   如果启用部署，则满足规则中定义的条件的软件更新将添加到软件更新组中、根据需要下载软件更新内容、将内容复制到指定的分发点，并将软件更新部署到目标集合中的客户端。  
+#### <a name="to-add-a-new-deployment-to-an-existing-adr"></a>Para adicionar uma nova implantação a uma ADR existente  
 
-        -   如果未启用部署，则满足规则中定义的条件的软件更新将添加到软件更新组中，并且会配置软件更新部署策略，但不将软件更新下载或部署到客户端。 这种情况会根据需要为你提供时间，以便你准备部署软件更新、验证满足条件的软件更新是否合适，以及以后启用部署。  
+1.  No console do Configuration Manager, navegue até **Biblioteca de Software** > **Visão Geral** > **Atualizações de Software** > **Regras de Implantação Automáticas** e selecione a regra desejada.  
 
-4.  在“部署设置”页上配置下列设置：  
+2.  Na guia **Início** , no grupo **Regra de Implantação Automática** , clique em **Adicionar Implantação**. O Assistente para Adicionar de Implantação.  
 
-    -   使用 LAN 唤醒来唤醒所需部署的客户端：指定在截止时间是否启用 LAN 唤醒，以将唤醒数据包发送到需要部署中的一个或多个软件更新的计算机。 在安装截止时间处于睡眠模式的任何计算机将被唤醒，以便软件更新安装可以启动。 处于睡眠模式且不需要部署中的任何软件更新的客户端不会启动。 默认情况下不启用此设置。  
+3.  Na página **Coleção** , defina as seguintes configurações:  
+
+    -   **Coleção**: especifica a coleção de destino a ser usada na implantação. Os membros da coleção recebem as atualizações de software que são definidas na implantação.  
+
+    -   **Habilitar a implantação após a execução desta regra**: especifique se deseja habilitar a implantação de atualização de software após a execução da ADR. Sobre essa especificação, considere o seguinte:  
+
+        -   Quando você habilita a implantação, as atualizações de software que atendem aos critérios definidos na regra são adicionadas a um grupo de atualização de software, o conteúdo da atualização de software é baixado conforme necessário, o conteúdo é copiado nos pontos de distribuição especificados e as atualizações de software são implantadas nos clientes na coleção de destino.  
+
+        -   Quando você não habilita a implantação, as atualizações de software que atendem aos critérios definidos na regra são adicionadas a um grupo de atualização de software e a política de implantação de atualizações de software é configurada, mas as atualizações não são baixadas nem implantadas nos clientes. Essa situação fornece-lhe o tempo necessário para se preparar para implantar as atualizações de software, verificar se as atualizações que atendem aos critérios são adequadas e permitir a implantação em um momento posterior.  
+
+4.  Na página Configurações de Implantação, defina as seguintes configurações:  
+
+    -   **Usar Wake-on-LAN para ativar clientes para implantações obrigatórias**: especifica se o Wake on LAN deve ser habilitado no prazo para enviar pacotes de ativação para os computadores que exigem uma ou mais atualizações de software na implantação. Todos os computadores que estão no modo de suspensão na hora do prazo da instalação serão ativados para que a instalação da atualização de software seja iniciada. Clientes que estão no modo de suspensão e que não necessitam de atualizações de software na implantação não são iniciados. Por padrão, essa configuração não está habilitada.  
 
         > [!WARNING]  
-        >  必须针对“LAN 唤醒”配置计算机和网络，然后才能使用此选项。  
+        >  Antes de usar essa opção, você deve configurar computadores e redes para Wake On LAN.  
 
-    -   详细信息级别：指定客户端计算机报告的状态消息的详细信息级别。  
+    -   **Nível de detalhe**: especifique o nível de detalhe para as mensagens de estado que são relatadas pelos computadores cliente.  
 
         > [!IMPORTANT]  
-        >  部署定义更新时，请将详细信息级别设置为“仅限错误”，以让客户端只在定义更新无法传送到客户端时报告状态消息。 否则，客户端将报告大量的状态消息，这可能会影响站点服务器的性能。  
+        >  Ao implantar atualizações de definição, defina o nível de detalhes como **Apenas erro** para que o cliente relate uma mensagem de estado apenas quando uma atualização de definição deixar de ser entregue ao cliente. Caso contrário, o cliente relatará um grande número de mensagens de estado que podem afetar o desempenho no servidor do site.  
 
-5.  在“部署计划”页上配置下列设置：  
+5.  Na página Agendamento da Implantação, defina as seguintes configurações:  
 
-    -   计划评估：指定 Configuration Manager 是使用 UTC 还是使用运行 Configuration Manager 控制台的计算机的本地时间来计算可用的时间和安装截止时间。  
-
-        > [!NOTE]  
-        >  选择本地时间，并为“软件可用时间”或“安装截止时间”选择“尽快”时，将使用运行 Configuration Manager 控制台的计算机上的当前时间来计算更新可用的时间或在客户端上安装更新的时间。 如果客户端位于其他时区，当客户端的时间达到评估时间时将发生这些操作。  
-
-    -   软件可用时间：选择以下设置之一以指定向客户端提供软件更新的时间：  
-
-        -   尽快：选择此设置以尽快向客户端计算机提供部署中所包括的软件更新。 创建部署并选择此设置后，Configuration Manager 将更新客户端策略。 然后在下一个客户端策略轮询周期，客户端将注意部署并且可以获得可安装的更新。  
-
-        -   特定时间：选择此设置以在特定日期和时间向客户端计算机提供部署中所包括的软件更新。 创建部署并启用此设置后，Configuration Manager 将更新客户端策略。 然后在下一个客户端策略轮询周期，客户端将注意部署。 但是，直到过了配置的日期和时间，才可以安装部署中的软件更新。  
-
-    -   安装截止时间：选择以下设置之一以指定部署中的软件更新的安装截止时间：  
-
-        -   尽快：选择此设置以尽快自动安装部署中的软件更新。  
-
-        -   特定时间：选择此设置以在特定日期和时间自动安装部署中的软件更新。 通过将已配置的“特定时间”间隔添加到“软件可用时间”，Configuration Manager 可确定安装软件更新的截止时间。  
+    -   **Avaliação do agendamento**: especifique se o Configuration Manager avalia o tempo disponível e os prazos de instalação usando UTC ou a hora local do computador que executa o console do Configuration Manager.  
 
         > [!NOTE]  
-        >  实际安装截止时间是显示的截止时间加上随机的一段时间（最多为 2 小时）。 这可以减少目标集合中同时安装部署中软件更新的所有客户端计算机的潜在影响。  
+        >  Quando você seleciona a hora local e seleciona **O mais breve possível** para o **Tempo disponível do software** ou o **Prazo de instalação**, a hora atual no computador que executa o console do Configuration Manager é usada para avaliar quando as atualizações estarão disponíveis ou quando serão instaladas em um cliente. Se o cliente estiver em um fuso horário diferente, essas ações ocorrerão quando o tempo do cliente atingir o tempo de avaliação.  
+
+    -   **Tempo disponível do software**: selecione uma das configurações a seguir para especificar quando as atualizações de software estão disponíveis aos clientes:  
+
+        -   **O mais breve possível**: selecione essa configuração para disponibilizar as atualizações de software incluídas na implantação aos computadores cliente o mais breve possível. Quando você cria a implantação com essa configuração selecionada, o Configuration Manager atualiza a política de cliente. Então, no próximo ciclo de sondagem da política do cliente, os clientes ficam informados da implantação e podem obter as atualizações disponíveis para instalação.  
+
+        -   **Horário específico**: selecione essa configuração para disponibilizar as atualizações de software incluídas na implantação aos computadores cliente, em uma data e hora específica. Quando você cria a implantação com essa configuração habilitada, o Configuration Manager atualiza a política de cliente. Em seguida, no próximo ciclo de sondagem de política do cliente, os clientes são informados da implantação. No entanto, as atualizações de software na implantação não estão disponíveis para instalação até após a data e hora configuradas.  
+
+    -   **Prazo de instalação**: selecione uma das seguintes configurações para especificar o prazo de instalação das atualizações de software na implantação:  
+
+        -   **O mais breve possível**: selecione essa configuração para instalar automaticamente as atualizações de software na implantação o mais breve possível.  
+
+        -   **Horário específico**: selecione essa configuração para instalar automaticamente as atualizações de software na implantação, em uma data e hora específica. O Configuration Manager determina o prazo para instalar as atualizações de software, adicionando o intervalo **Horário específico** configurado para o **Tempo disponível do software**.  
+
+        > [!NOTE]  
+        >  O prazo real da instalação é o prazo exibido, mais um período de tempo aleatório de até 2 horas. Isso reduz o impacto potencial de todos os computadores cliente na coleção de destino que está instalando as atualizações de software na implantação ao mesmo tempo.  
         >   
-        >  你可以配置“计算机代理”客户端设置和“禁用截止时间随机化”，以对所需的软件更新禁用安装随机化延迟。 有关详细信息，请参阅 [Computer Agent](../../core/clients/deploy/about-client-settings.md#computer-agent)。  
+        >  É possível configurar a definição do cliente **Agente de Computador** , **Desativar data limite aleatória** para desabilitar o atraso de aleatoriedade das atualizações de software necessárias. Para obter mais informações, consulte [Computer Agent](../../core/clients/deploy/about-client-settings.md#computer-agent).  
 
-6.  在“用户体验”页上，请配置下列设置：  
+6.  Na página Experiência do Usuário, defina as seguintes configurações:  
 
-    -   用户通知：指定是否在配置的“软件可用时间”在客户端计算机上软件中心中显示软件更新通知，以及是否在客户端计算机上显示用户通知。  
+    -   **Notificações ao usuário**: especifique se quer exibir notificações das atualizações de software no Centro de Software no computador cliente no **Tempo disponível do software** configurado e se deseja exibir as notificações ao usuário nos computadores cliente.  
 
-    -   截止时间行为：指定到达软件更新部署的截止时间时要发生的行为。 指定是否安装部署中的软件更新。 另外，指定是否在安装软件更新后执行系统重启而不考虑配置的维护时段。 有关维护时段的详细信息，请参阅[如何使用维护时段](../../core/clients/manage/collections/use-maintenance-windows.md)。  
+    -   **Comportamento do prazo**: especifique o comportamento que deve ocorrer quando o prazo for alcançado para a implantação de atualização do software. Especifique se deseja instalar as atualizações de software na implantação. Especifique também se o sistema deve ser reiniciado após a instalação da atualização de software, independentemente de uma janela de manutenção configurada. Para obter mais informações sobre janelas de manutenção, consulte [Como usar janelas de manutenção](../../core/clients/manage/collections/use-maintenance-windows.md).  
 
-    -   设备重新启动行为：指定安装软件更新后是否在服务器和工作站上抑制系统重启，以及是否需要重启系统以完成安装。  
+    -   **Comportamento de reinicialização do dispositivo**: especifique se uma reinicialização do sistema em servidores e estações de trabalho deve ser suprimida depois que as atualizações de software são instaladas e uma reinicialização do sistema é necessária para concluir a instalação.  
 
         > [!IMPORTANT]  
-        >  在服务器环境中，或者在不希望默认重启安装软件更新的计算机的情况下，抑制系统重启可能很有用。 但是，执行此操作可能会使计算机处于不安全状态，而允许强制重启有助于确保立即完成软件更新安装。  
+        >  A supressão das reinicializações do sistema pode ser útil em ambientes de servidor ou para casos em que você não quer que os computadores que estão instalando as atualizações de software reiniciem por padrão. No entanto, isso pode deixar os computadores em um estado inseguro, ao passo que permitir uma reinicialização forçada ajuda a garantir a conclusão imediata da instalação da atualização de software.  
 
-    -   **Windows Embedded 设备的写入筛选器处理**：将软件更新部署到启用了写入筛选器的 Windows Embedded 设备时，你可以指定将软件更新安装在临时覆盖区上并稍后提交更改，或者在安装截止时或在维护时段内提交更改。 如果在安装截止时或在维护时段内提交更改，则需要重新启动，而且更改将保留在设备上。  
+    -   **Manuseio de filtro de gravação para dispositivos Windows Embedded**: ao implantar atualizações de software em dispositivos Windows Embedded com filtro de gravação habilitado, é possível especificar que a atualização de software seja instalada na sobreposição temporária e que as alterações sejam confirmadas mais tarde, na data limite da instalação ou durante uma janela de manutenção. Ao confirmar as alterações na data limite da instalação ou durante uma janela de manutenção, é necessário reinicializar. Dessa forma, as alterações permanecem no dispositivo.  
 
         > [!NOTE]  
-        >  将软件更新部署到 Windows Embedded 设备时，确保设备是配置了维护时段的集合的成员。  
+        >  Ao implantar uma atualização de software em um dispositivo Windows Embedded, verifique se o dispositivo é membro de uma coleção com uma janela de manutenção configurada.  
 
-7.  在“警报”页上，配置 Configuration Manager 和 System Center Operations Manager 为此部署生成警报的方式。  
+7.  Na página Alertas, configure como o Configuration Manager e o System Center Operations Manager gerarão alertas para essa implantação.  
 
     > [!WARNING]  
-    >  你可以从“软件库”工作区的“软件更新”节点中查看最新软件更新警报。  
+    >  Você pode verificar os alertas de atualizações de software recentes no nó **Atualizações de Software** no espaço de trabalho **Biblioteca de Software** .  
 
-8. 在“下载设置”页上配置下列设置：  
+8. Na página Configurações de Download, defina as seguintes configurações:  
 
-    - 指定当客户端连接到慢速网络或正在使用回退内容位置时是否将下载和安装软件更新。  
+    - Especifique se o cliente irá baixar e instalar as atualizações de software quando estiver conectado a uma rede lenta ou usando um local de conteúdos de fallback.  
 
-    - 指定当软件更新的内容在首选分发点上不可用时客户端是否下载和安装回退分发点中的软件更新。  
+    - Especifique se o cliente deve baixar e instalar as atualizações de software por meio de um ponto de distribuição de fallback quando o conteúdo das atualizações de software não está disponível ou de um ponto de distribuição preferencial.  
 
-    - 允许客户端与同一子网上的其他客户端共享内容：指定是否为内容下载启用 BranchCache。 有关 BranchCache 的详细信息，请参阅 [Concepts for content management](../../core/plan-design/hierarchy/fundamental-concepts-for-content-management.md#branchcache)。  
+    - **Permitir que os clientes compartilhem conteúdo com outros clientes na mesma sub-rede**: especifique se deseja habilitar o uso do BranchCache para downloads de conteúdo. Para obter mais informações sobre o BranchCache, veja [Concepts for content management](../../core/plan-design/hierarchy/fundamental-concepts-for-content-management.md#branchcache).  
 
-    - 如果软件更新当前在分发点上不可用，邻域或站点组从 Microsoft 更新下载内容：如果软件更新在分发点上不可用，选择此设置，可使连接到 Intranet 的客户端从 Microsoft 更新下载软件。 基于 Internet 的客户端可随时访问 Microsoft 更新，获取软件更新内容。
+    - **Se as atualizações de software não estiverem disponíveis no ponto de distribuição nos grupos de site, atuais ou vizinhos, baixe o conteúdo do Microsoft Updates**: selecione essa configuração para que os clientes que estiverem conectados à intranet baixem as atualizações de software do Microsoft Update se as atualizações de software não estiverem disponíveis nos pontos de distribuição. Os clientes baseados na Internet sempre podem ir para o Microsoft Update para obter o conteúdo das atualizações de software.
 
-    - 指定是否允许客户端在安装截止日期之后下载内容（如果客户端使用按流量计费的 Internet 连接）。 Internet 提供商有时根据你在按流量计费的 Internet 连接上发送和接收的数据量计费。  
+    - Especifique se os clientes têm permissão para baixar após o prazo de uma instalação quando usam conexão de Internet limitada. Provedores de Internet ocasionalmente cobram por quantidade de dados que você envia e recebe quando está em uma conexão de Internet limitada.  
 
     > [!NOTE]  
-    > 客户端请求部署中的软件更新的管理点中的内容位置。 下载行为取决于在此页面上配置分发点、部署包和设置的方式。 有关详细信息，请参阅 [Content source location scenarios](../../core/plan-design/hierarchy/content-source-location-scenarios.md)。  
+    > Os clientes solicitam o local do conteúdo de um ponto de gerenciamento de atualizações de software em uma implantação. O comportamento do download depende de como você configurou o ponto de distribuição, o pacote de implantação e as configurações desta página. Para obter mais informações, consulte [Content source location scenarios](../../core/plan-design/hierarchy/content-source-location-scenarios.md).  
 
-有关部署过程的详细信息，请参阅 [Software update deployment process](../../sum/understand/software-updates-introduction.md#BKMK_DeploymentProcess)。
+Para obter mais informações sobre o processo de implantação, veja [Software update deployment process](../../sum/understand/software-updates-introduction.md#BKMK_DeploymentProcess).
 
-## <a name="next-steps"></a>后续步骤
-[监视软件更新](monitor-software-updates.md)
+## <a name="next-steps"></a>Próximas etapas
+[Monitorar atualizações de software](monitor-software-updates.md)
