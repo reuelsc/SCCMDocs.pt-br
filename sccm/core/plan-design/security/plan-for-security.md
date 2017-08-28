@@ -6,23 +6,20 @@ ms.date: 01/04/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
-ms.technology:
-- configmgr-other
+ms.technology: configmgr-other
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 2a216814-ca8c-4d2e-bcef-dc00966a3c9f
-caps.latest.revision: 6
-caps.handback.revision: 0
+caps.latest.revision: "6"
+caps.handback.revision: "0"
 author: arob98
 ms.author: angrobe
 manager: angrobe
-ms.translationtype: Human Translation
-ms.sourcegitcommit: af06fb10d905e3fe447c6cd6ed35dac10488161f
-ms.openlocfilehash: 1bf519ad4593f6a08d7dc393f9fab91c70b51b25
-ms.contentlocale: pt-br
-ms.lasthandoff: 01/05/2017
-
-
+ms.openlocfilehash: 6145cb69c69dba1eb1b9842079ee1a33686bb18a
+ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
+ms.translationtype: HT
+ms.contentlocale: pt-BR
+ms.lasthandoff: 08/07/2017
 ---
 # <a name="plan-for-security-in-system-center-configuration-manager"></a>Planejar a segurança no System Center Configuration Manager
 
@@ -294,7 +291,7 @@ Use os seguintes procedimentos para pré-provisionar e verificar a chave de raiz
 
 8.  Na nova janela **Resultado da Consulta** que mostra as instâncias de **TrustedRootKey**, clique duas vezes em **TrustedRootKey=@**.  
 
-9. Na caixa de diálogo **Editor de objeto de TrustedRootKey=@**, na seção **Propriedades**, role para baixo até **TrustedRootKey CIM_STRING**. A cadeia de caracteres na coluna da direita é a chave de raiz confiável. Verifique se ela corresponde ao valor **SMSPublicRootKey** no arquivo *&lt;Diretório do Configuration Manager\>***\bin\mobileclient.tcf**.  
+9. Na caixa de diálogo **Editor de objeto para TrustedRootKey=@** , na seção **Propriedades** , role para baixo até **TrustedRootKey CIM_STRING**. A cadeia de caracteres na coluna da direita é a chave de raiz confiável. Verifique se ela corresponde ao valor **SMSPublicRootKey** no arquivo *&lt;Diretório do Configuration Manager\>***\bin\mobileclient.tcf**.  
 
 ##  <a name="BKMK_PlanningForSigningEncryption"></a> Planejar assinatura e criptografia  
  Quando você usa certificados PKI para todas as comunicações do cliente, não precisa planejar assinatura e criptografia para ajudar a proteger o cliente nas comunicação de dados. Mas, se você configurar qualquer sistema de sites que execute IIS para permitir conexões de cliente HTTP, deverá decidir como ajudar a proteger a comunicação do cliente com o site.  
@@ -310,4 +307,3 @@ Use os seguintes procedimentos para pré-provisionar e verificar a chave de raiz
 
 ### <a name="see-also"></a>Consulte também
 [Referência técnica de controles de criptografia para o System Center Configuration Manager](../../../protect/deploy-use/cryptographic-controls-technical-reference.md).  
-

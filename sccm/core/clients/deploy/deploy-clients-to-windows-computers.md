@@ -2,27 +2,24 @@
 title: Implantar clientes Windows | Microsoft Docs
 description: Saiba como implantar clientes em computadores Windows no System Center Configuration Manager.
 ms.custom: na
-ms.date: 04/23/2017
+ms.date: 08/20/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
-ms.technology:
-- configmgr-client
+ms.technology: configmgr-client
 ms.tgt_pltfrm: na
 ms.topic: get-started-article
 ms.assetid: 341f0d0b-f907-44cf-9e10-e1b41fc15f82
-caps.latest.revision: 13
-caps.handback.revision: 0
+caps.latest.revision: "13"
+caps.handback.revision: "0"
 author: robstackmsft
 ms.author: robstack
 manager: angrobe
-ms.translationtype: Human Translation
-ms.sourcegitcommit: 9555a16d97224a1cf49a426ab225468b07403f60
-ms.openlocfilehash: 0e5e624fdfc2b5ee5b497d1063bd4e2d15df578b
-ms.contentlocale: pt-br
-ms.lasthandoff: 12/30/2016
-
-
+ms.openlocfilehash: 9ac54136b93ee366c16cafe89036a79e808980dc
+ms.sourcegitcommit: 06aef618f72c700f8a716a43fb8eedf97c62a72b
+ms.translationtype: HT
+ms.contentlocale: pt-BR
+ms.lasthandoff: 08/21/2017
 ---
 # <a name="how-to-deploy-clients-to-windows-computers-in-system-center-configuration-manager"></a>Como implantar clientes em computadores Windows no System Center Configuration Manager
 
@@ -58,13 +55,10 @@ Os arquivos de log do cliente fornecem informações mais detalhadas para soluç
 6.  Selecione se deseja instalar o cliente em controladores de domínio.  
 
 7.  Na guia **Contas**, especifique uma ou mais contas para que o Configuration Manager use ao se conectar ao computador para instalar o software cliente. Clique no ícone **Criar**, insira o **Nome de usuário** e a **Senha** (com menos de 38 caracteres), confirme a senha e, em seguida, clique em **OK**. Você deve especificar pelo menos uma conta de instalação por push do cliente, que deve ter direitos de administrador local em cada computador no qual você deseja instalar o cliente. Se você não especificar uma conta de instalação do cliente por push, o Configuration Manager tentará usar a conta de computador do sistema de sites, o que causará uma falha do push do cliente entre domínios.  
-
-    
     > [!NOTE]  
     >  Se você pretende usar o método de instalação do cliente por push de um site secundário, a conta deve ser especificada no site secundário que inicia o push do cliente.  
     >   
     >  Para obter mais informações sobre a conta de instalação do cliente por push, consulte o procedimento a seguir, "Para usar o Assistente de Instalação do Cliente por Push".  
-
 8.  Completar a guia **Propriedades da Instalação**.
 
      As [propriedades da instalação do cliente](../../../core/clients/deploy/about-client-installation-properties.md) especificadas nesta guia serão publicadas no Active Directory Domain Services se o esquema for estendido para o Configuration Manager e lido pelas instalações do cliente nas quais o CCMSetup é executado sem propriedades de instalação.  
@@ -296,8 +290,8 @@ Para garantir que o dispositivo permaneça em um estado gerenciado depois da ins
     > [!IMPORTANT]  
     >  Não especifique um código do site do Configuration Manager para o cliente nas propriedades da linha de comando CCMSetup.exe.  
 
-2.  No prompt de comando, digite **net stop ccmexec** para garantir que o serviço **Host de Agente do SMS** (Ccmexec.exe) não esteja sendo executado no computador com a imagem mestra.  
-
+2.  No prompt de comando, digite **net stop ccmexec** para garantir que o serviço **Host de Agente do SMS** (Ccmexec.exe) não esteja sendo executado no computador com a imagem mestra.
+3.  Exclua o arquivo **SMSCFG.INI** da pasta **Windows** no computador de referência.  
 3.  Remova todos os certificados armazenados no armazenamento de computador local no computador com a imagem mestra.  Por exemplo, se você usar certificados PKI (infraestrutura de chave pública), deverá remover os certificados na loja **Pessoal** para **Computador** e **Usuário** antes de criar a imagem no computador.
 
 4.  Se os clientes forem instalados em uma hierarquia do Configuration Manager diferente em vez do computador com a imagem mestra, remova a chave de raiz confiável do computador com a imagem mestra.  
@@ -470,7 +464,7 @@ Verifique os pré-requisitos e, em seguida, siga as instruções na seção [Com
 
 5.  Atribuir o Objeto de Política de Grupo a computadores que você deseja provisionar com as propriedades de instalação do cliente do Configuration Manager.  
 
- Para obter informações sobre a Política de Grupo do Windows, consulte a documentação do Windows Server.  
+Para obter informações sobre a Política de Grupo do Windows, consulte a documentação do Windows Server.  
 
-### <a name="see-also"></a>Consulte também
-[Métodos de instalação do cliente no System Center Configuration Manager](../../../core/clients/deploy/plan/client-installation-methods.md)
+## <a name="next-steps"></a>Próximas etapas
+Para saber mais sobre a instalação do cliente do Configuration Manager, veja [Métodos de instalação do cliente no System Center Configuration Manager](../../../core/clients/deploy/plan/client-installation-methods.md).

@@ -4,23 +4,21 @@ description: "Saiba mais sobre os recursos disponíveis no Technical Preview do 
 ms.custom: na
 ms.date: 01/23/2017
 ms.prod: configuration-manager
-ms.technology:
-- configmgr-other
+ms.technology: configmgr-other
 ms.reviewer: na
 ms.suite: na
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: bceab2e8-2f05-4a17-9ac8-a7a558670fb7
-caps.latest.revision: 5
+caps.latest.revision: "5"
 author: Brenduns
 ms.author: brenduns
 manager: angrobe
-ms.translationtype: Human Translation
-ms.sourcegitcommit: dab5da5a4b5dfb3606a8a6bd0c70a0b21923fff9
 ms.openlocfilehash: bcb14a2be312d4d8a4a9c235652c7bf971a7a976
-ms.contentlocale: pt-br
-ms.lasthandoff: 05/17/2017
-
+ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
+ms.translationtype: HT
+ms.contentlocale: pt-BR
+ms.lasthandoff: 08/07/2017
 ---
 # <a name="capabilities-in-technical-preview-1612-for-system-center-configuration-manager"></a>Funcionalidades do Technical Preview 1612 do System Center Configuration Manager
 
@@ -52,11 +50,11 @@ Além de instalar e configurar o banco de dados de data warehouse, vários novos
 
 | Etapa         | Detalhes  |
 |:------:|-----------|  
-| **1**  |     O servidor do site transfere e armazena dados no banco de dados do site.  |  
-| **2** |      O ponto do Data Warehouse Service obtém dados do banco de dados do site com base na sua agenda e configuração.  |  
+| **1**  |  O servidor do site transfere e armazena dados no banco de dados do site.  |  
+| **2** |   O ponto do Data Warehouse Service obtém dados do banco de dados do site com base na sua agenda e configuração.  |  
 | **3** |  O ponto do Data Warehouse Service transfere e armazena uma cópia dos dados sincronizados no banco de dados de data warehouse. |  
 | **A** |  Usando relatórios internos, é criada uma solicitação dos dados, a qual é passada para o ponto do Reporting Services usando o SQL Server Reporting Services. |  
-| **B** |      A maioria dos relatórios contém informações atuais, e tais solicitações são executadas no banco de dados do site. |  
+| **B** |   A maioria dos relatórios contém informações atuais, e tais solicitações são executadas no banco de dados do site. |  
 | **C** | Quando um relatório solicita dados históricos usando um dos relatórios com uma *Categoria* de **Data Warehouse**, a solicitação é executada no banco de dados de data warehouse.   |  
 
 ### <a name="prerequisites-for-the-data-warehouse-service-point-and-database"></a>Pré-requisitos para o banco de dados e o ponto do Data Warehouse Service
@@ -87,12 +85,12 @@ Página **Geral** ‑ As informações gerais a seguir são necessárias:
 - **Configurações do banco de dados do Configuration Manager:**   
   - **Nome do Servidor** ‑ Especifique o FQDN do servidor que hospeda o banco de dados do site. Se você não usar uma instância padrão do SQL Server, deverá especificar a instância depois do FQDN no seguinte formato: ***&lt;Sqlserver_FQDN >\&lt;Nome_da_instância>***
   - **Nome do banco de dados** ‑ Especifique o nome do banco de dados do site.
-  -    **Verificar** – Clique em **Verificar** para certificar-se de que a conexão com o banco de dados do site foi bem-sucedida.
+  - **Verificar** – Clique em **Verificar** para certificar-se de que a conexão com o banco de dados do site foi bem-sucedida.
 </br></br>
 - **Configurações do banco de dados de data warehouse:**
-  -    **Nome do servidor** ‑ Especifique o FQDN do servidor que hospeda o banco de dados e o ponto do Data Warehouse Service. Se você não usar uma instância padrão do SQL Server, deverá especificar a instância depois do FQDN no seguinte formato: ***&lt;Sqlserver_FQDN >\&lt;Nome_da_instância>***
-  -    **Nome do banco de dados** ‑ Especifique o FQDN para o banco de dados de data warehouse.  O Configuration Manager criará o banco de dados com esse nome. Se você especificar um nome de banco de dados que já existe na instância do SQL Server, o Configuration Manager usará esse banco de dados.
-  -    **Verificar** – Clique em **Verificar** para certificar-se de que a conexão com o banco de dados do site foi bem-sucedida.
+  - **Nome do servidor** ‑ Especifique o FQDN do servidor que hospeda o banco de dados e o ponto do Data Warehouse Service. Se você não usar uma instância padrão do SQL Server, deverá especificar a instância depois do FQDN no seguinte formato: ***&lt;Sqlserver_FQDN >\&lt;Nome_da_instância>***
+  - **Nome do banco de dados** ‑ Especifique o FQDN para o banco de dados de data warehouse.  O Configuration Manager criará o banco de dados com esse nome. Se você especificar um nome de banco de dados que já existe na instância do SQL Server, o Configuration Manager usará esse banco de dados.
+  - **Verificar** – Clique em **Verificar** para certificar-se de que a conexão com o banco de dados do site foi bem-sucedida.
 
 Página **Configurações de sincronização**:   
 - **Configurações de dados:**
@@ -109,7 +107,7 @@ Depois de instalar a função de data warehouse, verifique se a conta usada como
 #### <a name="troubleshoot-installation-and-data-synchronization"></a>Solucionar problemas de sincronização de dados e instalação
 Use os seguintes logs para investigar problemas com a instalação do ponto do Data Warehouse Service ou com a sincronização de dados:
 - **DWSSMSI.log** e **DWSSSetup.log** ‑ Use esses logs para investigar erros ao instalar o ponto do Data Warehouse Service.
--     **Microsoft.ConfigMgrDataWarehouse.log** – Use este log para investigar a sincronização de dados entre o banco de dados do site e o banco de dados de data warehouse.
+-   **Microsoft.ConfigMgrDataWarehouse.log** – Use este log para investigar a sincronização de dados entre o banco de dados do site e o banco de dados de data warehouse.
 
 ### <a name="reporting"></a>Relatórios
 Depois de instalar uma função do sistema de sites do Data Warehouse, os seguintes relatórios estão disponíveis no seu ponto do Reporting Services com uma *Categoria* de **Data Warehouse:**
@@ -122,7 +120,7 @@ Depois de instalar uma função do sistema de sites do Data Warehouse, os seguin
 | **Relatório Geral do Inventário de Software**  | Exibe todo o inventário de software para um computador específico.|
 | **Visão Geral de Integridade de Infraestrutura**  |Exibe uma visão geral da integridade da infraestrutura do seu Configuration Manager.|
 | **Lista de Malwares Detectados**  |Exibe os malwares que foram detectados na sua organização.|
-|**Relatório de Resumo de Distribuição de Software** | Um resumo da distribuição de software para um anúncio e computador específicos.|
+|** Relatório de Resumo de Distribuição de Software** | Um resumo da distribuição de software para um anúncio e computador específicos.|
 
 ### <a name="move-the-data-warehouse-database"></a>Mover o banco de dados de data warehouse
 Use as seguintes etapas para mover o banco de dados de data warehouse para um novo SQL Server:
@@ -145,7 +143,7 @@ Use as seguintes etapas para mover o banco de dados de data warehouse para um no
 
 Você pode examinar os seguintes logs do Configuration Manager para confirmar se a função do sistema de site foi reinstalada com êxito:  
 - **DWSSMSI.log** e **DWSSSetup.log** ‑ Use esses logs para investigar erros ao instalar o ponto do Data Warehouse Service.
--     **Microsoft.ConfigMgrDataWarehouse.log** – Use este log para investigar a sincronização de dados entre o banco de dados do site e o banco de dados de data warehouse.
+-   **Microsoft.ConfigMgrDataWarehouse.log** – Use este log para investigar a sincronização de dados entre o banco de dados do site e o banco de dados de data warehouse.
 
 
 ## <a name="content-library-cleanup-tool"></a>Ferramenta de Limpeza da Biblioteca de Conteúdo
@@ -175,7 +173,7 @@ A ferramenta pode ser executada em dois modos:
   2. **Modo de exclusão**: quando você executa a ferramenta com a opção **/delete**, ela é executada no modo de exclusão.
 
      - Quando a ferramenta é executada nesse modo, o conteúdo órfão encontrado no ponto de distribuição especificado pode ser excluído da biblioteca de conteúdo do ponto de distribuição.
-     -     Antes de excluir cada arquivo, é solicitado que o usuário confirme se o arquivo deve ser excluído.  Você pode selecionar, **Y** para sim, **N** para não ou **Sim para todos** para ignorar as futuras solicitações e excluir todo o conteúdo órfão.  
+     -  Antes de excluir cada arquivo, é solicitado que o usuário confirme se o arquivo deve ser excluído.  Você pode selecionar, **Y** para sim, **N** para não ou **Sim para todos** para ignorar as futuras solicitações e excluir todo o conteúdo órfão.  
      </br>
 
      Recomendamos que você execute a ferramenta no modo de hipóteses modo e examine o arquivo de log resultante antes de executar a ferramenta com a opção /delete.  
@@ -224,9 +222,9 @@ Agora você poderá configurar uma lista de arquivos executáveis (com a extens�
 
 ### <a name="try-it-out"></a>Experimente
 Para configurar uma lista de arquivos executáveis
-1.    Na página de propriedades de qualquer tipo de implantação, escolha a guia **Tratamento do Instalador**.
-2.    Clique em **Adicionar** para adicionar um ou mais arquivos executáveis à lista (por exemplo **Edge.exe**)
-3.    Clique em **OK** para fechar a caixa de diálogo Propriedades do tipo de implantação.
+1.  Na página de propriedades de qualquer tipo de implantação, escolha a guia **Tratamento do Instalador**.
+2.  Clique em **Adicionar** para adicionar um ou mais arquivos executáveis à lista (por exemplo **Edge.exe**)
+3.  Clique em **OK** para fechar a caixa de diálogo Propriedades do tipo de implantação.
 
 Agora, quando você implantar esse aplicativo em um usuário ou dispositivo e um dos executáveis adicionados estiver em execução, o usuário final verá uma caixa de diálogo do Centro de Software informando que a instalação falhou porque um aplicativo está em execução.
 
@@ -256,16 +254,16 @@ Adicionamos o suporte a arquivos de instalação expressa no Configuration Manag
 
 ### <a name="to-enable-the-download-of-express-installation-files-for-windows-10-updates-on-the-server"></a>Para habilitar o download de arquivos de instalação expressa para atualizações do Windows 10 no servidor
 Para começar a sincronizar os metadados para arquivos de instalação expressa do Windows 10, você deve habilitá-la nas Propriedades do Ponto de Atualização de Software.
-1.    No console do Configuration Manager, navegue até **Administração** > **Configuração de Site** > **Sites**.
-2.    Selecione o site de administração central ou um site primário autônomo.
-3.    Na guia **Início** , no grupo **Configurações** , clique em **Configurar Componentes do Site**e **Ponto de Atualização de Software**. Na guia **Arquivos de Atualização**, selecione **Baixar arquivos completos para todas as atualizações aprovadas e arquivos de instalação expressa para o Windows 10**.
+1.  No console do Configuration Manager, navegue até **Administração** > **Configuração de Site** > **Sites**.
+2.  Selecione o site de administração central ou um site primário autônomo.
+3.  Na guia **Início** , no grupo **Configurações** , clique em **Configurar Componentes do Site**e **Ponto de Atualização de Software**. Na guia **Arquivos de Atualização**, selecione **Baixar arquivos completos para todas as atualizações aprovadas e arquivos de instalação expressa para o Windows 10**.
 
 ### <a name="to-enable-support-for-clients-to-download-and-install-express-installation-files"></a>Para habilitar o suporte para clientes baixarem e instalarem os arquivos de instalação expressa
 Para habilitar o suporte a arquivos de instalação expressa nos clientes, você deve habilitar os arquivos de instalação expressa em clientes na seção Atualizações de Software das configurações do cliente. Isso cria um novo ouvinte HTTP que escuta solicitações para baixar arquivos de instalação expressa na porta que você especificar. Depois de implantar as configurações de cliente para habilitar essa funcionalidade no cliente, ele tentará baixar a diferença entre a Atualização Cumulativa do Windows 10 do mês atual e a atualização do mês anterior (os clientes devem executar uma versão do Windows 10 com suporte a arquivos de instalação expressa).
-1.    Habilite o suporte a arquivos de instalação expressa nas propriedades do Componente de Ponto de Atualização de Software (procedimento anterior).
-2.    No console do Configuration Manager, navegue para **Administração** > **Configurações do Cliente**.
-3.    Selecione as configurações de cliente apropriadas e, em seguida, na guia **Início**, clique em **Propriedades**.
-4.    Selecione a página **Atualizações de Software**, defina **Sim** para a configuração **Habilitar instalação de Atualizações Expressas em clientes** e configure a porta usada pelo ouvinte HTTP no cliente para a configuração **Porta usada para baixar o conteúdo para as Atualizações Expressas**.
+1.  Habilite o suporte a arquivos de instalação expressa nas propriedades do Componente de Ponto de Atualização de Software (procedimento anterior).
+2.  No console do Configuration Manager, navegue para **Administração** > **Configurações do Cliente**.
+3.  Selecione as configurações de cliente apropriadas e, em seguida, na guia **Início**, clique em **Propriedades**.
+4.  Selecione a página **Atualizações de Software**, defina **Sim** para a configuração **Habilitar instalação de Atualizações Expressas em clientes** e configure a porta usada pelo ouvinte HTTP no cliente para a configuração **Porta usada para baixar o conteúdo para as Atualizações Expressas**.
 
 
 ## <a name="odata-endpoint-data-access"></a>Acesso a dados do ponto de extremidade OData
@@ -322,4 +320,3 @@ Depois de fazer essas alterações de configuração, você poderá criar uma po
 ## <a name="change-to-configuring-multi-factor-authentication-for-device-enrollment"></a>Alterar a configuração da autenticação multifator para registro de dispositivo
 
 Agora que você pode configurar a MFA (Autenticação Multifator) para o registro de dispositivo no Portal do Azure, a opção de MFA foi removida no console do Configuration Manager. Você pode encontrar mais informações sobre como configurar o MFA para registro [neste tópico do Microsoft Intune](https://docs.microsoft.com/en-us/intune/deploy-use/multi-factor-authentication-azure-active-directory).
-

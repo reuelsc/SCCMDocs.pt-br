@@ -6,8 +6,7 @@ ms.date: 6/5/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
-ms.technology:
-- configmgr-other
+ms.technology: configmgr-other
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 828c31d1-3d70-4412-b1a8-c92e7e504d39
@@ -15,18 +14,15 @@ caps.latest.revision:
 author: Brenduns
 ms.author: brenduns
 manager: angrobe
-ms.translationtype: Human Translation
-ms.sourcegitcommit: f7cd9c71287d62c9f5d36e2f032bc2a6065572ae
 ms.openlocfilehash: b5a1a1d165a6888bc26e809666d2331ff3c24d68
-ms.contentlocale: pt-br
-ms.lasthandoff: 06/06/2017
-
+ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
+ms.translationtype: HT
+ms.contentlocale: pt-BR
+ms.lasthandoff: 08/07/2017
 ---
-
 # <a name="unattended-site-recovery-for-configuration-manager"></a>Recuperação autônoma de sites para o Configuration Manager   
 
-*Aplica-se a: System Center Configuration Manager (Branch Atual)*
- Para executar uma [recuperação autônoma](/sccm/protect/understand/recover-sites#site-recovery-procedures) de um site de administração central ou de um site primário do Configuration Manager, é possível criar um script de instalação autônoma e usar a Instalação com a opção de comando **/script**. O script fornece o mesmo tipo de informação que o Assistente de Instalação solicita, porém não há configurações padrão. Todos os valores devem ser especificados para as chaves de instalação que se aplicam ao tipo de recuperação usado.
+*Aplica-se a: System Center Configuration Manager (Branch Atual)* Para executar uma [recuperação autônoma](/sccm/protect/understand/recover-sites#site-recovery-procedures) de um site de administração central ou de um site primário do Configuration Manager, é possível criar um script de instalação autônoma e usar a Instalação com a opção de comando **/script**. O script fornece o mesmo tipo de informação que o Assistente de Instalação solicita, porém não há configurações padrão. Todos os valores devem ser especificados para as chaves de instalação que se aplicam ao tipo de recuperação usado.
 
  Para usar a opção de linha de comando de instalação /script, é necessário criar um arquivo de inicialização e especificar o nome do arquivo de inicialização após a opção de linha de comando de instalação /script. O nome do arquivo não é importante, contanto que tenha a extensão de nome de arquivo **.ini**. Para fazer referência ao arquivo de inicialização de instalação na linha de comando, é necessário fornecer o caminho completo do arquivo. Por exemplo, se o arquivo de inicialização de instalação for nomeado como *setup.ini* e armazenado na *pasta C:\setup*, sua linha de comando será:
 
@@ -386,4 +382,3 @@ ms.lasthandoff: 06/06/2017
     -   **Obrigatória:** Não
     -   **Valores:** &lt;*Timeout*>
     -   **Detalhes:** especifica o valor máximo do tempo limite (em minutos) para o site primário se conectar ao site de administração central. Por exemplo, se o site primário falhar ao conectar-se ao site de administração central, o site primário tentará novamente a conexão ao site de administração central baseado no CASRetryInterval até chegar ao período do WaitForCASTimeout. Você pode especificar um valor de 0 a 100.
-

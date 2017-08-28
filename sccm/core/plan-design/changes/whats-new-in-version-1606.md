@@ -6,19 +6,19 @@ ms.date: 12/30/2016
 ms.reviewer: na
 ms.suite: na
 ms.prod: configuration-manager
-ms.technology:
-- configmgr-other
+ms.technology: configmgr-other
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: df2e57b9-6445-4067-98e7-ace85d4e6aa6
-caps.latest.revision: 40
+caps.latest.revision: "40"
 author: Brenduns
 ms.author: brenduns
 manager: angrobe
-translationtype: Human Translation
-ms.sourcegitcommit: 34809ddf7819eab5deb3995cd8138c7b38cd2f9a
 ms.openlocfilehash: 9fdff6049d6e5cde1032864e5d7aa8df71e53686
-
+ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
+ms.translationtype: HT
+ms.contentlocale: pt-BR
+ms.lasthandoff: 08/07/2017
 ---
 # <a name="what39s-new-in-version-1606-of-system-center-configuration-manager"></a>Novidades da versão 1606 do System Center Configuration Manager
 
@@ -35,7 +35,7 @@ A atualização 1606 do System Center Configuration Manager está disponível co
 
 
 
-## <a name="a-nameupdatesandservicingaupdates-and-servicing"></a><a name="updatesandservicing"></a>Atualizações e manutenção
+## <a name="updatesandservicing"></a>Atualizações e manutenção
 
 ### <a name="changes-for-the-updates-and-servicing-node"></a>Alterações no nó Atualizações e Manutenção
 Estas são as alterações no nó Atualizações e Manutenção no console do Configuration Manager:
@@ -81,10 +81,10 @@ Após a instalação da atualização 1606, ao instalar uma atualização no sit
 
 
 
-## <a name="a-nameaccessibilitya-accessibility"></a><a name="accessibility"></a> Acessibilidade
+## <a name="accessibility"></a> Acessibilidade
 Para navegar entre os diferentes nós de um espaço de trabalho, agora é possível inserir a primeira letra do nome de um nó. Cada pressionamento de tecla move o cursor para o próximo nó que começa com determinada letra. Para os usuários que têm um leitor de tela, o leitor lê o nome do nó. Para mais informações sobre opções de acessibilidade, confira [Accessibility features in System Center Configuration Manager](../../../core/understand/accessibility-features.md) (Recursos de acessibilidade no System Center Configuration Manager).
 
-## <a name="a-nameadministrationaadministration"></a><a name="administration"></a> Administração
+## <a name="administration"></a> Administração
 Estas são as alterações para a Administração no console do Configuration Manager:
 ### <a name="oms-connector"></a>Conector do OMS
 
@@ -225,9 +225,3 @@ Para obter detalhes, consulte [Atestado de integridade do System Center Configur
 
 ## <a name="remote-control"></a>Controle remoto
 Conceda aos usuários a oportunidade de aceitar ou negar transferências de arquivo antes de transferir conteúdo da área de transferência compartilhada em uma seção de controle remoto. Os usuários precisam apenas conceder permissão uma vez por sessão e o visualizador não terá a capacidade de conceder a si mesmo a permissão de continuar a transferência de arquivo. É possível encontrar essa nova configuração no espaço de trabalho **Administração**. Acesse **Configurações do Cliente** e, em **Configurações Padrão**, abra o painel **Ferramentas Remotas**.
-
-
-
-<!--HONumber=Dec16_HO5-->
-
-

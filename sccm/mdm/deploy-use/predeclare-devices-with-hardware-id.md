@@ -2,25 +2,23 @@
 title: "Pré-declarar dispositivos com números de série do iOS ou IMEI | Microsoft Docs"
 description: "Pré-declare dispositivos corporativos com o número de série do iOS ou IMEI deles."
 ms.custom: na
-ms.date: 03/24/2017
+ms.date: 08/15/2017
 ms.reviewer: na
 ms.suite: na
 ms.prod: configuration-manager
-ms.technology:
-- configmgr-hybrid
+ms.technology: configmgr-hybrid
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: ddb4c68e-e7f7-475a-89e2-7379a86e44c4
-caps.latest.revision: 3
+caps.latest.revision: "3"
 author: nathbarn
 ms.author: nathbarn
 manager: angrobe
-ms.translationtype: Human Translation
-ms.sourcegitcommit: 5eed004bd38a567dfdd4e392300be656a7abe3f7
-ms.openlocfilehash: c692fad43807e54cecbd7ab60284ea740d60617d
-ms.contentlocale: pt-br
-ms.lasthandoff: 05/25/2017
-
+ms.openlocfilehash: 7d139a2c74c0f29604f2f3d9b8e2739364633f17
+ms.sourcegitcommit: db7b7ec347638efd05cdba474e8a8f8535516116
+ms.translationtype: HT
+ms.contentlocale: pt-BR
+ms.lasthandoff: 08/16/2017
 ---
 # <a name="predeclare-devices-with-imei-or-ios-serial-numbers"></a>Pré-declarar dispositivos com número de série do iOS ou IMEI
 
@@ -30,19 +28,22 @@ Você pode identificar os dispositivos corporativos importando seus números IME
 
 Quando você carrega os números de série para dispositivos iOS de propriedade da empresa, eles devem ser combinados com um perfil de registro corporativo. Os dispositivos devem então ser registrados usando o programa de registro do dispositivo (DEP) da Apple ou o Apple Configurator para eles aparecerem como sendo da empresa.
 
+>[!NOTE]
+>Dispositivos Android, excluindo dispositivos Samsung Knox Standard, devem ter um cartão SIM para pré-declarar e registrá-lo como um dispositivo da empresa com um número IMEI.
+
 ## <a name="how-to-predeclare-corporate-owned-devices"></a>Como pré-declarar dispositivos corporativos
 
-1.    No console do Configuration Manager, clique em **Ativos e Conformidade** > **Visão Geral** > **Todos os dispositivos de propriedade corporativa** > **Dispositivos pré-declarados**.
+1.  No console do Configuration Manager, clique em **Ativos e Conformidade** > **Visão Geral** > **Todos os dispositivos de propriedade corporativa** > **Dispositivos pré-declarados**.
 
 2.  Clique em **Criar Dispositivos Pré-declarados**. O assistente Criar Dispositivos Pré-declarados abre.
 
-3.    Escolha como você deseja adicionar as informações do dispositivo:
+3.  Escolha como você deseja adicionar as informações do dispositivo:
 
-     -    **Carregar um arquivo CSV contendo o IMEI ou os números de série e os detalhes**
+     -  **Carregar um arquivo CSV contendo o IMEI ou os números de série e os detalhes**
 
         Para essa opção, clique em **Procurar** para especificar o arquivo .csv que contém as informações para declarar os dispositivos corporativos. O arquivo. csv deve estar formatado corretamente. Para mais informações, confira [Formato para carregar arquivos .csv](#format-for-uploading-csv-files).
 
-     -    **Adicionar manualmente o IMEI ou os números de série e os detalhes**
+     -  **Adicionar manualmente o IMEI ou os números de série e os detalhes**
 
         Para inserir manualmente as informações, digite o número IMEI ou o número de série do iOS e os detalhes dos dispositivos. Corrija todos os erros ou avisos antes de continuar.
 
@@ -67,10 +68,10 @@ O arquivo .csv que você usa para identificar dispositivos pelo IMEI ou pelo nú
 | Nº do IMEI  | Nº de série do iOS  | Sistema operacional | Detalhes |
 |------------ |---------------|-----|-----|
 | 123456789012345    |   | WINDOWS | Dispositivo Windows de propriedade da empresa|
-|   | A1B2C3D4E5C6 | IOS |     Dispositivo iOS de propriedade da empresa|
-| 223456789012345 | E6D5C4B3A210 |   IOS |     Outro dispositivo iOS|
-| 323456789012345 |        |   IOS |     Um terceiro dispositivo iOS|
-| 123456789012346 |         |   ANDROID |     Dispositivo Android de propriedade da empresa|
+|   | A1B2C3D4E5C6 | IOS |  Dispositivo iOS de propriedade da empresa|
+| 223456789012345 | E6D5C4B3A210 |   IOS |  Outro dispositivo iOS|
+| 323456789012345 |        |   IOS |    Um terceiro dispositivo iOS|
+| 123456789012346 |         |   ANDROID |   Dispositivo Android de propriedade da empresa|
 
 Não inclua uma linha de cabeçalho no seu arquivo .csv. O exemplo a seguir mostra os mesmos dados de exemplo no formato CSV:
 
@@ -87,4 +88,3 @@ As colunas no arquivo .csv aceitam os seguintes valores:
 | Coluna 1 | Coluna 2 | Coluna 3 | Coluna 4 |
 |---|---|---|---|
 |Número IMEI sem espaços | Número de série do iOS | IOS, WINDOWS ou ANDROID | Detalhes do dispositivo opcionais (limite de 1024 caracteres) |
-

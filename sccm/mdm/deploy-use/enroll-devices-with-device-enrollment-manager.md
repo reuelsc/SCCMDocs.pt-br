@@ -2,32 +2,29 @@
 title: "Registrar dispositivos com o gerenciador de registro de dispositivo – Configuration Manager | Microsoft Docs"
 description: Registrar dispositivos de propriedade da empresa com a conta de gerente de registro de dispositivo com o System Center Configuration Manager.
 ms.custom: na
-ms.date: 03/24/2017
+ms.date: 08/15/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
-ms.technology:
-- configmgr-hybrid
+ms.technology: configmgr-hybrid
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 2905f26e-7859-497d-b995-5ff48261efa2
-caps.latest.revision: 8
+caps.latest.revision: "8"
 author: nathbarn
 ms.author: nathbarn
 manager: angrobe
-ms.translationtype: Human Translation
-ms.sourcegitcommit: 7573590763c68a4c97d388be1e64054c318da9cc
-ms.openlocfilehash: 8c491636925670732e6af67d8c1c741e4793ef96
-ms.contentlocale: pt-br
-ms.lasthandoff: 05/17/2017
-
-
+ms.openlocfilehash: c90ecca1ee46523d16fc1cf11495e40707631e03
+ms.sourcegitcommit: db7b7ec347638efd05cdba474e8a8f8535516116
+ms.translationtype: HT
+ms.contentlocale: pt-BR
+ms.lasthandoff: 08/16/2017
 ---
 # <a name="enroll-devices-with-device-enrollment-manager-with-configuration-manager"></a>Registrar dispositivos com o gerenciador de registro de dispositivo no Configuration Manager
 
 *Aplica-se a: System Center Configuration Manager (Branch Atual)*
 
-As organizações podem usar o Intune para gerenciar um grande número de dispositivos móveis com uma única conta de usuário. A conta do *DEM* (gerenciador de registro de dispositivos) é uma conta especial do usuário que pode registrar até 1.000 dispositivos. Adicionar usuários existentes à conta do DEM para fornecer recursos de DEM especiais. Cada dispositivo registrado usa uma única licença. Recomendamos o uso de dispositivos registrados com essa conta como dispositivos compartilhados sem afinidade de usuário em vez de dispositivos pessoais dedicados.  
+As organizações podem usar o Intune para gerenciar um grande número de dispositivos móveis com uma única conta de usuário. A conta do *DEM* (gerenciador de registro de dispositivos) é uma conta especial do usuário usada para registrar dispositivos. Adicionar usuários existentes à conta do DEM para fornecer recursos de DEM especiais. Cada dispositivo registrado usa uma única licença. Recomendamos o uso de dispositivos registrados com essa conta como dispositivos compartilhados sem afinidade de usuário em vez de dispositivos pessoais dedicados.  
 
 ## <a name="enroll-corporate-owned-devices-with-the-device-enrollment-manager"></a>Registrar dispositivos corporativos com o gerenciador de registro de dispositivo  
  Você pode atribui-la a um gerente da loja ou supervisor, por exemplo, como um conta de usuário de gerenciador de registro de dispositivos, para permitir que ela faça o seguinte:  
@@ -67,24 +64,14 @@ Um restaurante quer tablets de ponto de venda para sua equipe e faz o pedido de 
 7.  Agora, o gerenciador de registro de dispositivo pode registrar dispositivos móveis usando o mesmo procedimento usado por um usuário final para um cenário BYOD (traga seu próprio dispositivo) no portal da empresa.  
 
 #### <a name="delete-a-device-enrollment-manager-from-intune"></a>Excluir um gerenciador de registro de dispositivos do Intune  
+Excluir um gerenciador de registro de dispositivos não afeta os dispositivos registrados. Quando um gerenciador de registro de dispositivos é excluído:  
+- Nenhum dispositivo registrado tem seu registro cancelado  
+- Os dispositivos registrados continuam sendo totalmente gerenciados  
+- As credenciais da conta do gerenciador de registro de dispositivo excluído continuam válidas para fazer logon no portal da empresa para acessar aplicativos  
+- As credenciais da conta do gerenciador de registro de dispositivos excluído não podem mais apagar ou desativar dispositivos  
+- A relação da conta do gerenciador de registro de dispositivos excluído com os dispositivos registrados permanece, mas nenhum dispositivo adicional pode ser registrado
 
 1.  No console do Configuration Manager, clique em **Administração**.  
-
 2.  No espaço de trabalho **Administração** , expanda **Serviços de Nuvem**e clique em **Assinaturas do Microsoft Intune**. Selecione a assinatura do Microsoft Intune à qual você adicionará um gerenciador de registro de dispositivo e clique em **Propriedades**.  
-
 3.  Na caixa de diálogo Propriedades da Assinatura do Microsoft Intune, clique na guia **Gerenciador de Registro de Dispositivo**.  
-
 4.  **Pesquise** o gerenciador de registro de dispositivo que deseja excluir, clique em **Remover** e em **OK**.  
-
- Excluir um gerenciador de registro de dispositivos não afeta os dispositivos registrados. Quando um gerenciador de registro de dispositivos é excluído:  
-
--   Nenhum dispositivo registrado é afetado  
-
--   Os dispositivos registrados continuam sendo totalmente gerenciados  
-
--   As credenciais da conta do gerenciador de registro de dispositivo excluído continuam válidas para fazer logon no portal da empresa para acessar aplicativos  
-
--   As credenciais da conta do gerenciador de registro de dispositivos excluído não podem mais apagar ou desativar dispositivos  
-
--   A relação da conta do gerenciador de registro de dispositivos excluído com os dispositivos registrados permanece, mas nenhum dispositivo adicional pode ser registrado
-

@@ -2,32 +2,30 @@
 title: "Configurar o gerenciamento de dispositivo híbrido do Android com o System Center Configuration Manager e o Microsoft Intune | Microsoft Docs"
 description: "Preparar para gerenciar dispositivos móveis Android com o Configuration Manager e o Intune."
 ms.custom: na
-ms.date: 07/31/2017
+ms.date: 08/11/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
-ms.technology:
-- configmgr-hybrid
+ms.technology: configmgr-hybrid
 ms.tgt_pltfrm: na
 ms.topic: get-started-article
 ms.assetid: c517fe34-0130-465b-a020-bdb555878778
-caps.latest.revision: 9
-caps.handback.revision: 0
+caps.latest.revision: "9"
+caps.handback.revision: "0"
 author: nathbarn
 ms.author: nathbarn
 manager: angrobe
+ms.openlocfilehash: 53ecc86ecc000e0ab9e81f683e8e8171e9a66f35
+ms.sourcegitcommit: 9a6f8e028fb5eb2e752da70f42a5b548339bd8f4
 ms.translationtype: HT
-ms.sourcegitcommit: 3c75c1647954d6507f9e28495810ef8c55e42cda
-ms.openlocfilehash: b47ecd1754a623b1b57dc5c5ecb42a6b0b64404e
-ms.contentlocale: pt-br
-ms.lasthandoff: 07/29/2017
-
+ms.contentlocale: pt-BR
+ms.lasthandoff: 08/14/2017
 ---
 # <a name="set-up-android-hybrid-device-management-with-system-center-configuration-manager-and-microsoft-intune"></a>Configurar o gerenciamento de dispositivo híbrido do Android com o System Center Configuration Manager e o Microsoft Intune
 
 *Aplica-se a: System Center Configuration Manager (Branch Atual)*
 
-Este tópico ajuda o administrador de TI a habilitar o registro híbrido de dispositivos Android e Android for Work. Assim, o administrador de TI poderá usar o System Center Configuration Manager para gerenciar os dispositivos por meio de uma assinatura configurada do Microsoft Intune. Os usuários podem baixar o aplicativo Android do portal da empresa no Google Play, que permite registrar dispositivos Android (incluindo Samsung KNOX Standard) e Android for Work.
+Este tópico ajuda o administrador a habilitar o registro híbrido de dispositivos Android e Android for Work. Assim, o administrador de TI poderá usar o System Center Configuration Manager para gerenciar os dispositivos por meio de uma assinatura configurada do Microsoft Intune. Os usuários podem baixar o aplicativo Android do portal da empresa no Google Play, que permite registrar dispositivos Android (incluindo Samsung KNOX Standard) e Android for Work.
 
 Como administrador do Configuration Manager, é possível gerenciar as configurações de conformidade, apagar ou excluir dispositivos Android, implantar aplicativos e coletar inventários de software e hardware. Sem o aplicativo Portal da Empresa para Android instalado no dispositivo, você não terá os recursos de gerenciamento, como inventário e configurações de conformidade, mas ainda poderá implantar aplicativos em dispositivos Android.  
 
@@ -37,12 +35,9 @@ As etapas a seguir permitem que o Configuration Manager gerencie dispositivos An
 1. Antes de configurar o registro para qualquer plataforma, conclua os pré-requisitos e procedimentos em [Configurar MDM híbrido](setup-hybrid-mdm.md).  
 2. No console do Configuration Manager, no espaço de trabalho **Administração**, escolha **Visão Geral** > **Serviços de Nuvem** > **Assinatura do Microsoft Intune** e escolha sua assinatura do Intune.  
 3. Na guia **Início** do grupo **Assinatura**, escolha **Configurar Plataformas** > **Android**.  
-4. Na caixa de diálogo **Propriedades da Assinatura do Microsoft Intune**, escolha a guia **Android** e clique para marcar a caixa de seleção **Habilitar registro do Android**.  
+4. Na caixa de diálogo **Propriedades da Assinatura do Microsoft Intune**, escolha a guia **Android** e clique para marcar a caixa de seleção **Habilitar registro do Android**. Escolha **Bloquear dispositivos de propriedade pessoal** para limitar o registro a [dispositivos pré-declarados](predeclare-devices-with-hardware-id.md).
 
-> [!NOTE]
->  A capacidade **Bloquear dispositivos de propriedade pessoal** não está disponível no momento. 
-
- Após a configuração, será necessário permitir que os usuários saibam como registrar seus dispositivos. Consulte [O que dizer aos usuários sobre o registro de seus dispositivos](https://docs.microsoft.com/intune/deploy-use/what-to-tell-your-end-users-about-using-microsoft-intune). Essas informações se aplicam a dispositivos móveis gerenciados pelo Microsoft Intune e pelo Configuration Manager.
+ Após a configuração, será necessário permitir que os usuários saibam como registrar seus dispositivos. Consulte [O que dizer aos usuários sobre o registro de seus dispositivos](https://docs.microsoft.com/intune/end-user-educate). Essas informações se aplicam a dispositivos móveis gerenciados pelo Microsoft Intune e pelo Configuration Manager.
 
 ## <a name="enable-android-for-work-enrollment"></a>Habilitar o registro do Android for Work
 As etapas a seguir permitem que o Configuration Manager gerencie dispositivos Android com um perfil de trabalho.
@@ -81,4 +76,3 @@ Após habilitar o registro do Android for Work, será possível executar as segu
 
 > [!div class="button"]
 [< Etapa anterior](create-service-connection-point.md)  [Próxima etapa >](set-up-additional-management.md)
-

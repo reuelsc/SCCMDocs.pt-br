@@ -6,25 +6,21 @@ ms.date: 07/31/2017
 ms.prod: configuration-manager
 ms.reviewer: dudeso
 ms.suite: na
-ms.technology:
-- configmgr-other
+ms.technology: configmgr-other
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 5e5d854c-9cc1-4dd8-b33f-0fcac675b395
-caps.latest.revision: 13
-caps.handback.revision: 0
+caps.latest.revision: "13"
+caps.handback.revision: "0"
 author: robstackmsft
 ms.author: robstack
 manager: angrobe
+ms.openlocfilehash: 3921748d3c99c2a35b670f3ca121dc7ab92d43bc
+ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
 ms.translationtype: HT
-ms.sourcegitcommit: 3c75c1647954d6507f9e28495810ef8c55e42cda
-ms.openlocfilehash: 4bb1f4a068563a5fe6f384708e10269dcd3229da
-ms.contentlocale: pt-br
-ms.lasthandoff: 07/29/2017
-
+ms.contentlocale: pt-BR
+ms.lasthandoff: 08/07/2017
 ---
-
-
 # <a name="device-guard-management-with-configuration-manager"></a>Gerenciamento de Proteção do Dispositivo com Configuration Manager
 
 *Aplica-se a: System Center Configuration Manager (Branch Atual)*
@@ -97,6 +93,9 @@ Quando você adiciona uma relação de confiança a arquivos específicos para p
     - Confie em aplicativos que estão incluídos em uma imagem de implantação de sistema operacional. 
 7.  Clique em **Avançar** e conclua o assistente.
 
+>[!IMPORTANT]
+>Só há suporte para a inclusão de arquivos confiáveis ou pastas em computadores cliente executando a versão 1706 ou mais recente do cliente do Configuration Manager. Se todas as regras de inclusão estiverem incluídas em uma política do Device Guard, e a política for implantada em um computador cliente executando uma versão anterior no cliente do Configuration Manager, a política não será aplicada. A atualização desses clientes mais antigos resolverá o problema. As políticas que não incluem todas as regras de inclusão ainda podem ser aplicadas em versões anteriores do cliente do Configuration Manager.
+
 ## <a name="how-to-deploy-a-device-guard-policy"></a>Como implantar uma política de Proteção do Dispositivo
 1.  No console do Configuration Manager, clique em **Ativos e Conformidade**.
 2.  No espaço de trabalho **Ativos e Conformidade**, expanda **Proteção do Ponto de Extremidade**e clique em **Políticas de Proteção do Dispositivo**.
@@ -130,7 +129,6 @@ Nesta situação, o software pode continuar tendo permissão para ser executado 
 - Quando você usa o Configuration Manager para habilitar a integridade do código configurável nos PCs cliente com políticas de Proteção do Dispositivo, a política não impede que os usuários com direitos de administrador local de evitem a política de Proteção do Dispositivo ou executem um software não confiável. 
 - A única maneira de impedir que os usuários com direitos de administrador local desabilitem a integridade do código configurável é implantar uma política binária assinada. Essa implantação é possível por meio da Política de Grupo, mas não tem suporte no momento no Configuration Manager.
 - A configuração do Configuration Manager como um Instalador Gerenciado nos PCs clientes usa a política AppLocker. AppLocker somente é usada para identificar os Instaladores Gerenciados a toda a imposição acontece com a integridade de código configurável. 
-
 
 
 

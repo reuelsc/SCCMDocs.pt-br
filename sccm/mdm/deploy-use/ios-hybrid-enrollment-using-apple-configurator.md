@@ -2,26 +2,23 @@
 title: "Registrar dispositivos iOS do Apple Configurator – Configuration Manager | Microsoft Docs"
 descriptions: Pre-enroll iOS devices by using Apple Configurator with Configuration Manager.
 ms.custom: na
-ms.date: 03/05/2017
+ms.date: 08/15/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
-ms.technology:
-- configmgr-hybrid
+ms.technology: configmgr-hybrid
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 61a19d95-83ff-4ad8-9a67-f304d2ba54f2
-caps.latest.revision: 5
+caps.latest.revision: "5"
 author: mtillman
 ms.author: mtillman
 manager: angrobe
-ms.translationtype: Human Translation
-ms.sourcegitcommit: 991eff171dce95590a7f050e0d3b07f98c0224b3
-ms.openlocfilehash: 6c6e9edbc7b2fca3d1be4feabb238efab80465fa
-ms.contentlocale: pt-br
-ms.lasthandoff: 01/24/2017
-
-
+ms.openlocfilehash: 403f3b730e24c0f76314b04bcdd1d2f817bcd908
+ms.sourcegitcommit: db7b7ec347638efd05cdba474e8a8f8535516116
+ms.translationtype: HT
+ms.contentlocale: pt-BR
+ms.lasthandoff: 08/16/2017
 ---
 # <a name="ios-hybrid-enrollment-using-apple-configurator-with-configuration-manager"></a>Registro híbrido do iOS que usa o Apple Configurator com o Configuration Manager
 
@@ -41,7 +38,7 @@ O procedimento a seguir é recomendado para dispositivos iOS dedicados que terã
 
 -   Cabos USB para conectar dispositivos ao seu computador Mac  
 
-## <a name="step-1-add-a-corporate-owned-device-enrollment-profile"></a>Etapa 1: adicionar um perfil de registro de dispositivo corporativo
+## <a name="add-a-corporate-owned-device-enrollment-profile"></a>Adicionar um perfil de registro de dispositivo corporativo
 
 1.  No console do Configuration Manager, clique em **Ativos e Conformidade** > **Visão Geral** > **Todos os Dispositivos Corporativos** > **iOS** > **Perfis de Registro**. Clique em **Criar Perfil** para abrir o assistente de Criação de Perfil. Defina as configurações nas páginas a seguir:  
 
@@ -63,13 +60,13 @@ O procedimento a seguir é recomendado para dispositivos iOS dedicados que terã
 
 4.  Examine o resumo e, em seguida, clique em **Avançar** para criar o perfil de registro. Clique em **Fechar** para concluir o assistente. Agora você está pronto para adicionar números IMEI ou números de série aos dispositivos que deseja registrar.  
 
-## <a name="step-2-predeclare-devices-to-enroll-with-setup-assistant"></a>Etapa 2: pré-anúncio de dispositivos para registro com o Assistente de Configuração
+## <a name="predeclare-devices-to-enroll-with-setup-assistant"></a>Pré-declarar dispositivos para registro com o Assistente de Configuração
 
 Nesta etapa, você pré-declara dispositivos corporativos, fornecendo uma lista de identificadores de hardware (IMEI ou números de série).
 
 Para obter mais informações, confira [Pré-declarar dispositivos com número de série do iOS e IMEI](predeclare-devices-with-hardware-id.md). Ao concluir essa tarefa, retorne a esta página para continuar com a próxima etapa.
 
-## <a name="step-3-export-the-profile-to-deploy-to-ios-devices"></a>Etapa 3: exportar o perfil para implantar em dispositivos iOS
+## <a name="export-the-profile-to-deploy-to-ios-devices"></a>Exportar o perfil para implantar em dispositivos iOS
 
 1.  No console do Configuration Manager, clique em **Ativos e Conformidade** > **Visão Geral** > **Todos os Dispositivos Corporativos** > **iOS** > **Perfis de Registro**.
 
@@ -96,7 +93,7 @@ Para obter mais informações, confira [Pré-declarar dispositivos com número d
 > [!NOTE]
 > A URL do perfil de registro é válida por duas semanas a partir de sua exportação. Depois de duas semanas, você deverá exportar uma nova URL para registro de dispositivos iOS.
 
-## <a name="step-4-prepare-the-device-with-apple-configurator"></a>Etapa 4: preparar o dispositivo com o Apple Configurator
+## <a name="prepare-the-device-with-apple-configurator"></a>Preparar o dispositivo com o Apple Configurator
 
 Para preparar os dispositivos iOS para registro, é necessário conectar cada dispositivo a um computador Mac e carregar o perfil de registro a eles.  
 
@@ -135,7 +132,6 @@ Para preparar os dispositivos iOS para registro, é necessário conectar cada di
 
 Repita essas etapas para todos os dispositivos que você deseja preparar para o registro.
 
-## <a name="step-5-distribute-devices"></a>Etapa 5: distribuir dispositivos
+## <a name="distribute-devices"></a>Distribuir dispositivos
 
 Os dispositivos agora estão prontos para o registro corporativo. Desligue os dispositivos e distribua-os aos usuários. Quando o dispositivo for ativado, o Assistente de Configuração iniciará e solicitará ao usuário sua conta corporativa ou de estudante para iniciar o registro.
-

@@ -8,17 +8,14 @@ ms.date: 05/01/2017
 ms.topic: article
 ms.prod: configuration-manager
 ms.service: 
-ms.technology:
-- configmgr-client
+ms.technology: configmgr-client
 ms.assetid: e0ec7d66-1502-4b31-85bb-94996b1bc66f
+ms.openlocfilehash: 84b617b3e83636ab4578174ef40e786dcf1178cd
+ms.sourcegitcommit: 06aef618f72c700f8a716a43fb8eedf97c62a72b
 ms.translationtype: HT
-ms.sourcegitcommit: afe0ecc4230733fa76e41bf08df5ccfb221da7c8
-ms.openlocfilehash: df6e809aadd3d69275c137c92629ab8426bbdcb7
-ms.contentlocale: pt-br
-ms.lasthandoff: 08/04/2017
-
+ms.contentlocale: pt-BR
+ms.lasthandoff: 08/21/2017
 ---
-
 # <a name="set-up-cloud-management-gateway-for-configuration-manager"></a>Configurar o gateway de gerenciamento de nuvem para o Configuration Manager
 
 *Aplica-se a: System Center Configuration Manager (Branch Atual)*
@@ -26,6 +23,9 @@ ms.lasthandoff: 08/04/2017
 A partir da versão 1610, o processo de configuração do gateway de gerenciamento de nuvem no Configuration Manager inclui as seguintes etapas:
 
 ## <a name="step-1-configure-required-certificates"></a>Etapa 1: Configurar os certificados necessários
+
+> [!TIP]  
+> Antes de solicitar um certificado, confirme se o nome de domínio desejado do Azure (por exemplo, GraniteFalls.CloudApp.Net) é exclusivo. Para fazer esse logon no [Portal do Microsoft Azure](https://manage.windowsazure.com), clique em **Novo**, selecione **Serviço de Nuvem** e **Criação Personalizada**. No campo **URL**, digite o nome de domínio desejado (não clique na marca de seleção para criar o serviço). O portal refletirá se o nome de domínio está disponível, ou se já está em uso por outro serviço.
 
 ## <a name="option-1-preferred---use-the-server-authentication-certificate-from-a-public-and-globally-trusted-certificate-provider-like-verisign"></a>Opção 1 (preferencial) - Use o certificado de autenticação do servidor de um provedor de certificados público e globalmente confiável (como a VeriSign)
 
@@ -43,7 +43,6 @@ Por exemplo, ao criar o gateway de gerenciamento de nuvem na Contoso, o nome do 
 
 Você pode criar um certificado SSL personalizado para o gateway de gerenciamento de nuvem da mesma maneira que faria para um ponto de distribuição baseado em nuvem. Siga as instruções para [Implantando o certificado de serviço em pontos de distribuição baseados em nuvem](/sccm/core/plan-design/network/example-deployment-of-pki-certificates), mas faça estas ações de forma diferente:
 
-- Ao configurar o novo modelo de certificado, conceda permissões de **Leitura** e **Registro** para o grupo de segurança que você configurou para os servidores do Configuration Manager.
 - Ao solicitar o certificado de servidor Web personalizado, forneça um FQDN para o nome comum do certificado que termine em **cloudapp.net** para usar o gateway de gerenciamento de nuvem na nuvem pública do Azure, ou **usgovcloudapp.net** para a nuvem do Azure Governamental.
 
 
@@ -69,6 +68,9 @@ A maneira mais fácil de exportar a raiz dos certificados de cliente usados na r
 
 7.  Conclua o Assistente de Exportação de Certificado usando o formato de certificado padrão. Verifique a nota do nome e local do certificado raiz que você criar. Você precisará dele para configurar o gateway de gerenciamento de nuvem em uma [etapa posterior](#step-4-set-up-cloud-management-gateway).
 
+>[!NOTE]
+>Se o certificado do cliente tiver sido emitido por uma autoridade de certificação subordinada, será necessário repetir esta etapa para cada certificado na cadeia.
+
 ## <a name="step-3-upload-the-management-certificate-to-azure"></a>Etapa 3: Carregar o certificado de gerenciamento no Azure
 
 Um certificado de gerenciamento do Azure é necessário para o Configuration Manager acessar a API do Azure e configurar o gateway de gerenciamento de nuvem. Para obter mais informações e instruções sobre como carregar um certificado de gerenciamento, consulte os artigos a seguir na documentação do Azure:
@@ -80,74 +82,6 @@ Um certificado de gerenciamento do Azure é necessário para o Configuration Man
 >[!IMPORTANT]
 >Certifique-se de copiar a ID da assinatura associada ao certificado de gerenciamento. Você precisará dela para configurar o gateway de gerenciamento de nuvem no console do Configuration Manager na [próxima etapa](#step-4-set-up-cloud-management-gateway).
 
-### <a name="subordinate-ca-certificates-and-azure"></a>Certificados de autoridade de certificação subordinada e o Azure
-
-Se o seu certificado for emitido por uma autoridade de certificação subordinada (subCA), e sua infraestrutura PKI corporativa não estiver na Internet, use este procedimento para carregar o certificado no Azure. 
-
-1. No portal do Azure, depois de configurar um gateway de gerenciamento de nuvem, localize o serviço do gateway de gerenciamento da nuvem e acesse a guia **Certificado**. Carregue seu(s) certificado(s) subCA nesse local. Se você tiver mais de um certificado de subCA, será necessário carregar todos eles. 
-2. Após o carregamento do certificado, registre a impressão digital dele. 
-3. Adicione a impressão digital ao banco de dados do site usando este script:
-    
-```
-
-    DIM serviceCName
-    DIM subCAThumbprints
-
-    ' Verify arguments
-    IF WScript.Arguments.Count <> 2 THEN
-    WScript.StdOut.WriteLine "Usage: CScript UpdateSubCAThumbprints.vbs <ServiceCName> <SubCA cert thumbprints, separated by ;>"
-    WScript.Quit 1
-    END IF
-
-    'Get arguments
-    serviceCName = WScript.Arguments.Item(0)
-    subCAThumbprints = WScript.Arguments.Item(1)
-
-    'Find SMS Provider
-    WScript.StdOut.WriteLine "Searching for SMS Provider for local site..."
-    SET objSMSNamespace = GetObject("winmgmts:{impersonationLevel=impersonate}!\\.\root\sms")
-    SET results = objSMSNamespace.ExecQuery("SELECT * From SMS_ProviderLocation WHERE ProviderForLocalSite = true")
-
-    'Process the results
-    FOR EACH var in results
-    siteCode = var.SiteCode
-    NEXT
-
-    IF siteCode = "" THEN
-    WScript.StdOut.WriteLine "Failed to locate SMS provider."
-    WScript.Quit 1
-    END IF
-
-    WScript.StdOut.WriteLine "SiteCode = " & siteCode 
-
-    ' Connect to the SMS namespace
-    SET objWMIService = GetObject("winmgmts:{impersonationLevel=impersonate}!\\.\root\sms\site_" & siteCode)
-
-    'Get instance of SMS_AzureService
-    DIM query
-    query = "SELECT * From SMS_AzureService WHERE ServiceType = 'CloudProxyService' AND ServiceCName = '" & serviceCName & "'"
-    WScript.StdOut.WriteLine "Run WQL query: " &  query
-    SET objInstances = objWMIService.ExecQuery(query)
-
-    IF IsNull(objInstances) OR (objInstances.Count = 0) THEN
-    WScript.StdOut.WriteLine "Failed to get Azure_Service instance."
-    WScript.Quit 1
-    END IF
-
-    FOR EACH var IN objInstances
-    SET azService = var
-    NEXT
-
-    WScript.StdOut.WriteLine "Update [SubCACertThumbprint] to " & subCAThumbprints
-
-    'Update SubCA cert thumbprints
-    azService.Properties_.item("SubCACertThumbprint") = subCAThumbprints
-
-    'Save data back to provider
-    azService.Put_
-
-    WScript.StdOut.WriteLine "[SubCACertThumbprint] is updated successfully."
-```
 
 
 ## <a name="step-4-set-up-cloud-management-gateway"></a>Etapa 4: Configurar o gateway de gerenciamento de nuvem
@@ -173,7 +107,7 @@ Se o seu certificado for emitido por uma autoridade de certificação subordinad
 
     - Especifique a chave privada (arquivo .pfx) que você exportou do certificado SSL personalizado.
 
-    - Especifique o certificado raiz exportado do certificado do cliente.
+    - Especifique o certificado raiz (e qualquer certificado subordinado) exportado do certificado do cliente. O assistente aceita até dois certificados raiz e quatro certificados subordinados.
 
     -   Especifique o mesmo FQDN de nome de serviço que você usou ao criar o novo modelo de certificado. Especifique um dos seguintes sufixos para o nome de serviço FQDN com base na nuvem do Azure que você está usando:
 
@@ -207,7 +141,7 @@ O ponto de conector de gateway de gerenciamento de nuvem é uma nova função de
 
 ## <a name="step-7-configure-roles-for-cloud-management-gateway-traffic"></a>Etapa 7: Configurar funções para o tráfego do gateway de gerenciamento de nuvem
 
-A etapa final na configuração do gateway de gerenciamento de nuvem é configurar as funções do sistema de sites para aceitar o tráfego do gateway de gerenciamento de nuvem. Para a Visualização Técnica 1606, apenas as funções de ponto de gerenciamento, ponto de distribuição e ponto de atualização de software têm suporte para o gateway de gerenciamento de nuvem. Você deve configurar cada função separadamente.
+A etapa final na configuração do gateway de gerenciamento de nuvem é configurar as funções do sistema de sites para aceitar o tráfego do gateway de gerenciamento de nuvem. Somente as funções de ponto de gerenciamento e o ponto de atualização de software têm suporte para o gateway de gerenciamento de nuvem. Você deve configurar cada função separadamente.
 
 1. No console do Configuration Manager, acesse **Administração** > **Configuração do Site** > **Funções de Servidores e Sistema de Site**.
 
@@ -215,7 +149,7 @@ A etapa final na configuração do gateway de gerenciamento de nuvem é configur
 
 3. Escolha a função e escolha **Propriedades**.
 
-4. Na folha Propriedades de função, em Conexões de Cliente, escolha **HTTPS**, marque a caixa ao lado de **Permitir o tráfego do gateway de gerenciamento de nuvem do Configuration Manager** e escolha **OK**. Repita essas etapas para as funções restantes.
+4. Na folha Propriedades de função, em Conexões de Cliente, marque a caixa de seleção ao lado de **Permitir o tráfego do gateway de gerenciamento de nuvem do Configuration Manager** e escolha **OK**. Repita essas etapas para as funções restantes. Habilitar a opção **HTTPS** também é recomendada como uma prática recomendada de segurança, mas não é obrigatória.
 
 ## <a name="step-8-configure-clients-for-cloud-management-gateway"></a>Etapa 8: Configurar clientes para o gateway de gerenciamento de nuvem
 
@@ -237,4 +171,3 @@ Esse comando exibe os pontos de gerenciamento que o cliente pode contatar, inclu
 ## <a name="next-steps"></a>Próximas etapas
 
 [Monitorar clientes para o gateway de gerenciamento de nuvem](monitor-clients-cloud-management-gateway.md)
-
