@@ -2,7 +2,7 @@
 title: Suporte para recursos do Windows | Microsoft Docs
 description: "Saiba a quais recursos de rede e do Windows o System Center Configuration Manager dá suporte."
 ms.custom: na
-ms.date: 3/30/2017
+ms.date: 8/24/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
@@ -15,11 +15,11 @@ caps.handback.revision: "0"
 author: Brenduns
 ms.author: brenduns
 manager: angrobe
-ms.openlocfilehash: e040552dab21ba9a71e06a78f6acc2ffe1b0eb61
-ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
+ms.openlocfilehash: be9b7e84fecfa7a07c411c3d46168e5485e0dfab
+ms.sourcegitcommit: 974fbc4408028c8be28911e5cd646efcf47c7f15
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/07/2017
+ms.lasthandoff: 08/28/2017
 ---
 # <a name="support-for-windows-features-and-networks-in-system-center-configuration-manager"></a>Suporte para recursos do Windows e redes no System Center Configuration Manager
 
@@ -49,7 +49,7 @@ Esses clientes também armazenam o conteúdo em cache. Dessa maneira, os cliente
 -   **Configure clientes:**    
     -   Os clientes que oferecem suporte ao BranchCache devem ser configurados para o modo de cache distribuído do BranchCache.  
     -   A configuração do sistema operacional para as configurações do cliente BITS deve estar habilitada para dar suporte ao BranchCache.   <br /> <br />
-        
+
     Para obter informações sobre como você pode configurar clientes para dar suporte ao BranchCache, consulte a seção [Configurar clientes](https://technet.microsoft.com/itpro/windows/manage/waas-branchcache#configure-clients-for-branchcache) em [Configurar atualizações do BranchCache para Windows 10](https://technet.microsoft.com/itpro/windows/manage/waas-branchcache).
 
 
@@ -80,9 +80,11 @@ O Configuration Manager dá suporte a clientes em grupos de trabalho.
 ##  <a name="bkmmk_datadedup"></a> Eliminação de duplicação de dados  
 O Configuration Manager dá suporte ao uso da eliminação de duplicação de dados com pontos de distribuição nos seguintes sistemas operacionais:  
 
+-   Windows Server 2016
+-   Windows Server 2012 R2  
 -   Windows Server 2012  
 
--   Windows Server 2012 R2  
+
 
 > [!IMPORTANT]  
 >  O volume que hospeda os arquivos de origem do pacote não pode ser marcado para a eliminação de duplicação de dados. Isso ocorre porque a eliminação de duplicação de dados usa os pontos de nova análise e o Configuration Manager não dá suporte ao uso de um local de origem do conteúdo com arquivos armazenados em pontos de nova análise.  
