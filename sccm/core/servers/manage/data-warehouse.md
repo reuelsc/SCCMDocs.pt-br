@@ -2,7 +2,7 @@
 title: Data warehouse| Microsoft Docs
 description: "Ponto de serviço e banco de dados do Data Warehouse para o System Center Configuration Manager"
 ms.custom: na
-ms.date: 7/31/2017
+ms.date: 8/25/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
@@ -14,11 +14,11 @@ caps.latest.revision:
 author: Brenduns
 ms.author: brenduns
 manager: angrobe
-ms.openlocfilehash: eedbf12d3bf628666efc90c85a8dfab37e4dc9ab
-ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
+ms.openlocfilehash: 744614d7e1ec97a4d4b4646c45cb41d734c6be34
+ms.sourcegitcommit: 974fbc4408028c8be28911e5cd646efcf47c7f15
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/07/2017
+ms.lasthandoff: 08/28/2017
 ---
 #  <a name="the-data-warehouse-service-point-for-system-center-configuration-manager"></a>O ponto de serviço do Data Warehouse para o System Center Configuration Manager
 *Aplica-se a: System Center Configuration Manager (Branch Atual)*
@@ -49,8 +49,8 @@ Quando a função de sistema de site é instalada, ele instala e configura o ban
 - O computador no qual você instala a função do sistema de sites requer o .NET Framework 4.5.2 ou posterior.
 - A conta de computador do computador no qual você instala a função de sistema de site é usada para sincronizar os dados com o banco de dados do data warehouse. Essa conta exige as seguintes permissões:  
   - **Administrador** no computador que hospedará o banco de dados do data warehouse.
-  - **DB_owner** permissão no banco de dados do data warehouse.
-  - As permissões **Db_reader** e **execute** para o banco de dados de site de nível superior.
+  - Permissão **DB_Creator** no banco de dados de data warehouse.
+  - As permissões **DB_owner** ou **DB_reader** com **execute** para o banco de dados de site de nível superior.
 - O banco de dados do data warehouse exige o uso do SQL Server 2012 ou posterior. A edição pode ser Standard, Enterprise ou Datacenter.
 - As seguintes configurações do SQL Server têm suporte para hospedar o banco de dados do data warehouse:  
   - Uma instância padrão

@@ -2,7 +2,7 @@
 title: "Notas de versão – Configuration Manager | Microsoft Docs"
 description: "Consulte essas notas para problemas urgentes que ainda não foram corrigidos no produto ou abordados em um artigo da Base de Dados de Conhecimento Microsoft."
 ms.custom: na
-ms.date: 08/21/2017
+ms.date: 08/23/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
@@ -15,11 +15,11 @@ caps.handback.revision: "0"
 author: Brenduns
 ms.author: brenduns
 manager: angrobe
-ms.openlocfilehash: 24f30bddb345e3a08d4b655d89693c226005cb0e
-ms.sourcegitcommit: 06aef618f72c700f8a716a43fb8eedf97c62a72b
+ms.openlocfilehash: e54c2cd1c3e83609bff6a8cb64fb3c23b26a4eaa
+ms.sourcegitcommit: 974fbc4408028c8be28911e5cd646efcf47c7f15
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/21/2017
+ms.lasthandoff: 08/28/2017
 ---
 # <a name="release-notes-for-system-center-configuration-manager"></a>Release notes for System Center Configuration Manager
 
@@ -27,15 +27,23 @@ ms.lasthandoff: 08/21/2017
 
 Com o System Center Configuration Manager, as notas de versão do produto são limitadas apenas a problemas urgentes que ainda não foram corrigidos no produto (disponíveis por meio de uma atualização no console) ou são detalhadas em um artigo da Base de Dados de Conhecimento Microsoft.  
 
- Para problemas conhecidos que afetam os cenários principais, essas informações são transmitidas na documentação do produto online na biblioteca de documentação do System Center Configuration Manager.  
+As informações sobre problemas conhecidos que afetam os cenários principais são transmitidas na documentação do produto online na biblioteca de documentação do System Center Configuration Manager.  
 
 > [!TIP]  
 >  Este tópico contém notas de versão para o branch atual do System Center Configuration Manager. Para o Technical Preview do System Center Configuration Manager, consulte [Technical Preview do System Center Configuration Manager](../../../../core/get-started/technical-preview.md)  
+
+Para obter informações sobre os novos recursos introduzidos com diferentes versões, confira:
+- [Novidades na versão 1706](/sccm/core/plan-design/changes/whats-new-in-version-1706)  
+- [Novidades na versão 1702](/sccm/core/plan-design/changes/whats-new-in-version-1702)
+- [Novidades na versão 1610](/sccm/core/plan-design/changes/whats-new-in-version-1610)
+   
+
 
 ## <a name="setup-and-upgrade"></a>Instalar e atualizar  
 
 ### <a name="after-you-update-a-configuration-manager-console-using-consolesetupexe-from-the-site-server-folder-recent-language-pack-changes-are-not-available"></a>Depois de atualizar um console do Configuration Manager usando ConsoleSetup.exe da pasta do servidor de site, as alterações recentes do pacote de idioma não estarão disponíveis
 <!--  SMS 486420  Applicability should be 1610 and 1702.  -->
+*O seguinte se aplica às versões 1610 e 1702.*   
 Depois de executar uma atualização in-loco para um console usando ConsoleSetup.exe de uma pasta de instalação de servidores de site, os pacotes de idioma instalados recentemente poderão não estar disponíveis. Isso ocorre quando:
 - O site executa a versão 1610 ou 1702.
 - O console é atualizado no local usando ConsoleSetup.exe da pasta de instalação do servidor do site.
@@ -47,7 +55,8 @@ Quando esse problema ocorre, o console reinstalado não usa o conjunto de pacote
 
 ### <a name="with-version-1702-the-default-site-boundary-group-is-configured-for-use-for-site-assignment"></a>Com a versão 1702, o grupo de limites do site padrão está configurado para uso para a atribuição de site
 <!--  SMS 486380   Applicability should only be to 1702. -->
-Com a versão 1702, a guia Referência dos grupos de limites de site padrão tem uma marcação para **Usar esse grupo de limites para atribuição de site**, lista o site como o **Site atribuído** e fica desabilitada para que a configuração não possa ser editada ou removida.
+*O seguinte se aplica à versão 1702.*  
+A guia Referência dos grupos de limites de site padrão tem uma marcação para **Usar esse grupo de limites para atribuição de site**, lista o site como o **Site atribuído** e fica desabilitada para que a configuração não possa ser editada ou removida.
 
 **Solução alternativa:** nenhuma. Você pode ignorar essa configuração. Embora o grupo esteja habilitado para atribuição de site, o grupo de limites de site padrão não é usado para atribuição de site. Com a 1702, essa configuração garante que o grupo de limites de site padrão esteja associado ao site correto.
 
@@ -104,7 +113,8 @@ Ao executar a instalação de uma pasta CD.Latest criada para a versão 1606 e u
 
 ### <a name="service-connection-tool-throws-an-exception-when-sql-server-is-remote-or-when-shared-memory-is-disabled"></a>A ferramenta de conexão do serviço gera uma exceção quando o SQL Server é remoto ou quando a Memória Compartilhada está desabilitada
 <!-- 479223   Fixed in 1702 and later   -->
-Começando da versão 1606, a ferramenta de conexão de serviço gera uma exceção quando uma das seguintes opções é verdadeira:  
+*O seguinte se aplica à versão 1610 e versões anteriores.*  
+A ferramenta de conexão de serviço gera uma exceção quando uma das seguintes opções é verdadeira:  
  -  O banco de dados do site é remoto do computador que hospeda o ponto de conexão de serviço e usa uma porta não padrão (uma porta diferente de 1433)
  -  O banco de dados do site está no mesmo servidor que o ponto de conexão de serviço, mas o protocolo SQL **Memória Compartilhada** está desabilitado
 
@@ -131,8 +141,9 @@ A exceção é semelhante à seguinte:
 ## <a name="client-deployment-and-upgrade"></a>Implantação e atualização do cliente  
 
 ### <a name="client-installation-fails-with-error-code-0x8007064c"></a>A instalação do cliente falha com o código de erro 0x8007064c
-<!--- SMS 486973 -->
-Quando você implanta o cliente em computadores com Windows, a instalação falha. O arquivo ccmsetup.log contém uma entrada "Arquivo 'C:\WINDOWS\ccmsetup\Silverlight.exe' retornou o código de falha de saída 1612. Falha na instalação"seguido por "Falha de InstallFromManifest 0x8007064c".
+<!--- SMS 486973  applies 1606 to 1706. Not yet fixed. -->
+*O seguinte se aplica a todas as versões ativas do Configuration Manager.*   
+Com todas as versões ativas de Quando você implanta o cliente em computadores com Windows, a instalação falha. O arquivo ccmsetup.log contém uma entrada "Arquivo 'C:\WINDOWS\ccmsetup\Silverlight.exe' retornou o código de falha de saída 1612. Falha na instalação"seguido por "Falha de InstallFromManifest 0x8007064c".
 
 **Solução alternativa** Isso é causado por uma versão do Silverlight instalada anteriormente que estava corrompida. Você pode tentar executar a ferramenta a seguir no computador afetado para corrigir esse problema: [https://support.microsoft.com/help/17588/fix-problems-that-block-programs-from-being-installed-or-removed](https://support.microsoft.com/help/17588/fix-problems-that-block-programs-from-being-installed-or-removed)
 
@@ -158,6 +169,7 @@ depois de criar um plano de manutenção, abra as propriedades do plano de manut
 
 ### <a name="when-a-high-risk-deployment-dialog-is-visible-to-a-user-subsequent-high-risk-dialogs-with-a-sooner-deadline-are-not-displayed"></a>Quando uma caixa de diálogo de implantação de alto risco está visível para um usuário, as caixas de diálogo de alto risco subsequentes com uma data limite anterior não são exibidas
 <!-- Fixed in 1702 and later -->
+*O seguinte se aplica à versão 1610 e versões anteriores.*   
 Depois de criar e implantar uma implantação de tarefas de alto risco para usuários, uma caixa de diálogo de alto risco é exibida ao usuário. Se o usuário não fechar a caixa de diálogo, você criará e implantará outra implantação de alto risco com uma data limite antes que a primeira, o usuário não receberá uma caixa de diálogo atualizada até que ele feche a caixa de diálogo original. As implantações ainda serão executadas nas datas limite configuradas.
 
 **Solução alternativa**:  
@@ -169,6 +181,7 @@ O usuário deve fechar a caixa de diálogo para a primeira implantação de alto
 
 ### <a name="importing-an-office-365-client-settings-from-a-configuration-file-fails-when-it-contains-unsupported-languages"></a>Ocorrerá falha ao importar as configurações de cliente do Office 365 de um arquivo de configuração se elas contiverem idiomas sem suporte
 <!-- 489258  Fixed in 1706  -->
+*O seguinte se aplica à versão 1702 e versões anteriores.*   
 Quando você importar as configurações de cliente do Office 365 de um arquivo de configurações XML existente e o arquivo contiver idiomas que não têm suporte pelo cliente do Office 365 ProPlus, ocorrerá um erro. Para obter detalhes, veja [Implantar aplicativos do Office 365 a clientes a partir do Painel de Gerenciamento de Clientes do Office 365](/sccm/sum/deploy-use/manage-office-365-proplus-updates#to-deploy-office-365-apps-to-clients-from-the-office-365-client-management-dashboard).
 
 **Solução alternativa**:    
@@ -207,6 +220,7 @@ Quando um perfil de email do Android for Work for criado, haverá duas opções 
 
 ### <a name="antimalware-policy-fails-to-apply-on-windows-server-2016-core"></a>A política de antimalware não se aplica no Windows Server 2016 Core
 <!--  Product Studio bug 485370 added 04 19 2017   Fixed in 1702 -->
+*O seguinte se aplica à versão 1610 e versões anteriores.*  
 A política de antimalware não se aplica no Windows Server 2016 Core.  O código de erro é 0x80070002.  Há uma dependência ausente para ConfigSecurityPolicy.exe.
 
 **Solução alternativa:** esse problema é resolvido pelo [artigo da Base de dados de Conhecimento 4019472](https://support.microsoft.com/help/4019472/windows-10-update-kb4019472) distribuído em 9 de maio de 2017.

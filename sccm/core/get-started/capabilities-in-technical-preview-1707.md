@@ -13,11 +13,11 @@ ms.assetid: cb405ba0-8792-4ab7-988b-2f835f3a9550
 author: Brenduns
 ms.author: brenduns
 manager: angrobe
-ms.openlocfilehash: 7ee2fd78c6c502394016ba077d42714041ad01c6
-ms.sourcegitcommit: 10f17229c5a359f040cb7f8f5e7bd868a34ac086
+ms.openlocfilehash: 3572004fa43db3e84295b68599dd95e0447f4c65
+ms.sourcegitcommit: 974fbc4408028c8be28911e5cd646efcf47c7f15
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/15/2017
+ms.lasthandoff: 08/28/2017
 ---
 # <a name="capabilities-in-technical-preview-1707-for-system-center-configuration-manager"></a>Recursos no Technical Preview 1707 do System Center Configuration Manager
 
@@ -35,7 +35,7 @@ Este artigo apresenta os recursos disponíveis no Technical Preview do System Ce
 **Problemas conhecidos nesse Technical Preview:**
 -   **Atualização para a versão prévia 1707 falha quando você tem um servidor do site no modo passivo**. Quando você executa a versão prévia 1706 e tem um [servidor do site primário no modo passivo](/sccm/core/get-started/capabilities-in-technical-preview-1706#site-server-role-high-availability), precisa desinstalar o servidor do site no modo passivo antes de atualizar seu site de versão prévia para a versão 1707. Depois que seu site executar a versão 1707, você poderá reinstalar o servidor do site no modo passivo.
 
-  Para desinstalar o site no modo passivo:
+  Para desinstalar o servidor do site no modo passivo:
   1. No console, acesse **Administração** > **Visão geral** > **Configuração do Site** > **Servidores e Funções do Sistema de Sites** e selecione o servidor de site no modo passivo.
   2. No painel **Funções do Sistema de Site**, clique com o botão direito na função **Servidor do Site** e, em seguida, escolha **Remover Função**.
   3. Clique com o botão direito no servidor do site de modo passivo e, em seguida, escolha **Excluir**.
