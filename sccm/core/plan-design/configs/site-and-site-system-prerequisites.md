@@ -2,7 +2,7 @@
 title: "Pré-requisitos do site | Microsoft Docs"
 description: Saiba como configurar um computador Windows com um servidor de sistema de sites do System Center Configuration Manager.
 ms.custom: na
-ms.date: 1/17/2017
+ms.date: 8/25/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
@@ -14,11 +14,11 @@ caps.latest.revision: "5"
 author: Brenduns
 ms.author: brenduns
 manager: angrobe
-ms.openlocfilehash: 0b1d2d619d6cdaf36cc22ef461ea1505b5cacc41
-ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
+ms.openlocfilehash: 09749a3045ca6eebf1363b6e53cd8607b5f32578
+ms.sourcegitcommit: 974fbc4408028c8be28911e5cd646efcf47c7f15
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/07/2017
+ms.lasthandoff: 08/28/2017
 ---
 # <a name="site-and-site-system-prerequisites-for-system-center-configuration-manager"></a>Pré-requisitos de site e do sistema de sites para o System Center Configuration Manager
 
@@ -27,7 +27,7 @@ ms.lasthandoff: 08/07/2017
 
  Computadores baseados em Windows exigem configurações específicas para dar suporte ao uso como servidores do sistema de sites do System Center Configuration Manager.  
 
-
+ 
  Para alguns produtos, como o WSUS (Windows Server Update Services) para o ponto de atualização de software, você precisa consultar essa documentação de produtos para identificar os pré-requisitos adicionais e as limitações de uso do produto. Somente as configurações que se aplicam diretamente ao uso com o Configuration Manager estão incluídas aqui.   
 
 > [!NOTE]  
@@ -66,9 +66,7 @@ ms.lasthandoff: 08/07/2017
 
 **Windows ADK:**  
 
--   Antes de instalar ou atualizar um site de administração central ou site primário, você deve instalar a versão do ADK (Kit de Avaliação e Implantação) do Windows exigida pela versão do Configuration Manager que você está instalando ou atualizando.  
-
-    -   A versão 1511 do Configuration Manager exige a versão para Windows 10 RTM (10.0.10240) do Windows ADK.  
+-   Antes de instalar ou atualizar um site de administração central ou site primário, você deve instalar a versão do ADK (Kit de Avaliação e Implantação) do Windows exigida pela versão do Configuration Manager que você está instalando ou atualizando. Confira [Windows 10 ADK](/sccm/core/plan-design/configs/support-for-windows-10#windows-10-adk) no Suporte para Windows 10 como um tópico de cliente.  
 
 -   Para mais informações sobre esse requisito, consulte [Requisitos de infraestrutura para implantação do sistema operacional](/sccm/osd/plan-design/infrastructure-requirements-for-operating-system-deployment).  
 
@@ -115,9 +113,7 @@ ms.lasthandoff: 08/07/2017
 ###  <a name="bkmk_2012smsprovpreq"></a> Servidor do Provedor de SMS  
 **Windows ADK:**  
 
--   O computador no qual você instala uma instância do Provedor de SMS deve ter a versão exigida do Windows ADK exigida pela versão do Configuration Manager que você está instalando ou atualizando.  
-
-    -   A versão 1511 do Configuration Manager exige a versão para Windows 10 RTM (10.0.10240) do Windows ADK.  
+-   O computador no qual você instala uma instância do Provedor de SMS deve ter a versão exigida do Windows ADK exigida pela versão do Configuration Manager que você está instalando ou atualizando. Confira [Windows 10 ADK](/sccm/core/plan-design/configs/support-for-windows-10#windows-10-adk) no Suporte para Windows 10 como um tópico de cliente.
 
 -   Para mais informações sobre esse requisito, consulte [Requisitos de infraestrutura para implantação do sistema operacional](/sccm/osd/plan-design/infrastructure-requirements-for-operating-system-deployment).  
 
@@ -448,9 +444,7 @@ Agora, o Windows Server 2008 e o Windows Server 2008 R2 estão em suporte estend
 
 **Windows ADK:**  
 
--   Antes de instalar ou atualizar um site de administração central ou site primário, você deve instalar a versão do Windows ADK exigida pela versão do Configuration Manager que você está instalando ou atualizando.  
-
-    -   A versão 1511 do Configuration Manager exige a versão para Windows 10 RTM (10.0.10240) do Windows ADK.  
+-   Antes de instalar ou atualizar um site de administração central ou site primário, você deve instalar a versão do Windows ADK exigida pela versão do Configuration Manager que você está instalando ou atualizando.  Confira [Windows 10 ADK](/sccm/core/plan-design/configs/support-for-windows-10#windows-10-adk) no Suporte para Windows 10 como um tópico de cliente.  
 
 -   Para mais informações sobre esse requisito, consulte [Requisitos de infraestrutura para implantação do sistema operacional](/sccm/osd/plan-design/infrastructure-requirements-for-operating-system-deployment).  
 
@@ -495,9 +489,7 @@ Agora, o Windows Server 2008 e o Windows Server 2008 R2 estão em suporte estend
 ###  <a name="bkmk_2008smsprovpreq"></a> Servidor do Provedor de SMS  
 **Windows ADK:**  
 
--   O computador no qual você instala uma instância do Provedor de SMS deve ter a versão exigida do Windows ADK exigida pela versão do Configuration Manager que você está instalando ou atualizando.  
-
-    -   A versão 1511 do Configuration Manager exige a versão para Windows 10 RTM (10.0.10240) do Windows ADK.  
+-   O computador no qual você instala uma instância do Provedor de SMS deve ter a versão exigida do Windows ADK exigida pela versão do Configuration Manager que você está instalando ou atualizando. Confira [Windows 10 ADK](/sccm/core/plan-design/configs/support-for-windows-10#windows-10-adk) no Suporte para Windows 10 como um tópico de cliente.  
 
 -   Para mais informações sobre esse requisito, consulte [Requisitos de infraestrutura para implantação do sistema operacional](/sccm/osd/plan-design/infrastructure-requirements-for-operating-system-deployment).  
 
