@@ -2,7 +2,7 @@
 title: "Planejando a implantação do cliente em computadores Linux e UNIX | Microsoft Docs"
 description: "Planeje a implantação de cliente em computadores Linux e UNIX | System Center Configuration Manager."
 ms.custom: na
-ms.date: 04/23/2017
+ms.date: 08/30/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
@@ -15,11 +15,11 @@ caps.handback.revision: "0"
 author: robstackmsft
 ms.author: robstack
 manager: angrobe
-ms.openlocfilehash: 367ffb919a1adb9a0530f7357a0fcf1e6636af08
-ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
+ms.openlocfilehash: c5385ec5d7e41812df5c2a33d528614547819157
+ms.sourcegitcommit: 5b4fd2d36f06be5bcc7f8ebbfb92c48b7240085d
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/07/2017
+ms.lasthandoff: 08/30/2017
 ---
 # <a name="planning-for-client-deployment-to-linux-and-unix-computers-in-system-center-configuration-manager"></a>Planejando a implantação de cliente em computadores Linux e UNIX no System Center Configuration Manager
 
@@ -51,14 +51,6 @@ Você pode instalar o cliente do System Center Configuration Manager em computad
 ###  <a name="BKMK_ClientDeployExternalforLnU"></a> Dependências externas ao Configuration Manager:  
  As tabelas a seguir descrevem os sistemas operacionais UNIX e Linux necessários, bem como as dependências de pacotes.  
 
- **Red Hat Enterprise Linux ES versão 4**  
-
-|Pacote necessário|Descrição|Versão mínima|  
-|----------------------|-----------------|---------------------|  
-|glibc|Bibliotecas C padrão|2.3.4-2|  
-|Openssl|Bibliotecas OpenSSL; Protocolo de Comunicações de Rede Seguras|0.9.7a-43.1|  
-|PAM|Módulos de Autenticação Conectáveis|0.77-65.1|  
-
  **Red Hat Enterprise Linux Server versão 5.1 (Tikanga)**  
 
 |Pacote necessário|Descrição|Versão mínima|  
@@ -75,15 +67,6 @@ Você pode instalar o cliente do System Center Configuration Manager em computad
 |Openssl|Bibliotecas OpenSSL; Protocolo de Comunicações de Rede Seguras|1.0.0-4|  
 |PAM|Módulos de Autenticação Conectáveis|1.1.1-4|  
 
- **Solaris 9 SPARC**  
-
-|Pacote necessário|Descrição|Versão mínima|  
-|----------------------|-----------------|---------------------|  
-|Patch do sistema operacional necessários|Vazamento de memória do PAM|112960-48|  
-|SUNWlibC|Sun Workshop Compilers Bundled libC (sparc)|5.9,REV=2002.03.18|  
-|SUNWlibms|Desenvolvedor agrupados compartilhado forte libm (sparc)|5.9,REV=2001.12.10|  
-|Openssl|SMCosslg (sparc)<br /><br /> A Sun não oferece uma versão do OpenSSL para Solaris 9 SPARC. Há uma versão disponível do Sunfreeware.|0.9.7g|  
-|PAM|Módulos de Autenticação Conectáveis<br /><br /> SUNWcsl, Solaris de núcleo (compartilhado bibliotecas) (sparc)|11.9.0,REV=2002.04.06.15.27|  
 
  **Solaris 10 SPARC**  
 
@@ -132,15 +115,6 @@ Você pode instalar o cliente do System Center Configuration Manager em computad
 |SUNWcsr|Core Solaris, (Root)|11.11, REV=2009.11.11|  
 |SUNWopenssl-libraries|OpenSSL Libraries (Usr)|11.11.0,REV=2010.05.25.01.00|  
 
- **SUSE Linux Enterprise Server 9 (i586)**  
-
-|Pacote necessário|Descrição|Versão mínima|  
-|----------------------|-----------------|---------------------|  
-|Service Pack 4|SUSE Linux Enterprise Server 9||  
-|OS Patch lib gcc-41.rpm|Biblioteca compartilhada padrão|41-4.1.2_20070115-0.6|  
-|OS Patch lib stdc++-41.rpm|Biblioteca compartilhada padrão|41-4.1.2_20070115-0.6|  
-|Openssl|Bibliotecas OpenSSL; Protocolo de Comunicações de Rede Seguras|0.9.7d-15.35|  
-|PAM|Módulos de Autenticação Conectáveis|0.77-221-11|  
 
  **SUSE Linux Enterprise Server 10 SP1 (i586)**  
 
@@ -173,13 +147,6 @@ Você pode instalar o cliente do System Center Configuration Manager em computad
 |Openssl|Bibliotecas OpenSSL; Protocolo de Comunicações de Rede Seguras|0.9.8 ou 1.0|  
 |PAM|Módulos de Autenticação Conectáveis|0.99.6.2-3.14|  
 
- **IBM AIX 5L 5.3**  
-
-|Pacote necessário|Descrição|Versão mínima|  
-|----------------------|-----------------|---------------------|  
-|Versão do SO|Versão do sistema operacional|AIX 5.3, Technology Level 6, Service Pack 5|  
-|xlC.rte|Tempo de execução XL C/C++|9.0.0.2|  
-|openssl.base|Bibliotecas OpenSSL; Protocolo de Comunicações de Rede Seguras|0.9.8.4|  
 
  **IBM AIX 6.1**  
 
@@ -197,33 +164,6 @@ Você pode instalar o cliente do System Center Configuration Manager em computad
 |xlC.rte|Tempo de execução XL C/C++||  
 |OpenSSL/openssl.base|Bibliotecas OpenSSL; Protocolo de Comunicações de Rede Seguras||  
 
- **HP-UX 11i v2 IA 64**  
-
-|Pacote necessário|Descrição|Versão mínima|  
-|----------------------|-----------------|---------------------|  
-|HPUXBaseOS|Sistema operacional base|B.11.23|  
-|HPUXBaseAux|Auxiliar do sistema operacional base HP-UX|B.11.23.0706|  
-|HPUXBaseAux.openssl|Bibliotecas OpenSSL; Protocolo de Comunicações de Rede Seguras|A.00.09.07l.003|  
-|PAM|Módulos de Autenticação Conectáveis|No HP-UX, o PAM faz parte dos componentes centrais do sistema operacional. Não há outras dependências.|  
-
- **HP-UX 11i v2 PA-RISC**  
-
-|Pacote necessário|Descrição|Versão mínima|  
-|----------------------|-----------------|---------------------|  
-|HPUX11i-OE|Ambiente operacional HP-UX Foundation|B.11.23.0706|  
-|OS-Core.MinimumRuntime.CORE-SHLIBS|Bibliotecas de ferramentas de desenvolvimento compatíveis|B.11.23|  
-|HPUXBaseAux|Auxiliar do sistema operacional base HP-UX|B.11.23.0706|  
-|HPUXBaseAux.openssl|Bibliotecas OpenSSL; Protocolo de Comunicações de Rede Seguras|A.00.09.071.003|  
-|PAM|Módulos de Autenticação Conectáveis|No HP-UX, o PAM faz parte dos componentes centrais do sistema operacional. Não há outras dependências.|  
-
- **HP-UX 11i v3 PA-RISC**  
-
-|Pacote necessário|Descrição|Versão mínima|  
-|----------------------|-----------------|---------------------|  
-|HPUX11i-OE|Ambiente operacional HP-UX Foundation|B.11.31.0709|  
-|OS-Core.MinimumRuntime.CORE2-SHLIBS|Bibliotecas específicas de emuladores IA|B.11.31|  
-|openssl/Openssl.openssl|Bibliotecas OpenSSL; Protocolo de Comunicações de Rede Seguras|A.00.09.08d.002|  
-|PAM|Módulos de Autenticação Conectáveis|No HP-UX, o PAM faz parte dos componentes centrais do sistema operacional. Não há outras dependências.|  
 
  **HP-UX 11i v3 IA64**  
 
@@ -285,13 +225,8 @@ Você pode instalar o cliente do System Center Configuration Manager em computad
 ##  <a name="BKMK_NoSHA-256"></a> Sobre sistemas operacionais Linux e UNIX que não dão suporte a SHA-256  
  Os seguintes sistemas operacionais Linux e UNIX que têm suporte como clientes para o Configuration Manager foram lançados com versões do OpenSSL que não dão suporte a SHA-256:  
 
--   Versão do Red Hat Enterprise Linux 4 (x86/x64)  
+-   Solaris Versão 10 (SPARC/x86)  
 
--   Versão Solaris 9 (SPARC) e Solaris 10 (SPARC/x86)  
-
--   SUSE Linux Enterprise Server versão 9 (x86)  
-
--   Versão de HP-UX 11iv2 (PA-RISH/IA64)  
 
  Para gerenciar esses sistemas operacionais com Configuration Manager, você precisa instalar o cliente do Configuration Manager para Linux e UNIX com uma opção de linha de comando que instrui o cliente a ignorar a validação do SHA-256. Os clientes do Configuration Manager que são executados nessas versões de sistema operacional operam em um modo menos seguro que os clientes que dão suporte a SHA-256. Este modo menos seguro de operação tem o seguinte comportamento:  
 
