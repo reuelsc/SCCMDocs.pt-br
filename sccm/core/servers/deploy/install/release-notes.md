@@ -15,11 +15,11 @@ caps.handback.revision: "0"
 author: Brenduns
 ms.author: brenduns
 manager: angrobe
-ms.openlocfilehash: e54c2cd1c3e83609bff6a8cb64fb3c23b26a4eaa
-ms.sourcegitcommit: 974fbc4408028c8be28911e5cd646efcf47c7f15
+ms.openlocfilehash: 4e818ffd943208eab323b1558f825bd87f3ddc4c
+ms.sourcegitcommit: 13599667ea77c16db1aebe64f8a6748c268f0b45
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/28/2017
+ms.lasthandoff: 09/11/2017
 ---
 # <a name="release-notes-for-system-center-configuration-manager"></a>Release notes for System Center Configuration Manager
 
@@ -148,17 +148,6 @@ Com todas as versões ativas de Quando você implanta o cliente em computadores 
 **Solução alternativa** Isso é causado por uma versão do Silverlight instalada anteriormente que estava corrompida. Você pode tentar executar a ferramenta a seguir no computador afetado para corrigir esse problema: [https://support.microsoft.com/help/17588/fix-problems-that-block-programs-from-being-installed-or-removed](https://support.microsoft.com/help/17588/fix-problems-that-block-programs-from-being-installed-or-removed)
 
 ## <a name="operating-system-deployment"></a>Implantação de sistema operacional  
-
-### <a name="if-the-boot-image-contains-drivers-the-image-fails-to-reload-the-current-windows-pe-version-from-the-windows-assessment-and-deployment-kit-adk"></a>Se a imagem de inicialização contiver drivers, a imagem falhará ao recarregar a versão atual do Windows PE do ADK (Kit de Avaliação e Implantação) do Windows
-<!-- 495087 -->
-Você pode usar o Assistente para Atualização de Ponto de Distribuição para atualizar os pontos de distribuição com uma imagem de inicialização armazenada com a versão mais recente do Windows PE, do diretório de instalação do ADK (Kit de Avaliação e Implantação) do Windows. Para atualizar, abra o Assistente para Atualização de Ponto de Distribuição e selecione **Recarregar esta imagem de inicialização com a versão atual do PE do Windows ADK**.
-
-No entanto, se a sua imagem de inicialização contiver drivers, a atualização falhará. Em vez disso, o assistente recarregará a imagem do ADK, exibirá uma caixa de diálogo de exceção, que o usuário pode ignorar e, em seguida, mostra uma tela de sucesso. No entanto, os componentes mais recentes de cliente do Configuration Manager não serão adicionados à imagem de inicialização. A imagem de inicialização não será atualizada no ponto de distribuição
-
-**Solução alternativa**: executar duas vezes o Assistente para Atualização de Ponto de Distribuição.
-
-1. Execute o assistente com a opção **Recarregar esta imagem de inicialização com a versão atual do Windows PE do Windows ADK** selecionada. Isso proporcionará a versão mais recente do Windows PE.
-2. Execute novamente o assistente com a opção **Recarregar esta imagem de inicialização com a versão atual do Windows PE do Windows ADK** desmarcada. Este colocará os binários de cliente mais recentes e atualizará a imagem de inicialização no ponto de distribuição.
 
 ### <a name="servicing-plans-create-a-lot-of-duplicate-software-update-groups-and-deployments-by-default"></a>Planos de manutenção criam muitos grupos e implantações de atualização de software duplicados por padrão  
 Por padrão, o assistente para Criar Planos de Manutenção atualmente é executado depois de cada sincronização de atualizações de software. Toda vez que o assistente é executado, ele cria um novo grupo e implantação de atualização de software. Se você tiver um agendamento de sincronização de atualizações de software que é executado várias vezes ao dia, por exemplo, o assistente para Criar Planos de Manutenção criará vários, e provavelmente idênticos, grupos e implantações de atualização de software todos os dias.  
