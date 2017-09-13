@@ -2,7 +2,7 @@
 title: "Ferramenta de conexão de serviço | Microsoft Docs"
 description: "Saiba mais sobre esta ferramenta que permite que você se conecte ao serviço de nuvem do Configuration Manager para carregar manualmente as informações de uso."
 ms.custom: na
-ms.date: 4/7/2017
+ms.date: 09/06/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
@@ -14,11 +14,11 @@ caps.latest.revision: "11"
 author: Brenduns
 ms.author: brenduns
 manager: angrobe
-ms.openlocfilehash: 0da80521bf223a765c3731f8ad59623d85a4c9fa
-ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
+ms.openlocfilehash: 8039ee0c704bbe570ec3e45ba648f779923087c6
+ms.sourcegitcommit: 2a1328da3facb20b0c78f3b12adbb5fdbe0dcc11
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/07/2017
+ms.lasthandoff: 09/08/2017
 ---
 # <a name="use-the-service-connection-tool-for-system-center-configuration-manager"></a>Usar a ferramenta de conexão de serviço do System Center Configuration Manager
 
@@ -81,7 +81,7 @@ Quando você executa o comando a seguir, a ferramenta prepara um arquivo .cab qu
 Você também precisará copiar a pasta ServiceConnectionTool com todo seu conteúdo para a unidade USB ou, de alguma forma, disponibilizá-lo no computador que usará para as etapas 3 e 4.  
 
 ### <a name="overview"></a>Visão geral
-**Há três etapas principais para usar a ferramenta de conexão de serviço:**  
+#### <a name="there-are-three-primary-steps-to-using-the-service-connection-tool"></a>Há três etapas principais para usar a ferramenta de conexão de serviço  
 
 1.  **Preparação**: esta etapa deve ser executada no computador que hospeda o ponto de conexão de serviço. Ao ser executada, a ferramenta coloca os dados de uso em um arquivo .cab e os armazena em uma unidade USB (ou em algum local de transferência alternativo que você especificar).  
 
@@ -91,15 +91,28 @@ Você também precisará copiar a pasta ServiceConnectionTool com todo seu conte
 
 A partir da versão 1606, ao se conectar à Microsoft, você pode carregar vários arquivos .cab ao mesmo tempo (cada um de uma hierarquia diferente) e especificar um servidor proxy e um usuário para o servidor proxy.   
 
-**Para carregar vários arquivos .cab:**
+#### <a name="to-upload-multiple-cab-files"></a>Para carregar vários arquivos .cab
  -  Coloque cada arquivo .cab que exportar de hierarquias separadas na mesma pasta. O nome de cada arquivo deve ser exclusivo e você pode renomeá-los manualmente se necessário.
  -  Depois, quando executar o comando para carregar dados para a Microsoft, especifique a pasta que contém os arquivos .cab. (Antes da atualização 1606, você só podia carregar dados de uma hierarquia por vez e a ferramenta exigia que você especificasse o nome do arquivo .cab na pasta.)
  -  Posteriormente, quando você executar a tarefa de importação no ponto de conexão de serviço de uma hierarquia, a ferramenta importará automaticamente somente os dados daquela hierarquia.  
 
-**Para especificar um servidor proxy:**  
+#### <a name="to-specify-a-proxy-server"></a>Para especificar um servidor proxy
 Você pode usar os seguintes parâmetros opcionais para especificar um servidor proxy (mais informações sobre como usar esses parâmetros estão disponíveis na seção Parâmetros de linha de comando neste tópico):
   - **-proxyserveruri [FQDN_do_servidor_proxy]**  Use este parâmetro para especificar o servidor proxy a ser usado para esta conexão.
   -  **-proxyusername [nome de usuário]**  Use este parâmetro quando precisar especificar um usuário para o servidor proxy.
+
+#### <a name="specify-the-type-of-updates-to-download"></a>Especifique o tipo de atualizações a serem baixadas
+A partir da versão 1706, o comportamento padrão dos downloads de ferramentas foi alterado e a ferramenta dá suporte a opções para controlar quais arquivos são baixados.
+-   Por padrão, a ferramenta baixa somente a atualização mais recente disponível que se aplica à versão do seu site. Ela não baixa os hotfixes.
+
+Para modificar esse comportamento, use um dos parâmetros a seguir para alterar quais arquivos são baixados. A versão do seu site é determinada pelos dados no arquivo .cab que é carregado quando a ferramenta é executada.
+-   **-downloadall** Essa opção baixa tudo, incluindo atualizações e hotfixes, independentemente da versão do seu site.
+-   **-downloadhotfix** Essa opção baixa todos os hotfixes, independentemente da versão do seu site.
+-   **-downloadsiteversion** Essa opção baixa atualizações e hotfixes com uma versão maior do que a do seu site.
+
+Linha de comando de exemplo que usa *-downloadsiteversion*:
+- **serviceconnectiontool.exe -connect  *-downloadsiteversion* -usagedatasrc D:\USB -updatepackdest D:\USB\UpdatePacks**
+
 
 
 

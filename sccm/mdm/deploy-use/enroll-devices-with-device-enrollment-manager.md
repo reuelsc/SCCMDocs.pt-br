@@ -2,7 +2,7 @@
 title: "Registrar dispositivos com o gerenciador de registro de dispositivo – Configuration Manager | Microsoft Docs"
 description: Registrar dispositivos de propriedade da empresa com a conta de gerente de registro de dispositivo com o System Center Configuration Manager.
 ms.custom: na
-ms.date: 08/15/2017
+ms.date: 09/08/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
@@ -14,11 +14,11 @@ caps.latest.revision: "8"
 author: nathbarn
 ms.author: nathbarn
 manager: angrobe
-ms.openlocfilehash: c90ecca1ee46523d16fc1cf11495e40707631e03
-ms.sourcegitcommit: db7b7ec347638efd05cdba474e8a8f8535516116
+ms.openlocfilehash: dcc35fb6ebe385d07a3b60e8968e06dec8ad60af
+ms.sourcegitcommit: 40f2a4e3cc546e6bfd10f195a8e87af2b0780928
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/16/2017
+ms.lasthandoff: 09/08/2017
 ---
 # <a name="enroll-devices-with-device-enrollment-manager-with-configuration-manager"></a>Registrar dispositivos com o gerenciador de registro de dispositivo no Configuration Manager
 
@@ -40,7 +40,7 @@ As seguintes limitações se aplicam a dispositivos gerenciados usando uma conta
 -  Para implantar aplicativos da empresa em dispositivos gerenciados com o gerenciador de registro de dispositivo, implante o aplicativo de Portal da Empresa como uma **Instalação obrigatória** na conta de usuário do gerenciador de registro de dispositivo. O gerenciador de registro de dispositivo poderá então iniciar o aplicativo Portal da Empresa para instalar os aplicativos adicionais.
 - Para melhorar o desempenho, o aplicativo Portal da Empresa mostra apenas o dispositivo local. O gerenciamento remoto de outros dispositivos DEM só pode ser feito no console do Configuration Manager e por um administrador
 - O site do Portal da Empresa não está disponível para contas de gerenciador de registro de dispositivo. Use o aplicativo Portal da Empresa.
-- (somente iOS) Se você usar o DEM para registrar dispositivos iOS, não poderá usar o Apple Configurator ou o DEP(Programa de registro de dispositivo) da Apple para registrar dispositivos.
+- Se você usar o DEM para registrar dispositivos iOS, não poderá usar o Apple Configurator ou o DEP (Programa de registro de dispositivo) da Apple para registrar dispositivos. (somente iOS) 
 
  **Exemplos de cenários do gerenciador de registro de dispositivo:**   
 Um restaurante quer tablets de ponto de venda para sua equipe e faz o pedido de monitores para sua equipe da cozinha. Os funcionários nunca precisam ter acesso aos dados da empresa ou fazer logon como um usuário. O administrador do Intune cria uma conta de gerenciador de registro de dispositivos e registra os dispositivos da empresa usando essa conta. Como alternativa, o administrador pode conceder credenciais de gerenciador de registro de dispositivos a um gerente do restaurante, permitindo que ele registre e gerencie os dispositivos.  

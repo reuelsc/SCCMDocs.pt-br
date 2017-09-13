@@ -15,11 +15,11 @@ caps.handback.revision: "0"
 author: Dougeby
 ms.author: dougeby
 manager: angrobe
-ms.openlocfilehash: cc678c1133b1944f55bcad309cf9ede9f0660b57
-ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
+ms.openlocfilehash: 5668ba3ead3b7415508f9ecf02f2e119c3cd9cc6
+ms.sourcegitcommit: 2a1328da3facb20b0c78f3b12adbb5fdbe0dcc11
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/07/2017
+ms.lasthandoff: 09/08/2017
 ---
 # <a name="manage-boot-images-with-system-center-configuration-manager"></a>Gerenciar imagens de inicialização com o System Center Configuration Manager
 
@@ -49,11 +49,10 @@ Antes da versão 1702, o Configuration Manager atualiza a imagem de inicializaç
 Ao atualizar do Configuration Manager 2012 para CB do Configuration Manager usando o processo de instalação, o Configuration Manager regenerará as imagens de inicialização padrão. Inclui a nova versão de janela PE do Windows ADK atualizado, a nova versão do cliente do Configuration Manager e todas as personalizações permanecem inalteradas. Imagens de inicialização personalizadas não são modificadas.
 
 ### <a name="update-distribution-points-with-the-boot-image"></a>Atualizar pontos de distribuição com a imagem de inicialização
-Quando você usa a ação **Atualizar Pontos de Distribuição** no nó **Imagens de Inicialização** no console do Configuration Manager, ele atualiza as imagens de inicialização padrão com os componentes do cliente, drivers, personalizações, etc.    
+Quando você usa a ação **Atualizar Pontos de Distribuição** no nó **Imagens de Inicialização** no console do Configuration Manager, ele atualiza a imagem de inicialização de destino com os componentes do cliente, drivers, personalizações etc.    
 
 A partir do Configuration Manager versão 1706, você pode optar por recarregar a versão mais recente do Windows PE (a partir do diretório de instalação do Windows ADK) na imagem de inicialização. A página **Geral** do assistente de Pontos de Distribuição de Atualização fornece informações sobre a versão do Windows ADK instalada no servidor do site, a versão do Windows ADK do qual o Windows PE foi usado na imagem de inicialização e a versão do cliente do Configuration Manager. Você pode usar essas informações para ajudá-lo a decidir se deseja recarregar a imagem de inicialização. Além disso, uma nova coluna (**Versão Cliente**) foi adicionada ao exibir imagens de inicialização no nó **Imagens de Inicialização** para que você saiba qual versão do cliente do Configuration Manager cada imagem de inicialização usa.    
 
-Imagens de inicialização personalizadas não são modificadas.
 
 ##  <a name="BKMK_BootImageCustom"></a> Personalizar uma imagem de inicialização  
  É possível personalizar uma imagem de inicialização ou [Modificar uma imagem de inicialização](#BKMK_ModifyBootImages) no console do Configuration Manager quando ele é baseado em uma versão do Windows PE de uma versão do Windows ADK com suporte. Quando um site for atualizado com uma nova versão e uma nova versão do Windows ADK for instalada, as imagens de inicialização personalizadas (não no local da imagem de inicialização padrão) não serão atualizadas com a nova versão do Windows ADK. Quando isso acontecer, não será mais possível personalizar as imagens de inicialização no console do Configuration Manager. No entanto, elas continuarão funcionando como antes da atualização.  

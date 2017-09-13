@@ -2,7 +2,7 @@
 title: "Pré-declarar dispositivos com números de série do iOS ou IMEI | Microsoft Docs"
 description: "Pré-declare dispositivos corporativos com o número de série do iOS ou IMEI deles."
 ms.custom: na
-ms.date: 08/15/2017
+ms.date: 09/01/2017
 ms.reviewer: na
 ms.suite: na
 ms.prod: configuration-manager
@@ -14,11 +14,11 @@ caps.latest.revision: "3"
 author: nathbarn
 ms.author: nathbarn
 manager: angrobe
-ms.openlocfilehash: 7d139a2c74c0f29604f2f3d9b8e2739364633f17
-ms.sourcegitcommit: db7b7ec347638efd05cdba474e8a8f8535516116
+ms.openlocfilehash: 424f04b2b3ad4c7ef91f884bbf5bae3580ea6b85
+ms.sourcegitcommit: cd1f9c58e55f1c9a19acd743ec6a8824c39fd3a1
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/16/2017
+ms.lasthandoff: 09/05/2017
 ---
 # <a name="predeclare-devices-with-imei-or-ios-serial-numbers"></a>Pré-declarar dispositivos com número de série do iOS ou IMEI
 
@@ -29,7 +29,7 @@ Você pode identificar os dispositivos corporativos importando seus números IME
 Quando você carrega os números de série para dispositivos iOS de propriedade da empresa, eles devem ser combinados com um perfil de registro corporativo. Os dispositivos devem então ser registrados usando o programa de registro do dispositivo (DEP) da Apple ou o Apple Configurator para eles aparecerem como sendo da empresa.
 
 >[!NOTE]
->Dispositivos Android, excluindo dispositivos Samsung Knox Standard, devem ter um cartão SIM para pré-declarar e registrá-lo como um dispositivo da empresa com um número IMEI.
+>Dispositivos Android, exceto dispositivos Samsung Knox Standard, devem ter um número de telefone atribuído a eles para serem pré-declarados e registrados como um dispositivo da empresa com um número IMEI.
 
 ## <a name="how-to-predeclare-corporate-owned-devices"></a>Como pré-declarar dispositivos corporativos
 

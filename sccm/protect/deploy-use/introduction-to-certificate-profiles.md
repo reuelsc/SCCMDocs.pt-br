@@ -2,7 +2,7 @@
 title: "Introdução aos perfis de certificado | Microsoft Docs"
 description: "Saiba como os perfis de certificado no System Center Configuration Manager funcionam com Serviços de Certificados do Active Directory."
 ms.custom: na
-ms.date: 07/25/2017
+ms.date: 09/11/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
@@ -14,18 +14,18 @@ caps.latest.revision: "7"
 author: lleonard-msft
 ms.author: alleonar
 manager: angrobe
-ms.openlocfilehash: 7b1c0e449f3d1ef42e279e8707df6bf1df163b3f
-ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
+ms.openlocfilehash: e269b5836648d0d227e91a017512c16217e42646
+ms.sourcegitcommit: 13599667ea77c16db1aebe64f8a6748c268f0b45
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/07/2017
+ms.lasthandoff: 09/11/2017
 ---
 # <a name="introduction-to-certificate-profiles-in-system-center-configuration-manager"></a>Introdução aos perfis de certificado no System Center Configuration Manager
 
 *Aplica-se a: System Center Configuration Manager (Branch Atual)*
 
 
-Os perfis de certificado funcionam com os Serviços de Certificados do Active Directory e com a função Serviço de Registro de Dispositivo de Rede para provisionar certificados de autenticação para os dispositivos gerenciados para que os usuários possam acessar perfeitamente os recursos da empresa. Por exemplo, você pode criar e implantar perfis de certificado para fornecer os certificados necessários para que os usuários iniciem conexões VPN e sem fio. 
+Os perfis de certificado funcionam com os Serviços de Certificados do Active Directory e com a função Serviço de Registro de Dispositivo de Rede para provisionar certificados de autenticação para os dispositivos gerenciados para que os usuários possam acessar perfeitamente os recursos da empresa. Por exemplo, você pode criar e implantar perfis de certificado para fornecer os certificados necessários para que os usuários iniciem conexões VPN e sem fio.
 
 Os perfis de certificado podem configurar automaticamente dispositivos de usuários para que os recursos da empresa, como redes Wi-Fi e servidores VPN, possam ser acessados sem a necessidade de instalar certificados manualmente ou usar um processo fora da banda. Perfis de certificado também podem ajudar a manter os recursos da empresa protegidos, porque você pode usar configurações mais seguras que têm suporte por sua infraestrutura de chave pública (PKI) corporativa. Por exemplo, você pode exigir autenticação de servidor para todas as conexões VPN e Wi-Fi porque provisionou os certificados necessários nos dispositivos gerenciados.   
 
@@ -52,7 +52,7 @@ Os perfis de certificado oferecem os seguintes recursos de gerenciamento:
 
 -   **Troca de informações pessoais (.pfx)** – permite que você solicite um certificado .pfx (também conhecido como PKCS #12) para um dispositivo ou usuário.
 
-    Você pode criar perfis de certificado PFX [importando credenciais](/sccm/mdm/deploy-use/import-pfx-certificate-profiles.md) de certificados existentes ou [definindo uma autoridade de certificação](/sccm/mdm/deploy-use/create-pfx-certificate-profiles.md) para processar solicitações.
+    Você pode criar perfis de certificado PFX [importando credenciais](/sccm/mdm/deploy-use/import-pfx-certificate-profiles) de certificados existentes ou [definindo uma autoridade de certificação](/sccm/mdm/deploy-use/create-pfx-certificate-profiles) para processar solicitações.
 
     A partir da versão 1706, você pode usar Microsoft ou Entrust como autoridades de certificação para certificados **Troca de informações pessoais (.pfx)**.
 
