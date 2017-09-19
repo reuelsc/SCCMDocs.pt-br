@@ -15,11 +15,11 @@ caps.handback.revision: "0"
 author: Dougeby
 ms.author: dougeby
 manager: angrobe
-ms.openlocfilehash: 830f715b688cc9929a179da94eba9c81de8db11a
-ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
+ms.openlocfilehash: f44fa4ef0946d3500d15db536333adab571a5f64
+ms.sourcegitcommit: 31c670a4bce74fd64a7d46ebf7702f65b80d4147
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/07/2017
+ms.lasthandoff: 09/13/2017
 ---
 # <a name="planning-considerations-for-automating-tasks-in-system-center-configuration-manager"></a>Considerações de planejamento para automatizar tarefas no System Center Configuration Manager
 
@@ -282,7 +282,7 @@ ms.lasthandoff: 08/07/2017
 ##  <a name="BKMK_TSNetworkAccessAccount"></a> Sequências de tarefas e Conta de acesso de rede  
  Embora as sequências de tarefas sejam executadas apenas no contexto da conta do Sistema Local, pode ser necessário configurar a conta de acesso à rede nas seguintes circunstâncias:  
 
--   Você precisa configurar a Conta de Acesso à Rede corretamente ou a sequência de tarefas falhará se tentar acessar os pacotes do Configuration Manager nos pontos de distribuição para concluir a tarefa. Para obter mais informações sobre a Conta de Acesso à Rede, consulte [Conta de Acesso à Rede](../../core/plan-design/hierarchy/manage-accounts-to-access-content.md#a-namebkmknaaa-network-access-account).  
+-   Você precisa configurar a Conta de Acesso à Rede corretamente ou a sequência de tarefas falhará se tentar acessar os pacotes do Configuration Manager nos pontos de distribuição para concluir a tarefa. Para obter mais informações sobre a Conta de Acesso à Rede, consulte [Conta de Acesso à Rede](../../core/plan-design/hierarchy/manage-accounts-to-access-content.md#bkmk_NAA).  
 
     > [!NOTE]  
     >  A Conta de Acesso à Rede nunca é usada como contexto de segurança para a execução de programas, instalação de aplicativos, instalação de atualizações, ou execução de sequências de tarefas; no entanto, a Conta de Acesso à Rede é usada para acessar recursos associados à rede.  

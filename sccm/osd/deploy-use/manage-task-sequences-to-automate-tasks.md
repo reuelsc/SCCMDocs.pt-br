@@ -14,11 +14,11 @@ caps.latest.revision: "10"
 author: Dougeby
 ms.author: dougeby
 manager: angrobe
-ms.openlocfilehash: 2f3d66362c49d28a52d7f9c535eb0b3b4cc4eaf7
-ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
+ms.openlocfilehash: c9d94ffb61ed7a7fa40a01eedc763a16a8df30cb
+ms.sourcegitcommit: 31c670a4bce74fd64a7d46ebf7702f65b80d4147
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/07/2017
+ms.lasthandoff: 09/13/2017
 ---
 # <a name="manage-task-sequences-to-automate-tasks-in-system-center-configuration-manager"></a>Gerenciar sequências de tarefas para automatizar tarefas no System Center Configuration Manager
 
@@ -196,7 +196,7 @@ A mensagem de notificação a seguir será exibida quando o usuário final abrir
 
 8.  Conclua o assistente.  
 
- É possível pré-configurar o conteúdo referenciado na sequência de tarefas. O Configuration Manager cria um arquivo de conteúdo compactado e pré-configurado que contém os arquivos, as dependências associadas e os metadados associados para o conteúdo selecionado. Você pode importar manualmente o conteúdo em um servidor de site, site secundário ou ponto de distribuição. Para obter mais informações sobre como pré-configurar arquivos de conteúdo, consulte [Prestage content (Pré-configurar conteúdo)](../../core/servers/deploy/configure/deploy-and-manage-content.md#a-namebkmkprestagea-use-prestaged-content).  
+ É possível pré-configurar o conteúdo referenciado na sequência de tarefas. O Configuration Manager cria um arquivo de conteúdo compactado e pré-configurado que contém os arquivos, as dependências associadas e os metadados associados para o conteúdo selecionado. Você pode importar manualmente o conteúdo em um servidor de site, site secundário ou ponto de distribuição. Para obter mais informações sobre como pré-configurar arquivos de conteúdo, consulte [Prestage content (Pré-configurar conteúdo)](../../core/servers/deploy/configure/deploy-and-manage-content.md#bkmk_prestage).  
 
 ##  <a name="BKMK_DeployTS"></a> Implantar uma sequência de tarefas  
  Use o procedimento a seguir para implantar uma sequência de tarefas para computadores em uma coleção.  
@@ -464,7 +464,7 @@ Por exemplo, se a coleção ABC tiver uma variável atribuída a ela e o computa
 |**Copiar**|Faz uma cópia da sequência a tarefa selecionada. Você pode achar essa ação útil quando deseja criar uma nova sequência de tarefas baseada em uma sequência de tarefas existente.<br /><br /> Quando você fizer uma cópia de uma sequência de tarefas em uma pasta, a cópia será listada nessa pasta até que você atualize o nó de sequência de tarefas.  Após a atualização, a cópia aparecerá na pasta raiz.|  
 |**Desabilitar**|Desativa a sequência de tarefas para que ela não possa ser executada nos computadores. As sequências de tarefas desativadas podem ser implantadas em computadores, mas os computadores não executam a sequência de tarefas até que ela seja habilitada.|  
 |**Habilitar**|Habilita a sequência de tarefas, de forma que ela possa ser executada. Não é necessário reimplantar uma sequência de tarefas implantada após ser habilitada.|  
-|**Criar Arquivo de Conteúdo de Pré-teste**|Inicia o Assistente para Criar Arquivo de Conteúdo de Pré-Teste para criar um conteúdo de pré-teste de sequência de tarefas. Para obter informações sobre como criar um arquivo de conteúdo pré-teste, consulte [Prestage content (Conteúdo pré-teste)](../../core/servers/deploy/configure/deploy-and-manage-content.md#a-namebkmkprestagea-use-prestaged-content).|  
+|**Criar Arquivo de Conteúdo de Pré-teste**|Inicia o Assistente para Criar Arquivo de Conteúdo de Pré-Teste para criar um conteúdo de pré-teste de sequência de tarefas. Para obter informações sobre como criar um arquivo de conteúdo pré-teste, consulte [Prestage content (Conteúdo pré-teste)](../../core/servers/deploy/configure/deploy-and-manage-content.md#bkmk_prestage).|  
 |**Moverr**|Move a sequência de tarefas selecionada para outra pasta.|  
 
 ## <a name="next-steps"></a>Próximas etapas

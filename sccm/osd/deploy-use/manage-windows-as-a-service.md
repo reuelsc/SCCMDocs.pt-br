@@ -14,11 +14,11 @@ caps.latest.revision: "26"
 author: Dougeby
 ms.author: dougeby
 manager: angrobe
-ms.openlocfilehash: 2c2c0f81736c1b00ea487ae1261803a8105bb5e4
-ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
+ms.openlocfilehash: fe02981433482ebf6880feec3e1822e6e8f4550f
+ms.sourcegitcommit: 31c670a4bce74fd64a7d46ebf7702f65b80d4147
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/07/2017
+ms.lasthandoff: 09/13/2017
 ---
 # <a name="manage-windows-as-a-service-using-system-center-configuration-manager"></a>Gerenciar o Windows como um serviço usando o System Center Configuration Manager
 
@@ -40,7 +40,7 @@ ms.lasthandoff: 08/07/2017
 
 -   O WSUS 4.0 com o [hotfix 3159706](https://support.microsoft.com/kb/3159706) deve estar instalado em seus pontos de atualização de software e servidores de sites para atualizar computadores para a Atualização de Aniversário do Windows 10, bem como para versões posteriores. Há etapas manuais descritas no artigo de suporte que você precisa seguir para instalar esse hotfix. Para obter mais informações, consulte o [Blog do Enterprise Mobility & Security](https://blogs.technet.microsoft.com/enterprisemobility/2016/08/05/update-your-configmgr-1606-sup-servers-to-deploy-the-windows-10-anniversary-update/).
 
--   Habilite a Descoberta de Pulsação. Os dados exibidos no painel de serviço do Windows 10 são encontrados por meio da descoberta. Para obter mais informações, consulte [Configure Heartbeat Discovery](../../core/servers/deploy/configure/configure-discovery-methods.md#a-namebkmkconfighbdisca-configure-heartbeat-discovery).  
+-   Habilite a Descoberta de Pulsação. Os dados exibidos no painel de serviço do Windows 10 são encontrados por meio da descoberta. Para obter mais informações, consulte [Configure Heartbeat Discovery](../../core/servers/deploy/configure/configure-discovery-methods.md#BKMK_ConfigHBDisc).  
 
      As seguintes informações de branch e build do Windows 10 são descobertas e armazenadas em um dos seguintes atributos:  
 

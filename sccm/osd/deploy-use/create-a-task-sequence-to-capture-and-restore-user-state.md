@@ -15,11 +15,11 @@ caps.handback.revision: "0"
 author: Dougeby
 ms.author: dougeby
 manager: angrobe
-ms.openlocfilehash: 4b3668094d576b1b8710f08b384aa2f7c5eb0cca
-ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
+ms.openlocfilehash: 3a8e2759812dae2a328cd09efdc13f8534d14379
+ms.sourcegitcommit: 31c670a4bce74fd64a7d46ebf7702f65b80d4147
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/07/2017
+ms.lasthandoff: 09/13/2017
 ---
 # <a name="create-a-task-sequence-to-capture-and-restore-user-state-in-system-center-configuration-manager"></a>Criar uma sequência de tarefas para capturar e restaurar o estado de usuário no System Center Configuration Manager
 
@@ -56,7 +56,7 @@ Você pode usar as sequências da tarefas do System Center Configuration Manager
 
     -   Na caixa **Atraso na repetição (em segundos)** , especifique quantos segundos a sequência de tarefas aguardará antes de repetir a captura dos dados.  
 
-    -   Marque a caixa de seleção **Se a conta do computador não conseguir se conectar ao armazenamento de estado, use a conta de Acesso à Rede** para especificar se deseja usar a [Conta de Acesso à Rede](../../core/plan-design/hierarchy/manage-accounts-to-access-content.md#a-namebkmknaaa-network-access-account) do Configuration Manager para se conectar ao repositório de estado.  
+    -   Marque a caixa de seleção **Se a conta do computador não conseguir se conectar ao armazenamento de estado, use a conta de Acesso à Rede** para especificar se deseja usar a [Conta de Acesso à Rede](../../core/plan-design/hierarchy/manage-accounts-to-access-content.md#bkmk_NAA) do Configuration Manager para se conectar ao repositório de estado.  
 
      Na guia **Opções** , especifique as seguintes opções:  
 
@@ -141,7 +141,7 @@ Você pode usar as sequências da tarefas do System Center Configuration Manager
 
     -   Selecione **Continuar, se alguns arquivos não forem restaurados** se quiser que a etapa **Restaurar Estado do Usuário** para continuar se um arquivo não puder ser restaurado.  
 
-         Se você armazenar o estado do usuário usando links locais e a restauração não for bem-sucedida, o usuário administrativo poderá excluir manualmente os links físicos criados para armazenar os dados ou a sequência de tarefas pode executar a ferramenta USMTUtils. Se você usar o USMTUtils para excluir link físico, adicione uma etapa [Reiniciar Computador](../understand/task-sequence-steps.md#a-namebkmkrestartcomputera-restart-computer) depois de executar USMTUtils.  
+         Se você armazenar o estado do usuário usando links locais e a restauração não for bem-sucedida, o usuário administrativo poderá excluir manualmente os links físicos criados para armazenar os dados ou a sequência de tarefas pode executar a ferramenta USMTUtils. Se você usar o USMTUtils para excluir link físico, adicione uma etapa [Reiniciar Computador](../understand/task-sequence-steps.md#BKMK_RestartComputer) depois de executar USMTUtils.  
 
     -   Selecione **Habilitar log detalhado** para especificar a quantidade de informações a serem gravadas nos arquivos de log em caso de erro.  
 

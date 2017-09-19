@@ -15,11 +15,11 @@ caps.handback.revision: "0"
 author: lleonard-msft
 ms.author: alleonar
 manager: angrobe
-ms.openlocfilehash: 23ff28189c8010c21ed8b23c35598746a4f09fe7
-ms.sourcegitcommit: 13599667ea77c16db1aebe64f8a6748c268f0b45
+ms.openlocfilehash: 5b5385cebe7952e519d59a239983733dd93e661e
+ms.sourcegitcommit: 31c670a4bce74fd64a7d46ebf7702f65b80d4147
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/11/2017
+ms.lasthandoff: 09/13/2017
 ---
 # <a name="vpn-profiles-on-mobile-devices-in-system-center-configuration-manager"></a>Perfis de VPN em dispositivos móveis no System Center Configuration Manager
 
@@ -52,7 +52,7 @@ Use perfis de VPN no System Center Configuration Manager para implantar as confi
 ## <a name="create-vpn-profiles"></a>Criar perfis de VPN
 [Como criar perfis VPN no System Center Configuration Manager](../../protect/deploy-use/create-vpn-profiles.md) fornece informações gerais sobre como criar perfis de VPN.
 
-###   <a name="windows-10-vpn-features-available-when-using-configuration-manager-with-intune"></a>Recursos de VPN do Windows 10, disponíveis ao usar o Configuration Manager com o Intune  
+## <a name="windows-10-vpn-features-available-when-using-configuration-manager-with-intune"></a>Recursos de VPN do Windows 10, disponíveis ao usar o Configuration Manager com o Intune  
 
 
 > [!NOTE]  
@@ -157,7 +157,7 @@ Use perfis de VPN no System Center Configuration Manager para implantar as confi
 
 **Implantação:** confira [Implantar Wi-Fi, VPN, email e perfis de certificado](../../protect/deploy-use/deploy-wifi-vpn-email-cert-profiles.md) para saber mais sobre como implantar perfis de VPN.
 
-### <a name="next-steps"></a>Próximas etapas  
+## <a name="next-steps"></a>Próximas etapas  
  Use os tópicos a seguir para ajudar a planejar, configurar, operar e manter perfis de VPN no Configuration Manager.  
 
 -   [Pré-requisitos para perfis de VPN no System Center Configuration Manager](../../protect/plan-design/prerequisites-for-wifi-vpn-profiles.md)  

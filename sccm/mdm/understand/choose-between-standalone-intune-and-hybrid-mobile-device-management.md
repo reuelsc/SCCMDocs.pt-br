@@ -14,18 +14,18 @@ caps.latest.revision: "10"
 author: dougeby
 ms.author: dougeby
 manager: angrobe
-ms.openlocfilehash: 26c36df77c21254c7ad2b8a45906bd3706f9ec65
-ms.sourcegitcommit: 06aef618f72c700f8a716a43fb8eedf97c62a72b
+ms.openlocfilehash: 5c9e80fc5bc3f0629e1c27a4928b8a51cfe1ee7e
+ms.sourcegitcommit: 948644072bd158b156f782a4376bcd50fac7c73a
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/21/2017
+ms.lasthandoff: 09/14/2017
 ---
 # <a name="choose-between-microsoft-intune-standalone-and-hybrid-mobile-device-management-with-system-center-configuration-manager"></a>Escolha entre o gerenciamento de dispositivo móvel híbrido e independente do Microsoft Intune com o System Center Configuration Manager
 
 *Aplica-se a: System Center Configuration Manager (Branch Atual)*
 
 Uma das perguntas mais frequentes sobre o MDM (gerenciamento de dispositivo móvel) com o Microsoft Intune é "Devo integrar o Intune ao Configuration Manager (MDM híbrido) ou executar o Intune autônomo na configuração somente em nuvem?" Para responder essa pergunta, você deve comparar com atenção as duas opções.
-
+ 
 ## <a name="intune-standalone"></a>Intune autônomo
 O Intune autônomo é a topologia de implantação recomendada da Microsoft. O Intune autônomo é uma solução MDM somente em nuvem e é gerenciada usando um console Web que pode ser acessado em qualquer lugar do mundo. Os datacenters do Intune são hospedados na América do Norte, Europa e Ásia. Como o Intune é um serviço de nuvem, você pode implantar o gerenciamento do Intune em seus dispositivos em um período de tempo relativamente curto.
 

@@ -12,14 +12,14 @@ ms.topic: article
 ms.assetid: 101d7d4d-92db-419d-b2ae-3c1c1dea68e9
 caps.latest.revision: "6"
 caps.handback.revision: "0"
-author: robstackmsft
-ms.author: robstack
+author: arob98
+ms.author: angrobe
 manager: angrobe
-ms.openlocfilehash: 744bc3792a02f13d3cf940cd1a4f2fd8749ee2f4
-ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
+ms.openlocfilehash: 73e6b8c39b08bb661cb7ac66dad3c47d4abd09b0
+ms.sourcegitcommit: b438515490e04fb09c82a8af642d38e9a0605178
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/07/2017
+ms.lasthandoff: 09/15/2017
 ---
 # <a name="about-client-installation-properties-published-to-active-directory-domain-services"></a>Sobre as propriedades de instalação de cliente publicadas nos Serviços de Domínio do Active Directory
 
