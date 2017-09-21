@@ -2,7 +2,7 @@
 title: "Atualizações no console | Microsoft Docs"
 description: "O System Center Configuration Manager sincroniza com a nuvem da Microsoft para obter atualizações que você pode instalar no console."
 ms.custom: na
-ms.date: 06/13/2017
+ms.date: 09/14/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
@@ -14,11 +14,11 @@ caps.latest.revision: "36"
 author: Brenduns
 ms.author: brenduns
 manager: angrobe
-ms.openlocfilehash: 2bbc8935bee306ed0bc312cc43b8f5374a8df7ff
-ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
+ms.openlocfilehash: 10ddbcc19da8c5fc6451f62500f17790a0349389
+ms.sourcegitcommit: b438515490e04fb09c82a8af642d38e9a0605178
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/07/2017
+ms.lasthandoff: 09/15/2017
 ---
 # <a name="install-in-console-updates-for-system-center-configuration-manager"></a>Instalações de atualizações para o System Center Configuration Manager
 
@@ -105,6 +105,9 @@ Antes de instalar uma atualização, considere a execução da verificação de 
 -   Os arquivos de atualização serão replicados em outros sites antes de instalar a atualização.  
 
 -   A verificação de pré-requisitos será executada automaticamente outra vez quando você optar por instalar a atualização.  
+
+> [!NOTE]
+> Quando você iniciar uma verificação de pré-requisitos e exibir o status, a fase **Instalação** parecerá estar ativa. No entanto, a atualização não está de fato sendo instalada. A exibição lista a fase Instalação porque algumas tarefas, como extrair os binários necessários para executar a verificação, também fazem parte da fase Instalação.  
 
 Posteriormente, quando você instalar a atualização, poderá configurá-la para ignorar os avisos de verificação de pré-requisitos.  
 
@@ -288,7 +291,7 @@ As tarefas de pós-instalação incluem:
 Quando a instalação de uma atualização falhar, examine os comentários no console para identificar as resoluções para erros e avisos. Você também pode ver o arquivo ConfigMgrPrereq.log no servidor do site para obter mais detalhes. Antes de tentar novamente a instalação de uma atualização, você deve corrigir os erros e os avisos.  
 
 > [!TIP]  
-> Se uma atualização tiver problemas de download ou replicação, você poderá usar a [ferramenta de redefinição de atualização](/sccm/core/servers/manage/update-reset-tool). Essa ferramenta está disponível em sites que executam a versão 1706 ou posterior. 
+> Se uma atualização tiver problemas de download ou replicação, você poderá usar a [ferramenta de redefinição de atualização](/sccm/core/servers/manage/update-reset-tool). Essa ferramenta está disponível em sites que executam a versão 1706 ou posterior.
 
 Quando estiver pronto para repetir a instalação de uma atualização, selecione a atualização com falha e escolha uma opção aplicável. O comportamento de repetição da instalação da atualização depende do nó em que você inicia a repetição e da opção de repetição usada.  
 

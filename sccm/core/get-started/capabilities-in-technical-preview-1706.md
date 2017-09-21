@@ -2,7 +2,7 @@
 title: "Visualização Técnica 1706 | Microsoft Docs"
 description: "Saiba mais sobre os recursos disponíveis na Visualização Técnica versão 1706 do System Center Configuration Manager."
 ms.custom: na
-ms.date: 06/30/2017
+ms.date: 09/15/2017
 ms.prod: configuration-manager
 ms.technology: configmgr-other
 ms.reviewer: na
@@ -13,11 +13,11 @@ ms.assetid: ca3b4714-2a16-495e-8a17-1d87991d5556
 author: Brenduns
 ms.author: brenduns
 manager: angrobe
-ms.openlocfilehash: d45f504dfe0a4c7852b0e2c8ff60d54005346c02
-ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
+ms.openlocfilehash: 5633047669f9730446159781c4ac0b1248178bf4
+ms.sourcegitcommit: 5ca89204716750eaaceb01bba40b35b85c7122ba
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/07/2017
+ms.lasthandoff: 09/18/2017
 ---
 # <a name="capabilities-in-technical-preview-1706-for-system-center-configuration-manager"></a>Funcionalidades na Visualização Técnica 1706 do System Center Configuration Manager
 
@@ -328,8 +328,8 @@ No Configuration Manager, você pode implantar scripts em dispositivos de client
 
 Para usar scripts, você deve ser membro da função de segurança apropriada do Configuration Manager.
 
-- **Para importar e criar scripts** - sua conta deve ter permissões de **Criação** para **Scripts de SMS** na função de segurança **Gerenciador de Configurações de Conformidade**.
-- **Para aprovar ou negar scripts** - sua conta deve ter permissões de **Aprovação** para **Scripts de SMS** na função de segurança **Gerenciador de Configurações de Conformidade**.
+- **Para importar e criar scripts** - sua conta deve ter as permissões **Criar** para **Scripts SMS** na função de segurança **Administrador Completo**.
+- **Para importar ou negar scripts** - sua conta deve ter as permissões **Aprovar** para **Scripts SMS** na função de segurança **Administrador Completo**.
 - **Para executar scripts** - sua conta deve ter permissões de **Execução de Script** para **Coleções** na função de segurança **Gerenciador de Configurações de Conformidade**.
 
 Para saber mais sobre as funções de segurança do Configuration Manager, confira [Conceitos básicos da administração baseada em funções para o System Center Configuration Manager](/sccm/core/understand/fundamentals-of-role-based-administration).

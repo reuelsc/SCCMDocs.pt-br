@@ -2,7 +2,7 @@
 title: Criar e executar scripts com o Configuration Manager | Microsoft Docs
 description: Criar e executar scripts em dispositivos cliente com o Configuration Manager.
 ms.custom: na
-ms.date: 08/09/2017
+ms.date: 09/15/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
@@ -12,14 +12,14 @@ ms.topic: article
 ms.assetid: cc230ff4-7056-4339-a0a6-6a44cdbb2857
 caps.latest.revision: "14"
 caps.handback.revision: "0"
-author: robstackmsft
-ms.author: robstack
+author: lleonard-msft
+ms.author: alleonar
 manager: angrobe
-ms.openlocfilehash: ed84f7900eee5c04728d0e4d1b46027c36327bec
-ms.sourcegitcommit: b41d3e5c7f0c87f9af29e02de3e6cc9301eeafc4
+ms.openlocfilehash: e6b29cd85504742e8638a55db2f6c4ecc8ab3e55
+ms.sourcegitcommit: 5ca89204716750eaaceb01bba40b35b85c7122ba
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/11/2017
+ms.lasthandoff: 09/18/2017
 ---
 # <a name="create-and-run-powershell-scripts-from-the-configuration-manager-console"></a>Criar e executar scripts do PowerShell do console do Configuration Manager
 
@@ -44,8 +44,8 @@ Clientes do Configuration Manager devem estar executando o cliente da versão 17
 
 Para usar scripts, você deve ser membro da função de segurança apropriada do Configuration Manager.
 
-- Para importar e criar scripts – sua conta deve ter permissões de **Criação** para **Scripts de SMS** na função de segurança **Gerenciador de Configurações de Conformidade**.
-- Para aprovar ou negar scripts – sua conta deve ter permissões de **Aprovação** para **Scripts de SMS** na função de segurança **Gerenciador de Configurações de Conformidade**.
+- Para importar e criar scripts - sua conta deve ter as permissões **Criar** para **Scripts SMS** na função de segurança **Administrador Completo**.
+- Para importar ou negar scripts - sua conta deve ter as permissões **Aprovar** para **Scripts SMS** na função de segurança **Administrador Completo**.
 - Para executar scripts – sua conta deve ter permissões de **Execução de Script** para **Coleções** na função de segurança **Gerenciador de Configurações de Conformidade**.
 
 Para saber mais sobre as funções de segurança do Configuration Manager, confira [Conceitos básicos da administração baseada em funções para o System Center Configuration Manager](/sccm/core/understand/fundamentals-of-role-based-administration).
@@ -78,9 +78,9 @@ Aqui estão alguns exemplos que ilustram os scripts que talvez você queira usar
 
 #### <a name="create-a-folder"></a>Criar uma pasta
 
-*New-Item "c:\scripts" – digite o nome da pasta* 
- 
- 
+*New-Item "c:\scripts" – digite o nome da pasta*
+
+
 #### <a name="create-a-file"></a>Criar um arquivo
 
 *New-Item c:\scripts\new_file.txt – digite o nome do arquivo*
