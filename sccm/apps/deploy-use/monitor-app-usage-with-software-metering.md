@@ -2,7 +2,7 @@
 title: "Monitorar o uso de aplicativos com a medição de software | Microsoft Docs"
 description: 
 ms.custom: na
-ms.date: 10/06/2016
+ms.date: 09/20/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
@@ -14,11 +14,11 @@ caps.latest.revision: "8"
 author: mattbriggs
 ms.author: mabrigg
 manager: angrobe
-ms.openlocfilehash: d7bc0bebeb0355156553376a3535ed76d5e44835
-ms.sourcegitcommit: b438515490e04fb09c82a8af642d38e9a0605178
+ms.openlocfilehash: 87bafd8ce28d58993666057b6c5bfd8bdc0c4ed9
+ms.sourcegitcommit: 51654bf8b5615eb99084d0a20d18ca3fccfa83a1
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/15/2017
+ms.lasthandoff: 09/20/2017
 ---
 # <a name="software-metering-in-system-center-configuration-manager"></a>Medição de software no System Center Configuration Manager
 
@@ -86,7 +86,7 @@ A medição de software não tem dependências externas, apenas dependências in
         >
         >  Essa caixa será opcional se um valor para **Nome de Arquivo** for especificado.
 
-    -   **Versão** - A versão do arquivo executável que deseja medir. Você pode usar o caractere curinga (*) para representar qualquer cadeia de caracteres ou o caractere curinga (?) para representar qualquer caractere único. Se quiser medir todas as versões de um arquivo executável, use o valor padrão (\*).
+    -   **Versão** - A versão do arquivo executável que deseja medir. Você pode usar o caractere curinga ( &#42; ) para representar qualquer cadeia de caracteres ou o caractere curinga ( ? ) para representar qualquer caractere único. Se quiser medir todas as versões de um arquivo executável, use o valor padrão ( &#42; ).
 
     -   **Idioma** - O idioma do arquivo executável a ser medido. O valor padrão é a localidade atual do sistema operacional que está sendo usado. Se você selecionar um arquivo executável para ser monitorado clicando no botão **Procurar** , essa caixa será preenchida automaticamente se as informações de idioma estiverem presentes no cabeçalho do arquivo. Para medir todas as versões de idioma de um arquivo, selecione **Qualquer** na lista suspensa.
 

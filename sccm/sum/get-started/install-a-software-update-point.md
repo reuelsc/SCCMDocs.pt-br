@@ -69,7 +69,7 @@ ms.lasthandoff: 08/07/2017
 ### <a name="configure-ssl-communications-to-wsus"></a>Configurar as comunicações SSL para o WSUS  
  É possível configurar a comunicação SSL na página **Geral** do assistente ou na guia **Geral** das propriedades do ponto de atualização de software.  
 
- Para obter mais informações sobre como usar o SSL, veja [Decide whether to configure WSUS to use SSL](../plan-design/plan-for-software-updates.md#BKMK_WSUSandSSL).  
+ Para obter mais informações sobre como usar o SSL, veja [Decidir se o WSUS deve ser configurado para usar SSL](../plan-design/plan-for-software-updates.md#BKMK_WSUSandSSL).  
 
 ### <a name="wsus-server-connection-account"></a>Conta de conexão do servidor do WSUS  
  Você pode configurar uma conta para ser usada pelo servidor do site quando ele se conecta ao WSUS executado no ponto de atualização de software. Quando você não configura essa conta, o Configuration Manager usa a conta de computador do servidor do site para se conectar ao WSUS. Configure a Conta de Conexão do Servidor do WSUS na página **Configurações de Proxy e Conta** do assistente ou na guia **Configurações de Proxy e Conta** nas Propriedades do Ponto de atualização de software.  É possível configurar a conta em diferentes locais do assistente dependendo da versão do Configuration Manager que você usa.  

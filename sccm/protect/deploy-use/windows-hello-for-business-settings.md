@@ -2,7 +2,7 @@
 title: "Configurações do Windows Hello para Empresas | Microsoft Docs"
 description: Saiba como integrar o Windows Hello para Empresas com o System Center Configuration Manager.
 ms.custom: na
-ms.date: 08/10/2017
+ms.date: 09/21/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
@@ -14,11 +14,11 @@ caps.latest.revision: "17"
 author: lleonard-msft
 ms.author: alleonar
 manager: angrobe
-ms.openlocfilehash: 1985428df0f82ef2e0a92fdec86189d5ffa03aee
-ms.sourcegitcommit: b438515490e04fb09c82a8af642d38e9a0605178
+ms.openlocfilehash: 43586e55f2c0c5cf117b94c61250f26ba4233f53
+ms.sourcegitcommit: 4c3906cf9614420cb8527da9e48978eb0b8f0e7a
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/15/2017
+ms.lasthandoff: 09/22/2017
 ---
 # <a name="windows-hello-for-business-settings-in-system-center-configuration-manager"></a>Windows Hello para Empresas no System Center Configuration Manager
 
@@ -65,8 +65,11 @@ Talvez algumas configurações não exijam a configuração de permissões, ou p
 |||||
 |-|-|-|-|
 |Versão do cliente do Windows|Configuration Manager 1602 ou 1606|Configuration Manager 1610|Configuration Manager 1702 ou posterior|
-|Atualização de Aniversário do Windows 10|Nenhum hotfix necessário<br><br>Nenhuma permissão necessária<br><br>Nenhuma atualização de esquema do Windows necessário|Nenhum hotfix necessário<br><br>Nenhuma permissão necessária<br><br>Nenhuma atualização de esquema do Windows necessário|Nenhuma ação é necessária|
+|Atualização de Aniversário do Windows 10|Nenhum hotfix necessário<br><br>Nenhuma permissão necessária<br><br>Nenhuma atualização de esquema do Windows necessário|Nenhum hotfix necessário (confira **Aviso**)<br><br>Nenhuma permissão necessária<br><br>Nenhuma atualização de esquema do Windows necessário|Configurar as permissões<br><br>Aplicar o esquema do Windows Server 2016 ao Active Directory|
 |Atualização do Windows 10 para Criadores ou posterior|Sem suporte|Instalar [este hotfix](https://support.microsoft.com/help/4010155/update-rollup-for-system-center-configuration-manager-current-branch-v)<br><br>Configurar as permissões<br><br>Aplicar o esquema do Windows Server 2016 ao Active Directory|Configurar as permissões<br><br>Aplicar o esquema do Windows Server 2016 ao Active Directory|
+
+> [!WARNING]
+> Embora [o hotfix](https://support.microsoft.com/help/4010155/update-rollup-for-system-center-configuration-manager-current-branch-v) não seja necessário para o Configuration Manager 1610 e a Atualização de Aniversário do Windows 10, talvez ele esteja instalado.  Se o hotfix estiver instalado, você precisará configurar as permissões e aplicar o esquema do Windows Server 2016 ao Active Directory.
 
 ## <a name="to-configure-permissions"></a>Para configurar as permissões
 

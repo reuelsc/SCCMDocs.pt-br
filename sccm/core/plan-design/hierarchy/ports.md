@@ -2,7 +2,7 @@
 title: Portas usadas pelo Configuration Manager | Microsoft Docs
 description: "Saiba mais sobre as portas necessárias e personalizáveis que o System Center Configuration Manager usa para conexões."
 ms.custom: na
-ms.date: 3/20/2017
+ms.date: 09/19/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
@@ -15,18 +15,18 @@ caps.handback.revision: "0"
 author: Brenduns
 ms.author: brenduns
 manager: angrobe
-ms.openlocfilehash: 78caa69e10f5d386daab1e61e484d4d134469708
-ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
+ms.openlocfilehash: ac443971a725a7eeecaeea877b8e9636ebb4990b
+ms.sourcegitcommit: 51654bf8b5615eb99084d0a20d18ca3fccfa83a1
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/07/2017
+ms.lasthandoff: 09/20/2017
 ---
 # <a name="ports-used-in-system-center-configuration-manager"></a>Portas usadas no System Center Configuration Manager
 
 *Aplica-se a: System Center Configuration Manager (Branch Atual)*
 
 O System Center Configuration Manager é um sistema cliente/servidor distribuído. A natureza distribuída do Configuration Manager significa que as conexões podem ser estabelecidas entre os servidores de site, sistemas de sites e clientes. Algumas conexões usam portas que não são configuráveis e algumas dão suporte a portas personalizadas que você especifica. Verifique se as portas necessárias estão disponíveis, se você usar tecnologia de filtragem de porta, como firewalls, roteadores, servidores proxy ou IPsec.  
-
+    
 > [!NOTE]  
 >  Se houver suporte a clientes baseados na Internet usando a ponte SSL, além dos requisitos de porta, você também deverá permitir alguns verbos e cabeçalhos HTTP para percorrer seu firewall.   
 
@@ -167,7 +167,7 @@ Essa comunicação é usada para confirmar se o outro computador cliente está a
 |Descrição|UDP|TCP|  
 |-----------------|---------|---------|  
 |LDAP de catálogo global|--|3268|  
-|LDAP SSL de catálogo global|--|3269|  
+
 
 ###  <a name="BKMK_PortsClient-MP"></a> Cliente – > Ponto de gerenciamento  
 
@@ -295,9 +295,7 @@ Essa comunicação é usada para confirmar se o outro computador cliente está a
 |Descrição|UDP|TCP|  
 |-----------------|---------|---------|  
 |Protocolo LDAP|--|389|  
-|LDAP (conexão com protocolo SSL)|636|636|  
 |LDAP de catálogo global|--|3268|  
-|LDAP SSL de catálogo global|--|3269|  
 |Mapeador de ponto de extremidade RPC|135|135|  
 |RPC|--|DINÂMICO (consulte a nota 6, **Portas dinâmicas**)|  
 
@@ -391,9 +389,7 @@ Para obter mais informações, consulte [Requisitos de acesso à Internet](/sccm
 |Descrição|UDP|TCP|  
 |-----------------|---------|---------|  
 |Protocolo LDAP|--|389|  
-|LDAP (conexão com protocolo SSL)|636|636|  
 |LDAP de catálogo global|--|3268|  
-|LDAP SSL de catálogo global|--|3269|  
 |Mapeador de ponto de extremidade RPC|135|135|  
 |RPC|--|DINÂMICO (consulte a nota 6, **Portas dinâmicas**)|  
 
@@ -641,17 +637,9 @@ Para obter um exemplo de como configurar o SQL Server para usar uma porta espec�
 ### <a name="bkmk_discovery"> </a> Descoberta e publicação
 As seguintes portas são usadas para descoberta e publicação de informações do site:
  - Protocolo LDAP: 389
- - LDAP (conexão com protocolo SSL): 636
-
-
  - LDAP de catálogo global: 3268
- - LDAP SSL de catálogo global: 3269
-
-
  - Mapeador de ponto de extremidade RPC: 135
  - RPC: portas TCP altas alocadas dinamicamente
-
-
  - TCP: 1024: 5000
  - TCP: 49152: 65535
 

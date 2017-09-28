@@ -2,7 +2,7 @@
 title: "Gerenciar pontos de distribuição | Microsoft Docs"
 description: "Hospede o conteúdo (arquivos e software) que você implantar para usuários e dispositivos usando pontos de distribuição. Veja como instalar e configurá-los."
 ms.custom: na
-ms.date: 2/14/2017
+ms.date: 09/18/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
@@ -14,16 +14,16 @@ caps.latest.revision: "5"
 author: Brenduns
 ms.author: brenduns
 manager: angrobe
-ms.openlocfilehash: 4c94e4de5bbfe621492e8682c9424a48eb38196d
-ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
+ms.openlocfilehash: 0213b48c24461cbab5a9acab720064e0e26fa568
+ms.sourcegitcommit: 474e6ddbaaeac4ba17d8172321e08deeb0140d0a
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/07/2017
+ms.lasthandoff: 09/19/2017
 ---
 # <a name="install-and-configure-distribution-points-for-system-center-configuration-manager"></a>Instalar e configurar pontos de distribuição para o System Center Configuration Manager
 
 *Aplica-se a: System Center Configuration Manager (Branch Atual)*
- 
+
 Instale pontos de distribuição do System Center Configuration Manager para hospedar o conteúdo (arquivos e software) que você implanta em dispositivos e usuários. Também é possível criar grupos de pontos de distribuição que simplificam como você gerencia pontos de distribuição e como distribui conteúdo para pontos de distribuição.  
 
  Quando *instala um novo ponto de distribuição* (usando o assistente de instalação) ou *gerencia as propriedades de um ponto de distribuição existente* (editando as propriedades dos pontos de distribuição), você pode definir a maioria das configurações dos ponto de distribuição. Algumas configurações estão disponíveis somente quando você estiver instalando ou editando, mas não ambos:  
@@ -45,7 +45,8 @@ Instale pontos de distribuição do System Center Configuration Manager para hos
     -   **Configurar agendamentos para transferências de dados para pontos de distribuição**  
 
 ##  <a name="bkmk_install"></a> Instalar um ponto de distribuição  
- É necessário designar um servidor do sistema de site como ponto de distribuição para que o conteúdo possa ser disponibilizado para computadores cliente. Você pode adicionar a função de site do ponto de distribuição a um novo servidor do sistema de site ou adicionar a nova função de site a um servidor do sistema de site existente.  
+É necessário designar um servidor do sistema de site como ponto de distribuição para que o conteúdo possa ser disponibilizado para computadores cliente. Você também deve atribuir um ponto de distribuição a pelo menos um [grupo de limites](/sccm/core/servers/deploy/configure/boundary-groups#distribution-points) antes de computadores cliente locais poderem usar esse ponto de distribuição como um local de origem do conteúdo. Você pode adicionar a função de site do ponto de distribuição a um novo servidor do sistema de site ou adicionar a nova função de site a um servidor do sistema de site existente.
+
 
  Quando instala um novo ponto de distribuição, você usa um assistente de instalação que o orienta quanto às configurações disponíveis. Antes de começar, considere o seguinte:  
 
@@ -339,7 +340,7 @@ Para exibir os resultados do processo de validação de conteúdo, no espaço de
 >  Embora você especifique o cronograma de validação de conteúdo usando o horário local do computador, o console do Configuration Manager mostra o cronograma em UTC.  
 
 ### <a name="boundary-group"></a>Grupo de limites  
-Gerencie os grupos de limites aos quais esse ponto de distribuição está atribuído. Você pode associar grupos de limites a um ponto de distribuição. Durante a implantação do conteúdo, os clientes devem estar em um grupo de limites associado ao ponto de distribuição para usá-lo como local de origem do conteúdo.
+Gerencie os grupos de limites aos quais esse ponto de distribuição está atribuído. Planeje adicionar o ponto de distribuição a pelo menos um grupo de limites. Durante a implantação do conteúdo, os clientes devem estar em um grupo de limites associado a um ponto de distribuição para usá-lo como local de origem do conteúdo.
 
 Além disso:
 
