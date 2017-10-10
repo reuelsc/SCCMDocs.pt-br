@@ -14,17 +14,17 @@ caps.latest.revision:
 author: andredm7
 ms.author: andredm
 manager: angrobe
-ms.openlocfilehash: 298d879638a2d20d421b19752cb5f20f6725df14
-ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
+ms.openlocfilehash: 25d68e7b16afe8e24939897f01f173d3daa7fa09
+ms.sourcegitcommit: 621b9f8fedf7f1d53ea7abd804af4b63c85dbeb1
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/07/2017
+ms.lasthandoff: 10/02/2017
 ---
 # <a name="intune-mobile-threat-defense-connectors-in-configuration-manager"></a>Conectores da Defesa contra Ameaças Móveis do Intune no Configuration Manager
 
 *Aplica-se a: System Center Configuration Manager (Branch Atual)*
 
-A [implantação de MDM híbrido (SCCM com Intune)](https://docs.microsoft.com/en-us/sccm/mdm/understand/choose-between-standalone-intune-and-hybrid-mobile-device-management) e a integração entre o Intune e o parceiro de Defesa contra Ameaça Móvel oferece a você a capacidade de controlar o acesso aos recursos e dados da empresa com base na avaliação de risco ao dispositivo.
+A [implantação de MDM híbrido (SCCM com Intune)](https://docs.microsoft.com/sccm/mdm/understand/choose-between-standalone-intune-and-hybrid-mobile-device-management) e a integração entre o Intune e o parceiro de Defesa contra Ameaça Móvel oferece a você a capacidade de controlar o acesso aos recursos e dados da empresa com base na avaliação de risco ao dispositivo.
 
 Os conectores da Defesa contra Ameaças Móveis do Intune permitem que você aproveite seu fornecedor de Defesa contra Ameaças Móveis escolhido como uma fonte de informações para suas políticas de conformidade e regras de acesso condicional. Isso permite que os Administradores de TI adicionem uma camada de proteção aos seus recursos corporativos, como Exchange e Sharepoint, especificamente de dispositivos móveis comprometidos.
 

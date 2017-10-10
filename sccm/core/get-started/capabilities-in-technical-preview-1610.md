@@ -14,11 +14,11 @@ caps.latest.revision: "2"
 author: Brenduns
 ms.author: brenduns
 manager: angrobe
-ms.openlocfilehash: 59633ce68e2bb2d722900215751f345d6d098721
-ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
+ms.openlocfilehash: b164b6a177b8b4d1eebd0bbd54e67e90376929be
+ms.sourcegitcommit: c145e515843a0f37c2e5ca5dbd22072a219d06b4
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/07/2017
+ms.lasthandoff: 10/03/2017
 ---
 # <a name="capabilities-in-technical-preview-1610-for-system-center-configuration-manager"></a>Funcionalidades no Technical Preview 1610 do System Center Configuration Manager
 
@@ -63,7 +63,7 @@ Como administrador, agora você pode negar uma solicitação de aplicativo aprov
 #### <a name="try-it-out"></a>Experimente
 Para negar uma solicitação de aplicativo aprovada:
 
-1.  No console do Configuration Manager, [crie e implante um aplicativo](https://docs.microsoft.com/en-us/sccm/apps/deploy-use/create-applications) que requer aprovação.
+1.  No console do Configuration Manager, [crie e implante um aplicativo](https://docs.microsoft.com/sccm/apps/deploy-use/create-applications) que requer aprovação.
 2.  Em um computador cliente, abra o Centro de Software e envie uma solicitação para o aplicativo.
 3.  No console do Configuration Manager, aprove a solicitação do aplicativo.
 4.  Negue a solicitação do aplicativo aprovado: no console do Configuration Manager, navegue até **Biblioteca de Software** > **Visão Geral** > **Gerenciamento de Aplicativo** > **solicitações de aprovação** e selecione a solicitação de aplicativo que deseja negar.  Na faixa de opções, clique em **Negar**.
