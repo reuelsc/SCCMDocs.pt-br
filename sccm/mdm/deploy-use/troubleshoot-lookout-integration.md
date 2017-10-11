@@ -14,11 +14,11 @@ caps.latest.revision:
 author: mtillman
 ms.author: mtillman
 manager: angrobe
-ms.openlocfilehash: 4fd2d3b8aae6a2f42e7c6a87723d16368be30984
-ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
+ms.openlocfilehash: d353f47671a0c1e67c34bb9641fa9dd007b9f8be
+ms.sourcegitcommit: c145e515843a0f37c2e5ca5dbd22072a219d06b4
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/07/2017
+ms.lasthandoff: 10/03/2017
 ---
 # <a name="troubleshoot-lookout-integration-with-intune"></a>Solucionar problemas da integração do Lookout ao Intune
 
@@ -34,7 +34,7 @@ Você pode contatar o suporte do Lookout usando os métodos a seguir:
 
 * Email: enterprisesupport@lookout.com
 * Faça logon no [Console do MTP](http://aad.lookout.com) e navegue até o módulo **Suporte**.
-* Acesse: https://enterprise.support.lookout.com/hc/en-us/requests e faça uma solicitação de suporte.
+* Acesse: https://enterprise.support.lookout.com/hc/requests e faça uma solicitação de suporte.
 
 ### <a name="unable-to-sign-in"></a>Não é possível entrar
 Você pode ver o seguinte erro quando o usuário administrador global do Azure AD não aceitar a configuração inicial do Lookout.
@@ -73,7 +73,7 @@ Desconectado significa que o Lookout MTP não recebeu sinal do dispositivo duran
 No módulo **Dispositivos** do console do Lookout MTP, o administrador pode selecionar o dispositivo e optar por excluí-lo.   Na próxima vez que o proprietário do dispositivo abrir o aplicativo Lookout for Work e tocar em **Ativar**, o estado do dispositivo fará uma ressincronização completa.
 
 ### <a name="the-owner-of-the-device-is-no-longer-using-this-device"></a>O proprietário do dispositivo não está mais usando este dispositivo
-Você deve apagar o dispositivo e pedir ao novo usuário para se registrar conforme descrito [neste tópico](https://docs.microsoft.com/en-us/sccm/mdm/deploy-use/wipe-lock-reset-devices#full-wipe).
+Você deve apagar o dispositivo e pedir ao novo usuário para se registrar conforme descrito [neste tópico](https://docs.microsoft.com/sccm/mdm/deploy-use/wipe-lock-reset-devices#full-wipe).
 
 
 Você também pode ir ao módulo **Dispositivos** do Console do Lookout MTP e escolher **Excluir**.

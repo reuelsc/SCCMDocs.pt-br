@@ -2,7 +2,7 @@
 title: "O que há de novo no MDM híbrido com o Configuration Manager | Microsoft Docs"
 description: "Saiba mais sobre os novos recursos de gerenciamento de dispositivo móvel disponíveis para implantações híbridas com o Configuration Manager e o Intune."
 ms.custom: na
-ms.date: 06/30/2017
+ms.date: 10/04/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
@@ -10,25 +10,29 @@ ms.technology: configmgr-hybrid
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 7b127cee-61f1-4681-9760-caebed36ddf5
-caps.latest.revision: "40"
-author: Mtillman
-ms.author: mtillman
+author: dougeby
+ms.author: dougeby
 manager: angrobe
-ms.openlocfilehash: 2ef4964a74e000feac029b158f6fe0c52e3de370
-ms.sourcegitcommit: 51654bf8b5615eb99084d0a20d18ca3fccfa83a1
+ms.openlocfilehash: 6c2c6ffee3b2084ede61e5602a78bf5ca82446f6
+ms.sourcegitcommit: 6c70e0af8d9af208009641786a3b555db4482e97
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/20/2017
+ms.lasthandoff: 10/05/2017
 ---
 # <a name="whats-new-in-hybrid-mobile-device-management-with-system-center-configuration-manager-and-microsoft-intune"></a>Novidades no gerenciamento de dispositivo móvel híbrido com o System Center Configuration Manager e o Microsoft Intune
 
 *Aplica-se a: System Center Configuration Manager (Branch Atual)*
 
-Este artigo fornece detalhes sobre os novos recursos de MDM (gerenciamento de dispositivo móvel) disponíveis para implantações híbridas com o System Center Configuration Manager e o Microsoft Intune.  
+Este artigo fornece detalhes sobre os novos recursos de MDM (gerenciamento de dispositivo móvel) disponíveis para implantações híbridas com o System Center Configuration Manager e o Microsoft Intune.     
+
+> [!Note]    
+> O Intune no Azure é a solução de MDM recomendada pela Microsoft.     
+> - Para obter detalhes sobre novos recursos e atualizações no Intune autônomo, consulte [Novidades do Intune](https://docs.microsoft.com/intune/whats-new).    
+> - Para obter detalhes de como migrar para o Intune autônomo, consulte [Migrate hybrid MDM users and devices to Intune standalone](https://docs.microsoft.com/sccm/mdm/deploy-use/migrate-hybridmdm-to-intunesa) (Migrar usuários e dispositivos de MDM híbrido para o Intune autônomo).
+> - Para obter detalhes sobre as atualizações da interface do usuário do Intune e o MDM híbrido, consulte [Atualizações da interface do usuário para aplicativos de usuário final do Intune](https://docs.microsoft.com/intune/whats-new-app-ui). 
 
 ##  <a name="compatibility-with-configuration-manager-versions"></a>Compatibilidade com versões do Configuration Manager  
-
- Cada seção deste artigo lista recursos híbridos em três categorias diferentes. Use as seguintes diretrizes para determinar a compatibilidade dos recursos em cada categoria com versões diferentes do Configuration Manager:  
+Cada seção deste artigo lista recursos híbridos em três categorias diferentes. Use as seguintes diretrizes para determinar a compatibilidade dos recursos em cada categoria com versões diferentes do Configuration Manager:  
 
 |Categorias do recurso|Descrição|
 |-|-|
@@ -40,8 +44,8 @@ Este artigo fornece detalhes sobre os novos recursos de MDM (gerenciamento de di
 
 ### <a name="new-in-microsoft-intune"></a>Novo no Microsoft Intune     
 
-- **Notificações por push adicionais para usuários finais no aplicativo Portal da Empresa para Android Oreo** <!--1475932-->    
-    Os usuários finais verão notificações adicionais para indicar quando o aplicativo Portal da Empresa para Android Oreo está executando tarefas em segundo plano, como recuperar as políticas do serviço Intune. Isso aumenta a transparência para os usuários finais sobre quando o Portal da Empresa está executando tarefas administrativas em seu dispositivo. Isso faz parte da [otimização geral da interface de usuário do Portal da Empresa](https://blogs.technet.microsoft.com/intunesupport/2017/08/21/android-8-0-o-behaviour-changes-and-microsoft-intune) para o aplicativo Portal da Empresa para Android Oreo. 
+- **Ação de atualização adicionada ao aplicativo Portal da Empresa para Windows 10**<!-- 1132468 -->    
+    O aplicativo Portal da Empresa para Windows 10 permite que os usuários atualizem os dados no aplicativo deslizando para atualizar ou, em áreas de trabalho, pressionando F5.
 
 - **Informar os usuários finais quais informações do dispositivo podem ser vistas para o iOS** <!--739894-->    
     Adicionamos **Tipo de Propriedade** à tela de detalhes do dispositivo no aplicativo Portal da Empresa para iOS. Isso permitirá que os usuários obtenham mais informações sobre privacidade diretamente a partir desta página nos documentos do usuário final do Intune. Eles também poderão localizar essas informações na tela Sobre. 

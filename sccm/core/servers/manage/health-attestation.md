@@ -2,7 +2,7 @@
 title: Atestado de integridade | Microsoft Docs
 description: "Saiba mais sobre a funcionalidade de Atestado de Integridade do Dispositivo visualizável no console do Configuration Manager."
 ms.custom: na
-ms.date: 03/27/2017
+ms.date: 10/05/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
@@ -14,11 +14,11 @@ caps.latest.revision: "17"
 author: NathBarn
 ms.author: nathbarn
 manager: angrobe
-ms.openlocfilehash: 54b3433a002b8ef29059bab04458138348f95d66
-ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
+ms.openlocfilehash: 11d58237ea1e88785f6991450b3e898562b23918
+ms.sourcegitcommit: a17f5dece340a70cedbec03d19938dab90ae60b1
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/07/2017
+ms.lasthandoff: 10/06/2017
 ---
 # <a name="health-attestation-for-system-center-configuration-manager"></a>Atestado de integridade do System Center Configuration Manager
 
@@ -37,9 +37,9 @@ Essa funcionalidade está disponível para recursos locais e computadores gerenc
 
  **Requisitos:**  
 
--   Dispositivos de cliente que executam o Windows 10 versão 1607 ou Windows Server 2016 versão 1607 com [Atestado de integridade do dispositivo habilitado](https://technet.microsoft.com/windows-server-docs/security/device-health-attestation)
--    Dispositivos habilitados para TPM 1.2 ou TPM 2
--   A comunicação entre o agente de cliente do Configuration Manager e o serviço de atestado de integridade (gerenciamento de nuvem) has.spserv.microsoft.com (porta 443) ou com o ponto de gerenciamento habilitado para atestado de integridade do dispositivo (local)
+-   Dispositivos clientes que executam o Windows 10 versão 1607 ou o Windows Server 2016 versão 1607 com o [Atestado de Integridade do Dispositivo habilitado](https://technet.microsoft.com/windows-server-docs/security/device-health-attestation).
+-   Dispositivos habilitados para TPM 1.2 ou TPM 2.
+-   Ao usar o gerenciamento de nuvem, a comunicação entre o agente cliente do Configuration Manager e o ponto de gerenciamento com o serviço de Atestado de Integridade *has.spserv.microsoft.com* (porta 443) (gerenciamento de nuvem). Quando local, o cliente deve ser capaz de comunicar-se com o ponto de gerenciamento habilitado para Atestado de Integridade do Dispositivo.
 
 ### <a name="how-to-enable-health-attestation-service-communication-on-configuration-manager-client-computers"></a>Como habilitar a comunicação do serviço de Atestado de Integridade em computadores cliente do Configuration Manager
 

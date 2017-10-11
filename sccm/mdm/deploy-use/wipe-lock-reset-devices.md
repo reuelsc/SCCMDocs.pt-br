@@ -2,7 +2,7 @@
 title: "Proteger os dados com a limpeza remota, bloqueio ou redefinição de senha usando o System Center Configuration Manager | Microsoft Docs"
 description: "Proteja os dados do dispositivo com uma limpeza completa, limpeza seletiva, bloqueio remoto ou redefinição de senha usando o System Center Configuration Manager."
 ms.custom: na
-ms.date: 03/27/2017
+ms.date: 09/28/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
@@ -12,14 +12,14 @@ ms.topic: article
 ms.assetid: 770da7bd-02dd-474a-9604-93ff1ea0c1e4
 caps.latest.revision: "18"
 caps.handback.revision: "0"
-author: nathbarn
-ms.author: nathbarn
+author: dougeby
+ms.author: dougeby
 manager: angrobe
-ms.openlocfilehash: 351fdc6328dd0859d60e00b128963df738e69f81
-ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
+ms.openlocfilehash: ea92d7b4656a04f312f04c19cac6b17df931c9c5
+ms.sourcegitcommit: db079cd7322e7d4926b2df0ccb37e752c570d902
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/07/2017
+ms.lasthandoff: 09/28/2017
 ---
 # <a name="protect-data-with-remote-wipe-lock-or-passcode-reset-by-using-system-center-configuration-manager"></a>Proteger os dados com a limpeza remota, bloqueio ou redefinição de senha usando o System Center Configuration Manager
 
@@ -179,6 +179,9 @@ Se um usuário esquecer sua senha, você poderá ajudá-lo removendo a senha de 
 |Windows RT 8.1 |Não há suporte.|  
 |PCs com Windows 8.1 |Não há suporte.|  
 
+> [!Note]    
+> Você deve executar a ação de redefinição de senha no site de nível superior do seu ambiente. Por exemplo, se você usa um site de administração central, a ação somente pode ser executada nesse site. Se você estiver usando um site primário autônomo, a ação somente poderá ser executada nesse site.
+
 #### <a name="to-reset-the-passcode-on-a-mobile-device-remotely-in-configuration-manager"></a>Para reconfigurar a senha em um dispositivo móvel remotamente no Configuration Manager  
 
 1. No console do Configuration Manager, escolha **Ativos e Conformidade**, e escolha **Dispositivos**. Como alternativa, é possível escolher **Coleções de Dispositivos** e selecionar uma coleção.  
@@ -206,6 +209,9 @@ Se um usuário perder o dispositivo, você poderá bloqueá-lo remotamente. A ta
 |Windows Phone 8 e Windows Phone 8.1|Com suporte.|  
 |Windows RT 8.1 |Suportado se o usuário atual do dispositivo for o mesmo usuário que registrou o dispositivo.|  
 |Windows 8.1|Suportado se o usuário atual do dispositivo for o mesmo usuário que registrou o dispositivo.|  
+
+> [!Note]    
+> Você deve executar a ação de bloqueio remoto no site de nível superior do seu ambiente. Por exemplo, se você usa um site de administração central, a ação somente pode ser executada nesse site. Se você estiver usando um site primário autônomo, a ação somente poderá ser executada nesse site.
 
 #### <a name="to-lock-a-mobile-device-remotely-through-the-configuration-manager-console"></a>Para bloquear um dispositivo móvel remotamente por meio do console do Configuration Manager  
 

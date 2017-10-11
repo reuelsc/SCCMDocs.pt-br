@@ -15,11 +15,11 @@ caps.handback.revision: "0"
 author: lleonard-msft
 ms.author: alleonar
 manager: angrobe
-ms.openlocfilehash: e6b29cd85504742e8638a55db2f6c4ecc8ab3e55
-ms.sourcegitcommit: 5ca89204716750eaaceb01bba40b35b85c7122ba
+ms.openlocfilehash: 4c90617890ba3751a7215e9ac54042d64cc1a227
+ms.sourcegitcommit: 96b79fa091f44e8e6ac5652f6cbbb4b873a8bad9
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/18/2017
+ms.lasthandoff: 10/09/2017
 ---
 # <a name="create-and-run-powershell-scripts-from-the-configuration-manager-console"></a>Criar e executar scripts do PowerShell do console do Configuration Manager
 
@@ -58,6 +58,9 @@ Por padrão, os usuários não podem aprovar um script que criaram. Como os scri
 2. No espaço de trabalho **Administração** , expanda **Configuração do Site**e clique em **Sites**.
 3. Na lista de sites, escolha seu site e, depois, na guia **Início**, no grupo **Sites**, clique em **Configurações de Hierarquia**.
 4. Na guia **Geral** da caixa de diálogo **Propriedades das Configurações de Hierarquia**, desmarque a caixa de seleção **Não permitir que os autores de script aprovem seus próprios scripts**.
+
+>[!IMPORTANT]
+>Como prática recomendada, você não deve permitir que um autor de script aprove seus próprios scripts. Isso somente deve ser permitido em uma configuração de laboratório. Considere com atenção o impacto potencial de alterar essa configuração em um ambiente de produção.
 
 ## <a name="import-and-edit-a-script"></a>Importar e editar um script
 
@@ -108,6 +111,9 @@ Após a aprovação de um script, ele poderá ser executado em uma coleção que
 
 >[!IMPORTANT]
 >O script recebe um período de uma hora para execução. Se ele não for executado (por exemplo, se o computador for desligado) nesse período, você deverá executá-lo novamente.
+
+>[!IMPORTANT]
+>O script é executado como a conta do sistema ou do computador nos clientes de destino. Essa conta tem um acesso à rede muito limitado. Qualquer acesso do script a sistemas e locais remotos deve ser provisionado com isso em mente.
 
 ## <a name="next-steps"></a>Próximas etapas
 
