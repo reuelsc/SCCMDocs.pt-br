@@ -110,7 +110,7 @@ O LTSB se baseia na versão 1606 do Branch Atual e tem as seguintes limitações
   Para converter, você deve ter um contrato de Software Assurance ativo com a Microsoft. Para mais informações, consulte os links a seguir:
   - [Atualizar o Branch de Manutenção em Longo Prazo para o Branch Atual](convert-to-current-branch.md)
   - [Licenciamento e branches do System Center Configuration Manager](learn-more-editions.md)
-  - [Baseline and update versions](/sccm/core/servers/manage/updates#baseline-and-update-versions) (Versões de linha de base e atualização) em [Updates for Configuration Manager](/sccm/core/servers/manage/updates) (Atualizações para o Configuration Manager)
+  - [Versões de linha de base e atualização](/sccm/core/servers/manage/updates#baseline-and-update-versions) em [Atualizações para o Configuration Manager](/sccm/core/servers/manage/updates)
 - Não há nenhuma opção para converter o LTSB em um Technical Preview. Os Technical Previews são instalações separadas que não exigem uma licença.
 -   Você não pode atualizar uma edição de avaliação do Branch Atual para uma instalação do LTSB.
 
