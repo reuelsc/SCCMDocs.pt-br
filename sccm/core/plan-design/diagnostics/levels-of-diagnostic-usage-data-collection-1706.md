@@ -97,7 +97,7 @@ Para o System Center Configuration Manager versão 1706, esse nível inclui o se
 
 - Tipos de ponto de distribuição e de ponto de gerenciamento e informações básicas de configuração (protegidas, pré-teste, PXE, multicast, estado de SSL, pontos de distribuição de recepção e de pares, habilitado para MDM, habilitado para SSL, etc.)
 
-- ***[Novo] *** Lista com hash de extensões para páginas de propriedade do console de administração e assistentes
+- ***[Novo]***  Lista com hash de extensões para páginas de propriedade do console de administração e assistentes
 
 - Informações de Instalação:
      - Build, tipo de instalação, pacotes de idiomas e recursos habilitados   
@@ -135,7 +135,7 @@ Para o System Center Configuration Manager versão 1706, esse nível inclui o se
 
    - Estatísticas de aprovação de aplicativo e frequência de uso
 
-   - ***[Novo] *** Estatísticas de tamanho do conteúdo do aplicativo
+   - ***[Novo]***  Estatísticas de tamanho do conteúdo do aplicativo
 
    - Informações de implantação de aplicativo (uso de instalação versus desinstalação, exigência de aprovação, habilitação/desabilitação da interação do usuário, dependência, substituição e uso do recurso de contagem do comportamento de instalação)  
 
@@ -190,9 +190,9 @@ Para o System Center Configuration Manager versão 1706, esse nível inclui o se
 
    - Idade do BIOS em anos
    
-   - ***[Novo] *** Contagem de dispositivos com a Inicialização Segura habilitada
+   - ***[Novo]***  Contagem de dispositivos com a Inicialização Segura habilitada
    
-   - ***[Novo] *** Contagem de dispositivos por estado de TPM
+   - ***[Novo]***  Contagem de dispositivos por estado de TPM
 
    - Atualização automática do cliente: configuração de implantação, incluindo piloto do cliente e uso de exclusão (cliente de interoperabilidade estendida)
 
@@ -427,7 +427,7 @@ Para o System Center Configuration Manager versão 1706, esse nível inclui o se
 
 - **Dados de desempenho/SQL:**  
 
-    - ***[Novo] *** Configuração e duração do resumo do site
+    - ***[Novo]***  Configuração e duração do resumo do site
 
     - Contagem das maiores tabelas de banco de dados  
 
