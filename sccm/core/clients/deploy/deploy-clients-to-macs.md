@@ -125,7 +125,7 @@ Para uma automação que habilita o registro de muitos clientes, use a [ferramen
 
         -   'domínio\nome’. Por exemplo: 'contoso\mnorth'  
 
-        -   'user@domain'. Por exemplo: 'mnorth@contoso.com'  
+        -   'user@domain'.  Por exemplo: 'mnorth@contoso.com'  
 
             > [!IMPORTANT]  
             >  Quando você usa um endereço de email para popular o campo **Nome de usuário**, o Configuration Manager usa automaticamente o nome de domínio do endereço de email e o nome padrão do servidor do ponto proxy do registro para popular o campo **Nome do servidor**. Se o nome de domínio e o nome do servidor não corresponderem ao nome do servidor do ponto proxy do registro, diga aos usuários o nome correto a ser usado ao registrar seus computadores Mac.  
@@ -157,7 +157,7 @@ Use este procedimento para automação da instalação do cliente e solicitaçã
 
     -   'domínio\nome’. Por exemplo: 'contoso\mnorth'  
 
-    -   'user@domain'. Por exemplo: 'mnorth@contoso.com'  
+    -   'user@domain'.  Por exemplo: 'mnorth@contoso.com'  
 
      O nome de usuário e a senha correspondente devem ser compatíveis com uma conta de usuário do Active Directory com permissões de Leitura e Registro no modelo de certificado do cliente Mac.  
 
