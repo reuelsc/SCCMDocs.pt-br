@@ -73,7 +73,7 @@ Para o System Center Configuration Manager versão 1702, esse nível inclui o se
 
 - Configuração básica do banco de dados (processadores, configuração de cluster e configuração de exibições distribuídas)
 
-- ***[Atualização] *** Estatísticas básicas de descoberta (contagem de descoberta e tamanho de grupo mínimo/máximo/médio) incluindo quando o site está em execução completamente com os serviços de Azure Active Directory.
+- ***[Atualização]***  Estatísticas básicas de descoberta (contagem de descoberta e tamanho de grupo mínimo/máximo/médio) incluindo quando o site está em execução completamente com os serviços de Azure Active Directory.
 
 - Informações básicas do Endpoint Protection (versões de cliente de antimalware)
 
@@ -139,7 +139,7 @@ Para o System Center Configuration Manager versão 1702, esse nível inclui o se
 
    - Estatísticas de solicitação de aplicativo disponíveis
 
-   - ***[Novo] *** Informações básicas de configuração para pacotes e programas (opções de implantação e os sinalizadores de programas)
+   - ***[Novo]***  Informações básicas de configuração para pacotes e programas (opções de implantação e os sinalizadores de programas)
 
    - Informações básicas de uso/direcionamento para os tipos de implantação usados na organização (usuário versus dispositivo direcionado, obrigatório versus disponível e aplicativos universais)
 
@@ -149,7 +149,7 @@ Para o System Center Configuration Manager versão 1702, esse nível inclui o se
 
    - Contagem de aplicabilidade de aplicativo por sistema operacional  
 
-   - ***[Novo] *** Contagem de aplicativos que são referenciados por uma sequência de tarefas
+   - ***[Novo]***  Contagem de aplicativos que são referenciados por uma sequência de tarefas
 
    - Contagem de pacotes por tipo  
 
@@ -163,11 +163,11 @@ Para o System Center Configuration Manager versão 1702, esse nível inclui o se
 
    - Número mínimo/máximo/médio de implantações de aplicativo por usuário/dispositivo por período
 
-   - ***[Novo] *** Códigos de erro mais comuns de instalação de aplicativo por tecnologia de implantação
+   - ***[Novo]***  Códigos de erro mais comuns de instalação de aplicativo por tecnologia de implantação
 
    - Contagens e opções de configuração do MSI
 
-   - ***[Novo] *** Estatísticas na interação do usuário final com notificação para implantações de software necessárias   
+   - ***[Novo]***  Estatísticas na interação do usuário final com notificação para implantações de software necessárias   
 
    - Uso, como foi criado o UDA (Acesso a Dados Universal)
 
@@ -193,11 +193,11 @@ Para o System Center Configuration Manager versão 1702, esse nível inclui o se
 
    - Contagem de falhas de instalação do cliente  
 
-   - ***[Novo] *** Contagem de dispositivos virtualizados pelo Hyper-V ou Azure  
+   - ***[Novo]***  Contagem de dispositivos virtualizados pelo Hyper-V ou Azure  
 
    - Contagem de ações do Centro de Software   
 
-   - ***[Novo] *** Contagem de dispositivos habilitados para UEFI
+   - ***[Novo]***  Contagem de dispositivos habilitados para UEFI
 
    - Métodos de implantação usados para o cliente e contagem de clientes por método de implantação
 
@@ -207,7 +207,7 @@ Para o System Center Configuration Manager versão 1702, esse nível inclui o se
 
    - Número de classes de inventário de hardware, regras de inventário de software e regras de coleta de arquivos
 
-   - ***[Novo] *** Estatísticas de atestado de integridade de dispositivo, incluindo os erros de código mais comuns, número de servidores locais e contagens de dispositivos em vários estados.
+   - ***[Novo]***  Estatísticas de atestado de integridade de dispositivo, incluindo os erros de código mais comuns, número de servidores locais e contagens de dispositivos em vários estados.
 
 
 
@@ -215,7 +215,7 @@ Para o System Center Configuration Manager versão 1702, esse nível inclui o se
 
   - Estatísticas de uso e de configuração do Gateway de Gerenciamento de Nuvem
 
-  - ***[Novo] *** Contagem de clientes associados aos serviços do Azure Active Directory
+  - ***[Novo]***  Contagem de clientes associados aos serviços do Azure Active Directory
 
   - Contagem de coleções sincronizados com o Operations Management Suite
 
@@ -393,7 +393,7 @@ Para o System Center Configuration Manager versão 1702, esse nível inclui o se
 
 - **Dados de desempenho/SQL:**  
 
-    - ***[Novo] *** Configuração e duração do resumo do site
+    - ***[Novo]***  Configuração e duração do resumo do site
 
     - Contagem das maiores tabelas de banco de dados  
 
@@ -407,13 +407,13 @@ Para o System Center Configuration Manager versão 1702, esse nível inclui o se
 
     - Período de retenção do controle de alterações do SQL
 
-    - ***[Novo] *** Estatísticas de desempenho de mensagem de estado e status, incluindo tipos de mensagens mais comuns e mais caras
+    - ***[Novo]***  Estatísticas de desempenho de mensagem de estado e status, incluindo tipos de mensagens mais comuns e mais caras
 
 
 
 - **Diversos**
 
-    - ***[Novo] *** Configuração do ponto de serviço do Data Warehouse incluindo agenda de sincronização e tempo médio
+    - ***[Novo]***  Configuração do ponto de serviço do Data Warehouse incluindo agenda de sincronização e tempo médio
 
     - Contagem de sites com WOL (Wake On LAN)
 
@@ -441,7 +441,7 @@ Para o System Center Configuration Manager versão 1702, esse nível inclui o se
 
 - Configuração da política do Endpoint Protection
 
-- ***[Novo] *** Lista de processos configurados com comportamento da instalação para aplicativos
+- ***[Novo]***  Lista de processos configurados com comportamento da instalação para aplicativos
 
 - Número mínimo/máximo/médio de horas desde a última verificação de atualização de software
 
