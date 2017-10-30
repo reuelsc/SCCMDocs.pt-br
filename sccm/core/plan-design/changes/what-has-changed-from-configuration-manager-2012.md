@@ -64,7 +64,7 @@ Para mais informações sobre linhas de base, confira [Versões de linha de base
 
 -   Disponibiliza atualizações que se aplicam à sua implantação no console do Configuration Manager.  
 
-Essa função do sistema de sites dá suporte aos modos de operação online e offline. Para obter mais informações, consulte [About the service connection point in System Center Configuration Manager](../../../core/servers/deploy/configure/about-the-service-connection-point.md).  
+Essa função do sistema de sites dá suporte aos modos de operação online e offline. Para obter mais informações, consulte [Sobre o ponto de conexão de serviço no System Center Configuration Manager](../../../core/servers/deploy/configure/about-the-service-connection-point.md).  
 
 ##  <a name="bkmk_usage"></a> Coleta de dados de uso  
  O System Center Configuration Manager coleta dados de uso sobre seus sites e sua infraestrutura. Essas informações são compiladas e enviadas ao serviço de nuvem da Microsoft pelo ponto de conexão de serviço. Elas são necessárias para permitir que o Configuration Manager baixe atualizações para sua implantação que se aplicam à versão utilizada do Configuration Manager. Ao configurar o ponto de conexão de serviço, é possível especificar o nível de dados coletados e se eles são enviados automática (modo online) ou manualmente (modo offline).  
