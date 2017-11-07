@@ -1,5 +1,6 @@
 ---
-title: "Escolher uma solução de gerenciamento de dispositivo – Configuration Manager | Microsoft Docs"
+title: "Escolher uma solução de gerenciamento de dispositivo "
+titleSuffix: Configuration Manager
 description: "Saiba mais sobre as soluções oferecidas pelo System Center Configuration Manager para gerenciar computadores, servidores e dispositivos."
 ms.custom: na
 ms.date: 12/08/2016
@@ -15,11 +16,11 @@ caps.handback.revision: "0"
 author: arob98
 ms.author: angrobe
 manager: angrobe
-ms.openlocfilehash: 9989ea1bf4cb74a6286ebae9de7614ed622de5b6
-ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
+ms.openlocfilehash: 311bdaf6cef45e2b52a14de07caf58c8846121a0
+ms.sourcegitcommit: c236214b2fcc13dae7bad96d7fb33f692868191d
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/07/2017
+ms.lasthandoff: 10/12/2017
 ---
 # <a name="choose-a-device-management-solution-for-system-center-configuration-manager"></a>Escolher uma solução de gerenciamento de dispositivo para o System Center Configuration Manager
 

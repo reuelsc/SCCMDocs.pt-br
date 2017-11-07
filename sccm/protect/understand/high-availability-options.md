@@ -1,5 +1,6 @@
 ---
-title: Alta disponibilidade | Microsoft Docs
+title: Alta disponibilidade
+titleSuffix: Configuration Manager
 description: "Aprenda a implantar o System Center Configuration Manager usando as opções que mantêm um alto nível de serviço disponível."
 ms.custom: na
 ms.date: 10/06/2016
@@ -14,11 +15,11 @@ caps.latest.revision: "4"
 author: Brenduns
 ms.author: brenduns
 manager: angrobe
-ms.openlocfilehash: d3e9afb90cdc85bc7299626b642c52be659e3bdf
-ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
+ms.openlocfilehash: dd38deccb7fb4fb572fb60519b4084db387baec7
+ms.sourcegitcommit: c236214b2fcc13dae7bad96d7fb33f692868191d
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/07/2017
+ms.lasthandoff: 10/12/2017
 ---
 # <a name="high-availability-options-for-system-center-configuration-manager"></a>Opções de alta disponibilidade para o System Center Configuration Manager
 

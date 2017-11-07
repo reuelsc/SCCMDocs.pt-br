@@ -1,5 +1,6 @@
 ---
-title: "Atualizar a ramificação de manutenção de longo prazo para a ramificação atual | Microsoft Docs"
+title: "Atualizar a ramificação de manutenção de longo prazo para a ramificação atual "
+titleSuffix: Configuration Manager
 description: "Saiba como converter um site do Branch de Manutenção em Longo Prazo em um site do Branch Atual."
 ms.custom: na
 ms.date: 2/8/2017
@@ -14,11 +15,11 @@ caps.latest.revision: "0"
 author: Brenduns
 ms.author: brenduns
 manager: angrobe
-ms.openlocfilehash: 6e7edc85630d22c5bbba1ff66bd1199903db76db
-ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
+ms.openlocfilehash: 6a1726b4f23ce0022a3ed5c69c2735cf4d10500d
+ms.sourcegitcommit: c236214b2fcc13dae7bad96d7fb33f692868191d
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/07/2017
+ms.lasthandoff: 10/12/2017
 ---
 # <a name="upgrade-the-long-term-servicing-branch-to-the-current-branch"></a>Atualizar a ramificação de manutenção de longo prazo para a ramificação atual
 

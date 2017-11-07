@@ -1,5 +1,6 @@
 ---
-title: "Associar usuários a um computador de destino | Microsoft Docs"
+title: "Associar usuários a um computador de destino"
+titleSuffix: Configuration Manager
 description: "Configure o System Center Configuration Manager para associar os usuários a computadores de destino ao implantar sistemas operacionais."
 ms.custom: na
 ms.date: 10/06/2016
@@ -15,11 +16,11 @@ caps.handback.revision: "0"
 author: Dougeby
 ms.author: dougeby
 manager: angrobe
-ms.openlocfilehash: c0331567b94a99b29cc73c16de17a9f3bc6b9e43
-ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
+ms.openlocfilehash: 4c0231057c2ac154b050cc7020eb1fbb4ed93228
+ms.sourcegitcommit: c236214b2fcc13dae7bad96d7fb33f692868191d
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/07/2017
+ms.lasthandoff: 10/12/2017
 ---
 # <a name="associate-users-with-a-destination-computer-in-system-center-configuration-manager"></a>Associar usuários ao computador de destino no System Center Configuration Manager
 

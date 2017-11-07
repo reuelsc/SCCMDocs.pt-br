@@ -1,5 +1,6 @@
 ---
-title: "Criar e implantar uma política de conformidade de dispositivo | Microsoft Docs"
+title: "Criar e implantar uma política de conformidade de dispositivo"
+titleSuffix: Configuration Manager
 description: "Saiba como criar e implantar políticas de conformidade do dispositivo no System Center Configuration Manager."
 ms.custom: na
 ms.date: 03/05/2017
@@ -15,11 +16,11 @@ author: andredm7
 ms.author: andredm
 manager: angrobe
 robots: noindex
-ms.openlocfilehash: 6630d0170df22f46f14df241ffd8d48266c69263
-ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
+ms.openlocfilehash: bf0099cdf4df1b7421a257e910c8682e63f8ee1e
+ms.sourcegitcommit: c236214b2fcc13dae7bad96d7fb33f692868191d
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/07/2017
+ms.lasthandoff: 10/12/2017
 ---
 # <a name="create-and-deploy-a-device-compliance-policy"></a>Criar e implantar uma política de conformidade de dispositivo
 

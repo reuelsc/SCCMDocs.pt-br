@@ -1,5 +1,6 @@
 ---
-title: "Segurança e privacidade de relatórios | Microsoft Docs"
+title: "Segurança e privacidade de relatórios"
+titleSuffix: Configuration Manager
 description: "Entenda as práticas recomendadas de segurança e privacidade quando você usar a funcionalidade de relatórios no Configuration Manager."
 ms.custom: na
 ms.date: 10/06/2016
@@ -15,11 +16,11 @@ caps.handback.revision: "0"
 author: Dougeby
 ms.author: dougeby
 manager: angrobe
-ms.openlocfilehash: 50ef8b761533bfdd5e8d23abc7791beb4c7d0b11
-ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
+ms.openlocfilehash: 745bcb631cc137eadeebd83fce7f2307a8bf916a
+ms.sourcegitcommit: c236214b2fcc13dae7bad96d7fb33f692868191d
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/07/2017
+ms.lasthandoff: 10/12/2017
 ---
 # <a name="security-and-privacy-for-reporting-in-system-center-configuration-manager"></a>Segurança e privacidade de relatórios no System Center Configuration Manager
 

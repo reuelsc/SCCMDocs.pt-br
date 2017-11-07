@@ -1,5 +1,6 @@
 ---
-title: Criar e implantar um aplicativo | Microsoft Docs
+title: Criar e implantar um aplicativo
+titleSuffix: Configuration Manager
 description: "Crie e implante um aplicativo que contém um aplicativo de linha de negócios e saiba como gerenciar aplicativos com eficiência."
 ms.custom: na
 ms.date: 10/06/2016
@@ -15,11 +16,11 @@ caps.handback.revision: "0"
 author: mattbriggs
 ms.author: mabrigg
 manager: angrobe
-ms.openlocfilehash: f52dbb5e89746e30562132d4fe19886e7d9b5ea7
-ms.sourcegitcommit: b438515490e04fb09c82a8af642d38e9a0605178
+ms.openlocfilehash: a9f8a54400897e30d01d97f81b98e0e539fc86a7
+ms.sourcegitcommit: c236214b2fcc13dae7bad96d7fb33f692868191d
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/15/2017
+ms.lasthandoff: 10/12/2017
 ---
 # <a name="create-and-deploy-an-application-with-system-center-configuration-manager"></a>Criar e implantar um aplicativo com o System Center Configuration Manager
 

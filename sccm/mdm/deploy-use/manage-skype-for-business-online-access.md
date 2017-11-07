@@ -1,5 +1,6 @@
 ---
-title: Gerenciar o acesso do Skype for Business Online | Microsoft Docs
+title: Gerenciar o acesso do Skype for Business Online
+titleSuffix: Configuration Manager
 description: "Saiba como usar a política de acesso condicional para gerenciar o acesso ao Skype for Business Online."
 ms.custom: na
 ms.date: 03/05/2017
@@ -14,11 +15,11 @@ caps.latest.revision: "6"
 author: andredm7
 ms.author: andredm
 manager: angrobe
-ms.openlocfilehash: cacb22a85e74a7d9cae75ad907d0206487cd4dc7
-ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
+ms.openlocfilehash: b7886d3e8f181d6d9316c5438dd948b21a658648
+ms.sourcegitcommit: c236214b2fcc13dae7bad96d7fb33f692868191d
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/07/2017
+ms.lasthandoff: 10/12/2017
 ---
 # <a name="manage-skype-for-business-online-access"></a>Gerenciar o acesso do Skype for Business Online
 

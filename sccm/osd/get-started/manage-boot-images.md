@@ -1,5 +1,6 @@
 ---
-title: "Gerenciar imagens de inicialização – Configuration Manager | Microsoft Docs"
+title: "Gerenciar imagens de inicialização "
+titleSuffix: Configuration Manager
 description: "No Configuration Manager, saiba como gerenciar as imagens de inicialização do Windows PE usadas durante uma implantação de sistema operacional."
 ms.custom: na
 ms.date: 01/23/2017
@@ -15,11 +16,11 @@ caps.handback.revision: "0"
 author: Dougeby
 ms.author: dougeby
 manager: angrobe
-ms.openlocfilehash: 5668ba3ead3b7415508f9ecf02f2e119c3cd9cc6
-ms.sourcegitcommit: 2a1328da3facb20b0c78f3b12adbb5fdbe0dcc11
+ms.openlocfilehash: 1f169dbf645096777f3fd244d24ca5be92efa180
+ms.sourcegitcommit: c236214b2fcc13dae7bad96d7fb33f692868191d
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/08/2017
+ms.lasthandoff: 10/12/2017
 ---
 # <a name="manage-boot-images-with-system-center-configuration-manager"></a>Gerenciar imagens de inicialização com o System Center Configuration Manager
 

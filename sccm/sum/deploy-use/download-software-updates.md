@@ -1,5 +1,6 @@
 ---
-title: "Baixar atualizações de software – Configuration Manager | Microsoft Docs"
+title: "Baixar atualizações de software "
+titleSuffix: Configuration Manager
 description: "Use o assistente para baixar atualizações de software e distribuí-las aos pontos de distribuição para estarem prontas para implantação nos clientes."
 keywords: 
 author: dougeby
@@ -11,11 +12,11 @@ ms.prod: configuration-manager
 ms.service: 
 ms.technology: configmgr-sum
 ms.assetid: de78e8d3-043f-4cd3-97e0-4dfb824fd3fb
-ms.openlocfilehash: f38f72f9f547b82c92789f02975cbd0193b79b2d
-ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
+ms.openlocfilehash: 534592d3f240aa647d49e2045aa83798e872b9a4
+ms.sourcegitcommit: c236214b2fcc13dae7bad96d7fb33f692868191d
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/07/2017
+ms.lasthandoff: 10/12/2017
 ---
 # <a name="download-software-updates"></a>Baixar atualizações de software  
 

@@ -1,5 +1,6 @@
 ---
-title: "Preparar o cache de pares do Windows PE para reduzir o tráfego da WAN | Microsoft Docs"
+title: "Preparar o cache par do Windows PE para reduzir o tráfego da WAN"
+titleSuffix: Configuration Manager
 description: "O Cache Par do Windows PE funciona no Windows PE para obter o conteúdo de um par local e minimizar o tráfego da WAN quando não há nenhum ponto de distribuição local."
 ms.custom: na
 ms.date: 10/06/2016
@@ -14,11 +15,11 @@ caps.latest.revision: "11"
 author: Dougeby
 ms.author: dougeby
 manager: angrobe
-ms.openlocfilehash: 814c6133a30b1116d05aaeafddb0dfb7fe2a390e
-ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
+ms.openlocfilehash: bb0ed6809d1350c4ce28e20d1a83082a51c2e687
+ms.sourcegitcommit: 1132886e07d0c0a87dcc7eeef4577dd8d8840023
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/07/2017
+ms.lasthandoff: 11/01/2017
 ---
 # <a name="prepare-windows-pe-peer-cache-to-reduce-wan-traffic-in-system-center-configuration-manager"></a>Preparar o cache par do Windows PE para reduzir o tráfego da WAN no System Center Configuration Manager
 
@@ -26,7 +27,7 @@ ms.lasthandoff: 08/07/2017
 
 Ao implantar um novo sistema operacional no System Center Configuration Manager, os computadores que executam a sequência de tarefas podem usar o Cache Par do Windows PE para obter o conteúdo de um par local (uma fonte de cache par), em vez de baixar o conteúdo de um ponto de distribuição. Isso ajuda a minimizar o tráfego de WAN (rede de longa distância) em cenários de filial em que não há nenhum ponto de distribuição local.  
 
- O Cache par do Windows PE é semelhante ao [Windows BranchCache](http://technet.microsoft.com/library/mt617255\(TechNet.10\).aspx#bkmk_branchcache), mas funciona no Windows PE (Ambiente de Pré-Instalação do Windows). Se você iniciar a sequência de tarefas no contexto do sistema operacional, como no Centro de Software no cliente, o Cache par do Windows PE não será usado. Os seguintes termos são usados para descrever os clientes que usam o Cache par do Windows PE:  
+ O Cache par do Windows PE é semelhante ao [Windows BranchCache](http://technet.microsoft.com/library/mt617255\(TechNet.10\).aspx#bkmk_branchcache), mas funciona no Windows PE (Ambiente de Pré-Instalação do Windows). Os seguintes termos são usados para descrever os clientes que usam o Cache par do Windows PE:  
 
 -   Um **cliente de cache de sistemas pares** é um computador configurado para usar o Cache de sistemas pares do Windows PE.  
 

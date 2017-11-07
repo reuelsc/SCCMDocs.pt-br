@@ -1,5 +1,6 @@
 ---
-title: "Variáveis internas de sequência de tarefas | Microsoft Docs"
+title: "Variáveis internas de sequência de tarefas"
+titleSuffix: Configuration Manager
 description: "As variáveis internas da sequência de tarefas fornecem informações sobre o ambiente no qual a sequência de tarefas é executada e estão disponíveis durante toda a sequência de tarefas."
 ms.custom: na
 ms.date: 03/26/2017
@@ -15,11 +16,11 @@ caps.handback.revision: "0"
 author: Dougeby
 ms.author: dougeby
 manager: angrobe
-ms.openlocfilehash: 09e1105521f5e72830c2816d04e16690064f4f64
-ms.sourcegitcommit: 40f2a4e3cc546e6bfd10f195a8e87af2b0780928
+ms.openlocfilehash: d584c6db85a5466e76a79f398e635ba93f8081ff
+ms.sourcegitcommit: c236214b2fcc13dae7bad96d7fb33f692868191d
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/08/2017
+ms.lasthandoff: 10/12/2017
 ---
 # <a name="task-sequence-built-in-variables-in-system-center-configuration-manager"></a>Variáveis internas de sequência de tarefas no System Center Configuration Manager
 

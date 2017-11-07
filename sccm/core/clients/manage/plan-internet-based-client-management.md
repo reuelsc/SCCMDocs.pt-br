@@ -1,5 +1,6 @@
 ---
-title: Gerenciamento de cliente baseado na Internet | Microsoft Docs
+title: Gerenciamento de clientes baseado na Internet
+titleSuffix: Configuration Manager
 description: Crie um plano para gerenciar clientes baseados na Internet no System Center Configuration Manager.
 ms.custom: na
 ms.date: 05/16/2017
@@ -15,11 +16,11 @@ caps.handback.revision: "0"
 author: arob98
 ms.author: angrobe
 manager: angrobe
-ms.openlocfilehash: be250e9056d1fad0e01a4ef4c8072d4c0faee692
-ms.sourcegitcommit: f6a428a8db7145affa388f59e0ad880bdfcf17b5
+ms.openlocfilehash: bbbff5d3dc027ee437945e68011d94b14f23d486
+ms.sourcegitcommit: c236214b2fcc13dae7bad96d7fb33f692868191d
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/14/2017
+ms.lasthandoff: 10/12/2017
 ---
 # <a name="plan-for-internet-based-client-management-in-system-center-configuration-manager"></a>Planejar o gerenciamento de clientes baseados na Internet no System Center Configuration Manager
 

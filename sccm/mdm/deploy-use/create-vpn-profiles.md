@@ -1,5 +1,6 @@
 ---
-title: Perfis VPN no System Center Configuration Manager | Microsoft Docs
+title: Perfis de VPN
+titleSuffix: Configuration Manager
 description: "Perfis de VPN em dispositivos móveis no System Center Configuration Manager."
 ms.custom: na
 ms.date: 07/26/2017
@@ -15,11 +16,11 @@ caps.handback.revision: "0"
 author: lleonard-msft
 ms.author: alleonar
 manager: angrobe
-ms.openlocfilehash: 5b5385cebe7952e519d59a239983733dd93e661e
-ms.sourcegitcommit: 31c670a4bce74fd64a7d46ebf7702f65b80d4147
+ms.openlocfilehash: 40446ce656bd446f890b9b1349ab0b95742cadb8
+ms.sourcegitcommit: c236214b2fcc13dae7bad96d7fb33f692868191d
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/13/2017
+ms.lasthandoff: 10/12/2017
 ---
 # <a name="vpn-profiles-on-mobile-devices-in-system-center-configuration-manager"></a>Perfis de VPN em dispositivos móveis no System Center Configuration Manager
 

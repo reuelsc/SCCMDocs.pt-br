@@ -1,5 +1,6 @@
 ---
-title: "Monitorar implantações de sistema operacional | Microsoft Docs"
+title: "Monitorar implantações de sistema operacional"
+titleSuffix: Configuration Manager
 description: "Para ajudar a monitorar objetos de implantação do sistema operacional, o console do Configuration Manager fornece alertas, relatórios e vários indicadores de status."
 ms.custom: na
 ms.date: 10/06/2016
@@ -15,11 +16,11 @@ caps.handback.revision: "0"
 author: Dougeby
 ms.author: dougeby
 manager: angrobe
-ms.openlocfilehash: 154c0a286e6b9ccedc7545eb010967ac00d35407
-ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
+ms.openlocfilehash: 2e738b0ae9bd16829857edfaae0fb7e398979627
+ms.sourcegitcommit: c236214b2fcc13dae7bad96d7fb33f692868191d
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/07/2017
+ms.lasthandoff: 10/12/2017
 ---
 # <a name="monitor-operating-system-deployments-in-system-center-configuration-manager"></a>Monitorar implantações de sistema operacional no System Center Configuration Manager
 

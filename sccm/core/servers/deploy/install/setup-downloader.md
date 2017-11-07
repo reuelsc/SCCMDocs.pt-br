@@ -1,5 +1,6 @@
 ---
-title: "Downloader de instalação | Microsoft Docs"
+title: "Downloader de Instalação"
+titleSuffix: Configuration Manager
 description: "Leia sobre esse aplicativo autônomo projetado para garantir que a instalação do site use as versões atuais dos principais arquivos de instalação."
 ms.custom: na
 ms.date: 3/1/2017
@@ -14,11 +15,11 @@ caps.latest.revision: "3"
 author: Brenduns
 ms.author: brenduns
 manager: angrobe
-ms.openlocfilehash: b72148ecc16141843178cbd220fe021fab8be992
-ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
+ms.openlocfilehash: 8b98e8578c61ab4c212aa0e0b1e1a40e95e95b9e
+ms.sourcegitcommit: c236214b2fcc13dae7bad96d7fb33f692868191d
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/07/2017
+ms.lasthandoff: 10/12/2017
 ---
 # <a name="setup-downloader-for-system-center-configuration-manager"></a>Downloader de Instalação para System Center Configuration Manager
 

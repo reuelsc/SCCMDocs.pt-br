@@ -1,5 +1,6 @@
 ---
-title: "Introdução aos perfis de certificado | Microsoft Docs"
+title: "Introdução aos perfis de certificado"
+titleSuffix: Configuration Manager
 description: "Saiba como os perfis de certificado no System Center Configuration Manager funcionam com Serviços de Certificados do Active Directory."
 ms.custom: na
 ms.date: 09/11/2017
@@ -14,11 +15,11 @@ caps.latest.revision: "7"
 author: lleonard-msft
 ms.author: alleonar
 manager: angrobe
-ms.openlocfilehash: e269b5836648d0d227e91a017512c16217e42646
-ms.sourcegitcommit: 13599667ea77c16db1aebe64f8a6748c268f0b45
+ms.openlocfilehash: dc70aec1746f6e555011ba87c84811c1f8ea0620
+ms.sourcegitcommit: c236214b2fcc13dae7bad96d7fb33f692868191d
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/11/2017
+ms.lasthandoff: 10/12/2017
 ---
 # <a name="introduction-to-certificate-profiles-in-system-center-configuration-manager"></a>Introdução aos perfis de certificado no System Center Configuration Manager
 

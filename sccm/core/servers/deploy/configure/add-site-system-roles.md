@@ -1,5 +1,6 @@
 ---
-title: "Adicionar funções do sistema de sites | Microsoft Docs"
+title: "Adicionar funções do sistema de sites"
+titleSuffix: Configuration Manager
 description: "Entenda as funções do sistema de sites do Configuration Manager e como adicioná-las para ampliar a funcionalidade e a capacidade do seu site."
 ms.custom: na
 ms.date: 2/7/2017
@@ -15,11 +16,11 @@ caps.handback.revision: "0"
 author: Brenduns
 ms.author: brenduns
 manager: angrobe
-ms.openlocfilehash: 1ad4abf1f06ed24bd1d505648280b5e5d80220c7
-ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
+ms.openlocfilehash: 780e9ed6965ed72578964fbea2fb2e9a281ebd68
+ms.sourcegitcommit: c236214b2fcc13dae7bad96d7fb33f692868191d
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/07/2017
+ms.lasthandoff: 10/12/2017
 ---
 # <a name="add-site-system-roles-for-system-center-configuration-manager"></a>Adicionar funções do sistema de sites ao System Center Configuration Manager
 

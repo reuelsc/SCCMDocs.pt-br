@@ -1,5 +1,6 @@
 ---
-title: Implantar o Windows To Go com o System Center Configuration Manager | Microsoft Docs
+title: Implantar o Windows to Go
+titleSuffix: Configuration Manager
 description: "Saiba como provisionar o Windows To Go no System Center Configuration Manager para criar um espaço de trabalho do Windows To Go que é inicializado de uma unidade externa."
 ms.custom: na
 ms.date: 10/06/2016
@@ -15,11 +16,11 @@ caps.handback.revision: "0"
 author: Dougeby
 ms.author: dougeby
 manager: angrobe
-ms.openlocfilehash: a8b1a42c43438553cfbb62328bed933378bb344c
-ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
+ms.openlocfilehash: 91e3fa4aba93dc3012fe1e702f50c4f9438a69e8
+ms.sourcegitcommit: c236214b2fcc13dae7bad96d7fb33f692868191d
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/07/2017
+ms.lasthandoff: 10/12/2017
 ---
 # <a name="deploy-windows-to-go-with-system-center-configuration-manager"></a>Implantar o Windows to Go com o System Center Configuration Manager
 
@@ -222,7 +223,7 @@ Este tópico fornece as etapas para provisionar o Windows To Go no System Center
     > [!NOTE]  
     >  A conta de computador do servidor do site deve ter direitos de acesso de **Leitura** para a pasta de origem.  
 
-2.  Copie o arquivo de mídia em pré-teste criado na seção [Criar mídia pré-configurada](#BKMK_CreatePrestagedMedia) na pasta de origem do pacote.  
+2.  Copie o arquivo de mídia em pré-teste criado na seção [Create prestaged media](#BKMK_CreatePrestagedMedia) na pasta de origem do pacote.  
 
 3.  Copie a ferramenta Windows To Go Creator (WTGCreator.exe) na pasta de origem do pacote. A ferramenta do criador está disponível em qualquer servidor do site primário no seguinte local: <*ConfigMgrInstallationFolder*>\OSD\Tools\WTG\Creator.  
 
@@ -281,7 +282,7 @@ Este tópico fornece as etapas para provisionar o Windows To Go no System Center
  O Windows To Go habilita o BitLocker em uma unidade inicializável externa sem o uso do TPM. Portanto, é necessário usar uma ferramenta separada para configurar o BitLocker na unidade do Windows To Go. Para habilitar o BitLocker, é necessário adicionar uma ação para a sequência de tarefas após a etapa **Instalação do Windows e do ConfigMgr** .  
 
 > [!NOTE]  
->  O BitLocker para Windows To Go requer uma senha. Na etapa [Criar mídia pré-configurada](#BKMK_CreatePrestagedMedia) , você define a senha como parte de um comando prestart usando a variável OSDBitLockerPIN.  
+>  O BitLocker para Windows To Go requer uma senha. Na etapa [Create prestaged media](#BKMK_CreatePrestagedMedia) , você define a senha como parte de um comando prestart usando a variável OSDBitLockerPIN.  
 
  Use o procedimento a seguir para atualizar a sequência de tarefas do Windows 8 para habilitar o BitLocker para o Windows To Go.  
 
@@ -410,7 +411,7 @@ Este tópico fornece as etapas para provisionar o Windows To Go no System Center
     2.  **Coleção**: clique em **Procurar** para selecionar a coleção que inclui todos os dispositivos para os quais um usuário pode provisionar o Windows To Go.  
 
         > [!IMPORTANT]  
-        >  Se a mídia em pré-teste que você criou na seção [Criar mídia pré-configurada](#BKMK_CreatePrestagedMedia) utiliza a variável SMSTSPreferredAdvertID, você pode implantar a sequência de tarefas na coleção de **Todos os Sistemas** e especificar a configuração do **Windows PE somente (oculto)** na página **Conteúdo** . Como a sequência de tarefas está oculta, ela só estará disponível para a mídia.  
+        >  Se a mídia em pré-teste que você criou na seção [Create prestaged media](#BKMK_CreatePrestagedMedia) utiliza a variável SMSTSPreferredAdvertID, você pode implantar a sequência de tarefas na coleção de **Todos os Sistemas** e especificar a configuração do **Windows PE somente (oculto)** na página **Conteúdo** . Como a sequência de tarefas está oculta, ela só estará disponível para a mídia.  
 
     3.  **Usar grupos de pontos de distribuição padrão associados a esta coleção**: selecione esta opção se quiser armazenar o conteúdo pacote no grupo de pontos de distribuição padrão das coleções. Se você não tiver associado a coleção selecionada a um grupo de ponto de distribuição, essa opção estará indisponível.  
 
@@ -421,7 +422,7 @@ Este tópico fornece as etapas para provisionar o Windows To Go no System Center
     -   **Tornar disponível para o seguinte**: especifique se a sequência de tarefas está disponível para clientes do Configuration Manager, mídia ou PXE.  
 
         > [!IMPORTANT]  
-        >  Use a configuração **Somente mídia e PXE (oculto)** para implantações automatizadas de sequência de tarefas. Selecione **Permitir implantação autônoma do sistema operacional** e defina a variável SMSTSPreferredAdvertID como parte da mídia em pré-teste para que o computador inicialize automaticamente para a implantação do Windows To Go sem interação do usuário quando ele detectar uma unidade WIndows To Go. Para obter mais informações sobre essas configurações de mídia em pré-teste, consulte a seção [Criar mídia pré-configurada](#BKMK_CreatePrestagedMedia) .  
+        >  Use a configuração **Somente mídia e PXE (oculto)** para implantações automatizadas de sequência de tarefas. Selecione **Permitir implantação autônoma do sistema operacional** e defina a variável SMSTSPreferredAdvertID como parte da mídia em pré-teste para que o computador inicialize automaticamente para a implantação do Windows To Go sem interação do usuário quando ele detectar uma unidade WIndows To Go. Para obter mais informações sobre essas configurações de mídia em pré-teste, consulte a seção [Create prestaged media](#BKMK_CreatePrestagedMedia) .  
 
 7.  Na página de **Agendamento** , defina as seguintes configurações e clique em **Avançar**.  
 
@@ -459,7 +460,7 @@ Este tópico fornece as etapas para provisionar o Windows To Go no System Center
  Após implantar o pacote do Windows To Go e a sequência de tarefas do Windows 8, o Windows To Go Creator está disponível ao usuário. O usuário pode ir para o catálogo de software, ou Centro de Software se o Windows To Go Creator tiver sido implantado em dispositivos e executar o programa do Windows To Go Creator. Depois que o pacote de criador é baixado, um ícone intermitente é exibido na barra de tarefas. Quando o usuário clica no ícone, uma caixa de seleção é exibida para o usuário selecionar a unidade do Windows To Go para provisionamento (a menos que a opção de linhas de comando/drive esteja em uso). Se a unidade não atender aos requisitos do Windows To Go ou se não tiver espaço em disco suficiente para instalar a imagem, o programa do criador exibe uma mensagem de erro. O usuário pode verificar a unidade e a imagem que será aplicada a partir da página de confirmação. Na medida em que o criador configura e pré-configura o conteúdo da unidade do Windows To Go, ele exibe uma caixa de diálogo de progresso. Depois que a pré-configuração estiver concluída, o criador exibe um aviso para reiniciar o computador para inicializar a unidade do Windows To Go.  
 
 > [!NOTE]  
->  Se você não habilitou o redirecionamento de inicialização como parte da linha de comando do programa do criador na seção [Criar um pacote do Windows To Go Creator](#BKMK_CreatePackage) , o usuário poderá ser solicitado para reinicializar manualmente a unidade do Windows To Go sempre que o sistema for reiniciado.  
+>  Se você não habilitou o redirecionamento de inicialização como parte da linha de comando do programa do criador na seção [Create a Windows To Go Creator package](#BKMK_CreatePackage) , o usuário poderá ser solicitado para reinicializar manualmente a unidade do Windows To Go sempre que o sistema for reiniciado.  
 
 ###  <a name="BKMK_ConfigureStageDrive"></a> O Configuration Manager configura e prepara a unidade do Windows To Go  
  Depois que o computador for reiniciado para a unidade do Windows To Go, a unidade será inicializada no Windows PE e se conectará ao ponto de gerenciamento para obter a política para concluir a implantação de sistema operacional. O Configuration Manager configura e prepara a unidade. Depois que o Configuration Manager pré-configura a unidade, o usuário pode reiniciar o computador para finalizar o processo de provisionamento (como unir-se a um domínio ou instalar aplicativos). Esse processo é o mesmo para qualquer mídia em pré-teste.  

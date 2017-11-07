@@ -1,5 +1,6 @@
 ---
-title: "Criar um ponto de conexão de serviço usando o System Center Configuration Manager | Microsoft Docs"
+title: "Criar um ponto de conexão de serviço"
+titleSuffix: Configuration Manager
 description: "Crie um ponto de conexão de serviço usando o System Center Configuration Manager."
 ms.custom: na
 ms.date: 03/05/2017
@@ -12,14 +13,14 @@ ms.topic: article
 ms.assetid: 617abb22-d22f-41fb-a76b-1c4259e419d2
 caps.latest.revision: "18"
 caps.handback.revision: "0"
-author: mtillman
-ms.author: mtillman
+author: dougeby
+ms.author: dougeby
 manager: angrobe
-ms.openlocfilehash: 9a21d02cb2a50162e5de50481f0f27f2dd7a616c
-ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
+ms.openlocfilehash: 9ae26c55cf92c954a54311e2e698353bbe359a83
+ms.sourcegitcommit: c236214b2fcc13dae7bad96d7fb33f692868191d
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/07/2017
+ms.lasthandoff: 10/12/2017
 ---
 # <a name="create-a-service-connection-point-with-system-center-configuration-manager-and-microsoft-intune"></a>Criar um ponto de conexão de serviço com o System Center Configuration Manager e o Microsoft Intune
 

@@ -1,5 +1,6 @@
 ---
-title: Configurar o Endpoint Protection | Microsoft Docs
+title: Configurar Endpoint Protection
+titleSuffix: Configuration Manager
 description: "Saiba como configurar o Configuration Manager para atualizar e distribuir as definições de malware do Windows Defender."
 ms.custom: na
 ms.date: 02/14/2017
@@ -14,11 +15,11 @@ caps.latest.revision: "21"
 author: NathBarn
 ms.author: nathbarn
 manager: angrobe
-ms.openlocfilehash: 6917644d6719a1ca636713aa5aebf277927123c8
-ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
+ms.openlocfilehash: 5f005e7cd9c396fcf7e02aafefcb34c37ddab901
+ms.sourcegitcommit: c236214b2fcc13dae7bad96d7fb33f692868191d
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/07/2017
+ms.lasthandoff: 10/12/2017
 ---
 # <a name="configure-endpoint-protection"></a>Configurar Endpoint Protection
 

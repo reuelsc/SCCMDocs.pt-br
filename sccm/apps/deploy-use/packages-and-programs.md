@@ -1,5 +1,6 @@
 ---
-title: Pacotes e programas | Microsoft Docs
+title: Pacotes e programas
+titleSuffix: Configuration Manager
 description: "Suporte para implantações que usam pacotes e programas ou aplicativos com o System Center Configuration Manager."
 ms.custom: na
 ms.date: 10/06/2016
@@ -15,11 +16,11 @@ caps.handback.revision: "0"
 author: mattbriggs
 ms.author: mabrigg
 manager: angrobe
-ms.openlocfilehash: 05dd67bab32c4ac5adfb03b6dd149886955a32e1
-ms.sourcegitcommit: b438515490e04fb09c82a8af642d38e9a0605178
+ms.openlocfilehash: 7712721167edad5808c46827f68fc32a2b890bfd
+ms.sourcegitcommit: c236214b2fcc13dae7bad96d7fb33f692868191d
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/15/2017
+ms.lasthandoff: 10/12/2017
 ---
 # <a name="packages-and-programs-in-system-center-configuration-manager"></a>Pacotes e programas no System Center Configuration Manager
 

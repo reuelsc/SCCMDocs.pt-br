@@ -1,5 +1,6 @@
 ---
-title: "Operações e manutenção de consultas | Microsoft Docs"
+title: "Operações e manutenção de consultas"
+titleSuffix: Configuration Manager
 description: "Veja uma lista de tópicos sobre consultas no System Center Configuration Manager. O foco é a operação e a manutenção."
 ms.custom: na
 ms.date: 10/06/2016
@@ -15,11 +16,11 @@ caps.handback.revision: "0"
 author: andredm7
 ms.author: andredm
 manager: angrobe
-ms.openlocfilehash: 11309ba74d9e0d1cbd20cbfc676efbe14e004462
-ms.sourcegitcommit: b438515490e04fb09c82a8af642d38e9a0605178
+ms.openlocfilehash: 5109976d01b2e56ef454ed9bee0dba93769013e6
+ms.sourcegitcommit: c236214b2fcc13dae7bad96d7fb33f692868191d
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/15/2017
+ms.lasthandoff: 10/12/2017
 ---
 # <a name="operations-and-maintenance-for-queries-in-system-center-configuration-manager"></a>Operações e manutenção de consultas no System Center Configuration Manager
 

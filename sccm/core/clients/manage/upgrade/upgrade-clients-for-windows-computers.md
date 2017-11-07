@@ -1,5 +1,6 @@
 ---
-title: Atualizar clientes | Microsoft Docs
+title: Atualizar clientes
+titleSuffix: Configuration Manager
 description: Atualizar clientes em computadores Windows no System Center Configuration Manager.
 ms.custom: na
 ms.date: 05/04/2017
@@ -15,11 +16,11 @@ caps.handback.revision: "0"
 author: arob98
 ms.author: angrobe
 manager: angrobe
-ms.openlocfilehash: 319fbbf8ef70cb9b8a055b610828d1a2503c4689
-ms.sourcegitcommit: b438515490e04fb09c82a8af642d38e9a0605178
+ms.openlocfilehash: 7e2319aaf8f1195118211493eeecb9f6d1872d2d
+ms.sourcegitcommit: c236214b2fcc13dae7bad96d7fb33f692868191d
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/15/2017
+ms.lasthandoff: 10/12/2017
 ---
 # <a name="how-to-upgrade-clients-for-windows-computers-in-system-center-configuration-manager"></a>Como atualizar clientes para computadores Windows no System Center Configuration Manager
 

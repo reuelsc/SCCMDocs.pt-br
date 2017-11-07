@@ -1,5 +1,6 @@
 ---
-title: Servidores de sistema de sites com suporte | Microsoft Docs
+title: Servidores de sistema de site com suporte
+titleSuffix: Configuration Manager
 description: "Saiba quais versões do Windows você pode usar para hospedar um site ou função de sistema de sites do System Center Configuration Manager."
 ms.custom: na
 ms.date: 06/27/2017
@@ -14,11 +15,11 @@ caps.latest.revision: "44"
 author: Brenduns
 ms.author: brenduns
 manager: angrobe
-ms.openlocfilehash: be635e4df79b57b6f650287fa3774d2c10613cee
-ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
+ms.openlocfilehash: 4a507c9552eae48e839aa75e71b39257f9586d79
+ms.sourcegitcommit: c236214b2fcc13dae7bad96d7fb33f692868191d
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/07/2017
+ms.lasthandoff: 10/12/2017
 ---
 # <a name="supported-operating-systems-for-system-center-configuration-manager-site-system-servers"></a>Sistemas operacionais com suporte para servidores do sistema de sites do System Center Configuration Manager
 

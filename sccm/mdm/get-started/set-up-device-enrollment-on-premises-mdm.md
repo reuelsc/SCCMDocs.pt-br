@@ -1,5 +1,6 @@
 ---
-title: Configurar o registro de dispositivo | Microsoft Docs
+title: 'Configurar registro do dispositivo '
+titleSuffix: Configuration Manager
 description: "Conceda permissão aos usuários para registrarem seus dispositivos para o Gerenciamento de Dispositivo Móvel Local no System Center Configuration Manager."
 ms.custom: na
 ms.date: 03/05/2017
@@ -11,14 +12,14 @@ ms.tgt_pltfrm: na
 ms.topic: get-started-article
 ms.assetid: 9ffaea91-1379-4b86-9953-b25e152f56a9
 caps.latest.revision: "10"
-author: Mtillman
-ms.author: mtillman
+author: dougeby
+ms.author: dougeby
 manager: angrobe
-ms.openlocfilehash: 16d4106d486d821b7ce92a1de65ebb04469d18de
-ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
+ms.openlocfilehash: 50aef3a2e523353d488a53eed0b346ddfef42478
+ms.sourcegitcommit: c236214b2fcc13dae7bad96d7fb33f692868191d
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/07/2017
+ms.lasthandoff: 10/12/2017
 ---
 # <a name="set-up-device-enrollment-for-on-premises-mobile-device-management-in-system-center-configuration-manager"></a>Configurar o registro de dispositivo para o gerenciamento de dispositivo móvel local no System Center Configuration Manager
 

@@ -1,5 +1,6 @@
 ---
-title: Usar PXE para implantar o Windows na rede | Microsoft Docs
+title: Usar PXE para implantar o Windows na rede
+titleSuffix: Configuration Manager
 description: "Use implantações de sistema operacional iniciadas pelo PXE para atualizar o sistema operacional de um computador ou para instalar uma nova versão do Windows em um novo computador."
 ms.custom: na
 ms.date: 06/15/2017
@@ -15,11 +16,11 @@ caps.handback.revision: "0"
 author: mattbriggs
 ms.author: mabrigg
 manager: angrobe
-ms.openlocfilehash: 57292b1c6f6e8b6be91eace06dbf12d788522e0b
-ms.sourcegitcommit: 31c670a4bce74fd64a7d46ebf7702f65b80d4147
+ms.openlocfilehash: 017a8f0d5b38145f6708e61ff5d7b2c3614b62a0
+ms.sourcegitcommit: c236214b2fcc13dae7bad96d7fb33f692868191d
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/13/2017
+ms.lasthandoff: 10/12/2017
 ---
 # <a name="use-pxe-to-deploy-windows-over-the-network-with-system-center-configuration-manager"></a>Use o PXE para implantar o Windows pela rede com o System Center Configuration Manager
 

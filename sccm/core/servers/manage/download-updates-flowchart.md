@@ -1,5 +1,6 @@
 ---
-title: "Fluxograma — baixar atualizações | Microsoft Docs"
+title: "Fluxograma — baixar atualizações"
+titleSuffix: Configuration Manager
 description: "Consulte o processo pelo qual um site com um ponto de conexão de serviço online baixa atualizações no console."
 ms.custom: na
 ms.date: 10/06/2016
@@ -14,11 +15,11 @@ caps.latest.revision: "4"
 author: Brenduns
 ms.author: brenduns
 manager: angrobe
-ms.openlocfilehash: cd2ef0f0d694937b760d514c2a6a24973810a2b2
-ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
+ms.openlocfilehash: 085e5204ec2d2382624a06bba231172b69e800ee
+ms.sourcegitcommit: c236214b2fcc13dae7bad96d7fb33f692868191d
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/07/2017
+ms.lasthandoff: 10/12/2017
 ---
 # <a name="flowchart---download-updates-for-system-center-configuration-manager"></a>Fluxograma — baixar atualizações do System Center Configuration Manager
 

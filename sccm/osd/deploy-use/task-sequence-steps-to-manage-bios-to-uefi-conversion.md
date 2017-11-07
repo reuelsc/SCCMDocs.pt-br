@@ -1,5 +1,6 @@
 ---
-title: "Etapas de sequência de tarefas para gerenciar o BIOS para a conversão de UEFI | Configuration Manager"
+title: "Etapas de sequência de tarefas para gerenciar o BIOS para a conversão de UEFI"
+titleSuffix: Configuration Manager
 description: "Saiba como personalizar uma sequência de tarefas de implantação do sistema operacional para preparar uma partição FAT32 para a transição para UEFI."
 ms.custom: na
 ms.date: 03/24/2017
@@ -13,11 +14,11 @@ ms.assetid: bd3df04a-902f-4e91-89eb-5584b47d9efa
 author: Dougeby
 ms.author: dougeby
 manager: angrobe
-ms.openlocfilehash: 528ce515c86c4e778532290026a90a46476c4576
-ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
+ms.openlocfilehash: 58a5c60e2d8b819051916b49911a236a9c5ac4ee
+ms.sourcegitcommit: c236214b2fcc13dae7bad96d7fb33f692868191d
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/07/2017
+ms.lasthandoff: 10/12/2017
 ---
 # <a name="task-sequence-steps-to-manage-bios-to-uefi-conversion"></a>Etapas de sequência de tarefas para gerenciar o BIOS para a conversão de UEFI
 O Windows 10 oferece muitos novos recursos de segurança que exigem dispositivos habilitados para UEFI. Você pode ter PCs modernos com Windows que oferecem suporte a UEFI, mas que usam BIOS herdada. Converter um dispositivo em UEFI exigiria realizar a operação em cada computador, reparticionar o disco rígido e reconfigurar o firmware. Ao usar as sequências de tarefas no Configuration Manager, você poderá preparar um disco rígido para o BIOS para a conversão de UEFI, converter do BIOS para UEFI como parte do processo de atualização in-loco e coletar informações de UEFI como parte do inventário de hardware.

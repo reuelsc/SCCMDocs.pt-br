@@ -1,5 +1,6 @@
 ---
-title: "Notas de versão – Configuration Manager | Microsoft Docs"
+title: "Notas de versão "
+titleSuffix: Configuration Manager
 description: "Consulte essas notas para problemas urgentes que ainda não foram corrigidos no produto ou abordados em um artigo da Base de Dados de Conhecimento Microsoft."
 ms.custom: na
 ms.date: 08/23/2017
@@ -15,11 +16,11 @@ caps.handback.revision: "0"
 author: Brenduns
 ms.author: brenduns
 manager: angrobe
-ms.openlocfilehash: 4e818ffd943208eab323b1558f825bd87f3ddc4c
-ms.sourcegitcommit: 13599667ea77c16db1aebe64f8a6748c268f0b45
+ms.openlocfilehash: 2571cfbff1373db05279918af776d8be81a5c322
+ms.sourcegitcommit: c236214b2fcc13dae7bad96d7fb33f692868191d
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/11/2017
+ms.lasthandoff: 10/12/2017
 ---
 # <a name="release-notes-for-system-center-configuration-manager"></a>Release notes for System Center Configuration Manager
 

@@ -1,5 +1,6 @@
 ---
-title: Cluster do SQL Server | Microsoft Docs
+title: Cluster do SQL Server
+titleSuffix: Configuration Manager
 description: "Use as configurações do cluster do SQL Server para hospedar o banco de dados do site do System Center Configuration Manager. Inclui informações sobre opções com suporte."
 ms.custom: na
 ms.date: 2/28/2017
@@ -15,11 +16,11 @@ caps.handback.revision: "0"
 author: Brenduns
 ms.author: brenduns
 manager: angrobe
-ms.openlocfilehash: 53f119bbb1f8827a9c23c8b747840350bbb92790
-ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
+ms.openlocfilehash: 5ffc99b0b5c2ab21e65368ae42d3edbb48411476
+ms.sourcegitcommit: c236214b2fcc13dae7bad96d7fb33f692868191d
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/07/2017
+ms.lasthandoff: 10/12/2017
 ---
 # <a name="use-a-sql-server-cluster-for-the-system-center-configuration-manager-site-database"></a>Use um cluster do SQL Server para o banco de dados do site do System Center Configuration Manager
 

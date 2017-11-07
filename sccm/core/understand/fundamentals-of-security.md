@@ -1,5 +1,6 @@
 ---
-title: "Conceitos básicos de segurança | Microsoft Docs"
+title: "Conceitos básicos de segurança"
+titleSuffix: Configuration Manager
 description: "Saiba mais sobre as camadas de segurança no System Center Configuration Manager."
 ms.custom: na
 ms.date: 12/30/2016
@@ -14,11 +15,11 @@ caps.latest.revision: "5"
 author: Brenduns
 ms.author: brenduns
 manager: angrobe
-ms.openlocfilehash: df3198885259b1db4a1aadee0db6512a1a2d4911
-ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
+ms.openlocfilehash: b13371e7ea16c5614b0742bd4f4241bd84de105d
+ms.sourcegitcommit: c236214b2fcc13dae7bad96d7fb33f692868191d
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/07/2017
+ms.lasthandoff: 10/12/2017
 ---
 # <a name="fundamentals-of-security-for-system-center-configuration-manager"></a>Conceitos básicos de segurança do System Center Configuration Manager
 

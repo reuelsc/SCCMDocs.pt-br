@@ -1,5 +1,6 @@
 ---
-title: Perfis VPN no System Center Configuration Manager | Microsoft Docs
+title: Perfis de VPN
+titleSuffix: Configuration Manager
 description: "Saiba como usar perfis de VPN no System Center Configuration Manager para implantar as configurações de VPN para usuários em sua organização."
 ms.custom: na
 ms.date: 11/27/2016
@@ -15,11 +16,11 @@ caps.handback.revision: "0"
 author: arob98
 ms.author: angrobe
 manager: angrobe
-ms.openlocfilehash: e07a80c1a59043b74cda7219f78c5fef66989ba8
-ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
+ms.openlocfilehash: 02d9178dbfe8cb00d38367d0dfcb2f521d4c26a0
+ms.sourcegitcommit: c236214b2fcc13dae7bad96d7fb33f692868191d
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/07/2017
+ms.lasthandoff: 10/12/2017
 ---
 # <a name="vpn-profiles-in-system-center-configuration-manager"></a>Perfis VPN no System Center Configuration Manager
 

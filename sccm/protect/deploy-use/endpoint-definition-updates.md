@@ -1,5 +1,6 @@
 ---
-title: Configurar o Endpoint Protection | Microsoft Docs
+title: Configurar Endpoint Protection
+titleSuffix: Configuration Manager
 description: "Saiba como selecionar e configurar os métodos com o Endpoint Protection no System Center Configuration Manager para manter as definições antimalware atualizadas nos computadores cliente."
 ms.custom: na
 ms.date: 02/14/2017
@@ -14,11 +15,11 @@ caps.latest.revision: "21"
 author: NathBarn
 ms.author: nathbarn
 manager: angrobe
-ms.openlocfilehash: b5da7900a4f8e2f330c4dcb2cac00b45099bd909
-ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
+ms.openlocfilehash: b0b178fad73b6490c4bfeb8ec4aaa7348e7cb2a2
+ms.sourcegitcommit: c236214b2fcc13dae7bad96d7fb33f692868191d
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/07/2017
+ms.lasthandoff: 10/12/2017
 ---
 #  <a name="configure-definition-updates-for-endpoint-protection"></a>Configurar atualizações de definição para o Endpoint Protection  
 

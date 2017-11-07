@@ -1,5 +1,6 @@
 ---
-title: "Configurar aplicativos iOS com políticas de configuração de aplicativo | Microsoft Docs"
+title: Configure iOS apps with app configuration policies
+titleSuffix: Configuration Manager
 description: "Ajude a eliminar problemas de configuração em dispositivos que executam o iOS 8 ou posterior ao implantar políticas de configuração de aplicativos para os usuários antes que eles executem aplicativos."
 ms.custom: na
 ms.date: 03/05/2017
@@ -12,14 +13,14 @@ ms.topic: article
 ms.assetid: f0a78038-ea22-4826-9c07-1771b7dd2e8d
 caps.latest.revision: "18"
 caps.handback.revision: "0"
-author: mtillman
-ms.author: mtillman
+author: dougeby
+ms.author: dougeby
 manager: angrobe
-ms.openlocfilehash: 50aea2afaf34974ca92ac58b6569bff56403a9ab
-ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
+ms.openlocfilehash: 905b0925f88395942c954561aa0828c15d3ba758
+ms.sourcegitcommit: c236214b2fcc13dae7bad96d7fb33f692868191d
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/07/2017
+ms.lasthandoff: 10/12/2017
 ---
 # <a name="apply-settings-to-ios-apps-with-app-configuration-policies-in-system-center-configuration-manager"></a>Aplicar configurações a aplicativos iOS com políticas de configuração de aplicativo no System Center Configuration Manager
 

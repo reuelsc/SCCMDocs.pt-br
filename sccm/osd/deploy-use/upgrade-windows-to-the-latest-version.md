@@ -1,5 +1,6 @@
 ---
-title: "Atualizar o Windows para a versão mais recente | Microsoft Docs"
+title: "Atualizar o Windows para a última versão"
+titleSuffix: Configuration Manager
 description: Aprenda a usar o Configuration Manager para atualizar um sistema operacional do Windows 7 ou posterior para o Windows 10.
 ms.custom: na
 ms.date: 02/06/2017
@@ -14,11 +15,11 @@ caps.latest.revision: "13"
 author: Dougeby
 ms.author: dougeby
 manager: angrobe
-ms.openlocfilehash: 412c2c644cc7f17f307c02b84471f3ee494045ec
-ms.sourcegitcommit: 31c670a4bce74fd64a7d46ebf7702f65b80d4147
+ms.openlocfilehash: ff6477b21f5befb421f85c2204c1b0f1d75742f1
+ms.sourcegitcommit: c236214b2fcc13dae7bad96d7fb33f692868191d
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/13/2017
+ms.lasthandoff: 10/12/2017
 ---
 # <a name="upgrade-windows-to-the-latest-version-with-system-center-configuration-manager"></a>Atualizar o Windows para a versão mais recente com o System Center Configuration Manager
 

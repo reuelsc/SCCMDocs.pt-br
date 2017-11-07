@@ -1,5 +1,6 @@
 ---
-title: "Implantar atualizações de software | Microsoft Docs"
+title: "Implantar atualizações de software"
+titleSuffix: Configuration Manager
 description: "Escolha as atualizações de software no console do Configuration Manager para iniciar manualmente o processo de implantação ou implantar atualizações automaticamente."
 keywords: 
 author: dougeby
@@ -11,11 +12,11 @@ ms.prod: configuration-manager
 ms.service: 
 ms.technology: configmgr-sum
 ms.assetid: 04536d51-3bf7-45e5-b4af-36ceed10583d
-ms.openlocfilehash: 70a0ad1da03a7ca88df206fec683ab1df2b531e1
-ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
+ms.openlocfilehash: 7166ed594804bf615d309515c01f6f5339518d89
+ms.sourcegitcommit: c236214b2fcc13dae7bad96d7fb33f692868191d
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/07/2017
+ms.lasthandoff: 10/12/2017
 ---
 #  <a name="BKMK_SUMDeploy"></a> Implantar atualizações de software  
 

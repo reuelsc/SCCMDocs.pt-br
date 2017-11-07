@@ -1,5 +1,6 @@
 ---
-title: "Variáveis de ação de sequência de tarefas | Microsoft Docs"
+title: "Variáveis de ação da sequência de tarefas"
+titleSuffix: Configuration Manager
 description: "Use variáveis de ação de sequência, como variáveis de configuração de rede, para definir configurações para uma única etapa em uma sequência de tarefas do Configuration Manager."
 ms.custom: na
 ms.date: 10/06/2016
@@ -15,11 +16,11 @@ caps.handback.revision: "0"
 author: Dougeby
 ms.author: dougeby
 manager: angrobe
-ms.openlocfilehash: 675ebf053de98c6ad93a53ae218696012aef96f7
-ms.sourcegitcommit: 5b4fd2d36f06be5bcc7f8ebbfb92c48b7240085d
+ms.openlocfilehash: 8c1462ca922f23250ffa44c6433f01a8220d3ad7
+ms.sourcegitcommit: c236214b2fcc13dae7bad96d7fb33f692868191d
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/30/2017
+ms.lasthandoff: 10/12/2017
 ---
 # <a name="task-sequence-action-variables-in-system-center-configuration-manager"></a>Variáveis de ação da sequência de tarefas no System Center Configuration Manager
 

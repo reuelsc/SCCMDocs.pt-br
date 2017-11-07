@@ -1,5 +1,6 @@
 ---
-title: "Gerenciar drivers – Configuration Manager | Microsoft Docs"
+title: 'Gerenciar drivers '
+titleSuffix: Configuration Manager
 description: "Use o catálogo de drivers do Configuration Manager para importar drivers de dispositivo, drivers de grupo em pacotes e distribuir esses pacotes aos pontos de distribuição."
 ms.custom: na
 ms.date: 01/27/2017
@@ -15,11 +16,11 @@ caps.handback.revision: "0"
 author: Dougeby
 ms.author: dougeby
 manager: angrobe
-ms.openlocfilehash: 87ab9925717a307cbda3cea1f2e470ae012fa067
-ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
+ms.openlocfilehash: 43b9f954d6cca162606136c9b64a72daebee7f3d
+ms.sourcegitcommit: c236214b2fcc13dae7bad96d7fb33f692868191d
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/07/2017
+ms.lasthandoff: 10/12/2017
 ---
 # <a name="manage-drivers-in-system-center-configuration-manager"></a>Gerenciar drivers no System Center Configuration Manager
 

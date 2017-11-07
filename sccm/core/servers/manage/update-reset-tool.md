@@ -1,5 +1,6 @@
 ---
-title: "Ferramenta de redefinição de atualização | Microsoft Docs"
+title: "Ferramenta de redefinição de atualização"
+titleSuffix: Configuration Manager
 description: "Usar a ferramenta de redefinição de atualização para atualizações no console para o System Center Configuration Manager."
 ms.custom: na
 ms.date: 7/31/2017
@@ -15,11 +16,11 @@ caps.handback.revision: "0"
 author: Brenduns
 ms.author: brenduns
 manager: angrobe
-ms.openlocfilehash: 1960f86e98a957559f379b9eeb6d293f7e4182e5
-ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
+ms.openlocfilehash: 3dd7e0e2388ac8612f2d98249833a8c93f5fca4f
+ms.sourcegitcommit: c236214b2fcc13dae7bad96d7fb33f692868191d
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/07/2017
+ms.lasthandoff: 10/12/2017
 ---
 # <a name="update-reset-tool"></a>Ferramenta de redefinição de atualização
 

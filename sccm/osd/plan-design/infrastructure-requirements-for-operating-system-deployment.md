@@ -1,5 +1,6 @@
 ---
-title: "Requisitos de infraestrutura para implantação de sistema operacional | Microsoft Docs"
+title: "Requisitos de infraestrutura para implantação do sistema operacional"
+titleSuffix: Configuration Manager
 description: "Verifique se você conhece as dependências externas e dependências de produto antes de usar o System Center 2012 Configuration Manager para a implantação de sistema operacional."
 ms.custom: na
 ms.date: 10/06/2016
@@ -14,11 +15,11 @@ caps.latest.revision: "24"
 author: mattbriggs
 ms.author: mabrigg
 manager: angrobe
-ms.openlocfilehash: 523c7e7fd406274b0c0d88fcc4bd6b6247fa34e8
-ms.sourcegitcommit: c145e515843a0f37c2e5ca5dbd22072a219d06b4
+ms.openlocfilehash: 0b90cb20707340bec6fc7d5ddbab6f39d78e10bf
+ms.sourcegitcommit: c236214b2fcc13dae7bad96d7fb33f692868191d
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/03/2017
+ms.lasthandoff: 10/12/2017
 ---
 # <a name="infrastructure-requirements-for-operating-system-deployment-in-system-center-configuration-manager"></a>Requisitos de infraestrutura para implantação do sistema operacional no System Center Configuration Manager
 

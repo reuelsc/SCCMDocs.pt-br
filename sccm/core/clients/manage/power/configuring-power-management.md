@@ -1,5 +1,6 @@
 ---
-title: Configurando o gerenciamento de energia | Microsoft Docs
+title: Configurando o gerenciamento de energia
+titleSuffix: Configuration Manager
 description: Configure o gerenciamento de energia no System Center Configuration Manager.
 ms.custom: na
 ms.date: 10/06/2016
@@ -15,11 +16,11 @@ caps.handback.revision: "0"
 author: arob98
 ms.author: angrobe
 manager: angrobe
-ms.openlocfilehash: 7d2125464103cf0c040592c9f7ddbc25ae022758
-ms.sourcegitcommit: f6a428a8db7145affa388f59e0ad880bdfcf17b5
+ms.openlocfilehash: ed6aa0ce35d93837ac133cccedb44dedaa4a9602
+ms.sourcegitcommit: c236214b2fcc13dae7bad96d7fb33f692868191d
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/14/2017
+ms.lasthandoff: 10/12/2017
 ---
 # <a name="configuring-power-management-in-system-center-configuration-manager"></a>Configurando o gerenciamento de energia no System Center Configuration Manager
 

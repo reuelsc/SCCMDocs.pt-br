@@ -1,5 +1,6 @@
 ---
-title: Preparar para implantar o software cliente em Macs | Microsoft Docs
+title: Preparar para implantar o software cliente em Macs
+titleSuffix: Configuration Manager
 description: "As tarefas de configuração antes da implantação do cliente do Configuration Manager em Macs."
 ms.custom: na
 ms.date: 05/04/2017
@@ -14,11 +15,11 @@ caps.latest.revision: "12"
 author: arob98
 ms.author: angrobe
 manager: angrobe
-ms.openlocfilehash: 06dd4afe94c97b1ffd7d136666fddc623933fcd6
-ms.sourcegitcommit: b438515490e04fb09c82a8af642d38e9a0605178
+ms.openlocfilehash: b878c7b0328e89ff7b12bf44167fd12444a0cba4
+ms.sourcegitcommit: c236214b2fcc13dae7bad96d7fb33f692868191d
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/15/2017
+ms.lasthandoff: 10/12/2017
 ---
 # <a name="prepare-to-deploy-client-software-to-macs"></a>Preparar para implantar o software cliente em Macs
 

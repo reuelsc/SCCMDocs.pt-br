@@ -1,5 +1,6 @@
 ---
-title: Atestado de integridade | Microsoft Docs
+title: Atestado de integridade
+titleSuffix: Configuration Manager
 description: "Saiba mais sobre a funcionalidade de Atestado de Integridade do Dispositivo visualizável no console do Configuration Manager."
 ms.custom: na
 ms.date: 10/05/2017
@@ -14,11 +15,11 @@ caps.latest.revision: "17"
 author: NathBarn
 ms.author: nathbarn
 manager: angrobe
-ms.openlocfilehash: 11d58237ea1e88785f6991450b3e898562b23918
-ms.sourcegitcommit: a17f5dece340a70cedbec03d19938dab90ae60b1
+ms.openlocfilehash: 4b9ce2aad95036e12167626897052de23cc937ae
+ms.sourcegitcommit: c236214b2fcc13dae7bad96d7fb33f692868191d
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/06/2017
+ms.lasthandoff: 10/12/2017
 ---
 # <a name="health-attestation-for-system-center-configuration-manager"></a>Atestado de integridade do System Center Configuration Manager
 
