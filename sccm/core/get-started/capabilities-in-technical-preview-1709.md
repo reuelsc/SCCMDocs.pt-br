@@ -1,5 +1,6 @@
 ---
-title: Technical Preview 1709 | Microsoft Docs
+title: Technical Preview 1709
+titleSuffix: Configuration Manager
 description: "Saiba mais sobre os recursos disponíveis na Technical Preview versão 1709 do System Center Configuration Manager."
 ms.custom: na
 ms.date: 09/28/2017
@@ -13,11 +14,11 @@ ms.assetid: a3ef6bdc-a204-4c4c-a02f-2bd03f35183e
 author: Brenduns
 ms.author: brenduns
 manager: angrobe
-ms.openlocfilehash: 3348bc91e6810c873d50cb4efd3efb9fbd024bd3
-ms.sourcegitcommit: 96b79fa091f44e8e6ac5652f6cbbb4b873a8bad9
+ms.openlocfilehash: 90e31c26204323e33560270044ebac7dfe135684
+ms.sourcegitcommit: 1573a1bd0bd58fefb1ea651b3ea8d6fd53eff546
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/09/2017
+ms.lasthandoff: 10/17/2017
 ---
 # <a name="capabilities-in-technical-preview-1709-for-system-center-configuration-manager"></a>Recursos na Technical Preview 1709 do System Center Configuration Manager
 
@@ -43,8 +44,8 @@ Este artigo apresenta os recursos que estão disponíveis na Technical Preview d
 
 **Veja a seguir os novos recursos que você pode experimentar nesta versão.**  
 
-## <a name="improved-vpn-profile-experience-in-configuration-manager-console----1313282---"></a>Melhoria da experiência do perfil de VPN no Console do Configuration Manager <!-- 1313282 -->
-
+## <a name="improved-vpn-profile-experience-in-configuration-manager-console"></a>Melhoria da experiência do perfil de VPN no Console do Configuration Manager
+<!-- 1313282 -->
 Com esta versão, as páginas de assistente e de propriedades do perfil de VPN foram atualizadas para exibir as configurações apropriadas para a plataforma selecionada. Especificamente:
 
 - Cada plataforma tem seu próprio fluxo de trabalho, o que significa que os novos perfis de VPN contêm apenas a configuração com suporte na plataforma.
@@ -80,8 +81,7 @@ Conforme você selecionar diferentes plataformas, observe que serão exibidas ap
 
 ## <a name="co-management-for-windows-10-devices"></a>Cogerenciamento para dispositivos Windows 10    
 <!-- 1350871 -->
-Muitos clientes desejam gerenciar os dispositivos Windows 10 da mesma forma em que gerenciam os dispositivos móveis, usando uma solução baseada em nuvem simplificada e com menor custo. No entanto, fazer a transição do gerenciamento tradicional para o gerenciamento moderno pode ser um desafio. O Cogerenciamento é uma solução em que os dispositivos Windows 10 podem ser gerenciados simultaneamente pelo Configuration Manager e pelo Intune, e também podem ser ingressados no AD (Active Directory) e no Azure AD (Azure Active Directory), oferecendo uma maneira para você se modernizar ao longo do tempo. É uma solução que fornece uma ponte do gerenciamento tradicional para o moderno e um caminho para fazer a transição usando uma abordagem em fases.  
-
+Muitos clientes desejam gerenciar os dispositivos Windows 10 da mesma forma em que gerenciam os dispositivos móveis, usando uma solução baseada em nuvem simplificada e com menor custo. No entanto, fazer a transição do gerenciamento tradicional para o gerenciamento moderno pode ser um desafio. A partir do Windows 10, versão 1607 (também conhecido como a Atualização de Aniversário), você pode associar um dispositivo com Windows 10 ao Active Directory (AD) local e ao Azure AD baseado em nuvem ao mesmo tempo (Azure AD híbrido). O cogerenciamento aproveita essa melhoria e permite que você gerencie dispositivos com Windows 10 simultaneamente por meio do Configuration Manager e o Intune. É uma solução que fornece uma ponte do gerenciamento tradicional para o moderno e fornece um caminho para fazer a transição usando uma abordagem em fases. 
 
 ### <a name="prerequisites"></a>Pré-requisitos
 Você deve ter os seguintes pré-requisitos em vigor antes de habilitar o cogerenciamento. Há pré-requisitos gerais e pré-requisitos diferentes para clientes existentes do Configuration Manager e para dispositivos que não são clientes.
@@ -210,7 +210,6 @@ Na seção anterior, você preparou os dispositivos Windows 10 para o cogerencia
     - **Produção**: quando você seleciona essa configuração, todos os dispositivos Windows 10 com suporte são habilitados para o cogerenciamento. Configure o **Grupo de exclusão** com uma ou mais coleções. Os dispositivos que são membros de uma das coleções neste grupo são excluídos do uso do cogerenciamento. 
 5. Na página Habilitação, escolha **Piloto** ou **Todos** (dependendo das configurações que você configurou na página Preparo) para habilitar o registro automático do Intune e, em seguida, clique em **Avançar**. Quando você escolhe **Piloto**, somente os clientes do Configuration Manager que são membros do grupo piloto são registrados automaticamente no Intune. Isso permite que você habilite o cogerenciamento em um subconjunto de clientes para testá-lo inicialmente e distribuí-lo usando uma abordagem em fases. 
 6. Na página Cargas de trabalho, escolha se deseja mudar as cargas de trabalho do Configuration Manager para serem gerenciadas pelo Intune e, em seguida, clique em **Avançar**. Use os controles deslizantes para mudar a carga de trabalho para o grupo piloto ou para todos os clientes Windows 10 (dependendo das configurações que você configurou na página Preparo). 
-
 7. Para habilitar o cogerenciamento, conclua o assistente.  
 
 <!--### Modify your co-management settings

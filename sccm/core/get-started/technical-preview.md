@@ -1,8 +1,9 @@
 ---
-title: "Visualização Técnica do Configuration Manager | Microsoft Docs"
+title: "Versões do Technical Preview"
+titleSuffix: Configuration Manager
 description: "Saiba mais sobre a versão do Technical Preview que permite a você testar novas funcionalidades e recursos no System Center Configuration Manager."
 ms.custom: na
-ms.date: 09/28/2017
+ms.date: 10/30/2017
 ms.prod: configuration-manager
 ms.reviewer: nab
 ms.suite: na
@@ -14,11 +15,11 @@ caps.latest.revision: "157"
 author: Brenduns
 ms.author: brenduns
 manager: angrobe
-ms.openlocfilehash: 429e20185bd23519f78c37ded39f2638d0c80ced
-ms.sourcegitcommit: 8ac9c2c9ba1fdcbb7cc8d5be898586865fcf67c0
+ms.openlocfilehash: 0f6fb329dae1dda18bbb1869dc77872a2a6a1b98
+ms.sourcegitcommit: 5437b2823bada8f8c9e67940f584953b9d190628
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/07/2017
+ms.lasthandoff: 10/31/2017
 ---
 # <a name="technical-preview-for-system-center-configuration-manager"></a>Visualização técnica do System Center Configuration Manager
 
@@ -93,10 +94,6 @@ Cada versão de visualização conta com suporte até que três versões sucessi
 É possível instalar uma versão de linha de base em até 1 ano após seu lançamento. No entanto, quando você instala um novo site de visualização técnica, é recomendável usar a versão de linha de base mais recente disponível.
 -  **Visualização Técnica 1703** – O Configuration Manager Visualização Técnica 1703 está disponível como uma atualização no console para o Configuration Manager Visualização Técnica e como uma nova versão de linha de base [no site do TechNet Evaluation Center](http://www.microsoft.com/evalcenter/evaluate-system-center-configuration-manager-and-endpoint-protection-technical-preview).
 
-<!-- out of support. Use baseline 1703
--  **Technical Preview 1610** - The Configuration Manager Technical Preview 1610 was available as both an in-console update for the Configuration Manager Technical Preview, and as a baseline version. If you have media for installing 1610, we recommend you download version 1703 and install that version instead.
--->
-
 
 
 ##  <a name="BKMK_TPFeedback"></a> Enviando comentários  
@@ -110,19 +107,26 @@ Cada versão de visualização conta com suporte até que três versões sucessi
 
 
 ##  <a name="bkmk_tpCaps"></a> Recursos fornecidos na visualização técnica mais recente  
- Veja a seguir os recursos fornecidos com cada versão de technical preview do Configuration Manager.  Recursos que estão disponíveis a partir de uma versão de technical preview permanecem disponíveis nas versões posteriores. De forma semelhante, os recursos que foram adicionados à Versão do System Center Configuration Manager (branch atual) permanecem disponíveis em versões de technical preview posteriores.  Clique no conteúdo relativo a cada versão de preview saber mais sobre uma funcionalidade específica.  
+Veja a seguir os recursos fornecidos com cada versão de technical preview do Configuration Manager.  Recursos que estão disponíveis a partir de uma versão de technical preview permanecem disponíveis nas versões posteriores. De forma semelhante, os recursos que foram adicionados à Versão do System Center Configuration Manager (branch atual) permanecem disponíveis em versões de technical preview posteriores.  Clique no conteúdo relativo a cada versão de preview saber mais sobre uma funcionalidade específica.  
 
  |Funcionalidade |Versão do Technical Preview |Versão do Branch Atual|  
  |----------------|---------------------|--------------------|
- |Melhoria da experiência do perfil de VPN no Console do Configuration Manager <!-- 1313282 --> | [Tech Preview 1709](capabilities-in-technical-preview-1709.md) |![Não foi adicionado](media/Red_X.gif)    |
- |Cogerenciamento para dispositivos Windows 10|[Tech Preview 1709](capabilities-in-technical-preview-1709.md#co-management-for-windows-10-devices)|![Não foi adicionado](media/Red_X.gif)    |
-
-
+ |Telemetria do Windows 10 para a Integridade do Dispositivo do Windows Analytics<!--1356148 --> | [Tech Preview 1710](capabilities-in-technical-preview-1710.md#limit-windows-10-enhanced-telemetry-to-only-send-data-relevant-to-windows-analytics-device-health) |![Não foi adicionado](media/Red_X.gif)    |
+ |Melhorias nos ícones do Centro de Software <!-- 1356194 --> | [Tech Preview 1710](capabilities-in-technical-preview-1710.md#software-center-no-longer-distorts-icons-larger-than-250x250) |![Não foi adicionado](media/Red_X.gif)    |
+ |Verificar a conformidade no Centro de Software para dispositivos cogerenciados<!-- 1356374 -->| [Tech Preview 1710](capabilities-in-technical-preview-1710.md#check-compliance-from-software-center-for-co-managed-devices)|![Não foi adicionado](media/Red_X.gif)    |
+ |Suporte limitado para certificados CNG<!-- 1356191 -->| [Tech Preview 1710](capabilities-in-technical-preview-1710.md#limited-support-for-cng-certificates)|![Não foi adicionado](media/Red_X.gif)    |
+ |Suporte para Exploit Guard <!--1355468 --> | [Tech Preview 1710](capabilities-in-technical-preview-1710.md#support-for-exploit-guard) |![Não foi adicionado](media/Red_X.gif)    |
+ |Descrições aprimoradas para reinicializações pendentes do computador<!-- 1356283  -->| [Tech Preview 1710](capabilities-in-technical-preview-1710.md)|![Não foi adicionado](media/Red_X.gif)    |
+ |Alterações na política do Device Guard <!-- 1355092  -->| [Tech Preview 1710](capabilities-in-technical-preview-1710.md)|![Não foi adicionado](media/Red_X.gif)    |
+ |Configurar e implantar políticas de Proteção de Aplicativos do Windows Defender <!-- 1351960  -->| [Tech Preview 1710](capabilities-in-technical-preview-1710.md)|![Não adicionados](media/Red_X.gif)    |
+ 
 ## <a name="capabilities-delivered-in-previous-technical-previews"></a>Recursos fornecidos em visualizações técnicas anteriores
  Quando todos os recursos de uma versão de Visualização Técnica estão disponíveis na versão mínima com suporte do Branch Atual, os detalhes para essa versão de visualização são removidos da tabela a seguir.  
 
  |Funcionalidade |Versão do Technical Preview |Versão do Branch Atual|  
  |----------------|---------------------|--------------------|
+ |Melhoria da experiência do perfil de VPN no Console do Configuration Manager <!-- 1313282 --> | [Tech Preview 1709](capabilities-in-technical-preview-1709.md) |![Não foi adicionado](media/Red_X.gif)    |
+ |Cogerenciamento para dispositivos Windows 10|[Tech Preview 1709](capabilities-in-technical-preview-1709.md#co-management-for-windows-10-devices)|![Não foi adicionado](media/Red_X.gif)    |
  |Melhorias para especificar parâmetros de script ao implantar scripts do PowerShell do Configuration Manager <!-- 1236459 -->|[Tech Preview 1708](capabilities-in-technical-preview-1708.md#improvements-for-specifying-script-parameters-when-you-deploy-powershell-scripts-from-configuration-manager)|![Não foi adicionado](media/Red_X.gif)|
  |Informações de gerenciamento  <!-- 1353967 --> |[Tech Preview 1708](capabilities-in-technical-preview-1708.md#management-insights)|![Não foi adicionado](media/Red_X.gif)|
  |Reinicie os computadores do console do Configuration Manager <!-- 1356283 --> |[Tech Preview 1708](capabilities-in-technical-preview-1708.md#restart-computers-from-the-configuration-manager-console)|![Não foi adicionado](media/Red_X.gif)|
@@ -272,3 +276,4 @@ Cada versão de visualização conta com suporte até que três versões sucessi
 ## <a name="see-also"></a>Consulte também  
 [Novidades no System Center Configuration Manager](/sccm/core/plan-design/changes/whats-new-incremental-versions)  
  [Introduction to System Center Configuration Manager](../../core/understand/introduction.md)
+

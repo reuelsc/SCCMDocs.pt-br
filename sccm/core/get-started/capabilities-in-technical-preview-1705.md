@@ -1,5 +1,6 @@
 ---
-title: "Visualização Técnica 1705 | Microsoft Docs"
+title: Technical Preview 1705
+titleSuffix: Configuration Manager
 description: "Saiba mais sobre os recursos disponíveis na Visualização Técnica versão 1705 do System Center Configuration Manager."
 ms.custom: na
 ms.date: 06/02/2017
@@ -13,11 +14,11 @@ ms.assetid: 00684289-d21a-45f8-b1e3-c5c787d73096
 author: Brenduns
 ms.author: brenduns
 manager: angrobe
-ms.openlocfilehash: b977a79baec73999caa21648adcb6fcfec4a4935
-ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
+ms.openlocfilehash: 0539f36268477c02c0f38a123d3740e20e9b8144
+ms.sourcegitcommit: c236214b2fcc13dae7bad96d7fb33f692868191d
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/07/2017
+ms.lasthandoff: 10/12/2017
 ---
 # <a name="capabilities-in-technical-preview-1705-for-system-center-configuration-manager"></a>Funcionalidades na Visualização Técnica 1705 do System Center Configuration Manager
 

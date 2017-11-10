@@ -1,5 +1,6 @@
 ---
-title: "Políticas do Firewall do Windows para o Endpoint Protection | Microsoft Docs"
+title: "Políticas do Firewall do Windows para o Endpoint Protection"
+titleSuffix: Configuration Manager
 description: "Saiba como criar e implantar políticas de firewall para o Endpoint Protection no System Center 2012 Configuration Manager."
 ms.custom: na
 ms.date: 03/07/2017
@@ -14,11 +15,11 @@ caps.latest.revision: "5"
 author: NathBarn
 ms.author: nathbarn
 manager: angrobe
-ms.openlocfilehash: acd75a8b22d050970b8c1176f725ddb4445633aa
-ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
+ms.openlocfilehash: cce8eb704b88e551051e7a90b37f1ca3250c3da3
+ms.sourcegitcommit: c236214b2fcc13dae7bad96d7fb33f692868191d
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/07/2017
+ms.lasthandoff: 10/12/2017
 ---
 # <a name="create-and-deploy-windows-firewall-policies-for-endpoint-protection-in-system-center-configuration-manager"></a>Criar e implantar políticas do Firewall do Windows para o Endpoint Protection no System Center Configuration Manager
 

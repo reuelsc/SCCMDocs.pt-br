@@ -1,5 +1,6 @@
 ---
-title: "Escolher Intune autônomo ou MDM híbrido | Microsoft Docs"
+title: "Escolher Intune autônomo ou MDM híbrido"
+titleSuffix: Configuration Manager
 description: "Escolha se deseja implantar o gerenciamento de dispositivo móvel híbrido com o Intune e com o Configuration Manager ou executar o Intune autônomo."
 ms.custom: na
 ms.date: 07/18/2017
@@ -14,11 +15,11 @@ caps.latest.revision: "10"
 author: dougeby
 ms.author: dougeby
 manager: angrobe
-ms.openlocfilehash: 5c9e80fc5bc3f0629e1c27a4928b8a51cfe1ee7e
-ms.sourcegitcommit: 948644072bd158b156f782a4376bcd50fac7c73a
+ms.openlocfilehash: 993a3ada8b887adb52be468ea4e936140a455bca
+ms.sourcegitcommit: c236214b2fcc13dae7bad96d7fb33f692868191d
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/14/2017
+ms.lasthandoff: 10/12/2017
 ---
 # <a name="choose-between-microsoft-intune-standalone-and-hybrid-mobile-device-management-with-system-center-configuration-manager"></a>Escolha entre o gerenciamento de dispositivo móvel híbrido e independente do Microsoft Intune com o System Center Configuration Manager
 

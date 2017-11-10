@@ -1,5 +1,6 @@
 ---
-title: Definir grupos de limites | Microsoft Docs
+title: Definir grupos de limites
+titleSuffix: Configuration Manager
 description: Entenda os grupos de limites que vinculam os clientes a sistemas de site no System Center Configuration Manager.
 ms.custom: na
 ms.date: 7/31/2017
@@ -14,11 +15,11 @@ caps.latest.revision: "10"
 author: Brenduns
 ms.author: brenduns
 manager: angrobe
-ms.openlocfilehash: 5debc6559f4b1c213e8ca513d685941c9e669063
-ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
+ms.openlocfilehash: b0b2532a525fbf9b7a4942831e6066638b881665
+ms.sourcegitcommit: c236214b2fcc13dae7bad96d7fb33f692868191d
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/07/2017
+ms.lasthandoff: 10/12/2017
 ---
 # <a name="configure-boundary-groups-for-system-center-configuration-manager"></a>Configurar grupos de limites para o System Center Configuration Manager
 

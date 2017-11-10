@@ -1,5 +1,6 @@
 ---
-title: "Pré-requisitos do Asset Intelligence | Microsoft Docs"
+title: "Pré-requisitos para o Asset Intelligence"
+titleSuffix: Configuration Manager
 description: "Conheça os pré-requisitos do Asset Intelligence no System Center Configuration Manager."
 ms.custom: na
 ms.date: 2/22/2017
@@ -15,11 +16,11 @@ caps.handback.revision: "0"
 author: andredm7
 ms.author: andredm
 manager: angrobe
-ms.openlocfilehash: 2bcc6dd84b236187ea9cbfa0b85c25e7ec25719c
-ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
+ms.openlocfilehash: 88358017bd8807caca3c544ecdf07c1b751efd3f
+ms.sourcegitcommit: c236214b2fcc13dae7bad96d7fb33f692868191d
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/07/2017
+ms.lasthandoff: 10/12/2017
 ---
 # <a name="prerequisites-for-asset-intelligence-in-system-center-configuration-manager"></a>Pré-requisitos para o Asset Intelligence no System Center Configuration Manager
 

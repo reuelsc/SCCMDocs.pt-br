@@ -1,5 +1,6 @@
 ---
-title: Perguntas frequentes sobre o cliente do Endpoint Protection | Microsoft Docs
+title: Perguntas frequentes sobre o cliente Endpoint Protection
+titleSuffix: Configuration Manager
 description: Obtenha respostas para as perguntas frequentes sobre o Windows Defender e o Endpoint Protection.
 ms.custom: na
 ms.date: 02/14/2017
@@ -14,11 +15,11 @@ caps.latest.revision: "15"
 author: NathBarn
 ms.author: nathbarn
 manager: angrobe
-ms.openlocfilehash: b88bc5f734b85527b81e5848deb0617db4c8dfbc
-ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
+ms.openlocfilehash: de813a38d6278a60189667165bf4911bd314f14a
+ms.sourcegitcommit: c236214b2fcc13dae7bad96d7fb33f692868191d
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/07/2017
+ms.lasthandoff: 10/12/2017
 ---
 # <a name="endpoint-protection-client-frequently-asked-questions"></a>Perguntas frequentes sobre o cliente Endpoint Protection
 
@@ -202,7 +203,7 @@ Para remover todos os itens indesejados ou potencialmente prejudiciais que o Win
 
 ##  <a name="what-is-real-time-protection"></a>O que é proteção em tempo real?  
 
- A proteção em tempo real permite que o Windows Defender monitore o computador o tempo todo e o alerte quando possíveis ameaças, como vírus e spyware, tentam se instalar ou ser executados no computador. Como esse recurso é um elemento importante na maneira pela qual o Windows Defender ajuda a proteger o computador, você deve garantir que a proteção em tempo real esteja sempre ligada. Se a proteção em tempo real for desligada, o Windows Defender o avisará e alterará o status do computador para 'Em risco'.  
+ A proteção em tempo real permite que o Windows Defender monitore o computador o tempo todo e o alerte quando possíveis ameaças, como vírus e spyware, tentam se instalar ou ser executados no computador. Como esse recurso é um elemento importante na maneira pela qual o Windows Defender ajuda a proteger o computador, você deve garantir que a proteção em tempo real esteja sempre ligada. Se a proteção em tempo real for desligada, o Windows Defender o avisará e alterará o status do computador para â€Em riscoâ€.  
 
  Sempre que a proteção em tempo real detecta uma ameaça ou possível ameaça, o Windows Defender exibe uma notificação. Você pode escolher entre as seguintes opções:  
 

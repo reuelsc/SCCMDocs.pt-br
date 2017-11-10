@@ -1,5 +1,6 @@
 ---
-title: "Certificados PKI de implantação | Microsoft Docs"
+title: "Certificados PKI de implantação"
+titleSuffix: Configuration Manager
 description: Siga um exemplo passo a passo para conhecer como criar e implantar certificados PKI que o System Center Configuration Manager usa.
 ms.custom: na
 ms.date: 02/14/2017
@@ -14,11 +15,11 @@ caps.latest.revision: "11"
 author: arob98
 ms.author: angrobe
 manager: angrobe
-ms.openlocfilehash: b15f85b4483bbae2444d4e73d2e2aa0b3979d9ab
-ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
+ms.openlocfilehash: 092e3e752a27ab652f2b38c0ba43e6e2e26c99c8
+ms.sourcegitcommit: c236214b2fcc13dae7bad96d7fb33f692868191d
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/07/2017
+ms.lasthandoff: 10/12/2017
 ---
 # <a name="step-by-step-example-deployment-of-the-pki-certificates-for-system-center-configuration-manager-windows-server-2008-certification-authority"></a>Exemplo de implantação passo a passo dos certificados PKI para o System Center Configuration Manager: autoridade de certificação do Windows Server 2008
 

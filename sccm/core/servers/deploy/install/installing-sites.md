@@ -1,5 +1,6 @@
 ---
-title: "Recursos de instalação do site | Microsoft Docs"
+title: "Recursos de instalação do site"
+titleSuffix: Configuration Manager
 description: "Examine uma lista de tópicos que ajudarão a instalar o System Center Configuration Manager ou adicionar sites à sua hierarquia."
 ms.custom: na
 ms.date: 1/3/2017
@@ -15,11 +16,11 @@ caps.handback.revision: "0"
 author: Brenduns
 ms.author: brenduns
 manager: angrobe
-ms.openlocfilehash: 75511c744d7d2bae960273c845ce68f06a82b697
-ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
+ms.openlocfilehash: 02e3f342c56d420d52528d882b5c7150a94aaffc
+ms.sourcegitcommit: c236214b2fcc13dae7bad96d7fb33f692868191d
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/07/2017
+ms.lasthandoff: 10/12/2017
 ---
 # <a name="resources-for-installing-system-center-configuration-manager-sites"></a>Recursos para instalar sites do System Center Configuration Manager
 

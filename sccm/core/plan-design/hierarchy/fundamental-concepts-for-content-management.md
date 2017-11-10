@@ -1,5 +1,6 @@
 ---
-title: "Conceitos básicos do gerenciamento de conteúdo | Microsoft Docs"
+title: "Conceitos básicos do gerenciamento de conteúdo"
+titleSuffix: Configuration Manager
 description: "Use as ferramentas e opções no System Center Configuration Manager para gerenciar o conteúdo que você implanta."
 ms.custom: na
 ms.date: 05/04/2017
@@ -15,11 +16,11 @@ caps.handback.revision: "0"
 author: Brenduns
 ms.author: brenduns
 manager: angrobe
-ms.openlocfilehash: f73dde64e0e8a0fc49f45b3afb3b8f00c926a820
-ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
+ms.openlocfilehash: d550d18de93f5e11c7538de24473d36c788145e6
+ms.sourcegitcommit: c236214b2fcc13dae7bad96d7fb33f692868191d
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/07/2017
+ms.lasthandoff: 10/12/2017
 ---
 # <a name="fundamental-concepts-for-content-management-in-system-center-configuration-manager"></a>Conceitos fundamentais para o gerenciamento de conteúdo no System Center Configuration Manager
 

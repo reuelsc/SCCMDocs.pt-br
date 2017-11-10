@@ -1,5 +1,5 @@
 ---
-title: "Alterações do Configuration Manager 2012 | Microsoft Docs "
+title: "Alterações do Configuration Manager 2012 "
 description: "Identifique as mudanças e os novos recursos do System Center Configuration Manager com relação ao System Center 2012 Configuration Manager."
 ms.custom: na
 ms.date: 05/02/2017
@@ -14,11 +14,11 @@ caps.latest.revision: "51"
 author: Brenduns
 ms.author: brenduns
 manager: angrobe
-ms.openlocfilehash: 0a3eb93a99533a1569d8f72ca01d6dfcdc75da20
-ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
+ms.openlocfilehash: 97882e89076b994c60760621dbab3fa8e75126fc
+ms.sourcegitcommit: c236214b2fcc13dae7bad96d7fb33f692868191d
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/07/2017
+ms.lasthandoff: 10/12/2017
 ---
 # <a name="what39s-changed-in-system-center-configuration-manager-from-system-center-2012-configuration-manager"></a>O que mudou no System Center Configuration Manager com relação ao System Center 2012 Configuration Manager
 
@@ -64,7 +64,7 @@ Para mais informações sobre linhas de base, confira [Versões de linha de base
 
 -   Disponibiliza atualizações que se aplicam à sua implantação no console do Configuration Manager.  
 
-Essa função do sistema de sites dá suporte aos modos de operação online e offline. Para obter mais informações, consulte [Sobre o ponto de conexão de serviço no System Center Configuration Manager](../../../core/servers/deploy/configure/about-the-service-connection-point.md).  
+Essa função do sistema de sites dá suporte aos modos de operação online e offline. Para obter mais informações, consulte [About the service connection point in System Center Configuration Manager](../../../core/servers/deploy/configure/about-the-service-connection-point.md).  
 
 ##  <a name="bkmk_usage"></a> Coleta de dados de uso  
  O System Center Configuration Manager coleta dados de uso sobre seus sites e sua infraestrutura. Essas informações são compiladas e enviadas ao serviço de nuvem da Microsoft pelo ponto de conexão de serviço. Elas são necessárias para permitir que o Configuration Manager baixe atualizações para sua implantação que se aplicam à versão utilizada do Configuration Manager. Ao configurar o ponto de conexão de serviço, é possível especificar o nível de dados coletados e se eles são enviados automática (modo online) ou manualmente (modo offline).  

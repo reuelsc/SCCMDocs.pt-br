@@ -1,5 +1,6 @@
 ---
-title: "Configurar o inventário de hardware | Microsoft Docs | dispositivos móveis"
+title: "Configurar inventário de hardware para dispositivos móveis"
+titleSuffix: Configuration Manager
 description: "Configurar o inventário de hardware para dispositivos móveis registrados pelo Microsoft Intune e pelo System Center Configuration Manager."
 ms.custom: na
 ms.date: 03/05/2017
@@ -14,11 +15,11 @@ caps.latest.revision: "7"
 author: arob98
 ms.author: angrobe
 manager: angrobe
-ms.openlocfilehash: 7ab9042a525e07b8e3107479cedeec6b99f7bc86
-ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
+ms.openlocfilehash: c176955c3fcfe40f2089b84c50a982906b59f04d
+ms.sourcegitcommit: c236214b2fcc13dae7bad96d7fb33f692868191d
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/07/2017
+ms.lasthandoff: 10/12/2017
 ---
 # <a name="how-to-configure-hardware-inventory-for-mobile-devices-enrolled-by-microsoft-intune-and-system-center-configuration-manager"></a>Como configurar o inventário de hardware para dispositivos móveis registrados pelo Microsoft Intune e pelo System Center Configuration Manager
 

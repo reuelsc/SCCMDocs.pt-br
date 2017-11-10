@@ -1,5 +1,6 @@
 ---
-title: Clientes e dispositivos com suporte | Microsoft Docs
+title: Clientes e dispositivos com suporte
+titleSuffix: Configuration Manager
 description: "Saiba a quais sistemas operacionais o System Center Configuration Manager oferece dá suporte para clientes e dispositivos."
 ms.custom: na
 ms.date: 8/30/2017
@@ -14,11 +15,11 @@ caps.latest.revision: "5"
 author: arob98
 ms.author: angrobe
 manager: angrobe
-ms.openlocfilehash: 4763043354f5a8418364e54543cfb7115a24b29b
-ms.sourcegitcommit: f6a428a8db7145affa388f59e0ad880bdfcf17b5
+ms.openlocfilehash: 79c71c4e90fe4457f8cb08810d705c1a8ceb11d7
+ms.sourcegitcommit: c236214b2fcc13dae7bad96d7fb33f692868191d
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/14/2017
+ms.lasthandoff: 10/12/2017
 ---
 # <a name="supported-operating-systems-for-clients-and-devices-for-system-center-configuration-manager"></a>Sistemas operacionais com suporte para clientes e dispositivos para o System Center Configuration Manager
 

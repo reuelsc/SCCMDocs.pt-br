@@ -1,5 +1,6 @@
 ---
-title: Implantar aplicativos virtuais do App-V | Microsoft Docs
+title: Implantar aplicativos virtuais do App-V
+titleSuffix: Configuration Manager
 description: "Confira as considerações que você deve levar em conta ao criar e implantar aplicativos virtuais."
 ms.custom: na
 ms.date: 02/16/2017
@@ -15,11 +16,11 @@ caps.handback.revision: "0"
 author: mattbriggs
 ms.author: mabrigg
 manager: angrobe
-ms.openlocfilehash: d2cc5e62a894c4e3ae9adb185f5f0433b0365722
-ms.sourcegitcommit: b438515490e04fb09c82a8af642d38e9a0605178
+ms.openlocfilehash: bf324f458c37fa137e24179eb4455fcbe75c855d
+ms.sourcegitcommit: c236214b2fcc13dae7bad96d7fb33f692868191d
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/15/2017
+ms.lasthandoff: 10/12/2017
 ---
 # <a name="deploy-app-v-virtual-applications-with-system-center-configuration-manager"></a>Implantar aplicativos virtuais do App-V com o System Center Configuration Manager
 

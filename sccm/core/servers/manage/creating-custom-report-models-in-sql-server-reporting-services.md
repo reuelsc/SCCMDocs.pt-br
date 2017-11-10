@@ -1,5 +1,6 @@
 ---
-title: "Criar relatórios personalizados | Microsoft Docs"
+title: "Criar relatórios personalizados"
+titleSuffix: Configuration Manager
 description: "Defina modelos de relatório para atender aos requisitos de negócios e, em seguida, implante os modelos de relatório no Configuration Manager."
 ms.custom: na
 ms.date: 10/06/2016
@@ -15,11 +16,11 @@ caps.handback.revision: "0"
 author: Dougeby
 ms.author: dougeby
 manager: angrobe
-ms.openlocfilehash: 9951dd9333ebef00c7acd5d72b20a02382e3206c
-ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
+ms.openlocfilehash: 56274cbec336219a7734d23bf1bade8a7892de30
+ms.sourcegitcommit: c236214b2fcc13dae7bad96d7fb33f692868191d
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/07/2017
+ms.lasthandoff: 10/12/2017
 ---
 # <a name="creating-custom-report-models-for-system-center-configuration-manager-in-sql-server-reporting-services"></a>Criando modelos de relatório personalizados para o System Center Configuration Manager no SQL Server Reporting Services
 

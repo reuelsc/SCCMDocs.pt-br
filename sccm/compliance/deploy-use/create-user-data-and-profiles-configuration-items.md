@@ -1,5 +1,6 @@
 ---
-title: "Criar itens de configuração de perfis e dados de usuário | Microsoft Docs"
+title: "Criar itens de configuração de perfis e dados de usuário"
+titleSuffix: Configuration Manager
 description: "Use os itens de configuração de perfis e dados do usuário no System Center Configuration Manager para gerenciar redirecionamento de pastas, arquivos offline e perfis móveis."
 ms.custom: na
 ms.date: 10/06/2016
@@ -15,11 +16,11 @@ caps.handback.revision: "0"
 author: andredm7
 ms.author: andredm
 manager: angrobe
-ms.openlocfilehash: 1b3b42fe0a39e5adfddebf73f4683e5a6c71cb1c
-ms.sourcegitcommit: b438515490e04fb09c82a8af642d38e9a0605178
+ms.openlocfilehash: ab027a197ffd696fe279a464d0f30b0d224bf312
+ms.sourcegitcommit: c236214b2fcc13dae7bad96d7fb33f692868191d
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/15/2017
+ms.lasthandoff: 10/12/2017
 ---
 # <a name="create-user-data-and-profiles-configuration-items-in-system-center-configuration-manager"></a>Criar itens de configuração de perfis e dados de usuário no System Center Configuration Manager
 

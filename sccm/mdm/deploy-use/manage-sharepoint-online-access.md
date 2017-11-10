@@ -1,5 +1,6 @@
 ---
-title: Gerenciar o acesso do SharePoint Online | Microsoft Docs
+title: Gerenciar o acesso do SharePoint Online
+titleSuffix: Configuration Manager
 description: "Saiba como usar a política de acesso condicional do SharePoint Online no System Center Configuration Manager para gerenciar o acesso ao OneDrive."
 ms.custom: na
 ms.date: 03/05/2017
@@ -15,11 +16,11 @@ caps.handback.revision: "0"
 author: andredm7
 ms.author: andredm
 manager: angrobe
-ms.openlocfilehash: c564c1fc25c5156a2d9ddfa1b4123024c658bf61
-ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
+ms.openlocfilehash: 2c1d7cd3462a54a064ec47d0b375ee4cdb25a4b4
+ms.sourcegitcommit: c236214b2fcc13dae7bad96d7fb33f692868191d
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/07/2017
+ms.lasthandoff: 10/12/2017
 ---
 # <a name="manage-sharepoint-online-access-in-system-center-configuration-manager"></a>Gerenciar o acesso ao SharePoint Online no System Center Configuration Manager
 
@@ -163,7 +164,7 @@ Os aplicativos de área de trabalho do Office podem acessar o SharePoint Online 
 
 4.  Em **Acesso do navegador** para o SharePoint Online e o OneDrive for Business, você pode optar por permitir o acesso somente ao Exchange Online por meio dos navegadores com suporte: Safari (iOS) e Chrome (Android). O acesso de outros navegadores será bloqueado.  As mesmas restrições de plataforma selecionadas para Acesso do aplicativo para o OneDrive também se aplicarão aqui.
 
-    Em dispositivos **Android** , os usuários devem habilitar o acesso do navegador.  Para fazer isso, o usuário final deve habilitar a opção "Habilitar o Acesso do Navegador" no dispositivo registrado da seguinte maneira:
+    Em dispositivos **Android** , os usuários devem habilitar o acesso do navegador.  Para fazer isso, o usuário final deve habilitar a opção “Habilitar o Acesso do Navegador” no dispositivo registrado da seguinte maneira:
     1.  Inicie o **aplicativo do Portal da Empresa**.
     2.  Vá para a página **Configurações** por meio dos três pontos (â€¦) ou do botão de menu do hardware.
     3.  Pressione o botão **Habilitar o Acesso do Navegador** .

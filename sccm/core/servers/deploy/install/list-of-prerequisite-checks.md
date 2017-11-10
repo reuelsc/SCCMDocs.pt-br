@@ -1,5 +1,6 @@
 ---
-title: "Verificações de pré-requisitos | Microsoft Docs"
+title: "Verificações de pré-requisitos"
+titleSuffix: Configuration Manager
 description: "Veja as verificações de pré-requisitos disponíveis para o System Center Configuration Manager. Inclui verificações de direitos de segurança."
 ms.custom: na
 ms.date: 4/17/2017
@@ -14,11 +15,11 @@ caps.latest.revision: "12"
 author: Brenduns
 ms.author: brenduns
 manager: angrobe
-ms.openlocfilehash: 14834f62ffaa8fcba5ddb7536a0b76e18b557e53
-ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
+ms.openlocfilehash: b26ec9626924da2a621999b37ee5c1979021bdec
+ms.sourcegitcommit: c236214b2fcc13dae7bad96d7fb33f692868191d
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/07/2017
+ms.lasthandoff: 10/12/2017
 ---
 # <a name="list-of-prerequisite-checks-for-system-center-configuration-manager"></a>Lista de verificações de pré-requisitos para o System Center Configuration Manager
 

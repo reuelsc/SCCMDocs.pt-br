@@ -1,5 +1,6 @@
 ---
-title: Criar ambientes virtuais do App-V | Microsoft Docs
+title: Criar um ambiente virtual do App-V
+titleSuffix: Configuration Manager
 description: Crie ambientes virtuais com o Microsoft Application Virtualization para que os aplicativos possam compartilhar dados entre si.
 ms.custom: na
 ms.date: 10/06/2016
@@ -15,11 +16,11 @@ caps.handback.revision: "0"
 author: mattbriggs
 ms.author: mabrigg
 manager: angrobe
-ms.openlocfilehash: f672bb5bdea0878bfc38575840f0c8f8c7f065b6
-ms.sourcegitcommit: b438515490e04fb09c82a8af642d38e9a0605178
+ms.openlocfilehash: 2b831f4302657e8338dddea32bca26677472bd42
+ms.sourcegitcommit: c236214b2fcc13dae7bad96d7fb33f692868191d
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/15/2017
+ms.lasthandoff: 10/12/2017
 ---
 # <a name="create-app-v-virtual-environments-in-system-center-configuration-manager"></a>Criar ambientes virtuais App-V no System Center Configuration Manager
 

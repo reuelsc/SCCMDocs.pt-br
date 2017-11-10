@@ -1,5 +1,5 @@
 ---
-title: "Política de privacidade do System Center Configuration Manager – Biblioteca de cmdlets do Configuration Manager | Microsoft Docs"
+title: "Política de privacidade para biblioteca de cmdlets do Configuration Manager"
 description: "Saiba mais sobre como a Microsoft coleta e usa dados relacionados à biblioteca de cmdlets do System Center Configuration Manager."
 ms.custom: na
 ms.date: 1/3/2017
@@ -15,11 +15,11 @@ caps.handback.revision: "0"
 author: Brenduns
 ms.author: brenduns
 manager: angrobe
-ms.openlocfilehash: 3936075555cc0bb370ea6e42c7e720b864d565f7
-ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
+ms.openlocfilehash: e42193a810ec1206d083c1fd6e4c112be1c61a8d
+ms.sourcegitcommit: c236214b2fcc13dae7bad96d7fb33f692868191d
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/07/2017
+ms.lasthandoff: 10/12/2017
 ---
 # <a name="system-center-configuration-manager-privacy-statement---configuration-manager-cmdlet-library"></a>Política de privacidade do System Center Configuration Manager – Biblioteca de Cmdlets do Configuration Manager
 

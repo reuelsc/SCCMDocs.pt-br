@@ -1,5 +1,6 @@
 ---
-title: Instalar console | Microsoft Docs
+title: Instalar console
+titleSuffix: Configuration Manager
 description: "Leia sobre a instalação do console do Configuration Manager para se conectar a um site de administração central ou um site primário."
 ms.custom: na
 ms.date: 1/3/2017
@@ -14,11 +15,11 @@ caps.latest.revision: "3"
 author: Brenduns
 ms.author: brenduns
 manager: angrobe
-ms.openlocfilehash: 88ecbc48fd03ce988f04408d0378844cbed1de2b
-ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
+ms.openlocfilehash: f367f94f809863403ed562a65cf44f21de698005
+ms.sourcegitcommit: c236214b2fcc13dae7bad96d7fb33f692868191d
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/07/2017
+ms.lasthandoff: 10/12/2017
 ---
 # <a name="install-the-system-center-configuration-manager-console"></a>Instalar o console do System Center Configuration Manager
 

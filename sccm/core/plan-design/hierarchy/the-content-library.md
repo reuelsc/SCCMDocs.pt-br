@@ -1,5 +1,6 @@
 ---
-title: "A biblioteca de conteúdo | Microsoft Docs"
+title: "A biblioteca de conteúdo"
+titleSuffix: Configuration Manager
 description: "Saiba mais sobre a biblioteca de conteúdo que o System Center Configuration Manager usa para reduzir o tamanho geral do conteúdo distribuído."
 ms.custom: na
 ms.date: 2/14/2017
@@ -14,11 +15,11 @@ caps.latest.revision: "4"
 author: Brenduns
 ms.author: brenduns
 manager: angrobe
-ms.openlocfilehash: 0fa9f431c00476d71b2b08f92f914d76636d1a27
-ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
+ms.openlocfilehash: 9e806436f482d2da2ae7d8babc6de3f24cfd80d0
+ms.sourcegitcommit: c236214b2fcc13dae7bad96d7fb33f692868191d
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/07/2017
+ms.lasthandoff: 10/12/2017
 ---
 # <a name="the-content-library-in-system-center-configuration-manager"></a>A biblioteca de conteúdo no System Center Configuration Manager
 

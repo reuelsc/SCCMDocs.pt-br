@@ -1,5 +1,6 @@
 ---
-title: Configure sua assinatura com o Lookout | System Center Configuration Manager
+title: Configurar sua assinatura com Lookout
+titleSuffix: Configuration Manager
 description: "Este tópico fornece detalhes sobre como configurar a proteção contra ameaças de dispositivo do Lookout."
 ms.custom: na
 ms.date: 03/05/2017
@@ -11,14 +12,14 @@ ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 6087b279-ba05-4824-b5e3-3af14f3d3cfe
 caps.latest.revision: 
-author: mtillman
-ms.author: mtillman
+author: dougeby
+ms.author: dougeby
 manager: angrobe
-ms.openlocfilehash: b777140c753e709f4048a30e63d8ae730d3e8723
-ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
+ms.openlocfilehash: 142926bc41a79adc8d8300e413022fb0e3566c5a
+ms.sourcegitcommit: c236214b2fcc13dae7bad96d7fb33f692868191d
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/07/2017
+ms.lasthandoff: 10/12/2017
 ---
 # <a name="set-up-your-subscription-for--lookout-device-threat-protection"></a>Configure sua assinatura para a proteção contra ameaças de dispositivo do Lookout
 

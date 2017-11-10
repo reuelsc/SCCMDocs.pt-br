@@ -1,5 +1,6 @@
 ---
-title: Implantar aplicativos | Microsoft Docs
+title: Implantar aplicativos
+titleSuffix: Configuration Manager
 description: "Crie um tipo de implantação ou simule uma implantação de um aplicativo usando o System Center Configuration Manager."
 ms.custom: na
 ms.date: 7/31/2017
@@ -15,11 +16,11 @@ caps.handback.revision: "0"
 author: mattbriggs
 ms.author: mabrigg
 manager: angrobe
-ms.openlocfilehash: 801c21e0015d63f736fb2207e85f484dc50d56dc
-ms.sourcegitcommit: b438515490e04fb09c82a8af642d38e9a0605178
+ms.openlocfilehash: 31c8a2e212de8c112b68d68e108db3463516142f
+ms.sourcegitcommit: b36f8c8b06e4b2e13f8c1500a82af79a071ab4f6
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/15/2017
+ms.lasthandoff: 10/20/2017
 ---
 # <a name="deploy-applications-with-system-center-configuration-manager"></a>Implantar aplicativos com o System Center Configuration Manager
 
@@ -170,7 +171,8 @@ Além disso, para uma implantação de alto risco, como uma sequência de tarefa
 ## <a name="how-to-check-for-running-executable-files-before-installing-an-application"></a>Como verificar se há arquivos executáveis antes de instalar um aplicativo
 
 >[!Tip]
->Apresentado com a versão 1702, esse é um recurso de pré-lançamento. Para habilitá-lo, veja [Recursos de pré-lançamento no System Center Configuration Manager](https://docs.microsoft.com/sccm/core/servers/manage/pre-release-features).
+>Com a versão 1702, esse é um recurso de pré-lançamento. Para habilitá-lo, veja [Recursos de pré-lançamento no System Center Configuration Manager](https://docs.microsoft.com/sccm/core/servers/manage/pre-release-features).
+> A partir da versão 1706, esse recurso não é mais um recurso de pré-lançamento.
 
 Na caixa de diálogo **Propriedades** de um tipo de implantação, na guia **Comportamento de Instalação**, você pode especificar um ou mais arquivos executáveis que, se estiverem em execução, bloquearão a instalação do tipo de implantação. O usuário deve fechar o arquivo executável em execução (ou ele pode ser fechado automaticamente para implantações com a finalidade obrigatória) antes de o tipo de implantação poder ser instalado. Para configurar isso:
 

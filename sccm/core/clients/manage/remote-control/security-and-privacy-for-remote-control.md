@@ -1,5 +1,6 @@
 ---
-title: "Privacidade de segurança do controle remoto | Microsoft Docs"
+title: "Privacidade de segurança do controle remoto"
+titleSuffix: Configuration Manager
 description: "Obtenha as informações de segurança e privacidade de controle remoto no System Center Configuration Manager."
 ms.custom: na
 ms.date: 04/23/2017
@@ -15,11 +16,11 @@ caps.handback.revision: "0"
 author: arob98
 ms.author: angrobe
 manager: angrobe
-ms.openlocfilehash: d2f12805017517db803bc7d1942aa1ea2d752ec7
-ms.sourcegitcommit: f6a428a8db7145affa388f59e0ad880bdfcf17b5
+ms.openlocfilehash: 4923aee0e55f42f679c6f17ea0fd760c1909f9ef
+ms.sourcegitcommit: c236214b2fcc13dae7bad96d7fb33f692868191d
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/14/2017
+ms.lasthandoff: 10/12/2017
 ---
 # <a name="security-and-privacy-for-remote-control-in-system-center-configuration-manager"></a>Segurança e privacidade do controle remoto no System Center Configuration Manager
 

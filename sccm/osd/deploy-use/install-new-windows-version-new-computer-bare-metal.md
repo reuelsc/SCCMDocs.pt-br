@@ -1,5 +1,6 @@
 ---
-title: "Instalar o Windows em um novo computador – Configuration Manager | Microsoft Docs"
+title: 'Instalar o Windows em um novo computador '
+titleSuffix: Configuration Manager
 description: "Use o Configuration Manager para instalar um sistema operacional em um novo computador (sem sistema operacional) usando PXE, OEM ou mídia autônoma."
 ms.custom: na
 ms.date: 01/23/2017
@@ -14,11 +15,11 @@ caps.latest.revision: "8"
 author: Dougeby
 ms.author: dougeby
 manager: angrobe
-ms.openlocfilehash: 63a26ff688ca2ec0c121a93a6c96bba2f76776e8
-ms.sourcegitcommit: 31c670a4bce74fd64a7d46ebf7702f65b80d4147
+ms.openlocfilehash: df034ea70cc6facea66bd35a9e1e685491b67d9e
+ms.sourcegitcommit: c236214b2fcc13dae7bad96d7fb33f692868191d
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/13/2017
+ms.lasthandoff: 10/12/2017
 ---
 # <a name="install-a-new-version-of-windows-on-a-new-computer-bare-metal-with-system-center-configuration-manager"></a>Instalar uma nova versão do Windows em um novo computador (sem sistema operacional) com o System Center Configuration Manager
 

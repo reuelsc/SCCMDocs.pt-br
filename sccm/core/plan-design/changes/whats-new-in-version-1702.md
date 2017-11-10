@@ -1,5 +1,6 @@
 ---
-title: "Nova versão 1702 | Microsoft Docs"
+title: "Nova versão 1702"
+titleSuffix: Configuration Manager
 description: "Veja os detalhes das alterações e os novos recursos introduzidos na versão 1702 do System Center Configuration Manager."
 ms.custom: na
 ms.date: 05/02/2017
@@ -12,11 +13,11 @@ ms.assetid: 409e26e1-7716-4f1d-a0ee-34feabf20792
 author: Brenduns
 ms.author: brenduns
 manager: angrobe
-ms.openlocfilehash: ff7f6c3b9f183502c95a2c551b1131c5abf1dd90
-ms.sourcegitcommit: 474e6ddbaaeac4ba17d8172321e08deeb0140d0a
+ms.openlocfilehash: f8f1b3c84d219c780e400f58ea0b489654cff233
+ms.sourcegitcommit: c236214b2fcc13dae7bad96d7fb33f692868191d
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/19/2017
+ms.lasthandoff: 10/12/2017
 ---
 # <a name="what39s-new-in-version-1702-of-system-center-configuration-manager"></a>Novidades da versão 1702 do System Center Configuration Manager
 

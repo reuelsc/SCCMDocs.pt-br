@@ -1,5 +1,6 @@
 ---
-title: Administrar remotamente o computador Windows | Microsoft Docs
+title: Administrar remotamente o computador Windows
+titleSuffix: Configuration Manager
 description: Administre um computador cliente Windows remoto usando o System Center Configuration Manager.
 ms.custom: na
 ms.date: 07/27/2017
@@ -15,11 +16,11 @@ caps.handback.revision: "0"
 author: arob98
 ms.author: angrobe
 manager: angrobe
-ms.openlocfilehash: 9ce5adccb9944daa4fb2b0ab132fc7cf52bd7b1b
-ms.sourcegitcommit: f6a428a8db7145affa388f59e0ad880bdfcf17b5
+ms.openlocfilehash: 7cce5f2deab7ec6f5c16628dc53e4d1cb5507f37
+ms.sourcegitcommit: c236214b2fcc13dae7bad96d7fb33f692868191d
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/14/2017
+ms.lasthandoff: 10/12/2017
 ---
 # <a name="how-to-remotely-administer-a-windows-client-computer-by-using-system-center-configuration-manager"></a>Como administrar remotamente um computador cliente com Windows usando o System Center Configuration Manager
 

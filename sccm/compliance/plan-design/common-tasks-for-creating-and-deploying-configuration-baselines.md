@@ -1,5 +1,6 @@
 ---
-title: "Tarefas comuns para linhas de base de configuração – Configuration Manager | Microsoft Docs"
+title: "Tarefas comuns para linhas de base de configuração "
+titleSuffix: Configuration Manager
 description: "Saiba como criar e implantar as linhas de base de configuração no System Center Configuration Manager."
 ms.custom: na
 ms.date: 07/12/2017
@@ -15,11 +16,11 @@ caps.handback.revision: "0"
 author: andredm7
 ms.author: andredm
 manager: angrobe
-ms.openlocfilehash: ef622eb61885a0152314cbe990107b0d703ac11f
-ms.sourcegitcommit: b438515490e04fb09c82a8af642d38e9a0605178
+ms.openlocfilehash: 50f7bdf4dc537f734864304d96566347e6341de6
+ms.sourcegitcommit: c236214b2fcc13dae7bad96d7fb33f692868191d
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/15/2017
+ms.lasthandoff: 10/12/2017
 ---
 # <a name="common-tasks-for-creating-and-deploying-configuration-baselines-with-system-center-configuration-manager"></a>Tarefas comuns para criar e implantar linhas de base de configuração com o System Center Configuration Manager
 

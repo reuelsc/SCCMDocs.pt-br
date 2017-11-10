@@ -1,5 +1,6 @@
 ---
-title: "Preparar as funções do sistema de sites para implantações de sistema operacional | Microsoft Docs"
+title: "Preparar as funções do sistema de sites para implantações de sistema operacional"
+titleSuffix: Configuration Manager
 description: "Configure as funções do sistema de sites antes de implantar os sistemas operacionais no System Center Configuration Manager."
 ms.custom: na
 ms.date: 10/06/2016
@@ -15,11 +16,11 @@ caps.handback.revision: "0"
 author: Dougeby
 ms.author: dougeby
 manager: angrobe
-ms.openlocfilehash: 11c0f169afebdb071fefb5ce300fd1ae3481a94f
-ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
+ms.openlocfilehash: c07172bec1032b021c2d7b7ccaabe33c96b930d2
+ms.sourcegitcommit: c236214b2fcc13dae7bad96d7fb33f692868191d
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/07/2017
+ms.lasthandoff: 10/12/2017
 ---
 # <a name="prepare-site-system-roles-for-operating-system-deployments-with-system-center-configuration-manager"></a>Preparar as funções do sistema de sites para implantações de sistema operacional com o System Center Configuration Manager
 
@@ -67,7 +68,7 @@ Para implantar sistemas operacionais no System Center Configuration Manager, pri
 
 2.  Selecione o ponto de distribuição a configurar, clique na guia **Início** no grupo **Propriedades** e clique em **Propriedades**.  
 
-3.  Na página de propriedades do ponto de distribuição, clique na guia **PXE** . e selecione **Habilitar suporte a PXE para clientes** para habilitar o PXE nesse ponto de distribuição.  
+3.  Na página de propriedades do ponto de distribuição, clique na guia **PXE** e selecione **Habilitar suporte a PXE para clientes** para habilitar o PXE nesse ponto de distribuição.  
 
 4.  Clique em **Sim** na caixa de diálogo **Examinar Portas Necessárias para PXE** para confirmar que você deseja habilitar PXE. O O Configuration Manager configura automaticamente as portas padrão em um Firewall do Windows. Você deverá configurar manualmente as portas se usar um firewall diferente.  
 

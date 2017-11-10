@@ -1,5 +1,6 @@
 ---
-title: "Gerenciar o acesso aos serviços do O365 para computadores gerenciados | Microsoft Docs"
+title: "Gerenciar o acesso aos serviços do O365 para computadores gerenciados"
+titleSuffix: Configuration Manager
 description: Saiba como configurar o acesso condicional para computadores gerenciados pelo System Center Configuration Manager.
 ms.custom: na
 ms.date: 03/05/2017
@@ -14,11 +15,11 @@ caps.latest.revision: "15"
 author: andredm7
 ms.author: andredm
 manager: angrobe
-ms.openlocfilehash: aede531a0406c3d30c9cca957896e002ed22ae51
-ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
+ms.openlocfilehash: a49e53ca81d8bd01747c41ab9c25de7fd6396f32
+ms.sourcegitcommit: c236214b2fcc13dae7bad96d7fb33f692868191d
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/07/2017
+ms.lasthandoff: 10/12/2017
 ---
 # <a name="manage-access-to-o365-services-for-pcs-managed-by-system-center-configuration-manager"></a>Gerenciar o acesso aos serviços O365 para PCs gerenciados pelo System Center Configuration Manager.
 

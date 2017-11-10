@@ -1,5 +1,6 @@
 ---
-title: "Configurar o gerenciamento de dispositivo híbrido de iOS e Mac com o System Center Configuration Manager e o Microsoft Intune | Microsoft Docs"
+title: "Configurar o gerenciamento de dispositivo híbrido para iOS e Mac com o Microsoft Intune"
+titleSuffix: Configuration Manager
 description: Configure o gerenciamento de dispositivos iOS com o System Center Configuration Manager e o Microsoft Intune.
 ms.custom: na
 ms.date: 08/11/2017
@@ -12,14 +13,14 @@ ms.topic: get-started-article
 ms.assetid: 5eae4400-58ca-4c71-804c-6a585cd3df5d
 caps.latest.revision: "10"
 caps.handback.revision: "0"
-author: nathbarn
-ms.author: nathbarn
+author: arob98
+ms.author: angrobe
 manager: angrobe
-ms.openlocfilehash: d84d6f3dba65f1d8114ef2eef9f19a2bb5389027
-ms.sourcegitcommit: 9a6f8e028fb5eb2e752da70f42a5b548339bd8f4
+ms.openlocfilehash: f15b82a0e04979f49fb8e2ab6bec6535783ac6e0
+ms.sourcegitcommit: 1132886e07d0c0a87dcc7eeef4577dd8d8840023
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/14/2017
+ms.lasthandoff: 11/01/2017
 ---
 # <a name="set-up-ios-hybrid-device-management-with-system-center-configuration-manager-and-microsoft-intune"></a>Configurar o gerenciamento de dispositivo híbrido do iOS com o System Center Configuration Manager e o Microsoft Intune
 

@@ -1,5 +1,6 @@
 ---
-title: "Privacidade de segurança do inventário de hardware | Microsoft Docs"
+title: "Privacidade de segurança do inventário de hardware"
+titleSuffix: Configuration Manager
 description: "Obtenha as informações de segurança e privacidade do inventário de hardware no System Center Configuration Manager."
 ms.custom: na
 ms.date: 2/22/2017
@@ -14,11 +15,11 @@ caps.latest.revision: "6"
 author: andredm7
 ms.author: andredm
 manager: angrobe
-ms.openlocfilehash: ec182ec3102e0f4ae8bcf3d1ef843b25510b6ce6
-ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
+ms.openlocfilehash: d08bae2cceada5393e58bf8ad2e4a603277f5dfc
+ms.sourcegitcommit: c236214b2fcc13dae7bad96d7fb33f692868191d
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/07/2017
+ms.lasthandoff: 10/12/2017
 ---
 # <a name="security-and-privacy-for-hardware-inventory-in-system-center-configuration-manager"></a>Segurança e privacidade do inventário de hardware no System Center Configuration Manager
 

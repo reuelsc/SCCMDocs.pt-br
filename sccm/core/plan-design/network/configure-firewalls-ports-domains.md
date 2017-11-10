@@ -1,5 +1,6 @@
 ---
-title: "Firewalls e domínios | Microsoft Docs"
+title: "Firewalls e domínios"
+titleSuffix: Configuration Manager
 description: "Configure firewalls, portas e domínios para preparar-se para comunicações do System Center Configuration Manager."
 ms.custom: na
 ms.date: 2/6/2017
@@ -15,11 +16,11 @@ caps.handback.revision: "0"
 author: Brenduns
 ms.author: brenduns
 manager: angrobe
-ms.openlocfilehash: 4a2a8f96a900a2c4959ae3ff59232771ece95991
-ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
+ms.openlocfilehash: 3bcfeb4517797b5c04615f36a166e55a3f2e4058
+ms.sourcegitcommit: c236214b2fcc13dae7bad96d7fb33f692868191d
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/07/2017
+ms.lasthandoff: 10/12/2017
 ---
 # <a name="set-up-firewalls-ports-and-domains-for-system-center-configuration-manager"></a>Configurar firewalls, portas e domínios para o System Center Configuration Manager
 

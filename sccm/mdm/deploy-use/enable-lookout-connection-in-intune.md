@@ -1,5 +1,6 @@
 ---
-title: Habilitar o Lookout MTP no Intune | Microsoft Docs
+title: Habilitar o Lookout MTP no Intune
+titleSuffix: Configuration Manager
 description: "Habilite o Lookout Mobile Threat Protection no console de administração do Intune."
 ms.custom: na
 ms.date: 03/05/2017
@@ -11,14 +12,14 @@ ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 7e4ada34-63bf-4b9f-8246-31816aa44196
 caps.latest.revision: 
-author: mtillman
-ms.author: mtillman
+author: dougeby
+ms.author: dougeby
 manager: angrobe
-ms.openlocfilehash: f9ddbcc981fa1274a41ae16a6a939c0cdf739c3e
-ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
+ms.openlocfilehash: 2d4cdb20f66864ac9bf79b89189e97fab26b34f3
+ms.sourcegitcommit: c236214b2fcc13dae7bad96d7fb33f692868191d
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/07/2017
+ms.lasthandoff: 10/12/2017
 ---
 # <a name="enable-lookout-mtp-connection-in-the-intune-admin-console"></a>Habilitar a conexão do Lookout MTP no console do Intune
 

@@ -1,5 +1,6 @@
 ---
-title: "Defesa contra Ameaças Móveis | System Center Configuration Manager"
+title: "Defesa contra Ameaças Móveis"
+titleSuffix: Configuration Manager
 description: "Restrinja o acesso aos recursos da empresa com base no risco ao dispositivo, rede e aplicativo usando o Configuration Manager e os parceiros de Defesa contra Ameaças Móveis do Intune"
 ms.custom: na
 ms.date: 03/02/2017
@@ -14,11 +15,11 @@ caps.latest.revision:
 author: andredm7
 ms.author: andredm
 manager: angrobe
-ms.openlocfilehash: 25d68e7b16afe8e24939897f01f173d3daa7fa09
-ms.sourcegitcommit: 621b9f8fedf7f1d53ea7abd804af4b63c85dbeb1
+ms.openlocfilehash: 83911f35dbe8fc7bc24a4885929fbdf5660e7285
+ms.sourcegitcommit: c236214b2fcc13dae7bad96d7fb33f692868191d
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/02/2017
+ms.lasthandoff: 10/12/2017
 ---
 # <a name="intune-mobile-threat-defense-connectors-in-configuration-manager"></a>Conectores da Defesa contra Ameaças Móveis do Intune no Configuration Manager
 

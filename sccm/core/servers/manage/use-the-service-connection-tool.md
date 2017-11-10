@@ -1,5 +1,6 @@
 ---
-title: "Ferramenta de conexão de serviço | Microsoft Docs"
+title: "Ferramenta de conexão de serviço"
+titleSuffix: Configuration Manager
 description: "Saiba mais sobre esta ferramenta que permite que você se conecte ao serviço de nuvem do Configuration Manager para carregar manualmente as informações de uso."
 ms.custom: na
 ms.date: 09/06/2017
@@ -14,11 +15,11 @@ caps.latest.revision: "11"
 author: Brenduns
 ms.author: brenduns
 manager: angrobe
-ms.openlocfilehash: 8039ee0c704bbe570ec3e45ba648f779923087c6
-ms.sourcegitcommit: 2a1328da3facb20b0c78f3b12adbb5fdbe0dcc11
+ms.openlocfilehash: dda4a9b3977d55dbe3e2a0bf746a658eadc788d5
+ms.sourcegitcommit: c236214b2fcc13dae7bad96d7fb33f692868191d
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/08/2017
+ms.lasthandoff: 10/12/2017
 ---
 # <a name="use-the-service-connection-tool-for-system-center-configuration-manager"></a>Usar a ferramenta de conexão de serviço do System Center Configuration Manager
 

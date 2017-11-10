@@ -1,5 +1,6 @@
 ---
-title: "Lista de verificação para 1706 | System Center Configuration Manager"
+title: "Lista de verificação para 1706"
+titleSuffix: Configuration Manager
 description: "Conheça as ações a serem executadas antes de atualizar para o System Center Configuration Manager versão 1706."
 ms.custom: na
 ms.date: 07/31/2017
@@ -14,11 +15,11 @@ caps.latest.revision:
 author: Brenduns
 ms.author: brenduns
 manager: angrobe
-ms.openlocfilehash: c8110d9f5fec9027d34570623c32a7474e01b9af
-ms.sourcegitcommit: 2a1328da3facb20b0c78f3b12adbb5fdbe0dcc11
+ms.openlocfilehash: 8bfaef2b19449cf6fe1487b32cffcdb5731f1602
+ms.sourcegitcommit: c236214b2fcc13dae7bad96d7fb33f692868191d
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/08/2017
+ms.lasthandoff: 10/12/2017
 ---
 # <a name="checklist-for-installing-update-1706-for-system-center-configuration-manager"></a>Lista de verificação para instalar a atualização 1706 do System Center Configuration Manager
 

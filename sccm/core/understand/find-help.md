@@ -1,5 +1,6 @@
 ---
-title: Localize ajuda para usar o System Center Configuration Manager | Microsoft Docs
+title: Encontrar ajuda
+titleSuffix: Configuration Manager
 description: "Encontre recursos para ver informações adicionais sobre o System Center Configuration Manager."
 ms.custom: na
 ms.date: 2/8/2017
@@ -15,11 +16,11 @@ caps.handback.revision: "0"
 author: Brenduns
 ms.author: brenduns
 manager: angrobe
-ms.openlocfilehash: 72fe220cb9a40d6a20164ace1db8542a91221f55
-ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
+ms.openlocfilehash: 723812928dab63d6a0d86ac6e5fa5de6b079b35a
+ms.sourcegitcommit: c236214b2fcc13dae7bad96d7fb33f692868191d
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/07/2017
+ms.lasthandoff: 10/12/2017
 ---
 # <a name="find-help-for-using-system-center-configuration-manager"></a>Encontrar ajuda para usar o System Center Configuration Manager
 

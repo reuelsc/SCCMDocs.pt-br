@@ -1,5 +1,6 @@
 ---
-title: Planejar e configurar o gerenciamento de aplicativos | Microsoft Docs
+title: Planejar e configurar o gerenciamento de aplicativos
+titleSuffix: Configuration Manager
 description: "Implemente e configure as dependências necessárias para implantar aplicativos no System Center Configuration Manager."
 ms.custom: na
 ms.date: 02/09/2017
@@ -14,11 +15,11 @@ caps.latest.revision: "13"
 author: mattbriggs
 ms.author: mabrigg
 manager: angrobe
-ms.openlocfilehash: 1519ec79eb6b1da6b9666b2ce12a46553116b364
-ms.sourcegitcommit: c145e515843a0f37c2e5ca5dbd22072a219d06b4
+ms.openlocfilehash: 66317bea84adbddf2d2e94c30a4a72e19229439b
+ms.sourcegitcommit: 18ac58374d2d513fe2a197c80f7c8c6890a7d612
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/03/2017
+ms.lasthandoff: 10/16/2017
 ---
 # <a name="plan-for-and-configure-application-management-in-system-center-configuration-manager"></a>Planejar e configurar o gerenciamento de aplicativos no System Center Configuration Manager
 
@@ -30,36 +31,36 @@ Use as informações descritas neste artigo como auxílio para implantar as depe
 
 |Dependência|Mais informações|  
 |------------------|----------------------|  
-|O IIS (Serviços de Informações da Internet) é necessário nos servidores do sistema de sites que executam o ponto de sites da Web e o ponto de serviço Web do catálogo de aplicativos, o ponto de gerenciamento e o ponto de distribuição.|Para saber mais sobre este requisito, veja [Configurações com suporte](../../core/plan-design/configs/supported-configurations.md).|  
+|O IIS (Serviços de Informações da Internet) é necessário nos servidores do sistema de sites que executam o ponto de sites da Web e o ponto de serviço Web do Catálogo de Aplicativos, o ponto de gerenciamento e o ponto de distribuição.|Para obter mais informações sobre este requisito, veja [Configurações com suporte](../../core/plan-design/configs/supported-configurations.md).|  
 |Dispositivos móveis registrados pelo Configuration Manager|Quando você assinar o código de aplicativos para implantá-los nos dispositivos móveis, não use um certificado que tenha sido gerado usando um modelo de Versão 3 (**Windows Server 2008, Enterprise Edition**). Esse modelo de certificado cria um certificado não compatível com aplicativos do Configuration Manager para dispositivos móveis.<br /><br /> Se você usa os Serviços de Certificados do Active Directory para assinar o código de aplicativos para aplicativos de dispositivo móvel, não use um modelo de certificado de Versão 3.|  
-|Clientes deverão ser configurados para fazer auditoria de eventos de entrada, se você quiser criar automaticamente afinidades de dispositivo de usuário.|O cliente do Configuration Manager lê os eventos de logon do tipo **sucesso** do log de eventos de segurança de PCs para determinar afinidades de dispositivo de usuário automático.  Esses eventos são habilitados pelas duas políticas de auditoria seguintes: "<br>**Eventos de logon de conta de auditoria**<br>**Eventos de logon de auditoria**<br>Para criar automaticamente relacionamentos entre usuários e dispositivos, verifique se essas duas configurações estão habilitadas em computadores cliente. Você pode usar a política de grupo do Windows para definir essas configurações.|  
+|Clientes deverão ser configurados para fazer auditoria de eventos de entrada, se você quiser criar automaticamente afinidades de dispositivo de usuário.|O cliente do Configuration Manager lê os eventos de logon do tipo **sucesso** do log de eventos de segurança do computador para determinar afinidades de dispositivo de usuário automático.  Esses eventos são habilitados pelas duas políticas de auditoria seguintes:<br>**Eventos de logon de conta de auditoria**<br>**Eventos de logon de auditoria**<br>Para criar automaticamente relacionamentos entre usuários e dispositivos, verifique se essas duas configurações estão habilitadas em computadores cliente. Você pode usar a política de grupo do Windows para definir essas configurações.|  
 
 ## <a name="configuration-manager-dependencies"></a>Dependências do Configuration Manager   
 
 |Dependência|Mais informações|  
 |------------------|----------------------|  
-|Ponto de gerenciamento|Os clientes entram em contato com um ponto de gerenciamento para baixar a política do cliente, para localizar conteúdo e para se conectar ao catálogo de aplicativos.<br /><br /> Se os clientes não podem acessar um ponto de gerenciamento, não podem usar o catálogo de aplicativos.|  
-|Ponto de distribuição|Para os aplicativos serem implantados nos clientes, tenha pelo menos um ponto de distribuição na hierarquia. Por padrão, o servidor do site possui uma função de site de ponto de distribuição habilitada durante uma instalação padrão. O número e a localização dos pontos de distribuição variam de acordo com os requisitos específicos de sua empresa.<br /><br /> Para saber mais sobre como instalar pontos de distribuição e gerenciar conteúdo, consulte [Gerenciar conteúdo e infraestrutura de conteúdo](../../core/servers/deploy/configure/manage-content-and-content-infrastructure.md).|  
-|Configurações do cliente|Muitas configurações do cliente controlam como os aplicativos são instalados no cliente e a experiência do usuário no cliente. Essas configurações do cliente incluem:<br /><br /><ul><li>Agente de Computador</li><li>Reinicialização do computador</li><li>Implantação de software</li><li>Afinidade de dispositivo e de usuário</li></ul> Para saber mais sobre essas configurações do cliente, consulte [Sobre as configurações do cliente](../../core/clients/deploy/about-client-settings.md).<br /><br /> Para saber como definir as configurações do cliente, consulte [Como definir as configurações do cliente](../../core/clients/deploy/configure-client-settings.md).|  
-|Para o catálogo de aplicativos:<br /><br /> Contas de usuário descobertas|O Configuration Manager deve primeiro descobrir usuários antes que possam exibir e solicitar aplicativos do Catálogo de Aplicativos. Para mais informações, consulte [Executar descoberta](/sccm/core/servers/deploy/configure/run-discovery).|  
-|Cliente App-V 4.6 SP1 ou posterior para executar aplicativos virtuais|Para poder criar aplicativos virtuais no Configuration Manager, os computadores cliente devem ter o cliente App-V 4.6 SP1 ou posterior instalado.<br /><br /> É necessário atualizar o cliente App-V com o hotfix descrito na Base de Dados de Conhecimento, [artigo 2645225](http://go.microsoft.com/fwlink/p/?LinkId=237322) antes de implantar aplicativos virtuais.|  
-|Ponto de serviços Web do Catálogo de Aplicativos|O ponto de serviços Web do catálogo de aplicativos é uma função de sistema de site que fornece informações sobre softwares disponíveis da Biblioteca de Software para os sites da Web do catálogo de aplicativos.<br /><br /> Para saber mais sobre como configurar esta função do sistema de sites, veja [Configurar a Central de Software e o Catálogo de Aplicativos (apenas para computadores Windows)](/sccm/apps/plan-design/plan-for-and-configure-application-management#configure-software-center-and-the-application-catalog-windows-pcs-only) neste artigo.|  
-|Ponto de sites da Web do catálogo de aplicativos|O ponto de sites da Web do catálogo de aplicativos é uma função de sistema de site que fornece aos usuários uma lista de softwares disponíveis.<br /><br /> Para saber mais sobre como configurar esta função do sistema de sites, veja [Configurar a Central de Software e o Catálogo de Aplicativos (apenas para computadores Windows)](/sccm/apps/plan-design/plan-for-and-configure-application-management#configure-software-center-and-the-application-catalog-windows-pcs-only) neste artigo.|  
-|Ponto do Reporting Services|Para poder usar os relatórios no Configuration Manager para gerenciamento de aplicativos, primeiro instale e configure um ponto do Reporting Services.<br /><br /> Para obter mais informações, consulte [Relatórios no System Center Configuration Manager](../../core/servers/manage/reporting.md).|  
-|Permissões de segurança para gerenciamento de aplicativos|Você deve ter as seguintes permissões de segurança para gerenciar aplicativos.<br /><br /> A função de segurança **Autor de Aplicativos** inclui as permissões listadas anteriormente que são necessárias para criar, alterar e desativar aplicativos no Configuration Manager.<br /><br /> **Para implantar aplicativos:**<br /><br /> A função de segurança **Gerenciador de Implantação de Aplicativos** inclui as permissões listadas anteriormente que são necessárias para implantar aplicativos no Configuration Manager.<br /><br /> A função de segurança do **Administrador de Aplicativos** tem todas as permissões de ambas as funções de segurança: **Autor de Aplicativos** e **Gerenciador de Implantação de Aplicativos**.<br /><br /> Para mais informações, consulte [Configurar administração baseada em funções](../../core/servers/deploy/configure/configure-role-based-administration.md).|  
+|Ponto de gerenciamento|Os clientes entram em contato com um ponto de gerenciamento para baixar a política do cliente, para localizar conteúdo e para se conectar ao catálogo de aplicativos.<br /><br /> Se os clientes não podem acessar um ponto de gerenciamento, não podem usar o Catálogo de Aplicativos.|  
+|Ponto de distribuição|Para os aplicativos serem implantados nos clientes, tenha pelo menos um ponto de distribuição na hierarquia. Por padrão, o servidor do site possui uma função de site de ponto de distribuição habilitada durante uma instalação padrão. O número e a localização dos pontos de distribuição variam de acordo com os requisitos específicos de sua empresa.<br /><br /> Para obter mais informações sobre como instalar pontos de distribuição e gerenciar conteúdo, consulte [Gerenciar conteúdo e infraestrutura de conteúdo](../../core/servers/deploy/configure/manage-content-and-content-infrastructure.md).|  
+|Configurações do cliente|Muitas configurações do cliente controlam como os aplicativos são instalados no cliente e a experiência do usuário no cliente. Essas configurações do cliente incluem:<br /><br /><ul><li>Agente de Computador</li><li>Reinicialização do computador</li><li>Implantação de software</li><li>Afinidade de dispositivo e de usuário</li></ul> Para mais informações sobre essas configurações do cliente, consulte [Sobre as configurações do cliente](../../core/clients/deploy/about-client-settings.md).<br /><br /> Para saber mais sobre como definir as configurações do cliente, consulte [Como definir as configurações do cliente](../../core/clients/deploy/configure-client-settings.md).|  
+|Contas de usuário descobertas para Catálogo de Aplicativos |O Configuration Manager deve primeiro descobrir as contas de usuários antes que os usuários possam exibir e solicitar aplicativos do Catálogo de Aplicativos. Para mais informações, consulte [Executar descoberta](/sccm/core/servers/deploy/configure/run-discovery).|  
+|Cliente App-V 4.6 SP1 ou posterior para executar aplicativos virtuais|Para criar aplicativos virtuais no Configuration Manager, os computadores cliente devem ter o cliente App-V 4.6 SP1 ou posterior instalado.<br /><br /> É necessário atualizar o cliente App-V com o hotfix descrito na Base de Dados de Conhecimento, [artigo 2645225](http://go.microsoft.com/fwlink/p/?LinkId=237322) antes de implantar aplicativos virtuais.|  
+|Ponto de serviços Web do Catálogo de Aplicativos|O ponto de serviços Web do catálogo de aplicativos é uma função de sistema de site que fornece informações sobre softwares disponíveis da Biblioteca de Software para os sites da Web do catálogo de aplicativos.<br /><br /> Para saber mais sobre como configurar esta função do sistema de sites, veja [Configurar o Centro de Software e o Catálogo de Aplicativos (apenas para computadores Windows)](/sccm/apps/plan-design/plan-for-and-configure-application-management#configure-software-center-and-the-application-catalog-windows-pcs-only) neste artigo.|  
+|Ponto de sites da Web do catálogo de aplicativos|O ponto de sites da Web do catálogo de aplicativos é uma função de sistema de site que fornece aos usuários uma lista de softwares disponíveis.<br /><br /> Para saber mais sobre como configurar esta função do sistema de sites, veja [Configurar o Centro de Software e o Catálogo de Aplicativos (apenas para computadores Windows)](/sccm/apps/plan-design/plan-for-and-configure-application-management#configure-software-center-and-the-application-catalog-windows-pcs-only) neste artigo.|  
+|Ponto do Reporting Services|Para usar os relatórios no Configuration Manager para gerenciamento de aplicativos, primeiro instale e configure um ponto do Reporting Services.<br /><br /> Para obter mais informações, consulte [Relatórios no System Center Configuration Manager](../../core/servers/manage/reporting.md).|  
+|Permissões de segurança para gerenciamento de aplicativos|Você deve ter as seguintes permissões de segurança para gerenciar aplicativos:<br /><br /> A função de segurança **Autor de Aplicativos** inclui as permissões listadas anteriormente que são necessárias para criar, alterar e desativar aplicativos no Configuration Manager.<br /><br /> **Para implantar aplicativos:**<br /><br /> A função de segurança **Gerenciador de Implantação de Aplicativos** inclui as permissões listadas anteriormente que são necessárias para implantar aplicativos no Configuration Manager.<br /><br /> A função de segurança do **Administrador de Aplicativos** tem todas as permissões de ambas as funções de segurança: **Autor de Aplicativos** e **Gerenciador de Implantação de Aplicativos**.<br /><br /> Para mais informações, consulte [Configurar administração baseada em funções](../../core/servers/deploy/configure/configure-role-based-administration.md).|  
 
 ##  <a name="configure-software-center-and-the-application-catalog-windows-pcs-only"></a>Configurar o Centro de Software e o Catálogo de Aplicativos (somente computadores com Windows)  
 
  No System Center Configuration Manager, agora você tem duas opções para que os usuários alterem configurações, procurem e instalem aplicativos:  
 
--   **O novo Centro de Software** – o novo Centro de Software tem uma aparência moderna. Os aplicativos que só eram exibidos no Catálogo de Aplicativos dependente do Silverlight (aplicativos disponíveis para o usuário) agora aparecem no Centro de Software sob a guia **Aplicativos**. O Catálogo de Aplicativos ainda pode ser acessado usando o link na guia **Status da Instalação** do Centro de Software.  
+-   **O novo Centro de Software**: o novo Centro de Software tem uma aparência moderna. Os aplicativos que só eram exibidos no Catálogo de Aplicativos dependente do Silverlight (aplicativos disponíveis para o usuário) agora aparecem no Centro de Software sob a guia **Aplicativos**. O Catálogo de Aplicativos ainda pode ser acessado usando o link na guia **Status da Instalação** do Centro de Software.  
 
      É possível configurar clientes para usar o novo Centro de Software habilitando a configuração do cliente **Agente de Computador** > **Usar o novo Centro de Software**.  
 
     > [!IMPORTANT]  
     >  Embora não seja mais necessário conectar-se ao Catálogo de Aplicativos, você ainda deve configurar o ponto de sites da Web e o ponto de serviço Web do Catálogo de Aplicativos, conforme detalhado na próxima seção.  
 
--   **O Centro de Software e o Catálogo de Aplicativos anteriores** - Por padrão, os usuários continuam se conectando à versão anterior do Centro de Software e conectando-se ao Catálogo de Aplicativos (navegador da Web habilitado para Silverlight necessário) para procurar os aplicativos disponíveis.  
+-   **O Centro de Software e o Catálogo de Aplicativos anteriores**: por padrão, os usuários continuam se conectando à versão anterior do Centro de Software e conectando-se ao Catálogo de Aplicativos (navegador da Web habilitado para Silverlight necessário) para procurar os aplicativos disponíveis.  
 
  Qualquer que seja a versão que você optar por usar, o Centro de Software é instalado automaticamente durante a instalação do cliente do Configuration Manager em computadores com Windows.  
 
@@ -67,7 +68,7 @@ Use as informações descritas neste artigo como auxílio para implantar as depe
     >  A versão do Centro de Software vista pelos usuários baseia-se nas configurações do cliente do Configuration Manager. Isso fornece a flexibilidade para controlar a versão que é usada com base nas configurações personalizadas do cliente que são implantadas em uma coleção. 
 
     > [!IMPORTANT]
-    > Nos próximos meses, removeremos a versão anterior do Software Center e ela não estará mais disponível para uso.
+    > Nos próximos meses, removeremos a versão anterior do Software Center e ela não estará mais disponível.
     > É possível configurar clientes para usar o novo Centro de Software habilitando a configuração do cliente **Agente de Computador** > **Usar o novo Centro de Software**. 
 
 ## <a name="steps-to-install-and-configure-the-application-catalog-and-software-center"></a>Etapas para instalar e configurar o Catálogo de Aplicativos e o Centro de Software  
@@ -77,10 +78,10 @@ Use as informações descritas neste artigo como auxílio para implantar as depe
 
 |Etapas|Detalhes|Mais informações|  
 |-----------|-------------|----------------------|  
-|**Etapa 1:** Se for usar conexões HTTPS, verifique se você primeiro implantou um certificado do servidor Web nos servidores do sistema de sites.|Implante um certificado do servidor Web nos servidores do sistema de site que executarão o ponto de sites da Web do catálogo de aplicativos e ponto de serviços Web do catálogo de aplicativos.<br /><br /> Além disso, se você desejar que clientes usem o Catálogo de Aplicativos pela Internet, implante um certificado do servidor Web em ao menos um servidor do sistema de site do ponto de gerenciamento e configure-o para conexões de clientes pela Internet.|Para saber mais sobre requisitos de certificado, consulte [Requisitos de certificado PKI](../../core/plan-design/network/pki-certificate-requirements.md).|  
-|**Etapa 2:** Se usar um certificado PKI de cliente para conexões a pontos de gerenciamento, implante um certificado de autenticação de cliente nos computadores cliente.|Apesar de os clientes não usarem um certificado PKI de cliente para se conectarem ao Catálogo de Aplicativos, eles precisam se conectar ao ponto de gerenciamento para poderem usar o Catálogo de Aplicativos. Você deve implantar um certificado de autenticação de cliente em computadores cliente nos seguintes cenários:<br /><br /><ul><li>Todos os pontos de gerenciamento na intranet aceitam apenas conexões de clientes HTTPS.</li><li>Os clientes se conectarão ao catálogo de aplicativos pela Internet.</li></ul>|Para saber mais sobre requisitos de certificado, consulte [Requisitos de certificado PKI](../../core/plan-design/network/pki-certificate-requirements.md).|  
-|**Etapa 3:** Instale e configure o ponto de serviços Web do catálogo de aplicativos e o site do catálogo de aplicativos.|Você deve instalar as duas funções do sistema de site no mesmo site. Não é necessário instalá-las no mesmo servidor do sistema de site ou na mesma floresta do Active Directory. No entanto, o ponto de serviço Web do catálogo de aplicativos deve estar na mesma floresta que o banco de dados do site.|Para saber mais sobre o posicionamento de funções do sistema de sites, consulte [Planejamento para servidores de sistema de sites e funções de sistema de sites](../../core/plan-design/hierarchy/plan-for-site-system-servers-and-site-system-roles.md).<br /><br /> Para configurar o ponto de serviço Web e o ponto de sites da Web do Catálogo de Aplicativos, veja **Etapa 3: Instalar e configurar as funções do sistema de sites do Catálogo de Aplicativos**.|  
-|**Etapa 4:** Definir as configurações do cliente para o Catálogo de Aplicativos e o Centro de Software.|Defina as configurações do cliente padrão se você desejar que todos os usuários tenham a mesma configuração. Caso contrário, defina as configurações do cliente personalizadas para coleções específicas.|Para saber mais sobre configurações do cliente, consulte [Sobre as configurações do cliente](../../core/clients/deploy/about-client-settings.md).<br /><br /> Para saber mais sobre como definir estas configurações do cliente, veja **Etapa 4: Definir as configurações do cliente para o Catálogo de Aplicativos e o Centro de Software**.|  
+|**Etapa 1:** se você usar conexões HTTPS, verifique primeiro se você implantou um certificado do servidor Web nos servidores do sistema de sites.|Implante um certificado do servidor Web nos servidores do sistema de site que executarão o ponto de sites da Web do catálogo de aplicativos e ponto de serviços Web do catálogo de aplicativos.<br /><br /> Além disso, se você desejar que clientes usem o Catálogo de Aplicativos pela Internet, implante um certificado do servidor Web em ao menos um servidor do sistema de site do ponto de gerenciamento e configure-o para conexões de clientes pela Internet.|Para saber mais sobre os requisitos de certificado PKI, consulte [Requisitos do certificado PKI](../../core/plan-design/network/pki-certificate-requirements.md).|  
+|**Etapa 2:** se você usar um certificado PKI de cliente para conexões a pontos de gerenciamento, implante um certificado de autenticação de cliente nos computadores cliente.|Apesar de os clientes não usarem um certificado PKI de cliente para se conectarem ao Catálogo de Aplicativos, eles precisam se conectar ao ponto de gerenciamento para poderem usar o Catálogo de Aplicativos. Você deve implantar um certificado de autenticação de cliente em computadores cliente nos seguintes cenários:<br /><br /><ul><li>Todos os pontos de gerenciamento na intranet aceitam apenas conexões de clientes HTTPS.</li><li>Os clientes se conectam ao Catálogo de Aplicativos pela Internet.</li></ul>|Para saber mais sobre os requisitos de certificado PKI, consulte [Requisitos do certificado PKI](../../core/plan-design/network/pki-certificate-requirements.md).|  
+|**Etapa 3:** Instale e configure o ponto de serviços Web do catálogo de aplicativos e o site do catálogo de aplicativos.|Você deve instalar as duas funções do sistema de site no mesmo site. Não é necessário instalá-las no mesmo servidor do sistema de site ou na mesma floresta do Active Directory. No entanto, o ponto de serviço Web do catálogo de aplicativos deve estar na mesma floresta que o banco de dados do site.|Para obter mais informações sobre o posicionamento de funções do sistema de sites, consulte [Planejamento para servidores de sistema de sites e funções de sistema de sites](../../core/plan-design/hierarchy/plan-for-site-system-servers-and-site-system-roles.md).<br /><br /> Para configurar o ponto de serviço Web e o ponto de sites da Web do Catálogo de Aplicativos, veja **Etapa 3: Instalar e configurar as funções do sistema de sites do Catálogo de Aplicativos**.|  
+|**Etapa 4:** Definir as configurações do cliente para o Catálogo de Aplicativos e o Centro de Software.|Defina as configurações do cliente padrão se você desejar que todos os usuários tenham a mesma configuração. Caso contrário, defina as configurações do cliente personalizadas para coleções específicas.|Para mais informações sobre configurações do cliente, consulte [Sobre as configurações do cliente](../../core/clients/deploy/about-client-settings.md).<br /><br /> Para saber mais sobre como definir estas configurações do cliente, veja **Etapa 4: Definir as configurações do cliente para o Catálogo de Aplicativos e o Centro de Software**.|  
 |**Etapa 5:** Verificar se o Catálogo de Aplicativos está funcionando.|Você pode usar o Catálogo de Aplicativos diretamente de um navegador ou do Centro de Software.|Veja **Etapa 5: Verificar se o Catálogo de Aplicativos está funcionando**.|  
 
 ## <a name="supplemental-procedures-to-install-and-configure-the-application-catalog-and-software-center"></a>Procedimentos complementares para instalar e configurar o catálogo de aplicativos e o Centro de Software  
@@ -105,7 +106,7 @@ Use as informações descritas neste artigo como auxílio para implantar as depe
 
 5.  Na página **Seleção de Função do Sistema**, selecione **Ponto de serviço Web do Catálogo de Aplicativos** e **Ponto de sites da Web do Catálogo de Aplicativos** na lista de funções disponíveis e escolha **Próximo**.  
 
-6.  Conclua o assistente.  
+6.  Conclua as etapas restantes.  
 
 ####  <a name="to-install-and-configure-the-application-catalog-site-systems-existing-site-system-server"></a>Para instalar e configurar os sistemas de site do catálogo de aplicativos: Servidor do sistema de site existente  
 
@@ -120,7 +121,7 @@ Use as informações descritas neste artigo como auxílio para implantar as depe
 
 5.  Na página **Seleção de Função do Sistema**, selecione **Ponto de serviço Web do Catálogo de Aplicativos** e **Ponto de sites da Web do Catálogo de Aplicativos** na lista de funções disponíveis e escolha **Próximo**.  
 
-6.  Conclua o assistente.  
+6.  Conclua as etapas restantes.  
 
 7. Verifique a instalação dessas funções do sistema de site usando as mensagens de status e analisando os arquivos de log:  
 
@@ -133,7 +134,7 @@ Use as informações descritas neste artigo como auxílio para implantar as depe
     Para obter mais informações, pesquise os arquivos de log **awebsvcMSI.log** e **portlwebMSI.log**.  
 
 ###  <a name="step-4-configure-the-client-settings-for-the-application-catalog-and-software-center"></a>Etapa 4: definir as configurações do cliente para o Catálogo de Aplicativos e o Centro de Software  
- Esse procedimento define as configurações do cliente padrão para o catálogo de aplicativos e o Centro de Software que se aplicam a todos os dispositivos na hierarquia. Se você deseja que essas configurações se apliquem a somente alguns dispositivos, é possível criar uma configuração personalizada do cliente e implantá-la em uma coleção que tem os dispositivos que receberão configurações específicas. Para obter mais informações sobre como criar uma configuração de dispositivo personalizada, consulte a seção [Como criar e implantar configurações personalizadas de cliente](../../core/clients/deploy/configure-client-settings.md#create-and-deploy-custom-client-settings) no artigo [Como configurar configurações de cliente no System Center Configuration Manager](../../core/clients/deploy/configure-client-settings.md).  
+ Esse procedimento define as configurações do cliente padrão para o Catálogo de Aplicativos e o Centro de Software que se aplicam a todos os dispositivos na hierarquia. Se você deseja que essas configurações se apliquem a somente alguns dispositivos, é possível criar uma configuração personalizada do cliente e implantá-la em uma coleção que tem os dispositivos com as configurações específicas. Para saber mais sobre como criar uma configuração de dispositivo personalizada, veja a seção [Como criar e implantar configurações personalizadas do cliente](../../core/clients/deploy/configure-client-settings.md#create-and-deploy-custom-client-settings) em [Definindo as configurações de gerenciamento de cliente no Configuration Manager](../../core/clients/deploy/configure-client-settings.md).  
 
 1.  No console do Configuration Manager, escolha **Administração** > **Configurações do Cliente** > **Configurações do Cliente Padrão**.  
 
@@ -143,41 +144,41 @@ Use as informações descritas neste artigo como auxílio para implantar as depe
 
     1.  Grupo**Agente de Computador** :  
 
-        -   **Ponto de sites da Web do Catálogo de Aplicativos padrão**  
+        -   **Ponto de sites do Catálogo de Aplicativos padrão**.  
 
-        -   **Adicionar sites da Web do Catálogo de Aplicativos padrão à zona de sites confiáveis do Internet Explorer**  
+        -   **Adicionar sites do Catálogo de Aplicativos padrão à zona de sites confiáveis do Internet Explorer**.  
 
-        -   **Nome da organização exibido no Centro de Software**  
+        -   **Nome da organização exibido no Centro de Software**.  
 
             > [!TIP]  
             >  Para especificar o nome da organização exibido no Catálogo de Aplicativos e configurar o tema do site, use a guia **Personalização** nas propriedades de sites da Web do Catálogo de Aplicativos.  
 
-        -   **Usar o novo Centro de Software** -Definido como **Sim** se você desejar usar o novo Centro de Software, que permite aos usuários procurar e instalar aplicativos disponíveis sem a necessidade de acessar o Catálogo de Aplicativos (que exige um navegador da Web habilitado para Silverlight).  
+        -   **Usar o novo Centro de Software**. Defina como **Sim** se quiser usar o novo Centro de Software, que permite aos usuários procurar e instalar aplicativos disponíveis sem a necessidade de acessar o Catálogo de Aplicativos (que exige um navegador da Web habilitado para Silverlight).  
 
-        -   **Permissões de instalação**  
+        -   **Permissões de instalação**.  
 
-        -   **Mostrar notificações para novas implantações**  
+        -   **Mostrar notificações para novas implantações**.  
 
     2.  Grupo**Gerenciamento de Energia** :  
 
-        -   **Permitir que os usuários excluam seu dispositivo do gerenciamento de energia**  
+        -   **Permitir que os usuários excluam seu dispositivo do gerenciamento de energia**.  
 
     3.  Grupo**Ferramentas Remotas** :  
 
-        -   **Os usuários podem alterar as configurações de política ou notificação no Centro de Software**  
+        -   **Os usuários podem alterar as configurações de política ou notificação no Centro de Software**.  
 
     4.  Grupo**Afinidade de Usuário e Dispositivo** :  
 
-        -   **Permitir que os usuários definam seus dispositivos primários**  
+        -   **Permitir que os usuários definam seus dispositivos primários**.  
 
     > [!NOTE]  
-    >  Para saber mais sobre as configurações do cliente, consulte [Sobre configurações de cliente no System Center Configuration Manager](../../core/clients/deploy/about-client-settings.md).  
+    >  Para obter mais informações sobre as configurações do cliente, consulte [About client settings in System Center Configuration Manager](../../core/clients/deploy/about-client-settings.md).  
 
 5.  Escolha **OK** para fechar a caixa de diálogo **Configurações do Cliente Padrão**.  
 
- Os computadores cliente serão definidos com essas configurações durante o próximo download da política do cliente. Para iniciar a recuperação de política para um cliente individual, veja [Como gerenciar clientes](../../core/clients/manage/manage-clients.md).
+Os computadores cliente serão definidos com essas configurações durante o próximo download da política do cliente. Para iniciar a recuperação de política para um cliente individual, veja [Como gerenciar clientes](../../core/clients/manage/manage-clients.md).
 
-#### <a name="how-to-customize-software-center-branding"></a>Como personalizar a identidade visual do Centro de Software
+#### <a name="to-customize-software-center-branding"></a>Para personalizar a identidade visual do Centro de Software
 
 A identidade visual personalizada do Centro de Software é aplicada de acordo com as regras a seguir:
 
@@ -186,7 +187,7 @@ A identidade visual personalizada do Centro de Software é aplicada de acordo co
 3. Se uma assinatura do Microsoft Intune estiver configurada e conectada ao Configuration Manager, o Centro de Software exibirá o nome da organização, a cor e o logotipo da empresa especificados nas propriedades de assinatura do Intune. Para obter mais informações, consulte [Configuring the Microsoft Intune subscription](https://docs.microsoft.com/sccm/mdm/deploy-use/setup-hybrid-mdm#step-3-configure-intune-subscription).
 
 > [!IMPORTANT]  
->  A marca do Centro de Software é sincronizada com o serviço do Intune a cada 14 dias, portanto, pode haver um atraso antes que as alterações feitas no Intune sejam exibidas no Configuration Manager.
+>  A identidade visual do Centro de Software é sincronizada com o serviço Intune a cada 14 dias. Portanto, pode ocorrer um atraso antes que as alterações feitas no Intune sejam exibidas no Configuration Manager.
 
 ###  <a name="step-5-verify-that-the-application-catalog-is-operational"></a>Etapa 5: Verificar se o Catálogo de Aplicativos está funcionando  
  Use os procedimentos a seguir para verificar se o catálogo de aplicativos está operacional. Você pode usar o Catálogo de Aplicativos diretamente de um navegador ou do Centro de Software.  

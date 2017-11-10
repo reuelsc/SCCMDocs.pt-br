@@ -1,5 +1,6 @@
 ---
-title: "Métodos de descoberta | Microsoft Docs"
+title: "Métodos de descoberta"
+titleSuffix: Configuration Manager
 ms.custom: na
 ms.date: 07/31/2017
 ms.prod: configuration-manager
@@ -13,11 +14,11 @@ caps.latest.revision: "8"
 author: Brenduns
 ms.author: brenduns
 manager: angrobe
-ms.openlocfilehash: 442e5e1fbddd00248819a8de79adc78929474fc0
-ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
+ms.openlocfilehash: 8753b423c1884fa7faddb6a834ef91b7c8fbde72
+ms.sourcegitcommit: c236214b2fcc13dae7bad96d7fb33f692868191d
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/07/2017
+ms.lasthandoff: 10/12/2017
 ---
 # <a name="about-discovery-methods-for-system-center-configuration-manager"></a>Sobre métodos de descoberta para o System Center Configuration Manager
 

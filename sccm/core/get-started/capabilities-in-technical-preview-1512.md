@@ -1,5 +1,6 @@
 ---
-title: Funcionalidades no Technical Preview 1512 do Configuration Manager
+title: Recursos no Technical Preview 1512
+titleSuffix: Configuration Manager
 description: "Saiba mais sobre os recursos disponíveis no Technical Preview do System Center Configuration Manager, versão 1512."
 ms.custom: na
 ms.date: 01/23/2017
@@ -15,11 +16,11 @@ author: Brenduns
 ms.author: brenduns
 manager: angrobe
 robots: noindex,nofollow
-ms.openlocfilehash: 5cf8d54fbaa98a75ac2a875a23a43b1d3e5be0dd
-ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
+ms.openlocfilehash: 7fc8729509bebdfa85efc3e181d3878f2ede620f
+ms.sourcegitcommit: c236214b2fcc13dae7bad96d7fb33f692868191d
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/07/2017
+ms.lasthandoff: 10/12/2017
 ---
 # <a name="capabilities-in-technical-preview-1512-for-system-center-configuration-manager"></a>Funcionalidades no Technical Preview 1512 do System Center Configuration Manager
 

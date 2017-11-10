@@ -1,5 +1,6 @@
 ---
-title: Portas usadas pelo Configuration Manager | Microsoft Docs
+title: "Portas usadas para conexões"
+titleSuffix: Configuration Manager
 description: "Saiba mais sobre as portas necessárias e personalizáveis que o System Center Configuration Manager usa para conexões."
 ms.custom: na
 ms.date: 09/19/2017
@@ -15,11 +16,11 @@ caps.handback.revision: "0"
 author: Brenduns
 ms.author: brenduns
 manager: angrobe
-ms.openlocfilehash: ac443971a725a7eeecaeea877b8e9636ebb4990b
-ms.sourcegitcommit: 51654bf8b5615eb99084d0a20d18ca3fccfa83a1
+ms.openlocfilehash: 663c64926e4653da3f7ee580ff01abb39cb85bee
+ms.sourcegitcommit: c236214b2fcc13dae7bad96d7fb33f692868191d
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/20/2017
+ms.lasthandoff: 10/12/2017
 ---
 # <a name="ports-used-in-system-center-configuration-manager"></a>Portas usadas no System Center Configuration Manager
 

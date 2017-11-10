@@ -1,5 +1,6 @@
 ---
-title: Ativando clientes | Microsoft Docs
+title: "Ativação de clientes"
+titleSuffix: Configuration Manager
 description: "Planeje a ativação de clientes no System Center Configuration Manager."
 ms.custom: na
 ms.date: 04/23/2017
@@ -14,11 +15,11 @@ caps.latest.revision: "6"
 author: arob98
 ms.author: angrobe
 manager: angrobe
-ms.openlocfilehash: 5445e51268c32e6f0c9970a8dc18f2d17aee88c9
-ms.sourcegitcommit: b438515490e04fb09c82a8af642d38e9a0605178
+ms.openlocfilehash: 2f22aa98b8184fe302c72d2b439750cf8ef25d38
+ms.sourcegitcommit: c236214b2fcc13dae7bad96d7fb33f692868191d
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/15/2017
+ms.lasthandoff: 10/12/2017
 ---
 # <a name="plan-how-to-wake-up-clients-in-system-center-configuration-manager"></a>Planejar a ativação de clientes no System Center Configuration Manager
 

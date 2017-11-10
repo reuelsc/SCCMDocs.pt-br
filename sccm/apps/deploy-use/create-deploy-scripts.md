@@ -1,5 +1,6 @@
 ---
-title: Criar e executar scripts com o Configuration Manager | Microsoft Docs
+title: Criar e executar scripts
+titleSuffix: Configuration Manager
 description: Criar e executar scripts em dispositivos cliente com o Configuration Manager.
 ms.custom: na
 ms.date: 09/15/2017
@@ -15,11 +16,11 @@ caps.handback.revision: "0"
 author: lleonard-msft
 ms.author: alleonar
 manager: angrobe
-ms.openlocfilehash: 4c90617890ba3751a7215e9ac54042d64cc1a227
-ms.sourcegitcommit: 96b79fa091f44e8e6ac5652f6cbbb4b873a8bad9
+ms.openlocfilehash: d1cbb760c6e40c21b97d0227ff93613066189d4b
+ms.sourcegitcommit: c236214b2fcc13dae7bad96d7fb33f692868191d
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/09/2017
+ms.lasthandoff: 10/12/2017
 ---
 # <a name="create-and-run-powershell-scripts-from-the-configuration-manager-console"></a>Criar e executar scripts do PowerShell do console do Configuration Manager
 

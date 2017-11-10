@@ -1,5 +1,6 @@
 ---
-title: "Selecionar os métodos de descoberta para o Configuration Manager | Microsoft Docs"
+title: "Selecionar métodos de descoberta"
+titleSuffix: Configuration Manager
 description: "Examine as considerações sobre quais métodos usar e em quais sites executá-los."
 ms.custom: na
 ms.date: 10/06/2016
@@ -14,11 +15,11 @@ caps.latest.revision: "9"
 author: Brenduns
 ms.author: brenduns
 manager: angrobe
-ms.openlocfilehash: 4b6be888be2ad6c1f5e7c0be33d9830bb870114e
-ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
+ms.openlocfilehash: 9f3ddd5f94c60155f742be97e92810f00ee968ac
+ms.sourcegitcommit: c236214b2fcc13dae7bad96d7fb33f692868191d
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/07/2017
+ms.lasthandoff: 10/12/2017
 ---
 # <a name="select-discovery-methods-to-use-for-system-center-configuration-manager"></a>Selecione os métodos de descoberta para usar com o System Center Configuration Manager
 

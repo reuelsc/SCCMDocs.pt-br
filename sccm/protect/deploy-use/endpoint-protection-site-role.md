@@ -1,5 +1,6 @@
 ---
-title: "Criar uma função do sistema de sites do ponto do Endpoint Protection | Microsoft Docs"
+title: "Criar função do sistema de site do ponto do Endpoint Protection"
+titleSuffix: Configuration Manager
 description: "Saiba como configurar o Endpoint Protection para gerenciar a segurança e malware em computadores cliente do Configuration Manager."
 defintion: 
 definition: 
@@ -16,11 +17,11 @@ caps.latest.revision: "21"
 author: NathBarn
 ms.author: nathbarn
 manager: angrobe
-ms.openlocfilehash: 6e717bcbe5ef8c3f2efa717d0cebb9e675e7c127
-ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
+ms.openlocfilehash: a52f01ad365ca637b2bfda51657d0294e1bf268f
+ms.sourcegitcommit: c236214b2fcc13dae7bad96d7fb33f692868191d
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/07/2017
+ms.lasthandoff: 10/12/2017
 ---
 # <a name="create-an-endpoint-protection-point-site-system-role"></a>Criar uma função do sistema de site do ponto do Endpoint Protection
 

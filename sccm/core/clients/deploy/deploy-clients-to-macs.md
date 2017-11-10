@@ -1,5 +1,6 @@
 ---
-title: Implantar os clientes Mac | Microsoft Docs
+title: Implantar clientes do Mac
+titleSuffix: Configuration Manager
 description: Saiba como implantar clientes em computadores Mac no System Center Configuration Manager.
 ms.custom: na
 ms.date: 05/04/2017
@@ -14,11 +15,11 @@ caps.latest.revision: "12"
 author: arob98
 ms.author: angrobe
 manager: angrobe
-ms.openlocfilehash: af6faf4cd317452f635ec30e74a3aa2e14f1662a
-ms.sourcegitcommit: b438515490e04fb09c82a8af642d38e9a0605178
+ms.openlocfilehash: 1b7f20a48e0e7219d933c367fb9f0315fc287dfd
+ms.sourcegitcommit: c236214b2fcc13dae7bad96d7fb33f692868191d
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/15/2017
+ms.lasthandoff: 10/12/2017
 ---
 # <a name="how-to-deploy-clients-to-macs"></a>How to deploy clients to Macs
 
@@ -125,7 +126,7 @@ Para uma automação que habilita o registro de muitos clientes, use a [ferramen
 
         -   'domínio\nome’. Por exemplo: 'contoso\mnorth'  
 
-        -   'user@domain'.  Por exemplo: 'mnorth@contoso.com'  
+        -   'user@domain'. Por exemplo: 'mnorth@contoso.com'  
 
             > [!IMPORTANT]  
             >  Quando você usa um endereço de email para popular o campo **Nome de usuário**, o Configuration Manager usa automaticamente o nome de domínio do endereço de email e o nome padrão do servidor do ponto proxy do registro para popular o campo **Nome do servidor**. Se o nome de domínio e o nome do servidor não corresponderem ao nome do servidor do ponto proxy do registro, diga aos usuários o nome correto a ser usado ao registrar seus computadores Mac.  
@@ -157,7 +158,7 @@ Use este procedimento para automação da instalação do cliente e solicitaçã
 
     -   'domínio\nome’. Por exemplo: 'contoso\mnorth'  
 
-    -   'user@domain'.  Por exemplo: 'mnorth@contoso.com'  
+    -   'user@domain'. Por exemplo: 'mnorth@contoso.com'  
 
      O nome de usuário e a senha correspondente devem ser compatíveis com uma conta de usuário do Active Directory com permissões de Leitura e Registro no modelo de certificado do cliente Mac.  
 

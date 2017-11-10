@@ -1,5 +1,6 @@
 ---
-title: "Nova versão 1706 | Microsoft Docs"
+title: "Nova versão 1706"
+titleSuffix: Configuration Manager
 description: "Veja os detalhes das alterações e os novos recursos introduzidos na versão 1706 do System Center Configuration Manager."
 ms.custom: na
 ms.date: 08/11/2017
@@ -12,11 +13,11 @@ ms.assetid: ac034143-003e-4629-aac2-99eaffef4db1
 author: Brenduns
 ms.author: brenduns
 manager: angrobe
-ms.openlocfilehash: 30bd5f1244534511e5cde8ee0e1a8c74819b1634
-ms.sourcegitcommit: 9a6f8e028fb5eb2e752da70f42a5b548339bd8f4
+ms.openlocfilehash: 9b3248f30470ee8250efcbf171642ea476627d68
+ms.sourcegitcommit: c236214b2fcc13dae7bad96d7fb33f692868191d
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/14/2017
+ms.lasthandoff: 10/12/2017
 ---
 # <a name="what39s-new-in-version-1706-of-system-center-configuration-manager"></a>Novidades da versão 1706 do System Center Configuration Manager
 

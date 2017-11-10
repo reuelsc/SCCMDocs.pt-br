@@ -1,5 +1,6 @@
 ---
-title: Funcionalidades no Technical Preview 1609 do Configuration Manager
+title: Recursos no Technical Preview 1609
+titleSuffix: Configuration Manager
 description: "Saiba mais sobre os recursos disponíveis no Technical Preview do System Center Configuration Manager, versão 1609."
 ms.custom: na
 ms.date: 01/23/2017
@@ -14,11 +15,11 @@ caps.latest.revision: "2"
 author: Brenduns
 ms.author: brenduns
 manager: angrobe
-ms.openlocfilehash: 89a41c8a3137d0e54011ddf9a1d9b4894ecb7df8
-ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
+ms.openlocfilehash: 1eebfc605ce62a2b2120e98948bfb9185307c9d0
+ms.sourcegitcommit: c236214b2fcc13dae7bad96d7fb33f692868191d
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/07/2017
+ms.lasthandoff: 10/12/2017
 ---
 # <a name="capabilities-in-technical-preview-1609-for-system-center-configuration-manager"></a>Funcionalidades no Technical Preview 1609 do System Center Configuration Manager
 

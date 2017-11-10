@@ -1,5 +1,6 @@
 ---
-title: "Propriedades de instalação de cliente no Active Directory Domain Services | Microsoft Docs"
+title: "Propriedades de instalação de cliente no Active Directory Domain Services"
+titleSuffix: Configuration Manager
 description: "Use as propriedades de instalação de cliente publicadas no Active Directory Domain Services no System Center Configuration Manager."
 ms.custom: na
 ms.date: 10/06/2016
@@ -15,11 +16,11 @@ caps.handback.revision: "0"
 author: arob98
 ms.author: angrobe
 manager: angrobe
-ms.openlocfilehash: 73e6b8c39b08bb661cb7ac66dad3c47d4abd09b0
-ms.sourcegitcommit: b438515490e04fb09c82a8af642d38e9a0605178
+ms.openlocfilehash: ece29d218140ffd28ac83a16e9999ba420f228a5
+ms.sourcegitcommit: c236214b2fcc13dae7bad96d7fb33f692868191d
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/15/2017
+ms.lasthandoff: 10/12/2017
 ---
 # <a name="about-client-installation-properties-published-to-active-directory-domain-services"></a>Sobre as propriedades de instalação de cliente publicadas nos Serviços de Domínio do Active Directory
 

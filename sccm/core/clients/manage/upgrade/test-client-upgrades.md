@@ -1,5 +1,6 @@
 ---
-title: "Testar atualizações do cliente em uma coleção de pré-produção | Microsoft Docs"
+title: "Testar atualizações do cliente em coleção de pré-produção"
+titleSuffix: Configuration Manager
 description: "Teste atualizações do cliente em uma coleção de pré-produção no System Center Configuration Manager."
 ms.custom: na
 ms.date: 05/04/2017
@@ -15,11 +16,11 @@ caps.handback.revision: "0"
 author: arob98
 ms.author: angrobe
 manager: angrobe
-ms.openlocfilehash: 5b6e60e7c6225e37dd345e99c703505e346cd0a4
-ms.sourcegitcommit: f6a428a8db7145affa388f59e0ad880bdfcf17b5
+ms.openlocfilehash: e301c3df57d3f625157015692374e512e00dfc60
+ms.sourcegitcommit: 1132886e07d0c0a87dcc7eeef4577dd8d8840023
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/14/2017
+ms.lasthandoff: 11/01/2017
 ---
 # <a name="how-to-test-client-upgrades-in-a-pre-production-collection-in-system-center-configuration-manager"></a>Como testar atualizações do cliente em uma coleção de pré-produção no System Center Configuration Manager
 
@@ -39,8 +40,10 @@ ms.lasthandoff: 09/14/2017
 3.  Promover o novo cliente para produção.  
 
 ##  <a name="to-configure-automatic-client-upgrades-to-use-a-pre-production-collection"></a>Para configurar atualizações automáticas do cliente para usar uma coleção de pré-produção  
+> [!IMPORTANT]
+> Não há suporte para a implantação de cliente de pré-produção para computadores de grupo de trabalho. Eles não podem usar a autenticação necessária para o ponto de distribuição acessar o pacote de cliente de pré-produção.  Eles receberão o cliente mais recente quando for promovido para o cliente de produção.
 
-1. [Configure uma coleção](..\collections\create-collections.md) que contém os computadores nos quais você deseja implantar o cliente de pré-produção. Não inclua computadores de grupo de trabalho em coleções de pré-produção. Eles não podem usar a autenticação necessária para o ponto de distribuição acessar o pacote de cliente de pré-produção.   
+1. [Configure uma coleção](..\collections\create-collections.md) que contém os computadores nos quais você deseja implantar o cliente de pré-produção.   
 
 1.  No console do Configuration Manager, abra **Administração** > **Configuração do Site** > **Sites** e selecione **Configurações da Hierarquia**.  
 

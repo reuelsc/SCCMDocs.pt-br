@@ -1,5 +1,6 @@
 ---
-title: Funcionalidades no Technical Preview 1702 do Configuration Manager
+title: Recursos no Technical Preview 1702
+titleSuffix: Configuration Manager
 description: "Saiba mais sobre os recursos disponíveis no Technical Preview do System Center Configuration Manager, versão 1702."
 ms.custom: na
 ms.date: 02/24/2017
@@ -14,11 +15,11 @@ caps.latest.revision: "5"
 author: Brenduns
 ms.author: brenduns
 manager: angrobe
-ms.openlocfilehash: 3bdbcd1a3c64a1d50f2f6219b2a5e17d60979864
-ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
+ms.openlocfilehash: 42712d25d7ee21b320192b0d46c5d13585932371
+ms.sourcegitcommit: c236214b2fcc13dae7bad96d7fb33f692868191d
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/07/2017
+ms.lasthandoff: 10/12/2017
 ---
 # <a name="capabilities-in-technical-preview-1702-for-system-center-configuration-manager"></a>Funcionalidades do Technical Preview 1702 do System Center Configuration Manager
 

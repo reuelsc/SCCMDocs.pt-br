@@ -1,5 +1,6 @@
 ---
-title: "Transferências de dados | Microsoft Docs"
+title: "Transferências de dados"
+titleSuffix: Configuration Manager
 description: "Saiba como o Configuration Manager move dados entre sites e como é possível gerenciar a transferência de dados pela rede."
 ms.custom: na
 ms.date: 10/06/2016
@@ -14,11 +15,11 @@ caps.latest.revision: "12"
 author: Brenduns
 ms.author: brenduns
 manager: angrobe
-ms.openlocfilehash: bf0fdc8d4b4a72760b2cfb91231378a17df01594
-ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
+ms.openlocfilehash: 29e15b9ebe01e9e266df24267bf402e3d07de095
+ms.sourcegitcommit: c236214b2fcc13dae7bad96d7fb33f692868191d
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/07/2017
+ms.lasthandoff: 10/12/2017
 ---
 # <a name="data-transfers-between-sites-in-system-center-configuration-manager"></a>Transferência de dados entre sites no System Center Configuration Manager
 
@@ -150,7 +151,7 @@ Operacionalmente, exibições distribuídas são invisíveis para um usuário ad
 Enquanto um link de replicação tiver um tipo de dados habilitado para exibições distribuídas, o site primário filho não replicará os dados no site de administração central. Assim que você desliga as exibições distribuídas de um tipo de dados, o site primário filho retoma a replicação desses dados no site de administração central como parte da replicação de dados normal. No entanto, para que esses dados estejam disponíveis no site de administração central, os grupos de replicação que os têm devem reinicializar entre o site primário e o site de administração central. Da mesma forma, depois de desinstalar um site primário com visões distribuídas ativadas, o site de administração central deve completar a reinicialização dos seus dados para acessar dados habilitados para visões distribuídas no site de administração central.  
 
 > [!IMPORTANT]  
-> Quando você usa exibições distribuídas em qualquer link de replicação na hierarquia do site, deve desligar exibições distribuídas para todos os links de replicação para desinstalar qualquer site primário. Para obter mais informações, consulte [Desinstalar um site primário configurado com exibições distribuídas](../../../core/servers/deploy/install/uninstall-sites-and-hierarchies.md#BKMK_UninstallPrimaryDistViews).  
+> Quando você usa exibições distribuídas em qualquer link de replicação na hierarquia do site, deve desligar exibições distribuídas para todos os links de replicação para desinstalar qualquer site primário. Para obter mais informações, consulte [Uninstall a primary site that is configured with distributed views](../../../core/servers/deploy/install/uninstall-sites-and-hierarchies.md#BKMK_UninstallPrimaryDistViews).  
 
 #### <a name="prerequisites-and-limitations-for-distributed-views"></a>Pré-requisitos e limitações para exibições distribuídas  
 

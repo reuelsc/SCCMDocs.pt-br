@@ -1,5 +1,6 @@
 ---
-title: "Segurança e privacidade do cliente | Microsoft Docs"
+title: "Segurança e privacidade do cliente"
+titleSuffix: Configuration Manager
 description: "Saiba mais sobre a privacidade e a segurança de clientes no System Center Configuration Manager."
 ms.custom: na
 ms.date: 04/23/2017
@@ -15,11 +16,11 @@ caps.handback.revision: "0"
 author: arob98
 ms.author: angrobe
 manager: angrobe
-ms.openlocfilehash: b354155d83ce6f3a14b13b98fb54e1f3bd2f54da
-ms.sourcegitcommit: b438515490e04fb09c82a8af642d38e9a0605178
+ms.openlocfilehash: b28a461894bcd1cffd3c98bfce9fcfe22cc7a8f0
+ms.sourcegitcommit: c236214b2fcc13dae7bad96d7fb33f692868191d
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/15/2017
+ms.lasthandoff: 10/12/2017
 ---
 # <a name="security-and-privacy-for-clients-in-system-center-configuration-manager"></a>Segurança e privacidade de clientes no System Center Configuration Manager
 

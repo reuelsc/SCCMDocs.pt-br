@@ -1,5 +1,6 @@
 ---
-title: "Conceitos básicos de administração baseada em funções | Microsoft Docs"
+title: "Fundamentos da administração baseada em funções"
+titleSuffix: Configuration Manager
 description: "Use a administração baseada em funções para controlar o acesso administrativo ao Configuration Manager e aos objetos gerenciados."
 ms.custom: na
 ms.date: 1/3/2017
@@ -14,11 +15,11 @@ caps.latest.revision: "10"
 author: Brenduns
 ms.author: brenduns
 manager: angrobe
-ms.openlocfilehash: ddf2ad1cae51c1e36df5a6d86822e2b9abe604e2
-ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
+ms.openlocfilehash: 39b717ede29749c1c7922240f1f45387dab9595f
+ms.sourcegitcommit: c236214b2fcc13dae7bad96d7fb33f692868191d
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/07/2017
+ms.lasthandoff: 10/12/2017
 ---
 # <a name="fundamentals-of-role-based-administration-for-system-center-configuration-manager"></a>Fundamentos de administração baseada em funções para o System Center Configuration Manager
 

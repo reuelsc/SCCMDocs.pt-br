@@ -1,5 +1,6 @@
 ---
-title: "Projetar uma hierarquia de site – Configuration Manager | Microsoft Docs"
+title: 'Criar uma hierarquia de site '
+titleSuffix: Configuration Manager
 description: "Compreenda as topologias disponíveis e as opções de gerenciamento para o System Center Configuration Manager para poder planejar a hierarquia do site."
 ms.custom: na
 ms.date: 8/24/2017
@@ -15,11 +16,11 @@ caps.handback.revision: "0"
 author: Brenduns
 ms.author: brenduns
 manager: angrobe
-ms.openlocfilehash: 2c587c0ad894dc567a6f1804626db611ff9a1013
-ms.sourcegitcommit: 974fbc4408028c8be28911e5cd646efcf47c7f15
+ms.openlocfilehash: 2d8c2c7f75ff0f288167c697fbcc1f3202dc95d6
+ms.sourcegitcommit: c236214b2fcc13dae7bad96d7fb33f692868191d
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/28/2017
+ms.lasthandoff: 10/12/2017
 ---
 # <a name="design-a-hierarchy-of-sites-for-system-center-configuration-manager"></a>Criar uma hierarquia de sites para o System Center Configuration Manager
 

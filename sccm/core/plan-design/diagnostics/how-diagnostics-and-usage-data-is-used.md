@@ -1,5 +1,6 @@
 ---
-title: "Uso dos dados de diagnóstico | Microsoft Docs"
+title: "Uso de dados de diagnóstico"
+titleSuffix: Configuration Manager
 description: "Saiba mais sobre como a Microsoft usa os dados de diagnóstico e de uso que o System Center Configuration Manager coleta."
 ms.custom: na
 ms.date: 12/29/2016
@@ -14,11 +15,11 @@ caps.latest.revision: "5"
 author: Brenduns
 ms.author: brenduns
 manager: angrobe
-ms.openlocfilehash: 9864f6ba7b9a2211c99b1a5d9ebd582e01ccfeb6
-ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
+ms.openlocfilehash: e6395421e88baf822bc0a8971119b6fe360e6680
+ms.sourcegitcommit: c236214b2fcc13dae7bad96d7fb33f692868191d
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/07/2017
+ms.lasthandoff: 10/12/2017
 ---
 # <a name="how-diagnostics-and-usage-data-is-used-for-system-center-configuration-manager"></a>Como os dados de diagnóstico e de uso são usados para o System Center Configuration Manager
 

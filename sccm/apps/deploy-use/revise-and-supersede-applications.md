@@ -1,5 +1,6 @@
 ---
-title: Revisar e substituir aplicativos | Microsoft Docs
+title: Revisar e substituir aplicativos
+titleSuffix: Configuration Manager
 description: "Saiba como trabalhar com versões de aplicativos do System Center Configuration Manager e como substituir aplicativos."
 ms.custom: na
 ms.date: 10/06/2016
@@ -15,11 +16,11 @@ caps.handback.revision: "0"
 author: mattbriggs
 ms.author: mabrigg
 manager: angrobe
-ms.openlocfilehash: c0a43ac7b529444b33edf8afbf52911127226f88
-ms.sourcegitcommit: b438515490e04fb09c82a8af642d38e9a0605178
+ms.openlocfilehash: 60d5e05423b959baa5110ae7f2b9fc7d77dc9ebf
+ms.sourcegitcommit: c236214b2fcc13dae7bad96d7fb33f692868191d
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/15/2017
+ms.lasthandoff: 10/12/2017
 ---
 # <a name="revise-and-supersede-applications-in-system-center-configuration-manager"></a>Revisar e substituir aplicativos no System Center Configuration Manager
 

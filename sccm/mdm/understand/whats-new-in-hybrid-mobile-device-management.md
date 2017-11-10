@@ -1,5 +1,6 @@
 ---
-title: "O que há de novo no MDM híbrido com o Configuration Manager | Microsoft Docs"
+title: "Novidades no MDM híbrido"
+titleSuffix: Configuration Manager
 description: "Saiba mais sobre os novos recursos de gerenciamento de dispositivo móvel disponíveis para implantações híbridas com o Configuration Manager e o Intune."
 ms.custom: na
 ms.date: 10/04/2017
@@ -13,11 +14,11 @@ ms.assetid: 7b127cee-61f1-4681-9760-caebed36ddf5
 author: dougeby
 ms.author: dougeby
 manager: angrobe
-ms.openlocfilehash: 6c2c6ffee3b2084ede61e5602a78bf5ca82446f6
-ms.sourcegitcommit: 6c70e0af8d9af208009641786a3b555db4482e97
+ms.openlocfilehash: 515aa4ae71a4e8b8bdfa3bbe693386c5ddf44223
+ms.sourcegitcommit: e858bacecf0f964ed619b3c2f83663c4dab92998
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/05/2017
+ms.lasthandoff: 11/03/2017
 ---
 # <a name="whats-new-in-hybrid-mobile-device-management-with-system-center-configuration-manager-and-microsoft-intune"></a>Novidades no gerenciamento de dispositivo móvel híbrido com o System Center Configuration Manager e o Microsoft Intune
 
@@ -39,6 +40,51 @@ Cada seção deste artigo lista recursos híbridos em três categorias diferente
 |**Novo no Microsoft Intune** | De modo geral, todos os recursos listados nesta categoria devem funcionar com todas as versões do Configuration Manager. Isso inclui versões do System Center 2012 R2 Configuration Manager, uma vez que esses recursos exigem apenas o serviço Intune e não exigem funcionalidades adicionais no Configuration Manager.|
 |**Novo no Configuration Manager Technical Preview**| Todos os recursos listados nessa categoria funcionam apenas com a versão de Technical Preview especificada. Para testar esses recursos, você deve instalar a versão de Technical Preview especificada na descrição do recurso. Para mais informações, confira [Technical Preview do System Center Configuration Manager](../../core/get-started/technical-preview.md).|
 |**Novo no Configuration Manager (Branch Atual)**| Todos os recursos listados nessa categoria funcionam apenas com a versão especificada do Configuration Manager (Branch Atual), como a versão 1511 ou 1602. Se estiver usando uma versão mais antiga do Configuration Manager para sua implantação híbrida, atualize para a versão do Configuration Manager (Branch Atual) especificada na descrição do recurso. Para mais informações, confira [Atualização para o System Center Configuration Manager](../../core/servers/deploy/install/upgrade-to-configuration-manager.md).|
+
+
+## <a name="october-2017"></a>Outubro de 2017
+
+### <a name="new-in-configuration-manager-technical-preview-1709"></a>Novo no Configuration Manager Technical Preview 1709
+
+- **Melhoria da experiência do perfil de VPN no Console do Configuration Manager** <!-- 1313282 -->     
+  Agora, as configurações de perfil VPN são filtradas de acordo com a plataforma. Quando você cria novos perfis de VPN, cada plataforma com suporte contém apenas as configurações apropriadas para a plataforma. Os perfis de VPN existentes não são afetados. Leia mais sobre essa mudança [aqui](/sccm/core/get-started/capabilities-in-technical-preview-1709#improved-vpn-profile-experience-in-configuration-manager-console).
+
+
+### <a name="new-in-microsoft-intune"></a>Novo no Microsoft Intune  
+
+- **Suporte à autenticação baseada em certificado no Portal da Empresa para iOS** <!--1029830--> Adicionamos suporte para autenticação baseada em certificado (CBA) no aplicativo Portal da Empresa para iOS. Usuários com CBA inserem seu nome de usuário, depois, tocam no link "Entrar com um certificado". CBA já é compatível com os aplicativos Portal da Empresa para Android e Windows. Saiba mais na página para [entrar no aplicativo Portal da Empresa](https://docs.microsoft.com/intune-user-help/sign-in-to-the-company-portal).
+
+- **Aprimoramentos no fluxo de trabalho de configuração do dispositivo no Portal da Empresa** <!--1490692-->    
+  Melhoramos o fluxo de trabalho de configuração de dispositivo no aplicativo Portal da Empresa para Android. A linguagem é mais fácil de usar e mais específica para sua empresa. Combinamos as telas sempre que possível. Veja isso na página [Novidades na interface do usuário do aplicativo](https://docs.microsoft.com/intune/whats-new-app-ui#week-of-october-2-2017).
+
+- **Orientação aprimorada para a solicitação de acesso aos contatos em dispositivos Android** <!--1484985-->    
+  O aplicativo Portal da Empresa para Android geralmente exige que o usuário final aceite a permissão de Contatos. Se um usuário final recusar esse acesso, verá uma notificação no aplicativo alertando-o para concedê-lo para acesso condicional. 
+
+- **Proteger a correção de inicialização para Android** <!--1490712-->    
+  Os usuários finais com dispositivos Android poderão tocar no motivo da não conformidade no aplicativo Portal da Empresa. Quando possível, isso os levará diretamente para o local correto no aplicativo de configurações para corrigir o problema. 
+
+- **Notificações por push adicionais para usuários finais no aplicativo Portal da Empresa para Android Oreo** <!--1475932 -->    
+  Os usuários finais verão notificações adicionais para indicar quando o aplicativo Portal da Empresa para Android Oreo está executando tarefas em segundo plano, como recuperar as políticas do serviço Intune. As notificações aumentam a transparência para os usuários finais, informando sobre quando o Portal da Empresa estiver executando tarefas administrativas em seu dispositivo. Isso faz parte da [otimização geral da interface de usuário do Portal da Empresa](https://blogs.technet.microsoft.com/intunesupport/2017/08/21/android-8-0-o-behaviour-changes-and-microsoft-intune) para o aplicativo Portal da Empresa para Android Oreo. 
+
+- **Novos comportamentos para o aplicativo Portal da Empresa para Android com perfis de trabalho** <!--1485783-->    
+  Quando você registra um dispositivo com Android for Work com um perfil de trabalho, é o aplicativo Portal da Empresa no perfil de trabalho que executa tarefas de gerenciamento no dispositivo. 
+
+  A menos que você esteja usando um aplicativo habilitado para MAM no perfil particular, o aplicativo Portal da Empresa para Android não terá qualquer uso. Para melhorar a experiência do perfil de trabalho, o Intune ocultará automaticamente o aplicativo Portal da Empresa pessoal após um registro de perfil de trabalho bem-sucedido.
+
+  O aplicativo Portal da Empresa para Android pode ser habilitado a qualquer momento no perfil pessoal navegando até [Portal da Empresa na Play Store](https://play.google.com/store/apps/details?id=com.microsoft.windowsintune.companyportal) e tocando em **Habilitar**.
+
+- **Portal da Empresa para Windows 8.1 e Windows Phone 8.1 mudando para o modo de manutenção** <!--1428681-->    
+ Foi adicionado um aviso para anunciar que os aplicativos Portal da Empresa para Windows 8.1 e Windows Phone 8.1 estão mudando para modo de manutenção. Para obter mais detalhes, veja [Avisos](#notices).  
+
+- **Bloquear registro de dispositivo Samsung Knox sem suporte** <!-- 1490695 -->    
+  O aplicativo Portal da Empresa tenta registrar apenas os dispositivos Samsung Knox com suporte. Para evitar erros de ativação do KNOX que impedem o registro do MDM, a tentativa do registro do dispositivo só ocorrerá se o dispositivo for exibido na [lista de dispositivos publicada pela Samsung](https://www.samsungknox.com/knox-supported-devices/knox-workspace). Os dispositivos Samsung podem ter números de modelo que oferecem suporte a KNOX, enquanto outros não. Verifique a compatibilidade do Knox com o revendedor de seu dispositivo antes de comprar e implantar. Encontre a lista completa de dispositivos verificados nas [configurações de política do Android e Samsung KNOX Standard](https://docs.microsoft.com/intune-classic/deploy-use/android-policy-settings-in-microsoft-intune#supported-samsung-knox-standard-devices).
+
+- **Fim do suporte para Android 4.3 e inferior** <!--1171126, 1326920 -->    
+  Um aviso foi adicionado para o fim do suporte para Android 4.3 e inferior. Para obter mais detalhes, veja [Avisos](#notices).
+
+- **Informar aos usuários finais quais informações do dispositivo podem ser vistas em dispositivos registrados** <!--1165314-->    
+  Estamos adicionando o **Tipo de Propriedade** à tela de Detalhes do Dispositivo em todos os aplicativos Portal da Empresa. Isso permitirá que os usuários obtenham mais informações sobre privacidade diretamente do artigo [Quais informações sua empresa pode ver?](https://docs.microsoft.com/intune-user-help/what-info-can-your-company-see-when-you-enroll-your-device-in-intune). Isso será implantado em todos os aplicativos Portal da Empresa em breve. Anunciamos isso para iOS em [setembro](https://docs.microsoft.com/intune/whats-new#week-of-september-11-2017). 
+
 
 ## <a name="september-2017"></a>Setembro de 2017
 
@@ -94,49 +140,39 @@ Os seguintes recursos que estavam anteriormente disponíveis nas versões do Con
 
 - **Alterar sua autoridade de MDM**
 
-  A partir do Configuration Manager versão 1610, você pode alterar sua autoridade MDM sem precisar entrar em contato com o Suporte da Microsoft e sem a necessidade de cancelar o registro e registrar novamente os dispositivos gerenciados existentes. Para obter detalhes, veja [Alterar sua autoridade de MDM]( /sccm/mdm/deploy-use/change-mdm-authority).
+  A partir do Configuration Manager versão 1610, você pode alterar sua autoridade MDM sem precisar entrar em contato com o Suporte da Microsoft e sem a necessidade de cancelar o registro e registrar novamente os dispositivos gerenciados existentes. Para obter detalhes, veja [Alterar sua autoridade de MDM](/sccm/mdm/deploy-use/change-mdm-authority).
 
 - **Integração gerenciada de proxy do navegador e aplicativo**
 
-  O Intune Managed Browser agora pode ser integrado ao serviço de Proxy de Aplicativo do Azure AD para permitir que os usuários acessem sites internos, mesmo quando estão trabalhando remotamente. Os usuários do navegador inserem a URL normalmente e o Managed Browser encaminha a solicitação por meio do gateway Web do proxy de aplicativo. Para saber mais, veja [Gerenciar o acesso à Internet usando políticas no navegador gerenciado](/intune/app-configuration-managed-browser).
+  O Intune Managed Browser agora pode ser integrado ao serviço de Proxy de Aplicativo do Azure AD para permitir que os usuários acessem sites internos, mesmo quando estão trabalhando remotamente. Os usuários do navegador inserem a URL normalmente e o Managed Browser encaminha a solicitação por meio do gateway Web do proxy de aplicativo. Para saber mais, veja [Gerenciar o acesso à Internet usando políticas no navegador gerenciado](https://docs.microsoft.com/intune/app-configuration-managed-browser).
 
 - **Agora, o aplicativo Portal da Empresa para Android tem uma nova experiência do usuário final para as Políticas de Proteção do Aplicativo**
 
-  Com base nos comentários do cliente, modificamos o aplicativo Portal da Empresa para Android mostrar um botão **Acessar Conteúdo da Empresa**. A intenção é impedir que os usuários finais passem desnecessariamente pelo processo de inscrição quando eles só precisam acessar os aplicativos que dão suporte a Políticas de Proteção do Aplicativo, um recurso de gerenciamento de aplicativo móvel do Intune. Veja essas alterações na página [Novidades na interface do usuário do aplicativo](/intune/whats-new-app-ui).
+  Com base nos comentários do cliente, modificamos o aplicativo Portal da Empresa para Android mostrar um botão **Acessar Conteúdo da Empresa**. A intenção é impedir que os usuários finais passem desnecessariamente pelo processo de inscrição quando eles só precisam acessar os aplicativos que dão suporte a Políticas de Proteção do Aplicativo, um recurso de gerenciamento de aplicativo móvel do Intune. Veja essas alterações na página [Novidades na interface do usuário do aplicativo](https://docs.microsoft.com/intune/whats-new-app-ui).
 
 - **Nova ação de menu para remover facilmente o Portal da Empresa**
 
-  Com base nos comentários do usuário, o aplicativo Portal da Empresa para Android adicionou uma nova ação de menu para iniciar a remoção do Portal da Empresa de seu dispositivo. Esta ação remove o dispositivo do gerenciamento do Intune para que o aplicativo possa ser removido do dispositivo pelo usuário. Veja essas alterações na página [Novidades na interface do usuário do aplicativo](/intune/whats-new-app-ui) e na [documentação de usuário final do Android](/intune-user-help/unenroll-your-device-from-intune-android).
+  Com base nos comentários do usuário, o aplicativo Portal da Empresa para Android adicionou uma nova ação de menu para iniciar a remoção do Portal da Empresa de seu dispositivo. Esta ação remove o dispositivo do gerenciamento do Intune para que o aplicativo possa ser removido do dispositivo pelo usuário. Veja essas alterações na página [Novidades na interface do usuário do aplicativo](https://docs.microsoft.com/intune/whats-new-app-ui) e na [documentação de usuário final do Android](https://docs.microsoft.com/intune-user-help/unenroll-your-device-from-intune-android).
 
 - **Aprimoramentos na sincronização de aplicativo com a Atualização do Windows 10 para Criadores**
 
-  O aplicativo Portal da Empresa para Windows 10 iniciará automaticamente uma sincronização para solicitações de instalação de aplicativo para dispositivos com a Atualização do Windows 10 para Criadores (versão 1703). Isso reduzirá o problema de atraso das instalações de aplicativos durante o estado de "Sincronização Pendente". Além disso, os usuários poderão iniciar manualmente uma sincronização de dentro do aplicativo. Veja essas alterações na página [Novidades na interface do usuário do aplicativo](/intune/whats-new-app-ui).
+  O aplicativo Portal da Empresa para Windows 10 iniciará automaticamente uma sincronização para solicitações de instalação de aplicativo para dispositivos com a Atualização do Windows 10 para Criadores (versão 1703). Isso reduzirá o problema de atraso das instalações de aplicativos durante o estado de "Sincronização Pendente". Além disso, os usuários poderão iniciar manualmente uma sincronização de dentro do aplicativo. Veja essas alterações na página [Novidades na interface do usuário do aplicativo](https://docs.microsoft.com/intune/whats-new-app-ui).
 
 - **Nova experiência orientada para o Portal da Empresa do Windows 10**
 
   O aplicativo do Portal da Empresa para Windows 10 inclui uma experiência passo a passo interativa do Intune para dispositivos que não foram identificados nem registrados. A nova experiência fornece instruções passo a passo que guiam o usuário pelo processo de inscrição no Azure Active Directory (exigido para recursos de Acesso Condicional) e inscrição de MDM (exigido para os recursos de gerenciamento de dispositivo). A experiência guiada estará acessível na home page do Portal da Empresa. Os usuários podem continuar a usar o aplicativo se não concluírem o registro e inscrição, mas enfrentarão uma funcionalidade limitada.
 
-  Esta atualização só fica visível em dispositivos que executam a Atualização de Aniversário do Windows 10 (build 1607) ou superior. Veja essas alterações na página [Novidades na interface do usuário do aplicativo](/intune/whats-new-app-ui).
+  Esta atualização só fica visível em dispositivos que executam a Atualização de Aniversário do Windows 10 (build 1607) ou superior. Veja essas alterações na página [Novidades na interface do usuário do aplicativo](https://docs.microsoft.com/intune/whats-new-app-ui).
 
 - **Aprimoramentos nos blocos de aplicativo no aplicativo Portal da Empresa para iOS**
 
-  Atualizamos o design dos blocos do aplicativo na home page a fim de refletir a cor de identidade visual que você definiu para o Portal da Empresa. Para saber mais, veja [Novidades na interface do usuário do aplicativo](/intune/whats-new-app-ui).
+  Atualizamos o design dos blocos do aplicativo na home page a fim de refletir a cor de identidade visual que você definiu para o Portal da Empresa. Para saber mais, veja [Novidades na interface do usuário do aplicativo](https://docs.microsoft.com/intune/whats-new-app-ui).
 
 - **O seletor de conta já está disponível para o aplicativo Portal da Empresa para iOS**
 
-  Os usuários de dispositivos iOS poderão ver nosso novo seletor de conta ao entrar no Portal da Empresa se usarem sua conta corporativa ou de estudante para entrar em outros aplicativos da Microsoft. Para saber mais, veja [Novidades na interface do usuário do aplicativo](/intune/whats-new-app-ui).
+  Os usuários de dispositivos iOS poderão ver nosso novo seletor de conta ao entrar no Portal da Empresa se usarem sua conta corporativa ou de estudante para entrar em outros aplicativos da Microsoft. Para saber mais, veja [Novidades na interface do usuário do aplicativo](https://docs.microsoft.com/intune/whats-new-app-ui).
 
 ### <a name="new-in-configuration-manager-technical-preview-1706"></a>Novidades da Visualização Técnica 1706 do Configuration Manager
-
-- **Novas configurações de política de gerenciamento de aplicativo móvel**    
-
-  As seguintes configurações de política MAM (gerenciamento de aplicativo móvel) estão disponíveis:
-
-  - **Bloquear captura de tela (somente dispositivos Android):** especifica que as funcionalidades de captura de tela do dispositivo sejam bloqueadas ao usar esse aplicativo.
-  - **Desabilitar a sincronização de contato:** impede que o aplicativo salve dados no aplicativo de Contatos nativo do dispositivo.
-  - **Desabilitar impressão:** impede que o aplicativo imprima dados corporativos ou de estudante.
-
-  Veja [proteger aplicativos usando políticas de proteção de aplicativos no Configuration Manager](https://docs.microsoft.com/sccm/mdm/deploy-use/protect-apps-using-mam-policies) para testar as novas configurações de política de proteção do aplicativo.
 
 - **Novas definições de item de configuração do Windows**<!-- 1354715 -->    
 
@@ -173,17 +209,17 @@ Os seguintes recursos que estavam anteriormente disponíveis nas versões do Con
 
 - **Novos ícones para o Navegador Gerenciado e o Portal da Empresa**
 
-  O Navegador Gerenciado está recebendo ícones atualizados para as versões do Android e iOS do aplicativo. O novo ícone conterá o emblema Intune atualizado para torná-lo mais consistente com outros aplicativos no Enterprise Mobility + Security (EM+S). Você pode ver o ícone novo para o Navegador Gerenciado nas [novidades na página de IU do aplicativo Intune](/intune/whats-new/whats-new-in-intune-app-ui.md).
+  O Navegador Gerenciado está recebendo ícones atualizados para as versões do Android e iOS do aplicativo. O novo ícone conterá o emblema Intune atualizado para torná-lo mais consistente com outros aplicativos no Enterprise Mobility + Security (EM+S). Você pode ver o ícone novo para o Navegador Gerenciado nas [novidades na página de IU do aplicativo Intune](https://docs.microsoft.com/intune/whats-new-app-ui).
 
   O Portal da Empresa também está recebendo ícones atualizados para as versões do Android, iOS e Windows do aplicativo para aprimorar a consistência com outros aplicativos EM+S. Esses ícones serão lançados gradualmente nas plataformas de abril até o final de maio.
 
 - **Indicador de progresso de entrada no Portal da Empresa para Android**
 
-  Uma atualização para o aplicativo para Android do Portal da Empresa mostra um indicador de progresso de entrada quando o usuário inicia ou retoma o aplicativo. O indicador avança em novos status, começando com "Conectando …", então, "Entrando..." e "Verificando os requisitos de segurança..." antes de permitir que o usuário acesse o aplicativo. Você pode ver as novas telas do aplicativo de Portal da Empresa para Android nas [novidades na página de IU do aplicativo Intune](/intune/whats-new/whats-new-in-intune-app-ui.md).
+  Uma atualização para o aplicativo para Android do Portal da Empresa mostra um indicador de progresso de entrada quando o usuário inicia ou retoma o aplicativo. O indicador avança em novos status, começando com "Conectando …", então, "Entrando..." e "Verificando os requisitos de segurança..." antes de permitir que o usuário acesse o aplicativo. Você pode ver as novas telas do aplicativo de Portal da Empresa para Android nas [novidades na página de IU do aplicativo Intune](https://docs.microsoft.com/intune/whats-new-app-ui).
 
 - **Bloquear os aplicativos de acessarem o SharePoint Online**
 
-  Agora, você pode criar uma política de acesso condicional com base em aplicativos para impedir que os aplicativos, que não têm políticas de proteção do aplicativo aplicadas, acessem o [SharePoint Online](/InTune/deploy-use/mam-ca-for-sharepoint-online). No cenário de acesso condicional com base em aplicativos, você pode especificar os aplicativos que deseja ter acesso ao SharePoint Online usando o portal do Azure.
+  Agora, você pode criar uma política de acesso condicional com base em aplicativos para impedir que os aplicativos, que não têm políticas de proteção do aplicativo aplicadas, acessem o [SharePoint Online](https://docs.microsoft.com/intune-classic/deploy-use/mam-ca-for-sharepoint-online). No cenário de acesso condicional com base em aplicativos, você pode especificar os aplicativos que deseja ter acesso ao SharePoint Online usando o portal do Azure.
 
 ### <a name="new-in-configuration-manager-technical-preview-1704"></a>Novidades no Configuration Manager Technical Preview 1704
 
@@ -205,7 +241,7 @@ Os seguintes recursos que estavam anteriormente disponíveis nas versões do Con
   - Aplicativos de navegação: a exibição **Todos os aplicativos** mostra uma exibição com as guias **Em destaque**, **Todos** e **Categorias** para facilitar a navegação.
   - Suporte: as guias **Meus dispositivos** e **Entrar em contato com a TI** foram atualizadas para melhorar a legibilidade.
 
-  Para obter mais informações sobre essas alterações, confira [Atualizações da interface do usuário para aplicativos de usuário final do Intune](/intune/whats-new/whats-new-in-intune-app-ui).
+  Para obter mais informações sobre essas alterações, confira [Atualizações da interface do usuário para aplicativos de usuário final do Intune](https://docs.microsoft.com/intune/whats-new-app-ui).
 
 - **Assinatura de Script para o Portal de Empresa do Windows 10**
 
@@ -292,7 +328,7 @@ Os seguintes recursos híbridos adicionais também estão incluídos na versão 
 
 - **Modernização do site Portal da Empresa**
 
-  O site Portal da Empresa dá suporte a aplicativos destinados a usuários que não têm dispositivos gerenciados. O site se alinha com outros produtos e serviços da Microsoft, usando um novo esquema de cores contrastantes, ilustrações dinâmicas e um "menu de hambúrguer", que contém detalhes de contato de suporte técnico e informações sobre os dispositivos gerenciados existentes. A página inicial é reorganizada para enfatizar os aplicativos que estão disponíveis para usuários, com carrosséis para aplicativos Em Destaque e Atualizados Recentemente. Você pode localizar imagens antes e depois disponíveis na página [Atualizações da interface do usuário](/intune/whats-new/whats-new-in-intune-app-ui).
+  O site Portal da Empresa dá suporte a aplicativos destinados a usuários que não têm dispositivos gerenciados. O site se alinha com outros produtos e serviços da Microsoft, usando um novo esquema de cores contrastantes, ilustrações dinâmicas e um "menu de hambúrguer", que contém detalhes de contato de suporte técnico e informações sobre os dispositivos gerenciados existentes. A página inicial é reorganizada para enfatizar os aplicativos que estão disponíveis para usuários, com carrosséis para aplicativos Em Destaque e Atualizados Recentemente. Você pode localizar imagens antes e depois disponíveis na página [Atualizações da interface do usuário](https://docs.microsoft.com/intune/whats-new-app-ui).
 
 - **Novo endereço de servidor MDM para dispositivos Windows**
 
@@ -306,7 +342,7 @@ Os seguintes recursos híbridos adicionais também estão incluídos na versão 
 
 - **Configurações de conformidade de aplicativos fora de conformidade**
 
-  Agora você pode criar regras de aplicativos fora de conformidade para aplicativos Android e iOS nas políticas de conformidade. Se os dispositivos tiverem os aplicativos especificados instalados, eles serão marcados como "em não conformidade" e perderão o acesso aos recursos da empresa de acordo com as políticas de acesso condicional em vigor. Para saber mais, veja [Aprimoramentos na política de conformidade de dispositivo de acesso condicional](/sccm/core/get-started/capabilities-in-technical-preview-1702#conditional-access-device-compliance-policy-improvements).
+  Agora você pode criar regras de aplicativos fora de conformidade para aplicativos Android e iOS nas políticas de conformidade. Se os dispositivos tiverem os aplicativos especificados instalados, eles serão marcados como "em não conformidade" e perderão o acesso aos recursos da empresa de acordo com as políticas de acesso condicional em vigor. Para saber mais, confira [Aprimoramentos na política de conformidade de dispositivo de acesso condicional](/sccm/core/get-started/capabilities-in-technical-preview-1702#conditional-access-device-compliance-policy-improvements).
 
 - **Criação e distribuição de certificado PFX e suporte a S/MIME**
 
@@ -326,7 +362,7 @@ Os seguintes recursos híbridos adicionais também estão incluídos na versão 
 
 - **Resolver o problema em que dispositivos iOS estão inativos ou o console do administrador não pode se comunicar com eles**
 
-  Quando os dispositivos dos usuários perdem contato com o Intune, você pode fornecer novas etapas de solução de problemas para ajudá-los a recuperar o acesso aos recursos da empresa. Veja [Dispositivos estão inativos ou o console do administrador não pode se comunicar com eles](/intune/troubleshoot/troubleshoot-device-enrollment-in-intune#devices-are-inactive-or-the-admin-console-cannot-communicate-with-them).
+  Quando os dispositivos dos usuários perdem contato com o Intune, você pode fornecer novas etapas de solução de problemas para ajudá-los a recuperar o acesso aos recursos da empresa. Veja [Dispositivos estão inativos ou o console do administrador não pode se comunicar com eles](https://docs.microsoft.com/intune/troubleshoot/troubleshoot-device-enrollment-in-intune#devices-are-inactive-or-the-admin-console-cannot-communicate-with-them).
 
 ### <a name="new-in-configuration-manager-technical-preview-1701"></a>Novo no Configuration Manager Technical Preview 1701
 
@@ -336,6 +372,14 @@ Os seguintes recursos híbridos adicionais também estão incluídos na versão 
 
 
 ## <a name="notices"></a>Avisos
+
+### <a name="company-portal-for-windows-81-and-windows-phone-81-moving-to-sustaining-mode"></a>Portal da Empresa para Windows 8.1 e Windows Phone 8.1 mudando para o modo de manutenção 
+<!--1428681-->
+*6 de outubro de 2017*   
+ 
+A partir de outubro de 2017, os aplicativos Portal da Empresa para Windows 8.1 e Windows Phone 8.1 mudarão para o modo de manutenção. Isso significa que os aplicativos e cenários existentes, como registro e conformidade, continuarão recebendo suporte nessas plataformas. Esses aplicativos continuarão disponíveis para download por meio de canais de lançamento existentes, como o Microsoft Store. 
+
+Uma vez no modo de manutenção, esses aplicativos só receberão atualizações críticas de segurança. Nenhuma atualização ou recurso adicional será lançada para esses aplicativos. Para os novos recursos, recomendamos que você atualize os dispositivos para Windows 10 ou Windows 10 Mobile. 
 
 ### <a name="end-of-support-for-ios-80"></a>Fim do suporte para iOS 8.0 
 <!---1164477--->

@@ -1,8 +1,9 @@
 ---
-title: Suporte para Windows 10 | Microsoft Docs
+title: Suporte para Windows 10
+titleSuffix: Configuration Manager
 description: "Saiba mais sobre as versões do Windows 10 que têm suporte como clientes ou para OSD com o System Center Configuration Manager."
 ms.custom: na
-ms.date: 7/31/2017
+ms.date: 10/11/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
@@ -14,11 +15,11 @@ caps.latest.revision: "5"
 author: brenduns
 ms.author: brenduns
 manager: angrobe
-ms.openlocfilehash: 1d2e6e128531237ed76f94584aa42f76067db164
-ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
+ms.openlocfilehash: 8ce7230a3aa64b78937b305fee4dc8e3f38abead
+ms.sourcegitcommit: f9c38b87fcd543ab8a5d7a7f446b42fd3e55450c
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/07/2017
+ms.lasthandoff: 10/19/2017
 ---
 # <a name="support-for-windows-10-for-system-center-configuration-manager"></a>Suporte para Windows 10 para System Center Configuration Manager  
 
@@ -40,10 +41,11 @@ Por exemplo, uma versão do Configuration Manager será removida da matriz após
 |Versão do Windows 10                    |Configuration Manager 1610          |    Configuration Manager 1702          |    Configuration Manager 1706 |
 |---------------------|-----|-----|-----|
 |Enterprise 2015 LTSB                   |![Com suporte](media/green_check.png) |![Com suporte](media/green_check.png) |![Com suporte](media/green_check.png) |
-|1511  <br />(*consulte edições*)           |![Com suporte](media/green_check.png) |![Com suporte](media/green_check.png) |![Com suporte](media/green_check.png) |
 |Enterprise 2016 LTSB                   |![Com suporte](media/green_check.png) |![Com suporte](media/green_check.png) |![Com suporte](media/green_check.png) |
-|1607   <br />Atualização de Aniversário<br />(*consulte edições*)   |![Com suporte](media/green_check.png) |![Com suporte](media/green_check.png)            |![Com suporte](media/green_check.png) |
-|1703   <br />Atualização para Criadores<br />(*consulte edições*)      |![Sem suporte](media/Red_X.png)   |![Compatível com versões anteriores](media/blue_compat.png) |![Com suporte](media/green_check.png) |
+|1607   <br />(Também conhecida como Anniversary Update)<br />(*consulte edições*)   |![Com suporte](media/green_check.png) |![Com suporte](media/green_check.png)            |![Com suporte](media/green_check.png) |
+|1703   <br />(Também conhecida como Creators Update)<br />(*consulte edições*)      |![Sem suporte](media/Red_X.png)   |![Compatível com versões anteriores](media/blue_compat.png) |![Com suporte](media/green_check.png) |
+|1709   <br />(Também conhecida como Fall Creators Update)<br />(*consulte edições*) |![Sem suporte](media/Red_X.png)   |![Sem suporte](media/Red_X.png)   |![Compatível com versões anteriores](media/blue_compat.png) |
+
 
 
 **Edições:** Enterprise, Pro, Education, Pro Education   
@@ -60,11 +62,11 @@ Quando você implanta sistemas operacionais com o Configuration Manager, o [Wind
 
 A tabela a seguir enumera as versões do Windows ADK para Windows 10 que você pode usar com as diferentes versões do Configuration Manager.
 
-|Versão do Windows 10 ADK  |Configuration Manager 1610 |Configuration Manager 1702   |Configuration Manager 1706 |
+|Versão do ADK do Windows 10  |Configuration Manager 1610 |Configuration Manager 1702   |Configuration Manager 1706 |
 |--------------------|-----|-----|-----|
-|1511  |![Sem suporte](media/Red_X.png)             |![Sem suporte](media/Red_X.png)              |![Sem suporte](media/Red_X.png)|
 |1607  |![Com suporte](media/green_check.png)           |![Compatível com versões anteriores](media/blue_compat.png) |![Sem suporte](media/Red_X.png)|
 |1703  |![Sem suporte](media/Red_X.png)             |![Com suporte](media/green_check.png)            |![Com suporte](media/green_check.png) |  
+|1709  |![Sem suporte](media/Red_X.png)             |![Sem suporte](media/Red_X.png)              |![Com suporte](media/green_check.png) |  
 
 |Chave|
 |--|

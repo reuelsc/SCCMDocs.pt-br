@@ -1,5 +1,6 @@
 ---
-title: SQL Server AlwaysOn | Microsoft Docs
+title: AlwaysOn do SQL Server
+titleSuffix: Configuration Manager
 description: Planeje usar um grupo de disponibilidade AlwaysOn do SQL Server com SCCM.
 ms.custom: na
 ms.date: 09/22/2017
@@ -14,11 +15,11 @@ caps.latest.revision: "16"
 author: Brenduns
 ms.author: brenduns
 manager: angrobe
-ms.openlocfilehash: 3e275f6203a9e0b9210bfbadbf9addf64f6533d8
-ms.sourcegitcommit: 8faf42135a8dc9c384407e64f3f8ba204fb15847
+ms.openlocfilehash: 24eaa33f1f9b333894817f089149e2cbed35df75
+ms.sourcegitcommit: c236214b2fcc13dae7bad96d7fb33f692868191d
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/28/2017
+ms.lasthandoff: 10/12/2017
 ---
 # <a name="prepare-to-use-sql-server-always-on-availability-groups-with-configuration-manager"></a>Preparar para usar os grupos de disponibilidade AlwaysOn do SQL Server com o Configuration Manager
 
@@ -75,7 +76,7 @@ Para saber mais, veja [Criar um ponto de extremidade de espelhamento de banco de
 -   Antes da versão 1706, você podia ter até duas réplicas secundárias síncronas.
 -   A partir da versão 1706, você pode usar o mesmo número e tipo de réplicas em um grupo de disponibilidade como compatível com a versão do SQL Server que você usa.
 
-    Você pode usar a réplica de confirmação assíncrona para recuperar sua réplica síncrona. Confira [Opções de recuperação do banco de dados do site]( /sccm/protect/understand/backup-and-recovery#BKMK_SiteDatabaseRecoveryOption) no tópico Backup e recuperação para obter informações sobre como fazer isso.
+-   A partir da versão 1706, você pode usar a réplica de confirmação assíncrona para recuperar sua réplica síncrona. Confira [Opções de recuperação do banco de dados do site]( /sccm/protect/understand/backup-and-recovery#BKMK_SiteDatabaseRecoveryOption) no tópico Backup e recuperação para obter informações sobre como fazer isso.
     > [!CAUTION]  
     > O Configuration Manager não dá suporte a failover para usar a réplica de confirmação assíncrona como seu banco de dados do site.
 Como o Configuration Manager não valida o estado da réplica de confirmação assíncrona para confirmar que é atual, e [por design essa réplica pode estar fora de sincronia]( https://msdn.microsoft.com/library/ff877884(SQL.120).aspx(d=robot)#Availability%20Modes), o uso de uma réplica de confirmação assíncrona como o banco de dados do site pode colocar em risco a integridade do site e dos dados.

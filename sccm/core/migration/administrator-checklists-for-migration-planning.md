@@ -1,5 +1,6 @@
 ---
-title: "Listas de verificação de migração | Microsoft Docs"
+title: "Listas de verificação de migração"
+titleSuffix: Configuration Manager
 description: "Use as listas de verificação do administrador para ajudá-lo a planejar uma estratégia de migração para o System Center Configuration Manager."
 ms.custom: na
 ms.date: 12/29/2016
@@ -15,11 +16,11 @@ caps.handback.revision: "0"
 author: Brenduns
 ms.author: brenduns
 manager: angrobe
-ms.openlocfilehash: 36f7c37e4da3f2bce64a25d266dae57d9fe98c36
-ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
+ms.openlocfilehash: 3476709feb8524dda92694efb16af1569f490f62
+ms.sourcegitcommit: c236214b2fcc13dae7bad96d7fb33f692868191d
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/07/2017
+ms.lasthandoff: 10/12/2017
 ---
 # <a name="administrator-checklists-for-migration-planning-in-system-center-configuration-manager"></a>Listas de verificação do administrador para o planejamento da migração no System Center Configuration Manager
 

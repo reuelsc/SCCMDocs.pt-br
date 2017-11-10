@@ -1,5 +1,6 @@
 ---
-title: "Planejar as funções do sistema de site | Microsoft Docs"
+title: "Planejar funções do sistema de sites"
+titleSuffix: Configuration Manager
 description: "Considere os servidores e as funções do sistema de sites enquanto você planeja sua hierarquia do System Center Configuration Manager."
 ms.custom: na
 ms.date: 10/06/2016
@@ -14,11 +15,11 @@ caps.latest.revision: "11"
 author: Brenduns
 ms.author: brenduns
 manager: angrobe
-ms.openlocfilehash: 0a3704a2d3b75ed7e0a7f718b681448ab6fc078d
-ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
+ms.openlocfilehash: 1c8a0667bc9848ee86c170161d21ac2f14d9f588
+ms.sourcegitcommit: c236214b2fcc13dae7bad96d7fb33f692868191d
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/07/2017
+ms.lasthandoff: 10/12/2017
 ---
 # <a name="plan-for-site-system-servers-and-site-system-roles-for-system-center-configuration-manager"></a>Plano para funções e servidores do sistema de sites para o System Center Configuration Manager
 

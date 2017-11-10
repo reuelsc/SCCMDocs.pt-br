@@ -1,5 +1,6 @@
 ---
-title: Criar aplicativos do Windows Phone | Microsoft Docs
+title: Criar aplicativos do Windows Phone
+titleSuffix: Configuration Manager
 description: "Consulte quais considerações você deverá levar em conta ao criar e implantar aplicativos para dispositivos Windows Phone."
 ms.custom: na
 ms.date: 03/05/2017
@@ -14,11 +15,11 @@ caps.latest.revision: "10"
 author: mattbriggs
 ms.author: mabrigg
 manager: angrobe
-ms.openlocfilehash: 1a4cfd8bc942ecefc1b2acdbf96326746cfced6f
-ms.sourcegitcommit: b438515490e04fb09c82a8af642d38e9a0605178
+ms.openlocfilehash: 154cc1f6e8f16f2bfbb717cfd44fe596b9e31ac5
+ms.sourcegitcommit: c236214b2fcc13dae7bad96d7fb33f692868191d
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/15/2017
+ms.lasthandoff: 10/12/2017
 ---
 # <a name="create-windows-phone-applications-with-system-center-configuration-manager"></a>Criar aplicativos do Windows Phone com o System Center Configuration Manager
 
