@@ -1,5 +1,6 @@
 ---
-title: Qual branch devo usar | Microsoft Docs
+title: Qual branch devo usar
+titleSuffix: Configuration Manager
 description: "Aprenda as diferenças entre os branches do System Center Configuration Manager disponíveis."
 ms.custom: na
 ms.date: 05/02/2017
@@ -14,11 +15,11 @@ caps.latest.revision: "0"
 author: Brenduns
 ms.author: brenduns
 manager: angrobe
-ms.openlocfilehash: 26356a80bd8c78d4517253bae73e53d8d8f3a73a
-ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
+ms.openlocfilehash: 047ffc0953db4a4cc5d543d880136ce61fa99fa7
+ms.sourcegitcommit: c236214b2fcc13dae7bad96d7fb33f692868191d
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/07/2017
+ms.lasthandoff: 10/12/2017
 ---
 # <a name="which-branch-of-configuration-manager-should-i-use"></a>Qual branch do Configuration Manager devo usar?
 
@@ -110,7 +111,7 @@ O LTSB se baseia na versão 1606 do Branch Atual e tem as seguintes limitações
   Para converter, você deve ter um contrato de Software Assurance ativo com a Microsoft. Para mais informações, consulte os links a seguir:
   - [Atualizar o Branch de Manutenção em Longo Prazo para o Branch Atual](convert-to-current-branch.md)
   - [Licenciamento e branches do System Center Configuration Manager](learn-more-editions.md)
-  - [Versões de linha de base e atualização](/sccm/core/servers/manage/updates#baseline-and-update-versions) em [Atualizações para o Configuration Manager](/sccm/core/servers/manage/updates)
+  - [Baseline and update versions](/sccm/core/servers/manage/updates#baseline-and-update-versions) (Versões de linha de base e atualização) em [Updates for Configuration Manager](/sccm/core/servers/manage/updates) (Atualizações para o Configuration Manager)
 - Não há nenhuma opção para converter o LTSB em um Technical Preview. Os Technical Previews são instalações separadas que não exigem uma licença.
 -   Você não pode atualizar uma edição de avaliação do Branch Atual para uma instalação do LTSB.
 
@@ -149,5 +150,4 @@ Ao exibir as informações da versão de um site do Configuration Manager, tamb�
 Para verificar a versão do site, no console, acesse **Sobre o System Center Configuration Manager** no canto superior esquerdo do console em que a **Versão do site** é exibida. Consulte []() para obter uma lista das versões do site.
 
 **Branch**  
-Para confirmar o branch do seu site (como LTSB ou Branch Atual), no console, acesse **Administração** > **Configuração do Site** > **Sites** e abra **Configurações da Hierarquia**. Se houver uma opção para converter para o Branch Atual e ela estiver ativa, o site executará a versão LTSB. Quando o site executa o Branch Atual, essa opção fica esmaecida.
-Para saber mais sobre as diferentes versões do Configuration Manager, veja “Versões de linha de base e atualização” em [Atualizações para o Configuration Manager](/sccm/core/servers/manage/updates).
+Para confirmar o branch do seu site (como LTSB ou Branch Atual), no console, acesse **Administração** > **Configuração do Site** > **Sites** e abra **Configurações da Hierarquia**. Se houver uma opção para converter para o Branch Atual e ela estiver ativa, o site executará a versão LTSB. Quando o site executa o Branch Atual, essa opção fica esmaecida. Para saber mais sobre as diferentes versões do Configuration Manager, veja “Versões de linha de base e atualização” em [Atualizações para o Configuration Manager](/sccm/core/servers/manage/updates).
