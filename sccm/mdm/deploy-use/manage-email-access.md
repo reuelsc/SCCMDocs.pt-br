@@ -15,11 +15,11 @@ caps.latest.revision: "24"
 author: andredm7
 ms.author: andredm
 manager: angrobe
-ms.openlocfilehash: 8ab177067d0308b863274a7ae05574374b0af4ba
-ms.sourcegitcommit: c236214b2fcc13dae7bad96d7fb33f692868191d
+ms.openlocfilehash: a83c2030de8a146dad7bf2258e8a983c8ab6c45e
+ms.sourcegitcommit: 922d6d9c91ba2158b938df381277be1b5f1d434a
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/12/2017
+ms.lasthandoff: 11/13/2017
 ---
 # <a name="manage-email-access-in-system-center-configuration-manager"></a>Gerenciar acesso a email no System Center Configuration Manager
 
@@ -39,7 +39,7 @@ Você pode controlar o acesso ao Exchange Online e Exchange Local do cliente de 
 
 -   Android 4.0 e posterior, Samsung KNOX Standard 4.0 e posterior  
 
--   iOS 7.1 e posterior  
+-   iOS 9.0 e posterior  
 
 -   Windows Phone 8.1 e posterior  
 
@@ -93,13 +93,13 @@ Navegadores sem suporte serão bloqueados. Não há suporte para aplicativos do 
 
 -   Android 4.0 e posterior, Samsung KNOX Standard 4.0 e posterior  
 
--   iOS 7.1 e posterior  
+-   iOS 9.0 e posterior  
 
 -   Windows Phone 8.1 e posterior  
 
 -   O aplicativo **Mail** no Windows 8.1 e posterior  
 
- O aplicativo Outlook para iOS e Android, e o Outlook 2013 para desktop só têm suporte para o Exchange Online.  
+ O aplicativo Outlook para iOS e Android, e o Outlook para desktop 2013 e acima é compatível apenas com o Exchange Online.  
 
  O **conector do Exchange Local** entre o Configuration Manager e o Exchange é necessário para que o acesso condicional funcione.  
 

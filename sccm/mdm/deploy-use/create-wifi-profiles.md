@@ -16,11 +16,11 @@ caps.handback.revision: "0"
 author: lleonard-msft
 ms.author: alleonar
 manager: angrobe
-ms.openlocfilehash: 3f4f25d39fd7f4106ec6f7a1d6ebe4716be067ad
-ms.sourcegitcommit: c236214b2fcc13dae7bad96d7fb33f692868191d
+ms.openlocfilehash: 5780eb6da6e6a72b7fb3504283ef5362842c9ef7
+ms.sourcegitcommit: 922d6d9c91ba2158b938df381277be1b5f1d434a
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/12/2017
+ms.lasthandoff: 11/13/2017
 ---
 # <a name="how-to-create-wi-fi-profiles-for-mobile-devices-in-system-center-configuration-manager"></a>Como criar perfis de Wi-Fi para dispositivos móveis no System Center Configuration Manager
 
@@ -34,9 +34,9 @@ Configure os seguintes tipos de dispositivo móvel com perfis de Wi-Fi:
 
 -   Dispositivos que executam o Windows 10 Desktop ou Mobile  
 
--   Dispositivos iPhone que executam o iOS 8  
+-   Dispositivos iPhone que executam o iOS 9  
 
--   Dispositivos iPad que executam o iOS 8  
+-   Dispositivos iPad que executam o iOS 9  
 
 -   Dispositivos Android que executam a versão 4 ou posterior
 
