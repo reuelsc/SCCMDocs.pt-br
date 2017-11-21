@@ -27,10 +27,11 @@
 ###  [Recursos e funcionalidades](plan-design/changes/features-and-capabilities.md)
 ###  [O que mudou com relação ao Configuration Manager 2012](plan-design/changes/what-has-changed-from-configuration-manager-2012.md)
 ###  [Novidades nas versões incrementais](plan-design/changes/whats-new-incremental-versions.md)
+###  [Novidades na versão 1710](plan-design/changes/whats-new-in-version-1710.md)
 ###  [Novidades na versão 1706](plan-design/changes/whats-new-in-version-1706.md)
 ###  [Novidades na versão 1702](plan-design/changes/whats-new-in-version-1702.md)
-###  [Novidades na versão 1610](plan-design/changes/whats-new-in-version-1610.md)
 <!--
+###  [What's new in version 1610](plan-design/changes/whats-new-in-version-1610.md)
 ###  [What's new in version 1606](plan-design/changes/whats-new-in-version-1606.md)
 ###  [What's new in version 1602](plan-design/changes/whats-new-in-version-1602.md)
 -->
@@ -74,14 +75,15 @@
 ###  [Preparar Windows Servers para dar suporte a sistemas de sites](plan-design/network/prepare-windows-servers.md)
 ###  [Sites para servidores de sistema de sites](plan-design/network/websites-for-site-system-servers.md)
 ###  [Requisitos de certificado PKI](plan-design/network/pki-certificate-requirements.md)
+###  [Visão geral dos certificados da CNG](plan-design/network/cng-certificates-overview.md)
 
 ##   [Dados de diagnóstico e de uso](plan-design/diagnostics/diagnostics-and-usage-data.md)
 ###  [Como os dados de diagnóstico e de uso são usados](plan-design/diagnostics/how-diagnostics-and-usage-data-is-used.md)
+###  [Dados de diagnóstico para 1710](plan-design/diagnostics/levels-of-diagnostic-usage-data-collection-1710.md)
 ###  [Dados de diagnóstico para 1706](plan-design/diagnostics/levels-of-diagnostic-usage-data-collection-1706.md)
 ###  [Dados de diagnóstico para 1702](plan-design/diagnostics/levels-of-diagnostic-usage-data-collection-1702.md)
-###  [Dados de diagnóstico para 1610](plan-design/diagnostics/levels-of-diagnostic-usage-data-collection-1610.md)
-
 <!--
+###  [Diagnostic data for 1610](plan-design/diagnostics/levels-of-diagnostic-usage-data-collection-1610.md)
 ###  [Diagnostic data for 1606](plan-design/diagnostics/levels-of-diagnostic-usage-data-collection-1606.md)
 ###  [Diagnostic data for 1602](plan-design/diagnostics/levels-of-diagnostic-usage-data-collection-1602.md)
 ###  [Diagnostic data for 1511](plan-design/diagnostics/levels-of-diagnostic-usage-data-collection-1511.md)
@@ -228,10 +230,11 @@
 ###  [Usar a Ferramenta de Conexão de Serviço](servers/manage/use-the-service-connection-tool.md)
 ###  [Usar a Ferramenta de Registro de Atualização](servers/manage/use-the-update-registration-tool-to-import-hotfixes.md)
 ###  [Usar o Instalador de Hotfix](servers/manage/use-the-hotfix-installer-to-install-updates.md)
+###  [Lista de verificação para instalar a atualização 1710](servers/manage/checklist-for-installing-update-1710.md)
 ###  [Lista de verificação para instalar a atualização 1706](servers/manage/checklist-for-installing-update-1706.md)
 ###  [Lista de verificação para instalar a atualização 1702](servers/manage/checklist-for-installing-update-1702.md)
-###  [Lista de verificação para instalar a atualização 1610](servers/manage/checklist-for-installing-update-1610.md)
 <!-- Deprecated from Content - still published but out of TOC:
+###  [Checklist for installing update 1610](servers/manage/checklist-for-installing-update-1610.md)
 ###  [Checklist for installing update 1606](servers/manage/checklist-for-installing-update-1606.md)
 ###  [Checklist for installing update 1602](servers/manage/checklist-for-installing-update-1602.md)
 -->
@@ -305,6 +308,10 @@
 ###  [Como gerenciar clientes Linux e UNIX](clients/manage/manage-clients-for-linux-and-unix-servers.md)
 ###  [Sincronizar dados com o OMS](clients/manage/sync-data-microsoft-operations-management-suite.md)
 ###  [Manter os clientes Mac](clients/manage/maintain-mac-clients.md)
+
+##   [Cogerenciamento de dispositivos Windows 10](clients/manage/co-management-overview.md)
+###  [Preparar dispositivos Windows 10 para cogerenciamento](clients/manage/co-management-prepare.md)
+###  [Mudar as cargas de trabalho do Configuration Manager para o Intune](clients/manage/co-management-switch-workloads.md)
 
 ##   [Gerenciar clientes na Internet](clients/manage/manage-clients-internet.md)
 ###  [Plano para o gateway de gerenciamento de nuvem](clients/manage/plan-cloud-management-gateway.md)
