@@ -1,5 +1,6 @@
 ---
-title: "Planejar atualizações de software | Microsoft Docs"
+title: "Planejar atualizações de software"
+titleSuffix: Configuration Manager
 description: "É essencial ter um plano para a infraestrutura de ponto de atualização de software antes de usar atualizações de software em um ambiente de produção do System Center Configuration Manager."
 keywords: 
 author: dougeby
@@ -11,11 +12,11 @@ ms.prod: configuration-manager
 ms.service: 
 ms.technology: configmgr-sum
 ms.assetid: d071b0ec-e070-40a9-b7d4-564b92a5465f
-ms.openlocfilehash: 8b739a01a6bb5cacf0f7109e2e6fa3b31dd666d3
-ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
+ms.openlocfilehash: e111d5abf263a90ac020aca863d495cb717154db
+ms.sourcegitcommit: 986fc2d54f7c5fa965fd4df42f4db4ecce6b79cb
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/07/2017
+ms.lasthandoff: 11/17/2017
 ---
 # <a name="plan-for-software-updates-in-system-center-configuration-manager"></a>Planejar atualizações de software no System Center Configuration Manager
 

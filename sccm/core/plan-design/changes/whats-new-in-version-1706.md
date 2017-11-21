@@ -13,11 +13,11 @@ ms.assetid: ac034143-003e-4629-aac2-99eaffef4db1
 author: Brenduns
 ms.author: brenduns
 manager: angrobe
-ms.openlocfilehash: 9b3248f30470ee8250efcbf171642ea476627d68
-ms.sourcegitcommit: c236214b2fcc13dae7bad96d7fb33f692868191d
+ms.openlocfilehash: 2889de0709096aa481ca6203c5ab2bac1f064d5e
+ms.sourcegitcommit: c4a1bafcd004638d264a93d307c70d8b6f7fe023
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/12/2017
+ms.lasthandoff: 11/20/2017
 ---
 # <a name="what39s-new-in-version-1706-of-system-center-configuration-manager"></a>Novidades da versão 1706 do System Center Configuration Manager
 
@@ -189,10 +189,6 @@ Para saber mais, confira [Criar e executar scripts do PowerShell do console do C
 A partir desta versão, você pode usar três novas configurações de política MAM (gerenciamento de aplicativo móvel):
 
 - **Bloquear captura de tela (somente dispositivos Android):** especifica que as funcionalidades de captura de tela do dispositivo sejam bloqueadas ao usar esse aplicativo.
-
-- **Desabilitar a sincronização de contato:** impede que o aplicativo salve dados no aplicativo de Contatos nativo do dispositivo.
-
-- **Desabilitar impressão:** impede que o aplicativo imprima dados corporativos ou de estudante.
 
 Veja [proteger aplicativos usando políticas de proteção de aplicativos no Configuration Manager](https://docs.microsoft.com/sccm/mdm/deploy-use/protect-apps-using-mam-policies) para testar as novas configurações de política de proteção do aplicativo.
 

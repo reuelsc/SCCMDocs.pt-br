@@ -3,7 +3,7 @@ title: Perfis de VPN
 titleSuffix: Configuration Manager
 description: "Perfis de VPN em dispositivos móveis no System Center Configuration Manager."
 ms.custom: na
-ms.date: 07/26/2017
+ms.date: 11/20/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
@@ -16,11 +16,11 @@ caps.handback.revision: "0"
 author: lleonard-msft
 ms.author: alleonar
 manager: angrobe
-ms.openlocfilehash: 40446ce656bd446f890b9b1349ab0b95742cadb8
-ms.sourcegitcommit: c236214b2fcc13dae7bad96d7fb33f692868191d
+ms.openlocfilehash: b60a1b9e85b00cbaba54db4ea4cd92a1038c3fcf
+ms.sourcegitcommit: 12d0d53e47bbf1a0bbd85015b8404a44589d1e14
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/12/2017
+ms.lasthandoff: 11/21/2017
 ---
 # <a name="vpn-profiles-on-mobile-devices-in-system-center-configuration-manager"></a>Perfis de VPN em dispositivos móveis no System Center Configuration Manager
 
@@ -71,8 +71,8 @@ Use perfis de VPN no System Center Configuration Manager para implantar as confi
 > [!IMPORTANT]
 > É recomendável que você proteja todas as listas de aplicativos associados que você compila para uso na configuração de VPN por aplicativo. Se um usuário não autorizado modificar sua lista e você a importar para a lista de aplicativos VPN por aplicativo, você potencialmente autorizará o acesso VPN para aplicativos que não deveriam ter acesso. Uma forma de proteger a lista de aplicativos é usar uma ACL (lista de controle de acesso).
 
-
-1.  Na página **Método de Autenticação** do assistente, especifique:  
+1. Na página **Plataformas com Suporte** do **Assistente para Criar Perfil VPN**, selecione os sistemas operacionais nos quais o perfil VPN será instalado ou escolha **Selecionar todos** para instalar o perfil VPN em todos os sistemas operacionais disponíveis.  
+2.  Na página **Método de Autenticação** do assistente, especifique:  
 
     -   **Método de autenticação**: selecione o método de autenticação que a conexão VPN usará. Os métodos disponíveis dependem do tipo de conexão, conforme mostrado nesta tabela.  
 
@@ -112,46 +112,13 @@ Use perfis de VPN no System Center Configuration Manager para implantar as confi
 
          Quando a versão do Windows que está executando o Configuration Manager _e_ o método de autorização selecionado oferecer suporte, você poderá escolher **Configurar** para abrir a caixa de diálogo de propriedades do Windows e configurar as propriedades do método de autenticação.  Se **Configurar** estiver desabilitada, use meios diferentes para configurar as propriedades do método de autenticação.
 
-2.  Na página **Configurações de Proxy** do **Assistente para Criar Perfil VPN**, marque a caixa **Definir configurações de proxy para este perfil VPN** caso a sua conexão VPN use um servidor proxy. Em seguida, forneça as informações do servidor proxy. Para obter mais informações, consulte a documentação do Windows Server.  
+3.  Na página **Configurações de Proxy** do **Assistente para Criar Perfil VPN**, marque a caixa **Definir configurações de proxy para este perfil VPN** caso a sua conexão VPN use um servidor proxy. Em seguida, forneça as informações do servidor proxy. Para obter mais informações, consulte a documentação do Windows Server.  
 
     > [!NOTE]  
     >  Em computadores com Windows 8.1, o perfil VPN não exibirá as informações de proxy até você se conectar à VPN usando esse computador.  
 
 
-3. Definir outras configurações de DNS (se for necessário).  
- Na página **Configurar Conexão VPN Automática**, configure o seguinte:  
-
-    -   **Habilitar VPN sob demanda**: use se você quiser definir mais configurações de DNS para dispositivos com Windows Phone 8.1. Essa configuração aplica-se somente a dispositivos Windows Phone 8.1 e só deve ser habilitada nos perfis VPN que serão implantados em dispositivos Windows Phone 8.1.
-
-    -   **Lista de sufixos DNS** (somente dispositivos Windows Phone 8.1): configura os domínios que estabelecerão uma conexão VPN. Para cada domínio especificado, adicione o sufixo DNS, o endereço do servidor DNS e uma das seguintes ações sob demanda:  
-
-        -   **Nunca estabelecer**: nunca abrir uma conexão VPN.  
-
-        -   **Estabelecer, se necessário**: abrir apenas uma conexão VPN se o dispositivo precisar se conectar aos recursos.  
-
-        -   **Estabelecer sempre**: sempre abrir a conexão VPN.  
-
-    -   **Mesclar**: copia quaisquer sufixos DNS configurados na **Lista de redes confiáveis**.  
-
-    -   **Lista de redes confiáveis** (somente dispositivos com Windows Phone 8.1): especificar um sufixo DNS em cada linha. Se o dispositivo estiver em uma rede confiável, a conexão VPN não será aberta.  
-
-    -   **Lista de pesquisa de sufixo** (somente dispositivos com Windows Phone 8.1): especificar um sufixo DNS em cada linha. Cada sufixo DNS será pesquisado durante a conexão com um site usando um nome curto.  
-
-     Por exemplo, especifique os sufixos de DNS **domain1.contoso.com** e **domain2.contoso.com** e acesse a URL **http://mywebsite**. Os seguintes endereços serão pesquisados:  
-
-    -   **http://mywebsite.domain1.contoso.com**  
-
-    -   **http://mywebsite.domain2.contoso.com**  
-
-    > [!NOTE]  
-    >  Somente para dispositivos Windows Phone 8.1  
-    >   
-    >  Quando a opção *Enviar todo o tráfego de rede pela conexão VPN* estiver marcada *e* a conexão VPN usar o túnel completo, a conexão VPN será aberta automaticamente usando o primeiro perfil de dispositivo. Para abrir uma conexão com um perfil diferente, defina o perfil desejado como o padrão.  
-    >   
-    >  Quando a opção *Enviar todo o tráfego de rede pela conexão VPN* *não* estiver marcada *e* a conexão VPN usar o túnel dividido, a conexão VPN será aberta automaticamente para rotas configuradas ou sufixos DNS específicos à conexão.  
-
-
-4. Na página **Plataformas com Suporte** do **Assistente para Criar Perfil VPN**, selecione os sistemas operacionais nos quais o perfil VPN será instalado ou escolha **Selecionar todos** para instalar o perfil VPN em todos os sistemas operacionais disponíveis.  
+4. Definir outras configurações de DNS (se for necessário).  
 
 5. Conclua o assistente. O nó **Perfis de VPN** no espaço de trabalho **Ativos e Conformidade** mostra o novo perfil de VPN.  
 

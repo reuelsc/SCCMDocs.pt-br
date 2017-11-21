@@ -1,5 +1,6 @@
 ---
-title: "Realização de serviços em um grupo de servidores | Microsoft Docs"
+title: "Realização de serviços em um grupo de servidores"
+titleSuffix: Configuration Manager
 description: "O console do System Center Configuration Manager fornece alertas e status para monitorar atualizações e a conformidade."
 keywords: 
 author: dougeby
@@ -11,19 +12,18 @@ ms.prod: configuration-manager
 ms.service: 
 ms.technology: configmgr-sum
 ms.assetid: 304a83ea-0f72-437d-9688-2e6e0c7526dd
-ms.openlocfilehash: ae09a02dd5d67113b9a7e2ce146c844efa4caf55
-ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
+ms.openlocfilehash: 12382015f2b673103c3c0d8fc9c0cbf29511a434
+ms.sourcegitcommit: 986fc2d54f7c5fa965fd4df42f4db4ecce6b79cb
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/07/2017
+ms.lasthandoff: 11/17/2017
 ---
->[!IMPORTANT]
->Esse é um recurso de pré-lançamento disponível no Configuration Manager versão 1606 e versão 1610. Os recursos de pré-lançamento foram incluídos no produto para testes iniciais em um ambiente de produção, mas não devem ser considerados prontos para produção. Você deve ativar esse recurso para que ele seja disponibilizado. Para obter mais informações, consulte [Usar recursos de pré-lançamento de atualizações](https://docs.microsoft.com/sccm/core/servers/manage/install-in-console-updates#bkmk_prerelease).
-
-
 # <a name="service-a-server-group"></a>Realização de serviços em um grupo de servidores
 
 *Aplica-se a: System Center Configuration Manager (Branch Atual)*
+
+>[!IMPORTANT]
+>Os recursos de pré-lançamento são recursos que estão na Ramificação atual para testes iniciais em um ambiente de produção. Esses recursos têm suporte total, mas ainda estão em desenvolvimento ativo e podem receber alterações até que saiam da categoria de pré-lançamento. Você deve ativar esse recurso para que ele seja disponibilizado. Para obter mais informações, consulte [Usar recursos de pré-lançamento de atualizações](https://docs.microsoft.com/sccm/core/servers/manage/install-in-console-updates#bkmk_prerelease).
 
 A partir do System Center Configuration Manager versão 1606, é possível definir configurações de grupo de servidores para uma coleção para definir quantos, qual percentual ou em que ordem os computadores da coleção instalarão as atualizações de software. Também é possível configurar scripts pré-implantação e pós-implantação do PowerShell para executar ações personalizadas.
 

@@ -1,5 +1,6 @@
 ---
-title: "Implantar manualmente atualizações de software | Microsoft Docs"
+title: "Implantar atualizações de software manualmente"
+titleSuffix: Configuration Manager
 description: "Para implantar atualizações manualmente, selecione atualizações no console do Configuration Manager e implante-as manualmente ou adicione atualizações a um grupo de atualização e implante o grupo."
 keywords: 
 author: dougeby
@@ -11,11 +12,11 @@ ms.prod: configuration-manager
 ms.service: 
 ms.technology: configmgr-sum
 ms.assetid: 57184274-5fea-4d79-a2b4-22e08ed26daf
-ms.openlocfilehash: 2a0d5f12b99689749833c109d4fa399f99451d8a
-ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
+ms.openlocfilehash: 6aaa15ff4908fe7e71e0b9c14fc021a57ccbb727
+ms.sourcegitcommit: 986fc2d54f7c5fa965fd4df42f4db4ecce6b79cb
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/07/2017
+ms.lasthandoff: 11/17/2017
 ---
 #  <a name="BKMK_ManualDeploy"></a> Implantar atualizações de software manualmente  
 

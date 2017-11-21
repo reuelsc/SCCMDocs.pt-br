@@ -1,5 +1,6 @@
 ---
-title: "Pré-requisitos para atualizações de software | Microsoft Docs"
+title: "Pré-requisitos para atualizações de software"
+titleSuffix: Configuration Manager
 description: "Saiba mais sobre os pré-requisitos para atualizações de software no System Center Configuration Manager."
 keywords: 
 author: dougeby
@@ -11,11 +12,11 @@ ms.prod: configuration-manager
 ms.service: 
 ms.technology: configmgr-sum
 ms.assetid: fdf05118-162a-411e-b72e-386b9dc9a5e1
-ms.openlocfilehash: 179f076f228daa5adf612275a822cd379b0ce1e3
-ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
+ms.openlocfilehash: 905ecc023dd181a8d4801860898b05aff5e4e07f
+ms.sourcegitcommit: 986fc2d54f7c5fa965fd4df42f4db4ecce6b79cb
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/07/2017
+ms.lasthandoff: 11/17/2017
 ---
 # <a name="prerequisites-for-software-updates-in-system-center-configuration-manager"></a>Pré-requisitos para atualizações de software no System Center Configuration Manager
 
@@ -74,7 +75,7 @@ Este tópico lista os pré-requisitos para atualizações de software no System 
 
  Para obter mais informações, consulte:  
 
--   [Configurações do cliente para atualizações de software](../get-started/manage-settings-for-software-updates.md#a-namebkmkclientsettingsa-client-settings-for-software-updates).  
+-   [Configurações do cliente para atualizações de software](../get-started/manage-settings-for-software-updates.md#BKMK_ClientSettings).   
 
 -   Tópico [Configurações do cliente para atualizações de software](../../core/clients/deploy/about-client-settings.md#software-updates).  
 
