@@ -3,7 +3,7 @@ title: Cache de pares do cliente
 titleSuffix: Configuration Manager
 description: "Use cache de pares para locais de fonte de conteúdo do cliente durante a implantação de conteúdo com o System Center Configuration Manager."
 ms.custom: na
-ms.date: 7/31/2017
+ms.date: 11/20/2017
 ms.reviewer: na
 ms.suite: na
 ms.prod: configuration-manager
@@ -15,11 +15,11 @@ caps.latest.revision: "3"
 author: Brenduns
 ms.author: brenduns
 manager: angrobe
-ms.openlocfilehash: 20438f51a67fb29da21c879620870caf3328121d
-ms.sourcegitcommit: c236214b2fcc13dae7bad96d7fb33f692868191d
+ms.openlocfilehash: 2bf8f0e5a2636ffd92f8ba1898cc4f1b250f925f
+ms.sourcegitcommit: 12d0d53e47bbf1a0bbd85015b8404a44589d1e14
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/12/2017
+ms.lasthandoff: 11/21/2017
 ---
 # <a name="peer-cache-for-configuration-manager-clients"></a>Cache de pares para clientes do Configuration Manager
 
@@ -28,7 +28,7 @@ ms.lasthandoff: 10/12/2017
 Começando com o System Center Configuration Manager versão 1610, você pode usar o **Cache de pares** para ajudar a gerenciar a implantação de conteúdo para clientes em locais remotos. O Cache de Pares é uma solução interna do Configuration Manager que habilita os clientes a compartilharem conteúdo com outros clientes diretamente do cache local.   
 
 > [!TIP]  
-> Apresentado com a versão 1610, o cache de pares e o painel de fontes de dados do cliente são recursos de pré-lançamento. Para habilitá-los, confira [Usar recursos de pré-lançamento de atualizações](/sccm/core/servers/manage/pre-release-features).
+> Esse recurso foi introduzido na versão 1610 como um [recurso de pré-lançamento](/sccm/core/servers/manage/pre-release-features). A partir da versão 1710, esse recurso deixou de ser um recurso de pré-lançamento.
 
 ## <a name="overview"></a>Visão geral
 Um cliente de Cache de mesmo nível é um cliente do Configuration Manager que está habilitado para uso do Cache de mesmo nível. Um cliente de Cache de mesmo nível que possui conteúdo para compartilhamento com outros clientes é uma fonte de Cache de mesmo nível.

@@ -3,7 +3,7 @@ title: Gerenciar clientes
 titleSuffix: Configuration Manager
 description: Saiba como gerenciar clientes no System Center Configuration Manager.
 ms.custom: na
-ms.date: 04/23/2017
+ms.date: 11/20/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
@@ -15,11 +15,11 @@ caps.latest.revision: "17"
 author: arob98
 ms.author: angrobe
 manager: angrobe
-ms.openlocfilehash: d62138f573745a16634e06aeb9301a248f707cae
-ms.sourcegitcommit: c236214b2fcc13dae7bad96d7fb33f692868191d
+ms.openlocfilehash: ae1bc53cf15b2a1746656667f7bf546742432c11
+ms.sourcegitcommit: 12d0d53e47bbf1a0bbd85015b8404a44589d1e14
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/12/2017
+ms.lasthandoff: 11/21/2017
 ---
 # <a name="how-to-manage-clients-in-system-center-configuration-manager"></a>Como gerenciar clientes no System Center Configuration Manager
 
@@ -51,7 +51,7 @@ Observe que, dependendo do tipo de dispositivo, algumas dessas opções poderão
     -   **Adicionar o dispositivo a uma coleção nova ou existente**  
 
          Adicione o dispositivo a uma coleção com uma regra direta.  
-         
+
     -   **Instalar e reinstalar o cliente usando o Assistente de Push de Cliente**  
 
          Instale e reinstale o cliente do Configuration Manager para repará-lo ou reconfigurá-lo em computadores que executam o Windows. Inclui opções de configuração do site e as propriedades de client.msi definidas para instalação do cliente por push.  
@@ -185,6 +185,21 @@ Observe que, dependendo do tipo de dispositivo, algumas dessas opções poderão
 
          As tarefas de notificação de cliente são exibidas no nó **Operações Cliente** , no espaço de trabalho **Monitoramento** .  
 
+
+## <a name="restart-clients"></a>Reiniciar clientes
+A partir da versão 1710, você pode usar o console do Configuration Manager para identificar os dispositivos clientes que exigem uma reinicialização e, em seguida, usar uma ação de notificação do cliente para reiniciá-los.
+
+Para identificar os dispositivos que estão com reinicialização pendente, vá para **Ativos e Conformidade** > **Dispositivos** e selecione uma coleção com dispositivos que podem exigir uma reinicialização. Depois de selecionar uma coleção, você poderá exibir o status de cada dispositivo no painel de detalhes em uma nova coluna chamada **Reinicialização Pendente**. Cada dispositivo tem um valor de **Sim** ou **Não**.
+
+**Para criar a notificação do cliente para reiniciar um dispositivo:**
+1.  Localize o dispositivo que você deseja reiniciar no nó Dispositivos do console.
+2.  Clique com botão direito do mouse no dispositivo, selecione **Notificação do Cliente** e, em seguida, selecione **Reiniciar**. Isso abrirá uma janela de informações sobre a reinicialização. Clique em **OK** para confirmar a solicitação de reinicialização.
+
+Quando a notificação é recebida por um cliente, uma janela de notificação do **Centro de Software** será exibida para informar ao usuário sobre a reinicialização. Por padrão, a reinicialização ocorre após 90 minutos. Você pode modificar o tempo de reinicialização definindo as [configurações do cliente](/sccm/core/clients/deploy/configure-client-settings). As configurações do comportamento de reinicialização são encontradas na guia [Reinicialização do computador](/sccm/core/clients/deploy/about-client-settings#computer-restart) das configurações padrão.
+
+
+
+
 ##  <a name="BKMK_ClientCache"></a> Configurar o cache de cliente para clientes do Configuration Manager  
 O cache do cliente armazena arquivos temporários para quando os clientes instalam aplicativos e programas. As atualizações de software também usam cache de cliente, mas não são restritas pelo tamanho do cache configurado e sempre tentam baixar no cache. É possível definir as configurações do cache de cliente, como tamanho e local, quando você instala o cliente do Configuration Manager manualmente, quando usa a instalação do cliente por push ou após o cliente ser instalado.
 
@@ -257,8 +272,8 @@ Para obter mais informações sobre como usar essas propriedades de linha de com
 5.  Para excluir os arquivos na pasta de cache, escolha **Excluir Arquivos**.  
 
     > [!NOTE]
-    > 
-    > O cache é uma pasta regular do Windows, portanto você pode automatizar a exclusão do conteúdo da pasta usando um script, um utilitário ou com o cmdlet do PowerShell `Remove-Item`. 
+    >
+    > O cache é uma pasta regular do Windows, portanto você pode automatizar a exclusão do conteúdo da pasta usando um script, um utilitário ou com o cmdlet do PowerShell `Remove-Item`.
 
 
 ### <a name="to-configure-client-cache-size-in-client-settings"></a>Para configurar o tamanho do cache do cliente nas Configurações do Cliente
@@ -273,6 +288,8 @@ A partir da versão 1606, você pode ajustar o tamanho da pasta de cache do clie
  3. Escolha **Configurações de Cache do Cliente** e escolha **Sim** para **Configurar o tamanho do cache do cliente** e use **MB** ou as **configurações de percentual do disco**. O cache é ajustado para o tamanho que for menor.
 
      O cliente do Configuration Manager configurará o tamanho do cache com essas configurações quando a próxima política de cliente for baixada.
+
+
 
 ##  <a name="BKMK_UninstalClient"></a> Desinstalar o cliente do Configuration Manager  
  É possível desinstalar o software cliente do Windows Configuration Manager de um computador usando o **CCMSetup.exe** com a propriedade **/Uninstall**. Execute o CCMSetup.exe em um computador individual por meio do prompt de comando ou implante um pacote ou programa para desinstalar o cliente para a coleção de computadores.  
@@ -331,7 +348,7 @@ Começando do Configuration Manager versão 1610, é possível fornecer uma list
 Você pode iniciar a política de recuperação usando:
 
 
-- [Notificação de cliente](#initiate-client-policy-retrieval-using-client-notification) 
+- [Notificação de cliente](#initiate-client-policy-retrieval-using-client-notification)
 - [A guia **Ações** no cliente](#manually-initiate-client-policy-retrieval-on-the-actions-tab-of-the-configuration-manager-client)
 - [Um script](#manually-initiate-client-policy-retrieval-by-script)
 

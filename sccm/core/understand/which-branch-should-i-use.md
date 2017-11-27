@@ -15,11 +15,11 @@ caps.latest.revision: "0"
 author: Brenduns
 ms.author: brenduns
 manager: angrobe
-ms.openlocfilehash: 047ffc0953db4a4cc5d543d880136ce61fa99fa7
-ms.sourcegitcommit: c236214b2fcc13dae7bad96d7fb33f692868191d
+ms.openlocfilehash: a1d9144db864d261c13992a2ef4d01223d927d88
+ms.sourcegitcommit: c4a1bafcd004638d264a93d307c70d8b6f7fe023
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/12/2017
+ms.lasthandoff: 11/20/2017
 ---
 # <a name="which-branch-of-configuration-manager-should-i-use"></a>Qual branch do Configuration Manager devo usar?
 
@@ -147,7 +147,7 @@ Para mais informações, confira [Technical Preview do System Center Configurati
 Ao exibir as informações da versão de um site do Configuration Manager, também confirma o branch.
 
 **Versão**   
-Para verificar a versão do site, no console, acesse **Sobre o System Center Configuration Manager** no canto superior esquerdo do console em que a **Versão do site** é exibida. Consulte []() para obter uma lista das versões do site.
+Para verificar a versão do site, no console, acesse **Sobre o System Center Configuration Manager** no canto superior esquerdo do console em que a **Versão do site** é exibida. Consulte [Versões de linha de base e atualização](/sccm/core/servers/manage/updates#bkmk_Baselines) para obter uma lista de versões do site.
 
 **Branch**  
 Para confirmar o branch do seu site (como LTSB ou Branch Atual), no console, acesse **Administração** > **Configuração do Site** > **Sites** e abra **Configurações da Hierarquia**. Se houver uma opção para converter para o Branch Atual e ela estiver ativa, o site executará a versão LTSB. Quando o site executa o Branch Atual, essa opção fica esmaecida. Para saber mais sobre as diferentes versões do Configuration Manager, veja “Versões de linha de base e atualização” em [Atualizações para o Configuration Manager](/sccm/core/servers/manage/updates).

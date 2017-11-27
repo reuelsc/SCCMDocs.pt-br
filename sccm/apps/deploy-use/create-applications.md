@@ -3,7 +3,7 @@ title: Criar aplicativos
 titleSuffix: Configuration Manager
 description: "Criar e implantar aplicativos e tipos de implantação com o System Center Configuration Manager."
 ms.custom: na
-ms.date: 10/06/2016
+ms.date: 11/07/2016
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
@@ -16,11 +16,11 @@ caps.handback.revision: "0"
 author: mattbriggs
 ms.author: mabrigg
 manager: angrobe
-ms.openlocfilehash: 6896a4905b9eecf520dae2c887100df472963356
-ms.sourcegitcommit: c236214b2fcc13dae7bad96d7fb33f692868191d
+ms.openlocfilehash: f680b692f3ae92fb8a5e8b6640ed053ceedba436
+ms.sourcegitcommit: 12d0d53e47bbf1a0bbd85015b8404a44589d1e14
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/12/2017
+ms.lasthandoff: 11/21/2017
 ---
 # <a name="create-applications-with-system-center-configuration-manager"></a>Criar aplicativos com o System Center Configuration Manager
 
@@ -119,7 +119,7 @@ O novo aplicativo aparece no nó **Aplicativos** no console do Configuration Man
 
     -   **Palavras-chave** – insira uma lista de palavras-chave no idioma que você selecionou na lista suspensa **Idioma Selecionado**. Essas palavras-chave ajudarão os usuários na pesquisa do aplicativo no Centro de Software.  
 
-    -   **Ícone** – escolha **Procurar** para selecionar um ícone para esse aplicativo entre os ícones disponíveis. Se você não especificar um ícone, um ícone padrão será usado para esse aplicativo.  
+    -   **Ícone** – escolha **Procurar** para selecionar um ícone para esse aplicativo entre os ícones disponíveis. Se você não especificar um ícone, um ícone padrão será usado para esse aplicativo. Agora, você pode definir um ícone com dimensões de até 512 x 512 pixels.
 
     -   **Exibir como um aplicativo em destaque e realçá-lo no portal da empresa** – selecione essa opção para exibir o aplicativo em destaque no portal da empresa.  
 

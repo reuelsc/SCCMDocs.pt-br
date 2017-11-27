@@ -3,7 +3,7 @@ title: "Configurações do cliente"
 titleSuffix: Configuration Manager
 description: "Escolha as configurações do cliente usando o console de administração no System Center Configuration Manager."
 ms.custom: na
-ms.date: 08/01/2017
+ms.date: 11/17/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
@@ -16,11 +16,11 @@ caps.handback.revision: "0"
 author: arob98
 ms.author: angrobe
 manager: angrobe
-ms.openlocfilehash: f34479d6cf0c1153615c612480f204b71a8d84cb
-ms.sourcegitcommit: c236214b2fcc13dae7bad96d7fb33f692868191d
+ms.openlocfilehash: 46429a02debaaaa90562b9586af57e43a9aab92c
+ms.sourcegitcommit: b74c1beaabbb628fdf5d6948fa9a6ad719fd5035
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/12/2017
+ms.lasthandoff: 11/17/2017
 ---
 # <a name="about-client-settings-in-system-center-configuration-manager"></a>Sobre as configurações do cliente no System Center Configuration Manager
 
@@ -71,7 +71,7 @@ Habilite o BranchCache nos computadores cliente.
 - **Configurar o tamanho do cache do cliente**
 
   O cache do cliente em computadores com Windows armazena arquivos temporários usados para instalar aplicativos e programas. Escolha **Sim** e depois especifique:
-    - **Tamanho máximo de cache** (megabytes). 
+    - **Tamanho máximo de cache** (megabytes).
     - **Tamanho máximo do cache** (percentual do disco).
 O tamanho do cache do cliente pode expandir para o tamanho máximo em MB ou a porcentagem do disco, **o que for menor**. Se for definido como **Não**, o tamanho padrão será 5.120 MB.
 
@@ -288,6 +288,8 @@ Habilite o cache de pares para clientes do Configuration Manager. Em seguida, es
  Para obter mais informações sobre as janelas de manutenção, consulte [Como usar janelas de manutenção no System Center Configuration Manager](../../../core/clients/manage/collections/use-maintenance-windows.md).  
 
 ##  <a name="endpoint-protection"></a>Endpoint Protection  
+>  [!Tip]   
+> Além das informações a seguir, você pode encontrar detalhes adicionais de como usar as configurações do cliente do Endpoint Protection no [Cenário de exemplo: usar o System Center Endpoint Protection para proteger os computadores contra malware no System Center Configuration Manager](/sccm/protect/deploy-use/scenarios-endpoint-protection).
 
 -   **Gerenciar o cliente Endpoint Protection em computadores cliente**  
 

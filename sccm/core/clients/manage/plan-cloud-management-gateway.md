@@ -9,11 +9,11 @@ ms.assetid: 2dc8c9f1-4176-4e35-9794-f44b15f4e55f
 author: arob98
 ms.author: angrobe
 manager: angrobe
-ms.openlocfilehash: ffe7b2aa025b20d5b1d1a718e0eaa045817a66ee
-ms.sourcegitcommit: c236214b2fcc13dae7bad96d7fb33f692868191d
+ms.openlocfilehash: b1063826841c37973e26954e164d867649c3fb9f
+ms.sourcegitcommit: c4a1bafcd004638d264a93d307c70d8b6f7fe023
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/12/2017
+ms.lasthandoff: 11/20/2017
 ---
 # <a name="plan-for-the-cloud-management-gateway-in-configuration-manager"></a>Planejar o gateway de gerenciamento de nuvem no Configuration Manager
 
@@ -45,7 +45,7 @@ Os certificados de cliente e os certificados SSL são necessários para autentic
 - O gateway de gerenciamento de nuvem dá suporte apenas às funções de ponto de gerenciamento e de ponto de atualização de software.
 -   No momento, os seguintes recursos não têm suporte no Configuration Manager para o gateway de gerenciamento de nuvem:
 
-    -   Implantação do cliente
+    -   Push de cliente
     -   Atribuição automática de site
     -   Catálogo de aplicativos (incluindo solicitações de aprovação de software)
     -   OSD (implantação de sistema operacional) completa

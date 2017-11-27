@@ -3,7 +3,7 @@ title: "Proteger aplicativos usando políticas de gerenciamento de aplicativos m
 titleSuffix: Configuration Manager
 description: "Modifique a funcionalidade dos aplicativos que você implanta para que eles cumpram as políticas de conformidade e segurança da empresa."
 ms.custom: na
-ms.date: 03/05/2017
+ms.date: 11/20/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
@@ -16,11 +16,11 @@ caps.handback.revision: "0"
 author: dougeby
 ms.author: dougeby
 manager: angrobe
-ms.openlocfilehash: 4eedd96fd399cf9577da8069bd0c8d5702f50d7b
-ms.sourcegitcommit: 922d6d9c91ba2158b938df381277be1b5f1d434a
+ms.openlocfilehash: 3365f46026178d30c9bffa5078d251186d0ffba3
+ms.sourcegitcommit: 12d0d53e47bbf1a0bbd85015b8404a44589d1e14
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/13/2017
+ms.lasthandoff: 11/21/2017
 ---
 # <a name="protect-apps-using-mobile-application-management-policies-in-system-center-configuration-manager"></a>Proteger aplicativos usando políticas de gerenciamento de aplicativos móveis no System Center Configuration Manager
 
@@ -134,6 +134,8 @@ Para aplicar restrições a um aplicativo, este deve incorporar o SDK (Software 
 |**Verificar novamente os requisitos de acesso após (minutos)**|Especifica o período antes que os requisitos de acesso para o aplicativo sejam verificados novamente após o aplicativo ser iniciado (no campo **Tempo Limite**).<br /><br /> No campo **Período de carência offline**, se o dispositivo estiver offline, especificará o período de tempo antes que os requisitos de acesso do aplicativo sejam verificados novamente.|  
 |**Criptografar dados do aplicativo**|Especifica que todos os dados associados ao aplicativo são criptografados, inclusive dados armazenados externamente, como dados armazenados em cartões SD.<br /><br /> **Criptografia para iOS**<br /><br /> Para aplicativos associados a uma política de gerenciamento de aplicativo móvel do Configuration Manager, os dados são criptografados em repouso com a criptografia no nível do dispositivo fornecida pelo sistema operacional. Isso é habilitado pela política de PIN do dispositivo que deve ser definida pelo administrador de TI. Quando um PIN é solicitado, os dados são criptografados segundo as configurações na política de gerenciamento de aplicativo móvel. Conforme indicado na documentação da Apple, [os módulos usados pelo iOS 7 têm a certificação FIPS 140-2](http://support.apple.com/en-us/HT202739).<br /><br /> **Criptografia para Android**<br /><br /> Para aplicativos associados a uma política de gerenciamento de aplicativos móveis do Configuration Manager, a criptografia é fornecida pela Microsoft. Os dados são criptografados de forma síncrona durante operações de E/S de arquivos, de acordo com a configuração na política de gerenciamento de aplicativos móveis. Aplicativos gerenciados no Android usam a criptografia AES-128 no modo CBC utilizando as bibliotecas de criptografia da plataforma. O método de criptografia não tem certificação FIPS 140-2. O conteúdo no armazenamento do dispositivo sempre é criptografado.|  
     |**Bloquear captura de tela** (somente para dispositivos Android)|Especifica que as funcionalidades de captura de tela do dispositivo sejam bloqueadas durante o uso do aplicativo.|  
+    |**Desabilitar sincronização de contatos**| A partir da versão 1710, essa opção impede que o aplicativo salve dados no aplicativo Contatos nativo do dispositivo. Se você escolher Não, o aplicativo poderá salvar dados para o aplicativo nativo de contatos no dispositivo.|  
+    |**Desabilitar impressão**| A partir da versão 1710, essa opção impede que o aplicativo imprima dados corporativos ou de estudante. |  
 
 6)  Na página **Managed Browser**, selecione se o navegador gerenciado tem permissão para abrir somente URLs na lista ou para impedir que o navegador gerenciado abra as URLs na lista e escolha **Avançar**.  
 Para mais informações, consulte [Gerenciar o acesso à Internet usando políticas do Managed Browser](manage-internet-access-using-managed-browser-policies.md).  

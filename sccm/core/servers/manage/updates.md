@@ -3,7 +3,7 @@ title: "Atualizações"
 titleSuffix: Configuration Manager
 description: "Saiba mais sobre um método de serviço no console chamado **Atualizações e Manutenção** que facilita a localização e a instalação das atualizações recomendadas."
 ms.custom: na
-ms.date: 07/31/2017
+ms.date: 11/20/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
@@ -16,11 +16,11 @@ caps.handback.revision: "0"
 author: Brenduns
 ms.author: brenduns
 manager: angrobe
-ms.openlocfilehash: bca724f15dc18d7273bbca122b6428b4704a5d43
-ms.sourcegitcommit: c236214b2fcc13dae7bad96d7fb33f692868191d
+ms.openlocfilehash: ecd458cc5f86a65926d44481c894228bae5f5fbe
+ms.sourcegitcommit: 12d0d53e47bbf1a0bbd85015b8404a44589d1e14
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/12/2017
+ms.lasthandoff: 11/21/2017
 ---
 # <a name="updates-for-system-center-configuration-manager"></a>Atualizações para o System Center Configuration Manager
 
@@ -75,12 +75,13 @@ As seguintes versões do Configuration Manager estão disponíveis como uma linh
 
 |Versão |Data de disponibilidade|[Data de término do suporte](/sccm/core/servers/manage/current-branch-versions-supported) |Linha de base|Atualização no console|  
 |-------------|-----------|------------|--------------|------------------------|  
+|[1710](/sccm/core/plan-design/changes/whats-new-in-version-1710)<br /><br /> 5.00.8577.1000|20 de novembro de 2017|20 de novembro de 2018|Não|Sim|
 |[1706](/sccm/core/plan-design/changes/whats-new-in-version-1706)<br /><br /> 5.00.8540.1000|31 de julho de 2017|31 de julho de 2018|Não|Sim|
 |[1702](/sccm/core/plan-design/changes/whats-new-in-version-1702)<br /><br /> 5.00.8498.1000|27 de março de 2017| 27 de março de 2018|Sim|Sim|
 |[1610](/sccm/core/plan-design/changes/whats-new-in-version-1610)<br /><br /> 5.00.8458.1000|18 de novembro de 2016| 18 de novembro de 2017|Não|Sim|
 |[1606](/sccm/core/plan-design/changes/whats-new-in-version-1606)<br /><br /> 5.00.8412.1000|22 de julho de 2016| 22 de julho de 2017|Não|Sim|
 |[1606](/sccm/core/plan-design/changes/whats-new-in-version-1606) com o pacote cumulativo de atualizações do hotfix 1606 (KB3186654) </br></br>5.00.8412.1307 *(Observação 1)* |12 de outubro de 2016| 12 de outubro de 2017|Sim|Não|
-| 1602<br /><br /> 5.00.8355.1000|11 de março de 2016| 11 de março de 2017|Não|Sim| 
+| 1602<br /><br /> 5.00.8355.1000|11 de março de 2016| 11 de março de 2017|Não|Sim|
 | 1511 <br /><br /> 5.00.8325.1000|8 de dezembro de 2015| 8 de dezembro de 2016|Sim|Não|  
 
 

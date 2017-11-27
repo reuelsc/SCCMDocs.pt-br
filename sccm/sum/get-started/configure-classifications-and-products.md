@@ -1,21 +1,22 @@
 ---
-title: "Configurar classificações e produtos para sincronizar | Microsoft Docs"
+title: "configurar classificações e produtos para sincronizar"
+titleSuffix: Configuration Manager
 description: "Siga estas etapas para configurar classificações e produtos para sincronizar no console do Configuration Manager."
 keywords: 
 author: dougeby
 ms.author: dougeby
 manager: angrobe
-ms.date: 10/06/2016
+ms.date: 11/20/2017
 ms.topic: article
 ms.prod: configuration-manager
 ms.service: 
 ms.technology: configmgr-sum
 ms.assetid: 5ddde4e6-d553-4182-b752-6bc8b4a26745
-ms.openlocfilehash: 2da61e6e06850b36543b9fd41bd9a7d2368006fb
-ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
+ms.openlocfilehash: f36ff74b794e57b51742c40d10bd25a9cb4a13a5
+ms.sourcegitcommit: 12d0d53e47bbf1a0bbd85015b8404a44589d1e14
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/07/2017
+ms.lasthandoff: 11/21/2017
 ---
 #  <a name="configure-classifications-and-products-to-synchronize"></a>configurar classificações e produtos para sincronizar  
 
@@ -52,16 +53,16 @@ ms.lasthandoff: 08/07/2017
     >       
 
     > [!NOTE]    
-    > A partir do Configuration Manager versão 1706, você também pode marcar a caixa de seleção **Incluir drivers e atualizações de firmware do Microsoft Surface** para sincronizar os drivers do Microsoft Surface. Todos os pontos de atualização de software devem executar o Windows Server 2016 para sincronizar com êxito os drivers do Surface.     
-    >    
-    > Esse é um recurso de pré-lançamento. Os recursos de pré-lançamento foram incluídos no produto para testes iniciais em um ambiente de produção, mas não devem ser considerados prontos para produção. Você deve ativar esse recurso para que ele seja disponibilizado. Para obter mais informações, consulte [Usar recursos de pré-lançamento de atualizações](https://docs.microsoft.com/sccm/core/servers/manage/install-in-console-updates#bkmk_prerelease).
+    > A partir do Configuration Manager versão 1706, você pode marcar a caixa de seleção **Incluir drivers e atualizações de firmware do Microsoft Surface** para sincronizar os drivers do Microsoft Surface. Todos os pontos de atualização de software devem executar o Windows Server 2016 para sincronizar com êxito os drivers do Surface. Se você habilitar um ponto de atualização de software em um computador que executa o Windows Server 2012 depois de habilitar os drivers do Surface, os resultados da verificação das atualizações de driver não serão precisos. Isso resulta na exibição de dados de conformidade incorretos no console do Configuration Manager e nos relatórios do Configuration Manager.  
+    > 
+    > A caixa de seleção **Incluir drivers e atualizações de firmware do Microsoft Surface** está sempre disponível no Configuration Manager versão 1710. No entanto, esse é um recurso de pré-lançamento do Configuration Manager versão 1706 e você precisa ativá-lo para que fique disponível. Os recursos de pré-lançamento são recursos que estão na Ramificação atual para testes iniciais em um ambiente de produção. Esses recursos têm suporte total, mas ainda estão em desenvolvimento ativo e podem receber alterações até que saiam da categoria de pré-lançamento. Para obter mais informações, consulte [Usar recursos de pré-lançamento de atualizações](https://docs.microsoft.com/sccm/core/servers/manage/install-in-console-updates#bkmk_prerelease).
 
 5.  Na guia **Produtos** , especifique os produtos para os quais você deseja sincronizar atualizações de software e clique em **Fechar**.  
 
     > [!NOTE]  
-    >  Os metadados de cada atualização de software definem os produtos aos quais a atualização é aplicável. Um produto é uma edição específica de um aplicativo ou sistema operacional, como o Windows Server 2012. Uma família de produtos é o sistema operacional base ou o aplicativo do qual os produtos individuais são derivados. Um exemplo de uma família de produtos é o Windows, do qual o Windows Server 2012 é membro. Você pode especificar uma família de produtos ou produtos individuais dentro de uma família de produtos. Quanto mais produtos você selecionar, mais tempo irá demorar a sincronizar as atualizações de software.  
+    >  Os metadados de cada atualização de software definem os produtos aos quais a atualização é aplicável. Um produto é uma edição específica de um aplicativo ou sistema operacional, como o Windows Server 2012. Uma família de produtos é o sistema operacional base ou o aplicativo do qual os produtos individuais são derivados. Um exemplo de uma família de produtos é o Windows, do qual o Windows Server 2012 é membro. Você pode especificar uma família de produtos ou produtos individuais dentro de uma família de produtos. Quanto mais produtos você selecionar, maior será o tempo para sincronizar as atualizações de software.  
     >   
-    >  Quando as atualizações de software são aplicáveis a vários produtos, e no mínimo um dos produtos é selecionado para sincronização, todos os produtos aparecerão no console do Configuration Manager, mesmo se alguns produtos não forem selecionados. Por exemplo, se o Windows Server 2012 for o único sistema operacional que você selecionou, e se uma atualização de software se aplicar ao Windows 8 e ao Windows Server 2012, ambos os produtos serão exibidos no console do Configuration Manager.  
+    >  Quando as atualizações de software forem aplicáveis a vários produtos e pelo menos um dos produtos for selecionado para sincronização, todos os produtos aparecerão no console do Configuration Manager, mesmo que nem todos os produtos tenham sido selecionados. Por exemplo, se você selecionar somente o Windows Server 2012 e uma atualização de software for aplicável ao Windows 8 e ao Windows Server 2012, ambos os produtos serão exibidos no console do Configuration Manager.  
 
     > [!IMPORTANT]  
     >  O Configuration Manager armazena uma lista de produtos e famílias de produtos que você pode escolher ao instalar o ponto de atualização de software pela primeira vez. Os produtos e as famílias de produtos que forem lançados após o lançamento do Configuration Manager podem não estar disponíveis para seleção até que você conclua a sincronização das atualizações de software, o que atualizará a lista de produtos e famílias de produtos disponíveis para você escolher.  

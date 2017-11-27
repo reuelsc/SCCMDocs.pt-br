@@ -3,7 +3,7 @@ title: "Recuperação de site"
 titleSuffix: Configuration Manager
 description: Aprenda a recuperar seus sites no System Center Configuration Manager.
 ms.custom: na
-ms.date: 6/5/2017
+ms.date: 11/20/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
@@ -15,11 +15,11 @@ caps.latest.revision:
 author: Brenduns
 ms.author: brenduns
 manager: angrobe
-ms.openlocfilehash: 96785ea5abcb4ae67952ad8243c36bf6b238daca
-ms.sourcegitcommit: c236214b2fcc13dae7bad96d7fb33f692868191d
+ms.openlocfilehash: 497860c9b5698271d7ca6e4683e99350100f596f
+ms.sourcegitcommit: 12d0d53e47bbf1a0bbd85015b8404a44589d1e14
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/12/2017
+ms.lasthandoff: 11/21/2017
 ---
 #  <a name="recover-a-configuration-manager-site"></a>Recuperar um site do Configuration Manager
 
@@ -30,6 +30,12 @@ Execute uma recuperação de site do Configuration Manager depois que um site do
 As seções neste tópico podem ajudá-lo a recuperar um site do Configuration Manager. Para criar um backup, veja [Backup para o Configuration Manager](/sccm/protect/understand/backup-and-recovery).
 
 ## <a name="considerations-before-recovering-a-site"></a>Considerações antes de recuperar um site
+> [!Important]  
+> Essas informações aplicam-se somente a cenários de recuperação de site.  Quando você estiver atualizando sua infraestrutura local e não estiver recuperando ativamente um site com falha, examine as informações nos tópicos a seguir:
+> - [Atualizar infraestrutura local](/sccm/core/servers/manage/upgrade-on-premises-infrastructure)
+> - [Modificar sua infra-estrutura](/sccm/core/servers/manage/modify-your-infrastructure)
+
+
 **Você deve usar a mesma versão e edição do SQL Server:** por exemplo, não há suporte à restauração de um banco de dados que era executado no SQL Server 2014 no SQL Server 2016. Da mesma forma, não há suporte para restaurar um banco de dados do site executado em uma Standard Edition do SQL Server 2016 para uma Enterprise Edition do SQL Server 2016.
 -   O SQL Server não deve ser definido como **modo de usuário único**.
 -   Certifique-se de que os arquivos .MDF e .LDF são válidos. Ao recuperar um site, não há verificação para o estado dos arquivos que estão sendo restaurados.
@@ -124,7 +130,7 @@ Depois que um banco de dados do site é restaurado de um backup, o Configuration
 Use um dos procedimentos a seguir como auxílio para recuperar o servidor do site e o banco de dados do site.
 
 ### <a name="to-start-a-site-recovery-in-the-setup-wizard"></a>Para iniciar uma recuperação do site no Assistente de Instalação
-1.  Copie a [pasta CD.Latest](/sccm/core/servers/manage/the-cd.latest-folde) para um local fora da pasta de Instalação do Configuration Manager.
+1.  Copie a [pasta CD.Latest](/sccm/core/servers/manage/the-cd.latest-folder) para um local fora da pasta de Instalação do Configuration Manager.
 Por meio da cópia da pasta CD.Latest, execute o Assistente de instalação do Configuration Manager.
 
 2.  Na página **Guia de Introdução** , selecione **Recuperar um site**e clique em **Avançar**.

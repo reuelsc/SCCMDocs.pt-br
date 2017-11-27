@@ -3,7 +3,7 @@ title: Planejar e configurar o gerenciamento de aplicativos
 titleSuffix: Configuration Manager
 description: "Implemente e configure as dependências necessárias para implantar aplicativos no System Center Configuration Manager."
 ms.custom: na
-ms.date: 02/09/2017
+ms.date: 11/07/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
@@ -15,11 +15,11 @@ caps.latest.revision: "13"
 author: mattbriggs
 ms.author: mabrigg
 manager: angrobe
-ms.openlocfilehash: 66317bea84adbddf2d2e94c30a4a72e19229439b
-ms.sourcegitcommit: 18ac58374d2d513fe2a197c80f7c8c6890a7d612
+ms.openlocfilehash: cd06d3ee2ea14c9ff1b9cf09980c2b25a5263db9
+ms.sourcegitcommit: 12d0d53e47bbf1a0bbd85015b8404a44589d1e14
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/16/2017
+ms.lasthandoff: 11/21/2017
 ---
 # <a name="plan-for-and-configure-application-management-in-system-center-configuration-manager"></a>Planejar e configurar o gerenciamento de aplicativos no System Center Configuration Manager
 
@@ -185,6 +185,26 @@ A identidade visual personalizada do Centro de Software é aplicada de acordo co
 1. Se a função de servidor do site ponto de sites da Web do Catálogo de Aplicativos não estiver instalada, o Centro de Software exibirá o nome da organização especificado na configuração do cliente **Nome da organização** do **Agente de Computador** exibido no Centro de Software. Para ver instruções, consulte [How to configure client settings (Como definir as configurações do cliente)](https://docs.microsoft.com/sccm/core/clients/deploy/configure-client-settings).
 2. Se a função de servidor do site ponto de sites da Web do catálogo de aplicativos estiver instalada, o Centro de Software exibirá o nome da organização a e cor especificados nas propriedades da função de servidor do site ponto de sites da Web do catálogo de aplicativos. Para obter mais informações, consulte [Configuration options for Application Catalog website point (Opções de configuração do ponto de sites da Web do catálogo de aplicativos)](https://docs.microsoft.com/sccm/core/servers/deploy/configure/configuration-options-for-site-system-roles#BKMK_ApplicationCatalog_Website).
 3. Se uma assinatura do Microsoft Intune estiver configurada e conectada ao Configuration Manager, o Centro de Software exibirá o nome da organização, a cor e o logotipo da empresa especificados nas propriedades de assinatura do Intune. Para obter mais informações, consulte [Configuring the Microsoft Intune subscription](https://docs.microsoft.com/sccm/mdm/deploy-use/setup-hybrid-mdm#step-3-configure-intune-subscription).
+
+#### <a name="to-manually-set-software-center-branding"></a>Para definir manualmente a identidade visual do Centro de Software
+<!-- 1351224 -->
+Com a versão 1710, você pode adicionar elementos de identidade visual da empresa e especificar a visibilidade das guias no Centro de Software manualmente. Você pode adicionar o nome específico da empresa do Centro de Software, definir um tema de cores de configuração do Centro de Software, definir um logotipo da empresa e definir as guias visíveis para os dispositivos cliente.
+
+1. No console do **Configuration Manager**, escolha **Administração** > **Configurações do Cliente**. Clique na instância de configuração de cliente desejada.
+2. Na guia **Início**, no grupo **Propriedades**, clique em **Propriedades**.
+3. Na caixa de diálogo **Configurações Padrão**, escolha **Centro de Software**.
+4. Selecione **Sim** para **Selecionar novas configurações para especificar as informações da empresa** para habilitar as configurações de personalização do Centro de Software.
+5. Digite o **Nome da empresa**.
+6. Selecione o **Esquema de Cores do Centro de Software**.
+7. Clique em **Procurar** para buscar seu logotipo do Centro de Software. O logotipo deve ser um JPEG ou PNG de 400 x 100 pixels com tamanho máximo de 750 KB.
+8. Selecione **SIM** para tornar as guias visíveis no Centro de Software para dispositivos cliente. Pelo menos uma guia deve ser visível:
+
+    -  Habilitar a guia Aplicativos
+    -  Habilitar o guia Atualizações
+    -  Habilitar a guia Sistemas Operacionais
+    -  Habilitar a guia Status de Instalação
+    -  Habilitar a guia Conformidade do dispositivo
+    -  Habilitar a guia Opções
 
 > [!IMPORTANT]  
 >  A identidade visual do Centro de Software é sincronizada com o serviço Intune a cada 14 dias. Portanto, pode ocorrer um atraso antes que as alterações feitas no Intune sejam exibidas no Configuration Manager.

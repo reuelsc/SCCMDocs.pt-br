@@ -3,7 +3,7 @@ title: "Etapas da sequência de tarefas"
 titleSuffix: Configuration Manager
 description: "Saiba mais sobre as etapas de sequência de tarefas que você pode adicionar a uma sequência de tarefas do Configuration Manager."
 ms.custom: na
-ms.date: 03/26/2017
+ms.date: 11/20/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
@@ -16,17 +16,20 @@ caps.handback.revision: "0"
 author: Dougeby
 ms.author: dougeby
 manager: angrobe
-ms.openlocfilehash: 8bc73b8aaafa9af4e12589b2d2a742bfc18afd0e
-ms.sourcegitcommit: c236214b2fcc13dae7bad96d7fb33f692868191d
+ms.openlocfilehash: 02d3ca5ed494c20266125686f26b66cebcc7c2a2
+ms.sourcegitcommit: 12d0d53e47bbf1a0bbd85015b8404a44589d1e14
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/12/2017
+ms.lasthandoff: 11/21/2017
 ---
 # <a name="task-sequence-steps-in-system-center-configuration-manager"></a>Etapas da sequência de tarefas no System Center Configuration Manager
 
 *Aplica-se a: System Center Configuration Manager (Branch Atual)*
 
 As etapas de sequência de tarefas a seguir podem ser adicionadas à sequência de tarefas do Configuration Manager. Para obter informações sobre como editar uma sequência de tarefas, veja [Edit a task sequence](../deploy-use/manage-task-sequences-to-automate-tasks.md#BKMK_ModifyTaskSequence).  
+
+> [!TIP]  
+> **Suporte para Windows 10, versão 1709 (também conhecido como Atualização para Criadores de Outono)**.  A partir dessa versão do Windows, a mídia do Windows inclui várias edições. Ao configurar uma sequência de tarefas para usar um pacote de atualização do sistema operacional ou imagem do sistema operacional, selecione uma [edição com suporte para uso no Configuration Manager](/sccm/core/plan-design/configs/support-for-windows-10#windows-10-as-a-client).
 
 
 ##  <a name="BKMK_ApplyDataImage"></a> Aplicar a etapa de sequência de tarefas de imagem de dados  
@@ -536,6 +539,22 @@ Essa etapa de sequência de tarefas é executada somente no Windows PE. Ela não
  **Assegurar que o SO atual a ser atualizado seja**  
  Selecione esta configuração para verificar se o sistema operacional instalado no computador de destino atende o requisito que você especificar. Por padrão, essa configuração é selecionada com um valor de **CLIENTe**.  
 
+##  <a name="child-task-sequence"></a>Sequência de tarefas filhas
+
+Começando com o Configuration Manager versão 1710, você pode adicionar uma nova etapa de sequência de tarefas que executa outra sequência de tarefas. Isso cria um relacionamento pai-filho entre as sequências de tarefas. Com uma sequência de tarefas filhas, você pode criar sequências de tarefas modulares e reutilizáveis.
+
+Quando você adiciona uma sequência de tarefas filho a uma sequência de tarefas, considere o seguinte:
+
+ - As sequências de tarefas pai e filho efetivamente são combinadas em uma única política que o cliente executa.
+ - O ambiente é global. Por exemplo, se uma variável for definida pela sequência de tarefas pai e, em seguida, alterada pela sequência de tarefas filho, a variável permanecerá alterada. Da mesma forma, se a sequência de tarefas filho criar uma nova variável, a variável estará disponível para as etapas restantes na sequência de tarefas pai.
+ - As mensagens de status são enviadas normalmente para uma operação de sequência de tarefas.
+ - As sequências de tarefas gravam entradas no arquivo smsts.log, com novas entradas de log que deixam claro quando uma sequência de tarefas filho é iniciada.
+
+### <a name="details"></a>Detalhes
+
+1. No editor de sequência de tarefas, clique em **Adicionar**, selecione **Geral** e clique em **Executar Sequência de Tarefas**.
+2. Clique em **Procurar** para selecionar a sequência de tarefas filho.  
+
 ##  <a name="BKMK_ConnectToNetworkFolder"></a> Conectar à Pasta de Rede  
  Use a ação da sequência de tarefas **Conectar à pasta de rede** para criar uma conexão com uma pasta de rede compartilhada.  
 
@@ -745,7 +764,7 @@ Esta etapa é executada em um sistema operacional padrão ou no Windows PE. No e
  O número do disco físico que será formatado. O número é baseado na ordem de enumeração de disco do Windows.  
 
  **Tipo de Disco**  
- O tipo de disco que é formatado. Há duas opções para selecionar na lista suspensa:  
+ O tipo de disco que é formatado. Há duas opções para selecionar na lista suspensa: 
 
 -   Padrão(MBR) – Registro Mestre de Inicialização.  
 

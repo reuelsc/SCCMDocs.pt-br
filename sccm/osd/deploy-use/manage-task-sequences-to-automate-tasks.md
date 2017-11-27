@@ -3,9 +3,9 @@ title: "Gerenciar sequências de tarefas para automatizar tarefas"
 titleSuffix: Configuration Manager
 description: "É possível criar, editar, implantar, importar e exportar as sequências de tarefas para gerenciá-las em seu ambiente do System Center Configuration Manager."
 ms.custom: na
-ms.date: 03/24/2017
+ms.date: 11/15/2017
 ms.prod: configuration-manager
-ms.reviewer: na
+ms.reviewer: nac
 ms.suite: na
 ms.technology: configmgr-osd
 ms.tgt_pltfrm: na
@@ -15,11 +15,11 @@ caps.latest.revision: "10"
 author: Dougeby
 ms.author: dougeby
 manager: angrobe
-ms.openlocfilehash: 0174a95f1d3a487cab66d8152a3de70d91b07635
-ms.sourcegitcommit: c236214b2fcc13dae7bad96d7fb33f692868191d
+ms.openlocfilehash: 44e6afbfac3ef1e8318991854c8fdd22ead4c6ed
+ms.sourcegitcommit: 12d0d53e47bbf1a0bbd85015b8404a44589d1e14
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/12/2017
+ms.lasthandoff: 11/21/2017
 ---
 # <a name="manage-task-sequences-to-automate-tasks-in-system-center-configuration-manager"></a>Gerenciar sequências de tarefas para automatizar tarefas no System Center Configuration Manager
 
@@ -446,6 +446,22 @@ Por exemplo, se a coleção ABC tiver uma variável atribuída a ela e o computa
 5.  Opcionalmente, especifique a prioridade para o Configuration Manager usar quando as variáveis de sequência de tarefas são avaliadas.  
 
 6.  Depois de adicionar todas as variáveis à coleção, clique em **OK**.  
+
+## <a name="add-child-task-sequences-to-a-task-sequence"></a>Adicionar sequências de tarefas filho a uma sequência de tarefas
+
+Começando com o Configuration Manager versão 1710, você pode adicionar uma nova etapa de sequência de tarefas que executa outra sequência de tarefas. Isso cria um relacionamento pai-filho entre as sequências de tarefas. Isso permite que você crie sequências de tarefas mais modulares que podem ser usadas novamente.
+
+Quando você adiciona uma sequência de tarefas filho a uma sequência de tarefas, considere o seguinte:
+
+ - As sequências de tarefas pai e filho efetivamente são combinadas em uma única política que o cliente executa.
+ - O ambiente é global. Por exemplo, se uma variável for definida pela sequência de tarefas pai e, em seguida, alterada pela sequência de tarefas filho, a variável permanecerá alterada. Da mesma forma, se a sequência de tarefas filho criar uma nova variável, a variável estará disponível para as etapas restantes na sequência de tarefas pai.
+ - As mensagens de status são enviadas normalmente para uma operação de sequência de tarefas.
+ - As sequências de tarefas gravam entradas no arquivo smsts.log, com novas entradas de log que deixam claro quando uma sequência de tarefas filho é iniciada.
+
+### <a name="to-add-a-child-task-sequence-to-a-task-sequence"></a>Para adicionar uma sequência de tarefas filho a uma sequência de tarefas
+
+1. No editor de sequência de tarefas, clique em **Adicionar**, selecione **Geral** e clique em **Executar Sequência de Tarefas**.
+2. Clique em **Procurar** para selecionar a sequência de tarefas filho.  
 
 ##  <a name="BKMK_AdditionalActionsTS"></a> Ações adicionais para gerenciar sequências de tarefas  
  Você pode gerenciar sequências de tarefas usando ações adicionais ao selecionar uma sequência de tarefas.  

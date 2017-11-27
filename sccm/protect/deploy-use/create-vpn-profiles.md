@@ -3,7 +3,7 @@ title: 'Como criar perfis de VPN '
 titleSuffix: Configuration Manager
 description: Saiba como criar perfis de VPN no System Center Configuration Manager.
 ms.custom: 
-ms.date: 4/19/2017
+ms.date: 11/20/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
@@ -16,11 +16,11 @@ author: lleonard-msft
 caps.handback.revision: "0"
 ms.author: alleonar
 ms.manager: angrobe
-ms.openlocfilehash: 4e8a082bff8b0f734da620669ddf403c0fe3eca6
-ms.sourcegitcommit: c236214b2fcc13dae7bad96d7fb33f692868191d
+ms.openlocfilehash: 21fc286cdcc05244e1895ded5623d346e6cb8ebe
+ms.sourcegitcommit: 12d0d53e47bbf1a0bbd85015b8404a44589d1e14
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/12/2017
+ms.lasthandoff: 11/21/2017
 ---
 # <a name="how-to-create-vpn-profiles-in-system-center-configuration-manager"></a>Como criar perfis de VPN no System Center Configuration Manager
 
@@ -34,16 +34,19 @@ Para conexões VPN de terceiros, distribua o aplicativo VPN antes de implantar o
 
 1.  No console do Configuration Manager, escolha **Ativos e Conformidade** > **Configurações de Conformidade** > **Acesso a Recursos da Empresa** > **Perfis VPN**.  
 
-3.  Na guia **Início**, no grupo **Criar**, escolha **Criar Perfil VPN**.  
+2.  Na guia **Início**, no grupo **Criar**, escolha **Criar Perfil VPN**.  
 
 
-1.  Conclua a página **Geral**. . Observe o seguinte:  
+3.  Conclua a página **Geral**. . Observe o seguinte:  
+
+    - Selecione a **Plataforma** apropriada.
+
+       - Se você selecionar a plataforma Windows 8.1, haverá a opção de selecionar **Importar um item de perfil de VPN existente de um arquivo** para importar as informações do perfil de VPN que foram exportadas para um arquivo XML.
 
     - Não use os caracteres \\/:*?&lt;>&#124; ou o caractere de espaço no nome do perfil VPN. Esses são caracteres sem suporte pelo perfil VPN do Windows Server.  
 
-     -   Selecione **Importar um item de perfil VPN existente de um arquivo** para importar as informações de perfil VPN que foram exportadas para um arquivo XML (somente Windows 8.1 e Windows RT).  
 
-1.  Na página **Conexão**, especifique:  
+4.  Na página **Conexão**, especifique:  
 
     -   **Tipo de conexão**: escolha o tipo de conexão VPN. É possível escolher entre os tipos de conexão na tabela a seguir.  
 

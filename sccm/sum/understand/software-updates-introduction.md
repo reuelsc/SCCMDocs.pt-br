@@ -1,21 +1,22 @@
 ---
-title: "Introdução às atualizações de software | Microsoft Docs"
+title: "Introdução às atualizações de software"
+titleSuffix: Configuration Manager
 description: "Tenha noções básicas sobre atualizações de software no System Center Configuration Manager."
 keywords: 
 author: dougeby
 ms.author: dougeby
 manager: angrobe
-ms.date: 10/06/2016
+ms.date: 10/30/2017
 ms.topic: article
 ms.prod: configuration-manager
 ms.service: 
 ms.technology: configmgr-sum
 ms.assetid: e9778b13-c8a3-40eb-8655-34ac8ce9cdaa
-ms.openlocfilehash: 2904b904bbaf155f016f55fbd36af80308a42d76
-ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
+ms.openlocfilehash: 66aa73e5c1aae68feeacb0eabe6233845289d104
+ms.sourcegitcommit: 986fc2d54f7c5fa965fd4df42f4db4ecce6b79cb
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/07/2017
+ms.lasthandoff: 11/17/2017
 ---
 # <a name="introduction-to-software-updates-in-system-center-configuration-manager"></a>Introdução às atualizações de software no System Center Configuration Manager
 
@@ -254,7 +255,7 @@ Para obter um exemplo que mostra como você pode implantar atualizações de sof
 ##  <a name="BKMK_DeploymentProcess"></a> Processo de implantação de atualização de software  
  Depois de implantar as atualizações de software ou quando uma regra de implementação automática executa e implanta atualizações de software, uma política de atribuição de implantação é adicionada à política do computador para o site. As atualizações de software são baixadas por meio do local de download, a Internet, ou de uma pasta de rede compartilhada, na origem do pacote. As atualizações de software são copiadas da origem do pacote para a biblioteca de conteúdo no servidor do site, e depois copiadas na biblioteca de conteúdo no ponto de distribuição.  
 
- Quando um computador cliente na coleção de destino da implantação recebe a política do computador, o Agente Cliente de Atualizações de Software começa uma verificação de avaliação. O agente cliente baixa o conteúdo das atualizações de software necessárias de um ponto de distribuição para o cache do cliente local logo depois de receber a implantação, mas aguarda a configuração do **Tempo disponível do software** da implantação para que as atualizações de software estejam disponíveis para serem instaladas. As atualizações de software em implantações opcionais (implantações que não têm um prazo de instalação) não são baixadas até que um usuário inicie manualmente a instalação.  
+ Quando um computador cliente na coleção de destino da implantação recebe a política do computador, o Agente Cliente de Atualizações de Software começa uma verificação de avaliação. O agente cliente baixa o conteúdo das atualizações de software necessárias de um ponto de distribuição para o cache do cliente local na configuração **Tempo disponível do software** da implantação e, em seguida, as atualizações do software ficam disponíveis para instalação. As atualizações de software em implantações opcionais (implantações que não têm um prazo de instalação) não são baixadas até que um usuário inicie manualmente a instalação.  
 
  Quando o prazo configurado passa, o Agente Cliente de Atualizações de Software realiza uma varredura para verificar se as atualizações de software ainda são necessárias. Em seguida, ele verifica o cache local no computador cliente para ver se os arquivos de origem da atualização ainda estão disponíveis. Por fim, o cliente instala as atualizações de software. Se o conteúdo tiver sido excluído do cache do cliente para liberar espaço para outra implantação, o cliente baixará as atualizações de software do ponto de distribuição no cache. As atualizações de software são sempre baixadas no cache do cliente independentemente do tamanho máximo do cache do cliente configurado. Quando a instalação é concluída, o agente cliente verifica se as atualizações de software não são mais necessárias e, em seguida, envia uma mensagem de estado para o ponto de gerenciamento para indicar que as atualizações estão instaladas no cliente.  
 

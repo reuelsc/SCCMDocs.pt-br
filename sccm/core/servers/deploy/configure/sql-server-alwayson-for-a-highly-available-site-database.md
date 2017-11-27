@@ -3,7 +3,7 @@ title: AlwaysOn do SQL Server
 titleSuffix: Configuration Manager
 description: Planeje usar um grupo de disponibilidade AlwaysOn do SQL Server com SCCM.
 ms.custom: na
-ms.date: 09/22/2017
+ms.date: 11/20/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
@@ -15,11 +15,11 @@ caps.latest.revision: "16"
 author: Brenduns
 ms.author: brenduns
 manager: angrobe
-ms.openlocfilehash: 24eaa33f1f9b333894817f089149e2cbed35df75
-ms.sourcegitcommit: c236214b2fcc13dae7bad96d7fb33f692868191d
+ms.openlocfilehash: 93aec5773f56ad28950ae75db54739d04124794f
+ms.sourcegitcommit: 12d0d53e47bbf1a0bbd85015b8404a44589d1e14
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/12/2017
+ms.lasthandoff: 11/21/2017
 ---
 # <a name="prepare-to-use-sql-server-always-on-availability-groups-with-configuration-manager"></a>Preparar para usar os grupos de disponibilidade AlwaysOn do SQL Server com o Configuration Manager
 
@@ -216,6 +216,11 @@ As seguintes limitações aplicam-se a todos os cenários.
   A partir do SQL Server 2016 Standard, os [grupos de disponibilidade básicos](https://msdn.microsoft.com/library/mt614935.aspx) não dão suporte ao acesso de leitura de réplicas secundárias, um requisito para uso com o Configuration Manager.
 - **Instância de cluster de failover**  
   As [instâncias de cluster de failover](/sql/sql-server/failover-clusters/windows/always-on-failover-cluster-instances-sql-server) não têm suporte para uma réplica usada com o Configuration Manager.
+
+- **MultiSubnetFailover**    
+    Não há suporte para usar um grupo de disponibilidade em uma configuração de várias sub-redes ou com a cadeia de conexão de palavra-chave [MutliSubnetFailover](/sql/database-engine/availability-groups/windows/create-or-configure-an-availability-group-listener-sql-server#MultiSubnetFailover).
+
+
 
 **Servidores SQL que hospedam os grupos de disponibilidade adicional:**   
 Antes da versão 1610 do Configuration Manager, quando um grupo de disponibilidade em um SQL Server hospedar um ou mais grupos de disponibilidade além do grupo que você usar para o Configuration Manager, cada réplica em cada um dos grupos de disponibilidade adicionais deverá ter as seguintes configurações definidas no momento em que você executar a instalação do Configuration Manager Setup ou instalar uma atualização para o Configuration Manager:
