@@ -14,11 +14,11 @@ ms.assetid: 7b127cee-61f1-4681-9760-caebed36ddf5
 author: dougeby
 ms.author: dougeby
 manager: angrobe
-ms.openlocfilehash: 29dd4bff6d35712c23d66751db16a00aa761b8b4
-ms.sourcegitcommit: 922d6d9c91ba2158b938df381277be1b5f1d434a
+ms.openlocfilehash: 4877d05004bd883a3ae0ad353a78643cf559275e
+ms.sourcegitcommit: 536f7295e9ea361f1f9ead6c25f3685deb041ad8
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/13/2017
+ms.lasthandoff: 11/21/2017
 ---
 # <a name="whats-new-in-hybrid-mobile-device-management-with-system-center-configuration-manager-and-microsoft-intune"></a>Novidades no gerenciamento de dispositivo móvel híbrido com o System Center Configuration Manager e o Microsoft Intune
 
@@ -46,9 +46,42 @@ Cada seção deste artigo lista recursos híbridos em três categorias diferente
 
 ### <a name="new-in-microsoft-intune"></a>Novo no Microsoft Intune
 
+- **O aplicativo de Portal da Empresa para macOS está disponível** <!--1541700--> O Portal da Empresa do Intune no macOS tem uma experiência atualizada, que foi otimizada para exibir com clareza todas as notificações de conformidade e informações que seu usuário precisa para todos os dispositivos que eles registraram. E, quando o Portal da Empresa do Intune tiver sido implantado em um dispositivo, a Atualização Automática da Microsoft para macOS fornecerá atualizações para ele. Você pode baixar o novo Portal da Empresa do Intune para macOS fazendo o logon no site do Portal da Empresa do Intune a partir de um dispositivo macOS.
+
+- **O Microsoft Planner agora faz parte da lista de aplicativos aprovados do gerenciamento de aplicativos móveis (MAM)**  <!-- 1248473 --> O aplicativo Microsoft Planner para iOS e Android agora faz parte dos aplicativos aprovados para o gerenciamento de aplicativos móveis (MAM). O aplicativo pode ser configurado pela folha de Proteção de Aplicativo do Intune no portal do Azure para todos os locatários. Para obter detalhes, confira [Lista MAM de aplicativos aprovados](https://www.microsoft.com/cloud-platform/microsoft-intune-apps).
+
 - **Acesso a logs de aplicativos gerenciados para iOS** <!-- 1469920 --> Agora os usuários finais com o Browser gerenciado instalado podem exibir o status de gerenciamento de todos os aplicativos publicados da Microsoft e enviar logs para solucionar problemas de seus aplicativos iOS gerenciados.
   
   Saiba como habilitar o modo de solução de problemas no Managed Browser em um dispositivo iOS, consulte [How to access to managed app logs using the Managed Browser on iOS](https://docs.microsoft.com/intune/app-configuration-managed-browser#how-to-access-to-managed-app-logs-using-the-managed-browser-on-ios) (Como acessar logs de aplicativos gerenciados usando o Managed Browser no iOS).
+
+- **Melhorias no fluxo de trabalho de configuração do dispositivo no Portal da Empresa para iOS versão 2.9.0** Melhoramos o fluxo de trabalho de configuração de dispositivo no aplicativo do Portal da Empresa para iOS. A linguagem é mais fácil de usar e combinamos as telas sempre que possível. Também tornamos a linguagem mais específica para sua empresa, usando o nome da empresa em todo o texto da instalação. Veja esse fluxo de trabalho atualizado na página [novidades na interface do usuário do aplicativo](https://docs.microsoft.com/intune/whats-new-app-ui#week-of-november-13-2017).
+
+- **Solicitações de comentários para o aplicativo do Portal da Empresa para Android** <!--1165249--> O aplicativo do Portal da Empresa para Android agora solicita o comentário do usuário final. Este comentário será enviado diretamente para a Microsoft e fornecerá aos usuários finais uma oportunidade de avaliar o aplicativo na loja pública do Google Play. Os comentários não são obrigatórios e podem facilmente ser ignorados para que os usuários possam continuar usando o aplicativo. 
+
+- **Informar os usuários finais quais informações do dispositivo podem ser vistas para dispositivos Windows 10** <!--1337920--> Adicionamos **Tipo de Propriedade** à tela de detalhes do dispositivo no aplicativo do Portal da Empresa para Windows 10. Isso permitirá que os usuários obtenham mais informações sobre privacidade diretamente a partir desta página nos documentos do usuário final do Intune. Eles também poderão localizar essas informações na tela **Sobre**.
+
+- **Nova ação “Resolver” disponível para dispositivos Android** <!--1583480--> O aplicativo do Portal da Empresa para Android está introduzindo uma ação "Resolve" na página _Atualizar as configurações do dispositivo_. Selecionar esta opção levará o usuário final diretamente para a configuração que está causando a incompatibilidade com o seu dispositivo. O aplicativo do Portal da Empresa para Android oferece suporte atualmente a essa ação para as configurações de [senha do dispositivo](https://docs.microsoft.com/intune-user-help/set-your-pin-or-password-android), [criptografia do dispositivo](https://docs.microsoft.com/intune-user-help/encrypt-your-device-android), [depuração de USB](https://docs.microsoft.com/intune-user-help/you-need-to-turn-off-usb-debugging-android), e [Fontes Desconhecidas](https://docs.microsoft.com/intune-user-help/you-need-to-turn-off-unknown-sources-android). 
+
+
+### <a name="new-in-configuration-manager-current-branch"></a>Novo no Configuration Manager (Branch Atual)
+
+- **Novas configurações de políticas de gerenciamento de aplicativos móveis** <!-- 1324760 --> As configurações a seguir foram adicionadas nas configurações de política de gerenciamento de aplicativos móveis:
+  - **Desabilitar sincronização de contato**: impede que o aplicativo salve dados no aplicativo Contatos nativo do dispositivo.
+  - **Desabilitar impressão**: impede que o aplicativo imprima dados corporativos ou de estudante.
+
+  Veja [proteger aplicativos usando políticas de proteção de aplicativos no Configuration Manager](/sccm/mdm/deploy-use/protect-apps-using-mam-policies) para testar as novas configurações de política de proteção do aplicativo.
+
+- **Suporte a dispositivos Windows 10 ARM64** <!-- 1355000 --> Os cenários híbridos de MDM (gerenciamento de dispositivo móvel) terão suporte em dispositivos ARM64 executando o Windows 10 quando esses dispositivos ficarem disponíveis. Para obter mais detalhes, confira [Suporte a dispositivos Windows 10 ARM64](/sccm/core/plan-design/changes/whats-new-in-version-1710#windows-10-arm64-device-support).
+
+- **Experiência de perfil de VPN aprimorada no console do Configuration Manager** <!-- 1318232 --> Nesta versão, as páginas de assistente e de propriedades do perfil de VPN foram atualizadas para exibir as configurações apropriadas para a plataforma selecionada. Este recurso estava disponível anteriormente no Configuration Manager Technical Preview 1709 agora está disponível em implantações híbridas com o Intune e a versão 1710 do Configuration Manager (Branch Atual):
+  - [Melhoria da experiência do perfil de VPN no Console do Configuration Manager](/sccm/core/plan-design/changes/whats-new-in-version-1710#improved-vpn-profile-experience-in-configuration-manager-console).
+
+
+Melhoria da experiência do perfil de VPN no Console do Configuration Manager
+
+### <a name="new-in-configuration-manger-technical-preview-1711"></a>Novo no Configuration Manager Technical Preview 1711
+
+- **Novas opções de política de conformidade para Windows 10** Agora, você pode configurar as novas opções de políticas de conformidade para dispositivos Windows 10. As novas configurações incluem políticas de Firewall, Controle de Conta de Usuário, Anti-vírus Windows Defender e controle de versões de build do SO. Para obter mais detalhes, confira [Novas opções de política de conformidade para Windows 10](/sccm/core/get-started/capabilities-in-technical-preview-1711#new-compliance-policy-options-for-windows-10).
 
 
 ## <a name="october-2017"></a>Outubro de 2017
@@ -73,7 +106,7 @@ Cada seção deste artigo lista recursos híbridos em três categorias diferente
   Os usuários finais com dispositivos Android poderão tocar no motivo da não conformidade no aplicativo Portal da Empresa. Quando possível, isso os levará diretamente para o local correto no aplicativo de configurações para corrigir o problema. 
 
 - **Notificações por push adicionais para usuários finais no aplicativo Portal da Empresa para Android Oreo** <!--1475932 -->    
-  Os usuários finais verão notificações adicionais para indicar quando o aplicativo Portal da Empresa para Android Oreo está executando tarefas em segundo plano, como recuperar as políticas do serviço Intune. As notificações aumentam a transparência para os usuários finais, informando sobre quando o Portal da Empresa estiver executando tarefas administrativas em seu dispositivo. Isso faz parte da [otimização geral da interface de usuário do Portal da Empresa](https://blogs.technet.microsoft.com/intunesupport/2017/08/21/android-8-0-o-behaviour-changes-and-microsoft-intune) para o aplicativo Portal da Empresa para Android Oreo. 
+  Os usuários finais verão notificações adicionais para indicar quando o aplicativo Portal da Empresa para Android Oreo está executando tarefas em segundo plano, como recuperar as políticas do serviço Intune. As notificações aumentam a transparência para os usuários finais, informando sobre quando o Portal da Empresa estiver executando tarefas administrativas em seu dispositivo. Isso faz parte da [otimização geral da interface do usuário do Portal da Empresa](https://blogs.technet.microsoft.com/intunesupport/2017/08/21/android-8-0-o-behaviour-changes-and-microsoft-intune) para o aplicativo Portal da Empresa para Android Oreo. 
 
 - **Novos comportamentos para o aplicativo Portal da Empresa para Android com perfis de trabalho** <!--1485783-->    
   Quando você registra um dispositivo com Android for Work com um perfil de trabalho, é o aplicativo Portal da Empresa no perfil de trabalho que executa tarefas de gerenciamento no dispositivo. 
