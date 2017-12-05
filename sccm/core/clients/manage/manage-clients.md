@@ -15,11 +15,11 @@ caps.latest.revision: "17"
 author: arob98
 ms.author: angrobe
 manager: angrobe
-ms.openlocfilehash: ae1bc53cf15b2a1746656667f7bf546742432c11
-ms.sourcegitcommit: 12d0d53e47bbf1a0bbd85015b8404a44589d1e14
+ms.openlocfilehash: 8afb217524d5c2236fb07b13cb42ca50ae200183
+ms.sourcegitcommit: daa080cf220835f157a23e8c8e2bd2781b869bb7
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/04/2017
 ---
 # <a name="how-to-manage-clients-in-system-center-configuration-manager"></a>Como gerenciar clientes no System Center Configuration Manager
 
@@ -269,12 +269,7 @@ Para obter mais informações sobre como usar essas propriedades de linha de com
 
 2.  Na guia **Cache**, defina as propriedades de espaço e local. O local padrão é *%windir%*\ccmcache.  
 
-5.  Para excluir os arquivos na pasta de cache, escolha **Excluir Arquivos**.  
-
-    > [!NOTE]
-    >
-    > O cache é uma pasta regular do Windows, portanto você pode automatizar a exclusão do conteúdo da pasta usando um script, um utilitário ou com o cmdlet do PowerShell `Remove-Item`.
-
+3.  Para excluir os arquivos na pasta de cache, escolha **Excluir Arquivos**.  
 
 ### <a name="to-configure-client-cache-size-in-client-settings"></a>Para configurar o tamanho do cache do cliente nas Configurações do Cliente
 

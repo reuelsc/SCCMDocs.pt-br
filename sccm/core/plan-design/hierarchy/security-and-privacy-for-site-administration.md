@@ -12,14 +12,14 @@ ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 1d58176e-abc0-4087-8583-ce70deb4dcf5
 caps.latest.revision: "8"
-author: Brenduns
-ms.author: brenduns
+author: aaroncz
+ms.author: aaroncz
 manager: angrobe
-ms.openlocfilehash: 8ac421cca154f99251c13e1dcd0bed21e5b68078
-ms.sourcegitcommit: c236214b2fcc13dae7bad96d7fb33f692868191d
+ms.openlocfilehash: f16a66788160ab6c9689f267d493daa0c7e84fa8
+ms.sourcegitcommit: 7fe45ff75f05f7cc03ad021db8119791abe18049
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/12/2017
+ms.lasthandoff: 12/01/2017
 ---
 # <a name="security-and-privacy-for-site-administration-in-system-center-configuration-manager"></a>Segurança e privacidade para administração de site no System Center Configuration Manager
 
@@ -221,7 +221,7 @@ Identifique e siga as práticas recomendadas para a sua versão do SQL Server. N
 
 -   A conta de computador do servidor do site deve ser um membro do grupo de Administradores no computador que executa o SQL Server. Se você seguir a recomendação do SQL Server de "provisionar entidades de segurança do administrador explicitamente", a conta que usar para executar a instalação no servidor do site deverá ser um membro do grupo de usuários do SQL.  
 
--   Se você instalar o SQL Server usando uma conta de usuário de domínio, verifique se a conta de computador do servidor do site está configurada para um SPN (Nome da Entidade de Serviço), que é publicado em Serviços de Domínio Active Directory. Sem o SPN, a autenticação Kerberos e a instalação do Configuration Manager falham.  
+-   Se você instalar o SQL Server usando uma conta de usuário de domínio, verifique se a conta de computador do servidor do site está configurada para um SPN (Nome da Entidade de Serviço), que é publicado em Serviços de Domínio Active Directory . Sem o SPN, a autenticação Kerberos e a instalação do Configuration Manager falham.  
 
 ##  <a name="BKMK_Security_IIS"></a> Práticas recomendadas de segurança para os sistemas de sites que executam IIS  
 Várias funções do sistema de sites no Configuration Manager requerem o IIS. O processo de proteção do IIS permite que o Configuration Manager opere corretamente e reduz o risco de ataques à segurança. Quando for viável, minimize o número de servidores que requerem IIS. Por exemplo, execute apenas o número de pontos de gerenciamento que você precisa para dar suporte à sua base de clientes, levando em consideração a alta disponibilidade e o isolamento da rede para o gerenciamento de clientes baseado na Internet.  
