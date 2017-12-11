@@ -12,14 +12,14 @@ ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: c5a42100-2f60-4952-b495-918025ea6559
 caps.latest.revision: "4"
-author: Brenduns
-ms.author: brenduns
+author: mestew
+ms.author: mstewart
 manager: angrobe
-ms.openlocfilehash: c0277fed7db5803aa2b2246ca879640136dce02a
-ms.sourcegitcommit: c236214b2fcc13dae7bad96d7fb33f692868191d
+ms.openlocfilehash: bda1ab737a3af5e13f180771cc17c9850165906c
+ms.sourcegitcommit: daa080cf220835f157a23e8c8e2bd2781b869bb7
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/12/2017
+ms.lasthandoff: 12/04/2017
 ---
 # <a name="size-and-scale-numbers-for-system-center-configuration-manager"></a>Números de tamanho e escala para o System Center Configuration Manager
 
@@ -147,7 +147,10 @@ Um site de administração central oferece suporte a uma quantidade total de dis
  Por exemplo, em uma hierarquia você pode dar suporte a 700.000 desktops, até 25.000 clientes Mac e Windows CE 7.0 e até 300.000 dispositivos baseados em nuvem quando integra o Microsoft Intune, somando 1.025.000 dispositivos. Se você der suporte a dispositivos gerenciados pelo MDM local, o total para a hierarquia será de 825.000 dispositivos.  
 
 > [!IMPORTANT]  
->  Em uma hierarquia na qual o site de administração central usa uma edição Standard do SQL Server, a hierarquia dá suporte a 50.000 dispositivos e desktops no máximo. A edição do SQL Server em uso em um site primário autônomo não limita a capacidade desse site a fim de dar suporte ao número especificado de clientes.  
+>  Em uma hierarquia na qual o site de administração central usa uma edição Standard do SQL Server, a hierarquia dá suporte a 50.000 dispositivos e desktops no máximo. Para dar suporte a mais de 50.000 dispositivos e desktops, é necessário usar uma edição Enterprise do SQL Server. Esse requisito aplica-se somente a um site de administração central, e não a um site primário autônomo ou um site primário filho em que a edição do SQL Server usada não limita a capacidade desse site de dar suporte ao número indicado de clientes.   
+
+
+ A edição do SQL Server em uso em um site primário autônomo não limita a capacidade desse site a fim de dar suporte ao número especificado de clientes.  
 
 
 ###  <a name="bkmk_chipri"></a> Site primário filho  

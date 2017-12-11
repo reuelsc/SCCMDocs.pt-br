@@ -15,11 +15,11 @@ caps.latest.revision: "15"
 author: NathBarn
 ms.author: nathbarn
 manager: angrobe
-ms.openlocfilehash: de813a38d6278a60189667165bf4911bd314f14a
-ms.sourcegitcommit: c236214b2fcc13dae7bad96d7fb33f692868191d
+ms.openlocfilehash: a3fb0bc39f1606f1a65b5623c9567819b1a0c52e
+ms.sourcegitcommit: 5d46ed593b1cc461ea3f6ff6917bcd272b095ed7
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/12/2017
+ms.lasthandoff: 11/29/2017
 ---
 # <a name="endpoint-protection-client-frequently-asked-questions"></a>Perguntas frequentes sobre o cliente Endpoint Protection
 
@@ -203,7 +203,7 @@ Para remover todos os itens indesejados ou potencialmente prejudiciais que o Win
 
 ##  <a name="what-is-real-time-protection"></a>O que é proteção em tempo real?  
 
- A proteção em tempo real permite que o Windows Defender monitore o computador o tempo todo e o alerte quando possíveis ameaças, como vírus e spyware, tentam se instalar ou ser executados no computador. Como esse recurso é um elemento importante na maneira pela qual o Windows Defender ajuda a proteger o computador, você deve garantir que a proteção em tempo real esteja sempre ligada. Se a proteção em tempo real for desligada, o Windows Defender o avisará e alterará o status do computador para â€Em riscoâ€.  
+ A proteção em tempo real permite que o Windows Defender monitore o computador o tempo todo e o alerte quando possíveis ameaças, como vírus e spyware, tentam se instalar ou ser executados no computador. Como esse recurso é um elemento importante na maneira pela qual o Windows Defender ajuda a proteger o computador, você deve garantir que a proteção em tempo real esteja sempre ligada. Se a proteção em tempo real for desligada, o Windows Defender o avisará e alterará o status do computador â€™s para â€œEm riscoâ€.  
 
  Sempre que a proteção em tempo real detecta uma ameaça ou possível ameaça, o Windows Defender exibe uma notificação. Você pode escolher entre as seguintes opções:  
 
@@ -219,7 +219,7 @@ Para remover todos os itens indesejados ou potencialmente prejudiciais que o Win
 |Verificar todos os downloads|Essa opção monitora arquivos e programas baixados, inclusive arquivos baixados automaticamente por meio do Windows Internet Explorer e Microsoft Outlook® Express, como controles ActiveX® e programas de instalação de software. Esses arquivos podem ser baixados, instalados ou executados pelo próprio navegador. Softwares mal-intencionados, incluindo vírus, spywares e outros softwares potencialmente indesejados, podem ser incluídos nesses arquivos e instalados sem seu conhecimento.<br /><br /> Usando a opção de proteção em tempo real, o Windows Defender monitora o tempo todo o computador e verifica os arquivos ou programas mal-intencionados que você possa ter baixado. Esse recurso de monitoramento significa que o Windows Defender não precisa tornar mais lenta sua experiência de navegação ou email, exigindo uma verificação de arquivos ou programas que você queira baixar.|  
 |Monitorar atividade de arquivos e programas no computador|Essa opção monitora quando os arquivos e programas começam a ser executados no computador e o alerta sobre quaisquer ações executadas por eles ou neles. Isso é importante, pois o software mal-intencionado pode usar as vulnerabilidades nos programas que você instalou para executar software mal-intencionado ou indesejado sem seu conhecimento. Por exemplo, spyware pode ser executado em segundo plano quando você inicia um programa que usa com frequência. O Windows Defender monitora os programas e o alerta quando detecta atividade suspeita.|  
 |Habilitar o comportamento de monitoramento|Essa opção monitora coleções de padrões de comportamento suspeitos que não podem ser detectados por métodos de detecção de antivírus tradicionais.|  
-|Ativar o sistema de inspeção de rede|Esta opção ajuda a proteger o computador contra explorações de "dia zero" de vulnerabilidades conhecidas, diminuindo a janela de tempo entre o momento em que uma vulnerabilidade é descoberta e a aplicação de uma atualização.|  
+|Ativar o sistema de inspeção de rede|Esta opção ajuda a proteger o computador contra explorações de â€œdia zeroâ€ de vulnerabilidades conhecidas, diminuindo a janela de tempo entre o momento em que uma vulnerabilidade é descoberta e a aplicação de uma atualização.|  
 
 ### <a name="to-turn-off-real-time-protection"></a>Para desligar a proteção em tempo real  
 

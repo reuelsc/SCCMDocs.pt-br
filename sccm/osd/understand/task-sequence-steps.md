@@ -16,11 +16,11 @@ caps.handback.revision: "0"
 author: Dougeby
 ms.author: dougeby
 manager: angrobe
-ms.openlocfilehash: 02d3ca5ed494c20266125686f26b66cebcc7c2a2
-ms.sourcegitcommit: 12d0d53e47bbf1a0bbd85015b8404a44589d1e14
+ms.openlocfilehash: 40a2d91baf8c02cdda96e9520ce155032272ebdd
+ms.sourcegitcommit: 7fe45ff75f05f7cc03ad021db8119791abe18049
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/01/2017
 ---
 # <a name="task-sequence-steps-in-system-center-configuration-manager"></a>Etapas da sequência de tarefas no System Center Configuration Manager
 
@@ -538,22 +538,6 @@ Essa etapa de sequência de tarefas é executada somente no Windows PE. Ela não
 
  **Assegurar que o SO atual a ser atualizado seja**  
  Selecione esta configuração para verificar se o sistema operacional instalado no computador de destino atende o requisito que você especificar. Por padrão, essa configuração é selecionada com um valor de **CLIENTe**.  
-
-##  <a name="child-task-sequence"></a>Sequência de tarefas filhas
-
-Começando com o Configuration Manager versão 1710, você pode adicionar uma nova etapa de sequência de tarefas que executa outra sequência de tarefas. Isso cria um relacionamento pai-filho entre as sequências de tarefas. Com uma sequência de tarefas filhas, você pode criar sequências de tarefas modulares e reutilizáveis.
-
-Quando você adiciona uma sequência de tarefas filho a uma sequência de tarefas, considere o seguinte:
-
- - As sequências de tarefas pai e filho efetivamente são combinadas em uma única política que o cliente executa.
- - O ambiente é global. Por exemplo, se uma variável for definida pela sequência de tarefas pai e, em seguida, alterada pela sequência de tarefas filho, a variável permanecerá alterada. Da mesma forma, se a sequência de tarefas filho criar uma nova variável, a variável estará disponível para as etapas restantes na sequência de tarefas pai.
- - As mensagens de status são enviadas normalmente para uma operação de sequência de tarefas.
- - As sequências de tarefas gravam entradas no arquivo smsts.log, com novas entradas de log que deixam claro quando uma sequência de tarefas filho é iniciada.
-
-### <a name="details"></a>Detalhes
-
-1. No editor de sequência de tarefas, clique em **Adicionar**, selecione **Geral** e clique em **Executar Sequência de Tarefas**.
-2. Clique em **Procurar** para selecionar a sequência de tarefas filho.  
 
 ##  <a name="BKMK_ConnectToNetworkFolder"></a> Conectar à Pasta de Rede  
  Use a ação da sequência de tarefas **Conectar à pasta de rede** para criar uma conexão com uma pasta de rede compartilhada.  
@@ -1423,6 +1407,22 @@ Antes do Configuration Manager versão 1610, esta etapa executa as seguintes tar
 
 > [!IMPORTANT]  
 >  O PowerShell 1.0 não suporta as políticas de execução Indefinido e Ignorar.  
+
+##  <a name="child-task-sequence"></a> Executar sequência de tarefas
+
+Começando com o Configuration Manager versão 1710, você pode adicionar uma nova etapa de sequência de tarefas que executa outra sequência de tarefas. Isso cria um relacionamento pai-filho entre as sequências de tarefas. Com uma sequência de tarefas filho, é possível criar sequências de tarefas modulares e reutilizáveis.
+
+Quando você adiciona uma sequência de tarefas filho a uma sequência de tarefas, considere o seguinte:
+
+ - As sequências de tarefas pai e filho efetivamente são combinadas em uma única política que o cliente executa.
+ - O ambiente é global. Por exemplo, se uma variável for definida pela sequência de tarefas pai e, em seguida, alterada pela sequência de tarefas filho, a variável permanecerá alterada. Da mesma forma, se a sequência de tarefas filho criar uma nova variável, a variável estará disponível para as etapas restantes na sequência de tarefas pai.
+ - As mensagens de status são enviadas normalmente para uma operação de sequência de tarefas.
+ - As sequências de tarefas gravam entradas no arquivo smsts.log, com novas entradas de log que deixam claro quando uma sequência de tarefas filho é iniciada.
+
+### <a name="details"></a>Detalhes
+
+1. No editor de sequência de tarefas, clique em **Adicionar**, selecione **Geral** e clique em **Executar Sequência de Tarefas**.
+2. Clique em **Procurar** para selecionar a sequência de tarefas filho.  
 
 ##  <a name="BKMK_SetDynamicVariables"></a> Definir Variáveis Dinâmicas  
  Use a etapa da sequência de tarefas **Definir variáveis dinâmicas** para executar o seguinte:  

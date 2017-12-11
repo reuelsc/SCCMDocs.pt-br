@@ -10,14 +10,14 @@ ms.technology: configmgr-other
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: bc6c3e5f-b9e2-400e-9d9d-446ff93c520c
-author: Brenduns
-ms.author: brenduns
+author: mestew
+ms.author: mstewart
 manager: angrobe
-ms.openlocfilehash: 33a5bff1e202822ce3ec5755958d34af461957e9
-ms.sourcegitcommit: 536f7295e9ea361f1f9ead6c25f3685deb041ad8
+ms.openlocfilehash: 83bd5fc972bc0bef07b206e160463db71837e827
+ms.sourcegitcommit: daa080cf220835f157a23e8c8e2bd2781b869bb7
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/04/2017
 ---
 # <a name="what39s-new-in-version-1710-of-system-center-configuration-manager"></a>Novidades da versão 1710 do System Center Configuration Manager
 
@@ -28,8 +28,8 @@ A atualização 1710 do branch atual do System Center Configuration Manager est�
 > [!TIP]  
 > Para instalar um novo site, você deve usar uma versão de linha de base do Configuration Manager.  
 >  Saiba mais sobre:    
->   - [Instalação de novos sites](https://technet.microsoft.com/library/mt590197.aspx)  
->   - [Instalação de atualizações em sites](https://technet.microsoft.com/library/mt607046.aspx)  
+>   - [Instalação de novos sites](/sccm/core/servers/deploy/install/installing-sites)  
+>   - [Instalação de atualizações em sites](/sccm/core/servers/manage/updates)  
 >   - [Versões de linha de base e atualização](/sccm/core/servers/manage/updates#a-namebkmkbaselinesa-baseline-and-update-versions)  
 
 As seções a seguir fornecem detalhes sobre as alterações e novos recursos introduzidos na versão 1710 do Configuration Manager.  
@@ -60,13 +60,13 @@ Agora você pode usar [pontos de distribuição baseados em nuvem](/sccm/core/pl
 <!-- 1350871 -->
 A partir do Windows 10, versão 1607 (também conhecido como a Atualização de Aniversário), você pode associar um dispositivo com Windows 10 ao Active Directory (AD) local e ao Azure AD baseado em nuvem ao mesmo tempo (Azure AD híbrido). O cogerenciamento aproveita essa melhoria e permite que você gerencie dispositivos com Windows 10 simultaneamente por meio do Configuration Manager e o Intune. É uma solução que fornece uma ponte do gerenciamento tradicional para o moderno e fornece um caminho para fazer a transição usando uma abordagem em fases. Para obter detalhes, confira [Cogerenciamento para dispositivos com Windows 10](/sccm/core/clients/manage/co-management-overview).
 
-### <a name="restart-computers-form-the-configuration-manager-console-----1356283---"></a>Reiniciar computadores usando o console do Configuration Manager  <!-- 1356283 -->
+### <a name="restart-computers-from-the-configuration-manager-console-----1356283---"></a>Reinicie os computadores do console do Configuration Manager <!-- 1356283 -->
 A partir desta versão, você pode usar o console do Configuration Manager para identificar os dispositivos cliente que exigem uma reinicialização e, em seguida, usar uma ação de notificação do cliente para reiniciá-los.
 
 Consulte [Como gerenciar clientes no System Center Configuration Manager](/sccm/core/clients/manage/manage-clients#restart-clients)
 
 
-<!--  ## Compliance settings  -->
+<!-- ## Compliance settings -->
 
 
 ## <a name="application-management"></a>Gerenciamento de aplicativos
@@ -130,6 +130,10 @@ Para obter mais informações, consulte [Como definir as configurações do clie
 
 
 ## <a name="mobile-device-management"></a>Gerenciamento de dispositivos móveis
+
+### <a name="actions-for-non-compliance"></a>Ações de não conformidade 
+<!--1321366 -->    
+Agora é possível configurar uma sequência de ações ordenadas por tempo aplicadas aos dispositivos que estão fora de conformidade. Por exemplo, é possível notificar os usuários sobre dispositivos que não estão em conformidade por email ou marcá-los como não em conformidade. Para obter detalhes, consulte [Set up actions for non-compliance](/sccm/mdm/deploy-use/actions-for-noncompliance) (Configurar ações de não conformidade).
 
 ### <a name="windows-10-arm64-device-support"></a>Suporte a dispositivos Windows 10 ARM64
 <!-- 1355000 -->
