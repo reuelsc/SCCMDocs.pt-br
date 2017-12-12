@@ -16,11 +16,11 @@ caps.handback.revision: "0"
 author: arob98
 ms.author: angrobe
 manager: angrobe
-ms.openlocfilehash: 4b638b0325aa5f75d60a008ea60531a818ec76c2
-ms.sourcegitcommit: 1132886e07d0c0a87dcc7eeef4577dd8d8840023
+ms.openlocfilehash: c9b35122f6afbb4fffbbff48b919fd696939c897
+ms.sourcegitcommit: 51cfce302fa8ddf633ad1f379b1161c0617089b8
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/01/2017
+ms.lasthandoff: 12/11/2017
 ---
 # <a name="set-up-android-hybrid-device-management-with-system-center-configuration-manager-and-microsoft-intune"></a>Configurar o gerenciamento de dispositivo híbrido do Android com o System Center Configuration Manager e o Microsoft Intune
 
@@ -60,7 +60,7 @@ As etapas a seguir permitem que o Configuration Manager gerencie dispositivos An
 > Um problema conhecido impede que a opção **Gerenciar dispositivos com suporte para os usuários somente desses grupos como Android para o trabalho** funcione conforme o esperado. Os dispositivos dos usuários nos grupos do Azure AD especificados são inscritos como Android, em vez de Android for Work. Para habilitar o Android for Work, é necessário usar a opção **Gerenciar todos os dispositivos com suporte como Android for Work**.
 
 
-Após a configuração, será necessário permitir que os usuários saibam como registrar seus dispositivos. Consulte [O que dizer aos usuários sobre o registro de seus dispositivos](https://docs.microsoft.com/intune/deploy-use/what-to-tell-your-end-users-about-using-microsoft-intune). Essas informações se aplicam a dispositivos móveis gerenciados pelo Microsoft Intune e pelo Configuration Manager.
+Após a configuração, será necessário permitir que os usuários saibam como registrar seus dispositivos. Consulte [O que dizer aos usuários sobre o registro de seus dispositivos](https://docs.microsoft.com/en-us/intune/end-user-educate). Essas informações se aplicam a dispositivos móveis gerenciados pelo Microsoft Intune e pelo Configuration Manager.
 
 Após o término da associação, você verá o nome da conta e da organização no portal do Intune. No momento, você pode fechar os dois navegadores.
 
