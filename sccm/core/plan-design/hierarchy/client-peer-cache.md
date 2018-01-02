@@ -3,7 +3,7 @@ title: Cache de pares do cliente
 titleSuffix: Configuration Manager
 description: "Use cache de pares para locais de fonte de conteúdo do cliente durante a implantação de conteúdo com o System Center Configuration Manager."
 ms.custom: na
-ms.date: 11/20/2017
+ms.date: 12/07/2017
 ms.reviewer: na
 ms.suite: na
 ms.prod: configuration-manager
@@ -15,11 +15,11 @@ caps.latest.revision: "3"
 author: aaroncz
 ms.author: aaroncz
 manager: angrobe
-ms.openlocfilehash: 60f70d3e24f6290fb022b9bd8ca1512b0ed3d719
-ms.sourcegitcommit: 7fe45ff75f05f7cc03ad021db8119791abe18049
+ms.openlocfilehash: cadc62ab21ac8cd43120a5baa79dd635a12b4069
+ms.sourcegitcommit: 2dc9c83e57e9734ffc4a93f79cd71285036eeb8b
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 12/01/2017
+ms.lasthandoff: 12/07/2017
 ---
 # <a name="peer-cache-for-configuration-manager-clients"></a>Cache de pares para clientes do Configuration Manager
 
@@ -36,7 +36,7 @@ Um cliente de Cache de mesmo nível é um cliente do Configuration Manager que e
  -  Para compartilhar o conteúdo como uma fonte de Cache de mesmo nível, um cliente de Cache de mesmo nível:
     -  Deve ingressar no domínio. No entanto, um cliente não associado a um domínio pode obter o conteúdo de um domínio ingressado na fonte de Cache de mesmo nível.
     -  Deve ser membro do grupo de limites atual do cliente que está procurando o conteúdo. Um cliente de Cache de mesmo nível em um grupo de limites vizinho não está incluído no pool de locais de origem de conteúdo disponíveis quando um cliente usa o fallback para buscar o conteúdo de um grupo de limites vizinho. Para obter mais informações sobre grupos de limite atuais e próximos, consulte [Grupos de limites](/sccm/core/servers/deploy/configure/define-site-boundaries-and-boundary-groups##a-namebkmkboundarygroupsa-boundary-groups).
- - Todo tipo de conteúdo mantido no cache de um cliente do Configuration Manager pode ser servido a outros clientes usando o Cache de Pares.
+ - Todo tipo de conteúdo mantido no cache de um cliente do Configuration Manager pode ser servido a outros clientes usando o Cache de Pares, incluindo arquivos do Office 365 e arquivos de instalação expressa. <!--SMS.500850-->
  -  O Cache de Pares não substitui o uso de outras soluções como o BranchCache, em vez disso, ele funciona lado a lado com ele para fornecer a você mais opções para estender as soluções tradicionais de implantação de conteúdo, como os pontos de distribuição. Trata-se de uma solução personalizada sem dependência do BranchCache, portanto se você não habilitar nem usar o Windows BranchCache, ele ainda funcionará.
 
 ### <a name="operations"></a>Operações

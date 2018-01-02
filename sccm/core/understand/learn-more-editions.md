@@ -3,7 +3,7 @@ title: Saiba mais sobre licenciamento e branches
 titleSuffix: Configuration Manager
 description: "Use este tópico para saber mais sobre os requisitos de licenciamento das opções de instalação disponíveis com a versão de outubro de 2016 do System Center Configuration Manager, que incluem a versão de 1606 do Branch Atual, o LTSB (Branch de Manutenção em Longo Prazo) e a instalação de avaliação do Branch Atual."
 ms.custom: na
-ms.date: 10/12/2016
+ms.date: 12/05/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
@@ -16,11 +16,11 @@ caps.handback.revision: "0"
 author: aaroncz
 ms.author: aaroncz
 manager: angrobe
-ms.openlocfilehash: 0890b25f4b5b96a8d39b0dcf6f0aa659c07265db
-ms.sourcegitcommit: 7fe45ff75f05f7cc03ad021db8119791abe18049
+ms.openlocfilehash: bcb25fc6faad3d5f7162ae4ceb200c6de1c1c25b
+ms.sourcegitcommit: 8c6e9355846ff6a73c534c079e3cdae09cf13c45
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 12/01/2017
+ms.lasthandoff: 12/06/2017
 ---
 # <a name="licensing-and-branches-for-system-center-configuration-manager"></a>Licenciamento e branches do System Center Configuration Manager
 
@@ -42,7 +42,7 @@ Este tópico faz referência ao contrato do Software Assurance (ou direitos de a
 
 |Branch|Licenciamento|Detalhes|
 |----------------|---------------------|--------------------|
-|Branch Atual | Requer um contrato de Software Assurance ativo (ou direitos equivalentes) para o Configuration Manager. </br></br> Consulte [Software Assurance e o Branch Atual](#software-assurance-and-the-current-Branch) neste tópico.| Com suporte para uso em ambientes de produção que desejam receber atualizações regulares de qualidade e recursos da Microsoft. </br></br> Este branch fornece acesso para usar todos os recursos e aprimoramentos. </br></br> Cada atualização de versão tem suporte por 1 (um) ano após seu lançamento. Depois disso, você deve atualizar para uma versão mais recente que ainda [tem suporte](/sccm/core/servers/manage/current-branch-versions-supported).|
+|Branch Atual | Requer um contrato de Software Assurance ativo (ou direitos equivalentes) para o Configuration Manager. </br></br> Consulte [Software Assurance e o Branch Atual](#software-assurance-and-the-current-Branch) neste tópico.| Com suporte para uso em ambientes de produção que desejam receber atualizações regulares de qualidade e recursos da Microsoft. </br></br> Este branch fornece acesso para usar todos os recursos e aprimoramentos. </br></br> Para versões do Configuration Manager lançadas antes da 1710, o suporte é de 12 meses. A partir da versão 1710, cada versão de atualização permanece com suporte por 18 meses a partir da data de lançamento de disponibilidade geral. Para mais informações, confira [Suporte para versões do branch atual do System Center Configuration Manager](/sccm/core/servers/manage/current-branch-versions-supported).|
 |LTSB (Branch de Manutenção de Longo Prazo)| Requer um contrato de Software Assurance atual com a Microsoft no momento do lançamento (1º de outubro de 2016) </br></br> Consulte [Software Assurance e o LTSB](#software-assurance-and-the-ltsb) neste tópico. | Com suporte para uso em ambientes de produção. Destinado a uso por clientes que deixaram seus direitos de SA (Software Assurance) ou direitos de assinatura equivalentes do Configuration Manager vencerem depois de 1º de outubro de 2016. </br></br> Este branch é limitado em comparação ao Branch Atual. </br></br> Atualizações de segurança críticas do Configuration Manager são disponibilizadas para este branch, mas nenhum novo recurso está disponível. |
 |Instalação de avaliação do Branch Atual| Não requer um contrato de Software Assurance com a Microsoft. | As [instalações de avaliação](https://www.microsoft.com/en-us/evalcenter/evaluate-system-center-configuration-manager-and-endpoint-protection) são sempre o Branch Atual e podem ser usadas por 180 dias. </br></br> A instalação de avaliação pode ser atualizada para uma instalação completa do Branch Atual. Não é possível atualizar uma instalação de avaliação para o Branch de Manutenção de Longo Prazo.|
 

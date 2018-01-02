@@ -3,7 +3,7 @@ title: "Monitorar o conteúdo"
 titleSuffix: Configuration Manager
 description: "Entenda como monitorar o conteúdo distribuído usando o console do Configuration Manager."
 ms.custom: na
-ms.date: 4/17/2017
+ms.date: 12/05/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
@@ -15,11 +15,11 @@ caps.latest.revision: "5"
 author: mestew
 ms.author: mstewart
 manager: angrobe
-ms.openlocfilehash: 5b1c0401c0b1ce2aa8765ccfb8898b90cf7a5c93
-ms.sourcegitcommit: daa080cf220835f157a23e8c8e2bd2781b869bb7
+ms.openlocfilehash: 62d783735e64b6f3f11dae9af6ac5a7584d689ef
+ms.sourcegitcommit: 52b956cfe32c3f06ae68d6ba6fc3244ce5a66325
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 12/04/2017
+ms.lasthandoff: 12/06/2017
 ---
 # <a name="monitor-content-you-have-distributed-with-system-center-configuration-manager"></a>Monitorar o conteúdo que você distribuiu com o System Center Configuration Manager
 
@@ -155,7 +155,8 @@ Use o procedimento a seguir para exibir o status de configuração de pontos de 
 Começando da versão 1610, é possível usar o painel **Fontes de Dados do Cliente** para ajudar a entender o uso do [Cache de Pares](/sccm/core/plan-design/hierarchy/client-peer-cache) em seu ambiente. O painel começará a exibir os dados após os clientes baixarem o conteúdo e enviarem as informações de volta para o site. Isso pode levar até 24 horas.
 
 > [!TIP]  
-> O **Cache de Pares de Cliente** e o **Painel de Fontes de Dados do Cliente** são recursos de pré-lançamento, apresentados na versão 1610. Você deve habilitar o Cache de mesmo nível do cliente antes do painel de fontes de dados do cliente fica visível no console. Para habilitar o Cache de Pares de Clientes, confira [Usar recursos de pré-lançamento de atualizações](/sccm/core/servers/manage/install-in-console-updates#bkmk_prerelease). Depois de ser habilitado, pode levar até 24 horas para que ele comece a exibir dados.
+> O **Cache de Pares de Cliente** e o painel **Fontes de Dados do Cliente** foram introduzidos na versão 1610 como [recursos de pré-lançamento](/sccm/core/servers/manage/pre-release-features). A partir da versão 1710, esses recursos não são mais recursos de pré-lançamento. Você deve habilitar o Cache de mesmo nível do cliente antes do painel de fontes de dados do cliente fica visível no console.
+
 
 No console, acesse **Monitoramento** > **Status de Distribuição** > **Fontes de Dados do Cliente**. Aqui você pode escolher um período de tempo para aplicar ao painel. Em seguida, na exibição, escolha o grupo de limites ou o pacote do qual quer ver informações. Ao exibir as informações, você pode passar o mouse sobre a superfície para ver mais detalhes sobre conteúdo ou as origens da política.
 

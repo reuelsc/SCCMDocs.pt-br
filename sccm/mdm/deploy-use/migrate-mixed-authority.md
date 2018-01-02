@@ -5,37 +5,35 @@ description: "Saiba como alterar a autoridade de MDM do MDM híbrido para Intune
 keywords: 
 author: dougeby
 manager: dougeby
-ms.date: 09/14/2017
+ms.date: 12/05/2017
 ms.topic: article
 ms.prod: configmgr-hybrid
 ms.service: 
 ms.technology: 
 ms.assetid: 6f0201d7-5714-4ba0-b2bf-d1acd0203e9a
-ms.openlocfilehash: 31d1d84c225d041f644669f0d3279e6bcd3f75ba
-ms.sourcegitcommit: 986fc2d54f7c5fa965fd4df42f4db4ecce6b79cb
+ms.openlocfilehash: 643b33810c2862e2d1c602bfe941c36605ad2631
+ms.sourcegitcommit: 8c6e9355846ff6a73c534c079e3cdae09cf13c45
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/17/2017
+ms.lasthandoff: 12/06/2017
 ---
 # <a name="change-the-mdm-authority-for-specific-users-mixed-mdm-authority"></a>Alterar a autoridade de MDM para usuários específicos (autoridade de MDM mista) 
 
 *Aplica-se a: System Center Configuration Manager (Branch Atual)*    
 
-É possível configurar uma autoridade de MDM mista no mesmo locatário selecionando alguns usuários a serem gerenciados no Intune e outros para serem gerenciados com o MDM híbrido (Intune integrado ao Configuration Manager). Este tópico fornece informações de como começar a mover usuários para o Intune autônomo e considera que você tenha concluído as etapas a seguir:
+É possível configurar uma autoridade de MDM mista no mesmo locatário selecionando alguns usuários a serem gerenciados no Intune e outros para serem gerenciados com o MDM híbrido (Intune integrado ao Configuration Manager). Este artigo fornece informações de como começar a mover usuários para o Intune autônomo e considera que você tenha concluído as etapas a seguir:
 - Usado a ferramenta de importação de dados para [Importar objetos do Configuration Manager para o Intune](migrate-import-data.md) (opcional).
 - [Preparou o Intune para migração do usuário](migrate-prepare-intune.md) a fim de garantir que os usuários e respectivos dispositivos continuem sendo gerenciados depois que forem migrados.
 
 > [!Note]    
-> Se você decidir que deseja fazer uma reinicialização completa do seu locatário, o que removerá todas as políticas, aplicativos e registros de dispositivos, contate o suporte para obter assistência.
+> Se você decidir que deseja fazer uma reinicialização completa do seu locatário, o que remove todas as políticas, aplicativos e registros de dispositivos, contate o suporte para obter assistência.
 
-Os usuários migrados e seus dispositivos serão gerenciados no Intune e os outros dispositivos continuarão a ser gerenciados no Configuration Manager. Inicie com um pequeno grupo de usuários de teste para verificar se tudo está funcionando conforme o esperado. Em seguida, você migrará os grupos de usuários adicionais gradualmente até estar pronto para mudar a autoridade de MDM no nível do locatário do Configuration Manager para o Intune autônomo. 
+Os usuários migrados e seus dispositivos são gerenciados no Intune e os outros dispositivos continuam a ser gerenciados no Configuration Manager. Inicie com um pequeno grupo de usuários de teste para verificar se tudo está funcionando conforme o esperado. Em seguida, migre os grupos de usuários adicionais gradualmente até estar pronto para mudar a autoridade de MDM no nível do locatário do Configuration Manager para o Intune autônomo. 
 
 ## <a name="things-to-know-before-you-migrate-users"></a>O que você deve saber antes de migrar usuários
 - Durante a migração em fases, todas as políticas de MDM ou os aplicativos existentes no Configuration Manager continuam a ser aplicados aos dispositivos de MDM híbrido.
-- Os usuários são adicionados a um grupo do AAD que você designa como seu grupo de migração. Todos os dispositivos associados aos usuários no grupo de migração são gerenciados no Intune.
-- Os dispositivos que forem adicionados ao grupo do AAD serão ignorados a menos que sejam dispositivos sem um usuário associado.
-- Os usuários que não estiverem em um grupo do AAD marcado para migração herdarão automaticamente a autoridade de MDM no nível do locatário (Configuration Manager).
-- Quando você migrar um usuário Intune, o usuário e os dispositivos aparecerão no Intune no portal do Azure após cerca de 15 minutos.  
+- Os dispositivos para os usuários na coleção associada à assinatura do Intune podem ser registrados no MDM híbrido. Todos os dispositivos associados aos usuários que não estão na coleção são gerenciados no Intune, contanto que o usuário tenha uma licença do Intune/EMS. 
+- Quando você migrar um usuário Intune, o usuário e os dispositivos aparecerão no Intune no Portal do Azure após cerca de 15 minutos.  
 - Depois de migrar usuários para o Intune autônomo, continue a gerenciar as seguintes configurações do Configuration Manager tanto para dispositivos do MDM híbrido quando do Intune autônomo:
     - [Certificado APNs (Apple Push Notification Service)](/sccm/mdm/deploy-use/enroll-hybrid-ios-mac)
     - [Programa de registro de dispositivos](/sccm/mdm/deploy-use/ios-device-enrollment-program-for-hybrid)
@@ -49,10 +47,10 @@ Os usuários migrados e seus dispositivos serão gerenciados no Intune e os outr
     - SLKs do Windows
     - Identidade visual do Portal da Empresa    
       
-> [!Important]    
+  > [!Important]    
   > Continue a editar as políticas no nível do locatário usando o console do Configuration Manager. Depois de [alterar sua autoridade de MDM no nível do locatário](change-mdm-authority.md) para o Intune, você passará a gerenciar essas políticas no Intune no Azure. 
 - É recomendável não migrar as contas de usuário que foram adicionadas como gerenciadores de registro de dispositivo no Configuration Manager. Mais tarde, quando você alterar sua autoridade de MDM no nível do locatário para o Intune, essas contas de usuário serão migradas corretamente. Se você migrar a conta de usuário de gerenciador de registros de dispositivo antes da alteração da autoridade de MDM no nível do locatário, você deverá adicionar o usuário manualmente como um gerenciador de registros de dispositivo no Intune no Azure. No entanto, os dispositivos registrados usando um gerenciador de registros de dispositivo não são migrados com êxito. Você deve chamar o suporte para migrar esses dispositivos. Para obter detalhes, consulte [Adicionar um gerenciador de registros de dispositivo](https://docs.microsoft.com/en-us/intune/device-enrollment-manager-enroll#add-a-device-enrollment-manager).
-- Os dispositivos registrados usando um gerenciador de registros de dispositivo e os dispositivos sem usuários associados não são migrados para a nova autoridade de MDM. Para esses dispositivos, é necessário chamar o suporte para ajudá-lo. Não solicite que o suporte execute uma redefinição de autoridade de MDM, pois isso apagaria os dados no Intune. Você deve [alterar sua autoridade de MDM](migrate-change-mdm-authority.md) do console do Configuration Manager.
+- Os dispositivos registrados usando um gerenciador de registros de dispositivo, e os dispositivos sem [afinidade de usuário](/sccm/mdm/deploy-use/user-affinity-for-hybrid-managed-devices) não serão migrados automaticamente para a nova autoridade de MDM. Para alternar a autoridade de gerenciamento para esses dispositivos MDM, confira [Migrar dispositivos sem afinidade de usuário](#migrate-devices-without-user-affinity).
 
 ## <a name="migrate-users-to-intune"></a>Migrar usuários para o Intune
 Para testar se suas configurações do Intune estão funcionando conforme o esperado, primeiro migre um pequeno conjunto de usuários e seus dispositivos. Depois de confirmar tudo está funcionando conforme o esperado, você poderá começar a migração de mais grupos do AAD com mais usuários e seus dispositivos.
@@ -85,6 +83,91 @@ Em seguida, verifique se as políticas, os perfis, os aplicativos, etc. estão f
 
 ## <a name="migrate-additional-users"></a>Migrar usuários adicionais
 Depois de verificar que o Intune autônomo está funcionando conforme o esperado, você poderá iniciar a migração de usuários adicionais. Assim como você criou uma coleção com um conjunto de usuários de teste, crie coleções contendo os usuários a serem migrados e exclua essas coleções da coleção associada à assinatura do Intune. Para obter detalhes, consulte [Collection associated with your Intune subscription](#collection-associated-with-your-intune-subscription) (Coleção associada à sua assinatura do Intune).
+
+## <a name="migrate-devices-without-user-affinity"></a>Migrar dispositivos sem afinidade de usuário
+Os dispositivos registrados usando um gerenciador de registros de dispositivo, e os dispositivos sem [afinidade de usuário](/sccm/mdm/deploy-use/user-affinity-for-hybrid-managed-devices) não serão migrados automaticamente para a nova autoridade de MDM. Use o cmdlet do PowerShell *Switch-MdmDeviceAuthority* para alternar entre as autoridades de gerenciamento do Intune e do Configuration Manager nos cenários a seguir: 
+
+-   Cenário 1: Use o cmdlet *Switch-MdmDeviceAuthority* para migrar os dispositivos selecionados e validar a possibilidade de gerenciá-los usando o Intune no Azure. Depois, quando tudo estiver pronto, [altere a autoridade de MDM para o Intune do locatário](migrate-change-mdm-authority.md) para completar a migração dos dispositivos. 
+-   Cenário 2: quando você estiver pronto para alterar a autoridade de MDM para o Intune do locatário, execute estas ações para migrar seus dispositivos sem afinidade do usuário:
+    - Use o cmdlet para alterar a autoridade de MDM de seus dispositivos sem afinidade do usuário antes de [alterar a autoridade de para o Intune do locatário](migrate-change-mdm-authority.md).    
+    - Entre em contato com o suporte para que os dispositivos sem afinidade de usuário sejam trocados após a alteração da autoridade de MDM para o Intune do locatário.
+
+Para alternar a autoridade de gerenciamento desses dispositivos MDM, use o cmdlet *Switch-MdmDeviceAuthority* para alternar entre as autoridades de gerenciamento do Intune e do Configuration Manager. 
+
+### <a name="cmdlet-switch-mdmdeviceauthority"></a>Cmdlet *Switch-MdmDeviceAuthority*
+
+#### <a name="synopsis"></a>SINOPSE
+O cmdlet alterna a autoridade de gerenciamento de dispositivos MDM sem afinidade de usuário (por exemplo, dispositivos registrados em lite). O cmdlet alterna entre as autoridades de gerenciamento do Intune e do Configuration Manager para os dispositivos especificados com base nas autoridades de gerenciamento ao executar o cmdlet.
+
+### <a name="syntax"></a>SINTAXE
+`Switch-MdmDeviceAuthority -DeviceIds <Guid[]> [-Credential <PSCredential>] [-Force] [-LogFilePath <string>] [-LoggingLevel {Off | Critical | Error | Warning | Information | Verbose | ActivityTracing | All}] [-Confirm] [-WhatIf] [<CommonParameters>]`
+
+
+### <a name="parameters"></a>PARÂMETROS
+``` powershell
+-Credential <PSCredential>
+Credential for Intune Tenant Admin or Service Admin account to use when switching device management authorities. The user is prompted for credentials if the parameter is not specified.
+
+-DeviceIds <Guid[]>
+The ids of the MDM devices that need to have their management authority switched. The device ids are unique identifiers for the devices displayed by the Configuration Manager console.
+
+-Force [<SwitchParameter>]
+Specify parameter to disable the Should Continue prompt.<br>
+ 
+-LogFilePath <string>
+Path to log file location.
+ 
+-LoggingLevel <SourceLevels>
+The log level used to determine the type of logs that need to be written to the log file.
+ 
+The following are the possible values for LoggingLevel:
+
+  - ActivityTracing
+  - All
+  - Critical
+  - Error
+  - Information
+  - Off
+  - Verbose
+  - Warning
+ 
+-Confirm [<SwitchParameter>]
+Prompts you for confirmation before executing the command.
+ 
+-WhatIf [<SwitchParameter>]
+Describes what would happen if you executed the command without actually executing the command.
+ 
+<CommonParameters>
+This cmdlet supports the common parameters: Verbose, Debug,
+ErrorAction, ErrorVariable, WarningAction, WarningVariable,
+OutBuffer, PipelineVariable, and OutVariable. For more information, see
+[about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
+```
+
+### <a name="example-1"></a>Exemplo 1
+
+``` powershell
+C:\PS>Switch-MdmDeviceAuthority -Credential $creds -DeviceIds $deviceIds
+ 
+  DeviceId       : 62e6ea43-18f8-4278-bcd4-a4baed2c6d24
+  Success        : True
+  FailureReason  :
+  NewAuthority   : Intune
+  CompletionTime : 11/15/2017 8:00:11 PM
+ 
+Description
+ 
+-----------
+ 
+Successfully switched the management authority of the device from Configuration Manager to Intune.
+```
+### <a name="remarks"></a>COMENTÁRIOS
+``` powershell
+To see the examples, type: "get-help Switch-MdmDeviceAuthority -examples".
+For more information, type: "get-help Switch-MdmDeviceAuthority -detailed".
+For technical information, type: "get-help Switch-MdmDeviceAuthority -full".
+For online help, type: "get-help Switch-MdmDeviceAuthority -online".
+```
 
 ## <a name="next-steps"></a>Próximas etapas
 Depois de migrar usuários e testar a funcionalidades do Intune, considere se você está pronto para [alterar a autoridade de MDM](migrate-change-mdm-authority.md) do locatário do Intune do Configuration Manager para o Intune. 

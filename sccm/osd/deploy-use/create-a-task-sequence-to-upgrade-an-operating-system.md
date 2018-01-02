@@ -3,7 +3,7 @@ title: "Criar uma sequência de tarefas para atualizar um sistema operacional"
 titleSuffix: Configuration Manager
 description: "Sequências de tarefas no System Center Configuration Manager podem atualizar automaticamente um sistema operacional do Windows 7 ou posterior para o Windows 10."
 ms.custom: na
-ms.date: 10/06/2016
+ms.date: 12/05/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
@@ -15,11 +15,11 @@ caps.latest.revision: "12"
 author: Dougeby
 ms.author: dougeby
 manager: angrobe
-ms.openlocfilehash: 2787c8a692321a49cf287fc2f09858690360dc25
-ms.sourcegitcommit: c236214b2fcc13dae7bad96d7fb33f692868191d
+ms.openlocfilehash: 002acbcff01105e612e8c090606a6aa5d45a014b
+ms.sourcegitcommit: 52b956cfe32c3f06ae68d6ba6fc3244ce5a66325
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/12/2017
+ms.lasthandoff: 12/06/2017
 ---
 # <a name="create-a-task-sequence-to-upgrade-an-operating-system-in-system-center-configuration-manager"></a>Crie uma sequência de tarefas para atualizar um sistema operacional no System Center Configuration Manager
 
@@ -78,7 +78,7 @@ Use sequências de tarefas no System Center Configuration Manager para atualizar
 ## <a name="configure-pre-cache-content"></a>Configurar o conteúdo de armazenamento prévio em cache
 A partir da versão 1702, para implantações disponíveis de sequências de tarefas, é possível optar por usar o recurso de armazenamento prévio em cache para que os clientes baixem apenas o conteúdo relevante antes de um usuário instalá-lo.
 > [!TIP]  
-> Apresentado com a versão 1702, o pré-cache é um recurso de pré-lançamento. Para habilitá-lo, confira [Use pre-release features from updates](/sccm/core/servers/manage/pre-release-features) (Usar recursos de pré-lançamento de atualizações).
+> Esse recurso foi introduzido na versão 1702 como um [recurso de pré-lançamento](/sccm/core/servers/manage/pre-release-features). A partir da versão 1706, esse recurso não é mais um recurso de pré-lançamento.
 
 Por exemplo, digamos que você deseja implantar uma sequência de tarefas de atualização in-loco do Windows 10, deseja apenas uma sequência de tarefas para todos os usuários e tem várias arquiteturas e/ou idiomas. Antes da versão 1702, se você criar uma implantação disponível e, em seguida, o usuário clicar em **Instalar** no Centro de Software, o conteúdo será baixado neste momento. Isso acrescenta um tempo antes que a instalação esteja pronta para iniciar. Além disso, todo o conteúdo referenciado na sequência de tarefas é baixado. Isso inclui o pacote de atualização do sistema operacional para todas as arquiteturas e idiomas. Se cada um tiver aproximadamente 3 GB de tamanho, o pacote de download poderá ser bastante grande.
 

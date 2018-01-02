@@ -3,7 +3,7 @@ title: Data warehouse
 titleSuffix: Configuration Manager
 description: "Ponto de serviço e banco de dados do Data Warehouse para o System Center Configuration Manager"
 ms.custom: na
-ms.date: 8/25/2017
+ms.date: 12/05/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
@@ -15,11 +15,11 @@ caps.latest.revision:
 author: mestew
 ms.author: mstewart
 manager: angrobe
-ms.openlocfilehash: 2e6ac983e5ca63dacb77f2e26515d7123748d64d
-ms.sourcegitcommit: daa080cf220835f157a23e8c8e2bd2781b869bb7
+ms.openlocfilehash: 4d420ce623c834401383231d00e3f361342f2d2e
+ms.sourcegitcommit: 52b956cfe32c3f06ae68d6ba6fc3244ce5a66325
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 12/04/2017
+ms.lasthandoff: 12/06/2017
 ---
 #  <a name="the-data-warehouse-service-point-for-system-center-configuration-manager"></a>O ponto de serviço do Data Warehouse para o System Center Configuration Manager
 *Aplica-se a: System Center Configuration Manager (Branch Atual)*
@@ -27,9 +27,7 @@ ms.lasthandoff: 12/04/2017
 Começando com a versão 1702, é possível usar o ponto de serviço do Data Warehouse para armazenar e relatar dados históricos de longo prazo para sua implantação do Configuration Manager.
 
 > [!TIP]
-> O ponto de serviço do Data Warehouse é um recurso de pré-lançamento apresentado na versão 1702. Para habilitá-lo, confira [Usar recursos de pré-lançamento](/sccm/core/servers/manage/pre-release-features).
-
-> A partir da versão 1706, esse recurso não é mais um recurso de pré-lançamento.
+> Esse recurso foi introduzido na versão 1702 como um [recurso de pré-lançamento](/sccm/core/servers/manage/pre-release-features). A partir da versão 1706, esse recurso não é mais um recurso de pré-lançamento.
 
 O data warehouse dá suporte a até 2 TB de dados, com carimbos de data e hora para controle de alterações. O armazenamento dos dados é possibilitado por meio de sincronizações automatizadas do banco de dados de site do Configuration Manager para o banco de dados de data warehouse. Essas informações estarão acessíveis no seu ponto do Reporting Services. Os dados que são sincronizados com o banco de dados do data warehouse são retidos por três anos. Periodicamente, uma tarefa interna remove os dados com mais de três anos.
 

@@ -13,11 +13,11 @@ ms.assetid: bc6c3e5f-b9e2-400e-9d9d-446ff93c520c
 author: mestew
 ms.author: mstewart
 manager: angrobe
-ms.openlocfilehash: 83bd5fc972bc0bef07b206e160463db71837e827
-ms.sourcegitcommit: daa080cf220835f157a23e8c8e2bd2781b869bb7
+ms.openlocfilehash: 8431ebffc6d1aa463c5622bd67db8a140c0cfe69
+ms.sourcegitcommit: 2dc9c83e57e9734ffc4a93f79cd71285036eeb8b
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 12/04/2017
+ms.lasthandoff: 12/07/2017
 ---
 # <a name="what39s-new-in-version-1710-of-system-center-configuration-manager"></a>Novidades da versão 1710 do System Center Configuration Manager
 
@@ -58,7 +58,7 @@ Agora você pode usar [pontos de distribuição baseados em nuvem](/sccm/core/pl
 
 ### <a name="co-management-for-windows-10-devices"></a>Cogerenciamento para dispositivos Windows 10    
 <!-- 1350871 -->
-A partir do Windows 10, versão 1607 (também conhecido como a Atualização de Aniversário), você pode associar um dispositivo com Windows 10 ao Active Directory (AD) local e ao Azure AD baseado em nuvem ao mesmo tempo (Azure AD híbrido). O cogerenciamento aproveita essa melhoria e permite que você gerencie dispositivos com Windows 10 simultaneamente por meio do Configuration Manager e o Intune. É uma solução que fornece uma ponte do gerenciamento tradicional para o moderno e fornece um caminho para fazer a transição usando uma abordagem em fases. Para obter detalhes, confira [Cogerenciamento para dispositivos com Windows 10](/sccm/core/clients/manage/co-management-overview).
+Em atualizações anteriores do Windows 10, você pode associar um dispositivo com Windows 10 ao Active Directory (AD) local e ao Azure AD baseado em nuvem ao mesmo tempo (Azure AD híbrido). A partir do Configuration Manager versão 1710, o cogerenciamento usufrui dessa melhoria e permite gerenciar dispositivos Windows 10, versão 1709 (também conhecido como Fall Creators Update) simultaneamente usando o Configuration Manager e o Intune. É uma solução que fornece uma ponte do gerenciamento tradicional para o moderno e fornece um caminho para fazer a transição usando uma abordagem em fases. Para obter detalhes, confira [Cogerenciamento para dispositivos com Windows 10](/sccm/core/clients/manage/co-management-overview).
 
 ### <a name="restart-computers-from-the-configuration-manager-console-----1356283---"></a>Reinicie os computadores do console do Configuration Manager <!-- 1356283 -->
 A partir desta versão, você pode usar o console do Configuration Manager para identificar os dispositivos cliente que exigem uma reinicialização e, em seguida, usar uma ação de notificação do cliente para reiniciá-los.
@@ -165,7 +165,6 @@ Nesta versão, as páginas de assistente e de propriedades do perfil de VPN fora
 - Quando a plataforma está definida como **Android**, **Android for Work** ou **Windows Phone 8.1**, a página **Plataformas com Suporte** não é necessária e não é exibida.
 - O fluxo de trabalho baseado no cliente do Configuration Manager foi combinado com os fluxos de trabalho do Windows 10 baseados no cliente do dispositivo móvel híbrido (MDM). Eles dão suporte às mesmas configurações.
 - O fluxo de trabalho de cada plataforma inclui apenas as configurações apropriadas para esse fluxo de trabalho.  Por exemplo, o fluxo de trabalho do Android contém as configurações apropriadas para Android e as configurações apropriadas para iOS ou Windows 10 Mobile não aparecem mais no fluxo de trabalho do Android.
-- Para dispositivos Windows 8.1, somente os tipos de conexão gerenciados pelo cliente do Configuration Manager (sem suporte do Intune) estão claramente marcados.
 - A página VPN automática ficou obsoleta e foi removida.
 
 Essas alterações aplicam-se aos novos perfis de VPN.  

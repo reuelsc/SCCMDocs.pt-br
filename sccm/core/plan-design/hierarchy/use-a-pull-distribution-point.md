@@ -15,11 +15,11 @@ caps.latest.revision: "9"
 author: aaroncz
 ms.author: aaroncz
 manager: angrobe
-ms.openlocfilehash: ea8eead4706472a02f216b432ea9f2e6bdf23f66
-ms.sourcegitcommit: 7fe45ff75f05f7cc03ad021db8119791abe18049
+ms.openlocfilehash: f0feba771dcc75d84cd1233fea562472ff6c1158
+ms.sourcegitcommit: 8c6e9355846ff6a73c534c079e3cdae09cf13c45
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 12/01/2017
+ms.lasthandoff: 12/06/2017
 ---
 # <a name="use-a-pull-distribution-point-with-system-center-configuration-manager"></a>Use um ponto de distribuição de recepção baseado em nuvem com o System Center Configuration Manager
 
@@ -105,8 +105,10 @@ Quando um ponto de distribuição de recepção baixa conteúdo de um ponto de d
 -   Essa estrutura é instalada pelo **Pulldp.msi** quando você configura o ponto de distribuição para ser um ponto de distribuição por pull. A estrutura não exige o cliente do Configuration Manager.  
 
 -   Após a instalação do ponto de distribuição de recepção, o serviço CCMExec no computador do ponto de distribuição deve estar operacional para que esse ponto de distribuição funcione.  
+<!--sms.503672 -Clarified BITS use-->
+-   Quando o ponto de distribuição por pull transferir conteúdo, transferirá usando o BITS **Serviço de Transferência Inteligente em Segundo Plano** integrado ao sistema operacional Windows. Um ponto de distribuição por pull não exige a instalação do recurso opcional BITS IIS Server Extension.
 
--   Quando o ponto de distribuição de recepção transfere conteúdo, ele o faz usando o BITS ( **Serviço de Transferência Inteligente em Segundo Plano** ) e registra sua operação no **datatransferservice.log** e no **pulldp.log** do computador do ponto de distribuição.  
+-  O ponto de distribuição por pull registra sua operação no **datatransferservice.log** e no **pulldp.log** no computador do ponto de distribuição.
 
 ## <a name="see-also"></a>Consulte também  
  [Conceitos fundamentais para o gerenciamento de conteúdo no System Center Configuration Manager](/sccm/core/plan-design/hierarchy/fundamental-concepts-for-content-management)   
