@@ -12,14 +12,14 @@ ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 226cbbb2-9afa-4e2e-a472-be989c0f0e11
 caps.latest.revision: "4"
-author: aaroncz
+author: aczechowski
 ms.author: aaroncz
 manager: angrobe
-ms.openlocfilehash: 25cd63970741dfb242be9566fa54f348dea2b665
-ms.sourcegitcommit: 7fe45ff75f05f7cc03ad021db8119791abe18049
+ms.openlocfilehash: 334b79e675ea7804128b0feb9678de4ad06dbc93
+ms.sourcegitcommit: ca9d15dfb1c9eb47ee27ea9b5b39c9f8cdcc0748
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 12/01/2017
+ms.lasthandoff: 01/04/2018
 ---
 # <a name="the-content-library-cleanup-tool-for-system-center-configuration-manager"></a>A ferramenta de limpeza da biblioteca de conteúdo no System Center Configuration Manager
 
@@ -31,7 +31,7 @@ A ferramenta só afeta o conteúdo no ponto de distribuição que você especifi
 
 Você poderá encontrar o **ContentLibraryCleanup.exe** na pasta *%CM_Installation_Path%\cd.latest\SMSSETUP\TOOLS\ContentLibraryCleanup\* no servidor do site no site de administração central ou site primário.
 
-## <a name="requirements"></a>Requisitos  
+## <a name="requirements"></a>requisitos  
  A ferramenta só pode ser executada em um único ponto de distribuição por vez.  
  - Ela pode ser executada diretamente no computador que hospeda o ponto de distribuição que você quer limpar, ou remotamente de outro servidor.
  - A conta de usuário que executa a ferramenta diretamente deve ter permissões de administração baseada em funções equivalentes a um Administrador Completo na hierarquia do Configuration Manager. A ferramenta não funcionará quando a conta receber essas permissões como um membro de um grupo de segurança do Windows que contém as permissões de Administrador Completo.

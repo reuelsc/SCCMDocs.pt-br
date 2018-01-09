@@ -12,14 +12,14 @@ ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 217c8a0e-5112-420e-a325-2a6d75326290
 caps.latest.revision: "13"
-author: Dougeby
-ms.author: dougeby
+author: aczechowski
+ms.author: aaroncz
 manager: angrobe
-ms.openlocfilehash: 47210939c66bb31d173c7e406a66c764d5008879
-ms.sourcegitcommit: c236214b2fcc13dae7bad96d7fb33f692868191d
+ms.openlocfilehash: 433a1778213b357c6c41eb20e4b975b2e682050d
+ms.sourcegitcommit: 08f9854fb6c6d21e1e923b13e38a64d0bc2bc9a4
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/12/2017
+ms.lasthandoff: 12/12/2017
 ---
 # <a name="create-a-task-sequence-to-install-an-operating-system-in-system-center-configuration-manager"></a>Criar uma sequência de tarefas para instalar um sistema operacional no System Center Configuration Manager
 
@@ -126,21 +126,21 @@ Use sequências de tarefas no System Center Configuration Manager para instalar 
 |Criar o nome da etapa de sequência de tarefas do Assistente de sequência de tarefas|Nome da etapa equivalente Editor de sequência de tarefas|  
 |---------------------------------------------------------|-----------------------------------------------|  
 |Armazenamento de estado do usuário de solicitação|Solicitar Armazenamento de Estado|  
-|Capturar configurações e arquivos do usuário|Capturar Estado do Usuário|  
+|Capturar Arquivos e Configurações do Usuário|Capturar Estado do Usuário|  
 |Armazenamento de estado do usuário de versão|Liberar Armazenamento de Estado|  
 |Reiniciar no Windows PE|Reinicialize no Windows PE ou o disco rígido|  
 |Particionar Disco 0|Formatar e Particionar Disco|  
-|Restaurar configurações e arquivos do usuário|Restaurar Estado do Usuário|  
+|Restaurar Arquivos e Configurações do Usuário|Restaurar Estado do Usuário|  
 
-|Grupo de sequências de tarefas ou etapa|Descrição|  
+|Grupo ou etapa de sequência de tarefas|Descrição|  
 |---------------------------------|-----------------|  
-|Captura de arquivos e configurações - **(novo grupo de sequências de tarefas)**|Crie um grupo de sequências de tarefas. Um grupo de sequências de tarefas mantém etapas da sequência de tarefas semelhantes juntas para melhor organização e controle de erro.<br /><br /> Esse grupo contém as etapas necessárias para capturar os arquivos e configurações do sistema operacional de um computador de referência.|  
+|Captura de arquivos e configurações - **(novo grupo de sequências de tarefas)**|Crie um grupo de sequências de tarefas. Um grupo de sequências de tarefas mantém as etapas de sequência de tarefas semelhantes juntas para melhor organização e controle de erro.<br /><br /> Esse grupo contém as etapas necessárias para capturar os arquivos e configurações do sistema operacional de um computador de referência.|  
 |Capturar Configurações do Windows|Use essa etapa de sequência de tarefas para identificar as configurações do Microsoft Windows para capturar do computador de referência. Você pode capturar o nome do computador, usuário e informações organizacionais e as configurações de fuso horário.|  
 |Capturar configurações da rede|Use essa etapa de sequência de tarefas para capturar as configurações de rede do computador de referência. Você pode capturar a associação de domínio ou grupo de trabalho do computador de referência e obter informações sobre configuração de adaptador de rede.|  
-|Capturar arquivos de usuário e configurações - **(nova tarefa sequência subgrupo)**|Crie um grupo de sequências de tarefas dentro de um grupo de sequências de tarefas. Esse subgrupo contém as etapas necessárias para capturar dados de estado do usuário. Semelhante para o grupo inicial que você adicionou, esse subgrupo mantém controlam semelhante etapas da sequência de tarefas para o erro e melhor organização.|  
+|Capturar arquivos de usuário e configurações - **(nova tarefa sequência subgrupo)**|Crie um grupo de sequências de tarefas dentro de um grupo de sequências de tarefas. Esse subgrupo contém as etapas necessárias para capturar dados de estado do usuário. Semelhante ao grupo inicial que você adicionou, esse subgrupo mantém etapas de sequências de tarefas semelhantes para melhor organização e controle de erro.|  
 |Armazenamento de estado do usuário de solicitação|Use essa etapa de sequência de tarefas para solicitar acesso a um ponto de migração de estado onde os dados de estado do usuário são armazenados. Você pode configurar essa etapa de sequência de tarefas para capturar ou restaurar as informações de estado do usuário.|  
-|Capturar Arquivos e Configurações do Usuário|Use essa etapa de sequência de tarefas para usar o User State Migration Tool (USMT) para capturar o estado do usuário e configurações do computador de referência que receberão a sequência de tarefas associada a essa etapa da tarefa. Você pode capturar as opções padrão ou configurar opções capturar.|  
-|Armazenamento de estado do usuário de versão|Use essa etapa de sequência de tarefas para notificar o estado do ponto de migração que a ação de captura ou restauração foi concluída.|  
+|Capturar Arquivos e Configurações do Usuário|Use essa etapa de sequência de tarefas para usar o User State Migration Tool (USMT) para capturar o estado do usuário e configurações do computador de referência que receberão a sequência de tarefas associada a essa etapa da tarefa. Você pode capturar as opções padrão ou configurar as opções que deseja capturar.|  
+|Liberar Armazenamento de Estado do Usuário|Use essa etapa de sequência de tarefas para notificar o estado do ponto de migração que a ação de captura ou restauração foi concluída.|  
 |Instalar o sistema operacional - **(novo grupo de sequências de tarefas)**|Crie outro grupo de subpropriedades de sequência de tarefas. Esse subgrupo contém as etapas necessárias para instalar e configurar o ambiente do Windows PE.|  
 |Reiniciar no Windows PE|Use essa etapa de sequência de tarefas para especificar as opções de reinicialização do computador de destino que recebe essa sequência de tarefas. Esta etapa exibirá uma mensagem para o usuário indicando que o computador será reiniciado para que a instalação possa continuar.<br /><br /> Esta etapa usa a variável de sequência de tarefas **_SMSTSInWinPE** de somente leitura. Se o valor for igual a **false** continua a etapa de sequência de tarefas.|  
 |Particionar disco 0|Esta etapa especifica as ações necessárias para formatar o disco rígido no computador de destino. O número de disco padrão é **0**.<br /><br /> Esta etapa usa a variável de sequência de tarefas **_SMSTSClientCache** de somente leitura. Esta etapa será executada se o cache do cliente do Configuration Manager não existir.|  
@@ -151,7 +151,7 @@ Use sequências de tarefas no System Center Configuration Manager para instalar 
 |Aplicar pacote de driver|Use essa etapa de sequência de tarefas para disponibilizar todos os drivers de dispositivo em um pacote de driver para uso pela instalação do Windows.|  
 |Configurar o sistema operacional - **(novo grupo de sequências de tarefas)**|Crie outro grupo de subpropriedades de sequência de tarefas. Esse subgrupo contém as etapas necessárias para configurar o sistema operacional instalado.|  
 |Instalar Windows e ConfigMgr|Use essa etapa de sequência de tarefas para instalar o software cliente do Configuration Manager. O Configuration Manager instala e registra o GUID do cliente do Configuration Manager. Você pode atribuir os parâmetros necessários para a instalação na janela **Propriedades de instalação** .|  
-|Instalar atualizações|Use esta etapa de sequência de tarefas para especificar como as atualizações de software serão instaladas no computador de destino. O computador de destino não é avaliado para atualizações de software aplicáveis até que essa etapa de sequência de tarefas seja executada. Nesse momento, o computador de destino é avaliado para atualizações de software semelhantes a qualquer outro cliente gerenciado do Configuration Manager.<br /><br /> Esta etapa usa a variável de sequência de tarefas **_SMSTSMediaType** somente leitura. Essa etapa de sequência de tarefas será executada somente se o valor da variável não for igual a **FullMedia**.|  
+|Instalar atualizações|Use esta etapa de sequência de tarefas para especificar como as atualizações de software serão instaladas no computador de destino. O computador de destino não é avaliado para atualizações de software aplicáveis até que essa etapa de sequência de tarefas seja executada. Nesse momento, o computador de destino é avaliado para atualizações de software semelhantes a qualquer outro cliente gerenciado do Configuration Manager.<br /><br /> Esta etapa usa somente leitura **_SMSTSMediaType** variável de sequência de tarefas. Essa etapa de sequência de tarefas será executada somente se o valor da variável não for igual a **FullMedia**.|  
 |Restaurar Arquivos e Configurações do Usuário - **(Novo Subgrupo de Sequência de Tarefas)**|Crie outro grupo de subpropriedades de sequência de tarefas. Esse subgrupo contém as etapas necessárias para restaurar os arquivos de usuário e configurações.|  
 |Solicitar Armazenamento de Estado do Usuário|Use essa etapa de sequência de tarefas para solicitar acesso a um ponto de migração de estado onde os dados de estado do usuário são armazenados.|  
 |Restaurar Arquivos e Configurações do Usuário|Use essa etapa de sequência de tarefas para iniciar o User State Migration Tool (USMT) para restaurar o estado do usuário e configurações para um computador de destino.|  

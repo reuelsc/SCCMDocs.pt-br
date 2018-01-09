@@ -13,14 +13,14 @@ ms.topic: article
 ms.assetid: ead79e64-1b63-4d0d-8bd5-addff8919820
 caps.latest.revision: "11"
 caps.handback.revision: "0"
-author: Dougeby
-ms.author: dougeby
+author: aczechowski
+ms.author: aaroncz
 manager: angrobe
-ms.openlocfilehash: f75a29ff27a1f806d4329bd2dfc5e30a8991fac9
-ms.sourcegitcommit: c236214b2fcc13dae7bad96d7fb33f692868191d
+ms.openlocfilehash: f0dd624259e4f1b2a0bd14112a2cd25bb7a38767
+ms.sourcegitcommit: 08f9854fb6c6d21e1e923b13e38a64d0bc2bc9a4
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/12/2017
+ms.lasthandoff: 12/12/2017
 ---
 # <a name="create-bootable-media-with-system-center-configuration-manager"></a>Criar uma mídia inicializável com o System Center Configuration Manager
 
@@ -41,7 +41,7 @@ Mídias inicializáveis no Configuration Manager contém a imagem de inicializa�
 |----------|-----------------|  
 |Imagem de inicialização|Considere o seguinte sobre a imagem de inicialização que você usará na sequência de tarefas para implantar o sistema operacional:<br /><br /> -   A arquitetura da imagem de inicialização deve ser apropriada para a arquitetura do computador de destino. Por exemplo, um computador de destino x64 pode iniciar e executar uma imagem de inicialização x86 ou x64. No entanto, um computador de destino x86 pode iniciar e executar apenas uma imagem de inicialização x86.<br />-   Verifique se a imagem de inicialização contém os drivers de rede e armazenamento em massa necessários para provisionar o computador de destino.|  
 |Criar uma sequência de tarefas para implantar um sistema operacional|Como parte da mídia inicializável, você deve especificar a sequência de tarefas para implantar o sistema operacional. Para ver as etapas para criar uma nova sequência de tarefas, consulte [Criar uma sequência de tarefas para instalar um sistema operacional](../deploy-use/create-a-task-sequence-to-install-an-operating-system.md).|  
-|Distribuir todo o conteúdo associado à sequência de tarefas|Você deve distribuir todo o conteúdo exigido pela sequência de tarefas para pelo menos um ponto de distribuição. Isso inclui a imagem de inicialização e outros arquivos de pré-inicialização associados. O assistente reúne as informações do ponto de distribuição quando ele cria a mídia inicializável. Você deve ter direitos de acesso de **Leitura** à biblioteca de conteúdo no ponto de distribuição.  Para obter detalhes, consulte [Sobre a biblioteca de conteúdo](../../core/plan-design/hierarchy/the-content-library.md).|  
+|Distribuir todo o conteúdo associado à sequência de tarefas|Você deve distribuir todo o conteúdo exigido pela sequência de tarefas para pelo menos um ponto de distribuição. Isso inclui a imagem de inicialização e outros arquivos de pré-inicialização associados. O assistente reúne as informações do ponto de distribuição quando ele cria a mídia inicializável. Você precisa ter direitos de acesso de **Leitura** à biblioteca de conteúdo no ponto de distribuição.  Para obter detalhes, consulte [Sobre a biblioteca de conteúdo](../../core/plan-design/hierarchy/the-content-library.md).|  
 |Preparar a unidade USB removível|Para uma unidade USB removível:<br /><br /> Se você pretende usar uma unidade USB removível, a unidade USB deve ser conectada ao computador no qual o assistente é executado e a unidade USB deve ser detectável pelo Windows como um dispositivo de remoção. O assistente grava diretamente na unidade USB ao criar a mídia. A mídia autônoma usa um sistema de arquivos FAT32. Não é possível criar uma mídia autônoma em uma unidade flash USB cujo conteúdo contém um arquivo de tamanho superior a 4 GB.|  
 |Criar uma pasta de saída|Para um conjunto de CD/DVD:<br /><br /> Para executar o Assistente para Criar Mídia de Sequência de Tarefas para criar mídia para um conjunto de CD ou DVD, é preciso criar uma pasta para os arquivos de saída criados pelo assistente. A mídia criada para um conjunto de CD ou DVD é gravada como arquivos .iso diretamente na pasta.|  
 

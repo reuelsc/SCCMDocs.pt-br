@@ -14,11 +14,11 @@ ms.assetid: 2e68dc12-6776-437a-9138-45cd7d4bf9cf
 author: erikje
 ms.author: erikje
 manager: angrobe
-ms.openlocfilehash: e970dff4ea295694fcc5cf80e238baf2c9d081b5
-ms.sourcegitcommit: 7fe45ff75f05f7cc03ad021db8119791abe18049
+ms.openlocfilehash: b740c422a71e625ccc110a043028cf986cdffb20
+ms.sourcegitcommit: ed8b2438ef85c9160741ef61f9171be41dd1ae0a
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 12/01/2017
+ms.lasthandoff: 12/17/2017
 ---
 # <a name="capabilities-in-technical-preview-1711-for-system-center-configuration-manager"></a>Recursos na Technical Preview 1711 do System Center Configuration Manager
 
@@ -109,20 +109,6 @@ Ao implantar um aplicativo usando o assistente, você também pode usar esse rec
 1. Crie ou edite um aplicativo.
 2. Implante o aplicativo em um cliente.
 3. Instale o aplicativo por meio do Centro de Software. A interface de instalação do aplicativo deve aparecer. O usuário final deve seguir o assistente de instalação do aplicativo para que o aplicativo seja instalado com êxito.
-
-## <a name="new-compliance-policy-options-for-windows-10"></a>Novas opções de política de conformidade para Windows 10
-A seguir estão as novas políticas de conformidade que você pode definir para dispositivos Windows 10.
-- **Exigir Firewall**.  Especifique se um dispositivo deve ter um firewall habilitado e monitorando todas as redes.
-- **Exigir Controle de Conta de Usuário**. Especifique se um dispositivo deve ter Controle de Conta de Usuário habilitado.
-- **Defender**:
-  - **Exigir o Windows Defender Antivírus**.  Requer que o dispositivo tenha o Windows Defender Antivírus habilitado.
-  - **Versão do Windows Defender Antivírus**.  Especifique a versão mínima instalada das definições de spyware que o dispositivo deve ter.
-  - **Exigir assinatura atual do Windows Defender Antivírus**. Verifique se há uma assinatura do antivírus Windows Defender dos dispositivos atualizada.
-  - **Exigir proteção em tempo real**.  Especifique se o dispositivo deve ter a proteção do Windows Defender Antivírus em tempo real habilitada.
-- **Builds válidos do sistema operacional**.  Especifique os requisitos de build mínimo e máximo do sistema operacional.  
-
-Use o Assistente para Criar Política de Conformidade para configurar essas políticas e selecionar essas novas opções ao adicionar uma regra para a política que estiver sendo configurada.  
-Saiba como [criar](/sccm/mdm/deploy-use/create-compliance-policy#create-a-compliance-policy) e [implantar](/sccm/mdm/deploy-use/create-compliance-policy#deploy-a-compliance-policy) políticas de conformidade.
 
 
 

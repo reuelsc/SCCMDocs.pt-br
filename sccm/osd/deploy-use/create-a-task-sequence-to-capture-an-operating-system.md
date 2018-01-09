@@ -13,14 +13,14 @@ ms.topic: article
 ms.assetid: 25e4ac68-0e78-4bbe-b8fc-3898b372c4e8
 caps.latest.revision: "19"
 caps.handback.revision: "0"
-author: Dougeby
-ms.author: dougeby
+author: aczechowski
+ms.author: aaroncz
 manager: angrobe
-ms.openlocfilehash: 48530c177a03b66dbc126025ca61e0078bc89d9f
-ms.sourcegitcommit: 5ec9f8c312688bf7f4de4d6007b121d743b80c4d
+ms.openlocfilehash: c376a6b600e775f532410ad467b99cda1fbfc575
+ms.sourcegitcommit: 08f9854fb6c6d21e1e923b13e38a64d0bc2bc9a4
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/14/2017
+ms.lasthandoff: 12/12/2017
 ---
 # <a name="create-a-task-sequence-to-capture-an-operating-system-in-system-center-configuration-manager"></a>Criar uma sequência de tarefas para capturar um sistema operacional no System Center Configuration Manager
 
@@ -78,7 +78,7 @@ Quando você usa uma sequência de tarefas para implantar um sistema operacional
 
     -   **Índice de imagem**: especifique o sistema operacional para instalar. Se a imagem do sistema operacional tiver várias versões, selecione a versão que você deseja instalar.  
 
-    -   **Chave do produto (Product Key)**: especifique a chave do produto (Product Key) do sistema operacional Windows que será instalada. Você pode especificar as chaves de licença de volume codificadas e as chaves do produto padrão. Se você usar uma chave de produto sem codificação, cada grupo de 5 caracteres deverá ser separado por um traço (-). Por exemplo: *XXXXX-XXXXX-XXXXX-XXXXX-XXXXX*  
+    -   **Chave do produto**: especifique a chave do produto do sistema operacional Windows a instalar. Você pode especificar as chaves de licença de volume codificadas e as chaves do produto padrão. Se você usar uma chave de produto sem codificação, cada grupo de 5 caracteres deverá ser separado por um traço (-). Por exemplo: *XXXXX-XXXXX-XXXXX-XXXXX-XXXXX*  
 
     -   **Modo de licenciamento do servidor**: especifique se a licença do servidor é **Por estação**, **Por servidor**ou se nenhuma licença está especificada. Se a licença do servidor for **Por servidor**, especifique também o número máximo de conexões de servidor.  
 
@@ -218,11 +218,11 @@ Quando você usa uma sequência de tarefas para implantar um sistema operacional
 |-------------------------------|---------------|  
 |Criar o computador de referência - **(novo grupo de sequências de tarefas)**|Criar um grupo de sequências de tarefas. Um grupo de sequências de tarefas mantém as etapas de sequência de tarefas semelhantes juntas para melhor organização e controle de erro.<br /><br /> Esse grupo contém as ações necessárias para criar um computador de referência.|  
 |Reiniciar no Windows PE|Use esta etapa para especificar as opções de reinicialização do computador de destino. Esta etapa exibirá uma mensagem para o usuário que o computador será reiniciado para que a instalação possa continuar.<br /><br /> Esta etapa usa a variável de sequência de tarefas **_SMSTSInWinPE** de somente leitura. Se o valor associado for igual a **falso** a etapa de sequência de tarefas continuará.|  
-|Particionar Disco 0|Use esta etapa para especificar as ações necessárias para formatar o disco rígido no computador de destino. O número de disco padrão é **0**.<br /><br /> Esta etapa usa a variável de sequência de tarefas **_SMSTSClientCache** de somente leitura. Esta etapa será executada se o cache do cliente do Configuration Manager não existir.|  
+|Particionar disco 0|Use esta etapa para especificar as ações necessárias para formatar o disco rígido no computador de destino. O número de disco padrão é **0**.<br /><br /> Esta etapa usa a variável de sequência de tarefas **_SMSTSClientCache** de somente leitura. Esta etapa será executada se o cache do cliente do Configuration Manager não existir.|  
 |Aplicar Sistema Operacional|Use essa etapa de sequência de tarefas para instalar uma imagem especificada de sistema operacional no computador de destino. Essa etapa se aplica a todas as imagens de volume contidas no arquivo WIM para o volume de disco sequencial correspondente no computador de destino após o primeiro excluir todos os arquivos no volume (com exceção de arquivos de controle específicos do Configuration Manager).|  
 |Aplicar as Configurações do Windows|Use essa etapa de sequência de tarefas para ajustar as informações de definição das configurações do Windows no computador de destino.|  
 |Aplicar Configurações de Rede|Use esta etapa para especificar as informações de configuração de rede ou grupo de trabalho do computador de destino.|  
-|Aplicar Drivers de Dispositivo|Use esta etapa para corresponder e instalar unidades como parte da implantação do sistema operacional. Você pode permitir que a Instalação do Windows pesquise todas as categorias de driver existentes selecionando a opção **Considerar drivers de todas as categorias** ou limitar quais categorias de driver de Instalação do Windows pesquisarão ao selecionar a opção **Limitar a correspondência de driver para considerar somente os drivers em categorias selecionadas**.<br /><br /> Esta etapa usa a variável de sequência de tarefas **_SMSTSMediaType** somente leitura. Se o valor associado não for igual a **FullMedia** , essa etapa será executada.|  
+|Aplicar Drivers de Dispositivo|Use esta etapa para corresponder e instalar unidades como parte da implantação do sistema operacional. Você pode permitir que a Instalação do Windows pesquise todas as categorias de driver existentes selecionando a opção **Considerar drivers de todas as categorias** ou limitar quais categorias de driver de Instalação do Windows pesquisarão ao selecionar a opção **Limitar a correspondência de driver para considerar somente os drivers em categorias selecionadas**.<br /><br /> Esta etapa usa somente leitura **_SMSTSMediaType** variável de sequência de tarefas. Se o valor associado não for igual a **FullMedia** , essa etapa será executada.|  
 |Instalar Windows e ConfigMgr|Use essa etapa de sequência de tarefas para instalar o software cliente do Configuration Manager. O Configuration Manager instala e registra o GUID do cliente do Configuration Manager. Você pode atribuir os parâmetros necessários para a instalação na janela **Propriedades de instalação** .|  
 |Instalar atualizações|Use esta etapa de sequência de tarefas para especificar como as atualizações de software serão instaladas no computador de destino. O computador de destino não é avaliado para atualizações de software aplicáveis até que essa etapa de sequência de tarefas seja executada. Nesse momento, o computador de destino é avaliado para atualizações de software semelhantes a qualquer outro cliente gerenciado do Configuration Manager.<br /><br /> Esta etapa usa a variável de sequência de tarefas **_SMSTSMediaType** somente leitura. Se o valor associado não for igual a **FullMedia** , essa etapa será executada.|  
 |Capture o computador de referência - **(novo grupo de sequências de tarefas)**|Crie outro grupo de sequências de tarefas. Esse grupo contém as etapas necessárias para preparar e capturar um computador de referência.|  

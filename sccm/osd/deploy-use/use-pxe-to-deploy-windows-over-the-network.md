@@ -13,14 +13,14 @@ ms.topic: article
 ms.assetid: da5f8b61-2386-4530-ad54-1a5c51911f07
 caps.latest.revision: "19"
 caps.handback.revision: "0"
-author: mattbriggs
-ms.author: mabrigg
+author: aczechowski
+ms.author: aaroncz
 manager: angrobe
-ms.openlocfilehash: 017a8f0d5b38145f6708e61ff5d7b2c3614b62a0
-ms.sourcegitcommit: c236214b2fcc13dae7bad96d7fb33f692868191d
+ms.openlocfilehash: 1ae9c9385abe90a38169f5d539be944f03817007
+ms.sourcegitcommit: 08f9854fb6c6d21e1e923b13e38a64d0bc2bc9a4
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/12/2017
+ms.lasthandoff: 12/12/2017
 ---
 # <a name="use-pxe-to-deploy-windows-over-the-network-with-system-center-configuration-manager"></a>Use o PXE para implantar o Windows pela rede com o System Center Configuration Manager
 
@@ -82,7 +82,7 @@ Para usar uma implantação de sistema operacional iniciada pelo PXE, é necess�
 -   Somente mídia e PXE (oculto)
 
 ##  <a name="BKMK_Deploy"></a> Implantar a sequência de tarefas
-Implantar o sistema operacional em uma coleção de destino. Para obter mais informações, consulte [Deploy a task sequence](manage-task-sequences-to-automate-tasks.md#BKMK_DeployTS). Ao implantar sistemas operacionais usando o PXE, é possível configurar se a implantação será necessária ou estará disponível.
+Implantar o sistema operacional para uma coleção de destino. Para obter mais informações, consulte [Deploy a task sequence](manage-task-sequences-to-automate-tasks.md#BKMK_DeployTS). Ao implantar sistemas operacionais usando o PXE, é possível configurar se a implantação será necessária ou estará disponível.
 
 -   **Implantação necessária**: as implantações necessárias usam o PXE sem nenhuma intervenção do usuário. O usuário não poderá ignorar a inicialização PXE. No entanto, se o usuário cancelar a inicialização PXE antes de o ponto de distribuição responder, o sistema operacional não será implantado.
 

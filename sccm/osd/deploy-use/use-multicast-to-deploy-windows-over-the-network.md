@@ -12,14 +12,14 @@ ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 4cafb7fc-380b-41b1-b83e-045aebfb7131
 caps.latest.revision: "13"
-author: Dougeby
-ms.author: dougeby
+author: aczechowski
+ms.author: aaroncz
 manager: angrobe
-ms.openlocfilehash: 00f42e9b29d3140577d27c1f311600fcfa409a81
-ms.sourcegitcommit: c236214b2fcc13dae7bad96d7fb33f692868191d
+ms.openlocfilehash: d254b7ff1f66d73996cda66c0fb2134033868cb1
+ms.sourcegitcommit: 08f9854fb6c6d21e1e923b13e38a64d0bc2bc9a4
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/12/2017
+ms.lasthandoff: 12/12/2017
 ---
 # <a name="use-multicast-to-deploy-windows-over-the-network-with-system-center-configuration-manager"></a>Usar o multicast para implantar o Windows pela rede com o System Center Configuration Manager
 
@@ -42,4 +42,4 @@ O multicast é um método de otimização da rede que pode ser usado no ambiente
  Para configurar o pacote de imagens do sistema operacional para dar suporte a multicast, veja [Preparar a imagem do sistema operacional para implantações multicast](../get-started/manage-operating-system-images.md#BKMK_OSImageMulticast).  
 
 ##  <a name="BKMK_Deploy"></a> Implantar a sequência de tarefas  
- Implantar o sistema operacional em uma coleção de destino. Para obter mais informações, consulte [Deploy a task sequence](manage-task-sequences-to-automate-tasks.md#BKMK_DeployTS).  
+ Implantar o sistema operacional para uma coleção de destino. Para obter mais informações, consulte [Deploy a task sequence](manage-task-sequences-to-automate-tasks.md#BKMK_DeployTS).  

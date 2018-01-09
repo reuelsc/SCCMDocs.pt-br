@@ -13,14 +13,14 @@ ms.topic: article
 ms.assetid: 9cbfc406-d009-446d-8fee-4938de48c919
 caps.latest.revision: "15"
 caps.handback.revision: "0"
-author: Dougeby
-ms.author: dougeby
+author: aczechowski
+ms.author: aaroncz
 manager: angrobe
-ms.openlocfilehash: 4c1d721c9fb0b01f15f1f0468bc797ffffb9e345
-ms.sourcegitcommit: c236214b2fcc13dae7bad96d7fb33f692868191d
+ms.openlocfilehash: 184768e87406051508c8dcacfa63db5ff85c3732
+ms.sourcegitcommit: 08f9854fb6c6d21e1e923b13e38a64d0bc2bc9a4
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/12/2017
+ms.lasthandoff: 12/12/2017
 ---
 # <a name="customize-boot-images-with-system-center-configuration-manager"></a>Personalizar imagens de inicialização com o System Center Configuration Manager
 
@@ -208,7 +208,7 @@ Cada versão do Configuration Manager dá suporte a uma versão específica do W
 5.  Após montar a imagem de inicialização, use o DISM para adicionar componentes opcionais a ela. No Windows PE 3.1, por exemplo, os componentes opcionais estão localizados em <*Caminho de instalação*>\Windows AIK\Tools\PETools\amd64\WinPE_FPs\\.  
 
     > [!NOTE]
-    >  Esse procedimento usa o seguinte local para os componentes opcionais: C:\Arquivos de Programas\Windows AIK\Tools\PETools\amd64\WinPE_FPs. O caminho que você usará poderá ser diferente dependendo da versão e das opções de instalação selecionadas para o Windows AIK.  
+    >  Este procedimento usa o seguinte local para os componentes opcionais: C:\Program Files\Windows AIK\Tools\PETools\amd64\WinPE_FPs. O caminho que você usará poderá ser diferente dependendo da versão e das opções de instalação selecionadas para o Windows AIK.  
 
      Digite o seguinte para instalar os componentes opcionais:  
 

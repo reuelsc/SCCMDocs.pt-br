@@ -13,14 +13,14 @@ ms.topic: article
 ms.assetid: c6b9ccd2-78d9-4f0e-b25a-70d0866300ba
 caps.latest.revision: "21"
 caps.handback.revision: "0"
-author: Dougeby
-ms.author: dougeby
+author: aczechowski
+ms.author: aaroncz
 manager: angrobe
-ms.openlocfilehash: 533b3942136255dd396df81529dad100d4db0a95
-ms.sourcegitcommit: c236214b2fcc13dae7bad96d7fb33f692868191d
+ms.openlocfilehash: ef9ee10c94cea3e9d8437a8d8b3df8427d0cc524
+ms.sourcegitcommit: 08f9854fb6c6d21e1e923b13e38a64d0bc2bc9a4
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/12/2017
+ms.lasthandoff: 12/12/2017
 ---
 # <a name="create-stand-alone-media-with-system-center-configuration-manager"></a>Criar mídia autônoma com o System Center Configuration Manager
 
@@ -151,7 +151,7 @@ Para executar o Assistente para Criar Mídia de Sequência de Tarefas para criar
  Os arquivos de mídia autônoma (.iso) são criados na pasta de destino. Se tiver selecionado **CD/DVD Autônomo**, agora você poderá copiar os arquivos de saída para um conjunto de CDs ou DVDs.  
 
 ##  <a name="BKMK_StandAloneMediaTSExample"></a> Exemplo de sequência de tarefas para mídia autônoma  
- Use a tabela a seguir como um guia que você crie uma sequência de tarefas para implantar um sistema operacional usando mídia autônoma. A tabela ajudará você a decidir a sequência geral de etapas da sequência de tarefas e como organizar e estruturar essas etapas de sequência de tarefas em grupos lógicos. A sequência de tarefas que você criar pode variar do que esse exemplo e pode conter mais ou menos etapas da sequência de tarefas e grupos.  
+ Use a tabela a seguir como um guia que você crie uma sequência de tarefas para implantar um sistema operacional usando mídia autônoma. A tabela ajudarão você a decidir a seqüência geral de etapas da sequência de tarefas e como organizar e estruturar as etapas da sequência de tarefas em grupos lógicos. A sequência de tarefas que você criar pode variar do que esse exemplo e pode conter mais ou menos etapas da sequência de tarefas e grupos.  
 
 > [!NOTE]  
 >  Você sempre deve usar o Assistente de mídia de sequência de tarefas para criar mídia autônoma.  
@@ -160,7 +160,7 @@ Para executar o Assistente para Criar Mídia de Sequência de Tarefas para criar
 |---------------------------------|-----------------|  
 |Captura de arquivos e configurações - **(novo grupo de sequências de tarefas)**|Crie um grupo de sequências de tarefas. Um grupo de sequências de tarefas mantém etapas da sequência de tarefas semelhantes juntas para melhor organização e controle de erro.|  
 |Capturar Configurações do Windows|Use essa etapa de sequência de tarefas para identificar as configurações do Microsoft Windows que são capturadas do sistema operacional existente no computador de destino antes de fazer uma nova imagem. Você pode capturar o nome do computador, usuário e informações organizacionais e as configurações de fuso horário.|  
-|Capturar Configurações da Rede|Use essa etapa de sequência de tarefas para capturar as configurações de rede do computador que recebe a sequência de tarefas. Você pode capturar a associação de grupo de trabalho ou domínio do computador e informações de configuração de adaptador de rede.|  
+|Capturar configurações da rede|Use essa etapa de sequência de tarefas para capturar as configurações de rede do computador que recebe a sequência de tarefas. Você pode capturar a associação de grupo de trabalho ou domínio do computador e informações de configuração de adaptador de rede.|  
 |Capturar arquivos de usuário e configurações - **(nova tarefa sequência subgrupo)**|Crie um grupo de sequências de tarefas dentro de um grupo de sequências de tarefas. Esse subgrupo contém as etapas necessárias para capturar dados de estado do usuário do sistema operacional existente no computador de destino antes de fazer uma nova imagem. Semelhante para o grupo inicial que você adicionou, esse subgrupo mantém controlam semelhante etapas da sequência de tarefas para o erro e melhor organização.|  
 |Definir Local estado local|Use essa etapa de sequência de tarefas para especificar um local usando a variável de sequência de tarefas de caminho protegido. O estado do usuário é armazenado em um diretório protegido no disco rígido.|  
 |Capturar Estado do Usuário|Use essa etapa de sequência de tarefas para capturar os arquivos de usuário e configurações que você deseja migrar para o novo sistema operacional.|  
