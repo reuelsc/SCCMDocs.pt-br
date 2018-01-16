@@ -16,11 +16,11 @@ caps.handback.revision: "0"
 author: lleonard-msft
 ms.author: alleonar
 manager: angrobe
-ms.openlocfilehash: b60a1b9e85b00cbaba54db4ea4cd92a1038c3fcf
-ms.sourcegitcommit: 12d0d53e47bbf1a0bbd85015b8404a44589d1e14
+ms.openlocfilehash: 1d98cd234b2444873f1ffa5819af74d507dfa9c1
+ms.sourcegitcommit: ba23ff90709a5fde1a63c650ab0d848f441afc43
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 01/11/2018
 ---
 # <a name="vpn-profiles-on-mobile-devices-in-system-center-configuration-manager"></a>Perfis de VPN em dispositivos móveis no System Center Configuration Manager
 
@@ -38,7 +38,7 @@ Use perfis de VPN no System Center Configuration Manager para implantar as confi
 
  |Tipo de conexão|iOS e macOS X|Android|Windows 8.1|Windows RT|Windows RT 8.1|Windows Phone 8.1|Windows 10 Desktop e Mobile|  
  |---------------------|----------------------|-------------|-----------------|----------------|--------------------|-----------------------|-----------------------------------|  
- |Cisco AnyConnect|Sim|Sim|Não|Não|Não|Não|Sim|
+ |Cisco AnyConnect|Sim|Sim|Não|Não|Não|Não|Não|
  |Cisco (IPSec)|Somente iOS|Não|Não|Não|Não|Não|Não|  
  |Pulse Secure|Sim|Sim|Sim|Não|Sim|Sim|Sim|  
  |F5 Edge Client|Sim|Sim|Sim|Não|Sim|Sim|Sim|  
