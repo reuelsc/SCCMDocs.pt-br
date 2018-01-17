@@ -12,11 +12,11 @@ ms.prod: configuration-manager
 ms.service: 
 ms.technology: configmgr-sum
 ms.assetid: 57184274-5fea-4d79-a2b4-22e08ed26daf
-ms.openlocfilehash: 6aaa15ff4908fe7e71e0b9c14fc021a57ccbb727
-ms.sourcegitcommit: 986fc2d54f7c5fa965fd4df42f4db4ecce6b79cb
+ms.openlocfilehash: becab57c5f04bb67512d665175038f6c477b65b1
+ms.sourcegitcommit: e13bb2c86c40a88e5f4602beb1d31e4adc90e099
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/17/2017
+ms.lasthandoff: 01/12/2018
 ---
 #  <a name="BKMK_ManualDeploy"></a> Implantar atualizações de software manualmente  
 
@@ -232,10 +232,10 @@ ms.lasthandoff: 11/17/2017
 
     -   **Notificações ao usuário**: especifique se quer exibir notificações das atualizações de software no Centro de Software no computador cliente no **Tempo disponível do software** configurado e se deseja exibir as notificações ao usuário nos computadores cliente. Quando o **Tipo de implantação** está definido como **Disponível** na página Configurações de implantação, não é possível selecionar **Ocultar no Centro de Software e todas as notificações**.  
 
-    -   **Comportamento do prazo**: *disponível apenas quando o **Tipo de implantação** *estiver definido como **Obrigatório** *na página Configurações de Implantação.*   
+    -   **Comportamento do prazo**: disponível apenas quando o **Tipo de implantação** estiver definido como **Obrigatório** na página Configurações de Implantação.   
     Especifique o comportamento que deve ocorrer quando o prazo é alcançado para a implantação da atualização de software. Especifique se deseja instalar as atualizações de software na implantação. Especifique também se o sistema deve ser reiniciado após a instalação da atualização de software, independentemente de uma janela de manutenção configurada. Para obter mais informações sobre janelas de manutenção, consulte [Como usar janelas de manutenção](../../core/clients/manage/collections/use-maintenance-windows.md).  
 
-    -   **Comportamento de reinício de dispositivo**: *disponível apenas quando o **Tipo de implantação** *estiver definido como **Obrigatório** *na página Configurações de Implantação.*    
+    -   **Comportamento de reinício de dispositivo**: disponível apenas quando o **Tipo de implantação** estiver definido como **Obrigatório** na página Configurações de Implantação.    
     Especifique se uma reinicialização do sistema em servidores e estações de trabalho deve ser suprimida depois que as atualizações de software são instaladas e uma reinicialização do sistema é necessária para concluir a instalação.  
 
         > [!IMPORTANT]  

@@ -16,11 +16,11 @@ caps.handback.revision: "0"
 author: dougeby
 ms.author: dougeby
 manager: angrobe
-ms.openlocfilehash: 55d49c388b4ea60627f72ffe61796c70de6f9416
-ms.sourcegitcommit: a5f8b5cfdabf0298e4302e24210e725a06a9de82
+ms.openlocfilehash: e8121480f3a9d61ba0a04667407a305119d80e12
+ms.sourcegitcommit: ba23ff90709a5fde1a63c650ab0d848f441afc43
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/30/2017
+ms.lasthandoff: 01/11/2018
 ---
 # <a name="protect-data-with-remote-wipe-lock-or-passcode-reset-by-using-system-center-configuration-manager"></a>Proteger os dados com a limpeza remota, bloqueio ou redefinição de senha usando o System Center Configuration Manager
 
@@ -171,17 +171,17 @@ Os dados e os aplicativos que atualmente têm suporte da limpeza seletiva do EFS
 ##  <a name="passcode-reset"></a>Redefinição de senha  
 Se um usuário esquecer sua senha, você poderá ajudá-lo removendo a senha de um dispositivo ou impondo uma nova senha temporária em um dispositivo. A tabela abaixo lista como a redefinição da senha funciona em diferentes plataformas móveis.  
 
-|Plataforma|Redefinição de senha|  
-|--------------|--------------------|  
-|iOS|Suportado para limpar a senha de um dispositivo. Não cria uma nova senha temporária.|
-|macOS| Não há suporte.|
-|Android|Suportado e uma senha temporária é criada.|
-|Android for Work | Não há suporte.|
-|PCs com Windows 10|Não há suporte.|  
-|Celular com Windows 10|Suportado, exceto os dispositivos ingressados do Azure AD.|
-|Windows Phone 8.1|Com suporte.|  
-|Windows RT 8.1 |Não há suporte.|  
-|PCs com Windows 8.1 |Não há suporte.|  
+| Plataforma                              | Redefinição de senha                                                                               |
+|---------------------------------------|----------------------------------------------------------------------------------------------|
+| iOS                                   | Suportado para limpar a senha de um dispositivo. Não cria uma nova senha temporária. |
+| macOS                                 | Não há suporte.                                                                               |
+| Android                               | Com suporte nas versões anteriores ao Android 7.0. Cria uma senha temporária.                |
+| Android for Work                      | Não há suporte.                                                                               |
+| PCs com Windows 10                        | Não há suporte.                                                                               |
+| Celular com Windows 10                     | Suportado, exceto os dispositivos ingressados do Azure AD.  |
+| Windows Phone 8 e Windows Phone 8.1 | Com suporte.                                                                                   |
+| Windows RT 8.1                        | Não há suporte.                                                                               |
+| PCs com Windows 8.1                       | Não há suporte.                                                                               |
 
 > [!Note]    
 > Você deve executar a ação de redefinição de senha no site de nível superior do seu ambiente. Por exemplo, se você usa um site de administração central, a ação somente pode ser executada nesse site. Se você estiver usando um site primário autônomo, a ação somente poderá ser executada nesse site.
