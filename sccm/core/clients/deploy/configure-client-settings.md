@@ -3,7 +3,7 @@ title: "Definir as configurações do cliente"
 titleSuffix: Configuration Manager
 description: "Selecione as configurações do cliente no System Center Configuration Manager."
 ms.custom: na
-ms.date: 04/23/2017
+ms.date: 12/29/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
@@ -12,20 +12,20 @@ ms.tgt_pltfrm: na
 ms.topic: get-started-article
 ms.assetid: 95e9858a-bad4-4651-9e61-2e31dc5050fa
 caps.latest.revision: "5"
-author: arob98
-ms.author: angrobe
+author: aczechowski
+ms.author: aaroncz
 manager: angrobe
-ms.openlocfilehash: 20a8f91d10d98542f08e440bcfbc1a6f98a51932
-ms.sourcegitcommit: 12d0d53e47bbf1a0bbd85015b8404a44589d1e14
+ms.openlocfilehash: c777e800d154b060040363aefbc611e284f233b4
+ms.sourcegitcommit: f1535281b2c3fecff773b722c3f7590bf6ba10a0
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 01/03/2018
 ---
 # <a name="how-to-configure-client-settings-in-system-center-configuration-manager"></a>Como definir as configurações do cliente no System Center Configuration Manager
 
 *Aplica-se a: System Center Configuration Manager (Branch Atual)*
 
-Gerencie todas as configurações de cliente no System Center Configuration Manager em **Administração** > **Configurações do Cliente**. Modifique as configurações padrão quando quiser definir as configurações para todos os usuários e dispositivos na hierarquia que não possuírem configurações personalizadas aplicadas. Se você quiser aplicar configurações diferentes a apenas alguns usuários ou dispositivos, crie configurações personalizadas e implante-as às coleções.  
+Gerencie todas as configurações de cliente no System Center Configuration Manager em **Administração** > **Configurações do Cliente**. Modifique as configurações padrão quando quiser definir as configurações para todos os usuários e dispositivos na hierarquia que não possuírem configurações personalizadas aplicadas. Se desejar aplicar configurações diferentes a apenas alguns usuários ou dispositivos, crie configurações personalizadas e implante-as às coleções.  
 
 Para obter informações sobre cada configuração, consulte [Sobre configurações de cliente no System Center Configuration Manager](../../../core/clients/deploy/about-client-settings.md).
 
@@ -63,25 +63,14 @@ Ao implantar essas configurações personalizadas, elas substituirão as configu
 
 9. Na caixa de diálogo **Selecionar Coleção**, selecione a coleção apropriada e escolha **OK**. Você pode verificar a coleção selecionada se clicar na guia **Implantações** do painel de detalhes.  
 
-10. Exiba a ordem da configuração personalizada do cliente que você acabou de criar. Quando você tem várias configurações personalizadas do cliente, elas são aplicadas de acordo com o número da ordem. Se houver qualquer conflito, a configuração com o menor número de ordem substituirá as demais. Para alterar o número da ordem, na guia **Início**, no grupo **Configurações do Cliente**, escolha **Mover Item para Cima** ou **Mover Item para Baixo**.  
+10. Exiba a ordem da configuração de cliente personalizada criada. Quando você tem várias configurações personalizadas do cliente, elas são aplicadas de acordo com o número da ordem. Se houver qualquer conflito, a configuração com o menor número de ordem substituirá as demais. Para alterar o número da ordem, na guia **Início**, no grupo **Configurações do Cliente**, escolha **Mover Item para Cima** ou **Mover Item para Baixo**.  
 
  Os computadores cliente serão definidos com essas configurações durante o próximo download da política do cliente. Para iniciar a recuperação de política para um único cliente, consulte [Iniciar recuperação de política de um cliente do Configuration Manager](../../../core/clients/manage/manage-clients.md#BKMK_PolicyRetrieval) em [Como gerenciar clientes no System Center Configuration Manager](../../../core/clients/manage/manage-clients.md).  
 
-## <a name="limit-windows-10-enhanced-telemetry-to-only-send-data-relevant-to-windows-analytics-device-health"></a>Limitar telemetria avançada do Windows 10 para enviar apenas dados relevantes para a integridade do dispositivo do Windows Analytics
-<!-- 1356148 -->
 
-Com a atualização 1710, você pode definir o nível de coleta de dados da telemetria do Windows 10 para **Avançado (Limitado)**. Essa configuração permite que você obtenha informações acionáveis sobre dispositivos em seu ambiente sem que os dispositivos reportem todos os dados no nível de telemetria **Avançado** com Windows 10 versão 1709 ou posterior.
-
-O nível de telemetria Avançado (Limitado) inclui métricas do nível básico, bem como um subconjunto dos dados coletados do nível **Avançado** relevantes ao Windows Analytics. Para saber mais sobre os níveis de telemetria, consulte [Níveis de telemetria](https://docs.microsoft.com/windows/configuration/configure-windows-telemetry-in-your-organization#telemetry-levels).
-
-1.  No console do Configuration Manager, escolha **Administração** > **Configurações do Cliente** > **Configurações do Cliente Padrão**.  
-
-2.  Na guia **Início**, escolha **Propriedades**.  
-
-3.  Abra **Serviços de Nuvem** e defina a telemetria do Windows 10 como **Avançada**.
 
 ##  <a name="view-client-settings"></a>Exibir configurações do cliente  
- Quando várias configurações de cliente foram implantadas no mesmo dispositivo, usuário ou grupo de usuários, a atribuição de propriedades e combinação das configurações podem ser complexas. Para exibir as configurações do cliente:  
+ Quando várias configurações de cliente forem implantadas no mesmo dispositivo, usuário ou grupo de usuários, a priorização e a combinação das configurações são complexas. Para exibir as configurações do cliente:  
 
 1.  No console do Configuration Manager, clique em **Ativos e Conformidade** > **Dispositivos** > **Usuários** ou **Coleções do Usuário**.  
 

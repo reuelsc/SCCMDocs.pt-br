@@ -3,7 +3,7 @@ title: Criar consultas
 titleSuffix: Configuration Manager
 description: Descubra como criar e importar consultas no System Center Configuration Manager. Inclui dicas e consultas de exemplo.
 ms.custom: na
-ms.date: 10/06/2016
+ms.date: 12/11/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
@@ -13,14 +13,14 @@ ms.topic: article
 ms.assetid: 868049d3-3209-47ec-b34a-9cc26941893a
 caps.latest.revision: "5"
 caps.handback.revision: "0"
-author: andredm7
-ms.author: andredm
+author: aczechowski
+ms.author: aaroncz
 manager: angrobe
-ms.openlocfilehash: cbd9710cec365323e754d2109c8c61c29a4c301f
-ms.sourcegitcommit: c236214b2fcc13dae7bad96d7fb33f692868191d
+ms.openlocfilehash: 32400ebcd834e3b98bf0f1ff6a1f6b41d8e12076
+ms.sourcegitcommit: 08f9854fb6c6d21e1e923b13e38a64d0bc2bc9a4
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/12/2017
+ms.lasthandoff: 12/12/2017
 ---
 # <a name="how-to-create-queries-in-system-center-configuration-manager"></a>Como criar consultas no System Center Configuration Manager
 
@@ -178,6 +178,10 @@ Use um dos seguintes valores para *&lt;ID do Dispositivo\>*:
 |Android|11|  
 |Sistema em um chip da Intel|12|  
 |Servidores Unix e Linux|13|  
+|Apple macOS (MDM)|14|
+|Microsoft HoloLens (MDM)|15|
+|Microsoft Surface Hub (MDM)|16|
+|Android for Work|17|
 
  Por exemplo, se você quiser que a consulta retorne somente computadores Mac, use a seguinte consulta:  
 

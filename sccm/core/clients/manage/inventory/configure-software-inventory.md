@@ -3,7 +3,7 @@ title: "Configurar o inventário de software"
 titleSuffix: Configuration Manager
 description: "Configurar o inventário de software e excluir pastas do inventário de software no Configuration Manager."
 ms.custom: na
-ms.date: 02/22/2017
+ms.date: 01/03/2018
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
@@ -16,17 +16,17 @@ caps.handback.revision: "0"
 author: andredm7
 ms.author: andredm
 manager: angrobe
-ms.openlocfilehash: 3aac8bdf45a90f0c9c734d2f796e590e5dc9b90e
-ms.sourcegitcommit: c236214b2fcc13dae7bad96d7fb33f692868191d
+ms.openlocfilehash: afddcef2caab6e1af0aacdac91366fa430f21d85
+ms.sourcegitcommit: ca9d15dfb1c9eb47ee27ea9b5b39c9f8cdcc0748
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/12/2017
+ms.lasthandoff: 01/04/2018
 ---
 # <a name="how-to-configure-software-inventory-in-system-center-configuration-manager"></a>Como configurar o inventário de software no System Center Configuration Manager
 
 *Aplica-se a: System Center Configuration Manager (Branch Atual)*
 
- Este procedimento define as configurações do cliente para o inventário de software e se aplica a todos os computadores em sua hierarquia. Se você quiser aplicar essas configurações somente a alguns computadores, crie uma configuração personalizada do cliente de dispositivo e atribua a uma coleção que contém os computadores nos quais deseja usar o inventário de software. Para obter mais informações sobre como criar configurações personalizadas de dispositivo, consulte [Como configurar as definições de cliente no System Center Configuration Manager](../../../../core/clients/deploy/configure-client-settings.md).  
+Este procedimento define as configurações padrão do cliente para o inventário de software e se aplica a todos os computadores na hierarquia. Caso deseje aplicar essas configurações somente a alguns computadores, crie uma configuração de cliente de dispositivo personalizada e atribua-a a uma coleção. Para obter mais informações sobre como criar configurações personalizadas de dispositivo, consulte [Como configurar as definições de cliente no System Center Configuration Manager](../../../../core/clients/deploy/configure-client-settings.md).   
 
 ## <a name="to-configure-software-inventory"></a>Para configurar o inventário de software  
 
@@ -42,16 +42,23 @@ ms.lasthandoff: 10/12/2017
 
     -   **Programar agendamento do inventário de software e da coleção de arquivos** – Configura o intervalo no qual os clientes coletam inventário de software e arquivos.   
 
-7.  Defina as configurações do cliente necessárias. Para obter uma lista de configurações do cliente de inventário de software que podem ser definidas, veja a seção [Inventário de Software](../../../../core/clients/deploy/about-client-settings.md#software-inventory) no tópico [Sobre configurações de cliente no System Center Configuration Manager](../../../../core/clients/deploy/about-client-settings.md).  
+7.  Defina as configurações do cliente necessárias. A seção [Inventário de software](../../../../core/clients/deploy/about-client-settings.md#software-inventory) do artigo [Sobre as configurações do cliente no System Center Configuration Manager](../../../../core/clients/deploy/about-client-settings.md) apresenta uma lista das configurações do cliente.  
 
  Os computadores cliente serão definidos com essas configurações durante o próximo download da política do cliente. Para iniciar a recuperação de política para um cliente individual, veja [How to manage clients in System Center Configuration Manager](../../../../core/clients/manage/manage-clients.md).  
+
+ > [!TIP]  
+        >   O código de erro 80041006 em inventoryprovider.log significa que a memória do provedor WMI é insuficiente. Ou seja, foi atingido o limite de cota de memória para um provedor e o provedor de inventário não pode continuar.
+Nesse caso, o agente de inventário cria um relatório com 0 entrada e, portanto, nenhum item de inventário é relatado. <br/>
+Uma possível solução para esse erro seria reduzir o escopo da coleta de inventário de software. Em circunstâncias em que o erro ocorre depois de limitar o escopo de inventário, o aumento da propriedade [MemoryPerHost](https://blogs.technet.microsoft.com/askperf/2008/09/16/memory-and-handle-quotas-in-the-wmi-provider-service/) definida na classe [_ProviderHostQuotaConfiguration](https://msdn.microsoft.com/library/aa394671) pode fornecer uma solução.
+
+<!--SMS.480648 include WMI Out of memory tip -->
 
 
 ## <a name="to-exclude-folders-from-software-inventory"></a>Para excluir pastas do inventário de software  
 
 1.  Usando o Notepad.exe, crie um arquivo vazio chamado **Skpswi.dat**.  
 
-2.  Clique com o botão direito do mouse no arquivo do **Skpswi.dat** e clique em **Propriedades**. Nas propriedades do arquivo Skpswi.dat, selecione o atributo **Hidden** .  
+2.  Clique com o botão direito do mouse no arquivo **Skpswi.dat** e clique em **Propriedades**. Nas propriedades do arquivo Skpswi.dat, selecione o atributo **Hidden** .  
 
 3.  Coloque o arquivo **Skpswi.dat** na raiz de cada estrutura de pasta ou da unidade de disco rígido do cliente que você deseja excluir do inventário de software.  
 

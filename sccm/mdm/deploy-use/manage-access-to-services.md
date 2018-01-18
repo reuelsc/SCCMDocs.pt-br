@@ -3,7 +3,7 @@ title: Acesso condicional
 titleSuffix: Configuration Manager
 description: "Saiba como usar o acesso condicional no System Center Configuration Manager para proteger emails e outros serviços."
 ms.custom: na
-ms.date: 03/05/2017
+ms.date: 12/22/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
@@ -15,11 +15,11 @@ caps.latest.revision: "26"
 author: andredm7
 ms.author: andredm
 manager: angrobe
-ms.openlocfilehash: 4a14f18007524421058c6caf1ec8947cf34328e4
-ms.sourcegitcommit: c236214b2fcc13dae7bad96d7fb33f692868191d
+ms.openlocfilehash: f215e1c22d40e1fe402084b665ae624bc0c21d97
+ms.sourcegitcommit: 92c3f916e6bbd35b6208463ff406e0247664543a
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/12/2017
+ms.lasthandoff: 01/02/2018
 ---
 # <a name="manage-access-to-services-in-system-center-configuration-manager"></a>Gerenciar o acesso a serviços no System Center Configuration Manager
 
@@ -27,9 +27,9 @@ ms.lasthandoff: 10/12/2017
 
 
 ## <a name="conditional-access-in-system-center-configuration-manager"></a>Acesso condicional no System Center Configuration Manager
-Use o **acesso condicional** para proteger emails e outros serviços nos dispositivos registrados no Microsoft Intune, com base nas condições especificadas.  
+Use o acesso condicional para especificar condições para ajudar a proteger o email e outros serviços nos dispositivos registrados no Microsoft Intune.  
 
- Para saber mais sobre **acesso condicional em computadores que são gerenciados com o System Center Configuration Manager** e avaliados quanto à conformidade, consulte [Gerenciar o acesso aos serviços O365 para computadores gerenciados pelo System Center Configuration Manager](../../protect/deploy-use/manage-access-to-o365-services-for-pcs-managed-by-sccm.md).  
+ Para obter mais informações sobre o acesso condicional em dispositivos gerenciados com o cliente do Configuration Manager, consulte [Gerenciar o acesso aos serviços do O365 em computadores gerenciados pelo System Center Configuration Manager](../../protect/deploy-use/manage-access-to-o365-services-for-pcs-managed-by-sccm.md).  
 
 
  Um fluxo típico de acesso condicional será semelhante ao seguinte:  
@@ -60,19 +60,19 @@ Use o **acesso condicional** para proteger emails e outros serviços nos disposi
 
     -   Se o dispositivo está desbloqueado ou com raiz  
 
-    -   Se o email no dispositivo for gerenciado por uma política do Configuration Manager ou o Intune  
+    -   Se o email no dispositivo é gerenciado por uma política do Configuration Manager ou do Microsoft Intune  
 
-     **Se nenhuma política de conformidade for implantada em um dispositivo, então todas as políticas de acesso condicional aplicável tratarão o dispositivo como compatível**.  
+     Um dispositivo relata conformidade com quaisquer políticas de acesso condicional aplicáveis, caso você não implante nenhuma política de conformidade nele.
 
--   **Políticas de acesso condicional** são configuradas para um serviço específico e definem regras como, por exemplo, quais grupos de usuário de segurança do Azure Active Directory ou coleções de usuários do Configuration Manager serão definidos como destino, ou isentos.  
+-   **Políticas de acesso condicional** destinam-se a um serviço específico. Essas políticas definem regras, como quais grupos de usuários de segurança do Azure Active Directory ou coleções de usuários do Configuration Manager devem ser direcionados ou excluídos.  
 
-     Configure uma política de acesso condicional para o Exchange no Local por meio do console do Configuration Manager. No entanto, ao configurar uma política do Exchange Online ou do SharePoint Online, isso abrirá o console de administração do Intune no qual a política é configurada.  
+     Configure a política de acesso condicional do Exchange Local no console do Configuration Manager. No entanto, ao configurar uma política do Exchange Online ou do SharePoint Online, o console do Microsoft Intune será aberto para configurar a política.  
 
-     Ao contrário de outras políticas do Intune ou Configuration Manager, você não implanta políticas de acesso condicional. Em vez disso, você as configura uma vez e elas se aplicam a todos os seus usuários de destino.  
+     Ao contrário de outras políticas do Microsoft Intune ou Configuration Manager, você não implanta políticas de acesso condicional. Em vez disso, você configura essas políticas uma vez e elas se aplicam a todos os usuários direcionados.  
 
- Quando dispositivos não atendem às condições que você configurou, o usuário é guiado pelo processo de registro do dispositivo e correção do problema que está impedindo o dispositivo de estar em conformidade.  
+ Quando os dispositivos não atendem às condições configuradas, o usuário é orientado pelo registro do dispositivo e pela correção do problema de conformidade do dispositivo.  
 
-**Antes** de começar a usar o acesso condicional, certifique-se de que você tenha os **requisitos** corretos em vigor:  
+Antes de começar a usar o acesso condicional, certifique-se de que você tenha os requisitos corretos no lugar:  
 
 ## <a name="requirements-for-exchange-online-using-the-shared-multi-tenant-environment"></a>Requisitos para o Exchange Online (usando o ambiente de multilocatário compartilhado)
 O Acesso condicional ao Exchange Online dá suporte a dispositivos que executam:
@@ -86,11 +86,11 @@ O Acesso condicional ao Exchange Online dá suporte a dispositivos que executam:
 -   Os dispositivos devem ser ingressados no local de trabalho, que registra o dispositivo com o AAD DRS (Serviço de registro de dispositivo do Active Directory do Azure).<br />     
 - Os PCs ingressados no domínio devem ser registrados automaticamente no Active Directory do Azure por meio da política de grupo ou do MSI.
 
-  A seção **Acesso condicional para PCs** neste tópico descreve todos os requisitos para habilitar o acesso condicional de um PC.<br />     
-  O AAD DRS será ativado automaticamente para clientes do Intune e do Office 365. Clientes que já tiverem implantado o Serviço de Registro de Dispositivos do ADFS não verão dispositivos registrados no seu Active Directory local.
--   Você deve usar uma assinatura do Office 365 que inclui o Exchange Online (como E3) e os usuários devem ser licenciados para o Exchange Online.
--   O **conector do Exchange Server** é opcional, conecta o Configuration Manager ao Microsoft Exchange Online e ajuda você a monitorar informações de dispositivo por meio do console do Configuration Manager (veja [Gerenciar dispositivos móveis com o System Center Configuration Manager e o Exchange](../../mdm/deploy-use/manage-mobile-devices-with-exchange-activesync.md)).
-O conector não é necessário para usar políticas de conformidade ou políticas de acesso condicional, mas é necessário para executar relatórios que ajudam a avaliar o impacto de acesso condicional.
+  A seção **Acesso condicional para computadores** deste artigo descreve todos os requisitos para habilitar o acesso condicional em um computador.<br />     
+  O AAD DRS é ativado automaticamente para clientes do Microsoft Intune e Office 365. Clientes que já implantaram o Serviço de Registro de Dispositivos do ADFS não veem os dispositivos registrados no Active Directory local.
+-   Use uma assinatura do Office 365 que inclui o Exchange Online (como E3). Os usuários devem estar licenciados para usar o Exchange Online.
+-   O conector do Exchange Server é opcional e conecta o Configuration Manager ao Microsoft Exchange Online. Esse conector ajuda você a monitorar as informações do dispositivo por meio do console do Configuration Manager. Para obter mais informações, consulte [Gerenciar dispositivos móveis com o System Center Configuration Manager e o Exchange](../../mdm/deploy-use/manage-mobile-devices-with-exchange-activesync.md).
+Não é necessário ter o conector para usar políticas de conformidade ou políticas de acesso condicional. A execução de relatórios sobre o impacto do acesso condicional exige o conector.
 
 ## <a name="requirements-for-exchange-online-dedicated"></a>Requisitos para o Exchange Online dedicado
 O acesso condicional ao Exchange Online dedicado dá suporte a dispositivos que executam:
@@ -101,31 +101,32 @@ O acesso condicional ao Exchange Online dedicado dá suporte a dispositivos que 
 -   Windows Phone 8 e posterior
 -   Qualquer dispositivo iOS que usa um cliente de email do Exchange ActiveSync (EAS)
 -   Android 4 e posterior.
--   Para locatários no **ambiente herdado do Exchange Online dedicado**:    
+-   Para locatários no ambiente herdado do Exchange Online dedicado:    
 
-  Você deve usar o **conector do Exchange Server** que conecta o Configuration Manager ao Microsoft Exchange no Local. Isso permite que você gerencie dispositivos móveis e habilita o acesso condicional (veja [Gerenciar dispositivos móveis com o System Center Configuration Manager e o Exchange](../../mdm/deploy-use/manage-mobile-devices-with-exchange-activesync.md)).
--   Para locatários no **novo ambiente do Exchange Online dedicado**:     
-  O **conector do Exchange Server** opcional conecta o Configuration Manager ao Microsoft Exchange Online e ajuda você a gerenciar informações de dispositivo (veja [Gerenciar dispositivos móveis usando o System Center Configuration Manager e o Exchange](../../mdm/deploy-use/manage-mobile-devices-with-exchange-activesync.md)). O conector não é necessário para usar políticas de conformidade ou políticas de acesso condicional, mas é necessário para executar relatórios que ajudam a avaliar o impacto de acesso condicional.  
+  Use o conector do Exchange Server, que conecta o Configuration Manager ao Microsoft Exchange Local. O conector permite gerenciar dispositivos móveis e habilitar o acesso condicional. Para obter mais informações, consulte [Gerenciar dispositivos móveis com o System Center Configuration Manager e o Exchange](../../mdm/deploy-use/manage-mobile-devices-with-exchange-activesync.md).
+-   Para locatários no novo ambiente do Exchange Online dedicado:     
+  O conector do Exchange Server é opcional, que conecta o Configuration Manager ao Microsoft Exchange Online e ajuda você a gerenciar as informações do dispositivo. Para obter mais informações, consulte [Gerenciar dispositivos móveis com o System Center Configuration Manager e o Exchange](../../mdm/deploy-use/manage-mobile-devices-with-exchange-activesync.md). Não é necessário ter o conector para usar políticas de conformidade ou políticas de acesso condicional. A execução de relatórios sobre o impacto do acesso condicional exige o conector.  
 
-## <a name="requirements-for-exchange-on-premises"></a>Requisitos para o Exchange Local
-O acesso condicional ao Exchange no Local dá suporte a:
+## <a name="requirements-for-exchange-on-premises"></a>Requisitos do Exchange Local
+O acesso condicional ao Exchange Local dá suporte a:
 -   Windows 8 e posterior (quando registrado com o Intune)
 -   Windows Phone 8 e posterior
 -   Aplicativo de email nativo no iOS
 -   Aplicativo de email nativo no Android 4 ou posterior
--   Não há suporte para o aplicativo Microsoft Outlook (Android e iOS).
+-   Não há suporte para o aplicativo Microsoft Outlook (Android e iOS)
 
 **Além disso**:
 
--  A versão do Exchange deve ser Exchange 2010 ou posterior. Há suporte para a matriz de CAS (Servidor de Acesso de Cliente) do servidor Exchange.
+- A versão do Exchange deve ser Exchange 2010 ou posterior
+- Há suporte para a matriz de CAS (Servidor de Acesso de Cliente) do servidor Exchange
 
 > [!TIP]
 > Se o ambiente do Exchange estiver em uma configuração de servidor de CAS, instale o conector do Exchange local em qualquer um dos servidores de CAS.
-- Você deve usar o **conector do Exchange Server** que conecta o Configuration Manager ao Microsoft Exchange no Local. Isso permite que você gerencie dispositivos móveis e habilita o acesso condicional (veja [Gerenciar dispositivos móveis com o System Center Configuration Manager e o Exchange](../../mdm/deploy-use/manage-mobile-devices-with-exchange-activesync.md)).
-  - Certifique-se de estar usando a versão mais recente do **conector do Exchange local**. O Exchange Connector local deve ser configurado pelo console do Configuration Manager. Para obter instruções detalhadas, veja [Gerenciar dispositivos móveis com o System Center Configuration Manager e o Exchange](../../mdm/deploy-use/manage-mobile-devices-with-exchange-activesync.md).
-  - O conector deve ser configurado somente no site primário do System Center Configuration Manager.</li><li>Esse conector dá suporte a ambiente de CAS do Exchange. <br />        Ao configurar o conector, você deve configurá-lo para que ele se comunique com um dos servidores de CAS do Exchange.
+- Use o conector do Exchange Server, que conecta o Configuration Manager ao Microsoft Exchange Local. O conector permite gerenciar dispositivos móveis e habilitar o acesso condicional. Para obter mais informações, consulte [Gerenciar dispositivos móveis com o System Center Configuration Manager e o Exchange](../../mdm/deploy-use/manage-mobile-devices-with-exchange-activesync.md).
+  - Use a última versão do conector do Exchange Local. Configure o conector do Exchange Connector Local pelo console do Configuration Manager. Para obter instruções detalhadas, veja [Gerenciar dispositivos móveis com o System Center Configuration Manager e o Exchange](../../mdm/deploy-use/manage-mobile-devices-with-exchange-activesync.md).
+  - Configurar somente o conector no site primário do Configuration Manager
 
-- O Exchange ActiveSync pode ser configurado com autenticação baseada em certificado ou em entrada de credenciais de usuário
+- O Exchange ActiveSync pode ser configurado com autenticação baseada em certificado ou na entrada de credenciais do usuário
 
 
 ## <a name="requirements-for-skype-for-business-online"></a>Requisitos para o Skype for Business Online
@@ -134,9 +135,9 @@ O Acesso condicional ao SharePoint Online dá suporte a dispositivos que executa
  -   Android 4.0 e posterior
  -   Samsung KNOX Standard 4.0 ou posterior
 
-**Além disso,** você deve habilitar a autenticação moderna para o Skype for Business Online. Preencha este [formulário do Connect](https://connect.microsoft.com/office/Survey/NominationSurvey.aspx?SurveyID=17299&ProgramID=8715) para ser registrado no programa de autenticação moderna.
+Habilite a [autenticação moderna](https://aka.ms/SkypeModernAuth) para o Skype for Business Online. 
 
-Todos os usuários finais deverão usar o Skype for Business Online. Se você tiver uma implantação com o Skype for Business Online e o Skype for Business no local, política de acesso condicional não será aplicada aos usuários finais que estão na implantação local.
+Todos os usuários devem usar o Skype for Business Online. Se você tiver uma implantação com o Skype for Business Online e o Skype for Business local, a política de acesso condicional não será aplicada aos usuários locais.
 
 ## <a name="requirements-for-sharepoint-online"></a>Requisitos para o SharePoint Online
 O Acesso condicional ao SharePoint Online dá suporte a dispositivos que executam:
@@ -149,21 +150,21 @@ O Acesso condicional ao SharePoint Online dá suporte a dispositivos que executa
  **Além disso**:
  -   Os dispositivos devem ser ingressados no local de trabalho, que registra o dispositivo com o AAD DRS (Serviço de registro de dispositivo do Active Directory do Azure).
 
- Os PCs ingressados no domínio devem ser registrados automaticamente no Active Directory do Azure por meio da política de grupo ou do MSI. A seção **Acesso condicional para PCs** neste tópico descreve todos os requisitos para habilitar o acesso condicional de um PC.
+ Os PCs ingressados no domínio devem ser registrados automaticamente no Active Directory do Azure por meio da política de grupo ou do MSI. A seção **Acesso condicional para computadores** deste artigo descreve todos os requisitos para habilitar o acesso condicional em um computador.
 
- O AAD DRS será ativado automaticamente para clientes do Intune e do Office 365. Clientes que já tiverem implantado o Serviço de Registro de Dispositivos do ADFS não verão dispositivos registrados no seu Active Directory local.
+ O AAD DRS é ativado automaticamente para clientes do Microsoft Intune e Office 365. Clientes que já implantaram o Serviço de Registro de Dispositivos do ADFS não veem os dispositivos registrados no Active Directory local.
  -   Uma assinatura do SharePoint Online é necessária e os usuários devem ser licenciados para o SharePoint Online.
 
  ### <a name="conditional-access-for-pcs"></a>Acesso condicional para PCs
 
- É possível configurar o acesso condicional para PCs que executam aplicativos da área de trabalho do Office para acessar o **Exchange Online** e o **SharePoint Online** para PCs que atendam aos seguintes requisitos:
- -   O PC deve estar executando o Windows 7.0 ou Windows 8.1.
- -   O PC deve ser ingressado no domínio ou compatível.
+ Configure o acesso condicional para computadores que executam aplicativos da área de trabalho do Office e acesse o Exchange Online ou SharePoint Online. Os PCs devem atender aos seguintes requisitos:
+ -   O computador deve executar o Windows 7.0 ou Windows 8.1
+ -   O computador deve estar ingressado no domínio ou estar em conformidade
 
- Para ser compatível, o computador deve ser registrado no Intune e obedecer às políticas.
+ Para estar em conformidade, o computador deve ser registrado no Microsoft Intune e obedecer às políticas.
 
  Para PCs ingressados no domínio, você deve configurá-lo para [registrar o dispositivo automaticamente](https://azure.microsoft.com/en-us/documentation/articles/active-directory-conditional-access-automatic-device-registration/) com o Active Directory do Azure.
- -   [A autenticação moderna do Office 365 deve estar habilitada](https://blogs.office.com/2015/03/23/office-2013-modern-authentication-public-preview-announced/)e ter todas as atualizações mais recentes do Office.<br />     A autenticação moderna leva as credenciais baseadas na ADAL (Active Directory Authentication Library) para os clientes do Windows com Office 2013 e permite uma melhor segurança como a **autenticação multifator**e a **autenticação baseada em certificado**.
+ -   [A autenticação moderna do Office 365 deve estar habilitada](https://blogs.office.com/2015/03/23/office-2013-modern-authentication-public-preview-announced/)e ter todas as atualizações mais recentes do Office.<br />     A autenticação moderna leva a entrada baseada na ADAL (Active Directory Authentication Library) para os clientes do Windows com Office 2013 e permite uma melhor segurança como a autenticação multifator e a autenticação baseada em certificado.
  -   Configure as regras de declarações do ADFS para bloquear protocolos de autenticação não moderna.  
 
 ## <a name="next-steps"></a>Próximas etapas  

@@ -15,11 +15,11 @@ caps.latest.revision: "6"
 author: mattbriggs
 ms.author: mabrigg
 manager: angrobe
-ms.openlocfilehash: 2ec4f4fdd1e351379922302e81af88e311a37c8e
-ms.sourcegitcommit: c236214b2fcc13dae7bad96d7fb33f692868191d
+ms.openlocfilehash: c512cba550e405c866204af981aba75639665de2
+ms.sourcegitcommit: ca9d15dfb1c9eb47ee27ea9b5b39c9f8cdcc0748
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/12/2017
+ms.lasthandoff: 01/04/2018
 ---
 # <a name="create-android-applications-with-system-center-configuration-manager"></a>Criar aplicativos Android com o System Center Configuration Manager
 
@@ -48,7 +48,7 @@ Há suporte para as seguintes ações de implantação:
 |Tipo de dispositivo|Ações com suporte|
 |-|-|
 |Android|**Disponível**, **Necessária** O usuário deve concordar com a instalação e com a desinstalação.|
-|Android for Work | **Necessária** |
+|Android for Work |**Disponível**, **Obrigatória** |
 
 ## <a name="approve-and-deploy-android-for-work-apps"></a>Aprovar e implantar aplicativos do Android for Work
 Como administrador do Configuration Manager, você também pode aprovar aplicativos no [site do Play for Work](https://play.google.com/work)e implantar esses aplicativos em dispositivos gerenciados do Android for Work.
@@ -65,3 +65,5 @@ Siga essas etapas para aprovar aplicativos na loja Play for Work, sincronizá-lo
 8. Vá para **Biblioteca de Software** > **Visão Geral** > **Gerenciamento de Aplicativos** > **Aplicativos**, selecione um aplicativo do Android for Work e implante como de costume.
 
 Para sincronizar aplicativos da Play for Work com o Configuration Manager, você deve aprovar pelo menos um aplicativo no site do Play for Work primeiro.
+
+Os aplicativos implantados como **Disponíveis** são exibidos no aplicativo Google Play com selo de trabalho em vez de no Portal da Empresa. Isso permite implantar aplicativos de uma fonte confiável (o aplicativo Google Play com selo de trabalho é uma fonte confiável) e não precisar permitir aplicativos de fontes não confiáveis.

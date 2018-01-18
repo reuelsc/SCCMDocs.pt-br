@@ -13,14 +13,14 @@ ms.topic: article
 ms.assetid: 7c888a6f-8e37-4be5-8edb-832b218f266d
 caps.latest.revision: "26"
 caps.handback.revision: "0"
-author: Dougeby
-ms.author: dougeby
+author: aczechowski
+ms.author: aaroncz
 manager: angrobe
-ms.openlocfilehash: 40a2d91baf8c02cdda96e9520ce155032272ebdd
-ms.sourcegitcommit: 7fe45ff75f05f7cc03ad021db8119791abe18049
+ms.openlocfilehash: 77ce50cf363c9429f9ef38aa2acf5b898bc8052d
+ms.sourcegitcommit: b97aa456b392d817bc9723cbd5c0ce6602e7ae34
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 12/01/2017
+ms.lasthandoff: 12/28/2017
 ---
 # <a name="task-sequence-steps-in-system-center-configuration-manager"></a>Etapas da sequência de tarefas no System Center Configuration Manager
 
@@ -760,7 +760,7 @@ Esta etapa é executada em um sistema operacional padrão ou no Windows PE. No e
  **Volume**  
  Informações específicas sobre a partição ou volume que será criado, incluindo o seguinte:  
 
--   Nome  
+-   Name  
 
 -   Espaço restante em disco  
 
@@ -1477,7 +1477,7 @@ Quando você adiciona uma sequência de tarefas filho a uma sequência de tarefa
 
 -   **Marca e modelo**: use esta categoria de regra para avaliar valores para a marca e o modelo de um computador. A marca e o modelo devem ambas serem avaliadas como verdadeiro para a regra a ser avaliada como verdadeiro.   
 
-    Começando no Configuration Manager versão 1610, você pode especificar um asterisco (*****) e um ponto de interrogação (**?**) como caracteres curinga, em que ***** corresponde a vários caracteres e **?** corresponde a um único caractere. Por exemplo, a cadeia de caracteres "DELL*900?" corresponderá a DELL-ABC-9001 e DELL9009.
+    A partir do Configuration Manager versão 1610, você pode especificar um asterisco (**&#42;**) e um ponto de interrogação (**?**) como caracteres curinga, em que **&#42;** corresponde a vários caracteres e **?** corresponde a um único caractere. Por exemplo, a cadeia de caracteres "DELL*900?" corresponderá a DELL-ABC-9001 e DELL9009. 
 
 -   **Variável de Sequência de Tarefas**: use esta categoria de regra para adicionar uma variável de sequência de tarefas, uma condição e um valor a ser avaliado. A regra avalia como verdadeiro quando o valor definido para a variável atende a condição especificada.  
 

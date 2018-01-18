@@ -11,11 +11,11 @@ ms.prod: configmgr-hybrid
 ms.service: 
 ms.technology: 
 ms.assetid: 6f0201d7-5714-4ba0-b2bf-d1acd0203e9a
-ms.openlocfilehash: 643b33810c2862e2d1c602bfe941c36605ad2631
-ms.sourcegitcommit: 8c6e9355846ff6a73c534c079e3cdae09cf13c45
+ms.openlocfilehash: 59fb06d14002f781e0448a64bb0064b4add2f087
+ms.sourcegitcommit: ac9268e31440ffe91b133c2ba8405d885248d404
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 12/06/2017
+ms.lasthandoff: 01/08/2018
 ---
 # <a name="change-the-mdm-authority-for-specific-users-mixed-mdm-authority"></a>Alterar a autoridade de MDM para usuários específicos (autoridade de MDM mista) 
 
@@ -49,6 +49,7 @@ Os usuários migrados e seus dispositivos são gerenciados no Intune e os outros
       
   > [!Important]    
   > Continue a editar as políticas no nível do locatário usando o console do Configuration Manager. Depois de [alterar sua autoridade de MDM no nível do locatário](change-mdm-authority.md) para o Intune, você passará a gerenciar essas políticas no Intune no Azure. 
+-   Se você usar certificados com assinatura de código, recomendamos que você migre os usuários em uma abordagem em fases. Depois que um dispositivo móvel é migrado, ele faz uma solicitação de autoridade de certificação para um novo certificado. Ao usar uma abordagem em fases para migrar usuários (e seus dispositivos), ela limita o número de solicitações simultâneas de autoridade de certificação.
 - É recomendável não migrar as contas de usuário que foram adicionadas como gerenciadores de registro de dispositivo no Configuration Manager. Mais tarde, quando você alterar sua autoridade de MDM no nível do locatário para o Intune, essas contas de usuário serão migradas corretamente. Se você migrar a conta de usuário de gerenciador de registros de dispositivo antes da alteração da autoridade de MDM no nível do locatário, você deverá adicionar o usuário manualmente como um gerenciador de registros de dispositivo no Intune no Azure. No entanto, os dispositivos registrados usando um gerenciador de registros de dispositivo não são migrados com êxito. Você deve chamar o suporte para migrar esses dispositivos. Para obter detalhes, consulte [Adicionar um gerenciador de registros de dispositivo](https://docs.microsoft.com/en-us/intune/device-enrollment-manager-enroll#add-a-device-enrollment-manager).
 - Os dispositivos registrados usando um gerenciador de registros de dispositivo, e os dispositivos sem [afinidade de usuário](/sccm/mdm/deploy-use/user-affinity-for-hybrid-managed-devices) não serão migrados automaticamente para a nova autoridade de MDM. Para alternar a autoridade de gerenciamento para esses dispositivos MDM, confira [Migrar dispositivos sem afinidade de usuário](#migrate-devices-without-user-affinity).
 
