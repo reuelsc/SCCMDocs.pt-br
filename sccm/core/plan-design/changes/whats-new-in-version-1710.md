@@ -3,7 +3,7 @@ title: "Nova versão 1710 | Microsoft Docs"
 titleSuffix: Configuration Manager
 description: "Veja os detalhes das alterações e dos novos recursos introduzidos na versão 1710 do System Center Configuration Manager."
 ms.custom: na
-ms.date: 11/20/2017
+ms.date: 1/08/2018
 ms.reviewer: na
 ms.suite: na
 ms.technology: configmgr-other
@@ -13,11 +13,11 @@ ms.assetid: bc6c3e5f-b9e2-400e-9d9d-446ff93c520c
 author: mestew
 ms.author: mstewart
 manager: angrobe
-ms.openlocfilehash: 8431ebffc6d1aa463c5622bd67db8a140c0cfe69
-ms.sourcegitcommit: 2dc9c83e57e9734ffc4a93f79cd71285036eeb8b
+ms.openlocfilehash: f944d4625e2e67a82098bf3b4373ea5f0ed70619
+ms.sourcegitcommit: 9de3d74030b7c3313c34b5cbe2dbe6e18a48c043
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 12/07/2017
+ms.lasthandoff: 01/10/2018
 ---
 # <a name="what39s-new-in-version-1710-of-system-center-configuration-manager"></a>Novidades da versão 1710 do System Center Configuration Manager
 
@@ -49,6 +49,9 @@ A partir desta versão, o Cache Par deixou de ser um recurso de pré-lançamento
 
 ### <a name="cloud-distribution-point-support-for-azure-government-cloud------sms491428---"></a>Suporte ao ponto de distribuição de nuvem na nuvem do Azure Governamental   <!-- sms491428 -->
 Agora você pode usar [pontos de distribuição baseados em nuvem](/sccm/core/plan-design/hierarchy/use-a-cloud-based-distribution-point) na nuvem do Azure governamental.   
+
+### <a name="inventory-default-unit-revision----sms503697---"></a>Revisão de unidade padrão de inventário <!-- sms503697 -->
+Como os dispositivos agora incluem discos rígidos com tamanhos em escalas de GB (gigabytes), TB (terabytes) e maiores, esta versão altera a unidade padrão (SMS_Units) usada em várias exibições de MB (megabytes) para GB. Por exemplo, o valor de v_gs_LogicalDisk.FreeSpace agora relata unidades em GB.
 
 
 <!-- ## Migration  -->
@@ -145,7 +148,7 @@ Esses cenários incluem:
 - [Registrar dispositivos](../../../mdm/deploy-use/enroll-hybrid-windows.md)
 - [Executar ações de apagamento remoto completo e seletivo](../../../mdm/deploy-use/wipe-lock-reset-devices.md)
 - [Gerenciar configurações por meio de itens de configuração e linhas de base](../../../mdm/deploy-use/create-configuration-items-for-windows-8.1-and-windows-10-devices-managed-without-the-client.md)
-- [Gerenciar a política de conformidade](../../../mdm/deploy-use/device-compliance-policies.md)
+- [Gerenciar a política de conformidade](../../../mdm/deploy-use/device-compliance-policies.md) e o [acesso condicional](../../../protect/deploy-use/manage-access-to-services.md)
 - Gerencie o acesso aos recursos da empresa por meio de:
    - [Perfis de certificado](../../../mdm/deploy-use/create-pfx-certificate-profiles.md)
    - [Perfis de VPN](../../../mdm/deploy-use/create-vpn-profiles.md)
@@ -153,6 +156,9 @@ Esses cenários incluem:
    - [Perfis de email](../../../mdm/deploy-use/create-exchange-activesync-profiles.md)
 - [Configurar a política do Windows Hello para Empresas](../../../mdm/deploy-use/windows-hello-for-business-settings.md)
 - [Gerenciar aplicativos](../../../mdm/deploy-use/management-tasks-applications.md)
+
+> [!NOTE]
+> A implantação de aplicativos .appxbundle criados para várias arquiteturas pode não funcionar nestes dispositivos. Este cenário não é compatível no momento.
 
 ### <a name="improved-vpn-profile-experience-in-configuration-manager-console"></a>Melhoria da experiência do perfil de VPN no Console do Configuration Manager 
 <!-- 1318232 -->
