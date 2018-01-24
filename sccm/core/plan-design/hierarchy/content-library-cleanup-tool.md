@@ -29,7 +29,7 @@ ms.lasthandoff: 01/04/2018
 
 A ferramenta só afeta o conteúdo no ponto de distribuição que você especificar ao executá-la. A ferramenta não pode remover o conteúdo da biblioteca de conteúdo no servidor do site.
 
-Você poderá encontrar o **ContentLibraryCleanup.exe** na pasta *%CM_Installation_Path%\cd.latest\SMSSETUP\TOOLS\ContentLibraryCleanup\* no servidor do site no site de administração central ou site primário.
+Você poderá encontrar o **ContentLibraryCleanup.exe** na pasta \*%CM_Installation_Path%\cd.latest\SMSSETUP\TOOLS\ContentLibraryCleanup\* no servidor do site no site de administração central ou site primário.
 
 ## <a name="requirements"></a>requisitos  
  A ferramenta só pode ser executada em um único ponto de distribuição por vez.  
