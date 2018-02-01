@@ -7,19 +7,20 @@ ms.date: 12/18/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
-ms.technology: configmgr-other
+ms.technology:
+- configmgr-other
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 35e237b6-9f7b-4189-90e7-8eca92ae7d3d
-caps.latest.revision: "21"
+caps.latest.revision: 
 author: mestew
 ms.author: mstewart
-manager: angrobe
-ms.openlocfilehash: ccc07aa709c0a168a8df7a1bd7944e9399bec13f
-ms.sourcegitcommit: 3dea4342f79909c5064289bd18ed36269812e30c
+manager: dougeby
+ms.openlocfilehash: 2dcf7ab67c0f57d442f6ab0a0ea9f0f476fe8415
+ms.sourcegitcommit: bc86be110c8d2a7a076e17f433d8c5ffd51a7d04
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 12/19/2017
+ms.lasthandoff: 01/23/2018
 ---
 # <a name="supported-sql-server-versions-for-system-center-configuration-manager"></a>Versões do SQL Server com suporte no System Center Configuration Manager
 
@@ -191,6 +192,9 @@ Use esta versão do SQL Server sem uma versão de atualização cumulativa míni
  Em cada site, a instância do SQL Server que é usada para o site e o banco de dados do site devem usar o seguinte agrupamento: **SQL_Latin1_General_CP1_CI_AS**.  
 
  O Configuration Manager dá suporte a duas exceções a este agrupamento para atender aos padrões definidos no GB18030 para uso na China. para obter mais informações, consulte, [Suporte internacional no System Center Configuration Manager](../../../core/plan-design/hierarchy/international-support.md).  
+
+ **Nível de compatibilidade do banco de dados:** </br>
+ O Configuration Manager requer que o nível de compatibilidade do banco de dados do site não seja menor do que a versão mais antiga com suporte do SQL Server para sua versão do Configuration Manager. Por exemplo, a começar da versão 1702, você precisará ter um [nível de compatibilidade do banco de dados](https://docs.microsoft.com/sql/relational-databases/databases/view-or-change-the-compatibility-level-of-a-database) maior ou igual a 110. <!-- SMS.506266--> 
 
  **Recursos do SQL Server:**  
  Somente o recurso **Serviços de Mecanismo de Banco de Dados** é necessário para cada servidor do site.  

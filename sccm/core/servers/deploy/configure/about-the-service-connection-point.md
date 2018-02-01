@@ -7,20 +7,21 @@ ms.date: 6/28/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
-ms.technology: configmgr-other
+ms.technology:
+- configmgr-other
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: bc2282d5-0571-465b-9528-a555855eaacd
-caps.latest.revision: "18"
-caps.handback.revision: "0"
+caps.latest.revision: 
+caps.handback.revision: 
 author: mestew
 ms.author: mstewart
 manager: angrobe
-ms.openlocfilehash: 145fe172665310caa48d8f152ad46d72df4168dd
-ms.sourcegitcommit: daa080cf220835f157a23e8c8e2bd2781b869bb7
+ms.openlocfilehash: 9651694530d1258100c9c564bfc59447ac454a96
+ms.sourcegitcommit: ac20475ae9c1ea5ca3632cb6a44440c316f171f4
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 12/04/2017
+ms.lasthandoff: 01/25/2018
 ---
 # <a name="about-the-service-connection-point-in-system-center-configuration-manager"></a>Sobre o ponto de conexão de serviço no System Center Configuration Manager
 
@@ -84,7 +85,7 @@ Para usar o Configuration Manager Service Manager, no console, navegue para **Mo
 -   A conta de instalação do sistema de sites é usada pelo gerenciador de distribuição no servidor de sites para transferir atualizações do ponto de conexão de serviço.
 
 ##  <a name="bkmk_urls"></a> Requisitos de acesso à Internet  
-Para habilitar a operação, o computador que hospeda o ponto de conexão de serviço e quaisquer firewalls entre o computador e a Internet deve passar as comunicações pela **porta TCP 443** e **porta TCP 443** nos seguintes locais da Internet. O ponto de conexão de serviço também dá suporte ao uso de um proxy da Web (com ou sem autenticação) para acessar esses locais.  Se você precisar configurar uma conta de proxy da web, consulte: [Suporte do servidor proxy no System Center Configuration Manager](/sccm/core/plan-design/network/proxy-server-support).
+Para habilitar a operação, o computador que hospeda o ponto de conexão de serviço e qualquer firewall entre esse computador e a Internet deve passar as comunicações pela porta de saída **TCP 443** para HTTPS e pela porta de saída **TCP 80** para HTTP nos seguintes locais da Internet. O ponto de conexão de serviço também dá suporte ao uso de um proxy da Web (com ou sem autenticação) para acessar esses locais.  Se você precisar configurar uma conta de proxy da web, consulte: [Suporte do servidor proxy no System Center Configuration Manager](/sccm/core/plan-design/network/proxy-server-support).
 
 **Atualizações e manutenção**  
 
