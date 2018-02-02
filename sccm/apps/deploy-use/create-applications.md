@@ -7,20 +7,21 @@ ms.date: 11/07/2016
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
-ms.technology: configmgr-app
+ms.technology:
+- configmgr-app
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: cc230ff4-7056-4339-a0a6-6a44cdbb2857
-caps.latest.revision: "14"
-caps.handback.revision: "0"
+caps.latest.revision: 
+caps.handback.revision: 
 author: mattbriggs
 ms.author: mabrigg
 manager: angrobe
-ms.openlocfilehash: f680b692f3ae92fb8a5e8b6640ed053ceedba436
-ms.sourcegitcommit: 12d0d53e47bbf1a0bbd85015b8404a44589d1e14
+ms.openlocfilehash: d7073b397cdf7b233f8264bd07019303a77a610f
+ms.sourcegitcommit: 2f6a13d208dcd8aa59c88f107791f9c4388e78e2
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 01/18/2018
 ---
 # <a name="create-applications-with-system-center-configuration-manager"></a>Criar aplicativos com o System Center Configuration Manager
 
@@ -337,7 +338,16 @@ A tabela a seguir apresenta scripts de exemplo do Microsoft VB (Visual Basic) qu
         > [!IMPORTANT]  
         >  Um conflito poderá ocorrer se o **Tempo de execução máximo permitido** for maior do que a janela de manutenção agendada. Se o tempo de execução máximo for definido pelo usuário para um período que exceda o tamanho de qualquer janela de manutenção disponível, esse tipo de implantação não será executado.  
 
-2.  **Tempo estimado para instalação (minutos)** – especifique o tempo estimado para a instalação do tipo de implantação. Isso é exibido aos usuários do Centro de Software.  
+    -   **Tempo estimado para instalação (minutos)** – especifique o tempo estimado para a instalação do tipo de implantação. Isso é exibido aos usuários do Centro de Software.  
+
+    -   **Especificar o comportamento de reinicialização específico** – especifique a ação pós-instalação. As seguintes opções estão disponíveis:  
+
+        -   **Determinar o comportamento com base em códigos de retorno** – lide com reinicializações com base nos códigos configurados na guia Códigos de Retorno.  O Centro de Software exibirá **Pode Exigir uma Reinicialização**.  Se um usuário estiver conectado durante a instalação, ele poderá receber uma solicitação, dependendo da configuração de Experiência do Usuário da implantação.  
+
+        -   **Nenhuma ação específica** – nenhuma reinicialização é necessária após a instalação.  O Centro de Software relatará que nenhuma reinicialização é necessária.  
+        -   **O programa de instalação do software pode forçar uma reinicialização do dispositivo** – o Configuration Manager não controlará nem iniciará uma reinicialização, mas a instalação propriamente dita pode fazer isso sem aviso.  Use essa configuração para impedir que o Configuration Manager relate falha de instalação quando o instalador inicia uma reinicialização.  O Centro de Software exibirá **Pode Exigir uma Reinicialização**.  
+
+        -   **O cliente do Configuration Manager forçará a reinicialização de um dispositivo obrigatório** – i Configuration Manager forçará uma reinicialização do dispositivo após uma instalação bem-sucedida.  O Centro de Software relatará que uma reinicialização é necessária.  Se um usuário estiver conectado durante a instalação, ele poderá receber uma solicitação, dependendo da configuração de Experiência do Usuário da implantação.
 
 ## <a name="specify-requirements-for-the-deployment-type"></a>Especificar os requisitos para o tipo de implantação  
 

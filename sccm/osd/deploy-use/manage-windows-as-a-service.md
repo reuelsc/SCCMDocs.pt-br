@@ -7,19 +7,20 @@ ms.date: 03/26/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
-ms.technology: configmgr-osd
+ms.technology:
+- configmgr-osd
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: da1e687b-28f6-43c4-b14a-ff2b76e60d24
-caps.latest.revision: "26"
+caps.latest.revision: 
 author: mestew
 ms.author: mstewart
 manager: angrobe
-ms.openlocfilehash: 3848d0d6a9f3b5d778879c598bf859fb1e8a7ac7
-ms.sourcegitcommit: 08f9854fb6c6d21e1e923b13e38a64d0bc2bc9a4
+ms.openlocfilehash: a67d75f27cbc2d53cc5d8c418e25232d88b4f067
+ms.sourcegitcommit: db9978135d7a6455d83dbe4a5175af2bdeaeafd8
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 12/12/2017
+ms.lasthandoff: 01/22/2018
 ---
 # <a name="manage-windows-as-a-service-using-system-center-configuration-manager"></a>Gerenciar o Windows como um serviço usando o System Center Configuration Manager
 
@@ -50,7 +51,7 @@ ms.lasthandoff: 12/12/2017
     -   **Compilação do Sistema Operacional**: especifica o build do sistema operacional. Por exemplo, **10.0.10240** (RTM) ou **10.0.10586** (versão 1511)  
 
 -   O ponto de conexão de serviço deve ser instalado e configurado no modo **Online, conexão persistente** para que seja possível ver os dados no painel de serviço do Windows 10. Quando estiver no modo offline, você não verá as atualizações de dados no painel até receber atualizações de serviço do Configuration Manager.   
-     Para obter mais informações, consulte [Sobre o ponto de conexão de serviço](../../core/servers/deploy/configure/about-the-service-connection-point.md).  
+      Para obter mais informações, consulte [Sobre o ponto de conexão de serviço](../../core/servers/deploy/configure/about-the-service-connection-point.md).  
 
 
 -   O Internet Explorer 9 ou posterior deve estar instalado no computador que executa o console do Configuration Manager.  
@@ -280,3 +281,6 @@ Use o procedimento a seguir para modificar as propriedades de um plano de servi�
 
     > [!NOTE]  
     >  Você pode verificar os alertas de atualizações de software recentes no nó **Atualizações de Software** no espaço de trabalho **Biblioteca de Software** .  
+
+**Para obter mais informações:** <br/>
+[Conceitos básicos do Configuration Manager como um serviço e do Windows como um serviço](/sccm/core/understand/configuration-manager-and-windows-as-service.md)

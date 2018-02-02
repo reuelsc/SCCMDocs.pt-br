@@ -15,6 +15,7 @@
 ### [Gerenciar o Branch de Manutenção de Longo Prazo](understand/manage-the-ltsb.md)
 ### [Atualizar o Branch de Manutenção em Longo Prazo para o Branch Atual](understand/convert-to-current-branch.md)
 ##  [Qual branch do Configuration Manager devo usar?](understand/which-branch-should-i-use.md)
+##  [Configuration Manager e Windows como um serviço](understand/configuration-manager-and-windows-as-service.md)
 ##  [Cliente de interoperabilidade estendida](understand/interoperability-client.md)
 ##  [Licenciamento para o System Center Configuration Manager](understand/learn-more-editions.md)
 ##  [Usar serviços de nuvem](understand/use-cloud-services.md)
@@ -106,12 +107,13 @@
 
 <!-- Only show the current plus three, i.e., four total) -->
 ##   [Technical Preview](get-started/technical-preview.md)
+###  [Funcionalidades do 1801](get-started/capabilities-in-technical-preview-1801.md)
 ###  [Recursos do 1712](get-started/capabilities-in-technical-preview-1712.md)
 ###  [Recursos do 1711](get-started/capabilities-in-technical-preview-1711.md)
 ###  [Recursos do 1710](get-started/capabilities-in-technical-preview-1710.md)
-###  [Recursos do 1709](get-started/capabilities-in-technical-preview-1709.md)
 
 <!-- No longer in support
+###  [Capabilities in 1709](get-started/capabilities-in-technical-preview-1709.md)
 ###  [Capabilities in 1708](get-started/capabilities-in-technical-preview-1708.md)
 ###  [Capabilities in 1707](get-started/capabilities-in-technical-preview-1707.md)
 ###  [Capabilities in 1706](get-started/capabilities-in-technical-preview-1706.md)

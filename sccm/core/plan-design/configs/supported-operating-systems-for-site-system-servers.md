@@ -7,19 +7,20 @@ ms.date: 06/27/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
-ms.technology: configmgr-other
+ms.technology:
+- configmgr-other
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 17905b4c-3895-4ad4-a69c-5e0d0fc5a8c3
-caps.latest.revision: "44"
+caps.latest.revision: 
 author: mestew
 ms.author: mstewart
 manager: angrobe
-ms.openlocfilehash: e7606e087e2540b49e8aa23c09d09831651ee48b
-ms.sourcegitcommit: daa080cf220835f157a23e8c8e2bd2781b869bb7
+ms.openlocfilehash: 03618b541f8f00ccab69fa4ebcef81ffc146010c
+ms.sourcegitcommit: 645cd5a324bdd299906efa27eaca5885eafc9e9c
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 12/04/2017
+ms.lasthandoff: 01/16/2018
 ---
 # <a name="supported-operating-systems-for-system-center-configuration-manager-site-system-servers"></a>Sistemas operacionais com suporte para servidores do sistema de sites do System Center Configuration Manager
 
@@ -29,7 +30,7 @@ ms.lasthandoff: 12/04/2017
 Este artigo detalha as versões do Windows você pode usar para hospedar um site ou função de sistema de sites do System Center Configuration Manager.
 
 
-Use as informações neste tópico com as informações nos seguintes artigos:
+Use as informações neste artigo com as informações nos seguintes artigos:
 -   [Hardware recomendado para o Configuration Manager](../../../core/plan-design/configs/recommended-hardware.md)
 -   [Pré-requisitos de site e sistema de sites para o Configuration Manager](../../../core/plan-design/configs/site-and-site-system-prerequisites.md)
 -   [Números de tamanho e escala para o Configuration Manager](../../../core/plan-design/configs/size-and-scale-numbers.md)
@@ -51,7 +52,7 @@ A partir da versão 1606, com o pacote cumulativo de atualizações do hotfix do
 
 -   Ponto de serviços Web do Catálogo de Aplicativos  
 
--   Ponto de sites da Web do catálogo de aplicativos  
+-   Ponto de sites da Web do Catálogo de Aplicativos  
 
 -   Ponto de sincronização do Asset Intelligence  
 
@@ -73,7 +74,7 @@ A partir da versão 1606, com o pacote cumulativo de atualizações do hotfix do
 
 -   Ponto do Reporting Services  
 
--   Ponto de conexão de serviço  
+-   Ponto de Conexão de Serviço  
 
 -   Servidor de banco de dados do site  
 
@@ -98,7 +99,7 @@ A partir da versão 1606, com o pacote cumulativo de atualizações do hotfix do
 
 -   Ponto de serviços Web do Catálogo de Aplicativos  
 
--   Ponto de sites da Web do catálogo de aplicativos  
+-   Ponto de sites da Web do Catálogo de Aplicativos  
 
 -   Ponto de sincronização do Asset Intelligence  
 
@@ -120,7 +121,7 @@ A partir da versão 1606, com o pacote cumulativo de atualizações do hotfix do
 
 -   Ponto do Reporting Services  
 
--   Ponto de conexão de serviço  
+-   Ponto de Conexão de Serviço  
 
 -   Servidor de banco de dados do site  
 
@@ -145,7 +146,7 @@ A partir da versão 1606, com o pacote cumulativo de atualizações do hotfix do
 
 -   Ponto de serviços Web do Catálogo de Aplicativos  
 
--   Ponto de sites da Web do catálogo de aplicativos  
+-   Ponto de sites da Web do Catálogo de Aplicativos  
 
 -   Ponto de sincronização do Asset Intelligence  
 
@@ -167,7 +168,7 @@ A partir da versão 1606, com o pacote cumulativo de atualizações do hotfix do
 
 -   Ponto do Reporting Services  
 
--   Ponto de conexão de serviço  
+-   Ponto de Conexão de Serviço  
 
 -   Servidor de banco de dados do site  
 
@@ -199,7 +200,7 @@ A partir da versão 1606, com o pacote cumulativo de atualizações do hotfix do
 
 -   Ponto de serviços Web do Catálogo de Aplicativos  
 
--   Ponto de sites da Web do catálogo de aplicativos  
+-   Ponto de sites da Web do Catálogo de Aplicativos  
 
 -   Ponto de sincronização do Asset Intelligence  
 
@@ -221,7 +222,7 @@ A partir da versão 1606, com o pacote cumulativo de atualizações do hotfix do
 
 -   Ponto do Reporting Services  
 
--   Ponto de conexão de serviço  
+-   Ponto de Conexão de Serviço  
 
 -   Servidor de banco de dados do site  
 
@@ -271,16 +272,18 @@ Não há suporte para esse sistema operacional para servidores do site ou funç�
 
     -   Os pontos de distribuição dão suporte a várias configurações diferentes que têm diferentes requisitos. Em alguns casos, essas configurações dão suporte à instalação não apenas em servidores, mas em sistemas operacionais cliente. Para obter mais informações sobre as opções disponíveis para pontos de distribuição, consulte [Manage content and content infrastructure for System Center Configuration Manager](../../../core/servers/deploy/configure/manage-content-and-content-infrastructure.md) (Gerenciar o conteúdo e a infraestrutura de conteúdo do System Center Configuration Manager).  
 
-## <a name="windows-8-x86-x64-professional-and-enterprise"></a>Windows 8 (x86, x64): Professional e Enterprise
-**Servidores de sistema de sites:**  
+<!--## Windows 8 (x86, x64): Professional and Enterprise
+**Site system servers:**  
 
--   Ponto de distribuição  
+-   Distribution point  
 
-    -   Não há suporte do PXE para pontos de distribuição neste sistema operacional.  
+    -   Distribution points on this operating system are not supported for PXE.  
 
-    -   Os pontos de distribuição nesta versão de sistema operacional não dão suporte a Multicast.  
+    -   Distribution points on this operating system version do not support Multicast.  
 
-    -   Os pontos de distribuição dão suporte a várias configurações diferentes que têm diferentes requisitos. Em alguns casos, essas configurações dão suporte à instalação não apenas em servidores, mas em sistemas operacionais cliente. Para obter mais informações sobre as opções disponíveis para pontos de distribuição, consulte [Manage content and content infrastructure for System Center Configuration Manager](../../../core/servers/deploy/configure/manage-content-and-content-infrastructure.md) (Gerenciar o conteúdo e a infraestrutura de conteúdo do System Center Configuration Manager).  
+    -   Distribution points support several different configurations that each have different requirements. In some cases, these configurations support installation not only on servers, but on client operating systems. For more information about the options that are available for distribution points, see [Manage content and content infrastructure for System Center Configuration Manager](../../../core/servers/deploy/configure/manage-content-and-content-infrastructure.md).  
+   
+    -  - -removed Jan 12,2018 sms505863-->
 
 ## <a name="windows-7-with-sp1-x86-x64-professional-enterprise-and-ultimate"></a>Windows 7 com SP1 (x86, x64): Professional, Enterprise e Ultimate  
 **Servidores de sistema de sites:**  

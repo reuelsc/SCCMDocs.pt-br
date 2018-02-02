@@ -3,24 +3,25 @@ title: "Variáveis internas de sequência de tarefas"
 titleSuffix: Configuration Manager
 description: "As variáveis internas da sequência de tarefas fornecem informações sobre o ambiente no qual a sequência de tarefas é executada e estão disponíveis durante toda a sequência de tarefas."
 ms.custom: na
-ms.date: 03/26/2017
+ms.date: 01/12/2018
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
-ms.technology: configmgr-osd
+ms.technology:
+- configmgr-osd
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 02bc6bd4-ca53-4e22-8b80-d8ee5fe72567
-caps.latest.revision: "15"
-caps.handback.revision: "0"
+caps.latest.revision: 
+caps.handback.revision: 
 author: aczechowski
 ms.author: aaroncz
 manager: angrobe
-ms.openlocfilehash: e29efd4de847a861afa75a7a10868cad30e4cf97
-ms.sourcegitcommit: 08f9854fb6c6d21e1e923b13e38a64d0bc2bc9a4
+ms.openlocfilehash: 29b2ae2a9a8ee41d11fbf7e032ef8262411f3dd0
+ms.sourcegitcommit: e121d8d3dd82b9f2dde2cb5206cbee602ab8e107
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 12/12/2017
+ms.lasthandoff: 01/17/2018
 ---
 # <a name="task-sequence-built-in-variables-in-system-center-configuration-manager"></a>Variáveis internas de sequência de tarefas no System Center Configuration Manager
 
@@ -81,8 +82,8 @@ ms.lasthandoff: 12/12/2017
 |SMSTSDriverRequestResolveTimeOut|Use essa variável para especificar o número de segundos de espera por uma resolução do nome de HTTP para a solicitação de um catálogo de drivers durante a etapa de sequência de tarefas do Driver de Aplicação Automática. Se a conexão demorar mais do que a configuração de tempo limite, a solicitação será cancelada. Por padrão, o limite é definido como 60 segundos.|
 |SMSTSDriverRequestSendTimeOut|Use essa variável para especificar o número de segundos a ser usado ao enviar a solicitação de um catálogo de drivers durante a etapa de sequência de tarefas do Driver de Aplicação Automática. Se a solicitação demorar mais do que a configuração de tempo limite, a solicitação será cancelada. Por padrão, o limite é definido como 60 segundos.|
 |SMSTSErrorDialogTimeout|Quando ocorre um erro em uma sequência de tarefas, é exibida uma caixa de diálogo que é automaticamente descartada após um número de segundos especificado por essa variável. Por padrão, a caixa de diálogo é automaticamente descartada após **900** segundos (15 minutos).|  
-| TSDisableProgressUI | Use essa variável para ocultar ou exibir o andamento da sequência de tarefas em diferentes seções da sequência de tarefas. | 
-|TSErrorOnWarning|Use essa variável para especificar se o mecanismo de sequência de tarefas considera um aviso detectado como um erro durante a etapa de sequência de tarefas de instalação do aplicativo. A sequência de tarefas define a variável _TSAppInstallStatus de acordo com o **Aviso** quando um ou mais aplicativos, ou uma dependência necessária, não foram instalados pois um requisito não foi atendido. Quando você define a variável TSErrorOnWarning como **True** e a variável _TSAppInstallStatus é definida como Aviso, ele será tratado como um erro. Um valor de **False** é o comportamento padrão.| 
+| TSDisableProgressUI | <!-- 1354291 --> Começando pelo Configuration Manager versão 1706, use essa variável para controlar quando a sequência de tarefas exibe o progresso para usuários finais. Defina essa variável várias vezes em uma sequência de tarefas para ocultar ou exibir o andamento em momentos diferentes. Para ocultar o andamento da sequência de tarefas, defina o valor dessa variável para **True**. Para exibir o andamento da sequência de tarefas, defina o valor dessa variável para **False**. | 
+| TSErrorOnWarning |Use essa variável para especificar se o mecanismo de sequência de tarefas considera um aviso detectado como um erro durante a etapa de sequência de tarefas de instalação do aplicativo. A sequência de tarefas define a variável _TSAppInstallStatus de acordo com o **Aviso** quando um ou mais aplicativos, ou uma dependência necessária, não foram instalados pois um requisito não foi atendido. Quando você define a variável TSErrorOnWarning como **True** e a variável _TSAppInstallStatus é definida como Aviso, ele será tratado como um erro. Um valor de **False** é o comportamento padrão.| 
 |SMSTSLanguageFolder|Use essa variável para alterar o idioma de exibição de uma imagem de inicialização neutra de idioma.|  
 |SMSTSLocalDataDrive|Especifica onde os arquivos temporários são armazenados no computador de destino enquanto a sequência de tarefas está em execução.<br /><br /> Essa variável deve ser definida antes do início da sequência de tarefas, como definindo uma variável de coleta. Depois de iniciada a sequência de tarefas, o Configuration Manager define a variável _SMSTSMDataPath depois que a sequência de tarefas é iniciada.|  
 |SMSTSMP|Use esta variável para especificar a URL ou endereço IP de um ponto de gerenciamento do Configuration Manager.|  

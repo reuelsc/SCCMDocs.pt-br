@@ -3,32 +3,35 @@ title: "Gerenciar o acesso aos serviços do O365 para computadores gerenciados"
 titleSuffix: Configuration Manager
 description: Saiba como configurar o acesso condicional para computadores gerenciados pelo System Center Configuration Manager.
 ms.custom: na
-ms.date: 12/19/2017
+ms.date: 01/10/2018
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
-ms.technology: configmgr-hybrid
+ms.technology:
+- configmgr-hybrid
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 34024741-edfa-4088-8599-d6bafc331e62
-caps.latest.revision: "15"
+caps.latest.revision: 
 author: andredm7
 ms.author: andredm
 manager: angrobe
-ms.openlocfilehash: bf38358d12c2617d924fe59bf7bf7457dfa95143
-ms.sourcegitcommit: 6c2aa79924c0e7fc64ef5e9003498fc00c349db9
+ms.openlocfilehash: e1f50ea65236473f059ded6ef85c37646e929e53
+ms.sourcegitcommit: e121d8d3dd82b9f2dde2cb5206cbee602ab8e107
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 12/21/2017
+ms.lasthandoff: 01/17/2018
 ---
 # <a name="manage-access-to-o365-services-for-pcs-managed-by-system-center-configuration-manager"></a>Gerenciar o acesso aos serviços O365 para PCs gerenciados pelo System Center Configuration Manager.
 
 *Aplica-se a: System Center Configuration Manager (Branch Atual)*
 
-A partir da versão 1602 do Configuration Manager, é possível configurar o acesso condicional para computadores gerenciados pelo System Center Configuration Manager.  
+Este artigo descreve como configurar o acesso condicional para computadores gerenciados pelo Configuration Manager.  
 
-> [!Tip]  
-> Esse recurso foi introduzido pela primeira vez na versão 1602 como um [recurso de pré-lançamento](/sccm/core/servers/manage/pre-release-features). A partir da versão 1702, esse recurso deixou de ser um recurso de pré-lançamento.
+<!--
+ >> [!Tip]  
+> This feature was first introduced in version 1602 as a [pre-release feature](/sccm/core/servers/manage/pre-release-features). Beginning with version 1702, this feature is no longer a pre-release feature.
+-->
 
 Para obter informações sobre como configurar o acesso condicional para dispositivos registrados e gerenciados pelo Microsoft Intune, consulte [Gerenciar o acesso a serviços no System Center Configuration Manager](../../protect/deploy-use/manage-access-to-services.md). Esse artigo também aborda os dispositivos ingressados em domínio e não são avaliados quanto à conformidade.
 
@@ -45,16 +48,16 @@ Para obter informações sobre como configurar o acesso condicional para disposi
 
 ## <a name="supported-windows-servers"></a>Servidores Windows com Suporte
 
--   2008 R2
--   2012
--   2012 R2
--   2016
+-   Windows Server 2008 R2
+-   Windows Server 2012
+-   Windows Server 2012 R2
+-   Windows Server 2016
 
     > [!IMPORTANT]
-    > Para Servidores Windows que possam ter vários usuários conectados ao mesmo tempo, as mesmas políticas de acesso condicional devem ser implantadas para todos os usuários conectados.
+    > Para Servidores Windows que possam ter vários usuários conectados ao mesmo tempo, implante as mesmas políticas de acesso condicional para todos esses usuários.
 
 ## <a name="configure-conditional-access"></a>Configurar o acesso condicional  
- Para configurar o acesso condicional, primeiro é necessário criar uma política de conformidade e configurar a política de acesso condicional. Ao configurar as políticas de acesso condicional para computadores, você pode exigir que os computadores estejam em conformidade com a política de conformidade a fim de acessar os serviços do Exchange Online e SharePoint Online.  
+ Para configurar o acesso condicional, primeiro é necessário criar uma política de conformidade e configurar a política de acesso condicional. Ao configurar as políticas de acesso condicional para computadores, você pode exigir que os computadores estejam em conformidade a fim de acessar os serviços do Exchange Online e SharePoint Online.  
 
 ### <a name="prerequisites"></a>Pré-requisitos  
 
@@ -81,7 +84,7 @@ Para obter informações sobre como configurar o acesso condicional para disposi
 
 -   **Exigir registro no Azure Active Directory:** essa regra verifica se o dispositivo do usuário é está ingressado no local de trabalho no Azure AD; se não, o dispositivo será registrado automaticamente no Azure AD. O registro automático só tem suporte no Windows 8.1. Para PCs com Windows 7, implante um MSI para realizar o registro automático. Para obter mais informações, consulte [Registro de dispositivo automático com o Azure Active Directory](https://docs.microsoft.com/azure/active-directory/device-management-hybrid-azuread-joined-devices-setup)  
 
--   **Todas as atualizações obrigatórias instaladas com uma data limite superior a determinado número de dias:** essa regra verifica se o dispositivo do usuário tem todas as atualizações obrigatórias (especificadas na regra Atualizações automáticas obrigatórias) dentro da data limite e do período de carência especificados por você e instala automaticamente as atualizações obrigatórias pendentes.  
+-   **Todas as atualizações necessárias instaladas com um prazo superior a um determinado número de dias:** especifique o valor para o período de cortesia do prazo de implantação para as atualizações necessárias no dispositivo do usuário. Adicionar esta regra também instala automaticamente quaisquer atualizações necessárias. Especifique as atualizações necessárias na regra **Atualizações automáticas necessárias**.   
 
 -   **Exigir criptografia de unidade de disco BitLocker:** essa regra verifica se a unidade principal (por exemplo, C:\\) no dispositivo é criptografada pelo BitLocker. Se a criptografia Bitlocker não estiver habilitada no dispositivo primário, o acesso a email e aos serviços do SharePoint será bloqueado.  
 
@@ -134,7 +137,7 @@ Para obter informações sobre como configurar o acesso condicional para disposi
 
 5.  Defina o requisito de PC com Windows com a opção**Dispositivos devem ser compatíveis**.  
 
-6.  Em **Grupos de Destino**, clique em **Modificar** para selecionar os grupos de segurança do Azure Active Directory aos quais a política será aplicada.  
+6.  Em **Grupos Direcionados**, clique em **Modificar** para selecionar os grupos de segurança do Azure Active Directory aos quais a política se aplica.  
 
     > [!NOTE]  
     >  O mesmo grupo de usuários de segurança deve ser usado para implantar a política de conformidade e o Grupo de Destino para a política de acesso condicional.  
