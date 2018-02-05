@@ -36,8 +36,10 @@
 ###  [What's new in version 1606](plan-design/changes/whats-new-in-version-1606.md)
 ###  [What's new in version 1602](plan-design/changes/whats-new-in-version-1602.md)
 -->
-###  [Recursos removidos e preteridos](plan-design/changes/removed-and-deprecated-features.md)
-
+###  [Removidos e preteridos](plan-design/changes/deprecated/removed-and-deprecated.md)
+#### [Recursos removidos e preteridos](plan-design/changes/deprecated/removed-and-deprecated-cmfeatures.md)
+#### [Removidos e preteridas para servidores o site](plan-design/changes/deprecated/removed-and-deprecated-server.md)
+#### [Removidos e preteridas para clientes](plan-design/changes/deprecated/removed-and-deprecated-client.md)
 ##   [Configurações com suporte](plan-design/configs/supported-configurations.md)
 ###  [Números de tamanho e escala](plan-design/configs/size-and-scale-numbers.md)
 ###  [Pré-requisitos de sites e do sistema de sites](plan-design/configs/site-and-site-system-prerequisites.md)
