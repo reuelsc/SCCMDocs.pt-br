@@ -17,11 +17,11 @@ caps.handback.revision:
 author: aczechowski
 ms.author: aaroncz
 manager: angrobe
-ms.openlocfilehash: 695d21eb065f4d89143644dad28bfdb711392ab9
-ms.sourcegitcommit: e121d8d3dd82b9f2dde2cb5206cbee602ab8e107
+ms.openlocfilehash: 158817547d40f09fb8bd30ebedd5aea6420a8571
+ms.sourcegitcommit: aee9ac45c15f27d8cf827890edcae94c03f5fd5e
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 01/29/2018
 ---
 # <a name="task-sequence-steps-in-system-center-configuration-manager"></a>Etapas da sequência de tarefas no System Center Configuration Manager
 
@@ -536,7 +536,7 @@ Esta etapa é executada em um sistema operacional padrão ou no Windows PE. No e
 
  -   **Cache do cliente do Configuration Manager**: use esta opção para armazenar o conteúdo no cache do cliente. Isso permite que o cliente atue como uma origem do cache par para outros clientes de cache par. Para mais informações, confira [Prepare Windows PE peer cache to reduce WAN traffic](../get-started/prepare-windows-pe-peer-cache-to-reduce-wan-traffic.md) (Preparar o cache par do Windows PE para reduzir o tráfego da WAN).  
 
- -   **Caminho personalizado**  
+ -    **Caminho personalizado**: com essa opção, o mecanismo de sequência de tarefas primeiro baixa o pacote para o diretório de trabalho da sequência de tarefas e depois o move para o caminho que você especificar. O mecanismo de sequência de tarefas agrega o caminho ao ID do pacote. 
    
 **Salvar caminho como uma variável**  
  Você pode salvar o caminho como uma variável que pode ser usada em outra etapa da sequência de tarefas. O Configuration Manager adiciona um sufixo numérico ao nome da variável. Por exemplo, se você especificar uma variável %*mycontent*% como uma variável personalizada, ela será a raiz do local em que a sequência de tarefas armazenará todo o conteúdo referenciado. Esse conteúdo pode conter vários pacotes. Quando você fizer referência à variável, deverá adicionar um sufixo numérico a ela. Por exemplo, para o primeiro pacote, faça referência a %*mycontent01*%. Quando você fizer referência à variável em etapas subsequentes, tais como **Atualizar Sistema Operacional**, use %*mycontent02*% ou %*mycontent03*%, em que o número corresponde à ordem na qual a etapa **Baixar Conteúdo do Pacote** lista os pacotes.  
