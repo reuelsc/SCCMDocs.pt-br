@@ -7,20 +7,21 @@ ms.date: 2/9/2016
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
-ms.technology: configmgr-other
+ms.technology:
+- configmgr-other
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 72d7b174-f015-498f-a0a7-2161b9929198
-caps.latest.revision: "7"
-caps.handback.revision: "0"
+caps.latest.revision: 
+caps.handback.revision: 
 author: aczechowski
 ms.author: aaroncz
 manager: angrobe
-ms.openlocfilehash: 518be0c1cb4c361d8802ed70779d192725eb8feb
-ms.sourcegitcommit: ca9d15dfb1c9eb47ee27ea9b5b39c9f8cdcc0748
+ms.openlocfilehash: 1b8248cbbade7d46d1a1ad41edd704b5ad8d49aa
+ms.sourcegitcommit: b13da5ad8ffd58e3b89fa6d7170e1dec3ff130a4
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/04/2018
+ms.lasthandoff: 02/01/2018
 ---
 # <a name="accounts-used-in-system-center-configuration-manager"></a>Contas usadas no System Center Configuration Manager
 
@@ -29,7 +30,7 @@ ms.lasthandoff: 01/04/2018
 Use as seguintes informações para identificar os grupos e as contas do Windows usados no System Center Configuration Manager, como são usados e quais são os requisitos.  
 
 ## <a name="windows-groups-that-configuration-manager-creates-and-uses"></a>Grupos do Windows que o Configuration Manager cria e usa  
- O Configuration Manager cria e, em muitos casos, mantém automaticamente os seguintes grupos do Windows.  
+ O Configuration Manager cria automaticamente e, em muitos casos, mantém automaticamente os seguintes grupos do Windows:  
 
 > [!NOTE]  
 >  Quando o Configuration Manager cria um grupo em um computador que é membro do domínio, trata-se de um grupo de segurança local. Quando o computador é um controlador de domínio, trata-se de um grupo de domínio local compartilhado entre todos os controladores de domínio no domínio.  
@@ -72,7 +73,7 @@ A tabela a seguir lista os detalhes adicionais desse grupo:
 |------------|----------------------|  
 |Tipo e local|Esse é um grupo de segurança local criado em cada computador que possui um Provedor de SMS.<br /><br /> Quando um site é desinstalado, esse grupo não é removido automaticamente. Ele deve ser excluído manualmente.|  
 |Associação|O Configuration Manager gerencia automaticamente a associação ao grupo. Por padrão, cada usuário administrativo em uma hierarquia e a conta de computador do servidor do site são membros do grupo Administradores de SMS em cada computador do Provedor de SMS de um site.|  
-|Permissões|Os direitos e as permissões de administradores de SMS são definidos no snap-in do MMC do Controle WMI. Por padrão, o grupo de Administradores de SMS recebe **Enable Account** e **Remote Enable** sobre o namespace Raiz\SMS. Os Usuários Autenticados têm as permissões **Execute Methods**, **Provider Write**e **Enable Account**.<br /><br /> Os usuários administrativos que usarão um console remoto do Configuration Manager também precisam de permissões DCOM para Ativação Remota no computador do servidor do site e no computador do Provedor de SMS. É uma prática recomendada conceder esses direitos a Administradores de SMS para simplificar a administração em vez de conceder esses direitos diretamente a usuários ou grupos. Para obter mais informações, consulte a seção [Configure DCOM permissions for remote Configuration Manager consoles](../../../core/servers/manage/modify-your-infrastructure.md#BKMK_ConfigDCOMforRemoteConsole) no tópico [Modify your System Center Configuration Manager infrastructure](../../../core/servers/manage/modify-your-infrastructure.md) .|  
+|Permissões|Os direitos e as permissões de administradores de SMS são definidos no snap-in do MMC do Controle WMI. Por padrão, o grupo de Administradores de SMS recebe **Enable Account** e **Remote Enable** sobre o namespace Raiz\SMS. Os Usuários Autenticados têm as permissões **Execute Methods**, **Provider Write**e **Enable Account**.<br /><br /> Os usuários administrativos que usarão um console remoto do Configuration Manager também precisam de permissões DCOM para Ativação Remota no computador do servidor do site e no computador do Provedor de SMS. É uma prática recomendada conceder esses direitos a Administradores de SMS para simplificar a administração em vez de conceder esses direitos diretamente a usuários ou grupos. Para obter mais informações, consulte a seção [Configurar permissões DCOM para consoles remotos do Configuration Manager](../../../core/servers/manage/modify-your-infrastructure.md#BKMK_ConfigDCOMforRemoteConsole) no artigo [Modificar sua infraestrutura do System Center Configuration Manager](../../../core/servers/manage/modify-your-infrastructure.md).|  
 
 ### <a name="smssitesystemtositeserverconnectionmpltsitecode"></a>SMS_SiteSystemToSiteServerConnection_MP_&lt;sitecode\>  
  Os pontos de gerenciamento do Configuration Manager que são remotos com relação ao servidor do site usam esse grupo para conexão com o banco de dados do site. Esse grupo fornece a um ponto de gerenciamento acesso a pastas da caixa de entrada no servidor do site e ao banco de dados do site.  
@@ -163,7 +164,7 @@ A tabela a seguir lista os detalhes adicionais desse grupo:
 
  A conta deve ter permissões de **Leitura** e **Gravação** no compartilhamento de rede onde a imagem capturada é armazenada.  
 
- Se a senha da conta for alterada no Windows, você deverá atualizar a sequência das tarefas com a nova senha. O cliente do Configuration Manager receberá a nova senha quando baixar a política do cliente.  
+ Se a senha da conta for alterada no Windows, você deverá atualizar a sequência das tarefas com a nova senha. O cliente do Configuration Manager recebe a nova senha quando baixa a política do cliente.  
 
  Se você usar essa conta, poderá criar uma conta de usuário de domínio com permissões mínimas para acessar os recursos de rede necessários e usá-los em todas as contas de sequência de tarefas.  
 
@@ -245,6 +246,8 @@ A tabela a seguir lista os detalhes adicionais desse grupo:
 
 ### <a name="reporting-services-point-account"></a>Conta do ponto do Reporting Services  
  O SQL Server Reporting Services usa a **Conta do Ponto do Reporting Services** para recuperar os dados para relatórios do Configuration Manager do banco de dados do site. A conta e senha de usuário do Windows especificadas serão criptografadas e armazenadas no banco de dados do SQL Server Reporting Services.  
+>[!NOTE]
+>A conta que você especifica deve ter permissões de Logon Local no computador que hospeda o banco de dados do Reporting Services.
 
 ### <a name="remote-tools-permitted-viewer-accounts"></a>Contas do visualizador permitidas em ferramentas remotas  
  As contas que você especificar como **Visualizadores permitidos** para controle remoto representam uma lista de usuários que podem usar a funcionalidade de ferramentas remotas em clientes.  
@@ -255,7 +258,7 @@ A tabela a seguir lista os detalhes adicionais desse grupo:
  Essa conta requer permissões administrativas locais nos sistemas dos sites que forem instalados e configurados por administradores. Além disso, essa conta precisa ter **Acesso a este computador pela rede** na política de segurança nos sistemas dos sites que forem instalados e configurados por administradores.  
 
 > [!TIP]  
->  Se você tiver muitos controladores de domínio e estas contas forem usadas em vários domínios, verifique se as contas foram replicadas antes de configurar o sistema do site.  
+>  Se você tiver muitos controladores de domínio e estas contas forem usadas em vários domínios, verifique se as contas foram replicadas antes de configurar o sistema de sites.  
 >   
 >  Quando você especifica uma conta local em cada sistema de site a ser gerenciado, esta configuração é mais segura do que se usar contas de domínio, porque ela limita os danos de invasores podem fazer se a conta for comprometida. No entanto, as contas de domínio são mais fáceis de gerenciar. Considere as compensações entre segurança e administração eficaz.  
 
@@ -306,7 +309,7 @@ Essa conta deve ser de um administrador local no computador onde o WSUS está in
 ### <a name="task-sequence-editor-domain-joining-account"></a>Conta de junção de domínio de editor de sequência de tarefas  
  A **Conta de Junção de Domínio de Editor de Sequência de Tarefas** é usada em uma sequência de tarefas para ingressar um novo computador de imagem em um domínio. Essa conta é necessária se você adicionar a etapa **Ingressar no Domínio ou Grupo de Trabalho** a uma sequência de tarefas e selecionar **Ingressar em um domínio**. Essa conta também pode ser configurada se você adicionar a etapa **Aplicar Configurações de Rede** a uma sequência de tarefas, mas isso não é necessário.  
 
- Essa conta requer o direito de **Ingresso no domínio** no domínio em que o computador será ingressado.  
+ Essa conta requer o direito de **Ingresso no Domínio** no domínio em que o computador está ingressando.  
 
 > [!TIP]  
 >  Se você precisar dessa conta para suas sequências de tarefas, poderá criar uma conta de usuário de domínio com permissões mínimas para acessar os recursos de rede necessários e usá-los em todas as contas da sequência de tarefas.  
@@ -339,8 +342,8 @@ Essa conta deve ser de um administrador local no computador onde o WSUS está in
 >   
 >  Nunca faça da conta um administrador de domínio.  
 >   
->  Nunca configure perfis móveis para esta conta. Quando a sequência de tarefas for executada, ela baixará o perfil móvel da conta. Isso deixará o perfil vulnerável a acesso no computador local.  
+>  Nunca configure perfis móveis para esta conta. Quando a sequência de tarefas é executada, ela baixa o perfil móvel da conta. Isso deixa o perfil vulnerável ao acesso no computador local.  
 >   
 >  Limite o escopo da conta. Por exemplo, crie Contas Executar como Sequência de Tarefas diferente para cada sequência de tarefas; desse modo, se uma conta for comprometida, somente os computadores cliente aos quais a conta tem acesso ficarão comprometidos.  
 >   
->  Se a linha de comando exigir acesso administrativo no computador, considere a criação de uma conta de administrador local exclusivamente para a Conta Executar como Sequência de Tarefas em todos os computadores que executarão a sequência de tarefas. Exclua a conta assim que ela não for mais necessária.  
+>  Se a linha de comando exige acesso administrativo no computador, considere a criação de uma conta do administrador local exclusivamente para a conta Executar como de Sequência de Tarefas em todos os computadores que executam a sequência de tarefas. Exclua a conta assim que ela não for mais necessária.  
