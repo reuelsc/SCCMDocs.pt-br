@@ -17,11 +17,11 @@ caps.handback.revision:
 author: aczechowski
 ms.author: aaroncz
 manager: angrobe
-ms.openlocfilehash: 158817547d40f09fb8bd30ebedd5aea6420a8571
-ms.sourcegitcommit: aee9ac45c15f27d8cf827890edcae94c03f5fd5e
+ms.openlocfilehash: 5320d7747f7e2c6164da8c1801e631b749935d6d
+ms.sourcegitcommit: b13da5ad8ffd58e3b89fa6d7170e1dec3ff130a4
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/29/2018
+ms.lasthandoff: 02/01/2018
 ---
 # <a name="task-sequence-steps-in-system-center-configuration-manager"></a>Etapas da sequência de tarefas no System Center Configuration Manager
 
@@ -1313,7 +1313,7 @@ No editor de sequência de tarefas, clique em **Adicionar**, selecione **Imagens
  Clique em **Procurar** e selecione o pacote de instalação de cliente do Configuration Manager a ser usado com essa etapa.  
 
  **Usar pacote de cliente de pré-produção quando disponível**  
- Se houver um pacote de cliente de pré-produção disponível, a sequência de tarefas usará esse pacote em vez do pacote do cliente de produção. O cliente de pré-produção é uma versão mais recente para testes no ambiente de produção. Clique em **Procurar** e selecione o pacote de instalação de cliente de pré-produção a ser usado com essa etapa.  
+ Se houver um pacote de cliente de pré-produção disponível e o computador fizer parte de uma coleção piloto, a sequência de tarefas usará esse pacote em vez do pacote do cliente de produção. O cliente de pré-produção é uma versão mais recente para testes no ambiente de produção. Clique em **Procurar** e selecione o pacote de instalação de cliente de pré-produção a ser usado com essa etapa.  
 
  **Propriedades de Instalação**  
  Atribuição de site e a configuração padrão são automaticamente especificadas pela ação de sequência de tarefas. Você pode usar esse campo para especificar as propriedades adicionais de instalação a serem usada ao instalar o cliente. Para inserir várias propriedades de instalação, separe-as com um espaço.  
