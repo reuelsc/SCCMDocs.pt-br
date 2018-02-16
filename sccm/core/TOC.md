@@ -1,4 +1,4 @@
-#   Entender e explorar
+#   Compreensão e exploração
 ##  [Introdução ao Configuration Manager](understand/introduction.md)
 ### [Encontrar ajuda para o Configuration Manager](understand/find-help.md)
 ### [Recursos de acessibilidade](understand/accessibility-features.md)
@@ -109,35 +109,16 @@
 
 <!-- Only show the current plus three, i.e., four total) -->
 ##   [Technical Preview](get-started/technical-preview.md)
+###  [Funcionalidades do 1802](get-started/capabilities-in-technical-preview-1802.md)
 ###  [Funcionalidades do 1801](get-started/capabilities-in-technical-preview-1801.md)
 ###  [Recursos do 1712](get-started/capabilities-in-technical-preview-1712.md)
 ###  [Recursos do 1711](get-started/capabilities-in-technical-preview-1711.md)
-###  [Recursos do 1710](get-started/capabilities-in-technical-preview-1710.md)
 
 <!-- No longer in support
+###  [Capabilities in 1710](get-started/capabilities-in-technical-preview-1710.md)
 ###  [Capabilities in 1709](get-started/capabilities-in-technical-preview-1709.md)
 ###  [Capabilities in 1708](get-started/capabilities-in-technical-preview-1708.md)
 ###  [Capabilities in 1707](get-started/capabilities-in-technical-preview-1707.md)
-###  [Capabilities in 1706](get-started/capabilities-in-technical-preview-1706.md)
-###  [Capabilities in 1705](get-started/capabilities-in-technical-preview-1705.md)
-###  [Capabilities in 1704](get-started/capabilities-in-technical-preview-1704.md)
-###  [Capabilities in 1703](get-started/capabilities-in-technical-preview-1703.md)
-###  [Capabilities in 1702](get-started/capabilities-in-technical-preview-1702.md)
-###  [Capabilities in 1701](get-started/capabilities-in-technical-preview-1701.md)
-###  [Capabilities in 1612](get-started/capabilities-in-technical-preview-1612.md)
-###  [Capabilities in 1611](get-started/capabilities-in-technical-preview-1611.md)
-###  [Capabilities in 1610](get-started/capabilities-in-technical-preview-1610.md)
-###  [Capabilities in 1609](get-started/capabilities-in-technical-preview-1609.md)
-###  [Capabilities in 1608](get-started/capabilities-in-technical-preview-1608.md)
-###  [Capabilities in 1607](get-started/capabilities-in-technical-preview-1607.md)
-###  [Capabilities in 1606](get-started/capabilities-in-technical-preview-1606.md)
-###  [Capabilities in 1605](get-started/capabilities-in-technical-preview-1605.md)
-###  [Capabilities in 1604](get-started/capabilities-in-technical-preview-1604.md)
-###  [Capabilities in 1603](get-started/capabilities-in-technical-preview-1603.md)
-###  [Capabilities in 1602](get-started/capabilities-in-technical-preview-1602.md)
-###  [Capabilities in 1601](get-started/capabilities-in-technical-preview-1601.md)
-###  [Capabilities in 1512](get-started/capabilities-in-technical-preview-1512.md)
-###  [Capabilities in 1511](get-started/capabilities-in-technical-preview-1511.md)
 -->
 
 ##   [Migrar dados entre hierarquias](migration/migrate-data-between-hierarchies.md)
@@ -358,6 +339,8 @@
 ###  [Exemplos de transições de estado de validação do Asset Intelligence](clients/manage/asset-intelligence/example-validation-state-transitions-for-asset-intelligence.md)
 ###  [Exemplo de arquivo de importação de licença geral do Asset Intelligence](clients/manage/asset-intelligence/example-asset-intelligence-general-license-import.md)
 
+### [Usar o painel Ciclo de Vida do Produto](clients/manage/asset-intelligence/product-lifecycle-dashboard.md)
+
 ##   Controle remoto
 ###  [Introdução ao controle remoto](clients/manage/remote-control/introduction-to-remote-control.md)
 ### [Pré-requisitos para o controle remoto](clients/manage/remote-control/prerequisites-for-remote-control.md)
@@ -366,7 +349,7 @@
 ### [Como auditar o uso do controle remoto](clients/manage/remote-control/audit-remote-control-usage.md)
 ###  [Segurança e privacidade do controle remoto](clients/manage/remote-control/security-and-privacy-for-remote-control.md)
 
-##   Gerenciamento de Energia
+##   Gerenciamento de energia
 ###  [Introdução ao gerenciamento de energia](clients/manage/power/introduction-to-power-management.md)
 ### [Pré-requisitos para o gerenciamento de energia](clients/manage/power/prerequisites-for-power-management.md)
 ### [Práticas recomendadas para o gerenciamento de energia](clients/manage/power/best-practices-for-power-management.md)

@@ -10,14 +10,17 @@ ms.prod: configuration-manager
 ms.service: 
 ms.technology: 
 ms.assetid: 101de2ba-9b4d-4890-b087-5d518a4aa624
-ms.openlocfilehash: d605dd4770be6878b08f4ac61da6ab27e3b6d61f
-ms.sourcegitcommit: ac9268e31440ffe91b133c2ba8405d885248d404
+ms.openlocfilehash: 902787f173c714fd2a73cc657aad758bd79ce3c8
+ms.sourcegitcommit: 389c4e5b4e9953b74c13b1689195f99c526fa737
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/08/2018
+ms.lasthandoff: 02/09/2018
 ---
 # <a name="prepare-windows-10-devices-for-co-management"></a>Preparar dispositivos Windows 10 para o cogerenciamento
 Você pode habilitar o cogerenciamento em dispositivos Windows 10 que foram ingressados no AD e no Azure AD e registrados no Intune e em um cliente no Configuration Manager. Para novos dispositivos Windows 10 e dispositivos que já estão registrados no Intune, instale o cliente do Configuration Manager antes que eles possam ser cogerenciados. Para dispositivos Windows 10 que já são clientes do Configuration Manager, você pode registrar os dispositivos no Intune e habilitar o cogerenciamento no console do Configuration Manager.
+
+> [!IMPORTANT]
+> Dispositivos móveis Windows 10 não são compatíveis com o cogerenciamento.
 
 ## <a name="command-line-to-install-configuration-manager-client"></a>Linha de comando para instalar o cliente do Configuration Manager
 Você deve criar um aplicativo no Intune para dispositivos Windows 10 que ainda não são clientes do Configuration Manager. Ao criar o aplicativo nas próximas seções, use a seguinte linha de comando:

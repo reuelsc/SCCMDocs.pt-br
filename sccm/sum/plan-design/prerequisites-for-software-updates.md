@@ -3,26 +3,27 @@ title: "Pré-requisitos para atualizações de software"
 titleSuffix: Configuration Manager
 description: "Saiba mais sobre os pré-requisitos para atualizações de software no System Center Configuration Manager."
 keywords: 
-author: dougeby
-ms.author: dougeby
-manager: angrobe
-ms.date: 10/06/2016
+author: mestew
+ms.author: mstewart
+manager: dougeby
+ms.date: 02/02/2018
 ms.topic: article
 ms.prod: configuration-manager
 ms.service: 
-ms.technology: configmgr-sum
+ms.technology:
+- configmgr-sum
 ms.assetid: fdf05118-162a-411e-b72e-386b9dc9a5e1
-ms.openlocfilehash: 905ecc023dd181a8d4801860898b05aff5e4e07f
-ms.sourcegitcommit: 986fc2d54f7c5fa965fd4df42f4db4ecce6b79cb
+ms.openlocfilehash: 1907ff5bf6b1146b967e64bd381915ac863b3e55
+ms.sourcegitcommit: 389c4e5b4e9953b74c13b1689195f99c526fa737
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/17/2017
+ms.lasthandoff: 02/09/2018
 ---
 # <a name="prerequisites-for-software-updates-in-system-center-configuration-manager"></a>Pré-requisitos para atualizações de software no System Center Configuration Manager
 
 *Aplica-se a: System Center Configuration Manager (Branch Atual)*
 
-Este tópico lista os pré-requisitos para atualizações de software no System Center Configuration Manager. Para cada um deles, as dependências externas e internas são listadas em tabelas separadas.  
+Este artigo lista os pré-requisitos para atualizações de software no System Center Configuration Manager. Para cada um deles, as dependências externas e internas são listadas em tabelas separadas.  
 
 ## <a name="software-update-dependencies-external-to-configuration-manager"></a>Dependências de atualizações de software externas ao Configuration Manager  
  As seções a seguir listam as dependências externas para atualizações de software.  
@@ -31,10 +32,10 @@ Este tópico lista os pré-requisitos para atualizações de software no System 
  O IIS (Serviços de Informações da Internet) deve estar nos servidores de sistema de sites para executar o ponto de atualização de software, o ponto de gerenciamento e o ponto de distribuição. Para mais informações, consulte [Pré-requisitos para funções de sistema de sites](../../core/plan-design/configs/site-and-site-system-prerequisites.md).  
 
 ### <a name="windows-server-update-services-wsus"></a>Windows Server Update Services (WSUS)  
- O WSUS é necessário para sincronização de atualizações de software e para o exame de avaliação de conformidade de atualizações de software nos clientes. O servidor WSUS deve ser instalado antes de se criar a função de sistema de site do ponto de atualização de software. Há suporte para as seguintes versões do WSUS em um ponto de atualização de software:  
+ O WSUS é necessário para sincronização de atualizações de software e para o exame de aplicabilidade de atualizações de software nos clientes. O servidor WSUS precisa ser instalado antes de se criar a função do ponto de atualização de software. Há suporte para as seguintes versões do WSUS em um ponto de atualização de software:  
 
--   WSUS 4 (função no Windows Server 2012 e Windows Server 2012 R2)  
-
+-   WSUS 10.0 (função no Windows Server 2016)
+-   WSUS 6.2 e 6.3 (função no Windows Server 2012 e Windows Server 2012 R2)  
 -   WSUS 3.2 (função no Windows Server 2008 R2)  
 
  Quando você possui diversos pontos de atualização de software em um site, verifique se todos estão executando a mesma versão do WSUS.  
@@ -54,7 +55,7 @@ Este tópico lista os pré-requisitos para atualizações de software no System 
 >  Não use o Console de Administração do WSUS para definir as configurações do WSUS. O Configuration Manager se conecta ao WSUS que é executado no ponto de atualização de software e define as configurações apropriadas.  
 
 ### <a name="windows-update-agent-wua"></a>Windows Update Agent (WUA)  
- O cliente WUA é necessário para habilitar a conexão de clientes ao servidor WSUS e recuperar a lista de atualizações de software que deve ser verificada quanto à conformidade.  
+ O cliente WUA é necessário nos clientes para se conectar ao servidor do WSUS. O WUA recupera a lista de atualizações de software que devem ser verificados quanto à conformidade.  
 
  Quando você instala o Configuration Manager, a última versão do WUA é baixada. Depois, quando o cliente do Configuration Manager é instalado, o WUA é atualizado, se necessário. No entanto, se a instalação falhar, você deverá usar um método diferente para atualizar o WUA.  
 
@@ -77,13 +78,13 @@ Este tópico lista os pré-requisitos para atualizações de software no System 
 
 -   [Configurações do cliente para atualizações de software](../get-started/manage-settings-for-software-updates.md#BKMK_ClientSettings).   
 
--   Tópico [Configurações do cliente para atualizações de software](../../core/clients/deploy/about-client-settings.md#software-updates).  
+-   Artigo [Configurações do cliente para atualizações de software](../../core/clients/deploy/about-client-settings.md#software-updates).  
 
 ### <a name="reporting-services-point"></a>Ponto do Reporting Services  
- A função do sistema de site do ponto do Reporting Services pode exibir relatórios de atualizações de software. Essa função é opcional, mas recomendada. Para obter mais informações sobre como criar um ponto do Reporting Services, consulte [Configurando relatórios](../../core/servers/manage/configuring-reporting.md).  
+ A função do sistema de site do ponto do Reporting Services pode exibir relatórios de atualizações de software. Essa função é opcional, mas recomendada. Para obter mais informações sobre como criar um ponto do Reporting Services, consulte [Configurando relatórios.  
 
 ##  <a name="BKMK_RecoverUpgrades"></a> Recuperar-se da sincronização da categoria Atualizações antes de instalar o KB 3095113  
- Você deve instalar o [hotfix 3095113](https://support.microsoft.com/kb/3095113) para o WSUS nos pontos de atualização de software e servidores do site antes de sincronizar a classificação **Atualizações** . Se o hotfix não estiver instalado quando a classificação **Atualizações** for habilitada, o WSUS verá a atualização de recurso do build 1511 do Windows 10 mesmo que não possa baixar e implantar corretamente os pacotes associados. Se você sincronizar todas as atualizações sem primeiro ter instalado o [hotfix 3095113](https://support.microsoft.com/kb/3095113), o SUSDB (banco de dados do WSUS) será populado com dados inúteis que deverão ser apagados para que as atualizações possam ser implantadas corretamente.  Use o procedimento a seguir para se recuperar desse problema.  
+ Você deve instalar o [hotfix 3095113](https://support.microsoft.com/kb/3095113) para o WSUS nos pontos de atualização de software e servidores do site antes de sincronizar a classificação **Atualizações** . Se o hotfix não estiver instalado quando a classificação **Atualizações** for habilitada, o WSUS verá o upgrade de recurso do Windows 10 build 1511 mesmo se não puder baixar e implantar corretamente os pacotes associados. Se você sincronizar os upgrades antes de instalar o [hotfix 3095113](https://support.microsoft.com/kb/3095113), o SUSDB (banco de dados do WSUS) será populado por dados inúteis. Esses dados precisam ser apagados para que os upgrades possam ser implantados corretamente. Use o procedimento abaixo para se recuperar deste problema.  
 
 #### <a name="to-recover-from-synchronizing-the-upgrades-classification-before-you-install-kb-3095113"></a>Para se recuperar da sincronização da classificação Atualizações antes de instalar o KB 3095113  
 
@@ -102,11 +103,11 @@ Este tópico lista os pré-requisitos para atualizações de software no System 
 
      Para excluir em massa atualizações de software com a classificação Atualizações, modifique o script do PowerShell para ler vários GUIDs de um arquivo txt.  
 
-2.  Desmarque a classificação **Atualizações** nas propriedades do componente do Ponto de Atualização de Software (para obter os detalhes, consulte [Configurar classificações e produtos](../get-started/configure-classifications-and-products.md)) e inicie a sincronização de atualizações de software (para obter detalhes, consulte [Sincronizar atualizações de software](../get-started/synchronize-software-updates.md).  
+2.  Desmarque a classificação **Atualizações** nas propriedades do componente do Ponto de Atualização de Software (para obter os detalhes, consulte [Configurar classificações e produtos](../get-started/configure-classifications-and-products.md)) e inicie a sincronização de atualizações de software (para obter detalhes, consulte [Sincronizar atualizações de software](../get-started/synchronize-software-updates.md)).  
 
 3.  Instale o [hotfix 3095113](https://support.microsoft.com/kb/3095113) para o WSUS nos pontos de atualização de software e servidores do site.  
 
-4.  Marque a classificação **Atualizações** nas propriedades do componente do Ponto de Atualização de Software (para obter os detalhes, consulte [Configurar classificações e produtos](../get-started/configure-classifications-and-products.md)) e inicie a sincronização de atualizações de software (para obter detalhes, consulte [Sincronizar atualizações de software](../get-started/synchronize-software-updates.md).  
+4.  Marque a classificação **Atualizações** nas propriedades do componente do Ponto de Atualização de Software (para obter os detalhes, consulte [Configurar classificações e produtos](../get-started/configure-classifications-and-products.md)) e inicie a sincronização de atualizações de software (para obter detalhes, consulte [Sincronizar atualizações de software](../get-started/synchronize-software-updates.md)).  
 
 ## <a name="next-steps"></a>Próximas etapas
 [Preparar-se para o gerenciamento de atualização de software](../get-started/prepare-for-software-updates-management.md)
