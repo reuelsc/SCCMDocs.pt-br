@@ -7,20 +7,21 @@ ms.date: 8/24/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
-ms.technology: configmgr-other
+ms.technology:
+- configmgr-other
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 0cf4bacb-6b6d-4d4f-8640-b13fe15873de
-caps.latest.revision: "8"
-caps.handback.revision: "0"
+caps.latest.revision: 
+caps.handback.revision: 
 author: mestew
 ms.author: mstewart
 manager: angrobe
-ms.openlocfilehash: 0cc1915a73ed55403eca27021b77aab1fd1ddb03
-ms.sourcegitcommit: daa080cf220835f157a23e8c8e2bd2781b869bb7
+ms.openlocfilehash: 91e86bd578403d17ec7e4cc9dc6284c51a57053e
+ms.sourcegitcommit: 37e990d191028160486dbca286d2ea945bd5c8c3
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 12/04/2017
+ms.lasthandoff: 02/15/2018
 ---
 # <a name="support-for-windows-features-and-networks-in-system-center-configuration-manager"></a>Suporte para recursos do Windows e redes no System Center Configuration Manager
 
@@ -66,6 +67,7 @@ Esses clientes também armazenam o conteúdo em cache. Dessa maneira, os cliente
 |Windows Server 2008 R2|Com suporte por padrão|  
 |Windows Server 2012|Com suporte por padrão|  
 |Windows Server 2012 R2|Com suporte por padrão|  
+|Windows Server 2016|Com suporte por padrão|  
 
  Para obter mais informações sobre o BranchCache, veja [BranchCache para Windows](http://go.microsoft.com/fwlink/p/?LinkId=177945) na documentação do Windows Server.  
 
