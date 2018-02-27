@@ -3,30 +3,31 @@ title: Atualizar infraestrutura local
 titleSuffix: Configuration Manager
 description: Saiba como atualizar a infraestrutura, como o SQL Server e o sistema operacional do site dos sistemas de sites.
 ms.custom: na
-ms.date: 06/05/2017
+ms.date: 02/15/2018
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
-ms.technology: configmgr-other
+ms.technology:
+- configmgr-other
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 8ca970dd-e71c-404f-9435-d36e773a0db2
-caps.latest.revision: "7"
-caps.handback.revision: "0"
+caps.latest.revision: 
+caps.handback.revision: 
 author: mestew
 ms.author: mstewart
 manager: angrobe
-ms.openlocfilehash: 3296fe01ebe7d3343a174ffd18483156683b69f7
-ms.sourcegitcommit: daa080cf220835f157a23e8c8e2bd2781b869bb7
+ms.openlocfilehash: 8e17ffad2b972119c92e449bef8f086b950b106c
+ms.sourcegitcommit: fbd4a9d2fa8ed4ddd3a0fecc4a2ec4fc0ccc3d0c
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 12/04/2017
+ms.lasthandoff: 02/19/2018
 ---
 # <a name="upgrade-on-premises-infrastructure-that-supports-system-center-configuration-manager"></a>Atualizar infraestrutura local que dá suporte ao System Center Configuration Manager
 
 *Aplica-se a: System Center Configuration Manager (Branch Atual)*
 
-Use as informações descritas neste tópico para ajudá-lo a atualizar a infraestrutura de servidor que executa o System Center Configuration Manager.  
+Use as informações descritas neste artigo para ajudá-lo a fazer upgrade da infraestrutura de servidor que executa o System Center Configuration Manager.  
 
  - Se desejar atualizar de uma versão anterior do Configuration Manager para o System Center Configuration Manager, consulte [Atualização para o System Center Configuration Manager](/sccm/core/servers/deploy/install/upgrade-to-configuration-manager).
 
@@ -43,9 +44,7 @@ Use as informações descritas neste tópico para ajudá-lo a atualizar a infrae
     - Quando você usa o Configuration Manager versão 1602 ou posterior, também há suporte para atualizar o Windows Server 2008 R2 para o Windows Server 2012 R2 ([Ver detalhes adicionais](#bkmk_from2008r2)).
 
     > [!WARNING]  
-    >  Antes de atualizar para o Windows Server 2012 R2, *você deve desinstalar o WSUS 3.2* do servidor.  
-    >   
-    >  Para obter informações sobre esta etapa crítica, confira a seção "Funcionalidade nova e alterada" em ["Visão geral do Windows Server Update Services"](https://technet.microsoft.com/library/hh852345.aspx) na documentação do Windows Server.  
+    >  Antes de fazer upgrade para um sistema operacional diferente, *você deve desinstalar o WSUS* do servidor. Você pode manter o SUSDB e reconectá-lo uma vez que o WSUS for reinstalado. Para obter informações sobre esta etapa crítica, confira a seção "Funcionalidade nova e alterada" em ["Visão geral do Windows Server Update Services"](https://technet.microsoft.com/library/hh852345.aspx) na documentação do Windows Server.  
 
 Para atualizar um servidor, use os procedimentos de atualização fornecidos pelo sistema operacional para o qual você está atualizando.  Veja o seguinte:
   -  [Opções de atualização para o Windows Server 2012 R2](https://technet.microsoft.com/library/dn303416.aspx) na documentação do Windows Server.  
@@ -57,6 +56,7 @@ Quando você atualiza o Windows Server 2012 ou Windows Server 2012 R2 para Windo
 
 **Antes da atualização:**  
 -   Remova o cliente do SCEP (System Center Endpoint Protection). O Windows Server 2016 tem o Windows Defender interno, que substitui o cliente do SCEP. A presença do cliente do SCEP pode impedir uma atualização para o Windows Server 2016.
+-   Remova a função WSUS do servidor se estiver instalada. Você pode manter o SUSDB e reconectá-lo uma vez que o WSUS for reinstalado.
 
 **Após a atualização:**
 -   Certifique-se de que o Windows Defender esteja habilitado, configurado para o início automático e em execução.
@@ -93,7 +93,7 @@ Após atualizar o servidor do site ou um servidor que hospeda uma instância de 
 ### <a name="bkmk_2012r2"></a> Windows Server 2012 para Windows Server 2012 R2
 
 **Antes da atualização:**
--  Diferente dos outros cenários com suporte, este cenário não requer considerações adicionais antes da atualização.
+-   Remova a função WSUS do servidor se estiver instalada. Você pode manter o SUSDB e reconectá-lo uma vez que o WSUS for reinstalado.
 
 **Após a atualização:**
   - Certifique-se de que o Serviço de Implantação do Windows esteja iniciado e em execução para as seguintes funções de sistema de site (o serviço é interrompido durante a atualização):

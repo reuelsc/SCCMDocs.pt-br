@@ -3,24 +3,25 @@ title: "Arquivos de log para solução de problemas"
 titleSuffix: Configuration Manager
 description: Use os arquivos de log para solucionar problemas em uma hierarquia do System Center Configuration Manager.
 ms.custom: na
-ms.date: 7/03/2017
+ms.date: 02/14/2018
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
-ms.technology: configmgr-other
+ms.technology:
+- configmgr-other
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: c1ff371e-b0ad-4048-aeda-02a9ff08889e
-caps.latest.revision: "9"
-caps.handback.revision: "0"
+caps.latest.revision: 
+caps.handback.revision: 
 author: aczechowski
 ms.author: aaroncz
-manager: angrobe
-ms.openlocfilehash: c310e23b543e8767a393ca5bf87a224a9269e359
-ms.sourcegitcommit: ca9d15dfb1c9eb47ee27ea9b5b39c9f8cdcc0748
+manager: dougeby
+ms.openlocfilehash: b0f15b0c7cf983234f41e3f202be7d46ce4954e2
+ms.sourcegitcommit: fbd4a9d2fa8ed4ddd3a0fecc4a2ec4fc0ccc3d0c
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/04/2018
+ms.lasthandoff: 02/19/2018
 ---
 # <a name="log-files-in-system-center-configuration-manager"></a>Arquivos de log no System Center Configuration Manager
 
@@ -50,7 +51,9 @@ No System Center Configuration Manager, os componentes do cliente e do servidor 
 
     -   [Logs do servidor do site e do servidor do sistema de sites](#BKMK_SiteSiteServerLog)  
 
-    -   [Arquivos de log de instalação do servidor do site](#BKMK_SiteInstallLog)  
+    -   [Arquivos de log de instalação do servidor do site](#BKMK_SiteInstallLog) 
+
+    -   [Arquivos de log do ponto de serviço do Data Warehouse](#BKMK_DataWarehouse)
 
     -   [Arquivos de log do ponto de status de fallback](#BKMK_FSPLog)  
 
@@ -73,6 +76,8 @@ No System Center Configuration Manager, os componentes do cliente e do servidor 
     -   [Gateway de gerenciamento de nuvem](#cloud-management-gateway)
 
     -   [Configurações de conformidade e acesso a recursos da empresa](#BKMK_CompSettingsLog)  
+
+    -   [Acesso condicional](#BKMK_CA)
 
     -   [Console do Configuration Manager](#BKMK_ConsoleLog)  
 
@@ -115,14 +120,14 @@ No System Center Configuration Manager, os componentes do cliente e do servidor 
     -   [Servidor do WSUS](#BKMK_WSUSLog)  
 
 ##  <a name="BKMK_AboutLogs"></a> Sobre arquivos de log do Configuration Manager  
- A maioria dos processos do Configuration Manager grava informações operacionais em um arquivo de log dedicado ao processo em questão. Estes arquivos de log são identificados pelas extensões de arquivo **.log** ou **.lo_**. O Configuration Manager grava no arquivo .log até que o log atinja seu tamanho máximo. Quando o log está cheio, o arquivo .log é copiado em um arquivo com o mesmo nome mas com extensão .lo_ e o processo ou componente continua a gravar no arquivo .log. Quando o arquivo .log atinge novamente seu tamanho máximo, o arquivo .lo_ é substituído e o processo se repete. Alguns componentes criam um histórico de arquivos de log acrescentando uma data ou o carimbo de data/hora ao nome do arquivo de log e ao manter a extensão .log. Uma exceção ao tamanho máximo e uso do arquivo .lo_ é o cliente para Linux e UNIX. Para obter informações sobre como o cliente do Linux e UNIX usa arquivos de log, consulte [Gerenciar arquivos de log do cliente para Linux e UNIX](#BKMK_ManageLinuxLogs) neste tópico.  
+ A maioria dos processos do Configuration Manager grava informações operacionais em um arquivo de log dedicado ao processo em questão. Estes arquivos de log são identificados pelas extensões de arquivo **.log** ou **.lo_**. O Configuration Manager grava no arquivo .log até que o log atinja seu tamanho máximo. Quando o log está cheio, o arquivo .log é copiado em um arquivo com o mesmo nome mas com extensão .lo_ e o processo ou componente continua a gravar no arquivo .log. Quando o arquivo .log atinge novamente seu tamanho máximo, o arquivo .lo_ é substituído e o processo se repete. Alguns componentes criam um histórico de arquivos de log acrescentando uma data ou o carimbo de data/hora ao nome do arquivo de log e ao manter a extensão .log. Uma exceção ao tamanho máximo e uso do arquivo .lo_ é o cliente para Linux e UNIX. Para saber mais sobre como o cliente do Linux e UNIX usa arquivos de log, consulte [Gerenciar arquivos de log do cliente para Linux e UNIX](#BKMK_ManageLinuxLogs) neste artigo.  
 
  Para exibir os logs, use a ferramenta de visualizador de log do Configuration Manager, CMTrace, localizada na pasta \\SMSSetup\\Tools da mídia de origem do Configuration Manager. A ferramenta CMTrace é adicionada a todas as imagens de inicialização adicionadas à Biblioteca de Software.  
 
 ###  <a name="BKMK_LogOptions"></a> Configurar opções de log usando o Configuration Manager Service Manager  
  No Configuration Manager, é possível alterar o local em que os arquivos de log são armazenados, bem como o tamanho do arquivo de log.  
 
- Para modificar o tamanho dos arquivos de log, o nome e o local do arquivo de log ou forçar os vários componentes a gravar em um único arquivo de log, siga as etapas abaixo.  
+ Para modificar o tamanho dos arquivos de log, o nome e o local do arquivo de log ou forçar os vários componentes a gravar em um único arquivo de log, siga as etapas abaixo:  
 
 #### <a name="to-modify-logging-for-a-component"></a>Para modificar o log para um componente  
 
@@ -361,6 +366,15 @@ O arquivo de log SMS_DM.log no servidor do sistema de site registra a comunicaç
 |SMS_BOOTSTRAP.log|Registra informações sobre o andamento do início do processo de instalação do site secundário. Detalhes do processo de instalação atual estão contidos em ConfigMgrSetup.log.|Servidor do site|  
 |smstsvc.log|Registra as informações sobre a instalação, o uso e a remoção de um serviço Windows que é usado para testar conectividade da rede e permissões entre servidores, usando a conta de computador do servidor que inicia a conexão.|Servidor do site e servidor do sistema de sites|  
 
+###  <a name="BKMK_DataWarehouse"></a> Arquivos de log do ponto de serviço do Data Warehouse  
+ A tabela a seguir lista os arquivos de log que contêm informações relacionadas ao ponto de serviço do data warehouse.  
+
+|Nome do log|Descrição|Computador com o arquivo de log|  
+|--------------|-----------------|----------------------------|  
+|DWSSMSI.log|Registra mensagens geradas pela instalação de um ponto de serviço do data warehouse.|Servidor do sistema de site|  
+|DWSSSetup.log|Registra mensagens geradas pela instalação de um ponto de serviço do data warehouse.|Servidor do sistema de site|  
+|Microsoft.ConfigMgrDataWarehouse.log|Registra informações sobre a sincronização de dados entre o banco de dados do site e o banco de dados de data warehouse.|Servidor do sistema de site|  
+
 ###  <a name="BKMK_FSPLog"></a> Arquivos de log do ponto de status de fallback  
  A tabela a seguir lista os arquivos de log que contêm informações relacionadas ao ponto de status de fallback.  
 
@@ -389,7 +403,7 @@ O arquivo de log SMS_DM.log no servidor do sistema de site registra a comunicaç
 |MP_Retry.log|Registra os processos de repetição de inventário de hardware.|Servidor do sistema de site|  
 |MP_Sinv.log|Registra detalhes sobre a conversão de registros de inventário de software XML de clientes e a cópia desses arquivos para o servidor do site.|Servidor do sistema de site|  
 |MP_SinvCollFile.log|Registra detalhes sobre a coleção de arquivos.|Servidor do sistema de site|  
-|MP_Status.log|Registra os detalhes sobre a conversão de arquivos de mensagens de status XML.svf de clientes e a cópia desses arquivos para o servidor do site.|Servidor do sistema de site|  
+|MP_Status.log|Registra os detalhes sobre a conversão de arquivos de mensagens de status XML.svf de clientes e a cópia desses arquivos para o servidor do site.|Servidor do sistema de site|
 |mpcontrol.log|Grava o registro do ponto de gerenciamento com WINS. Registra a disponibilidade do ponto de gerenciamento a cada 10 minutos.|Servidor do site|  
 |mpfdm.log|Registra as ações do componente do ponto de gerenciamento que movem arquivos de cliente para pasta de CAIXAS DE ENTRADA no servidor do site.|Servidor do sistema de site|  
 |mpMSI.log|Registra detalhes sobre a instalação do ponto de gerenciamento.|Servidor do site|  
@@ -511,7 +525,7 @@ A tabela a seguir lista os arquivos de log que contêm informações relacionada
 |CMGService.log ou CMG-*RoleInstanceID*- CMGService.log<sup>1</sup>|Registra os detalhes sobre o componente de núcleo do serviço de gateway de gerenciamento de nuvem no Azure<br>Você pode configurar o nível de log usando a configuração **Nível de rastreamento** (**Informações** (padrão), **Detalhado**, **Erro**) na guia de **configuração dos serviços do Portal do Azure\nuvem**.|O **%approot%\logs** no seu servidor do Azure ou a pasta SMS/Logs no servidor do sistema de site|
 |SMS_Cloud_ProxyConnector.log|Registra os detalhes sobre como configurar conexões entre o serviço do gateway de gerenciamento de nuvem e o ponto de conexão do gateway de gerenciamento de nuvem.|Servidor do sistema de site|
 
-<sup>1</sup> Esses são arquivos de log do Configuration Manager local que o gerenciador de serviço de nuvem sincroniza com o armazenamento do Azure a cada 5 minutos. O gateway de gerenciamento de nuvem enviará logs para o armazenamento do Azure a cada 5 minutos. Desse modo, o atraso máximo será de 10 minutos. Comutadores detalhados afetarão os logs locais e remotos.
+<sup>1</sup> Esses são arquivos de log do Configuration Manager local que o gerenciador de serviço de nuvem sincroniza com o armazenamento do Azure a cada 5 minutos. O gateway de gerenciamento de nuvem envia logs para o armazenamento do Azure a cada 5 minutos. Portanto, o atraso máximo é de 10 minutos. Comutadores detalhados afetam os logs locais e remotos.
 
 - Para solução de problemas de implantação, use **CloudMgr.log** e **CMGSetup.log**
 - Para solução de problemas de integridade de serviço, use **CMGService.log** e **SMS_Cloud_ProxyConnector.log**.
@@ -527,6 +541,19 @@ A tabela a seguir lista os arquivos de log que contêm informações relacionada
 |DCMAgent.log|Registra as informações de alto nível sobre avaliação, relatórios conflitantes e correção de itens e aplicativos de configuração.|Cliente|  
 |DCMReporting.log|Registra as informações sobre os relatórios dos resultados da plataforma de política em mensagens de estado para itens de configuração.|Cliente|  
 |DcmWmiProvider.log|Registra as informações sobre a leitura de synclets de item de configuração por meio do WMI.|Cliente|  
+
+###  <a name="BKMK_CA"></a> Acesso condicional
+ A tabela a seguir lista os arquivos de log que contêm informações relacionadas ao acesso condicional.  
+
+|Nome do log|Descrição|Computador com o arquivo de log|  
+|--------------|-----------------|----------------------------|  
+|ADALOperationProvider.log|Registra detalhes sobre a aquisição do token AAD.|Cliente|  
+|cloudusersync.log|Registra habilitação de licença para usuários.|Computador com o ponto de conexão de serviço|  
+|ComplRelayAgent.log|Recebe o estado geral de conformidade do DCM, adquire o token MP e o token AAD e reporta a conformidade ao Intune (o serviço de retransmissão CA).|Cliente|  
+|DcmWmiProvider.log|Registra as informações sobre a leitura de synclets de item de configuração por meio do WMI.|Cliente|  
+|dmpdownloader.log|Registra detalhes sobre downloads do Microsoft Intune.|Computador com o ponto de conexão de serviço|
+|dmpuploader.log|Registra o detalhe relacionado ao carregamento de alterações de banco de dados para o Microsoft Intune.|Computador com o ponto de conexão de serviço|   
+|MP_Token.log|Solicitações de token de registros de clientes.|Servidor do sistema de site|  
 
 ###  <a name="BKMK_ConsoleLog"></a> Console do Configuration Manager  
  A tabela a seguir lista os arquivos de log que contêm informações relacionadas ao console do Configuration Manager.  
@@ -549,7 +576,6 @@ A tabela a seguir lista os arquivos de log que contêm informações relacionada
 |PrestageContent.log|Registra detalhes sobre o uso da ferramenta ExtractContent.exe em um ponto de distribuição em pré-teste remoto. Essa ferramenta extrai o conteúdo exportado para um arquivo.|Função do sistema de site|  
 |SMSdpmon.log|Registra detalhes sobre as tarefas agendadas de monitoramento de integridade do ponto de distribuição, que estão configuradas em um ponto de distribuição.|Função do sistema de site|  
 |smsdpprov.log|Registra os detalhes sobre a extração de arquivos compactados recebidos de um site primário. Esse log é gerado pelo provedor WMI do ponto de distribuição remoto.|O computador de ponto de distribuição que não está colocalizado com o servidor do site|  
-
 
 ###  <a name="BKMK_DiscoveryLog"></a> Descoberta  
 A tabela a seguir lista os arquivos de log que contêm informações relacionadas à Descoberta.  
@@ -734,7 +760,7 @@ A tabela a seguir lista os arquivos de log que contêm informações relacionada
 |ddm.log|Registra as atividades do gerenciador de dados de descoberta.|Servidor do site|  
 |distmgr.log|Registra detalhes sobre solicitações de distribuição de conteúdo.|Servidor do site de nível superior|  
 |Dmpdownloader.log|Registra detalhes sobre downloads do Microsoft Intune.|Computador com o ponto de conexão de serviço|  
-|Dmpuploader.log|Registra detalhes relacionados ao carregamento de alterações de banco de dados para o Microsoft Intune.|Computador com o ponto de conexão de serviço|  
+|Dmpuploader.log|Registra o detalhe relacionado ao carregamento de alterações de banco de dados para o Microsoft Intune.|Computador com o ponto de conexão de serviço|  
 |hman.log|Registra informações sobre o encaminhamento de mensagens.|Servidor do site|  
 |objreplmgr.log|Registra o processamento de política e atribuição.|Servidor do site primário|  
 |policypv.log|Registra a geração de políticas de todas as políticas.|Servidor do site|  
@@ -772,7 +798,7 @@ A tabela a seguir lista os arquivos de log que contêm informações relacionada
  A tabela a seguir lista os arquivos de log que contêm informações relacionadas ao uso de Wake On LAN.  
 
 > [!NOTE]  
->  Quando você suplementa o Wake On LAN usando o proxy de ativação, essa atividade será registrada em log no cliente. Por exemplo, consulte CcmExec.log e SleepAgent_<*domínio*\>@SYSTEM_0.log na seção [Operações de Cliente](#BKMK_ClientOpLogs) neste tópico.  
+>  Quando você suplementa o Wake On LAN usando o proxy de ativação, essa atividade será registrada em log no cliente. Por exemplo, consulte CcmExec.log e SleepAgent_<*domínio*\>@SYSTEM_0.log na seção [Operações de Cliente](#BKMK_ClientOpLogs) neste artigo.  
 
 |Nome do log|Descrição|Computador com o arquivo de log|  
 |--------------|-----------------|----------------------------|  
