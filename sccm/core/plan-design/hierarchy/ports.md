@@ -3,24 +3,25 @@ title: "Portas usadas para conexões"
 titleSuffix: Configuration Manager
 description: "Saiba mais sobre as portas necessárias e personalizáveis que o System Center Configuration Manager usa para conexões."
 ms.custom: na
-ms.date: 09/19/2017
+ms.date: 02/16/2018
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
-ms.technology: configmgr-other
+ms.technology:
+- configmgr-other
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: c6777fb0-0754-4abf-8a1b-7639d23e9391
-caps.latest.revision: "8"
-caps.handback.revision: "0"
+caps.latest.revision: 
+caps.handback.revision: 
 author: aczechowski
 ms.author: aaroncz
 manager: angrobe
-ms.openlocfilehash: 0b6fa22a7bc3de7bb5bc0d26f8e35b51d55c5e72
-ms.sourcegitcommit: ca9d15dfb1c9eb47ee27ea9b5b39c9f8cdcc0748
+ms.openlocfilehash: 8db098f69180aac3785087af6ee305b3651094e5
+ms.sourcegitcommit: 1378532fac2620ddcfd31061982f344a290c2e67
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/04/2018
+ms.lasthandoff: 02/20/2018
 ---
 # <a name="ports-used-in-system-center-configuration-manager"></a>Portas usadas no System Center Configuration Manager
 
@@ -114,7 +115,7 @@ As seções a seguir detalham as portas usadas para comunicação no Configurati
 ###  <a name="BKMK_PortsClient-ClientWakeUp"></a> Cliente -- &gt; Cliente  
  Além das portas relacionadas listadas na tabela a seguir, o proxy de ativação também utiliza mensagens de solicitação de eco do protocolo ICMP de um cliente para outro quando estão configurados com o proxy de ativação.
 
-Essa comunicação é usada para confirmar se o outro computador cliente está ativo na rede. O ICMP é, por vezes, referido como comandos ping TCP/IP. O ICMP não tem um número de protocolo UDP ou TCP, portanto, não está listado na tabela a seguir. No entanto, todos os firewalls baseados em host nesses computadores cliente ou dispositivos de rede de intervenção dentro da sub-rede devem permitir o tráfego de ICMP para que a comunicação de proxy de ativação tenha êxito.  
+Essa comunicação é usada para confirmar se o outro computador cliente está ativo na rede. O ICMP é, por vezes, referido como comandos ping TCP/IP. O ICMP não tem um número de protocolo UDP ou TCP, portanto, não está listado na tabela abaixo. No entanto, todos os firewalls baseados em host nesses computadores cliente ou dispositivos de rede de intervenção dentro da sub-rede devem permitir o tráfego de ICMP para que a comunicação de proxy de ativação tenha êxito.  
 
 |Descrição|UDP|TCP|  
 |-----------------|---------|---------|  
@@ -205,6 +206,13 @@ Essa comunicação é usada para confirmar se o outro computador cliente está a
 |Descrição|UDP|TCP|  
 |-----------------|---------|---------|  
 |Protocolo HTTP|--|80|  
+|Protocolo S-HTTP (HTTPS)|--|443|
+
+O console do Configuration Manager usa o acesso à internet para o seguinte: 
+- Baixar atualizações de software do Microsoft Update para pacotes de implantação.
+- O item Comentário na Faixa de Opções.
+- Links para documentação no console.
+<!--506823-->
 
 ###  <a name="BKMK_PortsConsole-RSP"></a> Console do Configuration Manager – > Ponto do Reporting Services  
 
@@ -338,7 +346,7 @@ Essa comunicação é usada para confirmar se o outro computador cliente está a
 |Descrição|UDP|TCP|  
 |-----------------|---------|---------|  
 |Protocolo S-HTTP (HTTPS)|--|443|
-Para obter mais informações, consulte [Requisitos de acesso à Internet](/sccm/core/servers/deploy/configure/about-the-service-connection-point#bkmk_urls) para o ponto de conexão de serviço.
+Para saber mais, confira [Requisitos de acesso à Internet](/sccm/core/servers/deploy/configure/about-the-service-connection-point#bkmk_urls) para o ponto de conexão de serviço.
 
 ###  <a name="BKMK_PortsAppCatalogWebServicePoint_SiteServer"></a> Servidor do site &lt; – > Ponto de serviços Web do catálogo de aplicativos  
 
@@ -689,12 +697,12 @@ Use o IPsec para ajudar a proteger o tráfego entre o servidor do site e os sist
 >  Para poder instalar esses sistemas de sites, verifique se o serviço de Registro remoto está sendo executado no servidor de sistema de sites e se você especificou uma conta de instalação de sistema de site, caso esse sistema esteja em uma floresta do Active Directory diferente, sem relação de confiança.  
 
 ###  <a name="BKMK_PortsClientInstall"></a> Portas usadas pela instalação do cliente do Gerenciador de Configurações  
-As portas usadas durante a instalação do cliente dependem do método de implantação do cliente. Para obter uma lista de portas para cada método de implantação do cliente, consulte **Portas usadas durante a implantação do cliente do Configuration Manager** no tópico [Configurações do Firewall do Windows e de porta para computadores cliente no System Center Configuration Manager](../../../core/clients/deploy/windows-firewall-and-port-settings-for-clients.md). Para obter informações sobre como configurar o Firewall do Windows no cliente para instalação de cliente e comunicação pós-instalação, consulte [Firewall do Windows e configurações de porta para clientes no System Center Configuration Manager](../../../core/clients/deploy/windows-firewall-and-port-settings-for-clients.md).  
+As portas usadas durante a instalação do cliente dependem do método de implantação do cliente. Confira uma lista de portas para cada método de implantação do cliente em **Portas usadas durante a implantação do cliente do Configuration Manager** no artigo [Configurações do Firewall do Windows e de porta para computadores cliente no System Center Configuration Manager](../../../core/clients/deploy/windows-firewall-and-port-settings-for-clients.md). Para obter informações sobre como configurar o Firewall do Windows no cliente para instalação de cliente e comunicação pós-instalação, consulte [Firewall do Windows e configurações de porta para clientes no System Center Configuration Manager](../../../core/clients/deploy/windows-firewall-and-port-settings-for-clients.md).  
 
 ###  <a name="BKMK_MigrationPorts"></a> Portas usadas pela migração  
 O servidor do site que executa a migração usa várias portas para se conectar a sites aplicáveis na hierarquia de origem para coletar dados do banco de dados do SQL Server dos sites de origem e para compartilhar pontos de distribuição.  
 
- Para obter informações sobre essas portas, confira a seção [Configurações necessárias para a migração](../../../core/migration/prerequisites-for-migration.md#BKMK_Required_Configurations) no tópico [Pré-requisitos da migração para o System Center Configuration Manager](../../../core/migration/prerequisites-for-migration.md).  
+ Para saber mais sobre essas portas, confira a seção [Configurações necessárias para a migração](../../../core/migration/prerequisites-for-migration.md#BKMK_Required_Configurations) no artigo [Pré-requisitos da migração para o System Center Configuration Manager](../../../core/migration/prerequisites-for-migration.md).  
 
 ###  <a name="BKMK_ServerPorts"></a> Portas usadas pelo Windows Server  
  A tabela a seguir lista algumas das principais portas usadas pelo Windows Server juntamente com suas respectivas funções. Para obter uma lista completa dos serviços do Windows Server e requisitos de portas de rede, consulte [Visão geral de serviços e requisitos de porta de rede para o sistema do Windows Server](http://go.microsoft.com/fwlink/p/?LinkID=123652).  

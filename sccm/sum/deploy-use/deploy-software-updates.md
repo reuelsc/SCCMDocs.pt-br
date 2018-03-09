@@ -3,36 +3,40 @@ title: "Implantar atualizações de software"
 titleSuffix: Configuration Manager
 description: "Escolha as atualizações de software no console do Configuration Manager para iniciar manualmente o processo de implantação ou implantar atualizações automaticamente."
 keywords: 
-author: dougeby
-ms.author: dougeby
-manager: angrobe
-ms.date: 10/06/2016
+author: mestew
+ms.author: mstewart
+manager: dougeby
+ms.date: 02/16/2018
 ms.topic: article
 ms.prod: configuration-manager
 ms.service: 
-ms.technology: configmgr-sum
+ms.technology:
+- configmgr-sum
 ms.assetid: 04536d51-3bf7-45e5-b4af-36ceed10583d
-ms.openlocfilehash: 7166ed594804bf615d309515c01f6f5339518d89
-ms.sourcegitcommit: c236214b2fcc13dae7bad96d7fb33f692868191d
+ms.openlocfilehash: aad82bf225f7606007a5b69490e8f0e4d894b966
+ms.sourcegitcommit: 1378532fac2620ddcfd31061982f344a290c2e67
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/12/2017
+ms.lasthandoff: 02/20/2018
 ---
 #  <a name="BKMK_SUMDeploy"></a> Implantar atualizações de software  
 
 *Aplica-se a: System Center Configuration Manager (Branch Atual)*
 
-A fase de implantação de atualização de software é o processo de implantação de atualizações de software. Independentemente de como você implanta atualizações de software, as atualizações normalmente são adicionados a um grupo de atualização de software, baixadas nos pontos de distribuição e o grupo de atualização é implantado para os clientes. Quando você cria a implantação, a política de atualização de software associada é enviada para computadores cliente, os arquivos do conteúdo de atualização de software são baixados de um ponto de distribuição para o cache local em computadores cliente e as atualizações de software estão disponíveis para instalação do cliente. Os clientes na Internet baixam conteúdo do Microsoft Update.  
+A fase de implantação de atualização de software é o processo de implantação de atualizações de software. Independentemente de como você implanta as atualizações de software, as atualizações são normalmente:
+- Adicionadas a um grupo de atualização de software.
+- Baixadas em pontos de distribuição.
+- O grupo de atualização é implantado nos clientes. Depois de criar a implantação, uma política de atualização de software associada é enviada aos computadores cliente. Os arquivos de conteúdo da atualização de software são baixados de um ponto de distribuição para o cache local em computadores cliente. Assim, as atualizações de software ficam disponíveis para instalação pelo cliente. Os clientes na Internet baixam conteúdo do Microsoft Update.  
 
 > [!NOTE]  
->  É possível configurar um cliente na intranet para baixar atualizações de software do Microsoft Update caso um ponto de distribuição não esteja disponível.  
+>  Se um ponto de distribuição não estiver disponível, você poderá configurar um cliente na intranet para baixar as atualizações de software do Microsoft Update.  
 
 > [!NOTE]  
->  Ao contrário de outros tipos de implantação, as atualizações de software são todas baixadas para o cache do cliente independentemente da configuração do tamanho máximo do cache no cliente. Para obter mais informações sobre as configurações do cache do cliente, veja [Configure the Client Cache for Configuration Manager Clients](../../core/clients/manage/manage-clients.md#BKMK_ClientCache).  
+>  Ao contrário de outros tipos de implantação, as atualizações de software são baixadas no cache do cliente. Isso ocorre independentemente da configuração do tamanho máximo do cache no cliente. Para obter mais informações sobre as configurações do cache do cliente, veja [Configure the Client Cache for Configuration Manager Clients](../../core/clients/manage/manage-clients.md#BKMK_ClientCache).  
 
 Se você configurar uma implantação de atualização de software necessária, as atualizações de software serão instaladas automaticamente no prazo agendado. Como alternativa, o usuário no computador cliente pode agendar ou iniciar a instalação da atualização de software antes do prazo. Após a tentativa de instalação, os computadores cliente enviam mensagens de estado de volta para o servidor do site para relatar se a instalação da atualização de software teve êxito. Para obter mais informações sobre implantações de atualização de software, veja [Software update deployment workflows](../understand/software-updates-introduction.md#BKMK_DeploymentWorkflows).  
 
-Há dois cenários principais para implantar atualizações de software: implantação manual e implantação automática. Em geral, inicialmente você implantará manualmente atualizações de software para criar uma linha de base para seus computadores cliente; em seguida, você gerenciará atualizações de software em clientes usando a implantação automática.  
+Há dois cenários principais para implantar atualizações de software: implantação manual e implantação automática. Em geral, inicialmente você implanta manualmente atualizações de software para criar uma linha de base para seus computadores cliente; em seguida, gerencia atualizações de software em clientes usando a implantação automática.  
 
 ## <a name="BKMK_ManualDeployment"></a> Implantar atualizações de software manualmente
 Você pode selecionar as atualizações de software no console do Configuration Manager para iniciar manualmente o processo de implantação. Esse método de implantação é usado geralmente para ter os computadores cliente em dia com as atualizações de software necessárias antes de serem criadas regras de implantação automáticas que gerenciam as implantações de atualização de software mensalmente e continuamente e para implantar requisitos de atualização de software fora da banda. A lista seguinte fornece o fluxo de trabalho geral para implantação manual das atualizações de software:  
@@ -43,6 +47,9 @@ Você pode selecionar as atualizações de software no console do Configuration 
 4. Implante manualmente o grupo de atualização de software.
 
 Para obter etapas detalhadas, consulte [Implantar manualmente as atualizações de software](manually-deploy-software-updates.md).
+
+>[!NOTE]
+>A partir do Configuration Manager versão 1706, as atualizações de cliente do Office 365 foram movidas para o nó **Gerenciamento de Clientes do Office 365** >**Atualizações do Office 365**. Isso não afetará a configuração de ADR, mas afetará a implantação manual de atualizações do Office 365. 
 
 ## <a name="automatically-deploy-software-updates"></a>Implantar atualizações de software automaticamente
 A implantação automática de atualizações de software é configurada usando uma ADR (regra de implantação automática). Esse é um método comum de implantação de atualizações de software mensais (geralmente conhecido como “Patch Tuesday”) e para o gerenciamento de atualizações de definição. Quando a regra é executada, as atualizações de software são removidas do grupo de atualização de software (caso esteja usando um grupo de atualização existente), as atualizações de software que atendem aos critérios especificados (por exemplo, todas as atualizações de software de segurança lançadas no último mês) são adicionadas a um grupo de atualização de software, os arquivos de conteúdo das atualizações de software são baixados e copiados para os pontos de distribuição e as atualizações de software são implantadas em clientes na coleção de destino. A lista a seguir fornece o fluxo de trabalho geral para implantação automática das atualizações de software:  

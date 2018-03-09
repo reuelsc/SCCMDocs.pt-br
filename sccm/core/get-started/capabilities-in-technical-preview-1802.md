@@ -15,11 +15,11 @@ ms.assetid: 4884a2d3-13ce-44e5-88c4-a66dc7ec6014
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 1b5e8f744573680ab55fcfff26622e312206ca1a
-ms.sourcegitcommit: fbd4a9d2fa8ed4ddd3a0fecc4a2ec4fc0ccc3d0c
+ms.openlocfilehash: 162c47d867e78498650da685327c0fe296aa2eda
+ms.sourcegitcommit: b1fa7be6a6fa5bb7c49e90c0e28a21ba8b41c842
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/19/2018
+ms.lasthandoff: 02/28/2018
 ---
 # <a name="capabilities-in-technical-preview-1802-for-system-center-configuration-manager"></a>Funcionalidades no Technical Preview 1802 do System Center Configuration Manager
 
@@ -318,9 +318,9 @@ O Windows AutoPilot é uma solução para integração e configuração de novos
 
 
 
-## <a name="improvements-to-configuration-manager-policies-for-windows-device-exploit-guard"></a>Melhorias nas Políticas do Configuration Manager para o Windows Device Exploit Guard
+## <a name="improvements-to-configuration-manager-policies-for-windows-defender-exploit-guard"></a>Melhorias nas Políticas do Configuration Manager para o Windows Defender Exploit Guard
 <!-- 1356220 -->
-Configurações de políticas adicionais para a Redução da superfície de ataque e o Acesso controlado a pastas foram adicionadas para o Windows Device Exploit Guard no Configuration Manager.
+As configurações de políticas adicionais para os componentes Redução da superfície de ataque e Acesso controlado a pastas foram adicionadas no Configuration Manager para [Windows Defender Exploit Guard](https://docs.microsoft.com/windows/security/threat-protection/windows-defender-exploit-guard/windows-defender-exploit-guard).
 
 **Novas configurações para acesso controlado à pasta**<br/>
 Existem duas opções adicionais quando você configura o acesso controlado à pasta: **Bloquear apenas os setores de disco** e **Auditar apenas os setores de disco**. Essas duas configurações permitem que o acesso controlado à pasta seja ativado apenas para setores de inicialização e não habilita a proteção de pastas específicas ou de pastas protegidas padrão. 
