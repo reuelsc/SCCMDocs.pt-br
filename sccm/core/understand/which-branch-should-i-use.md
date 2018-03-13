@@ -3,23 +3,24 @@ title: Qual branch devo usar
 titleSuffix: Configuration Manager
 description: "Aprenda as diferenças entre os branches do System Center Configuration Manager disponíveis."
 ms.custom: na
-ms.date: 05/02/2017
+ms.date: 03/08/2018
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
-ms.technology: configmgr-other
+ms.technology:
+- configmgr-other
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: a3be4f8f-3d44-4e3c-9fa1-e85f30a36e72
-caps.latest.revision: "0"
+caps.latest.revision: 
 author: aczechowski
 ms.author: aaroncz
 manager: angrobe
-ms.openlocfilehash: 9985ff5db4357b6b18de1ef58de40bc631d6cc6b
-ms.sourcegitcommit: ca9d15dfb1c9eb47ee27ea9b5b39c9f8cdcc0748
+ms.openlocfilehash: d762cf5e6932e17d8dfb0dd6c442c452028b5228
+ms.sourcegitcommit: b653342fb5d69a16e71b3548a7e9a2e47e54bf88
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/04/2018
+ms.lasthandoff: 03/12/2018
 ---
 # <a name="which-branch-of-configuration-manager-should-i-use"></a>Qual branch do Configuration Manager devo usar?
 
@@ -77,7 +78,7 @@ O LTSB baseia-se na versão 1606. Essa ramificação não recebe atualizações 
 Para instalar o LTSB como um novo site ou uma atualização do site do Configuration Manager 2012 com suporte, use a [mídia de linha de base](/sccm/core/servers/manage/updates#baseline-and-update-versions) da versão 1606 obtida como um DVD com a versão do System Center 2016 ou System Center Configuration Manager (Branch Atual e Branch de Manutenção em Longo Prazo 1606). Você pode usar a mídia de linha de base para instalar um novo site que executa a versão 1606 do Branch Atual ou um novo site que executa o Branch de Manutenção em Longo Prazo.
 
 > [!TIP]  
-> Para saber sobre o System Center 2016, consulte a [Documentação do System Center 2016](https://technet.microsoft.com/system-center-docs/system-center). Esta documentação também identifica como obter o System Center 2016, que exige um contrato de licença da Microsoft ou direitos semelhantes.
+> Para saber sobre o System Center 2016, consulte a [Documentação do System Center 2016](https://docs.microsoft.com/system-center/index). Esta documentação também identifica como obter o System Center 2016, que exige um contrato de licença da Microsoft ou direitos semelhantes.
 
 > Para localizar o System Center Configuration Manager versão 1606 no VLSC (Centro de Serviços de Licenciamento por Volume), acesse a guia **Downloads e Chaves** do [VLSC](https://www.microsoft.com/Licensing/servicecenter/Downloads/DownloadsAndKeys.aspx), pesquise “configuração do system center” e selecione **System Center Config Mgr (Branch Atual e LTSB)**.
 
@@ -90,7 +91,7 @@ Para instalar o LTSB como um novo site ou uma atualização do site do Configura
 
 **Limitações**  
 O LTSB se baseia na versão 1606 do Branch Atual e tem as seguintes limitações:
-- O LTSB tem suporte por 10 anos de atualizações de segurança críticas após sua disponibilidade geral (outubro de 2016), após o qual o suporte para esse branch expira. Para mais informações sobre o ciclo de vida de suporte, confira [Política de Ciclo de Vida da Microsoft](https://support.microsoft.com/en-us/lifecycle).
+- O LTSB tem suporte por 10 anos de atualizações de segurança críticas após sua disponibilidade geral (outubro de 2016), após o qual o suporte para esse branch expira. Para mais informações sobre o ciclo de vida de suporte, confira [Política de Ciclo de Vida da Microsoft](https://support.microsoft.com/lifecycle).
 - Dá suporte a uma lista de definições limitada dos sistemas operacionais do servidor e do cliente e tecnologias relacionadas, como as versões do SQL Server. Para mais informações sobre o que tem suporte com esse branch, confira [Configurações com suporte para o Branch de Manutenção em Longo Prazo](supported-configurations-for-ltsb.md).
 - Não recebe atualizações para novos recursos.
 - Não dá suporte à adição de uma Assinatura do Microsoft Intune, o que impede o uso do:
