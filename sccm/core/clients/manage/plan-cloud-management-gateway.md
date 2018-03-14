@@ -2,18 +2,19 @@
 title: Plano para o gateway de gerenciamento de nuvem
 titleSuffix: Configuration Manager
 description: 
-ms.date: 10/06/2017
+ms.date: 03/08/2018
 ms.prod: configuration-manager
-ms.technology: configmgr-client
+ms.technology:
+- configmgr-client
 ms.assetid: 2dc8c9f1-4176-4e35-9794-f44b15f4e55f
 author: arob98
 ms.author: angrobe
 manager: angrobe
-ms.openlocfilehash: b1063826841c37973e26954e164d867649c3fb9f
-ms.sourcegitcommit: c4a1bafcd004638d264a93d307c70d8b6f7fe023
+ms.openlocfilehash: 051d3fcba379aec83ea7c4dc1e407b3d3e774e12
+ms.sourcegitcommit: b653342fb5d69a16e71b3548a7e9a2e47e54bf88
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/20/2017
+ms.lasthandoff: 03/12/2018
 ---
 # <a name="plan-for-the-cloud-management-gateway-in-configuration-manager"></a>Planejar o gateway de gerenciamento de nuvem no Configuration Manager
 
@@ -30,7 +31,7 @@ Os certificados de cliente e os certificados SSL são necessários para autentic
 
 ## <a name="requirements-for-cloud-management-gateway"></a>Requisitos para o gateway de gerenciamento de nuvem
 
--   Computadores cliente e o servidor do sistema de sites que está executando o ponto de conexão do gateway de gerenciamento de nuvem.
+-    Sistema de sites executando o conector de gateway de gerenciamento de nuvem para uso por clientes baseados na Internet.
 
 -   Certificados SSL personalizados da AC interna – Usado para criptografar a comunicação de computadores cliente e autenticar a identidade do serviço de gateway de gerenciamento de nuvem.
 
