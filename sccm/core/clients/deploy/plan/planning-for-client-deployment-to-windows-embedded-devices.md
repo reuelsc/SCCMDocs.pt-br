@@ -7,20 +7,21 @@ ms.date: 04/23/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
-ms.technology: configmgr-client
+ms.technology:
+- configmgr-client
 ms.tgt_pltfrm: na
 ms.topic: get-started-article
 ms.assetid: 038e61f9-f49d-41d1-9a9f-87bec9e00d5d
-caps.latest.revision: "7"
-caps.handback.revision: "0"
+caps.latest.revision: 
+caps.handback.revision: 
 author: arob98
 ms.author: angrobe
 manager: angrobe
 ms.openlocfilehash: c4f3d8a9b043707340e56d3ae483ad66ca17dc10
-ms.sourcegitcommit: c236214b2fcc13dae7bad96d7fb33f692868191d
+ms.sourcegitcommit: 52080ef1b0f9a27c123711ef274ac3ffe070e8e0
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/12/2017
+ms.lasthandoff: 03/20/2018
 ---
 # <a name="planning-for-client-deployment-to-windows-embedded-devices-in-system-center-configuration-manager"></a>Planejando a implantação de cliente em dispositivos do Windows Embedded no System Center Configuration Manager
 
@@ -30,7 +31,7 @@ ms.lasthandoff: 10/12/2017
 
  É importante lembrar que quando os filtros são desabilitados, os drivers de filtro não devem ser desabilitados. Normalmente, estes drivers são iniciados automaticamente quando o computador é iniciado. Desabilitar os drivers impedirá a instalação do cliente ou interferirá na orquestração de filtro de gravação que fará com que as operações de cliente falhem. Estes são os serviços associados a cada tipo de filtro de gravação que devem permanecer em execução:  
 
-|Tipo de filtro de gravação|Driver|Tipo|Descrição|  
+|Tipo de filtro de gravação|Driver|Digite|Descrição|  
 |-----------------------|------------|----------|-----------------|  
 |EWF|EWF|Kernel|Implementa o redirecionamento de E/S de nível de setor nos volumes protegidos.|  
 |FBWF|FBWF|Sistema de arquivos|Implementa o redirecionamento de E/S de nível de arquivo nos volumes protegidos.|  
