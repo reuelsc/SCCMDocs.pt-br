@@ -2,7 +2,7 @@
 ## [Introdução às atualizações de software](understand/software-updates-introduction.md)
 ## [Ícones usados para as atualizações de software](understand/software-updates-icons.md)
 
-# Planejamento e design
+# Plano e design
 ## [Planejar atualizações de software](plan-design/plan-for-software-updates.md)
 ## [Pré-requisitos para atualizações de software](plan-design/prerequisites-for-software-updates.md)
 ## [Práticas recomendadas para atualizações de software](plan-design/software-updates-best-practices.md)
@@ -32,3 +32,14 @@
 ## [Gerenciar os arquivos de instalação expressa para atualizações do Windows 10](deploy-use/manage-express-installation-files-for-windows-10-updates.md)
 ## [Integração com o Windows Update for Business no Windows 10](deploy-use/integrate-windows-update-for-business-windows-10.md)
 ## [Cenário de exemplo para implantar atualizações de segurança](deploy-use/example-scenario-deploy-monitor-monthly-security-updates.md)
+
+# [System Center Updates Publisher](tools/updates-publisher.md)
+## [Instalar](tools/install-updates-publisher.md)
+## [Configurar opções](tools/updates-publisher-options.md)
+## [Gerenciar catálogos](tools/updates-publisher-catalogs.md)
+## [Gerenciar atualizações](tools/manage-updates-with-updates-publisher.md)
+## [Gerenciar publicações](tools/updates-publisher-publications.md)
+## [Criar novas atualizações](tools/create-updates-with-updates-publisher.md)
+## [Regras de aplicabilidade](tools/updates-publisher-applicability-rules.md)
+## [Certificados e segurança](tools/updates-publisher-security.md)
+
