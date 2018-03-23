@@ -5,7 +5,7 @@
 ## [Variáveis internas de sequência de tarefas](understand/task-sequence-built-in-variables.md)
 ## [Comandos prestart para mídia de sequência de tarefas](understand/prestart-commands-for-task-sequence-media.md)
 
-# Planejamento e design
+# Plano e design
 ## [Requisitos de infraestrutura para implantação de sistema operacional](plan-design/infrastructure-requirements-for-operating-system-deployment.md)
 ## [Considerações sobre o planejamento para automatizar tarefas](plan-design/planning-considerations-for-automating-tasks.md)
 ## [Segurança e privacidade para implantação de sistema operacional](plan-design/security-and-privacy-for-operating-system-deployment.md)
@@ -46,6 +46,7 @@
 
 ## [Gerenciar o Windows como serviço](deploy-use/manage-windows-as-a-service.md)
 ## [Monitorar implantações de sistema operacional](deploy-use/monitor-operating-system-deployments.md)
+## [Criar uma implantação em fases para uma sequência de tarefas](deploy-use/create-phased-deployment-for-task-sequence.md)
 
 ## [Gerenciar sequências de tarefas para automatizar tarefas](deploy-use/manage-task-sequences-to-automate-tasks.md)
 ### [Criar uma sequência de tarefas para instalar um sistema operacional](deploy-use/create-a-task-sequence-to-install-an-operating-system.md)
