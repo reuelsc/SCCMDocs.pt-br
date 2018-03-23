@@ -1,25 +1,26 @@
 ---
 title: Recursos no Technical Preview 1703
 titleSuffix: Configuration Manager
-description: "Saiba mais sobre os recursos disponíveis no Technical Preview do System Center Configuration Manager, versão 1703."
+description: Saiba mais sobre os recursos disponíveis no Technical Preview do System Center Configuration Manager, versão 1703.
 ms.custom: na
 ms.date: 03/24/2017
 ms.prod: configuration-manager
-ms.technology: configmgr-other
+ms.technology:
+- configmgr-other
 ms.reviewer: na
 ms.suite: na
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 2e801f8c-d331-41ee-8f27-908448fc0951
-caps.latest.revision: "5"
+caps.latest.revision: ''
 author: erikje
 ms.author: erikje
 manager: angrobe
 ms.openlocfilehash: a44d6a0c9b02a529fe8776033e58e971af37e332
-ms.sourcegitcommit: 7fe45ff75f05f7cc03ad021db8119791abe18049
+ms.sourcegitcommit: 52080ef1b0f9a27c123711ef274ac3ffe070e8e0
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 12/01/2017
+ms.lasthandoff: 03/20/2018
 ---
 # <a name="capabilities-in-technical-preview-1703-for-system-center-configuration-manager"></a>Funcionalidades do Technical Preview 1703 do System Center Configuration Manager
 
@@ -56,7 +57,7 @@ Agora você pode fornecer aos usuários finais um link direto para um aplicativo
 
 Use o seguinte formato de URL para abrir o Centro de Software para um aplicativo específico:
 
-**Softwarecenter:SoftwareId=*Application Identifier***
+**Identificador Softwarecenter:SoftwareId=*Application***
 
 ### <a name="how-to-get-the-application-identifier-of-an-application"></a>Como obter o identificador do aplicativo de um aplicativo.
 

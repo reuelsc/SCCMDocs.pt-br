@@ -1,26 +1,27 @@
 ---
-title: "Gerenciar o acesso à internet usando políticas de navegador gerenciado"
+title: Gerenciar o acesso à internet usando políticas de navegador gerenciado
 titleSuffix: Configuration Manager
-description: "Implante o Intune Managed Browser para gerenciar e restringir o acesso à Internet."
+description: Implante o Intune Managed Browser para gerenciar e restringir o acesso à Internet.
 ms.custom: na
 ms.date: 03/05/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
-ms.technology: configmgr-hybrid
+ms.technology:
+- configmgr-hybrid
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 8e25e00c-c9a8-473f-bcb7-ea989f6ca3c5
-caps.latest.revision: "6"
-caps.handback.revision: "0"
+caps.latest.revision: ''
+caps.handback.revision: ''
 author: dougeby
 ms.author: dougeby
 manager: angrobe
 ms.openlocfilehash: 3aea2a65733a52ab532d451b21ae98fbc0f122c6
-ms.sourcegitcommit: c236214b2fcc13dae7bad96d7fb33f692868191d
+ms.sourcegitcommit: 52080ef1b0f9a27c123711ef274ac3ffe070e8e0
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/12/2017
+ms.lasthandoff: 03/20/2018
 ---
 # <a name="manage-internet-access-using-managed-browser-policies-with-system-center-configuration-manager"></a>Gerenciar o acesso à Internet usando políticas de navegador gerenciado com o System Center Configuration Manager
 
@@ -101,7 +102,7 @@ Use as informações a seguir para saber mais sobre os formatos permitidos e car
 
     -   Porta 443 para https  
 
-     Não há suporte para o uso de curingas no número da porta, como **http://www.contoso.com:\*** e **http://www.contoso.com: /\***  
+     Não é possível usar caracteres curinga no número da porta, por exemplo, **http://www.contoso.com:\*** e **http://www.contoso.com: /\***  
 
 -   Use a tabela a seguir para aprender sobre os padrões permitidos que você pode usar para especificar URLs:  
 
@@ -136,7 +137,7 @@ Use as informações a seguir para saber mais sobre os formatos permitidos e car
 
     -   http://www.contoso.com:*  
 
-    -   http://www.contoso.com: / *  
+    -   http://www.contoso.com: /*  
 
 > [!NOTE]  
 >  *.microsoft.com sempre é permitido.  

@@ -1,25 +1,26 @@
 ---
-title: "Atualização no console"
+title: Atualização no console
 titleSuffix: Configuration Manager
-description: "O System Center Configuration Manager sincroniza com a nuvem da Microsoft para obter atualizações que você pode instalar no console."
+description: O System Center Configuration Manager sincroniza com a nuvem da Microsoft para obter atualizações que você pode instalar no console.
 ms.custom: na
 ms.date: 09/14/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
-ms.technology: configmgr-other
+ms.technology:
+- configmgr-other
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: c14a3607-253b-41fb-8381-ae2d534a9022
-caps.latest.revision: "36"
+caps.latest.revision: ''
 author: mestew
 ms.author: mstewart
 manager: angrobe
-ms.openlocfilehash: 081935ebb3ef2cc12d2023d86c0b68bbd816f2f3
-ms.sourcegitcommit: daa080cf220835f157a23e8c8e2bd2781b869bb7
+ms.openlocfilehash: 5c202ede7be14bb60c6b28d87dfa77577597e955
+ms.sourcegitcommit: 52080ef1b0f9a27c123711ef274ac3ffe070e8e0
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 12/04/2017
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="install-in-console-updates-for-system-center-configuration-manager"></a>Instalações de atualizações para o System Center Configuration Manager
 
@@ -96,7 +97,8 @@ Examine a lista de verificação de atualização aplicável de ações a serem 
 
 - Atualizar para a 1610 da 1606: veja [Lista de verificação para instalar a atualização 1610](../../../core/servers/manage/checklist-for-installing-update-1610.md).  
 
-- Atualizar para a 1702 da 1606 ou da 1610: consulte [Lista de verificação para instalar a atualização 1702](../../../core/servers/manage/checklist-for-installing-update-1702.md).
+- Atualizar para a 1710 da 1610, 1702 ou da 1706: consulte [Lista de verificação para instalar a atualização 1710](../../../core/servers/manage/checklist-for-installing-update-1710.md).
+
 
 <!-- Removed as update guidance 6/6/2017. The Test DB Upgrade details are no longer recommended nor required. They live on in a new topic for customers who still want to use them. -->
 
