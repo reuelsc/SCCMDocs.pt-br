@@ -1,7 +1,8 @@
-#   Compreensão e exploração
+#   Entender e explorar
 ##  [Introdução ao Configuration Manager](understand/introduction.md)
 ### [Encontrar ajuda para o Configuration Manager](understand/find-help.md)
 ### [Recursos de acessibilidade](understand/accessibility-features.md)
+### [Guia do usuário do Centro de Software](understand/software-center.md)
 ##  [Conceitos básicos do Configuration Manager](understand/fundamentals.md)
 ### [Conceitos básico de sites e hierarquias](understand/fundamentals-of-sites-and-hierarchies.md)
 #### [Sobre upgrade, atualização e instalação para infraestrutura de site e hierarquia](understand/upgrade-update-install.md)
@@ -28,10 +29,11 @@
 ###  [Recursos e funcionalidades](plan-design/changes/features-and-capabilities.md)
 ###  [O que mudou com relação ao Configuration Manager 2012](plan-design/changes/what-has-changed-from-configuration-manager-2012.md)
 ###  [Novidades nas versões incrementais](plan-design/changes/whats-new-incremental-versions.md)
+###  [Novidades na versão 1802](plan-design/changes/whats-new-in-version-1802.md)
 ###  [Novidades na versão 1710](plan-design/changes/whats-new-in-version-1710.md)
 ###  [Novidades na versão 1706](plan-design/changes/whats-new-in-version-1706.md)
-###  [Novidades na versão 1702](plan-design/changes/whats-new-in-version-1702.md)
 <!--
+###  [What's new in version 1702](plan-design/changes/whats-new-in-version-1702.md)
 ###  [What's new in version 1610](plan-design/changes/whats-new-in-version-1610.md)
 ###  [What's new in version 1606](plan-design/changes/whats-new-in-version-1606.md)
 ###  [What's new in version 1602](plan-design/changes/whats-new-in-version-1602.md)
@@ -65,7 +67,6 @@
 #### [Content Library Cleanup Tool](plan-design/hierarchy/content-library-cleanup-tool.md)
 #### [Gerenciar contas para acessar conteúdo](plan-design/hierarchy/manage-accounts-to-access-content.md)
 #### [Cache de pares para clientes do Configuration Manager](plan-design/hierarchy/client-peer-cache.md)
-#### [Cenários de local de origem de conteúdo](plan-design/hierarchy/content-source-location-scenarios.md)
 #### [Gerenciador de transferência de pacote](plan-design/hierarchy/package-transfer-manager.md)
 #### [Gerenciar largura de banda de rede para gerenciamento de conteúdo](plan-design/hierarchy/manage-network-bandwidth.md)
 #### [Segurança e privacidade do gerenciamento de conteúdo](plan-design/hierarchy/security-and-privacy-for-content-management.md)
@@ -82,10 +83,11 @@
 
 ##   [Dados de diagnóstico e de uso](plan-design/diagnostics/diagnostics-and-usage-data.md)
 ###  [Como os dados de diagnóstico e de uso são usados](plan-design/diagnostics/how-diagnostics-and-usage-data-is-used.md)
+###  [Dados de diagnóstico para 1802](plan-design/diagnostics/levels-of-diagnostic-usage-data-collection-1802.md)
 ###  [Dados de diagnóstico para 1710](plan-design/diagnostics/levels-of-diagnostic-usage-data-collection-1710.md)
 ###  [Dados de diagnóstico para 1706](plan-design/diagnostics/levels-of-diagnostic-usage-data-collection-1706.md)
-###  [Dados de diagnóstico para 1702](plan-design/diagnostics/levels-of-diagnostic-usage-data-collection-1702.md)
 <!--
+###  [Diagnostic data for 1702](plan-design/diagnostics/levels-of-diagnostic-usage-data-collection-1702.md)
 ###  [Diagnostic data for 1610](plan-design/diagnostics/levels-of-diagnostic-usage-data-collection-1610.md)
 ###  [Diagnostic data for 1606](plan-design/diagnostics/levels-of-diagnostic-usage-data-collection-1606.md)
 ###  [Diagnostic data for 1602](plan-design/diagnostics/levels-of-diagnostic-usage-data-collection-1602.md)
@@ -109,7 +111,7 @@
 
 <!-- Only show the current plus three, i.e., four total) -->
 ##   [Technical Preview](get-started/technical-preview.md)
-###  [Funcionalidades do 1802](get-started/capabilities-in-technical-preview-1802.md)
+###  [Recursos do 1802](get-started/capabilities-in-technical-preview-1802.md)
 ###  [Funcionalidades do 1801](get-started/capabilities-in-technical-preview-1801.md)
 ###  [Recursos do 1712](get-started/capabilities-in-technical-preview-1712.md)
 ###  [Recursos do 1711](get-started/capabilities-in-technical-preview-1711.md)
@@ -201,6 +203,7 @@
 -->
 
 #    Gerenciar a infraestrutura
+## [Insights de gerenciamento](servers/manage/management-insights.md)
 ##   [Tarefas de manutenção](servers/manage/maintenance-tasks.md)
 ###  [Referência para tarefas de manutenção](servers/manage/reference-for-maintenance-tasks.md)
 ##   [Modificar sua infra-estrutura](servers/manage/modify-your-infrastructure.md)
@@ -217,10 +220,11 @@
 ###  [Usar a Ferramenta de Conexão de Serviço](servers/manage/use-the-service-connection-tool.md)
 ###  [Usar a Ferramenta de Registro de Atualização](servers/manage/use-the-update-registration-tool-to-import-hotfixes.md)
 ###  [Usar o Instalador de Hotfix](servers/manage/use-the-hotfix-installer-to-install-updates.md)
+###  [Lista de verificação para instalar a atualização 1802](servers/manage/checklist-for-installing-update-1802.md)
 ###  [Lista de verificação para instalar a atualização 1710](servers/manage/checklist-for-installing-update-1710.md)
 ###  [Lista de verificação para instalar a atualização 1706](servers/manage/checklist-for-installing-update-1706.md)
-###  [Lista de verificação para instalar a atualização 1702](servers/manage/checklist-for-installing-update-1702.md)
 <!-- Deprecated from Content - still published but out of TOC:
+###  [Checklist for installing update 1702](servers/manage/checklist-for-installing-update-1702.md)
 ###  [Checklist for installing update 1610](servers/manage/checklist-for-installing-update-1610.md)
 ###  [Checklist for installing update 1606](servers/manage/checklist-for-installing-update-1606.md)
 ###  [Checklist for installing update 1602](servers/manage/checklist-for-installing-update-1602.md)
@@ -274,13 +278,13 @@
 #### [Sobre as configurações do cliente](clients/deploy/about-client-settings.md)
 ###  [Configurar o Wake on LAN](clients/deploy/configure-wake-on-lan.md)
 ###  [Como implantar clientes em computadores com Windows](clients/deploy/deploy-clients-to-windows-computers.md)
+#### [Instalar clientes usando o Azure AD](clients/deploy/deploy-clients-cmg-azure.md)
 #### [Propriedades de instalação de cliente](clients/deploy/about-client-installation-properties.md)
 #### [Propriedades de instalação de cliente publicadas no AD](clients/deploy/about-client-installation-properties-published-to-active-directory-domain-services.md)
 ###  [Como implantar clientes em servidores UNIX e Linux](clients/deploy/deploy-clients-to-unix-and-linux-servers.md)
 #### [Comandos de cliente do Linux e UNIX](clients/deploy/linux-and-unix-clients-technical-reference.md)
 ###  [Planejar a implantação de cliente em computadores Mac](clients/deploy/prepare-to-deploy-mac-clients.md)
 ###  [Como implantar clientes em Mac](clients/deploy/deploy-clients-to-macs.md)
-###  [Instalar clientes da Internet usando o Azure AD](clients/deploy/deploy-clients-cmg-azure.md)
 ###  [Como atribuir clientes a um site](clients/deploy/assign-clients-to-a-site.md)
 ###  [Como configurar o status do cliente](clients/deploy/configure-client-status.md)
 ###  [Como monitorar o status de implantação do cliente](clients/deploy/monitor-client-deployment-status.md)
@@ -295,16 +299,22 @@
 ###  [Como gerenciar clientes Linux e UNIX](clients/manage/manage-clients-for-linux-and-unix-servers.md)
 ###  [Sincronizar dados com o OMS](clients/manage/sync-data-microsoft-operations-management-suite.md)
 ###  [Manter os clientes Mac](clients/manage/maintain-mac-clients.md)
+### [Painel de cogerenciamento](clients/manage/co-management-dashboard.md)
+
+### [Painel do Dispositivo Surface](clients/manage/surface-device-dashboard.md)
 
 ##   [Cogerenciamento de dispositivos Windows 10](clients/manage/co-management-overview.md)
 ###  [Preparar dispositivos Windows 10 para cogerenciamento](clients/manage/co-management-prepare.md)
 ###  [Mudar as cargas de trabalho do Configuration Manager para o Intune](clients/manage/co-management-switch-workloads.md)
 
 ##   [Gerenciar clientes na Internet](clients/manage/manage-clients-internet.md)
-###  [Plano para o gateway de gerenciamento de nuvem](clients/manage/plan-cloud-management-gateway.md)
-###  [Configurar o gateway de gerenciamento de nuvem](clients/manage/setup-cloud-management-gateway.md)
-###  [Monitorar clientes no gateway de gerenciamento de nuvem](clients/manage/monitor-clients-cloud-management-gateway.md)
-###  [Plano o gerenciamento de clientes baseado na Internet](clients/manage/plan-internet-based-client-management.md)
+###  [Plano para o gateway de gerenciamento de nuvem](clients/manage/cmg/plan-cloud-management-gateway.md)
+####  [Segurança e privacidade para o gateway de gerenciamento de nuvem](clients/manage/cmg/security-and-privacy-for-cloud-management-gateway.md)
+####  [Perguntas frequentes para o gateway de gerenciamento de nuvem](clients/manage/cmg/cloud-management-gateway-faq.md)
+####  [Certificados para o gateway de gerenciamento de nuvem](clients/manage/cmg/certificates-for-cloud-management-gateway.md)
+####  [Configurar o gateway de gerenciamento de nuvem](clients/manage/cmg/setup-cloud-management-gateway.md)
+####  [Monitorar clientes no gateway de gerenciamento de nuvem](clients/manage/cmg/monitor-clients-cloud-management-gateway.md)
+###  [Plano de gerenciamento de clientes baseado na Internet](clients/manage/plan-internet-based-client-management.md)
 
 ##   Coleções
 ###  [Introdução às coleções](clients/manage/collections/introduction-to-collections.md)
@@ -349,7 +359,7 @@
 ### [Como auditar o uso do controle remoto](clients/manage/remote-control/audit-remote-control-usage.md)
 ###  [Segurança e privacidade do controle remoto](clients/manage/remote-control/security-and-privacy-for-remote-control.md)
 
-##   Gerenciamento de energia
+##   Gerenciamento de Energia
 ###  [Introdução ao gerenciamento de energia](clients/manage/power/introduction-to-power-management.md)
 ### [Pré-requisitos para o gerenciamento de energia](clients/manage/power/prerequisites-for-power-management.md)
 ### [Práticas recomendadas para o gerenciamento de energia](clients/manage/power/best-practices-for-power-management.md)

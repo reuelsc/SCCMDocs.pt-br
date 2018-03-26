@@ -30,4 +30,5 @@
 ## [Criar itens de configuração de perfis e dados de usuário](deploy-use/create-user-data-and-profiles-configuration-items.md)
 ## [Criar perfis de conexão remota](deploy-use/create-remote-connection-profiles.md)
 ## [Atualizar dispositivos Windows para uma nova edição](deploy-use/upgrade-windows-version.md)
+## [Configurar o Microsoft Edge](deploy-use/browser-profiles.md)
 ## [Monitorar as configurações de conformidade](deploy-use/monitor-compliance-settings.md)
