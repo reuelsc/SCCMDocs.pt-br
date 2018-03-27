@@ -1,23 +1,23 @@
 ---
-title: "Planejar atualizações de software"
+title: Planejar atualizações de software
 titleSuffix: Configuration Manager
-description: "É essencial ter um plano para a infraestrutura de ponto de atualização de software antes de usar atualizações de software em um ambiente de produção do System Center Configuration Manager."
-keywords: 
-author: dougeby
-ms.author: dougeby
-manager: angrobe
-ms.date: 06/27/2017
+description: É essencial ter um plano para a infraestrutura de ponto de atualização de software antes de usar atualizações de software em um ambiente de produção do System Center Configuration Manager.
+keywords: ''
+author: mestew
+ms.author: mstewart
+manager: dougeby
+ms.date: 03/22/2018
 ms.topic: article
 ms.prod: configuration-manager
-ms.service: 
+ms.service: ''
 ms.technology:
 - configmgr-sum
 ms.assetid: d071b0ec-e070-40a9-b7d4-564b92a5465f
-ms.openlocfilehash: e36048141400097950a7c24733f382acacb73131
-ms.sourcegitcommit: db9978135d7a6455d83dbe4a5175af2bdeaeafd8
+ms.openlocfilehash: b57a1b584ec40d67b263959ae52f694c486481d7
+ms.sourcegitcommit: 11bf4ed40ed0cbb10500cc58bbecbd23c92bfe20
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/22/2018
+ms.lasthandoff: 03/23/2018
 ---
 # <a name="plan-for-software-updates-in-system-center-configuration-manager"></a>Planejar atualizações de software no System Center Configuration Manager
 
@@ -137,7 +137,7 @@ Habilite essa opção em uma coleção de dispositivos ou em um conjunto de disp
  É provável que a mudança de ponto de atualização de software lide com suas necessidades de tolerância a falhas. Por padrão, o Configuration Manager não dá suporte à configuração de pontos de atualização de software como clusters de NLB. Antes da versão 1702 do Configuration Manager, era possível usar o SDK do Configuration Manager para configurar até quatro pontos de atualização de software em um cluster de NLB. No entanto, a partir do Configuration Manager versão 1702, não há suporte para os pontos de atualização de software como clusters NLB, e as atualizações para o Configuration Manager versão 1702 serão bloqueadas se essa configuração for detectada. Para obter mais informações sobre o cmdlet Set-CMSoftwareUpdatePoint do PowerShell, consulte [Set-CMSoftwareUpdatePoint](http://go.microsoft.com/fwlink/?LinkId=276834).
 
 ###  <a name="BKMK_SUPSecSite"></a> Ponto de atualização de software em um site secundário  
- O ponto de atualização de software é opcional em um site secundário. Quando você instala um ponto de atualização de software em um site secundário, o banco de dados do WSUS é configurado como uma réplica do ponto de atualização de software padrão no site primário pai. Você pode instalar apenas um ponto de atualização de software em um site secundário. Os dispositivos atribuídos a um site secundário são configurados para usar um ponto de atualização de software no site pai quando um ponto de atualização de software não está instalado no site secundário. Geralmente, você instalará um ponto de atualização de software em um site secundário quando houver largura de banda de rede limitada entre os dispositivos atribuídos ao site secundário e os pontos de atualização de software no site primário pai, ou quando o ponto de atualização de software se aproximar do limite de capacidade. Após a instalação e configuração de um ponto de atualização de software com êxito no site secundário, uma política de todo o site será atualizada para computadores cliente atribuídos ao site, e eles começarão a usar o novo ponto de atualização de software.  
+ O ponto de atualização de software é opcional em um site secundário. Você pode instalar apenas um ponto de atualização de software em um site secundário. Os dispositivos atribuídos a um site secundário são configurados para usar um ponto de atualização de software no site pai quando um ponto de atualização de software não está instalado no site secundário. Geralmente, você instalará um ponto de atualização de software em um site secundário quando houver largura de banda de rede limitada entre os dispositivos atribuídos ao site secundário e os pontos de atualização de software no site primário pai, ou quando o ponto de atualização de software se aproximar do limite de capacidade. Após a instalação e configuração de um ponto de atualização de software com êxito no site secundário, uma política de todo o site será atualizada para computadores cliente atribuídos ao site, e eles começarão a usar o novo ponto de atualização de software.  
 
 ##  <a name="BKMK_SUPInstallation"></a> Planejar a instalação do ponto de atualização de software  
  Para criar uma função de sistema de sites no ponto de atualização de software no Configuration Manager, existem vários requisitos que você deve levar em consideração dependendo de sua infraestrutura do Configuration Manager. Quando você configura o ponto de atualização de software para se comunicar usando SSL, esta sessão é especificamente importante para revisão, pois você deve seguir etapas adicionais para os pontos de atualização de software na hierarquia que funcionará corretamente. Esta seção fornece informações sobre as etapas que você deve seguir para planejar e preparar com êxito a instalação do ponto de atualização de software.  
@@ -172,7 +172,7 @@ As atualizações de software requerem que uma versão com suporte do WSUS estej
  Quando um servidor do WSUS for configurado como um ponto de atualização de software, você não poderá mais usá-lo como um servidor autônomo do WSUS. Se você precisar de um servidor do WSUS autônomo separado que não seja gerenciado pelo Configuration Manager, deverá configurá-lo em um servidor diferente.
 
 ####  <a name="BKMK_WSUSAsReplica"></a> Configurar o WSUS como um servidor de réplica  
- Quando você cria uma função de sistema de ponto de atualização de software em um servidor do site primário, não pode usar um servidor do WSUS que está configurado como uma réplica. Quando o servidor do WSUS é configurado como uma réplica, o Configuration Manager não configura o servidor do WSUS e a sincronização do WSUS também falha. Quando um ponto de atualização de software é criado em um site secundário, o Configuration Manager configura o WSUS para ser um servidor de réplica do WSUS que é executado no ponto de atualização de software no site primário pai. O primeiro ponto de atualização de software instalado em um site primário é o ponto de atualização de software padrão. Pontos de atualização de software adicionais no site são configurados como réplicas do ponto de atualização de software padrão.  
+ Quando você cria uma função de sistema de ponto de atualização de software em um servidor do site primário, não pode usar um servidor do WSUS que está configurado como uma réplica. Quando o servidor do WSUS é configurado como uma réplica, o Configuration Manager não configura o servidor do WSUS e a sincronização do WSUS também falha. O primeiro ponto de atualização de software instalado em um site primário é o ponto de atualização de software padrão. Pontos de atualização de software adicionais no site são configurados como réplicas do ponto de atualização de software padrão.  
 
 ####  <a name="BKMK_WSUSandSSL"></a> Decidir se o WSUS deve ser configurado para usar SSL  
  Você pode usar o protocolo SSL para ajudar a proteger o WSUS que é executado no ponto de atualização de software. O WSUS usa o SSL para autenticar computadores cliente e servidores de WSUS downstream para o servidor do WSUS. Além disso, o WSUS usa SSL para criptografar metadados de atualização de software. Quando você opta por proteger o WSUS com SSL, deve preparar o servidor do WSUS antes de instalar o ponto de atualização de software.  
