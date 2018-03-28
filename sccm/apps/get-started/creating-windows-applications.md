@@ -1,7 +1,7 @@
 ---
 title: Criar aplicativos do Windows
 titleSuffix: Configuration Manager
-description: "Consulte quais considerações você deverá levar em conta ao criar e implantar aplicativos para dispositivos Windows."
+description: Consulte quais considerações você deverá levar em conta ao criar e implantar aplicativos para dispositivos Windows.
 ms.custom: na
 ms.date: 10/06/2016
 ms.prod: configuration-manager
@@ -12,15 +12,15 @@ ms.technology:
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 9181c84e-d74f-44ea-9bb9-f7805eb465fc
-caps.latest.revision: 
+caps.latest.revision: ''
 author: mattbriggs
 ms.author: mabrigg
 manager: angrobe
 ms.openlocfilehash: 76e421571fa96d5e9ee808ac5d61361f52c6cbe3
-ms.sourcegitcommit: 52080ef1b0f9a27c123711ef274ac3ffe070e8e0
+ms.sourcegitcommit: 11bf4ed40ed0cbb10500cc58bbecbd23c92bfe20
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/20/2018
+ms.lasthandoff: 03/27/2018
 ---
 # <a name="create-windows-applications-with-system-center-configuration-manager"></a>Criar aplicativos do Windows com o System Center Configuration Manager
 
@@ -34,7 +34,7 @@ Além dos outros requisitos e procedimentos do System Center Configuration Manag
 |Tipo de dispositivo|Tipos de arquivos com suporte|  
 |-----------------|---------------------|  
 |Windows RT e Windows RT 8.1|\*.appx, \*.appxbundle|  
-|Windows 8.1 e posterior registrados como um dispositivo móvel|\*.appx, \*.appxbundle|  
+|Windows 8.1 e posterior registrados como um dispositivo móvel|*.appx, \*.appxbundle|  
 
  Há suporte para as seguintes ações de implantação:  
 

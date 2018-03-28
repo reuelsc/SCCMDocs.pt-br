@@ -1,7 +1,7 @@
 ---
-title: "Introdução ao gerenciamento de aplicativos"
+title: Introdução ao gerenciamento de aplicativos
 titleSuffix: Configuration Manager
-description: "Descubra as informações básicas de que você precisará para gerenciar e implantar aplicativos do System Center Configuration Manager."
+description: Descubra as informações básicas de que você precisará para gerenciar e implantar aplicativos do System Center Configuration Manager.
 ms.custom: na
 ms.date: 12/23/2016
 ms.prod: configuration-manager
@@ -12,15 +12,15 @@ ms.technology:
 ms.tgt_pltfrm: na
 ms.topic: get-started-article
 ms.assetid: 08f711ba-83bf-4b5f-9520-a0778c6ae7eb
-caps.latest.revision: 
+caps.latest.revision: ''
 author: mattbriggs
 ms.author: mabrigg
 manager: angrobe
 ms.openlocfilehash: a8a66169f3c187f8fa0319548ddde23b399811f3
-ms.sourcegitcommit: 52080ef1b0f9a27c123711ef274ac3ffe070e8e0
+ms.sourcegitcommit: 11bf4ed40ed0cbb10500cc58bbecbd23c92bfe20
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/20/2018
+ms.lasthandoff: 03/27/2018
 ---
 # <a name="introduction-to-application-management-in-system-center-configuration-manager"></a>Introdução ao gerenciamento de aplicativos no System Center Configuration Manager
 
@@ -55,7 +55,7 @@ Neste tópico, você aprenderá as noções básicas que você precisa saber ant
  O Configuration Manager permite que você implante os seguintes tipos de aplicativos:  
 
 - Windows Installer (arquivo *.msi)
-- Pacote de aplicativos do Windows (\*.appx, \*.appxbundle)
+- Pacote de aplicativos do Windows (*.appx, *.appxbundle)
 - Pacote de aplicativo Windows (na Windows Store)
 - Microsoft Application Virtualization 4
 - Microsoft Application Virtualization 5
