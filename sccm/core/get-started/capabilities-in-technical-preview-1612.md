@@ -1,25 +1,26 @@
 ---
 title: Recursos no Technical Preview 1612
 titleSuffix: Configuration Manager
-description: "Saiba mais sobre os recursos disponíveis no Technical Preview do System Center Configuration Manager, versão 1612."
+description: Saiba mais sobre os recursos disponíveis no Technical Preview do System Center Configuration Manager, versão 1612.
 ms.custom: na
 ms.date: 01/23/2017
 ms.prod: configuration-manager
-ms.technology: configmgr-other
+ms.technology:
+- configmgr-other
 ms.reviewer: na
 ms.suite: na
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: bceab2e8-2f05-4a17-9ac8-a7a558670fb7
-caps.latest.revision: "5"
+caps.latest.revision: 5
 author: erikje
 ms.author: erikje
 manager: angrobe
 ms.openlocfilehash: 80cace2bec8cb9c39d5f3f00ea244b697e1d75c9
-ms.sourcegitcommit: 7fe45ff75f05f7cc03ad021db8119791abe18049
+ms.sourcegitcommit: 11bf4ed40ed0cbb10500cc58bbecbd23c92bfe20
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 12/01/2017
+ms.lasthandoff: 03/27/2018
 ---
 # <a name="capabilities-in-technical-preview-1612-for-system-center-configuration-manager"></a>Funcionalidades do Technical Preview 1612 do System Center Configuration Manager
 
@@ -156,7 +157,7 @@ Depois de instalar o Technical Preview 1612, você poderá encontrar o **Content
 
 A ferramenta lançada com esse Technical Preview visa substituir as versões mais antigas de ferramentas similares lançadas para os produtos anteriores do Configuration Manager. Embora esta versão da ferramenta deixe de funcionar após 1º de março de 2017, novas versões serão lançadas com futuros Technical Previews até que essa ferramenta seja lançada como parte do Branch Atual ou de uma versão fora de banda pronta para produção.
 
-### <a name="requirements"></a>Requisitos  
+### <a name="requirements"></a>requisitos  
  - A ferramenta pode ser executada diretamente no computador que hospeda o ponto de distribuição, ou remotamente de outro servidor. A ferramenta só pode ser executada em um único ponto de distribuição por vez.
  - A conta de usuário que executa a ferramenta diretamente deve ter permissões de administração baseada em funções equivalentes a um Administrador Completo na hierarquia do Configuration Manager.  A ferramenta não funcionará quando a conta de usuário tiver as permissões como um membro de um grupo de segurança do Windows que contém as permissões de Administrador Completo.
 
