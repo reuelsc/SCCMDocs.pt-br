@@ -1,7 +1,7 @@
 ---
 layout: HubPage
-hide_bc: 
-title: "Documentação do System Center Configuration Manager"
+hide_bc: true
+title: Documentação do System Center Configuration Manager
 description: Saiba como usar o System Center Configuration Manager.
 ms.topic: hub-page
 ms.openlocfilehash: 250f5cf0793f5afd396a82f96389c937ed9be14b
