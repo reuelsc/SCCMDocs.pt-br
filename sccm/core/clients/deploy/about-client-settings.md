@@ -1,9 +1,9 @@
 ---
-title: "Configurações do cliente"
+title: Configurações do cliente
 titleSuffix: Configuration Manager
-description: "Escolha as configurações do cliente usando o console de administração no System Center Configuration Manager."
+description: Saiba mais sobre as configurações padrão e personalizadas para controlar os comportamentos do cliente
 ms.custom: na
-ms.date: 01/05/2018
+ms.date: 03/22/2018
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
@@ -12,16 +12,16 @@ ms.technology:
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: f7560876-8084-4570-aeab-7fd44f4ba737
-caps.latest.revision: 
-caps.handback.revision: 
+caps.latest.revision: 15
+caps.handback.revision: 0
 author: aczechowski
 ms.author: aaroncz
-manager: angrobe
-ms.openlocfilehash: dddfde242a67a0b4a9311c0fb6f0b2f0e6742cc2
-ms.sourcegitcommit: fbd4a9d2fa8ed4ddd3a0fecc4a2ec4fc0ccc3d0c
+manager: dougeby
+ms.openlocfilehash: 42b9364fc88acc3f403db8d2ca9243a117fd78bf
+ms.sourcegitcommit: 11bf4ed40ed0cbb10500cc58bbecbd23c92bfe20
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/19/2018
+ms.lasthandoff: 03/23/2018
 ---
 # <a name="about-client-settings-in-system-center-configuration-manager"></a>Sobre as configurações do cliente no System Center Configuration Manager
 
@@ -114,18 +114,19 @@ Essa configuração se aplica aos usuários quando o computador está na intrane
 
 Defina isso como **Sim** para que os usuários recebam a política de usuário em computadores baseados na Internet. Os seguintes requisitos também se aplicam:  
 
--   O cliente e o site são configurados para o gerenciamento de clientes baseado na Internet.
+-   O cliente e o site são configurados para o [gerenciamento de clientes baseado na Internet](/sccm/core/clients/manage/plan-internet-based-client-management) ou um [gateway de gerenciamento de nuvem](/sccm/core/clients/manage/cmg/plan-cloud-management-gateway).  
 
 -   A configuração **Habilitar política de usuário em clientes** é **Sim**.  
 
--   O ponto de gerenciamento baseado na Internet autentica com êxito o usuário usando a autenticação do Windows (Kerberos ou NTLM).  
+-   O ponto de gerenciamento baseado na Internet autentica com êxito o usuário usando a autenticação do Windows (Kerberos ou NTLM). Para obter mais informações, consulte [Considerações sobre a comunicação do cliente pela Internet](../../../core/plan-design/hierarchy/communications-between-endpoints.md#BKMK_clientspan).  
+
+-   A partir da versão 1710, o gateway de gerenciamento de nuvem autentica o usuário com êxito usando o Azure Active Directory. Para obter mais informações, consulte [Implantar aplicativos disponíveis para o usuário em dispositivos ingressados no Azure AD](\sccm\apps\deploy-use\deploy-applications#deploy-user-available-applications-on-azure-ad-joined-devices).  
 
 Se você definir essa opção como **Não** ou se um dos requisitos anteriores não forem atendidos, um computador na Internet receberá somente as políticas do computador. Nesse cenário, os usuários ainda podem ver, solicitar e instalar aplicativos de um catálogo de aplicativos baseados na Internet. Se essa configuração for **Não**, mas **Habilitar política de usuário em clientes** for **Sim**, os usuários não receberão as políticas de usuário até que o computador esteja conectado à intranet.  
 
-Para saber mais sobre como gerenciar clientes na Internet, consulte [Considerações sobre a comunicação do cliente pela Internet ou por uma floresta não confiável](../../../core/plan-design/hierarchy/communications-between-endpoints.md#BKMK_clientspan).  
-
 > [!NOTE]  
->  As solicitações de aprovação de aplicativo dos usuários não exigem autenticação de usuário nem políticas de usuário.  
+>  Para o gerenciamento de clientes baseado na Internet, as solicitações de aprovação de aplicativo dos usuários não exigem a autenticação de usuário nem políticas de usuário. O gateway de gerenciamento de nuvem não dá suporte a solicitações de aprovação de aplicativo.   
+
 
 
 ## <a name="cloud-services"></a>Serviços de Nuvem
@@ -228,7 +229,7 @@ Digite o nome que os usuários veem no Centro de Software. Essa informação de 
 
 ### <a name="use-new-software-center"></a>Usar o novo Centro de Software
 
-Se você definir isso como **Sim**, todos os computadores clientes usam o Centro de Software. O Centro de Software mostra os aplicativos disponíveis para o usuário que estavam acessíveis anteriormente apenas no Catálogo de Aplicativos. O Catálogo de Aplicativos exige o Silverlight, que não é um pré-requisito para o Centro de Software.   
+Se você definir isso como **Sim**, todos os computadores clientes usam o Centro de Software. O Centro de Software mostra os aplicativos disponíveis para o usuário que estavam acessíveis anteriormente apenas no Catálogo de Aplicativos. O Catálogo de Aplicativos exige o Silverlight, que não é um pré-requisito para o Centro de Software. A partir do Configuration Manager 1802, a configuração padrão é **Sim**.  
 
 As funções do sistema de sites do ponto de sites da Web do catálogo de aplicativos e do ponto de serviços Web do catálogo de aplicativos ainda são necessárias para que os aplicativos disponíveis para o usuário sejam exibidos no Centro de Software.  
 
@@ -322,6 +323,21 @@ As configurações a seguir devem ter uma duração mais curta do que a menor ja
 
 Para obter mais informações sobre as janelas de manutenção, consulte [Como usar janelas de manutenção no System Center Configuration Manager](../../../core/clients/manage/collections/use-maintenance-windows.md).
 
+
+
+## <a name="delivery-optimization"></a>Otimização de Entrega
+
+<!-- 1324696 -->
+Você usa os grupos de limites do Configuration Manager para definir e regular a distribuição de conteúdo em sua rede corporativa e para escritórios remotos. A [Otimização de Entrega do Windows](/windows/deployment/update/waas-delivery-optimization) é uma tecnologia ponto-a-ponto baseada na nuvem para compartilhar conteúdo entre dispositivos do Windows 10. A partir da versão 1802, configure a Otimização de Entrega para usar os grupos de limites ao compartilhar conteúdo entre pares.
+
+ > [!Note]
+ > A Otimização de Entrega está disponível apenas em clientes do Windows 10
+
+### <a name="use-configuration-manager-boundary-groups-for-delivery-optimization-group-id"></a>Usar os grupos de limites do Configuration Manager para a ID do grupo de Otimização de Entrega
+ Escolha **Sim** para aplicar o identificador de grupo de limites como o identificador de grupo da Otimização de Entrega no cliente. Quando o cliente se comunica com o serviço de nuvem da Otimização de Entrega, ele usa esse identificador para localizar os pares com o conteúdo desejado. 
+
+
+
 ##  <a name="endpoint-protection"></a>Endpoint Protection  
 >  [!Tip]   
 > Além das informações a seguir, você pode encontrar detalhes de como usar as configurações do cliente do Endpoint Protection no [Cenário de exemplo: usar o System Center Endpoint Protection para proteger os computadores contra malware no System Center Configuration Manager](/sccm/protect/deploy-use/scenarios-endpoint-protection).
@@ -330,11 +346,11 @@ Para obter mais informações sobre as janelas de manutenção, consulte [Como u
 
 Escolha **Sim** se deseja gerenciar clientes existentes do Endpoint Protection e do Windows Defender em computadores da hierarquia.  
 
-Escolha esta opção se você já tiver instalado o cliente Endpoint Protection e desejar gerenciá-lo com o Configuration Manager. Essa instalação separada inclui um processo com script que usa um aplicativo do Configuration Manager ou um pacote e programa.
+Escolha esta opção se você já tiver instalado o cliente Endpoint Protection e desejar gerenciá-lo com o Configuration Manager. Essa instalação separada inclui um processo com script que usa um aplicativo do Configuration Manager ou um pacote e programa. A partir do Configuration Manager 1802, os dispositivos Windows 10 não precisam ter o agente do Endpoint Protection instalado. No entanto, esses dispositivos ainda precisarão ter a opção **Gerenciar o cliente do Endpoint Protection em computadores cliente** habilitada. <!--503654-->
 
 ### <a name="install-endpoint-protection-client-on-client-computers"></a>Instalar o cliente do Endpoint Protection em computadores cliente
 
-Escolha **Sim** para instalar e habilitar o cliente Endpoint Protection em computadores cliente que ainda não executam o cliente.  
+Escolha **Sim** para instalar e habilitar o cliente Endpoint Protection em computadores cliente que ainda não executam o cliente. A partir do Configuration Manager 1802, os clientes do Windows 10 não precisam ter o agente do Endpoint Protection instalado.  
 
 > [!NOTE]  
 >  Se o cliente do Endpoint Protection já estiver instalado, escolher **Não** não o desinstalará. Para desinstalar o cliente do Endpoint Protection, defina a configuração do cliente **Gerenciar cliente do Endpoint Protection em computadores cliente** como **Não**. Em seguida, implante um pacote e programa para desinstalar o cliente do Endpoint Protection.  
@@ -609,8 +625,14 @@ Insira o nome da organização que os usuários veem no Centro de Software.
 - **Esquema de cores para o Centro de Software** </br>
 Selecione **Selecionar Cor** para definir a cor primária usada pelo Centro de Software.
 - **Selecionar um logotipo para o Centro de Software** </br>
-Selecione **Procurar** para selecionar uma imagem a ser exibida no Centro de Software. O logotipo deve ser um JPEG, PNG ou BMP de 400 x 100 pixels com tamanho máximo de 750 KB. O nome do arquivo de logotipo não deve conter espaços. <!--SMS.503731 space in filename, noticed BMP missing as filetype-->
+Selecione **Procurar** para selecionar uma imagem a ser exibida no Centro de Software. O logotipo deve ser um JPEG, PNG ou BMP de 400 x 100 pixels com tamanho máximo de 750 KB. O nome do arquivo de logotipo não deve conter espaços.  
+         
+### <a name="bkmk_HideUnapproved"></a> Ocultar os aplicativos não aprovados no Centro de Software
+A partir do Configuration Manager versão 1802, quando essa opção é habilitada, os aplicativos disponíveis para o usuário que exigem aprovação são ocultos no Centro de Software.   <!--1355146-->
 
+### <a name="bkmk_HideInstalled"></a> Ocultar os aplicativos instalados no Centro de Software
+A partir do Configuration Manager versão 1802, os aplicativos que já estão instalados não são mais exibidos na guia Aplicativos quando essa opção é habilitada. Essa opção é definida como o padrão quando você instala ou atualiza para o Configuration Manager 1802.  Os aplicativos instalados ainda ficam disponíveis para exame na guia de status da instalação. <!--1357592-->   
+  
 ### <a name="software-center-tab-visibility"></a>Visibilidade da guias do Centro de Software
 Defina as configurações adicionais nesse grupo como **Sim** para tornar as seguintes guias visíveis no Centro de Software:
 - **Aplicativos**

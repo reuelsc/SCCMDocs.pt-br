@@ -1,9 +1,9 @@
 ---
-title: "Etapas da sequência de tarefas"
+title: Etapas da sequência de tarefas
 titleSuffix: Configuration Manager
-description: "Saiba mais sobre as etapas de sequência de tarefas que você pode adicionar a uma sequência de tarefas do Configuration Manager."
+description: Saiba mais sobre as etapas que você pode adicionar a uma sequência de tarefas do Configuration Manager.
 ms.custom: na
-ms.date: 01/12/2018
+ms.date: 03/22/2018
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
@@ -12,16 +12,16 @@ ms.technology:
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 7c888a6f-8e37-4be5-8edb-832b218f266d
-caps.latest.revision: 
-caps.handback.revision: 
+caps.latest.revision: 26
+caps.handback.revision: 0
 author: aczechowski
 ms.author: aaroncz
-manager: angrobe
-ms.openlocfilehash: 5320d7747f7e2c6164da8c1801e631b749935d6d
-ms.sourcegitcommit: b13da5ad8ffd58e3b89fa6d7170e1dec3ff130a4
+manager: dougeby
+ms.openlocfilehash: ad68209784b78da5c6e75745094ba8e6bc002c44
+ms.sourcegitcommit: 11bf4ed40ed0cbb10500cc58bbecbd23c92bfe20
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/01/2018
+ms.lasthandoff: 03/23/2018
 ---
 # <a name="task-sequence-steps-in-system-center-configuration-manager"></a>Etapas da sequência de tarefas no System Center Configuration Manager
 
@@ -509,6 +509,8 @@ No editor de sequência de tarefas, clique em **Adicionar**, selecione **Geral**
 -   Pacotes de driver  
 
 -   Pacotes  
+
+-   Imagens de inicialização
     
 Esta etapa funciona bem em uma sequência de tarefas para atualizar um sistema operacional nos seguintes cenários:  
 

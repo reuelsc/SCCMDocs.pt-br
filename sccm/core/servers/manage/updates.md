@@ -1,26 +1,27 @@
 ---
-title: "Atualizações"
+title: Atualizações
 titleSuffix: Configuration Manager
-description: "Saiba mais sobre um método de serviço no console chamado **Atualizações e Manutenção** que facilita a localização e a instalação das atualizações recomendadas."
+description: Saiba mais sobre um método de serviço no console chamado **Atualizações e Manutenção** que facilita a localização e a instalação das atualizações recomendadas.
 ms.custom: na
-ms.date: 11/20/2017
+ms.date: 03/22/2018
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
-ms.technology: configmgr-other
+ms.technology:
+- configmgr-other
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 3a832943-580a-4a40-b454-961d0854ac2b
-caps.latest.revision: "51"
-caps.handback.revision: "0"
+caps.latest.revision: 51
+caps.handback.revision: 0
 author: mestew
 ms.author: mstewart
 manager: angrobe
-ms.openlocfilehash: a90222d16391d1e75d041c95c048a1d8d19bf278
-ms.sourcegitcommit: daa080cf220835f157a23e8c8e2bd2781b869bb7
+ms.openlocfilehash: 8be32aa07819239820711079e4ff3637e96367db
+ms.sourcegitcommit: 11bf4ed40ed0cbb10500cc58bbecbd23c92bfe20
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 12/04/2017
+ms.lasthandoff: 03/23/2018
 ---
 # <a name="updates-for-system-center-configuration-manager"></a>Atualizações para o System Center Configuration Manager
 
@@ -47,7 +48,7 @@ Se você usa o branch do Technical Preview, consulte [Technical Preview do Syste
 
 
 ##  <a name="bkmk_Baselines"></a> Versões de linha de base e atualização  
- A primeira versão da ramificação atual do System Center Configuration Manager era a versão 1511, que foi a versão de linha de base. As versões mais recentes de linha de base incluem a versão 1606 e 1702:
+ A primeira versão da ramificação atual do System Center Configuration Manager era a versão 1511, que foi a versão de linha de base. As versões mais recentes de linha de base incluem a versão 1702 e 1802:
 
 -   Use a versão de linha de base mais recente ao instalar um novo site em uma nova hierarquia.  
 
@@ -73,8 +74,9 @@ Algumas atualizações do Configuration Manager estão disponíveis como uma ver
 
 As seguintes versões do Configuration Manager estão disponíveis como uma linha de base e/ou uma atualização:  
 
-|Versão |Data de disponibilidade|[Data de término do suporte](/sccm/core/servers/manage/current-branch-versions-supported) |Linha de base|Atualização no console|  
+|Version |Data de disponibilidade|[Data de término do suporte](/sccm/core/servers/manage/current-branch-versions-supported) |Linha de base|Atualização no console|  
 |-------------|-----------|------------|--------------|------------------------|  
+|[1802](/sccm/core/plan-design/changes/whats-new-in-version-1802)<br /><br /> 5.00.8634.1000|22 de março de 2018|22 de setembro de 2019|Sim|Sim|
 |[1710](/sccm/core/plan-design/changes/whats-new-in-version-1710)<br /><br /> 5.00.8577.1000|20 de novembro de 2017|20 de maio de 2019|Não|Sim|
 |[1706](/sccm/core/plan-design/changes/whats-new-in-version-1706)<br /><br /> 5.00.8540.1000|31 de julho de 2017|31 de julho de 2018|Não|Sim|
 |[1702](/sccm/core/plan-design/changes/whats-new-in-version-1702)<br /><br /> 5.00.8498.1000|27 de março de 2017| 27 de março de 2018|Sim|Sim|
@@ -85,7 +87,7 @@ As seguintes versões do Configuration Manager estão disponíveis como uma linh
 | 1511 <br /><br /> 5.00.8325.1000|8 de dezembro de 2015| 8 de dezembro de 2016|Sim|Não|  
 
 
-*(Observação 1)* A mídia de linha de base 1606 e 1702 está disponível como parte das versões do Microsoft System Center 2016 ou do System Center Configuration Manager (Branch Atual e Branch de Manutenção de Longo Prazo) no VLSC [(Volume License Service Center)](https://www.microsoft.com/Licensing/servicecenter/Downloads/DownloadsAndKeys.aspx). Por exemplo, no VLSC você pode pesquisar por *System Center Config Mgr (branch atual e LTSB)*, e a mídia de linha de base versão 1606 e 1702 retornam e ficam disponível para download.
+*(Observação 1)* A mídia de linha de base das versões 1802 e 1702 está disponível como parte das versões do Microsoft System Center 2016 ou do System Center Configuration Manager (Branch Atual e Branch de Manutenção de Longo Prazo) no VLSC [(Centro de Atendimento de Licença de Volume)](https://www.microsoft.com/Licensing/servicecenter/Downloads/DownloadsAndKeys.aspx). Por exemplo, no VLSC, pesquise por *System Center Config Mgr (branch atual e LTSB)* e a mídia de linha de base das versões 1802 e 1702 será retornada e ficará disponível para download.
 
 Para verificar a versão do site do Configuration Manager, no console vá para **Sobre o System Center Configuration Manager** no canto superior esquerdo do console onde é exibida a versão do novo site e do console.  
 
@@ -93,7 +95,7 @@ Para verificar a versão do site do Configuration Manager, no console vá para *
  Ao usar uma instalação pronta para produção do System Center Configuration Manager, também conhecida como o branch atual, a maioria das atualizações para instalar ficam disponíveis usando o canal Atualizações e Manutenção. Esse método identifica, baixa e disponibiliza as atualizações que se aplicam à versão atual e à configuração da sua infraestrutura e inclui apenas as atualizações que a Microsoft recomenda para todos os clientes.   
  Elas incluem:  
 
--   Novas versões, como a versão 1610, 1702 ou 1706.  
+-   Novas versões, como a versão 1702, 1706, 1710 ou 1802.  
 
 -   Atualizações, que incluem novos recursos para a versão atual.
 

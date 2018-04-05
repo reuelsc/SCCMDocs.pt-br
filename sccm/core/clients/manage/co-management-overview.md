@@ -1,20 +1,22 @@
 ---
 title: Cogerenciamento para dispositivos Windows 10
+titleSuffix: Configuration Manager
 description: Saiba como gerenciar dispositivos Windows 10 simultaneamente usando o Configuration Manager e o Microsoft Intune.
-keywords: 
-author: dougeby
-manager: angrobe
-ms.date: 11/20/2017
+keywords: ''
+author: mestew
+ms.author: mstewart
+manager: dougeby
+ms.date: 03/22/2018
 ms.topic: article
 ms.prod: configuration-manager
-ms.service: 
-ms.technology: 
+ms.service: ''
+ms.technology: ''
 ms.assetid: d6bbc787-83a5-44b4-ad64-016e5da7413f
-ms.openlocfilehash: 0cc11a05013fd9c25ee98ec35adcbe822d8a21fb
-ms.sourcegitcommit: 389c4e5b4e9953b74c13b1689195f99c526fa737
+ms.openlocfilehash: e4b8bd58d30cd87ffc461289edbfc5da9a684cda
+ms.sourcegitcommit: 11bf4ed40ed0cbb10500cc58bbecbd23c92bfe20
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/09/2018
+ms.lasthandoff: 03/23/2018
 ---
 # <a name="co-management-for-windows-10-devices"></a>Cogerenciamento para dispositivos Windows 10    
 <!-- 1350871 -->
@@ -50,7 +52,7 @@ Estes são os pré-requisitos gerais para habilitar o cogerenciamento:
 - [Gateway de Gerenciamento de Nuvem](/sccm/core/clients/manage/manage-clients-internet#cloud-management-gateway) no Configuration Manager (quando o Intune é usado para instalar o cliente do Configuration Manager)
 
 ## <a name="workloads-you-can-switch-to-intune"></a>Cargas de trabalho que você pode mudar para o Intune
-Depois que você habilitar o cogerenciamento, o Configuration Manager continuará a gerenciar todas as cargas de trabalho. Quando você decidir que está pronto, poderá fazer com que o Intune comece a gerenciar as cargas de trabalho disponíveis. Você pode fazer com que o Intune gerencie as cargas de trabalho as seguir.   
+Depois que você habilitar o cogerenciamento, o Configuration Manager continuará a gerenciar todas as cargas de trabalho. Quando você decidir que está pronto, poderá fazer com que o Intune comece a gerenciar as cargas de trabalho disponíveis. Você pode fazer com que o Intune gerencie as seguintes cargas de trabalho:   
 
 ### <a name="compliance-policies"></a>Políticas de conformidade
 As políticas de conformidade definem as regras e configurações que um dispositivo deve obedecer para ser considerado em conformidade pelas políticas de acesso condicional. Você também pode usar as políticas de conformidade para monitorar e corrigir problemas com dispositivos, independentemente do acesso condicional. Para obter detalhes, consulte [Políticas de conformidade do dispositivo](/sccm/mdm/deploy-use/device-compliance-policies).  
@@ -60,6 +62,10 @@ As políticas do Windows Update para Empresas permitem configurar políticas de 
 
 ### <a name="resource-access-policies"></a>Políticas de acesso a recursos
 As políticas de acesso a recursos definem as configurações de VPN, Wi-Fi, email e certificado nos dispositivos. Para obter detalhes, consulte [Implantar perfis de acesso a recursos](/sccm/protect/deploy-use/deploy-wifi-vpn-email-cert-profiles).
+
+### <a name="endpoint-protection"></a>Endpoint Protection 
+<!-- 1357365 -->
+A partir do Configuration Manager 1802, a carga de trabalho do Endpoint Protection pode ser transferida para o Intune. Para obter detalhes, consulte [Cargas de trabalho podem ser transferidas para o Intune](/sccm/core/clients/manage/co-management-switch-workloads.md#Workloads-able-to-be-transitioned-to-Intune) e [Endpoint Protection no Configuration Manager](/sccm/protect/deploy-use/endpoint-protection).
 
 ## <a name="architectural-overview-for-co-management"></a>Visão geral de arquitetura para cogerenciamento
 O diagrama a seguir fornece uma visão geral da arquitetura de cogerenciamento e como ela se encaixa nas infraestruturas existentes do Configuration e do Intune.

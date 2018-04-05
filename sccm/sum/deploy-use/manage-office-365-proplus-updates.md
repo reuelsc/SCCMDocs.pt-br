@@ -1,23 +1,23 @@
 ---
-title: "Gerenciar atualizações do Office 365 ProPlus"
+title: Gerenciar atualizações do Office 365 ProPlus
 titleSuffix: Configuration Manager
-description: "O Configuration Manager sincroniza a atualização de clientes do Office 365 do catálogo do WSUS para o servidor do site para disponibilizar as atualizações para implantar em clientes."
-keywords: 
+description: O Configuration Manager sincroniza a atualização de clientes do Office 365 do catálogo do WSUS para o servidor do site para disponibilizar as atualizações para implantar em clientes.
+keywords: ''
 author: mestew
 ms.author: mstewart
 manager: dougeby
-ms.date: 02/16/2018
+ms.date: 03/22/2018
 ms.topic: article
 ms.prod: configuration-manager
-ms.service: 
+ms.service: ''
 ms.technology:
 - configmgr-sum
 ms.assetid: eac542eb-9aa1-4c63-b493-f80128e4e99b
-ms.openlocfilehash: 2f765df84b94524cf56f6d1d9e051157f1a325ef
-ms.sourcegitcommit: 45ff3ffa040eada5656b17f47dcabd3c637bdb60
+ms.openlocfilehash: 5bd1a3afd7957e4db1b43e344a7b88e18de50695
+ms.sourcegitcommit: 11bf4ed40ed0cbb10500cc58bbecbd23c92bfe20
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/23/2018
+ms.lasthandoff: 03/23/2018
 ---
 # <a name="manage-office-365-proplus-with-configuration-manager"></a>Gerenciar o Office 365 ProPlus com o Configuration Manager
 
@@ -25,13 +25,13 @@ ms.lasthandoff: 02/23/2018
 
 O Configuration Manager permite gerenciar aplicativos do Office 365 ProPlus das seguintes maneiras:
 
-- [Painel de Gerenciamento de Clientes do Office 365](#office-365-client-management-dashboard): a partir do Configuration Manager versão 1610, você pode examinar as informações de clientes do Office 365 no painel de Gerenciamento de Clientes do Office 365.    
+- [Painel de gerenciamento de clientes do Office 365](#office-365-client-management-dashboard): examine as informações de clientes do Office 365 no painel de gerenciamento de clientes do Office 365. A partir do Configuration Manager versão 1802, o painel de gerenciamento de clientes do Office 365 exibe uma lista de dispositivos relevantes quando seções de gráfico são selecionadas. <!--1357281 -->
 
 - [Implantar aplicativos do Office 365](#deploy-office-365-apps): a partir da versão 1702, você pode iniciar o Instalador do Office 365 no painel de Gerenciamento de Clientes do Office 365 para facilitar a experiência inicial de instalação do aplicativo do Office 365. O assistente permite que você defina as configurações de instalação do Office 365, baixe arquivos das redes de distribuição de conteúdo (CDNs) do Office, e crie e implante um aplicativo de script com o conteúdo.    
 
-- [Implantar atualizações do Office 365](#deploy-office-365-updates): a partir do Configuration Manager versão 1602, você pode gerenciar atualizações de clientes do Office 365 usando o fluxo de trabalho do gerenciamento de atualizações de software. Quando a Microsoft publica uma nova atualização de cliente do Office 365 na Rede de Distribuição de Conteúdo do Office (CDN), a Microsoft também publica um pacote de atualização para o Windows Server Update Services (WSUS). Após o Configuration Manager sincronizar a atualização de clientes do Office 365 do catálogo do WSUS para o servidor do site, a atualização ficará disponível para implantar em clientes.    
+- [Implantar atualizações do Office 365](#deploy-office-365-updates): você pode gerenciar as atualizações de cliente do Office 365 usando o fluxo de trabalho do gerenciamento de atualização de software. Quando a Microsoft publica uma nova atualização de cliente do Office 365 na Rede de Distribuição de Conteúdo do Office (CDN), a Microsoft também publica um pacote de atualização para o Windows Server Update Services (WSUS). Após o Configuration Manager sincronizar a atualização de clientes do Office 365 do catálogo do WSUS para o servidor do site, a atualização ficará disponível para implantar em clientes.    
 
-- [Adicionar idiomas para downloads de atualizações do Office 365](#add-languages-for-office-365-update-downloads): a partir do Configuration Manager versão 1610, você pode adicionar suporte do Configuration Manager para baixar atualizações de quaisquer idiomas com suporte do Office 365. Isso significa que o Configuration Manager não precisa dar suporte ao idioma, contanto que o Office 365 dê esse suporte. Antes do Configuration Manager versão 1610, você deve baixar e implantar as atualizações nos mesmos idiomas configurados nos clientes do Office 365. 
+- [Adicionar idiomas para downloads de atualizações do Office 365](#add-languages-for-office-365-update-downloads): você pode adicionar suporte para o Configuration Manager para baixar atualizações em qualquer idioma compatível com o Office 365. Isso significa que o Configuration Manager não precisa dar suporte ao idioma, contanto que o Office 365 dê esse suporte. Antes do Configuration Manager versão 1610, você deve baixar e implantar as atualizações nos mesmos idiomas configurados nos clientes do Office 365. 
 
 - [Alterar o canal de atualização](#change-the-update-channel-after-you-enable-office-365-clients-to-receive-updates-from-configuration-manager): use a política de grupo para distribuir uma alteração de valor da chave do registro para os clientes do Office 365 para alterar o canal de atualização.
 
@@ -45,10 +45,10 @@ O painel de Gerenciamento de Clientes do Office 365 fornece gráficos com as seg
 - Canais do cliente do Office 365     
   Para mais informações, confira [Visão geral dos canais de atualização do Office 365 ProPlus](https://technet.microsoft.com/library/mt455210.aspx).
 
-Para exibir o painel de Gerenciamento de Clientes do Office 365, no console do Configuration Manager, vá até **Biblioteca de Software** > **Visão Geral** > **Gerenciamento de Clientes do Office 365**. Na parte superior do painel, use a configuração suspensa **Coleção** para filtrar os dados do painel por membros de uma coleção específica.
+Para exibir o painel de Gerenciamento de Clientes do Office 365, no console do Configuration Manager, vá até **Biblioteca de Software** > **Visão Geral** > **Gerenciamento de Clientes do Office 365**. Na parte superior do painel, use a configuração suspensa **Coleção** para filtrar os dados do painel por membros de uma coleção específica. A partir do Configuration Manager versão 1802, o painel de gerenciamento de clientes do Office 365 exibe uma lista de dispositivos relevantes quando seções de gráfico são selecionadas.
 
 ### <a name="display-data-in-the-office-365-client-management-dashboard"></a>Dados de exibição no painel de Gerenciamento de Clientes do Office 365
-Os dados que são exibidos no painel de Gerenciamento de Clientes do Office 365 vêm de inventário de hardware. Habilite o inventário de hardware e selecione a classe de inventário de hardware **Configurações do Office 365 ProPlus** para que os dados sejam exibidos no painel.
+Os dados que são exibidos no painel de Gerenciamento de Clientes do Office 365 vêm de inventário de hardware. Habilite o inventário de hardware e selecione a classe de inventário de hardware **Configurações do Office 365 ProPlus** para que os dados sejam exibidos no painel. 
 #### <a name="to-display-data-in-the-office-365-client-management-dashboard"></a>Como exibir dados no painel de Gerenciamento de Clientes do Office 365
 1. Habilite o inventário de hardware se ele ainda não estiver habilitado. Para mais detalhes, consulte [Configurar inventário de hardware](\sccm\core\clients\manage\configure-hardware-inventory).
 2. No console do Configuration Manager, acesse **Administração** > **Configurações do Cliente** > **Configurações do Cliente Padrão**.  
@@ -79,7 +79,7 @@ Para versões anteriores do Configuration Manager, execute as seguintes etapas p
 1. No console do Configuration Manager, navegue até **Biblioteca de Software** > **Visão Geral** > **Gerenciamento de Cliente do Office 365**.
 2. Clique em **Office 365 Installer (Instalador do Office 365)** no painel superior direito. O Assistente de Instalação de Cliente do Office 365 é aberto.
 3. Na página **Configurações de Aplicativo**, forneça um nome e uma descrição para o aplicativo, insira o local de download para os arquivos e clique em **Avançar**. O local deve ser especificado como &#92;&#92;*servidor*&#92;*compartilhar*.
-4. Na página **Import Client Settings (Importar Configurações do Cliente)**, escolha se deseja importar as configurações do cliente do Office 365 de um arquivo de configuração XML existente ou especificar as configurações manualmente e clique em **Avançar**.  
+4. Na página **Importar Configurações de Cliente**, escolha se deseja importar as configurações de cliente do Office 365 de um arquivo de configuração XML existente ou especificar as configurações manualmente. Clique em **Avançar** quando terminar.  
 
     Quando você tiver um arquivo de configuração existente, insira o local do arquivo e vá para a etapa 7. Você deve especificar o local no formulário &#92;&#92;*server*&#92;*share*&#92;*filename*.XML.
     > [!IMPORTANT]    
@@ -99,7 +99,7 @@ Depois de criar e implantar os aplicativos do Office 365 usando o Instalador do 
 
 
 ## <a name="deploy-office-365-updates"></a>Implantar atualizações do Office 365
-A partir do Configuration Manager versão 1706, as atualizações de cliente do Office 365 foram movidas para o nó **Gerenciamento de Clientes do Office 365** >**Atualizações do Office 365**. Isso não afetará a configuração do ADR. 
+A partir do Configuration Manager versão 1706, as atualizações de cliente do Office 365 foram movidas para o nó **Gerenciamento de Clientes do Office 365** >**Atualizações do Office 365**.  A movimentação não afetará a configuração do ADR. 
 
 Use as etapas a seguir para implantar atualizações do Office 365 com o Configuration Manager:
 
@@ -108,7 +108,7 @@ Use as etapas a seguir para implantar atualizações do Office 365 com o Configu
 2.  [Configure os pontos de atualização de software](../get-started/configure-classifications-and-products.md) para sincronizar as atualizações de clientes do Office 365. Defina as **atualizações** para a classificação e selecione o **cliente do Office 365**. Sincronize as atualizações de software depois de configurar os pontos de atualização de software para usar a classificação **Atualizações**.
 3.  Permita que os clientes do Office 365 recebam atualizações do Configuration Manager. Use as configurações do cliente do Configuration Manager ou a política de grupo para habilitar o cliente.   
 
-    **Método 1**: a partir do Configuration Manager versão 1606, é possível usar a configuração do cliente do Configuration Manager para gerenciar o agente cliente do Office 365. Depois de definir essa configuração e implantar as atualizações do Office 365, o agente cliente do Configuration Manager se comunica com o agente cliente do Office 365 para baixar atualizações do Office 365 de um ponto de distribuição e instalá-las. O Configuration Manager faz um inventário das configurações de cliente do Office 365 ProPlus.    
+    **Método 1**: a partir do Configuration Manager versão 1606, é possível usar a configuração do cliente do Configuration Manager para gerenciar o agente cliente do Office 365. Depois de definir essa configuração e implantar as atualizações do Office 365, o agente cliente do Configuration Manager se comunica com o agente cliente do Office 365 para baixar as atualizações de um ponto de distribuição e instalá-las. O Configuration Manager faz um inventário das configurações de cliente do Office 365 ProPlus.    
 
       1.  No console do Configuration Manager, escolha **Administração** > **Visão Geral** > **Configurações do Cliente**.  
 
@@ -124,7 +124,7 @@ Use as etapas a seguir para implantar atualizações do Office 365 com o Configu
 > Antes do Configuration Manager versão 1610, você deve baixar e implantar as atualizações nos mesmos idiomas configurados nos clientes do Office 365. Por exemplo, digamos que você tenha um cliente do Office 365 configurado com os idiomas en-us e de-de. No servidor do site, você baixa e implanta apenas conteúdo de en-us para uma atualização correspondente do Office 365. Quando o usuário inicia a instalação desta atualização por meio do Centro de Software, a atualização trava durante o download do conteúdo para de-de.   
 
 ## <a name="restart-behavior-and-client-notifications-for-office-365-updates"></a>Comportamento de reinicialização e notificações do cliente para atualizações do Office 365
-Quando você implanta uma atualização em um cliente do Office 365, o comportamento de reinicialização e as notificações de cliente são diferentes dependendo da sua versão do Configuration Manager. A tabela a seguir fornece informações sobre a experiência do usuário final quando o cliente recebe uma atualização do Office 365:
+Quando você implanta uma atualização em um cliente do Office 365, o comportamento de reinicialização e as notificações de cliente são diferentes, dependendo da versão do Configuration Manager. A tabela a seguir fornece informações sobre a experiência do usuário final quando o cliente recebe uma atualização do Office 365:
 
 |Versão do Configuration Manager |Experiência do usuário final|  
 |----------------|---------------------|
@@ -132,14 +132,16 @@ Quando você implanta uma atualização em um cliente do Office 365, o comportam
 |1610|Aplicativos do Office 365 são desligados sem aviso antes da instalação da atualização|
 |1610 com a atualização <br/>1702|Um sinalizador de reinicialização é definido e a atualização é instalada após a reinicialização do computador.|
 |1706|O cliente recebe notificações pop-up e no aplicativo, bem como uma caixa de diálogo de contagem regressiva, antes da instalação da atualização.|
+|1802| O cliente recebe notificações pop-up e no aplicativo, bem como uma caixa de diálogo de contagem regressiva, antes da instalação da atualização. </br>Se um aplicativo do Office 365 estiver sendo executado durante uma imposição de atualização de clientes do Office 365, os aplicativos do Office não serão forçados a fechar. Em vez disso, a instalação da atualização retornará exigindo uma reinicialização do sistema <!--510006-->|
 
 > [!Important]
-> A partir do Configuration Manager versão 1706, observe os seguintes detalhes:
+>
+>No Configuration Manager versão 1706, observe os seguintes detalhes:
 >
 >- Um ícone de notificação é exibido na área de notificação na barra de tarefas para os aplicativos necessários para os quais o prazo é de 48 horas e o conteúdo da atualização já foi baixado. 
 >- Uma caixa de diálogo de contagem regressiva é exibida para os aplicativos necessários para os quais o prazo é de 7,5 horas e a atualização já foi baixada. O usuário pode adiar a caixa de diálogo de contagem regressiva até três vezes antes do prazo. Quando for adiada, a contagem regressiva será exibida novamente depois de duas horas. Se não for adiada, haverá uma contagem regressiva de 30 minutos e a atualização será instalada quando a contagem regressiva expirar.
 >- Uma notificação pop-up pode não ser exibida até que o usuário clique no ícone na área de notificação. Além disso, se a área de notificação tiver um espaço mínimo, o ícone de notificação poderá não ficar visível, a menos que o usuário abra ou expanda a área de notificação. 
->- As caixas de diálogo de notificação e de contagem regressiva podem ser iniciadas enquanto o usuário não está trabalhando ativamente no dispositivo, por exemplo, quando o dispositivo está bloqueado durante a noite, portanto, é possível que os aplicativos do Office em execução no dispositivo sejam forçados a fechar para que a atualização seja instalada. Antes de fechar o aplicativo, o Office salva os dados de aplicativo para evitar a perda de dados. 
+>- A notificação e a caixa de diálogo de contagem regressiva podem ser iniciadas enquanto o usuário não está trabalhando ativamente no dispositivo. Por exemplo, quando o dispositivo está bloqueado durante a noite, é possível que os aplicativos do Office em execução no dispositivo sejam forçados a fechar para instalar a atualização. Antes de fechar o aplicativo, o Office salva os dados de aplicativo para evitar a perda de dados. 
 >- Se o prazo já tiver passado ou estiver configurado para iniciar assim que possível, os aplicativos do Office executados poderão ser forçados a fechar sem notificações. 
 >- Se o usuário instalar uma atualização do Office antes do prazo, o Configuration Manager verificará se a atualização está instalada quando o prazo for atingido. Se a atualização não for detectada no dispositivo, a atualização está instalada. 
 >- A barra de notificação no aplicativo não será exibida em aplicativos do Office que estiverem em execução antes que a atualização seja baixada. A notificação no aplicativo será exibida apenas para aplicativos que forem abertos depois que a atualização for baixada.
@@ -148,7 +150,7 @@ Quando você implanta uma atualização em um cliente do Office 365, o comportam
 
 
 ## <a name="add-languages-for-office-365-update-downloads"></a>Adicionar idiomas a downloads de atualização do Office 365
-A partir do Configuration Manager versão 1610, você pode adicionar suporte do Configuration Manager para baixar atualizações de quaisquer idiomas compatíveis com o Office 365, independentemente de serem compatíveis com o Configuration Manager.    
+Você pode adicionar suporte para o Configuration Manager para baixar atualizações em qualquer idioma compatível com o Office 365, independentemente de ele ser compatível com o Configuration Manager.    
 
 > [!IMPORTANT]  
 > A configuração de idiomas de atualização adicionais do Office 365 é aplicada a todo o site. Depois de adicionar os idiomas usando o procedimento a seguir, todas as atualizações do Office 365 serão baixadas nesses idiomas, bem como os idiomas que você selecionar na página **Seleção de idioma** nos assistentes Baixar atualizações de software ou Implantar atualizações de software.
@@ -167,7 +169,7 @@ Use o procedimento a seguir no ponto de atualização de software do site de adm
 ![Editar a propriedade Value2](..\media\3-queryresult.png)
 8. Adicione mais idiomas à propriedade **Value2** e clique em **Salvar propriedade**. <br/> Por exemplo, pt-pt (para português - Portugal), af-za (para africâner - África do Sul), nn-no (para Norueguês (Nynorsk) - Noruega), etc.  
 ![Adicionar idiomas no Editor de propriedades](..\media\4-props.png)  
-9. Clique em **Fechar**, em **Fechar**, em **Salvar propriedade**, em **Salvar objeto** (se você clicar em **Fechar** aqui, os valores serão descartados), em **Fechar** e em **Sair** para sair do Testador de Instrumentação de Gerenciamento do Windows.
+9. Clique em **Fechar**, em **Fechar**, em **Salvar Propriedade** e em **Salvar Objeto** (se você clicar em **Fechar** aqui, os valores serão descartados). Clique em **Fechar** e, em seguida, em **Sair** para sair do Testador de Instrumentação de Gerenciamento do Windows.
 10. No console do Configuration Manager, vá para **Biblioteca de software** > **Visão geral** > **Gerenciamento de Clientes do Office 365** > **Atualizações do Office 365**.
 11. Agora, ao baixar as atualizações do Office 365, elas serão baixadas no idioma selecionado no assistente e configurou neste procedimento. Para verificar se as atualizações foram baixadas no idioma correto, vá para a origem do pacote para a atualização e procure por arquivos com o código de idioma no nome do arquivo.  
 ![Nomes de arquivos com idiomas adicionais](..\media\5-verification.png)

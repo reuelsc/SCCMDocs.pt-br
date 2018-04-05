@@ -3,24 +3,25 @@ title: Solucionando problemas do cliente Windows Defender ou Endpoint Protection
 titleSuffix: Configuration Manager
 description: Saiba como solucionar problemas com o Windows Defender e o Endpoint Protection.
 ms.custom: na
-ms.date: 01/03/2017
+ms.date: 03/22/2018
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
-ms.technology: configmgr-other
+ms.technology:
+- configmgr-other
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: d837253e-fcc2-422a-9e2c-c78b938dfd8c
-caps.latest.revision: "7"
-caps.handback.revision: "0"
-author: NathBarn
-ms.author: nathbarn
-manager: angrobe
-ms.openlocfilehash: b667db471a16faef057f49a0a26759849e03f237
-ms.sourcegitcommit: c236214b2fcc13dae7bad96d7fb33f692868191d
+caps.latest.revision: 7
+caps.handback.revision: 0
+author: mestew
+ms.author: mstewart
+manager: dougeby
+ms.openlocfilehash: a8460cafce15e5fb97ace76983932841ec77412f
+ms.sourcegitcommit: 11bf4ed40ed0cbb10500cc58bbecbd23c92bfe20
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/12/2017
+ms.lasthandoff: 03/23/2018
 ---
 # <a name="troubleshooting-windows-defender-or-endpoint-protection-client"></a>Solucionando problemas do cliente Windows Defender ou Endpoint Protection
 
@@ -100,7 +101,7 @@ Se você tiver problemas com o Windows Defender ou Endpoint Protection, entre em
 
 2.  Se a mensagem de erro que você recebeu contiver o código 0x80072f8f, o problema é provavelmente causado por uma data incorreta ou configuração de tempo em seu computador.  
 
-3.  Para redefinir sua configuração de data ou hora, [siga as etapas em corrigir os atalhos da área de trabalho e manutenção do sistema comum](http://go.microsoft.com/fwlink/?LinkId=155579) (http://go.microsoft.com/fwlink/?LinkId=155579).  
+3.  Para redefinir a configuração de data ou hora do computador, siga as etapas em [Corrigir tarefas comuns de manutenção do sistema e atalhos da área de trabalho desfeitos](http://go.microsoft.com/fwlink/?LinkId=155579) (http://go.microsoft.com/fwlink/?LinkId=155579)).  
 
 ### <a name="step-4-rename-the-software-distribution-folder-on-your-computer"></a>Etapa 4: Renomear a pasta de distribuição de software em seu computador  
 
@@ -153,16 +154,16 @@ Se você tiver problemas com o Windows Defender ou Endpoint Protection, entre em
 
 ### <a name="step-6-manually-install-the-virus-and-spyware-definition-updates"></a>Etapa 6: Instalar manualmente as atualizações de definições de vírus e spyware  
 
--   Se você estiver executando um sistema operacional do Windows de 32 bits, baixe as atualizações mais recentes manualmente a [http://go.microsoft.com/fwlink/?LinkID=87342](http://go.microsoft.com/fwlink/?LinkID=87342) (http://go.microsoft.com/fwlink/?LinkID=87342).  
+-   Se estiver executando um sistema operacional Windows de 32 bits, baixe as últimas atualizações manualmente em [http://go.microsoft.com/fwlink/?LinkID=87342](http://go.microsoft.com/fwlink/?LinkID=87342) (http://go.microsoft.com/fwlink/?LinkID=87342)).  
 
--   Se você estiver executando um sistema operacional do Windows de 64 bits, baixe as atualizações mais recentes manualmente a [http://go.microsoft.com/fwlink/?LinkID=87341](http://go.microsoft.com/fwlink/?LinkID=87341) (http://go.microsoft.com/fwlink/?LinkID=87341).  
+-   Se estiver executando um sistema operacional Windows de 64 bits, baixe as últimas atualizações manualmente em [http://go.microsoft.com/fwlink/?LinkID=87341](http://go.microsoft.com/fwlink/?LinkID=87341) (http://go.microsoft.com/fwlink/?LinkID=87341)).  
 
 -   Clique em **Executar**. As últimas atualizações são instaladas manualmente em seu computador.  
 
 
 ### <a name="step-7-contact-support"></a>Etapa 7: Entrar em contato com o suporte  
 
--   Se as etapas não resolveram o problema, contate o suporte. Para obter mais informações, consulte [Suporte ao cliente](http://go.microsoft.com/fwlink/?LinkID=196174) (http://go.microsoft.com/fwlink/?LinkID=196174).  
+-   Se as etapas não resolveram o problema, contate o suporte. Para obter mais informações, consulte [Atendimento ao cliente](http://go.microsoft.com/fwlink/?LinkID=196174) (http://go.microsoft.com/fwlink/?LinkID=196174)).  
 
 ##  <a name="starting-windows-defender-or-endpoint-protection-service"></a>Iniciar o serviço do Windows Defender ou Endpoint Protection  
  **Sintoma**  
@@ -238,8 +239,7 @@ Se você tiver problemas com o Windows Defender ou Endpoint Protection, entre em
 3.  Se você usar um modem com cabo ou um roteador DSL, verifique se as conexões com o roteador e para o computador está conectado. Tente desligar e desativar o roteador e o modem. Aguarde alguns minutos, conecte o modem primeiro, espere um minuto, e em seguida, conecte o roteador e reinicie o computador.  
 
 ##  <a name="detected-threat-cant-be-remediated"></a>Ameaça detectada não pode ser corrigida  
- Quando o Windows Defender ou  
-      o Endpoint Protection detectar uma ameaça em potencial escondida em um arquivo compactado com extensão de nome de arquivo .zip ou em um compartilhamento de rede, ele tentará colocá-la em quarentena ou removê-la.  
+ Quando o Windows Defender ou o Endpoint Protection detecta uma possível ameaça oculta em um arquivo compactado com extensão de nome de arquivo .zip ou em um compartilhamento de rede, ele tenta colocá-la em quarentena ou removê-la.  
 
 ### <a name="remove-or-scan-the-file"></a>Remova ou verifique o arquivo  
 

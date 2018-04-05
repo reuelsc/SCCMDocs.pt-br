@@ -1,25 +1,26 @@
 ---
 title: A pasta CD.Latest
 titleSuffix: Configuration Manager
-description: "Saiba mais sobre o novo processo de atualização que fornece atualizações para o produto de dentro do console do Configuration Manager."
+description: Saiba mais sobre o novo processo de atualização que fornece atualizações para o produto de dentro do console do Configuration Manager.
 ms.custom: na
-ms.date: 05/02/2017
+ms.date: 03/22/2018
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
-ms.technology: configmgr-other
+ms.technology:
+- configmgr-other
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 8db92d67-5d9c-4e9c-80d0-ae6fa0dd4817
-caps.latest.revision: "6"
+caps.latest.revision: 6
 author: mestew
 ms.author: mstewart
-manager: angrobe
-ms.openlocfilehash: 1dd176f80afa4a9edc5a14d538eef7989614e814
-ms.sourcegitcommit: daa080cf220835f157a23e8c8e2bd2781b869bb7
+manager: dougeby
+ms.openlocfilehash: 9371762a3f6acb9df7e7138c693b0a529c81a2ff
+ms.sourcegitcommit: 11bf4ed40ed0cbb10500cc58bbecbd23c92bfe20
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 12/04/2017
+ms.lasthandoff: 03/23/2018
 ---
 # <a name="the-cdlatest-folder-for-system-center-configuration-manager"></a>A pasta CD.Latest para o System Center Configuration Manager
 
@@ -27,12 +28,12 @@ ms.lasthandoff: 12/04/2017
 
 O System Center Configuration Manager introduz um novo processo de atualização que fornece atualizações para o produto de dentro do console do Configuration Manager. Para dar suporte a esse novo método de atualização do Configuration Manager, foi criada uma nova pasta com o nome **CD.Latest** que contém uma cópia dos arquivos de instalação do Configuration Manager para a versão atualizada do seu site.  
 
-A partir da atualização 1606, a pasta CD.Latest mais recente contém uma pasta chamada **Redist** que contém os arquivos redistribuíveis que a instalação baixa e usa. Esses arquivos são comparados à versão dos arquivos do Configuration Manager encontrados nessa pasta CD.Latest. Ao executar a Instalação de uma pasta CD.Latest, você deve usar os arquivos que correspondem à versão da Instalação. Para fazer isso, você pode instruir a Instalação a baixar arquivos novos e atuais da Microsoft ou instruir a Instalação a usar os arquivos na pasta Redist incluída na pasta CD.Latest.
+A pasta CD.Latest contém uma pasta chamada **Redist**, que contém os arquivos redistribuíveis baixados e usados pela instalação. Esses arquivos são comparados à versão dos arquivos do Configuration Manager encontrados nessa pasta CD.Latest. Ao executar a Instalação de uma pasta CD.Latest, você deve usar os arquivos que correspondem à versão da Instalação. Para fazer isso, você pode instruir a Instalação a baixar arquivos novos e atuais da Microsoft ou instruir a Instalação a usar os arquivos na pasta Redist incluída na pasta CD.Latest.
 
-No entanto, a mídia de linha de base, como a versão de linha de base 1606 lançada em outubro de 2016, não inclui uma pasta Redist. A pasta Redist não será criada até que você instalar uma atualização no console. Nesse ínterim, use a pasta Redist que você usou durante a instalação de sites da mídia de linha de base.  
+No entanto, a mídia de linha de base, como a versão de linha de base 1802 lançada em março de 2018, não inclui uma pasta Redist. A pasta Redist não será criada até que você instalar uma atualização no console. Nesse ínterim, use a pasta Redist que você usou durante a instalação de sites da mídia de linha de base.  
 
 > [!TIP]
-> Se ainda não tiver instalado a versão 1606, certifique-se de que os arquivos de redistribuição usados sejam atuais. Se não tiver baixado arquivos de redistribuição recentemente, planeje para permitir que a Instalação os baixe da Microsoft.   
+> Verifique se os arquivos redistribuíveis utilizados são atuais. Se você não baixou os arquivos de redistribuição recentemente, planeje-se para permitir que a Instalação baixe esses arquivos da Microsoft.   
 
  Veja a seguir os cenários que criam ou atualizam a pasta CD.Latest em um site de administração central ou servidor de site primário:  
 
@@ -40,7 +41,7 @@ No entanto, a mídia de linha de base, como a versão de linha de base 1606 lan�
 
 -   Você executa a tarefa de backup interna do Configuration Manager: a pasta é criada ou atualizada no local da pasta de backup indicada.  
 
--  A partir da versão 1606, a pasta CD.Latest é criada quando você instala um novo site usando a mídia de linha de base (como a versão 1606 ou 1702).
+-  A pasta CD.Latest é criada quando você instala um novo site usando a mídia de linha de base (como a versão 1802).
 
 Os arquivos de origem da pasta CD.Latest têm suporte para o seguinte:  
 

@@ -1,9 +1,9 @@
 ---
-title: Instalar e atribuir o cliente da internet
+title: Instalar o cliente com o Azure AD
 titleSuffix: Configuration Manager
-description: Instale e atribua o cliente do System Center Configuration Manager da internet.
+description: Instale e atribua o cliente do Configuration Manager em dispositivos Windows 10 usando o Azure Active Directory para autenticação
 ms.custom: na
-ms.date: 8/07/2017
+ms.date: 03/22/2018
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
@@ -12,85 +12,93 @@ ms.technology:
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: a44006eb-8650-49f6-94e1-18fa0ca959ee
-caps.latest.revision: 
-caps.handback.revision: 
-author: arob98
-ms.author: angrobe
-manager: angrobe
-ms.openlocfilehash: 9572a2e78691e2c108f2a5b9c4201ea91399985d
-ms.sourcegitcommit: 45ff3ffa040eada5656b17f47dcabd3c637bdb60
+caps.latest.revision: 14
+caps.handback.revision: 0
+author: aczechowski
+ms.author: aaroncz
+manager: dougeby
+ms.openlocfilehash: 4a8ca1a60a249756065ee2af6cb9c37f3fe2a1e0
+ms.sourcegitcommit: 11bf4ed40ed0cbb10500cc58bbecbd23c92bfe20
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/23/2018
+ms.lasthandoff: 03/23/2018
 ---
 # <a name="install-and-assign-configuration-manager-windows-10-clients-using-azure-ad-for-authentication"></a>Instalar e atribuir clientes do Configuration Manager com Windows 10 usando o Azure AD para autenticação
 
-Você pode usar os serviços de nuvem do Configuration Manager com Azure AD para dar suporte aos seguintes cenários:
-
-- Instalar manualmente o cliente do Configuration Manager em dispositivos com Windows 10 na Internet e atribui-lo a um site do Configuration Manager (exige a função de sistema de site do gateway de gerenciamento de nuvem).
-- Use o Azure AD para autenticar clientes a fim de acessar seus sites do Configuration Manager. O Azure AD substitui a necessidade de configurar e usar certificados de autenticação de cliente.
-- Descubra os usuários do Azure AD em seu site para usar nas coleções e outras operações do Configuration Manager.
-
-Use as etapas a seguir para ajudar a fazer isso:
-
-- **Etapa 1: Configurar o aplicativo dos Serviços do Azure em serviços de nuvem do Configuration Manager e configurar a descoberta de usuário do Azure AD**
-- **Etapa 2: Configurar o Gateway de Gerenciamento de Nuvem** (opcional para clientes locais)
-- **Etapa 3: Definir as configurações de cliente para unir dispositivos com Windows 10 ao Azure AD e permitir que os clientes usem o Gateway de Gerenciamento de Nuvem**
-- **Etapa 4: Instalar e registrar o cliente do Configuration Manager usando a identidade do Azure Active Directory**
+Para instalar o cliente do Configuration Manager em dispositivos Windows 10 usando a autenticação do Azure AD, integre o Configuration Manager ao Azure AD (Azure Active Directory). Os clientes podem estar na intranet comunicando-se diretamente com um ponto de gerenciamento habilitado para HTTPS. Eles também podem se comunicar com base na Internet por meio do CMG ou com um ponto de gerenciamento baseado na Internet. Esse processo usa o Azure AD para autenticar clientes no site do Configuration Manager. O Azure AD substitui a necessidade de configurar e usar certificados de autenticação de cliente.
 
 
-## <a name="before-you-start"></a>Antes de começar
 
-- Você deve ter um locatário do Azure AD.
-- Seus dispositivos devem executar o Windows 10, devem ter ingressado no Azure AD e conectados usando uma identidade do Azure AD. Os clientes também podem ser ingressados ao domínio além de ingressados ao Azure AD).
-- Além de [pré-requisitos existentes](/sccm/core/plan-design/configs/site-and-site-system-prerequisites) para a função do sistema de site do ponto de gerenciamento, você deverá garantir que o **ASP.NET 4.5** (e as outras opções que estiverem automaticamente selecionadas) esteja habilitado no computador que hospeda esta função do sistema de site.
-- Para usar o Configuration Manager para implantar o cliente:
-    - Configure pelo menos um ponto de gerenciamento para o modo HTTPS se quiser usar o Azure AD para autenticar em vez de usar certificados de cliente.
-        Se você estiver usando certificados de cliente em vez do Gateway de Gerenciamento de Nuvem, um ponto de gerenciamento HTTPS será opcional, mas recomendado. Se você estiver usando o Azure AD para autenticação, mesmo se for para clientes locais ou na Internet, o ponto de gerenciamento HTTPS será necessário.
-    - Configure um Gateway de Gerenciamento de Nuvem, se você quiser implantar os clientes da Internet. Para clientes locais, que você autentica com o Azure AD, não é necessário configurar o Gateway de Gerenciamento de Nuvem.
+## <a name="before-you-begin"></a>Antes de começar
+
+- Um locatário do Azure AD é um pré-requisito  
+
+- Requisitos do dispositivo:  
+
+    - Windows 10  
+
+    - Ingressado no Azure AD, ingressado em domínio de nuvem pura ou ingressado no Azure AD híbrido  
+
+- Requisitos de usuário:  
+
+    - O usuário conectado deve ter uma identidade do Azure AD.   
+
+    - Se o usuário tiver uma identidade federada ou sincronizada, você deverá usar a [descoberta de usuário do Active Directory](/sccm/core/servers/deploy/configure/about-discovery-methods#bkmk_aboutUser) do o Configuration Manager, bem como a [descoberta de usuário do Azure AD](/sccm/core/servers/deploy/configure/about-discovery-methods#azureaddisc). Para obter mais informações sobre identidades híbridas, consulte [Definir uma estratégia de adoção de identidade híbrida](/azure/active-directory/active-directory-hybrid-identity-design-considerations-identity-adoption-strategy).<!--497750-->  
+
+- Além dos [pré-requisitos existentes](/sccm/core/plan-design/configs/site-and-site-system-prerequisites#bkmk_2012MPpreq) para a função do sistema de sites do ponto de gerenciamento, também habilite o **ASP.NET 4.5** nesse servidor. Inclua as outras opções selecionadas automaticamente ao habilitar o ASP.NET 4.5.  
+
+- Configure todos os pontos de gerenciamento para o modo HTTPS. Para obter mais informações, consulte [Requisitos de certificado PKI](/sccm/core/plan-design/network/pki-certificate-requirements) e [Implantar o certificado do servidor Web em sistemas de sites que executam o IIS](/sccm/core/plan-design/network/example-deployment-of-pki-certificates#BKMK_webserver2008_cm2012).  
+
+- Opcionalmente, configure um [CMG](/sccm/core/clients/manage/cmg/plan-cloud-management-gateway) (gateway de gerenciamento de nuvem) para implantar clientes baseados na Internet. Para os clientes locais que são autenticam no Azure AD, não é necessário um CMG.  
 
 
-## <a name="step-1-set-up-the-azure-services-app-in-configuration-manager-cloud-services"></a>Etapa 1: Configurar o aplicativo dos Serviços do Azure em serviços de nuvem do Configuration Manager
+## <a name="configure-azure-services-for-cloud-management"></a>Configurar os Serviços do Azure para o Gerenciamento de Nuvem
 
-Isso conecta o site do Configuration Manager ao Azure AD e é um pré-requisito para todas as outras operações nesta seção. 
+Conecte seu site do Configuration Manager ao Azure AD como a primeira etapa. Para obter detalhes sobre esse processo, consulte [Configurar serviços do Azure](/sccm/core/servers/deploy/configure/azure-services-wizard). Crie uma conexão com o serviço **Gerenciamento de Nuvem**.
 
-A Descoberta de Usuários do Azure AD está configurada como parte do *Gerenciamento de Nuvem*. O procedimento para fazer isso é detalhado na etapa **6** do procedimento [Criar o aplicativo Web do Azure para uso com o Configuration Manager](/sccm/core/servers/deploy/configure/Azure-services-wizard#webapp) no tópico *Configurar serviços do Azure para uso com o Configuration Manager*.
-    
-Após a conclusão do procedimento, você terá conectado seu site do Configuration Manager ao Azure AD. 
+Habilite a [Descoberta de Usuário do Azure AD](/sccm/core/servers/deploy/configure/configure-discovery-methods#azureaadisc) como parte da integração ao **Gerenciamento de Nuvem**. 
 
-## <a name="step-2-set-up-the-cloud-management-gateway"></a>Etapa 2: Configurar o Gateway de Gerenciamento de Nuvem
+Depois de concluir essas ações, o site do Configuration Manager será conectado ao Azure AD. 
 
-Configure o Gateway de Gerenciamento de Nuvem para ajudar a habilitar os cenários de gerenciamento de nuvem descritos neste tópico. Encontre ajuda nos tópicos a seguir: 
 
-- [Planejar o gateway de gerenciamento de nuvem no Configuration Manager](/sccm/core/clients/manage/plan-cloud-management-gateway).
-- [Configurar o gateway de gerenciamento de nuvem para o Configuration Manager](/sccm/core/clients/manage/setup-cloud-management-gateway).
-- [Monitorar o gateway de gerenciamento de nuvem no Configuration Manager](/sccm/core/clients/manage/monitor-clients-cloud-management-gateway).
 
-## <a name="step-3-configure-client-settings-to-join-windows-10-devices-with-azure-ad-and-enable-clients-to-use-the-cloud-management-gateway"></a>Etapa 3: Definir as configurações de cliente para unir dispositivos com Windows 10 ao Azure AD e permitir que os clientes usem o Gateway de Gerenciamento de Nuvem
+## <a name="configure-client-settings"></a>Definir as configurações do cliente
 
-1.  Defina a seguinte seção de configurações de cliente (encontradas nos **Serviços de Nuvem**) usando as informações em [Como definir as configurações de cliente](/sccm/core/clients/deploy/configure-client-settings).
-    - **Permitir o acesso ao ponto de distribuição na nuvem** - Habilite essa configuração para ajudar dispositivos baseados na Internet a obter o conteúdo necessário para instalar o cliente do Configuration Manager. Se o conteúdo não estiver disponível no ponto de distribuição de nuvem, os dispositivos poderão recuperar o conteúdo de um ponto de gerenciamento conectado ao gateway de gerenciamento de nuvem.
-    - **Registrar automaticamente os novos dispositivos ingressados em domínio do Windows 10 com o Azure Active Directory** – Defina como **Sim** (padrão) ou **Não**.
-    - **Habilitar clientes a usar um gateway de gerenciamento de nuvem** – Defina como **Sim** (padrão) ou **Não**.
+Essas configurações de cliente ajudam a ingressar dispositivos Windows 10 no Azure AD. Elas também permitem que os clientes baseados na Internet usem o CMG e o ponto de distribuição na nuvem.
+
+1.  Defina as configurações de cliente a seguir na seção **Serviços de Nuvem** usando as informações em [Como definir as configurações de cliente](/sccm/core/clients/deploy/configure-client-settings).  
+
+    - **Permitir o acesso ao ponto de distribuição na nuvem**: habilite essa configuração para ajudar os dispositivos baseados na Internet a obter o conteúdo necessário para instalar o cliente do Configuration Manager. Se o conteúdo não estiver disponível no ponto de distribuição na nuvem, os dispositivos poderão recuperar o conteúdo por meio do CMG. A inicialização da instalação de cliente tentará o ponto de distribuição na nuvem novamente durante quatro horas antes de recorrer ao CMG.<!--495533-->  
+
+    - **Registrar automaticamente os novos dispositivos ingressados em domínio do Windows 10 no Azure Active Directory**: defina como **Sim** ou **Não**. A configuração padrão é **Sim**. Esse comportamento também é o padrão no Windows 10, versão 1709.
+
+    - **Habilitar clientes a usar um gateway de gerenciamento de nuvem** – Defina como **Sim** (padrão) ou **Não**.  
+
 2.  Implante as configurações do cliente na coleção necessária de dispositivos. Não implante essas configurações em coleções de usuários.
 
-Para confirmar o ingresso do dispositivo ao Azure AD, execute o comando **dsregcmd.exe /status** em uma janela do prompt de comando. O campo **AzureAdjoined** nos resultados mostram **SIM** se o dispositivo tiver ingressado no Azure AD.
+Para confirmar se o dispositivo está ingressado no Azure AD, execute `dsregcmd.exe /status` em um prompt de comando. O campo **AzureAdjoined** nos resultados mostram **SIM** se o dispositivo é ingressado no Azure AD.
 
 
-## <a name="step-4-install-and-register-the-configuration-manager-client-using-azure-active-directory-identity"></a>Etapa 4: Instalar e registrar o cliente do Configuration Manager usando a identidade do Azure Active Directory
 
-Para instalar o cliente, use as instruções em [Como implantar clientes em computadores com Windows no System Center Configuration Manager](/sccm/core/clients/deploy/deploy-clients-to-windows-computers#a-namebkmkmanuala-how-to-install-clients-manually) usando a seguinte linha de comando de instalação: 
+## <a name="install-and-register-the-client-using-azure-ad-identity"></a>Instalar e registrar o cliente usando a identidade do Azure AD
 
-**ccmsetup.exe /mp&#58; https://CONTOSO.CLOUDAPP.NET/CCM_Proxy_MutualAuth/72057598037248100 CCMHOSTNAME=CONTOSO.CLOUDAPP.NET/CCM_Proxy_MutualAuth/72057598037248100 SMSSiteCode=DND SMSMP=https://sitename.contoso.corp.contoso.com AADTENANTID=44ba6fe0-c73e-4b38-80b6-85c557e7a7ed AADTENANTNAME=contoso  AADCLIENTAPPID=55ba7je0-c73e-4b38-97b6-85c557e7a7ed AADRESOURCEURI=https://contososerver**
+Para instalar o cliente manualmente usando a identidade do Azure AD, primeiro examine o processo geral em [Como instalar clientes manualmente](/sccm/core/clients/deploy/deploy-clients-to-windows-computers#BKMK_Manual). 
 
-- **/MP** – origem do download. Pode definir como CMG se for inicializado da internet.
-- **CCMHOSTNAME**: o nome do seu ponto de gerenciamento da Internet. Você pode encontrá-lo executando **gwmi -namespace root\ccm\locationservices -class SMS_ActiveMPCandidate** de um prompt de comando em um cliente gerenciado.
-- **SMSSiteCode**: o código do site do Configuration Manager.
-- **SMSMP**: o nome do seu ponto de gerenciamento de pesquisa – o ponto de gerenciamento pode estar em sua intranet.
-- **AADTENANTID:**, **AADTENANTNAME:** a ID e o nome do locatário do Azure AD vinculado ao Configuration Manager. Você pode localizar isso executando dsregcmd.exe /status em um prompt de comando em um dispositivo unido do Azure AD.
-- **AADCLIENTAPPID**: a ID do aplicativo cliente do Azure AD. Para obter ajuda sobre como localizar isso, veja [Usar o portal para criar um aplicativo e uma entidade de serviço do Azure Active Directory que pode acessar recursos](https://docs.microsoft.com/azure/azure-resource-manager/resource-group-create-service-principal-portal#get-application-id-and-authentication-key).
-- **AADResourceUri:** o URI do identificador do aplicativo de servidor integrado do Azure AD. Para saber mais, confira [Configurar serviços do Azure para uso com o Configuration Manager](/sccm/core/servers/deploy/configure/azure-services-wizard).
+ > [!Note]  
+ > O dispositivo precisa ter acesso à Internet para acessar o Azure AD, mas não precisa ser baseado na Internet. 
 
+O seguinte exemplo mostra a estrutura geral da linha de comando: `ccmsetup.exe /mp:<source management point> CCMHOSTNAME=<internet-based management point> SMSSiteCode=<site code> SMSMP=<initial management point> AADTENANTID=<Azure AD tenant identifier> AADTENANTNAME=<Azure AD tenant name> AADCLIENTAPPID=<Azure AD client app identifier> AADRESOURCEURI=<Azure AD server app identifier>`
+
+Para obter mais informações, consulte [Propriedades de instalação do cliente](/sccm/core/clients/deploy/about-client-installation-properties).
+
+As propriedades /mp e CCMHOSTNAME e especificam uma das seguintes opções, dependendo do cenário:
+- Ponto de gerenciamento local. Especifique somente a propriedade /mp. O CCMHOSTNAME não é necessário.
+- Gateway de gerenciamento de nuvem
+- Ponto de gerenciamento baseado na Internet A propriedade SMSMP especifica o ponto de gerenciamento local ou baseado na Internet.
+
+Esse exemplo usa um gateway de gerenciamento de nuvem. Ele substitui os valores de exemplo de cada propriedade: `ccmsetup.exe /mp:https://CONTOSO.CLOUDAPP.NET/CCM_Proxy_MutualAuth/72186325152220500 CCMHOSTNAME=CONTOSO.CLOUDAPP.NET/CCM_Proxy_MutualAuth/72186325152220500 SMSSiteCode=ABC SMSMP=https://mp1.contoso.com AADTENANTID=daf4a1c2-3a0c-401b-966f-0b855d3abd1a AADTENANTNAME=contoso AADCLIENTAPPID=7506ee10-f7ec-415a-b415-cd3d58790d97 AADRESOURCEURI=https://contososerver`
+
+Para automatizar a instalação do cliente usando a identidade do Azure AD por meio do Microsoft Intune, consulte o processo de [Preparar dispositivos Windows 10 para o cogerenciamento](/sccm/core/clients/manage/co-management-prepare#command-line-to-install-configuration-manager-client).
 
 
 

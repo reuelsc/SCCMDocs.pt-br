@@ -1,20 +1,21 @@
 ---
 title: Preparar dispositivos Windows 10 para o cogerenciamento
 description: Saiba como preparar dispositivos Windows 10 para o cogerenciamento.
-keywords: 
-author: dougeby
-manager: angrobe
-ms.date: 11/20/2017
+keywords: ''
+author: mestew
+ms.author: mstewart
+manager: dougeby
+ms.date: 03/22/2018
 ms.topic: article
 ms.prod: configuration-manager
-ms.service: 
-ms.technology: 
+ms.service: ''
+ms.technology: ''
 ms.assetid: 101de2ba-9b4d-4890-b087-5d518a4aa624
-ms.openlocfilehash: 902787f173c714fd2a73cc657aad758bd79ce3c8
-ms.sourcegitcommit: 389c4e5b4e9953b74c13b1689195f99c526fa737
+ms.openlocfilehash: 61aef0351e32ef6cf31911a8dfd27e86de82f38c
+ms.sourcegitcommit: 11bf4ed40ed0cbb10500cc58bbecbd23c92bfe20
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/09/2018
+ms.lasthandoff: 03/23/2018
 ---
 # <a name="prepare-windows-10-devices-for-co-management"></a>Preparar dispositivos Windows 10 para o cogerenciamento
 Você pode habilitar o cogerenciamento em dispositivos Windows 10 que foram ingressados no AD e no Azure AD e registrados no Intune e em um cliente no Configuration Manager. Para novos dispositivos Windows 10 e dispositivos que já estão registrados no Intune, instale o cliente do Configuration Manager antes que eles possam ser cogerenciados. Para dispositivos Windows 10 que já são clientes do Configuration Manager, você pode registrar os dispositivos no Intune e habilitar o cogerenciamento no console do Configuration Manager.
@@ -23,7 +24,7 @@ Você pode habilitar o cogerenciamento em dispositivos Windows 10 que foram ingr
 > Dispositivos móveis Windows 10 não são compatíveis com o cogerenciamento.
 
 ## <a name="command-line-to-install-configuration-manager-client"></a>Linha de comando para instalar o cliente do Configuration Manager
-Você deve criar um aplicativo no Intune para dispositivos Windows 10 que ainda não são clientes do Configuration Manager. Ao criar o aplicativo nas próximas seções, use a seguinte linha de comando:
+Crie um aplicativo no Intune para dispositivos Windows 10 que ainda não são clientes do Configuration Manager. Ao criar o aplicativo nas próximas seções, use a seguinte linha de comando:
 
 ccmsetup.msi CCMSETUPCMD="/mp:&#60;*URL do ponto de extremidade de autenticação mútua do gateway de gerenciamento de nuvem*&#62;/ CCMHOSTNAME=&#60;*URL do ponto de extremidade de autenticação mútua do gateway de gerenciamento de nuvem*&#62; SMSSiteCode=&#60;*Código do site*&#62; SMSMP=https:&#47;/&#60;*FQDN do MP*&#62; AADTENANTID=&#60;*ID do locatário do AAD*&#62; AADTENANTNAME=&#60;*Nome do locatário*&#62; AADCLIENTAPPID=&#60;*AppID do servidor para integração com o AAD*&#62; AADRESOURCEURI=https:&#47;/&#60;*ID do recurso*&#62;”
 
@@ -62,7 +63,11 @@ ccmsetup.msi CCMSETUPCMD="/mp:https:/&#47;contoso.cloudapp.net/CCM_Proxy_MutualA
 
 ## <a name="new-windows-10-devices"></a>Novos dispositivos Windows 10
 Para novos dispositivos Windows 10, você pode usar o serviço AutoPilot para definir a configuração inicial pelo usuário, que inclui ingressar o dispositivo no AD e no Azure AD, bem como registrar o dispositivo no Intune. Em seguida, crie um aplicativo no Intune para implantar o cliente do Configuration Manager.  
-1. Habilite o AutoPilot para os novos dispositivos Windows 10. Para obter detalhes, consulte [Visão geral do Windows AutoPilot](https://docs.microsoft.com/windows/deployment/windows-10-auto-pilot).  
+1. Habilite o AutoPilot para os novos dispositivos Windows 10. Para obter detalhes, consulte [Visão geral do Windows AutoPilot](https://docs.microsoft.com/windows/deployment/windows-10-auto-pilot).    
+
+   > [!NOTE]   
+   > A partir da versão 1802, use o Configuration Manager para coletar e relatar as informações do dispositivo exigidas pela Microsoft Store para Empresas e Educação. Esta informação inclui o número de série do dispositivo, o identificador de produto do Windows e um identificador de hardware. No console do Configuration Manager, espaço de trabalho **Monitoramento**, expanda o nó **Geração de relatórios**, expanda **Relatórios** e selecione o nó **Hardware - Geral**. Execute o novo relatório, **Informações do dispositivo do Windows AutoPilot** e veja os resultados. No visualizador de relatórios, clique no ícone **Exportar** e selecione a opção **CSV (delimitado por vírgulas)**. Depois de salvar o arquivo, faça o upload dos dados para a Microsoft Store para Empresas e Educação. Para saber mais, confira [adicionar dispositivos na Microsoft Store para Empresas e Educação](https://docs.microsoft.com/microsoft-store/add-profile-to-devices#add-devices-and-apply-autopilot-deployment-profile).
+
 2. Configure o registro automático no Azure AD para que seus dispositivos sejam registrados automaticamente no Intune. Para obter detalhes, consulte  [Registrar os dispositivos Windows no Microsoft Intune](https://docs.microsoft.com/intune/windows-enroll).
 3. Crie um aplicativo no Intune com o pacote do cliente do Configuration Manager e implante o aplicativo nos dispositivos Windows 10 que você deseja cogerenciar. Use a [linha de comando para instalar o cliente do Configuration Manager](#command-line-to-install-configuration-manager-client) ao percorrer as etapas para [instalar clientes da Internet usando o Azure AD](https://docs.microsoft.com/en-us/sccm/core/clients/deploy/deploy-clients-cmg-azure).   
 
