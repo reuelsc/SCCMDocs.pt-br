@@ -3,33 +3,36 @@ title: Criar e executar scripts
 titleSuffix: Configuration Manager
 description: Crie e execute scripts do Powershell em dispositivos clientes.
 ms.custom: na
-ms.date: 01/05/2018
+ms.date: 03/22/2018
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
-ms.technology: configmgr-app
+ms.technology:
+- configmgr-app
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: cc230ff4-7056-4339-a0a6-6a44cdbb2857
-caps.latest.revision: "14"
-caps.handback.revision: "0"
+caps.latest.revision: 14
+caps.handback.revision: 0
 author: mestew
 ms.author: mstewart
-manager: angrobe
-ms.openlocfilehash: b00dfb875ca032032a9782e9950247eb3fceb124
-ms.sourcegitcommit: 9de3d74030b7c3313c34b5cbe2dbe6e18a48c043
+manager: dougeby
+ms.openlocfilehash: 29806161b29b87834c0cb4b1e478d92bff7a7b3c
+ms.sourcegitcommit: 11bf4ed40ed0cbb10500cc58bbecbd23c92bfe20
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/10/2018
+ms.lasthandoff: 03/23/2018
 ---
 # <a name="create-and-run-powershell-scripts-from-the-configuration-manager-console"></a>Criar e executar scripts do PowerShell do console do Configuration Manager
 
 *Aplica-se a: System Center Configuration Manager (Branch Atual)*
 
->[!TIP]
->Introduzido com a versão 1706, a habilidade de executar scripts do PowerShell é um recurso de pré-lançamento. Para habilitar os scripts, confira [Recursos de pré-lançamento no System Center Configuration Manager](/sccm/core/servers/manage/pre-release-features).
 
-Agora, a capacidade de executar scripts do Powershell com o System Center Configuration Manager está mais bem integrada. O PowerShell oferece a vantagem de criar scripts automatizados sofisticados que são entendidos e compartilhados com uma comunidade maior. Os scripts simplificam a construção de ferramentas personalizadas para administrar o software e permitem realizar tarefas rotineiras rapidamente, possibilitando concluir trabalhos grandes com mais facilidade e consistência.
+O System Center Configuration Manager tem uma capacidade integrada para executar scripts do PowerShell. O PowerShell oferece a vantagem de criar scripts automatizados sofisticados que são entendidos e compartilhados com uma comunidade maior. Os scripts simplificam a criação de ferramentas personalizadas para administrar o software e permitem realizar tarefas rotineiras rapidamente, possibilitando concluir trabalhos grandes com mais facilidade e consistência.
+
+> [!TIP]  
+> Esse recurso foi introduzido pela primeira vez na versão 1706 como um [recurso de pré-lançamento](/sccm/core/servers/manage/pre-release-features). A partir da versão 1802, esse recurso deixou de ser um recurso de pré-lançamento.
+
 
 Com essa integração no System Center Configuration Manager, você pode usar a funcionalidade *Executar Scripts* para fazer o seguinte:
 
@@ -40,33 +43,45 @@ Com essa integração no System Center Configuration Manager, você pode usar a 
 - Monitorar a execução do script e exibir os resultados do relatório da saída do script.
 
 >[!WARNING]
->Considerando a potência dos scripts, lembre-se de usá-los com uma intenção definida e com cuidado. Inserimos proteções adicionais para ajudá-lo, além de funções segregadas e escopos. Valide a precisão dos scripts antes de executá-los e confirme se eles são de uma fonte confiável, para impedir uma execução não intencional do script. Preste atenção em caracteres estendidos ou outras ofuscações e aprenda como proteger scripts.
+>Considerando a potência dos scripts, lembre-se de usá-los com uma intenção definida e com cuidado. Inserimos proteções adicionais para ajudá-lo, além de funções segregadas e escopos. Valide a precisão dos scripts antes de executá-los e confirme se eles são de uma fonte confiável, para impedir uma execução não intencional do script. Preste atenção em caracteres estendidos ou outras ofuscações e aprenda como proteger scripts. [Saiba mais sobre a segurança de script do PowerShell](/sccm/apps/deploy-use/learn-script-security)
 
 ## <a name="prerequisites"></a>Pré-requisitos
 
 - Para executar scripts do PowerShell, o cliente deve executar o PowerShell versão 3.0 ou posterior. No entanto, se um script for executado contendo funcionalidades de uma versão posterior do PowerShell, o cliente no qual o script estiver sendo executado deverá estar executando essa versão do PowerShell.
 - Clientes do Configuration Manager devem estar executando o cliente da versão 1706 ou posterior para executar scripts.
 - Para usar scripts, você deve ser membro da função de segurança apropriada do Configuration Manager.
-- Para importar e criar scripts – sua conta deve ter as permissões **Criar** para **Scripts SMS** na função de segurança **Administrador Completo**.
-- Para aprovar ou negar scripts – sua conta deve ter as permissões **Aprovar** para **Scripts SMS** na função de segurança **Administrador Completo**.
-- Para executar scripts – sua conta deve ter permissões de **Execução de Script** para **Coleções** na função de segurança **Administrador Total**.
+- Para importar e criar scripts – sua conta deve ter permissões **Criar** para **Scripts do SMS**.
+- Para aprovar ou negar scripts – sua conta deve ter permissões **Aprovar** para **Scripts do SMS**.
+- Para executar scripts – sua conta deve ter permissões **Executar Script** para **Coleções**.
 
-Para saber mais sobre as funções de segurança do Configuration Manager, confira [Conceitos básicos da administração baseada em funções para o System Center Configuration Manager](/sccm/core/understand/fundamentals-of-role-based-administration).
+Para obter mais informações sobre as funções de segurança do Configuration Manager:</br>
+[Escopos de segurança para executar scripts](#BKMK_Scopes)</br>
+[Funções de segurança para executar scripts](#BKMK_ScriptRoles)</br>
+[Fundamentos da administração baseada em funções](/sccm/core/understand/fundamentals-of-role-based-administration).
 
 ## <a name="limitations"></a>Limitações
 
 No momento, o recurso Executar Scripts dá suporte para:
 
 - Linguagens de scripts: PowerShell
-- Tipos de parâmetro: inteiro, cadeia de caracteres e lista
+- Tipos de parâmetro: inteiro, cadeia de caracteres e lista.
+
+
+>[!WARNING]
+>Lembre-se de que, ao usar parâmetros, ele abre uma área de superfície para o risco de possíveis ataques de injeção do PowerShell. Há várias maneiras de atenuar e resolver o problema, como usando expressões regulares para validar a entrada de parâmetro ou usando parâmetros predefinidos. A melhor prática comum é não incluir segredos nos scripts do PowerShell (sem senhas, etc.). [Saiba mais sobre a segurança de script do PowerShell](/sccm/apps/deploy-use/learn-script-security) <!--There are external tools available to validate your PowerShell scripts such as the [PowerShell Injection Hunter](https://www.powershellgallery.com/packages/InjectionHunter/1.0.0) tool. -->
+
+
+## <a name="group-policy-considerations-for-scripts"></a>Considerações sobre a Política de Grupo para scripts
+<!--While running scripts on devices, Configuration Manager sets policy to allow local scripts and remote signed scripts.--> 
+A configuração de uma Política de Execução por meio da Política de Grupo pode não permitir que os scripts sejam executados com o Configuration Manager. Para obter informações sobre Políticas de Execução e como elas são definidas, consulte o artigo [Sobre as políticas de execução](https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_execution_policies). <!--507185-->
 
 ## <a name="run-script-authors-and-approvers"></a>Autores e aprovadores do recurso Executar Script
 
-O recurso Executar Scripts usa o conceito de *autores de script* e *aprovadores e script* como funções separadas para a implementação e a execução de um script. A separação das funções de autor e aprovador permite um processo de verificação importante para a potente ferramenta Executar Scripts.
+O recurso Executar Scripts usa o conceito de *autores de script* e *aprovadores e script* como funções separadas para a implementação e a execução de um script. A separação das funções de autor e aprovador permite um processo de verificação importante para a potente ferramenta Executar Scripts. Há mais uma função de *executores de script* que permite a execução, mas não a criação nem a aprovação de scripts. Consulte [Criar funções de segurança para scripts](#BKMK_ScriptRoles).
 
 ### <a name="scripts-roles-control"></a>Controle de funções de scripts
 
-Por padrão, os usuários não podem aprovar um script que criaram. Como os scripts são poderosos, versáteis e podem ser implantados em vários dispositivos, você pode separar as funções entre a pessoa que cria o script, e a pessoa que aprova o script. Essas funções proporcionam um nível a mais de segurança contra a execução de um script sem supervisão. Você pode desativar esta aprovação secundária, para facilitar o teste.
+Por padrão, os usuários não podem aprovar um script que criaram. Como os scripts são eficientes, versáteis e potencialmente implantados em muitos dispositivos, você pode separar as funções entre a pessoa que cria o script e a pessoa que o aprova. Essas funções proporcionam um nível a mais de segurança contra a execução de um script sem supervisão. É possível desligar a aprovação secundária, para facilitar o teste.
 
 ### <a name="approve-or-deny-a-script"></a>Aprovar ou negar um script
 
@@ -89,11 +104,59 @@ Essa aprovação é usada principalmente para a fase de teste do desenvolvimento
 4. Na guia **Geral** da caixa de diálogo **Propriedades das Configurações de Hierarquia**, desmarque a caixa de seleção **Não permitir que os autores de script aprovem seus próprios scripts**.
 
 >[!IMPORTANT]
->Como prática recomendada, você não deve permitir que um autor de script aprove seus próprios scripts. Isso somente deve ser permitido em uma configuração de laboratório. Considere atentamente o possível impacto de alterar essa configuração em um ambiente de produção.
+>Como prática recomendada, você não deve permitir que um autor de script aprove seus próprios scripts. Isso deve ser permitido somente em uma configuração de laboratório. Considere atentamente o possível impacto de alterar essa configuração em um ambiente de produção.
 
 ## <a name="security-scopes"></a>Escopos de segurança
 *(Introduzido na versão 1710)*  
 O recurso Executar Scripts usa os escopos de segurança, um recurso existente do Configuration Manager, para controlar a criação e execução de scripts por meio da atribuição de marcas que representam grupos de usuários. Para obter mais informações de como usar escopos de segurança, consulte [Configurar administração baseada em funções para o System Center Configuration Manager](../../core/servers/deploy/configure/configure-role-based-administration.md).
+
+## <a name="bkmk_ScriptRoles"></a> Criar funções de segurança para scripts
+As três funções de segurança usadas para executar scripts não são criadas por padrão no Configuration Manager. Para criar as funções de executores, autores e aprovadores de script, siga as etapas descritas.
+
+1. No console do Configuration Manager, acesse **Administração** >**Segurança** >**Funções de Segurança**
+2. Clique com o botão direito do mouse em uma função e clique em **Copiar**. A função copiada tem permissões já atribuídas. Use somente as permissões desejadas. 
+3. Forneça à função personalizada um **Nome** e uma **Descrição**. 
+4. Atribua a função de segurança às permissões descritas abaixo. 
+
+    ### <a name="security-role-permissions"></a>**Permissões de função de segurança**
+
+     **Nome da Função**: Executores de Script
+    - **Descrição**: com essas permissões, a função executa apenas os scripts que foram criados anteriormente e aprovados por outras funções. 
+    - **Permissões:** verifique se a opção a seguir está definida como **Sim**.
+         |**Categoria**|**Permissão**|**Estado**|
+         |---|---|---|
+         |Coleta|Executar Script|Sim|
+         |Scripts do SMS|Criar|Sim|
+         |Scripts do SMS|Ler|Sim|
+
+     **Nome da Função**: Autores do Script
+    - **Descrição**: com essas permissões, a função cria scripts, mas elas não podem aprová-los nem os executar. 
+    - **Permissões**: verifique se as permissões a seguir estão definidas.
+    - 
+         |**Categoria**|**Permissão**|**Estado**|
+         |---|---|---|
+         |Coleta|Executar Script|Não|
+         |Scripts do SMS|Criar|Sim|
+         |Scripts do SMS|Ler|Sim|
+         |Scripts do SMS|Excluir|Sim|
+         |Scripts do SMS|Modificar|Sim|
+
+    **Nome da Função**: Autores do Script
+    - **Descrição**: com essas permissões, a função aprova scripts, mas elas não podem criá-los nem executá-los. 
+    - **Permissões:** verifique se as permissões a seguir estão definidas.
+
+         |**Categoria**|**Permissão**|**Estado**|
+         |---|---|---|
+         |Coleta|Executar Script|Não|
+         |Scripts do SMS|Ler|Sim|
+         |Scripts do SMS|Aprovar|Sim|
+         |Scripts do SMS|Modificar|Sim|
+     
+**Exemplo de permissões de Scripts do SMS para a função de criadores de script**
+
+ ![Exemplo de permissões de Scripts do SMS para a função de criadores de script](./media/run-scripts/script_authors_permissions.png)
+
+   
 
 ## <a name="create-a-script"></a>Criar um script
 
@@ -109,8 +172,8 @@ O recurso Executar Scripts usa os escopos de segurança, um recurso existente do
 5. Conclua o assistente. O novo script é exibido na lista **Script** com um status de **Aguardando aprovação**. Antes de executar esse script em dispositivos cliente, você deve aprová-lo. 
 
 > [!IMPORTANT]
-    >  Evite gerar script de uma reinicialização do dispositivo ou de um reinício do agente do Configuration Manager quando usar o recurso Executar Scripts. Isto pode levar a um estado contínuo de reinicialização. Se necessário, há melhorias no recurso de notificação de cliente que permitem reiniciar os dispositivos, começando na versão 1710 do Configuration Manager. A [coluna de reinicialização pendente](/sccm/core/clients/manage/manage-clients#Restart-clients) pode ajudar a identificar os dispositivos que precisam de uma reinicialização. 
-<!--SMS503978--Script reboot warning-->
+    >Evite gerar script de uma reinicialização do dispositivo ou de um reinício do agente do Configuration Manager quando usar o recurso Executar Scripts. Isto pode levar a um estado contínuo de reinicialização. Se necessário, há melhorias no recurso de notificação de cliente que permitem reiniciar os dispositivos, começando na versão 1710 do Configuration Manager. A [coluna de reinicialização pendente](/sccm/core/clients/manage/manage-clients#Restart-clients) pode ajudar a identificar os dispositivos que precisam de uma reinicialização. 
+<!--SMS503978  -->
 
 ## <a name="script-parameters"></a>Parâmetros do script
 *(Introduzido na versão 1710)*  
@@ -119,6 +182,10 @@ Adicionar parâmetros a um script oferece maior flexibilidade para o seu trabalh
 Na caixa de diálogo **Criar Script**, clique em **Parâmetros do Script** em **Script**.
 
 Cada um dos parâmetros do script tem sua própria caixa de diálogo para adicionar mais detalhes e validação.
+
+>[!IMPORTANT]
+> Os valores de parâmetro não podem conter um apóstrofo. 
+
 
 ### <a name="parameter-validation"></a>Validação de parâmetro
 
@@ -151,7 +218,7 @@ Aqui estão alguns exemplos que ilustram os scripts que você poderá usar com e
 
 ### <a name="create-a-new-folder-and-file"></a>Criar uma nova pasta e arquivo
 
-Esse script cria uma nova pasta, e um arquivo dentro dela, com base no nome inserido.
+Esse script cria uma pasta e um arquivo na pasta, considerando a entrada de nomenclatura.
 
 ``` powershell
 Param(
@@ -202,6 +269,18 @@ Depois de iniciar a execução de um script em uma coleção de dispositivos, us
 1. No console do Configuration Manager, clique em **Monitoramento**.
 2. No espaço de trabalho **Monitoramento**, clique em **Status do Script**.
 3. Na lista **Status do Script**, veja os resultados de cada script executado em dispositivos cliente. Um código de saída do script de **0** geralmente indica que o script foi executado com êxito.
+    - A partir do Configuration Manager 1802, a saída de script é truncada em 4 KB para permitir uma melhor experiência de exibição.  <!--510013-->
+      ![Monitor de script – script truncado](./media/run-scripts/Script-monitoring-truncated.png) 
+
+## <a name="script-output"></a>Saída de script
+
+- A partir do Configuration Manager versão 1802, a saída de script é retornada com a formatação JSON. Este formato retorna consistentemente uma saída de script legível. 
+- Os scripts que obtêm um resultado desconhecido, ou aqueles em que o cliente estava offline, não serão mostrados no conjunto de dados ou nos gráficos. <!--507179-->
+- Evite retornar uma saída de script grande, pois ela será truncada em 4 KB. <!--508488-->
+- Algumas funcionalidades com a formatação de saída de script não estão disponíveis durante a execução do Configuration Manager versão 1802 ou posterior com uma versão de nível inferior do cliente. <!--508487-->
+- Converta um objeto de enumeração em um valor de cadeia de caracteres nos scripts, para que eles sejam exibidos corretamente na formatação JSON. <!--508377--> ![Converter um objeto de enumeração em um valor de cadeia de caracteres](./media/run-scripts/enum-tostring-JSON.png)
+
+
 
 ## <a name="see-also"></a>Consulte também
 
