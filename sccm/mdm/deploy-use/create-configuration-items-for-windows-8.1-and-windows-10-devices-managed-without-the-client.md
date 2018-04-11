@@ -1,18 +1,19 @@
 ---
-title: "Criar itens de configuração para dispositivos Windows 8.1 e Windows 10 gerenciados com o Intune"
+title: Criar itens de configuração para dispositivos Windows 8.1 e Windows 10 gerenciados com o Intune
 titleSuffix: Configuration Manager
-description: "Use o item de configuração do Windows 10 do System Center Configuration Manager para gerenciar as configurações de computadores Windows 10."
+description: Use o item de configuração do Windows 10 do System Center Configuration Manager para gerenciar as configurações de computadores Windows 10.
 ms.custom: na
 ms.date: 07/31/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
-ms.technology: configmgr-hybrid
+ms.technology:
+- configmgr-hybrid
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 23e1e4dc-623a-4521-ad04-ae9482927097
-caps.latest.revision: "20"
-caps.handback.revision: "0"
+caps.latest.revision: 20
+caps.handback.revision: 0
 author: andredm7
 ms.author: andredm
 manager: angrobe
@@ -370,16 +371,16 @@ Essas configurações são destinadas a dispositivos que executam o Windows 10 e
 |**Habilitar SmartScreen**|Use o SmartScreen para verificar se os arquivos que os usuários baixam não contêm código mal-intencionado.|  
 |**Permitir pop-ups**|Permita ou desabilite os pop-ups do navegador.|  
 |**Permitir cookies**|Permita ou desabilite cookies.|  
-|**Permitir Preenchimento Automático**|Permita o uso do recurso Autopreenchimento do navegador Edge.|  
-|**Permitir Gerenciador de Senhas**|Permita o uso do recurso gerenciador de senha do navegador Edge.|  
+|**Permitir Preenchimento Automático**|Permita o uso do recurso Autopreenchimento do navegador Microsoft Edge.|  
+|**Permitir Gerenciador de Senhas**|Permita o uso do recurso gerenciador de senha do navegador Microsoft Edge.|  
 |**Local da lista de sites do Modo Empresarial**|Especifica onde encontrar a lista de sites que abre no modo Empresarial. Os usuários não podem editar essa lista.|
-|**Bloquear o acesso à página about:flags**|Impeça o usuário final de acessar a página about:flags no Edge que contém configurações experimentais e de desenvolvedor.|
+|**Bloquear o acesso à página about:flags**|Impeça o usuário final de acessar a página about:flags no Microsoft Edge que contém configurações experimentais e de desenvolvedor.|
 |**Substituição de prompt SmartScreen**|Permitir que o usuário final ignore os avisos de filtro SmartScreen sobre sites mal-intencionados.|
 |**Substituição de prompt SmartScreen para arquivos**|Permitir que o usuário final ignore os avisos de filtro SmartScreen sobre o download de arquivos mal-intencionados.|
 |**Endereço IP do localhost WebRTC**|Bloqueie a exibição do endereço IP do localhost dos usuários ao fazer chamadas telefônicas usando a protocolo RTC da Web.|
 |**Mecanismo de pesquisa padrão**|Especifique o mecanismo de pesquisa padrão a ser usado. Os usuários finais podem alterar esse valor a qualquer momento.|
 |**URL de XML OpenSearch**|Você pode usar um arquivo XML de OpenSearch para criar um serviço de pesquisa para o Microsoft Edge.<br>Para obter mais detalhes, confira [OpenSearch](https://msdn.microsoft.com/library/windows/desktop/dd940337).|
-|**Home pages (somente desktop)**|Adicione uma lista de sites que você deseja usar como home pages no navegador Edge (somente no desktop).|  
+|**Home pages (somente desktop)**|Adicione uma lista de sites que você deseja usar como home pages no navegador Microsoft Edge (somente no desktop).|  
 
 
 ### <a name="windows-defender"></a>Windows Defender
