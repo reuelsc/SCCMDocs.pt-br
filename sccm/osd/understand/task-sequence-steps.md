@@ -3,7 +3,7 @@ title: Etapas da sequência de tarefas
 titleSuffix: Configuration Manager
 description: Saiba mais sobre as etapas que você pode adicionar a uma sequência de tarefas do Configuration Manager.
 ms.custom: na
-ms.date: 03/22/2018
+ms.date: 03/30/2018
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
@@ -17,11 +17,11 @@ caps.handback.revision: 0
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: ad68209784b78da5c6e75745094ba8e6bc002c44
-ms.sourcegitcommit: 11bf4ed40ed0cbb10500cc58bbecbd23c92bfe20
+ms.openlocfilehash: 53929400b983a2191e60a7d42ae84062afd44e3a
+ms.sourcegitcommit: d8a4a53630351b3d677bbdc5d203e7d330472cba
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/27/2018
+ms.lasthandoff: 04/03/2018
 ---
 # <a name="task-sequence-steps-in-system-center-configuration-manager"></a>Etapas da sequência de tarefas no System Center Configuration Manager
 
@@ -711,6 +711,10 @@ As condições a seguir afetam os aplicativos instalados pela sequência de tare
 -   Se o valor de uma variável contém todas as informações que não seja o nome do aplicativo. A sequência de tarefas não instala o aplicativo e prossegue.  
 
 -   Se a sequência de tarefas não encontrar uma variável com o nome de base especificado e o sufixo "01", a sequência de tarefas não instalará nenhum aplicativo. 
+    
+> [!Important]  
+> Esses valores diferenciam maiúsculas de minúsculas. Por exemplo, "instalar" é diferente de "Instalar". Caso precise alterar o valor, o Editor de Sequência de Tarefas não detecta alterações de maiúsculas e minúsculas. Você deve fazer outra edição em simultâneo; por exemplo, modificar a descrição da etapa.<!--509714-->   
+
    
 **If an application fails, continue installing other applications in the list (Se um aplicativo falhar, continue a instalar outros aplicativos na lista)**  
  Essa configuração especifica que a etapa continuará quando a instalação de um aplicativo individual falhar. Se você especificar essa configuração, a sequência de tarefas continuará, independentemente de eventuais erros de instalação. Se você não especificar essa configuração e a instalação falhar, a etapa terminará imediatamente.  
@@ -789,6 +793,10 @@ No editor de sequência de tarefas, clique em **Adicionar**, selecione **Softwar
 -   Se a ID do pacote contiver caracteres minúsculos, a instalação do software falhará.  
 
 -   Se a sequência de tarefas não encontrar uma variável com o nome de base especificado e o sufixo "001", a sequência de tarefas não instalará nenhum pacote. A sequência de tarefas continua.  
+    
+> [!Important]  
+> Esses valores diferenciam maiúsculas de minúsculas. Por exemplo, "instalar" é diferente de "Instalar". Caso precise alterar o valor, o Editor de Sequência de Tarefas não detecta alterações de maiúsculas e minúsculas. Você deve fazer outra edição em simultâneo; por exemplo, modificar a descrição da etapa.<!--509714-->   
+
    
 **Se a instalação de um pacote de software falhar, continue instalando os outros pacotes da lista**  
  Essa configuração especifica que a etapa continuará se a instalação de um pacote de software individual falhar. Se você especificar essa configuração, a sequência de tarefas continuará, independentemente de eventuais erros de instalação. Se você não especificar essa configuração e a instalação falhar, a etapa terminará imediatamente.  

@@ -1,7 +1,7 @@
 ---
-title: "Nova versão 1710 | Microsoft Docs"
+title: Nova versão 1710 | Microsoft Docs
 titleSuffix: Configuration Manager
-description: "Veja os detalhes das alterações e dos novos recursos introduzidos na versão 1710 do System Center Configuration Manager."
+description: Veja os detalhes das alterações e dos novos recursos introduzidos na versão 1710 do System Center Configuration Manager.
 ms.custom: na
 ms.date: 1/08/2018
 ms.reviewer: na
@@ -14,17 +14,23 @@ ms.assetid: bc6c3e5f-b9e2-400e-9d9d-446ff93c520c
 author: mestew
 ms.author: mstewart
 manager: angrobe
-ms.openlocfilehash: c75ed431c6a786759e2ddcd6dc6b55d5b55412c7
-ms.sourcegitcommit: b13da5ad8ffd58e3b89fa6d7170e1dec3ff130a4
+ms.openlocfilehash: e9d1ac44bf0455ff0b1caec94d07cfa734dfbeb0
+ms.sourcegitcommit: d8a4a53630351b3d677bbdc5d203e7d330472cba
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/01/2018
+ms.lasthandoff: 04/03/2018
 ---
 # <a name="what39s-new-in-version-1710-of-system-center-configuration-manager"></a>Novidades da versão 1710 do System Center Configuration Manager
 
 *Aplica-se a: System Center Configuration Manager (Branch Atual)*
 
 A atualização 1710 do branch atual do System Center Configuration Manager está disponível como uma atualização no console para os sites já instalados que executam a versão 1610, 1702 ou 1706.
+
+Além de novos recursos, este lançamento inclui outras alterações, como correções de bugs. Para saber mais, confira [Resumo das alterações no Branch Atual do System Center Configuration Manager, versão 1710](https://support.microsoft.com/help/4056470/summary-of-changes-in-system-center-configuration-manager-current-bran).
+
+As atualizações adicionais a seguir também já estão disponíveis neste lançamento:
+- [Pacote cumulativo de atualizações para o Branch Atual do System Center Configuration Manager, versão 1710](https://support.microsoft.com/help/4057517/update-rollup-for-system-center-configuration-manager-current-branch-v)
+- [Pacote cumulativo de atualizações 2 para o Branch Atual do System Center Configuration Manager, versão 1710](https://support.microsoft.com/en-us/help/4086143/update-rollup-2-for-system-center-configuration-manager-current-branch)
 
 > [!TIP]  
 > Para instalar um novo site, você deve usar uma versão de linha de base do Configuration Manager.  
