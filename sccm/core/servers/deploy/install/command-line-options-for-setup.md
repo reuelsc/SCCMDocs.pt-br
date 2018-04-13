@@ -1,9 +1,9 @@
 ---
-title: "Configurar opções de linha de comando"
+title: Configurar opções de linha de comando
 titleSuffix: Configuration Manager
-description: "Use as informações deste artigo para configurar scripts ou instalar o System Center Configuration Manager por meio de uma linha de comando."
+description: Crie scripts de automação para instalar o System Center Configuration Manager por meio de uma linha de comando.
 ms.custom: na
-ms.date: 03/27/2017
+ms.date: 03/22/2018
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
@@ -12,17 +12,17 @@ ms.technology:
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 0da167f1-52cf-4dfd-8f73-833ca3eb8478
-caps.latest.revision: 
+caps.latest.revision: 3
 author: mestew
 ms.author: mstewart
-manager: angrobe
-ms.openlocfilehash: 3b2076087e13958be15dd5151961fa825e22a433
-ms.sourcegitcommit: daa080cf220835f157a23e8c8e2bd2781b869bb7
+manager: dougeby
+ms.openlocfilehash: fede359c884ef8b4027935b2e3fb48a5b7543d26
+ms.sourcegitcommit: 11bf4ed40ed0cbb10500cc58bbecbd23c92bfe20
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 12/04/2017
+ms.lasthandoff: 03/23/2018
 ---
-# <a name="command-line-options-for-setup-in-system-center-configuration-manager"></a>Opções de linha de comando para Instalação no System Center Configuration Manager
+# <a name="command-line-options-for-setup-in-system-center-configuration-manager"></a>Opções de linha de comando para instalação no System Center Configuration Manager
 
 *Aplica-se a: System Center Configuration Manager (Branch Atual)*
 
@@ -31,44 +31,44 @@ ms.lasthandoff: 12/04/2017
 
 ##  <a name="bkmk_setup"></a> Opções de linha de comando para instalação  
  **/DEINSTALL**  
- Desinstala o site. É necessário executar a Instalação no computador de servidor do site.  
+ Desinstala o site. Execute a instalação no computador do servidor do site.  
 
  **/DONTSTARTSITECOMP**  
  Instala um site, mas impede a inicialização do serviço Gerenciador de Componentes de Site. Até que o serviço do Gerenciador de Componentes do Site seja iniciado, o site não ficará ativo. O Gerenciador de Componentes de Site é responsável por instalar e iniciar o serviço SMS_Executive e por outros processos no site. Após a conclusão da instalação do site, ao iniciar o serviço Gerenciador de Componentes de Site, ele instalará o SMS_Executive e os outros processos necessários para a operação do site.  
 
  **/HIDDEN**  
- Oculta a interface do usuário durante a Instalação. Use essa opção somente junto com a opção **/SCRIPT**. O arquivo de script autônomo deverá fornecer todas as opções necessárias; caso contrário, a Instalação falhará.  
+ Oculta a interface do usuário durante a instalação. Use essa opção somente junto com a opção **/SCRIPT**. O arquivo de script autônomo deverá fornecer todas as opções necessárias ou a instalação falhará.  
 
  **/NOUSERINPUT**  
- Desabilita a entrada do usuário durante a Instalação, mas exibe o Assistente de Instalação. Use essa opção somente junto com a opção **/SCRIPT**. O arquivo de script autônomo deverá fornecer todas as opções necessárias; caso contrário, a Instalação falhará.  
+ Desabilita a entrada do usuário durante a instalação, mas exibe o assistente de instalação. Use essa opção somente junto com a opção **/SCRIPT**. O arquivo de script autônomo deverá fornecer todas as opções necessárias ou a instalação falhará.  
 
  **/RESETSITE**  
- Executa uma redefinição de site que redefine o banco de dados e as contas de serviço do site. É necessário executar a Instalação por meio do **<*Caminho de instalação do Configuration Manager*>\BIN\X64** no servidor do site. Para obter mais informações sobre a redefinição de site, consulte a seção [Executar uma redefinição de site](../../../../core/servers/manage/modify-your-infrastructure.md#bkmk_reset) em [Modificar a infraestrutura do System Center Configuration Manager](../../../../core/servers/manage/modify-your-infrastructure.md).  
+ Executa uma redefinição de site que redefine o banco de dados e as contas de serviço do site. Execute a instalação por meio do **<*caminho de instalação do Configuration Manager*>\BIN\X64** no servidor do site. Para obter mais informações sobre a redefinição de site, consulte a seção [Executar uma redefinição de site](../../../../core/servers/manage/modify-your-infrastructure.md#bkmk_reset) em [Modificar a infraestrutura do System Center Configuration Manager](../../../../core/servers/manage/modify-your-infrastructure.md).  
 
- **/TESTDBUPGRADE <*Nome da instância*>\\<*Nome do banco de dados*>**  
- Executa um teste em um backup do banco de dados do site para garantir que o banco de dados pode fazer uma atualização. É necessário fornecer o nome da instância e o nome de banco de dados para o banco de dados do site. Se você especificar somente o nome do banco de dados, a Instalação usará o nome padrão da instância.  
+ **/TESTDBUPGRADE <*Instance name*>\\<*Database name*>**  
+ Executa um teste em um backup do banco de dados do site para garantir que o banco de dados pode fazer uma atualização. Forneça o nome da instância e o nome do banco de dados para o banco de dados do site. Se você especificar somente o nome do banco de dados, a instalação usará o nome da instância padrão.  
 
 > [!IMPORTANT]  
 >  Não execute essa opção de linha de comando no banco de dados do site de produção. A execução dessa opção de linha de comando no banco de dados do site de produção atualizará o banco de dados do site e poderá deixar o site inoperante.  
 
  **/UPGRADE**  
- Executa a atualização autônoma de um site. Ao usar **/UPGRADE**, é necessário especificar a chave do produto (Product Key), incluindo os traços (-). Além disso, é necessário especificar o caminho para os arquivos de pré-requisito da Instalação baixados anteriormente.  
+ Executa a atualização autônoma de um site. Ao usar **/UPGRADE**, é necessário especificar a chave do produto (Product Key), incluindo os traços (-). Além disso, é necessário especificar o caminho para os arquivos de pré-requisito da instalação baixados anteriormente.  
 
  Exemplo: `setupwpf.exe /UPGRADE xxxxx-xxxxx-xxxxx-xxxxx-xxxxx <path to external component files>`  
 
- Para obter mais informações sobre os arquivos de pré-requisito da Instalação, consulte [Downloader de Instalação](setup-downloader.md).  
+ Para obter mais informações sobre os arquivos de pré-requisito da instalação, consulte [Downloader de instalação](setup-downloader.md).  
 
- **/SCRIPT <*Caminho do script de instalação*>**  
- Executa instalações autônomas. É necessário ter um arquivo de inicialização da instalação ao usar a opção **/SCRIPT** . Para obter mais informações sobre como executar a Instalação autônoma, consulte [Install sites using a command line (Usar uma linha de comando para instalar sites)](../../../../core/servers/deploy/install/use-a-command-line-to-install-sites.md).  
+ **/SCRIPT <*setup script path*>**  
+ Executa instalações autônomas. É necessário ter um arquivo de inicialização da instalação ao usar a opção **/SCRIPT**. Para obter mais informações sobre como executar a instalação autônoma, consulte [Instalar sites usando uma linha de comando](../../../../core/servers/deploy/install/use-a-command-line-to-install-sites.md).  
 
- **/SDKINST <*FQDN do Provedor de SMS*>**  
- Instala o Provedor de SMS no computador especificado. É necessário fornecer o FQDN (nome de domínio totalmente qualificado) do computador do Provedor de SMS. Para obter mais informações sobre o Provedor de SMS, consulte [Planejar o Provedor de SMS para o System Center Configuration Manager](../../../../core/plan-design/hierarchy/plan-for-the-sms-provider.md).  
+ **/SDKINST <*SMS Provider FQDN*>**  
+ Instala o Provedor de SMS no computador especificado. Forneça o FQDN (nome de domínio totalmente qualificado) do computador do Provedor de SMS. Para obter mais informações sobre o Provedor de SMS, consulte [Planejar o Provedor de SMS](../../../../core/plan-design/hierarchy/plan-for-the-sms-provider.md).  
 
- **/SDKDEINST <*FQDN do Provedor de SMS*>**  
- Desinstala o Provedor de SMS do computador especificado. É necessário fornecer o FQDN para o computador do Provedor de SMS.  
+ **/SDKDEINST <*SMS Provider FQDN*>**  
+ Desinstala o Provedor de SMS do computador especificado. Forneça o FQDN do computador do Provedor de SMS.  
 
- **/MANAGELANGS <*Caminho do script de idioma*>**  
- Gerencia os idiomas instalados em um site previamente instalado. Para usar essa opção, é necessário executar a Instalação no **<*Caminho de instalação do Configuration Manager*>\BIN\X64** no servidor do site e fornecer o local do arquivo de script de idioma que contém as configurações de idioma. Para obter mais informações sobre as opções de idioma disponíveis no arquivo de script de instalação de idioma, consulte [Opções de linha de comando para gerenciar idiomas](#bkmk_Lang) neste tópico.  
+ **/MANAGELANGS <*Language script path*>**  
+ Gerencia os idiomas instalados em um site previamente instalado. Para usar essa opção, execute a instalação por meio do **<*caminho de instalação do Configuration Manager*>\BIN\X64** no servidor do site. Forneça o local para o arquivo de script de idioma que contém as configurações de idioma. Para obter mais informações sobre as opções de idioma disponíveis no arquivo de script de instalação de idioma, consulte a seção [Opções de linha de comando para gerenciar idiomas](#bkmk_Lang).  
 
 ##  <a name="bkmk_Lang"></a> Opções de linha de comando para gerenciar idiomas  
  **Identificação**  
@@ -137,21 +137,21 @@ ms.lasthandoff: 12/04/2017
 
          1 = Já baixado  
 
-    -   **Detalhes:** especifica se os arquivos de pré-requisito da Instalação já foram baixados. Por exemplo, se você usar o valor **0**, a instalação baixará os arquivos.  
+    -   **Detalhes:** especifica se os arquivos de pré-requisito da instalação já foram baixados. Por exemplo, se você usar o valor **0**, a instalação baixará os arquivos.  
 
 -   **Nome da chave:** PrerequisitePath  
 
     -   **Obrigatória:** Sim  
 
-    -   **Valores:** <*Caminho para os arquivos de pré-requisito da Instalação*>  
+    -   **Valores:** <*Caminho para os arquivos de pré-requisito da instalação*>  
 
-    -   **Detalhes:** especifica o caminho para os arquivos de pré-requisito da Instalação. Dependendo do valor do **PrerequisiteComp** , a Instalação usará esse caminho para armazenar arquivos baixados ou para localizar arquivos baixados anteriormente.  
+    -   **Detalhes:** especifica o caminho para os arquivos de pré-requisito da instalação. Dependendo do valor de **PrerequisiteComp**, a instalação usará esse caminho para armazenar os arquivos baixados ou para localizar os arquivos baixados anteriormente.  
 
-##  <a name="bkmk_Unattended"></a> Chaves de arquivo de script da instalação autônoma  
- Use as seções a seguir para ajudá-lo a criar seu script para a Instalação autônoma. As listas mostram as chaves de script da Instalação disponíveis, seus valores correspondentes, se são necessárias, em que tipo de instalação são usadas e uma breve descrição da chave.  
+##  <a name="bkmk_Unattended"></a> Chaves de arquivo de script de instalação autônoma  
+ Use as seções a seguir para ajudá-lo a criar seu script para a instalação autônoma. As listas mostram as chaves de script da instalação disponíveis, seus valores correspondentes, se elas são obrigatórias, em que tipo de instalação são usadas e uma breve descrição da chave.  
 
 ### <a name="unattended-install-for-a-central-administration-site"></a>Instalação autônoma de um site de administração central  
- Use os detalhes a seguir para instalar um site de administração central usando um arquivo de script de Instalação autônoma.  
+ Use os detalhes a seguir para instalar um site de administração central usando um arquivo de script de instalação autônoma.  
 
 **Identificação**  
 
@@ -223,15 +223,15 @@ ms.lasthandoff: 12/04/2017
 
          1 = Já baixado  
 
-    -   **Detalhes:** especifica se os arquivos de pré-requisito da Instalação já foram baixados. Por exemplo, se você usar o valor **0**, a Instalação baixará os arquivos.  
+    -   **Detalhes:** especifica se os arquivos de pré-requisito da instalação já foram baixados. Por exemplo, se você usar o valor **0**, a instalação baixará os arquivos.  
 
 -   **Nome da chave:** PrerequisitePath  
 
     -   **Obrigatória:** Sim  
 
-    -   **Valores:** <*Caminho para os arquivos de pré-requisito da Instalação*>  
+    -   **Valores:** <*Caminho para os arquivos de pré-requisito da instalação*>  
 
-    -   **Detalhes:** especifica o caminho para os arquivos de pré-requisito da Instalação. Dependendo do valor do **PrerequisiteComp** , a Instalação usará esse caminho para armazenar arquivos baixados ou para localizar arquivos baixados anteriormente.  
+    -   **Detalhes:** especifica o caminho para os arquivos de pré-requisito da instalação. Dependendo do valor de **PrerequisiteComp**, a instalação usará esse caminho para armazenar os arquivos baixados ou para localizar os arquivos baixados anteriormente.  
 
 -   **Nome da chave:** AdminConsole  
 
@@ -246,6 +246,8 @@ ms.lasthandoff: 12/04/2017
     -   **Detalhes:** especifica se deseja instalar o console do Configuration Manager.  
 
 -   **Nome da chave:** JoinCEIP  
+    > [!Note]  
+    > A partir do Configuration Manager versão 1802, o recurso Programa de Aperfeiçoamento da Experiência do Usuário é removido do produto.
 
     -   **Obrigatória:** Sim  
 
@@ -317,10 +319,10 @@ ms.lasthandoff: 12/04/2017
 
     -   **Valores:** <*Nome do banco de dados do site*> ou <*Nome da instância*>\\<*Nome do banco de dados do site*>  
 
-    -   **Detalhes:** especifica o nome do banco de dados SQL Server a ser criado ou o banco de dados SQL Server a ser usado durante a instalação do banco de dados do site de administração central.  
+    -   **Detalhes:** especifica o nome do banco de dados do SQL Server a ser criado ou o banco de dados do SQL Server a ser usado durante a instalação do banco de dados do site de administração central.  
 
         > [!IMPORTANT]  
-        >  Você deverá especificar o nome da instância e o nome do banco de dados do site se você não usar a instância padrão.  
+        >  Se você não usar a instância padrão, precisará especificar o nome da instância e o nome do banco de dados do site.  
 
 -   **Nome da chave:** SQLSSBPort  
 
@@ -364,7 +366,7 @@ ms.lasthandoff: 12/04/2017
 
     -   **Obrigatório:** obrigatório quando **CloudConnector** for igual a 1  
 
-    -   **Valores:** <*FQDN do servidor de ponto de conexão do serviço*>  
+    -   **Valores:** <*FQDN do servidor de ponto de conexão de serviço*>  
 
     -   **Detalhes:** especifica o FQDN do servidor que hospedará a função do sistema de sites do ponto de conexão do serviço.  
 
@@ -378,7 +380,7 @@ ms.lasthandoff: 12/04/2017
 
          1 = Instalar  
 
-    -   **Detalhes:** especifica se o ponto de conexão de serviço usará um servidor proxy.  
+    -   **Detalhes:** especifica se o ponto de conexão de serviço usa um servidor proxy.  
 
 -   **Nome da chave:** ProxyName  
 
@@ -386,7 +388,7 @@ ms.lasthandoff: 12/04/2017
 
     -   **Valores:** <*FQDN do servidor proxy*>  
 
-    -   **Detalhes:** especifica o FQDN do servidor proxy que será usado pela função do sistema de sites do ponto de conexão do serviço.  
+    -   **Detalhes:** especifica o FQDN do servidor proxy usado pelo ponto de conexão de serviço.  
 
 -   **Nome da chave:** ProxyPort  
 
@@ -397,7 +399,7 @@ ms.lasthandoff: 12/04/2017
     -   **Detalhes:** especifica o número da porta a ser usado para a porta do proxy.  
 
 ### <a name="unattended-install-for-a-primary-site"></a>Instalação autônoma de um site primário  
-Use os detalhes a seguir para instalar um site primário usando um arquivo de script de Instalação autônoma.  
+Use os detalhes a seguir para instalar um site primário usando um arquivo de script de instalação autônoma.  
 
 **Identificação**  
 
@@ -469,15 +471,15 @@ Use os detalhes a seguir para instalar um site primário usando um arquivo de sc
 
          1 = Já baixado  
 
-    -   **Detalhes:** especifica se os arquivos de pré-requisito da Instalação já foram baixados. Por exemplo, se você usar o valor **0**, a Instalação baixará os arquivos.  
+    -   **Detalhes:** especifica se os arquivos de pré-requisito da instalação já foram baixados. Por exemplo, se você usar o valor **0**, a instalação baixará os arquivos.  
 
 -   **Nome da chave:** PrerequisitePath  
 
     -   **Obrigatória:** Sim  
 
-    -   **Valores:** <*Caminho para os arquivos de pré-requisito da Instalação*>  
+    -   **Valores:** <*Caminho para os arquivos de pré-requisito da instalação*>  
 
-    -   **Detalhes:** especifica o caminho para os arquivos de pré-requisito da Instalação. Dependendo do valor do **PrerequisiteComp** , a Instalação usará esse caminho para armazenar arquivos baixados ou para localizar arquivos baixados anteriormente.  
+    -   **Detalhes:** especifica o caminho para os arquivos de pré-requisito da instalação. Dependendo do valor de **PrerequisiteComp**, a instalação usará esse caminho para armazenar os arquivos baixados ou para localizar os arquivos baixados anteriormente.  
 
 -   **Nome da chave:** AdminConsole  
 
@@ -492,6 +494,8 @@ Use os detalhes a seguir para instalar um site primário usando um arquivo de sc
     -   **Detalhes:** especifica se deseja instalar o console do Configuration Manager.  
 
 -   **Nome da chave:** JoinCEIP  
+    > [!Note]  
+    > A partir do Configuration Manager versão 1802, o recurso Programa de Aperfeiçoamento da Experiência do Usuário é removido do produto.
 
     -   **Obrigatória:** Sim  
 
@@ -618,7 +622,7 @@ Use os detalhes a seguir para instalar um site primário usando um arquivo de sc
     -   **Detalhes:** especifica o nome do banco de dados SQL Server a ser criado ou o banco de dados SQL Server a ser usado durante a instalação do banco de dados do site primário.  
 
         > [!IMPORTANT]  
-        >  Você deverá especificar o nome da instância e o nome do banco de dados do site se você não usar a instância padrão.  
+        >  Se você não usar a instância padrão, precisará especificar o nome da instância e o nome do banco de dados do site.  
 
 -   **Nome da chave:** SQLSSBPort  
 
@@ -652,7 +656,7 @@ Use os detalhes a seguir para instalar um site primário usando um arquivo de sc
 
     -   **Valores:** <*FQDN do site de administração central*>  
 
-    -   **Detalhes:** especifica o site de administração central ao qual o site primário será anexado quando ingressar na hierarquia do Configuration Manager. Você deve especificar o site de administração central durante a instalação.  
+    -   **Detalhes:** especifica o site de administração central ao qual o site primário é anexado quando ele ingressa na hierarquia do Configuration Manager. Especifique o site de administração central durante a instalação.  
 
 -   **Nome da chave:** CASRetryInterval  
 
@@ -690,7 +694,7 @@ Use os detalhes a seguir para instalar um site primário usando um arquivo de sc
 
     -   **Obrigatório:** obrigatório quando **CloudConnector** for igual a 1  
 
-    -   **Valores:** <*FQDN do servidor de ponto de conexão do serviço*\>  
+    -   **Valores:** <*FQDN do servidor de ponto de conexão de serviço*\>  
 
     -   **Detalhes:** especifica o FQDN do servidor que hospedará a função do sistema de sites do ponto de conexão do serviço.  
 
@@ -704,7 +708,7 @@ Use os detalhes a seguir para instalar um site primário usando um arquivo de sc
 
          1 = Instalar  
 
-    -   **Detalhes:** especifica se o ponto de conexão de serviço usará um servidor proxy.  
+    -   **Detalhes:** especifica se o ponto de conexão de serviço usa um servidor proxy.  
 
 -   **Nome da chave:** ProxyName  
 
@@ -712,7 +716,7 @@ Use os detalhes a seguir para instalar um site primário usando um arquivo de sc
 
     -   **Valores:** <*FQDN do servidor proxy*>  
 
-    -   **Detalhes:** especifica o FQDN do servidor proxy que será usado pela função do sistema de sites do ponto de conexão do serviço.  
+    -   **Detalhes:** especifica o FQDN do servidor proxy usado pelo ponto de conexão de serviço.  
 
 -   **Nome da chave:** ProxyPort  
 
@@ -723,7 +727,7 @@ Use os detalhes a seguir para instalar um site primário usando um arquivo de sc
     -   **Detalhes:** especifica o número da porta a ser usado para a porta do proxy.  
 
 ### <a name="unattended-recovery-for-a-central-administration-site"></a>Recuperação autônoma de um site de administração central  
- Use os detalhes a seguir para recuperar um site de administração central usando um arquivo de script da Instalação autônoma.  
+ Use os detalhes a seguir para recuperar um site de administração central usando um arquivo de script de instalação autônoma.  
 
 **Identificação**  
 
@@ -757,7 +761,7 @@ Use os detalhes a seguir para instalar um site primário usando um arquivo de sc
 
          4 = Recuperar apenas o SQL Server.  
 
-    -   **Detalhes:** especifica se a Instalação recuperará o servidor do site, o SQL Server ou ambos. As chaves associadas são necessárias quando o seguinte valor é definido para a configuração **ServerRecoveryOptions**:  
+    -   **Detalhes:** especifica se a instalação recupera o servidor do site, o SQL Server ou ambos. As chaves associadas são necessárias quando o seguinte valor é definido para a configuração **ServerRecoveryOptions**:  
 
         -   Valor = 1: você tem a opção de especificar um valor para a chave **SiteServerBackupLocation** recuperar o site usando um backup do site. Caso não especifique um valor, o site é reinstalado sem ser restaurado por meio de um conjunto de backup.  
 
@@ -779,7 +783,7 @@ Use os detalhes a seguir para instalar um site primário usando um arquivo de sc
 
          80 = Ignorar recuperação do banco de dados.  
 
-    -   **Detalhes:** especifica como a Instalação recupera o banco de dados do site no SQL Server.  
+    -   **Detalhes:** especifica como a instalação recupera o banco de dados do site no SQL Server.  
 
 -   **Nome da chave:** ReferenceSite  
 
@@ -825,7 +829,7 @@ Use os detalhes a seguir para instalar um site primário usando um arquivo de sc
 
     -   **Valores:** <*Código do site*>  
 
-    -   **Detalhes:** especifica três caracteres alfanuméricos que identificam de forma exclusiva o site na hierarquia. É necessário especificar o código do site usado pelo site antes da falha.
+    -   **Detalhes:** especifica três caracteres alfanuméricos que identificam de forma exclusiva o site na hierarquia. Especifique o código do site usado pelo site antes da falha.
 
 -   **Nome da chave:** SiteName  
 
@@ -849,7 +853,7 @@ Use os detalhes a seguir para instalar um site primário usando um arquivo de sc
 
     -   **Valores:** <*FQDN do Provedor de SMS*>  
 
-    -   **Detalhes:** especifica o FQDN para o servidor que hospedará o Provedor de SMS. Você deve especificar o servidor que hospedou o Provedor de SMS antes da falha.  
+    -   **Detalhes:** especifica o FQDN para o servidor que hospeda o Provedor de SMS. Especifique o servidor que hospedou o Provedor de SMS antes da falha.  
 
          Você pode configurar outros Provedores de SMS para o site após a instalação inicial. Para obter mais informações sobre o Provedor de SMS, consulte [Planejar o Provedor de SMS para o System Center Configuration Manager](../../../../core/plan-design/hierarchy/plan-for-the-sms-provider.md).  
 
@@ -863,15 +867,15 @@ Use os detalhes a seguir para instalar um site primário usando um arquivo de sc
 
          1 = Já baixado  
 
-    -   **Detalhes:** especifica se os arquivos de pré-requisito da Instalação já foram baixados. Por exemplo, se você usar o valor **0**, a instalação baixará os arquivos.  
+    -   **Detalhes:** especifica se os arquivos de pré-requisito da instalação já foram baixados. Por exemplo, se você usar o valor **0**, a instalação baixará os arquivos.  
 
 -   **Nome da chave:** PrerequisitePath  
 
     -   **Obrigatória:** Sim  
 
-    -   **Valores:** <*Caminho para os arquivos de pré-requisito da Instalação*>  
+    -   **Valores:** <*Caminho para os arquivos de pré-requisito da instalação*>  
 
-    -   **Detalhes:** especifica o caminho para os arquivos de pré-requisito da Instalação. Dependendo do valor do **PrerequisiteComp** , a Instalação usará esse caminho para armazenar arquivos baixados ou para localizar arquivos baixados anteriormente.  
+    -   **Detalhes:** especifica o caminho para os arquivos de pré-requisito da instalação. Dependendo do valor de **PrerequisiteComp**, a instalação usará esse caminho para armazenar os arquivos baixados ou para localizar os arquivos baixados anteriormente.  
 
 -   **Nome da chave:** AdminConsole  
 
@@ -886,6 +890,8 @@ Use os detalhes a seguir para instalar um site primário usando um arquivo de sc
     -   **Detalhes:** especifica se deseja instalar o console do Configuration Manager.  
 
 -   **Nome da chave:** JoinCEIP  
+    > [!Note]  
+    > A partir do Configuration Manager versão 1802, o recurso Programa de Aperfeiçoamento da Experiência do Usuário é removido do produto.
 
     -   **Obrigatória:** Sim  
 
@@ -905,7 +911,7 @@ Use os detalhes a seguir para instalar um site primário usando um arquivo de sc
 
     -   **Valores:** <*Nome do SQL Server*>  
 
-    -   **Detalhes:** especifica o nome do servidor ou da instância clusterizada que executa o SQL Server e que hospedará o banco de dados do site. Você deverá especificar o mesmo servidor que hospedou o banco de dados do site antes da falha.  
+    -   **Detalhes:** especifica o nome do servidor ou da instância clusterizada que executa o SQL Server e que hospeda o banco de dados do site. Especifique o mesmo servidor que hospedou o banco de dados do site antes da falha.  
 
 -   **Nome da chave:** DatabaseName  
 
@@ -913,10 +919,10 @@ Use os detalhes a seguir para instalar um site primário usando um arquivo de sc
 
     -   **Valores:** <*Nome do banco de dados do site*> ou <*Nome da instância*>\\<*Nome do banco de dados do site*>  
 
-    -   **Detalhes:** especifica o nome do banco de dados SQL Server a ser criado ou o banco de dados SQL Server a ser usado durante a instalação do banco de dados do site de administração central. Você deverá especificar o mesmo nome do banco de dados usado antes da falha.  
+    -   **Detalhes:** especifica o nome do banco de dados SQL Server a ser criado ou o banco de dados SQL Server a ser usado durante a instalação do banco de dados do site de administração central. Especifique o mesmo nome do banco de dados usado antes da falha.  
 
         > [!IMPORTANT]  
-        >  Você deverá especificar o nome da instância e o nome do banco de dados do site se você não usar a instância padrão.  
+        >  Se você não usar a instância padrão, precisará especificar o nome da instância e o nome do banco de dados do site.  
 
 -   **Nome da chave:** SQLSSBPort  
 
@@ -924,7 +930,7 @@ Use os detalhes a seguir para instalar um site primário usando um arquivo de sc
 
     -   **Valores:** <*Número da porta SSB*>  
 
-    -   **Detalhes:** especifica a porta SSB usada pelo SQL Server. Normalmente, o SSB está configurado para usar a porta TCP 4022. Você deve especificar a mesma porta do SSB que foi usada antes da falha.  
+    -   **Detalhes:** especifica a porta SSB usada pelo SQL Server. Normalmente, o SSB está configurado para usar a porta TCP 4022. Especifique a mesma porta SSB usada antes da falha.  
 
 -   **Nome da chave:** SQLDataFilePath  
 
@@ -960,7 +966,7 @@ Use os detalhes a seguir para instalar um site primário usando um arquivo de sc
 
     -   **Obrigatório:** obrigatório quando **CloudConnector** for igual a 1  
 
-    -   **Valores:** <*FQDN do servidor de ponto de conexão do serviço*>  
+    -   **Valores:** <*FQDN do servidor de ponto de conexão de serviço*>  
 
     -   **Detalhes:** especifica o FQDN do servidor que hospedará a função do sistema de sites do ponto de conexão do serviço.  
 
@@ -974,7 +980,7 @@ Use os detalhes a seguir para instalar um site primário usando um arquivo de sc
 
          1 = Instalar  
 
-    -   **Detalhes:** especifica se o ponto de conexão de serviço usará um servidor proxy.  
+    -   **Detalhes:** especifica se o ponto de conexão de serviço usa um servidor proxy.  
 
 -   **Nome da chave:** ProxyName  
 
@@ -982,7 +988,7 @@ Use os detalhes a seguir para instalar um site primário usando um arquivo de sc
 
     -   **Valores:** <*FQDN do servidor proxy*>  
 
-    -   **Detalhes:** especifica o FQDN do servidor proxy que será usado pela função do sistema de sites do ponto de conexão do serviço.  
+    -   **Detalhes:** especifica o FQDN do servidor proxy usado pelo ponto de conexão de serviço.  
 
 -   **Nome da chave:** ProxyPort  
 
@@ -993,7 +999,7 @@ Use os detalhes a seguir para instalar um site primário usando um arquivo de sc
     -   **Detalhes:** especifica o número da porta a ser usado para a porta do proxy.  
 
 ### <a name="unattended-recovery-for-a-primary-site"></a>Recuperação autônoma de um site primário  
- Use os detalhes a seguir para recuperar um site primário usando um arquivo de script de Instalação autônoma.  
+ Use os detalhes a seguir para recuperar um site primário usando um arquivo de script de instalação autônoma.  
 
 **Identificação**  
 
@@ -1027,7 +1033,7 @@ Use os detalhes a seguir para instalar um site primário usando um arquivo de sc
 
          4 = Recuperar apenas o SQL Server.  
 
-    -   **Detalhes:** especifica se a Instalação recuperará o servidor do site, o SQL Server ou ambos. As chaves associadas são necessárias quando o seguinte valor é definido para a configuração **ServerRecoveryOptions**:  
+    -   **Detalhes:** especifica se a instalação recupera o servidor do site, o SQL Server ou ambos. As chaves associadas são necessárias quando o seguinte valor é definido para a configuração **ServerRecoveryOptions**:  
 
         -   Valor = 1: você tem a opção de especificar um valor para a chave **SiteServerBackupLocation** recuperar o site usando um backup do site. Caso não especifique um valor, o site é reinstalado sem ser restaurado por meio de um conjunto de backup.  
 
@@ -1049,7 +1055,7 @@ Use os detalhes a seguir para instalar um site primário usando um arquivo de sc
 
          80 = Ignorar recuperação do banco de dados.  
 
-    -   **Detalhes:** especifica como a Instalação recupera o banco de dados do site no SQL Server.  
+    -   **Detalhes:** especifica como a instalação recupera o banco de dados do site no SQL Server.  
 
 -   **Nome da chave:** SiteServerBackupLocation  
 
@@ -1085,7 +1091,7 @@ Use os detalhes a seguir para instalar um site primário usando um arquivo de sc
 
     -   **Valores:** <*Código do site*>  
 
-    -   **Detalhes:** especifica três caracteres alfanuméricos que identificam de forma exclusiva o site na hierarquia. É necessário especificar o código do site usado pelo site antes da falha.
+    -   **Detalhes:** especifica três caracteres alfanuméricos que identificam de forma exclusiva o site na hierarquia. Especifique o código do site usado pelo site antes da falha.
 
 -   **Nome da chave:** SiteName  
 
@@ -1109,7 +1115,7 @@ Use os detalhes a seguir para instalar um site primário usando um arquivo de sc
 
     -   **Valores:** <*FQDN do Provedor de SMS*>  
 
-    -   **Detalhes:** especifica o FQDN para o servidor que hospedará o Provedor de SMS. Você deve especificar o servidor que hospedou o Provedor de SMS antes da falha. Você pode configurar outros Provedores de SMS para o site após a instalação inicial. Para obter mais informações sobre o Provedor de SMS, consulte [Planejar o Provedor de SMS para o System Center Configuration Manager](../../../../core/plan-design/hierarchy/plan-for-the-sms-provider.md).  
+    -   **Detalhes:** especifica o FQDN para o servidor que hospeda o Provedor de SMS. Especifique o servidor que hospedou o Provedor de SMS antes da falha. Configure Provedores de SMS adicionais para o site após a instalação inicial. Para obter mais informações sobre o Provedor de SMS, consulte [Planejar o Provedor de SMS](../../../../core/plan-design/hierarchy/plan-for-the-sms-provider.md).  
 
 -   **Nome da chave:** PrerequisiteComp  
 
@@ -1121,15 +1127,15 @@ Use os detalhes a seguir para instalar um site primário usando um arquivo de sc
 
          1 = Já baixado  
 
-    -   **Detalhes:** especifica se os arquivos de pré-requisito da Instalação já foram baixados. Por exemplo, se você usar o valor **0**, a instalação baixará os arquivos.  
+    -   **Detalhes:** especifica se os arquivos de pré-requisito da instalação já foram baixados. Por exemplo, se você usar o valor **0**, a instalação baixará os arquivos.  
 
 -   **Nome da chave:** PrerequisitePath  
 
     -   **Obrigatória:** Sim  
 
-    -   **Valores:** <*Caminho para os arquivos de pré-requisito da Instalação*>  
+    -   **Valores:** <*Caminho para os arquivos de pré-requisito da instalação*>  
 
-    -   **Detalhes:** especifica o caminho para os arquivos de pré-requisito da Instalação. Dependendo do valor do **PrerequisiteComp** , a Instalação usará esse caminho para armazenar arquivos baixados ou para localizar arquivos baixados anteriormente.  
+    -   **Detalhes:** especifica o caminho para os arquivos de pré-requisito da instalação. Dependendo do valor de **PrerequisiteComp**, a instalação usará esse caminho para armazenar os arquivos baixados ou para localizar os arquivos baixados anteriormente.  
 
 -   **Nome da chave:** AdminConsole  
 
@@ -1144,6 +1150,8 @@ Use os detalhes a seguir para instalar um site primário usando um arquivo de sc
     -   **Detalhes:** especifica se deseja instalar o console do Configuration Manager.  
 
 -   **Nome da chave:** JoinCEIP  
+    > [!Note]  
+    > A partir do Configuration Manager versão 1802, o recurso Programa de Aperfeiçoamento da Experiência do Usuário é removido do produto.
 
     -   **Obrigatória:** Sim  
 
@@ -1163,20 +1171,20 @@ Use os detalhes a seguir para instalar um site primário usando um arquivo de sc
 
     -   **Valores:** <*Nome do SQL Server*>  
 
-    -   **Detalhes:** especifica o nome do servidor ou da instância clusterizada que executa o SQL Server e que hospedará o banco de dados do site. Você deverá especificar o mesmo servidor que hospedou o banco de dados do site antes da falha.  
+    -   **Detalhes:** especifica o nome do servidor ou da instância clusterizada que executa o SQL Server e que hospeda o banco de dados do site. Especifique o mesmo servidor que hospedou o banco de dados do site antes da falha.  
 
 -   **Nome da chave:** DatabaseName  
 
     -   **Obrigatória:** Sim  
 
-    -   **Valores:**  <*Nome do banco de dados do site*> ou <*Nome da instância*>\\<*Nome do banco de dados do site*>
+    -   **Valores:** <*Nome do banco de dados do site*> ou <*Nome da instância*>\\<*Nome do banco de dados do site*>
 
     -   **Detalhes:**  
 
-         Especifica o nome do banco de dados SQL Server a ser criado ou o banco de dados SQL Server a ser usado durante a instalação do banco de dados do site de administração central. Você deverá especificar o mesmo nome do banco de dados usado antes da falha.  
+         Especifica o nome do banco de dados SQL Server a ser criado ou o banco de dados SQL Server a ser usado durante a instalação do banco de dados do site de administração central. Especifique o mesmo nome do banco de dados usado antes da falha.  
 
         > [!IMPORTANT]  
-        >  Você deverá especificar o nome da instância e o nome do banco de dados do site se você não usar a instância padrão.  
+        >  Se você não usar a instância padrão, precisará especificar o nome da instância e o nome do banco de dados do site.  
 
 -   **Nome da chave:** SQLSSBPort  
 
@@ -1184,7 +1192,7 @@ Use os detalhes a seguir para instalar um site primário usando um arquivo de sc
 
     -   **Valores:** <*Número da porta SSB*>  
 
-    -   **Detalhes:** especifica a porta SSB usada pelo SQL Server. Normalmente, o SSB está configurado para usar a porta TCP 4022. Você deve especificar a mesma porta do SSB que foi usada antes da falha.  
+    -   **Detalhes:** especifica a porta SSB usada pelo SQL Server. Normalmente, o SSB está configurado para usar a porta TCP 4022. Especifique a mesma porta SSB usada antes da falha.  
 
 -   **Nome da chave:** SQLDataFilePath  
 
@@ -1210,7 +1218,7 @@ Use os detalhes a seguir para instalar um site primário usando um arquivo de sc
 
     -   **Valores:** <*Código do site de administração central*>  
 
-    -   **Detalhes:** especifica o site de administração central ao qual o site primário é anexado quando ingressa na hierarquia do Configuration Manager. Essa configuração é necessária se o site primário foi anexado ao site de administração central antes da falha. É necessário especificar o código do site usado para o site de administração central antes da falha.  
+    -   **Detalhes:** especifica o site de administração central ao qual o site primário é anexado quando ingressa na hierarquia do Configuration Manager. Essa configuração é necessária se o site primário foi anexado ao site de administração central antes da falha. Especifique o código do site usado para o site de administração central antes da falha.  
 
 -   **Nome da chave:** CASRetryInterval  
 
@@ -1246,7 +1254,7 @@ Use os detalhes a seguir para instalar um site primário usando um arquivo de sc
 
     -   **Obrigatório:** obrigatório quando **CloudConnector** for igual a 1  
 
-    -   **Valores:** <*FQDN do servidor de ponto de conexão do serviço*>  
+    -   **Valores:** <*FQDN do servidor de ponto de conexão de serviço*>  
 
     -   **Detalhes:** especifica o FQDN do servidor que hospedará a função do sistema de sites do ponto de conexão do serviço.  
 
@@ -1260,7 +1268,7 @@ Use os detalhes a seguir para instalar um site primário usando um arquivo de sc
 
          1 = Instalar  
 
-    -   **Detalhes:** especifica se o ponto de conexão de serviço usará um servidor proxy.  
+    -   **Detalhes:** especifica se o ponto de conexão de serviço usa um servidor proxy.  
 
 -   **Nome da chave:** ProxyName  
 
@@ -1268,7 +1276,7 @@ Use os detalhes a seguir para instalar um site primário usando um arquivo de sc
 
     -   **Valores:** <*FQDN do servidor proxy*>  
 
-    -   **Detalhes:** especifica o FQDN do servidor proxy que será usado pela função do sistema de sites do ponto de conexão do serviço.  
+    -   **Detalhes:** especifica o FQDN do servidor proxy usado pelo ponto de conexão de serviço.  
 
 -   **Nome da chave:** ProxyPort  
 

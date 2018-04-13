@@ -1,20 +1,22 @@
 ---
-title: "Política de privacidade do System Center Configuration Manager – Informações adicionais"
-description: "Saiba como a Microsoft coleta e usa dados de uma implantação do System Center Configuration Manager."
+title: Política de privacidade – informações adicionais
+titleSuffix: Configuration Manager
+description: Saiba como a Microsoft coleta e usa os dados do System Center Configuration Manager.
 ms.custom: na
-ms.date: 10/13/2017
+ms.date: 03/22/2018
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
-ms.technology: configmgr-other
+ms.technology:
+- configmgr-other
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 1fcc921f-085f-4b0b-9c53-1e0707211076
-caps.latest.revision: "5"
-caps.handback.revision: "0"
+caps.latest.revision: 5
+caps.handback.revision: 0
 author: aczechowski
 ms.author: aaroncz
-manager: angrobe
+manager: dougeby
 translation.priority.ht:
 - cs-cz
 - de-de
@@ -34,11 +36,11 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-ms.openlocfilehash: 5332d02f4d128516f310a2edff897b4efc5b971b
-ms.sourcegitcommit: ca9d15dfb1c9eb47ee27ea9b5b39c9f8cdcc0748
+ms.openlocfilehash: eb557a29b1412e136023b3e6caddf358732659e9
+ms.sourcegitcommit: 11bf4ed40ed0cbb10500cc58bbecbd23c92bfe20
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/04/2018
+ms.lasthandoff: 03/23/2018
 ---
 # <a name="additional-information-about-privacy-for-system-center-configuration-manager"></a>Mais informações sobre privacidade no System Center Configuration Manager
 
@@ -57,18 +59,22 @@ O Configuration Manager coleta dados apenas do banco de dados SQL Server do site
 
 Os administradores podem alterar o nível dos dados coletados acessando a seção **Dados de Uso** do console do Configuration Manager.
 
-Para obter mais informações, consulte os artigos “Saiba mais” sobre as Configurações e os níveis de uso de dados no artigo [Dados de diagnóstico e de uso do System Center Configuration Manager](http://go.microsoft.com/fwlink/?LinkID=626566).
+Para obter mais informações, consulte os artigos "Saiba mais" sobre as configurações e os níveis de dados de uso no artigo [Dados de diagnóstico e de uso do System Center Configuration Manager](https://go.microsoft.com/fwlink/?LinkID=626566).
 
 
 ## <a name="customer-experience-improvement-program"></a>Programa de Aperfeiçoamento da Experiência do Usuário
+
+> [!Note]  
+> A partir do Configuration Manager versão 1802, o recurso Programa de Aperfeiçoamento da Experiência do Usuário é removido do produto.
+
 O Programa de Aperfeiçoamento da Experiência do Usuário coleta informações básicas do console do Configuration Manager sobre sua configuração de hardware e como você usa nosso software e nossos serviços para identificar tendências e padrões de uso. O Programa de Aperfeiçoamento da Experiência do Usuário também coleta o tipo e o número de erros encontrados, o desempenho de software e hardware, bem como a velocidade dos serviços. Não coletamos seu nome, endereço nem outras informações de contato. Nenhum dado do CEIP é coletado dos computadores cliente.
 
 Utilizamos essas informações para melhorar a qualidade, a confiabilidade e o desempenho dos softwares e serviços da Microsoft.
 
-Para saber mais sobre as informações coletadas, processadas ou transmitidas pelo Programa de Aperfeiçoamento da Experiência do Usuário, consulte a [Política de privacidade do Programa de Aperfeiçoamento da Experiência do Usuário](http://go.microsoft.com/fwlink/?LinkID=525211).
+Para saber mais sobre as informações coletadas, processadas ou transmitidas pelo Programa de Aperfeiçoamento da Experiência do Usuário, consulte a [Política de privacidade do Programa de Aperfeiçoamento da Experiência do Usuário](https://go.microsoft.com/fwlink/?LinkID=525211).
 
 ## <a name="operations-management-suite-connector"></a>Operations Management Suite Connector
-O Microsoft Operations Management Suite Connector sincroniza dados, como coleções, do System Center Configuration Manager para o Microsoft Operations Management Suite. A chave secreta e a ID da assinatura do Microsoft Azure são armazenadas no banco de dados do Configuration Manager quando um administrador configura o recurso. O segredo do cliente do Azure Active Directory e a chave compartilhada do espaço de trabalho do Microsoft Operations Management Suite são armazenados no banco de dados local do System Center Configuration Manager. Todas as comunicações entre o System Center Configuration Manager e o Microsoft Operations Management Suite usam HTTPS. Nenhuma outra informação é fornecida à Microsoft sobre as coleções além de dados telemétricos aleatórios. Para obter detalhes sobre as informações coletadas pelo Microsoft Operations Management Suite, consulte [Log analytics security](http://go.microsoft.com/fwlink/?LinkId=823545) (Segurança do Log Analytics).
+O Microsoft Operations Management Suite Connector sincroniza dados, como coleções, do System Center Configuration Manager para o Microsoft Operations Management Suite. A chave secreta e a ID da assinatura do Microsoft Azure são armazenadas no banco de dados do Configuration Manager quando um administrador configura o recurso. O segredo do cliente do Azure Active Directory e a chave compartilhada do espaço de trabalho do Microsoft Operations Management Suite são armazenados no banco de dados local do System Center Configuration Manager. Todas as comunicações entre o System Center Configuration Manager e o Microsoft Operations Management Suite usam HTTPS. Nenhuma outra informação é fornecida à Microsoft sobre as coleções além de dados telemétricos aleatórios. Para obter detalhes sobre as informações coletadas pelo Microsoft Operations Management Suite, consulte [Log analytics security](https://go.microsoft.com/fwlink/?LinkId=823545) (Segurança do Log Analytics).
 
 ## <a name="asset-intelligence"></a>Asset Intelligence
 O Asset Intelligence permite que os administradores de TI definam, acompanhem e gerenciem de modo proativo a conformidade com os padrões de configuração. Obter medições e relatórios sobre a implantação e o uso de aplicações físicas e virtuais ajudas as organizações a tomarem decisões comerciais melhores sobre licenciamento de software e manterem a conformidade com os contratos de licenciamento. Após a coleta de dados de uso dos clientes do Configuration Manager, os administradores podem usar diferentes recursos para exibir os dados, incluindo coleções, consultas e relatórios.
@@ -96,16 +102,16 @@ Os relatórios do Microsoft Cloud Protection Service são usados para aprimorar 
 
 O Microsoft Cloud Protection Service não coleta informações pessoais intencionalmente. Quando o Microsoft Cloud Protection Service coleta informações pessoais, a Microsoft não utiliza essas informações para identificar ou entrar em contato com você.
 
-Encontre detalhes adicionais sobre os dados coletados na documentação do produto em [Endpoint Protection no System Center Configuration Manager](http://go.microsoft.com/fwlink/?LinkId=823547).
+Encontre detalhes adicionais sobre os dados coletados na documentação do produto em [Endpoint Protection no System Center Configuration Manager](https://go.microsoft.com/fwlink/?LinkId=823547).
 
 ## <a name="site-hierarchy--geographical-view-with-bing-maps"></a>Hierarquia do Site – Exibição Geográfica com Bing Maps
 Hierarquia do Site – A Exibição Geográfica permite o uso de mapas fornecidos pelo Microsoft Bing Mapas para exibir a topologia de servidor físico do Configuration Manager. Para habilitar esse recurso, as informações de local fornecidas são enviadas de seu servidor ao serviço Web Bing Mapas.
 
-A Microsoft usa as informações para operar e aprimorar o Microsoft Bing Maps e outros sites e serviços da Microsoft. Para obter mais informações, consulte a [Política de Privacidade da Microsoft](http://go.microsoft.com/fwlink/?LinkId=823548).
+A Microsoft usa as informações para operar e aprimorar o Microsoft Bing Maps e outros sites e serviços da Microsoft. Para obter mais informações, consulte a [Política de Privacidade da Microsoft](https://go.microsoft.com/fwlink/?LinkId=823548).
 Você pode optar por não usar a Exibição Geográfica para a Hierarquia do Site. A exibição Diagrama Hierárquico permite visualizar a hierarquia e não usa o serviço Bing Mapas.
 
 ## <a name="microsoft-intune-subscription"></a>Assinatura do Microsoft Intune
-Clientes que adquiriram uma assinatura do Microsoft Intune podem usar o Configuration Manager para gerenciar seus dispositivos móveis que se conectaram por meio do Microsoft Intune. A [Política de Privacidade do Microsoft Online Services](http://go.microsoft.com/fwlink/?LinkId=262214) se aplica aos serviços online da Microsoft, que incluem o Microsoft Intune. Se os clientes tiverem uma assinatura do Microsoft Intune, a [Política de Privacidade do Microsoft Online Services](http://go.microsoft.com/fwlink/?LinkId=262214) deverá ser lida em conjunto com esta política de privacidade.
+Clientes que adquiriram uma assinatura do Microsoft Intune podem usar o Configuration Manager para gerenciar seus dispositivos móveis que se conectaram por meio do Microsoft Intune. A [Política de Privacidade do Microsoft Online Services](https://go.microsoft.com/fwlink/?LinkId=262214) se aplica aos serviços online da Microsoft, que incluem o Microsoft Intune. Se os clientes tiverem uma assinatura do Microsoft Intune, a [Política de Privacidade do Microsoft Online Services](https://go.microsoft.com/fwlink/?LinkId=262214) deverá ser lida em conjunto com esta política de privacidade.
 
 Todas as comunicações com o Microsoft Intune usam HTTPS. Para configurar a assinatura do Microsoft Intune e baixar a CSR (Solicitação de Assinatura de Certificado) necessária para configurar o suporte para iOS, um administrador deve se conectar ao Microsoft Intune usando uma conta de trabalho e a senha. Essas credenciais mão são armazenadas no Configuration Manager. Todas as outras comunicações com o Microsoft Intune são autenticadas usando certificados PKI gerados automaticamente pelo Microsoft Intune.
 

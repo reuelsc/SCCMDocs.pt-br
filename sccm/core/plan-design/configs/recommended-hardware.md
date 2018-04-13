@@ -1,9 +1,9 @@
 ---
 title: Hardware recomendado
 titleSuffix: Configuration Manager
-description: "Obtenha recomendações de hardware para ajudar você a dimensionar o ambiente do System Center Configuration Manager, além de uma implantação básica."
+description: Obtenha recomendações de hardware para ajudar você a dimensionar o ambiente do System Center Configuration Manager, além de uma implantação básica.
 ms.custom: na
-ms.date: 05/04/2017
+ms.date: 03/22/2018
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
@@ -12,16 +12,16 @@ ms.technology:
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 5267f0af-34d3-47a0-9ab8-986c41276e6c
-caps.latest.revision: 
-caps.handback.revision: 
+caps.latest.revision: 26
+caps.handback.revision: 0
 author: mestew
 ms.author: mstewart
 manager: angrobe
-ms.openlocfilehash: 5def3fdef8e9182cb624640fa54ff2eae224e6a1
-ms.sourcegitcommit: daa080cf220835f157a23e8c8e2bd2781b869bb7
+ms.openlocfilehash: 8d0883c7c2a735a2e651d61083d4d45570408ebb
+ms.sourcegitcommit: 11bf4ed40ed0cbb10500cc58bbecbd23c92bfe20
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 12/04/2017
+ms.lasthandoff: 03/23/2018
 ---
 # <a name="recommended-hardware-for-system-center-configuration-manager"></a>Hardware recomendado para o System Center Configuration Manager
 
@@ -75,7 +75,7 @@ Para obter um melhor desempenho, use as configurações de RAID 10 para todas as
 
 -   Aumentar o **Comprimento da Fila de WsusPool** para **2000**.  
 
--   Aumentar o **limite da Memória Particular de WsusPool** em quatro vezes ou defini-lo como **0** (ilimitado).  
+-   Aumente o **limite da Memória Particular do WsusPool** em quatro vezes ou defina-o como **0** (ilimitado).  
 
 ###  <a name="bkmk_DiskSpace"></a> Espaço em disco para sistemas de sites  
  A configuração e a alocação de disco contribuem para o desempenho de Configuration Manager. Como cada ambiente do Configuration Manager é diferente, os valores que você implementa podem variar com a seguinte diretriz.  
@@ -102,9 +102,9 @@ Para obter um melhor desempenho, use as configurações de RAID 10 para todas as
     > [!NOTE]  
     >  Quando tiver 50.000 ou mais clientes em um site, planeje usar quatro ou mais arquivos .mdf do banco de dados temporário.  
 
--   O tamanho do banco de dados temporário para um site de administração central normalmente é menor do que para um site primário.  
+-   O tamanho do banco de dados Temp de um site de administração central normalmente é muito menor do que o de um site primário.  
 
--   O banco de dados do site secundário é limitado em tamanho para:  
+-   O banco de dados do site secundário tem as seguintes limitações de tamanho:  
 
     -   SQL Server 2012 Express: 10 GB  
 
@@ -120,7 +120,7 @@ Para obter um melhor desempenho, use as configurações de RAID 10 para todas as
 
 -   **Espaço em disco:** 500 MB de espaço em disco disponível, com 5 GB recomendados para o cache do cliente do Configuration Manager. Menos espaço em disco será necessário se você usar as configurações personalizadas para instalar o cliente do Configuration Manager:  
 
-    -   Use a propriedade de linha de comando /skipprereq do CCMSetup para evitar a instalação de arquivos não solicitados pelo cliente. Por exemplo, execute o **CCMSetup.exe /skipprereq:silverlight.exe** se o cliente não usar o catálogo de aplicativos.  
+    -   Use a propriedade de linha de comando /skipprereq do CCMSetup para evitar a instalação de arquivos não solicitados pelo cliente. Por exemplo, execute o **CCMSetup.exe /skipprereq:silverlight.exe** se o cliente não usar o catálogo de aplicativos. A partir do Configuration Manager 1802, o Silverlight deixa de ser instalado automaticamente.  
 
     -   Use a propriedade SMSCACHESIZE do Client.msi para definir um arquivo de cache que seja menor do que o padrão de 5.120 MB. O tamanho mínimo é 1 MB. Por exemplo, o **CCMSetup.exe SMSCachesize=2** cria um cache que é de 2 MB de tamanho.  
 

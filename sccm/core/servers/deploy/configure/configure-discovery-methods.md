@@ -1,50 +1,52 @@
 ---
 title: Configurar a descoberta
 titleSuffix: Configuration Manager
-description: "Configure métodos de descoberta para serem executados em um site do Configuration Manager para encontrar recursos que você pode gerenciar usando sua infraestrutura de rede e o Active Directory."
+description: Configure métodos de descoberta para encontrar recursos para gerenciá-los na rede, no Active Directory e no Azure Active Directory.
 ms.custom: na
-ms.date: 7/31/2017
+ms.date: 03/22/2018
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
-ms.technology: configmgr-other
+ms.technology:
+- configmgr-other
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 49505eb1-d44d-4121-8712-e0f3d8b15bf5
-caps.latest.revision: "5"
+caps.latest.revision: 5
 author: mestew
 ms.author: mstewart
-manager: angrobe
-ms.openlocfilehash: f2d928e066702190eba32b2a2c06fe89636d59f6
-ms.sourcegitcommit: daa080cf220835f157a23e8c8e2bd2781b869bb7
+manager: dougeby
+ms.openlocfilehash: 825b9b250000e8353b1428cbee45f8fda9a30c35
+ms.sourcegitcommit: 11bf4ed40ed0cbb10500cc58bbecbd23c92bfe20
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 12/04/2017
+ms.lasthandoff: 03/23/2018
 ---
 # <a name="configure-discovery-methods-for-system-center-configuration-manager"></a>Configurar métodos de descoberta para o System Center Configuration Manager
 
 *Aplica-se a: System Center Configuration Manager (Branch Atual)*
 
 
-Configure métodos de descoberta para serem executados em um site do System Center Configuration Manager para encontrar recursos que você pode gerenciar usando sua infraestrutura de rede e o Active Directory. É necessário que você habilite e configure cada método que quiser usar para pesquisar em seu ambiente. (Também é possível desabilitar um método usando o mesmo procedimento usado para habilitá-lo).  As únicas exceções são a Descoberta de Pulsação e a Descoberta de Servidor:  
+Configure métodos de descoberta para encontrar recursos para gerenciá-los na rede, no Active Directory e no Azure AD (Azure Active Directory). Primeiro habilite e, em seguida, configure cada método que desejar usar para pesquisar o ambiente. Desabilite também um método usando o mesmo procedimento usado para habilitá-lo. As únicas exceções a esse processo são a descoberta de pulsação e a descoberta de servidor:  
 
--   Por padrão, a Descoberta de Pulsação já está habilitada quando você instala um site primário do Configuration Manager, e está configurada para ser executada segundo um cronograma básico. Convém manter a Descoberta de Pulsação habilitada, pois ela garante que os DDRs (registros de dados de descobertas) dos dispositivos fiquem atualizados. Para saber mais sobre a Descoberta de Pulsação, consulte [Sobre a Descoberta de Pulsação](../../../../core/servers/deploy/configure/about-discovery-methods.md#bkmk_aboutHeartbeat).  
+-   Por padrão, a **descoberta de pulsação** já está habilitada quando você instala um site primário do Configuration Manager. Ela é configurada para ser executada de acordo com um agendamento básico. Mantenha a descoberta de pulsação habilitada. Ela garante que os DDRs (registros dos dados de descoberta) dos dispositivos fiquem atualizados. Para saber mais sobre a Descoberta de Pulsação, consulte [Sobre a Descoberta de Pulsação](../../../../core/servers/deploy/configure/about-discovery-methods.md#bkmk_aboutHeartbeat).  
 
--   A Descoberta de Servidor é um método de descoberta automática que localiza os computadores que você utiliza como sistemas de sites. Você não pode configurar ou desabilitá-la.  
+-   A **descoberta de servidor** é um método de descoberta automática. Ela localiza os computadores utilizados como sistemas de sites. Você não pode configurar ou desabilitá-la.  
 
-**Para habilitar um método de descoberta configurável:**  
+### <a name="enable-a-configurable-discovery-method"></a>Habilitar um método de descoberta configurável  
  > [!NOTE]  
- > As informações a seguir não se aplicam à Descoberta de Usuário do Azure Active Directory. Em vez disso, confira [Configurar a Descoberta de Usuário do Azure AD](#azureaadisc) mais adiante neste tópico.
+ > As informações a seguir não se aplicam à descoberta de usuários do Azure AD. Em vez disso, consulte [Configurar a descoberta de usuários do Azure AD](#azureaadisc) mais adiante neste artigo.
 
-1.  No console do Configuration Manager, escolha **Administração** > **Configuração da Hierarquia** e escolha **Métodos de Descoberta**.  
+1.  No console do Configuration Manager, acesse o espaço de trabalho **Administração**, expanda a **Configuração da Hierarquia** e, em seguida, selecione **Métodos de Descoberta**.  
 
 2.  Selecione o método de descoberta para o site em que deseja habilitar a descoberta.  
 
-3.  Na guia **Início**, no grupo **Propriedades**, escolha **Propriedades** e, na guia **Geral**, marque a caixa **Habilitar&lt;método de descoberta\>**.  
+3.  Na guia **Início**, no grupo **Propriedades**, clique em **Propriedades**. Em seguida, na guia **Geral**, marque a caixa **Habilitar &lt;método de descoberta\>**.  
 
      Se essa caixa já estiver marcada, desabilite o método de descoberta desmarcando-a.  
 
 4.  Clique em **OK** para salvar a configuração.  
+
 
 
 ##  <a name="BKMK_ConfigADForestDisc"></a> Configurar a Descoberta de Florestas do Active Directory  
@@ -92,7 +94,7 @@ Use os procedimentos a seguir para habilitar a descoberta de florestas do Active
 2.  Na guia **Geral**, complete as configurações da floresta que você deseja descobrir e especifique a **Conta da Floresta do Active Directory**.  
 
     > [!NOTE]  
-    >  A descoberta de florestas do Active Directory requer uma conta global para descobrir e publicar em florestas não confiáveis. Se você não usar a conta de computador do servidor do site, será possível selecionar somente uma conta global.  
+    >  A descoberta de florestas do Active Directory requer uma conta global para descobrir e publicar em florestas não confiáveis. Se você não usar a conta de computador do servidor do site, selecione somente uma conta global.  
 
 3.  Se você pretende permitir que os sites publiquem dados nessa floresta, na guia **Publicação** conclua as configurações para que seja possível fazer publicações nessa floresta.  
 
@@ -101,8 +103,10 @@ Use os procedimentos a seguir para habilitar a descoberta de florestas do Active
 
 4.  Ao concluir a configuração da floresta a ser usada com a descoberta de florestas do Active Directory, escolha **OK** para salvá-la.  
 
+
+
 ##  <a name="BKMK_ConfigADDiscGeneral"></a> Configurar a Descoberta do Active Directory para computadores, usuários ou grupos  
- Use as informações das seções a seguir para configurar a descoberta de computadores, usuários ou grupos. Você usará estes métodos de descoberta:  
+ Para configurar a descoberta de computadores, usuários ou grupos, use as informações destas seções para os seguintes métodos de descoberta:  
 
 -   Descoberta de grupos do Active Directory  
 
@@ -111,12 +115,12 @@ Use os procedimentos a seguir para habilitar a descoberta de florestas do Active
 -   Descoberta de Usuário do Active Directory  
 
 > [!NOTE]  
->  As informações nesta seção não se aplicam à descoberta de florestas do Active Directory.  
+>  As informações desta seção não se aplicam à descoberta de florestas do Active Directory.  
 
  Embora cada um desses métodos de descoberta seja independente dos outros, eles compartilham opções semelhantes. Para obter mais informações sobre essas opções de configuração, consulte [Shared options for Group, System, and User discovery](../../../../core/servers/deploy/configure/about-discovery-methods.md#bkmk_shared) (Opções compartilhadas para a descoberta de grupo, sistema e usuário).  
 
 > [!WARNING]  
->  A sondagem do Active Directory por cada um desses métodos de descoberta pode gerar tráfego de rede significativo. Considere agendar cada um dos métodos de descoberta para que eles sejam executados um de cada vez, quando esse tráfego de rede não afetar de forma adversa os usos corporativos da sua rede.  
+>  A sondagem do Active Directory por cada um desses métodos de descoberta pode gerar tráfego de rede significativo. Considere a possibilidade de agendar cada um dos métodos de descoberta para que eles sejam executados em um momento em que esse tráfego de rede não prejudique os usos corporativos da rede.  
 
 #### <a name="to-configure-active-directory-group-discovery"></a>Para configurar a descoberta de grupos do Active Directory  
 
@@ -146,7 +150,7 @@ Use os procedimentos a seguir para habilitar a descoberta de florestas do Active
 
 7.  Na guia **Agendamento de Sondagem** , configure o agendamento de sondagem de descoberta completa e a descoberta de deltas.  
 
-8.  Opcionalmente, na guia **Opção**, você pode configurar opções para filtrar, ou excluir, registros de computadores obsoletos da descoberta e para descobrir a associação dos grupos de distribuição.  
+8.  Opcionalmente, na guia **Opção**, configure opções para filtrar ou excluir registros de computador obsoletos da descoberta. Configure também a descoberta da associação de grupos de distribuição.  
 
     > [!NOTE]  
     >  Por padrão, a descoberta de grupos do Active Directory descobre apenas a associação de grupos de segurança.  
@@ -172,7 +176,7 @@ Use os procedimentos a seguir para habilitar a descoberta de florestas do Active
     3.  Em cada local, especifique a conta a ser usada como a **Conta de descoberta do Active Directory**.  
 
         > [!TIP]  
-        >  Em cada local especificado, você pode configurar um conjunto de opções de descoberta e uma única conta de descoberta do Active Directory.  
+        >  Em cada local especificado, configure um conjunto de opções de descoberta e uma Conta de Descoberta exclusiva do Active Directory.  
 
     4.  Escolha **OK** para salvar a configuração do contêiner do Active Directory.  
 
@@ -203,7 +207,7 @@ Use os procedimentos a seguir para habilitar a descoberta de florestas do Active
     3.  Em cada local, especifique a conta a ser usada como a **Conta de descoberta do Active Directory**.  
 
         > [!NOTE]  
-        >  Em cada local especificado, você pode configurar um único conjunto de opções de descoberta e uma única conta de descoberta do Active Directory.  
+        >  Em cada local especificado, configure um conjunto exclusivo de opções de descoberta e uma Conta de Descoberta exclusiva do Active Directory.  
 
     4.  Escolha **OK** para salvar a configuração do contêiner do Active Directory.  
 
@@ -213,16 +217,34 @@ Use os procedimentos a seguir para habilitar a descoberta de florestas do Active
 
 8.  Quando concluir a configuração da Descoberta de Usuários do Active Directory para esse site, escolha **OK** para salvá-la.  
 
+
+
 ## <a name="azureaadisc"></a> Configurar a Descoberta de Usuário do Azure AD
-A partir da versão 1706, você pode configurar a Descoberta de Usuário do Azure Active Directory quando você conecta o Configuration Manager à sua [assinatura do Azure e ao Azure Active Directory](/sccm/core/servers/deploy/configure/azure-services-wizard).
+A descoberta de usuários do Azure AD não é habilitada nem configurada da mesma maneira que outros métodos de descoberta. Configure-a ao carregar o site do Configuration Manager no Azure AD. Ao [Configurar os Serviços do Azure](/sccm/core/servers/deploy/configure/azure-services-wizard) para o **Gerenciamento de Nuvem**, habilite e configure também esse método de descoberta. 
 
-A Descoberta de Usuários do Azure AD está configurada como parte do *Gerenciamento de Nuvem*. O procedimento para fazer isso é detalhado na em [Criar o aplicativo Web do Azure para uso com o Configuration Manager](/sccm/core/servers/deploy/configure/Azure-services-wizard#webapp) no tópico *Configurar serviços do Azure para uso com o Configuration Manager*.
+Ao configurar o serviço do Azure **Gerenciamento de Nuvem**: 
+- Na página **Descoberta** do assistente, clique em **Habilitar a Descoberta de Usuários do Azure Active Directory**. 
+- Clique em **Configurações**. 
+- Na caixa de diálogo Configurações da Descoberta de Usuários do Azure AD, configure um agendamento que indica quando ocorre a descoberta. Habilite também a descoberta de deltas, que verifica apenas as contas novas ou alteradas no Azure AD. 
 
+Para obter mais informações, consulte [Descoberta de usuários do Azure AD](/sccm/core/servers/deploy/configure/about-discovery-methods#azureaddisc).
+
+ > [!Important]  
+ > Antes de *importar* o aplicativo do Azure AD para o Configuration Manager, você precisa conceder a permissão de aplicativo para servidores para ler os dados do diretório do Azure AD. 
+ >  - No [portal do Azure](https://portal.azure.com), acesse a folha **Azure Active Directory**. 
+ >  - Clique em **Registros do aplicativo** e alterne para **Todos os aplicativos**, se necessário. 
+ >  - Selecione o aplicativo para servidores do tipo *Aplicativo Web/API* e, em seguida, clique em **Configurações**. 
+ >  - Clique em **Permissões necessárias** e, em seguida, em **Conceder permissões**.
+ >  
+ > Se você *criar* o aplicativo para servidores por meio do Configuration Manager, o Azure AD criará automaticamente as permissões com o aplicativo. Você ainda precisa dar o consentimento ao aplicativo no portal do Azure.
+
+ > [!Note]  
+ > Se o usuário tiver uma identidade federada ou sincronizada, use a [descoberta de usuários do Active Directory](/sccm/core/servers/deploy/configure/about-discovery-methods#bkmk_aboutUser) do Configuration Manager, bem como a descoberta de usuários do Azure AD. Para obter mais informações sobre identidades híbridas, consulte [Definir uma estratégia de adoção de identidade híbrida](/azure/active-directory/active-directory-hybrid-identity-design-considerations-identity-adoption-strategy).<!--497750-->
 
 
 
 ##  <a name="BKMK_ConfigHBDisc"></a> Configurar a Descoberta de Pulsação  
- Por padrão, a Descoberta de Pulsação é habilitada quando você instala um site primário do Configuration Manager. Consequentemente, você precisa configurar somente o cronograma da frequência com que os clientes enviam os registro dos dados de descoberta da Descoberta de Pulsação para um ponto de gerenciamento quando não quiser que eles usem o valor padrão de sete dias.  
+ Por padrão, a Descoberta de Pulsação é habilitada quando você instala um site primário do Configuration Manager. Como resultado, você precisará somente configurar o agendamento da frequência com que os clientes enviam o registro dos dados de descoberta de pulsação para um ponto de gerenciamento quando não desejar que eles usem o padrão de intervalo de sete dias.  
 
 > [!NOTE]  
 >  Se a instalação de push de cliente e a tarefa de manutenção de site para **Limpar Sinalizador de Instalação** forem habilitadas ao mesmo tempo, defina o agendamento da descoberta de pulsação para ser menor do que o **Período de Redescoberta de Cliente** da tarefa de manutenção de site **Limpar Sinalizador de Instalação** . Para obter mais informações sobre as tarefas de manutenção de sites, consulte [Tarefas de manutenção do System Center Configuration Manager](../../../../core/servers/manage/maintenance-tasks.md).  
@@ -237,11 +259,13 @@ A Descoberta de Usuários do Azure AD está configurada como parte do *Gerenciam
 
 4.  Configure a frequência com que os clientes enviam registros de dados de Descoberta de pulsação e escolha **OK** para salvar a configuração.  
 
+
+
 ##  <a name="BKMK_ConfigNetworkDisc"></a> Configurar a Descoberta de Rede  
- Use as informações contidas nas seções a seguir para ajudá-lo a configurar a descoberta de rede.  
+ Para ajudá-lo a configurar a descoberta de rede, use as informações destas seções.  
 
 ###  <a name="BKMK_AboutConfigNetworkDisc"></a> Sobre a configuração de Descoberta de Rede  
- Antes de configurar a descoberta de rede, é necessário saber o seguinte:  
+ Antes de configurar a descoberta de rede, é necessário entender os seguintes tópicos:  
 
 -   Níveis disponíveis de descoberta de rede  
 
@@ -253,21 +277,21 @@ Para saber mais, consulte [Sobre a Descoberta de Rede](../../../../core/servers/
 
  As seções a seguir fornecem informações sobre configurações comuns de descoberta de rede. Você pode configurar uma ou mais dessas configurações para uso durante a execução da mesma descoberta. Se você usar várias configurações, será necessário planejar as interações que possam afetar os resultados da descoberta.  
 
- Por exemplo, talvez você queira descobrir todos os dispositivos SNMP (Simple Network Management Protocol) que usam um nome de comunidade SNMP específico. Além disso, para a execução da mesma descoberta, você poderá desabilitar a descoberta em uma sub-rede específica. Quando a descoberta for executada, a descoberta de rede não descobrirá dispositivos SNMP com o nome de comunidade especificado na sub-rede desabilitada.  
+ Por exemplo, talvez você queira descobrir todos os dispositivos SNMP (Simple Network Management Protocol) que usam um nome de comunidade SNMP específico. Além disso, para a execução da mesma descoberta, você poderá desabilitar a descoberta em uma sub-rede específica. Quando a descoberta é executada, a descoberta de rede não descobre os dispositivos SNMP com o nome da comunidade especificado na sub-rede desabilitada.  
 
 ####  <a name="BKMK_DetermineNetTopology"></a> Determinar a topologia de rede  
  Você pode usar uma descoberta somente de topologia para mapear sua rede. Esse tipo de descoberta não descobre clientes potenciais. A Descoberta de Rede somente de topologia depende do SNMP.  
 
  Ao mapear a topologia de rede, você deve configurar o **Máximo de saltos** na guia **SNMP** na caixa de diálogo **Propriedades da Descoberta e Rede**. Apenas alguns saltos podem ajudar a controlar a largura de banda de rede é usada quando a descoberta é executada. À medida que você descobre mais sobre a rede, pode aumentar o número de saltos para ter um entendimento melhor da topologia de rede.  
 
- Depois de entender a topologia de rede, você poderá configurar propriedades adicionais para que a Descoberta de Rede descubra clientes potenciais e seus sistemas operacionais enquanto você está usando configurações disponíveis para limitar os segmentos de rede que a Descoberta de Rede pode pesquisar.  
+ Depois de entender a topologia de rede, configure propriedades adicionais para que a descoberta de rede descubra clientes potenciais e seus sistemas operacionais enquanto você usa as configurações disponíveis para limitar os segmentos de rede que a descoberta de rede pode pesquisar.  
 
 ####  <a name="BKMK_LimitBySubnet"></a> Limitar pesquisas usando sub-redes  
- Você pode configurar a Descoberta de Rede para pesquisar sub-redes específicas durante uma descoberta. Por padrão, a Descoberta de Rede pesquisa a sub-rede do servidor que executa a descoberta. Todas as sub-redes adicionais que você configurar e ativar aplicam-se somente às opções de pesquisa de SNMP e de DHCP (Dynamic Host Configuration Protocol). Quando a Descoberta de Rede pesquisa domínios, ela não é limitada por configurações de sub-redes.  
+ Você pode configurar a Descoberta de Rede para pesquisar sub-redes específicas durante uma descoberta. Por padrão, a Descoberta de Rede pesquisa a sub-rede do servidor que executa a descoberta. Todas as sub-redes adicionais que você configurar e ativar aplicam-se somente às opções de pesquisa de SNMP e de DHCP (Dynamic Host Configuration Protocol). Quando a descoberta de rede pesquisa domínios, ela não é limitada pelas configurações de sub-redes.  
 
  Se você especificar uma ou mais sub-redes na guia **Sub-redes** na caixa de diálogo **Propriedades da Descoberta de Rede** , somente as sub-redes marcadas como **Habilitadas** serão pesquisadas.  
 
- Quando você desabilita uma sub-rede, ela é excluída da descoberta e as seguintes condições são aplicáveis:  
+ Quando você desabilita uma sub-rede, ela é excluída da descoberta e as seguintes condições se aplicam:  
 
 -   As consultas baseadas em SNMP não são executadas na sub-rede.  
 
@@ -280,7 +304,7 @@ Para saber mais, consulte [Sobre a Descoberta de Rede](../../../../core/servers/
 
  Se você especificar um ou mais domínios na guia **Domínio** na caixa de diálogo **Propriedades da Descoberta de Rede** , somente os domínios marcados como **Habilitados** serão pesquisados.  
 
- Quando você desabilita um domínio, ele é excluído da descoberta e as seguintes condições são aplicáveis:  
+ Quando você desabilita um domínio, ele é excluído da descoberta e as seguintes condições se aplicam:  
 
 -   A Descoberta de Rede não consulta controladores de domínio nesse domínio.  
 
@@ -294,12 +318,12 @@ Para saber mais, consulte [Sobre a Descoberta de Rede](../../../../core/servers/
  A Descoberta de Rede usa nomes de comunidades para obter acesso aos roteadores que são dispositivos SNMP. Um roteador pode fornecer à Descoberta de Rede informações sobre outros roteadores e sub-redes que estejam vinculados ao primeiro roteador.  
 
 > [!NOTE]  
->  Os nomes de comunidades SNMP se parecem com senhas. A Descoberta de Rede pode obter informações somente de um dispositivo SNMP para o qual você especificou um nome de comunidade. Cada dispositivo SNMP pode ter seu próprio nome de comunidade, mas, geralmente, o mesmo nome de comunidade é compartilhado entre vários dispositivos. Além disso, a maioria dos dispositivos SNMP têm um nome de comunidade padrão de **pública**. Mas algumas organizações excluem o nome da comunidade **Pública** de seus dispositivos como uma precaução de segurança.  
+>  Os nomes de comunidades SNMP se parecem com senhas. A descoberta de rede pode obter informações somente de um dispositivo SNMP para o qual você especificou um nome da comunidade. Cada dispositivo SNMP pode ter seu próprio nome de comunidade, mas, geralmente, o mesmo nome de comunidade é compartilhado entre vários dispositivos. Além disso, a maioria dos dispositivos SNMP têm um nome de comunidade padrão de **pública**. Mas algumas organizações excluem o nome da comunidade **Pública** de seus dispositivos como uma precaução de segurança.  
 
- Se várias comunidades SNMP forem exibidas na guia **SNMP** na caixa de diálogo **Propriedades da Descoberta de Rede**, a Descoberta de Rede pesquisará essas comunidades na ordem em que são exibidas. Para ajudar a minimizar o tráfego de rede gerado pelas tentativas de contatar um dispositivo usando nomes diferentes, verifique se os nomes usados com mais frequência estão no topo da lista.  
+ Se várias comunidades SNMP forem exibidas na guia **SNMP** da caixa de diálogo **Propriedades da Descoberta de Rede**, a descoberta de rede pesquisará essas comunidades na ordem em que são exibidas. Para ajudar a minimizar o tráfego de rede gerado pelas tentativas de contatar um dispositivo usando nomes diferentes, verifique se os nomes usados com mais frequência estão no topo da lista.  
 
 > [!NOTE]  
->  Além de usar o nome da comunidade SNMP, você pode especificar o endereço IP ou o nome que pode ser resolvido de um dispositivo SNMP específico. Isso é feito na guia **Dispositivos SNMP** na caixa de diálogo **Propriedades de Descoberta de Rede**.  
+>  Além de usar o nome da comunidade SNMP, você pode especificar o endereço IP ou o nome que pode ser resolvido de um dispositivo SNMP específico. Faça isso na guia **Dispositivos SNMP** da caixa de diálogo **Propriedades da Descoberta de Rede**.  
 
 ####  <a name="BKMK_SearchByDHCP"></a> Pesquisar um servidor DHCP específico  
  Você pode configurar a Descoberta de Rede para usar um servidor SNMP específico ou vários servidores para descobrir clientes DHCP durante uma descoberta.  
@@ -307,7 +331,7 @@ Para saber mais, consulte [Sobre a Descoberta de Rede](../../../../core/servers/
  A Descoberta de Rede pesquisa cada servidor DHCP especificado na guia **DHCP** na caixa de diálogo **Propriedades da Descoberta de Rede** . Se o servidor que executa a descoberta conceder seu endereço IP de um servidor DHCP, você poderá configurar a descoberta para pesquisa esse servidor marcando a caixa **Incluir o servidor DHCP que o servidor do site está configurado para usar**.  
 
 > [!NOTE]  
->  Para configurar um servidor DHCP com êxito na Descoberta de Rede, o ambiente deve oferecer suporte a IPv4. Não é possível configurar a Descoberta de Rede para usar um servidor DHCP em um ambiente IPv6 nativo.  
+>  Para configurar um servidor DHCP com êxito na Descoberta de Rede, o ambiente deve oferecer suporte a IPv4. Não é possível configurar a descoberta de rede para usar um servidor DHCP em um ambiente IPv6 nativo.  
 
 ###  <a name="BKMK_HowToConfigNetDisc"></a> Como configurar a Descoberta de Rede  
  Use os procedimentos a seguir para descobrir primeiro somente a topologia de rede e, em seguida, configurar a Descoberta de Rede para descobrir clientes potenciais usando uma ou mais das opções disponíveis da Descoberta de Rede.  
@@ -325,7 +349,7 @@ Para saber mais, consulte [Sobre a Descoberta de Rede](../../../../core/servers/
     -   Na guia **Sub-redes**, marque a caixa **Pesquisar sub-redes locais**.  
 
         > [!TIP]  
-        >  Caso conheça as sub-redes específicas que constituem sua rede, você pode desmarcar a caixa **Pesquisar sub-redes locais** e usar o ícone **Novo** ![Ícone Novo](media/Disc_new_Icon.gif) para adicionar as sub-redes específicas que deseja pesquisar. Para sub-redes grandes, geralmente é melhor pesquisar somente uma ou duas sub-redes por vez para minimizar o uso de largura de banda de rede.  
+        >  Se você conhece as sub-redes específicas que constituem sua rede, desmarque a caixa **Pesquisar sub-redes locais**. Em seguida, use o ícone **Novo** ![Novo ícone](media/Disc_new_Icon.gif) para adicionar as sub-redes específicas que deseja pesquisar. Para sub-redes grandes, geralmente, é melhor pesquisar somente uma ou duas sub-redes por vez para minimizar o uso de largura de banda da rede.  
 
     -   Na guia **Domínios**, marque a caixa **Pesquisar domínio local**.  
 
@@ -337,7 +361,7 @@ Para saber mais, consulte [Sobre a Descoberta de Rede](../../../../core/servers/
 4.  Na guia **Agendamento**, escolha o ícone **Novo** ![Ícone Novo](media/Disc_new_Icon.gif) para definir um cronograma para executar a Descoberta de Rede.  
 
     > [!NOTE]  
-    >  Não é possível atribuir uma configuração de descoberta diferente para separar agendamentos de Descoberta de Rede. Cada vez que a Descoberta de Rede é executada, ela usa a configuração de descoberta atual.  
+    >  Não é possível atribuir uma configuração de descoberta diferente para separar agendamentos de descoberta de rede. Cada vez que a Descoberta de Rede é executada, ela usa a configuração de descoberta atual.  
 
 5.  Escolha **OK** para aceitar as configurações. A Descoberta de Rede é executada no horário agendado.  
 
@@ -399,10 +423,10 @@ Para saber mais, consulte [Sobre a Descoberta de Rede](../../../../core/servers/
 
 10. Para configurar a descoberta para consultar servidores DHCP específicos para clientes DHCP, escolha a guia **DHCP** e configure uma ou mais das seguinte opções:  
 
-    -   Para consultar o servidor DHCP no computador que está executando a descoberta, marque a caixa **Sempre usar o servidor DHCP do servidor do site**.  
+    -   Para consultar o servidor DHCP no computador que executa a descoberta, escolha **Sempre usar o servidor DHCP do servidor do site**.  
 
         > [!NOTE]  
-        >  Para usar esta opção, o servidor deve conceder seu endereço IP de um servidor DHCP e não pode usar um endereço IP estático.  
+        >  Para usar essa opção, o servidor precisa conceder seu endereço IP de um servidor DHCP e não pode usar um endereço IP estático.  
 
     -   Para consultar um servidor DHCP específico, escolha o ícone **Novo** ![ícone Novo](media/Disc_new_Icon.gif). Na caixa de diálogo **Novo Servidor DHCP**, especifique o endereço IP ou o nome de servidor do servidor DHCP e escolha **OK**.  
 
@@ -414,12 +438,12 @@ Para saber mais, consulte [Sobre a Descoberta de Rede](../../../../core/servers/
      Você pode configurar vários agendamentos e vários agendamentos sem recorrência.  
 
     > [!NOTE]  
-    >  Se vários agendamentos forem exibidos na guia **Agendamento** ao mesmo tempo, todos os agendamentos resultarão em uma execução da Descoberta de Rede, já que ela está configurada no período indicado no agendamento. Isso também é verdadeiro para agendamentos recorrentes.  
+    >  Se vários agendamentos forem exibidos na guia **Agendamento** ao mesmo tempo, todos os agendamentos resultarão em uma execução da Descoberta de Rede, já que ela está configurada no período indicado no agendamento. Esse comportamento também é verdadeiro para agendamentos recorrentes.  
 
 12. Escolha **OK** para salvar as configurações.  
 
 ###  <a name="BKMK_HowToVerifyNetDisc"></a> Como verificar se a Descoberta de Rede foi concluída  
- O tempo de que a Descoberta de Rede precisa para ser concluída pode variar dependendo de uma série de fatores. Esses fatores podem incluir um ou mais destes itens:  
+ O tempo que a descoberta de rede precisa para ser concluída pode variar, dependendo de um ou mais dos seguintes fatores:  
 
 -   O tamanho da rede  
 
@@ -429,7 +453,7 @@ Para saber mais, consulte [Sobre a Descoberta de Rede](../../../../core/servers/
 
 -   O tipo de descoberta que está sendo executado  
 
-Como a Descoberta de Rede não cria mensagens para alertar quando a descoberta está concluída, você pode usar o seguinte procedimento para verificar quando ela está concluída.  
+Como a descoberta de rede não cria mensagens para alertá-lo quando a descoberta foi concluída, use o procedimento a seguir para verificar quando ela foi concluída.  
 
 ##### <a name="to-verify-that-network-discovery-has-finished"></a>Para verificar se a Descoberta de Rede foi concluída  
 
@@ -464,4 +488,4 @@ Como a Descoberta de Rede não cria mensagens para alertar quando a descoberta e
 
     -   Descrição: **Este componente foi iniciado**  
 
-    Essa informação verifica se a descoberta de rede foi iniciada. Se essa informação não estiver presente, reagende a descoberta de rede.  
+    Essa informação verifica se a descoberta de rede foi iniciada. Caso essas informações não estejam presentes, reagende a descoberta de rede.  

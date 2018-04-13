@@ -1,26 +1,27 @@
 ---
-title: "Versões de Branch Atual"
+title: Versões de Branch Atual
 titleSuffix: Configuration Manager
-description: "Examine o histórico de versões do System Center Configuration Manager e saiba mais sobre as fases de serviço oferecidas."
+description: Examine o histórico de versões do System Center Configuration Manager e saiba mais sobre as fases de serviço oferecidas.
 ms.custom: na
-ms.date: 11/22/2017
+ms.date: 03/22/2018
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
-ms.technology: configmgr-other
+ms.technology:
+- configmgr-other
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 35b5baec-d313-46aa-9d14-c443aa0d6c09
-caps.latest.revision: "8"
+caps.latest.revision: 8
 author: mestew
 ms.author: mstewart
 manager: angrobe
 robots: noindex,nofollow
-ms.openlocfilehash: 694b205144559d0ee4aee38c38361d5bd8b62a9d
-ms.sourcegitcommit: daa080cf220835f157a23e8c8e2bd2781b869bb7
+ms.openlocfilehash: e2ea7d8a915caebfdac824147e60bae509151fbf
+ms.sourcegitcommit: 11bf4ed40ed0cbb10500cc58bbecbd23c92bfe20
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 12/04/2017
+ms.lasthandoff: 03/23/2018
 ---
 # <a name="support-for-system-center-configuration-manager-current-branch-versions"></a>Suporte para versões do branch atual do System Center Configuration Manager
 
@@ -44,8 +45,9 @@ Figura 1. Exemplo de sobreposição de ciclo de versão para o suporte à manute
 
  **Histórico de Versão**  
 
-|Versão |Data de Disponibilidade |Data de Término do Suporte|  
-|-------------|-----------------------|----------------------|  
+|Version |Data de Disponibilidade |Data de Término do Suporte|  
+|-------------|-----------------------|----------------------|
+|1802|22 de março de 2018|22 de setembro de 2019  
 |1710|20 de novembro de 2017|20 de maio de 2019 |
 |1706|31 de julho de 2017|31 de julho de 2018|
 |1702|27 de março de 2017|27 de março de 2018|

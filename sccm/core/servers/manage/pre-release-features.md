@@ -1,25 +1,26 @@
 ---
-title: "Recursos de pré-lançamento"
+title: Recursos de pré-lançamento
 titleSuffix: Configuration Manager
-description: "Recursos de pré-lançamento no System Center Configuration Manager"
+description: Recursos de pré-lançamento no System Center Configuration Manager
 ms.custom: na
-ms.date: 12/19/2017
+ms.date: 03/22/2018
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
-ms.technology: configmgr-other
+ms.technology:
+- configmgr-other
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 6bce416b-761d-4b23-bd33-5b7c30edb10d
-caps.latest.revision: "36"
+caps.latest.revision: 36
 author: mestew
 ms.author: mstewart
-manager: angrobe
-ms.openlocfilehash: 2ef961732431bd4314229e3da6a65df58592342f
-ms.sourcegitcommit: 6c2aa79924c0e7fc64ef5e9003498fc00c349db9
+manager: dougeby
+ms.openlocfilehash: c30fbeaad87b18750f65f90427366044d30c6609
+ms.sourcegitcommit: 11bf4ed40ed0cbb10500cc58bbecbd23c92bfe20
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 12/21/2017
+ms.lasthandoff: 03/23/2018
 ---
 # <a name="pre-release-features-in-system-center-configuration-manager"></a>Recursos de pré-lançamento no System Center Configuration Manager
 *Aplica-se a: System Center Configuration Manager (Branch Atual)*
@@ -46,17 +47,19 @@ Se você tiver dado consentimento em um site primário autônomo e, depois, expa
 
  |Recurso          |Adicionado como pré-lançamento | Adicionado como recurso completo|  
 |------------------|---------------------|---------------------|
-| Executar Etapa da Sequência de Tarefas <!-- 1261338 --> |  [Versão 1710](/sccm/osd/understand/task-sequence-steps#child-task-sequence) |![Ainda não](media/83c5d168-8faf-4e8e-920b-528e3c43ffd4.gif)|
-| Windows Defender Exploit Guard <!-- 1355468 --> |  [Versão 1710](/sccm/protect/deploy-use/create-deploy-exploit-guard-policy) |![Ainda não](media/83c5d168-8faf-4e8e-920b-528e3c43ffd4.gif)|
-| Avaliação do Atestado de Integridade do Dispositivo para políticas de conformidade de acesso condicional <!-- 1235616 --> |  [Versão 1710](/sccm/mdm/deploy-use/manage-access-to-o365-services-for-pcs-managed-by-sccm) |![Ainda não](media/83c5d168-8faf-4e8e-920b-528e3c43ffd4.gif)|
-| Criar e executar scripts do PowerShell do console do Configuration Manager <!-- 1236459 --> |  [Versão 1706](/sccm/apps/deploy-use/create-deploy-scripts)|![Ainda não](media/83c5d168-8faf-4e8e-920b-528e3c43ffd4.gif)|
+|Implantações em fases<!--1356837-->|[Versão 1802](/sccm/osd/deploy-use/create-phased-deployment-for-task-sequence.md)|![Ainda não](media/83c5d168-8faf-4e8e-920b-528e3c43ffd4.gif)|
+| Executar Etapa da Sequência de Tarefas <!-- 1261338 --> |  [Versão 1710](/sccm/osd/understand/task-sequence-steps#child-task-sequence) |[Versão 1802](/sccm/osd/deploy-use/manage-task-sequences-to-automate-tasks#add-child-task-sequences-to-a-task-sequence)|
+| Windows Defender Exploit Guard <!-- 1355468 --> |  [Versão 1710](/sccm/protect/deploy-use/create-deploy-exploit-guard-policy) |[Versão 1802](/sccm/protect/deploy-use/create-deploy-exploit-guard-policy)|
+| Avaliação do Atestado de Integridade do Dispositivo para políticas de conformidade de acesso condicional <!-- 1235616 --> |  [Versão 1710](/sccm/mdm/deploy-use/manage-access-to-o365-services-for-pcs-managed-by-sccm) |[Versão 1802](/sccm/mdm/deploy-use/manage-access-to-o365-services-for-pcs-managed-by-sccm)|
+| Criar e executar scripts do PowerShell do console do Configuration Manager <!-- 1236459 --> |  [Versão 1706](/sccm/apps/deploy-use/create-deploy-scripts)|[Versão 1802](/sccm/apps/deploy-use/create-deploy-scripts)|
 | Gerenciar atualizações de driver do Microsoft Surface <!-- 1098490 --> |  [Versão 1706](/sccm/sum/get-started/configure-classifications-and-products) | [Versão 1710](/sccm/sum/get-started/configure-classifications-and-products)|
 | Gerenciamento do Device Guard com Configuration Manager <!-- 1319346 --> |  [Versão 1702](/sccm/protect/deploy-use/use-device-guard-with-configuration-manager)|![Ainda não](media/83c5d168-8faf-4e8e-920b-528e3c43ffd4.gif)|
 | Pré-cache do conteúdo de sequência de tarefas <!-- 1021244 --> |  [Versão 1702](/sccm/osd/deploy-use/create-a-task-sequence-to-upgrade-an-operating-system#configure-pre-cache-content) | [Versão 1706](/sccm/osd/deploy-use/create-a-task-sequence-to-upgrade-an-operating-system#configure-pre-cache-content)|
 | Verificar se há arquivos executáveis antes de instalar um aplicativo <!-- 1284624 --> |   [Versão 1702](/sccm/apps/deploy-use/deploy-applications#how-to-check-for-running-executable-files-before-installing-an-application) |[Versão 1706](/sccm/apps/deploy-use/deploy-applications#how-to-check-for-running-executable-files-before-installing-an-application)|
 | Ponto de serviço do Data Warehouse <!-- 1277922 --> |  [Versão 1702](/sccm/core/servers/manage/data-warehouse) |[Versão 1706](/sccm/core/servers/manage/data-warehouse)|
 | Cache de Pares para distribuição de conteúdo para clientes <!-- 1101436 --> |  [Versão 1610](/sccm/core/plan-design/hierarchy/client-peer-cache) | [Versão 1710](/sccm/core/plan-design/hierarchy/client-peer-cache)|
-| Gateway de gerenciamento de nuvem <!-- 1101764 --> |  [Versão 1610](/sccm/core/clients/manage/plan-cloud-management-gateway) |![Ainda não](media/83c5d168-8faf-4e8e-920b-528e3c43ffd4.gif)|
-| Conector do Microsoft Operations Management Suite <!-- 1236739 --> | [Versão 1606](../../../core/clients/manage/sync-data-microsoft-operations-management-suite.md) |![Ainda não](media/83c5d168-8faf-4e8e-920b-528e3c43ffd4.gif)|
+| Gateway de gerenciamento de nuvem <!-- 1101764 --> |  [Versão 1610](/sccm/core/clients/manage/plan-cloud-management-gateway) |[Versão 1802](/sccm/core/clients/manage/plan-cloud-management-gateway)|
+| Conector do Microsoft Operations Management Suite <!-- 1236739 --> | [Versão 1606](../../../core/clients/manage/sync-data-microsoft-operations-management-suite.md) |[Versão 1802](../../../core/clients/manage/sync-data-microsoft-operations-management-suite.md)|
 | Realização de serviços em uma coleção com reconhecimento de cluster (realização de serviços em um grupo de servidores) <!-- 1081776 --> | [Versão 1602](../../../core/get-started/capabilities-in-technical-preview-1605.md#BKMK_ServerGroups)|![Ainda não](media/83c5d168-8faf-4e8e-920b-528e3c43ffd4.gif)|
 | Acesso condicional para PCs gerenciados pelo System Center Configuration Manager <!--  --> | [Versão 1602](/sccm/mdm/deploy-use/manage-access-to-o365-services-for-pcs-managed-by-sccm)     | [Versão 1702](/sccm/mdm/deploy-use/manage-access-to-o365-services-for-pcs-managed-by-sccm)                     |
+<!--Image used = ![Not yet](media/83c5d168-8faf-4e8e-920b-528e3c43ffd4.gif) -->

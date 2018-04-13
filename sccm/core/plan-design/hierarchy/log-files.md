@@ -1,9 +1,9 @@
 ---
-title: "Arquivos de log para solução de problemas"
+title: Arquivos de log para solução de problemas
 titleSuffix: Configuration Manager
-description: Use os arquivos de log para solucionar problemas em uma hierarquia do System Center Configuration Manager.
+description: Use arquivos de log para solucionar problemas com clientes e sistemas de sites do Configuration Manager.
 ms.custom: na
-ms.date: 02/14/2018
+ms.date: 03/22/2018
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
@@ -12,24 +12,24 @@ ms.technology:
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: c1ff371e-b0ad-4048-aeda-02a9ff08889e
-caps.latest.revision: 
-caps.handback.revision: 
+caps.latest.revision: 9
+caps.handback.revision: 0
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: b0f15b0c7cf983234f41e3f202be7d46ce4954e2
-ms.sourcegitcommit: fbd4a9d2fa8ed4ddd3a0fecc4a2ec4fc0ccc3d0c
+ms.openlocfilehash: 471730e056ca512f300ead234b9a8a9e4f10a835
+ms.sourcegitcommit: 11bf4ed40ed0cbb10500cc58bbecbd23c92bfe20
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/19/2018
+ms.lasthandoff: 03/23/2018
 ---
 # <a name="log-files-in-system-center-configuration-manager"></a>Arquivos de log no System Center Configuration Manager
 
 *Aplica-se a: System Center Configuration Manager (Branch Atual)*
 
-No System Center Configuration Manager, os componentes do cliente e do servidor do site registram informações de processos em arquivos de log individuais. É possível usar as informações nesses arquivos de log para ajudá-lo a solucionar problemas que possam ocorrer em sua hierarquia do Configuration Manager. Por padrão, o registro em log de componentes do cliente e do servidor fica habilitado no Configuration Manager.   
+No Configuration Manager, os componentes cliente e de servidor do site registram informações do processo em arquivos de log individuais. Use as informações desses arquivos de log para ajudá-lo a solucionar possíveis problemas. Por padrão, o Configuration Manager habilita o log para componentes cliente e de servidor.   
 
- As seções a seguir fornecem detalhes sobre os diferentes arquivos de log disponíveis. É possível usar essas informações para exibir e monitorar os logs do cliente e do servidor do Configuration Manager para obter detalhes de operação e identificar informações de erro que podem ajudá-lo a solucionar problemas.  
+ As seções a seguir fornecem detalhes sobre os diferentes arquivos de log disponíveis. Monitore os logs do cliente e do servidor do Configuration Manager para verificar os detalhes da operação e exiba as informações de erro para solucionar problemas.  
 
 -   [Sobre arquivos de log do Configuration Manager](#BKMK_AboutLogs)  
 
@@ -125,7 +125,7 @@ No System Center Configuration Manager, os componentes do cliente e do servidor 
  Para exibir os logs, use a ferramenta de visualizador de log do Configuration Manager, CMTrace, localizada na pasta \\SMSSetup\\Tools da mídia de origem do Configuration Manager. A ferramenta CMTrace é adicionada a todas as imagens de inicialização adicionadas à Biblioteca de Software.  
 
 ###  <a name="BKMK_LogOptions"></a> Configurar opções de log usando o Configuration Manager Service Manager  
- No Configuration Manager, é possível alterar o local em que os arquivos de log são armazenados, bem como o tamanho do arquivo de log.  
+ Altere o local em que o Configuration Manager armazena os arquivos de log e seu tamanho.  
 
  Para modificar o tamanho dos arquivos de log, o nome e o local do arquivo de log ou forçar os vários componentes a gravar em um único arquivo de log, siga as etapas abaixo:  
 
@@ -141,7 +141,7 @@ No System Center Configuration Manager, os componentes do cliente e do servidor 
 8.  Selecione **OK** para salvar a configuração.  
 
 ###  <a name="BKMK_LogLocation"></a> Localização de logs do Configuration Manager  
-Os arquivos de log do Configuration Manager são armazenados em uma variedade de locais que dependem do processo que cria o arquivo de log e da configuração de seus sistemas de sites. Como o local do log em um computador pode variar, use a função de pesquisa para localizar os arquivos de log relevantes nos computadores do Configuration Manager se precisar solucionar problemas de um cenário específico.  
+O Configuration Manager armazena arquivos de log em vários locais. Esses locais dependem do processo que cria o arquivo de log e da configuração dos sistemas de sites. Como o local do log em um computador pode variar, use a função de pesquisa para localizar os arquivos de log relevantes nos computadores do Configuration Manager se precisar solucionar problemas de um cenário específico.  
 
 ##  <a name="BKMK_ClientLogs"></a> Logs do cliente do Configuration Manager  
 As seções a seguir listam os arquivos de log relacionados a operações e instalação do cliente.  
@@ -152,7 +152,7 @@ A tabela a seguir lista os arquivos de log localizados no cliente do Configurati
 |Nome do log|Descrição|  
 |--------------|-----------------|  
 |CAS.log|O serviço de acesso de conteúdo. Mantém o cache do pacote local no cliente.|  
-|Ccm32BitLauncher.log|Ações de registros para iniciar aplicativos no cliente marcado como "executar como 32 bits".|  
+|Ccm32BitLauncher.log|Registra as ações para iniciar aplicativos no cliente marcados como *executar como 32 bits*.|  
 |CcmEval.log|Registra as atividades de avaliação de status do cliente do Configuration Manager e detalhes dos componentes que são exigidos pelo cliente do Configuration Manager.|  
 |CcmEvalTask.log|Registra as atividades de avaliação de status do cliente do Configuration Manager que são iniciadas pela tarefa de avaliação agendada.|  
 |CcmExec.log|Registra as atividades do cliente e o serviço de Host de Agente do SMS. Esse arquivo de log também inclui informações sobre como habilitar e desabilitar o proxy de ativação.|  
@@ -220,10 +220,10 @@ A tabela a seguir lista os arquivos de log localizados no cliente do Configurati
 |client.msi.log|Registra as tarefas de instalação executadas pelo client.msi. Pode ser usado para solucionar problemas de instalação ou remoção do cliente.|  
 
 ###  <a name="BKMK_LogFilesforLnU"></a> Cliente para Linux e UNIX  
- O cliente do Configuration Manager para Linux e UNIX registra as informações nos seguintes arquivos de log.  
+ O cliente do Configuration Manager para Linux e UNIX registra as informações nos seguintes arquivos de log:  
 
 > [!TIP]  
->  Começando com o cliente para Linux e UNIX por meio da atualização cumulativa 1, você pode usar o CMTrace para exibir arquivos de log do cliente para Linux e UNIX.  
+>  Use o CMTrace para exibir os arquivos de log do cliente para Linux e UNIX.  
 
 > [!NOTE]  
 >  Quando você usar a versão inicial do cliente para Linux e UNIX e fizer referência à documentação nesta seção, substitua as seguintes referências para cada arquivo ou processo:  
@@ -266,7 +266,7 @@ Por exemplo, você pode usar o comando do Linux e UNIX **logrotate** para gerenc
 Para obter informações sobre o **logrotate**, consulte a documentação para as distribuições do Linux e UNIX que você usa.  
 
 ###  <a name="BKMK_LogfilesforMac"></a> Cliente para computadores Mac  
-O cliente do Configuration Manager para computadores Mac registra informações nos seguintes arquivos de log.  
+O cliente do Configuration Manager para computadores Mac registra as informações nos seguintes arquivos de log:  
 
 |Nome do log|Detalhes|  
 |--------------|-------------|  
@@ -338,7 +338,8 @@ O arquivo de log SMS_DM.log no servidor do sistema de site registra a comunicaç
 |sinvproc.log|Registra informações sobre o processamento de dados de inventário de software para o banco de dados do site.|Servidor do site|  
 |sitecomp.log|Registra detalhes sobre a manutenção dos componentes do site instalados em todos os servidores do sistema de site no site.|Servidor do site|  
 |sitectrl.log|Registra as alterações de configuração de site feitas para objetos de controle de site no banco de dados.|Servidor do site|  
-|sitestat.log|Registra disponibilidade e espaço em disco monitorando o processo de todos os sistemas de site.|Servidor do site|  
+|sitestat.log|Registra disponibilidade e espaço em disco monitorando o processo de todos os sistemas de site.|Servidor do site|
+|SMS_PhasedDeployment.log| Arquivo de log para implantações em fases, um recurso de pré-lançamento disponível a partir do Configuration Manager versão 1802.|Site de nível superior na hierarquia do Configuration Manager|   
 |SmsAdminUI.log|Registra atividades do console do Configuration Manager.|Computador que executa o console do Configuration Manager|  
 |SMSAWEBSVCSetup.log|Registra as atividades de instalação do serviço da Web de catálogo do aplicativo.|Servidor do sistema de site|  
 |smsbkup.log|Registra a saída do processo de backup do site.|Servidor do site|  
@@ -397,7 +398,7 @@ O arquivo de log SMS_DM.log no servidor do sistema de site registra a comunicaç
 |MP_GetPolicy.log|Registra atividade de solicitação da política de computadores cliente.|Servidor do sistema de site|  
 |MP_Hinv.log|Registra detalhes sobre a conversão de registros de inventário de hardware XML de clientes e a cópia desses arquivos para o servidor do site.|Servidor do sistema de site|  
 |MP_Location.log|Registra solicitação de local e atividade de resposta dos clientes.|Servidor do sistema de site|  
-|MP_OOBMgr.log|Registra as atividades do ponto de gerenciamento relacionadas ao recebimento de OTP de um cliente.|Servidor do sistema de site|  
+|MP_OOBMgr.log|Registra as atividades do ponto de gerenciamento relacionadas ao recebimento de um OTP de um cliente.|Servidor do sistema de site|  
 |MP_Policy.log|Comunicação da política de registros.|Servidor do sistema de site|  
 |MP_Relay.log|Registra a transferência de arquivos que são coletados do cliente.|Servidor do sistema de site|  
 |MP_Retry.log|Registra os processos de repetição de inventário de hardware.|Servidor do sistema de site|  
@@ -516,16 +517,15 @@ O arquivo de log SMS_DM.log no servidor do sistema de site registra a comunicaç
 
 A tabela a seguir lista os arquivos de log que contêm informações relacionadas ao gateway de gerenciamento de nuvem.
 
-||||
-|-|-|-|
 |Nome do log|Descrição|Computador com o arquivo de log|
-|CloudMgr.log|Registra os detalhes sobre como implantar o serviço do gateway de gerenciamento de nuvem, status do serviço contínuo e dados de uso associados ao serviço.<br>Você pode configurar o nível de log editando o Registro **HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\SMS\COMPONENTS\SMS_CLOUD_SERVICES_MANAGER\Logging level**|A pasta *installdir* no servidor do site primário ou autoridades de certificação.|
-|CMGSetup.log ou CMG-*RoleInstanceID*-CMGSetup.log<sup>1</sup>|Registra os detalhes sobre a segunda fase da implantação do gateway de gerenciamento de nuvem (implantação local no Azure)<br>Você pode configurar o nível de log usando a configuração **Nível de rastreamento** (**Informações** (padrão), **Detalhado**, **Erro**) na guia de **configuração dos serviços do Portal do Azure\nuvem**.|O **%approot%\logs** no seu servidor do Azure ou a pasta SMS/Logs no servidor do sistema de site|
-|CMGHttpHandler.log ou CMG-*RoleInstanceID*- CMGHttpHandler.log<sup>1</sup>|Registra os detalhes sobre a associação do manipulador de http do gateway de gerenciamento de nuvem com os Serviços de informações da Internet no Azure<br>Você pode configurar o nível de log usando a configuração **Nível de rastreamento** (**Informações** (padrão), **Detalhado**, **Erro**) na guia de **configuração dos serviços do Portal do Azure\nuvem**.|O **%approot%\logs** no seu servidor do Azure ou a pasta SMS/Logs no servidor do sistema de site|
-|CMGService.log ou CMG-*RoleInstanceID*- CMGService.log<sup>1</sup>|Registra os detalhes sobre o componente de núcleo do serviço de gateway de gerenciamento de nuvem no Azure<br>Você pode configurar o nível de log usando a configuração **Nível de rastreamento** (**Informações** (padrão), **Detalhado**, **Erro**) na guia de **configuração dos serviços do Portal do Azure\nuvem**.|O **%approot%\logs** no seu servidor do Azure ou a pasta SMS/Logs no servidor do sistema de site|
-|SMS_Cloud_ProxyConnector.log|Registra os detalhes sobre como configurar conexões entre o serviço do gateway de gerenciamento de nuvem e o ponto de conexão do gateway de gerenciamento de nuvem.|Servidor do sistema de site|
+|--------------|-----------------|----------------------------|  
+|CloudMgr.log|Registra os detalhes sobre como implantar o serviço do gateway de gerenciamento de nuvem, status do serviço contínuo e dados de uso associados ao serviço.<br>Configure o nível de log editando o valor **Nível de log** na chave do Registro HKLM\SOFTWARE\ Microsoft\SMS\COMPONENTS\ SMS_CLOUD_ SERVICES_MANAGER|A pasta *installdir* no servidor do site primário ou autoridades de certificação.|
+|CMGSetup.log<sup>1</sup>|Registra os detalhes sobre a segunda fase da implantação do gateway de gerenciamento de nuvem (implantação local no Azure)<br>Você pode configurar o nível de log usando a configuração **Nível de rastreamento** (**Informações** (padrão), **Detalhado**, **Erro**) na guia de **configuração dos serviços do Portal do Azure\nuvem**.|O **%approot%\logs** no seu servidor do Azure ou a pasta SMS/Logs no servidor do sistema de site|
+|CMGHttpHandler.log<sup>1</sup>|Registra os detalhes sobre a associação do manipulador de http do gateway de gerenciamento de nuvem com os Serviços de informações da Internet no Azure<br>Você pode configurar o nível de log usando a configuração **Nível de rastreamento** (**Informações** (padrão), **Detalhado**, **Erro**) na guia de **configuração dos serviços do Portal do Azure\nuvem**.|O **%approot%\logs** no seu servidor do Azure ou a pasta SMS/Logs no servidor do sistema de site|
+|CMGService.log<sup>1</sup>|Registra os detalhes sobre o componente de núcleo do serviço de gateway de gerenciamento de nuvem no Azure<br>Você pode configurar o nível de log usando a configuração **Nível de rastreamento** (**Informações** (padrão), **Detalhado**, **Erro**) na guia de **configuração dos serviços do Portal do Azure\nuvem**.|O **%approot%\logs** no seu servidor do Azure ou a pasta SMS/Logs no servidor do sistema de site|
+|SMS_Cloud_</br>ProxyConnector.log|Registra os detalhes sobre como configurar conexões entre o serviço do gateway de gerenciamento de nuvem e o ponto de conexão do gateway de gerenciamento de nuvem.|Servidor do sistema de site|
 
-<sup>1</sup> Esses são arquivos de log do Configuration Manager local que o gerenciador de serviço de nuvem sincroniza com o armazenamento do Azure a cada 5 minutos. O gateway de gerenciamento de nuvem envia logs para o armazenamento do Azure a cada 5 minutos. Portanto, o atraso máximo é de 10 minutos. Comutadores detalhados afetam os logs locais e remotos.
+<sup>1</sup> Esses são arquivos de log locais do Configuration Manager que o gerenciador de serviço de nuvem sincroniza com o armazenamento do Azure a cada cinco minutos. O gateway de gerenciamento de nuvem envia os logs por push para o armazenamento do Azure a cada cinco minutos. Portanto, o atraso máximo é de 10 minutos. Comutadores detalhados afetam os logs locais e remotos. Os nomes de arquivo reais incluem o nome do serviço e o identificador da instância de função. Por exemplo, CMG-*ServiceName*-*RoleInstanceID*-CMGSetup.log
 
 - Para solução de problemas de implantação, use **CloudMgr.log** e **CMGSetup.log**
 - Para solução de problemas de integridade de serviço, use **CMGService.log** e **SMS_Cloud_ProxyConnector.log**.
@@ -699,7 +699,7 @@ A tabela a seguir lista os arquivos de log que contêm informações relacionada
 |MCSSetup.log|Registra os detalhes sobre a instalação da função de servidor multicast.|Servidor do sistema de site|  
 |MCSMSI.log|Registra os detalhes sobre a instalação da função de servidor multicast.|Servidor do sistema de site|  
 |Mcsperf.log|Registra os detalhes sobre as atualizações do contador de desempenho multicast.|Servidor do sistema de site|  
-|MP_ClientIDManager.log|Registra as respostas do ponto de gerenciamento para as sequências de tarefas de solicitações de ID do cliente, iniciadas por meio do PXE ou da mídia de inicialização.|Servidor do sistema de site|  
+|MP_ClientIDManager.log|Registra as respostas do ponto de gerenciamento para as solicitações de ID do cliente para que as sequências de tarefas sejam iniciadas por meio do PXE ou da mídia de inicialização.|Servidor do sistema de site|  
 |MP_DriverManager.log|Registra as respostas do ponto de gerenciamento às solicitações de ação da sequência de tarefas do driver de aplicação automática.|Servidor do sistema de site|  
 |OfflineServicingMgr.log|Registra os detalhes de agendamentos de instalação offline e ações de aplicação de atualização em arquivos WIM (Windows Imaging Format) do sistema operacional.|Servidor do sistema de site|  
 |Setupact.log|Registra os detalhes sobre os logs do Windows Sysprep e de instalação.|Cliente|  
@@ -710,7 +710,8 @@ A tabela a seguir lista os arquivos de log que contêm informações relacionada
 |smpmsi.log|Registra os detalhes de instalação e configuração do ponto de migração de estado.|Servidor do sistema de site|  
 |smpperf.log|Registra as atualizações do contador de desempenho do ponto de migração de estado.|Servidor do sistema de site|  
 |smspxe.log|Registra os detalhes das respostas a clientes que usam a inicialização por PXE e detalhes da expansão de imagens e arquivos de inicialização.|Servidor do sistema de site|  
-|smssmpsetup.log|Registra os detalhes de instalação e configuração do ponto de migração de estado.|Servidor do sistema de site|  
+|smssmpsetup.log|Registra os detalhes de instalação e configuração do ponto de migração de estado.|Servidor do sistema de site|
+| SMS_PhasedDeployment.log| Arquivo de log para implantações em fases, um recurso de pré-lançamento disponível a partir do Configuration Manager versão 1802.|Site de nível superior na hierarquia do Configuration Manager| 
 |Smsts.log|Registra as atividades de sequência de tarefas.|Cliente|  
 |TSAgent.log|Registra o resultado das dependências da sequência de tarefas antes de iniciar uma sequência de tarefas.|Cliente|  
 |TaskSequenceProvider.log|Registra os detalhes das sequências de tarefas quando elas são importadas, exportadas ou editadas.|Servidor do sistema de site|  
@@ -729,7 +730,7 @@ A tabela a seguir lista os arquivos de log que contêm informações relacionada
 
 |Nome do log|Descrição|Computador com o arquivo de log|  
 |--------------|-----------------|----------------------------|  
-|CMRcViewer.log|Registra os detalhes sobre a atividade do visualizador de controle remoto.|Na pasta %temp% no computador que executa o visualizador de controle remoto|  
+|CMRcViewer.log|Registra os detalhes sobre a atividade do visualizador de controle remoto.|No computador que executa o visualizador de controle remoto, na pasta %temp%.|  
 
 ###  <a name="BKMK_ReportLog"></a> Relatórios  
  A tabela a seguir lista os arquivos de log do Configuration Manager que contêm informações relacionadas a relatórios.  

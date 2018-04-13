@@ -1,34 +1,37 @@
 ---
-title: "Introdução às configurações de conformidade"
+title: Introdução às configurações de conformidade
 titleSuffix: Configuration Manager
-description: "Saiba como as configurações de conformidade funcionam no System Center Configuration Manager. Também saiba mais sobre os conceitos básicos que você precisa saber."
+description: Saiba mais sobre conceitos básicos e como funcionam as configurações de conformidade
 ms.custom: na
-ms.date: 10/06/2016
+ms.date: 03/22/2018
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
-ms.technology: configmgr-other
+ms.technology:
+- configmgr-other
 ms.tgt_pltfrm: na
 ms.topic: get-started-article
 ms.assetid: a2742d52-851e-4abc-b623-d12d91684c0b
-caps.latest.revision: "11"
-author: andredm7
-ms.author: andredm
-manager: angrobe
-ms.openlocfilehash: b1171f806d1bda9671fd5817362285a461ee2d44
-ms.sourcegitcommit: c236214b2fcc13dae7bad96d7fb33f692868191d
+caps.latest.revision: 11
+author: aczechowski
+ms.author: aaroncz
+manager: dougeby
+ms.openlocfilehash: a8f672d4d92db8f1bd6e19c4a483b5b3107ad703
+ms.sourcegitcommit: 11bf4ed40ed0cbb10500cc58bbecbd23c92bfe20
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/12/2017
+ms.lasthandoff: 03/23/2018
 ---
 # <a name="get-started-with-compliance-settings-in-system-center-configuration-manager"></a>Introdução às configurações de conformidade no System Center Configuration Manager
 
 *Aplica-se a: System Center Configuration Manager (Branch Atual)*
 
-Antes de começar a criar itens de configuração do System Center Configuration Manager, leia este tópico para entender como funcionam as configurações de conformidade e para saber mais sobre os conceitos básicos que precisará conhecer.  
+Antes de criar as configurações de conformidade do Configuration Manager, saiba mais sobre os conceitos básicos e entenda como eles funcionam.  
 
-## <a name="how-compliance-settings-works"></a>Como funcionam as configurações de conformidade  
- As configurações de conformidade permitem que você gerencie a configuração e a conformidade de servidores, laptops, computadores desktop e dispositivos móveis na sua organização.  
+
+
+## <a name="how-compliance-settings-work"></a>Como funcionam as configurações de conformidade  
+ As configurações de conformidade permitem que você gerencie a configuração e a conformidade de clientes em sua organização.  
 
  Os itens de configuração se enquadram em duas categorias principais:  
 
@@ -36,50 +39,83 @@ Antes de começar a criar itens de configuração do System Center Configuration
 
 -   **Configurações para dispositivos gerenciados sem o cliente do Configuration Manager** – normalmente, trata-se de dispositivos gerenciados com o Microsoft Intune ou com o gerenciamento de dispositivo local do Configuration Manager.  
 
+
+
 ## <a name="what-devices-are-supported"></a>Quais dispositivos têm suporte?  
 
-
-|Tipo de dispositivo|Mais informações|  
+| Tipo de dispositivo | Mais informações |  
 |------------|----------------------|  
-|Computadores Windows (com o cliente do Configuration Manager)|Permite que você crie itens de configuração personalizados que lhe permitem avaliar itens como chaves de registro, arquivos e atributos do Active Directory.<br /><br /> Quando usa o tipo do item de configuração do Windows 10, você seleciona as configurações que deseja em uma lista predefinida.|  
-|Computadores Windows (registrados com o Microsoft Intune)|Selecione as configurações desejadas em uma lista predefinida.|  
-|Dispositivos iOS (registrados com o Microsoft Intune)|Selecione as configurações desejadas em uma lista predefinida.|  
-|Dispositivos Android (registrados com o Microsoft Intune)|Selecione as configurações desejadas em uma lista predefinida.|  
-|Dispositivos Windows Phone (registrados com o Microsoft Intune)|Selecione as configurações desejadas em uma lista predefinida.|  
-|Computadores Mac (com o cliente do Configuration Manager)|Permite que você crie itens de configuração personalizados que lhe permitem avaliar itens como valores de preferências do Mac OS X (lista de propriedades) e os resultados retornados por um script.|  
-|Computadores Mac (registrados com o Microsoft Intune)|Selecione as configurações desejadas em uma lista predefinida.|  
+| Computadores Windows (com o cliente do Configuration Manager) | Crie itens de configuração personalizados para avaliar objetos como chaves do Registro, arquivos e atributos do Active Directory.<br /><br /> Ao usar o tipo do item de configuração do Windows 10, selecione as configurações em uma lista predefinida. |  
+| Computadores Windows (registrados com o Microsoft Intune) | Selecione as configurações em uma lista predefinida. |  
+| Dispositivos iOS (registrados com o Microsoft Intune) | Selecione as configurações em uma lista predefinida. |  
+| Dispositivos Android (registrados com o Microsoft Intune) | Selecione as configurações em uma lista predefinida. |  
+| Dispositivos Windows Phone (registrados com o Microsoft Intune) | Selecione as configurações em uma lista predefinida. |  
+| Computadores Mac (com o cliente do Configuration Manager) | Crie itens de configuração personalizados para avaliar objetos, como as preferências do macOS, e os resultados retornados por um script. |  
+| Computadores Mac (registrados com o Microsoft Intune) | Selecione as configurações em uma lista predefinida. |  
+
+
 
 ## <a name="what-is-a-configuration-item"></a>O que é um item de configuração?  
- Um item de configuração pode ser considerado um contêiner que armazena as informações a seguir (as informações que você configura dependem do tipo de item de configuração):  
+ Um item de configuração é um contêiner que armazena informações específicas. As informações definidas dependem do tipo de item de configuração. Os itens de configuração podem incluir as seguintes informações:
 
--   **Informações de método de detecção** (somente para itens de configuração do Windows que contêm configurações do aplicativo) - permite detectar se um aplicativo está instalado detectando o arquivo do instalador do Windows do aplicativo ou usando um script personalizado.  
+-   **Informações do método de detecção** referem-se somente aos itens de configuração do Windows que contêm configurações de aplicativo. Detectam se um aplicativo está instalado. Essa detecção usa o arquivo do Windows Installer para o aplicativo ou um script personalizado.  
 
--   **Configurações** - as configurações representam as condições comerciais ou técnicas que são usadas para avaliar a conformidade nos dispositivos cliente. Você pode definir uma nova configuração ou navegar até uma configuração existente em um computador de referência.  
+-   As **configurações** representam as condições comerciais ou técnicas para avaliar a conformidade em dispositivos cliente. Defina uma nova configuração ou procure uma configuração existente em um computador de referência.  
 
--   **Regras de conformidade** - as regras de conformidade especificam as condições que definem a conformidade de um item de configuração. Antes que uma configuração possa ser avaliada quanto à conformidade, ela deve ter pelo menos uma regra de conformidade. Algumas configurações permitem que você corrija valores considerados não compatíveis. Você pode criar novas regras ou navegar até uma configuração existente em qualquer item de configuração para selecionar regras nele.  
+-   As **regras de conformidade** especificam as condições que definem a conformidade de uma configuração de item de configuração. Antes que um cliente avalie a conformidade de uma configuração, ela deve ter, pelo menos, uma regra de conformidade. Algumas configurações corrigem valores não compatíveis. Crie novas regras ou procure uma configuração existente em um item de configuração para selecionar as regras dele.  
 
--   **Plataformas com suporte** - são as plataformas de dispositivo que você define e nas quais será verificada a conformidade do item de configuração. Se você implantar um item de configuração em um dispositivo que não está na lista de plataformas com suporte, ele não será avaliado quanto à conformidade.  
+-   **Plataformas compatíveis** são as plataformas de dispositivo definidas, nas quais o cliente avalia a conformidade dos itens de configuração. Se você implantar um item de configuração em um dispositivo que não está na lista de plataformas compatíveis, ele não avaliará a conformidade.  
+
+
 
 ## <a name="what-is-a-configuration-baseline"></a>O que é uma linha de base de configuração?  
- A conformidade é avaliada por meio da definição de uma linha de base de configuração que contém os itens de configuração que você deseja avaliar e configurações e regras que descrevem o nível de conformidade que você precisa ter. É possível importar esses dados de configuração da Web em pacotes de configuração do Microsoft System Center Configuration Manager como melhores práticas que são definidas pela Microsoft e outros fornecedores, no Configuration Manager, e que você importar para o Configuration Manager. Também é possível criar novos itens de configuração e linhas de base de configuração.  
+ Defina uma linha de base de configuração que inclui os itens de configuração a serem avaliados. Inclua também as configurações e regras que descrevem o nível necessário de conformidade. Importe esses dados de configuração de pacotes de configuração do Configuration Manager. A Microsoft e outros fornecedores definem esses pacotes de configuração. Se preferir, crie novos itens de configuração e linhas de base de configuração.  
 
- Após a definição de uma linha de base de configuração, você pode implantá-la para usuários e dispositivos por meio de coleções e avaliar suas configurações de conformidade segundo uma agenda. Várias linhas de base de configuração podem ser implantadas nos dispositivos. Isso propicia um alto nível de controle.  
+ Depois de definir uma linha de base de configuração, implante-a em coleções de usuários e dispositivos. Em seguida, o cliente avalia as configurações de linha de base quanto à conformidade de acordo com um agendamento. Implante mais de uma linha de base de configuração em dispositivos. Essa granularidade proporciona maior controle sobre a conformidade. 
 
- Dispositivos cliente avaliam sua conformidade com relação a cada linha de base de configuração implantada e, imediatamente, informam os resultados ao site usando mensagens de estado e de status. Se um dispositivo cliente não estiver conectado à rede, mas tiver baixado itens de configuração que são referenciados em uma linha de base de configuração implantada, a linha de base de configuração será avaliada quanto à conformidade. As informações de conformidade são enviadas quando a conexão for restabelecida.  
+ Dispositivos cliente avaliam sua conformidade com relação a cada linha de base de configuração implantada e, imediatamente, informam os resultados ao site usando mensagens de estado e de status. Se um dispositivo estiver desconectado da rede no momento, mas baixou a linha de base de configuração, ele ainda avaliará a conformidade dos itens de configuração. Ele envia as informações de conformidade quando se reconecta.  
 
- É possível monitorar os resultados da avaliação da linha de base de configuração no nó **Implantações** no espaço de trabalho **Monitoramento** no console do Configuration Manager para exibir as causas mais comuns dos erros e dos casos de não conformidade, bem como o número de usuários e dispositivos afetados. Você também pode executar relatórios de configurações de conformidade para encontrar detalhes adicionais, como quais dispositivos estão ou não em conformidade e qual elemento da linha de base de configuração está fazendo com que um computador não esteja em conformidade. Você também pode exibir resultados de avaliação de conformidade de computadores Windows que executam o software cliente do Configuration Manager usando a guia **Configurações** no **Configuration Manager** no Painel de Controle.  
+### <a name="monitoring-configuration-baselines"></a>Monitorando linhas de base de configuração
+- Monitore os resultados da avaliação de conformidade no console do Configuration Manager, no espaço de trabalho **Monitoramento**, no nó **Implantações**. Por exemplo:
+    - Causas comuns de não conformidade
+    - Erros
+    - O número de dispositivos e usuários afetados
+- Execute relatórios de configurações de conformidade com detalhes adicionais. Por exemplo:
+    - Quais dispositivos estão em conformidade ou fora de conformidade
+    - Qual elemento da linha de base de configuração está fazendo com que um computador fique fora de conformidade
+- Exiba os resultados da avaliação de conformidade nos computadores Windows que executam o cliente do Configuration Manager. Abra o painel de controle do **Configuration Manager** e alterne para a guia **Configurações**.  
+
+
 
 ## <a name="user-data-and-profiles-configuration-items"></a>Itens de configuração de perfis e dados do usuário  
- Itens de configuração de perfis e dados do usuário contêm configurações que controlam como os usuários em sua hierarquia gerenciam o redirecionamento de pastas, arquivos offline e perfis de roaming em computadores que executam o Windows 8 e posterior. É possível implantar essas configurações em coleções de usuários e monitorar sua conformidade no nó **Monitoramento** do console do Configuration Manager. Diferente de outros itens de configuração, você não os acrescenta às linhas de base de configuração antes de implantá-las. Você pode implantá-las diretamente na caixa de diálogo **Implantar Item de Configuração de Perfis e Dados de Usuário** .  
+ Os itens de configuração de perfis e dados de usuário incluem configurações que controlam como os usuários nos computadores que executam o Windows 8 e posterior gerenciam:  
+   - Redirecionamento de pasta
+   - Arquivos offline
+   - Perfis móveis  
 
- Para obter detalhes, consulte [Criar itens de configuração de perfis e dados de usuário](/sccm/compliance/deploy-use/create-user-data-and-profiles-configuration-items).  
+Implante esses itens de configuração em coleções de usuários. Monitore sua conformidade por meio do nó **Monitoramento** do console do Configuration Manager. Ao contrário de outros itens de configuração, não os adicione às linhas de base de configuração antes de implantá-los. Implante-os diretamente clicando em **Implantar** na faixa de opções.  
+
+ Para obter mais informações, consulte [Criar itens de configuração de perfis e dados de usuário](/sccm/compliance/deploy-use/create-user-data-and-profiles-configuration-items).  
+
+
 
 ## <a name="remote-connection-profiles"></a>Perfis de conexão remota  
- Os perfis de conexão remota fornecem um conjunto de ferramentas e recursos para ajudar você a criar, implantar e monitorar configurações de conexão remota nos dispositivos da sua organização. Implantando essas configurações, você minimiza o esforço que os usuários finais precisam fazer para se conectarem aos seus computadores na rede corporativa.  
+ Os perfis de conexão remota fornecem um conjunto de ferramentas e recursos para ajudá-lo a criar, implantar e monitorar configurações de conexão remota. Implantando essas configurações em dispositivos, você minimiza o esforço que os usuários finais precisam fazer para se conectarem seus computadores à rede corporativa.  
 
-Para obter detalhes, consulte [Create remote connection profiles (Criar perfis de conexão remota)](/sccm/compliance/deploy-use/create-remote-connection-profiles).  
+Para saber mais, confira [Criar perfis de conexão remota](/sccm/compliance/deploy-use/create-remote-connection-profiles).  
+
+
 
 ## <a name="windows-edition-upgrade"></a>Atualização de edição do Windows
-A Política de Atualização de Edição permite atualizar automaticamente dispositivos que executam determinadas versões do Windows 10 para uma edição mais recente, fornecendo um novo arquivo de licença ou chave do produto (Product Key).
+A política de atualização de edição atualiza automaticamente os dispositivos que executam algumas versões do Windows 10 para uma edição mais recente. Essa política fornece uma nova chave do produto (Product Key) ou um novo arquivo de licença que é consumido pelo dispositivo para que ele seja atualizado.
 
-Para obter detalhes, consulte [Atualizar dispositivos Windows com a política de atualização de edição](/sccm/compliance/deploy-use/upgrade-windows-version)
+Para obter mais informações, consulte [Atualizar dispositivos Windows com a política de atualização de edição](/sccm/compliance/deploy-use/upgrade-windows-version)
+
+
+
+## <a name="microsoft-edge-browser-profiles"></a>Perfis do navegador Microsoft Edge
+<!-- 1357310 -->
+A partir da versão 1802, para os clientes que utilizam o navegador da Web [Microsoft Edge](https://technet.microsoft.com/microsoft-edge/bb265256) em clientes do Windows 10, crie uma política de configurações de conformidade para definir várias configurações do Microsoft Edge. 
+
+Para obter mais informações, consulte [Perfis do navegador Microsoft Edge](/sccm/compliance/deploy-use/browser-profiles).
+

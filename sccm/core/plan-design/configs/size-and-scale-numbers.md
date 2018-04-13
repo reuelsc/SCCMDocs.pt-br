@@ -1,25 +1,26 @@
 ---
 title: Tamanho e escala
 titleSuffix: Configuration Manager
-description: "Identifique o número de funções do sistema de sites e de sites que você precisará para dar suporte aos dispositivos em seu ambiente do System Center Configuration Manager."
+description: Determine o número de funções do sistema de sites e de sites necessários para dar suporte aos dispositivos no ambiente.
 ms.custom: na
-ms.date: 07/24/2017
+ms.date: 03/22/2018
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
-ms.technology: configmgr-other
+ms.technology:
+- configmgr-other
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: c5a42100-2f60-4952-b495-918025ea6559
-caps.latest.revision: "4"
+caps.latest.revision: 4
 author: mestew
 ms.author: mstewart
-manager: angrobe
-ms.openlocfilehash: bda1ab737a3af5e13f180771cc17c9850165906c
-ms.sourcegitcommit: daa080cf220835f157a23e8c8e2bd2781b869bb7
+manager: dougeby
+ms.openlocfilehash: cc5ce67ffe7c18d4e7be4c9a74f2a0ca0ba0253c
+ms.sourcegitcommit: 11bf4ed40ed0cbb10500cc58bbecbd23c92bfe20
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 12/04/2017
+ms.lasthandoff: 03/23/2018
 ---
 # <a name="size-and-scale-numbers-for-system-center-configuration-manager"></a>Números de tamanho e escala para o System Center Configuration Manager
 
@@ -27,7 +28,7 @@ ms.lasthandoff: 12/04/2017
 
 
 
-Cada implantação do System Center Configuration Manager tem um número máximo de sites, funções do sistema de sites e dispositivos aos quais ela pode dar suporte. Esses números variam conforme sua estrutura de hierarquia (os tipos e os números de sites usados) e as funções do sistema de sites implantados.  As informações nas seguintes áreas podem ajudar a identificar o número de funções de sites e do sistema de sites que será necessário para dar suporte aos dispositivos que você pretende gerenciar com o seu ambiente.
+Cada implantação do Configuration Manager tem um número máximo de sites, funções do sistema de sites e dispositivos aos quais ela pode dar suporte. Esses números variam conforme a estrutura de hierarquia, quais tipos e números de sites são usados e as funções do sistema de sites implantadas. As informações deste artigo podem ajudá-lo a determinar o número de funções do sistema de sites e de sites necessários para dar suporte aos dispositivos que você pretende gerenciar.
 
 Use as informações neste tópico em conjunto com as informações nos seguintes artigos:
 -   [Hardware recomendado](../../../core/plan-design/configs/recommended-hardware.md)
@@ -36,22 +37,25 @@ Use as informações neste tópico em conjunto com as informações nos seguinte
 -   [Pré-requisitos de sites e do sistema de sites](../../../core/plan-design/configs/site-and-site-system-prerequisites.md)
 
 
-Os números de suporte a seguir baseiam-se no uso do hardware recomendado para o Configuration Manager e as configurações padrão para todos os recursos disponíveis do Configuration Manager. Quando você não usar o hardware recomendado ou usar as configurações personalizadas de mais agressivas (como executar o inventário de hardware ou software com mais frequência do que os padrões de uma vez a cada sete dias), o desempenho dos sistemas de sites poderá ser degradado e poderão não atingir os níveis de suporte definidos.
+Esses números de suporte baseiam-se no uso do hardware recomendado para o Configuration Manager. Eles também se baseiam nas configurações padrão de todos os recursos disponíveis do Configuration Manager. Quando você não usa o hardware recomendado ou usa configurações personalizadas mais agressivas, o desempenho dos sistemas de sites pode ser prejudicado. Os sistemas de sites poderão não atender os níveis de suporte indicados. (Um exemplo de configurações de cliente mais agressivas é a execução do inventário de hardware ou software com mais frequência do que os padrões de uma vez a cada sete dias.)
 
 ##  <a name="bkmk_SiteSystemScale"></a> Tipos de site  
- **Site de administração central:**  
+
+### <a name="central-administration-site"></a>Site de administração central  
 
 -   Um site de administração central pode dar suporte a até 25 sites primários filho.  
 
-**Site primário:**  
+
+### <a name="primary-site"></a>Site primário  
 
 -   Cada site primário fornece suporte a até 250 sites secundários.  
 
 -   O número de sites secundários por site primário se baseia em conexões de WAN (rede de longa distância) continuamente conectadas e confiáveis. Para os locais que têm menos de 500 clientes, considere um ponto de distribuição em vez de um site secundário.  
 
- Para saber mais sobre os números de clientes e dispositivos com suporte em um site primário, consulte [Números de clientes para sites e hierarquias](#bkmk_clientnumbers) neste tópico.  
+ Para obter mais informações sobre os números de clientes e os dispositivos para os quais um site primário pode dar suporte, consulte [Números de clientes para sites e hierarquias](#bkmk_clientnumbers).  
 
-**Site secundário:**  
+
+### <a name="secondary-site"></a>Site secundário  
 
 -   Sites secundários não dão suporte a sites filhos.  
 
@@ -60,7 +64,7 @@ Os números de suporte a seguir baseiam-se no uso do hardware recomendado para o
 ## <a name="bkmk_roles"></a> Site system roles    
 
 
-**Ponto de serviços Web do Catálogo de Aplicativos:**  
+### <a name="application-catalog-web-service-point"></a>Ponto de serviços Web do Catálogo de Aplicativos  
 
 -   É possível instalar várias instâncias do ponto de serviços Web do catálogo de aplicativos em sites primários.  
 
@@ -71,7 +75,8 @@ Os números de suporte a seguir baseiam-se no uso do hardware recomendado para o
 
     -   Cada instância desta função do sistema de sites dá suporte ao número máximo de clientes com suporte pela hierarquia.  
 
-**Ponto de sites da Web do Catálogo de Aplicativos:**  
+
+### <a name="application-catalog-website-point"></a>Ponto de sites da Web do Catálogo de Aplicativos  
 
 -   É possível instalar várias instâncias do ponto de sites da Web do catálogo de aplicativos em sites primários.  
 
@@ -83,7 +88,30 @@ Os números de suporte a seguir baseiam-se no uso do hardware recomendado para o
     -   Cada instância desta função do sistema de sites dá suporte ao número máximo de clientes com suporte pela hierarquia.  
 
 
-**Ponto de distribuição:**  
+### <a name="bkmk_cmg"></a> Gateway de gerenciamento de nuvem
+
+- Instale várias instâncias do CMG (gateway de gerenciamento de nuvem) em sites primários ou no site de administração central.  
+
+    > [!Tip]  
+    > Em uma hierarquia, crie o CMG no site de administração central.  
+
+    - Um CMG dá suporte a 16 instâncias de VM (máquina virtual) no serviço de nuvem do Azure.  
+
+    - Cada instância de VM do CMG dá suporte a 6.000 conexões de cliente simultâneas. Quando o CMG está sob alta carga devido a ter mais do que o número de clientes compatíveis, ele ainda manipula as solicitações, mas pode haver atraso.  
+
+Para obter mais informações, consulte [desempenho e escala](/sccm/core/clients/manage/cmg/plan-cloud-management-gateway#performance-and-scale) do CMG
+
+
+### <a name="cloud-management-gateway-connection-point"></a>Ponto de conexão do gateway de gerenciamento de nuvem
+
+- Instale várias instâncias do ponto de conexão do CMG em sites primários.  
+
+- Um ponto de conexão do CMG pode dar suporte a um CMG com até quatro instâncias de VM. Se o CMG tiver mais de quatro instâncias de VM, adicione um segundo ponto de conexão do CMG para o balanceamento de carga. Um CMG com 16 instâncias de VM deve ser vinculado a quatro pontos de conexão do CMG.
+
+Para obter mais informações, consulte [desempenho e escala](/sccm/core/clients/manage/cmg/plan-cloud-management-gateway#performance-and-scale) do CMG
+
+
+### <a name="distribution-point"></a>Ponto de distribuição  
 
 -   Pontos de distribuição por site:  
 
@@ -100,36 +128,41 @@ Os números de suporte a seguir baseiam-se no uso do hardware recomendado para o
 -   Cada ponto de distribuição dá suporte a um total combinado de até 10.000 pacotes e aplicativos.  
 
 > [!WARNING]  
->  O número real de clientes aos quais um ponto de distribuição pode dar suporte depende da velocidade da rede e da configuração de hardware do computador do ponto de distribuição.  
+>  O número real de clientes aos quais um ponto de distribuição pode dar suporte depende da velocidade da rede e da configuração de hardware do servidor.  
 >   
->  O número de pontos de distribuição pull aos quais um ponto de distribuição pode dar suporte depende de maneira semelhante da velocidade da rede e da configuração de hardware do computador do ponto de distribuição de origem. Mas esse número também é afetado pela quantidade de conteúdo que você implantou. Isso ocorre porque, diferentemente dos clientes que normalmente acessam o conteúdo em momentos diferentes durante implantação, todos os pontos de distribuição pull solicitam o conteúdo ao mesmo tempo e podem solicitar todo o conteúdo disponível, não apenas o conteúdo aplicável a ele, como faria um cliente. Quando uma carga de processamento excessiva for colocada em um ponto de distribuição de origem, poderá haver atrasos inesperados na distribuição do conteúdo para os pontos de distribuição esperados em seu ambiente.  
+>  De maneira semelhante, o número de pontos de distribuição pull aos quais um ponto de distribuição de origem pode dar suporte depende da velocidade da rede e da configuração de hardware do ponto de distribuição de origem. Mas esse número também é afetado pela quantidade de conteúdo que você implantou. Esse efeito ocorre porque, ao contrário dos clientes que normalmente acessam o conteúdo em momentos diferentes durante a implantação, todos os pontos de distribuição pull solicitam o conteúdo ao mesmo tempo. Os pontos de distribuição pull podem solicitar todo o conteúdo disponível, não apenas o conteúdo aplicável a eles. Quando você coloca uma alta carga de processamento em um ponto de distribuição de origem, pode haver atrasos inesperados na distribuição do conteúdo para os pontos de distribuição de destino.  
 
 
-**Ponto de status de fallback:**  
+### <a name="fallback-status-point"></a>Ponto de status de fallback  
 
 -   Cada ponto de status de fallback pode dar suporte a até 100.000 clientes.  
 
-**Ponto de gerenciamento:**  
+
+### <a name="management-point"></a>Ponto de gerenciamento  
 
 -   Cada site primário dá suporte a até 15 pontos de gerenciamento.  
 
     > [!TIP]  
-    >  Não instale os pontos de gerenciamento em servidores que estejam em um link lento partindo do servidor do site primário ou do servidor de banco de dados do site.  
+    >  Não instale os pontos de gerenciamento em servidores que estão em um link lento partindo do servidor do site primário ou do servidor de banco de dados do site.  
 
 -   Cada site secundário dá suporte a um único ponto de gerenciamento que deve ser instalado no servidor do site secundário.  
 
- Para saber mais sobre os números de clientes e dispositivos com suporte em um ponto de gerenciamento, consulte a seção [Pontos de gerenciamento](#bkmk_mp) neste tópico.  
+ Para obter informações sobre os números de clientes e os dispositivos compatíveis com um ponto de gerenciamento, consulte a seção [Pontos de gerenciamento](#bkmk_mp).  
 
-**Ponto de atualização de software:**  
 
--   Um ponto de atualização de software instalado no servidor do site pode dar suporte a até 25.000 clientes.  
+### <a name="software-update-point"></a>Ponto de atualização de software  
+
+-   Um ponto de atualização de software instalado no servidor do site pode dar suporte a até 25.000 clientes.   
 
 -   Um ponto de atualização de software que é remoto do servidor do site pode dar suporte a até 150.000 clientes quando o computador remoto atende aos requisitos do WSUS (Windows Server Update Services) para dar suporte a esse número de clientes.  
 
 -   Por padrão, o Configuration Manager não dá suporte à configuração de pontos de atualização de software como clusters de NLB (Balanceamento de Carga de Rede). No entanto, é possível usar o SDK do Configuration Manager para configurar até quatro pontos de atualização de software em um cluster de NLB.  
 
+
+
 ##  <a name="bkmk_clientnumbers"></a> Números de cliente para sites e hierarquias  
  Use as informações a seguir para determinar para quantos clientes e quais tipos de cliente, você pode dar suporte em um site ou em uma hierarquia.  
+
 
 ###  <a name="bkmk_cas"></a> Hierarquia com um site de administração central  
 Um site de administração central oferece suporte a uma quantidade total de dispositivos que inclui até o número de dispositivos listados para os três grupos a seguir:  
@@ -144,21 +177,22 @@ Um site de administração central oferece suporte a uma quantidade total de dis
 
     -   300.000 dispositivos baseados em cluster  
 
- Por exemplo, em uma hierarquia você pode dar suporte a 700.000 desktops, até 25.000 clientes Mac e Windows CE 7.0 e até 300.000 dispositivos baseados em nuvem quando integra o Microsoft Intune, somando 1.025.000 dispositivos. Se você der suporte a dispositivos gerenciados pelo MDM local, o total para a hierarquia será de 825.000 dispositivos.  
+ Por exemplo, em uma hierarquia, você pode dar suporte a 700.000 desktops, até 25.000 dispositivos Mac e Windows CE 7.0 e até 300.000 dispositivos baseados em nuvem ao integrar o Microsoft Intune. Essa hierarquia dá suporte a um total de 1.025.000 dispositivos. Se você der suporte a dispositivos gerenciados pelo MDM local, o total para essa hierarquia será de 825.000 dispositivos.  
 
 > [!IMPORTANT]  
->  Em uma hierarquia na qual o site de administração central usa uma edição Standard do SQL Server, a hierarquia dá suporte a 50.000 dispositivos e desktops no máximo. Para dar suporte a mais de 50.000 dispositivos e desktops, é necessário usar uma edição Enterprise do SQL Server. Esse requisito aplica-se somente a um site de administração central, e não a um site primário autônomo ou um site primário filho em que a edição do SQL Server usada não limita a capacidade desse site de dar suporte ao número indicado de clientes.   
+>  Em uma hierarquia na qual o site de administração central usa uma edição Standard do SQL Server, a hierarquia dá suporte a 50.000 dispositivos e desktops no máximo. Para dar suporte a mais de 50.000 dispositivos e desktops, é necessário usar uma edição Enterprise do SQL Server. Esse requisito se aplica somente a um site de administração central. Ele não se aplica a um site primário autônomo nem a um site primário filho. A edição do SQL Server usada para um site primário não limita sua capacidade de dar suporte ao número indicado de clientes.   
 
 
  A edição do SQL Server em uso em um site primário autônomo não limita a capacidade desse site a fim de dar suporte ao número especificado de clientes.  
 
 
 ###  <a name="bkmk_chipri"></a> Site primário filho  
-Cada site primário autônomo em uma hierarquia com um site de administração central oferece suporte ao seguinte:  
+Cada site primário filho em uma hierarquia com um site de administração central dá suporte ao seguinte número de clientes:  
 
 -   150.000 clientes e dispositivos no total que não se limitam a um grupo ou tipo específico, contanto que o suporte não exceda o número com suporte para a hierarquia. Consulte também, suporte para [dispositivos inseridos](#embedded).
 
-Por exemplo, um site primário que dá suporte para até 25.000 computadores que executam Mac e Windows CE 7.0 (pois esse é o limite para uma hierarquia) pode dar suporte a 125.000 computadores desktop adicionais. Isso traz o número total de dispositivos com suporte até o limite máximo com suporte de 150.000 do site primário filho.
+Por exemplo, um site primário dá suporte a 25.000 dispositivos Mac e Windows CE 7.0. Esse número é o limite de uma hierarquia. Em seguida, esse site primário pode dar suporte a mais 125.000 computadores desktop. O número total de dispositivos compatíveis com o site primário filho é o limite máximo compatível de 150.000.
+
 
 ###  <a name="bkmk_pri"></a> Site primário autônomo  
 Um site primário autônomo oferece suporte à seguinte quantidade de dispositivos:  
@@ -178,13 +212,16 @@ Um site primário autônomo oferece suporte à seguinte quantidade de dispositiv
 
 Por exemplo, um site primário autônomo que dá suporte a 150.000 desktops e 10.000 Mac ou Windows CE 7.0 pode dar suporte a apenas 15.000 dispositivos adicionais. Esses dispositivos podem ser baseados em nuvem ou serem gerenciados usando o MDM local.  
 
+
 ### <a name="embedded"></a> Sites primários e dispositivos Windows Embedded
-Os sites primários dão suporte aos dispositivos Windows Embedded que têm o FBWF (Filtros de Gravação Baseado em Arquivo) habilitado. Quando dispositivos inseridos não têm filtros de gravação habilitados, um site primário pode dar suporte a um número de dispositivos inseridos de até o número permitido de dispositivos para esse site. Do número total de dispositivos com suporte por um site primário, um máximo de 10.000 deles pode ser dispositivos Windows Embedded quando esses dispositivos são configurados para as exceções listadas na observação importante localizada em [Planejamento para implantação do cliente para dispositivos Windows Embedded](/sccm/core/clients/deploy/plan/planning-for-client-deployment-to-windows-embedded-devices). Um site primário dá suporte a apenas 3.000 dispositivos Windows Embedded com EWF habilitado e que não estão configurados para as exceções.
+Os sites primários dão suporte aos dispositivos Windows Embedded que têm o FBWF (Filtros de Gravação Baseado em Arquivo) habilitado. Quando dispositivos inseridos não têm filtros de gravação habilitados, um site primário pode dar suporte a um número de dispositivos inseridos que chega até o número permitido de dispositivos para esse site. Do número total de dispositivos aos quais um site primário dá suporte, um máximo de 10.000 desses dispositivos pode ser Windows Embedded. Esses dispositivos precisam ser configurados para as exceções listadas na observação importante encontrada em [Planejando a implantação de cliente em dispositivos Windows Embedded](/sccm/core/clients/deploy/plan/planning-for-client-deployment-to-windows-embedded-devices). Um site primário dá suporte a apenas 3.000 dispositivos Windows Embedded com EWF habilitado e que não estão configurados para as exceções.
+
 
 ###  <a name="bkmk_sec"></a> Sites secundários  
-Sites secundários oferecem suporte ao seguinte:  
+Os sites secundários dão suporte ao seguinte número de dispositivos:  
 
 -   15.000 desktops (computadores que executam Windows, Linux e UNIX)  
+
 
 ###  <a name="bkmk_mp"></a> Pontos de gerenciamento  
 Cada ponto de gerenciamento pode dar suporte à seguinte quantidade de dispositivos:  
