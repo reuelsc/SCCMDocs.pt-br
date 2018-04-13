@@ -13,11 +13,11 @@ ms.service: ''
 ms.technology:
 - configmgr-client
 ms.assetid: 68407ab8-c205-44ed-9deb-ff5714451624
-ms.openlocfilehash: f9fec1723c5242485d23981bcb683e3a8e98bfd3
-ms.sourcegitcommit: 11bf4ed40ed0cbb10500cc58bbecbd23c92bfe20
+ms.openlocfilehash: 96f20c3559ac08cb4c5a16d1d33b74c63a02e4b7
+ms.sourcegitcommit: f0bfd9fa0ec5b416f0ea2beee889b94e2ad9c97d
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/23/2018
+ms.lasthandoff: 04/06/2018
 ---
 # <a name="integrate-upgrade-readiness-with-system-center-configuration-manager"></a>Integrar o Upgrade Readiness com o System Center Configuration Manager
 
@@ -27,8 +27,10 @@ O Upgrade Readiness (anteriormente conhecido como Upgrade Analytics) faz parte d
 
 A solução Upgrade Readiness é executada no [OMS (Operations Management Suite)](/azure/operations-management-suite/operations-management-suite-overview). Leia mais sobre o Upgrade Readiness em [Manage Windows upgrades with Upgrade Readiness](/windows/deployment/upgrade/manage-windows-upgrades-with-upgrade-readiness) (Gerenciar upgrades do Windows com o Upgrade Readiness).
 
+<!--
 >[!WARNING]
->Para que o Upgrade Readiness funcione no Configuration Manager, é necessário atualizar para o Configuration Manager versão 1802.  <!--507205--> O Conector do Upgrade Readiness deixará de funcionar nas versões do Configuration Manager anteriores a 1802. 
+>For Upgrade Readiness to function within Configuration Manager, you must upgrade to Configuration Manager version 1802. The Upgrade Readiness Connector will no longer function in Configuration Manager versions earlier than 1802. 
+SMS.507205 Pulled 4/5/18 -->
 
 
 ## <a name="configure-clients"></a>Configurar clientes
