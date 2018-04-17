@@ -1,7 +1,7 @@
 ---
-title: "Versões do SQL Server com suporte"
+title: Versões do SQL Server com suporte
 titleSuffix: Configuration Manager
-description: "Obtenha os requisitos de configuração e versão do SQL Server para hospedar um banco de dados de site do System Center Configuration Manager."
+description: Obtenha os requisitos de configuração e versão do SQL Server para hospedar um banco de dados de site do System Center Configuration Manager.
 ms.custom: na
 ms.date: 02/14/2018
 ms.prod: configuration-manager
@@ -12,15 +12,15 @@ ms.technology:
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 35e237b6-9f7b-4189-90e7-8eca92ae7d3d
-caps.latest.revision: 
+caps.latest.revision: 21
 author: mestew
 ms.author: mstewart
 manager: dougeby
-ms.openlocfilehash: 5c17efa3498907fcc57d366965bec3b4198890bb
-ms.sourcegitcommit: 37e990d191028160486dbca286d2ea945bd5c8c3
+ms.openlocfilehash: 0e1cafc9b1900dd370cb8dac80f5a02fbb3d12dc
+ms.sourcegitcommit: fb84bcb31d825f454785e3d9d8be669e00fe2b27
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/15/2018
+ms.lasthandoff: 04/16/2018
 ---
 # <a name="supported-sql-server-versions-for-system-center-configuration-manager"></a>Versões do SQL Server com suporte no System Center Configuration Manager
 
@@ -75,7 +75,7 @@ O suporte para um service pack específico do SQL Server inclui atualizações c
 >  Ao usar o SQL Server Standard para o banco de dados no site de administração central, você limita o número total de clientes para o qual a hierarquia pode dar suporte. Consulte [Números de tamanho e escala](../../../core/plan-design/configs/size-and-scale-numbers.md).
 
 ### <a name="sql-server-2017-standard-enterprise"></a>SQL Server 2017: Standard, Enterprise  
-Use esta versão do SQL Server, com, no mínimo, a [atualização cumulativa versão 2](https://support.microsoft.com/help/4052574), a partir do [Configuration Manager versão 1710](https://docs.microsoft.com/en-us/sccm/core/plan-design/changes/whats-new-in-version-1710) para os seguintes sites: 
+Use esta versão do SQL Server, com, no mínimo, a [atualização cumulativa versão 2](https://support.microsoft.com/help/4052574), a partir do [Configuration Manager versão 1710](https://docs.microsoft.com/sccm/core/plan-design/changes/whats-new-in-version-1710) para os seguintes sites: 
 
 -   Um site de administração central  
 -   Um site primário  
@@ -145,7 +145,7 @@ Quando houver suporte pela versão do Configuration Manager, você poderá usar 
 -   Um site secundário
 
 ### <a name="sql-server-2017-express"></a>SQL Server 2017 Express   
-Use esta versão do SQL Server, com, no mínimo, a [atualização cumulativa versão 2](https://support.microsoft.com/help/4052574), a partir do [Configuration Manager versão 1710](https://docs.microsoft.com/en-us/sccm/core/plan-design/changes/whats-new-in-version-1710) para os seguintes sites:
+Use esta versão do SQL Server, com, no mínimo, a [atualização cumulativa versão 2](https://support.microsoft.com/help/4052574), a partir do [Configuration Manager versão 1710](https://docs.microsoft.com/sccm/core/plan-design/changes/whats-new-in-version-1710) para os seguintes sites:
 -   Um site secundário
 <!--SMS.498506-->
 

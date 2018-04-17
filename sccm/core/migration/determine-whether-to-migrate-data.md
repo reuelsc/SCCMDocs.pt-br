@@ -1,26 +1,27 @@
 ---
 title: Escolher o que migrar
 titleSuffix: Configuration Manager
-description: "Saiba quais dados você pode migrar e quais dados você não pode migrar para o System Center Configuration Manager."
+description: Saiba quais dados você pode migrar e quais dados você não pode migrar para o System Center Configuration Manager.
 ms.custom: na
 ms.date: 12/29/2016
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
-ms.technology: configmgr-other
+ms.technology:
+- configmgr-other
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 99222dc8-0e1e-4513-8302-7a1acf671e9b
-caps.latest.revision: "6"
-caps.handback.revision: "0"
+caps.latest.revision: 6
+caps.handback.revision: 0
 author: aczechowski
 ms.author: aaroncz
 manager: angrobe
-ms.openlocfilehash: 822bc5b4e17bdc611243fadfb13c551b0a8237a8
-ms.sourcegitcommit: ca9d15dfb1c9eb47ee27ea9b5b39c9f8cdcc0748
+ms.openlocfilehash: 0718b7863c45f7b7e56380d4a2fa74e8d1a17b54
+ms.sourcegitcommit: fb84bcb31d825f454785e3d9d8be669e00fe2b27
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/04/2018
+ms.lasthandoff: 04/16/2018
 ---
 # <a name="determine-whether-to-migrate-data-to-system-center-configuration-manager"></a>Determinar se realizará ou não a migração de dados para o System Center Configuration Manager
 
@@ -59,8 +60,6 @@ Essas modificações não afetam os dados no banco de dados do site de origem. O
 
 ### <a name="objects-that-you-can-migrate-from-system-center-2012-configuration-manager-or-system-center-configuration-manager-current-branch"></a>Objetos que você pode migrar do System Center 2012 Configuration Manager ou do branch atual do System Center Configuration Manager
 
--   Anúncios  
-
 -   Aplicativos para o System Center 2012 Configuration Manager e versões posteriores  
 
 -   Ambiente Virtual do App-V do System Center 2012 Configuration Manager e versões posteriores  
@@ -76,6 +75,8 @@ Essas modificações não afetam os dados no banco de dados do site de origem. O
     -   Linhas de base de configuração  
 
     -   Itens de configuração  
+
+-   Implantações  
 
 -   Implantação de sistema operacional:  
 

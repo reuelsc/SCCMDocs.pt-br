@@ -1,5 +1,5 @@
 ---
-title: "Extensões de esquema"
+title: Extensões de esquema
 titleSuffix: Configuration Manager
 description: Estender o esquema do Active Directory para o System Center Configuration Manager.
 ms.custom: na
@@ -7,21 +7,22 @@ ms.date: 2/7/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
-ms.technology: configmgr-other
+ms.technology:
+- configmgr-other
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 95c13c00-909f-4fbb-bbaa-1eba9d54d8c5
-caps.latest.revision: "8"
-caps.handback.revision: "0"
+caps.latest.revision: 8
+caps.handback.revision: 0
 author: mestew
 ms.author: mstewart
 manager: angrobe
 robots: noindex
-ms.openlocfilehash: 1fa1e3be3d08c9aa1f9271868f6b01e20b63e444
-ms.sourcegitcommit: daa080cf220835f157a23e8c8e2bd2781b869bb7
+ms.openlocfilehash: cc658166a7094f716db0ee495bc2338b52303b50
+ms.sourcegitcommit: fb84bcb31d825f454785e3d9d8be669e00fe2b27
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 12/04/2017
+ms.lasthandoff: 04/16/2018
 ---
 # <a name="schema-extensions-for-system-center-configuration-manager"></a>Extensões de esquema para o System Center Configuration Manager
 
@@ -31,7 +32,7 @@ Você pode estender o esquema do Active Directory para dar suporte ao Configurat
 
 -   Recomenda-se estender o esquema do Active Directory, mas não é obrigatório.  
 
-Antes de [estender o esquema do Active Directory](https://docs.microsoft.com/en-us/sccm/core/plan-design/network/extend-the-active-directory-schema), você deve estar familiarizado com os Serviços de Domínio do Active Directory e com [realizar alterações no esquema do Active Directory](https://technet.microsoft.com/library/cc759402\(v=ws.10\).aspx).  
+Antes de [estender o esquema do Active Directory](https://docs.microsoft.com/sccm/core/plan-design/network/extend-the-active-directory-schema), você deve estar familiarizado com os Serviços de Domínio do Active Directory e com [realizar alterações no esquema do Active Directory](https://technet.microsoft.com/library/cc759402\(v=ws.10\).aspx).  
 
 ## <a name="considerations-for-extending-the-active-directory-schema-for-configuration-manager"></a>Considerações sobre estender o esquema do Active Directory para o Configuration Manager  
 

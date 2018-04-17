@@ -1,25 +1,26 @@
 ---
-title: "Novidades na versão 1606"
+title: Novidades na versão 1606
 titleSuffix: Configuraton Manager
-description: "Veja os detalhes das alterações e os novos recursos introduzidos na versão 1606 do System Center Configuration Manager."
+description: Veja os detalhes das alterações e os novos recursos introduzidos na versão 1606 do System Center Configuration Manager.
 ms.custom: na
 ms.date: 12/30/2016
 ms.reviewer: na
 ms.suite: na
 ms.prod: configuration-manager
-ms.technology: configmgr-other
+ms.technology:
+- configmgr-other
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: df2e57b9-6445-4067-98e7-ace85d4e6aa6
-caps.latest.revision: "40"
+caps.latest.revision: 40
 author: mestew
 ms.author: mstewart
 manager: angrobe
-ms.openlocfilehash: e26519de8ce0b905fd52ca6ab0762a406d2f1e2c
-ms.sourcegitcommit: daa080cf220835f157a23e8c8e2bd2781b869bb7
+ms.openlocfilehash: 9c948e0ff84c4741d77b9096e52d3abd765aba7b
+ms.sourcegitcommit: fb84bcb31d825f454785e3d9d8be669e00fe2b27
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 12/04/2017
+ms.lasthandoff: 04/16/2018
 ---
 # <a name="what39s-new-in-version-1606-of-system-center-configuration-manager"></a>Novidades da versão 1606 do System Center Configuration Manager
 
@@ -89,7 +90,7 @@ Para navegar entre os diferentes nós de um espaço de trabalho, agora é possí
 Estas são as alterações para a Administração no console do Configuration Manager:
 ### <a name="oms-connector"></a>Conector do OMS
 
-Agora é possível conectar o Configuration Manager como coleções do System Center Configuration Manager ao [OMS (Microsoft Operations Management Suite)](https://azure.microsoft.com/en-us/documentation/articles/operations-management-suite-overview/). Isso torna dados como coleções da implantação do Configuration Manager visíveis no OMS. Para encontrar mais informações, consulte [Sincronizar dados do Configuration Manager para o Microsoft Operations Management Suite aqui](../../../core/clients/manage/sync-data-microsoft-operations-management-suite.md).
+Agora é possível conectar o Configuration Manager como coleções do System Center Configuration Manager ao [OMS (Microsoft Operations Management Suite)](https://azure.microsoft.com/documentation/articles/operations-management-suite-overview/). Isso torna dados como coleções da implantação do Configuration Manager visíveis no OMS. Para encontrar mais informações, consulte [Sincronizar dados do Configuration Manager para o Microsoft Operations Management Suite aqui](../../../core/clients/manage/sync-data-microsoft-operations-management-suite.md).
 
 O Conector do OMS é um recurso de pré-lançamento. Para habilitá-lo, confira [Use pre-release features from updates](../../../core/servers/manage/install-in-console-updates.md#bkmk_prerelease) (Usar recursos de pré-lançamento de atualizações).
 

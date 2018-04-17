@@ -7,19 +7,20 @@ ms.date: 03/05/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
-ms.technology: configmgr-hybrid
+ms.technology:
+- configmgr-hybrid
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: fa648e73-5fb8-4818-ab57-7466ffaf888e
-caps.latest.revision: "24"
+caps.latest.revision: 24
 author: andredm7
 ms.author: andredm
 manager: angrobe
-ms.openlocfilehash: a83c2030de8a146dad7bf2258e8a983c8ab6c45e
-ms.sourcegitcommit: 922d6d9c91ba2158b938df381277be1b5f1d434a
+ms.openlocfilehash: e36674d27757daab9ced4e7e8b51942a4929b5ff
+ms.sourcegitcommit: fb84bcb31d825f454785e3d9d8be669e00fe2b27
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/13/2017
+ms.lasthandoff: 04/16/2018
 ---
 # <a name="manage-email-access-in-system-center-configuration-manager"></a>Gerenciar acesso a email no System Center Configuration Manager
 
@@ -47,7 +48,7 @@ Você pode controlar o acesso ao Exchange Online e Exchange Local do cliente de 
 
 Os aplicativos de área de trabalho do Office podem acessar o Exchange Online em computadores que executam:  
 
--   Área de trabalho do Office 2013 e posterior com [autenticação moderna](https://support.office.com/en-US/article/Using-Office-365-modern-authentication-with-Office-clients-776c0036-66fd-41cb-8928-5495c0f9168a) habilitada.  
+-   Área de trabalho do Office 2013 e posterior com [autenticação moderna](https://support.office.com/article/Using-Office-365-modern-authentication-with-Office-clients-776c0036-66fd-41cb-8928-5495c0f9168a) habilitada.  
 
 -   Windows 7.0 ou Windows 8.1  
 
@@ -85,7 +86,7 @@ Navegadores sem suporte serão bloqueados. Não há suporte para aplicativos do 
 
  **Para PCs:**  
 
--   Se o requisito de política de acesso condicional for permitir qualquer dispositivo **ingressado no domínio** ou **compatível**, será exibida uma mensagem com instruções sobre como registrá-lo. Se o PC não atender a nenhum dos requisitos, será solicitado que o usuário registre o dispositivo no Intune.  
+-   Se o requisito de política de acesso condicional for permitir qualquer dispositivo **ingressado no domínio** ou **em conformidade**, será exibida uma mensagem com instruções sobre como registrá-lo. Se o PC não atender a nenhum dos requisitos, será solicitado que o usuário registre o dispositivo no Intune.  
 
 -   Se o requisito de política de acesso condicional for configurado para permitir apenas dispositivos Windows ingressados no domínio, o dispositivo será bloqueado e será exibida uma mensagem para o usuário entrar em contato com o administrador de TI.  
 
@@ -171,7 +172,7 @@ Navegadores sem suporte serão bloqueados. Não há suporte para aplicativos do 
 #### <a name="for-exchange-online-and-tenants-in-the-new-exchange-online-dedicated-environment"></a>Para p Exchange Online (e locatários no novo ambiente do Exchange Online dedicado)
 
 >[!NOTE]
->Você também pode criar a política de acesso condicional no console de gerenciamento do Azure AD. O console de gerenciamento do Azure AD permite que você crie políticas de acesso condicional no dispositivo do Intune (chamada de política de acesso condicional baseada em dispositivos no Azure AD), além de outras políticas de acesso condicional, como a autenticação multifator. Você também pode definir políticas de acesso condicional para aplicativos corporativos de terceiros com suporte pelo Azure AD, como o Salesforce e o Box. Para obter mais detalhes, consulte [Como definir a política de acesso condicional com base no dispositivo do Azure Active Directory para controle de acesso dos aplicativos conectados no Azure Active Directory](https://azure.microsoft.com/en-us/documentation/articles/active-directory-conditional-access-policy-connected-applications/).
+>Você também pode criar a política de acesso condicional no console de gerenciamento do Azure AD. O console de gerenciamento do Azure AD permite que você crie políticas de acesso condicional no dispositivo do Intune (chamada de política de acesso condicional baseada em dispositivos no Azure AD), além de outras políticas de acesso condicional, como a autenticação multifator. Você também pode definir políticas de acesso condicional para aplicativos corporativos de terceiros com suporte pelo Azure AD, como o Salesforce e o Box. Para obter mais detalhes, consulte [Como definir a política de acesso condicional com base no dispositivo do Azure Active Directory para controle de acesso dos aplicativos conectados no Azure Active Directory](https://azure.microsoft.com/documentation/articles/active-directory-conditional-access-policy-connected-applications/).
 
  As políticas de acesso condicional usam o seguinte fluxo para o Exchange Online para decidir se devem permitir ou bloquear os dispositivos.  
 
@@ -185,11 +186,11 @@ Navegadores sem suporte serão bloqueados. Não há suporte para aplicativos do 
 
 -   Registre o dispositivo no Azure Active Directory (isso ocorre automaticamente quando o dispositivo é registrado no Intune).  
 
-     Para PCs ingressados no domínio, você deve configurá-lo para [registrar o dispositivo automaticamente](https://azure.microsoft.com/en-us/documentation/articles/active-directory-conditional-access-automatic-device-registration/) com o Active Directory do Azure.  
+     Para PCs ingressados no domínio, você deve configurá-lo para [registrar o dispositivo automaticamente](https://azure.microsoft.com/documentation/articles/active-directory-conditional-access-automatic-device-registration/) com o Active Directory do Azure.  
 
 -   Ter ativado o email, que associa a ID do Exchange ActiveSync do dispositivo ao registro do dispositivo no Azure Active Directory (aplica-se somente a dispositivos iOS e Android).  
 
--   Ser compatível com todas as políticas de conformidade implantadas  
+-   Estar em conformidade com todas as políticas de conformidade implantadas  
 
  O estado do dispositivo é armazenado no Azure Active Directory, que concede ou bloqueia o acesso ao email, com base nas condições avaliadas.  
 
@@ -234,7 +235,7 @@ Navegadores sem suporte serão bloqueados. Não há suporte para aplicativos do 
     >   
     >  Independentemente do estado de conformidade, todos os usuários aos quais a política se destina precisarão registrar seus dispositivos no Intune.  
 
-6.  Em **Acesso do aplicativo**, para o Outlook e outros aplicativos que usam autenticação moderna, você pode optar por restringir o acesso apenas aos dispositivos compatíveis para cada plataforma.  Os dispositivos Windows devem estar ingressados no domínio ou então devem ser compatíveis e estar registrados no Intune.  
+6.  Em **Acesso do aplicativo**, para o Outlook e outros aplicativos que usam autenticação moderna, você pode optar por restringir o acesso apenas aos dispositivos em conformidade para cada plataforma.  Os dispositivos Windows devem estar ingressados no domínio ou então devem estar em conformidade e estar registrados no Intune.  
 
     > [!TIP]  
     >  **Autenticação moderna** traz a entrada baseada no ADAL (Active Directory Authentication Library) para clientes Office.  
@@ -246,7 +247,7 @@ Navegadores sem suporte serão bloqueados. Não há suporte para aplicativos do 
 
      Usando o Exchange Online com o Configuration Manager e o Intune, você pode gerenciar dispositivos móveis com acesso condicional e computadores desktop. Os PCs devem estar ingressados no domínio ou então devem ser compatíveis e estar registrados no Intune. Você pode definir os seguintes requisitos:  
 
-    -   **Os dispositivos devem estar ingressados no domínio ou ser compatíveis.** Os PCs devem estar ingressados no domínio ou ser compatíveis com as políticas. Se um PC não atender a esses requisitos, será solicitado que o usuário registre o dispositivo no Intune.  
+    -   **Os dispositivos devem estar ingressados no domínio ou ser compatíveis.** Os PCs devem estar ingressados no domínio ou estar em conformidade com as políticas. Se um PC não atender a esses requisitos, será solicitado que o usuário registre o dispositivo no Intune.  
 
     -   **Os dispositivos devem estar ingressados no domínio.** Os PCs devem estar ingressados no domínio para acessar o Exchange Online. Se um PC não estiver ingressado no domínio, o acesso ao email será bloqueado e será solicitado que o usuário entre em contato com o administrador de TI.  
 

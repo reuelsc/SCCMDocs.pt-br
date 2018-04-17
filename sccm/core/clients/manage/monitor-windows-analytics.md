@@ -1,25 +1,26 @@
 ---
 title: Monitorar os clientes com o Windows Analytics
 titleSuffix: Configuration Manager
-description: "O Windows Analytics é um conjunto de soluções executado no Operations Management Suite que permite a obtenção de informações valiosas sobre o estado atual de seu ambiente, aproveitando os dados telemétricos do Windows informados por dispositivos em seu ambiente."
+description: O Windows Analytics é um conjunto de soluções executado no Operations Management Suite que permite a obtenção de informações valiosas sobre o estado atual de seu ambiente, aproveitando os dados telemétricos do Windows informados por dispositivos em seu ambiente.
 ms.custom: na
 ms.date: 01/02/2018
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
-ms.technology: configmgr-client
+ms.technology:
+- configmgr-client
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: CF35CE87-3BA8-4A84-9BC8-ABCEA4666212
-caps.latest.revision: "23"
+caps.latest.revision: 23
 author: aczechowski
 ms.author: aaroncz
 manager: angrobe
-ms.openlocfilehash: 6e0b6ec99755b89213b540f22315038911b8eb29
-ms.sourcegitcommit: f1535281b2c3fecff773b722c3f7590bf6ba10a0
+ms.openlocfilehash: 15b1d07f35f774f3ec8f082a86c90ecb989a438e
+ms.sourcegitcommit: fb84bcb31d825f454785e3d9d8be669e00fe2b27
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/03/2018
+ms.lasthandoff: 04/16/2018
 ---
 # <a name="use-windows-analytics-with-configuration-manager"></a>Usar o Windows Analytics com o Configuration Manager
 
@@ -64,6 +65,6 @@ Para obter mais informações e detalhes sobre como configurar e conectar-se ao 
 
 ## <a name="use-windows-analytics-to-identify-gaps-in-windows-information-protection-policies"></a>Use o Windows Analytics para identificar lacunas em políticas de Proteção de Informações do Windows
 
-Dispositivos Windows 10 versão 1703 e posteriores configurados com uma política do WIP ([Proteção de Informações do Windows](https://docs.microsoft.com/en-us/windows/threat-protection/windows-information-protection/protect-enterprise-data-using-wip)) relatam a telemetria em aplicativos que acessam dados corporativos em seu ambiente, mas que as regras de aplicativo da política do WIP não incluem. Os usuários podem precisar desses aplicativos para permanecerem produtivos, mas o WIP bloqueia o acesso dos usuários. O conhecimento de que os usuários estão acessando dados corporativos é útil na manutenção de suas políticas da Proteção de Informações do Windows no Configuration Manager. 
+Dispositivos Windows 10 versão 1703 e posteriores configurados com uma política do WIP ([Proteção de Informações do Windows](https://docs.microsoft.com/windows/threat-protection/windows-information-protection/protect-enterprise-data-using-wip)) relatam a telemetria em aplicativos que acessam dados corporativos em seu ambiente, mas que as regras de aplicativo da política do WIP não incluem. Os usuários podem precisar desses aplicativos para permanecerem produtivos, mas o WIP bloqueia o acesso dos usuários. O conhecimento de que os usuários estão acessando dados corporativos é útil na manutenção de suas políticas da Proteção de Informações do Windows no Configuration Manager. 
 
 Acesse esses dados da Proteção de Informações do Windows usando esta [consulta do Operations Management Suite](https://go.microsoft.com/fwlink/?linkid=849952).

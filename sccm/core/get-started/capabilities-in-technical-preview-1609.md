@@ -1,25 +1,26 @@
 ---
 title: Recursos no Technical Preview 1609
 titleSuffix: Configuration Manager
-description: "Saiba mais sobre os recursos disponíveis no Technical Preview do System Center Configuration Manager, versão 1609."
+description: Saiba mais sobre os recursos disponíveis no Technical Preview do System Center Configuration Manager, versão 1609.
 ms.custom: na
 ms.date: 01/23/2017
 ms.reviewer: na
 ms.suite: na
 ms.tgt_pltfrm: na
 ms.prod: configuration-manager
-ms.technology: configmgr-other
+ms.technology:
+- configmgr-other
 ms.topic: article
 ms.assetid: e2a59116-b2e5-4dd2-90eb-0b8a5eb50b56
-caps.latest.revision: "2"
+caps.latest.revision: 2
 author: erikje
 ms.author: erikje
 manager: angrobe
-ms.openlocfilehash: e1cceae5f73d003be2fe64df9e6dbaa7badaf0c7
-ms.sourcegitcommit: 7fe45ff75f05f7cc03ad021db8119791abe18049
+ms.openlocfilehash: 4beca8479e5adbfa24b597769b792fd91bed9a2c
+ms.sourcegitcommit: fb84bcb31d825f454785e3d9d8be669e00fe2b27
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 12/01/2017
+ms.lasthandoff: 04/16/2018
 ---
 # <a name="capabilities-in-technical-preview-1609-for-system-center-configuration-manager"></a>Funcionalidades no Technical Preview 1609 do System Center Configuration Manager
 
@@ -95,7 +96,7 @@ O procedimento para criar e implantar um aplicativo do Configuration Manager por
 
 Adicionamos várias novas configurações que você pode usar em seus itens de configuração para várias plataformas de dispositivo.
 Essas são configurações que anteriormente estavam no Microsoft Intune em uma configuração autônoma e agora estão disponíveis quando você usa o Intune com o Configuration Manager.
-Se você precisar de ajuda com qualquer uma dessas configurações, abra [Manage settings and features on your devices with Microsoft Intune policies (Gerenciar configurações e recursos em seus dispositivos com políticas do Microsoft Intune)](https://docs.microsoft.com/en-us/intune/deploy-use/manage-settings-and-features-on-your-devices-with-microsoft-intune-policies) e selecione o subtópico de configurações da plataforma desejada.
+Se você precisar de ajuda com qualquer uma dessas configurações, abra [Manage settings and features on your devices with Microsoft Intune policies (Gerenciar configurações e recursos em seus dispositivos com políticas do Microsoft Intune)](https://docs.microsoft.com/intune/deploy-use/manage-settings-and-features-on-your-devices-with-microsoft-intune-policies) e selecione o subtópico de configurações da plataforma desejada.
 
 
 ### <a name="new-settings-for-android-devices"></a>Novas configurações para dispositivos Android
@@ -341,7 +342,7 @@ Não selecionada | Selecionada     |   **Fallback normal** – usar pontos de di
 
 
 
-## <a name="office-365-client-management-dashboard"></a>Painel de gerenciamento de clientes do Office 365  
+## <a name="office-365-client-management-dashboard"></a>Painel de Gerenciamento de Clientes do Office 365  
 O Technical Preview 1609 do Configuration Manager introduz um novo painel. Para exibir o painel, no console do Configuration Manager, vá até **Biblioteca de Software** > **Visão Geral** > **Gerenciamento de Cliente do Office 365**.
 >[!NOTE]
 >No espaço de trabalho **Novidades** no console do Configuration Manager, o novo painel está nomeado incorretamente como **Office 365 Servicing dashboard (Painel de serviços do Office 365)**.

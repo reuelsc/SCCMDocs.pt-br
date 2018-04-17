@@ -7,20 +7,21 @@ ms.date: 07/28/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
-ms.technology: configmgr-hybrid
+ms.technology:
+- configmgr-hybrid
 ms.tgt_pltfrm: na
 ms.topic: get-started-article
 ms.assetid: 120442be-179e-450c-a0c4-284046895da3
-caps.latest.revision: "4"
-caps.handback.revision: "0"
+caps.latest.revision: 4
+caps.handback.revision: 0
 author: lleonard-msft
 ms.author: alleonar
 manager: angrobe
-ms.openlocfilehash: 5fc0d5e68e27b3bde9ed3aa45a439c8b333da1d6
-ms.sourcegitcommit: 922d6d9c91ba2158b938df381277be1b5f1d434a
+ms.openlocfilehash: ab429e2702ab1595b035c8e2895dad584be4061a
+ms.sourcegitcommit: fb84bcb31d825f454785e3d9d8be669e00fe2b27
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/13/2017
+ms.lasthandoff: 04/16/2018
 ---
 # <a name="exchange-activesync-email-profiles-in-system-center-configuration-manager"></a>Perfis de email do Exchange ActiveSync no System Center Configuration Manager
 
@@ -37,7 +38,7 @@ Usando o Microsoft Intune e o Exchange ActiveSync, você pode configurar disposi
 - Samsung KNOX Standard (4 e posterior)
 - Android for Work
 
-Para implantar perfis de email nos dispositivos, você deve registrar os dispositivos no Intune. Para obter informações sobre como registrar seus dispositivos, veja [Gerenciar dispositivos móveis com o Microsoft Intune](https://technet.microsoft.com/en-us/library/dn646962.aspx).
+Para implantar perfis de email nos dispositivos, você deve registrar os dispositivos no Intune. Para obter informações sobre como registrar seus dispositivos, veja [Gerenciar dispositivos móveis com o Microsoft Intune](https://technet.microsoft.com/library/dn646962.aspx).
 
 > [!NOTE]
 > O Intune fornece dois perfis de email do Android for Work, um para o aplicativo de email Gmail e outro para o aplicativo de email Nine Work. Esses aplicativos estão disponíveis no Google Play Store e dão suporte às conexões com o Exchange. Para habilitar a conectividade de email, implante esses aplicativos de email nos dispositivos de seus usuários e, em seguida, crie e implante o perfil apropriado. Os aplicativos de email, como Nine Work, podem não ser gratuitos. Examine os detalhes de licenciamento do aplicativo ou entre em contato com a empresa do aplicativo se tiver dúvidas.
