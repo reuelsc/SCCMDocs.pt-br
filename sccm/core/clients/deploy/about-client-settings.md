@@ -17,11 +17,11 @@ caps.handback.revision: 0
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 42b9364fc88acc3f403db8d2ca9243a117fd78bf
-ms.sourcegitcommit: 11bf4ed40ed0cbb10500cc58bbecbd23c92bfe20
+ms.openlocfilehash: bd03457abdd5cc4464c10227626ba72637c96f90
+ms.sourcegitcommit: a19e12d5c3198764901d44f4df7c60eb542e765f
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/23/2018
+ms.lasthandoff: 03/28/2018
 ---
 # <a name="about-client-settings-in-system-center-configuration-manager"></a>Sobre as configurações do cliente no System Center Configuration Manager
 
@@ -801,8 +801,9 @@ Essa configuração define a porta local para que o ouvinte HTTP baixe o conteú
 
 Quando você configura isso como **Sim**, ele habilita a definição das configurações de instalação do Office 365. Ele também permite o download de arquivos das Redes de Distribuição de Conteúdo (CDNs) do Office e a implantação dos arquivos como um aplicativo no Configuration Manager. Para obter mais informações, consulte [Gerenciar o Office 365 ProPlus](/sccm/sum/deploy-use/manage-office-365-proplus-updates).
 
+### <a name="enable-third-party-software-updates"></a>Habilitar atualizações do software de terceiros 
 
-
+Quando você define como **Sim**, ele define a política para 'Permitir atualizações assinadas para um local de serviço de atualização da Microsoft da intranet’ e instala o certificado de autenticação para o repositório Fornecedores Confiáveis no cliente. Essa configuração de cliente foi adicionada ao Configuration Manager versão 1802.
 ## <a name="state-messaging"></a>Mensagem de Estado
 
 ### <a name="state-message-reporting-cycle-minutes"></a>Ciclo de relatórios de mensagens de estado (minutos)

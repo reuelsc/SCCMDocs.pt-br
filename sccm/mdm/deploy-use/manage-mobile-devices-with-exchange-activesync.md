@@ -1,25 +1,26 @@
 ---
-title: "Gerenciar dispositivos móveis "
+title: 'Gerenciar dispositivos móveis '
 titleSuffix: Configuration Manager
-description: "Gerencie dispositivos móveis usando o conector do Exchange Server no System Center Configuration Manager."
+description: Gerencie dispositivos móveis usando o conector do Exchange Server no System Center Configuration Manager.
 ms.custom: na
 ms.date: 03/05/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
-ms.technology: configmgr-hybrid
+ms.technology:
+- configmgr-hybrid
 ms.tgt_pltfrm: na
 ms.topic: get-started-article
 ms.assetid: aba688d9-fd5b-4c42-8cb4-f7e1b161ef50
-caps.latest.revision: "8"
+caps.latest.revision: 8
 author: andredm7
 ms.author: andredm
 manager: angrobe
-ms.openlocfilehash: ff7fef664780730510f17d723a1d13ca691405af
-ms.sourcegitcommit: 0a6b2c53ff4445b5d4f3638fdb0b489d54e333d3
+ms.openlocfilehash: 23073ff562e1ca533e196fff0415efc0451d6fee
+ms.sourcegitcommit: 27da4be015f1496b7b89ebddb517a2685f1ecf74
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 12/14/2017
+ms.lasthandoff: 03/28/2018
 ---
 # <a name="manage-mobile-devices-with-system-center-configuration-manager-and-exchange"></a>Gerenciar dispositivos móveis com o System Center Configuration Manager e o Exchange
 
@@ -107,6 +108,12 @@ Use o conector do Exchange Server no System Center Configuration Manager quando 
     -   **New-ActiveSyncMailboxPolicy**  
 
     -   **Remove-ActiveSyncDevice**  
+    
+    -   **Get-CasMailbox**  
+    
+    -   **Get-usuário**  
+    
+    -   **Set-ActiveSyncOrganizationSettings**  
 
     > [!NOTE]  
     >  As seguintes funções de gerenciamento do Exchange Server incluem esses cmdlets: Gerenciamento de destinatários, Gerenciamento de organização somente para exibição e Gerenciamento de servidor. Para obter mais informações sobre grupos de funções de gerenciamento do Microsoft Exchange Server 2010, consulte [Entendendo os Grupos de Função de Gerenciamento](http://go.microsoft.com/fwlink/p/?LinkId=212914).  

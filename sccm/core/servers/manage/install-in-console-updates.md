@@ -3,7 +3,7 @@ title: Atualização no console
 titleSuffix: Configuration Manager
 description: Instalar as atualizações do Configuration Manager por meio da nuvem da Microsoft
 ms.custom: na
-ms.date: 03/22/2018
+ms.date: 03/28/2018
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
@@ -16,11 +16,11 @@ caps.latest.revision: 36
 author: mestew
 ms.author: mstewart
 manager: dougeby
-ms.openlocfilehash: 5d364e35c8777c782499da978f0d1a31694278cc
-ms.sourcegitcommit: 11bf4ed40ed0cbb10500cc58bbecbd23c92bfe20
+ms.openlocfilehash: 054bbd8e7b1dd3f5d565afe60eb7e3379cc7a9ee
+ms.sourcegitcommit: aed99ba3c5e9482199cb3fc5c92f6f3a160cb181
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/23/2018
+ms.lasthandoff: 03/30/2018
 ---
 # <a name="install-in-console-updates-for-system-center-configuration-manager"></a>Instalações de atualizações para o System Center Configuration Manager
 
@@ -217,6 +217,10 @@ Após a atualização de um site de administração central ou site primário, c
 Recomendamos a instalação da atualização imediatamente.  
 
 Após a conclusão da atualização do console, verifique se a versão do console e do site está correta. Vá para **Sobre o System Center Configuration Manager** no canto superior esquerdo do console.  
+
+ > [!Note]  
+ > Iniciando na versão 1802, a versão do console agora é ligeiramente diferente da versão do site. A versão secundária do console agora corresponde à versão de lançamento do Configuration Manager. Por exemplo, no Configuration Manager versão 1802, a versão inicial é 5.0.8634.1000 e a versão inicial do console é 5.**1802**.1082.1700. Os números de build (1082) e de revisão (1700) podem ser alterados com hotfixes futuros para a versão 1802.
+
 
 
 ###  <a name="bkmk_toptier"></a> Para iniciar a instalação da atualização no site de nível superior  

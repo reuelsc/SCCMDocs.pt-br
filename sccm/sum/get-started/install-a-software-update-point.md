@@ -1,22 +1,23 @@
 ---
-title: "instalar e configurar um ponto de atualização de software"
+title: instalar e configurar um ponto de atualização de software
 titleSuffix: Configuration Manager
-description: "Os sites primários requerem um ponto de atualização de software no site de administração central para a avaliação de conformidade das atualizações de software e para implantar atualizações de software em clientes."
-keywords: 
+description: Os sites primários requerem um ponto de atualização de software no site de administração central para a avaliação de conformidade das atualizações de software e para implantar atualizações de software em clientes.
+keywords: ''
 author: dougeby
 ms.author: dougeby
 manager: angrobe
 ms.date: 05/30/2017
 ms.topic: article
 ms.prod: configuration-manager
-ms.service: 
-ms.technology: configmgr-sum
+ms.service: ''
+ms.technology:
+- configmgr-sum
 ms.assetid: b099a645-6434-498f-a408-1d438e394396
-ms.openlocfilehash: c17dd40175bac5ecc4361e905f009f1ed5c2f5a4
-ms.sourcegitcommit: 986fc2d54f7c5fa965fd4df42f4db4ecce6b79cb
+ms.openlocfilehash: 19cc49355d931595f08f81685ca0549ad9cba4e5
+ms.sourcegitcommit: a19e12d5c3198764901d44f4df7c60eb542e765f
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/17/2017
+ms.lasthandoff: 03/28/2018
 ---
 # <a name="install-and-configure-a-software-update-point"></a>instalar e configurar um ponto de atualização de software  
 
@@ -24,7 +25,7 @@ ms.lasthandoff: 11/17/2017
 
 
 > [!IMPORTANT]  
->  Antes de instalar a função de ponto de atualização de software, é necessário verificar se o servidor atende às dependências necessárias e determina a infraestrutura do ponto de atualização de software no site. Para obter mais informações sobre como planejar as atualizações de software e determinar a infraestrutura do ponto de atualização de software, consulte [Planejar atualizações de software](../plan-design/plan-for-software-updates.md).  
+>  Antes de instalar a função de SUP (ponto de atualização de software), é necessário verificar se o servidor atende às dependências necessárias e determina a infraestrutura do ponto de atualização de software no site. Para obter mais informações sobre como planejar as atualizações de software e determinar a infraestrutura do ponto de atualização de software, consulte [Planejar atualizações de software](../plan-design/plan-for-software-updates.md).  
 
  O ponto de atualização de software é necessário no site de administração central e nos sites primários para habilitar a avaliação de conformidade das atualizações de software e implantar atualizações de software em clientes. O ponto de atualização de software é opcional em sites secundários. A função de sistema de site do ponto de atualização de software deve ser criada em um servidor que tenha o WSUS instalado. O ponto de atualização de software interage com os serviços do WSUS para configurar os parâmetros de atualização de software e solicitar a sincronização dos metadados das atualizações de software. Quando houver uma hierarquia do Configuration Manager, instale e configure o ponto de atualização de software no site de administração central primeiro, depois nos sites primários filho e, opcionalmente, nos sites secundários. Quando houver um site primário autônomo, e não um site de administração central, instale e configure o ponto de atualização de software no site primário primeiro e, opcionalmente, nos sites secundários. Algumas configurações estão disponíveis somente quando você configura o ponto de atualização de software no site de nível superior. Há diferentes opções que devem ser consideradas dependendo de onde o ponto de atualização de software é instalado.  
 
@@ -34,7 +35,7 @@ ms.lasthandoff: 11/17/2017
 > [!IMPORTANT]  
 >  Não há suporte para instalar a função do sistema de site do ponto de atualização de software em um servidor que tenha sido configurado e usado como um servidor do WSUS autônomo ou usando um ponto de atualização de software para gerenciar diretamente os clientes do WSUS. Os servidores do WSUS existentes têm suporte apenas como origens da sincronização upstream para o ponto de atualização de software ativo. Veja [Sincronizar por meio de um local de fonte de dados upstream](#BKMK_wsussync)
 
- Você pode adicionar a função do sistema de site do ponto de atualização de software a um servidor do sistema de site existente ou criar um novo. Na página **Seleção de Função do Sistema** do **Assistente para Criar Servidor do Sistema de Site** ou do **Assistente para Adicionar Funções do Sistema de Site** , dependendo se você adicionar a função do sistema de site a um servidor do site novo ou existente, selecione **Ponto de atualização de software**e configure os parâmetros de atualização de software no assistente. As configurações são diferentes dependendo da versão do Configuration Manager que você usa. Para obter mais informações sobre como instalar funções do sistema de sites, veja [Instalar funções do sistema de sites](../../core/servers/deploy/configure/install-site-system-roles.md).  
+ Você pode adicionar a função do sistema de site do ponto de atualização de software a um servidor do sistema de site existente ou criar um novo. Na página **Seleção de Função do Sistema** do **Assistente para Criar Servidor do Sistema de Site** ou do **Assistente para Adicionar Funções do Sistema de Site, dependendo se você adicionar a função do sistema de site a um servidor do site novo ou existente, selecione **Ponto de atualização de software** e configure os parâmetros de atualização de software no assistente. As configurações são diferentes dependendo da versão do Configuration Manager que você usa. Para obter mais informações sobre como instalar funções do sistema de sites, veja [Instalar funções do sistema de sites](../../core/servers/deploy/configure/install-site-system-roles.md).  
 
  Use as seções a seguir para obter informações sobre as configurações do ponto de atualização de software em um site.  
 
@@ -146,7 +147,10 @@ ms.lasthandoff: 11/17/2017
 > [!NOTE]  
 >  A página **Idiomas** do assistente está disponível apenas quando você instala o ponto de atualização de software no site de administração central. Você pode configurar os idiomas do Arquivo de Atualização de Software em sites filhos na guia **Idiomas** em Propriedades do Componente de Ponto de Atualização de Software.  
 
+## <a name="third-party-updates"></a>Atualizações de terceiros
+A partir do Configuration Manager versão 1802, você pode habilitar atualizações de terceiros para clientes do Configuration Manager. Quando você habilitar as atualizações de software nas propriedades de componente de SUP, o SUP baixará o certificado de autenticação usado pelo WSUS para atualizações de terceiros. Essa opção não está disponível durante a instalação do ponto de atualização de software e deve ser configurada depois que o SUP for instalado. Para habilitar as configurações do cliente para atualizações de terceiros, consulte o [Sobre configurações do cliente](/sccm/core/clients/deploy/about-client-settings#Enable-third-party-software-updates) artigo.
+
 ## <a name="next-steps"></a>Próximas etapas
-Você instalou o ponto de atualização de software iniciando no site de mais alto na hierarquia do Configuration Manager. Repita os procedimentos deste tópico para instalar o ponto de atualização de software em sites filho.
+Você instalou o ponto de atualização de software iniciando no site de mais alto na hierarquia do Configuration Manager. Repita os procedimentos deste artigo para instalar o ponto de atualização de software em sites filho.
 
 Depois de instalar os pontos de atualização de software, vá para [sincronizar atualizações de software](synchronize-software-updates.md).

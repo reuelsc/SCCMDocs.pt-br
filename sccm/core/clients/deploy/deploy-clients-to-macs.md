@@ -7,19 +7,20 @@ ms.date: 05/04/2017
 ms.prod: configuration-manager
 ms.reviewer: aaroncz
 ms.suite: na
-ms.technology: configmgr-client
+ms.technology:
+- configmgr-client
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: e46ad501-5d73-44ac-92de-0de14ef72b83
-caps.latest.revision: "12"
+caps.latest.revision: 12
 author: arob98
 ms.author: angrobe
 manager: angrobe
 ms.openlocfilehash: 1b7f20a48e0e7219d933c367fb9f0315fc287dfd
-ms.sourcegitcommit: c236214b2fcc13dae7bad96d7fb33f692868191d
+ms.sourcegitcommit: 11bf4ed40ed0cbb10500cc58bbecbd23c92bfe20
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/12/2017
+ms.lasthandoff: 03/27/2018
 ---
 # <a name="how-to-deploy-clients-to-macs"></a>How to deploy clients to Macs
 
@@ -198,7 +199,7 @@ Use este procedimento para automação da instalação do cliente e solicitaçã
 > -   O arquivo da BOM (Lista de Materiais) e o arquivo da lista de propriedades (.plist) criados pela instalação do cliente do Configuration Manager.  
 > -   O conteúdo da pasta /Library/Application Support/Microsoft/CCM/Logs.  
 >   
->  As informações coletadas por CmDiagnostics são adicionadas a um arquivo zip, que é salvo na área de trabalho do computador e que tem o nome cmdiag-*<nome do host\>***-***&gt;data e hora\>*.zip.***
+>  As informações coletadas por CmDiagnostics são adicionadas a um arquivo zip, que é salvo na área de trabalho do computador e que tem o nome cmdiag-*<hostname\>***-***&gt;date and time\>*.zip.***
 
 
 ##  <a name="use-a-certificate-request-and-installation-method-that-is-independent-from-configuration-manager"></a>Usar uma solicitação de certificado e o método de instalação que é independente do Configuration Manager  

@@ -16,11 +16,11 @@ caps.latest.revision: 10
 author: aczechowski
 ms.author: aaroncz
 manager: angrobe
-ms.openlocfilehash: 5ec9266f33b318ac9c42f86840ebd7ac59713bdf
-ms.sourcegitcommit: 11bf4ed40ed0cbb10500cc58bbecbd23c92bfe20
+ms.openlocfilehash: 262bfa3991bbd95fad779da9520358d527a42b07
+ms.sourcegitcommit: a19e12d5c3198764901d44f4df7c60eb542e765f
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/23/2018
+ms.lasthandoff: 03/28/2018
 ---
 # <a name="manage-task-sequences-to-automate-tasks-in-system-center-configuration-manager"></a>Gerenciar sequências de tarefas para automatizar tarefas no System Center Configuration Manager
 
@@ -251,7 +251,14 @@ A mensagem de notificação a seguir é exibida quando o usuário final abre a i
         >     - Se a coleção contiver um servidor  
 
     -   **Comentários (opcional)**: especifique informações adicionais que descrevem essa implantação da sequência de tarefas.  
-    - **Selecionar o Modelo de Implantação**: a partir do Configuration Manager versão 1802, salve e especifique um modelo de implantação para uma sequência de tarefas. <!--1357391-->
+    - **Selecionar o Modelo de Implantação**: a partir do Configuration Manager versão 1802, <!--1357391--> você pode salvar e especificar um modelo de implantação para uma sequência de tarefas.     
+
+         > [!IMPORTANT]
+         > No Configuration Manager versão 1802, alguns itens não são salvos no modelo.  <!--510610--> Certifique-se de aplicar os itens a seguir quando executar o assistente de implantação:
+         > - Instalação de Software 
+         > - Agendamento 
+         > - Pré-baixar conteúdo
+ 
 6.  Na página **Configurações de Implantação** , especifique as seguintes informações e clique em **Próximo**.  
 
     -   **Finalidade**: na lista suspensa, escolha uma das seguintes opções:  

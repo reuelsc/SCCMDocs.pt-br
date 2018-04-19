@@ -7,20 +7,21 @@ ms.date: 07/25/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
-ms.technology: configmgr-other
+ms.technology:
+- configmgr-other
 ms.tgt_pltfrm: na
 ms.topic: get-started-article
 ms.assetid: 29ae59b7-2695-4a0f-a9ff-4f29222f28b3
-caps.latest.revision: "7"
-caps.handback.revision: "0"
+caps.latest.revision: 7
+caps.handback.revision: 0
 author: lleonard-msft
 ms.author: alleonar
 manager: angrobe
 ms.openlocfilehash: 9ef62bbf6269a6090f2345b10c24cc4df16c1e3b
-ms.sourcegitcommit: c236214b2fcc13dae7bad96d7fb33f692868191d
+ms.sourcegitcommit: 11bf4ed40ed0cbb10500cc58bbecbd23c92bfe20
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/12/2017
+ms.lasthandoff: 03/27/2018
 ---
 # <a name="configure-certificate-infrastructure"></a>Configurar a infraestrutura de certificado
 
@@ -190,7 +191,7 @@ Use estas etapas para configurar sua infraestrutura para certificados SCEP ou PF
 
 4.  Na página **Pasta de Instalação** , aceite a pasta de instalação padrão do módulo de política ou especifique uma pasta alternativa e clique em **Avançar**.  
 
-5.  Na página **Ponto de Registro de Certificado** , especifique a URL do ponto de registro de certificado usando o FQDN do servidor de sistema do site e o nome do aplicativo virtual especificado nas propriedades do ponto de registro de certificado. O nome padrão do aplicativo virtual é CMCertificateRegistration. Por exemplo, se o servidor de sistema do site tiver um FQDN igual a server1.contoso.com e você usou o nome padrão do aplicativo virtual, especifique **https://server1.contoso.com/CMCertificateRegistration**.  
+5.  Na página **Ponto de Registro de Certificado** , especifique a URL do ponto de registro de certificado usando o FQDN do servidor de sistema do site e o nome do aplicativo virtual especificado nas propriedades do ponto de registro de certificado. O nome padrão do aplicativo virtual é CMCertificateRegistration. Por exemplo, se o servidor do sistema de sites tiver um FQDN server1.contoso.com e você tiver usado o nome padrão do aplicativo virtual, especifique **https://server1.contoso.com/CMCertificateRegistration**.  
 
 6.  Aceite a porta padrão **443** ou especifique o número alternativo de porta que o ponto de registro de certificado está utilizando e clique em **Avançar**.  
 

@@ -17,11 +17,11 @@ caps.handback.revision: 0
 author: mestew
 ms.author: mstewart
 manager: dougeby
-ms.openlocfilehash: 29806161b29b87834c0cb4b1e478d92bff7a7b3c
-ms.sourcegitcommit: 11bf4ed40ed0cbb10500cc58bbecbd23c92bfe20
+ms.openlocfilehash: 19bb8b2c4e47dcc8a75db568e7f93541544a4566
+ms.sourcegitcommit: a19e12d5c3198764901d44f4df7c60eb542e765f
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/23/2018
+ms.lasthandoff: 03/28/2018
 ---
 # <a name="create-and-run-powershell-scripts-from-the-configuration-manager-console"></a>Criar e executar scripts do PowerShell do console do Configuration Manager
 
@@ -70,10 +70,6 @@ No momento, o recurso Executar Scripts dá suporte para:
 >[!WARNING]
 >Lembre-se de que, ao usar parâmetros, ele abre uma área de superfície para o risco de possíveis ataques de injeção do PowerShell. Há várias maneiras de atenuar e resolver o problema, como usando expressões regulares para validar a entrada de parâmetro ou usando parâmetros predefinidos. A melhor prática comum é não incluir segredos nos scripts do PowerShell (sem senhas, etc.). [Saiba mais sobre a segurança de script do PowerShell](/sccm/apps/deploy-use/learn-script-security) <!--There are external tools available to validate your PowerShell scripts such as the [PowerShell Injection Hunter](https://www.powershellgallery.com/packages/InjectionHunter/1.0.0) tool. -->
 
-
-## <a name="group-policy-considerations-for-scripts"></a>Considerações sobre a Política de Grupo para scripts
-<!--While running scripts on devices, Configuration Manager sets policy to allow local scripts and remote signed scripts.--> 
-A configuração de uma Política de Execução por meio da Política de Grupo pode não permitir que os scripts sejam executados com o Configuration Manager. Para obter informações sobre Políticas de Execução e como elas são definidas, consulte o artigo [Sobre as políticas de execução](https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_execution_policies). <!--507185-->
 
 ## <a name="run-script-authors-and-approvers"></a>Autores e aprovadores do recurso Executar Script
 
@@ -275,9 +271,13 @@ Depois de iniciar a execução de um script em uma coleção de dispositivos, us
 ## <a name="script-output"></a>Saída de script
 
 - A partir do Configuration Manager versão 1802, a saída de script é retornada com a formatação JSON. Este formato retorna consistentemente uma saída de script legível. 
-- Os scripts que obtêm um resultado desconhecido, ou aqueles em que o cliente estava offline, não serão mostrados no conjunto de dados ou nos gráficos. <!--507179-->
+- Os scripts que obtêm um resultado desconhecido ou em que o cliente estava offline, não serão mostrados no conjunto de dados ou nos gráficos. <!--507179-->
 - Evite retornar uma saída de script grande, pois ela será truncada em 4 KB. <!--508488-->
 - Algumas funcionalidades com a formatação de saída de script não estão disponíveis durante a execução do Configuration Manager versão 1802 ou posterior com uma versão de nível inferior do cliente. <!--508487-->
+    - Quando você tiver um cliente do Configuration Manager anterior ao 1802, poderá obter uma saída de cadeia de caracteres.
+    -  Para o cliente do Configuration Manager versão 1802 e superior, você obtém a formatação JSON.
+        - Por exemplo, você pode obter resultados que indicam TEXT em uma versão do cliente e “TEXT” (a saída é colocada entre aspas duplas) em outra versão, o que será colocado no gráfico como duas categorias diferentes.
+        - Se você precisar solucionar esse problema, considere a possibilidade de executar o script em duas coleções diferentes. Uma com clientes anteriores à 1802 e outra com clientes 1802 e superiores. Ou você pode converter um objeto de enumeração em um valor de cadeia de caracteres nos scripts, para que eles sejam exibidos corretamente na formatação JSON. 
 - Converta um objeto de enumeração em um valor de cadeia de caracteres nos scripts, para que eles sejam exibidos corretamente na formatação JSON. <!--508377--> ![Converter um objeto de enumeração em um valor de cadeia de caracteres](./media/run-scripts/enum-tostring-JSON.png)
 
 

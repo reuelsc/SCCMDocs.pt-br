@@ -1,39 +1,40 @@
 ---
-title: "Proteção Avançada contra Ameaças do Windows Defender"
+title: Proteção Avançada contra Ameaças do Windows Defender
 titleSuffix: Configuration Manager
-description: "Saiba como gerenciar e monitorar a Proteção Avançada contra Ameaças do Windows Defender, um novo serviço que ajuda as empresas a responder a ataques avançados."
+description: Saiba como gerenciar e monitorar a Proteção Avançada contra Ameaças do Windows Defender, um novo serviço que ajuda as empresas a responder a ataques avançados.
 ms.custom: na
 ms.date: 03/07/2017
 ms.prod: configuration-manager
-ms.technology: configmgr-other
+ms.technology:
+- configmgr-other
 ms.reviewer: na
 ms.suite: na
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: a5fc033e-828e-4e45-9097-bbbd0697ebdf
-caps.latest.revision: "5"
+caps.latest.revision: 5
 author: NathBarn
 ms.author: nathbarn
 manager: angrobe
-ms.openlocfilehash: 561a03c7046accaa8e6d36407c75cbd4248188ce
-ms.sourcegitcommit: c236214b2fcc13dae7bad96d7fb33f692868191d
+ms.openlocfilehash: 84786d741eda2be24a7deb39478e68c68adc38fe
+ms.sourcegitcommit: aed99ba3c5e9482199cb3fc5c92f6f3a160cb181
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/12/2017
+ms.lasthandoff: 03/30/2018
 ---
 # <a name="windows-defender-advanced-threat-protection"></a>Proteção Avançada contra Ameaças do Windows Defender
 
 *Aplica-se a: System Center Configuration Manager (Branch Atual)*
 
-A partir da versão 1606 do Configuration Manager (ramificação atual), o Endpoint Protection pode ajudar a gerenciar e monitorar a ATP (Proteção Avançada contra Ameaças) do Windows Defender. A ATP do Windows Defender é um novo serviço que ajudará as empresas a detectar, investigar e responder a ataques avançados em suas redes.  Saiba mais sobre a [ATP do Windows Defender](http://aka.ms/technet-wdatp). Políticas do Configuration Manager podem ajudar a carregar e monitorar o Windows 10, versão 1607 (build 14328) ou posterior gerenciado.
+Começando com a versão 1606 do Configuration Manager (branch atual), o Endpoint Protection pode ajudar a gerenciar e monitorar o [Windows Defender ATP (Proteção Avançada contra Ameaças)](http://aka.ms/technet-wdatp). O Windows Defender ATP ajuda as empresas a detectar, investigar e responder a ataques avançados em suas redes.  As políticas do Configuration Manager ou do Microsoft Intune podem ajudá-lo a carregar e monitorar o Windows 10, versão 1607 (build 14328) ou posterior gerenciado.
 
-O Windows Defender ATP é um serviço da [Central de Segurança do Windows](https://securitycenter.windows.com). Adicionando e implantando um arquivo de configuração de integração do cliente, o Configuration Manager pode monitorar o status da implantação e a integridade de agente do Windows Defender ATP. Somente há suporte para o Windows Defender ATP em computadores que executam o cliente do Configuration Manager. Não há suporte para o gerenciamento de dispositivo móvel local nem para computadores gerenciados por MDM híbrido com Intune.
+O Windows Defender ATP é um serviço na [Central de Segurança do Windows Defender](https://securitycenter.windows.com). Adicionando e implantando um arquivo de configuração de integração do cliente, o Configuration Manager pode monitorar o status da implantação e a integridade de agente do Windows Defender ATP. O Windows Defender ATP é compatível com computadores executando o cliente do Configuration Manager ou gerenciados pelo Microsoft Intune, mas computadores Intune híbridos gerenciados por MDM não são compatíveis.
 
  **Pré-requisitos**  
 
 -   Assinatura do serviço online de Proteção Avançada contra Ameaças do Windows Defender  
 -   Computadores clientes que executam o Windows 10, versão 1607 e posterior  
--   Os computadores clientes que executam a versão 1610 do Configuration Manager ou agente cliente posterior
+-   Os computadores clientes que executam a versão 1610 do Configuration Manager ou agente cliente posterior ou gerenciados pelo Microsoft Intune
 
 ## <a name="how-to-create-an-onboarding-configuration-file"></a>Como criar um arquivo de configuração de integração  
 

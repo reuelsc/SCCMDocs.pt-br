@@ -1,22 +1,10 @@
----
-title: "Práticas recomendadas para atualizações de software"
-titleSuffix: Configuration Manager
-description: "Use as práticas recomendadas para atualizações de software no System Center Configuration Manager."
-keywords: 
-author: dougeby
-ms.author: dougeby
-manager: angrobe
-ms.date: 10/06/2016
-ms.topic: article
-ms.prod: configuration-manager
-ms.service: 
-ms.technology: configmgr-sum
-ms.assetid: 6d20389a-9de2-4a64-bced-9fc4fa519174
-ms.openlocfilehash: 10913870f650bdda6eb7e65dc88ba8e3f0b17de4
-ms.sourcegitcommit: c236214b2fcc13dae7bad96d7fb33f692868191d
-ms.translationtype: HT
-ms.contentlocale: pt-BR
-ms.lasthandoff: 10/12/2017
+ ---
+
+título: Melhores práticas para atualizações de software titleSuffix: “Configuration Manager” descrição: “Use essas melhores práticas para atualizações de software no System Center Configuration Manager”.
+palavras-chave: autor: dougeby ms.author: dougeby gerente: angrobe ms.date: 06/10/2018 ms.topic: artigo ms.prod: configuration-manager ms.service: ms.technology:
+ - configmgr-sum ms.assetid: 6d20389a-9de2-4a64-bced-9fc4fa519174
+
+
 ---
 # <a name="best-practices-for-software-updates-in-system-center-configuration-manager"></a>Práticas recomendadas para atualizações de software no System Center Configuration Manager
 

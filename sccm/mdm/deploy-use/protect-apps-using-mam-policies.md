@@ -1,7 +1,7 @@
 ---
-title: "Proteger aplicativos usando políticas de gerenciamento de aplicativos móveis"
+title: Proteger aplicativos usando políticas de gerenciamento de aplicativos móveis
 titleSuffix: Configuration Manager
-description: "Modifique a funcionalidade dos aplicativos que você implanta para que eles cumpram as políticas de conformidade e segurança da empresa."
+description: Modifique a funcionalidade dos aplicativos que você implanta para que eles cumpram as políticas de conformidade e segurança da empresa.
 ms.custom: na
 ms.date: 11/20/2017
 ms.prod: configuration-manager
@@ -12,16 +12,16 @@ ms.technology:
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 28115475-e563-4e16-bf30-f4c9fe704754
-caps.latest.revision: 
-caps.handback.revision: 
+caps.latest.revision: 18
+caps.handback.revision: 0
 author: dougeby
 ms.author: dougeby
 manager: angrobe
 ms.openlocfilehash: 3365f46026178d30c9bffa5078d251186d0ffba3
-ms.sourcegitcommit: 12d0d53e47bbf1a0bbd85015b8404a44589d1e14
+ms.sourcegitcommit: 11bf4ed40ed0cbb10500cc58bbecbd23c92bfe20
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 03/27/2018
 ---
 # <a name="protect-apps-using-mobile-application-management-policies-in-system-center-configuration-manager"></a>Proteger aplicativos usando políticas de gerenciamento de aplicativos móveis no System Center Configuration Manager
 
@@ -56,7 +56,7 @@ Para aplicar restrições a um aplicativo, este deve incorporar o SDK (Software 
 
 -   **Para obter um link para um aplicativo gerenciado por política**: na loja de aplicativos, encontre e anote a URL do aplicativo gerenciado por política que você deseja implantar.  
 
-     Por exemplo, a URL do Microsoft Word para aplicativo do iPad é **https://itunes.apple.com/us/app/microsoft-word-for-ipad/id586447913?mt=8**  
+     Por exemplo, a URL do aplicativo Microsoft Word para iPad é **https://itunes.apple.com/us/app/microsoft-word-for-ipad/id586447913?mt=8**  
 
 -   **Para criar um aplicativo encapsulado**: use as informações nos tópicos [Preparar aplicativos iOS para gerenciamento de aplicativos móveis com a Ferramenta de Encapsulamento de Aplicativos do Microsoft Intune](https://technet.microsoft.com/library/dn878028.aspx) e [Preparar aplicativos Android para o gerenciamento de aplicativos móveis com a Ferramenta de Encapsulamento de Aplicativos do Microsoft Intune](https://technet.microsoft.com/library/mt147413.aspx) para criar um aplicativo encapsulado.  
 

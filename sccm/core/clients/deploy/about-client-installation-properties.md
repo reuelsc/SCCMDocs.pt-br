@@ -3,7 +3,7 @@ title: Propriedades de instalação de cliente
 titleSuffix: Configuration Manager
 description: Saiba mais sobre as propriedades de linha de comando do ccmsetup para instalar o cliente do Configuration Manager.
 ms.custom: na
-ms.date: 03/22/2018
+ms.date: 03/28/2018
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
@@ -16,11 +16,11 @@ caps.latest.revision: 15
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 057b078767a08574a806cb6af1cdb3812148a457
-ms.sourcegitcommit: 11bf4ed40ed0cbb10500cc58bbecbd23c92bfe20
+ms.openlocfilehash: 40e844fbb15a101574d9628648dde0db59c855c4
+ms.sourcegitcommit: aed99ba3c5e9482199cb3fc5c92f6f3a160cb181
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/23/2018
+ms.lasthandoff: 03/30/2018
 ---
 # <a name="about-client-installation-properties-in-system-center-configuration-manager"></a>Sobre as propriedades de instalação do cliente no System Center Configuration Manager
 
@@ -250,6 +250,20 @@ Exemplo: o `CCMSetup.exe /ExcludeFeatures:ClientUI` não instala o Centro de Sof
 
 
 
+## <a name="ccmsetupMsiProps"></a> Propriedades de CCMSetup.msi  
+ As propriedades a seguir podem modificar o comportamento da instalação do ccmsetup.msi.
+
+### <a name="ccmsetupcmd"></a>CCMSETUPCMD 
+
+Especifica as propriedades de linha de comando que são passadas para ccmsetup.exe depois que ele é instalado por ccmsetup.msi. Inclua outras propriedades dentro das aspas. Use essa propriedade ao inicializar o cliente do Configuration Manager usando o método de instalação do MDM do Intune. 
+
+Exemplo: `ccmsetup.msi CCMSETUPCMD="/mp:https://mp.contoso.com CCMHOSTNAME=mp.contoso.com"`
+
+ > [!Tip]
+ > O Microsoft Intune limita a linha de comando para 1024 caracteres. 
+
+
+
 ##  <a name="clientMsiProps"></a> Propriedades do Client.msi  
  As propriedades a seguir podem modificar o comportamento da instalação do client.msi. Se você usar o método de instalação por push do cliente, também será possível especificar as propriedades na guia **Cliente** da caixa de diálogo **Propriedades de Instalação por Push do Cliente** .  
 
@@ -282,16 +296,16 @@ Especifica o identificador do locatário do Azure AD. Esse locatário é vincula
 
 Exemplo: `ccmsetup.exe AADTENANTID=607b7853-6f6f-4d5d-b3d4-811c33fdd49a`
 
+<!-- 
+### AADTENANTNAME
 
-### <a name="aadtenantname"></a>AADTENANTNAME
+Specifies the Azure AD tenant name. This tenant is linked to Configuration Manager when you [configure Azure services](/sccm/core/servers/deploy/configure/azure-services-wizard) for Cloud Management. To obtain the value for this property, use the following steps:
+- On a Windows 10 device that is joined to the same Azure AD tenant, open a command prompt.
+- Run the following command: `dsregcmd.exe /status`
+- In the Device State section, find the **TenantName** value. For example, `TenantName : Contoso`
 
-Especifica o nome do locatário do Azure AD. Esse locatário é vinculado ao Configuration Manager quando você [configura os serviços do Azure](/sccm/core/servers/deploy/configure/azure-services-wizard) para o Gerenciamento de Nuvem. Para obter o valor dessa propriedade, use as seguintes etapas:
-- Em um dispositivo Windows 10 ingressado no mesmo locatário do Azure AD, abra um prompt de comando.
-- Execute o seguinte comando: `dsregcmd.exe /status`
-- Na seção Estado do Dispositivo, encontre o valor **TenantName**. Por exemplo, `TenantName : Contoso`
-
-Exemplo: `ccmsetup.exe AADTENANTNAME=Contoso`
-
+Example: `ccmsetup.exe AADTENANTNAME=Contoso`
+-->
 
 ### <a name="ccmadmins"></a>CCMADMINS  
 
